@@ -2,111 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 14F9460839
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 16:46:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 18B25607A3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 16:16:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=drFN9AW30f2ciWReQp+niRAFj52bQGEtpndIgKnYmKA=; b=sP67EN3hL7M5Yo
-	r//pjtIWpcGZ6elyH0MNGV2qsNpe5Pv9jgFn8AGL55/B/yxcWR6H+2imsn2K5qqEMVp+7GlKF79kU
-	GXzq4eBpoNtErAUBjg+FlaNzpFXo357iq0qnmW/iARDk77bd7mwvIcdsvHPahVF1l68Td6v3Ofgk8
-	1158S1o35618WZ3cOIro1WnbqQ/IF+AWpVFbZVrpVgxm/8Jgs+Ka9jTFGEpiR4MO4DafP8nIUutv/
-	L4F8L4gEqKefx2kgJFTsfvnQkiyInbgLiE1H2K7+J3dyyU1AmUDvE7ifu0UpgLihnjA3WnqjBsBh7
-	AMiY/Gy1Jds6BPmr5Vsg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=HHJovWEDuqNWOwMzoLgL68BWJCnT9q/ugd3D4Ma6y0Y=; b=D5NwM9/PSi2C+gq2gf4DL0Dbw
+	JMQ9dvnVOjhbybHy44ELKczy/uFfi5BQzBMukLXanJD1DpeyxsHfzXMnkGQxOfR6pwqg2GHt1vLn4
+	y2FerA9vJRyyb3ntyCuaBEic3lSyhVxNq24DGlTG5tn7uHwfM/OkY4Xg9iUj6G75i4Cmv+fkysHOC
+	/jVdigNt1xWaIpOn2jAjWBg17LKC6/l8Tncr2tqPMcOyoY/4hjZGg/ZDusxenMg4Q1qPSyQQ3b0qW
+	2RMrGWAPpEcIp1oxBnb+PQxTcb0u7GQvi+nvCAHAQNZM65eMwv3pm4e8AO20CIh1oZOwHKnEg3azc
+	ikeQP0Kog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hjPTz-0001fT-UM; Fri, 05 Jul 2019 14:46:40 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hjP0c-00016D-Ft; Fri, 05 Jul 2019 14:16:18 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjPRL-0005yQ-Ko
- for linux-arm-kernel@bombadil.infradead.org; Fri, 05 Jul 2019 14:43:55 +0000
+ id 1hjP0U-00015s-0H
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 05 Jul 2019 14:16:10 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Type:Cc:To:Subject:Message-ID:
- Date:From:In-Reply-To:References:MIME-Version:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Z1fWimE5LBhG/grVg6eI87RotqFb0roHvhFn0bvlYoY=; b=QO2bWmRsJWjD0w5RbBTeo5M1J
- yqeO64U4NDbduQBGx6gKNaDpLu4Xu5CdjNNi5ejwZr8iSvaAk/3I1atBiR7JXHMGVJbdj3RjfJ7I4
- jWlvuWi7JkUtEmIuC9kUFmh1576kEqqvxX2/X2vDJxE7o3V7usOh4Hq3tzebCcbkMqGqsm782zTsm
- DXIfybPQNOMFegU2ekpIdlQJxlEn6qb8zbyhBPSt5w5LgshuLTrpuUrdjHwrLrQ3jApkCKpL2rOzb
- rdZwT+lvS7Eil52mF+XNmMzUtteCv5TIg9F6FqXEfkpTr9N4qAcq4sQtL6I1al5akgXJPsWUSuR89
- iOa5SsavA==;
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
- by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjOOd-0002Gd-Kl
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 13:37:04 +0000
-Received: by mail-io1-xd44.google.com with SMTP id g20so9591763ioc.12
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 05 Jul 2019 06:37:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Z1fWimE5LBhG/grVg6eI87RotqFb0roHvhFn0bvlYoY=;
- b=Lnxerxt4jClA4MjKorP5iPnUVKYLaeN7x1LmQadqGzya9Hnsuvt1Nz9wAb5OsXmo9W
- v0cdoNBys7WZ955ZU3Jp3CS0nnG6UTbc7pTHuCw0PabUUK7ZcvnR2yAHDyUPJ31EssJA
- 6eMIDFB8tZH9Tpq0HXoieDMIekGtVcLMioTtdx1aSD/MF6JcRI0wtkMg8NVsk4ncTIIT
- rAjOBCDqtFVernkxMTFQQZtxwhWs4xm6Y6W7WNCQZFq2IxBO8AIdiirHi+GkubXfRP0Z
- o6UFPOYlSIwvMSq0BNEidnCK5ORfTbGJuSi9ZkzUtHkMWj0KgL15xS6yG4sCnz5cW0Lj
- Io7g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Z1fWimE5LBhG/grVg6eI87RotqFb0roHvhFn0bvlYoY=;
- b=EWE3J5eWUgKOcnnu86HyFl3lZxOABF4sNvaPvPAbeuZYSkpXmdVaie/gn+3eauaL7p
- RmgujLiJf46m+W56b3he+jDbS/mTk2RmYcFe3Hj30j6wYUR9zGFzr/OHPh+parXuU6C6
- nfYGUOoMlF7Qku55NXFq48DXheWSP0XWtHaRSD7zq3PG+g+pY2knToUuoz2S7GHoEd2O
- FNlJitCoBZRPoUS5vVgdvtyJa3YGW0brC0a6ftSCb/h78MndoN7PWg/0Tpd3FAyViUaJ
- znjhwwzT5QKRpTkF3FJRF9kFXX/WTUWdKZrK5ewaSNtrNzqasKgs7GU3qp/V02gdRNcS
- gc8w==
-X-Gm-Message-State: APjAAAVyrWOuXmFJ/HVKagjRhH42SHnBXUQxchlyUnOSpuDelbJb2eZE
- UQX2+frbXLMkUkCeBSBMPeLI2m4ozXvrwJKF7D/N3A==
-X-Google-Smtp-Source: APXvYqyUsHHTlKMctHpic07R1doMCk0jHwk68Y9gsTeKbOEsxX+msCvOmfkff5qNb2py5BNyBqvtJ2UV3fs+Wa7D2BY=
-X-Received: by 2002:a5e:c241:: with SMTP id w1mr4038131iop.58.1562333701423;
- Fri, 05 Jul 2019 06:35:01 -0700 (PDT)
+ d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:Content-Type:
+ In-Reply-To:MIME-Version:Date:Message-ID:From:References:CC:To:Subject:Sender
+ :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=2Qy6ORAWvrbTlmfqAnF7zDdNOiozdPJ+e9fLmQAmT2s=; b=QIOSz4p4ED8hUcQIL54lKwb+oc
+ dp6LsVlzuSeTZo6quSVjBYDmv5x6KqfR/SyMhb8p5Da58GseWQ6Va/DqBKcPC9RIBUQz5ZgmELSpp
+ E363p4p0tvYmL1SZdV3rO/WtiB/t4nNLFbkhXbgb/tmuXRCWtc7W6ze10AQ3wkvBoHyPEuvqEmOO2
+ QChxzf+LuwjpnNGbx99GqYjQeuCd40sOPh5XZGpsXrhSHWyDDoIvkgnEbLg3VOLBuwyVUhVI0Zyrr
+ z92La4e6oizJS3MQO0Les8UMJsSiAPkXTndTQRjTYlRrAdJK6blCBauM4ybAjPfXGNnTcX8DuwkXp
+ ZD2VNiow==;
+Received: from hqemgate15.nvidia.com ([216.228.121.64])
+ by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hjOYM-0006RS-8I
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 13:47:08 +0000
+Received: from hqpgpgate102.nvidia.com (Not Verified[216.228.121.13]) by
+ hqemgate15.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5d1f54bb0000>; Fri, 05 Jul 2019 06:46:35 -0700
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate102.nvidia.com (PGP Universal service);
+ Fri, 05 Jul 2019 06:46:31 -0700
+X-PGP-Universal: processed;
+ by hqpgpgate102.nvidia.com on Fri, 05 Jul 2019 06:46:31 -0700
+Received: from [10.25.73.124] (10.124.1.5) by HQMAIL107.nvidia.com
+ (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Fri, 5 Jul
+ 2019 13:46:25 +0000
+Subject: Re: [PATCH V12 01/12] PCI: Add #defines for some of PCIe spec r4.0
+ features
+To: <bhelgaas@google.com>
+References: <20190701124010.7484-1-vidyas@nvidia.com>
+ <20190701124010.7484-2-vidyas@nvidia.com>
+X-Nvconfidentiality: public
+From: Vidya Sagar <vidyas@nvidia.com>
+Message-ID: <66d8af45-66f5-b597-0ea8-39e8662df5e6@nvidia.com>
+Date: Fri, 5 Jul 2019 19:16:22 +0530
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-References: <20190613081357.1360-1-walter-zh.wu@mediatek.com>
- <da7591c9-660d-d380-d59e-6d70b39eaa6b@virtuozzo.com>
- <1560447999.15814.15.camel@mtksdccf07>
- <1560479520.15814.34.camel@mtksdccf07> <1560744017.15814.49.camel@mtksdccf07>
- <CACT4Y+Y3uS59rXf92ByQuFK_G4v0H8NNnCY1tCbr4V+PaZF3ag@mail.gmail.com>
- <1560774735.15814.54.camel@mtksdccf07> <1561974995.18866.1.camel@mtksdccf07>
-In-Reply-To: <1561974995.18866.1.camel@mtksdccf07>
-From: Dmitry Vyukov <dvyukov@google.com>
-Date: Fri, 5 Jul 2019 15:34:49 +0200
-Message-ID: <CACT4Y+aMXTBE0uVkeZz+MuPx3X1nESSBncgkScWvAkciAxP1RA@mail.gmail.com>
-Subject: Re: [PATCH v3] kasan: add memory corruption identification for
- software tag-based mode
-To: Walter Wu <walter-zh.wu@mediatek.com>
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: -15.7 (---------------)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-15.7 points)
+In-Reply-To: <20190701124010.7484-2-vidyas@nvidia.com>
+X-Originating-IP: [10.124.1.5]
+X-ClientProxiedBy: HQMAIL108.nvidia.com (172.18.146.13) To
+ HQMAIL107.nvidia.com (172.20.187.13)
+Content-Language: en-US
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1562334395; bh=2Qy6ORAWvrbTlmfqAnF7zDdNOiozdPJ+e9fLmQAmT2s=;
+ h=X-PGP-Universal:Subject:To:CC:References:X-Nvconfidentiality:From:
+ Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
+ X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
+ Content-Transfer-Encoding;
+ b=d8v8nKDdjlIXTfXIOi5GsRbdP041QsfRpBLjjsMPdizHbCbmFMgqe8vGkmjLZUxlu
+ NK/YbczaGAoQS/BKbjd/Wv6g8aVfD439ngxFzxcZ5qoqMsv0H1UpmSpjzFoCf4XeLf
+ OJbNSYjItvis6SB6QQK17u2YFfpf9wkIO32L3JY8lRrIoYVaHA9ZfGtmHDZnm9tOze
+ jdwSvge5JeajNERQZLcTM/UzTtAqjuMAhOy4htXvPMQ08CpeWSMrSWkPtLP4SZr78U
+ HtqFZIjipMnFXuDTYyP8f0hRfHxVU2PUP+aPVeuAhjPE1vwPWjiCSvRunnYzmHvPWZ
+ SRRX2lPQXaBXg==
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190705_144706_797441_28492E34 
+X-CRM114-Status: GOOD (  16.77  )
+X-Spam-Score: -5.2 (-----)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-5.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.64 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
- [list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match
- 0.0 T_PDS_NO_HELO_DNS      High profile HELO but no A record
- -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -118,126 +110,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wsd_upstream <wsd_upstream@mediatek.com>,
- "Jason A . Donenfeld" <Jason@zx2c4.com>, Vasily Gorbik <gor@linux.ibm.com>,
- Arnd Bergmann <arnd@arndb.de>, Linux-MM <linux-mm@kvack.org>,
- Andrey Konovalov <andreyknvl@google.com>, linux-mediatek@lists.infradead.org,
- LKML <linux-kernel@vger.kernel.org>, kasan-dev <kasan-dev@googlegroups.com>,
- Pekka Enberg <penberg@kernel.org>, Martin Schwidefsky <schwidefsky@de.ibm.com>,
- Miles Chen <miles.chen@mediatek.com>, Alexander Potapenko <glider@google.com>,
- David Rientjes <rientjes@google.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Andrey Ryabinin <aryabinin@virtuozzo.com>, Christoph Lameter <cl@linux.com>,
- Joonsoo Kim <iamjoonsoo.kim@lge.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
+ mperttunen@nvidia.com, mmaddireddy@nvidia.com, linux-pci@vger.kernel.org,
+ catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
+ robh+dt@kernel.org, kishon@ti.com, kthota@nvidia.com, thierry.reding@gmail.com,
+ gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
+ linux-tegra@vger.kernel.org, digetx@gmail.com, jonathanh@nvidia.com,
+ linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jul 1, 2019 at 11:56 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
-> > > > > > > > This patch adds memory corruption identification at bug report for
-> > > > > > > > software tag-based mode, the report show whether it is "use-after-free"
-> > > > > > > > or "out-of-bound" error instead of "invalid-access" error.This will make
-> > > > > > > > it easier for programmers to see the memory corruption problem.
-> > > > > > > >
-> > > > > > > > Now we extend the quarantine to support both generic and tag-based kasan.
-> > > > > > > > For tag-based kasan, the quarantine stores only freed object information
-> > > > > > > > to check if an object is freed recently. When tag-based kasan reports an
-> > > > > > > > error, we can check if the tagged addr is in the quarantine and make a
-> > > > > > > > good guess if the object is more like "use-after-free" or "out-of-bound".
-> > > > > > > >
-> > > > > > >
-> > > > > > >
-> > > > > > > We already have all the information and don't need the quarantine to make such guess.
-> > > > > > > Basically if shadow of the first byte of object has the same tag as tag in pointer than it's out-of-bounds,
-> > > > > > > otherwise it's use-after-free.
-> > > > > > >
-> > > > > > > In pseudo-code it's something like this:
-> > > > > > >
-> > > > > > > u8 object_tag = *(u8 *)kasan_mem_to_shadow(nearest_object(cacche, page, access_addr));
-> > > > > > >
-> > > > > > > if (access_addr_tag == object_tag && object_tag != KASAN_TAG_INVALID)
-> > > > > > >   // out-of-bounds
-> > > > > > > else
-> > > > > > >   // use-after-free
-> > > > > >
-> > > > > > Thanks your explanation.
-> > > > > > I see, we can use it to decide corruption type.
-> > > > > > But some use-after-free issues, it may not have accurate free-backtrace.
-> > > > > > Unfortunately in that situation, free-backtrace is the most important.
-> > > > > > please see below example
-> > > > > >
-> > > > > > In generic KASAN, it gets accurate free-backrace(ptr1).
-> > > > > > In tag-based KASAN, it gets wrong free-backtrace(ptr2). It will make
-> > > > > > programmer misjudge, so they may not believe tag-based KASAN.
-> > > > > > So We provide this patch, we hope tag-based KASAN bug report is the same
-> > > > > > accurate with generic KASAN.
-> > > > > >
-> > > > > > ---
-> > > > > >     ptr1 = kmalloc(size, GFP_KERNEL);
-> > > > > >     ptr1_free(ptr1);
-> > > > > >
-> > > > > >     ptr2 = kmalloc(size, GFP_KERNEL);
-> > > > > >     ptr2_free(ptr2);
-> > > > > >
-> > > > > >     ptr1[size] = 'x';  //corruption here
-> > > > > >
-> > > > > >
-> > > > > > static noinline void ptr1_free(char* ptr)
-> > > > > > {
-> > > > > >     kfree(ptr);
-> > > > > > }
-> > > > > > static noinline void ptr2_free(char* ptr)
-> > > > > > {
-> > > > > >     kfree(ptr);
-> > > > > > }
-> > > > > > ---
-> > > > > >
-> > > > > We think of another question about deciding by that shadow of the first
-> > > > > byte.
-> > > > > In tag-based KASAN, it is immediately released after calling kfree(), so
-> > > > > the slub is easy to be used by another pointer, then it will change
-> > > > > shadow memory to the tag of new pointer, it will not be the
-> > > > > KASAN_TAG_INVALID, so there are many false negative cases, especially in
-> > > > > small size allocation.
-> > > > >
-> > > > > Our patch is to solve those problems. so please consider it, thanks.
-> > > > >
-> > > > Hi, Andrey and Dmitry,
-> > > >
-> > > > I am sorry to bother you.
-> > > > Would you tell me what you think about this patch?
-> > > > We want to use tag-based KASAN, so we hope its bug report is clear and
-> > > > correct as generic KASAN.
-> > > >
-> > > > Thanks your review.
-> > > > Walter
-> > >
-> > > Hi Walter,
-> > >
-> > > I will probably be busy till the next week. Sorry for delays.
-> >
-> > It's ok. Thanks your kindly help.
-> > I hope I can contribute to tag-based KASAN. It is a very important tool
-> > for us.
->
-> Hi, Dmitry,
->
-> Would you have free time to discuss this patch together?
-> Thanks.
+On 7/1/2019 6:09 PM, Vidya Sagar wrote:
+Bjorn,
+Can you please provide Ack for this patch?
 
-Sorry for delays. I am overwhelm by some urgent work. I afraid to
-promise any dates because the next week I am on a conference, then
-again a backlog and an intern starting...
+Thanks,
+Vidya Sagar
 
-Andrey, do you still have concerns re this patch? This change allows
-to print the free stack.
-We also have a quarantine for hwasan in user-space. Though it works a
-bit differently then the normal asan quarantine. We keep a per-thread
-fixed-size ring-buffer of recent allocations:
-https://github.com/llvm-mirror/compiler-rt/blob/master/lib/hwasan/hwasan_report.cpp#L274-L284
-and scan these ring buffers during reports.
+> Add #defines only for the Data Link Feature and Physical Layer 16.0 GT/s
+> features.
+> 
+> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
+> Reviewed-by: Thierry Reding <treding@nvidia.com>
+> ---
+> Changes since [v11]:
+> * None
+> 
+> Changes since [v10]:
+> * None
+> 
+> Changes since [v9]:
+> * None
+> 
+> Changes since [v8]:
+> * None
+> 
+> Changes since [v7]:
+> * None
+> 
+> Changes since [v6]:
+> * None
+> 
+> Changes since [v5]:
+> * None
+> 
+> Changes since [v4]:
+> * None
+> 
+> Changes since [v3]:
+> * None
+> 
+> Changes since [v2]:
+> * Updated commit message and description to explicitly mention that defines are
+>    added only for some of the features and not all.
+> 
+> Changes since [v1]:
+> * None
+> 
+>   include/uapi/linux/pci_regs.h | 22 +++++++++++++++++++++-
+>   1 file changed, 21 insertions(+), 1 deletion(-)
+> 
+> diff --git a/include/uapi/linux/pci_regs.h b/include/uapi/linux/pci_regs.h
+> index f28e562d7ca8..1c79f6a097d2 100644
+> --- a/include/uapi/linux/pci_regs.h
+> +++ b/include/uapi/linux/pci_regs.h
+> @@ -713,7 +713,9 @@
+>   #define PCI_EXT_CAP_ID_DPC	0x1D	/* Downstream Port Containment */
+>   #define PCI_EXT_CAP_ID_L1SS	0x1E	/* L1 PM Substates */
+>   #define PCI_EXT_CAP_ID_PTM	0x1F	/* Precision Time Measurement */
+> -#define PCI_EXT_CAP_ID_MAX	PCI_EXT_CAP_ID_PTM
+> +#define PCI_EXT_CAP_ID_DLF	0x25	/* Data Link Feature */
+> +#define PCI_EXT_CAP_ID_PL	0x26	/* Physical Layer 16.0 GT/s */
+> +#define PCI_EXT_CAP_ID_MAX	PCI_EXT_CAP_ID_PL
+>   
+>   #define PCI_EXT_CAP_DSN_SIZEOF	12
+>   #define PCI_EXT_CAP_MCAST_ENDPOINT_SIZEOF 40
+> @@ -1053,4 +1055,22 @@
+>   #define  PCI_L1SS_CTL1_LTR_L12_TH_SCALE	0xe0000000  /* LTR_L1.2_THRESHOLD_Scale */
+>   #define PCI_L1SS_CTL2		0x0c	/* Control 2 Register */
+>   
+> +/* Data Link Feature */
+> +#define PCI_DLF_CAP		0x04	/* Capabilities Register */
+> +#define  PCI_DLF_LOCAL_DLF_SUP_MASK	0x007fffff  /* Local Data Link Feature Supported */
+> +#define  PCI_DLF_EXCHANGE_ENABLE	0x80000000  /* Data Link Feature Exchange Enable */
+> +#define PCI_DLF_STS		0x08	/* Status Register */
+> +#define  PCI_DLF_REMOTE_DLF_SUP_MASK	0x007fffff  /* Remote Data Link Feature Supported */
+> +#define  PCI_DLF_REMOTE_DLF_SUP_VALID	0x80000000  /* Remote Data Link Feature Support Valid */
+> +
+> +/* Physical Layer 16.0 GT/s */
+> +#define PCI_PL_16GT_CAP		0x04	/* Capabilities Register */
+> +#define PCI_PL_16GT_CTRL	0x08	/* Control Register */
+> +#define PCI_PL_16GT_STS		0x0c	/* Status Register */
+> +#define PCI_PL_16GT_LDPM_STS	0x10	/* Local Data Parity Mismatch Status Register */
+> +#define PCI_PL_16GT_FRDPM_STS	0x14	/* First Retimer Data Parity Mismatch Status Register */
+> +#define PCI_PL_16GT_SRDPM_STS	0x18	/* Second Retimer Data Parity Mismatch Status Register */
+> +#define PCI_PL_16GT_RSVD	0x1C	/* Reserved */
+> +#define PCI_PL_16GT_LE_CTRL	0x20	/* Lane Equalization Control Register */
+> +
+>   #endif /* LINUX_PCI_REGS_H */
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
