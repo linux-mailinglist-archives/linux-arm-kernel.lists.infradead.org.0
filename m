@@ -2,94 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 13D0B5FFAA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 05:13:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B4D455FFC6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 05:34:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SeUoQgSz3k3DcntuIPTLJO+dQR2EbGBhWPtMoMM0wno=; b=u2Wvpu4mU6EQpP
-	yp/GI56FZbdJXy1Yayj0fKhALLXXsxqBvVZRMRGleSPD8um/9xxwx6PAjXBw3QcS3Cxwhjrf5hLyL
-	ItVWz9g/pxfkktIrKJC7EVdQNz1UvfGGWFnIAQQqqnyGltrPN3zlObHHBQOGyV/uyIskbXGmkV+vG
-	C9mUhHJXcvsRIDidu9o0Oq6Huzi3zPGJ+hwNj23BBoW5Dk+/5HKqGVkraQxMmYnf9MT140wUPtyDj
-	8N+fggVUmx7h9nAQgkUxrRGEGpEscQsvnRdU0290r1MbbneQDBjI/s17QyJFWUNM9A7oAW268qlQT
-	UXOF444FY5Dy34Nc4UqA==;
+	List-Owner; bh=n+OA8erg5vML+wmfomyN1exWlvdo/j7DNXjsCeveQsw=; b=P9D1eK7w/3rFE4
+	xaaIDj8aNglbVGYebKXYJZrpnUYH8r2EInPcBwTwBFCQMN35Vmw6zcpJYyFh4MKuOuZBW1hEXkZvw
+	r8wYvxfzbPtBJipKFOdaSx/Dme0B6jJOrR7HImPL4d/gBeaNti4gBQWeuYP1F/SBrjQNUFiCZm2Nc
+	QRTZTRGmj1WPwizFPbyDW0f7yW76/Vb5OwJ7YRJ97PIyvOIDcwLT4XgT5je/oruxki3UJnoyNkRqt
+	zab2SUJV8J9K8F0igrp8AmOnIkZfkgAe6ulTCo27wa+AKy44Eko/QWwFQvyXH2EwLwTBImH40opfj
+	R7DTEBYKf2nNAhdm6PwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hjEfM-0007O3-Of; Fri, 05 Jul 2019 03:13:40 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1hjEzO-0005Qj-7m; Fri, 05 Jul 2019 03:34:22 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjEf7-0007Nc-JE
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 03:13:26 +0000
-Received: by mail-pf1-x441.google.com with SMTP id r1so3635362pfq.12
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 04 Jul 2019 20:13:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=N2IO4pfRvp3fi/Bx06vT+ESFz9m9oS+vnVgitDhXnlk=;
- b=cvinMYul5caH68j0PDS1o1euY/qMSIt+eJQzgm97Fqa3GfDOq2oEsUvOQNXrVCwh48
- emTL3XAhJmoeXJkhWcNykVeXoXydlL1bSbR2Gf72J2XcSnSALaX/tRuyp+e9PbFFtm8o
- moR49LBYEp8iEDHV43t1iwy4GQJTIyuu9Imgn0OB6mNxMjcPa67SXzpag/SNO5FOnHgi
- iGRCbEtykbhpWgiZ1ou2DAIZAaY3BXz559PgIlxdvNevnIXUWSGjhlNaKo/D8C3hE5WW
- Pcx5u2fhD/KRr0T3mGOBGHtb72tSELxuy9O8+Y8EJViFdkfRMGp0hZsPJ+iiJ4lmIbFT
- 3HYw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=N2IO4pfRvp3fi/Bx06vT+ESFz9m9oS+vnVgitDhXnlk=;
- b=Zyrgl8wJhX3ydss8Wrd5BFPlQJ7anMWLprvXas8Hj3lYZ/JvkhCKA8GGQWjGanOAwd
- 4+GL9x6r72aX4SwHbsNO+JKR2/F5SzJGKnRJXfq/MwmcQ5cy8kTmrYS5nQEdc7Z5DY19
- KfmB+pVQvMyLWaeaQn+NadQBLOjPODomBSoXnVE05IXU7on2lHk36EpnXf71Jjzzm83g
- 9UmmSh2IAy9d0KsIh5+VsZHbrwRGW9P6mzhCj24H4uQNsZEmrUtwRAuQRMyDVFsA1ddZ
- owIw5bLORMhJlUsXB/DqeGaBrlFzV6Buvze3Fzk+lTX8oyRIstlTiutu0FdCeH1sAPds
- OHOg==
-X-Gm-Message-State: APjAAAWILimjcbNaG/tHLpJPJYtkeft80A6drCyyAQ77sq/CniL79Vvw
- 0rqIUYjaBMG06kMRpqdT4rsvLg==
-X-Google-Smtp-Source: APXvYqzqeRpd3KPGd5X2doKamT8zLl4p5im8dqSN/7y2ZSp4g4fAZ+OLBA5C1SDmUDXXCWg7N2SIug==
-X-Received: by 2002:a17:90a:5288:: with SMTP id
- w8mr1705563pjh.61.1562296402187; 
- Thu, 04 Jul 2019 20:13:22 -0700 (PDT)
-Received: from localhost ([122.172.21.205])
- by smtp.gmail.com with ESMTPSA id s20sm7499185pfe.169.2019.07.04.20.13.20
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 04 Jul 2019 20:13:20 -0700 (PDT)
-Date: Fri, 5 Jul 2019 08:43:18 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Julien Thierry <julien.thierry@arm.com>
-Subject: Re: [PATCH v4.4 10/45] mm/kasan: add API to check memory regions
-Message-ID: <20190705031318.qnhrvfrzjqk24r3f@vireshk-i7>
-References: <cover.1560480942.git.viresh.kumar@linaro.org>
- <0cedfc51f5941ab2c2e9a09149d34c7451efda56.1560480942.git.viresh.kumar@linaro.org>
- <9c5374d4-1775-572d-ba79-b161a82190c6@arm.com>
+ id 1hjEz1-0005P0-JH; Fri, 05 Jul 2019 03:34:02 +0000
+X-UUID: b5ca752380d54acf8a86064ac61808b9-20190704
+X-UUID: b5ca752380d54acf8a86064ac61808b9-20190704
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <jungo.lin@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 725953486; Thu, 04 Jul 2019 19:33:43 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 4 Jul 2019 20:33:41 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 5 Jul 2019 11:33:38 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 5 Jul 2019 11:33:38 +0800
+Message-ID: <1562297618.1212.46.camel@mtksdccf07>
+Subject: Re: [RFC,v3 9/9] media: platform: Add Mediatek ISP P1 shared memory
+ device
+From: Jungo Lin <jungo.lin@mediatek.com>
+To: Tomasz Figa <tfiga@chromium.org>
+Date: Fri, 5 Jul 2019 11:33:38 +0800
+In-Reply-To: <20190701072532.GB137710@chromium.org>
+References: <jungo.lin@mediatek.com>
+ <20190611035344.29814-1-jungo.lin@mediatek.com>
+ <20190611035344.29814-10-jungo.lin@mediatek.com>
+ <20190701072532.GB137710@chromium.org>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <9c5374d4-1775-572d-ba79-b161a82190c6@arm.com>
-User-Agent: NeoMutt/20180716-391-311a52
+X-TM-SNTS-SMTP: 7BEF9DF5697C2F12ECF156EE294B426CF4C5ABEF37112D595BCD108E81DA91962000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190704_201325_666868_2C8425A7 
-X-CRM114-Status: GOOD (  11.28  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190704_203359_650250_377D6FC1 
+X-CRM114-Status: GOOD (  33.73  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 T_PDS_NO_HELO_DNS      High profile HELO but no A record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,30 +77,480 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- stable@vger.kernel.org, mark.brown@arm.com,
- Russell King <rmk+kernel@arm.linux.org.uk>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, sean.cheng@mediatek.com, mchehab@kernel.org,
+ rynn.wu@mediatek.com, srv_heupstream@mediatek.com, robh@kernel.org,
+ ryan.yu@mediatek.com, frankie.chiu@mediatek.com, hverkuil@xs4all.nl,
+ matthias.bgg@gmail.com, sj.huang@mediatek.com,
+ linux-mediatek@lists.infradead.org, laurent.pinchart@ideasonboard.com,
+ ddavenport@chromium.org, frederic.chen@mediatek.com,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 04-07-19, 15:15, Julien Thierry wrote:
-> I know you have updated the code since then but the issue seems to be
-> also present on your updated branch.
+Hi Tomasz,
+
+On Mon, 2019-07-01 at 16:25 +0900, Tomasz Figa wrote:
+> Hi Jungo,
 > 
-> This patch breaks the build when enabling CONFIG_KASAN because in 4.4
-> check_memory_region() only takes 3 arguments.
+> On Tue, Jun 11, 2019 at 11:53:44AM +0800, Jungo Lin wrote:
+> > The purpose of this child device is to provide shared
+> > memory management for exchanging tuning data between co-processor
+> > and the Pass 1 unit of the camera ISP system, including cache
+> > buffer handling.
+> > 
+> 
+> Looks like we haven't really progressed on getting this replaced with
+> something that doesn't require so much custom code. Let me propose something
+> better then.
+> 
+> We already have a reserved memory mode in DT. If it has a compatible string
+> of "shared-dma-pool", it would be registered in the coherent DMA framework
+> [1]. That would make it available for consumer devices to look-up.
+> 
+> Now if we add a "memory-region" property to the SCP device node and point it
+> to our reserved memory node, the SCP driver could look it up and hook to the
+> DMA mapping API using of_reserved_mem_device_init_by_idx[2].
+> 
+> That basically makes any dma_alloc_*(), dma_map_*(), etc. calls on the SCP
+> struct device use the coherent DMA ops, which operate on the assigned memory
+> pool. With that, the P1 driver could just directly use those calls to
+> manage the memory, without any custom code.
+> 
+> There is an example how this setup works in the s5p-mfc driver[3], but it
+> needs to be noted that it creates child nodes, because it can have more than
+> 1 DMA port, which may need its own memory pool. In our case, we wouldn't
+> need child nodes and could just use the SCP device directly.
+> 
+> [1] https://elixir.bootlin.com/linux/v5.2-rc7/source/kernel/dma/coherent.c#L345
+> [2] https://elixir.bootlin.com/linux/v5.2-rc7/source/drivers/of/of_reserved_mem.c#L312
+> [3] https://elixir.bootlin.com/linux/v5.2-rc7/source/drivers/media/platform/s5p-mfc/s5p_mfc.c#L1075
+> 
+> Let me also post some specific comments below, in case we end up still
+> needing any of the code.
+> 
 
-Fixed and pushed again. Thanks.
+Thanks your suggestions.
 
-I have also tried enabling all the other ifdefs used in these patches
-to make sure it doesn't work after enabling them. Looks good now.
+After applying your suggestion in SCP device driver, we could remove
+mtk_cam-smem.h/c. Currently, we use dma_alloc_coherent with SCP device
+to get SCP address. We could touch the buffer with this SCP address in
+SCP processor. 
 
--- 
-viresh
+After that, we use dma_map_page_attrs with P1 device which supports
+IOMMU domain to get IOVA address. For this address, we will assign
+it to our ISP HW device to proceed.
+
+Below is the snippet for ISP P1 compose buffer initialization.
+
+	ptr = dma_alloc_coherent(p1_dev->cam_dev.smem_dev,
+				 MAX_COMPOSER_SIZE, &addr, GFP_KERNEL);
+	if (!ptr) {
+		dev_err(dev, "failed to allocate compose memory\n");
+		return -ENOMEM;
+	}
+	isp_ctx->scp_mem_pa = addr;
+	dev_dbg(dev, "scp addr:%pad\n", &addr);
+
+	/* get iova address */
+	addr = dma_map_page_attrs(dev, phys_to_page(addr), 0,
+				  MAX_COMPOSER_SIZE, DMA_BIDIRECTIONAL,
+				  DMA_ATTR_SKIP_CPU_SYNC);
+	if (dma_mapping_error(dev, addr)) {
+		isp_ctx->scp_mem_pa = 0;
+		dev_err(dev, "Failed to map scp iova\n");
+		return -ENOMEM;
+	}
+	isp_ctx->scp_mem_iova = addr;
+
+Moreover, we have another meta input buffer usage.
+For this kind of buffer, it will be allocated by V4L2 framework
+with dma_alloc_coherent with SCP device. In order to get IOVA,
+we will add dma_map_page_attrs in vb2_ops' buf_init function.
+In buf_cleanup function, we will call dma_unmap_page_attrs function.
+
+Based on these current implementation, do you think it is correct?
+If we got any wrong, please let us know. 
+
+Btw, we also DMA_ATTR_NO_KERNEL_MAPPING DMA attribte to
+avoid dma_sync_sg_for_device. Othewise, it will hit the KE.
+Maybe we could not get the correct sg_table.
+Do you think it is a bug and need to fix?
+
+For this new implementation, it will apply ISP P1 & P2 drivers[1].
+
+[1] https://patchwork.kernel.org/cover/10905221/
+
+> > Signed-off-by: Jungo Lin <jungo.lin@mediatek.com>
+> > ---
+> > This patch depends on "Add support for mt8183 SCP"[1].
+> > 
+> > [1] https://patchwork.kernel.org/cover/10972143/
+> > ---
+> >  .../platform/mtk-isp/isp_50/cam/Makefile      |   1 +
+> >  .../mtk-isp/isp_50/cam/mtk_cam-smem.c         | 304 ++++++++++++++++++
+> >  .../mtk-isp/isp_50/cam/mtk_cam-smem.h         |  18 ++
+> >  3 files changed, 323 insertions(+)
+> >  create mode 100644 drivers/media/platform/mtk-isp/isp_50/cam/mtk_cam-smem.c
+> >  create mode 100644 drivers/media/platform/mtk-isp/isp_50/cam/mtk_cam-smem.h
+> > 
+> > diff --git a/drivers/media/platform/mtk-isp/isp_50/cam/Makefile b/drivers/media/platform/mtk-isp/isp_50/cam/Makefile
+> > index 95f0b1c8fa1c..d545ca6f09c5 100644
+> > --- a/drivers/media/platform/mtk-isp/isp_50/cam/Makefile
+> > +++ b/drivers/media/platform/mtk-isp/isp_50/cam/Makefile
+> > @@ -4,5 +4,6 @@ mtk-cam-isp-objs += mtk_cam-ctrl.o
+> >  mtk-cam-isp-objs += mtk_cam-v4l2-util.o
+> >  mtk-cam-isp-objs += mtk_cam.o
+> >  mtk-cam-isp-objs += mtk_cam-scp.o
+> > +mtk-cam-isp-objs += mtk_cam-smem.o
+> >  
+> >  obj-$(CONFIG_VIDEO_MEDIATEK_ISP_PASS1) += mtk-cam-isp.o
+> > \ No newline at end of file
+> > diff --git a/drivers/media/platform/mtk-isp/isp_50/cam/mtk_cam-smem.c b/drivers/media/platform/mtk-isp/isp_50/cam/mtk_cam-smem.c
+> > new file mode 100644
+> > index 000000000000..a9845668ce10
+> > --- /dev/null
+> > +++ b/drivers/media/platform/mtk-isp/isp_50/cam/mtk_cam-smem.c
+> > @@ -0,0 +1,304 @@
+> > +// SPDX-License-Identifier: GPL-2.0
+> > +//
+> > +// Copyright (c) 2018 MediaTek Inc.
+> > +
+> > +#include <asm/cacheflush.h>
+> > +#include <linux/device.h>
+> > +#include <linux/io.h>
+> > +#include <linux/iommu.h>
+> > +#include <linux/of.h>
+> > +#include <linux/of_fdt.h>
+> > +#include <linux/of_reserved_mem.h>
+> > +#include <linux/platform_device.h>
+> > +#include <linux/platform_data/mtk_scp.h>
+> > +#include <media/videobuf2-dma-contig.h>
+> > +
+> > +#include "mtk_cam-smem.h"
+> > +
+> > +static struct dma_map_ops smem_dma_ops;
+> > +
+> > +struct mtk_cam_smem_dev {
+> > +	struct device *dev;
+> > +	struct sg_table sgt;
+> > +	struct page **smem_pages;
+> > +	dma_addr_t smem_base;
+> > +	dma_addr_t smem_dma_base;
+> > +	int smem_size;
+> > +};
+> > +
+> > +struct dma_coherent_mem {
+> > +	void		*virt_base;
+> > +	dma_addr_t	device_base;
+> > +	unsigned long	pfn_base;
+> > +	int		size;
+> > +	int		flags;
+> > +	unsigned long	*bitmap;
+> > +	spinlock_t	spinlock; /* dma_coherent_mem attributes protection */
+> > +	bool		use_dev_dma_pfn_offset;
+> > +};
+> > +
+> > +dma_addr_t mtk_cam_smem_iova_to_scp_addr(struct device *dev,
+> > +					 dma_addr_t iova)
+> > +{
+> > +	struct iommu_domain *domain;
+> > +	dma_addr_t addr, limit;
+> > +	struct mtk_cam_smem_dev *smem_dev = dev_get_drvdata(dev);
+> > +
+> > +	domain = iommu_get_domain_for_dev(dev);
+> > +	if (!domain) {
+> > +		dev_warn(dev, "No iommu group domain\n");
+> > +		return 0;
+> > +	}
+> > +
+> > +	addr = iommu_iova_to_phys(domain, iova);
+> > +	limit = smem_dev->smem_base + smem_dev->smem_size;
+> > +	if (addr < smem_dev->smem_base || addr >= limit) {
+> > +		dev_err(dev,
+> > +			"Unexpected scp_addr:%pad must >= %pad and < %pad)\n",
+> > +			&addr, &smem_dev->smem_base, &limit);
+> > +		return 0;
+> > +	}
+> > +	return addr;
+> > +}
+> 
+> This isn't correct. One could pass an IOVA that wasn't allocated for the SCP
+> and then the address wouldn't be valid, because it would point outside of
+> the address range allowed for SCP to access and also it would only point to
+> the first page backing the IOVA.
+> 
+> The correct approach would be to always carry SCP DMA address and IOVA
+> together in some kind of struct describing such buffers.
+> 
+
+We will remove this function in next patch & handle this in buf_init
+function.
+
+> > +
+> > +static int mtk_cam_smem_get_sgtable(struct device *dev,
+> > +				    struct sg_table *sgt,
+> > +				    void *cpu_addr, dma_addr_t dma_addr,
+> > +				    size_t size, unsigned long attrs)
+> > +{
+> > +	struct mtk_cam_smem_dev *smem_dev = dev_get_drvdata(dev);
+> > +	size_t pages_count = PAGE_ALIGN(size) >> PAGE_SHIFT;
+> > +	dma_addr_t scp_addr = mtk_cam_smem_iova_to_scp_addr(dev, dma_addr);
+> > +	u32 pages_start = (scp_addr - smem_dev->smem_base) >> PAGE_SHIFT;
+> > +
+> > +	dev_dbg(dev,
+> > +		"%s:page:%u va:%pK scp addr:%pad, aligned size:%zu pages:%zu\n",
+> > +		__func__, pages_start, cpu_addr, &scp_addr, size, pages_count);
+> > +
+> > +	return sg_alloc_table_from_pages(sgt,
+> > +		smem_dev->smem_pages + pages_start,
+> > +		pages_count, 0, size, GFP_KERNEL);
+> > +}
+> 
+> This should be just dma_get_sgtable_attrs(), in the approach I suggested at
+> the top.
+> 
+
+Yes, we will remove this in next patch.
+
+> > +
+> > +static void *mtk_cam_smem_get_cpu_addr(struct mtk_cam_smem_dev *smem_dev,
+> > +				       dma_addr_t addr)
+> > +{
+> > +	struct device *dev = smem_dev->dev;
+> > +	struct dma_coherent_mem *dma_mem = dev->dma_mem;
+> > +
+> > +	if (addr < smem_dev->smem_base ||
+> > +	    addr > smem_dev->smem_base + smem_dev->smem_size) {
+> 
+> This is off by one, should be >=.
+> 
+> Also, this wouldn't really guarantee the CPU access the caller is going to
+> do is valid, because it doesn't consider the access operation size.
+> 
+> Generally I'd suggest designing the code so that it doesn't have to convert
+> offset addresses between different address spaces.
+> 
+
+Yes, we will remove this in next patch.
+
+> > +		dev_err(dev, "Invalid scp_addr %pad from sg\n", &addr);
+> > +		return NULL;
+> > +	}
+> > +	return dma_mem->virt_base + (addr - smem_dev->smem_base);
+> > +}
+> > +
+> > +static void mtk_cam_smem_sync_sg_for_cpu(struct device *dev,
+> > +					 struct scatterlist *sgl, int nelems,
+> > +					 enum dma_data_direction dir)
+> > +{
+> > +	struct mtk_cam_smem_dev *smem_dev = dev_get_drvdata(dev);
+> > +	dma_addr_t scp_addr = sg_phys(sgl);
+> > +	void *cpu_addr = mtk_cam_smem_get_cpu_addr(smem_dev, scp_addr);
+> > +
+> > +	dev_dbg(dev,
+> > +		"__dma_unmap_area:scp_addr:%pad,vaddr:%pK,size:%d,dir:%d\n",
+> > +		&scp_addr, cpu_addr, sgl->length, dir);
+> > +	__dma_unmap_area(cpu_addr, sgl->length, dir);
+> 
+> It's not allowed to use this function anywhere outside of the DMA API
+> internals. See the comment [4].
+> 
+> [4] https://elixir.bootlin.com/linux/v5.2-rc7/source/arch/arm64/include/asm/cacheflush.h#L112
+> 
+
+Ok, got it and remove this next patch.
+
+> > +}
+> > +
+> > +static void mtk_cam_smem_sync_sg_for_device(struct device *dev,
+> > +					    struct scatterlist *sgl,
+> > +					    int nelems,
+> > +					    enum dma_data_direction dir)
+> > +{
+> > +	struct mtk_cam_smem_dev *smem_dev = dev_get_drvdata(dev);
+> > +	dma_addr_t scp_addr = sg_phys(sgl);
+> > +	void *cpu_addr = mtk_cam_smem_get_cpu_addr(smem_dev, scp_addr);
+> > +
+> > +	dev_dbg(dev,
+> > +		"__dma_map_area:scp_addr:%pad,vaddr:%pK,size:%d,dir:%d\n",
+> > +		&scp_addr, cpu_addr, sgl->length, dir);
+> > +	__dma_map_area(cpu_addr, sgl->length, dir);
+> 
+> Ditto.
+> 
+
+Ok, got it and remove this next patch.
+
+> > +}
+> > +
+> > +static void mtk_cam_smem_setup_dma_ops(struct device *dev,
+> > +				       struct dma_map_ops *smem_ops)
+> > +{
+> > +	memcpy((void *)smem_ops, dev->dma_ops, sizeof(*smem_ops));
+> > +	smem_ops->get_sgtable = mtk_cam_smem_get_sgtable;
+> > +	smem_ops->sync_sg_for_device = mtk_cam_smem_sync_sg_for_device;
+> > +	smem_ops->sync_sg_for_cpu = mtk_cam_smem_sync_sg_for_cpu;
+> > +	set_dma_ops(dev, smem_ops);
+> > +}
+> > +
+> > +static int mtk_cam_reserved_drm_sg_init(struct mtk_cam_smem_dev *smem_dev)
+> > +{
+> > +	u32 size_align, n_pages;
+> > +	struct device *dev = smem_dev->dev;
+> > +	struct sg_table *sgt = &smem_dev->sgt;
+> > +	struct page **pages;
+> > +	dma_addr_t dma_addr;
+> > +	unsigned int i;
+> > +	int ret;
+> > +
+> > +	smem_dev->smem_base = scp_get_reserve_mem_phys(SCP_ISP_MEM2_ID);
+> > +	smem_dev->smem_size = scp_get_reserve_mem_size(SCP_ISP_MEM2_ID);
+> > +	if (!smem_dev->smem_base || !smem_dev->smem_size)
+> > +		return -EPROBE_DEFER;
+> > +
+> > +	dev_info(dev, "%s dev:0x%pK base:%pad size:%u MiB\n",
+> > +		 __func__,
+> > +		 smem_dev->dev,
+> > +		 &smem_dev->smem_base,
+> > +		 (smem_dev->smem_size / SZ_1M));
+> > +
+> > +	size_align = PAGE_ALIGN(smem_dev->smem_size);
+> > +	n_pages = size_align >> PAGE_SHIFT;
+> > +
+> > +	pages = kmalloc_array(n_pages, sizeof(struct page *), GFP_KERNEL);
+> > +	if (!pages)
+> > +		return -ENOMEM;
+> > +
+> > +	for (i = 0; i < n_pages; i++)
+> > +		pages[i] = phys_to_page(smem_dev->smem_base + i * PAGE_SIZE);
+> > +
+> > +	ret = sg_alloc_table_from_pages(sgt, pages, n_pages, 0,
+> > +					size_align, GFP_KERNEL);
+> > +	if (ret) {
+> > +		dev_err(dev, "failed to alloca sg table:%d\n", ret);
+> > +		goto fail_table_alloc;
+> > +	}
+> > +	sgt->nents = dma_map_sg_attrs(dev, sgt->sgl, sgt->orig_nents,
+> > +				      DMA_BIDIRECTIONAL,
+> > +				      DMA_ATTR_SKIP_CPU_SYNC);
+> > +	if (!sgt->nents) {
+> > +		dev_err(dev, "failed to dma sg map\n");
+> > +		goto fail_map;
+> > +	}
+> > +
+> > +	dma_addr = sg_dma_address(sgt->sgl);
+> > +	ret = dma_declare_coherent_memory(dev, smem_dev->smem_base,
+> > +					  dma_addr, size_align,
+> > +					  DMA_MEMORY_EXCLUSIVE);
+> > +	if (ret) {
+> > +		dev_err(dev, "Unable to declare smem  memory:%d\n", ret);
+> > +		goto fail_map;
+> > +	}
+> > +
+> > +	dev_info(dev, "Coherent mem pa:%pad/%pad, size:%d\n",
+> > +		 &smem_dev->smem_base, &dma_addr, size_align);
+> > +
+> > +	smem_dev->smem_size = size_align;
+> > +	smem_dev->smem_pages = pages;
+> > +	smem_dev->smem_dma_base = dma_addr;
+> > +
+> > +	return 0;
+> > +
+> > +fail_map:
+> > +	sg_free_table(sgt);
+> > +fail_table_alloc:
+> > +	while (n_pages--)
+> > +		__free_page(pages[n_pages]);
+> > +	kfree(pages);
+> > +
+> > +	return -ENOMEM;
+> > +}
+> > +
+> > +/* DMA memory related helper functions */
+> > +static void mtk_cam_memdev_release(struct device *dev)
+> > +{
+> > +	vb2_dma_contig_clear_max_seg_size(dev);
+> > +}
+> > +
+> > +static struct device *mtk_cam_alloc_smem_dev(struct device *dev,
+> > +					     const char *name)
+> > +{
+> > +	struct device *child;
+> > +	int ret;
+> > +
+> > +	child = devm_kzalloc(dev, sizeof(*child), GFP_KERNEL);
+> > +	if (!child)
+> > +		return NULL;
+> > +
+> > +	child->parent = dev;
+> > +	child->iommu_group = dev->iommu_group;
+> 
+> This isn't something that can be set explicitly. It's an internal field of
+> the IOMMU subsystem.
+> 
+> > +	child->release = mtk_cam_memdev_release;
+> > +	dev_set_name(child, name);
+> > +	set_dma_ops(child, get_dma_ops(dev));
+> > +	child->dma_mask = dev->dma_mask;
+> > +	ret = dma_set_coherent_mask(child, DMA_BIT_MASK(32));
+> > +	if (ret)
+> > +		return NULL;
+> > +
+> > +	vb2_dma_contig_set_max_seg_size(child, DMA_BIT_MASK(32));
+> > +
+> > +	if (device_register(child)) {
+> > +		device_del(child);
+> > +		return NULL;
+> > +	}
+> > +
+> > +	return child;
+> > +}
+> 
+> We shouldn't need child devices, just one SCP device, as I mentioned above.
+> 
+
+Ok, got your point. Just keep one single SCP device for single reserved
+memory range.
+
+> > +
+> > +static int mtk_cam_composer_dma_init(struct mtk_isp_p1_ctx *isp_ctx)
+> > +{
+> > +	struct isp_p1_device *p1_dev = p1_ctx_to_dev(isp_ctx);
+> > +	struct device *dev = &p1_dev->pdev->dev;
+> > +	u32 size;
+> > +	dma_addr_t addr;
+> > +
+> > +	isp_ctx->scp_mem_pa = scp_get_reserve_mem_phys(SCP_ISP_MEM_ID);
+> > +	size = PAGE_ALIGN(scp_get_reserve_mem_size(SCP_ISP_MEM_ID));
+> > +	if (!isp_ctx->scp_mem_pa || !size)
+> > +		return -EPROBE_DEFER;
+> > +
+> > +	dev_info(dev, "scp addr:%pad size:0x%x\n", &isp_ctx->scp_mem_pa, size);
+> 
+> This isn't something that deserves the "info" log level. Should be "dbg"
+> or removed.
+> 
+
+Ok, we will change the log level from info to debug.
+
+> Best regards,
+> Tomasz
+> 
+> _______________________________________________
+> Linux-mediatek mailing list
+> Linux-mediatek@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-mediatek
+
+Thanks for your valued comments.
+
+Best regards,
+
+
+Jungo
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
