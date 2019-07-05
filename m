@@ -2,124 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A13960831
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 16:45:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DFEF66082A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 16:44:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jkP93HmOVd/UrdFc/em0e+FRJ+teMRDoCEz/TXGR5Ls=; b=rACPqvi6MGX1md
-	Uc6XQdW/UNq+E6kTuXowbKW5BO7Jt8DmcGCXNdfrQ2kuBgGF0h5mzQm8PQJ+pjSkfZXMTDoz0S8jM
-	mHA8cBUOmdTfzDZm+rB2MisJrM2R7HIAfv1AR+vUVJ0OLQW7ErNqVeDZ77jvYEjorPKGSjccJLoVh
-	kF+NEQEygzI6vaN50kRlrPYM2ycr6tE5PkKd0Bq36hb7h54yUchuCMszPEnPZZe3gYkFI3W5naRLR
-	RGaPcj4Pe+Zg1YsNqW3HfsnTQ1AgJi+dTgnt+oS4ykd9irqb/iUh/lp8qrzaz0JiE1Cl6JkYCqr1T
-	m5MwZQPvnVN0m2u42oVg==;
+	List-Owner; bh=v2l0ao/gNJ38w7R1Olys7CBNiABcLmL3LVfuFBcIDII=; b=TiEEXvMls3tU04
+	8eMTig49UJtrQNAeQk6brPT5wmi1J7Hkb2HnWweTG6q7mvw5Rt/zHIr20p2QtVlRK6J6ZWXz7SwXD
+	fnt+5cD7TzgiWvmZVyJubMcNd+eqK8pVV8/AyivXWPU+QKAh0l8EQY1pCVZZV9F8P2xKCMhYOuN3q
+	g75v/0n06i+Hs1ckOlHhtpdcDEMNgYfxfA0CaYnGUNlsYOtrHFlseH92VmtQCGfvfRbg1mpVIKOgu
+	AYTu80OnuswXhHwBE8JZrUQlv4x5p6hpdZ2c/Z+/EsaL4HMC9w6kM8MEj4ZZAjdine0ZlcuykB9wZ
+	v+CjjtiTF4f4j+ZflfRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hjPSh-0008Kh-2X; Fri, 05 Jul 2019 14:45:19 +0000
+	id 1hjPS3-0006O2-6F; Fri, 05 Jul 2019 14:44:39 +0000
 Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjPRB-0005pc-6s
- for linux-arm-kernel@bombadil.infradead.org; Fri, 05 Jul 2019 14:43:45 +0000
+ id 1hjPQz-0005MX-MN
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 05 Jul 2019 14:43:33 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=MIME-Version:Content-Transfer-Encoding:
- Content-ID:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:To:
- From:Sender:Reply-To:Cc:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=EFphJe1CVVP/nzRxA8x6BhXKv/0bjU3/TiVkvgOFPek=; b=ks5Gl4uWB0yDzaU8M0qhMi/wEi
- pvlGfNAtdVkxiI49Z4r3KfXaeEfVD/B7v8NTprXE3zkPEHh4+iA/0q2PuI1kShMrVh01ETMhuMQcA
- O84pEdOLhqTkN4lxZ3a7sdayKH0TQh5ovQ00J6vtHyd0fq2fN4xwDs0J7rgsoVC+tlfZWJxnymYtV
- h1DiB01wL+Z6nCC6GA9nwOyNxlXDhMkrc2OHwWJqsK9K33Co8Z+pEMR+B5GuPz7OWxglgy/ZBeyEe
- hOwLTqTmenguvBpZnI5dm97JoXQn/vHZ6CJEgdEWN/4tQJQCgEzhKz4nQ2TihW/PmXapsjkmdApsq
- 54f4gY2w==;
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+ d=infradead.org; s=merlin.20170209; h=Content-Type:Cc:To:Subject:Message-ID:
+ Date:From:In-Reply-To:References:MIME-Version:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=60adLkZbywPEuKsZCLqNo80zya9muW5FO6I+W0n23fY=; b=GxStsqP65UfGI77xY05HOnCnK
+ HahdRjl9CCRTcnu3zoRStGc+ffhQAFkpN8/hVL/H93f8xmDhrLH+k+jS7e0igwx+s7mMg3Rt5MHn3
+ VcaYZbt6EfaxoDZXFU/8zrlnaoDQl3r2BV9xqJ1rT7q72C47Na74r7toC+yr4BUuYNYRftIYTesmx
+ 7MQmeL5ifH8/diODTP7QI+ntFUWL6MXJS5ReAQGSOa2pWZCcFeHlkmZ5bVdPbnnqtPedzZQZq69Yc
+ J/oYsE26MBHtI6rGE1Oz+KzrJBXyZmkPZJqHc2Clb84QnUsqC3Q6N1p21dDEZ6Y6PKalU555rQk7u
+ pg7qbnKxw==;
+Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
  by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjNHb-0001i4-EF
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 12:25:44 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x65CNqYQ030318; Fri, 5 Jul 2019 14:24:15 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : subject :
- date : message-id : references : in-reply-to : content-type : content-id :
- content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=EFphJe1CVVP/nzRxA8x6BhXKv/0bjU3/TiVkvgOFPek=;
- b=BYLU4XNoWdTNPUWd8ceyUbCwUOTaR3Zl4KnD/DGwy4jIGIeLB91fgSU0JmDTNPxB+m8B
- snlkGg5ZlGmvMkbPmJtFJx1IBbJSAsrxEj8p2sFSRZ/55OFHIdcJn55lp4s138lzPju/
- 2uKvrqJyrQP7KyltAKDUlXNckkyChpMBpj2exHAtp56yQ6Xe0YEzz3TMiVVDFV6yf+qK
- k4aCeQ/5gDkYiLxkHyPIu3B2qN1jxWF9hWyWQsPcWDqaTiLt5lzuSXvfC2uHYySkX71q
- yoaDFjY2zrcL7+8I9p+xMmvyzjquq0X4bq+uO99TSuQ+S57jzx1ZKE6MeT+G7r4ZXl4C nQ== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2tdw4ajaab-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Fri, 05 Jul 2019 14:24:14 +0200
-Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id AB07734;
- Fri,  5 Jul 2019 12:24:02 +0000 (GMT)
-Received: from Webmail-eu.st.com (sfhdag6node2.st.com [10.75.127.17])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 72FD32C47;
- Fri,  5 Jul 2019 12:24:02 +0000 (GMT)
-Received: from SFHDAG6NODE3.st.com (10.75.127.18) by SFHDAG6NODE2.st.com
- (10.75.127.17) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 5 Jul
- 2019 14:24:01 +0200
-Received: from SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6]) by
- SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6%20]) with mapi id
- 15.00.1473.003; Fri, 5 Jul 2019 14:24:02 +0200
-From: Philippe CORNU <philippe.cornu@st.com>
-To: Olivier MOYSAN <olivier.moysan@st.com>, "a.hajda@samsung.com"
- <a.hajda@samsung.com>, "narmstrong@baylibre.com" <narmstrong@baylibre.com>,
- "Laurent.pinchart@ideasonboard.com" <Laurent.pinchart@ideasonboard.com>,
- "jonas@kwiboo.se" <jonas@kwiboo.se>, "jernej.skrabec@siol.net"
- <jernej.skrabec@siol.net>, "airlied@linux.ie" <airlied@linux.ie>,
- "daniel@ffwll.ch" <daniel@ffwll.ch>, "dri-devel@lists.freedesktop.org"
- <dri-devel@lists.freedesktop.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>,
- Benjamin GAIGNARD <benjamin.gaignard@st.com>,
- Alexandre TORGUE <alexandre.torgue@st.com>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "jsarha@ti.com" <jsarha@ti.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "mark.rutland@arm.com" <mark.rutland@arm.com>, "devicetree@vger.kernel.org"
- <devicetree@vger.kernel.org>
-Subject: Re: [PATCH 1/3] drm/bridge: sii902x: fix missing reference to mclk
- clock
-Thread-Topic: [PATCH 1/3] drm/bridge: sii902x: fix missing reference to mclk
- clock
-Thread-Index: AQHVMO2KR4mZoMb3BkGaiUB8X+1y2qa71auA
-Date: Fri, 5 Jul 2019 12:24:02 +0000
-Message-ID: <39d9bf8f-a906-7f69-582d-b2996e600c0f@st.com>
-References: <1562082426-14876-1-git-send-email-olivier.moysan@st.com>
- <1562082426-14876-2-git-send-email-olivier.moysan@st.com>
-In-Reply-To: <1562082426-14876-2-git-send-email-olivier.moysan@st.com>
-Accept-Language: fr-FR, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.47]
-Content-ID: <DDC1C03DC92D944FA408C2A9B6DAE01F@st.com>
+ id 1hjNKH-0001kq-2L
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 12:28:30 +0000
+Received: by mail-oi1-x244.google.com with SMTP id w7so7031211oic.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 05 Jul 2019 05:28:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=60adLkZbywPEuKsZCLqNo80zya9muW5FO6I+W0n23fY=;
+ b=gR41PYpJoUr4wNhUj+7pOS/whyCQVlB3Y/FyW0MXD2QyAPmFIaSnPr098/+LTqlkaF
+ UbXq0mYJxABiIJQ3so7RJcyrf3LxVOOhasmetOHb8+QYHEy/2oifmyt+2t4a9mGC2ve1
+ K9Aa3Qr8DFM4YgqrWExIPCc+mCc929pXBJcazbnKwUpHfkH3EY5Zqd/VH6xjqOUklZ7v
+ PB1Nj3kVv/30co+ycIaMtFK+5h/shWiDZ85EQV1w9nfGxSVdLOUe6sbpa8xqYHL8MwQR
+ YsIK6mntMv+DvJywT2Z2CQVtFUAC/NO/9KtXN+AHYh/yx3dXTSBrJdEFgqJ9GvFxzeWn
+ fUDg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=60adLkZbywPEuKsZCLqNo80zya9muW5FO6I+W0n23fY=;
+ b=gYysQ6EnSPnwmFROzWvvZPpa8LjLr8zZewgXzuoBsTVB1Y0KsuXIsyykUoaUR8zlhy
+ nSU0ykt/dIdJ/cBhkdUPtjERIJnFNwSwv6/SLbzqe7cXkZPUTPP5EBiex24piYV7cRlT
+ ZetzGIDreSTl7RZK7qflarn3uoI1zeEeV1o66NU+48+ItlUGPUJUudFsGW7cIB/A4PtZ
+ llHdda8MUwtP8VjJI8ekD4dQ2kIVbaVWrAIG60PyDD5zf3ajX4OMvTydRZodPMU1FB/u
+ mTNpTNR5faqWLeeCoVWchbjYNDG9+bU6X0L56oJTu1EuT35K4LjWJgMY9d8PeHcUh+DT
+ PTzA==
+X-Gm-Message-State: APjAAAXv5ZXjlooPeGtjGv6bcfohA+I2fEkvLj8VyL5D7QtSmPpIFPdy
+ 20MKjAkhPLv7/nwoSIlFs7OyFQXiCsuIP5jpvTE=
+X-Google-Smtp-Source: APXvYqySiSmBKjmMw33BQAZIcvRHSfEaWhuwsnn5aoM4/Gm2bIvNUsuuNGFU+OG8Pfy+n9z73RhZ+f/DsrJ8XacvS3A=
+X-Received: by 2002:aca:cf0f:: with SMTP id f15mr1784578oig.169.1562329584866; 
+ Fri, 05 Jul 2019 05:26:24 -0700 (PDT)
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-07-05_05:, , signatures=0
+References: <20190624140731.24080-1-TheSven73@gmail.com>
+ <20190705072847.GA2911@vkoul-mobl>
+In-Reply-To: <20190705072847.GA2911@vkoul-mobl>
+From: Sven Van Asbroeck <thesven73@gmail.com>
+Date: Fri, 5 Jul 2019 08:26:12 -0400
+Message-ID: <CAGngYiVsUZwCUEsqRk-YtZPGYxsqzHzD7U5GeeHyAa2Yw9Z6WA@mail.gmail.com>
+Subject: Re: [PATCH] dmaengine: imx-sdma: fix use-after-free on probe error
+ path
+To: Vinod Koul <vkoul@kernel.org>
 X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: -0.9 (/)
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (thesven73[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (thesven73[at]gmail.com)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -127,6 +99,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.0 T_PDS_NO_HELO_DNS      High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -138,40 +111,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>, dmaengine@vger.kernel.org,
+ Dan Williams <dan.j.williams@intel.com>, Robin Gong <yibin.gong@nxp.com>,
+ Fabio Estevam <festevam@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Olivier,
-and many thanks for your patch.
-I do not see how audio could work without your patch, so:
-Reviewed-by: Philippe Cornu <philippe.cornu@st.com>
-Philippe :-)
+Hi Vinod,
 
-On 7/2/19 5:47 PM, Olivier Moysan wrote:
-> Add devm_clk_get call to retrieve reference to master clock.
-> 
-> Fixes: ff5781634c41 ("drm/bridge: sii902x: Implement HDMI audio support")
-> 
-> Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
-> ---
->   drivers/gpu/drm/bridge/sii902x.c | 1 +
->   1 file changed, 1 insertion(+)
-> 
-> diff --git a/drivers/gpu/drm/bridge/sii902x.c b/drivers/gpu/drm/bridge/sii902x.c
-> index dd7aa466b280..36acc256e67e 100644
-> --- a/drivers/gpu/drm/bridge/sii902x.c
-> +++ b/drivers/gpu/drm/bridge/sii902x.c
-> @@ -750,6 +750,7 @@ static int sii902x_audio_codec_init(struct sii902x *sii902x,
->   		sii902x->audio.i2s_fifo_sequence[i] |= audio_fifo_id[i] |
->   			i2s_lane_id[lanes[i]] |	SII902X_TPI_I2S_FIFO_ENABLE;
->   
-> +	sii902x->audio.mclk = devm_clk_get(dev, "mclk");
->   	if (IS_ERR(sii902x->audio.mclk)) {
->   		dev_err(dev, "%s: No clock (audio mclk) found: %ld\n",
->   			__func__, PTR_ERR(sii902x->audio.mclk));
-> 
+On Fri, Jul 5, 2019 at 3:32 AM Vinod Koul <vkoul@kernel.org> wrote:
+>
+> > +             if (ret)
+> > +                     dev_warn(&pdev->dev, "failed to get firmware name\n");
+>
+> if should have braces!
+> Applied after fixing braces!
+
+checkpatch.pl output after adding braces:
+
+WARNING: braces {} are not necessary for single statement blocks
+#102: FILE: drivers/dma/imx-sdma.c:2165:
++ if (ret) {
++ dev_warn(&pdev->dev, "failed to get firmware from device tree\n");
++ }
+
+total: 0 errors, 1 warnings, 61 lines checked
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
