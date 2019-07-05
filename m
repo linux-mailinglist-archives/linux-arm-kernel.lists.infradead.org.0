@@ -2,87 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D2C3609A8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 17:49:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B70660707
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 15:59:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o+VW0ifeSVlmij72d9KARu5A6BQ1i5JnR/rze6MaFWk=; b=hdfDlnKOKrNw33
-	dhILiqINDyfl569yQMYmtV14Anl6vABfYsek+9C9qM48MW6FOAyUTgyB0DmusptIP2HQkVAv1CJuZ
-	MNQ4bgTHpNgAhcZSiuAsDAJbKO8eolupL689fevShdXF9pnKfCPq4QmK19aZWqqs3C7uo80ySRMeg
-	GRBraGNrVzMdfXbm38bF2EF3vz9RYQlBr5kPob9xGWNqYoBD7qWS+QcmuksfAwR5M7hKzFrCpXIkZ
-	8n12U1fZK6xo8xBpRgI7SCHkTlTB34ay5+A7IXApZK41GV2OhFbYH9GwaZnF4AyDW+TYRagTvj+j6
-	T0NUo4A30hDSh+b/qxLg==;
+	List-Owner; bh=JUDg2c2HoY1XL2B2hJ1OuYPAWC2Z+shI9wTLg82kSFE=; b=umqvfVQQV3Mhz5
+	aJEshDOLaUqvlNTpOj5RMYoN+6yio23sbshMdqkZjSG2b11Bv4g0OamdnObmw2Z4p//Ym9lYNhwNY
+	BBBhwpRzW86oMcOHHXEeDkWuDtvtLl+ZH4WKt/kC4DIr9hAw0hqn81yCj684QrtWjE0jhAcqLAaMO
+	rddK4gGqqRSONFq5IJ+Qxh5rJmna8+OW6hoR7GKUZaY3G1bOEgpWGsMseyqkBTLaWN4jx4rr+yuZn
+	jQMIuWmUMEF8rjSTdENOQge+4T+tvnw2RyYex9P2W9fxZ0gY6gCy9Sxepy+DoAH4+kD26n0ZnKG4J
+	M+kNUXVUUyg6tbSh1tgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hjQSX-0003Jk-Bw; Fri, 05 Jul 2019 15:49:13 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hjOkl-0002l2-DJ; Fri, 05 Jul 2019 13:59:55 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjQNp-000605-DY
- for linux-arm-kernel@bombadil.infradead.org; Fri, 05 Jul 2019 15:44:21 +0000
+ id 1hjOA1-0005Tu-2G
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 05 Jul 2019 13:21:57 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
  References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=VCBq8195T2bhXt6tZ7Rzm483l25usl/NJbv7QMGco+U=; b=AX9eUsI8T+skT2iwszjmNdrY6
- 257uEbLCNrZbWPhDKfZg8BCxwZxvcRQIAovvSDeN+xinpoYOLwLZShM5eAngnnnvZADlFEeOLNA6P
- xF1/LtE3lL4BF9yHGjwp8mw+ytFDIvt+/ay+Ib6wpOkglNs/66XKR9tMls5MjubQtEYtlRg3FaJRH
- FyNwnSESP7QRjS7NO+o/BFHSEMaXAAdq/lDShtecL9soFvLSJreSHTQ2lsOMOoT7g00JUrvmRhldf
- uVfWlmRXdh5O/7UBskS4CwECplf02NDTlKYS+zJQvBPUkBpjQZnywBsdw5dOcvO97jSRP98z9Ich1
- LLbF1kudA==;
-Received: from mail.kernel.org ([198.145.29.99])
- by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjO2o-000271-Pb
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 13:14:31 +0000
-Received: from localhost (unknown [49.207.59.31])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7589B21850;
- Fri,  5 Jul 2019 13:13:58 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1562332439;
- bh=4Ax4YHT9pSOfjjpXXhaL2jL94bL31h816GZtxYru400=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=btwexLJg3kxAdxu2/nhXrlxBb1eB9ovzxeZoIukphlXXmuThG6+a7UmKKXTXXZKV5
- Rj/5A+nuFNluNKXQEx67FC7VlUTYscurOjjF05FdRi40H++FOcDj66rXJvMhbuFlKZ
- A6jGbKGgBlCxBwWRds42zRK38fBBWe8MEmqynafI=
-Date: Fri, 5 Jul 2019 18:40:49 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Sven Van Asbroeck <thesven73@gmail.com>
-Subject: Re: [PATCH] dmaengine: imx-sdma: fix use-after-free on probe error
- path
-Message-ID: <20190705131049.GF2911@vkoul-mobl>
-References: <CAGngYiVsUZwCUEsqRk-YtZPGYxsqzHzD7U5GeeHyAa2Yw9Z6WA@mail.gmail.com>
- <20190624140731.24080-1-TheSven73@gmail.com>
- <20190705124646.GD2911@vkoul-mobl>
- <CAGngYiW2+sBv1WqB8+csb=mZm2owziJ5wWcWLNPy7=m72ppypw@mail.gmail.com>
+ bh=nWbKLFHL+b+hFBq0825QJ0Fh8N/yT85HADdlrJpqwCQ=; b=XWROPy0+FtAzBVb0OoMY8g4Lh
+ Hcd4gsPbFyI7/Wsh16p79UicoOAH0ZjQPR308eauWdwSlheI8Vnzclua8vnU958Chu+qYrgBCSZk5
+ 1sXXi2TeMMv9OaLu5uLcLzZm5sa1sh9wvmnolcddfKtBI75XlzJw2UPBdGbIBfOk5Lg0tOYlj/Lm+
+ /ADANaqy6kVpS5pa4MuvFlL9atWwuHwyl2Y8T3Hnjn7XazxaUXlY0zOleQf20zmgEWhr7GIASP3Sz
+ 9X+itYE1EQvKSJRkOOLjyX4ms5PZr8lQdgwwMZ63FVyKDwap//XRjGVCrk22kKsyekyhsXuUa2JmA
+ lpujHCAUA==;
+Received: from vps0.lunn.ch ([185.16.172.187])
+ by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hjO9u-0004t0-1e
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 13:21:52 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+ s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=nWbKLFHL+b+hFBq0825QJ0Fh8N/yT85HADdlrJpqwCQ=; b=3GP3RPKu7ZpFV7+cfZjE+vohUc
+ Bex/2CpZC7Ala0E0eG4LZVetEHQEb/pfJHowfchWGZpWrdgaXwHw7j7iVZVhdnGDzqhJtwb9f/Eeo
+ KLOig8uZwjFnSMbwTDYL8WRA0Mk0Pe6SrZtuUPnX5rsJaDgQ9SE3ZqwIKhT9NdjVOm9A=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.89)
+ (envelope-from <andrew@lunn.ch>)
+ id 1hjO7O-0001Br-S6; Fri, 05 Jul 2019 15:19:14 +0200
+Date: Fri, 5 Jul 2019 15:19:14 +0200
+From: Andrew Lunn <andrew@lunn.ch>
+To: Claudiu Manoil <claudiu.manoil@nxp.com>
+Subject: Re: [PATCH net-next 4/6] arm64: dts: fsl: ls1028a: Add Felix switch
+ port DT node
+Message-ID: <20190705131914.GA4428@lunn.ch>
+References: <20190621164940.GL31306@lunn.ch>
+ <VI1PR04MB4880D8F90BBCD30BF8A69C9696E00@VI1PR04MB4880.eurprd04.prod.outlook.com>
+ <20190624115558.GA5690@piout.net> <20190624142625.GR31306@lunn.ch>
+ <20190624152344.3bv46jjhhygo6zwl@lx-anielsen.microsemi.net>
+ <20190624162431.GX31306@lunn.ch> <20190624182614.GC5690@piout.net>
+ <CA+h21hqGtA5ou7a3wjSuHxa_4fXk4GZohTAxnUdfLZjV3nq5Eg@mail.gmail.com>
+ <20190705044945.GA30115@lunn.ch>
+ <VI1PR04MB4880DEA9D7836A68E0EE141396F50@VI1PR04MB4880.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAGngYiW2+sBv1WqB8+csb=mZm2owziJ5wWcWLNPy7=m72ppypw@mail.gmail.com>
-User-Agent: Mutt/1.11.3 (2019-02-01)
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: -5.2 (-----)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-5.2 points)
+In-Reply-To: <VI1PR04MB4880DEA9D7836A68E0EE141396F50@VI1PR04MB4880.eurprd04.prod.outlook.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190705_142150_169834_98CAF1BD 
+X-CRM114-Status: GOOD (  14.15  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [185.16.172.187 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,43 +99,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, dmaengine@vger.kernel.org,
- Dan Williams <dan.j.williams@intel.com>, Robin Gong <yibin.gong@nxp.com>,
- Fabio Estevam <festevam@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ Alexandru Marginean <alexandru.marginean@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "UNGLinuxDriver@microchip.com" <UNGLinuxDriver@microchip.com>,
+ Allan Nielsen <Allan.Nielsen@microsemi.com>, Rob Herring <robh+dt@kernel.org>,
+ "Allan W. Nielsen" <allan.nielsen@microchip.com>,
+ Vladimir Oltean <olteanv@gmail.com>, "David S . Miller" <davem@davemloft.net>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 05-07-19, 09:08, Sven Van Asbroeck wrote:
-> Hi Vinod,
-> 
-> On Fri, Jul 5, 2019 at 8:50 AM Vinod Koul <vkoul@kernel.org> wrote:
-> >
-> > there is an else here too!
-> >
-> 
-> You are of course right, I was looking at the wrong if.
+> Nice discussion, again, but there's a missing point that has not been
+> brought up yet.  We actually intend to support the following hardware
+> configuration: a single PCI device consisting of the Microsemi's switch core
+> and our DMA rings.
+> The hardware supports this configuration into a single PCI function (PF), 
+> with a unique PCI function id (0xe111), so that the same driver has access to 
+> both switch registers and DMA rings connected to the CPU port.  This device
+> would qualify  as a  switchdev device, and we can simply reuse the existing
+> ocelot code for the switch core part.  The initial patch set was the first step in
+> supporting the switch core on our platform, we just need to add the support
+> for the DMA rings part, to make it a complete switchdev solution.
 
-NO issues :)
-> 
-> Apologies for the confusion, I did try to look at what you
-> changed, but your git repo listed in MAINTAINERS appears
-> unresponsive for me?
+Hi Claudiu
 
-To quote David you need to move to 21st century (like me). IPv4 switch
-for infradead is down so...
+It sound like in the end you will have a core library and then two
+drivers wrapped around it, giving a pure switchdev device with polled
+IO or DMA, and a DSA driver using a CPU port.
 
-meanwhile this would work too:
-git.kernel.org/pub/scm/linux/kernel/git/vkoul/slave-dma.git
-
--- 
-~Vinod
+   Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
