@@ -2,72 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2AAA16079A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 16:15:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4837260774
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 16:09:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
 	References:Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sAUmSjJXQ20wFggjthjv/aycmGjOT4ulAi/qHqCM/Gw=; b=HpJ/NoJy0/87ua
-	7wCfMCs7KyuyreNUChRtacJTAH5JKAPPUul2l+vv/DiOIuWDXZCIo1zu8jnXfTmFEtDFxPJDYbQbB
-	H6C0RI+luJDHMidoaTrrytXYAVsiB2qFZxFRf0QezmPa7QTobCo+F9dSalgFZiTBuLZ5py5krzM3C
-	knBOC873sXTb0FRkyHAl7UuV/Tu0CaOTYHO/JtSB6OKb2xybe8YriFMDv/Qp6ubh8g7Rmr+WpmEo3
-	LgcmRa8unuPT0yAMwJIx/58J9fnoHo9IN81N5iS6wXqOFob0FBCALfmG/iJx88A1E6Kdud3AiwJZD
-	mBlDMW0eUV4z7eTnSZfg==;
+	List-Owner; bh=mTvvWqDwono+LWZWul+VTv1SqKHwtJGoyYynbuWPExw=; b=cLUuSaqY1u/HzB
+	DPanYjCQQBje5KybBr4cqsfW0CltfuS0TtyK7aX+RUAEaVNuEXoME19LC5s3vmCc8UQrZA9JXH4CK
+	4V+7xkyVwreaB4ePYlFQfrrIBJJ1pg37HW07BvS3Wm0nmmCsCJYv5rrap9BlnVjqfHnRh9N1L4vFK
+	iPDsUeRuitm75Il570xXmhSyqsillN5kQa12+Bq1WpCQl7BBU5vE02RVqysg0putqTrZ/hJ3IyDRU
+	NQFNvDs7xqVMDyWb1iQHRQhFeqShv6dCLiKs8zb3g7bIeORHQGgd9mlNR0SL3f9XyrW+4t+YZelGb
+	FjU5wi47W87fcyxEW0fw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hjOzd-00008e-B8; Fri, 05 Jul 2019 14:15:17 +0000
+	id 1hjOuN-0003xB-La; Fri, 05 Jul 2019 14:09:51 +0000
 Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjOzT-0008F1-Vp
- for linux-arm-kernel@bombadil.infradead.org; Fri, 05 Jul 2019 14:15:08 +0000
+ id 1hjOuG-0003wV-B3
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 05 Jul 2019 14:09:44 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=MIME-Version:Content-Transfer-Encoding:
  Content-ID:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:To:
  From:Sender:Reply-To:Cc:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
  List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=njzQHa4+h1RnF+3DEZ8qWlHR8A0NDvMIkjMuExbOY/c=; b=V/KCEJ1GTECxxChTMv68BA6gwR
- QKUjxhKf3lRoB+beAEgwp8qFVe+xSK3tHGk0ZJLBB8BmUHumRWUGFAdGijrIWkcLZvsjRvjFj9dt5
- cjHedoEFHvfjY2BJmIQtNIuPr1y7Y8hm2m21AaA5uCPVbzlsviPuh2o9wTP6YMCdn7r+CWaNZ8F6u
- fkNacLHP1r+p/wSQPaELx82BRu/2l6GtAWdUEGqXNP7hSl1LD6Up4yHWc+Hckb5aIoKC/AzN54vWg
- /uhxFivwgit+z7Z41vRTp3N/8ZG6mxev5EupRqR1ZnRN+sgwnwZBx3EHxbQVRGItxZm8MyhSYz3H3
- fvydtTeg==;
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+ bh=nuMS6p+p3kSwZitSa3B2HZ8uP0JDZ2NWsyUgLamNnd0=; b=GjnwkNipxS9kjakQqvGP9DTIYH
+ QsA0u5sHfSTWlOzzvY2ZvMyJABGjWYmhtLjqTuNlWmPq9JktOp3MLk1+/60OCLv826IS6rhLbXhLG
+ FS3QFJG+qgbWJGhjOzLN1+0k0JrT5w1MF14OdHnypET7xJovgIz/3DeuRCxKQz1cIW9Pxal5sCOkf
+ DXkmShW1Udv7IxATE88cYxzqfgHESh7KPATPaVlwjUE075H9jBx+WuIYC14mJs0r5oC84osE5DdFE
+ 0A6M/lFD7xOU043/jGrrPIEFZCv81n+Lz1uWNg7GB/nW2qBT9okEc45NHCBf00Zsv/KJPE8LS5Rv0
+ zODhIS3g==;
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjNSE-0001sy-3H
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 12:36:44 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x65CVYTY029722; Fri, 5 Jul 2019 14:35:16 +0200
+ id 1hjNT5-0001td-EE
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 12:37:37 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x65CWUBO015894; Fri, 5 Jul 2019 14:36:13 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : subject :
  date : message-id : references : in-reply-to : content-type : content-id :
  content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=njzQHa4+h1RnF+3DEZ8qWlHR8A0NDvMIkjMuExbOY/c=;
- b=Lms/oWpARTnfFQZUGeLLSL/L5nCtc4yzZ/CJ0qPJ0hKUMsYaYecBD/8UKtYDYaRrRHBt
- l2cG1M1ivkaqS6KPtjjDZzFp7+tv6a8Btq9SpvxDUUWWQtFHndcN96Zei+cX7Pnl17za
- lCrFTCEwLRM6Et0oiVg66e+9uElel5r76m8cdY4Uqf1hXM7kKTOSeeadR5UFlCWPcO27
- 5h6salTtUNpFVrgDhLmYhcR6JrRewtugTCbL+tBa0NOfUoTAiYUAbUwhsO5ZwimFvkt3
- /6jFjyql7Bun7AVz1gsL5KWi0P8RSvHJIJ0hmG6DEEBRoIdy5bImxxgwrvn5EJ49lQ2o ig== 
+ bh=nuMS6p+p3kSwZitSa3B2HZ8uP0JDZ2NWsyUgLamNnd0=;
+ b=NEVk99+KVuuwQZPkG0kmtuAaoM+1yQYeq2y07wKKVR5WjnQccS0/1HiOmmHp73HOR9N5
+ 14Gq/eo3rYJLA6vGhwt0M0pufNUc3aE6mpbN8pZfVkbKPNWLoFx5Ym+pjNbBVmUDgUFz
+ gchrebzYFkXdBgiX5AVCz3bEW5mCajFgor1PLMi960cttvIjiX/2ZCM6hzqrN0f66p3G
+ mOAUyy30RfXCWGaVmAJLuUYcWKweyTVnWHc9ya1pxJutg7ydvnPwlRrHNkXybc01Qbiw
+ znhM9q4rEBN9AylBWAWk9SpdUZ6y6woQN1iqTJ39KqDWhiNLO9ENi24xJvCTGXaF3Mfi Tg== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2tdwf1jhdu-1
+ by mx08-00178001.pphosted.com with ESMTP id 2tdxvjjgj1-1
  (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Fri, 05 Jul 2019 14:35:16 +0200
+ Fri, 05 Jul 2019 14:36:13 +0200
 Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 79C7D34;
- Fri,  5 Jul 2019 12:35:15 +0000 (GMT)
-Received: from Webmail-eu.st.com (sfhdag6node2.st.com [10.75.127.17])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 40D982C7F;
- Fri,  5 Jul 2019 12:35:15 +0000 (GMT)
-Received: from SFHDAG6NODE3.st.com (10.75.127.18) by SFHDAG6NODE2.st.com
- (10.75.127.17) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 5 Jul
- 2019 14:35:14 +0200
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 7C90531;
+ Fri,  5 Jul 2019 12:36:12 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag3node1.st.com [10.75.127.7])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 4862E2C7F;
+ Fri,  5 Jul 2019 12:36:12 +0000 (GMT)
+Received: from SFHDAG6NODE3.st.com (10.75.127.18) by SFHDAG3NODE1.st.com
+ (10.75.127.7) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 5 Jul
+ 2019 14:36:11 +0200
 Received: from SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6]) by
  SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6%20]) with mapi id
- 15.00.1473.003; Fri, 5 Jul 2019 14:35:14 +0200
+ 15.00.1473.003; Fri, 5 Jul 2019 14:36:11 +0200
 From: Philippe CORNU <philippe.cornu@st.com>
 To: Olivier MOYSAN <olivier.moysan@st.com>, "a.hajda@samsung.com"
  <a.hajda@samsung.com>, "narmstrong@baylibre.com" <narmstrong@baylibre.com>,
@@ -86,16 +87,14 @@ To: Olivier MOYSAN <olivier.moysan@st.com>, "a.hajda@samsung.com"
  "jsarha@ti.com" <jsarha@ti.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
  "mark.rutland@arm.com" <mark.rutland@arm.com>, "devicetree@vger.kernel.org"
  <devicetree@vger.kernel.org>
-Subject: Re: [PATCH 2/3] dt-bindings: display: sii902x: Change audio mclk
- binding
-Thread-Topic: [PATCH 2/3] dt-bindings: display: sii902x: Change audio mclk
- binding
-Thread-Index: AQHVMO2JtZ7sVttbMk6Xu8iqEAATraa72MyA
-Date: Fri, 5 Jul 2019 12:35:14 +0000
-Message-ID: <ca446f4b-d918-fe6d-f6bd-4aa07efbefac@st.com>
+Subject: Re: [PATCH 3/3] drm/bridge: sii902x: make audio mclk optional
+Thread-Topic: [PATCH 3/3] drm/bridge: sii902x: make audio mclk optional
+Thread-Index: AQHVMO2M8CUkPHajiUCKtjETQ0unPqa72RGA
+Date: Fri, 5 Jul 2019 12:36:11 +0000
+Message-ID: <2828a8ca-6d25-fe49-f97a-cfd86e5d5fac@st.com>
 References: <1562082426-14876-1-git-send-email-olivier.moysan@st.com>
- <1562082426-14876-3-git-send-email-olivier.moysan@st.com>
-In-Reply-To: <1562082426-14876-3-git-send-email-olivier.moysan@st.com>
+ <1562082426-14876-4-git-send-email-olivier.moysan@st.com>
+In-Reply-To: <1562082426-14876-4-git-send-email-olivier.moysan@st.com>
 Accept-Language: fr-FR, en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -104,21 +103,21 @@ user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.2
 x-ms-exchange-messagesentrepresentingtype: 1
 x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.45]
-Content-ID: <82CCEAE863094E428B349826FE92A781@st.com>
+x-originating-ip: [10.75.127.47]
+Content-ID: <94B1862D7883AE44876E6AC9CEA4D8CD@st.com>
 MIME-Version: 1.0
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
  definitions=2019-07-05_05:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190705_133642_219995_FA71FF5B 
-X-CRM114-Status: GOOD (  22.72  )
+X-CRM114-CacheID: sfid-20190705_133735_526494_EEDB0510 
+X-CRM114-Status: GOOD (  24.87  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
  Content analysis details:   (-0.9 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -146,45 +145,95 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi Olivier,
 and many thanks for your patch.
-I have double checked in the sil9022/24 datasheet and you are right:
-
-"As an option, the original MCLK signal used to strobe the I2S signals 
-out from the sourcing chip can be used. If the internal PLL is used, 
-then an external MCLK input is not required."
-
-So, even if #sound-dai-cells is there, this is not mandatory to have MCLK.
 
 Reviewed-by: Philippe Cornu <philippe.cornu@st.com>
 Philippe :-)
 
-
 On 7/2/19 5:47 PM, Olivier Moysan wrote:
-> As stated in SiL9022/24 datasheet, master clock is not required for I2S.
-> Make mclk property optional in DT bindings.
+> The master clock on i2s bus is not mandatory,
+> as sii902X internal PLL can be used instead.
+> Make use of mclk optional.
 > 
-> Fixes: 3f18021f43a3 ("dt-bindings: display: sii902x: Add HDMI audio bindings")
+> Fixes: ff5781634c41 ("drm/bridge: sii902x: Implement HDMI audio support")
 > 
 > Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
 > ---
->   Documentation/devicetree/bindings/display/bridge/sii902x.txt | 5 ++---
->   1 file changed, 2 insertions(+), 3 deletions(-)
+>   drivers/gpu/drm/bridge/sii902x.c | 39 +++++++++++++++++++++++----------------
+>   1 file changed, 23 insertions(+), 16 deletions(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/display/bridge/sii902x.txt b/Documentation/devicetree/bindings/display/bridge/sii902x.txt
-> index 2df44b7d3821..6e14e087c0d0 100644
-> --- a/Documentation/devicetree/bindings/display/bridge/sii902x.txt
-> +++ b/Documentation/devicetree/bindings/display/bridge/sii902x.txt
-> @@ -26,9 +26,8 @@ Optional properties:
->   	- clocks: phandle and clock specifier for each clock listed in
->              the clock-names property
->   	- clock-names: "mclk"
-> -	   Describes SII902x MCLK input. MCLK is used to produce
-> -	   HDMI audio CTS values. This property is required if
-> -	   "#sound-dai-cells"-property is present. This property follows
-> +	   Describes SII902x MCLK input. MCLK can be used to produce
-> +	   HDMI audio CTS values. This property follows
->   	   Documentation/devicetree/bindings/clock/clock-bindings.txt
->   	   consumer binding.
+> diff --git a/drivers/gpu/drm/bridge/sii902x.c b/drivers/gpu/drm/bridge/sii902x.c
+> index 36acc256e67e..a08bd9fdc046 100644
+> --- a/drivers/gpu/drm/bridge/sii902x.c
+> +++ b/drivers/gpu/drm/bridge/sii902x.c
+> @@ -562,19 +562,21 @@ static int sii902x_audio_hw_params(struct device *dev, void *data,
+>   		}
+>   	}
 >   
+> -	ret = clk_prepare_enable(sii902x->audio.mclk);
+> -	if (ret) {
+> -		dev_err(dev, "Enabling mclk failed: %d\n", ret);
+> -		return ret;
+> -	}
+> +	if (sii902x->audio.mclk) {
+> +		ret = clk_prepare_enable(sii902x->audio.mclk);
+> +		if (ret) {
+> +			dev_err(dev, "Enabling mclk failed: %d\n", ret);
+> +			return ret;
+> +		}
+>   
+> -	mclk_rate = clk_get_rate(sii902x->audio.mclk);
+> +		mclk_rate = clk_get_rate(sii902x->audio.mclk);
+>   
+> -	ret = sii902x_select_mclk_div(&i2s_config_reg, params->sample_rate,
+> -				      mclk_rate);
+> -	if (mclk_rate != ret * params->sample_rate)
+> -		dev_dbg(dev, "Inaccurate reference clock (%ld/%d != %u)\n",
+> -			mclk_rate, ret, params->sample_rate);
+> +		ret = sii902x_select_mclk_div(&i2s_config_reg,
+> +					      params->sample_rate, mclk_rate);
+> +		if (mclk_rate != ret * params->sample_rate)
+> +			dev_dbg(dev, "Inaccurate reference clock (%ld/%d != %u)\n",
+> +				mclk_rate, ret, params->sample_rate);
+> +	}
+>   
+>   	mutex_lock(&sii902x->mutex);
+>   
+> @@ -640,7 +642,8 @@ static int sii902x_audio_hw_params(struct device *dev, void *data,
+>   	mutex_unlock(&sii902x->mutex);
+>   
+>   	if (ret) {
+> -		clk_disable_unprepare(sii902x->audio.mclk);
+> +		if (sii902x->audio.mclk)
+> +			clk_disable_unprepare(sii902x->audio.mclk);
+>   		dev_err(dev, "%s: hdmi audio enable failed: %d\n", __func__,
+>   			ret);
+>   	}
+> @@ -659,7 +662,8 @@ static void sii902x_audio_shutdown(struct device *dev, void *data)
+>   
+>   	mutex_unlock(&sii902x->mutex);
+>   
+> -	clk_disable_unprepare(sii902x->audio.mclk);
+> +	if (sii902x->audio.mclk)
+> +		clk_disable_unprepare(sii902x->audio.mclk);
+>   }
+>   
+>   int sii902x_audio_digital_mute(struct device *dev, void *data, bool enable)
+> @@ -752,9 +756,12 @@ static int sii902x_audio_codec_init(struct sii902x *sii902x,
+>   
+>   	sii902x->audio.mclk = devm_clk_get(dev, "mclk");
+>   	if (IS_ERR(sii902x->audio.mclk)) {
+> -		dev_err(dev, "%s: No clock (audio mclk) found: %ld\n",
+> -			__func__, PTR_ERR(sii902x->audio.mclk));
+> -		return 0;
+> +		if (PTR_ERR(sii902x->audio.mclk) != -ENOENT) {
+> +			dev_err(dev, "%s: No clock (audio mclk) found: %ld\n",
+> +				__func__, PTR_ERR(sii902x->audio.mclk));
+> +			return PTR_ERR(sii902x->audio.mclk);
+> +		}
+> +		sii902x->audio.mclk = NULL;
+>   	}
+>   
+>   	sii902x->audio.pdev = platform_device_register_data(
 > 
 _______________________________________________
 linux-arm-kernel mailing list
