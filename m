@@ -2,66 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0161D60702
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 15:59:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D1738606FF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 15:58:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=0lIlSUMsNPJg60OM4XGYIjLfOGWYiEU48aXrAqscNBI=; b=l0qPuRKML/7NZJ
-	Ibht66AGn/JFvJ4BAgU932j60RUAW+rFdSeLe15iWL57MeEynzgjDILKU+xkg7WAXrEFSJQ9rRFYa
-	YSD6vhmidk6j6oCl01qWn/WhekP4iefyQrYU8fwBlztkYbspkl4ULoycko6ml2NSoahihaT9YhzJv
-	P1QiH73oZMsCI6faAR5kDFXoNU6Wga46feC46HaBVZo7p6kHFaCLC2AtWH9O27g11A+jfO+LNUhln
-	ACV3Qp1RyoiokZxWSfmrksCtsyGHfNSyrYJ0gwGSaZcF6tnknpvjFqt9KAXY9yDdLj+HNN6/Q/2zm
-	/3Mm7tKBIAlm84kACx3g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5aFIB7GnoX7/tQGKlE0Uy17CZtQIQdkc/tls0ZPkoSc=; b=uYZWLNgsBa8MDQ
+	4kG+Fo5hAF+VduWBcrkqWgpljUlS5B+a0uH/uoSV85Ug/VtbXO3Ahr+BoTPQTuOdxURwV36yuBKCw
+	GTfaGY7L+zgudV115sgzEReWOZtWcjKEHD8dE4gBnJiVa1a7bSiVZay8gBp1Yv8XWbfLVWZjX2N3t
+	49cxNYqs0vt2zRj2wK3QLD1XFu33eq2q89eCmdeSPVSu3MESpYdF0LBDdMRafAEvsQaGNYhFlLlpe
+	NuTz279AotI6KJ748Rn3cFmRoWpP50Ix0xU21kwGwMnmJK0+ap5qS/Rhy4n4CTQo8nZGnY3OKETFL
+	XKGWPo4FFirE9vPR6Zxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hjOk5-0001nI-3q; Fri, 05 Jul 2019 13:59:13 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hjOjW-0001MK-0i; Fri, 05 Jul 2019 13:58:38 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjN2m-0004oo-MS
- for linux-arm-kernel@bombadil.infradead.org; Fri, 05 Jul 2019 12:10:24 +0000
+ id 1hjN2c-0004gt-1D
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 05 Jul 2019 12:10:14 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
- Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=bi3Ep1nPCGGfL8TJSg1AOh7r2TzizZiJ3EiAm7+qDeg=; b=bzUj3JBOUP1wNy9l9/4Mj2qK8d
- UGaCENVzrpVFzlKhLsJwFlUVLBdvBhXllreGP2es/0jPFW61WT3ctZZA/xVC/mVDu478yvESiq0hY
- H9vrakT5d44DhbztjB4+sEnVfgEudKRFq7Y0P5GRUPyGz+xV63DUfApto8A0CjDkD77yL1nIgkXJL
- fFPMI8+qxzF47d9WglfJaI6+e4EsobHzUQHsSFGooXZSIVR8Yf7xb7Nb7s8todI3prM6PHWdlaiGs
- xB9ghpuFOgWGzMHREx4iOiobnl7GWA8NokIOg6CuFk+EYaUo1vws/vCEbGfqhCooQ8D+YdpuLJ+xU
- iD97Fa5Q==;
+ d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+ Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=sEk8eh/WZX52vhZjt9j66vA5gBnPvpML1f8yj58nR0M=; b=uFHOfOxa794tdzCHceRiUfVO6X
+ eGnKq9DTVs/dh3zGruBOXdr70L4+KYDVSDdtIzKKkXiCccJvluRaQ6vxpAvabAoZTiDV4ZZ2TA3ar
+ d+uDDmt8nnywcIVJOCW9H3imsGO9lVx877dbueZQR0M9J72aGLCxxV9CC1J+Tp/x3LrnZztRwmiQk
+ gxubm9hQfUhtmK8EtjNNfAkF1ZmBm8ZALg1pb5ZuKVzHWPovjvTTgTuxoFt8DGUwxAguS8bUkcrgH
+ uOhNSg/YJ+dId2EW2dNdSbBnKzUzZadOE4b4QBLIHcV5YaSgQxAmx7QPLh/IAiPQmaz8+i1ksrDlF
+ /RnRNgnw==;
 Received: from relay12.mail.gandi.net ([217.70.178.232])
- by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjN2V-0001WA-16
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 12:10:08 +0000
+ by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hjN2Z-0000ta-4r
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 12:10:12 +0000
 Received: from mc-bl-xps13.lan (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
  [86.250.200.211])
  (Authenticated sender: maxime.chevallier@bootlin.com)
- by relay12.mail.gandi.net (Postfix) with ESMTPSA id DF277200005;
- Fri,  5 Jul 2019 12:09:10 +0000 (UTC)
+ by relay12.mail.gandi.net (Postfix) with ESMTPSA id 4A055200011;
+ Fri,  5 Jul 2019 12:09:15 +0000 (UTC)
 From: Maxime Chevallier <maxime.chevallier@bootlin.com>
 To: davem@davemloft.net
-Subject: [PATCH net-next 0/2] net: mvpp2: Add classification based on the
- ETHER flow
-Date: Fri,  5 Jul 2019 14:09:11 +0200
-Message-Id: <20190705120913.25013-1-maxime.chevallier@bootlin.com>
+Subject: [PATCH net-next 1/2] net: mvpp2: cls: Report an error for unsupported
+ flow types
+Date: Fri,  5 Jul 2019 14:09:12 +0200
+Message-Id: <20190705120913.25013-2-maxime.chevallier@bootlin.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190705120913.25013-1-maxime.chevallier@bootlin.com>
+References: <20190705120913.25013-1-maxime.chevallier@bootlin.com>
 MIME-Version: 1.0
-X-Spam-Note: CRM114 invocation failed
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190705_131011_216057_EB813AEA 
+X-CRM114-Status: UNSURE (   9.35  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-0.7 points)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-0.7 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
  low trust [217.70.178.232 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,27 +88,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello everyone,
+Add a missing check to detect flow types that we don't support, so that
+user can be informed of this.
 
-This series adds support for classification of the ETHER flow in the
-mvpp2 driver.
+Signed-off-by: Maxime Chevallier <maxime.chevallier@bootlin.com>
+---
+ drivers/net/ethernet/marvell/mvpp2/mvpp2_cls.c | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-The first patch allows detecting when a user specifies a flow_type that
-isn't supported by the driver, while the second adds support for this
-flow_type by adding the mapping between the ETHER_FLOW enum value and
-the relevant classifier flow entries.
-
-Thanks,
-
-Maxime
-
-Maxime Chevallier (2):
-  net: mvpp2: cls: Report an error for unsupported flow types
-  net: mvpp2: cls: Add support for ETHER_FLOW
-
- drivers/net/ethernet/marvell/mvpp2/mvpp2_cls.c | 6 ++++++
- 1 file changed, 6 insertions(+)
-
+diff --git a/drivers/net/ethernet/marvell/mvpp2/mvpp2_cls.c b/drivers/net/ethernet/marvell/mvpp2/mvpp2_cls.c
+index b195fb5d61f4..6c088c903c15 100644
+--- a/drivers/net/ethernet/marvell/mvpp2/mvpp2_cls.c
++++ b/drivers/net/ethernet/marvell/mvpp2/mvpp2_cls.c
+@@ -1373,6 +1373,10 @@ int mvpp2_ethtool_cls_rule_ins(struct mvpp2_port *port,
+ 
+ 	efs->rule.flow = ethtool_rule->rule;
+ 	efs->rule.flow_type = mvpp2_cls_ethtool_flow_to_type(info->fs.flow_type);
++	if (efs->rule.flow_type < 0) {
++		ret = efs->rule.flow_type;
++		goto clean_rule;
++	}
+ 
+ 	ret = mvpp2_cls_rfs_parse_rule(&efs->rule);
+ 	if (ret)
 -- 
 2.20.1
 
