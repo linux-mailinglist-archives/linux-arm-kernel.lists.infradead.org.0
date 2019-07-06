@@ -2,41 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1AAC560F63
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  6 Jul 2019 09:57:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0D27960F7A
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  6 Jul 2019 10:34:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
 	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uHYDPDeda31NUHukXMtZ1z5QSX5ZD+LJQauc+lKcxK4=; b=T/mAxLm6JRO+FC
-	UEkZFeZLDifWOQI4oHr8AXx76Fvu2R7NBAB37P9dKBM5dAqn9R/iqeIewnlbHz6dSkdeobJLZPgFa
-	JYknNwiC/I+A5DI5V58BNVMFGd6zbqUPjNFqvUtCqDzUqU7SN50d9fx/N/Ej8rc5JVAk/ssqnBV3N
-	0kf9H+pqbPQV4/nxYdbNVagPPPaFCI+5mFeh3sDg8D0EzmOfUppuch0vWC7jZmc1Tzz4aPzILgoEr
-	r0t9pNOWGWO5+Um4H+AO9YFxEGqyXRhq47ln0BSAOecZnQAJqxtK5unsHRFRmP8yEFq+rV5hRBkIQ
-	j5NKoQxCQaGOBaEb0zqg==;
+	List-Owner; bh=ZBfVVsHcWESKFNWJ3wiBYUOQpDp7QbpVKqVNLc4wuOg=; b=mq/gmGCZDkn/vE
+	GlDi2OkH1Qnf4NlCUpMSBxyZ8ci/KdbRQnNgKXIFrNt7UoP9ABS3buEJytbAKVDVgDkT+O3UxCjVP
+	qwPQjvPGZto1Xd+cBKIRcPqufsC/MYJb4HWPORk/FMgtudBpsE3DaBQTEmru7qFZ+Teyq8ds8piEK
+	zCUCn6JlYAo8uhldisFCFp5Vr76XXOv6FRO4VeorMfYMr6B90ul1hUCFrstIdzvMPLGbtfqN6TOx+
+	rTkHed8bPsgSHTdDi2fc9wxCcedF8fneocI8MfZJuccpJJHeELvcgsDg8wW+/shB1ttX5GCZogHBx
+	i/dK4wgUlR5rD4CO+Bag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hjfZm-0006sT-5z; Sat, 06 Jul 2019 07:57:42 +0000
+	id 1hjg9E-0000rB-Ef; Sat, 06 Jul 2019 08:34:20 +0000
 Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjfZS-0006rU-5i
- for linux-arm-kernel@lists.infradead.org; Sat, 06 Jul 2019 07:57:24 +0000
+ id 1hjg90-0000qh-GN
+ for linux-arm-kernel@lists.infradead.org; Sat, 06 Jul 2019 08:34:08 +0000
 Received: from pd9ef1cb8.dip0.t-ipconnect.de ([217.239.28.184] helo=nanos)
  by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
  (Exim 4.80) (envelope-from <tglx@linutronix.de>)
- id 1hjfYg-0005qQ-MW; Sat, 06 Jul 2019 09:56:35 +0200
-Date: Sat, 6 Jul 2019 09:56:32 +0200 (CEST)
+ id 1hjg8e-0006If-QV; Sat, 06 Jul 2019 10:33:44 +0200
+Date: Sat, 6 Jul 2019 10:33:43 +0200 (CEST)
 From: Thomas Gleixner <tglx@linutronix.de>
 To: Dexuan Cui <decui@microsoft.com>
 Subject: RE: [tip:timers/core] clocksource/drivers: Make Hyper-V clocksource
  ISA agnostic
-In-Reply-To: <PU1P153MB0169E8E3898897BF3B3BE0F6BFF40@PU1P153MB0169.APCP153.PROD.OUTLOOK.COM>
-Message-ID: <alpine.DEB.2.21.1907060944200.3648@nanos.tec.linutronix.de>
+In-Reply-To: <alpine.DEB.2.21.1907060944200.3648@nanos.tec.linutronix.de>
+Message-ID: <alpine.DEB.2.21.1907061032400.3648@nanos.tec.linutronix.de>
 References: <1561955054-1838-2-git-send-email-mikelley@microsoft.com>
  <tip-fd1fea6834d0f9f93062ae6685862908a9baed39@git.kernel.org>
  <PU1P153MB0169E8E3898897BF3B3BE0F6BFF40@PU1P153MB0169.APCP153.PROD.OUTLOOK.COM>
+ <alpine.DEB.2.21.1907060944200.3648@nanos.tec.linutronix.de>
 User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
 MIME-Version: 1.0
 X-Linutronix-Spam-Score: -1.0
@@ -44,8 +45,8 @@ X-Linutronix-Spam-Level: -
 X-Linutronix-Spam-Status: No , -1.0 points, 5.0 required, ALL_TRUSTED=-1,
  SHORTCIRCUIT=-0.0001
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190706_005722_359634_DCA7A11E 
-X-CRM114-Status: GOOD (  16.63  )
+X-CRM114-CacheID: sfid-20190706_013406_693443_D3BFF9DB 
+X-CRM114-Status: GOOD (  20.07  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -106,43 +107,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, 6 Jul 2019, Dexuan Cui wrote:
-> > From: linux-hyperv-owner@vger.kernel.org
-> > <linux-hyperv-owner@vger.kernel.org> On Behalf Of tip-bot for Michael Kelley
-> > No behavior is changed and no new functionality is added.
-> >... 
-> > +void hv_stimer_cleanup(unsigned int cpu)
-> > +{
-> > +	struct clock_event_device *ce;
-> > +
-> > +	/* Turn off clockevent device */
-> > +	if (ms_hyperv.features & HV_MSR_SYNTIMER_AVAILABLE) {
-> > +		ce = per_cpu_ptr(hv_clock_event, cpu);
-> > +		hv_ce_shutdown(ce);
-> > +	}
-> > +}
-> 
-> Actually, there is a behavior change (see https://lkml.org/lkml/2019/7/1/9):
-> 	Removed call to clockevents_unbind_device() [Thomas Gleixner]
-> and this breaks my ongoing work of Linux guest hibernation on Hyper-V. :-(
-> 
-> I guess Thomas suggested we remove the call because the clockevent device
-> can be automatically cleaned up in tick_cleanup_dead_cpu(), when a CPU is 
-> offlined? BTW, I didn't find Thomas's mail suggesting the change.
-> 
-> In the case of hibernation, this is not true for CPU0, because 
-> tick_cleanup_dead_cpu() is not called for CPU0. As a result, when the
-> system resumes from hibernation, we add the same clock_event_device
-> into the global list clockevent_devices twice in hv_stimer_init(0) ->
-> clockevents_config_and_register() for CPU0, causing unexpected
-> behaviors...
+On Sat, 6 Jul 2019, Thomas Gleixner wrote:
 
-The way this is normally done is to suspend the clockevent device on
-hibernation and resume it when coming back. From a kernel POV resume is
-really different than boot.
+> On Sat, 6 Jul 2019, Dexuan Cui wrote:
+> > > From: linux-hyperv-owner@vger.kernel.org
+> > > <linux-hyperv-owner@vger.kernel.org> On Behalf Of tip-bot for Michael Kelley
+> > > No behavior is changed and no new functionality is added.
+> > >... 
+> > > +void hv_stimer_cleanup(unsigned int cpu)
+> > > +{
+> > > +	struct clock_event_device *ce;
+> > > +
+> > > +	/* Turn off clockevent device */
+> > > +	if (ms_hyperv.features & HV_MSR_SYNTIMER_AVAILABLE) {
+> > > +		ce = per_cpu_ptr(hv_clock_event, cpu);
+> > > +		hv_ce_shutdown(ce);
+> > > +	}
+> > > +}
+> > 
+> > Actually, there is a behavior change (see https://lkml.org/lkml/2019/7/1/9):
+> > 	Removed call to clockevents_unbind_device() [Thomas Gleixner]
+> > and this breaks my ongoing work of Linux guest hibernation on Hyper-V. :-(
+> > 
+> > I guess Thomas suggested we remove the call because the clockevent device
+> > can be automatically cleaned up in tick_cleanup_dead_cpu(), when a CPU is 
+> > offlined? BTW, I didn't find Thomas's mail suggesting the change.
+> > 
+> > In the case of hibernation, this is not true for CPU0, because 
+> > tick_cleanup_dead_cpu() is not called for CPU0. As a result, when the
+> > system resumes from hibernation, we add the same clock_event_device
+> > into the global list clockevent_devices twice in hv_stimer_init(0) ->
+> > clockevents_config_and_register() for CPU0, causing unexpected
+> > behaviors...
+> 
+> The way this is normally done is to suspend the clockevent device on
+> hibernation and resume it when coming back. From a kernel POV resume is
+> really different than boot.
+> 
+> But that needs probably more surgery. I'll add the unbind() call back for
+> now.
 
-But that needs probably more surgery. I'll add the unbind() call back for
-now.
+Second thoughts. As it was just on top of the branch, I dropped the two
+patches and we can sort it out for 5.4 without a hurry.
 
 Thanks,
 
