@@ -2,60 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7695760F12
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  6 Jul 2019 07:19:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 780B660F42
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  6 Jul 2019 08:47:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=OGT80V/9hJRGxQpDLHealAdStXZG08UULywd86fKPuY=; b=jonTySGzuAEBkk32M6hA3XnlA
-	lz2XdHsoRPckZnmscsd6oiFyiuWknfXu/oE5LlL085wHLTboaiojaVvmEW3lXar0v+2cAfOgUXwm1
-	mfn36mCnyGIZe4gn2v7c4y8ipgRtjh/80tikssK6NgNMayRWq/9x3Xm9Sowxl0AdCBRwiI7veDTRF
-	47UbSO202yhp4EZvHkAnBQTfQjtteBz2fdeRk+kcNfmV7mlu6hdqMPJBicwzoT/QNpXPvXcRvVlw3
-	xW8X77+aOjRTGjYSb4ORGsrFB+SXbmMqUAXWB0c2iqM249smRfHgEILW6kWp7RKVHNGNcT9f5zIZr
-	vHrtXcgzg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=HpPA0sz03Y9nB7V5Ek5DgHCeuxf9+VhD9muNwvJO85U=; b=inM
+	KeKJ89zuBLNZPU9mCHBv/V8LI58vfgtY1/FCxobGBDPgl1DZIn6oLKsp4vloz7VhlT0Kiu7QsVPmg
+	BgECtUulyjZy74R/OS2a40ZC1tdivpfHvvswqW+KeprWUhh2IwmelB7yK93lFYJygc4tTdJU/KQ99
+	C71i6lWKFnBKbe9wzu9jITIXo3dTPc+dN7zJVKxOdnLImEQ+acHppyl1/esty+V/3sIMiOFCBtYhJ
+	N4u1Jwa1CNeYmpL04932c9u9fnMCMnNFj5UAg7726Dyjz4AB1FaykAlh3qunf/youZe9SL/yhgVal
+	/8RIe4bnME09aYg2fdYoKuFQw1TT4Jw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hjd6k-0002CE-2V; Sat, 06 Jul 2019 05:19:34 +0000
-Received: from mx2.mailbox.org ([80.241.60.215])
+	id 1hjeU2-0003h6-OJ; Sat, 06 Jul 2019 06:47:42 +0000
+Received: from mxhk.zte.com.cn ([63.217.80.70])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjd6M-0002Bb-NZ; Sat, 06 Jul 2019 05:19:12 +0000
-Received: from smtp1.mailbox.org (smtp1.mailbox.org
- [IPv6:2001:67c:2050:105:465:1:1:0])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
- (No client certificate requested)
- by mx2.mailbox.org (Postfix) with ESMTPS id 89B92A0142;
- Sat,  6 Jul 2019 07:19:05 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp1.mailbox.org ([80.241.60.240])
- by spamfilter01.heinlein-hosting.de (spamfilter01.heinlein-hosting.de
- [80.241.56.115]) (amavisd-new, port 10030)
- with ESMTP id M3-2ntrIuL15; Sat,  6 Jul 2019 07:18:58 +0200 (CEST)
-Subject: Re: [PATCH -next] i2c: mt7621: Fix platform_no_drv_owner.cocci
- warnings
-To: YueHaibing <yuehaibing@huawei.com>,
- Matthias Brugger <matthias.bgg@gmail.com>
-References: <20190629024421.177153-1-yuehaibing@huawei.com>
-From: Stefan Roese <sr@denx.de>
-Message-ID: <4fc5562f-c760-6f0d-46c6-c750ad70151e@denx.de>
-Date: Sat, 6 Jul 2019 07:18:56 +0200
-MIME-Version: 1.0
-In-Reply-To: <20190629024421.177153-1-yuehaibing@huawei.com>
-Content-Language: en-US
+ id 1hjeTr-0003fb-8C
+ for linux-arm-kernel@lists.infradead.org; Sat, 06 Jul 2019 06:47:33 +0000
+Received: from mse-fl2.zte.com.cn (unknown [10.30.14.239])
+ by Forcepoint Email with ESMTPS id 18AAF49C2BE7C4472856;
+ Sat,  6 Jul 2019 14:47:10 +0800 (CST)
+Received: from notes_smtp.zte.com.cn ([10.30.1.239])
+ by mse-fl2.zte.com.cn with ESMTP id x666ko2S087166;
+ Sat, 6 Jul 2019 14:46:50 +0800 (GMT-8)
+ (envelope-from huang.junhua@zte.com.cn)
+Received: from fox-host8.localdomain ([10.74.120.8])
+ by szsmtp06.zte.com.cn (Lotus Domino Release 8.5.3FP6)
+ with ESMTP id 2019070614473487-2126688 ;
+ Sat, 6 Jul 2019 14:47:34 +0800 
+From: Junhua Huang <huang.junhua@zte.com.cn>
+To: catalin.marinas@arm.com
+Subject: [PATCH v2] arm64: mm: free the initrd reserved memblock in a aligned
+ manner
+Date: Sat, 6 Jul 2019 14:41:15 +0800
+Message-Id: <1562395275-10772-1-git-send-email-huang.junhua@zte.com.cn>
+X-Mailer: git-send-email 1.8.3.1
+X-MIMETrack: Itemize by SMTP Server on SZSMTP06/server/zte_ltd(Release
+ 8.5.3FP6|November 21, 2013) at 2019-07-06 14:47:34,
+ Serialize by Router on notes_smtp/zte_ltd(Release 9.0.1FP7|August  17, 2016) at
+ 2019-07-06 14:46:57, Serialize complete at 2019-07-06 14:46:57
+X-MAIL: mse-fl2.zte.com.cn x666ko2S087166
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190705_221910_921673_DDBD82A6 
-X-CRM114-Status: GOOD (  14.74  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190705_234731_447856_41F0B103 
+X-CRM114-Status: GOOD (  11.76  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [80.241.60.215 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [63.217.80.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,39 +69,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-janitors@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: wang.yi59@zte.com.cn, f.fainelli@gmail.com, jiang.xuexin@zte.com.cn,
+ david@redhat.com, robin.murphy@arm.com, will.deacon@arm.com,
+ linux-kernel@vger.kernel.org, rppt@linux.vnet.ibm.com, xue.zhihong@zte.com.cn,
+ hannes@cmpxchg.org, Junhua Huang <huang.junhua@zte.com.cn>,
+ akpm@linux-foundation.org, logang@deltatee.com,
+ linux-arm-kernel@lists.infradead.org, ghackmann@android.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 29.06.19 04:44, YueHaibing wrote:
-> Remove .owner field if calls are used which set it automatically
-> Generated by: scripts/coccinelle/api/platform_no_drv_owner.cocci
-> 
-> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
-> ---
->   drivers/i2c/busses/i2c-mt7621.c | 1 -
->   1 file changed, 1 deletion(-)
-> 
-> diff --git a/drivers/i2c/busses/i2c-mt7621.c b/drivers/i2c/busses/i2c-mt7621.c
-> index 2a1cb414766d..62df8379bc89 100644
-> --- a/drivers/i2c/busses/i2c-mt7621.c
-> +++ b/drivers/i2c/busses/i2c-mt7621.c
-> @@ -343,7 +343,6 @@ static struct platform_driver mtk_i2c_driver = {
->   	.probe		= mtk_i2c_probe,
->   	.remove		= mtk_i2c_remove,
->   	.driver		= {
-> -		.owner	= THIS_MODULE,
->   		.name	= "i2c-mt7621",
->   		.of_match_table = i2c_mtk_dt_ids,
->   	},
+We should free the initrd reserved memblock in an aligned manner, 
+because the initrd reserves the memblock in an aligned manner 
+in arm64_memblock_init(). 
+Otherwise there are some fragments in memblock_reserved regions
+after free_initrd_mem(). e.g.:
+/sys/kernel/debug/memblock # cat reserved 
+   0: 0x0000000080080000..0x00000000817fafff
+   1: 0x0000000083400000..0x0000000083ffffff
+   2: 0x0000000090000000..0x000000009000407f
+   3: 0x00000000b0000000..0x00000000b000003f
+   4: 0x00000000b26184ea..0x00000000b2618fff
+The fragments like the ranges from b0000000 to b000003f and 
+from b26184ea to b2618fff should be freed.
 
-Reviewed-by: Stefan Roese <sr@denx.de>
+And we can do free_reserved_area() after memblock_free(),
+as free_reserved_area() calls __free_pages(), once we've done 
+that it could be allocated somewhere else, 
+but memblock and iomem still say this is reserved memory.
 
-Thanks,
-Stefan
+Signed-off-by: Junhua Huang <huang.junhua@zte.com.cn>
+---
+v2: fix the start/end typo to free the same memory that we reserved
+and remove the blank line.
+
+ arch/arm64/mm/init.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
+index d2adffb81b5d..2e9e42d06362 100644
+--- a/arch/arm64/mm/init.c
++++ b/arch/arm64/mm/init.c
+@@ -580,8 +580,12 @@ void free_initmem(void)
+ #ifdef CONFIG_BLK_DEV_INITRD
+ void __init free_initrd_mem(unsigned long start, unsigned long end)
+ {
++	unsigned long aligned_start, aligned_end;
++
++	aligned_start = __virt_to_phys(start) & PAGE_MASK;
++	aligned_end = PAGE_ALIGN(__virt_to_phys(end));
++	memblock_free(aligned_start, aligned_end - aligned_start);
+ 	free_reserved_area((void *)start, (void *)end, 0, "initrd");
+-	memblock_free(__virt_to_phys(start), end - start);
+ }
+ #endif
+ 
+-- 
+2.15.2
+
 
 _______________________________________________
 linux-arm-kernel mailing list
