@@ -2,52 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 73CC261036
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  6 Jul 2019 13:02:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 55CF761098
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  6 Jul 2019 13:47:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x9o6fETkmtwjwfIUyHdxrsCoMoHiX8poo3FU8hKnuj8=; b=s6ID2tzWAfABV3
-	0FKmrvvS4pYOluDeuxpxcPmQAeuYJaLJ4JaOsP7wAAAq5pKVdG75MbuQyUSWOqX8Q37+4C9V36Lgp
-	XpBqQmSvVENyGTqZ0fPjvxwOi4jIvx8AE7i0qn/VIHl7lRIxQw0zqxSPn8MJWX1Pn1ioxovL2deHe
-	RxaUyCSS5J8hwiUopXck085cXQOSV6bzSBWpehBTyS3JVOMziYJwdMOVY5D99CT11fdVDDwM/VaN0
-	KtfFUNTBdNqh6/eZmCEISCZ81FhmKOMN6UuQrHnk0filglimewQeDYBSqCkg/i7nl6Tp4KTO+kU5J
-	Q4QnY4ZDMD1gSV8cTNTA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xFyipWcyhQpHdpWC8jMLJ2Ije0STcJLLJjM5ge+PShc=; b=J0ocHfB8tvB1FH
+	Yc4ycoJ9v8ET0yNxWpS/IqKMN3JIf1YZMd40CfT5CLVOk8PClRoaTAUSfJbt2KKAJ4TrHSrj0jhUP
+	TQMtkGM3iWxPvw+5M8tKcVplEGCkLavDGdQRFNvqzuJCVy0/lji/oOtNvLaDuqq8DA4mTIJKVRZ11
+	EtyrU3CxCCX7WTiU4ZZiY99VeInJtcZH/bLIFmvng7DWqOVIbpEvpwboKgIuBv6G5GV5S312BP/bR
+	8WxBpMH3mUv+NR8qOqzhoaLmBAlz8zJZKMK1fgBfulmhkWJyQODDPhp/VPLJ5PQpapttopgzowhcR
+	PJbef/sbaagEeDefN32w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hjiRz-0005qL-RN; Sat, 06 Jul 2019 11:01:51 +0000
-Received: from coyote.holtmann.net ([212.227.132.17] helo=mail.holtmann.org)
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hjiRf-0005oS-CD; Sat, 06 Jul 2019 11:01:33 +0000
-Received: from [192.168.0.113] (CMPC-089-239-107-172.CNet.Gawex.PL
- [89.239.107.172])
- by mail.holtmann.org (Postfix) with ESMTPSA id 1D63CCEFAE;
- Sat,  6 Jul 2019 13:09:41 +0200 (CEST)
-Mime-Version: 1.0 (Mac OS X Mail 12.4 \(3445.104.11\))
-Subject: Re: [PATCH v1 0/4] add boot-gpios and clock property to btmtkuart
-From: Marcel Holtmann <marcel@holtmann.org>
-In-Reply-To: <1559437457-26766-1-git-send-email-sean.wang@mediatek.com>
-Date: Sat, 6 Jul 2019 13:01:08 +0200
-Message-Id: <1E60D580-3D91-4AF0-8CCC-4576C54D2258@holtmann.org>
-References: <1559437457-26766-1-git-send-email-sean.wang@mediatek.com>
-To: Sean Wang <sean.wang@mediatek.com>
-X-Mailer: Apple Mail (2.3445.104.11)
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190706_040131_565532_9A4A35BA 
-X-CRM114-Status: UNSURE (   6.45  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.132.17 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+	id 1hjj9w-0002Qe-QQ; Sat, 06 Jul 2019 11:47:17 +0000
+Received: from 177.205.70.5.dynamic.adsl.gvt.net.br ([177.205.70.5]
+ helo=coco.lan)
+ by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
+ id 1hjj9S-0002M7-Qh; Sat, 06 Jul 2019 11:46:47 +0000
+Date: Sat, 6 Jul 2019 08:46:38 -0300
+From: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
+To: Dave Young <dyoung@redhat.com>
+Subject: Re: [PATCH 18/39] docs: admin-guide: add kdump documentation into it
+Message-ID: <20190706084638.7dc875f2@coco.lan>
+In-Reply-To: <20190705055904.GB2790@localhost.localdomain>
+References: <cover.1561724493.git.mchehab+samsung@kernel.org>
+ <654e7591c044632c06257e0f069a52c0bb993554.1561724493.git.mchehab+samsung@kernel.org>
+ <6911b74c-848f-0060-3db5-b5d7e8061cb5@linux.alibaba.com>
+ <20190705055904.GB2790@localhost.localdomain>
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+MIME-Version: 1.0
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,39 +46,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- Johan Hedberg <johan.hedberg@gmail.com>, linux-kernel@vger.kernel.org,
- linux-bluetooth@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Rich Felker <dalias@libc.org>,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Jerry Hoemann <jerry.hoemann@hpe.com>, Harry Wei <harryxiyou@gmail.com>,
+ Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ Alex Shi <alex.shi@linux.alibaba.com>, Will Deacon <will@kernel.org>,
+ Yoshinori Sato <ysato@users.sourceforge.jp>, Jonathan Corbet <corbet@lwn.net>,
+ linux-sh@vger.kernel.org, Michael Ellerman <mpe@ellerman.id.au>,
+ x86@kernel.org, Russell King <linux@armlinux.org.uk>,
+ Ingo Molnar <mingo@redhat.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Guenter Roeck <linux@roeck-us.net>, linux-watchdog@vger.kernel.org,
+ Mauro Carvalho Chehab <mchehab@infradead.org>, Borislav Petkov <bp@alien8.de>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ linux-arm-kernel@lists.infradead.org, Baoquan He <bhe@redhat.com>,
+ kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Vivek Goyal <vgoyal@redhat.com>, linuxppc-dev@lists.ozlabs.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sean,
-
-> Update dt-binding and the corresponding implmentation of boot-gpios and clock
-> property to btmtkuart.
-> 
-> Sean Wang (4):
->  dt-bindings: net: bluetooth: add boot-gpios property to UART-based
->    device
->  dt-bindings: net: bluetooth: add clock property to UART-based device
->  Bluetooth: btmtkuart: add an implementation for boot-gpios property
->  Bluetooth: btmtkuart: add an implementation for clock osc property
-> 
-> .../bindings/net/mediatek-bluetooth.txt       | 17 +++++++
-> drivers/bluetooth/btmtkuart.c                 | 51 +++++++++++++++----
-> 2 files changed, 58 insertions(+), 10 deletions(-)
-
-all four patches have been applied to bluetooth-next tree.
-
-Regards
-
-Marcel
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+RW0gRnJpLCA1IEp1bCAyMDE5IDEzOjU5OjA0ICswODAwCkRhdmUgWW91bmcgPGR5b3VuZ0ByZWRo
+YXQuY29tPiBlc2NyZXZldToKCj4gT24gMDcvMDUvMTkgYXQgMTE6NDNhbSwgQWxleCBTaGkgd3Jv
+dGU6Cj4gPiAKPiA+IAo+ID4g5ZyoIDIwMTkvNi8yOCDkuIvljYg4OjMwLCBNYXVybyBDYXJ2YWxo
+byBDaGVoYWIg5YaZ6YGTOiAgCj4gPiA+IFRoZSBLZHVtcCBkb2N1bWVudGF0aW9uIGRlc2NyaWJl
+cyBwcm9jZWR1cmVzIHdpdGggYWRtaW5zIHVzZQo+ID4gPiBpbiBvcmRlciB0byBzb2x2ZSBpc3N1
+ZXMgb24gdGhlaXIgc3lzdGVtcy4KPiA+ID4gCj4gPiA+IFNpZ25lZC1vZmYtYnk6IE1hdXJvIENh
+cnZhbGhvIENoZWhhYiA8bWNoZWhhYitzYW1zdW5nQGtlcm5lbC5vcmc+Cj4gPiA+IC0tLQo+ID4g
+PiAgRG9jdW1lbnRhdGlvbi9hZG1pbi1ndWlkZS9idWctaHVudGluZy5yc3QgICAgICAgICAgICB8
+IDQgKystLQo+ID4gPiAgRG9jdW1lbnRhdGlvbi9hZG1pbi1ndWlkZS9pbmRleC5yc3QgICAgICAg
+ICAgICAgICAgICB8IDEgKwo+ID4gPiAgRG9jdW1lbnRhdGlvbi97ID0+IGFkbWluLWd1aWRlfS9r
+ZHVtcC9nZGJtYWNyb3MudHh0ICB8IDAKPiA+ID4gIERvY3VtZW50YXRpb24veyA9PiBhZG1pbi1n
+dWlkZX0va2R1bXAvaW5kZXgucnN0ICAgICAgfCAxIC0KPiA+ID4gIERvY3VtZW50YXRpb24veyA9
+PiBhZG1pbi1ndWlkZX0va2R1bXAva2R1bXAucnN0ICAgICAgfCAwCj4gPiA+ICBEb2N1bWVudGF0
+aW9uL3sgPT4gYWRtaW4tZ3VpZGV9L2tkdW1wL3ZtY29yZWluZm8ucnN0IHwgMCAgCj4gPiAKPiA+
+IEkgYW0gbm90IHN1cmUgaWYgaXQncyBjb252ZW5pZW5jZSBmb3IgcGVvcGxlIHRvIGhhdmUgbW9y
+ZSBsZXZlbHMgaW4gZG9jcy4KPiA+IAo+ID4gQnV0IEkgZ3Vlc3MsIG1vdmUgYXJjaHMgaW50byBh
+IERvY3VtZW50YXRpb24vYXJjaC8gZGlyIHNob3VsZCBiZSBmaW5lLiBsaWtlIERvY3VtZW50YXRp
+b24vYXJjaC97eDg2LGFybSxhcm02NCxpYTY0LG02OGssczM5MCxwb3dlcnBjLC4uLn0gIAo+IAo+
+IEFsZXgsIG1vdmluZyBrZHVtcCB0byBhZG1pbi1ndWlkZSBzb3VuZHMgcmVhc29uYWJsZSB0byBt
+ZS4gIEkgYWxzbyBhZ3JlZQo+IHdpdGggeW91IGZvciB0aG9zZSBhcmNoIGRlcGVuZGVudCBmaWxl
+cyBjYW4gYmUgbW92ZWQgdG8KPiBEb2N1bWVudGF0aW9uL2FyY2gvLCBtYXliZSB5b3UgYXJlIHRh
+bGtpbmcgYWJvdXQgc29tZSBvdGhlciBwYXRjaGVzIGluCj4gdGhlIHNlcmllcyBmb3IgdGhlIGFy
+Y2gvPyAKCkFsZXgsCgpJdCBtYWtlcyBzZW5zZSBmb3IgbWUgdG8gaGF2ZSBhIERvY3VtZW50YXRp
+b24vYXJjaCBkaXJlY3RvcnksIGFuZCBwbGFjZQp0aGUgYXJjaC1zcGVjaWZpYyBkb2NzIG92ZXIg
+dGhlcmUuCgpUaGVyZSdzIGFjdHVhbGx5IGEgdGVjaG5pY2FsIGFkdmFudGFnZSBvbiBkb2luZyB0
+aGF0OiBTcGhpbnggaXMgZHVtYgp3aXRoIHJlZ2FyZHMgdG8gUERGL0xhVGVYIG91dHB1dDogaXQg
+cmVxdWlyZXMgYWxsIHRvcCBkb2N1bWVudHMgdG8gYmUKbGlzdGVkIGF0IERvY3VtZW50YXRpb24v
+Y29uZi5weSwgdW5kZXIgdGhpcyB2YXI6CgoJbGF0ZXhfZG9jdW1lbnRzID0gWwoJCS4uLgoJXQoK
+QXMgaXQgY3JlYXRlcyBvbmUgcnVudGltZSBNYWtlZmlsZSBhdCBEb2N1bWVudGF0aW9uL291dHB1
+dCBwZXIgbGlzdGVkCmRvY3VtZW50IHRoZXJlLiBTbywgdGhlIG1vcmUgd2UgZ3JvdXAgc3VjaCBk
+b2N1bWVudHMsIHRoZSBsZXNzIG1lcmdlCmNvbmZsaWN0cyB3ZSdsbCBoYXZlIGF0IERvY3VtZW50
+YXRpb24vY29uZi5weS4KCkJ0dywgdGhlcmUncyBhIFtURUNIIFRPUElDXSBwcm9wb3NhbCBmb3Ig
+S1MvMjAxOSBtZWFudCB0byBkaXNjdXNzIApEb2N1bWVudGF0aW9uLgoKSSBzdXNwZWN0IHdlIGNv
+dWxkIGRpc2N1c3MgdGhlIHByb3MvY29ucyBvZiBkb2luZyBzdWNoIGNoYW5nZSB0aGVyZS4KCk15
+IHBlcnNvbmFsIHZpZXcgaXMgdGhhdCB3ZSBzaG91bGQga2VlcCB0aGUgRG9jdW1lbnRhdGlvbi8g
+cm9vdCBkaXIgYXMKY2xlYW4gYXMgcG9zc2libGUgYXMgYSBsb25nIHRlcm0gZ29hbC4KCk9uIHRo
+ZSBvdGhlciBoYW5kLCBpdCBtYWtlcyB0aGUgcGF0aCBiaWdnZXIgYW5kIGhhcmRlciB0byByZW5h
+bWUuCgpPbiBhIHNpZGUgbm90ZSwgbGFzdCB0aW1lIHdlIGRpc2N1c3NlZCBkb2N1bWVudGF0aW9u
+IGF0IEtTIEkgcmVtZW1iZXIKSSBwcm9wb3NlZCB0byBzaG9ydGN1dCAiRG9jdW1lbnRhdGlvbi8i
+IHRvIGp1c3QgImRvY3MvIi4gVGhlIGNvbnNlbnN1cwpvbiB0aGF0IHRpbWUgd2VyZSB0byBrZWVw
+IHRoZSBiaWcgbmFtZS4gSSBzdGlsbCB0aGluayB0aGF0IGEgc2hvcnRlcgpvbmUgY291bGQgaGVs
+cCBwZW9wbGUgdG8gcmVtaW5kIHdoZXJlIGRvY3VtZW50YXRpb24gd2lsbCBiZSBsb2NhdGVkLgoK
+VGhhbmtzLApNYXVybwoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0
+cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
+Zm8vbGludXgtYXJtLWtlcm5lbAo=
