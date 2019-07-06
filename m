@@ -2,86 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D983A61225
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  6 Jul 2019 18:17:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9E32A6123A
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  6 Jul 2019 18:48:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:Date:Subject:To:
-	From:Message-ID:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0djIPtrOxH+W/Y2ImIW+ILwAfHHX2mRlsh7BqJCY2nE=; b=eq40nlnbxGjRTg
-	3dOitQ3rxaR1gbQT3yFoW/hO+nKZgzAk4vCUx1nWtAOjoVJNIvQxOmjv72X//XvlxH/yUFKkFrRH/
-	g4GRXzKA66/nffRtjCz/5KnmrIz3T7yPD1ga7i0+OgIvIuPnMs/LkpNWTIA4XAP8RnC2iEc2/V7P9
-	MatTViP+8X8JIr++RLEQ8idK7oq1bwLEnLAsnuvAyNWt+CuSd8x/2miSxpFnAp9ARfehJ++L8sqT8
-	r6kXz3J6omwO4s23bpcRznC6CrDq+5cr4REw+QcTeAlMKSY8dQJMC7GFnAbvFrAGpSxdnmtAzmr61
-	zJG8Q10WdTq50VyDrBbQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=C8/nAdC54hOMV002vyJVuh2iWjUvfynFfEGQXpOlq/Y=; b=uSCLTL2PlZwZoZ
+	+sG3PP9mnIX2/wP6sdpI+CQluMOjt6boArmPh8GAhHq50Q7HgyUf88jV6/JMC3CjCCpeoxFWXVJld
+	y9YUuiSVnwUPn8N/miMHa5V+j2CCfI2n1fpWKxfO5B8Npg2kFGGa29SAebS757qCeoRG7PJWYpKnQ
+	UiCk9PMasQdgZDEm8ehEmtlLmi4YcNaAqgs8c56IhrLWY1SDj1ZAB/szsZggq6w3q1h+G594UWeNm
+	bu3xowd+jxYPIz9710XzanoULLnUuU/DENR4btyU+BRtjTZex9DSRmZ983GFkyNYEDFmv880L5NW9
+	6MiXJJa8FIoPuA8UrX3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hjnNJ-00044g-1T; Sat, 06 Jul 2019 16:17:21 +0000
-Received: from mout.gmx.net ([212.227.15.19])
+	id 1hjnrO-0005JK-1L; Sat, 06 Jul 2019 16:48:26 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjnMm-00043S-Oi; Sat, 06 Jul 2019 16:16:50 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1562429720;
- bh=v/j4XiFKCPBK6S3apqY0k2vzFHqTLRdaz8I12SI1NC0=;
- h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=CJHkPYNHKpYJZeE8b5exv7hkag9LhEEk+oMaVu7xO2FhAqyFGWXwh1VMzFLMBIQAt
- SUzlzlLPzNa+VycQIqxK3jP7pFWAWr+3NfSKAIasrPtmMrq1Jf0xTkOFJyAUjG4ip+
- eZ/Fmx5yUrwrEjw564ZtBuE2gG9/dHoIoBaWeMSc=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [185.53.41.182] ([185.53.41.182]) by web-mail.gmx.net
- (3c-app-gmx-bs42.server.lan [172.19.170.94]) (via HTTP); Sat, 6 Jul 2019
- 18:15:20 +0200
+ id 1hjnrB-0005Is-MP
+ for linux-arm-kernel@lists.infradead.org; Sat, 06 Jul 2019 16:48:15 +0000
+Received: from localhost (unknown [62.119.166.9])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id C1C4520836;
+ Sat,  6 Jul 2019 16:48:10 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1562431691;
+ bh=cs30vXbt2kXkxwO6GdccBr0iTV2FUZurmVc80D7Ch+s=;
+ h=From:To:Cc:Subject:Date:From;
+ b=X5YoYllIwYejBS3CsNTUly5LvWKKNeTm56SgENCViXWljD6wX1jPVAK4sBaPmJ/oW
+ fFCOvGunz4tyWIcdW0rXPKn7/pETiK34sOh14MK/UGCdSPNPQfTSjubxNh3t0Jp49I
+ mQRsNP1DdsrC6BAz+fwL3Wf4Fp0fgOeZQvFEH4Kc=
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Lee Jones <lee.jones@linaro.org>
+Subject: [PATCH 1/3] mfd: ab3100: no need to check return value of
+ debugfs_create functions
+Date: Sat,  6 Jul 2019 18:47:20 +0200
+Message-Id: <20190706164722.18766-1-gregkh@linuxfoundation.org>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-Message-ID: <trinity-a4e5f99f-00bc-4e90-9a48-64dbc6ba9c08-1562429720701@3c-app-gmx-bs42>
-From: "Frank Wunderlich" <frank-w@public-files.de>
-To: "Alexandre Belloni" <alexandre.belloni@bootlin.com>
-Subject: Aw: Re: Re: [PATCH v2 3/7] rtc: mt6397: improvements of rtc driver
-Date: Sat, 6 Jul 2019 18:15:20 +0200
-Importance: normal
-Sensitivity: Normal
-In-Reply-To: <20190705212448.GB12409@piout.net>
-References: <20190703164822.17924-1-frank-w@public-files.de>
- <20190703164822.17924-4-frank-w@public-files.de>
- <20190704204336.GJ3692@piout.net>
- <trinity-7b1977bd-252b-4482-b708-cf704a9d3da1-1562340946396@3c-app-gmx-bs68>
- <20190705212448.GB12409@piout.net>
-X-UI-Message-Type: mail
-X-Priority: 3
-X-Provags-ID: V03:K1:HL+BGyIiUKA788YDI9SjshqIgoMva0CxAoF0FNbmiWgikilC3yiUX3XktaeBDjK0IKEwF
- M5OzAzR5nw+t+4CRs1I9g+sSK9MWMfSk/mKhmsVI5WIq/vtS3pVX1YuGkdLkf/v3EPW6LKS0H0fH
- MEGQbEULdeuovwyZr1yP9Tpo/P2sY+g5b5YLZja/sE2f9jGjj/jjGqHWsp1kdhzEMjXYJMc5vSNc
- dfl7xrTKVwXPYNGVBc9EZLwMTCrtuqST4Fgc+OvmRPpC724OLngAkRDCyKKMuFK307+DLk1V/cdV
- FQ=
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:dyLM7KxLlUY=:rEe9h1ie4NZfHvWUktHHgZ
- wGYyOhfZILpnEZ9Mc5xv/j/t5C7oJ/KSAvlrJYU5WMOFIXloz16TCcbtXrc+MXq5y+9Pp0yWn
- /fcu5HNIpjz8tXE9yfRZ6E7xrDRaCCxo66a0w6VTfpZypL+UJSarOf2DvVSf2GqRaFmXlPB69
- WNCtysh7zssF8h3itBz5jY/CtpUPdiL7ycY4Pgh37j0fDS0fn7nM8v2TR6osYKCBYrdTeFjHU
- HleenrgDa8iGGTiYyHUWzXCdNO2ppoUKiHnTSpBEFVXFxP7JIwvekGpFALoE3aRZeLT+fze9T
- 4T+8fwwqzV5OHA+UJgFaHnCzgJr/NqZEvJb6bDNoeGi1kgrD+QBn7Vwm7dZQwKMsoZ9agtiA1
- +tPco/SEoeaAUgsQnmaIlPA6tUzYFTxuRbQqMYzOYDJWXtyxplXDcLueUlMvtLPYZcGQZWBME
- JASBkNFwFm4MjMeu5nzlgUuw6KDoyJm3cINY+DPewJc51PjyO5puYKREvSFnzKMKIfSsThaxN
- L1nE9hTZGtGw9cq4Npn6TC4mZFzVBU/P6rQ72e683HS4W0hRjzlmKxB7DeKv41qFQPhugeZFQ
- wlQRAG8d1atCBJ+ncStUtIuL8Ft/x3w/oFsEkK7VO6aTN5lyXftWeNXEqGPd0FWxquNe6FOq7
- UoSo=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190706_091649_140695_0D75756F 
-X-CRM114-Status: UNSURE (   7.96  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190706_094813_765695_D803DD88 
+X-CRM114-Status: GOOD (  12.91  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.15.19 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,48 +71,149 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Linus
- Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
- Richard Fontana <rfontana@redhat.com>, Mauro
- Carvalho Chehab <mchehab+samsung@kernel.org>,
- "Paul E . McKenney" <paulmck@linux.ibm.com>, Lee Jones <lee.jones@linaro.org>,
- linux-rtc@vger.kernel.org, Rob Herring <robh@kernel.org>,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- linux-pm@vger.kernel.org, Sean Wang <sean.wang@mediatek.com>,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, Eddie Huang <eddie.huang@mediatek.com>,
- Allison Randal <allison@lohutok.net>, Alessandro Zummo <a.zummo@towertech.it>,
- Josef Friedl <josef.friedl@speed.at>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Sebastian
- Reichel <sre@kernel.org>, "David S . Miller" <davem@davemloft.net>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> Gesendet: Freitag, 05. Juli 2019 um 23:24 Uhr
-> Von: "Alexandre Belloni" <alexandre.belloni@bootlin.com>
+When calling debugfs functions, there is no need to ever check the
+return value.  The function can work or not, but the code logic should
+never do something different based on this.
 
-> Let's say the RTC has been used to start your platform, then the irq
-> handler will be called as soon as the irq is requested, leading to a
-> null pointer dereference.
+Cc: Linus Walleij <linus.walleij@linaro.org>
+Cc: Lee Jones <lee.jones@linaro.org>
+Cc: linux-arm-kernel@lists.infradead.org
+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+---
+ drivers/mfd/ab3100-core.c | 45 ++++++---------------------------------
+ drivers/mfd/ab3100-otp.c  | 21 ++++++------------
+ 2 files changed, 13 insertions(+), 53 deletions(-)
 
-i cannot test this with my platform, but i have changed it in my repo
+diff --git a/drivers/mfd/ab3100-core.c b/drivers/mfd/ab3100-core.c
+index e350ab64238e..9f3dbc31d3e9 100644
+--- a/drivers/mfd/ab3100-core.c
++++ b/drivers/mfd/ab3100-core.c
+@@ -575,58 +575,27 @@ static const struct file_operations ab3100_get_set_reg_fops = {
+ 	.llseek = noop_llseek,
+ };
+ 
+-static struct dentry *ab3100_dir;
+-static struct dentry *ab3100_reg_file;
+ static struct ab3100_get_set_reg_priv ab3100_get_priv;
+-static struct dentry *ab3100_get_reg_file;
+ static struct ab3100_get_set_reg_priv ab3100_set_priv;
+-static struct dentry *ab3100_set_reg_file;
+ 
+ static void ab3100_setup_debugfs(struct ab3100 *ab3100)
+ {
+-	int err;
++	struct dentry *ab3100_dir;
+ 
+ 	ab3100_dir = debugfs_create_dir("ab3100", NULL);
+-	if (!ab3100_dir)
+-		goto exit_no_debugfs;
+ 
+-	ab3100_reg_file = debugfs_create_file("registers",
+-				S_IRUGO, ab3100_dir, ab3100,
+-				&ab3100_registers_fops);
+-	if (!ab3100_reg_file) {
+-		err = -ENOMEM;
+-		goto exit_destroy_dir;
+-	}
++	debugfs_create_file("registers", S_IRUGO, ab3100_dir, ab3100,
++			    &ab3100_registers_fops);
+ 
+ 	ab3100_get_priv.ab3100 = ab3100;
+ 	ab3100_get_priv.mode = false;
+-	ab3100_get_reg_file = debugfs_create_file("get_reg",
+-				S_IWUSR, ab3100_dir, &ab3100_get_priv,
+-				&ab3100_get_set_reg_fops);
+-	if (!ab3100_get_reg_file) {
+-		err = -ENOMEM;
+-		goto exit_destroy_reg;
+-	}
++	debugfs_create_file("get_reg", S_IWUSR, ab3100_dir, &ab3100_get_priv,
++			    &ab3100_get_set_reg_fops);
+ 
+ 	ab3100_set_priv.ab3100 = ab3100;
+ 	ab3100_set_priv.mode = true;
+-	ab3100_set_reg_file = debugfs_create_file("set_reg",
+-				S_IWUSR, ab3100_dir, &ab3100_set_priv,
+-				&ab3100_get_set_reg_fops);
+-	if (!ab3100_set_reg_file) {
+-		err = -ENOMEM;
+-		goto exit_destroy_get_reg;
+-	}
+-	return;
+-
+- exit_destroy_get_reg:
+-	debugfs_remove(ab3100_get_reg_file);
+- exit_destroy_reg:
+-	debugfs_remove(ab3100_reg_file);
+- exit_destroy_dir:
+-	debugfs_remove(ab3100_dir);
+- exit_no_debugfs:
+-	return;
++	debugfs_create_file("set_reg", S_IWUSR, ab3100_dir, &ab3100_set_priv,
++			    &ab3100_get_set_reg_fops);
+ }
+ #else
+ static inline void ab3100_setup_debugfs(struct ab3100 *ab3100)
+diff --git a/drivers/mfd/ab3100-otp.c b/drivers/mfd/ab3100-otp.c
+index b3f8d359f409..c4751fb9bc22 100644
+--- a/drivers/mfd/ab3100-otp.c
++++ b/drivers/mfd/ab3100-otp.c
+@@ -122,17 +122,11 @@ static const struct file_operations ab3100_otp_operations = {
+ 	.release	= single_release,
+ };
+ 
+-static int __init ab3100_otp_init_debugfs(struct device *dev,
+-					  struct ab3100_otp *otp)
++static void __init ab3100_otp_init_debugfs(struct device *dev,
++					   struct ab3100_otp *otp)
+ {
+ 	otp->debugfs = debugfs_create_file("ab3100_otp", S_IFREG | S_IRUGO,
+-					   NULL, otp,
+-					   &ab3100_otp_operations);
+-	if (!otp->debugfs) {
+-		dev_err(dev, "AB3100 debugfs OTP file registration failed!\n");
+-		return -ENOENT;
+-	}
+-	return 0;
++					   NULL, otp, &ab3100_otp_operations);
+ }
+ 
+ static void __exit ab3100_otp_exit_debugfs(struct ab3100_otp *otp)
+@@ -141,10 +135,9 @@ static void __exit ab3100_otp_exit_debugfs(struct ab3100_otp *otp)
+ }
+ #else
+ /* Compile this out if debugfs not selected */
+-static inline int __init ab3100_otp_init_debugfs(struct device *dev,
+-						 struct ab3100_otp *otp)
++static inline void __init ab3100_otp_init_debugfs(struct device *dev,
++						  struct ab3100_otp *otp)
+ {
+-	return 0;
+ }
+ 
+ static inline void __exit ab3100_otp_exit_debugfs(struct ab3100_otp *otp)
+@@ -211,9 +204,7 @@ static int __init ab3100_otp_probe(struct platform_device *pdev)
+ 	}
+ 
+ 	/* debugfs entries */
+-	err = ab3100_otp_init_debugfs(&pdev->dev, otp);
+-	if (err)
+-		goto err;
++	ab3100_otp_init_debugfs(&pdev->dev, otp);
+ 
+ 	return 0;
+ 
+-- 
+2.22.0
 
-https://github.com/frank-w/BPI-R2-4.14/commits/5.2-poweroff-mainline
-
-> Yes and IIRC, I did comment that the rtc change also had to be separated
-> from 1/7.
-
-also this is put in separate commit, can you take a look before i post v3?
-
-> Also, I really doubt this new compatible is necessary at all as you
-> could simply directly use mediatek,mt6397-rtc.
-
-imho this can confuse because the wrong chip-name is used in dts
-
-regards Frank
 
 _______________________________________________
 linux-arm-kernel mailing list
