@@ -2,81 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1DE3A6150D
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  7 Jul 2019 15:24:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E88D6150E
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  7 Jul 2019 15:24:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
 	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=CSysFuK3bjDT/ul3p6xHiQbCcg9HGvIU/np8NFiYv0s=; b=Etxt6XfCzEEvk5
-	eVlQuL2cOaDeCA1E6jBObpjUB+As17TZNS0MkqYRi09Aj3g7ueEFfh3zrYheWFRdN0UnrW3xPKCvW
-	dB3/JxQ62C3Pr1AYCx4w2M1H67BliuPee5jInc4u/zCSUcmAGbD8rNMYEsuVH1bUNqKIfg8vSWSqR
-	ZV54z8v8TNxauoKXNp5aYwk8OR07BksXoMci3IyXxWvShfAN+y2Wnigli+OyD6C7Wp8tUFJhnaawM
-	VxKQXLASiavSP0b2yq7K98tHDjtUZbVjTFZOht8C3gHRJZBUa0gAEKxYiuUSGM7cVSbkx3taPWBAX
-	PDT8qLduPc0FXyjq5JXA==;
+	List-Owner; bh=g7OcWmMgwxaRIRY+eJVJJS/cnMSaOi2ODsgf6kPZpSo=; b=Bg5F5Zp5VChZIy
+	Dxbr9OSeOsGm0wV+5/GSQHKbfs7lRi+ILYBHWF2YnWlMwIPgQ3EAkwuyqFhPbKKiLmxhzOlGblFQy
+	Kd5OOzJjZI+Gfc01b6WHblB1f3mw5tucjoYs90KDJ+3QjkHVdpUqyNQP+wRPU92/N9K9IBB/VT0WX
+	1P9XOh2SISUecxDboQcNijfVz3LElxJaxoITiVzGo1DusbPyLLJlXC2/1f0P+4+LoJ6qDRHpvzFYR
+	zRWkdjXdeaonP8YG9Jq7q1Dl5j/72G8knOtBGluSfESWoO/s4HIxd6mYxtogg4U2ag7f30uvjZCA8
+	64IWOzqS1CfPjz0+2oAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hk79E-00036u-9q; Sun, 07 Jul 2019 13:24:08 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1hk79W-0003Mj-4P; Sun, 07 Jul 2019 13:24:26 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hk78b-0002nh-Uj
- for linux-arm-kernel@lists.infradead.org; Sun, 07 Jul 2019 13:23:31 +0000
-Received: by mail-wr1-x441.google.com with SMTP id a10so13138256wrp.9
+ id 1hk78q-00030c-Jm
+ for linux-arm-kernel@lists.infradead.org; Sun, 07 Jul 2019 13:23:46 +0000
+Received: by mail-wm1-x344.google.com with SMTP id v15so2862844wml.0
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 07 Jul 2019 06:23:29 -0700 (PDT)
+ Sun, 07 Jul 2019 06:23:43 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:mime-version:content-disposition
- :user-agent; bh=/gM1Cn1FoiamDNCiMz/MtN94v9T5GO29x/2+fXZ9JqI=;
- b=E2eiVdE2E96RFcBV9l+RuYgS5g+FZf9Wsvzf5K+BhmwGfvPQHslK6V69u0+ulfqA/B
- SUumPXD96KwTUlmivng9yiaRtbvkkyjVy3lHexkqnRuunQK1EtXcgSqHQvvbQUSBjxjN
- XGJCQ+Jhr5Xs/wsEWsBjQ979x1yCysw9zdY6lp0Wfte+B0pHijSVr+gNsVG7mG8RzLxC
- bmeBZ8O04lwotsKSHZUfR4iOqayfv1joHAS8opcdA77PNBR7pQIN5JXRhWDMNGjQudw9
- OlomOfmcBy1hiL02rsyJ0hx9ZtcjetyGuQpPuARqugzYQA4WGP8UqN3dV6jQs+pU4qzw
- iaqw==
+ :user-agent; bh=K0RTcoO3eeXEQ/VOA/kvp7SGagErS4KYjRrruQqiKoQ=;
+ b=ROJDc2rqI7UvbNRweUh+r2bBgqFCTo9JCUFGVnleU7Q1mCJU0J7+3xseQrxNmt45Yg
+ WjvdlCjNcunxGMwkI6msx/DlOmxFwzji4KijNRNXrTfGc5Qr6UlDXHhRaGnXNsmwtJjl
+ YNV4aPs1x31SxEsH8TDFzRCRVJUgeMi1o2DXjFi4113Ie3IPoHIHWNNjH2vyKRj1wApi
+ M8YTEd4svLWP53fLso5DcNLh0sgvcqCBRlVfEMo/y9NcXuFoUxFjkGHoalrTYn+Ktxge
+ tqDgCaXiI7zjprSCLBxBE6VyR5oPFGW6pvD5PQ6/pOQoJHW+rPCQ0KzMzURjYbCSqf33
+ 8SJw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
  :content-disposition:user-agent;
- bh=/gM1Cn1FoiamDNCiMz/MtN94v9T5GO29x/2+fXZ9JqI=;
- b=UUTnD2j5nx4qDAdUPDMHHto1ffr0x3S6VNQgRkpJJIJ1juK2f+W+Nf6hu/CfT8usyL
- IOCF5qUExfr7M3UM5EADlMsjn002eD9lxiQm+3QUUdJWtMmIndv/YdVPjcUNQ3t0ATtj
- br2Zz0qWnNdr3AJFNBMXxnPg1x3LaNtNsApbFU8NTziGlp4K8XrtLbIDGXLSCWxMruRf
- 6zq6UovXaY6xmXf/Iv3JNzNBDldcpBO8VxhxKrJC23Ntjen7aqur8W/EZYJvXBKr7Ih8
- oSZI4/AUFUsNzOUpn0d7bkPL3pUshVq0XaDG3RqSd/+ZQeMR42Pw0E5rdH8Vk8rYAfSW
- pQLQ==
-X-Gm-Message-State: APjAAAV0AnvgPwPsaSrVuM63YE/l2Eq1qk4bqdDJ7tmZEE9PHROzfj+x
- 9ob5LCj8T7qf5+6MaB0BsnQ=
-X-Google-Smtp-Source: APXvYqwf797DK+OmySVwPFquD4vMHQf7L6s/P5WImTsm6ZajfhogqaJ+Ut33Pst7Etxe780UODx3Qg==
-X-Received: by 2002:adf:b64b:: with SMTP id i11mr13687369wre.205.1562505808556; 
- Sun, 07 Jul 2019 06:23:28 -0700 (PDT)
+ bh=K0RTcoO3eeXEQ/VOA/kvp7SGagErS4KYjRrruQqiKoQ=;
+ b=Fcc5nXVP9XEaHw8cXr26X5/3qp+HGccEQIdUmLmc53Cj2OTgy+Le+TfBtjrsBu9Prx
+ G9UNSRvRnyL8aBrpPsEMzz+4Expgxou2xvL/QtpnvB2nA8+lI4IS81AaVdg5Y3FxZpUJ
+ Hi5a9KgsbwX8riab7M1WbxjMQojakG757e3Pc3wvGAACHNCKZEoVzNQnJvmxz+DquRKf
+ CiX7ffXyJsZZCpKlf4ueaOTDsaLIyNefXa+by8DAahlYW8AsXuDkmp03HvJd8igCrhjM
+ 2O1hBeZCjkLUiAtJEKvZoOvZz2XtpFo/goxZd3c+u6g7/xd2x3dVfFVdSfossT4BClRN
+ Sx0g==
+X-Gm-Message-State: APjAAAWiuBuc+1RUsztxdKnvVyul5yGqN4mE5fmJyZnBeKir88DxsRRD
+ m1/HZe0OblTCoFDmb11MyVY=
+X-Google-Smtp-Source: APXvYqx2x2SBLnwpDYcIhsQfbAcvKWlOd53k5NUzpD1x6Bg50bDEMiHB/Fi49gUVjnnroUk3BQURNg==
+X-Received: by 2002:a7b:c4c1:: with SMTP id g1mr12835947wmk.14.1562505822861; 
+ Sun, 07 Jul 2019 06:23:42 -0700 (PDT)
 Received: from arks.localdomain (179.red-83-58-138.dynamicip.rima-tde.net.
  [83.58.138.179])
- by smtp.gmail.com with ESMTPSA id v12sm4294147wrr.87.2019.07.07.06.23.27
+ by smtp.gmail.com with ESMTPSA id h8sm13515959wmf.12.2019.07.07.06.23.41
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sun, 07 Jul 2019 06:23:28 -0700 (PDT)
-Date: Sun, 7 Jul 2019 15:23:25 +0200
+ Sun, 07 Jul 2019 06:23:42 -0700 (PDT)
+Date: Sun, 7 Jul 2019 15:23:39 +0200
 From: Aleix Roca Nonell <kernelrocks@gmail.com>
 To: Andreas =?utf-8?Q?F=C3=A4rber?= <afaerber@suse.de>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Thomas Gleixner <tglx@linutronix.de>, Jason Cooper <jason@lakedaemon.net>,
  Marc Zyngier <marc.zyngier@arm.com>
-Subject: [PATCH 4/6] arm64: dts: realtek: Add realtek intc to RTD129x
-Message-ID: <20190707132325.GE13340@arks.localdomain>
+Subject: [PATCH 5/6] dt-bindings: arm: Document RTD1296
+Message-ID: <20190707132339.GF13340@arks.localdomain>
 MIME-Version: 1.0
 Content-Disposition: inline
 User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190707_062330_003428_AEE4B3D0 
-X-CRM114-Status: GOOD (  12.48  )
+X-CRM114-CacheID: sfid-20190707_062344_700531_5211D0FC 
+X-CRM114-Status: UNSURE (   9.80  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -108,37 +109,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add realtek's interrupt controller node and interrupt lines
-to UART0
+Add bindings for Relatek RTD1296 SoC. And the Bannana Pi BPI-W2 board.
 
 Signed-off-by: Aleix Roca Nonell <kernelrocks@gmail.com>
 ---
- arch/arm64/boot/dts/realtek/rtd129x.dtsi | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+ Documentation/devicetree/bindings/arm/realtek.txt | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/realtek/rtd129x.dtsi b/arch/arm64/boot/dts/realtek/rtd129x.dtsi
-index 9009db909fab..6f61b9858aa0 100644
---- a/arch/arm64/boot/dts/realtek/rtd129x.dtsi
-+++ b/arch/arm64/boot/dts/realtek/rtd129x.dtsi
-@@ -29,8 +29,18 @@
- 		/* Exclude up to 2 GiB of RAM */
- 		ranges = <0x80000000 0x80000000 0x80000000>;
+diff --git a/Documentation/devicetree/bindings/arm/realtek.txt b/Documentation/devicetree/bindings/arm/realtek.txt
+index 95839e19ae92..78da1004d38c 100644
+--- a/Documentation/devicetree/bindings/arm/realtek.txt
++++ b/Documentation/devicetree/bindings/arm/realtek.txt
+@@ -20,3 +20,16 @@ Root node property compatible must contain, depending on board:
+ Example:
  
-+		mux1_intc: intc@98007000 {
-+			compatible = "realtek,rtd129x-intc-iso";
-+			#interrupt-cells = <1>;
-+			interrupt-controller;
-+			reg = <0x98007000 0x4 0x98007040 0x4 0x98007004 0x4>;
-+			interrupts = <GIC_SPI 41 IRQ_TYPE_LEVEL_HIGH>;
-+		};
+     compatible = "zidoo,x9s", "realtek,rtd1295";
 +
- 		uart0: serial@98007800 {
- 			compatible = "snps,dw-apb-uart";
-+			interrupt-parent = <&mux1_intc>;
-+			interrupts = <2>;
- 			reg = <0x98007800 0x400>;
- 			reg-shift = <2>;
- 			reg-io-width = <4>;
++
++RTD1296 SoC
++===========
++
++Required root node properties:
++
++ - compatible :  must contain "realtek,rtd1296"
++
++
++Root node property compatible must contain, depending on board:
++
++ - Bannana Pi BPI-W2: "bananapi,bpi-w2"
 -- 
 2.21.0
 
