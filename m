@@ -2,59 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 70BE261569
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  7 Jul 2019 17:15:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 67FE161573
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  7 Jul 2019 17:46:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=dFOFp8lPaksXSG1S0O2GjqvB0d0FBH16bSaUtjUA5LU=; b=NiCWsu8afh1UXs65Yn5Lh1Jnp
-	7qOWQiVUcHYjgBt7hY2ji7m8oaWxXPZNIrY003temL2BqoumZHyqoH0dUvIFcRq77/47vAfmilemE
-	AGaDDoyF+a3pR6kEssPQvcYrUtY2UeiFgbIMc2NhJxaIHTppIMOAm+M9tcfYsHvKY0KC0bLjYRLSq
-	UbF1SW/JW5VcoejyHNywzDxCxdFIrd7L/l052ZnO0g40T6Aaep2fr+fQT8N0u7sjr5KGO9m3X0g4o
-	bXtZiYg5DrzefovHl4OuWOUyCDi/18Hr5kjU/21wsl01tiDIpPl6hBF/5pZPGQE0mul9vrnV2dYTZ
-	xQe/WnV+A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9T2RlpcEC2dRSkl8Rr65+VuMbzSVHM79tKlWv0FPecs=; b=jVuNYfARW4F7TF
+	7xrg4Bf9YRml3MBM7AB5Nph+q5s5yMTzuPpcU+hO45+IdQJTivpI9UE2+2GKMtgpKMDaiOfgq0H/l
+	8dXAOSXouBpIJ+DzPzMJITZEK0/x0TTB1cmVUsP3/zPf7gvrJQkOgeOCJ1x+GnXY1pI0ZZ0F1TseN
+	7oemQF7xIYUg/7Tj+b3Dw/9TmEC40eMP4Ba7tFStvTF66WfG4b90ncPLtMVyQBkNUBIUYnl1OCZCQ
+	pM2GpBfHEksei5xcdWaSm0EbJZ323BVmuZjkf8LTSa1X+BWOuvKuV28H32eSH5rUeaxyXh9pSOHjI
+	GXICWljjEqKMDmADGhqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hk8sq-0006ow-PG; Sun, 07 Jul 2019 15:15:20 +0000
-Received: from relay6-d.mail.gandi.net ([217.70.183.198])
+	id 1hk9NC-0008Db-4y; Sun, 07 Jul 2019 15:46:42 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hk8sN-0006nM-3Z; Sun, 07 Jul 2019 15:14:53 +0000
-X-Originating-IP: 79.86.19.127
-Received: from [192.168.0.12] (127.19.86.79.rev.sfr.net [79.86.19.127])
- (Authenticated sender: alex@ghiti.fr)
- by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id E391BC0002;
- Sun,  7 Jul 2019 15:14:22 +0000 (UTC)
-Subject: Re: [PATCH v3 0/2] Hugetlbfs support for riscv
-To: Paul Walmsley <paul.walmsley@sifive.com>
-References: <20190701175900.4034-1-alex@ghiti.fr>
- <alpine.DEB.2.21.9999.1907031344330.10620@viisi.sifive.com>
- <c06441fd-0022-8fb9-36b0-2f5d956c3ed5@ghiti.fr>
- <alpine.DEB.2.21.9999.1907040429170.24872@viisi.sifive.com>
-From: Alex Ghiti <alex@ghiti.fr>
-Message-ID: <040f378d-e483-fa3a-28f4-fdb1bb62591d@ghiti.fr>
-Date: Sun, 7 Jul 2019 11:14:21 -0400
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.4.0
+ id 1hk9My-0008Ch-CT
+ for linux-arm-kernel@lists.infradead.org; Sun, 07 Jul 2019 15:46:29 +0000
+Received: by mail-wr1-x443.google.com with SMTP id u18so14455695wru.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 07 Jul 2019 08:46:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=bGbtCUO4BOGVmzuMetixQhEWqFmuXemkUETV1bb996A=;
+ b=HurwfdDW3WShikoqlGrI+gydUdaNqT7nPbx+UlqF+z+96uFR0gEOxu7vwrwEIcA652
+ 2vLX1bspJ3g8K3J1VtUAGpR5FCLx9lLvut88FGuKNVLFdX/2lcoTuwUtN+fRSAFZA06C
+ h3kZvDezlWrGwrV5wdCB3lIDTpAJgeXke0hpev1TE61jvqFG5Q8yBYNszPBPzyqCXmkY
+ wILy7HTrAmn8ZexDHsiSOrgg93jeFW6C/CdXiocgdhKz2/Y0n1edjGs0EC7XaJNuoUsF
+ ONWgtki6SDtg6krR9585ICxqV98f6NBs1JiTf3jw1DHeSzMNm1n2D6Ho5zQPOBX0SNgp
+ oUzg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=bGbtCUO4BOGVmzuMetixQhEWqFmuXemkUETV1bb996A=;
+ b=I5oZBaMuzpDWYSmL56b05c1OLGHBeAZ1M83o43m71MJKJTxPWF1XfloaqRhbU7MO95
+ /pMpjjU9jNh97k+LIxbhDt6amqp9QPp4+I98mZGKJhrueIjUs18Pjzoy+1Pnaa1yDP3P
+ GMLFIqmxJh4BrgGwgGFcNoSE/j7lVrPPkKWqlziwLj2xIEsXN2BaZ3imFsglm1xHmcdq
+ WizUtyhahvHrkE5biXqljyFVPrhC93VNUommuTVST7mlnG5cnFIyZo93QWQDHQCENSQZ
+ ZEa67bUu3uS0kCbLIgll2nIUJ0ADQYu/UHbEcHwA4NO/N6qXy5CP5XqgSmaxDpP+T7N9
+ qpAg==
+X-Gm-Message-State: APjAAAV84ztO7SXGiyIKZBtP/PGEhdyUWC4kaXkuDNrc3ONfZVdrMip+
+ /rksiJInoijzXk2JyJY0f0E=
+X-Google-Smtp-Source: APXvYqw9VqMOs+dnAC5XrgWMcL+6DE/EqrdzKGc6ZeBG3yR+KiuAuikZUZouVTyX/acHxAB3S/hQsw==
+X-Received: by 2002:a5d:42c5:: with SMTP id t5mr4824387wrr.5.1562514384972;
+ Sun, 07 Jul 2019 08:46:24 -0700 (PDT)
+Received: from arks.localdomain (179.red-83-58-138.dynamicip.rima-tde.net.
+ [83.58.138.179])
+ by smtp.gmail.com with ESMTPSA id f17sm9779586wmf.27.2019.07.07.08.46.23
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Sun, 07 Jul 2019 08:46:24 -0700 (PDT)
+Date: Sun, 7 Jul 2019 17:46:17 +0200
+From: Aleix Roca Nonell <kernelrocks@gmail.com>
+To: Andreas =?utf-8?Q?F=C3=A4rber?= <afaerber@suse.de>
+Subject: Re: [PATCH 2/6] irqchip: Add Realtek RTD129x intc driver
+Message-ID: <20190707154617.GA18436@arks.localdomain>
+References: <20190707132256.GC13340@arks.localdomain>
+ <baeb2dd8-0382-01ad-514b-982c0f123e6e@suse.de>
 MIME-Version: 1.0
-In-Reply-To: <alpine.DEB.2.21.9999.1907040429170.24872@viisi.sifive.com>
-Content-Language: sv-FI
+Content-Disposition: inline
+In-Reply-To: <baeb2dd8-0382-01ad-514b-982c0f123e6e@suse.de>
+User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190707_081451_476687_09BCEF91 
-X-CRM114-Status: GOOD (  19.12  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190707_084628_454639_52993781 
+X-CRM114-Status: GOOD (  14.55  )
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.198 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.198 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (kernelrocks[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,105 +103,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Hanjun Guo <guohanjun@huawei.com>, Albert Ou <aou@eecs.berkeley.edu>,
- Catalin Marinas <catalin.marinas@arm.com>, Palmer Dabbelt <palmer@sifive.com>,
- Will Deacon <will.deacon@arm.com>, x86@kernel.org,
- linux-kernel@vger.kernel.org, Christoph Hellwig <hch@infradead.org>,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- "H . Peter Anvin" <hpa@zytor.com>, Thomas Gleixner <tglx@linutronix.de>,
- linux-riscv@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Mike Kravetz <mike.kravetz@oracle.com>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Jason Cooper <jason@lakedaemon.net>, Marc Zyngier <marc.zyngier@arm.com>,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-On 7/4/19 7:35 AM, Paul Walmsley wrote:
-> On Thu, 4 Jul 2019, Alexandre Ghiti wrote:
->
->> On 7/4/19 12:57 AM, Paul Walmsley wrote:
->>> On Mon, 1 Jul 2019, Alexandre Ghiti wrote:
->>>
->>>> - libhugetlbfs testsuite on riscv64/2M:
->>>>     - brk_near_huge triggers an assert in malloc.c, does not on x86.
->>> I was able to reproduce the 2MB megapages test results on rv64 QEMU.  On a
->>> HiFive Unleashed, though, a few more tests fail:
-> [ ... ]
->
->>> - One of the heapshrink tests fails ("Heap did not shrink")
->>>
->>>     # LD_PRELOAD="obj64/libhugetlbfs_privutils.so obj64/libhugetlbfs.so
->>> tests/obj64/libheapshrink.so" HUGETLB_MORECORE_SHRINK=yes
->>> HUGETLB_MORECORE=yes tests/obj64/heapshrink
->>>     Starting testcase "tests/obj64/heapshrink", pid 753
->>>     FAIL    Heap did not shrink
->>>     #
->>>
->>> Some of these may be related to the top-down mmap work, but there might be
->>> more work to do on actual hardware.
->>
->> I don't think this is related to top-down mmap layout, this test only
->> mmaps a huge page. It might be interesting to see more verbose messages
->> adding HUGETLB_VERBOSE=99 when launching the test.
-> Here is the HUGETLB_VERBOSE=99 output from the above heapshrink test on an
-> FU540:
->
-> libhugetlbfs [(none):86]: INFO: Found pagesize 2048 kB
-> libhugetlbfs [(none):86]: INFO: Parsed kernel version: [5] . [2] . [0]  [pre-release: 6]
-> libhugetlbfs [(none):86]: INFO: Feature private_reservations is present in this kernel
-> libhugetlbfs [(none):86]: INFO: Feature noreserve_safe is present in this kernel
-> libhugetlbfs [(none):86]: INFO: Feature map_hugetlb is present in this kernel
-> libhugetlbfs [(none):86]: INFO: Kernel has MAP_PRIVATE reservations.  Disabling heap prefaulting.
-> libhugetlbfs [(none):86]: INFO: Kernel supports MAP_HUGETLB
-> libhugetlbfs [(none):86]: INFO: HUGETLB_SHARE=0, sharing disabled
-> libhugetlbfs [(none):86]: INFO: HUGETLB_NO_RESERVE=no, reservations enabled
-> libhugetlbfs [(none):86]: INFO: No segments were appropriate for remapping
-> libhugetlbfs [(none):86]: INFO: setup_morecore(): heapaddr = 0x2aaac00000
-> libhugetlbfs [(none):86]: INFO: hugetlbfs_morecore(1052672) = ...
-> libhugetlbfs [(none):86]: INFO: heapbase = 0x2aaac00000, heaptop = 0x2aaac00000, mapsize = 0, delta=1052672
-> libhugetlbfs [(none):86]: INFO: Attempting to map 2097152 bytes
-> libhugetlbfs [(none):86]: INFO: ... = 0x2aaac00000
-> libhugetlbfs [(none):86]: INFO: hugetlbfs_morecore(0) = ...
-> libhugetlbfs [(none):86]: INFO: heapbase = 0x2aaac00000, heaptop = 0x2aaad01000, mapsize = 200000, delta=-1044480
-> libhugetlbfs [(none):86]: INFO: ... = 0x2aaad01000
-> Starting testcase "tests/obj64/heapshrink", pid 86
-> libhugetlbfs [(none):86]: INFO: hugetlbfs_morecore(33558528) = ...
-> libhugetlbfs [(none):86]: INFO: heapbase = 0x2aaac00000, heaptop = 0x2aaad01000, mapsize = 200000, delta=32514048
-> libhugetlbfs [(none):86]: INFO: Attempting to map 33554432 bytes
-> libhugetlbfs [(none):86]: INFO: ... = 0x2aaad01000
-> FAIL    Heap did not shrink
->
->
-> This is with this hugepage configuration:
->
-> # /usr/local/bin/hugeadm --pool-list
->        Size  Minimum  Current  Maximum  Default
->     2097152       64       64       64        *
-> #
->
-
-Ok thanks for that, but it does not say much :)
-
-While trying to understand why it may fail on HW, I actually failed to 
-reproduce the results on qemu (I did not
-check the results for v3 and I recently switched from yocto to buildroot 
-so I lost my configuration...).
-
-What configuration do you use to reproduce the results on qemu ?
-
-FYI, while playing around, I noticed that with qemu v4.0.0, 
-icache_hygiene stalls whereas with
-v3.1.0, it does not but I did not investigate though.
-
-Thanks,
-
-Alex
-
-
-> - Paul
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gU3VuLCBKdWwgMDcsIDIwMTkgYXQgMDM6Mjc6MTZQTSArMDIwMCwgQW5kcmVhcyBGw6RyYmVy
+IHdyb3RlOgo+IEFtIDA3LjA3LjE5IHVtIDE1OjIyIHNjaHJpZWIgQWxlaXggUm9jYSBOb25lbGw6
+Cj4gPiBUaGlzIGRyaXZlciBhZGRzIHN1cHBvcnQgZm9yIHRoZSBSVEQxMjk2IGFuZCBSVEQxMjk1
+IGludGVycnVwdAo+ID4gY29udHJvbGxlciAoaW50YykuIEl0IGlzIGJhc2VkIG9uIGJvdGggdGhl
+IEJQSS1TSU5PVk9JUCBwcm9qZWN0IGFuZAo+ID4gQW5kcmVhcyBGw6RyYmVyJ3MgcHJldmlvdXMg
+YXR0ZW1wdCB0byBzdWJtaXQgYSBzaW1pbGFyIGRyaXZlci4KPiAKPiBEb2luZyB0aGF0IHdpdGhv
+dXQgbXkgU2lnbmVkLW9mZi1ieSBhbmQgQ29weXJpZ2h0IGlzIGNlcnRhaW5seSBub3Qgb2theS4K
+PiBJdCBpcyBhbHNvIGxhY2tpbmcgYSBjbGVhciBkZXNjcmlwdGlvbiBvZiB3aGF0IHlvdSBjaGFu
+Z2VkIGZyb20gbXkgbGFzdAo+IHN1Ym1pc3Npb24gb3IgdGhlIHBvc3Qtc3VibWlzc2lvbiBHaXRI
+dWIgdmVyc2lvbiBhZHJlc3NpbmcgcmV2aWV3Cj4gY29tbWVudHMsIHdoaWNoIGJyb2tlLgoKSSdt
+IHJlYWxseSBzb3JyeSBhYm91dCB0aGF0LCBiZWNhdXNlIEkgcmV3cm90ZSB0aGUgY29kZSAoYWxt
+b3N0KSBmcm9tCnNjcmF0Y2ggKGdpdmVuIHRoYXQgSSB3YXNuJ3QgYXdhcmUgb2YgdGhpcyBwcmV2
+aW91cyBhdHRlbXB0IHdoZW4gSQpzdGFydGVkIHdvcmtpbmcgd2l0aCBpdCkgSSB3YXMgbm90IHN1
+cmUgaWYgaXQgd2FzIG5lY2Vzc2FyeS4gSSB3aWxsCmFkZHJlc3MgdGhpcyBpbiB0aGUgbmV4dCB2
+ZXJzaW9uIG9mIHRoZSBwYXRjaCBzZXJpZXMuCgpUaGFuayB5b3UgYW5kIHNvcnJ5IGZvciB0aGUg
+aW5jb252ZW5pZW5jZS4KCj4gCj4gUmVnYXJkcywKPiBBbmRyZWFzCj4gCj4gLS0gCj4gU1VTRSBM
+aW51eCBHbWJICj4gTWF4ZmVsZHN0ci4gNSwgOTA0MDkgTsO8cm5iZXJnLCBHZXJtYW55Cj4gR0Y6
+IEZlbGl4IEltZW5kw7ZyZmZlciwgTWFyeSBIaWdnaW5zLCBTcmkgUmFzaWFoCj4gSFJCIDIxMjg0
+IChBRyBOw7xybmJlcmcpCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxp
+c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
+aW5mby9saW51eC1hcm0ta2VybmVsCg==
