@@ -2,63 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B497E6149C
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  7 Jul 2019 12:08:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77CF4614E4
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  7 Jul 2019 14:12:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WdXl2cCkyL68CVA7LY9GTcMVaOxNVGrwsU8TvhJaI2g=; b=u59pb1hNmYHtJ8
-	SC3pjmX2AWCGTYmdNtwb5DHRi6lt4obnIXAf76xDsM+6AVxq7heERn99n/atbmNWQn9LN6jzYsRfT
-	jv6IwsuwHSJv78/IQMTj8jTpfpM4FemsUsqoYiMp5y2x9RzF5hse9oAFdFEqcmbQeITLZZr1heE0V
-	LClPTTn8CflKWVaaXpWTajQWqtNOrdETLxNvY6hJeiANqXAQ+voKBV8hbByoWBQG/Ylh3mWadfKmr
-	MmazT9rTuBEcSdyJZkuVXPt1wLlrAZu+29k9Is8jHDm4qQMDJzUs06VmV6YCNYpYtnysEZIOoHI83
-	oRSVa9CVGDsZ25ihshSg==;
+	List-Owner; bh=hk4zjxQs825v08GsGmWGToftWtIauTy/kmdV11dd9R4=; b=mvDZvCrqK55vZI
+	WquZfXNV8zuQ6O+rATC7GR3UHveex9lD2Ze37yRxPwL8Mv9R79G6lsQUptUslE0iY5+VAzwJjVVZI
+	7Qqmh7UjfaMnf3f5zT1jZm+D8acd3sJcYvxkMK187aV9VM3iR0CFms+t9MWBGBFefaLKZNLqHPc3/
+	HYCyzGZ2Sd1ck9icw0Fllw4vnRISWAzfaBxrfSy/s9LRWGbxWCqh22xtc3YSWc2C++5+OKJRzrn+O
+	i6T3NHAEsjoyEHIJAstpy0IdIrRn2db65HpjVYK0gX3UyEyYax7+Xf+SkrkwO9c+TqANVCR9j/WVD
+	pB0VHGgd2BuPfd5rKWog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hk45L-0003ew-Ty; Sun, 07 Jul 2019 10:07:56 +0000
-Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
+	id 1hk61d-0006rQ-SU; Sun, 07 Jul 2019 12:12:13 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hk450-0003dX-M2
- for linux-arm-kernel@lists.infradead.org; Sun, 07 Jul 2019 10:07:36 +0000
-Received: from pd9ef1cb8.dip0.t-ipconnect.de ([217.239.28.184] helo=nanos)
- by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
- (Exim 4.80) (envelope-from <tglx@linutronix.de>)
- id 1hk44E-0003Ye-Mp; Sun, 07 Jul 2019 12:06:46 +0200
-Date: Sun, 7 Jul 2019 12:06:43 +0200 (CEST)
-From: Thomas Gleixner <tglx@linutronix.de>
-To: Dexuan Cui <decui@microsoft.com>
-Subject: RE: [tip:timers/core] clocksource/drivers: Make Hyper-V clocksource
- ISA agnostic
-In-Reply-To: <PU1P153MB0169C8A38643B9284C938353BFF40@PU1P153MB0169.APCP153.PROD.OUTLOOK.COM>
-Message-ID: <alpine.DEB.2.21.1907071205530.3648@nanos.tec.linutronix.de>
-References: <1561955054-1838-2-git-send-email-mikelley@microsoft.com>
- <tip-fd1fea6834d0f9f93062ae6685862908a9baed39@git.kernel.org>
- <PU1P153MB0169E8E3898897BF3B3BE0F6BFF40@PU1P153MB0169.APCP153.PROD.OUTLOOK.COM>
- <alpine.DEB.2.21.1907060944200.3648@nanos.tec.linutronix.de>
- <alpine.DEB.2.21.1907061032400.3648@nanos.tec.linutronix.de>
- <PU1P153MB0169C8A38643B9284C938353BFF40@PU1P153MB0169.APCP153.PROD.OUTLOOK.COM>
-User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
+ id 1hk61F-0006mp-SM
+ for linux-arm-kernel@lists.infradead.org; Sun, 07 Jul 2019 12:11:51 +0000
+Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 9A1FE5D50037484CFA55;
+ Sun,  7 Jul 2019 20:11:30 +0800 (CST)
+Received: from localhost (10.45.56.64) by DGGEMS405-HUB.china.huawei.com
+ (10.3.19.205) with Microsoft SMTP Server id 14.3.439.0; Sun, 7 Jul 2019
+ 20:11:26 +0800
+Date: Sun, 7 Jul 2019 13:11:23 +0100
+From: Jonathan Cameron <jonathan.cameron@huawei.com>
+To: Fuqian Huang <huangfq.daxian@gmail.com>
+Subject: Re: [Patch v2 05/10] iio: using dev_get_drvdata directly
+Message-ID: <20190707131031.00000f0a@huawei.com>
+In-Reply-To: <20190704023613.4643-1-huangfq.daxian@gmail.com>
+References: <20190704023613.4643-1-huangfq.daxian@gmail.com>
+Organization: Huawei
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; i686-w64-mingw32)
 MIME-Version: 1.0
-X-Linutronix-Spam-Score: -1.0
-X-Linutronix-Spam-Level: -
-X-Linutronix-Spam-Status: No , -1.0 points, 5.0 required, ALL_TRUSTED=-1,
- SHORTCIRCUIT=-0.0001
+X-Originating-IP: [10.45.56.64]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190707_030734_864930_33C04277 
-X-CRM114-Status: GOOD (  13.05  )
+X-CRM114-CacheID: sfid-20190707_051150_186770_82B825C3 
+X-CRM114-Status: GOOD (  12.88  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a0a:51c0:0:12e:550:0:0:1 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ medium trust [45.249.212.191 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,63 +64,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "linux-hyperv@vger.kernel.org" <linux-hyperv@vger.kernel.org>,
- "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
- "rkrcmar@redhat.com" <rkrcmar@redhat.com>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "jasowang@redhat.com" <jasowang@redhat.com>,
- "linux@rasmusvillemoes.dk" <linux@rasmusvillemoes.dk>,
- "linux-mips@vger.kernel.org" <linux-mips@vger.kernel.org>,
- "linux-kselftest@vger.kernel.org" <linux-kselftest@vger.kernel.org>,
- "hpa@zytor.com" <hpa@zytor.com>, KY Srinivasan <kys@microsoft.com>,
- "shuah@kernel.org" <shuah@kernel.org>, "mingo@kernel.org" <mingo@kernel.org>,
- "sashal@kernel.org" <sashal@kernel.org>,
- "sfr@canb.auug.org.au" <sfr@canb.auug.org.au>,
- "vincenzo.frascino@arm.com" <vincenzo.frascino@arm.com>,
- "linux-tip-commits@vger.kernel.org" <linux-tip-commits@vger.kernel.org>,
- "daniel.lezcano@linaro.org" <daniel.lezcano@linaro.org>,
- "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
- "marcelo.cerri@canonical.com" <marcelo.cerri@canonical.com>,
- "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
- "olaf@aepfle.de" <olaf@aepfle.de>, "arnd@arndb.de" <arnd@arndb.de>,
- "marc.zyngier@arm.com" <marc.zyngier@arm.com>,
- "0x7f454c46@gmail.com" <0x7f454c46@gmail.com>, "bp@alien8.de" <bp@alien8.de>,
- "apw@canonical.com" <apw@canonical.com>,
- Sunil Muthuswamy <sunilmut@microsoft.com>,
- Michael Kelley <mikelley@microsoft.com>, "pcc@google.com" <pcc@google.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "huw@codeweavers.com" <huw@codeweavers.com>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "ralf@linux-mips.org" <ralf@linux-mips.org>,
- "salyzyn@android.com" <salyzyn@android.com>,
- "paul.burton@mips.com" <paul.burton@mips.com>,
- "pbonzini@redhat.com" <pbonzini@redhat.com>, vkuznets <vkuznets@redhat.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Eugen Hristev <eugen.hristev@microchip.com>,
+ Jonathan Cameron <jic23@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, 6 Jul 2019, Dexuan Cui wrote:
-> > On Sat, 6 Jul 2019, Thomas Gleixner wrote:
-> Hi Thomas,
-> Thanks for the important reminder! I realized actually Michael's patches are
-> good, and hibernation can not work because my own hibernation code is buggy:
-> in the resume path, on CPU0, I should NOT call hv_stimer_init() -> 
-> clockevents_config_and_register(): instead, I should use the event device's 
-> suspend/resume callbacks to save/restore the device's state.
-> 
-> With this kept in mind, I made some small changes to my code and hibernation
-> can work fine for me now!
-> 
-> > > But that needs probably more surgery. I'll add the unbind() call back for
-> > > now.
-> 
-> Can you please drop the unbind() call again? :-)
+On Thu, 4 Jul 2019 10:36:13 +0800
+Fuqian Huang <huangfq.daxian@gmail.com> wrote:
 
-I restored the original commits without the unbind. All good now :)
+> Several drivers cast a struct device pointer to a struct
+> platform_device pointer only to then call platform_get_drvdata().
+> To improve readability, these constructs can be simplified
+> by using dev_get_drvdata() directly.
+> 
+> Signed-off-by: Fuqian Huang <huangfq.daxian@gmail.com>
+Hi.
+
+I applied a version from Kefeng Wang a while back.  It'll be queued
+up for the merge window that is about to open.
+
+Thanks,
+
+Jonathan
+
+> ---
+> Changes in v2:
+>   - Make the commit message more clearly.
+> 
+>  drivers/iio/adc/at91-sama5d2_adc.c | 12 ++++--------
+>  drivers/iio/adc/at91_adc.c         |  4 ++--
+>  2 files changed, 6 insertions(+), 10 deletions(-)
+> 
+> diff --git a/drivers/iio/adc/at91-sama5d2_adc.c b/drivers/iio/adc/at91-sama5d2_adc.c
+> index d384cf0250ff..a2837a0e7cba 100644
+> --- a/drivers/iio/adc/at91-sama5d2_adc.c
+> +++ b/drivers/iio/adc/at91-sama5d2_adc.c
+> @@ -1578,8 +1578,7 @@ static void at91_adc_hw_init(struct at91_adc_state *st)
+>  static ssize_t at91_adc_get_fifo_state(struct device *dev,
+>  				       struct device_attribute *attr, char *buf)
+>  {
+> -	struct iio_dev *indio_dev =
+> -			platform_get_drvdata(to_platform_device(dev));
+> +	struct iio_dev *indio_dev = dev_get_drvdata(dev);
+>  	struct at91_adc_state *st = iio_priv(indio_dev);
+>  
+>  	return scnprintf(buf, PAGE_SIZE, "%d\n", !!st->dma_st.dma_chan);
+> @@ -1588,8 +1587,7 @@ static ssize_t at91_adc_get_fifo_state(struct device *dev,
+>  static ssize_t at91_adc_get_watermark(struct device *dev,
+>  				      struct device_attribute *attr, char *buf)
+>  {
+> -	struct iio_dev *indio_dev =
+> -			platform_get_drvdata(to_platform_device(dev));
+> +	struct iio_dev *indio_dev = dev_get_drvdata(dev);
+>  	struct at91_adc_state *st = iio_priv(indio_dev);
+>  
+>  	return scnprintf(buf, PAGE_SIZE, "%d\n", st->dma_st.watermark);
+> @@ -1841,8 +1839,7 @@ static int at91_adc_remove(struct platform_device *pdev)
+>  
+>  static __maybe_unused int at91_adc_suspend(struct device *dev)
+>  {
+> -	struct iio_dev *indio_dev =
+> -			platform_get_drvdata(to_platform_device(dev));
+> +	struct iio_dev *indio_dev = dev_get_drvdata(dev);
+>  	struct at91_adc_state *st = iio_priv(indio_dev);
+>  
+>  	/*
+> @@ -1862,8 +1859,7 @@ static __maybe_unused int at91_adc_suspend(struct device *dev)
+>  
+>  static __maybe_unused int at91_adc_resume(struct device *dev)
+>  {
+> -	struct iio_dev *indio_dev =
+> -			platform_get_drvdata(to_platform_device(dev));
+> +	struct iio_dev *indio_dev = dev_get_drvdata(dev);
+>  	struct at91_adc_state *st = iio_priv(indio_dev);
+>  	int ret;
+>  
+> diff --git a/drivers/iio/adc/at91_adc.c b/drivers/iio/adc/at91_adc.c
+> index d23709ed9049..32f1c4a33b20 100644
+> --- a/drivers/iio/adc/at91_adc.c
+> +++ b/drivers/iio/adc/at91_adc.c
+> @@ -1359,7 +1359,7 @@ static int at91_adc_remove(struct platform_device *pdev)
+>  #ifdef CONFIG_PM_SLEEP
+>  static int at91_adc_suspend(struct device *dev)
+>  {
+> -	struct iio_dev *idev = platform_get_drvdata(to_platform_device(dev));
+> +	struct iio_dev *idev = dev_get_drvdata(dev);
+>  	struct at91_adc_state *st = iio_priv(idev);
+>  
+>  	pinctrl_pm_select_sleep_state(dev);
+> @@ -1370,7 +1370,7 @@ static int at91_adc_suspend(struct device *dev)
+>  
+>  static int at91_adc_resume(struct device *dev)
+>  {
+> -	struct iio_dev *idev = platform_get_drvdata(to_platform_device(dev));
+> +	struct iio_dev *idev = dev_get_drvdata(dev);
+>  	struct at91_adc_state *st = iio_priv(idev);
+>  
+>  	clk_prepare_enable(st->clk);
+
 
 
 _______________________________________________
