@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B22561513
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  7 Jul 2019 15:27:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E010B61518
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  7 Jul 2019 15:31:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pXn1PUroG9NfCVzNc1t2HulXdXFf8GzMJyAsbTPnzTc=; b=bGkyzLGFQtj+PP
-	Q/F+6/dDqPoiBVmf3gnoxemXhigZrk5VM+wRHq6YpNE0CZNYprfucVAZCg9i0lgF60NbWr8apagW4
-	+0GRz7A7RLWTlDLpToYzJM3nFeTqiv0TeophYIunHgrQoqgRVj/VV2zRT6XHjU4CXxOb/6CWkUVXo
-	qwX9TywVSAbsS6UMPjeenrJd/1FBOZc7+SG3ubaejnraj1KbAFPGtfTldEfy5lznbYQ5h+HP6Wo0H
-	eaYBYHWAAuOwxklrzmUcFnxaM1kxAainBciTqODv1SSVdVvD7wGIOQtqoUitzEQyvjgrg1dZOdi3U
-	N/lcZl59UrAZLJTpNgmQ==;
+	List-Owner; bh=GFdtzKwkIC7g4FOPy+kb1PuQJH4jDKdIA6oCf3WijSU=; b=nZM6Nd8lXiWB6Q
+	8Ll+6AgvldcJjWwlJI92tc0EXVeofTGlRoQ0cL3wYkniJI3gAthuhFBpLWfa4unHvtE+yPCalX5tU
+	sErHv8TihA7ZQ5DxbmheAXI/wEMUxHOL3T/RDlyqABboMdm6I9ujQHRXpFKxHBAjpxQrjM5lSOJQK
+	h6/CjzYRRCQHR7sR257zVJtct1cXuEE9wVaP6rQhMAd27ZKzknoCHCvmLwD/XtK26/Yo9Y059HFSk
+	fJUxBBr+nxkRnCgrF+0On7ACYPwkRWPjqkvIeN0vs19kCfxL1rxvDQA8Z0e7pNy8C+oo4hGcmnjhg
+	jJbiz5Jq5uZXiWC5gQvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hk7Cb-0005BA-V9; Sun, 07 Jul 2019 13:27:37 +0000
+	id 1hk7GO-0000A3-Ns; Sun, 07 Jul 2019 13:31:32 +0000
 Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hk7CN-0005AE-GI
- for linux-arm-kernel@lists.infradead.org; Sun, 07 Jul 2019 13:27:25 +0000
+ id 1hk7GA-0008TQ-NV
+ for linux-arm-kernel@lists.infradead.org; Sun, 07 Jul 2019 13:31:20 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 8B1E6AF19;
- Sun,  7 Jul 2019 13:27:17 +0000 (UTC)
-Subject: Re: [PATCH 2/6] irqchip: Add Realtek RTD129x intc driver
+ by mx1.suse.de (Postfix) with ESMTP id 6553CAFDB;
+ Sun,  7 Jul 2019 13:31:17 +0000 (UTC)
+Subject: Re: [PATCH 5/6] dt-bindings: arm: Document RTD1296
 To: Aleix Roca Nonell <kernelrocks@gmail.com>
-References: <20190707132256.GC13340@arks.localdomain>
+References: <20190707132339.GF13340@arks.localdomain>
 From: =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>
 Openpgp: preference=signencrypt
 Organization: SUSE Linux GmbH
-Message-ID: <baeb2dd8-0382-01ad-514b-982c0f123e6e@suse.de>
-Date: Sun, 7 Jul 2019 15:27:16 +0200
+Message-ID: <27a3468f-e7b4-e334-5956-8db87d04ff8c@suse.de>
+Date: Sun, 7 Jul 2019 15:31:16 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.2
 MIME-Version: 1.0
-In-Reply-To: <20190707132256.GC13340@arks.localdomain>
+In-Reply-To: <20190707132339.GF13340@arks.localdomain>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190707_062723_688841_FA9B026C 
-X-CRM114-Status: GOOD (  11.30  )
+X-CRM114-CacheID: sfid-20190707_063118_913570_79F3BD1D 
+X-CRM114-Status: GOOD (  16.05  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -73,18 +73,31 @@ Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-QW0gMDcuMDcuMTkgdW0gMTU6MjIgc2NocmllYiBBbGVpeCBSb2NhIE5vbmVsbDoKPiBUaGlzIGRy
-aXZlciBhZGRzIHN1cHBvcnQgZm9yIHRoZSBSVEQxMjk2IGFuZCBSVEQxMjk1IGludGVycnVwdAo+
-IGNvbnRyb2xsZXIgKGludGMpLiBJdCBpcyBiYXNlZCBvbiBib3RoIHRoZSBCUEktU0lOT1ZPSVAg
-cHJvamVjdCBhbmQKPiBBbmRyZWFzIEbDpHJiZXIncyBwcmV2aW91cyBhdHRlbXB0IHRvIHN1Ym1p
-dCBhIHNpbWlsYXIgZHJpdmVyLgoKRG9pbmcgdGhhdCB3aXRob3V0IG15IFNpZ25lZC1vZmYtYnkg
-YW5kIENvcHlyaWdodCBpcyBjZXJ0YWlubHkgbm90IG9rYXkuCkl0IGlzIGFsc28gbGFja2luZyBh
-IGNsZWFyIGRlc2NyaXB0aW9uIG9mIHdoYXQgeW91IGNoYW5nZWQgZnJvbSBteSBsYXN0CnN1Ym1p
-c3Npb24gb3IgdGhlIHBvc3Qtc3VibWlzc2lvbiBHaXRIdWIgdmVyc2lvbiBhZHJlc3NpbmcgcmV2
-aWV3CmNvbW1lbnRzLCB3aGljaCBicm9rZS4KClJlZ2FyZHMsCkFuZHJlYXMKCi0tIApTVVNFIExp
-bnV4IEdtYkgKTWF4ZmVsZHN0ci4gNSwgOTA0MDkgTsO8cm5iZXJnLCBHZXJtYW55CkdGOiBGZWxp
-eCBJbWVuZMO2cmZmZXIsIE1hcnkgSGlnZ2lucywgU3JpIFJhc2lhaApIUkIgMjEyODQgKEFHIE7D
-vHJuYmVyZykKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-CmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5m
-cmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
-bnV4LWFybS1rZXJuZWwK
+QW0gMDcuMDcuMTkgdW0gMTU6MjMgc2NocmllYiBBbGVpeCBSb2NhIE5vbmVsbDoKPiBBZGQgYmlu
+ZGluZ3MgZm9yIFJlbGF0ZWsgUlREMTI5NiBTb0MuIEFuZCB0aGUgQmFubmFuYSBQaSBCUEktVzIg
+Ym9hcmQuCgoiUmVhbHRlayIsICJCYW5hbmEiCgo+IAo+IFNpZ25lZC1vZmYtYnk6IEFsZWl4IFJv
+Y2EgTm9uZWxsIDxrZXJuZWxyb2Nrc0BnbWFpbC5jb20+Cj4gLS0tCj4gIERvY3VtZW50YXRpb24v
+ZGV2aWNldHJlZS9iaW5kaW5ncy9hcm0vcmVhbHRlay50eHQgfCAxMyArKysrKysrKysrKysrCj4g
+IDEgZmlsZSBjaGFuZ2VkLCAxMyBpbnNlcnRpb25zKCspCj4gCj4gZGlmZiAtLWdpdCBhL0RvY3Vt
+ZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9hcm0vcmVhbHRlay50eHQgYi9Eb2N1bWVudGF0
+aW9uL2RldmljZXRyZWUvYmluZGluZ3MvYXJtL3JlYWx0ZWsudHh0Cj4gaW5kZXggOTU4MzllMTlh
+ZTkyLi43OGRhMTAwNGQzOGMgMTAwNjQ0Cj4gLS0tIGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVl
+L2JpbmRpbmdzL2FybS9yZWFsdGVrLnR4dAo+ICsrKyBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJl
+ZS9iaW5kaW5ncy9hcm0vcmVhbHRlay50eHQKPiBAQCAtMjAsMyArMjAsMTYgQEAgUm9vdCBub2Rl
+IHByb3BlcnR5IGNvbXBhdGlibGUgbXVzdCBjb250YWluLCBkZXBlbmRpbmcgb24gYm9hcmQ6Cj4g
+IEV4YW1wbGU6Cj4gIAo+ICAgICAgY29tcGF0aWJsZSA9ICJ6aWRvbyx4OXMiLCAicmVhbHRlayxy
+dGQxMjk1IjsKPiArCj4gKwo+ICtSVEQxMjk2IFNvQwo+ICs9PT09PT09PT09PQo+ICsKPiArUmVx
+dWlyZWQgcm9vdCBub2RlIHByb3BlcnRpZXM6Cj4gKwo+ICsgLSBjb21wYXRpYmxlIDogIG11c3Qg
+Y29udGFpbiAicmVhbHRlayxydGQxMjk2IgoKSSdtIHByZXR0eSBzdXJlIHRoYXQgSSBoYWQgc3Vj
+aCBhIHBhdGNoIG9uIHRoZSBsaXN0IGFscmVhZHksIHNvIHRoaXMgaXMKbGFja2luZyBteSBhdXRo
+b3JzaGlwLgoKQWxzbywgUm9iIGhhcyBiZWVuIHdvcmtpbmcgdG8gY29udmVydCB0aGVzZSB0byBZ
+QU1MLCBzbyB3ZSBzaG91bGQKcHJvYmFibHkgY29tcGxldGUgdGhhdCBmaXJzdCBhbmQgdGhlbiBh
+ZGQgUlREMTI5NiBwcm9wZXJseS4KCj4gKwo+ICsKPiArUm9vdCBub2RlIHByb3BlcnR5IGNvbXBh
+dGlibGUgbXVzdCBjb250YWluLCBkZXBlbmRpbmcgb24gYm9hcmQ6Cj4gKwo+ICsgLSBCYW5uYW5h
+IFBpIEJQSS1XMjogImJhbmFuYXBpLGJwaS13MiIKCiJCYW5hbmEiCgpSZWdhcmRzLApBbmRyZWFz
+CgoKLS0gClNVU0UgTGludXggR21iSApNYXhmZWxkc3RyLiA1LCA5MDQwOSBOw7xybmJlcmcsIEdl
+cm1hbnkKR0Y6IEZlbGl4IEltZW5kw7ZyZmZlciwgTWFyeSBIaWdnaW5zLCBTcmkgUmFzaWFoCkhS
+QiAyMTI4NCAoQUcgTsO8cm5iZXJnKQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtl
+cm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
