@@ -2,57 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77CF4614E4
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  7 Jul 2019 14:12:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D78A614FD
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  7 Jul 2019 15:22:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hk4zjxQs825v08GsGmWGToftWtIauTy/kmdV11dd9R4=; b=mvDZvCrqK55vZI
-	WquZfXNV8zuQ6O+rATC7GR3UHveex9lD2Ze37yRxPwL8Mv9R79G6lsQUptUslE0iY5+VAzwJjVVZI
-	7Qqmh7UjfaMnf3f5zT1jZm+D8acd3sJcYvxkMK187aV9VM3iR0CFms+t9MWBGBFefaLKZNLqHPc3/
-	HYCyzGZ2Sd1ck9icw0Fllw4vnRISWAzfaBxrfSy/s9LRWGbxWCqh22xtc3YSWc2C++5+OKJRzrn+O
-	i6T3NHAEsjoyEHIJAstpy0IdIrRn2db65HpjVYK0gX3UyEyYax7+Xf+SkrkwO9c+TqANVCR9j/WVD
-	pB0VHGgd2BuPfd5rKWog==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=fbY4IF2YaYoYTR+7rQiL3bI6VtTCfVWCHg468mABfqE=; b=oMlVvCCsu4bfTn
+	NQrS/egkBGmK/M48A6bhwRiGYACY4xSF1tP0w+a/K3eZga0V0aI1w/3iQnNtAXO2LHnwwH2j36Xtq
+	5ZX6N73+2xoJ7KaIMT+MtGdCUBfn1pduF0GJyMNP2MEX84daSb2nBF17cBPNEuVyin2rrsVHhhlFO
+	JUTA30KczijrmnlfgjU7Jq6Mu/qePAmbue+W504BAZsZAqCQogKGPkR99f7Ecq7KmlllAu9+Ukzlt
+	nUNQnh0UL/wGslqfT1buKWO8e0xG7WVONX3AItQY2UqtUvMgPeFclrDBdN1bcyjZIWMs+uOjJNmfB
+	Bk3M5pcR+ZsLisMlsqbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hk61d-0006rQ-SU; Sun, 07 Jul 2019 12:12:13 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1hk77s-00028u-Hb; Sun, 07 Jul 2019 13:22:44 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hk61F-0006mp-SM
- for linux-arm-kernel@lists.infradead.org; Sun, 07 Jul 2019 12:11:51 +0000
-Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 9A1FE5D50037484CFA55;
- Sun,  7 Jul 2019 20:11:30 +0800 (CST)
-Received: from localhost (10.45.56.64) by DGGEMS405-HUB.china.huawei.com
- (10.3.19.205) with Microsoft SMTP Server id 14.3.439.0; Sun, 7 Jul 2019
- 20:11:26 +0800
-Date: Sun, 7 Jul 2019 13:11:23 +0100
-From: Jonathan Cameron <jonathan.cameron@huawei.com>
-To: Fuqian Huang <huangfq.daxian@gmail.com>
-Subject: Re: [Patch v2 05/10] iio: using dev_get_drvdata directly
-Message-ID: <20190707131031.00000f0a@huawei.com>
-In-Reply-To: <20190704023613.4643-1-huangfq.daxian@gmail.com>
-References: <20190704023613.4643-1-huangfq.daxian@gmail.com>
-Organization: Huawei
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; i686-w64-mingw32)
+ id 1hk77i-00028R-AB
+ for linux-arm-kernel@lists.infradead.org; Sun, 07 Jul 2019 13:22:36 +0000
+Received: by mail-wm1-x341.google.com with SMTP id z23so13813426wma.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 07 Jul 2019 06:22:33 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:mime-version:content-disposition
+ :content-transfer-encoding:user-agent;
+ bh=maw3v3SsxZvP2hs3eSVhueNHJP3NzyEzBgv+qOl/tFw=;
+ b=FmLySaHSR8hDhMp0k/g/JHe8uE5E02ORynW/W9hbG4ZNmjzSpI6GCDwR0qaMThvQkl
+ gvxZ8Tj0dmUyrGiE84lJFCOm6s7uIE4G5kSS6cKT7dr9Ytlm7zX/M5Rb5O5/qFRZpLEY
+ /aX6ARcf3utafuCjDjbLK26GyDPnAY4t9jTYBLk0MEm0niGikRtm81Ve2Zcj6WfXKRyG
+ w3oOHtYzlaE3SR3kbZdgshYvec0WFqNZrjQa/FjwCeJG1VZ3ro3X7rDMZN2VMcX5WCEV
+ masYn9Zf7f6QzIwHIOO0Kl5hZyx42Cj2R29+xCWl9h6YJZXPop7mEANLG5Jdnk6P3bEW
+ H6DA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+ :content-disposition:content-transfer-encoding:user-agent;
+ bh=maw3v3SsxZvP2hs3eSVhueNHJP3NzyEzBgv+qOl/tFw=;
+ b=s2t1/DnstcBM5UzEPAbl2Ugy0knUPfg75LHqhLfgdxhVoOA9rwt8GkhlMUjAOcK6Xy
+ eOriNDHdzOsPSorj8yZDxVj6CWl28gWANoLPV/2iv7EEC6uHqHWpvsJMLq5U4e0rBCAk
+ DlpcGZtnJm6T0XJ7Qlr6KaVBYkrAfaI8j3yOc8ucffhhAZ3lbzkvR0Vs37M8PA2w8+h4
+ /juhr3fh+60EFCcm+Lqs/XrZsiPuDUFuvR4YU82mGqhQx28c7XvvbhlHsGBdmplkQ/Ww
+ smrGWiLMHvXP9DJi5zS2Nyj1KVyc24rUMU4MH4RPWSdepWNNjfZYtYWVmpPML2tEmqHz
+ CO4A==
+X-Gm-Message-State: APjAAAXnz7eC2frWhL8mMxz2UvH/JGdl9gFcQ8xNyrJ4hC4uqRIb61Bi
+ IG3MIESzX/5sLoSRgVpaAoA=
+X-Google-Smtp-Source: APXvYqzIXdSfGGdUQKO93qhQl5ThP4h5LXbw+AQ5El8H6F2i1WPUTm8LvYOfXvmYXKWpS2pcPIfQ3A==
+X-Received: by 2002:a1c:3cc4:: with SMTP id j187mr11579030wma.36.1562505752416; 
+ Sun, 07 Jul 2019 06:22:32 -0700 (PDT)
+Received: from arks.localdomain (179.red-83-58-138.dynamicip.rima-tde.net.
+ [83.58.138.179])
+ by smtp.gmail.com with ESMTPSA id a12sm13652465wrr.70.2019.07.07.06.22.30
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Sun, 07 Jul 2019 06:22:31 -0700 (PDT)
+Date: Sun, 7 Jul 2019 15:22:23 +0200
+From: Aleix Roca Nonell <kernelrocks@gmail.com>
+To: Andreas =?utf-8?Q?F=C3=A4rber?= <afaerber@suse.de>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Jason Cooper <jason@lakedaemon.net>,
+ Marc Zyngier <marc.zyngier@arm.com>
+Subject: [PATCH 0/6] Add Banana Pi BPI-W2 basic support
+Message-ID: <20190707132223.GA13340@arks.localdomain>
 MIME-Version: 1.0
-X-Originating-IP: [10.45.56.64]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190707_051150_186770_82B825C3 
-X-CRM114-Status: GOOD (  12.88  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190707_062234_380748_0822C7DE 
+X-CRM114-Status: GOOD (  16.37  )
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (kernelrocks[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,113 +102,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- linux-arm-kernel@lists.infradead.org,
- Eugen Hristev <eugen.hristev@microchip.com>,
- Jonathan Cameron <jic23@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Matthias Brugger <matthias.bgg@gmail.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 4 Jul 2019 10:36:13 +0800
-Fuqian Huang <huangfq.daxian@gmail.com> wrote:
-
-> Several drivers cast a struct device pointer to a struct
-> platform_device pointer only to then call platform_get_drvdata().
-> To improve readability, these constructs can be simplified
-> by using dev_get_drvdata() directly.
-> 
-> Signed-off-by: Fuqian Huang <huangfq.daxian@gmail.com>
-Hi.
-
-I applied a version from Kefeng Wang a while back.  It'll be queued
-up for the merge window that is about to open.
-
-Thanks,
-
-Jonathan
-
-> ---
-> Changes in v2:
->   - Make the commit message more clearly.
-> 
->  drivers/iio/adc/at91-sama5d2_adc.c | 12 ++++--------
->  drivers/iio/adc/at91_adc.c         |  4 ++--
->  2 files changed, 6 insertions(+), 10 deletions(-)
-> 
-> diff --git a/drivers/iio/adc/at91-sama5d2_adc.c b/drivers/iio/adc/at91-sama5d2_adc.c
-> index d384cf0250ff..a2837a0e7cba 100644
-> --- a/drivers/iio/adc/at91-sama5d2_adc.c
-> +++ b/drivers/iio/adc/at91-sama5d2_adc.c
-> @@ -1578,8 +1578,7 @@ static void at91_adc_hw_init(struct at91_adc_state *st)
->  static ssize_t at91_adc_get_fifo_state(struct device *dev,
->  				       struct device_attribute *attr, char *buf)
->  {
-> -	struct iio_dev *indio_dev =
-> -			platform_get_drvdata(to_platform_device(dev));
-> +	struct iio_dev *indio_dev = dev_get_drvdata(dev);
->  	struct at91_adc_state *st = iio_priv(indio_dev);
->  
->  	return scnprintf(buf, PAGE_SIZE, "%d\n", !!st->dma_st.dma_chan);
-> @@ -1588,8 +1587,7 @@ static ssize_t at91_adc_get_fifo_state(struct device *dev,
->  static ssize_t at91_adc_get_watermark(struct device *dev,
->  				      struct device_attribute *attr, char *buf)
->  {
-> -	struct iio_dev *indio_dev =
-> -			platform_get_drvdata(to_platform_device(dev));
-> +	struct iio_dev *indio_dev = dev_get_drvdata(dev);
->  	struct at91_adc_state *st = iio_priv(indio_dev);
->  
->  	return scnprintf(buf, PAGE_SIZE, "%d\n", st->dma_st.watermark);
-> @@ -1841,8 +1839,7 @@ static int at91_adc_remove(struct platform_device *pdev)
->  
->  static __maybe_unused int at91_adc_suspend(struct device *dev)
->  {
-> -	struct iio_dev *indio_dev =
-> -			platform_get_drvdata(to_platform_device(dev));
-> +	struct iio_dev *indio_dev = dev_get_drvdata(dev);
->  	struct at91_adc_state *st = iio_priv(indio_dev);
->  
->  	/*
-> @@ -1862,8 +1859,7 @@ static __maybe_unused int at91_adc_suspend(struct device *dev)
->  
->  static __maybe_unused int at91_adc_resume(struct device *dev)
->  {
-> -	struct iio_dev *indio_dev =
-> -			platform_get_drvdata(to_platform_device(dev));
-> +	struct iio_dev *indio_dev = dev_get_drvdata(dev);
->  	struct at91_adc_state *st = iio_priv(indio_dev);
->  	int ret;
->  
-> diff --git a/drivers/iio/adc/at91_adc.c b/drivers/iio/adc/at91_adc.c
-> index d23709ed9049..32f1c4a33b20 100644
-> --- a/drivers/iio/adc/at91_adc.c
-> +++ b/drivers/iio/adc/at91_adc.c
-> @@ -1359,7 +1359,7 @@ static int at91_adc_remove(struct platform_device *pdev)
->  #ifdef CONFIG_PM_SLEEP
->  static int at91_adc_suspend(struct device *dev)
->  {
-> -	struct iio_dev *idev = platform_get_drvdata(to_platform_device(dev));
-> +	struct iio_dev *idev = dev_get_drvdata(dev);
->  	struct at91_adc_state *st = iio_priv(idev);
->  
->  	pinctrl_pm_select_sleep_state(dev);
-> @@ -1370,7 +1370,7 @@ static int at91_adc_suspend(struct device *dev)
->  
->  static int at91_adc_resume(struct device *dev)
->  {
-> -	struct iio_dev *idev = platform_get_drvdata(to_platform_device(dev));
-> +	struct iio_dev *idev = dev_get_drvdata(dev);
->  	struct at91_adc_state *st = iio_priv(idev);
->  
->  	clk_prepare_enable(st->clk);
-
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VGhpcyBwYXRjaCBzZXJpZXMgYWRkcyBtaW5pbXVtIHN1cHBvcnQgdG8gYm9vdCBhIEJhbmFuYSBQ
+aSBCUEktVzIuIFRoaXMKYm9hcmQgc2VyaWFsIGludGVyZmFjZSBpcyBtdXhlZCB0aHJvdWdoIGEg
+Y3VzdG9tIFJlYWx0ZWsgZHJpdmVyIG5vdApjdXJyZW50bHkgaW4gbWFpbmxpbmUuIFdpdGhvdXQg
+dGhlIGRyaXZlciwgaXQgaXMgb25seSBwb3NzaWJsZSB0bwppbml0aWFsaXplIGEgYm9vdGNvbnNv
+bGUsIGJ1dCBpbml0IGNhbm5vdCBiZSBydW4uIFRoZSBkYXRhc2hlZXQgb2YgdGhlCmJvYXJkJ3Mg
+UlREMTI5NiBTb0MgaXMgbm90IHB1YmxpY2x5IGF2YWlsYWJsZSBhbmQgdGhlIHByb2NlZHVyZSB0
+bwppbnRlcmZhY2UgdGhlIGludGVycnVwdCBjb250cm9sbGVyIHJlZ2lzdGVycyBpcyBub3QgY29t
+cGxldGVseSBrbm93bgp5ZXQsIGhvd2V2ZXIsIGl0IHdvcmtzLgoKVGhpcyBwYXRjaCBpcyBiYXNl
+ZCBvbiB0aGUgb2ZmaWNpYWwgQlBJLVcyIGRvd25zdHJlYW0ga2VybmVsIGRyaXZlciBbMV0KYW5k
+IHRoZSBsYXN0IGF0dGVtcHQgb2YgQW5kcmVhcyBGw6RyYmVyIFsyXSB0byBzdXBwb3J0IHN1Y2gg
+ZHJpdmVyLgoKUGxlYXNlLCBub3RlIHRoYXQgdGhlIGJvYXJkIHN0aWxsIHJlcXVpcmVzIGEgc2xp
+Z2h0bHkgbW9kaWZpZWQgdmVyc2lvbgpvZiB0aGUgZG93bnN0cmVhbWVkIFJlYWx0ZWsgVS1Cb290
+IHRvIGxhdW5jaCB0aGUgTGludXggS2VybmVsLCB3aGljaAplc3NlbnRpYWxseSByZW1vdmVzIHRo
+ZSBuZWVkIGZvciBzb21lIGR0cyBub2RlcyBub3QgaW5jbHVkZWQgaW4gdGhpcwpwYXRjaCBhbmQg
+cmVhbGxvY2F0ZXMgdS1ib290IGJlZm9yZSBsb2FkaW5nIHRoZSBrZXJuZWwgdG8gYXZvaWQKb3Zl
+cnJpZGluZyBVLUJvb3QgY29kZS4KClsxXSAtIGh0dHBzOi8vZ2l0aHViLmNvbS9CUEktU0lOT1ZP
+SVAvQlBJLVcyLWJzcApbMl0gLSBodHRwczovL3BhdGNod29yay5rZXJuZWwub3JnL3BhdGNoLzEw
+MDExODkxCgpBbGVpeCBSb2NhIE5vbmVsbCAoNik6CiAgZHQtYmluZGluZ3M6IGludGVycnVwdC1j
+b250cm9sbGVyOiBEb2N1bWVudCBSVEQxMjl4CiAgaXJxY2hpcDogQWRkIFJlYWx0ZWsgUlREMTI5
+eCBpbnRjIGRyaXZlcgogIGFybTY0OiBkdHM6IHJlYWx0ZWs6IE1vdmUgcnRkMTI5NSBtZW1yZXNl
+cnZlIGFyZWFzIGZyb20gdGhlIGdlbmVyaWMKICAgIHJ0ZDEyOXggdG8gaXRzIHNwZWNpZmljIGR0
+c2kKICBhcm02NDogZHRzOiByZWFsdGVrOiBBZGQgcmVhbHRlayBpbnRjIHRvIFJURDEyOXgKICBk
+dC1iaW5kaW5nczogYXJtOiBEb2N1bWVudCBSVEQxMjk2CiAgYXJtNjQ6IGR0czogcmVhbHRlazog
+QWRkIGJwaS13MiBib2FyZCBzdXBwb3J0IGFuZCBpdHMgUlREMTI5NiBTb0MKCiAuLi4vZGV2aWNl
+dHJlZS9iaW5kaW5ncy9hcm0vcmVhbHRlay50eHQgICAgICAgfCAgMTMgKwogLi4uL3JlYWx0ZWss
+cnRkMTI5eC1pbnRjLnR4dCAgICAgICAgICAgICAgICAgIHwgIDI0ICsrCiBhcmNoL2FybTY0L2Jv
+b3QvZHRzL3JlYWx0ZWsvTWFrZWZpbGUgICAgICAgICAgfCAgIDEgKwogYXJjaC9hcm02NC9ib290
+L2R0cy9yZWFsdGVrL3J0ZDEyOTUuZHRzaSAgICAgIHwgICAzICsKIC4uLi9kdHMvcmVhbHRlay9y
+dGQxMjk2LWJhbmFuYXBpLWJwaS13Mi5kdHMgICB8ICAyNyArKwogYXJjaC9hcm02NC9ib290L2R0
+cy9yZWFsdGVrL3J0ZDEyOTYuZHRzaSAgICAgIHwgIDc3ICsrKysKIGFyY2gvYXJtNjQvYm9vdC9k
+dHMvcmVhbHRlay9ydGQxMjl4LmR0c2kgICAgICB8ICAxMiArLQogZHJpdmVycy9pcnFjaGlwL01h
+a2VmaWxlICAgICAgICAgICAgICAgICAgICAgIHwgICAxICsKIGRyaXZlcnMvaXJxY2hpcC9pcnEt
+cnRkMTI5eC5jICAgICAgICAgICAgICAgICB8IDM3MSArKysrKysrKysrKysrKysrKysKIDkgZmls
+ZXMgY2hhbmdlZCwgNTI3IGluc2VydGlvbnMoKyksIDIgZGVsZXRpb25zKC0pCiBjcmVhdGUgbW9k
+ZSAxMDA2NDQgRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2ludGVycnVwdC1jb250
+cm9sbGVyL3JlYWx0ZWsscnRkMTI5eC1pbnRjLnR4dAogY3JlYXRlIG1vZGUgMTAwNjQ0IGFyY2gv
+YXJtNjQvYm9vdC9kdHMvcmVhbHRlay9ydGQxMjk2LWJhbmFuYXBpLWJwaS13Mi5kdHMKIGNyZWF0
+ZSBtb2RlIDEwMDY0NCBhcmNoL2FybTY0L2Jvb3QvZHRzL3JlYWx0ZWsvcnRkMTI5Ni5kdHNpCiBj
+cmVhdGUgbW9kZSAxMDA2NDQgZHJpdmVycy9pcnFjaGlwL2lycS1ydGQxMjl4LmMKCi0tIAoyLjIx
+LjAKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51
+eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
+ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
+cm0ta2VybmVsCg==
