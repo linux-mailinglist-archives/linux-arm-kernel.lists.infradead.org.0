@@ -2,54 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87CDC615A9
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  7 Jul 2019 19:22:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B6367615C8
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  7 Jul 2019 20:01:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BRD7mJhFR8JTCMe8NTZyivEwFrJO2v3Xs/ujAV5ZDYI=; b=ug+MuDjTsL8yFf
-	hMssSeeCEjCyqmOW0lsNa9Q7/rDYP3esyyj5S95xgQMI+4LatGl6yJIUNI72HvhhGT2baHjAcO2L2
-	AyBknqZvwA3zqMHYlQgjiE1izYJD0GJv3HFV6k6qB0T2Z4ywcv+ik4SRi47ekZVSZm13mQgO2QD8Q
-	kBzRUAOveg73pp5tvH4k1hez/SRsFAR7cEMSvKFh0cuQ0wY5KjsJBrUeE6BU21z/wHvMwWwtLPca2
-	+0DW6q4LklNFBTlSQGnjHgHfxaaLLWB2wzZqPfw8cilRsa/2ecCNZiLy1rtnExr5DAONtWYKnRFU4
-	cNu1qkdvVi+Qzbh+lDkA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=yy/xotyB0bK2dyHrGcRmErdK7rfKiLLXGTkVUnSowUQ=; b=pgm
+	idwCdK7R0oUG54TviXTImFQm0dQtMAdihjasdjjebe6+u8QLwxRm1n+pka4XY2zx71HwEiR1OqW1H
+	nhR6t0XfewzVrptFl03Ifm6vlX3HSEJ2/Dl5//KiFcVrLngaDVIOopCPzhybd/rVf9olNRKR+jEt1
+	dEG8W5cKxcXWAuLG1NQZauJCKJWLgggcO/hqfs58DXrAkKjLrDI2x2zM1kf9rA5gny8b82wzVkhJM
+	0SlfMvZKAH/buXYBMxlrWTUj9h2YnpzTmcTBIaL78vSVgZcNdIrJfdAAN2XKDtuWWWCFEhVG4sqnK
+	ek+Gnd1+qgNN52AodZCnJLKo3Z5YEoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkAs3-0004zY-UX; Sun, 07 Jul 2019 17:22:40 +0000
+	id 1hkBTl-0007w4-E4; Sun, 07 Jul 2019 18:01:37 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkArr-0004yl-AZ
- for linux-arm-kernel@lists.infradead.org; Sun, 07 Jul 2019 17:22:29 +0000
-Received: from localhost (unknown [49.207.58.53])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1hkBTZ-0007vl-GC
+ for linux-arm-kernel@lists.infradead.org; Sun, 07 Jul 2019 18:01:26 +0000
+Received: from localhost.localdomain (unknown [194.230.155.151])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 123B62082F;
- Sun,  7 Jul 2019 17:22:19 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7577420828;
+ Sun,  7 Jul 2019 18:01:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1562520144;
- bh=2s2gE1E50GfJ/EeGP73+waB27rAFwSqJTvo/pyPbyTs=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=p8xhwKgCQQTlYyEcvQ9jYHJsRv0Z+cre4Dl/vakph1j//935NcoNxWlgYm9an0aBI
- tm8lVCX129aYQ1F7gtpxXixVR8/7M1hOdTo8Rd8T68DdyqUjfLMmNJoRRRYfkIRwdr
- hatgmaikvSFZLBe+cNlfc+FPBrhwAvaXzdjvaH4g=
-Date: Sun, 7 Jul 2019 22:47:01 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Raag Jadav <raagjadav@gmail.com>
-Subject: Re: [PATCH] dmaengine: at_xdmac: check for non-empty xfers_list
- before invoking callback
-Message-ID: <20190707171701.GI2911@vkoul-mobl>
-References: <1561796448-3321-1-git-send-email-raagjadav@gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1561796448-3321-1-git-send-email-raagjadav@gmail.com>
-User-Agent: Mutt/1.11.3 (2019-02-01)
+ s=default; t=1562522484;
+ bh=lsP5Zoo/8iHxNocirmfN8LDYdicr15IJWCPxxQZCuac=;
+ h=From:To:Cc:Subject:Date:From;
+ b=aYZLB716cdJ9vvETO37jpgoOXnP21glMfS+sxwi9lTzhiavo91Hj69VdPMkWPUvbu
+ 0nhyQd6WSDuaDUY4WhIx6aQ0Y77KfoulEfUCWYkoD7wzlQpS/c5TdEs5Cl6upKY4Yf
+ VoEp0gWJmw+3P+9a/9P4/9n9gZYZuiHhQDk2/7kM=
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>,
+ arm@kernel.org, soc@kernel.org
+Subject: [GIT PULL] ARM: dts: exynos: Late pull for v5.3
+Date: Sun,  7 Jul 2019 20:01:15 +0200
+Message-Id: <20190707180115.5562-1-krzk@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190707_102227_388411_31D96153 
-X-CRM114-Status: UNSURE (   7.35  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190707_110125_558833_7CFA7C8D 
+X-CRM114-Status: GOOD (  11.16  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,24 +73,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dmaengine@vger.kernel.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
+Cc: linux-samsung-soc@vger.kernel.org, Kukjin Kim <kgene@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Krzysztof Kozlowski <krzk@kernel.org>,
  linux-kernel@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 29-06-19, 13:50, Raag Jadav wrote:
-> tx descriptor retrieved from an empty xfers_list may not have valid
-> pointers to the callback functions.
-> Avoid calling dmaengine_desc_get_callback_invoke if xfers_list is empty.
+Hi,
 
-Applied, thanks
+Late third pull of DTS changes, on top of previous pull request.
+This contains important fix for stuff merged recently, one cleanup
+and two minor fixups for regulators.
 
--- 
-~Vinod
+Best regards,
+Krzysztof
+
+
+The following changes since commit 13efd80acaa4cdb61fde52732178ff9eb4141104:
+
+  ARM: dts: exynos: Add GPU/Mali 400 node to Exynos4 (2019-06-24 20:03:42 +0200)
+
+are available in the Git repository at:
+
+  https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux.git tags/samsung-dt-5.3-3
+
+for you to fetch changes up to 841ed60264b3d37d5bf3e32cff168920e4923f88:
+
+  ARM: dts: exynos: Adjust buck[78] regulators to supported values on Arndale Octa (2019-07-01 20:28:37 +0200)
+
+----------------------------------------------------------------
+Samsung DTS ARM changes for v5.3, third round
+
+1. Fix imprecise abort on Exynos4210 caused by newly added Mali nodes,
+2. Reorganize Mali nodes under /soc,
+3. Adjust buck regulators voltages on Arndale Octa and Odroid XU3/XU4
+   family to sane values.
+
+----------------------------------------------------------------
+Krzysztof Kozlowski (2):
+      ARM: dts: exynos: Adjust buck[78] regulators to supported values on Odroid XU3 family
+      ARM: dts: exynos: Adjust buck[78] regulators to supported values on Arndale Octa
+
+Marek Szyprowski (2):
+      ARM: dts: exynos: Fix imprecise abort on Mali GPU probe on Exynos4210
+      ARM: dts: exynos: Move Mali400 GPU node to "/soc"
+
+ arch/arm/boot/dts/exynos3250.dtsi             | 66 +++++++++++++--------------
+ arch/arm/boot/dts/exynos4.dtsi                | 50 ++++++--------------
+ arch/arm/boot/dts/exynos4210.dtsi             | 20 ++++++++
+ arch/arm/boot/dts/exynos4412.dtsi             | 22 +++++++++
+ arch/arm/boot/dts/exynos5420-arndale-octa.dts |  6 +--
+ arch/arm/boot/dts/exynos5422-odroid-core.dtsi | 10 ++--
+ 6 files changed, 97 insertions(+), 77 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
