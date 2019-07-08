@@ -2,88 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F13561A38
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 07:05:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1E95161A71
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 07:48:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XJPKuhuMyxqCYsimtum9Hpq8pwPibe5dSnQETHazp7Y=; b=EOGEiREP8TxN0I
-	gTIz4FDXIijSJsQ6TFswT0lI2nVmtwhipoAR70tfT2eDAtf8k4xmkcAC32ZJxJmVCuzWxzSqiQGBC
-	9h3zuxaFPPW6tjdviPc/7wXwrZbpMO07JGnn4QkCt4LDBLahcYKohMm8qKcM2gR7nRI975bwWBH/D
-	ZpDBcuHWwVmy9800wNkLA1lllxheB/sloa4Sv3gCGXN2jwA4xPBQvqu/LtHVvZmhC7qdbjH6RHxyD
-	tkyXgjqrXhI3cGUMXoNfBT0UrUBcgnWcP07rR52HfvmqObEtmVif4g5geqscWV6N+0NwcbKvDlIGv
-	Euum452VeDjpvIPishdg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=0onisIBR6gizR3emOLvCNm39WZLxMvWje5HN6gpF/a8=; b=LGdSuUUEv/YzFIWPfSe7gKiTW
+	n9P8nn7roaqQ8uN+FU/0gsPubaZYZOOMSV3RmUML8skKj6x9YZdHk6aNI4Akyq5HJ2ZswNn/lqjKn
+	rrtdXhxs6dqJZFLRyQVIyAZp/YhS6HMPHYom6Sk2o4MtLNtXP8EpIV96Vm2jf/oLNX+JzAA3HraTF
+	SEVY4AJjyefzAkGgpHSUNVY1VbKkc9lJSBlH0QoDz+hXMGovpGY/9E2XHQx1scY3sGrEiY4IjBSOR
+	umbGVINvDt/ANC7N3gtMkXJ65vu4o5dOSIHENWDyHAKOC1LfTftcJOLD75+x3/FI4jhBTckU3OSL9
+	lFZ5Ri9kA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkLpc-0006ie-Iu; Mon, 08 Jul 2019 05:04:53 +0000
-Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
+	id 1hkMVh-0003N2-6o; Mon, 08 Jul 2019 05:48:21 +0000
+Received: from mx1.mailbox.org ([80.241.60.212])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkLpC-0006gk-9l
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 05:04:27 +0000
-Received: by mail-vs1-xe43.google.com with SMTP id u3so7362863vsh.6
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 07 Jul 2019 22:04:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Div9/ExPBXeNPwe6gkanRSA20V8261vIipkTc2adVjM=;
- b=Kr9xgzIgvJODL4j4Tar0NRNKMTIXggQEPJlw7ZTjjNYm575FxLii/NRilTRRlb5wa9
- BWu/yi/4QHA/SF4dJDPdiho9Fx9QFL7y+FAMY/c8IVi1NMs8YVjKbGVOIrjJYJzX4EsW
- nPrzbFSUsGbfcqx1g1C4zlpLeDlnrse6Nv5Vg=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Div9/ExPBXeNPwe6gkanRSA20V8261vIipkTc2adVjM=;
- b=GB3y98tFdwapFHsQMMf38MiRimsfpJmzPo8IA3cNQWzk5cpYwQwRkbki0rCTwU310s
- nMJIkCOs0YnjXSEOMjEXyb31GFqCAthFzq6kL8VQo5hZ2CImun0mxOzNXTXrt+HSxkyC
- oiSRuS6XG/n8G2qrRKHL0xxWHXZ8NLfad2G+433ZGVcaA/VdDLavn828AP/VS5yWxbPe
- HvhBcfCY74ZsB6s+jdC9A9zd4zk3SgBzkSml2m7e5A87aNJnqF15UNzQLd2BNFfXxruX
- 3TcjeemWavNv3GkZAfnD1Z+baoECRuXptJLdKkwIfFrP0VYWJeHaKCZlA4+2ZBSzsf0f
- nbJw==
-X-Gm-Message-State: APjAAAUUl72kyi0vYptm3Ey/b3DTsDvQLwDQn2GDehjOBt07CApF5uKJ
- KYXJ4it0H43Hs08jqauIZyVzx89Q0CB/Yw7AssDZLQ==
-X-Google-Smtp-Source: APXvYqzKI5qNNsiRKRIHZBN2EiiQYggki+EnjIVPY+3PoX163CFHFiFOgVyx1S9hteBUIbxFauiJMzT56Q8PxxERB2o=
-X-Received: by 2002:a67:f7cd:: with SMTP id a13mr6748465vsp.163.1562562261162; 
- Sun, 07 Jul 2019 22:04:21 -0700 (PDT)
+ id 1hkMVU-0003Ln-Rw
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 05:48:10 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
+ (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
+ (No client certificate requested)
+ by mx1.mailbox.org (Postfix) with ESMTPS id D5ED350844;
+ Mon,  8 Jul 2019 07:47:59 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at heinlein-support.de
+Received: from smtp2.mailbox.org ([80.241.60.241])
+ by spamfilter05.heinlein-hosting.de (spamfilter05.heinlein-hosting.de
+ [80.241.56.123]) (amavisd-new, port 10030)
+ with ESMTP id 6HYUzmgqQjbZ; Mon,  8 Jul 2019 07:47:45 +0200 (CEST)
+Date: Mon, 8 Jul 2019 15:47:35 +1000
+From: Aleksa Sarai <cyphar@cyphar.com>
+To: Michael Ellerman <mpe@ellerman.id.au>
+Subject: Re: [PATCH v9 10/10] selftests: add openat2(2) selftests
+Message-ID: <20190708054735.3fepxxtolqaqwmrp@yavin>
+References: <20190706145737.5299-1-cyphar@cyphar.com>
+ <20190706145737.5299-11-cyphar@cyphar.com>
+ <878st9iax4.fsf@concordia.ellerman.id.au>
 MIME-Version: 1.0
-References: <20190705042623.129541-1-cychiang@chromium.org>
- <20190705042623.129541-2-cychiang@chromium.org>
- <CA+Px+wXtmf9dQQP7ywPLp7Qbbvqau=WnO3qhZ8+qmbJD1gjx+A@mail.gmail.com>
- <20190705121240.GA20625@sirena.org.uk>
-In-Reply-To: <20190705121240.GA20625@sirena.org.uk>
-From: Cheng-yi Chiang <cychiang@chromium.org>
-Date: Mon, 8 Jul 2019 13:03:53 +0800
-Message-ID: <CAFv8NwLP-hUBW8FZW5kooaggeNRG7LAEd2pd_-70YBrVMY-+CQ@mail.gmail.com>
-Subject: Re: [PATCH 1/4] ASoC: hdmi-codec: Add an op to set callback function
- for plug event
-To: Mark Brown <broonie@kernel.org>
+In-Reply-To: <878st9iax4.fsf@concordia.ellerman.id.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190707_220426_355037_080C8DD0 
-X-CRM114-Status: GOOD (  12.52  )
-X-Spam-Score: -6.1 (------)
+X-CRM114-CacheID: sfid-20190707_224809_212254_0AA4B92B 
+X-CRM114-Status: GOOD (  19.43  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-6.1 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [80.241.60.212 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
- [list.dnswl.org]
- 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,52 +66,116 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ALSA development <alsa-devel@alsa-project.org>,
- Doug Anderson <dianders@chromium.org>, Heiko Stuebner <heiko@sntech.de>,
- Liam Girdwood <lgirdwood@gmail.com>, David Airlie <airlied@linux.ie>,
- linux-kernel <linux-kernel@vger.kernel.org>, dri-devel@lists.freedesktop.org,
- Takashi Iwai <tiwai@suse.com>, tzungbi@chromium.org,
- Jaroslav Kysela <perex@perex.cz>, Hans Verkuil <hverkuil@xs4all.nl>,
- Tzung-Bi Shih <tzungbi@google.com>, Russell King <rmk+kernel@armlinux.org.uk>,
- Andrzej Hajda <a.hajda@samsung.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>, linux-rockchip@lists.infradead.org,
- Dylan Reid <dgreid@chromium.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Alexei Starovoitov <ast@kernel.org>, linux-kernel@vger.kernel.org,
+ David Howells <dhowells@redhat.com>, linux-kselftest@vger.kernel.org,
+ sparclinux@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ Tycho Andersen <tycho@tycho.ws>, Aleksa Sarai <asarai@suse.de>,
+ linux-arm-kernel@lists.infradead.org, linux-mips@vger.kernel.org,
+ linux-xtensa@linux-xtensa.org, Kees Cook <keescook@chromium.org>,
+ Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
+ linuxppc-dev@lists.ozlabs.org, linux-m68k@lists.linux-m68k.org,
+ Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
+ Shuah Khan <skhan@linuxfoundation.org>, David Drysdale <drysdale@google.com>,
+ Christian Brauner <christian@brauner.io>,
+ "J. Bruce Fields" <bfields@fieldses.org>, linux-parisc@vger.kernel.org,
+ linux-api@vger.kernel.org, Chanho Min <chanho.min@lge.com>,
+ Jeff Layton <jlayton@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
+ Eric Biederman <ebiederm@xmission.com>, linux-alpha@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ containers@lists.linux-foundation.org
+Content-Type: multipart/mixed; boundary="===============6067886071777767705=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jul 5, 2019 at 8:12 PM Mark Brown <broonie@kernel.org> wrote:
->
-> On Fri, Jul 05, 2019 at 03:08:37PM +0800, Tzung-Bi Shih wrote:
-> > On Fri, Jul 5, 2019 at 12:26 PM Cheng-Yi Chiang <cychiang@chromium.org> wrote:
->
-> > > +typedef void (*hdmi_codec_plugged_cb)(struct platform_device *dev,
-> > > +                                     bool plugged);
-> > > +
->
-> > The callback prototype is "weird" by struct platform_device.  Is it
-> > possible to having snd_soc_component instead of platform_device?
->
-> Or if it's got to be a device why not just a generic device so
-> we're not tied to a particular bus here?
 
-My intention was to invoke the call in dw-hdmi.c like this:
+--===============6067886071777767705==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="fv76k6im74ofqhz7"
+Content-Disposition: inline
 
-    hdmi->plugged_cb(hdmi->audio,
-                                   result == connector_status_connected);
 
-Here hdmi->audio is a platform_device.
-I think dw-hdmi can not get  snd_soc_component easily.
-I can use a generic device here so the ops is more general.
-The calling will be like
-    hdmi->plugged_cb(&hdmi->audio->dev,
-                                   result == connector_status_connected);
-I will update this in v2.
+--fv76k6im74ofqhz7
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On 2019-07-08, Michael Ellerman <mpe@ellerman.id.au> wrote:
+> Aleksa Sarai <cyphar@cyphar.com> writes:
+> > diff --git a/tools/testing/selftests/openat2/Makefile b/tools/testing/s=
+elftests/openat2/Makefile
+> > new file mode 100644
+> > index 000000000000..8235a49928f6
+> > --- /dev/null
+> > +++ b/tools/testing/selftests/openat2/Makefile
+> > @@ -0,0 +1,12 @@
+> > +# SPDX-License-Identifier: GPL-2.0
+> > +
+> > +CFLAGS +=3D -Wall -O2 -g
+> > +TEST_GEN_PROGS :=3D linkmode_test resolve_test rename_attack_test
+> > +
+> > +include ../lib.mk
+> > +
+> > +$(OUTPUT)/linkmode_test: linkmode_test.c helpers.o
+> > +$(OUTPUT)/rename_attack_test: rename_attack_test.c helpers.o
+> > +$(OUTPUT)/resolve_test: resolve_test.c helpers.o
+>=20
+> You don't need to tell make that foo depends on foo.c.
+>=20
+> Also if you make the dependency be on helpers.c then you won't get an
+> intermediate helpers.o, and then you don't need to clean it.
+>=20
+> So the above three lines could just be:
+>=20
+> $(TEST_GEN_PROGS): helpers.c
+
+I had some trouble getting this to work (hence why I went with the
+version in the patch), but it looks like this works. I'll include it in
+the next set.
+
+> > +EXTRA_CLEAN =3D helpers.o $(wildcard /tmp/ksft-openat2-*)
+>=20
+> If you follow my advice above you don't need helpers.o in there.
+>=20
+> Deleting things from /tmp is also a bit fishy on shared machines, ie. it
+> will error if those files happen to be owned by another user.
+
+Good point. I'll drop that hunk in the next set.
+
 Thanks!
+
+--=20
+Aleksa Sarai
+Senior Software Engineer (Containers)
+SUSE Linux GmbH
+<https://www.cyphar.com/>
+
+--fv76k6im74ofqhz7
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQSxZm6dtfE8gxLLfYqdlLljIbnQEgUCXSLY8wAKCRCdlLljIbnQ
+Enn2AQC9g0o7YHWuxFtQCLt+aHIE39RQMQDzB5QWrvZA8DdIUQEA69BwekXhnh8X
+m2czJJrJISBz5Nz1y3qJzwUUGBvxEgY=
+=RdsA
+-----END PGP SIGNATURE-----
+
+--fv76k6im74ofqhz7--
+
+
+--===============6067886071777767705==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6067886071777767705==--
+
