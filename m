@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85EEA62087
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 16:33:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9FA9962088
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 16:34:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=k2Yr5MyZJTmBxGqF+StTWQRZn+wmleqReAhq7tBjRu0=; b=ILsrV7WONuK1I+CIreRsYTk+6f
-	aUT0O5N9bnTHpSt3b7Zkye1ZQKUYTnUCZabxPXwlSzEO1PVRe2z8c3Lk6/xncj5UtxPt61dG6ASCO
-	B0NFfvmEe+Qv2cmi2AwLs7PhdBBA2/FowtlPTx3CBT3yAK7QF4jK5eIkN5F6wu38Acfhxm+5Hhy9A
-	vwY+bTVDQoaOFAMfERqwLKYgZoQ2dk9vOxSD2arxeoFdBi7+tdUZ2a3ZZRzmfHEgE/qEAmJWY3QY2
-	508W3uHVaYEQdaj/p+eCDkLPT65YEM+gsIY7X+EnPQpAxEWoAU91Y9VsM2Q+xPSnIw2Bc84WsARdM
-	/U4327fg==;
+	bh=DDgflwjxsK3eIaQCw/W5qxws19pcjacuq+i2fx1750s=; b=jedceb+LROi1sBS42We3QylGzp
+	YVez8D7zFnL+O0XWUyVRopl9qjjbjmlMJ7PkUN+aLQtTvdTHU/iypRfb0KBeqfID/DAhPbh/WiU92
+	H+2mO5+k6ACVZm75yYf4LB7snta/wmyToMRjuEg4KfKSTwf7EC7PcV/SsO5q3AJ3C860ig+P1TRt3
+	xyLL0v8EU5wZGwilUUwBNQr+uci3kEEL+BNLBcqmqU1EnEzj9ip2HTdoC6dPscEWSsbmH0rjPCym/
+	iMor4n/WoFdmpW0q9gMRhN0GhjoHRyXq+UG5/kPW2meJd7ycgAIfmKK7ADbKQ6/Pxawo5RJmUdCZG
+	uxIpsOiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkUi1-0001Ey-Nm; Mon, 08 Jul 2019 14:33:37 +0000
+	id 1hkUiH-0001TW-7Y; Mon, 08 Jul 2019 14:33:53 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hkUhY-00012h-S5
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 14:33:10 +0000
+ id 1hkUha-00013e-Me
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 14:33:12 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 11FD5CFC;
- Mon,  8 Jul 2019 07:33:08 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D16111509;
+ Mon,  8 Jul 2019 07:33:09 -0700 (PDT)
 Received: from e112298-lin.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 96DF13F59C;
- Mon,  8 Jul 2019 07:33:06 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 47B103F59C;
+ Mon,  8 Jul 2019 07:33:08 -0700 (PDT)
 From: Julien Thierry <julien.thierry@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 1/9] arm64: perf: avoid PMXEV* indirection
-Date: Mon,  8 Jul 2019 15:32:49 +0100
-Message-Id: <1562596377-33196-2-git-send-email-julien.thierry@arm.com>
+Subject: [PATCH v3 2/9] arm64: perf: Remove PMU locking
+Date: Mon,  8 Jul 2019 15:32:50 +0100
+Message-Id: <1562596377-33196-3-git-send-email-julien.thierry@arm.com>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1562596377-33196-1-git-send-email-julien.thierry@arm.com>
 References: <1562596377-33196-1-git-send-email-julien.thierry@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_073308_993120_4992A2F7 
-X-CRM114-Status: GOOD (  15.57  )
+X-CRM114-CacheID: sfid-20190708_073310_856993_D796CF4C 
+X-CRM114-Status: GOOD (  11.95  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,33 +71,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Mark Rutland <mark.rutland@arm.com>
+Since the PMU driver uses direct registers for counter
+setup/manipulation, locking around these operations is no longer needed.
 
-Currently we access the counter registers and their respective type
-registers indirectly. This requires us to write to PMSELR, issue an ISB,
-then access the relevant PMXEV* registers.
+For operations that can be called with interrupts enabled, preemption
+still needs to be disabled to ensure the programming of the PMU is
+done on the expected CPU and not migrated mid-programming.
 
-This is unfortunate, because:
-
-* Under virtualization, accessing one registers requires two traps to
-  the hypervisor, even though we could access the register directly with
-  a single trap.
-
-* We have to issue an ISB which we could otherwise avoid the cost of.
-
-* When we use NMIs, the NMI handler will have to save/restore the select
-  register in case the code it preempted was attempting to access a
-  counter or its type register.
-
-We can avoid these issues by directly accessing the relevant registers.
-This patch adds helpers to do so.
-
-Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-[Julien T.: Don't inline read/write functions to avoid big code-size
-	increase, remove unused read_pmevtypern function,
-	fix counter index issue.]
 Signed-off-by: Julien Thierry <julien.thierry@arm.com>
 Cc: Will Deacon <will.deacon@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>
 Cc: Peter Zijlstra <peterz@infradead.org>
 Cc: Ingo Molnar <mingo@redhat.com>
 Cc: Arnaldo Carvalho de Melo <acme@kernel.org>
@@ -106,148 +89,86 @@ Cc: Jiri Olsa <jolsa@redhat.com>
 Cc: Namhyung Kim <namhyung@kernel.org>
 Cc: Catalin Marinas <catalin.marinas@arm.com>
 ---
- arch/arm64/kernel/perf_event.c | 96 ++++++++++++++++++++++++++++++++++++------
- 1 file changed, 83 insertions(+), 13 deletions(-)
+ arch/arm64/kernel/perf_event.c | 32 ++++----------------------------
+ 1 file changed, 4 insertions(+), 28 deletions(-)
 
 diff --git a/arch/arm64/kernel/perf_event.c b/arch/arm64/kernel/perf_event.c
-index 96e90e2..7759f8a 100644
+index 7759f8a..878c142 100644
 --- a/arch/arm64/kernel/perf_event.c
 +++ b/arch/arm64/kernel/perf_event.c
-@@ -369,6 +369,77 @@ static inline bool armv8pmu_event_is_chained(struct perf_event *event)
- #define	ARMV8_IDX_TO_COUNTER(x)	\
- 	(((x) - ARMV8_IDX_COUNTER0) & ARMV8_PMU_COUNTER_MASK)
+@@ -677,15 +677,10 @@ static inline u32 armv8pmu_getreset_flags(void)
 
-+/*
-+ * This code is really good
-+ */
-+
-+#define PMEVN_CASE(n, case_macro) \
-+	case n: case_macro(n); break
-+
-+#define PMEVN_SWITCH(x, case_macro)				\
-+	do {							\
-+		switch (x) {					\
-+		PMEVN_CASE(0,  case_macro);			\
-+		PMEVN_CASE(1,  case_macro);			\
-+		PMEVN_CASE(2,  case_macro);			\
-+		PMEVN_CASE(3,  case_macro);			\
-+		PMEVN_CASE(4,  case_macro);			\
-+		PMEVN_CASE(5,  case_macro);			\
-+		PMEVN_CASE(6,  case_macro);			\
-+		PMEVN_CASE(7,  case_macro);			\
-+		PMEVN_CASE(8,  case_macro);			\
-+		PMEVN_CASE(9,  case_macro);			\
-+		PMEVN_CASE(10, case_macro);			\
-+		PMEVN_CASE(11, case_macro);			\
-+		PMEVN_CASE(12, case_macro);			\
-+		PMEVN_CASE(13, case_macro);			\
-+		PMEVN_CASE(14, case_macro);			\
-+		PMEVN_CASE(15, case_macro);			\
-+		PMEVN_CASE(16, case_macro);			\
-+		PMEVN_CASE(17, case_macro);			\
-+		PMEVN_CASE(18, case_macro);			\
-+		PMEVN_CASE(19, case_macro);			\
-+		PMEVN_CASE(21, case_macro);			\
-+		PMEVN_CASE(22, case_macro);			\
-+		PMEVN_CASE(23, case_macro);			\
-+		PMEVN_CASE(24, case_macro);			\
-+		PMEVN_CASE(25, case_macro);			\
-+		PMEVN_CASE(26, case_macro);			\
-+		PMEVN_CASE(27, case_macro);			\
-+		PMEVN_CASE(28, case_macro);			\
-+		PMEVN_CASE(29, case_macro);			\
-+		PMEVN_CASE(30, case_macro);			\
-+		default: WARN(1, "Inavlid PMEV* index");	\
-+		}						\
-+	} while (0)
-+
-+#define RETURN_READ_PMEVCNTRN(n) \
-+	return read_sysreg(pmevcntr##n##_el0);
-+static unsigned long read_pmevcntrn(int n)
-+{
-+	PMEVN_SWITCH(n, RETURN_READ_PMEVCNTRN);
-+	return 0;
-+}
-+#undef RETURN_READ_PMEVCNTRN
-+
-+#define WRITE_PMEVCNTRN(n) \
-+	write_sysreg(val, pmevcntr##n##_el0);
-+static void write_pmevcntrn(int n, unsigned long val)
-+{
-+	PMEVN_SWITCH(n, WRITE_PMEVCNTRN);
-+}
-+#undef WRITE_PMEVCNTRN
-+
-+#define WRITE_PMEVTYPERN(n) \
-+	write_sysreg(val, pmevtyper##n##_el0);
-+static void write_pmevtypern(int n, unsigned long val)
-+{
-+	PMEVN_SWITCH(n, WRITE_PMEVTYPERN);
-+}
-+#undef WRITE_PMEVTYPERN
-+
-+#undef PMEVN_SWITCH
-+
- static inline u32 armv8pmu_pmcr_read(void)
+ static void armv8pmu_enable_event(struct perf_event *event)
  {
- 	return read_sysreg(pmcr_el0);
-@@ -397,17 +468,11 @@ static inline int armv8pmu_counter_has_overflowed(u32 pmnc, int idx)
- 	return pmnc & BIT(ARMV8_IDX_TO_COUNTER(idx));
+-	unsigned long flags;
+-	struct arm_pmu *cpu_pmu = to_arm_pmu(event->pmu);
+-	struct pmu_hw_events *events = this_cpu_ptr(cpu_pmu->hw_events);
+-
+ 	/*
+ 	 * Enable counter and interrupt, and set the counter to count
+ 	 * the event that we're interested in.
+ 	 */
+-	raw_spin_lock_irqsave(&events->pmu_lock, flags);
+
+ 	/*
+ 	 * Disable counter
+@@ -706,21 +701,10 @@ static void armv8pmu_enable_event(struct perf_event *event)
+ 	 * Enable counter
+ 	 */
+ 	armv8pmu_enable_event_counter(event);
+-
+-	raw_spin_unlock_irqrestore(&events->pmu_lock, flags);
  }
 
--static inline void armv8pmu_select_counter(int idx)
-+static inline u32 armv8pmu_read_evcntr(int idx)
+ static void armv8pmu_disable_event(struct perf_event *event)
  {
- 	u32 counter = ARMV8_IDX_TO_COUNTER(idx);
--	write_sysreg(counter, pmselr_el0);
--	isb();
--}
-
--static inline u32 armv8pmu_read_evcntr(int idx)
--{
--	armv8pmu_select_counter(idx);
--	return read_sysreg(pmxevcntr_el0);
-+	return read_pmevcntrn(counter);
+-	unsigned long flags;
+-	struct arm_pmu *cpu_pmu = to_arm_pmu(event->pmu);
+-	struct pmu_hw_events *events = this_cpu_ptr(cpu_pmu->hw_events);
+-
+-	/*
+-	 * Disable counter and interrupt
+-	 */
+-	raw_spin_lock_irqsave(&events->pmu_lock, flags);
+-
+ 	/*
+ 	 * Disable counter
+ 	 */
+@@ -730,30 +714,22 @@ static void armv8pmu_disable_event(struct perf_event *event)
+ 	 * Disable interrupt for this counter
+ 	 */
+ 	armv8pmu_disable_event_irq(event);
+-
+-	raw_spin_unlock_irqrestore(&events->pmu_lock, flags);
  }
 
- static inline u64 armv8pmu_read_hw_counter(struct perf_event *event)
-@@ -441,8 +506,9 @@ static u64 armv8pmu_read_counter(struct perf_event *event)
-
- static inline void armv8pmu_write_evcntr(int idx, u32 value)
+ static void armv8pmu_start(struct arm_pmu *cpu_pmu)
  {
--	armv8pmu_select_counter(idx);
--	write_sysreg(value, pmxevcntr_el0);
-+	u32 counter = ARMV8_IDX_TO_COUNTER(idx);
-+
-+	write_pmevcntrn(counter, value);
+-	unsigned long flags;
+-	struct pmu_hw_events *events = this_cpu_ptr(cpu_pmu->hw_events);
+-
+-	raw_spin_lock_irqsave(&events->pmu_lock, flags);
++	preempt_disable();
+ 	/* Enable all counters */
+ 	armv8pmu_pmcr_write(armv8pmu_pmcr_read() | ARMV8_PMU_PMCR_E);
+-	raw_spin_unlock_irqrestore(&events->pmu_lock, flags);
++	preempt_enable();
  }
 
- static inline void armv8pmu_write_hw_counter(struct perf_event *event,
-@@ -483,9 +549,10 @@ static void armv8pmu_write_counter(struct perf_event *event, u64 value)
-
- static inline void armv8pmu_write_evtype(int idx, u32 val)
+ static void armv8pmu_stop(struct arm_pmu *cpu_pmu)
  {
--	armv8pmu_select_counter(idx);
-+	u32 counter = ARMV8_IDX_TO_COUNTER(idx);
-+
- 	val &= ARMV8_PMU_EVTYPE_MASK;
--	write_sysreg(val, pmxevtyper_el0);
-+	write_pmevtypern(counter, val);
+-	unsigned long flags;
+-	struct pmu_hw_events *events = this_cpu_ptr(cpu_pmu->hw_events);
+-
+-	raw_spin_lock_irqsave(&events->pmu_lock, flags);
++	preempt_disable();
+ 	/* Disable all counters */
+ 	armv8pmu_pmcr_write(armv8pmu_pmcr_read() & ~ARMV8_PMU_PMCR_E);
+-	raw_spin_unlock_irqrestore(&events->pmu_lock, flags);
++	preempt_enable();
  }
 
- static inline void armv8pmu_write_event_type(struct perf_event *event)
-@@ -505,7 +572,10 @@ static inline void armv8pmu_write_event_type(struct perf_event *event)
- 		armv8pmu_write_evtype(idx - 1, hwc->config_base);
- 		armv8pmu_write_evtype(idx, chain_evt);
- 	} else {
--		armv8pmu_write_evtype(idx, hwc->config_base);
-+		if (idx == ARMV8_IDX_CYCLE_COUNTER)
-+			write_sysreg(hwc->config_base, pmccfiltr_el0);
-+		else
-+			armv8pmu_write_evtype(idx, hwc->config_base);
- 	}
- }
-
+ static irqreturn_t armv8pmu_handle_irq(struct arm_pmu *cpu_pmu)
 --
 1.9.1
 
