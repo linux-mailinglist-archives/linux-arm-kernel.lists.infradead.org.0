@@ -2,92 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC3C661E82
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 14:34:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0058F61E96
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 14:41:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=pR/8mgBRuCX414UFWtuFlF3ytRBbeC0Ls1styGSWGwI=; b=IzO
-	HV3uAlnxbvfCcYYWr5471J3Wkx8IvKqc27fK6Tui1Y9k4M4HwFGLue/p1os85Essa3yuq1vyMsQt+
-	EHuWqkQ36zRX4Su3rmQCqWdNOzTrz/m27SYv5lUyzQtZcNd3Oe+mVKm/iGvA4CNA8MIXYMNCAtCrB
-	+DRZPoQRqQBfrWB5hgq360LJVuUlaqh9SnyLlcQl/nRzbS8rB50BvuekSCCI1a5F3r8RYopN9WaCJ
-	zicMtZ2M89pWh8KrW8Xk1NlLu84Pe16xm+rdw4xCkjamc7jvFFvC/n5G4vvljPA6VlDKIfFaffUwq
-	Xh83O0nm5cOW556FwYI/ETt7/30ZvpA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qaaTu4x1k4AhKUYMHhlM4AyhRD6wsMQTwkCs/laqU8I=; b=Aap9MfpjOcNNMr
+	gLPLRUd81Dz7IKD6l7Lph3CIZnKbkl/GQu1C5B/8vVm2G4g2EaC+cI1e3uTAHd/lMNiBuZrAb+9Tv
+	233LDKYeggG86TefjL20fBTtcG1IvIE9MRl22kkjg+EDae8UkTJs/Hog7dLN6FSOhPPdBxcnlr2Mi
+	akUftPo7fbAMiazQ6/AgRFxNQny9HMtWuh/7TWtO6Ko8SBfJ0SjAgjA0pUo77DXtZGGXCNf5BlclZ
+	knby7PqaS3mAaM5HVYxO5IsEgqxNcvHI/oViaOKoJ7cFeDMGpRpkwy80TtIia2S5dsj5fAVDTABtb
+	LDAvlYflLkRriXEygifg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkSqr-0003FI-6d; Mon, 08 Jul 2019 12:34:37 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1hkSxD-0006HL-7P; Mon, 08 Jul 2019 12:41:11 +0000
+Received: from edison.jonmasters.org ([173.255.233.168])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkSqH-0003E6-Dl
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 12:34:03 +0000
-Received: by mail-pf1-x442.google.com with SMTP id r1so7529084pfq.12
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 08 Jul 2019 05:34:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=M47eeUNCN4SVfJom0OnKhMR7q6xYFkcCTnLQCxdI5ls=;
- b=WFxZsfomA29eOc/Rm/2BZReRzhSvw45FcB4cFwTAjWKoGF8d9mLHcKgTNipt38kg0m
- +CwdcFESFE6YiVHuAM5DM9/S1wBzDe1Z3tZ2Nvi9Gtmuni78moINmU8+2bei2cuCf5tF
- khW2yHX3NeOQe4GYXeaAZvhGS/mcuDvq4ZSG+VP8CPs5ntbOl7lOcucnupCpRuV+aQwf
- GObhIfe+jx1UhCMc1IIi10sJJKXJNBfKQMhxumt3AYah0i8sXn02ifBoetlAQwYH00op
- HRmDL3PAQzoLPy6X4+xClmEwOrz9astlnt+4PmfpvcNrtCOXngZnn+5aRVlj4HeMJloq
- T1Gg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=M47eeUNCN4SVfJom0OnKhMR7q6xYFkcCTnLQCxdI5ls=;
- b=Lrq7mPtmMkcruXCRP+TzzbLNSrgyUI4LCSk0bd+mAjNwLqGGWFRTMak9xhQ1mNVZ+p
- AgK4j2Z7HbePjSfUKZWNBnhhCoFpKULgTjjoQu68P2HmMZ6/Hh3i9IW8hJ+Aze60317J
- zvZA+ptZfCJIrOcVE2maKt1aOWy0nmElWfsesi8Rj7LTrkTE6toI+/5GtzS0C7SeQjAa
- HZ57j7asSgEuqx630WF3+0Z3rnyMqIKVbtlec4EMoVbsB2VA2LtMldFmJqXOv1Tiql1u
- v9+OtfmL0R2Z6N7jryVDeER0+hTjuznaU5gfavtmnjpqW+f7e6No2Ag1uKWeSvB3EEdK
- oEcA==
-X-Gm-Message-State: APjAAAVcpVXUscQFii8I6+iRe8/9wqPkSUHCGD7t+j7o2gtsJ5ZvQSxO
- Lnjb58YD06xqM5ITHa9j7QJDcj059pc=
-X-Google-Smtp-Source: APXvYqwT85qiQbjKYhVI6Utl22oZLWmhnzAVfEG2zxIim+b4MbMsEhdmIj6QoWsXZOx3ojsq50zs9g==
-X-Received: by 2002:a17:90a:a489:: with SMTP id
- z9mr24384234pjp.24.1562589240312; 
- Mon, 08 Jul 2019 05:34:00 -0700 (PDT)
-Received: from hfq-skylake.ipads-lab.se.sjtu.edu.cn ([202.120.40.82])
- by smtp.googlemail.com with ESMTPSA id
- i124sm38232388pfe.61.2019.07.08.05.33.58
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 08 Jul 2019 05:33:59 -0700 (PDT)
-From: Fuqian Huang <huangfq.daxian@gmail.com>
-To: 
-Subject: [PATCH 11/14] PCI: Replace devm_add_action() followed by failure
- action with devm_add_action_or_reset()
-Date: Mon,  8 Jul 2019 20:33:54 +0800
-Message-Id: <20190708123354.12127-1-huangfq.daxian@gmail.com>
-X-Mailer: git-send-email 2.11.0
+ id 1hkSx0-0006Gb-7r
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 12:40:59 +0000
+Received: from boston.jonmasters.org ([50.195.43.97]
+ helo=tonnant.bos.jonmasters.org)
+ by edison.jonmasters.org with esmtpsa (TLS1.0:RSA_AES_128_CBC_SHA1:16)
+ (Exim 4.71) (envelope-from <jcm@jonmasters.org>)
+ id 1hkSwx-0005qi-MY; Mon, 08 Jul 2019 12:40:55 +0000
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+References: <7dd77cea-d673-269a-044f-4df269db7e5e@jonmasters.org>
+ <20190708093714.57t55inainky2zcq@shell.armlinux.org.uk>
+From: Jon Masters <jcm@jonmasters.org>
+Message-ID: <21412e56-a8cc-0e75-06e4-3dd1684839e2@jonmasters.org>
+Date: Mon, 8 Jul 2019 08:40:50 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.4.0
+MIME-Version: 1.0
+In-Reply-To: <20190708093714.57t55inainky2zcq@shell.armlinux.org.uk>
+Content-Language: en-US
+X-SA-Exim-Connect-IP: 50.195.43.97
+X-SA-Exim-Mail-From: jcm@jonmasters.org
+X-Spam-Checker-Version: SpamAssassin 3.3.1 (2010-03-16) on
+ edison.jonmasters.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.9 required=5.0 tests=ALL_TRUSTED,BAYES_00
+ autolearn=ham version=3.3.1
+Subject: Re: FYI: Possible HPFAR_EL2 corruption (LPAE guests on AArch64 hosts)
+X-SA-Exim-Version: 4.2.1 (built Sun, 08 Nov 2009 07:31:22 +0000)
+X-SA-Exim-Scanned: Yes (on edison.jonmasters.org)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_053401_656065_F1EB2540 
-X-CRM114-Status: GOOD (  13.35  )
-X-Spam-Score: 2.6 (++)
+X-CRM114-CacheID: sfid-20190708_054058_479467_6F3A7428 
+X-CRM114-Status: GOOD (  17.01  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.6 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [202.120.40.82 listed in dnsbl.sorbs.net]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (huangfq.daxian[at]gmail.com)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,45 +70,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org, Fuqian Huang <huangfq.daxian@gmail.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-devm_add_action_or_reset() is introduced as a helper function which 
-internally calls devm_add_action(). If devm_add_action() fails 
-then it will execute the action mentioned and return the error code.
-This reduce source code size (avoid writing the action twice) 
-and reduce the likelyhood of bugs.
+On 7/8/19 5:37 AM, Russell King - ARM Linux admin wrote:
+> On Sun, Jul 07, 2019 at 11:39:46PM -0400, Jon Masters wrote:
+>> Hi all,
+>>
+>> TLDR: We think $subject may be a hardware errata and we are
+>> investigating. I was asked to drop a note to share my initial analysis
+>> in case others have been experiencing similar problems with 32-bit VMs.
+>>
+>> The Fedora Arm 32-bit builders run as "armv7hl+lpae" (aarch32) LPAE
+>> (VMSAv8-32 Long-descriptor table format in aarch32 execution state) VMs
+>> on AArch64 hosts. Under certain conditions, those builders will "pause"
+>> with the following obscure looking error message:
+>>
+>> kvm [10652]: load/store instruction decoding not implemented
+> 
+> Out of interest, because I'm running a number of 32-bit VMs on the
+> Macchiatobin board, using a different 64-bit distro...
+> 
+> How often do these errors occur?  Have you been able to pinpoint any
+> particular CPU core?  Does the workload in the VMs have any effect?
+> What about the workload in the host?
 
-Signed-off-by: Fuqian Huang <huangfq.daxian@gmail.com>
----
- drivers/pci/controller/pci-host-common.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+It's a specific CPU core (not a Cortex design), running a 32-bit LPAE
+kernel (needs to be LPAE to have an IPA >32-bit). In the course of a
+weekend running stress tests, my test kernel fixed up hundreds of faults
+that would otherwise have taken the guest system down.
 
-diff --git a/drivers/pci/controller/pci-host-common.c b/drivers/pci/controller/pci-host-common.c
-index c742881b5061..c8cb9c5188a4 100644
---- a/drivers/pci/controller/pci-host-common.c
-+++ b/drivers/pci/controller/pci-host-common.c
-@@ -43,9 +43,8 @@ static struct pci_config_window *gen_pci_init(struct device *dev,
- 		goto err_out;
- 	}
- 
--	err = devm_add_action(dev, gen_pci_unmap_cfg, cfg);
-+	err = devm_add_action_or_reset(dev, gen_pci_unmap_cfg, cfg);
- 	if (err) {
--		gen_pci_unmap_cfg(cfg);
- 		goto err_out;
- 	}
- 	return cfg;
--- 
-2.11.0
+Specifically, PGDs are allocated from a cache located in low memory (so
+we never hit this condition for those), but PTEs are allocated using:
 
+	alloc_pages(PGALLOC_GFP | __GFP_HIGHMEM, 0);
+
+So at some point, we'll allocate a PTE from above 32-bit. When we later
+take a fault on those during a stage 1 walk, we hit a problem.
+
+My guess is we do the clock algorithm on the host looking to see for
+recent accesses by unsetting access bits on the host (stage2) and since
+on Armv8.0 we do a software trap for access bit updates we'll trap to
+stage 2 during the stage 1 guest walk the next time around. So simply
+pinning the guest memory isn't going to be sufficient to prevent it if
+that memory is allocated normally with the host doing software LRU.
+
+But the above is just what I consider the likely cause in my head.
+
+Jon.
 
 _______________________________________________
 linux-arm-kernel mailing list
