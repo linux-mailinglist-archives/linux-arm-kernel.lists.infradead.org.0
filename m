@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 425A861E09
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 13:56:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CAC5E61E13
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 13:56:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SwORddOFO/itsICpijcpwAN8k8iGAhqLv2J2793wbVM=; b=PlCFc/qoFpVo7g
-	7FtLZwmNVq8oYkwDk5Qvtc9NsmA8hecdz4Uq/beALV1hsO+fNvmN+6KpOLecttSj9+9avFxizUzzw
-	UplIDSXknY//Osgo8Myv4Iv8RHNhGsKfIFWfley1EPoQ9bp81W2reAYvhskU77mAeE2//vl28Xomd
-	c0OMNyCMJ7KPLcpCc/QmyH4a7w42TnJo/fjUm7jBWneDRm/8pN3+kT94NQkahg6TPauuoLR0bu2I8
-	n81dd3hBMkDLadxU1RvlSpBVTou9O3bzdcXi1mHAohaS5HnKccAYo3WvkSCYHIowOMrfVMjN3zcS8
-	svBUsr1ktl2JNzEgeFgA==;
+	List-Owner; bh=oF+lBKISan5R2LhB1wiJ0kW0s7vj/wzVWEBvm5A2bYQ=; b=phg6Q0zmOjBlZV
+	4lOLt8Ukk7RVA2K54vTtPQsKo7NxZf5FEakm1UyQioj1qOZDlsZLKdJ2ZZkZ4aKVJlW4h366re615
+	Y8oAQaJyCWhmI/KU8RfkuAVEenceMP6AB1iyCQgz37j8VztSrp/5VP9PT+pZrQ7fpUTiXFaJFRfO2
+	MFcgRvzsSJOhmKtYivqXUYWb/bP2pFkqHtfMSk7D/dneGjC168ujw+k1elbK6HpUJw5E8wpdp/DHy
+	U3/UQrYjyfiWm6AQ+Gjh1Wc94kOacE5AvdrBWOi/V0GP02lZGxakTxobJHxoIvQDR+swvd2Ot/gyE
+	6rVn3c0VK8+IdMcF2w1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkSG8-0005iM-VF; Mon, 08 Jul 2019 11:56:41 +0000
-Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
+	id 1hkSGP-0005tA-2X; Mon, 08 Jul 2019 11:56:57 +0000
+Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkSFv-0005gs-7M
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 11:56:28 +0000
-Received: by mail-vs1-xe42.google.com with SMTP id m23so7994692vso.1
+ id 1hkSFw-0005hh-ON
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 11:56:30 +0000
+Received: by mail-vs1-xe44.google.com with SMTP id m23so7994783vso.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 08 Jul 2019 04:56:25 -0700 (PDT)
+ Mon, 08 Jul 2019 04:56:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=INqtaKqgJbsCXfOBlyhjMGZiHQUnucRAJNFBEd5g9d0=;
- b=n2aOuh4+2HfLrrQ/AerkGk8nPcV0a9lHD1biMG5L8xAvYkxmgeLA8NS7F25S5q3m4/
- PCxVdgp2Jf8w+c1ts10xe7qmXFh+7oane/qyxsSzTyhYVjYlUWbx7mj0ICC6+bojcHJI
- 0SINwngWRJuBqkIGoFi8LSLM9AAf4cWCut+tz8LeJrgv1RvYMMYGzCJDEIEEotA8Lx4T
- ExMvH2gvUGRMH8HhXJ4gQBnh9YRG72rx3rbZCAk4XKuIF2dvHFVtWbEZbGdLt8u1/62E
- wvQoT932jJjfBcNytTV6L5O68aaoqrXemfhwy6DrUlk5jFD5bypBb8QcMyuWa0IaOma9
- Ed1Q==
+ :cc; bh=HBytyteQEqE0MSe1IOfYnAnkrJNKH8hCeBxnrS0M68E=;
+ b=Rm7uAMB7M5Qn0X6mOV3Iz8dOnLsIQ9eGsDcwh4z92MopdN7KKiq31AboQlypIo9V9v
+ ue9bef6yCpVOq2onDY/zQSjkhhKHmc+cbTLwy6OlgG0Lcy3AwSUbpz29HJdKqTZdjodu
+ FOu1QU4FrfCCQ1PSZLHjJ1nnN1sfcEYlYy1FvzGRBwpgHIN6h3mwMUDQ1P2H8Tc3oKv7
+ oZ+QkHk+nRGF5xp1DGXIjCku+ZIdHyeJCvc/Tsm/3sQbRgU0UlPbI2wofVSyQNLdHlAO
+ Tg+EJOx0U9geRwo4Pu/oWUFHPGyernGW0Sp6KVrxuMab2/nNUIIQi9O9nfwGze9pk7AV
+ w6xw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=INqtaKqgJbsCXfOBlyhjMGZiHQUnucRAJNFBEd5g9d0=;
- b=B3URL45ZU19iED/lVbGl5oEkyyjG6Msqr19Ds4A9ijnF6zwnF8g84GzUFDR6H3VCsV
- VdBYczTRQpmTmiwRRfuoOenXGPcUI32QYpbszvkH6hZIZNNE2YwpiyEfdbw2xYt80SrC
- aOPVeL888ihyR1k0xrO38jOwGvPynIofz5uszIhyULixTkJI9PK6G6w+f+L6wCmxPp4/
- TDvSt9iKK99pseu/bUTBZUVQ1A3oAMeknqM6XPozD+KZ6JzB0tAkMKyPezwHBbeN0mEG
- jo06U7geSrHv4Hccg4a9m7NAJzGvMEWZPMO/RLL8pvn3D1LTbEHQ/JMo6cnQRPdp4UJR
- 7tDw==
-X-Gm-Message-State: APjAAAUDc9taVCaC2LBDV4HcZt3D+79YfVafJg97gwg+kk+yioeH9huc
- v5fjsxHK1IZ8+HNT1m+kHsPjhEnviLDlAAIkk+7Wqg==
-X-Google-Smtp-Source: APXvYqzuMQxu5Q5w1+tmz7XnrX4NkraXYwW+cB7xG+jvVxMPoX8GHek6Jxl9SAJweTu5ja02CrA++IPVX9ipqF+7hMA=
-X-Received: by 2002:a67:ee5b:: with SMTP id g27mr9881440vsp.165.1562586984367; 
- Mon, 08 Jul 2019 04:56:24 -0700 (PDT)
+ bh=HBytyteQEqE0MSe1IOfYnAnkrJNKH8hCeBxnrS0M68E=;
+ b=BPVoqL6kZJuE6igGagB7SezWu4OxHSmeop/VwYPkFDPbrXbhjKqVrpXUWfiC8yEhBf
+ LnZkXSfT2L6ExEO7Ugodi64j0djyN8rmLnLa1R+B8tLJE1muvMdKSewFOxMH2oJqjsbH
+ euNKNOzkjs91oei6sP6Sg9nnJRwlQvNZ5dz61KK5ZWXSD5v8HHPF5jbq3q2ULVOGSmx+
+ unfCQswn+de1R6c3Xawx+GYNXDpg2kfxPm4uknjoYEcyZm4vQppNbT0KOYvWVSosw+Re
+ dihnhh5dtVdXkLLPlCBBrqb9yxSjrOA8H+SLvYdek6J0oiudm2nITPBBLZxpJ36pNpiy
+ U0kQ==
+X-Gm-Message-State: APjAAAXBeWG9uqRzF4r4fxHGF3zGbZIh/atOe02Ef365TrIrwjRzrrq6
+ 6J03FmWSclTQyuyqXCVpTvW3/dZzzbslzQvgOndfnH6n
+X-Google-Smtp-Source: APXvYqzg4E2v4x7VsWLV3ufXyfYMYcZpu74cfh+llLws+qIdafA82e7IbF0d3dN/j1DEFitRvg4vHdb6lzOYvkL7RiA=
+X-Received: by 2002:a67:7a90:: with SMTP id v138mr9705298vsc.200.1562586987921; 
+ Mon, 08 Jul 2019 04:56:27 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190625092042.19320-1-hch@lst.de>
- <20190625092042.19320-2-hch@lst.de>
-In-Reply-To: <20190625092042.19320-2-hch@lst.de>
+ <20190625092042.19320-3-hch@lst.de>
+In-Reply-To: <20190625092042.19320-3-hch@lst.de>
 From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Mon, 8 Jul 2019 13:55:48 +0200
-Message-ID: <CAPDyKFotnDCpt9k-r3D2uYRAzpFVA3woRQENLcNcDY0q8+8SVg@mail.gmail.com>
-Subject: Re: [PATCH 1/2] mmc: let the dma map ops handle bouncing
-To: Christoph Hellwig <hch@lst.de>
+Date: Mon, 8 Jul 2019 13:55:52 +0200
+Message-ID: <CAPDyKFr=skv_109JfYQgZrzrEox_CdSmpO_9iU10OC+sGTz1wQ@mail.gmail.com>
+Subject: Re: [PATCH 2/2] dma-mapping: remove dma_max_pfn
+To: Christoph Hellwig <hch@lst.de>, Marc Gonzalez <marc.w.gonzalez@free.fr>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_045627_271053_27031F57 
-X-CRM114-Status: GOOD (  18.18  )
+X-CRM114-CacheID: sfid-20190708_045628_793897_CDD6C58B 
+X-CRM114-Status: GOOD (  18.46  )
 X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e42 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -105,55 +105,65 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Tue, 25 Jun 2019 at 11:21, Christoph Hellwig <hch@lst.de> wrote:
 >
-> Just like we do for all other block drivers.  Especially as the limit
-> imposed at the moment might be way to pessimistic for iommus.
+> These days the DMA mapping code must bounce buffer for any not supported
+> address, and if they driver needs to optimize for natively supported
+> ranged it should use dma_get_required_mask.
 >
 > Signed-off-by: Christoph Hellwig <hch@lst.de>
 
-From your earlier reply, I decided to fold in the following
-information to the changelog, as to clarify things a bit:
+Applied for next, by amending the changelog according to suggestions
+from Marc, thanks!
 
-"This also means we are not going to set a bounce limit for the queue, in
-case we have a dma mask. On most architectures it was never needed, the
-major hold out was x86-32 with PAE, but that has been fixed by now."
+I also decided to consider to the reply from Marc (with the changes
+made) as an ack, so added a tag for that.
 
-Please tell, if you want me to change something.
-
-Applied for next, thanks!
+If there are any objections, from anyone, please tell now.
 
 Kind regards
 Uffe
 
 
 > ---
->  drivers/mmc/core/queue.c | 7 ++-----
->  1 file changed, 2 insertions(+), 5 deletions(-)
+>  arch/arm/include/asm/dma-mapping.h | 7 -------
+>  include/linux/dma-mapping.h        | 7 -------
+>  2 files changed, 14 deletions(-)
 >
-> diff --git a/drivers/mmc/core/queue.c b/drivers/mmc/core/queue.c
-> index 3557d5c51141..e327f80ebe70 100644
-> --- a/drivers/mmc/core/queue.c
-> +++ b/drivers/mmc/core/queue.c
-> @@ -350,18 +350,15 @@ static const struct blk_mq_ops mmc_mq_ops = {
->  static void mmc_setup_queue(struct mmc_queue *mq, struct mmc_card *card)
->  {
->         struct mmc_host *host = card->host;
-> -       u64 limit = BLK_BOUNCE_HIGH;
->         unsigned block_size = 512;
+> diff --git a/arch/arm/include/asm/dma-mapping.h b/arch/arm/include/asm/dma-mapping.h
+> index 03ba90ffc0f8..7e0486ad1318 100644
+> --- a/arch/arm/include/asm/dma-mapping.h
+> +++ b/arch/arm/include/asm/dma-mapping.h
+> @@ -89,13 +89,6 @@ static inline dma_addr_t virt_to_dma(struct device *dev, void *addr)
+>  }
+>  #endif
 >
-> -       if (mmc_dev(host)->dma_mask && *mmc_dev(host)->dma_mask)
-> -               limit = (u64)dma_max_pfn(mmc_dev(host)) << PAGE_SHIFT;
+> -/* The ARM override for dma_max_pfn() */
+> -static inline unsigned long dma_max_pfn(struct device *dev)
+> -{
+> -       return dma_to_pfn(dev, *dev->dma_mask);
+> -}
+> -#define dma_max_pfn(dev) dma_max_pfn(dev)
 > -
->         blk_queue_flag_set(QUEUE_FLAG_NONROT, mq->queue);
->         blk_queue_flag_clear(QUEUE_FLAG_ADD_RANDOM, mq->queue);
->         if (mmc_can_erase(card))
->                 mmc_queue_setup_discard(mq->queue, card);
+>  /* do not use this function in a driver */
+>  static inline bool is_device_dma_coherent(struct device *dev)
+>  {
+> diff --git a/include/linux/dma-mapping.h b/include/linux/dma-mapping.h
+> index 6309a721394b..8d13e28a8e07 100644
+> --- a/include/linux/dma-mapping.h
+> +++ b/include/linux/dma-mapping.h
+> @@ -729,13 +729,6 @@ static inline int dma_set_seg_boundary(struct device *dev, unsigned long mask)
+>         return -EIO;
+>  }
 >
-> -       blk_queue_bounce_limit(mq->queue, limit);
-> +       if (!mmc_dev(host)->dma_mask || !*mmc_dev(host)->dma_mask)
-> +               blk_queue_bounce_limit(mq->queue, BLK_BOUNCE_HIGH);
->         blk_queue_max_hw_sectors(mq->queue,
->                 min(host->max_blk_count, host->max_req_size / 512));
->         blk_queue_max_segments(mq->queue, host->max_segs);
+> -#ifndef dma_max_pfn
+> -static inline unsigned long dma_max_pfn(struct device *dev)
+> -{
+> -       return (*dev->dma_mask >> PAGE_SHIFT) + dev->dma_pfn_offset;
+> -}
+> -#endif
+> -
+>  static inline int dma_get_cache_alignment(void)
+>  {
+>  #ifdef ARCH_DMA_MINALIGN
 > --
 > 2.20.1
 >
