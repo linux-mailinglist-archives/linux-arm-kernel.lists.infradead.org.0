@@ -2,90 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF2A8628E1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 21:01:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EFE5862906
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 21:11:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=5ouBeciP4/m1oA7/T1hqh2Bwu55zD470Jx8SFXvfcXs=; b=ZyPSfk1w+MShEgRtFUJ2gIuzio
-	hG9gtgFXtCIzp5Pm9NfqRQZHLG6LIrX3I04zxrCOlo9PYRSP94+nzHVkhX90vqzU7aN/9VknMjAsB
-	ruT3a8Y0WKZ3HgTa9XZUkyjjDS6rS9oXCObQL2+CYKDG3RNMVsyE/8MQwhCJktXP1bImRiaebnzRc
-	uNT0D0o5aMh+XFQ72EzzNNeMnFdJ0+zsWxLCFL9dbrTEKML6SViItKeoKeHYdhNDO0AZCYISPskDv
-	KRgnGVpN6O+hEO32XgyVoT9MiYwGGCTTfR3TAj0c8TZb/tcrt2w80X8org1TmM1pz5cer71eMHpb8
-	acaKVJ4w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uHbuH5okz4NG0OfukdNDsPsKTHDEUja+XdzCALZeR94=; b=spHjqxqQAe7ek2
+	BIS6CRvTUjlx9On/b1NdtMybhlE0DRp1OdXtlaw7GwwwLy1nrWGYEyUElPJ/blV9NDzk8S6dtFYZ1
+	wQz7q5luAgFe/384fACDPn7VhxkOQIguZ4bRkmGUCeqdEIBCWTRxGUz5LQINoiyEDPBkk15wigJJf
+	72le8AY4HdIrnaHsxycUkxXl3BI44K2BkFF2Lv+MaIshrc9Dh+bca8Fe1c4b4v2cuPkNVc2tmGJgF
+	leQebIcDAOhIFT/CXiKygUB70qtNPeF9kw4y+uYfRio0+dZbS2WPla0gMl6CbFuANqew1wkpUOMcH
+	aU2E2epVQgcQIvINFXVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkYtQ-0004wp-6n; Mon, 08 Jul 2019 19:01:40 +0000
-Received: from smtp.codeaurora.org ([198.145.29.96])
+	id 1hkZ2X-00009x-Fi; Mon, 08 Jul 2019 19:11:05 +0000
+Received: from mout.kundenserver.de ([212.227.126.131])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkYsm-0004kV-BF
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 19:01:01 +0000
-Received: by smtp.codeaurora.org (Postfix, from userid 1000)
- id 151206115D; Mon,  8 Jul 2019 19:00:58 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1562612460;
- bh=8vvsLWPcHr0znTAIRbRfTb5WuDfVnCumJ8bN1RXKkaU=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=INoCaWEyzMFF5xTREw5kOwFZbJ9FL6TtX83nReAYW7ZOP9vrsPL6mjDNYq/r3laDF
- 0U81caNqqSDil0KrnwrmV1bK+BprHHVyYmGE2RBlY/GCbvuWxz1NnRCvo3cH5NYDYw
- +5lDnnw4DV6TVEgoDULgGCoPQgxIeAsi0xn7ItpE=
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- pdx-caf-mail.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
- DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
- version=3.4.0
-Received: from jcrouse1-lnx.qualcomm.com (i-global254.qualcomm.com
- [199.106.103.254])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
- (No client certificate requested)
- (Authenticated sender: jcrouse@smtp.codeaurora.org)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 3F59660E40;
- Mon,  8 Jul 2019 19:00:55 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1562612456;
- bh=8vvsLWPcHr0znTAIRbRfTb5WuDfVnCumJ8bN1RXKkaU=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Upbw5W/djHsjIjuGf3gIhOy7HFDE4loB2ekFEU8qBMXVqNg4kaM4fLsyTssaxk5D1
- jHSu0mL/YhTYrNDb71e9+JvNqt7t87D7uj2fjYpvwVSQ3zTjPtmx0/wb2H8ffeXsmY
- 92papmWE9htJ+GplCCwMzha46zOrNt6UtgY+Rvf0=
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 3F59660E40
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- spf=none smtp.mailfrom=jcrouse@codeaurora.org
-From: Jordan Crouse <jcrouse@codeaurora.org>
-To: freedreno@lists.freedesktop.org
-Subject: [RESEND PATCH v2 3/3] iommu/arm-smmu: Add support for
- DOMAIN_ATTR_SPLIT_TABLES
-Date: Mon,  8 Jul 2019 13:00:47 -0600
-Message-Id: <1562612447-19856-4-git-send-email-jcrouse@codeaurora.org>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1562612447-19856-1-git-send-email-jcrouse@codeaurora.org>
-References: <1562612447-19856-1-git-send-email-jcrouse@codeaurora.org>
+ id 1hkZ2G-00009H-L9
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 19:10:50 +0000
+Received: from [192.168.1.110] ([95.117.164.184]) by mrelayeu.kundenserver.de
+ (mreue011 [212.227.15.167]) with ESMTPSA (Nemesis) id
+ 1MJmX3-1i4AFV1OC9-00K9mg; Mon, 08 Jul 2019 21:10:24 +0200
+Subject: Re: [RFC] SW connection between DVB Transport Stream demuxer and
+ I2C-based frontend
+To: Marc Gonzalez <marc.w.gonzalez@free.fr>, I2C <linux-i2c@vger.kernel.org>, 
+ linux-media <linux-media@vger.kernel.org>,
+ GPIO <linux-gpio@vger.kernel.org>
+References: <5e35b4fb-646d-6428-f372-ee47d7352cd6@free.fr>
+ <b6abf5a2-3151-29e5-8eb7-c960580fd4ea@metux.net>
+ <79b9bd5e-be05-daa8-0d16-d84a383138a7@free.fr>
+From: "Enrico Weigelt, metux IT consult" <lkml@metux.net>
+Organization: metux IT consult
+Message-ID: <bb66e283-477b-38f1-cc0d-95ee94b70dc2@metux.net>
+Date: Mon, 8 Jul 2019 21:10:20 +0200
+User-Agent: Mozilla/5.0 (X11; Linux i686 on x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.2.1
+MIME-Version: 1.0
+In-Reply-To: <79b9bd5e-be05-daa8-0d16-d84a383138a7@free.fr>
+Content-Language: en-US
+X-Provags-ID: V03:K1:DUR7avr6KGM5zxlK1ue3WZpoy1VAsrFT6DJH9exnTs1P7lmuw8m
+ hNEimNt/6wbWi+eUJJB3YXAECYZ4Zi6nVmmKD5CAzozqNe/FxzfE6yyk/G2dkDNq9aAcp4N
+ 4sTdHKGEByCyj9Dfx9+s6RoHCTdk6pImgvpKULqu54mg7+u4Lv9DuazEy+N6jR25fJ+Hu/d
+ re3MaMlUEphN7reVEUwPw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:R2Teip2HdFg=:CEjBvuK84q3bHjaHNjALxP
+ 3x7wSBcQtwBN664UW6zPBtZ0BOkxCUAFuyuCJr+LljA/W+g7V6t1lSjluQPfZDs6EykCgNQ6L
+ mNJ/XSSQpeMbcUv3o8ppdMhUVH+WSO6UrnxU4iwvstsJFP9qisCZG/vNxmr1e/ovYBIS8ytzN
+ 8KbPjiIE7B0+tCcvl72uQ1hPYPJ240KaiQ0DQxKj5vUmh/vfEawzvxPjdeU4qGOIIrKUEMoOJ
+ +Ak2UK1Ey/YGQ/T7O7s3W5+mEcW+qFNzZRkBSGyc6l6GTcnnp4VY5v5GOsySisyQfGoPClGXg
+ I9ry0QG1YoYZsU8vomszqm8ZK48bQlJr2uKTvWLExO+qYfK1bm6nbgPvfLb43nZQv38ATpq1m
+ ggt+HvQ1A3vYBAxEQ/waPl9eFWO/n1sbT4cPAzQZH1HEPlqjru1kVoYKqlvy23jAyVA0LKcI6
+ vTevNMFNJ8cloIgfIKqCvwjGXfv+Egs1umAdKGxobhoh3U8K+vYxNHg8vPnZBzE2XXdJ1gpPQ
+ 2cEhfs48Sv5zNPn0/a47NxYpQy0qeVZUCo7s/yEJUoeoDBY2BB6rq2JN/HSLGmAwFUfzxVxDp
+ iNzL+I5AAZ3RYkMU+hhXHmk1UlA411dH2e3v8h3i7ID7KhxIcFUz6aW/oBtT1prlPWSgVzUwB
+ jSxIVmUeEfTfCrki2YXJNJYrfbdbm/9uqge1oJkWzkpe6+6FLMBPscU6jTFg65yAdHsgP+SIp
+ oWO0OYz/St7hJuspEPwVvfdJwLGZOmqiS2kzx6ZmiJzVLcRMPbA1KAVxTrA=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_120100_570962_A7CD5425 
-X-CRM114-Status: GOOD (  13.74  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190708_121049_072010_CEBC7F2A 
+X-CRM114-Status: GOOD (  10.35  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.145.29.96 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.131 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,81 +83,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jean-philippe.brucker@arm.com, linux-arm-msm@vger.kernel.org,
- Joerg Roedel <joro@8bytes.org>, dianders@chromium.org,
- linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
- hoegsberg@google.com, Robin Murphy <robin.murphy@arm.com>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org,
- baolu.lu@linux.intel.com
-MIME-Version: 1.0
+Cc: Peter Korsgaard <peter@korsgaard.com>,
+ Jeffrey Hugo <jeffrey.l.hugo@gmail.com>, Wolfram Sang <wsa@the-dreams.de>,
+ Linus Walleij <linus.walleij@linaro.org>, Brad Love <brad@nextdimension.cc>,
+ =?UTF-8?Q?Jonathan_Neusch=c3=a4fer?= <j.neuschaefer@gmx.net>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Antti Palosaari <crope@iki.fi>,
+ Simon Horman <horms+renesas@verge.net.au>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Olli Salonen <olli.salonen@iki.fi>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When DOMAIN_ATTR_SPLIT_TABLES is specified for pass ARM_64_LPAE_SPLIT_S1
-to io_pgtable_ops to allocate and initialize TTBR0 and TTBR1 pagetables.
+On 08.07.19 17:03, Marc Gonzalez wrote:
 
-v3: Moved all the pagetable specific work into io-pgtable-arm
-in a previous patch.
+> One problem is that since the internal bus is "created" (declared?) at run-time,
+> it doesn't seem possible to define it (or its client) in DT.
 
-Signed-off-by: Jordan Crouse <jcrouse@codeaurora.org>
----
+Maybe declare it nested inside the si2168 device ?
+The driver then needs a piece of glue code for triggering device probing
+on that bus. (so, it really needs to provide a full blown i2c driver ?)
 
- drivers/iommu/arm-smmu.c | 16 +++++++++++++++-
- 1 file changed, 15 insertions(+), 1 deletion(-)
+--mtx
 
-diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
-index 653b6b3..7a6b4bb 100644
---- a/drivers/iommu/arm-smmu.c
-+++ b/drivers/iommu/arm-smmu.c
-@@ -257,6 +257,7 @@ struct arm_smmu_domain {
- 	bool				non_strict;
- 	struct mutex			init_mutex; /* Protects smmu pointer */
- 	spinlock_t			cb_lock; /* Serialises ATS1* ops and TLB syncs */
-+	u32 attributes;
- 	struct iommu_domain		domain;
- };
- 
-@@ -832,7 +833,11 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
- 		ias = smmu->va_size;
- 		oas = smmu->ipa_size;
- 		if (cfg->fmt == ARM_SMMU_CTX_FMT_AARCH64) {
--			fmt = ARM_64_LPAE_S1;
-+			if (smmu_domain->attributes &
-+				(1 << DOMAIN_ATTR_SPLIT_TABLES))
-+				fmt = ARM_64_LPAE_SPLIT_S1;
-+			else
-+				fmt = ARM_64_LPAE_S1;
- 		} else if (cfg->fmt == ARM_SMMU_CTX_FMT_AARCH32_L) {
- 			fmt = ARM_32_LPAE_S1;
- 			ias = min(ias, 32UL);
-@@ -1582,6 +1587,10 @@ static int arm_smmu_domain_get_attr(struct iommu_domain *domain,
- 		case DOMAIN_ATTR_NESTING:
- 			*(int *)data = (smmu_domain->stage == ARM_SMMU_DOMAIN_NESTED);
- 			return 0;
-+		case DOMAIN_ATTR_SPLIT_TABLES:
-+			*(int *)data = !!(smmu_domain->attributes &
-+				(1 << DOMAIN_ATTR_SPLIT_TABLES));
-+			return 0;
- 		default:
- 			return -ENODEV;
- 		}
-@@ -1622,6 +1631,11 @@ static int arm_smmu_domain_set_attr(struct iommu_domain *domain,
- 			else
- 				smmu_domain->stage = ARM_SMMU_DOMAIN_S1;
- 			break;
-+		case DOMAIN_ATTR_SPLIT_TABLES:
-+			if (*((int *)data))
-+				smmu_domain->attributes |=
-+					(1 << DOMAIN_ATTR_SPLIT_TABLES);
-+			break;
- 		default:
- 			ret = -ENODEV;
- 		}
 -- 
-2.7.4
-
+Enrico Weigelt, metux IT consult
+Free software and Linux embedded engineering
+info@metux.net -- +49-151-27565287
 
 _______________________________________________
 linux-arm-kernel mailing list
