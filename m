@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C9F7D624C5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 17:46:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A60EC624D5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 17:46:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=zLo0ZWhP5aAC0UgBg+yJiGJB2Yl4U3j7S6+PtE2Nfwc=; b=iwzdvaB1TTt875R5puR3pwYZSz
-	+PuSmyc5Cpfe6u2VDbNfHe4lQCQNw1H4iNRmOiE2Rdpf9NhwR8x629oOVEtcs0LiYzmoZZdnBAbuP
-	w9Xas+IdEOPIf+EY0yOfC5cGjzGORsR1qF0B4+Arrv2F5wV33xjl8n5s4gPbWkmOc9+o0tzS4HkjB
-	Te4KDGgUwDRkVJxx+clfx8qfFw5K2D03K87NEhFdWgs9ENbXyxw086pjQt3hzwAExF6ChHoFCtSUR
-	4Uymj9c95pf9v28Nn7WBQPBtoPaZxO+7Od4WNvSlBa0B2S212S5U2c1I43hfewbGLgKMgZRqRd69y
-	uLMjhLmw==;
+	bh=WPd5i1hJTX48hvSpHL+hL/V7RpRJfspNTm8jej/6tws=; b=unQk2D8bIs0p4BAHy+hcajW9LC
+	pWUGzy0F/EBc8GZMSwf+0evOxnOMhOAfss5p3qmw7QNSJDWCk9yUQykHDzCewgwg/GjUtmzXXd2uq
+	b9OG8OENZLC51Vlc87n+w8pVWkqDd+tETlfnOpgpnm6u4e7n3lUt/HwQFulxnC39FpK8yJLq9jZwn
+	YpsPb4k0TdSwDU/qpyUPYd8v1EkDenOu1HVURcyzCjSD3tpETAsxzQ22MlVb3BneIH5NpjRFgssw9
+	bcCmwgYKWlqtWOWiUDadm34yjqcJK3OlBtOc5gbkeT/xDNDbJyzvW6ySYY8ocjRZUmYwxXeL3kfrV
+	rQhnYw9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkVq3-0003L8-7e; Mon, 08 Jul 2019 15:45:59 +0000
+	id 1hkVqQ-0003cn-Rs; Mon, 08 Jul 2019 15:46:22 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hkVoL-0000uz-DD
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 15:44:14 +0000
+ id 1hkVoM-0000tO-Eo
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 15:44:16 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1A85B152B;
- Mon,  8 Jul 2019 08:44:13 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 50670360;
+ Mon,  8 Jul 2019 08:44:14 -0700 (PDT)
 Received: from usa.arm.com (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 166063F59C;
- Mon,  8 Jul 2019 08:44:11 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 4D5A23F59C;
+ Mon,  8 Jul 2019 08:44:13 -0700 (PDT)
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 5/6] firmware: arm_scmi: Use the term 'message' instead of
- 'command'
-Date: Mon,  8 Jul 2019 16:43:57 +0100
-Message-Id: <20190708154358.16227-6-sudeep.holla@arm.com>
+Subject: [PATCH 6/6] firmware: arm_scmi: Check if platform has released shmem
+ before using
+Date: Mon,  8 Jul 2019 16:43:58 +0100
+Message-Id: <20190708154358.16227-7-sudeep.holla@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190708154358.16227-1-sudeep.holla@arm.com>
 References: <20190708154358.16227-1-sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_084413_513064_47513066 
-X-CRM114-Status: GOOD (  12.94  )
+X-CRM114-CacheID: sfid-20190708_084414_766934_92804FD9 
+X-CRM114-Status: GOOD (  11.32  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -70,71 +70,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In preparation to adding support for other two types of messages that
-SCMI specification mentions, let's replace the term 'command' with the
-correct term 'message'.
+Sometimes platfom may take too long to respond to the command and OS
+might timeout before platform transfer the ownership of the shared
+memory region to the OS with the response.
 
-As per the specification the messages are of 3 types:
-commands(synchronous or asynchronous), delayed responses and notifications.
+Since the mailbox channel associated with the channel is freed and new
+commands are dispatch on the same channel, OS needs to wait until it
+gets back the ownership. If not, either OS may end up overwriting the
+platform response for the last command(which is fine as OS timed out
+that command) or platform might overwrite the payload for the next
+command with the response for the old.
 
+The latter is problematic as platform may end up interpretting the
+response as the payload. In order to avoid such race, let's wait until
+the OS gets back the ownership before we prepare the shared memory with
+the payload for the next command.
+
+Reported-by: Jim Quinlan <james.quinlan@broadcom.com>
 Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 ---
- drivers/firmware/arm_scmi/common.h | 10 +++++-----
- drivers/firmware/arm_scmi/driver.c |  6 +++---
- 2 files changed, 8 insertions(+), 8 deletions(-)
+ drivers/firmware/arm_scmi/driver.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-diff --git a/drivers/firmware/arm_scmi/common.h b/drivers/firmware/arm_scmi/common.h
-index 44fd4f9404a9..4349d836b392 100644
---- a/drivers/firmware/arm_scmi/common.h
-+++ b/drivers/firmware/arm_scmi/common.h
-@@ -48,11 +48,11 @@ struct scmi_msg_resp_prot_version {
- /**
-  * struct scmi_msg_hdr - Message(Tx/Rx) header
-  *
-- * @id: The identifier of the command being sent
-- * @protocol_id: The identifier of the protocol used to send @id command
-- * @seq: The token to identify the message. when a message/command returns,
-- *	the platform returns the whole message header unmodified including
-- *	the token
-+ * @id: The identifier of the message being sent
-+ * @protocol_id: The identifier of the protocol used to send @id message
-+ * @seq: The token to identify the message. when a message returns, the]
-+ *	platform returns the whole message header unmodified including the
-+ *	token
-  * @status: Status of the transfer once it's complete
-  * @poll_completion: Indicate if the transfer needs to be polled for
-  *	completion or interrupt mode is used
 diff --git a/drivers/firmware/arm_scmi/driver.c b/drivers/firmware/arm_scmi/driver.c
-index cac255c418b2..69bf85fea967 100644
+index 69bf85fea967..765573756987 100644
 --- a/drivers/firmware/arm_scmi/driver.c
 +++ b/drivers/firmware/arm_scmi/driver.c
-@@ -182,7 +182,7 @@ static inline int scmi_to_linux_errno(int errno)
- static inline void scmi_dump_header_dbg(struct device *dev,
- 					struct scmi_msg_hdr *hdr)
- {
--	dev_dbg(dev, "Command ID: %x Sequence ID: %x Protocol: %x\n",
-+	dev_dbg(dev, "Message ID: %x Sequence ID: %x Protocol: %x\n",
- 		hdr->id, hdr->seq, hdr->protocol_id);
- }
+@@ -265,6 +265,14 @@ static void scmi_tx_prepare(struct mbox_client *cl, void *m)
+ 	struct scmi_chan_info *cinfo = client_to_scmi_chan_info(cl);
+ 	struct scmi_shared_mem __iomem *mem = cinfo->payload;
  
-@@ -241,7 +241,7 @@ static void scmi_rx_callback(struct mbox_client *cl, void *m)
-  * @hdr: pointer to header containing all the information on message id,
-  *	protocol id and sequence id.
-  *
-- * Return: 32-bit packed command header to be sent to the platform.
-+ * Return: 32-bit packed message header to be sent to the platform.
-  */
- static inline u32 pack_scmi_header(struct scmi_msg_hdr *hdr)
- {
-@@ -280,7 +280,7 @@ static void scmi_tx_prepare(struct mbox_client *cl, void *m)
-  *
-  * @handle: Pointer to SCMI entity handle
-  *
-- * Helper function which is used by various command functions that are
-+ * Helper function which is used by various message functions that are
-  * exposed to clients of this driver for allocating a message traffic event.
-  *
-  * This function can sleep depending on pending requests already in the system
++	/*
++	 * Ideally channel must be free by now unless OS timeout last
++	 * request and platform continued to process the same, wait
++	 * until it releases the shared memory, otherwise we may endup
++	 * overwriting it's response with new command payload or vice-versa
++	 */
++	spin_until_cond(ioread32(&mem->channel_status) &
++			SCMI_SHMEM_CHAN_STAT_CHANNEL_FREE);
+ 	/* Mark channel busy + clear error */
+ 	iowrite32(0x0, &mem->channel_status);
+ 	iowrite32(t->hdr.poll_completion ? 0 : SCMI_SHMEM_FLAG_INTR_ENABLED,
 -- 
 2.17.1
 
