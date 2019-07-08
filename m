@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8774E620A8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 16:40:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 424C5620A9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 16:40:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,53 +11,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=O8sFuQYpE86LWSL7+FIRLZqI8FVzsYesaDSZbrOav38=; b=uFAVMgMuAdRyo2u4i6F5n4sEb+
-	vee0rDUVwRFc27IwQyiwRcZ3zTBU/zYBLiiHdoPzisT3OCYNh29Nar+2QhK9bqtWr7dCtlCKhYQSu
-	rRL50R3ix//3LdAcI7LfZffVt/NprhdefipxfkBCZPGALEIr8fyGpmzD4E1W2NCHLKVDRHTVZPVod
-	GPvxBJG5hlyBpzP34PpX6rRTH+f/OdQoB22tscR5CcZNL/GExQQ82sw9xfmPKfHuvTt3WUkWZUyqF
-	mKv37NABlXZfUjuH95KKwfuLvwrm+aP5sXTR0nG0qbZrOQjQZ5y+og7CyY8fVrZpemQzj6FzsJdxg
-	0Z09HZVg==;
+	bh=fzoUqTd/94JiElQKimJXtfMkarIyQid2GLaswgJaBV8=; b=RkHzcriQAN3q3m6zfsBATLG2c8
+	TDJMiHhcUXAXJUyLp82VCOZRm3UC9piGntCWQr/Yj2VS6n0n85a0a0gH9XIfUl4VLJ2AZpWhL+lwD
+	Fq7LACrp5xhsMecQWZDVfboeSl2fTnxOFvxr8NZaydnZDh+hBXs4q98XCkuahZuNMtL5B7EgP2apj
+	kqs8+rhzScFwVPHE4jhTJzyl4O8r+MSIUfCgKe7RhbHCuYXrZa5xpE6ICYoR4P6G35CCSownMPWs6
+	U/i75fvAkO5NWeAX7MjFKDTHwa0HKm/+H7bLwtegiqwji/gOo5FPouaRUD8uTANkXIg9QOwTeo2/D
+	qeUzjKIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkUol-00070k-U8; Mon, 08 Jul 2019 14:40:36 +0000
+	id 1hkUp1-0007HT-Hi; Mon, 08 Jul 2019 14:40:51 +0000
 Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkUoI-0005zf-0E
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 14:40:07 +0000
-Received: by mail-ot1-x343.google.com with SMTP id l15so16407413otn.9
+ id 1hkUoP-0006rf-2m
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 14:40:14 +0000
+Received: by mail-ot1-x343.google.com with SMTP id r21so981599otq.6
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 08 Jul 2019 07:40:05 -0700 (PDT)
+ Mon, 08 Jul 2019 07:40:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=J3hRcly8D1YDeUmF8zVR4I01GOuIVsuQo8ZUqHIaHHQ=;
- b=uTgiMsbv1bumv5PNRDGIEcP1Ibp2JR5Gcza9xMsyQlRcIKKkKbvfvcdP7m410I2uFc
- LupcPK6OC5otRQMJHpKkH/gooaNP4QcYchJO/hOweKClf+7XfLXizmgb4hcfb5GxK31s
- NbbSUzR2DUUNw6NAPEzKac3VqfWAoCVv5XevizEt07CSfrE/8RMP5Lp0np7dCxR7SA3+
- RQbUaSrt9nOlyBz9d0G/xnpN0CcjeL6cQKAe1Pat9UQ2zAVN8k0eXmW3COs5r0m3GDnK
- mYz6R+pc5NesN39Q1byVWIY71GZUpg4FQRyVJgb3F8sm1l4Rj6+rZgD6GfOzALYGvWkl
- FUvQ==
+ bh=iIj/D2uFckhktV/1D81+BNHiSe7rGxGISfmtPBSrlSM=;
+ b=C+MArnBQMr2fem13xnS9J64lNmtz6x3eb264CDVGZm7lK3pxHAy8901qu3ZTI2HIS6
+ 7K9WLnI/UgnLLE1IK0Nh+pHlhLXmB4gPUEqugQmc+xsgLxMQ0G8jeB+9KL1O/cfTMvXt
+ erNEljQYc3VzgMUZRXI+YJ1J59KILFnMJ3P2X1PNJo3Nx/w2yYFWGaccpDUTST0tS3yU
+ mXnMUWw1nnC/DFX/QkIj/wO9Sc2SGyy6oYCYidmXzXXV4Z+KDev9igsREiqaE5fOpfx0
+ DwfbUepPKKEmN0tnUtPOleWgPURufqT8O7xB3E3KtQGRrDjQ3fFnI4EDjpeLJ4WO90dI
+ zo/w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=J3hRcly8D1YDeUmF8zVR4I01GOuIVsuQo8ZUqHIaHHQ=;
- b=pSUhJZzomh2XDRcSR26Utnz10Lag5rpcgBFOEVMV56LMtEYmuRWJAQFANZuqUzZtw6
- /fT8euuZ7kYvc/lrWlE9oXcMt/CoSCfyq+p5dBDYhyBKEO/PpcAGqtmAPk2A0eCJTcAs
- 1JOvdvGjRS0zAzbFDRG0IYjTsS32T1BRYEYnpS5GpO9H4RerbayGDzmd5tpLl56cIVUF
- oIMUDTgubR2NgHZf51AnEraa4Ks/qTr6MXlsoBmK41P+ExsznbcoGkYF84WGiu9Lq9bh
- jFSK8yVbKJw9+gR+hBztHEhvuyd0Vtx+xoM9r0ipKkVgDsCpvcoO8FDMRSuWYi2QTjb2
- +jsw==
-X-Gm-Message-State: APjAAAXzbMAxolmu5+tHoURLAHqzDtZnFE98QQ9uJbeWhqV3of1puods
- BbP8ZmvEcWAsPUK5bS51GzaVuA==
-X-Google-Smtp-Source: APXvYqwJOE12S0nO+y8qmjGhE9hYBxzOAUnP/1QqoMxtTObe2IiXPu2B5/3kzcoq7vV+IPAbjlWWmA==
-X-Received: by 2002:a05:6830:1617:: with SMTP id
- g23mr15083924otr.117.1562596804495; 
- Mon, 08 Jul 2019 07:40:04 -0700 (PDT)
+ bh=iIj/D2uFckhktV/1D81+BNHiSe7rGxGISfmtPBSrlSM=;
+ b=qfhsKBQEzBwd2hCy2OEqAoksAIqShGYUkAM+0lwiRAYKO6Ktqb1688nyC2bLWyXlsb
+ OOtFR0H0oqaNFCzYfUomOZDdxIyq7RPJYm7RgPEXPewcGUWBV+k4HWH+D7QwrVR67HyL
+ xMdPOPPW0bk/2lhl0r6vGK0FTK6sW6mNQoKqHGP0/VBKvFrC4JF+YAe8ZYTSxSAakXN5
+ yYh81LaAyTl18tcWe8sn0T53oY7h9g9j2NwmXxHfhQIZ0FXQ3UW2k5/e1maiATQAgmn6
+ OHEcUyXVOvxSHp+Q0vI47o/IVbZtviIxPPWZ8sdo+1oexMQwA8ZWBC1WHq7FsIEBbFbP
+ 08NA==
+X-Gm-Message-State: APjAAAVRpewlI4rExk9nILAdO00lAt52fowD4cF9q9HJ2h4KZaTZm4aY
+ Me8OUFwNAC+GCDjHvAfHCE5XuQ==
+X-Google-Smtp-Source: APXvYqyCIgpXl9aMrnWlPCMuhtjBzNRKlFd2j+pNfi8a5y8SglLuLFVH3QGHkoz8B9mgc19PYS+Iiw==
+X-Received: by 2002:a05:6830:18a:: with SMTP id
+ q10mr15142642ota.114.1562596812197; 
+ Mon, 08 Jul 2019 07:40:12 -0700 (PDT)
 Received: from localhost.localdomain (li964-79.members.linode.com.
  [45.33.10.79])
- by smtp.gmail.com with ESMTPSA id x5sm6386021otb.6.2019.07.08.07.39.57
+ by smtp.gmail.com with ESMTPSA id x5sm6386021otb.6.2019.07.08.07.40.04
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 08 Jul 2019 07:40:03 -0700 (PDT)
+ Mon, 08 Jul 2019 07:40:11 -0700 (PDT)
 From: Leo Yan <leo.yan@linaro.org>
 To: Arnaldo Carvalho de Melo <acme@kernel.org>,
  Alexander Shishkin <alexander.shishkin@linux.intel.com>,
@@ -66,16 +66,16 @@ To: Arnaldo Carvalho de Melo <acme@kernel.org>,
  Suzuki K Poulose <suzuki.poulose@arm.com>,
  Adrian Hunter <adrian.hunter@intel.com>, Andi Kleen <ak@linux.intel.com>,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 1/4] perf hists: Smatch: Fix potential NULL pointer
+Subject: [PATCH v2 2/4] perf intel-bts: Smatch: Fix potential NULL pointer
  dereference
-Date: Mon,  8 Jul 2019 22:39:34 +0800
-Message-Id: <20190708143937.7722-2-leo.yan@linaro.org>
+Date: Mon,  8 Jul 2019 22:39:35 +0800
+Message-Id: <20190708143937.7722-3-leo.yan@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190708143937.7722-1-leo.yan@linaro.org>
 References: <20190708143937.7722-1-leo.yan@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_074006_157923_EBDC1690 
-X-CRM114-Status: GOOD (  13.21  )
+X-CRM114-CacheID: sfid-20190708_074013_170411_374F1A49 
+X-CRM114-Status: GOOD (  13.41  )
 X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.1 points)
@@ -115,74 +115,56 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Based on the following report from Smatch, fix the potential
 NULL pointer dereference check.
 
-  tools/perf/ui/browsers/hists.c:641
-  hist_browser__run() error: we previously assumed 'hbt' could be
-  null (see line 625)
+  tools/perf/util/intel-bts.c:898
+  intel_bts_process_auxtrace_info() error: we previously assumed
+  'session->itrace_synth_opts' could be null (see line 894)
 
-  tools/perf/ui/browsers/hists.c:3088
-  perf_evsel__hists_browse() error: we previously assumed
-  'browser->he_selection' could be null (see line 2902)
+  tools/perf/util/intel-bts.c:899
+  intel_bts_process_auxtrace_info() warn: variable dereferenced before
+  check 'session->itrace_synth_opts' (see line 898)
 
-  tools/perf/ui/browsers/hists.c:3272
-  perf_evsel_menu__run() error: we previously assumed 'hbt' could be
-  null (see line 3260)
+tools/perf/util/intel-bts.c
+894         if (session->itrace_synth_opts && session->itrace_synth_opts->set) {
+895                 bts->synth_opts = *session->itrace_synth_opts;
+896         } else {
+897                 itrace_synth_opts__set_default(&bts->synth_opts,
+898                                 session->itrace_synth_opts->default_no_sample);
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+899                 if (session->itrace_synth_opts)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+900                         bts->synth_opts.thread_stack =
+901                                 session->itrace_synth_opts->thread_stack;
+902         }
 
-This patch firstly validating the pointers before access them, so can
-fix potential NULL pointer dereference.
+'session->itrace_synth_opts' is impossible to be a NULL pointer in
+intel_bts_process_auxtrace_info(), thus this patch removes the NULL
+test for 'session->itrace_synth_opts'.
 
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
-Acked-by: Jiri Olsa <jolsa@kernel.org>
 ---
- tools/perf/ui/browsers/hists.c | 15 +++++++++++----
- 1 file changed, 11 insertions(+), 4 deletions(-)
+ tools/perf/util/intel-bts.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
 
-diff --git a/tools/perf/ui/browsers/hists.c b/tools/perf/ui/browsers/hists.c
-index 85581cfb9112..a94eb0755e8b 100644
---- a/tools/perf/ui/browsers/hists.c
-+++ b/tools/perf/ui/browsers/hists.c
-@@ -639,7 +639,11 @@ int hist_browser__run(struct hist_browser *browser, const char *help,
- 		switch (key) {
- 		case K_TIMER: {
- 			u64 nr_entries;
--			hbt->timer(hbt->arg);
-+
-+			WARN_ON_ONCE(!hbt);
-+
-+			if (hbt)
-+				hbt->timer(hbt->arg);
+diff --git a/tools/perf/util/intel-bts.c b/tools/perf/util/intel-bts.c
+index 5a21bcdb8ef7..5560e95afdda 100644
+--- a/tools/perf/util/intel-bts.c
++++ b/tools/perf/util/intel-bts.c
+@@ -891,13 +891,12 @@ int intel_bts_process_auxtrace_info(union perf_event *event,
+ 	if (dump_trace)
+ 		return 0;
  
- 			if (hist_browser__has_filter(browser) ||
- 			    symbol_conf.report_hierarchy)
-@@ -2821,7 +2825,7 @@ static int perf_evsel__hists_browse(struct perf_evsel *evsel, int nr_events,
- {
- 	struct hists *hists = evsel__hists(evsel);
- 	struct hist_browser *browser = perf_evsel_browser__new(evsel, hbt, env, annotation_opts);
--	struct branch_info *bi;
-+	struct branch_info *bi = NULL;
- #define MAX_OPTIONS  16
- 	char *options[MAX_OPTIONS];
- 	struct popup_action actions[MAX_OPTIONS];
-@@ -3087,7 +3091,9 @@ static int perf_evsel__hists_browse(struct perf_evsel *evsel, int nr_events,
- 			goto skip_annotation;
+-	if (session->itrace_synth_opts && session->itrace_synth_opts->set) {
++	if (session->itrace_synth_opts->set) {
+ 		bts->synth_opts = *session->itrace_synth_opts;
+ 	} else {
+ 		itrace_synth_opts__set_default(&bts->synth_opts,
+ 				session->itrace_synth_opts->default_no_sample);
+-		if (session->itrace_synth_opts)
+-			bts->synth_opts.thread_stack =
++		bts->synth_opts.thread_stack =
+ 				session->itrace_synth_opts->thread_stack;
+ 	}
  
- 		if (sort__mode == SORT_MODE__BRANCH) {
--			bi = browser->he_selection->branch_info;
-+
-+			if (browser->he_selection)
-+				bi = browser->he_selection->branch_info;
- 
- 			if (bi == NULL)
- 				goto skip_annotation;
-@@ -3271,7 +3277,8 @@ static int perf_evsel_menu__run(struct perf_evsel_menu *menu,
- 
- 		switch (key) {
- 		case K_TIMER:
--			hbt->timer(hbt->arg);
-+			if (hbt)
-+				hbt->timer(hbt->arg);
- 
- 			if (!menu->lost_events_warned &&
- 			    menu->lost_events &&
 -- 
 2.17.1
 
