@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F04C762496
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 17:44:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1768C624A4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 17:45:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=ZROc5tEHAOM+QwbDvomb+Lzc92TBG98arzK7y3GZd4A=; b=hVSjVIy5Xl01e941XsMF2YjKT+
-	Oj//5N7/ANCWQ5RKDkv3LLWsB9LEWzx8G9pU7AlORjwg/eqg2JHWcsuZvn9AVRJTVftDCZleakGHH
-	AZXbxqxlgvsq98KOfacyvU2XpwHF4SWBFywyklYmGQRrAk8WMbsf6omzdrC+q99cLt+Sln8kEjOba
-	tPuz2E1YaXgrNk8mCBCDZKdXg731YB7Zyu8WdRE9uXoo+prGKqgGrYTB6sjD8YrpRomMO24W15jqd
-	CmV4tzzZ5VuaBeSHlecFTfOJZmbqMnVxyAADL19m+OaQ1uKo4vJPI84n8Sb8QcaNHfrflrTiMMgQp
-	6HJWh5eg==;
+	bh=8pDiRrdoE1ZrbhNfL2ZMs3A9Ords0+B4xR5+T3pafI0=; b=msUCP+lpgqX8b4CjizUY2wFjdD
+	OyrehzBi4EKqS9uIToUWBOx/oqfl1o8z7jmrhUdctR30NM6lQMzxVh6xdxxsTROMZZ+rudZjurE5N
+	IPHCQ2wzmYDjmW44N1XPT4cYFLwxXxs0tyVjNU/0fb1/N0P+Uc2sPSUKBHwRx8MdFJ06XDNgu0NUt
+	4X4u6209YNprwByzXhXxSPcMKB5I+yK7bdFqndfkF+G8/Rqp7bDNrAhBbUOxvGcd7B5njZ7ylxJkB
+	x5c7H4UeVa/P1WYi2eWr1YY3ZPTlR75t8fu55pnitbVZFvpUhD7tOLi9sWQm/oti80ktoebtdkd6s
+	qxlE3qcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkVp3-0001LS-JB; Mon, 08 Jul 2019 15:44:57 +0000
+	id 1hkVpY-0001c0-CP; Mon, 08 Jul 2019 15:45:28 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hkVoI-0000t2-6b
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 15:44:11 +0000
+ id 1hkVoI-0000tO-Uz
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 15:44:12 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5FCFB1509;
- Mon,  8 Jul 2019 08:44:09 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 96AEB360;
+ Mon,  8 Jul 2019 08:44:10 -0700 (PDT)
 Received: from usa.arm.com (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 5CE6A3F59C;
- Mon,  8 Jul 2019 08:44:08 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 93E563F59C;
+ Mon,  8 Jul 2019 08:44:09 -0700 (PDT)
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 2/6] firmware: arm_scmi: Align few names in sensors protocol
- with SCMI specification
-Date: Mon,  8 Jul 2019 16:43:54 +0100
-Message-Id: <20190708154358.16227-3-sudeep.holla@arm.com>
+Subject: [PATCH 3/6] firmware: arm_scmi: Remove extra check for invalid length
+ message responses
+Date: Mon,  8 Jul 2019 16:43:55 +0100
+Message-Id: <20190708154358.16227-4-sudeep.holla@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190708154358.16227-1-sudeep.holla@arm.com>
 References: <20190708154358.16227-1-sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_084410_328465_C36E3404 
-X-CRM114-Status: GOOD (  12.70  )
+X-CRM114-CacheID: sfid-20190708_084411_039027_715896AE 
+X-CRM114-Status: GOOD (  10.93  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -70,130 +70,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Looks like more code developed during the draft versions of the
-specification slipped through and they don't match the final
-released version. This seem to have happened only with sensor
-protocol.
+scmi_xfer_get_init ensures both transmit and receive buffer lengths are
+within the maximum limits. If receive buffer length is not supplied by
+the caller, it's set to the maximum limit value. Receive buffer length
+is never modified after that. So there's no need for the extra check
+when receive transmit completion for a command essage.
 
-Renaming few command and function names here to match exactly with
-the released version of SCMI specification for ease of maintenance.
+Further, if the response header length is greater than the prescribed
+receive buffer length, the response buffer is truncated to the latter.
 
+Reported-by: Jim Quinlan <james.quinlan@broadcom.com>
 Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 ---
- drivers/firmware/arm_scmi/sensors.c | 28 +++++++++++++++-------------
- include/linux/scmi_protocol.h       | 12 ++++++------
- 2 files changed, 21 insertions(+), 19 deletions(-)
+ drivers/firmware/arm_scmi/driver.c | 6 ------
+ 1 file changed, 6 deletions(-)
 
-diff --git a/drivers/firmware/arm_scmi/sensors.c b/drivers/firmware/arm_scmi/sensors.c
-index 0e94ab56f679..17dbabd8a94a 100644
---- a/drivers/firmware/arm_scmi/sensors.c
-+++ b/drivers/firmware/arm_scmi/sensors.c
-@@ -9,8 +9,8 @@
+diff --git a/drivers/firmware/arm_scmi/driver.c b/drivers/firmware/arm_scmi/driver.c
+index b5bc4c7a8fab..6ef652940099 100644
+--- a/drivers/firmware/arm_scmi/driver.c
++++ b/drivers/firmware/arm_scmi/driver.c
+@@ -230,12 +230,6 @@ static void scmi_rx_callback(struct mbox_client *cl, void *m)
+ 	xfer = &minfo->xfer_block[xfer_id];
  
- enum scmi_sensor_protocol_cmd {
- 	SENSOR_DESCRIPTION_GET = 0x3,
--	SENSOR_CONFIG_SET = 0x4,
--	SENSOR_TRIP_POINT_SET = 0x5,
-+	SENSOR_TRIP_POINT_NOTIFY = 0x4,
-+	SENSOR_TRIP_POINT_CONFIG = 0x5,
- 	SENSOR_READING_GET = 0x6,
- };
+ 	scmi_dump_header_dbg(dev, &xfer->hdr);
+-	/* Is the message of valid length? */
+-	if (xfer->rx.len > info->desc->max_msg_size) {
+-		dev_err(dev, "unable to handle %zu xfer(max %d)\n",
+-			xfer->rx.len, info->desc->max_msg_size);
+-		return;
+-	}
  
-@@ -42,9 +42,10 @@ struct scmi_msg_resp_sensor_description {
- 	} desc[0];
- };
- 
--struct scmi_msg_set_sensor_config {
-+struct scmi_msg_sensor_trip_point_notify {
- 	__le32 id;
- 	__le32 event_control;
-+#define SENSOR_TP_NOTIFY_ALL	BIT(0)
- };
- 
- struct scmi_msg_set_sensor_trip_point {
-@@ -160,15 +161,15 @@ static int scmi_sensor_description_get(const struct scmi_handle *handle,
- 	return ret;
- }
- 
--static int
--scmi_sensor_configuration_set(const struct scmi_handle *handle, u32 sensor_id)
-+static int scmi_sensor_trip_point_notify(const struct scmi_handle *handle,
-+					 u32 sensor_id, bool enable)
- {
- 	int ret;
--	u32 evt_cntl = BIT(0);
-+	u32 evt_cntl = enable ? SENSOR_TP_NOTIFY_ALL : 0;
- 	struct scmi_xfer *t;
--	struct scmi_msg_set_sensor_config *cfg;
-+	struct scmi_msg_sensor_trip_point_notify *cfg;
- 
--	ret = scmi_xfer_get_init(handle, SENSOR_CONFIG_SET,
-+	ret = scmi_xfer_get_init(handle, SENSOR_TRIP_POINT_NOTIFY,
- 				 SCMI_PROTOCOL_SENSOR, sizeof(*cfg), 0, &t);
- 	if (ret)
- 		return ret;
-@@ -183,15 +184,16 @@ scmi_sensor_configuration_set(const struct scmi_handle *handle, u32 sensor_id)
- 	return ret;
- }
- 
--static int scmi_sensor_trip_point_set(const struct scmi_handle *handle,
--				      u32 sensor_id, u8 trip_id, u64 trip_value)
-+static int
-+scmi_sensor_trip_point_config(const struct scmi_handle *handle, u32 sensor_id,
-+			      u8 trip_id, u64 trip_value)
- {
- 	int ret;
- 	u32 evt_cntl = SENSOR_TP_BOTH;
- 	struct scmi_xfer *t;
- 	struct scmi_msg_set_sensor_trip_point *trip;
- 
--	ret = scmi_xfer_get_init(handle, SENSOR_TRIP_POINT_SET,
-+	ret = scmi_xfer_get_init(handle, SENSOR_TRIP_POINT_CONFIG,
- 				 SCMI_PROTOCOL_SENSOR, sizeof(*trip), 0, &t);
- 	if (ret)
- 		return ret;
-@@ -255,8 +257,8 @@ static int scmi_sensor_count_get(const struct scmi_handle *handle)
- static struct scmi_sensor_ops sensor_ops = {
- 	.count_get = scmi_sensor_count_get,
- 	.info_get = scmi_sensor_info_get,
--	.configuration_set = scmi_sensor_configuration_set,
--	.trip_point_set = scmi_sensor_trip_point_set,
-+	.trip_point_notify = scmi_sensor_trip_point_notify,
-+	.trip_point_config = scmi_sensor_trip_point_config,
- 	.reading_get = scmi_sensor_reading_get,
- };
- 
-diff --git a/include/linux/scmi_protocol.h b/include/linux/scmi_protocol.h
-index 9ff2e9357e9a..ea6b72018752 100644
---- a/include/linux/scmi_protocol.h
-+++ b/include/linux/scmi_protocol.h
-@@ -167,9 +167,9 @@ enum scmi_sensor_class {
-  *
-  * @count_get: get the count of sensors provided by SCMI
-  * @info_get: get the information of the specified sensor
-- * @configuration_set: control notifications on cross-over events for
-+ * @trip_point_notify: control notifications on cross-over events for
-  *	the trip-points
-- * @trip_point_set: selects and configures a trip-point of interest
-+ * @trip_point_config: selects and configures a trip-point of interest
-  * @reading_get: gets the current value of the sensor
-  */
- struct scmi_sensor_ops {
-@@ -177,10 +177,10 @@ struct scmi_sensor_ops {
- 
- 	const struct scmi_sensor_info *(*info_get)
- 		(const struct scmi_handle *handle, u32 sensor_id);
--	int (*configuration_set)(const struct scmi_handle *handle,
--				 u32 sensor_id);
--	int (*trip_point_set)(const struct scmi_handle *handle, u32 sensor_id,
--			      u8 trip_id, u64 trip_value);
-+	int (*trip_point_notify)(const struct scmi_handle *handle,
-+				 u32 sensor_id, bool enable);
-+	int (*trip_point_config)(const struct scmi_handle *handle,
-+				 u32 sensor_id, u8 trip_id, u64 trip_value);
- 	int (*reading_get)(const struct scmi_handle *handle, u32 sensor_id,
- 			   bool async, u64 *value);
- };
+ 	scmi_fetch_response(xfer, mem);
+ 	complete(&xfer->done);
 -- 
 2.17.1
 
