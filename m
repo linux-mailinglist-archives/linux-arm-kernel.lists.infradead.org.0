@@ -2,64 +2,107 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 154A961B64
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 09:54:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E675761B6B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 09:54:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lgS58RtmfXFXV/ikfqtjPteCntQiVjkjbqDZArYr4gQ=; b=SUemxPHMsPcLkv
-	K+Y848HdieOKzJG2nZjAOzM3k9Ce+/ful+ewN/NNtvb/+pM90wOZ1gyec8e0gh3jci6t0azf/5gUg
-	q2SFAYvu2F0CS9DaJV0YbjohGEZ87+luPQslQW08SRE69ScJ+Ng2MUYhvsH4OHpwUPgpYmVwIgVo6
-	/giqTmch5ZBjff3q7P9UuidcZtRl5Mh8D7RpmAFYjp6aa/DTdp5E8jje2IJDwYM1ouuLZyG/6KnUm
-	MlRk8OG4HFUgDU0k5bebBClJkHOmZlzvy5JSlTwvfsb0CU0PKRRA/Dcrp3Mq8in0PEZSNmQVIaCbD
-	KCbWXWcgN1TFYunHH87A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xC5ZeJXfCmTfMFfoFXh2qKbua1AWhikQHbwuI6MgAqA=; b=BnD47P8dtwzmIQ
+	Mvy9EsBKmb7ESOeL11PGrMlgZLfhPmkFGXy6WbhESDItfs0V1D05UhUsk4jmdH+ps03VXE0HX3t3e
+	psCajsB5faBkusdz8KrSBgjUhDXN8cNnyqZ9Zqga0/dYLk6z28AvR00+GTh5voO2dgmOUPuLm0Lbv
+	Jtcl84rxNFszT8Qp1py4k3uc30Q3hck6ZxKf5UQZaHG7ZW5bRjuy9pf8VTOafeEA89y5DPuyQk7uy
+	f9Kzl8ZqyIEuIbCR2PwPcIoTGuvLdYE1UwgDJuG4fg7bUeyyeRVK4Y056suj5XcXYnbcURrDf0RYc
+	WGg+pgZMP6Bw9ug8dXgQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkOT6-0004LK-R0; Mon, 08 Jul 2019 07:53:48 +0000
-Received: from mga02.intel.com ([134.134.136.20])
+	id 1hkOTk-0004eI-0P; Mon, 08 Jul 2019 07:54:28 +0000
+Received: from mail-eopbgr40074.outbound.protection.outlook.com ([40.107.4.74]
+ helo=EUR03-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkOSg-0004K3-En; Mon, 08 Jul 2019 07:53:25 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga005.jf.intel.com ([10.7.209.41])
- by orsmga101.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 08 Jul 2019 00:45:43 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.63,465,1557212400"; d="scan'208";a="340375852"
-Received: from ipu5-build.bj.intel.com (HELO [10.238.232.193])
- ([10.238.232.193])
- by orsmga005.jf.intel.com with ESMTP; 08 Jul 2019 00:45:39 -0700
-Subject: Re: [RFC,V2,2/2] media: i2c: Add Omnivision OV02A10 camera sensor
- driver
-To: dongchun.zhu@mediatek.com, mchehab@kernel.org, robh+dt@kernel.org,
- mark.rutland@arm.com, sakari.ailus@linux.intel.com,
- --to=drinkcat@chromium.org, tfiga@chromium.org, matthias.bgg@gmail.com,
- bingbu.cao@intel.com
-References: <20190704084651.3105-1-dongchun.zhu@mediatek.com>
- <20190704084651.3105-3-dongchun.zhu@mediatek.com>
-From: Bingbu Cao <bingbu.cao@linux.intel.com>
-Message-ID: <a18d0cd6-ab6d-bc63-d818-188d5e54dd4d@linux.intel.com>
-Date: Mon, 8 Jul 2019 15:52:54 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
-MIME-Version: 1.0
-In-Reply-To: <20190704084651.3105-3-dongchun.zhu@mediatek.com>
+ id 1hkOTS-0004aE-Az
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 07:54:12 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=7gFWwenjxdnLDMne55GinxjL08rhf6Z/YP812R8SfLI=;
+ b=FJLzdS8xd9ztNOW31oNOWGr35QCdXX1wZuhRY+xAdU8Ch8Fdv7G1US+ElqiDezboF94DDgw7Cdds84C+7Woo65fNIsO65DqUAv5CuN0n+nyV35AdVVkdDDkJdTN7ZoIlf924Wzzq5SM6HZmZyXFZtVa1Qlu/xWtgr/M3u2sU07I=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
+ DB3PR0402MB3852.eurprd04.prod.outlook.com (52.134.71.143) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2052.15; Mon, 8 Jul 2019 07:54:03 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::3945:fcda:5bdd:8191]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::3945:fcda:5bdd:8191%4]) with mapi id 15.20.2052.020; Mon, 8 Jul 2019
+ 07:54:03 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Leonard Crestez <leonard.crestez@nxp.com>, "viresh.kumar@linaro.org"
+ <viresh.kumar@linaro.org>
+Subject: RE: [PATCH 2/2] arm64: dts: imx8mm: Assign highest opp as suspend opp
+Thread-Topic: [PATCH 2/2] arm64: dts: imx8mm: Assign highest opp as suspend opp
+Thread-Index: AQHVMjD62bccyXxndUyDszIpSDkBnaa6F2SAgAZH0bA=
+Date: Mon, 8 Jul 2019 07:54:03 +0000
+Message-ID: <DB3PR0402MB391651E56C147B1BD13727C5F5F60@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <20190704061403.8249-1-Anson.Huang@nxp.com>
+ <20190704061403.8249-2-Anson.Huang@nxp.com>
+ <DB7PR04MB50519C02D90675070F21501DEEFA0@DB7PR04MB5051.eurprd04.prod.outlook.com>
+ <DB3PR0402MB39165D27F23501EE358DE607F5FA0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+In-Reply-To: <DB3PR0402MB39165D27F23501EE358DE607F5FA0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 1513bb46-1363-4059-9c0d-08d70379722a
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(5600148)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
+ SRVR:DB3PR0402MB3852; 
+x-ms-traffictypediagnostic: DB3PR0402MB3852:
+x-microsoft-antispam-prvs: <DB3PR0402MB3852A97E40F1103FFD4DC43BF5F60@DB3PR0402MB3852.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8882;
+x-forefront-prvs: 00922518D8
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(396003)(136003)(39860400002)(346002)(376002)(366004)(189003)(199004)(74316002)(2501003)(53936002)(9686003)(110136005)(99286004)(54906003)(6436002)(229853002)(55016002)(316002)(44832011)(11346002)(476003)(486006)(14444005)(256004)(6506007)(7696005)(6246003)(53546011)(446003)(3846002)(33656002)(14454004)(6116002)(76176011)(26005)(76116006)(186003)(102836004)(5660300002)(4326008)(15650500001)(66556008)(66946007)(73956011)(8676002)(86362001)(66446008)(64756008)(66476007)(2906002)(81166006)(81156014)(66066001)(7736002)(25786009)(71190400001)(71200400001)(68736007)(8936002)(478600001)(7416002)(305945005)(52536014)(32563001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3852;
+ H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: 71gxXUF9Ra8hl72EAiw3cjJonP9VnouPbYaqBWikAbHovdaGPC0KT0V1IzNEOA1YzoMtnbtNjR97Ta+3Yy3axTXkaOb7KhIta7nS057uQVdbVrUpTVZdgDGFvoKrNZrn6eGF2CtC8cAOazLMd/djoeGa83IN1bAHn0iVdybpliaADy/utyfsT+6BQJHiykl7cp2eg0aRMyFje1/jIyDsGv0kV2vDL/+SWMrEBu2C6xQl44yRLamLsuUpeaQwFaNQJ4D6wIyPZk849510KpDI32XqjZTaQnPpuQ3H6y2NoXSLiYAMqow7MUP6ZqWJcsGfFBCvzTCitbw/Iq/cIjNE9L5FXRfGzEzEK8P6nGw7MULDTD3yriUtPpV2LO3t1NJ8Nnvq5yMFJ9k875wr/DgnRowYFSOe5rJwLS6EejzyHfc=
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1513bb46-1363-4059-9c0d-08d70379722a
+X-MS-Exchange-CrossTenant-originalarrivaltime: 08 Jul 2019 07:54:03.6096 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: anson.huang@nxp.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3852
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_005322_566720_81098BCD 
-X-CRM114-Status: GOOD (  22.75  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190708_005410_721008_6002237B 
+X-CRM114-Status: GOOD (  21.39  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.20 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.4.74 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,727 +114,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, srv_heupstream@mediatek.com,
- shengnan.wang@mediatek.com, sj.huang@mediatek.com,
- linux-mediatek@lists.infradead.org, louis.kuo@mediatek.com,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Jacky Bai <ping.bai@nxp.com>, "ccaione@baylibre.com" <ccaione@baylibre.com>,
+ "andrew.smirnov@gmail.com" <andrew.smirnov@gmail.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "angus@akkea.ca" <angus@akkea.ca>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Daniel Baluta <daniel.baluta@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>, "agx@sigxcpu.org" <agx@sigxcpu.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "l.stach@pengutronix.de" <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi, Leonard
 
+> > On 7/4/2019 9:23 AM, Anson.Huang@nxp.com wrote:
+> > > From: Anson Huang <Anson.Huang@nxp.com>
+> > >
+> > > Assign highest OPP as suspend OPP to reduce suspend/resume latency
+> > > on i.MX8MM.
+> > >
+> > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> > > ---
+> > >   arch/arm64/boot/dts/freescale/imx8mm.dtsi | 1 +
+> > >   1 file changed, 1 insertion(+)
+> > >
+> > > diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+> > > b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+> > > index b11fc5e..3a62407 100644
+> > > --- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+> > > +++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+> > > @@ -136,6 +136,7 @@
+> > >   			opp-microvolt = <1000000>;
+> > >   			opp-supported-hw = <0x8>, <0x3>;
+> > >   			clock-latency-ns = <150000>;
+> > > +			opp-suspend;
+> > >   		};
+> > >   	};
+> >
+> > What if the highest OPP is unavailable due to speed grading? Ideally
+> > we should find a way to suspend at the highest *supported* OPP.
+> >
+> > Maybe the opp-suspend marking could be assigned from imx-cpufreq-dt
+> > driver code?
+> 
+> Yes, this is also my concern, the current OPP driver does NOT handle it well,
+> and I was thinking to assigne it from imx-cpufreq-dt driver, 1 option is to
+> runtime add "suspend-opp" property into DT OPP node after parsing the
+> speed grading fuse and OPP table, but I do NOT like that very much, as we
+> need to manually create a property, the other option is to change cpu freq
+> policy inside imx-cpufreq-dt driver in suspend/resume callback? Which one
+> do you prefer?
 
-On 7/4/19 4:46 PM, dongchun.zhu@mediatek.com wrote:
-> From: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> 
-> This patch adds a V4L2 sub-device driver for OV02A10 image sensor.
-> The OV02A10 is a 1/5" CMOS sensor from Omnivision.
-> Supports output format: 10-bit Raw.
-> The OV02A10 has a single MIPI lane interface and use the I2C bus for control and the CSI-2 bus for data.
-> 
-> Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> 
-snip
-> +
-> +/* MIPI color bar enable output */
-> +static const struct regval ov02a10_test_pattern_enable_regs[] = {
-> +	{0xfd, 0x01},
-> +	{0x0d, 0x00},
-> +	{0xb6, 0x01},
-> +	{0x01, 0x01},
-> +	{0xfd, 0x01},
-> +	{0xac, 0x01},
-> +	{REG_NULL, 0x00}
-Actually, you can use ARRAY_SIZE to write the regs, the REG_NULL can be
-removed. However, it is not a problem.
-...
-snip...
-> +static int ov02a10_set_fmt(struct v4l2_subdev *sd,
-> +			   struct v4l2_subdev_pad_config *cfg,
-> +			   struct v4l2_subdev_format *fmt)
-> +{
-> +	struct ov02a10 *ov02a10 = to_ov02a10(sd);
-> +	struct v4l2_mbus_framefmt *mbus_fmt = &fmt->format;
-> +	int ret = 0;
-> +
-> +	mutex_lock(&ov02a10->mutex);
-> +
-> +	if (ov02a10->streaming) {
-> +		ret = -EBUSY;
-> +		goto unlock;
-I like return -EBUSY directly after mutex_unlock here and return 0 below.
-> +	}
-> +
-> +	/* only one mode supported */
-> +	mbus_fmt->code = ov02a10->fmt.code;
-> +	ov02a10_fill_fmt(ov02a10->cur_mode, mbus_fmt);
-> +	ov02a10->fmt = fmt->format;
-> +
-> +unlock:
-> +	mutex_unlock(&ov02a10->mutex);
-> +
-> +	return ret;
-> +}
-> +
-> +static int ov02a10_get_fmt(struct v4l2_subdev *sd,
-> +			   struct v4l2_subdev_pad_config *cfg,
-> +			   struct v4l2_subdev_format *fmt)
-> +{
-> +	struct ov02a10 *ov02a10 = to_ov02a10(sd);
-> +	struct v4l2_mbus_framefmt *mbus_fmt = &fmt->format;
-> +
-> +	mutex_lock(&ov02a10->mutex);
-> +
-> +	fmt->format = ov02a10->fmt;
-> +	mbus_fmt->code = ov02a10->fmt.code;
-> +	ov02a10_fill_fmt(ov02a10->cur_mode, mbus_fmt);
-> +
-> +	mutex_unlock(&ov02a10->mutex);
-> +
-> +	return 0;
-> +}
-> +
-> +static int ov02a10_enum_mbus_code(struct v4l2_subdev *sd,
-> +				  struct v4l2_subdev_pad_config *cfg,
-> +				  struct v4l2_subdev_mbus_code_enum *code)
-> +{
-> +	struct ov02a10 *ov02a10 = to_ov02a10(sd);
-> +
-> +	if (code->index >= ARRAY_SIZE(supported_modes) || !(code->index))
-> +		return -EINVAL;
-> +
-> +	code->code = ov02a10->fmt.code;
-> +
-> +	return 0;
-> +}
-> +
-> +static int ov02a10_enum_frame_sizes(struct v4l2_subdev *sd,
-> +				    struct v4l2_subdev_pad_config *cfg,
-> +				    struct v4l2_subdev_frame_size_enum *fse)
-> +{
-> +	if (fse->index >= ARRAY_SIZE(supported_modes) || !(fse->index))
-> +		return -EINVAL;
-> +
-> +	fse->min_width  = supported_modes[fse->index].width;
-> +	fse->max_width  = supported_modes[fse->index].width;
-> +	fse->max_height = supported_modes[fse->index].height;
-> +	fse->min_height = supported_modes[fse->index].height;
-> +
-> +	return 0;
-> +}
-> +
-> +static int __ov02a10_power_on(struct ov02a10 *ov02a10)
-> +{
-> +	struct i2c_client *client = v4l2_get_subdevdata(&ov02a10->subdev);
-> +	struct device *dev = &client->dev;
-> +	int ret;
-> +
-> +	ret = clk_prepare_enable(ov02a10->xvclk);
-> +	if (ret < 0) {
-> +		dev_err(dev, "Failed to enable xvclk\n");
-> +		return ret;
-> +	}
-> +
-> +	/* note: set 0 is high, set 1 is low */
-> +	gpiod_set_value_cansleep(ov02a10->reset_gpio, 1);
-> +	gpiod_set_value_cansleep(ov02a10->pwdn_gpio, 0);
-> +
-> +	ret = regulator_bulk_enable(OV02A10_NUM_SUPPLIES, ov02a10->supplies);
-> +	if (ret < 0) {
-> +		dev_err(dev, "Failed to enable regulators\n");
-> +		goto disable_clk;
-> +	}
-> +	msleep_range(7);
-> +
-> +	gpiod_set_value_cansleep(ov02a10->pwdn_gpio, 1);
-> +	msleep_range(10);
-> +
-> +	gpiod_set_value_cansleep(ov02a10->reset_gpio, 0);
-> +	msleep_range(10);
-> +
-> +	return 0;
-> +
-> +disable_clk:
-> +	clk_disable_unprepare(ov02a10->xvclk);
-> +
-> +	return ret;
-> +}
-> +
-> +static void __ov02a10_power_off(struct ov02a10 *ov02a10)
-> +{
-> +	clk_disable_unprepare(ov02a10->xvclk);
-> +	gpiod_set_value_cansleep(ov02a10->reset_gpio, 1);
-> +	gpiod_set_value_cansleep(ov02a10->pwdn_gpio, 1);
-> +	regulator_bulk_disable(OV02A10_NUM_SUPPLIES, ov02a10->supplies);
-> +}
-> +
-> +static int __ov02a10_start_stream(struct ov02a10 *ov02a10)
-> +{
-> +	struct i2c_client *client = v4l2_get_subdevdata(&ov02a10->subdev);
-> +	int ret;
-> +
-> +	/* Apply default values of current mode */
-> +	ret = ov02a10_write_array(ov02a10, ov02a10->cur_mode->reg_list);
-> +	if (ret)
-> +		return ret;
-> +
-> +	/* Apply customized values from user */
-> +	ret = __v4l2_ctrl_handler_setup(ov02a10->subdev.ctrl_handler);
-> +	if (ret)
-> +		return ret;
-> +
-> +	/* Set Orientation be 180 degree */
-Set orientation to 180 degree
-> +	if (ov02a10->upside_down) {
-> +		ret = ov02a10_write_reg(ov02a10, REG_MIRROR_FLIP_CONTROL,
-> +					REG_CONFIG_MIRROR_FLIP);
-> +		if (ret) {
-> +			dev_err(&client->dev, "%s failed to set orientation\n",
-> +				__func__);
-> +			return ret;
-> +		}
-> +		ret = ov02a10_write_reg(ov02a10, REG_GLOBAL_EFFECTIVE,
-> +					REG_ENABLE);
-> +		if (ret < 0)
-> +			return ret;
-> +	}
-> +
-> +	/* set stream on register */
-> +	return ov02a10_write_reg(ov02a10,
-> +				 REG_SC_CTRL_MODE, SC_CTRL_MODE_STREAMING);
-> +}
-> +
-> +static int __ov02a10_stop_stream(struct ov02a10 *ov02a10)
-> +{
-> +	return ov02a10_write_reg(ov02a10,
-> +				 REG_SC_CTRL_MODE, SC_CTRL_MODE_STANDBY);
-> +}
-> +
-> +static int ov02a10_entity_init_cfg(struct v4l2_subdev *subdev,
-> +				   struct v4l2_subdev_pad_config *cfg)
-> +{
-> +	struct v4l2_subdev_format fmt = { 0 };
-> +
-> +	fmt.which = cfg ? V4L2_SUBDEV_FORMAT_TRY : V4L2_SUBDEV_FORMAT_ACTIVE;
-> +	fmt.format.width = 1600;
-> +	fmt.format.height = 1200;
-> +
-> +	ov02a10_set_fmt(subdev, cfg, &fmt);
-> +
-> +	return 0;
-> +}
-> +
-> +static int ov02a10_s_stream(struct v4l2_subdev *sd, int on)
-> +{
-> +	struct ov02a10 *ov02a10 = to_ov02a10(sd);
-> +	struct i2c_client *client = v4l2_get_subdevdata(&ov02a10->subdev);
-> +	int ret = 0;
-> +
-> +	dev_dbg(&client->dev, "ov02a10 s_stream (%d)\n", on);
-> +	mutex_lock(&ov02a10->mutex);
-> +
-> +	if (ov02a10->streaming == on)
-> +		goto unlock_and_return;
-> +
-> +	if (on) {
-> +		ret = pm_runtime_get_sync(&client->dev);
-> +		if (ret < 0) {
-> +			pm_runtime_put_noidle(&client->dev);
-> +			goto unlock_and_return;
-> +		}
-> +
-> +		ret = __ov02a10_start_stream(ov02a10);
-> +		if (ret) {
-> +			__ov02a10_stop_stream(ov02a10);
-> +			ov02a10->streaming = !on;
-> +			goto err_rpm_put;
-> +		}
-> +	} else {
-> +		__ov02a10_stop_stream(ov02a10);
-> +		pm_runtime_put(&client->dev);
-> +	}
-> +
-> +	ov02a10->streaming = on;
-> +	mutex_unlock(&ov02a10->mutex);
-> +
-> +	return ret;
-> +
-> +err_rpm_put:
-> +	pm_runtime_put(&client->dev);
-> +unlock_and_return:
-> +	mutex_unlock(&ov02a10->mutex);
-> +
-> +	return ret;
-> +}
-> +
-> +static int ov02a10_open(struct v4l2_subdev *sd, struct v4l2_subdev_fh *fh)
-> +{
-> +	struct ov02a10 *ov02a10 = to_ov02a10(sd);
-> +	struct v4l2_mbus_framefmt *try_fmt = v4l2_subdev_get_try_format(sd,
-> +									fh->pad,
-> +									0);
-> +
-> +	mutex_lock(&ov02a10->mutex);
-> +	/* Initialize try_fmt */
-> +	try_fmt->code = ov02a10->fmt.code;
-> +	ov02a10_fill_fmt(&supported_modes[0], try_fmt);
-> +
-> +	mutex_unlock(&ov02a10->mutex);
-> +
-> +	return 0;
-> +}
-> +
-> +static int __maybe_unused ov02a10_runtime_resume(struct device *dev)
-> +{
-> +	struct i2c_client *client = to_i2c_client(dev);
-> +	struct v4l2_subdev *sd = i2c_get_clientdata(client);
-> +	struct ov02a10 *ov02a10 = to_ov02a10(sd);
-> +
-> +	return __ov02a10_power_on(ov02a10);
-> +}
-> +
-> +static int __maybe_unused ov02a10_runtime_suspend(struct device *dev)
-> +{
-> +	struct i2c_client *client = to_i2c_client(dev);
-> +	struct v4l2_subdev *sd = i2c_get_clientdata(client);
-> +	struct ov02a10 *ov02a10 = to_ov02a10(sd);
-> +
-> +	__ov02a10_power_off(ov02a10);
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct dev_pm_ops ov02a10_pm_ops = {
-> +	SET_RUNTIME_PM_OPS(ov02a10_runtime_suspend,
-> +			   ov02a10_runtime_resume, NULL)
-> +};
-> +
-> +static int ov02a10_set_test_pattern(struct ov02a10 *ov02a10, s32 value)
-> +{
-> +	if (value)
-> +		return ov02a10_write_array(ov02a10,
-> +					   ov02a10_test_pattern_enable_regs);
-> +
-> +	return ov02a10_write_array(ov02a10,
-> +		ov02a10_test_pattern_disable_regs);
-> +}
-> +
-> +static int ov02a10_set_ctrl(struct v4l2_ctrl *ctrl)
-> +{
-> +	struct ov02a10 *ov02a10 = container_of(ctrl->handler,
-> +					     struct ov02a10, ctrl_handler);
-> +	struct i2c_client *client = v4l2_get_subdevdata(&ov02a10->subdev);
-> +	s64 max_expo;
-> +	int ret;
-> +
-> +	/* Propagate change of current control to all related controls */
-> +	if (ctrl->id == V4L2_CID_VBLANK) {
-> +		/* Update max exposure while meeting expected vblanking */
-> +		max_expo = ov02a10->cur_mode->height + ctrl->val - 4;
-> +		__v4l2_ctrl_modify_range(ov02a10->exposure,
-> +					 ov02a10->exposure->minimum, max_expo,
-> +					 ov02a10->exposure->step,
-> +					 ov02a10->exposure->default_value);
-> +	}
-> +
-> +	/* V4L2 controls values will be applied only when power is already up */
-> +	if (!pm_runtime_get_if_in_use(&client->dev))
-> +		return 0;
-> +
-> +	switch (ctrl->id) {
-> +	case V4L2_CID_EXPOSURE:
-> +		ret = ov02a10_write_reg(ov02a10, REG_PAGE_SWITCH, REG_ENABLE);
-> +		if (ret < 0)
-> +			return ret;
-> +		ret = ov02a10_write_reg(ov02a10, OV02A10_REG_EXPOSURE_H,
-> +					((ctrl->val >> 8) & 0xFF));
-> +		if (!ret) {
-> +			ret = ov02a10_write_reg(ov02a10, OV02A10_REG_EXPOSURE_L,
-> +						(ctrl->val & 0xFF));
-> +			if (ret < 0)
-> +				return ret;
-> +		}
-> +		ret = ov02a10_write_reg(ov02a10, REG_GLOBAL_EFFECTIVE,
-> +					REG_ENABLE);
-> +		if (ret < 0)
-> +			return ret;
-> +		break;
-> +	case V4L2_CID_ANALOGUE_GAIN:
-> +		ret = ov02a10_write_reg(ov02a10, REG_PAGE_SWITCH, REG_ENABLE);
-> +		if (ret < 0)
-> +			return ret;
-> +		ret = ov02a10_write_reg(ov02a10, OV02A10_REG_GAIN,
-> +					(ctrl->val & 0xFF));
-> +		if (ret < 0)
-> +			return ret;
-> +		ret = ov02a10_write_reg(ov02a10, REG_GLOBAL_EFFECTIVE,
-> +					REG_ENABLE);
-> +		if (ret < 0)
-> +			return ret;
-> +		break;
-> +	case V4L2_CID_VBLANK:
-> +		ret = ov02a10_write_reg(ov02a10, REG_PAGE_SWITCH, REG_ENABLE);
-> +		if (ret < 0)
-> +			return ret;
-> +		ret = ov02a10_write_reg(ov02a10, OV02A10_REG_VTS_H,
-> +					(((ctrl->val +
-> +					ov02a10->cur_mode->height - 1224) >> 8)
-> +					& 0xFF));
-1224 is hard-coded here, could you add some comments? Is it a sensor
-setting sensitive value?
-> +		if (!ret) {
-> +			ret = ov02a10_write_reg(ov02a10, OV02A10_REG_VTS_L,
-> +						((ctrl->val +
-> +						ov02a10->cur_mode->height -
-> +						1224) & 0xFF));
-ditto.
-> +			if (ret < 0)
-> +				return ret;
-> +		}
-> +		ret = ov02a10_write_reg(ov02a10, REG_GLOBAL_EFFECTIVE,
-> +					REG_ENABLE);
-> +		if (ret < 0)
-> +			return ret;
-> +		break;
-> +	case V4L2_CID_TEST_PATTERN:
-> +		ret = ov02a10_set_test_pattern(ov02a10, ctrl->val);
-> +		if (ret < 0)
-> +			return ret;
-> +		break;
-> +	default:
-> +		dev_warn(&client->dev, "%s Unhandled id:0x%x, val:0x%x\n",
-> +			 __func__, ctrl->id, ctrl->val);
-> +		ret = -EINVAL;
-> +		break;
-> +	};
-> +
-> +	pm_runtime_put(&client->dev);
-> +
-> +	return ret;
-> +}
-> +
-> +static const struct v4l2_subdev_video_ops ov02a10_video_ops = {
-> +	.s_stream = ov02a10_s_stream,
-> +};
-> +
-> +static const struct v4l2_subdev_pad_ops ov02a10_pad_ops = {
-> +	.init_cfg = ov02a10_entity_init_cfg,
-> +	.enum_mbus_code = ov02a10_enum_mbus_code,
-> +	.enum_frame_size = ov02a10_enum_frame_sizes,
-> +	.get_fmt = ov02a10_get_fmt,
-> +	.set_fmt = ov02a10_set_fmt,
-> +};
-> +
-> +static const struct v4l2_subdev_ops ov02a10_subdev_ops = {
-> +	.video	= &ov02a10_video_ops,
-> +	.pad	= &ov02a10_pad_ops,
-> +};
-> +
-> +static const struct media_entity_operations ov02a10_subdev_entity_ops = {
-> +	.link_validate = v4l2_subdev_link_validate,
-> +};
-> +
-> +static const struct v4l2_subdev_internal_ops ov02a10_internal_ops = {
-> +	.open = ov02a10_open,
-> +};
-> +
-> +static const struct v4l2_ctrl_ops ov02a10_ctrl_ops = {
-> +	.s_ctrl = ov02a10_set_ctrl,
-> +};
-> +
-> +static int ov02a10_initialize_controls(struct ov02a10 *ov02a10)
-> +{
-> +	struct i2c_client *client = v4l2_get_subdevdata(&ov02a10->subdev);
-> +	const struct ov02a10_mode *mode;
-> +	struct v4l2_ctrl_handler *handler;
-> +	struct v4l2_ctrl *ctrl;
-> +	u64 exposure_max;
-> +	u32 pixel_rate, h_blank;
-> +	int ret;
-> +
-> +	handler = &ov02a10->ctrl_handler;
-> +	mode = ov02a10->cur_mode;
-> +	ret = v4l2_ctrl_handler_init(handler, 10);
-> +	if (ret)
-> +		return ret;
-> +	handler->lock = &ov02a10->mutex;
-> +
-> +	ctrl = v4l2_ctrl_new_int_menu(handler, NULL, V4L2_CID_LINK_FREQ,
-> +				      0, 0, link_freq_menu_items);
-> +	if (ctrl)
-> +		ctrl->flags |= V4L2_CTRL_FLAG_READ_ONLY;
-> +
-> +	pixel_rate = (link_freq_menu_items[0] * 2 * OV02A10_LANES) /
-> +		     OV02A10_BITS_PER_SAMPLE;
-> +	v4l2_ctrl_new_std(handler, NULL, V4L2_CID_PIXEL_RATE,
-> +			  0, pixel_rate, 1, pixel_rate);
-> +
-> +	h_blank = mode->hts_def - mode->width;
-> +	ov02a10->hblank = v4l2_ctrl_new_std(handler, NULL, V4L2_CID_HBLANK,
-> +					    h_blank, h_blank, 1, h_blank);
-> +	if (ov02a10->hblank)
-> +		ov02a10->hblank->flags |= V4L2_CTRL_FLAG_READ_ONLY;
-> +
-> +	ov02a10->vblank = v4l2_ctrl_new_std(handler, &ov02a10_ctrl_ops,
-> +					    V4L2_CID_VBLANK, mode->vts_def -
-> +					    mode->height,
-> +					    OV02A10_VTS_MAX - mode->height, 1,
-> +					    mode->vts_def - mode->height);
-> +
-> +	exposure_max = mode->vts_def - 4;
-> +	ov02a10->exposure = v4l2_ctrl_new_std(handler, &ov02a10_ctrl_ops,
-> +					      V4L2_CID_EXPOSURE,
-> +					      OV02A10_EXPOSURE_MIN,
-> +					      exposure_max,
-> +					      OV02A10_EXPOSURE_STEP,
-> +					      mode->exp_def);
-> +
-> +	ov02a10->anal_gain = v4l2_ctrl_new_std(handler, &ov02a10_ctrl_ops,
-> +					       V4L2_CID_ANALOGUE_GAIN,
-> +					       OV02A10_GAIN_MIN,
-> +					       OV02A10_GAIN_MAX,
-> +					       OV02A10_GAIN_STEP,
-> +					       OV02A10_GAIN_DEFAULT);
-> +
-> +	ov02a10->test_pattern =
-> +	   v4l2_ctrl_new_std_menu_items(handler,
-> +					&ov02a10_ctrl_ops,
-> +					V4L2_CID_TEST_PATTERN,
-> +					ARRAY_SIZE(ov02a10_test_pattern_menu) -
-> +					1, 0, 0, ov02a10_test_pattern_menu);
-> +
-> +	if (handler->error) {
-> +		ret = handler->error;
-> +		dev_err(&client->dev,
-> +			"Failed to init controls(%d)\n", ret);
-> +		goto err_free_handler;
-> +	}
-> +
-> +	ov02a10->subdev.ctrl_handler = handler;
-> +
-> +	return 0;
-> +
-> +err_free_handler:
-> +	v4l2_ctrl_handler_free(handler);
-> +
-> +	return ret;
-> +}
-> +
-> +static int ov02a10_check_sensor_id(struct ov02a10 *ov02a10)
-> +{
-> +	struct i2c_client *client = v4l2_get_subdevdata(&ov02a10->subdev);
-> +	u16 id;
-> +	u8 pid = 0;
-> +	u8 ver = 0;
-> +	int ret;
-> +
-> +	/* Check sensor revision */
-> +	ret = ov02a10_read_reg(ov02a10, OV02A10_REG_CHIP_ID_H, &pid);
-> +	if (ret)
-> +		return ret;
-> +
-> +	ret = ov02a10_read_reg(ov02a10, OV02A10_REG_CHIP_ID_L, &ver);
-> +	if (ret)
-> +		return ret;
-> +
-> +	id = OV02A10_ID(pid, ver);
-> +	if (id != CHIP_ID) {
-> +		dev_err(&client->dev, "Unexpected sensor id(%04x)\n", id);
-> +		return ret;
-> +	}
-> +	dev_dbg(&client->dev, "Detected OV%04X sensor\n", id);
-> +
-> +	return 0;
-> +}
-> +
-> +static int ov02a10_configure_regulators(struct ov02a10 *ov02a10)
-> +{
-> +	struct i2c_client *client = v4l2_get_subdevdata(&ov02a10->subdev);
-> +	unsigned int i;
-> +
-> +	for (i = 0; i < OV02A10_NUM_SUPPLIES; i++)
-> +		ov02a10->supplies[i].supply = ov02a10_supply_names[i];
-> +
-> +	return devm_regulator_bulk_get(&client->dev,
-> +				       OV02A10_NUM_SUPPLIES,
-> +				       ov02a10->supplies);
-> +}
-> +
-> +static int ov02a10_probe(struct i2c_client *client)
-> +{
-> +	struct device *dev = &client->dev;
-> +	struct ov02a10 *ov02a10;
-> +	u32 rotation;
-> +	u32 xclk_freq;
-> +	int ret;
-> +
-> +	dev_dbg(dev, "ov02a10 probe\n");
-I think this line is not needed at all.
-> +	ov02a10 = devm_kzalloc(dev, sizeof(*ov02a10), GFP_KERNEL);
-> +	if (!ov02a10)
-> +		return -ENOMEM;
-> +
-> +	v4l2_i2c_subdev_init(&ov02a10->subdev, client, &ov02a10_subdev_ops);
-> +	ov02a10->fmt.code = MEDIA_BUS_FMT_SBGGR10_1X10;
-> +
-> +	/* optional indication of physical rotation of sensor */
-> +	ret = fwnode_property_read_u32(dev_fwnode(dev), "rotation",
-> +				       &rotation);
-> +	if (!ret) {
-> +		switch (rotation) {
-> +		case 180:
-> +			ov02a10->upside_down = true;
-> +			ov02a10->fmt.code = MEDIA_BUS_FMT_SRGGB10_1X10;
-> +			break;
-> +		case 0:
-> +			break;
-> +		default:
-> +			dev_warn(dev, "%u degrees rotation is not supported, ignoring...\n",
-> +				 rotation);
-> +		}
-> +	}
-> +
-> +	/* get system clock (xvclk) */
-> +	ov02a10->xvclk = devm_clk_get(dev, "xvclk");
-> +	if (IS_ERR(ov02a10->xvclk)) {
-> +		dev_err(dev, "Failed to get xvclk\n");
-> +		return -EINVAL;
-> +	}
-> +
-> +	ret = of_property_read_u32(dev->of_node, "clock-frequency", &xclk_freq);
-> +	if (ret) {
-> +		dev_err(dev, "Failed to get xclk frequency\n");
-> +		return ret;
-> +	}
-> +
-> +	/* external clock must be 24MHz, allow 1% tolerance */
-> +	if (xclk_freq < 23760000 || xclk_freq > 24240000) {
-> +		dev_err(dev, "external clock frequency %u is not supported\n",
-> +			xclk_freq);
-> +		return -EINVAL;
-> +	}
-> +	dev_dbg(dev, "external clock frequency %u\n", xclk_freq);
-> +
-> +	ret = clk_set_rate(ov02a10->xvclk, xclk_freq);
-> +	if (ret) {
-> +		dev_err(dev, "Failed to set xvclk frequency (24MHz)\n");
-> +		return ret;
-> +	}
-> +
-> +	ov02a10->pwdn_gpio = devm_gpiod_get(dev, "pwdn", GPIOD_OUT_LOW);
-> +	if (IS_ERR(ov02a10->pwdn_gpio)) {
-> +		dev_err(dev, "Failed to get powerdown-gpios\n");
-> +		return -EINVAL;
-> +	}
-> +
-> +	ov02a10->reset_gpio = devm_gpiod_get(dev, "reset", GPIOD_OUT_HIGH);
-> +	if (IS_ERR(ov02a10->reset_gpio)) {
-> +		dev_err(dev, "Failed to get reset-gpios\n");
-> +		return -EINVAL;
-> +	}
-> +
-> +	ret = ov02a10_configure_regulators(ov02a10);
-> +	if (ret) {
-> +		dev_err(dev, "Failed to get power regulators\n");
-> +		return ret;
-> +	}
-> +
-> +	mutex_init(&ov02a10->mutex);
-> +	ov02a10->cur_mode = &supported_modes[0];
-> +	ret = ov02a10_initialize_controls(ov02a10);
-> +	if (ret) {
-> +		dev_err(dev, "Failed to initialize controls\n");
-> +		goto err_destroy_mutex;
-> +	}
-> +
-> +	ret = __ov02a10_power_on(ov02a10);
-> +	if (ret)
-> +		goto err_free_handler;
-> +
-> +	ret = ov02a10_check_sensor_id(ov02a10);
-> +	if (ret)
-> +		goto err_power_off;
-> +
-> +	ov02a10->subdev.internal_ops = &ov02a10_internal_ops;
-> +	ov02a10->subdev.flags |= V4L2_SUBDEV_FL_HAS_DEVNODE;
-> +	ov02a10->subdev.entity.ops = &ov02a10_subdev_entity_ops;
-> +	ov02a10->subdev.entity.function = MEDIA_ENT_F_CAM_SENSOR;
-> +	ov02a10->pad.flags = MEDIA_PAD_FL_SOURCE;
-> +	ret = media_entity_pads_init(&ov02a10->subdev.entity, 1, &ov02a10->pad);
-> +	if (ret < 0) {
-> +		dev_err(dev, "failed to init entity pads: %d", ret);
-> +		goto err_power_off;
-> +	}
-> +
-> +	ret = v4l2_async_register_subdev(&ov02a10->subdev);
-> +	if (ret) {
-> +		dev_err(dev, "failed to register V4L2 subdev: %d",
-> +			ret);
-> +		goto err_clean_entity;
-> +	}
-> +
-> +	pm_runtime_set_active(dev);
-> +	pm_runtime_enable(dev);
-> +	pm_runtime_idle(dev);
-> +
-> +	return 0;
-> +
-> +err_clean_entity:
-> +	media_entity_cleanup(&ov02a10->subdev.entity);
-> +err_power_off:
-> +	__ov02a10_power_off(ov02a10);
-> +err_free_handler:
-> +	v4l2_ctrl_handler_free(ov02a10->subdev.ctrl_handler);
-> +err_destroy_mutex:
-> +	mutex_destroy(&ov02a10->mutex);
-> +
-> +	return ret;
-> +}
-> +
-> +static int ov02a10_remove(struct i2c_client *client)
-> +{
-> +	struct v4l2_subdev *sd = i2c_get_clientdata(client);
-> +	struct ov02a10 *ov02a10 = to_ov02a10(sd);
-> +
-> +	v4l2_async_unregister_subdev(sd);
-> +	media_entity_cleanup(&sd->entity);
-> +	v4l2_ctrl_handler_free(sd->ctrl_handler);
-> +	pm_runtime_disable(&client->dev);
-> +	if (!pm_runtime_status_suspended(&client->dev))
-> +		__ov02a10_power_off(ov02a10);
-> +	pm_runtime_set_suspended(&client->dev);
-> +	mutex_destroy(&ov02a10->mutex);
-> +
-> +	return 0;
-> +}
-> +
-> +#if IS_ENABLED(CONFIG_OF)
-> +static const struct of_device_id ov02a10_of_match[] = {
-> +	{ .compatible = "ovti,ov02a10" },
-> +	{},
-> +};
-> +MODULE_DEVICE_TABLE(of, ov02a10_of_match);
-> +#endif
-> +
-> +static struct i2c_driver ov02a10_i2c_driver = {
-> +	.driver = {
-> +		.name = "ov02a10",
-> +		.pm = &ov02a10_pm_ops,
-> +		.of_match_table = ov02a10_of_match,
-> +	},
-> +	.probe_new	= &ov02a10_probe,
-> +	.remove		= &ov02a10_remove,
-> +};
-> +
-> +module_i2c_driver(ov02a10_i2c_driver);
-> +
-> +MODULE_AUTHOR("Dongchun Zhu <dongchun.zhu@mediatek.com>");
-> +MODULE_DESCRIPTION("OmniVision OV02A10 sensor driver");
-> +MODULE_LICENSE("GPL v2");
-> +
-> 
-Other part looks good to me.
+After looking through the cpufreq driver, I think we can use below late init function
+to assign the suspend_freq, then no need to add "opp-suspend " in DT, and the freq
+get from cpufreq_quick_get_max() is already the max supported freq considering the
+speed grading and market segment fuse settings, please ignore these 2 patches, I will
+send out a imx-cpufreq-dt.c patch with below change to support all SoCs with imx-cpufreq-dt
+driver.
+
++static int __init imx_cpufreq_dt_setup_suspend_opp(void)
++{
++       struct cpufreq_policy *policy = cpufreq_cpu_get(0);
++
++       policy->suspend_freq = cpufreq_quick_get_max(0);
++
++       return 0;
++}
++late_initcall(imx_cpufreq_dt_setup_suspend_opp);
+
+Anson.
 
 _______________________________________________
 linux-arm-kernel mailing list
