@@ -2,53 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D94B562A24
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 22:10:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BEE8C62A5D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 22:31:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cYYurAn2LEbtjV56PDBC7BS7PG/Dl9OTXoLIB4ti75g=; b=Rk05L/Ac4OCGBx
-	iLRlWDdTnt1eLh4rpiB4B/jFStlDB7JNd3/fTjWDg6+LMtGzvoSvef9nxCM4qIxlO8bt/2+f0/KwN
-	sHP/Rq19kJkBDZ8weHM0pTPKcGOVBfwJ1sCxarO+ob14Os63JZXpLBU7uNhjDuqKo+dbePvGW1FMB
-	6NK/psq1c1OS+CDc/su9KuRCN6SUcqKW2wcseWVgVsWCu8Uye21YEdt4Bl1YLVblzLZol6ULuixXP
-	7gS6BvUIxSmtBSY91HqZNe+HYo0j2BPFz91BDXY1UBQ8uIXipES2sEhfXbyHWOX8uFzPZ2lYWaUev
-	aKs+viNUgnlEi+N6pxfg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=jyC4ATL3pAuNpn9Hly70OJtjmfYJnIjkJ2Wj1zbiMXM=; b=E2fwVts9zYr9Y4
+	lWBpIg6FHPImRbxSgtyvdnUW5ncD/6NRbTzfwNIZ2njM/QC9V26RreIsoDOpNpn4ksdYkQhb1tJVt
+	GDDe9wDLUpQE4HJcjo0YD9kXcNQA3jpXV61sHLcPYK+MdgIxdYIPbIRf6tU2h7P1VZPdV5nlXXLCA
+	hPIOOYxZV75jfI3HjytQdo5RufK2Vy257lwXqQRzDT6sQ8pTHKYPvNJwUYavz4cDtlOsDJ5TfkzNG
+	eskz3JOq30VypExNtQKwRhCB+mJrnC+AtmEPysDQJPQ7Ga50m4s3f0+oy+hWkVJ6Ey7lc/7lmZSYE
+	6hk+LHeIvtjWM6RtfLiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkZxn-0005NO-JF; Mon, 08 Jul 2019 20:10:15 +0000
-Received: from ms.lwn.net ([45.79.88.28])
+	id 1hkaI9-00049m-3w; Mon, 08 Jul 2019 20:31:17 +0000
+Received: from mout.kundenserver.de ([212.227.126.134])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkZxY-0005D4-6y
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 20:10:01 +0000
-Received: from lwn.net (localhost [127.0.0.1])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by ms.lwn.net (Postfix) with ESMTPSA id 8CC8C2B8;
- Mon,  8 Jul 2019 20:09:55 +0000 (UTC)
-Date: Mon, 8 Jul 2019 14:09:54 -0600
-From: Jonathan Corbet <corbet@lwn.net>
-To: Phong Tran <tranmanphong@gmail.com>
-Subject: Re: [PATCH] Documentation: coresight: covert txt to rst
-Message-ID: <20190708140954.35a38021@lwn.net>
-In-Reply-To: <20190705204512.15444-1-tranmanphong@gmail.com>
-References: <20190705204512.15444-1-tranmanphong@gmail.com>
-Organization: LWN.net
+ id 1hkaHx-00049J-Ee
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 20:31:07 +0000
+Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
+ (mreue010 [212.227.15.129]) with ESMTPA (Nemesis) id
+ 1MOAJt-1i8aQU1YWP-00OYvi; Mon, 08 Jul 2019 22:30:59 +0200
+From: Arnd Bergmann <arnd@arndb.de>
+To: Russell King <linux@armlinux.org.uk>
+Subject: [PATCH] ARM: mtd-xip: work around clang/llvm bug
+Date: Mon,  8 Jul 2019 22:30:31 +0200
+Message-Id: <20190708203049.3484750-1-arnd@arndb.de>
+X-Mailer: git-send-email 2.20.0
 MIME-Version: 1.0
+X-Provags-ID: V03:K1:V7NNcdZbV6mw7tfdYJiUJWjfhAMjQ4ZOz+c5SMkPzy2jzCIxgH/
+ pt3z+EXXXxY3LSweF/O5LBo2UxCpnX3kg0YItAVqxX3M9B2A5HrqQ81VPjg6+j1qPFmB85f
+ ImodRn9ATMXuOL36cdfA72rGbINvDJVBi1P9wvZ162xPRURHIwauaITV/6GYiZlrruAZgD3
+ yPClGNspWQsjkOU9QoV/g==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:v+XvPb26ioU=:TjLKe2p2Vyy1aD8C0Nufwj
+ FrZeID3M43k7HjEvkInllCLnR/9x6gufxWP8ADpgN0auCuIIjPIP2tu0X3ASOv/QXifZ6fjb4
+ fKlZu6xDaoZtt8x67I8YacbTs4bBwepXTeep7F354PTBA34UGC8lZ+V1nE8sRbnncu3ob8/LP
+ JR0tuXEqyWPyKcDtlpOHMZAMaZDwcg/kfr6xkzsUVYV75zOGIx8sq6NyqGQF3c1arsqTwrNcN
+ hJhsQ7lnpgflhynJ5Bc549TYzbbcpmDJv2EPESCR8ZfGYOQGAR64bD1MNNDqeNGf32tFXzLi0
+ +CkgAvnFKTjFeL8w8Gps4Rw4jiiWmhItlP2H/zFPsYwEBMV/uyZolwmW2WffgtqMKYreIRpoD
+ wxA5LNyE+X+NdLbrzC7F/w5oKECDdDNa+wEsQMZS8O/NKs4gGpJ9Wl0QpYQ1z5zga8wlaFtHd
+ ypJVr3q8cXSs7REZxwEZeSbfMZ6LXVm9uUQQcImXbb2yyrvpOdcgw8YpBgSshFJe0dW3AwA+L
+ xIRheBgbluwdF4sFdEOy+IqW/QuHkind6qLv3FGlEGcHh/n5ErPd5rSn67lwA9/dQ3sew4ELj
+ 0IJABvVcc/M72PPepyFP1dkhf9bcvHnoPaE8lUm7HhlCHX+5g2CTjshcvagx/93ZVV/VZ+DFN
+ YdDjg4aD2IE+NkZFigDlAijfbNlhkhrMyh45aKVjofJ8rIJiGPbgcDt1eVJiz39O5rlLq6RGW
+ BhGY84gtjs1+dnjKiPjpNUMaPmILlrDBvvo1Gg==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_131000_262979_B2147B11 
-X-CRM114-Status: GOOD (  19.07  )
+X-CRM114-CacheID: sfid-20190708_133105_789601_7C8746C8 
+X-CRM114-Status: GOOD (  10.54  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [45.79.88.28 listed in list.dnswl.org]
+ no trust [212.227.126.134 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,105 +73,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mathieu.poirier@linaro.org, linux-doc@vger.kernel.org,
- suzuki.poulose@arm.com, linux-kernel@vger.kernel.org,
- skhan@linuxfoundation.org, mchehab@kernel.org,
- linux-kernel-mentees@lists.linuxfoundation.org,
- linux-arm-kernel@lists.infradead.org
+Cc: clang-built-linux@googlegroups.com, linux-arm-kernel@lists.infradead.org,
+ Arnd Bergmann <arnd@arndb.de>, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat,  6 Jul 2019 03:45:12 +0700
-Phong Tran <tranmanphong@gmail.com> wrote:
+llvm gets confused by inline asm with .rep directives, which
+can lead to miscalculating the number of instructions inside it,
+and in turn lead to an overflow for relative address calculation:
 
-> change the format file and adpate the text style
-> 
-> Signed-off-by: Phong Tran <tranmanphong@gmail.com>
-> ---
->  .../trace/{coresight.txt => coresight.rst}         | 296 ++++++++++++---------
->  Documentation/trace/index.rst                      |   1 +
->  2 files changed, 167 insertions(+), 130 deletions(-)
->  rename Documentation/trace/{coresight.txt => coresight.rst} (59%)
-> 
-> diff --git a/Documentation/trace/coresight.txt b/Documentation/trace/coresight.rst
-> similarity index 59%
-> rename from Documentation/trace/coresight.txt
-> rename to Documentation/trace/coresight.rst
-> index efbc832146e7..bea24e70cfba 100644
-> --- a/Documentation/trace/coresight.txt
-> +++ b/Documentation/trace/coresight.rst
-> @@ -1,5 +1,6 @@
-> -		Coresight - HW Assisted Tracing on ARM
-> -		======================================
-> +======================================
-> +Coresight - HW Assisted Tracing on ARM
-> +======================================
->  
->     Author:   Mathieu Poirier <mathieu.poirier@linaro.org>
->     Date:     September 11th, 2014
-> @@ -26,7 +27,7 @@ implementation, either storing the compressed stream in a memory buffer or
->  creating an interface to the outside world where data can be transferred to a
->  host without fear of filling up the onboard coresight memory buffer.
->  
-> -At typical coresight system would look like this:
-> +At typical coresight system would look like this::
->  
->    *****************************************************************
->   **************************** AMBA AXI  ****************************===||
-> @@ -95,6 +96,7 @@ Acronyms and Classification
->  
->  Acronyms:
->  
-> +======== =============================================================
->  PTM:     Program Trace Macrocell
->  ETM:     Embedded Trace Macrocell
->  STM:     System trace Macrocell
-> @@ -104,6 +106,7 @@ TPIU:    Trace Port Interface Unit
->  TMC-ETR: Trace Memory Controller, configured as Embedded Trace Router
->  TMC-ETF: Trace Memory Controller, configured as Embedded Trace FIFO
->  CTI:     Cross Trigger Interface
-> +======== =============================================================
+/tmp/cfi_cmdset_0002-539a47.s: Assembler messages:
+/tmp/cfi_cmdset_0002-539a47.s:11288: Error: bad immediate value for offset (4100)
+/tmp/cfi_cmdset_0002-539a47.s:11289: Error: bad immediate value for offset (4100)
 
-A minor nit, but since you're making a table out of this, you don't need
-the colons in the first column.
+This might be fixed in future clang versions, but is not hard
+to work around by just replacing the .rep with a series of
+eight unrolled nop instructions.
 
->  Classification:
->  
-> @@ -118,7 +121,7 @@ Misc:
->  
->  
->  Device Tree Bindings
-> -----------------------
-> +--------------------
->  
->  See Documentation/devicetree/bindings/arm/coresight.txt for details.
->  
-> @@ -133,57 +136,63 @@ The coresight framework provides a central point to represent, configure and
->  manage coresight devices on a platform.  Any coresight compliant device can
->  register with the framework for as long as they use the right APIs:
->  
-> -struct coresight_device *coresight_register(struct coresight_desc *desc);
-> -void coresight_unregister(struct coresight_device *csdev);
-> +.. c:function:: struct coresight_device *coresight_register(struct coresight_desc *desc);
-> +.. c:function:: void coresight_unregister(struct coresight_device *csdev);
->  
-> -The registering function is taking a "struct coresight_device *csdev" and
-> +The registering function is taking a :code:`struct coresight_device *csdev` and
+Link: https://bugs.llvm.org/show_bug.cgi?id=42539
+https://godbolt.org/z/DSM2Jy
+Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+---
+ arch/arm/include/asm/mtd-xip.h | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-As a general rule, we would rather see less markup in the text files than
-you are applying here.  Just present the prototypes in a literal block
-here.  (Even better would be a nice kerneldoc comment in the source that
-could be pulled in, but that's more work).  I wouldn't use :code: anywhere,
-really. 
+diff --git a/arch/arm/include/asm/mtd-xip.h b/arch/arm/include/asm/mtd-xip.h
+index dfcef0152e3d..5ad0325604e4 100644
+--- a/arch/arm/include/asm/mtd-xip.h
++++ b/arch/arm/include/asm/mtd-xip.h
+@@ -15,6 +15,8 @@
+ #include <mach/mtd-xip.h>
+ 
+ /* fill instruction prefetch */
+-#define xip_iprefetch() 	do { asm volatile (".rep 8; nop; .endr"); } while (0)
++#define xip_iprefetch()	do {						\
++	 asm volatile ("nop; nop; nop; nop; nop; nop; nop; nop;");	\
++} while (0)								\
+ 
+ #endif /* __ARM_MTD_XIP_H__ */
+-- 
+2.20.0
 
-As well as addressing Mathieu's comments, could you pass through and cut
-the markup down to the bare minimum?
-
-Thanks,
-
-jon
 
 _______________________________________________
 linux-arm-kernel mailing list
