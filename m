@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1768C624A4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 17:45:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8FC93624B7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 17:45:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=8pDiRrdoE1ZrbhNfL2ZMs3A9Ords0+B4xR5+T3pafI0=; b=msUCP+lpgqX8b4CjizUY2wFjdD
-	OyrehzBi4EKqS9uIToUWBOx/oqfl1o8z7jmrhUdctR30NM6lQMzxVh6xdxxsTROMZZ+rudZjurE5N
-	IPHCQ2wzmYDjmW44N1XPT4cYFLwxXxs0tyVjNU/0fb1/N0P+Uc2sPSUKBHwRx8MdFJ06XDNgu0NUt
-	4X4u6209YNprwByzXhXxSPcMKB5I+yK7bdFqndfkF+G8/Rqp7bDNrAhBbUOxvGcd7B5njZ7ylxJkB
-	x5c7H4UeVa/P1WYi2eWr1YY3ZPTlR75t8fu55pnitbVZFvpUhD7tOLi9sWQm/oti80ktoebtdkd6s
-	qxlE3qcw==;
+	bh=95xztBA1wkp5mi52Q1egrKwOjcv2wF0vHgFEVRWvkxM=; b=rlmzWQf9kpT/ib4sde7+QMkvGA
+	ienso7BufkYJwynXXZOu7vG/aKeaTpMs7ys1N85scrBoireWZvzRM9eyNlga7FOy2nMLSFzgKN53b
+	cyMeuyyrhN/Q5O6+N+mUOMMDQYCMIFl0e0uNoZ/1Vd6vduA9X9wenjWFSUGOVOLDqCBWi1k3Fdop/
+	PjOyNkW68oKgtFgTRDjLlUGd6vjYq5MdIHZsPPW+g+MSCArAgVLtXv3JzRNlzjdiGM68MqN/VLaQF
+	qU0iWpS9TJ+7AFHcR48FS29QSePforrmrRrMXZG7DnWjK7GcAlUgwB1lJ1yZ6b7UYGi5JPpmNJSs9
+	8eaUDAPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkVpY-0001c0-CP; Mon, 08 Jul 2019 15:45:28 +0000
+	id 1hkVpp-00036l-66; Mon, 08 Jul 2019 15:45:45 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hkVoI-0000tO-Uz
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 15:44:12 +0000
+ id 1hkVoK-0000tO-Eo
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 15:44:13 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 96AEB360;
- Mon,  8 Jul 2019 08:44:10 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D6BBE1516;
+ Mon,  8 Jul 2019 08:44:11 -0700 (PDT)
 Received: from usa.arm.com (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 93E563F59C;
- Mon,  8 Jul 2019 08:44:09 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id CACB43F59C;
+ Mon,  8 Jul 2019 08:44:10 -0700 (PDT)
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 3/6] firmware: arm_scmi: Remove extra check for invalid length
- message responses
-Date: Mon,  8 Jul 2019 16:43:55 +0100
-Message-Id: <20190708154358.16227-4-sudeep.holla@arm.com>
+Subject: [PATCH 4/6] firmware: arm_scmi: Fix few trivial typos in comments
+Date: Mon,  8 Jul 2019 16:43:56 +0100
+Message-Id: <20190708154358.16227-5-sudeep.holla@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190708154358.16227-1-sudeep.holla@arm.com>
 References: <20190708154358.16227-1-sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_084411_039027_715896AE 
-X-CRM114-Status: GOOD (  10.93  )
+X-CRM114-CacheID: sfid-20190708_084412_544921_EE9D8E91 
+X-CRM114-Status: GOOD (  10.84  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -70,38 +69,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-scmi_xfer_get_init ensures both transmit and receive buffer lengths are
-within the maximum limits. If receive buffer length is not supplied by
-the caller, it's set to the maximum limit value. Receive buffer length
-is never modified after that. So there's no need for the extra check
-when receive transmit completion for a command essage.
+While adding new comments found couple of typos that are better fixed.
 
-Further, if the response header length is greater than the prescribed
-receive buffer length, the response buffer is truncated to the latter.
+s/informfation/information/
+s/statues/status/
 
-Reported-by: Jim Quinlan <james.quinlan@broadcom.com>
 Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 ---
- drivers/firmware/arm_scmi/driver.c | 6 ------
- 1 file changed, 6 deletions(-)
+ drivers/firmware/arm_scmi/driver.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/firmware/arm_scmi/driver.c b/drivers/firmware/arm_scmi/driver.c
-index b5bc4c7a8fab..6ef652940099 100644
+index 6ef652940099..cac255c418b2 100644
 --- a/drivers/firmware/arm_scmi/driver.c
 +++ b/drivers/firmware/arm_scmi/driver.c
-@@ -230,12 +230,6 @@ static void scmi_rx_callback(struct mbox_client *cl, void *m)
- 	xfer = &minfo->xfer_block[xfer_id];
+@@ -86,7 +86,7 @@ struct scmi_desc {
+ };
  
- 	scmi_dump_header_dbg(dev, &xfer->hdr);
--	/* Is the message of valid length? */
--	if (xfer->rx.len > info->desc->max_msg_size) {
--		dev_err(dev, "unable to handle %zu xfer(max %d)\n",
--			xfer->rx.len, info->desc->max_msg_size);
--		return;
--	}
+ /**
+- * struct scmi_chan_info - Structure representing a SCMI channel informfation
++ * struct scmi_chan_info - Structure representing a SCMI channel information
+  *
+  * @cl: Mailbox Client
+  * @chan: Transmit/Receive mailbox channel
+@@ -190,7 +190,7 @@ static void scmi_fetch_response(struct scmi_xfer *xfer,
+ 				struct scmi_shared_mem __iomem *mem)
+ {
+ 	xfer->hdr.status = ioread32(mem->msg_payload);
+-	/* Skip the length of header and statues in payload area i.e 8 bytes*/
++	/* Skip the length of header and status in payload area i.e 8 bytes */
+ 	xfer->rx.len = min_t(size_t, xfer->rx.len, ioread32(&mem->length) - 8);
  
- 	scmi_fetch_response(xfer, mem);
- 	complete(&xfer->done);
+ 	/* Take a copy to the rx buffer.. */
 -- 
 2.17.1
 
