@@ -2,81 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BF91D627DC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 20:02:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E13162809
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 20:10:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7aCdvgrxlGwzYI3SE1NcqEeIXCZo+4Zeqt315RA2WAQ=; b=pmxHtnSuzDxtRt
-	GKlU5TvbHQJeXrEnXqaS/l0b1uoC7tM0XUDvI6qzwVdt9rXKEcAsSkRhQCcRCsl/zK1MFBqbH0CBr
-	2oFZFT+mbOKrOfFxeTrEpaX+i4cXu/kHnGeYJBjYZ2EUnzRD/siSY4qV7yBJT0OGFmapBHt85YKyh
-	TQTN9WzXTntGNx5UWu7QmxMlxQREt1HRH9B49toKMAxXeM4jI2VNm0/kXh6emExx0yjFlbL+6nqAx
-	m+xeBbL49wpNMVsnGlCHjFnLuk+Dr3WMuxQf3Ov/9SZl1Z4Z9pMRMCuj2wpJovZRhmGZu/DBgnJwk
-	cGQHHNyzU3sEYHqIOJZQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=kIz4vn8DDdE8W4pMs9zreDjK1Osm1z63Mx6I2jyeX1M=; b=Vzr
+	MT3AxwnG4piAgUHYKE7mXfL4FundYgG7h9hDCaPh6uBMwlQCJGv65OmHsj2wXyO43J7Yb6OfWVooW
+	XdZMwEVdCmotVfpsAawG5X2IRD7Uk5gC4fL63dlNgX3q9OBRyPMRgb2lWzWGm1P4z6evyaJ3lBX0D
+	tWBIjxzImN3RNRwYbYZ5onfS8IRVXA5QHKqAiZ5UApfc2FF5lWmhNhXfptcfaK56G/jPyXPPPPQUW
+	gVS5UUbZyXNTtE7I4sh8xOJZyPiyQh9TA4Y0g/blo2PkrGc230ASP+ylF1Va1Dxv3NTUaKPBE432D
+	j44OFi1ruWAVrPWoUMIsr645OZQPIVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkXyQ-0007JJ-9M; Mon, 08 Jul 2019 18:02:46 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hkY64-0002Q0-P8; Mon, 08 Jul 2019 18:10:40 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkXyC-000787-RE
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 18:02:34 +0000
-Received: by mail-pf1-x443.google.com with SMTP id y15so7973333pfn.5
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 08 Jul 2019 11:02:30 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=rIQ0rTEHF6u561v2nPjXuADsm0v84MRhAjGF266qSFQ=;
- b=D53AMBYAiK5DES1tysAW3Xg6e1BWHx3zD0kQMjd4QH1LSHX4rGjAmoZSWaIqCK901A
- CePum0VGjrQOCDeJ3k8DhzIkq2fq4T87INoJIYu8nz8uOan27i9ytpTxtGq77Kyh9M3C
- kIwuYD+eGfc/8teVjKPE0WFPEJijfN6+um6NDYWk84jblZHw4+Cy/t1xvuGi8wvXIrnX
- BjxExoau1//LuU2rm3KWv1xbam1xgj9e0Tz8gfMPtKYFLlBtZTfWldtJm0ghytSq46s3
- Y3r0FXIaY/Th28JpbYkoWQj8vcOZ9x8NK9zgBhAS8OpaiR8bgAWJFnIrC7TZf1ug8GuP
- 1YDA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=rIQ0rTEHF6u561v2nPjXuADsm0v84MRhAjGF266qSFQ=;
- b=BZbCFiXcNmYmQhGVc9P10VFnqjt8TMNuR3yQ7XiKIjNm/PfMNyyU61fiFXJ4/oytEr
- 5vD9Va9HPpmr6oCVcRZagmYs9Y3zeWRic5U8+IT4PuuEvPraZwgMoRyMMuOBFkKLHf88
- W9eAQHH2r+i/eFXaqVMo4oa2Pwve3TSK+l9HeZ5YklRsSOoklV+om+ENt05bpRXNLEyA
- S4krdFxd4X4rLvt7wj/zFlAy9rb/DHaDKZISseF3dAqpc+LlpJ5x8k0RYMaiOCKAGWn1
- 6pWXHfenumVoR4oFAaGWEJyqklVF8qx+Iikbpn9G3raSvrcX1Gunc3rjYvZSZBNBbSA6
- NEGg==
-X-Gm-Message-State: APjAAAUTPna7Td0tEtkg8nunMbdE5BRfWQsv8+6l0PZbeKS0huhUHJl9
- BPgqOPa2Nvc40YqqqbdLOPoixbtjFG/wnEIYLGVjcg==
-X-Google-Smtp-Source: APXvYqwVlg70MwWf/7uNRaPp8CAVk1KZ27lP8A2ckMZ2Q8TiGOkjVxxwgWH7gunIs6m2aA6F3LSO0gAFcOWhAMWjC38=
-X-Received: by 2002:a63:52:: with SMTP id 79mr25164242pga.381.1562608949167;
- Mon, 08 Jul 2019 11:02:29 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190705080231.123522-1-pcc@google.com>
-In-Reply-To: <20190705080231.123522-1-pcc@google.com>
-From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Mon, 8 Jul 2019 11:02:17 -0700
-Message-ID: <CAKwvOd=q8-zZJ443YYQbzQrtvVX1Z70o6sT3Zft+vYOuCjAhxA@mail.gmail.com>
-Subject: Re: [PATCH] arm64: Add support for relocating the kernel with RELR
- relocations
-To: Peter Collingbourne <pcc@google.com>
+ id 1hkY5q-0002Oz-9e
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 18:10:28 +0000
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id EADD260F3F; Mon,  8 Jul 2019 18:10:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1562609424;
+ bh=RYakAtzfd68XjS32CGKsM0PJUck7IxLNDzXB/YezXpk=;
+ h=From:To:Cc:Subject:Date:From;
+ b=Ad8kI3O0+s4YwlFbID8kBOAt4b+HDkQfXy2QX0s0abp4uoLt2JeVkl/JMoUFDReJx
+ QcUmPJrxrh2tq5JHtIuKztBpxSxPNlycZqPUsd7JE2ThrlOES8O+KGPYSfOAjdK2/g
+ eM6KtmEGxjI1Fjn3YPRMS2eXN4+9Rr+RgTxFDfmk=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
+ version=3.4.0
+Received: from jcrouse1-lnx.qualcomm.com (i-global254.qualcomm.com
+ [199.106.103.254])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
+ (No client certificate requested)
+ (Authenticated sender: jcrouse@smtp.codeaurora.org)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id D16A0602F0;
+ Mon,  8 Jul 2019 18:10:22 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1562609424;
+ bh=RYakAtzfd68XjS32CGKsM0PJUck7IxLNDzXB/YezXpk=;
+ h=From:To:Cc:Subject:Date:From;
+ b=Ad8kI3O0+s4YwlFbID8kBOAt4b+HDkQfXy2QX0s0abp4uoLt2JeVkl/JMoUFDReJx
+ QcUmPJrxrh2tq5JHtIuKztBpxSxPNlycZqPUsd7JE2ThrlOES8O+KGPYSfOAjdK2/g
+ eM6KtmEGxjI1Fjn3YPRMS2eXN4+9Rr+RgTxFDfmk=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org D16A0602F0
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ spf=none smtp.mailfrom=jcrouse@codeaurora.org
+From: Jordan Crouse <jcrouse@codeaurora.org>
+To: freedreno@lists.freedesktop.org
+Subject: [PATCH v2 0/3] iommu/arm-smmu: Split pagetable support
+Date: Mon,  8 Jul 2019 12:10:15 -0600
+Message-Id: <1562609418-25446-1-git-send-email-jcrouse@codeaurora.org>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_110232_912874_9C0E92E3 
-X-CRM114-Status: GOOD (  32.70  )
-X-Spam-Score: -14.4 (--------------)
+X-CRM114-CacheID: sfid-20190708_111026_359315_CCD6DE6E 
+X-CRM114-Status: GOOD (  11.50  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-14.4 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.145.29.96 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -84,9 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,256 +93,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Rob Herring <robh@kernel.org>, jean-philippe.brucker@arm.com,
+ linux-arm-msm@vger.kernel.org, Joerg Roedel <joro@8bytes.org>,
+ Robin Murphy <robin.murphy@arm.com>, linux-kernel@vger.kernel.org,
+ iommu@lists.linux-foundation.org, dianders@chromimum.org, hoegsberg@google.com,
+ Zhen Lei <thunder.leizhen@huawei.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, baolu.lu@linux.intel.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jul 5, 2019 at 1:03 AM 'Peter Collingbourne' via Clang Built
-Linux <clang-built-linux@googlegroups.com> wrote:
->
-> RELR is a relocation packing format for relative relocations.
-> The format is described in a generic-abi proposal:
-> https://groups.google.com/d/topic/generic-abi/bX460iggiKg/discussion
+This series implements split pagetable support for arm-smmu-v2 devices. You have
+seen this code before as part of [1] but I split it from the other features
+to make it easier to review / merge.
 
-Cool, Rahul reports 9-19% savings for various userspace binaries.
-Just curious, but a quick scan makes it seem like this could be
-do-able for other arch's as well? (maybe a topic for a separate
-thread)
+This series adds a new format type to io-pgtable-arm to enable TTBR0 and
+TTBR1. Because of the way that the registers are mixed up it makes the most
+sense to enable them together instead of trying to create two different
+pagetables and merge them together later in the arm-smmu drive.
 
->
-> The LLD linker can be instructed to pack relocations in the RELR
-> format by passing the flag --pack-dyn-relocs=relr.
->
-> This patch adds a new config option, CONFIG_RELR. Enabling this option
-> instructs the linker to pack vmlinux's relative relocations in the RELR
-> format, and causes the kernel to apply the relocations at startup along
-> with the RELA relocations. RELA relocations still need to be applied
-> because the linker will emit RELA relative relocations if they are
-> unrepresentable in the RELR format (i.e. address not a multiple of 2).
->
-> Enabling CONFIG_RELR reduces the size of a defconfig kernel image
-> with CONFIG_RANDOMIZE_BASE by 3.5MB/16% uncompressed, or 550KB/5%
-> compressed (lz4).
+This will be used later by the drm/msm driver to enable split pagetables
+as part of the effort to implement per-context pagetables [2].
 
-Neat! Thanks for the patch; I'll try to get it tested this week to see
-if I can reproduce the results and boot test on hardware (I think
-llvm-nm has no known issues, I'll need to check llvm-objcopy).
+Thanks,
+Jordan
 
->
-> Signed-off-by: Peter Collingbourne <pcc@google.com>
-> ---
->  arch/arm64/Kconfig              |  9 +++++
->  arch/arm64/Makefile             |  4 ++
->  arch/arm64/kernel/head.S        | 70 ++++++++++++++++++++++++++++-----
->  arch/arm64/kernel/vmlinux.lds.S |  9 +++++
->  4 files changed, 83 insertions(+), 9 deletions(-)
->
-> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-> index 697ea05107298..f0cd0d2607e70 100644
-> --- a/arch/arm64/Kconfig
-> +++ b/arch/arm64/Kconfig
-> @@ -1447,6 +1447,15 @@ config RELOCATABLE
->           relocation pass at runtime even if the kernel is loaded at the
->           same address it was linked at.
->
-> +config RELR
-> +       bool "Use RELR relocation packing"
-> +       depends on RELOCATABLE && $(ld-option,--pack-dyn-relocs=relr)
+[1] https://patchwork.freedesktop.org/series/57441/
+[2] https://patchwork.freedesktop.org/patch/307616/?series=57441&rev=3
 
-Oh, ld-option in Kconfig? +Masahiro
+Jordan Crouse (3):
+  iommu: Add DOMAIN_ATTR_SPLIT_TABLES
+  iommu/io-pgtable-arm: Add support for AARCH64 split pagetables
+  iommu/arm-smmu: Add support for DOMAIN_ATTR_SPLIT_TABLES
 
-> +       help
-> +         Store the kernel's dynamic relocations in the RELR relocation packing
-> +         format. Requires a compatible linker (currently only LLD supports
-> +         this feature), as well as compatible NM and OBJCOPY utilities
-> +         (llvm-nm and llvm-objcopy are compatible).
-
-So sounds like `make LD=ld.lld NM=llvm-nm OBJCOPY=llvm-objcopy` will
-be needed to test.  The ld-option check above doesn't seem strong
-enough, but maybe it's not easy to feature test NM or OBJCOPY?
-
-> +
->  config RANDOMIZE_BASE
->         bool "Randomize the address of the kernel image"
->         select ARM64_MODULE_PLTS if MODULES
-> diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
-> index e9d2e578cbe67..16a8636f815c9 100644
-> --- a/arch/arm64/Makefile
-> +++ b/arch/arm64/Makefile
-> @@ -22,6 +22,10 @@ LDFLAGS_vmlinux              += -shared -Bsymbolic -z notext -z norelro \
->                         $(call ld-option, --no-apply-dynamic-relocs)
->  endif
->
-> +ifeq ($(CONFIG_RELR),y)
-> +  LDFLAGS_vmlinux += --pack-dyn-relocs=relr
-> +endif
-> +
->  ifeq ($(CONFIG_ARM64_ERRATUM_843419),y)
->    ifeq ($(call ld-option, --fix-cortex-a53-843419),)
->  $(warning ld does not support --fix-cortex-a53-843419; kernel may be susceptible to erratum)
-> diff --git a/arch/arm64/kernel/head.S b/arch/arm64/kernel/head.S
-> index 2cdacd1c141b9..9b27d5e7d8f70 100644
-> --- a/arch/arm64/kernel/head.S
-> +++ b/arch/arm64/kernel/head.S
-> @@ -102,6 +102,7 @@ pe_header:
->          *  x23        stext() .. start_kernel()  physical misalignment/KASLR offset
->          *  x28        __create_page_tables()     callee preserved temp register
->          *  x19/x20    __primary_switch()         callee preserved temp registers
-> +        *  x24        __primary_switch()         current RELR displacement
->          */
->  ENTRY(stext)
->         bl      preserve_boot_args
-> @@ -824,24 +825,63 @@ __relocate_kernel:
->          * Iterate over each entry in the relocation table, and apply the
->          * relocations in place.
->          */
-> -       ldr     w9, =__rela_offset              // offset to reloc table
-> -       ldr     w10, =__rela_size               // size of reloc table
-> -
->         mov_q   x11, KIMAGE_VADDR               // default virtual offset
->         add     x11, x11, x23                   // actual virtual offset
-> +
-> +       ldr     w9, =__rela_offset              // offset to reloc table
-> +       ldr     w10, =__rela_size               // size of reloc table
-
-Was this reordering intentional?  I don't think w9 or w10 would change
-across the mov_q and add above? Or is it just to match the loop update
-below?
-
->         add     x9, x9, x11                     // __va(.rela)
->         add     x10, x9, x10                    // __va(.rela) + sizeof(.rela)
->
->  0:     cmp     x9, x10
->         b.hs    1f
-> -       ldp     x11, x12, [x9], #24
-> -       ldr     x13, [x9, #-8]
-> -       cmp     w12, #R_AARCH64_RELATIVE
-> +       ldp     x12, x13, [x9], #24
-> +       ldr     x14, [x9, #-8]
-> +       cmp     w13, #R_AARCH64_RELATIVE
-
-Can you help me understand this renaming?
-x11 -> x12
-x13 -> x14
-x12 -> x13
-but they all get clobbered before use in your added ifdef hunk?
-
->         b.ne    0b
-> -       add     x13, x13, x23                   // relocate
-> -       str     x13, [x11, x23]
-> +       add     x14, x14, x23                   // relocate
-> +       str     x14, [x12, x23]
->         b       0b
-> -1:     ret
-> +
-> +1:
-> +#ifdef CONFIG_RELR
-> +       ldr     w9, =__relr_offset              // offset to reloc table
-> +       ldr     w10, =__relr_size               // size of reloc table
-
-Were these modified since first loaded in the above hunk?  I see the
-offsets applied below, but I don't spot any loops back up to `1:` (but
-could be missing it).  It also doesn't look like x11 or x10 are
-modified below (or above), so this looks like we're rematerializing
-values that already exist in those registers, IIUC?  Maybe I'm missing
-some side effect of one of the instructions?
-
-> +       add     x9, x9, x11                     // __va(.relr)
-> +       add     x10, x9, x10                    // __va(.relr) + sizeof(.relr)
-> +
-> +       sub     x15, x23, x24                   // delta from previous offset
-> +       cbz     x15, 7f                         // nothing to do if unchanged
-> +       mov     x24, x23                        // save new offset
-> +
-> +2:     cmp     x9, x10
-> +       b.hs    7f
-> +       ldr     x11, [x9], #8
-> +       tbnz    x11, #0, 3f                     // branch to handle bitmaps
-> +       add     x13, x11, x23
-> +       ldr     x12, [x13]                      // relocate address entry
-> +       add     x12, x12, x15
-> +       str     x12, [x13], #8                  // adjust to start of bitmap
-> +       b       2b
-> +
-> +3:     mov     x14, x13
-> +4:     lsr     x11, x11, #1
-> +       cbz     x11, 6f
-> +       tbz     x11, #0, 5f                     // skip bit if not set
-> +       ldr     x12, [x14]                      // relocate bit
-> +       add     x12, x12, x15
-> +       str     x12, [x14]
-> +
-> +5:     add     x14, x14, #8                    // move to next bit's address
-> +       b       4b
-> +
-> +6:     add     x13, x13, #(8 * 63)             // move to next bitmap's address
-
-Sorry, what's this constant `#(8 * 63)`?
-
-> +       b       2b
-> +
-> +7:
-> +#endif
-> +       ret
-> +
->  ENDPROC(__relocate_kernel)
->  #endif
->
-> @@ -854,6 +894,18 @@ __primary_switch:
->         adrp    x1, init_pg_dir
->         bl      __enable_mmu
->  #ifdef CONFIG_RELOCATABLE
-> +#ifdef CONFIG_RELR
-> +       /*
-> +        * RELR is similar to REL in that the addends are stored in place in the
-> +        * binary. This means that RELR relocations cannot be applied
-> +        * idempotently. We use x24 to keep track of the currently applied
-> +        * displacement so that we can correctly relocate if __relocate_kernel
-> +        * is called twice with non-zero displacements (i.e. if there is both a
-> +        * physical misalignment and a KASLR displacement). We start off at 0
-
-Sounds like I should test w/ and w/o CONFIG_RANDOMIZE_BASE enabled?
-
-> +        * because no displacement has been applied yet.
-> +        */
-> +       mov     x24, #0
-> +#endif
->         bl      __relocate_kernel
->  #ifdef CONFIG_RANDOMIZE_BASE
->         ldr     x8, =__primary_switched
-> diff --git a/arch/arm64/kernel/vmlinux.lds.S b/arch/arm64/kernel/vmlinux.lds.S
-> index 7fa0083749078..31716afa30f65 100644
-> --- a/arch/arm64/kernel/vmlinux.lds.S
-> +++ b/arch/arm64/kernel/vmlinux.lds.S
-> @@ -200,6 +200,15 @@ SECTIONS
->         __rela_offset   = ABSOLUTE(ADDR(.rela.dyn) - KIMAGE_VADDR);
->         __rela_size     = SIZEOF(.rela.dyn);
->
-> +#ifdef CONFIG_RELR
-> +       .relr.dyn : ALIGN(8) {
-> +               *(.relr.dyn)
-> +       }
-> +
-> +       __relr_offset   = ABSOLUTE(ADDR(.relr.dyn) - KIMAGE_VADDR);
-> +       __relr_size     = SIZEOF(.relr.dyn);
-> +#endif
-> +
->         . = ALIGN(SEGMENT_ALIGN);
->         __initdata_end = .;
->         __init_end = .;
-> --
+ drivers/iommu/arm-smmu.c       |  16 ++-
+ drivers/iommu/io-pgtable-arm.c | 261 +++++++++++++++++++++++++++++++++++++----
+ drivers/iommu/io-pgtable.c     |   1 +
+ include/linux/io-pgtable.h     |   2 +
+ include/linux/iommu.h          |   1 +
+ 5 files changed, 256 insertions(+), 25 deletions(-)
 
 -- 
-Thanks,
-~Nick Desaulniers
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
