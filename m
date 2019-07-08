@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D3876255A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 17:51:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 931D162560
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 17:51:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=7AeYjYasacNJXpyPtCXip76fdfyK6qrHHmzXvSWDtA4=; b=De60tBtvA/vIzbWJB29NZqs58q
-	giUuycL4RT6eHOVv+RFYjmSVWxxFB4xAZ1SyFg6owv7DHVdJWTb1CrWRlRBPPKUsRnQJdYQ73S+nC
-	JHFdTICRAjnAG84Dm6hyl9dAdNYbJOI9t0gjF7dCUTAVaYfAIvsN+XV9f3JnVNLufd9Gic2WHga3O
-	kFGd1XEhxSmhvkVefUCEBrYnFQO/0yrlU4Lei2uzsBITCeEyuGcjuZ2x5/97P5Deb+tZ2usjh/cTB
-	W8AsO4pG2HEF3c8Sgu83gqVvaVVeuz/F4WLwKBuxgSZ8Ma7Yxc4+b8M/dMZ2qgb7AFxvFLHBR5L1j
-	foklDWTg==;
+	bh=hAbFC6BnzC8/5MvgmlPelj83isLaPehzqWnpfsiozQE=; b=oIWreAiAzGHIUfeXRgYdf667ar
+	j1cpDUExtULgUA7V1v9PFciQODHZxay2e+3goWNzyWJxR/VbWXSFBp3gSNQtcEPsAlceQ05bUT0rG
+	O5iu3VuaXoYxj4T6wvE1v8v0XKzvNOw+n5xnDpA81KoxGgMLucQD3H+HkG0SeV/B0jXP88Y+v/kdr
+	Bqz6dAzSknnrh4mQhL+wxl/I6j6NzNsT3yNQaP20PqSf7B7ArQxGJZLr647hWeHkHBerFR2950EGx
+	MGkXmpgMXgOACcskstjvkQk6sLTZlp3cKhecNdSbVndH8BihMsyzK4mcj1pUN7Bt248zx21BAs1wG
+	kt2dWmqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkVuw-0007s1-R6; Mon, 08 Jul 2019 15:51:03 +0000
+	id 1hkVvD-00085r-48; Mon, 08 Jul 2019 15:51:19 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hkVru-00048A-9T
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 15:47:56 +0000
+ id 1hkVrv-0004HW-Vu
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 15:47:57 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0C12B360;
- Mon,  8 Jul 2019 08:47:54 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 428EDCFC;
+ Mon,  8 Jul 2019 08:47:55 -0700 (PDT)
 Received: from usa.arm.com (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id C750F3F59C;
- Mon,  8 Jul 2019 08:47:52 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 3FB5A3F59C;
+ Mon,  8 Jul 2019 08:47:54 -0700 (PDT)
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 10/11] firmware: arm_scmi: Drop config flag in
- clk_ops->rate_set
-Date: Mon,  8 Jul 2019 16:47:29 +0100
-Message-Id: <20190708154730.16643-11-sudeep.holla@arm.com>
+Subject: [PATCH 11/11] firmware: arm_scmi: Use asynchronous CLOCK_RATE_SET
+ when possible
+Date: Mon,  8 Jul 2019 16:47:30 +0100
+Message-Id: <20190708154730.16643-12-sudeep.holla@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190708154730.16643-1-sudeep.holla@arm.com>
 References: <20190708154730.16643-1-sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_084754_581780_A6CEC90D 
-X-CRM114-Status: GOOD (  11.91  )
+X-CRM114-CacheID: sfid-20190708_084756_181592_ACB19E3D 
+X-CRM114-Status: GOOD (  12.94  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -60,10 +60,10 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peng Fan <peng.fan@nxp.com>, Stephen Boyd <sboyd@kernel.org>,
- linux-kernel@vger.kernel.org, Bo Zhang <bozhang.zhang@broadcom.com>,
+Cc: Peng Fan <peng.fan@nxp.com>, linux-kernel@vger.kernel.org,
+ Bo Zhang <bozhang.zhang@broadcom.com>,
  Jim Quinlan <james.quinlan@broadcom.com>, Sudeep Holla <sudeep.holla@arm.com>,
- Volodymyr Babchuk <volodymyr_babchuk@epam.com>, linux-clk@vger.kernel.org
+ Volodymyr Babchuk <volodymyr_babchuk@epam.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -75,66 +75,74 @@ number of pending asynchronous clock rate changes supported by the
 platform. If it's non-zero, then we should be able to use asynchronous
 clock rate set for any clocks until the maximum limit is reached.
 
-In order to add that support, let's drop the config flag passed to
-clk_ops->rate_set and handle the asynchronous requests dynamically.
+Keeping the current count of pending asynchronous clock set rate
+requests, we can decide if we can you asynchronous request for the
+incoming/new request.
 
-Cc: Stephen Boyd <sboyd@kernel.org>
-Cc: linux-clk@vger.kernel.org
 Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 ---
- drivers/clk/clk-scmi.c            | 2 +-
- drivers/firmware/arm_scmi/clock.c | 4 ++--
- include/linux/scmi_protocol.h     | 2 +-
- 3 files changed, 4 insertions(+), 4 deletions(-)
+ drivers/firmware/arm_scmi/clock.c | 21 ++++++++++++++++++---
+ 1 file changed, 18 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/clk/clk-scmi.c b/drivers/clk/clk-scmi.c
-index a2287c770d5c..886f7c5df51a 100644
---- a/drivers/clk/clk-scmi.c
-+++ b/drivers/clk/clk-scmi.c
-@@ -69,7 +69,7 @@ static int scmi_clk_set_rate(struct clk_hw *hw, unsigned long rate,
- {
- 	struct scmi_clk *clk = to_scmi_clk(hw);
- 
--	return clk->handle->clk_ops->rate_set(clk->handle, clk->id, 0, rate);
-+	return clk->handle->clk_ops->rate_set(clk->handle, clk->id, rate);
- }
- 
- static int scmi_clk_enable(struct clk_hw *hw)
 diff --git a/drivers/firmware/arm_scmi/clock.c b/drivers/firmware/arm_scmi/clock.c
-index 0a194af92438..dd215bd11a58 100644
+index dd215bd11a58..70044b7c812e 100644
 --- a/drivers/firmware/arm_scmi/clock.c
 +++ b/drivers/firmware/arm_scmi/clock.c
-@@ -218,7 +218,7 @@ scmi_clock_rate_get(const struct scmi_handle *handle, u32 clk_id, u64 *value)
- }
+@@ -56,7 +56,7 @@ struct scmi_msg_resp_clock_describe_rates {
+ struct scmi_clock_set_rate {
+ 	__le32 flags;
+ #define CLOCK_SET_ASYNC		BIT(0)
+-#define CLOCK_SET_DELAYED	BIT(1)
++#define CLOCK_SET_IGNORE_RESP	BIT(1)
+ #define CLOCK_SET_ROUND_UP	BIT(2)
+ #define CLOCK_SET_ROUND_AUTO	BIT(3)
+ 	__le32 id;
+@@ -67,6 +67,7 @@ struct scmi_clock_set_rate {
+ struct clock_info {
+ 	int num_clocks;
+ 	int max_async_req;
++	atomic_t cur_async_req;
+ 	struct scmi_clock_info *clk;
+ };
  
- static int scmi_clock_rate_set(const struct scmi_handle *handle, u32 clk_id,
--			       u32 config, u64 rate)
-+			       u64 rate)
+@@ -221,21 +222,35 @@ static int scmi_clock_rate_set(const struct scmi_handle *handle, u32 clk_id,
+ 			       u64 rate)
  {
  	int ret;
++	u32 flags = 0;
  	struct scmi_xfer *t;
-@@ -230,7 +230,7 @@ static int scmi_clock_rate_set(const struct scmi_handle *handle, u32 clk_id,
+ 	struct scmi_clock_set_rate *cfg;
++	struct clock_info *ci = handle->clk_priv;
+ 
+ 	ret = scmi_xfer_get_init(handle, CLOCK_RATE_SET, SCMI_PROTOCOL_CLOCK,
+ 				 sizeof(*cfg), 0, &t);
+ 	if (ret)
  		return ret;
  
++	if (ci->max_async_req) {
++		if (atomic_inc_return(&ci->cur_async_req) < ci->max_async_req)
++			flags |= CLOCK_SET_ASYNC;
++		else
++			atomic_dec(&ci->cur_async_req);
++	}
++
  	cfg = t->tx.buf;
--	cfg->flags = cpu_to_le32(config);
-+	cfg->flags = cpu_to_le32(0);
+-	cfg->flags = cpu_to_le32(0);
++	cfg->flags = cpu_to_le32(flags);
  	cfg->id = cpu_to_le32(clk_id);
  	cfg->value_low = cpu_to_le32(rate & 0xffffffff);
  	cfg->value_high = cpu_to_le32(rate >> 32);
-diff --git a/include/linux/scmi_protocol.h b/include/linux/scmi_protocol.h
-index 1be16d7730e2..1694ee1b410e 100644
---- a/include/linux/scmi_protocol.h
-+++ b/include/linux/scmi_protocol.h
-@@ -71,7 +71,7 @@ struct scmi_clk_ops {
- 	int (*rate_get)(const struct scmi_handle *handle, u32 clk_id,
- 			u64 *rate);
- 	int (*rate_set)(const struct scmi_handle *handle, u32 clk_id,
--			u32 config, u64 rate);
-+			u64 rate);
- 	int (*enable)(const struct scmi_handle *handle, u32 clk_id);
- 	int (*disable)(const struct scmi_handle *handle, u32 clk_id);
- };
+ 
+-	ret = scmi_do_xfer(handle, t);
++	if (flags & CLOCK_SET_ASYNC) {
++		ret = scmi_do_xfer_with_response(handle, t);
++		atomic_dec(&ci->cur_async_req);
++	} else {
++		ret = scmi_do_xfer(handle, t);
++	}
+ 
+ 	scmi_xfer_put(handle, t);
+ 	return ret;
 -- 
 2.17.1
 
