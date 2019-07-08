@@ -2,87 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 50D656259F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 18:06:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7684A62586
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 18:01:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Hp3EhLFhEAuAV1g/vvzmQDi1oiNVJhMQgA6CbBMLvbo=; b=FXkya4hf11ciHX
-	+2YrqQRKtaLOQz/hd2lDvFuTUqZYUVlHNeipiO9xm62En/fl6U3kizDUGlojg83EiB2DVn0O6jaUA
-	D53c+8+iReanvWE1w5YHN3vEwDC6penPLVLATl4Rvq2jK8qYuyixUqck+cRRk+JKa+U5LtBLHb0ly
-	aML+cvWVnSO6jhtY8jxP3pWFN2d6/ArLSXor5yh2vRyh5TJpAt7wI1TLFpfYtgn1tTLUEijp5I0zz
-	hBzP6ROu3KqZc1OJVAo9ImTP4teO3Vt8NS/vlHhzVRMDGrIUHawkqmdgu79aVBDpDlx06ZEG8XM+R
-	MXhyX3o9szLv/hWBQOhw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=w6PPCk4GZzqRY5MtuCqya3y/ce8b8ch7k0dM/bSD8uo=; b=YWLP1/o2MYJ/gr
+	aBM/EAkSzdWa2dNiHKioaCwTdpKtO7Da0MZWebxxxkic625mxsNyOVqLJiLTnH/Wti1ebs1SvN7Hb
+	7Pc9ZU6/65zmCGaB7nR6OFpjQi6Q7rTQUdkpVFF7ACDdGTb6PLFksAh6DB5f9c7V0GgiNgn8tviVG
+	C0DEFH7c03/Klv2w+yurRKtDkYuiaf3j+C8FV4FzLs4S9Dc+6UMpmhEqgXDppK2Tw1RceErgxhofh
+	zog8BHz7+C9byVhGH5PEa+MtDzYLcv29wGEQQbGVUvd9EmVoFZaZ67JHDuVLWEIqK1LBtre3pSj7c
+	s1XC8Vk1cAn8HlRq7meA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkW9N-0006Mr-Sn; Mon, 08 Jul 2019 16:05:57 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1hkW4g-000469-5F; Mon, 08 Jul 2019 16:01:06 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkW8s-0006C5-Ja
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 16:05:28 +0000
-Received: by mail-io1-xd44.google.com with SMTP id g20so15339245ioc.12
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 08 Jul 2019 09:05:25 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=tMCiFsRLDuW6geBulr3EjyW7t17T9yVxinnBG4xjmyE=;
- b=OXbjFpWmkvpDp2y6eTwPwQeZzYHFJ41RVnrCR/bBnbn3zmrcjD44kQV6AOejyYbCET
- Xw1BD5zUF87gnasL9QHVthJWk8/FVdH2b4ELdIR34m4lfjlZPKmCl70qe5p2QRmHi8nA
- uP0SYDtYKhdyMH1ZypI3iFmOV4Bcv5ysoSlXw=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=tMCiFsRLDuW6geBulr3EjyW7t17T9yVxinnBG4xjmyE=;
- b=LUNCCxMga7zoPWqarZkhb21798/4tiP8lwpkPTOgEFPpVGAYGNJy54A0eLPRwtBVel
- VRCSYJjSsWt38Xnt+mLdwxttsXns4A0TUuYQdgwLC8UiJSStNka/b3n3jsEPoDl75brg
- zx9SD8Zhzaw/LlY+7RUyEyKuHPCqcww7xPVdhv+NmbG+zwI3JkDhWOI8BY3zTg0EiQHo
- 5SERKGmVPJF44+xcthz4JeIVR46T6BFIxN9nQ0zuWHZ1PKhhCg+KMHFAmR4fykamkNrm
- Ju7TIWmyPuT+uxIHS6cOHiVeyc4/mz2F5VUzC8y1L/awXXhmRFu4rU+1XdQhlC7rRU3l
- VV9g==
-X-Gm-Message-State: APjAAAUAN+41lSkCHrFr86qPVkygcGy+v5QTY/zFr2pPV46DG8JmjNLt
- leFbZ/8SWQd+0kE7CLrvsBRTj1TAYxg=
-X-Google-Smtp-Source: APXvYqwAJMHOeVag8IEwo6X698fySiEa/QwZt5oDGWXYniggPxFFXGH2H4dSLusZ1GDZlmGEa+plTw==
-X-Received: by 2002:a05:6602:1d2:: with SMTP id
- w18mr20162697iot.157.1562601925286; 
- Mon, 08 Jul 2019 09:05:25 -0700 (PDT)
-Received: from mail-io1-f44.google.com (mail-io1-f44.google.com.
- [209.85.166.44])
- by smtp.gmail.com with ESMTPSA id t14sm16474945ioi.60.2019.07.08.09.05.25
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Mon, 08 Jul 2019 09:05:25 -0700 (PDT)
-Received: by mail-io1-f44.google.com with SMTP id j6so36469819ioa.5
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 08 Jul 2019 09:05:25 -0700 (PDT)
-X-Received: by 2002:a5e:8f08:: with SMTP id c8mr20045788iok.52.1562601529525; 
- Mon, 08 Jul 2019 08:58:49 -0700 (PDT)
+ id 1hkW47-0003w0-7S
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 16:00:33 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x68FxVoL125385;
+ Mon, 8 Jul 2019 10:59:31 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1562601571;
+ bh=WYMtImaCxAOoIyA7/35xcxJIjFE/oBu67J2Df3jze4w=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=BwqSOM3NdjWVOMhRyEoDP0f5NuJ8YLHB9C1WL6enHdk2sGL2ro7MUrskBFCG3kosc
+ nHo18CpXHmQMlCUW/Fezva/pbGSCKu1p1Jy5piFwr6vm6buVyPEVHGgRXVW9PMD+V6
+ zH6+l/naVaNO1yciCFl47hQL0dMKyIftVbj4CLQc=
+Received: from DFLE115.ent.ti.com (dfle115.ent.ti.com [10.64.6.36])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x68FxV3A100427
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Mon, 8 Jul 2019 10:59:31 -0500
+Received: from DFLE113.ent.ti.com (10.64.6.34) by DFLE115.ent.ti.com
+ (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Mon, 8 Jul
+ 2019 10:59:30 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE113.ent.ti.com
+ (10.64.6.34) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Mon, 8 Jul 2019 10:59:30 -0500
+Received: from [128.247.58.153] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x68FxUrw088409;
+ Mon, 8 Jul 2019 10:59:30 -0500
+Subject: Re: [PATCH 1/6] dt-bindings: irqchip: Add PRUSS interrupt controller
+ bindings
+To: "Andrew F. Davis" <afd@ti.com>, Marc Zyngier <marc.zyngier@arm.com>, Rob
+ Herring <robh+dt@kernel.org>, Thomas Gleixner <tglx@linutronix.de>, Jason
+ Cooper <jason@lakedaemon.net>
+References: <20190708035243.12170-1-s-anna@ti.com>
+ <20190708035243.12170-2-s-anna@ti.com>
+ <b67e8ce6-a291-ce4c-9972-b7fc7cd08bb4@ti.com>
+From: Suman Anna <s-anna@ti.com>
+Message-ID: <53868885-a78d-448a-1f2a-03a16251d028@ti.com>
+Date: Mon, 8 Jul 2019 10:59:30 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-References: <20190401171724.215780-1-dianders@chromium.org>
- <CAD=FV=Vi2C7s2oWBDD0n+HK=_SuBYhRM9saMK-y6Qa0+k-g17w@mail.gmail.com>
- <20190628171342.GA2238@ravnborg.org> <2169143.hEFa8b2HQR@diego>
-In-Reply-To: <2169143.hEFa8b2HQR@diego>
-From: Doug Anderson <dianders@chromium.org>
-Date: Mon, 8 Jul 2019 08:58:41 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=U3Wj8vaZcQLmkfX6zgjVFEra+GrHMH3OCs5QQ_-tM4hw@mail.gmail.com>
-Message-ID: <CAD=FV=U3Wj8vaZcQLmkfX6zgjVFEra+GrHMH3OCs5QQ_-tM4hw@mail.gmail.com>
-Subject: Re: [PATCH v5 0/7] drm/panel: simple: Add mode support to devicetree
-To: =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>
+In-Reply-To: <b67e8ce6-a291-ce4c-9972-b7fc7cd08bb4@ti.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_090526_729452_45F8BA6C 
-X-CRM114-Status: GOOD (  21.55  )
-X-Spam-Score: 1.1 (+)
+X-CRM114-CacheID: sfid-20190708_090031_394590_8E071BA3 
+X-CRM114-Status: GOOD (  28.77  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.1 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -92,7 +84,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -105,56 +96,215 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Brian Norris <briannorris@chromium.org>, David Airlie <airlied@linux.ie>,
- Viresh Kumar <viresh.kumar@linaro.org>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- LKML <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Ezequiel Garcia <ezequiel@collabora.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Thierry Reding <thierry.reding@gmail.com>, Sean Paul <seanpaul@chromium.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Boris Brezillon <boris.brezillon@collabora.com>,
- =?UTF-8?Q?Enric_Balletb=C3=B2?= <enric.balletbo@collabora.com>,
- Klaus Goger <klaus.goger@theobroma-systems.com>,
- Sam Ravnborg <sam@ravnborg.org>, Matthias Kaehlcke <mka@chromium.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, Grygorii Strashko <grygorii.strashko@ti.com>,
+ David Lechner <david@lechnology.com>, Tony Lindgren <tony@atomide.com>,
+ Sekhar Nori <nsekhar@ti.com>, linux-kernel@vger.kernel.org,
+ Lokesh Vutla <lokeshvutla@ti.com>, Murali Karicheri <m-karicheri2@ti.com>,
+ linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Roger Quadros <rogerq@ti.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgU2FtLAoKT24gU2F0LCBKdW4gMjksIDIwMTkgYXQgNzowOSBBTSBIZWlrbyBTdMO8Ym5lciA8
-aGVpa29Ac250ZWNoLmRlPiB3cm90ZToKPgo+IEhpIFNhbSwKPgo+IEFtIEZyZWl0YWcsIDI4LiBK
-dW5pIDIwMTksIDE5OjEzOjQyIENFU1Qgc2NocmllYiBTYW0gUmF2bmJvcmc6Cj4gPiBIaSBEb3Vn
-Lgo+ID4KPiA+ID4gU2FtOiBPaCEgIEkgaGFkbid0IG5vdGljZWQgdGhhdCB5b3UndmUgYmVlbiBh
-ZGRlZCBhcyBhIHBhbmVsCj4gPiA+IG1haW50YWluZXIgaW4gY29tbWl0IGVmMGRiOTRmOTRhMCAo
-Ik1BSU5UQUlORVJTOiBBZGQgU2FtIGFzIHJldmlld2VyCj4gPiA+IGZvciBkcm0vcGFuZWwiKS4g
-IERvZXMgdGhhdCBtZWFuIHlvdSBhcmUgYWJsZSB0byBwcm92aWRlIHNvbWUgYWR2aWNlCj4gPiA+
-IGZvciBob3cgdG8gbGFuZCB0aGlzIHNlcmllcz8KPiA+IFJldmlld2VyIG9ubHksIG5vdCBtYWlu
-dGFpbmVyLi4uLgo+ID4KPiA+IEl0IGlzIG9uIG15IFRPRE8gbGlzdCBmb3IgdGhlIHdlZWtlbmQg
-dG8gZ28gdGhyb3VnaCB0aGUgcGF0Y2ggc2V0IGluCj4gPiBkZXRhaWxzIGFuZCBwcm92aWRlIGZl
-ZWRiYWNrLiBJIGhhdmUgcmVhZCB0aGVtIGJlZm9yZSwgYnV0IEkgbWlzcyB0byBkbwo+ID4gYSBt
-b3JlIGRldGFpbGVkIHJlYWQgdGhyb3VnaC4KPiA+Cj4gPiBCdXQgSSBjYW5ub3QgYXBwbHkgdGhp
-cyB1bmxlc3MgVGhpZXJyeSBvciBvbmUgb2YgdGhlIERSTSBtYWludGFpbmVycwo+ID4gYWNrIGl0
-Lgo+ID4gV2Ugc2ltcGx5IG5lZWQgc29tZW9uZSB3aXRoIGEgYmV0dGVyIGdlbmVyYWwga25vd2xl
-ZGdlIG9mIERSTSB0byBhY2sgaXQKPiA+IHRoYW4gSSBoYXZlLgo+Cj4gU28gVGhpZXJyeSB3YXMg
-YWJsZSB0byBsb29rIGF0IHRoZSBwYXRjaGVzIHllc3RlcmRheSBpdCBzZWVtcyBhbmQgaGFzIEFj
-a2VkCj4gYWxsIHRoZSByZWxldmFudCBvbmVzLiBBcyBhIGRybS1taXNjLWNvbnRyaWJ1dG9yIEkg
-Y291bGQgYWxzbyBhcHBseSB0aGVtCj4gbXlzZWxmLCBidXQgbm93IGRvbid0IHdhbnQgdG8gcHJl
-ZW1wdCBhbnkgYWRkaXRpb25hbCBjb21tZW50cyB5b3UgbWlnaHQKPiBoYXZlIDstKSAuIFNvIEkg
-Z3Vlc3MgbXkgcXVlc3Rpb24gd291bGQgYmUgaWYgeW91IHN0aWxsIHdhbnQgdG8gZG8gYSByZXZp
-ZXcKPiBvciBpZiBJIHNob3VsZCBhcHBseSB0aGVtLgoKSG9wZWZ1bGx5IHlvdSBzYXcsIGJ1dCBJ
-IHJlc3BvbmRlZCB0byBhbGwgb2YgeW91ciByZXZpZXcgZmVlZGJhY2suICBJbgp0aGUgZW5kLCBJ
-IHRob3VnaHQgaXQnZCBiZSBPSyB0byBsYW5kIHRoZSBzZXJpZXMgYXMtaXMgYW5kIEkgY2FuIGZp
-eAp1cCBuaXRzIGluIGEgZm9sbG93LXVwIHNlcmllcywgdGhvdWdoIEknbSB3YWl0aW5nIGZvciB5
-b3VyIHJlc3BvbnNlcwp0byBhIGNvdXBsZSBxdWVzdGlvbnMgZmlyc3QuCgpJdCB3b3VsZCBiZSBp
-ZGVhbCBpZiB5b3UgY291bGQgY29uZmlybSB0aGF0IHlvdSdyZSBPSyB3aXRoIHRoaXMgcGxhbgpl
-dmVuIGlmIHlvdSBkb24ndCBoYXZlIHRpbWUgdG8gcmVzcG9uZCBpbiBkZXRhaWwgdG8gbXkgZW1h
-aWxzIHlldC4gIEkKdGhpbmsgSGVpa28gY2FuIGxhbmQgdGhlbSBhbGwgdGhyb3VnaCB0aGUgYXBw
-cm9wcmlhdGUgY2hhbm5lbHMgc2luY2UKdGhlIHBhdGNoZXMgaGF2ZSBhbGwgdGhlIHByb3BlciBB
-Y2tzLgoKVGhhbmtzIQoKLURvdWcKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJu
-ZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hi Andrew,
+
+On 7/8/19 9:34 AM, Andrew F. Davis wrote:
+> On 7/7/19 11:52 PM, Suman Anna wrote:
+>> The Programmable Real-Time Unit Subsystem (PRUSS) contains an interrupt
+>> controller (INTC) that can handle various system input events and post
+>> interrupts back to the device-level initiators. The INTC can support
+>> upto 64 input events on most SoCs with individual control configuration
+>> and hardware prioritization. These events are mapped onto 10 interrupt
+>> lines through two levels of many-to-one mapping support. Different
+>> interrupt lines are routed to the individual PRU cores or to the
+>> host CPU or to other PRUSS instances.
+>>
+>> The K3 AM65x and J721E SoCs have the next generation of the PRU-ICSS IP,
+>> commonly called ICSSG. The ICSSG interrupt controller on K3 SoCs provide
+>> a higher number of host interrupts (20 vs 10) and can handle an increased
+>> number of input events (160 vs 64) from various SoC interrupt sources.
+>>
+>> Add the bindings document for these interrupt controllers on all the
+>> applicable SoCs. It covers the OMAP architecture SoCs - AM33xx, AM437x
+>> and AM57xx; the Keystone 2 architecture based 66AK2G SoC; the Davinci
+>> architecture based OMAPL138 SoCs, and the K3 architecture based AM65x
+>> and J721E SoCs.
+>>
+>> Signed-off-by: Suman Anna <s-anna@ti.com>
+>> Signed-off-by: Andrew F. Davis <afd@ti.com>
+>> Signed-off-by: Roger Quadros <rogerq@ti.com>
+>> ---
+>> Prior version: https://patchwork.kernel.org/patch/10795771/
+>>
+>>  .../interrupt-controller/ti,pruss-intc.txt    | 92 +++++++++++++++++++
+>>  1 file changed, 92 insertions(+)
+>>  create mode 100644 Documentation/devicetree/bindings/interrupt-controller/ti,pruss-intc.txt
+>>
+>> diff --git a/Documentation/devicetree/bindings/interrupt-controller/ti,pruss-intc.txt b/Documentation/devicetree/bindings/interrupt-controller/ti,pruss-intc.txt
+>> new file mode 100644
+>> index 000000000000..020073c07a92
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/interrupt-controller/ti,pruss-intc.txt
+>> @@ -0,0 +1,92 @@
+>> +PRU ICSS INTC on TI SoCs
+>> +========================
+>> +
+>> +Each PRUSS has a single interrupt controller instance that is common to both
+>> +the PRU cores. Most interrupt controllers can route 64 input events which are
+>> +then mapped to 10 possible output interrupts through two levels of mapping.
+>> +The input events can be triggered by either the PRUs and/or various other
+>> +PRUSS internal and external peripherals. The first 2 output interrupts are
+>> +fed exclusively to the internal PRU cores, with the remaining 8 (2 through 9)
+>> +connected to external interrupt controllers including the MPU and/or other
+>> +PRUSS instances, DSPs or devices.
+>> +
+>> +The K3 family of SoCs can handle 160 input events that can be mapped to 20
+>> +different possible output interrupts. The additional output interrupts (10
+>> +through 19) are connected to new sub-modules within the ICSSG instances.
+>> +
+>> +This interrupt-controller node should be defined as a child node of the
+>> +corresponding PRUSS node. The node should be named "interrupt-controller".
+>> +Please see the overall PRUSS bindings document for additional details
+>> +including a complete example,
+>> +    Documentation/devicetree/bindings/soc/ti/ti,pruss.txt
+>> +
+>> +Required Properties:
+>> +--------------------
+>> +- compatible           : should be one of the following,
+>> +                             "ti,pruss-intc" for OMAP-L13x/AM18x/DA850 SoCs,
+>> +                                                 AM335x family of SoCs,
+>> +                                                 AM437x family of SoCs,
+>> +                                                 AM57xx family of SoCs
+>> +                                                 66AK2G family of SoCs
+>> +                             "ti,icssg-intc" for K3 AM65x & J721E family of SoCs
+>> +- reg                  : base address and size for the PRUSS INTC sub-module
+>> +- interrupts           : all the interrupts generated towards the main host
+>> +                         processor in the SoC. The format depends on the
+>> +                         interrupt specifier for the particular SoC's ARM GIC
+>> +                         parent interrupt controller. A shared interrupt can
+>> +                         be skipped if the desired destination and usage is by
+>> +                         a different processor/device.
+>> +- interrupt-names      : should use one of the following names for each valid
+>> +                         interrupt connected to ARM GIC, the name should match
+>> +                         the corresponding host interrupt number,
+>> +                             "host0", "host1", "host2", "host3", "host4",
+>> +                             "host5", "host6" or "host7"
+>> +- interrupt-controller : mark this node as an interrupt controller
+>> +- #interrupt-cells     : should be 1. Client users shall use the PRU System
+>> +                         event number (the interrupt source that the client
+>> +                         is interested in) as the value of the interrupts
+>> +                         property in their node
+>> +
+>> +Optional Properties:
+>> +--------------------
+>> +The following properties are _required_ only for some SoCs. If none of the below
+>> +properties are defined, it implies that all the host interrupts 2 through 9 are
+>> +connected exclusively to the ARM GIC.
+>> +
+>> +- ti,irqs-reserved     : an array of 8-bit elements of host interrupts between
+>> +                         0 and 7 (corresponding to PRUSS INTC output interrupts
+>> +                         2 through 9) that are not connected to the ARM GIC.
+> 
+> The reason for 0-7 mapping to 2-9 is not instantly clear to someone
+> reading this. If you respin this could you note that reason is
+> interrupts 0 and 1 are always routed back into the PRUSS. 
+
+Yeah, this is always going to be somewhat confusing since the driver has
+to deal with all hosts from channel-mapping perspective, but only the 8
+interrupts at most that reach MPU for handling interrupts. TRM has
+
+Anyway, I have already mentioned the first 2 interrupt routing in the
+first paragraph above.
+
+Thinking more
+> on that, the same is true for interrupt 7 ("host5") on AM437x/66AK2G yet
+> we don't skip that in the naming.. now that we have the reserved IRQ
+> mechanism above, why not leave the one-to-one interrupt to name mapping,
+> but always have at least the first two marked as reserved for all the
+> current devices:
+> 
+> ti,irqs-reserved = /bits/ 8 <0 1>;
+> 
+> Then any "hostx" listed as reserved need not be present in the host
+> interrupts property array. To me that would solve the "managing
+> interrupts not targeting the Linux running core" problem and keep the
+> names consistent, e.g.:
+
+I had actually used the interrupt-names always starting from "host2"
+through "host9" (names from PRU perspective) previously, and I have
+changed this to start indexing from 0 in this series to address an
+internal review comment from Grygorii and to align with TRM. All the
+TRMs (except for AM572x) actually use the names/signals "host_intr0",
+"host_intr1".."host_intr7" etc for the interrupts going towards MPU.
+Maybe I should actually rename the interrupt-names to be host_intrX
+instead of hostX to avoid confusion and be exactly aligned with the TRM
+names. I will file a bug against AM57xx TRM to align the names with all
+other SoC TRMs.
+
+I am using "output interrupt lines" to imply names w.r.t PRU vs "host
+interrupt" to imply ARM GIC names.
+
+regards
+Suman
+
+> 
+> /* AM437x PRU-ICSS */
+> pruss_intc: interrupt-controller@20000 {
+> 	compatible = "ti,pruss-intc";
+> 	reg = <0x20000 0x2000>;
+> 	interrupts = <                       20       21       22
+> 	                   23       24                25       26>;
+> 	interrupt-names =                   "host2", "host3", "host4",
+> 	                  "host5", "host6",          "host8", "host9";
+> 	interrupt-controller;
+> 	#interrupt-cells = <1>;
+> 	ti,irqs-reserved = /bits/ 8 <0 1 7>;
+> };
+> 
+> Instantly clear which are missing and which "hostx" maps to which host
+> interrupt number.
+> 
+> Andrew
+> 
+>> +                           Eg: AM437x and 66AK2G SoCs do not have "host5"
+>> +                               interrupt connected to MPU
+>> +- ti,irqs-shared       : an array of 8-bit elements of host interrupts between
+>> +                         0 and 7 (corresponding to PRUSS INTC output interrupts
+>> +                         2 through 9) that are also connected to other devices
+>> +                         or processors in the SoC.
+>> +                           Eg: AM65x and J721E SoCs have "host5", "host6" and
+>> +                               "host7" interrupts connected to MPU, and other
+>> +                               ICSSG instances
+>> +
+>> +
+>> +Example:
+>> +--------
+>> +
+>> +1.	/* AM33xx PRU-ICSS */
+>> +	pruss: pruss@0 {
+>> +		compatible = "ti,am3356-pruss";
+>> +		reg = <0x0 0x80000>;
+>> +		#address-cells = <1>;
+>> +		#size-cells = <1>;
+>> +		...
+>> +
+>> +		pruss_intc: interrupt-controller@20000 {
+>> +			compatible = "ti,pruss-intc";
+>> +			reg = <0x20000 0x2000>;
+>> +			interrupts = <20 21 22 23 24 25 26 27>;
+>> +			interrupt-names = "host0", "host1", "host2",
+>> +					  "host3", "host4", "host5",
+>> +					  "host6", "host7";
+>> +			interrupt-controller;
+>> +			#interrupt-cells = <1>;
+>> +			ti,irqs-shared = /bits/ 8 <0 6 7>;
+>> +		};
+>> +	};
+>>
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
