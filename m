@@ -2,50 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24A3662671
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 18:34:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 735BB62675
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 18:37:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SSpOfVXPHWWry7E/yRmRUEedAO/HZCK5ADF/m42xfmA=; b=GBybTryCxLyutV
-	k+jinSn9loq8sVFoFAtlEQCLGpcW8pi/EdnC/oBzUjSKmA1SdTxy91/8XRnZiZSuucLI5oyWGUEYy
-	fjd6jQtrYb8w3+fgHc4gQyVl1EdorI0hEjhryMOBR6wPlz16kaq0spUZnV8f/XIpW79141d16GXYg
-	xjadhUTEJCwCv1NmlrEgOWdRTjOTX+n7t7GvwX8NFbJ/3u3Ijl1cY/4h8BiR+Dyr4TQAN2QFG2mmq
-	hBoFeCdgVV23wzwYUQ0qN/hc6iszcF6+3MqvyCjPkP+nhQ4Qn58rRA0YODR9++LMBW7bhkuyRUdaR
-	bBWPBS9mAruMfrEfqqYg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Bzu6a1DIg7P/6wREqT6mkCfipqkIOPb73VNlEATi4gw=; b=VRW
+	VCAIPgksko0WAzLmU7bqLrQ1q8ZlN4gQTFtKumuxkRummds13D4gZ+r/jfPg99owpMDaIAYbYW/1R
+	iXbPWQGzDUWDfMKxMZXieiybTwYL8TEkeSS3Dd3dTw/iO1SgF4MzpaB854cKQvcoroMpL2WbhqCXF
+	2KjBMdO4dXnRvPWJa7W2Vb8X0M/QyHDRUW5SE/NXlukGo2gTsnRWlm7em1U73G1nCv7hPFvKFhQjB
+	4kr/LV4C0kvax0O4+a8pacLeSslBBv7uLhGIlBiSMr5z4hV7g8+tLObbPY9jsnJovITBWRol83CnJ
+	gFzg4Zbaz0UDJy7dMzMAa5K+bDICpcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkWas-00088N-3f; Mon, 08 Jul 2019 16:34:22 +0000
-Received: from relay.sw.ru ([185.231.240.75])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkWaM-00086R-Bg; Mon, 08 Jul 2019 16:33:52 +0000
-Received: from [172.16.25.12] by relay.sw.ru with esmtp (Exim 4.92)
- (envelope-from <aryabinin@virtuozzo.com>)
- id 1hkWa8-00028e-L6; Mon, 08 Jul 2019 19:33:36 +0300
-Subject: Re: [PATCH v3] kasan: add memory corruption identification for
- software tag-based mode
-To: Dmitry Vyukov <dvyukov@google.com>, Walter Wu <walter-zh.wu@mediatek.com>
-References: <20190613081357.1360-1-walter-zh.wu@mediatek.com>
- <da7591c9-660d-d380-d59e-6d70b39eaa6b@virtuozzo.com>
- <1560447999.15814.15.camel@mtksdccf07> <1560479520.15814.34.camel@mtksdccf07>
- <1560744017.15814.49.camel@mtksdccf07>
- <CACT4Y+Y3uS59rXf92ByQuFK_G4v0H8NNnCY1tCbr4V+PaZF3ag@mail.gmail.com>
- <1560774735.15814.54.camel@mtksdccf07> <1561974995.18866.1.camel@mtksdccf07>
- <CACT4Y+aMXTBE0uVkeZz+MuPx3X1nESSBncgkScWvAkciAxP1RA@mail.gmail.com>
-From: Andrey Ryabinin <aryabinin@virtuozzo.com>
-Message-ID: <ebc99ee1-716b-0b18-66ab-4e93de02ce50@virtuozzo.com>
-Date: Mon, 8 Jul 2019 19:33:41 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
-MIME-Version: 1.0
-In-Reply-To: <CACT4Y+aMXTBE0uVkeZz+MuPx3X1nESSBncgkScWvAkciAxP1RA@mail.gmail.com>
-Content-Language: en-US
+	id 1hkWdZ-0001Fg-LB; Mon, 08 Jul 2019 16:37:10 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hkWdD-0001FL-Ic
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 16:36:49 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0AFC2360;
+ Mon,  8 Jul 2019 09:36:47 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 3C93D3F246;
+ Mon,  8 Jul 2019 09:36:46 -0700 (PDT)
+From: Mark Rutland <mark.rutland@arm.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] arm64: remove pointless __KERNEL__ guards
+Date: Mon,  8 Jul 2019 17:36:40 +0100
+Message-Id: <20190708163640.6530-1-mark.rutland@arm.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_093350_396544_1E2216FF 
-X-CRM114-Status: GOOD (  21.25  )
+X-CRM114-CacheID: sfid-20190708_093647_701327_BBA4B731 
+X-CRM114-Status: GOOD (  14.32  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -64,134 +57,365 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wsd_upstream <wsd_upstream@mediatek.com>,
- "Jason A . Donenfeld" <Jason@zx2c4.com>, Vasily Gorbik <gor@linux.ibm.com>,
- Arnd Bergmann <arnd@arndb.de>, Linux-MM <linux-mm@kvack.org>,
- Andrey Konovalov <andreyknvl@google.com>, LKML <linux-kernel@vger.kernel.org>,
- kasan-dev <kasan-dev@googlegroups.com>, Pekka Enberg <penberg@kernel.org>,
- Martin Schwidefsky <schwidefsky@de.ibm.com>,
- Miles Chen <miles.chen@mediatek.com>, Alexander Potapenko <glider@google.com>,
- David Rientjes <rientjes@google.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
- Christoph Lameter <cl@linux.com>, Joonsoo Kim <iamjoonsoo.kim@lge.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+For a number of years, UAPI headers have been split from kernel-internal
+headers. The latter are never exposed to userspace, and always built
+with __KERNEL__ defined.
 
+Most headers under arch/arm64 don't have __KERNEL__ guards, but there
+are a few stragglers lying around. To make things more consistent, and
+to set a good example going forward, let's remove these redundant
+__KERNEL__ guards.
 
-On 7/5/19 4:34 PM, Dmitry Vyukov wrote:
-> On Mon, Jul 1, 2019 at 11:56 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
->>>>>>>>> This patch adds memory corruption identification at bug report for
->>>>>>>>> software tag-based mode, the report show whether it is "use-after-free"
->>>>>>>>> or "out-of-bound" error instead of "invalid-access" error.This will make
->>>>>>>>> it easier for programmers to see the memory corruption problem.
->>>>>>>>>
->>>>>>>>> Now we extend the quarantine to support both generic and tag-based kasan.
->>>>>>>>> For tag-based kasan, the quarantine stores only freed object information
->>>>>>>>> to check if an object is freed recently. When tag-based kasan reports an
->>>>>>>>> error, we can check if the tagged addr is in the quarantine and make a
->>>>>>>>> good guess if the object is more like "use-after-free" or "out-of-bound".
->>>>>>>>>
->>>>>>>>
->>>>>>>>
->>>>>>>> We already have all the information and don't need the quarantine to make such guess.
->>>>>>>> Basically if shadow of the first byte of object has the same tag as tag in pointer than it's out-of-bounds,
->>>>>>>> otherwise it's use-after-free.
->>>>>>>>
->>>>>>>> In pseudo-code it's something like this:
->>>>>>>>
->>>>>>>> u8 object_tag = *(u8 *)kasan_mem_to_shadow(nearest_object(cacche, page, access_addr));
->>>>>>>>
->>>>>>>> if (access_addr_tag == object_tag && object_tag != KASAN_TAG_INVALID)
->>>>>>>>   // out-of-bounds
->>>>>>>> else
->>>>>>>>   // use-after-free
->>>>>>>
->>>>>>> Thanks your explanation.
->>>>>>> I see, we can use it to decide corruption type.
->>>>>>> But some use-after-free issues, it may not have accurate free-backtrace.
->>>>>>> Unfortunately in that situation, free-backtrace is the most important.
->>>>>>> please see below example
->>>>>>>
->>>>>>> In generic KASAN, it gets accurate free-backrace(ptr1).
->>>>>>> In tag-based KASAN, it gets wrong free-backtrace(ptr2). It will make
->>>>>>> programmer misjudge, so they may not believe tag-based KASAN.
->>>>>>> So We provide this patch, we hope tag-based KASAN bug report is the same
->>>>>>> accurate with generic KASAN.
->>>>>>>
->>>>>>> ---
->>>>>>>     ptr1 = kmalloc(size, GFP_KERNEL);
->>>>>>>     ptr1_free(ptr1);
->>>>>>>
->>>>>>>     ptr2 = kmalloc(size, GFP_KERNEL);
->>>>>>>     ptr2_free(ptr2);
->>>>>>>
->>>>>>>     ptr1[size] = 'x';  //corruption here
->>>>>>>
->>>>>>>
->>>>>>> static noinline void ptr1_free(char* ptr)
->>>>>>> {
->>>>>>>     kfree(ptr);
->>>>>>> }
->>>>>>> static noinline void ptr2_free(char* ptr)
->>>>>>> {
->>>>>>>     kfree(ptr);
->>>>>>> }
->>>>>>> ---
->>>>>>>
->>>>>> We think of another question about deciding by that shadow of the first
->>>>>> byte.
->>>>>> In tag-based KASAN, it is immediately released after calling kfree(), so
->>>>>> the slub is easy to be used by another pointer, then it will change
->>>>>> shadow memory to the tag of new pointer, it will not be the
->>>>>> KASAN_TAG_INVALID, so there are many false negative cases, especially in
->>>>>> small size allocation.
->>>>>>
->>>>>> Our patch is to solve those problems. so please consider it, thanks.
->>>>>>
->>>>> Hi, Andrey and Dmitry,
->>>>>
->>>>> I am sorry to bother you.
->>>>> Would you tell me what you think about this patch?
->>>>> We want to use tag-based KASAN, so we hope its bug report is clear and
->>>>> correct as generic KASAN.
->>>>>
->>>>> Thanks your review.
->>>>> Walter
->>>>
->>>> Hi Walter,
->>>>
->>>> I will probably be busy till the next week. Sorry for delays.
->>>
->>> It's ok. Thanks your kindly help.
->>> I hope I can contribute to tag-based KASAN. It is a very important tool
->>> for us.
->>
->> Hi, Dmitry,
->>
->> Would you have free time to discuss this patch together?
->> Thanks.
-> 
-> Sorry for delays. I am overwhelm by some urgent work. I afraid to
-> promise any dates because the next week I am on a conference, then
-> again a backlog and an intern starting...
-> 
-> Andrey, do you still have concerns re this patch? This change allows
-> to print the free stack.
+In a couple of cases, a trailing #endif lacked a comment describing its
+corresponding #if or #ifdef, so these are fixes up at the same time.
 
-I 'm not sure that quarantine is a best way to do that. Quarantine is made to delay freeing, but we don't that here.
-If we want to remember more free stacks wouldn't be easier simply to remember more stacks in object itself?
-Same for previously used tags for better use-after-free identification.
+Guards in auto-generated crypto code are left as-is, as these guards are
+generated by scripting imported from the upstream openssl project
+scripts. Guards in UAPI headers are left as-is, as these can be included
+by userspace or the kernel.
 
-> We also have a quarantine for hwasan in user-space. Though it works a
-> bit differently then the normal asan quarantine. We keep a per-thread
-> fixed-size ring-buffer of recent allocations:
-> https://github.com/llvm-mirror/compiler-rt/blob/master/lib/hwasan/hwasan_report.cpp#L274-L284
-> and scan these ring buffers during reports.
-> 
+There should be no functional change as a result of this patch.
+
+Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Will Deacon <will.deacon@arm.com>
+---
+ arch/arm64/include/asm/atomic.h         | 5 +----
+ arch/arm64/include/asm/compat.h         | 2 --
+ arch/arm64/include/asm/debug-monitors.h | 3 ---
+ arch/arm64/include/asm/dma-mapping.h    | 3 ---
+ arch/arm64/include/asm/fpsimd.h         | 2 +-
+ arch/arm64/include/asm/futex.h          | 3 ---
+ arch/arm64/include/asm/hw_breakpoint.h  | 3 ---
+ arch/arm64/include/asm/io.h             | 3 ---
+ arch/arm64/include/asm/irqflags.h       | 5 +----
+ arch/arm64/include/asm/pci.h            | 2 --
+ arch/arm64/include/asm/proc-fns.h       | 2 --
+ arch/arm64/include/asm/processor.h      | 3 ---
+ arch/arm64/include/asm/signal32.h       | 2 --
+ arch/arm64/include/asm/thread_info.h    | 3 ---
+ arch/arm64/include/asm/vdso.h           | 4 ----
+ arch/arm64/include/asm/vdso_datapage.h  | 4 ----
+ 16 files changed, 3 insertions(+), 46 deletions(-)
+
+This is based on the arm64 for-next/core branch, for which I've built and
+boot-tested defconfig.
+
+Mark.
+
+diff --git a/arch/arm64/include/asm/atomic.h b/arch/arm64/include/asm/atomic.h
+index 1f4e9ee641c9..7f3c714de1e3 100644
+--- a/arch/arm64/include/asm/atomic.h
++++ b/arch/arm64/include/asm/atomic.h
+@@ -26,8 +26,6 @@
+ #include <asm/barrier.h>
+ #include <asm/lse.h>
+ 
+-#ifdef __KERNEL__
+-
+ #define __ARM64_IN_ATOMIC_IMPL
+ 
+ #if defined(CONFIG_ARM64_LSE_ATOMICS) && defined(CONFIG_AS_LSE)
+@@ -168,5 +166,4 @@
+ 
+ #include <asm-generic/atomic-instrumented.h>
+ 
+-#endif
+-#endif
++#endif /* __ASM_ATOMIC_H */
+diff --git a/arch/arm64/include/asm/compat.h b/arch/arm64/include/asm/compat.h
+index 93ce86d5dae1..02bdd10cb3c2 100644
+--- a/arch/arm64/include/asm/compat.h
++++ b/arch/arm64/include/asm/compat.h
+@@ -15,7 +15,6 @@
+  */
+ #ifndef __ASM_COMPAT_H
+ #define __ASM_COMPAT_H
+-#ifdef __KERNEL__
+ #ifdef CONFIG_COMPAT
+ 
+ /*
+@@ -226,5 +225,4 @@ static inline int is_compat_thread(struct thread_info *thread)
+ }
+ 
+ #endif /* CONFIG_COMPAT */
+-#endif /* __KERNEL__ */
+ #endif /* __ASM_COMPAT_H */
+diff --git a/arch/arm64/include/asm/debug-monitors.h b/arch/arm64/include/asm/debug-monitors.h
+index 0679f781696d..7001a961f649 100644
+--- a/arch/arm64/include/asm/debug-monitors.h
++++ b/arch/arm64/include/asm/debug-monitors.h
+@@ -16,8 +16,6 @@
+ #ifndef __ASM_DEBUG_MONITORS_H
+ #define __ASM_DEBUG_MONITORS_H
+ 
+-#ifdef __KERNEL__
+-
+ #include <linux/errno.h>
+ #include <linux/types.h>
+ #include <asm/brk-imm.h>
+@@ -139,5 +137,4 @@ static inline int reinstall_suspended_bps(struct pt_regs *regs)
+ int aarch32_break_handler(struct pt_regs *regs);
+ 
+ #endif	/* __ASSEMBLY */
+-#endif	/* __KERNEL__ */
+ #endif	/* __ASM_DEBUG_MONITORS_H */
+diff --git a/arch/arm64/include/asm/dma-mapping.h b/arch/arm64/include/asm/dma-mapping.h
+index de98191e4c7d..c96e72bc04f0 100644
+--- a/arch/arm64/include/asm/dma-mapping.h
++++ b/arch/arm64/include/asm/dma-mapping.h
+@@ -16,8 +16,6 @@
+ #ifndef __ASM_DMA_MAPPING_H
+ #define __ASM_DMA_MAPPING_H
+ 
+-#ifdef __KERNEL__
+-
+ #include <linux/types.h>
+ #include <linux/vmalloc.h>
+ 
+@@ -38,5 +36,4 @@ static inline bool is_device_dma_coherent(struct device *dev)
+ 	return dev->dma_coherent;
+ }
+ 
+-#endif	/* __KERNEL__ */
+ #endif	/* __ASM_DMA_MAPPING_H */
+diff --git a/arch/arm64/include/asm/fpsimd.h b/arch/arm64/include/asm/fpsimd.h
+index 4154851c21ab..bf5d710eaef5 100644
+--- a/arch/arm64/include/asm/fpsimd.h
++++ b/arch/arm64/include/asm/fpsimd.h
+@@ -32,7 +32,7 @@
+ #include <linux/stddef.h>
+ #include <linux/types.h>
+ 
+-#if defined(__KERNEL__) && defined(CONFIG_COMPAT)
++#ifdef CONFIG_COMPAT
+ /* Masks for extracting the FPSR and FPCR from the FPSCR */
+ #define VFP_FPSCR_STAT_MASK	0xf800009f
+ #define VFP_FPSCR_CTRL_MASK	0x07f79f00
+diff --git a/arch/arm64/include/asm/futex.h b/arch/arm64/include/asm/futex.h
+index a56efb5626fa..360161d24252 100644
+--- a/arch/arm64/include/asm/futex.h
++++ b/arch/arm64/include/asm/futex.h
+@@ -16,8 +16,6 @@
+ #ifndef __ASM_FUTEX_H
+ #define __ASM_FUTEX_H
+ 
+-#ifdef __KERNEL__
+-
+ #include <linux/futex.h>
+ #include <linux/uaccess.h>
+ 
+@@ -140,5 +138,4 @@ futex_atomic_cmpxchg_inatomic(u32 *uval, u32 __user *_uaddr,
+ 	return ret;
+ }
+ 
+-#endif /* __KERNEL__ */
+ #endif /* __ASM_FUTEX_H */
+diff --git a/arch/arm64/include/asm/hw_breakpoint.h b/arch/arm64/include/asm/hw_breakpoint.h
+index 6a53e59ced95..29ee857c0dca 100644
+--- a/arch/arm64/include/asm/hw_breakpoint.h
++++ b/arch/arm64/include/asm/hw_breakpoint.h
+@@ -21,8 +21,6 @@
+ #include <asm/sysreg.h>
+ #include <asm/virt.h>
+ 
+-#ifdef __KERNEL__
+-
+ struct arch_hw_breakpoint_ctrl {
+ 	u32 __reserved	: 19,
+ 	len		: 8,
+@@ -167,5 +165,4 @@ static inline int get_num_wrps(void)
+ 						ID_AA64DFR0_WRPS_SHIFT);
+ }
+ 
+-#endif	/* __KERNEL__ */
+ #endif	/* __ASM_BREAKPOINT_H */
+diff --git a/arch/arm64/include/asm/io.h b/arch/arm64/include/asm/io.h
+index b807cb9b517d..fb424e6cfa19 100644
+--- a/arch/arm64/include/asm/io.h
++++ b/arch/arm64/include/asm/io.h
+@@ -19,8 +19,6 @@
+ #ifndef __ASM_IO_H
+ #define __ASM_IO_H
+ 
+-#ifdef __KERNEL__
+-
+ #include <linux/types.h>
+ 
+ #include <asm/byteorder.h>
+@@ -218,5 +216,4 @@ extern int valid_mmap_phys_addr_range(unsigned long pfn, size_t size);
+ 
+ extern int devmem_is_allowed(unsigned long pfn);
+ 
+-#endif	/* __KERNEL__ */
+ #endif	/* __ASM_IO_H */
+diff --git a/arch/arm64/include/asm/irqflags.h b/arch/arm64/include/asm/irqflags.h
+index cac2d2a3c24e..8a040145d1a9 100644
+--- a/arch/arm64/include/asm/irqflags.h
++++ b/arch/arm64/include/asm/irqflags.h
+@@ -16,8 +16,6 @@
+ #ifndef __ASM_IRQFLAGS_H
+ #define __ASM_IRQFLAGS_H
+ 
+-#ifdef __KERNEL__
+-
+ #include <asm/alternative.h>
+ #include <asm/ptrace.h>
+ #include <asm/sysreg.h>
+@@ -139,5 +137,4 @@ static inline void arch_local_irq_restore(unsigned long flags)
+ 		: "memory");
+ }
+ 
+-#endif
+-#endif
++#endif /* __ASM_IRQFLAGS_H */
+diff --git a/arch/arm64/include/asm/pci.h b/arch/arm64/include/asm/pci.h
+index 9e690686e8aa..70b323cf8300 100644
+--- a/arch/arm64/include/asm/pci.h
++++ b/arch/arm64/include/asm/pci.h
+@@ -1,7 +1,6 @@
+ /* SPDX-License-Identifier: GPL-2.0 */
+ #ifndef __ASM_PCI_H
+ #define __ASM_PCI_H
+-#ifdef __KERNEL__
+ 
+ #include <linux/types.h>
+ #include <linux/slab.h>
+@@ -35,5 +34,4 @@ static inline int pci_proc_domain(struct pci_bus *bus)
+ }
+ #endif  /* CONFIG_PCI */
+ 
+-#endif  /* __KERNEL__ */
+ #endif  /* __ASM_PCI_H */
+diff --git a/arch/arm64/include/asm/proc-fns.h b/arch/arm64/include/asm/proc-fns.h
+index 16cef2e8449e..33e8dea6d4d2 100644
+--- a/arch/arm64/include/asm/proc-fns.h
++++ b/arch/arm64/include/asm/proc-fns.h
+@@ -20,7 +20,6 @@
+ #ifndef __ASM_PROCFNS_H
+ #define __ASM_PROCFNS_H
+ 
+-#ifdef __KERNEL__
+ #ifndef __ASSEMBLY__
+ 
+ #include <asm/page.h>
+@@ -36,5 +35,4 @@ extern u64 cpu_do_resume(phys_addr_t ptr, u64 idmap_ttbr);
+ #include <asm/memory.h>
+ 
+ #endif /* __ASSEMBLY__ */
+-#endif /* __KERNEL__ */
+ #endif /* __ASM_PROCFNS_H */
+diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
+index fcd0e691b1ea..9f5746eaa797 100644
+--- a/arch/arm64/include/asm/processor.h
++++ b/arch/arm64/include/asm/processor.h
+@@ -31,7 +31,6 @@
+ #define NET_IP_ALIGN	0
+ 
+ #ifndef __ASSEMBLY__
+-#ifdef __KERNEL__
+ 
+ #include <linux/build_bug.h>
+ #include <linux/cache.h>
+@@ -284,8 +283,6 @@ static inline void spin_lock_prefetch(const void *ptr)
+ 
+ #define HAVE_ARCH_PICK_MMAP_LAYOUT
+ 
+-#endif
+-
+ extern unsigned long __ro_after_init signal_minsigstksz; /* sigframe size */
+ extern void __init minsigstksz_setup(void);
+ 
+diff --git a/arch/arm64/include/asm/signal32.h b/arch/arm64/include/asm/signal32.h
+index 58e288aaf0ba..01a9d2aee9cd 100644
+--- a/arch/arm64/include/asm/signal32.h
++++ b/arch/arm64/include/asm/signal32.h
+@@ -16,7 +16,6 @@
+ #ifndef __ASM_SIGNAL32_H
+ #define __ASM_SIGNAL32_H
+ 
+-#ifdef __KERNEL__
+ #ifdef CONFIG_COMPAT
+ #include <linux/compat.h>
+ 
+@@ -44,5 +43,4 @@ static inline void compat_setup_restart_syscall(struct pt_regs *regs)
+ {
+ }
+ #endif /* CONFIG_COMPAT */
+-#endif /* __KERNEL__ */
+ #endif /* __ASM_SIGNAL32_H */
+diff --git a/arch/arm64/include/asm/thread_info.h b/arch/arm64/include/asm/thread_info.h
+index c285d1ce7186..660d388cb0a8 100644
+--- a/arch/arm64/include/asm/thread_info.h
++++ b/arch/arm64/include/asm/thread_info.h
+@@ -19,8 +19,6 @@
+ #ifndef __ASM_THREAD_INFO_H
+ #define __ASM_THREAD_INFO_H
+ 
+-#ifdef __KERNEL__
+-
+ #include <linux/compiler.h>
+ 
+ #ifndef __ASSEMBLY__
+@@ -132,5 +130,4 @@ void arch_release_task_struct(struct task_struct *tsk);
+ 	.addr_limit	= KERNEL_DS,					\
+ }
+ 
+-#endif /* __KERNEL__ */
+ #endif /* __ASM_THREAD_INFO_H */
+diff --git a/arch/arm64/include/asm/vdso.h b/arch/arm64/include/asm/vdso.h
+index 839ce0031bd5..6f64751a5779 100644
+--- a/arch/arm64/include/asm/vdso.h
++++ b/arch/arm64/include/asm/vdso.h
+@@ -16,8 +16,6 @@
+ #ifndef __ASM_VDSO_H
+ #define __ASM_VDSO_H
+ 
+-#ifdef __KERNEL__
+-
+ /*
+  * Default link address for the vDSO.
+  * Since we randomise the VDSO mapping, there's little point in trying
+@@ -36,6 +34,4 @@
+ 
+ #endif /* !__ASSEMBLY__ */
+ 
+-#endif /* __KERNEL__ */
+-
+ #endif /* __ASM_VDSO_H */
+diff --git a/arch/arm64/include/asm/vdso_datapage.h b/arch/arm64/include/asm/vdso_datapage.h
+index f89263c8e11a..86dc05a5786e 100644
+--- a/arch/arm64/include/asm/vdso_datapage.h
++++ b/arch/arm64/include/asm/vdso_datapage.h
+@@ -16,8 +16,6 @@
+ #ifndef __ASM_VDSO_DATAPAGE_H
+ #define __ASM_VDSO_DATAPAGE_H
+ 
+-#ifdef __KERNEL__
+-
+ #ifndef __ASSEMBLY__
+ 
+ struct vdso_data {
+@@ -43,6 +41,4 @@ struct vdso_data {
+ 
+ #endif /* !__ASSEMBLY__ */
+ 
+-#endif /* __KERNEL__ */
+-
+ #endif /* __ASM_VDSO_DATAPAGE_H */
+-- 
+2.11.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
