@@ -2,184 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1CFE561C15
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 11:07:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D697661C21
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 11:13:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2DlajUFPp0xFKRO5/ZdR1ooIeLVOUd/5b1Aywn3sHLQ=; b=Ol+ncXXEJR7zO+
-	YML31/Km2o6qz/FGyr4DuDIKbKxSWNpAd2NA/yLCbovGYDy7FMXUWul9B+dwUB+pPacjzrcybu+xc
-	8B5+p3ebp93yG4Iw7uqXizNXotrfdW2XxyxpzpPXSl//whLfk+V61OETJWQTsXuQgkyLXpXjuDpAI
-	vTTXQ/43eMLFAvzzsu2lMSPZwhvCo3B4TaC3/BonmkrqvkZFxbADbLE2g/jGbRv0JfzZb7Z4hHMhC
-	Y5RIHcON7JEPG3VsXfR/BozpGRDq5mzxH1eaOjuo+vCa6XB2kC1IVRtrOypUQKSIaKqRzZJ7JIaBR
-	tFjLTahog8lnBEPXU6Gw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=y7Df6t66Wq2IHk+poJizuIcXKXKTTvFOffeZCiHyXlM=; b=gBgPh7irUEk5Yt
+	GbFd57isWs2QbbSPMH1as6JGGvyXN5L2ZbpCmTDAQ2RcStQsJznWVQEPKBpGWLG05lhiQ3fiB9xJa
+	pr2PKH1tP+AuBXxt1wHrr4+LmQM618VBIQ0elqgNSaq64qpxnNtnWX1OV4AaMNWA2+C/cSJQpyX6x
+	fu+1aEbAwa+UMJ82RSdIJppXYwZ0ZizHCiuVJy4KGmkNln3lirciThW5UmWLma8Wd4vhVFTACm6VK
+	WaqwerSnryW0p+clZYlRSZtDQf0tKN6tGJLC928ZnG/TudZyWE+JEj7aI9JFuw3cdmvfCr2b5gU3/
+	KQMv4MUVA+g5MznX6XsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkPcA-0007Uz-OV; Mon, 08 Jul 2019 09:07:14 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1hkPi4-0000vK-UI; Mon, 08 Jul 2019 09:13:21 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkPbj-0007Tl-UC; Mon, 08 Jul 2019 09:06:49 +0000
-Received: by mail-ed1-x543.google.com with SMTP id i11so13860765edq.0;
- Mon, 08 Jul 2019 02:06:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=EPnyh5rZxy97NIsSIT+52JsZe68udpUPoW6KlPRY7mA=;
- b=IwhQLpmBM5ojaI1AlTpVrEhKVx8liExrkoAIqm0tUWlOlmF7qu0/Kc166pq+5h/VxW
- bzdk/fVwSdWI+bbTYXUN/tmiCre4bYPK3VefGC4GvTc9pHHNoV/LhpJFl3aHotUzliDA
- t5q2VktFEK+IRHjD9PcbhDBEDxS5BKUzxUUFHHhrDt2p47+8zjrTYhy6ggbss4sF6leD
- 2vi2EKPPZHjx8wTDZ4SNwNBcxWXwI7m8ghs1iOBHwXZvb0sV7PNhc+U17MvIk3cwo5kx
- CgoMo97m8nWbVUiExGcPPf17Wby7XzNQazvCQU/k++86+a8oI/U+DhXOkSiqbgyvJdgS
- Mf1A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=EPnyh5rZxy97NIsSIT+52JsZe68udpUPoW6KlPRY7mA=;
- b=XfvfWxCsYp4SNaYBzt83gbN2NB5DmraMLIfzKKizsRUVvjuqvN0mCX4zkDLLpLDahI
- POBDSVHd5T4k5vb970mhc2xIChC1uE7JlAK2XvI5LZNLn5CN6STUho36Cg4Mewm6DO6D
- onBlJRVu11LEtxqDTN2ZJPIh7z3uVngtBCaFAiZnu8w+L5yHIzp7yl26ARova6QaBvVc
- m0oQDgQLJIZpgH6hpyZhMvVFge51o+/ZnH2qtGqKIHVI7mWIZ/YGyWXtZ1uZE7y2UpBC
- gssIESO2oAhURwnjOXzhPoxQ1gPLaJryZXoHxRIeAHB0cG6/BbmlznNyJN4oGUQNfhzm
- Rj7Q==
-X-Gm-Message-State: APjAAAXpjvw64YHHwuBvGYuM7oWol6IwPDD0WIK516mhQzFKOBXOEdar
- 4lQ3cuC3/5arE43EonxuiZY=
-X-Google-Smtp-Source: APXvYqwEda80SAI5WlUbSRPFWI1WlVWG3tnBsq1AyVyn+e9zYKgR78uDacN15izIXlI1O4CMrhUltw==
-X-Received: by 2002:a50:eb8b:: with SMTP id y11mr18873611edr.154.1562576805792; 
- Mon, 08 Jul 2019 02:06:45 -0700 (PDT)
-Received: from ziggy.stardust ([37.223.141.54])
- by smtp.gmail.com with ESMTPSA id h2sm5081660edq.33.2019.07.08.02.06.44
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Mon, 08 Jul 2019 02:06:44 -0700 (PDT)
-Subject: Re: [PATCH] [media] media: mtk-mdp: fix reference count on old device
- tree
-To: minghsiu.tsai@mediatek.com, houlong.wei@mediatek.com,
- andrew-ct.chen@mediatek.com, mchehab@kernel.org, djkurtz@chromium.org,
- Hans Verkuil <hans.verkuil@cisco.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>
-References: <20190621113250.4946-1-matthias.bgg@gmail.com>
-From: Matthias Brugger <matthias.bgg@gmail.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- jrHWeQEI2ucSKsNa8FllDmG/fQ==
-Message-ID: <e4d178ae-f43e-21d0-b0ab-78cc2ac71e7e@gmail.com>
-Date: Mon, 8 Jul 2019 11:06:43 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-MIME-Version: 1.0
-In-Reply-To: <20190621113250.4946-1-matthias.bgg@gmail.com>
+ id 1hkPhr-0000uL-AM
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 09:13:09 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x68967am006024; Mon, 8 Jul 2019 11:12:54 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type : content-id
+ : content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=J+VrRoM1vmsyKivpX5U+CqP541ilP0xEicODEegVLtM=;
+ b=PIV2XdbgB0aZJqgtreP6xTwlrWKCNkvJeRx2dKmHokXB9K9FELlV+YSQc6+QRoX/Me7z
+ TDtZikvgNRGqiCMZRB6CxGHEcgaz716HWePA8rGEnMVFAgb6Jp7OzvWQw2lUc+ooOdFD
+ P0QAYK42RYrC65eNtzvHzYcSo9p6i1felTNSB4wdhz+Vv4IvE/Jj5+3ZUGGWDBviHQOh
+ NyJOFo8BoqHSL1kyigcxpIpdMnprg4MYIpTXZv+mDaEzkbA2VwNJXmZRdSyvdjWSE4FS
+ TcTm26B+l+W5qLnlT9uiMEkQcH3zFSb5JwxnzketnNSAkFZWo9PJOWX8ha62R74IJ8TL pQ== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2tjh405r6f-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Mon, 08 Jul 2019 11:12:54 +0200
+Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 4971D34;
+ Mon,  8 Jul 2019 09:12:53 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag3node1.st.com [10.75.127.7])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 07A2D2763;
+ Mon,  8 Jul 2019 09:12:53 +0000 (GMT)
+Received: from SFHDAG3NODE2.st.com (10.75.127.8) by SFHDAG3NODE1.st.com
+ (10.75.127.7) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 8 Jul
+ 2019 11:12:52 +0200
+Received: from SFHDAG3NODE2.st.com ([fe80::b82f:1ce:8854:5b96]) by
+ SFHDAG3NODE2.st.com ([fe80::b82f:1ce:8854:5b96%20]) with mapi id
+ 15.00.1347.000; Mon, 8 Jul 2019 11:12:52 +0200
+From: Amelie DELAUNAY <amelie.delaunay@st.com>
+To: Markus Elfring <Markus.Elfring@web.de>, "linux-rtc@vger.kernel.org"
+ <linux-rtc@vger.kernel.org>, "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, Alessandro Zummo
+ <a.zummo@towertech.it>, Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Alexandre TORGUE <alexandre.torgue@st.com>, Maxime Coquelin
+ <mcoquelin.stm32@gmail.com>, Russell King <linux@armlinux.org.uk>
+Subject: Re: [PATCH v2] rtc: stm32: One condition check and function call less
+ in stm32_rtc_set_alarm()
+Thread-Topic: [PATCH v2] rtc: stm32: One condition check and function call
+ less in stm32_rtc_set_alarm()
+Thread-Index: AQHVNWk64H5f1akvVEOEc4o7Pyqv/6bATj4A
+Date: Mon, 8 Jul 2019 09:12:52 +0000
+Message-ID: <b614006a-17ac-e738-a3f3-08649f69a42c@st.com>
+References: <f04277da-8a98-473e-2566-ac7846f9f8e1@web.de>
+ <20190707211638.sehikkear25dffah@shell.armlinux.org.uk>
+ <4da614a4-83c6-548c-a112-033b846c561b@web.de>
+In-Reply-To: <4da614a4-83c6-548c-a112-033b846c561b@web.de>
+Accept-Language: fr-FR, en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.47]
+Content-ID: <7C37AB1342C2294A8941E133C33BA759@st.com>
+MIME-Version: 1.0
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-07-08_02:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_020648_002563_69C62C49 
-X-CRM114-Status: GOOD (  17.49  )
-X-Spam-Score: 1.1 (+)
+X-CRM114-CacheID: sfid-20190708_021307_826507_E2F5C8C0 
+X-CRM114-Status: GOOD (  23.28  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.1 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (matthias.bgg[at]gmail.com)
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -187,7 +104,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -199,47 +115,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: stable@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: "kernel-janitors@vger.kernel.org" <kernel-janitors@vger.kernel.org>,
+ LKML <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 21/06/2019 13:32, Matthias Brugger wrote:
-> of_get_next_child() increments the reference count of the returning
-> device_node. Decrement it in the check if we are using the old or the
-> new DTB.
+On 7/8/19 10:42 AM, Markus Elfring wrote:
+> From: Markus Elfring <elfring@users.sourceforge.net>
+> Date: Mon, 8 Jul 2019 10:26:47 +0200
 > 
-> Fixes: ba1f1f70c2c0 ("[media] media: mtk-mdp: Fix mdp device tree")
-> Signed-off-by: Matthias Brugger <matthias.bgg@gmail.com>
+> A condition check was repeated in this function implementation despite of
+> a corresponding check in the stm32_rtc_alarm_irq_enable() function.
+> Thus delete redundant source code here.
+> 
+> Suggested-by: Russell King <linux@armlinux.org.uk>
+> Link: https://lore.kernel.org/lkml/20190707211638.sehikkear25dffah@shell.armlinux.org.uk/
+> 
+> This issue was detected by using the Coccinelle software.
+> 
+> Signed-off-by: Markus Elfring <elfring@users.sourceforge.net>
 
-Any comments on that?
+Reviewed-by: Amelie Delaunay <amelie.delaunay@st.com>
 
 > ---
->  drivers/media/platform/mtk-mdp/mtk_mdp_core.c | 4 +++-
->  1 file changed, 3 insertions(+), 1 deletion(-)
 > 
-> diff --git a/drivers/media/platform/mtk-mdp/mtk_mdp_core.c b/drivers/media/platform/mtk-mdp/mtk_mdp_core.c
-> index bbb24fb95b95..bafe53c5d54a 100644
-> --- a/drivers/media/platform/mtk-mdp/mtk_mdp_core.c
-> +++ b/drivers/media/platform/mtk-mdp/mtk_mdp_core.c
-> @@ -118,7 +118,9 @@ static int mtk_mdp_probe(struct platform_device *pdev)
->  	mutex_init(&mdp->vpulock);
->  
->  	/* Old dts had the components as child nodes */
-> -	if (of_get_next_child(dev->of_node, NULL)) {
-> +	parent = of_get_next_child(dev->of_node, NULL);
-> +	if (parent) {
-> +		of_node_put(parent);
->  		parent = dev->of_node;
->  		dev_warn(dev, "device tree is out of date\n");
->  	} else {
+> v2:
+> Russell King pointed the change possibility out to omit a condition check
+> at this place.
 > 
-
+> 
+>   drivers/rtc/rtc-stm32.c | 6 +-----
+>   1 file changed, 1 insertion(+), 5 deletions(-)
+> 
+> diff --git a/drivers/rtc/rtc-stm32.c b/drivers/rtc/rtc-stm32.c
+> index 8e6c9b3bcc29..773a1990b93f 100644
+> --- a/drivers/rtc/rtc-stm32.c
+> +++ b/drivers/rtc/rtc-stm32.c
+> @@ -519,11 +519,7 @@ static int stm32_rtc_set_alarm(struct device *dev, struct rtc_wkalrm *alrm)
+>   	/* Write to Alarm register */
+>   	writel_relaxed(alrmar, rtc->base + regs->alrmar);
+> 
+> -	if (alrm->enabled)
+> -		stm32_rtc_alarm_irq_enable(dev, 1);
+> -	else
+> -		stm32_rtc_alarm_irq_enable(dev, 0);
+> -
+> +	stm32_rtc_alarm_irq_enable(dev, alrm->enabled);
+>   end:
+>   	stm32_rtc_wpr_lock(rtc);
+> 
+> --
+> 2.22.0
+> 
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
