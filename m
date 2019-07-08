@@ -2,58 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BDB07618BA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 03:16:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D5D4261949
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 04:23:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LmWy1nmakhJmzmOWwgnuFssWvc9oisBJ6k4D9+jFNGo=; b=moUtEP/ijxKe5h
-	o9MOd7rRk/tUoNue62mevjzFqfD7msnnsS7pzTGci6bfMsd1Twv3QEv2XvnGf7AMZKMreUFrnopsf
-	HjX3icmukzVy+3dr6B5qCI+5lBIEnT4MZlzjEpb2V9W82wKZGWiRAjQzyiyjLM+MYEWgo4Ik0Homt
-	5k3oS3S8OYnPGyYGBWWV0z0R8vnBbEP090kDQd3xh/do+m5zWhmbEYnAvaNuDVZkM2ZHsYGWw774m
-	4wLqyskAy5HdounxguoKvPVzATnHduW37YrI7IOpvD73T4cKQzWpEWukg930/xfOsrzkJvg7po20y
-	hlDePexBw0dXwWfFn1Tw==;
+	List-Owner; bh=66EDrkZK04KHjmr5vk7F8sSA940C5VW5SkCKfMDtO+E=; b=E5Jtq8IB88o7OQ
+	MViuVhpNzFXBNx1fR7YW1bFSWcRjwW7orN7CQXlaq11bJras7AMujS3asAqlIUF3ONHzFQLZC4aXF
+	Lj8KvE3L1dJtyjZ3ap0Vx/X0aFF/i1frJYVIrzgPrphNWkJhWDjT1BfpEIXDpJeEwna5lw5ZsqpAj
+	ZxH22uPXt1snMEV7Kzcot8BEehNMoeklHOh6R4CHb+cFKP6wQJb18E3siitnvIr7gCJlQHzmOX9v4
+	yAKnkVXXxx7s/8HnxL04n26sQ/GHNc50oGzg1Mm5L5W6FT4Jd1Sv0XDGPyBjSljFnvml1eJyKn+tP
+	LJakXQdxfww9Ysck1ZAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkIG6-0000V7-Ss; Mon, 08 Jul 2019 01:15:59 +0000
-Received: from ozlabs.org ([203.11.71.1])
+	id 1hkJIp-0005Mm-QA; Mon, 08 Jul 2019 02:22:51 +0000
+Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkIFx-0000Te-F8
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 01:15:51 +0000
-Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
- SHA256) (No client certificate requested)
- by mail.ozlabs.org (Postfix) with ESMTPSA id 45hnZJ0R8Jz9sN4;
- Mon,  8 Jul 2019 11:15:35 +1000 (AEST)
-From: Michael Ellerman <mpe@ellerman.id.au>
-To: Aleksa Sarai <cyphar@cyphar.com>, Al Viro <viro@zeniv.linux.org.uk>,
- Jeff Layton <jlayton@kernel.org>, "J. Bruce Fields" <bfields@fieldses.org>,
- Arnd Bergmann <arnd@arndb.de>, David Howells <dhowells@redhat.com>,
- Shuah Khan <shuah@kernel.org>, Shuah Khan <skhan@linuxfoundation.org>
-Subject: Re: [PATCH v9 10/10] selftests: add openat2(2) selftests
-In-Reply-To: <20190706145737.5299-11-cyphar@cyphar.com>
-References: <20190706145737.5299-1-cyphar@cyphar.com>
- <20190706145737.5299-11-cyphar@cyphar.com>
-Date: Mon, 08 Jul 2019 11:15:35 +1000
-Message-ID: <878st9iax4.fsf@concordia.ellerman.id.au>
-MIME-Version: 1.0
+ id 1hkJIZ-0005Lx-W5
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 02:22:37 +0000
+Received: from localhost (unknown [IPv6:2601:601:9f80:35cd::d71])
+ (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ (Authenticated sender: davem-davemloft)
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id 479C71528C8A7;
+ Sun,  7 Jul 2019 19:22:27 -0700 (PDT)
+Date: Sun, 07 Jul 2019 19:22:26 -0700 (PDT)
+Message-Id: <20190707.192226.2104073790111648368.davem@davemloft.net>
+To: joe@perches.com
+Subject: Re: [PATCH 5/8] net: ethernet: sun4i-emac: Fix misuse of strlcpy
+From: David Miller <davem@davemloft.net>
+In-Reply-To: <faf2d0e7c0260d24b6e90c55bb7fec7496e5e76a.1562283944.git.joe@perches.com>
+References: <cover.1562283944.git.joe@perches.com>
+ <faf2d0e7c0260d24b6e90c55bb7fec7496e5e76a.1562283944.git.joe@perches.com>
+X-Mailer: Mew version 6.8 on Emacs 26.1
+Mime-Version: 1.0
+X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
+ (shards.monkeyblade.net [149.20.54.216]);
+ Sun, 07 Jul 2019 19:22:27 -0700 (PDT)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190707_181549_671214_A527BDCD 
-X-CRM114-Status: UNSURE (   8.97  )
+X-CRM114-CacheID: sfid-20190707_192236_033325_451D77D7 
+X-CRM114-Status: UNSURE (   5.95  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [203.11.71.1 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,67 +64,21 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
- Alexei Starovoitov <ast@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
- linux-kselftest@vger.kernel.org, sparclinux@vger.kernel.org,
- linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
- Tycho Andersen <tycho@tycho.ws>, Aleksa Sarai <asarai@suse.de>,
- linux-arm-kernel@lists.infradead.org, linux-mips@vger.kernel.org,
- linux-xtensa@linux-xtensa.org, Kees Cook <keescook@chromium.org>,
- Jann Horn <jannh@google.com>, linuxppc-dev@lists.ozlabs.org,
- Aleksa Sarai <cyphar@cyphar.com>, Andy Lutomirski <luto@kernel.org>,
- David Drysdale <drysdale@google.com>, Christian Brauner <christian@brauner.io>,
- linux-parisc@vger.kernel.org, linux-m68k@lists.linux-m68k.org,
- linux-api@vger.kernel.org, Chanho Min <chanho.min@lge.com>,
- linux-kernel@vger.kernel.org, Eric Biederman <ebiederm@xmission.com>,
- linux-alpha@vger.kernel.org, linux-fsdevel@vger.kernel.org,
- Andrew Morton <akpm@linux-foundation.org>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- containers@lists.linux-foundation.org
+Cc: maxime.ripard@bootlin.com, netdev@vger.kernel.org, wens@csie.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Aleksa,
+From: Joe Perches <joe@perches.com>
+Date: Thu,  4 Jul 2019 16:57:45 -0700
 
-A few minor comments below.
+> Probable cut&paste typo - use the correct field size.
+> 
+> Signed-off-by: Joe Perches <joe@perches.com>
 
-Aleksa Sarai <cyphar@cyphar.com> writes:
-> diff --git a/tools/testing/selftests/openat2/Makefile b/tools/testing/selftests/openat2/Makefile
-> new file mode 100644
-> index 000000000000..8235a49928f6
-> --- /dev/null
-> +++ b/tools/testing/selftests/openat2/Makefile
-> @@ -0,0 +1,12 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +
-> +CFLAGS += -Wall -O2 -g
-> +TEST_GEN_PROGS := linkmode_test resolve_test rename_attack_test
-> +
-> +include ../lib.mk
-> +
-> +$(OUTPUT)/linkmode_test: linkmode_test.c helpers.o
-> +$(OUTPUT)/rename_attack_test: rename_attack_test.c helpers.o
-> +$(OUTPUT)/resolve_test: resolve_test.c helpers.o
-
-You don't need to tell make that foo depends on foo.c.
-
-Also if you make the dependency be on helpers.c then you won't get an
-intermediate helpers.o, and then you don't need to clean it.
-
-So the above three lines could just be:
-
-$(TEST_GEN_PROGS): helpers.c
-
-> +EXTRA_CLEAN = helpers.o $(wildcard /tmp/ksft-openat2-*)
-
-If you follow my advice above you don't need helpers.o in there.
-
-Deleting things from /tmp is also a bit fishy on shared machines, ie. it
-will error if those files happen to be owned by another user.
-
-cheers
+Applied.
 
 _______________________________________________
 linux-arm-kernel mailing list
