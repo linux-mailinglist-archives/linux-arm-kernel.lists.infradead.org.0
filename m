@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 424C5620A9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 16:40:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4FAB3620AA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 16:41:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,53 +11,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=fzoUqTd/94JiElQKimJXtfMkarIyQid2GLaswgJaBV8=; b=RkHzcriQAN3q3m6zfsBATLG2c8
-	TDJMiHhcUXAXJUyLp82VCOZRm3UC9piGntCWQr/Yj2VS6n0n85a0a0gH9XIfUl4VLJ2AZpWhL+lwD
-	Fq7LACrp5xhsMecQWZDVfboeSl2fTnxOFvxr8NZaydnZDh+hBXs4q98XCkuahZuNMtL5B7EgP2apj
-	kqs8+rhzScFwVPHE4jhTJzyl4O8r+MSIUfCgKe7RhbHCuYXrZa5xpE6ICYoR4P6G35CCSownMPWs6
-	U/i75fvAkO5NWeAX7MjFKDTHwa0HKm/+H7bLwtegiqwji/gOo5FPouaRUD8uTANkXIg9QOwTeo2/D
-	qeUzjKIA==;
+	bh=Jm0Gjp5wdIdZUR7GvQt4in+h9zKviXTLipu1CyOQdrc=; b=uqhzfnxE5Z1rvK4B7w7kuARD/N
+	5tEyCaLXajGKW1MUEl0ZV0DK2wOt0oZThugaN/cvpuNkWpwpryn8jy8hXP7qZu0EbANAyaOSxfVyO
+	zpoHunLGJpaxX+yuFj6RLc0cultR7Ju9rO5JYhWd4GshqsA5BtlAa5nt36tXk4eecTDJgkBPDMKiG
+	cOFRY8LGZyRMZjqmfVZcqvhOJel+5XQe3psLPWs9CFutf4E6lBVsNAVQ4HpFHI+A/4z4JGSmZs5i5
+	ABcMf0Gtp7ZSYC3dyQdeoJL+Y12jBHDf++O+BZsPp3/RS1gmf1hJNEOJhHaCYYylWNmBpUfdR4efX
+	PEac2XMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkUp1-0007HT-Hi; Mon, 08 Jul 2019 14:40:51 +0000
-Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
+	id 1hkUpH-0007Vg-TL; Mon, 08 Jul 2019 14:41:08 +0000
+Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkUoP-0006rf-2m
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 14:40:14 +0000
-Received: by mail-ot1-x343.google.com with SMTP id r21so981599otq.6
+ id 1hkUoX-000725-4e
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 14:40:22 +0000
+Received: by mail-ot1-x344.google.com with SMTP id r6so16441545oti.3
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 08 Jul 2019 07:40:12 -0700 (PDT)
+ Mon, 08 Jul 2019 07:40:20 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=iIj/D2uFckhktV/1D81+BNHiSe7rGxGISfmtPBSrlSM=;
- b=C+MArnBQMr2fem13xnS9J64lNmtz6x3eb264CDVGZm7lK3pxHAy8901qu3ZTI2HIS6
- 7K9WLnI/UgnLLE1IK0Nh+pHlhLXmB4gPUEqugQmc+xsgLxMQ0G8jeB+9KL1O/cfTMvXt
- erNEljQYc3VzgMUZRXI+YJ1J59KILFnMJ3P2X1PNJo3Nx/w2yYFWGaccpDUTST0tS3yU
- mXnMUWw1nnC/DFX/QkIj/wO9Sc2SGyy6oYCYidmXzXXV4Z+KDev9igsREiqaE5fOpfx0
- DwfbUepPKKEmN0tnUtPOleWgPURufqT8O7xB3E3KtQGRrDjQ3fFnI4EDjpeLJ4WO90dI
- zo/w==
+ bh=P0UfYuSIVn3ZdoCHgmfMQcQ4Bx5Zeyc6tJ2jWiXjhtc=;
+ b=MQqQMln6WxFnwJIxVdQq725CZ83Q5i8yiXXUbwPqunDJgW98k01CN/JD82UlujQDg/
+ xvc5BqdXrI7B2KwEaXdC6hl4VQKtrnKVZNmiYbAWtYG0kDWAgtu+3JxUWrfZzNAoOIhL
+ iLWZiyTa8qIrbYcNkUidLc/TpnZMFhl7DFZ/eiwZ9LXKbHVhU8HFHrRgacH66/AzYTtM
+ G3oDjb17sTWOV7mptFn+ZvPtuFddiAyZ6dtWk/RlotyddhooGD197KRCHZPP/pf9M1yb
+ RNLqLQ18cPnZqslKQNDY6jmTbFexEJZ2Ywgxy6iQSeP4Ys2LGPb6I8y91dmORZAsw9jG
+ c13A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=iIj/D2uFckhktV/1D81+BNHiSe7rGxGISfmtPBSrlSM=;
- b=qfhsKBQEzBwd2hCy2OEqAoksAIqShGYUkAM+0lwiRAYKO6Ktqb1688nyC2bLWyXlsb
- OOtFR0H0oqaNFCzYfUomOZDdxIyq7RPJYm7RgPEXPewcGUWBV+k4HWH+D7QwrVR67HyL
- xMdPOPPW0bk/2lhl0r6vGK0FTK6sW6mNQoKqHGP0/VBKvFrC4JF+YAe8ZYTSxSAakXN5
- yYh81LaAyTl18tcWe8sn0T53oY7h9g9j2NwmXxHfhQIZ0FXQ3UW2k5/e1maiATQAgmn6
- OHEcUyXVOvxSHp+Q0vI47o/IVbZtviIxPPWZ8sdo+1oexMQwA8ZWBC1WHq7FsIEBbFbP
- 08NA==
-X-Gm-Message-State: APjAAAVRpewlI4rExk9nILAdO00lAt52fowD4cF9q9HJ2h4KZaTZm4aY
- Me8OUFwNAC+GCDjHvAfHCE5XuQ==
-X-Google-Smtp-Source: APXvYqyCIgpXl9aMrnWlPCMuhtjBzNRKlFd2j+pNfi8a5y8SglLuLFVH3QGHkoz8B9mgc19PYS+Iiw==
-X-Received: by 2002:a05:6830:18a:: with SMTP id
- q10mr15142642ota.114.1562596812197; 
- Mon, 08 Jul 2019 07:40:12 -0700 (PDT)
+ bh=P0UfYuSIVn3ZdoCHgmfMQcQ4Bx5Zeyc6tJ2jWiXjhtc=;
+ b=UqKI8P1EaKECVg5riyd/RQI1PEur/FTHBzGl2pRUCWdDrUzO1pDsmDHKK0u2oG7Wr5
+ 1uspnVuqXH75dc/uceyhxyWktoXD/WeVMpxsybRivoMINipN4e9Qt5d38ajaa1kV8f1u
+ uiNAUBt2V1bOmMFGzn+nemlBtVlywVg9sWxk7bzvJbHpgKmhTS+QD7o8uYamg1v8idyL
+ bezG7g1PgPxRDM2UZzpnfV++AR4c7zDn/+Dc+N7GCmt/lsB5Q4X9plELiO1cOWTGqira
+ ls//7Z2Nghl6IXLe18eTbOunRGeCCMxvhjA3L9dxfaRMcUbkjleT98m3cvKrRZFr45Xc
+ RsYw==
+X-Gm-Message-State: APjAAAWL0q+lQQZUZmVzqne2iZewRAOKGH+WtvTx63omiVxnx+6Xr0DA
+ wy0L42VxH91hxhjtd9Co8/cbEw==
+X-Google-Smtp-Source: APXvYqwwTW9A3b+wXlBAVQIpYYoeWSItpKpNNsXpU0V7ZdJPO57xQJQciFgrGOSa91Y67e+LLHjOFQ==
+X-Received: by 2002:a9d:5f1a:: with SMTP id f26mr15287602oti.91.1562596819691; 
+ Mon, 08 Jul 2019 07:40:19 -0700 (PDT)
 Received: from localhost.localdomain (li964-79.members.linode.com.
  [45.33.10.79])
- by smtp.gmail.com with ESMTPSA id x5sm6386021otb.6.2019.07.08.07.40.04
+ by smtp.gmail.com with ESMTPSA id x5sm6386021otb.6.2019.07.08.07.40.12
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 08 Jul 2019 07:40:11 -0700 (PDT)
+ Mon, 08 Jul 2019 07:40:19 -0700 (PDT)
 From: Leo Yan <leo.yan@linaro.org>
 To: Arnaldo Carvalho de Melo <acme@kernel.org>,
  Alexander Shishkin <alexander.shishkin@linux.intel.com>,
@@ -66,23 +65,23 @@ To: Arnaldo Carvalho de Melo <acme@kernel.org>,
  Suzuki K Poulose <suzuki.poulose@arm.com>,
  Adrian Hunter <adrian.hunter@intel.com>, Andi Kleen <ak@linux.intel.com>,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 2/4] perf intel-bts: Smatch: Fix potential NULL pointer
+Subject: [PATCH v2 3/4] perf intel-pt: Smatch: Fix potential NULL pointer
  dereference
-Date: Mon,  8 Jul 2019 22:39:35 +0800
-Message-Id: <20190708143937.7722-3-leo.yan@linaro.org>
+Date: Mon,  8 Jul 2019 22:39:36 +0800
+Message-Id: <20190708143937.7722-4-leo.yan@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190708143937.7722-1-leo.yan@linaro.org>
 References: <20190708143937.7722-1-leo.yan@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_074013_170411_374F1A49 
-X-CRM114-Status: GOOD (  13.41  )
+X-CRM114-CacheID: sfid-20190708_074021_197373_AF92C472 
+X-CRM114-Status: GOOD (  14.60  )
 X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -115,56 +114,79 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Based on the following report from Smatch, fix the potential
 NULL pointer dereference check.
 
-  tools/perf/util/intel-bts.c:898
-  intel_bts_process_auxtrace_info() error: we previously assumed
-  'session->itrace_synth_opts' could be null (see line 894)
+  tools/perf/util/intel-pt.c:3200
+  intel_pt_process_auxtrace_info() error: we previously assumed
+  'session->itrace_synth_opts' could be null (see line 3196)
 
-  tools/perf/util/intel-bts.c:899
-  intel_bts_process_auxtrace_info() warn: variable dereferenced before
-  check 'session->itrace_synth_opts' (see line 898)
+  tools/perf/util/intel-pt.c:3206
+  intel_pt_process_auxtrace_info() warn: variable dereferenced before
+  check 'session->itrace_synth_opts' (see line 3200)
 
-tools/perf/util/intel-bts.c
-894         if (session->itrace_synth_opts && session->itrace_synth_opts->set) {
-895                 bts->synth_opts = *session->itrace_synth_opts;
-896         } else {
-897                 itrace_synth_opts__set_default(&bts->synth_opts,
-898                                 session->itrace_synth_opts->default_no_sample);
-                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
-899                 if (session->itrace_synth_opts)
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
-900                         bts->synth_opts.thread_stack =
-901                                 session->itrace_synth_opts->thread_stack;
-902         }
+tools/perf/util/intel-pt.c
+3196         if (session->itrace_synth_opts && session->itrace_synth_opts->set) {
+3197                 pt->synth_opts = *session->itrace_synth_opts;
+3198         } else {
+3199                 itrace_synth_opts__set_default(&pt->synth_opts,
+3200                                 session->itrace_synth_opts->default_no_sample);
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+3201                 if (!session->itrace_synth_opts->default_no_sample &&
+3202                     !session->itrace_synth_opts->inject) {
+3203                         pt->synth_opts.branches = false;
+3204                         pt->synth_opts.callchain = true;
+3205                 }
+3206                 if (session->itrace_synth_opts)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+3207                         pt->synth_opts.thread_stack =
+3208                                 session->itrace_synth_opts->thread_stack;
+3209         }
 
 'session->itrace_synth_opts' is impossible to be a NULL pointer in
-intel_bts_process_auxtrace_info(), thus this patch removes the NULL
+intel_pt_process_auxtrace_info(), thus this patch removes the NULL
 test for 'session->itrace_synth_opts'.
 
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
 ---
- tools/perf/util/intel-bts.c | 5 ++---
- 1 file changed, 2 insertions(+), 3 deletions(-)
+ tools/perf/util/intel-pt.c | 13 +++++--------
+ 1 file changed, 5 insertions(+), 8 deletions(-)
 
-diff --git a/tools/perf/util/intel-bts.c b/tools/perf/util/intel-bts.c
-index 5a21bcdb8ef7..5560e95afdda 100644
---- a/tools/perf/util/intel-bts.c
-+++ b/tools/perf/util/intel-bts.c
-@@ -891,13 +891,12 @@ int intel_bts_process_auxtrace_info(union perf_event *event,
- 	if (dump_trace)
- 		return 0;
+diff --git a/tools/perf/util/intel-pt.c b/tools/perf/util/intel-pt.c
+index c76a96f777fb..df061599fef4 100644
+--- a/tools/perf/util/intel-pt.c
++++ b/tools/perf/util/intel-pt.c
+@@ -3210,7 +3210,7 @@ int intel_pt_process_auxtrace_info(union perf_event *event,
+ 		goto err_delete_thread;
+ 	}
  
 -	if (session->itrace_synth_opts && session->itrace_synth_opts->set) {
 +	if (session->itrace_synth_opts->set) {
- 		bts->synth_opts = *session->itrace_synth_opts;
+ 		pt->synth_opts = *session->itrace_synth_opts;
  	} else {
- 		itrace_synth_opts__set_default(&bts->synth_opts,
- 				session->itrace_synth_opts->default_no_sample);
+ 		itrace_synth_opts__set_default(&pt->synth_opts,
+@@ -3220,8 +3220,7 @@ int intel_pt_process_auxtrace_info(union perf_event *event,
+ 			pt->synth_opts.branches = false;
+ 			pt->synth_opts.callchain = true;
+ 		}
 -		if (session->itrace_synth_opts)
--			bts->synth_opts.thread_stack =
-+		bts->synth_opts.thread_stack =
+-			pt->synth_opts.thread_stack =
++		pt->synth_opts.thread_stack =
  				session->itrace_synth_opts->thread_stack;
  	}
  
+@@ -3241,11 +3240,9 @@ int intel_pt_process_auxtrace_info(union perf_event *event,
+ 		pt->cbr2khz = tsc_freq / pt->max_non_turbo_ratio / 1000;
+ 	}
+ 
+-	if (session->itrace_synth_opts) {
+-		err = intel_pt_setup_time_ranges(pt, session->itrace_synth_opts);
+-		if (err)
+-			goto err_delete_thread;
+-	}
++	err = intel_pt_setup_time_ranges(pt, session->itrace_synth_opts);
++	if (err)
++		goto err_delete_thread;
+ 
+ 	if (pt->synth_opts.calls)
+ 		pt->branches_filter |= PERF_IP_FLAG_CALL | PERF_IP_FLAG_ASYNC |
 -- 
 2.17.1
 
