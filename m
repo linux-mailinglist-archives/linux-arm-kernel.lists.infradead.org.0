@@ -2,44 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C042F61F63
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 15:14:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CCDCD61F71
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 15:18:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wzQcAyD5NrSvXQxwq05cFBQLZVDW3waR1l+aCPSWm1s=; b=lDnaEh153sO+1G
-	RTOQPryII6LF6KPunSpD5YiiFdZFou9jHHb77xeOl8tm41P/9OC11KrmELHv7q1+He7PUdT8Bzr9C
-	migo8RkpDqPRVkiw/hqUA9uDf6ZVeytXN0to7hu6wbrri/sqgLCxVuVBJCJiy9mwsCJ61blXAtgSL
-	sE4lz59D+CWrNcS1RYcW54cDvEWBS9a+JQxTBnyLtXMxndo8o6HjcHd2YUV1hyQfEDTUOGLm1xMkz
-	VsuXAmfOc4x+Zcd7pYSOoGhRbD8tWBycd3BDZ+fD49sYXEE+rClfYCcGIAKiaQLvjMBeMLUAzvpii
-	dlcau2ESUYo6HOxf4E2w==;
+	List-Owner; bh=GHp2IbNvPaWZ8ePDgIK13AQmWx06BGoISHERENd9S3U=; b=r4vZ3rYlqH1jys
+	Fso+q081v2GVmWWmMNgROp0Zndsz3C0pqUMnR+NXd/xraJFo9APSLuKhaUgCnahWdwEwU3tvG2aS7
+	NLkTChplGwXbflJQxYUNtHukPpMSNDxGwHvSEhzarGnSGa7Etln0A9TKSSSKE1b9CFCfZuClDGpK8
+	BWTeep5+9x/Q+cRJO6UQ/pmnO2wxVHyZSltjcyFnR1gCY5L/1hzv6CVJQXUvKwGsS9Pmm5V0H3wQp
+	f44GzGncypy2SdZaM3NzCJJxqlS+f+3HoS1rzEkZrn4i66jEmy/AUm9h2JBL9ZcxubnyXxo64ynZw
+	mbe9reXa6qyX7iZi+Puw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkTTf-0004mr-Oa; Mon, 08 Jul 2019 13:14:43 +0000
+	id 1hkTWy-0007S2-SK; Mon, 08 Jul 2019 13:18:08 +0000
 Received: from edison.jonmasters.org ([173.255.233.168])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkTTR-0004mY-Jr
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 13:14:31 +0000
+ id 1hkTWn-0007RY-Hc
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 13:17:59 +0000
 Received: from boston.jonmasters.org ([50.195.43.97]
  helo=tonnant.bos.jonmasters.org)
  by edison.jonmasters.org with esmtpsa (TLS1.0:RSA_AES_128_CBC_SHA1:16)
  (Exim 4.71) (envelope-from <jcm@jonmasters.org>)
- id 1hkTTQ-0006Ap-1p; Mon, 08 Jul 2019 13:14:28 +0000
-To: Marc Zyngier <marc.zyngier@arm.com>, Mark Rutland <mark.rutland@arm.com>
+ id 1hkTWk-0006CH-LQ; Mon, 08 Jul 2019 13:17:55 +0000
+To: Mark Rutland <mark.rutland@arm.com>
 References: <7dd77cea-d673-269a-044f-4df269db7e5e@jonmasters.org>
  <20190708114716.GA33099@lakrids.cambridge.arm.com>
  <de6f5ca5-9485-620f-b748-9a38e9a4a0ba@jonmasters.org>
- <57b7e837-7dba-3735-fd1f-56ded26cc98b@arm.com>
+ <20190708130952.GB33099@lakrids.cambridge.arm.com>
 From: Jon Masters <jcm@jonmasters.org>
-Message-ID: <f7fa2a63-c44d-e215-6d9e-23d33ece8c63@jonmasters.org>
-Date: Mon, 8 Jul 2019 09:14:19 -0400
+Message-ID: <0d132022-2160-5309-200d-dc820d8a8235@jonmasters.org>
+Date: Mon, 8 Jul 2019 09:17:45 -0400
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.4.0
 MIME-Version: 1.0
-In-Reply-To: <57b7e837-7dba-3735-fd1f-56ded26cc98b@arm.com>
+In-Reply-To: <20190708130952.GB33099@lakrids.cambridge.arm.com>
 Content-Language: en-US
 X-SA-Exim-Connect-IP: 50.195.43.97
 X-SA-Exim-Mail-From: jcm@jonmasters.org
@@ -52,8 +52,8 @@ Subject: Re: FYI: Possible HPFAR_EL2 corruption (LPAE guests on AArch64 hosts)
 X-SA-Exim-Version: 4.2.1 (built Sun, 08 Nov 2009 07:31:22 +0000)
 X-SA-Exim-Scanned: Yes (on edison.jonmasters.org)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_061429_724159_18719BFA 
-X-CRM114-Status: GOOD (  24.64  )
+X-CRM114-CacheID: sfid-20190708_061757_654383_3725F50A 
+X-CRM114-Status: GOOD (  23.51  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -72,32 +72,20 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvmarm@lists.cs.columbia.edu, "linux-arm-kernel@lists.infradead.org"
+Cc: marc.zyngier@arm.com, kvmarm@lists.cs.columbia.edu,
+ "linux-arm-kernel@lists.infradead.org"
  <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 7/8/19 9:04 AM, Marc Zyngier wrote:
-
-> [Adding myself to the cc-list, for real this time! ;-)]
-
-Hehe
-
-> On 08/07/2019 13:16, Jon Masters wrote:
->> Hi Mark,
->>
->> Thanks for adding the CCs. See below for more.
->>
+On 7/8/19 9:09 AM, Mark Rutland wrote:
+> [Adding Marc for real this time]
+> 
+> On Mon, Jul 08, 2019 at 08:16:25AM -0400, Jon Masters wrote:
 >> On 7/8/19 7:47 AM, Mark Rutland wrote:
 >>> On Sun, Jul 07, 2019 at 11:39:46PM -0400, Jon Masters wrote:
->>>> Hi all,
->>>
->>> Hi Jon,
->>>
->>> [adding Marc and the kvm-arm list]
->>>
 >>>> TLDR: We think $subject may be a hardware errata and we are
 >>>> investigating. I was asked to drop a note to share my initial analysis
 >>>> in case others have been experiencing similar problems with 32-bit VMs.
@@ -156,15 +144,13 @@ Hehe
 >> Yeah. But only for certain faults - seems to be specifically for stage 1
 >> page table walks that cause a trap to stage 2.
 > 
-> Do we know for sure this is limited to the guest using LPAE? I
-> appreciate that this is the configuration you're running in, but it
-> would be an interesting data point to work out what is happening with
-> small descriptors.
+> Ok. It sounds like we could write a small guest to trigger that
+> deliberately with some pre-allocated page tables placed above a 4GiB
+> IPA.
 
-It appears to be so, yea. I believe it's a truncation errata on this
-platform (X-Gene1), and the vendor is currently investigating for us.
+Yea, indeed. It's funny what you realize as you're writing emails about
+it - was thinking that earlier :) Ok, that sounds like fun.
 
->>
 >>> e.g. if you return to the guest without fixing the fault, do you always
 >>> see the truncation when taking the fault again?
 >>
@@ -182,22 +168,18 @@ platform (X-Gene1), and the vendor is currently investigating for us.
 >> that the guest userspace/kernel tried to load. Hence an AT won't work,
 >> unless I'm missing something. My first thought had been to do that.
 > 
-> Ah, that's the bit I was missing: S1PTW not completing in S2 because of
-> the access flag. Duh.
+> My bad; I thought a failed AT reported the relevant IPA when it failed
+> as a result of a stage-2 fault, but I see now that it does not.
 
-:)
+Random aside - it would be great if there were an AT variant that did :)
 
-> Random idea: an option (although not a desirable one) would be to change
-> the way we handle page aging on the host by forcing an unmap at S2
-> instead of twiddling the access flag. Does this change anything on your
-> system?
+> I don't think that we can reliably walk the guest's Stage-1 tables
+> without trapping TLB invalidations (and/or stopping all vCPUs), so
+> that's rather unfortunate.
 
-Well now, that's an interesting idea. If I get chance today, I'll try.
-
-(I'm kinda getting close to punting this to the vendor...it resulted in
-a couple of all nighters last week trying to figure what the heck was
-going on. BUT I do want to figure out what could be an actually
-upstreamable quirk since Fedora is relying on this hardware)
+Indeed. In the Fedora case, it's only a single vCPU in each guest so
+they effectively already do that (and hence my test hack "works") but
+that's another thing that would need to be handled for a real fix.
 
 Jon.
 
