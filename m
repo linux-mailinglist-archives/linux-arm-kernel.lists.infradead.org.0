@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9BDD762091
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 16:35:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 31FF462095
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 16:35:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=WGRvUT5d2sqpBFVxNN3TbdXZ6T5IEJqE3sp0wwTwtoE=; b=k2HSTg0DKe8bI9pIObtY47UjNR
-	tl03RO4L0AGIQY27iV9+7cFYwdMi8esT+X88H53XKKgObgjISLnAKiF87pAjPK9lcxCGMYUnOAK7g
-	veL9mUc/bzPQi7v5eIOv2EsqRPznb7/utAg0h9NDwTNvV8rEsxZ6Zw7bHaKpBlObPQ74kVN+/gtm3
-	WmWDaeEtRT42UwRiPWO9Jx0P38aLIJ8vhFxxNQPUM1MgcsxKI10XkaY8IT5zv2yFiRFZHFtVdKX9J
-	0captVet57SUYrSvCq5Vh0eMZFWLllXooFQk2b6TlYuvMXYz8UqPz4vEfljVfg/Oip5lku7S/AHVr
-	vuKyMuog==;
+	bh=RCnwZNZsCI2WlCmj4uXWybxqovMlVAnd2mgRvQxByLs=; b=t8wkznDgqiCm8SND5m2zgfAGFw
+	n3oTjdrtokzf0eHRzQV/Uc9EJRpILehZ88mYyFSamVz3RvF36Henhibl6GbcIR/V/aIxgaGlz1eLc
+	sJ+Xmi0FqErNocujUcizdzFBiFGM0IKCwZPj9sMbNpKcgpvxDJBT2mUFwzR8W7z5Eq0842AFxenn5
+	PcN3VNtqQ3eQM+JP6ko9AviSxqGibRy65Lix0BVqqHyQHrql4ERhNhh/opgQ8GOSmsUpTxizjBsDk
+	cPcQ6U9GTqrgRol0k7qDE19oPdZIICVmsY5+K7s5T1V0JPf9YKSBEGzvHzIkZLsPWIDPC9yS75tAC
+	uPTgv3pQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkUjM-0002b4-Rd; Mon, 08 Jul 2019 14:35:00 +0000
+	id 1hkUjm-00034l-DC; Mon, 08 Jul 2019 14:35:26 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hkUhh-0001Ac-I3
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 14:33:19 +0000
+ id 1hkUhj-0001Ci-MN
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 14:33:21 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 203831595;
- Mon,  8 Jul 2019 07:33:17 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 578C01596;
+ Mon,  8 Jul 2019 07:33:19 -0700 (PDT)
 Received: from e112298-lin.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 81C133F59C;
- Mon,  8 Jul 2019 07:33:15 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 55D783F59C;
+ Mon,  8 Jul 2019 07:33:17 -0700 (PDT)
 From: Julien Thierry <julien.thierry@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 6/9] arm64: perf: Do not call irq_work_run in NMI context
-Date: Mon,  8 Jul 2019 15:32:54 +0100
-Message-Id: <1562596377-33196-7-git-send-email-julien.thierry@arm.com>
+Subject: [PATCH v3 7/9] arm/arm64: kvm: pmu: Make overflow handler NMI safe
+Date: Mon,  8 Jul 2019 15:32:55 +0100
+Message-Id: <1562596377-33196-8-git-send-email-julien.thierry@arm.com>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1562596377-33196-1-git-send-email-julien.thierry@arm.com>
 References: <1562596377-33196-1-git-send-email-julien.thierry@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_073317_706311_08BEF49C 
-X-CRM114-Status: GOOD (  11.81  )
+X-CRM114-CacheID: sfid-20190708_073319_831275_A09A9AC5 
+X-CRM114-Status: GOOD (  15.60  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -61,54 +61,102 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: mark.rutland@arm.com, Julien Thierry <julien.thierry@arm.com>,
- peterz@infradead.org, liwei391@huawei.com, will.deacon@arm.com,
- acme@kernel.org, alexander.shishkin@linux.intel.com, mingo@redhat.com,
- Catalin Marinas <catalin.marinas@arm.com>, namhyung@kernel.org,
- jolsa@redhat.com
+ peterz@infradead.org, liwei391@huawei.com,
+ Suzuki K Pouloze <suzuki.poulose@arm.com>, will.deacon@arm.com,
+ Christoffer Dall <christoffer.dall@arm.com>, acme@kernel.org,
+ alexander.shishkin@linux.intel.com, mingo@redhat.com,
+ James Morse <james.morse@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
+ namhyung@kernel.org, jolsa@redhat.com, kvmarm@lists.cs.columbia.edu
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Function irq_work_run is not NMI safe and should not be called from NMI
-context.
+When using an NMI for the PMU interrupt, taking any lock migh cause a
+deadlock. The current PMU overflow handler in KVM takes takes locks when
+trying to wake up a vcpu.
 
-When PMU interrupt is an NMI do not call irq_work_run. Instead rely on the
-IRQ work IPI to run the irq_work queue once NMI/IRQ contexts have been
-exited.
+When overflow handler is called by an NMI, defer the vcpu waking in an
+irq_work queue.
 
 Signed-off-by: Julien Thierry <julien.thierry@arm.com>
+Cc: Christoffer Dall <christoffer.dall@arm.com>
+Cc: Marc Zyngier <marc.zyngier@arm.com>
 Cc: Will Deacon <will.deacon@arm.com>
 Cc: Mark Rutland <mark.rutland@arm.com>
-Cc: Peter Zijlstra <peterz@infradead.org>
-Cc: Ingo Molnar <mingo@redhat.com>
-Cc: Arnaldo Carvalho de Melo <acme@kernel.org>
-Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
-Cc: Jiri Olsa <jolsa@redhat.com>
-Cc: Namhyung Kim <namhyung@kernel.org>
-Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: James Morse <james.morse@arm.com>
+Cc: Suzuki K Pouloze <suzuki.poulose@arm.com>
+Cc: kvmarm@lists.cs.columbia.edu
 ---
- arch/arm64/kernel/perf_event.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ include/kvm/arm_pmu.h |  1 +
+ virt/kvm/arm/pmu.c    | 25 ++++++++++++++++++++++++-
+ 2 files changed, 25 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/kernel/perf_event.c b/arch/arm64/kernel/perf_event.c
-index 878c142..a622139 100644
---- a/arch/arm64/kernel/perf_event.c
-+++ b/arch/arm64/kernel/perf_event.c
-@@ -794,7 +794,8 @@ static irqreturn_t armv8pmu_handle_irq(struct arm_pmu *cpu_pmu)
- 	 * platforms that can have the PMU interrupts raised as an NMI, this
- 	 * will not work.
- 	 */
--	irq_work_run();
-+	if (!in_nmi())
-+		irq_work_run();
- 
- 	return IRQ_HANDLED;
+diff --git a/include/kvm/arm_pmu.h b/include/kvm/arm_pmu.h
+index 16c769a..8202ed7 100644
+--- a/include/kvm/arm_pmu.h
++++ b/include/kvm/arm_pmu.h
+@@ -27,6 +27,7 @@ struct kvm_pmu {
+ 	bool ready;
+ 	bool created;
+ 	bool irq_level;
++	struct irq_work overflow_work;
+ };
+
+ #define kvm_arm_pmu_v3_ready(v)		((v)->arch.pmu.ready)
+diff --git a/virt/kvm/arm/pmu.c b/virt/kvm/arm/pmu.c
+index 3dd8238..63f358e 100644
+--- a/virt/kvm/arm/pmu.c
++++ b/virt/kvm/arm/pmu.c
+@@ -421,6 +421,22 @@ void kvm_pmu_sync_hwstate(struct kvm_vcpu *vcpu)
  }
--- 
-1.9.1
 
+ /**
++ * When perf interrupt is an NMI, we cannot safely notify the vcpu corresponding
++ * to the even.
++ * This is why we need a callback to do it once outside of the NMI context.
++ */
++static void kvm_pmu_perf_overflow_notify_vcpu(struct irq_work *work)
++{
++	struct kvm_vcpu *vcpu;
++	struct kvm_pmu *pmu;
++
++	pmu = container_of(work, struct kvm_pmu, overflow_work);
++	vcpu = kvm_pmc_to_vcpu(&pmu->pmc[0]);
++
++	kvm_vcpu_kick(vcpu);
++}
++
++/**
+  * When the perf event overflows, set the overflow status and inform the vcpu.
+  */
+ static void kvm_pmu_perf_overflow(struct perf_event *perf_event,
+@@ -435,7 +451,11 @@ static void kvm_pmu_perf_overflow(struct perf_event *perf_event,
+
+ 	if (kvm_pmu_overflow_status(vcpu)) {
+ 		kvm_make_request(KVM_REQ_IRQ_PENDING, vcpu);
+-		kvm_vcpu_kick(vcpu);
++
++		if (!in_nmi())
++			kvm_vcpu_kick(vcpu);
++		else
++			irq_work_queue(&vcpu->arch.pmu.overflow_work);
+ 	}
+ }
+
+@@ -706,6 +726,9 @@ static int kvm_arm_pmu_v3_init(struct kvm_vcpu *vcpu)
+ 			return ret;
+ 	}
+
++	init_irq_work(&vcpu->arch.pmu.overflow_work,
++		      kvm_pmu_perf_overflow_notify_vcpu);
++
+ 	vcpu->arch.pmu.created = true;
+ 	return 0;
+ }
+--
+1.9.1
 
 _______________________________________________
 linux-arm-kernel mailing list
