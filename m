@@ -2,50 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 735BB62675
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 18:37:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92F0E6268A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 18:42:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=Bzu6a1DIg7P/6wREqT6mkCfipqkIOPb73VNlEATi4gw=; b=VRW
-	VCAIPgksko0WAzLmU7bqLrQ1q8ZlN4gQTFtKumuxkRummds13D4gZ+r/jfPg99owpMDaIAYbYW/1R
-	iXbPWQGzDUWDfMKxMZXieiybTwYL8TEkeSS3Dd3dTw/iO1SgF4MzpaB854cKQvcoroMpL2WbhqCXF
-	2KjBMdO4dXnRvPWJa7W2Vb8X0M/QyHDRUW5SE/NXlukGo2gTsnRWlm7em1U73G1nCv7hPFvKFhQjB
-	4kr/LV4C0kvax0O4+a8pacLeSslBBv7uLhGIlBiSMr5z4hV7g8+tLObbPY9jsnJovITBWRol83CnJ
-	gFzg4Zbaz0UDJy7dMzMAa5K+bDICpcQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UlDcghT3SLtWpJuGcjQd3ryyxULakaMsDOwcMnAC8S8=; b=HGhz6BX4UTO8Tv
+	1Ub2UvtX8fz/biMb+/pyblBk93oCvxUSi5WmTX0EKLe5gGUjauirBa3bJEyDe6NkIpX7dA/ZEEvni
+	1YrYThutPJdItQOPuPxqBQ04Mhcdi0UqjFYjzZBbh+tWQjk4uX7kH24v284+WFbvBkb7NipHLBjAn
+	RB2gahqsgUeFz2JaAsd2jGCyNQrI9mPNCJmLAfawLJmG+6eZU8HPH2ygoylH92sbI0s3K6UB8UB6+
+	8VuRe23cME8KcgjzJV9OA9knxgGSZIRphrEdddxdVM/KV2TK3jNsfvNBGmm6ECCvFYGKtEZyCEZhH
+	1x2HpYVGHh7gNLUy11ag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkWdZ-0001Fg-LB; Mon, 08 Jul 2019 16:37:10 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hkWdD-0001FL-Ic
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 16:36:49 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0AFC2360;
- Mon,  8 Jul 2019 09:36:47 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 3C93D3F246;
- Mon,  8 Jul 2019 09:36:46 -0700 (PDT)
-From: Mark Rutland <mark.rutland@arm.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm64: remove pointless __KERNEL__ guards
-Date: Mon,  8 Jul 2019 17:36:40 +0100
-Message-Id: <20190708163640.6530-1-mark.rutland@arm.com>
-X-Mailer: git-send-email 2.11.0
+	id 1hkWiZ-0002yW-C8; Mon, 08 Jul 2019 16:42:19 +0000
+Received: from ns.iliad.fr ([212.27.33.1])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hkWiL-0002y3-Gd
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 16:42:07 +0000
+Received: from ns.iliad.fr (localhost [127.0.0.1])
+ by ns.iliad.fr (Postfix) with ESMTP id 979F920BC5;
+ Mon,  8 Jul 2019 18:42:02 +0200 (CEST)
+Received: from [192.168.108.49] (freebox.vlq16.iliad.fr [213.36.7.13])
+ by ns.iliad.fr (Postfix) with ESMTP id 72279208E6;
+ Mon,  8 Jul 2019 18:42:02 +0200 (CEST)
+Subject: Re: [RFC] SW connection between DVB Transport Stream demuxer and
+ I2C-based frontend
+From: Marc Gonzalez <marc.w.gonzalez@free.fr>
+To: I2C <linux-i2c@vger.kernel.org>, linux-media
+ <linux-media@vger.kernel.org>, GPIO <linux-gpio@vger.kernel.org>
+References: <5e35b4fb-646d-6428-f372-ee47d7352cd6@free.fr>
+Message-ID: <4b9c5a48-aaed-5f1f-1835-167fcdcb7655@free.fr>
+Date: Mon, 8 Jul 2019 18:42:02 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
+MIME-Version: 1.0
+In-Reply-To: <5e35b4fb-646d-6428-f372-ee47d7352cd6@free.fr>
+Content-Language: en-US
+X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
+ Mon Jul  8 18:42:02 2019 +0200 (CEST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_093647_701327_BBA4B731 
-X-CRM114-Status: GOOD (  14.32  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190708_094205_848991_D9308DDD 
+X-CRM114-Status: GOOD (  18.14  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [212.27.33.1 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (marc.w.gonzalez[at]free.fr)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,365 +69,149 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>
-MIME-Version: 1.0
+Cc: Peter Korsgaard <peter@korsgaard.com>,
+ Jeffrey Hugo <jeffrey.l.hugo@gmail.com>, Wolfram Sang <wsa@the-dreams.de>,
+ Linus Walleij <linus.walleij@linaro.org>, Brad Love <brad@nextdimension.cc>,
+ =?UTF-8?Q?Jonathan_Neusch=c3=a4fer?= <j.neuschaefer@gmx.net>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Antti Palosaari <crope@iki.fi>,
+ Simon Horman <horms+renesas@verge.net.au>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Olli Salonen <olli.salonen@iki.fi>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For a number of years, UAPI headers have been split from kernel-internal
-headers. The latter are never exposed to userspace, and always built
-with __KERNEL__ defined.
+On 08/07/2019 13:08, Marc Gonzalez wrote:
 
-Most headers under arch/arm64 don't have __KERNEL__ guards, but there
-are a few stragglers lying around. To make things more consistent, and
-to set a good example going forward, let's remove these redundant
-__KERNEL__ guards.
+> PROBLEM #1
+> 
+> The media framework requires that the TSIF and demod be "tied" together,
+> by calling dvb_register_frontend(). If I do that in tsif.c, then I need to
+> get the frontend pointer from the demod at some point. There is no such
+> callback presently. Since si2168 lives on an I2C bus, I can get a
+> struct i2c_client pointer, through the DT phandle. But some kind of
+> abstraction is missing to query the i2c_client object to make sure it
+> is a demodulator and request its frontend pointer.
+> 
+> For the time being, I have added a very generic pointer to struct i2c_client
+> but I feel this is not quite right... (though it gets the job done)
 
-In a couple of cases, a trailing #endif lacked a comment describing its
-corresponding #if or #ifdef, so these are fixes up at the same time.
+As far as PROBLEM #1 is concerned, I think I have a better solution;
+one that doesn't involve messing with struct i2c_client.
 
-Guards in auto-generated crypto code are left as-is, as these guards are
-generated by scripting imported from the upstream openssl project
-scripts. Guards in UAPI headers are left as-is, as these can be included
-by userspace or the kernel.
+Basically, we embed a common struct in every demod driver, at the
+beginning of their private control struct. That way, demod consumers
+have a generic/common data type to inspect, and don't need to know
+the specific demod they are working with. (I left the removals in
+the diff below, to show the two proposed solutions so far.)
 
-There should be no functional change as a result of this patch.
+@linux-media maintainers, I think this solution is acceptable for
+mainline, right?
 
-Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will.deacon@arm.com>
----
- arch/arm64/include/asm/atomic.h         | 5 +----
- arch/arm64/include/asm/compat.h         | 2 --
- arch/arm64/include/asm/debug-monitors.h | 3 ---
- arch/arm64/include/asm/dma-mapping.h    | 3 ---
- arch/arm64/include/asm/fpsimd.h         | 2 +-
- arch/arm64/include/asm/futex.h          | 3 ---
- arch/arm64/include/asm/hw_breakpoint.h  | 3 ---
- arch/arm64/include/asm/io.h             | 3 ---
- arch/arm64/include/asm/irqflags.h       | 5 +----
- arch/arm64/include/asm/pci.h            | 2 --
- arch/arm64/include/asm/proc-fns.h       | 2 --
- arch/arm64/include/asm/processor.h      | 3 ---
- arch/arm64/include/asm/signal32.h       | 2 --
- arch/arm64/include/asm/thread_info.h    | 3 ---
- arch/arm64/include/asm/vdso.h           | 4 ----
- arch/arm64/include/asm/vdso_datapage.h  | 4 ----
- 16 files changed, 3 insertions(+), 46 deletions(-)
+Regards.
 
-This is based on the arm64 for-next/core branch, for which I've built and
-boot-tested defconfig.
 
-Mark.
 
-diff --git a/arch/arm64/include/asm/atomic.h b/arch/arm64/include/asm/atomic.h
-index 1f4e9ee641c9..7f3c714de1e3 100644
---- a/arch/arm64/include/asm/atomic.h
-+++ b/arch/arm64/include/asm/atomic.h
-@@ -26,8 +26,6 @@
- #include <asm/barrier.h>
- #include <asm/lse.h>
+diff --git a/drivers/media/dvb-frontends/si2168.c b/drivers/media/dvb-frontends/si2168.c
+index 726bb6759315..692f3207cd9d 100644
+--- a/drivers/media/dvb-frontends/si2168.c
++++ b/drivers/media/dvb-frontends/si2168.c
+@@ -666,12 +666,6 @@ struct si2168_config si2168_config;
+ struct si2157_config si2157_config;
+ struct i2c_client *tuner;
  
--#ifdef __KERNEL__
+-static void *get_fe(struct i2c_client *client)
+-{
+-	struct si2168_dev *dev = i2c_get_clientdata(client);
+-	return &dev->fe;
+-}
 -
- #define __ARM64_IN_ATOMIC_IMPL
- 
- #if defined(CONFIG_ARM64_LSE_ATOMICS) && defined(CONFIG_AS_LSE)
-@@ -168,5 +166,4 @@
- 
- #include <asm-generic/atomic-instrumented.h>
- 
--#endif
--#endif
-+#endif /* __ASM_ATOMIC_H */
-diff --git a/arch/arm64/include/asm/compat.h b/arch/arm64/include/asm/compat.h
-index 93ce86d5dae1..02bdd10cb3c2 100644
---- a/arch/arm64/include/asm/compat.h
-+++ b/arch/arm64/include/asm/compat.h
-@@ -15,7 +15,6 @@
-  */
- #ifndef __ASM_COMPAT_H
- #define __ASM_COMPAT_H
--#ifdef __KERNEL__
- #ifdef CONFIG_COMPAT
- 
- /*
-@@ -226,5 +225,4 @@ static inline int is_compat_thread(struct thread_info *thread)
- }
- 
- #endif /* CONFIG_COMPAT */
--#endif /* __KERNEL__ */
- #endif /* __ASM_COMPAT_H */
-diff --git a/arch/arm64/include/asm/debug-monitors.h b/arch/arm64/include/asm/debug-monitors.h
-index 0679f781696d..7001a961f649 100644
---- a/arch/arm64/include/asm/debug-monitors.h
-+++ b/arch/arm64/include/asm/debug-monitors.h
-@@ -16,8 +16,6 @@
- #ifndef __ASM_DEBUG_MONITORS_H
- #define __ASM_DEBUG_MONITORS_H
- 
--#ifdef __KERNEL__
--
- #include <linux/errno.h>
- #include <linux/types.h>
- #include <asm/brk-imm.h>
-@@ -139,5 +137,4 @@ static inline int reinstall_suspended_bps(struct pt_regs *regs)
- int aarch32_break_handler(struct pt_regs *regs);
- 
- #endif	/* __ASSEMBLY */
--#endif	/* __KERNEL__ */
- #endif	/* __ASM_DEBUG_MONITORS_H */
-diff --git a/arch/arm64/include/asm/dma-mapping.h b/arch/arm64/include/asm/dma-mapping.h
-index de98191e4c7d..c96e72bc04f0 100644
---- a/arch/arm64/include/asm/dma-mapping.h
-+++ b/arch/arm64/include/asm/dma-mapping.h
-@@ -16,8 +16,6 @@
- #ifndef __ASM_DMA_MAPPING_H
- #define __ASM_DMA_MAPPING_H
- 
--#ifdef __KERNEL__
--
- #include <linux/types.h>
- #include <linux/vmalloc.h>
- 
-@@ -38,5 +36,4 @@ static inline bool is_device_dma_coherent(struct device *dev)
- 	return dev->dma_coherent;
- }
- 
--#endif	/* __KERNEL__ */
- #endif	/* __ASM_DMA_MAPPING_H */
-diff --git a/arch/arm64/include/asm/fpsimd.h b/arch/arm64/include/asm/fpsimd.h
-index 4154851c21ab..bf5d710eaef5 100644
---- a/arch/arm64/include/asm/fpsimd.h
-+++ b/arch/arm64/include/asm/fpsimd.h
-@@ -32,7 +32,7 @@
- #include <linux/stddef.h>
- #include <linux/types.h>
- 
--#if defined(__KERNEL__) && defined(CONFIG_COMPAT)
-+#ifdef CONFIG_COMPAT
- /* Masks for extracting the FPSR and FPCR from the FPSCR */
- #define VFP_FPSCR_STAT_MASK	0xf800009f
- #define VFP_FPSCR_CTRL_MASK	0x07f79f00
-diff --git a/arch/arm64/include/asm/futex.h b/arch/arm64/include/asm/futex.h
-index a56efb5626fa..360161d24252 100644
---- a/arch/arm64/include/asm/futex.h
-+++ b/arch/arm64/include/asm/futex.h
-@@ -16,8 +16,6 @@
- #ifndef __ASM_FUTEX_H
- #define __ASM_FUTEX_H
- 
--#ifdef __KERNEL__
--
- #include <linux/futex.h>
- #include <linux/uaccess.h>
- 
-@@ -140,5 +138,4 @@ futex_atomic_cmpxchg_inatomic(u32 *uval, u32 __user *_uaddr,
- 	return ret;
- }
- 
--#endif /* __KERNEL__ */
- #endif /* __ASM_FUTEX_H */
-diff --git a/arch/arm64/include/asm/hw_breakpoint.h b/arch/arm64/include/asm/hw_breakpoint.h
-index 6a53e59ced95..29ee857c0dca 100644
---- a/arch/arm64/include/asm/hw_breakpoint.h
-+++ b/arch/arm64/include/asm/hw_breakpoint.h
-@@ -21,8 +21,6 @@
- #include <asm/sysreg.h>
- #include <asm/virt.h>
- 
--#ifdef __KERNEL__
--
- struct arch_hw_breakpoint_ctrl {
- 	u32 __reserved	: 19,
- 	len		: 8,
-@@ -167,5 +165,4 @@ static inline int get_num_wrps(void)
- 						ID_AA64DFR0_WRPS_SHIFT);
- }
- 
--#endif	/* __KERNEL__ */
- #endif	/* __ASM_BREAKPOINT_H */
-diff --git a/arch/arm64/include/asm/io.h b/arch/arm64/include/asm/io.h
-index b807cb9b517d..fb424e6cfa19 100644
---- a/arch/arm64/include/asm/io.h
-+++ b/arch/arm64/include/asm/io.h
-@@ -19,8 +19,6 @@
- #ifndef __ASM_IO_H
- #define __ASM_IO_H
- 
--#ifdef __KERNEL__
--
- #include <linux/types.h>
- 
- #include <asm/byteorder.h>
-@@ -218,5 +216,4 @@ extern int valid_mmap_phys_addr_range(unsigned long pfn, size_t size);
- 
- extern int devmem_is_allowed(unsigned long pfn);
- 
--#endif	/* __KERNEL__ */
- #endif	/* __ASM_IO_H */
-diff --git a/arch/arm64/include/asm/irqflags.h b/arch/arm64/include/asm/irqflags.h
-index cac2d2a3c24e..8a040145d1a9 100644
---- a/arch/arm64/include/asm/irqflags.h
-+++ b/arch/arm64/include/asm/irqflags.h
-@@ -16,8 +16,6 @@
- #ifndef __ASM_IRQFLAGS_H
- #define __ASM_IRQFLAGS_H
- 
--#ifdef __KERNEL__
--
- #include <asm/alternative.h>
- #include <asm/ptrace.h>
- #include <asm/sysreg.h>
-@@ -139,5 +137,4 @@ static inline void arch_local_irq_restore(unsigned long flags)
- 		: "memory");
- }
- 
--#endif
--#endif
-+#endif /* __ASM_IRQFLAGS_H */
-diff --git a/arch/arm64/include/asm/pci.h b/arch/arm64/include/asm/pci.h
-index 9e690686e8aa..70b323cf8300 100644
---- a/arch/arm64/include/asm/pci.h
-+++ b/arch/arm64/include/asm/pci.h
-@@ -1,7 +1,6 @@
- /* SPDX-License-Identifier: GPL-2.0 */
- #ifndef __ASM_PCI_H
- #define __ASM_PCI_H
--#ifdef __KERNEL__
- 
- #include <linux/types.h>
- #include <linux/slab.h>
-@@ -35,5 +34,4 @@ static inline int pci_proc_domain(struct pci_bus *bus)
- }
- #endif  /* CONFIG_PCI */
- 
--#endif  /* __KERNEL__ */
- #endif  /* __ASM_PCI_H */
-diff --git a/arch/arm64/include/asm/proc-fns.h b/arch/arm64/include/asm/proc-fns.h
-index 16cef2e8449e..33e8dea6d4d2 100644
---- a/arch/arm64/include/asm/proc-fns.h
-+++ b/arch/arm64/include/asm/proc-fns.h
-@@ -20,7 +20,6 @@
- #ifndef __ASM_PROCFNS_H
- #define __ASM_PROCFNS_H
- 
--#ifdef __KERNEL__
- #ifndef __ASSEMBLY__
- 
- #include <asm/page.h>
-@@ -36,5 +35,4 @@ extern u64 cpu_do_resume(phys_addr_t ptr, u64 idmap_ttbr);
- #include <asm/memory.h>
- 
- #endif /* __ASSEMBLY__ */
--#endif /* __KERNEL__ */
- #endif /* __ASM_PROCFNS_H */
-diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
-index fcd0e691b1ea..9f5746eaa797 100644
---- a/arch/arm64/include/asm/processor.h
-+++ b/arch/arm64/include/asm/processor.h
-@@ -31,7 +31,6 @@
- #define NET_IP_ALIGN	0
- 
- #ifndef __ASSEMBLY__
--#ifdef __KERNEL__
- 
- #include <linux/build_bug.h>
- #include <linux/cache.h>
-@@ -284,8 +283,6 @@ static inline void spin_lock_prefetch(const void *ptr)
- 
- #define HAVE_ARCH_PICK_MMAP_LAYOUT
- 
--#endif
--
- extern unsigned long __ro_after_init signal_minsigstksz; /* sigframe size */
- extern void __init minsigstksz_setup(void);
- 
-diff --git a/arch/arm64/include/asm/signal32.h b/arch/arm64/include/asm/signal32.h
-index 58e288aaf0ba..01a9d2aee9cd 100644
---- a/arch/arm64/include/asm/signal32.h
-+++ b/arch/arm64/include/asm/signal32.h
-@@ -16,7 +16,6 @@
- #ifndef __ASM_SIGNAL32_H
- #define __ASM_SIGNAL32_H
- 
--#ifdef __KERNEL__
- #ifdef CONFIG_COMPAT
- #include <linux/compat.h>
- 
-@@ -44,5 +43,4 @@ static inline void compat_setup_restart_syscall(struct pt_regs *regs)
+ static int si2168_probe(struct i2c_client *client,
+ 		const struct i2c_device_id *id)
  {
- }
- #endif /* CONFIG_COMPAT */
--#endif /* __KERNEL__ */
- #endif /* __ASM_SIGNAL32_H */
-diff --git a/arch/arm64/include/asm/thread_info.h b/arch/arm64/include/asm/thread_info.h
-index c285d1ce7186..660d388cb0a8 100644
---- a/arch/arm64/include/asm/thread_info.h
-+++ b/arch/arm64/include/asm/thread_info.h
-@@ -19,8 +19,6 @@
- #ifndef __ASM_THREAD_INFO_H
- #define __ASM_THREAD_INFO_H
+@@ -700,7 +694,7 @@ static int si2168_probe(struct i2c_client *client,
+ 		goto err;
+ 	}
  
--#ifdef __KERNEL__
+-	client->get_something = get_fe;
++	dev->common.fe = &dev->fe;
+ 	i2c_set_clientdata(client, dev);
+ 	mutex_init(&dev->i2c_mutex);
+ 
+diff --git a/drivers/media/dvb-frontends/si2168_priv.h b/drivers/media/dvb-frontends/si2168_priv.h
+index 804d5b30c697..2e69080f8a1c 100644
+--- a/drivers/media/dvb-frontends/si2168_priv.h
++++ b/drivers/media/dvb-frontends/si2168_priv.h
+@@ -22,6 +22,7 @@
+ 
+ /* state struct */
+ struct si2168_dev {
++	struct dvb_demod_common common;
+ 	struct mutex i2c_mutex;
+ 	struct i2c_mux_core *muxc;
+ 	struct dvb_frontend fe;
+diff --git a/drivers/media/platform/tsif.c b/drivers/media/platform/tsif.c
+index a0118c2ee870..c13fa19c9779 100644
+--- a/drivers/media/platform/tsif.c
++++ b/drivers/media/platform/tsif.c
+@@ -237,6 +237,7 @@ static int msm_tspp_probe(struct platform_device *pdev)
+ 	{
+ 		struct device_node *tsif_node, *demod_node;
+ 		struct i2c_client *demod;
++		struct dvb_demod_common *demod_data;
+ 
+ 		tsif_node = pdev->dev.of_node;
+ 		demod_node = of_parse_phandle(tsif_node, "demod", 0);
+@@ -244,10 +245,8 @@ static int msm_tspp_probe(struct platform_device *pdev)
+ 		demod = of_find_i2c_device_by_node(demod_node);
+ 		if (!demod) panic("of_find_i2c_device_by_node");
+ 
+-		/*** TODO: Improve callback naming & handling ***/
+-		if (!demod->get_something)
+-			panic("Wrong i2c_client");
+-		my_dvb_frontend = demod->get_something(demod);
++		demod_data = i2c_get_clientdata(demod);
++		my_dvb_frontend = demod_data->fe;
+ 		of_node_put(demod_node);
+ 	}
+ 
+diff --git a/include/linux/i2c.h b/include/linux/i2c.h
+index 5fca596e0dd0..e982b8913b73 100644
+--- a/include/linux/i2c.h
++++ b/include/linux/i2c.h
+@@ -295,8 +295,6 @@ struct i2c_driver {
+ };
+ #define to_i2c_driver(d) container_of(d, struct i2c_driver, driver)
+ 
+-typedef void *generic_func(struct i2c_client *this);
 -
- #include <linux/compiler.h>
+ /**
+  * struct i2c_client - represent an I2C slave device
+  * @flags: I2C_CLIENT_TEN indicates the device uses a ten bit chip address;
+@@ -330,7 +328,6 @@ struct i2c_client {
+ #if IS_ENABLED(CONFIG_I2C_SLAVE)
+ 	i2c_slave_cb_t slave_cb;	/* callback for slave mode	*/
+ #endif
+-	generic_func *get_something;
+ };
+ #define to_i2c_client(d) container_of(d, struct i2c_client, dev)
  
- #ifndef __ASSEMBLY__
-@@ -132,5 +130,4 @@ void arch_release_task_struct(struct task_struct *tsk);
- 	.addr_limit	= KERNEL_DS,					\
- }
+diff --git a/include/media/dvb_frontend.h b/include/media/dvb_frontend.h
+index f05cd7b94a2c..087486bc027e 100644
+--- a/include/media/dvb_frontend.h
++++ b/include/media/dvb_frontend.h
+@@ -73,6 +73,10 @@ struct dvb_frontend_tune_settings {
  
--#endif /* __KERNEL__ */
- #endif /* __ASM_THREAD_INFO_H */
-diff --git a/arch/arm64/include/asm/vdso.h b/arch/arm64/include/asm/vdso.h
-index 839ce0031bd5..6f64751a5779 100644
---- a/arch/arm64/include/asm/vdso.h
-+++ b/arch/arm64/include/asm/vdso.h
-@@ -16,8 +16,6 @@
- #ifndef __ASM_VDSO_H
- #define __ASM_VDSO_H
+ struct dvb_frontend;
  
--#ifdef __KERNEL__
--
- /*
-  * Default link address for the vDSO.
-  * Since we randomise the VDSO mapping, there's little point in trying
-@@ -36,6 +34,4 @@
- 
- #endif /* !__ASSEMBLY__ */
- 
--#endif /* __KERNEL__ */
--
- #endif /* __ASM_VDSO_H */
-diff --git a/arch/arm64/include/asm/vdso_datapage.h b/arch/arm64/include/asm/vdso_datapage.h
-index f89263c8e11a..86dc05a5786e 100644
---- a/arch/arm64/include/asm/vdso_datapage.h
-+++ b/arch/arm64/include/asm/vdso_datapage.h
-@@ -16,8 +16,6 @@
- #ifndef __ASM_VDSO_DATAPAGE_H
- #define __ASM_VDSO_DATAPAGE_H
- 
--#ifdef __KERNEL__
--
- #ifndef __ASSEMBLY__
- 
- struct vdso_data {
-@@ -43,6 +41,4 @@ struct vdso_data {
- 
- #endif /* !__ASSEMBLY__ */
- 
--#endif /* __KERNEL__ */
--
- #endif /* __ASM_VDSO_DATAPAGE_H */
--- 
-2.11.0
-
++struct dvb_demod_common {
++	struct dvb_frontend *fe;
++};
++
+ /**
+  * struct dvb_tuner_info - Frontend name and min/max ranges/bandwidths
+  *
 
 _______________________________________________
 linux-arm-kernel mailing list
