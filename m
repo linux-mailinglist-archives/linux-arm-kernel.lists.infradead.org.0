@@ -2,57 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B4BDB61DA0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 13:07:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0226161D9A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 13:06:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ESzq+D4UaCVG0yHYS1lEhpwMC9UyMpAwTTWaTcLzMOg=; b=CYwh8YbNJGGmHW
-	aE+QOBoOpX4hqSYA5TxecurTXTmotmlreDQORXWiyxOhwBHK4ta6Ytybreq/wS6iV7145rag3e0EI
-	5g1gyyme2s25QxHyKt/JCyxU8aV4Q1GwA5ko6f/O5zBQVhznQdt7WA4MLXMzQcbcPiYy4S9yscx+6
-	0WNmM5dtWMXIDYyi+GpN4UAh4cb5NpPfPjqZMCJF029ioNZL9IsDZ/vZQPXuPS7qVqDJOlrcF+5v0
-	TehD9ejxSdUvgJEXJ2hejzAdPVf4K+plZWCPnn5yLOru97gSWry9OprHyEJZM/C9dG/iPr3X1n3p8
-	tHQ2ukGW4kJDrEKn7RXg==;
+	List-Owner; bh=Tvihem+Bowgj6Q65nyZcEBIkuffDcJuKOUPXb82c/pQ=; b=Qs8aMPbq2hq3tB
+	ShKBNjNrYMz8fcJDx1BwQy+vkHC+GFBvbiqUfw/FhWrGbfSKYQhj6vx3l5ZKGi3KbhQ2AOM+dEbUi
+	4tNcGd+fMV+g4xbAFo879B8RFg7dXsQLZpU7g/ZtL2iNO0J2+4Ph9A/JBSbrjUqI3wGQCQMbtfnTf
+	8jbwkLSINteVQO2CO12qU33xEBD53LcjRvaLt/k5isAD64skBRg61Tvj7djrE7fJofohDc1IVsuyW
+	aTUmycsN9QrRaGgFkVDjC4QZANCaicJSBUwc6HAvS1Itaj4FuPmpalItndJDicPMArE3j2BZ2Tn/m
+	ql4ENQXezOMihmEq6l0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkRUE-0003w0-Vs; Mon, 08 Jul 2019 11:07:10 +0000
+	id 1hkRTt-0003bm-2A; Mon, 08 Jul 2019 11:06:49 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkRT5-0003Cx-Fe; Mon, 08 Jul 2019 11:06:01 +0000
-X-UUID: 0a8a70655d87492ba2b5c69ffb347864-20190708
-X-UUID: 0a8a70655d87492ba2b5c69ffb347864-20190708
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ id 1hkRSZ-0002nq-T5; Mon, 08 Jul 2019 11:05:31 +0000
+X-UUID: 2d61691631e64233a59a5341c41ef879-20190708
+X-UUID: 2d61691631e64233a59a5341c41ef879-20190708
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
  (envelope-from <frederic.chen@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 347287009; Mon, 08 Jul 2019 03:05:29 -0800
-Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 8 Jul 2019 04:05:28 -0700
+ with ESMTP id 1928795390; Mon, 08 Jul 2019 03:05:18 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 8 Jul 2019 04:05:17 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 8 Jul 2019 19:05:11 +0800
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 8 Jul 2019 19:05:16 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Mon, 8 Jul 2019 19:05:11 +0800
+ Frontend Transport; Mon, 8 Jul 2019 19:05:15 +0800
 From: <frederic.chen@mediatek.com>
 To: <hans.verkuil@cisco.com>, <laurent.pinchart+renesas@ideasonboard.com>,
  <tfiga@chromium.org>, <matthias.bgg@gmail.com>, <mchehab@kernel.org>
-Subject: [RFC PATCH V2 3/6] media: platform: Add Mediatek DIP driver KConfig
-Date: Mon, 8 Jul 2019 19:04:57 +0800
-Message-ID: <20190708110500.7242-4-frederic.chen@mediatek.com>
+Subject: [RFC PATCH V2 5/6] remoteproc/mediatek: add SCP's shared dma pool
+ support for mt8183
+Date: Mon, 8 Jul 2019 19:04:59 +0800
+Message-ID: <20190708110500.7242-6-frederic.chen@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20190708110500.7242-1-frederic.chen@mediatek.com>
 References: <20190708110500.7242-1-frederic.chen@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: E2B9BCA9C78A31471D6E66FDD38C8EA85FA55EE481B47A72F6E097A06996EFEF2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_040559_588180_C4A66D75 
-X-CRM114-Status: UNSURE (   8.66  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190708_040528_043407_C4B4CEF0 
+X-CRM114-Status: GOOD (  13.61  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -87,57 +86,146 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Frederic Chen <frederic.chen@mediatek.com>
 
-This patch adds KConfig for Mediatek Digital Image Processing
-driver(DIP). DIP is embedded in Mediatek SoCs. It provides
-image format conversion, resizing, and rotation function.
+This patch uses of_reserved_mem_device_init_by_idx() to hook the
+scp device to DMA mapping API to provide a shared dma pool of
+SCP DMA buffers for SCP's client such as DIP and ISP Pass 1
+drivers.
 
 Signed-off-by: Frederic Chen <frederic.chen@mediatek.com>
 ---
- drivers/media/platform/Kconfig         |  2 ++
- drivers/media/platform/mtk-isp/Kconfig | 21 +++++++++++++++++++++
- 2 files changed, 23 insertions(+)
- create mode 100644 drivers/media/platform/mtk-isp/Kconfig
+ drivers/remoteproc/mtk_scp.c | 54 ++++++++++++++++++++++--------------
+ 1 file changed, 33 insertions(+), 21 deletions(-)
 
-diff --git a/drivers/media/platform/Kconfig b/drivers/media/platform/Kconfig
-index 0c725d4dcf80..b8501e1b134f 100644
---- a/drivers/media/platform/Kconfig
-+++ b/drivers/media/platform/Kconfig
-@@ -32,6 +32,8 @@ source "drivers/media/platform/davinci/Kconfig"
+diff --git a/drivers/remoteproc/mtk_scp.c b/drivers/remoteproc/mtk_scp.c
+index 4c093dec52b9..0cffe4b63dba 100644
+--- a/drivers/remoteproc/mtk_scp.c
++++ b/drivers/remoteproc/mtk_scp.c
+@@ -4,12 +4,14 @@
  
- source "drivers/media/platform/omap/Kconfig"
+ #include <asm/barrier.h>
+ #include <linux/clk.h>
++#include <linux/dma-mapping.h>
+ #include <linux/err.h>
+ #include <linux/interrupt.h>
+ #include <linux/kernel.h>
+ #include <linux/module.h>
+ #include <linux/of_address.h>
+ #include <linux/of_platform.h>
++#include <linux/of_reserved_mem.h>
+ #include <linux/platform_data/mtk_scp.h>
+ #include <linux/platform_device.h>
+ #include <linux/remoteproc.h>
+@@ -487,29 +489,29 @@ EXPORT_SYMBOL_GPL(scp_get_reserve_mem_size);
  
-+source "drivers/media/platform/mtk-isp/Kconfig"
+ static int scp_map_memory_region(struct mtk_scp *scp)
+ {
+-	struct device_node *node;
+-	struct resource r;
+-	int ret;
++	int ret, id;
+ 
+-	node = of_parse_phandle(scp->dev->of_node, "memory-region", 0);
+-	if (!node) {
+-		dev_err(scp->dev, "no memory-region specified\n");
+-		return -EINVAL;
++	ret = of_reserved_mem_device_init_by_idx(scp->dev, scp->dev->of_node,
++						 0);
++	if (ret) {
++		dev_err(scp->dev,
++			"%s:of_reserved_mem_device_init_by_idx(0) failed:(%d)",
++			__func__, ret);
++		return -ENOMEM;
+ 	}
+ 
+-	ret = of_address_to_resource(node, 0, &r);
+-	if (ret)
+-		return ret;
++	/* Pre-allocate the working buffers */
++	scp->dram_size = MAX_CODE_SIZE;
++	for (id = 0; id < SCP_NUMS_MEM_ID; id++)
++		scp->dram_size += scp_reserve_mblock[id].size;
+ 
+-	scp->phys_addr = r.start;
+-	scp->dram_size = resource_size(&r);
+-	scp->cpu_addr =
+-		devm_ioremap_wc(scp->dev, scp->phys_addr, scp->dram_size);
++	scp->cpu_addr = dma_alloc_coherent(scp->dev, scp->dram_size,
++					   &scp->phys_addr, GFP_KERNEL);
+ 
+ 	if (!scp->cpu_addr) {
+-		dev_err(scp->dev, "unable to map memory region: %pa+%zx\n",
+-			&r.start, scp->dram_size);
+-		return -EBUSY;
++		dev_err(scp->dev, "unable to pre-allocate memory for SCP: %zx\n",
++			scp->dram_size);
++		return -ENOMEM;
+ 	}
+ 
+ #if SCP_RESERVED_MEM
+@@ -519,6 +521,13 @@ static int scp_map_memory_region(struct mtk_scp *scp)
+ 	return 0;
+ }
+ 
++static void scp_unmap_memory_region(struct mtk_scp *scp)
++{
++	dma_free_coherent(scp->dev, scp->dram_size, scp->cpu_addr,
++			  scp->phys_addr);
++	of_reserved_mem_device_release(scp->dev);
++}
 +
- config VIDEO_ASPEED
- 	tristate "Aspeed AST2400 and AST2500 Video Engine driver"
- 	depends on VIDEO_V4L2
-diff --git a/drivers/media/platform/mtk-isp/Kconfig b/drivers/media/platform/mtk-isp/Kconfig
-new file mode 100644
-index 000000000000..24a592022dd5
---- /dev/null
-+++ b/drivers/media/platform/mtk-isp/Kconfig
-@@ -0,0 +1,21 @@
-+config VIDEO_MEDIATEK_ISP_DIP
-+	bool "Mediatek Digital Image Processing function"
-+	select DMA_SHARED_BUFFER
-+	select VIDEO_V4L2_SUBDEV_API
-+	select VIDEOBUF2_DMA_CONTIG
-+	select VIDEOBUF2_CORE
-+	select VIDEOBUF2_V4L2
-+	select VIDEOBUF2_MEMOPS
-+	select VIDEOBUF2_VMALLOC
-+	select MEDIA_CONTROLLER
-+
-+	default n
-+	help
-+	    Support the basic Digital Image Processing (DIP) driver.
-+
-+	    DIP driver provides image format conversion, resizing,
-+	    and rotation function through the low power hardware.
-+	    DIP also supports multiple output feature. It can
-+	    generate two or more output image with different effect
-+	    based on a single input image at the same time.
-+
+ static struct mtk_rpmsg_info mtk_scp_rpmsg_info = {
+ 	.send_ipi = scp_ipi_send,
+ 	.register_ipi = scp_ipi_register,
+@@ -594,20 +603,20 @@ static int scp_probe(struct platform_device *pdev)
+ 	if (IS_ERR(scp->clk)) {
+ 		dev_err(dev, "Failed to get clock\n");
+ 		ret = PTR_ERR(scp->clk);
+-		goto free_rproc;
++		goto release_dev_mem;
+ 	}
+ 
+ 	ret = clk_prepare_enable(scp->clk);
+ 	if (ret) {
+ 		dev_err(dev, "failed to enable clocks\n");
+-		goto free_rproc;
++		goto release_dev_mem;
+ 	}
+ 
+ 	ret = scp_ipi_init(scp);
+ 	clk_disable_unprepare(scp->clk);
+ 	if (ret) {
+ 		dev_err(dev, "Failed to init ipi\n");
+-		goto free_rproc;
++		goto release_dev_mem;
+ 	}
+ 
+ 	/* register SCP initialization IPI */
+@@ -617,7 +626,7 @@ static int scp_probe(struct platform_device *pdev)
+ 			       scp);
+ 	if (ret) {
+ 		dev_err(dev, "Failed to register IPI_SCP_INIT\n");
+-		goto free_rproc;
++		goto release_dev_mem;
+ 	}
+ 
+ 	mutex_init(&scp->lock);
+@@ -645,6 +654,8 @@ static int scp_probe(struct platform_device *pdev)
+ remove_subdev:
+ 	scp_remove_rpmsg_subdev(scp);
+ 	mutex_destroy(&scp->lock);
++release_dev_mem:
++	scp_unmap_memory_region(scp);
+ free_rproc:
+ 	rproc_free(rproc);
+ 
+@@ -658,6 +669,7 @@ static int scp_remove(struct platform_device *pdev)
+ 	scp_remove_rpmsg_subdev(scp);
+ 	rproc_del(scp->rproc);
+ 	rproc_free(scp->rproc);
++	scp_unmap_memory_region(scp);
+ 
+ 	return 0;
+ }
 -- 
 2.18.0
 
