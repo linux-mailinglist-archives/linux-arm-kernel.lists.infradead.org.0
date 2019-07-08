@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88EA762516
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 17:48:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F0D256251A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 17:48:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=M2cn9YSZfCSJbXURrxA4fJlGKdo7slMnQh0kZ8PVTMU=; b=p+Pdhzv2olouwiWO3aP8VI0eu3
-	hfaZohLycCHnFU6PLGDOlKXmFQevrdEwD4Bq15RPYQwkSPrXbxffhPJsPxnxv+mhn7iZtXE42sfHe
-	dM+IhjbJgJNeRAWI4o7373/L18pJVkMlV/5IMIFdxbcfxpk4HomTGJnZWFG8iV5F3Sew3F3lW5hfM
-	zrGJ/BOu73IgSfqbbmjvh7x88uyUbNkhuV2SQRPvwqvp9IgTGjNUgN6C5c2FFqnywV3B9KzPu+6Kr
-	bBQmIDwAvV9Pqg/khbwrXxKLhk8Qozqj/ryFVcTFdyKKJVSuyf5cg8E3zLSr3C4FqRkT7IES9pz+D
-	m6NatEIg==;
+	bh=DulqOaVSVzBbcT/wi+zAOmhrRjtzh3jN4CPyeT5T8/w=; b=GEZn3MI3LztDI20ZrlnQRptoop
+	xa7GFfoOIawjwjAV8GRwxVMKa+6haNzQcnBDRSHvQqofGWeKyOyYFtpeTdt/2U7AvwrB9UcglE1Qj
+	JAytBdJ32hKNfhCW0HjHJ1PmpslueY1vSkGzc9LBQB60zMS5bgduA6IjvE3IXBJER3V51MqfLwVwt
+	aB8hZ1q8WnXXSujcS7lX0+AKTHMXYuJ6u1FQ+wdeaPcD2NHYeeiPPVyev8IpVnI6ZrkIqj0ZF8zZj
+	dnIMlWbb+hhtCu7uQFOiX4u9rSq/osq0+eVO3QFGnqdoNLP+EYXtl9JMg5RawptlqgNz4d8YtELvz
+	Jm43eEYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkVsW-0004bR-12; Mon, 08 Jul 2019 15:48:32 +0000
+	id 1hkVsl-0004pu-5e; Mon, 08 Jul 2019 15:48:47 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hkVrk-00046Y-Kh
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 15:47:46 +0000
+ id 1hkVrm-00046Y-R3
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 15:47:48 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C62471509;
- Mon,  8 Jul 2019 08:47:43 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 08E25360;
+ Mon,  8 Jul 2019 08:47:45 -0700 (PDT)
 Received: from usa.arm.com (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id C2DDF3F59C;
- Mon,  8 Jul 2019 08:47:42 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 061383F59C;
+ Mon,  8 Jul 2019 08:47:43 -0700 (PDT)
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 02/11] firmware: arm_scmi: Segregate tx channel handling and
- prepare to add rx
-Date: Mon,  8 Jul 2019 16:47:21 +0100
-Message-Id: <20190708154730.16643-3-sudeep.holla@arm.com>
+Subject: [PATCH 03/11] firmware: arm_scmi: Add receive channel support for
+ notifications
+Date: Mon,  8 Jul 2019 16:47:22 +0100
+Message-Id: <20190708154730.16643-4-sudeep.holla@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190708154730.16643-1-sudeep.holla@arm.com>
 References: <20190708154730.16643-1-sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_084744_783865_46252793 
-X-CRM114-Status: GOOD (  14.74  )
+X-CRM114-CacheID: sfid-20190708_084747_070041_A4AA48A3 
+X-CRM114-Status: GOOD (  13.19  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -70,117 +70,118 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The transmit(Tx) channels are specified as the first entry and the
-receive(Rx) channels are the second entry as per the device tree
-bindings. Since we currently just support Tx, index 0 is hardcoded at
-all required callsites.
+With scmi_mbox_chan_setup enabled to identify and setup both Tx and Rx,
+let's consolidate setting up of both the channels under the function
+scmi_mbox_txrx_setup.
 
-In order to prepare for adding Rx support, let's remove those hardcoded
-index and add boolean parameter to identify Tx/Rx channels when setting
-them up.
+Since some platforms may opt not to support notifications or delayed
+response, they may not need support for Rx. Hence Rx is optional and
+failure of setting one up is not considered fatal.
 
 Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 ---
- drivers/firmware/arm_scmi/driver.c | 33 ++++++++++++++++--------------
- 1 file changed, 18 insertions(+), 15 deletions(-)
+ drivers/firmware/arm_scmi/driver.c | 30 ++++++++++++++++++++++++++----
+ 1 file changed, 26 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/firmware/arm_scmi/driver.c b/drivers/firmware/arm_scmi/driver.c
-index 0bd2af0a008f..f7fb6d5bfc64 100644
+index f7fb6d5bfc64..e9b762348eff 100644
 --- a/drivers/firmware/arm_scmi/driver.c
 +++ b/drivers/firmware/arm_scmi/driver.c
-@@ -112,7 +112,7 @@ struct scmi_chan_info {
-  * @version: SCMI revision information containing protocol version,
+@@ -113,6 +113,7 @@ struct scmi_chan_info {
   *	implementation version and (sub-)vendor identification.
   * @minfo: Message info
-- * @tx_idr: IDR object to map protocol id to channel info pointer
-+ * @tx_idr: IDR object to map protocol id to Tx channel info pointer
+  * @tx_idr: IDR object to map protocol id to Tx channel info pointer
++ * @rx_idr: IDR object to map protocol id to Rx channel info pointer
   * @protocols_imp: List of protocols implemented, currently maximum of
   *	MAX_PROTOCOLS_IMP elements allocated by the base protocol
   * @node: List head
-@@ -640,22 +640,26 @@ static int scmi_xfer_info_init(struct scmi_info *sinfo)
- 	return 0;
- }
- 
--static int scmi_mailbox_check(struct device_node *np)
-+static int scmi_mailbox_check(struct device_node *np, int idx)
- {
--	return of_parse_phandle_with_args(np, "mboxes", "#mbox-cells", 0, NULL);
-+	return of_parse_phandle_with_args(np, "mboxes", "#mbox-cells",
-+					  idx, NULL);
- }
- 
--static inline int
--scmi_mbox_chan_setup(struct scmi_info *info, struct device *dev, int prot_id)
-+static int scmi_mbox_chan_setup(struct scmi_info *info, struct device *dev,
-+				int prot_id, bool tx)
- {
--	int ret;
-+	int ret, idx;
- 	struct resource res;
- 	resource_size_t size;
+@@ -125,6 +126,7 @@ struct scmi_info {
+ 	struct scmi_handle handle;
+ 	struct scmi_xfers_info minfo;
+ 	struct idr tx_idr;
++	struct idr rx_idr;
+ 	u8 *protocols_imp;
+ 	struct list_head node;
+ 	int users;
+@@ -655,12 +657,16 @@ static int scmi_mbox_chan_setup(struct scmi_info *info, struct device *dev,
  	struct device_node *shmem, *np = dev->of_node;
  	struct scmi_chan_info *cinfo;
  	struct mbox_client *cl;
++	struct idr *idr;
  
--	if (scmi_mailbox_check(np)) {
-+	/* Transmit channel is first entry i.e. index 0 */
-+	idx = tx ? 0 : 1;
-+
-+	if (scmi_mailbox_check(np, idx)) {
- 		cinfo = idr_find(&info->tx_idr, SCMI_PROTOCOL_BASE);
+ 	/* Transmit channel is first entry i.e. index 0 */
+ 	idx = tx ? 0 : 1;
++	idr = tx ? &info->tx_idr : &info->rx_idr;
+ 
+ 	if (scmi_mailbox_check(np, idx)) {
+-		cinfo = idr_find(&info->tx_idr, SCMI_PROTOCOL_BASE);
++		cinfo = idr_find(idr, SCMI_PROTOCOL_BASE);
++		if (unlikely(!cinfo)) /* Possible only if platform has no Rx */
++			return -EINVAL;
  		goto idr_alloc;
  	}
-@@ -669,11 +673,11 @@ scmi_mbox_chan_setup(struct scmi_info *info, struct device *dev, int prot_id)
- 	cl = &cinfo->cl;
- 	cl->dev = dev;
- 	cl->rx_callback = scmi_rx_callback;
--	cl->tx_prepare = scmi_tx_prepare;
-+	cl->tx_prepare = tx ? scmi_tx_prepare : NULL;
- 	cl->tx_block = false;
--	cl->knows_txdone = true;
-+	cl->knows_txdone = tx;
  
--	shmem = of_parse_phandle(np, "shmem", 0);
-+	shmem = of_parse_phandle(np, "shmem", idx);
- 	ret = of_address_to_resource(shmem, 0, &res);
- 	of_node_put(shmem);
- 	if (ret) {
-@@ -688,8 +692,7 @@ scmi_mbox_chan_setup(struct scmi_info *info, struct device *dev, int prot_id)
- 		return -EADDRNOTAVAIL;
+@@ -701,7 +707,7 @@ static int scmi_mbox_chan_setup(struct scmi_info *info, struct device *dev,
  	}
  
--	/* Transmit channel is first entry i.e. index 0 */
--	cinfo->chan = mbox_request_channel(cl, 0);
-+	cinfo->chan = mbox_request_channel(cl, idx);
- 	if (IS_ERR(cinfo->chan)) {
- 		ret = PTR_ERR(cinfo->chan);
- 		if (ret != -EPROBE_DEFER)
-@@ -721,7 +724,7 @@ scmi_create_protocol_device(struct device_node *np, struct scmi_info *info,
+ idr_alloc:
+-	ret = idr_alloc(&info->tx_idr, cinfo, prot_id, prot_id + 1, GFP_KERNEL);
++	ret = idr_alloc(idr, cinfo, prot_id, prot_id + 1, GFP_KERNEL);
+ 	if (ret != prot_id) {
+ 		dev_err(dev, "unable to allocate SCMI idr slot err %d\n", ret);
+ 		return ret;
+@@ -711,6 +717,17 @@ static int scmi_mbox_chan_setup(struct scmi_info *info, struct device *dev,
+ 	return 0;
+ }
+ 
++static inline int
++scmi_mbox_txrx_setup(struct scmi_info *info, struct device *dev, int prot_id)
++{
++	int ret = scmi_mbox_chan_setup(info, dev, prot_id, true);
++
++	if (!ret) /* Rx is optional, hence no error check */
++		scmi_mbox_chan_setup(info, dev, prot_id, false);
++
++	return ret;
++}
++
+ static inline void
+ scmi_create_protocol_device(struct device_node *np, struct scmi_info *info,
+ 			    int prot_id)
+@@ -724,7 +741,7 @@ scmi_create_protocol_device(struct device_node *np, struct scmi_info *info,
  		return;
  	}
  
--	if (scmi_mbox_chan_setup(info, &sdev->dev, prot_id)) {
-+	if (scmi_mbox_chan_setup(info, &sdev->dev, prot_id, true)) {
+-	if (scmi_mbox_chan_setup(info, &sdev->dev, prot_id, true)) {
++	if (scmi_mbox_txrx_setup(info, &sdev->dev, prot_id)) {
  		dev_err(&sdev->dev, "failed to setup transport\n");
  		scmi_device_destroy(sdev);
  		return;
-@@ -741,7 +744,7 @@ static int scmi_probe(struct platform_device *pdev)
- 	struct device_node *child, *np = dev->of_node;
+@@ -767,12 +784,13 @@ static int scmi_probe(struct platform_device *pdev)
  
- 	/* Only mailbox method supported, check for the presence of one */
--	if (scmi_mailbox_check(np)) {
-+	if (scmi_mailbox_check(np, 0)) {
- 		dev_err(dev, "no mailbox found in %pOF\n", np);
- 		return -EINVAL;
- 	}
-@@ -769,7 +772,7 @@ static int scmi_probe(struct platform_device *pdev)
+ 	platform_set_drvdata(pdev, info);
+ 	idr_init(&info->tx_idr);
++	idr_init(&info->rx_idr);
+ 
+ 	handle = &info->handle;
  	handle->dev = info->dev;
  	handle->version = &info->version;
  
--	ret = scmi_mbox_chan_setup(info, dev, SCMI_PROTOCOL_BASE);
-+	ret = scmi_mbox_chan_setup(info, dev, SCMI_PROTOCOL_BASE, true);
+-	ret = scmi_mbox_chan_setup(info, dev, SCMI_PROTOCOL_BASE, true);
++	ret = scmi_mbox_txrx_setup(info, dev, SCMI_PROTOCOL_BASE);
  	if (ret)
  		return ret;
+ 
+@@ -842,6 +860,10 @@ static int scmi_remove(struct platform_device *pdev)
+ 	ret = idr_for_each(idr, scmi_mbox_free_channel, idr);
+ 	idr_destroy(&info->tx_idr);
+ 
++	idr = &info->rx_idr;
++	ret = idr_for_each(idr, scmi_mbox_free_channel, idr);
++	idr_destroy(&info->rx_idr);
++
+ 	return ret;
+ }
  
 -- 
 2.17.1
