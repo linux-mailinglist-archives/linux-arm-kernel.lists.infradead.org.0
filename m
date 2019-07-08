@@ -2,59 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 661E562AC6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 23:15:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1073562ACA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 23:16:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vsXhLz8MyrgdRBXE/N5/hAQEIbVR1cEQ+ZtA0odcWOk=; b=f4D1dia1WEmEl/
-	ynJT+kksg74IZpS2R2GHbzVmUMR/0MvhPdUWPaC8Oaj0PK+47O2WcZ9Z93fPQ7cYiB22y4JcNktMd
-	e1lADqtnL0Csn6mC0s9X79vtsUBslu7sR5QCEwmbdAdqlWvT5XsKoQoS3aCHdCZww8vCzzKsfxwcF
-	V3mM5hJ7V3a6fcAvS+eyqDCKYRosqqRfKIPiy+ZTkMvt5Ml062Vx6oUBrgREEIlPJ6tkwJKBXzzxw
-	pNQkeDIDKkVPXfD+VcIUj6E4sCe6OKPv2xl8VafJTYUbUqHJNObwtiRths4zaWx+OvDNyH373dwgS
-	NZC+eAvsWKA+2D+O2CfQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ERll/MqAaZH21q7S3BiDz9cjtMtKYbAvrLMaTiiU0Qg=; b=Vx9lc21Gp4ekv+
+	M0zOKmjlZ5WcKCQ+UZm6IjGqGpo38kh0Zv7IvRPbz27aFMu8SXlF/EbSS/fXYLR1fI+seUqHsRkkv
+	raZIk+loRG5dgI6Db0IL7VEFFlEvH/zWryF8tFjRk4MTnBqcTpwp4kQd4UD68zmupBmc7iCV9IW2y
+	uN4ubraKUrpuQCtyOLo0xWro4rLiLBSOtybzEmj85PpHFKNOY7om+cSawdTwoUWEvtPJqT1IvxOcc
+	CAw4toCX6VhT7aDtF8s9pkRN6N9Jk3mTaDJfAiHF7TY/oAve4wvvBUljoLub+2etQpE/qVQxU7vLp
+	GKuc5pLxMJPr7xPnRCVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkaz9-0001JT-C1; Mon, 08 Jul 2019 21:15:43 +0000
-Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
+	id 1hkazV-0001dn-9k; Mon, 08 Jul 2019 21:16:05 +0000
+Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkayr-0001Iw-AY
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 21:15:26 +0000
-Received: from localhost (unknown [IPv6:2601:601:9f80:35cd::d71])
- (using TLSv1 with cipher AES256-SHA (256/256 bits))
- (Client did not present a certificate)
- (Authenticated sender: davem-davemloft)
- by shards.monkeyblade.net (Postfix) with ESMTPSA id A7B14136DDD39;
- Mon,  8 Jul 2019 14:15:19 -0700 (PDT)
-Date: Mon, 08 Jul 2019 14:15:15 -0700 (PDT)
-Message-Id: <20190708.141515.1767939731073284700.davem@davemloft.net>
-To: Jose.Abreu@synopsys.com
-Subject: Re: [PATCH net-next v3 3/3] net: stmmac: Introducing support for
- Page Pool
-From: David Miller <davem@davemloft.net>
-In-Reply-To: <BN8PR12MB32667BCA58B617432CACE677D3F60@BN8PR12MB3266.namprd12.prod.outlook.com>
-References: <BN8PR12MB32666359FABD7D7E55FE4761D3F50@BN8PR12MB3266.namprd12.prod.outlook.com>
- <20190705152453.GA24683@apalos>
- <BN8PR12MB32667BCA58B617432CACE677D3F60@BN8PR12MB3266.namprd12.prod.outlook.com>
-X-Mailer: Mew version 6.8 on Emacs 26.1
-Mime-Version: 1.0
-X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
- (shards.monkeyblade.net [149.20.54.216]);
- Mon, 08 Jul 2019 14:15:20 -0700 (PDT)
+ id 1hkayz-0001MS-Dm
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 21:15:34 +0000
+Received: by mail-qk1-x744.google.com with SMTP id w190so1934446qkc.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 08 Jul 2019 14:15:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
+ h=from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=9LBn+IrpD1vlilot1sDuhm5JaXmsdy7FeGQpNbYaEeU=;
+ b=FJLVGEkBkaIWGq+BYeDm49b/d/5s8UkKFjcHQ3Pj9CIeR9WqFVBFK83oylM3vbGySY
+ a/yz6JrxbrlxhkRBTTrMs0C2J/W6nlJ1vQjELf2Bdegk1pBajKXLyTOo73BGyhhwmgCp
+ hpSOTkjSZ/m5LO73UP1Taf9WGt0Yjjcdf1SdEKLTO8Y9GwUwaOY9BZsOvoYDKw0JDWcj
+ fPVVkLf6OQU8ckKMzR+Is03XGjLfH5O8FgfInnivtbaF6/BRHFciiuGjsy5dJM/sQZBZ
+ zekQZpRlJY9hAgDxbXYaBw7Kc+lfhEPpvhBlKGrW2AWK3kgug85CfDgVzblJ1cXVS5Ot
+ BVyg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=9LBn+IrpD1vlilot1sDuhm5JaXmsdy7FeGQpNbYaEeU=;
+ b=NPU95oWr19EIwMhuvx9AWWWP+Ma2JjLt58cWO3a97nurB7co9BcQAFvUht6ibxeBSZ
+ mB2Bhw/O//y2TDldXKZebv3oIfDO24VPEGOyveLRwlUby0m5e22TQb5GQOdnMiyJfltG
+ 5oPyBmKlRW9TT63UMnSxGRXFOB5VuMtxHBgopv4ugt/kOFv5usNTUywYTnh9RXFP/Lm5
+ OpLLnctUR79Q0uxaueHwfZdirEzKtmZvf/vHr+RQdPwqBAGov+lpAjyHvpZuSH+x7TZf
+ QfnmiqkiymDuRgAdlvJTFKaEs+lIKPNKA1oh+ptsB51tku4GdVrCSrqgrUO+MKjdKyhg
+ 3ryw==
+X-Gm-Message-State: APjAAAVxqabkByLM6Hu04eIXx9MtlHcsfi1H6W7Po2GUL8vOgIN+6SwZ
+ HP930R8S8koW2zo/h843UdIWIw==
+X-Google-Smtp-Source: APXvYqyjmTZLx8/N9MAAgH+1T1Fmph8LQJ2u9QiscaRxh3JxBlx4HZGFN/j+WzZn5c0D7KSK12erkQ==
+X-Received: by 2002:a37:bac2:: with SMTP id
+ k185mr15419295qkf.211.1562620531230; 
+ Mon, 08 Jul 2019 14:15:31 -0700 (PDT)
+Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
+ [73.69.118.222])
+ by smtp.gmail.com with ESMTPSA id b67sm8335620qkd.82.2019.07.08.14.15.29
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Mon, 08 Jul 2019 14:15:30 -0700 (PDT)
+From: Pavel Tatashin <pasha.tatashin@soleen.com>
+To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
+ ebiederm@xmission.com, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, corbet@lwn.net, catalin.marinas@arm.com,
+ will@kernel.org, linux-doc@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Subject: [v1 0/5] allow to reserve memory for normal kexec kernel
+Date: Mon,  8 Jul 2019 17:15:23 -0400
+Message-Id: <20190708211528.12392-1-pasha.tatashin@soleen.com>
+X-Mailer: git-send-email 2.22.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_141525_368219_A8760C78 
-X-CRM114-Status: UNSURE (   8.95  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190708_141533_641770_EE24A67A 
+X-CRM114-Status: GOOD (  10.81  )
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,34 +101,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Joao.Pinto@synopsys.com, alexandre.torgue@st.com, arnd@arndb.de,
- netdev@vger.kernel.org, ilias.apalodimas@linaro.org,
- linux-kernel@vger.kernel.org, brouer@redhat.com, peppe.cavallaro@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-Date: Mon, 8 Jul 2019 16:08:07 +0000
+Currently, it is only allowed to reserve memory for crash kernel, because
+it is a requirement in order to be able to boot into crash kernel without
+touching memory of crashed kernel is to have memory reserved.
 
-> From: Ilias Apalodimas <ilias.apalodimas@linaro.org> | Date: Fri, Jul 
-> 05, 2019 at 16:24:53
-> 
->> Well ideally we'd like to get the change in before the merge window ourselves,
->> since we dont want to remove->re-add the same function in stable kernels. If
->> that doesn't go in i am fine fixing it in the next merge window i guess, since
->> it offers substantial speedups
-> 
-> I think the series is marked as "Changes Requested" in patchwork. What's 
-> the status of this ?
+The second benefit for having memory reserved for kexec kernel is
+that it does not require a relocation after segments are loaded into
+memory.
 
-That means I expect a respin based upon feedback or similar.  If Ilias and
-you agreed to put this series in as-is, my apologies and just resend the
-series with appropriate ACK and Review tags added.
+If kexec functionality is used for a fast system update, with a minimal
+downtime, the relocation of kernel + initramfs might take a significant
+portion of reboot.
 
-Thanks.
+In fact, on the machine that we are using, that has ARM64 processor
+it takes 0.35s to relocate during kexec, thus taking 52% of kernel reboot
+time:
+
+kernel shutdown	0.03s
+relocation	0.35s
+kernel startup	0.29s
+
+Image: 13M and initramfs is 24M. If initramfs increases, the relocation
+time increases proportionally.
+
+While, it is possible to add 'kexeckernel=' parameters support to other
+architectures by modifying reserve_crashkernel(), in this series this is
+done for arm64 only.
+
+Pavel Tatashin (5):
+  kexec: quiet down kexec reboot
+  kexec: add resource for normal kexec region
+  kexec: export common crashkernel/kexeckernel parser
+  kexec: use reserved memory for normal kexec reboot
+  arm64, kexec: reserve kexeckernel region
+
+ .../admin-guide/kernel-parameters.txt         |  7 ++
+ arch/arm64/kernel/setup.c                     |  5 ++
+ arch/arm64/mm/init.c                          | 83 ++++++++++++-------
+ include/linux/crash_core.h                    |  6 ++
+ include/linux/ioport.h                        |  1 +
+ include/linux/kexec.h                         |  6 +-
+ kernel/crash_core.c                           | 27 +++---
+ kernel/kexec_core.c                           | 50 +++++++----
+ 8 files changed, 127 insertions(+), 58 deletions(-)
+
+-- 
+2.22.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
