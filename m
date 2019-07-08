@@ -2,57 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D03062BEE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 00:41:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D67F662BD4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 00:38:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FbiAVLhIGdin/WzMAPE90l57A/NdbsDLYWAXhxdFfzg=; b=umdbCHdxoNP6SH
-	EFH6AO3xDXki6DU7k/hpWvQeIWNZBqn3B4NyNPFjDvUBTHvf0AmWFXbzP++uyHODdsv/4qnG/Fu76
-	fvlcNm6Ma3NP4TGq+IKYRYqRiMMjIU31rz0GahuKBkZiYFnriQvTmYr4IbKDxE6aeEE8nwYofNT/D
-	JvADqZwxnK1Vd8ltlVeoMH+E0G0V3GfKaPB0MeYbouvXE/ZtdHNY5pEa2YxL0LizZ05UTbr7JCTOJ
-	7RGo1vVG4orfiXA+gbTb3410sRXUU38aKd0rKUjWi8oF2kuY/MNYdVX2xFt3OoCYfN5Bbt5Dse+xC
-	ywGlzhkAL+Pa/NSGKQeA==;
+	List-Owner; bh=DB0IajyqRp04ol75vgq+WnY61nQ+WaQ14JQW8knhSPc=; b=LD0MmE3OeGktVK
+	LD85BUZeUwHSPfnmFPo4BZo55odOa7nTaF1S+Cqt/mT9akPu0xZQAOL3JfrGNMo1LAbppiDXXYbOF
+	6H+wRv6wQReZRFA8efN97m9Gov7/44cXITawZ+Rr8YlZN4ALoG8uV8djzhEEqyOO7VjG2r3iqmODW
+	znM5+BENVaJjCOWOnU1b5hBFeCjZGTU5T+pPIHFSTs07hB8RvJU7ByFgxMVSygA5r9Kxo1y0mUL2r
+	3M6WKtRfz3k19pIps0pYiX19zjDthnnbFAaw5kcexRzVXHu6WTgl9wIWtlho9eP5SWOMLDUbXt6Ot
+	188r1bIXL2BSMKEPUXLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkcKH-0006JD-Ur; Mon, 08 Jul 2019 22:41:37 +0000
+	id 1hkcGj-00026I-BI; Mon, 08 Jul 2019 22:37:57 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkcDh-0004t2-VQ; Mon, 08 Jul 2019 22:34:52 +0000
-X-UUID: fabef21ac1da42ce80b91dffc3c13750-20190708
-X-UUID: fabef21ac1da42ce80b91dffc3c13750-20190708
+ id 1hkcDe-0004t2-1Y; Mon, 08 Jul 2019 22:34:47 +0000
+X-UUID: f29fda15183f446aa954edeb44409430-20190708
+X-UUID: f29fda15183f446aa954edeb44409430-20190708
 Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
  (envelope-from <yongqiang.niu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 390961507; Mon, 08 Jul 2019 14:34:39 -0800
-Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ with ESMTP id 150610196; Mon, 08 Jul 2019 14:34:39 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 8 Jul 2019 15:34:38 -0700
+ 15.0.1395.4; Mon, 8 Jul 2019 15:34:37 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 9 Jul 2019 06:34:25 +0800
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 9 Jul 2019 06:34:26 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 9 Jul 2019 06:34:24 +0800
+ Transport; Tue, 9 Jul 2019 06:34:25 +0800
 From: <yongqiang.niu@mediatek.com>
 To: CK Hu <ck.hu@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>, "Rob
  Herring" <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
 Subject: [PATCH v4,
- 05/33] dt-bindings: mediatek: add RDMA1 description for mt8183 display
-Date: Tue, 9 Jul 2019 06:33:45 +0800
-Message-ID: <1562625253-29254-6-git-send-email-yongqiang.niu@mediatek.com>
+ 06/33] dt-bindings: mediatek: add mutex description for mt8183 display
+Date: Tue, 9 Jul 2019 06:33:46 +0800
+Message-ID: <1562625253-29254-7-git-send-email-yongqiang.niu@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
 In-Reply-To: <1562625253-29254-1-git-send-email-yongqiang.niu@mediatek.com>
 References: <1562625253-29254-1-git-send-email-yongqiang.niu@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 4A3E801B80224415BBEE53E0C5FC8EF8D1E9A499CFEC767BAA224665C56CB6882000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_153450_061165_2448DB14 
-X-CRM114-Status: UNSURE (   9.10  )
+X-CRM114-CacheID: sfid-20190708_153446_097482_09D9716F 
+X-CRM114-Status: UNSURE (   9.18  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -88,7 +87,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Yongqiang Niu <yongqiang.niu@mediatek.com>
 
-This patch add RDMA1 description for mt8183 display
+This patch add mutex description for mt8183 display
 
 Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
 ---
@@ -96,17 +95,17 @@ Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
  1 file changed, 1 insertion(+)
 
 diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,disp.txt b/Documentation/devicetree/bindings/display/mediatek/mediatek,disp.txt
-index afd3c90..bb9274a 100644
+index bb9274a..4a22d49 100644
 --- a/Documentation/devicetree/bindings/display/mediatek/mediatek,disp.txt
 +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,disp.txt
-@@ -30,6 +30,7 @@ Required properties (all function blocks):
- 	"mediatek,<chip>-disp-ovl"   		- overlay (4 layers, blending, csc)
- 	"mediatek,<chip>-disp-ovl-2l"           - overlay (2 layers, blending, csc)
- 	"mediatek,<chip>-disp-rdma"  		- read DMA / line buffer
-+	"mediatek,<chip>-disp-rdma1"            - function is same with RDMA, fifo size is different
- 	"mediatek,<chip>-disp-wdma"  		- write DMA
- 	"mediatek,<chip>-disp-ccorr"            - color correction
- 	"mediatek,<chip>-disp-color" 		- color processor
+@@ -53,6 +53,7 @@ Required properties (all function blocks):
+   For most function blocks this is just a single clock input. Only the DSI and
+   DPI controller nodes have multiple clock inputs. These are documented in
+   mediatek,dsi.txt and mediatek,dpi.txt, respectively.
++  for MT8183 mutex, this hardware is always free run, has no clocks control 
+ 
+ Required properties (DMA function blocks):
+ - compatible: Should be one of
 -- 
 1.8.1.1.dirty
 
