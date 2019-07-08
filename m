@@ -2,97 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BF1EC620AE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 16:41:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2268620C2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jul 2019 16:45:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=GMI1JU5cGTDWWXOSDphFLv4v6NW6XA4KkdQFD0WDR/E=; b=Acf6btHMu/BTIqWaM8p6CIcTMA
-	EF51KFxNfC/vos6rEp9wcHCBzRXKGfGo4OIRmGMpTLcTZSjnCtzArFAUcV7LW+LAjVLgkj+QbwOA8
-	I1MD5cPvidFxxIkhU29gnMfvx4VpkeNvOnMudfs2Mv4ImA0RaTDAFmr8Q6dOGXTFBnNgekKmSPz9e
-	tfHK2aBDA3gPmkINKKpJID06snIcRuH6JApKcFujoEXGXdVpJ1XoJ3MmETYZ3sVCNrnV2bnUO+7n5
-	aJpalxpUgY/2lG5UzIVvwTr8PrdyMVKzYzK4Fgt48XeukMTTuPM1dFbKiWjcJNghx8qfc5OhovC7k
-	tJ9L9Vkg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qtT8I0hrSny+YgaIPVcQ0HRRf+YUNUSeR/1zCql3JSE=; b=bwNezXMwYGfJBl
+	2yEvfntN4IF8b6GN2zmuSw8ZAE6FWpJUYbEXKAuuhjlyXj8rxYFY3ydzP0mnuFOQdIWSd4I3Xrt6o
+	5OXJFtIr9x140QNePdJgpLrJf8oN76I0iHs2cDT/zJcn5Mq+5vgLEYb/nnZn23TEMxYKjPN2BqJVX
+	y21opEXhEkIfMLbBKd+1+H7KNZuD6qJuN2UjFBg5sbB85p0sG26EGJlu60OYhAXwowvyPSDOz+PwK
+	l5QVhiB2Y9tDxekjmYwbhj79RvxyTOfxCxWVI7Tnz+SJl32XlbrKbBPV1xEZvOIGiiQftlNnfdg3f
+	nuwqEdz6tL8Maze7eyqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkUpZ-0007oN-FP; Mon, 08 Jul 2019 14:41:25 +0000
-Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
+	id 1hkUtH-0000Yi-Ky; Mon, 08 Jul 2019 14:45:15 +0000
+Received: from mout.kundenserver.de ([212.227.17.10])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkUof-00079c-9Z
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 14:40:30 +0000
-Received: by mail-ot1-x341.google.com with SMTP id x21so16383181otq.12
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 08 Jul 2019 07:40:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=CCSoHq1Uo4IBnCwfeuA+GvIGXoY8z0TTGOk4Tw+sVOA=;
- b=rMnUN1r+KicSBHv/XyAGYU6dbXI3N+TcAG/o+Ydxv13ZCBB0c/O2uu9G4vqrLCytct
- AEKFHYY+SHopfy3uStEBvIMEspHQMmadm9wEmnta9CgMRDdfOnpwGL+PB2/POmpXHUru
- /MlsSUF/JzCed/TIDJCNcEyJODeNFhMRwfZWmGaKDJfrVJgMDTYz0U8MLjvjQGJDDUsK
- kaqgF3izPU2FROV8J+mfY6t97vifqIqb/sJvvFV9+XMLcxYIMSnX9vQhtJdxdxWjDUXJ
- NPnoBwSTkxC7AmqTwW6gwUncSzbtlw0O7Aaaj9ZmAZA8Uczsbth2wNfWlo5oh6QrJWYq
- iW9A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=CCSoHq1Uo4IBnCwfeuA+GvIGXoY8z0TTGOk4Tw+sVOA=;
- b=BayGZLYo9t67FAU+6jVNK9XqTD5RgxfmH2ltc/4ikNjdbpHV9UbIqr+WopYkfwroiv
- DQZ3pZIWpv/djLqZ+IeE7GxCPtG/cGhoYvoOvZXIt2BX3zRSPLy/wXUQWI58YxRAw6LF
- 5vOBH57ryA4Nv+2xtrSBr+69TSNBi4k4Z1WXRvQHdraJr3zsugrfIjWODzsONKzQmjPU
- w7636Bx7MNZ0iCOoQVQBn3Lg/CK5z4Br7+iRrauLC1dlNm6pHRTmFqXGK2HMkgc2PIPq
- 0AkvfoYQD2ED7Y0KNNiQlHkEQd7UXWzCtAcJ7sXLD138fdHBiS9ea+WLOzpQy5MMeyot
- ts7A==
-X-Gm-Message-State: APjAAAWUVmCfcxKHlHN/LtJKUSz8yqhpGHAX83K0dAqiZxcZSy4b382R
- 5RuDq68kKCYP5H7hu5rL0YoT0Q==
-X-Google-Smtp-Source: APXvYqy5KuHIa3DLT0x0ETCwurZ9OZctjHOGlUf9bAzAIBS0BmrvEY0SlDNj99jk2L87sMy7YLCtsA==
-X-Received: by 2002:a9d:4b88:: with SMTP id k8mr9349423otf.285.1562596827664; 
- Mon, 08 Jul 2019 07:40:27 -0700 (PDT)
-Received: from localhost.localdomain (li964-79.members.linode.com.
- [45.33.10.79])
- by smtp.gmail.com with ESMTPSA id x5sm6386021otb.6.2019.07.08.07.40.20
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 08 Jul 2019 07:40:26 -0700 (PDT)
-From: Leo Yan <leo.yan@linaro.org>
-To: Arnaldo Carvalho de Melo <acme@kernel.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Jiri Olsa <jolsa@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Adrian Hunter <adrian.hunter@intel.com>, Andi Kleen <ak@linux.intel.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 4/4] perf cs-etm: Smatch: Fix potential NULL pointer
- dereference
-Date: Mon,  8 Jul 2019 22:39:37 +0800
-Message-Id: <20190708143937.7722-5-leo.yan@linaro.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190708143937.7722-1-leo.yan@linaro.org>
-References: <20190708143937.7722-1-leo.yan@linaro.org>
+ id 1hkUt2-00007f-SI
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jul 2019 14:45:02 +0000
+Received: from [192.168.1.110] ([95.117.164.184]) by mrelayeu.kundenserver.de
+ (mreue109 [212.227.15.183]) with ESMTPSA (Nemesis) id
+ 1N0X4c-1igq9K0K28-00wTJK; Mon, 08 Jul 2019 16:44:06 +0200
+Subject: Re: [RFC] SW connection between DVB Transport Stream demuxer and
+ I2C-based frontend
+To: Marc Gonzalez <marc.w.gonzalez@free.fr>, I2C <linux-i2c@vger.kernel.org>, 
+ linux-media <linux-media@vger.kernel.org>,
+ GPIO <linux-gpio@vger.kernel.org>
+References: <5e35b4fb-646d-6428-f372-ee47d7352cd6@free.fr>
+From: "Enrico Weigelt, metux IT consult" <lkml@metux.net>
+Organization: metux IT consult
+Message-ID: <b6abf5a2-3151-29e5-8eb7-c960580fd4ea@metux.net>
+Date: Mon, 8 Jul 2019 16:44:00 +0200
+User-Agent: Mozilla/5.0 (X11; Linux i686 on x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.2.1
+MIME-Version: 1.0
+In-Reply-To: <5e35b4fb-646d-6428-f372-ee47d7352cd6@free.fr>
+Content-Language: en-US
+X-Provags-ID: V03:K1:2jvRaVlfIBbTWqmqs0v71/intYTyRlJx4arYouNLUMLImoa4JE8
+ Due+PYAz9HHlV+Oh+JGvJQEVWaMqdW8Uon8bE6aHmyP8jq9DMorJEvkmsLYY+Y0Qhs4zwbv
+ y7HQMEjNaeKMhE2X4e5YLDubhQW/BSnmjtMmJ0aTTdDAmP18wIi5s3lNhDqQs+e+WaQDOxX
+ AADgUj4XIC3nDfJfDfgyw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:BNa//kL+MSA=:/U9k6JExtxUNSL7QQzrsVO
+ Qc/YmJFqFi09e6T66lH+eMgVWarfdks/PkAbhyQSktly45MzYnQ/s0DecPsTJhutefvm2VPNm
+ BCMRR7bsmjcQQjkDgIdf4xHk+1c6xMilKnXtdnfDMXpLyBXSFAbS+CeBEWLqwqg6IMvfOiEPG
+ TeXkmT31LlnLRirAyV21Ukz1h2ZNsLo/NAG7Ca6VcoSYx4Fjd1IfLON0F5/5SGTKjNV+HlgIU
+ 4MZSLWYhGjywPlPOdguG924KONrEzbE6D00X7MKuS0vvvmbsp2SN/+1ddSuFqOSO5YPToO7OO
+ z2WVRY1fPvJC9eyLIsKuLhWcNOxVnvMClIMPmNS58Nh/1nxhf0RJFOk1DL8e6T6CP4tcHvxx9
+ wSMXRQ/sohx+GsBr1KQRnKxEGky965NbmzBsFydKdioBZBH0wWf8cFDyvhjD/pTZmqEDrAwpb
+ j9XByJy8tLYTTeqk/Sv9OGOZ6KYW0dztaQ/JW52ntYX+VDhgkOVRha04v/DB9YXks9FbCUiWA
+ KNNcl3u9Fe8ag8l/GItK1aMpzTndlSInXTFhy4BsIkNmmL1gukAmSKU85++AM8Fodg4DDTpJh
+ DQVkgDKbnZUxRcYqx1NGSuT6tPyVLnSy6Hjc47WTUUqCD3IPgJyj+3SIIe3BmcO4CfbspoeRA
+ 9r4I7e9GvgSlCYfeS2jkSrc8ulDdK5oSWZxOso/tj52W1AzLqwfqf2+R51B1HtkS+WT55N6Hp
+ YnzujFdSNwMrvyhmlmWS9KPxKeBdKdw4o4yq+nokVHMPRqwhRrvgB9Crp5Kmz0fMfGIGHRXv1
+ jXVRq9ud3voStvHFMZCXWHqw49Vmwhds5x4uGs5GrIDnc5MS0B1CEjGDMSzp5Y59Mz0qyif
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_074029_434123_0B1E4408 
-X-CRM114-Status: GOOD (  14.08  )
-X-Spam-Score: 1.1 (+)
+X-CRM114-CacheID: sfid-20190708_074501_209517_E19202A3 
+X-CRM114-Status: GOOD (  10.03  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ no trust [212.227.17.10 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.17.10 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,55 +84,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Leo Yan <leo.yan@linaro.org>
-MIME-Version: 1.0
+Cc: Peter Korsgaard <peter@korsgaard.com>,
+ Jeffrey Hugo <jeffrey.l.hugo@gmail.com>, Wolfram Sang <wsa@the-dreams.de>,
+ Linus Walleij <linus.walleij@linaro.org>, Brad Love <brad@nextdimension.cc>,
+ =?UTF-8?Q?Jonathan_Neusch=c3=a4fer?= <j.neuschaefer@gmx.net>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Antti Palosaari <crope@iki.fi>,
+ Simon Horman <horms+renesas@verge.net.au>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Olli Salonen <olli.salonen@iki.fi>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Based on the following report from Smatch, fix the potential
-NULL pointer dereference check.
+On 08.07.19 13:08, Marc Gonzalez wrote:
 
-  tools/perf/util/cs-etm.c:2545
-  cs_etm__process_auxtrace_info() error: we previously assumed
-  'session->itrace_synth_opts' could be null (see line 2541)
+> The tuner (si2157) is not on the i2c5 bus, instead it is on a private
+> i2c bus *behind* si2168, which routes requests to the proper client.
 
-tools/perf/util/cs-etm.c
-2541         if (session->itrace_synth_opts && session->itrace_synth_opts->set) {
-2542                 etm->synth_opts = *session->itrace_synth_opts;
-2543         } else {
-2544                 itrace_synth_opts__set_default(&etm->synth_opts,
-2545                                 session->itrace_synth_opts->default_no_sample);
-                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
-2546                 etm->synth_opts.callchain = false;
-2547         }
+Should the si2168 make up it's own i2c controller ?
 
-'session->itrace_synth_opts' is impossible to be a NULL pointer in
-cs_etm__process_auxtrace_info(), thus this patch removes the NULL
-test for 'session->itrace_synth_opts'.
 
-Signed-off-by: Leo Yan <leo.yan@linaro.org>
----
- tools/perf/util/cs-etm.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+--mtx
 
-diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
-index ad43a6e31827..ab578a06a790 100644
---- a/tools/perf/util/cs-etm.c
-+++ b/tools/perf/util/cs-etm.c
-@@ -2537,7 +2537,7 @@ int cs_etm__process_auxtrace_info(union perf_event *event,
- 		return 0;
- 	}
- 
--	if (session->itrace_synth_opts && session->itrace_synth_opts->set) {
-+	if (session->itrace_synth_opts->set) {
- 		etm->synth_opts = *session->itrace_synth_opts;
- 	} else {
- 		itrace_synth_opts__set_default(&etm->synth_opts,
 -- 
-2.17.1
-
+Enrico Weigelt, metux IT consult
+Free software and Linux embedded engineering
+info@metux.net -- +49-151-27565287
 
 _______________________________________________
 linux-arm-kernel mailing list
