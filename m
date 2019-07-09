@@ -2,73 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CD3C063A0B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 19:17:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C90E563A1E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 19:25:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=TRIo96oVoGtzmw2idGP2vW9ZdXASvjF+eW8lPMMuhqE=; b=e4L3QSkVBZtFHb
-	bd0/TbEuJy4xDjgYCHho3TiMG9h5QUbYTXJsiTWQq98LH/yV7bYmQHFvQhEMFKzJYf+BILc9Dp40q
-	sZFffnnXlIMl5Q0Ir0oDRd8xD/dxxxeqcfHGFFXgRA1S2oQPKpvJMyKkWk7seOrTHgiil77Egk5/e
-	yRQGgXr4cEmosvzgDPQhVu/JwF3NO4f9PTsHiIhFK9s5MZNsCFKQZxdHqcsDCJZ01Azr5Z7uq8Adj
-	2oZ1KBEHyK3dg75V7iv26wpk8OpXt6rXWUO1CNWH0q4lvc3Ht7zWIL+965DtHP+bgXllan0qNk7xf
-	NB6jAtpfQt7LR9zNgIUA==;
+	List-Owner; bh=+I9XFnV/O35JONCqhDYSHDOMZWpD0m4pV6d571wVn38=; b=A3sZ9hyxQwO3DJ
+	CEnxu2IrndPffLxFb+S27Gr5K609VWo3o9xQcyjF9l1TfaAv5CWbFspZwhlXe/qY0MCAXVl3YGxjC
+	945MMBbaxSjavsebPQyrP9xeMFf3MSd78Os5Ptc6R9qH7CVTI8cf0Km87aqH7/5T/xCtmtAn8mRqL
+	d+cu7bEFHDjYLMhfSNMWTU1au4YyILptJZwyRAQ/CJCqMaqsAQi5newGxUP39j2yw52MATDAez+i2
+	uS8p10Y+UblyuTonqPlzh/EFLYc2zZb7PhqjJYCGXlfeBV8RQ3dvkcDiq74sLnHLucLbGRDgL8FLQ
+	UaUNX2brPHIheoYZYO8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hktk6-0001Sd-Hl; Tue, 09 Jul 2019 17:17:26 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1hktrh-0004qL-B4; Tue, 09 Jul 2019 17:25:17 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hktjf-0001EL-Tu; Tue, 09 Jul 2019 17:17:01 +0000
-Received: by mail-pl1-x644.google.com with SMTP id c14so10412140plo.0;
- Tue, 09 Jul 2019 10:16:56 -0700 (PDT)
+ id 1hktrX-0004Wo-Cu; Tue, 09 Jul 2019 17:25:08 +0000
+Received: by mail-pg1-x541.google.com with SMTP id u17so9305660pgi.6;
+ Tue, 09 Jul 2019 10:25:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=jRtVZWK4MTGxEwKYhzR6M7REzjy7te0i7wdR2g1MuQM=;
- b=QWAQGZKy6CrgIhflpOFh47kI6dHDA+nDD/sN9GIvQhstjbDy8JIFLwhPeZk/OaMHLT
- +kHVwUkMXB/MOP5bxRAqHXCI7qtLLBWsTPwUtB5At8TkJ1TFeJNdw1xOzHmmM8TdywXD
- inO9tm3kc+/WTEiDDasB04YI/MzxqYKEm3nHMEcTdc6Y2ntv2py6yoTA59i/uykACuDS
- igCnacXSODbr4UjtV4RPF0CaiM/ME0g4JZrEz1pKWxKIIhHhws8D4jbL+pn/4RI8S2BJ
- 32cErmebH5kI9o2bpQ/OYv8XGhdBs2ZfrkWp3IZHjgW8qDkgvJ2XeMI8CprD01wxHRBu
- 4nEg==
+ bh=+XOGAmvM9zKXLd7snltlz7p/GLyc46ilwqyDiqBZzWE=;
+ b=ZLgjzz1KVtsioZuBLGHb69PORJxE1ZDIz2hO09tJG4HqTHrd8gzEE3+lBInpEOP++z
+ uWXBvyAa04SdBddiZOory6OjM1PGsck6p98eR/nYwISlHFYOUKaqfdGtcqcfCFeJjpjU
+ Ve/4+JwO8UVKInXVoFSx9Eb7QPSuYiDShZJw6Wfn/mGj3FpzEndERMAii85VmO3G5wT9
+ ethTL/4vSVyLBYSm0erbJdtDfxdV86tEvJACtX/7R7Z4tsYpv6aRei5tDN2a+MQB8C4y
+ XYRC7dy6PPRUNUfxdjbaIt9y8nPfEFq19acGb/lXTVoFbDkpaunwFAEiIfkdQ4QAaus0
+ KE0A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=jRtVZWK4MTGxEwKYhzR6M7REzjy7te0i7wdR2g1MuQM=;
- b=E+iNcwm1O3MGJ3it1DV3E4aWfDIF1VSZLWIAIP/tLwfbP7E9BNODo/YR/gis0ddCJR
- zrpOFs9uWP+lcvfkNfaOX824bieArRfdGloFJRnsL3DEJRn3VN6BeaqiMibk7maSoJle
- o2fm6CJ0ZeD5z0+VbcbvuXmsQr1Z8i28SLtqOVpQfdT7MTklm0lA+8PcdFm8EE1tbu3H
- xCqDl5xxYnPgKe/m2JnKRZMV2nyV5YkGpKvNQyYKgSakhqDLEBtnrJz2I3LdbtS4rZXJ
- +aTZQzANqecXbQUTs0BPPHqdaqm/47EFUNQoOXMzK+9DBaWijqhN6mEOQLZzeiEdj6LC
- mkNw==
-X-Gm-Message-State: APjAAAVB8oWrVfYzYs/hp6eHrmThnjcPrGwaPkWPx28EFvUETQqu608v
- hq3IzQT+v0Ts4+pPM6lhQyE=
-X-Google-Smtp-Source: APXvYqySGMj+xVnFBw6DoIow5YRNbAGRrtbuTNZrHqsVIA/EDf/TslUB/3GW9gmVusPNHl4OaFqc2A==
-X-Received: by 2002:a17:902:28:: with SMTP id
- 37mr31327361pla.188.1562692615742; 
- Tue, 09 Jul 2019 10:16:55 -0700 (PDT)
+ bh=+XOGAmvM9zKXLd7snltlz7p/GLyc46ilwqyDiqBZzWE=;
+ b=bEfBCvhfdUh5wmX1OgvDipNDn1zmZiuIs8cgQIn0A2aTaf4+cBTyJO39cuRnnQZqT5
+ mBxgK3c7/zp4SX2bfhKiTDdcPaNH7qUE5xD9m4akgmrPmvzeGNGsMB98VgWLmZAOLQvB
+ BYPKY4YZNnJuDIqtpD+LZocgxwUtk0402z3wksxaZD2xvtd9zxScsTo2MkwYkiAlzQDD
+ ZdALOO4D9kLs/sk1RgapYQfRLInwf5j3m744TvMVNtZfyjHGz5Sk4w+SFE5nFu7MzeIM
+ zskI2frejGzKcOKQLAicIEzKBGeOnXDfs/4MdmHjoaXRFzv5xrzB/99dQNilQ+fdopm8
+ oDWw==
+X-Gm-Message-State: APjAAAXV5u37lQueWKvezYHR0cvDta181HSZvDT7iAnQ1sW2aO+2Llzz
+ eqo7km4BzRCAnZjkFJZ+03I=
+X-Google-Smtp-Source: APXvYqwLXsIz8247u+t2R6KRU6rsLxmsDMUTOhViknbtHjRrTGKfJhgq0XtVYDXMIgsn6RwRsAnqoA==
+X-Received: by 2002:a17:90a:32ed:: with SMTP id
+ l100mr1308051pjb.11.1562693106952; 
+ Tue, 09 Jul 2019 10:25:06 -0700 (PDT)
 Received: from localhost.localdomain ([110.227.64.207])
- by smtp.gmail.com with ESMTPSA id b3sm32709107pfp.65.2019.07.09.10.16.51
+ by smtp.gmail.com with ESMTPSA id 97sm4011201pjz.12.2019.07.09.10.25.03
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 09 Jul 2019 10:16:55 -0700 (PDT)
+ Tue, 09 Jul 2019 10:25:06 -0700 (PDT)
 From: Nishka Dasgupta <nishkadg.linux@gmail.com>
-To: miquel.raynal@bootlin.com, richard@nod.at, dwmw2@infradead.org,
- computersforpeace@gmail.com, marek.vasut@gmail.com, vigneshr@ti.com,
- linux-mtd@lists.infradead.org, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, khilman@baylibre.com,
- liang.yang@amlogic.com
-Subject: [PATCH] mtd: rawnand: meson: Add of_node_put() before return
-Date: Tue,  9 Jul 2019 22:46:40 +0530
-Message-Id: <20190709171640.13511-1-nishkadg.linux@gmail.com>
+To: minghsiu.tsai@mediatek.com, houlong.wei@mediatek.com,
+ andrew-ct.chen@mediatek.com, mchehab@kernel.org, matthias.bgg@gmail.com,
+ linux-media@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-mediatek@lists.infradead.org
+Subject: [PATCH] media: platform: mtk-mdp: mtk_mdp_core: Add of_node_put()
+ before goto
+Date: Tue,  9 Jul 2019 22:54:54 +0530
+Message-Id: <20190709172454.13648-1-nishkadg.linux@gmail.com>
 X-Mailer: git-send-email 2.19.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_101659_968439_FE2D7AC1 
-X-CRM114-Status: UNSURE (   9.86  )
+X-CRM114-CacheID: sfid-20190709_102507_450245_FABAAE4E 
+X-CRM114-Status: UNSURE (   9.82  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -76,7 +76,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -108,27 +108,38 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 Each iteration of for_each_child_of_node puts the previous node, but in
-the case of a return from the middle of the loop, there is no put, thus
-causing a memory leak. Hence add an of_node_put before the return.
+the case of a goto from the middle of the loop, there is no put, thus
+causing a memory leak. Hence add an of_node_put before the goto in two
+places.
 Issue found with Coccinelle.
 
 Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
 ---
- drivers/mtd/nand/raw/meson_nand.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/media/platform/mtk-mdp/mtk_mdp_core.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/mtd/nand/raw/meson_nand.c b/drivers/mtd/nand/raw/meson_nand.c
-index ea57ddcec41e..1b82b687e5a5 100644
---- a/drivers/mtd/nand/raw/meson_nand.c
-+++ b/drivers/mtd/nand/raw/meson_nand.c
-@@ -1320,6 +1320,7 @@ static int meson_nfc_nand_chips_init(struct device *dev,
- 		ret = meson_nfc_nand_chip_init(dev, nfc, nand_np);
- 		if (ret) {
- 			meson_nfc_nand_chip_cleanup(nfc);
-+			of_node_put(nand_np);
- 			return ret;
+diff --git a/drivers/media/platform/mtk-mdp/mtk_mdp_core.c b/drivers/media/platform/mtk-mdp/mtk_mdp_core.c
+index fc9faec85edb..d0a3f06ad83d 100644
+--- a/drivers/media/platform/mtk-mdp/mtk_mdp_core.c
++++ b/drivers/media/platform/mtk-mdp/mtk_mdp_core.c
+@@ -145,13 +145,16 @@ static int mtk_mdp_probe(struct platform_device *pdev)
+ 		comp = devm_kzalloc(dev, sizeof(*comp), GFP_KERNEL);
+ 		if (!comp) {
+ 			ret = -ENOMEM;
++			of_node_put(node);
+ 			goto err_comp;
  		}
+ 		mdp->comp[comp_id] = comp;
+ 
+ 		ret = mtk_mdp_comp_init(dev, node, comp, comp_id);
+-		if (ret)
++		if (ret) {
++			of_node_put(node);
+ 			goto err_comp;
++		}
  	}
+ 
+ 	mdp->job_wq = create_singlethread_workqueue(MTK_MDP_MODULE_NAME);
 -- 
 2.19.1
 
