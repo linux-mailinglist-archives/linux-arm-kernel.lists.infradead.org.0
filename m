@@ -2,55 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0153C62E30
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 04:36:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8653462E61
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 04:54:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8DIHfGcgaY4FUZMYmxFIBQ3U5fpgi728FCJPTWWYn4A=; b=R8XA4QHK//mBP5
-	DMIu+wyzjv3/vCLYs0OCyIk2aGeF7C1YwPS9rPYqdZUumFOkIVf86bGcbc0ABRHKtFIH1F2FEsq1V
-	YXCSQqvrIMzBtdDgR4w52tulcxksc05BVtBJM+L0Cwti1Fz3DSF60EgA7NX+ydVfnH4mP8auPPadE
-	V/3sLs1e8D1oimJC7q++CF2DH+7vwr3BwcvejdXZJKXHi/GcE6DKVHUeGps3bccsLUMuE7nhxerWC
-	/fuoN6OqD3jsCEDxv56t0oWzOoRRObvJBw1xIZ6X/f1I56tVbWlkzvA4guUWoEG2xRQ9bEQ7CSO/I
-	hqLafB4DzSJLwus5Npqw==;
+	List-Owner; bh=/PrQupXKnasPdJlsSsFodgDFiWANkRfKp3zI0Ivvw7Q=; b=C4P1zIgG8Jtatl
+	f1JiAUC6QSo50jqW3fOT0KNEms/Xl1NeSh2yYyWG/QNW9tfpZUBf+uI1QrFmnX0JyiYUxe/fBO6sA
+	F+F920G4ah2/gNhgQ2sBmx+suYzDSVGBXhYm96HIOs2kVHp3EDEsR+mSKNcRzhZFydzhzWNdf2gGd
+	NE03iblx/p6w2ATGfqljS1p/EFQtedaky5rfkxOw24yjHJM9+HxDXv7l+AJag3huOndYjR7RVmGNg
+	akTF2MZzn823WVB3SjhqD0k2AN/yNrrKq2rOlWbCLTarvt1Kq3XeSrlQ+k2z9cCIuaFZ/HtcuiDv/
+	Xo05t2/NIMv72zFQ+iUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkg00-0002BR-Co; Tue, 09 Jul 2019 02:36:56 +0000
+	id 1hkgGu-0007EU-NC; Tue, 09 Jul 2019 02:54:24 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkfzo-0002Au-6B; Tue, 09 Jul 2019 02:36:45 +0000
-X-UUID: b708f43874db4d6db8ae46885d27b38b-20190708
-X-UUID: b708f43874db4d6db8ae46885d27b38b-20190708
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <biao.huang@mediatek.com>)
+ id 1hkgGY-0007Cm-Ox; Tue, 09 Jul 2019 02:54:04 +0000
+X-UUID: c57abe65623d46d79887a824a29c78f9-20190708
+X-UUID: c57abe65623d46d79887a824a29c78f9-20190708
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <walter-zh.wu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1823670931; Mon, 08 Jul 2019 18:36:38 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ with ESMTP id 371221610; Mon, 08 Jul 2019 18:53:56 -0800
+Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 8 Jul 2019 19:36:37 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 9 Jul 2019 10:36:36 +0800
-Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
+ 15.0.1395.4; Mon, 8 Jul 2019 19:53:54 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 9 Jul 2019 10:53:52 +0800
+Received: from [172.21.84.99] (172.21.84.99) by MTKCAS06.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 9 Jul 2019 10:36:36 +0800
-From: Biao Huang <biao.huang@mediatek.com>
-To: <davem@davemloft.net>, Jose Abreu <joabreu@synopsys.com>, <andrew@lunn.ch>
-Subject: [PATCH 2/2 net-next] net: stmmac: add support for hash table size
- 128/256 in dwmac4
-Date: Tue, 9 Jul 2019 10:36:23 +0800
-Message-ID: <20190709023623.8358-3-biao.huang@mediatek.com>
-X-Mailer: git-send-email 2.18.0
-In-Reply-To: <20190709023623.8358-1-biao.huang@mediatek.com>
-References: <20190709023623.8358-1-biao.huang@mediatek.com>
+ Transport; Tue, 9 Jul 2019 10:53:52 +0800
+Message-ID: <1562640832.9077.32.camel@mtksdccf07>
+Subject: Re: [PATCH v3] kasan: add memory corruption identification for
+ software tag-based mode
+From: Walter Wu <walter-zh.wu@mediatek.com>
+To: Andrey Ryabinin <aryabinin@virtuozzo.com>, Dmitry Vyukov
+ <dvyukov@google.com>
+Date: Tue, 9 Jul 2019 10:53:52 +0800
+In-Reply-To: <ebc99ee1-716b-0b18-66ab-4e93de02ce50@virtuozzo.com>
+References: <20190613081357.1360-1-walter-zh.wu@mediatek.com>
+ <da7591c9-660d-d380-d59e-6d70b39eaa6b@virtuozzo.com>
+ <1560447999.15814.15.camel@mtksdccf07>
+ <1560479520.15814.34.camel@mtksdccf07>
+ <1560744017.15814.49.camel@mtksdccf07>
+ <CACT4Y+Y3uS59rXf92ByQuFK_G4v0H8NNnCY1tCbr4V+PaZF3ag@mail.gmail.com>
+ <1560774735.15814.54.camel@mtksdccf07>
+ <1561974995.18866.1.camel@mtksdccf07>
+ <CACT4Y+aMXTBE0uVkeZz+MuPx3X1nESSBncgkScWvAkciAxP1RA@mail.gmail.com>
+ <ebc99ee1-716b-0b18-66ab-4e93de02ce50@virtuozzo.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_193644_238361_1F9CB29F 
-X-CRM114-Status: GOOD (  18.52  )
+X-CRM114-CacheID: sfid-20190708_195402_827362_5104FD1C 
+X-CRM114-Status: GOOD (  29.66  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -73,200 +83,152 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jianguo.zhang@mediatek.com, Alexandre Torgue <alexandre.torgue@st.com>,
- boon.leong.ong@intel.com, biao.huang@mediatek.com, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, yt.shen@mediatek.com,
- linux-mediatek@lists.infradead.org,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: wsd_upstream <wsd_upstream@mediatek.com>,
+ "Jason A . Donenfeld" <Jason@zx2c4.com>, Vasily Gorbik <gor@linux.ibm.com>,
+ Arnd Bergmann <arnd@arndb.de>, Linux-MM <linux-mm@kvack.org>,
+ Andrey Konovalov <andreyknvl@google.com>, LKML <linux-kernel@vger.kernel.org>,
+ kasan-dev <kasan-dev@googlegroups.com>, Pekka Enberg <penberg@kernel.org>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Miles Chen <miles.chen@mediatek.com>, Alexander Potapenko <glider@google.com>,
+ David Rientjes <rientjes@google.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
+ Christoph Lameter <cl@linux.com>, Joonsoo Kim <iamjoonsoo.kim@lge.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-1. get hash table size in hw feature reigster, and add support
-for taller hash table(128/256) in dwmac4.
-2. only clear GMAC_PACKET_FILTER bits used in this function,
-to avoid side effect to functions of other bits.
+On Mon, 2019-07-08 at 19:33 +0300, Andrey Ryabinin wrote:
+> 
+> On 7/5/19 4:34 PM, Dmitry Vyukov wrote:
+> > On Mon, Jul 1, 2019 at 11:56 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
+> >>>>>>>>> This patch adds memory corruption identification at bug report for
+> >>>>>>>>> software tag-based mode, the report show whether it is "use-after-free"
+> >>>>>>>>> or "out-of-bound" error instead of "invalid-access" error.This will make
+> >>>>>>>>> it easier for programmers to see the memory corruption problem.
+> >>>>>>>>>
+> >>>>>>>>> Now we extend the quarantine to support both generic and tag-based kasan.
+> >>>>>>>>> For tag-based kasan, the quarantine stores only freed object information
+> >>>>>>>>> to check if an object is freed recently. When tag-based kasan reports an
+> >>>>>>>>> error, we can check if the tagged addr is in the quarantine and make a
+> >>>>>>>>> good guess if the object is more like "use-after-free" or "out-of-bound".
+> >>>>>>>>>
+> >>>>>>>>
+> >>>>>>>>
+> >>>>>>>> We already have all the information and don't need the quarantine to make such guess.
+> >>>>>>>> Basically if shadow of the first byte of object has the same tag as tag in pointer than it's out-of-bounds,
+> >>>>>>>> otherwise it's use-after-free.
+> >>>>>>>>
+> >>>>>>>> In pseudo-code it's something like this:
+> >>>>>>>>
+> >>>>>>>> u8 object_tag = *(u8 *)kasan_mem_to_shadow(nearest_object(cacche, page, access_addr));
+> >>>>>>>>
+> >>>>>>>> if (access_addr_tag == object_tag && object_tag != KASAN_TAG_INVALID)
+> >>>>>>>>   // out-of-bounds
+> >>>>>>>> else
+> >>>>>>>>   // use-after-free
+> >>>>>>>
+> >>>>>>> Thanks your explanation.
+> >>>>>>> I see, we can use it to decide corruption type.
+> >>>>>>> But some use-after-free issues, it may not have accurate free-backtrace.
+> >>>>>>> Unfortunately in that situation, free-backtrace is the most important.
+> >>>>>>> please see below example
+> >>>>>>>
+> >>>>>>> In generic KASAN, it gets accurate free-backrace(ptr1).
+> >>>>>>> In tag-based KASAN, it gets wrong free-backtrace(ptr2). It will make
+> >>>>>>> programmer misjudge, so they may not believe tag-based KASAN.
+> >>>>>>> So We provide this patch, we hope tag-based KASAN bug report is the same
+> >>>>>>> accurate with generic KASAN.
+> >>>>>>>
+> >>>>>>> ---
+> >>>>>>>     ptr1 = kmalloc(size, GFP_KERNEL);
+> >>>>>>>     ptr1_free(ptr1);
+> >>>>>>>
+> >>>>>>>     ptr2 = kmalloc(size, GFP_KERNEL);
+> >>>>>>>     ptr2_free(ptr2);
+> >>>>>>>
+> >>>>>>>     ptr1[size] = 'x';  //corruption here
+> >>>>>>>
+> >>>>>>>
+> >>>>>>> static noinline void ptr1_free(char* ptr)
+> >>>>>>> {
+> >>>>>>>     kfree(ptr);
+> >>>>>>> }
+> >>>>>>> static noinline void ptr2_free(char* ptr)
+> >>>>>>> {
+> >>>>>>>     kfree(ptr);
+> >>>>>>> }
+> >>>>>>> ---
+> >>>>>>>
+> >>>>>> We think of another question about deciding by that shadow of the first
+> >>>>>> byte.
+> >>>>>> In tag-based KASAN, it is immediately released after calling kfree(), so
+> >>>>>> the slub is easy to be used by another pointer, then it will change
+> >>>>>> shadow memory to the tag of new pointer, it will not be the
+> >>>>>> KASAN_TAG_INVALID, so there are many false negative cases, especially in
+> >>>>>> small size allocation.
+> >>>>>>
+> >>>>>> Our patch is to solve those problems. so please consider it, thanks.
+> >>>>>>
+> >>>>> Hi, Andrey and Dmitry,
+> >>>>>
+> >>>>> I am sorry to bother you.
+> >>>>> Would you tell me what you think about this patch?
+> >>>>> We want to use tag-based KASAN, so we hope its bug report is clear and
+> >>>>> correct as generic KASAN.
+> >>>>>
+> >>>>> Thanks your review.
+> >>>>> Walter
+> >>>>
+> >>>> Hi Walter,
+> >>>>
+> >>>> I will probably be busy till the next week. Sorry for delays.
+> >>>
+> >>> It's ok. Thanks your kindly help.
+> >>> I hope I can contribute to tag-based KASAN. It is a very important tool
+> >>> for us.
+> >>
+> >> Hi, Dmitry,
+> >>
+> >> Would you have free time to discuss this patch together?
+> >> Thanks.
+> > 
+> > Sorry for delays. I am overwhelm by some urgent work. I afraid to
+> > promise any dates because the next week I am on a conference, then
+> > again a backlog and an intern starting...
+> > 
+> > Andrey, do you still have concerns re this patch? This change allows
+> > to print the free stack.
+> 
+> I 'm not sure that quarantine is a best way to do that. Quarantine is made to delay freeing, but we don't that here.
+> If we want to remember more free stacks wouldn't be easier simply to remember more stacks in object itself?
+> Same for previously used tags for better use-after-free identification.
+> 
 
-stmmac selftests output log with flow control on:
-	ethtool -t eth0
-	The test result is PASS
-	The test extra info:
-	 1. MAC Loopback                 0
-	 2. PHY Loopback                 -95
-	 3. MMC Counters                 0
-	 4. EEE                          -95
-	 5. Hash Filter MC               0
-	 6. Perfect Filter UC            0
-	 7. MC Filter                    0
-	 8. UC Filter                    0
-	 9. Flow Control                 0
+Hi Andrey,
 
-Signed-off-by: Biao Huang <biao.huang@mediatek.com>
----
- drivers/net/ethernet/stmicro/stmmac/common.h  |  7 +--
- drivers/net/ethernet/stmicro/stmmac/dwmac4.h  |  4 +-
- .../net/ethernet/stmicro/stmmac/dwmac4_core.c | 49 +++++++++++--------
- .../net/ethernet/stmicro/stmmac/dwmac4_dma.c  |  1 +
- .../net/ethernet/stmicro/stmmac/stmmac_main.c |  6 +++
- 5 files changed, 42 insertions(+), 25 deletions(-)
+We ever tried to use object itself to determine use-after-free
+identification, but tag-based KASAN immediately released the pointer
+after call kfree(), the original object will be used by another
+pointer, if we use object itself to determine use-after-free issue, then
+it has many false negative cases. so we create a lite quarantine(ring
+buffers) to record recent free stacks in order to avoid those false
+negative situations.
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/common.h b/drivers/net/ethernet/stmicro/stmmac/common.h
-index 2403a65167b2..af91e6b15eaa 100644
---- a/drivers/net/ethernet/stmicro/stmmac/common.h
-+++ b/drivers/net/ethernet/stmicro/stmmac/common.h
-@@ -325,6 +325,7 @@ struct dma_features {
- 	/* 802.3az - Energy-Efficient Ethernet (EEE) */
- 	unsigned int eee;
- 	unsigned int av;
-+	unsigned int hash_tb_sz;
- 	unsigned int tsoen;
- 	/* TX and RX csum */
- 	unsigned int tx_coe;
-@@ -423,9 +424,9 @@ struct mac_device_info {
- 	struct mii_regs mii;	/* MII register Addresses */
- 	struct mac_link link;
- 	void __iomem *pcsr;     /* vpointer to device CSRs */
--	int multicast_filter_bins;
--	int unicast_filter_entries;
--	int mcast_bits_log2;
-+	unsigned int multicast_filter_bins;
-+	unsigned int unicast_filter_entries;
-+	unsigned int mcast_bits_log2;
- 	unsigned int rx_csum;
- 	unsigned int pcs;
- 	unsigned int pmt;
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4.h b/drivers/net/ethernet/stmicro/stmmac/dwmac4.h
-index 15a9f3c7cc6a..2ed11a581d80 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac4.h
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4.h
-@@ -15,8 +15,7 @@
- /*  MAC registers */
- #define GMAC_CONFIG			0x00000000
- #define GMAC_PACKET_FILTER		0x00000008
--#define GMAC_HASH_TAB_0_31		0x00000010
--#define GMAC_HASH_TAB_32_63		0x00000014
-+#define GMAC_HASH_TAB(x)		(0x10 + (x) * 4)
- #define GMAC_RX_FLOW_CTRL		0x00000090
- #define GMAC_QX_TX_FLOW_CTRL(x)		(0x70 + x * 4)
- #define GMAC_TXQ_PRTY_MAP0		0x98
-@@ -181,6 +180,7 @@ enum power_event {
- #define GMAC_HW_FEAT_MIISEL		BIT(0)
- 
- /* MAC HW features1 bitmap */
-+#define GMAC_HW_HASH_TB_SZ		GENMASK(25, 24)
- #define GMAC_HW_FEAT_AVSEL		BIT(20)
- #define GMAC_HW_TSOEN			BIT(18)
- #define GMAC_HW_TXFIFOSIZE		GENMASK(10, 6)
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-index 776077ec1a23..01c2e2d83e76 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-@@ -400,41 +400,50 @@ static void dwmac4_set_filter(struct mac_device_info *hw,
- 			      struct net_device *dev)
- {
- 	void __iomem *ioaddr = (void __iomem *)dev->base_addr;
--	unsigned int value = 0;
-+	int numhashregs = (hw->multicast_filter_bins >> 5);
-+	int mcbitslog2 = hw->mcast_bits_log2;
-+	unsigned int value;
-+	int i;
- 
-+	value = readl(ioaddr + GMAC_PACKET_FILTER);
-+	value &= ~GMAC_PACKET_FILTER_HMC;
-+	value &= ~GMAC_PACKET_FILTER_HPF;
-+	value &= ~GMAC_PACKET_FILTER_PCF;
-+	value &= ~GMAC_PACKET_FILTER_PM;
-+	value &= ~GMAC_PACKET_FILTER_PR;
- 	if (dev->flags & IFF_PROMISC) {
- 		value = GMAC_PACKET_FILTER_PR | GMAC_PACKET_FILTER_PCF;
- 	} else if ((dev->flags & IFF_ALLMULTI) ||
--			(netdev_mc_count(dev) > HASH_TABLE_SIZE)) {
-+		   (netdev_mc_count(dev) > hw->multicast_filter_bins)) {
- 		/* Pass all multi */
--		value = GMAC_PACKET_FILTER_PM;
--		/* Set the 64 bits of the HASH tab. To be updated if taller
--		 * hash table is used
--		 */
--		writel(0xffffffff, ioaddr + GMAC_HASH_TAB_0_31);
--		writel(0xffffffff, ioaddr + GMAC_HASH_TAB_32_63);
-+		value |= GMAC_PACKET_FILTER_PM;
-+		/* Set all the bits of the HASH tab */
-+		for (i = 0; i < numhashregs; i++)
-+			writel(0xffffffff, ioaddr + GMAC_HASH_TAB(i));
- 	} else if (!netdev_mc_empty(dev)) {
--		u32 mc_filter[2];
- 		struct netdev_hw_addr *ha;
-+		u32 mc_filter[8];
- 
- 		/* Hash filter for multicast */
--		value = GMAC_PACKET_FILTER_HMC;
-+		value |= GMAC_PACKET_FILTER_HMC;
- 
- 		memset(mc_filter, 0, sizeof(mc_filter));
- 		netdev_for_each_mc_addr(ha, dev) {
--			/* The upper 6 bits of the calculated CRC are used to
--			 * index the content of the Hash Table Reg 0 and 1.
-+			/* The upper n bits of the calculated CRC are used to
-+			 * index the contents of the hash table. The number of
-+			 * bits used depends on the hardware configuration
-+			 * selected at core configuration time.
- 			 */
--			int bit_nr =
--				(bitrev32(~crc32_le(~0, ha->addr, 6)) >> 26);
--			/* The most significant bit determines the register
--			 * to use while the other 5 bits determines the bit
--			 * within the selected register
-+			int bit_nr = bitrev32(~crc32_le(~0, ha->addr,
-+					ETH_ALEN)) >> (32 - mcbitslog2);
-+			/* The most significant bit determines the register to
-+			 * use (H/L) while the other 5 bits determine the bit
-+			 * within the register.
- 			 */
--			mc_filter[bit_nr >> 5] |= (1 << (bit_nr & 0x1F));
-+			mc_filter[bit_nr >> 5] |= (1 << (bit_nr & 0x1f));
- 		}
--		writel(mc_filter[0], ioaddr + GMAC_HASH_TAB_0_31);
--		writel(mc_filter[1], ioaddr + GMAC_HASH_TAB_32_63);
-+		for (i = 0; i < numhashregs; i++)
-+			writel(mc_filter[i], ioaddr + GMAC_HASH_TAB(i));
- 	}
- 
- 	value |= GMAC_PACKET_FILTER_HPF;
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c b/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c
-index 0f208e13da9f..6af79fd65ef7 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c
-@@ -351,6 +351,7 @@ static void dwmac4_get_hw_feature(void __iomem *ioaddr,
- 
- 	/* MAC HW feature1 */
- 	hw_cap = readl(ioaddr + GMAC_HW_FEATURE1);
-+	dma_cap->hash_tb_sz = (hw_cap & GMAC_HW_HASH_TB_SZ) >> 24;
- 	dma_cap->av = (hw_cap & GMAC_HW_FEAT_AVSEL) >> 20;
- 	dma_cap->tsoen = (hw_cap & GMAC_HW_TSOEN) >> 18;
- 	/* RX and TX FIFO sizes are encoded as log2(n / 128). Undo that by
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-index 3425d4dda03d..3a04ace0379a 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-@@ -4174,6 +4174,12 @@ static int stmmac_hw_init(struct stmmac_priv *priv)
- 		priv->plat->enh_desc = priv->dma_cap.enh_desc;
- 		priv->plat->pmt = priv->dma_cap.pmt_remote_wake_up;
- 		priv->hw->pmt = priv->plat->pmt;
-+		if (priv->dma_cap.hash_tb_sz) {
-+			priv->hw->multicast_filter_bins =
-+					(BIT(priv->dma_cap.hash_tb_sz) << 5);
-+			priv->hw->mcast_bits_log2 =
-+					ilog2(priv->hw->multicast_filter_bins);
-+		}
- 
- 		/* TXCOE doesn't work in thresh DMA mode */
- 		if (priv->plat->force_thresh_dma_mode)
--- 
-2.18.0
+We hope to have one solution to cover all cases and be accurate. Our
+patch is configurable feature option, it can provide some programmers to
+easy see the tag-based KASAN report.
+
+
+> > We also have a quarantine for hwasan in user-space. Though it works a
+> > bit differently then the normal asan quarantine. We keep a per-thread
+> > fixed-size ring-buffer of recent allocations:
+> > https://github.com/llvm-mirror/compiler-rt/blob/master/lib/hwasan/hwasan_report.cpp#L274-L284
+> > and scan these ring buffers during reports.
+> > 
+
+Thanks your information, it looks like the same idea with our patch.
 
 
 _______________________________________________
