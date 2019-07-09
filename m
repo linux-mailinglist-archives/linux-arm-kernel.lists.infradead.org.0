@@ -2,77 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8BF1C63ABB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 20:21:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 52AB563ABF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 20:22:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GqIBGc93sbAh0Ox57zutXlVh/vqT8QDSNNZxBNGAX64=; b=aKDxDFFHUjgCE0
-	uGLvRboB2usy3zZsxhod8kNYqEy92xVAfwkFJXeVrKpVO3dTjeUENAtqixiBWcTjEglP8kHCiev0T
-	L53cYWMB6SGXkz/Wia65VrxPUZkCTtsc1R4DIuGKNjVVpAAHBhwJgeTHPyGusnugGghFgMUGtdzAU
-	/yI15vw//6Oa/DCu1Gf74W9boM4gzTb/CjsjPgkVLB75inPgUj564lISH/RSKhCHByCzk/E9DJHir
-	K1DwKVj8wv1JOuZIOwG2RedI8ve6NNzC0tJ7dcQfRZn+wQOyf9WRvi0fj+n4ReoRv2ZdBy1M4VDUn
-	daJm9VrCr8xSvjvv5nhA==;
+	List-Owner; bh=MqmJpv5BWDDEzyI0eBgpQuJdP7w/dkNeEj9pXJB5wv0=; b=JtOKow9ycg7mmU
+	LEezgV984ksmdl0s6a+7GhBzc6a4QbN/9+fCRXOc8GaPVKybEsuaW/6nWbUM+LknvO/WA4tyrJWkB
+	6W8Ijwfk4uVuPbrNDIbZX3IgGoqoWNBFRfB8Ju7YTCrZT5NdzVkl7zyXNBv/aIuvHXyvEbTm/yzP1
+	45OPrg3e0cOmC7y9VdvDNm+Mz5IVhGYVw+Siif0BetuDVZeyJk1ZsVHtgTqZ7DVK2+SPsj4CaIAYR
+	OyrJJFWiRXkzPskRyBJIt0uEJcVYiZCwehVu5TK1g3FEgwn7FupU4BStf52qMshN+ceiBsYqdkQpc
+	9g33eWB0q9RKpj2N8WvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkukI-0000k1-Hx; Tue, 09 Jul 2019 18:21:42 +0000
+	id 1hkukb-00012K-UZ; Tue, 09 Jul 2019 18:22:01 +0000
 Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkuiz-0008CD-62
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 18:20:23 +0000
-Received: by mail-qt1-x844.google.com with SMTP id l9so14352680qtu.6
+ id 1hkuj0-0008Df-Gg
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 18:20:24 +0000
+Received: by mail-qt1-x844.google.com with SMTP id k10so14991485qtq.1
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 09 Jul 2019 11:20:21 -0700 (PDT)
+ Tue, 09 Jul 2019 11:20:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
  h=from:to:subject:date:message-id:in-reply-to:references:mime-version
  :content-transfer-encoding;
- bh=vxweX2U2+Z856CcsxOG088urab10u3d6VzbrdBwUe6o=;
- b=fROPV6xgBSJhQ01nOcdaPocwDpq/tgqFMzKuQ1aRxe0BdHGYSbE7Mx44Vo+unqXPkG
- 2iQxFwNOSDAL+6xrRHgsE+5oOTpNUcaTtUnWzBQnoArvLe1SZxJuhHKRqH6oJXqWWaJp
- mYmJUMNp0hMmxuR5+lUvmF10SjSgGCn+X92RBQXE9trtp4e1hWtwVG70nLYhqgZMEneU
- 8FmJGF1qVgPlKmCQFFhG0OpQiGa2Sk5FjgCfMZI5LZbu1a0BxKAkQuR29zt1kcT31VdG
- IC8BDEXiFHBmdYydbK6a2ULNeXX78BJpyz62xQihfh1Y656wUkRhF7ksMuPF83a9UM3a
- 2t6Q==
+ bh=0AMQxB8fjID6n1nIoBRP/bexLOV4+LcL9MqYB3dLbp0=;
+ b=alGd9MvUbfRqM3kWiylqGdR8tXCWntU7urG6O/GicndbUQb45Df3lZ60ss0lN4iTMX
+ jILCKJ8XZjIJdyeJ9PcMuePTuVByoJd0pIN6Zvi/4M5oIPlwrKJ9CLBWGL1jSDoRpkf0
+ 7X2QpEiClR1Sqxlu/X0MWv0BSWiGKT7v524JLl7HEKf6FhOOLIOozehl9Jf+5Bybqzb3
+ Yq18ArXRnGQthoo3H5BaaEHVGZOc/wySgb/UPR0PjLwFUdTbZAL5xBFZQi23eAr5VBtf
+ IN7pVQ8wypit/IlAEFI+AYFsKgAOblvL17tMEno3+sg80gzfyoxh8k12uI7mGYUEGlMz
+ VC2w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=vxweX2U2+Z856CcsxOG088urab10u3d6VzbrdBwUe6o=;
- b=GneA+dEfHrU01CW4EvL+uASJ6VW6Fd32j5CdQuM10pLRwK5jzsOyHCwRjC/W/ZFUW9
- BSDB06rKhMclYHPdDGJqypUfTxtm3Ba6MuH6SLYc3Fu+P4wbIT/RjxeXPRUfw2+71qIc
- Koy/VKSPp/4c7wRRfEAkjWe1+6FqsCScNugcyW1jFqXi42IYlmwQ16veR8JvqwvNTvOv
- cT1ixmgztZ51v2ycLOjoC1uX0SXGen5vetpqeZ8+WDagdm04BXIu1SRpxLK2Vn/KFFsi
- cmoD4CqPyjp66bov8wr2HAox9jLu8EFIdalYeuYGBx7ujzMhWHeDNQltVax+8BwlXcYX
- g5UA==
-X-Gm-Message-State: APjAAAVy14zQadAv7/rR9JpWyY1oo1YqrrUe3sN+VoehqvmyCN/1+3nD
- JOdJ8EeTj5ZjDO5uNjqukuyNCQ==
-X-Google-Smtp-Source: APXvYqwpag+IBIQrGBDcCLRZVOWUUlgFjtMGgOzroSxhP3WwPBpgsirFrCOkxvY0XxfGhw6CZgULUQ==
-X-Received: by 2002:ac8:1106:: with SMTP id c6mr18604187qtj.332.1562696420496; 
- Tue, 09 Jul 2019 11:20:20 -0700 (PDT)
+ bh=0AMQxB8fjID6n1nIoBRP/bexLOV4+LcL9MqYB3dLbp0=;
+ b=k4YciHi8H20Z4IaECx/RhMEQRRX9vgyahUvBQFJGv+/OrwjKkfyikTB+KEahrMaW32
+ Huf1iROWzvsD/EmlQoLb+WlVXDZVahMAmpYX9lfnwttxiYBhMfwgptBNY1iKNbTY/GeV
+ QYFVNqsFCZS2BarDpx9jSjF2WyBUu3RcCoUMS052eVJ6ACWDUto9Kpoiwt6lvHklVrod
+ m/IHiqB+mEhZlPjQHuZEnjC3St0kl3MXgpZgD+Wo2wrTPqX6+vOzzQj4ge1jh8BbIqLF
+ Frs4IJ9D2yxglt5VRcJd1uesr69QVgJ2Wy+7ki9wn6zNq4tUu+TZr/1OcuvGPYChzChE
+ VNAg==
+X-Gm-Message-State: APjAAAVcPE4Wgkn2SOJZyor98ecvySiOmzfdiFtMQrT8leJgxMBh+v4p
+ UnKbWDUPZNDLmiIYHEn8oum8NQ==
+X-Google-Smtp-Source: APXvYqw8hj3zXjnTBHv5EU0i1mynT0zTuqlV/Rhh2l9bHQwU9e09NhIl+cnbQoA6x9C2nK4A4lK5kg==
+X-Received: by 2002:a0c:81b8:: with SMTP id 53mr19886187qvd.91.1562696421760; 
+ Tue, 09 Jul 2019 11:20:21 -0700 (PDT)
 Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
  [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id k123sm9113056qkf.13.2019.07.09.11.20.19
+ by smtp.gmail.com with ESMTPSA id k123sm9113056qkf.13.2019.07.09.11.20.20
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 09 Jul 2019 11:20:19 -0700 (PDT)
+ Tue, 09 Jul 2019 11:20:21 -0700 (PDT)
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
 To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  ebiederm@xmission.com, kexec@lists.infradead.org,
  linux-kernel@vger.kernel.org, corbet@lwn.net, catalin.marinas@arm.com,
  will@kernel.org, linux-doc@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [v2 3/5] kexec: export common crashkernel/kexeckernel parser
-Date: Tue,  9 Jul 2019 14:20:12 -0400
-Message-Id: <20190709182014.16052-4-pasha.tatashin@soleen.com>
+Subject: [v2 4/5] kexec: use reserved memory for normal kexec reboot
+Date: Tue,  9 Jul 2019 14:20:13 -0400
+Message-Id: <20190709182014.16052-5-pasha.tatashin@soleen.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190709182014.16052-1-pasha.tatashin@soleen.com>
 References: <20190709182014.16052-1-pasha.tatashin@soleen.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_112021_255622_2974F361 
-X-CRM114-Status: GOOD (  11.14  )
+X-CRM114-CacheID: sfid-20190709_112022_591110_84247CC5 
+X-CRM114-Status: GOOD (  14.49  )
 X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.1 points)
@@ -107,114 +107,95 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-To reserve memory for normal kexec reboot, the new parameter:
-kexeckernel=size[KMG][@offset[KMG]] is used. Its syntax is the
-same as craskernel=, therefore they can use the same function to
-parse parameter settings.
+If memory was reserved for the given segment use it directly instead of
+allocating on per-page bases. This will avoid relocating this segment to
+final destination when machine is rebooted.
 
-Rename: __parse_crashkernel() to parse_crash_or_kexec_kernel(), and
-make it public.
+This is done on a per segment bases because user might decide to always
+load kernel segments at the given address (i.e. non-relocatable kernel),
+but load initramfs at reserved address, and thus save reboot time on
+copying initramfs if it is large, and reduces reboot performance.
 
 Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
 ---
- .../admin-guide/kernel-parameters.txt         |  7 +++++
- include/linux/crash_core.h                    |  6 +++++
- kernel/crash_core.c                           | 27 ++++++++++---------
- 3 files changed, 28 insertions(+), 12 deletions(-)
+ kernel/kexec_core.c | 39 ++++++++++++++++++++++++++-------------
+ 1 file changed, 26 insertions(+), 13 deletions(-)
 
-diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-index 5c7a0f5b0a2f..0f5ce665c7f5 100644
---- a/Documentation/admin-guide/kernel-parameters.txt
-+++ b/Documentation/admin-guide/kernel-parameters.txt
-@@ -739,6 +739,13 @@
- 			It will be ignored when crashkernel=X,high is not used
- 			or memory reserved is below 4G.
+diff --git a/kernel/kexec_core.c b/kernel/kexec_core.c
+index 932feadbeb3a..2a8d8746e0a1 100644
+--- a/kernel/kexec_core.c
++++ b/kernel/kexec_core.c
+@@ -154,6 +154,18 @@ static struct page *kimage_alloc_page(struct kimage *image,
+ 				       gfp_t gfp_mask,
+ 				       unsigned long dest);
  
-+	kexeckernel=size[KMG][@offset[KMG]]
-+			[KNL] Using kexec, Linux can reboot to a new kernel.
-+			This parameter reserves the physical memory region
-+			[offset, offset + size] for that kernel. If '@offset' is
-+			omitted, then a suitable offset is selected
-+			automatically.
++/* Check whether this segment is fully within the resource */
++static bool segment_is_reserved(struct kexec_segment *seg, struct resource *res)
++{
++	unsigned long mstart = seg->mem;
++	unsigned long mend = mstart + seg->memsz - 1;
 +
- 	cryptomgr.notests
- 			[KNL] Disable crypto self-tests
++	if (mstart < phys_to_boot_phys(res->start) ||
++	    mend > phys_to_boot_phys(res->end))
++		return false;
++	return true;
++}
++
+ int sanity_check_segment_list(struct kimage *image)
+ {
+ 	int i;
+@@ -246,13 +258,9 @@ int sanity_check_segment_list(struct kimage *image)
  
-diff --git a/include/linux/crash_core.h b/include/linux/crash_core.h
-index 525510a9f965..e90789ff0bec 100644
---- a/include/linux/crash_core.h
-+++ b/include/linux/crash_core.h
-@@ -74,5 +74,11 @@ int parse_crashkernel_high(char *cmdline, unsigned long long system_ram,
- 		unsigned long long *crash_size, unsigned long long *crash_base);
- int parse_crashkernel_low(char *cmdline, unsigned long long system_ram,
- 		unsigned long long *crash_size, unsigned long long *crash_base);
-+int parse_crash_or_kexec_kernel(char *cmdline,
-+				unsigned long long system_ram,
-+				unsigned long long *crash_size,
-+				unsigned long long *crash_base,
-+				const char *name,
-+				const char *suffix);
- 
- #endif /* LINUX_CRASH_CORE_H */
-diff --git a/kernel/crash_core.c b/kernel/crash_core.c
-index 9f1557b98468..11e0f9837a32 100644
---- a/kernel/crash_core.c
-+++ b/kernel/crash_core.c
-@@ -224,12 +224,12 @@ static __init char *get_last_crashkernel(char *cmdline,
- 	return ck_cmdline;
+ 	if (image->type == KEXEC_TYPE_CRASH) {
+ 		for (i = 0; i < nr_segments; i++) {
+-			unsigned long mstart, mend;
+-
+-			mstart = image->segment[i].mem;
+-			mend = mstart + image->segment[i].memsz - 1;
+ 			/* Ensure we are within the crash kernel limits */
+-			if ((mstart < phys_to_boot_phys(crashk_res.start)) ||
+-			    (mend > phys_to_boot_phys(crashk_res.end)))
++			if (!segment_is_reserved(&image->segment[i],
++						 &crashk_res))
+ 				return -EADDRNOTAVAIL;
+ 		}
+ 	}
+@@ -848,12 +856,13 @@ static int kimage_load_normal_segment(struct kimage *image,
+ 	return result;
  }
  
--static int __init __parse_crashkernel(char *cmdline,
--			     unsigned long long system_ram,
--			     unsigned long long *crash_size,
--			     unsigned long long *crash_base,
--			     const char *name,
--			     const char *suffix)
-+int __init parse_crash_or_kexec_kernel(char *cmdline,
-+				       unsigned long long system_ram,
-+				       unsigned long long *crash_size,
-+				       unsigned long long *crash_base,
-+				       const char *name,
-+				       const char *suffix)
+-static int kimage_load_crash_segment(struct kimage *image,
+-					struct kexec_segment *segment)
++static int kimage_load_crash_or_reserved_segment(struct kimage *image,
++						 struct kexec_segment *segment)
  {
- 	char	*first_colon, *first_space;
- 	char	*ck_cmdline;
-@@ -270,8 +270,9 @@ int __init parse_crashkernel(char *cmdline,
- 			     unsigned long long *crash_size,
- 			     unsigned long long *crash_base)
- {
--	return __parse_crashkernel(cmdline, system_ram, crash_size, crash_base,
--					"crashkernel=", NULL);
-+	return parse_crash_or_kexec_kernel(cmdline, system_ram, crash_size,
-+					   crash_base, "crashkernel=",
-+					   NULL);
- }
+-	/* For crash dumps kernels we simply copy the data from
+-	 * user space to it's destination.
+-	 * We do things a page at a time for the sake of kmap.
++	/*
++	 * For crash dumps and kexec-reserved kernels we simply copy the data
++	 * from user space to it's destination. We do things a page at a time
++	 * for the sake of kmap.
+ 	 */
+ 	unsigned long maddr;
+ 	size_t ubytes, mbytes;
+@@ -923,10 +932,14 @@ int kimage_load_segment(struct kimage *image,
  
- int __init parse_crashkernel_high(char *cmdline,
-@@ -279,8 +280,9 @@ int __init parse_crashkernel_high(char *cmdline,
- 			     unsigned long long *crash_size,
- 			     unsigned long long *crash_base)
- {
--	return __parse_crashkernel(cmdline, system_ram, crash_size, crash_base,
--				"crashkernel=", suffix_tbl[SUFFIX_HIGH]);
-+	return parse_crash_or_kexec_kernel(cmdline, system_ram, crash_size,
-+					   crash_base, "crashkernel=",
-+					   suffix_tbl[SUFFIX_HIGH]);
- }
+ 	switch (image->type) {
+ 	case KEXEC_TYPE_DEFAULT:
+-		result = kimage_load_normal_segment(image, segment);
++		if (segment_is_reserved(segment, &kexeck_res))
++			result = kimage_load_crash_or_reserved_segment(image,
++								       segment);
++		else
++			result = kimage_load_normal_segment(image, segment);
+ 		break;
+ 	case KEXEC_TYPE_CRASH:
+-		result = kimage_load_crash_segment(image, segment);
++		result = kimage_load_crash_or_reserved_segment(image, segment);
+ 		break;
+ 	}
  
- int __init parse_crashkernel_low(char *cmdline,
-@@ -288,8 +290,9 @@ int __init parse_crashkernel_low(char *cmdline,
- 			     unsigned long long *crash_size,
- 			     unsigned long long *crash_base)
- {
--	return __parse_crashkernel(cmdline, system_ram, crash_size, crash_base,
--				"crashkernel=", suffix_tbl[SUFFIX_LOW]);
-+	return parse_crash_or_kexec_kernel(cmdline, system_ram, crash_size,
-+					   crash_base, "crashkernel=",
-+					   suffix_tbl[SUFFIX_LOW]);
- }
- 
- Elf_Word *append_elf_note(Elf_Word *buf, char *name, unsigned int type,
 -- 
 2.22.0
 
