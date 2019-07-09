@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B496C63B05
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 20:32:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 814D363B06
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 20:33:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a/yuvIqjMUo+5gxrkisbZrrp4xtNWscvXY/QYN7cooI=; b=G4hQTIygrxU8V0
-	frw4tIsAL5noGD5i9iZDZio2BxrWFuOtckzqkBw+NTVWQahISeoIB9iE2VNjCG+VDsBXTzQpHLHC/
-	L5i56CotQdEU3NnFoLMn7rEs5BGexLidXtMjLKHQph953GJ0mGSiwURdCPJo2qQZwqJ2kJOg/eu70
-	1lN6VWm8icXpZfxt6eA8bfgy22AkzvDFfdSmR8bELieOZtOf5TJeE0k9g33Est1vP6MUbWak8B9pH
-	25SpCCP0Qf7QjmnLU2MPF5YSwM/DToHPFSR8Z6SmOPoCCtACZyO+ZqIZ2NM38f/9Gc/9smwTXXoZE
-	3cKIbLLFVhWqhwFiItFQ==;
+	List-Owner; bh=y68WhIOiS3drlGwsU4XarQPAIesSzcFvYsQUdOYLkfM=; b=YyQ+e4VRTNiDL7
+	5If9iX/7YOXIVDWAd9v5/TNsjHepq1XczHtl3zcJY/lUSQ6aBN4JtHPI1IKIeFzqOTpnn72bs47Ya
+	+wSdBx8qFSKqkhwRTPFVLe/DBEUUzKhwO7kLZ4iXhmwZVeV5274P/2wrwlhbO356+xyixhRxr2Mam
+	qatxNa7w63KJDPk/qWoiR0FUROL0KnmdLLcurrOvYorgPrNdEMI8mQxkJiteT/4AEjbEciULgJIlK
+	zyNJ+VdKsE2ZHlfLWwVZ4g3/arLqaQFY0yL754vrJbYcTUCtE0JlDd61Bq1AXS1gIeuugsGQLoGrd
+	I7V0wp+S/HnnvRRuvB0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkuv6-0006Lb-3a; Tue, 09 Jul 2019 18:32:52 +0000
+	id 1hkuvK-0006eD-2Y; Tue, 09 Jul 2019 18:33:06 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkuuP-0005v7-76
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 18:32:12 +0000
+ id 1hkuuW-00062c-H7
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 18:32:18 +0000
 Received: from quaco.ghostprotocols.net (unknown [179.97.35.11])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CFCAC2087F;
- Tue,  9 Jul 2019 18:32:01 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2FE342171F;
+ Tue,  9 Jul 2019 18:32:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1562697128;
- bh=uKY1upGstB9eyiC2tvMjOQrnpwH5zhKS9cvZBMmwlRY=;
+ s=default; t=1562697136;
+ bh=JjyDoauJ+WYz56YyYDKCZ3keOnFJy6NiR6Q0BlDn5EY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=R5NqjC4skuB80xSqY6Wwp1WwLiCweXwZ4voKnG+hZZIIGLatgkiHk+63fQN4xEqr8
- SvuRJwGK0s2OPCDFsud6JvVO/9KhewPXZZLlxe6R8inbDBGyOn/YUFfL1UrrWJ82oC
- /KSRamxD4VurvzRcHPHPaEYLPpkeV2JjNtjxj8Q4=
+ b=ESqkemMNPwhyxKwOQR1gPTIAR2g071vi5m0lY8XDTWTk9gxiQcipmE/K7Zan3h6h4
+ Hf3SBt9jwNbo5P0pUS1hf4uidv2b5RDrvxbykDHuwGO8ZT1TTc4GojtJ/VnVOuxZet
+ b7Jb7VD996e5+fP2saq8AJCYYDH9elce/osSNPYE=
 From: Arnaldo Carvalho de Melo <acme@kernel.org>
 To: Ingo Molnar <mingo@kernel.org>,
 	Thomas Gleixner <tglx@linutronix.de>
-Subject: [PATCH 05/25] perf trace: Fix potential NULL pointer dereference
- found by the smatch tool
-Date: Tue,  9 Jul 2019 15:31:06 -0300
-Message-Id: <20190709183126.30257-6-acme@kernel.org>
+Subject: [PATCH 06/25] perf map: Fix potential NULL pointer dereference found
+ by smatch tool
+Date: Tue,  9 Jul 2019 15:31:07 -0300
+Message-Id: <20190709183126.30257-7-acme@kernel.org>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190709183126.30257-1-acme@kernel.org>
 References: <20190709183126.30257-1-acme@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_113209_327051_CCC32A38 
-X-CRM114-Status: GOOD (  12.11  )
+X-CRM114-CacheID: sfid-20190709_113216_753724_907C7DCD 
+X-CRM114-Status: GOOD (  10.23  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -104,23 +104,31 @@ From: Leo Yan <leo.yan@linaro.org>
 Based on the following report from Smatch, fix the potential NULL
 pointer dereference check.
 
-  tools/perf/builtin-trace.c:1044
-  thread_trace__new() error: we previously assumed 'ttrace' could be
-  null (see line 1041).
+  tools/perf/util/map.c:479
+  map__fprintf_srccode() error: we previously assumed 'state' could be
+  null (see line 466)
 
-  tools/perf/builtin-trace.c
-  1037 static struct thread_trace *thread_trace__new(void)
-  1038 {
-  1039         struct thread_trace *ttrace =  zalloc(sizeof(struct thread_trace));
-  1040
-  1041         if (ttrace)
-  1042                 ttrace->files.max = -1;
-  1043
-  1044         ttrace->syscall_stats = intlist__new(NULL);
-               ^^^^^^^^
-  1045
-  1046         return ttrace;
-  1047 }
+  tools/perf/util/map.c
+  465         /* Avoid redundant printing */
+  466         if (state &&
+  467             state->srcfile &&
+  468             !strcmp(state->srcfile, srcfile) &&
+  469             state->line == line) {
+  470                 free(srcfile);
+  471                 return 0;
+  472         }
+  473
+  474         srccode = find_sourceline(srcfile, line, &len);
+  475         if (!srccode)
+  476                 goto out_free_line;
+  477
+  478         ret = fprintf(fp, "|%-8d %.*s", line, len, srccode);
+  479         state->srcfile = srcfile;
+              ^^^^^^^
+  480         state->line = line;
+              ^^^^^^^
+
+This patch validates 'state' pointer before access its elements.
 
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
 Acked-by: Jiri Olsa <jolsa@kernel.org>
@@ -144,31 +152,31 @@ Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
 Cc: Thomas Gleixner <tglx@linutronix.de>
 Cc: Thomas Richter <tmricht@linux.ibm.com>
 Cc: linux-arm-kernel@lists.infradead.org
-Link: http://lkml.kernel.org/r/20190702103420.27540-6-leo.yan@linaro.org
-[ Just made it look like other tools/perf constructors, same end result ]
+Fixes: dd2e18e9ac20 ("perf tools: Support 'srccode' output")
+Link: http://lkml.kernel.org/r/20190702103420.27540-8-leo.yan@linaro.org
 Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
 ---
- tools/perf/builtin-trace.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ tools/perf/util/map.c | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
 
-diff --git a/tools/perf/builtin-trace.c b/tools/perf/builtin-trace.c
-index d0eb7224dd36..e3fc9062f136 100644
---- a/tools/perf/builtin-trace.c
-+++ b/tools/perf/builtin-trace.c
-@@ -1038,10 +1038,10 @@ static struct thread_trace *thread_trace__new(void)
- {
- 	struct thread_trace *ttrace =  zalloc(sizeof(struct thread_trace));
+diff --git a/tools/perf/util/map.c b/tools/perf/util/map.c
+index 6fce983c6115..5f87975d2562 100644
+--- a/tools/perf/util/map.c
++++ b/tools/perf/util/map.c
+@@ -476,8 +476,11 @@ int map__fprintf_srccode(struct map *map, u64 addr,
+ 		goto out_free_line;
  
--	if (ttrace)
-+	if (ttrace) {
- 		ttrace->files.max = -1;
--
--	ttrace->syscall_stats = intlist__new(NULL);
-+		ttrace->syscall_stats = intlist__new(NULL);
+ 	ret = fprintf(fp, "|%-8d %.*s", line, len, srccode);
+-	state->srcfile = srcfile;
+-	state->line = line;
++
++	if (state) {
++		state->srcfile = srcfile;
++		state->line = line;
 +	}
+ 	return ret;
  
- 	return ttrace;
- }
+ out_free_line:
 -- 
 2.21.0
 
