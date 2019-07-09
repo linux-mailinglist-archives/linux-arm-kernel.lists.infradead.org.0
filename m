@@ -2,85 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D34986357E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 14:18:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0D718635A4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 14:25:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sJhrtpEE4rhIQiIKf9+mujAhoKn/YrtKLixKf3OIvPg=; b=kawLoQyNk57Hb+
-	6g3YtKj1NamIQdlQpOecDMdmJrEAOTUC7HvKex96fFiCo7FAY8TAsgPGpOHMJSh6qfQvsBWPDbWk5
-	9I3U8HQonXqlAXPSQDc+pJESxrGDtHuvcnrT4EHxYmIsn8J4HgZNZR2xfZbo1TnPBf0ghK7NRmLoY
-	zS8fSL84wqDW6iueszjD6c2TCR9tJ42ju5JYFA4x6YPb6xmrKUwGV//RPKCFg46zSHWIB0tK9T+e1
-	NGj7mQw4w8g4lLLzgvrVWnf0buaQ+pACSIlN6hBKS3PFiJV/TZ4PF3HW1q/fVTwmRUjIS+NwZspPN
-	7ZI4aRVU06+ZN/lItyCQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=SFdXHQQd2EJtfGeX48s0rCe7i7ShUK02/2OMjzuRDsc=; b=mEr7HzwvBmtqOl
+	D1KnZYwXS1RvINNwJrScgYIhBYJcNdFxqppHarqeGN4ebqKhQciprLEdPjS8Pr57m/aJqO/BnhFiZ
+	F3fO8p+ZvLCE4K3kPD0V14ATpOFDkgn3HU8kG49ILTPpgGcrgwHerg+469r4dyOeWAXhv5Hi1vk5a
+	zdYYH0uFgATQtEo04Mr6xRRIHPSD5VVzVBvb1HMhRn8+di0w8BN7B5Oav1FmrDidGOx+88D1mHqDF
+	rb79EEs+o47Ec0sUK/XhTqA8q97G2/BdLeN5QwZ0N5jX1Nme063GFqdwhBfiSn1SYBBQOFv1kKITT
+	u6f9Ud35OK6bvZZrQqbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkp4i-0003bm-DA; Tue, 09 Jul 2019 12:18:24 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkp4W-0003bL-3R
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 12:18:13 +0000
-Received: by mail-lj1-x243.google.com with SMTP id m8so9854794lji.7
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 09 Jul 2019 05:18:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=TYUZq7v6hg9F7A7hhMPEbsURdusM+toQNt32J9GD77k=;
- b=f4xWJs1rkxhdZh6VKdTdoooCK03zPhYeu+utI5sLkxuMNNpq6JFZhCp6qlUvf2anbR
- bnD9Q16qqv4Dm6uP/sjy7HzUwVXVlXoVh5/xKv+25+7zR0BYqnxeW8uOzgshPKsIQvOF
- Mjtc5D/3WIRJy38LPeT9tu8iyOvc7OBDwEMukvnU3H2/czGHc8iId4gxHDRSwFZCU+2h
- KsDrxHQju99B34OL34vf21WFKzZ3D2AjR6FZXoyTwPxt4rFfTHvu3HA3oinCcy3Rvbhj
- vjfLPUH/gcYvmOpCnAmdNLX3i+9t7aI0sJJdllF/IqXMETEQhgSlmnvmWjKANEgCW2Xa
- r3rw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=TYUZq7v6hg9F7A7hhMPEbsURdusM+toQNt32J9GD77k=;
- b=jVqHEwJURRzLgW23wvgsnAFI+2ftJLrjf1RcN9wGzuBZ40GrsYZcK3PRSiwYh4Qa2i
- /ncE8NaHM0pqMnsF74rXMnobD5P2cJDnaMLyo/QX3n0rVr+kjrlsXIGopdsEBtDt3mn1
- lragddqD6P+tsQO/7REf3pg1x1ySkgFgOr6SHuMnswEcA/ElcLUKitpKJ/ToOdC3cfIH
- v5OTYXs+56X44NhElOhP4kHocenAcyB84bWYdf4DI8bpxvN3EFqBwR26qaaHAwRjbjSb
- rnAXc0TKZRpEibnJwlKYs897ofUzapHcf4y5TfeQN0vd1My6RZD304avmlRNoil2M/qb
- BRqg==
-X-Gm-Message-State: APjAAAU03Sot49RKgwwXbHQoJut1XwDN38RR8Ox0hzNXLi05zgJmcNHk
- 9wz4iknPau5Ik/Tp5G32HTOWviS3gx9cVbG2w+l2Qw==
-X-Google-Smtp-Source: APXvYqy1qu2+l+YL5DOsxvjmzznPXi+BVdOsWmKyCR6/5tRMWSNFkxo+m/lnuvORd/QmhWM+XBF+DRoi2gMuPj5dv8E=
-X-Received: by 2002:a2e:9593:: with SMTP id w19mr10559143ljh.69.1562674690149; 
- Tue, 09 Jul 2019 05:18:10 -0700 (PDT)
+	id 1hkpBi-0006TP-F0; Tue, 09 Jul 2019 12:25:38 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hkpBU-0006RD-Mg
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 12:25:26 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 29AE52B;
+ Tue,  9 Jul 2019 05:25:20 -0700 (PDT)
+Received: from filthy-habits.cambridge.arm.com (unknown [10.1.197.61])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5CA153F59C;
+ Tue,  9 Jul 2019 05:25:18 -0700 (PDT)
+From: Marc Zyngier <marc.zyngier@arm.com>
+To: Paolo Bonzini <pbonzini@redhat.com>,
+ =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>
+Subject: [GIT PULL] KVM/arm updates for Linux 5.3
+Date: Tue,  9 Jul 2019 13:24:49 +0100
+Message-Id: <20190709122507.214494-1-marc.zyngier@arm.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-References: <20190708203049.3484750-1-arnd@arndb.de>
-In-Reply-To: <20190708203049.3484750-1-arnd@arndb.de>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Tue, 9 Jul 2019 14:17:58 +0200
-Message-ID: <CACRpkdZO6to2UsJ64FCYi3aOC79PEb9pxOBABBkgcmR_d82dYg@mail.gmail.com>
-Subject: Re: [PATCH] ARM: mtd-xip: work around clang/llvm bug
-To: Arnd Bergmann <arnd@arndb.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_051812_208373_D7ED8DE4 
-X-CRM114-Status: UNSURE (   9.13  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.1 (+)
+X-CRM114-CacheID: sfid-20190709_052524_834891_9F0F741B 
+X-CRM114-Status: GOOD (  12.23  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,46 +58,112 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: clang-built-linux@googlegroups.com, Russell King <linux@armlinux.org.uk>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Cc: kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org,
+ Julien Thierry <julien.thierry@arm.com>,
+ Andre Przywara <andre.przywara@arm.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, Steven Price <steven.price@arm.com>,
+ Eric Auger <eric.auger@redhat.com>, James Morse <james.morse@arm.com>,
+ Sudeep Holla <sudeep.holla@arm.com>, Andrew Murray <andrew.murray@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jul 8, 2019 at 10:31 PM Arnd Bergmann <arnd@arndb.de> wrote:
+Radim, Paolo,
 
-> -#define xip_iprefetch()        do { asm volatile (".rep 8; nop; .endr"); } while (0)
-> +#define xip_iprefetch()        do {                                            \
-> +        asm volatile ("nop; nop; nop; nop; nop; nop; nop; nop;");      \
-> +} while (0)                                                            \
+This is the (slightly delayed) KVM/arm updates for 5.3. This time
+around, some PMU emulation improvements, the ability to save/restore
+the Spectre mitigation state, better SError handling that double as
+the workaround for a N1 erratum, a 32bit fix for a corrupted MPIDR,
+and yet another pre-NV cleanup.
 
-This is certainly an OK fix since we use a row of inline nop at
-other places.
+Please pull,
 
-However after Russell explained the other nops I didn't understand I located
-these in boot/compressed/head.S as this in __start:
+	M.
 
-                .rept   7
-                __nop
-                .endr
-#ifndef CONFIG_THUMB2_KERNEL
-                mov     r0, r0
-#else
+The following changes since commit 4b972a01a7da614b4796475f933094751a295a2f:
 
-And certainly this gets compiled, right?
+  Linux 5.2-rc6 (2019-06-22 16:01:36 -0700)
 
-So does .rept/.endr work better than .rep/.endr, is it simply mis-spelled?
+are available in the Git repository at:
 
-I.e. s/.rep/.rept/g
-?
+  git://git.kernel.org/pub/scm/linux/kernel/git/kvmarm/kvmarm.git tags/kvm-arm-for-5.3
 
-In that case we should explain in the commit that .rep doesn't work
-but .rept does.
+for you to fetch changes up to 1e0cf16cdad1ba53e9eeee8746fe57de42f20c97:
 
-Yours,
-Linus Walleij
+  KVM: arm/arm64: Initialise host's MPIDRs by reading the actual register (2019-07-08 16:29:48 +0100)
+
+----------------------------------------------------------------
+KVM/arm updates for 5.3
+
+- Add support for chained PMU counters in guests
+- Improve SError handling
+- Handle Neoverse N1 erratum #1349291
+- Allow side-channel mitigation status to be migrated
+- Standardise most AArch64 system register accesses to msr_s/mrs_s
+- Fix host MPIDR corruption on 32bit
+
+----------------------------------------------------------------
+Andre Przywara (3):
+      arm64: KVM: Propagate full Spectre v2 workaround state to KVM guests
+      KVM: arm/arm64: Add save/restore support for firmware workaround state
+      KVM: doc: Add API documentation on the KVM_REG_ARM_WORKAROUNDS register
+
+Andrew Murray (5):
+      KVM: arm/arm64: Rename kvm_pmu_{enable/disable}_counter functions
+      KVM: arm/arm64: Extract duplicated code to own function
+      KVM: arm/arm64: Re-create event when setting counter value
+      KVM: arm/arm64: Remove pmc->bitmask
+      KVM: arm/arm64: Support chained PMU counters
+
+Dave Martin (1):
+      KVM: arm64: Migrate _elx sysreg accessors to msr_s/mrs_s
+
+James Morse (8):
+      arm64: assembler: Switch ESB-instruction with a vanilla nop if !ARM64_HAS_RAS
+      KVM: arm64: Abstract the size of the HYP vectors pre-amble
+      KVM: arm64: Make indirect vectors preamble behaviour symmetric
+      KVM: arm64: Consume pending SError as early as possible
+      KVM: arm64: Defer guest entry when an asynchronous exception is pending
+      arm64: Update silicon-errata.txt for Neoverse-N1 #1349291
+      KVM: arm64: Re-mask SError after the one instruction window
+      KVM: arm64: Skip more of the SError vaxorcism
+
+Marc Zyngier (1):
+      KVM: arm/arm64: Initialise host's MPIDRs by reading the actual register
+
+ Documentation/arm64/silicon-errata.txt   |   1 +
+ Documentation/virtual/kvm/arm/psci.txt   |  31 +++
+ arch/arm/include/asm/kvm_emulate.h       |  10 +
+ arch/arm/include/asm/kvm_host.h          |  18 +-
+ arch/arm/include/asm/kvm_hyp.h           |  13 +-
+ arch/arm/include/uapi/asm/kvm.h          |  12 ++
+ arch/arm64/include/asm/assembler.h       |   4 +
+ arch/arm64/include/asm/cpufeature.h      |   6 +
+ arch/arm64/include/asm/kvm_asm.h         |   6 +
+ arch/arm64/include/asm/kvm_emulate.h     |  30 ++-
+ arch/arm64/include/asm/kvm_host.h        |  23 +-
+ arch/arm64/include/asm/kvm_hyp.h         |  50 +----
+ arch/arm64/include/asm/sysreg.h          |  35 +++-
+ arch/arm64/include/uapi/asm/kvm.h        |  10 +
+ arch/arm64/kernel/cpu_errata.c           |  23 +-
+ arch/arm64/kernel/traps.c                |   4 +
+ arch/arm64/kvm/hyp/entry.S               |  36 +++-
+ arch/arm64/kvm/hyp/hyp-entry.S           |  30 ++-
+ arch/arm64/kvm/hyp/switch.c              |  14 +-
+ arch/arm64/kvm/hyp/sysreg-sr.c           |  78 +++----
+ arch/arm64/kvm/hyp/tlb.c                 |  12 +-
+ arch/arm64/kvm/hyp/vgic-v2-cpuif-proxy.c |   2 +-
+ arch/arm64/kvm/regmap.c                  |   4 +-
+ arch/arm64/kvm/sys_regs.c                |  60 +++---
+ arch/arm64/kvm/va_layout.c               |   7 +-
+ include/kvm/arm_pmu.h                    |  11 +-
+ virt/kvm/arm/arch_timer.c                |  24 +--
+ virt/kvm/arm/arm.c                       |   3 +-
+ virt/kvm/arm/pmu.c                       | 350 +++++++++++++++++++++++++------
+ virt/kvm/arm/psci.c                      | 149 +++++++++++--
+ 30 files changed, 775 insertions(+), 281 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
