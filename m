@@ -2,82 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B79A963A9C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 20:12:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D05F63AA9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 20:20:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7csxGrqYqFlE3zFFOF1TNwN/FZ0cAcweklFiZ7ZWKew=; b=RelRaOlIIxO2Lr
-	zxtD+RLVs/YslZ2CXfQCxl85rtzDVNzjC+uNZCREmG1HcHGEOHOqvHTO6OEbOQpNiEx1bNgetxPhr
-	95zVnAnkwalpgrXFtg1pYm7NghMeLv6r4TsVSE7eSQszMqAWOLpynQbLaTAh5ZDOa7wa5HR9b55AT
-	T7pqJx62gpotSO12LP+ge5ZDdln6MpQJkHbI/mNvAGbUBHhR5xF4NK0EidwV2sGjX4J+U30hvlyXb
-	Ol8TlCNwHHmd0TRFqqrzqJlUb12JKuY9gsqlqR0Ro1AWv0RBTVgvikIXzVXJkLqdi+AjGZ2Q2Nrj1
-	objriTdxTYuYta1fgq6g==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=/lajCwTrwS/I9Cu8AVjLS1swpUNZtFYUX+KbBahoCm8=; b=GRMLYXwk6FqEUp
+	5Ykz4W2FLmSOQFWRsvngAy5yVhjp/VbxmGYBeVT2VZQeb35W8qQFCwy9hP02kCyfWUH54JlB0bHqV
+	08w3wmRiq0BQc740f669df0uYKns5knnJgbBh1+fca6Dg4I7Xeo+O74Z4UaJvS+uQSJ3dhRx+uJkI
+	TkVJ5HD3kqdOzp3OX1S57xix/liMt6fhFD0cKkj+bdltzavlZ5B+FgNqX59cziPw+f4NsOxL+HMcd
+	QvkkLvOLcShhMfXd/oZWsJUjWWJgI2eGxhjS7dGg97sO5eeLlIEcpKcgc6QFJBnAYrLBMAQuk1Spw
+	uOkdqmBupTiVhy1ispZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkuax-0004GT-9w; Tue, 09 Jul 2019 18:12:03 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1hkujE-0008EH-HW; Tue, 09 Jul 2019 18:20:36 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkuaj-0004EU-T1
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 18:11:54 +0000
-Received: by mail-pg1-x542.google.com with SMTP id f25so9847924pgv.10
+ id 1hkuiv-0008AT-W8
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 18:20:19 +0000
+Received: by mail-qk1-x743.google.com with SMTP id 201so14605124qkm.9
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 09 Jul 2019 11:11:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=V9rTJgMykVUW5gRfUWEDbI//Knjbwf3ukGtodkxh/fo=;
- b=Ib8kP9oMyOKVcnaKmSIHd6rHEWZCy37dxMh2409gx7EBVJDKMAwFDcYqFqGzBgpUtZ
- VU8hhKl4BFnaWmKa6ZuW5qF8sd9KCpHVkOHJMmTkLfhRC67PlNc5QeHCwk1RKSFEZfhg
- RIws28WMU8JDV6IX16FkaPswhYoc/H3yTwv51VUTNW/xToHrf0cJ+lQF/kCxTkQ3oLru
- 1331wGDxjru01KelnPfhqVbp+Jk7WxLFbKvp0CAftrysStSiwCWEBEfK0kixUwgKWX8B
- XmWENcr/vEpBA6wyJN9eviaR7xxJaZjog2JBokuUmPSG2cILj7vuJp8g+Q5Gk62Pxwd0
- HFPw==
+ Tue, 09 Jul 2019 11:20:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
+ h=from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=07lbMtNvRAMyX/POjVIPF1YJUTpi61TvrSJ6roJeVPs=;
+ b=nsdWBt1+R1ve8tCsDIWPrNy0y/NCDmw+8vDsI/xQ0qqlV/ZxUzX4XqCrlGrImpvaxv
+ bpKrt+60Fa3kB29M/KXQjapzKaDStgaZ7nQXw/WldmvXgddhp8rPPpJae/df0oZGQy4h
+ gVHsFN7crraEJnzfrq/y9JWg5aTPEv1/kkAx1s6m3jHG5VIGRQWfIODhRs8AkBKyXXso
+ fX4ZYxnGYoaxXW254flFRzCTVyUMDsXyUQPsr7UTYZJ683KQ/nPgb2LwR0NlJgTrhleL
+ OVQ+4zEfOSArBal5dVyMakYw9h0xf4hFLt0LnHZ7Wi9shjUez3sbBFm0jzjbMZlB9NNl
+ 0NCw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=V9rTJgMykVUW5gRfUWEDbI//Knjbwf3ukGtodkxh/fo=;
- b=gILknNLaaHbHipQNl/KSIkMYCarZwTEJ+k5R5ZpN50Vl/6z+GLqO4C235nzm9UXjDk
- 7QlkNDlAb6eZ4EL277GdAI1cg8MjlmC2vY4FPLG3lKX8heupb61LORNoKjmPZEdBXQ7J
- JTve6UR+9PbEQgOgWa0wHDadHraQx5xhRvsm9DSX+ZbvLyaHDE74IjPcv7RTAzq/X2JJ
- PPinC4bLQvhgfhCuqfaXOISt/aw0wYM900XuqZGH26CUVDRgdKXWWR7XlAX9zbByeeSr
- mGHManvvwPBDFfAQB+vl0CSICg7nesHblf9FZkrPw8KnCpJfP/A70vAuIjKdZTPhBTK6
- scpg==
-X-Gm-Message-State: APjAAAWQX6D53vEOZwoF+Sz61KifVyrImar4l96OS2lFM29r88T/tYgI
- rJKw/qdD8Tgk7lFAbRvQXxXo+tzpySjYRN2qli9NLg==
-X-Google-Smtp-Source: APXvYqyCzXINahX1VlGhs9c/oK3Wfch2QJxcoiaKsuMM7YX+ttAe/oQtJzp/cCY4PXLL09MpDinhSocxbmrKB1E0hCI=
-X-Received: by 2002:a65:4087:: with SMTP id t7mr21641518pgp.10.1562695908809; 
- Tue, 09 Jul 2019 11:11:48 -0700 (PDT)
+ h=x-gm-message-state:from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=07lbMtNvRAMyX/POjVIPF1YJUTpi61TvrSJ6roJeVPs=;
+ b=BKuIFy1BQ+5lzvJyzOiH4pTogbAwHUG3jhOPz/rIr30LTqTVSXSBf3U134wxJ8Y3jC
+ 0GYvvaVbrqxiBT5B1tsML2ZN68xLSLqgndOc1AXDMY2zwyScFNFFdPQ+p/OQbGPpjxMF
+ q56Y8fRZMpIiNryWkieiyzb/r4md3jyH9KinxRVfEpFsar4ggR4fH7duaO88u/fmWCRD
+ a75mBIVBAAu1/Rdy7J2nfKDfKxmP0oWefrC1keO5M+V2MkypWO/jS9l1sbQSXUFTldSx
+ ZURiixUT5/uSZRIS/4ceK6ilcMTrglEDhD5kGsxyGJCmeCeJAUQLkHsmrhi3GpV6IQ2Y
+ kgcA==
+X-Gm-Message-State: APjAAAX9K/Yu5exq2NU9Iho8Lq/mj+pmgqY6MljtT/H/hkoiRIachiT/
+ QXiN3VukBSGANBjFQ5aouCSGrg==
+X-Google-Smtp-Source: APXvYqwZyzZlJCfnfaRBNAPrTgjGG/pRCaQYSyhIHt8cn7HXaH8O6U0lFii9rAJ8o1Oxephvp24BSQ==
+X-Received: by 2002:a37:bf07:: with SMTP id p7mr19214845qkf.315.1562696416701; 
+ Tue, 09 Jul 2019 11:20:16 -0700 (PDT)
+Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
+ [73.69.118.222])
+ by smtp.gmail.com with ESMTPSA id k123sm9113056qkf.13.2019.07.09.11.20.15
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 09 Jul 2019 11:20:15 -0700 (PDT)
+From: Pavel Tatashin <pasha.tatashin@soleen.com>
+To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
+ ebiederm@xmission.com, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, corbet@lwn.net, catalin.marinas@arm.com,
+ will@kernel.org, linux-doc@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Subject: [v2 0/5] arm64: allow to reserve memory for normal kexec kernel
+Date: Tue,  9 Jul 2019 14:20:09 -0400
+Message-Id: <20190709182014.16052-1-pasha.tatashin@soleen.com>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-References: <20190708203049.3484750-1-arnd@arndb.de>
- <CACRpkdZO6to2UsJ64FCYi3aOC79PEb9pxOBABBkgcmR_d82dYg@mail.gmail.com>
- <20190709122550.nau44z32valjd5ir@shell.armlinux.org.uk>
-In-Reply-To: <20190709122550.nau44z32valjd5ir@shell.armlinux.org.uk>
-From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Tue, 9 Jul 2019 11:11:37 -0700
-Message-ID: <CAKwvOdnbVFQZNFaZs7Yh4C=OnR8k3CyrRc=NQEQqFvPL=Qo9Vg@mail.gmail.com>
-Subject: Re: [PATCH] ARM: mtd-xip: work around clang/llvm bug
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_111149_965115_2CA16D48 
-X-CRM114-Status: GOOD (  17.29  )
-X-Spam-Score: -14.4 (--------------)
+X-CRM114-CacheID: sfid-20190709_112018_454216_6BD2716A 
+X-CRM114-Status: GOOD (  11.61  )
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-14.4 points)
+ Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
  [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -85,10 +88,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match
  1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
- -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,71 +100,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: clang-built-linux <clang-built-linux@googlegroups.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Arnd Bergmann <arnd@arndb.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jul 9, 2019 at 5:26 AM Russell King - ARM Linux admin
-<linux@armlinux.org.uk> wrote:
->
-> On Tue, Jul 09, 2019 at 02:17:58PM +0200, Linus Walleij wrote:
-> > On Mon, Jul 8, 2019 at 10:31 PM Arnd Bergmann <arnd@arndb.de> wrote:
-> >
-> > > -#define xip_iprefetch()        do { asm volatile (".rep 8; nop; .endr"); } while (0)
-> > > +#define xip_iprefetch()        do {                                            \
-> > > +        asm volatile ("nop; nop; nop; nop; nop; nop; nop; nop;");      \
-> > > +} while (0)                                                            \
-> >
-> > This is certainly an OK fix since we use a row of inline nop at
-> > other places.
-> >
-> > However after Russell explained the other nops I didn't understand I located
-> > these in boot/compressed/head.S as this in __start:
-> >
-> >                 .rept   7
-> >                 __nop
-> >                 .endr
-> > #ifndef CONFIG_THUMB2_KERNEL
-> >                 mov     r0, r0
-> > #else
-> >
-> > And certainly this gets compiled, right?
-> >
-> > So does .rept/.endr work better than .rep/.endr, is it simply mis-spelled?
-> >
-> > I.e. s/.rep/.rept/g
-> > ?
-> >
-> > In that case we should explain in the commit that .rep doesn't work
-> > but .rept does.
->
-> According to the info pages for gas:
->
-> 7.96 `.rept COUNT'
-> ==================
->
-> Repeat the sequence of lines between the `.rept' directive and the next
-> `.endr' directive COUNT times.
->
-> So yes, ".rep" is mis-spelled, and it brings up the obvious question:
-> why isn't gas issuing an error for ".rep"?  There is no mention of
-> ".rep" in the manual.
+Changelog
+v1 - v2
+	- No changes to patches, addressed suggestion from James Morse
+	  to add "arm64" tag to cover letter.
+	- Improved cover letter information based on discussion.
 
-I swear I had looked this up somewhere and found that GNU as and
-clang's integrated assembler supported alternative spellings for
-assembly directives.  Just checked the manual
-https://ftp.gnu.org/old-gnu/Manuals/gas-2.9.1/html_chapter/as_7.html#SEC116
-and indeed no mention of the alternatives...must have been looking at
-the source...
+Currently, it is only allowed to reserve memory for crash kernel, because
+it is a requirement in order to be able to boot into crash kernel without
+touching memory of crashed kernel is to have memory reserved.
+
+The second benefit for having memory reserved for kexec kernel is
+that it does not require a relocation after segments are loaded into
+memory.
+
+If kexec functionality is used for a fast system update, with a minimal
+downtime, the relocation of kernel + initramfs might take a significant
+portion of reboot.
+
+In fact, on the machine that we are using, that has ARM64 processor
+it takes 0.35s to relocate during kexec, thus taking 52% of kernel reboot
+time:
+
+kernel shutdown	0.03s
+relocation	0.35s
+kernel startup	0.29s
+
+Image: 13M and initramfs is 24M. If initramfs increases, the relocation
+time increases proportionally.
+
+While, it is possible to add 'kexeckernel=' parameters support to other
+architectures by modifying reserve_crashkernel(), in this series this is
+done for arm64 only.
+
+The reason it is so slow on arm64 to relocate kernel is because the code
+that does relocation does this with MMU disabled, and thus D-Cache and
+I-Cache must also be disabled.
+
+Alternative solution is more complicated: Setup a temporary page table
+for relocation_routine and also for code from cpu_soft_restart. Perform
+relocation with MMU enabled, do cpu_soft_restart where MMU and caching
+are disabled, jump to purgatory. A similar approach was suggested for
+purgatory and was rejected due to making purgatory too complicated.
+On, the other hand hibernate does something similar already, but there
+MMU never needs to be disabled, and also by the time machine_kexec()
+is called, allocator is not available, as we can't fail to do reboot,
+so page table must be pre-allocated during kernel load time.
+
+Note: the above time is relocation time only. Purgatory usually also
+computes checksum, but that is skipped, because --no-check is used when
+kernel image is loaded via kexec.
+
+Pavel Tatashin (5):
+  kexec: quiet down kexec reboot
+  kexec: add resource for normal kexec region
+  kexec: export common crashkernel/kexeckernel parser
+  kexec: use reserved memory for normal kexec reboot
+  arm64, kexec: reserve kexeckernel region
+
+ .../admin-guide/kernel-parameters.txt         |  7 ++
+ arch/arm64/kernel/setup.c                     |  5 ++
+ arch/arm64/mm/init.c                          | 83 ++++++++++++-------
+ include/linux/crash_core.h                    |  6 ++
+ include/linux/ioport.h                        |  1 +
+ include/linux/kexec.h                         |  6 +-
+ kernel/crash_core.c                           | 27 +++---
+ kernel/kexec_core.c                           | 50 +++++++----
+ 8 files changed, 127 insertions(+), 58 deletions(-)
+
 -- 
-Thanks,
-~Nick Desaulniers
+2.22.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
