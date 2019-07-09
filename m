@@ -2,72 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5687F635EC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 14:31:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E602E63609
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 14:37:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2OmDSQ4K1/wOfrbnHBL+5fpAD/ldk3J+Fc2J8jBSBHU=; b=lMj0g7kGT+hnLS
-	DLItfmUiS6VWQizDnziY5AwHA0iGPyiovT6xd2gtkzE6zonsHfdfTaxC2CqWkCzXe1M3MVKI/ShIP
-	v8C1FqErev0IbSf868of+2+0XRnj+QzbLk11unbsA5XBmybmO+bNGGy/vfEDfqriFThIwzMYwhjNM
-	FDaYC7Db72Q/L1CEu99xi3c6ZhJbP66ek2LQFPjg+VY2slJrO9kibOvtnW0w+Lr01P+BD+ygiG52Z
-	w6RgUqByzJGRbCPwFaprf7XLW2PJ5qreiWTtlceNqtAk8XrB6wdnwiAHyYZVcWxQ6SC0ocNFaFJQU
-	upr+lpFKduppr05MXxWA==;
+	List-Owner; bh=RGjJiUlnci+awrr4XHJFGNVyuxYde7JKJD2NqqhR18o=; b=ZZJZA6DkYl8yzj
+	54dNwgXFZRVnjVNz/g/cczJSK0RBUhpIVEDpMeeovPbysPnQH/y4XkNfh/0xONOqr+FBaZ2G2B+cs
+	iB0kbJkX8O9eUt+v3HF82DDFcnhCZ36SM+C766ceztlDDfFWY6L5BbXIdv02h7NdWeUziKSDkMYGj
+	SilRo/cGkJIbfQ7TjkWPJdoXAkl4u3+N9l9a7tWGZHA/IiBYgbQFakfa1bnx2+6I4eUOuzk4SU/sp
+	bH/JUsn9gawUO/BSFb1j0zNwUwYKSUuWkjWDLbT+UzloWdwP2+DUk9fmkuK7jjPCU0GqoNUzbMpOe
+	QfR/a3mRlG7lWlUIltcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkpHK-00046o-Mk; Tue, 09 Jul 2019 12:31:26 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1hkpMy-00061w-RQ; Tue, 09 Jul 2019 12:37:16 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkpC4-0006uw-DK
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 12:26:02 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=GvMLu3D5SDi1KJdt5el5d+XQuPw1oygK/f6LNrT+0YI=; b=pskAPKBLg7tkZY0DhnAw61D/a
- UqqwwvfjNpbvptt8wh6CULtcob61iNxD9kRkY0Wf3QH9S3Gqp4yzlGn0d6BpsCCc/hLtAVOPNYhCT
- +uF/ZDGlc+zEj3KEF5JsCB3vm3NOxZeotCrnY2+ggftPi+HMQlQbCeOSg9Q41sq0/jrlwGII3/ZAb
- IXcpR4zgYt2ek926Qbwj5PChRTusnFcmHw/Fb9zOPrIK9FaWKIcS4lw3GGvqMJWXsB2nurNNBkUMy
- /6pb9uPgrPwPClonV010rkRJjkGzh3fQyyRTriFdwU8ZEvJ0RsSMwmZFeUJb9dmTX9ZHqXOr7N18d
- XdM03zd5w==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:60294)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1hkpBx-0000ab-3o; Tue, 09 Jul 2019 13:25:53 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.89)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1hkpBv-0002yZ-20; Tue, 09 Jul 2019 13:25:51 +0100
-Date: Tue, 9 Jul 2019 13:25:50 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Linus Walleij <linus.walleij@linaro.org>
-Subject: Re: [PATCH] ARM: mtd-xip: work around clang/llvm bug
-Message-ID: <20190709122550.nau44z32valjd5ir@shell.armlinux.org.uk>
-References: <20190708203049.3484750-1-arnd@arndb.de>
- <CACRpkdZO6to2UsJ64FCYi3aOC79PEb9pxOBABBkgcmR_d82dYg@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CACRpkdZO6to2UsJ64FCYi3aOC79PEb9pxOBABBkgcmR_d82dYg@mail.gmail.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+ id 1hkpMm-00061T-VR
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 12:37:06 +0000
+Received: by mail-pf1-x444.google.com with SMTP id g2so4451353pfq.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 09 Jul 2019 05:37:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=toXyCL0quzFOYmrXy8+MCWdClqdzvUSV1PASvI/KRWE=;
+ b=GwfJMv7VfaZfq541svvZnCJToRGP/8W+q7J/2YC/eZqxEDsURJ5Hmqk6qz3aD97lmk
+ JNT1ydj7O66POQPHdHTjg3jSZAREZD1j25psAWSvOcsILW8Ub/o3WC+P80nvtiNHnB2h
+ gHmdUsjEXJ/jHI/sCNvtBt7hN7kfQP4b7BoZ+WsJp4/6bOpPc5lCJ5mOle8tIb2UsK5d
+ aRUxqBcgLvBSAJdQ8nlJ+gvcRA5sJl+mlQiK6YgMz4HdJ5apBSDLLI+E8HPHvkHgFX/7
+ a17c22B/w03BUYS9dDBmJMrPfrUAgL2rExPU9WlhJdzGh15MM20NE38Od/muYr9oMFpT
+ /YGw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=toXyCL0quzFOYmrXy8+MCWdClqdzvUSV1PASvI/KRWE=;
+ b=jAX47zr4lA3B3wTHjU7dtdVaNkRpb2eLnnRjq2jjz3h/Qgl5S2fdWWApbQYOP3tMxE
+ DY8X2ddCk02TL9uB65ajleumMwdSMEBX685sKlAOBKMxC1ang9Cw16BVPvAeEB1VG3bK
+ nWblaogjOKYuLwWHw1yNfhPjdOCwIJ9i+OYVrsXMVCVn9Jydd6hJZ52dCB9YnZjlo88p
+ 0+ft5FKFYn7PLYhVK/q8W9SmVtrRGl47sf1HJcc5y/vwg4/QcLIIaCRa/5EhTGzjK+AI
+ mfSn3ZgES4LvcPLb1yNv1nMtZ63XaR6ZCdYWUdxHfjvKXCzjxGASdVqCZ9Ckl/VBerPf
+ +5Tg==
+X-Gm-Message-State: APjAAAXxUn+fV4VxwgGO4D/6jMWIXFY09wIggg+mj8neptbbs1eeb2wd
+ PWAb5oKS4jT/l1zhx+F4pgY=
+X-Google-Smtp-Source: APXvYqwnEr4a7gislIXb4YWANEcVg47+zBKfEfCiGCTnhSL0oRHV35kB9bn+pZ1dMusp8+MfbOCCSg==
+X-Received: by 2002:a63:211c:: with SMTP id h28mr30226836pgh.438.1562675823411; 
+ Tue, 09 Jul 2019 05:37:03 -0700 (PDT)
+Received: from devnote2 (NE2965lan1.rev.em-net.ne.jp. [210.141.244.193])
+ by smtp.gmail.com with ESMTPSA id v23sm20816932pff.185.2019.07.09.05.36.59
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 09 Jul 2019 05:37:02 -0700 (PDT)
+Date: Tue, 9 Jul 2019 21:36:57 +0900
+From: Masami Hiramatsu <masami.hiramatsu@gmail.com>
+To: Anders Roxell <anders.roxell@linaro.org>, Steven Rostedt
+ <rostedt@goodmis.org>
+Subject: Re: kprobes sanity test fails on next-20190708
+Message-Id: <20190709213657.1447f508bd6b72495ec225d9@gmail.com>
+In-Reply-To: <CADYN=9LBQ4NYFe8BPguJmxJFMiAJ405AZNU7W6gHXLSrZOSgTA@mail.gmail.com>
+References: <20190708141136.GA3239@localhost.localdomain>
+ <a19faa89-d318-fe21-9952-b0f842240ba5@arm.com>
+ <CADYN=9LBQ4NYFe8BPguJmxJFMiAJ405AZNU7W6gHXLSrZOSgTA@mail.gmail.com>
+X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_052600_751301_D69096C0 
-X-CRM114-Status: GOOD (  14.16  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190709_053705_037555_4647F66F 
+X-CRM114-Status: GOOD (  20.37  )
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (masami.hiramatsu[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -76,6 +90,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,62 +102,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: clang-built-linux@googlegroups.com,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Arnd Bergmann <arnd@arndb.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Cc: Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Anil S Keshavamurthy <anil.s.keshavamurthy@intel.com>,
+ James Morse <james.morse@arm.com>, Masami Hiramatsu <mhiramat@kernel.org>,
+ "Naveen N . Rao" <naveen.n.rao@linux.ibm.com>,
+ David Miller <davem@davemloft.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jul 09, 2019 at 02:17:58PM +0200, Linus Walleij wrote:
-> On Mon, Jul 8, 2019 at 10:31 PM Arnd Bergmann <arnd@arndb.de> wrote:
-> 
-> > -#define xip_iprefetch()        do { asm volatile (".rep 8; nop; .endr"); } while (0)
-> > +#define xip_iprefetch()        do {                                            \
-> > +        asm volatile ("nop; nop; nop; nop; nop; nop; nop; nop;");      \
-> > +} while (0)                                                            \
-> 
-> This is certainly an OK fix since we use a row of inline nop at
-> other places.
-> 
-> However after Russell explained the other nops I didn't understand I located
-> these in boot/compressed/head.S as this in __start:
-> 
->                 .rept   7
->                 __nop
->                 .endr
-> #ifndef CONFIG_THUMB2_KERNEL
->                 mov     r0, r0
-> #else
-> 
-> And certainly this gets compiled, right?
-> 
-> So does .rept/.endr work better than .rep/.endr, is it simply mis-spelled?
-> 
-> I.e. s/.rep/.rept/g
-> ?
-> 
-> In that case we should explain in the commit that .rep doesn't work
-> but .rept does.
+On Tue, 9 Jul 2019 12:19:15 +0200
+Anders Roxell <anders.roxell@linaro.org> wrote:
 
-According to the info pages for gas:
+> On Mon, 8 Jul 2019 at 17:56, James Morse <james.morse@arm.com> wrote:
+> >
+> > Hi,
+> >
+> > On 08/07/2019 15:11, Anders Roxell wrote:
+> > > argh... resending, with plaintext... Sorry =/
+> > >
+> > > I tried to build a next-201908 defconfig + CONFIG_KPROBES=y and
+> > > CONFIG_KPROBES_SANITY_TEST=y
+> > >
+> > > I get the following Call trace, any ideas?
+> > > I've tried tags back to next-20190525 and they also failes... I haven't
+> > > found a commit that works yet.
+> > >
+> > > [    0.098694] Kprobe smoke test: started
+> > > [    0.102001] audit: type=2000 audit(0.088:1): state=initialized
+> > > audit_enabled=0 res=1
+> > > [    0.104753] Internal error: aarch64 BRK: f2000004 [#1] PREEMPT SMP
+> >
+> > This sounds like the issue Mark reported:
+> > https://lore.kernel.org/r/20190702165008.GC34718@lakrids.cambridge.arm.com
+> >
+> > It doesn't look like Steve's patch has percolated into next yet:
+> > https://lore.kernel.org/lkml/20190703103715.32579c25@gandalf.local.home/
+> >
+> > Could you give that a try to see if this is a new issue?
+> 
+> The patch didn't apply cleanly.
+> However, when I resolved the issue it works.
+> I'm a bit embarrassed since I now remembered that I reported it a while back.
+> https://lore.kernel.org/lkml/20190625191545.245259106@goodmis.org/
+> 
+> Both patches resolved the issue.
+> I've tested both.
 
-7.96 `.rept COUNT'
-==================
+In that case, the later one (move postcore to subsys) seems good to me.
 
-Repeat the sequence of lines between the `.rept' directive and the next
-`.endr' directive COUNT times.
+Delaying the test is just avoiding the issue that the selftest found,
+since right after init_kprobes() are called, the kprobe is ready for use.
+This means that the selftest must be run as the first user of the kprobes
+and it must be run right after initialize kprobes.
 
-So yes, ".rep" is mis-spelled, and it brings up the obvious question:
-why isn't gas issuing an error for ".rep"?  There is no mention of
-".rep" in the manual.
+Thank you,
+
+> 
+> Cheers,
+> Anders
+
 
 -- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+Masami Hiramatsu
 
 _______________________________________________
 linux-arm-kernel mailing list
