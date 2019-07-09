@@ -2,86 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 329CF63499
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 12:56:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 061C66349D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 12:56:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LFP/nuwMhCICTUa/1hdALTBxNl9+Z9DQU1jjSp5xCKw=; b=e1izSA9/QJzVuN
-	mH3vSQE92VO9SxkDa2OawbA20HFXVHVEdO0J+XO8+IqHYec02f/DkpSzpdeNE+98XCl23a+00e9xc
-	FeUrZukGVFNlA+itX83VCG4PYz4vnw4VQC8M4L07rHCSgbtpCdtkLHEWeeM72ftlgI5k6Eesz7Bf8
-	EzJQzPZJJi/MZivfYpc0cfrPuV3HAH09vjIuAXr056j+QNEyt5HgxPCGpU+2UV29acEevM3tHXry1
-	7rtXI1F4fvEyibkIN9/c40hmtmAtCvincpHhSEvBdeerwag0fZzizIOuL9pP5RiJBu6Ehhrez4pVY
-	ZrmhrzlsmYNKdnaVLLFw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=aWx2xp+3d2qL587pf48N4bc1b49nAKyyIPerkhWiTMs=; b=TdBZudgbXnSpN4
+	lYHRVcTmldroQG1kQAAFNQZhy3JPt+hlNhv0EoQ7RDYfXaGMCt/ftHLxdbsKy5/j/tOShFUXi6J5V
+	Oaw794F2dgtynopt9qtNDyJdbNoC3dZB7ySfM0UlUybaB8dOlJ3E6cvx2+lnJWVw/gUZfyoXcVzFV
+	icJ9Tams0+krzP/z3vYL/ovwyfV+97vbvSs3waYq6+YRdSkpcv914S96W8h64U7SiBLP0UYWRGRsK
+	GkCMNRQRzHys1HA29foJp2GcU7TUNgMbopPjwCmFjJhitWGdPbf8+oFE8J+0gQwlkpt3b0ptlaUDG
+	o5WbiU8Qhtx45GobYVNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hknnB-0001MG-GY; Tue, 09 Jul 2019 10:56:13 +0000
-Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
+	id 1hknne-0001kJ-5V; Tue, 09 Jul 2019 10:56:42 +0000
+Received: from mout.kundenserver.de ([212.227.126.131])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hknmu-0001Ka-De
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 10:55:58 +0000
-Received: by mail-ed1-x541.google.com with SMTP id k8so17299635edr.11
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 09 Jul 2019 03:55:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=CuR0e69I7mgSfC2aZ+6Blt0AlnXi6b5+QGMHj0cl8wQ=;
- b=H3WlmKuijQsSU0a7TLuEFl5089i9cBj5bQlzW0gPvihWPMgP7G94S30SDDV2haeICa
- pGMt/tK8FnppDqzcxSyDW/ZGHEBCDZF9y+SItMZORqBsUrYu7gWSBoRGhqvDlsRgCk3L
- CJFf3ltd8JZY5lsUyIPS3BcsvbXDX+aEDXSYvTa69E4sO6vP3fGrxCVgD3jxFxcK3kWc
- 7HgLFC117OAk1gqAJL9/arNhNxDJv5ZGq02OWiM5Qfyr+bIicJ4bYEBP7ydQ+0WcFv/L
- bDTQbUbW7RbXsY8zovPUrWR5ZXV+ttIdrqIfu0jz4gftf9++zkA4rDA/sSp6z/o/n0Et
- 6f6A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=CuR0e69I7mgSfC2aZ+6Blt0AlnXi6b5+QGMHj0cl8wQ=;
- b=mhXg8j2d6Mt+YG6d4TF2co3lgH/4/OuZwcOjxm56BgaJHy+aRAO2Qrpw+umX//6MOT
- wqhzeNGNUZL0+HlmDFpVD7zfIcpv1SFOSXa5Os1uyAVa/sMdS4OcE9EMtPpUi344stN/
- +EFS0UfoNsuuhz9axRi8UWWQHD4LxGpthvftVg0c0ojY/rnEFQKVznXgN0h0wp0u4D5c
- 6R+HeFkv89PkN6KvaIcIlkFJBpCZbuaSqbEwi7uSR+vumJ/flxKjSbwnYeDL9iJtLbFa
- zjG9rK1ygPOsvB4d0HRoN018hP8rrTjE8wYz7AYTwUW24WbGxkmijutoce61aOPvdMBV
- bxJg==
-X-Gm-Message-State: APjAAAXTAB6yjsc9j8Wm3f4BztJyUEQ36l4wFyjk/miKyHIvlFrERoYX
- z8Y6VHnxlaBO5GYDnzvBV8wCIaISEpHWsBvCWYHCKA==
-X-Google-Smtp-Source: APXvYqx/6vJ3gKcKwyl7lr8xaD9C3sEOSHeUsI11wzdsW0Z+TsR9S678RUXH+ItREyVctYyP5WUXtxp+9zz/FamrbHo=
-X-Received: by 2002:a05:6402:782:: with SMTP id
- d2mr25261183edy.80.1562669754543; 
- Tue, 09 Jul 2019 03:55:54 -0700 (PDT)
+ id 1hknnN-0001bc-6N; Tue, 09 Jul 2019 10:56:27 +0000
+Received: from [192.168.1.110] ([95.118.92.226]) by mrelayeu.kundenserver.de
+ (mreue012 [212.227.15.167]) with ESMTPSA (Nemesis) id
+ 1MNOZO-1i9TFY3wZG-00Opru; Tue, 09 Jul 2019 12:56:11 +0200
+Subject: Re: [RFC PATCH V2 4/4] platform: mtk-isp: Add Mediatek FD driver
+To: Jerry-ch Chen <Jerry-Ch.chen@mediatek.com>, hans.verkuil@cisco.com,
+ laurent.pinchart+renesas@ideasonboard.com, tfiga@chromium.org,
+ matthias.bgg@gmail.com, mchehab@kernel.org
+References: <1562661672-22439-1-git-send-email-Jerry-Ch.chen@mediatek.com>
+ <1562661672-22439-5-git-send-email-Jerry-Ch.chen@mediatek.com>
+From: "Enrico Weigelt, metux IT consult" <lkml@metux.net>
+Organization: metux IT consult
+Message-ID: <eb3bb92d-5d44-0d45-2e90-abcdb96f595d@metux.net>
+Date: Tue, 9 Jul 2019 12:56:08 +0200
+User-Agent: Mozilla/5.0 (X11; Linux i686 on x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.2.1
 MIME-Version: 1.0
-References: <20190708211528.12392-1-pasha.tatashin@soleen.com>
- <CACi5LpNGWhTnXyM8gB0Tn=682+08s-ppfDpX2SawfxMvue1GTQ@mail.gmail.com>
-In-Reply-To: <CACi5LpNGWhTnXyM8gB0Tn=682+08s-ppfDpX2SawfxMvue1GTQ@mail.gmail.com>
-From: Pavel Tatashin <pasha.tatashin@soleen.com>
-Date: Tue, 9 Jul 2019 06:55:43 -0400
-Message-ID: <CA+CK2bBrwBHhD-PFO_gVnDYoFi0Su6t456WNdtBWpOe4qM+oww@mail.gmail.com>
-Subject: Re: [v1 0/5] allow to reserve memory for normal kexec kernel
-To: Bhupesh Sharma <bhsharma@redhat.com>
+In-Reply-To: <1562661672-22439-5-git-send-email-Jerry-Ch.chen@mediatek.com>
+Content-Language: en-US
+X-Provags-ID: V03:K1:9oj8UdHJ6t/wVt9wG2RH64WnZHfuyRvuaL96Jz4wR4j6R+hcGHo
+ K7u++aSF8H5+LIGL3GOrnpTy5Sbs1XDdM3JmDcbW7W/tYhhk3dcB+f8k9Gmva4P+YtAVbju
+ SltL4ckjdz99PBeuTzWE5fVokOF0XBFiBViam5eq1YEwddtEjdFA6Wne1LNOkF5l536Vgk6
+ V1bNYNfs5mTbDATvUp/iQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:BIsBq3Xtv6U=:RbuUXGVxT51ZgbnCRpe2IO
+ NZoqYL5klmbXWLgIEI8OCsjclrzCoKgHwlWO5pS6OT/C31sSfpmYkqIBw6ONMCS/qEv+JtE6R
+ nAqnjKVjG+fT5aWvmNnB19X3elUgdm7HInzT7s6jnPnDLWwwsOGfF0nFGUntux7xRKtjXhbsH
+ Eiu0cghyxxqmgEZ5LXsim950Ir4KmiS0zzhkJCd9Icc54FlIbRaLRr4VNM3eXMcO0BIv24LI9
+ s9KW8YpPm5G3kxH2uwTLODtlYvolXSIGNPlYS8RuUjmfNJFYlW+VE3LRxIzhaAYYb7M/BIqgW
+ O7s3I/M4ivy2TWlWmp3pWnjBfnPWRmmbayV+dQnnPMeVVeVrc/huMcEp+NYUMmcC+YjrgkMbb
+ LDqHvWp4b9W818rHLpN91umbS4b1wV/32dkUoI0PoUNW1lZdFjbrzrJTQ2JleKLCUXltbNY9K
+ fJ1LVsxTpXdx67bEXsC4NK+doMEfzTnYNi2VMLPSHKRrQ4kqWuI1VW7f0C6zidYpIKN0AYq1b
+ Dy52APKD0IHgjPKIDt+3noc8zLJQdq64MEs+0KYn44QCv4wNpkIYJG8sbq0OFmcLvZKEh8sP5
+ xcKwj1ifsRLjhPdjTEwqKlQLHAGGD++Fhv3yK+Yo5/DgE1cmlbIlprSk8R3Sxp846BkbzJwY2
+ isc3a0E7WNbXWHNSScTh8xLuFL3+HzJbXAwZztHm0g94rgGPHHF9tAdnHEzqff90JkAc3UmQP
+ zxcGa0mVwdpPnZEkk7JDEyxRxE+BxhybhnXi7fGaU+irDQkXA5a3pX7XEMN53olcDj2+QW4HT
+ w5b46acg6W05ERHS72c4/r6RvGok/oaoMe+peTrf4OBEjsSgduu0P8/s/SAnQJQ7woo58KV
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_035556_879303_56B53042 
-X-CRM114-Status: GOOD (  25.66  )
-X-Spam-Score: 1.1 (+)
+X-CRM114-CacheID: sfid-20190709_035625_553618_75059814 
+X-CRM114-Status: GOOD (  15.41  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [212.227.126.131 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,103 +81,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Jonathan Corbet <corbet@lwn.net>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- kexec mailing list <kexec@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- James Morris <jmorris@namei.org>, Eric Biederman <ebiederm@xmission.com>,
- will@kernel.org, linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, Sean.Cheng@mediatek.com, Rynn.Wu@mediatek.com,
+ srv_heupstream@mediatek.com, po-yang.huang@mediatek.com, suleiman@chromium.org,
+ sj.huang@mediatek.com, jungo.lin@mediatek.com, shik@chromium.org,
+ yuzhao@chromium.org, linux-mediatek@lists.infradead.org, zwisler@chromium.org,
+ christie.yu@mediatek.com, frederic.chen@mediatek.com,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jul 9, 2019 at 6:36 AM Bhupesh Sharma <bhsharma@redhat.com> wrote:
->
-> Hi Pavel,
->
-> On Tue, Jul 9, 2019 at 2:46 AM Pavel Tatashin <pasha.tatashin@soleen.com> wrote:
-> >
-> > Currently, it is only allowed to reserve memory for crash kernel, because
-> > it is a requirement in order to be able to boot into crash kernel without
-> > touching memory of crashed kernel is to have memory reserved.
-> >
-> > The second benefit for having memory reserved for kexec kernel is
-> > that it does not require a relocation after segments are loaded into
-> > memory.
-> >
-> > If kexec functionality is used for a fast system update, with a minimal
-> > downtime, the relocation of kernel + initramfs might take a significant
-> > portion of reboot.
-> >
-> > In fact, on the machine that we are using, that has ARM64 processor
-> > it takes 0.35s to relocate during kexec, thus taking 52% of kernel reboot
-> > time:
-> >
-> > kernel shutdown 0.03s
-> > relocation      0.35s
-> > kernel startup  0.29s
-> >
-> > Image: 13M and initramfs is 24M. If initramfs increases, the relocation
-> > time increases proportionally.
-> >
-> > While, it is possible to add 'kexeckernel=' parameters support to other
-> > architectures by modifying reserve_crashkernel(), in this series this is
-> > done for arm64 only.
-> >
-> > Pavel Tatashin (5):
-> >   kexec: quiet down kexec reboot
-> >   kexec: add resource for normal kexec region
-> >   kexec: export common crashkernel/kexeckernel parser
-> >   kexec: use reserved memory for normal kexec reboot
-> >   arm64, kexec: reserve kexeckernel region
-> >
-> >  .../admin-guide/kernel-parameters.txt         |  7 ++
-> >  arch/arm64/kernel/setup.c                     |  5 ++
-> >  arch/arm64/mm/init.c                          | 83 ++++++++++++-------
-> >  include/linux/crash_core.h                    |  6 ++
-> >  include/linux/ioport.h                        |  1 +
-> >  include/linux/kexec.h                         |  6 +-
-> >  kernel/crash_core.c                           | 27 +++---
-> >  kernel/kexec_core.c                           | 50 +++++++----
-> >  8 files changed, 127 insertions(+), 58 deletions(-)
-> >
-> > --
-> > 2.22.0
->
-> This seems like an issue with time spent while doing sha256
-> verification while in purgatory.
->
-> Can you please try the following two patches which enable D-cache in
-> purgatory before SHA verification and disable it before switching to
-> kernel:
->
-> http://lists.infradead.org/pipermail/kexec/2017-May/018839.html
-> http://lists.infradead.org/pipermail/kexec/2017-May/018840.html
+On 09.07.19 10:41, Jerry-ch Chen wrote:
 
-Hi Bhupesh,
+Hi,
 
-The verification was taking 2.31s. This is why it is disabled via
-kexec's '-i' flag. Therefore 0.35s is only the relocation part where
-time is spent, and with my patches the time is completely gone.
-Actually, I am glad you showed these patches to me because I might
-pull them and enable verification for our needs.
 
->
-> Note that these were not accepted upstream but are included in several
-> distros in some form or the other :)
+> diff --git a/drivers/media/platform/mtk-isp/fd/mtk_fd.h b/drivers/media/platform/mtk-isp/fd/mtk_fd.h
+> new file mode 100644
+> index 0000000..289999b
+> --- /dev/null
+> +++ b/drivers/media/platform/mtk-isp/fd/mtk_fd.h
+> @@ -0,0 +1,157 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +//
+> +// Copyright (c) 2018 MediaTek Inc.
+> +
+> +#ifndef __MTK_FD_HW_H__
+> +#define __MTK_FD_HW_H__
+> +
+> +#include <linux/io.h>
+> +#include <linux/types.h>
+> +#include <linux/platform_device.h>
+> +#include <media/v4l2-ctrls.h>
+> +#include <media/v4l2-device.h>
+> +#include <media/videobuf2-v4l2.h>
+> +
+> +#define MTK_FD_OUTPUT_MIN_WIDTH			26U
+> +#define MTK_FD_OUTPUT_MIN_HEIGHT		26U
+> +#define MTK_FD_OUTPUT_MAX_WIDTH			640U
+> +#define MTK_FD_OUTPUT_MAX_HEIGHT		480U
+> +
+> +/* Control the user defined image widths and heights
+> + * to be scaled and performed face detection in FD HW.
+> + * MTK FD support up to 14 user defined image sizes to perform face detection.
+> + */
+> +#define V4L2_CID_MTK_FD_SCALE_IMG_WIDTH		(V4L2_CID_USER_MTK_FD_BASE + 1)
+> +#define V4L2_CID_MTK_FD_SCALE_IMG_HEIGHT	(V4L2_CID_USER_MTK_FD_BASE + 2)
 
-Enabling MMU and D-Cache for relocation  would essentially require the
-same changes in kernel. Could you please share exactly why these were
-not accepted upstream into kexec-tools?
+I've got a *really* bad feeling about introducing chip specific
+uapi stuff. (by the way: uapi stuff belongs into include/uapi/...)
 
-Thank you,
-Pasha
+Maybe you could tell us what that's *really* about, so we can find some
+standard / chip-independent api for these things. That's one of the
+major point of the kernel: hardware abstraction.
 
->
-> Thanks,
-> Bhupesh
+> +#define ENABLE_FD				0x111
+> +#define FD_HW_ENABLE				0x4
+> +#define FD_INT_EN				0x15c
+> +#define FD_INT					0x168
+> +#define FD_RESULT				0x178
+> +#define FD_IRQ_MASK				0x001
+> +
+> +#define RS_MAX_BUF_SIZE				2288788
+> +#define FD_MAX_SPEEDUP				7
+> +#define FD_MAX_POSE_VAL				0xfffffffffffffff
+> +#define FD_DEF_POSE_VAL				0x3ff
+> +#define MAX_FD_SEL_NUM				1026
+
+If that file is supposed to be included by anything beyond the driver
+itself, we need proper prefixing. (same for anything else in here)
+
+> diff --git a/include/uapi/linux/v4l2-controls.h b/include/uapi/linux/v4l2-controls.h
+> index 3dcfc61..eae876e 100644
+> --- a/include/uapi/linux/v4l2-controls.h
+> +++ b/include/uapi/linux/v4l2-controls.h
+> @@ -192,6 +192,10 @@ enum v4l2_colorfx {
+>   * We reserve 16 controls for this driver. */
+>  #define V4L2_CID_USER_IMX_BASE			(V4L2_CID_USER_BASE + 0x10b0)
+>  
+> +/* The base for the mediatek FD driver controls */
+> +/* We reserve 16 controls for this driver. */
+> +#define V4L2_CID_USER_MTK_FD_BASE		(V4L2_CID_USER_BASE + 0x10d0)
+
+Why only the base, but not the actual IDs in uapi ?
+
+
+--mtx
+
+-- 
+Enrico Weigelt, metux IT consult
+Free software and Linux embedded engineering
+info@metux.net -- +49-151-27565287
 
 _______________________________________________
 linux-arm-kernel mailing list
