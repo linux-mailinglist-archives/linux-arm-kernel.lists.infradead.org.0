@@ -2,85 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F7D363A04
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 19:15:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD3C063A0B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 19:17:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eyCX58yNKDLBAxYwxG0fdzLoGjsS/fozMwuFqR2zpIo=; b=TRyKOsjYPgPRxi
-	GjaSM/OG3yyRtAZj9WRfvvGIlvf9rHhl87DDCy7WLKQXzhMfZH8PyBD9uMMvuot/GYfyTpnC9xzmz
-	uKiB9OpOnUVBi1er7BbZ1k3h8ppTbzMivpvg7dXB0UX3fHLafnKN03P3EgOa/WyUluboESthG3wUP
-	EUUcIv0JSZks4CTPBqD1si79WC3HnBTRRK6Pu5Skudx9azn7WbKEP7ds+StEalNWe+2Cf6sOqTKP+
-	OQv5kdgHXpayIABZmmlwCSqLH38ysPkva8whIzP5j4Hgq5eBVchq15JhHeY8vVUcMxkXoasOqhfCU
-	YV1hht8gLqRRJEdOKnUw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=TRIo96oVoGtzmw2idGP2vW9ZdXASvjF+eW8lPMMuhqE=; b=e4L3QSkVBZtFHb
+	bd0/TbEuJy4xDjgYCHho3TiMG9h5QUbYTXJsiTWQq98LH/yV7bYmQHFvQhEMFKzJYf+BILc9Dp40q
+	sZFffnnXlIMl5Q0Ir0oDRd8xD/dxxxeqcfHGFFXgRA1S2oQPKpvJMyKkWk7seOrTHgiil77Egk5/e
+	yRQGgXr4cEmosvzgDPQhVu/JwF3NO4f9PTsHiIhFK9s5MZNsCFKQZxdHqcsDCJZ01Azr5Z7uq8Adj
+	2oZ1KBEHyK3dg75V7iv26wpk8OpXt6rXWUO1CNWH0q4lvc3Ht7zWIL+965DtHP+bgXllan0qNk7xf
+	NB6jAtpfQt7LR9zNgIUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hktiB-0000tX-FR; Tue, 09 Jul 2019 17:15:27 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1hktk6-0001Sd-Hl; Tue, 09 Jul 2019 17:17:26 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkti0-0000sn-Ga
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 17:15:18 +0000
-Received: by mail-pl1-x642.google.com with SMTP id t14so7334906plr.11
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 09 Jul 2019 10:15:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=6JqEUq6HaXDJWu6s7yj66u17X0ICHbiONtveTUyPzEk=;
- b=eNcxbWYnHcBQa2L5Y8oqfVLwTSg1uIl/DeQjz+alQshTGfMRfp8NbFnIJfvpqiK1b6
- gtQpDXS0ArTdrNsAJ/DPjzpURsIGeIVF7YiBBeATJrDAB1SibPz+iqb0CMHeMR4bDxlz
- wDeqMWOUlMDEPUQWuc+yQgqEMS6ynbVePapmj2cQyzxfel22Kt5nE/0Uy9KwjE5sqlY6
- +5qknYKUPURGf9uutfwQcDgFCnyxGLBU864+LTwGxw881ou5SZe3e7QHlTZAJMRTLr+e
- DDCk5cEwSJouZMsWnPTZ7HY47c3mdR2I6m21FmisviWCHhxugHB0IJ0/Sj1kdEpDPCEh
- i3Hg==
+ id 1hktjf-0001EL-Tu; Tue, 09 Jul 2019 17:17:01 +0000
+Received: by mail-pl1-x644.google.com with SMTP id c14so10412140plo.0;
+ Tue, 09 Jul 2019 10:16:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=jRtVZWK4MTGxEwKYhzR6M7REzjy7te0i7wdR2g1MuQM=;
+ b=QWAQGZKy6CrgIhflpOFh47kI6dHDA+nDD/sN9GIvQhstjbDy8JIFLwhPeZk/OaMHLT
+ +kHVwUkMXB/MOP5bxRAqHXCI7qtLLBWsTPwUtB5At8TkJ1TFeJNdw1xOzHmmM8TdywXD
+ inO9tm3kc+/WTEiDDasB04YI/MzxqYKEm3nHMEcTdc6Y2ntv2py6yoTA59i/uykACuDS
+ igCnacXSODbr4UjtV4RPF0CaiM/ME0g4JZrEz1pKWxKIIhHhws8D4jbL+pn/4RI8S2BJ
+ 32cErmebH5kI9o2bpQ/OYv8XGhdBs2ZfrkWp3IZHjgW8qDkgvJ2XeMI8CprD01wxHRBu
+ 4nEg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=6JqEUq6HaXDJWu6s7yj66u17X0ICHbiONtveTUyPzEk=;
- b=hOgkYL+jRbvaqOrIRG47KlL4FUjHPguquO6cOrQoAQIypcAnxNLLGwcKV9DN0B1+z9
- G2Ubnp1w3S1MG1qZjycYt5LC8S4kq3RGNw3DtNQer8eDLMjRZlxYvn7EyF4XsMdUsLzB
- qDJZCJkcKieCfxU9NkMuExkmD9fenWhgIwVWQyVCy/BjyMCZWgMggmwkEXeGyDwXM7k2
- voibHVWVo9mz/C7/nwnAfLQhxrcuK7d63m0ZGtdb2tXZyJFZEND8lRdBzWU7rPrbi0Zf
- qSOwvgPyeW7pKdW24qtsIjfPgTYewagqFf47VCDgoZqNbyqmESAaFJ9zSz6ZzV1TfrWd
- e6KA==
-X-Gm-Message-State: APjAAAVG/c8kqYL5mmh5EjKULtHkF38mHNKXByF2IR27MvEF0Ila+kmd
- tlDYGgsx7Pj/e1RcoovfYYTN
-X-Google-Smtp-Source: APXvYqyNTmDI4M26K6JugK2vIR4D1U3j9E/kiP98iSOHWzeJ2x3Qx7I0p+WRjsowVapfdoTws09qyA==
-X-Received: by 2002:a17:902:1129:: with SMTP id
- d38mr33932147pla.220.1562692515236; 
- Tue, 09 Jul 2019 10:15:15 -0700 (PDT)
-Received: from Mani-XPS-13-9360 ([2405:204:7105:f96f:dc5f:6504:2cec:969e])
- by smtp.gmail.com with ESMTPSA id e13sm17644218pff.45.2019.07.09.10.15.11
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 09 Jul 2019 10:15:14 -0700 (PDT)
-Date: Tue, 9 Jul 2019 22:45:08 +0530
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH] dt-bindings: arm: Convert RDA Micro board/soc bindings
- to json-schema
-Message-ID: <20190709171508.GA10127@Mani-XPS-13-9360>
-References: <20190618212229.32302-4-robh@kernel.org>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=jRtVZWK4MTGxEwKYhzR6M7REzjy7te0i7wdR2g1MuQM=;
+ b=E+iNcwm1O3MGJ3it1DV3E4aWfDIF1VSZLWIAIP/tLwfbP7E9BNODo/YR/gis0ddCJR
+ zrpOFs9uWP+lcvfkNfaOX824bieArRfdGloFJRnsL3DEJRn3VN6BeaqiMibk7maSoJle
+ o2fm6CJ0ZeD5z0+VbcbvuXmsQr1Z8i28SLtqOVpQfdT7MTklm0lA+8PcdFm8EE1tbu3H
+ xCqDl5xxYnPgKe/m2JnKRZMV2nyV5YkGpKvNQyYKgSakhqDLEBtnrJz2I3LdbtS4rZXJ
+ +aTZQzANqecXbQUTs0BPPHqdaqm/47EFUNQoOXMzK+9DBaWijqhN6mEOQLZzeiEdj6LC
+ mkNw==
+X-Gm-Message-State: APjAAAVB8oWrVfYzYs/hp6eHrmThnjcPrGwaPkWPx28EFvUETQqu608v
+ hq3IzQT+v0Ts4+pPM6lhQyE=
+X-Google-Smtp-Source: APXvYqySGMj+xVnFBw6DoIow5YRNbAGRrtbuTNZrHqsVIA/EDf/TslUB/3GW9gmVusPNHl4OaFqc2A==
+X-Received: by 2002:a17:902:28:: with SMTP id
+ 37mr31327361pla.188.1562692615742; 
+ Tue, 09 Jul 2019 10:16:55 -0700 (PDT)
+Received: from localhost.localdomain ([110.227.64.207])
+ by smtp.gmail.com with ESMTPSA id b3sm32709107pfp.65.2019.07.09.10.16.51
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 09 Jul 2019 10:16:55 -0700 (PDT)
+From: Nishka Dasgupta <nishkadg.linux@gmail.com>
+To: miquel.raynal@bootlin.com, richard@nod.at, dwmw2@infradead.org,
+ computersforpeace@gmail.com, marek.vasut@gmail.com, vigneshr@ti.com,
+ linux-mtd@lists.infradead.org, linux-amlogic@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, khilman@baylibre.com,
+ liang.yang@amlogic.com
+Subject: [PATCH] mtd: rawnand: meson: Add of_node_put() before return
+Date: Tue,  9 Jul 2019 22:46:40 +0530
+Message-Id: <20190709171640.13511-1-nishkadg.linux@gmail.com>
+X-Mailer: git-send-email 2.19.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190618212229.32302-4-robh@kernel.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_101516_563910_70520A6E 
-X-CRM114-Status: GOOD (  15.85  )
+X-CRM114-CacheID: sfid-20190709_101659_968439_FE2D7AC1 
+X-CRM114-Status: UNSURE (   9.86  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (nishkadg.linux[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -101,114 +101,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Nishka Dasgupta <nishkadg.linux@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob,
+Each iteration of for_each_child_of_node puts the previous node, but in
+the case of a return from the middle of the loop, there is no put, thus
+causing a memory leak. Hence add an of_node_put before the return.
+Issue found with Coccinelle.
 
-On Tue, Jun 18, 2019 at 03:22:28PM -0600, Rob Herring wrote:
-> Convert RDA Micro SoC bindings to DT schema format using json-schema.
-> =
+Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
+---
+ drivers/mtd/nand/raw/meson_nand.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-> Cc: "Andreas F=E4rber" <afaerber@suse.de>
-> Cc: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> Signed-off-by: Rob Herring <robh@kernel.org>
-> ---
-> Andreas, Update the license on this one too to dual licensed if you =
-
-> want.
-
-I'm fine with GPL-2.0. Since there isn't any other RDA specific patches
-in my tree, you want to take this patch? Else I have to send the Pull
-Request to ARM SoC folks with this patch alone.
-
-Thanks,
-Mani
-
-> =
-
->  Documentation/devicetree/bindings/arm/rda.txt | 17 ----------------
->  .../devicetree/bindings/arm/rda.yaml          | 20 +++++++++++++++++++
->  MAINTAINERS                                   |  2 +-
->  3 files changed, 21 insertions(+), 18 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/arm/rda.txt
->  create mode 100644 Documentation/devicetree/bindings/arm/rda.yaml
-> =
-
-> diff --git a/Documentation/devicetree/bindings/arm/rda.txt b/Documentatio=
-n/devicetree/bindings/arm/rda.txt
-> deleted file mode 100644
-> index 43c80762c428..000000000000
-> --- a/Documentation/devicetree/bindings/arm/rda.txt
-> +++ /dev/null
-> @@ -1,17 +0,0 @@
-> -RDA Micro platforms device tree bindings
-> -----------------------------------------
-> -
-> -RDA8810PL SoC
-> -=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
-> -
-> -Required root node properties:
-> -
-> - - compatible :  must contain "rda,8810pl"
-> -
-> -
-> -Boards:
-> -
-> -Root node property compatible must contain, depending on board:
-> -
-> - - Orange Pi 2G-IoT: "xunlong,orangepi-2g-iot"
-> - - Orange Pi i96: "xunlong,orangepi-i96"
-> diff --git a/Documentation/devicetree/bindings/arm/rda.yaml b/Documentati=
-on/devicetree/bindings/arm/rda.yaml
-> new file mode 100644
-> index 000000000000..51cec2b63b04
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/arm/rda.yaml
-> @@ -0,0 +1,20 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/arm/rda.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: RDA Micro platforms device tree bindings
-> +
-> +maintainers:
-> +  - Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> +
-> +properties:
-> +  compatible:
-> +    items:
-> +      - enum:
-> +          - xunlong,orangepi-2g-iot     # Orange Pi 2G-IoT
-> +          - xunlong,orangepi-i96        # Orange Pi i96
-> +      - const: rda,8810pl
-> +
-> +...
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index 2c6f4d15805e..56ee276088eb 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -2111,7 +2111,7 @@ F:	arch/arm/boot/dts/rda8810pl-*
->  F:	drivers/clocksource/timer-rda.c
->  F:	drivers/irqchip/irq-rda-intc.c
->  F:	drivers/tty/serial/rda-uart.c
-> -F:	Documentation/devicetree/bindings/arm/rda.txt
-> +F:	Documentation/devicetree/bindings/arm/rda.yaml
->  F:	Documentation/devicetree/bindings/interrupt-controller/rda,8810pl-int=
-c.txt
->  F:	Documentation/devicetree/bindings/serial/rda,8810pl-uart.txt
->  F:	Documentation/devicetree/bindings/timer/rda,8810pl-timer.txt
-> -- =
-
-> 2.20.1
-> =
+diff --git a/drivers/mtd/nand/raw/meson_nand.c b/drivers/mtd/nand/raw/meson_nand.c
+index ea57ddcec41e..1b82b687e5a5 100644
+--- a/drivers/mtd/nand/raw/meson_nand.c
++++ b/drivers/mtd/nand/raw/meson_nand.c
+@@ -1320,6 +1320,7 @@ static int meson_nfc_nand_chips_init(struct device *dev,
+ 		ret = meson_nfc_nand_chip_init(dev, nfc, nand_np);
+ 		if (ret) {
+ 			meson_nfc_nand_chip_cleanup(nfc);
++			of_node_put(nand_np);
+ 			return ret;
+ 		}
+ 	}
+-- 
+2.19.1
 
 
 _______________________________________________
