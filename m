@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9821B63B04
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 20:32:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B496C63B05
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 20:32:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pelpPKTuWee+bWwfU5E5FPKJIP21SZv0DS8NPjG3raI=; b=PbRigSoipdRXEb
-	JgMObRmor1XfMgT32J17PgL/z8powKo05wZbVM7KN4tedPwIH9etJCGaZ+FTYjpgkNFUbY9x+JfdH
-	YlPD+8hIpnLQYtZL+XJCSvove5kUKB3ihYxU90jc/EBm7+Su87sa/8HwJ3DK6qJzl1QygE3KivBcC
-	pDyHrR/egTfltTKFiCs+kB8vwiJAX7KHOif65hKUQ/8aS5c58t11u+Rp9uJ8uZL2XDZJmbgzEslmm
-	phRL5lP/SkZpgQ5qCeBFetNbS8hCtem9Z+XfkDSKKH4vCqsNHM405uEWS4TH23wSUtld/Pw1NCv07
-	5hU5f3wLwpAjVxYcO1SQ==;
+	List-Owner; bh=a/yuvIqjMUo+5gxrkisbZrrp4xtNWscvXY/QYN7cooI=; b=G4hQTIygrxU8V0
+	frw4tIsAL5noGD5i9iZDZio2BxrWFuOtckzqkBw+NTVWQahISeoIB9iE2VNjCG+VDsBXTzQpHLHC/
+	L5i56CotQdEU3NnFoLMn7rEs5BGexLidXtMjLKHQph953GJ0mGSiwURdCPJo2qQZwqJ2kJOg/eu70
+	1lN6VWm8icXpZfxt6eA8bfgy22AkzvDFfdSmR8bELieOZtOf5TJeE0k9g33Est1vP6MUbWak8B9pH
+	25SpCCP0Qf7QjmnLU2MPF5YSwM/DToHPFSR8Z6SmOPoCCtACZyO+ZqIZ2NM38f/9Gc/9smwTXXoZE
+	3cKIbLLFVhWqhwFiItFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkuuj-00062V-Fq; Tue, 09 Jul 2019 18:32:29 +0000
+	id 1hkuv6-0006Lb-3a; Tue, 09 Jul 2019 18:32:52 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkuuH-0005nt-LC
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 18:32:03 +0000
+ id 1hkuuP-0005v7-76
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 18:32:12 +0000
 Received: from quaco.ghostprotocols.net (unknown [179.97.35.11])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 583DB21537;
- Tue,  9 Jul 2019 18:31:55 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id CFCAC2087F;
+ Tue,  9 Jul 2019 18:32:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1562697121;
- bh=4014MKo13hkHV0d3pRWB5c8cnBeoEWRYJEclpGth5F0=;
+ s=default; t=1562697128;
+ bh=uKY1upGstB9eyiC2tvMjOQrnpwH5zhKS9cvZBMmwlRY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ae/0ykf8ibATNOt5C+iqxcsMiu28JpUNOk20sand/gyMk/rjMDvn/8y3f2oy54irq
- dxUYtYetkX/2kYmlxHWifDw6s6Y81rnyC47U7Wne7cOIr0/jJDCq+gbxuy20wRMmov
- BlqbsYa2sSCBa5Mdkin7mmFfBNwCYfliYZDNhWic=
+ b=R5NqjC4skuB80xSqY6Wwp1WwLiCweXwZ4voKnG+hZZIIGLatgkiHk+63fQN4xEqr8
+ SvuRJwGK0s2OPCDFsud6JvVO/9KhewPXZZLlxe6R8inbDBGyOn/YUFfL1UrrWJ82oC
+ /KSRamxD4VurvzRcHPHPaEYLPpkeV2JjNtjxj8Q4=
 From: Arnaldo Carvalho de Melo <acme@kernel.org>
 To: Ingo Molnar <mingo@kernel.org>,
 	Thomas Gleixner <tglx@linutronix.de>
-Subject: [PATCH 04/25] perf annotate: Fix dereferencing freed memory found by
- the smatch tool
-Date: Tue,  9 Jul 2019 15:31:05 -0300
-Message-Id: <20190709183126.30257-5-acme@kernel.org>
+Subject: [PATCH 05/25] perf trace: Fix potential NULL pointer dereference
+ found by the smatch tool
+Date: Tue,  9 Jul 2019 15:31:06 -0300
+Message-Id: <20190709183126.30257-6-acme@kernel.org>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190709183126.30257-1-acme@kernel.org>
 References: <20190709183126.30257-1-acme@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_113201_839720_53104B7C 
-X-CRM114-Status: GOOD (  11.74  )
+X-CRM114-CacheID: sfid-20190709_113209_327051_CCC32A38 
+X-CRM114-Status: GOOD (  12.11  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -101,45 +101,26 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Leo Yan <leo.yan@linaro.org>
 
-Based on the following report from Smatch, fix the potential
-dereferencing freed memory check.
+Based on the following report from Smatch, fix the potential NULL
+pointer dereference check.
 
-  tools/perf/util/annotate.c:1125
-  disasm_line__parse() error: dereferencing freed memory 'namep'
+  tools/perf/builtin-trace.c:1044
+  thread_trace__new() error: we previously assumed 'ttrace' could be
+  null (see line 1041).
 
-  tools/perf/util/annotate.c
-  1100 static int disasm_line__parse(char *line, const char **namep, char **rawp)
-  1101 {
-  1102         char tmp, *name = ltrim(line);
-
-  [...]
-
-  1114         *namep = strdup(name);
-  1115
-  1116         if (*namep == NULL)
-  1117                 goto out_free_name;
-
-  [...]
-
-  1124 out_free_name:
-  1125         free((void *)namep);
-                            ^^^^^
-  1126         *namep = NULL;
-               ^^^^^^
-  1127         return -1;
-  1128 }
-
-If strdup() fails to allocate memory space for *namep, we don't need to
-free memory with pointer 'namep', which is resident in data structure
-disasm_line::ins::name; and *namep is NULL pointer for this failure, so
-it's pointless to assign NULL to *namep again.
-
-Committer note:
-
-Freeing namep, which is the address of the first entry of the 'struct
-ins' that is the first member of struct disasm_line would in fact free
-that disasm_line instance, if it was allocated via malloc/calloc, which,
-later, would a dereference of freed memory.
+  tools/perf/builtin-trace.c
+  1037 static struct thread_trace *thread_trace__new(void)
+  1038 {
+  1039         struct thread_trace *ttrace =  zalloc(sizeof(struct thread_trace));
+  1040
+  1041         if (ttrace)
+  1042                 ttrace->files.max = -1;
+  1043
+  1044         ttrace->syscall_stats = intlist__new(NULL);
+               ^^^^^^^^
+  1045
+  1046         return ttrace;
+  1047 }
 
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
 Acked-by: Jiri Olsa <jolsa@kernel.org>
@@ -163,35 +144,31 @@ Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
 Cc: Thomas Gleixner <tglx@linutronix.de>
 Cc: Thomas Richter <tmricht@linux.ibm.com>
 Cc: linux-arm-kernel@lists.infradead.org
-Link: http://lkml.kernel.org/r/20190702103420.27540-5-leo.yan@linaro.org
+Link: http://lkml.kernel.org/r/20190702103420.27540-6-leo.yan@linaro.org
+[ Just made it look like other tools/perf constructors, same end result ]
 Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
 ---
- tools/perf/util/annotate.c | 6 ++----
- 1 file changed, 2 insertions(+), 4 deletions(-)
+ tools/perf/builtin-trace.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/tools/perf/util/annotate.c b/tools/perf/util/annotate.c
-index ec7aaf31c2b2..944a6507a5e3 100644
---- a/tools/perf/util/annotate.c
-+++ b/tools/perf/util/annotate.c
-@@ -1119,16 +1119,14 @@ static int disasm_line__parse(char *line, const char **namep, char **rawp)
- 	*namep = strdup(name);
+diff --git a/tools/perf/builtin-trace.c b/tools/perf/builtin-trace.c
+index d0eb7224dd36..e3fc9062f136 100644
+--- a/tools/perf/builtin-trace.c
++++ b/tools/perf/builtin-trace.c
+@@ -1038,10 +1038,10 @@ static struct thread_trace *thread_trace__new(void)
+ {
+ 	struct thread_trace *ttrace =  zalloc(sizeof(struct thread_trace));
  
- 	if (*namep == NULL)
--		goto out_free_name;
-+		goto out;
+-	if (ttrace)
++	if (ttrace) {
+ 		ttrace->files.max = -1;
+-
+-	ttrace->syscall_stats = intlist__new(NULL);
++		ttrace->syscall_stats = intlist__new(NULL);
++	}
  
- 	(*rawp)[0] = tmp;
- 	*rawp = skip_spaces(*rawp);
- 
- 	return 0;
- 
--out_free_name:
--	free((void *)namep);
--	*namep = NULL;
-+out:
- 	return -1;
+ 	return ttrace;
  }
- 
 -- 
 2.21.0
 
