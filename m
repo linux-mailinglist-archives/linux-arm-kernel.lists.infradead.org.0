@@ -2,72 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1458F62DFB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 04:16:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF3DB62E02
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 04:18:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D2IqZvTXWxlLJQu0AFZaX6fxBBFet6Zo3CRwPND+27Y=; b=NhkU6qx98Kmq/3
-	RrMSOJdXLuyHw12J5Fi8pVwYKpQ64O4uBk6T9fKZM2xxgrYArQE7DzbKXXuRf4J0P+tqAvkR6yEn/
-	ng9MGCCyZvm5lC0ynbbTRZ6rDIScjdBrFn2ihQYIVqsq4Ap+uTLerg550qZRDLXRVUzBLEPzGQkSS
-	TZNQHJ52C9F76SpVt8UzXNt4qNckekZs/CVoI50OzXn7mFjQXzhDKaNflJa+XVEwwgPT7oJf+aZbr
-	4HL4tRntpIuzd+c36dAHHq18B++VogT6qIUwJ7P8xtIXp5tuahAqJyDZWVksnlUhfVX+X6dkzPMEy
-	VzSMZGrVEuadZL4KEimQ==;
+	List-Owner; bh=nia8eNTZ8KRK3W0ArqJu1uJoErzJ2jeoy/X8Imqy0BY=; b=KpJjj1xBtwY0bw
+	/uv1Nqp+zjgXZvrtDrlpnpHC5vpbjpE+xWgIr77I/bCn1al264cFXjrjkio8+PUvgIb/SPhqG/rfe
+	AWAJmnDUrc26xQwsD8oy4NZtnLuvpPBJuq1czeT2vujQa7IkpmKPUnGbXtdmpFeLMmY9BkUDNKqlk
+	/dB3Im2vF9EogPSVQueIhBtTJbNYNsONGAszPWCHNDFbEcIQF43gFKQxZ64ok5gV8e59X720Q9LGL
+	zGyY4h4qXK8lmONKB7WO5Q/SvSatRLDJHeK19gAHDbq4WSW5JPZJXAXmNEO3IkvHfLeBAhJ3wS7hh
+	MwMkPdaR7eO1uRtzm6jA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkfgf-0003bn-E8; Tue, 09 Jul 2019 02:16:57 +0000
-Received: from mail-io1-f66.google.com ([209.85.166.66])
+	id 1hkfhp-0003v1-NW; Tue, 09 Jul 2019 02:18:09 +0000
+Received: from mail-io1-f67.google.com ([209.85.166.67])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkfgS-0003b7-5y; Tue, 09 Jul 2019 02:16:45 +0000
-Received: by mail-io1-f66.google.com with SMTP id i10so39737463iol.13;
- Mon, 08 Jul 2019 19:16:44 -0700 (PDT)
+ id 1hkfhb-0003uF-ET
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 02:17:56 +0000
+Received: by mail-io1-f67.google.com with SMTP id o9so24234372iom.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 08 Jul 2019 19:17:55 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=YB0ihnOm59Ua/y7c0WmEoM3xopDstN/prTb9Z8UqdvE=;
- b=tP1VxHH7oPwq8gboj/L6wjyLDuNhlfxPoe0SHXaUTiEXozAp6JSM/JyCg+dp89N+eS
- FxRpqWjkdP6a7CGGE0+3GJ4OvpMAGSZPvgx9mm26hMCl3okXpUSJG+sH+UNEfKzuboXS
- N3YqdkBu+r5m3eFwuNcx4GIkxcSZxDQAyqV8BeI9EBxThcUWcWppVrzCju2lK017LsUn
- jySEK3fBPSf9YqHjZKv2C0UWVw7PN69bVXcdsHq2kYJxw4tl54wZnqZ0LvJGo7J5KPmG
- tRwgH2JbKxSESBbNBelt2EllpxvjnnpUrOpJ9a8p7r4h1vIhMet52BsN+d20R9ocXxS3
- qONQ==
-X-Gm-Message-State: APjAAAULy03gO41JCm5wYqqH1fx/2rtMc1eDszs635zugFGaz8+BPp8/
- yuGJbkNCJmerPlee/FdzvA==
-X-Google-Smtp-Source: APXvYqyGmoebgc+iVTlZYu5TrVkwa3yYJYbNaeC3MeCzrmiEnG6yJ78bPDh0A3WHvjO4ADy2Ivp3Pw==
-X-Received: by 2002:a02:600c:: with SMTP id i12mr23983205jac.108.1562638603364; 
- Mon, 08 Jul 2019 19:16:43 -0700 (PDT)
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=YjoGM7Wxe563lt2QEMzedfEv/oSE8kILweoYwhow1Iw=;
+ b=kuoxB51Axy2J37VO2cAABauDNC4Bp40CXGyzbBzdfOrI69wJt/WW/iSm6RYZCCQxM2
+ 5aNrGtAlxvAfX42YWUfK2ynvFrCWpFEb6xjMOEdJwj7S0iomGxnmbdpdot85rk6c+UeI
+ zm/cv91ZBjnlUqF0zN1p+6upbh20c6UWfKjcVZFmNpxVVtCd0dMxRTvXgm+myBywMkpD
+ FVWyfIZ74b6M84jcA1IwB/2+W0MDdJKmPSjxM/ogzPO/2xxuCMQ7VbA/HaC7qjbZSYFW
+ 20QWB+vrD1tvbYycRLxMO/7U58FBLIdiZWL2uGQimsGCFIOmMooqP4JXg2KTW0A34lTs
+ OIhg==
+X-Gm-Message-State: APjAAAX5edXNSVsZFZe2Pf5dQ3LXOwhGocQ2EKKL0masQztvqByiFPW8
+ 2RImr3HP4WjPHdJ1sGV++A==
+X-Google-Smtp-Source: APXvYqw2MSMSTPDKr0hezGEPUjDdJtsCKqWkhfbqCfu9I/mUn4AvK/Y9H6kSLF5ZreFy1Ml/afZiGg==
+X-Received: by 2002:a02:ac09:: with SMTP id a9mr11371164jao.48.1562638674579; 
+ Mon, 08 Jul 2019 19:17:54 -0700 (PDT)
 Received: from localhost ([64.188.179.252])
- by smtp.gmail.com with ESMTPSA id t4sm15342760iop.0.2019.07.08.19.16.42
+ by smtp.gmail.com with ESMTPSA id e26sm16401377iod.10.2019.07.08.19.17.53
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 08 Jul 2019 19:16:42 -0700 (PDT)
-Date: Mon, 8 Jul 2019 20:16:41 -0600
+ Mon, 08 Jul 2019 19:17:53 -0700 (PDT)
+Date: Mon, 8 Jul 2019 20:17:53 -0600
 From: Rob Herring <robh@kernel.org>
-To: Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>
-Subject: Re: [PATCH 2/7] dt-bindings: mmc: Add Actions Semi SD/MMC/SDIO
- controller binding
-Message-ID: <20190709021641.GA28185@bogus>
-References: <20190608195317.6336-1-manivannan.sadhasivam@linaro.org>
- <20190608195317.6336-3-manivannan.sadhasivam@linaro.org>
- <5d164528-c797-5f94-f905-719d4f69542c@suse.de>
+To: yibin.gong@nxp.com
+Subject: Re: [PATCH v5 08/15] spi: imx: add new i.mx6ul compatible name in
+ binding doc
+Message-ID: <20190709021753.GA8533@bogus>
+References: <20190610081753.11422-1-yibin.gong@nxp.com>
+ <20190610081753.11422-9-yibin.gong@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <5d164528-c797-5f94-f905-719d4f69542c@suse.de>
+In-Reply-To: <20190610081753.11422-9-yibin.gong@nxp.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_191644_223669_97AE8520 
-X-CRM114-Status: GOOD (  17.58  )
+X-CRM114-CacheID: sfid-20190708_191755_485163_24FCF41C 
+X-CRM114-Status: GOOD (  10.40  )
 X-Spam-Score: 2.1 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.66 listed in list.dnswl.org]
+ no trust [209.85.166.67 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
@@ -90,87 +90,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, ulf.hansson@linaro.org, sboyd@kernel.org,
- linux-actions@lists.infradead.org, linus.walleij@linaro.org,
- linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
- thomas.liau@actions-semi.com,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, catalin.marinas@arm.com,
+ linux-kernel@vger.kernel.org, festevam@gmail.com, s.hauer@pengutronix.de,
+ will.deacon@arm.com, linux-imx@nxp.com, linux-spi@vger.kernel.org,
+ vkoul@kernel.org, robh+dt@kernel.org, broonie@kernel.org,
+ kernel@pengutronix.de, u.kleine-koenig@pengutronix.de,
+ dmaengine@vger.kernel.org, dan.j.williams@intel.com, shawnguo@kernel.org,
+ linux-arm-kernel@lists.infradead.org, l.stach@pengutronix.de
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 10, 2019 at 03:45:37PM +0200, Andreas F=E4rber wrote:
-> Am 08.06.19 um 21:53 schrieb Manivannan Sadhasivam:
-> > Add devicetree binding for Actions Semi Owl SoC's SD/MMC/SDIO controlle=
-r.
-> > =
+On Mon, 10 Jun 2019 16:17:46 +0800, yibin.gong@nxp.com wrote:
+> From: Robin Gong <yibin.gong@nxp.com>
+> 
+> ERR009165 fixed from i.mx6ul, add its compatible name in binding
+> doc.
+> 
+> Signed-off-by: Robin Gong <yibin.gong@nxp.com>
+> Acked-by: Mark Brown <broonie@kernel.org>
+> ---
+>  Documentation/devicetree/bindings/spi/fsl-imx-cspi.txt | 1 +
+>  1 file changed, 1 insertion(+)
+> 
 
-> > Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> > ---
-> >  .../devicetree/bindings/mmc/owl-mmc.txt       | 37 +++++++++++++++++++
-> >  1 file changed, 37 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/mmc/owl-mmc.txt
-> =
-
-> Rob, should this be YAML now?
-
-Would be nice and might get reviewed faster, but I'll leave that to Ulf =
-
-to start requiring.
-
-> =
-
-> > =
-
-> > diff --git a/Documentation/devicetree/bindings/mmc/owl-mmc.txt b/Docume=
-ntation/devicetree/bindings/mmc/owl-mmc.txt
-> > new file mode 100644
-> > index 000000000000..a702f8d66cec
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/mmc/owl-mmc.txt
-> > @@ -0,0 +1,37 @@
-> > +Actions Semi Owl SoCs SD/MMC/SDIO controller
-> > +
-> > +Required properties:
-> > +- compatible: should be "actions,owl-mmc"
-> > +- reg: offset and length of the register set for the device.
-> > +- interrupts: single interrupt specifier.
-> > +- clocks: single clock specifier of the controller clock.
-> > +- resets: phandle to the reset line.
-> > +- dma-names: should be "mmc".
-> > +- dmas: single DMA channel specifier
-> =
-
-> I recall the main blocker for MMC being regulators, i.e. the I=B2C
-> attached multi-function PMIC. Yet I don't see any such required property
-> here, nor any patch series implementing it. Seems like this relies on
-> U-Boot having initialized SD/eMMC? Do you intend to make them optional
-> or did you want to hold off merging this one until the rest is done?
-> =
-
-> > +
-> > +Optional properties:
-> > +- pinctrl-names: pinctrl state names "default" must be defined.
-> > +- pinctrl-0: phandle referencing pin configuration of the controller.
-> > +- bus-width: see mmc.txt
-> > +- cap-sd-highspeed: see mmc.txt
-> > +- cap-mmc-highspeed: see mmc.txt
-> > +- sd-uhs-sdr12: see mmc.txt
-> > +- sd-uhs-sdr25: see mmc.txt
-> > +- sd-uhs-sdr50: see mmc.txt
-> > +- non-removable: see mmc.txt
-> =
-
-> I'm not convinced duplicating common properties is a good idea here, in
-> particular pinctrl.
-
-The main value is to define which common properties are valid for this =
-
-binding (and by omission which ones aren't valid).
-
-Rob
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
