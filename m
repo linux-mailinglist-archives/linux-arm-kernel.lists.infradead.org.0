@@ -2,53 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AB68562E35
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 04:37:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 49E8D62E33
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 04:37:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=BgXQtOiDsq7QUO1E52fBJItKqcf8BXOxyl2CwIfrjjI=; b=Mco/S9GoOIdbas
-	HyBkGBv/SYzNLe6se2bahsVsSC0IEUEkB/lawNmwC7eYdZU62f3mrXRrno+WNRNUyNyOplRVsSlUO
-	JoGcIGr0oMMI56dpHm5RtSTe/afEHMl3s0+Bgk2uwMGu6g/ZFNYNBct5fFgrD4/sAU9Cv1xIpCOs2
-	r+kblvfi+a+ANGZV6cTodO7fuqmylE3Aj3Zl5gPx5dJqm1o1SGQ6VDgnlS7URwpyvQW+U2eZn71vv
-	C6ux8YY1OEsdzXtMskmYZoYvXTrw0n+3lbfEwJNx7+La4oDXKMGMQ5Gewi/AzsC19q+Emf8EXxBZH
-	zkplh3spAx/d9i9dNJlA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dGR3q6mybgelI8ugrSqT3JfxyREPoTLS1xk8mpUq5uo=; b=A+0FDIyZWXWAb7
+	3/JGbqc7ONQV159KsChoPy/1wsi7dJY+XpZGlzxV6qJG0QBHNo/kaUDny+tx276uTrx97dje6p9cp
+	oicf3sLajdzxV0M224lJTKYU1+R6ZtOhlH4p6XUz5fjaZNeSh7rDjy0L8MaC+vrcmukvQDPPRG0Td
+	XvyLtECAY7bRkpYW4Q6zgC5qDr+qjJfYNXV7A1D2riU/GE0epeMUQTQ4MboR+ozbGMvsdZa/LRomM
+	kYZVt9+d877J4zzqLPco6oCCDK711AySVvQHLnrn35KjOCUeWwNiqdYTAgRPQQyJK7AyurRd/IzlD
+	Y5wdiWEL077vUQWCiz2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkg0b-0002g0-9z; Tue, 09 Jul 2019 02:37:33 +0000
+	id 1hkg0K-0002PS-HM; Tue, 09 Jul 2019 02:37:16 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkfzq-0002BD-OY; Tue, 09 Jul 2019 02:36:48 +0000
-X-UUID: 5eaa5c62cd8040579460b69041f65fa8-20190708
-X-UUID: 5eaa5c62cd8040579460b69041f65fa8-20190708
+ id 1hkfzq-0002BC-OY; Tue, 09 Jul 2019 02:36:48 +0000
+X-UUID: 4e1de1836d3945229a69e1b6209b9248-20190708
+X-UUID: 4e1de1836d3945229a69e1b6209b9248-20190708
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <biao.huang@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1301266761; Mon, 08 Jul 2019 18:36:37 -0800
+ with ESMTP id 33709160; Mon, 08 Jul 2019 18:36:37 -0800
 Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
  15.0.1395.4; Mon, 8 Jul 2019 19:36:36 -0700
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
  mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 9 Jul 2019 10:36:34 +0800
+ 15.0.1395.4; Tue, 9 Jul 2019 10:36:35 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 9 Jul 2019 10:36:34 +0800
+ Transport; Tue, 9 Jul 2019 10:36:35 +0800
 From: Biao Huang <biao.huang@mediatek.com>
 To: <davem@davemloft.net>, Jose Abreu <joabreu@synopsys.com>, <andrew@lunn.ch>
-Subject: [PATCH 0/2 net-next] fix out-of-boundary issue and add taller hash
- table support
-Date: Tue, 9 Jul 2019 10:36:21 +0800
-Message-ID: <20190709023623.8358-1-biao.huang@mediatek.com>
+Subject: [PATCH 1/2 net-next] net: stmmac: dwmac4: mac address array boudary
+ violation issue
+Date: Tue, 9 Jul 2019 10:36:22 +0800
+Message-ID: <20190709023623.8358-2-biao.huang@mediatek.com>
 X-Mailer: git-send-email 2.18.0
+In-Reply-To: <20190709023623.8358-1-biao.huang@mediatek.com>
+References: <20190709023623.8358-1-biao.huang@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_193646_827203_15C65D4E 
-X-CRM114-Status: UNSURE (   6.64  )
+X-CRM114-CacheID: sfid-20190708_193646_831523_18134593 
+X-CRM114-Status: UNSURE (   9.81  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -83,25 +85,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fix mac address out-of-boundary issue in net-next tree.
-and resend the patch which was discussed in
-https://lore.kernel.org/patchwork/patch/1082117
-but with no further progress.
+The mac address array size is GMAC_MAX_PERFECT_ADDRESSES,
+so the 'reg' should be less than it, or will affect other registers.
 
-Biao Huang (2):
-  net: stmmac: dwmac4: mac address array boudary violation issue
-  net: stmmac: add support for hash table size 128/256 in dwmac4
+Signed-off-by: Biao Huang <biao.huang@mediatek.com>
+---
+ drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
- drivers/net/ethernet/stmicro/stmmac/common.h  |  7 +--
- drivers/net/ethernet/stmicro/stmmac/dwmac4.h  |  4 +-
- .../net/ethernet/stmicro/stmmac/dwmac4_core.c | 51 +++++++++++--------
- .../net/ethernet/stmicro/stmmac/dwmac4_dma.c  |  1 +
- .../net/ethernet/stmicro/stmmac/stmmac_main.c |  6 +++
- 5 files changed, 43 insertions(+), 26 deletions(-)
-
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
+index 8d9f6cda4012..776077ec1a23 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
+@@ -454,7 +454,7 @@ static void dwmac4_set_filter(struct mac_device_info *hw,
+ 			reg++;
+ 		}
+ 
+-		while (reg <= GMAC_MAX_PERFECT_ADDRESSES) {
++		while (reg < GMAC_MAX_PERFECT_ADDRESSES) {
+ 			writel(0, ioaddr + GMAC_ADDR_HIGH(reg));
+ 			writel(0, ioaddr + GMAC_ADDR_LOW(reg));
+ 			reg++;
 -- 
 2.18.0
-
 
 
 _______________________________________________
