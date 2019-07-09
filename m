@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7074631CB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 09:21:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16AE8631C9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 09:20:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,18 +11,18 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=//W3p+KICSkHjwsdPCOvunRtTSsXwGr9BndPQnZqQQw=; b=le84CWR2o8WqmQI1fgQEN2cxv1
-	ylA+d4vpKg9s3MNdmbUKV5+TgkriI7sQVXkLFl8RQ0GBNWnOhyaQtysOdf1eW1lJ+RfSGzWnEEwji
-	vbIvczY8WZ1ak99fhRIvRjzH3+5FtD2/kCkYuHZPDu63wlo1yY0aA/ptrLLaLYp5SobKV/5DkNUKm
-	mjLm+pfsGF5hqEUNem+US5ACySrCIajh5FPmsbaNOxOF3C6nc+BAIbTtRYCbaWMsTq42SecSIDDca
-	x1zFdoIXiFiMiROqQ0lHIroCxkpOt9LrBds0C8+PjoUfitcnvGGey18mKiFekJyoIw/VWbokZRRHY
-	+ACRUMJw==;
+	bh=HwefnExSXfprTjW5cp3DkKk1k7f7herxMVv8uifSebk=; b=b95GR5eeRC64fvP+p0t4lPzPDr
+	qKHPcpy+kD68pDqXLUh6z63omwZAVfR8HOA1BEHPD+ID625XgU/AUA12DEbQG1SiCFy5pT4iwBtvu
+	ZPZP/M7jI5eGjzDrA32ENzT40fCIaVbQdRKmHr8bSnEOL0xk1O/oSy/tdzrlVTfmcLPtqasR+8nyg
+	Iz9Sif/qGjrsid78Fl2xdE1uPvDGfuUBcgq25kdHsUrnRtQ3sCWaKw6t4EhNu0AtZ2dgX6WswNxNj
+	EquDABCzKILE6Ub9D4FD5K5n6WNXBgPaLThqN5f+XVenkt1rWqTn07TOoMuVuypoV9lxup24M84yw
+	r4gXSLcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkkR4-0001Iw-B3; Tue, 09 Jul 2019 07:21:10 +0000
+	id 1hkkQm-000151-OP; Tue, 09 Jul 2019 07:20:52 +0000
 Received: from mickerik.phytec.de ([195.145.39.210])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hkkPV-0007T2-1I
+ id 1hkkPV-0007T1-1H
  for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 07:19:34 +0000
 DKIM-Signature: v=1; a=rsa-sha256; d=phytec.de; s=a1; c=relaxed/simple;
  q=dns/txt; i=@phytec.de; t=1562656768; x=1565248768;
@@ -30,24 +30,25 @@ DKIM-Signature: v=1; a=rsa-sha256; d=phytec.de; s=a1; c=relaxed/simple;
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=gHD7ubzNG2RKZFBDvA+A4Pf1yRHu2u+2z8XxFtTJI1M=;
- b=VLEeK/E5E3T/sjGXL8NsyAyoQq+t76dKKlbz8NwZcVzBchBu/aeugtdWl7JSMY8V
- +V8D4g0RCLM3alDMZ5vd6/m6hlO+iSnl7CRFCeseVZGKjA6qK5riLHS8XUH0BwHZ
- jBGwa2BgSgHIdtG1z+LQLi3FDd2eSetvFhQvBadG/Q4=;
-X-AuditID: c39127d2-193ff70000001aee-02-5d2440001c90
+ bh=NQp0WuZNIK00kO3yS17/LbuLzrs05MUOLARt1ohweH4=;
+ b=D4hJBmDJn4jYKLM4Hb9bnTPl4SRsZKS+H5LSeID29SqPmqNENG0+pbKWpBmJ+zg5
+ 7o8c0T+FF7Mg/Yb/Z5d6OTIWs99MsNF+CztCok1gaa/tBWVyN8rv1siApVL5l4HJ
+ 0Tzn5HPXL1S5ySXzdVlPMKQeK7Km6nWeVfjpEyQa808=;
+X-AuditID: c39127d2-17dff70000001aee-03-5d2440009ef3
 Received: from idefix.phytec.de (idefix.phytec.de [172.16.0.10])
- by mickerik.phytec.de (PHYTEC Mail Gateway) with SMTP id 59.B0.06894.000442D5;
+ by mickerik.phytec.de (PHYTEC Mail Gateway) with SMTP id 1A.B0.06894.000442D5;
  Tue,  9 Jul 2019 09:19:28 +0200 (CEST)
 Received: from augenblix2.phytec.de ([172.16.21.122])
  by idefix.phytec.de (IBM Domino Release 9.0.1FP7)
- with ESMTP id 2019070909192802-309706 ;
+ with ESMTP id 2019070909192826-309707 ;
  Tue, 9 Jul 2019 09:19:28 +0200 
 From: Stefan Riedmueller <s.riedmueller@phytec.de>
 To: shawnguo@kernel.org, s.hauer@pengutronix.de, robh+dt@kernel.org,
  mark.rutland@arm.com
-Subject: [PATCH 03/10] ARM: dts: imx6ul: segin: Reduce eth drive strength
-Date: Tue, 9 Jul 2019 09:19:20 +0200
-Message-Id: <1562656767-273566-4-git-send-email-s.riedmueller@phytec.de>
+Subject: [PATCH 04/10] ARM: dts: imx6ul: segin: Fix LED naming for phyCORE and
+ PEB-EVAL-01
+Date: Tue, 9 Jul 2019 09:19:21 +0200
+Message-Id: <1562656767-273566-5-git-send-email-s.riedmueller@phytec.de>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1562656767-273566-1-git-send-email-s.riedmueller@phytec.de>
 References: <1562656767-273566-1-git-send-email-s.riedmueller@phytec.de>
@@ -56,21 +57,20 @@ X-MIMETrack: Itemize by SMTP Server on Idefix/Phytec(Release 9.0.1FP7|August
  Serialize by Router on Idefix/Phytec(Release 9.0.1FP7|August  17, 2016) at
  09.07.2019 09:19:28, Serialize complete at 09.07.2019 09:19:28
 X-TNEFEvaluated: 1
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrPLMWRmVeSWpSXmKPExsWyRoCBS5fBQSXWoHOPhMX8I+dYLR5e9bdY
- NXUni8Wmx9dYLbp+rWS2uLxrDpvF0usXmSweXOxisWjde4Td4u/2TSwWL7aIO3B7rJm3htFj
- x90ljB47Z91l99i0qpPNY/OSeo+N73YwefT/NfD4vEkugCOKyyYlNSezLLVI3y6BK2Nl2zy2
- gjvCFec7PjE1MHYKdjFyckgImEhc/72KqYuRi0NIYAejxM8VXxhBEkICFxgldvYWg9hsAkYS
- C6Y1MoHYIgKREu+2/2YHaWAW2MMoMe36dbAGYQFPictbprGC2CwCKhJbP71jBrF5BTwknvW8
- ZofYJidx81wnWJwTqP7oxV/MEMs8JC4vmMYCMlRCoJFJYvGj04wQDUISpxefZZ7AyLeAkWEV
- o1BuZnJ2alFmtl5BRmVJarJeSuomRmCgHp6ofmkHY98cj0OMTByMhxglOJiVRHj3uSvHCvGm
- JFZWpRblxxeV5qQWH2KU5mBREufdwFsSJiSQnliSmp2aWpBaBJNl4uCUamC0WlGhnFw3X0lZ
- 54zTRcXvKxomGU932ay7bPX+rnn2v1Nn75lp2r/lPXfaoi07lXWuC/w/eGDOnzNZqd9WpnUc
- Panm4S+u9J+vSlGOi/0Fo6GYqMnhnX67WqO5Ox+ah4c2C7od2ZA17+KzM0VbnNQqDIwfiG0N
- iDgy8UjUG82guO0z55vUPdusxFKckWioxVxUnAgA5DZ+2kICAAA=
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrALMWRmVeSWpSXmKPExsWyRoCBS5fBQSXW4PJXbYv5R86xWjy86m+x
+ aupOFotNj6+xWnT9WslscXnXHDaLpdcvMlk8uNjFYtG69wi7xd/tm1gsXmwRd+D2WDNvDaPH
+ jrtLGD12zrrL7rFpVSebx+Yl9R4b3+1g8uj/a+DxeZNcAEcUl01Kak5mWWqRvl0CV0bD7ztM
+ Be38Fd07b7M0MK7n6WLk5JAQMJHoWf+UrYuRi0NIYAejxN03h5ggnAuMEq83fmQFqWITMJJY
+ MK2RCcQWEYiUeLf9NztIEbPAHkaJadevM4IkhAWiJG69ecUCYrMIqEjcnPoALM4r4CFxetsD
+ Joh1chI3z3Uyg9icAp4SRy/+ArOFgGouL5jGAjJUQqCRSWLxo9OMEA1CEqcXn2WewMi3gJFh
+ FaNQbmZydmpRZrZeQUZlSWqyXkrqJkZgqB6eqH5pB2PfHI9DjEwcjIcYJTiYlUR497krxwrx
+ piRWVqUW5ccXleakFh9ilOZgURLn3cBbEiYkkJ5YkpqdmlqQWgSTZeLglGpgjBa13zj1xP31
+ rRImAneesj77d/3qzHUqUqudF1y+brRqbtnxWeESclPzbrmytC5T49MvbrbW2WbhMU3BoYP7
+ kOp1h5gSLwFV7p+24tFTp7Fm+/jsObNhgci9k49rbWovc//79+lZalpo8Bnhl8yzYyq1mA27
+ UkTlVyv842f/yXOPwXWfUmWQEktxRqKhFnNRcSIAFmvFoEMCAAA=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_001933_243386_648039C0 
-X-CRM114-Status: UNSURE (   9.55  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190709_001933_224669_B0445F02 
+X-CRM114-Status: GOOD (  11.86  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -103,62 +103,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Reduce the drive strength for the MDC, MDIO and TX pins of FEC1 and FEC2
-on the phyBOARD-Segin to improve signal quality and EMC. Also disable
-internal pull-ups on the MDC and MDIO pins.
+Fix node name for the user LEDs to prevent the pinctrl of the phyCORE's
+leds node from being overwritten. Also use more generic names for user
+LEDs.
 
 Signed-off-by: Stefan Riedmueller <s.riedmueller@phytec.de>
 ---
- arch/arm/boot/dts/imx6ul-phytec-phycore-som.dtsi | 12 ++++++------
- arch/arm/boot/dts/imx6ul-phytec-segin.dtsi       |  8 ++++----
- 2 files changed, 10 insertions(+), 10 deletions(-)
+ arch/arm/boot/dts/imx6ul-phytec-phycore-som.dtsi       |  3 +--
+ arch/arm/boot/dts/imx6ul-phytec-segin-peb-eval-01.dtsi | 16 +++++++++-------
+ 2 files changed, 10 insertions(+), 9 deletions(-)
 
 diff --git a/arch/arm/boot/dts/imx6ul-phytec-phycore-som.dtsi b/arch/arm/boot/dts/imx6ul-phytec-phycore-som.dtsi
-index bff13d0eb064..1b745582911c 100644
+index 1b745582911c..73266b4a889b 100644
 --- a/arch/arm/boot/dts/imx6ul-phytec-phycore-som.dtsi
 +++ b/arch/arm/boot/dts/imx6ul-phytec-phycore-som.dtsi
-@@ -93,16 +93,16 @@
- &iomuxc {
- 	pinctrl_enet1: enet1grp {
- 		fsl,pins = <
--			MX6UL_PAD_GPIO1_IO07__ENET1_MDC		0x1b0b0
--			MX6UL_PAD_GPIO1_IO06__ENET1_MDIO	0x1b0b0
-+			MX6UL_PAD_GPIO1_IO07__ENET1_MDC		0x10010
-+			MX6UL_PAD_GPIO1_IO06__ENET1_MDIO	0x10010
- 			MX6UL_PAD_ENET1_RX_EN__ENET1_RX_EN	0x1b0b0
- 			MX6UL_PAD_ENET1_RX_ER__ENET1_RX_ER	0x1b0b0
- 			MX6UL_PAD_ENET1_RX_DATA0__ENET1_RDATA00	0x1b0b0
- 			MX6UL_PAD_ENET1_RX_DATA1__ENET1_RDATA01	0x1b0b0
--			MX6UL_PAD_ENET1_TX_EN__ENET1_TX_EN	0x1b0b0
--			MX6UL_PAD_ENET1_TX_DATA0__ENET1_TDATA00	0x1b0b0
--			MX6UL_PAD_ENET1_TX_DATA1__ENET1_TDATA01	0x1b0b0
--			MX6UL_PAD_ENET1_TX_CLK__ENET1_REF_CLK1	0x4001b031
-+			MX6UL_PAD_ENET1_TX_EN__ENET1_TX_EN	0x1b010
-+			MX6UL_PAD_ENET1_TX_DATA0__ENET1_TDATA00	0x1b010
-+			MX6UL_PAD_ENET1_TX_DATA1__ENET1_TDATA01	0x1b010
-+			MX6UL_PAD_ENET1_TX_CLK__ENET1_REF_CLK1	0x4001b010
- 			MX6UL_PAD_GPIO1_IO02__GPIO1_IO02	0x17059
- 		>;
- 	};
-diff --git a/arch/arm/boot/dts/imx6ul-phytec-segin.dtsi b/arch/arm/boot/dts/imx6ul-phytec-segin.dtsi
-index 78425c3290a1..28ba3a4c4c74 100644
---- a/arch/arm/boot/dts/imx6ul-phytec-segin.dtsi
-+++ b/arch/arm/boot/dts/imx6ul-phytec-segin.dtsi
-@@ -230,10 +230,10 @@
- 			MX6UL_PAD_ENET2_RX_ER__ENET2_RX_ER	0x1b0b0
- 			MX6UL_PAD_ENET2_RX_DATA0__ENET2_RDATA00	0x1b0b0
- 			MX6UL_PAD_ENET2_RX_DATA1__ENET2_RDATA01	0x1b0b0
--			MX6UL_PAD_ENET2_TX_EN__ENET2_TX_EN	0x1b0b0
--			MX6UL_PAD_ENET2_TX_DATA0__ENET2_TDATA00	0x1b0b0
--			MX6UL_PAD_ENET2_TX_DATA1__ENET2_TDATA01	0x1b0b0
--			MX6UL_PAD_ENET2_TX_CLK__ENET2_REF_CLK2	0x4001b031
-+			MX6UL_PAD_ENET2_TX_EN__ENET2_TX_EN	0x1b010
-+			MX6UL_PAD_ENET2_TX_DATA0__ENET2_TDATA00	0x1b010
-+			MX6UL_PAD_ENET2_TX_DATA1__ENET2_TDATA01	0x1b010
-+			MX6UL_PAD_ENET2_TX_CLK__ENET2_REF_CLK2	0x4001b010
- 		>;
+@@ -31,8 +31,7 @@
+ 		pinctrl-0 = <&pinctrl_gpioleds_som>;
+ 		compatible = "gpio-leds";
+ 
+-		led_green {
+-			label = "phycore:green";
++		phycore-green {
+ 			gpios = <&gpio5 4 GPIO_ACTIVE_HIGH>;
+ 			linux,default-trigger = "heartbeat";
+ 		};
+diff --git a/arch/arm/boot/dts/imx6ul-phytec-segin-peb-eval-01.dtsi b/arch/arm/boot/dts/imx6ul-phytec-segin-peb-eval-01.dtsi
+index e2f38f39a6ad..2f3fd32a1167 100644
+--- a/arch/arm/boot/dts/imx6ul-phytec-segin-peb-eval-01.dtsi
++++ b/arch/arm/boot/dts/imx6ul-phytec-segin-peb-eval-01.dtsi
+@@ -21,20 +21,22 @@
+ 		};
  	};
  
+-	user_leds: leds {
++	user_leds: user-leds {
+ 		compatible = "gpio-leds";
+ 		pinctrl-names = "default";
+ 		pinctrl-0 = <&pinctrl_user_leds>;
+ 		status = "disabled";
+ 
+-		led_yellow {
+-			gpios = <&gpio1 1 GPIO_ACTIVE_HIGH>;
+-			linux,default-trigger = "default-on";
++		user-led1 {
++			gpios = <&gpio1 10 GPIO_ACTIVE_HIGH>;
++			linux,default-trigger = "gpio";
++			default-state = "on";
+ 		};
+ 
+-		led_red {
+-			gpios = <&gpio1 10 GPIO_ACTIVE_HIGH>;
+-			linux,default-trigger = "default-on";
++		user-led2 {
++			gpios = <&gpio1 1 GPIO_ACTIVE_HIGH>;
++			linux,default-trigger = "gpio";
++			default-state = "on";
+ 		};
+ 	};
+ };
 -- 
 2.7.4
 
