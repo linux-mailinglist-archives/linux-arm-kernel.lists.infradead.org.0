@@ -2,56 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C31D663BCF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 21:21:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EC64A63C59
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 22:01:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h6w1Uc+mEqdLOEDK5XTauT+rCm/UkWyH6J9mZlIgCog=; b=AxQW/PoEfUadyA
-	M0n/srxzqlZg929863RzDUAf0oKZzbU42SlO9kG+DdlEKdS5VboTmyeFiQwODgMya1FY3p8sNdR0o
-	TinxTjNvbQwRAXsouedHlA1WgZW6ajERPU8a3/rw5WaUCN3s/OmQQNCT3cbeO4oWIcwT+PJNh/6jK
-	ZjUyCOi1398dglHcQBll67IQYMAn97H6hqoM17q0xkooYrlFPQGgMiZqFyJUwPD+GHxzB/i1ExXby
-	nMX7P6G4olNXZAlElzieYgVSwMotLWTQFRNH4fc5ayMKcVCUn4fJZR+MegeWuWA+WkRJvFUsAXSh8
-	OS9TbZg0L6SHzgz1/OrQ==;
+	List-Owner; bh=cnVuupG6YtAjnamuXnSLsfcykSke/daLbYkH/jCsEZc=; b=CgdVV+dNcs+0io
+	+Q2Gz4mTka2btBI8lp6xcW2pDt6s4ztqWBS1eVIdKrlZOM0VOL7h7BDF3VNdHvwQlsNy5YSDFPko4
+	qiGTAG16jDXyYwzOWLkwRk3g26lCDkOoe1y4XETmM+WrNJTygoxxOln8OLUcIK+2IcxGabfIXbapU
+	TWdzLske/L1uFFQmwFDivDP0jI19H8e6ZDsJWgyVdJ7D0JtbLHXpL+SI8Fh6VpbB48zpHR9wu4Zi0
+	CZtD+RfBD9ogSZrSQXTOD8ztm+86uT0iL32f2Bs/CSzjzH1PfpbjlQ7K5/MJbijCn14P+9I3bpQkg
+	5xeA0StIU/Ohb2eqLZOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkvfX-0006Y2-6w; Tue, 09 Jul 2019 19:20:51 +0000
-Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
+	id 1hkwIz-0003IQ-V4; Tue, 09 Jul 2019 20:01:38 +0000
+Received: from mail-io1-f65.google.com ([209.85.166.65])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkvfH-0006XR-Sj
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 19:20:37 +0000
-Received: from localhost (unknown [IPv6:2601:601:9f80:35cd::d71])
- (using TLSv1 with cipher AES256-SHA (256/256 bits))
- (Client did not present a certificate)
- (Authenticated sender: davem-davemloft)
- by shards.monkeyblade.net (Postfix) with ESMTPSA id 3E07D1403896D;
- Tue,  9 Jul 2019 12:20:28 -0700 (PDT)
-Date: Tue, 09 Jul 2019 12:20:27 -0700 (PDT)
-Message-Id: <20190709.122027.77005575861873161.davem@davemloft.net>
-To: Jose.Abreu@synopsys.com
-Subject: Re: [PATCH net-next v4 0/3] net: stmmac: Some improvements and a fix
-From: David Miller <davem@davemloft.net>
-In-Reply-To: <cover.1562659012.git.joabreu@synopsys.com>
-References: <cover.1562659012.git.joabreu@synopsys.com>
-X-Mailer: Mew version 6.8 on Emacs 26.1
-Mime-Version: 1.0
-X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
- (shards.monkeyblade.net [149.20.54.216]);
- Tue, 09 Jul 2019 12:20:28 -0700 (PDT)
+ id 1hkwIm-0003Hj-Qs; Tue, 09 Jul 2019 20:01:26 +0000
+Received: by mail-io1-f65.google.com with SMTP id q22so24040377iog.4;
+ Tue, 09 Jul 2019 13:01:24 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=B7/QcW7r5MQOGhPEoQO1LbngGWl8Cp/c3zBrZbGmskM=;
+ b=oZZQwJ56okiBgLsO5L+Lo7GmDuaDdTF8dvuLO+2okSyiak2Ry7zwsr8WR+KgRvfq2g
+ /81NMzmlZoFP8VA6PfdkBdnU06kTNg0FE4tPwtcM4HO0qSCQOHO5aIZrgBIbJQvTkuDJ
+ 9dvBd1C8jRkcuzKGyJ6IHbMeFro1fPM4TEQsTxyHb3L23sK4BsZKunKDRGdknsH0ZO/9
+ 29INDGb7NJhxQ7LDeK6RUiqCfaQ8Yubylsdh5Rmdyt7Fqmq+3WATYrxvmq2Z0/k8yOgq
+ SqdXxCr6Uh6J0/MqFoU6jBynEnv4i2VTtdMnpb/fHgp0aLCTBaeVGjQM/QnUeovvNXKk
+ s0aQ==
+X-Gm-Message-State: APjAAAVu8kQqoNcBZ5eAbFuQy33MCZREwEIr6fH1j5e1l+Ny0vWUGKSI
+ OZ2/0aM5B5fADmYLwYmhbw==
+X-Google-Smtp-Source: APXvYqytSsRPVq3GTbSVDnVsku/qIgTDId3MOrt1dloK9TJz1SnYYCUTN2WCuwk38In8AaLhppOnLQ==
+X-Received: by 2002:a02:7f15:: with SMTP id r21mr31288185jac.120.1562702483721; 
+ Tue, 09 Jul 2019 13:01:23 -0700 (PDT)
+Received: from localhost ([64.188.179.251])
+ by smtp.gmail.com with ESMTPSA id s2sm15525321ioj.8.2019.07.09.13.01.22
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 09 Jul 2019 13:01:23 -0700 (PDT)
+Date: Tue, 9 Jul 2019 14:01:21 -0600
+From: Rob Herring <robh@kernel.org>
+To: Cheng-Yi Chiang <cychiang@chromium.org>
+Subject: Re: [PATCH 5/7] ASoC: rockchip: rockchip-max98090: Add node for HDMI
+Message-ID: <20190709200121.GA19118@bogus>
+References: <20190603043251.226549-1-cychiang@chromium.org>
+ <20190603043251.226549-6-cychiang@chromium.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190603043251.226549-6-cychiang@chromium.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_122035_925062_312FF062 
-X-CRM114-Status: UNSURE (   4.84  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190709_130124_874455_CA013D08 
+X-CRM114-Status: GOOD (  14.18  )
+X-Spam-Score: 2.0 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (2.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.65 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,22 +87,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Joao.Pinto@synopsys.com, alexandre.torgue@st.com, maxime.ripard@bootlin.com,
- netdev@vger.kernel.org, linux-kernel@vger.kernel.org, wens@csie.org,
- mcoquelin.stm32@gmail.com, peppe.cavallaro@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: alsa-devel@alsa-project.org, Heiko Stuebner <heiko@sntech.de>,
+ Liam Girdwood <lgirdwood@gmail.com>, David Airlie <airlied@linux.ie>,
+ dri-devel@lists.freedesktop.org, Takashi Iwai <tiwai@suse.com>,
+ Hans Verkuil <hverkuil@xs4all.nl>, Andrzej Hajda <a.hajda@samsung.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ linux-rockchip@lists.infradead.org, dgreid@chromium.org,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org, tzungbi@chromium.org,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Russell King <rmk+kernel@armlinux.org.uk>, Mark Brown <broonie@kernel.org>,
+ Jaroslav Kysela <perex@perex.cz>, linux-arm-kernel@lists.infradead.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, dianders@chromium.org,
+ linux-kernel@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-Date: Tue,  9 Jul 2019 10:02:57 +0200
+On Mon, Jun 03, 2019 at 12:32:49PM +0800, Cheng-Yi Chiang wrote:
+> Let user specify HDMI node so machine driver can use it to let codec
+> driver register callback on correct hdmi-notifier.
+> 
+> Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
+> ---
+>  Documentation/devicetree/bindings/sound/rockchip-max98090.txt | 2 ++
+>  1 file changed, 2 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/sound/rockchip-max98090.txt b/Documentation/devicetree/bindings/sound/rockchip-max98090.txt
+> index a805aa99ad75..dae57c14864e 100644
+> --- a/Documentation/devicetree/bindings/sound/rockchip-max98090.txt
+> +++ b/Documentation/devicetree/bindings/sound/rockchip-max98090.txt
+> @@ -7,6 +7,7 @@ Required properties:
+>    connected to the CODEC
+>  - rockchip,audio-codec: The phandle of the MAX98090 audio codec
+>  - rockchip,headset-codec: The phandle of Ext chip for jack detection
+> +- rockchip,hdmi: The phandle of HDMI node for HDMI jack detection
+>  
+>  Example:
+>  
+> @@ -16,4 +17,5 @@ sound {
+>  	rockchip,i2s-controller = <&i2s>;
+>  	rockchip,audio-codec = <&max98090>;
+>  	rockchip,headset-codec = <&headsetcodec>;
+> +	rockchip,hdmi= <&hdmi>;
 
-> Some performace improvements (01/03 and 03/03) and a fix (02/03),
-> all for -next.
+space                ^
 
-Series applied, thanks Jose.
+With that,
+
+Acked-by: Rob Herring <robh@kernel.org>
+
+>  };
+> -- 
+> 2.22.0.rc1.257.g3120a18244-goog
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
