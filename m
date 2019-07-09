@@ -2,32 +2,35 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8ADDB637BC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 16:20:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F31C3637B7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 16:20:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=q2n6rzx8Zi8SAZYa7qwbtlYMceR5nz54ujm/LA76Q6A=; b=Ci6GIZcvOsofyR
-	WlQKJVLvBb43HS3RJahuOIcqGFW0yf/7EmliQPyWRcvLdUw3xocCgVU8/GwG0hOKSIY0Uo13w8cqS
-	SzsFDYHf6qM/3pQv+KUooh9T2bBcratB41N9hAYJfyq4QJyylDKyYeRlzZIXRV8iVuw5L+SziuNO0
-	Yj2YZmgY+WX23S0TibN5quSp4YvbZGTsCRsqZIvKUm1NokoKd+i5ImFrp96N90mVrVVCmq1a0FjXQ
-	EDiB47HJVv+zQQDLqLLp6S/R6UcH7XYygPfKxD0k0FiORv7Pe7cSLKEWld8+RZA16Jki40Uzee778
-	9F7tlycT3+91E9ihVp+w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1Y3nI/h1TV56k/Z4TkPK01DKxYi2DjMKXLC5pRe8uz0=; b=u66Xd6ghByiIWQ
+	pfOutHNOb9+DP99qYHfgVUMqR2/sSL6ZfTB2V3KdI4KurpyDtSVBmf5Uf5WdhadFP0mO/wJj0r7eA
+	9xP8pE4XeV+WiCQBZ1npnNYHZUDhz5MOGVToY+5agOW82pdQFqe18djKOSnpynUKVZ6Zdy9ttPF7W
+	DZx/RH9ooKM0zJrcKNguVIkawVKPRVjFjIxahZDj2nYMY+xXo/pzjtn4LRQnEdJEC3Aik26dgB+57
+	wrEJ7OismKBb6cpOdMFxEtlDq56DVRy6Vz5uVDGypM9zU5oJcemR8y8d+IGK8gFY85cEhRgY91FIE
+	vJ+hoiEpXJtWk7X6v+yg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkqz0-0001Xc-UC; Tue, 09 Jul 2019 14:20:39 +0000
+	id 1hkqym-0001CE-QF; Tue, 09 Jul 2019 14:20:24 +0000
 Received: from [209.244.105.251] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hkqya-0001BM-5n; Tue, 09 Jul 2019 14:20:12 +0000
+ id 1hkqya-0001BQ-Bi; Tue, 09 Jul 2019 14:20:12 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: add swiotlb support to arm32
-Date: Tue,  9 Jul 2019 07:20:09 -0700
-Message-Id: <20190709142011.24984-1-hch@lst.de>
+Subject: [PATCH 1/2] dma-mapping check pfn validity in dma_common_{mmap,
+ get_sgtable}
+Date: Tue,  9 Jul 2019 07:20:10 -0700
+Message-Id: <20190709142011.24984-2-hch@lst.de>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190709142011.24984-1-hch@lst.de>
+References: <20190709142011.24984-1-hch@lst.de>
 MIME-Version: 1.0
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -49,12 +52,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Russell,
+Check that the pfn returned from arch_dma_coherent_to_pfn refers to
+a valid page and reject the mmap / get_sgtable requests otherwise.
 
-This series adds swiotlb support to the 32-bit arm port to ensure
-platforms with LPAE support can support DMA mapping for all devices
-using 32-bit dma masks, just like we do on other ports that support
-> 32-bit physical addressing and don't have an iommu.
+Based on the arm implementation of the mmap and get_sgtable methods.
+
+Signed-off-by: Christoph Hellwig <hch@lst.de>
+---
+ kernel/dma/mapping.c | 13 +++++++++++--
+ 1 file changed, 11 insertions(+), 2 deletions(-)
+
+diff --git a/kernel/dma/mapping.c b/kernel/dma/mapping.c
+index 1f628e7ac709..b945239621d8 100644
+--- a/kernel/dma/mapping.c
++++ b/kernel/dma/mapping.c
+@@ -116,11 +116,16 @@ int dma_common_get_sgtable(struct device *dev, struct sg_table *sgt,
+ 	int ret;
+ 
+ 	if (!dev_is_dma_coherent(dev)) {
++		unsigned long pfn;
++
+ 		if (!IS_ENABLED(CONFIG_ARCH_HAS_DMA_COHERENT_TO_PFN))
+ 			return -ENXIO;
+ 
+-		page = pfn_to_page(arch_dma_coherent_to_pfn(dev, cpu_addr,
+-				dma_addr));
++		/* If the PFN is not valid, we do not have a struct page */
++		pfn = arch_dma_coherent_to_pfn(dev, cpu_addr, dma_addr);
++		if (!pfn_valid(pfn))
++			return -ENXIO;
++		page = pfn_to_page(pfn);
+ 	} else {
+ 		page = virt_to_page(cpu_addr);
+ 	}
+@@ -170,7 +175,11 @@ int dma_common_mmap(struct device *dev, struct vm_area_struct *vma,
+ 	if (!dev_is_dma_coherent(dev)) {
+ 		if (!IS_ENABLED(CONFIG_ARCH_HAS_DMA_COHERENT_TO_PFN))
+ 			return -ENXIO;
++
++		/* If the PFN is not valid, we do not have a struct page */
+ 		pfn = arch_dma_coherent_to_pfn(dev, cpu_addr, dma_addr);
++		if (!pfn_valid(pfn))
++			return -ENXIO;
+ 	} else {
+ 		pfn = page_to_pfn(virt_to_page(cpu_addr));
+ 	}
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
