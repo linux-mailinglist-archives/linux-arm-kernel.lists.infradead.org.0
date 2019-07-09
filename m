@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A3E2E635DB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 14:28:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2CEC9635DC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 14:28:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y6PWGUIJ3vWiSRFghlbE35uVwwRuoguRD+PjWp0GZqc=; b=GRoPhf3XXOpGRs
-	ySSwHsU99eOLqDHbohSNrQ3JFIGlmzzOtVUVH34L0Ofi5QHDJTAogdAMEmjKDRXiHunxIohORPkwG
-	eCbw2vEagciAeqBdXXbIBm/5ITSlRAzsl7vX71pDrJy53oSCCrE/Ut1UGUmMiDyWCCOaD2NtmLHG4
-	WhnzEuNE07hoF30riRipj6sFJki50Ty6otQjK2Fq2pWossmEQQ8KSbZVTwiY6W7FV4/ZZ7euFd8MK
-	u0yH6zzdZwUtFrzk+OhsdpgsOVZbSlz4pzDhHMU/5PCbkDth48muVFfciUEqY/+6kcr8EOyHyh5Cz
-	MqLVCD+msnaNyBXg/I/A==;
+	List-Owner; bh=b4dGuBnIanximkggPSv5tB73U5fL7FkjoSk9m/hRUSU=; b=JjSmzQtKXsOfNx
+	0W6uSJtB49OoQjadxJ6sKUC6bhrH5895Z4fTuYLjtHya+prqpGdKC86tnQZFpjP3aSws4wrDZAMrH
+	IXL0uxZCJy3yFn78Zt2+xl5l1fiPmYrNK5j6M1u5O/m8Ecs+M39WGn/+rR/TyRfifP3Nahj1i62rw
+	Zup1X+RncEMIrF0P8+w2eJqAYv21iZ7wMfmPpXFVDRfTl4WRw62L0oP0itSTt8yy9LtDvHVCpwhER
+	4z4w68G3fc85jC5P1wFC9WmxXT3RTAeCQ2qAwLP8ik0W8+oP23SeoggllUbxIp3Z/eX5ZFZJLaR2H
+	r6XgOXI091iraGj2mctw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkpE5-00008t-5j; Tue, 09 Jul 2019 12:28:05 +0000
+	id 1hkpEK-0000Mc-BG; Tue, 09 Jul 2019 12:28:20 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hkpBh-0006dP-AU
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 12:25:38 +0000
+ id 1hkpBi-0006eu-Ll
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 12:25:40 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3516E152F;
- Tue,  9 Jul 2019 05:25:36 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 36385153B;
+ Tue,  9 Jul 2019 05:25:38 -0700 (PDT)
 Received: from filthy-habits.cambridge.arm.com (unknown [10.1.197.61])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 673BA3F59C;
- Tue,  9 Jul 2019 05:25:34 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 69E983F59C;
+ Tue,  9 Jul 2019 05:25:36 -0700 (PDT)
 From: Marc Zyngier <marc.zyngier@arm.com>
 To: Paolo Bonzini <pbonzini@redhat.com>,
  =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>
-Subject: [PATCH 08/18] KVM: arm64: Skip more of the SError vaxorcism
-Date: Tue,  9 Jul 2019 13:24:57 +0100
-Message-Id: <20190709122507.214494-9-marc.zyngier@arm.com>
+Subject: [PATCH 09/18] KVM: arm/arm64: Rename kvm_pmu_{enable/disable}_counter
+ functions
+Date: Tue,  9 Jul 2019 13:24:58 +0100
+Message-Id: <20190709122507.214494-10-marc.zyngier@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190709122507.214494-1-marc.zyngier@arm.com>
 References: <20190709122507.214494-1-marc.zyngier@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_052537_532436_AA840205 
-X-CRM114-Status: UNSURE (   9.88  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190709_052538_843352_9DF4CA5F 
+X-CRM114-Status: GOOD (  11.09  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -73,69 +73,117 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: James Morse <james.morse@arm.com>
+From: Andrew Murray <andrew.murray@arm.com>
 
-During __guest_exit() we need to consume any SError left pending by the
-guest so it doesn't contaminate the host. With v8.2 we use the
-ESB-instruction. For systems without v8.2, we use dsb+isb and unmask
-SError. We do this on every guest exit.
+The kvm_pmu_{enable/disable}_counter functions can enable/disable
+multiple counters at once as they operate on a bitmask. Let's
+make this clearer by renaming the function.
 
-Use the same dsb+isr_el1 trick, this lets us know if an SError is pending
-after the dsb, allowing us to skip the isb and self-synchronising PSTATE
-write if its not.
-
-This means SError remains masked during KVM's world-switch, so any SError
-that occurs during this time is reported by the host, instead of causing
-a hyp-panic.
-
-As we're benchmarking this code lets polish the layout. If you give gcc
-likely()/unlikely() hints in an if() condition, it shuffles the generated
-assembly so that the likely case is immediately after the branch. Lets
-do the same here.
-
-Signed-off-by: James Morse <james.morse@arm.com>
-
-Changes since v2:
- * Added isb after the dsb to prevent an early read
-
+Suggested-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+Reviewed-by: Julien Thierry <julien.thierry@arm.com>
+Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
 ---
- arch/arm64/kvm/hyp/entry.S | 14 ++++++++++----
- 1 file changed, 10 insertions(+), 4 deletions(-)
+ arch/arm64/kvm/sys_regs.c |  4 ++--
+ include/kvm/arm_pmu.h     |  8 ++++----
+ virt/kvm/arm/pmu.c        | 12 ++++++------
+ 3 files changed, 12 insertions(+), 12 deletions(-)
 
-diff --git a/arch/arm64/kvm/hyp/entry.S b/arch/arm64/kvm/hyp/entry.S
-index 5e25cc0e6aab..e5cc8d66bf53 100644
---- a/arch/arm64/kvm/hyp/entry.S
-+++ b/arch/arm64/kvm/hyp/entry.S
-@@ -151,8 +151,16 @@ alternative_if ARM64_HAS_RAS_EXTN
- 	orr	x0, x0, #(1<<ARM_EXIT_WITH_SERROR_BIT)
- 1:	ret
- alternative_else
--	// If we have a pending asynchronous abort, now is the
--	// time to find out. From your VAXorcist book, page 666:
-+	dsb	sy		// Synchronize against in-flight ld/st
-+	isb			// Prevent an early read of side-effect free ISR
-+	mrs	x2, isr_el1
-+	tbnz	x2, #8, 2f	// ISR_EL1.A
-+	ret
-+	nop
-+2:
-+alternative_endif
-+	// We know we have a pending asynchronous abort, now is the
-+	// time to flush it out. From your VAXorcist book, page 666:
- 	// "Threaten me not, oh Evil one!  For I speak with
- 	// the power of DEC, and I command thee to show thyself!"
- 	mrs	x2, elr_el2
-@@ -160,9 +168,7 @@ alternative_else
- 	mrs	x4, spsr_el2
- 	mov	x5, x0
+diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
+index ce933f296049..0a7665c189ff 100644
+--- a/arch/arm64/kvm/sys_regs.c
++++ b/arch/arm64/kvm/sys_regs.c
+@@ -865,12 +865,12 @@ static bool access_pmcnten(struct kvm_vcpu *vcpu, struct sys_reg_params *p,
+ 		if (r->Op2 & 0x1) {
+ 			/* accessing PMCNTENSET_EL0 */
+ 			__vcpu_sys_reg(vcpu, PMCNTENSET_EL0) |= val;
+-			kvm_pmu_enable_counter(vcpu, val);
++			kvm_pmu_enable_counter_mask(vcpu, val);
+ 			kvm_vcpu_pmu_restore_guest(vcpu);
+ 		} else {
+ 			/* accessing PMCNTENCLR_EL0 */
+ 			__vcpu_sys_reg(vcpu, PMCNTENSET_EL0) &= ~val;
+-			kvm_pmu_disable_counter(vcpu, val);
++			kvm_pmu_disable_counter_mask(vcpu, val);
+ 		}
+ 	} else {
+ 		p->regval = __vcpu_sys_reg(vcpu, PMCNTENSET_EL0) & mask;
+diff --git a/include/kvm/arm_pmu.h b/include/kvm/arm_pmu.h
+index 84a9db156be7..45e5205750b4 100644
+--- a/include/kvm/arm_pmu.h
++++ b/include/kvm/arm_pmu.h
+@@ -35,8 +35,8 @@ void kvm_pmu_set_counter_value(struct kvm_vcpu *vcpu, u64 select_idx, u64 val);
+ u64 kvm_pmu_valid_counter_mask(struct kvm_vcpu *vcpu);
+ void kvm_pmu_vcpu_reset(struct kvm_vcpu *vcpu);
+ void kvm_pmu_vcpu_destroy(struct kvm_vcpu *vcpu);
+-void kvm_pmu_disable_counter(struct kvm_vcpu *vcpu, u64 val);
+-void kvm_pmu_enable_counter(struct kvm_vcpu *vcpu, u64 val);
++void kvm_pmu_disable_counter_mask(struct kvm_vcpu *vcpu, u64 val);
++void kvm_pmu_enable_counter_mask(struct kvm_vcpu *vcpu, u64 val);
+ void kvm_pmu_flush_hwstate(struct kvm_vcpu *vcpu);
+ void kvm_pmu_sync_hwstate(struct kvm_vcpu *vcpu);
+ bool kvm_pmu_should_notify_user(struct kvm_vcpu *vcpu);
+@@ -72,8 +72,8 @@ static inline u64 kvm_pmu_valid_counter_mask(struct kvm_vcpu *vcpu)
+ }
+ static inline void kvm_pmu_vcpu_reset(struct kvm_vcpu *vcpu) {}
+ static inline void kvm_pmu_vcpu_destroy(struct kvm_vcpu *vcpu) {}
+-static inline void kvm_pmu_disable_counter(struct kvm_vcpu *vcpu, u64 val) {}
+-static inline void kvm_pmu_enable_counter(struct kvm_vcpu *vcpu, u64 val) {}
++static inline void kvm_pmu_disable_counter_mask(struct kvm_vcpu *vcpu, u64 val) {}
++static inline void kvm_pmu_enable_counter_mask(struct kvm_vcpu *vcpu, u64 val) {}
+ static inline void kvm_pmu_flush_hwstate(struct kvm_vcpu *vcpu) {}
+ static inline void kvm_pmu_sync_hwstate(struct kvm_vcpu *vcpu) {}
+ static inline bool kvm_pmu_should_notify_user(struct kvm_vcpu *vcpu)
+diff --git a/virt/kvm/arm/pmu.c b/virt/kvm/arm/pmu.c
+index da740764a7ee..99e51ee8fd9e 100644
+--- a/virt/kvm/arm/pmu.c
++++ b/virt/kvm/arm/pmu.c
+@@ -124,13 +124,13 @@ u64 kvm_pmu_valid_counter_mask(struct kvm_vcpu *vcpu)
+ }
  
--	dsb	sy		// Synchronize against in-flight ld/st
- 	msr	daifclr, #4	// Unmask aborts
--alternative_endif
+ /**
+- * kvm_pmu_enable_counter - enable selected PMU counter
++ * kvm_pmu_enable_counter_mask - enable selected PMU counters
+  * @vcpu: The vcpu pointer
+  * @val: the value guest writes to PMCNTENSET register
+  *
+  * Call perf_event_enable to start counting the perf event
+  */
+-void kvm_pmu_enable_counter(struct kvm_vcpu *vcpu, u64 val)
++void kvm_pmu_enable_counter_mask(struct kvm_vcpu *vcpu, u64 val)
+ {
+ 	int i;
+ 	struct kvm_pmu *pmu = &vcpu->arch.pmu;
+@@ -153,13 +153,13 @@ void kvm_pmu_enable_counter(struct kvm_vcpu *vcpu, u64 val)
+ }
  
- 	// This is our single instruction exception window. A pending
- 	// SError is guaranteed to occur at the earliest when we unmask
+ /**
+- * kvm_pmu_disable_counter - disable selected PMU counter
++ * kvm_pmu_disable_counter_mask - disable selected PMU counters
+  * @vcpu: The vcpu pointer
+  * @val: the value guest writes to PMCNTENCLR register
+  *
+  * Call perf_event_disable to stop counting the perf event
+  */
+-void kvm_pmu_disable_counter(struct kvm_vcpu *vcpu, u64 val)
++void kvm_pmu_disable_counter_mask(struct kvm_vcpu *vcpu, u64 val)
+ {
+ 	int i;
+ 	struct kvm_pmu *pmu = &vcpu->arch.pmu;
+@@ -336,10 +336,10 @@ void kvm_pmu_handle_pmcr(struct kvm_vcpu *vcpu, u64 val)
+ 
+ 	mask = kvm_pmu_valid_counter_mask(vcpu);
+ 	if (val & ARMV8_PMU_PMCR_E) {
+-		kvm_pmu_enable_counter(vcpu,
++		kvm_pmu_enable_counter_mask(vcpu,
+ 		       __vcpu_sys_reg(vcpu, PMCNTENSET_EL0) & mask);
+ 	} else {
+-		kvm_pmu_disable_counter(vcpu, mask);
++		kvm_pmu_disable_counter_mask(vcpu, mask);
+ 	}
+ 
+ 	if (val & ARMV8_PMU_PMCR_C)
 -- 
 2.20.1
 
