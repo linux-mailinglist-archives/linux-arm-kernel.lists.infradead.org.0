@@ -2,91 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DECCC62CD0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 01:54:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8CDA162CE8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 02:10:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
-	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9S3HzHMQW70UL+g4ZDcgDrjrhzUo4rX76zSFwRJnvYk=; b=MsDGIA5wuluI+n
-	wzKCMBR0Z9mW54BnIuGs7lJuV/zk5hGUj2e7igmImLztRhTfoE8LZEfXKTsCGINJuuWvmvVR5ZpXp
-	zK5+FEQQ7guut6eneGXcjQ7v9j/Q7tL86lMGLsHsQEOBg+u/h7zxFddCulNxltnqEZl8lo7144kr9
-	gLfmbyL6k5Dxlwe7ZsCL2pPSxnD+1zm1vcNfqVZsHc2s6cAd8U97t+QNsY9qoUPjPxSjC4uNdTcPO
-	mcQXn4Up4pC3Xzzc0e6FxdGk2jtbojqlm8BCzHpJ01YyAD4Q6MYzoYkrszz1Skfidz4hm1IhJMbxA
-	bEeADphh5XzpB+/n2gqw==;
+	List-Owner; bh=6dBUOpva0eEe86odpOs0Ycn50ZUczOTgoGdov/8JlGU=; b=YRuM6tBkZyyXai
+	MoDsslv6llhd02d0TbVuslT4AV7az7PHXzvdwXiXNNY+BR7zxBzl2UmtKOXw/Bz6pEtdHRMYzz5Ui
+	+zPYzzmeI+VCAdfG155lqXyr/iAjVwAA2gCC5+RGf8oKlXBFC43FCEp2fqWVrW1UA7+Ll0AXWBMVZ
+	Z/JNs0GTYoE5nP121UyhEJAfCM1N/7J3QrtUGr7IMJRYsXHrVxc1JMMqxPfpt1POr0Ak04OzIRAul
+	Z9E6nXYsAOi6SasQHoEJt9uOWopJn0/XzchcQ+G+FIK8DzgkJb7DsHJrCq6xLhirfrD4Uz5eloOzk
+	P+RLJFITi25DopRo0aOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkdT8-00059e-Ad; Mon, 08 Jul 2019 23:54:50 +0000
-Received: from out01.mta.xmission.com ([166.70.13.231])
+	id 1hkdha-0001WH-Co; Tue, 09 Jul 2019 00:09:46 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkdSu-00057c-Lf; Mon, 08 Jul 2019 23:54:38 +0000
-Received: from in01.mta.xmission.com ([166.70.13.51])
- by out01.mta.xmission.com with esmtps
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.87)
- (envelope-from <ebiederm@xmission.com>)
- id 1hkdSQ-00040U-44; Mon, 08 Jul 2019 17:54:06 -0600
-Received: from ip72-206-97-68.om.om.cox.net ([72.206.97.68]
- helo=x220.xmission.com) by in01.mta.xmission.com with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.87)
- (envelope-from <ebiederm@xmission.com>)
- id 1hkdSP-0004SP-A3; Mon, 08 Jul 2019 17:54:05 -0600
-From: ebiederm@xmission.com (Eric W. Biederman)
-To: Pavel Tatashin <pasha.tatashin@soleen.com>
-References: <20190708211528.12392-1-pasha.tatashin@soleen.com>
-Date: Mon, 08 Jul 2019 18:53:41 -0500
-In-Reply-To: <20190708211528.12392-1-pasha.tatashin@soleen.com> (Pavel
- Tatashin's message of "Mon, 8 Jul 2019 17:15:23 -0400")
-Message-ID: <87sgrgjd6i.fsf@xmission.com>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/25.1 (gnu/linux)
+ id 1hkdh8-0001U7-Dk
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 00:09:20 +0000
+Received: by mail-ed1-x542.google.com with SMTP id w13so16082210eds.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 08 Jul 2019 17:09:16 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=98rToMWmhy/jqHktBRjZkc7KbW9VRwSYkaJRbC3br4I=;
+ b=i3oe6W0BGcSkTepcfGEJAhzFh8lQOwvniDzY3lf8xxhn8MfBi54r7Fl2n2nGdZvlrv
+ 7qtP66giWRCRfgSjdETIbISxBkBjHk349VzwNpp/XUSzNBj2A4jXAiMANZzOUckZ3zsy
+ GZCrXZ4v9OgdNrrN316v6BDBm1BJmbH4r/ZIXLqHFYfLRWALRxuNxJYNFhA9oLquz8Sq
+ NBAeaau88Q7EXNC0lm/sm5RyVSXsNXKR6Zxnb9akp6QytAnKknq+Tmi5c0hVCRIb8prp
+ RPVziOWqDM+agE/TcfMw0rzPWiH28hw1sqnvRf/EiFr1TJQ3LYqFuANfxTtWwFTIEXSQ
+ QoYw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=98rToMWmhy/jqHktBRjZkc7KbW9VRwSYkaJRbC3br4I=;
+ b=tbJ6ZdAbw3OE3ZLS5GiBydk5KKP09Mhc33EaMK92PJ0MFYmQAnJ/lnCpjGjx8uVm3p
+ m2lATKGpf3EnKMYIhErIqEBDUNbkgIXkKHxxGoiy8CbGGqCdlNkKcOE8ZeAcU6x0dbfx
+ /j38sAUfD/30qON2wHb8m/vmOugQhD0gdD+y82um9pCjoDnJBJVMt5NOnonJxaXm2D7r
+ z1hiz06hmMle4UsHNShsZtTZslT5q96uMDL+0L4SZMapUon5eu/qJBe6F/KNkPrQME2D
+ 998vCmmlQSbsZf9XM+K/yXVT5OM31NhKGbVrxpmZxchnGmAWoA44QrJGs//5YT4kDGBU
+ 6udA==
+X-Gm-Message-State: APjAAAWWNH2DmBGkT7zdVD0+RIZylivyS1vjxFCrvfostp+fiP2+NkFM
+ nl0GUOZC5SEOgDSD6fq+aoz/19Yzkba3fz1vcJicUA==
+X-Google-Smtp-Source: APXvYqwU07Zh/QKPE/nEPDgFLpdMlrr6cwb9a/ibICEkDuXQ69QLQF/9cX8my8Dhn7VceVLo/ycOsWAviGk5vIhAkmk=
+X-Received: by 2002:a17:906:7c8d:: with SMTP id
+ w13mr18501893ejo.264.1562630955016; 
+ Mon, 08 Jul 2019 17:09:15 -0700 (PDT)
 MIME-Version: 1.0
-X-XM-SPF: eid=1hkdSP-0004SP-A3; ; ; mid=<87sgrgjd6i.fsf@xmission.com>; ; ;
- hst=in01.mta.xmission.com; ; ; ip=72.206.97.68; ; ; frm=ebiederm@xmission.com;
- ; ; spf=neutral
-X-XM-AID: U2FsdGVkX1/4DFq9bCvzso/ksSBAqAiaDiIvNM15zws=
-X-SA-Exim-Connect-IP: 72.206.97.68
-X-SA-Exim-Mail-From: ebiederm@xmission.com
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on sa05.xmission.com
-X-Spam-Level: 
-X-Spam-Status: No, score=-0.3 required=8.0 tests=ALL_TRUSTED,BAYES_40,
- DCC_CHECK_NEGATIVE,T_TM2_M_HEADER_IN_MSG,XMSubLong autolearn=disabled
- version=3.4.2
-X-Spam-Report: * -1.0 ALL_TRUSTED Passed through trusted hosts only via SMTP
- * -0.0 BAYES_40 BODY: Bayes spam probability is 20 to 40%
- *      [score: 0.2412] *  0.7 XMSubLong Long Subject
- *  0.0 T_TM2_M_HEADER_IN_MSG BODY: No description available.
- * -0.0 DCC_CHECK_NEGATIVE Not listed in DCC
- *      [sa05 1397; Body=1 Fuz1=1 Fuz2=1]
-X-Spam-DCC: XMission; sa05 1397; Body=1 Fuz1=1 Fuz2=1 
-X-Spam-Combo: ;Pavel Tatashin <pasha.tatashin@soleen.com>
-X-Spam-Relay-Country: 
-X-Spam-Timing: total 453 ms - load_scoreonly_sql: 0.05 (0.0%),
- signal_user_changed: 3.8 (0.8%), b_tie_ro: 2.7 (0.6%), parse: 1.36
- (0.3%), extract_message_metadata: 19 (4.1%), get_uri_detail_list: 2.5
- (0.6%), tests_pri_-1000: 18 (3.9%), tests_pri_-950: 1.80 (0.4%),
- tests_pri_-900: 1.45 (0.3%), tests_pri_-90: 26 (5.8%), check_bayes: 24
- (5.4%), b_tokenize: 9 (1.9%), b_tok_get_all: 8 (1.7%), b_comp_prob:
- 3.0 (0.7%), b_tok_touch_all: 2.8 (0.6%), b_finish: 0.74 (0.2%),
- tests_pri_0: 368 (81.2%), check_dkim_signature: 0.68 (0.2%),
- check_dkim_adsp: 3.6 (0.8%), poll_dns_idle: 0.07 (0.0%), tests_pri_10:
- 2.2 (0.5%), tests_pri_500: 7 (1.5%), rewrite_mail: 0.00 (0.0%)
+References: <20190708211528.12392-1-pasha.tatashin@soleen.com>
+ <87sgrgjd6i.fsf@xmission.com>
+In-Reply-To: <87sgrgjd6i.fsf@xmission.com>
+From: Pavel Tatashin <pasha.tatashin@soleen.com>
+Date: Mon, 8 Jul 2019 20:09:04 -0400
+Message-ID: <CA+CK2bAOPkN=qEdE38R0FRnrzRK0EqLid7eUVnTj1acmaFHY_w@mail.gmail.com>
 Subject: Re: [v1 0/5] allow to reserve memory for normal kexec kernel
-X-Spam-Flag: No
-X-SA-Exim-Version: 4.2.1 (built Thu, 05 May 2016 13:38:54 -0600)
-X-SA-Exim-Scanned: Yes (on in01.mta.xmission.com)
+To: "Eric W. Biederman" <ebiederm@xmission.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_165436_738747_7C93CE16 
-X-CRM114-Status: GOOD (  14.61  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190708_170918_625072_7574042E 
+X-CRM114-Status: GOOD (  16.44  )
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [166.70.13.231 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,64 +93,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: sashal@kernel.org, corbet@lwn.net, catalin.marinas@arm.com,
- linux-doc@vger.kernel.org, kexec@lists.infradead.org, jmorris@namei.org,
- linux-kernel@vger.kernel.org, will@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, corbet@lwn.net,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-doc@vger.kernel.org,
+ kexec@lists.infradead.org, James Morris <jmorris@namei.org>,
+ LKML <linux-kernel@vger.kernel.org>, will@kernel.org,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Pavel Tatashin <pasha.tatashin@soleen.com> writes:
-
-> Currently, it is only allowed to reserve memory for crash kernel, because
-> it is a requirement in order to be able to boot into crash kernel without
-> touching memory of crashed kernel is to have memory reserved.
+> Something is very very wrong there.
 >
-> The second benefit for having memory reserved for kexec kernel is
-> that it does not require a relocation after segments are loaded into
-> memory.
+> Last I measured memory bandwidth seriously I could touch a Gigabyte per
+> second easily, and that was nearly 20 years ago.  Did you manage to
+> disable caching or have some particularly slow code that does the
+> reolocations.
 >
-> If kexec functionality is used for a fast system update, with a minimal
-> downtime, the relocation of kernel + initramfs might take a significant
-> portion of reboot.
+> There is a serious cost to reserving memory in that it is simply not
+> available at other times.  For kexec on panic there is no other reliable
+> way to get memory that won't be DMA'd to.
+
+Hi Eric,
+
+Thank you for your comments.
+
+Indeed, but sometimes fast reboot is more important than the cost of
+reserving 32M-64M of memory.
+
 >
-> In fact, on the machine that we are using, that has ARM64 processor
-> it takes 0.35s to relocate during kexec, thus taking 52% of kernel reboot
-> time:
+> We have options in this case and I would strongly encourage you to track
+> down why that copy in relocation is so very slow.  I suspect a 4KiB page
+> size is large enough that it can swamp pointer following costs.
 >
-> kernel shutdown	0.03s
-> relocation	0.35s
-> kernel startup	0.29s
+> My back of the napkin math says even 20 years ago your copying costs
+> should be only 0.037s.  The only machine I have ever tested on where
+> the copy costs were noticable was my old 386.
 >
-> Image: 13M and initramfs is 24M. If initramfs increases, the relocation
-> time increases proportionally.
+> Maybe I am out to lunch here but a claim that your memory only runs
+> at 100MiB/s (the speed of my spinning rust hard drive) is rather
+> incredible.
 
-Something is very very wrong there.
+I agree,  my measurement on this machine was 2,857MB/s. Perhaps when
+MMU is disabled ARM64 also has caching disabled? The function that
+loops through array of pages and relocates them to final destination
+is this:
 
-Last I measured memory bandwidth seriously I could touch a Gigabyte per
-second easily, and that was nearly 20 years ago.  Did you manage to
-disable caching or have some particularly slow code that does the
-reolocations.
+https://soleen.com/source/xref/linux/arch/arm64/kernel/relocate_kernel.S?r=d2912cb1#29
 
-There is a serious cost to reserving memory in that it is simply not
-available at other times.  For kexec on panic there is no other reliable
-way to get memory that won't be DMA'd to.
+A comment before calling it:
 
-We have options in this case and I would strongly encourage you to track
-down why that copy in relocation is so very slow.  I suspect a 4KiB page
-size is large enough that it can swamp pointer following costs.
+205   /*
+206   * cpu_soft_restart will shutdown the MMU, disable data caches, then
+207   * transfer control to the reboot_code_buffer which contains a copy of
+208   * the arm64_relocate_new_kernel routine.  arm64_relocate_new_kernel
+209   * uses physical addressing to relocate the new image to its final
+210   * position and transfers control to the image entry point when the
+211   * relocation is complete.
+212   * In kexec case, kimage->start points to purgatory assuming that
+213   * kernel entry and dtb address are embedded in purgatory by
+214   * userspace (kexec-tools).
+215   * In kexec_file case, the kernel starts directly without purgatory.
+216   */
+https://soleen.com/source/xref/linux/arch/arm64/kernel/machine_kexec.c?r=d2912cb1#206
 
-My back of the napkin math says even 20 years ago your copying costs
-should be only 0.037s.  The only machine I have ever tested on where
-the copy costs were noticable was my old 386.
+So, as I understand at least data caches are disabled, and MMU is
+disabled, perhaps this is why this function is so incredibly slow?
 
-Maybe I am out to lunch here but a claim that your memory only runs
-at 100MiB/s (the speed of my spinning rust hard drive) is rather
-incredible.
+Perhaps, there is a better way to fix this problem by keeping caches
+enabled while still relocating? Any suggestions from Aarch64
+developers?
 
-Eric
+Pasha
 
 _______________________________________________
 linux-arm-kernel mailing list
