@@ -2,70 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6686663297
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 10:04:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB6E96328F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 10:03:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=D/YT8dd1UM6WMGyT+dZx50dPZqZX3oj64ihMflNWVkQ=; b=Xr87VvGmODLVE6zb+fYTLw3e0h
-	1/HZWYYy/5UpvP0tQDvq1rgf1CTvAnncGMYy5u+HaLMMxLF265lzMOwINuB7g85skx7VkJgoqlmCn
-	YHl3mjWt5Qn45ocS5SD7moYLWsHSsjZv3HOebOjjWOhyy0/21t1LR9GO7qWUyLBv3kIHOyMq22dG0
-	KKE/icxpVxadHpOD6sKGOEkZgOh2ML3kOq2VzIsjRP0+/S2u2ypNzHKsMDlDDaYG5tChygrG1lnYe
-	X6oiOqfcwQ/V7aoci+/MGVXARMAg08BVcS/O93ZnLRxL7Zi4KspBiHDqJ+Aio5ryKTKc1twiXFDvP
-	zBuiWfeg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Hr8VbVop86hMAukiZxfVZxRjwkDnV73WN70JQE5rDeU=; b=T41dBCb7JOvO56
+	VOIF0tsUzSXNQOWASZfbNzEL5dDRz+6zmIP3hkasAe6tcrSA4yTUS9oq+Ag95Ic6ctr1KRbSB2RMA
+	DNXo6dQrCPaFeihDrdZTAJpDY6SDfvuYYWGSU98H6wqZ1GIbLkF+wjxCpDPKjfheHhDrMrFweXaxW
+	o6Di4LC/mbNPI7Q17dLbOJAVcPc1Ehuyd9A8wws7FzqXaJKzs2wG17HLIKGpgvfjkjfxULJkkD2pw
+	B+iiOkEG5uplO2btgcUfpCsJsWJ3LofGWQm/NOe9qmAAvY4WBtP3LQ5l+o41w35/MAtPNow/t/Avq
+	6vh3V1ePXNm2RWVdsRsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkl6s-0005YS-PV; Tue, 09 Jul 2019 08:04:22 +0000
-Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
- helo=smtprelay-out1.synopsys.com)
+	id 1hkl6H-00054i-B9; Tue, 09 Jul 2019 08:03:45 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkl5p-0004tL-G4
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 08:03:19 +0000
-Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
- [10.225.0.209])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id CB6FBC0A74;
- Tue,  9 Jul 2019 08:03:16 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1562659397; bh=utgIZ0MmwGeJhJE+hj23sGGUTNvCL1/79z2dgnYS5tY=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
- References:From;
- b=j9gmMQ4uPZltW4u3nOOTLReJUBMZOvlLSPWgqu92siVf7ttYmgklA90F6TNPfBhd0
- UgVgsvqw/40ma84IpB/WSeulDJ25n6uEt4lvXUug4NoVK8Emn1cFOWQ/nSvCz1BnvS
- +3V0fLPJi/VOzjcL2DV1qS5s2mBs+F8w12Sdpb6N3CgaHTlAnnrkxDwHYo0zQfYgcr
- 2q/BrkBov5wWsXaDS7th3sUOzlsFSzWV1bD4tInbl+KSTXCU+zev5mmETSYCsqo67T
- v0hB1SngUA4DIZiJvN9w3Rr/TPTeBgvn3MxqDGcHF00YCSVhM3XokvZDzs6r8ZVuBp
- gMg2d18wx0CHA==
-Received: from de02.synopsys.com (de02.internal.synopsys.com [10.225.17.21])
- by mailhost.synopsys.com (Postfix) with ESMTP id EFFBBA005F;
+ id 1hkl5o-0004s8-5x
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 08:03:17 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2554D214AF;
  Tue,  9 Jul 2019 08:03:13 +0000 (UTC)
-Received: from de02dwia024.internal.synopsys.com
- (de02dwia024.internal.synopsys.com [10.225.19.81])
- by de02.synopsys.com (Postfix) with ESMTP id 877F23F836;
- Tue,  9 Jul 2019 10:03:13 +0200 (CEST)
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-To: netdev@vger.kernel.org
-Subject: [PATCH net-next v4 3/3] net: stmmac: Introducing support for Page Pool
-Date: Tue,  9 Jul 2019 10:03:00 +0200
-Message-Id: <a984010950c1f7a509808282fbfa5b7c157948c5.1562659012.git.joabreu@synopsys.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <cover.1562659012.git.joabreu@synopsys.com>
-References: <cover.1562659012.git.joabreu@synopsys.com>
-In-Reply-To: <cover.1562659012.git.joabreu@synopsys.com>
-References: <cover.1562659012.git.joabreu@synopsys.com>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1562659394;
+ bh=4h1slV9pnqJH/rMLYpW8VWFuid3BTsn6hQfIGxSGH7s=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=Ast2bcDaol/o2l77DZNWhKqIV8d19g7TV+vXqo6wutx0XSI/WVX5UTBgvPLDPIwa/
+ H/J3yQT1yiCZ5nymdU1dL9LOVkMnz9L756SrwIQLn1Jz9XgF+esLaiPzLd2g2Y1qJc
+ 9SfkI6MvUKAdoDcNd/yS0PDlmCCTbeA79lZH9clc=
+Date: Tue, 9 Jul 2019 09:03:09 +0100
+From: Will Deacon <will@kernel.org>
+To: Jon Masters <jcm@jonmasters.org>
+Subject: Re: [PATCH 0/2] arm64: Introduce boot parameter to disable TLB flush
+ instruction within the same inner shareable domain
+Message-ID: <20190709080308.uueqgxuycfp5y2db@willie-the-truck>
+References: <20190617143255.10462-1-indou.takao@jp.fujitsu.com>
+ <20190617170328.GJ30800@fuggles.cambridge.arm.com>
+ <e8fe8faa-72ef-8185-1a9d-dc1bbe0ae15d@jp.fujitsu.com>
+ <20190627102724.vif6zh6zfqktpmjx@willie-the-truck>
+ <5999ed84-72d0-9d42-bf7d-b8d56eaa4d4a@jp.fujitsu.com>
+ <675313fe-007b-c850-d730-a629b82ccfc8@jonmasters.org>
+ <d0879ecc-78c6-b66f-3525-aa1ce175178f@jonmasters.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <d0879ecc-78c6-b66f-3525-aa1ce175178f@jonmasters.org>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_010317_535756_D0DBC0D9 
-X-CRM114-Status: GOOD (  20.55  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190709_010316_256390_642A0BA9 
+X-CRM114-Status: GOOD (  16.42  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -75,6 +71,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,426 +83,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, Arnd Bergmann <arnd@arndb.de>,
- Ilias Apalodimas <ilias.apalodimas@linaro.org>, linux-kernel@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Jesper Dangaard Brouer <brouer@redhat.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: "qi.fuli@fujitsu.com" <qi.fuli@fujitsu.com>,
+ "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
+ "peterz@infradead.org" <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Jonathan Corbet <corbet@lwn.net>,
+ Will Deacon <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "indou.takao@fujitsu.com" <indou.takao@fujitsu.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Mapping and unmapping DMA region is an high bottleneck in stmmac driver,
-specially in the RX path.
+On Mon, Jul 08, 2019 at 08:29:26PM -0400, Jon Masters wrote:
+> On 7/8/19 8:25 PM, Jon Masters wrote:
+> > On 7/2/19 10:45 PM, qi.fuli@fujitsu.com wrote:
+> > 
+> >> However, we found that with the increase of that the TLB flash was called,
+> >> the noise was also increasing. Here we understood that the cause of this 
+> >> issue is the implementation of Linux's TLB flush for arm64, especially use of 
+> >> TLBI-is instruction which is a broadcast to all processor core on the system. 
+> > 
+> > Are you saying that for a microbenchmark in which very large numbers of
+> > threads are created and destroyed rapidly there are a large number of
+> > associated tlb range flushes which always use broadcast TLBIs?
+> > 
+> > If that's the case, and the hardware doesn't do any ASID filtering and
+> > each TLBI results in a DVM to every PE, would it make sense to look at
+> > whether there are ways to improve batching/switch to an IPI approach
+> > rather than relying on broadcasts, as a more generic solution?
+> 
+> What I meant was a heuristic to do this automatically, rather than via a
+> command line.
 
-This commit introduces support for Page Pool API and uses it in all RX
-queues. With this change, we get more stable troughput and some increase
-of banwidth with iperf:
-	- MAC1000 - 950 Mbps
-	- XGMAC: 9.22 Gbps
+One of my main initial objections to this patch [1] still applies to that
+approach, though, which is that I don't want the maintenance headache of
+maintaining two very different TLB invalidation schemes in the kernel.
+Dynamically switching between them is arguably worse. If "jitter" is such a
+big deal, then I don't think changing our TLBI mechanism even helps on a
+system that has broadcast cache maintenance (including for the I-side) as
+well as shared levels of cache further from the CPUs -- it just happens to
+solve the case of a spinning mprotect(), well yeah, maybe don't do that if
+your hardware can't handle it gracefully.
 
-Changes from v3:
-	- Use page_pool_destroy() (Ilias)
-Changes from v2:
-	- Uncoditionally call page_pool_free() (Jesper)
-Changes from v1:
-	- Use page_pool_get_dma_addr() (Jesper)
-	- Add a comment (Jesper)
-	- Add page_pool_free() call (Jesper)
-	- Reintroduce sync_single_for_device (Arnd / Ilias)
+What I would be interested in seeing is an evaluation of a real workload
+that suffers due to our mmu_gather/tlb_flush implementation on arm64 so that
+we can understand where the problem lies and whether or not we can do
+something to address it. But "jitter is bad, use IPIs" isn't helpful at all.
 
-Signed-off-by: Jose Abreu <joabreu@synopsys.com>
-Acked-by: Ilias Apalodimas <ilias.apalodimas@linaro.org>
+Will
 
----
-Cc: Giuseppe Cavallaro <peppe.cavallaro@st.com>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>
-Cc: Jose Abreu <joabreu@synopsys.com>
-Cc: "David S. Miller" <davem@davemloft.net>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Cc: netdev@vger.kernel.org
-Cc: linux-stm32@st-md-mailman.stormreply.com
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
-Cc: Ilias Apalodimas <ilias.apalodimas@linaro.org>
-Cc: Jesper Dangaard Brouer <brouer@redhat.com>
-Cc: Arnd Bergmann <arnd@arndb.de>
----
- drivers/net/ethernet/stmicro/stmmac/Kconfig       |   1 +
- drivers/net/ethernet/stmicro/stmmac/stmmac.h      |  10 +-
- drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 203 +++++++---------------
- 3 files changed, 70 insertions(+), 144 deletions(-)
-
-diff --git a/drivers/net/ethernet/stmicro/stmmac/Kconfig b/drivers/net/ethernet/stmicro/stmmac/Kconfig
-index 943189dcccb1..2325b40dff6e 100644
---- a/drivers/net/ethernet/stmicro/stmmac/Kconfig
-+++ b/drivers/net/ethernet/stmicro/stmmac/Kconfig
-@@ -3,6 +3,7 @@ config STMMAC_ETH
- 	tristate "STMicroelectronics Multi-Gigabit Ethernet driver"
- 	depends on HAS_IOMEM && HAS_DMA
- 	select MII
-+	select PAGE_POOL
- 	select PHYLINK
- 	select CRC32
- 	imply PTP_1588_CLOCK
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac.h b/drivers/net/ethernet/stmicro/stmmac/stmmac.h
-index 513f4e2df5f6..5cd966c154f3 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac.h
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac.h
-@@ -20,6 +20,7 @@
- #include <linux/ptp_clock_kernel.h>
- #include <linux/net_tstamp.h>
- #include <linux/reset.h>
-+#include <net/page_pool.h>
- 
- struct stmmac_resources {
- 	void __iomem *addr;
-@@ -54,14 +55,19 @@ struct stmmac_tx_queue {
- 	u32 mss;
- };
- 
-+struct stmmac_rx_buffer {
-+	struct page *page;
-+	dma_addr_t addr;
-+};
-+
- struct stmmac_rx_queue {
- 	u32 rx_count_frames;
- 	u32 queue_index;
-+	struct page_pool *page_pool;
-+	struct stmmac_rx_buffer *buf_pool;
- 	struct stmmac_priv *priv_data;
- 	struct dma_extended_desc *dma_erx;
- 	struct dma_desc *dma_rx ____cacheline_aligned_in_smp;
--	struct sk_buff **rx_skbuff;
--	dma_addr_t *rx_skbuff_dma;
- 	unsigned int cur_rx;
- 	unsigned int dirty_rx;
- 	u32 rx_zeroc_thresh;
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-index c142e9367a68..00f2df304e28 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-@@ -1197,26 +1197,14 @@ static int stmmac_init_rx_buffers(struct stmmac_priv *priv, struct dma_desc *p,
- 				  int i, gfp_t flags, u32 queue)
- {
- 	struct stmmac_rx_queue *rx_q = &priv->rx_queue[queue];
--	struct sk_buff *skb;
-+	struct stmmac_rx_buffer *buf = &rx_q->buf_pool[i];
- 
--	skb = __netdev_alloc_skb_ip_align(priv->dev, priv->dma_buf_sz, flags);
--	if (!skb) {
--		netdev_err(priv->dev,
--			   "%s: Rx init fails; skb is NULL\n", __func__);
-+	buf->page = page_pool_dev_alloc_pages(rx_q->page_pool);
-+	if (!buf->page)
- 		return -ENOMEM;
--	}
--	rx_q->rx_skbuff[i] = skb;
--	rx_q->rx_skbuff_dma[i] = dma_map_single(priv->device, skb->data,
--						priv->dma_buf_sz,
--						DMA_FROM_DEVICE);
--	if (dma_mapping_error(priv->device, rx_q->rx_skbuff_dma[i])) {
--		netdev_err(priv->dev, "%s: DMA mapping error\n", __func__);
--		dev_kfree_skb_any(skb);
--		return -EINVAL;
--	}
--
--	stmmac_set_desc_addr(priv, p, rx_q->rx_skbuff_dma[i]);
- 
-+	buf->addr = page_pool_get_dma_addr(buf->page);
-+	stmmac_set_desc_addr(priv, p, buf->addr);
- 	if (priv->dma_buf_sz == BUF_SIZE_16KiB)
- 		stmmac_init_desc3(priv, p);
- 
-@@ -1232,13 +1220,11 @@ static int stmmac_init_rx_buffers(struct stmmac_priv *priv, struct dma_desc *p,
- static void stmmac_free_rx_buffer(struct stmmac_priv *priv, u32 queue, int i)
- {
- 	struct stmmac_rx_queue *rx_q = &priv->rx_queue[queue];
-+	struct stmmac_rx_buffer *buf = &rx_q->buf_pool[i];
- 
--	if (rx_q->rx_skbuff[i]) {
--		dma_unmap_single(priv->device, rx_q->rx_skbuff_dma[i],
--				 priv->dma_buf_sz, DMA_FROM_DEVICE);
--		dev_kfree_skb_any(rx_q->rx_skbuff[i]);
--	}
--	rx_q->rx_skbuff[i] = NULL;
-+	if (buf->page)
-+		page_pool_put_page(rx_q->page_pool, buf->page, false);
-+	buf->page = NULL;
- }
- 
- /**
-@@ -1321,10 +1307,6 @@ static int init_dma_rx_desc_rings(struct net_device *dev, gfp_t flags)
- 						     queue);
- 			if (ret)
- 				goto err_init_rx_buffers;
--
--			netif_dbg(priv, probe, priv->dev, "[%p]\t[%p]\t[%x]\n",
--				  rx_q->rx_skbuff[i], rx_q->rx_skbuff[i]->data,
--				  (unsigned int)rx_q->rx_skbuff_dma[i]);
- 		}
- 
- 		rx_q->cur_rx = 0;
-@@ -1498,8 +1480,11 @@ static void free_dma_rx_desc_resources(struct stmmac_priv *priv)
- 					  sizeof(struct dma_extended_desc),
- 					  rx_q->dma_erx, rx_q->dma_rx_phy);
- 
--		kfree(rx_q->rx_skbuff_dma);
--		kfree(rx_q->rx_skbuff);
-+		kfree(rx_q->buf_pool);
-+		if (rx_q->page_pool) {
-+			page_pool_request_shutdown(rx_q->page_pool);
-+			page_pool_destroy(rx_q->page_pool);
-+		}
- 	}
- }
- 
-@@ -1551,20 +1536,29 @@ static int alloc_dma_rx_desc_resources(struct stmmac_priv *priv)
- 	/* RX queues buffers and DMA */
- 	for (queue = 0; queue < rx_count; queue++) {
- 		struct stmmac_rx_queue *rx_q = &priv->rx_queue[queue];
-+		struct page_pool_params pp_params = { 0 };
- 
- 		rx_q->queue_index = queue;
- 		rx_q->priv_data = priv;
- 
--		rx_q->rx_skbuff_dma = kmalloc_array(DMA_RX_SIZE,
--						    sizeof(dma_addr_t),
--						    GFP_KERNEL);
--		if (!rx_q->rx_skbuff_dma)
-+		pp_params.flags = PP_FLAG_DMA_MAP;
-+		pp_params.pool_size = DMA_RX_SIZE;
-+		pp_params.order = DIV_ROUND_UP(priv->dma_buf_sz, PAGE_SIZE);
-+		pp_params.nid = dev_to_node(priv->device);
-+		pp_params.dev = priv->device;
-+		pp_params.dma_dir = DMA_FROM_DEVICE;
-+
-+		rx_q->page_pool = page_pool_create(&pp_params);
-+		if (IS_ERR(rx_q->page_pool)) {
-+			ret = PTR_ERR(rx_q->page_pool);
-+			rx_q->page_pool = NULL;
- 			goto err_dma;
-+		}
- 
--		rx_q->rx_skbuff = kmalloc_array(DMA_RX_SIZE,
--						sizeof(struct sk_buff *),
--						GFP_KERNEL);
--		if (!rx_q->rx_skbuff)
-+		rx_q->buf_pool = kmalloc_array(DMA_RX_SIZE,
-+					       sizeof(*rx_q->buf_pool),
-+					       GFP_KERNEL);
-+		if (!rx_q->buf_pool)
- 			goto err_dma;
- 
- 		if (priv->extend_desc) {
-@@ -3286,9 +3280,8 @@ static inline void stmmac_rx_refill(struct stmmac_priv *priv, u32 queue)
- 	int dirty = stmmac_rx_dirty(priv, queue);
- 	unsigned int entry = rx_q->dirty_rx;
- 
--	int bfsize = priv->dma_buf_sz;
--
- 	while (dirty-- > 0) {
-+		struct stmmac_rx_buffer *buf = &rx_q->buf_pool[entry];
- 		struct dma_desc *p;
- 		bool use_rx_wd;
- 
-@@ -3297,49 +3290,22 @@ static inline void stmmac_rx_refill(struct stmmac_priv *priv, u32 queue)
- 		else
- 			p = rx_q->dma_rx + entry;
- 
--		if (likely(!rx_q->rx_skbuff[entry])) {
--			struct sk_buff *skb;
--
--			skb = netdev_alloc_skb_ip_align(priv->dev, bfsize);
--			if (unlikely(!skb)) {
--				/* so for a while no zero-copy! */
--				rx_q->rx_zeroc_thresh = STMMAC_RX_THRESH;
--				if (unlikely(net_ratelimit()))
--					dev_err(priv->device,
--						"fail to alloc skb entry %d\n",
--						entry);
--				break;
--			}
--
--			rx_q->rx_skbuff[entry] = skb;
--			rx_q->rx_skbuff_dma[entry] =
--			    dma_map_single(priv->device, skb->data, bfsize,
--					   DMA_FROM_DEVICE);
--			if (dma_mapping_error(priv->device,
--					      rx_q->rx_skbuff_dma[entry])) {
--				netdev_err(priv->dev, "Rx DMA map failed\n");
--				dev_kfree_skb(skb);
-+		if (!buf->page) {
-+			buf->page = page_pool_dev_alloc_pages(rx_q->page_pool);
-+			if (!buf->page)
- 				break;
--			}
--
--			stmmac_set_desc_addr(priv, p, rx_q->rx_skbuff_dma[entry]);
--			stmmac_refill_desc3(priv, rx_q, p);
--
--			if (rx_q->rx_zeroc_thresh > 0)
--				rx_q->rx_zeroc_thresh--;
--
--			netif_dbg(priv, rx_status, priv->dev,
--				  "refill entry #%d\n", entry);
- 		}
--		dma_wmb();
-+
-+		buf->addr = page_pool_get_dma_addr(buf->page);
-+		stmmac_set_desc_addr(priv, p, buf->addr);
-+		stmmac_refill_desc3(priv, rx_q, p);
- 
- 		rx_q->rx_count_frames++;
- 		rx_q->rx_count_frames %= priv->rx_coal_frames;
- 		use_rx_wd = priv->use_riwt && rx_q->rx_count_frames;
- 
--		stmmac_set_rx_owner(priv, p, use_rx_wd);
--
- 		dma_wmb();
-+		stmmac_set_rx_owner(priv, p, use_rx_wd);
- 
- 		entry = STMMAC_GET_ENTRY(entry, DMA_RX_SIZE);
- 	}
-@@ -3364,9 +3330,6 @@ static int stmmac_rx(struct stmmac_priv *priv, int limit, u32 queue)
- 	unsigned int next_entry = rx_q->cur_rx;
- 	int coe = priv->hw->rx_csum;
- 	unsigned int count = 0;
--	bool xmac;
--
--	xmac = priv->plat->has_gmac4 || priv->plat->has_xgmac;
- 
- 	if (netif_msg_rx_status(priv)) {
- 		void *rx_head;
-@@ -3380,11 +3343,12 @@ static int stmmac_rx(struct stmmac_priv *priv, int limit, u32 queue)
- 		stmmac_display_ring(priv, rx_head, DMA_RX_SIZE, true);
- 	}
- 	while (count < limit) {
-+		struct stmmac_rx_buffer *buf;
-+		struct dma_desc *np, *p;
- 		int entry, status;
--		struct dma_desc *p;
--		struct dma_desc *np;
- 
- 		entry = next_entry;
-+		buf = &rx_q->buf_pool[entry];
- 
- 		if (priv->extend_desc)
- 			p = (struct dma_desc *)(rx_q->dma_erx + entry);
-@@ -3414,20 +3378,9 @@ static int stmmac_rx(struct stmmac_priv *priv, int limit, u32 queue)
- 			stmmac_rx_extended_status(priv, &priv->dev->stats,
- 					&priv->xstats, rx_q->dma_erx + entry);
- 		if (unlikely(status == discard_frame)) {
-+			page_pool_recycle_direct(rx_q->page_pool, buf->page);
- 			priv->dev->stats.rx_errors++;
--			if (priv->hwts_rx_en && !priv->extend_desc) {
--				/* DESC2 & DESC3 will be overwritten by device
--				 * with timestamp value, hence reinitialize
--				 * them in stmmac_rx_refill() function so that
--				 * device can reuse it.
--				 */
--				dev_kfree_skb_any(rx_q->rx_skbuff[entry]);
--				rx_q->rx_skbuff[entry] = NULL;
--				dma_unmap_single(priv->device,
--						 rx_q->rx_skbuff_dma[entry],
--						 priv->dma_buf_sz,
--						 DMA_FROM_DEVICE);
--			}
-+			buf->page = NULL;
- 		} else {
- 			struct sk_buff *skb;
- 			int frame_len;
-@@ -3467,58 +3420,20 @@ static int stmmac_rx(struct stmmac_priv *priv, int limit, u32 queue)
- 					   frame_len, status);
- 			}
- 
--			/* The zero-copy is always used for all the sizes
--			 * in case of GMAC4 because it needs
--			 * to refill the used descriptors, always.
--			 */
--			if (unlikely(!xmac &&
--				     ((frame_len < priv->rx_copybreak) ||
--				     stmmac_rx_threshold_count(rx_q)))) {
--				skb = netdev_alloc_skb_ip_align(priv->dev,
--								frame_len);
--				if (unlikely(!skb)) {
--					if (net_ratelimit())
--						dev_warn(priv->device,
--							 "packet dropped\n");
--					priv->dev->stats.rx_dropped++;
--					continue;
--				}
--
--				dma_sync_single_for_cpu(priv->device,
--							rx_q->rx_skbuff_dma
--							[entry], frame_len,
--							DMA_FROM_DEVICE);
--				skb_copy_to_linear_data(skb,
--							rx_q->
--							rx_skbuff[entry]->data,
--							frame_len);
--
--				skb_put(skb, frame_len);
--				dma_sync_single_for_device(priv->device,
--							   rx_q->rx_skbuff_dma
--							   [entry], frame_len,
--							   DMA_FROM_DEVICE);
--			} else {
--				skb = rx_q->rx_skbuff[entry];
--				if (unlikely(!skb)) {
--					if (net_ratelimit())
--						netdev_err(priv->dev,
--							   "%s: Inconsistent Rx chain\n",
--							   priv->dev->name);
--					priv->dev->stats.rx_dropped++;
--					continue;
--				}
--				prefetch(skb->data - NET_IP_ALIGN);
--				rx_q->rx_skbuff[entry] = NULL;
--				rx_q->rx_zeroc_thresh++;
--
--				skb_put(skb, frame_len);
--				dma_unmap_single(priv->device,
--						 rx_q->rx_skbuff_dma[entry],
--						 priv->dma_buf_sz,
--						 DMA_FROM_DEVICE);
-+			skb = netdev_alloc_skb_ip_align(priv->dev, frame_len);
-+			if (unlikely(!skb)) {
-+				priv->dev->stats.rx_dropped++;
-+				continue;
- 			}
- 
-+			dma_sync_single_for_cpu(priv->device, buf->addr,
-+						frame_len, DMA_FROM_DEVICE);
-+			skb_copy_to_linear_data(skb, page_address(buf->page),
-+						frame_len);
-+			skb_put(skb, frame_len);
-+			dma_sync_single_for_device(priv->device, buf->addr,
-+						   frame_len, DMA_FROM_DEVICE);
-+
- 			if (netif_msg_pktdata(priv)) {
- 				netdev_dbg(priv->dev, "frame received (%dbytes)",
- 					   frame_len);
-@@ -3538,6 +3453,10 @@ static int stmmac_rx(struct stmmac_priv *priv, int limit, u32 queue)
- 
- 			napi_gro_receive(&ch->rx_napi, skb);
- 
-+			/* Data payload copied into SKB, page ready for recycle */
-+			page_pool_recycle_direct(rx_q->page_pool, buf->page);
-+			buf->page = NULL;
-+
- 			priv->dev->stats.rx_packets++;
- 			priv->dev->stats.rx_bytes += frame_len;
- 		}
--- 
-2.7.4
-
+[1] https://lkml.kernel.org/r/20190617170328.GJ30800@fuggles.cambridge.arm.com
 
 _______________________________________________
 linux-arm-kernel mailing list
