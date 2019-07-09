@@ -2,87 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CCEA5631D7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 09:23:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A83C631D8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 09:23:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=aDTMxNpGPbcU4sG8IUnQFQYSWUeJdirRR0t96mQ+mXY=; b=VL0WC+20AxAgCj2OPCbPSN6MZ+
-	x27WbmcbFKvibdABXNkBy9SVdbOQrw6+ljdg9s95hBvj4aNmrAJ6AslnuxAEujwgbKt143EOKR9rh
-	oXy+wUvtxzcHMe7pM/q8SghFkrJSBf09ZCkTWfXK9ZV9kWHqe5zS40tPK0OHSqUb3K0LEQ/dxr7R6
-	wZd5aVI+VOj/mZ10YuFDYWucJMKxZJVm+Klhqh0xEIteGX6x7TS9Hg6nR1lh25EfLsFh5v4+UtMCl
-	4Lz77K9hzIC0Fyxo4KuCiMr+6CurvybNGO47Mxr8Bo1sIehmd2htYqaBv6QWML+LP5GB11ripeR3W
-	3RqThtcg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GrlG8gkaPz8OqZLx54TyDhTk4gbpIybIwr7Q0SXp2wI=; b=QRHe6fBlIcElql
+	U83tYN5VIb8Zyxee+Gd9vcdFd4KkR5cyvKHBT2P4lzEy+ehZqPih3XHS4VmK4qrBA9eOSHQg8VkTo
+	TD4sk1y2BJrWe/b17RMat497wTFRSGf9xNdEo/T6Yi1EJzWKkRJbH7CiHrQfq/zf4dxqFXqAXcp3j
+	YqCWDjKy4gOyIwjPNW8zCS7ldWAToo3alFu5qqNcAGBmvpaUUrNK+LVh4j7MV1eD4gHd/qNxleCgO
+	hVg2t8LcTUBYv4GVhg1Ox4JX2VRre+31k3bK8ULpX0qujn7fSzdksrASV9+ejo2MKi5kteHIe+f1N
+	foRbjj6dfTnWnJcDh1lA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkkSr-0002uk-Fo; Tue, 09 Jul 2019 07:23:01 +0000
-Received: from mickerik.phytec.de ([195.145.39.210])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hkkPa-0007T2-Ft
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 07:19:41 +0000
-DKIM-Signature: v=1; a=rsa-sha256; d=phytec.de; s=a1; c=relaxed/simple;
- q=dns/txt; i=@phytec.de; t=1562656770; x=1565248770;
- h=From:Sender:Reply-To:Subject:Date:Message-Id:To:Cc:MIME-Version:Content-Type:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=TFYVH++ymITTvRsNe27dgjYWVA/VnBsrmCSeRpwRHtw=;
- b=kv1V60DK4fdYX3dIFnj/j/cZYAgdMKdIDnX9DtgBiJMUaIQz0YX9k0T0PC8Fx/aB
- y57TRqwI/Z9c2xqNwVxuvb9zkG6+sa8HMpZfVITwIk1ZMRYLsLXOQR/R7fnM7f88
- pgyAjqBhUtIILjSRl5ANLRr/kh3q8GOcRWfoC0EOxOk=;
-X-AuditID: c39127d2-17dff70000001aee-0b-5d2440025fc4
-Received: from idefix.phytec.de (idefix.phytec.de [172.16.0.10])
- by mickerik.phytec.de (PHYTEC Mail Gateway) with SMTP id BE.B0.06894.200442D5;
- Tue,  9 Jul 2019 09:19:30 +0200 (CEST)
-Received: from augenblix2.phytec.de ([172.16.21.122])
- by idefix.phytec.de (IBM Domino Release 9.0.1FP7)
- with ESMTP id 2019070909192976-309713 ;
- Tue, 9 Jul 2019 09:19:29 +0200 
-From: Stefan Riedmueller <s.riedmueller@phytec.de>
-To: shawnguo@kernel.org, s.hauer@pengutronix.de, robh+dt@kernel.org,
- mark.rutland@arm.com
-Subject: [PATCH 10/10] ARM: dts: imx6ull: Add support for PHYTEC
- phyBOARD-Segin with i.MX 6ULL
-Date: Tue, 9 Jul 2019 09:19:27 +0200
-Message-Id: <1562656767-273566-11-git-send-email-s.riedmueller@phytec.de>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1562656767-273566-1-git-send-email-s.riedmueller@phytec.de>
-References: <1562656767-273566-1-git-send-email-s.riedmueller@phytec.de>
-X-MIMETrack: Itemize by SMTP Server on Idefix/Phytec(Release 9.0.1FP7|August
- 17, 2016) at 09.07.2019 09:19:29,
- Serialize by Router on Idefix/Phytec(Release 9.0.1FP7|August  17, 2016) at
- 09.07.2019 09:19:30, Serialize complete at 09.07.2019 09:19:30
-X-TNEFEvaluated: 1
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrALMWRmVeSWpSXmKPExsWyRoCBS5fJQSXWoOsjp8X8I+dYLR5e9bdY
- NXUni8Wmx9dYLbp+rWS2uLxrDpvF0usXmSweXOxisWjde4Td4u/2TSwWL7aIO3B7rJm3htFj
- x90ljB47Z91l99i0qpPNY/OSeo+N73YwefT/NfD4vEkugCOKyyYlNSezLLVI3y6BK2P1tFam
- gkceFWe3LGNrYNxn3cXIySEhYCLRPbWZpYuRi0NIYAejROOEs4wQzgVGiQdvLrCBVLEJGEks
- mNbIBGKLCERKvNv+mx2kiFlgD6PEtOvXGUESwgJxEg0X74M1sAioSEzuncIKYvMKeEqcOH2B
- EWKdnMTNc53MIDYnUPzoxV9gtpCAh8TlBdPAzpAQaGSSaPi+hh2iQUji9OKzzBMY+RYwMqxi
- FMrNTM5OLcrM1ivIqCxJTdZLSd3ECAzVwxPVL+1g7JvjcYiRiYPxEKMEB7OSCO8+d+VYId6U
- xMqq1KL8+KLSnNTiQ4zSHCxK4rwbeEvChATSE0tSs1NTC1KLYLJMHJxSDYy8d+SNrul4mMhM
- Cak42/P2cKCDe5iLVa+AtFqMgFpSloS52fIHUSWrXdtUp5uzTzerX1y8LmGxeLDjui01Wp/5
- mJW4NilEPH0mN2HW46anXN0/+ucxLBF/om7FffhhwG3958tCbvgdi/VZa79jUkPSxGfzDrG8
- OScZf1hU89Dn2npthXdL+5VYijMSDbWYi4oTAd4pPhdDAgAA
+	id 1hkkTG-0003QF-E9; Tue, 09 Jul 2019 07:23:26 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hkkQ8-0000ZS-Iz
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 07:20:14 +0000
+Received: by mail-ot1-f67.google.com with SMTP id z23so18875783ote.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 09 Jul 2019 00:20:11 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=jN2HTBbGVnb2PEAaaQgYC49W0HWjdbr8AlkujX6bfm4=;
+ b=DWhY0HwaKCRxTKG1P59IVsCxIUGlR0h38Mjn1JIfHim0z0gFMvxjexyCaewtbL+0VJ
+ 5d/IKoZKFwOlkJCXwsRpbHl0NM6MyjNgQSOMosv3zx/wZAauWZ7PcHzNTPAXKpcyarsb
+ vc5wQv9Di6ICNw1fkm0tBC1/CFe4pa62hIFSY7DlNT9QYr5OPXD/zVc5PtoGqQ4hN547
+ 0DLEn7fjZWAnGPXKxioNTvbA1+sEbIQJ5tjB98D/+oFiqz+u7FqqbyTLGdVDTB907OG+
+ RkDrV0hJKNUBjIg/5liFD9xIEqLyX7/vkYAQHF2gD4qabou9RBM5eok1OPB+3nYbTLA4
+ NeQw==
+X-Gm-Message-State: APjAAAXIL9LZvpImeJ3NV16HO4h0vo8ESB66whv286ydvUCRvudIqPw8
+ jI4ygm80tatVVhlQ7YLESsYsT4K7H3BiUQu4PkE=
+X-Google-Smtp-Source: APXvYqxE7Rzx/ReyPW+HyS+6YOcssLdrIsl9ixHsPj57iPeLp8P8putvByylsYNjEpte51ZzGGHNNy/7tsynQP7KbCQ=
+X-Received: by 2002:a05:6830:8a:: with SMTP id
+ a10mr17152013oto.167.1562656810767; 
+ Tue, 09 Jul 2019 00:20:10 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190628181457.6609-1-jeremy.linton@arm.com>
+ <20190628181457.6609-2-jeremy.linton@arm.com>
+ <CAJZ5v0jh0+WU5fpd9enq0UHrHzh+0Sgv-xoRiJM3jgu9dQFvdw@mail.gmail.com>
+ <1745d9ee-a4e0-9a6f-138c-c0d5b42b5281@arm.com>
+ <CAJZ5v0jM5VEuYuY7RdeXYs0S04uRYq5_01fKSBKOouS5DgBhww@mail.gmail.com>
+ <3882f986-54b6-ce7c-5e52-9ad6159b7e6f@arm.com>
+In-Reply-To: <3882f986-54b6-ce7c-5e52-9ad6159b7e6f@arm.com>
+From: "Rafael J. Wysocki" <rafael@kernel.org>
+Date: Tue, 9 Jul 2019 09:19:59 +0200
+Message-ID: <CAJZ5v0gvFApZ1+CsKtGbqZgt+nA64Wywq6PBXELbPXSDsD2WZg@mail.gmail.com>
+Subject: Re: [PATCH v3 1/2] ACPI/PPTT: Add support for ACPI 6.3 thread flag
+To: Jeremy Linton <jeremy.linton@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_001939_125042_CEA53D80 
-X-CRM114-Status: GOOD (  15.38  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190709_002012_682213_F425A584 
+X-CRM114-Status: GOOD (  22.04  )
+X-Spam-Score: 1.8 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (1.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [195.145.39.210 listed in list.dnswl.org]
+ no trust [209.85.210.67 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (rjwysocki[at]gmail.com)
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,428 +86,104 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, martyn.welch@collabora.com,
- linux-kernel@vger.kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
- festevam@gmail.com, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ "Rafael J. Wysocki" <rafael@kernel.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, Sudeep Holla <sudeep.holla@arm.com>,
+ Will Deacon <will.deacon@arm.com>,
+ ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>, Len Brown <lenb@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In addition to the PHYTEC phyCORE-i.MX 6UL the PHYTEC phyBOARD-Segin is
-also available with the PHYTEC phyCORE-i.MX 6ULL. So this adds support
-for this SOM and its baseboards.
+On Thu, Jul 4, 2019 at 4:41 AM Jeremy Linton <jeremy.linton@arm.com> wrote:
+>
+> Hi,
+>
+> On 7/3/19 4:57 PM, Rafael J. Wysocki wrote:
+> > On Wed, Jul 3, 2019 at 5:11 PM Jeremy Linton <jeremy.linton@arm.com> wrote:
+> >>
+> >> Hi,
+> >>
+> >> Thanks for taking a look at this.
+> >>
+> >> On 7/3/19 4:24 AM, Rafael J. Wysocki wrote:
+> >>> On Fri, Jun 28, 2019 at 8:15 PM Jeremy Linton <jeremy.linton@arm.com> wrote:
+> >>>>
+> >>>> ACPI 6.3 adds a flag to the CPU node to indicate whether
+> >>>> the given PE is a thread. Add a function to return that
+> >>>> information for a given linux logical CPU.
+> >>>>
+> >>>> Signed-off-by: Jeremy Linton <jeremy.linton@arm.com>
+> >>>> ---
+> >>>>    drivers/acpi/pptt.c  | 62 +++++++++++++++++++++++++++++++++++++++++++-
+> >>>>    include/linux/acpi.h |  5 ++++
+> >>>>    2 files changed, 66 insertions(+), 1 deletion(-)
+> >>>>
+> >>>> diff --git a/drivers/acpi/pptt.c b/drivers/acpi/pptt.c
+> >>>> index b72e6afaa8fb..bb6196422fad 100644
+> >>>> --- a/drivers/acpi/pptt.c
+> >>>> +++ b/drivers/acpi/pptt.c
+> >>>> @@ -517,6 +517,52 @@ static int find_acpi_cpu_topology_tag(unsigned int cpu, int level, int flag)
+> >>>>           return retval;
+> >>>>    }
+> >>>>
+> >>>> +/**
+> >>>> + * check_acpi_cpu_flag() - Determine if CPU node has a flag set
+> >>>> + * @cpu: Kernel logical CPU number
+> >>>> + * @rev: The PPTT revision defining the flag
+> >>>> + * @flag: The flag itself
+> >>>> + *
+> >>>> + * Check the node representing a CPU for a given flag.
+> >>>> + *
+> >>>> + * Return: -ENOENT if the PPTT doesn't exist, the CPU cannot be found or
+> >>>> + *        the table revision isn't new enough.
+> >>>> + *        1, any passed flag set
+> >>>> + *        0, flag unset
+> >>>> + */
+> >>>> +static int check_acpi_cpu_flag(unsigned int cpu, int rev, u32 flag)
+> >>>
+> >>> Why not bool?
+> >>
+> >> At least for the thread flag we need the three states so that we can
+> >> fall back to the CPU's description of itself on machines without ACPI
+> >> 6.3 tables.
+> >>
+> >> The ThunderX2 is threaded and without a firmware update a change like
+> >> this will break it.
+> >
+> > Fair enough.
+> >
+> >>>
+> >>>> +{
+> >>>> +       struct acpi_table_header *table;
+> >>>> +       acpi_status status;
+> >>>> +       u32 acpi_cpu_id = get_acpi_id_for_cpu(cpu);
+> >>>> +       struct acpi_pptt_processor *cpu_node = NULL;
+> >>>> +       int ret = -ENOENT;
+> >>>> +       static int saved_pptt_rev = -1;
+> >>>> +
+> >>>> +       /* Cache the PPTT revision to avoid repeat table get/put on failure */
+> >>>
+> >>> This is a rather questionable optimization.
+> >>>
+> >>> Does the extra table get/put really matter?
+> >>
+> >> AFAIK, Probably not.
+> >
+> > Then why to optimize it?
+>
+> There was some discussion in the v2 review thread about all the get/put
+> operations which only existed to return failure for each core in the
+> machine.
+>
+> https://www.spinics.net/lists/arm-kernel/msg735948.html
+>
+> I guess I should drop it, until we have some proof that there is a problem.
 
-It comes in a full featured option with either NAND flash or eMMC and in
-a low cost option only available with NAND flash.
-
-The hardware specs are:
-
- - Full featured with NAND or eMMC:
-    * i.MX 6ULL Y2
-    * 512MB DDR3 memory
-    * 512MB NAND flash or 4GB/8GB eMMC
-    * Dual 10/100 Ethernet
-    * USB Host and USB OTG
-    * RS232
-    * MicroSD external storage
-    * Audio, RS232, I2C, SPI, CAN headers
-    * Further I/O options via A/V and Expansion headers
-
- - Low cost with NAND:
-    * i.MX 6ULL Y0
-    * 256MB DDR3 memory
-    * 128MB NAND flash
-    * Single 10/100 Ethernet
-    * USB OTG
-    * RS232
-    * MicroSD external storage
-    * I2C
-    * Further I/O options via Expansion headers
-
-Signed-off-by: Stefan Riedmueller <s.riedmueller@phytec.de>
----
- arch/arm/boot/dts/Makefile                         |  3 +
- arch/arm/boot/dts/imx6ull-phytec-phycore-som.dtsi  | 24 ++++++
- .../boot/dts/imx6ull-phytec-segin-ff-rdk-emmc.dts  | 93 ++++++++++++++++++++++
- .../boot/dts/imx6ull-phytec-segin-ff-rdk-nand.dts  | 93 ++++++++++++++++++++++
- .../boot/dts/imx6ull-phytec-segin-lc-rdk-nand.dts  | 45 +++++++++++
- .../boot/dts/imx6ull-phytec-segin-peb-eval-01.dtsi | 19 +++++
- arch/arm/boot/dts/imx6ull-phytec-segin.dtsi        | 38 +++++++++
- 7 files changed, 315 insertions(+)
- create mode 100644 arch/arm/boot/dts/imx6ull-phytec-phycore-som.dtsi
- create mode 100644 arch/arm/boot/dts/imx6ull-phytec-segin-ff-rdk-emmc.dts
- create mode 100644 arch/arm/boot/dts/imx6ull-phytec-segin-ff-rdk-nand.dts
- create mode 100644 arch/arm/boot/dts/imx6ull-phytec-segin-lc-rdk-nand.dts
- create mode 100644 arch/arm/boot/dts/imx6ull-phytec-segin-peb-eval-01.dtsi
- create mode 100644 arch/arm/boot/dts/imx6ull-phytec-segin.dtsi
-
-diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-index 668b57c8cc57..16efd11cf20f 100644
---- a/arch/arm/boot/dts/Makefile
-+++ b/arch/arm/boot/dts/Makefile
-@@ -580,6 +580,9 @@ dtb-$(CONFIG_SOC_IMX6UL) += \
- 	imx6ull-14x14-evk.dtb \
- 	imx6ull-colibri-eval-v3.dtb \
- 	imx6ull-colibri-wifi-eval-v3.dtb \
-+	imx6ull-phytec-segin-ff-rdk-nand.dtb \
-+	imx6ull-phytec-segin-ff-rdk-emmc.dtb \
-+	imx6ull-phytec-segin-lc-rdk-nand.dtb \
- 	imx6ulz-14x14-evk.dtb
- dtb-$(CONFIG_SOC_IMX7D) += \
- 	imx7d-cl-som-imx7.dtb \
-diff --git a/arch/arm/boot/dts/imx6ull-phytec-phycore-som.dtsi b/arch/arm/boot/dts/imx6ull-phytec-phycore-som.dtsi
-new file mode 100644
-index 000000000000..56cd16e5a77f
---- /dev/null
-+++ b/arch/arm/boot/dts/imx6ull-phytec-phycore-som.dtsi
-@@ -0,0 +1,24 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+/*
-+ * Copyright (C) 2019 PHYTEC Messtechnik GmbH
-+ * Author: Stefan Riedmueller <s.riedmueller@phytec.de>
-+ */
-+
-+#include "imx6ul-phytec-phycore-som.dtsi"
-+
-+/ {
-+	model = "PHYTEC phyCORE-i.MX6 ULL";
-+	compatible = "phytec,imx6ull-pcl063", "fsl,imx6ull";
-+};
-+
-+&iomuxc {
-+	/delete-node/ gpioledssomgrp;
-+};
-+
-+&iomuxc_snvs {
-+	pinctrl_gpioleds_som: gpioledssomgrp {
-+		fsl,pins = <
-+			MX6ULL_PAD_SNVS_TAMPER4__GPIO5_IO04	0x0b0b0
-+		>;
-+	};
-+};
-diff --git a/arch/arm/boot/dts/imx6ull-phytec-segin-ff-rdk-emmc.dts b/arch/arm/boot/dts/imx6ull-phytec-segin-ff-rdk-emmc.dts
-new file mode 100644
-index 000000000000..9648d4ecaf58
---- /dev/null
-+++ b/arch/arm/boot/dts/imx6ull-phytec-segin-ff-rdk-emmc.dts
-@@ -0,0 +1,93 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+/*
-+ * Copyright (C) 2019 PHYTEC Messtechnik GmbH
-+ * Author: Stefan Riedmueller <s.riedmueller@phytec.de>
-+ */
-+
-+/dts-v1/;
-+#include "imx6ull.dtsi"
-+#include "imx6ull-phytec-phycore-som.dtsi"
-+#include "imx6ull-phytec-segin.dtsi"
-+#include "imx6ull-phytec-segin-peb-eval-01.dtsi"
-+
-+/ {
-+	model = "PHYTEC phyBOARD-Segin i.MX6 ULL Full Featured with eMMC";
-+	compatible = "phytec,imx6ull-pbacd10-emmc", "phytec,imx6ull-pbacd10",
-+		     "phytec,imx6ull-pcl063","fsl,imx6ull";
-+};
-+
-+&adc1 {
-+	status = "okay";
-+};
-+
-+&can1 {
-+	status = "okay";
-+};
-+
-+&tlv320 {
-+	status = "okay";
-+};
-+
-+&ecspi3 {
-+	status = "okay";
-+};
-+
-+&ethphy1 {
-+	status = "okay";
-+};
-+
-+&ethphy2 {
-+	status = "okay";
-+};
-+
-+&fec1 {
-+	status = "okay";
-+};
-+
-+&fec2 {
-+	status = "okay";
-+};
-+
-+&i2c_rtc {
-+	status = "okay";
-+};
-+
-+&reg_can1_en {
-+	status = "okay";
-+};
-+
-+&reg_sound_1v8 {
-+	status = "okay";
-+};
-+
-+&reg_sound_3v3 {
-+	status = "okay";
-+};
-+
-+&sai2 {
-+	status = "okay";
-+};
-+
-+&sound {
-+	status = "okay";
-+};
-+
-+&uart5 {
-+	status = "okay";
-+};
-+
-+&usbotg1 {
-+	status = "okay";
-+};
-+
-+&usbotg2 {
-+	status = "okay";
-+};
-+
-+&usdhc1 {
-+	status = "okay";
-+};
-+
-+&usdhc2 {
-+	status = "okay";
-+};
-diff --git a/arch/arm/boot/dts/imx6ull-phytec-segin-ff-rdk-nand.dts b/arch/arm/boot/dts/imx6ull-phytec-segin-ff-rdk-nand.dts
-new file mode 100644
-index 000000000000..656baf846453
---- /dev/null
-+++ b/arch/arm/boot/dts/imx6ull-phytec-segin-ff-rdk-nand.dts
-@@ -0,0 +1,93 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+/*
-+ * Copyright (C) 2019 PHYTEC Messtechnik GmbH
-+ * Author: Stefan Riedmueller <s.riedmueller@phytec.de>
-+ */
-+
-+/dts-v1/;
-+#include "imx6ull.dtsi"
-+#include "imx6ull-phytec-phycore-som.dtsi"
-+#include "imx6ull-phytec-segin.dtsi"
-+#include "imx6ull-phytec-segin-peb-eval-01.dtsi"
-+
-+/ {
-+	model = "PHYTEC phyBOARD-Segin i.MX6 ULL Full Featured with NAND";
-+	compatible = "phytec,imx6ull-pbacd10-nand", "phytec,imx6ull-pbacd10",
-+		     "phytec,imx6ull-pcl063", "fsl,imx6ull";
-+};
-+
-+&adc1 {
-+	status = "okay";
-+};
-+
-+&can1 {
-+	status = "okay";
-+};
-+
-+&tlv320 {
-+	status = "okay";
-+};
-+
-+&ecspi3 {
-+	status = "okay";
-+};
-+
-+&ethphy1 {
-+	status = "okay";
-+};
-+
-+&ethphy2 {
-+	status = "okay";
-+};
-+
-+&fec1 {
-+	status = "okay";
-+};
-+
-+&fec2 {
-+	status = "okay";
-+};
-+
-+&gpmi {
-+	status = "okay";
-+};
-+
-+&i2c_rtc {
-+	status = "okay";
-+};
-+
-+&reg_can1_en {
-+	status = "okay";
-+};
-+
-+&reg_sound_1v8 {
-+	status = "okay";
-+};
-+
-+&reg_sound_3v3 {
-+	status = "okay";
-+};
-+
-+&sai2 {
-+	status = "okay";
-+};
-+
-+&sound {
-+	status = "okay";
-+};
-+
-+&uart5 {
-+	status = "okay";
-+};
-+
-+&usbotg1 {
-+	status = "okay";
-+};
-+
-+&usbotg2 {
-+	status = "okay";
-+};
-+
-+&usdhc1 {
-+	status = "okay";
-+};
-diff --git a/arch/arm/boot/dts/imx6ull-phytec-segin-lc-rdk-nand.dts b/arch/arm/boot/dts/imx6ull-phytec-segin-lc-rdk-nand.dts
-new file mode 100644
-index 000000000000..e168494e0a6d
---- /dev/null
-+++ b/arch/arm/boot/dts/imx6ull-phytec-segin-lc-rdk-nand.dts
-@@ -0,0 +1,45 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+/*
-+ * Copyright (C) 2019 PHYTEC Messtechnik GmbH
-+ * Author: Stefan Riedmueller <s.riedmueller@phytec.de>
-+ */
-+
-+/dts-v1/;
-+#include "imx6ull.dtsi"
-+#include "imx6ull-phytec-phycore-som.dtsi"
-+#include "imx6ull-phytec-segin.dtsi"
-+#include "imx6ull-phytec-segin-peb-eval-01.dtsi"
-+
-+/ {
-+	model = "PHYTEC phyBOARD-Segin i.MX6 ULL Low Cost with NAND";
-+	compatible = "phytec,imx6ull-pbacd10-nand", "phytec,imx6ull-pbacd10",
-+		     "phytec,imx6ull-pcl063", "fsl,imx6ull";
-+};
-+
-+&adc1 {
-+	status = "okay";
-+};
-+
-+&ethphy1 {
-+	status = "okay";
-+};
-+
-+&fec1 {
-+	status = "okay";
-+};
-+
-+&gpmi {
-+	status = "okay";
-+};
-+
-+&i2c_rtc {
-+	status = "okay";
-+};
-+
-+&usbotg1 {
-+	status = "okay";
-+};
-+
-+&usdhc1 {
-+	status = "okay";
-+};
-diff --git a/arch/arm/boot/dts/imx6ull-phytec-segin-peb-eval-01.dtsi b/arch/arm/boot/dts/imx6ull-phytec-segin-peb-eval-01.dtsi
-new file mode 100644
-index 000000000000..ff08d95a1aa2
---- /dev/null
-+++ b/arch/arm/boot/dts/imx6ull-phytec-segin-peb-eval-01.dtsi
-@@ -0,0 +1,19 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+/*
-+ * Copyright (C) 2019 PHYTEC Messtechnik GmbH
-+ * Author: Stefan Riedmueller <s.riedmueller@phytec.de>
-+ */
-+
-+#include "imx6ul-phytec-segin-peb-eval-01.dtsi"
-+
-+&iomuxc {
-+	/delete-node/ gpio_keysgrp;
-+};
-+
-+&iomuxc_snvs {
-+	pinctrl_gpio_keys: gpio_keysgrp {
-+		fsl,pins = <
-+			MX6ULL_PAD_SNVS_TAMPER0__GPIO5_IO00	0x79
-+		>;
-+	};
-+};
-diff --git a/arch/arm/boot/dts/imx6ull-phytec-segin.dtsi b/arch/arm/boot/dts/imx6ull-phytec-segin.dtsi
-new file mode 100644
-index 000000000000..c1595fc785f7
---- /dev/null
-+++ b/arch/arm/boot/dts/imx6ull-phytec-segin.dtsi
-@@ -0,0 +1,38 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+/*
-+ * Copyright (C) 2019 PHYTEC Messtechnik GmbH
-+ * Author: Stefan Riedmueller <s.riedmueller@phytec.de>
-+ */
-+
-+#include "imx6ul-phytec-segin.dtsi"
-+
-+/ {
-+	model = "PHYTEC phyBOARD-Segin i.MX6 ULL";
-+	compatible = "phytec,imx6ull-pbacd-10", "phytec,imx6ull-pcl063","fsl,imx6ull";
-+};
-+
-+&iomuxc {
-+	/delete-node/ flexcan1engrp;
-+	/delete-node/ rtcintgrp;
-+	/delete-node/ stmpegrp;
-+};
-+
-+&iomuxc_snvs {
-+	princtrl_flexcan1_en: flexcan1engrp {
-+		fsl,pins = <
-+			MX6ULL_PAD_SNVS_TAMPER2__GPIO5_IO02	0x17059
-+		>;
-+	};
-+
-+	pinctrl_rtc_int: rtcintgrp {
-+		fsl,pins = <
-+			MX6ULL_PAD_SNVS_TAMPER1__GPIO5_IO01	0x17059
-+		>;
-+	};
-+
-+	pinctrl_stmpe: stmpegrp {
-+		fsl,pins = <
-+			MX6ULL_PAD_SNVS_TAMPER3__GPIO5_IO03	0x17059
-+		>;
-+	};
-+};
--- 
-2.7.4
-
+Yes, please.
 
 _______________________________________________
 linux-arm-kernel mailing list
