@@ -2,77 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD0916382B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 16:49:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 04CD363830
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 16:50:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s+G8f02Lkto7mkkMxX0nBDZygLE+zofFGQjceQm/RhQ=; b=iSwvHBD1Ylr6XV
-	CtLDPLkTLSjbbnOkt+Yb63yBpnAiqFUu16xhpvY1JOfP8j5pVoXG20gyXsA3g8DdZs0K8s4PxxYVE
-	bioN6Mo2uGYQUnyZpb8eLI6CEIJLyzeagANM7YjiL9dhrMvMkZScpRltBke34igdt9TGbk0vA/UXq
-	wJpZptGvWbRGtwoQ/9XWEzFzqRBmy/FWA6fXa+mN626gwGDjkyZOfV+QGEkpTIW05rLgeOeFj6ZdS
-	QMQMMVQIgcftdhjg7fRlC96+n4ThW77EaRI/E+igXQij0/3M73LABMjRnBUcRekR3v4SOog+FBY3V
-	MCi4XDUCSXrHBqDIx9RA==;
+	List-Owner; bh=aBOKgzJ9pZUNLkRuOzUkTQOtB+WSwodkv3/LSNIwqKU=; b=D1RYv4V4aiGWqs
+	3lT8Zzvxdi8URkd4R6SoF8mHYLDPQoaEyf6mCR3MrBntcCbad8ujGr20/HCYVld6BlmHacp3zARWc
+	0hc547Y+tlU0CyzNUOVaIm4/KdsGbB1zbr1DQ9Q64/AsehpnjBktE2K6V2rmvlwlqCvgYIL/QuVWJ
+	BqCRkRiyCMiCAkNvEuYJKV4LEcF8RTd6p7++FM7/JCrDnjpgn80qu+y1O4y/e15Kp5CxIgCL1xeSD
+	PJhKYur4SZVzBGDHLZiQMvpf9M/wENAf46mzbca+Y+57YWMZ1dLrZ/IMsOgA2bddKN7kiQqiHpsRJ
+	t7DMxOJK9cz3nyyqqLcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkrRA-0006Y3-1g; Tue, 09 Jul 2019 14:49:44 +0000
-Received: from mail-io1-f68.google.com ([209.85.166.68])
+	id 1hkrSF-0008Em-PS; Tue, 09 Jul 2019 14:50:51 +0000
+Received: from mail-io1-f67.google.com ([209.85.166.67])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkrQw-0006Lw-JS
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 14:49:32 +0000
-Received: by mail-io1-f68.google.com with SMTP id z3so28772680iog.0
+ id 1hkrS5-0008E5-EC
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 14:50:42 +0000
+Received: by mail-io1-f67.google.com with SMTP id m24so34264263ioo.2
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 09 Jul 2019 07:49:30 -0700 (PDT)
+ Tue, 09 Jul 2019 07:50:41 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=NBos5KwAP2Y9O9kzC0Y3x26RLLeEVK2uJfPnwG/7Y9E=;
- b=EQCC7g7ZrvowNSW6Juseiar/TJ4nqfIatWtndIBakqru3PH4SOuCZxe1PimCMH814f
- wIghmY2i+lQV7suzikPqIrCab3m9D85pW+A3XHKOAejY32PcFV6aJ8rPrko86FSJweHy
- eakEwsl1kgcvAbfsZdb7s4MpvhFtlRm5UIfv0eKBxd38LaXMbOQphX9Hd1D4Bwc0Us4a
- +U0XG2SYfscRWV1i1XIoVJFN7yGEKoAWdgbjy2HpWZkw2A6yryTjSMwZdDr5Y3DN0h4H
- Fh3SU2fXJjYOuxe0ZKioW/i0t2uBVyfSx7B2cicCNYeHeyWIRFaZZzU0yPsjpWLvjfgH
- DQLg==
-X-Gm-Message-State: APjAAAUGD2wt+khiklOl+K3A9ajCj5EmYesqOI4uCu4283kHSzk3B1ma
- UxfCo1ty/vjFUAIas+XCCvaiXAYWYA==
-X-Google-Smtp-Source: APXvYqyE5RmuWhStelgqyIGOf6PvzmyOg1Fsspjxojnp3v8t3CgCwImQuOBGdwN4EusPvXDRomJhDg==
-X-Received: by 2002:a02:230a:: with SMTP id u10mr28541580jau.117.1562683769810; 
- Tue, 09 Jul 2019 07:49:29 -0700 (PDT)
+ bh=46Epk3/36kPZgwCBdnESdwm9AsP3sDBy9DMR2D84jbQ=;
+ b=QttAWI980IJ3NPv7egma457u/0V4gRgNNw9iuO5PWRR9ZWiEivUPxqsgfl5I9Iwv2b
+ uSL3NdajK70VWE4xIXiX57B6HZXQv2aw5mw7BaXZVS/nHoQ9nluqzqpMjPdQr4mfZhUu
+ 7uGOJ8/6SWg95HOiEszkzgR4wV/xrp1ZGSV3pRvxbdUI0hBQ7Mbp1gazsI0w8D3F6nNT
+ feyLbGLpliY2LJ4vV+fQ3Ml18iY40NzYlro6iOyXkOso+ZPKjyY7v42wANLAOJVIGgXZ
+ 1itMDmdoWFGqw4Vjysmjh9eTui3PRY5feIC+Mii7r6yZIe8i7jP74TNStpKnQ3keK6Tz
+ tgHw==
+X-Gm-Message-State: APjAAAVpayJQ57n8uzUGtjPD3OOKmh2P6TrkrC3fczw9KATbBi7rkdG4
+ BHuGGJh258qOCzlP59cuWw==
+X-Google-Smtp-Source: APXvYqzHI8qSCiXN6FftFD/8DWYZDs1KQ1ycSN/veVfBVhoubY3v9ODlSdRUq4IMRUPQR2RPAVWsOA==
+X-Received: by 2002:a5e:9701:: with SMTP id w1mr161447ioj.294.1562683840732;
+ Tue, 09 Jul 2019 07:50:40 -0700 (PDT)
 Received: from localhost ([64.188.179.251])
- by smtp.gmail.com with ESMTPSA id s2sm15034890ioj.8.2019.07.09.07.49.28
+ by smtp.gmail.com with ESMTPSA id k2sm16925748iom.50.2019.07.09.07.50.39
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 09 Jul 2019 07:49:29 -0700 (PDT)
-Date: Tue, 9 Jul 2019 08:49:28 -0600
+ Tue, 09 Jul 2019 07:50:40 -0700 (PDT)
+Date: Tue, 9 Jul 2019 08:50:39 -0600
 From: Rob Herring <robh@kernel.org>
 To: Jagan Teki <jagan@amarulasolutions.com>
-Subject: Re: [PATCH v2 1/9] dt-bindings: display: Add TCON LCD compatible for
- R40
-Message-ID: <20190709144928.GA31407@bogus>
+Subject: Re: [PATCH v2 6/9] dt-bindings: sun6i-dsi: Add R40 MIPI-DSI
+ compatible (w/ A64 fallback)
+Message-ID: <20190709145039.GA313@bogus>
 References: <20190614164324.9427-1-jagan@amarulasolutions.com>
- <20190614164324.9427-2-jagan@amarulasolutions.com>
+ <20190614164324.9427-7-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190614164324.9427-2-jagan@amarulasolutions.com>
+In-Reply-To: <20190614164324.9427-7-jagan@amarulasolutions.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_074930_640047_DB0E3DB5 
-X-CRM114-Status: UNSURE (   9.89  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190709_075041_475511_9F9FA2B4 
+X-CRM114-Status: GOOD (  10.39  )
 X-Spam-Score: 2.0 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (2.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.68 listed in list.dnswl.org]
+ no trust [209.85.166.67 listed in list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (robherring2[at]gmail.com)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.68 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
@@ -105,17 +102,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 14 Jun 2019 22:13:16 +0530, Jagan Teki wrote:
-> Like TCON TV0, TV1 allwinner R40 has TCON LCD0, LCD1 which
-> are managed via TCON TOP.
+On Fri, 14 Jun 2019 22:13:21 +0530, Jagan Teki wrote:
+> The MIPI DSI controller on Allwinner R40 is similar on
+> the one on A64 like doesn't associate any DSI_SCLK gating.
 > 
-> Add tcon lcd compatible R40, the same compatible can handle
-> TCON LCD0, LCD1.
+> So, add R40 compatible and append A64 compatible as fallback.
 > 
 > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-> Acked-by: Chen-Yu Tsai <wens@csie.org>
 > ---
->  Documentation/devicetree/bindings/display/sunxi/sun4i-drm.txt | 1 +
+>  Documentation/devicetree/bindings/display/sunxi/sun6i-dsi.txt | 1 +
 >  1 file changed, 1 insertion(+)
 > 
 
