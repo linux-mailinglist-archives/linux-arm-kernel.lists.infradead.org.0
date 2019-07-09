@@ -2,95 +2,146 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C1106392B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 18:17:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A05CB6394B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 18:25:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=xDSSxhbyA6Nxb9Q8kvIKJDeQMT46+fj9tQhY3Bl5Zzs=; b=RW4LOgHUEVpvBofcKtV29I+rtK
-	fLKKSwR00X5hTT8SPorAD1HmzShEWQnjMsZeA6bchUCMO2tjYaoYcUwBY9817F2GTczRrGCfLABJm
-	/NlJP4IXq8Q+njUqXsPT4lpDJBPLXD/IPGsOx36CDOquTLACBW+SIyFVIKqs33jCsm27VLhbnzIEG
-	FzDIYsyXMpuXsHEerw27JsEYDxRMotAPYKd16SzVB3eII0FDSPX48qiZIODDGXvFy0A05hQRBaa+1
-	wMWLFIpXSLPgNLBJyvR6FP8NjoAC/igxSoAnJNVudixXSPPkP5C6xuWc0BgTrLQgBHwVcP8cW6NeW
-	KPMaRt7g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=aTEUl3oVvBKwC2nBYicjh68OGPQhabqtYhjrTy1gEhY=; b=OJxwBvr58DmG8q
+	9fDM6fdUxOAVr5ycyfSKQxYghOmgsTs4JbqGFFbzssmHm7YziLsFPVOgZoQ4c+MTgwB+8KyWhGKIe
+	lOvIh7kHuoEqLRYidj2Q8EYJVfkBCOiZe/NLJwOglgsSvMAi8cOf2+h7mr2fvH9VZKIQmC/ebbmjg
+	EmulMDebHA7EMKLHz+F6h8u3EJXsxDttc9kBdndNKElxPdm5cXWPRt50kVB6WTcb4kdMvpWjVNG2j
+	46ZghwEs32ngMI5xfqQSa3f51FdWT9kBHtyHhsgkkwS9yiJ+mLVwbFFiUUt3JDiW9OAu08T4okny0
+	9ZsdQMo+0sHLsCeF3wNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hksnj-0003zD-JI; Tue, 09 Jul 2019 16:17:07 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1hksva-0005tn-8E; Tue, 09 Jul 2019 16:25:14 +0000
+Received: from esa6.microchip.iphmx.com ([216.71.154.253])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hksnB-0003iU-Jv
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 16:16:35 +0000
-Received: by mail-pl1-x641.google.com with SMTP id b7so10350645pls.6
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 09 Jul 2019 09:16:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=+4V6pf5exFhyJYMgAtLay4UVo3H3rvR9SlpwNT68E70=;
- b=latPdWXAcf1AMijWLbaZYHoXz7H6essf53tAyKt8xO0br3UxRVyCzxNBtRGmDY2Geq
- vUKcjLuEzO15A5HoSy9z65mGkt3de2CuTvxk5H2f6eoQe1q5ojeghKiuYeb5BqjVUAg5
- 2cOTNDmK9G6GbLlp5zPbvE1epvg5Avse2YL948NRdRo28x+O8djDu7cuI8txIGkHtLsT
- BarVLu4La5LlphqxsE7wrL3TEgGCO0cSxr86VFB+bPq3rAEN434vmKtXOYM4cY1KOKg8
- YYbB5TM0cnHc/zcIibBIUYTIWu/tcRQjHLdjXQLaQ3xuyOVHedNMVnNquNO2hm/DGBy2
- wakA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=+4V6pf5exFhyJYMgAtLay4UVo3H3rvR9SlpwNT68E70=;
- b=NUM4SyE6QGKd/Bd0y7rGz8KqwRw95LOIO7ISlEQRVkDbQcXJWQlvV5jdcC2B9NfdoT
- rZXhczNG94z/+sQZXd4tWVinOOWym1PHSNqYG6JeS+OCphzRwxZSWDqR8/Z7IuGuUNXv
- Q3wexUGW9ljkqm4nbfc6WnajZaaux0khKHF2TeTS7HHDxeog6qHCRR2PK9l+oOmgTwjZ
- T+HSI46zZADI42uF+C6NKVuNY+qDlPyaux3qTWAcW6mJjDaiUMbWUgIDwrkOYVxJRrMO
- UXvfGKpfb+hUIFkIgO/j0Q9ywE0l+hQ2UdSfXLMa+inMTyiNyaIF/8jggSlwK0TtiU4R
- 0xug==
-X-Gm-Message-State: APjAAAULQP0DvbRyQAExzDZjTjOH8BzPIwI2TeUGkf3FnEmxjPThs84T
- aUEfuZ2Ee0UJAf1QFKq8saI=
-X-Google-Smtp-Source: APXvYqyOOcWNGHCvM/PWWcpYNxR5BJCWc1Mr/h0wH9+t5YYla3kqBZbZQBrwjLOs1Xqbb3lncndkpQ==
-X-Received: by 2002:a17:902:20c8:: with SMTP id
- v8mr33433506plg.284.1562688992236; 
- Tue, 09 Jul 2019 09:16:32 -0700 (PDT)
-Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id k36sm1386783pgl.42.2019.07.09.09.16.30
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 09 Jul 2019 09:16:31 -0700 (PDT)
-From: Florian Fainelli <f.fainelli@gmail.com>
-To: bcm-kernel-feedback-list@broadcom.com, Arnd Bergmann <arnd@arndb.de>,
- Hauke Mehrtens <hauke@hauke-m.de>,
- =?iso-8859-2?q?Rafa=B3_Mi=B3ecki?= <zajec5@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH] ARM: bcm47094: add missing #cells for mdio-bus-mux
-Date: Tue,  9 Jul 2019 09:16:30 -0700
-Message-Id: <20190709161630.7963-1-f.fainelli@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190703132255.852025-1-arnd@arndb.de>
-References: <20190703132255.852025-1-arnd@arndb.de>
+ id 1hksvK-0005sC-LV
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 16:25:00 +0000
+Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
+ Nicolas.Ferre@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
+ envelope-from="Nicolas.Ferre@microchip.com";
+ x-sender="Nicolas.Ferre@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa6.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
+ envelope-from="Nicolas.Ferre@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa6.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Nicolas.Ferre@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: zq5nIXG1+hmWDqopAW2SsZlZNdGqGrbS7syFp9E8b8nhay8fJxWjVG/nO5UZBVkN8bHiKHAAl8
+ MpLqOD6ASftRqloKwdn4WimpXIWu/UimxwzjijOKxCHJvkLVd5RaH9J/l01TbNOzyu1KGMmg9K
+ 2dlKrFs2mg1+u9Xp+aOhwbpFY7Scqb4uXZ//Xd7uYLO3G9SdPc+B8w4vbb8iP706hdzrXiEyj/
+ 5PqxIrLivl3L2heVQsMBwLng6Fd6cLJJdCVLAYPm/UCFcmMKcmBCAoas0Z6PQIAoD726pV6jm1
+ 8yM=
+X-IronPort-AV: E=Sophos;i="5.63,470,1557212400"; d="scan'208";a="37495532"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 09 Jul 2019 09:24:54 -0700
+Received: from chn-vm-ex02.mchp-main.com (10.10.87.72) by
+ chn-vm-ex04.mchp-main.com (10.10.87.151) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Tue, 9 Jul 2019 09:24:52 -0700
+Received: from NAM03-BY2-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.72) with Microsoft SMTP Server
+ (version=TLS1_2, 
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1713.5 via Frontend
+ Transport; Tue, 9 Jul 2019 09:24:52 -0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector1-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=qzpU393+ErV/wSZV5KBYY30BN4kZCxO4qbcA3mHDmhM=;
+ b=yXwu/in0Vrs4oBL6HVhKySdRxbf63fYcq4pBv/wlWQv7ynSFjJBfvz1rZfQdgEGSvGfiPMoDamdjTdVMWZgQCGOQBIxjfgYXzMYNaokVrG7iyYqhDr7H/8ytIl1s4T3RKvc1RD3PDL8PzC5GFUPFKwxlL64wXjdaE2uhFrcS7y4=
+Received: from DM5PR11MB1658.namprd11.prod.outlook.com (10.172.36.9) by
+ DM5PR11MB1308.namprd11.prod.outlook.com (10.168.105.17) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2052.19; Tue, 9 Jul 2019 16:24:49 +0000
+Received: from DM5PR11MB1658.namprd11.prod.outlook.com
+ ([fe80::ac00:e9e5:9236:a53b]) by DM5PR11MB1658.namprd11.prod.outlook.com
+ ([fe80::ac00:e9e5:9236:a53b%6]) with mapi id 15.20.2052.019; Tue, 9 Jul 2019
+ 16:24:49 +0000
+From: <Nicolas.Ferre@microchip.com>
+To: <Joshua.Henderson@microchip.com>, <bbrezillon@kernel.org>,
+ <airlied@linux.ie>, <alexandre.belloni@bootlin.com>
+Subject: Re: [PATCH] drm/atmel-hlcdc: set layer REP bit to enable replication
+ logic
+Thread-Topic: [PATCH] drm/atmel-hlcdc: set layer REP bit to enable replication
+ logic
+Thread-Index: AQHVNnLUp3D4BDdODU6yB+9d2PU0ng==
+Date: Tue, 9 Jul 2019 16:24:49 +0000
+Message-ID: <13aa50e4-a726-3f82-b186-79b452199a02@microchip.com>
+References: <1562686509-8747-1-git-send-email-joshua.henderson@microchip.com>
+In-Reply-To: <1562686509-8747-1-git-send-email-joshua.henderson@microchip.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: BYAPR04CA0029.namprd04.prod.outlook.com
+ (2603:10b6:a03:40::42) To DM5PR11MB1658.namprd11.prod.outlook.com
+ (2603:10b6:4:8::9)
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [213.41.198.74]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 62245927-3bd6-4118-01be-08d70489f6dc
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:DM5PR11MB1308; 
+x-ms-traffictypediagnostic: DM5PR11MB1308:
+x-ms-exchange-purlcount: 1
+x-microsoft-antispam-prvs: <DM5PR11MB1308F77FDC29F5387E107390E0F10@DM5PR11MB1308.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8273;
+x-forefront-prvs: 0093C80C01
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(39860400002)(366004)(136003)(346002)(376002)(396003)(199004)(189003)(446003)(966005)(476003)(68736007)(2616005)(11346002)(26005)(81156014)(81166006)(8676002)(486006)(31686004)(8936002)(186003)(14454004)(86362001)(36756003)(6506007)(386003)(52116002)(256004)(31696002)(99286004)(76176011)(71190400001)(71200400001)(2906002)(25786009)(478600001)(72206003)(4326008)(3846002)(6116002)(14444005)(6246003)(66556008)(110136005)(54906003)(229853002)(66946007)(6306002)(102836004)(66066001)(316002)(53546011)(305945005)(6436002)(6512007)(5660300002)(73956011)(7736002)(53936002)(66476007)(64756008)(6486002)(66446008);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM5PR11MB1308;
+ H:DM5PR11MB1658.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: 50CNWcAuCXwrGnE9pqzMPizA65j1Si8QXij5ao+SjCvZSM10OwHDgLX03DxlZo7bay5ZZF43LWwuR/ld82NKi5eXf/UnmIl8AWd4Qg0zhaYJJl9htWmIKv+imkVZjkviYAEpD3yhCRbSlhPsBWhfhAxowPRGNPMR/umGAE3gG3CNLo37NGFF2gx523K7y+GCjXVHVmHi4BcO9DL/cLGwtHUoVyA0SLXgBxETkLyJyeGs8LPXkUOTkaL9Fapn74JQwpz9Sc+u/UHaG8eiKw/8alHdUsnZYsT0WLLMdODTBTQcA+wdDS9c5HMQVVRYsASJztjnPMcHZpa1ZTVI97TDENryTQl3fhil2uken7elyi428n12WWG3CxrENAuNHqyUqhA1z7WzcMc2Kcx3rEjY9Jdayuz/yOZuElRLx7E2cLk=
+Content-ID: <FD2526B8CCCAF349AEF9DF04105D5153@namprd11.prod.outlook.com>
+MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: 62245927-3bd6-4118-01be-08d70489f6dc
+X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Jul 2019 16:24:49.6700 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: nicolas.ferre@microchip.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR11MB1308
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_091633_801041_62CD9D28 
-X-CRM114-Status: GOOD (  11.17  )
-X-Spam-Score: 1.1 (+)
+X-CRM114-CacheID: sfid-20190709_092458_746106_54B91E4C 
+X-CRM114-Status: GOOD (  13.20  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.1 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.154.253 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,35 +153,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Alexandre TORGUE <alexandre.torgue@st.com>,
- Neil Armstrong <narmstrong@baylibre.com>, linux-kernel@vger.kernel.org,
- Vivek Unune <npcomplete13@gmail.com>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: sam@ravnborg.org, linux-arm-kernel@lists.infradead.org,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed,  3 Jul 2019 15:22:45 +0200, Arnd Bergmann <arnd@arndb.de> wrote:
-> The mdio-bus-mux has no #address-cells/#size-cells property,
-> which causes a few dtc warnings:
+On 09/07/2019 at 17:35, Joshua Henderson wrote:
+> This bit enables replication logic to expand an RGB color less than 24
+> bits, to 24 bits, which is used internally for all formats.  Otherwise,
+> the least significant bits are always set to zero and the color may not
+> be what is expected.
 > 
-> arch/arm/boot/dts/bcm47094-linksys-panamera.dts:129.4-18: Warning (reg_format): /mdio-bus-mux/mdio@200:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
-> arch/arm/boot/dts/bcm47094-linksys-panamera.dtb: Warning (pci_device_bus_num): Failed prerequisite 'reg_format'
-> arch/arm/boot/dts/bcm47094-linksys-panamera.dtb: Warning (i2c_bus_reg): Failed prerequisite 'reg_format'
-> arch/arm/boot/dts/bcm47094-linksys-panamera.dtb: Warning (spi_bus_reg): Failed prerequisite 'reg_format'
-> arch/arm/boot/dts/bcm47094-linksys-panamera.dts:128.22-132.5: Warning (avoid_default_addr_size): /mdio-bus-mux/mdio@200: Relying on default #address-cells value
-> arch/arm/boot/dts/bcm47094-linksys-panamera.dts:128.22-132.5: Warning (avoid_default_addr_size): /mdio-bus-mux/mdio@200: Relying on default #size-cells value
-> 
-> Add the normal cell numbers.
-> 
-> Fixes: 2bebdfcdcd0f ("ARM: dts: BCM5301X: Add support for Linksys EA9500")
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> ---
+> Signed-off-by: Joshua Henderson <joshua.henderson@microchip.com>
 
-Applied to devicetree/fixes, thanks!
---
-Florian
+Acked-by: Nicolas Ferre <nicolas.ferre@microchip.com>
+
+Here is patchwork entry:
+https://patchwork.kernel.org/patch/11037167/
+
+Thanks, best regards,
+   Nicolas
+
+> ---
+>   drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_plane.c | 2 +-
+>   1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_plane.c b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_plane.c
+> index eb7c4cf..6f6cf61 100644
+> --- a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_plane.c
+> +++ b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_plane.c
+> @@ -389,7 +389,7 @@ atmel_hlcdc_plane_update_general_settings(struct atmel_hlcdc_plane *plane,
+>   	atmel_hlcdc_layer_write_cfg(&plane->layer, ATMEL_HLCDC_LAYER_DMA_CFG,
+>   				    cfg);
+>   
+> -	cfg = ATMEL_HLCDC_LAYER_DMA;
+> +	cfg = ATMEL_HLCDC_LAYER_DMA | ATMEL_HLCDC_LAYER_REP;
+>   
+>   	if (plane->base.type != DRM_PLANE_TYPE_PRIMARY) {
+>   		cfg |= ATMEL_HLCDC_LAYER_OVR | ATMEL_HLCDC_LAYER_ITER2BL |
+> 
+
+
+-- 
+Nicolas Ferre
 
 _______________________________________________
 linux-arm-kernel mailing list
