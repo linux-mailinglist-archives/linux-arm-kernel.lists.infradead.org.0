@@ -2,66 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D72246353A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 13:56:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E329663544
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 13:59:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xN93O1G+v3mwCKaEzsFXa08uPn9bJUVgTFKAkhuQQpc=; b=az0xiy+mVL0vE3
-	qZfqZO7d+t00YjTVyKJKnW5hftLK2zRxe+7uduHGS9FZEFsy+161S6cXmU3GSBmA4oVt3+al8bSJ6
-	QFURVsiTZMCnkiwhndFAtwoaAQSm/YRLQlSR3Xq4KzmMceWU/+1XQBi8MKSpeeAAQWmzIRKtaKfJ7
-	WgXN9FJo/KREIAcDogzWIk5Qqpuzx26Zrin15ffpks0eYMHaCL5qmHrOdhipzRehnrHZaoAa8LeTA
-	L1VaoiDHETtYMlsmrxg7EJiJY3Eq9J+OntLwq9AhPN/QWavEjHl5+gknzitRDL3VQ7666RLgvaoTP
-	zyPGSBTll/e9Oixq2LgQ==;
+	List-Owner; bh=VmjS7y80iKKJ/pnLUw6ETQ5hiBXCFbDF9C/wjsf9mjQ=; b=pYP8dQ42HpLMiX
+	YVsGVqD09o7uCd7TwEsN6uQgyT3ETpPzGRkD5AkOFpyNDzZf2ujdaLdUtp8fVtCcWWQib/haoNswV
+	2uNrgWPUZogYESZV5qIF6h+9j+AsBqm8dcO+E+x+al/GPgDFGTCdaAVicyzykBx2kATwHbM2hhFXN
+	iYeuvh75i81qfGgTu9fXrlW8BOAzeLsul9dwSy3uyQa1V3oKImebXje9yCyytP9dUx2QrST5lMhLx
+	H8hCXt1+SrEMKEZql1cxCXNhok3txbq3ZLwdXc1JxCSKLbRivyA5arqC9UoAn8cDDJMCl05uaKwYj
+	2cE2WyXVpaARXdMjuQbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkojI-0004E2-L9; Tue, 09 Jul 2019 11:56:16 +0000
+	id 1hkomZ-0004bI-1i; Tue, 09 Jul 2019 11:59:39 +0000
 Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkoj3-0004Bo-Ev
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 11:56:02 +0000
-Received: by mail-vs1-xe41.google.com with SMTP id a186so10432324vsd.7
+ id 1hkomL-0004aN-3t
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 11:59:26 +0000
+Received: by mail-vs1-xe41.google.com with SMTP id h28so10446556vsl.12
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 09 Jul 2019 04:55:57 -0700 (PDT)
+ Tue, 09 Jul 2019 04:59:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=BVsg21whGsT0nCQujzZPC48g95cuUgQWLBZNQAx+pZc=;
- b=Hif8gvZ34qKJMh958dAAJSHO70lREX96FjBgtOfqYNFJyuQpBMR0C1BjfHgf8lDQ92
- sADjoOm6BOziZ8iFV4rfX/D+8PH0/e3yQd9VX01BYzeP27ufOcJLZvyArqht8aRbI3eJ
- IS7yqBpL3VKcMJ1o6/XM6Re5YNCRXm029XCfc=
+ :cc; bh=RiTv9D9r+HWewv08+uDjzds8jJ160NpsMW3nG+2KdoY=;
+ b=b6eUu3HOZ32VMVxihS1TEiZDDJGMWpTKkUmCzgDy0Wn1UIqQ2Hg/sRGYSq7RTss8Dt
+ EUsDIbda6QYf9S42qsjMSo76RaQmk/AXAegCp/GvMR+GeNmoH1GewBpHbDxaucdsY43j
+ Ic831T+DuHkmI1k4SYW5LLWcFpi0VyYWE6dxU=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=BVsg21whGsT0nCQujzZPC48g95cuUgQWLBZNQAx+pZc=;
- b=JPYXfmU+TvzsyS9RiOdb2/u9B4ugAOPhsVRO0jy9uut/btXJb2l+wWZJyHokLPoVK9
- DssF6Rdlq5Gvju4Yu8xqRb1F4tcqYgipQb6SWRDFHM8JNjy0kykFkUm03AcRROL7F42q
- fvUgCcXBXyScCA+oRFUwN38oep8l6+1W7BxIa5C/LgCv5m0R3YLqAaD6WZnO8Ftebk7O
- 0b35RkEf+wtXnZyUBgAad4qbIOsGDhy3Da5/XrRbt2pWWgaZBpxRWg+wSYFoQsyDznRU
- n3XmAKnEGgnPxzjx+RhfjRCQTYfF5gYiQMfTFB6I7+jgX5n1T+II0vxKTdcawSEptoFV
- B0nQ==
-X-Gm-Message-State: APjAAAVv8usUJjK1hvmzKVLPFi78kr0dtuHssEQ2RCHsdNiZkPEedwqe
- /TN3fryP7EYGblYJrd/+2LE6S6BLhqeefDO+YnkNjQ==
-X-Google-Smtp-Source: APXvYqzIvsL1PEG4x0OPfoI+B4eR1OeQ7eQJVZ/D8bs1VUH/IGuRilDy9DOu2h4I32heosv7RyuyXtXOhjY3Ym1TCUo=
-X-Received: by 2002:a67:ebcb:: with SMTP id y11mr13483911vso.138.1562673356146; 
- Tue, 09 Jul 2019 04:55:56 -0700 (PDT)
+ bh=RiTv9D9r+HWewv08+uDjzds8jJ160NpsMW3nG+2KdoY=;
+ b=phCCWSXmAmd/9vYBQt8vOArLNvV0i8IZLMoWlNIb1Q1C8NJt3s9pjhOeZ46DR220oV
+ ohE47Hhn9/BzJkt1PZXeDc4qyraUDQg5xXZB04bIAKWjxKD9i2IyZmi207M88u9GRsOl
+ mYv3nMjlBukq5rHgn7i8BvJTlxMMZOmPiNcLgDf2rCz0Po5vkJDkUi7b5hPIktpnY9Z2
+ RShhsJovdlFnv+14rgGM1Tt758f7n2YHeAKbB+WYgz+wKlASNQRMUugsSpWRkA4QBE1z
+ IerURk8f02bi3A+K0vZHlwMWPtKVTvq4w+1MUCZHIw+pEVyDe2241IzJmDzpRtD+SfvE
+ xHbg==
+X-Gm-Message-State: APjAAAUQtoLQhFBFtWtBq1jm8kxMgOxG/lHsnDwwikXc8BbjcG2HNbj5
+ BKoS0a6hVZ3jb/4nJpSj33PrxTJZBecjVJ4kU6WxvA==
+X-Google-Smtp-Source: APXvYqyNbkbPQt5s+GfBLT3QI7iGlZiQWtRzOE3HxXG0lIDjqNAi3SYslwEYCGrQlbUmVYhU38as6OOl9n5yJb/dYW4=
+X-Received: by 2002:a67:d386:: with SMTP id b6mr14020005vsj.170.1562673563188; 
+ Tue, 09 Jul 2019 04:59:23 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190705042623.129541-1-cychiang@chromium.org>
  <20190705042623.129541-2-cychiang@chromium.org>
- <3d5755cf-34e9-44f7-3b03-6bdfca84ff95@intel.com>
-In-Reply-To: <3d5755cf-34e9-44f7-3b03-6bdfca84ff95@intel.com>
+ <CA+Px+wXtmf9dQQP7ywPLp7Qbbvqau=WnO3qhZ8+qmbJD1gjx+A@mail.gmail.com>
+ <20190705121240.GA20625@sirena.org.uk>
+ <CAFv8NwLP-hUBW8FZW5kooaggeNRG7LAEd2pd_-70YBrVMY-+CQ@mail.gmail.com>
+In-Reply-To: <CAFv8NwLP-hUBW8FZW5kooaggeNRG7LAEd2pd_-70YBrVMY-+CQ@mail.gmail.com>
 From: Cheng-yi Chiang <cychiang@chromium.org>
-Date: Tue, 9 Jul 2019 19:55:29 +0800
-Message-ID: <CAFv8NwLos-XcB9K8315vmmfKn+z0XaBph3QxSwrmqhfYqoju2Q@mail.gmail.com>
+Date: Tue, 9 Jul 2019 19:58:56 +0800
+Message-ID: <CAFv8NwJHpY+ptc+WbeRhsKB8wGnt08r38GG7WUYTrt=wZaGqqA@mail.gmail.com>
 Subject: Re: [PATCH 1/4] ASoC: hdmi-codec: Add an op to set callback function
  for plug event
-To: Cezary Rojewski <cezary.rojewski@intel.com>
+To: Mark Brown <broonie@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_045601_506942_07C98E95 
-X-CRM114-Status: GOOD (  15.19  )
+X-CRM114-CacheID: sfid-20190709_045925_165112_C81B8684 
+X-CRM114-Status: GOOD (  16.29  )
 X-Spam-Score: -6.1 (------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-6.1 points)
@@ -94,83 +96,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "moderated list:SOUND - SOC LAYER / DYNAMIC AUDIO POWER MANAGEM..."
- <alsa-devel@alsa-project.org>, Doug Anderson <dianders@chromium.org>,
- Heiko Stuebner <heiko@sntech.de>, Liam Girdwood <lgirdwood@gmail.com>,
- David Airlie <airlied@linux.ie>, dri-devel@lists.freedesktop.org,
+Cc: ALSA development <alsa-devel@alsa-project.org>,
+ Doug Anderson <dianders@chromium.org>, Heiko Stuebner <heiko@sntech.de>,
+ Liam Girdwood <lgirdwood@gmail.com>, David Airlie <airlied@linux.ie>,
+ linux-kernel <linux-kernel@vger.kernel.org>, dri-devel@lists.freedesktop.org,
  Takashi Iwai <tiwai@suse.com>, tzungbi@chromium.org,
- linux-kernel <linux-kernel@vger.kernel.org>, Hans Verkuil <hverkuil@xs4all.nl>,
- Andrzej Hajda <a.hajda@samsung.com>, Russell King <rmk+kernel@armlinux.org.uk>,
- Mark Brown <broonie@kernel.org>,
+ Jaroslav Kysela <perex@perex.cz>, Hans Verkuil <hverkuil@xs4all.nl>,
+ Tzung-Bi Shih <tzungbi@google.com>, Russell King <rmk+kernel@armlinux.org.uk>,
+ Andrzej Hajda <a.hajda@samsung.com>,
  Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
  Daniel Vetter <daniel@ffwll.ch>, linux-rockchip@lists.infradead.org,
- Dylan Reid <dgreid@chromium.org>, Jaroslav Kysela <perex@perex.cz>,
- linux-arm-kernel@lists.infradead.org
+ Dylan Reid <dgreid@chromium.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jul 9, 2019 at 7:47 PM Cezary Rojewski
-<cezary.rojewski@intel.com> wrote:
+On Mon, Jul 8, 2019 at 1:03 PM Cheng-yi Chiang <cychiang@chromium.org> wrote:
 >
-> On 2019-07-05 06:26, Cheng-Yi Chiang wrote:
-> > +static void hdmi_codec_jack_report(struct hdmi_codec_priv *hcp,
-> > +                                unsigned int jack_status)
-> > +{
-> > +     if (!hcp->jack)
-> > +             return;
-> > +
-> > +     if (jack_status != hcp->jack_status) {
-> > +             snd_soc_jack_report(hcp->jack, jack_status, SND_JACK_LINEOUT);
-> > +             hcp->jack_status = jack_status;
-> > +     }
-> > +}
+> On Fri, Jul 5, 2019 at 8:12 PM Mark Brown <broonie@kernel.org> wrote:
+> >
+> > On Fri, Jul 05, 2019 at 03:08:37PM +0800, Tzung-Bi Shih wrote:
+> > > On Fri, Jul 5, 2019 at 12:26 PM Cheng-Yi Chiang <cychiang@chromium.org> wrote:
+> >
+> > > > +typedef void (*hdmi_codec_plugged_cb)(struct platform_device *dev,
+> > > > +                                     bool plugged);
+> > > > +
+> >
+> > > The callback prototype is "weird" by struct platform_device.  Is it
+> > > possible to having snd_soc_component instead of platform_device?
+> >
+> > Or if it's got to be a device why not just a generic device so
+> > we're not tied to a particular bus here?
 >
-> Single "if" statement instead? The first "if" does not even cover all
-> cases - if the secondary check fails, you'll "return;" too.
+> My intention was to invoke the call in dw-hdmi.c like this:
 >
-ACK.
-I will fix in v2.
-> > +/**
-> > + * hdmi_codec_set_jack_detect - register HDMI plugged callback
-> > + * @component: the hdmi-codec instance
-> > + * @jack: ASoC jack to report (dis)connection events on
-> > + */
-> > +int hdmi_codec_set_jack_detect(struct snd_soc_component *component,
-> > +                            struct snd_soc_jack *jack)
-> > +{
-> > +     struct hdmi_codec_priv *hcp = snd_soc_component_get_drvdata(component);
-> > +     int ret;
-> > +
-> > +     if (hcp->hcd.ops->hook_plugged_cb) {
-> > +             hcp->jack = jack;
-> > +             ret = hcp->hcd.ops->hook_plugged_cb(component->dev->parent,
-> > +                                                 hcp->hcd.data,
-> > +                                                 plugged_cb);
-> > +             if (ret) {
-> > +                     hcp->jack = NULL;
-> > +                     return ret;
-> > +             }
-> > +             return 0;
-> > +     }
-> > +     return -EOPNOTSUPP;
-> > +}
-> > +EXPORT_SYMBOL_GPL(hdmi_codec_set_jack_detect);
+>     hdmi->plugged_cb(hdmi->audio,
+>                                    result == connector_status_connected);
 >
-> int ret = -EOPNOTSUPP;
-> (...)
->
-> return ret;
->
-> In consequence, you can reduce the number of "return(s)" and also remove
-> the redundant parenthesis for the if-statement used to set jack to NULL.
->
-> Czarek
-ACK
-will fix in v2.
+> Here hdmi->audio is a platform_device.
+> I think dw-hdmi can not get  snd_soc_component easily.
+> I can use a generic device here so the ops is more general.
+> The calling will be like
+>     hdmi->plugged_cb(&hdmi->audio->dev,
+>                                    result == connector_status_connected);
+> I will update this in v2.
+> Thanks!
 
-Thanks a lot for the review!
+I have thought about this a bit more. And I think the more proper
+interface is to pass in a generic struct device* for codec.
+This way, the user of hdmi-codec driver on the DRM side is not limited
+to the relation chain of
+audio platform device -> codec platform device, which is just a
+special case in dw-hdmi driver.
+As long as DRM side can get hdmi-codec device pointer through
+drv_data, it can use this callback.
+Hope this makes the interface more generic.
 
 _______________________________________________
 linux-arm-kernel mailing list
