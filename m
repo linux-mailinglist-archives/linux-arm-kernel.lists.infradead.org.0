@@ -2,86 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8CDA162CE8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 02:10:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 883FD62CEF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 02:13:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6dBUOpva0eEe86odpOs0Ycn50ZUczOTgoGdov/8JlGU=; b=YRuM6tBkZyyXai
-	MoDsslv6llhd02d0TbVuslT4AV7az7PHXzvdwXiXNNY+BR7zxBzl2UmtKOXw/Bz6pEtdHRMYzz5Ui
-	+zPYzzmeI+VCAdfG155lqXyr/iAjVwAA2gCC5+RGf8oKlXBFC43FCEp2fqWVrW1UA7+Ll0AXWBMVZ
-	Z/JNs0GTYoE5nP121UyhEJAfCM1N/7J3QrtUGr7IMJRYsXHrVxc1JMMqxPfpt1POr0Ak04OzIRAul
-	Z9E6nXYsAOi6SasQHoEJt9uOWopJn0/XzchcQ+G+FIK8DzgkJb7DsHJrCq6xLhirfrD4Uz5eloOzk
-	P+RLJFITi25DopRo0aOQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=xLM7yP+hFhYFiEiYKjd37ImI0imaZ8j8NhlrebDp/2Q=; b=cuM22Jhlb9IVYKwWTT9Ipy3iQ
+	lMB6eZFNDtEctmPlw4xl9BQK15kzRYNdQQrSPbEh+Eoz6HsQJfU+A8ChSPown4CIRrM4vgbkf7S5h
+	JgYV8izjIYskHKa1X6CzTAexxiEf04auKpDg+9jG9NEaJPDbn/NPq1vb7eYm7wQDnJEhcb34a4gxT
+	Prw6gje6lhidXUs/IGGG7+yHhrzAvms7PBUDfIgp9PwMxFVfnsIyW4kczkERkvA7GtB/7Di9FYK6o
+	K2FUQ2Rd6Tm6fm9EdbywkYIHTn4684vEx1v56xWs9zV1GJWZrkinCHyPnl7xjG8gib13EjkEJ5nxU
+	8u6KrdyFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkdha-0001WH-Co; Tue, 09 Jul 2019 00:09:46 +0000
-Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
+	id 1hkdkp-00037Y-J4; Tue, 09 Jul 2019 00:13:07 +0000
+Received: from ozlabs.org ([2401:3900:2:1::2])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkdh8-0001U7-Dk
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 00:09:20 +0000
-Received: by mail-ed1-x542.google.com with SMTP id w13so16082210eds.4
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 08 Jul 2019 17:09:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=98rToMWmhy/jqHktBRjZkc7KbW9VRwSYkaJRbC3br4I=;
- b=i3oe6W0BGcSkTepcfGEJAhzFh8lQOwvniDzY3lf8xxhn8MfBi54r7Fl2n2nGdZvlrv
- 7qtP66giWRCRfgSjdETIbISxBkBjHk349VzwNpp/XUSzNBj2A4jXAiMANZzOUckZ3zsy
- GZCrXZ4v9OgdNrrN316v6BDBm1BJmbH4r/ZIXLqHFYfLRWALRxuNxJYNFhA9oLquz8Sq
- NBAeaau88Q7EXNC0lm/sm5RyVSXsNXKR6Zxnb9akp6QytAnKknq+Tmi5c0hVCRIb8prp
- RPVziOWqDM+agE/TcfMw0rzPWiH28hw1sqnvRf/EiFr1TJQ3LYqFuANfxTtWwFTIEXSQ
- QoYw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=98rToMWmhy/jqHktBRjZkc7KbW9VRwSYkaJRbC3br4I=;
- b=tbJ6ZdAbw3OE3ZLS5GiBydk5KKP09Mhc33EaMK92PJ0MFYmQAnJ/lnCpjGjx8uVm3p
- m2lATKGpf3EnKMYIhErIqEBDUNbkgIXkKHxxGoiy8CbGGqCdlNkKcOE8ZeAcU6x0dbfx
- /j38sAUfD/30qON2wHb8m/vmOugQhD0gdD+y82um9pCjoDnJBJVMt5NOnonJxaXm2D7r
- z1hiz06hmMle4UsHNShsZtTZslT5q96uMDL+0L4SZMapUon5eu/qJBe6F/KNkPrQME2D
- 998vCmmlQSbsZf9XM+K/yXVT5OM31NhKGbVrxpmZxchnGmAWoA44QrJGs//5YT4kDGBU
- 6udA==
-X-Gm-Message-State: APjAAAWWNH2DmBGkT7zdVD0+RIZylivyS1vjxFCrvfostp+fiP2+NkFM
- nl0GUOZC5SEOgDSD6fq+aoz/19Yzkba3fz1vcJicUA==
-X-Google-Smtp-Source: APXvYqwU07Zh/QKPE/nEPDgFLpdMlrr6cwb9a/ibICEkDuXQ69QLQF/9cX8my8Dhn7VceVLo/ycOsWAviGk5vIhAkmk=
-X-Received: by 2002:a17:906:7c8d:: with SMTP id
- w13mr18501893ejo.264.1562630955016; 
- Mon, 08 Jul 2019 17:09:15 -0700 (PDT)
+ id 1hkdka-00036g-Om
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 00:12:54 +0000
+Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by mail.ozlabs.org (Postfix) with ESMTPSA id 45jN7M0SmXz9sMr;
+ Tue,  9 Jul 2019 10:12:46 +1000 (AEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=canb.auug.org.au;
+ s=201702; t=1562631167;
+ bh=ZZTfzyE+cPSzGQoUXg5UJzRqYPFv9U0TKErOUGeuwR4=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=Tl5JdZFHIssf7gy7XtbC3OQR3jYjORX/KmKkpXxjxt/nuJflDHy35m6d1wVbSvjEO
+ XTsVAOIK5TSJjuibOF9g/iyK69hwEZUeKn+W03VkWnzjrXYml06MzQ+hYagvkeQbi4
+ cYULcs3kBvgBlmAYWTlOQ1sxRZj9bqX050e5eh4DvMsqb5LRAB+RqQ3baijdUl7uAb
+ xj2UXGOwhWpGn9QvjvvXHlx+PzFHxuW2kCuMmV6NqNykGulnODp/IlV3ttjBVio/x4
+ nTrWJ8cPXwnmdZQq08+VhXgmcg6LvwsN96PpzDIM3aX9zft1owPCbC1443UOpap/7i
+ 4WbjTR6V0BcAA==
+Date: Tue, 9 Jul 2019 10:12:46 +1000
+From: Stephen Rothwell <sfr@canb.auug.org.au>
+To: Russell King <rmk@armlinux.org.uk>, Olof Johansson <olof@lixom.net>,
+ Arnd Bergmann <arnd@arndb.de>
+Subject: Re: linux-next: manual merge of the samsung-krzk tree with the arm
+ tree
+Message-ID: <20190709101246.58e21f1b@canb.auug.org.au>
+In-Reply-To: <20190628091634.12fdc79c@canb.auug.org.au>
+References: <20190621093347.36987c97@canb.auug.org.au>
+ <20190628091634.12fdc79c@canb.auug.org.au>
 MIME-Version: 1.0
-References: <20190708211528.12392-1-pasha.tatashin@soleen.com>
- <87sgrgjd6i.fsf@xmission.com>
-In-Reply-To: <87sgrgjd6i.fsf@xmission.com>
-From: Pavel Tatashin <pasha.tatashin@soleen.com>
-Date: Mon, 8 Jul 2019 20:09:04 -0400
-Message-ID: <CA+CK2bAOPkN=qEdE38R0FRnrzRK0EqLid7eUVnTj1acmaFHY_w@mail.gmail.com>
-Subject: Re: [v1 0/5] allow to reserve memory for normal kexec kernel
-To: "Eric W. Biederman" <ebiederm@xmission.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_170918_625072_7574042E 
-X-CRM114-Status: GOOD (  16.44  )
-X-Spam-Score: 1.1 (+)
+X-CRM114-CacheID: sfid-20190708_171253_266839_17F7EE19 
+X-CRM114-Status: GOOD (  14.93  )
+X-Spam-Score: -2.4 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.1 points)
+ Content analysis details:   (-2.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2401:3900:2:1:0:0:0:2 listed in] [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,80 +78,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, corbet@lwn.net,
- Catalin Marinas <catalin.marinas@arm.com>, linux-doc@vger.kernel.org,
- kexec@lists.infradead.org, James Morris <jmorris@namei.org>,
- LKML <linux-kernel@vger.kernel.org>, will@kernel.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: ARM <linux-arm-kernel@lists.infradead.org>,
+ Linux Next Mailing List <linux-next@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+Content-Type: multipart/mixed; boundary="===============8319668281437408534=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> Something is very very wrong there.
->
-> Last I measured memory bandwidth seriously I could touch a Gigabyte per
-> second easily, and that was nearly 20 years ago.  Did you manage to
-> disable caching or have some particularly slow code that does the
-> reolocations.
->
-> There is a serious cost to reserving memory in that it is simply not
-> available at other times.  For kexec on panic there is no other reliable
-> way to get memory that won't be DMA'd to.
+--===============8319668281437408534==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+ boundary="Sig_/PtdDwAOn==6Zouw31bhux/y"; protocol="application/pgp-signature"
 
-Hi Eric,
+--Sig_/PtdDwAOn==6Zouw31bhux/y
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: quoted-printable
 
-Thank you for your comments.
+Hi all,
 
-Indeed, but sometimes fast reboot is more important than the cost of
-reserving 32M-64M of memory.
+On Fri, 28 Jun 2019 09:16:34 +1000 Stephen Rothwell <sfr@canb.auug.org.au> =
+wrote:
+>=20
+> On Fri, 21 Jun 2019 09:33:47 +1000 Stephen Rothwell <sfr@canb.auug.org.au=
+> wrote:
+> >=20
+> > Today's linux-next merge of the samsung-krzk tree got a conflict in:
+> >=20
+> >   arch/arm/configs/exynos_defconfig
+> >=20
+> > between commit:
+> >=20
+> >   5f41f9198f29 ("ARM: 8864/1: Add workaround for I-Cache line size mism=
+atch between CPU cores")
+> >=20
+> > from the arm tree and commit:
+> >=20
+> >   9f532d26c75c ("ARM: exynos_defconfig: Trim and reorganize with savede=
+fconfig")
+> >=20
+> > from the samsung-krzk tree.
+> >=20
+> > I fixed it up (see below) and can carry the fix as necessary. This
+> > is now fixed as far as linux-next is concerned, but any non trivial
+> > conflicts should be mentioned to your upstream maintainer when your tree
+> > is submitted for merging.  You may also want to consider cooperating
+> > with the maintainer of the conflicting tree to minimise any particularly
+> > complex conflicts.
+> >=20
+> > diff --cc arch/arm/configs/exynos_defconfig
+> > index 9b959afaaa12,f140532ddca7..000000000000
+> > --- a/arch/arm/configs/exynos_defconfig
+> > +++ b/arch/arm/configs/exynos_defconfig
+> > @@@ -4,12 -5,7 +5,8 @@@ CONFIG_PREEMPT=3D
+> >   CONFIG_CGROUPS=3Dy
+> >   CONFIG_BLK_DEV_INITRD=3Dy
+> >   CONFIG_PERF_EVENTS=3Dy
+> > - CONFIG_MODULES=3Dy
+> > - CONFIG_MODULE_UNLOAD=3Dy
+> > - CONFIG_PARTITION_ADVANCED=3Dy
+> >   CONFIG_ARCH_EXYNOS=3Dy
+> > - CONFIG_ARCH_EXYNOS3=3Dy
+> >  +CONFIG_CPU_ICACHE_MISMATCH_WORKAROUND=3Dy
+> >   CONFIG_SMP=3Dy
+> >   CONFIG_BIG_LITTLE=3Dy
+> >   CONFIG_NR_CPUS=3D8 =20
+>=20
+> This is now a conflict between the arm-soc tree and the arm tree.
 
->
-> We have options in this case and I would strongly encourage you to track
-> down why that copy in relocation is so very slow.  I suspect a 4KiB page
-> size is large enough that it can swamp pointer following costs.
->
-> My back of the napkin math says even 20 years ago your copying costs
-> should be only 0.037s.  The only machine I have ever tested on where
-> the copy costs were noticable was my old 386.
->
-> Maybe I am out to lunch here but a claim that your memory only runs
-> at 100MiB/s (the speed of my spinning rust hard drive) is rather
-> incredible.
+I am still getting this conflict (the commit ids may have changed).
+Just a reminder in case you think Linus may need to know.
 
-I agree,  my measurement on this machine was 2,857MB/s. Perhaps when
-MMU is disabled ARM64 also has caching disabled? The function that
-loops through array of pages and relocates them to final destination
-is this:
+--=20
+Cheers,
+Stephen Rothwell
 
-https://soleen.com/source/xref/linux/arch/arm64/kernel/relocate_kernel.S?r=d2912cb1#29
+--Sig_/PtdDwAOn==6Zouw31bhux/y
+Content-Type: application/pgp-signature
+Content-Description: OpenPGP digital signature
 
-A comment before calling it:
+-----BEGIN PGP SIGNATURE-----
 
-205   /*
-206   * cpu_soft_restart will shutdown the MMU, disable data caches, then
-207   * transfer control to the reboot_code_buffer which contains a copy of
-208   * the arm64_relocate_new_kernel routine.  arm64_relocate_new_kernel
-209   * uses physical addressing to relocate the new image to its final
-210   * position and transfers control to the image entry point when the
-211   * relocation is complete.
-212   * In kexec case, kimage->start points to purgatory assuming that
-213   * kernel entry and dtb address are embedded in purgatory by
-214   * userspace (kexec-tools).
-215   * In kexec_file case, the kernel starts directly without purgatory.
-216   */
-https://soleen.com/source/xref/linux/arch/arm64/kernel/machine_kexec.c?r=d2912cb1#206
+iQEzBAEBCAAdFiEENIC96giZ81tWdLgKAVBC80lX0GwFAl0j2/4ACgkQAVBC80lX
+0Gxq2Af+NocXoSKFdoIZF8ymYFO5+3MxUg8UPU5uW6n2MYaU0roKS1N6qvR8y8Vq
+rKEQOt8KM25xJ6oV4mBFEh9pBqflepsh+Ps6yZFFYsEcofkD7yey2oGBSaJ77pJ/
+aT/3JTHoDA16s9TTRzFkdvm13T43rOhpvAyAABv2fG7Qg8lRp/a8BjL41Qs1KUmM
+BeT+DfjcxGDMctuYYS+wZupifjv09/klGKKNC6yBcXAb1RLsjhFEdCDl35Wk4+8B
+VJFwSQMw8syqwM3mdxivq+EzgQVaTZS04NQuHLgmdTluhNqGB50JABUi7TsE4io7
+RnILUrTrX4HtXSY+5BLIAicPg2Zs+Q==
+=TaxR
+-----END PGP SIGNATURE-----
 
-So, as I understand at least data caches are disabled, and MMU is
-disabled, perhaps this is why this function is so incredibly slow?
+--Sig_/PtdDwAOn==6Zouw31bhux/y--
 
-Perhaps, there is a better way to fix this problem by keeping caches
-enabled while still relocating? Any suggestions from Aarch64
-developers?
 
-Pasha
+--===============8319668281437408534==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============8319668281437408534==--
+
