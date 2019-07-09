@@ -2,72 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6000663C6B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 22:05:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9668863C7A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 22:08:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cleSLZdIwlx6yCLX1eujmSYsAsKinE5nq4IXkjn2bAE=; b=YDULDc4jH+05VN
-	L/fiBpSJSmsRyCLAUCBXQxgN4Kb8tW+jhrMVi0oe9p2K/q2xrcmHh3xWB+z4sw/RC1+uaJPEJ0DiP
-	S2reUkniFVxQzj11AUGwrILrCLTnLqa/v0u0YYxktxxpqoLtFzW6J6WaLVq64TMZKi3ZnugR3cniC
-	NcNxy16eADWX/mHXt1HkclP0Mr7mll6r0uFU+ic0mM0Uchl/NniG2IU8k0o7iapbHrS4GY2cEKSYv
-	a9cX7VIzS7H1FvpuhlA7bi+thWnNlKhMV+lq2XeSXDKFPgt+7yeQoTXWCvJ9QcflHwX5Pcbhml9yb
-	5gubPRoUheSIpOVQw1qw==;
+	List-Owner; bh=6LpxX1iQ62/pq+eg0jeaOv7W5R6F0m4kvg5zvtdOTo8=; b=Sz5TZD2gp8AFTH
+	bIfXHnNpPSn/sKTJKC+K/IoLJO9G2bhujNZoaBSFu918mvCnxo+87f+ELTzkxKGxb4O01F0BzTaXl
+	/1scLwj22RMf3roY4Fm4ZoYWb7lplYaQy78OtkKYXWNHmox7muSHFgroVCPxb3O6pel7R23MWeU/v
+	wWtkVhevF4CHPfFizF7Vev03FPzevXLrKpJpxOVMZ+rRkAvAlM1zryFpic2xoezx9KMXlWqb9CFob
+	m7PtvrKafjsngVYqevd9IOkDjXgQwp2B4rf9+imGZ0F4N6PF5rD0TAZG7sOF3Pmb5ZD1v6y9Murxs
+	ORn/AOHlc7VBSvUZQTBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkwMU-0004EU-MN; Tue, 09 Jul 2019 20:05:14 +0000
-Received: from mail-io1-f67.google.com ([209.85.166.67])
+	id 1hkwQ2-0005qb-0o; Tue, 09 Jul 2019 20:08:54 +0000
+Received: from mail-io1-f65.google.com ([209.85.166.65])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkwMC-0004E8-9v
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 20:04:57 +0000
-Received: by mail-io1-f67.google.com with SMTP id q22so24063022iog.4
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 09 Jul 2019 13:04:56 -0700 (PDT)
+ id 1hkwPn-0005pw-BW; Tue, 09 Jul 2019 20:08:40 +0000
+Received: by mail-io1-f65.google.com with SMTP id q22so24085605iog.4;
+ Tue, 09 Jul 2019 13:08:39 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=yMWvhTwdTx4eCPgZpMKqdo6YtJFGRY4W4k7r7rWwQq0=;
- b=du+PEVivLfUitexPhKYkpUsjOen3yFHvdBNG+qiP7Df+qych0R6F4Rqy83tnMZppwa
- DM+4fiDskPvEUKcSJw11MQ2+NwnlrKClpD1gnFsJPkngH/Gb/H7Wv3OCmXUR5SzXe89Z
- Wq7mbQq8DEXlez+rxkoGAaj/LZo0kFy3y4DmSemSKoE7tKh7e5ooTP1YrC1tsYKLQOxD
- re/O8ZMY6wPFvRI75eY3WldBTv0CP38Zp0eI/vLzu0M0NiIh11cnKG6Oad0QTzPWHCTd
- LJSVxPd3mfcjgxPobnHlxvpbfbq/fgosC/7XHneGwViy0K+qqry62f6XhwKSbg2tCO0W
- VOSg==
-X-Gm-Message-State: APjAAAVQUWX4HE5I5NCd3qr4XVExWib7VdbwV+014h8fHgJGLWkatPuG
- je0M1QvnFx4yntjFSPN/ZQ==
-X-Google-Smtp-Source: APXvYqym6yoyImjtZ4uA33nv3VEFPdV5kZxtSC8ErJEyWJqeGfIzXNMCldgpv1NB9zrEilSNLO/USg==
-X-Received: by 2002:a6b:6f09:: with SMTP id k9mr2513338ioc.223.1562702695542; 
- Tue, 09 Jul 2019 13:04:55 -0700 (PDT)
+ bh=tMyCowNzgjxUaK5PWC6oQ1uWddr8utL+ufijtmsasYY=;
+ b=DUeK3wJoEi9PhYO8GwBvkN9kcofQtZU6zEjUPrXImy2BHJs3MP9anCqRD2ebjngyq8
+ eYlc3P/Pohwe/dR1XjlHwd/Wzbo1F9mrLpF8AmdVT5B7SXcOTyN3dAkRcz4iFaXRMAEp
+ ZpkI7dliCiRi7NA8wF4cxCXSiKEMx4JHHxvra+tLGJ3aHRCVO6Lx3e9rVN3A7TeJKb3N
+ 35W5F/R7tF5bw6pvEtfmUjHy5uvdP/sU1cGFuI9TuxmoHAcQzy+6YfjXz9H8Nto8uiqy
+ CzF5MB9ooZOdzipR5lYEg9YPHs5bTTzxFZkCHpGjR7Q/qn4X15kBNHHrZKk9U05Qmd4m
+ GQNg==
+X-Gm-Message-State: APjAAAW7qRPbHgvCDatFjxEsIgPjOYaXeYv8KimV9BY6g4OM6Kc+gQkV
+ o72zNCuYCpkILUGv+G644A==
+X-Google-Smtp-Source: APXvYqyKiyPFi1/Sk/eV1if8HfsDBQ9UxZKt6XHIcHyManJ2gt9dEXwY05nvvTvy0mh0ieg/bZNAQQ==
+X-Received: by 2002:a02:b914:: with SMTP id v20mr29828003jan.83.1562702918640; 
+ Tue, 09 Jul 2019 13:08:38 -0700 (PDT)
 Received: from localhost ([64.188.179.251])
- by smtp.gmail.com with ESMTPSA id h19sm15504351iol.65.2019.07.09.13.04.54
+ by smtp.gmail.com with ESMTPSA id z17sm31248845iol.73.2019.07.09.13.08.37
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 09 Jul 2019 13:04:55 -0700 (PDT)
-Date: Tue, 9 Jul 2019 14:04:54 -0600
+ Tue, 09 Jul 2019 13:08:37 -0700 (PDT)
+Date: Tue, 9 Jul 2019 14:08:37 -0600
 From: Rob Herring <robh@kernel.org>
-To: Fabrice Gasnier <fabrice.gasnier@st.com>
-Subject: Re: [PATCH 1/5] dt-bindings: pwm-stm32: add #pwm-cells
-Message-ID: <20190709200454.GA328@bogus>
-References: <1560937925-8990-1-git-send-email-fabrice.gasnier@st.com>
- <1560937925-8990-2-git-send-email-fabrice.gasnier@st.com>
+To: Ashish Kumar <Ashish.Kumar@nxp.com>
+Subject: Re: [Patch v3 1/2] dt-bindings: spi: spi-fsl-qspi: Add ls2080a
+ compatibility string to bindings
+Message-ID: <20190709200837.GA7806@bogus>
+References: <1560942714-13330-1-git-send-email-Ashish.Kumar@nxp.com>
+ <1560942714-13330-2-git-send-email-Ashish.Kumar@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1560937925-8990-2-git-send-email-fabrice.gasnier@st.com>
+In-Reply-To: <1560942714-13330-2-git-send-email-Ashish.Kumar@nxp.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_130456_344122_7C9CB705 
-X-CRM114-Status: UNSURE (   9.77  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190709_130839_396974_F042EDB4 
+X-CRM114-Status: GOOD (  10.09  )
 X-Spam-Score: 2.0 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (2.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.67 listed in list.dnswl.org]
+ no trust [209.85.166.65 listed in list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -90,27 +88,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, alexandre.torgue@st.com,
- linux-pwm@vger.kernel.org, linux@armlinux.org.uk, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, thierry.reding@gmail.com,
- mcoquelin.stm32@gmail.com, fabrice.gasnier@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- benjamin.gaignard@st.com
+Cc: devicetree@vger.kernel.org, bbrezillon@kernel.org,
+ Kuldeep Singh <kuldeep.singh@nxp.com>, Ashish Kumar <ashish.kumar@nxp.com>,
+ broonie@kernel.org, linux-mtd@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 19 Jun 2019 11:52:01 +0200, Fabrice Gasnier wrote:
-> STM32 Timers support generic 3 cells PWM bindings to encode PWM number,
-> period and polarity as defined in pwm.txt.
+On Wed, 19 Jun 2019 16:41:53 +0530, Ashish Kumar wrote:
+> There are 2 version of QSPI-IP, according to which controller registers sets
+> can be big endian or little endian.There are some other minor changes like
+> RX fifo depth etc.
 > 
-> Fixes: cd9a99c2f8e8 ("dt-bindings: pwm: Add STM32 bindings")
+> The big endian version uses driver compatible "fsl,ls1021a-qspi" and
+> little endian version uses driver compatible "fsl,ls2080a-qspi"
 > 
-> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+> Signed-off-by: Kuldeep Singh <kuldeep.singh@nxp.com>
+> Signed-off-by: Ashish Kumar <ashish.kumar@nxp.com>
 > ---
->  Documentation/devicetree/bindings/pwm/pwm-stm32.txt | 3 +++
->  1 file changed, 3 insertions(+)
+> v3:
+> Rebase to top
+> v2: 
+> Convert to patch series and rebasing done on top of tree
+> 
+>  Documentation/devicetree/bindings/spi/spi-fsl-qspi.txt | 3 +--
+>  1 file changed, 1 insertion(+), 2 deletions(-)
 > 
 
 Reviewed-by: Rob Herring <robh@kernel.org>
