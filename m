@@ -2,86 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 370DB63ACB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 20:22:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5AA2263AE6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 20:26:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8WiTBYoGxJWwmxaiNoTbwaKfzxhTeH2uXaPki6mdGYg=; b=bil4RfToGabGG5
-	pXpvKdJR3qHVSguJj3jDPpi4UJC2GYe8EPt8ESPGY6NAWxwQOGRbwtUhoq2ZFJ7GgiPjsXs/Rqgk7
-	+My4LjVxJMz48J+2kZvf0OLgbTLTE9HKi0BPRSQQK4GcUiOYfm8kv0Pc7pon5BN8FghqiPdcnkk1k
-	cUMqLVuW8LyI1gCfEY1A9cxwfCDNxqzdhgqMpBBkPvR4niUkSIhfwGivg3ubg32b+ME18qxZ/jHRt
-	KwXEvXSH/HFrlfr7t1n/MpfBWnLs6q8hCe2wO8DSRUvzl1Lsv/UVL1H0EVqSz3mfZlzVVM2ruVGjR
-	1Jpvmdr+pvnh0qNNJcfw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=oFkayWeJElcfA5akZxiRxLxvCNuOxUx8zYDeCL/G1+Y=; b=QXzR+NHe+9BSAF
+	0RmykEGg4bp+Ss8Gt4dUtZ8xTzDT7JdmiBNpHV94r0Y4fbvKYy8nHrYQOscOtQczHlmolwYTTSSED
+	5xGZmmqUuzsjoCYJHleyoze30JIKSZNL0JeGq2DOg60Q+FRkF0i9o80N2AkLVmC83MSgKrVrTzz9h
+	G1lqhbRPVL4ZHoCcmFxemjy/psH1dDnwSZLk9q+7Ld77Wb/GxEpaYFx8omdsuw7uDCmDXBQe9nOjV
+	a/q7UHl4kawBp4mL5zoQoRYQESbwHwEo5vo4VCSUNIAqzzLwKRI9DfCpQu7aW5eXUqHn3tdU13zgf
+	hxONxUR7pvL16dhbf3Gw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkuky-0001Ns-QO; Tue, 09 Jul 2019 18:22:24 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+	id 1hkuoS-0003E6-Sz; Tue, 09 Jul 2019 18:26:00 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkuj1-0008Eq-NV
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 18:20:26 +0000
-Received: by mail-qt1-x841.google.com with SMTP id l9so14352876qtu.6
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 09 Jul 2019 11:20:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
- h=from:to:subject:date:message-id:in-reply-to:references:mime-version
- :content-transfer-encoding;
- bh=AiVVzsQgxExtlPdXUQO7u3KIlgj9fJXNjXAFaENAUkA=;
- b=AqunWWWxGh4NAhLbFvISj8wCzu6id3JXejuIXa4TvV30VuMXGIT0XEXhkQJ6p4TGgR
- DjjKaYUsaAaVrwO0CP1uVEJp5OBZ4ZkazaAVcwwTVNPZpUvUow0ckU9EpwWik/tlIupX
- b/5dCH7k5TtiD1e3G4JHhANhB95vpUm8sKLXx6E1+5Ay29tkvlxkYf9asnwd2JcpbkDs
- ZflCqDPNQ9DDfGOkeI1EgEgDY8Txm1qrd14+8P75qq+3BJyby4paKruB3BM8iwSL5wRi
- Q8JvaJDDY7rxp4ujqvGLkI1MTqlzc4WcOryOl/Sk1EbjnjIndttpQuVZgDtUlgTT7MXp
- Xqbg==
+ id 1hkuoJ-0003Df-SE; Tue, 09 Jul 2019 18:25:53 +0000
+Received: by mail-pf1-x443.google.com with SMTP id c73so5037465pfb.13;
+ Tue, 09 Jul 2019 11:25:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:subject:message-id:mime-version:content-disposition
+ :user-agent; bh=F53dI+T31MQO7QsmvZEQqUD+Bsf7Au5f6Ym6GihKyBU=;
+ b=dY0SKwLV9k80CMp0A2x+iTnnhV5A92BoDgH5N8dKXZsQJo/haO6q4csQICb21yuckh
+ UoHQx1dad/dqKIH5no1Q0PzDgicSMi7Y5RCJHrokKzaFn1A0jUIaCZEyYPEx/1O50Qqj
+ EaVisjg4hQjAn7fvBEoThlflmA8uYcC+eluRgi0rKci9zKgK9q9hW49KSneUgU1uZFTX
+ qUfI+GJsUpt2ojpAt1tD1dNxRyHN3xUFdvEW9T1s38tIAtBJ2Leab/lwjLq9eZWs75TB
+ yMg2KLtL3F4aaIrioY7PRjrarbnUbrJMOcIs4N1wN6MtlaB47ttLlWxH++h7D2shfR+O
+ b55g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=AiVVzsQgxExtlPdXUQO7u3KIlgj9fJXNjXAFaENAUkA=;
- b=hHGQuT5fPGzrxcT4uwEmzcSB0ApcWkCOYnZdQ04+d99ctib73TDL0ZU0ASbDcPjw++
- uf6eDXZCgpYTwpKpb/hx3//e5dEUEW4tyEY78ks3nl9MQZtylloKfkRvU5qvua4I/zv2
- EgERc9Bs22XoSBjc49WY7fO0dlHNoBxKav1sQYxV+RWtmCK74oBKVGAdyXLGgmRUJthT
- 2wahfqo7DmoKWlIWubZBhaMmHFQaPTZL5W4ZzrKSvuPUd22oYk8CW6zTnVtrUc6mqg+K
- A9hJ+FE9BoAMS4zTZQlvz+m86zs9Izj4OmkScXgD4DKxYgF8iL/+kGWgYbng52IBgFso
- y7PQ==
-X-Gm-Message-State: APjAAAVKgUYH7YGgSCbmaIdIA61QqKg6W6s0vSPFBrD2YsSzGi7Th9XG
- lB+S2lNLp11fBTkb7UDdR+lBTJVxkN4=
-X-Google-Smtp-Source: APXvYqypFDORJK55t4/iPYv6UX1UCBaFaqAzD+I5UAklLCwgFf6Nywn8Ipf3ouT61bmq39qnWmnv5Q==
-X-Received: by 2002:ac8:1195:: with SMTP id d21mr19311947qtj.278.1562696422992; 
- Tue, 09 Jul 2019 11:20:22 -0700 (PDT)
-Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
- [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id k123sm9113056qkf.13.2019.07.09.11.20.21
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 09 Jul 2019 11:20:22 -0700 (PDT)
-From: Pavel Tatashin <pasha.tatashin@soleen.com>
-To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
- ebiederm@xmission.com, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org, corbet@lwn.net, catalin.marinas@arm.com,
- will@kernel.org, linux-doc@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Subject: [v2 5/5] arm64, kexec: reserve kexeckernel region
-Date: Tue,  9 Jul 2019 14:20:14 -0400
-Message-Id: <20190709182014.16052-6-pasha.tatashin@soleen.com>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20190709182014.16052-1-pasha.tatashin@soleen.com>
-References: <20190709182014.16052-1-pasha.tatashin@soleen.com>
+ h=x-gm-message-state:date:from:to:subject:message-id:mime-version
+ :content-disposition:user-agent;
+ bh=F53dI+T31MQO7QsmvZEQqUD+Bsf7Au5f6Ym6GihKyBU=;
+ b=HID0PngPTC22SHIuI2q2QZ1h9t7aVSp5d8RfKxQl8rLjOFzGHiuALBu7fzhuyRnBBi
+ xNHzSbGj+yi10pUaRk4OWJwlARnIB/dinP9PS3Xjf9ZSOmAgV74LmbOvo5IwbONyfYoN
+ d5LXt65jJxa0zuDiHkF6ZNAhZfz/kG8OmPw5VwNotvA8pHdInNeqguAu0XcfVYYF90qz
+ DnNT0wDtibEe/HxkHKRqf//4WWegmEmlhw67z1Ul65Rs/0JshuLsJo+j08SItXpV90vF
+ SExcmUQpYp9qpK6I1hdG8AXgKv/Eg0sfX0CJwBhgbEnm865M7cq08sIYVXBXBQSbmS73
+ KF1w==
+X-Gm-Message-State: APjAAAXOv55SQnfksDr/QbabuNVzr4ElEevPLBNYbM1Tw2Q0FDx9q+hv
+ k+AixIqR0Z25LQSiCww/iXc=
+X-Google-Smtp-Source: APXvYqxPF2ZglfLFUEIjNK+xpEPSth8BelId/59gN0t4fpsSCcw0Ul22LI6xyEHQdp/Z7aYDfK8lIw==
+X-Received: by 2002:a65:5888:: with SMTP id d8mr31623341pgu.124.1562696750983; 
+ Tue, 09 Jul 2019 11:25:50 -0700 (PDT)
+Received: from hari-Inspiron-1545 ([183.83.86.126])
+ by smtp.gmail.com with ESMTPSA id x13sm13084575pfn.6.2019.07.09.11.25.46
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 09 Jul 2019 11:25:50 -0700 (PDT)
+Date: Tue, 9 Jul 2019 23:55:43 +0530
+From: Hariprasad Kelam <hariprasad.kelam@gmail.com>
+To: Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
+ Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Tzung-Bi Shih <tzungbi@google.com>, Shunli Wang <shunli.wang@mediatek.com>,
+ Hariprasad Kelam <hariprasad.kelam@gmail.com>,
+ alsa-devel@alsa-project.org, linux-arm-kernel@lists.infradead.org,
+ linux-mediatek@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH] sound: soc: codecs: mt6358: change return type of
+ mt6358_codec_init_reg
+Message-ID: <20190709182543.GA6611@hari-Inspiron-1545>
 MIME-Version: 1.0
+Content-Disposition: inline
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_112023_839062_FA6DB1A4 
-X-CRM114-Status: GOOD (  17.75  )
+X-CRM114-CacheID: sfid-20190709_112551_935200_15E141F4 
+X-CRM114-Status: GOOD (  11.37  )
 X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (hariprasad.kelam[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -107,187 +107,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-kexeckernel= is used to reserve memory for normal kexec kernel for
-faster reboot.
+As mt6358_codec_init_reg function always returns 0 , change return type
+from int to void.
 
-Rename reserve_crashkernel() to reserve_crash_or_kexec_kernel(), and
-generalize it by adding an argument that specifies what is reserved:
-"crashkernel=" for crash kernel region
-"kexeckernel=" for normal kexec region
+fixes below issue reported by coccicheck
+sound/soc/codecs/mt6358.c:2260:5-8: Unneeded variable: "ret". Return "0"
+on line 2289
 
-Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
+Signed-off-by: Hariprasad Kelam <hariprasad.kelam@gmail.com>
 ---
- .../admin-guide/kernel-parameters.txt         | 10 +--
- arch/arm64/kernel/setup.c                     |  5 ++
- arch/arm64/mm/init.c                          | 83 ++++++++++++-------
- 3 files changed, 63 insertions(+), 35 deletions(-)
+ sound/soc/codecs/mt6358.c | 6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
 
-diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-index 0f5ce665c7f5..a18222c1fbee 100644
---- a/Documentation/admin-guide/kernel-parameters.txt
-+++ b/Documentation/admin-guide/kernel-parameters.txt
-@@ -740,11 +740,11 @@
- 			or memory reserved is below 4G.
+diff --git a/sound/soc/codecs/mt6358.c b/sound/soc/codecs/mt6358.c
+index 50b3fc5..c17250a 100644
+--- a/sound/soc/codecs/mt6358.c
++++ b/sound/soc/codecs/mt6358.c
+@@ -2255,10 +2255,8 @@ static struct snd_soc_dai_driver mt6358_dai_driver[] = {
+ 	},
+ };
  
- 	kexeckernel=size[KMG][@offset[KMG]]
--			[KNL] Using kexec, Linux can reboot to a new kernel.
--			This parameter reserves the physical memory region
--			[offset, offset + size] for that kernel. If '@offset' is
--			omitted, then a suitable offset is selected
--			automatically.
-+			[KNL, ARM64] Using kexec, Linux can reboot to a new
-+			kernel. This parameter reserves the physical memory
-+			region [offset, offset + size] for that kernel. If
-+			'@offset' is omitted, then a suitable offset is
-+			selected automatically.
- 
- 	cryptomgr.notests
- 			[KNL] Disable crypto self-tests
-diff --git a/arch/arm64/kernel/setup.c b/arch/arm64/kernel/setup.c
-index 7e541f947b4c..9f308fa103c5 100644
---- a/arch/arm64/kernel/setup.c
-+++ b/arch/arm64/kernel/setup.c
-@@ -235,6 +235,11 @@ static void __init request_standard_resources(void)
- 		if (crashk_res.end && crashk_res.start >= res->start &&
- 		    crashk_res.end <= res->end)
- 			request_resource(res, &crashk_res);
-+
-+		/* Userspace will find "Kexec kernel" region in /proc/iomem. */
-+		if (kexeck_res.end && kexeck_res.start >= res->start &&
-+		    kexeck_res.end <= res->end)
-+			request_resource(res, &kexeck_res);
- #endif
- 	}
- }
-diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
-index f3c795278def..dfef39f72faf 100644
---- a/arch/arm64/mm/init.c
-+++ b/arch/arm64/mm/init.c
-@@ -54,61 +54,83 @@ phys_addr_t arm64_dma_phys_limit __ro_after_init;
- 
- #ifdef CONFIG_KEXEC_CORE
- /*
-- * reserve_crashkernel() - reserves memory for crash kernel
-+ * reserve_crash_or_kexec_kernel() - reserves memory for crash kernel or
-+ * for normal kexec kernel.
-  *
-- * This function reserves memory area given in "crashkernel=" kernel command
-- * line parameter. The memory reserved is used by dump capture kernel when
-- * primary kernel is crashing.
-+ * This function reserves memory area given in "crashkernel=" or "kexeckenel="
-+ * kernel command line parameter. The memory reserved is used by dump capture
-+ * kernel when primary kernel is crashing, or to load new kexec kernel for
-+ * faster reboot without relocation.
-  */
--static void __init reserve_crashkernel(void)
-+static void __init reserve_crash_or_kexec_kernel(char *cmd)
+-static int mt6358_codec_init_reg(struct mt6358_priv *priv)
++static void mt6358_codec_init_reg(struct mt6358_priv *priv)
  {
--	unsigned long long crash_base, crash_size;
-+	unsigned long long base, size;
-+	struct resource *res;
-+	char s[16];
- 	int ret;
- 
--	ret = parse_crashkernel(boot_command_line, memblock_phys_mem_size(),
--				&crash_size, &crash_base);
--	/* no crashkernel= or invalid value specified */
--	if (ret || !crash_size)
-+	/* cmd must be either: "crashkernel=" or "kexeckernel=" */
-+	if (!strcmp(cmd, "crashkernel=")) {
-+		res = &crashk_res;
-+	} else if (!strcmp(cmd, "kexeckernel=")) {
-+		res = &kexeck_res;
-+	} else {
-+		pr_err("%s: invalid cmd %s\n", __func__, cmd);
-+		return;
-+	}
-+
-+	/* remove trailing '=' for a nicer printfs */
-+	strcpy(s, cmd);
-+	s[strlen(s) - 1] = '\0';
-+
-+	ret = parse_crash_or_kexec_kernel(boot_command_line,
-+					  memblock_phys_mem_size(),
-+					  &size, &base, cmd, NULL);
-+	/* no specified command or invalid value specified */
-+	if (ret || !size)
- 		return;
- 
--	crash_size = PAGE_ALIGN(crash_size);
-+	size = PAGE_ALIGN(size);
- 
--	if (crash_base == 0) {
-+	if (base == 0) {
- 		/* Current arm64 boot protocol requires 2MB alignment */
--		crash_base = memblock_find_in_range(0, ARCH_LOW_ADDRESS_LIMIT,
--				crash_size, SZ_2M);
--		if (crash_base == 0) {
--			pr_warn("cannot allocate crashkernel (size:0x%llx)\n",
--				crash_size);
-+		base = memblock_find_in_range(0, ARCH_LOW_ADDRESS_LIMIT,
-+					      size, SZ_2M);
-+		if (base == 0) {
-+			pr_warn("cannot allocate %s (size:0x%llx)\n",
-+				s, size);
- 			return;
- 		}
- 	} else {
- 		/* User specifies base address explicitly. */
--		if (!memblock_is_region_memory(crash_base, crash_size)) {
--			pr_warn("cannot reserve crashkernel: region is not memory\n");
-+		if (!memblock_is_region_memory(base, size)) {
-+			pr_warn("cannot reserve %s: region is not memory\n",
-+				s);
- 			return;
- 		}
- 
--		if (memblock_is_region_reserved(crash_base, crash_size)) {
--			pr_warn("cannot reserve crashkernel: region overlaps reserved memory\n");
-+		if (memblock_is_region_reserved(base, size)) {
-+			pr_warn("cannot reserve %s: region overlaps reserved memory\n",
-+				s);
- 			return;
- 		}
- 
--		if (!IS_ALIGNED(crash_base, SZ_2M)) {
--			pr_warn("cannot reserve crashkernel: base address is not 2MB aligned\n");
-+		if (!IS_ALIGNED(base, SZ_2M)) {
-+			pr_warn("cannot reserve %s: base address is not 2MB aligned\n",
-+				s);
- 			return;
- 		}
- 	}
--	memblock_reserve(crash_base, crash_size);
-+	memblock_reserve(base, size);
- 
--	pr_info("crashkernel reserved: 0x%016llx - 0x%016llx (%lld MB)\n",
--		crash_base, crash_base + crash_size, crash_size >> 20);
-+	pr_info("%s reserved: 0x%016llx - 0x%016llx (%lld MB)\n",
-+		s, base, base + size, size >> 20);
- 
--	crashk_res.start = crash_base;
--	crashk_res.end = crash_base + crash_size - 1;
-+	res->start = base;
-+	res->end = base + size - 1;
+-	int ret = 0;
+-
+ 	/* Disable HeadphoneL/HeadphoneR short circuit protection */
+ 	regmap_update_bits(priv->regmap, MT6358_AUDDEC_ANA_CON0,
+ 			   RG_AUDHPLSCDISABLE_VAUDP15_MASK_SFT,
+@@ -2285,8 +2283,6 @@ static int mt6358_codec_init_reg(struct mt6358_priv *priv)
+ 	/* set gpio */
+ 	playback_gpio_reset(priv);
+ 	capture_gpio_reset(priv);
+-
+-	return ret;
  }
- #else
--static void __init reserve_crashkernel(void)
-+static void __init reserve_crash_or_kexec_kernel(char *cmd)
- {
- }
- #endif /* CONFIG_KEXEC_CORE */
-@@ -411,7 +433,8 @@ void __init arm64_memblock_init(void)
- 	else
- 		arm64_dma_phys_limit = PHYS_MASK + 1;
  
--	reserve_crashkernel();
-+	reserve_crash_or_kexec_kernel("crashkernel=");
-+	reserve_crash_or_kexec_kernel("kexeckernel=");
- 
- 	reserve_elfcorehdr();
- 
+ static int mt6358_codec_probe(struct snd_soc_component *cmpnt)
 -- 
-2.22.0
+2.7.4
 
 
 _______________________________________________
