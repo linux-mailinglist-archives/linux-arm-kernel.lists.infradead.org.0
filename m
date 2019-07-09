@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 633CC632B3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 10:10:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 09036632B6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 10:11:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,29 +11,29 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Es1p72cmS/6SKQJkq+IY0FUODOi3XXP91rbAoaYUpDA=; b=lHcWVbhS1WloNhi7P3faDbjM4V
-	3loeDTjKM+uR/6QdFHpr+yB/ssFT+hqoYoRQZS5RsbIsvkw37DXaJ2fDIU/32ybweEFM/qPCTPez9
-	YVuRXlKq/Jxuyho2Q+F8f0BgdJaxkMq2zHO8gTqurdv3Q+azU4D/Et60M+rRC9mmdiF9xmjRbOn9E
-	OJQENdBT1qsPKP5mTFPVuXFUwOOFfW1vEehq78auTEQYMbpPvtC0vZvsKxBhepB5cLO/giPnHECFo
-	Pv9HwgD2Isgl43t8JFwAsfQraxEnFAXL3MvDrotVMMmDsgZlBHEVJFpGKRuKj556F/am+w6RxIU/k
-	5ay4FiyA==;
+	bh=6iMNaBcOguGR1m4t9BEEcvj03aUNgpkD5cy2hsnECqE=; b=Olm1rxLPuJjpCOKpkXerfrDfEX
+	sHoI7ihYBnd0BPpJsm99TXViL2iunYkaU2Oult2zZUKL4W5NPON+zgfb9j6p0V06fvyIXi4k6yl/L
+	gi9rv1p2jetP2kqYhGWfk6clLCZ/0w3UWkfiTk/de2jT3p9WRq/pGsfRsuvuZQHJFyzUO9q3F+Lj6
+	6f/u1ClgbjalNZBkEZ2hvKYXfp2GoEPq5UGjAXo/1SiIwktC1QjhNV+GvPgaWm5FIKFxwkaYV5NRO
+	ZjibpCZDurbW0IPyfqRBwQ8yXgh8NSwJH/YeNWijE+ECh0o2Whk/oQdU58jvj3ocH0yAhj1x4gjmx
+	0UPv5SoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hklCw-0001Nz-R4; Tue, 09 Jul 2019 08:10:39 +0000
+	id 1hklDD-0001cw-87; Tue, 09 Jul 2019 08:10:55 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hklC6-0008DI-1f
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 08:09:47 +0000
+ id 1hklC8-0008Dz-88
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 08:09:49 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id CA01B200013;
- Tue,  9 Jul 2019 10:09:44 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id E1937200558;
+ Tue,  9 Jul 2019 10:09:46 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 24F49200554;
- Tue,  9 Jul 2019 10:09:31 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 3EA73200562;
+ Tue,  9 Jul 2019 10:09:33 +0200 (CEST)
 Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 072A7402D3;
- Tue,  9 Jul 2019 16:09:17 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 236FD4030B;
+ Tue,  9 Jul 2019 16:09:20 +0800 (SGT)
 From: Anson.Huang@nxp.com
 To: vireshk@kernel.org, nm@ti.com, sboyd@kernel.org, robh+dt@kernel.org,
  mark.rutland@arm.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
@@ -43,17 +43,17 @@ To: vireshk@kernel.org, nm@ti.com, sboyd@kernel.org, robh+dt@kernel.org,
  andrew.smirnov@gmail.com, ccaione@baylibre.com, agx@sigxcpu.org,
  linux-pm@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V2 3/4] arm64: dts: imx8mq: Add opp-suspend property to OPP
+Subject: [PATCH V2 4/4] arm64: dts: imx8mm: Add opp-suspend property to OPP
  table
-Date: Tue,  9 Jul 2019 16:00:14 +0800
-Message-Id: <20190709080015.43442-3-Anson.Huang@nxp.com>
+Date: Tue,  9 Jul 2019 16:00:15 +0800
+Message-Id: <20190709080015.43442-4-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.9.5
 In-Reply-To: <20190709080015.43442-1-Anson.Huang@nxp.com>
 References: <20190709080015.43442-1-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_010946_224321_8D30F7F6 
-X-CRM114-Status: UNSURE (   6.22  )
+X-CRM114-CacheID: sfid-20190709_010948_438925_858BC56F 
+X-CRM114-Status: UNSURE (   6.84  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -92,38 +92,30 @@ Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
 No changes.
 ---
- arch/arm64/boot/dts/freescale/imx8mq.dtsi | 4 ++++
- 1 file changed, 4 insertions(+)
+ arch/arm64/boot/dts/freescale/imx8mm.dtsi | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-index 58f66cb..4ba6a25f 100644
---- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-@@ -156,6 +156,7 @@
- 			/* Industrial only */
- 			opp-supported-hw = <0xf>, <0x4>;
+diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+index 398318b..973f457 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+@@ -108,6 +108,7 @@
+ 			opp-microvolt = <850000>;
+ 			opp-supported-hw = <0xe>, <0x7>;
  			clock-latency-ns = <150000>;
 +			opp-suspend;
  		};
  
- 		opp-1000000000 {
-@@ -164,6 +165,7 @@
- 			/* Consumer only */
- 			opp-supported-hw = <0xe>, <0x3>;
+ 		opp-1600000000 {
+@@ -115,6 +116,7 @@
+ 			opp-microvolt = <900000>;
+ 			opp-supported-hw = <0xc>, <0x7>;
  			clock-latency-ns = <150000>;
 +			opp-suspend;
  		};
  
- 		opp-1300000000 {
-@@ -171,6 +173,7 @@
- 			opp-microvolt = <1000000>;
- 			opp-supported-hw = <0xc>, <0x4>;
- 			clock-latency-ns = <150000>;
-+			opp-suspend;
- 		};
- 
- 		opp-1500000000 {
-@@ -178,6 +181,7 @@
+ 		opp-1800000000 {
+@@ -122,6 +124,7 @@
  			opp-microvolt = <1000000>;
  			opp-supported-hw = <0x8>, <0x3>;
  			clock-latency-ns = <150000>;
