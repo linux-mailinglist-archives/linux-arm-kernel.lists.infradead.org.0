@@ -2,83 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 04CD363830
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 16:50:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41F9D63853
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 17:02:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aBOKgzJ9pZUNLkRuOzUkTQOtB+WSwodkv3/LSNIwqKU=; b=D1RYv4V4aiGWqs
-	3lT8Zzvxdi8URkd4R6SoF8mHYLDPQoaEyf6mCR3MrBntcCbad8ujGr20/HCYVld6BlmHacp3zARWc
-	0hc547Y+tlU0CyzNUOVaIm4/KdsGbB1zbr1DQ9Q64/AsehpnjBktE2K6V2rmvlwlqCvgYIL/QuVWJ
-	BqCRkRiyCMiCAkNvEuYJKV4LEcF8RTd6p7++FM7/JCrDnjpgn80qu+y1O4y/e15Kp5CxIgCL1xeSD
-	PJhKYur4SZVzBGDHLZiQMvpf9M/wENAf46mzbca+Y+57YWMZ1dLrZ/IMsOgA2bddKN7kiQqiHpsRJ
-	t7DMxOJK9cz3nyyqqLcg==;
+	List-Owner; bh=sskaJRLttGdgLtdwUDVFZ7rVqfM4+u001rh4C7ERQVA=; b=D3A9PykWa8yYhu
+	n4I/Rld2zoe96w1eoYfvt/Ed9auH23SQRHT9EWvmTRhrDpMj/jhn1HppGrwWk80tNYPPr4tfNWm9Y
+	KEftzfaZ7FFBqS3S8/39ncaOtmsBtrjDkzUMrv0yuaVW/QTm4gUe7oxEKrk5EXkOFp9z1yeVTMFZZ
+	n6IEgcn/g/Fskxa/Fk5Di+/RDlMzp8Dn64gix+3DGVcvbz3mVGkp9Dv/unZ9Igdr76e86kpiO/yJt
+	Xc0N9mOGJHukj/uKftJoswT1VPKfPBpAfjm3TuerYVIWnbaR1pe5DQfRNcKnOsNwN2x6cdfdvHZDi
+	WFK46pv7wV1ay3/EercA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkrSF-0008Em-PS; Tue, 09 Jul 2019 14:50:51 +0000
-Received: from mail-io1-f67.google.com ([209.85.166.67])
+	id 1hkrdg-0003IU-Qp; Tue, 09 Jul 2019 15:02:41 +0000
+Received: from pb-smtp1.pobox.com ([64.147.108.70])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkrS5-0008E5-EC
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 14:50:42 +0000
-Received: by mail-io1-f67.google.com with SMTP id m24so34264263ioo.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 09 Jul 2019 07:50:41 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=46Epk3/36kPZgwCBdnESdwm9AsP3sDBy9DMR2D84jbQ=;
- b=QttAWI980IJ3NPv7egma457u/0V4gRgNNw9iuO5PWRR9ZWiEivUPxqsgfl5I9Iwv2b
- uSL3NdajK70VWE4xIXiX57B6HZXQv2aw5mw7BaXZVS/nHoQ9nluqzqpMjPdQr4mfZhUu
- 7uGOJ8/6SWg95HOiEszkzgR4wV/xrp1ZGSV3pRvxbdUI0hBQ7Mbp1gazsI0w8D3F6nNT
- feyLbGLpliY2LJ4vV+fQ3Ml18iY40NzYlro6iOyXkOso+ZPKjyY7v42wANLAOJVIGgXZ
- 1itMDmdoWFGqw4Vjysmjh9eTui3PRY5feIC+Mii7r6yZIe8i7jP74TNStpKnQ3keK6Tz
- tgHw==
-X-Gm-Message-State: APjAAAVpayJQ57n8uzUGtjPD3OOKmh2P6TrkrC3fczw9KATbBi7rkdG4
- BHuGGJh258qOCzlP59cuWw==
-X-Google-Smtp-Source: APXvYqzHI8qSCiXN6FftFD/8DWYZDs1KQ1ycSN/veVfBVhoubY3v9ODlSdRUq4IMRUPQR2RPAVWsOA==
-X-Received: by 2002:a5e:9701:: with SMTP id w1mr161447ioj.294.1562683840732;
- Tue, 09 Jul 2019 07:50:40 -0700 (PDT)
-Received: from localhost ([64.188.179.251])
- by smtp.gmail.com with ESMTPSA id k2sm16925748iom.50.2019.07.09.07.50.39
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 09 Jul 2019 07:50:40 -0700 (PDT)
-Date: Tue, 9 Jul 2019 08:50:39 -0600
-From: Rob Herring <robh@kernel.org>
-To: Jagan Teki <jagan@amarulasolutions.com>
-Subject: Re: [PATCH v2 6/9] dt-bindings: sun6i-dsi: Add R40 MIPI-DSI
- compatible (w/ A64 fallback)
-Message-ID: <20190709145039.GA313@bogus>
-References: <20190614164324.9427-1-jagan@amarulasolutions.com>
- <20190614164324.9427-7-jagan@amarulasolutions.com>
+ id 1hkrdW-0003Hq-A9
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 15:02:32 +0000
+Received: from pb-smtp1.pobox.com (unknown [127.0.0.1])
+ by pb-smtp1.pobox.com (Postfix) with ESMTP id 59515160299;
+ Tue,  9 Jul 2019 11:02:25 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed; d=pobox.com; h=date:from:to
+ :cc:subject:in-reply-to:message-id:references:mime-version
+ :content-type; s=sasl; bh=b23qucjwjnJ+BBds9dDr8qNYbLc=; b=Ht74I+
+ lKAQXBvlcyDG/uSbdyYoZ3pditj8v7z9HerxOlnd+61RZiE9tDE59D4N+RZx6gf9
+ Ev8CSOit8zz9K5AhDwAcE7dRfJHH5bVJLcddLVZJfzUTkRdIcX7ogpUOZurODLJB
+ XmibXsGRDn6Nqyj9cEw6jJjSD+3ZUwdEz0gEM=
+Received: from pb-smtp1.nyi.icgroup.com (unknown [127.0.0.1])
+ by pb-smtp1.pobox.com (Postfix) with ESMTP id 454CA160298;
+ Tue,  9 Jul 2019 11:02:25 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed; d=fluxnic.net;
+ h=date:from:to:cc:subject:in-reply-to:message-id:references:mime-version:content-type;
+ s=2016-12.pbsmtp; bh=M9/2siyHq2MpQrsUQ7f38F3iXnwZg60+edm2Q9zNPlI=;
+ b=IMFGCGD5fVckr7WP9xRSuM1oBuGCNdg45jSZdCJ+yvV5CrOxzZumng6Sl9IZH0L2eq6v4g3Oog9fb4pov5QEWQsjRGwnjp7kaNzGXsc+Hc+lX5NgYiclglkR9qKUumXPr4OG5nOxpvAxRbVESdy3WBi2EWjtdwxbGQf4cS8NynM=
+Received: from yoda.home (unknown [70.82.130.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by pb-smtp1.pobox.com (Postfix) with ESMTPSA id 98681160297;
+ Tue,  9 Jul 2019 11:02:24 -0400 (EDT)
+Received: from xanadu.home (xanadu.home [192.168.2.2])
+ by yoda.home (Postfix) with ESMTPSA id B50602DA0192;
+ Tue,  9 Jul 2019 11:02:23 -0400 (EDT)
+Date: Tue, 9 Jul 2019 11:02:23 -0400 (EDT)
+From: Nicolas Pitre <nico@fluxnic.net>
+To: Linus Walleij <linus.walleij@linaro.org>
+Subject: Re: [PATCH 2/2] ARM: boot: Replace open-coded nop with macro
+In-Reply-To: <20190709130301.1916-2-linus.walleij@linaro.org>
+Message-ID: <nycvar.YSQ.7.76.1907091100510.4190@knanqh.ubzr>
+References: <20190709130301.1916-1-linus.walleij@linaro.org>
+ <20190709130301.1916-2-linus.walleij@linaro.org>
+User-Agent: Alpine 2.21 (LFD 202 2017-01-01)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190614164324.9427-7-jagan@amarulasolutions.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Pobox-Relay-ID: 8F4C66C6-A25A-11E9-BFB5-46F8B7964D18-78420484!pb-smtp1.pobox.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_075041_475511_9F9FA2B4 
-X-CRM114-Status: GOOD (  10.39  )
-X-Spam-Score: 2.0 (++)
+X-CRM114-CacheID: sfid-20190709_080230_463129_0437807F 
+X-CRM114-Status: GOOD (  18.52  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.67 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [64.147.108.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,31 +84,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Jernej Skrabec <jernej.skrabec@siol.net>,
- Maxime Ripard <maxime.ripard@bootlin.com>, linux-sunxi@googlegroups.com,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- David Airlie <airlied@linux.ie>, Chen-Yu Tsai <wens@csie.org>,
- Jagan Teki <jagan@amarulasolutions.com>, Daniel Vetter <daniel@ffwll.ch>,
- Michael Trimarchi <michael@amarulasolutions.com>,
- linux-amarula@amarulasolutions.com, linux-arm-kernel@lists.infradead.org
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Russell King <linux@arm.linux.org.uk>, linux-arm-kernel@lists.infradead.org,
+ Roy Franz <roy.franz@cavium.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 14 Jun 2019 22:13:21 +0530, Jagan Teki wrote:
-> The MIPI DSI controller on Allwinner R40 is similar on
-> the one on A64 like doesn't associate any DSI_SCLK gating.
-> 
-> So, add R40 compatible and append A64 compatible as fallback.
-> 
-> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-> ---
->  Documentation/devicetree/bindings/display/sunxi/sun6i-dsi.txt | 1 +
->  1 file changed, 1 insertion(+)
-> 
+On Tue, 9 Jul 2019, Linus Walleij wrote:
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+> This open-coded nop as mov r0, r0 is a development history
+> artifact.
+> 
+> First commit b11fe38883d1
+> ("ARM: 6663/1: make Thumb2 kernel entry point more similar
+> to the ARM one") moved the code around so that the nops
+> would come before the conditional thumb instructions, as it
+> turned out that some boot loaders were patching the initial
+> nop instructions in the kernel. At this point it is clear
+> that all mov r0,r0 are open-coded nops.
+> 
+> Then commit 81a0bc39ea19 ("ARM: add UEFI stub support")
+> moved things around and defined __nop for EFI support and
+> missed this open-coded nop.
+> 
+> commit 06a4b6d009a1
+> ("ARM: 8677/1: boot/compressed: fix decompressor header
+> layout for v7-M") makes all invocations of __nop be wide,
+> but that is fine, because this is what we want: the
+> mov r0,r0 is inside ifndef CONFIG_THUMB2_KERNEL.
+> 
+> Cc: Nicolas Pitre <nico@fluxnic.net>
+> Cc: Roy Franz <roy.franz@cavium.com>
+> Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+
+For both patches:
+
+Acked-by: Nicolas Pitre <nico@fluxnic.net>
+
+
+
+> ---
+>  arch/arm/boot/compressed/head.S | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm/boot/compressed/head.S b/arch/arm/boot/compressed/head.S
+> index 544450c90673..93dffed0ac6e 100644
+> --- a/arch/arm/boot/compressed/head.S
+> +++ b/arch/arm/boot/compressed/head.S
+> @@ -169,7 +169,7 @@ start:
+>  		__nop
+>  		.endr
+>  #ifndef CONFIG_THUMB2_KERNEL
+> -		mov	r0, r0
+> +		__nop
+>  #else
+>   AR_CLASS(	sub	pc, pc, #3	)	@ A/R: switch to Thumb2 mode
+>    M_CLASS(	nop.w			)	@ M: already in Thumb2 mode
+> -- 
+> 2.21.0
+> 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
