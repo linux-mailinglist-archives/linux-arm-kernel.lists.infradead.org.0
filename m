@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 15CCD635D3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 14:27:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F1058635D9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 14:27:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PZHs8YyGpTRnigqG/Z4QP3kbRPGybBJJJFIerLzj/ro=; b=V+3fxhngIKunLX
-	r/ucvQI9/dJJ6fpYXM7BClFVgBmZCzqz9vGB5OYt/WkcKOYWoJunEpTRtnzyWK9Xkp+Jgo8fccCeG
-	XDLaNJzEgZPhatIJdursoVBlUbAAjXMaAjJomx0yfN+OjTzBC5rPPndHZ76r5xZkhkwvxqPVVWGJM
-	tq/aW/HBlPXTgqulm6BtHlt1MM83aVPvxEGeIixwcWfrGoGH+i6MHw4E0kqhc43ZOL1D5XOtSxZeL
-	I2+s9EExEEEFsYlRwsmLW1xINIwGU/a/bdGPucPlo3v94pv9In9TtUt9Lkd5TfWpT6mQkcN9ndbBy
-	gLq7AmUs+NRDRYFebftg==;
+	List-Owner; bh=z/5AIKUvTG+qTFp6zQx7mko7FD1laxLR2OsRiLqnXR0=; b=aK+LQm64s/Gweq
+	Gtiq3IPMM2hSwsRSqmteB+tFtHMdbQbveTojjBl6AEN1doBeuawPnCyRuQAUsERjJ34tRKR1VYAGR
+	JfDPLg6K+Mu7iIa0a9hSoLugAXYgkKKi0cOle5/pwOtwwNj62orPAsOmx2qJk+XBEx5Rphh7gBXdB
+	oOHdDGmE6eTD5snW9O4C+57ATTqp47MjaUSAePXaEwUQ1eQROJUcqxQxRg8hYD3T9ef13vwt9vn9W
+	uZk5Q7jVcuYZVwnmLH+iqyQVqJgSuWM0uubrz92p/DPbE3kovH/FMGXIpz1PSdFWhAiVZkmw6JrOG
+	UV5tio9i7qup0SJAPerA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkpDY-00084J-KG; Tue, 09 Jul 2019 12:27:32 +0000
+	id 1hkpDo-0008LK-7B; Tue, 09 Jul 2019 12:27:48 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hkpBc-0006Wb-Hr
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 12:25:34 +0000
+ id 1hkpBe-0006ag-Il
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 12:25:36 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2FC961529;
- Tue,  9 Jul 2019 05:25:32 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 315AA152D;
+ Tue,  9 Jul 2019 05:25:34 -0700 (PDT)
 Received: from filthy-habits.cambridge.arm.com (unknown [10.1.197.61])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 647B23F59C;
- Tue,  9 Jul 2019 05:25:30 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 65D763F59C;
+ Tue,  9 Jul 2019 05:25:32 -0700 (PDT)
 From: Marc Zyngier <marc.zyngier@arm.com>
 To: Paolo Bonzini <pbonzini@redhat.com>,
  =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>
-Subject: [PATCH 06/18] arm64: Update silicon-errata.txt for Neoverse-N1
- #1349291
-Date: Tue,  9 Jul 2019 13:24:55 +0100
-Message-Id: <20190709122507.214494-7-marc.zyngier@arm.com>
+Subject: [PATCH 07/18] KVM: arm64: Re-mask SError after the one instruction
+ window
+Date: Tue,  9 Jul 2019 13:24:56 +0100
+Message-Id: <20190709122507.214494-8-marc.zyngier@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190709122507.214494-1-marc.zyngier@arm.com>
 References: <20190709122507.214494-1-marc.zyngier@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_052532_677861_F83CB818 
-X-CRM114-Status: UNSURE (   9.47  )
+X-CRM114-CacheID: sfid-20190709_052534_717150_0FD22F29 
+X-CRM114-Status: UNSURE (   8.23  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -76,55 +76,33 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: James Morse <james.morse@arm.com>
 
-Neoverse-N1 affected by #1349291 may report an Uncontained RAS Error
-as Unrecoverable. The kernel's architecture code already considers
-Unrecoverable errors as fatal as without kernel-first support no
-further error-handling is possible.
+KVM consumes any SError that were pending during guest exit with a
+dsb/isb and unmasking SError. It currently leaves SError unmasked for
+the rest of world-switch.
 
-Now that KVM attributes SError to the host/guest more precisely
-the host's architecture code will always handle host errors that
-become pending during world-switch.
-Errors misclassified by this errata that affected the guest will be
-re-injected to the guest as an implementation-defined SError, which can
-be uncontained.
-
-Until kernel-first support is implemented, no workaround is needed
-for this issue.
+This means any SError that occurs during this part of world-switch
+will cause a hyp-panic. We'd much prefer it to remain pending until
+we return to the host.
 
 Signed-off-by: James Morse <james.morse@arm.com>
 Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
 ---
- Documentation/arm64/silicon-errata.txt | 1 +
- arch/arm64/kernel/traps.c              | 4 ++++
- 2 files changed, 5 insertions(+)
+ arch/arm64/kvm/hyp/entry.S | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/Documentation/arm64/silicon-errata.txt b/Documentation/arm64/silicon-errata.txt
-index 2735462d5958..51d506a1f8dc 100644
---- a/Documentation/arm64/silicon-errata.txt
-+++ b/Documentation/arm64/silicon-errata.txt
-@@ -63,6 +63,7 @@ stable kernels.
- | ARM            | Cortex-A76      | #1286807        | ARM64_ERRATUM_1286807       |
- | ARM            | Cortex-A76      | #1463225        | ARM64_ERRATUM_1463225       |
- | ARM            | Neoverse-N1     | #1188873,1418040| ARM64_ERRATUM_1418040       |
-+| ARM            | Neoverse-N1     | #1349291        | N/A                         |
- | ARM            | MMU-500         | #841119,826419  | N/A                         |
- |                |                 |                 |                             |
- | Cavium         | ThunderX ITS    | #22375,24313    | CAVIUM_ERRATUM_22375        |
-diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
-index 985721a1264c..66743bd1e422 100644
---- a/arch/arm64/kernel/traps.c
-+++ b/arch/arm64/kernel/traps.c
-@@ -880,6 +880,10 @@ bool arm64_is_fatal_ras_serror(struct pt_regs *regs, unsigned int esr)
- 		/*
- 		 * The CPU can't make progress. The exception may have
- 		 * been imprecise.
-+		 *
-+		 * Neoverse-N1 #1349291 means a non-KVM SError reported as
-+		 * Unrecoverable should be treated as Uncontainable. We
-+		 * call arm64_serror_panic() in both cases.
- 		 */
- 		return true;
+diff --git a/arch/arm64/kvm/hyp/entry.S b/arch/arm64/kvm/hyp/entry.S
+index ebc8eb247bc9..5e25cc0e6aab 100644
+--- a/arch/arm64/kvm/hyp/entry.S
++++ b/arch/arm64/kvm/hyp/entry.S
+@@ -175,6 +175,8 @@ abort_guest_exit_start:
+ 	.global	abort_guest_exit_end
+ abort_guest_exit_end:
  
++	msr	daifset, #4	// Mask aborts
++
+ 	// If the exception took place, restore the EL1 exception
+ 	// context so that we can report some information.
+ 	// Merge the exception code with the SError pending bit.
 -- 
 2.20.1
 
