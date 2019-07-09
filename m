@@ -2,61 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC846638CB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 17:41:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 08CA1638EF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 17:56:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HRpKPWjIoeafcYHCtys2SDXZvOwWjcnVZLtPbM1t8+Y=; b=HWY/Tsqmvn0tJS
-	kPuSxm1QhP4qy+hDF4sWL8jGVS5LcDepx/6FpkrbOYlgxP+MajNxZBbd0+C7/sBlvb+bVOX4nEy+a
-	Fu8sO/Jm7P5jV4r4QJeXa0bnAtotZ8NDzfayeuIDNaNN2SMmGw7r7vFlmJuZr4c6Sogkr4LRnerdm
-	Sf4xIcX/gtRe1cjc+P3olYusyhNFbaDwslZDwCnYv5wAXUM6LlAix93SrLcFCmPH6qzt5XKfqlYq2
-	WMhL9d+MYB3vy5Gw94RIXeSFh687wyBVaTdBbyDdNI1OsgMhPt25IyPVjkzfo7/A/z9DiWj+y2q8c
-	UC8XSJCD9q7ziiPGICZA==;
+	List-Owner; bh=C7Sd8pYY+r4B40vJgy3wZwrxmVEufWwZem2/N5AcLV8=; b=RvFJk5PfCWfHqC
+	Um4JdGfJXcuocHsWmxej0DnKFroNPW81Mv0f7hI3ix3dgK4ViDBnfx8xH6ZvwadCwTCEA2AXMOiWw
+	eu650iyTbftEyrghwV6Z+sZcD8Eek+yXs92e0Ya8E8eWFoWb8QK1Yq8zOE9dPrI1pJoXlFhzX+AMt
+	Sj2lAhj5Tlp8v4ovFT5I+IQMTRs9+m572L5PVwCA603Nt4sCxQ3+3M/qNmLljaKne8DLd6+NvLr0m
+	48RG/YG4A6Y1PoXpSZwaClMi9/JZnGUn6mmB7fYSWos6bEQ/e9EimpgE15m5Cp5RwISX2ckmbIN45
+	LpSO4NS9VFA263ns6SPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hksEk-0000pQ-TU; Tue, 09 Jul 2019 15:40:59 +0000
+	id 1hksTe-0005iq-9G; Tue, 09 Jul 2019 15:56:22 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hksEa-0000p4-5O
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 15:40:49 +0000
-Received: from gandalf.local.home (cpe-66-24-58-225.stny.res.rr.com
- [66.24.58.225])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DE6ED214AF;
- Tue,  9 Jul 2019 15:40:46 +0000 (UTC)
-Date: Tue, 9 Jul 2019 11:40:45 -0400
-From: Steven Rostedt <rostedt@goodmis.org>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: kprobes sanity test fails on next-20190708
-Message-ID: <20190709114045.091c94f3@gandalf.local.home>
-In-Reply-To: <20190709153755.GB10123@lakrids.cambridge.arm.com>
-References: <20190708141136.GA3239@localhost.localdomain>
- <a19faa89-d318-fe21-9952-b0f842240ba5@arm.com>
- <CADYN=9LBQ4NYFe8BPguJmxJFMiAJ405AZNU7W6gHXLSrZOSgTA@mail.gmail.com>
- <20190709213657.1447f508bd6b72495ec225d9@gmail.com>
- <20190709112548.25edc9a7@gandalf.local.home>
- <20190709153755.GB10123@lakrids.cambridge.arm.com>
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1hksTU-0005hc-Fo
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 15:56:14 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9B81F216C4;
+ Tue,  9 Jul 2019 15:56:10 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1562687771;
+ bh=RGnkwnacksVmU2gR7GE2tofc6/oEwvapJ35bt4bcf8o=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=h/FE+OV4yvuI5e2XLeeJHrzTH41LRdowVP93kAqE098Uud68lW213tgxTBzwVe/XA
+ 620d+4pVRRXDM7QcHbwLuWgFPQQjpNExWe85orP+g6ddnqWaFeSWMJahId7J7+pisS
+ c56/S4gzKI0Vgx17Fu/5RrzpMqPt3Ak9fYAFdzjI=
+Date: Tue, 9 Jul 2019 16:56:07 +0100
+From: Will Deacon <will@kernel.org>
+To: Joakim Zhang <qiangqing.zhang@nxp.com>
+Subject: Re: [PATCH] perf: imx8_ddr_perf: calculate ddr bandwidth via virtual
+ event read-bytes/write-bytes
+Message-ID: <20190709155606.x45nmew253giwvgf@willie-the-truck>
+References: <20190709054417.11734-1-qiangqing.zhang@nxp.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190709054417.11734-1-qiangqing.zhang@nxp.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_084048_221540_01B1E7B0 
-X-CRM114-Status: GOOD (  10.33  )
-X-Spam-Score: -4.8 (----)
+X-CRM114-CacheID: sfid-20190709_085612_556580_57A82444 
+X-CRM114-Status: UNSURE (   9.47  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-4.8 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
  high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,37 +78,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Anders Roxell <anders.roxell@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Anil S Keshavamurthy <anil.s.keshavamurthy@intel.com>,
- James Morse <james.morse@arm.com>, Masami Hiramatsu <mhiramat@kernel.org>,
- "Naveen N . Rao" <naveen.n.rao@linux.ibm.com>,
- Masami Hiramatsu <masami.hiramatsu@gmail.com>,
- David Miller <davem@davemloft.net>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>, Frank Li <frank.li@nxp.com>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 9 Jul 2019 16:37:55 +0100
-Mark Rutland <mark.rutland@arm.com> wrote:
-
-> > I agree. I pushed to my repo in the for-next branch. Care to test that?
-> > 
-> >   git://git.kernel.org/pub/scm/linux/kernel/git/rostedt/linux-trace.git  
+On Tue, Jul 09, 2019 at 05:46:44AM +0000, Joakim Zhang wrote:
+> We can calculate ddr bandwidth via virtual event read-bytes/write-bytes
+> based on ddr burst width, which actually share event
+> read-cycles/write-cycles. Burst width is 32 bit on i.MX8 board.
 > 
-> I've just given that a spin with KPROBES and KPROBES_SANITY_TEST
-> selected, and it boots cleanly for me. FWIW:
+> The ddr interface will generate 2 up edges and 2 down edges in an
+> internal clock cycle, so it can pass 4 beats of data. 4 bytes of each
+> beat if ddr burst width is 32 bit.
 > 
-> Tested-by: Mark Rutland <mark.rutland@arm.com>
+> for example:
+> perf stat -a -e imx8_ddr0/read-bytes/,imx8_ddr0/write-bytes/ ls
 
-Thanks, then I'm guessing no more changes need to be made.
+I don't think you should be doing this in the kernel. Can you look at
+implementing it in perf tool instead by adding a .json file for your
+PMU and expressing this compound event using "MetricExpr"?
 
-I usually don't rebase my for-next branch for tags, but since I just
-pushed it, I guess I can add this one ;-)
-
--- Steve
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
