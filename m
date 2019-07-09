@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2CEC9635DC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 14:28:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E3A23635DD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 14:28:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b4dGuBnIanximkggPSv5tB73U5fL7FkjoSk9m/hRUSU=; b=JjSmzQtKXsOfNx
-	0W6uSJtB49OoQjadxJ6sKUC6bhrH5895Z4fTuYLjtHya+prqpGdKC86tnQZFpjP3aSws4wrDZAMrH
-	IXL0uxZCJy3yFn78Zt2+xl5l1fiPmYrNK5j6M1u5O/m8Ecs+M39WGn/+rR/TyRfifP3Nahj1i62rw
-	Zup1X+RncEMIrF0P8+w2eJqAYv21iZ7wMfmPpXFVDRfTl4WRw62L0oP0itSTt8yy9LtDvHVCpwhER
-	4z4w68G3fc85jC5P1wFC9WmxXT3RTAeCQ2qAwLP8ik0W8+oP23SeoggllUbxIp3Z/eX5ZFZJLaR2H
-	r6XgOXI091iraGj2mctw==;
+	List-Owner; bh=/5f4C3z1UAyLBk1hkXmSI0MPdZIKQBNOrAU9UfWUEys=; b=h3dVRxotrG9BsT
+	VdDsFBhUpLAxBiSo9N0bXNO/xAqCDIuhSa0hnH4L12T5ZbAEVXpudp3ctuab3nJijgiS56hPmPIuc
+	cUw2rEEddNmZiKDFr2e2fiiNlCXypR8uJ15w+m/3+/cz7dTX+Hplg11zU2RZ7vPRio4/HC+Wke/e3
+	8Fdx5+Kw3+uNZ4285OEPha/3scamOp+S1U7boESrRfKIPf7JbU7hqM1PLEPXxhFKyhXN/kUlvc2t+
+	lEjZcWXpXT3ZLiy5x7j6R0yUBQRMvVjv42M/bXCqKVQAiX+7eTdk2N2vmspttbB9O6Kse00yOoH6C
+	SEls19/zZVy3R+9pACOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkpEK-0000Mc-BG; Tue, 09 Jul 2019 12:28:20 +0000
+	id 1hkpEb-0000aK-7l; Tue, 09 Jul 2019 12:28:37 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hkpBi-0006eu-Ll
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 12:25:40 +0000
+ id 1hkpBk-0006gw-MT
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 12:25:42 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 36385153B;
- Tue,  9 Jul 2019 05:25:38 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 387F51570;
+ Tue,  9 Jul 2019 05:25:40 -0700 (PDT)
 Received: from filthy-habits.cambridge.arm.com (unknown [10.1.197.61])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 69E983F59C;
- Tue,  9 Jul 2019 05:25:36 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6BF1D3F59C;
+ Tue,  9 Jul 2019 05:25:38 -0700 (PDT)
 From: Marc Zyngier <marc.zyngier@arm.com>
 To: Paolo Bonzini <pbonzini@redhat.com>,
  =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>
-Subject: [PATCH 09/18] KVM: arm/arm64: Rename kvm_pmu_{enable/disable}_counter
- functions
-Date: Tue,  9 Jul 2019 13:24:58 +0100
-Message-Id: <20190709122507.214494-10-marc.zyngier@arm.com>
+Subject: [PATCH 10/18] KVM: arm/arm64: Extract duplicated code to own function
+Date: Tue,  9 Jul 2019 13:24:59 +0100
+Message-Id: <20190709122507.214494-11-marc.zyngier@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190709122507.214494-1-marc.zyngier@arm.com>
 References: <20190709122507.214494-1-marc.zyngier@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_052538_843352_9DF4CA5F 
-X-CRM114-Status: GOOD (  11.09  )
+X-CRM114-CacheID: sfid-20190709_052540_887939_385193F3 
+X-CRM114-Status: GOOD (  11.42  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -75,115 +74,69 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Andrew Murray <andrew.murray@arm.com>
 
-The kvm_pmu_{enable/disable}_counter functions can enable/disable
-multiple counters at once as they operate on a bitmask. Let's
-make this clearer by renaming the function.
+Let's reduce code duplication by extracting common code to its own
+function.
 
-Suggested-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 Signed-off-by: Andrew Murray <andrew.murray@arm.com>
-Reviewed-by: Julien Thierry <julien.thierry@arm.com>
 Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
 ---
- arch/arm64/kvm/sys_regs.c |  4 ++--
- include/kvm/arm_pmu.h     |  8 ++++----
- virt/kvm/arm/pmu.c        | 12 ++++++------
- 3 files changed, 12 insertions(+), 12 deletions(-)
+ virt/kvm/arm/pmu.c | 28 ++++++++++++++++------------
+ 1 file changed, 16 insertions(+), 12 deletions(-)
 
-diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
-index ce933f296049..0a7665c189ff 100644
---- a/arch/arm64/kvm/sys_regs.c
-+++ b/arch/arm64/kvm/sys_regs.c
-@@ -865,12 +865,12 @@ static bool access_pmcnten(struct kvm_vcpu *vcpu, struct sys_reg_params *p,
- 		if (r->Op2 & 0x1) {
- 			/* accessing PMCNTENSET_EL0 */
- 			__vcpu_sys_reg(vcpu, PMCNTENSET_EL0) |= val;
--			kvm_pmu_enable_counter(vcpu, val);
-+			kvm_pmu_enable_counter_mask(vcpu, val);
- 			kvm_vcpu_pmu_restore_guest(vcpu);
- 		} else {
- 			/* accessing PMCNTENCLR_EL0 */
- 			__vcpu_sys_reg(vcpu, PMCNTENSET_EL0) &= ~val;
--			kvm_pmu_disable_counter(vcpu, val);
-+			kvm_pmu_disable_counter_mask(vcpu, val);
- 		}
- 	} else {
- 		p->regval = __vcpu_sys_reg(vcpu, PMCNTENSET_EL0) & mask;
-diff --git a/include/kvm/arm_pmu.h b/include/kvm/arm_pmu.h
-index 84a9db156be7..45e5205750b4 100644
---- a/include/kvm/arm_pmu.h
-+++ b/include/kvm/arm_pmu.h
-@@ -35,8 +35,8 @@ void kvm_pmu_set_counter_value(struct kvm_vcpu *vcpu, u64 select_idx, u64 val);
- u64 kvm_pmu_valid_counter_mask(struct kvm_vcpu *vcpu);
- void kvm_pmu_vcpu_reset(struct kvm_vcpu *vcpu);
- void kvm_pmu_vcpu_destroy(struct kvm_vcpu *vcpu);
--void kvm_pmu_disable_counter(struct kvm_vcpu *vcpu, u64 val);
--void kvm_pmu_enable_counter(struct kvm_vcpu *vcpu, u64 val);
-+void kvm_pmu_disable_counter_mask(struct kvm_vcpu *vcpu, u64 val);
-+void kvm_pmu_enable_counter_mask(struct kvm_vcpu *vcpu, u64 val);
- void kvm_pmu_flush_hwstate(struct kvm_vcpu *vcpu);
- void kvm_pmu_sync_hwstate(struct kvm_vcpu *vcpu);
- bool kvm_pmu_should_notify_user(struct kvm_vcpu *vcpu);
-@@ -72,8 +72,8 @@ static inline u64 kvm_pmu_valid_counter_mask(struct kvm_vcpu *vcpu)
- }
- static inline void kvm_pmu_vcpu_reset(struct kvm_vcpu *vcpu) {}
- static inline void kvm_pmu_vcpu_destroy(struct kvm_vcpu *vcpu) {}
--static inline void kvm_pmu_disable_counter(struct kvm_vcpu *vcpu, u64 val) {}
--static inline void kvm_pmu_enable_counter(struct kvm_vcpu *vcpu, u64 val) {}
-+static inline void kvm_pmu_disable_counter_mask(struct kvm_vcpu *vcpu, u64 val) {}
-+static inline void kvm_pmu_enable_counter_mask(struct kvm_vcpu *vcpu, u64 val) {}
- static inline void kvm_pmu_flush_hwstate(struct kvm_vcpu *vcpu) {}
- static inline void kvm_pmu_sync_hwstate(struct kvm_vcpu *vcpu) {}
- static inline bool kvm_pmu_should_notify_user(struct kvm_vcpu *vcpu)
 diff --git a/virt/kvm/arm/pmu.c b/virt/kvm/arm/pmu.c
-index da740764a7ee..99e51ee8fd9e 100644
+index 99e51ee8fd9e..efdc7f6db6cd 100644
 --- a/virt/kvm/arm/pmu.c
 +++ b/virt/kvm/arm/pmu.c
-@@ -124,13 +124,13 @@ u64 kvm_pmu_valid_counter_mask(struct kvm_vcpu *vcpu)
+@@ -53,6 +53,19 @@ void kvm_pmu_set_counter_value(struct kvm_vcpu *vcpu, u64 select_idx, u64 val)
+ 	__vcpu_sys_reg(vcpu, reg) += (s64)val - kvm_pmu_get_counter_value(vcpu, select_idx);
  }
  
++/**
++ * kvm_pmu_release_perf_event - remove the perf event
++ * @pmc: The PMU counter pointer
++ */
++static void kvm_pmu_release_perf_event(struct kvm_pmc *pmc)
++{
++	if (pmc->perf_event) {
++		perf_event_disable(pmc->perf_event);
++		perf_event_release_kernel(pmc->perf_event);
++		pmc->perf_event = NULL;
++	}
++}
++
  /**
-- * kvm_pmu_enable_counter - enable selected PMU counter
-+ * kvm_pmu_enable_counter_mask - enable selected PMU counters
-  * @vcpu: The vcpu pointer
-  * @val: the value guest writes to PMCNTENSET register
-  *
-  * Call perf_event_enable to start counting the perf event
-  */
--void kvm_pmu_enable_counter(struct kvm_vcpu *vcpu, u64 val)
-+void kvm_pmu_enable_counter_mask(struct kvm_vcpu *vcpu, u64 val)
- {
- 	int i;
- 	struct kvm_pmu *pmu = &vcpu->arch.pmu;
-@@ -153,13 +153,13 @@ void kvm_pmu_enable_counter(struct kvm_vcpu *vcpu, u64 val)
- }
- 
- /**
-- * kvm_pmu_disable_counter - disable selected PMU counter
-+ * kvm_pmu_disable_counter_mask - disable selected PMU counters
-  * @vcpu: The vcpu pointer
-  * @val: the value guest writes to PMCNTENCLR register
-  *
-  * Call perf_event_disable to stop counting the perf event
-  */
--void kvm_pmu_disable_counter(struct kvm_vcpu *vcpu, u64 val)
-+void kvm_pmu_disable_counter_mask(struct kvm_vcpu *vcpu, u64 val)
- {
- 	int i;
- 	struct kvm_pmu *pmu = &vcpu->arch.pmu;
-@@ -336,10 +336,10 @@ void kvm_pmu_handle_pmcr(struct kvm_vcpu *vcpu, u64 val)
- 
- 	mask = kvm_pmu_valid_counter_mask(vcpu);
- 	if (val & ARMV8_PMU_PMCR_E) {
--		kvm_pmu_enable_counter(vcpu,
-+		kvm_pmu_enable_counter_mask(vcpu,
- 		       __vcpu_sys_reg(vcpu, PMCNTENSET_EL0) & mask);
- 	} else {
--		kvm_pmu_disable_counter(vcpu, mask);
-+		kvm_pmu_disable_counter_mask(vcpu, mask);
+  * kvm_pmu_stop_counter - stop PMU counter
+  * @pmc: The PMU counter pointer
+@@ -68,9 +81,7 @@ static void kvm_pmu_stop_counter(struct kvm_vcpu *vcpu, struct kvm_pmc *pmc)
+ 		reg = (pmc->idx == ARMV8_PMU_CYCLE_IDX)
+ 		       ? PMCCNTR_EL0 : PMEVCNTR0_EL0 + pmc->idx;
+ 		__vcpu_sys_reg(vcpu, reg) = counter;
+-		perf_event_disable(pmc->perf_event);
+-		perf_event_release_kernel(pmc->perf_event);
+-		pmc->perf_event = NULL;
++		kvm_pmu_release_perf_event(pmc);
  	}
+ }
  
- 	if (val & ARMV8_PMU_PMCR_C)
+@@ -101,15 +112,8 @@ void kvm_pmu_vcpu_destroy(struct kvm_vcpu *vcpu)
+ 	int i;
+ 	struct kvm_pmu *pmu = &vcpu->arch.pmu;
+ 
+-	for (i = 0; i < ARMV8_PMU_MAX_COUNTERS; i++) {
+-		struct kvm_pmc *pmc = &pmu->pmc[i];
+-
+-		if (pmc->perf_event) {
+-			perf_event_disable(pmc->perf_event);
+-			perf_event_release_kernel(pmc->perf_event);
+-			pmc->perf_event = NULL;
+-		}
+-	}
++	for (i = 0; i < ARMV8_PMU_MAX_COUNTERS; i++)
++		kvm_pmu_release_perf_event(&pmu->pmc[i]);
+ }
+ 
+ u64 kvm_pmu_valid_counter_mask(struct kvm_vcpu *vcpu)
 -- 
 2.20.1
 
