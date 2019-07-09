@@ -2,91 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA83C6363B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 14:52:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 077366365F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 15:03:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z51udvbPHmVrHpKrwuaT6kzTAajVqPgAcj9Chm51uns=; b=FB+x1XUZ5Yu9no
-	f2LJERi4QUmOORcY3Mxx72FxLcsByJtnRtgr6/aeLeAzb9JjGuEGrmoNoIOEq8IJXkB1RFaVTKskO
-	/+pLs9+5BitYwdSsNRDIgNvetvqf83k1/H5gRZ8d00C444OcV5KNJV1vmdTeXveLT7RA99dqRDPfH
-	ocv8yVfXMMxW0hgPHZrpqUDX8qJ760GoEgRaInzby8QC95VYRPynRSabKHJavYRcmp4VZJIscNNAu
-	9u41TmG0lXlTisCXuorGz7oP/mm4hC2apohTcTv7qTYaB7uJvcSr+KuU8/jzOOHuwA9Q6+DYpiBzM
-	bmZMEd8br9oMzFEIR9wQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=55uPlcx8605BME+yn6xAT8NQStN3fNNQfhXuDS2GGsU=; b=ZbW2+lCSPFudOA
+	JpSIf61AD7KQ9Afk1ccInNImDCgGtqfE86XsvhygoSTHFtILkNprRxiB9z6mnGj7Vx39xFLiqEtQA
+	woA1G63Sct6RqH0FtpZ9RqBs5DYKBW+nYtZuKV1q2ikugLNz52e8MCSaYg81O+cef+5Cs4hmitzq7
+	kSY9HhWoNKasPetsdkqgy7VC5oOAhEiA1SedzQa/N/w1GEgt7v93K/QA24aWKsR9G2V3LiNUBC2sO
+	PZbTsE06IQDyNxzci3YCEZh3Yn9gCua1yVgwGG/Q9ECkTwjHDMs/ROrJOvx1b4nUN+6jN+Lq0faXp
+	kEJ9o5CMgB1+zUsaM+kA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkpbl-0003yN-AW; Tue, 09 Jul 2019 12:52:33 +0000
-Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
+	id 1hkpmF-0007N2-8U; Tue, 09 Jul 2019 13:03:23 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkpbZ-0003xm-L6
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 12:52:22 +0000
-Received: by mail-qk1-x742.google.com with SMTP id s22so15870784qkj.12
+ id 1hkpm5-0007Mg-9y
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 13:03:14 +0000
+Received: by mail-lj1-x241.google.com with SMTP id h10so19482020ljg.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 09 Jul 2019 05:52:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=z8kNI881bPk48iQ1KRVTl0sXKkuyk/dxjSsIQFxaR8o=;
- b=E0e0ZIuEOatfHsh7mOJFiZl1I6rwVWxMVBR7/NP4v7/YzUMirQOcByvAHvg2T0kjXl
- VwE1HxqsblS7HwY/UtGp0m//pupC6TMCRZl2XI5xNvQGm/UfVz+R5OfvODRwLcV/HPTw
- 3tnkuXGYjq6WfNB2kWqDnKnu0h8haGjl68eaL3kClCGwtKbPo24PYO7rnnjyVZV98G6G
- 0Dom35EfORV1x1R7hGcOUM9gqD8MbpqncHi9NaLUSwTA1fuWVEZWf0Jpohz97vFKcnuQ
- Ra6z0d5JvZ4w8tRlVNDfByvvbYbnrxRDJb2DFj5K2FdzU+7DKeSL98HEk0MRjHWo9JEd
- 68lA==
+ Tue, 09 Jul 2019 06:03:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Yxx9emx1/I2cEY2sTHL1IF3iO56b8GLZ1Lsk/UYEGCM=;
+ b=DdVE+VMTyZI5jxU+RJT+91H8y47HtVGyRN9sSB7J8DUPG/kIL7A+K0Ahr57yNI0wi7
+ 2rrdAnUbs97lhT4R/jtQGXFegji5UEtO30kB6qVCuJ3JpH2Kw1d4jCEk1VfJ3w5aAj8x
+ cPN1x3DQZxJN6U/4f0EDnW8iUGk49BsJd/1FexYIxGvaBtM38wzLJU0AqAikHVobiu2P
+ 4/Q3WOKjyPfCF0dyvXURmuJwCXDeNrKAuuiTJPkLk5F9TEK5F7bwKjgx/4tBnITQh+HQ
+ I0JdajHA0qkFu33QNhF/3BuxUi2FGvyLRm6eLb4/lA3k6ImBmbDaNXFrhJtA3qfsFxlT
+ 7LvA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=z8kNI881bPk48iQ1KRVTl0sXKkuyk/dxjSsIQFxaR8o=;
- b=dJYTKaS/DBCQoPj97i4qjJbXstwmcbrnvxe76vApQt3Od2/X/M+X2cr5AV0URkae4b
- vi+BX65EOo3Y+Eyfbf9XVKslXXFguchPqWuWVaBraSifqFlDyaV/lxU2Y7cGP7uJZXU6
- p5v06HQU2F8UMjrkfJV7qqcECmfikw4Vt4GSKA5III4WQ2e/2dTKqA+U1kKQfYR/O1U9
- yppgQQWwBTtHtuvSEeIsoNpqH7NStzfiRq8wXH1NsaQ3SQOw5TPft9sWqQdwYMZP1mNl
- +BkeiQy42EMODmeTgwssg9njQkrFI1h9TpXUPmPe3q6slLA0DoAC+kA94BOIwc5EVhOf
- +ehg==
-X-Gm-Message-State: APjAAAUm6/lmzUo6tzbcT2Z16vdL8F6ZX9iHjOpJlCYFrnZC60W7DC5l
- tQR5vebcoNORKa7VAwreulw=
-X-Google-Smtp-Source: APXvYqyHA5/Lol3yKNF2g17z/amMymzBG8mlvk2cI4jGu5NI2rCkAbu+/C+mLJhVZoKdUzWek1dpbA==
-X-Received: by 2002:a37:a7d2:: with SMTP id
- q201mr18019316qke.150.1562676740061; 
- Tue, 09 Jul 2019 05:52:20 -0700 (PDT)
-Received: from [192.168.2.145] (ppp79-139-233-208.pppoe.spdop.ru.
- [79.139.233.208])
- by smtp.googlemail.com with ESMTPSA id t6sm8836329qkh.129.2019.07.09.05.52.15
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 09 Jul 2019 05:52:17 -0700 (PDT)
-Subject: Re: [PATCH v5 05/12] drm/modes: Rewrite the command line parser
-To: Maxime Ripard <maxime.ripard@bootlin.com>
-References: <cover.5190d070d1439d762d7ab273f4ae2573087fee20.1560783090.git-series.maxime.ripard@bootlin.com>
- <e32cd4009153b184103554009135c7bf7c9975d7.1560783090.git-series.maxime.ripard@bootlin.com>
- <e1fcea71-b551-274e-4ea0-178bb0d5f71c@gmail.com>
- <20190709124526.36szuriteq3jumhr@flea>
-From: Dmitry Osipenko <digetx@gmail.com>
-Message-ID: <41d24675-10df-5531-f4ee-4d801e2e4faf@gmail.com>
-Date: Tue, 9 Jul 2019 15:52:13 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ bh=Yxx9emx1/I2cEY2sTHL1IF3iO56b8GLZ1Lsk/UYEGCM=;
+ b=SuTYNPphJRvXw/g6+1oVfxs6SGb9wFnh/j/qW0SmvSCKG8i9k4zJ6+OOIcP+XTOfU1
+ pTVP1ondhnt/dvKY2R9/YlhhOHaKrhsVgDCaE2spa6+RmW8L14oXivyvyhEeM6kuurc5
+ SWyk9ruVX5QDubWAJIB+WPqKXaaJizERFu1AH4LpFrDOY8LQZh64d+sRPjdP/+2Nd/P9
+ iRm/tgxpJSnT8bFEj5dIN4jyxUQGXBaSOsCRV4OP9vk14tbADPV2vrd0lcVFKswgyP8d
+ rjfMmq1EkzrYOAe+CPrYM1r/40jkbkYN/Pp/ajXaYSqsCKiWYyJvZE40EzkK39Iolldj
+ q26A==
+X-Gm-Message-State: APjAAAW3h+luIvlETEVewkp1rsUTgJwXNTa7JisJgBJhOkdc3TSo0KAJ
+ nWBcDxXe7nODwkLla8cN4XDalQ==
+X-Google-Smtp-Source: APXvYqw1tpvgLeJdGjawJCw+wH/DIYEsyMJn6+k0aZ4w+nCpibb+lNHPNfv83fJbgG5gKHzwbm/q4w==
+X-Received: by 2002:a2e:5dc6:: with SMTP id v67mr10528306lje.240.1562677391403; 
+ Tue, 09 Jul 2019 06:03:11 -0700 (PDT)
+Received: from genomnajs.ideon.se ([85.235.10.227])
+ by smtp.gmail.com with ESMTPSA id q4sm4808037lje.99.2019.07.09.06.03.10
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 09 Jul 2019 06:03:10 -0700 (PDT)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: Russell King <linux@arm.linux.org.uk>
+Subject: [PATCH 1/2] ARM: boot: Explain the 8 nops
+Date: Tue,  9 Jul 2019 15:03:00 +0200
+Message-Id: <20190709130301.1916-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-In-Reply-To: <20190709124526.36szuriteq3jumhr@flea>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_055221_695233_330FBD7D 
-X-CRM114-Status: GOOD (  15.64  )
+X-CRM114-CacheID: sfid-20190709_060313_346917_F8C7FA29 
+X-CRM114-Status: GOOD (  10.61  )
 X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (digetx[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -107,43 +95,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: eben@raspberrypi.org, David Airlie <airlied@linux.ie>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- dri-devel@lists.freedesktop.org,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- Thierry Reding <thierry.reding@gmail.com>, Sean Paul <seanpaul@chromium.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- "linux-tegra@vger.kernel.org" <linux-tegra@vger.kernel.org>,
- Daniel Vetter <daniel.vetter@intel.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Linus Walleij <linus.walleij@linaro.org>, Roy Franz <roy.franz@cavium.com>,
+ linux-arm-kernel@lists.infradead.org, Nicolas Pitre <nico@fluxnic.net>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MDkuMDcuMjAxOSAxNTo0NSwgTWF4aW1lIFJpcGFyZCDQv9C40YjQtdGCOgo+IEhpLAo+IAo+IE9u
-IEZyaSwgSnVsIDA1LCAyMDE5IGF0IDA3OjU0OjQ3UE0gKzAzMDAsIERtaXRyeSBPc2lwZW5rbyB3
-cm90ZToKPj4gMTcuMDYuMjAxOSAxNzo1MSwgTWF4aW1lIFJpcGFyZCDQv9C40YjQtdGCOgo+Pj4g
-RnJvbTogTWF4aW1lIFJpcGFyZCA8bWF4aW1lLnJpcGFyZEBmcmVlLWVsZWN0cm9ucy5jb20+Cj4+
-Pgo+Pj4gUmV3cml0ZSB0aGUgY29tbWFuZCBsaW5lIHBhcnNlciBpbiBvcmRlciB0byBnZXQgYXdh
-eSBmcm9tIHRoZSBzdGF0ZSBtYWNoaW5lCj4+PiBwYXJzaW5nIHRoZSB2aWRlbyBtb2RlIGxpbmVz
-Lgo+Pj4KPj4+IEhvcGVmdWxseSwgdGhpcyB3aWxsIGFsbG93IHRvIGV4dGVuZCBpdCBtb3JlIGVh
-c2lseSB0byBzdXBwb3J0IG5hbWVkIG1vZGVzCj4+PiBhbmQgLyBvciBwcm9wZXJ0aWVzIHNldCBk
-aXJlY3RseSBvbiB0aGUgY29tbWFuZCBsaW5lLgo+Pj4KPj4+IFJldmlld2VkLWJ5OiBOb3JhbGYg
-VHLDuG5uZXMgPG5vcmFsZkB0cm9ubmVzLm9yZz4KPj4+IFNpZ25lZC1vZmYtYnk6IE1heGltZSBS
-aXBhcmQgPG1heGltZS5yaXBhcmRAZnJlZS1lbGVjdHJvbnMuY29tPgo+Pj4gLS0tCj4+PiAgZHJp
-dmVycy9ncHUvZHJtL2RybV9tb2Rlcy5jIHwgMzI1ICsrKysrKysrKysrKysrKysrKysrKysrLS0t
-LS0tLS0tLS0tLS0KPj4+ICAxIGZpbGUgY2hhbmdlZCwgMjEwIGluc2VydGlvbnMoKyksIDExNSBk
-ZWxldGlvbnMoLSkKPj4KPj4gSSBoYXZlIGEgVGVncmEgZGV2aWNlIHRoYXQgdXNlcyBhIHN0b2Nr
-IGFuZHJvaWQgYm9vdGxvYWRlciB3aGljaAo+PiBwYXNzZXMgInZpZGVvPXRlZ3JhZmIiIGluIHRo
-ZSBrZXJuZWxzIGNtZGxpbmUuIFRoYXQgd2Fzbid0IGEgcHJvYmxlbQo+PiBiZWZvcmUgdGhpcyBw
-YXRjaCwgYnV0IG5vdyBUZWdyYSBEUk0gZHJpdmVyIGZhaWxzIHRvIHByb2JlIGJlY2F1c2UKPj4g
-dGhlIG1vZGUgaXMgMHgwOjAgYW5kIGhlbmNlIGZyYW1lYnVmZmVyIGFsbG9jYXRpb24gZmFpbHMu
-IElzIGl0IGEKPj4gbGVnaXQgcmVncmVzc2lvbiB0aGF0IHNob3VsZCBiZSBmaXhlZCBpbiB1cHN0
-cmVhbT8KPiAKPiBUaGllcnJ5IGluZGVlZCByZXBvcnRlZCB0aGF0IGlzc3VlLCBidXQgdGhlIGRp
-c2N1c3Npb24gcHJldHR5IG11Y2gKPiBzdGFsbGVkIHNpbmNlIHRoZW4uCgpTb3JyeSwgdGhpcyBk
-b2Vzbid0IGFuc3dlciBteSBxdWVzdGlvbi4gV2hlcmUgaXQgd2FzIHJlcG9ydGVkPwoKSWYgaXQn
-cyBhIHZhbGlkIHJlZ3Jlc3Npb24gKG15IGRldmljZSBpcyBicm9rZW4pLCB0aGVuIHRoZSBwYXRj
-aCBzaG91bGQgZWl0aGVyIGJlIGZpeGVkIG9yCnJldmVydGVkLgoKX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxp
-c3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
-YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+This was unclear to me until Russell explained the obvious
+that 8 nops are added to offset an a.out image. Reading
+git history reveals that thumb kernels first removed the
+nops and then kept 7 of them (the last instruction being
+a switch to thumb mode) as it turns out that some boot
+loaders were using this as a "patch area". Also the magic
+numbers after the initial nops and the jump of course
+need to stay in the same offset for kernel file
+detection.
+
+Make the code easier to understand with a comment.
+
+Cc: Nicolas Pitre <nico@fluxnic.net>
+Cc: Roy Franz <roy.franz@cavium.com>
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+---
+ arch/arm/boot/compressed/head.S | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+diff --git a/arch/arm/boot/compressed/head.S b/arch/arm/boot/compressed/head.S
+index e59d14679fb0..544450c90673 100644
+--- a/arch/arm/boot/compressed/head.S
++++ b/arch/arm/boot/compressed/head.S
+@@ -153,6 +153,18 @@
+  AR_CLASS(	.arm	)
+ start:
+ 		.type	start,#function
++		/*
++		 * These 7 nops along with the 1 nop immediately below for
++		 * !THUMB2 form 8 nops that make the compressed kernel bootable
++		 * on legacy ARM systems that were assuming the kernel in a.out
++		 * binary format. The boot loaders on these systems would
++		 * jump 32 bytes into the image to skip the a.out header.
++		 * with these 8 nops filling exactly 32 bytes, things still
++		 * work as expected on these legacy systems. Thumb2 mode keeps
++		 * 7 of the nops as it turns out that some boot loaders
++		 * were patching the initial instructions of the kernel, i.e
++		 * had started to exploit this "patch area".
++		 */
+ 		.rept	7
+ 		__nop
+ 		.endr
+-- 
+2.21.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
