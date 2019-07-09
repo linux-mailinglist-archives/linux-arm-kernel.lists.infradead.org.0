@@ -2,53 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 814D363B06
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 20:33:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B338963B07
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 20:33:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y68WhIOiS3drlGwsU4XarQPAIesSzcFvYsQUdOYLkfM=; b=YyQ+e4VRTNiDL7
-	5If9iX/7YOXIVDWAd9v5/TNsjHepq1XczHtl3zcJY/lUSQ6aBN4JtHPI1IKIeFzqOTpnn72bs47Ya
-	+wSdBx8qFSKqkhwRTPFVLe/DBEUUzKhwO7kLZ4iXhmwZVeV5274P/2wrwlhbO356+xyixhRxr2Mam
-	qatxNa7w63KJDPk/qWoiR0FUROL0KnmdLLcurrOvYorgPrNdEMI8mQxkJiteT/4AEjbEciULgJIlK
-	zyNJ+VdKsE2ZHlfLWwVZ4g3/arLqaQFY0yL754vrJbYcTUCtE0JlDd61Bq1AXS1gIeuugsGQLoGrd
-	I7V0wp+S/HnnvRRuvB0w==;
+	List-Owner; bh=GmeeDq49tLAO5IrbcFW/JFds3ExpKNzSRqotyBbeSNQ=; b=EHikEpJBFJHEYl
+	vqYT2bzRbEUHMQp55/47o3JmBIM1xEXML0MA0eu53rqq/Z1TIt+u8cobiHIRf+mn5pTNYelvB06jw
+	vUCXJu2dXO2f769390jhM92IiHNyViPG9feIbjzxjMXdox2mmecY45Ucqqx3UCi5N3ToBplxjMIY/
+	GCSfbdw1+ofuucomX08tkoUSuT4MbcxkvvfrMvdi66QpzInxiweoPazH+aylDLYhXX+MxZT2DAY2p
+	dlwQfcwjexsTdpNxihGzDv1jtr1YJl7kOkVwORzf5JTL6K61a1CdzkSmog/scW3+WHAMbD34EkThc
+	Gwyivw5//k0JFfBjV9Ow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkuvK-0006eD-2Y; Tue, 09 Jul 2019 18:33:06 +0000
+	id 1hkuva-0006sI-Jn; Tue, 09 Jul 2019 18:33:22 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkuuW-00062c-H7
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 18:32:18 +0000
+ id 1hkuuf-0006Ca-Te
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 18:32:28 +0000
 Received: from quaco.ghostprotocols.net (unknown [179.97.35.11])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2FE342171F;
- Tue,  9 Jul 2019 18:32:08 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7FD7221743;
+ Tue,  9 Jul 2019 18:32:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1562697136;
- bh=JjyDoauJ+WYz56YyYDKCZ3keOnFJy6NiR6Q0BlDn5EY=;
+ s=default; t=1562697145;
+ bh=LzlQIF4A49g3wOWfYMbmSZepSv/fUbacMvy8iT48q8c=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ESqkemMNPwhyxKwOQR1gPTIAR2g071vi5m0lY8XDTWTk9gxiQcipmE/K7Zan3h6h4
- Hf3SBt9jwNbo5P0pUS1hf4uidv2b5RDrvxbykDHuwGO8ZT1TTc4GojtJ/VnVOuxZet
- b7Jb7VD996e5+fP2saq8AJCYYDH9elce/osSNPYE=
+ b=am5/w0YM83bIKrJUqGCW+batDUhjaHXgi7HVsURprAOsei5iju27lqv0YAlsH85VU
+ gd182DK8TEn/+xmW4r92QB0t6z3ZrhmYxFogvmwnbbPbPg2OAa5pP6UQ1vBBKrZeue
+ YwL8273Rnsy8SQJQpTxUxUFXfQEjK59/9glm9X5Y=
 From: Arnaldo Carvalho de Melo <acme@kernel.org>
 To: Ingo Molnar <mingo@kernel.org>,
 	Thomas Gleixner <tglx@linutronix.de>
-Subject: [PATCH 06/25] perf map: Fix potential NULL pointer dereference found
- by smatch tool
-Date: Tue,  9 Jul 2019 15:31:07 -0300
-Message-Id: <20190709183126.30257-7-acme@kernel.org>
+Subject: [PATCH 08/25] perf session: Fix potential NULL pointer dereference
+ found by the smatch tool
+Date: Tue,  9 Jul 2019 15:31:09 -0300
+Message-Id: <20190709183126.30257-9-acme@kernel.org>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190709183126.30257-1-acme@kernel.org>
 References: <20190709183126.30257-1-acme@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_113216_753724_907C7DCD 
-X-CRM114-Status: GOOD (  10.23  )
+X-CRM114-CacheID: sfid-20190709_113226_320229_2BA8626B 
+X-CRM114-Status: UNSURE (   9.56  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -101,34 +102,31 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Leo Yan <leo.yan@linaro.org>
 
-Based on the following report from Smatch, fix the potential NULL
-pointer dereference check.
+Based on the following report from Smatch, fix the potential
+NULL pointer dereference check.
 
-  tools/perf/util/map.c:479
-  map__fprintf_srccode() error: we previously assumed 'state' could be
-  null (see line 466)
+  tools/perf/util/session.c:1252
+  dump_read() error: we previously assumed 'evsel' could be null
+  (see line 1249)
 
-  tools/perf/util/map.c
-  465         /* Avoid redundant printing */
-  466         if (state &&
-  467             state->srcfile &&
-  468             !strcmp(state->srcfile, srcfile) &&
-  469             state->line == line) {
-  470                 free(srcfile);
-  471                 return 0;
-  472         }
-  473
-  474         srccode = find_sourceline(srcfile, line, &len);
-  475         if (!srccode)
-  476                 goto out_free_line;
-  477
-  478         ret = fprintf(fp, "|%-8d %.*s", line, len, srccode);
-  479         state->srcfile = srcfile;
-              ^^^^^^^
-  480         state->line = line;
-              ^^^^^^^
+  tools/perf/util/session.c
+  1240 static void dump_read(struct perf_evsel *evsel, union perf_event *event)
+  1241 {
+  1242         struct read_event *read_event = &event->read;
+  1243         u64 read_format;
+  1244
+  1245         if (!dump_trace)
+  1246                 return;
+  1247
+  1248         printf(": %d %d %s %" PRIu64 "\n", event->read.pid, event->read.tid,
+  1249                evsel ? perf_evsel__name(evsel) : "FAIL",
+  1250                event->read.value);
+  1251
+  1252         read_format = evsel->attr.read_format;
+                             ^^^^^^^
 
-This patch validates 'state' pointer before access its elements.
+'evsel' could be NULL pointer, for this case this patch directly bails
+out without dumping read_event.
 
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
 Acked-by: Jiri Olsa <jolsa@kernel.org>
@@ -152,31 +150,26 @@ Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
 Cc: Thomas Gleixner <tglx@linutronix.de>
 Cc: Thomas Richter <tmricht@linux.ibm.com>
 Cc: linux-arm-kernel@lists.infradead.org
-Fixes: dd2e18e9ac20 ("perf tools: Support 'srccode' output")
-Link: http://lkml.kernel.org/r/20190702103420.27540-8-leo.yan@linaro.org
+Link: http://lkml.kernel.org/r/20190702103420.27540-9-leo.yan@linaro.org
 Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
 ---
- tools/perf/util/map.c | 7 +++++--
- 1 file changed, 5 insertions(+), 2 deletions(-)
+ tools/perf/util/session.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/tools/perf/util/map.c b/tools/perf/util/map.c
-index 6fce983c6115..5f87975d2562 100644
---- a/tools/perf/util/map.c
-+++ b/tools/perf/util/map.c
-@@ -476,8 +476,11 @@ int map__fprintf_srccode(struct map *map, u64 addr,
- 		goto out_free_line;
+diff --git a/tools/perf/util/session.c b/tools/perf/util/session.c
+index 54cf163347f7..2e61dd6a3574 100644
+--- a/tools/perf/util/session.c
++++ b/tools/perf/util/session.c
+@@ -1249,6 +1249,9 @@ static void dump_read(struct perf_evsel *evsel, union perf_event *event)
+ 	       evsel ? perf_evsel__name(evsel) : "FAIL",
+ 	       event->read.value);
  
- 	ret = fprintf(fp, "|%-8d %.*s", line, len, srccode);
--	state->srcfile = srcfile;
--	state->line = line;
++	if (!evsel)
++		return;
 +
-+	if (state) {
-+		state->srcfile = srcfile;
-+		state->line = line;
-+	}
- 	return ret;
+ 	read_format = evsel->attr.read_format;
  
- out_free_line:
+ 	if (read_format & PERF_FORMAT_TOTAL_TIME_ENABLED)
 -- 
 2.21.0
 
