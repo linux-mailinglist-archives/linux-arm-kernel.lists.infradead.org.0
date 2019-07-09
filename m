@@ -2,63 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 43FD263506
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 13:38:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9ACC963529
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 13:47:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lRAN0H/gC/aKSR/pvRcpez15ctQ0KDgmK9w92sUDJXU=; b=OxNTlmHEqOaHIv
-	eZoGF6KFImauSFC453Ylk5LMctOz+nfm1tR7GNcEv5rhrk+Cgx2ZDb12C3XLoCB3AH+RISHxFz/jX
-	hce1ElBD8HZ+qQMjqq3s1aG8xAmLOeyn2vCGAfkkmhFhAfq25mz23zOVKh1B8WXtlYsqgw2xKd/uz
-	9izRtvqusvTA8nCPkOiV20n7bOK7pvnEHx4vhFVI5/MlWOL6ycK8qcDH2TpYPbCilPnQOl6urr8AX
-	T0B0+Y937nTwduXOBfbCAxsdiST/+QwqQ7ykXqTesamE+ZFt30ZopBD/3QC+jl7U6NQGvEjFBb0Nm
-	/tSBE1pUnSAQTp0c02cg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=RFvH9UlY19LCZBoKm3hszA0njBTLJqMjDsWss1FfW/Y=; b=O4cMl3QVBnQuba3njVrvoKUHj
+	SbEBjNVyZ8PWCwKrLWafBIPVBjvlh0EuIVMDhvXK5G8XZ8yWqsAuU/pepF9AVm7ZoBBVWsF2Oxd29
+	0CS936d0DI/OSDDBlxtbbp2Wzv6briGsb8iOE+XWZb0jrBeSjez+YiHl1Qh87dnyrMGYVKjmscMVn
+	LqQdv3se/mgP/8pBnY0lQ5O18A7+QTiR/9IR/8plLFbciS5k9YfW0bWMoq0lnREiAbI93cEPdqBfc
+	L7ZMFF3O7DjNmpJKAH7sMxlYE5fmQNKRXgHpWW+DUUpYdCAsF5Yy6Kof2vastx3J9KncZ+U28MwbB
+	qMgpFlUPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkoSI-0006Fm-Oe; Tue, 09 Jul 2019 11:38:42 +0000
-Received: from mga03.intel.com ([134.134.136.65])
+	id 1hkoau-00011s-4y; Tue, 09 Jul 2019 11:47:36 +0000
+Received: from mga05.intel.com ([192.55.52.43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkoS6-0006Ex-Ch
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 11:38:31 +0000
+ id 1hkoab-00010G-Rz; Tue, 09 Jul 2019 11:47:19 +0000
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
-Received: from orsmga005.jf.intel.com ([10.7.209.41])
- by orsmga103.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 09 Jul 2019 04:38:28 -0700
+Received: from orsmga003.jf.intel.com ([10.7.209.27])
+ by fmsmga105.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 09 Jul 2019 04:47:15 -0700
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.63,470,1557212400"; d="scan'208";a="340729765"
-Received: from ahunter-desktop.fi.intel.com (HELO [10.237.72.122])
- ([10.237.72.122])
- by orsmga005.jf.intel.com with ESMTP; 09 Jul 2019 04:38:25 -0700
-Subject: Re: [PATCH v2 3/4] perf intel-pt: Smatch: Fix potential NULL pointer
- dereference
-To: Arnaldo Carvalho de Melo <arnaldo.melo@gmail.com>,
- Leo Yan <leo.yan@linaro.org>
-References: <20190708143937.7722-1-leo.yan@linaro.org>
- <20190708143937.7722-4-leo.yan@linaro.org> <20190708215940.GD7455@kernel.org>
-From: Adrian Hunter <adrian.hunter@intel.com>
-Organization: Intel Finland Oy, Registered Address: PL 281, 00181 Helsinki,
- Business Identity Code: 0357606 - 4, Domiciled in Helsinki
-Message-ID: <13c2a09d-3031-56ea-1c71-39dd8a3c74e8@intel.com>
-Date: Tue, 9 Jul 2019 14:37:14 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+X-IronPort-AV: E=Sophos;i="5.63,470,1557212400"; d="scan'208";a="167964894"
+Received: from crojewsk-mobl1.ger.corp.intel.com (HELO [172.28.182.92])
+ ([172.28.182.92])
+ by orsmga003.jf.intel.com with ESMTP; 09 Jul 2019 04:47:10 -0700
+Subject: Re: [PATCH 1/4] ASoC: hdmi-codec: Add an op to set callback function
+ for plug event
+To: Cheng-Yi Chiang <cychiang@chromium.org>
+References: <20190705042623.129541-1-cychiang@chromium.org>
+ <20190705042623.129541-2-cychiang@chromium.org>
+From: Cezary Rojewski <cezary.rojewski@intel.com>
+Message-ID: <3d5755cf-34e9-44f7-3b03-6bdfca84ff95@intel.com>
+Date: Tue, 9 Jul 2019 13:47:10 +0200
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.2
 MIME-Version: 1.0
-In-Reply-To: <20190708215940.GD7455@kernel.org>
+In-Reply-To: <20190705042623.129541-2-cychiang@chromium.org>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_043830_474240_7C393FDF 
-X-CRM114-Status: GOOD (  17.62  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190709_044717_916522_EA30681F 
+X-CRM114-Status: GOOD (  14.52  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.65 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.43 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -72,109 +68,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andi Kleen <ak@linux.intel.com>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- linux-kernel@vger.kernel.org, Namhyung Kim <namhyung@kernel.org>,
- Jiri Olsa <jolsa@redhat.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: alsa-devel@alsa-project.org, dianders@chromium.org,
+ Heiko Stuebner <heiko@sntech.de>, Liam Girdwood <lgirdwood@gmail.com>,
+ David Airlie <airlied@linux.ie>, dri-devel@lists.freedesktop.org,
+ Takashi Iwai <tiwai@suse.com>, tzungbi@chromium.org,
+ linux-kernel@vger.kernel.org, Hans Verkuil <hverkuil@xs4all.nl>,
+ Andrzej Hajda <a.hajda@samsung.com>, Russell King <rmk+kernel@armlinux.org.uk>,
+ Mark Brown <broonie@kernel.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Daniel Vetter <daniel@ffwll.ch>, linux-rockchip@lists.infradead.org,
+ dgreid@chromium.org, Jaroslav Kysela <perex@perex.cz>,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 9/07/19 12:59 AM, Arnaldo Carvalho de Melo wrote:
-> Em Mon, Jul 08, 2019 at 10:39:36PM +0800, Leo Yan escreveu:
->> Based on the following report from Smatch, fix the potential
->> NULL pointer dereference check.
-> 
-> Adrian, are you ok now with these two for pt and bts? Can I have your
-> acked-by?
+On 2019-07-05 06:26, Cheng-Yi Chiang wrote:
+> +static void hdmi_codec_jack_report(struct hdmi_codec_priv *hcp,
+> +				   unsigned int jack_status)
+> +{
+> +	if (!hcp->jack)
+> +		return;
+> +
+> +	if (jack_status != hcp->jack_status) {
+> +		snd_soc_jack_report(hcp->jack, jack_status, SND_JACK_LINEOUT);
+> +		hcp->jack_status = jack_status;
+> +	}
+> +}
 
-Yes they are good. For both:
+Single "if" statement instead? The first "if" does not even cover all 
+cases - if the secondary check fails, you'll "return;" too.
 
-Acked-by: Adrian Hunter <adrian.hunter@intel.com>
+> +/**
+> + * hdmi_codec_set_jack_detect - register HDMI plugged callback
+> + * @component: the hdmi-codec instance
+> + * @jack: ASoC jack to report (dis)connection events on
+> + */
+> +int hdmi_codec_set_jack_detect(struct snd_soc_component *component,
+> +			       struct snd_soc_jack *jack)
+> +{
+> +	struct hdmi_codec_priv *hcp = snd_soc_component_get_drvdata(component);
+> +	int ret;
+> +
+> +	if (hcp->hcd.ops->hook_plugged_cb) {
+> +		hcp->jack = jack;
+> +		ret = hcp->hcd.ops->hook_plugged_cb(component->dev->parent,
+> +						    hcp->hcd.data,
+> +						    plugged_cb);
+> +		if (ret) {
+> +			hcp->jack = NULL;
+> +			return ret;
+> +		}
+> +		return 0;
+> +	}
+> +	return -EOPNOTSUPP;
+> +}
+> +EXPORT_SYMBOL_GPL(hdmi_codec_set_jack_detect);
 
-> 
-> - Arnaldo
->  
->>   tools/perf/util/intel-pt.c:3200
->>   intel_pt_process_auxtrace_info() error: we previously assumed
->>   'session->itrace_synth_opts' could be null (see line 3196)
->>
->>   tools/perf/util/intel-pt.c:3206
->>   intel_pt_process_auxtrace_info() warn: variable dereferenced before
->>   check 'session->itrace_synth_opts' (see line 3200)
->>
->> tools/perf/util/intel-pt.c
->> 3196         if (session->itrace_synth_opts && session->itrace_synth_opts->set) {
->> 3197                 pt->synth_opts = *session->itrace_synth_opts;
->> 3198         } else {
->> 3199                 itrace_synth_opts__set_default(&pt->synth_opts,
->> 3200                                 session->itrace_synth_opts->default_no_sample);
->>                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
->> 3201                 if (!session->itrace_synth_opts->default_no_sample &&
->> 3202                     !session->itrace_synth_opts->inject) {
->> 3203                         pt->synth_opts.branches = false;
->> 3204                         pt->synth_opts.callchain = true;
->> 3205                 }
->> 3206                 if (session->itrace_synth_opts)
->>                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
->> 3207                         pt->synth_opts.thread_stack =
->> 3208                                 session->itrace_synth_opts->thread_stack;
->> 3209         }
->>
->> 'session->itrace_synth_opts' is impossible to be a NULL pointer in
->> intel_pt_process_auxtrace_info(), thus this patch removes the NULL
->> test for 'session->itrace_synth_opts'.
->>
->> Signed-off-by: Leo Yan <leo.yan@linaro.org>
->> ---
->>  tools/perf/util/intel-pt.c | 13 +++++--------
->>  1 file changed, 5 insertions(+), 8 deletions(-)
->>
->> diff --git a/tools/perf/util/intel-pt.c b/tools/perf/util/intel-pt.c
->> index c76a96f777fb..df061599fef4 100644
->> --- a/tools/perf/util/intel-pt.c
->> +++ b/tools/perf/util/intel-pt.c
->> @@ -3210,7 +3210,7 @@ int intel_pt_process_auxtrace_info(union perf_event *event,
->>  		goto err_delete_thread;
->>  	}
->>  
->> -	if (session->itrace_synth_opts && session->itrace_synth_opts->set) {
->> +	if (session->itrace_synth_opts->set) {
->>  		pt->synth_opts = *session->itrace_synth_opts;
->>  	} else {
->>  		itrace_synth_opts__set_default(&pt->synth_opts,
->> @@ -3220,8 +3220,7 @@ int intel_pt_process_auxtrace_info(union perf_event *event,
->>  			pt->synth_opts.branches = false;
->>  			pt->synth_opts.callchain = true;
->>  		}
->> -		if (session->itrace_synth_opts)
->> -			pt->synth_opts.thread_stack =
->> +		pt->synth_opts.thread_stack =
->>  				session->itrace_synth_opts->thread_stack;
->>  	}
->>  
->> @@ -3241,11 +3240,9 @@ int intel_pt_process_auxtrace_info(union perf_event *event,
->>  		pt->cbr2khz = tsc_freq / pt->max_non_turbo_ratio / 1000;
->>  	}
->>  
->> -	if (session->itrace_synth_opts) {
->> -		err = intel_pt_setup_time_ranges(pt, session->itrace_synth_opts);
->> -		if (err)
->> -			goto err_delete_thread;
->> -	}
->> +	err = intel_pt_setup_time_ranges(pt, session->itrace_synth_opts);
->> +	if (err)
->> +		goto err_delete_thread;
->>  
->>  	if (pt->synth_opts.calls)
->>  		pt->branches_filter |= PERF_IP_FLAG_CALL | PERF_IP_FLAG_ASYNC |
->> -- 
->> 2.17.1
-> 
+int ret = -EOPNOTSUPP;
+(...)
 
+return ret;
+
+In consequence, you can reduce the number of "return(s)" and also remove 
+the redundant parenthesis for the if-statement used to set jack to NULL.
+
+Czarek
 
 _______________________________________________
 linux-arm-kernel mailing list
