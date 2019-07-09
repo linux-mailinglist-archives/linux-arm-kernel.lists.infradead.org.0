@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 22F4763AF8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 20:32:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9821B63B04
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 20:32:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l1+ZLQfO+umxf9IIQNi3bkmrfcH7qPF6OQ5JL5L8nHI=; b=IORTmLrhntQ4dV
-	u51GxQkxtU+K2BGiDwokzGXlqCjofGwSeAc1WK+9XbHkvuDuu9HOt4fIWDPyRnw0OvTB8FkntPisB
-	FQpNGX0mcSfqpaUfE7lBkXEWjGJMqZDbPnYiHWtdncvIIvHNRopKIkI64yPE+g8vrVsVw5ygLL2R1
-	haCbrEz8J/IyNR3UVJxsQtfgdGLNkBy96jMLrb9aXDJVmg1Oe+kFOK9Mf4gicwKYk3NauXzOsCf7O
-	3kcyVCsHErsRehzgCQ6rBZfga/AIG5AlSWMDl38SaXWBu+cqNU4T0WTVtsLuz8D5/mBkVY/cqEFgc
-	962GiFuJamSeL3GmB9xQ==;
+	List-Owner; bh=pelpPKTuWee+bWwfU5E5FPKJIP21SZv0DS8NPjG3raI=; b=PbRigSoipdRXEb
+	JgMObRmor1XfMgT32J17PgL/z8powKo05wZbVM7KN4tedPwIH9etJCGaZ+FTYjpgkNFUbY9x+JfdH
+	YlPD+8hIpnLQYtZL+XJCSvove5kUKB3ihYxU90jc/EBm7+Su87sa/8HwJ3DK6qJzl1QygE3KivBcC
+	pDyHrR/egTfltTKFiCs+kB8vwiJAX7KHOif65hKUQ/8aS5c58t11u+Rp9uJ8uZL2XDZJmbgzEslmm
+	phRL5lP/SkZpgQ5qCeBFetNbS8hCtem9Z+XfkDSKKH4vCqsNHM405uEWS4TH23wSUtld/Pw1NCv07
+	5hU5f3wLwpAjVxYcO1SQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkuuU-0005mE-FH; Tue, 09 Jul 2019 18:32:14 +0000
+	id 1hkuuj-00062V-Fq; Tue, 09 Jul 2019 18:32:29 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkuuB-0005gA-68
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 18:31:57 +0000
+ id 1hkuuH-0005nt-LC
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 18:32:03 +0000
 Received: from quaco.ghostprotocols.net (unknown [179.97.35.11])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 34BE4216FD;
- Tue,  9 Jul 2019 18:31:48 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 583DB21537;
+ Tue,  9 Jul 2019 18:31:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1562697114;
- bh=/r3kNfehywaYBWJZ3L/w2X8MX2iuc/x3OcDG99w2lbc=;
+ s=default; t=1562697121;
+ bh=4014MKo13hkHV0d3pRWB5c8cnBeoEWRYJEclpGth5F0=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=WttUJ7bQp7Fy1xQD0OuMxektnM/uEuj/z08KGlKdD1Q4WBH3eV2aMY66Ed3df4/Qn
- oZT+CRuUjbD9KpDjbUM7Oo36DSzK6WqhnBw3MvFN3e77ioNz9+Mhrq/Vq26rIxZrAw
- /ntkinYg+LWlj8Uosc/3N7EXKLg/A+IxlxNMKjyE=
+ b=ae/0ykf8ibATNOt5C+iqxcsMiu28JpUNOk20sand/gyMk/rjMDvn/8y3f2oy54irq
+ dxUYtYetkX/2kYmlxHWifDw6s6Y81rnyC47U7Wne7cOIr0/jJDCq+gbxuy20wRMmov
+ BlqbsYa2sSCBa5Mdkin7mmFfBNwCYfliYZDNhWic=
 From: Arnaldo Carvalho de Melo <acme@kernel.org>
 To: Ingo Molnar <mingo@kernel.org>,
 	Thomas Gleixner <tglx@linutronix.de>
-Subject: [PATCH 03/25] perf top: Fix potential NULL pointer dereference
- detected by the smatch tool
-Date: Tue,  9 Jul 2019 15:31:04 -0300
-Message-Id: <20190709183126.30257-4-acme@kernel.org>
+Subject: [PATCH 04/25] perf annotate: Fix dereferencing freed memory found by
+ the smatch tool
+Date: Tue,  9 Jul 2019 15:31:05 -0300
+Message-Id: <20190709183126.30257-5-acme@kernel.org>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190709183126.30257-1-acme@kernel.org>
 References: <20190709183126.30257-1-acme@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_113155_294426_94E7E6C6 
-X-CRM114-Status: GOOD (  11.26  )
+X-CRM114-CacheID: sfid-20190709_113201_839720_53104B7C 
+X-CRM114-Status: GOOD (  11.74  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -101,31 +101,45 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Leo Yan <leo.yan@linaro.org>
 
-Based on the following report from Smatch, fix the potential NULL
-pointer dereference check.
+Based on the following report from Smatch, fix the potential
+dereferencing freed memory check.
 
-  tools/perf/builtin-top.c:109
-  perf_top__parse_source() warn: variable dereferenced before check 'he'
-  (see line 103)
+  tools/perf/util/annotate.c:1125
+  disasm_line__parse() error: dereferencing freed memory 'namep'
 
-  tools/perf/builtin-top.c:233
-  perf_top__show_details() warn: variable dereferenced before check 'he'
-  (see line 228)
+  tools/perf/util/annotate.c
+  1100 static int disasm_line__parse(char *line, const char **namep, char **rawp)
+  1101 {
+  1102         char tmp, *name = ltrim(line);
 
-  tools/perf/builtin-top.c
-  101 static int perf_top__parse_source(struct perf_top *top, struct hist_entry *he)
-  102 {
-  103         struct perf_evsel *evsel = hists_to_evsel(he->hists);
-                                                        ^^^^
-  104         struct symbol *sym;
-  105         struct annotation *notes;
-  106         struct map *map;
-  107         int err = -1;
-  108
-  109         if (!he || !he->ms.sym)
-  110                 return -1;
+  [...]
 
-This patch moves the values assignment after validating pointer 'he'.
+  1114         *namep = strdup(name);
+  1115
+  1116         if (*namep == NULL)
+  1117                 goto out_free_name;
+
+  [...]
+
+  1124 out_free_name:
+  1125         free((void *)namep);
+                            ^^^^^
+  1126         *namep = NULL;
+               ^^^^^^
+  1127         return -1;
+  1128 }
+
+If strdup() fails to allocate memory space for *namep, we don't need to
+free memory with pointer 'namep', which is resident in data structure
+disasm_line::ins::name; and *namep is NULL pointer for this failure, so
+it's pointless to assign NULL to *namep again.
+
+Committer note:
+
+Freeing namep, which is the address of the first entry of the 'struct
+ins' that is the first member of struct disasm_line would in fact free
+that disasm_line instance, if it was allocated via malloc/calloc, which,
+later, would a dereference of freed memory.
 
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
 Acked-by: Jiri Olsa <jolsa@kernel.org>
@@ -149,51 +163,34 @@ Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
 Cc: Thomas Gleixner <tglx@linutronix.de>
 Cc: Thomas Richter <tmricht@linux.ibm.com>
 Cc: linux-arm-kernel@lists.infradead.org
-Link: http://lkml.kernel.org/r/20190702103420.27540-4-leo.yan@linaro.org
+Link: http://lkml.kernel.org/r/20190702103420.27540-5-leo.yan@linaro.org
 Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
 ---
- tools/perf/builtin-top.c | 8 ++++++--
- 1 file changed, 6 insertions(+), 2 deletions(-)
+ tools/perf/util/annotate.c | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
 
-diff --git a/tools/perf/builtin-top.c b/tools/perf/builtin-top.c
-index 6d40a4ef58c5..b46b3c9f57a0 100644
---- a/tools/perf/builtin-top.c
-+++ b/tools/perf/builtin-top.c
-@@ -101,7 +101,7 @@ static void perf_top__resize(struct perf_top *top)
+diff --git a/tools/perf/util/annotate.c b/tools/perf/util/annotate.c
+index ec7aaf31c2b2..944a6507a5e3 100644
+--- a/tools/perf/util/annotate.c
++++ b/tools/perf/util/annotate.c
+@@ -1119,16 +1119,14 @@ static int disasm_line__parse(char *line, const char **namep, char **rawp)
+ 	*namep = strdup(name);
  
- static int perf_top__parse_source(struct perf_top *top, struct hist_entry *he)
- {
--	struct perf_evsel *evsel = hists_to_evsel(he->hists);
-+	struct perf_evsel *evsel;
- 	struct symbol *sym;
- 	struct annotation *notes;
- 	struct map *map;
-@@ -110,6 +110,8 @@ static int perf_top__parse_source(struct perf_top *top, struct hist_entry *he)
- 	if (!he || !he->ms.sym)
- 		return -1;
+ 	if (*namep == NULL)
+-		goto out_free_name;
++		goto out;
  
-+	evsel = hists_to_evsel(he->hists);
-+
- 	sym = he->ms.sym;
- 	map = he->ms.map;
+ 	(*rawp)[0] = tmp;
+ 	*rawp = skip_spaces(*rawp);
  
-@@ -226,7 +228,7 @@ static void perf_top__record_precise_ip(struct perf_top *top,
- static void perf_top__show_details(struct perf_top *top)
- {
- 	struct hist_entry *he = top->sym_filter_entry;
--	struct perf_evsel *evsel = hists_to_evsel(he->hists);
-+	struct perf_evsel *evsel;
- 	struct annotation *notes;
- 	struct symbol *symbol;
- 	int more;
-@@ -234,6 +236,8 @@ static void perf_top__show_details(struct perf_top *top)
- 	if (!he)
- 		return;
+ 	return 0;
  
-+	evsel = hists_to_evsel(he->hists);
-+
- 	symbol = he->ms.sym;
- 	notes = symbol__annotation(symbol);
+-out_free_name:
+-	free((void *)namep);
+-	*namep = NULL;
++out:
+ 	return -1;
+ }
  
 -- 
 2.21.0
