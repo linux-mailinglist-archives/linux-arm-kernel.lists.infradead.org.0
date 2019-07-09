@@ -2,67 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 042E86334D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 11:11:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A909B6334F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 11:12:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PTc/8ppY2we41BIZaP78VN8Keqhk5IbBexR32crlReY=; b=Axx8WkOsAHhY8Q
-	9rNuaAkdaCICesKz02apwvBRD1JTfDs0SJHPilrcXQ7u407mPjSNZU4NxHyfkAvIn/LWfs/8Eu8FL
-	divPM4kSAPywMspYfvlEYIj0CRJovBro5K+vGubWxPvmpknARjYT42d/DwV0W1b4Q8qNzjRieXMSX
-	RRBduMPOeUic36nes8+dlH6a982TZgONkj1NjAD3E4aJnDtjSNXjC7M4moP+gxhWQGKOw3hdKkuh2
-	QhSgjLT8q6nH/QEMaSlc/IDig0NV4C/FacEbYG/Q36GR+6xqsvAQqyKEVSKemzFwp13jV3WgOSO6E
-	wdVWZdwXxkwO0+hbtv4Q==;
+	List-Owner; bh=Naso7UPcnf71XqYRgM+Uo3lKpdxTdh1OstSYuGAole8=; b=KC6e7apPAABMJM
+	2i3vGCneZTOEMHEzaFC79njNa168uOrTJQmWRg2ExfvqSrCH6fPEzMbXvHQJCSasPq5itWlOfkbi4
+	QQjGjRA00B9n1x1MD3G3MApkujwBRRoOXoPUah4w+XPHQ6CF48noXCJHBT4r0t4UBsH23/iNJLZCE
+	j1hJ7o5RGiUn+4G+Nv9umX2LMBc54r+s+bMDAN3vLM8Lmtn6M/jmF31vG8hdefsnTt4FQxqftuOla
+	KYbQ/hs9AVCEXG0GJ/dPyW7flEU1y0cWeYTHfTtZs/BXetTK2Rwed5a7Z3sRSEn+ZjPxPYhIVQms9
+	a8rDW+IyDL/RgqH9fLLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkm9h-0006EU-9x; Tue, 09 Jul 2019 09:11:21 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hkmAN-0006Uo-4t; Tue, 09 Jul 2019 09:12:03 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkm9F-0006CY-Mq; Tue, 09 Jul 2019 09:10:55 +0000
-X-UUID: cb40b539458a40faadfed535c8943e28-20190709
-X-UUID: cb40b539458a40faadfed535c8943e28-20190709
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <min.guo@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 863244074; Tue, 09 Jul 2019 01:10:49 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 9 Jul 2019 02:10:47 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31N1.mediatek.inc
- (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Tue, 9 Jul 2019 17:10:43 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 9 Jul 2019 17:10:42 +0800
-Message-ID: <1562663442.17100.8.camel@mhfsdcap03>
-Subject: Re: [PATCH v6 1/6] dt-bindings: usb: musb: Add support for MediaTek
- musb controller
-From: Min Guo <min.guo@mediatek.com>
-To: Rob Herring <robh@kernel.org>
-Date: Tue, 9 Jul 2019 17:10:42 +0800
-In-Reply-To: <20190708223035.GA7005@bogus>
-References: <1559648359-6569-1-git-send-email-min.guo@mediatek.com>
- <1559648359-6569-2-git-send-email-min.guo@mediatek.com>
- <20190708223035.GA7005@bogus>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1hkm9q-0006Qm-Rz
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 09:11:32 +0000
+Received: by mail-lj1-x244.google.com with SMTP id k18so18799730ljc.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 09 Jul 2019 02:11:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=9LTtPPOn4Ak8eK9FW8AabXZcBEJh0Lnb8xIdmS0/IJU=;
+ b=QpsAKtUKi/9eTxa+EeMW6C9efPOxUkmSK+eftMzIKmxy/utKmzJkDuPGkCNljZhsc5
+ 7iGyYTINlQH1eyfo1fjveiJ4DUGoW55nFZnlng1tG8AIyVg2vFN0ut9eN0lBIMq1EkE5
+ f++VbpJFM+hwEokcwO+WXfLlCQwI9IaiH3l1EKg0RMDB27aXHmOLIUwRPhlh6FZ3KSnm
+ qSa1D99CUlPAR/fI5sejfEI19alRwKz0FrBuodUW1DWIJEu95TRxrWHXgnLm9HGrVJ1q
+ BQZX54uMeqpe7Fe0u9LObF19YHlaNubRtH+zSJfn1UwBuWYpB+mxCouPVukEYPIuEhFj
+ 14Nw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=9LTtPPOn4Ak8eK9FW8AabXZcBEJh0Lnb8xIdmS0/IJU=;
+ b=i5MVxN1LrIzXBMP6e9+LTGRRDyRITNwFSYrPEgViYIsrSNULdK6nAbwrPuPanxJia3
+ A0L0f6PIHDtUAIKJ9xWfiNKLQqLaNeIXI9s7u+JgH8em0uGJOxUVR1wrAhQI7Q1RKDbr
+ R8OIRcRgJxUZRsxwVszrUOaMBmFBtkT/GVcLaZNdanbk7veoGDKKzR4QMM4f3ElwSLq6
+ Iz8NP4twU/+48Ff2ZDG80v62NPjKzeCH7ABT1b/+9pmirBYrhOyW5q/WWeQ6OCkQpXuN
+ Kejk0SjUsZBkPD8X9Q8XwDdOyWfUfXO5AWTRjnHeBXC+8Tm3GaXOx0s+Ys8vXrhcBqXP
+ O0YA==
+X-Gm-Message-State: APjAAAUgkF3CgetzxamH5yv3qOhLeWbWgIZhQ15ITUnBu/k/Kc3NQnfP
+ mupjam2sEctQFg8EWtL98iqE2gMZEBkwgFgSV+kRMw==
+X-Google-Smtp-Source: APXvYqwiB3XqZd0MLimd/C9W++RvKxUs5C/lBSsyMkteU5OX/BLh17CZP9xgh8x3if6F4yr2ncjHO1cjnBQHMatTz0c=
+X-Received: by 2002:a2e:9593:: with SMTP id w19mr10055087ljh.69.1562663488615; 
+ Tue, 09 Jul 2019 02:11:28 -0700 (PDT)
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: F0DCFFEEE23D6BF2E5BB0AABD4DE8DDE5463016EB5873A380B873EE4248B482E2000:8
-X-MTK: N
+References: <1561671168-29896-1-git-send-email-opendmb@gmail.com>
+In-Reply-To: <1561671168-29896-1-git-send-email-opendmb@gmail.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Tue, 9 Jul 2019 11:11:16 +0200
+Message-ID: <CACRpkdbgMyYYm1v4BeFQBCz8jZVLE_0oZiKu5F3Rt6=ccfVnYA@mail.gmail.com>
+Subject: Re: [PATCH] ARM: mm: only adjust sections of valid mm structures
+To: Doug Berger <opendmb@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_021053_754407_15984594 
-X-CRM114-Status: GOOD (  22.05  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190709_021130_968151_C26B4DBF 
+X-CRM114-Status: GOOD (  12.44  )
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,136 +91,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- hdegoede@redhat.com, tony@atomide.com,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, Matthias Brugger <matthias.bgg@gmail.com>,
- Alan Stern <stern@rowland.harvard.edu>, chunfeng.yun@mediatek.com,
- linux-mediatek@lists.infradead.org, Bin Liu <b-liu@ti.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Rob Herring <robh@kernel.org>, Peng Fan <peng.fan@nxp.com>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Russell King <linux@armlinux.org.uk>,
+ "Steven Rostedt \(VMware\)" <rostedt@goodmis.org>,
+ Mike Rapoport <rppt@linux.ibm.com>, Geert Uytterhoeven <geert@linux-m68k.org>,
+ Andrew Morton <akpm@linux-foundation.org>, Laura Abbott <labbott@redhat.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob,
-On Mon, 2019-07-08 at 16:30 -0600, Rob Herring wrote:
-> On Tue, Jun 04, 2019 at 07:39:14PM +0800, min.guo@mediatek.com wrote:
-> > From: Min Guo <min.guo@mediatek.com>
-> > 
-> > This adds support for MediaTek musb controller in
-> > host, peripheral and otg mode.
-> > 
-> > Signed-off-by: Min Guo <min.guo@mediatek.com>
-> > ---
-> > changes in v6:
-> > 1. Modify usb connector child node
-> > 
-> > changes in v5:
-> > suggested by Rob:
-> > 1. Modify compatible as 
-> > - compatible : should be one of:
-> >                "mediatek,mt-2701"
-> 
-> No, should be: mediatek,mt2701-musb
-OK.
+On Thu, Jun 27, 2019 at 11:33 PM Doug Berger <opendmb@gmail.com> wrote:
 
-> >                ...
-> >                followed by "mediatek,mtk-musb"
-> > 2. Add usb connector child node
-> > 
-> > changes in v4:
-> > suggested by Sergei:
-> > 1. String alignment
-> > 
-> > changes in v3:
-> > 1. no changes
-> > 
-> > changes in v2:
-> > suggested by Bin:
-> > 1. Modify DRC to DRD
-> > suggested by Rob:
-> > 2. Drop the "<soc-model>-musb" in compatible
-> > 3. Remove phy-names
-> > 4. Add space after comma in clock-names
-> > ---
-> >  .../devicetree/bindings/usb/mediatek,musb.txt      | 55 ++++++++++++++++++++++
-> >  1 file changed, 55 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/usb/mediatek,musb.txt
-> > 
-> > diff --git a/Documentation/devicetree/bindings/usb/mediatek,musb.txt b/Documentation/devicetree/bindings/usb/mediatek,musb.txt
-> > new file mode 100644
-> > index 0000000..7434299
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/usb/mediatek,musb.txt
-> > @@ -0,0 +1,55 @@
-> > +MediaTek musb DRD/OTG controller
-> > +-------------------------------------------
-> > +
-> > +Required properties:
-> > + - compatible      : should be one of:
-> > +                     "mediatek,mt-2701"
-> > +                     ...
-> > +                     followed by "mediatek,mtk-musb"
-> > + - reg             : specifies physical base address and size of
-> > +                     the registers
-> > + - interrupts      : interrupt used by musb controller
-> > + - interrupt-names : must be "mc"
-> > + - phys            : PHY specifier for the OTG phy
-> > + - dr_mode         : should be one of "host", "peripheral" or "otg",
-> > +                     refer to usb/generic.txt
-> > + - clocks          : a list of phandle + clock-specifier pairs, one for
-> > +                     each entry in clock-names
-> > + - clock-names     : must contain "main", "mcu", "univpll"
-> > +                     for clocks of controller
-> > +
-> > +Optional properties:
-> > + - power-domains   : a phandle to USB power domain node to control USB's
-> > +                     MTCMOS
-> > +
-> > +Required child nodes:
-> > + usb connector node as defined in bindings/connector/usb-connector.txt
-> > +Optional properties:
-> > + - id-gpios        : input GPIO for USB ID pin.
-> > + - vbus-gpios      : input GPIO for USB VBUS pin.
-> > + - vbus-supply     : reference to the VBUS regulator, needed when supports
-> > +                     dual-role mode
-> > +
-> > +Example:
-> > +
-> > +usb2: usb@11200000 {
-> > +	compatible = "mediatek,mt2701-musb",
-> > +		     "mediatek,mtk-musb";
-> > +	reg = <0 0x11200000 0 0x1000>;
-> > +	interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_LOW>;
-> > +	interrupt-names = "mc";
-> > +	phys = <&u2port2 PHY_TYPE_USB2>;
-> > +	dr_mode = "otg";
-> > +	clocks = <&pericfg CLK_PERI_USB0>,
-> > +		 <&pericfg CLK_PERI_USB0_MCU>,
-> > +		 <&pericfg CLK_PERI_USB_SLV>;
-> > +	clock-names = "main","mcu","univpll";
-> > +	power-domains = <&scpsys MT2701_POWER_DOMAIN_IFR_MSC>;
-> > +	connector{
-> > +		compatible = "linux,typeb-conn-gpio", "usb-b-connector";
-> 
-> linux,typeb-conn-gpio is not an accepted compatible string.
-The compatible depends on connector driver, currently under review.
-https://patchwork.kernel.org/patch/10986245
+> A timing hazard exists when an early fork/exec thread begins
+> exiting and sets its mm pointer to NULL while a separate core
+> tries to update the section information.
+>
+> This commit ensures that the mm pointer is not NULL before
+> setting its section parameters. The arguments provided by
+> commit 11ce4b33aedc ("ARM: 8672/1: mm: remove tasklist locking
+> from update_sections_early()") are equally valid for not
+> requiring grabbing the task_lock around this check.
+>
+> Fixes: 08925c2f124f ("ARM: 8464/1: Update all mm structures with section adjustments")
+> Signed-off-by: Doug Berger <opendmb@gmail.com>
 
-> > +		label = "micro-USB";
-> > +		type = "micro";
-> > +		id-gpios = <&pio 44 GPIO_ACTIVE_HIGH>;
-> > +		vbus-supply = <&usb_vbus>;
-> > +	};
-> > +};
-> > -- 
-> > 1.9.1
-> > 
+Cc: stable@vger.kernel.org ?
 
-Regards,
-Min.
+I'm not smart enough to say whether it is the right solution, but
+I also want to test this on some boards I have. I suspect this
+may be part of the problem I have with mounting root on a USB
+stick on some early mpcore machines, so I might come back with
+a Tested-by.
 
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
