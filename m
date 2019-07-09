@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE78763B0D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 20:35:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3DF8363B0E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 20:35:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L1DfdVDKPL+ad4DjB56WBSFTHBLIe/oIvJyQn3vvsFU=; b=RcB7zp4NZOgS5i
-	ZO/1ICO2SAZeXf6qwoQyMLaFIipLaGEpzmztQXvAFuePoXTQpXajzteyURYwMWuFH5uS3Qkn9Jevr
-	qH39ffRY8UcuzG9HeWIu6vsaUkiHnTYg2/LL/VsSBb56u7hVwx1nZefHDkWzsHC65Xd/6aApw58fh
-	pyBVM2mtJhCnib6qAfrqnbjqOvJAEtPR/6wd7Rs9zlEi33/DzxI8W7NTTpnhsAWVR3sOn9i7s9u4N
-	ED0+5w/u4zI3zn+/hy9Frk9aR91CoUiDDM6H5G76SwW6P97SG4hb60/0fpYgxkcjRhBcFUAlIptfS
-	GKDG+YtstbmhRBOz6ocg==;
+	List-Owner; bh=BYRNVVjkZ6T9MCusQXAHbNj09V7owMA+h24s7u0F9T8=; b=PkFKk+fyP6TxiH
+	uZv63DOKOWkcWSqS50JKwhakfo3uvNI4CZYwl+iMJWKJQJYgZ44NmwO0Org6ABVWZw9gqqdPzzfsB
+	+m0+jq9bCVYIYSIG4DREcNifldzD+mm6m2TO1oiiNNy2daHS0fw4f3SO8/JqFZdJt/a+dIXm4GV1f
+	+619v+wwP/WkQWjJEgMiLDehrUZlPuZP2LZHGoHbCrH9Un4NuzXncAJ2t4L/jd063U9m+1gxA3ix5
+	QQG8tt38Q0pS6uu1yt4KlXHtd7HuPoHgV4q9B4hWQM4eEb14nOi58ZdpdfojUPzLlnXROJwLuR/3x
+	mIGbI1ezNo3qqbEPoyMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkuxB-0000Ce-5S; Tue, 09 Jul 2019 18:35:01 +0000
+	id 1hkuxU-0000Wb-6u; Tue, 09 Jul 2019 18:35:20 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkuvb-00077l-EU
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 18:33:25 +0000
+ id 1hkuvf-0007Cn-GJ
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 18:33:29 +0000
 Received: from quaco.ghostprotocols.net (unknown [179.97.35.11])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 338B320665;
- Tue,  9 Jul 2019 18:33:19 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 65E3D20656;
+ Tue,  9 Jul 2019 18:33:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1562697202;
- bh=yHkKoGD86pkN+7stgd+uP0ofZTcNoxDdiAluQJh5XWs=;
+ s=default; t=1562697207;
+ bh=yAP7lLk8scvs8z72JtKyaa3K2i32Wc49Nr1SyOz2l3M=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=OhgwGTrSCVsyY6l35y3Jwar5V8OjWGbU3pdvsAamp+EyeBAqawP4TvOEmNTcy94ro
- Itr+QH/iIyv+Xr00I/LOdAogXZTUU/JFqTXbdT8OV/JzNPm57UHIpjHz4bj6w5ThC0
- P1HfLZyCRM++zp4UoAf94V3S2jHMYnEs5qFysq1w=
+ b=wKFilR8ZSDMQ1SkWeWA3Li198T/E6FamZeMgPqVQ6ToJ38qlAhi99VtfYYPROyasb
+ pjvJQfxgjUiT2IbDYEICDj3cffL3tGgoY13Cm6D2Nypc9DXTkwOlFTwt3t6x5WgO56
+ 9L37svk73hrJY1BnddgDill4IWSC8nS4stvKIm8U=
 From: Arnaldo Carvalho de Melo <acme@kernel.org>
 To: Ingo Molnar <mingo@kernel.org>,
 	Thomas Gleixner <tglx@linutronix.de>
-Subject: [PATCH 24/25] perf intel-bts: Fix potential NULL pointer dereference
+Subject: [PATCH 25/25] perf intel-pt: Fix potential NULL pointer dereference
  found by the smatch tool
-Date: Tue,  9 Jul 2019 15:31:25 -0300
-Message-Id: <20190709183126.30257-25-acme@kernel.org>
+Date: Tue,  9 Jul 2019 15:31:26 -0300
+Message-Id: <20190709183126.30257-26-acme@kernel.org>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190709183126.30257-1-acme@kernel.org>
 References: <20190709183126.30257-1-acme@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_113323_545312_39C043C0 
-X-CRM114-Status: GOOD (  10.59  )
+X-CRM114-CacheID: sfid-20190709_113327_694821_44F26C86 
+X-CRM114-Status: GOOD (  11.88  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -96,29 +96,34 @@ From: Leo Yan <leo.yan@linaro.org>
 Based on the following report from Smatch, fix the potential NULL
 pointer dereference check.
 
-  tools/perf/util/intel-bts.c:898
-  intel_bts_process_auxtrace_info() error: we previously assumed
-  'session->itrace_synth_opts' could be null (see line 894)
+  tools/perf/util/intel-pt.c:3200
+  intel_pt_process_auxtrace_info() error: we previously assumed
+  'session->itrace_synth_opts' could be null (see line 3196)
 
-  tools/perf/util/intel-bts.c:899
-  intel_bts_process_auxtrace_info() warn: variable dereferenced before
-  check 'session->itrace_synth_opts' (see line 898)
+  tools/perf/util/intel-pt.c:3206
+  intel_pt_process_auxtrace_info() warn: variable dereferenced before
+  check 'session->itrace_synth_opts' (see line 3200)
 
-  tools/perf/util/intel-bts.c
-  894         if (session->itrace_synth_opts && session->itrace_synth_opts->set) {
-  895                 bts->synth_opts = *session->itrace_synth_opts;
-  896         } else {
-  897                 itrace_synth_opts__set_default(&bts->synth_opts,
-  898                                 session->itrace_synth_opts->default_no_sample);
-                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  899                 if (session->itrace_synth_opts)
-                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  900                         bts->synth_opts.thread_stack =
-  901                                 session->itrace_synth_opts->thread_stack;
-  902         }
+  tools/perf/util/intel-pt.c
+  3196         if (session->itrace_synth_opts && session->itrace_synth_opts->set) {
+  3197                 pt->synth_opts = *session->itrace_synth_opts;
+  3198         } else {
+  3199                 itrace_synth_opts__set_default(&pt->synth_opts,
+  3200                                 session->itrace_synth_opts->default_no_sample);
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3201                 if (!session->itrace_synth_opts->default_no_sample &&
+  3202                     !session->itrace_synth_opts->inject) {
+  3203                         pt->synth_opts.branches = false;
+  3204                         pt->synth_opts.callchain = true;
+  3205                 }
+  3206                 if (session->itrace_synth_opts)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3207                         pt->synth_opts.thread_stack =
+  3208                                 session->itrace_synth_opts->thread_stack;
+  3209         }
 
 'session->itrace_synth_opts' is impossible to be a NULL pointer in
-intel_bts_process_auxtrace_info(), thus this patch removes the NULL test
+intel_pt_process_auxtrace_info(), thus this patch removes the NULL test
 for 'session->itrace_synth_opts'.
 
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
@@ -130,32 +135,50 @@ Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
 Cc: Namhyung Kim <namhyung@kernel.org>
 Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
 Cc: linux-arm-kernel@lists.infradead.org
-Link: http://lkml.kernel.org/r/20190708143937.7722-3-leo.yan@linaro.org
+Link: http://lkml.kernel.org/r/20190708143937.7722-4-leo.yan@linaro.org
 Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
 ---
- tools/perf/util/intel-bts.c | 5 ++---
- 1 file changed, 2 insertions(+), 3 deletions(-)
+ tools/perf/util/intel-pt.c | 13 +++++--------
+ 1 file changed, 5 insertions(+), 8 deletions(-)
 
-diff --git a/tools/perf/util/intel-bts.c b/tools/perf/util/intel-bts.c
-index 5a21bcdb8ef7..5560e95afdda 100644
---- a/tools/perf/util/intel-bts.c
-+++ b/tools/perf/util/intel-bts.c
-@@ -891,13 +891,12 @@ int intel_bts_process_auxtrace_info(union perf_event *event,
- 	if (dump_trace)
- 		return 0;
+diff --git a/tools/perf/util/intel-pt.c b/tools/perf/util/intel-pt.c
+index c76a96f777fb..df061599fef4 100644
+--- a/tools/perf/util/intel-pt.c
++++ b/tools/perf/util/intel-pt.c
+@@ -3210,7 +3210,7 @@ int intel_pt_process_auxtrace_info(union perf_event *event,
+ 		goto err_delete_thread;
+ 	}
  
 -	if (session->itrace_synth_opts && session->itrace_synth_opts->set) {
 +	if (session->itrace_synth_opts->set) {
- 		bts->synth_opts = *session->itrace_synth_opts;
+ 		pt->synth_opts = *session->itrace_synth_opts;
  	} else {
- 		itrace_synth_opts__set_default(&bts->synth_opts,
- 				session->itrace_synth_opts->default_no_sample);
+ 		itrace_synth_opts__set_default(&pt->synth_opts,
+@@ -3220,8 +3220,7 @@ int intel_pt_process_auxtrace_info(union perf_event *event,
+ 			pt->synth_opts.branches = false;
+ 			pt->synth_opts.callchain = true;
+ 		}
 -		if (session->itrace_synth_opts)
--			bts->synth_opts.thread_stack =
-+		bts->synth_opts.thread_stack =
+-			pt->synth_opts.thread_stack =
++		pt->synth_opts.thread_stack =
  				session->itrace_synth_opts->thread_stack;
  	}
  
+@@ -3241,11 +3240,9 @@ int intel_pt_process_auxtrace_info(union perf_event *event,
+ 		pt->cbr2khz = tsc_freq / pt->max_non_turbo_ratio / 1000;
+ 	}
+ 
+-	if (session->itrace_synth_opts) {
+-		err = intel_pt_setup_time_ranges(pt, session->itrace_synth_opts);
+-		if (err)
+-			goto err_delete_thread;
+-	}
++	err = intel_pt_setup_time_ranges(pt, session->itrace_synth_opts);
++	if (err)
++		goto err_delete_thread;
+ 
+ 	if (pt->synth_opts.calls)
+ 		pt->branches_filter |= PERF_IP_FLAG_CALL | PERF_IP_FLAG_ASYNC |
 -- 
 2.21.0
 
