@@ -2,102 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 95E3A63025
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 07:47:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E09C46302B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 07:48:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=YE7XfKW10GMGUdyhLrLyDDANxuIVzC4ixO/4ddY9yp0=; b=T5mXuEeyCA3Mj+
-	h0tbMfrj/HZbksw/n4huQXF2eNWlaRQvMoz8Awy91USVDBfDFi8Pa7uFlnzGJOkXISqVEpuvhNc4s
-	bBdemh8uCLNomldviEqAV4voyVMARLPlwWlCKrVbgDN92rKljEcn6Vk5+bfqTKv65m7ITM7Plo5cH
-	5UGfYesNKoaaJEemPm18f1F2DWZUGGtO9Xq/k50Pjo3+mlZi2mazq+ZB6Kvkm9sRhNE0qs4M0DVYd
-	7YZXMXVQcC/XOmNV8YMYw9vrtHe4cGdVqjfuHh+sfOnKFdkai5u760Gfu3SADNhBYHf4mRpRePiJV
-	8PVotcRF+AxGgA6kyFXA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6MxlnxCj/RvgwuefgVLMMKqMGjos9hvanSnLxo/rMog=; b=ErAu1sy73Y0HFA
+	lgtkAuIVcgp34cQ/h7/nSmIieEpSijVMfk1yxCekdh0B5KSId5qd5wVspzDO4rDgaajBkq/hhf0Qd
+	p999Yyps4Q0zcpaFpI1jEem31er7rYZwm0iDNP+cNF/V7TsZKNQQWYjCQrY0WMaxpDFJjvPTBLYgk
+	0Q/64PR/SE2PjBK9yp9Q7gmN8s1dYbMDVBY1rWN79ocU9E0LEr2rTBsTCn1+H6GnrwxY01s5/nM7x
+	UsV7btPpVYbnJUSDJk5fosLkpxHRtgZGSdcFZpCJuOm0Cktk0d8kuwYOaF1ngfrTwPu8X0PSDCRPK
+	ox680EyAFGXpXjDD46qQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkixx-0003K4-UH; Tue, 09 Jul 2019 05:47:02 +0000
-Received: from mail-eopbgr40056.outbound.protection.outlook.com ([40.107.4.56]
- helo=EUR03-DB5-obe.outbound.protection.outlook.com)
+	id 1hkize-0003cT-Te; Tue, 09 Jul 2019 05:48:47 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkixl-0003HI-Ks
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 05:46:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=FS9RPeC/nJOL7yfFn15yNaQ7Sv3jvNl2LQtj7HutZqQ=;
- b=IVJV+991eAN18BzkD1EVy89IAG/VDv6MzXtfwzPR7YzypKNYLuFW4+TiIPR6PZ+DAj1G0k91CeZ0qVBeC/fWtWzaU74xe8uJFITUsFYcL4asaTYDjAxe7f6Vozm0+QVKfqzC6Jkq+oYAjRjXKZBP2OpDEpxlYKfxm0dNHdtwo6M=
-Received: from AM6PR04MB4613.eurprd04.prod.outlook.com (20.177.38.22) by
- AM6PR04MB4503.eurprd04.prod.outlook.com (20.177.37.92) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2052.18; Tue, 9 Jul 2019 05:46:45 +0000
-Received: from AM6PR04MB4613.eurprd04.prod.outlook.com
- ([fe80::3505:667e:2d3:c78e]) by AM6PR04MB4613.eurprd04.prod.outlook.com
- ([fe80::3505:667e:2d3:c78e%3]) with mapi id 15.20.2073.008; Tue, 9 Jul 2019
- 05:46:45 +0000
-From: Joakim Zhang <qiangqing.zhang@nxp.com>
-To: "will@kernel.org" <will@kernel.org>, "mark.rutland@arm.com"
- <mark.rutland@arm.com>, Frank Li <frank.li@nxp.com>
-Subject: [PATCH] perf: imx8_ddr_perf: calculate ddr bandwidth via virtual
- event read-bytes/write-bytes
-Thread-Topic: [PATCH] perf: imx8_ddr_perf: calculate ddr bandwidth via virtual
- event read-bytes/write-bytes
-Thread-Index: AQHVNhmxp3M1xbcYYkqaUv5u35ujeQ==
-Date: Tue, 9 Jul 2019 05:46:44 +0000
-Message-ID: <20190709054417.11734-1-qiangqing.zhang@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: git-send-email 2.17.1
-x-clientproxiedby: SG2PR06CA0158.apcprd06.prod.outlook.com
- (2603:1096:1:1e::12) To AM6PR04MB4613.eurprd04.prod.outlook.com
- (2603:10a6:20b:18::22)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=qiangqing.zhang@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [119.31.174.71]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 4659dd12-64f0-4b2c-ca11-08d70430d36e
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:AM6PR04MB4503; 
-x-ms-traffictypediagnostic: AM6PR04MB4503:
-x-microsoft-antispam-prvs: <AM6PR04MB45038F2BAB525436C467E773E6F10@AM6PR04MB4503.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3826;
-x-forefront-prvs: 0093C80C01
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(376002)(136003)(396003)(346002)(366004)(189003)(199004)(8676002)(81166006)(256004)(5660300002)(7736002)(8936002)(14444005)(6512007)(81156014)(305945005)(1076003)(478600001)(71190400001)(36756003)(110136005)(3846002)(54906003)(66066001)(316002)(53936002)(6636002)(52116002)(66446008)(64756008)(102836004)(68736007)(66476007)(66556008)(66946007)(486006)(386003)(99286004)(6506007)(73956011)(186003)(50226002)(4326008)(2616005)(26005)(6486002)(71200400001)(476003)(25786009)(6436002)(86362001)(14454004)(2906002)(2501003)(6116002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM6PR04MB4503;
- H:AM6PR04MB4613.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: wAl4PQNmBo1qwAX4BU+qUqxnQH/IFJ+s8TteGbtSdHa1ep8mQYoCicYwj6sbcTRO0Sof8POKyeLps18nZwAf2K0T5/9g4IF1COLtbXrr7rM8uDAJG/b+HH1R+Q7Z42bojpio4cLQFB1WgWK/Y4vZl2ZNYq3MwqKOlvtoWEOkHt1HBLazUFveUmz8xChik5uKdKbv8FpRQvDs8B/Cu7RYx9FJYPM0b1MH70z08JpGvLmHoPxcwEVKB83kCgc6a6fUnYixkxwVmOVKxL7dhV0seKGbdMaxzzJZzmkNKV/1nlgYT554mzRN0p6ViU4F+e7CYQNryDXpHRW5nato9SN91N9j0tLisD8VAVL9EUUZj660/EiksdVFR6F/914exy6qt2M/Znk05VLanfKeeNJT+iLYuKAvzgWQZnktg5lgNE8=
+ id 1hkizS-0003c4-Ce
+ for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 05:48:36 +0000
+Received: by mail-wr1-x443.google.com with SMTP id a10so18422297wrp.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 08 Jul 2019 22:48:33 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=CNN2kJc+nWrTuiXZEL6GkuVZVuX+Nw04FbBGD7IU+LE=;
+ b=lqjpDQkAZeYNEQ+sEWPveNoi5a1wx01TcknFbfj1ITpgr/Qhpf3ZfyGbfGH1gkNePK
+ VJ4jOwsvWQ0hE/cR8t12CYteK9N4tX+ipFo87rmV2VUnjsp8x876k3/fyKnbfarOV+vo
+ 5QEXYY+wwxVCSL89ABGSSQAIhVQVST0D9apQgwOgsao7m6+yxrl3nW/xUWUJoM6EvBba
+ 6TxDA7bjQeWBJFJPKZcGChL8mvm37bpuctuZxZ3mDv8uRDhhmPv28DQ7qn0eJn+VuCSc
+ F/1ruD0LMLgkjvZEGywE3qPPoJW7Q0Dp23Ss9e+0s6EDDStEgCWqyXLpOfMGpeWyOFMJ
+ CbDg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=CNN2kJc+nWrTuiXZEL6GkuVZVuX+Nw04FbBGD7IU+LE=;
+ b=uhJzpYRy3p/BdFi2WsbdETOrpihsfiNJ0vgjmPXDn2b1i6P+ehYbEs69n0IFa1H/qV
+ iuRs0a0iTSKOjNLSKrskFhf0nIe6gt9p/aUoktcX4Zr4HuEz91XTCv+4WZh6yqDVRz0F
+ eDXTBeN5lsH9nPBv9ylwD9YeMZfDwfG41LO1ye7/2R9iBxIdAK+FV+g3g1Y6GfNa4x1d
+ DcPAVOtQMFueMiwHzWfMxlVzdhSDILFmAoX47lgOieTpWLQmlugtKNVnFMhdM4bi1yKg
+ 1HudEIKboYtu8fNUwvC3NInZNPdfDzjt5OSKx/7S3lFDDR+SveE0SQ3QzWo7xSGa3SnB
+ 5o1w==
+X-Gm-Message-State: APjAAAVSgS/BPLFh+sFZlwqYU6g4D7HnVHaXuNaNKP44Y3bcyJEv13m7
+ N3EGb40/fAEGP2EEki2fH1N6uBwf8e+XolDThJ4=
+X-Google-Smtp-Source: APXvYqx0FZcur7ze+PmaoG3LMB6+HzCJzBe4KY7ZuSc+kzByCrpvYHptgS/2GwByhfvQ4sAjm2o2mRlZvIClkYTo3RM=
+X-Received: by 2002:a5d:46cf:: with SMTP id g15mr3688002wrs.93.1562651312263; 
+ Mon, 08 Jul 2019 22:48:32 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 4659dd12-64f0-4b2c-ca11-08d70430d36e
-X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Jul 2019 05:46:45.0138 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: qiangqing.zhang@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB4503
+References: <20190627081205.22065-1-daniel.baluta@nxp.com>
+ <20190627081205.22065-2-daniel.baluta@nxp.com>
+In-Reply-To: <20190627081205.22065-2-daniel.baluta@nxp.com>
+From: Daniel Baluta <daniel.baluta@gmail.com>
+Date: Tue, 9 Jul 2019 08:48:20 +0300
+Message-ID: <CAEnQRZAGTdMpsnH-F_Xoaae0+nX8WTqYOrMJUjeQ6vhWvZ1y1Q@mail.gmail.com>
+Subject: Re: [PATCH v2 1/2] firmware: imx: Add DSP IPC protocol interface
+To: Daniel Baluta <daniel.baluta@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_224649_696219_CAD3A71D 
-X-CRM114-Status: GOOD (  11.71  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190708_224834_459793_01D647D9 
+X-CRM114-Status: GOOD (  28.59  )
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.4.56 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (daniel.baluta[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -105,6 +82,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -116,169 +94,336 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Joakim Zhang <qiangqing.zhang@nxp.com>
+Cc: Aisheng Dong <aisheng.dong@nxp.com>,
+ "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ Anson Huang <anson.huang@nxp.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "o.rempel@pengutronix.de" <o.rempel@pengutronix.de>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "S.j. Wang" <shengjiu.wang@nxp.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We can calculate ddr bandwidth via virtual event read-bytes/write-bytes
-based on ddr burst width, which actually share event
-read-cycles/write-cycles. Burst width is 32 bit on i.MX8 board.
+Hi Oleksij,
 
-The ddr interface will generate 2 up edges and 2 down edges in an
-internal clock cycle, so it can pass 4 beats of data. 4 bytes of each
-beat if ddr burst width is 32 bit.
+Any comments on this?
 
-for example:
-perf stat -a -e imx8_ddr0/read-bytes/,imx8_ddr0/write-bytes/ ls
 
-Signed-off-by: Joakim Zhang <qiangqing.zhang@nxp.com>
----
- drivers/perf/fsl_imx8_ddr_perf.c | 96 ++++++++++++++++++++------------
- 1 file changed, 61 insertions(+), 35 deletions(-)
-
-diff --git a/drivers/perf/fsl_imx8_ddr_perf.c b/drivers/perf/fsl_imx8_ddr_perf.c
-index 63fe21600072..e7dbaf4d2387 100644
---- a/drivers/perf/fsl_imx8_ddr_perf.c
-+++ b/drivers/perf/fsl_imx8_ddr_perf.c
-@@ -88,46 +88,53 @@ ddr_pmu_event_show(struct device *dev, struct device_attribute *attr,
- 	struct perf_pmu_events_attr *pmu_attr;
- 
- 	pmu_attr = container_of(attr, struct perf_pmu_events_attr, attr);
--	return sprintf(page, "event=0x%02llx\n", pmu_attr->id);
-+	return sprintf(page, "%s", pmu_attr->event_str);
- }
- 
--#define IMX8_DDR_PMU_EVENT_ATTR(_name, _id)				\
-+#define IMX8_DDR_PMU_EVENT_ATTR(_name, _str)				\
- 	(&((struct perf_pmu_events_attr[]) {				\
- 		{ .attr = __ATTR(_name, 0444, ddr_pmu_event_show, NULL),\
--		  .id = _id, }						\
-+		  .id = 0,						\
-+		  .event_str = _str, }					\
- 	})[0].attr.attr)
- 
- static struct attribute *ddr_perf_events_attrs[] = {
--	IMX8_DDR_PMU_EVENT_ATTR(cycles, EVENT_CYCLES_ID),
--	IMX8_DDR_PMU_EVENT_ATTR(selfresh, 0x01),
--	IMX8_DDR_PMU_EVENT_ATTR(read-accesses, 0x04),
--	IMX8_DDR_PMU_EVENT_ATTR(write-accesses, 0x05),
--	IMX8_DDR_PMU_EVENT_ATTR(read-queue-depth, 0x08),
--	IMX8_DDR_PMU_EVENT_ATTR(write-queue-depth, 0x09),
--	IMX8_DDR_PMU_EVENT_ATTR(lp-read-credit-cnt, 0x10),
--	IMX8_DDR_PMU_EVENT_ATTR(hp-read-credit-cnt, 0x11),
--	IMX8_DDR_PMU_EVENT_ATTR(write-credit-cnt, 0x12),
--	IMX8_DDR_PMU_EVENT_ATTR(read-command, 0x20),
--	IMX8_DDR_PMU_EVENT_ATTR(write-command, 0x21),
--	IMX8_DDR_PMU_EVENT_ATTR(read-modify-write-command, 0x22),
--	IMX8_DDR_PMU_EVENT_ATTR(hp-read, 0x23),
--	IMX8_DDR_PMU_EVENT_ATTR(hp-req-nocredit, 0x24),
--	IMX8_DDR_PMU_EVENT_ATTR(hp-xact-credit, 0x25),
--	IMX8_DDR_PMU_EVENT_ATTR(lp-req-nocredit, 0x26),
--	IMX8_DDR_PMU_EVENT_ATTR(lp-xact-credit, 0x27),
--	IMX8_DDR_PMU_EVENT_ATTR(wr-xact-credit, 0x29),
--	IMX8_DDR_PMU_EVENT_ATTR(read-cycles, 0x2a),
--	IMX8_DDR_PMU_EVENT_ATTR(write-cycles, 0x2b),
--	IMX8_DDR_PMU_EVENT_ATTR(read-write-transition, 0x30),
--	IMX8_DDR_PMU_EVENT_ATTR(precharge, 0x31),
--	IMX8_DDR_PMU_EVENT_ATTR(activate, 0x32),
--	IMX8_DDR_PMU_EVENT_ATTR(load-mode, 0x33),
--	IMX8_DDR_PMU_EVENT_ATTR(perf-mwr, 0x34),
--	IMX8_DDR_PMU_EVENT_ATTR(read, 0x35),
--	IMX8_DDR_PMU_EVENT_ATTR(read-activate, 0x36),
--	IMX8_DDR_PMU_EVENT_ATTR(refresh, 0x37),
--	IMX8_DDR_PMU_EVENT_ATTR(write, 0x38),
--	IMX8_DDR_PMU_EVENT_ATTR(raw-hazard, 0x39),
-+	IMX8_DDR_PMU_EVENT_ATTR(cycles, "event=0x00"),
-+	IMX8_DDR_PMU_EVENT_ATTR(selfresh, "event=0x01"),
-+	IMX8_DDR_PMU_EVENT_ATTR(read-accesses, "event=0x04"),
-+	IMX8_DDR_PMU_EVENT_ATTR(write-accesses, "event=0x05"),
-+	IMX8_DDR_PMU_EVENT_ATTR(read-queue-depth, "event=0x08"),
-+	IMX8_DDR_PMU_EVENT_ATTR(write-queue-depth, "event=0x09"),
-+	IMX8_DDR_PMU_EVENT_ATTR(lp-read-credit-cnt, "event=0x10"),
-+	IMX8_DDR_PMU_EVENT_ATTR(hp-read-credit-cnt, "event=0x11"),
-+	IMX8_DDR_PMU_EVENT_ATTR(write-credit-cnt, "event=0x12"),
-+	IMX8_DDR_PMU_EVENT_ATTR(read-command, "event=0x20"),
-+	IMX8_DDR_PMU_EVENT_ATTR(write-command, "event=0x21"),
-+	IMX8_DDR_PMU_EVENT_ATTR(read-modify-write-command, "event=0x22"),
-+	IMX8_DDR_PMU_EVENT_ATTR(hp-read, "event=0x23"),
-+	IMX8_DDR_PMU_EVENT_ATTR(hp-req-nocredit, "event=0x24"),
-+	IMX8_DDR_PMU_EVENT_ATTR(hp-xact-credit, "event=0x25"),
-+	IMX8_DDR_PMU_EVENT_ATTR(lp-req-nocredit, "event=0x26"),
-+	IMX8_DDR_PMU_EVENT_ATTR(lp-xact-credit, "event=0x27"),
-+	IMX8_DDR_PMU_EVENT_ATTR(wr-xact-credit, "event=0x29"),
-+	IMX8_DDR_PMU_EVENT_ATTR(read-cycles, "event=0x2a"),
-+	IMX8_DDR_PMU_EVENT_ATTR(read-bytes, "event=0x12a"),
-+	IMX8_DDR_PMU_EVENT_ATTR(read-bytes.unit, "MB"),
-+	IMX8_DDR_PMU_EVENT_ATTR(read-bytes.scale, "0.000001"),
-+	IMX8_DDR_PMU_EVENT_ATTR(write-cycles, "event=0x2b"),
-+	IMX8_DDR_PMU_EVENT_ATTR(write-bytes, "event=0x12b"),
-+	IMX8_DDR_PMU_EVENT_ATTR(write-bytes.unit, "MB"),
-+	IMX8_DDR_PMU_EVENT_ATTR(write-bytes.scale, "0.000001"),
-+	IMX8_DDR_PMU_EVENT_ATTR(read-write-transition, "event=0x30"),
-+	IMX8_DDR_PMU_EVENT_ATTR(precharge, "event=0x31"),
-+	IMX8_DDR_PMU_EVENT_ATTR(activate, "event=0x32"),
-+	IMX8_DDR_PMU_EVENT_ATTR(load-mode, "event=0x33"),
-+	IMX8_DDR_PMU_EVENT_ATTR(perf-mwr, "event=0x34"),
-+	IMX8_DDR_PMU_EVENT_ATTR(read, "event=0x35"),
-+	IMX8_DDR_PMU_EVENT_ATTR(read-activate, "event=0x36"),
-+	IMX8_DDR_PMU_EVENT_ATTR(refresh, "event=0x37"),
-+	IMX8_DDR_PMU_EVENT_ATTR(write, "event=0x38"),
-+	IMX8_DDR_PMU_EVENT_ATTR(raw-hazard, "event=0x39"),
- 	NULL,
- };
- 
-@@ -136,7 +143,7 @@ static struct attribute_group ddr_perf_events_attr_group = {
- 	.attrs = ddr_perf_events_attrs,
- };
- 
--PMU_FORMAT_ATTR(event, "config:0-7");
-+PMU_FORMAT_ATTR(event, "config:0-8");
- 
- static struct attribute *ddr_perf_format_attrs[] = {
- 	&format_attr_event.attr,
-@@ -243,6 +250,17 @@ static void ddr_perf_event_update(struct perf_event *event)
- 
- 	delta = (new_raw_count - prev_raw_count) & 0xFFFFFFFF;
- 
-+	/*
-+	 * Calculate ddr read/write bandwidth via read-bytes/write-bytes events,
-+	 * actually using read-cycles/write-cycles events.
-+	 *
-+	 * The ddr interface will generate 2 up edges and 2 down edges in an
-+	 * internal clock cycle, so it can pass 4 beats of data, and 4 bytes of
-+	 * each beat if ddr burst width is 32 bit.
-+	 */
-+	if (event->attr.config == 0x12a || event->attr.config == 0x12b)
-+		delta = delta * 4 * 4;
-+
- 	local64_add(delta, &event->count);
- }
- 
-@@ -260,7 +278,15 @@ static void ddr_perf_counter_enable(struct ddr_pmu *pmu, int config,
- 		 */
- 		writel(0, pmu->base + reg);
- 		val = CNTL_EN | CNTL_CLEAR;
--		val |= FIELD_PREP(CNTL_CSV_MASK, config);
-+
-+		/*
-+		 * Virtual events(read-bytes/write-bytes) share real
-+		 * events(read-cycles/write-cycles).
-+		 */
-+		if (config == 0x12a || config == 0x12b)
-+			val |= FIELD_PREP(CNTL_CSV_MASK, (config - 0x100));
-+		else
-+			val |= FIELD_PREP(CNTL_CSV_MASK, config);
- 		writel(val, pmu->base + reg);
- 	} else {
- 		/* Disable counter */
--- 
-2.17.1
-
+On Thu, Jun 27, 2019 at 11:14 AM Daniel Baluta <daniel.baluta@nxp.com> wrote:
+>
+> Some of i.MX8 processors (e.g i.MX8QM, i.MX8QXP) contain
+> the Tensilica HiFi4 DSP for advanced pre- and post-audio
+> processing.
+>
+> The communication between Host CPU and DSP firmware is
+> taking place using a shared memory area for message passing
+> and a dedicated Messaging Unit for notifications.
+>
+> DSP IPC protocol driver offers a doorbell interface using
+> imx-mailbox API.
+>
+> We use 4 MU channels (2 x TXDB, 2 x RXDB) to implement a
+> request-reply protocol.
+>
+> Connection 0 (txdb0, rxdb0):
+>         - Host writes messasge to shared memory [SHMEM]
+>         - Host sends a request [MU]
+>         - DSP handles request [SHMEM]
+>         - DSP sends reply [MU]
+>
+> Connection 1 (txdb1, rxdb1):
+>         - DSP writes a message to shared memory [SHMEM]
+>         - DSP sends a request [MU]
+>         - Host handles request [SHMEM]
+>         - Host sends reply [MU]
+>
+> The protocol driver will be used by a Host client to
+> communicate with the DSP. First client will be the i.MX8
+> part from Sound Open Firmware infrastructure.
+>
+> The protocol drivers offers the following interface:
+>
+> On Tx:
+>    - imx_dsp_ring_doorbell, will be called to notify the DSP
+>    that it needs to handle a request.
+>
+> On Rx:
+>    - clients need to provide two callbacks:
+>         .handle_reply
+>         .handle_request
+>   - the callbacks will be used by the protocol driver on
+>     notification arrival from DSP.
+>
+> Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
+> ---
+>  drivers/firmware/imx/Kconfig     |  11 +++
+>  drivers/firmware/imx/Makefile    |   1 +
+>  drivers/firmware/imx/imx-dsp.c   | 142 +++++++++++++++++++++++++++++++
+>  include/linux/firmware/imx/dsp.h |  67 +++++++++++++++
+>  4 files changed, 221 insertions(+)
+>  create mode 100644 drivers/firmware/imx/imx-dsp.c
+>  create mode 100644 include/linux/firmware/imx/dsp.h
+>
+> diff --git a/drivers/firmware/imx/Kconfig b/drivers/firmware/imx/Kconfig
+> index 42b566f8903f..ddb241708c31 100644
+> --- a/drivers/firmware/imx/Kconfig
+> +++ b/drivers/firmware/imx/Kconfig
+> @@ -1,4 +1,15 @@
+>  # SPDX-License-Identifier: GPL-2.0-only
+> +config IMX_DSP
+> +       bool "IMX DSP Protocol driver"
+> +       depends on IMX_MBOX
+> +       help
+> +         This enables DSP IPC protocol between host CPU (Linux)
+> +         and the firmware running on DSP.
+> +         DSP exists on some i.MX8 processors (e.g i.MX8QM, i.MX8QXP).
+> +
+> +         It acts like a doorbell. Client might use shared memory to
+> +         exchange information with DSP side.
+> +
+>  config IMX_SCU
+>         bool "IMX SCU Protocol driver"
+>         depends on IMX_MBOX
+> diff --git a/drivers/firmware/imx/Makefile b/drivers/firmware/imx/Makefile
+> index 802c4ad8e8f9..08bc9ddfbdfb 100644
+> --- a/drivers/firmware/imx/Makefile
+> +++ b/drivers/firmware/imx/Makefile
+> @@ -1,3 +1,4 @@
+>  # SPDX-License-Identifier: GPL-2.0
+> +obj-$(CONFIG_IMX_DSP)          += imx-dsp.o
+>  obj-$(CONFIG_IMX_SCU)          += imx-scu.o misc.o imx-scu-irq.o
+>  obj-$(CONFIG_IMX_SCU_PD)       += scu-pd.o
+> diff --git a/drivers/firmware/imx/imx-dsp.c b/drivers/firmware/imx/imx-dsp.c
+> new file mode 100644
+> index 000000000000..c4d34a2fbff3
+> --- /dev/null
+> +++ b/drivers/firmware/imx/imx-dsp.c
+> @@ -0,0 +1,142 @@
+> +// SPDX-License-Identifier: GPL-2.0+
+> +/*
+> + * Copyright 2019 NXP
+> + *  Author: Daniel Baluta <daniel.baluta@nxp.com>
+> + *
+> + * Implementation of the DSP IPC interface (host side)
+> + */
+> +
+> +#include <linux/firmware/imx/dsp.h>
+> +#include <linux/kernel.h>
+> +#include <linux/mailbox_client.h>
+> +#include <linux/module.h>
+> +#include <linux/of_platform.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/slab.h>
+> +
+> +/*
+> + * imx_dsp_ring_doorbell - triggers an interrupt on the other side (DSP)
+> + *
+> + * @dsp: DSP IPC handle
+> + * @chan_idx: index of the channel where to trigger the interrupt
+> + *
+> + * Returns non-negative value for success, negative value for error
+> + */
+> +int imx_dsp_ring_doorbell(struct imx_dsp_ipc *ipc, unsigned int idx)
+> +{
+> +       int ret;
+> +       struct imx_dsp_chan *dsp_chan;
+> +
+> +       if (idx >= DSP_MU_CHAN_NUM)
+> +               return -EINVAL;
+> +
+> +       dsp_chan = &ipc->chans[idx];
+> +       ret = mbox_send_message(dsp_chan->ch, NULL);
+> +       if (ret < 0)
+> +               return ret;
+> +
+> +       return 0;
+> +}
+> +EXPORT_SYMBOL(imx_dsp_ring_doorbell);
+> +
+> +/*
+> + * imx_dsp_handle_rx - rx callback used by imx mailbox
+> + *
+> + * @c: mbox client
+> + * @msg: message received
+> + *
+> + * Users of DSP IPC will need to privde handle_reply and handle_request
+> + * callbacks.
+> + */
+> +static void imx_dsp_handle_rx(struct mbox_client *c, void *msg)
+> +{
+> +       struct imx_dsp_chan *chan = container_of(c, struct imx_dsp_chan, cl);
+> +
+> +       if (chan->idx == 0) {
+> +               chan->ipc->ops->handle_reply(chan->ipc);
+> +       } else {
+> +               chan->ipc->ops->handle_request(chan->ipc);
+> +               imx_dsp_ring_doorbell(chan->ipc, 1);
+> +       }
+> +}
+> +
+> +static int imx_dsp_probe(struct platform_device *pdev)
+> +{
+> +       struct device *dev = &pdev->dev;
+> +       struct imx_dsp_ipc *dsp_ipc;
+> +       struct imx_dsp_chan *dsp_chan;
+> +       struct mbox_client *cl;
+> +       char *chan_name;
+> +       int ret;
+> +       int i, j;
+> +
+> +       dsp_ipc = devm_kzalloc(dev, sizeof(*dsp_ipc), GFP_KERNEL);
+> +       if (!dsp_ipc)
+> +               return -ENOMEM;
+> +
+> +       for (i = 0; i < DSP_MU_CHAN_NUM; i++) {
+> +               if (i < 2)
+> +                       chan_name = kasprintf(GFP_KERNEL, "txdb%d", i);
+> +               else
+> +                       chan_name = kasprintf(GFP_KERNEL, "rxdb%d", i - 2);
+> +
+> +               if (!chan_name)
+> +                       return -ENOMEM;
+> +
+> +               dsp_chan = &dsp_ipc->chans[i];
+> +               cl = &dsp_chan->cl;
+> +               cl->dev = dev;
+> +               cl->tx_block = false;
+> +               cl->knows_txdone = true;
+> +               cl->rx_callback = imx_dsp_handle_rx;
+> +
+> +               dsp_chan->ipc = dsp_ipc;
+> +               dsp_chan->idx = i % 2;
+> +               dsp_chan->ch = mbox_request_channel_byname(cl, chan_name);
+> +               if (IS_ERR(dsp_chan->ch)) {
+> +                       ret = PTR_ERR(dsp_chan->ch);
+> +                       if (ret != -EPROBE_DEFER)
+> +                               dev_err(dev, "Failed to request mbox chan %s ret %d\n",
+> +                                       chan_name, ret);
+> +                       goto out;
+> +               }
+> +
+> +               dev_dbg(dev, "request mbox chan %s\n", chan_name);
+> +               /* chan_name is not used anymore by framework */
+> +               kfree(chan_name);
+> +       }
+> +
+> +       dsp_ipc->dev = dev;
+> +
+> +       dev_set_drvdata(dev, dsp_ipc);
+> +
+> +       dev_info(dev, "NXP i.MX DSP IPC initialized\n");
+> +
+> +       return devm_of_platform_populate(dev);
+> +out:
+> +       kfree(chan_name);
+> +       for (j = 0; j < i; j++) {
+> +               dsp_chan = &dsp_ipc->chans[j];
+> +               mbox_free_channel(dsp_chan->ch);
+> +       }
+> +
+> +       return ret;
+> +}
+> +
+> +static const struct of_device_id imx_dsp_match[] = {
+> +       { .compatible = "fsl,imx8qxp-dsp", },
+> +       { /* Sentinel */ }
+> +};
+> +
+> +static struct platform_driver imx_dsp_driver = {
+> +       .driver = {
+> +               .name = "imx-dsp",
+> +               .of_match_table = imx_dsp_match,
+> +       },
+> +       .probe = imx_dsp_probe,
+> +};
+> +builtin_platform_driver(imx_dsp_driver);
+> +
+> +MODULE_AUTHOR("Daniel Baluta <daniel.baluta@nxp.com>");
+> +MODULE_DESCRIPTION("IMX DSP IPC protocol driver");
+> +MODULE_LICENSE("GPL v2");
+> diff --git a/include/linux/firmware/imx/dsp.h b/include/linux/firmware/imx/dsp.h
+> new file mode 100644
+> index 000000000000..7562099c9e46
+> --- /dev/null
+> +++ b/include/linux/firmware/imx/dsp.h
+> @@ -0,0 +1,67 @@
+> +/* SPDX-License-Identifier: GPL-2.0+ */
+> +/*
+> + * Copyright 2019 NXP
+> + *
+> + * Header file for the DSP IPC implementation
+> + */
+> +
+> +#ifndef _IMX_DSP_IPC_H
+> +#define _IMX_DSP_IPC_H
+> +
+> +#include <linux/device.h>
+> +#include <linux/types.h>
+> +#include <linux/mailbox_client.h>
+> +
+> +#define DSP_MU_CHAN_NUM                4
+> +
+> +struct imx_dsp_chan {
+> +       struct imx_dsp_ipc *ipc;
+> +       struct mbox_client cl;
+> +       struct mbox_chan *ch;
+> +       char *name;
+> +       int idx;
+> +};
+> +
+> +struct imx_dsp_ops {
+> +       void (*handle_reply)(struct imx_dsp_ipc *ipc);
+> +       void (*handle_request)(struct imx_dsp_ipc *ipc);
+> +};
+> +
+> +struct imx_dsp_ipc {
+> +       /* Host <-> DSP communication uses 2 txdb and 2 rxdb channels */
+> +       struct imx_dsp_chan chans[DSP_MU_CHAN_NUM];
+> +       struct device *dev;
+> +       struct imx_dsp_ops *ops;
+> +       void *private_data;
+> +};
+> +
+> +static inline void imx_dsp_set_data(struct imx_dsp_ipc *ipc, void *data)
+> +{
+> +       if (!ipc)
+> +               return;
+> +
+> +       ipc->private_data = data;
+> +}
+> +
+> +static inline void *imx_dsp_get_data(struct imx_dsp_ipc *ipc)
+> +{
+> +       if (!ipc)
+> +               return NULL;
+> +
+> +       return ipc->private_data;
+> +}
+> +
+> +#if IS_ENABLED(CONFIG_IMX_DSP)
+> +
+> +int imx_dsp_ring_doorbell(struct imx_dsp_ipc *dsp, unsigned int chan_idx);
+> +
+> +#else
+> +
+> +static inline int imx_dsp_ring_doorbell(struct imx_dsp_ipc *ipc,
+> +                                       unsigned int chan_idx)
+> +{
+> +       return -ENOTSUPP;
+> +}
+> +
+> +#endif
+> +#endif /* _IMX_DSP_IPC_H */
+> --
+> 2.17.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
