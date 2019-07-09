@@ -2,80 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DB12A63A56
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 19:57:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5BE6763A61
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jul 2019 20:00:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+FmWuacmJXBmXjM4/wI3J94/y9BLRnRilaS2GFMqUec=; b=J32Kj0gfQGW/L3
-	5+Gr6slfEat6Jlazl+xL/ngSDeSJMg1sLKtEgxOkV06/j2x77JD7JRC5gimLm5XfDWVHGyA6dN12e
-	dQLYcentuAELPQyMx/7WHRDWFcqCJgn2lcFSyIGcz4o30s2HDqq9P4/IZAwXtmWZS9Dsb9lT8RDj6
-	CWiQo5ECMXcqlQUIorVm8Z/1iCMAAX6WTVUhXSdd6YMCKD19Bl3/9PdscyU7I5HcgFEw78VdIQ7Bn
-	LfKIwaFOkzcsQLTunsgccOK8GWbXE2LP0+oIH9mVPRLuAvCIQgordGnsRvuKPyHdnT4QF1tW3Y5P9
-	aVZi4a0m3tBXt20ODFUw==;
+	List-Owner; bh=vygqmdX5tuDWLBF1ZxWRlAaUkC8F2ZJYCV+jrYQ3x9k=; b=ExP5vqSUxipYN9
+	FZ/Jfm3rGnggNvi661CabZGYefcb+zX6JSqNuWiDP6kWqPvxTunNOdg85hyb495DZg9K1q986cBED
+	7eLzMRQ9SvoprUVaw6LcOXpUR6VN7JgTGC0hfy5sJmvpOMww4VZpyPGMYWJ0xTxe0hHbHzel4fdH4
+	AZvdOXYga6I1DuME6EqfqHRmpspDF+gl0U1m0PaN4h/r/kju4q+ZWXwswR7kwIZfXw6QDz/cRrh6V
+	tswwpqofAvjSGH+ZIcuZu8JfIbPlgVynaN11oeXZKIuhPgB0AEKyfhGFXrkyRxgRo7sJFzMcPgQtE
+	7x/+8AK5h3jRBUX+yQ7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkuMu-0005nT-A0; Tue, 09 Jul 2019 17:57:32 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hkuPy-0007g3-Ny; Tue, 09 Jul 2019 18:00:42 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkuMm-0005n4-Ki
- for linux-arm-kernel@lists.infradead.org; Tue, 09 Jul 2019 17:57:25 +0000
-Received: by mail-pf1-x443.google.com with SMTP id r1so9638939pfq.12
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 09 Jul 2019 10:57:23 -0700 (PDT)
+ id 1hkuPo-0007fS-PG; Tue, 09 Jul 2019 18:00:34 +0000
+Received: by mail-pl1-x642.google.com with SMTP id az7so3021918plb.5;
+ Tue, 09 Jul 2019 11:00:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=qkTnc9KFxu+eKkMI+ViyuqAH2l9mhes3oVPetOo6UQY=;
- b=kH2Xr5PKkvPiBIbtnj6MZx5BcJmwSCNPYlmSZPff6YRpV0M6JyGSKFG8UWWWGWc68e
- n6Re9PfR00VnhBuO4KV2ZMBLOnvhp/y4eFcficbncQiSTjlvCqFxFxdS7yQRdqoM9um1
- zefV9DGAXCSHUQsC8X7HKP2XKi8Ba+N+qHGt9g+erWPn7qLebacUdK42msZuFco6ScDg
- herty0K+BB91hoFzHBDw0P1SYh7wdS+1Mjhg+H0TkpPGDMPmIx49xaQMYzcfV52B+/G0
- uFOwQDbqMH8XDDffSwYoK//U10bYjw1Q6h8nqOXqSLfijDVD3dGqItfIf5X/OVt5VHWf
- HoGA==
+ bh=gIm1hPdGKhQmW9ErbwFuKhHNbmgcrYySHT3l4GVOH6c=;
+ b=vSYNGu27hbFUbPkKzkmaX8CVuWVjLxzg3Or8kFkrstXu4gbnhVmH3N371zBH5lRaj7
+ HXJupA9bVnLjJXu/9teZuuFJuDzrq7UC8SOENweH+4XSMMzTvdsKapJeUXUsPHTYrT+y
+ F5gWpkYp8FixFjs0ZrK+kTJxpEfwLvq8VTkojG/9z8j+BJhBOjpycgVdd3WGyTICiUQi
+ p3Qj/7BrV8fMlJw/iPRjnFVVBkPyhFbPW9IL6hWjvWk+1Zxcpsbb06mWGxeXVG5dptnu
+ cUjsQ0Q5/c4/bK9xjUUd0htzo6sHX/ab4iOFumViqJr0kDQ4FzcQA77Tr0ghmOH7MxYQ
+ /2Iw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=qkTnc9KFxu+eKkMI+ViyuqAH2l9mhes3oVPetOo6UQY=;
- b=bJPYfQidiAwuZVIgh8gSScIpJHRmXqDvdP4xJA+VATKKNmgajAxBZmfVhnifVqlgOz
- ISGpFP4+i6B9C5h1d48/jy65mnK405SMo2jT0WhpFc6vRIKFJPUY13AQG75fwm2jjsoF
- iuZv4RVzsRmx86Pn0dXYaDhNbf53xIKB5lPBzCEML4quc0HIOjziUXHelcuCilwyxrMF
- D34pp4dvUrfxL9y5ydjvafCwQRIxaMR0WKPHMcartqPpkBc3AlvittRbM5hadnq76aec
- xkqAsCOym9OCigJYhn0vRK5dz6KQV0Vd9XI6Slj54e092a2SOguCKTKuzySfjG0RYORz
- ZEJw==
-X-Gm-Message-State: APjAAAXHnl2I+Sfw8BB99QwBy3RkeDlHHFPAKCsCBkNTFB5OESU1Uq4O
- fK6Hxtzc4SKKbSsV2ghPxYGUGD+C
-X-Google-Smtp-Source: APXvYqyHEj1ycd0OwQ4OuYIRtHZp+tj2PbBPUkVMBjOFdxSPMPV6yLypN53LzZ+IKw5gtq9D2WzA0A==
-X-Received: by 2002:a65:47c1:: with SMTP id f1mr31464882pgs.169.1562695043418; 
- Tue, 09 Jul 2019 10:57:23 -0700 (PDT)
+ bh=gIm1hPdGKhQmW9ErbwFuKhHNbmgcrYySHT3l4GVOH6c=;
+ b=qF/sfbRc5yCJXYJL0hdOL9E/SiJtsZPahMG+sc6PWyAOIwVT2JPufAoRKcMo4AVgQW
+ S87r++2+TCH7WOtyp4VpxsJ7IAdDfE62vo1OhSCfKB072yo2hp5SoWnq6pacUpyozvZL
+ QFhkRQH4pblewilxgna5x6vMo4KEvz/g3U3KZauDmmBXNqTM9fxJ6W2TKrxFyzinXDYw
+ HTTS1T2qHgiLdSsny4NtYKeGeujOIemptZTa/qK1nYHUGyPOUAyNxuLcuEYB+uDsd96A
+ CqNZSn9fJ3v+k5xGi+xdZzECGuLuWxJdhvNGHgeWv2quPhucBSSJD4G0Qah/8K7cwlKN
+ URJA==
+X-Gm-Message-State: APjAAAXiWvwze9rlG3HKQHmUIMzi/mbw1jQ9qs8qwaWCqC1BdH0d7uJR
+ zBlPJMUoD0Id7j1A7UnOn9OSa3zW
+X-Google-Smtp-Source: APXvYqxXpHfvlVzg5Zzf4I3fBMs0VkzZWs3fA4YyAdnXSG0FgM7Vq+GaeeCH2ulBoLKAG2o4wXvdLA==
+X-Received: by 2002:a17:902:bc83:: with SMTP id
+ bb3mr34405078plb.56.1562695232327; 
+ Tue, 09 Jul 2019 11:00:32 -0700 (PDT)
 Received: from localhost.localdomain ([110.227.64.207])
- by smtp.gmail.com with ESMTPSA id o24sm20051491pfp.135.2019.07.09.10.57.19
+ by smtp.gmail.com with ESMTPSA id x8sm19094651pfa.46.2019.07.09.11.00.29
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 09 Jul 2019 10:57:22 -0700 (PDT)
+ Tue, 09 Jul 2019 11:00:31 -0700 (PDT)
 From: Nishka Dasgupta <nishkadg.linux@gmail.com>
-To: hdegoede@redhat.com, dmitry.torokhov@gmail.com, maxime.ripard@bootlin.com,
- wens@csie.org, linux-input@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] input: keyboard: sun4i-lradc-keys: Add of_node_put() before
+To: matthias.bgg@gmail.com, dmitry.torokhov@gmail.com,
+ linux-input@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-mediatek@lists.infradead.org
+Subject: [PATCH] input: keyboard: mtk-pmic-keys: Add of_node_put() before
  return
-Date: Tue,  9 Jul 2019 23:27:07 +0530
-Message-Id: <20190709175707.14278-1-nishkadg.linux@gmail.com>
+Date: Tue,  9 Jul 2019 23:30:19 +0530
+Message-Id: <20190709180019.14339-1-nishkadg.linux@gmail.com>
 X-Mailer: git-send-email 2.19.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_105724_682053_E6224AA7 
-X-CRM114-Status: GOOD (  10.07  )
+X-CRM114-CacheID: sfid-20190709_110032_825124_B5C934A5 
+X-CRM114-Status: GOOD (  10.42  )
 X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -114,35 +113,45 @@ Issue found with Coccinelle.
 
 Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
 ---
- drivers/input/keyboard/sun4i-lradc-keys.c | 3 +++
- 1 file changed, 3 insertions(+)
+ drivers/input/keyboard/mtk-pmic-keys.c | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/input/keyboard/sun4i-lradc-keys.c b/drivers/input/keyboard/sun4i-lradc-keys.c
-index 6ffdc26b9c89..4a796bed48ac 100644
---- a/drivers/input/keyboard/sun4i-lradc-keys.c
-+++ b/drivers/input/keyboard/sun4i-lradc-keys.c
-@@ -198,18 +198,21 @@ static int sun4i_lradc_load_dt_keymap(struct device *dev,
- 		error = of_property_read_u32(pp, "channel", &channel);
- 		if (error || channel != 0) {
- 			dev_err(dev, "%pOFn: Inval channel prop\n", pp);
-+			of_node_put(pp);
- 			return -EINVAL;
+diff --git a/drivers/input/keyboard/mtk-pmic-keys.c b/drivers/input/keyboard/mtk-pmic-keys.c
+index 746ff06eaf8d..62391d6c7da6 100644
+--- a/drivers/input/keyboard/mtk-pmic-keys.c
++++ b/drivers/input/keyboard/mtk-pmic-keys.c
+@@ -277,8 +277,10 @@ static int mtk_pmic_keys_probe(struct platform_device *pdev)
+ 		keys->keys[index].regs = &mtk_pmic_regs->keys_regs[index];
+ 
+ 		keys->keys[index].irq = platform_get_irq(pdev, index);
+-		if (keys->keys[index].irq < 0)
++		if (keys->keys[index].irq < 0) {
++			of_node_put(child);
+ 			return keys->keys[index].irq;
++		}
+ 
+ 		error = of_property_read_u32(child,
+ 			"linux,keycodes", &keys->keys[index].keycode);
+@@ -286,6 +288,7 @@ static int mtk_pmic_keys_probe(struct platform_device *pdev)
+ 			dev_err(keys->dev,
+ 				"failed to read key:%d linux,keycode property: %d\n",
+ 				index, error);
++			of_node_put(child);
+ 			return error;
  		}
  
- 		error = of_property_read_u32(pp, "voltage", &map->voltage);
- 		if (error) {
- 			dev_err(dev, "%pOFn: Inval voltage prop\n", pp);
-+			of_node_put(pp);
- 			return -EINVAL;
- 		}
+@@ -293,8 +296,10 @@ static int mtk_pmic_keys_probe(struct platform_device *pdev)
+ 			keys->keys[index].wakeup = true;
  
- 		error = of_property_read_u32(pp, "linux,code", &map->keycode);
- 		if (error) {
- 			dev_err(dev, "%pOFn: Inval linux,code prop\n", pp);
-+			of_node_put(pp);
- 			return -EINVAL;
- 		}
+ 		error = mtk_pmic_key_setup(keys, &keys->keys[index]);
+-		if (error)
++		if (error) {
++			of_node_put(child);
+ 			return error;
++		}
  
+ 		index++;
+ 	}
 -- 
 2.19.1
 
