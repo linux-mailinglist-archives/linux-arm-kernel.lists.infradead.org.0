@@ -2,66 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DAD47645D5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 13:35:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8879A645DE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 13:41:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yrDpM7WYm13WhIl/7yz8GCLzhYWkJolcvZyVAkRGduQ=; b=jmv/6PYaivNIr4
-	W9eJRkOFwbBru+/MFU5GefAe0vl2y3N1MbvtPI+w3nhw5jk0ZarYcQX/h/cS7tM6hn1+hly4SyT9l
-	xT4l3JueUE7DeNGwVmC0JTV7DJSIScjYPYc0cm3yhWTHnoegSjE0wuSsWA0CTNxbyb4BIlU9LomUr
-	qrkhylHJntlHI6LopMsZjscSGNycId85iY1S2p5kfcL4AZKAmWMWoJz1YUDB9d8T09KgOrl9nsbqN
-	pvLlX2SXZnGRD6uKvkXoG9gEq2XDFOeoezuLyTJbbBpfrH1Ilzvws5V/g/4xqtuCIWii6h9rZpBgV
-	cwZ6m6z4jEkgGQ72HjKw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=vsG2m/664vLzfnoNRhhOmj+zPg/nAiNlZPrmiF0iq/k=; b=LX9vjg6o6rYiAEjxb/ChBB1nj
+	dJqLgY+08IEp8TjgEIh+ipEekKBG/hpPz7JxHbwBaRmHtxAWe0ldUdjTJ4VdgHjAQUt6b3r2EHgk5
+	SCUhycGEkEL5aCyedlSXtprXxuV03D/tJP/Mye0rXyKk19vXFSkT/JwlA1zpPR6LYWtAcMDGJDxKA
+	n8PdPKwFWQ+F0NKQqN45VjAxA9XjtdY4R+Cn94HQQ00gwhWqZUm/GDs8njd/HNfuDATC8oOf3tKbm
+	5mrMyHoAx9c339eSj4Up5octgmp2eU+ACMrXj7qLS7asfHmNdGJ6OhNfRRn4GJI2oH1MNhigFCHwr
+	UyFESgecg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlAsZ-0004LQ-CP; Wed, 10 Jul 2019 11:35:19 +0000
-Received: from mga06.intel.com ([134.134.136.31])
+	id 1hlAyM-00067j-KD; Wed, 10 Jul 2019 11:41:18 +0000
+Received: from relay3-d.mail.gandi.net ([217.70.183.195])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlAsS-0004KM-NQ; Wed, 10 Jul 2019 11:35:14 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga004.fm.intel.com ([10.253.24.48])
- by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 10 Jul 2019 04:35:11 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.63,474,1557212400"; d="scan'208";a="189143865"
-Received: from ahunter-desktop.fi.intel.com (HELO [10.237.72.122])
- ([10.237.72.122])
- by fmsmga004.fm.intel.com with ESMTP; 10 Jul 2019 04:35:05 -0700
-Subject: Re: [PATCH v2 00/11] Arasan SDHCI enhancements and ZynqMP Tap Delays
- Handling
-To: Manish Narani <manish.narani@xilinx.com>, ulf.hansson@linaro.org,
- robh+dt@kernel.org, mark.rutland@arm.com, heiko@sntech.de,
- michal.simek@xilinx.com, christoph.muellner@theobroma-systems.com,
- philipp.tomsich@theobroma-systems.com, viresh.kumar@linaro.org,
- scott.branden@broadcom.com, ayaka@soulik.info, kernel@esmil.dk,
- tony.xie@rock-chips.com, rajan.vaja@xilinx.com, jolly.shah@xilinx.com,
- nava.manne@xilinx.com, mdf@kernel.org, olof@lixom.net
-References: <1561958991-21935-1-git-send-email-manish.narani@xilinx.com>
-From: Adrian Hunter <adrian.hunter@intel.com>
-Organization: Intel Finland Oy, Registered Address: PL 281, 00181 Helsinki,
- Business Identity Code: 0357606 - 4, Domiciled in Helsinki
-Message-ID: <d4a733c4-9760-a790-5752-be3f14c53bec@intel.com>
-Date: Wed, 10 Jul 2019 14:33:54 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ id 1hlAyA-00066L-8y
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 11:41:09 +0000
+X-Originating-IP: 86.250.200.211
+Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
+ [86.250.200.211]) (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id CFA7B60004;
+ Wed, 10 Jul 2019 11:40:42 +0000 (UTC)
+Date: Wed, 10 Jul 2019 13:40:42 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Vasily Khoruzhick <anarsoul@gmail.com>
+Subject: Re: [PATCH v2 7/7] arm64: dts: allwinner: a64: enable ANX6345 bridge
+ on Teres-I
+Message-ID: <20190710114042.ybgavnxb4hgqrtor@flea>
+References: <20190607062802.m5wslx3imiqooq5a@flea>
+ <CGME20190607094103epcas1p4babbb11ec050974a62f2af79bc64d752@epcas1p4.samsung.com>
+ <20190607094030.GA12373@lst.de>
+ <66707fcc-b48e-02d3-5ed7-6b7e77d53266@samsung.com>
+ <20190612152022.c3cfhp4cauhzhfyr@flea>
+ <bb2c2c00-b46e-1984-088f-861ac8952331@samsung.com>
+ <20190701095842.fvganvycce2cy7jn@flea>
+ <CA+E=qVdsYV2Bxk245=Myq=otd7-7WHzUnSJN8_1dciAzvSOG8g@mail.gmail.com>
+ <20190709085532.cdqv7whuesrjs64c@flea>
+ <CA+E=qVdz4vfU3rtTTKjYdM+4UA+=FWheJfWOMaDtFMnWQ1rHbw@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <1561958991-21935-1-git-send-email-manish.narani@xilinx.com>
-Content-Language: en-US
+In-Reply-To: <CA+E=qVdz4vfU3rtTTKjYdM+4UA+=FWheJfWOMaDtFMnWQ1rHbw@mail.gmail.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_043512_807309_0F59BEDF 
-X-CRM114-Status: GOOD (  20.49  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190710_044106_637439_8ECEE9CC 
+X-CRM114-Status: GOOD (  34.44  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.31 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.195 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.195 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -75,60 +72,166 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-mmc@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, Sean Paul <seanpaul@chromium.org>,
+ David Airlie <airlied@linux.ie>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Andrzej Hajda <a.hajda@samsung.com>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Torsten Duwe <duwe@lst.de>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Harald Geyer <harald@ccbib.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ arm-linux <linux-arm-kernel@lists.infradead.org>,
+ Icenowy Zheng <icenowy@aosc.io>
+Content-Type: multipart/mixed; boundary="===============8309068559625457640=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 1/07/19 8:29 AM, Manish Narani wrote:
-> This patch series does the following:
->  - Reorganize the Clock Handling in Arasan SD driver
->  - Adds new sampling clock in Arasan SD driver
->  - Adds support to set Clock Delays in SD Arasan Driver
->  - Add SDIO Tap Delay handling in ZynqMP firmware driver
->  - Add support for ZynqMP Tap Delays setting in Arasan SD driver
-> 
-> Changes in v2:
-> 	- Replaced the deprecated calls to clock framework APIs
-> 	- Added support for dev_clk_get() call to work for SD card clock
-> 	- Separated the clock data struct
-> 	- Fragmented the patch series in smaller patches to make it more
-> 	  readable
-> 
-> This patch series contains a DT patch, which I think should be there to
-> maintain the order of commits.
-> 
-> Manish Narani (11):
->   dt-bindings: mmc: arasan: Update documentation for SD Card Clock
->   arm64: dts: rockchip: Add optional clock property indicating sdcard
->     clock
->   mmc: sdhci-of-arasan: Replace deprecated clk API calls
->   mmc: sdhci-of-arasan: Separate out clk related data to another
->     structure
->   dt-bindings: mmc: arasan: Update Documentation for the input clock
->   mmc: sdhci-of-arasan: Add sampling clock for a phy to use
->   dt-bindings: mmc: arasan: Add optional properties for Arasan SDHCI
->   mmc: sdhci-of-arasan: Add support to set clock phase delays for SD
->   firmware: xilinx: Add SDIO Tap Delay APIs
->   dt-bindings: mmc: arasan: Document 'xlnx,zynqmp-8.9a' controller
->   mmc: sdhci-of-arasan: Add support for ZynqMP Platform Tap Delays Setup
-> 
->  .../devicetree/bindings/mmc/arasan,sdhci.txt       |  49 ++-
->  arch/arm64/boot/dts/rockchip/rk3399.dtsi           |   4 +-
->  drivers/firmware/xilinx/zynqmp.c                   |  48 +++
->  drivers/mmc/host/sdhci-of-arasan.c                 | 453 ++++++++++++++++++++-
->  include/linux/firmware/xlnx-zynqmp.h               |  15 +-
->  5 files changed, 540 insertions(+), 29 deletions(-)
-> 
 
-For SDHCI:
+--===============8309068559625457640==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="escjyxb6ltmmy4x5"
+Content-Disposition: inline
 
-Acked-by: Adrian Hunter <adrian.hunter@intel.com>
+
+--escjyxb6ltmmy4x5
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Tue, Jul 09, 2019 at 01:30:18PM -0700, Vasily Khoruzhick wrote:
+> On Tue, Jul 9, 2019 at 1:55 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+> >
+> > On Mon, Jul 08, 2019 at 05:49:21PM -0700, Vasily Khoruzhick wrote:
+> > > > > Maybe instead of edp-connector one would introduce integrator's specific
+> > > > > connector, for example with compatible "olimex,teres-edp-connector"
+> > > > > which should follow edp abstract connector rules? This will be at least
+> > > > > consistent with below presentation[1] - eDP requirements depends on
+> > > > > integrator. Then if olimex has standard way of dealing with panels
+> > > > > present in olimex/teres platforms the driver would then create
+> > > > > drm_panel/drm_connector/drm_bridge(?) according to these rules, I guess.
+> > > > > Anyway it still looks fishy for me :), maybe because I am not
+> > > > > familiarized with details of these platforms.
+> > > >
+> > > > That makes sense yes
+> > >
+> > > Actually, it makes no sense at all. Current implementation for anx6345
+> > > driver works fine as is with any panel specified assuming panel delays
+> > > are long enough for connected panel. It just doesn't use panel timings
+> > > from the driver. Creating a platform driver for connector itself looks
+> > > redundant since it can't be reused, it doesn't describe actual
+> > > hardware and it's just defeats purpose of DT by introducing
+> > > board-specific code.
+> >
+> > I'm not sure where you got the idea that the purpose of DT is to not
+> > have any board-specific code.
+>
+> I believe DT was an attempt to move to declarative approach for
+> describing hardware. Yes, we have different compatibles for different
+> devices but they're specific to particular device rather than
+> particular board. Device interconnection is described in DT along with
+> some properties rather than in board-specific C-file.
+
+You're right, but it's not incompatible with having some code to deal
+with some board quirk.
+
+> Introducing board-specific compatible for a connector isn't looking
+> right to me.
+
+If that board has a board-specific behaviour for it's connector, then
+what's the issue?
+
+You can't describe all the quirks in the all boards using purely
+properties.
+
+> > It's perfectly fine to have some, that's even why there's a compatible
+> > assigned to each and every board.
+> >
+> > What the DT is about is allowing us to have a generic behaviour that
+> > we can detect: we can have a given behaviour for a given board, and a
+> > separate one for another one, and this will be evaluated at runtime.
+> >
+> > This is *exactly* what this is about: we can have a compatible that
+> > sets a given, more specific, behaviour (olimex,teres-edp-connector)
+> > while saying that this is compatible with the generic behaviour
+> > (edp-connector). That way, any OS will know what quirk to apply if
+> > needed, and if not that it can use the generic behaviour.
+> >
+> > And we could create a generic driver, for the generic behaviour if
+> > needed.
+> >
+> > > There's another issue: if we introduce edp-connector we'll have to
+> > > specify power up delays somewhere (in dts? or in platform driver?), so
+> > > edp-connector doesn't really solve the issue of multiple panels with
+> > > same motherboard.
+> >
+> > And that's what that compatible is about :)
+>
+> Sorry, I fail to see how it would be different from using existing
+> panels infrastructure and different panels compatibles. I think Rob's
+> idea was to introduce generic edp-connector.
+
+Again, there's no such thing as a generic edp-connector. The spec
+doesn't define anything related to the power sequence for example.
+
+> If we can't make it generic then let's use panel infrastructure.
+
+Which uses a device specific compatible. Really, I'm not sure what
+your objection and / or argument is here.
+
+In addition, when that was brought up in the discussion, you rejected
+it because it was inconvenient:
+https://patchwork.freedesktop.org/patch/283012/?series=56163&rev=1#comment_535206
+
+And I agree with you on that one.
+
+> > > I'd say DT overlays should be preferred solution here, not another
+> > > connector binding.
+> >
+> > Overlays are a way to apply a device tree dynamically. It's orthogonal
+> > to the binding.
+>
+> It isn't orthogonal to original problem though.
+
+It is. The original problem is that you want to power up whatever is
+on the other side of a eDP link using an arbitrary regulator.
+
+This is a "how do I describe that in my DT" problem, and it really has
+nothing to do with how the DT is being passed to the kernel.
+
+Maxime
+
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
+--escjyxb6ltmmy4x5
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXSXOugAKCRDj7w1vZxhR
+xdG+AP9pfxb7uYcDFKG6xikGZewhXzpg/acmPfrETXLF2B1jZQD7Bc2oEF0IKqh7
+tiE8F0AU/5LApsNMhblCY9s+dkDrFwU=
+=gnu6
+-----END PGP SIGNATURE-----
+
+--escjyxb6ltmmy4x5--
+
+
+--===============8309068559625457640==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============8309068559625457640==--
+
