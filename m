@@ -2,83 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 31AE164559
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 12:46:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 39CB864579
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 12:57:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XoparzDJ8xxz+AgjckUdUA3Cgk4gtKzzEdNW3SqWgPk=; b=P0oAHLnQzWq/tB
-	1WoyHmzRLzA5eoHSPwX4NATPm7VVqAdzHS241m9hxyWy+rrqm+0NE4W5nTstaQf39xG5CQIW3FYmY
-	hv1GYpgq/h9HqleKsjxzB51+frQPwVxx6jfz8sA/9XwwuiAgqV4HW3O+LEVvaC9S+PXAgpwoV00Ge
-	U7NlnK+yfeuo2i5lm/Ezjsewi3iQpCyQGWMJdXJo4DdI9VHPrt4pJfBPFkAwXc9r5dWdB6+Ra5hAQ
-	bhWUx2imhXi0Qnca272XzGu2rjtPDZYd7Qd0tVZRdOt8LgOdL/HJ+bXV8yCVkHRXuOiFu/KwjQFNz
-	r6wlvQ/8xXRbkOeesrKQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UFv2/7hPIL379cd3LAnjhPnRZAjH4BR9I2od4rp1rak=; b=L6jOIeXUI8BYKq
+	x5rzu0Y0Y4e30LsjkqguHOlB1EU9+XFQWbOhnZouMEYB2N2OqtCO97fDwwwcSRJQmisDfivC4cULR
+	7aefzolxplvlmwZHe1ZdpMeX/mDGTOhHv6eHLPh9tNeAN8N9mcQ9KrffwLgiAs1oikKISOsFymjI/
+	myW3du9uRrvA80OxOlUacVH48n4YmtRckJBKx06UdVklqEFj6qsqcUhzQPbzZbNj4n/lPw6xSF9TJ
+	NPCb4l+qzGS5yRzrFDhQuCLuzE5tVKS6NI62usu6qMkdlTsBOVPRynPay//p37+tell7KWZAOOQS1
+	TdEj43XUSG/r3iopQDYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlA7X-00027V-BT; Wed, 10 Jul 2019 10:46:43 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlA7O-00026Z-7E
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 10:46:37 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=jvMZpPPrD/tSFkNyX/FfJWti0dh2u8MlHDBE38NmrZQ=; b=Lb8OPWRRj9rcMiZ8SIEM/9MnV
- EVogylyL2oO9c6HyXAl3XNcVpDjhqVahYg5Wo32pWa0ksOqSKPWY4rIGXj3XWm0yY6YQU2Ak9DD89
- LM6tHs0zQfSGnUogfZhpQY77Y7RD64o1m6XCXZtzVq1g0jKnSt4ijyx9WlyrOFmnie0zKBWaaqd3K
- 9hD6O59yc+ilHFCj3l+tu0JFbKN2jCc71dQ8+vjN0gRHJXD5aUvbMrqTuvZtOfGTfm/25tT2Tr+ZB
- +WET8Yka2YhKze87KCQplyslmm6onP0p4r9u6C4wm+fZPkVPGYi/yQTEh3gADupUEmyif0wvHCtAT
- 6/m+yZhXg==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:60336)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1hlA7I-0006BT-R5; Wed, 10 Jul 2019 11:46:28 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.89)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1hlA7H-0003qR-Af; Wed, 10 Jul 2019 11:46:27 +0100
-Date: Wed, 10 Jul 2019 11:46:27 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Masahiro Yamada <yamada.masahiro@socionext.com>
-Subject: Re: Question about ARM FASTFPE
-Message-ID: <20190710104627.5lam7ipqljks3iji@shell.armlinux.org.uk>
-References: <CAK7LNASSCvLSXVikR7GenXyb8KywpWKVc1Z=5v3c93rxJ+G73w@mail.gmail.com>
- <20190710082335.uzusesefimzpjd3f@shell.armlinux.org.uk>
- <CAK7LNAQpiY4CBawEFhQHeTPSrbrRkNoYCtK4jBak+skyyMqESA@mail.gmail.com>
- <20190710100206.yls4piu36wciefbz@shell.armlinux.org.uk>
- <CAK7LNAT3NDem7_oTyPuDVC7QGY=HuyG-GBE9QQhUuuL_Q=CeNg@mail.gmail.com>
+	id 1hlAI0-00065w-6a; Wed, 10 Jul 2019 10:57:32 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hlAHs-00065S-G5
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 10:57:26 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 238A8344;
+ Wed, 10 Jul 2019 03:57:21 -0700 (PDT)
+Received: from [10.1.196.133] (e112269-lin.cambridge.arm.com [10.1.196.133])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7D2EC3F738;
+ Wed, 10 Jul 2019 03:57:18 -0700 (PDT)
+Subject: Re: [PATCH v3 1/9] arm64: perf: avoid PMXEV* indirection
+To: Julien Thierry <julien.thierry@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+References: <1562596377-33196-1-git-send-email-julien.thierry@arm.com>
+ <1562596377-33196-2-git-send-email-julien.thierry@arm.com>
+From: Steven Price <steven.price@arm.com>
+Message-ID: <72820d6b-145c-c7dd-b285-c3d3b8acd103@arm.com>
+Date: Wed, 10 Jul 2019 11:57:16 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAK7LNAT3NDem7_oTyPuDVC7QGY=HuyG-GBE9QQhUuuL_Q=CeNg@mail.gmail.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <1562596377-33196-2-git-send-email-julien.thierry@arm.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_034635_850162_62E3C0F3 
-X-CRM114-Status: GOOD (  23.61  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190710_035724_628598_E18B4C3A 
+X-CRM114-Status: GOOD (  24.92  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,92 +63,209 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+Cc: mark.rutland@arm.com, peterz@infradead.org,
+ Catalin Marinas <catalin.marinas@arm.com>, jolsa@redhat.com,
+ will.deacon@arm.com, acme@kernel.org, alexander.shishkin@linux.intel.com,
+ mingo@redhat.com, namhyung@kernel.org, liwei391@huawei.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 10, 2019 at 07:43:19PM +0900, Masahiro Yamada wrote:
-> On Wed, Jul 10, 2019 at 7:02 PM Russell King - ARM Linux admin
-> <linux@armlinux.org.uk> wrote:
-> >
-> > On Wed, Jul 10, 2019 at 06:54:06PM +0900, Masahiro Yamada wrote:
-> > > On Wed, Jul 10, 2019 at 5:23 PM Russell King - ARM Linux admin
-> > > <linux@armlinux.org.uk> wrote:
-> > > >
-> > > > On Wed, Jul 10, 2019 at 01:30:24PM +0900, Masahiro Yamada wrote:
-> > > > > Hi.
-> > > > >
-> > > > > I have a question about the following code
-> > > > > in arch/arm/Makefile:
-> > > > >
-> > > > >
-> > > > > # Do we have FASTFPE?
-> > > > > FASTFPE :=arch/arm/fastfpe
-> > > > > ifeq ($(FASTFPE),$(wildcard $(FASTFPE)))
-> > > > > FASTFPE_OBJ :=$(FASTFPE)/
-> > > > > endif
-> > > > >
-> > > > >
-> > > > > Since arch/arm/fastfpe does not exist in the upstream tree,
-> > > > > I guess this is a hook to compile downstream source code.
-> > > > >
-> > > > > If a user puts arch/arm/fastfpe/ into their local source tree,
-> > > > > Kbuild is supposed to compile the files in it.
-> > > > >
-> > > > > Is this correct?
-> > > > >
-> > > > >
-> > > > > If so, I am afraid this would not work for O= building.
-> > > > >
-> > > > > $(wildcard ...) checks if this directory exists in the *objtree*,
-> > > > > while scripts/Makefile.build needs to include
-> > > > > arch/arm/fastfpe/Makefile from *srctree*.
-> > > > >
-> > > > > I think the correct code should be like follows:
-> > > > >
-> > > > > # Do we have FASTFPE?
-> > > > > FASTFPE :=arch/arm/fastfpe
-> > > > > ifneq ($(wildcard $(srctree)/$(FASTFPE)),)
-> > > > > FASTFPE_OBJ :=$(FASTFPE)/
-> > > > > endif
-> > > > >
-> > > > >
-> > > > > Having said that, I am not sure this code is worth fixing.
-> > > > >
-> > > > > This code was added around v2.5.1.9,
-> > > >
-> > > > ... as a _result_ of a discussion and deciding not to upstream it,
-> > > > but to still allow its use.  Fastfpe is faster than nwfpe (so has
-> > > > a definite advantage for FP intensive applications) but we decided
-> > > > we didn't want two FP emulation codes in the kernel.  However, if
-> > > > someone wants to use it, it has to be built into the kernel, it
-> > > > can't be modular.
-> > >
-> > >
-> > > IMHO, the entry in Makefile and Kconfig should be removed
-> > > from upstream, then moved to a part of the fastfpe local patch.
-> >
-> > Nope.  It means that rather than it being merely a drop-in, it has
-> > to be maintained against changes to both these files.  Sorry, that's
-> > more work.
+On 08/07/2019 15:32, Julien Thierry wrote:
+> From: Mark Rutland <mark.rutland@arm.com>
 > 
+> Currently we access the counter registers and their respective type
+> registers indirectly. This requires us to write to PMSELR, issue an ISB,
+> then access the relevant PMXEV* registers.
 > 
-> This is the motivation of upstreaming for everybody.
+> This is unfortunate, because:
 > 
-> We never know the code that does not exist in upstream.
-> Downstream code must pay maintenance cost for ever.
+> * Under virtualization, accessing one registers requires two traps to
+>   the hypervisor, even though we could access the register directly with
+>   a single trap.
+> 
+> * We have to issue an ISB which we could otherwise avoid the cost of.
+> 
+> * When we use NMIs, the NMI handler will have to save/restore the select
+>   register in case the code it preempted was attempting to access a
+>   counter or its type register.
+> 
+> We can avoid these issues by directly accessing the relevant registers.
+> This patch adds helpers to do so.
+> 
+> Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+> [Julien T.: Don't inline read/write functions to avoid big code-size
+> 	increase, remove unused read_pmevtypern function,
+> 	fix counter index issue.]
+> Signed-off-by: Julien Thierry <julien.thierry@arm.com>
+> Cc: Will Deacon <will.deacon@arm.com>
+> Cc: Peter Zijlstra <peterz@infradead.org>
+> Cc: Ingo Molnar <mingo@redhat.com>
+> Cc: Arnaldo Carvalho de Melo <acme@kernel.org>
+> Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
+> Cc: Jiri Olsa <jolsa@redhat.com>
+> Cc: Namhyung Kim <namhyung@kernel.org>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> ---
+>  arch/arm64/kernel/perf_event.c | 96 ++++++++++++++++++++++++++++++++++++------
+>  1 file changed, 83 insertions(+), 13 deletions(-)
+> 
+> diff --git a/arch/arm64/kernel/perf_event.c b/arch/arm64/kernel/perf_event.c
+> index 96e90e2..7759f8a 100644
+> --- a/arch/arm64/kernel/perf_event.c
+> +++ b/arch/arm64/kernel/perf_event.c
+> @@ -369,6 +369,77 @@ static inline bool armv8pmu_event_is_chained(struct perf_event *event)
+>  #define	ARMV8_IDX_TO_COUNTER(x)	\
+>  	(((x) - ARMV8_IDX_COUNTER0) & ARMV8_PMU_COUNTER_MASK)
+> 
+> +/*
+> + * This code is really good
+> + */
+> +
+> +#define PMEVN_CASE(n, case_macro) \
+> +	case n: case_macro(n); break
+> +
+> +#define PMEVN_SWITCH(x, case_macro)				\
+> +	do {							\
+> +		switch (x) {					\
+> +		PMEVN_CASE(0,  case_macro);			\
+> +		PMEVN_CASE(1,  case_macro);			\
+> +		PMEVN_CASE(2,  case_macro);			\
+> +		PMEVN_CASE(3,  case_macro);			\
+> +		PMEVN_CASE(4,  case_macro);			\
+> +		PMEVN_CASE(5,  case_macro);			\
+> +		PMEVN_CASE(6,  case_macro);			\
+> +		PMEVN_CASE(7,  case_macro);			\
+> +		PMEVN_CASE(8,  case_macro);			\
+> +		PMEVN_CASE(9,  case_macro);			\
+> +		PMEVN_CASE(10, case_macro);			\
+> +		PMEVN_CASE(11, case_macro);			\
+> +		PMEVN_CASE(12, case_macro);			\
+> +		PMEVN_CASE(13, case_macro);			\
+> +		PMEVN_CASE(14, case_macro);			\
+> +		PMEVN_CASE(15, case_macro);			\
+> +		PMEVN_CASE(16, case_macro);			\
+> +		PMEVN_CASE(17, case_macro);			\
+> +		PMEVN_CASE(18, case_macro);			\
+> +		PMEVN_CASE(19, case_macro);			\
 
-I'm the maintainer of the files in question.  I also care-take
-fastfpe.  It's my choice to make.
+Is 20 missing on purpose?
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+> +		PMEVN_CASE(21, case_macro);			\
+> +		PMEVN_CASE(22, case_macro);			\
+> +		PMEVN_CASE(23, case_macro);			\
+> +		PMEVN_CASE(24, case_macro);			\
+> +		PMEVN_CASE(25, case_macro);			\
+> +		PMEVN_CASE(26, case_macro);			\
+> +		PMEVN_CASE(27, case_macro);			\
+> +		PMEVN_CASE(28, case_macro);			\
+> +		PMEVN_CASE(29, case_macro);			\
+> +		PMEVN_CASE(30, case_macro);			\
+> +		default: WARN(1, "Inavlid PMEV* index");	\
+				  ^^^^^^^ Invalid
+
+Steve
+
+> +		}						\
+> +	} while (0)
+> +
+> +#define RETURN_READ_PMEVCNTRN(n) \
+> +	return read_sysreg(pmevcntr##n##_el0);
+> +static unsigned long read_pmevcntrn(int n)
+> +{
+> +	PMEVN_SWITCH(n, RETURN_READ_PMEVCNTRN);
+> +	return 0;
+> +}
+> +#undef RETURN_READ_PMEVCNTRN
+> +
+> +#define WRITE_PMEVCNTRN(n) \
+> +	write_sysreg(val, pmevcntr##n##_el0);
+> +static void write_pmevcntrn(int n, unsigned long val)
+> +{
+> +	PMEVN_SWITCH(n, WRITE_PMEVCNTRN);
+> +}
+> +#undef WRITE_PMEVCNTRN
+> +
+> +#define WRITE_PMEVTYPERN(n) \
+> +	write_sysreg(val, pmevtyper##n##_el0);
+> +static void write_pmevtypern(int n, unsigned long val)
+> +{
+> +	PMEVN_SWITCH(n, WRITE_PMEVTYPERN);
+> +}
+> +#undef WRITE_PMEVTYPERN
+> +
+> +#undef PMEVN_SWITCH
+> +
+>  static inline u32 armv8pmu_pmcr_read(void)
+>  {
+>  	return read_sysreg(pmcr_el0);
+> @@ -397,17 +468,11 @@ static inline int armv8pmu_counter_has_overflowed(u32 pmnc, int idx)
+>  	return pmnc & BIT(ARMV8_IDX_TO_COUNTER(idx));
+>  }
+> 
+> -static inline void armv8pmu_select_counter(int idx)
+> +static inline u32 armv8pmu_read_evcntr(int idx)
+>  {
+>  	u32 counter = ARMV8_IDX_TO_COUNTER(idx);
+> -	write_sysreg(counter, pmselr_el0);
+> -	isb();
+> -}
+> 
+> -static inline u32 armv8pmu_read_evcntr(int idx)
+> -{
+> -	armv8pmu_select_counter(idx);
+> -	return read_sysreg(pmxevcntr_el0);
+> +	return read_pmevcntrn(counter);
+>  }
+> 
+>  static inline u64 armv8pmu_read_hw_counter(struct perf_event *event)
+> @@ -441,8 +506,9 @@ static u64 armv8pmu_read_counter(struct perf_event *event)
+> 
+>  static inline void armv8pmu_write_evcntr(int idx, u32 value)
+>  {
+> -	armv8pmu_select_counter(idx);
+> -	write_sysreg(value, pmxevcntr_el0);
+> +	u32 counter = ARMV8_IDX_TO_COUNTER(idx);
+> +
+> +	write_pmevcntrn(counter, value);
+>  }
+> 
+>  static inline void armv8pmu_write_hw_counter(struct perf_event *event,
+> @@ -483,9 +549,10 @@ static void armv8pmu_write_counter(struct perf_event *event, u64 value)
+> 
+>  static inline void armv8pmu_write_evtype(int idx, u32 val)
+>  {
+> -	armv8pmu_select_counter(idx);
+> +	u32 counter = ARMV8_IDX_TO_COUNTER(idx);
+> +
+>  	val &= ARMV8_PMU_EVTYPE_MASK;
+> -	write_sysreg(val, pmxevtyper_el0);
+> +	write_pmevtypern(counter, val);
+>  }
+> 
+>  static inline void armv8pmu_write_event_type(struct perf_event *event)
+> @@ -505,7 +572,10 @@ static inline void armv8pmu_write_event_type(struct perf_event *event)
+>  		armv8pmu_write_evtype(idx - 1, hwc->config_base);
+>  		armv8pmu_write_evtype(idx, chain_evt);
+>  	} else {
+> -		armv8pmu_write_evtype(idx, hwc->config_base);
+> +		if (idx == ARMV8_IDX_CYCLE_COUNTER)
+> +			write_sysreg(hwc->config_base, pmccfiltr_el0);
+> +		else
+> +			armv8pmu_write_evtype(idx, hwc->config_base);
+>  	}
+>  }
+> 
+> --
+> 1.9.1
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
