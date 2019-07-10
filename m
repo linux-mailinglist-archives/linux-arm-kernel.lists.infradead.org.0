@@ -2,55 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 86D2A64722
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 15:39:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 664D764737
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 15:41:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PUers+izesSGCpgi18GL5sg4otBflqUhNtxs9jNNEaU=; b=W1b3MZp0aeXPUS
-	waugeQMsUk22md3Ql8K7jE94tDxUSgXNNRZqPa2GEtKhK+ti9R5skGgr5wyy1DwLAZ/5xwRNMJpoF
-	7rqokF6Y7Lw0PACfCf4VvfHS/DnlInCZYg0T8+Ueiq47z/o97eiJNfs32VtRNdjy7cJaKxSg0Jg5C
-	B0oNqGOSRP9mblCTNSp7XuEmcKuE1o3Gc7Ft/JC7jqrhJSremM0YxMICYttVGi5xXnUn+3O9UQ/HD
-	mKweP0mu2AEJ9E/19UhC85WMCUs01hpNg01ziS5e2D+i+1Nh+C93Q8Pvxj1XtMqns8JaMbANNmHhI
-	cS2Wv+k5nzxsk4FFw+Ww==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VClQzGUZDm1ENr0XF/rc2iideRYbHVW8Uk/1BP4iIj8=; b=dxB1bOJzW7KlnE
+	nfby3dd/ZpgfiuQlz3WqDsh7X4EcPLGQYEi+4Nlyswqks+lVUdSv0HzvzAdhl/HmH9aiJqWsL4UQS
+	1hXaENOllQBj/k6ZggqiyGqh5E/o0RsvCo3JOpserKSG5jMaQvj4sU6F0QUDUhl9XEYyRg93Xmu8f
+	kcuqgHQTH7Jn2wQLyPEdW5c/mrRLNGZxtVQJc0u7llKqbCnwPOnpiqvYYsubjePvAzonQ0hcvV41d
+	1Hvc20Klc9P5ZJPf0U7MrOfFBd4cQSyOkeUPwKP8qMn4LDcKTlbxKMelxE0hRrrfHuL3+gKwcewQb
+	i0VjtEfaVfZcEpSJjZgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlCoJ-0006cD-TC; Wed, 10 Jul 2019 13:39:03 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlCnn-0006ZO-Lt; Wed, 10 Jul 2019 13:38:36 +0000
-X-UUID: 00f5f5cac9c24a23bb215d36bd5a8d25-20190710
-X-UUID: 00f5f5cac9c24a23bb215d36bd5a8d25-20190710
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <stanley.chu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 789240672; Wed, 10 Jul 2019 05:38:27 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 10 Jul 2019 06:38:25 -0700
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 10 Jul 2019 21:38:24 +0800
-Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Wed, 10 Jul 2019 21:38:24 +0800
-From: Stanley Chu <stanley.chu@mediatek.com>
-To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
- <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <pedrom.sousa@synopsys.com>
-Subject: [PATCH v3 4/4] scsi: ufs: Add history of fatal events
-Date: Wed, 10 Jul 2019 21:38:21 +0800
-Message-ID: <1562765901-18328-5-git-send-email-stanley.chu@mediatek.com>
-X-Mailer: git-send-email 1.7.9.5
-In-Reply-To: <1562765901-18328-1-git-send-email-stanley.chu@mediatek.com>
-References: <1562765901-18328-1-git-send-email-stanley.chu@mediatek.com>
+	id 1hlCql-0000xA-KR; Wed, 10 Jul 2019 13:41:36 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hlCqS-0000ut-3K
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 13:41:19 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 33C432B;
+ Wed, 10 Jul 2019 06:41:15 -0700 (PDT)
+Received: from [10.1.196.72] (e119884-lin.cambridge.arm.com [10.1.196.72])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 496FE3F71F;
+ Wed, 10 Jul 2019 06:41:11 -0700 (PDT)
+Subject: Re: [PATCH v7 10/25] arm64: compat: Add vDSO
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+To: John Stultz <john.stultz@linaro.org>
+References: <20190621095252.32307-1-vincenzo.frascino@arm.com>
+ <20190621095252.32307-11-vincenzo.frascino@arm.com>
+ <CALAqxLXxE5B+vVLj7NcW8S05nhDQ+XSKVn=_MNDci667JDFEhA@mail.gmail.com>
+ <d9b171d5-896c-c4f7-eb2d-182ce2ce2d30@arm.com>
+Message-ID: <6792a9f4-d8ed-b71d-b07c-e774da703dfa@arm.com>
+Date: Wed, 10 Jul 2019 14:41:10 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <d9b171d5-896c-c4f7-eb2d-182ce2ce2d30@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_063832_301644_FEA56777 
-X-CRM114-Status: GOOD (  11.95  )
+X-CRM114-CacheID: sfid-20190710_064116_244803_922BC2F0 
+X-CRM114-Status: GOOD (  23.20  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -58,8 +53,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,209 +64,294 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: sthumma@codeaurora.org, marc.w.gonzalez@free.fr, andy.teng@mediatek.com,
- chun-hung.wu@mediatek.com, kuohong.wang@mediatek.com, peter.wang@mediatek.com,
- evgreen@chromium.org, subhashj@codeaurora.org,
- linux-mediatek@lists.infradead.org, ygardi@codeaurora.org,
- matthias.bgg@gmail.com, Stanley Chu <stanley.chu@mediatek.com>,
- linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
+Cc: linux-arch@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Arnd Bergmann <arnd@arndb.de>,
+ Mark Salyzyn <salyzyn@android.com>, Huw Davies <huw@codeweavers.com>,
+ Andre Przywara <andre.przywara@arm.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ lkml <linux-kernel@vger.kernel.org>, Ralf Baechle <ralf@linux-mips.org>,
+ linux-mips@vger.kernel.org, Paul Burton <paul.burton@mips.com>,
+ linux-kselftest@vger.kernel.org, Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Russell King <linux@armlinux.org.uk>, Dmitry Safonov <0x7f454c46@gmail.com>,
+ Shijith Thotton <sthotton@marvell.com>, Peter Collingbourne <pcc@google.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently only "interrupt-based" errors have their own history,
-however there are some "non-interrupt-based" errors or events
-which need history to improve debugging or help know the health
-status of UFS devices.
+Hi John,
 
-Example of fatal errors,
-- Link startup error
-- Suspend error
-- Resume error
+On 10/07/2019 10:47, Vincenzo Frascino wrote:
+> Hi John,
+> 
+> On 10/07/2019 05:02, John Stultz wrote:
+>> On Fri, Jun 21, 2019 at 3:18 AM Vincenzo Frascino
+>> <vincenzo.frascino@arm.com> wrote:
+>>>
+>>> Provide the arm64 compat (AArch32) vDSO in kernel/vdso32 in a similar
+>>> way to what happens in kernel/vdso.
+>>>
+>>> The compat vDSO leverages on an adaptation of the arm architecture code
+>>> with few changes:
+>>>  - Use of lib/vdso for gettimeofday
+>>>  - Implementation of syscall based fallback
+>>>  - Introduction of clock_getres for the compat library
+>>>  - Implementation of trampolines
+>>>  - Implementation of elf note
+>>>
+>>> To build the compat vDSO a 32 bit compiler is required and needs to be
+>>> specified via CONFIG_CROSS_COMPILE_COMPAT_VDSO.
+>>>
+>>
+>> Hey Vincenzo!
+>>   Congrats on getting this work merged, I know its been a long effort
+>> over a number of years!
+>>
+>> Though unfortunately, it seems the arm64 vdso code that just landed is
+>> breaking AOSP for me.
+>>
+>> I see a lot of the following errors:
+>> 01-01 01:22:14.097   755   755 F libc    : Fatal signal 11 (SIGSEGV),
+>> code 1 (SEGV_MAPERR), fault addr 0x3cf2c96c in tid 755 (cameraserver),
+>> pid 755 (cameraserver)
+>> 01-01 01:22:14.112   759   759 F libc    : Fatal signal 11 (SIGSEGV),
+>> code 1 (SEGV_MAPERR), fault addr 0x3cf2c96c in tid 759
+>> (android.hardwar), pid 759 (android.hardwar)
+>> 01-01 01:22:14.120   756   756 F libc    : Fatal signal 11 (SIGSEGV),
+>> code 1 (SEGV_MAPERR), fault addr 0x3cf2c96c in tid 756 (drmserver),
+>> pid 756 (drmserver)
+>>
+>> Which go away if I revert the vdso merge that went in via tip/timers.
+>>
+>> I tried to bisect things down a bit, but as some later fixes are
+>> required (at one point, date was returning the start epoch and never
+>> increasing), this hasn't worked too well. But I'm guessing since I
+>> see: "CROSS_COMPILE_COMPAT not defined or empty, the compat vDSO will
+>> not be built", and the system is half working, I'm guessing this is an
+>> issue with just the 32bit code failing.  While I can try to sort out
+>> the proper CROSS_COMPILE_COMPAT in my build environment, I assume
+>> userland shouldn't be crashing if that value isn't set.
+>>
+>> Any chance this issue has already been raised?
+>>
+> 
+> I do not have Android (bionic/libc) as part of my testing environment hence I
+> never saw this issue. Thanks for reporting it.
+> 
+> I am investigating the problem and will post a fix as soon as it is ready.
+> 
+> As Will suggested, .config would help the debugging and I would like to ask to
+> you to test my fix once it is ready. Is that OK for you?
+> 
+>> thanks
+>> -john
+>>
+> 
 
-Example of abnormal events,
-- Task or request abort
-- Device reset (now equals to Logical Unit Reset)
-- Host reset
+Seems that the problem you are experiencing is caused by an ABI regression for
+which I provided a fix in [1]. Could you please verify that works for you as well?
 
-This patch tries to track above errors and events by existed UFS error
-history mechanism.
+[1] https://www.mail-archive.com/linux-kernel@vger.kernel.org/msg2046889.html
 
-Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
----
- drivers/scsi/ufs/ufshcd.c | 46 +++++++++++++++++++++++++++++----------
- drivers/scsi/ufs/ufshcd.h | 18 +++++++++++++--
- 2 files changed, 50 insertions(+), 14 deletions(-)
+Please find below the tests that I conducted to verify that when
+CROSS_COMPILE_COMPAT is not defined or empty the compat vdso library is not exposed.
 
-diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-index a46c3d2b2ea3..8f0426a36b0b 100644
---- a/drivers/scsi/ufs/ufshcd.c
-+++ b/drivers/scsi/ufs/ufshcd.c
-@@ -429,9 +429,17 @@ static void ufshcd_print_host_regs(struct ufs_hba *hba)
- 	ufshcd_print_err_hist(hba, &hba->ufs_stats.nl_err, "nl_err");
- 	ufshcd_print_err_hist(hba, &hba->ufs_stats.tl_err, "tl_err");
- 	ufshcd_print_err_hist(hba, &hba->ufs_stats.dme_err, "dme_err");
--	ufshcd_print_err_hist(hba, &hba->ufs_stats.fatal_err, "fatal_err");
- 	ufshcd_print_err_hist(hba, &hba->ufs_stats.auto_hibern8_err,
- 			      "auto_hibern8_err");
-+	ufshcd_print_err_hist(hba, &hba->ufs_stats.fatal_err, "fatal_err");
-+	ufshcd_print_err_hist(hba, &hba->ufs_stats.link_startup_err,
-+			      "link_startup_fail");
-+	ufshcd_print_err_hist(hba, &hba->ufs_stats.resume_err, "resume_fail");
-+	ufshcd_print_err_hist(hba, &hba->ufs_stats.suspend_err,
-+			      "suspend_fail");
-+	ufshcd_print_err_hist(hba, &hba->ufs_stats.dev_reset, "dev_reset");
-+	ufshcd_print_err_hist(hba, &hba->ufs_stats.host_reset, "host_reset");
-+	ufshcd_print_err_hist(hba, &hba->ufs_stats.task_abort, "task_abort");
- 
- 	ufshcd_print_clk_freqs(hba);
- 
-@@ -4329,6 +4337,14 @@ static inline int ufshcd_disable_device_tx_lcc(struct ufs_hba *hba)
- 	return ufshcd_disable_tx_lcc(hba, true);
- }
- 
-+static void ufshcd_update_reg_hist(struct ufs_err_reg_hist *reg_hist,
-+				   u32 reg)
-+{
-+	reg_hist->reg[reg_hist->pos] = reg;
-+	reg_hist->tstamp[reg_hist->pos] = ktime_get();
-+	reg_hist->pos = (reg_hist->pos + 1) % UFS_ERR_REG_HIST_LENGTH;
-+}
-+
- /**
-  * ufshcd_link_startup - Initialize unipro link startup
-  * @hba: per adapter instance
-@@ -4356,6 +4372,8 @@ static int ufshcd_link_startup(struct ufs_hba *hba)
- 
- 		/* check if device is detected by inter-connect layer */
- 		if (!ret && !ufshcd_is_device_present(hba)) {
-+			ufshcd_update_reg_hist(&hba->ufs_stats.link_startup_err,
-+					       0);
- 			dev_err(hba->dev, "%s: Device not present\n", __func__);
- 			ret = -ENXIO;
- 			goto out;
-@@ -4366,13 +4384,19 @@ static int ufshcd_link_startup(struct ufs_hba *hba)
- 		 * but we can't be sure if the link is up until link startup
- 		 * succeeds. So reset the local Uni-Pro and try again.
- 		 */
--		if (ret && ufshcd_hba_enable(hba))
-+		if (ret && ufshcd_hba_enable(hba)) {
-+			ufshcd_update_reg_hist(&hba->ufs_stats.link_startup_err,
-+					       (u32)ret);
- 			goto out;
-+		}
- 	} while (ret && retries--);
- 
--	if (ret)
-+	if (ret) {
- 		/* failed to get the link up... retire */
-+		ufshcd_update_reg_hist(&hba->ufs_stats.link_startup_err,
-+				       (u32)ret);
- 		goto out;
-+	}
- 
- 	if (link_startup_again) {
- 		link_startup_again = false;
-@@ -5350,14 +5374,6 @@ static void ufshcd_err_handler(struct work_struct *work)
- 	pm_runtime_put_sync(hba->dev);
- }
- 
--static void ufshcd_update_reg_hist(struct ufs_err_reg_hist *reg_hist,
--				   u32 reg)
--{
--	reg_hist->reg[reg_hist->pos] = reg;
--	reg_hist->tstamp[reg_hist->pos] = ktime_get();
--	reg_hist->pos = (reg_hist->pos + 1) % UFS_ERR_REG_HIST_LENGTH;
--}
--
- /**
-  * ufshcd_update_uic_error - check and set fatal UIC error flags.
-  * @hba: per-adapter instance
-@@ -5950,6 +5966,7 @@ static int ufshcd_eh_device_reset_handler(struct scsi_cmnd *cmd)
- 
- out:
- 	hba->req_abort_count = 0;
-+	ufshcd_update_reg_hist(&hba->ufs_stats.dev_reset, (u32)err);
- 	if (!err) {
- 		err = SUCCESS;
- 	} else {
-@@ -6043,6 +6060,7 @@ static int ufshcd_abort(struct scsi_cmnd *cmd)
- 	 */
- 	scsi_print_command(hba->lrb[tag].cmd);
- 	if (!hba->req_abort_count) {
-+		ufshcd_update_reg_hist(&hba->ufs_stats.task_abort, 0);
- 		ufshcd_print_host_regs(hba);
- 		ufshcd_print_host_state(hba);
- 		ufshcd_print_pwr_info(hba);
-@@ -6178,7 +6196,7 @@ static int ufshcd_host_reset_and_restore(struct ufs_hba *hba)
- out:
- 	if (err)
- 		dev_err(hba->dev, "%s: Host init failed %d\n", __func__, err);
--
-+	ufshcd_update_reg_hist(&hba->ufs_stats.host_reset, (u32)err);
- 	return err;
- }
- 
-@@ -7819,6 +7837,8 @@ static int ufshcd_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op)
- 	ufshcd_release(hba);
- out:
- 	hba->pm_op_in_progress = 0;
-+	if (ret)
-+		ufshcd_update_reg_hist(&hba->ufs_stats.suspend_err, (u32)ret);
- 	return ret;
- }
- 
-@@ -7921,6 +7941,8 @@ static int ufshcd_resume(struct ufs_hba *hba, enum ufs_pm_op pm_op)
- 	ufshcd_setup_clocks(hba, false);
- out:
- 	hba->pm_op_in_progress = 0;
-+	if (ret)
-+		ufshcd_update_reg_hist(&hba->ufs_stats.resume_err, (u32)ret);
- 	return ret;
- }
- 
-diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h
-index c6ec5c749ceb..a43c7135f33d 100644
---- a/drivers/scsi/ufs/ufshcd.h
-+++ b/drivers/scsi/ufs/ufshcd.h
-@@ -436,8 +436,14 @@ struct ufs_err_reg_hist {
-  * @nl_err: tracks nl-uic errors
-  * @tl_err: tracks tl-uic errors
-  * @dme_err: tracks dme errors
-- * @fatal_err: tracks fatal errors
-  * @auto_hibern8_err: tracks auto-hibernate errors
-+ * @fatal_err: tracks fatal errors
-+ * @linkup_err: tracks link-startup errors
-+ * @resume_err: tracks resume errors
-+ * @suspend_err: tracks suspend errors
-+ * @dev_reset: tracks device reset events
-+ * @host_reset: tracks host reset events
-+ * @tsk_abort: tracks task abort events
-  */
- struct ufs_stats {
- 	u32 hibern8_exit_cnt;
-@@ -451,8 +457,16 @@ struct ufs_stats {
- 	struct ufs_err_reg_hist dme_err;
- 
- 	/* fatal errors */
--	struct ufs_err_reg_hist fatal_err;
- 	struct ufs_err_reg_hist auto_hibern8_err;
-+	struct ufs_err_reg_hist fatal_err;
-+	struct ufs_err_reg_hist link_startup_err;
-+	struct ufs_err_reg_hist resume_err;
-+	struct ufs_err_reg_hist suspend_err;
-+
-+	/* abnormal events */
-+	struct ufs_err_reg_hist dev_reset;
-+	struct ufs_err_reg_hist host_reset;
-+	struct ufs_err_reg_hist task_abort;
- };
- 
- /**
+# cat main-arm32.c
+
+#include <stdio.h>
+#include <sys/auxv.h>
+
+int main()
+{
+	uintptr_t vdso = (uintptr_t) getauxval(AT_SYSINFO_EHDR);
+
+	printf("AT_SYSINFO_EHDR: %p\n", vdso);
+
+[...]
+
+	return 0;
+}
+
+# file main-arm32
+main-arm32: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically
+linked, interpreter /lib/ld-, for GNU/Linux 3.2.0, with d
+
+When CROSS_COMPILE_COMPAT is _not_ defined:
+===========================================
+
+# ./main-arm32
+AT_SYSINFO_EHDR: (nil)
+
+Memory Map:
+-----------
+
+00008000-00010000 rw-p 00000000 00:00 0
+00010000-00011000 r-xp 00000000 00:13 24905929 /home/vinfra01/bin/main-arm32
+00011000-00020000 rw-p 00000000 00:00 0
+00020000-00021000 r--p 00000000 00:13 24905929 /home/vinfra01/bin/main-arm32
+00021000-00022000 rw-p 00001000 00:13 24905929 /home/vinfra01/bin/main-arm32
+00022000-f773d000 rw-p 00000000 00:00 0        [heap]
+f773d000-f781f000 r-xp 00000000 00:13 24906912 /lib/arm-linux-gnueabihf/libc-2.27.so
+f781f000-f782f000 ---p 000e2000 00:13 24906912 /lib/arm-linux-gnueabihf/libc-2.27.so
+f782f000-f7831000 r--p 000e2000 00:13 24906912 /lib/arm-linux-gnueabihf/libc-2.27.so
+f7831000-f7832000 rw-p 000e4000 00:13 24906912 /lib/arm-linux-gnueabihf/libc-2.27.so
+f7832000-f7835000 rw-p 00000000 00:00 0
+f7835000-f784b000 rw-p 00000000 00:00 0
+f784b000-f7863000 r-xp 00000000 00:13 24906908 /lib/arm-linux-gnueabihf/ld-2.27.so
+f7863000-f7870000 rw-p 00000000 00:00 0
+f7870000-f7872000 rw-p 00000000 00:00 0
+f7872000-f7873000 r-xp 00000000 00:00 0        [sigpage]
+f7873000-f7874000 r--p 00018000 00:13 24906908 /lib/arm-linux-gnueabihf/ld-2.27.so
+f7874000-f7875000 rw-p 00019000 00:13 24906908 /lib/arm-linux-gnueabihf/ld-2.27.so
+f7875000-ff77a000 rw-p 00000000 00:00 0
+ff87a000-ff89b000 rw-p 00000000 00:00 0        [stack]
+ff89b000-ffff0000 rw-p 00000000 00:00 0
+ffff0000-ffff1000 r-xp 00000000 00:00 0        [vectors]
+ffff1000-fffff000 rw-p 00000000 00:00 0
+
+
+vdsotest for compat [2]:
+------------------------
+
+Note: vDSO version of clock_gettime not found
+clock-gettime-monotonic: syscall: 796 nsec/call
+clock-gettime-monotonic:    libc: 816 nsec/call
+clock-gettime-monotonic:    vdso: not tested
+Note: vDSO version of clock_gettime not found
+Note: vDSO version of clock_gettime not found
+Note: vDSO version of clock_getres not found
+clock-getres-monotonic: syscall: 567 nsec/call
+clock-getres-monotonic:    libc: 581 nsec/call
+clock-getres-monotonic:    vdso: not tested
+Note: vDSO version of clock_getres not found
+Note: vDSO version of clock_getres not found
+Note: vDSO version of clock_gettime not found
+clock-gettime-monotonic-coarse: syscall: 617 nsec/call
+clock-gettime-monotonic-coarse:    libc: 656 nsec/call
+clock-gettime-monotonic-coarse:    vdso: not tested
+Note: vDSO version of clock_gettime not found
+Note: vDSO version of clock_gettime not found
+Note: vDSO version of clock_getres not found
+clock-getres-monotonic-coarse: syscall: 591 nsec/call
+clock-getres-monotonic-coarse:    libc: 614 nsec/call
+clock-getres-monotonic-coarse:    vdso: not tested
+Note: vDSO version of clock_getres not found
+Note: vDSO version of clock_getres not found
+Note: vDSO version of clock_gettime not found
+clock-gettime-realtime: syscall: 819 nsec/call
+clock-gettime-realtime:    libc: 858 nsec/call
+clock-gettime-realtime:    vdso: not tested
+Note: vDSO version of clock_gettime not found
+Note: vDSO version of clock_gettime not found
+Note: vDSO version of clock_getres not found
+clock-getres-realtime: syscall: 567 nsec/call
+clock-getres-realtime:    libc: 583 nsec/call
+clock-getres-realtime:    vdso: not tested
+Note: vDSO version of clock_getres not found
+Note: vDSO version of clock_getres not found
+Note: vDSO version of clock_gettime not found
+clock-gettime-realtime-coarse: syscall: 599 nsec/call
+clock-gettime-realtime-coarse:    libc: 638 nsec/call
+clock-gettime-realtime-coarse:    vdso: not tested
+Note: vDSO version of clock_gettime not found
+Note: vDSO version of clock_gettime not found
+Note: vDSO version of clock_getres not found
+clock-getres-realtime-coarse: syscall: 591 nsec/call
+clock-getres-realtime-coarse:    libc: 610 nsec/call
+clock-getres-realtime-coarse:    vdso: not tested
+Note: vDSO version of clock_getres not found
+Note: vDSO version of clock_getres not found
+Note: vDSO version of getcpu not found
+getcpu: syscall: 431 nsec/call
+getcpu:    libc: 451 nsec/call
+getcpu:    vdso: not tested
+Note: vDSO version of getcpu not found
+Note: vDSO version of getcpu not found
+Note: vDSO version of gettimeofday not found
+gettimeofday: syscall: 765 nsec/call
+gettimeofday:    libc: 808 nsec/call
+gettimeofday:    vdso: not tested
+Note: vDSO version of gettimeofday not found
+Note: vDSO version of gettimeofday not found
+
+When CROSS_COMPILE_COMPAT is defined:
+=====================================
+
+# ./main-arm32
+AT_SYSINFO_EHDR: 0xf7a67000
+
+Memory map:
+-----------
+
+00008000-00010000 rw-p 00000000 00:00 0
+00010000-00011000 r-xp 00000000 00:13 24905929 /home/vinfra01/bin/main-arm32
+00011000-00020000 rw-p 00000000 00:00 0
+00020000-00021000 r--p 00000000 00:13 24905929 /home/vinfra01/bin/main-arm32
+00021000-00022000 rw-p 00001000 00:13 24905929 /home/vinfra01/bin/main-arm32
+00022000-f7932000 rw-p 00000000 00:00 0        [heap]
+f7932000-f7a14000 r-xp 00000000 00:13 24906912 /lib/arm-linux-gnueabihf/libc-2.27.so
+f7a14000-f7a24000 ---p 000e2000 00:13 24906912 /lib/arm-linux-gnueabihf/libc-2.27.so
+f7a24000-f7a26000 r--p 000e2000 00:13 24906912 /lib/arm-linux-gnueabihf/libc-2.27.so
+f7a26000-f7a27000 rw-p 000e4000 00:13 24906912 /lib/arm-linux-gnueabihf/libc-2.27.so
+f7a27000-f7a2a000 rw-p 00000000 00:00 0
+f7a2a000-f7a40000 rw-p 00000000 00:00 0
+f7a40000-f7a58000 r-xp 00000000 00:13 24906908 /lib/arm-linux-gnueabihf/ld-2.27.so
+f7a58000-f7a64000 rw-p 00000000 00:00 0
+f7a64000-f7a66000 rw-p 00000000 00:00 0
+f7a66000-f7a67000 r--p 00000000 00:00 0        [vvar]
+f7a67000-f7a68000 r-xp 00000000 00:00 0        [vdso]
+f7a68000-f7a69000 r--p 00018000 00:13 24906908 /lib/arm-linux-gnueabihf/ld-2.27.so
+f7a69000-f7a6a000 rw-p 00019000 00:13 24906908 /lib/arm-linux-gnueabihf/ld-2.27.so
+f7a6a000-ff6d8000 rw-p 00000000 00:00 0
+ff7d8000-ff7f9000 rw-p 00000000 00:00 0        [stack]
+ff7f9000-ffff0000 rw-p 00000000 00:00 0
+ffff0000-ffff1000 r-xp 00000000 00:00 0        [vectors]
+ffff1000-fffff000 rw-p 00000000 00:00 0
+
+vdsotest for compat [2]:
+------------------------
+
+clock-gettime-monotonic: syscall: 700 nsec/call
+clock-gettime-monotonic:    libc: 226 nsec/call
+clock-gettime-monotonic:    vdso: 189 nsec/call
+clock-getres-monotonic: syscall: 582 nsec/call
+clock-getres-monotonic:    libc: 581 nsec/call
+clock-getres-monotonic:    vdso: 40 nsec/call
+clock-gettime-monotonic-coarse: syscall: 618 nsec/call
+clock-gettime-monotonic-coarse:    libc: 103 nsec/call
+clock-gettime-monotonic-coarse:    vdso: 85 nsec/call
+clock-getres-monotonic-coarse: syscall: 602 nsec/call
+clock-getres-monotonic-coarse:    libc: 610 nsec/call
+clock-getres-monotonic-coarse:    vdso: 64 nsec/call
+clock-gettime-realtime: syscall: 741 nsec/call
+clock-gettime-realtime:    libc: 209 nsec/call
+clock-gettime-realtime:    vdso: 189 nsec/call
+clock-getres-realtime: syscall: 627 nsec/call
+clock-getres-realtime:    libc: 604 nsec/call
+clock-getres-realtime:    vdso: 41 nsec/call
+clock-gettime-realtime-coarse: syscall: 640 nsec/call
+clock-gettime-realtime-coarse:    libc: 105 nsec/call
+clock-gettime-realtime-coarse:    vdso: 84 nsec/call
+clock-getres-realtime-coarse: syscall: 597 nsec/call
+clock-getres-realtime-coarse:    libc: 608 nsec/call
+clock-getres-realtime-coarse:    vdso: 46 nsec/call
+Note: vDSO version of getcpu not found
+getcpu: syscall: 492 nsec/call
+getcpu:    libc: 492 nsec/call
+getcpu:    vdso: not tested
+Note: vDSO version of getcpu not found
+Note: vDSO version of getcpu not found
+gettimeofday: syscall: 664 nsec/call
+gettimeofday:    libc: 224 nsec/call
+gettimeofday:    vdso: 185 nsec/call
+
+[2] https://github.com/nathanlynch/vdsotest
+
 -- 
-2.18.0
-
+Regards,
+Vincenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
