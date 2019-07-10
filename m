@@ -2,56 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 478D764AF0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 18:46:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2FD1064B0B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 18:57:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=oIu+A/TOda0siMypyEfd71Az+09PQkqzIDFcQPmvsTQ=; b=k7eOm96An0LLkZ2QRMe2mCMPD
-	g2xCjuqRaBPPgmiKcjRKlglHBE6abwPw/Xpoow0c6SJQWjA6f25VrLihJsZOg2DwuSQ4wJbDfeDY5
-	UgFssTcT656OLT9bXTaW1gz54HI6Bs2Dpa/Iy/kLCBd8Bup9SVx/r9Q5pdaO5oWbybSmhrwzaF6lN
-	1Z2/vHhJ2PytQm9ttKDmjOU31dpj74AXI7KIoHn4VbzEpHI1HKjAx7FJdq23ZVJZohS/wtviJHeIC
-	EfrjOHe23BaGEZ0p0QKzOSWcqq3Mb1gIoLwiDAzYoIHhZCilwqKltc1I6XVzN/zMgTGo6hKJkCD8P
-	m7Fm+GuGg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xrmA3JwhoANmdZT8CbPLYCk/5EPB4B7+LDwBX7/yZQQ=; b=o1h6WhBLYgRN+Z
+	TairCChuibcnQK9F5kpr/zQkK1eP9MC85nemOo3CGbLve9ENEgkMgsMt50YOJ2cj77wOiQNGmZILR
+	wPjw/ODmmqhsdEJF1KDd7iYlzIZSaRXpYSWdTjgD6TYgizE+JOzIMjgBep1JC6zaw3Jv3jnwW8uqK
+	5ugcSpZUFdwrUW+LxDbiYGToEgtGHNL/q4odCV5MoceipYCZVioT+bnlJVsGBWI71bij4cXOoOtTh
+	uBGUPv6pTKwdqw88WxHdMjBVMJEjQVXv0pCE5PB7a4juhFLvqvokGjwUdM5IYNRO3uE7LwTwPjPxy
+	HwBwIjGDz/LgtTrZ7x+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlFk4-00055T-Qs; Wed, 10 Jul 2019 16:46:53 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hlFj1-0004qS-Gy
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 16:45:49 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 85F4C360;
- Wed, 10 Jul 2019 09:45:46 -0700 (PDT)
-Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 12B3A3F246;
- Wed, 10 Jul 2019 09:45:44 -0700 (PDT)
-Subject: Re: [RESEND PATCH v2 3/3] iommu/arm-smmu: Add support for
- DOMAIN_ATTR_SPLIT_TABLES
-To: Jordan Crouse <jcrouse@codeaurora.org>, freedreno@lists.freedesktop.org
-References: <1562612447-19856-1-git-send-email-jcrouse@codeaurora.org>
- <1562612447-19856-4-git-send-email-jcrouse@codeaurora.org>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <aeae2aa1-9473-d661-dcf3-f086fe36d02a@arm.com>
-Date: Wed, 10 Jul 2019 17:45:44 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hlFu1-00024m-Hh; Wed, 10 Jul 2019 16:57:09 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hlFtn-00024I-UI
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 16:56:57 +0000
+Received: by mail-wm1-x341.google.com with SMTP id 207so3035034wma.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 10 Jul 2019 09:56:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=7OwvYhB15aIMvo/DzgqTZyHfK2iyk2Ozeap178Si5cc=;
+ b=fF4+44OiqYPDLpiMhDd8uRC81fZ+5ZiTlL8IYEnymiVPLjDQK1feNJAv4DvCgWujg/
+ Dtld9lq52t0/fGN+oXZ7AflJPZuAJvgF2fg1UuBiciR0ko37nM/9QQUdnMDobkcM0d5O
+ F+Daz1XqOp7PFE98PLoRu57txu1Voa7s07Sde+AIjohwN3FF4tJTFLap6zQVzrFELqrX
+ L1CctMo/eXdVaidD6gtjUYn2sYwcrWkuoCvnHI34rxfypgfpS5y7lYp4tyBJrC3nYtjQ
+ Z27nSQfFdfcjcxCcDOuX4lfXsjWeP6T/GnpqkUD3OusK22W5xzG48iH+cMSN1eYfNxw2
+ c5rg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=7OwvYhB15aIMvo/DzgqTZyHfK2iyk2Ozeap178Si5cc=;
+ b=qMY5qz6a5v8g6r89EftRjryNhBeGa4IWLzSOg/sqGE//48ZWV73333TIFcbn/DT9Pp
+ yKELh1hLduZTQ2D45v1+nOUS6R6ZeImh0d0IWTi/h1Jj5ZDOQIcP8dUDCAlyVBzXEU9v
+ IuQ9r3eFUQHEuqkPBHqSgDSY3YwGE38Avwhl/sWwaMuDvdYHHwcWAI4sQ1q8ZjwWK8br
+ PjrO1vOzmw1iujL1RCo1VzNbTsvfSVVuYUTUPV+Fj1mkJtj56aDLjtsxtezrARgtbk/8
+ 9gU5+3iv4VAlQerPBRrmSZu/tsMqSrqLSLEz5Wp4wlX/O92yP17jc/bnVcT6rZSx/ls/
+ SVtA==
+X-Gm-Message-State: APjAAAVn2Gdo6UNFzrU6EmzSf7iLqxy2XPtLGYgzbQG9AfEb+pnFl7S3
+ QbsZQ0DrsgNanLzufdzAvKc=
+X-Google-Smtp-Source: APXvYqxYbymgnQTtkuBAonwUEvUE2MH+9+rn1rpzlqSEVDTpmHe1buRlfNK4vNYxBPWpVLMx3aTOzA==
+X-Received: by 2002:a05:600c:2243:: with SMTP id
+ a3mr6023248wmm.83.1562777813579; 
+ Wed, 10 Jul 2019 09:56:53 -0700 (PDT)
+Received: from archlinux-threadripper ([2a01:4f8:222:2f1b::2])
+ by smtp.gmail.com with ESMTPSA id e5sm2553928wro.41.2019.07.10.09.56.52
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Wed, 10 Jul 2019 09:56:52 -0700 (PDT)
+Date: Wed, 10 Jul 2019 09:56:51 -0700
+From: Nathan Chancellor <natechancellor@gmail.com>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH] vsyscall: use __iter_div_u64_rem()
+Message-ID: <20190710165651.GA29814@archlinux-threadripper>
+References: <20190710130206.1670830-1-arnd@arndb.de>
 MIME-Version: 1.0
-In-Reply-To: <1562612447-19856-4-git-send-email-jcrouse@codeaurora.org>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <20190710130206.1670830-1-arnd@arndb.de>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_094547_919313_090C266D 
-X-CRM114-Status: GOOD (  22.07  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190710_095655_996685_7F3C4942 
+X-CRM114-Status: GOOD (  17.74  )
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (natechancellor[at]gmail.com)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,87 +101,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jean-philippe.brucker@arm.com, linux-arm-msm@vger.kernel.org,
- Joerg Roedel <joro@8bytes.org>, dianders@chromium.org,
- linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
- hoegsberg@google.com, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org, baolu.lu@linux.intel.com
+Cc: linux-arch@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
+ linux-kernel@vger.kernel.org, linux-kselftest@vger.kernel.org,
+ Dmitry Safonov <0x7f454c46@gmail.com>, Mark Salyzyn <salyzyn@android.com>,
+ Huw Davies <huw@codeweavers.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ linux-mips@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
+ Russell King <linux@armlinux.org.uk>, clang-built-linux@googlegroups.com,
+ Paul Burton <paul.burton@mips.com>, Andy Lutomirski <luto@kernel.org>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Peter Collingbourne <pcc@google.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 08/07/2019 20:00, Jordan Crouse wrote:
-> When DOMAIN_ATTR_SPLIT_TABLES is specified for pass ARM_64_LPAE_SPLIT_S1
-> to io_pgtable_ops to allocate and initialize TTBR0 and TTBR1 pagetables.
+On Wed, Jul 10, 2019 at 03:01:53PM +0200, Arnd Bergmann wrote:
+> On 32-bit x86 when building with clang-9, the loop gets turned back into
+> an inefficient division that causes a link error:
 > 
-> v3: Moved all the pagetable specific work into io-pgtable-arm
-> in a previous patch.
+> kernel/time/vsyscall.o: In function `update_vsyscall':
+> vsyscall.c:(.text+0xe3): undefined reference to `__udivdi3'
 > 
-> Signed-off-by: Jordan Crouse <jcrouse@codeaurora.org>
+> Use the provided __iter_div_u64_rem() function that is meant to address
+> the same case in other files.
+> 
+> Fixes: 44f57d788e7d ("timekeeping: Provide a generic update_vsyscall() implementation")
+> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 > ---
+>  kernel/time/vsyscall.c | 6 +-----
+>  1 file changed, 1 insertion(+), 5 deletions(-)
 > 
->   drivers/iommu/arm-smmu.c | 16 +++++++++++++++-
->   1 file changed, 15 insertions(+), 1 deletion(-)
+> diff --git a/kernel/time/vsyscall.c b/kernel/time/vsyscall.c
+> index a80893180826..8cf3596a4ce6 100644
+> --- a/kernel/time/vsyscall.c
+> +++ b/kernel/time/vsyscall.c
+> @@ -104,11 +104,7 @@ void update_vsyscall(struct timekeeper *tk)
+>  	vdso_ts->sec	= tk->xtime_sec + tk->wall_to_monotonic.tv_sec;
+>  	nsec		= tk->tkr_mono.xtime_nsec >> tk->tkr_mono.shift;
+>  	nsec		= nsec + tk->wall_to_monotonic.tv_nsec;
+> -	while (nsec >= NSEC_PER_SEC) {
+> -		nsec = nsec - NSEC_PER_SEC;
+> -		vdso_ts->sec++;
+> -	}
+> -	vdso_ts->nsec	= nsec;
+> +	vdso_ts->sec	+= __iter_div_u64_rem(nsec, NSEC_PER_SEC, &vdso_ts->nsec);
+>  
+>  	if (__arch_use_vsyscall(vdata))
+>  		update_vdso_data(vdata, tk);
+> -- 
+> 2.20.0
 > 
-> diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
-> index 653b6b3..7a6b4bb 100644
-> --- a/drivers/iommu/arm-smmu.c
-> +++ b/drivers/iommu/arm-smmu.c
-> @@ -257,6 +257,7 @@ struct arm_smmu_domain {
->   	bool				non_strict;
->   	struct mutex			init_mutex; /* Protects smmu pointer */
->   	spinlock_t			cb_lock; /* Serialises ATS1* ops and TLB syncs */
-> +	u32 attributes;
->   	struct iommu_domain		domain;
->   };
->   
-> @@ -832,7 +833,11 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
->   		ias = smmu->va_size;
->   		oas = smmu->ipa_size;
->   		if (cfg->fmt == ARM_SMMU_CTX_FMT_AARCH64) {
-> -			fmt = ARM_64_LPAE_S1;
-> +			if (smmu_domain->attributes &
-> +				(1 << DOMAIN_ATTR_SPLIT_TABLES))
-> +				fmt = ARM_64_LPAE_SPLIT_S1;
-> +			else
-> +				fmt = ARM_64_LPAE_S1;
->   		} else if (cfg->fmt == ARM_SMMU_CTX_FMT_AARCH32_L) {
->   			fmt = ARM_32_LPAE_S1;
->   			ias = min(ias, 32UL);
-> @@ -1582,6 +1587,10 @@ static int arm_smmu_domain_get_attr(struct iommu_domain *domain,
->   		case DOMAIN_ATTR_NESTING:
->   			*(int *)data = (smmu_domain->stage == ARM_SMMU_DOMAIN_NESTED);
->   			return 0;
-> +		case DOMAIN_ATTR_SPLIT_TABLES:
-> +			*(int *)data = !!(smmu_domain->attributes &
-> +				(1 << DOMAIN_ATTR_SPLIT_TABLES));
 
-I'm not really a fan of always claiming to support this but silently 
-ignoring it depending on hardware/kernel configuration - it seems 
-somewhat tricky to make callers properly robust against making false 
-assumptions (e.g. consider if the system is booted with 
-"arm-smmu.force_stage=2").
+What an interesting function. Looks good to me and I can confirm it
+fixes the link error.
 
-Robin.
-
-> +			return 0;
->   		default:
->   			return -ENODEV;
->   		}
-> @@ -1622,6 +1631,11 @@ static int arm_smmu_domain_set_attr(struct iommu_domain *domain,
->   			else
->   				smmu_domain->stage = ARM_SMMU_DOMAIN_S1;
->   			break;
-> +		case DOMAIN_ATTR_SPLIT_TABLES:
-> +			if (*((int *)data))
-> +				smmu_domain->attributes |=
-> +					(1 << DOMAIN_ATTR_SPLIT_TABLES);
-> +			break;
->   		default:
->   			ret = -ENODEV;
->   		}
-> 
+Reviewed-by: Nathan Chancellor <natechancellor@gmail.com>
+Tested-by: Nathan Chancellor <natechancellor@gmail.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
