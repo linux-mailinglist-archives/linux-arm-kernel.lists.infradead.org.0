@@ -2,66 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE60064B19
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 19:01:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AEE4F64B24
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 19:02:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mUtC0qciyPFqGyTdadjqihj9RNzDyjAO0GZhgEJtfb0=; b=M4/BAqLQyKz3PF
-	+2wJBLxXsHbgUu6mfJ2Zis2eNCVWBh4HlXivu2VqeZrnVLkcDIPpzgdP/4K0dP6IwA++bVKih12Id
-	Km5flLQ9L+ULx8yp6HrpweFFZ68xTJ5lSjYv1SE4Eu4Z60Y3au9KhKTAA4E/EJIHJQf+hE+TYP3Hu
-	RYfV8/6y9SpQzTJgkIE+1aT5I7ueEcLw8cD1K9kGrCjk4zZkhs6ATI/Q80sQ2nmXu/p7eYI1tkreU
-	kOLp8V08jWPTUL3vx6bxMj8AFvwDu8JTVizaWNJjCKKv9z8SjRj4+/M5AaPGJ5h+vNcaK/O7M3MrN
-	+te0FjI4HYACZ8zigLNg==;
+	List-Owner; bh=I3hIgBMaQHbco/32r0JuGfn6YNsqrBYanchWbiasro0=; b=XecJJknJZmrTkE
+	WKy3FqF+HJy0PLC7uYmobrjK96ts/dPTTFM1VmOPmu2iUwxX1cwLXldr9ZlYuLpqNiLQBU2/X6+p9
+	nROO9NVIkxdX2NAlbHrfteEmmlRV7Eyfb6ZkkXXa1k0kZchAHx8QykYcn2DFC6dZDLeSIFG995e95
+	2uXUVq7B+7M6Ha2WKJNnRD0WPO3vEgkfTlBElMBg0DAiyJPH9PI7hWJLLgFTyw3X+C06LUBkbupX2
+	eR/0bARnOFhd6x9YXyNy8L+HpYs+VuBsnKuCXY07zxoXQAr8q98qfdi4gzlwtTMNFpzYPdC/aZ3U4
+	HL+H96cVbyKhG0aEMgnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlFyF-0004Wm-RG; Wed, 10 Jul 2019 17:01:31 +0000
+	id 1hlFz4-0004mq-0F; Wed, 10 Jul 2019 17:02:22 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlFy0-0004WK-7N
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 17:01:17 +0000
-Received: from mail-lf1-f42.google.com (mail-lf1-f42.google.com
- [209.85.167.42])
+ id 1hlFyn-0004mQ-7k
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 17:02:06 +0000
+Received: from mail-lj1-f173.google.com (mail-lj1-f173.google.com
+ [209.85.208.173])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3C50621537
+ by mail.kernel.org (Postfix) with ESMTPSA id 9B44621537
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 10 Jul 2019 17:01:15 +0000 (UTC)
+ Wed, 10 Jul 2019 17:02:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1562778075;
- bh=TxbpTbFTB6tcLStSvP+aZxI9Q0R2lb9U8jlmNMNQU/k=;
+ s=default; t=1562778124;
+ bh=0A6ZTzIyBGFAfbsBGr87hqddBcLIH2KmFnUom+mbnfo=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=U//DVdj8YeqqMqoEDtUVuLtXzsBFDbK43r7r+8WEjfC1VRimpCIv2wgciP4TBN/1i
- J5jJLff9enx6GJSi0qmcn2fHltBH8KhSQR0qMHQ+By8LbYiJ+S6vw1yXceuxXgquR4
- s/H+wScP71uIDBVJapDktsBgEARQrR4kG7GwHgdk=
-Received: by mail-lf1-f42.google.com with SMTP id v85so2100439lfa.6
+ b=ncRNCFkT6ApV3yScc8XizT9TAOlzHY6AFXesiDEKdFwFYWV/1uFC9l+cI57EMhTTm
+ s/6w+5Uqe14zOlEZ82f5B3CdBj31fd59ATeF0AOKRyIE1Kfa4xGCABJ1rPECrWmXAg
+ 5RVVOkut49aSxv6P2kQW5AgijYQYX0WaFLpmJX3I=
+Received: by mail-lj1-f173.google.com with SMTP id r9so2824177ljg.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 10 Jul 2019 10:01:15 -0700 (PDT)
-X-Gm-Message-State: APjAAAWKCBSZ1+OeOJ54nq/Q+r4tLdsMiMZKiMhnNQUcGBG8tTrHSyeG
- 2GO9f7Qr52DSCnaJ4IY2gRbytgBaSqqDb4t3OIA=
-X-Google-Smtp-Source: APXvYqxUw6gRJ6UeOU32AlyJP63sp59JGRy6Bmn26fDc8R5P8j2rXUGuDLf2Ue/ajr7oZwhSM/V1T6YgEMGuHxdFzX0=
-X-Received: by 2002:ac2:4d1c:: with SMTP id r28mr14953327lfi.159.1562778073455; 
- Wed, 10 Jul 2019 10:01:13 -0700 (PDT)
+ Wed, 10 Jul 2019 10:02:04 -0700 (PDT)
+X-Gm-Message-State: APjAAAUAEtovTNYR8u7fLyjg+zioafjt7/Cf1prTR6+42RKK9fNQOGE1
+ fwjCq+KpMhHIh2VuJxRZRY+MBfWYQgWcOTC/b+M=
+X-Google-Smtp-Source: APXvYqyWb8b/hmxoFrfvlDWU3IPgcVGPZ13o1DOOgNtiaOiFrg6Fmx//C+LLQngzv8et5vCS3ozwNOYtKG9OjsA1/0k=
+X-Received: by 2002:a2e:8155:: with SMTP id t21mr17900333ljg.80.1562778122981; 
+ Wed, 10 Jul 2019 10:02:02 -0700 (PDT)
 MIME-Version: 1.0
-References: <CGME20190708141158eucas1p17d4b50978dbe1e5c876ce6d8f433cc95@eucas1p1.samsung.com>
+References: <CGME20190708141159eucas1p1751506975ff96a436e14940916623722@eucas1p1.samsung.com>
  <20190708141140.24379-1-k.konieczny@partner.samsung.com>
- <CAJKOXPd+UZ2MdrTVfBv5UYzK5LgKNQHUFzRbRNeq271EaDSchg@mail.gmail.com>
- <91f65527-3440-90fd-4096-5824fba1df78@partner.samsung.com>
- <CAJKOXPc1rOyFujyWk4HwmQb6YEXd=CEHKwN8AH_pKxk-6CA08w@mail.gmail.com>
- <631ffd68-7aab-2483-8799-2019bf3bb444@partner.samsung.com>
-In-Reply-To: <631ffd68-7aab-2483-8799-2019bf3bb444@partner.samsung.com>
+ <20190708141140.24379-2-k.konieczny@partner.samsung.com>
+In-Reply-To: <20190708141140.24379-2-k.konieczny@partner.samsung.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
-Date: Wed, 10 Jul 2019 19:01:02 +0200
-X-Gmail-Original-Message-ID: <CAJKOXPcX9vzoK-w16P4LiWjYMwXLUjSvNxdjp6nUXDjAK0rEcw@mail.gmail.com>
-Message-ID: <CAJKOXPcX9vzoK-w16P4LiWjYMwXLUjSvNxdjp6nUXDjAK0rEcw@mail.gmail.com>
-Subject: Re: [PATCH 0/3] add coupled regulators for Exynos5422/5800
-To: Kamil Konieczny <k.konieczny@partner.samsung.com>
+Date: Wed, 10 Jul 2019 19:01:51 +0200
+X-Gmail-Original-Message-ID: <CAJKOXPfJ57RBYg_drzALChNqHD_ueVfNc-tAhOdLYdY2A4G2Tg@mail.gmail.com>
+Message-ID: <CAJKOXPfJ57RBYg_drzALChNqHD_ueVfNc-tAhOdLYdY2A4G2Tg@mail.gmail.com>
+Subject: Re: [PATCH 1/3] opp: core: add regulators enable and disable
+To: k.konieczny@partner.samsung.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_100116_299465_E2D58CA9 
-X-CRM114-Status: GOOD (  22.57  )
+X-CRM114-CacheID: sfid-20190710_100205_361438_AFA034BD 
+X-CRM114-Status: GOOD (  13.58  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -105,47 +102,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 10 Jul 2019 at 15:51, Kamil Konieczny
-<k.konieczny@partner.samsung.com> wrote:
+On Mon, 8 Jul 2019 at 16:12, <k.konieczny@partner.samsung.com> wrote:
 >
-> On 10.07.2019 12:14, Krzysztof Kozlowski wrote:
-> > On Wed, 10 Jul 2019 at 12:03, Kamil Konieczny
-> > <k.konieczny@partner.samsung.com> wrote:
-> >>
-> >> On 10.07.2019 11:00, Krzysztof Kozlowski wrote:
-> >>> On Mon, 8 Jul 2019 at 16:12, <k.konieczny@partner.samsung.com> wrote:
-> >>>>
-> >>>> From: Kamil Konieczny <k.konieczny@partner.samsung.com>
-> >>>>
-> >>>> Hi,
-> >>>>
-> >>>> The main purpose of this patch series is to add coupled regulators for
-> >>>> Exynos5422/5800 to keep constrain on voltage difference between vdd_arm
-> >>>> and vdd_int to be at most 300mV. In exynos-bus instead of using
-> >>>> regulator_set_voltage_tol() with default voltage tolerance it should be
-> >>>> used regulator_set_voltage_triplet() with volatege range, and this is
-> >>>> already present in opp/core.c code, so it can be reused. While at this,
-> >>>> move setting regulators into opp/core.
-> >>>>
-> >>>> This patchset was tested on Odroid XU3.
-> >>>>
-> >>>> The last patch depends on two previous.
-> >>>
-> >>> So you break the ABI... I assume that patchset maintains
-> >>> bisectability. However there is no explanation why ABI break is needed
-> >>> so this does not look good...
-> >>
-> >> Patchset is bisectable, first one is simple and do not depends on others,
-> >> second depends on first, last depends on first and second.
-> >>
-> >> What do you mean by breaking ABI ?
-> >
-> > I mean, that Linux kernel stops working with existing DTBs... or am I
-> > mistaken and there is no problem? Maybe I confused the order...
+> From: Kamil Konieczny <k.konieczny@partner.samsung.com>
 >
-> It is not ABI break, it should work with existing DTBs
+> Add enable regulators to dev_pm_opp_set_regulators() and disable
+> regulators to dev_pm_opp_put_regulators(). This prepares for
+> converting exynos-bus devfreq driver to use dev_pm_opp_set_rate().
+>
+> Signed-off-by: Kamil Konieczny <k.konieczny@partner.samsung.com>
+> ---
+>  drivers/opp/core.c | 13 +++++++++++++
+>  1 file changed, 13 insertions(+)
 
-Ah, thanks. My misunderstanding then. Looks good.
+Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
 
 Best regards,
 Krzysztof
