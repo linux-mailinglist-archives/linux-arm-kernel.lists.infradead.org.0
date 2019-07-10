@@ -2,79 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 907CB647FD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 16:16:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6892464808
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 16:16:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ICgb5KiJyW3PDtp+IryC4OwvuJjM8CxzOw8Hhgsr9+k=; b=T+Vv+96HxrWvvO
-	Wk4HICxOoSKS2GEFaJVXpY3g7jWf/hVaAHpV2l13fGTEOJWENU6tQMPd74w4eesS97Perrb8zoC/b
-	lHylUrHf0EqU/nIrE5pf3EgniOkSwvDTA4zb36R6mUJnflHI6l6Quh6AnBv3k/Md4ELVGnPWfUx1C
-	vJkEdHxdUmtK7fOKfd8+X1osi2qVy/qZle0rY6Mz63iSWksybV3arZvtT83gcvmNLWJnfaUTb2SnS
-	NNwujKZ9UyWyvw9CmU+m7kMH873CUK6vIrjLCKr0DQIw+s4CoIyAjBstrOni7leAbfKqjr/S18H5u
-	+C4oEs/ZjEH7U6e4N3xg==;
+	List-Owner; bh=f0mJpYpD3MvWUyGzvDbMllscgn5W79iKr0OmjgQSpms=; b=UqIGP8GY1Fu06Z
+	e1vMzMoo1Pg+rXTL4aj19YaHdApf56fhpZPMlZ3ShltmGkK3YImGeUglt5bZ/L3ANynqMelhv1bPm
+	h11LIJClO9spAgPUjLQZjfHUIrR+PDceK8pAczjiWA+OtU0T1YCtphmzEm1JgxxpisnPQg5sCTPAs
+	DaGn5p5ClRuRDFFaGSe0KqQWxMVL/pUn4RYJWJ0+g7ks1rhSRh+gj1k0mprwwqkN+cuaiD/1X588/
+	fsSHB1eSRGC1Z56F2S5lRWFTpC0he8VdyfxIV46GqCG2+T5Qjnpf+P1MruQoPsWUF1djbNV+Hy7so
+	AJTIApNdxxJQcOQ2+6Qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlDOH-000192-4b; Wed, 10 Jul 2019 14:16:13 +0000
+	id 1hlDOY-0001NH-Rm; Wed, 10 Jul 2019 14:16:30 +0000
 Received: from out3-smtp.messagingengine.com ([66.111.4.27])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlDNP-0000Yw-Vi
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 14:15:21 +0000
+ id 1hlDNU-0000cM-EA
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 14:15:26 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id 42BBD22171;
- Wed, 10 Jul 2019 10:15:19 -0400 (EDT)
+ by mailout.nyi.internal (Postfix) with ESMTP id A98BF2213D;
+ Wed, 10 Jul 2019 10:15:23 -0400 (EDT)
 Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Wed, 10 Jul 2019 10:15:19 -0400
+ by compute4.internal (MEProxy); Wed, 10 Jul 2019 10:15:23 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=from
  :to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm3; bh=/nuJnxVDzRhoS
- VxlYKo/BeplUiN6nooOgbT9w/0IY+k=; b=ohoIueS1t1j0S89EU/3VnCYNiGAQQ
- ThW7HV0YRygHvhObUuMl20MSosAa9SCrs/d2TV514GpoOqpuLzNobHBB4kXV1Kp6
- 8QwxT2XoCiBuTIqWR5yGCqzsN+sYYbVe+fQfNFAt9uboZAcSIYJMDqlOeugot1Fb
- 3qwP0RJQEbJa5GEjcdiCXyDU+6nwT5ST3qB3fG8x7V1YET7iiOHhUxq6jqqXhlrI
- WXlx5r0j8IQ7rFsizdUm7nQ0z9FwqJ4L+RfGOtDMGPR4CIA0LEgbuC8f3ivxlhm0
- 3wdokRDiEfAQ3ZNU6uf3U+kgldOh6SrLdWV0rDDMtjLMfy1kbNUDX1JRA==
+ :mime-version:content-transfer-encoding; s=fm3; bh=Mo4UV5dPvBvsW
+ DVJmnWOkPJbV5m2bJ8R6q784AbeQ54=; b=hEfa8IVJ+15tuBHc0n2ceaDlQ9zcO
+ CfUNB9QjGJmWlfc/RpHLfgPwDxLi8Yf85w1Nlbvx650ALoE6QDHBmzrkYOzF66qR
+ /KSnzIEeOZWK3Vsqxn6RdGJxr/EFzaTXxbDeiHzztvAb58Qyxtpe7xFjoMAsahD6
+ bQsTPJD3XsKeeeJvL9wSH4jQliATIOiT+9GNXvtr7+Wo+bvaiJ61xhZW5cJRcip/
+ 6nTAdZnpSRuXM71a99w+mvIKfE1utOEfuybhe0LtJiJS8gGvR29KlEr5JLXhz3o9
+ iX96fk5ieclv3PW1iI2lEq4WxMJRQCJZMAKmjBI2OJvph0bh19H9rdnsQ==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm3; bh=/nuJnxVDzRhoSVxlYKo/BeplUiN6nooOgbT9w/0IY+k=; b=Z6qjLuOk
- TCzwieLNJe0YVNj4WIPp8WQa0x9Njozlj74mLU/0JW7ry6f5cKc3nvaHyx1h+TRy
- U21p5qBXLAUfF7HoPW/g5cYgfYYIUlecluXW+Y8fPWTJWnEWdYU/eFUOC3OLf0eP
- jdfGFkwozxTOLCKsyehr1em6n0Dtvh3z5l32ZfwZn2ZIHF5ZHQsNsT3Gom5J8GOL
- G72lPq6yktsmrSnsOnRD7Nbfasm2Txu6RBG/Nsg64U6WhVtRzwQmPG0OEDlCGpsC
- tzkH8d0K7YO1887VP19I2S6Z949VC3l2BXMmC7UuHbz+SoiWclinipZhiNz2e47D
- 9AToIPTI85DS+Q==
-X-ME-Sender: <xms:9_IlXWBLKssUsguJc2GqUPOe86fv4Id8vMSzZ-DCn3sfXnLJWvCTaA>
+ fm3; bh=Mo4UV5dPvBvsWDVJmnWOkPJbV5m2bJ8R6q784AbeQ54=; b=V3UszYlB
+ ZsNKJKc8MbcYlz04Aa5EolyEbND3/BFFGdKV4aUFk80+QNpj4GUI1aoYz9rY3Pqg
+ txFxw4+qzJJtMap7RNE+nTE2M4OvOdc36Ov+iV5VSQVqE1STuT7KwIht5W/xzibX
+ Ve5a5gQ20lhq2Xm2tR/Ul67WUXG8HDro6Tqhzq5rEDGt56kGYirv0mspcs7pwX7f
+ rRo6ltTa+QIxoKPpnhTQmu4N+r3D/LIub4ebXAphjjP6axn32GU9uTSAHePVzKDG
+ 8iEt8o8vM5FMFZ+AImoUqee2fqm/pAQzzFhqR7nQq1po9MglXGK4we4KxQH912Gj
+ qSHySg+V1v1eRA==
+X-ME-Sender: <xms:-_IlXdW5Oz0xFMwoPIBOInbYEV481NzzXz5eDWrU7fLmdCas2aK8jQ>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrgeeigdejhecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecunecujfgurhephffvufffkffojghfggfgsedtkeertd
- ertddtnecuhfhrohhmpeetnhgurhgvficulfgvfhhfvghrhicuoegrnhgurhgvfiesrghj
- rdhiugdrrghuqeenucfkphepudegrddvrdekhedrvddvnecurfgrrhgrmhepmhgrihhlfh
- hrohhmpegrnhgurhgvfiesrghjrdhiugdrrghunecuvehluhhsthgvrhfuihiivgepfe
-X-ME-Proxy: <xmx:9_IlXWDuxIMqVC6KPSXXQxYHn2GpmvLI6CeP_NwJG50hJXhNMax64A>
- <xmx:9_IlXYqQgjQUJ_mmNIQhgBIMUX5gSRrrULhcIjLHMsuZmKeFm-8tzg>
- <xmx:9_IlXZGURF6rMC8o2CRRKhnEVoQTsuhWflcx0TrmttcMCRrLRj0Bhg>
- <xmx:9_IlXRnmIfQ1Nzdx4NvxHjjewlW1k8xASkuU0viHSyu1hbM5bc2Olw>
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpefhvffufffkofgjfhgggfestdekredtredttdenucfhrhhomheptehnughrvgif
+ ucflvghffhgvrhihuceorghnughrvgifsegrjhdrihgurdgruheqnecukfhppedugedrvd
+ drkeehrddvvdenucfrrghrrghmpehmrghilhhfrhhomheprghnughrvgifsegrjhdrihgu
+ rdgruhenucevlhhushhtvghrufhiiigvpeeh
+X-ME-Proxy: <xmx:-_IlXZusYRqbHjy6HT_F_XsYUlKgtJuq90TMag3Hk7t1wTPGXlIgbQ>
+ <xmx:-_IlXVMM2K08bDyYCvGcY7mKdV23t9mL1vaqj1VzetOud36qF2nklQ>
+ <xmx:-_IlXZps8AmqWEFWktmZndVzpExwgEcKXOcplxYaAdFy8OHvgPX6kQ>
+ <xmx:-_IlXZUh7OlZSnpRhXBXXi0sRg1e1pDmzW1nZqkuQqWEQPJiN6dz2g>
 Received: from localhost.localdomain
  (ppp14-2-85-22.adl-apt-pir-bras31.tpg.internode.on.net [14.2.85.22])
- by mail.messagingengine.com (Postfix) with ESMTPA id D950A8005B;
- Wed, 10 Jul 2019 10:15:15 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 8D20680059;
+ Wed, 10 Jul 2019 10:15:19 -0400 (EDT)
 From: Andrew Jeffery <andrew@aj.id.au>
 To: linux-aspeed@lists.ozlabs.org
-Subject: [PATCH 2/3] ARM: dts: aspeed: Enable both MMC slots on AST2500 EVB
-Date: Wed, 10 Jul 2019 23:45:02 +0930
-Message-Id: <20190710141503.21026-3-andrew@aj.id.au>
+Subject: [PATCH 3/3] ARM: dts: aspeed: Enable both MMC slots on Swift
+Date: Wed, 10 Jul 2019 23:45:03 +0930
+Message-Id: <20190710141503.21026-4-andrew@aj.id.au>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190710141503.21026-1-andrew@aj.id.au>
 References: <20190710141503.21026-1-andrew@aj.id.au>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_071520_207453_C5F268C5 
-X-CRM114-Status: UNSURE (   9.08  )
+X-CRM114-CacheID: sfid-20190710_071524_975060_8B30AE53 
+X-CRM114-Status: UNSURE (   8.83  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -103,29 +104,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, Andrew Jeffery <andrew@aj.id.au>,
- ryanchen.aspeed@gmail.com, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- joel@jms.id.au, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, ryanchen.aspeed@gmail.com,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ Joel Stanley <joel@jms.id.au>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enabled for testing purposes.
+From: Joel Stanley <joel@jms.id.au>
 
-Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
+Swift will provide at least its rootfs on eMMC.
+
+Signed-off-by: Joel Stanley <joel@jms.id.au>
 ---
- arch/arm/boot/dts/aspeed-ast2500-evb.dts | 18 ++++++++++++++++++
+ .../boot/dts/aspeed-bmc-opp-witherspoon.dts    | 18 ++++++++++++++++++
  1 file changed, 18 insertions(+)
 
-diff --git a/arch/arm/boot/dts/aspeed-ast2500-evb.dts b/arch/arm/boot/dts/aspeed-ast2500-evb.dts
-index 556ed469830c..429904e401ee 100644
---- a/arch/arm/boot/dts/aspeed-ast2500-evb.dts
-+++ b/arch/arm/boot/dts/aspeed-ast2500-evb.dts
-@@ -94,6 +94,24 @@
- 	};
+diff --git a/arch/arm/boot/dts/aspeed-bmc-opp-witherspoon.dts b/arch/arm/boot/dts/aspeed-bmc-opp-witherspoon.dts
+index f1356ca794d8..fcaeae2dd0a8 100644
+--- a/arch/arm/boot/dts/aspeed-bmc-opp-witherspoon.dts
++++ b/arch/arm/boot/dts/aspeed-bmc-opp-witherspoon.dts
+@@ -640,3 +640,21 @@
+ &vhub {
+ 	status = "okay";
  };
- 
++
 +&sdc {
 +	status = "okay";
 +};
@@ -143,10 +147,6 @@ index 556ed469830c..429904e401ee 100644
 +	pinctrl-names = "default";
 +	pinctrl-0 = <&pinctrl_sd2_default>;
 +};
-+
- /*
-  * Enable port A as device (via the virtual hub) and port B as
-  * host by default on the eval board. This can be easily changed
 -- 
 2.20.1
 
