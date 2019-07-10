@@ -2,75 +2,125 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C202D64529
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 12:26:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB8FE64536
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 12:34:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=THW54wNCqap1R60eoauKwXq57gOfvT+OksuwWDtV9PY=; b=YMD0p9xg7Zjp+U
-	UdHUr3gP/xCoRAC7rrFYPAeilBY5iK4WR1SmX+I6bss9uWialDpsASHzxUEIYik1le7O/NDpcT0rl
-	MGzXo2fNlZDtXAcH85hpY/SHJARw1Ewyjh0VbTF9io4NQKsYsivDjzT1dhCf3VSR+fAUZkjlSzjNY
-	t9RohPgTMVubjh/Cm5A3UJbA4PIsJvL5tkmECRf3ea0Hk4XJfPfWibsM0ap5wrrfPG1xHkGytl5pt
-	TZ/XfBVppOhAfFzdabwL/qBhplXQ2N3+iZhOhdPuXoZ4q1JQ4wRCXg2pAYwYdDxH6YzDOb+ApwkbG
-	kpBSyZpsuCWe2UlHLcjA==;
+	List-Owner; bh=QeRri/obceVvLgvsK8n5LakF5eqGttr4o3yXXC7cfg8=; b=ZknugLxi/bbEsn
+	WvjptLtWRO1ahYKc+MVC/V/PdEfEe+jv0Xns/tBoIr42FFvhEmdsYfYfw0P3abeMzpTgrgmsfuEfG
+	/uG+9q7oeiXEfljYbLCYqRK3jwqy0gHipV3MHOn67e0urxYEl7pwtQWkYVAwGw3bKGYtZZY9sH6AP
+	pEsWdrq6NmloqTWzsX0X8um7TNzhYbxBCZ4rxL98cR8C01jGvpskHdWHr7Wa3Z2NYy8uJ1medQhyR
+	dmF1Xa8b2hzhrjT4UVcOn+lPi2Mn34FXBrePY7MrCd5ViQol3+nEyJCQMDgDDEZqFTWqwRkqL5hI8
+	ZoUdV41owxgX9puPMmfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hl9o7-0002Il-Lz; Wed, 10 Jul 2019 10:26:39 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1hl9vL-0004Mm-Ko; Wed, 10 Jul 2019 10:34:07 +0000
+Received: from smtprelay-out1.synopsys.com ([198.182.61.142])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hl9nu-0002Hp-CA
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 10:26:27 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=v7EIF64Wkq9L2U08cgfJ9QXJ/QICE1LcS3K3e2v/4c4=; b=MyEPM7fw/XW5Lt3m9+rpuMph9
- QwBfKkpHSu5UkP561Kk8ywf0HtzkNrLfMvQQHJHZYdTcVmlPINSB9Ul4273RDB1Fr92xoxyHanSXK
- JnYOzBdjHyXcHWYyfu/x2m9WX1HcsDuSzoNtWHs1WN64RfnH1TvY26RUvYRLbD5whMq8RRtRwUWMM
- MRtQGcVeNcLdcBWxsnQFs3yRDPqvwNNsKprWyfozj3/jcQ++ekZWHsSwCdpuQgMvaoUBlJ0fOGSBG
- hAFMlOzqbaWnqnjKvG/krh4YJZ634GTzEqgLrIhfOdh5rGjB8hhh/Hr305Ya4Fg1BrW/EQe40C3JO
- P9t9FT5UQ==;
-Received: from shell.armlinux.org.uk
- ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:59430)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1hl9nn-00066F-An; Wed, 10 Jul 2019 11:26:19 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.89)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1hl9nl-0003pO-Sx; Wed, 10 Jul 2019 11:26:17 +0100
-Date: Wed, 10 Jul 2019 11:26:17 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Masahiro Yamada <yamada.masahiro@socionext.com>
-Subject: Re: Question about ARM FASTFPE
-Message-ID: <20190710102617.nhbsm4lpby3mtfc6@shell.armlinux.org.uk>
-References: <CAK7LNASSCvLSXVikR7GenXyb8KywpWKVc1Z=5v3c93rxJ+G73w@mail.gmail.com>
- <20190710082335.uzusesefimzpjd3f@shell.armlinux.org.uk>
- <CAK7LNAQpiY4CBawEFhQHeTPSrbrRkNoYCtK4jBak+skyyMqESA@mail.gmail.com>
- <20190710100206.yls4piu36wciefbz@shell.armlinux.org.uk>
+ id 1hl9vE-0004Lu-7S
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 10:34:01 +0000
+Received: from mailhost.synopsys.com (dc2-mailhost2.synopsys.com
+ [10.12.135.162])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 98DA0C0167;
+ Wed, 10 Jul 2019 10:33:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1562754837; bh=1hMf7QxxYpiL2DjBcQK0XBZelYzP+0nPC5LuDTJrJsM=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To:From;
+ b=MBtSsTmarLyCnSAhcVnnAo44H4E9TtWms9RlNeYlpUw+BTRzP7+ZVhgUatE5G0ZfD
+ qr4D57ErTmQz3kqIyB9sm6s0yO4NwlcOpykoDudugFYwS8HO9fkTuY5sUUlW8+2m3O
+ 7fnG3IRiNf6AmyQX9tM2KDshyj+lvk3wglaks3zr2ea/+RBlRt1/1+O7JmbpSLkFQB
+ zhs7J899xRlp2Lga3ofSM8Gi3dyr8mX924CIMxhWwD+LzULwLIVYZ0WNbBay8rvtXM
+ XKY5x0zZkhDF0dojisK+CrATY9Yz18DjHScINq6A4u80Qo6S4bwcXxhcnGPPUvrBDS
+ OurZINiWqQ8wA==
+Received: from US01WXQAHTC1.internal.synopsys.com
+ (us01wxqahtc1.internal.synopsys.com [10.12.238.230])
+ (using TLSv1.2 with cipher AES128-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id 9E321A009A;
+ Wed, 10 Jul 2019 10:33:48 +0000 (UTC)
+Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
+ US01WXQAHTC1.internal.synopsys.com (10.12.238.230) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Wed, 10 Jul 2019 03:33:48 -0700
+Received: from NAM02-BL2-obe.outbound.protection.outlook.com (10.13.134.195)
+ by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
+ 14.3.408.0; Wed, 10 Jul 2019 03:33:48 -0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=synopsys.onmicrosoft.com; s=selector1-synopsys-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=1hMf7QxxYpiL2DjBcQK0XBZelYzP+0nPC5LuDTJrJsM=;
+ b=kIbkEPjxwLcz+fzaGETFiWeO8YXvSXfB3hfAf+z861d9s7pB+tL3cMaNqIAPw+aeoXKOeU/apC1CpRSs/aJ/pRkUrTP1gPRq6b6R6FPvenY9gl7tv5txG9bey0fehNxiUZ80SBL30WNAdbO/aNn7UyJ+SgNkPiu2xJcAU1jdgb0=
+Received: from BN8PR12MB3266.namprd12.prod.outlook.com (20.179.66.159) by
+ BN8PR12MB3603.namprd12.prod.outlook.com (20.178.212.87) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2052.19; Wed, 10 Jul 2019 10:33:46 +0000
+Received: from BN8PR12MB3266.namprd12.prod.outlook.com
+ ([fe80::61ef:5598:59e0:fc9d]) by BN8PR12MB3266.namprd12.prod.outlook.com
+ ([fe80::61ef:5598:59e0:fc9d%5]) with mapi id 15.20.2052.020; Wed, 10 Jul 2019
+ 10:33:46 +0000
+From: Jose Abreu <Jose.Abreu@synopsys.com>
+To: Joe Perches <joe@perches.com>, Andrew Morton <akpm@linux-foundation.org>, 
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>, Alexandre Torgue
+ <alexandre.torgue@st.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>
+Subject: RE: [PATCH 08/12] net: stmmac: Fix misuses of GENMASK macro
+Thread-Topic: [PATCH 08/12] net: stmmac: Fix misuses of GENMASK macro
+Thread-Index: AQHVNt0RSTk/ZLig7EqtmWvteU3zKqbDp4tA
+Date: Wed, 10 Jul 2019 10:33:46 +0000
+Message-ID: <BN8PR12MB3266C01DFCB92FF8A9BDBADAD3F00@BN8PR12MB3266.namprd12.prod.outlook.com>
+References: <cover.1562734889.git.joe@perches.com>
+ <b38b0b67e724cd026709194b68c2be5ee1058c57.1562734889.git.joe@perches.com>
+In-Reply-To: <b38b0b67e724cd026709194b68c2be5ee1058c57.1562734889.git.joe@perches.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=joabreu@synopsys.com; 
+x-originating-ip: [83.174.63.141]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: be8102ad-26b5-4a41-7e7a-08d7052216d6
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:BN8PR12MB3603; 
+x-ms-traffictypediagnostic: BN8PR12MB3603:
+x-microsoft-antispam-prvs: <BN8PR12MB360355AAD18F2FA8D700BE24D3F00@BN8PR12MB3603.namprd12.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1169;
+x-forefront-prvs: 0094E3478A
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(376002)(346002)(39860400002)(396003)(136003)(366004)(189003)(199004)(229853002)(110136005)(6436002)(9686003)(3846002)(53936002)(25786009)(8936002)(4326008)(33656002)(478600001)(55016002)(6246003)(66066001)(71200400001)(54906003)(4744005)(76176011)(14454004)(7416002)(316002)(99286004)(7696005)(186003)(102836004)(26005)(52536014)(446003)(11346002)(71190400001)(7736002)(486006)(81156014)(5660300002)(8676002)(476003)(81166006)(6506007)(74316002)(68736007)(66946007)(6116002)(66446008)(66476007)(64756008)(2906002)(256004)(86362001)(76116006)(305945005)(66556008);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:BN8PR12MB3603;
+ H:BN8PR12MB3266.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: synopsys.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: YMAj++/Mek0ZoQXIjqzeYtjoM6G6n3D4oboFPjSo9tk+GKEtusGAFEYPF6LjTMQTxpPNUuAcXn8gzZEBsiydwBDcHwl9UiuSEghpZSIRjVlcG2vmLwhUT3gkkHTxAPA3VMsM7FdiS4SLkV3boO6jaHMRcfAcomZTFSRnnUCUYEvr3ztCMIu+g+NF+1GkPGZ0Jt5LiIHKLfeQsHl89f/31zSmRnEUXqB9o+uPQza3uDsPNII7pBWJgLKyKV8hK7KwGY9KjwEeGQksCvyuENUHNh/NXOH4Qp+sYgeBNKPdMM0Av4UyysW88fLx8pEKRzQ/55rbn1s8ABE3rfPrP/RIn+QPyQ2x1o461IxTkPrTpSWuWyaLu81IbvBQ2xri1We0ucaRJ3FZuw2RDqjbdgU6BJc48SeZ82oMDkNUDI3ibHk=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190710100206.yls4piu36wciefbz@shell.armlinux.org.uk>
-User-Agent: NeoMutt/20170113 (1.7.2)
+X-MS-Exchange-CrossTenant-Network-Message-Id: be8102ad-26b5-4a41-7e7a-08d7052216d6
+X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Jul 2019 10:33:46.5417 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: joabreu@synopsys.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN8PR12MB3603
+X-OriginatorOrg: synopsys.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_032626_411007_BF4A7639 
-X-CRM114-Status: GOOD (  12.06  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190710_033400_275144_669280E3 
+X-CRM114-Status: UNSURE (   8.53  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -89,38 +139,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Olof Johansson <olof@lixom.net>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Arnd Bergmann <arnd@arndb.de>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+Cc: "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "David S. Miller" <davem@davemloft.net>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 10, 2019 at 11:02:06AM +0100, Russell King - ARM Linux admin wrote:
-> On Wed, Jul 10, 2019 at 06:54:06PM +0900, Masahiro Yamada wrote:
-> > On Wed, Jul 10, 2019 at 5:23 PM Russell King - ARM Linux admin
-> > <linux@armlinux.org.uk> wrote:
-> > > On Wed, Jul 10, 2019 at 01:30:24PM +0900, Masahiro Yamada wrote:
-> > > > $(wildcard ...) checks if this directory exists in the *objtree*,
-> > > > while scripts/Makefile.build needs to include
-> > > > arch/arm/fastfpe/Makefile from *srctree*.
-> > > >
-> > > > I think the correct code should be like follows:
-> > > >
-> > > > # Do we have FASTFPE?
-> > > > FASTFPE :=arch/arm/fastfpe
-> > > > ifneq ($(wildcard $(srctree)/$(FASTFPE)),)
-> > > > FASTFPE_OBJ :=$(FASTFPE)/
-> > > > endif
+From: Joe Perches <joe@perches.com>
+Date: Jul/10/2019, 06:04:21 (UTC+00:00)
 
-That does indeed work for split object builds.
- 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+> Arguments are supposed to be ordered high then low.
+> 
+> Signed-off-by: Joe Perches <joe@perches.com>
+
+If you submit another version please add:
+
+Fixes: 293e4365a1ad ("stmmac: change descriptor layout")
+Fixes: 9f93ac8d4085 ("net-next: stmmac: Add dwmac-sun8i")
+
+---
+Thanks,
+Jose Miguel Abreu
 
 _______________________________________________
 linux-arm-kernel mailing list
