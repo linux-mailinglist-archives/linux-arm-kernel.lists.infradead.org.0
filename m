@@ -2,74 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6D68641AA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 09:08:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2CEA2641AF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 09:08:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=l7UmJ6y85lz64eXlSrp7hO7ZrF0ou/r0wQxtGx4uQJI=; b=VvRhwNhnGY5y1t
-	0g73DNxdBb46ks2BCfaI55Vfqzhy9AsK8x6TapJqUq+Fw/ru6Y6pY5QBVknfy+AzpUe8hiKRkUgGj
-	F1YimiZGa6ngYeJ7gYwqg9DVe6etZDstKOzm1b8Cz9HDhwU9VWJmrsKTU5gzgF2Gp5q0odIRJIOUR
-	vHvVWXTXrUuvuUJ31mBbERPIiwx9o5gVs528rqOCSgkTcZOmnnix//A3uh31oX740WJApwBAIJIRp
-	fHXXRZk3DjcG9DxOJqy8Q26q51XMrNp0jphZsDDM287PgdAPlin+gX+M18/egV/Z4N0pknwk0tURU
-	OdyUwAqWj/DDlUp91gWQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Bi7J2m2tdwhozPZJhHxZYBSGPNyFSH0qXqIAH2C8m6w=; b=WWwvqzWI+ydL1h
+	usg3uMgGaR42FB6hL3aRlxTHqa2hUDoS8uOyFRVl9w0QJXzkBWrmF8L3HGjnGcCBIJFBa12YnBQMX
+	ngVLURvfxoh1adGitz41PORtXhQGPAAsXyzRAnqJSpZm/G62JbARKbiGKyvb9ElQR7PtvZ2nIG3rD
+	Iy8EQ0hxz018RAmCtPX11mVE+qPyR+R0NGlOuJ2n/6ScAfIOs5LfY5jvDFFzCHzOyL8GjxZ6y3aq7
+	tYwA+tUFNkjdDtuFaAIWeQM6cOjnUbF6DoAwW4J5k3wh5T3ml2vn40WzE6hEzI5uEt0Uykx+c41Eu
+	P5WDnk0iAI6ht7Y1Dd9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hl6iH-00050x-GQ; Wed, 10 Jul 2019 07:08:25 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1hl6if-0005G1-VN; Wed, 10 Jul 2019 07:08:50 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hl6i4-00050G-Lh
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 07:08:14 +0000
-Received: by mail-pf1-x442.google.com with SMTP id r1so626210pfq.12
+ id 1hl6iI-0005BD-MG
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 07:08:28 +0000
+Received: by mail-pf1-x444.google.com with SMTP id m30so638027pff.8
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 10 Jul 2019 00:08:11 -0700 (PDT)
+ Wed, 10 Jul 2019 00:08:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=l6Pj1C/JhLO9pIuL0o6GitOicJcsYgk0aas0LOHb1To=;
- b=QvHVOdXMpWGBXu6BQw2jb5hQWR/4IGqs4UNl0MT4bqGhu5Iajbok3zWGlXLBLlAlA9
- 262x1usDPZZzrmJK/3Rcc1CmfG+FofUbFhNMjNYCW/5S2inZrI0tZc+5f/Yr3ArqOg1U
- UezUTifar1c9zaRSMgeuuMvYvOFH23m9ls4vM=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=cCvW1ogs/lTm73TtJzo66QSUw2j4h+OYuX2M2HCPPOg=;
+ b=Y62o3+/K7I0CJx/JJA7oL5mmokKI12T+OpoAueo3EaQsxnlFKh9D9x8p0vtZ6RgZjF
+ sj2E1ecgK749DWhXuEWt5u5UcjCOzbSDX79v0yRmu0Yzxb8M9FQEZzjt0regbofbHgZr
+ VPWXrcRfBm46ama49cSnvvqWl7G3OHY0s8+IE=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=l6Pj1C/JhLO9pIuL0o6GitOicJcsYgk0aas0LOHb1To=;
- b=f2OSyIQq2tt91ZagFVo1Du5Ihcwzj0wVXM3EGTNMxq6YUv4bDcdKwxzx8kj/eIpXYu
- Ag53HrhcvHqH60sbAQsBhe4IDtVMPJ4aiu1r6cBXRTNowabSTFkEbCBWZiF4WOygwFMF
- KB4ypNHQBZgn0IfkHYn3HVt8gYT+A0ywzu/pOxzTG5QdlQhs1H63wK8gjgggE9AVAtyn
- Kg8kZZG71FdZz0sd8hU6MfItnZ6bMxugXZ9GnfhdANURIXVx42FR6rDc27JjrSaATi6w
- /xkyySqpCQXvoSeNYnmDIXExl61oXhx8bquxUYT8g8XEADPwlB7Fnd2u6t3u24BFMfma
- Qi/A==
-X-Gm-Message-State: APjAAAWq4FoK0ac0Kk+Um7Lsnru1h4qh1OeTYEElBOaes/KMsjn46X0w
- Hh+gg7csxPa0Iv1M2n3ZNJjGPw==
-X-Google-Smtp-Source: APXvYqyptBK3QFmyTbtCBUlG3BZ20BDJXUXcje4pWPJB6gSPNpTgfvwvrkqkt0izgOTaBRL2tpwJwQ==
-X-Received: by 2002:a65:500d:: with SMTP id f13mr34874390pgo.151.1562742491443; 
- Wed, 10 Jul 2019 00:08:11 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=cCvW1ogs/lTm73TtJzo66QSUw2j4h+OYuX2M2HCPPOg=;
+ b=M7Elrpi3Y8pU3Ka+gChAlGQDiv2QwnyZfimFfQ1NsW6s4l7uAgO8V6MeunEqc7WPrx
+ eU9EQH0npNj8CN3ywNYyVVe7sKpsf7koT5JMeRM6DZPTGeFroaGO7xfb1VHldl6tQRWk
+ T4XWbqegFis4Ob7m9+/gBhq8V5qVt/GUrpPsESIB7Yj+ru81X3c1dkKpe/W9lplBnjfd
+ x8d6ocKodKVu5ph4wbpi7RuRUGz19Xnuj9GfEuY0S4+UZY127roCr1sPzrbPWhsJzOQX
+ uQk3i4M/GIxcyPnh+gWlomMbAA2lkfJpTCnGR+t03LAFXiQGhOvDmeSCOuQohMeQfIYD
+ A/hQ==
+X-Gm-Message-State: APjAAAWz0xJ1mdDNGBUwIRIniXlQc8NG914fQGG24/0ZPXUrEqEhzn4s
+ YJhz4+gY4MfjvZm/kwyTw91WMg==
+X-Google-Smtp-Source: APXvYqyCqmkAcoKWAbwVtBp5p87wBXU2Zz+9ASx1Yaceqm53V/HNiYKnnezjpL3xe0B/FfDaIEOdCQ==
+X-Received: by 2002:a63:5610:: with SMTP id k16mr35557003pgb.335.1562742506079; 
+ Wed, 10 Jul 2019 00:08:26 -0700 (PDT)
 Received: from localhost ([2401:fa00:1:b:e688:dfd2:a1a7:2956])
- by smtp.gmail.com with ESMTPSA id h9sm1150976pgk.10.2019.07.10.00.08.07
+ by smtp.gmail.com with ESMTPSA id s7sm1000140pjn.28.2019.07.10.00.08.22
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 10 Jul 2019 00:08:10 -0700 (PDT)
+ Wed, 10 Jul 2019 00:08:25 -0700 (PDT)
 From: Cheng-Yi Chiang <cychiang@chromium.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v2 0/4] Add HDMI jack support on RK3288
-Date: Wed, 10 Jul 2019 15:07:47 +0800
-Message-Id: <20190710070751.260061-1-cychiang@chromium.org>
+Subject: [PATCH v2 1/4] ASoC: hdmi-codec: Add an op to set callback function
+ for plug event
+Date: Wed, 10 Jul 2019 15:07:48 +0800
+Message-Id: <20190710070751.260061-2-cychiang@chromium.org>
 X-Mailer: git-send-email 2.22.0.410.gd8fdbe21b5-goog
+In-Reply-To: <20190710070751.260061-1-cychiang@chromium.org>
+References: <20190710070751.260061-1-cychiang@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_000812_735021_95E7EB70 
-X-CRM114-Status: GOOD (  11.52  )
+X-CRM114-CacheID: sfid-20190710_000827_029271_1C0FD95E 
+X-CRM114-Status: GOOD (  15.32  )
 X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -108,44 +111,128 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch series supports HDMI jack reporting on RK3288, which uses
-DRM dw-hdmi driver and hdmi-codec codec driver.
+Add an op in hdmi_codec_ops so codec driver can register callback
+function to handle plug event.
 
-The previous discussion about reporting jack status using hdmi-notifier
-and drm_audio_component is at
+Driver in DRM can use this callback function to report connector status.
 
-https://lore.kernel.org/patchwork/patch/1083027/
+Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
+---
+ include/sound/hdmi-codec.h    | 16 +++++++++++++
+ sound/soc/codecs/hdmi-codec.c | 45 +++++++++++++++++++++++++++++++++++
+ 2 files changed, 61 insertions(+)
 
-The new approach is to use a callback mechanism that is
-specific to hdmi-codec.
-
-Changes from v1 to v2:
-- hdmi-codec.c: cleanup the sequence of hdmi_codec_jack_report and
-  hdmi_codec_set_jack_detect.
-- dw-hdmi.c: change argument of hdmi_codec_plugged_cb so it takes a generic
-  device which has hdmi_codec_priv in its drvdata.
-- dw-hdmi.c: add a helper function handle_plugged_change to check audio
-  platform device and codec platform device before calling callback.
-- dw-hdmi-c: avoid setting callback function if audio platform device or
-  codec platform device is missing.
-- rockchip_max98090: fix the checking of return code when setting sysclk
-  on cpu_dai and codec_dai. cpu_dai error should be reported. For HDMI
-  codec_dai, there is no need to set sysclk.
-
-Cheng-Yi Chiang (4):
-  ASoC: hdmi-codec: Add an op to set callback function for plug event
-  drm: bridge: dw-hdmi: Report connector status using callback
-  ASoC: rockchip_max98090: Add dai_link for HDMI
-  ASoC: rockchip_max98090: Add HDMI jack support
-
- .../gpu/drm/bridge/synopsys/dw-hdmi-audio.h   |   3 +
- .../drm/bridge/synopsys/dw-hdmi-i2s-audio.c   |  10 ++
- drivers/gpu/drm/bridge/synopsys/dw-hdmi.c     |  55 ++++++++-
- include/sound/hdmi-codec.h                    |  16 +++
- sound/soc/codecs/hdmi-codec.c                 |  45 +++++++
- sound/soc/rockchip/rockchip_max98090.c        | 116 ++++++++++++++----
- 6 files changed, 221 insertions(+), 24 deletions(-)
-
+diff --git a/include/sound/hdmi-codec.h b/include/sound/hdmi-codec.h
+index 7fea496f1f34..9a8661680256 100644
+--- a/include/sound/hdmi-codec.h
++++ b/include/sound/hdmi-codec.h
+@@ -47,6 +47,9 @@ struct hdmi_codec_params {
+ 	int channels;
+ };
+ 
++typedef void (*hdmi_codec_plugged_cb)(struct device *dev,
++				      bool plugged);
++
+ struct hdmi_codec_pdata;
+ struct hdmi_codec_ops {
+ 	/*
+@@ -88,6 +91,13 @@ struct hdmi_codec_ops {
+ 	 */
+ 	int (*get_dai_id)(struct snd_soc_component *comment,
+ 			  struct device_node *endpoint);
++
++	/*
++	 * Hook callback function to handle connector plug event.
++	 * Optional
++	 */
++	int (*hook_plugged_cb)(struct device *dev, void *data,
++			       hdmi_codec_plugged_cb fn);
+ };
+ 
+ /* HDMI codec initalization data */
+@@ -99,6 +109,12 @@ struct hdmi_codec_pdata {
+ 	void *data;
+ };
+ 
++struct snd_soc_component;
++struct snd_soc_jack;
++
++int hdmi_codec_set_jack_detect(struct snd_soc_component *component,
++			       struct snd_soc_jack *jack);
++
+ #define HDMI_CODEC_DRV_NAME "hdmi-audio-codec"
+ 
+ #endif /* __HDMI_CODEC_H__ */
+diff --git a/sound/soc/codecs/hdmi-codec.c b/sound/soc/codecs/hdmi-codec.c
+index 0bf1c8cad108..32bf7441be5c 100644
+--- a/sound/soc/codecs/hdmi-codec.c
++++ b/sound/soc/codecs/hdmi-codec.c
+@@ -7,6 +7,7 @@
+ #include <linux/module.h>
+ #include <linux/string.h>
+ #include <sound/core.h>
++#include <sound/jack.h>
+ #include <sound/pcm.h>
+ #include <sound/pcm_params.h>
+ #include <sound/soc.h>
+@@ -274,6 +275,8 @@ struct hdmi_codec_priv {
+ 	struct snd_pcm_chmap *chmap_info;
+ 	unsigned int chmap_idx;
+ 	struct mutex lock;
++	struct snd_soc_jack *jack;
++	unsigned int jack_status;
+ };
+ 
+ static const struct snd_soc_dapm_widget hdmi_widgets[] = {
+@@ -663,6 +666,48 @@ static int hdmi_dai_probe(struct snd_soc_dai *dai)
+ 	return 0;
+ }
+ 
++static void hdmi_codec_jack_report(struct hdmi_codec_priv *hcp,
++				   unsigned int jack_status)
++{
++	if (hcp->jack && jack_status != hcp->jack_status) {
++		snd_soc_jack_report(hcp->jack, jack_status, SND_JACK_LINEOUT);
++		hcp->jack_status = jack_status;
++	}
++}
++
++static void plugged_cb(struct device *dev, bool plugged)
++{
++	struct hdmi_codec_priv *hcp = dev_get_drvdata(dev);
++
++	if (plugged)
++		hdmi_codec_jack_report(hcp, SND_JACK_LINEOUT);
++	else
++		hdmi_codec_jack_report(hcp, 0);
++}
++
++/**
++ * hdmi_codec_set_jack_detect - register HDMI plugged callback
++ * @component: the hdmi-codec instance
++ * @jack: ASoC jack to report (dis)connection events on
++ */
++int hdmi_codec_set_jack_detect(struct snd_soc_component *component,
++			       struct snd_soc_jack *jack)
++{
++	struct hdmi_codec_priv *hcp = snd_soc_component_get_drvdata(component);
++	int ret = -EOPNOTSUPP;
++
++	if (hcp->hcd.ops->hook_plugged_cb) {
++		hcp->jack = jack;
++		ret = hcp->hcd.ops->hook_plugged_cb(component->dev->parent,
++						    hcp->hcd.data,
++						    plugged_cb);
++		if (ret)
++			hcp->jack = NULL;
++	}
++	return ret;
++}
++EXPORT_SYMBOL_GPL(hdmi_codec_set_jack_detect);
++
+ static int hdmi_dai_spdif_probe(struct snd_soc_dai *dai)
+ {
+ 	struct hdmi_codec_daifmt *cf = dai->playback_dma_data;
 -- 
 2.22.0.410.gd8fdbe21b5-goog
 
