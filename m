@@ -2,52 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6BF1E64771
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 15:46:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 58ECB64779
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 15:48:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=U/SGYphgF6q0LuvN5+WWVMjkGhGKeBN6k9A4PcWtikA=; b=ha8Jmc1t9pysHg
-	bOii03GMe503/I1ZnlGpiAA57YrRgExda5fHh+/sWV5lEM1fMh2yq23/2Hsyx7mscF4R1oWvomu6S
-	eWLMyeiWNn3xJqR5uov3rP21+uvR0HF9uynhkbiaQKnbTj/fk3xMRC58MXB5fvNjzvFNH8EyQgHCs
-	WSDyuilI3cfomnNpwkmEEc7LRSQxQH9hSPHkbbH6VSyeWAXUAy6pzqfNYFex6i9oxztiBtOfaeLxU
-	gUPbFBQtfLRWKVbEKdY0tPA9jAXNOVc/XUZu8lz2YJ2/7sZtfl2PuOaUj5vj9N0MtdWfM3DUb3YpY
-	s5Yw7G7+7igX7mYkRauw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8HkMp6QRzbbzncT0+Iv90+QBLkANxil3gT/mnfjb1Mo=; b=tg2JwXWJ3HDlOE
+	Jg7sW/K0SDdYml1Rjo4Z1kwDkWCUejaQ+lwfod8TRZG6umWEXo3P4eVsy3jFZmj1Ieg1l/gamS7zc
+	4w3/S8kNyKR9mefSm42wPKSfXzp/6hk/jf54mqh77VLSBt5C0vEccm4aKUmobnh4QRTueIGPrvMjd
+	ffKVdRNz+4m95eaCeOQf7U1pUTA5E9vhTE5ddWI+D592UBJGfOya6PMGEAQkeGlafy77zVGwxb6i7
+	mfF2eRvxHFWIqSyk8SRQhIV8frIGGjC7T9yv0AQrfzfaM7ws3507xWDuHiCD4b74AXyx4vBhR84zO
+	HZfApcF2IbrTkeK/sUjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlCvb-0003pZ-1W; Wed, 10 Jul 2019 13:46:35 +0000
-Received: from relay9-d.mail.gandi.net ([217.70.183.199])
+	id 1hlCx0-0004io-UA; Wed, 10 Jul 2019 13:48:03 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlCtT-0001ws-KX
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 13:44:37 +0000
-X-Originating-IP: 92.137.69.152
+ id 1hlCu2-0002JA-5f
+ for linux-arm-kernel@bombadil.infradead.org; Wed, 10 Jul 2019 13:44:58 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+ Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=iCRO+Ccb6/e5K8vBKuimaU4NfVfwHl8O27fk2aAV3qo=; b=BRqYF/oag1jtONwHHZJPg/1LtV
+ fuaNO6/WdvtIFPC1yccRdM4LVa+sV4RlSSOJkGIrDQ65GGW9oqoBQawKQBKR9YuUSZiDoxpBDjFKn
+ OeW3UYCSi/xAmQJn9Ituq91qOwPnN6nI+9caJlLrzTjlnneOr26y+1xvP5xpPTJQZO/XEwdLQxLqX
+ kKPZQY0+PfstAQJ3NdgQGoHW6uk9jKpoWjABJm6Ae8BMKqURcKhn4/9G7UDoHEfeHLeYk9mNdwJfY
+ m4susdrn81vUdbNoNU0PulZc/u+MTLU5h4PMkuv8htLXSX4y5t9VW4JEabhr3kv7DxT/kSNjpYp1q
+ feCgVviA==;
+Received: from relay12.mail.gandi.net ([217.70.178.232])
+ by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hlCu5-0008Ad-Qr
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 13:45:03 +0000
 Received: from localhost (alyon-656-1-672-152.w92-137.abo.wanadoo.fr
  [92.137.69.152]) (Authenticated sender: gregory.clement@bootlin.com)
- by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 3A60CFF81A;
- Wed, 10 Jul 2019 13:44:09 +0000 (UTC)
+ by relay12.mail.gandi.net (Postfix) with ESMTPSA id 6B1B9200017;
+ Wed, 10 Jul 2019 13:44:11 +0000 (UTC)
 From: Gregory CLEMENT <gregory.clement@bootlin.com>
 To: Stephen Boyd <sboyd@kernel.org>, Mike Turquette <mturquette@baylibre.com>,
  linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: [PATCH v7 0/6] Add CPU clock support for Armada 7K/8K
-Date: Wed, 10 Jul 2019 15:43:40 +0200
-Message-Id: <20190710134346.30239-1-gregory.clement@bootlin.com>
+Subject: [PATCH v7 1/6] dt-bindings: ap806: add the cluster clock node in the
+ syscon file
+Date: Wed, 10 Jul 2019 15:43:41 +0200
+Message-Id: <20190710134346.30239-2-gregory.clement@bootlin.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190710134346.30239-1-gregory.clement@bootlin.com>
+References: <20190710134346.30239-1-gregory.clement@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_064425_646474_65CC5C04 
-X-CRM114-Status: GOOD (  17.48  )
+X-CRM114-CacheID: sfid-20190710_144501_910242_715DFA05 
+X-CRM114-Status: GOOD (  12.14  )
 X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-0.7 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.199 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ low trust [217.70.178.232 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,88 +91,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
+Document the device tree binding for the cluster clock controllers found
+in the Armada 7K/8K SoCs.
 
-This is the seventh version of a series allowing to manage the cpu
-clock for Armada 7K/8K.
+Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
+---
+ .../arm/marvell/ap806-system-controller.txt   | 31 +++++++++++++++++--
+ 1 file changed, 29 insertions(+), 2 deletions(-)
 
-For these SoCs, the CPUs share the same clock by cluster, so actually
-the clock management is done at cluster level.
-
-As for the other Armada 7K/8K clocks it is possible to have multiple
-AP so here again we need to have unique name: the purpose of the second
-patch is to share a common code which will be used in 3 drivers.
-
-The last 2 patch enable the driver at dt and platform level and will
-be applied through the mvebu subsystem.
-
-Changelog v6->v7:
-
-   - Update binding documentation for the AP clock to mention that
-     they expose reference clocks for the cluster to make distinction
-     with the cluster clocks themselves exposed by the cpu clock.
-
-   - Add precision on the number of parent clock in the binding
-     documentation.
-
-   - Also fix the example by using the reg address in the node name.
-
-Changelog v5->v6:
-
-   - Restraint the reg property for the child node to not overlap the
-     other node.
-   - Give a specific compatible to ap_syscon1.
-
-Changelog v4->v5:
-
- - As requested by the device tree maintainer make the reg property
-   mandatory
-
- - Updated the device tree files accordingly with the new binding
-
-Changelog v3->v4:
- - Rebased on v5.1-rc1
- - Mention in the binding that a reg property can be used to make the
-   device tree maintainer happy in the hope that there will be finally
-   a review on this patch blocking the whole series.
-
-Changelog v2->v3:
- - Add back the first patch documenting the binding
-
-Changelog v1->v2:
- - Header cleanup
- - Use unsigned int instead of it for cluster member of the ap_cpu_clk struct
- - Use clk_hw instead of clk
- - Use regmap_read_poll_timeout
- - Use for_each_of_cpu_node
- - Remove unnecessary WARN_ON()
- - Remove headers from armada_ap_cp_helper.h
- - Few other minor cleanup
-
-Gregory CLEMENT (6):
-  dt-bindings: ap806: add the cluster clock node in the syscon file
-  clk: mvebu: add helper file for Armada AP and CP clocks
-  clk: mvebu: add CPU clock driver for Armada 7K/8K
-  clk: mvebu: ap806: Fix clock name for the cluster
-  arm64: marvell: enable the  Armada 7K/8K CPU clk driver
-  arm64: dts: marvell: Add cpu clock node on Armada 7K/8K
-
- .../arm/marvell/ap806-system-controller.txt   |  31 ++-
- arch/arm64/Kconfig.platforms                  |   1 +
- .../boot/dts/marvell/armada-ap806-quad.dtsi   |   4 +
- arch/arm64/boot/dts/marvell/armada-ap806.dtsi |   7 +
- drivers/clk/mvebu/Kconfig                     |   8 +
- drivers/clk/mvebu/Makefile                    |   2 +
- drivers/clk/mvebu/ap-cpu-clk.c                | 259 ++++++++++++++++++
- drivers/clk/mvebu/ap806-system-controller.c   |  24 +-
- drivers/clk/mvebu/armada_ap_cp_helper.c       |  30 ++
- drivers/clk/mvebu/armada_ap_cp_helper.h       |  11 +
- drivers/clk/mvebu/cp110-system-controller.c   |  32 +--
- 11 files changed, 365 insertions(+), 44 deletions(-)
- create mode 100644 drivers/clk/mvebu/ap-cpu-clk.c
- create mode 100644 drivers/clk/mvebu/armada_ap_cp_helper.c
- create mode 100644 drivers/clk/mvebu/armada_ap_cp_helper.h
-
+diff --git a/Documentation/devicetree/bindings/arm/marvell/ap806-system-controller.txt b/Documentation/devicetree/bindings/arm/marvell/ap806-system-controller.txt
+index 7b8b8eb0191f..4f21c1024073 100644
+--- a/Documentation/devicetree/bindings/arm/marvell/ap806-system-controller.txt
++++ b/Documentation/devicetree/bindings/arm/marvell/ap806-system-controller.txt
+@@ -21,8 +21,8 @@ Clocks:
+ The Device Tree node representing the AP806 system controller provides
+ a number of clocks:
+ 
+- - 0: clock of CPU cluster 0
+- - 1: clock of CPU cluster 1
++ - 0: reference clock of CPU cluster 0
++ - 1: reference clock of CPU cluster 1
+  - 2: fixed PLL at 1200 Mhz
+  - 3: MSS clock, derived from the fixed PLL
+ 
+@@ -143,3 +143,30 @@ ap_syscon1: system-controller@6f8000 {
+ 		#thermal-sensor-cells = <1>;
+ 	};
+ };
++
++Cluster clocks:
++---------------
++
++Device Tree Clock bindings for cluster clock of AP806 Marvell. Each
++cluster contain up to 2 CPUs running at the same frequency.
++
++Required properties:
++- compatible: must be  "marvell,ap806-cpu-clock";
++- #clock-cells : should be set to 1.
++
++- clocks : shall be the input parent clock(s) phandle for the clock
++           (one per cluster)
++
++- reg: register range associated with the cluster clocks
++
++ap_syscon1: system-controller@6f8000 {
++	compatible = "marvell,armada-ap806-syscon1", "syscon", "simple-mfd";
++	reg = <0x6f8000 0x1000>;
++
++	cpu_clk: clock-cpu@278 {
++		compatible = "marvell,ap806-cpu-clock";
++		clocks = <&ap_clk 0>, <&ap_clk 1>;
++		#clock-cells = <1>;
++		reg = <0x278 0xa30>;
++	};
++};
 -- 
 2.20.1
 
