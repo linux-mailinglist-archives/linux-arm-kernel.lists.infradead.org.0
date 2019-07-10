@@ -2,59 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E129964C0A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 20:25:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9BB164C15
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 20:29:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y4N2V/ynHZg+aUI4T/QDTKCllXPL+XHQeOmCCrltbYg=; b=uYU+U24MgvY4mH
-	FKj+dWHY6w0GGwR5j0XraHvGFsyNOklsCqwqnV/HtdR5wB/KW751WnJRmlO/jODzttTp4YuBUw4GL
-	ii7XtRl8VRiM0IUbCXu+hMy6sSvTtMUjNg0p+5CaWkJPpiGH58aC8FfASoFZAoxnTzLzDLsBgQE6J
-	bpXQzAsU5RFQzghwF2Q2IBFTTIpohh+zznrVxt6DMlJ6Grt9lZqMW4U1IjRW+3fncjxtNEuescBr7
-	7tO6fl94PzdFmQe4u8en/r+melfqDOH1QN4KmFc8WUcKCL1/WmK3tAq9no9nm2sTtntSr7QxnlLGO
-	7vcEb1aB9a6sVC/zSmZQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=g89w7pfNZHh+6euP/IKh1GY/87TYGk2YnW78uokcbNw=; b=k2q7pSmx6KuAFN
+	gheT93BqU+wDXU8TygwrAqiHYKYHLpSNFwjjlA2ZeuQbCzitX9FdV07GE7jWpvOjtXy8j0jWuzE7n
+	58vpdBzi65VC96OQWG+C1iyedxslhGBUYjDrjhLCZ2qSSVcKAF6GhLpqWfcB7D/MyzzC0BO+qV1x8
+	SbNbAfmDdDYdi9Zl2QN4uc/GHnxTbaBqQeIG1r3mEpYkDv62HAMSamKoI4Jnv9DzjFykVrlIvKgr9
+	GltGd1KfvRoSLJh1PgaW/BvX5TveeXGitJ3UMnHRq+JqKk8t9mcUNMXcgeH2mRz5NWu4hYiTDzOzz
+	Mcgd5CVjIPwF4f0etHdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlHHe-0002LW-8Q; Wed, 10 Jul 2019 18:25:38 +0000
-Received: from relay.sw.ru ([185.231.240.75])
+	id 1hlHL4-00047z-Va; Wed, 10 Jul 2019 18:29:11 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlHGl-0002J8-2Z; Wed, 10 Jul 2019 18:24:45 +0000
-Received: from [172.16.25.12] by relay.sw.ru with esmtp (Exim 4.92)
- (envelope-from <aryabinin@virtuozzo.com>)
- id 1hlHGV-0006Kk-L9; Wed, 10 Jul 2019 21:24:27 +0300
-Subject: Re: [PATCH v3] kasan: add memory corruption identification for
- software tag-based mode
-To: Walter Wu <walter-zh.wu@mediatek.com>, Dmitry Vyukov <dvyukov@google.com>
-References: <20190613081357.1360-1-walter-zh.wu@mediatek.com>
- <da7591c9-660d-d380-d59e-6d70b39eaa6b@virtuozzo.com>
- <1560447999.15814.15.camel@mtksdccf07> <1560479520.15814.34.camel@mtksdccf07>
- <1560744017.15814.49.camel@mtksdccf07>
- <CACT4Y+Y3uS59rXf92ByQuFK_G4v0H8NNnCY1tCbr4V+PaZF3ag@mail.gmail.com>
- <1560774735.15814.54.camel@mtksdccf07> <1561974995.18866.1.camel@mtksdccf07>
- <CACT4Y+aMXTBE0uVkeZz+MuPx3X1nESSBncgkScWvAkciAxP1RA@mail.gmail.com>
- <ebc99ee1-716b-0b18-66ab-4e93de02ce50@virtuozzo.com>
- <1562640832.9077.32.camel@mtksdccf07>
-From: Andrey Ryabinin <aryabinin@virtuozzo.com>
-Message-ID: <d9fd1d5b-9516-b9b9-0670-a1885e79f278@virtuozzo.com>
-Date: Wed, 10 Jul 2019 21:24:22 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ id 1hlHKn-00047A-Eg
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 18:28:55 +0000
+Received: by mail-pf1-x444.google.com with SMTP id c73so1464597pfb.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 10 Jul 2019 11:28:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=X2wPmom3sJSwZ6VYG/6JKsbwq16BGxAUHYVA29t4WUs=;
+ b=bdE1SnlndmJmWXI4tshCAMHf1y6EjPIbK8Fbzi7N09M0t7c7CXz9jPaAF+U4zpK2Ar
+ qgCiZ/PtW4leBd9a9AxyI8AX8KAj2qjw9PES2Zr2jdM0CYFXuuMwafu1VW3XyuIX85ze
+ WyeGDguVLVu37gQ+z7B90eyFqfNkom1MP3LikG5lNXvgTOw7RM96ogRtu5S7/ndJUKBX
+ SFSf82JGBHHIEmapCMaggiqsSGmD80h/HwjFTvWjD5i1CXq8qlzCKfCl22YLtstT+vsh
+ abGOlhy9STPiO77wHf6EZUAMV63/A7eAJBWH/kg8JCzyNogW1v4N+kxJ1fDAn8+Wu7uz
+ ddfQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=X2wPmom3sJSwZ6VYG/6JKsbwq16BGxAUHYVA29t4WUs=;
+ b=BUgDCBRVcEcV2XLmDL4zlplY2aKj/OOf2ILYDdaOYNB5ZXcrXdZjqF+Jfiby3pUtFQ
+ r1yB5ep/jl3WruFbCVkv0De5So3ZwtticeKWZvAj3JiWO70VfsxW62ZwBP+DxE7e1o+K
+ vv1F327qMpO0tFSK++X0WxrkzCeeGiq93GCj5HMmVd6zLtxeaYguIpIp9CqNkI0PEWNZ
+ VcDB4kBL7Zj+PqGHci9l4/XpqQgFa/V989JsPm15ia47h9Eg325yYYC0G7X72N6YAYzr
+ 6aTYfYPEsqWjXg5SAc6fABIfJ9nB9yYseSV/I8RySoC2pKe/T0h3m5VaSqkNZnVWyogu
+ 2Q6g==
+X-Gm-Message-State: APjAAAVlQWwn8OJQogHx+zzqj61GrhQO+/FdSVIe1M6vQR+kc8EMsBCy
+ 2WTblMnUyOTVAE4fC3yrybw=
+X-Google-Smtp-Source: APXvYqzxVJwORPZh7pa+tFmbtMmG7GfDyUMvQifbBp9D3WGXW+RU3JFqDMMKkm/CNidWkfL1FXSk/Q==
+X-Received: by 2002:a65:454c:: with SMTP id x12mr38500524pgr.354.1562783332011; 
+ Wed, 10 Jul 2019 11:28:52 -0700 (PDT)
+Received: from localhost ([2620:15c:f:fd00:4c3b:936:8dc5:a2ad])
+ by smtp.gmail.com with ESMTPSA id d16sm2943054pgb.4.2019.07.10.11.28.50
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Wed, 10 Jul 2019 11:28:51 -0700 (PDT)
+From: Rob Clark <robdclark@gmail.com>
+To: iommu@lists.linux-foundation.org
+Subject: [PATCH v2] iommu: add support for drivers that manage iommu explicitly
+Date: Wed, 10 Jul 2019 11:28:30 -0700
+Message-Id: <20190710182844.25032-1-robdclark@gmail.com>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190702202631.32148-2-robdclark@gmail.com>
+References: <20190702202631.32148-2-robdclark@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <1562640832.9077.32.camel@mtksdccf07>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_112443_128648_2D8DD351 
-X-CRM114-Status: GOOD (  12.67  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190710_112853_495476_1429125A 
+X-CRM114-Status: GOOD (  17.46  )
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robdclark[at]gmail.com)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,70 +99,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wsd_upstream <wsd_upstream@mediatek.com>,
- "Jason A . Donenfeld" <Jason@zx2c4.com>, Vasily Gorbik <gor@linux.ibm.com>,
- Arnd Bergmann <arnd@arndb.de>, Linux-MM <linux-mm@kvack.org>,
- Andrey Konovalov <andreyknvl@google.com>, LKML <linux-kernel@vger.kernel.org>,
- kasan-dev <kasan-dev@googlegroups.com>, Pekka Enberg <penberg@kernel.org>,
- Martin Schwidefsky <schwidefsky@de.ibm.com>,
- Miles Chen <miles.chen@mediatek.com>, Alexander Potapenko <glider@google.com>,
- David Rientjes <rientjes@google.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
- Christoph Lameter <cl@linux.com>, Joonsoo Kim <iamjoonsoo.kim@lge.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Rob Clark <robdclark@chromium.org>, aarch64-laptops@lists.linaro.org,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ Joerg Roedel <joro@8bytes.org>,
+ "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Robin Murphy <robin.murphy@arm.com>, Sudeep Holla <sudeep.holla@arm.com>,
+ Andy Shevchenko <andy.shevchenko@gmail.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Joe Perches <joe@perches.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
+ Bartosz Golaszewski <brgl@bgdev.pl>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+From: Rob Clark <robdclark@chromium.org>
 
+Avoid attaching any non-driver managed domain if the driver indicates
+that it manages the iommu directly.
 
-On 7/9/19 5:53 AM, Walter Wu wrote:
-> On Mon, 2019-07-08 at 19:33 +0300, Andrey Ryabinin wrote:
->>
->> On 7/5/19 4:34 PM, Dmitry Vyukov wrote:
->>> On Mon, Jul 1, 2019 at 11:56 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
+This avoids a problem on devices where the bootloader takes the SMMU out
+of bypass and enables scanout, such as is the case on snapdragon aarch64
+laptops and newer snapdragon android devices.  Attaching an IDENTITY or
+DMA domain before the driver has a chance to intervene will break efifb
+scanout and start triggering iommu faults.
 
->>>
->>> Sorry for delays. I am overwhelm by some urgent work. I afraid to
->>> promise any dates because the next week I am on a conference, then
->>> again a backlog and an intern starting...
->>>
->>> Andrey, do you still have concerns re this patch? This change allows
->>> to print the free stack.
->>
->> I 'm not sure that quarantine is a best way to do that. Quarantine is made to delay freeing, but we don't that here.
->> If we want to remember more free stacks wouldn't be easier simply to remember more stacks in object itself?
->> Same for previously used tags for better use-after-free identification.
->>
-> 
-> Hi Andrey,
-> 
-> We ever tried to use object itself to determine use-after-free
-> identification, but tag-based KASAN immediately released the pointer
-> after call kfree(), the original object will be used by another
-> pointer, if we use object itself to determine use-after-free issue, then
-> it has many false negative cases. so we create a lite quarantine(ring
-> buffers) to record recent free stacks in order to avoid those false
-> negative situations.
+If the driver manages the iommu directly (as does drm/msm), it can
+shut down scanout when it is ready to take over the display, before
+attaching an UNMANAGED domain.
 
-I'm telling that *more* than one free stack and also tags per object can be stored.
-If object reused we would still have information about n-last usages of the object.
-It seems like much easier and more efficient solution than patch you proposing.
+Signed-off-by: Rob Clark <robdclark@chromium.org>
+---
+v2. Move the check into arm_smmu_attach_dev() (as I *think* this is
+    what Robin preferred; update commit msg to focus on the display
+    related issue that this solves.
 
-As for other concern about this particular patch
- - It wasn't tested. There is deadlock (sleep in atomic) on the report path which would have been noticed it tested.
-   Also GFP_NOWAIT allocation which fails very noisy and very often, especially in memory constraint enviromnent where tag-based KASAN supposed to be used.
+We also need Bjorn's patch set to inherit SMR and CB config during
+init:
 
- - Inefficient usage of memory:
-	48 bytes (sizeof (qlist_object) + sizeof(kasan_alloc_meta)) per kfree() call seems like a lot. It could be less.
+https://www.spinics.net/lists/arm-kernel/msg732246.html
 
-	The same 'struct kasan_track' stored twice in two different places (in object and in quarantine).
-	Basically, at least some part of the quarantine always duplicates information that we already know about
-	recently freed object. 
+ drivers/iommu/arm-smmu.c | 11 +++++++++++
+ include/linux/device.h   |  3 ++-
+ 2 files changed, 13 insertions(+), 1 deletion(-)
 
-	Since now we call kmalloc() from kfree() path, every unique kfree() stacktrace now generates additional unique stacktrace that
-	takes space in stackdepot.
+diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
+index 1a5efa7c8767..4a80710124db 100644
+--- a/drivers/iommu/arm-smmu.c
++++ b/drivers/iommu/arm-smmu.c
+@@ -1411,6 +1411,17 @@ static int arm_smmu_attach_dev(struct iommu_domain *domain, struct device *dev)
+ 		return -ENXIO;
+ 	}
+ 
++	/*
++	 * If driver is going to manage iommu directly, then avoid
++	 * attaching any non driver managed domain.  There could
++	 * be already active dma underway (ie. scanout in case of
++	 * bootloader enabled display), and interfering with that
++	 * will make things go *boom*
++	 */
++	if ((domain->type != IOMMU_DOMAIN_UNMANAGED) &&
++	    dev->driver && dev->driver->driver_manages_iommu)
++		return 0;
++
+ 	/*
+ 	 * FIXME: The arch/arm DMA API code tries to attach devices to its own
+ 	 * domains between of_xlate() and add_device() - we have no way to cope
+diff --git a/include/linux/device.h b/include/linux/device.h
+index e138baabe01e..d98aa4d3c8c3 100644
+--- a/include/linux/device.h
++++ b/include/linux/device.h
+@@ -282,7 +282,8 @@ struct device_driver {
+ 	struct module		*owner;
+ 	const char		*mod_name;	/* used for built-in modules */
+ 
+-	bool suppress_bind_attrs;	/* disables bind/unbind via sysfs */
++	bool suppress_bind_attrs:1;	/* disables bind/unbind via sysfs */
++	bool driver_manages_iommu:1;	/* driver manages IOMMU explicitly */
+ 	enum probe_type probe_type;
+ 
+ 	const struct of_device_id	*of_match_table;
+-- 
+2.20.1
 
 
 _______________________________________________
