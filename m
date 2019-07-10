@@ -2,58 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD61F64A12
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 17:49:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DBCFA64A17
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 17:50:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qPSBsfLzaYHWkx5By+ckqxC+0xYX9qHNZc1LEfa6IT8=; b=g41ejSPiBDxwok
-	wIn6NqdDvKt5MhCjx2gQCC+7KY2Bgm96QDOViwJpvPxGMalkP5NKXJvrcLZakW+MKuoxaxYISPJxv
-	20EvMymBPA2KAF8whXsacMHF7OsQpaXSjK0Z9ZOylHEL5Q52H8uH4J5JAfhaJPGQCpc9z9d9Of97r
-	1Sh3rChK7hVAWsx9ezD0uTqWFa5KjHDgQ9tT+hNpMSo9fcW+APfi5GsSzzjsFEVekLhiIwDPRBAIw
-	1bYNj4OZz6sx1DRGUVdb4KlSxycbqGyFzrGzVbCFuKiDW4J/trq2TRLpTyKwoD1tI6BoL/HeM+q/j
-	5Xfd/x4zsGunUNlVoabg==;
+	List-Owner; bh=ZS9+skoeZd48vilO2slpQ4hbq6Y7an02Sv2CoSZ95hU=; b=tAgy8ep6uUqmaj
+	uokbgYBLvEqmpCsk9TbYdPvl19ylSSbapOMWYXSPyS12IaRZUUMPg+tFT7DwRrsgGSn891AkogcL5
+	PZxPDVjwsXbk9rDIKpGEGQzFRL+WxESAr+qTADdisr4ckdUQ3GhyJhIkg0tZ6SL9zAd2C3h6PJrvM
+	r9jMhw4y3xm+XxtPiwD8Qmw87+BuxD30UWHSgUfH4Sz3MID6wx/XlLSLCVL8Ln7mJmfA1sDcZ+sg+
+	YIqMl4Q7mnlKix7tV9M9YpficqOWA2GaWBiE7jLVrUGJbVLd832ozsyw+zgy2VIWa+dqPTqmGhezx
+	gqgiqlbx/BE/N0PGZ04Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlEqq-000433-LY; Wed, 10 Jul 2019 15:49:48 +0000
-Received: from asavdk4.altibox.net ([109.247.116.15])
+	id 1hlErK-0004XH-KO; Wed, 10 Jul 2019 15:50:19 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlEqc-00040r-8b; Wed, 10 Jul 2019 15:49:35 +0000
-Received: from ravnborg.org (unknown [158.248.194.18])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1hlEr2-0004Ix-1t
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 15:50:01 +0000
+Received: from mail-qt1-f182.google.com (mail-qt1-f182.google.com
+ [209.85.160.182])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by asavdk4.altibox.net (Postfix) with ESMTPS id 02FEB80444;
- Wed, 10 Jul 2019 17:49:17 +0200 (CEST)
-Date: Wed, 10 Jul 2019 17:49:16 +0200
-From: Sam Ravnborg <sam@ravnborg.org>
-To: Derek Basehore <dbasehore@chromium.org>
-Subject: Re: [PATCH v7 0/4] Panel rotation patches
-Message-ID: <20190710154916.GA13810@ravnborg.org>
-References: <20190710021659.177950-1-dbasehore@chromium.org>
+ by mail.kernel.org (Postfix) with ESMTPSA id E510D208E4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 10 Jul 2019 15:49:58 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1562773799;
+ bh=f3705MLDMz7ZVRIZ/2mbpGAvk6+s8V0oHG6b0/yE9pg=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=dNr4F5HawxLIUhCtkX+gOEjtuf9BGR0CEIsliRqZH2O9ZtsdBVaq2kRHWU6Hi1+fo
+ XRZwgaoUmOgituexlwOZw6yF+zL0fvnshjkK4ofv79S4KQTO3bO3TnB7b8CachtiCF
+ KS0ZkAhzVzVQnnkBbUi8ZqjFD274etLB6JypO9QY=
+Received: by mail-qt1-f182.google.com with SMTP id d17so2926963qtj.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 10 Jul 2019 08:49:58 -0700 (PDT)
+X-Gm-Message-State: APjAAAXBlSm9VhCdHUhj1xuyJ+RsLUoV0gdNRoVgugmuPwXeVAfer8rW
+ jdzyg2YMMUHJA6tnKyAIpjojRs2xNfDd+6KsGw==
+X-Google-Smtp-Source: APXvYqz6I/p/hMSsLLeh44Lioj37XHZzwUteYHfVHSa7jufX40UundN85FK+bOouu15+3Q3HfQJkSkXH5cMd8kt4WyU=
+X-Received: by 2002:ac8:36b9:: with SMTP id a54mr25025832qtc.300.1562773798149; 
+ Wed, 10 Jul 2019 08:49:58 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190710021659.177950-1-dbasehore@chromium.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.3 cv=VcLZwmh9 c=1 sm=1 tr=0
- a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
- a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=7gkXJVJtAAAA:8
- a=CF2rFHbX0Lz1B-FzuQEA:9 a=CjuIK1q_8ugA:10 a=E9Po1WZjFZOl8hwRPBS3:22
+References: <20190710141611.21159-1-andrew@aj.id.au>
+ <20190710141611.21159-2-andrew@aj.id.au>
+In-Reply-To: <20190710141611.21159-2-andrew@aj.id.au>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Wed, 10 Jul 2019 09:49:45 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqKrYcUbn_02z9GQO6U4rz7k=p3kB7_G0tKmv25MMZZNQg@mail.gmail.com>
+Message-ID: <CAL_JsqKrYcUbn_02z9GQO6U4rz7k=p3kB7_G0tKmv25MMZZNQg@mail.gmail.com>
+Subject: Re: [PATCH 1/2] dt-bindings: mmc: Document Aspeed SD controller
+To: Andrew Jeffery <andrew@aj.id.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_084934_491861_618F0BAD 
-X-CRM114-Status: GOOD (  12.04  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190710_085000_151872_8B7E2999 
+X-CRM114-Status: GOOD (  21.76  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [109.247.116.15 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,63 +86,163 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>,
- Maxime Ripard <maxime.ripard@bootlin.com>, intel-gfx@lists.freedesktop.org,
- Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- linux-kernel@vger.kernel.org, Jani Nikula <jani.nikula@linux.intel.com>,
- David Airlie <airlied@linux.ie>, Thierry Reding <thierry.reding@gmail.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, dri-devel@lists.freedesktop.org,
- Daniel Vetter <daniel@ffwll.ch>, Rodrigo Vivi <rodrigo.vivi@intel.com>,
- CK Hu <ck.hu@mediatek.com>, linux-mediatek@lists.infradead.org,
- Sean Paul <sean@poorly.run>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Ulf Hansson <ulf.hansson@linaro.org>, linux-aspeed@lists.ozlabs.org,
+ ryanchen.aspeed@gmail.com, linux-mmc <linux-mmc@vger.kernel.org>,
+ Adrian Hunter <adrian.hunter@intel.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Joel Stanley <joel@jms.id.au>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Derek.
+On Wed, Jul 10, 2019 at 8:16 AM Andrew Jeffery <andrew@aj.id.au> wrote:
+>
+> The ASPEED SD/SDIO/eMMC controller exposes two slots implementing the
+> SDIO Host Specification v2.00, with 1 or 4 bit data buses, or an 8 bit
+> data bus if only a single slot is enabled.
+>
+> Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
+> ---
+>  .../bindings/mmc/sdhci-of-aspeed.yaml         | 91 +++++++++++++++++++
 
-On Tue, Jul 09, 2019 at 07:16:55PM -0700, Derek Basehore wrote:
-> This adds the plumbing for reading panel rotation from the devicetree
-> and sets up adding a panel property for the panel orientation on
-> Mediatek SoCs when a rotation is present.
-> 
-> v7 changes:
-> -forgot to add static inline
-> 
-> v6 changes:
-> -added enum declaration to drm_panel.h header
-> 
-> v5 changes:
-> -rebased
-> 
-> v4 changes:
-> -fixed some changes made to the i915 driver
-> -clarified comments on of orientation helper
-> 
-> v3 changes:
-> -changed from attach/detach callbacks to directly setting fixed panel
->  values in drm_panel_attach
-> -removed update to Documentation
-> -added separate function for quirked panel orientation property init
-> 
-> v2 changes:
-> fixed build errors in i915
-> 
-> Derek Basehore (4):
->   drm/panel: Add helper for reading DT rotation
->   drm/panel: set display info in panel attach
->   drm/connector: Split out orientation quirk detection
->   drm/mtk: add panel orientation property
+aspeed,sdhci.yaml
 
-First two patches are:
-Reviewed-by: Sam Ravnborg <sam@ravnborg.org>
+>  1 file changed, 91 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/mmc/sdhci-of-aspeed.yaml
+>
+> diff --git a/Documentation/devicetree/bindings/mmc/sdhci-of-aspeed.yaml b/Documentation/devicetree/bindings/mmc/sdhci-of-aspeed.yaml
+> new file mode 100644
+> index 000000000000..e98a2ac4d46d
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/mmc/sdhci-of-aspeed.yaml
+> @@ -0,0 +1,91 @@
+> +# SPDX-License-Identifier: GPL-2.0-or-later
 
-Last two patches are:
-Acked-by: Sam Ravnborg <sam@ravnborg.org>
+The preferred license is (GPL-2.0 OR BSD-2-Clause) if that is okay with you.
 
-	Sam
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/mmc/sdhci-of-aspeed.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: ASPEED SD/SDIO/eMMC Controller
+> +
+> +maintainers:
+> +  - Andrew Jeffery <andrew@aj.id.au>
+> +  - Ryan Chen <ryanchen.aspeed@gmail.com>
+> +
+> +description: |+
+> +  The ASPEED SD/SDIO/eMMC controller exposes two slots implementing the SDIO
+> +  Host Specification v2.00, with 1 or 4 bit data buses, or an 8 bit data bus if
+> +  only a single slot is enabled.
+> +
+> +  The two slots are supported by a common configuration area. As the SDHCIs for
+> +  the slots are dependent on the common configuration area, they are described
+> +  as child nodes.
+> +
+> +properties:
+> +  compatible:
+> +    enum: [ aspeed,ast2400-sdc, aspeed,ast2500-sdc ]
+> +  reg:
+> +    description: Common configuration registers
+
+This should have a 'maxItems: 1'. Same for the child reg.
+
+> +  ranges: true
+> +  clocks:
+> +    maxItems: 1
+> +    description: The SD/SDIO controller clock gate
+> +  sdhci:
+
+This needs to be a pattern (under patternProperties) as these have
+unit-addresses.
+
+> +    type: object
+> +    properties:
+> +      compatible:
+> +        allOf:
+> +          - enum: [ aspeed,ast2400-sdhci, aspeed,ast2500-sdhci ]
+> +          - const: sdhci
+
+This condition can never be true. What you need is s/allOf/items/.
+However, 'sdhci' is not really a useful compatible because every
+implementation has quirks, so I'd drop it.
+
+> +      reg:
+> +        description: The SDHCI registers
+> +      clocks:
+> +        maxItems: 1
+> +        description: The SD bus clock
+> +      slot:
+> +        allOf:
+> +          - $ref: /schemas/types.yaml#/definitions/uint32
+> +          - enum: [0, 1]
+
+Is this really needed? Offset 0x100 is slot 0 and offset 0x200 is slot
+1. Does that ever change?
+
+> +      interrupts:
+> +        maxItems: 1
+> +        description: The SD interrupt shared between both slots
+> +    required:
+> +      - compatible
+> +      - reg
+> +      - clocks
+> +      - slot
+> +      - interrupts
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - ranges
+> +  - clocks
+
+#address-cells and #size-cells are required too.
+
+You should also add 'additionalProperties: false' here so other random
+properties can't be present.
+
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/aspeed-clock.h>
+> +    sdc@1e740000 {
+> +            compatible = "aspeed,ast2500-sdc";
+> +            reg = <0x1e740000 0x100>;
+> +            #address-cells = <1>;
+> +            #size-cells = <1>;
+> +            ranges;
+
+It's preferred to limit the range here and then the child addresses
+are 0x100 and 0x200.
+
+> +            clocks = <&syscon ASPEED_CLK_GATE_SDCLK>;
+> +
+> +            sdhci0: sdhci@1e740100 {
+> +                    compatible = "aspeed,ast2500-sdhci", "sdhci";
+> +                    reg = <0x1e740100 0x100>;
+> +                    slot = <0>;
+> +                    interrupts = <26>;
+> +                    sdhci,auto-cmd12;
+> +                    clocks = <&syscon ASPEED_CLK_SDIO>;
+> +            };
+> +
+> +            sdhci1: sdhci@1e740200 {
+> +                    compatible = "aspeed,ast2500-sdhci", "sdhci";
+> +                    reg = <0x1e740200 0x100>;
+> +                    slot = <1>;
+> +                    interrupts = <26>;
+> +                    sdhci,auto-cmd12;
+> +                    clocks = <&syscon ASPEED_CLK_SDIO>;
+> +            };
+> +    };
+> --
+> 2.20.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
