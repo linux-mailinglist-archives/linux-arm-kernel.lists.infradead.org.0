@@ -2,60 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 97B0B643EB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 10:58:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 88C176440C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 11:01:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=G50+9Zw/vyk0tHQYhP49veBDHqFhe2+vjrTFpG4fOZM=; b=rrp/YXwCXMyNGu
-	lT6DtYmX6h5nO4LX0abQR43jQlZWPHgkCOs4zcGNfCQf2jXwSOLOc1LsuDhyW8geZ4Jg6ePhBgZBr
-	c5SSWGyaN9DfF7izevpc7CyVL3XCUJhHyW51p1hpEJeKqW1vwyj0vRPRP4XlI29vcOSfMEvA8z3tc
-	SFAKp/2IgvvJxh6dHAJvRy0eqZa1GsKALZuwXM92w0pQvVkWURvkJZFTtxxOQ68JpcZ8Oa58n+tUR
-	5RZGgiusOIRp+dKvr05qZxOx1/RasPoGnksPYwQbppcbhXBfpQmbel/85TbV2hdi/yY6bEywVM+a5
-	+T6KL5AJQiKCa0NGP9yg==;
+	List-Owner; bh=wRPrOBTQE3PJiEjUMij7VY2DnIFOLPo/Lc3ASKoo/II=; b=fbemGc8Eh5Sz6X
+	1uhaDD+jTMr0ucDhTNA+Ay20ogH9vZ+CD53uufZTgTzFwXvMmfU/4gZlbp2bU60eBJfXJ/ejCsFgE
+	v1hfs3gfoCi9qwgjYHzMFFKE2wUxIZBfomSsqeb7wHQK5DlL40Tmb1Reqo5seJ1T1KHkmNEGYfEvY
+	KGRBM4hTY0bpRTYZI0Dhuz3lWgu3H5I50VgQQE5WdgHMZxIL8tVbOG2SGcUJ48Uw0khaZxcKsq8UI
+	JmR6ILtCoXdBcrh54UiSMqmqardH6UgpwZ9JG0G+xXX7WmTtxApQG/gSDtqPpeCblVSZ8/vg98PlH
+	yOdcm11lSznV1BG+f61w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hl8RF-0004SK-7y; Wed, 10 Jul 2019 08:58:57 +0000
-Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
+	id 1hl8Tj-0006oH-5o; Wed, 10 Jul 2019 09:01:31 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hl8Qq-0004KC-9G
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 08:58:33 +0000
-Received: from pd9ef1cb8.dip0.t-ipconnect.de ([217.239.28.184] helo=nanos)
- by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
- (Exim 4.80) (envelope-from <tglx@linutronix.de>)
- id 1hl8Ql-0006xp-9o; Wed, 10 Jul 2019 10:58:27 +0200
-Date: Wed, 10 Jul 2019 10:58:25 +0200 (CEST)
-From: Thomas Gleixner <tglx@linutronix.de>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH v7 10/25] arm64: compat: Add vDSO
-In-Reply-To: <20190710082750.mvm3e6myzpqsurga@willie-the-truck>
-Message-ID: <alpine.DEB.2.21.1907101057190.1758@nanos.tec.linutronix.de>
-References: <20190621095252.32307-1-vincenzo.frascino@arm.com>
- <20190621095252.32307-11-vincenzo.frascino@arm.com>
- <CALAqxLXxE5B+vVLj7NcW8S05nhDQ+XSKVn=_MNDci667JDFEhA@mail.gmail.com>
- <20190710082750.mvm3e6myzpqsurga@willie-the-truck>
-User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
+ id 1hl8TK-0006j6-Ue
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 09:01:09 +0000
+Received: from mail-lj1-f178.google.com (mail-lj1-f178.google.com
+ [209.85.208.178])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2B489208E4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 10 Jul 2019 09:01:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1562749266;
+ bh=wJ4UybqhWF4GHysL0HzNpEbCXWrP9PdCHa4n5QXVa+k=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=iw+A8s5irXEma3Z1l7JBvR7lj9Z4gfTmGjpyXPgCDIRUztCLU1SSaxwjc7MFjyLDV
+ pdcoYxskBQ0VQ1hd6Ttl0HP5tscMckWqQuwCSUfwE5YNKCV+tTCvP5Rr0lqPHSQnb7
+ LAH9dCfPgkFRLpqC5Ja379xIVqunhX3veJB1GPvQ=
+Received: by mail-lj1-f178.google.com with SMTP id i21so1298029ljj.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 10 Jul 2019 02:01:06 -0700 (PDT)
+X-Gm-Message-State: APjAAAVmRCE3/nY14fdW26O650CQk2F16nHujnmknDuZXO9Lg1+ZL1xc
+ xNVoAPZGFLzocO1CMvlaz4GKOUbA6KahaC5Suz0=
+X-Google-Smtp-Source: APXvYqySTqN+a0Pd632KuRg+HHS06nuFlFkBnJ+6eD7MYISsnc9zgvNILpGXeTB3FUo87vj9BNr4HWlVIikw8EUIrzQ=
+X-Received: by 2002:a2e:980a:: with SMTP id a10mr14216019ljj.40.1562749264412; 
+ Wed, 10 Jul 2019 02:01:04 -0700 (PDT)
 MIME-Version: 1.0
-X-Linutronix-Spam-Score: -1.0
-X-Linutronix-Spam-Level: -
-X-Linutronix-Spam-Status: No , -1.0 points, 5.0 required, ALL_TRUSTED=-1,
- SHORTCIRCUIT=-0.0001
+References: <CGME20190708141158eucas1p17d4b50978dbe1e5c876ce6d8f433cc95@eucas1p1.samsung.com>
+ <20190708141140.24379-1-k.konieczny@partner.samsung.com>
+In-Reply-To: <20190708141140.24379-1-k.konieczny@partner.samsung.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Date: Wed, 10 Jul 2019 11:00:53 +0200
+X-Gmail-Original-Message-ID: <CAJKOXPd+UZ2MdrTVfBv5UYzK5LgKNQHUFzRbRNeq271EaDSchg@mail.gmail.com>
+Message-ID: <CAJKOXPd+UZ2MdrTVfBv5UYzK5LgKNQHUFzRbRNeq271EaDSchg@mail.gmail.com>
+Subject: Re: [PATCH 0/3] add coupled regulators for Exynos5422/5800
+To: k.konieczny@partner.samsung.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_015832_500198_8F88C6D0 
-X-CRM114-Status: GOOD (  16.56  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190710_020107_565762_B36890C6 
+X-CRM114-Status: GOOD (  20.59  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a0a:51c0:0:12e:550:0:0:1 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,45 +86,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- linux-mips@vger.kernel.org, linux-kselftest@vger.kernel.org,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Shuah Khan <shuah@kernel.org>,
- linux-arch@vger.kernel.org, Daniel Lezcano <daniel.lezcano@linaro.org>,
- Russell King <linux@armlinux.org.uk>, Arnd Bergmann <arnd@arndb.de>,
- Andre Przywara <andre.przywara@arm.com>, John Stultz <john.stultz@linaro.org>,
- Dmitry Safonov <0x7f454c46@gmail.com>, Peter Collingbourne <pcc@google.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Huw Davies <huw@codeweavers.com>, lkml <linux-kernel@vger.kernel.org>,
- Ralf Baechle <ralf@linux-mips.org>, Mark Salyzyn <salyzyn@android.com>,
- Paul Burton <paul.burton@mips.com>, Shijith Thotton <sthotton@marvell.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Nishanth Menon <nm@ti.com>,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Stephen Boyd <sboyd@kernel.org>, Viresh Kumar <vireshk@kernel.org>,
+ linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Kukjin Kim <kgene@kernel.org>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>, devicetree@vger.kernel.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 10 Jul 2019, Will Deacon wrote:
-> On Tue, Jul 09, 2019 at 09:02:54PM -0700, John Stultz wrote:
-> > I tried to bisect things down a bit, but as some later fixes are
-> > required (at one point, date was returning the start epoch and never
-> > increasing), this hasn't worked too well. But I'm guessing since I
-> > see: "CROSS_COMPILE_COMPAT not defined or empty, the compat vDSO will
-> > not be built", and the system is half working, I'm guessing this is an
-> > issue with just the 32bit code failing.  While I can try to sort out
-> > the proper CROSS_COMPILE_COMPAT in my build environment, I assume
-> > userland shouldn't be crashing if that value isn't set.
-> > 
-> > Any chance this issue has already been raised?
-> 
-> First I've seen of it, although Vincenzo is likely to know better than me.
-> In the meantime, please can you share your .config?
+On Mon, 8 Jul 2019 at 16:12, <k.konieczny@partner.samsung.com> wrote:
+>
+> From: Kamil Konieczny <k.konieczny@partner.samsung.com>
+>
+> Hi,
+>
+> The main purpose of this patch series is to add coupled regulators for
+> Exynos5422/5800 to keep constrain on voltage difference between vdd_arm
+> and vdd_int to be at most 300mV. In exynos-bus instead of using
+> regulator_set_voltage_tol() with default voltage tolerance it should be
+> used regulator_set_voltage_triplet() with volatege range, and this is
+> already present in opp/core.c code, so it can be reused. While at this,
+> move setting regulators into opp/core.
+>
+> This patchset was tested on Odroid XU3.
+>
+> The last patch depends on two previous.
 
-I think the key is: CROSS_COMPILE_COMPAT not defined or empty. And then run
-32bit userspace.
+So you break the ABI... I assume that patchset maintains
+bisectability. However there is no explanation why ABI break is needed
+so this does not look good...
 
-Thanks,
+Best regards,
+Krzysztof
 
-	tglx
+>
+> Regards,
+> Kamil
+>
+> Kamil Konieczny (2):
+>   opp: core: add regulators enable and disable
+>   devfreq: exynos-bus: convert to use dev_pm_opp_set_rate()
+>
+> Marek Szyprowski (1):
+>   ARM: dts: exynos: add initial data for coupled regulators for
+>     Exynos5422/5800
+>
+>  arch/arm/boot/dts/exynos5420.dtsi             |  34 ++--
+>  arch/arm/boot/dts/exynos5422-odroid-core.dtsi |   4 +
+>  arch/arm/boot/dts/exynos5800-peach-pi.dts     |   4 +
+>  arch/arm/boot/dts/exynos5800.dtsi             |  32 ++--
+>  drivers/devfreq/exynos-bus.c                  | 172 +++++++-----------
+>  drivers/opp/core.c                            |  13 ++
+>  6 files changed, 120 insertions(+), 139 deletions(-)
+>
+> --
+> 2.22.0
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
