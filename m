@@ -2,37 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37C1164A67
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 18:02:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 297B464A6D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 18:04:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nAUMJ2AB2WMObrW2Trx4vwmwjQABv51ez0OBimZj2QI=; b=jxrtGGPCMBCU51
-	aJl7deVIsV6963P2Q7Cs9r8xzl8U+2ih1zWLLAocnHwOWYBAxYJVip4FBeJPz32+A5tWuuyBfB/ro
-	reOQgptmF0z3Hh1DsApsmOleTRC/S5XTyAQAe7m+kLEGoOF/DYVgSqmDMV5lAHncICoGSM+Xjfg9w
-	h8yIUCK8oW4twFFiaUbVJPdAABPZZZyYa3INoFsMOGTXR3UYtEi/87xKCR95iquzgUMd2SDAIp3tH
-	Ty8WXFf+SkrTwzX53V9uVpJsztLeRdGNXd7QU5wh3FgCTnzerM0fYy4GFDRVgo6zuFlKyYQFWjauL
-	t4Y4m5fpWWj/te84KyCg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Hw+MnYopdzXroXJ2uwgNoYH1yswdYuo/g1cml3G2hSE=; b=uYsQqKE6Anttk7CoikMzNZID2
+	x677NT62R34bZv4p75QYTbrfrbKDkKJEulgJOjkcm86jxGlpibQk3QUdzsccGCiVgkEgCa3zmCBiN
+	rfyyagHyV1pdzoqaT6j/lHAIxmK3azVHJbIclgnsWs8Cs60BiPBdmoZcmJbrLGU+OZFkIRiYrp5HD
+	zf5Fb25b5zvcpqKfjaG8U6NJ7y3h9kXJ/eIKsTcol5WbTyh3MGkXhpck6hQ9Khxu81IvuxH8rdtqr
+	D3yuEtzMqpMrgXFRlWp3yrkuZPGN1t9nPlrPPCZJdfmUTA1VHuOk0ADHYRuPMI0wY/AUnR4oWgufW
+	gSIIEyRPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlF3P-0002dq-Tr; Wed, 10 Jul 2019 16:02:47 +0000
-Received: from 177.41.133.216.dynamic.adsl.gvt.net.br ([177.41.133.216]
- helo=coco.lan)
- by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hlF2e-0002QU-2W; Wed, 10 Jul 2019 16:02:02 +0000
-Date: Wed, 10 Jul 2019 13:01:54 -0300
-From: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
-To: Phong Tran <tranmanphong@gmail.com>
-Subject: Re: [Patch V4] Documentation: coresight: covert txt to rst
-Message-ID: <20190710130154.5b7da35f@coco.lan>
-In-Reply-To: <20190710150133.13992-1-tranmanphong@gmail.com>
-References: <20190705204512.15444-1-tranmanphong@gmail.com>
- <20190710150133.13992-1-tranmanphong@gmail.com>
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+	id 1hlF5L-00036e-B7; Wed, 10 Jul 2019 16:04:47 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hlF4y-00035V-Os
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 16:04:27 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x6AFvuWp029038; Wed, 10 Jul 2019 18:04:11 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=lLh8rJOE1fLb+/JX7sWcHB+/4QbxrQYIiXPtSf5+1ws=;
+ b=F+uPHeKguiyqtGga0FlK8OceyaJTmrAfz+OSkgvcrwGDi2S8x5KQxqb/OmUavk2hO2Pa
+ iwgqJnRIdDJbdaNTQba8SC/8uK+7olh+Tu9IykbLxHXzlYNk/0IPxqcXZV0ZO09lOgYo
+ ywQ4GMHJOpHDu4HrLSscPFyBC0sw5409MQSrwhxRRUXsJzBHAsLWVkp/BGQAeUVNbXWa
+ bNGKLHEsFeQYk01opkUPHIegwJr/gyuSejIp3PfuEb9U9Ktn8kGd8/wvwSUQC2JX90W7
+ 9P1zEjc9TXCXiAhETjwqBGFpO3iGod1JpIqhQlCZ6R19xDr4XzkHAfCzou9U1FeDWxrc Vg== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2tjgsa61u0-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Wed, 10 Jul 2019 18:04:10 +0200
+Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id ACCB731;
+ Wed, 10 Jul 2019 16:04:07 +0000 (GMT)
+Received: from Webmail-eu.st.com (Safex1hubcas24.st.com [10.75.90.94])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 6252D4FEC;
+ Wed, 10 Jul 2019 16:04:07 +0000 (GMT)
+Received: from SAFEX1HUBCAS21.st.com (10.75.90.45) by Safex1hubcas24.st.com
+ (10.75.90.94) with Microsoft SMTP Server (TLS) id 14.3.439.0; Wed, 10 Jul
+ 2019 18:04:07 +0200
+Received: from [10.48.0.131] (10.48.0.131) by Webmail-ga.st.com (10.75.90.48)
+ with Microsoft SMTP Server (TLS) id 14.3.439.0;
+ Wed, 10 Jul 2019 18:04:06 +0200
+Subject: Re: [EXT] Re: [RFC 2/2] rpmsg: imx: add the initial imx rpmsg support
+To: Richard Zhu <hongxing.zhu@nxp.com>, Oleksij Rempel
+ <o.rempel@pengutronix.de>, "ohad@wizery.com" <ohad@wizery.com>,
+ "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
+ "linux-remoteproc@vger.kernel.org" <linux-remoteproc@vger.kernel.org>
+References: <1561968784-1124-1-git-send-email-hongxing.zhu@nxp.com>
+ <1561968784-1124-3-git-send-email-hongxing.zhu@nxp.com>
+ <3e0a061c-4f5e-ac32-031d-909a48644265@pengutronix.de>
+ <AM0PR0402MB35706FFBFD76FF81BCF5E6018CF60@AM0PR0402MB3570.eurprd04.prod.outlook.com>
+ <e4629709-fbe7-6af9-3cee-309b2ec1892f@pengutronix.de>
+ <fcdd6392-75f4-716d-5dbd-1828a679b25f@st.com>
+ <AM0PR0402MB3570CF963122A44DF2F049E88CF10@AM0PR0402MB3570.eurprd04.prod.outlook.com>
+ <81f58f8f-9050-a6be-29c6-aab803cf5520@st.com>
+ <AM0PR0402MB3570CDFC23F75AB682F17D618CF00@AM0PR0402MB3570.eurprd04.prod.outlook.com>
+From: Arnaud Pouliquen <arnaud.pouliquen@st.com>
+Message-ID: <7f14463c-8054-1cc3-10c2-690b70981919@st.com>
+Date: Wed, 10 Jul 2019 18:03:43 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
+In-Reply-To: <AM0PR0402MB3570CDFC23F75AB682F17D618CF00@AM0PR0402MB3570.eurprd04.prod.outlook.com>
+Content-Language: en-US
+X-Originating-IP: [10.48.0.131]
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-07-10_06:, , signatures=0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190710_090425_269438_F83C989C 
+X-CRM114-Status: GOOD (  37.33  )
+X-Spam-Score: -0.9 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.9 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -44,728 +108,327 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mathieu.poirier@linaro.org, linux-doc@vger.kernel.org,
- suzuki.poulose@arm.com, corbet@lwn.net, linux-kernel@vger.kernel.org,
- leo.yan@linaro.org, skhan@linuxfoundation.org,
- linux-kernel-mentees@lists.linuxfoundation.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ Fabien DESSENNE <fabien.dessenne@st.com>,
+ "loic.pallardy@st.com" <loic.pallardy@st.com>,
+ "elder@linaro.org" <elder@linaro.org>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Em Wed, 10 Jul 2019 22:01:33 +0700
-Phong Tran <tranmanphong@gmail.com> escreveu:
-
-> as doc-guide of kernel documentation, use Sphinx tool to
-> generate the html/pdf... files.
-
-Description looks a little bogus to me...
-
-> 
-> This changes the plan text txt to rst format.
-> 
-> Signed-off-by: Phong Tran <tranmanphong@gmail.com>
-
-But looking at the patch itself:
-
-Reviewed-by: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
-
-> ---
-> ChangeLog:
-> V2: review points from Mathieu, Jonathan
->   * Add coresight-cpu-debug
->   * Update MAINTAINERS file
->   * Avoid use markup as much as posible
-> V3: review points from Mauro
->   * add the colon author, date
->   * change to use ```` in the struct
->   * add line for the acronyms
-> V4:
->   * Rebase on linux-next tree
-> ---
->  ...sight-cpu-debug.txt => coresight-cpu-debug.rst} |  67 ++--
->  .../trace/{coresight.txt => coresight.rst}         | 372 +++++++++++----------
->  Documentation/trace/index.rst                      |   2 +
->  MAINTAINERS                                        |   4 +-
->  4 files changed, 234 insertions(+), 211 deletions(-)
->  rename Documentation/trace/{coresight-cpu-debug.txt => coresight-cpu-debug.rst} (84%)
->  rename Documentation/trace/{coresight.txt => coresight.rst} (56%)
-> 
-> diff --git a/Documentation/trace/coresight-cpu-debug.txt b/Documentation/trace/coresight-cpu-debug.rst
-> similarity index 84%
-> rename from Documentation/trace/coresight-cpu-debug.txt
-> rename to Documentation/trace/coresight-cpu-debug.rst
-> index 1a660a39e3c0..993dd294b81b 100644
-> --- a/Documentation/trace/coresight-cpu-debug.txt
-> +++ b/Documentation/trace/coresight-cpu-debug.rst
-> @@ -1,8 +1,9 @@
-> -		Coresight CPU Debug Module
-> -		==========================
-> +==========================
-> +Coresight CPU Debug Module
-> +==========================
->  
-> -   Author:   Leo Yan <leo.yan@linaro.org>
-> -   Date:     April 5th, 2017
-> +   :Author:   Leo Yan <leo.yan@linaro.org>
-> +   :Date:     April 5th, 2017
->  
->  Introduction
->  ------------
-> @@ -69,6 +70,7 @@ Before accessing debug registers, we should ensure the clock and power domain
->  have been enabled properly. In ARMv8-a ARM (ARM DDI 0487A.k) chapter 'H9.1
->  Debug registers', the debug registers are spread into two domains: the debug
->  domain and the CPU domain.
-> +::
->  
->                                  +---------------+
->                                  |               |
-> @@ -125,18 +127,21 @@ If you want to enable debugging functionality at boot time, you can add
->  "coresight_cpu_debug.enable=1" to the kernel command line parameter.
->  
->  The driver also can work as module, so can enable the debugging when insmod
-> -module:
-> -# insmod coresight_cpu_debug.ko debug=1
-> +module::
-> +
-> +  # insmod coresight_cpu_debug.ko debug=1
->  
->  When boot time or insmod module you have not enabled the debugging, the driver
->  uses the debugfs file system to provide a knob to dynamically enable or disable
->  debugging:
->  
-> -To enable it, write a '1' into /sys/kernel/debug/coresight_cpu_debug/enable:
-> -# echo 1 > /sys/kernel/debug/coresight_cpu_debug/enable
-> +To enable it, write a '1' into /sys/kernel/debug/coresight_cpu_debug/enable::
-> +
-> +  # echo 1 > /sys/kernel/debug/coresight_cpu_debug/enable
-> +
-> +To disable it, write a '0' into /sys/kernel/debug/coresight_cpu_debug/enable::
->  
-> -To disable it, write a '0' into /sys/kernel/debug/coresight_cpu_debug/enable:
-> -# echo 0 > /sys/kernel/debug/coresight_cpu_debug/enable
-> +  # echo 0 > /sys/kernel/debug/coresight_cpu_debug/enable
->  
->  As explained in chapter "Clock and power domain", if you are working on one
->  platform which has idle states to power off debug logic and the power
-> @@ -154,34 +159,34 @@ subsystem, more specifically by using the "/dev/cpu_dma_latency"
->  interface (see Documentation/power/pm_qos_interface.rst for more
->  details).  As specified in the PM QoS documentation the requested
->  parameter will stay in effect until the file descriptor is released.
-> -For example:
-> +For example::
->  
-> -# exec 3<> /dev/cpu_dma_latency; echo 0 >&3
-> -...
-> -Do some work...
-> -...
-> -# exec 3<>-
-> +  # exec 3<> /dev/cpu_dma_latency; echo 0 >&3
-> +  ...
-> +  Do some work...
-> +  ...
-> +  # exec 3<>-
->  
->  The same can also be done from an application program.
->  
->  Disable specific CPU's specific idle state from cpuidle sysfs (see
-> -Documentation/admin-guide/pm/cpuidle.rst):
-> -# echo 1 > /sys/devices/system/cpu/cpu$cpu/cpuidle/state$state/disable
-> +Documentation/admin-guide/pm/cpuidle.rst)::
->  
-> +  # echo 1 > /sys/devices/system/cpu/cpu$cpu/cpuidle/state$state/disable
->  
->  Output format
->  -------------
->  
-> -Here is an example of the debugging output format:
-> -
-> -ARM external debug module:
-> -coresight-cpu-debug 850000.debug: CPU[0]:
-> -coresight-cpu-debug 850000.debug:  EDPRSR:  00000001 (Power:On DLK:Unlock)
-> -coresight-cpu-debug 850000.debug:  EDPCSR:  handle_IPI+0x174/0x1d8
-> -coresight-cpu-debug 850000.debug:  EDCIDSR: 00000000
-> -coresight-cpu-debug 850000.debug:  EDVIDSR: 90000000 (State:Non-secure Mode:EL1/0 Width:64bits VMID:0)
-> -coresight-cpu-debug 852000.debug: CPU[1]:
-> -coresight-cpu-debug 852000.debug:  EDPRSR:  00000001 (Power:On DLK:Unlock)
-> -coresight-cpu-debug 852000.debug:  EDPCSR:  debug_notifier_call+0x23c/0x358
-> -coresight-cpu-debug 852000.debug:  EDCIDSR: 00000000
-> -coresight-cpu-debug 852000.debug:  EDVIDSR: 90000000 (State:Non-secure Mode:EL1/0 Width:64bits VMID:0)
-> +Here is an example of the debugging output format::
-> +
-> +  ARM external debug module:
-> +  coresight-cpu-debug 850000.debug: CPU[0]:
-> +  coresight-cpu-debug 850000.debug:  EDPRSR:  00000001 (Power:On DLK:Unlock)
-> +  coresight-cpu-debug 850000.debug:  EDPCSR:  handle_IPI+0x174/0x1d8
-> +  coresight-cpu-debug 850000.debug:  EDCIDSR: 00000000
-> +  coresight-cpu-debug 850000.debug:  EDVIDSR: 90000000 (State:Non-secure Mode:EL1/0 Width:64bits VMID:0)
-> +  coresight-cpu-debug 852000.debug: CPU[1]:
-> +  coresight-cpu-debug 852000.debug:  EDPRSR:  00000001 (Power:On DLK:Unlock)
-> +  coresight-cpu-debug 852000.debug:  EDPCSR:  debug_notifier_call+0x23c/0x358
-> +  coresight-cpu-debug 852000.debug:  EDCIDSR: 00000000
-> +  coresight-cpu-debug 852000.debug:  EDVIDSR: 90000000 (State:Non-secure Mode:EL1/0 Width:64bits VMID:0)
-> diff --git a/Documentation/trace/coresight.txt b/Documentation/trace/coresight.rst
-> similarity index 56%
-> rename from Documentation/trace/coresight.txt
-> rename to Documentation/trace/coresight.rst
-> index b027d61b27a6..72f4b7ef1bad 100644
-> --- a/Documentation/trace/coresight.txt
-> +++ b/Documentation/trace/coresight.rst
-> @@ -1,8 +1,9 @@
-> -		Coresight - HW Assisted Tracing on ARM
-> -		======================================
-> +======================================
-> +Coresight - HW Assisted Tracing on ARM
-> +======================================
->  
-> -   Author:   Mathieu Poirier <mathieu.poirier@linaro.org>
-> -   Date:     September 11th, 2014
-> +   :Author:   Mathieu Poirier <mathieu.poirier@linaro.org>
-> +   :Date:     September 11th, 2014
->  
->  Introduction
->  ------------
-> @@ -26,7 +27,7 @@ implementation, either storing the compressed stream in a memory buffer or
->  creating an interface to the outside world where data can be transferred to a
->  host without fear of filling up the onboard coresight memory buffer.
->  
-> -At typical coresight system would look like this:
-> +At typical coresight system would look like this::
->  
->    *****************************************************************
->   **************************** AMBA AXI  ****************************===||
-> @@ -95,15 +96,24 @@ Acronyms and Classification
->  
->  Acronyms:
->  
-> -PTM:     Program Trace Macrocell
-> -ETM:     Embedded Trace Macrocell
-> -STM:     System trace Macrocell
-> -ETB:     Embedded Trace Buffer
-> -ITM:     Instrumentation Trace Macrocell
-> -TPIU:    Trace Port Interface Unit
-> -TMC-ETR: Trace Memory Controller, configured as Embedded Trace Router
-> -TMC-ETF: Trace Memory Controller, configured as Embedded Trace FIFO
-> -CTI:     Cross Trigger Interface
-> +PTM:
-> +    Program Trace Macrocell
-> +ETM:
-> +    Embedded Trace Macrocell
-> +STM:
-> +    System trace Macrocell
-> +ETB:
-> +    Embedded Trace Buffer
-> +ITM:
-> +    Instrumentation Trace Macrocell
-> +TPIU:
-> +     Trace Port Interface Unit
-> +TMC-ETR:
-> +        Trace Memory Controller, configured as Embedded Trace Router
-> +TMC-ETF:
-> +        Trace Memory Controller, configured as Embedded Trace FIFO
-> +CTI:
-> +    Cross Trigger Interface
->  
->  Classification:
->  
-> @@ -118,7 +128,7 @@ Misc:
->  
->  
->  Device Tree Bindings
-> -----------------------
-> +--------------------
->  
->  See Documentation/devicetree/bindings/arm/coresight.txt for details.
->  
-> @@ -133,79 +143,79 @@ The coresight framework provides a central point to represent, configure and
->  manage coresight devices on a platform.  Any coresight compliant device can
->  register with the framework for as long as they use the right APIs:
->  
-> -struct coresight_device *coresight_register(struct coresight_desc *desc);
-> -void coresight_unregister(struct coresight_device *csdev);
-> +.. c:function:: struct coresight_device *coresight_register(struct coresight_desc *desc);
-> +.. c:function:: void coresight_unregister(struct coresight_device *csdev);
->  
-> -The registering function is taking a "struct coresight_device *csdev" and
-> -register the device with the core framework.  The unregister function takes
-> -a reference to a "struct coresight_device", obtained at registration time.
-> +The registering function is taking a ``struct coresight_desc *desc`` and
-> +register the device with the core framework. The unregister function takes
-> +a reference to a ``struct coresight_device *csdev`` obtained at registration time.
->  
->  If everything goes well during the registration process the new devices will
-> -show up under /sys/bus/coresight/devices, as showns here for a TC2 platform:
-> +show up under /sys/bus/coresight/devices, as showns here for a TC2 platform::
->  
-> -root:~# ls /sys/bus/coresight/devices/
-> -replicator  20030000.tpiu    2201c000.ptm  2203c000.etm  2203e000.etm
-> -20010000.etb         20040000.funnel  2201d000.ptm  2203d000.etm
-> -root:~#
-> +    root:~# ls /sys/bus/coresight/devices/
-> +    replicator  20030000.tpiu    2201c000.ptm  2203c000.etm  2203e000.etm
-> +    20010000.etb         20040000.funnel  2201d000.ptm  2203d000.etm
-> +    root:~#
->  
-> -The functions take a "struct coresight_device", which looks like this:
-> +The functions take a ``struct coresight_device``, which looks like this::
->  
-> -struct coresight_desc {
-> -        enum coresight_dev_type type;
-> -        struct coresight_dev_subtype subtype;
-> -        const struct coresight_ops *ops;
-> -        struct coresight_platform_data *pdata;
-> -        struct device *dev;
-> -        const struct attribute_group **groups;
-> -};
-> +    struct coresight_desc {
-> +            enum coresight_dev_type type;
-> +            struct coresight_dev_subtype subtype;
-> +            const struct coresight_ops *ops;
-> +            struct coresight_platform_data *pdata;
-> +            struct device *dev;
-> +            const struct attribute_group **groups;
-> +    };
->  
->  
->  The "coresight_dev_type" identifies what the device is, i.e, source link or
->  sink while the "coresight_dev_subtype" will characterise that type further.
->  
-> -The "struct coresight_ops" is mandatory and will tell the framework how to
-> +The ``struct coresight_ops`` is mandatory and will tell the framework how to
->  perform base operations related to the components, each component having
-> -a different set of requirement.  For that "struct coresight_ops_sink",
-> -"struct coresight_ops_link" and "struct coresight_ops_source" have been
-> +a different set of requirement. For that ``struct coresight_ops_sink``,
-> +``struct coresight_ops_link`` and ``struct coresight_ops_source`` have been
->  provided.
->  
-> -The next field, "struct coresight_platform_data *pdata" is acquired by calling
-> -"of_get_coresight_platform_data()", as part of the driver's _probe routine and
-> -"struct device *dev" gets the device reference embedded in the "amba_device":
-> +The next field ``struct coresight_platform_data *pdata`` is acquired by calling
-> +``of_get_coresight_platform_data()``, as part of the driver's _probe routine and
-> +``struct device *dev`` gets the device reference embedded in the ``amba_device``::
->  
-> -static int etm_probe(struct amba_device *adev, const struct amba_id *id)
-> -{
-> - ...
-> - ...
-> - drvdata->dev = &adev->dev;
-> - ...
-> -}
-> +    static int etm_probe(struct amba_device *adev, const struct amba_id *id)
-> +    {
-> +     ...
-> +     ...
-> +     drvdata->dev = &adev->dev;
-> +     ...
-> +    }
->  
->  Specific class of device (source, link, or sink) have generic operations
-> -that can be performed on them (see "struct coresight_ops").  The
-> -"**groups" is a list of sysfs entries pertaining to operations
-> +that can be performed on them (see ``struct coresight_ops``). The ``**groups``
-> +is a list of sysfs entries pertaining to operations
->  specific to that component only.  "Implementation defined" customisations are
->  expected to be accessed and controlled using those entries.
->  
-> -
->  Device Naming scheme
-> -------------------------
-> +--------------------
-> +
->  The devices that appear on the "coresight" bus were named the same as their
->  parent devices, i.e, the real devices that appears on AMBA bus or the platform bus.
->  Thus the names were based on the Linux Open Firmware layer naming convention,
->  which follows the base physical address of the device followed by the device
-> -type. e.g:
-> +type. e.g::
->  
-> -root:~# ls /sys/bus/coresight/devices/
-> - 20010000.etf  20040000.funnel      20100000.stm     22040000.etm
-> - 22140000.etm  230c0000.funnel      23240000.etm     20030000.tpiu
-> - 20070000.etr  20120000.replicator  220c0000.funnel
-> - 23040000.etm  23140000.etm         23340000.etm
-> +    root:~# ls /sys/bus/coresight/devices/
-> +     20010000.etf  20040000.funnel      20100000.stm     22040000.etm
-> +     22140000.etm  230c0000.funnel      23240000.etm     20030000.tpiu
-> +     20070000.etr  20120000.replicator  220c0000.funnel
-> +     23040000.etm  23140000.etm         23340000.etm
->  
->  However, with the introduction of ACPI support, the names of the real
->  devices are a bit cryptic and non-obvious. Thus, a new naming scheme was
->  introduced to use more generic names based on the type of the device. The
-> -following rules apply:
-> +following rules apply::
->  
->    1) Devices that are bound to CPUs, are named based on the CPU logical
->       number.
-> @@ -220,11 +230,11 @@ following rules apply:
->  
->  	e.g, tmc_etf0, tmc_etr0, funnel0, funnel1
->  
-> -Thus, with the new scheme the devices could appear as :
-> +Thus, with the new scheme the devices could appear as ::
->  
-> -root:~# ls /sys/bus/coresight/devices/
-> - etm0     etm1     etm2         etm3  etm4      etm5      funnel0
-> - funnel1  funnel2  replicator0  stm0  tmc_etf0  tmc_etr0  tpiu0
-> +    root:~# ls /sys/bus/coresight/devices/
-> +     etm0     etm1     etm2         etm3  etm4      etm5      funnel0
-> +     funnel1  funnel2  replicator0  stm0  tmc_etf0  tmc_etr0  tpiu0
->  
->  Some of the examples below might refer to old naming scheme and some
->  to the newer scheme, to give a confirmation that what you see on your
-> @@ -234,9 +244,12 @@ the system under specified locations.
->  How to use the tracer modules
->  -----------------------------
->  
-> -There are two ways to use the Coresight framework: 1) using the perf cmd line
-> -tools and 2) interacting directly with the Coresight devices using the sysFS
-> -interface.  Preference is given to the former as using the sysFS interface
-> +There are two ways to use the Coresight framework:
-> +
-> +1. using the perf cmd line tools.
-> +2. interacting directly with the Coresight devices using the sysFS interface.
-> +
-> +Preference is given to the former as using the sysFS interface
->  requires a deep understanding of the Coresight HW.  The following sections
->  provide details on using both methods.
->  
-> @@ -245,107 +258,107 @@ provide details on using both methods.
->  Before trace collection can start, a coresight sink needs to be identified.
->  There is no limit on the amount of sinks (nor sources) that can be enabled at
->  any given moment.  As a generic operation, all device pertaining to the sink
-> -class will have an "active" entry in sysfs:
-> -
-> -root:/sys/bus/coresight/devices# ls
-> -replicator  20030000.tpiu    2201c000.ptm  2203c000.etm  2203e000.etm
-> -20010000.etb         20040000.funnel  2201d000.ptm  2203d000.etm
-> -root:/sys/bus/coresight/devices# ls 20010000.etb
-> -enable_sink  status  trigger_cntr
-> -root:/sys/bus/coresight/devices# echo 1 > 20010000.etb/enable_sink
-> -root:/sys/bus/coresight/devices# cat 20010000.etb/enable_sink
-> -1
-> -root:/sys/bus/coresight/devices#
-> +class will have an "active" entry in sysfs::
-> +
-> +    root:/sys/bus/coresight/devices# ls
-> +    replicator  20030000.tpiu    2201c000.ptm  2203c000.etm  2203e000.etm
-> +    20010000.etb         20040000.funnel  2201d000.ptm  2203d000.etm
-> +    root:/sys/bus/coresight/devices# ls 20010000.etb
-> +    enable_sink  status  trigger_cntr
-> +    root:/sys/bus/coresight/devices# echo 1 > 20010000.etb/enable_sink
-> +    root:/sys/bus/coresight/devices# cat 20010000.etb/enable_sink
-> +    1
-> +    root:/sys/bus/coresight/devices#
->  
->  At boot time the current etm3x driver will configure the first address
->  comparator with "_stext" and "_etext", essentially tracing any instruction
->  that falls within that range.  As such "enabling" a source will immediately
-> -trigger a trace capture:
-> -
-> -root:/sys/bus/coresight/devices# echo 1 > 2201c000.ptm/enable_source
-> -root:/sys/bus/coresight/devices# cat 2201c000.ptm/enable_source
-> -1
-> -root:/sys/bus/coresight/devices# cat 20010000.etb/status
-> -Depth:          0x2000
-> -Status:         0x1
-> -RAM read ptr:   0x0
-> -RAM wrt ptr:    0x19d3   <----- The write pointer is moving
-> -Trigger cnt:    0x0
-> -Control:        0x1
-> -Flush status:   0x0
-> -Flush ctrl:     0x2001
-> -root:/sys/bus/coresight/devices#
-> -
-> -Trace collection is stopped the same way:
-> -
-> -root:/sys/bus/coresight/devices# echo 0 > 2201c000.ptm/enable_source
-> -root:/sys/bus/coresight/devices#
-> -
-> -The content of the ETB buffer can be harvested directly from /dev:
-> -
-> -root:/sys/bus/coresight/devices# dd if=/dev/20010000.etb \
-> -of=~/cstrace.bin
-> -
-> -64+0 records in
-> -64+0 records out
-> -32768 bytes (33 kB) copied, 0.00125258 s, 26.2 MB/s
-> -root:/sys/bus/coresight/devices#
-> +trigger a trace capture::
-> +
-> +    root:/sys/bus/coresight/devices# echo 1 > 2201c000.ptm/enable_source
-> +    root:/sys/bus/coresight/devices# cat 2201c000.ptm/enable_source
-> +    1
-> +    root:/sys/bus/coresight/devices# cat 20010000.etb/status
-> +    Depth:          0x2000
-> +    Status:         0x1
-> +    RAM read ptr:   0x0
-> +    RAM wrt ptr:    0x19d3   <----- The write pointer is moving
-> +    Trigger cnt:    0x0
-> +    Control:        0x1
-> +    Flush status:   0x0
-> +    Flush ctrl:     0x2001
-> +    root:/sys/bus/coresight/devices#
-> +
-> +Trace collection is stopped the same way::
-> +
-> +    root:/sys/bus/coresight/devices# echo 0 > 2201c000.ptm/enable_source
-> +    root:/sys/bus/coresight/devices#
-> +
-> +The content of the ETB buffer can be harvested directly from /dev::
-> +
-> +    root:/sys/bus/coresight/devices# dd if=/dev/20010000.etb \
-> +    of=~/cstrace.bin
-> +    64+0 records in
-> +    64+0 records out
-> +    32768 bytes (33 kB) copied, 0.00125258 s, 26.2 MB/s
-> +    root:/sys/bus/coresight/devices#
->  
->  The file cstrace.bin can be decompressed using "ptm2human", DS-5 or Trace32.
->  
->  Following is a DS-5 output of an experimental loop that increments a variable up
->  to a certain value.  The example is simple and yet provides a glimpse of the
->  wealth of possibilities that coresight provides.
-> -
-> -Info                                    Tracing enabled
-> -Instruction     106378866       0x8026B53C      E52DE004        false   PUSH     {lr}
-> -Instruction     0       0x8026B540      E24DD00C        false   SUB      sp,sp,#0xc
-> -Instruction     0       0x8026B544      E3A03000        false   MOV      r3,#0
-> -Instruction     0       0x8026B548      E58D3004        false   STR      r3,[sp,#4]
-> -Instruction     0       0x8026B54C      E59D3004        false   LDR      r3,[sp,#4]
-> -Instruction     0       0x8026B550      E3530004        false   CMP      r3,#4
-> -Instruction     0       0x8026B554      E2833001        false   ADD      r3,r3,#1
-> -Instruction     0       0x8026B558      E58D3004        false   STR      r3,[sp,#4]
-> -Instruction     0       0x8026B55C      DAFFFFFA        true    BLE      {pc}-0x10 ; 0x8026b54c
-> -Timestamp                                       Timestamp: 17106715833
-> -Instruction     319     0x8026B54C      E59D3004        false   LDR      r3,[sp,#4]
-> -Instruction     0       0x8026B550      E3530004        false   CMP      r3,#4
-> -Instruction     0       0x8026B554      E2833001        false   ADD      r3,r3,#1
-> -Instruction     0       0x8026B558      E58D3004        false   STR      r3,[sp,#4]
-> -Instruction     0       0x8026B55C      DAFFFFFA        true    BLE      {pc}-0x10 ; 0x8026b54c
-> -Instruction     9       0x8026B54C      E59D3004        false   LDR      r3,[sp,#4]
-> -Instruction     0       0x8026B550      E3530004        false   CMP      r3,#4
-> -Instruction     0       0x8026B554      E2833001        false   ADD      r3,r3,#1
-> -Instruction     0       0x8026B558      E58D3004        false   STR      r3,[sp,#4]
-> -Instruction     0       0x8026B55C      DAFFFFFA        true    BLE      {pc}-0x10 ; 0x8026b54c
-> -Instruction     7       0x8026B54C      E59D3004        false   LDR      r3,[sp,#4]
-> -Instruction     0       0x8026B550      E3530004        false   CMP      r3,#4
-> -Instruction     0       0x8026B554      E2833001        false   ADD      r3,r3,#1
-> -Instruction     0       0x8026B558      E58D3004        false   STR      r3,[sp,#4]
-> -Instruction     0       0x8026B55C      DAFFFFFA        true    BLE      {pc}-0x10 ; 0x8026b54c
-> -Instruction     7       0x8026B54C      E59D3004        false   LDR      r3,[sp,#4]
-> -Instruction     0       0x8026B550      E3530004        false   CMP      r3,#4
-> -Instruction     0       0x8026B554      E2833001        false   ADD      r3,r3,#1
-> -Instruction     0       0x8026B558      E58D3004        false   STR      r3,[sp,#4]
-> -Instruction     0       0x8026B55C      DAFFFFFA        true    BLE      {pc}-0x10 ; 0x8026b54c
-> -Instruction     10      0x8026B54C      E59D3004        false   LDR      r3,[sp,#4]
-> -Instruction     0       0x8026B550      E3530004        false   CMP      r3,#4
-> -Instruction     0       0x8026B554      E2833001        false   ADD      r3,r3,#1
-> -Instruction     0       0x8026B558      E58D3004        false   STR      r3,[sp,#4]
-> -Instruction     0       0x8026B55C      DAFFFFFA        true    BLE      {pc}-0x10 ; 0x8026b54c
-> -Instruction     6       0x8026B560      EE1D3F30        false   MRC      p15,#0x0,r3,c13,c0,#1
-> -Instruction     0       0x8026B564      E1A0100D        false   MOV      r1,sp
-> -Instruction     0       0x8026B568      E3C12D7F        false   BIC      r2,r1,#0x1fc0
-> -Instruction     0       0x8026B56C      E3C2203F        false   BIC      r2,r2,#0x3f
-> -Instruction     0       0x8026B570      E59D1004        false   LDR      r1,[sp,#4]
-> -Instruction     0       0x8026B574      E59F0010        false   LDR      r0,[pc,#16] ; [0x8026B58C] = 0x80550368
-> -Instruction     0       0x8026B578      E592200C        false   LDR      r2,[r2,#0xc]
-> -Instruction     0       0x8026B57C      E59221D0        false   LDR      r2,[r2,#0x1d0]
-> -Instruction     0       0x8026B580      EB07A4CF        true    BL       {pc}+0x1e9344 ; 0x804548c4
-> -Info                                    Tracing enabled
-> -Instruction     13570831        0x8026B584      E28DD00C        false   ADD      sp,sp,#0xc
-> -Instruction     0       0x8026B588      E8BD8000        true    LDM      sp!,{pc}
-> -Timestamp                                       Timestamp: 17107041535
-> +::
-> +
-> +    Info                                    Tracing enabled
-> +    Instruction     106378866       0x8026B53C      E52DE004        false   PUSH     {lr}
-> +    Instruction     0       0x8026B540      E24DD00C        false   SUB      sp,sp,#0xc
-> +    Instruction     0       0x8026B544      E3A03000        false   MOV      r3,#0
-> +    Instruction     0       0x8026B548      E58D3004        false   STR      r3,[sp,#4]
-> +    Instruction     0       0x8026B54C      E59D3004        false   LDR      r3,[sp,#4]
-> +    Instruction     0       0x8026B550      E3530004        false   CMP      r3,#4
-> +    Instruction     0       0x8026B554      E2833001        false   ADD      r3,r3,#1
-> +    Instruction     0       0x8026B558      E58D3004        false   STR      r3,[sp,#4]
-> +    Instruction     0       0x8026B55C      DAFFFFFA        true    BLE      {pc}-0x10 ; 0x8026b54c
-> +    Timestamp                                       Timestamp: 17106715833
-> +    Instruction     319     0x8026B54C      E59D3004        false   LDR      r3,[sp,#4]
-> +    Instruction     0       0x8026B550      E3530004        false   CMP      r3,#4
-> +    Instruction     0       0x8026B554      E2833001        false   ADD      r3,r3,#1
-> +    Instruction     0       0x8026B558      E58D3004        false   STR      r3,[sp,#4]
-> +    Instruction     0       0x8026B55C      DAFFFFFA        true    BLE      {pc}-0x10 ; 0x8026b54c
-> +    Instruction     9       0x8026B54C      E59D3004        false   LDR      r3,[sp,#4]
-> +    Instruction     0       0x8026B550      E3530004        false   CMP      r3,#4
-> +    Instruction     0       0x8026B554      E2833001        false   ADD      r3,r3,#1
-> +    Instruction     0       0x8026B558      E58D3004        false   STR      r3,[sp,#4]
-> +    Instruction     0       0x8026B55C      DAFFFFFA        true    BLE      {pc}-0x10 ; 0x8026b54c
-> +    Instruction     7       0x8026B54C      E59D3004        false   LDR      r3,[sp,#4]
-> +    Instruction     0       0x8026B550      E3530004        false   CMP      r3,#4
-> +    Instruction     0       0x8026B554      E2833001        false   ADD      r3,r3,#1
-> +    Instruction     0       0x8026B558      E58D3004        false   STR      r3,[sp,#4]
-> +    Instruction     0       0x8026B55C      DAFFFFFA        true    BLE      {pc}-0x10 ; 0x8026b54c
-> +    Instruction     7       0x8026B54C      E59D3004        false   LDR      r3,[sp,#4]
-> +    Instruction     0       0x8026B550      E3530004        false   CMP      r3,#4
-> +    Instruction     0       0x8026B554      E2833001        false   ADD      r3,r3,#1
-> +    Instruction     0       0x8026B558      E58D3004        false   STR      r3,[sp,#4]
-> +    Instruction     0       0x8026B55C      DAFFFFFA        true    BLE      {pc}-0x10 ; 0x8026b54c
-> +    Instruction     10      0x8026B54C      E59D3004        false   LDR      r3,[sp,#4]
-> +    Instruction     0       0x8026B550      E3530004        false   CMP      r3,#4
-> +    Instruction     0       0x8026B554      E2833001        false   ADD      r3,r3,#1
-> +    Instruction     0       0x8026B558      E58D3004        false   STR      r3,[sp,#4]
-> +    Instruction     0       0x8026B55C      DAFFFFFA        true    BLE      {pc}-0x10 ; 0x8026b54c
-> +    Instruction     6       0x8026B560      EE1D3F30        false   MRC      p15,#0x0,r3,c13,c0,#1
-> +    Instruction     0       0x8026B564      E1A0100D        false   MOV      r1,sp
-> +    Instruction     0       0x8026B568      E3C12D7F        false   BIC      r2,r1,#0x1fc0
-> +    Instruction     0       0x8026B56C      E3C2203F        false   BIC      r2,r2,#0x3f
-> +    Instruction     0       0x8026B570      E59D1004        false   LDR      r1,[sp,#4]
-> +    Instruction     0       0x8026B574      E59F0010        false   LDR      r0,[pc,#16] ; [0x8026B58C] = 0x80550368
-> +    Instruction     0       0x8026B578      E592200C        false   LDR      r2,[r2,#0xc]
-> +    Instruction     0       0x8026B57C      E59221D0        false   LDR      r2,[r2,#0x1d0]
-> +    Instruction     0       0x8026B580      EB07A4CF        true    BL       {pc}+0x1e9344 ; 0x804548c4
-> +    Info                                    Tracing enabled
-> +    Instruction     13570831        0x8026B584      E28DD00C        false   ADD      sp,sp,#0xc
-> +    Instruction     0       0x8026B588      E8BD8000        true    LDM      sp!,{pc}
-> +    Timestamp                                       Timestamp: 17107041535
->  
->  2) Using perf framework:
->  
-> @@ -370,19 +383,18 @@ A Coresight PMU works the same way as any other PMU, i.e the name of the PMU is
->  listed along with configuration options within forward slashes '/'.  Since a
->  Coresight system will typically have more than one sink, the name of the sink to
->  work with needs to be specified as an event option.
-> -On newer kernels the available sinks are listed in sysFS under:
-> -($SYSFS)/bus/event_source/devices/cs_etm/sinks/
-> +On newer kernels the available sinks are listed in sysFS under
-> +($SYSFS)/bus/event_source/devices/cs_etm/sinks/::
->  
->  	root@localhost:/sys/bus/event_source/devices/cs_etm/sinks# ls
->  	tmc_etf0  tmc_etr0  tpiu0
->  
->  On older kernels, this may need to be found from the list of coresight devices,
-> -available under ($SYSFS)/bus/coresight/devices/:
-> +available under ($SYSFS)/bus/coresight/devices/::
->  
->  	root:~# ls /sys/bus/coresight/devices/
->  	 etm0     etm1     etm2         etm3  etm4      etm5      funnel0
->  	 funnel1  funnel2  replicator0  stm0  tmc_etf0  tmc_etr0  tpiu0
-> -
->  	root@linaro-nano:~# perf record -e cs_etm/@tmc_etr0/u --per-thread program
->  
->  As mentioned above in section "Device Naming scheme", the names of the devices could
-> @@ -395,14 +407,14 @@ to use for the trace session.
->  
->  More information on the above and other example on how to use Coresight with
->  the perf tools can be found in the "HOWTO.md" file of the openCSD gitHub
-> -repository [3].
-> +repository [#third]_.
->  
->  2.1) AutoFDO analysis using the perf tools:
->  
->  perf can be used to record and analyze trace of programs.
->  
->  Execution can be recorded using 'perf record' with the cs_etm event,
-> -specifying the name of the sink to record to, e.g:
-> +specifying the name of the sink to record to, e.g::
->  
->      perf record -e cs_etm/@tmc_etr0/u --per-thread
->  
-> @@ -421,12 +433,14 @@ Generating coverage files for Feedback Directed Optimization: AutoFDO
->  
->  'perf inject' accepts the --itrace option in which case tracing data is
->  removed and replaced with the synthesized events. e.g.
-> +::
->  
->  	perf inject --itrace --strip -i perf.data -o perf.data.new
->  
->  Below is an example of using ARM ETM for autoFDO.  It requires autofdo
->  (https://github.com/google/autofdo) and gcc version 5.  The bubble
->  sort example is from the AutoFDO tutorial (https://gcc.gnu.org/wiki/AutoFDO/Tutorial).
-> +::
->  
->  	$ gcc-5 -O3 sort.c -o sort
->  	$ taskset -c 2 ./sort
-> @@ -455,28 +469,30 @@ difference is that clients are driving the trace capture rather
->  than the program flow through the code.
->  
->  As with any other CoreSight component, specifics about the STM tracer can be
-> -found in sysfs with more information on each entry being found in [1]:
-> +found in sysfs with more information on each entry being found in [#first]_::
->  
-> -root@genericarmv8:~# ls /sys/bus/coresight/devices/stm0
-> -enable_source   hwevent_select  port_enable     subsystem       uevent
-> -hwevent_enable  mgmt            port_select     traceid
-> -root@genericarmv8:~#
-> +    root@genericarmv8:~# ls /sys/bus/coresight/devices/stm0
-> +    enable_source   hwevent_select  port_enable     subsystem       uevent
-> +    hwevent_enable  mgmt            port_select     traceid
-> +    root@genericarmv8:~#
->  
->  Like any other source a sink needs to be identified and the STM enabled before
-> -being used:
-> +being used::
->  
-> -root@genericarmv8:~# echo 1 > /sys/bus/coresight/devices/tmc_etf0/enable_sink
-> -root@genericarmv8:~# echo 1 > /sys/bus/coresight/devices/stm0/enable_source
-> +    root@genericarmv8:~# echo 1 > /sys/bus/coresight/devices/tmc_etf0/enable_sink
-> +    root@genericarmv8:~# echo 1 > /sys/bus/coresight/devices/stm0/enable_source
->  
->  From there user space applications can request and use channels using the devfs
-> -interface provided for that purpose by the generic STM API:
-> +interface provided for that purpose by the generic STM API::
-> +
-> +    root@genericarmv8:~# ls -l /dev/stm0
-> +    crw-------    1 root     root       10,  61 Jan  3 18:11 /dev/stm0
-> +    root@genericarmv8:~#
-> +
-> +Details on how to use the generic STM API can be found here [#second]_.
->  
-> -root@genericarmv8:~# ls -l /dev/stm0
-> -crw-------    1 root     root       10,  61 Jan  3 18:11 /dev/stm0
-> -root@genericarmv8:~#
-> +.. [#first] Documentation/ABI/testing/sysfs-bus-coresight-devices-stm
->  
-> -Details on how to use the generic STM API can be found here [2].
-> +.. [#second] Documentation/trace/stm.rst
->  
-> -[1]. Documentation/ABI/testing/sysfs-bus-coresight-devices-stm
-> -[2]. Documentation/trace/stm.rst
-> -[3]. https://github.com/Linaro/perf-opencsd
-> +.. [#third] https://github.com/Linaro/perf-opencsd
-> diff --git a/Documentation/trace/index.rst b/Documentation/trace/index.rst
-> index 6b4107cf4b98..b7891cb1ab4d 100644
-> --- a/Documentation/trace/index.rst
-> +++ b/Documentation/trace/index.rst
-> @@ -23,3 +23,5 @@ Linux Tracing Technologies
->     intel_th
->     stm
->     sys-t
-> +   coresight
-> +   coresight-cpu-debug
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index 661def85619c..eb03e5966f11 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -1582,8 +1582,8 @@ R:	Suzuki K Poulose <suzuki.poulose@arm.com>
->  L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
->  S:	Maintained
->  F:	drivers/hwtracing/coresight/*
-> -F:	Documentation/trace/coresight.txt
-> -F:	Documentation/trace/coresight-cpu-debug.txt
-> +F:	Documentation/trace/coresight.rst
-> +F:	Documentation/trace/coresight-cpu-debug.rst
->  F:	Documentation/devicetree/bindings/arm/coresight.txt
->  F:	Documentation/devicetree/bindings/arm/coresight-cpu-debug.txt
->  F:	Documentation/ABI/testing/sysfs-bus-coresight-devices-*
-
-
-
-Thanks,
-Mauro
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpPbiA3LzEwLzE5IDEwOjEzIEFNLCBSaWNoYXJkIFpodSB3cm90ZToKPj4gLS0tLS1PcmlnaW5h
+bCBNZXNzYWdlLS0tLS0KPj4gRnJvbTogQXJuYXVkIFBvdWxpcXVlbiBbbWFpbHRvOmFybmF1ZC5w
+b3VsaXF1ZW5Ac3QuY29tXQo+PiBTZW50OiAyMDE55bm0N+aciDnml6UgMTc6NTcKPj4gVG86IFJp
+Y2hhcmQgWmh1IDxob25neGluZy56aHVAbnhwLmNvbT47IE9sZWtzaWogUmVtcGVsCj4+IDxvLnJl
+bXBlbEBwZW5ndXRyb25peC5kZT47IG9oYWRAd2l6ZXJ5LmNvbTsgYmpvcm4uYW5kZXJzc29uQGxp
+bmFyby5vcmc7Cj4+IGxpbnV4LXJlbW90ZXByb2NAdmdlci5rZXJuZWwub3JnCj4+IENjOiBsb2lj
+LnBhbGxhcmR5QHN0LmNvbTsgRmFiaWVuIERFU1NFTk5FIDxmYWJpZW4uZGVzc2VubmVAc3QuY29t
+PjsKPj4gZWxkZXJAbGluYXJvLm9yZzsgbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
+b3JnCj4+IFN1YmplY3Q6IFJlOiBbRVhUXSBSZTogW1JGQyAyLzJdIHJwbXNnOiBpbXg6IGFkZCB0
+aGUgaW5pdGlhbCBpbXggcnBtc2cgc3VwcG9ydAo+Pgo+PiBPbiA3LzkvMTkgOTozMiBBTSwgUmlj
+aGFyZCBaaHUgd3JvdGU6Cj4+PiBIaSBBcm5hdWQ6Cj4+PiBUaGFua3MgYSBsb3QgZm9yIHlvdXIg
+a2luZGx5IGd1aWRhbmNlIGFuZCByZXZpZXcgY29tbWVudHMuCj4+Pgo+Pj4KPj4+PiAtLS0tLU9y
+aWdpbmFsIE1lc3NhZ2UtLS0tLQo+Pj4+IEZyb206IEFybmF1ZCBQb3VsaXF1ZW4gW21haWx0bzph
+cm5hdWQucG91bGlxdWVuQHN0LmNvbV0KPj4+PiBTZW50OiAyMDE55bm0N+aciDjml6UgMjI6MTIK
+Pj4+PiBUbzogT2xla3NpaiBSZW1wZWwgPG8ucmVtcGVsQHBlbmd1dHJvbml4LmRlPjsgUmljaGFy
+ZCBaaHUKPj4+PiA8aG9uZ3hpbmcuemh1QG54cC5jb20+OyBvaGFkQHdpemVyeS5jb207Cj4+IGJq
+b3JuLmFuZGVyc3NvbkBsaW5hcm8ub3JnOwo+Pj4+IGxpbnV4LXJlbW90ZXByb2NAdmdlci5rZXJu
+ZWwub3JnCj4+Pj4gQ2M6IGxvaWMucGFsbGFyZHlAc3QuY29tOyBGYWJpZW4gREVTU0VOTkUgPGZh
+Ymllbi5kZXNzZW5uZUBzdC5jb20+Owo+Pj4+IGVsZGVyQGxpbmFyby5vcmc7IGxpbnV4LWFybS1r
+ZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwo+Pj4+IFN1YmplY3Q6IFJlOiBbRVhUXSBSZTogW1JG
+QyAyLzJdIHJwbXNnOiBpbXg6IGFkZCB0aGUgaW5pdGlhbCBpbXgKPj4+PiBycG1zZyBzdXBwb3J0
+Cj4+Pj4KPj4+Pgo+Pj4+IEhlbGxvIFJpY2hhcmQsCj4+Pj4KPj4+PiBPbiA3LzgvMTkgMTowMiBQ
+TSwgT2xla3NpaiBSZW1wZWwgd3JvdGU6Cj4+Pj4+IEhpIFJpY2hhcmQsCj4+Pj4+Cj4+Pj4+IE9u
+IDA4LjA3LjE5IDEyOjE3LCBSaWNoYXJkIFpodSB3cm90ZToKPj4+Pj4+IEhpIE9sZWtzaWo6Cj4+
+Pj4+PiBUaGFua3MgZm9yIHlvdXIgY29tbWVudHMuCj4+Pj4+Pgo+Pj4+Pj4KPj4+Pj4+PiAtLS0t
+LU9yaWdpbmFsIE1lc3NhZ2UtLS0tLQo+Pj4+Pj4+IEZyb206IE9sZWtzaWogUmVtcGVsIFttYWls
+dG86by5yZW1wZWxAcGVuZ3V0cm9uaXguZGVdCj4+Pj4+Pj4gU2VudDogMjAxOeW5tDfmnIg05pel
+IDE3OjM2Cj4+Pj4+Pj4gVG86IFJpY2hhcmQgWmh1IDxob25neGluZy56aHVAbnhwLmNvbT47IG9o
+YWRAd2l6ZXJ5LmNvbTsKPj4+Pj4+PiBiam9ybi5hbmRlcnNzb25AbGluYXJvLm9yZzsgbGludXgt
+cmVtb3RlcHJvY0B2Z2VyLmtlcm5lbC5vcmcKPj4+Pj4+PiBDYzogbGludXgtYXJtLWtlcm5lbEBs
+aXN0cy5pbmZyYWRlYWQub3JnOyBGYWJpZW4gREVTU0VOTkUKPj4+Pj4+PiA8ZmFiaWVuLmRlc3Nl
+bm5lQHN0LmNvbT47IGxvaWMucGFsbGFyZHlAc3QuY29tOwo+Pj4+Pj4+IGFybmF1ZC5wb3VsaXF1
+ZW5Ac3QuY29tOyBzLWFubmFAdGkuY29tOyBlbGRlckBsaW5hcm8ub3JnCj4+Pj4+Pj4gU3ViamVj
+dDogW0VYVF0gUmU6IFtSRkMgMi8yXSBycG1zZzogaW14OiBhZGQgdGhlIGluaXRpYWwgaW14IHJw
+bXNnCj4+Pj4+Pj4gc3VwcG9ydAo+Pj4+Pj4+Cj4+Pj4+Pj4KPj4+Pj4+PiBIaSBSaWNoYXJkLAo+
+Pj4+Pj4+Cj4+Pj4+Pj4gT24gMDEuMDcuMTkgMTA6MzQsIFJpY2hhcmQgWmh1IHdyb3RlOgo+Pj4+
+Pj4+PiBCYXNlZCBvbiAidmlydGlvX3JwbXNnX2J1cyIgZHJpdmVyLCBUaGlzIHBhdGNoLXNldCBp
+cyB1c2VkIHRvIHNldAo+Pj4+Pj4+PiB1cCB0aGUgY29tbXVuaWNhdGlvbiBtZWNoYW5pc20gYmV0
+d2VlbiBBIGNvcmUgYW5kIE0gY29yZSBvbgo+PiBpLk1YCj4+Pj4+Pj4+IEFNUAo+Pj4+Pj4+IFNP
+Q3MuCj4+Pj4+Pj4+Cj4+Pj4+Pj4+IEFkZCB0aGUgaW5pdGlhbCBpbXggcnBtc2cgc3VwcG9ydCBn
+bHVlIGRyaXZlciBhbmQgb25lIHBpbmdwb25nCj4+Pj4+Pj4+IGRlbW8sIGRlbW9uc3RyYXRlZCB0
+aGUgZGF0YSB0cmFuc2FjdGlvbnMgYmV0d2VlbiBBIGNvcmUgYW5kCj4+Pj4+Pj4+IHJlbW90ZQo+
+Pj4+IE0gY29yZS4KPj4+Pj4+Pj4gRGlzdHJpYnV0ZWQgZnJhbWV3b3JrIGlzIHVzZWQgaW4gSU1Y
+IFJQTVNHIGltcGxlbWVudGF0aW9uLCByZWZlcgo+Pj4+Pj4+PiB0byB0aGUgZm9sbG93aW5nIHJl
+cXVpcmVtZW50czoKPj4+Pj4+Pj4gICAgICAtIFRoZSBDQU4gZnVuY3Rpb25zIGNvbnRhaW5lZCBp
+biBNIGNvcmUgYW5kIFJUT1Mgc2hvdWxkIGJlCj4+Pj4+Pj4+IHJlYWR5IGFuZAo+Pj4+Pj4+PiAg
+ICAgICAgY29tcGxldGUgZnVuY3Rpb25hbCBpbiA1MG1zIGFmdGVyIEFNUCBzeXN0ZW0gaXMgdHVy
+bmVkIG9uLgo+Pj4+Pj4+PiAgICAgIC0gUGFydGl0aW9uIHJlc2V0LiBTeXN0ZW0gd291bGRuJ3Qg
+YmUgc3RhbGxlZCBieSB0aGUKPj4+Pj4+Pj4gZXhjZXB0aW9ucyAoZS54Cj4+Pj4+Pj4+ICAgICAg
+ICB0aGUgcmVzZXQgdHJpZ2dlcmVkIGJ5IHRoZSBzeXN0ZW0gaGFuZykgb2NjdXJyZWQgYXQgdGhl
+Cj4+Pj4+Pj4+IG90aGVyIHNpZGUuCj4+Pj4+Pj4+ICAgICAgICBBbmQgdGhlIFJQTVNHIG1lY2hh
+bmlzbSBzaG91bGQgYmUgcmVjb3ZlcmVkIGF1dG9tYWN0aWxseQo+Pj4+Pj4+PiBhZnRlcgo+Pj4+
+Pj4+IHRoZQo+Pj4+Pj4+PiAgICAgICAgcGFydGl0aW9uIHJlc2V0IGlzIGNvbXBsZXRlZC4KPj4+
+Pj4+Pj4gSW4gdGhpcyBzY2VuYXJpbywgdGhlIE0gY29yZSBhbmQgUlRPUyB3b3VsZCBiZSBraWNr
+ZWQgb2ZmIGJ5Cj4+Pj4+Pj4+IGJvb3Rsb2FkZXIgZmlyc3RseSwgdGhlbiBBIGNvcmUgYW5kIExp
+bnV4IHdvdWxkIGJlIGxvYWRlZCBsYXRlci4KPj4+Pj4+Pj4gQm90aCBNIGNvcmUvUlRPUyBhbmQg
+QSBjb3JlL0xpbnV4IGFyZSBydW5uaW5nIGluZGVwZW5kbHkuCj4+Pj4+Pj4+Cj4+Pj4+Pj4+IE9u
+ZSBwaHlzaWNhbCBtZW1vcnkgcmVnaW9uIHVzZWQgdG8gc3RvcmUgdGhlIHZyaW5nIGlzIG1hbmRh
+dG9yeQo+Pj4+Pj4+PiByZXF1aXJlZCB0byBwcmUtcmVzZXJ2ZWQgYW5kIHdlbGwta25vd25lZCBi
+eSBib3RoIEEgY29yZSBhbmQgTQo+Pj4+Pj4+PiBjb3JlCj4+Pj4+Pj4KPj4+Pj4+PiBJIGRvbid0
+IHNlZSBhbnkgdGhpbmcgaW14IHNwZWNpZmljIGluIHRoaXMgcGF0Y2guIFdlIGFscmVhZHkgaGF2
+ZQo+Pj4+Pj4+IHJlbW90ZXByb2Mgd2hpY2ggd291bGQgcGFyc2UgZmlybXdhcmUgaGVhZGVyIGFu
+ZCBjcmVhdGUgbmVlZGVkCj4+Pj4+Pj4gZGV2aWNlcy4gVGhpcyBkcml2ZXIgaXMgb25seSBuZWVk
+ZWQgZm9yIHRoZSBjYXNlIHdoZXJlIGZpcm13YXJlCj4+Pj4+Pj4gd2FzIHN0YXJlZCBieSB0aGUg
+Ym9vdGxvYWRlci4KPj4+Pj4+Pgo+Pj4+Pj4gW1JpY2hhcmQgWmh1XSBCb290bG9hZGVyIHN0YXJ0
+cyB0aGUgZmlybXdhcmUgaXMgbWFuZGF0b3J5IHJlcXVpcmVkCj4+Pj4+PiBpbiB0aGVzZSBzY2Vu
+YXJpbyByZWZlciB0byB0aGUgcmVhc29ucyBsaXN0ZWQgaW4gdGhlIGNvbW1pdC4KPj4+Pj4+IFRo
+dXMsIHRoZSBkaXN0cmlidXRlZCBmcmFtZXdvcmsgaGFzIHRvIGJlIHVzZWQsIGFuZCBib3RoIEEK
+Pj4+Pj4+IGNvcmUvTGludXggYW5kIHJlbW90ZSBjb3JlL1JUT1Mgd29ya3MgaW5kZXBlbmRlbnRs
+eS4KPj4+Pj4+Cj4+Pj4+Pj4gSSBwZXJzb25hbGx5IHdvdWxkIHByZWZlciB0byBoYXZlIGdlbmVy
+aWMgZHJpdmVyIG9yIGV4dGVuZCB0aGUKPj4+Pj4+PiByZW1vdGVwcm9jIGZyYW1ld29yay4gU28g
+d2UgY2FuIG5vdGlmeSBrZXJuZWwgYWJvdXQgd29yayBhbHJlYWR5Cj4+Pj4+Pj4gZG9uZSBieSBi
+b290bG9hZGVyLgo+Pj4+Pj4+Cj4+Pj4+PiBbUmljaGFyZCBaaHVdIFRoYW5rcyBmb3IgeW91ciBz
+dWdnZXN0aW9ucy4KPj4+Pj4+IFJlZ2FyZGluZyB0byBteSB1bmRlcnN0YW5kLCBpdCBzZWVtcyB0
+aGF0IG1hc3Rlci9zbGF2ZSBtb2RlIGlzIHVzZWQKPj4+Pj4+IGluIHRoZSByZW1vdGVwcm9jIGN1
+cnJlbnRseS4KPj4+Pj4+IEEgY29yZS9MaW51eCBhY3RzIGFzIG1hc3RlciwgdG8gY29udHJvbHMv
+bWFuaXB1bGF0ZXMgcmVtb3RlIGNvcmUvUlRPUy4KPj4+Pj4+IEl0IGlzbid0IGFwcGxpY2FibGUg
+Zm9yIHRoZSBzY2VuYXJpbyBkZXNjcmliZWQgYnkgdGhpcyBwYXRjaC1zZXQuCj4+Pj4+Pgo+Pj4+
+Pj4+IEluIGdlbmVyYWwsIHNvbWUgbW9yZSBpc3N1ZXMgc2hvdWxkIGJlIHNvbHZlZDoKPj4+Pj4+
+PiAtIEhhbmRsZSBvciBub3QgdG91Y2ggaWRsZSBjbG9ja3MgZm9yIGRpZmZlcmVudCBub2RlIHVz
+ZWQgYnkgTQo+Pj4+Pj4+IGNvcmUgYW5kIG5vdCBtYWluIHN5c3RlbS4KPj4+Pj4+PiAtIHBpbiBj
+b250cm9sCj4+Pj4+Pj4gLSByZWd1bGF0b3JzCj4+Pj4+Pj4KPj4+Pj4+PiBTVCBkZXZzIGFscmVh
+ZHkgdHJpZWQgdG8gc29sdmUgdGhpcyBpc3N1ZXMgYnkgY3JlYXRpbmcgInJlbW90ZXByb2M6Cj4+
+Pj4+Pj4gYWRkIHN5c3RlbQo+Pj4+Pj4+IHJlc291cmNlIG1hbmFnZXIgZGV2aWNlIiBwYXRjaC4g
+SSBkb24ndCBrbm93IHdoYXQgaXMgY3VycmVudCBzdGF0ZQo+Pj4+Pj4+IG9mIGl0ICgvbWUgYWRk
+aW5nIFNUIGRldnMgdG8gQ0MpLgo+Pj4+IFRoZSByZXNvdXJjZSBtYW5hZ2VyIGltcGxlbWVudGF0
+aW9uIGFzIGJlZW4gcHJvcG9zZWQgYnV0IG5vIHJlYWwKPj4+PiBhZGhlc2lvbiBvZiB0aGUgY29t
+bXVuaXR5IG9uIGl0Li4uIFBlcmhhcHMgU0NNSSBzaG91bGQgYmUgYSBjYW5kaWRhdGUuLi4KPj4+
+Pgo+Pj4+Pj4+Cj4+Pj4+PiBbUmljaGFyZCBaaHVdIFllcywgaXQgaXMuIE1hbnkgY29udHJpYnV0
+aW9ucyBoYXZlIGJlZW4gbWFkZSBieSBGYWJpZW4uCj4+Pj4+PiBJTUhPLCB0aGVyZSBhcmUgc29t
+ZSBkaWZmZXJlbnQgYmVoYXZpb3JzIG9uIGlNWDhRWFAvUU0gcGxhdGZvcm1zLAo+PiB0aGUKPj4+
+Pj4+ICAgIHJlc291cmNlcyAoZS54IElQIG1vZHVsZXMpIGhhZCBiZWVuIGFzc2lnbmVkIGFuZCBt
+YW5hZ2VkIGJ5IHRoZQo+Pj4+IFhSREMuCj4+Pj4+PiBJbiB0aGUgb3RoZXIgd29yZHMsIHRoZSBI
+VyByZXNvdXJjZXMgd291bGQgYmUgYXNzaWduZWQgYW5kIG1hbmFnZWQKPj4+PiB3b3VsZAo+Pj4+
+Pj4gICAgYmUgdHJhbnNwYXJlbnQgdG8gU1cuCj4+Pj4+Pgo+Pj4+Pj4gVGh1cywgYm90aCBBIGNv
+cmUvTGludXggYW5kIE0gY29yZS9SVE9TIGNhbiB3b3JrIHJlYWwgaW5kZXBlbmRlbnRseS4KPj4+
+Pj4+IFN5c3RlbSB3b3VsZG4ndCBiZSBzdGFsbGVkIGJ5IHRoZSBleGNlcHRpb25zIChlLnggdGhl
+IHJlc2V0Cj4+Pj4+PiB0cmlnZ2VyZWQgYnkgdGhlIHN5c3RlbSBoYW5nKSBvY2N1cnJlZCBhdCB0
+aGUgb3RoZXIgc2lkZS4gQW5kIHRoZQo+Pj4+Pj4gUlBNU0cgbWVjaGFuaXNtIHNob3VsZAo+Pj4+
+Pj4gICAgYmUgcmVjb3ZlcmVkIGF1dG9tYXRpY2FsbHkgYWZ0ZXIgdGhlIHBhcnRpdGlvbiByZXNl
+dCBpcyBjb21wbGV0ZWQuCj4+Pj4+Cj4+Pj4+IEl0IGlzIGV4YWN0bHkgdGhlIHdheSBJIGRpZCB1
+bmRlcnN0b29kIGl0IGluIHRoZSBmaXJzIG1haWwuIEFueSB3YXksCj4+Pj4+IGknbSBvayB3aXRo
+IHRoaXMgZHJpdmVyLiBKdXN0IHJlbmFtZSBpbXggdG8gc29tZSB0aGluZyBnZW5lcmljLiBUaGlz
+Cj4+Pj4+IGRyaXZlciBjYW4gYW5kIHdpbGwgYmUgcmV1c2VkIG9uIG90aGVyIHBsYXRmb3JtcyBh
+cyB3ZWxsLgo+Pj4+Pgo+Pj4+PiBLaW5kIHJlZ2FyZHMsCj4+Pj4+IE9sZWtzaWogUmVtcGVsCj4+
+Pj4+Cj4+Pj4KPj4+PiBJJ20gdHJ5aW5nIHRvIGZpZ3VyZSBvdXQgd2hhdCBpcyB0aGUgaW50ZXJl
+c3Qgb2YgdGhlc2UgZHJpdmVycyB2cyBleGlzdGluZyBvbmVzLgo+Pj4+IFBsZWFzZSBmaW5kIGJl
+bG93IGEgbGlzdCBvZiBmZWF0dXJlcyBpIG5vdGljZWQgaW4geW91ciBkcml2ZXIgKGRvbid0Cj4+
+Pj4gaGVzaXRhdGUgaWYgaSBtaXNzZWQgc29tZSBvZiB0aGVtKSwgd2l0aCBzb21lIGNvbW1lbnRz
+L3F1ZXN0aW9ucy4KPj4+Pgo+Pj4+IDEpIFRoZSBjb3Byb2Nlc3NvciBpcyBzdGFydGVkIGJlZm9y
+ZSB0aGUgb25lIHJ1bm5pbmcgTGludXggT1MuCj4+Pj4gSGF2ZSB5b3UgdGFrZW4gYSBsb29rIHRv
+IHRoaXMgc2V0IG9mIHBhdGNoZXMgcHJvcG9zZWQgYnkgTG9pYzoKPj4+PiBodHRwczovL2xrbWwu
+b3IKPj4+Pgo+PiBnJTJGbGttbCUyRjIwMTglMkYxMSUyRjMwJTJGMTU3JmFtcDtkYXRhPTAyJTdD
+MDElN0Nob25neGluZy56Cj4+Pj4KPj4gaHUlNDBueHAuY29tJTdDNjc3Mzk5OWFjNjM5NGRmZTM3
+ZDAwOGQ3MDNhZTM0NzUlN0M2ODZlYTFkM2JjMgo+Pj4+Cj4+IGI0YzZmYTkyY2Q5OWM1YzMwMTYz
+NSU3QzAlN0MwJTdDNjM2OTgxOTE5MDY0MTg2NjYwJmFtcDtzZGF0YT0KPj4+Pgo+PiBPVW9nSXMy
+UzdnTFI0NiUyRk5jQVUzT3FFdEI0ckszc1cwZ1JLUlJTTzZ4cGslM0QmYW1wO3Jlc2VydmVkCj4+
+Pj4gPTAKPj4+PiB3aXRoIHRoaXMgcGF0Y2ggeW91IHNob3VsZCBiZSBhYmxlIHRvImF0dGFjaCIg
+b24gdGhlIGZseSBvbiBhCj4+Pj4gcHJlbG9hZGVkIGZpcm13YXJlLgo+Pj4gW1JpY2hhcmQgWmh1
+XSBZZXMsIHRoaXMgcGF0Y2gtc2V0IGVuYWJsZSB0byBwcmUtbG9hZCB0aGUgZmlybXdhcmUgaW4K
+Pj4gYm9vdGxvYWRlci4KPj4+IFRoZSBtb3N0IGRpZmZpY3VsdGllcyB3aGVuIEkgdHJ5IHRvIHVz
+ZSB0aGUgY3VycmVudCBtYXN0ZXIvc2xhdmUgbW9kZQo+Pj4gYXJlIHRoYXQgIHRoZSByZW1vdGUt
+cHJvYyBjb250cm9scy9tYW5hZ2VtZW50IG1vZGUgaXMgbm90IGFwcGxpY2FibGUKPj4+IHRvIHRo
+ZSBzY2VuYXJpbywgIGVzcGVjaWFsbHkgdGhlIGlNWDhRWFAvUU0gcGFydGl0aW9uIHJlc2V0IHVz
+YWdlLgo+Pj4gQm90aCBBIGNvcmUvTGludXggYW5kIE0gY29yZS9SVE9TIGFyZSB3b3JraW5nIGlu
+ZGVwZW5kZW50bHkuCj4+PiBIVyByZXNvdXJjZXMoZS54OiBzb21lIElQIG1vZHVsZXMsIEREUiBt
+ZW1vcnkgcmVnaW9uLCBwb3dlciBkb21haW5zLAo+Pj4gY2xvY2tzIGFuZCBzbyBvbikgIHdvdWxk
+IGJlIHByZS1tYW5hZ2VkIGFuZCBwcmUtYXNzaWduZWQgdG8gQSBjb3JlIG9yCj4+PiBNIGNvcmUg
+YnkgU0NGVyB0aHJvdWdoIFhSREMgbW9kdWxlIHJlZmVyIHRvIHRoZSBzZWN1cml0eSByZWFzb25z
+IG9yCj4+IHNvbWV0aGluZyBlbHNlIEkgZG9uJ3Qga25vdy4KPj4gSWYgaSB3ZWxsIHVuZGVyc3Rh
+bmQgdGhlIHhSREMgaXMgYW4gSVAgd2hpY2ggYWxsb3dzIGhhcmR3YXJlIGlzb2xhdGlvbiBvZiBz
+b21lCj4+IHJlc291cmNlcyB0byB0aGUgQSBvciBNIGNvcmUuIFNvIGl0IGlzIHNldCBieSB0aGUg
+c2VjdXJlIHBhcnQgb2YgdGhlIGJvb3Rsb2FkZXIsCj4+IHJpZ2h0Pwo+IFtSaWNoYXJkIFpodV0g
+WWVzLCB5b3UncmUgcmlnaHQuCj4gSXQgd291bGQgYmUgY29uZmlndXJlZCBieSBTQ0ZXLgo+IAo+
+PiBXZSBoYXZlIGFuIGVxdWl2YWxlbmNlIG9uIHRoZSBTVE0zMk1QMSBuYW1lZCBFVFpQQy4KPj4g
+U28gd2UgYWxzbyBtYW5hZ2UgdGhpcyB1c2UgY2FzZSBvbiBzdG0zMm1wMS4gVGhlIGJvb3Rsb2Fk
+ZXIgY29uZmlndXJlcwo+PiByZXNvdXJjZSBpc29sYXRpb24sIGFuZCBjYW4gbG9hZCBhbmQgc3Rh
+cnQgdGhlIENvcnRleC1NIGZpcm13YXJlLCBiZWZvcmUgdGhlCj4+IGxpbnV4IGZpcm13YXJlLiBU
+aGF0IHdoeSBpIHBvaW50ZWQgdGhpcyBwYXRjaC4gSW4gY2FzZSBvZiBwcmVsb2FkZWQgZmlybXdh
+cmUKPj4gdGhlIHJlbW90ZSBwcm9jIGRvZXMgbm90IGxvYWQgdGhlIGZpcm13YXJlIGJ1dCBqdXN0
+IHBhcnNlIHRoZSByZXNvdXJjZSB0YWJsZQo+PiAoYWRkcmVzcyBuZWVkcyB0byBiZSBwcm92aWRl
+ZCBieSB0aGUgcnByb2NfcGxhdGZvcm0gZHJpdmVyKS4gVGhlIHJwbXNnIGJ1cyBpcwo+PiBwcm9i
+ZWQgYWNjb3JkaW5nIHRvIHRoZSByZXNvdXJjZSB0YWJsZSBlbnRyaWVzLgo+PiBUaGlzIHBhcnQg
+b2YgY29kZSBpcyBub3QgdXBzdHJlYW1lZCBmb3IgdGltZSBiZWluZyAod2FpdGluZyBpbnRlZ3Jh
+dGlvbiBvZiB0aGUKPj4gbWVudGlvbmVkIHBhdGNoKS4gTmV2ZXJ0aGVsZXNzIFlvdSBjYW4gdGFr
+ZSBhIGxvb2sgb24gbWVjaGFuaXNtIHdlCj4+IGltcGxlbWVudGVkLCBvbiBTVCBnaXRodWIgKHdl
+IG5hbWVkIGl0IGVhcmx5X2Jvb3QpOgo+PiBodHRwczovL2V1cjAxLnNhZmVsaW5rcy5wcm90ZWN0
+aW9uLm91dGxvb2suY29tLz91cmw9aHR0cHMlM0ElMkYlMkZnaXRodWIuCj4+IGNvbSUyRlNUTWlj
+cm9lbGVjdHJvbmljcyUyRmxpbnV4JTJGYmxvYiUyRnY0LjE5LXN0bTMybXAlMkZkcml2ZXJzJQo+
+PiAyRnJlbW90ZXByb2MlMkZzdG0zMl9ycHJvYy5jJmFtcDtkYXRhPTAyJTdDMDElN0Nob25neGlu
+Zy56aHUlNDBuCj4+IHhwLmNvbSU3Q2U0N2JkZTI2OGYzYzQyOTBiOTE3MDhkNzA0NTNjOTk1JTdD
+Njg2ZWExZDNiYzJiNGM2ZmE5Cj4+IDJjZDk5YzVjMzAxNjM1JTdDMCU3QzAlN0M2MzY5ODI2MzAy
+MjIyMTY4ODAmYW1wO3NkYXRhPTFkdEl5SVZZZgo+PiBzZzY5M3Y2VWpNJTJCRkVrN1RZSHhnZzZS
+RFg2MTElMkZLZmpxQSUzRCZhbXA7cmVzZXJ2ZWQ9MAo+Pj4KPj4+IE0gY29yZS9SVE9TIGluc2lz
+dHMgdG8gcnVuIGFuZCBtYW5hZ2UgaXRzIHJlc291cmNlcyBhc3NpZ25lZCBieSBYUkRDCj4+IHN0
+YW5kYWxvbmUuCj4+PiBBbGwgdGhlIGludGVyYWN0aW9ucyBiZXR3ZWVuIEEgY29yZSBhbmQgTSBj
+b3JlIGFyZSB0cmFuc2ZlcnJlZCBvbiBSUE1TRwo+PiBjaGFubmVscy4KPj4+IEZvciBleGFtcGxl
+LCB0aGUgYXVkaW8gY29kZWMgY29uZmlndXJhdGlvbiBhbmQgc28gb24uCj4+PiBTbywgd2hhdCBJ
+IGRvIGhlcmUgaXMganVzdCBzZXR1cCB0aGUgY29tbXVuaWNhdGlvbiBSUE1TRyBjaGFubmVscwo+
+Pj4gYmV0d2VlbiBBIGNvcmUvTGludXggYW5kIE0gY29yZS9SVE9TLgo+Pj4KPj4+IE9uZSBtb3Jl
+IGNvbmNlcm4sIEknbSBhZnJhaWQgdGhhdCBJIG1heSBtZXNzIHVwIHRoZSBjdXJyZW50IHNvbGlk
+Cj4+PiByZXByb2MgZmxvdyBhbmQgZnJhbWV3b3JrIGlmICBJIGZvcmNlIHRoaXMgaW1wbGVtZW50
+YXRpb24gaW50byB0aGUgY3VycmVudAo+PiByZXByb2MgZHJpdmVycy4KPj4+IFNvLCBJIHN1bW1p
+dCB0aGlzIHBhdGNoLXNldCBpbiB0aGUgZW5kLiBQcmUtcmVzZXJ2ZWQgdnJpbmcgYnVmZmVyLAo+
+Pj4gcmVnaXN0ZXIgdmlydGlvX2RldmljZSwgZXN0YWJsaXNoIHRoZSBSUE1TRyBjaGFubmVscyBs
+ZXRzIEEgY29yZS9MaW51eCBhbmQKPj4gTSBDb3JlL1JUT1MgY2FuIGNvbW11bmljYXRlIHdpdGgg
+ZWFjaCBvdGhlci4KPj4+IFRoYXQncyBhbGwuCj4+IFlvdXIgY29uY2VybiBpcyB2YWxpZCwgYW5k
+IGFzIHdlIGhhdmUgdGhlIHNhbWUgcmVxdWlyZW1lbnQsIGl0IHdvdWxkIGJlIG5pY2UKPj4gdG8g
+ZmluZCBhIGNvbW1vbiBzb2x1dGlvbi4gVGhhdCdzIHdoeSBpIHByb3Bvc2UgdGhpcyBhbHRlcm5h
+dGl2ZSwgd2hpY2ggd291bGQKPj4gaGF2ZSB0aGUgYWR2YW50YWdlIG9mIHJldXNpbmcgZXhpc3Rp
+bmcgcnBtc2cgaW1wbGVtZW50YXRpb24uCj4+Cj4gICBbUmljaGFyZCBaaHVdIEkgbG9va2VkIHRo
+cm91Z2ggdGhlIGNvZGVzIGJyaWVmbHkuIENvcnJlY3QgbWUgaWYgbXkgdW5kZXJzdGFuZAo+ICAg
+aXMgd3JvbmcuCj4gSXQgc2VlbXMgdGhhdCB0aGUgQSBjb3JlIHNpZGUgZG9lcyBhIGxvdCBvZiBt
+YW5pcHVsYXRpb25zIHRvIHRoZSByZW1vdGUgTTQgY29yZQo+ICAgb24gU1QzMk0uCj4gRHVyaW5n
+IHRoZSBzdGFydC9zdG9wL3JlY292ZXJ5IG9wZXJhdGlvbnMsIE00IGFjdGVkIGFzIHNsYXZlIGFu
+ZCB3YWl0aW5nIGZvciB0aGUKPiAgIGNvbnRyb2wgY29uc3RydWN0aW9ucyBzZW50IGZyb20gdGhl
+IG1hc3RlciBBIGNvcmUvTGludXggc2lkZSBhbHRob3VnaCB0aGUKPiAgIGVhcmx5X2Jvb3QgaXMg
+c2V0Lgo+IAo+IFRoZXJlIGFyZSBzb21lIGRpZmZlcmVuY2VzIGluIHRoZSByZWxhdGlvbnNoaXAg
+YmV0d2VlbiBBIGNvcmUgYW5kIE0gY29yZS4KPiBPbiBTVDMyTTogTTQvUlRPUyB3b3VsZCBzdGFy
+dGVkL3N0b3BwZWQvcmVjb3ZlcmVkIGJ5IEEgY29yZS9MaW51eCBzaWRlLgo+IAo+IEluIG15IHB1
+cnBvc2VkIGltcGxlbWVudGF0aW9uLCBib3RoIEEgY29yZS9MaW51eCBhbmQgTSBjb3JlL1JUT1Mg
+d29ya2luZyBpbiB0aGUgcmVhbAo+ICAgaW5kZXBlbmRlbnQgbW9kZS4KPiAtIE00L1JUT1MgY29t
+cGxldGUgdGhlIHN0YXJ0L3N0b3AvcmVjb3ZlcnkgYW5kIHNvbiBvbiBvcGVyYXRpb25zIGJ5IGl0
+c2VsZiwgaXQgd291bGRuJ3QKPiAgIGFjY2VwdCBhbnkgc3RhcnQvc3RvcC9yZXNldCBpbnRlcmFj
+dGlvbnMgZnJvbSBBIGNvcmUvTGludXggc2lkZS4gU2FtZSB0byBBIGNvcmUvTGludXggc2lkZS4K
+PiAtIFNDRlcgbW9uaXRvcnMgdGhlIHJ1bm5pbmcgc3RhdHVzIG9mIGVhY2ggc2lkZSwgd291bGQg
+bm90aWZ5IHRoZSBvdGhlciBzaWRlLCBpZiB0aGVyZSBpcyBhCj4gICBzeXN0ZW0gc3RhbGwgYXQg
+b25lIHNpZGUuCj4gICB3aGVuIHRoZSBsaXZlZCBzaWRlIHJlY2VpdmVzIHRoZSBub3RpZmljYXRp
+b24gYW5kIGtub3cgdGhlIG90aGVyIHNpZGUgaXMgcmVzZXQsCj4gICBJdCB3b3VsZCBvbmx5IHJl
+Y292ZXIgaXRzIG93biBycG1zZyBzdGFjaywgd2FpdCB0aGUgcnBtc2cgInJlYWR5IiBzaWduYWwg
+b2YgdGhlIG9wcG9zaXRlIHNpZGUsCj4gICB0aGVuIHJlLWVzdGFibGlzaCB0aGUgcnBtc2cgY2hh
+bm5lbHMgYWdhaW4uCj4gICBBIGNvcmUvTGludXggb3IgTSBjb3JlL1JUT1Mgd291bGRuJ3QgZG8g
+dGhlIHN0YXJ0L3N0b3AvcmVjb3Zlcnkgb3BlcmF0aW9ucyBvbiB0aGUgb3Bwb3NpdGUgc2lkZS4K
+T24gU1RNMzJNUDEgd2UgaGF2ZSBub3QgZXhhY3RseSB0aGUgc2FtZSBzdHJhdGVneSBidXQgaXQg
+b25seSBhIFNUIApkZXNpZ24gY2hvaWNlLCBpbXBsZW1lbnRlZCBpbiBvdXIgc3RtMzIgcmVtb3Rl
+cHJvYyBkcml2ZXIuIFlvdSBzaG91bGQgYmUgCmFibGUgdG8gaW1wbGVtZW50IHlvdXIgZXhwZWN0
+ZWQgYmVoYXZpb3IgaW4geW91ciB0aGUgaW14IHJlbW90ZXByb2MgZHJpdmVyLgoKT24gU1RNMzJN
+UDEgd2UgbWFuYWdlIHRoZSBNNCBwcmVsb2FkZWQgZmlybXdhcmUgaW4gdGhpcyB3YXk6Ci0gIE9u
+IExpbnV4IHN0bTMyIHJlbW90ZXByb2MgcHJvYmU6CglXZSBkZXRlY3QgdGhhdCB0aGUgZmlybXdh
+cmUgaXMgcHJlbG9hZGVkIChlYXJseS1ib290ZWQgZmlsZWQgaW4gRFQpIGFuZCAKc2V0IHRoZSBl
+YXJsX2Jvb3QgdmFyaWFibGUuCgl3ZSBwcm92aWRlIHRoZSByZXNvdXJjZSB0YWJsZSBhZGRyZXNz
+IHRvIHRoZSByZW1vdGVwcm9jIGNvcmUgdGhhdCAKcGFyc2VzIGl0IGFuIGNhbGwgdGhlIHN0bTMy
+X3Jwcm9jX3N0YXJ0LiBoZXJlIHdlIGRvIG5vdGhpbmcgYXMgTTQgCmFscmVhZHkgc3RhcnRlZCB3
+ZSBqdXN0IHNldCB0aGUgaG9sZCBib290IHRvIGZyZWV6ZSB0aGUgTTQgaW4gY2FzZSBvZiBjcmFz
+aAoKLSBPbiBNNCBjcmFzaCB3ZSBoYXZlIG5vdCB0aGUgc2FtZSBzdHJhdGVneSBhcyB5b3VyIG9u
+ZS4gV2UgY29uc2lkZXIgCnRoYXQgdGhlIE00IGZpcm13YXJlIGNhbiBiZSBjb3JydXB0ZWQgYW5k
+IGVpdGhlciB3ZSB0cnkgdG8gcmVsb2FkIGEgZmlybXdhcmUKd2hpY2ggYXMgYmVlbiBwcm92aWRl
+ZCBieSBhcHBsaWNhdGlvbiwgb3Igd2UgZG9uJ3QgbGV0IGl0IHJlc3RhcnRpbmcgCihob2xkIGJv
+b3Qgc2V0IG9uIHN0YXJ0KS4KCi1XZSBhbGxvdyB1c2VybGFuZCB0byBzdG9wIHRoZSBwcmVsb2Fk
+ZWQgZmlybXdhcmUgdG8gbG9hZCBhbmQgdG8gcnVuIGEgCm5ldyBvbmUuCgo+ICAgCj4gQW55d2F5
+LCBsZXQgbWUgZG8gc29tZSBtb3JlIGhvbWV3b3JrLCBhbmQgZmlndXJlIG91dCB0aGF0IHdoZXRo
+ZXIgSSBjYW4gZml0IHRoZXNlIGludG8gdGhlIGV4aXN0aW5nCj4gcmVtb3RlcHJvYyBmcmFtZXdv
+cmsgb3Igbm90LgpTb3JyeSB0byBnaXZlIHlvdSBob21ld29yay4uLiBidXQgc2VlbXMgKElNSE8p
+IHBvc3NpYmxlIHRvIGludGVncmF0ZSAKeW91ciBjb25zdHJhaW50IGluIHJwbXNnL3JlbW90ZXBy
+b2MgY3VycmVudCBkZXNpZ24uCgo+IAo+Pj4+Cj4+Pj4gMikgUlBNU0cgcmVjb3ZlcnkKPj4+PiBB
+Z3JlZSB3aXRoIHlvdSwgdGhpcyBmZWF0dXJlIGlzIGltcG9ydGFudCBpbiBBTVAgc3lzdGVtcywg
+YXMgY29yZXMKPj4+PiBjYW4gaGF2ZSB0aGVpciBvd24gbGl2ZSBjeWNsZS4KPj4+Pgo+Pj4+IEJ1
+dCBJIGNhbiBub3Qgc2VlIHJlbGF0ZWQgY29kZSwgY291bGQgeW91IHBvaW50IG91dCBpdCB0byBt
+ZT8KPj4+Pgo+Pj4gW1JpY2hhcmQgWmh1XSBUaGlzIGZlYXR1cmUgaGFkIGJlZW4gdmFsaWRhdGVk
+IGluIHRoZSBsb2NhbCByZXBvcy4KPj4+IEJ1dCB0aGVzZSBjb2RlcyBhcmUgbm90IGNvbnRhaW5l
+ZCBpbiB0aGlzIHBhdGNoLXNldCwgYmVjYXVzZSB0aGlzCj4+PiBmZWF0dXJlIGlzIHJlbGllZCBv
+biB0aGUgU0NGVyhzeXN0ZW0gY29udHJvbCBmaXJtIHdhcmUpIHVzZWQgdG8KPj4+IG1vbml0b3Ig
+dGhlIHN0YXR1cyBvZiAgYm90aCBzaWRlLCBhbmQgdHJpZ2dlciBvbmUgaXJxIHRvIHRoZSBvdGhl
+ciBzaWRlLCBpZiBvbmUKPj4gc2lkZSBpcyBzdGFsbC4KPj4+IFVuZm9ydHVuYXRlbHksIGl0IGlz
+IG5vdCB1cCBzdHJlYW1lZCB5ZXQuIFNvLCB0aGVzZSBjb2RlcyB3b3VsZCBiZQo+Pj4gdXBkYXRl
+ZCBsYXRlciBJZiB0aGUgU0NGVyBpcyByZWFkeS4KPj4+Cj4+Pj4gQ291bGQgeW91IGV4cGxhaW4g
+SG93IGRvIHlvdSByZWNvdmVyIHRoZSBycG1zZyBjaGFubmVscyB0aGF0IGhhcyBiZWVuCj4+Pj4g
+YWxyZWFkeSBlc3RhYmxpc2hlZD8KPj4+PiBGb3IgaW5zdGFuY2Ugd2hhdCBoYXBwZW4gaWYgeW91
+ciBjb3Byb2Nlc3NvciBjcmFzaCBkdXJpbmcgdGhlIHJwbXNnCj4+Pj4gcGluZ3BvbmcgZGVtbz8K
+Pj4+IFtSaWNoYXJkIFpodV0gU0NGVyB3b3VsZCBpbmZvcm0gdGhlIG90aGVyIHNpZGUsIGlmIG9u
+ZSBjb3JlL09TIGlzIGNyYXNoZWQuCj4+PiBUaGVuLCB0aGUgUlBNU0cgc3RhY2sgd291bGQgYmUg
+cmUtaW5pdGlhbGl6ZWQgaXRzZWxmIG9uIHRoZSBsaXZlZAo+Pj4gY29yZS9PUywgYW5kIGNsYXJp
+ZnkgdGhhdCBJdCdzIHJlYWR5IHRvIHJlLWVzdGFibGlzaCB0aGUgY2hhbm5lbHMgYWdhaW4uCj4+
+PiBGb3IgZXhhbXBsZSwgTTQvUlRPUyBpcyBjcmFzaGVkIHdoZW4gcGluZ3BvbmcgZGVtbyBpcyBy
+dW5uaW5nLgo+Pj4gMS4gUGluZ3BvbmcgZGVtbyBpcyBzdG9wcGVkLgo+Pj4gMi4gTGl2ZWQgQSBj
+b3JlL0xpbnV4IHdvdWxkIHJlY2VpdmUgb25lIGlycSBmcm9tIFNDRlcgaW5kaWNhdGVkIHRoYXQK
+Pj4+IHJlbW90ZSBNNC9SVE9TIGlzICByZXNldCwgdGhlbiBhbGwgdGhlIHZpcnRpb19kZXZpY2Ug
+cmVnaXN0ZXJlZCBpbiBBCj4+PiBjb3JlL0xpbnV4IHNpZGUsIHdvdWxkIGJlIHVuLXJlZ2lzdGVy
+ZWQsICBhbmQgdGhlc2UgdmlydGlvX2RldmljZXMKPj4+IHdvdWxkIGJlIHJlZ2lzdGVyZWQgYWdh
+aW4gYWZ0ZXIgcmVjZWl2ZSB0aGUgc2lnbmFsKGUueCB0aGUgbWFpbGJveCByZGIpCj4+IHRoYXQg
+TTQvUlRPUyBSUE1TRyBzdGFjayBpcyByZWFkeSBhZ2Fpbi4KPj4+IDMuIFRodXMgUlBNUyBjaGFu
+bmVscyBjYW4gYmUgcmUtZXN0YWJsaXNoZWQgaW4gdGhpcyBzaXR1YXRpb24uCj4+PiA0LiBBY2Nv
+cmRpbmdseSwgdGhlIGNvbnN1bWVyIG9mIHRoZSBycG1zZyBnbHVlIGRyaXZlciBzaG91bGQgYmUg
+cmUtaW5pdGlhbGl6ZWQKPj4gdG9vLgo+Pj4gRm9yIGV4YW1wbGUsIHJlbW92ZSB0aGUgcGluZ3Bv
+bmQgZGVtbyBtb2R1bGUsIGFuZCBpbnNtb2QgaXQgYWdhaW4uCj4+Cj4+IFRoYW5rcyBmb3IgdGhl
+IGNsYXJpZmljYXRpb24sIGkgdGhpbmsgdGhpcyBpcyBubyBzbyBmYXIgZnJvbSB0aGUgcmVjb3Zl
+cnkgYWxyZWFkeQo+PiBpbXBsZW1lbnRlZCBpbiByZW1vdGVwcm9jLiBTZWVtcyB5b3UgcmVtb3Rl
+IHByb2MgZHJpdmVyIGhhbmRsZXMgdGhlCj4+IHJlY292ZXJ5Ogo+PiAgIC1zdG9wIHJwcm9jIG9u
+IGlycSByZWNlcHRpb24sIHJlc3RhcnQgaXQgKCBpbiBwcmVsb2FkZWQgbW9kZSkgb24gbWFpbGJv
+eCByZGIuCj4+IE9uIHN0bTMyTVAxIHdlIGhhdmUgYSBzaW1pbGFyIG1lY2hhbmlzbSBiYXNlZCBv
+biBhIFdhdGNoZG9nLgo+Pgo+IFtSaWNoYXJkIFpodV0gUmVnYXJkaW5nIHRvIG15IHVuZGVyc3Rh
+bmQsIFNUTTMyTVAxIHN0b3AvcmVzdGFydCB0aGUgcmVtb3RlCj4gICBNIGNvcmUvUlRPUyBhbHRo
+b3VnaCB0aGUgcHJlbG9hZGVkIG1vZGUgaXMgdXNlZCwgcmlnaHQ/ClllcyBhcyBleHBsYWluZWQg
+YWJvdmUgd2UgYWxsb3cgdG8gcmVsb2FkIGEgZmlybXdhcmUgaWYgcmVjb3ZlcnkgbW9kZSBpcyAK
+ZW5hYmxlZCBvciBzaW1wbHkgaWYgYXBwbGljYXRpb24gd2hlbiB0byBsb2FkIGEgbmV3IG9uZS4K
+PiAKPiAKPj4+Cj4+Pj4KPj4+PiAzKSBwaW5nLXBvbmcgZGVtbyBzYW1wbGUKPj4+PiBQZXJoYXBz
+IHlvdSBjb3VsZCByZS11c2UgdGhlIHJwbXNnIHNhbXBsZSBhdmFpbGFibGUgaGVyZToKPj4+PiBo
+dHRwczovL2VsaXhpci5iCj4+Pj4KPj4gb290bGluLmNvbSUyRmxpbnV4JTJGdjUuMiUyRnNvdXJj
+ZSUyRnNhbXBsZXMlMkZycG1zZyZhbXA7ZGF0YT0wMgo+Pj4+ICU3QzAxJTdDaG9uZ3hpbmcuemh1
+JTQwbnhwLmNvbSU3QzY3NzM5OTlhYzYzOTRkZmUzN2QwMDhkNzAzYQo+PiBlMwo+Pj4+Cj4+IDQ3
+NSU3QzY4NmVhMWQzYmMyYjRjNmZhOTJjZDk5YzVjMzAxNjM1JTdDMCU3QzAlN0M2MzY5ODE5MTkw
+NjQKPj4+Pgo+PiAxODY2NjAmYW1wO3NkYXRhPW1TVjNZc295aEFPJTJGUk9mV1g3OVgwd29HUU4z
+anglMkZ2NHBMOExSVWYKPj4+PiBiSFVNJTNEJmFtcDtyZXNlcnZlZD0wCj4+PiBbUmljaGFyZCBa
+aHVdIFRoYW5rcyBhIGxvdC4KPj4+IFRoaXMgZGVtbyBzYW1wbGUgY2FuIGJlIHVzZWQuIFNvcnJ5
+IGFib3V0IHRoYXQgSSBkaWRuJ3Qgbm90aWNlIGl0IGJlZm9yZS4KPj4+Cj4+Pj4KPj4+PiA0KSBO
+byB1c2Ugb2YgdGhlIHJlc291cmNlIHRhYmxlCj4+Pj4gSXMgdGhlcmUgYSByZWFzb24gdG8gbm90
+IHVzZSB0aGUgcmVzb3VyY2UgdGFibGUgdG8gZGVjbGFyZSB0aGUgdGhlCj4+Pj4gdnJpbmdzPyBZ
+b3VyIGltcGxlbWVudGF0aW9uIHNlZW1zIHRvIGltcG9zZSB0aGUgc2FtZSBkZWZpbml0aW9uIGlu
+Cj4+Pj4gYm90aCBmaXJtd2FyZSB3aGlsZSByZXNvdXJjZSB0YWJsZSBhbGxvdyB0byBzaGFyZSB0
+aGVtLgo+Pj4+IEZ1cnRoZXJtb3JlIHRoZSByZXNvdXJjZSB0YWJsZSBjb3VsZCBiZSB1cGRhdGVk
+IGJ5IHRoZSBMaW51eCBiZWZvcmUKPj4+PiB0aGUgcmVtb3RlIHByb2MgaXMgc3RhcnRlZCAoaW4g
+Y2FzZSBvZiBMaW51eCBib290aW5nIGZpcnN0KQo+Pj4+Cj4+PiBbUmljaGFyZCBaaHVdIFJlZ2Fy
+ZGluZyB0byB0aGUgYXV0byBpbmR1c3RyeSByZXF1aXJlbWVudHMsIHRoZSBNCj4+PiBjb3JlL1JU
+T1MgaXMgYWx3YXlzIHN0YXJ0ZWQgZmlyc3RseSwgYmVjYXVzZSB0aGF0IHRoZSBDQU4gZnVuY3Rp
+b25zCj4+PiBzaG91bGQgYmUgcmVhZHkgaW4gNTBtcyBhZnRlciBzeXN0ZW0gaXMgcG93ZXIgdXAu
+Cj4+PiBCVFcsIHJlc291cmNlIHRhYmxlIGlzIGEgZ3JlYXQgaWRlYSBpbiB0aGUgY2FzZSB3aGVu
+IExpbnV4IGlzIGJvb3RpbmcgZmlyc3RseS4KPj4gQXMgZXhwbGFpbmVkIGJlZm9yZSBXZSBhbHNv
+IHVzZSBpdCB3aGVuIGNvcnRleC1NNCBpcyBib290ZWQgZmlyc3RseS4gQQo+PiBjb25zdHJhaW50
+IGlzIHRoYXQgdGhlIHJlc291cmNlIHRhYmxlIGFkZHJlc3Mgc2hvdWxkIGJlIGtub3duIGJ5IHRo
+ZQo+PiByZW1vdGVwcm9jIGRyaXZlcjogZWl0aGVyIHRoZSByZXNvdXJjZSB0YWJsZSBhZGRyZXNz
+IGlzIGRlZmluZWQgaW4gRFQsIG9yCj4+IHByb3ZpZGVkIGJ5IHRoZSBib290bG9hZGVyIHdoaWNo
+IGxvYWRzIHRoZSBmaXJtd2FyZSBzbyBwYXJzZXMgaXQuCj4+Cj4gW1JpY2hhcmQgWmh1XSBVcCB0
+byBub3csIHRoZSBwcmUtZGVmaW5lZCB2cmluZyBhZGRyZXNzIGFuZCB0aGUgbWFpbGJveCBjaGFu
+bmVscwo+ICAgYXJlIGRlZmluZWQgaW4gdGhlIERUIGluIG15IGxvY2FsIGltcGxlbWVudGF0aW9u
+Lgo+IEZZSS4gSGVyZSBhcmUgdGhlIGRldGFpbHMuICJodHRwczovL3BhdGNod29yay5rZXJuZWwu
+b3JnL3BhdGNoLzExMDMxMDU5LyIKPiAKVGhhbmtzLCB3ZSBoYXZlIHNpbWlsYXIgdXNlIG9mIHRo
+ZSByZXNlcnZlZCBtZW1vcnkgdG8gZGVjbGFyZSB0aGUgdnJpbmcgCih2ZGV2MHZyaW5nMCwgdmRl
+djB2cmluZzEsIHZkZXYwYnVmZmVyKSBhY2NvcmRpbmcgdG8gcmVtb3RlcHJvYyBjb3JlIApyZXF1
+aXJlbWVudDoKaHR0cHM6Ly9naXRodWIuY29tL1NUTWljcm9lbGVjdHJvbmljcy9saW51eC9ibG9i
+L3Y0LjE5LXN0bTMybXAvYXJjaC9hcm0vYm9vdC9kdHMvc3RtMzJtcDE1N2EtZGsxLmR0cwoKPj4+
+Cj4+Pj4gNSkgc2xhdmUgYW5kIG1hc3RlciBtb2RlIHN1cHBvcnQuCj4+Pj4gU2VlbXMgdGhhdCB0
+aGlzIGRyaXZlcnMgbm90IGZ1bGx5IHJlc3BlY3QgdGhlIHZpcnRpbyBwcm90b2NvbCAoZm9yCj4+
+Pj4gaW5zdGFuY2Ugc3RhdHVzIGZpZWxkKS4gSWYgeW91IHVzZSBhIHN5bmNocm8gbWVjaGFuaXNt
+IChtYWlsYm94Li4uKQo+Pj4+IG5vdCBzdXJlIHRoYXQgeW91IHJlYWxseSBuZWVkIHRvIGJlIHZp
+cnRpbyBzbGF2ZSBvbiBMaW51eC4KPj4+IFtSaWNoYXJkIFpodV0gU29ycnkgYWJvdXQgdGhhdC4g
+SSB1c2VkIHRyeWluZyB0byBrZWVwIHRoaXMgZHJpdmVyCj4+PiBjb21wYXRpYmxlIHdpdGggdGhl
+IGN1cnJlbnQgc2xhdmUtbWFzdGVyIG1vZGUsIGJ1dCBJJ20gZmFpbGVkIHRvIGFjaGlldmUKPj4g
+dGhhdC4g4pi5Lgo+Pj4gLSBQYXJ0aXRpb24gcmVzZXQgZmVhdHVyZSBpcyBtYW5kYXRvcnkgcmVx
+dWlyZWQuCj4+PiAtIE00IHNpZGUgaW5zaXN0cyB0aGF0IHRoZXkgc2hvdWxkIHJ1biBhbmQgbWFu
+YWdlIGl0cyByZXNvdXJjZXMgc3RhbmRhbG9uZS4KPj4gTm8gcHJvYmxlbSwgaXQgaXMgYW4gUkZD
+Lgo+PiBBbnl3YXkgcmVnYXJkaW5nIHlvdSByZXF1aXJlbWVudHMgYW5kIGNvbmNlcm5zLCBpdCBz
+ZWVtcyB0aGF0IHdlIGhhdmUgdGhlCj4+IHNhbWUgb25lcy4gSSBkb24ndCBrbm93IGlmIHRoZSBz
+b2x1dGlvbiB3ZSBwcm9wb3NlIGNhbiBmaXQgd2l0aCB5b3VyIG5lZWRzLAo+PiBidXQgaSB3b3Vs
+ZCBiZSBuaWNlIHRvIGhhdmUgYSBjb21tb24gaW1wbGVtZW50YXRpb24uCj4+Cj4gW1JpY2hhcmQg
+Wmh1XSBBZ3JlZS4gSXQncyBncmVhdCBpZiB0aGVyZSBpcyBhIGNvbW1vbiBzb2x1dGlvbiB0YWtp
+bmcgdGhlIGFkdmFudGFnZSBvZgo+ICAgcmV1c2luZyBleGlzdGluZyBycG1zZyBpbXBsZW1lbnRh
+dGlvbi4KPiAKPiBUaGFua3MgYSBsb3QgZm9yIHlvdXIga2luZGx5IHJldmlldyBjb21tZW50cy4K
+VGhhbmtzIGEgbG90IHRvIHlvdSBmb3IgY29uc2lkZXJpbmcgYW4gYWx0ZXJuYXRpdmUgcHJvcG9z
+YWwhCgpCZXN0IHJlZ2FyZHMKQXJuYXVkCgo+IEJlc3QgUmVnYXJkcwo+IFJpY2hhcmQKPiAKPj4g
+QmVzdCBSZWdhcmRzLAo+PiBBcm5hdWQKPj4KPj4+Cj4+PiBCZXN0IFJlZ2FyZHMKPj4+IFJpY2hh
+cmQgWmh1Cj4+Pj4KPj4+PiBUaGFua3MsCj4+Pj4gQXJuYXVkCgpfX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlz
+dApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJh
+ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
