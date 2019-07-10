@@ -2,70 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7970164AA8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 18:21:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3ECD264AB1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 18:23:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lN2RwesuA1kmurcmXNY/lXjwcD3qEQpksDgMFOVs6B4=; b=B8AL5fZdBlPou2
-	ZVyfGKGo44gnOAvcYY7MqhxVlRIFnKH+J758T9tROzjf8w3+T6viEZahcib8RmZ1j50J/SEFb26xq
-	0JyqViFGXaqeoZrZ1xdReQ1aUjB7AfDHZbPQDV2ZRo9IfHLqNwMEO/Xg0pulZnLeTz8bJU6X0NVC/
-	cYwQpT+MJxolEJLOqTLk0FkvHkJv2w4CcL2H9BpRvSYpVFMoFqU24KYB4fsNIeOM+zdr91l9tLUrr
-	d0eyDEPQ7h/ekeBH/8v8G44fUu38tRuV2ZaSfZ8a16HhUBKB4Vn/LdlPmZTQfueowqSVVeKiszcK6
-	qjH9apcALkHasYqiNliw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/hiTaHo4Nh2cgsDhkzQc0cOQce8PJo7k5PYKVgGVZUs=; b=odD+GOaEjQrsnc
+	E+m1Pt3Co//gfTyqGSy428xLFzZdBSbXGEFuZmfdwO6It27ksvGvqcevGGyq56v4vfSLJaEiKXfuq
+	K6Z7WIl0yMcp0Xz5WoN7w0fvU+XxMpHtzbnzmLdG4tTGyd1XCaC50E+GF5kTdfbNONvasbIgopf6P
+	ED/W9S17qSsKTawqMWzFMVs40NfWPC1fga1As3moJg55pfVXK4pEg2cRPJiJkVpOc967UuV8vQEzW
+	J+cI7WSDu2yNC99voEjAOCkY5k4YpgC9CJkqXwWEUvUfVJFILk/Bm7Cj0wrAD4C8KUSji5itRq4E7
+	++pTWyPUDPvHWnIxjMsg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlFLk-0003CP-6B; Wed, 10 Jul 2019 16:21:44 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlFLL-0003Bb-Ut
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 16:21:21 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5EF5E208E4;
- Wed, 10 Jul 2019 16:21:18 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1562775679;
- bh=J1jLtfNkF/2300l9HcH3eg1FXFafEYI2fT11EkAtbHE=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=MW760sqT88HQHoM75PjlOZvGGEceZDydkVl3Gp2RsuBWy1g8VBNCU1r5facjB6rzu
- pdU6Zlt5NK8vLmU4VH4xVEEuYiwKjt1fbIvYgyjHuV3HpqjLd7FIWk+ailaEtLSx7f
- 7g62A92FOHcwnWcdfl6n2Hbqq0GZtN3I63lrd0PM=
-Date: Wed, 10 Jul 2019 17:21:15 +0100
-From: Will Deacon <will@kernel.org>
-To: Peter Collingbourne <pcc@google.com>
-Subject: Re: [PATCH] arm64: Add support for relocating the kernel with RELR
- relocations
-Message-ID: <20190710162114.rucn5wyrlwhkifti@willie-the-truck>
-References: <20190705080231.123522-1-pcc@google.com>
+	id 1hlFNf-0004Fs-HO; Wed, 10 Jul 2019 16:23:43 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hlFNM-0004Ay-Qq
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 16:23:27 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A0968344;
+ Wed, 10 Jul 2019 09:23:23 -0700 (PDT)
+Received: from [10.1.196.217] (e121566-lin.cambridge.arm.com [10.1.196.217])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A6C953F246;
+ Wed, 10 Jul 2019 09:23:22 -0700 (PDT)
+Subject: Re: [PATCH 46/59] KVM: arm64: nv: arch_timer: Support hyp timer
+ emulation
+To: Marc Zyngier <marc.zyngier@arm.com>,
+ linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
+ kvm@vger.kernel.org
+References: <20190621093843.220980-1-marc.zyngier@arm.com>
+ <20190621093843.220980-47-marc.zyngier@arm.com>
+From: Alexandru Elisei <alexandru.elisei@arm.com>
+Message-ID: <88430a00-27fb-30a4-4564-56b26ba25a84@arm.com>
+Date: Wed, 10 Jul 2019 17:23:21 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190705080231.123522-1-pcc@google.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <20190621093843.220980-47-marc.zyngier@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_092120_035989_C4EEE5D9 
-X-CRM114-Status: GOOD (  25.78  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190710_092325_017007_01783BC4 
+X-CRM114-Status: GOOD (  28.05  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,181 +65,476 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, clang-built-linux@googlegroups.com,
- linux-arm-kernel@lists.infradead.org,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Cc: Andre Przywara <andre.przywara@arm.com>, Dave Martin <Dave.Martin@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jul 05, 2019 at 01:02:31AM -0700, Peter Collingbourne wrote:
-> RELR is a relocation packing format for relative relocations.
-> The format is described in a generic-abi proposal:
-> https://groups.google.com/d/topic/generic-abi/bX460iggiKg/discussion
-> 
-> The LLD linker can be instructed to pack relocations in the RELR
-> format by passing the flag --pack-dyn-relocs=relr.
-> 
-> This patch adds a new config option, CONFIG_RELR. Enabling this option
-> instructs the linker to pack vmlinux's relative relocations in the RELR
-> format, and causes the kernel to apply the relocations at startup along
-> with the RELA relocations. RELA relocations still need to be applied
-> because the linker will emit RELA relative relocations if they are
-> unrepresentable in the RELR format (i.e. address not a multiple of 2).
-> 
-> Enabling CONFIG_RELR reduces the size of a defconfig kernel image
-> with CONFIG_RANDOMIZE_BASE by 3.5MB/16% uncompressed, or 550KB/5%
-> compressed (lz4).
-> 
-> Signed-off-by: Peter Collingbourne <pcc@google.com>
+On 6/21/19 10:38 AM, Marc Zyngier wrote:
+> From: Christoffer Dall <christoffer.dall@arm.com>
+>
+> Emulating EL2 also means emulating the EL2 timers. To do so, we expand
+> our timer framework to deal with at most 4 timers. At any given time,
+> two timers are using the HW timers, and the two others are purely
+> emulated.
+>
+> The role of deciding which is which at any given time is left to a
+> mapping function which is called every time we need to make such a
+> decision.
+>
+> Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
+> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
 > ---
->  arch/arm64/Kconfig              |  9 +++++
->  arch/arm64/Makefile             |  4 ++
->  arch/arm64/kernel/head.S        | 70 ++++++++++++++++++++++++++++-----
->  arch/arm64/kernel/vmlinux.lds.S |  9 +++++
->  4 files changed, 83 insertions(+), 9 deletions(-)
-> 
-> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-> index 697ea05107298..f0cd0d2607e70 100644
-> --- a/arch/arm64/Kconfig
-> +++ b/arch/arm64/Kconfig
-> @@ -1447,6 +1447,15 @@ config RELOCATABLE
->  	  relocation pass at runtime even if the kernel is loaded at the
->  	  same address it was linked at.
+>  arch/arm/include/asm/kvm_emulate.h |   2 +
+>  include/kvm/arm_arch_timer.h       |   5 ++
+>  include/kvm/arm_vgic.h             |   1 +
+>  virt/kvm/arm/arch_timer.c          | 122 ++++++++++++++++++++++++++++-
+>  virt/kvm/arm/trace.h               |   6 +-
+>  virt/kvm/arm/vgic/vgic.c           |  15 ++++
+>  6 files changed, 147 insertions(+), 4 deletions(-)
+>
+> diff --git a/arch/arm/include/asm/kvm_emulate.h b/arch/arm/include/asm/kvm_emulate.h
+> index 6b7644a383f6..865ce545b465 100644
+> --- a/arch/arm/include/asm/kvm_emulate.h
+> +++ b/arch/arm/include/asm/kvm_emulate.h
+> @@ -333,4 +333,6 @@ static inline unsigned long vcpu_data_host_to_guest(struct kvm_vcpu *vcpu,
 >  
-> +config RELR
-> +	bool "Use RELR relocation packing"
-> +	depends on RELOCATABLE && $(ld-option,--pack-dyn-relocs=relr)
-
-Do you know if this will also be supported by binutils and, if so, whether
-they've agreed to use the same name for the option?
-
-> +	help
-> +	  Store the kernel's dynamic relocations in the RELR relocation packing
-> +	  format. Requires a compatible linker (currently only LLD supports
-> +	  this feature), as well as compatible NM and OBJCOPY utilities
-> +	  (llvm-nm and llvm-objcopy are compatible).
-> +
->  config RANDOMIZE_BASE
->  	bool "Randomize the address of the kernel image"
->  	select ARM64_MODULE_PLTS if MODULES
-> diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
-> index e9d2e578cbe67..16a8636f815c9 100644
-> --- a/arch/arm64/Makefile
-> +++ b/arch/arm64/Makefile
-> @@ -22,6 +22,10 @@ LDFLAGS_vmlinux		+= -shared -Bsymbolic -z notext -z norelro \
->  			$(call ld-option, --no-apply-dynamic-relocs)
->  endif
+>  static inline void vcpu_ptrauth_setup_lazy(struct kvm_vcpu *vcpu) {}
 >  
-> +ifeq ($(CONFIG_RELR),y)
-> +  LDFLAGS_vmlinux += --pack-dyn-relocs=relr
-> +endif
+> +static inline bool is_hyp_ctxt(struct kvm_vcpu *vcpu) { return false; }
 > +
->  ifeq ($(CONFIG_ARM64_ERRATUM_843419),y)
->    ifeq ($(call ld-option, --fix-cortex-a53-843419),)
->  $(warning ld does not support --fix-cortex-a53-843419; kernel may be susceptible to erratum)
-> diff --git a/arch/arm64/kernel/head.S b/arch/arm64/kernel/head.S
-> index 2cdacd1c141b9..9b27d5e7d8f70 100644
-> --- a/arch/arm64/kernel/head.S
-> +++ b/arch/arm64/kernel/head.S
-> @@ -102,6 +102,7 @@ pe_header:
->  	 *  x23        stext() .. start_kernel()  physical misalignment/KASLR offset
->  	 *  x28        __create_page_tables()     callee preserved temp register
->  	 *  x19/x20    __primary_switch()         callee preserved temp registers
-> +	 *  x24        __primary_switch()         current RELR displacement
-
-I think the comment is a bit misleading here, since x24 is used by
-__relocate_kernel(). Maybe make the middle column say:
-
-	__primary_switch() .. __relocate_kernel()
-
-it's still not ideal, since the latter can be invoked twice, but oh well.
-
+>  #endif /* __ARM_KVM_EMULATE_H__ */
+> diff --git a/include/kvm/arm_arch_timer.h b/include/kvm/arm_arch_timer.h
+> index d120e6c323e7..3a5d9255120e 100644
+> --- a/include/kvm/arm_arch_timer.h
+> +++ b/include/kvm/arm_arch_timer.h
+> @@ -13,6 +13,8 @@
+>  enum kvm_arch_timers {
+>  	TIMER_PTIMER,
+>  	TIMER_VTIMER,
+> +	TIMER_HVTIMER,
+> +	TIMER_HPTIMER,
+>  	NR_KVM_TIMERS
+>  };
+>  
+> @@ -54,6 +56,7 @@ struct arch_timer_context {
+>  struct timer_map {
+>  	struct arch_timer_context *direct_vtimer;
+>  	struct arch_timer_context *direct_ptimer;
+> +	struct arch_timer_context *emul_vtimer;
+>  	struct arch_timer_context *emul_ptimer;
+>  };
+>  
+> @@ -98,6 +101,8 @@ bool kvm_arch_timer_get_input_level(int vintid);
+>  #define vcpu_get_timer(v,t)	(&vcpu_timer(v)->timers[(t)])
+>  #define vcpu_vtimer(v)	(&(v)->arch.timer_cpu.timers[TIMER_VTIMER])
+>  #define vcpu_ptimer(v)	(&(v)->arch.timer_cpu.timers[TIMER_PTIMER])
+> +#define vcpu_hvtimer(v)	(&(v)->arch.timer_cpu.timers[TIMER_HVTIMER])
+> +#define vcpu_hptimer(v)	(&(v)->arch.timer_cpu.timers[TIMER_HPTIMER])
+>  
+>  #define arch_timer_ctx_index(ctx)	((ctx) - vcpu_timer((ctx)->vcpu)->timers)
+>  
+> diff --git a/include/kvm/arm_vgic.h b/include/kvm/arm_vgic.h
+> index c36c86f1ec9a..7fc3b413b3de 100644
+> --- a/include/kvm/arm_vgic.h
+> +++ b/include/kvm/arm_vgic.h
+> @@ -355,6 +355,7 @@ int kvm_vgic_inject_irq(struct kvm *kvm, int cpuid, unsigned int intid,
+>  int kvm_vgic_map_phys_irq(struct kvm_vcpu *vcpu, unsigned int host_irq,
+>  			  u32 vintid, bool (*get_input_level)(int vindid));
+>  int kvm_vgic_unmap_phys_irq(struct kvm_vcpu *vcpu, unsigned int vintid);
+> +int kvm_vgic_get_map(struct kvm_vcpu *vcpu, unsigned int vintid);
+>  bool kvm_vgic_map_is_active(struct kvm_vcpu *vcpu, unsigned int vintid);
+>  
+>  int kvm_vgic_vcpu_pending_irq(struct kvm_vcpu *vcpu);
+> diff --git a/virt/kvm/arm/arch_timer.c b/virt/kvm/arm/arch_timer.c
+> index 089441a07ed7..3d84c240071d 100644
+> --- a/virt/kvm/arm/arch_timer.c
+> +++ b/virt/kvm/arm/arch_timer.c
+> @@ -15,6 +15,7 @@
+>  #include <asm/arch_timer.h>
+>  #include <asm/kvm_emulate.h>
+>  #include <asm/kvm_hyp.h>
+> +#include <asm/kvm_nested.h>
+>  
+>  #include <kvm/arm_vgic.h>
+>  #include <kvm/arm_arch_timer.h>
+> @@ -39,6 +40,16 @@ static const struct kvm_irq_level default_vtimer_irq = {
+>  	.level	= 1,
+>  };
+>  
+> +static const struct kvm_irq_level default_hptimer_irq = {
+> +	.irq	= 26,
+> +	.level	= 1,
+> +};
+> +
+> +static const struct kvm_irq_level default_hvtimer_irq = {
+> +	.irq	= 28,
+> +	.level	= 1,
+> +};
+> +
+>  static bool kvm_timer_irq_can_fire(struct arch_timer_context *timer_ctx);
+>  static void kvm_timer_update_irq(struct kvm_vcpu *vcpu, bool new_level,
+>  				 struct arch_timer_context *timer_ctx);
+> @@ -58,13 +69,27 @@ u64 kvm_phys_timer_read(void)
+>  
+>  static void get_timer_map(struct kvm_vcpu *vcpu, struct timer_map *map)
+>  {
+> -	if (has_vhe()) {
+> +	if (nested_virt_in_use(vcpu)) {
+> +		if (is_hyp_ctxt(vcpu)) {
+> +			map->direct_vtimer = vcpu_hvtimer(vcpu);
+> +			map->direct_ptimer = vcpu_hptimer(vcpu);
+> +			map->emul_vtimer = vcpu_vtimer(vcpu);
+> +			map->emul_ptimer = vcpu_ptimer(vcpu);
+> +		} else {
+> +			map->direct_vtimer = vcpu_vtimer(vcpu);
+> +			map->direct_ptimer = vcpu_ptimer(vcpu);
+> +			map->emul_vtimer = vcpu_hvtimer(vcpu);
+> +			map->emul_ptimer = vcpu_hptimer(vcpu);
+> +		}
+> +	} else if (has_vhe()) {
+>  		map->direct_vtimer = vcpu_vtimer(vcpu);
+>  		map->direct_ptimer = vcpu_ptimer(vcpu);
+> +		map->emul_vtimer = NULL;
+>  		map->emul_ptimer = NULL;
+>  	} else {
+>  		map->direct_vtimer = vcpu_vtimer(vcpu);
+>  		map->direct_ptimer = NULL;
+> +		map->emul_vtimer = NULL;
+>  		map->emul_ptimer = vcpu_ptimer(vcpu);
+>  	}
+>  
+> @@ -237,9 +262,11 @@ static bool kvm_timer_should_fire(struct arch_timer_context *timer_ctx)
+>  
+>  		switch (index) {
+>  		case TIMER_VTIMER:
+> +		case TIMER_HVTIMER:
+>  			cnt_ctl = read_sysreg_el0(SYS_CNTV_CTL);
+>  			break;
+>  		case TIMER_PTIMER:
+> +		case TIMER_HPTIMER:
+>  			cnt_ctl = read_sysreg_el0(SYS_CNTP_CTL);
+>  			break;
+>  		case NR_KVM_TIMERS:
+> @@ -270,6 +297,7 @@ bool kvm_timer_is_pending(struct kvm_vcpu *vcpu)
+>  
+>  	return kvm_timer_should_fire(map.direct_vtimer) ||
+>  	       kvm_timer_should_fire(map.direct_ptimer) ||
+> +	       kvm_timer_should_fire(map.emul_vtimer) ||
+>  	       kvm_timer_should_fire(map.emul_ptimer);
+>  }
+>  
+> @@ -349,6 +377,7 @@ static void timer_save_state(struct arch_timer_context *ctx)
+>  
+>  	switch (index) {
+>  	case TIMER_VTIMER:
+> +	case TIMER_HVTIMER:
+>  		ctx->cnt_ctl = read_sysreg_el0(SYS_CNTV_CTL);
+>  		ctx->cnt_cval = read_sysreg_el0(SYS_CNTV_CVAL);
+>  
+> @@ -358,6 +387,7 @@ static void timer_save_state(struct arch_timer_context *ctx)
+>  
+>  		break;
+>  	case TIMER_PTIMER:
+> +	case TIMER_HPTIMER:
+>  		ctx->cnt_ctl = read_sysreg_el0(SYS_CNTP_CTL);
+>  		ctx->cnt_cval = read_sysreg_el0(SYS_CNTP_CVAL);
+>  
+> @@ -395,6 +425,7 @@ static void kvm_timer_blocking(struct kvm_vcpu *vcpu)
 >  	 */
->  ENTRY(stext)
->  	bl	preserve_boot_args
-> @@ -824,24 +825,63 @@ __relocate_kernel:
->  	 * Iterate over each entry in the relocation table, and apply the
->  	 * relocations in place.
->  	 */
-> -	ldr	w9, =__rela_offset		// offset to reloc table
-> -	ldr	w10, =__rela_size		// size of reloc table
-> -
->  	mov_q	x11, KIMAGE_VADDR		// default virtual offset
->  	add	x11, x11, x23			// actual virtual offset
-> +
-> +	ldr	w9, =__rela_offset		// offset to reloc table
-> +	ldr	w10, =__rela_size		// size of reloc table
-
-I agree with Nick that I'd prefer to leave these lines alone.
-
->  	add	x9, x9, x11			// __va(.rela)
->  	add	x10, x9, x10			// __va(.rela) + sizeof(.rela)
+>  	if (!kvm_timer_irq_can_fire(map.direct_vtimer) &&
+>  	    !kvm_timer_irq_can_fire(map.direct_ptimer) &&
+> +	    !kvm_timer_irq_can_fire(map.emul_vtimer) &&
+>  	    !kvm_timer_irq_can_fire(map.emul_ptimer))
+>  		return;
 >  
->  0:	cmp	x9, x10
->  	b.hs	1f
-> -	ldp	x11, x12, [x9], #24
-> -	ldr	x13, [x9, #-8]
-> -	cmp	w12, #R_AARCH64_RELATIVE
-> +	ldp	x12, x13, [x9], #24
-> +	ldr	x14, [x9, #-8]
-> +	cmp	w13, #R_AARCH64_RELATIVE
->  	b.ne	0b
-> -	add	x13, x13, x23			// relocate
-> -	str	x13, [x11, x23]
-> +	add	x14, x14, x23			// relocate
-> +	str	x14, [x12, x23]
->  	b	0b
-> -1:	ret
-
-So the reason you're removing this ret is because we'll end up with both a
-.relr section *and* .rela section, correct?
-
-> +1:
-> +#ifdef CONFIG_RELR
-> +	ldr	w9, =__relr_offset		// offset to reloc table
-> +	ldr	w10, =__relr_size		// size of reloc table
-> +	add	x9, x9, x11			// __va(.relr)
-> +	add	x10, x9, x10			// __va(.relr) + sizeof(.relr)
+> @@ -428,11 +459,13 @@ static void timer_restore_state(struct arch_timer_context *ctx)
+>  
+>  	switch (index) {
+>  	case TIMER_VTIMER:
+> +	case TIMER_HVTIMER:
+>  		write_sysreg_el0(ctx->cnt_cval, SYS_CNTV_CVAL);
+>  		isb();
+>  		write_sysreg_el0(ctx->cnt_ctl, SYS_CNTV_CTL);
+>  		break;
+>  	case TIMER_PTIMER:
+> +	case TIMER_HPTIMER:
+>  		write_sysreg_el0(ctx->cnt_cval, SYS_CNTP_CVAL);
+>  		isb();
+>  		write_sysreg_el0(ctx->cnt_ctl, SYS_CNTP_CTL);
+> @@ -519,6 +552,40 @@ static void kvm_timer_vcpu_load_nogic(struct kvm_vcpu *vcpu)
+>  		enable_percpu_irq(host_vtimer_irq, host_vtimer_irq_flags);
+>  }
+>  
+> +static void kvm_timer_vcpu_load_nested_switch(struct kvm_vcpu *vcpu,
+> +					      struct timer_map *map)
+> +{
+> +	int hw, ret;
 > +
-> +	sub	x15, x23, x24			// delta from previous offset
-> +	cbz	x15, 7f				// nothing to do if unchanged
-> +	mov	x24, x23			// save new offset
+> +	if (!irqchip_in_kernel(vcpu->kvm))
+> +		return;
 > +
-> +2:	cmp	x9, x10
-> +	b.hs	7f
-> +	ldr	x11, [x9], #8
-> +	tbnz	x11, #0, 3f			// branch to handle bitmaps
-
-Can we guarantee that x13 has been initialised at this point?
-
-> +	add	x13, x11, x23
-> +	ldr	x12, [x13]			// relocate address entry
-> +	add	x12, x12, x15
-> +	str	x12, [x13], #8			// adjust to start of bitmap
-> +	b	2b
+> +	/*
+> +	 * We only ever unmap the vtimer irq on a VHE system that runs nested
+> +	 * virtualization, in which case we have both a valid emul_vtimer,
+> +	 * emul_ptimer, direct_vtimer, and direct_ptimer.
+> +	 *
+> +	 * Since this is called from kvm_timer_vcpu_load(), a change between
+> +	 * vEL2 and vEL1/0 will have just happened, and the timer_map will
+> +	 * represent this, and therefore we switch the emul/direct mappings
+> +	 * below.
+> +	 */
+> +	hw = kvm_vgic_get_map(vcpu, map->direct_vtimer->irq.irq);
+> +	if (hw < 0) {
+> +		kvm_vgic_unmap_phys_irq(vcpu, map->emul_vtimer->irq.irq);
+> +		kvm_vgic_unmap_phys_irq(vcpu, map->emul_ptimer->irq.irq);
 > +
-> +3:	mov	x14, x13
-> +4:	lsr	x11, x11, #1
-> +	cbz	x11, 6f
-> +	tbz	x11, #0, 5f			// skip bit if not set
-> +	ldr	x12, [x14]			// relocate bit
-> +	add	x12, x12, x15
-> +	str	x12, [x14]
+> +		ret = kvm_vgic_map_phys_irq(vcpu,
+> +					    map->direct_vtimer->host_timer_irq,
+> +					    map->direct_vtimer->irq.irq,
+> +					    kvm_arch_timer_get_input_level);
+> +		ret = kvm_vgic_map_phys_irq(vcpu,
+> +					    map->direct_ptimer->host_timer_irq,
+> +					    map->direct_ptimer->irq.irq,
+> +					    kvm_arch_timer_get_input_level);
+> +	}
+> +}
 > +
-> +5:	add	x14, x14, #8			// move to next bit's address
-> +	b	4b
+>  void kvm_timer_vcpu_load(struct kvm_vcpu *vcpu)
+>  {
+>  	struct arch_timer_cpu *timer = vcpu_timer(vcpu);
+> @@ -530,6 +597,8 @@ void kvm_timer_vcpu_load(struct kvm_vcpu *vcpu)
+>  	get_timer_map(vcpu, &map);
+>  
+>  	if (static_branch_likely(&has_gic_active_state)) {
+> +		kvm_timer_vcpu_load_nested_switch(vcpu, &map);
+
+Would it be possible for this be a conditional call that depends on
+nested_virt_in_use(vcpu), since that's the only situation where we change the
+direct_vtimer when we switch from vEL1 to vEL2 or viceversa?
+
+Thanks,
+Alex
 > +
-> +6:	add	x13, x13, #(8 * 63)		// move to next bitmap's address
-> +	b	2b
-
-This desparately needs a block comment at the top (immediately after the
-#ifdef CONFIG_RELR) describing the algorithm and the layout of the .relr
-section, please.
-
-Will
+>  		kvm_timer_vcpu_load_gic(map.direct_vtimer);
+>  		if (map.direct_ptimer)
+>  			kvm_timer_vcpu_load_gic(map.direct_ptimer);
+> @@ -545,6 +614,8 @@ void kvm_timer_vcpu_load(struct kvm_vcpu *vcpu)
+>  	if (map.direct_ptimer)
+>  		timer_restore_state(map.direct_ptimer);
+>  
+> +	if (map.emul_vtimer)
+> +		timer_emulate(map.emul_vtimer);
+>  	if (map.emul_ptimer)
+>  		timer_emulate(map.emul_ptimer);
+>  }
+> @@ -589,6 +660,8 @@ void kvm_timer_vcpu_put(struct kvm_vcpu *vcpu)
+>  	 * In any case, we re-schedule the hrtimer for the physical timer when
+>  	 * coming back to the VCPU thread in kvm_timer_vcpu_load().
+>  	 */
+> +	if (map.emul_vtimer)
+> +		soft_timer_cancel(&map.emul_vtimer->hrtimer);
+>  	if (map.emul_ptimer)
+>  		soft_timer_cancel(&map.emul_ptimer->hrtimer);
+>  
+> @@ -649,10 +722,14 @@ int kvm_timer_vcpu_reset(struct kvm_vcpu *vcpu)
+>  	 */
+>  	vcpu_vtimer(vcpu)->cnt_ctl = 0;
+>  	vcpu_ptimer(vcpu)->cnt_ctl = 0;
+> +	vcpu_hvtimer(vcpu)->cnt_ctl = 0;
+> +	vcpu_hptimer(vcpu)->cnt_ctl = 0;
+>  
+>  	if (timer->enabled) {
+>  		kvm_timer_update_irq(vcpu, false, vcpu_vtimer(vcpu));
+>  		kvm_timer_update_irq(vcpu, false, vcpu_ptimer(vcpu));
+> +		kvm_timer_update_irq(vcpu, false, vcpu_hvtimer(vcpu));
+> +		kvm_timer_update_irq(vcpu, false, vcpu_hptimer(vcpu));
+>  
+>  		if (irqchip_in_kernel(vcpu->kvm)) {
+>  			kvm_vgic_reset_mapped_irq(vcpu, map.direct_vtimer->irq.irq);
+> @@ -661,6 +738,8 @@ int kvm_timer_vcpu_reset(struct kvm_vcpu *vcpu)
+>  		}
+>  	}
+>  
+> +	if (map.emul_vtimer)
+> +		soft_timer_cancel(&map.emul_vtimer->hrtimer);
+>  	if (map.emul_ptimer)
+>  		soft_timer_cancel(&map.emul_ptimer->hrtimer);
+>  
+> @@ -691,30 +770,46 @@ void kvm_timer_vcpu_init(struct kvm_vcpu *vcpu)
+>  	struct arch_timer_cpu *timer = vcpu_timer(vcpu);
+>  	struct arch_timer_context *vtimer = vcpu_vtimer(vcpu);
+>  	struct arch_timer_context *ptimer = vcpu_ptimer(vcpu);
+> +	struct arch_timer_context *hvtimer = vcpu_hvtimer(vcpu);
+> +	struct arch_timer_context *hptimer = vcpu_hptimer(vcpu);
+>  
+>  	/* Synchronize cntvoff across all vtimers of a VM. */
+>  	update_vtimer_cntvoff(vcpu, kvm_phys_timer_read());
+>  	ptimer->cntvoff = 0;
+> +	hvtimer->cntvoff = 0;
+> +	hptimer->cntvoff = 0;
+>  
+>  	hrtimer_init(&timer->bg_timer, CLOCK_MONOTONIC, HRTIMER_MODE_ABS);
+>  	timer->bg_timer.function = kvm_bg_timer_expire;
+>  
+>  	hrtimer_init(&vtimer->hrtimer, CLOCK_MONOTONIC, HRTIMER_MODE_ABS);
+>  	hrtimer_init(&ptimer->hrtimer, CLOCK_MONOTONIC, HRTIMER_MODE_ABS);
+> +	hrtimer_init(&hvtimer->hrtimer, CLOCK_MONOTONIC, HRTIMER_MODE_ABS);
+> +	hrtimer_init(&hptimer->hrtimer, CLOCK_MONOTONIC, HRTIMER_MODE_ABS);
+>  	vtimer->hrtimer.function = kvm_hrtimer_expire;
+>  	ptimer->hrtimer.function = kvm_hrtimer_expire;
+> +	hvtimer->hrtimer.function = kvm_hrtimer_expire;
+> +	hptimer->hrtimer.function = kvm_hrtimer_expire;
+>  
+>  	vtimer->irq.irq = default_vtimer_irq.irq;
+>  	ptimer->irq.irq = default_ptimer_irq.irq;
+> +	hvtimer->irq.irq = default_hvtimer_irq.irq;
+> +	hptimer->irq.irq = default_hptimer_irq.irq;
+>  
+>  	vtimer->host_timer_irq = host_vtimer_irq;
+>  	ptimer->host_timer_irq = host_ptimer_irq;
+> +	hvtimer->host_timer_irq = host_vtimer_irq;
+> +	hptimer->host_timer_irq = host_ptimer_irq;
+>  
+>  	vtimer->host_timer_irq_flags = host_vtimer_irq_flags;
+>  	ptimer->host_timer_irq_flags = host_ptimer_irq_flags;
+> +	hvtimer->host_timer_irq_flags = host_vtimer_irq_flags;
+> +	hptimer->host_timer_irq_flags = host_ptimer_irq_flags;
+>  
+>  	vtimer->vcpu = vcpu;
+>  	ptimer->vcpu = vcpu;
+> +	hvtimer->vcpu = vcpu;
+> +	hptimer->vcpu = vcpu;
+>  }
+>  
+>  static void kvm_timer_init_interrupt(void *info)
+> @@ -997,7 +1092,7 @@ void kvm_timer_vcpu_terminate(struct kvm_vcpu *vcpu)
+>  
+>  static bool timer_irqs_are_valid(struct kvm_vcpu *vcpu)
+>  {
+> -	int vtimer_irq, ptimer_irq;
+> +	int vtimer_irq, ptimer_irq, hvtimer_irq, hptimer_irq;
+>  	int i, ret;
+>  
+>  	vtimer_irq = vcpu_vtimer(vcpu)->irq.irq;
+> @@ -1010,9 +1105,21 @@ static bool timer_irqs_are_valid(struct kvm_vcpu *vcpu)
+>  	if (ret)
+>  		return false;
+>  
+> +	hvtimer_irq = vcpu_hvtimer(vcpu)->irq.irq;
+> +	ret = kvm_vgic_set_owner(vcpu, hvtimer_irq, vcpu_hvtimer(vcpu));
+> +	if (ret)
+> +		return false;
+> +
+> +	hptimer_irq = vcpu_hptimer(vcpu)->irq.irq;
+> +	ret = kvm_vgic_set_owner(vcpu, hptimer_irq, vcpu_hptimer(vcpu));
+> +	if (ret)
+> +		return false;
+> +
+>  	kvm_for_each_vcpu(i, vcpu, vcpu->kvm) {
+>  		if (vcpu_vtimer(vcpu)->irq.irq != vtimer_irq ||
+> -		    vcpu_ptimer(vcpu)->irq.irq != ptimer_irq)
+> +		    vcpu_ptimer(vcpu)->irq.irq != ptimer_irq ||
+> +		    vcpu_hvtimer(vcpu)->irq.irq != hvtimer_irq ||
+> +		    vcpu_hptimer(vcpu)->irq.irq != hptimer_irq)
+>  			return false;
+>  	}
+>  
+> @@ -1028,6 +1135,10 @@ bool kvm_arch_timer_get_input_level(int vintid)
+>  		timer = vcpu_vtimer(vcpu);
+>  	else if (vintid == vcpu_ptimer(vcpu)->irq.irq)
+>  		timer = vcpu_ptimer(vcpu);
+> +	else if (vintid == vcpu_hvtimer(vcpu)->irq.irq)
+> +		timer = vcpu_hvtimer(vcpu);
+> +	else if (vintid == vcpu_hptimer(vcpu)->irq.irq)
+> +		timer = vcpu_hptimer(vcpu);
+>  	else
+>  		BUG();
+>  
+> @@ -1109,6 +1220,7 @@ static void set_timer_irqs(struct kvm *kvm, int vtimer_irq, int ptimer_irq)
+>  	kvm_for_each_vcpu(i, vcpu, kvm) {
+>  		vcpu_vtimer(vcpu)->irq.irq = vtimer_irq;
+>  		vcpu_ptimer(vcpu)->irq.irq = ptimer_irq;
+> +		/* TODO: Add support for hv/hp timers */
+>  	}
+>  }
+>  
+> @@ -1119,6 +1231,8 @@ int kvm_arm_timer_set_attr(struct kvm_vcpu *vcpu, struct kvm_device_attr *attr)
+>  	struct arch_timer_context *ptimer = vcpu_ptimer(vcpu);
+>  	int irq;
+>  
+> +	/* TODO: Add support for hv/hp timers */
+> +
+>  	if (!irqchip_in_kernel(vcpu->kvm))
+>  		return -EINVAL;
+>  
+> @@ -1151,6 +1265,8 @@ int kvm_arm_timer_get_attr(struct kvm_vcpu *vcpu, struct kvm_device_attr *attr)
+>  	struct arch_timer_context *timer;
+>  	int irq;
+>  
+> +	/* TODO: Add support for hv/hp timers */
+> +
+>  	switch (attr->attr) {
+>  	case KVM_ARM_VCPU_TIMER_IRQ_VTIMER:
+>  		timer = vcpu_vtimer(vcpu);
+> diff --git a/virt/kvm/arm/trace.h b/virt/kvm/arm/trace.h
+> index 204d210d01c2..3b08cc0376f4 100644
+> --- a/virt/kvm/arm/trace.h
+> +++ b/virt/kvm/arm/trace.h
+> @@ -271,6 +271,7 @@ TRACE_EVENT(kvm_get_timer_map,
+>  		__field(	unsigned long,		vcpu_id	)
+>  		__field(	int,			direct_vtimer	)
+>  		__field(	int,			direct_ptimer	)
+> +		__field(	int,			emul_vtimer	)
+>  		__field(	int,			emul_ptimer	)
+>  	),
+>  
+> @@ -279,14 +280,17 @@ TRACE_EVENT(kvm_get_timer_map,
+>  		__entry->direct_vtimer		= arch_timer_ctx_index(map->direct_vtimer);
+>  		__entry->direct_ptimer =
+>  			(map->direct_ptimer) ? arch_timer_ctx_index(map->direct_ptimer) : -1;
+> +		__entry->emul_vtimer =
+> +			(map->emul_vtimer) ? arch_timer_ctx_index(map->emul_vtimer) : -1;
+>  		__entry->emul_ptimer =
+>  			(map->emul_ptimer) ? arch_timer_ctx_index(map->emul_ptimer) : -1;
+>  	),
+>  
+> -	TP_printk("VCPU: %ld, dv: %d, dp: %d, ep: %d",
+> +	TP_printk("VCPU: %ld, dv: %d, dp: %d, ev: %d, ep: %d",
+>  		  __entry->vcpu_id,
+>  		  __entry->direct_vtimer,
+>  		  __entry->direct_ptimer,
+> +		  __entry->emul_vtimer,
+>  		  __entry->emul_ptimer)
+>  );
+>  
+> diff --git a/virt/kvm/arm/vgic/vgic.c b/virt/kvm/arm/vgic/vgic.c
+> index 191deccf60bf..1c5b4dbd33e4 100644
+> --- a/virt/kvm/arm/vgic/vgic.c
+> +++ b/virt/kvm/arm/vgic/vgic.c
+> @@ -569,6 +569,21 @@ int kvm_vgic_unmap_phys_irq(struct kvm_vcpu *vcpu, unsigned int vintid)
+>  	return 0;
+>  }
+>  
+> +int kvm_vgic_get_map(struct kvm_vcpu *vcpu, unsigned int vintid)
+> +{
+> +	struct vgic_irq *irq = vgic_get_irq(vcpu->kvm, vcpu, vintid);
+> +	unsigned long flags;
+> +	int ret = -1;
+> +
+> +	raw_spin_lock_irqsave(&irq->irq_lock, flags);
+> +	if (irq->hw)
+> +		ret = irq->hwintid;
+> +	raw_spin_unlock_irqrestore(&irq->irq_lock, flags);
+> +
+> +	vgic_put_irq(vcpu->kvm, irq);
+> +	return ret;
+> +}
+> +
+>  /**
+>   * kvm_vgic_set_owner - Set the owner of an interrupt for a VM
+>   *
 
 _______________________________________________
 linux-arm-kernel mailing list
