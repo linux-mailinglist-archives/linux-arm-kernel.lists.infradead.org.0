@@ -2,57 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18FF8644A7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 11:49:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4AE7B644BC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 11:55:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+mTrQxAsYuadpaoaGuiiIf1WV8BfGjPGUj2iKugocX8=; b=SZz4s5F0Pjwxmt
-	QejVyVO8u/j7yGHE9qnrOBcf3MjdwND/9J2NC6PlVGo7utl/qcHmhcpYFRlH4q7tuyTh9CRCgPfLh
-	sW4IQMoNbaOTW4y1S7CsGZy9PQr+KuO0/Bex+LGyDau2HZeOecD1vD2EAVVpIMPWJnQwMAxpXQiTG
-	qDdvL3HoRalx7Ikfd56/rfunHmfgkJYheqdTmR08CdyXgmLGqT5x9xzJN+UCdnZXYV8eF016wxDdt
-	V5Ma4iD24dIOaLLNOs9oZjOVyVOHOv1Uz58jAcLJKT1amWOXM7LOjjvbQ2PhpTvNxEZaq7i2/AGaY
-	pGhh7jT5bZ3SENe3yYcg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Nfh0NfjPx1qAC9SmX8NC9b8Qr6x6lgiemHn8puDiyUY=; b=WGy7qDJV1BmQd7
+	gN7mfbqcm1Mw6PMJK57Tb10zipBTgAG0rRBLU68ui0i3uKO2jQ6dDTsaAoE9R7it/InHH/KDFtdL0
+	EdpKfztqc8jHtBDK25fYXt/3vUJo54FhWEP77M51TmKAZeRVVoPa451u4H+g0CFNxkMhP8YRy2zc5
+	G3NZyvf4mLks9FM8FRGyVE+8zM6E6/Inyffh8dI1qZWdrQKaTOzHCLX4BplwxJSaiyL9ckfsbDu8x
+	pcGpUFrtqB3YZr4/9i2IzT5ZYGTMlduXpJtQ8WZTIRbm49Kv/paoK54stVwGreVopZ9LtfJlQDWiQ
+	K+A8WYGWK+K+wi3KAfaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hl9Dr-0002St-J6; Wed, 10 Jul 2019 09:49:11 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hl9De-0002SA-CR
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 09:48:59 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C9DEE344;
- Wed, 10 Jul 2019 02:48:57 -0700 (PDT)
-Received: from [10.1.196.72] (e119884-lin.cambridge.arm.com [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3F5283F246;
- Wed, 10 Jul 2019 02:48:55 -0700 (PDT)
-Subject: Re: [PATCH v7 10/25] arm64: compat: Add vDSO
-To: Thomas Gleixner <tglx@linutronix.de>, John Stultz <john.stultz@linaro.org>
-References: <20190621095252.32307-1-vincenzo.frascino@arm.com>
- <20190621095252.32307-11-vincenzo.frascino@arm.com>
- <CALAqxLXxE5B+vVLj7NcW8S05nhDQ+XSKVn=_MNDci667JDFEhA@mail.gmail.com>
- <alpine.DEB.2.21.1907100811170.1758@nanos.tec.linutronix.de>
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Message-ID: <b2dccce1-8cf2-1330-7ea9-7636e0da3c42@arm.com>
-Date: Wed, 10 Jul 2019 10:48:53 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+	id 1hl9K2-0006HI-8Y; Wed, 10 Jul 2019 09:55:34 +0000
+Received: from conssluserg-05.nifty.com ([210.131.2.90])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hl9Jd-0005Eg-P7
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 09:55:14 +0000
+Received: from mail-vs1-f53.google.com (mail-vs1-f53.google.com
+ [209.85.217.53]) (authenticated)
+ by conssluserg-05.nifty.com with ESMTP id x6A9sgTh004028
+ for <linux-arm-kernel@lists.infradead.org>; Wed, 10 Jul 2019 18:54:43 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-05.nifty.com x6A9sgTh004028
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1562752483;
+ bh=wZxsXv3WIaYTljW6aasMT3VMX3W+OBT6hDSikiAjYU8=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=cppAMmfSziHzNw3QPCqvYGxtASmwsfaxFZD9tScf2nQDpyD8fMvpnMpbOF0H13jLA
+ TxSNrKqWEsiRSeM+jY1ti8pJiGrg4fxEMkGnaLG2A4aDlKXlMYvJbAw9H5A9KpqpkT
+ fqUgdQ6iB/QJV5CL4a6FLbFV5dlUZ7gAsa9CBs/LL56VpkSEazUyJQ3TrYeoQzeZTq
+ Ctc0mkTukW0soeaOLKIBCeC3moMMPJ3vtsAuEFhZ3srLeqVl398R/AJ1XkAWF/Tcwo
+ CRK4qIRqxKGYZGinwoiqp7nep1kF3dE3q+uJhUDaB9Cygl56epeSOrn7pB0Od7qqTT
+ S9Kzu4G5p1X0Q==
+X-Nifty-SrcIP: [209.85.217.53]
+Received: by mail-vs1-f53.google.com with SMTP id u124so1117043vsu.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 10 Jul 2019 02:54:43 -0700 (PDT)
+X-Gm-Message-State: APjAAAUQ25rjw5KU36mMogovVMS+jQkySqVthTqmvgBXAdo+bl/ZYDbw
+ 8mWsiqCBvgIO2xgMJ2hFB8s7/+j5tD+xj4M52n4=
+X-Google-Smtp-Source: APXvYqxji+IBpsKEUlMjit3TzT6DNhRUlj99qLYH0If42BHRy8jugDJ4geeVshp/7HYjypa0ryai/Hv/TS//EpHlQ/U=
+X-Received: by 2002:a67:fc45:: with SMTP id p5mr17151977vsq.179.1562752482167; 
+ Wed, 10 Jul 2019 02:54:42 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <alpine.DEB.2.21.1907100811170.1758@nanos.tec.linutronix.de>
-Content-Language: en-US
+References: <CAK7LNASSCvLSXVikR7GenXyb8KywpWKVc1Z=5v3c93rxJ+G73w@mail.gmail.com>
+ <20190710082335.uzusesefimzpjd3f@shell.armlinux.org.uk>
+In-Reply-To: <20190710082335.uzusesefimzpjd3f@shell.armlinux.org.uk>
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
+Date: Wed, 10 Jul 2019 18:54:06 +0900
+X-Gmail-Original-Message-ID: <CAK7LNAQpiY4CBawEFhQHeTPSrbrRkNoYCtK4jBak+skyyMqESA@mail.gmail.com>
+Message-ID: <CAK7LNAQpiY4CBawEFhQHeTPSrbrRkNoYCtK4jBak+skyyMqESA@mail.gmail.com>
+Subject: Re: Question about ARM FASTFPE
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_024858_479167_539A04DD 
-X-CRM114-Status: GOOD (  16.12  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190710_025510_210586_512279F9 
+X-CRM114-Status: GOOD (  19.65  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [210.131.2.90 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,63 +83,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Shijith Thotton <sthotton@marvell.com>,
- Peter Collingbourne <pcc@google.com>, Arnd Bergmann <arnd@arndb.de>,
- Huw Davies <huw@codeweavers.com>, Andre Przywara <andre.przywara@arm.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
- lkml <linux-kernel@vger.kernel.org>, Ralf Baechle <ralf@linux-mips.org>,
- linux-mips@vger.kernel.org, Paul Burton <paul.burton@mips.com>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>, linux-kselftest@vger.kernel.org,
- Catalin Marinas <catalin.marinas@arm.com>,
- Russell King <linux@armlinux.org.uk>, Dmitry Safonov <0x7f454c46@gmail.com>,
- Mark Salyzyn <salyzyn@android.com>, Shuah Khan <shuah@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/07/2019 07:12, Thomas Gleixner wrote:
-> On Tue, 9 Jul 2019, John Stultz wrote:
->> Though unfortunately, it seems the arm64 vdso code that just landed is
->> breaking AOSP for me.
->>
->> I see a lot of the following errors:
->> 01-01 01:22:14.097   755   755 F libc    : Fatal signal 11 (SIGSEGV),
->> code 1 (SEGV_MAPERR), fault addr 0x3cf2c96c in tid 755 (cameraserver),
->> pid 755 (cameraserver)
->> 01-01 01:22:14.112   759   759 F libc    : Fatal signal 11 (SIGSEGV),
->> code 1 (SEGV_MAPERR), fault addr 0x3cf2c96c in tid 759
->> (android.hardwar), pid 759 (android.hardwar)
->> 01-01 01:22:14.120   756   756 F libc    : Fatal signal 11 (SIGSEGV),
->> code 1 (SEGV_MAPERR), fault addr 0x3cf2c96c in tid 756 (drmserver),
->> pid 756 (drmserver)
->>
->> Which go away if I revert the vdso merge that went in via tip/timers.
->>
->> I tried to bisect things down a bit, but as some later fixes are
->> required (at one point, date was returning the start epoch and never
->> increasing), this hasn't worked too well. But I'm guessing since I
->> see: "CROSS_COMPILE_COMPAT not defined or empty, the compat vDSO will
->> not be built", and the system is half working, I'm guessing this is an
->> issue with just the 32bit code failing.  While I can try to sort out
->> the proper CROSS_COMPILE_COMPAT in my build environment, I assume
->> userland shouldn't be crashing if that value isn't set.
-> 
-> The obvious question is whether the VDSO is mapped to the 32bit process in
-> that case. It shouldn't...
+On Wed, Jul 10, 2019 at 5:23 PM Russell King - ARM Linux admin
+<linux@armlinux.org.uk> wrote:
 >
+> On Wed, Jul 10, 2019 at 01:30:24PM +0900, Masahiro Yamada wrote:
+> > Hi.
+> >
+> > I have a question about the following code
+> > in arch/arm/Makefile:
+> >
+> >
+> > # Do we have FASTFPE?
+> > FASTFPE :=arch/arm/fastfpe
+> > ifeq ($(FASTFPE),$(wildcard $(FASTFPE)))
+> > FASTFPE_OBJ :=$(FASTFPE)/
+> > endif
+> >
+> >
+> > Since arch/arm/fastfpe does not exist in the upstream tree,
+> > I guess this is a hook to compile downstream source code.
+> >
+> > If a user puts arch/arm/fastfpe/ into their local source tree,
+> > Kbuild is supposed to compile the files in it.
+> >
+> > Is this correct?
+> >
+> >
+> > If so, I am afraid this would not work for O= building.
+> >
+> > $(wildcard ...) checks if this directory exists in the *objtree*,
+> > while scripts/Makefile.build needs to include
+> > arch/arm/fastfpe/Makefile from *srctree*.
+> >
+> > I think the correct code should be like follows:
+> >
+> > # Do we have FASTFPE?
+> > FASTFPE :=arch/arm/fastfpe
+> > ifneq ($(wildcard $(srctree)/$(FASTFPE)),)
+> > FASTFPE_OBJ :=$(FASTFPE)/
+> > endif
+> >
+> >
+> > Having said that, I am not sure this code is worth fixing.
+> >
+> > This code was added around v2.5.1.9,
+>
+> ... as a _result_ of a discussion and deciding not to upstream it,
+> but to still allow its use.  Fastfpe is faster than nwfpe (so has
+> a definite advantage for FP intensive applications) but we decided
+> we didn't want two FP emulation codes in the kernel.  However, if
+> someone wants to use it, it has to be built into the kernel, it
+> can't be modular.
 
-Agreed. I am investing if/why this is happening and will post a fix accordingly.
 
-> Thanks,
-> 
-> 	tglx
-> 
+IMHO, the entry in Makefile and Kconfig should be removed
+from upstream, then moved to a part of the fastfpe local patch.
+
+
 
 -- 
-Regards,
-Vincenzo
+Best Regards
+Masahiro Yamada
 
 _______________________________________________
 linux-arm-kernel mailing list
