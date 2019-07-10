@@ -2,88 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E51D4645BA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 13:27:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DAD47645D5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 13:35:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ipGKgOI0NnUK0/7pKrWeI2doHOy4RnTyEjtuU3C+FIY=; b=iW8PCpqlbZb4d1+pCiKTuIyzm
-	6Mw4bSBFSE4u00AkK7lFtxdLAGBxw79AtqYtTjXpkwq1p1e5tMqLxLtBdnE7WHNXZwCFiRlYjf3wP
-	jI80lVM0Sj4VWJ/GT4G7zrclV4N7oXrejF+Htt4cYYbj5IQGMgHF+oHQmeDS47mysjKkWSc9q7Msp
-	zo+YiVEH/KX+KHR43eqBwJ9Y9OOZiHmFVVxX3cNTAYlAmSEo4BwEWH1NKB2L1oZu+WxeAp5Yuy5C7
-	u5ZSwF1i55cM7AypGZoEt4zjM7EgSvruumiEJErFTOqgMESobzK6WAIwSmnzSHAHwhUVmbibIjCOd
-	dvbhBjN1A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yrDpM7WYm13WhIl/7yz8GCLzhYWkJolcvZyVAkRGduQ=; b=jmv/6PYaivNIr4
+	W9eJRkOFwbBru+/MFU5GefAe0vl2y3N1MbvtPI+w3nhw5jk0ZarYcQX/h/cS7tM6hn1+hly4SyT9l
+	xT4l3JueUE7DeNGwVmC0JTV7DJSIScjYPYc0cm3yhWTHnoegSjE0wuSsWA0CTNxbyb4BIlU9LomUr
+	qrkhylHJntlHI6LopMsZjscSGNycId85iY1S2p5kfcL4AZKAmWMWoJz1YUDB9d8T09KgOrl9nsbqN
+	pvLlX2SXZnGRD6uKvkXoG9gEq2XDFOeoezuLyTJbbBpfrH1Ilzvws5V/g/4xqtuCIWii6h9rZpBgV
+	cwZ6m6z4jEkgGQ72HjKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlAlD-0000Ug-HC; Wed, 10 Jul 2019 11:27:43 +0000
-Received: from hqemgate15.nvidia.com ([216.228.121.64])
+	id 1hlAsZ-0004LQ-CP; Wed, 10 Jul 2019 11:35:19 +0000
+Received: from mga06.intel.com ([134.134.136.31])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlAl4-0000RR-Bp
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 11:27:36 +0000
-Received: from hqpgpgate102.nvidia.com (Not Verified[216.228.121.13]) by
- hqemgate15.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5d25cba90000>; Wed, 10 Jul 2019 04:27:37 -0700
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate102.nvidia.com (PGP Universal service);
- Wed, 10 Jul 2019 04:27:32 -0700
-X-PGP-Universal: processed;
- by hqpgpgate102.nvidia.com on Wed, 10 Jul 2019 04:27:32 -0700
-Received: from [10.24.44.109] (10.124.1.5) by HQMAIL107.nvidia.com
- (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 10 Jul
- 2019 11:27:26 +0000
-Subject: Re: [PATCH V13 05/12] PCI: dwc: Add ext config space capability
- search API
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-References: <20190710062212.1745-1-vidyas@nvidia.com>
- <20190710062212.1745-6-vidyas@nvidia.com>
- <20190710103709.GA4063@e121166-lin.cambridge.arm.com>
-X-Nvconfidentiality: public
-From: Vidya Sagar <vidyas@nvidia.com>
-Message-ID: <fd1fc10e-47d0-aaac-158d-1c19363ec8d3@nvidia.com>
-Date: Wed, 10 Jul 2019 16:57:23 +0530
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ id 1hlAsS-0004KM-NQ; Wed, 10 Jul 2019 11:35:14 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga004.fm.intel.com ([10.253.24.48])
+ by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 10 Jul 2019 04:35:11 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.63,474,1557212400"; d="scan'208";a="189143865"
+Received: from ahunter-desktop.fi.intel.com (HELO [10.237.72.122])
+ ([10.237.72.122])
+ by fmsmga004.fm.intel.com with ESMTP; 10 Jul 2019 04:35:05 -0700
+Subject: Re: [PATCH v2 00/11] Arasan SDHCI enhancements and ZynqMP Tap Delays
+ Handling
+To: Manish Narani <manish.narani@xilinx.com>, ulf.hansson@linaro.org,
+ robh+dt@kernel.org, mark.rutland@arm.com, heiko@sntech.de,
+ michal.simek@xilinx.com, christoph.muellner@theobroma-systems.com,
+ philipp.tomsich@theobroma-systems.com, viresh.kumar@linaro.org,
+ scott.branden@broadcom.com, ayaka@soulik.info, kernel@esmil.dk,
+ tony.xie@rock-chips.com, rajan.vaja@xilinx.com, jolly.shah@xilinx.com,
+ nava.manne@xilinx.com, mdf@kernel.org, olof@lixom.net
+References: <1561958991-21935-1-git-send-email-manish.narani@xilinx.com>
+From: Adrian Hunter <adrian.hunter@intel.com>
+Organization: Intel Finland Oy, Registered Address: PL 281, 00181 Helsinki,
+ Business Identity Code: 0357606 - 4, Domiciled in Helsinki
+Message-ID: <d4a733c4-9760-a790-5752-be3f14c53bec@intel.com>
+Date: Wed, 10 Jul 2019 14:33:54 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.2
 MIME-Version: 1.0
-In-Reply-To: <20190710103709.GA4063@e121166-lin.cambridge.arm.com>
-X-Originating-IP: [10.124.1.5]
-X-ClientProxiedBy: HQMAIL108.nvidia.com (172.18.146.13) To
- HQMAIL107.nvidia.com (172.20.187.13)
+In-Reply-To: <1561958991-21935-1-git-send-email-manish.narani@xilinx.com>
 Content-Language: en-US
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1562758057; bh=qS3f23rc6PRI4/MEpYT+5T67cBOKXa874wiiveHkTCg=;
- h=X-PGP-Universal:Subject:To:CC:References:X-Nvconfidentiality:From:
- Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
- X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
- Content-Transfer-Encoding;
- b=EafiB/JafsAB4XgIv+kuhmSXzMjX8sEGmlmAPi297oiwRYe1EDvopt11WEQtv62Kn
- P68kRduwYVtqcruwVZoDE+bv+o6glEr4k5MEemu1JREu99Uv8eElpYiB3Vg8nPbdDZ
- d78YkyqQPbJHVqijZK2PPUcS/6p+l5ZtSTORRqiBGIkLoPxbRAk0iF82Sf9XC0qT30
- DumRDWAYLCXhaiAEXazW9kQD5mohJOTHpEn07lqEgVO6/VpWY4op6rRwppYCFLpGZF
- JVw6UBBHAtVIU9UfrRX1elmEDBUfNc0ZKI1o5qEYFmdMH42RrXJkMAwlthNEQrTvI3
- SVopVCiyORfew==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_042734_425537_1E4F7975 
-X-CRM114-Status: GOOD (  17.12  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190710_043512_807309_0F59BEDF 
+X-CRM114-Status: GOOD (  20.49  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.31 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.64 listed in list.dnswl.org]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,157 +75,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, mperttunen@nvidia.com,
- mmaddireddy@nvidia.com, linux-pci@vger.kernel.org, catalin.marinas@arm.com,
- will.deacon@arm.com, linux-kernel@vger.kernel.org, kthota@nvidia.com,
- kishon@ti.com, linux-tegra@vger.kernel.org, robh+dt@kernel.org,
- thierry.reding@gmail.com, gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
- bhelgaas@google.com, digetx@gmail.com, jonathanh@nvidia.com,
- linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
+Cc: devicetree@vger.kernel.org, linux-mmc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 7/10/2019 4:07 PM, Lorenzo Pieralisi wrote:
-> On Wed, Jul 10, 2019 at 11:52:05AM +0530, Vidya Sagar wrote:
->> Add extended configuration space capability search API using struct dw_pcie *
->> pointer
+On 1/07/19 8:29 AM, Manish Narani wrote:
+> This patch series does the following:
+>  - Reorganize the Clock Handling in Arasan SD driver
+>  - Adds new sampling clock in Arasan SD driver
+>  - Adds support to set Clock Delays in SD Arasan Driver
+>  - Add SDIO Tap Delay handling in ZynqMP firmware driver
+>  - Add support for ZynqMP Tap Delays setting in Arasan SD driver
 > 
-> Sentences are terminated with a period and this is v13 not v1, which
-> proves that you do not read the commit logs you write.
+> Changes in v2:
+> 	- Replaced the deprecated calls to clock framework APIs
+> 	- Added support for dev_clk_get() call to work for SD card clock
+> 	- Separated the clock data struct
+> 	- Fragmented the patch series in smaller patches to make it more
+> 	  readable
 > 
-> I need you guys to understand that I can't rewrite commit logs all
-> the time, I do not want to go as far as not accepting your patches
-> anymore so please do pay attention to commit log details they
-> are as important as the code itself.
+> This patch series contains a DT patch, which I think should be there to
+> maintain the order of commits.
 > 
-> https://lore.kernel.org/linux-pci/20171026223701.GA25649@bhelgaas-glaptop.roam.corp.google.com/
-My sincere apologies.
-Since I didn't touch this patch much all through this series, I missed it.
-I'll make a point to not make such mistakes again.
-Do you want me to send a new version fixing it?
+> Manish Narani (11):
+>   dt-bindings: mmc: arasan: Update documentation for SD Card Clock
+>   arm64: dts: rockchip: Add optional clock property indicating sdcard
+>     clock
+>   mmc: sdhci-of-arasan: Replace deprecated clk API calls
+>   mmc: sdhci-of-arasan: Separate out clk related data to another
+>     structure
+>   dt-bindings: mmc: arasan: Update Documentation for the input clock
+>   mmc: sdhci-of-arasan: Add sampling clock for a phy to use
+>   dt-bindings: mmc: arasan: Add optional properties for Arasan SDHCI
+>   mmc: sdhci-of-arasan: Add support to set clock phase delays for SD
+>   firmware: xilinx: Add SDIO Tap Delay APIs
+>   dt-bindings: mmc: arasan: Document 'xlnx,zynqmp-8.9a' controller
+>   mmc: sdhci-of-arasan: Add support for ZynqMP Platform Tap Delays Setup
+> 
+>  .../devicetree/bindings/mmc/arasan,sdhci.txt       |  49 ++-
+>  arch/arm64/boot/dts/rockchip/rk3399.dtsi           |   4 +-
+>  drivers/firmware/xilinx/zynqmp.c                   |  48 +++
+>  drivers/mmc/host/sdhci-of-arasan.c                 | 453 ++++++++++++++++++++-
+>  include/linux/firmware/xlnx-zynqmp.h               |  15 +-
+>  5 files changed, 540 insertions(+), 29 deletions(-)
+> 
 
-Thanks,
-Vidya Sagar
+For SDHCI:
 
-> 
-> Thanks,
-> Lorenzo
-> 
->> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
->> Acked-by: Gustavo Pimentel <gustavo.pimentel@synopsys.com>
->> Acked-by: Thierry Reding <treding@nvidia.com>
->> ---
->> V13:
->> * None
->>
->> V12:
->> * None
->>
->> V11:
->> * None
->>
->> V10:
->> * None
->>
->> V9:
->> * Added Acked-by from Thierry
->>
->> V8:
->> * Changed data types of return and arguments to be inline with data being returned
->>    and passed.
->>
->> V7:
->> * None
->>
->> V6:
->> * None
->>
->> V5:
->> * None
->>
->> V4:
->> * None
->>
->> V3:
->> * None
->>
->> V2:
->> * This is a new patch in v2 series
->>
->>   drivers/pci/controller/dwc/pcie-designware.c | 41 ++++++++++++++++++++
->>   drivers/pci/controller/dwc/pcie-designware.h |  1 +
->>   2 files changed, 42 insertions(+)
->>
->> diff --git a/drivers/pci/controller/dwc/pcie-designware.c b/drivers/pci/controller/dwc/pcie-designware.c
->> index 7818b4febb08..181449e342f1 100644
->> --- a/drivers/pci/controller/dwc/pcie-designware.c
->> +++ b/drivers/pci/controller/dwc/pcie-designware.c
->> @@ -53,6 +53,47 @@ u8 dw_pcie_find_capability(struct dw_pcie *pci, u8 cap)
->>   }
->>   EXPORT_SYMBOL_GPL(dw_pcie_find_capability);
->>   
->> +static u16 dw_pcie_find_next_ext_capability(struct dw_pcie *pci, u16 start,
->> +					    u8 cap)
->> +{
->> +	u32 header;
->> +	int ttl;
->> +	int pos = PCI_CFG_SPACE_SIZE;
->> +
->> +	/* minimum 8 bytes per capability */
->> +	ttl = (PCI_CFG_SPACE_EXP_SIZE - PCI_CFG_SPACE_SIZE) / 8;
->> +
->> +	if (start)
->> +		pos = start;
->> +
->> +	header = dw_pcie_readl_dbi(pci, pos);
->> +	/*
->> +	 * If we have no capabilities, this is indicated by cap ID,
->> +	 * cap version and next pointer all being 0.
->> +	 */
->> +	if (header == 0)
->> +		return 0;
->> +
->> +	while (ttl-- > 0) {
->> +		if (PCI_EXT_CAP_ID(header) == cap && pos != start)
->> +			return pos;
->> +
->> +		pos = PCI_EXT_CAP_NEXT(header);
->> +		if (pos < PCI_CFG_SPACE_SIZE)
->> +			break;
->> +
->> +		header = dw_pcie_readl_dbi(pci, pos);
->> +	}
->> +
->> +	return 0;
->> +}
->> +
->> +u16 dw_pcie_find_ext_capability(struct dw_pcie *pci, u8 cap)
->> +{
->> +	return dw_pcie_find_next_ext_capability(pci, 0, cap);
->> +}
->> +EXPORT_SYMBOL_GPL(dw_pcie_find_ext_capability);
->> +
->>   int dw_pcie_read(void __iomem *addr, int size, u32 *val)
->>   {
->>   	if (!IS_ALIGNED((uintptr_t)addr, size)) {
->> diff --git a/drivers/pci/controller/dwc/pcie-designware.h b/drivers/pci/controller/dwc/pcie-designware.h
->> index d8c66a6827dc..11c223471416 100644
->> --- a/drivers/pci/controller/dwc/pcie-designware.h
->> +++ b/drivers/pci/controller/dwc/pcie-designware.h
->> @@ -252,6 +252,7 @@ struct dw_pcie {
->>   		container_of((endpoint), struct dw_pcie, ep)
->>   
->>   u8 dw_pcie_find_capability(struct dw_pcie *pci, u8 cap);
->> +u16 dw_pcie_find_ext_capability(struct dw_pcie *pci, u8 cap);
->>   
->>   int dw_pcie_read(void __iomem *addr, int size, u32 *val);
->>   int dw_pcie_write(void __iomem *addr, int size, u32 val);
->> -- 
->> 2.17.1
->>
-
+Acked-by: Adrian Hunter <adrian.hunter@intel.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
