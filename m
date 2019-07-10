@@ -2,72 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42D0B6405B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 07:07:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E46964079
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 07:14:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=GSGu53TOYnBg5Exe/Dgohoaefby2cgF7bhcAPrIcm3s=; b=rfC2A33eR6r3OWlzI85R/iggos
-	gq1ns4V2g3W6pXMq5b+gFxM3IOt3J0l3NRHW5abiyqpfmoFATYY2Tgn2hYiwVrEIgNBmDTejCFBcA
-	YQiP5UPmfQlsWv6i0aXXgbSxht8Ia2/gFpvjk9t4TsgXoHi79Q+3bNidk+xy74N53eO3lwDwqg0j1
-	jb56FdxHD7O69rfXnJsVjcpEQXiPFV29JWmaOfz76dykIyRmHAU5vQ7XQgjnKvxg2tzm8qNBy0nFp
-	PChB6Ez7kORbWpple7/VDRAJFvKtV8xixd7vceKep+fXPcDhR+YzCNW92l9hshSLbnbC/4hmTCDbu
-	WkuhSoIg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=L2H2cmarQtVAMLUCufFZw5uKCWp9ybwIbh+RCRawtxU=; b=OGp
+	nutHfskoByNwZwT2bZGoMN/Esg/HxCkRWvHmrBKcvwjL6GNvdr8hyUFG4+3PKypZgpZjEb5K6C0Kv
+	c8zsjrk3j3svHOjwKntw5ncm7KK3iFgF8KaTUsxvWUxTnod53RsIfaFXMxlW4NL0H7uVInZSxlouO
+	y4v7V2rtxLMHfPc/CyQ8I01vMVp54KVq8wIK+vaEZGodHpAn/kMfohOllxMUrqAV2fNcnxFM7hjO1
+	ztHWlhduBXbT0uHUh5WFiIX2XWQnVZxDtx0q/jgS2A9g7j2zRXsvK6o/4Rd+c+DPQl3tlzn390cKM
+	DkUGow1UHH2VfFlweGkJPF+5GZEeB+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hl4ol-00015z-ID; Wed, 10 Jul 2019 05:06:59 +0000
-Received: from smtprelay0147.hostedemail.com ([216.40.44.147]
- helo=smtprelay.hostedemail.com)
+	id 1hl4vl-0003TH-EL; Wed, 10 Jul 2019 05:14:13 +0000
+Received: from conuserg-10.nifty.com ([210.131.2.77])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hl4mo-00072k-6i
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 05:04:59 +0000
-Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
- [216.40.38.60])
- by smtprelay05.hostedemail.com (Postfix) with ESMTP id F29BF1803A16D;
- Wed, 10 Jul 2019 05:04:56 +0000 (UTC)
-X-Session-Marker: 6A6F6540706572636865732E636F6D
-X-Spam-Summary: 2, 0, 0, , d41d8cd98f00b204, joe@perches.com,
- :::::::::::::::::::,
- RULES_HIT:41:355:379:541:800:960:973:988:989:1260:1345:1359:1437:1534:1540:1568:1711:1714:1730:1747:1777:1792:2198:2199:2393:2559:2562:3138:3139:3140:3141:3142:3867:4321:5007:6261:6642:10004:10848:11026:11473:11657:11658:11914:12043:12048:12297:12438:12555:12895:12986:13069:13311:13357:14096:14181:14384:14394:14721:21080:21451:21627:30054,
- 0,
- RBL:23.242.196.136:@perches.com:.lbl8.mailshell.net-62.8.0.180 64.201.201.201,
- CacheIP:none, Bayesian:0.5, 0.5, 0.5, Netcheck:none, DomainCache:0,
- MSF:not bulk, SPF:fn, MSBL:0, DNSBL:neutral, Custom_rules:0:0:0, LFtime:24,
- LUA_SUMMARY:none
-X-HE-Tag: foot64_ddc8b497611c
-X-Filterd-Recvd-Size: 1852
-Received: from joe-laptop.perches.com (cpe-23-242-196-136.socal.res.rr.com
- [23.242.196.136]) (Authenticated sender: joe@perches.com)
- by omf06.hostedemail.com (Postfix) with ESMTPA;
- Wed, 10 Jul 2019 05:04:54 +0000 (UTC)
-From: Joe Perches <joe@perches.com>
-To: Andrew Morton <akpm@linux-foundation.org>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- Chen-Yu Tsai <wens@csie.org>
-Subject: [PATCH 11/12] staging: media: cedrus: Fix misuse of GENMASK macro
-Date: Tue,  9 Jul 2019 22:04:24 -0700
-Message-Id: <cd543a5f26b031a0bbd3baa55e1f15813f59f107.1562734889.git.joe@perches.com>
-X-Mailer: git-send-email 2.15.0
-In-Reply-To: <cover.1562734889.git.joe@perches.com>
-References: <cover.1562734889.git.joe@perches.com>
+ id 1hl4vY-0003Sq-1d
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 05:14:01 +0000
+Received: from localhost.localdomain (p14092-ipngnfx01kyoto.kyoto.ocn.ne.jp
+ [153.142.97.92]) (authenticated)
+ by conuserg-10.nifty.com with ESMTP id x6A5DREA030499;
+ Wed, 10 Jul 2019 14:13:28 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-10.nifty.com x6A5DREA030499
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1562735608;
+ bh=1BDNIyvXOAp0AhR4Ns6txoUKEiiNIiaFMGdXhnp1IlA=;
+ h=From:To:Cc:Subject:Date:From;
+ b=xu/Tm5EfBojLuxqcXEj6YrZ+KlsaQOyl37TSrPSoWJSlWQGwyHhX0E4DWraNxAeT/
+ /TmFjanhNNaJ9kcpkW6bNu7CAjvYfIdt8hKAJfYe2qpFlbquFqQCuPypciPd1X+YaY
+ MwlOc/whgDiycb9L/0Dp5q1Stq7GGYr6W3ocDO4ID0hVkjhbJIu//IPqwpaxezSdkb
+ 6Z3O5AmttAuNKsoisx1H57RbPiyyvgFiq6yYvvSLMC8jZKwLUK+s7eE0zwjcWGmU/I
+ dnbio/j9JL2ASOMq7aLzEB8o2sRHOQT5XAlKgaaPOS0s565C5uQY8c4DwqV1c22WTJ
+ cjJTUmYAP/bBA==
+X-Nifty-SrcIP: [153.142.97.92]
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
+To: arm@kernel.org, Olof Johansson <olof@lixom.net>,
+ Arnd Bergmann <arnd@arndb.de>
+Subject: [PATCH] ARM: stm32: use "depends on" instead of "if" after prompt
+Date: Wed, 10 Jul 2019 14:13:20 +0900
+Message-Id: <20190710051320.8738-1-yamada.masahiro@socionext.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_220458_578956_D230E17E 
-X-CRM114-Status: UNSURE (   9.92  )
+X-CRM114-CacheID: sfid-20190709_221400_417540_6480BF60 
+X-CRM114-Status: UNSURE (   8.71  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.40.44.147 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [210.131.2.77 listed in list.dnswl.org]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,37 +73,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-kernel@vger.kernel.org, Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
+ Russell King <linux@armlinux.org.uk>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>, soc@kernel.org,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Arguments are supposed to be ordered high then low.
+This appeared after the global fixups by commit e32465429490 ("ARM: use
+"depends on" for SoC configs instead of "if" after prompt"). Fix it now.
 
-Signed-off-by: Joe Perches <joe@perches.com>
+Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
 ---
- drivers/staging/media/sunxi/cedrus/cedrus_regs.h | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_regs.h b/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
-index 3e9931416e45..ddd29788d685 100644
---- a/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
-+++ b/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
-@@ -110,7 +110,7 @@
- #define VE_DEC_MPEG_MBADDR			(VE_ENGINE_DEC_MPEG + 0x10)
- 
- #define VE_DEC_MPEG_MBADDR_X(w)			(((w) << 8) & GENMASK(15, 8))
--#define VE_DEC_MPEG_MBADDR_Y(h)			(((h) << 0) & GENMASK(0, 7))
-+#define VE_DEC_MPEG_MBADDR_Y(h)			(((h) << 0) & GENMASK(7, 0))
- 
- #define VE_DEC_MPEG_CTRL			(VE_ENGINE_DEC_MPEG + 0x14)
- 
+ arch/arm/mach-stm32/Kconfig | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/arch/arm/mach-stm32/Kconfig b/arch/arm/mach-stm32/Kconfig
+index 05d6b5aada80..57699bd8f107 100644
+--- a/arch/arm/mach-stm32/Kconfig
++++ b/arch/arm/mach-stm32/Kconfig
+@@ -1,6 +1,7 @@
+ # SPDX-License-Identifier: GPL-2.0-only
+ menuconfig ARCH_STM32
+-	bool "STMicroelectronics STM32 family" if ARM_SINGLE_ARMV7M || ARCH_MULTI_V7
++	bool "STMicroelectronics STM32 family"
++	depends on ARM_SINGLE_ARMV7M || ARCH_MULTI_V7
+ 	select ARMV7M_SYSTICK if ARM_SINGLE_ARMV7M
+ 	select HAVE_ARM_ARCH_TIMER if ARCH_MULTI_V7
+ 	select ARM_GIC if ARCH_MULTI_V7
 -- 
-2.15.0
+2.17.1
 
 
 _______________________________________________
