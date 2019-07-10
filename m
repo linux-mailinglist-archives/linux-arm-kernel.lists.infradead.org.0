@@ -2,41 +2,40 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7EA41640DF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 07:59:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 28181640F8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 08:12:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
 	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d8ivFQUDlVNKcDCGtJ6Y7B2kK/PBqOPvx+eDhI6+hsE=; b=RmTMejvapoKPW6
-	r2KAthQ5Ck4Rp5Y8YKJ+14zZQ/x/r1L+0Rz0YWtfCr2peLpsBnNEXFHYu6UemSk6Gu1gSjpDCxyuJ
-	8HYszm009CavqW9ZETnKg+XIz2IpBvp6eMLrSCbZ1HVOmyYjCvevA5UwJh1DJcCsoGfJOxYt4h+Sp
-	IVOGz3EJAqK/jLlMCtzcOAnngPMp5O1Zdj85lwjKhxPYfe+jig+xJaZATYJtzvSM0rvtwsh9G1Myb
-	pdKmwPi9WKaqONAtM3o+J8ScW1qU9m6IvURB1zP5UnfXxsJp1r3QG0ouCAj0HspS2mjHSpglK+hB/
-	oe2I9JZuPzzTrXculc6w==;
+	List-Owner; bh=O+nM1UV9JBtqPHGplonOVL1WmgVnSPSG4hrkZ7IDExY=; b=cdYN4aRmpvHSNo
+	LES3aqT+0OB8Bn24mS4WVR8hpWZpzVvOx1egxfDOilpkELam2mhf9t0QoYnSdN1ujDv927ThgpnK4
+	eIDHnGort7v9GFcmK51rZGJqZwJbd5AEuFyZSAnm7HpDZC9CNd/ZEa80i3oHEk7yO29RYSpbbeiou
+	8I+S+z1ywpfWJ0nLQsOU/8TuN57YBv3kVJDM4Mv0tas7GBSsHtzYAouof0a3X7eD73bweeE1s4Qdk
+	gEdAGwNh+EutczCCjEDRdS7ZD5ElFGVZ6vLh2Em8uWoUvVftWoiMT4ZalnrWBpXo74RYDIeQcdgV2
+	8oq8KjnmHwssH6cNrlQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hl5dR-0002DV-QC; Wed, 10 Jul 2019 05:59:21 +0000
+	id 1hl5qJ-0007V2-Ov; Wed, 10 Jul 2019 06:12:39 +0000
 Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hl5dD-0002CQ-Rx
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 05:59:09 +0000
+ id 1hl5q7-0007UZ-SW
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 06:12:29 +0000
 Received: from pd9ef1cb8.dip0.t-ipconnect.de ([217.239.28.184] helo=nanos)
  by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
  (Exim 4.80) (envelope-from <tglx@linutronix.de>)
- id 1hl5cV-0004bB-Pv; Wed, 10 Jul 2019 07:58:23 +0200
-Date: Wed, 10 Jul 2019 07:58:21 +0200 (CEST)
+ id 1hl5q2-0004k5-M0; Wed, 10 Jul 2019 08:12:22 +0200
+Date: Wed, 10 Jul 2019 08:12:21 +0200 (CEST)
 From: Thomas Gleixner <tglx@linutronix.de>
-To: Hoan Tran OS <hoan@os.amperecomputing.com>
-Subject: Re: [PATCH 3/5] x86: Kconfig: Remove CONFIG_NODES_SPAN_OTHER_NODES
-In-Reply-To: <1c5bc3a8-0c6f-dce3-95a2-8aec765408a2@os.amperecomputing.com>
-Message-ID: <alpine.DEB.2.21.1907100755010.1758@nanos.tec.linutronix.de>
-References: <1561501810-25163-1-git-send-email-Hoan@os.amperecomputing.com>
- <1561501810-25163-4-git-send-email-Hoan@os.amperecomputing.com>
- <alpine.DEB.2.21.1906260032250.32342@nanos.tec.linutronix.de>
- <1c5bc3a8-0c6f-dce3-95a2-8aec765408a2@os.amperecomputing.com>
+To: John Stultz <john.stultz@linaro.org>
+Subject: Re: [PATCH v7 10/25] arm64: compat: Add vDSO
+In-Reply-To: <CALAqxLXxE5B+vVLj7NcW8S05nhDQ+XSKVn=_MNDci667JDFEhA@mail.gmail.com>
+Message-ID: <alpine.DEB.2.21.1907100811170.1758@nanos.tec.linutronix.de>
+References: <20190621095252.32307-1-vincenzo.frascino@arm.com>
+ <20190621095252.32307-11-vincenzo.frascino@arm.com>
+ <CALAqxLXxE5B+vVLj7NcW8S05nhDQ+XSKVn=_MNDci667JDFEhA@mail.gmail.com>
 User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
 MIME-Version: 1.0
 X-Linutronix-Spam-Score: -1.0
@@ -44,8 +43,8 @@ X-Linutronix-Spam-Level: -
 X-Linutronix-Spam-Status: No , -1.0 points, 5.0 required, ALL_TRUSTED=-1,
  SHORTCIRCUIT=-0.0001
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_225908_047252_80815282 
-X-CRM114-Status: GOOD (  19.15  )
+X-CRM114-CacheID: sfid-20190709_231228_067042_B8E9081A 
+X-CRM114-Status: GOOD (  16.47  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -67,71 +66,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Michal Hocko <mhocko@suse.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>,
- "open list:MEMORY MANAGEMENT" <linux-mm@kvack.org>,
- Paul Mackerras <paulus@samba.org>, "H . Peter Anvin" <hpa@zytor.com>,
- "sparclinux@vger.kernel.org" <sparclinux@vger.kernel.org>,
- Alexander Duyck <alexander.h.duyck@linux.intel.com>,
- "linux-s390@vger.kernel.org" <linux-s390@vger.kernel.org>,
- Michael Ellerman <mpe@ellerman.id.au>, "x86@kernel.org" <x86@kernel.org>,
- Mike Rapoport <rppt@linux.ibm.com>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Vlastimil Babka <vbabka@suse.cz>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Open Source Submission <patches@amperecomputing.com>,
- Pavel Tatashin <pavel.tatashin@microsoft.com>,
- Vasily Gorbik <gor@linux.ibm.com>, Will Deacon <will.deacon@arm.com>,
- Borislav Petkov <bp@alien8.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Oscar Salvador <osalvador@suse.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- "David S . Miller" <davem@davemloft.net>
+Cc: linux-arch@vger.kernel.org, Shijith Thotton <sthotton@marvell.com>,
+ Peter Collingbourne <pcc@google.com>, Arnd Bergmann <arnd@arndb.de>,
+ Mark Salyzyn <salyzyn@android.com>, Huw Davies <huw@codeweavers.com>,
+ Andre Przywara <andre.przywara@arm.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ lkml <linux-kernel@vger.kernel.org>, Ralf Baechle <ralf@linux-mips.org>,
+ linux-mips@vger.kernel.org, Paul Burton <paul.burton@mips.com>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>, linux-kselftest@vger.kernel.org,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Russell King <linux@armlinux.org.uk>, Dmitry Safonov <0x7f454c46@gmail.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Shuah Khan <shuah@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hoan,
-
-On Wed, 10 Jul 2019, Hoan Tran OS wrote:
-> On 6/25/19 3:45 PM, Thomas Gleixner wrote:
-> > On Tue, 25 Jun 2019, Hoan Tran OS wrote:
-> >> @@ -1567,15 +1567,6 @@ config X86_64_ACPI_NUMA
-> >>   	---help---
-> >>   	  Enable ACPI SRAT based node topology detection.
-> >>   
-> >> -# Some NUMA nodes have memory ranges that span
-> >> -# other nodes.  Even though a pfn is valid and
-> >> -# between a node's start and end pfns, it may not
-> >> -# reside on that node.  See memmap_init_zone()
-> >> -# for details.
-> >> -config NODES_SPAN_OTHER_NODES
-> >> -	def_bool y
-> >> -	depends on X86_64_ACPI_NUMA
-> > 
-> > the changelog does not mention that this lifts the dependency on
-> > X86_64_ACPI_NUMA and therefore enables that functionality for anything
-> > which has NUMA enabled including 32bit.
-> > 
+On Tue, 9 Jul 2019, John Stultz wrote:
+> Though unfortunately, it seems the arm64 vdso code that just landed is
+> breaking AOSP for me.
 > 
-> I think this config is used for a NUMA layout which NUMA nodes addresses 
-> are spanned to other nodes. I think 32bit NUMA also have the same issue 
-> with that layout. Please correct me if I'm wrong.
-
-I'm not saying you're wrong, but it's your duty to provide the analysis why
-this is correct for everything which has NUMA enabled.
-
-> > The core mm change gives no helpful information either. You just copied the
-> > above comment text from some random Kconfig.
+> I see a lot of the following errors:
+> 01-01 01:22:14.097   755   755 F libc    : Fatal signal 11 (SIGSEGV),
+> code 1 (SEGV_MAPERR), fault addr 0x3cf2c96c in tid 755 (cameraserver),
+> pid 755 (cameraserver)
+> 01-01 01:22:14.112   759   759 F libc    : Fatal signal 11 (SIGSEGV),
+> code 1 (SEGV_MAPERR), fault addr 0x3cf2c96c in tid 759
+> (android.hardwar), pid 759 (android.hardwar)
+> 01-01 01:22:14.120   756   756 F libc    : Fatal signal 11 (SIGSEGV),
+> code 1 (SEGV_MAPERR), fault addr 0x3cf2c96c in tid 756 (drmserver),
+> pid 756 (drmserver)
 > 
-> Yes, as it's a correct comment and is used at multiple places.
+> Which go away if I revert the vdso merge that went in via tip/timers.
+> 
+> I tried to bisect things down a bit, but as some later fixes are
+> required (at one point, date was returning the start epoch and never
+> increasing), this hasn't worked too well. But I'm guessing since I
+> see: "CROSS_COMPILE_COMPAT not defined or empty, the compat vDSO will
+> not be built", and the system is half working, I'm guessing this is an
+> issue with just the 32bit code failing.  While I can try to sort out
+> the proper CROSS_COMPILE_COMPAT in my build environment, I assume
+> userland shouldn't be crashing if that value isn't set.
 
-Well it maybe correct in terms of explaining what this is about, it still
-does not explain why this is needed by default on everything which has NUMA
-enabled.
+The obvious question is whether the VDSO is mapped to the 32bit process in
+that case. It shouldn't...
 
 Thanks,
 
