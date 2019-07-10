@@ -2,78 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B575C64B78
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 19:27:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F2F9264BE0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 20:06:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=8FAotbA3PPluwmMQxEO8LU5vYZzJV0fmaxJppGw1Urs=; b=EqqjqzMA784KkcO6vMHPza2u2
-	l2p9kQ7ZWwuQiT3tPnRYhQVXMDqWXEabBZLTmj8dLHqfIhF2hXldyZf8EV8RRpu1iYsed8fbhvHUE
-	/pRQ/N8ztcVhJJVxboRrcIygJ54kxfnx2uK6d/VLv19ed9znjmjw+NGi/cC6hu9kqh6HTOZ67zxr8
-	LUTHM+C/J3cUZ0q6kLzwSld7iABJHI5v2xZxgzj+x+Tf3KAql90ExymPNA6Jgy1KVAXCtPKnUglAO
-	9GOCpIIOKzJeEU0R4qt6PQo8JACThRGq9RgZsldHBeQOOGtpjKGT4YuCLkDOpQ9WT5CERwm+FvBQ7
-	u1Dv+D/aw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=H5eaxlz5PE6HG5qBZfNCmu8P16BLx3JbFYsc5Ry1rAg=; b=d574fRmEGcilhA
+	qcaxLxmRqVz46lCQ/nChs0OFPx5RZqT9P59xSlcw44/eX72jKejStX4vYEha6WgpY6AYbHwDCIQKV
+	776IwyEeobd44wwi0dXv06G1vSrJQfl1zzlph9ayI1U7qa33cjhjA/vrbJscLYJ4INfQOi7KNLywV
+	G16EIMxTjtwbT0ypQTpquWYjaBaNmC6fxm3GfbpOPhKDRZHX/l/I/U3ILxThr+LoVUgctsIouk1lj
+	l6tFrOJp/saUEUhE1TBrlrc8mpgvrCW9oVhbwhg7N0Yq/TmjgDsSWQKulUe3gT7eAkg1LmnQ/C5uE
+	kM4o3REftM1U7j0V5QdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlGN6-0005vO-KJ; Wed, 10 Jul 2019 17:27:12 +0000
-Received: from hqemgate14.nvidia.com ([216.228.121.143])
+	id 1hlGyh-0005lS-Ty; Wed, 10 Jul 2019 18:06:03 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlGMo-0005uI-6h
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 17:26:57 +0000
-Received: from hqpgpgate102.nvidia.com (Not Verified[216.228.121.13]) by
- hqemgate14.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5d261fd70000>; Wed, 10 Jul 2019 10:26:47 -0700
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate102.nvidia.com (PGP Universal service);
- Wed, 10 Jul 2019 10:26:52 -0700
-X-PGP-Universal: processed;
- by hqpgpgate102.nvidia.com on Wed, 10 Jul 2019 10:26:52 -0700
-Received: from [10.25.74.6] (10.124.1.5) by HQMAIL107.nvidia.com
- (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 10 Jul
- 2019 17:26:46 +0000
-Subject: Re: [PATCH V13 12/12] PCI: tegra: Add Tegra194 PCIe support
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-References: <20190710062212.1745-1-vidyas@nvidia.com>
- <20190710062212.1745-13-vidyas@nvidia.com>
- <20190710170200.GC8781@e121166-lin.cambridge.arm.com>
-X-Nvconfidentiality: public
-From: Vidya Sagar <vidyas@nvidia.com>
-Message-ID: <03a97d63-b4ef-cae4-cba2-a9e651bd25b6@nvidia.com>
-Date: Wed, 10 Jul 2019 22:56:43 +0530
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ id 1hlGyM-0005jk-PP
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 18:05:45 +0000
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id EC1D4609EF; Wed, 10 Jul 2019 18:05:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1562781941;
+ bh=Q/M+Y3hgIcs/x4Evw8WkCZO9QbiJl0A4/J4QbxvDNdY=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=K5lenfhIgxbrsvwlMZaqnyLBt8TxnoPwt2C9NOtpWTy3FIRqNitQI4E2RIbyzIFeg
+ wQzAHUg8Qy6ni7JpVcLPYB8MRL/G7zPdHXgewAgFLNSfz8GptZA6IC7FjTfV3WUvow
+ TeGEyUeh5+uvpsJ5t8zelIrjRQFpApR6JZMSjcGk=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
+ version=3.4.0
+Received: from jcrouse1-lnx.qualcomm.com (i-global254.qualcomm.com
+ [199.106.103.254])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ (Authenticated sender: jcrouse@smtp.codeaurora.org)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 57C3C6058E;
+ Wed, 10 Jul 2019 18:05:37 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1562781938;
+ bh=Q/M+Y3hgIcs/x4Evw8WkCZO9QbiJl0A4/J4QbxvDNdY=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=JcYJkkaR+GhyFm33ItH25B1sRStM2jTIQzxNU5LZYZox6eGXni2EkQco+QfviC/4T
+ pRMdUoPmTx0fexL71TuSs90XMlR4Fep71USqUuZ6NM1xesmvjFTRtvmaWRBkaScRM4
+ YHyEJqLdgDT3Vf7AsbOENGBMFaYhwC9P0Wx6DygU=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 57C3C6058E
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ spf=none smtp.mailfrom=jcrouse@codeaurora.org
+Date: Wed, 10 Jul 2019 12:05:35 -0600
+From: Jordan Crouse <jcrouse@codeaurora.org>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [RESEND PATCH v2 2/3] iommu/io-pgtable-arm: Add support for
+ AARCH64 split pagetables
+Message-ID: <20190710180535.GA26247@jcrouse1-lnx.qualcomm.com>
+Mail-Followup-To: Robin Murphy <robin.murphy@arm.com>,
+ freedreno@lists.freedesktop.org, jean-philippe.brucker@arm.com,
+ linux-arm-msm@vger.kernel.org, hoegsberg@google.com,
+ dianders@chromium.org, baolu.lu@linux.intel.com,
+ Will Deacon <will@kernel.org>, Rob Herring <robh@kernel.org>,
+ Zhen Lei <thunder.leizhen@huawei.com>, linux-kernel@vger.kernel.org,
+ iommu@lists.linux-foundation.org,
+ Alyssa Rosenzweig <alyssa@rosenzweig.io>,
+ Joerg Roedel <joro@8bytes.org>,
+ linux-arm-kernel@lists.infradead.org
+References: <1562612447-19856-1-git-send-email-jcrouse@codeaurora.org>
+ <1562612447-19856-3-git-send-email-jcrouse@codeaurora.org>
+ <d9c1a115-ca4f-efda-4ba2-adefbd802849@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20190710170200.GC8781@e121166-lin.cambridge.arm.com>
-X-Originating-IP: [10.124.1.5]
-X-ClientProxiedBy: HQMAIL101.nvidia.com (172.20.187.10) To
- HQMAIL107.nvidia.com (172.20.187.13)
-Content-Language: en-US
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1562779607; bh=+04JINjAsm7FgwRdICr5UCdHJ2h2mR6VRy+tV41Didw=;
- h=X-PGP-Universal:Subject:To:CC:References:X-Nvconfidentiality:From:
- Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
- X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
- Content-Transfer-Encoding;
- b=UDiqLWe780JoQfSYbJoB57XevUdUmzoBcwYDunHtoZsURbTKh7B8qULyLrK2Ea65/
- Z8jQnHod5orjIx49QFpiGAiJFskDfaPvAMQCuRTbn2833zBazww4wXaG20xjILaz0M
- UnAh4VU0Q6AYif0jVz8tCmp5S9WWP00GuMElGuLs2z6KzCoVgscXZ/E1W5BtMLAq+d
- oNb8sVz9fQCS4zkuPLSFapBvElQw7g+t2qBWwx0itMp4YHo04UWqVPkP4kYjBwA5nG
- /7RWhUWFabyxalAfPxBl9W2STgh0whC9ZX7uA4+YiDq7G1vAFwql7YEiWov/DCyOtV
- 4iUMgJcLL7ntg==
+Content-Disposition: inline
+In-Reply-To: <d9c1a115-ca4f-efda-4ba2-adefbd802849@arm.com>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_102654_277367_BD9C2235 
-X-CRM114-Status: GOOD (  15.57  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190710_110542_861888_20E646A6 
+X-CRM114-Status: GOOD (  28.98  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.143 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.145.29.96 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -82,7 +99,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,1294 +110,532 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, mperttunen@nvidia.com,
- mmaddireddy@nvidia.com, linux-pci@vger.kernel.org, catalin.marinas@arm.com,
- will.deacon@arm.com, linux-kernel@vger.kernel.org, kthota@nvidia.com,
- kishon@ti.com, linux-tegra@vger.kernel.org, robh+dt@kernel.org,
- thierry.reding@gmail.com, gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
- bhelgaas@google.com, digetx@gmail.com, jonathanh@nvidia.com,
- linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
+Cc: Rob Herring <robh@kernel.org>, Will Deacon <will@kernel.org>,
+ jean-philippe.brucker@arm.com, linux-arm-msm@vger.kernel.org,
+ Joerg Roedel <joro@8bytes.org>, dianders@chromium.org,
+ linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
+ hoegsberg@google.com, linux-arm-kernel@lists.infradead.org,
+ Zhen Lei <thunder.leizhen@huawei.com>, freedreno@lists.freedesktop.org,
+ Alyssa Rosenzweig <alyssa@rosenzweig.io>, baolu.lu@linux.intel.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 7/10/2019 10:32 PM, Lorenzo Pieralisi wrote:
-> On Wed, Jul 10, 2019 at 11:52:12AM +0530, Vidya Sagar wrote:
+On Wed, Jul 10, 2019 at 05:45:37PM +0100, Robin Murphy wrote:
+> Hi Jordan,
 > 
-> [...]
+> On 08/07/2019 20:00, Jordan Crouse wrote:
+> >Add a new sub-format ARM_64_LPAE_SPLIT_S1 to create and set up split
+> >pagetables (TTBR0 and TTBR1). The initialization function sets up the
+> >correct va_size and sign extension bits and programs the TCR registers.
+> >Split pagetable formats use their own own map/unmap wrappers to ensure
+> >that the correct pagetable is selected based on the incoming iova but
+> >most of the heavy lifting is common to the other formats.
 > 
->> +#if defined(CONFIG_PCIEASPM)
->> +static void disable_aspm_l11(struct tegra_pcie_dw *pcie)
->> +{
->> +	u32 val;
->> +
->> +	val = dw_pcie_readl_dbi(&pcie->pci, pcie->cfg_link_cap_l1sub);
->> +	val &= ~PCI_L1SS_CAP_ASPM_L1_1;
->> +	dw_pcie_writel_dbi(&pcie->pci, pcie->cfg_link_cap_l1sub, val);
->> +}
->> +
->> +static void disable_aspm_l12(struct tegra_pcie_dw *pcie)
->> +{
->> +	u32 val;
->> +
->> +	val = dw_pcie_readl_dbi(&pcie->pci, pcie->cfg_link_cap_l1sub);
->> +	val &= ~PCI_L1SS_CAP_ASPM_L1_2;
->> +	dw_pcie_writel_dbi(&pcie->pci, pcie->cfg_link_cap_l1sub, val);
->> +}
->> +
->> +static inline u32 event_counter_prog(struct tegra_pcie_dw *pcie, u32 event)
->> +{
->> +	u32 val;
->> +
->> +	val = dw_pcie_readl_dbi(&pcie->pci, event_cntr_ctrl_offset[pcie->cid]);
->> +	val &= ~(EVENT_COUNTER_EVENT_SEL_MASK << EVENT_COUNTER_EVENT_SEL_SHIFT);
->> +	val |= EVENT_COUNTER_GROUP_5 << EVENT_COUNTER_GROUP_SEL_SHIFT;
->> +	val |= event << EVENT_COUNTER_EVENT_SEL_SHIFT;
->> +	val |= EVENT_COUNTER_ENABLE_ALL << EVENT_COUNTER_ENABLE_SHIFT;
->> +	dw_pcie_writel_dbi(&pcie->pci, event_cntr_ctrl_offset[pcie->cid], val);
->> +	val = dw_pcie_readl_dbi(&pcie->pci, event_cntr_data_offset[pcie->cid]);
->> +	return val;
->> +}
->> +
->> +static int aspm_state_cnt(struct seq_file *s, void *data)
->> +{
->> +	struct tegra_pcie_dw *pcie = (struct tegra_pcie_dw *)
->> +				     dev_get_drvdata(s->private);
->> +	u32 val;
->> +
->> +	seq_printf(s, "Tx L0s entry count : %u\n",
->> +		   event_counter_prog(pcie, EVENT_COUNTER_EVENT_Tx_L0S));
->> +
->> +	seq_printf(s, "Rx L0s entry count : %u\n",
->> +		   event_counter_prog(pcie, EVENT_COUNTER_EVENT_Rx_L0S));
->> +
->> +	seq_printf(s, "Link L1 entry count : %u\n",
->> +		   event_counter_prog(pcie, EVENT_COUNTER_EVENT_L1));
->> +
->> +	seq_printf(s, "Link L1.1 entry count : %u\n",
->> +		   event_counter_prog(pcie, EVENT_COUNTER_EVENT_L1_1));
->> +
->> +	seq_printf(s, "Link L1.2 entry count : %u\n",
->> +		   event_counter_prog(pcie, EVENT_COUNTER_EVENT_L1_2));
->> +
->> +	/* Clear all counters */
->> +	dw_pcie_writel_dbi(&pcie->pci, event_cntr_ctrl_offset[pcie->cid],
->> +			   EVENT_COUNTER_ALL_CLEAR);
->> +
->> +	/* Re-enable counting */
->> +	val = EVENT_COUNTER_ENABLE_ALL << EVENT_COUNTER_ENABLE_SHIFT;
->> +	val |= EVENT_COUNTER_GROUP_5 << EVENT_COUNTER_GROUP_SEL_SHIFT;
->> +	dw_pcie_writel_dbi(&pcie->pci, event_cntr_ctrl_offset[pcie->cid], val);
->> +
->> +	return 0;
->> +}
->> +#endif
->> +
->> +static int init_debugfs(struct tegra_pcie_dw *pcie)
->> +{
->> +#if defined(CONFIG_PCIEASPM)
->> +	struct dentry *d;
->> +
->> +	d = debugfs_create_devm_seqfile(pcie->dev, "aspm_state_cnt",
->> +					pcie->debugfs, aspm_state_cnt);
->> +	if (IS_ERR_OR_NULL(d))
->> +		dev_err(pcie->dev,
->> +			"Failed to create debugfs file \"aspm_state_cnt\"\n");
->> +#endif
->> +	return 0;
->> +}
-> 
-> I prefer writing it:
-> 
-> #if defined(CONFIG_PCIEASPM)
-> static void disable_aspm_l11(struct tegra_pcie_dw *pcie)
-> {
-> ...
-> }
-> 
-> static void disable_aspm_l12(struct tegra_pcie_dw *pcie)
-> {
-> ...
-> }
-> 
-> static inline u32 event_counter_prog(struct tegra_pcie_dw *pcie, u32 event)
-> {
-> ...
-> }
-> 
-> static int aspm_state_cnt(struct seq_file *s, void *data)
-> {
-> ...
-> }
-> 
-> static int init_debugfs(struct tegra_pcie_dw *pcie)
-> {
-> 	struct dentry *d;
-> 
-> 	d = debugfs_create_devm_seqfile(pcie->dev, "aspm_state_cnt",
-> 					pcie->debugfs, aspm_state_cnt);
-> 	if (IS_ERR_OR_NULL(d))
-> 		dev_err(pcie->dev,
-> 			"Failed to create debugfs file \"aspm_state_cnt\"\n");
-> 	return 0;
-> }
-> #else
-> static inline int init_debugfs(struct tegra_pcie_dw *pcie) { return 0; }
-> #endif
-I'll address it in the next patch.
+> I'm somewhat concerned that this implementation is very closely tied to the
+> current Adreno use-case, and won't easily generalise in future to other
+> potential TTBR1 uses which have been tossed around, like
+> SMMUv3-without-substream-ID.
 
-> 
->> +
->> +static void tegra_pcie_enable_system_interrupts(struct pcie_port *pp)
->> +{
->> +	struct dw_pcie *pci = to_dw_pcie_from_pp(pp);
->> +	struct tegra_pcie_dw *pcie = to_tegra_pcie(pci);
->> +	u32 val;
->> +	u16 val_w;
->> +
->> +	val = appl_readl(pcie, APPL_INTR_EN_L0_0);
->> +	val |= APPL_INTR_EN_L0_0_LINK_STATE_INT_EN;
->> +	appl_writel(pcie, val, APPL_INTR_EN_L0_0);
->> +
->> +	val = appl_readl(pcie, APPL_INTR_EN_L1_0_0);
->> +	val |= APPL_INTR_EN_L1_0_0_LINK_REQ_RST_NOT_INT_EN;
->> +	appl_writel(pcie, val, APPL_INTR_EN_L1_0_0);
->> +
->> +	if (pcie->enable_cdm_check) {
->> +		val = appl_readl(pcie, APPL_INTR_EN_L0_0);
->> +		val |= APPL_INTR_EN_L0_0_CDM_REG_CHK_INT_EN;
->> +		appl_writel(pcie, val, APPL_INTR_EN_L0_0);
->> +
->> +		val = appl_readl(pcie, APPL_INTR_EN_L1_18);
->> +		val |= APPL_INTR_EN_L1_18_CDM_REG_CHK_CMP_ERR;
->> +		val |= APPL_INTR_EN_L1_18_CDM_REG_CHK_LOGIC_ERR;
->> +		appl_writel(pcie, val, APPL_INTR_EN_L1_18);
->> +	}
->> +
->> +	val_w = dw_pcie_readw_dbi(&pcie->pci, pcie->pcie_cap_base +
->> +				  PCI_EXP_LNKSTA);
->> +	pcie->init_link_width = (val_w & PCI_EXP_LNKSTA_NLW) >>
->> +				PCI_EXP_LNKSTA_NLW_SHIFT;
->> +
->> +	val_w = dw_pcie_readw_dbi(&pcie->pci, pcie->pcie_cap_base +
->> +				  PCI_EXP_LNKCTL);
->> +	val_w |= PCI_EXP_LNKCTL_LBMIE;
->> +	dw_pcie_writew_dbi(&pcie->pci, pcie->pcie_cap_base + PCI_EXP_LNKCTL,
->> +			   val_w);
->> +}
->> +
->> +static void tegra_pcie_enable_legacy_interrupts(struct pcie_port *pp)
->> +{
->> +	struct dw_pcie *pci = to_dw_pcie_from_pp(pp);
->> +	struct tegra_pcie_dw *pcie = to_tegra_pcie(pci);
->> +	u32 val;
->> +
->> +	/* Enable legacy interrupt generation */
->> +	val = appl_readl(pcie, APPL_INTR_EN_L0_0);
->> +	val |= APPL_INTR_EN_L0_0_SYS_INTR_EN;
->> +	val |= APPL_INTR_EN_L0_0_INT_INT_EN;
->> +	appl_writel(pcie, val, APPL_INTR_EN_L0_0);
->> +
->> +	val = appl_readl(pcie, APPL_INTR_EN_L1_8_0);
->> +	val |= APPL_INTR_EN_L1_8_INTX_EN;
->> +	val |= APPL_INTR_EN_L1_8_AUTO_BW_INT_EN;
->> +	val |= APPL_INTR_EN_L1_8_BW_MGT_INT_EN;
->> +	if (IS_ENABLED(CONFIG_PCIEAER))
->> +		val |= APPL_INTR_EN_L1_8_AER_INT_EN;
->> +	appl_writel(pcie, val, APPL_INTR_EN_L1_8_0);
->> +}
->> +
->> +static void tegra_pcie_enable_msi_interrupts(struct pcie_port *pp)
->> +{
->> +	struct dw_pcie *pci = to_dw_pcie_from_pp(pp);
->> +	struct tegra_pcie_dw *pcie = to_tegra_pcie(pci);
->> +	u32 val;
->> +
->> +	dw_pcie_msi_init(pp);
->> +
->> +	/* Enable MSI interrupt generation */
->> +	val = appl_readl(pcie, APPL_INTR_EN_L0_0);
->> +	val |= APPL_INTR_EN_L0_0_SYS_MSI_INTR_EN;
->> +	val |= APPL_INTR_EN_L0_0_MSI_RCV_INT_EN;
->> +	appl_writel(pcie, val, APPL_INTR_EN_L0_0);
->> +}
->> +
->> +static void tegra_pcie_enable_interrupts(struct pcie_port *pp)
->> +{
->> +	struct dw_pcie *pci = to_dw_pcie_from_pp(pp);
->> +	struct tegra_pcie_dw *pcie = to_tegra_pcie(pci);
->> +
->> +	/* Clear interrupt statuses before enabling interrupts */
->> +	appl_writel(pcie, 0xFFFFFFFF, APPL_INTR_STATUS_L0);
->> +	appl_writel(pcie, 0xFFFFFFFF, APPL_INTR_STATUS_L1_0_0);
->> +	appl_writel(pcie, 0xFFFFFFFF, APPL_INTR_STATUS_L1_1);
->> +	appl_writel(pcie, 0xFFFFFFFF, APPL_INTR_STATUS_L1_2);
->> +	appl_writel(pcie, 0xFFFFFFFF, APPL_INTR_STATUS_L1_3);
->> +	appl_writel(pcie, 0xFFFFFFFF, APPL_INTR_STATUS_L1_6);
->> +	appl_writel(pcie, 0xFFFFFFFF, APPL_INTR_STATUS_L1_7);
->> +	appl_writel(pcie, 0xFFFFFFFF, APPL_INTR_STATUS_L1_8_0);
->> +	appl_writel(pcie, 0xFFFFFFFF, APPL_INTR_STATUS_L1_9);
->> +	appl_writel(pcie, 0xFFFFFFFF, APPL_INTR_STATUS_L1_10);
->> +	appl_writel(pcie, 0xFFFFFFFF, APPL_INTR_STATUS_L1_11);
->> +	appl_writel(pcie, 0xFFFFFFFF, APPL_INTR_STATUS_L1_13);
->> +	appl_writel(pcie, 0xFFFFFFFF, APPL_INTR_STATUS_L1_14);
->> +	appl_writel(pcie, 0xFFFFFFFF, APPL_INTR_STATUS_L1_15);
->> +	appl_writel(pcie, 0xFFFFFFFF, APPL_INTR_STATUS_L1_17);
->> +
->> +	tegra_pcie_enable_system_interrupts(pp);
->> +	tegra_pcie_enable_legacy_interrupts(pp);
->> +	if (IS_ENABLED(CONFIG_PCI_MSI))
->> +		tegra_pcie_enable_msi_interrupts(pp);
->> +}
->> +
->> +static void config_gen3_gen4_eq_presets(struct tegra_pcie_dw *pcie)
->> +{
->> +	struct dw_pcie *pci = &pcie->pci;
->> +	u32 val, offset, i;
->> +
->> +	/* Program init preset */
->> +	for (i = 0; i < pcie->num_lanes; i++) {
->> +		dw_pcie_read(pci->dbi_base + CAP_SPCIE_CAP_OFF
->> +				 + (i * 2), 2, &val);
->> +		val &= ~CAP_SPCIE_CAP_OFF_DSP_TX_PRESET0_MASK;
->> +		val |= GEN3_GEN4_EQ_PRESET_INIT;
->> +		val &= ~CAP_SPCIE_CAP_OFF_USP_TX_PRESET0_MASK;
->> +		val |= (GEN3_GEN4_EQ_PRESET_INIT <<
->> +			   CAP_SPCIE_CAP_OFF_USP_TX_PRESET0_SHIFT);
->> +		dw_pcie_write(pci->dbi_base + CAP_SPCIE_CAP_OFF
->> +				 + (i * 2), 2, val);
->> +
->> +		offset = dw_pcie_find_ext_capability(pci,
->> +						     PCI_EXT_CAP_ID_PL_16GT) +
->> +				PCI_PL_16GT_LE_CTRL;
->> +		dw_pcie_read(pci->dbi_base + offset + i, 1, &val);
->> +		val &= ~PCI_PL_16GT_LE_CTRL_DSP_TX_PRESET_MASK;
->> +		val |= GEN3_GEN4_EQ_PRESET_INIT;
->> +		val &= ~PCI_PL_16GT_LE_CTRL_USP_TX_PRESET_MASK;
->> +		val |= (GEN3_GEN4_EQ_PRESET_INIT <<
->> +			PCI_PL_16GT_LE_CTRL_USP_TX_PRESET_SHIFT);
->> +		dw_pcie_write(pci->dbi_base + offset + i, 1, val);
->> +	}
->> +
->> +	val = dw_pcie_readl_dbi(pci, GEN3_RELATED_OFF);
->> +	val &= ~GEN3_RELATED_OFF_RATE_SHADOW_SEL_MASK;
->> +	dw_pcie_writel_dbi(pci, GEN3_RELATED_OFF, val);
->> +
->> +	val = dw_pcie_readl_dbi(pci, GEN3_EQ_CONTROL_OFF);
->> +	val &= ~GEN3_EQ_CONTROL_OFF_PSET_REQ_VEC_MASK;
->> +	val |= (0x3ff << GEN3_EQ_CONTROL_OFF_PSET_REQ_VEC_SHIFT);
->> +	val &= ~GEN3_EQ_CONTROL_OFF_FB_MODE_MASK;
->> +	dw_pcie_writel_dbi(pci, GEN3_EQ_CONTROL_OFF, val);
->> +
->> +	val = dw_pcie_readl_dbi(pci, GEN3_RELATED_OFF);
->> +	val &= ~GEN3_RELATED_OFF_RATE_SHADOW_SEL_MASK;
->> +	val |= (0x1 << GEN3_RELATED_OFF_RATE_SHADOW_SEL_SHIFT);
->> +	dw_pcie_writel_dbi(pci, GEN3_RELATED_OFF, val);
->> +
->> +	val = dw_pcie_readl_dbi(pci, GEN3_EQ_CONTROL_OFF);
->> +	val &= ~GEN3_EQ_CONTROL_OFF_PSET_REQ_VEC_MASK;
->> +	val |= (0x360 << GEN3_EQ_CONTROL_OFF_PSET_REQ_VEC_SHIFT);
->> +	val &= ~GEN3_EQ_CONTROL_OFF_FB_MODE_MASK;
->> +	dw_pcie_writel_dbi(pci, GEN3_EQ_CONTROL_OFF, val);
->> +
->> +	val = dw_pcie_readl_dbi(pci, GEN3_RELATED_OFF);
->> +	val &= ~GEN3_RELATED_OFF_RATE_SHADOW_SEL_MASK;
->> +	dw_pcie_writel_dbi(pci, GEN3_RELATED_OFF, val);
->> +}
->> +
->> +static int tegra_pcie_dw_host_init(struct pcie_port *pp)
->> +{
->> +	struct dw_pcie *pci = to_dw_pcie_from_pp(pp);
->> +	struct tegra_pcie_dw *pcie = to_tegra_pcie(pci);
->> +	u32 val, tmp, offset, speed;
->> +	unsigned int count;
->> +	u16 val_w;
->> +
->> +core_init:
-> 
-> Why should we restart from here ? What's the effect of the reset
-> on following registers set-up ?
-before jumping to 'core_init' label, PCIe IP core is put through reset cycle and
-registers in the core get their default values and hence need to be programmed again.
+I haven't heard about these use-cases. I figured v3 would be all PASID all the
+time. If you have details, I can see if I can avoid painting v3 into a corner.
 
-> 
->> +	count = 200;
->> +#if defined(CONFIG_PCIEASPM)
->> +	offset = dw_pcie_find_ext_capability(pci, PCI_EXT_CAP_ID_L1SS);
->> +	pcie->cfg_link_cap_l1sub = offset + PCI_L1SS_CAP;
->> +#endif
-> 
-> Can we group it in the #ifdef above ?
-I'll address it in the next patch.
+> Furthermore, even for the Adreno pretend-PASID case it appears to be a bit
+> too fragile for comfort - given that a DOMAIN_ATTR_SPLIT_TABLES domain
+> doesn't look any different from a regular one from the users' point of view,
+> what's to stop them making "without PASID" mappings in the lower half of the
+> address space, and thus unwittingly pulling the rug out from under their own
+> feet upon attaching an aux domain? In fact allocating a TTBR0 table at all
+> for the main domain seems like little more than a waste of memory.
 
-> 
->> +	val = dw_pcie_readl_dbi(pci, PCI_IO_BASE);
->> +	val &= ~(IO_BASE_IO_DECODE | IO_BASE_IO_DECODE_BIT8);
->> +	dw_pcie_writel_dbi(pci, PCI_IO_BASE, val);
->> +
->> +	val = dw_pcie_readl_dbi(pci, PCI_PREF_MEMORY_BASE);
->> +	val |= CFG_PREF_MEM_LIMIT_BASE_MEM_DECODE;
->> +	val |= CFG_PREF_MEM_LIMIT_BASE_MEM_LIMIT_DECODE;
->> +	dw_pcie_writel_dbi(pci, PCI_PREF_MEMORY_BASE, val);
->> +
->> +	dw_pcie_writel_dbi(pci, PCI_BASE_ADDRESS_0, 0);
->> +
->> +	/* Configure FTS */
->> +	val = dw_pcie_readl_dbi(pci, PORT_LOGIC_ACK_F_ASPM_CTRL);
->> +	val &= ~(N_FTS_MASK << N_FTS_SHIFT);
->> +	val |= N_FTS_VAL << N_FTS_SHIFT;
->> +	dw_pcie_writel_dbi(pci, PORT_LOGIC_ACK_F_ASPM_CTRL, val);
->> +
->> +	val = dw_pcie_readl_dbi(pci, PORT_LOGIC_GEN2_CTRL);
->> +	val &= ~FTS_MASK;
->> +	val |= FTS_VAL;
->> +	dw_pcie_writel_dbi(pci, PORT_LOGIC_GEN2_CTRL, val);
->> +
->> +	/* Enable as 0xFFFF0001 response for CRS */
->> +	val = dw_pcie_readl_dbi(pci, PORT_LOGIC_AMBA_ERROR_RESPONSE_DEFAULT);
->> +	val &= ~(AMBA_ERROR_RESPONSE_CRS_MASK << AMBA_ERROR_RESPONSE_CRS_SHIFT);
->> +	val |= (AMBA_ERROR_RESPONSE_CRS_OKAY_FFFF0001 <<
->> +		AMBA_ERROR_RESPONSE_CRS_SHIFT);
->> +	dw_pcie_writel_dbi(pci, PORT_LOGIC_AMBA_ERROR_RESPONSE_DEFAULT, val);
->> +
->> +	/* Configure Max Speed from DT */
->> +	if (pcie->max_speed && pcie->max_speed != -EINVAL) {
->> +		val = dw_pcie_readl_dbi(pci, pcie->pcie_cap_base +
->> +					PCI_EXP_LNKCAP);
->> +		val &= ~PCI_EXP_LNKCAP_SLS;
->> +		val |= pcie->max_speed;
->> +		dw_pcie_writel_dbi(pci, pcie->pcie_cap_base + PCI_EXP_LNKCAP,
->> +				   val);
->> +	}
->> +
->> +	/* Configure Max lane width from DT */
->> +	val = dw_pcie_readl_dbi(pci, pcie->pcie_cap_base + PCI_EXP_LNKCAP);
->> +	val &= ~PCI_EXP_LNKCAP_MLW;
->> +	val |= (pcie->num_lanes << PCI_EXP_LNKSTA_NLW_SHIFT);
->> +	dw_pcie_writel_dbi(pci, pcie->pcie_cap_base + PCI_EXP_LNKCAP, val);
->> +
->> +	config_gen3_gen4_eq_presets(pcie);
->> +
->> +#if defined(CONFIG_PCIEASPM)
->> +	/* Enable ASPM counters */
->> +	val = EVENT_COUNTER_ENABLE_ALL << EVENT_COUNTER_ENABLE_SHIFT;
->> +	val |= EVENT_COUNTER_GROUP_5 << EVENT_COUNTER_GROUP_SEL_SHIFT;
->> +	dw_pcie_writel_dbi(pci, event_cntr_ctrl_offset[pcie->cid], val);
->> +
->> +	/* Program T_cmrt and T_pwr_on values */
->> +	val = dw_pcie_readl_dbi(pci, pcie->cfg_link_cap_l1sub);
->> +	val &= ~(PCI_L1SS_CAP_CM_RESTORE_TIME | PCI_L1SS_CAP_P_PWR_ON_VALUE);
->> +	val |= (pcie->aspm_cmrt << 8);
->> +	val |= (pcie->aspm_pwr_on_t << 19);
->> +	dw_pcie_writel_dbi(pci, pcie->cfg_link_cap_l1sub, val);
->> +
->> +	/* Program L0s and L1 entrance latencies */
->> +	val = dw_pcie_readl_dbi(pci, PORT_LOGIC_ACK_F_ASPM_CTRL);
->> +	val &= ~L0S_ENTRANCE_LAT_MASK;
->> +	val |= (pcie->aspm_l0s_enter_lat << L0S_ENTRANCE_LAT_SHIFT);
->> +	val |= ENTER_ASPM;
->> +	dw_pcie_writel_dbi(pci, PORT_LOGIC_ACK_F_ASPM_CTRL, val);
->> +#endif
-> 
-> It would be good to group all init guarded in CONFIG_PCIEASPM in
-> one function and related ifdef guard.
-> 
->> +	val = dw_pcie_readl_dbi(pci, GEN3_RELATED_OFF);
->> +	val &= ~GEN3_RELATED_OFF_GEN3_ZRXDC_NONCOMPL;
->> +	dw_pcie_writel_dbi(pci, GEN3_RELATED_OFF, val);
->> +
->> +	if (pcie->update_fc_fixup) {
->> +		val = dw_pcie_readl_dbi(pci, CFG_TIMER_CTRL_MAX_FUNC_NUM_OFF);
->> +		val |= 0x1 << CFG_TIMER_CTRL_ACK_NAK_SHIFT;
->> +		dw_pcie_writel_dbi(pci, CFG_TIMER_CTRL_MAX_FUNC_NUM_OFF, val);
->> +	}
->> +
->> +	dw_pcie_setup_rc(pp);
->> +
->> +	clk_set_rate(pcie->core_clk, GEN4_CORE_CLK_FREQ);
->> +
->> +	/* Assert RST */
->> +	val = appl_readl(pcie, APPL_PINMUX);
->> +	val &= ~APPL_PINMUX_PEX_RST;
->> +	appl_writel(pcie, val, APPL_PINMUX);
-> 
-> What's the effect of this RST on the registers programmed above ?
-This register is software interface to toggle PERST sideband signal going to
-downstream devices. Nothing happens to the registers programmed above because
-of applying fundamental reset to downstream devices.
+That makes sense. Would it work better if we made a type ARM_64_LPAE_TTBR1_S1
+that only allocated memory for TTBR1 and set TBR.EDP0 to trigger faults for
+TTBR0?
 
-> 
->> +	usleep_range(100, 200);
->> +
->> +	/* Enable LTSSM */
->> +	val = appl_readl(pcie, APPL_CTRL);
->> +	val |= APPL_CTRL_LTSSM_EN;
->> +	appl_writel(pcie, val, APPL_CTRL);
->> +
->> +	/* De-assert RST */
->> +	val = appl_readl(pcie, APPL_PINMUX);
->> +	val |= APPL_PINMUX_PEX_RST;
->> +	appl_writel(pcie, val, APPL_PINMUX);
->> +
->> +	msleep(100);
->> +
->> +	val_w = dw_pcie_readw_dbi(pci, pcie->pcie_cap_base + PCI_EXP_LNKSTA);
->> +	while (!(val_w & PCI_EXP_LNKSTA_DLLLA)) {
->> +		if (count) {
->> +			dev_dbg(pci->dev, "Waiting for link up\n");
->> +			usleep_range(1000, 2000);
->> +			val_w = dw_pcie_readw_dbi(pci, pcie->pcie_cap_base +
->> +						  PCI_EXP_LNKSTA);
->> +			count--;
->> +			continue;
->> +		}
->> +
->> +		val = appl_readl(pcie, APPL_DEBUG);
->> +		val &= APPL_DEBUG_LTSSM_STATE_MASK;
->> +		val >>= APPL_DEBUG_LTSSM_STATE_SHIFT;
->> +		tmp = appl_readl(pcie, APPL_LINK_STATUS);
->> +		tmp &= APPL_LINK_STATUS_RDLH_LINK_UP;
->> +		if (!(val == 0x11 && !tmp)) {
->> +			dev_info(pci->dev, "Link is down\n");
->> +			return 0;
->> +		}
->> +
->> +		dev_info(pci->dev, "Link is down in DLL");
->> +		dev_info(pci->dev, "Trying again with DLFE disabled\n");
->> +		/* Disable LTSSM */
->> +		val = appl_readl(pcie, APPL_CTRL);
->> +		val &= ~APPL_CTRL_LTSSM_EN;
->> +		appl_writel(pcie, val, APPL_CTRL);
->> +
->> +		reset_control_assert(pcie->core_rst);
->> +		reset_control_deassert(pcie->core_rst);
->> +
->> +		offset = dw_pcie_find_ext_capability(pci, PCI_EXT_CAP_ID_DLF);
->> +		val = dw_pcie_readl_dbi(pci, offset + PCI_DLF_CAP);
->> +		val &= ~PCI_DLF_EXCHANGE_ENABLE;
->> +		dw_pcie_writel_dbi(pci, offset, val);
->> +
->> +		/* Retry now with DLF Exchange disabled */
->> +		goto core_init;
-> 
-> See above.
-> 
->> +	}
->> +	dev_dbg(pci->dev, "Link is up\n");
->> +
->> +	speed = dw_pcie_readw_dbi(pci, pcie->pcie_cap_base + PCI_EXP_LNKSTA) &
->> +		PCI_EXP_LNKSTA_CLS;
->> +	clk_set_rate(pcie->core_clk, pcie_gen_freq[speed - 1]);
->> +
->> +	tegra_pcie_enable_interrupts(pp);
->> +
->> +	return 0;
->> +}
->> +
->> +static int tegra_pcie_dw_link_up(struct dw_pcie *pci)
->> +{
->> +	struct tegra_pcie_dw *pcie = to_tegra_pcie(pci);
->> +	u32 val = dw_pcie_readw_dbi(pci, pcie->pcie_cap_base + PCI_EXP_LNKSTA);
->> +
->> +	return !!(val & PCI_EXP_LNKSTA_DLLLA);
->> +}
->> +
->> +static void tegra_pcie_set_msi_vec_num(struct pcie_port *pp)
->> +{
->> +	pp->num_vectors = MAX_MSI_IRQS;
->> +}
->> +
->> +static const struct dw_pcie_ops tegra_dw_pcie_ops = {
->> +	.link_up = tegra_pcie_dw_link_up,
->> +};
->> +
->> +static struct dw_pcie_host_ops tegra_pcie_dw_host_ops = {
->> +	.rd_own_conf = tegra_pcie_dw_rd_own_conf,
->> +	.wr_own_conf = tegra_pcie_dw_wr_own_conf,
->> +	.host_init = tegra_pcie_dw_host_init,
->> +	.set_num_vectors = tegra_pcie_set_msi_vec_num,
->> +};
->> +
->> +static void tegra_pcie_disable_phy(struct tegra_pcie_dw *pcie)
->> +{
->> +	unsigned int phy_count = pcie->phy_count;
->> +
->> +	while (phy_count--) {
->> +		phy_power_off(pcie->phys[phy_count]);
->> +		phy_exit(pcie->phys[phy_count]);
->> +	}
->> +}
->> +
->> +static int tegra_pcie_enable_phy(struct tegra_pcie_dw *pcie)
->> +{
->> +	unsigned int i;
->> +	int ret;
->> +
->> +	for (i = 0; i < pcie->phy_count; i++) {
->> +		ret = phy_init(pcie->phys[i]);
->> +		if (ret < 0)
->> +			goto phy_power_off;
->> +
->> +		ret = phy_power_on(pcie->phys[i]);
->> +		if (ret < 0)
->> +			goto phy_exit;
->> +	}
->> +
->> +	return 0;
->> +
->> +phy_power_off:
->> +	while (i--) {
->> +		phy_power_off(pcie->phys[i]);
->> +phy_exit:
->> +		phy_exit(pcie->phys[i]);
->> +	}
->> +
->> +	return ret;
->> +}
->> +
->> +static int tegra_pcie_dw_parse_dt(struct tegra_pcie_dw *pcie)
->> +{
->> +	struct device_node *np = pcie->dev->of_node;
->> +	int ret;
->> +
->> +	ret = of_property_read_u32(np, "nvidia,aspm-cmrt-us", &pcie->aspm_cmrt);
->> +	if (ret < 0) {
->> +		dev_info(pcie->dev, "Failed to read ASPM T_cmrt: %d\n", ret);
->> +		return ret;
->> +	}
->> +
->> +	ret = of_property_read_u32(np, "nvidia,aspm-pwr-on-t-us",
->> +				   &pcie->aspm_pwr_on_t);
->> +	if (ret < 0)
->> +		dev_info(pcie->dev, "Failed to read ASPM Power On time: %d\n",
->> +			 ret);
->> +
->> +	ret = of_property_read_u32(np, "nvidia,aspm-l0s-entrance-latency-us",
->> +				   &pcie->aspm_l0s_enter_lat);
->> +	if (ret < 0)
->> +		dev_info(pcie->dev,
->> +			 "Failed to read ASPM L0s Entrance latency: %d\n", ret);
->> +
->> +	ret = of_property_read_u32(np, "num-lanes", &pcie->num_lanes);
->> +	if (ret < 0) {
->> +		dev_err(pcie->dev, "Failed to read num-lanes: %d\n", ret);
->> +		return ret;
->> +	}
->> +
->> +	pcie->max_speed = of_pci_get_max_link_speed(np);
->> +
->> +	ret = of_property_read_u32_index(np, "nvidia,bpmp", 1, &pcie->cid);
->> +	if (ret) {
->> +		dev_err(pcie->dev, "Failed to read Controller-ID: %d\n", ret);
->> +		return ret;
->> +	}
->> +
->> +	pcie->phy_count = of_property_count_strings(np, "phy-names");
->> +	if (pcie->phy_count < 0) {
->> +		dev_err(pcie->dev, "Failed to find PHY entries: %d\n",
->> +			pcie->phy_count);
->> +		return pcie->phy_count;
->> +	}
->> +
->> +	if (of_property_read_bool(np, "nvidia,update-fc-fixup"))
->> +		pcie->update_fc_fixup = true;
->> +
->> +	pcie->supports_clkreq =
->> +		of_property_read_bool(pcie->dev->of_node, "supports-clkreq");
->> +
->> +	pcie->enable_cdm_check =
->> +		of_property_read_bool(np, "snps,enable-cdm-check");
->> +
->> +	return 0;
->> +}
->> +
->> +static int tegra_pcie_bpmp_set_ctrl_state(struct tegra_pcie_dw *pcie,
->> +					  bool enable)
->> +{
->> +	struct mrq_uphy_response resp;
->> +	struct tegra_bpmp_message msg;
->> +	struct mrq_uphy_request req;
->> +	int err;
->> +
->> +	if (pcie->cid == 5)
->> +		return 0;
->> +
->> +	memset(&req, 0, sizeof(req));
->> +	memset(&resp, 0, sizeof(resp));
->> +
->> +	req.cmd = CMD_UPHY_PCIE_CONTROLLER_STATE;
->> +	req.controller_state.pcie_controller = pcie->cid;
->> +	req.controller_state.enable = enable;
->> +
->> +	memset(&msg, 0, sizeof(msg));
->> +	msg.mrq = MRQ_UPHY;
->> +	msg.tx.data = &req;
->> +	msg.tx.size = sizeof(req);
->> +	msg.rx.data = &resp;
->> +	msg.rx.size = sizeof(resp);
->> +
->> +	if (irqs_disabled())
->> +		err = tegra_bpmp_transfer_atomic(pcie->bpmp, &msg);
->> +	else
->> +		err = tegra_bpmp_transfer(pcie->bpmp, &msg);
->> +
->> +	return err;
->> +}
->> +
->> +static void tegra_pcie_downstream_dev_to_D0(struct tegra_pcie_dw *pcie)
->> +{
->> +	struct pcie_port *pp = &pcie->pci.pp;
->> +	struct pci_dev *pdev;
->> +	struct pci_bus *child;
->> +
->> +	list_for_each_entry(child, &pp->root_bus->children, node) {
->> +		/* Bring downstream devices to D0 if they are not already in */
->> +		if (child->parent == pp->root_bus)
->> +			break;
->> +	}
->> +	list_for_each_entry(pdev, &child->devices, bus_list) {
->> +		if (PCI_SLOT(pdev->devfn) == 0) {
->> +			if (pci_set_power_state(pdev, PCI_D0))
->> +				dev_err(pcie->dev,
->> +					"Failed to transition %s to D0 state\n",
->> +					dev_name(&pdev->dev));
->> +		}
->> +	}
->> +}
->> +
->> +static int tegra_pcie_config_controller(struct tegra_pcie_dw *pcie,
->> +					bool en_hw_hot_rst)
->> +{
->> +	int ret;
->> +	u32 val;
->> +
->> +	ret = tegra_pcie_bpmp_set_ctrl_state(pcie, true);
->> +	if (ret) {
->> +		dev_err(pcie->dev,
->> +			"Failed to enable controller %u: %d\n", pcie->cid, ret);
->> +		return ret;
->> +	}
->> +
->> +	ret = regulator_enable(pcie->pex_ctl_supply);
->> +	if (ret < 0) {
->> +		dev_err(pcie->dev, "Failed to enable regulator: %d\n", ret);
->> +		goto fail_reg_en;
->> +	}
->> +
->> +	ret = clk_prepare_enable(pcie->core_clk);
->> +	if (ret) {
->> +		dev_err(pcie->dev, "Failed to enable core clock: %d\n", ret);
->> +		goto fail_core_clk;
->> +	}
->> +
->> +	ret = reset_control_deassert(pcie->core_apb_rst);
->> +	if (ret) {
->> +		dev_err(pcie->dev, "Failed to deassert core APB reset: %d\n",
->> +			ret);
->> +		goto fail_core_apb_rst;
->> +	}
->> +
->> +	if (en_hw_hot_rst) {
->> +		/* Enable HW_HOT_RST mode */
->> +		val = appl_readl(pcie, APPL_CTRL);
->> +		val &= ~(APPL_CTRL_HW_HOT_RST_MODE_MASK <<
->> +			 APPL_CTRL_HW_HOT_RST_MODE_SHIFT);
->> +		val |= APPL_CTRL_HW_HOT_RST_EN;
->> +		appl_writel(pcie, val, APPL_CTRL);
->> +	}
->> +
->> +	ret = tegra_pcie_enable_phy(pcie);
->> +	if (ret) {
->> +		dev_err(pcie->dev, "Failed to enable PHY: %d\n", ret);
->> +		goto fail_phy;
->> +	}
->> +
->> +	/* Update CFG base address */
->> +	appl_writel(pcie, pcie->dbi_res->start & APPL_CFG_BASE_ADDR_MASK,
->> +		    APPL_CFG_BASE_ADDR);
->> +
->> +	/* Configure this core for RP mode operation */
->> +	appl_writel(pcie, APPL_DM_TYPE_RP, APPL_DM_TYPE);
->> +
->> +	appl_writel(pcie, 0x0, APPL_CFG_SLCG_OVERRIDE);
->> +
->> +	val = appl_readl(pcie, APPL_CTRL);
->> +	appl_writel(pcie, val | APPL_CTRL_SYS_PRE_DET_STATE, APPL_CTRL);
->> +
->> +	val = appl_readl(pcie, APPL_CFG_MISC);
->> +	val |= (APPL_CFG_MISC_ARCACHE_VAL << APPL_CFG_MISC_ARCACHE_SHIFT);
->> +	appl_writel(pcie, val, APPL_CFG_MISC);
->> +
->> +	if (!pcie->supports_clkreq) {
->> +		val = appl_readl(pcie, APPL_PINMUX);
->> +		val |= APPL_PINMUX_CLKREQ_OUT_OVRD_EN;
->> +		val |= APPL_PINMUX_CLKREQ_OUT_OVRD;
->> +		appl_writel(pcie, val, APPL_PINMUX);
->> +	}
->> +
->> +	/* Update iATU_DMA base address */
->> +	appl_writel(pcie,
->> +		    pcie->atu_dma_res->start & APPL_CFG_IATU_DMA_BASE_ADDR_MASK,
->> +		    APPL_CFG_IATU_DMA_BASE_ADDR);
->> +
->> +	reset_control_deassert(pcie->core_rst);
->> +
->> +	pcie->pcie_cap_base = dw_pcie_find_capability(&pcie->pci,
->> +						      PCI_CAP_ID_EXP);
->> +
->> +#if defined(CONFIG_PCIEASPM)
->> +	/* Disable ASPM-L1SS advertisement as there is no CLKREQ routing */
->> +	if (!pcie->supports_clkreq) {
->> +		disable_aspm_l11(pcie);
->> +		disable_aspm_l12(pcie);
->> +	}
->> +#endif
->> +	return ret;
->> +
->> +fail_phy:
->> +	reset_control_assert(pcie->core_apb_rst);
->> +fail_core_apb_rst:
->> +	clk_disable_unprepare(pcie->core_clk);
->> +fail_core_clk:
->> +	regulator_disable(pcie->pex_ctl_supply);
->> +fail_reg_en:
->> +	tegra_pcie_bpmp_set_ctrl_state(pcie, false);
->> +
->> +	return ret;
->> +}
->> +
->> +static int __deinit_controller(struct tegra_pcie_dw *pcie)
->> +{
->> +	int ret;
->> +
->> +	ret = reset_control_assert(pcie->core_rst);
->> +	if (ret) {
->> +		dev_err(pcie->dev, "Failed to assert \"core\" reset: %d\n",
->> +			ret);
->> +		return ret;
->> +	}
->> +	tegra_pcie_disable_phy(pcie);
->> +	ret = reset_control_assert(pcie->core_apb_rst);
->> +	if (ret) {
->> +		dev_err(pcie->dev, "Failed to assert APB reset: %d\n", ret);
->> +		return ret;
->> +	}
->> +	clk_disable_unprepare(pcie->core_clk);
->> +	ret = regulator_disable(pcie->pex_ctl_supply);
->> +	if (ret) {
->> +		dev_err(pcie->dev, "Failed to disable regulator: %d\n", ret);
->> +		return ret;
->> +	}
->> +	ret = tegra_pcie_bpmp_set_ctrl_state(pcie, false);
->> +	if (ret) {
->> +		dev_err(pcie->dev, "Failed to disable controller %d: %d\n",
->> +			pcie->cid, ret);
->> +		return ret;
->> +	}
->> +	return ret;
->> +}
->> +
->> +static int tegra_pcie_init_controller(struct tegra_pcie_dw *pcie)
->> +{
->> +	struct dw_pcie *pci = &pcie->pci;
->> +	struct pcie_port *pp = &pci->pp;
->> +	int ret;
->> +
->> +	ret = tegra_pcie_config_controller(pcie, false);
->> +	if (ret < 0)
->> +		return ret;
->> +
->> +	pp->root_bus_nr = -1;
-> 
-> Useless, drop it, it is initialized in dw_pcie_host_init().
-Ok.
+Then we could get rid of most of the extra stuff in io-pgtable-arm.c and I think
+that would meet most of your concerns. 
 
-> 
->> +	pp->ops = &tegra_pcie_dw_host_ops;
->> +
->> +	ret = dw_pcie_host_init(pp);
->> +	if (ret < 0) {
->> +		dev_err(pcie->dev, "Failed to add PCIe port: %d\n", ret);
->> +		goto fail_host_init;
->> +	}
->> +
->> +	return 0;
->> +
->> +fail_host_init:
->> +	return __deinit_controller(pcie);
->> +}
->> +
->> +static int tegra_pcie_try_link_l2(struct tegra_pcie_dw *pcie)
->> +{
->> +	u32 val;
->> +
->> +	if (!tegra_pcie_dw_link_up(&pcie->pci))
->> +		return 0;
->> +
->> +	val = appl_readl(pcie, APPL_RADM_STATUS);
->> +	val |= APPL_PM_XMT_TURNOFF_STATE;
->> +	appl_writel(pcie, val, APPL_RADM_STATUS);
->> +
->> +	return readl_poll_timeout_atomic(pcie->appl_base + APPL_DEBUG, val,
->> +				 val & APPL_DEBUG_PM_LINKST_IN_L2_LAT,
->> +				 1, PME_ACK_TIMEOUT);
->> +}
->> +
->> +static void tegra_pcie_dw_pme_turnoff(struct tegra_pcie_dw *pcie)
->> +{
->> +	u32 data;
->> +	int err;
->> +
->> +	if (!tegra_pcie_dw_link_up(&pcie->pci)) {
->> +		dev_dbg(pcie->dev, "PCIe link is not up...!\n");
->> +		return;
->> +	}
->> +
->> +	if (tegra_pcie_try_link_l2(pcie)) {
->> +		dev_info(pcie->dev, "Link didn't transition to L2 state\n");
->> +		/*
->> +		 * TX lane clock freq will reset to Gen1 only if link is in L2
->> +		 * or detect state.
->> +		 * So apply pex_rst to end point to force RP to go into detect
->> +		 * state
->> +		 */
->> +		data = appl_readl(pcie, APPL_PINMUX);
->> +		data &= ~APPL_PINMUX_PEX_RST;
->> +		appl_writel(pcie, data, APPL_PINMUX);
->> +
->> +		err = readl_poll_timeout_atomic(pcie->appl_base + APPL_DEBUG,
->> +						data,
->> +						((data &
->> +						APPL_DEBUG_LTSSM_STATE_MASK) >>
->> +						APPL_DEBUG_LTSSM_STATE_SHIFT) ==
->> +						LTSSM_STATE_PRE_DETECT,
->> +						1, LTSSM_TIMEOUT);
->> +		if (err) {
->> +			dev_info(pcie->dev, "Link didn't go to detect state\n");
->> +		} else {
->> +			/* Disable LTSSM after link is in detect state */
->> +			data = appl_readl(pcie, APPL_CTRL);
->> +			data &= ~APPL_CTRL_LTSSM_EN;
->> +			appl_writel(pcie, data, APPL_CTRL);
->> +		}
->> +	}
->> +	/*
->> +	 * DBI registers may not be accessible after this as PLL-E would be
->> +	 * down depending on how CLKREQ is pulled by end point
->> +	 */
->> +	data = appl_readl(pcie, APPL_PINMUX);
->> +	data |= (APPL_PINMUX_CLKREQ_OVERRIDE_EN | APPL_PINMUX_CLKREQ_OVERRIDE);
->> +	/* Cut REFCLK to slot */
->> +	data |= APPL_PINMUX_CLK_OUTPUT_IN_OVERRIDE_EN;
->> +	data &= ~APPL_PINMUX_CLK_OUTPUT_IN_OVERRIDE;
->> +	appl_writel(pcie, data, APPL_PINMUX);
->> +}
->> +
->> +static int tegra_pcie_deinit_controller(struct tegra_pcie_dw *pcie)
->> +{
->> +	/*
->> +	 * link doesn't go into L2 state with some of the endpoints with Tegra
->> +	 * if they are not in D0 state. So, need to make sure that immediate
->> +	 * downstream devices are in D0 state before sending PME_TurnOff to put
->> +	 * link into L2 state
->> +	 */
->> +	tegra_pcie_downstream_dev_to_D0(pcie);
->> +	dw_pcie_host_deinit(&pcie->pci.pp);
->> +	tegra_pcie_dw_pme_turnoff(pcie);
->> +	return __deinit_controller(pcie);
->> +}
->> +
->> +static int tegra_pcie_config_rp(struct tegra_pcie_dw *pcie)
->> +{
->> +	struct pcie_port *pp = &pcie->pci.pp;
->> +	struct device *dev = pcie->dev;
->> +	char *name;
->> +	int ret;
->> +
->> +	if (IS_ENABLED(CONFIG_PCI_MSI)) {
->> +		pp->msi_irq = of_irq_get_byname(dev->of_node, "msi");
->> +		if (!pp->msi_irq) {
->> +			dev_err(dev, "Failed to get MSI interrupt\n");
->> +			return -ENODEV;
->> +		}
->> +	}
->> +
->> +	pm_runtime_enable(dev);
->> +	ret = pm_runtime_get_sync(dev);
->> +	if (ret < 0) {
->> +		dev_err(dev, "Failed to get runtime sync for PCIe dev: %d\n",
->> +			ret);
->> +		pm_runtime_disable(dev);
->> +		return ret;
->> +	}
->> +
->> +	tegra_pcie_init_controller(pcie);
->> +
->> +	pcie->link_state = tegra_pcie_dw_link_up(&pcie->pci);
->> +
->> +	if (!pcie->link_state) {
->> +		ret = -ENOMEDIUM;
->> +		goto fail_host_init;
->> +	}
->> +
->> +	name = devm_kasprintf(dev, GFP_KERNEL, "%pOFP", dev->of_node);
->> +	if (!name) {
->> +		ret = -ENOMEM;
->> +		goto fail_host_init;
->> +	}
->> +
->> +	pcie->debugfs = debugfs_create_dir(name, NULL);
->> +	if (!pcie->debugfs)
->> +		dev_err(dev, "Failed to create debugfs\n");
->> +	else
->> +		init_debugfs(pcie);
->> +
->> +	return ret;
->> +
->> +fail_host_init:
->> +	tegra_pcie_deinit_controller(pcie);
->> +	pm_runtime_put_sync(dev);
->> +	pm_runtime_disable(dev);
->> +	return ret;
->> +}
->> +
->> +static const struct tegra_pcie_soc tegra_pcie_rc_of_data = {
->> +	.mode = DW_PCIE_RC_TYPE,
->> +};
->> +
->> +static const struct of_device_id tegra_pcie_dw_of_match[] = {
->> +	{
->> +		.compatible = "nvidia,tegra194-pcie",
->> +		.data = &tegra_pcie_rc_of_data,
->> +	},
->> +	{},
->> +};
->> +MODULE_DEVICE_TABLE(of, tegra_pcie_dw_of_match);
-> 
-> Move it closer to end of file where MODULE_DESCRIPTION() et al are.
-Ok.
+Jordan
 
+> >
+> >Signed-off-by: Jordan Crouse <jcrouse@codeaurora.org>
+> >---
+> >
+> >  drivers/iommu/io-pgtable-arm.c | 261 +++++++++++++++++++++++++++++++++++++----
+> >  drivers/iommu/io-pgtable.c     |   1 +
+> >  include/linux/io-pgtable.h     |   2 +
+> >  3 files changed, 240 insertions(+), 24 deletions(-)
+> >
+> >diff --git a/drivers/iommu/io-pgtable-arm.c b/drivers/iommu/io-pgtable-arm.c
+> >index 161a7d56..aec35e5 100644
+> >--- a/drivers/iommu/io-pgtable-arm.c
+> >+++ b/drivers/iommu/io-pgtable-arm.c
+> >@@ -118,7 +118,12 @@
+> >  #define ARM_LPAE_TCR_TG0_64K		(1 << 14)
+> >  #define ARM_LPAE_TCR_TG0_16K		(2 << 14)
+> >+#define ARM_LPAE_TCR_TG1_4K		(0 << 30)
+> >+#define ARM_LPAE_TCR_TG1_64K		(1 << 30)
+> >+#define ARM_LPAE_TCR_TG1_16K		(2 << 30)
+> >+
+> >  #define ARM_LPAE_TCR_SH0_SHIFT		12
+> >+#define ARM_LPAE_TCR_SH1_SHIFT		28
+> >  #define ARM_LPAE_TCR_SH0_MASK		0x3
+> >  #define ARM_LPAE_TCR_SH_NS		0
+> >  #define ARM_LPAE_TCR_SH_OS		2
+> >@@ -126,6 +131,8 @@
+> >  #define ARM_LPAE_TCR_ORGN0_SHIFT	10
+> >  #define ARM_LPAE_TCR_IRGN0_SHIFT	8
+> >+#define ARM_LPAE_TCR_ORGN1_SHIFT	26
+> >+#define ARM_LPAE_TCR_IRGN1_SHIFT	24
+> >  #define ARM_LPAE_TCR_RGN_MASK		0x3
+> >  #define ARM_LPAE_TCR_RGN_NC		0
+> >  #define ARM_LPAE_TCR_RGN_WBWA		1
+> >@@ -136,6 +143,7 @@
+> >  #define ARM_LPAE_TCR_SL0_MASK		0x3
+> >  #define ARM_LPAE_TCR_T0SZ_SHIFT		0
+> >+#define ARM_LPAE_TCR_T1SZ_SHIFT		16
+> >  #define ARM_LPAE_TCR_SZ_MASK		0xf
+> >  #define ARM_LPAE_TCR_PS_SHIFT		16
+> >@@ -152,6 +160,14 @@
+> >  #define ARM_LPAE_TCR_PS_48_BIT		0x5ULL
+> >  #define ARM_LPAE_TCR_PS_52_BIT		0x6ULL
+> >+#define ARM_LPAE_TCR_SEP_SHIFT		47
+> >+#define ARM_LPAE_TCR_SEP_31		(0x0ULL << ARM_LPAE_TCR_SEP_SHIFT)
+> >+#define ARM_LPAE_TCR_SEP_35		(0x1ULL << ARM_LPAE_TCR_SEP_SHIFT)
+> >+#define ARM_LPAE_TCR_SEP_39		(0x2ULL << ARM_LPAE_TCR_SEP_SHIFT)
+> >+#define ARM_LPAE_TCR_SEP_41		(0x3ULL << ARM_LPAE_TCR_SEP_SHIFT)
+> >+#define ARM_LPAE_TCR_SEP_43		(0x4ULL << ARM_LPAE_TCR_SEP_SHIFT)
+> >+#define ARM_LPAE_TCR_SEP_UPSTREAM	(0x7ULL << ARM_LPAE_TCR_SEP_SHIFT)
 > 
->> +
->> +static int tegra_pcie_dw_probe(struct platform_device *pdev)
->> +{
->> +	const struct tegra_pcie_soc *data;
->> +	struct device *dev = &pdev->dev;
->> +	struct resource *atu_dma_res;
->> +	struct tegra_pcie_dw *pcie;
->> +	struct resource *dbi_res;
->> +	struct pcie_port *pp;
->> +	struct dw_pcie *pci;
->> +	struct phy **phys;
->> +	char *name;
->> +	int ret;
->> +	u32 i;
->> +
->> +	pcie = devm_kzalloc(dev, sizeof(*pcie), GFP_KERNEL);
->> +	if (!pcie)
->> +		return -ENOMEM;
->> +
->> +	pci = &pcie->pci;
->> +	pci->dev = &pdev->dev;
->> +	pci->ops = &tegra_dw_pcie_ops;
->> +	pp = &pci->pp;
->> +	pcie->dev = &pdev->dev;
->> +
->> +	data = (struct tegra_pcie_soc *)of_device_get_match_data(dev);
->> +	if (!data)
->> +		return -EINVAL;
->> +	pcie->mode = (enum dw_pcie_device_mode)data->mode;
->> +
->> +	ret = tegra_pcie_dw_parse_dt(pcie);
->> +	if (ret < 0) {
->> +		dev_err(dev, "Failed to parse device tree: %d\n", ret);
->> +		return ret;
->> +	}
->> +
->> +	pcie->pex_ctl_supply = devm_regulator_get(dev, "vddio-pex-ctl");
->> +	if (IS_ERR(pcie->pex_ctl_supply)) {
->> +		dev_err(dev, "Failed to get regulator: %ld\n",
->> +			PTR_ERR(pcie->pex_ctl_supply));
->> +		return PTR_ERR(pcie->pex_ctl_supply);
->> +	}
->> +
->> +	pcie->core_clk = devm_clk_get(dev, "core");
->> +	if (IS_ERR(pcie->core_clk)) {
->> +		dev_err(dev, "Failed to get core clock: %ld\n",
->> +			PTR_ERR(pcie->core_clk));
->> +		return PTR_ERR(pcie->core_clk);
->> +	}
->> +
->> +	pcie->appl_res = platform_get_resource_byname(pdev, IORESOURCE_MEM,
->> +						      "appl");
->> +	if (!pcie->appl_res) {
->> +		dev_err(dev, "Failed to find \"appl\" region\n");
->> +		return PTR_ERR(pcie->appl_res);
->> +	}
+> This is a specific detail of SMMUv2, and nothing to do with the LPAE/AArch64
+> VMSA formats.
 > 
-> Add an empty line.
-Ok.
+> >+
+> >  #define ARM_LPAE_MAIR_ATTR_SHIFT(n)	((n) << 3)
+> >  #define ARM_LPAE_MAIR_ATTR_MASK		0xff
+> >  #define ARM_LPAE_MAIR_ATTR_DEVICE	0x04
+> >@@ -179,11 +195,12 @@ struct arm_lpae_io_pgtable {
+> >  	struct io_pgtable	iop;
+> >  	int			levels;
+> >+	u32			sep;
+> >  	size_t			pgd_size;
+> >  	unsigned long		pg_shift;
+> >  	unsigned long		bits_per_level;
+> >-	void			*pgd;
+> >+	void			*pgd[2];
+> >  };
+> >  typedef u64 arm_lpae_iopte;
+> >@@ -426,7 +443,8 @@ static arm_lpae_iopte arm_lpae_prot_to_pte(struct arm_lpae_io_pgtable *data,
+> >  	arm_lpae_iopte pte;
+> >  	if (data->iop.fmt == ARM_64_LPAE_S1 ||
+> >-	    data->iop.fmt == ARM_32_LPAE_S1) {
+> >+	    data->iop.fmt == ARM_32_LPAE_S1 ||
+> >+	    data->iop.fmt == ARM_64_LPAE_SPLIT_S1) {
+> >  		pte = ARM_LPAE_PTE_nG;
+> >  		if (!(prot & IOMMU_WRITE) && (prot & IOMMU_READ))
+> >  			pte |= ARM_LPAE_PTE_AP_RDONLY;
+> >@@ -470,11 +488,10 @@ static arm_lpae_iopte arm_lpae_prot_to_pte(struct arm_lpae_io_pgtable *data,
+> >  	return pte;
+> >  }
+> >-static int arm_lpae_map(struct io_pgtable_ops *ops, unsigned long iova,
+> >-			phys_addr_t paddr, size_t size, int iommu_prot)
+> >+static int _arm_lpae_map(struct arm_lpae_io_pgtable *data, unsigned long iova,
+> >+			phys_addr_t paddr, size_t size, int iommu_prot,
+> >+			arm_lpae_iopte *ptep)
+> >  {
+> >-	struct arm_lpae_io_pgtable *data = io_pgtable_ops_to_data(ops);
+> >-	arm_lpae_iopte *ptep = data->pgd;
+> >  	int ret, lvl = ARM_LPAE_START_LVL(data);
+> >  	arm_lpae_iopte prot;
+> >@@ -497,12 +514,39 @@ static int arm_lpae_map(struct io_pgtable_ops *ops, unsigned long iova,
+> >  	return ret;
+> >  }
+> >+static int arm_lpae_split_map(struct io_pgtable_ops *ops, unsigned long iova,
+> >+		phys_addr_t paddr, size_t size, int iommu_prot)
+> >+{
+> >+	struct arm_lpae_io_pgtable *data = io_pgtable_ops_to_data(ops);
+> >+	unsigned long mask = 1UL << data->sep;
+> >+	arm_lpae_iopte *ptep;
+> >+
+> >+	if (iova & mask) {
+> >+		ptep = data->pgd[1];
+> >+		iova &= (mask - 1);
+> >+	} else
+> >+		ptep = data->pgd[0];
+> 
+> AFAICS, this logic effectively aliases the TTBR1 region across the entire
+> upper half of the address hole, so bogus IOVAs may corrupt valid mappings
+> instead of giving errors as expected.
+> 
+> >+
+> >+	return _arm_lpae_map(data, iova, paddr, size, iommu_prot, ptep);
+> >+}
+> >+
+> >+static int arm_lpae_map(struct io_pgtable_ops *ops, unsigned long iova,
+> >+			phys_addr_t paddr, size_t size, int iommu_prot)
+> >+{
+> >+	struct arm_lpae_io_pgtable *data = io_pgtable_ops_to_data(ops);
+> >+
+> >+	return _arm_lpae_map(data, iova, paddr, size, iommu_prot, data->pgd[0]);
+> >+}
+> >+
+> >  static void __arm_lpae_free_pgtable(struct arm_lpae_io_pgtable *data, int lvl,
+> >  				    arm_lpae_iopte *ptep)
+> >  {
+> >  	arm_lpae_iopte *start, *end;
+> >  	unsigned long table_size;
+> >+	if (!ptep)
+> >+		return;
+> >+
+> >  	if (lvl == ARM_LPAE_START_LVL(data))
+> >  		table_size = data->pgd_size;
+> >  	else
+> >@@ -532,7 +576,8 @@ static void arm_lpae_free_pgtable(struct io_pgtable *iop)
+> >  {
+> >  	struct arm_lpae_io_pgtable *data = io_pgtable_to_data(iop);
+> >-	__arm_lpae_free_pgtable(data, ARM_LPAE_START_LVL(data), data->pgd);
+> >+	__arm_lpae_free_pgtable(data, ARM_LPAE_START_LVL(data), data->pgd[0]);
+> >+	__arm_lpae_free_pgtable(data, ARM_LPAE_START_LVL(data), data->pgd[1]);
+> >  	kfree(data);
+> >  }
+> >@@ -643,11 +688,28 @@ static size_t __arm_lpae_unmap(struct arm_lpae_io_pgtable *data,
+> >  	return __arm_lpae_unmap(data, iova, size, lvl + 1, ptep);
+> >  }
+> >+static size_t arm_lpae_split_unmap(struct io_pgtable_ops *ops,
+> >+				   unsigned long iova, size_t size)
+> >+{
+> >+	struct arm_lpae_io_pgtable *data = io_pgtable_ops_to_data(ops);
+> >+	unsigned long mask = 1UL << data->sep;
+> >+	arm_lpae_iopte *ptep;
+> >+	int lvl = ARM_LPAE_START_LVL(data);
+> >+
+> >+	if (iova & mask) {
+> >+		ptep = data->pgd[1];
+> >+		iova &= (mask - 1);
+> >+	} else
+> >+		ptep = data->pgd[0];
+> >+
+> >+	return __arm_lpae_unmap(data, iova, size, lvl, ptep);
+> >+}
+> >+
+> >  static size_t arm_lpae_unmap(struct io_pgtable_ops *ops, unsigned long iova,
+> >  			     size_t size)
+> >  {
+> >  	struct arm_lpae_io_pgtable *data = io_pgtable_ops_to_data(ops);
+> >-	arm_lpae_iopte *ptep = data->pgd;
+> >+	arm_lpae_iopte *ptep = data->pgd[0];
+> >  	int lvl = ARM_LPAE_START_LVL(data);
+> >  	if (WARN_ON(iova >= (1ULL << data->iop.cfg.ias)))
+> >@@ -656,11 +718,11 @@ static size_t arm_lpae_unmap(struct io_pgtable_ops *ops, unsigned long iova,
+> >  	return __arm_lpae_unmap(data, iova, size, lvl, ptep);
+> >  }
+> >-static phys_addr_t arm_lpae_iova_to_phys(struct io_pgtable_ops *ops,
+> >-					 unsigned long iova)
+> >+static phys_addr_t _arm_lpae_iova_to_phys(struct arm_lpae_io_pgtable *data,
+> >+					  unsigned long iova,
+> >+					  arm_lpae_iopte *ptep)
+> >  {
+> >-	struct arm_lpae_io_pgtable *data = io_pgtable_ops_to_data(ops);
+> >-	arm_lpae_iopte pte, *ptep = data->pgd;
+> >+	arm_lpae_iopte pte;
+> >  	int lvl = ARM_LPAE_START_LVL(data);
+> >  	do {
+> >@@ -692,6 +754,31 @@ static phys_addr_t arm_lpae_iova_to_phys(struct io_pgtable_ops *ops,
+> >  	return iopte_to_paddr(pte, data) | iova;
+> >  }
+> >+
+> >+static phys_addr_t arm_lpae_split_iova_to_phys(struct io_pgtable_ops *ops,
+> >+					       unsigned long iova)
+> >+{
+> >+	struct arm_lpae_io_pgtable *data = io_pgtable_ops_to_data(ops);
+> >+	unsigned long mask = 1UL << data->sep;
+> >+	arm_lpae_iopte *ptep;
+> >+
+> >+	if (iova & mask) {
+> >+		ptep = data->pgd[1];
+> >+		iova &= (mask - 1);
+> >+	} else
+> >+		ptep = data->pgd[0];
+> >+
+> >+	return _arm_lpae_iova_to_phys(data, iova, ptep);
+> >+}
+> >+
+> >+static phys_addr_t arm_lpae_iova_to_phys(struct io_pgtable_ops *ops,
+> >+					 unsigned long iova)
+> >+{
+> >+	struct arm_lpae_io_pgtable *data = io_pgtable_ops_to_data(ops);
+> >+
+> >+	return _arm_lpae_iova_to_phys(data, iova, data->pgd[0]);
+> >+}
+> >+
+> >  static void arm_lpae_restrict_pgsizes(struct io_pgtable_cfg *cfg)
+> >  {
+> >  	unsigned long granule, page_sizes;
+> >@@ -771,6 +858,9 @@ arm_lpae_alloc_pgtable(struct io_pgtable_cfg *cfg)
+> >  	pgd_bits = va_bits - (data->bits_per_level * (data->levels - 1));
+> >  	data->pgd_size = 1UL << (pgd_bits + ilog2(sizeof(arm_lpae_iopte)));
+> >+	data->pgd[0] = NULL;
+> >+	data->pgd[1] = NULL;
+> >+
+> >  	data->iop.ops = (struct io_pgtable_ops) {
+> >  		.map		= arm_lpae_map,
+> >  		.unmap		= arm_lpae_unmap,
+> >@@ -780,8 +870,8 @@ arm_lpae_alloc_pgtable(struct io_pgtable_cfg *cfg)
+> >  	return data;
+> >  }
+> >-static struct io_pgtable *
+> >-arm_64_lpae_alloc_pgtable_s1(struct io_pgtable_cfg *cfg, void *cookie)
+> >+static struct arm_lpae_io_pgtable *
+> >+_arm_64_lpae_alloc_pgtable_s1(struct io_pgtable_cfg *cfg)
+> >  {
+> >  	u64 reg;
+> >  	struct arm_lpae_io_pgtable *data;
+> >@@ -845,8 +935,6 @@ arm_64_lpae_alloc_pgtable_s1(struct io_pgtable_cfg *cfg, void *cookie)
+> >  	reg |= (64ULL - cfg->ias) << ARM_LPAE_TCR_T0SZ_SHIFT;
+> >-	/* Disable speculative walks through TTBR1 */
+> >-	reg |= ARM_LPAE_TCR_EPD1;
+> 
+> Not setting EPD1 at all could potentially lead to problems for systems not
+> using split tables.
+> 
+> >  	cfg->arm_lpae_s1_cfg.tcr = reg;
+> >  	/* MAIRs */
+> >@@ -863,24 +951,143 @@ arm_64_lpae_alloc_pgtable_s1(struct io_pgtable_cfg *cfg, void *cookie)
+> >  	cfg->arm_lpae_s1_cfg.mair[1] = 0;
+> >  	/* Looking good; allocate a pgd */
+> >-	data->pgd = __arm_lpae_alloc_pages(data->pgd_size, GFP_KERNEL, cfg);
+> >-	if (!data->pgd)
+> >+	data->pgd[0] = __arm_lpae_alloc_pages(data->pgd_size, GFP_KERNEL, cfg);
+> >+	if (!data->pgd[0])
+> >  		goto out_free_data;
+> >  	/* Ensure the empty pgd is visible before any actual TTBR write */
+> >  	wmb();
+> >  	/* TTBRs */
+> >-	cfg->arm_lpae_s1_cfg.ttbr[0] = virt_to_phys(data->pgd);
+> >+	cfg->arm_lpae_s1_cfg.ttbr[0] = virt_to_phys(data->pgd[0]);
+> >  	cfg->arm_lpae_s1_cfg.ttbr[1] = 0;
+> >+	return data;
+> >+
+> >+out_free_data:
+> >+	kfree(data);
+> >+	return NULL;
+> >+}
+> >+
+> >+
+> >+/* Allocate split pagetables */
+> >+static struct io_pgtable *
+> >+arm_64_lpae_alloc_pgtable_split_s1(struct io_pgtable_cfg *cfg, void *cookie)
+> >+{
+> >+	u64 reg;
+> >+	struct arm_lpae_io_pgtable *data;
+> >+	u32 sep;
+> >+
+> >+	/* Figure out what the sign extension bit should be */
+> >+	switch (cfg->ias) {
+> 
+> IAS only tells you how wide the SMMU's address input is; what you really
+> care about for sign extension is how wide the relevant masters' address
+> *outputs* are. There's no way we can know that here, so AFAICS the only
+> truly robust answer is for the caller requesting split tables to also
+> provide the appropriate split point.
+> 
+> >+	case 32:
+> >+	case 36:
+> >+	case 40:
+> >+	case 42:
+> >+	case 44:
+> >+		sep = cfg->ias - 1;
+> >+		/* Adjust the address size to account for the extension bit */
+> >+		cfg->ias--;
+> >+		break;
+> >+	case 48:
+> >+		/* IAS of 48 is a special case, it has a dedicated bit */
+> 
+> That's not only not VMSA, but not even any architected SMMU behaviour; it
+> just happens to be the way that one user of io-pgtable-arm currently mangles
+> its IAS values.
+> 
+> Robin.
+> 
+> >+		sep = 48;
+> >+		break;
+> >+	default:
+> >+		return NULL;
+> >+	}
+> >+
+> >+	data = _arm_64_lpae_alloc_pgtable_s1(cfg);
+> >+	if (!data)
+> >+		return NULL;
+> >+
+> >+	/* Add the TTBR1 settings */
+> >+	reg = cfg->arm_lpae_s1_cfg.tcr;
+> >+
+> >+	/* TCR */
+> >+	reg |= (ARM_LPAE_TCR_SH_IS << ARM_LPAE_TCR_SH1_SHIFT) |
+> >+	      (ARM_LPAE_TCR_RGN_WBWA << ARM_LPAE_TCR_IRGN1_SHIFT) |
+> >+	      (ARM_LPAE_TCR_RGN_WBWA << ARM_LPAE_TCR_ORGN1_SHIFT);
+> >+
+> >+	switch (ARM_LPAE_GRANULE(data)) {
+> >+	case SZ_4K:
+> >+		reg |= ARM_LPAE_TCR_TG1_4K;
+> >+		break;
+> >+	case SZ_16K:
+> >+		reg |= ARM_LPAE_TCR_TG1_16K;
+> >+		break;
+> >+	case SZ_64K:
+> >+		reg |= ARM_LPAE_TCR_TG1_64K;
+> >+		break;
+> >+	}
+> >+
+> >+	reg |= (64ULL - cfg->ias) << ARM_LPAE_TCR_T1SZ_SHIFT;
+> >+
+> >+	switch (sep) {
+> >+	case 31:
+> >+		reg |= ARM_LPAE_TCR_SEP_31;
+> >+		break;
+> >+	case 35:
+> >+		reg |= ARM_LPAE_TCR_SEP_35;
+> >+		break;
+> >+	case 39:
+> >+		reg |= ARM_LPAE_TCR_SEP_39;
+> >+		break;
+> >+	case 41:
+> >+		reg |= ARM_LPAE_TCR_SEP_41;
+> >+		break;
+> >+	case 43:
+> >+		reg |= ARM_LPAE_TCR_SEP_43;
+> >+		break;
+> >+	case 48:
+> >+		reg |= ARM_LPAE_TCR_SEP_UPSTREAM;
+> >+		break;
+> >+	}
+> >+
+> >+	cfg->arm_lpae_s1_cfg.tcr = reg;
+> >+
+> >+	/* Allocate the TTBR1 pagetable */
+> >+	data->pgd[1] = __arm_lpae_alloc_pages(data->pgd_size, GFP_KERNEL, cfg);
+> >+	if (!data->pgd[1])
+> >+		goto out_free_data;
+> >+
+> >+	/* Override the data ops with split table specific ops */
+> >+	data->iop.ops = (struct io_pgtable_ops) {
+> >+		.map		= arm_lpae_split_map,
+> >+		.unmap		= arm_lpae_split_unmap,
+> >+		.iova_to_phys	= arm_lpae_split_iova_to_phys,
+> >+	};
+> >+
+> >+	/*
+> >+	 * remember the sign extension bit, we'll need it later to figure out
+> >+	 * which pagetable to use
+> >+	 */
+> >+	data->sep = sep;
+> >+
+> >+	/* Ensure the empty pgd is visible before any actual TTBR write */
+> >+	wmb();
+> >+
+> >+	cfg->arm_lpae_s1_cfg.ttbr[1] = virt_to_phys(data->pgd[1]);
+> >  	return &data->iop;
+> >  out_free_data:
+> >+	__arm_lpae_free_pages(data->pgd[0], data->pgd_size, cfg);
+> >  	kfree(data);
+> >  	return NULL;
+> >  }
+> >  static struct io_pgtable *
+> >+arm_64_lpae_alloc_pgtable_s1(struct io_pgtable_cfg *cfg, void *cookie)
+> >+{
+> >+	struct arm_lpae_io_pgtable *data;
+> >+
+> >+	data = _arm_64_lpae_alloc_pgtable_s1(cfg);
+> >+	if (!data)
+> >+		return NULL;
+> >+
+> >+	return &data->iop;
+> >+}
+> >+
+> >+static struct io_pgtable *
+> >  arm_64_lpae_alloc_pgtable_s2(struct io_pgtable_cfg *cfg, void *cookie)
+> >  {
+> >  	u64 reg, sl;
+> >@@ -960,15 +1167,15 @@ arm_64_lpae_alloc_pgtable_s2(struct io_pgtable_cfg *cfg, void *cookie)
+> >  	cfg->arm_lpae_s2_cfg.vtcr = reg;
+> >  	/* Allocate pgd pages */
+> >-	data->pgd = __arm_lpae_alloc_pages(data->pgd_size, GFP_KERNEL, cfg);
+> >-	if (!data->pgd)
+> >+	data->pgd[0] = __arm_lpae_alloc_pages(data->pgd_size, GFP_KERNEL, cfg);
+> >+	if (!data->pgd[0])
+> >  		goto out_free_data;
+> >  	/* Ensure the empty pgd is visible before any actual TTBR write */
+> >  	wmb();
+> >  	/* VTTBR */
+> >-	cfg->arm_lpae_s2_cfg.vttbr = virt_to_phys(data->pgd);
+> >+	cfg->arm_lpae_s2_cfg.vttbr = virt_to_phys(data->pgd[0]);
+> >  	return &data->iop;
+> >  out_free_data:
+> >@@ -1041,6 +1248,11 @@ struct io_pgtable_init_fns io_pgtable_arm_64_lpae_s1_init_fns = {
+> >  	.free	= arm_lpae_free_pgtable,
+> >  };
+> >+struct io_pgtable_init_fns io_pgtable_arm_64_lpae_split_s1_init_fns = {
+> >+	.alloc	= arm_64_lpae_alloc_pgtable_split_s1,
+> >+	.free	= arm_lpae_free_pgtable,
+> >+};
+> >+
+> >  struct io_pgtable_init_fns io_pgtable_arm_64_lpae_s2_init_fns = {
+> >  	.alloc	= arm_64_lpae_alloc_pgtable_s2,
+> >  	.free	= arm_lpae_free_pgtable,
+> >@@ -1095,9 +1307,9 @@ static void __init arm_lpae_dump_ops(struct io_pgtable_ops *ops)
+> >  	pr_err("cfg: pgsize_bitmap 0x%lx, ias %u-bit\n",
+> >  		cfg->pgsize_bitmap, cfg->ias);
+> >-	pr_err("data: %d levels, 0x%zx pgd_size, %lu pg_shift, %lu bits_per_level, pgd @ %p\n",
+> >+	pr_err("data: %d levels, 0x%zx pgd_size, %lu pg_shift, %lu bits_per_level, pgd @ %p %p\n",
+> >  		data->levels, data->pgd_size, data->pg_shift,
+> >-		data->bits_per_level, data->pgd);
+> >+		data->bits_per_level, data->pgd[0], data->pgd[1]);
+> >  }
+> >  #define __FAIL(ops, i)	({						\
+> >@@ -1112,6 +1324,7 @@ static int __init arm_lpae_run_tests(struct io_pgtable_cfg *cfg)
+> >  	static const enum io_pgtable_fmt fmts[] = {
+> >  		ARM_64_LPAE_S1,
+> >  		ARM_64_LPAE_S2,
+> >+		ARM_64_LPAE_SPLIT_S1,
+> >  	};
+> >  	int i, j;
+> >diff --git a/drivers/iommu/io-pgtable.c b/drivers/iommu/io-pgtable.c
+> >index ced53e5..ed1985f 100644
+> >--- a/drivers/iommu/io-pgtable.c
+> >+++ b/drivers/iommu/io-pgtable.c
+> >@@ -20,6 +20,7 @@ io_pgtable_init_table[IO_PGTABLE_NUM_FMTS] = {
+> >  	[ARM_64_LPAE_S1] = &io_pgtable_arm_64_lpae_s1_init_fns,
+> >  	[ARM_64_LPAE_S2] = &io_pgtable_arm_64_lpae_s2_init_fns,
+> >  	[ARM_MALI_LPAE] = &io_pgtable_arm_mali_lpae_init_fns,
+> >+	[ARM_64_LPAE_SPLIT_S1] = &io_pgtable_arm_64_lpae_split_s1_init_fns,
+> >  #endif
+> >  #ifdef CONFIG_IOMMU_IO_PGTABLE_ARMV7S
+> >  	[ARM_V7S] = &io_pgtable_arm_v7s_init_fns,
+> >diff --git a/include/linux/io-pgtable.h b/include/linux/io-pgtable.h
+> >index b5a450a..2ed0e6a 100644
+> >--- a/include/linux/io-pgtable.h
+> >+++ b/include/linux/io-pgtable.h
+> >@@ -10,6 +10,7 @@ enum io_pgtable_fmt {
+> >  	ARM_32_LPAE_S1,
+> >  	ARM_32_LPAE_S2,
+> >  	ARM_64_LPAE_S1,
+> >+	ARM_64_LPAE_SPLIT_S1,
+> >  	ARM_64_LPAE_S2,
+> >  	ARM_V7S,
+> >  	ARM_MALI_LPAE,
+> >@@ -211,6 +212,7 @@ extern struct io_pgtable_init_fns io_pgtable_arm_32_lpae_s1_init_fns;
+> >  extern struct io_pgtable_init_fns io_pgtable_arm_32_lpae_s2_init_fns;
+> >  extern struct io_pgtable_init_fns io_pgtable_arm_64_lpae_s1_init_fns;
+> >  extern struct io_pgtable_init_fns io_pgtable_arm_64_lpae_s2_init_fns;
+> >+extern struct io_pgtable_init_fns io_pgtable_arm_64_lpae_split_s1_init_fns;
+> >  extern struct io_pgtable_init_fns io_pgtable_arm_v7s_init_fns;
+> >  extern struct io_pgtable_init_fns io_pgtable_arm_mali_lpae_init_fns;
+> >
 
-> 
->> +	pcie->appl_base = devm_ioremap_resource(dev, pcie->appl_res);
->> +	if (IS_ERR(pcie->appl_base))
->> +		return PTR_ERR(pcie->appl_base);
->> +
->> +	pcie->core_apb_rst = devm_reset_control_get(dev, "apb");
->> +	if (IS_ERR(pcie->core_apb_rst)) {
->> +		dev_err(dev, "Failed to get APB reset: %ld\n",
->> +			PTR_ERR(pcie->core_apb_rst));
->> +		return PTR_ERR(pcie->core_apb_rst);
->> +	}
->> +
->> +	phys = devm_kcalloc(dev, pcie->phy_count, sizeof(*phys), GFP_KERNEL);
->> +	if (!phys)
->> +		return PTR_ERR(phys);
->> +
->> +	for (i = 0; i < pcie->phy_count; i++) {
->> +		name = kasprintf(GFP_KERNEL, "p2u-%u", i);
->> +		if (!name) {
->> +			dev_err(dev, "Failed to create P2U string\n");
->> +			return -ENOMEM;
->> +		}
->> +		phys[i] = devm_phy_get(dev, name);
->> +		kfree(name);
->> +		if (IS_ERR(phys[i])) {
->> +			ret = PTR_ERR(phys[i]);
->> +			dev_err(dev, "Failed to get PHY: %d\n", ret);
->> +			return ret;
->> +		}
->> +	}
->> +
->> +	pcie->phys = phys;
->> +
->> +	dbi_res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "dbi");
->> +	if (!dbi_res) {
->> +		dev_err(dev, "Failed to find \"dbi\" region\n");
->> +		return PTR_ERR(dbi_res);
->> +	}
->> +	pcie->dbi_res = dbi_res;
->> +
->> +	pci->dbi_base = devm_ioremap_resource(dev, dbi_res);
->> +	if (IS_ERR(pci->dbi_base))
->> +		return PTR_ERR(pci->dbi_base);
->> +
->> +	/* Tegra HW locates DBI2 at a fixed offset from DBI */
->> +	pci->dbi_base2 = pci->dbi_base + 0x1000;
->> +
->> +	atu_dma_res = platform_get_resource_byname(pdev, IORESOURCE_MEM,
->> +						   "atu_dma");
->> +	if (!atu_dma_res) {
->> +		dev_err(dev, "Failed to find \"atu_dma\" region\n");
->> +		return PTR_ERR(atu_dma_res);
->> +	}
->> +	pcie->atu_dma_res = atu_dma_res;
-> 
-> Add an empty line.
-> 
-> I have just skimmed over it, I need more time to review the driver more
-> thoroughly, I will try to go over it tomorrow and we can see if we can
-> hit v5.3 but I can't guarantee anything, sorry but there was a
-> significant backlog on the PCI patch queue.
-> 
-> The rest of the series is fine but it is useless to merge it
-> without this patch so let's see how it goes.
-Ok. I'll wait for your thorough review and then push next patch.
-Thanks for the review.
-
-> 
-> Lorenzo
-> 
->> +	pci->atu_base = devm_ioremap_resource(dev, atu_dma_res);
->> +	if (IS_ERR(pci->atu_base))
->> +		return PTR_ERR(pci->atu_base);
->> +
->> +	pcie->core_rst = devm_reset_control_get(dev, "core");
->> +	if (IS_ERR(pcie->core_rst)) {
->> +		dev_err(dev, "Failed to get core reset: %ld\n",
->> +			PTR_ERR(pcie->core_rst));
->> +		return PTR_ERR(pcie->core_rst);
->> +	}
->> +
->> +	pp->irq = platform_get_irq_byname(pdev, "intr");
->> +	if (!pp->irq) {
->> +		dev_err(dev, "Failed to get \"intr\" interrupt\n");
->> +		return -ENODEV;
->> +	}
->> +
->> +	ret = devm_request_irq(dev, pp->irq, tegra_pcie_irq_handler,
->> +			       IRQF_SHARED, "tegra-pcie-intr", pcie);
->> +	if (ret) {
->> +		dev_err(dev, "Failed to request IRQ %d: %d\n", pp->irq, ret);
->> +		return ret;
->> +	}
->> +
->> +	pcie->bpmp = tegra_bpmp_get(dev);
->> +	if (IS_ERR(pcie->bpmp))
->> +		return PTR_ERR(pcie->bpmp);
->> +
->> +	platform_set_drvdata(pdev, pcie);
->> +
->> +	if (pcie->mode == DW_PCIE_RC_TYPE) {
->> +		ret = tegra_pcie_config_rp(pcie);
->> +		if (ret && ret != -ENOMEDIUM)
->> +			goto fail;
->> +		else
->> +			return 0;
->> +	}
->> +
->> +fail:
->> +	tegra_bpmp_put(pcie->bpmp);
->> +	return ret;
->> +}
->> +
->> +static int tegra_pcie_dw_remove(struct platform_device *pdev)
->> +{
->> +	struct tegra_pcie_dw *pcie = platform_get_drvdata(pdev);
->> +
->> +	if (pcie->mode != DW_PCIE_RC_TYPE)
->> +		return 0;
->> +
->> +	if (!pcie->link_state)
->> +		return 0;
->> +
->> +	debugfs_remove_recursive(pcie->debugfs);
->> +	tegra_pcie_deinit_controller(pcie);
->> +	pm_runtime_put_sync(pcie->dev);
->> +	pm_runtime_disable(pcie->dev);
->> +	tegra_bpmp_put(pcie->bpmp);
->> +
->> +	return 0;
->> +}
->> +
->> +static int tegra_pcie_dw_suspend_late(struct device *dev)
->> +{
->> +	struct tegra_pcie_dw *pcie = dev_get_drvdata(dev);
->> +	u32 val;
->> +
->> +	if (!pcie->link_state)
->> +		return 0;
->> +
->> +	/* Enable HW_HOT_RST mode */
->> +	val = appl_readl(pcie, APPL_CTRL);
->> +	val &= ~(APPL_CTRL_HW_HOT_RST_MODE_MASK <<
->> +		 APPL_CTRL_HW_HOT_RST_MODE_SHIFT);
->> +	val |= APPL_CTRL_HW_HOT_RST_EN;
->> +	appl_writel(pcie, val, APPL_CTRL);
->> +
->> +	return 0;
->> +}
->> +
->> +static int tegra_pcie_dw_suspend_noirq(struct device *dev)
->> +{
->> +	struct tegra_pcie_dw *pcie = dev_get_drvdata(dev);
->> +
->> +	if (!pcie->link_state)
->> +		return 0;
->> +
->> +	/* Save MSI interrupt vector */
->> +	pcie->msi_ctrl_int = dw_pcie_readl_dbi(&pcie->pci,
->> +					       PORT_LOGIC_MSI_CTRL_INT_0_EN);
->> +	tegra_pcie_downstream_dev_to_D0(pcie);
->> +	tegra_pcie_dw_pme_turnoff(pcie);
->> +	return __deinit_controller(pcie);
->> +}
->> +
->> +static int tegra_pcie_dw_resume_noirq(struct device *dev)
->> +{
->> +	struct tegra_pcie_dw *pcie = dev_get_drvdata(dev);
->> +	int ret;
->> +
->> +	if (!pcie->link_state)
->> +		return 0;
->> +
->> +	ret = tegra_pcie_config_controller(pcie, true);
->> +	if (ret < 0)
->> +		return ret;
->> +
->> +	ret = tegra_pcie_dw_host_init(&pcie->pci.pp);
->> +	if (ret < 0) {
->> +		dev_err(dev, "Failed to init host: %d\n", ret);
->> +		goto fail_host_init;
->> +	}
->> +
->> +	/* Restore MSI interrupt vector */
->> +	dw_pcie_writel_dbi(&pcie->pci, PORT_LOGIC_MSI_CTRL_INT_0_EN,
->> +			   pcie->msi_ctrl_int);
->> +
->> +	return 0;
->> +fail_host_init:
->> +	return __deinit_controller(pcie);
->> +}
->> +
->> +static int tegra_pcie_dw_resume_early(struct device *dev)
->> +{
->> +	struct tegra_pcie_dw *pcie = dev_get_drvdata(dev);
->> +	u32 val;
->> +
->> +	if (!pcie->link_state)
->> +		return 0;
->> +
->> +	/* Disable HW_HOT_RST mode */
->> +	val = appl_readl(pcie, APPL_CTRL);
->> +	val &= ~(APPL_CTRL_HW_HOT_RST_MODE_MASK <<
->> +		 APPL_CTRL_HW_HOT_RST_MODE_SHIFT);
->> +	val |= APPL_CTRL_HW_HOT_RST_MODE_IMDT_RST <<
->> +	       APPL_CTRL_HW_HOT_RST_MODE_SHIFT;
->> +	val &= ~APPL_CTRL_HW_HOT_RST_EN;
->> +	appl_writel(pcie, val, APPL_CTRL);
->> +
->> +	return 0;
->> +}
->> +
->> +static void tegra_pcie_dw_shutdown(struct platform_device *pdev)
->> +{
->> +	struct tegra_pcie_dw *pcie = platform_get_drvdata(pdev);
->> +
->> +	if (pcie->mode != DW_PCIE_RC_TYPE)
->> +		return;
->> +
->> +	if (!pcie->link_state)
->> +		return;
->> +
->> +	debugfs_remove_recursive(pcie->debugfs);
->> +	tegra_pcie_downstream_dev_to_D0(pcie);
->> +
->> +	disable_irq(pcie->pci.pp.irq);
->> +	if (IS_ENABLED(CONFIG_PCI_MSI))
->> +		disable_irq(pcie->pci.pp.msi_irq);
->> +
->> +	tegra_pcie_dw_pme_turnoff(pcie);
->> +	__deinit_controller(pcie);
->> +}
->> +
->> +static const struct dev_pm_ops tegra_pcie_dw_pm_ops = {
->> +	.suspend_late = tegra_pcie_dw_suspend_late,
->> +	.suspend_noirq = tegra_pcie_dw_suspend_noirq,
->> +	.resume_noirq = tegra_pcie_dw_resume_noirq,
->> +	.resume_early = tegra_pcie_dw_resume_early,
->> +};
->> +
->> +static struct platform_driver tegra_pcie_dw_driver = {
->> +	.probe = tegra_pcie_dw_probe,
->> +	.remove = tegra_pcie_dw_remove,
->> +	.shutdown = tegra_pcie_dw_shutdown,
->> +	.driver = {
->> +		.name	= "tegra194-pcie",
->> +		.pm = &tegra_pcie_dw_pm_ops,
->> +		.of_match_table = tegra_pcie_dw_of_match,
->> +	},
->> +};
->> +module_platform_driver(tegra_pcie_dw_driver);
->> +
->> +MODULE_AUTHOR("Vidya Sagar <vidyas@nvidia.com>");
->> +MODULE_DESCRIPTION("NVIDIA PCIe host controller driver");
->> +MODULE_LICENSE("GPL v2");
->> -- 
->> 2.17.1
->>
-
+-- 
+The Qualcomm Innovation Center, Inc. is a member of Code Aurora Forum,
+a Linux Foundation Collaborative Project
 
 _______________________________________________
 linux-arm-kernel mailing list
