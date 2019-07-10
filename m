@@ -2,89 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 215AB647E8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 16:14:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1459C647E9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 10 Jul 2019 16:15:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XqV0khuWfEpRagzEUvwLLngW5svbnr2Vi1pO5lyaKQ0=; b=vBlxmq/esJGQgj
-	c2Bqq20DP6oj8aTNbrBcJEYQ8b+q6KK3xzhw0J5jnPngfPOk1bGaHZ1zs4wHBcMBGVxm75NejYswS
-	zG+/YXsr1JifbYmwVC2dYvsfTans+TwsaoIAkhuS46rvPMjMpnUd6xcljGi6eTkhYDtbI63qmCOq1
-	PChfB+YzGDsNy4wAP4mgILi6ffhN1zXk91FcGvKA3HVI2CulS6QNNVAKmR49QWNZzMkHx7kPG2RI9
-	vdHdjYVWPjAcoN5x9op50EZKpIkYmM7jd40WB2A1fMQUOQCxm20/oclgX1dSWHKhMzQr5Ha5TmcvP
-	m1VZ4WZhuYj4tIal/uGg==;
+	List-Owner; bh=HBAN5/4s0D2N0d2N9q870lGfZmOvf9n3j4Ac+cab138=; b=teUyeM8yjXCkZ+
+	AHT+GC4jOk5hhbjS75oMFv8twyWUDNBups/9nVv6FJfu8W3PhbjwwJ19PIpgAX2xz0/eJRhzfcV1z
+	vunv/UE72X7JdisjPE7APKR3cAKrJs7sGQpuGtH111cTkjxX4JyMxSwT92zHJ5ePTl6/fkbjyxcKC
+	Ra5aa+GQwRYwtN629xQp3sscgNK8rk1cyVS9/hL8/l1VvfFU8uLwnrWMrbBgtwmjtSR3QWMh8N3qO
+	KGjAw/kgf3e4sujf+NPAPuCVT3zoTBHppx0XE3jiKjDrSnBUxl1E5suQcy/k4iUF0ySWCRXs0qtiA
+	uak5DY7MrdtU4iuiDYQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlDMv-00075e-CF; Wed, 10 Jul 2019 14:14:49 +0000
-Received: from out3-smtp.messagingengine.com ([66.111.4.27])
+	id 1hlDNG-0007NF-8P; Wed, 10 Jul 2019 14:15:10 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlDLs-0006P4-Hb
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 14:13:46 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id D47BF22116;
- Wed, 10 Jul 2019 10:13:43 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute4.internal (MEProxy); Wed, 10 Jul 2019 10:13:43 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=from
- :to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm3; bh=59zr7ar3J2+Mb
- Uw+g9i3S5rctQUpSiUdlC6O+B+OKrU=; b=S3pX6hE3bn5MBplfmjzefPLZID+uY
- PFlJ4EI7EX4/3kyQG4Bbd2YbXm2LlgO7VjeEj1GLq6De4txUfNDOvtk3YSo6Xv8z
- AU+BZXLQpkBLpV9X9KG9fgYhrc20gU2tYSM5boVxyu5bT7dO6yQj7ovflss6+4Vc
- 3y7mZxg6pQT/YM8xk6cjyJZp3gJsmQXm4rRqL7JWMXztPoPJh1U1kShcKqsMJxjv
- wFihh6y+ZUdkANIqFS9hkZ5SwuXoMdjdZv68cVl60gI/dAVY/9oJQ9brkc2uz1Fy
- D9HPQer6D95bngJ2SCc9cn28jZWdnYpuJU7KoUn4y1hqDNnqyb3tExoNw==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-transfer-encoding:date:from
- :in-reply-to:message-id:mime-version:references:subject:to
- :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm3; bh=59zr7ar3J2+MbUw+g9i3S5rctQUpSiUdlC6O+B+OKrU=; b=H1b1O1tj
- Ep36ro92b9PTugCl9A4Wb+t/dd6jzm1np4XSq27K309m4oNjF/bWnd2LKskrnGs/
- wn+xV0rsQUFpEwSOqD0Nnp2Q43iL54xy3diQNln5thWOXJxP2lL2HDnP1dOahVda
- CEomX8fVZlpyxqW4h6qfJspJv67V/q8LUpT8OP8qvo/ir7tNiGY0VnkhFJGXXza/
- FeGE/At4QwsMPdM8Xgz2xHIoYftrP0jthVu40CZVn2X2FWdAC6RFM9yMEIeEANOn
- mP1pvvCuVTYYzIH32OLpitiNyV50dkNLtyTUvx2l2DBxV4Jt6LR446Z+3jro61He
- 400mgrleJik8mw==
-X-ME-Sender: <xms:l_IlXTyUs-Re8Kv_0Du6OnYYS7xXNDyUErM0adjKB3sC-0EF3J8sDw>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrgeeigdejhecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpefhvffufffkofgjfhgggfestdekredtredttdenucfhrhhomheptehnughrvgif
- ucflvghffhgvrhihuceorghnughrvgifsegrjhdrihgurdgruheqnecukfhppedugedrvd
- drkeehrddvvdenucfrrghrrghmpehmrghilhhfrhhomheprghnughrvgifsegrjhdrihgu
- rdgruhenucevlhhushhtvghrufhiiigvpedu
-X-ME-Proxy: <xmx:l_IlXXnynii_CsXIeNcZv6pZrz-TdTk4O-FPEZzbG6lSlT_gYCx6tA>
- <xmx:l_IlXQH9EJ6Jf2i_MwULNw6yXZTg-l43TgsrRM2Kp13MdQ554SdoXQ>
- <xmx:l_IlXfU-CoQqEQCjIwS_tv-GbvCeOWgLfD4p_LkFLuybsg0_uXRjSA>
- <xmx:l_IlXYpTKuec_2edicKj8pgHylHEasU-KlfdoRIJzS6BbgeGGsUnaA>
-Received: from localhost.localdomain
- (ppp14-2-85-22.adl-apt-pir-bras31.tpg.internode.on.net [14.2.85.22])
- by mail.messagingengine.com (Postfix) with ESMTPA id 0EFD5380074;
- Wed, 10 Jul 2019 10:13:40 -0400 (EDT)
-From: Andrew Jeffery <andrew@aj.id.au>
-To: linux-aspeed@lists.ozlabs.org
-Subject: [PATCH 3/3] ARM: config: aspeed-g5: Enable EXT4, VFAT
-Date: Wed, 10 Jul 2019 23:43:25 +0930
-Message-Id: <20190710141325.20888-4-andrew@aj.id.au>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190710141325.20888-1-andrew@aj.id.au>
-References: <20190710141325.20888-1-andrew@aj.id.au>
+ id 1hlDMl-0007Br-IS
+ for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 14:14:42 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id DAF772064B;
+ Wed, 10 Jul 2019 14:14:36 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1562768078;
+ bh=DyLQkR+SqZg30UD4WGgKKVBfPXf9H8Fp5j0gQLSjm1M=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=Uv3XWiYycqQdOA9/aSy6OPad/nv4oF5fG/eYmZR921Lj5iSjaS116QIYDQi5XGtjy
+ 97SSz7GWaEcn5oTyCpIQR8LU9e7nTbEKOnfCeXSHuxLRdk65zZZrVRN1Yge8y5i6Ec
+ DKc/PijLSM5tkGjiPgCKRl5Gv7qFM23n5caCPXH0=
+Date: Wed, 10 Jul 2019 15:14:34 +0100
+From: Will Deacon <will@kernel.org>
+To: Stephen Boyd <swboyd@chromium.org>
+Subject: Re: [PATCH v2 3/5] memremap: Add support for read-only memory mappings
+Message-ID: <20190710141433.7ama3gncss3y6dcx@willie-the-truck>
+References: <20190614203717.75479-1-swboyd@chromium.org>
+ <20190614203717.75479-4-swboyd@chromium.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190614203717.75479-4-swboyd@chromium.org>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_071344_777350_52B8A4AA 
-X-CRM114-Status: UNSURE (   7.93  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190710_071439_697617_278851FA 
+X-CRM114-Status: GOOD (  22.05  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.27 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -93,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,43 +77,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Jeffery <andrew@aj.id.au>, ryanchen.aspeed@gmail.com,
- Joel Stanley <joel@jms.id.au>, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
+Cc: devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
+ Evan Green <evgreen@chromium.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Rob Herring <robh+dt@kernel.org>,
+ Andy Gross <agross@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Joel Stanley <joel@jms.id.au>
+On Fri, Jun 14, 2019 at 01:37:15PM -0700, Stephen Boyd wrote:
+> Sometimes we have memories that are supposed to be read-only, but when
+> we map these regions the best we can do is map them as write-back with
+> MEMREMAP_WB. Introduce a read-only memory mapping (MEMREMAP_RO) that
+> allows us to map reserved memory regions as read-only. This way, we're
+> less likely to see these special memory regions become corrupted by
+> stray writes to them.
+> 
+> Cc: Evan Green <evgreen@chromium.org>
+> Cc: Rob Herring <robh+dt@kernel.org>
+> Cc: Bjorn Andersson <bjorn.andersson@linaro.org>
+> Cc: Andy Gross <agross@kernel.org>
+> Cc: Will Deacon <will.deacon@arm.com>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Dan Williams <dan.j.williams@intel.com>
+> Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+> Signed-off-by: Stephen Boyd <swboyd@chromium.org>
+> ---
+>  include/linux/io.h |  1 +
+>  kernel/iomem.c     | 15 +++++++++++++--
+>  2 files changed, 14 insertions(+), 2 deletions(-)
+> 
+> diff --git a/include/linux/io.h b/include/linux/io.h
+> index 32e30e8fb9db..16c7f4498869 100644
+> --- a/include/linux/io.h
+> +++ b/include/linux/io.h
+> @@ -159,6 +159,7 @@ enum {
+>  	MEMREMAP_WC = 1 << 2,
+>  	MEMREMAP_ENC = 1 << 3,
+>  	MEMREMAP_DEC = 1 << 4,
+> +	MEMREMAP_RO = 1 << 5,
+>  };
+>  
+>  void *memremap(resource_size_t offset, size_t size, unsigned long flags);
+> diff --git a/kernel/iomem.c b/kernel/iomem.c
+> index 93c264444510..10d5ef0ff09e 100644
+> --- a/kernel/iomem.c
+> +++ b/kernel/iomem.c
+> @@ -19,6 +19,13 @@ static void *arch_memremap_wb(resource_size_t offset, unsigned long size)
+>  }
+>  #endif
+>  
+> +#ifndef arch_memremap_ro
+> +static void *arch_memremap_ro(resource_size_t offset, unsigned long size)
+> +{
+> +	return NULL;
+> +}
+> +#endif
+> +
+>  #ifndef arch_memremap_can_ram_remap
+>  static bool arch_memremap_can_ram_remap(resource_size_t offset, size_t size,
+>  					unsigned long flags)
+> @@ -84,7 +91,10 @@ void *memremap(resource_size_t offset, size_t size, unsigned long flags)
+>  	}
+>  
+>  	/* Try all mapping types requested until one returns non-NULL */
+> -	if (flags & MEMREMAP_WB) {
+> +	if ((flags & MEMREMAP_RO) && is_ram != REGION_INTERSECTS)
+> +		addr = arch_memremap_ro(offset, size);
+> +
+> +	if (!addr && (flags & MEMREMAP_WB)) {
+>  		/*
+>  		 * MEMREMAP_WB is special in that it can be satisfied
+>  		 * from the direct map.  Some archs depend on the
+> @@ -103,7 +113,8 @@ void *memremap(resource_size_t offset, size_t size, unsigned long flags)
+>  	 * address mapping.  Enforce that this mapping is not aliasing
+>  	 * System RAM.
+>  	 */
+> -	if (!addr && is_ram == REGION_INTERSECTS && flags != MEMREMAP_WB) {
+> +	if (!addr && is_ram == REGION_INTERSECTS &&
+> +	    (flags != MEMREMAP_WB || flags != MEMREMAP_RO)) {
+>  		WARN_ONCE(1, "memremap attempted on ram %pa size: %#lx\n",
+>  				&offset, (unsigned long) size);
+>  		return NULL;
 
-Popular filesystems now that we have eMMC support.
+This function seems a little confused about whether 'flags' is really a
+bitmap of flags, or whether it is equal to exactly one entry in the enum.
+Given that I think it's sensible for somebody to specify 'MEMREMAP_RO |
+MEMREMAP_WT', then we probably need to start checking these things a bit
+more thoroughly so we can reject unsupported combinations at the very least.
 
-Signed-off-by: Joel Stanley <joel@jms.id.au>
-Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
----
- arch/arm/configs/aspeed_g5_defconfig | 3 +++
- 1 file changed, 3 insertions(+)
-
-diff --git a/arch/arm/configs/aspeed_g5_defconfig b/arch/arm/configs/aspeed_g5_defconfig
-index 9cb3cfd35a59..13db73e15539 100644
---- a/arch/arm/configs/aspeed_g5_defconfig
-+++ b/arch/arm/configs/aspeed_g5_defconfig
-@@ -217,8 +217,11 @@ CONFIG_FSI_MASTER_HUB=y
- CONFIG_FSI_MASTER_AST_CF=y
- CONFIG_FSI_SCOM=y
- CONFIG_FSI_SBEFIFO=y
-+CONFIG_EXT4_FS=y
- CONFIG_FANOTIFY=y
- CONFIG_OVERLAY_FS=y
-+CONFIG_VFAT_FS=y
-+CONFIG_FAT_DEFAULT_UTF8=y
- CONFIG_TMPFS=y
- CONFIG_JFFS2_FS=y
- # CONFIG_JFFS2_FS_WRITEBUFFER is not set
--- 
-2.20.1
-
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
