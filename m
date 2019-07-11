@@ -2,128 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 65783651C2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 08:15:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8761651D5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 08:22:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qfQnAEzACdko8G8mwesbSJzGmLOLKcCLo4IfUdsmC3k=; b=X+wpWQaXyJqNjv
-	/gSgncSjgEzEI+/7H++gokTSrppgG/smax3gyZWvkm6I1m6AtifTnMHjO25dtRgnEnMZ9eX8V8U5R
-	yfZBdf20UmDy+fXISOT2cEYUuwchwO1w3eekX1Pcgfb+sdFXlqAPYh09DHjYhY7F/OJxPtze227a2
-	gfM2E4g2ZkwkOliR3AhU3PsvzJGmvo+pPfDUBbAWqtiF6xd6lUddwn1YXzEwvLzTze5V4PgwFDQM/
-	UEEJa32bpG6VSLMIYcCQNriEhGxhD2iupg3OMeGzn8cUREdGqWgzdkwazVF/1sfVXJLxp7sgp/6Ai
-	VbML22ye4tp6nyTpyLSQ==;
+	List-Owner; bh=uFxa6ZNSeK7LOI5N/ttRUAa2Dw3sYSNTE628mqqrXpg=; b=owWxUYq1dvAvpi
+	mOGR1l5nefZ38atW76lMoZK4EhowHNqArlcCY4jDm6LZaxk3bHLapMcbQSWpfPabrJxPLhq7NIvZM
+	Up1TSkGXIsj1np7yCoNiLgHMc1UXbiLYoh9Zy7WSUcjZaauB8bc6wPYTbEpzzsFD/YmCD3yYfZtK8
+	PSgXxDiU2z5buPJJFvsAe/6zXeK0+0iWRK8t0E9F0YNdURj07GKs0Ok0zvrcT/P565E/0mrIr1rLb
+	Z7Q1fFVJ3LIvPVqZRy+7fw/HpbJwtxtwxT0dJNc+KZGWJp0XzkULK9o89i7IArEZZ8NW44aYXNfwE
+	u1JQDfuChbEk5sjY1lYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlSMv-0001Gw-So; Thu, 11 Jul 2019 06:15:50 +0000
-Received: from esa2.hgst.iphmx.com ([68.232.143.124])
+	id 1hlSTb-0002ua-3t; Thu, 11 Jul 2019 06:22:43 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlSMh-0001FS-10; Thu, 11 Jul 2019 06:15:37 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
- t=1562825746; x=1594361746;
- h=from:to:cc:subject:date:message-id:references:
- in-reply-to:content-transfer-encoding:mime-version;
- bh=1YrGGyNlRB9hb3RBUHcYaJSdfrvxqWNsTUeEdON888A=;
- b=fpP3EQKwTVk+Aiwje7rOH8uzeaT42+J+o3HwJySxlFWjf+3q/92ahCif
- qB60WJivOB908tXOrHSbAKHDpO50HLMXb6GSro7bTgHgUm4QxSGvXQR52
- TFHNyum/7dJY3eJGKUfeRHZIq09nc5SuKZA5aGMBa0SFyH74C+PUIt5Ef
- o9UNhDCeokkyBwjaS6sFgiP4uUmILCsxO0wMD5MMp/SC5i9C9f4+ZWkKk
- EQsCZI+Ud4izF8AyMJtiuyVQ8ktLVYXZF0zxUYwG2Vt8udeZT2geuIpUO
- Ril7MGNlJf6ltIC6Ofo9IIBrbq6rWzdy4c5QSPc1TgO6ryQIgr5qDGbmA g==;
-IronPort-SDR: o234wHZ08xdc7I7+V3mMEvsfOuTf9YxvzkzMQqfCEA/PaAlPyps2drwditFAiReTC/LF2FfOB0
- eimMOFB1aTtJdsy1mKa9I/OErI1/e/s7Vjl/oHt118ygNUh/b+0dEz5eqRPLXDU+vWaBG8VBvW
- ipSvQUG1ST36VlC1ZdntSYJoQcBFE78bWbaHe6gSxz/js3ORaz3Y/oLWLRNE2SKnT/C1ZMFFhS
- ndFdTdzv33L5aWupYjyZAvqA+19MQMile7mda0IDDa5cdeNkJXd8htwiCicqoled5gbmIxwZ2/
- srE=
-X-IronPort-AV: E=Sophos;i="5.63,476,1557158400"; d="scan'208";a="212667730"
-Received: from mail-sn1nam04lp2050.outbound.protection.outlook.com (HELO
- NAM04-SN1-obe.outbound.protection.outlook.com) ([104.47.44.50])
- by ob1.hgst.iphmx.com with ESMTP; 11 Jul 2019 14:15:26 +0800
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=gX/A5UCiyCH9HbKlu2jcYbNg/3d2J5L+6SSUSukvsJUypjSIoPLweu7Wn859jnsAanJkos38I3SToRFsJRpyLPI/YHwZ5pY6vL0lljsCisfIMfrjSn2adVZpc1Kt/HXCGq7uWRGEW8Pl5BPeyY7GfXAQpvLbduDwxIemLm6YT4J3GO62OYEqztvHqGFni9s9jzUTaBZClMyzW6ZPMyOvy0tcMmvCLpVxXUJBiQ3966A2nH0JxfJq1vQfh2VpPeOw1iHcJR1OBMnDzhwcMbN7RnxF8AMb6cMrqcTU2m+8M7XBgRZa855QS97GuniFvMO9zUWRrFFKM3Ht5DmMNxFsuw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=/spphAd0K8MM7F1/9AFl9NDmoF4CClkrJ4E2ZcsKmLQ=;
- b=dTyU83eFhrlDrZfdETGU8eodvso/AXw/yBMls161hEwCv+GdfzHO3Qi+PZ5XnWIuH3MNsJqQDkdk5On+iSO7pXLuhCRDOShWM56uppQZKjj5UwSEfQvBVPZtaLQmPgoKtPzr9NJZsvEq2ltzRQDJvDlb/g5FyR9/mrBRt/S4jUeVFHZUtQe8MpEHQFTRetgxi8n78/FqJdcR64IHuHdWGO62YAR5AREI0IMc9TwHQs+CqTjSo4dDL2V9Oj6f72L3zg5WV4PyKUccw0cTdUQV6tMythnP8ret13A0pFeuQ2Lz6YTPk0R6fWsPVHUAo9RmCvBYny9r6L+bH0iqFwXiQw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=wdc.com;dmarc=pass action=none header.from=wdc.com;dkim=pass
- header.d=wdc.com;arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=sharedspace.onmicrosoft.com; s=selector2-sharedspace-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=/spphAd0K8MM7F1/9AFl9NDmoF4CClkrJ4E2ZcsKmLQ=;
- b=D+VOK+kCqS1ZWDzvzHby2abGJe3tYXE9bwpiv32ufdhaVeMb7Lc7GDhw7gWmQVqCHN0HuMyW0O1v30YdlmAUHnJno3Txh11hvxPNM9UVw82vDvUcXaDDIIGxxlAgezkE5/yd71pBQ4Euqyp5il2kS9mufaQ6DvXqeiuOiWQfqyw=
-Received: from SN6PR04MB4925.namprd04.prod.outlook.com (52.135.114.82) by
- SN6PR04MB5262.namprd04.prod.outlook.com (20.178.7.13) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2073.11; Thu, 11 Jul 2019 06:15:20 +0000
-Received: from SN6PR04MB4925.namprd04.prod.outlook.com
- ([fe80::541e:d74b:98bf:c319]) by SN6PR04MB4925.namprd04.prod.outlook.com
- ([fe80::541e:d74b:98bf:c319%5]) with mapi id 15.20.2073.008; Thu, 11 Jul 2019
- 06:15:20 +0000
-From: Avri Altman <Avri.Altman@wdc.com>
-To: Stanley Chu <stanley.chu@mediatek.com>, "linux-scsi@vger.kernel.org"
- <linux-scsi@vger.kernel.org>, "martin.petersen@oracle.com"
- <martin.petersen@oracle.com>, "alim.akhtar@samsung.com"
- <alim.akhtar@samsung.com>, "pedrom.sousa@synopsys.com"
- <pedrom.sousa@synopsys.com>
-Subject: RE: [PATCH v3 4/4] scsi: ufs: Add history of fatal events
-Thread-Topic: [PATCH v3 4/4] scsi: ufs: Add history of fatal events
-Thread-Index: AQHVNyTGnP9of7OWlUuyDLJWlYUyBKbE7K7g
-Date: Thu, 11 Jul 2019 06:15:20 +0000
-Message-ID: <SN6PR04MB4925157680BCEE559ED6F038FCF30@SN6PR04MB4925.namprd04.prod.outlook.com>
-References: <1562765901-18328-1-git-send-email-stanley.chu@mediatek.com>
- <1562765901-18328-5-git-send-email-stanley.chu@mediatek.com>
-In-Reply-To: <1562765901-18328-5-git-send-email-stanley.chu@mediatek.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=Avri.Altman@wdc.com; 
-x-originating-ip: [212.25.79.133]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 2e9d2b2b-5426-46e8-01a4-08d705c72722
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:SN6PR04MB5262; 
-x-ms-traffictypediagnostic: SN6PR04MB5262:
-x-microsoft-antispam-prvs: <SN6PR04MB52625D007B9581F6CD1C0B8CFCF30@SN6PR04MB5262.namprd04.prod.outlook.com>
-wdcipoutbound: EOP-TRUE
-x-ms-oob-tlc-oobclassifiers: OLM:2150;
-x-forefront-prvs: 0095BCF226
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(4636009)(366004)(136003)(376002)(39860400002)(346002)(396003)(189003)(199004)(76116006)(66946007)(26005)(66556008)(66446008)(66476007)(64756008)(229853002)(478600001)(25786009)(55016002)(316002)(186003)(66066001)(2906002)(446003)(74316002)(476003)(11346002)(110136005)(486006)(54906003)(2501003)(7696005)(5660300002)(99286004)(4326008)(7416002)(6506007)(68736007)(102836004)(53936002)(33656002)(76176011)(9686003)(52536014)(14454004)(6116002)(81156014)(6436002)(8936002)(86362001)(3846002)(256004)(81166006)(14444005)(71200400001)(71190400001)(7736002)(305945005)(2201001)(8676002)(6246003);
- DIR:OUT; SFP:1102; SCL:1; SRVR:SN6PR04MB5262;
- H:SN6PR04MB4925.namprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: j0aSW+m1PKWHBPlxb9OjZfK4YSjch5TLrSGzVREN4zLsZLEUrXQsNQ5KS2Y0s/mvOp2T//o2CPnGKgE7U8Bfmv6qW+2xlj4DQZKE7FAEmN56fmG6iSgKAt7dtcey8ymrrsDc6yxL3CPUrsxPYudK54piJAUPfDBTDPwvIevwpikYsn4TgK/gdDtMEJHejMFHZpQlBg2apW1aHP82YWO5KI7HPP6comnKmtD0Y6PpWcMeT4ez3S+pNR04namZtR79lKCOrUlmy/cvWzZObYfBO3xy8tE79CGh+6vfUbjYcygbcK77jgqDQO0xR+ZHgLc34T9KH01MwOANIbfBw4qAe7MmXkHNVi6kIFCUv01yH8xqtBqJw5CAa6CuPss9nQE9cgCNyM9FBJg0q0vc4ES5rK5FdENSNLRdxfNrCpDVYG0=
+ id 1hlSTO-0002tw-Jo
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 06:22:32 +0000
+Received: by mail-pl1-x641.google.com with SMTP id b7so2468169pls.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 10 Jul 2019 23:22:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=2/izmyLx3zgLly59CRyGw1zLBbtbQty91ZENtAWD4Vk=;
+ b=bCJUZdgFXSL1JPheXWrE2SvDktcgz7ZRvLp8UkZ09vb/Prg3mHtmdw0CdPu+kNUcGI
+ a+TMxXx6wNfmwQtEtIXMhXKR2VzbJQGJVBT4Jcr78m07BpKzdxphTgR8GXJ75FNnpqAB
+ FNgXp0c4Bq/bsz0u8wFe6FU1NqqZn1sx5kV5TnReJTFWuqsfXI0nlrO3bGvOpcXDoF9E
+ kH2fUTOxrcxqE6WyOVzMskdFpKOYyKgmdeY68u0Bz7QfklwW+Yz9KVGimSXOF4E3tW+I
+ Ndk3OY2HRkZ2wOYaljBN7Ygo+45k9VGREMHudaTh1IrRGsaLJbxdRM0v/ZdSiMQ7S5FG
+ 78xA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=2/izmyLx3zgLly59CRyGw1zLBbtbQty91ZENtAWD4Vk=;
+ b=skeBqfzPQEX/uVp+q6mYl+OHA7t9JB9R1zFv1XMQQOXUP9AVhpZFznW3C9jXI9S6mo
+ 17Tu1Qd5AUsnSalqqH58k+9+q0qRPYDkFTTn1L61H0qWQo/mlYZZOtceSyl+Xu3Ee1ZW
+ czKQLGy8y2KCQ36boyChjWk724N20/K24pONeiiQpTKjBhdlT1jm4VN7YGuewPQ/IDj8
+ AbSo4Fnev2pfBgO1wlYXWfhRHMl8mEIGNarGRLh7eAOqFblEJ9yyuk7dM9T1vkiOxCKp
+ E+F5hf41XcNDu3TM7sTph8RBePDVtoYgCFGpSuEU+Qf6veHFSk/+bmiVGEUCh6QI34Md
+ WigA==
+X-Gm-Message-State: APjAAAVrqIAEXmIpBkSDJfNFNqLyKHnUwsdiY59u4J8RiY2v6L8VKS88
+ yF2OKwo9y+Ld0fHljYPHJr+9Iw==
+X-Google-Smtp-Source: APXvYqzBa57SST8CdNhPOntlhzTG7OeoEa6rXNRY1hYntSU2vCbtVOJveAMlqx/1mMk4cJDBYNLgNw==
+X-Received: by 2002:a17:902:da4:: with SMTP id
+ 33mr2477954plv.209.1562826149501; 
+ Wed, 10 Jul 2019 23:22:29 -0700 (PDT)
+Received: from localhost ([122.172.28.117])
+ by smtp.gmail.com with ESMTPSA id j19sm1516594pgn.19.2019.07.10.23.22.28
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 10 Jul 2019 23:22:28 -0700 (PDT)
+Date: Thu, 11 Jul 2019 11:52:26 +0530
+From: Viresh Kumar <viresh.kumar@linaro.org>
+To: k.konieczny@partner.samsung.com
+Subject: Re: [PATCH 1/3] opp: core: add regulators enable and disable
+Message-ID: <20190711062226.4i4bvbsyczshdlyr@vireshk-i7>
+References: <20190708141140.24379-1-k.konieczny@partner.samsung.com>
+ <CGME20190708141159eucas1p1751506975ff96a436e14940916623722@eucas1p1.samsung.com>
+ <20190708141140.24379-2-k.konieczny@partner.samsung.com>
 MIME-Version: 1.0
-X-OriginatorOrg: wdc.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2e9d2b2b-5426-46e8-01a4-08d705c72722
-X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Jul 2019 06:15:20.8475 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: b61c8803-16f3-4c35-9b17-6f65f441df86
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Avri.Altman@wdc.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR04MB5262
+Content-Disposition: inline
+In-Reply-To: <20190708141140.24379-2-k.konieczny@partner.samsung.com>
+User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_231535_209285_593454E1 
-X-CRM114-Status: GOOD (  12.10  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190710_232230_719840_E28C71F3 
+X-CRM114-Status: GOOD (  20.60  )
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.143.124 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -133,6 +89,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -144,64 +101,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "sthumma@codeaurora.org" <sthumma@codeaurora.org>,
- "marc.w.gonzalez@free.fr" <marc.w.gonzalez@free.fr>,
- "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
- "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
- "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
- "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
- "evgreen@chromium.org" <evgreen@chromium.org>,
- "subhashj@codeaurora.org" <subhashj@codeaurora.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "ygardi@codeaurora.org" <ygardi@codeaurora.org>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "beanhuo@micron.com" <beanhuo@micron.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Nishanth Menon <nm@ti.com>,
+ linux-samsung-soc@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Stephen Boyd <sboyd@kernel.org>, Viresh Kumar <vireshk@kernel.org>,
+ linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Krzysztof Kozlowski <krzk@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Kukjin Kim <kgene@kernel.org>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>, devicetree@vger.kernel.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-> Currently only "interrupt-based" errors have their own history,
-> however there are some "non-interrupt-based" errors or events
-> which need history to improve debugging or help know the health
-> status of UFS devices.
+On 08-07-19, 16:11, k.konieczny@partner.samsung.com wrote:
+> From: Kamil Konieczny <k.konieczny@partner.samsung.com>
 > 
-> Example of fatal errors,
-> - Link startup error
-> - Suspend error
-> - Resume error
+> Add enable regulators to dev_pm_opp_set_regulators() and disable
+> regulators to dev_pm_opp_put_regulators(). This prepares for
+> converting exynos-bus devfreq driver to use dev_pm_opp_set_rate().
 > 
-> Example of abnormal events,
-> - Task or request abort
-> - Device reset (now equals to Logical Unit Reset)
-> - Host reset
+> Signed-off-by: Kamil Konieczny <k.konieczny@partner.samsung.com>
+> ---
+>  drivers/opp/core.c | 13 +++++++++++++
+>  1 file changed, 13 insertions(+)
 > 
-> This patch tries to track above errors and events by existed UFS error
-> history mechanism.
-> 
-> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
-Reviewed-by: Avri Altman <avri.altman@wdc.com>
+> diff --git a/drivers/opp/core.c b/drivers/opp/core.c
+> index 0e7703fe733f..947cac452854 100644
+> --- a/drivers/opp/core.c
+> +++ b/drivers/opp/core.c
+> @@ -1580,8 +1580,19 @@ struct opp_table *dev_pm_opp_set_regulators(struct device *dev,
+>  	if (ret)
+>  		goto free_regulators;
+>  
+> +	for (i = 0; i < opp_table->regulator_count; i++) {
+> +		ret = regulator_enable(opp_table->regulators[i]);
+> +		if (ret < 0)
+> +			goto disable;
+> +	}
 
->  /**
->   * ufshcd_link_startup - Initialize unipro link startup
->   * @hba: per adapter instance
-> @@ -4356,6 +4372,8 @@ static int ufshcd_link_startup(struct ufs_hba
-> *hba)
-> 
->  		/* check if device is detected by inter-connect layer */
->  		if (!ret && !ufshcd_is_device_present(hba)) {
-> +			ufshcd_update_reg_hist(&hba-
-> >ufs_stats.link_startup_err,
-> +					       0);
-So no device = no error, instead of ENXIO.
-Well I guess this is a fair choice,
-although less informative if the device stop responding.
+What about doing this in the same loop of regulator_get_optional() ?
 
+> +
+>  	return opp_table;
+>  
+> +disable:
+> +	while (i != 0)
+> +		regulator_disable(opp_table->regulators[--i]);
+> +
+> +	i = opp_table->regulator_count;
 
+You also need to call _free_set_opp_data() here.
 
+>  free_regulators:
+>  	while (i != 0)
+>  		regulator_put(opp_table->regulators[--i]);
+> @@ -1609,6 +1620,8 @@ void dev_pm_opp_put_regulators(struct opp_table *opp_table)
+>  
+>  	/* Make sure there are no concurrent readers while updating opp_table */
+>  	WARN_ON(!list_empty(&opp_table->opp_list));
+
+Preserve the blank line here.
+
+> +	for (i = opp_table->regulator_count - 1; i >= 0; i--)
+> +		regulator_disable(opp_table->regulators[i]);
+>  
+>  	for (i = opp_table->regulator_count - 1; i >= 0; i--)
+>  		regulator_put(opp_table->regulators[i]);
+
+Only single loop should be sufficient for this.
+
+> -- 
+> 2.22.0
+
+-- 
+viresh
 
 _______________________________________________
 linux-arm-kernel mailing list
