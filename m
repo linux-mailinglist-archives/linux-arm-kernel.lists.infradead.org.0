@@ -2,42 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C236C655E3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 13:46:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 83B1E655E4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 13:46:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:From:To:
 	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=dqsYy80ByXYiPCubvSV6XLA5y1T74Ja71Iqm87mmlMs=; b=PcihEOC3Vxcvnq
-	wRiTcZ5NoGumf/ZMU2m4fd75JO3IaAiOaqAXW17eg6Vj3+kxCcV32PnZi4xfq4aq5Gx0IOLNwUR7B
-	fp9T4bQMNvjTBuLRiXuDaGQNpPudJ04PlVt2jdEkTsgJ7jLCGEWL7Gp+yz9TJBs0PFfjXeDwHVij3
-	08uKJAYai07Dt8GX3hEs0GRq8xyugZI2WTu8DWZ6J1mkJa0KRI3PvdN6XygYhMO5OkjwGNZNAo8yv
-	f3k/p4RcZ1GewngAT1WAn1NuR/JZ52aJ3nKKhn8T+PeCotAyaBUX+GZNmL7yZ1p/Pb0rpisbburjN
-	x7uzqABrNNCrgCSgzzDA==;
+	List-Owner; bh=0EzN2dsDPGyiRxEUsi55lPXl3tWGrWMiNrWrYLKmwcA=; b=Cl1mEUznbdc1Ez
+	yt17XmOAVjPfEGBBIi2HNDKM/uIr9yWxQ6cCDhkN2kUpkkUpT9XDhYlFw2E7jS+QHvCzW85ItE0hi
+	M6qxCTcGauEcd3sHsW/R2tPWfIRA8szJsVhrIvyYBbGmxMvQwgHFNmJvofR9RggWwsRIYlFF5bAT5
+	wfFwKNItYH0NCn6YpEdKQdPTXCbMfOOKIpWPSobfg2k6QJTDmtOg8kVpc1L+R33XV/8C0yydywyxk
+	0bn28rtTH+T3U6+KsOUh4e3EpPZh/a1BZTP7K1BkSgN3ksIFs36Mjrl0TrTyoQYd6OfuC/mIb5u/e
+	PRNE07t7uDQN2O6V19YA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlXWR-0004YX-Sb; Thu, 11 Jul 2019 11:45:59 +0000
+	id 1hlXX9-0004nA-4L; Thu, 11 Jul 2019 11:46:43 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlXWK-0004Xy-DY
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 11:45:54 +0000
+ id 1hlXX2-0004mq-Su
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 11:46:38 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1808021655;
- Thu, 11 Jul 2019 11:45:50 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 244232166E;
+ Thu, 11 Jul 2019 11:46:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1562845551;
- bh=Hj97wMP22o4dTyWVYK3QyIHUi8ym1aynKE6zz+6R8ZA=;
+ s=default; t=1562845596;
+ bh=c6uq2Cld5UwtOUYU/02m2YyBr91lNIX9fhKderDH840=;
  h=Subject:To:Cc:From:Date:From;
- b=OW6ydNMKxdqE/SxhTxFNBn830GvkVrMbkxVcMfggglsOmZ/vjt6jzOH4oAadVkA57
- tp5mU8SPxZT5Qm+Zv3+uyoG7ZqCpE61b5SZlUanzoqplxirrSf9Jw0sx7PhSjBhueq
- 4dwKx4DyAImXIsnViyOBxE0jQ4XZPi16vpHNLjik=
+ b=afpQhiDACPZw9OuZRqxMPHLXEhtwDoGcofW6TlxzVkh1Ckv6FOnJhN/cT/Wl6PTD6
+ o8jHM0mL1CDwNfaEqsPWDrglsx/hpjPWnFkL9guC7b5JBmIYhODYIZGas8+CGuiEsU
+ iMQMxx9+ihphD5GdB3PNoOgD+GZ9dxWF04iNHuYQ=
 Subject: Patch "perf pmu: Fix uncore PMU alias list for ARM64" has been added
- to the 4.19-stable tree
+ to the 5.1-stable tree
 To: 1560521283-73314-2-git-send-email-john.garry@huawei.com, acme@redhat.com,
  alexander.shishkin@linux.intel.com, ben@decadent.org.uk,
  brueckner@linux.ibm.com, gregkh@linuxfoundation.org, john.garry@huawei.com,
@@ -47,13 +47,13 @@ To: 1560521283-73314-2-git-send-email-john.garry@huawei.com, acme@redhat.com,
  peterz@infradead.org, tmricht@linux.ibm.com, will.deacon@arm.com,
  zhangshaokun@hisilicon.com
 From: <gregkh@linuxfoundation.org>
-Date: Thu, 11 Jul 2019 13:45:25 +0200
-Message-ID: <156284552524244@kroah.com>
+Date: Thu, 11 Jul 2019 13:45:42 +0200
+Message-ID: <1562845542150111@kroah.com>
 MIME-Version: 1.0
 X-stable: commit
 X-Patchwork-Hint: ignore 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_044552_490213_7ADD8FE9 
+X-CRM114-CacheID: sfid-20190711_044636_964761_FAA7E61D 
 X-CRM114-Status: GOOD (  12.08  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -90,12 +90,12 @@ This is a note to let you know that I've just added the patch titled
 
     perf pmu: Fix uncore PMU alias list for ARM64
 
-to the 4.19-stable tree which can be found at:
+to the 5.1-stable tree which can be found at:
     http://www.kernel.org/git/?p=linux/kernel/git/stable/stable-queue.git;a=summary
 
 The filename of the patch is:
      perf-pmu-fix-uncore-pmu-alias-list-for-arm64.patch
-and it can be found in the queue-4.19 subdirectory.
+and it can be found in the queue-5.1 subdirectory.
 
 If you, or anyone else, feels it should not be added to the stable tree,
 please let <stable@vger.kernel.org> know about it.
@@ -144,7 +144,7 @@ Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 
 --- a/tools/perf/util/pmu.c
 +++ b/tools/perf/util/pmu.c
-@@ -750,9 +750,7 @@ static void pmu_add_cpu_aliases(struct l
+@@ -709,9 +709,7 @@ static void pmu_add_cpu_aliases(struct l
  {
  	int i;
  	struct pmu_events_map *map;
@@ -154,7 +154,7 @@ Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
  
  	map = perf_pmu__find_map(pmu);
  	if (!map)
-@@ -763,28 +761,26 @@ static void pmu_add_cpu_aliases(struct l
+@@ -722,28 +720,26 @@ static void pmu_add_cpu_aliases(struct l
  	 */
  	i = 0;
  	while (1) {
@@ -199,7 +199,7 @@ Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 
 Patches currently in stable-queue which might be from john.garry@huawei.com are
 
-queue-4.19/perf-pmu-fix-uncore-pmu-alias-list-for-arm64.patch
+queue-5.1/perf-pmu-fix-uncore-pmu-alias-list-for-arm64.patch
 
 _______________________________________________
 linux-arm-kernel mailing list
