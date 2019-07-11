@@ -2,58 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C4BA659EF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 17:04:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B41B5659F6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 17:06:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NGZlRnqsXqasYhS+qQhJpLAghGJwXecIljkecd1jD0I=; b=Fvgac+iqULwdvU
-	fURP+rT0gzo9weGv6vHZQNyntaGTtcVbBbzAGopi1CI9h5SjvK1OiOqEpauHqtgxS231TMZzsDM8+
-	lXWzToUq41Pr2GgIeVeNfv66uS7UognaEMulStc8UYyRUxIxV0bO5McszeWt+XEMQYv8pZYhC87I2
-	BxhAlFwm50tFq5zL1G5F9Erm9nrs/XXM+rOiRuZ6n67p9T1GncNyffYYRuvLG5PJjW/OMEQi1M307
-	4jzJKOp2gt1puBPXrftspIIvot23JCoChVFvJwsydGLJUkbfI8B5RxVeFjQjs21LxAAmsjK3YumO+
-	wkDkMYEIEnLPmXH71Xow==;
+	List-Owner; bh=JZiJaGT8QC3lRE//8fXgnFYDWlo8MMX+KKD2NYw8q+8=; b=J3CSlcx/YGttHA
+	QEhinThQIcm4od8ll0Bc4CYfXwT0m/P7OSoezLzEbGIV66oa79U9UIUB+alFtAa9u60DNBdBVRinI
+	2xi1xF6M89KzfPkX5+C83KA2ZPB03w/UZShYzFyIYqhPr9TCCLiLXRJ4HMpE9f4sk7drfhGa17nUO
+	LlLanozJx4o6k5xD1tuvJTBGFqqh6VXJgvz+0hlVg5pXG74CwfWFEcvQi+96uqtdBuY3e1gXsp2Qh
+	ibWGEfWgQ9KuPsYy7W2JpAWVw54Jmu7xLpShuZBYWg8b6JXXXnql22EiBC8o6Jr+/8PKh0ZI9TbJH
+	k1zfVkv3WXcExm6b2ogg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlacn-0004iP-Ak; Thu, 11 Jul 2019 15:04:45 +0000
-Received: from honk.sigxcpu.org ([24.134.29.49])
+	id 1hlaeR-0006Jk-HI; Thu, 11 Jul 2019 15:06:27 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlacF-0004Op-Qf
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 15:04:14 +0000
-Received: from localhost (localhost [127.0.0.1])
- by honk.sigxcpu.org (Postfix) with ESMTP id 6BEB8FB03;
- Thu, 11 Jul 2019 17:04:05 +0200 (CEST)
-X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
-Received: from honk.sigxcpu.org ([127.0.0.1])
- by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id vble_Z4Bb27E; Thu, 11 Jul 2019 17:04:04 +0200 (CEST)
-Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
- id D10E042CB4; Thu, 11 Jul 2019 17:04:03 +0200 (CEST)
-Date: Thu, 11 Jul 2019 17:04:03 +0200
-From: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
-To: Robert Chiras <robert.chiras@nxp.com>
-Subject: Re: [PATCH 00/10] Improvements and fixes for mxsfb DRM driver
-Message-ID: <20190711150403.GB23195@bogon.m.sigxcpu.org>
-References: <1561555938-21595-1-git-send-email-robert.chiras@nxp.com>
+ id 1hlaeE-0006JA-Cq
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 15:06:15 +0000
+Received: by mail-pf1-x444.google.com with SMTP id i189so2888859pfg.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 11 Jul 2019 08:06:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=4c2dc7FdeZlI40XoYW7oVDGG9akgiuTr8uhcWS8yCeY=;
+ b=CWE8YcZB0HKcuadLXbtPYj6kQ5wYic026seg1ZVQ3b+ApPmyoYWwNSd0mnKX9ohNXA
+ jpxMK9+dbpVEbUI8ATFDIvQDf0YLM4pcNS0tuYQfjyYMQ9NfKSEQb0kpeWX2PcE0azhP
+ egtlCiDuPqnWZQfcZmZw8J8u1YU62gkqkX+RoS1F5r5stTmEDfwxaEJUrA2j+shkdq7J
+ r1Zl9gWRixLrdySBL2nCQPmP0Yn4vXIIDqBK1U6Wt2gTvksAnTxve2JEFWdcui5vuI+t
+ 56OIfwXw9RWrVLjsLcOJcFZOxIuRgyrOIDLi4Enun9yZVkuRjv1UVNzCypwA0pYfGrzv
+ s/HA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=4c2dc7FdeZlI40XoYW7oVDGG9akgiuTr8uhcWS8yCeY=;
+ b=sx06RF+EGNFfuxKjvAziChsZzRlv2IjphM8Tg+vuk5O/b+cyp4hi+rzsKG9EZ8rsAj
+ nMPw2+SadxU6pOE9Pl5sxcHhB1t6coE7qEyuo4hKo2fPzmkW3zKpRqxOe52w9+PnNyEO
+ iJFKlj0NotNX4MKbwP81xgAtASsDG6ZpOkfbeAhgaV7KDalXCf+RQz3eLMjys2pQOoUz
+ ztnjbWOyv/8r77f8KiNWtwOdmQX7npBILxmVi2ywPtxy7TmcboEkB/2Oh6W2UZZ0AEWD
+ Gw4rwcvr3bF2H3pRe1UOLVNxemeq2akdB/uPgoJjRlhg2yvelctIG8GgqNHxwbT6Ejjj
+ 2GiA==
+X-Gm-Message-State: APjAAAX/dkUYYqFaP7MJdGzwodWSc1pCr+1waxzIbm/c5VI+7LwHaXsM
+ DyWO9ZZyfaBtmMHy6snOyIz52A==
+X-Google-Smtp-Source: APXvYqyTRN38u90ThnFEWr3vJtVT6c/7HeHr0dQPeDSpuUgsAlIZ8GEDPOCwlDn7VSwfNYWXYmf7JA==
+X-Received: by 2002:a17:90a:2008:: with SMTP id n8mr5346113pjc.4.1562857573492; 
+ Thu, 11 Jul 2019 08:06:13 -0700 (PDT)
+Received: from tuxbook-pro (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id s6sm9401870pfs.122.2019.07.11.08.06.11
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Thu, 11 Jul 2019 08:06:12 -0700 (PDT)
+Date: Thu, 11 Jul 2019 08:07:23 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Jorge Ramirez-Ortiz <jorge.ramirez-ortiz@linaro.org>
+Subject: Re: [PATCH v3 06/14] clk: qcom: hfpll: get parent clock names from DT
+Message-ID: <20190711150723.GG7234@tuxbook-pro>
+References: <20190625164733.11091-1-jorge.ramirez-ortiz@linaro.org>
+ <20190625164733.11091-7-jorge.ramirez-ortiz@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1561555938-21595-1-git-send-email-robert.chiras@nxp.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190625164733.11091-7-jorge.ramirez-ortiz@linaro.org>
+User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_080412_207273_8EAB8127 
-X-CRM114-Status: GOOD (  24.06  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190711_080614_445659_5B88676D 
+X-CRM114-Status: GOOD (  16.71  )
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [24.134.29.49 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,112 +100,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marek Vasut <marex@denx.de>, Mark Rutland <mark.rutland@arm.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, devicetree@vger.kernel.org,
- David Airlie <airlied@linux.ie>, Fabio Estevam <festevam@gmail.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
- Stefan Agner <stefan@agner.ch>, Rob Herring <robh+dt@kernel.org>,
- dri-devel@lists.freedesktop.org, Daniel Vetter <daniel@ffwll.ch>,
- Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org,
- NXP Linux Team <linux-imx@nxp.com>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: mark.rutland@arm.com, heiko@sntech.de, mturquette@baylibre.com,
+ will.deacon@arm.com, david.brown@linaro.org, linux-clk@vger.kernel.org,
+ jassisinghbrar@gmail.com, sibis@codeaurora.org, jagan@amarulasolutions.com,
+ devicetree@vger.kernel.org, niklas.cassel@linaro.org, arnd@arndb.de,
+ linux-arm-msm@vger.kernel.org, olof@lixom.net, robh+dt@kernel.org,
+ horms+renesas@verge.net.au, linux-arm-kernel@lists.infradead.org,
+ sboyd@kernel.org, linux-kernel@vger.kernel.org, amit.kucheria@linaro.org,
+ vkoul@kernel.org, khasim.mohammed@linaro.org, enric.balletbo@collabora.com,
+ georgi.djakov@linaro.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Robert,
-On Wed, Jun 26, 2019 at 04:32:08PM +0300, Robert Chiras wrote:
-> This patch-set improves the use of eLCDIF block on iMX 8 SoCs (like 8MQ, =
-8MM
-> and 8QXP). Following, are the new features added and fixes from this
-> patch-set:
-> =
+On Tue 25 Jun 09:47 PDT 2019, Jorge Ramirez-Ortiz wrote:
 
-> 1. Add support for drm_bridge
-> On 8MQ and 8MM, the LCDIF block is not directly connected to a parallel
-> display connector, where an LCD panel can be attached, but instead it is
-> connected to DSI controller. Since this DSI stands between the display
-> controller (eLCDIF) and the physical connector, the DSI can be implemented
-> as a DRM bridge. So, in order to be able to connect the mxsfb driver to
-> the DSI driver, the support for a drm_bridge was needed in mxsfb DRM
-> driver (the actual driver for the eLCDIF block).
+> Allow accessing the parent clock name required for the driver
+> operation using the device tree node.
+> 
+> This permits extending the driver to other platforms without having to
+> modify its source code.
+> 
+> For backwards compatibility leave the previous value as default.
+> 
+> Co-developed-by: Niklas Cassel <niklas.cassel@linaro.org>
+> Signed-off-by: Niklas Cassel <niklas.cassel@linaro.org>
+> Signed-off-by: Jorge Ramirez-Ortiz <jorge.ramirez-ortiz@linaro.org>
 
-So I wanted to test this but with both my somewhat cleaned up nwl
-driver=B9 and the nwl driver forward ported from the nxp vendor tree I'm
-looking at a black screen with current mainline - while my dcss forward
-port gives me nice output on mipi dsi. Do you have a tree that uses mipi
-dsi on imx8mq where I could look at to check for differences?
+The driver should be updated to use parent_data instead, but I consider
+that's an independent change.
 
-Cheers,
- -- Guido
+Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
 
-> =
-
-> 2. Add support for additional pixel formats
-> Some of the pixel formats needed by Android were not implemented in this
-> driver, but they were actually supported. So, add support for them.
-> =
-
-> 3. Add support for horizontal stride
-> Having support for horizontal stride allows the use of eLCDIF with a GPU
-> (for example) that can only output resolution sizes multiple of a power of
-> 8. For example, 1080 is not a power of 16, so in order to support 1920x10=
-80
-> output from GPUs that can produce linear buffers only in sizes multiple t=
-o 16,
-> this feature is needed.
-> =
-
-> 3. Few minor features and bug-fixing
-> The addition of max-res DT property was actually needed in order to limit
-> the bandwidth usage of the eLCDIF block. This is need on systems where
-> multiple display controllers are presend and the memory bandwidth is not
-> enough to handle all of them at maximum capacity (like it is the case on
-> 8MQ, where there are two display controllers: DCSS and eLCDIF).
-> The rest of the patches are bug-fixes.
-> =
-
-> Mirela Rabulea (1):
->   drm/mxsfb: Signal mode changed when bpp changed
-> =
-
-> Robert Chiras (9):
->   drm/mxsfb: Update mxsfb to support a bridge
->   drm/mxsfb: Update mxsfb with additional pixel formats
->   drm/mxsfb: Fix the vblank events
->   dt-bindings: display: Add max-res property for mxsfb
->   drm/mxsfb: Add max-res property for MXSFB
->   drm/mxsfb: Update mxsfb to support LCD reset
->   drm/mxsfb: Improve the axi clock usage
->   drm/mxsfb: Clear OUTSTANDING_REQS bits
->   drm/mxsfb: Add support for horizontal stride
-> =
-
->  .../devicetree/bindings/display/mxsfb.txt          |   6 +
->  drivers/gpu/drm/mxsfb/mxsfb_crtc.c                 | 290 +++++++++++++++=
-+++---
->  drivers/gpu/drm/mxsfb/mxsfb_drv.c                  | 189 +++++++++++---
->  drivers/gpu/drm/mxsfb/mxsfb_drv.h                  |  10 +-
->  drivers/gpu/drm/mxsfb/mxsfb_out.c                  |  26 +-
->  drivers/gpu/drm/mxsfb/mxsfb_regs.h                 | 128 ++++++---
->  6 files changed, 531 insertions(+), 118 deletions(-)
-> =
-
-> -- =
-
-> 2.7.4
-> =
-
-> =
-
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> =
-
-
-=B9 https://lists.freedesktop.org/archives/dri-devel/2019-March/209685.html
+> ---
+>  drivers/clk/qcom/hfpll.c | 8 ++++++++
+>  1 file changed, 8 insertions(+)
+> 
+> diff --git a/drivers/clk/qcom/hfpll.c b/drivers/clk/qcom/hfpll.c
+> index a6de7101430c..87b7f46d27e0 100644
+> --- a/drivers/clk/qcom/hfpll.c
+> +++ b/drivers/clk/qcom/hfpll.c
+> @@ -52,6 +52,7 @@ static int qcom_hfpll_probe(struct platform_device *pdev)
+>  	void __iomem *base;
+>  	struct regmap *regmap;
+>  	struct clk_hfpll *h;
+> +	struct clk *pclk;
+>  	struct clk_init_data init = {
+>  		.parent_names = (const char *[]){ "xo" },
+>  		.num_parents = 1,
+> @@ -75,6 +76,13 @@ static int qcom_hfpll_probe(struct platform_device *pdev)
+>  					  0, &init.name))
+>  		return -ENODEV;
+>  
+> +	/* get parent clock from device tree (optional) */
+> +	pclk = devm_clk_get(dev, "xo");
+> +	if (!IS_ERR(pclk))
+> +		init.parent_names = (const char *[]){ __clk_get_name(pclk) };
+> +	else if (PTR_ERR(pclk) == -EPROBE_DEFER)
+> +		return -EPROBE_DEFER;
+> +
+>  	h->d = &hdata;
+>  	h->clkr.hw.init = &init;
+>  	spin_lock_init(&h->lock);
+> -- 
+> 2.21.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
