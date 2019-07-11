@@ -2,81 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D63D66188
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 00:22:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 968CC661CD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 00:35:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=JWRaeQAsCPPWwaME1i+BK8mXBsHA2KhhgmI3BAxLcOk=; b=IG3
-	8dAKJ6Lzn54f+B35h7lNFkQ0v9YdZfx/wEgupiHyyYy3V4KK140Jc5eY58wIqfwME4KCBc6syeXwt
-	LXEsc6TbAlGR/cfk7w/aTezWi/jfFGhs0Nu76UEasocrl2Vfewhotw+noGJSnx55bXBtK8jeXxJr6
-	amyFGaBVHw5P9OW8n2219v7TuxjHUXHg0yW3a0IBWALuMixu+aYPvetzL4WKvnHuOVa1U+sJCa/79
-	YiZQ0OYpXOMFy6jwt7gVDE7E1vKeWhq1cCnb85S3vjZuuSEHVxYRcyEQHCilEFRjYYbUG3/OqeH10
-	9TG2Mez4+U30e1XX7FCBLmEUAg/cHlw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=JhHxPIAxo1zEE98lB8Jq0fQa8ohbD4A4LL5Nw38+YuE=; b=jr6jCql4RfF13q
+	Dgo8wMWm8Bx0+o7q7wl23rZkzXjHGYKqM2h4w39sNXc45qTEs9jxtCivoCXhHKAf/YISQzckxjWWf
+	29ktNIxXbq2Pp3Gwd5KgDoRQqOQnoZuk+7br/kT8TRmX9kTfp+PRrVgKybYRzW/dbzdAcKDsR90KQ
+	hNKihQgjnGv4CoBPTOQLsUA68RF4syMXB4s1cd8HhoivZHLMEN85Y7ADISvK4GBe0N2gu/6sCcaVM
+	q1asDZcyH3SjKah9gS4Q974LT0LUg3zrhXiXmPgGkY3veD/nbT+hw1hLn6CwL3dupyuRTOg/WdyuV
+	VKnILi0kodF07eASglQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlhRw-0006Gl-4m; Thu, 11 Jul 2019 22:22:00 +0000
-Received: from smtp-fw-2101.amazon.com ([72.21.196.25])
+	id 1hlhf6-0002rV-0P; Thu, 11 Jul 2019 22:35:36 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlhRj-0006GH-5Y
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 22:21:48 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amazon.de; i=@amazon.de; q=dns/txt; s=amazon201209;
- t=1562883707; x=1594419707;
- h=from:to:cc:subject:date:message-id;
- bh=3gnH5RFwGHOCrCZhZO/bJsPHw0TAU3IEAqyti5ky+0M=;
- b=OzfdZJgQvLo4JvbYfcPyASjkf4Uy6b6W7hnDnr66UmHPiF3Pa0ofAA/O
- 9YVTLNSi3u3t+W8Y2s8ndpGwnndCvYQqhOY9ZJ3HA4apkGixUXYHkaR0n
- Xkpgs9JSylyttP1Vw88spYtVMe420eMAqNqxZBuAKjWLR2rkKMV4HWuxB c=;
-X-IronPort-AV: E=Sophos;i="5.62,480,1554768000"; d="scan'208";a="741422169"
-Received: from iad6-co-svc-p1-lb1-vlan2.amazon.com (HELO
- email-inbound-relay-1a-715bee71.us-east-1.amazon.com) ([10.124.125.2])
- by smtp-border-fw-out-2101.iad2.amazon.com with ESMTP;
- 11 Jul 2019 22:21:43 +0000
-Received: from u54e1ad5160425a4b64ea.ant.amazon.com
- (iad7-ws-svc-lb50-vlan2.amazon.com [10.0.93.210])
- by email-inbound-relay-1a-715bee71.us-east-1.amazon.com (Postfix) with ESMTPS
- id 976E5A17B3; Thu, 11 Jul 2019 22:21:38 +0000 (UTC)
-Received: from u54e1ad5160425a4b64ea.ant.amazon.com (localhost [127.0.0.1])
- by u54e1ad5160425a4b64ea.ant.amazon.com (8.15.2/8.15.2/Debian-3) with ESMTP id
- x6BMLYLt019252; Fri, 12 Jul 2019 00:21:34 +0200
-Received: (from karahmed@localhost)
- by u54e1ad5160425a4b64ea.ant.amazon.com (8.15.2/8.15.2/Submit) id
- x6BMLWVb019247; Fri, 12 Jul 2019 00:21:32 +0200
-From: KarimAllah Ahmed <karahmed@amazon.de>
-To: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm: Extend the check for RAM in /dev/mem
-Date: Fri, 12 Jul 2019 00:21:21 +0200
-Message-Id: <1562883681-18659-1-git-send-email-karahmed@amazon.de>
-X-Mailer: git-send-email 2.7.4
-Precedence: Bulk
+ id 1hlheq-0002pw-N8
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 22:35:22 +0000
+Received: by mail-pf1-x443.google.com with SMTP id u14so3412245pfn.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 11 Jul 2019 15:35:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=JFuSIJRy0Q70Lc5eV+IaXCY1aA219ryYcOzrVBKkU0E=;
+ b=moYBXVQNdcwbOXpjrjcF08CcBZwBVJwkfkdTr0eOBL65eVafX0QFVqMjMCp+FRITDv
+ 7EB1E2RgGSpVzF6aBppp97dzW0GlAfTx+wGuGeZM0PrF/ya/7PcxIRQszIK5du3jaVl5
+ G2ACQ3JXo0w2WJl1HWrprNi1KCGHigCG3YNKE=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=JFuSIJRy0Q70Lc5eV+IaXCY1aA219ryYcOzrVBKkU0E=;
+ b=WAxCaBc307wEYU7/SUk4DSrjh4VYpWtsLNct0Omdnz+fT40D+0Fn+vsI/3dAQY2gdC
+ RQpT7/C7PmQU77MwlkVeiqfOL82BVufAfKPSUot3vsWiTyyqbdfS43tdV2sUzpfOUNAA
+ oP+sJE1fT4311KklIIlr8qkcYBVwze2DL4UG5JbaS48hVBxMUadrdAb8uFwfhR3ahoAe
+ oA2rDpvtK512qk/IybL9gLTto3Z+g7P2Qc9ZAaeAmKohV/UW2bI9/XgX1i4bz+p2KY16
+ 0dpmZmv7lrlYufwXIttut8KRAEd16yIMlU9biglJ7WgSdrm/pK3aLDvwQUJfKllh/1y3
+ 013g==
+X-Gm-Message-State: APjAAAVYLQk8cVDF7JnU9v4sw7jrHM+j1yJIFYOueJAZ/z9MQrXJj8Cy
+ 47VNV2hJc8+Olzg+8fzwftMiaA==
+X-Google-Smtp-Source: APXvYqwDJDaouQsBRIqqk+FnUnPQpePxX66GoTx6nErFZlG7We3Vs/MRJTLWEud3VPaRsVDC6eklDw==
+X-Received: by 2002:a17:90a:8c92:: with SMTP id
+ b18mr7328507pjo.97.1562884519120; 
+ Thu, 11 Jul 2019 15:35:19 -0700 (PDT)
+Received: from localhost ([2620:15c:202:1:75a:3f6e:21d:9374])
+ by smtp.gmail.com with ESMTPSA id r7sm7412638pfl.134.2019.07.11.15.35.18
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 11 Jul 2019 15:35:18 -0700 (PDT)
+From: Matthias Kaehlcke <mka@chromium.org>
+To: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH v2 1/2] ARM: dts: rockchip: move rk3288-veryon display
+ settings into a separate file
+Date: Thu, 11 Jul 2019 15:34:54 -0700
+Message-Id: <20190711223455.12210-1-mka@chromium.org>
+X-Mailer: git-send-email 2.22.0.410.gd8fdbe21b5-goog
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_152147_343965_45E3BFEF 
-X-CRM114-Status: GOOD (  13.05  )
-X-Spam-Score: -12.4 (------------)
+X-CRM114-CacheID: sfid-20190711_153520_775774_6D189A1C 
+X-CRM114-Status: GOOD (  15.65  )
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-12.4 points)
+ Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [72.21.196.25 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
+Precedence: list
 List-Id: <linux-arm-kernel.lists.infradead.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=unsubscribe>
@@ -85,78 +96,326 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Enrico Weigelt <info@metux.net>,
- Anders Roxell <anders.roxell@linaro.org>, Yu Zhao <yuzhao@google.com>,
- Anshuman Khandual <anshuman.khandual@arm.com>,
- KarimAllah Ahmed <karahmed@amazon.de>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Russell King <linux@armlinux.org.uk>, Mike Rapoport <rppt@linux.ibm.com>,
- Jun Yao <yaojun8558363@gmail.com>, James Morse <james.morse@arm.com>,
- Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, Robin Murphy <robin.murphy@arm.com>
-MIME-Version: 1.0
+Cc: linux-rockchip@lists.infradead.org, Matthias Kaehlcke <mka@chromium.org>,
+ Douglas Anderson <dianders@chromium.org>, linux-arm-kernel@lists.infradead.org,
+ devicetree@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some valid RAM can live outside kernel control (e.g. using mem= kernel
-command-line). For these regions, pfn_valid would return "false" causing
-system RAM to be mapped as uncached. Use memblock instead to identify RAM.
+The chromebook .dtsi file contains common settings for veyron
+Chromebooks with eDP displays. Some veyron devices with a display
+aren't Chromebooks (e.g. 'tiger' aka 'AOpen Chromebase Mini'), move
+display related bits from the chromebook .dtsi into a separate file
+to avoid redundant DT settings.
 
-Cc: Russell King <linux@armlinux.org.uk>
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will@kernel.org>
-Cc: Mike Rapoport <rppt@linux.ibm.com>
-Cc: Andrew Morton <akpm@linux-foundation.org>
-Cc: Anders Roxell <anders.roxell@linaro.org>
-Cc: Enrico Weigelt <info@metux.net>
-Cc: Thomas Gleixner <tglx@linutronix.de>
-Cc: KarimAllah Ahmed <karahmed@amazon.de>
-Cc: Mark Rutland <mark.rutland@arm.com>
-Cc: James Morse <james.morse@arm.com>
-Cc: Anshuman Khandual <anshuman.khandual@arm.com>
-Cc: Jun Yao <yaojun8558363@gmail.com>
-Cc: Yu Zhao <yuzhao@google.com>
-Cc: Robin Murphy <robin.murphy@arm.com>
-Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
-Signed-off-by: KarimAllah Ahmed <karahmed@amazon.de>
+The new file is included from the chromebook .dtsi and can be
+included by non-Chromebook devices with a display.
+
+Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
 ---
- arch/arm/mm/mmu.c   | 2 +-
- arch/arm64/mm/mmu.c | 2 +-
- 2 files changed, 2 insertions(+), 2 deletions(-)
+Changes in v2:
+- rebased on v5.4-armsoc/dts32 (0d19541e3b45)
+---
+ .../boot/dts/rk3288-veyron-chromebook.dtsi    | 115 +---------------
+ arch/arm/boot/dts/rk3288-veyron-edp.dtsi      | 124 ++++++++++++++++++
+ 2 files changed, 125 insertions(+), 114 deletions(-)
+ create mode 100644 arch/arm/boot/dts/rk3288-veyron-edp.dtsi
 
-diff --git a/arch/arm/mm/mmu.c b/arch/arm/mm/mmu.c
-index 1aa2586..492774b 100644
---- a/arch/arm/mm/mmu.c
-+++ b/arch/arm/mm/mmu.c
-@@ -705,7 +705,7 @@ static void __init build_mem_type_table(void)
- pgprot_t phys_mem_access_prot(struct file *file, unsigned long pfn,
- 			      unsigned long size, pgprot_t vma_prot)
- {
--	if (!pfn_valid(pfn))
-+	if (!memblock_is_memory(__pfn_to_phys(pfn)))
- 		return pgprot_noncached(vma_prot);
- 	else if (file->f_flags & O_SYNC)
- 		return pgprot_writecombine(vma_prot);
-diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
-index 3645f29..cdc3e8e 100644
---- a/arch/arm64/mm/mmu.c
-+++ b/arch/arm64/mm/mmu.c
-@@ -78,7 +78,7 @@ void set_swapper_pgd(pgd_t *pgdp, pgd_t pgd)
- pgprot_t phys_mem_access_prot(struct file *file, unsigned long pfn,
- 			      unsigned long size, pgprot_t vma_prot)
- {
--	if (!pfn_valid(pfn))
-+	if (!memblock_is_memory(__pfn_to_phys(pfn)))
- 		return pgprot_noncached(vma_prot);
- 	else if (file->f_flags & O_SYNC)
- 		return pgprot_writecombine(vma_prot);
+diff --git a/arch/arm/boot/dts/rk3288-veyron-chromebook.dtsi b/arch/arm/boot/dts/rk3288-veyron-chromebook.dtsi
+index 6a28ce345ba0..ffb60f880b39 100644
+--- a/arch/arm/boot/dts/rk3288-veyron-chromebook.dtsi
++++ b/arch/arm/boot/dts/rk3288-veyron-chromebook.dtsi
+@@ -10,6 +10,7 @@
+ #include <dt-bindings/input/input.h>
+ #include "rk3288-veyron.dtsi"
+ #include "rk3288-veyron-analog-audio.dtsi"
++#include "rk3288-veyron-edp.dtsi"
+ #include "rk3288-veyron-sdmmc.dtsi"
+ 
+ / {
+@@ -18,50 +19,6 @@
+ 		i2c20 = &i2c_tunnel;
+ 	};
+ 
+-	backlight: backlight {
+-		compatible = "pwm-backlight";
+-		brightness-levels = <
+-			  0   1   2   3   4   5   6   7
+-			  8   9  10  11  12  13  14  15
+-			 16  17  18  19  20  21  22  23
+-			 24  25  26  27  28  29  30  31
+-			 32  33  34  35  36  37  38  39
+-			 40  41  42  43  44  45  46  47
+-			 48  49  50  51  52  53  54  55
+-			 56  57  58  59  60  61  62  63
+-			 64  65  66  67  68  69  70  71
+-			 72  73  74  75  76  77  78  79
+-			 80  81  82  83  84  85  86  87
+-			 88  89  90  91  92  93  94  95
+-			 96  97  98  99 100 101 102 103
+-			104 105 106 107 108 109 110 111
+-			112 113 114 115 116 117 118 119
+-			120 121 122 123 124 125 126 127
+-			128 129 130 131 132 133 134 135
+-			136 137 138 139 140 141 142 143
+-			144 145 146 147 148 149 150 151
+-			152 153 154 155 156 157 158 159
+-			160 161 162 163 164 165 166 167
+-			168 169 170 171 172 173 174 175
+-			176 177 178 179 180 181 182 183
+-			184 185 186 187 188 189 190 191
+-			192 193 194 195 196 197 198 199
+-			200 201 202 203 204 205 206 207
+-			208 209 210 211 212 213 214 215
+-			216 217 218 219 220 221 222 223
+-			224 225 226 227 228 229 230 231
+-			232 233 234 235 236 237 238 239
+-			240 241 242 243 244 245 246 247
+-			248 249 250 251 252 253 254 255>;
+-		default-brightness-level = <128>;
+-		enable-gpios = <&gpio7 RK_PA2 GPIO_ACTIVE_HIGH>;
+-		pinctrl-names = "default";
+-		pinctrl-0 = <&bl_en>;
+-		pwms = <&pwm0 0 1000000 0>;
+-		post-pwm-on-delay-ms = <10>;
+-		pwm-off-delay-ms = <10>;
+-	};
+-
+ 	gpio-charger {
+ 		compatible = "gpio-charger";
+ 		charger-type = "mains";
+@@ -85,35 +42,6 @@
+ 		};
+ 	};
+ 
+-	panel: panel {
+-		compatible ="innolux,n116bge", "simple-panel";
+-		status = "okay";
+-		power-supply = <&vcc33_lcd>;
+-		backlight = <&backlight>;
+-
+-		panel-timing {
+-			clock-frequency = <74250000>;
+-			hactive = <1366>;
+-			hfront-porch = <136>;
+-			hback-porch = <60>;
+-			hsync-len = <30>;
+-			hsync-active = <0>;
+-			vactive = <768>;
+-			vfront-porch = <8>;
+-			vback-porch = <12>;
+-			vsync-len = <12>;
+-			vsync-active = <0>;
+-		};
+-
+-		ports {
+-			panel_in: port {
+-				panel_in_edp: endpoint {
+-					remote-endpoint = <&edp_out_panel>;
+-				};
+-			};
+-		};
+-	};
+-
+ 	/* A non-regulated voltage from power supply or battery */
+ 	vccsys: vccsys {
+ 		compatible = "regulator-fixed";
+@@ -155,33 +83,6 @@
+ 	};
+ };
+ 
+-&edp {
+-	status = "okay";
+-
+-	pinctrl-names = "default";
+-	pinctrl-0 = <&edp_hpd>;
+-
+-	ports {
+-		edp_out: port@1 {
+-			reg = <1>;
+-			#address-cells = <1>;
+-			#size-cells = <0>;
+-			edp_out_panel: endpoint@0 {
+-				reg = <0>;
+-				remote-endpoint = <&panel_in_edp>;
+-			};
+-		};
+-	};
+-};
+-
+-&edp_phy {
+-	status = "okay";
+-};
+-
+-&pwm0 {
+-	status = "okay";
+-};
+-
+ &rk808 {
+ 	vcc11-supply = <&vcc_5v>;
+ 
+@@ -234,14 +135,6 @@
+ 	};
+ };
+ 
+-&vopl {
+-	status = "okay";
+-};
+-
+-&vopl_mmu {
+-	status = "okay";
+-};
+-
+ &pinctrl {
+ 	pinctrl-0 = <
+ 		/* Common for sleep and wake, but no owners */
+@@ -264,12 +157,6 @@
+ 		&bt_dev_wake_sleep
+ 	>;
+ 
+-	backlight {
+-		bl_en: bl-en {
+-			rockchip,pins = <7 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>;
+-		};
+-	};
+-
+ 	buttons {
+ 		ap_lid_int_l: ap-lid-int-l {
+ 			rockchip,pins = <0 RK_PA6 RK_FUNC_GPIO &pcfg_pull_up>;
+diff --git a/arch/arm/boot/dts/rk3288-veyron-edp.dtsi b/arch/arm/boot/dts/rk3288-veyron-edp.dtsi
+new file mode 100644
+index 000000000000..5d812e9e78aa
+--- /dev/null
++++ b/arch/arm/boot/dts/rk3288-veyron-edp.dtsi
+@@ -0,0 +1,124 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Google Veyron (and derivatives) fragment for the edp displays
++ *
++ * Copyright 2019 Google LLC
++ */
++
++/ {
++	backlight: backlight {
++		compatible = "pwm-backlight";
++		brightness-levels = <
++			  0   1   2   3   4   5   6   7
++			  8   9  10  11  12  13  14  15
++			 16  17  18  19  20  21  22  23
++			 24  25  26  27  28  29  30  31
++			 32  33  34  35  36  37  38  39
++			 40  41  42  43  44  45  46  47
++			 48  49  50  51  52  53  54  55
++			 56  57  58  59  60  61  62  63
++			 64  65  66  67  68  69  70  71
++			 72  73  74  75  76  77  78  79
++			 80  81  82  83  84  85  86  87
++			 88  89  90  91  92  93  94  95
++			 96  97  98  99 100 101 102 103
++			104 105 106 107 108 109 110 111
++			112 113 114 115 116 117 118 119
++			120 121 122 123 124 125 126 127
++			128 129 130 131 132 133 134 135
++			136 137 138 139 140 141 142 143
++			144 145 146 147 148 149 150 151
++			152 153 154 155 156 157 158 159
++			160 161 162 163 164 165 166 167
++			168 169 170 171 172 173 174 175
++			176 177 178 179 180 181 182 183
++			184 185 186 187 188 189 190 191
++			192 193 194 195 196 197 198 199
++			200 201 202 203 204 205 206 207
++			208 209 210 211 212 213 214 215
++			216 217 218 219 220 221 222 223
++			224 225 226 227 228 229 230 231
++			232 233 234 235 236 237 238 239
++			240 241 242 243 244 245 246 247
++			248 249 250 251 252 253 254 255>;
++		default-brightness-level = <128>;
++		enable-gpios = <&gpio7 RK_PA2 GPIO_ACTIVE_HIGH>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&bl_en>;
++		pwms = <&pwm0 0 1000000 0>;
++		post-pwm-on-delay-ms = <10>;
++		pwm-off-delay-ms = <10>;
++	};
++
++	panel: panel {
++		compatible ="innolux,n116bge", "simple-panel";
++		status = "okay";
++		power-supply = <&vcc33_lcd>;
++		backlight = <&backlight>;
++
++		panel-timing {
++			clock-frequency = <74250000>;
++			hactive = <1366>;
++			hfront-porch = <136>;
++			hback-porch = <60>;
++			hsync-len = <30>;
++			hsync-active = <0>;
++			vactive = <768>;
++			vfront-porch = <8>;
++			vback-porch = <12>;
++			vsync-len = <12>;
++			vsync-active = <0>;
++		};
++
++		ports {
++			panel_in: port {
++				panel_in_edp: endpoint {
++					remote-endpoint = <&edp_out_panel>;
++				};
++			};
++		};
++	};
++};
++
++&edp {
++	status = "okay";
++
++	pinctrl-names = "default";
++	pinctrl-0 = <&edp_hpd>;
++
++	ports {
++		edp_out: port@1 {
++			reg = <1>;
++			#address-cells = <1>;
++			#size-cells = <0>;
++			edp_out_panel: endpoint@0 {
++				reg = <0>;
++				remote-endpoint = <&panel_in_edp>;
++			};
++		};
++	};
++};
++
++&edp_phy {
++	status = "okay";
++};
++
++&pinctrl {
++	backlight {
++		bl_en: bl-en {
++			rockchip,pins = <7 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++	};
++};
++
++&pwm0 {
++	status = "okay";
++};
++
++&vopl {
++	status = "okay";
++};
++
++&vopl_mmu {
++	status = "okay";
++};
 -- 
-2.7.4
+2.22.0.410.gd8fdbe21b5-goog
 
 
 _______________________________________________
