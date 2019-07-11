@@ -2,82 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 624AA661D0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 00:36:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B9FA661F9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 00:49:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ywt5g+PQ9zLI9MYO+O2xkx6CUGRPbpjXq0evZ5YvCIw=; b=NMdf/cY5YhNTkU
-	juhU3Drqjauundu5+sssZzORll7TSOAup5Iu2dIOxU/xxCg3VtnnS7Edn8fs3dc2eOjnDbdK9cXZ4
-	2wxYwYoL4js09vDLqL0NJGC7AGwfJZiVFV7Km1xOXU2stHxW6tPMNnLjFbBt3SjxcUwp6p947tlBN
-	cNncRlrxkChocY/MEfVeLCkz+FUp6hl/I80m9phD1S2l+SowF5lupRwdI843G3e7eQp4TuXLHapxW
-	YfXHd4apjGb1xRarB0u58CSpL+BBwKTD05VWw5uYOd0NPEzupvtoaXQcUvbp7bB6XZPUEoM1a5rol
-	uoYv1XVg/UqK55v8SHvQ==;
+	List-Owner; bh=x7eduO4pjaDCqQWUocCMf+hur0lCLXGwhwj0yaWtVAg=; b=clNRloJIx7iPgL
+	P9z2PLm3ADvXE+HaYQmtIwfG4NLST7GVxaEo8oVsdmZEmp0RpqaorF0R/d/szk7+CgYHhf+PPsX1K
+	+gyD3wdlbetF3f516BYwZm5iC8goMc2s8ePUXAhWvdgDJPWelX/Auegg/hZlY+DwbSopehanJiWU6
+	osYlosfbEVLrRb0i8iS0byZWT479aLz81urThuErWtoD4D8Qq6tGTcHhAofdG55lv+iGAiHlPq3qs
+	EPquwwBtFvq5faNTQLPe8C5DIDfcN9yhZpSECTYBjPn2ND1yLsFXBHXXASuiuARirkSivXoTxKBk6
+	qGGRA5D/MwOyVuHXj33Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlhfQ-000346-Tr; Thu, 11 Jul 2019 22:35:57 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1hlhsh-0007b9-Gu; Thu, 11 Jul 2019 22:49:39 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlhes-0002qT-6T
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 22:35:24 +0000
-Received: by mail-pl1-x643.google.com with SMTP id az7so3758871plb.5
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 11 Jul 2019 15:35:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=Dz0KnHgWpyKz8NfSR138KX/PtrwhvrlzsrqJp04ekYY=;
- b=lka+F9IslSN3mtvNCCSePgEMXyqpd/Ck10y50EErd3zK1yLIYMicqvXvZV+663GQZL
- TR/2+07Fy8SK4hLNzWAn6hhgBzRyFPFuyOVpXek/mVIx9QNlsy4akPcHjVJyGC2cM8oI
- mc06eXt5qv3rJO+RtwS9xWIrDWGmqIsrIwByQ=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=Dz0KnHgWpyKz8NfSR138KX/PtrwhvrlzsrqJp04ekYY=;
- b=YNPN9eYkbK3zc/O8tEt96exp2Rcct7E2tlLpyulw2M+Iu+drTAdBgL1RBk31LPuni3
- 3cdwBVBadJd0gwGnE+zR0rySB8e67YWWTY1S026Nd1wqLdDdImGVWfGTsl8Y0I5xHxsy
- WLGJuNE7XLA9AkUU3dPpZ2zYD8y4Gkm3T2sodb0tJ6KPYSnC0NxLC3dWjEMblX70q66B
- h3eld31NHUI44cOrx6ObGplYM73xZkxQdFWTulPw3b5/1YVHDBQK5rjUAGUkUMnrwAfA
- UVRZn35y0QpQbeMRD1nyvF03mrcHMJz2cuku0/u4kgNpz26rwTJBacKbl/rmF3V1taL1
- oPbQ==
-X-Gm-Message-State: APjAAAWV4RaolqxMl+CQ9ZHK+GtljUdWDZglPJKViWBy1w8uMan2yfI1
- 42UmEX3btVysp10Y+VQ/oryIsg==
-X-Google-Smtp-Source: APXvYqywkD2qW/nNSCx42LT9JWEmpwfeT9s7L6iB8oof9B5AyJgOsF2cBXbEwe3JRA5ZnKZ4oKSYjA==
-X-Received: by 2002:a17:902:7781:: with SMTP id
- o1mr7320713pll.205.1562884521192; 
- Thu, 11 Jul 2019 15:35:21 -0700 (PDT)
-Received: from localhost ([2620:15c:202:1:75a:3f6e:21d:9374])
- by smtp.gmail.com with ESMTPSA id i14sm12003623pfk.0.2019.07.11.15.35.20
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 11 Jul 2019 15:35:20 -0700 (PDT)
-From: Matthias Kaehlcke <mka@chromium.org>
-To: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v2 2/2] ARM: dts: rockchip: consolidate veyron panel and
- backlight settings
-Date: Thu, 11 Jul 2019 15:34:55 -0700
-Message-Id: <20190711223455.12210-2-mka@chromium.org>
-X-Mailer: git-send-email 2.22.0.410.gd8fdbe21b5-goog
-In-Reply-To: <20190711223455.12210-1-mka@chromium.org>
-References: <20190711223455.12210-1-mka@chromium.org>
-MIME-Version: 1.0
+ id 1hlhsR-0007Zk-4S; Thu, 11 Jul 2019 22:49:24 +0000
+Received: from devnote2 (NE2965lan1.rev.em-net.ne.jp [210.141.244.193])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 08517214AF;
+ Thu, 11 Jul 2019 22:49:10 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1562885360;
+ bh=F0692oM20SJBi7lipGMWh8asP30aK1zY5Sdre9epQkE=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=L5Z9krLKI9nSy8tV3IzQalqBtpWXJWdMFlfaOUH+MjmcE0DMgIpRaPSkSpkAbMLkd
+ uYrReV24XpvMXXctVHHhCVZoyvjIhmkxGWE0i9pTGAjZZOKxa/jhEhzpyccUp6UubU
+ qBgK/iWqdautlONEQXJ6DpjMNy3+xr026DqMOj9E=
+Date: Fri, 12 Jul 2019 07:49:07 +0900
+From: Masami Hiramatsu <mhiramat@kernel.org>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH] mm/kprobes: Add generic kprobe_fault_handler() fallback
+ definition
+Message-Id: <20190712074907.1ab08841e77b6cc867396148@kernel.org>
+In-Reply-To: <3aee1f30-241c-d1c2-2ff5-ff521db47755@arm.com>
+References: <1562304629-29376-1-git-send-email-anshuman.khandual@arm.com>
+ <20190705193028.f9e08fe9cf1ee86bc5c0bb82@kernel.org>
+ <3aee1f30-241c-d1c2-2ff5-ff521db47755@arm.com>
+X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_153522_237782_91ED781B 
-X-CRM114-Status: GOOD (  15.09  )
-X-Spam-Score: 1.1 (+)
+X-CRM114-CacheID: sfid-20190711_154923_216039_840779B2 
+X-CRM114-Status: GOOD (  31.67  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.1 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -85,7 +65,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -98,506 +77,191 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, Matthias Kaehlcke <mka@chromium.org>,
- Douglas Anderson <dianders@chromium.org>, linux-arm-kernel@lists.infradead.org,
- devicetree@vger.kernel.org
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ Mark Rutland <mark.rutland@arm.com>, Rich Felker <dalias@libc.org>,
+ linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, linux-mips@vger.kernel.org,
+ linux-mm@kvack.org, Paul Mackerras <paulus@samba.org>,
+ "H. Peter Anvin" <hpa@zytor.com>, sparclinux@vger.kernel.org,
+ Will Deacon <will@kernel.org>, linux-s390@vger.kernel.org,
+ Yoshinori Sato <ysato@users.sourceforge.jp>,
+ Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
+ Russell King <linux@armlinux.org.uk>,
+ Anil S Keshavamurthy <anil.s.keshavamurthy@intel.com>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Catalin Marinas <catalin.marinas@arm.com>, James Hogan <jhogan@kernel.org>,
+ linux-snps-arc@lists.infradead.org, Guenter Roeck <linux@roeck-us.net>,
+ Fenghua Yu <fenghua.yu@intel.com>, Vasily Gorbik <gor@linux.ibm.com>,
+ linuxppc-dev@lists.ozlabs.org, "Naveen N. Rao" <naveen.n.rao@linux.ibm.com>,
+ Borislav Petkov <bp@alien8.de>, Thomas Gleixner <tglx@linutronix.de>,
+ Allison Randal <allison@lohutok.net>, Tony Luck <tony.luck@intel.com>,
+ Richard Fontana <rfontana@redhat.com>, Vineet Gupta <vgupta@synopsys.com>,
+ linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
+ Paul Burton <paul.burton@mips.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Andrew Morton <akpm@linux-foundation.org>, Enrico Weigelt <info@metux.net>,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-veyron jaq, jerry, minnie and speedy have mostly redundant regulator
-and pinctrl configurations for the panel/backlight. Consolidate these
-pieces in the eDP .dtsi.
+Hi Anshuman,
 
-Also change the default power supply for the panel to
-'panel_regulator', instead of overriding it in all the board files.
-pinky is the only device that uses 'vcc33_lcd' (the prior default),
-so overwrite it in this case. pinky doesn't have a complete display
-configuration, to keep things as they were delete the common nodes
-that didn't exist previously in pinky's board file.
+On Mon, 8 Jul 2019 09:03:13 +0530
+Anshuman Khandual <anshuman.khandual@arm.com> wrote:
 
-Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
----
-Changes in v2:
-- rebased on v5.4-armsoc/dts32 (0d19541e3b45)
----
- arch/arm/boot/dts/rk3288-veyron-edp.dtsi   | 51 ++++++++++++++++++-
- arch/arm/boot/dts/rk3288-veyron-jaq.dts    | 55 --------------------
- arch/arm/boot/dts/rk3288-veyron-jerry.dts  | 58 ----------------------
- arch/arm/boot/dts/rk3288-veyron-minnie.dts | 51 -------------------
- arch/arm/boot/dts/rk3288-veyron-pinky.dts  | 17 +++++++
- arch/arm/boot/dts/rk3288-veyron-speedy.dts | 58 ----------------------
- 6 files changed, 67 insertions(+), 223 deletions(-)
+> >> Architectures like parisc enable CONFIG_KROBES without having a definition
+> >> for kprobe_fault_handler() which results in a build failure.
+> > 
+> > Hmm, as far as I can see, kprobe_fault_handler() is closed inside each arch
+> > specific code. The reason why include/linux/kprobes.h defines
+> > dummy inline function is only for !CONFIG_KPROBES case.
+> 
+> IIRC Andrew mentioned [1] that we should remove this stub from the generic kprobes
+> header because this is very much architecture specific. As we see in this proposed
+> patch, except x86 there is no other current user which actually calls this from
+> some where when CONFIG_KPROBES is not enabled.
+> 
+> [1] https://www.spinics.net/lists/linux-mm/msg182649.html
 
-diff --git a/arch/arm/boot/dts/rk3288-veyron-edp.dtsi b/arch/arm/boot/dts/rk3288-veyron-edp.dtsi
-index 5d812e9e78aa..39f56d36a701 100644
---- a/arch/arm/boot/dts/rk3288-veyron-edp.dtsi
-+++ b/arch/arm/boot/dts/rk3288-veyron-edp.dtsi
-@@ -6,6 +6,40 @@
-  */
- 
- / {
-+	backlight_regulator: backlight-regulator {
-+		compatible = "regulator-fixed";
-+		enable-active-high;
-+		gpio = <&gpio2 RK_PB4 GPIO_ACTIVE_HIGH>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&bl_pwr_en>;
-+		regulator-name = "backlight_regulator";
-+		vin-supply = <&vcc33_sys>;
-+		startup-delay-us = <15000>;
-+	};
-+
-+	panel_regulator: panel-regulator {
-+		compatible = "regulator-fixed";
-+		enable-active-high;
-+		gpio = <&gpio7 RK_PB6 GPIO_ACTIVE_HIGH>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&lcd_enable_h>;
-+		regulator-name = "panel_regulator";
-+		startup-delay-us = <100000>;
-+		vin-supply = <&vcc33_sys>;
-+	};
-+
-+	vcc18_lcd: vcc18-lcd {
-+		compatible = "regulator-fixed";
-+		enable-active-high;
-+		gpio = <&gpio2 RK_PB5 GPIO_ACTIVE_HIGH>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&avdd_1v8_disp_en>;
-+		regulator-name = "vcc18_lcd";
-+		regulator-always-on;
-+		regulator-boot-on;
-+		vin-supply = <&vcc18_wl>;
-+	};
-+
- 	backlight: backlight {
- 		compatible = "pwm-backlight";
- 		brightness-levels = <
-@@ -48,12 +82,13 @@
- 		pwms = <&pwm0 0 1000000 0>;
- 		post-pwm-on-delay-ms = <10>;
- 		pwm-off-delay-ms = <10>;
-+		power-supply = <&backlight_regulator>;
- 	};
- 
- 	panel: panel {
- 		compatible ="innolux,n116bge", "simple-panel";
- 		status = "okay";
--		power-supply = <&vcc33_lcd>;
-+		power-supply = <&panel_regulator>;
- 		backlight = <&backlight>;
- 
- 		panel-timing {
-@@ -105,10 +140,24 @@
- 
- &pinctrl {
- 	backlight {
-+		bl_pwr_en: bl_pwr_en {
-+			rockchip,pins = <2 RK_PB4 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+
- 		bl_en: bl-en {
- 			rockchip,pins = <7 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>;
- 		};
- 	};
-+
-+	lcd {
-+		lcd_enable_h: lcd-en {
-+			rockchip,pins = <7 RK_PB6 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+
-+		avdd_1v8_disp_en: avdd-1v8-disp-en {
-+			rockchip,pins = <2 RK_PB5 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+	};
- };
- 
- &pwm0 {
-diff --git a/arch/arm/boot/dts/rk3288-veyron-jaq.dts b/arch/arm/boot/dts/rk3288-veyron-jaq.dts
-index fcd119168cb6..80386203e85b 100644
---- a/arch/arm/boot/dts/rk3288-veyron-jaq.dts
-+++ b/arch/arm/boot/dts/rk3288-veyron-jaq.dts
-@@ -16,40 +16,6 @@
- 		     "google,veyron-jaq-rev3", "google,veyron-jaq-rev2",
- 		     "google,veyron-jaq-rev1", "google,veyron-jaq",
- 		     "google,veyron", "rockchip,rk3288";
--
--	panel_regulator: panel-regulator {
--		compatible = "regulator-fixed";
--		enable-active-high;
--		gpio = <&gpio7 RK_PB6 GPIO_ACTIVE_HIGH>;
--		pinctrl-names = "default";
--		pinctrl-0 = <&lcd_enable_h>;
--		regulator-name = "panel_regulator";
--		startup-delay-us = <100000>;
--		vin-supply = <&vcc33_sys>;
--	};
--
--	vcc18_lcd: vcc18-lcd {
--		compatible = "regulator-fixed";
--		enable-active-high;
--		gpio = <&gpio2 RK_PB5 GPIO_ACTIVE_HIGH>;
--		pinctrl-names = "default";
--		pinctrl-0 = <&avdd_1v8_disp_en>;
--		regulator-name = "vcc18_lcd";
--		regulator-always-on;
--		regulator-boot-on;
--		vin-supply = <&vcc18_wl>;
--	};
--
--	backlight_regulator: backlight-regulator {
--		compatible = "regulator-fixed";
--		enable-active-high;
--		gpio = <&gpio2 RK_PB4 GPIO_ACTIVE_HIGH>;
--		pinctrl-names = "default";
--		pinctrl-0 = <&bl_pwr_en>;
--		regulator-name = "backlight_regulator";
--		vin-supply = <&vcc33_sys>;
--		startup-delay-us = <15000>;
--	};
- };
- 
- &backlight {
-@@ -87,11 +53,6 @@
- 		232 233 234 235 236 237 238 239
- 		240 241 242 243 244 245 246 247
- 		248 249 250 251 252 253 254 255>;
--	power-supply = <&backlight_regulator>;
--};
--
--&panel {
--	power-supply = <&panel_regulator>;
- };
- 
- &rk808 {
-@@ -343,12 +304,6 @@
- };
- 
- &pinctrl {
--	backlight {
--		bl_pwr_en: bl_pwr_en {
--			rockchip,pins = <2 RK_PB4 RK_FUNC_GPIO &pcfg_pull_none>;
--		};
--	};
--
- 	buck-5v {
- 		drv_5v: drv-5v {
- 			rockchip,pins = <7 RK_PC5 RK_FUNC_GPIO &pcfg_pull_none>;
-@@ -361,16 +316,6 @@
- 		};
- 	};
- 
--	lcd {
--		lcd_enable_h: lcd-en {
--			rockchip,pins = <7 RK_PB6 RK_FUNC_GPIO &pcfg_pull_none>;
--		};
--
--		avdd_1v8_disp_en: avdd-1v8-disp-en {
--			rockchip,pins = <2 RK_PB5 RK_FUNC_GPIO &pcfg_pull_none>;
--		};
--	};
--
- 	pmic {
- 		dvs_1: dvs-1 {
- 			rockchip,pins = <7 RK_PB4 RK_FUNC_GPIO &pcfg_pull_down>;
-diff --git a/arch/arm/boot/dts/rk3288-veyron-jerry.dts b/arch/arm/boot/dts/rk3288-veyron-jerry.dts
-index 164561f04c1d..a8f55aec09ee 100644
---- a/arch/arm/boot/dts/rk3288-veyron-jerry.dts
-+++ b/arch/arm/boot/dts/rk3288-veyron-jerry.dts
-@@ -18,48 +18,6 @@
- 		     "google,veyron-jerry-rev5", "google,veyron-jerry-rev4",
- 		     "google,veyron-jerry-rev3", "google,veyron-jerry",
- 		     "google,veyron", "rockchip,rk3288";
--
--	panel_regulator: panel-regulator {
--		compatible = "regulator-fixed";
--		enable-active-high;
--		gpio = <&gpio7 RK_PB6 GPIO_ACTIVE_HIGH>;
--		pinctrl-names = "default";
--		pinctrl-0 = <&lcd_enable_h>;
--		regulator-name = "panel_regulator";
--		startup-delay-us = <100000>;
--		vin-supply = <&vcc33_sys>;
--	};
--
--	vcc18_lcd: vcc18-lcd {
--		compatible = "regulator-fixed";
--		enable-active-high;
--		gpio = <&gpio2 RK_PB5 GPIO_ACTIVE_HIGH>;
--		pinctrl-names = "default";
--		pinctrl-0 = <&avdd_1v8_disp_en>;
--		regulator-name = "vcc18_lcd";
--		regulator-always-on;
--		regulator-boot-on;
--		vin-supply = <&vcc18_wl>;
--	};
--
--	backlight_regulator: backlight-regulator {
--		compatible = "regulator-fixed";
--		enable-active-high;
--		gpio = <&gpio2 RK_PB4 GPIO_ACTIVE_HIGH>;
--		pinctrl-names = "default";
--		pinctrl-0 = <&bl_pwr_en>;
--		regulator-name = "backlight_regulator";
--		vin-supply = <&vcc33_sys>;
--		startup-delay-us = <15000>;
--	};
--};
--
--&backlight {
--	power-supply = <&backlight_regulator>;
--};
--
--&panel {
--	power-supply= <&panel_regulator>;
- };
- 
- &rk808 {
-@@ -311,12 +269,6 @@
- };
- 
- &pinctrl {
--	backlight {
--		bl_pwr_en: bl_pwr_en {
--			rockchip,pins = <2 RK_PB4 RK_FUNC_GPIO &pcfg_pull_none>;
--		};
--	};
--
- 	buck-5v {
- 		drv_5v: drv-5v {
- 			rockchip,pins = <7 RK_PC5 RK_FUNC_GPIO &pcfg_pull_none>;
-@@ -329,16 +281,6 @@
- 		};
- 	};
- 
--	lcd {
--		lcd_enable_h: lcd-en {
--			rockchip,pins = <7 RK_PB6 RK_FUNC_GPIO &pcfg_pull_none>;
--		};
--
--		avdd_1v8_disp_en: avdd-1v8-disp-en {
--			rockchip,pins = <2 RK_PB5 RK_FUNC_GPIO &pcfg_pull_none>;
--		};
--	};
--
- 	pmic {
- 		dvs_1: dvs-1 {
- 			rockchip,pins = <7 RK_PB4 RK_FUNC_GPIO &pcfg_pull_down>;
-diff --git a/arch/arm/boot/dts/rk3288-veyron-minnie.dts b/arch/arm/boot/dts/rk3288-veyron-minnie.dts
-index 4cc7d3659484..2b0801a539c9 100644
---- a/arch/arm/boot/dts/rk3288-veyron-minnie.dts
-+++ b/arch/arm/boot/dts/rk3288-veyron-minnie.dts
-@@ -15,40 +15,6 @@
- 		     "google,veyron-minnie-rev0", "google,veyron-minnie",
- 		     "google,veyron", "rockchip,rk3288";
- 
--	backlight_regulator: backlight-regulator {
--		compatible = "regulator-fixed";
--		enable-active-high;
--		gpio = <&gpio2 RK_PB4 GPIO_ACTIVE_HIGH>;
--		pinctrl-names = "default";
--		pinctrl-0 = <&bl_pwr_en>;
--		regulator-name = "backlight_regulator";
--		vin-supply = <&vcc33_sys>;
--		startup-delay-us = <15000>;
--	};
--
--	panel_regulator: panel-regulator {
--		compatible = "regulator-fixed";
--		enable-active-high;
--		gpio = <&gpio7 RK_PB6 GPIO_ACTIVE_HIGH>;
--		pinctrl-names = "default";
--		pinctrl-0 = <&lcd_enable_h>;
--		regulator-name = "panel_regulator";
--		startup-delay-us = <100000>;
--		vin-supply = <&vcc33_sys>;
--	};
--
--	vcc18_lcd: vcc18-lcd {
--		compatible = "regulator-fixed";
--		enable-active-high;
--		gpio = <&gpio2 RK_PB5 GPIO_ACTIVE_HIGH>;
--		pinctrl-names = "default";
--		pinctrl-0 = <&avdd_1v8_disp_en>;
--		regulator-name = "vcc18_lcd";
--		regulator-always-on;
--		regulator-boot-on;
--		vin-supply = <&vcc18_wl>;
--	};
--
- 	volume_buttons: volume-buttons {
- 		compatible = "gpio-keys";
- 		pinctrl-names = "default";
-@@ -137,7 +103,6 @@
- 
- &panel {
- 	compatible = "auo,b101ean01", "simple-panel";
--	power-supply= <&panel_regulator>;
- 
- 	/delete-node/ panel-timing;
- 
-@@ -411,12 +376,6 @@
- };
- 
- &pinctrl {
--	backlight {
--		bl_pwr_en: bl_pwr_en {
--			rockchip,pins = <2 RK_PB4 RK_FUNC_GPIO &pcfg_pull_none>;
--		};
--	};
--
- 	buck-5v {
- 		drv_5v: drv-5v {
- 			rockchip,pins = <7 RK_PC5 RK_FUNC_GPIO &pcfg_pull_none>;
-@@ -439,16 +398,6 @@
- 		};
- 	};
- 
--	lcd {
--		lcd_enable_h: lcd-en {
--			rockchip,pins = <7 RK_PB6 RK_FUNC_GPIO &pcfg_pull_none>;
--		};
--
--		avdd_1v8_disp_en: avdd-1v8-disp-en {
--			rockchip,pins = <2 RK_PB5 RK_FUNC_GPIO &pcfg_pull_none>;
--		};
--	};
--
- 	pmic {
- 		dvs_1: dvs-1 {
- 			rockchip,pins = <7 RK_PB4 RK_FUNC_GPIO &pcfg_pull_down>;
-diff --git a/arch/arm/boot/dts/rk3288-veyron-pinky.dts b/arch/arm/boot/dts/rk3288-veyron-pinky.dts
-index 9b6f4d9b03b6..06af58e37a4b 100644
---- a/arch/arm/boot/dts/rk3288-veyron-pinky.dts
-+++ b/arch/arm/boot/dts/rk3288-veyron-pinky.dts
-@@ -14,7 +14,14 @@
- 	compatible = "google,veyron-pinky-rev2", "google,veyron-pinky",
- 		     "google,veyron", "rockchip,rk3288";
- 
-+	/delete-node/backlight-regulator;
-+	/delete-node/panel-regulator;
- 	/delete-node/emmc-pwrseq;
-+	/delete-node/vcc18-lcd;
-+};
-+
-+&backlight {
-+	/delete-property/power-supply;
- };
- 
- &emmc {
-@@ -52,7 +59,17 @@
- 	i2c-scl-rising-time-ns = <300>;
- };
- 
-+&panel {
-+	power-supply= <&vcc33_lcd>;
-+};
-+
- &pinctrl {
-+	/delete-node/ lcd;
-+
-+	backlight {
-+		/delete-node/ bl_pwr_en;
-+	};
-+
- 	buttons {
- 		pwr_key_h: pwr-key-h {
- 			rockchip,pins = <0 RK_PA5 RK_FUNC_GPIO &pcfg_pull_none>;
-diff --git a/arch/arm/boot/dts/rk3288-veyron-speedy.dts b/arch/arm/boot/dts/rk3288-veyron-speedy.dts
-index 9b140db04456..2f2989bc3f9c 100644
---- a/arch/arm/boot/dts/rk3288-veyron-speedy.dts
-+++ b/arch/arm/boot/dts/rk3288-veyron-speedy.dts
-@@ -16,44 +16,6 @@
- 		     "google,veyron-speedy-rev5", "google,veyron-speedy-rev4",
- 		     "google,veyron-speedy-rev3", "google,veyron-speedy-rev2",
- 		     "google,veyron-speedy", "google,veyron", "rockchip,rk3288";
--
--	panel_regulator: panel-regulator {
--		compatible = "regulator-fixed";
--		enable-active-high;
--		gpio = <&gpio7 RK_PB6 GPIO_ACTIVE_HIGH>;
--		pinctrl-names = "default";
--		pinctrl-0 = <&lcd_enable_h>;
--		regulator-name = "panel_regulator";
--		startup-delay-us = <100000>;
--		vin-supply = <&vcc33_sys>;
--	};
--
--	vcc18_lcd: vcc18-lcd {
--		compatible = "regulator-fixed";
--		enable-active-high;
--		gpio = <&gpio2 RK_PB5 GPIO_ACTIVE_HIGH>;
--		pinctrl-names = "default";
--		pinctrl-0 = <&avdd_1v8_disp_en>;
--		regulator-name = "vcc18_lcd";
--		regulator-always-on;
--		regulator-boot-on;
--		vin-supply = <&vcc18_wl>;
--	};
--
--	backlight_regulator: backlight-regulator {
--		compatible = "regulator-fixed";
--		enable-active-high;
--		gpio = <&gpio2 RK_PB4 GPIO_ACTIVE_HIGH>;
--		pinctrl-names = "default";
--		pinctrl-0 = <&bl_pwr_en>;
--		regulator-name = "backlight_regulator";
--		vin-supply = <&vcc33_sys>;
--		startup-delay-us = <15000>;
--	};
--};
--
--&backlight {
--	power-supply = <&backlight_regulator>;
- };
- 
- &cpu_alert0 {
-@@ -83,10 +45,6 @@
- 	temperature = <90000>;
- };
- 
--&panel {
--	power-supply= <&panel_regulator>;
--};
--
- &rk808 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pmic_int_l>;
-@@ -321,12 +279,6 @@
- };
- 
- &pinctrl {
--	backlight {
--		bl_pwr_en: bl_pwr_en {
--			rockchip,pins = <2 RK_PB4 RK_FUNC_GPIO &pcfg_pull_none>;
--		};
--	};
--
- 	buck-5v {
- 		drv_5v: drv-5v {
- 			rockchip,pins = <7 RK_PC5 RK_FUNC_GPIO &pcfg_pull_none>;
-@@ -339,16 +291,6 @@
- 		};
- 	};
- 
--	lcd {
--		lcd_enable_h: lcd-en {
--			rockchip,pins = <7 RK_PB6 RK_FUNC_GPIO &pcfg_pull_none>;
--		};
--
--		avdd_1v8_disp_en: avdd-1v8-disp-en {
--			rockchip,pins = <2 RK_PB5 RK_FUNC_GPIO &pcfg_pull_none>;
--		};
--	};
--
- 	pmic {
- 		dvs_1: dvs-1 {
- 			rockchip,pins = <7 RK_PB4 RK_FUNC_GPIO &pcfg_pull_down>;
+Ah, OK. I saw another branch. Also, this is a bugfix patch against
+commit 4dd635bce90e ("mm, kprobes: generalize and rename notify_page_fault() as
+ kprobe_page_fault()"), please add Fixes: tag on it.
+
+In this case, we should just add a prototype of kprobe_fault_handler() in
+include/linux/kprobes.h, and maybe add a stub of kprobe_fault_handler()
+as a weak function, something like below.
+
+int __weak kprobe_fault_handler(struct pt_regs *regs, int trapnr)
+{
+	/*
+	 * Each architecture which uses kprobe_page_fault() must define
+	 * a fault handler to handle page fault in kprobe correctly.
+	 */
+	WARN_ON_ONCE(1);
+	return 0;
+}
+
+> >> Arch needs to
+> >> provide kprobe_fault_handler() as it is platform specific and cannot have
+> >> a generic working alternative. But in the event when platform lacks such a
+> >> definition there needs to be a fallback.
+> > 
+> > Wait, indeed that each arch need to implement it, but that is for calling
+> > kprobe->fault_handler() as user expected.
+> > Hmm, why not fixing those architecture implementations?
+> 
+> After the recent change which introduced a generic kprobe_page_fault() every
+> architecture enabling CONFIG_KPROBES must have a kprobe_fault_handler() which
+> was not the case earlier.
+
+As far as I can see, gcc complains it because there is no prototype of
+kprobe_fault_handler(). Actually no need to define empty kprobe_fault_handler()
+on each arch. If we have a prototype, but no actual function, gcc stops the
+error unless the arch depending code uses it. So actually, we don't need above
+__weak function.
+
+> Architectures like parisc which does enable KPROBES but
+> never used (kprobe_page_fault or kprobe->fault_handler) kprobe_fault_handler() now
+> needs one as well.
+
+(Hmm, it sounds like the kprobes porting is incomplete on parisc...)
+
+> I am not sure and will probably require inputs from arch parsic
+> folks whether it at all needs one. We dont have a stub or fallback definition for
+> kprobe_fault_handler() when CONFIG_KPROBES is enabled just to prevent a build
+> failure in such cases.
+
+Yeah, that is a bug, and fixed by adding a prototype, not introducing new macro.
+
+> 
+> In such a situation it might be better defining a stub symbol fallback than to try
+> to implement one definition which the architecture previously never needed or used.
+> AFAICS there is no generic MM callers for kprobe_fault_handler() as well which would
+> have made it mandatory for parisc to define a real one.
+> 
+> > 
+> >> This adds a stub kprobe_fault_handler() definition which not only prevents
+> >> a build failure but also makes sure that kprobe_page_fault() if called will
+> >> always return negative in absence of a sane platform specific alternative.
+> > 
+> > I don't like introducing this complicated macro only for avoiding (not fixing)
+> > build error. To fix that, kprobes on parisc should implement kprobe_fault_handler
+> > correctly (and call kprobe->fault_handler).
+> 
+> As I mentioned before parsic might not need a real one. But you are right this
+> complicated (if perceived as such) change can be just avoided at least for the
+> build failure problem by just defining a stub definition kprobe_fault_handler()
+> for arch parsic when CONFIG_KPROBES is enabled. But this patch does some more
+> and solves the kprobe_fault_handler() symbol dependency in a more generic way and
+> forces kprobe_page_fault() to fail in absence a real arch kprobe_fault_handler().
+> Is not it worth solving in this way ?
+> 
+> > 
+> > BTW, even if you need such generic stub, please use a weak function instead
+> > of macros for every arch headers.
+> 
+> There is a bit problem with that. The existing definitions are with different
+> signatures and an weak function will need them to be exact same for override
+> requiring more code changes. Hence choose to go with a macro in each header.
+> 
+> arch/arc/include/asm/kprobes.h:int kprobe_fault_handler(struct pt_regs *regs, unsigned long cause);
+> arch/arm/include/asm/kprobes.h:int kprobe_fault_handler(struct pt_regs *regs, unsigned int fsr);
+> arch/arm64/include/asm/kprobes.h:int kprobe_fault_handler(struct pt_regs *regs, unsigned int fsr);
+> arch/ia64/include/asm/kprobes.h:extern int kprobe_fault_handler(struct pt_regs *regs, int trapnr);
+> arch/powerpc/include/asm/kprobes.h:extern int kprobe_fault_handler(struct pt_regs *regs, int trapnr);
+> arch/s390/include/asm/kprobes.h:int kprobe_fault_handler(struct pt_regs *regs, int trapnr);
+> arch/sh/include/asm/kprobes.h:extern int kprobe_fault_handler(struct pt_regs *regs, int trapnr);
+> arch/sparc/include/asm/kprobes.h:int kprobe_fault_handler(struct pt_regs *regs, int trapnr);
+> arch/x86/include/asm/kprobes.h:extern int kprobe_fault_handler(struct pt_regs *regs, int trapnr);
+
+OK, in that case, original commit is wrong way. it should be reverted and
+should introduce something like below
+
+
+/* Returns true if arch should call kprobes_fault_handler() */
+static nokprobe_inline bool is_kprobe_page_fault(struct pt_regs *regs)
+{
+	if (!kprobes_built_in())
+		return false;
+	if (user_mode(regs))
+		return false;
+	/*
+	 * To be potentially processing a kprobe fault and to be allowed
+	 * to call kprobe_running(), we have to be non-preemptible.
+	 */
+	if (preemptible())
+		return false;
+	if (!kprobe_running())
+		return false;
+	return true;
+}
+
+Since it silently casts the type of trapnr, which is strongly depends
+on architecture.
+
+> >> While here wrap kprobe_page_fault() in CONFIG_KPROBES. This enables stud
+> >> definitions for generic kporbe_fault_handler() and kprobes_built_in() can
+> >> just be dropped. Only on x86 it needs to be added back locally as it gets
+> >> used in a !CONFIG_KPROBES function do_general_protection().
+> > 
+> > If you want to remove kprobes_built_in(), you should replace it with
+> > IS_ENABLED(CONFIG_KPROBES), instead of this...
+> 
+> Apart from kprobes_built_in() the intent was to remove !CONFIG_KPROBES
+> stub for kprobe_fault_handler() as well which required making generic
+> kprobe_page_fault() to be empty in such case.
+
+No, I meant that "IS_ENABLED(CONFIG_KPROBES)" is generic and is equal to
+what kprobes_built_in() does.
+
+Thank you,
+
 -- 
-2.22.0.410.gd8fdbe21b5-goog
-
+Masami Hiramatsu <mhiramat@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
