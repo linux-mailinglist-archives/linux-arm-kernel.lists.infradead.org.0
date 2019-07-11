@@ -2,55 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 64064656A6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 14:18:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3DEAA6569F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 14:16:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W6vMmfy5f0G/UTG14QPpKkmyKUO+Hs6pmpG78bWTJ0w=; b=L86syDSW05B6R9
-	P4MvYy6voUPxp88l4Omfkh2dYM+ooCWR/stgklZc1hDOPwNiqDcBQ3Ea2GtO9xA4UhTsCnGA29e1Q
-	qaq42kGMAuU4deOstst8u71o6TrvgsMTL05twStZ4TVAEEb8F9PIqouLyHPamXnFJv/ZZPllfnXUp
-	iC5vOVN1jqjsD4lcMhLKjfkAVSb7AlCZSuaMadgUaKQQShDixOSvTQeh+ymCWrerwdOP2AJsqwgXy
-	OQoeQHMe8EF3X4rZ8Y0GcftaCq4AiZF9AMePxY2xX9hr4clzP3OwyipoDFexHMwx1G3y1Q7KTgYkr
-	JQ+1taiM8XTcm+HvAIPg==;
+	List-Owner; bh=giEMubcF1uLQk0QW9/F3ab8SwGydaSuUP4iJpvVONcs=; b=Ya5S0wCGVOOd70
+	jSUAzR+NLtn0jLMiKtkcUNKFs/0pzQHg7Rb9q5aght3+R8S+zzvXSSe8eGSiq7uBF0WFtcjLQ9TJ5
+	rTVLR3QzCWVu6AcEU05FbkL3YtQgeSMYfUPIeGRULgrQbFibkomHnpv8ZmlkK2NzwptmLRP/OOr3L
+	k/XzFFpAPtf2KCPTBmetf/3Vr3KjXzzvNunhu95fXGdshGbkYFyJPdU9LVNtqfYt4HPIpMDeD9n53
+	/YlpOfV4CY9EcUw6Iqgr3YNO7HVaOGdZRIbldhb0uduIJML/pzbKAd5TzEfPdVpEM5NTa0mxuwrVN
+	mr4XqJM8U3nGCABMPclA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlY1Q-0000fE-N7; Thu, 11 Jul 2019 12:18:00 +0000
-Received: from relay7-d.mail.gandi.net ([217.70.183.200])
+	id 1hlY0F-0000BE-TF; Thu, 11 Jul 2019 12:16:47 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlY1F-0000eG-Iq
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 12:17:51 +0000
-X-Originating-IP: 86.250.200.211
-Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
- [86.250.200.211]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 91C6120020;
- Thu, 11 Jul 2019 12:15:23 +0000 (UTC)
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Hans Verkuil <hans.verkuil@cisco.com>,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>
-Subject: [PATCH v6 5/5] DO NOT MERGE: ARM: dts: bananapi: Add Camera support
-Date: Thu, 11 Jul 2019 14:15:07 +0200
-Message-Id: <cf0e40b0bca9219d2bb023a5b7f23bad8baba1e5.1562847292.git-series.maxime.ripard@bootlin.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <cover.34bcd988943a26671681eaf849aacab51fab1cfe.1562847292.git-series.maxime.ripard@bootlin.com>
-References: <cover.34bcd988943a26671681eaf849aacab51fab1cfe.1562847292.git-series.maxime.ripard@bootlin.com>
+ id 1hlY07-0000AZ-Q6
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 12:16:41 +0000
+Received: by mail-pf1-x443.google.com with SMTP id y15so2682313pfn.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 11 Jul 2019 05:16:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=ebaI7JZoCfM256GUV8nZnCzT8goD+tJe0e6XvNMsOn4=;
+ b=AAyusSQWWFQRi1vScJOtNT6zNZtyrWwvjH5sZArjCya6rXeigax5PS1E8fW0vvrwJ5
+ s5n94IqdYgqTC3i8ufS4TvWsKjSBa8+CrQND8SDZf7z+XvViOrT/2BL+jXb2a3BBV3ka
+ QsRfHH82Dj03jUVI5N4kJr5MegnMGbvpI7n3Ht8FExOTKEImAMuORGJbsm2nwWDNFBEX
+ ufRM7ZPgwbthjeBjtDjCuixP/mVC2pkvaUYyvuC8ssgpEipmAB0IEZDB0eENVpgeySAp
+ olFAf2sachkLqVqRLK1jT2+5eby7YuDLP6TRQrBAhAkIFaD1UhTL1daCTodxOErkwSqh
+ 0LCQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=ebaI7JZoCfM256GUV8nZnCzT8goD+tJe0e6XvNMsOn4=;
+ b=J6DsMF0uRmWwYKNP1kLu5hrtbWQuHlolVvNUZIXKKCklQ1AnYngxxNCTfwH3M5+/po
+ n+9oJ99cLt42HdGKo/m5UBdAbwvhpU0q+WETQKfrXHCSKEQUZiaWfXSW3KqqME4zJzZo
+ GfmHScWq/gd0OvD0vmBveyxhVrQfcNF9mRXMRLDU5UqFlU8Wn6qUk6c6PpHk7SdhYn44
+ 0fEPYUKJKLEJLo2hwVIaw6as/ypZci8KyaRyuUjMV/5rZUduuuiuQ83+HDViLYkEF4i1
+ 6n392Hkoj8Vxj1Wk3mB5IEQbc44tnu1MCT41/RasQz3KMdb++EeUVjiVyGskhGGLZahj
+ PbCQ==
+X-Gm-Message-State: APjAAAU4set9fehoaN3DrnZZ71aBLqGOf+J5aw87qOMMVriEbzcbSU3V
+ O5XsdtlqP4xp09+llEg8sc8=
+X-Google-Smtp-Source: APXvYqzqzYQOKBq4miwPew8lzHQHfzU1AEc81YwR5rue/4y2BWib6z/bCeoGPD7v/JmU224bnamYjA==
+X-Received: by 2002:a17:90a:cb8e:: with SMTP id
+ a14mr4472521pju.124.1562847399177; 
+ Thu, 11 Jul 2019 05:16:39 -0700 (PDT)
+Received: from icarus ([2001:268:c144:cf11:d03e:81be:e250:5da0])
+ by smtp.gmail.com with ESMTPSA id a16sm5951841pfd.68.2019.07.11.05.16.35
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 11 Jul 2019 05:16:38 -0700 (PDT)
+Date: Thu, 11 Jul 2019 21:16:20 +0900
+From: William Breathitt Gray <vilhelm.gray@gmail.com>
+To: Jonathan Cameron <jic23@kernel.org>
+Subject: Re: [PATCH] IIO: stm32: Remove quadrature related functions from
+ trigger driver
+Message-ID: <20190711121620.GA11661@icarus>
+References: <20190507091224.17781-1-benjamin.gaignard@st.com>
+ <20190711115059.GA7778@icarus>
+ <CA+M3ks42Whd=QVQ-4==n5bRJKEwYpQtRHs=gBGEZ_Hr=_8YU1g@mail.gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CA+M3ks42Whd=QVQ-4==n5bRJKEwYpQtRHs=gBGEZ_Hr=_8YU1g@mail.gmail.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_051749_933381_23DC7687 
-X-CRM114-Status: GOOD (  10.27  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190711_051639_866535_28E6F641 
+X-CRM114-Status: GOOD (  14.54  )
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.200 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (vilhelm.gray[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,157 +105,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Maxime Ripard <maxime.ripard@bootlin.com>, linux-kernel@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Frank Rowand <frowand.list@gmail.com>, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Lars-Peter Clausen <lars@metafoo.de>,
+ Benjamin Gaignard <benjamin.gaignard@st.com>, linux-iio@vger.kernel.org,
+ Peter Meerwald-Stadler <pmeerw@pmeerw.net>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Hartmut Knaack <knaack.h@gmx.de>, Fabrice Gasnier <fabrice.gasnier@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Alexandre Torgue <alexandre.torgue@st.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
----
- arch/arm/boot/dts/sun7i-a20-bananapi.dts | 91 +++++++++++++++++++++++++-
- 1 file changed, 91 insertions(+)
-
-diff --git a/arch/arm/boot/dts/sun7i-a20-bananapi.dts b/arch/arm/boot/dts/sun7i-a20-bananapi.dts
-index 4df921632f7a..cecc4eb26082 100644
---- a/arch/arm/boot/dts/sun7i-a20-bananapi.dts
-+++ b/arch/arm/boot/dts/sun7i-a20-bananapi.dts
-@@ -54,6 +54,9 @@
- 	compatible = "lemaker,bananapi", "allwinner,sun7i-a20";
- 
- 	aliases {
-+		i2c0 = &i2c0;
-+		i2c1 = &i2c1;
-+		i2c2 = &i2c2;
- 		serial0 = &uart0;
- 		serial1 = &uart3;
- 		serial2 = &uart7;
-@@ -63,6 +66,41 @@
- 		stdout-path = "serial0:115200n8";
- 	};
- 
-+	reg_cam: cam {
-+		compatible = "regulator-fixed";
-+		regulator-name = "cam";
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+		vin-supply = <&reg_vcc5v0>;
-+		gpio = <&pio 7 16 GPIO_ACTIVE_HIGH>;
-+		enable-active-high;
-+		regulator-always-on;
-+	};
-+
-+        reg_cam_avdd: cam-avdd {
-+                compatible = "regulator-fixed";
-+                regulator-name = "cam500b-avdd";
-+                regulator-min-microvolt = <2800000>;
-+                regulator-max-microvolt = <2800000>;
-+                vin-supply = <&reg_cam>;
-+        };
-+
-+        reg_cam_dovdd: cam-dovdd {
-+                compatible = "regulator-fixed";
-+                regulator-name = "cam500b-dovdd";
-+                regulator-min-microvolt = <1800000>;
-+                regulator-max-microvolt = <1800000>;
-+                vin-supply = <&reg_cam>;
-+        };
-+
-+        reg_cam_dvdd: cam-dvdd {
-+                compatible = "regulator-fixed";
-+                regulator-name = "cam500b-dvdd";
-+                regulator-min-microvolt = <1500000>;
-+                regulator-max-microvolt = <1500000>;
-+                vin-supply = <&reg_cam>;
-+        };
-+
- 	hdmi-connector {
- 		compatible = "hdmi-connector";
- 		type = "a";
-@@ -116,6 +154,23 @@
- 		>;
- };
- 
-+&csi0 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&csi0_pins_a>;
-+	status = "okay";
-+
-+	port {
-+		csi_from_ov5640: endpoint {
-+                        remote-endpoint = <&ov5640_to_csi>;
-+                        bus-width = <8>;
-+                        hsync-active = <1>; /* Active high */
-+                        vsync-active = <0>; /* Active low */
-+                        data-active = <1>;  /* Active high */
-+                        pclk-sample = <1>;  /* Rising */
-+                };
-+	};
-+};
-+
- &de {
- 	status = "okay";
- };
-@@ -161,6 +216,36 @@
- 	};
- };
- 
-+&i2c1 {
-+	status = "okay";
-+
-+	camera: camera@21 {
-+		compatible = "ovti,ov5640";
-+		reg = <0x21>;
-+                clocks = <&ccu CLK_CSI0>;
-+                clock-names = "xclk";
-+		assigned-clocks = <&ccu CLK_CSI0>;
-+		assigned-clock-rates = <24000000>;
-+
-+                reset-gpios = <&pio 7 14 GPIO_ACTIVE_LOW>;
-+                powerdown-gpios = <&pio 7 19 GPIO_ACTIVE_HIGH>;
-+                AVDD-supply = <&reg_cam_avdd>;
-+                DOVDD-supply = <&reg_cam_dovdd>;
-+                DVDD-supply = <&reg_cam_dvdd>;
-+
-+                port {
-+                        ov5640_to_csi: endpoint {
-+                                remote-endpoint = <&csi_from_ov5640>;
-+                                bus-width = <8>;
-+                                hsync-active = <1>; /* Active high */
-+                                vsync-active = <0>; /* Active low */
-+                                data-active = <1>;  /* Active high */
-+                                pclk-sample = <1>;  /* Rising */
-+                        };
-+                };
-+	};
-+};
-+
- &i2c2 {
- 	status = "okay";
- };
-@@ -246,6 +331,12 @@
- 			"SPI-MISO", "SPI-CE1", "",
- 		"IO-6", "IO-3", "IO-2", "IO-0", "", "", "", "",
- 		"", "", "", "", "", "", "", "";
-+
-+	csi0_pins_a: csi_pins_a@0 {
-+		pins = "PE0", "PE1", "PE2", "PE3", "PE4", "PE5",
-+		       "PE6", "PE7", "PE8", "PE9", "PE10", "PE11";
-+		function = "csi0";
-+	};
- };
- 
- #include "axp209.dtsi"
--- 
-git-series 0.9.1
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVGh1LCBKdWwgMTEsIDIwMTkgYXQgMDI6MTI6MjdQTSArMDIwMCwgQmVuamFtaW4gR2FpZ25h
+cmQgd3JvdGU6Cj4gTGUgamV1LiAxMSBqdWlsLiAyMDE5IMOgIDEzOjUxLCBXaWxsaWFtIEJyZWF0
+aGl0dCBHcmF5Cj4gPHZpbGhlbG0uZ3JheUBnbWFpbC5jb20+IGEgw6ljcml0IDoKPiA+Cj4gPiBP
+biBUdWUsIE1heSAwNywgMjAxOSBhdCAxMToxMjoyNEFNICswMjAwLCBCZW5qYW1pbiBHYWlnbmFy
+ZCB3cm90ZToKPiA+ID4gUXVhZHJhdHVyZSBmZWF0dXJlIGlzIG5vdyBob3N0ZWQgb24gaXQgb3du
+IGZyYW1ld29yay4KPiA+ID4gUmVtb3ZlIHF1YWRyYXR1cmUgcmVsYXRlZCBjb2RlIGZyb20gc3Rt
+MzItdHJpZ2dlciBkcml2ZXIgdG8gYXZvaWQKPiA+ID4gY29kZSBkdXBsaWNhdGlvbiBhbmQgc2lt
+cGxpZnkgdGhlIEFCSS4KPiA+ID4KPiA+ID4gU2lnbmVkLW9mZi1ieTogQmVuamFtaW4gR2FpZ25h
+cmQgPGJlbmphbWluLmdhaWduYXJkQHN0LmNvbT4KPiA+Cj4gPiBXaGF0IGlzIHRoZSBzdGF0dXMg
+b2YgdGhpcyBwYXRjaD8gQXJlIHRoZXJlIGFueSBvYmplY3Rpb25zIGN1cnJlbnRseSBmb3IKPiA+
+IGl0cyBpbmNsdXNpb24/Cj4gCj4gWW91IHdlcmUgdGhlIG9ubHkgb25lIGFza2luZyBmb3IgbW9y
+ZSBkZXRhaWxzIGFib3V0IGl0IDotKQo+IElmIHlvdSBhZ3JlZSBJIHRoaW5rIHRoYXQgSm9uYXRo
+YW4gY2FuIG1lcmdlIGl0Lgo+IAo+IEJlbmphbWluCj4gPgo+ID4gV2lsbGlhbSBCcmVhdGhpdHQg
+R3JheQo+ID4KPiA+IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fCj4gPiBsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAo+ID4gbGludXgtYXJtLWtlcm5l
+bEBsaXN0cy5pbmZyYWRlYWQub3JnCj4gPiBodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
+bWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwKClllcywgSm9uYXRoYW4gcGxlYXNlIG1lcmdl
+IHRoaXMgaWYgeW91IGhhdmUgbm8gb2JqZWN0aW9ucywgSSBoYWRuJ3QKcmVhbGl6ZWQgSSB3YXMg
+ZGVsYXlpbmcgaXQuCgpUaGFuayB5b3UsCgpXaWxsaWFtIEJyZWF0aGl0dCBHcmF5CgpfX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVs
+IG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
+L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
