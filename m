@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C4E465B28
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 18:02:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C9A765B27
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 18:02:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sImOmLUq9eariQKgam+diOR3zhKedA9Dv5z8mM/iCG8=; b=W/oZ7Aw6PTmYMD
-	cMP1jv9uik7RcJYT7P9cdPvQ8oClcnV4SziuoDnYOb6DCKL7bgrYakk4M6hljqj3azHhFEMjv1UUQ
-	n3t7VimuHSU6QFUvwqVzuPd7WEv8Sol0t6ehemoO+k9jy+MXAhnWnv7whpdLXTH1bwNw01Ywm+LVv
-	UBSdONzjLu+1y07saVirlva98bnQZFpzaRUxbtrjEC1FaPw3VNYIA/SaZd9m1RLCZUVxCLeGYg6yC
-	griswuBD1IvRFNMxF9dXc3FnJ/Qe6Y+0RnAKvk6rTHIpR4btAz48wfturEzZ3MEqvVBkzdFSFYwKd
-	PKkaxMjdtbDNNaNy1WDA==;
+	List-Owner; bh=fhPwiDvXtfTPR2E/ttSKyoelvd3MrwYQL+x3G1sDMNU=; b=F49/RFJvSS+/6C
+	NiSzWZNTPmNxJhRLGTdim6Fth5yafeaLSGrg8Tu2MKrk9JaCnhEuWTbV4FE2YhbXrJ77cxmCdAaJo
+	NJEhh95SDJ2kabC7S5PM1krM/U0jrT4rQUv9bvrQTSlTujorIBriit9bMOe/vXqcmo49Edkn2iDoB
+	KTm1j9XlUeGAt0+NKxEiC/W4MHdTU1d0YsqHFR9GSKKB3jS46ehoVqUc7NbSIg0joHIiOLAyOd9DX
+	6hLIY3V4VkKo/k+2bgIXHa6QAQNm+J451Z8WfnFpt+EGEPvKa3r6DrVyVW5m0CibFxANz7IsAO3vL
+	RD8BluE5RIKWqq9XDmZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlbWd-0004Xf-Aq; Thu, 11 Jul 2019 16:02:27 +0000
+	id 1hlbWJ-0004Dx-Pz; Thu, 11 Jul 2019 16:02:07 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hlbVi-0003xO-K9
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 16:01:32 +0000
+ id 1hlbVh-0003xd-13
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 16:01:30 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 88166344;
- Thu, 11 Jul 2019 09:01:26 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 86D041424;
+ Thu, 11 Jul 2019 09:01:28 -0700 (PDT)
 Received: from e119886-lin.cambridge.arm.com (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 040403F71F;
- Thu, 11 Jul 2019 09:01:24 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CFF973F71F;
+ Thu, 11 Jul 2019 09:01:26 -0700 (PDT)
 From: Andrew Murray <andrew.murray@arm.com>
 To: Mathieu Poirier <mathieu.poirier@linaro.org>,
  Suzuki K Poulose <suzuki.poulose@arm.com>,
  Alexander Shishkin <alexander.shishkin@linux.intel.com>
-Subject: [PATCH v3 1/6] coresight: etm4x: remove superfluous setting of
- os_unlock
-Date: Thu, 11 Jul 2019 17:01:09 +0100
-Message-Id: <20190711160114.634-2-andrew.murray@arm.com>
+Subject: [PATCH v3 2/6] coresight: etm4x: use explicit barriers on
+ enable/disable
+Date: Thu, 11 Jul 2019 17:01:10 +0100
+Message-Id: <20190711160114.634-3-andrew.murray@arm.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190711160114.634-1-andrew.murray@arm.com>
 References: <20190711160114.634-1-andrew.murray@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_090130_701990_0851D0AD 
-X-CRM114-Status: GOOD (  10.48  )
+X-CRM114-CacheID: sfid-20190711_090129_119682_54051FEC 
+X-CRM114-Status: GOOD (  13.57  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -62,40 +62,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: coresight@lists.linaro.org, Sudeep Holla <sudeep.holla@arm.com>,
- Leo Yan <leo.yan@linaro.org>, linux-arm-kernel@lists.infradead.org,
- Mike Leach <mike.leach@linaro.org>
+Cc: coresight@lists.linaro.org, Leo Yan <leo.yan@linaro.org>,
+ stable@vger.kernel.org, Sudeep Holla <sudeep.holla@arm.com>,
+ linux-arm-kernel@lists.infradead.org, Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In addition to unlocking the OS lock, etm4_os_unlock will also
-set the os_unlock flag. Therefore let's avoid unnecessarily
-setting os_unlock flag outside of this function.
+Synchronization is recommended before disabling the trace registers
+to prevent any start or stop points being speculative at the point
+of disabling the unit (section 7.3.77 of ARM IHI 0064D).
+
+Synchronization is also recommended after programming the trace
+registers to ensure all updates are committed prior to normal code
+resuming (section 4.3.7 of ARM IHI 0064D).
+
+Let's ensure these syncronization points are present in the code
+and clearly commented.
+
+Note that we could rely on the barriers in CS_LOCK and
+coresight_disclaim_device_unlocked or the context switch to user
+space - however coresight may be of use in the kernel.
+
+On armv8 the mb macro is defined as dsb(sy) - Given that the etm4x is
+only used on armv8 let's directly use dsb(sy) instead of mb(). This
+removes some ambiguity and makes it easier to correlate the code with
+the TRM.
 
 Signed-off-by: Andrew Murray <andrew.murray@arm.com>
 Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+CC: stable@vger.kernel.org
 ---
- drivers/hwtracing/coresight/coresight-etm4x.c | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
+ drivers/hwtracing/coresight/coresight-etm4x.c | 15 +++++++++++++--
+ 1 file changed, 13 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
-index 7fe266194ab5..c89190d464ab 100644
+index c89190d464ab..3825a39e9a49 100644
 --- a/drivers/hwtracing/coresight/coresight-etm4x.c
 +++ b/drivers/hwtracing/coresight/coresight-etm4x.c
-@@ -1047,10 +1047,8 @@ static int etm4_starting_cpu(unsigned int cpu)
- 		return 0;
+@@ -188,6 +188,13 @@ static int etm4_enable_hw(struct etmv4_drvdata *drvdata)
+ 		dev_err(etm_dev,
+ 			"timeout while waiting for Idle Trace Status\n");
  
- 	spin_lock(&etmdrvdata[cpu]->spinlock);
--	if (!etmdrvdata[cpu]->os_unlock) {
-+	if (!etmdrvdata[cpu]->os_unlock)
- 		etm4_os_unlock(etmdrvdata[cpu]);
--		etmdrvdata[cpu]->os_unlock = true;
--	}
++	/*
++	 * As recommended by section 4.3.7 ("Synchronization when using the
++	 * memory-mapped interface") of ARM IHI 0064D
++	 */
++	dsb(sy);
++	isb();
++
+ done:
+ 	CS_LOCK(drvdata->base);
  
- 	if (local_read(&etmdrvdata[cpu]->mode))
- 		etm4_enable_hw(etmdrvdata[cpu]);
+@@ -453,8 +460,12 @@ static void etm4_disable_hw(void *info)
+ 	/* EN, bit[0] Trace unit enable bit */
+ 	control &= ~0x1;
+ 
+-	/* make sure everything completes before disabling */
+-	mb();
++	/*
++	 * Make sure everything completes before disabling, as recommended
++	 * by section 7.3.77 ("TRCVICTLR, ViewInst Main Control Register,
++	 * SSTATUS") of ARM IHI 0064D
++	 */
++	dsb(sy);
+ 	isb();
+ 	writel_relaxed(control, drvdata->base + TRCPRGCTLR);
+ 
 -- 
 2.21.0
 
