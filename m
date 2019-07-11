@@ -2,86 +2,182 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8864B65943
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 16:45:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD6E96595F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 16:52:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3TuZPGg/SfWHjiThzRQQwJzHGaRz1Y9lJKtEMfQO1Ec=; b=OYIc3hWgbQzzDo
-	Ls38IkE04g8IlztgeBswjQ5kza9/BP6lTX0z+FScbuVqi5L38uEjxwUrzP5JOfEpo9NO1yeiwYKf6
-	j5KgL2c+7w5so+R9rEZVaXvhImap2gICNuDqWODFwE70dxD1IuNmeQ1+4FcQacHPyNvTL4BaTuceQ
-	Fg6csxu3ZeOIEFcVnA+zf09YmTUeVlCYVt7zczEvbaKRhsvwvQfDmNLt/Z2oLSOyPnH6T+igLUdHI
-	honbdbewV5mxDBFovHaxHT3rAF+P8V+kWDyW6uHu9VxQ2/ZSQxszcTEuSNMmC/gh4GgmvbBv7Qpo+
-	Xj4gvtanH3/WS5bYepSQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=f7HnXj5MWcgOEqCMOmOEXesahh7WYm5Nbu4qk2u20hk=; b=lj0lvUnfxeylIu
+	m5Sb+OOiHnW5gWD1NRSKbRmPhoqs5a3a1rvkz6z9U20i/ngYvpV/4g9TJka9q8U2g3VKcDCAFiccZ
+	Ggfzfxlwekr0yAUgoeEGyDw+CIKcUKmGDcL9j03wedT8ruvYbpB8G73JWvxo6VnOJt7QEETM2v+mk
+	mB8zDi2ngqFkuYeDJt3mV9NK+66qio7wCY4/niXyoz6xna1gwaj+CpLAMhZ4+KgpZcFr9y0yYj81r
+	9trdm6ibt/XG7uzIwa2sCkBIEXStDP/WO8zoKeTQFhxwKrcGgTjsvl1ccNbTUO+frrviQCXLcbShx
+	NSXBv31TLs0ljF3ZW9zg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlaJk-0003vq-Ez; Thu, 11 Jul 2019 14:45:04 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1hlaQt-0007a5-Hf; Thu, 11 Jul 2019 14:52:27 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlaJU-0003uw-4q
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 14:44:49 +0000
-Received: by mail-pg1-x541.google.com with SMTP id p10so3062437pgn.1
+ id 1hlaQg-0007ZZ-9L
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 14:52:15 +0000
+Received: by mail-ed1-x542.google.com with SMTP id k21so6120403edq.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 11 Jul 2019 07:44:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=AeWgNBL0vGG9Q0W1XyAtTTadhrtMpodZjMiQ47VNvNo=;
- b=jAcuVEQQIMZ8TtPCtZhvvkOswtz9kMXpu3/fl/zZ8r2p4lBere/WDYW8TgghDn2afu
- Fl6E9jUg+eQKbEvv/wdRFpHjhczPrnpR5mV+JSSzuFvBpBnBvIeuSylHd1+G+y4gm8m/
- WHejBbnCV+/tD3TGRTKQo0gCHz786gypWQuMPD6gZ5PqSYfzSg8ZJONaxqVNSimqfhfr
- z/qYC+ij9SNjlI/oFpP5tVSy2t785VOBlar9uPk9Q2NnaKVczX3MfmeWMQplMkOxL8FU
- rrVL4yRhgm7uTQBxiRofM6yk/8gBYjhhjLfj9GmvY5rUUnPYIc4CCwVzDDRjF12o1f8j
- DE/A==
+ Thu, 11 Jul 2019 07:52:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=iBM2CRhYytsGloLRqM5hkuc/1rlVJSnBaoDzWBF93tI=;
+ b=dUqUT+b6n18svFrfnk9ACdcu+Ltwwq58zrLlmylv6wg3hMpJGlcQJMUxqXd9Sywr81
+ xPLASbkCgnj2K91BtxoE6r30BnrF2eVUs5+xGhn7Q8nDkuMfpd/yAfA8CSJbDPP6henu
+ phvYYa2C314lwTqCCf70eO9dcvWZN9gjlNby0CTlj1LFHD9HTZ++TvM2eV+RYpeEfAXe
+ lgIjJYmVJqKPM1gLBDnkRo9dIHfgiW85DVUzd6C4E1t4w+LNfEtH9FvHYPnGRSEwPsPl
+ VrMXrddc0Z7xRm+cFTyuzU4fbdlxl/Rgt8vn1QcuQce8MNYtIV3GjK4JQ4ykkHBkjcx8
+ S82A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=AeWgNBL0vGG9Q0W1XyAtTTadhrtMpodZjMiQ47VNvNo=;
- b=SZFmNI+Vt1ON91axyijAlou2g7jg6OArzlWVduiLBk9MhUBpJGwr7ku+FnZHB1W2k8
- OHdutc0GHcOefiiZaB1xd0omzyqnHucp275fu3bFZ92MReIA8bHe7qitdHXcTk3QpD7a
- b8iqB883zLwKBvvwS6mdox7a4eLI6isYCOIgSjp1IuGlWd9PVjnU38ilQTEGefhj72I4
- mf2zNIZa4PefvABSADsZZPluuPSp68UkrgcSxbtMeumMtJuyHCXxXqDlyPzkc9BeW+Iq
- McICavkXWiFzbQa9vP480wFl/Hvr/Kxettw0VNfI+KtxZGIFeOIsb+Rtm0xqOqaXPZhB
- TUNQ==
-X-Gm-Message-State: APjAAAXewXheeD6SJGde1Zomz/GHd/XrFPL0TKcFbBx9dcr0rAzcftsc
- sRjHURe4UibMi1juW4FadyoYtw==
-X-Google-Smtp-Source: APXvYqzZnI4QvrJWH5nNTwi3+akS6nULSvCsZQrVF3PWvIzD3Iw3lEJpqz8SxmHZU7/6w9TFNAqhAA==
-X-Received: by 2002:a17:90a:23ce:: with SMTP id
- g72mr5299751pje.77.1562856287236; 
- Thu, 11 Jul 2019 07:44:47 -0700 (PDT)
-Received: from tuxbook-pro (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id a5sm4953523pjv.21.2019.07.11.07.44.45
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 11 Jul 2019 07:44:46 -0700 (PDT)
-Date: Thu, 11 Jul 2019 07:45:57 -0700
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Jorge Ramirez-Ortiz <jorge.ramirez-ortiz@linaro.org>
-Subject: Re: [PATCH v3 04/14] dt-bindings: mailbox: qcom: Add clock-name
- optional property
-Message-ID: <20190711144557.GE7234@tuxbook-pro>
-References: <20190625164733.11091-1-jorge.ramirez-ortiz@linaro.org>
- <20190625164733.11091-5-jorge.ramirez-ortiz@linaro.org>
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=iBM2CRhYytsGloLRqM5hkuc/1rlVJSnBaoDzWBF93tI=;
+ b=tTThfvX6kuuJl0Lh6BI+7WIUinT8F0UIoZolqfIwXmKgGYoMpw2vdkurREPJfWxlMo
+ OXBO9A0qEgfQbu7sjxUkUSLVKwtZjcY2ahJBAqnp94xtAwHXrsZgmyCCuUTfT72tX+zn
+ JxhUkJUSqCZYoJdF9ORJx3dDC3CmronkRZ6t6Ghta6TaHt42GiR+E/iMQ43gqobet7bz
+ 5v5ATrH9EsKxFMx3tRjYYAs8z0NjpSqB7L3tF2Fw1e5mzT+T8FvougOfByz2tiLbqvCf
+ jnQa2cy1FHILsPSI96S4uTr7+aVd/5U7qSdoUpud80/Sp27w2utowyDoUYgFKOvH55U7
+ 2TTA==
+X-Gm-Message-State: APjAAAUxhuzgqpWrGKr1UpkAaATM/TSXjBKb7sj78UzgqGBekmiECouH
+ CTwSoKcIu9pWLv3Mq56imjY=
+X-Google-Smtp-Source: APXvYqylADulNKzQk8is8vFNIqrIHPrRZPH/1W9eGfWEch53ivBs860LaxqWlLQ9jb7iEp9Togypfw==
+X-Received: by 2002:a50:91ef:: with SMTP id h44mr3991753eda.276.1562856731827; 
+ Thu, 11 Jul 2019 07:52:11 -0700 (PDT)
+Received: from ziggy.stardust ([37.223.141.54])
+ by smtp.gmail.com with ESMTPSA id m31sm1682163edd.42.2019.07.11.07.52.10
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Thu, 11 Jul 2019 07:52:11 -0700 (PDT)
+Subject: Re: [PATCH] arm64/kexec: Use consistent convention of initializing
+ 'kxec_buf.mem' with KEXEC_BUF_MEM_UNKNOWN
+To: Bhupesh Sharma <bhsharma@redhat.com>, linux-arm-kernel@lists.infradead.org
+References: <1562846252-7441-1-git-send-email-bhsharma@redhat.com>
+From: Matthias Brugger <matthias.bgg@gmail.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
+ mQINBFP1zgUBEAC21D6hk7//0kOmsUrE3eZ55kjc9DmFPKIz6l4NggqwQjBNRHIMh04BbCMY
+ fL3eT7ZsYV5nur7zctmJ+vbszoOASXUpfq8M+S5hU2w7sBaVk5rpH9yW8CUWz2+ZpQXPJcFa
+ OhLZuSKB1F5JcvLbETRjNzNU7B3TdS2+zkgQQdEyt7Ij2HXGLJ2w+yG2GuR9/iyCJRf10Okq
+ gTh//XESJZ8S6KlOWbLXRE+yfkKDXQx2Jr1XuVvM3zPqH5FMg8reRVFsQ+vI0b+OlyekT/Xe
+ 0Hwvqkev95GG6x7yseJwI+2ydDH6M5O7fPKFW5mzAdDE2g/K9B4e2tYK6/rA7Fq4cqiAw1+u
+ EgO44+eFgv082xtBez5WNkGn18vtw0LW3ESmKh19u6kEGoi0WZwslCNaGFrS4M7OH+aOJeqK
+ fx5dIv2CEbxc6xnHY7dwkcHikTA4QdbdFeUSuj4YhIZ+0QlDVtS1QEXyvZbZky7ur9rHkZvP
+ ZqlUsLJ2nOqsmahMTIQ8Mgx9SLEShWqD4kOF4zNfPJsgEMB49KbS2o9jxbGB+JKupjNddfxZ
+ HlH1KF8QwCMZEYaTNogrVazuEJzx6JdRpR3sFda/0x5qjTadwIW6Cl9tkqe2h391dOGX1eOA
+ 1ntn9O/39KqSrWNGvm+1raHK+Ev1yPtn0Wxn+0oy1tl67TxUjQARAQABtClNYXR0aGlhcyBC
+ cnVnZ2VyIDxtYXR0aGlhcy5iZ2dAZ21haWwuY29tPokCUgQTAQIAPAIbAwYLCQgHAwIGFQgC
+ CQoLBBYCAwECHgECF4AWIQTmuZIYwPLDJRwsOhfZFAuyVhMC8QUCWt3scQIZAQAKCRDZFAuy
+ VhMC8WzRD/4onkC+gCxG+dvui5SXCJ7bGLCu0xVtiGC673Kz5Aq3heITsERHBV0BqqctOEBy
+ ZozQQe2Hindu9lasOmwfH8+vfTK+2teCgWesoE3g3XKbrOCB4RSrQmXGC3JYx6rcvMlLV/Ch
+ YMRR3qv04BOchnjkGtvm9aZWH52/6XfChyh7XYndTe5F2bqeTjt+kF/ql+xMc4E6pniqIfkv
+ c0wsH4CkBHqoZl9w5e/b9MspTqsU9NszTEOFhy7p2CYw6JEa/vmzR6YDzGs8AihieIXDOfpT
+ DUr0YUlDrwDSrlm/2MjNIPTmSGHH94ScOqu/XmGW/0q1iar/Yr0leomUOeeEzCqQtunqShtE
+ 4Mn2uEixFL+9jiVtMjujr6mphznwpEqObPCZ3IcWqOFEz77rSL+oqFiEA03A2WBDlMm++Sve
+ 9jpkJBLosJRhAYmQ6ey6MFO6Krylw1LXcq5z1XQQavtFRgZoruHZ3XlhT5wcfLJtAqrtfCe0
+ aQ0kJW+4zj9/So0uxJDAtGuOpDYnmK26dgFN0tAhVuNInEVhtErtLJHeJzFKJzNyQ4GlCaLw
+ jKcwWcqDJcrx9R7LsCu4l2XpKiyxY6fO4O8DnSleVll9NPfAZFZvf8AIy3EQ8BokUsiuUYHz
+ wUo6pclk55PZRaAsHDX/fNr24uC6Eh5oNQ+v4Pax/gtyybkCDQRT9c4FARAAqdGWpdzcSM8q
+ 6I2oTPS5J4KXXIJS8O2jbUcxoNuaSBnUkhwp2eML/i30oLbEC+akmagcOLD0kOY46yRFeSEC
+ SPM9SWLxKvKUTQYGLX2sphPVZ3hEdFYKen3+cbvo6GyYTnm8ropHM9uqmXPZFFfLJDL76Nau
+ kFsRfPMQUuwMe3hFVLmF7ntvdX3Z3jKImoMWrgA/SnsT6K40n/GCl1HNz2T8PSnqAUQjvSoI
+ FAenxb23NtW6kg50xIxlb7DKbncnQGGTwoYn8u9Lgxkh8gJ03IMiSDHZ9o+wl21U8B3OXr1K
+ L08vXmdR70d6MJSmt6pKs7yTjxraF0ZS6gz+F2BTy080jxceZwEWIIbK7zU3tm1hnr7QIbj/
+ H6W2Pv9p5CXzQCIw17FXFXjpGPa9knzd4WMzJv2Rgx/m8/ZG91aKq+4Cbz9TLQ7OyRdXqhPJ
+ CopfKgZ2l/Fc5+AGhogJLxOopBoELIdHgB50Durx4YJLmQ1z/oimD0O/mUb5fJu0FUQ5Boc1
+ kHHJ8J8bZTuFrGAomfvnsek+dyenegqBpZCDniCSfdgeAx9oWNoXG4cgo8OVG7J/1YIWBHRa
+ Wnk+WyXGBfbY/8247Gy8oaXtQs1OnehbMKBHRIY0tgoyUlag3wXuUzeK+0PKtWC7ZYelKNC0
+ Fn+zL9XpnK3HLE5ckhBLgK8AEQEAAYkCHwQYAQIACQUCU/XOBQIbDAAKCRDZFAuyVhMC8Yyu
+ D/9g6+JZZ+oEy7HoGZ0Bawnlxu/xQrzaK/ltQhA2vtiMaxCN46gOvEF/x+IvFscAucm3q4Dy
+ bJJkW2qY30ISK9MDELnudPmHRqCxTj8koabvcI1cP8Z0Fw1reMNZVgWgVZJkwHuPYnkhY15u
+ 3vHDzcWnfnvmguKgYoJxkqqdp/acb0x/qpQgufrWGeYv2yb1YNidXBHTJSuelFcGp/oBXeJz
+ rQ2IP1JBbQmQfPSePZzWdSLlrR+3jcBJEP/A/73lSObOQpiYJomXPcla6dH+iyV0IiiZdYgU
+ Htwru4Stv/cFVFsUJk1fIOP1qjSa+L6Y0dWX6JMniqUXHhaXo6OPf7ArpVbBygMuzvy99LtS
+ FSkMcYXn359sXOYsRy4V+Yr7Bs0lzdnHnKdpVqHiDvNgrrLoPNrKTiYwTmzTVbb9u/BjUGhC
+ YUS705vcjBgXhdXS44kgO22kaB5c6Obg7WP7cucFomITovtZs5Rm1iaZZc31lzobfFPUwDSc
+ YXOj6ckS9bF9lDG26z3C/muyiifZeiQvvG1ygexrHtnKYTNxqisOGjjcXzDzpS8egIOtIEI/
+ arzlqK5RprMLVOl6n/npxEWmInjBetsBsaX/9kJNZFM4Yais5scOnP+tuTnFTW2K9xKySyuD
+ q/iLORJYRYMloJPaDAftiYfjFa8zuw1XnQyG17kCDQRT9gX3ARAAsL2UwyvSLQuMxOW2GRLv
+ CiZuxtIEoUuhaBWdC/Yq3c6rWpTu692lhLd4bRpKJkE4nE3saaTVxIHFF3tt3IHSa3Qf831S
+ lW39EkcFxr7DbO17kRThOyU1k7KDhUQqhRaUoT1NznrykvpTlNszhYNjA0CMYWH249MJXgck
+ iKOezSHbQ2bZWtFG3uTloWSKloFsjsmRsb7Vn2FlyeP+00PVC6j7CRqczxpkyYoHuqIS0w1z
+ Aq8HP5DDSH7+arijtPuJhVv9uaiD6YFLgSIQy4ZCZuMcdzKJz2j6KCw2kUXLehk4BU326O0G
+ r9+AojZT8J3qvZYBpvCmIhGliKhZ7pYDKZWVseRw7rJS5UFnst5OBukBIjOaSVdp6JMpe99o
+ caLjyow2By6DCEYgLCrquzuUxMQ8plEMfPD1yXBo00bLPatkuxIibM0G4IstKL5hSAKiaFCc
+ 2f73ppp7eby3ZceyF4uCIxN3ABjW9ZCEAcEwC40S3rnh2wZhscBFZ+7sO7+Fgsd0w67zjpt+
+ YHFNv/chRJiPnDGGRt0jPWryaasDnQtAAf59LY3qd4GVHu8RA1G0Rz4hVw27yssHGycc4+/Z
+ ZX7sPpgNKlpsToMaB5NWgc389HdqOG80Ia+sGkNj9ylp74MPbd0t3fzQnKXzBSHOCNuS67sc
+ lUAw7HB+wa3BqgsAEQEAAYkEPgQYAQIACQUCU/YF9wIbAgIpCRDZFAuyVhMC8cFdIAQZAQIA
+ BgUCU/YF9wAKCRC0OWJbLPHTQ14xD/9crEKZOwhIWX32UXvB/nWbhEx6+PQG2uWsnah7oc5D
+ 7V+aY7M1jy5af8yhlhVdaxL5xUoepfOP08lkCEuSdrYbS5wBcQj4NE1QUoeAjJKbq4JwxUkX
+ Baq2Lu91UZpdKxEVFfSkEzmeMaVvClGjGOtNCUKl8lwLuthU7dGTW74mJaW5jjlXldgzfzFd
+ BkS3fsXfcmeDhHh5TpA4e3MYVBIJrq6Repv151g/zxdA02gjJgGvJlXTb6OgEZGNFr8LGJDh
+ LP7MSksBw6IxCAJSicMESu5kXsJfcODlm4zFaV8QDBevI/s/TgOQ9KQ/EJQsG+XBAuh0dqpu
+ ImmCdhlHx+YaGmwKO1/yhfWvg1h1xbVn98izeotmq1+0J1jt9tgM17MGvgHjmvqlaY+oUXfj
+ OkHkcCGOvao5uAsddQhZcSLmLhrSot8WJI0z3NIM30yiNx/r6OMu47lzTobdYCU8/8m7Rhsq
+ fyW68D+XR098NIlU2oYy1zUetw59WJLf2j5u6D6a9p10doY5lYUEeTjy9Ejs/cL+tQbGwgWh
+ WwKVal1lAtZVaru0GMbSQQ2BycZsZ+H+sbVwpDNEOxQaQPMmEzwgv2Sk2hvR3dTnhUoUaVoR
+ hQE3/+fVRbWHEEroh/+vXV6n4Ps5bDd+75NCQ/lfPZNzGxgxqbd/rd2wStVZpQXkhofMD/4k
+ Z8IivHZYaTA+udUk3iRm0l0qnuX2M5eUbyHW0sZVPnL7Oa4OKXoOir1EWwzzq0GNZjHCh6Cz
+ vLOb1+pllnMkBky0G/+txtgvj5T/366ErUF+lQfgNtENKY6In8tw06hPJbu1sUTQIs50Jg9h
+ RNkDSIQ544ack0fzOusSPM+vo6OkvIHt8tV0fTO1muclwCX/5jb7zQIDgGiUIgS8y0M4hIkP
+ KvdmgurPywi74nEoQQrKF6LpPYYHsDteWR/k2m2BOj0ciZDIIxVR09Y9moQIjBLJKN0J21XJ
+ eAgam4uLV2p1kRDdw/ST5uMCqD4Qi5zrZyWilCci6jF1TR2VEt906E2+AZ3BEheRyn8yb2KO
+ +cJD3kB4RzOyBC/Cq/CGAujfDkRiy1ypFF3TkZdya0NnMgka9LXwBV29sAw9vvrxHxGa+tO+
+ RpgKRywr4Al7QGiw7tRPbxkcatkxg67OcRyntfT0lbKlSTEQUxM06qvwFN7nobc9YiJJTeLu
+ gfa4fCqhQCyquWVVoVP+MnLqkzu1F6lSB6dGIpiW0s3LwyE/WbCAVBraPoENlt69jI0WTXvH
+ 4v71zEffYaGWqtrSize20x9xZf5c/Aukpx0UmsqheKeoSprKyRD/Wj/LgsuTE2Uod85U36Xk
+ eFYetwQY1h3lok2Zb/3uFhWr0NqmT14EL7kCDQRT9gkSARAApxtQ4zUMC512kZ+gCiySFcIF
+ /mAf7+l45689Tn7LI1xmPQrAYJDoqQVXcyh3utgtvBvDLmpQ+1BfEONDWc8KRP6Abo35YqBx
+ 3udAkLZgr/RmEg3+Tiof+e1PJ2zRh5zmdei5MT8biE2zVd9DYSJHZ8ltEWIALC9lAsv9oa+2
+ L6naC+KFF3i0m5mxklgFoSthswUnonqvclsjYaiVPoSldDrreCPzmRCUd8znf//Z4BxtlTw3
+ SulF8weKLJ+Hlpw8lwb3sUl6yPS6pL6UV45gyWMe677bVUtxLYOu+kiv2B/+nrNRDs7B35y/
+ J4t8dtK0S3M/7xtinPiYRmsnJdk+sdAe8TgGkEaooF57k1aczcJlUTBQvlYAEg2NJnqaKg3S
+ CJ4fEuT8rLjzuZmLkoHNumhH/mEbyKca82HvANu5C9clyQusJdU+MNRQLRmOAd/wxGLJ0xmA
+ ye7Ozja86AIzbEmuNhNH9xNjwbwSJNZefV2SoZUv0+V9EfEVxTzraBNUZifqv6hernMQXGxs
+ +lBjnyl624U8nnQWnA8PwJ2hI3DeQou1HypLFPeY9DfWv4xYdkyeOtGpueeBlqhtMoZ0kDw2
+ C3vzj77nWwBgpgn1Vpf4hG/sW/CRR6tuIQWWTvUM3ACa1pgEsBvIEBiVvPxyAtL+L+Lh1Sni
+ 7w3HBk1EJvUAEQEAAYkCHwQYAQIACQUCU/YJEgIbDAAKCRDZFAuyVhMC8QndEACuN16mvivn
+ WwLDdypvco5PF8w9yrfZDKW4ggf9TFVB9skzMNCuQc+tc+QM+ni2c4kKIdz2jmcg6QytgqVu
+ m6V1OsNmpjADaQkVp5jL0tmg6/KA9Tvr07Kuv+Uo4tSrS/4djDjJnXHEp/tB+Fw7CArNtUtL
+ lc8SuADCmMD+kBOVWktZyzkBkDfBXlTWl46T/8291lEspDWe5YW1ZAH/HdCR1rQNZWjNCpB2
+ Cic58CYMD1rSonCnbfUeyZYNNhNHZosl4dl7f+am87Q2x3pK0DLSoJRxWb7vZB0uo9CzCSm3
+ I++aYozF25xQoT+7zCx2cQi33jwvnJAK1o4VlNx36RfrxzBqc1uZGzJBCQu48UjmUSsTwWC3
+ HpE/D9sM+xACs803lFUIZC5H62G059cCPAXKgsFpNMKmBAWweBkVJAisoQeX50OP+/11ArV0
+ cv+fOTfJj0/KwFXJaaYh3LUQNILLBNxkSrhCLl8dUg53IbHx4NfIAgqxLWGfXM8DY1aFdU79
+ pac005PuhxCWkKTJz3gCmznnoat4GCnL5gy/m0Qk45l4PFqwWXVLo9AQg2Kp3mlIFZ6fsEKI
+ AN5hxlbNvNb9V2Zo5bFZjPWPFTxOteM0omUAS+QopwU0yPLLGJVf2iCmItHcUXI+r2JwH1CJ
+ jrHWeQEI2ucSKsNa8FllDmG/fQ==
+Message-ID: <17b63547-0f03-baaf-775c-2da75aa40ee3@gmail.com>
+Date: Thu, 11 Jul 2019 16:52:10 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190625164733.11091-5-jorge.ramirez-ortiz@linaro.org>
-User-Agent: Mutt/1.11.4 (2019-03-13)
+In-Reply-To: <1562846252-7441-1-git-send-email-bhsharma@redhat.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_074448_189599_D2446467 
-X-CRM114-Status: GOOD (  19.15  )
+X-CRM114-CacheID: sfid-20190711_075214_339307_0F8207BC 
+X-CRM114-Status: GOOD (  17.99  )
 X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (matthias.bgg[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -102,89 +198,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, heiko@sntech.de, mturquette@baylibre.com,
- will.deacon@arm.com, david.brown@linaro.org, linux-clk@vger.kernel.org,
- jassisinghbrar@gmail.com, sibis@codeaurora.org, jagan@amarulasolutions.com,
- devicetree@vger.kernel.org, niklas.cassel@linaro.org, arnd@arndb.de,
- linux-arm-msm@vger.kernel.org, olof@lixom.net, robh+dt@kernel.org,
- horms+renesas@verge.net.au, linux-arm-kernel@lists.infradead.org,
- sboyd@kernel.org, linux-kernel@vger.kernel.org, amit.kucheria@linaro.org,
- vkoul@kernel.org, khasim.mohammed@linaro.org, enric.balletbo@collabora.com,
- georgi.djakov@linaro.org
+Cc: takahiro.akashi@linaro.org, bhupesh.linux@gmail.com, will.deacon@arm.com,
+ linux-kernel@vger.kernel.org, james.morse@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue 25 Jun 09:47 PDT 2019, Jorge Ramirez-Ortiz wrote:
 
-> When the APCS clock is registered (platform dependent), it retrieves
-> its parent names from hardcoded values in the driver.
+
+On 11/07/2019 13:57, Bhupesh Sharma wrote:
+> With commit b6664ba42f14 ("s390, kexec_file: drop arch_kexec_mem_walk()"),
+> we introduced the KEXEC_BUF_MEM_UNKNOWN macro. If kexec_buf.mem is set
+> to this value, kexec_locate_mem_hole() will try to allocate free memory.
 > 
-> The following commit allows the DT node to provide such clock names to
-> the platform data based clock driver therefore avoiding having to
-> explicitly embed those names in the clock driver source code.
+> While other arch(s) like s390 and x86_64 already use this macro to
+> initialize kexec_buf.mem with, arm64 uses an equivalent value of 0.
+> Replace it with KEXEC_BUF_MEM_UNKNOWN, to keep the convention of
+> initializing 'kxec_buf.mem' consistent across various archs.
 > 
-> Co-developed-by: Niklas Cassel <niklas.cassel@linaro.org>
-> Signed-off-by: Niklas Cassel <niklas.cassel@linaro.org>
-> Signed-off-by: Jorge Ramirez-Ortiz <jorge.ramirez-ortiz@linaro.org>
-> Reviewed-by: Rob Herring <robh@kernel.org>
-
-Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
-
+> Cc: takahiro.akashi@linaro.org
+> Cc: james.morse@arm.com
+> Cc: will.deacon@arm.com
+> Cc: linux-arm-kernel@lists.infradead.org
+> Signed-off-by: Bhupesh Sharma <bhsharma@redhat.com>
 > ---
->  .../mailbox/qcom,apcs-kpss-global.txt         | 24 ++++++++++++++++---
->  1 file changed, 21 insertions(+), 3 deletions(-)
+
+Reviewed-by: Matthias Brugger <mbrugger@suse.com>
+
+>  arch/arm64/kernel/kexec_image.c        | 2 +-
+>  arch/arm64/kernel/machine_kexec_file.c | 4 ++--
+>  2 files changed, 3 insertions(+), 3 deletions(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/mailbox/qcom,apcs-kpss-global.txt b/Documentation/devicetree/bindings/mailbox/qcom,apcs-kpss-global.txt
-> index 1232fc9fc709..b69310322b09 100644
-> --- a/Documentation/devicetree/bindings/mailbox/qcom,apcs-kpss-global.txt
-> +++ b/Documentation/devicetree/bindings/mailbox/qcom,apcs-kpss-global.txt
-> @@ -18,10 +18,11 @@ platforms.
->  	Usage: required
->  	Value type: <prop-encoded-array>
->  	Definition: must specify the base address and size of the global block
-> +
->  - clocks:
-> -	Usage: required if #clocks-cells property is present
-> -	Value type: <phandle>
-> -	Definition: phandle to the input PLL, which feeds the APCS mux/divider
-> +	Usage: required if #clock-names property is present
-> +	Value type: <phandle array>
-> +	Definition: phandles to the two parent clocks of the clock driver.
+> diff --git a/arch/arm64/kernel/kexec_image.c b/arch/arm64/kernel/kexec_image.c
+> index 2514fd6f12cb..29a9428486a5 100644
+> --- a/arch/arm64/kernel/kexec_image.c
+> +++ b/arch/arm64/kernel/kexec_image.c
+> @@ -84,7 +84,7 @@ static void *image_load(struct kimage *image,
 >  
->  - #mbox-cells:
->  	Usage: required
-> @@ -33,6 +34,12 @@ platforms.
->  	Value type: <u32>
->  	Definition: as described in clock.txt, must be 0
->  
-> +- clock-names:
-> +	Usage: required if the platform data based clock driver needs to
-> +	retrieve the parent clock names from device tree.
-> +	This will requires two mandatory clocks to be defined.
-> +	Value type: <string-array>
-> +	Definition: must be "aux" and "pll"
->  
->  = EXAMPLE
->  The following example describes the APCS HMSS found in MSM8996 and part of the
-> @@ -65,3 +72,14 @@ Below is another example of the APCS binding on MSM8916 platforms:
->  		clocks = <&a53pll>;
->  		#clock-cells = <0>;
->  	};
-> +
-> +Below is another example of the APCS binding on QCS404 platforms:
-> +
-> +	apcs_glb: mailbox@b011000 {
-> +		compatible = "qcom,qcs404-apcs-apps-global", "syscon";
-> +		reg = <0x0b011000 0x1000>;
-> +		#mbox-cells = <1>;
-> +		clocks = <&gcc GCC_GPLL0_AO_OUT_MAIN>, <&apcs_hfpll>;
-> +		clock-names = "aux", "pll";
-> +		#clock-cells = <0>;
-> +	};
-> -- 
-> 2.21.0
+>  	kbuf.buffer = kernel;
+>  	kbuf.bufsz = kernel_len;
+> -	kbuf.mem = 0;
+> +	kbuf.mem = KEXEC_BUF_MEM_UNKNOWN;
+>  	kbuf.memsz = le64_to_cpu(h->image_size);
+>  	text_offset = le64_to_cpu(h->text_offset);
+>  	kbuf.buf_align = MIN_KIMG_ALIGN;
+> diff --git a/arch/arm64/kernel/machine_kexec_file.c b/arch/arm64/kernel/machine_kexec_file.c
+> index 58871333737a..ba78ee7ca990 100644
+> --- a/arch/arm64/kernel/machine_kexec_file.c
+> +++ b/arch/arm64/kernel/machine_kexec_file.c
+> @@ -177,7 +177,7 @@ int load_other_segments(struct kimage *image,
+>  	if (initrd) {
+>  		kbuf.buffer = initrd;
+>  		kbuf.bufsz = initrd_len;
+> -		kbuf.mem = 0;
+> +		kbuf.mem = KEXEC_BUF_MEM_UNKNOWN;
+>  		kbuf.memsz = initrd_len;
+>  		kbuf.buf_align = 0;
+>  		/* within 1GB-aligned window of up to 32GB in size */
+> @@ -204,7 +204,7 @@ int load_other_segments(struct kimage *image,
+>  	dtb_len = fdt_totalsize(dtb);
+>  	kbuf.buffer = dtb;
+>  	kbuf.bufsz = dtb_len;
+> -	kbuf.mem = 0;
+> +	kbuf.mem = KEXEC_BUF_MEM_UNKNOWN;
+>  	kbuf.memsz = dtb_len;
+>  	/* not across 2MB boundary */
+>  	kbuf.buf_align = SZ_2M;
 > 
 
 _______________________________________________
