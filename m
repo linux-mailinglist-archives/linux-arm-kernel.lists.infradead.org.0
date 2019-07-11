@@ -2,97 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1FF3764FFA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 03:46:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA69C65013
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 04:13:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
-	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4UAWQyEhNiWDYHeXdhxFjxwrEN6GXjJ+dORSKg6QnmQ=; b=q6QcO2/zO02wT0
-	WkxoNEMDt2fdhwa3eOIg7WsG4ePVnEq+j61lo42U0uO1pQ3ssyNCgawfNcd5ngSvoZZmB5gGJvuxp
-	YGzdDvwgYipyWSWq4NZ7fMFrEE0IWCdF7+iRTwWzFiX29iZk7wXGv3UjOFKO0vlmgCOJhMGo6F9BO
-	ZOhVxmGGp6xxEpjvqpo/bOrin+V7RpnyZK36USQd9rT+f9uSlRowxDhzx/pWFb7PPyALLpn+CeUdM
-	XYs9UDiJpp3j15uNpSEllLsXsuWdZIE0rT4M28Lpb0gnOvGGa+BieEFumlbkspctRx+SVfQDrLi9y
-	t2zubwIVXp08WaTvIsRw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=nKWKGL1Tt6pI5hTUsWxIt9cl9zVbMjirlXuvmVUCNlo=; b=S2B
+	fmqangKJBGD9ksU0y92rFHYecqgrQuDP/FWBgAXEeu2hyAKa5Df23yLYGTS2kddDiaAPSgKvybWye
+	iE1UbM3vdYIFmzAGXmFVaIme3TFQKP3mrT+qEaQ6crtCY8+KipYOaiRkgBJH3XNDlpOvvvFgYsrvI
+	BEgBomSpq3A1d9FFy7aB/EZT3b2wS7/RCnvMlbjRJQnVYkGQMN7cQ40EyvjY7ubzlUyGF0sF6tULz
+	ylKAvwayE/44V4EB+k3nHCI3G8rz2Fo0FXXgV/A9J5Hwem1V00V8P0v2FlMZp+cV+FZYakDqwcpte
+	ex5Yw5W7eNSdj2fDyv72RhTsO2sV5VA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlOA0-0007ss-KA; Thu, 11 Jul 2019 01:46:12 +0000
-Received: from out1-smtp.messagingengine.com ([66.111.4.25])
+	id 1hlOa5-0006uj-J6; Thu, 11 Jul 2019 02:13:09 +0000
+Received: from regular1.263xmail.com ([211.150.70.206])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlO9m-0007sX-RU
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 01:46:00 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id CB4F820D7C;
- Wed, 10 Jul 2019 21:45:57 -0400 (EDT)
-Received: from imap2 ([10.202.2.52])
- by compute4.internal (MEProxy); Wed, 10 Jul 2019 21:45:57 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
- mime-version:message-id:in-reply-to:references:date:from:to:cc
- :subject:content-type; s=fm3; bh=5o0Sq/MOOSCneJqjrpryySjuBkKeXns
- y2AHoQ86gdrc=; b=oLd6pl4ij9Ef7pDkIY86CMVX703MM2Cc7CoSN7o2sbARzGf
- LG7VqtEZf+gw0mkkgRArxNuoty0oAtAPAxCbSL7SumKdKeSWTsTPTt6aUitcp/hL
- j30y2ac8qHF9PCNpnof0sigXwIM85wAI9RKoTkMx4liNrFMgMcunuC5Vo3LW90so
- Si/8FoQVbGJPQFIpKJGPOGmn1y+NrnaBbSfxdxIUPsUzA6y5svYt1mGm9WO8/eGH
- +fk3Cuqw6mV6UDAxvATbWYosEabGQMDe4dJ9n7BR26mlGhYzysTr4pr6iHTuehAx
- SSKcAAwGNs0KVstbazqTnNzfq+c5uEG8v81JfMg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=5o0Sq/
- MOOSCneJqjrpryySjuBkKeXnsy2AHoQ86gdrc=; b=ktEgAyg31gHyvWRrU+e8HO
- M3YkI/hr97Tblt1Zhf4b+oHzhaZhTDCT3RsF0OvnhqxzSHNBzB9WJm9JjVZswuTW
- hMAE/e5TfJvcNcf0kTIMKoEJ8YeXPfxKixrQSBNxnBuFRg1I/7b6KNspKU09itGH
- vxrMpXzt2AKd9N1AGUTyMtHysuGpU6o1149UucJldIe0iqdN3j8/o/9YVoat4qZA
- O+hxmQ5IjajNQIHLEjR4YzO96WIssSKWMHh06OPnyVOrVp5cVDriXFnI+ji9mTo8
- 3A/XOOEc242RZwKH59IlbLNiZ3sutW51haANBupCTPILXchg2SiGRlbzcbsGdbuQ
- ==
-X-ME-Sender: <xms:1JQmXXVKtVNnzSePTTgQC50KatM4qKcPojgXftND7w32-_GrjPTc2A>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrgeejgdehtdcutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpefofgggkfgjfhffhffvufgtsehttdertderredtnecuhfhrohhmpedftehnughr
- vgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucfrrghrrg
- hmpehmrghilhhfrhhomheprghnughrvgifsegrjhdrihgurdgruhenucevlhhushhtvghr
- ufhiiigvpedt
-X-ME-Proxy: <xmx:1JQmXX9qNgm9wjTFt2gFiYjgvee0y1t40xV2-4YrASCNIY1aANHKng>
- <xmx:1JQmXVnKsUmsKnl99YulCgkkdMoObbYMyfznATQespMEKhBD3ASOjQ>
- <xmx:1JQmXaJP6cV1E82Uf2dg-VDIxHq-fo2PsaIpiMz6CUIjU_TkTR6BlA>
- <xmx:1ZQmXbMMawtkzufjaR_G2d7SWoUBMu1U9WXtpa_QjjLZZ4Wt_j5Ffw>
-Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id 6F41BE0162; Wed, 10 Jul 2019 21:45:56 -0400 (EDT)
-X-Mailer: MessagingEngine.com Webmail Interface
-User-Agent: Cyrus-JMAP/3.1.6-731-g19d3b16-fmstable-20190627v1
-Mime-Version: 1.0
-Message-Id: <0941299a-6c09-4f93-b7da-6264502a5fdf@www.fastmail.com>
-In-Reply-To: <1562772382-6555-1-git-send-email-hongweiz@ami.com>
-References: <1562772382-6555-1-git-send-email-hongweiz@ami.com>
-Date: Thu, 11 Jul 2019 11:16:00 +0930
-From: "Andrew Jeffery" <andrew@aj.id.au>
-To: "Hongwei Zhang" <hongweiz@ami.com>,
- "Bartosz Golaszewski" <bgolaszewski@baylibre.com>,
- "Joel Stanley" <joel@jms.id.au>, "Linus Walleij" <linus.walleij@linaro.org>
-Subject: Re: [PATCH 2/3 v2] ARM: dts: aspeed: Add SGPIO driver
+ id 1hlOZt-0006uI-7I; Thu, 11 Jul 2019 02:12:59 +0000
+Received: from zhangzj?rock-chips.com (unknown [192.168.167.158])
+ by regular1.263xmail.com (Postfix) with ESMTP id 578DD25F;
+ Thu, 11 Jul 2019 10:12:43 +0800 (CST)
+X-263anti-spam: KSV:0;BIG:0;
+X-MAIL-GRAY: 0
+X-MAIL-DELIVERY: 1
+X-KSVirus-check: 0
+X-ADDR-CHECKED4: 1
+X-ABS-CHECKED: 1
+X-SKE-CHECKED: 1
+X-ANTISPAM-LEVEL: 2
+Received: from localhost.localdomain (unknown [58.22.7.114])
+ by smtp.263.net (postfix) whith ESMTP id
+ P17295T139859222501120S1562811161454565_; 
+ Thu, 11 Jul 2019 10:12:42 +0800 (CST)
+X-IP-DOMAINF: 1
+X-UNIQUE-TAG: <4fc1a89d2a0f1bfeced24737ded1a791>
+X-RL-SENDER: zhangzj@rock-chips.com
+X-SENDER: zhangzj@rock-chips.com
+X-LOGIN-NAME: zhangzj@rock-chips.com
+X-FST-TO: heiko@sntech.de
+X-SENDER-IP: 58.22.7.114
+X-ATTACHMENT-NUM: 0
+X-DNS-TYPE: 0
+From: Elon Zhang <zhangzj@rock-chips.com>
+To: heiko@sntech.de,
+	mark.rutland@arm.com,
+	robh+dt@kernel.org
+Subject: [PATCH v1 1/1] arm64: dts: rockchip: Add support for TB-96AI board
+Date: Thu, 11 Jul 2019 10:12:09 +0800
+Message-Id: <20190711021209.32529-1-zhangzj@rock-chips.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_184559_046618_B0C0CD84 
-X-CRM114-Status: GOOD (  22.71  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190710_191257_615724_7C4F87EB 
+X-CRM114-Status: GOOD (  10.98  )
+X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.25 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [211.150.70.206 listed in list.dnswl.org]
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [58.22.7.114 listed in dnsbl.sorbs.net]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,502 +79,680 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-gpio@vger.kernel.org, linux-aspeed@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Elon Zhang <zhangzj@rock-chips.com>, linux-rockchip@lists.infradead.org,
+ manivannan.sadhasivam@linaro.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Add devicetree support for RK3399Pro TB-96AI board, one of
+the 96Boards family.
+
+The TB-96AI board is a 96Boards Compute SOM design, launched
+by Linaro, Rockchip and Beiqicloud.
+
+More information can be obtained from the following websites:
+1.https://www.96boards.org/product/tb-96ai/
+2.http://t.rock-chips.com/
+3.http://www.beiqicloud.com/
+
+This patch add basic node for the board and support booting up
+to Fedora.
+
+Signed-off-by: Elon Zhang <zhangzj@rock-chips.com>
+
+diff --git a/arch/arm64/boot/dts/rockchip/Makefile b/arch/arm64/boot/dts/rockchip/Makefile
+index 5f2687acbf94..3d6c8d4363b5 100644
+--- a/arch/arm64/boot/dts/rockchip/Makefile
++++ b/arch/arm64/boot/dts/rockchip/Makefile
+@@ -27,3 +27,4 @@ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-rock960.dtb
+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-rockpro64.dtb
+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-sapphire.dtb
+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-sapphire-excavator.dtb
++dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399pro-tb-96ai.dtb
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399pro-tb-96ai.dts b/arch/arm64/boot/dts/rockchip/rk3399pro-tb-96ai.dts
+new file mode 100644
+index 000000000000..1935df99065d
+--- /dev/null
++++ b/arch/arm64/boot/dts/rockchip/rk3399pro-tb-96ai.dts
+@@ -0,0 +1,629 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++/*
++ * Copyright (c) 2019 Fuzhou Rockchip Electronics Co., Ltd.
++ */
++
++/dts-v1/;
++#include "rk3399pro.dtsi"
++#include "rk3399-opp.dtsi"
++
++/ {
++	compatible = "rockchip,rk3399pro-tb-96ai", "rockchip,rk3399pro";
++
++	chosen {
++		stdout-path = "serial2:1500000n8";
++	};
++
++	xin32k: xin32k {
++		compatible = "fixed-clock";
++		clock-frequency = <32768>;
++		clock-output-names = "xin32k";
++		#clock-cells = <0>;
++	};
++
++	vcc_phy: vcc-phy-regulator {
++		compatible = "regulator-fixed";
++		regulator-name = "vcc_phy";
++		regulator-always-on;
++		regulator-boot-on;
++	};
++
++	vcc5v0_sys: vccsys {
++		compatible = "regulator-fixed";
++		regulator-name = "vcc5v0_sys";
++		regulator-always-on;
++		regulator-boot-on;
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++	};
++
++	vdd_log: vdd_log {
++		compatible = "regulator-fixed";
++		regulator-name = "vdd_log";
++		regulator-always-on;
++		regulator-boot-on;
++		regulator-min-microvolt = <900000>;
++		regulator-max-microvolt = <900000>;
++	};
++
++	leds: gpio-leds {
++		compatible = "gpio-leds";
++		pinctrl-names = "default";
++		pinctrl-0 =<&leds_gpio>;
++
++		led@1 {
++			gpios = <&gpio2 5 GPIO_ACTIVE_HIGH>;
++			label = "system_work_led1";
++			retain-state-suspended;
++		};
++
++		led@2 {
++			gpios = <&gpio2 4 GPIO_ACTIVE_HIGH>;
++			label = "system_work_led2";
++			retain-state-suspended;
++		};
++
++		led@3 {
++			gpios = <&gpio2 3 GPIO_ACTIVE_HIGH>;
++			label = "system_work_led3";
++			retain-state-suspended;
++		};
++	};
++};
++
++&cpu_l0 {
++	cpu-supply = <&vdd_cpu_l>;
++};
++
++&cpu_l1 {
++	cpu-supply = <&vdd_cpu_l>;
++};
++
++&cpu_l2 {
++	cpu-supply = <&vdd_cpu_l>;
++};
++
++&cpu_l3 {
++	cpu-supply = <&vdd_cpu_l>;
++};
++
++&cpu_b0 {
++	cpu-supply = <&vdd_cpu_b>;
++};
++
++&cpu_b1 {
++	cpu-supply = <&vdd_cpu_b>;
++};
++
++&emmc_phy {
++	status = "okay";
++};
++
++&i2c0 {
++	status = "okay";
++	i2c-scl-rising-time-ns = <180>;
++	i2c-scl-falling-time-ns = <30>;
++	clock-frequency = <400000>;
++
++	rk809: pmic@20 {
++		compatible = "rockchip,rk809";
++		reg = <0x20>;
++		interrupt-parent = <&gpio1>;
++		interrupts = <RK_PC2 IRQ_TYPE_LEVEL_LOW>;
++		pinctrl-names = "default", "pmic-sleep",
++				"pmic-power-off", "pmic-reset";
++		pinctrl-0 = <&pmic_int_l>;
++		pinctrl-1 = <&soc_slppin_slp>, <&rk809_slppin_slp>;
++		pinctrl-2 = <&soc_slppin_gpio>, <&rk809_slppin_pwrdn>;
++		pinctrl-3 = <&soc_slppin_gpio>,<&rk809_slppin_null>;
++		rockchip,system-power-controller;
++		pmic-reset-func = <1>;
++		wakeup-source;
++		#clock-cells = <1>;
++		clock-output-names = "rk808-clkout1", "rk808-clkout2";
++
++		vcc1-supply = <&vcc5v0_sys>;
++		vcc2-supply = <&vcc5v0_sys>;
++		vcc3-supply = <&vcc5v0_sys>;
++		vcc4-supply = <&vcc5v0_sys>;
++		vcc5-supply = <&vcc_buck5>;
++		vcc6-supply = <&vcc_buck5>;
++		vcc7-supply = <&vcc3v3_sys>;
++		vcc8-supply = <&vcc3v3_sys>;
++		vcc9-supply = <&vcc5v0_sys>;
++
++		pwrkey {
++			status = "okay";
++		};
++
++		rtc {
++			status = "okay";
++		};
++
++		pinctrl_rk8xx: pinctrl_rk8xx {
++			gpio-controller;
++			#gpio-cells = <2>;
++
++			rk809_slppin_null: rk809_slppin_null {
++				pins = "gpio_slp";
++				function = "pin_fun0";
++			};
++
++			rk809_slppin_slp: rk809_slppin_slp {
++				pins = "gpio_slp";
++				function = "pin_fun1";
++			};
++
++			rk809_slppin_pwrdn: rk809_slppin_pwrdn {
++				pins = "gpio_slp";
++				function = "pin_fun2";
++			};
++
++			rk809_slppin_rst: rk809_slppin_rst {
++				pins = "gpio_slp";
++				function = "pin_fun3";
++			};
++		};
++
++		regulators {
++			vdd_center: DCDC_REG1 {
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-min-microvolt = <750000>;
++				regulator-max-microvolt = <1350000>;
++				regulator-initial-mode = <0x2>;
++				regulator-name = "vdd_center";
++				regulator-state-mem {
++					regulator-on-in-suspend;
++					regulator-suspend-microvolt = <900000>;
++				};
++			};
++
++			vdd_cpu_l: DCDC_REG2 {
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-min-microvolt = <750000>;
++				regulator-max-microvolt = <1350000>;
++				regulator-ramp-delay = <6001>;
++				regulator-initial-mode = <0x2>;
++				regulator-name = "vdd_cpu_l";
++				regulator-state-mem {
++					regulator-off-in-suspend;
++				};
++			};
++
++			vcc_ddr: DCDC_REG3 {
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-name = "vcc_ddr";
++				regulator-initial-mode = <0x2>;
++				regulator-state-mem {
++					regulator-on-in-suspend;
++				};
++			};
++
++			vcc3v3_sys: DCDC_REG4 {
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-min-microvolt = <3300000>;
++				regulator-max-microvolt = <3300000>;
++				regulator-initial-mode = <0x2>;
++				regulator-name = "vcc3v3_sys";
++				regulator-state-mem {
++					regulator-on-in-suspend;
++					regulator-suspend-microvolt = <3300000>;
++				};
++			};
++
++			vcc_buck5: DCDC_REG5 {
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-min-microvolt = <2200000>;
++				regulator-max-microvolt = <2200000>;
++				regulator-name = "vcc_buck5";
++				regulator-state-mem {
++					regulator-on-in-suspend;
++					regulator-suspend-microvolt = <2200000>;
++				};
++			};
++
++			vcca_0v9: LDO_REG1 {
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-min-microvolt = <900000>;
++				regulator-max-microvolt = <900000>;
++				regulator-name = "vcca_0v9";
++				regulator-state-mem {
++					regulator-off-in-suspend;
++				};
++			};
++
++			vcc_1v8: LDO_REG2 {
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <1800000>;
++
++				regulator-name = "vcc_1v8";
++				regulator-state-mem {
++					regulator-on-in-suspend;
++					regulator-suspend-microvolt = <1800000>;
++				};
++			};
++
++			vcc0v9_soc: LDO_REG3 {
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-min-microvolt = <900000>;
++				regulator-max-microvolt = <900000>;
++
++				regulator-name = "vcc0v9_soc";
++				regulator-state-mem {
++					regulator-on-in-suspend;
++					regulator-suspend-microvolt = <900000>;
++				};
++			};
++
++			vcca_1v8: LDO_REG4 {
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <1800000>;
++
++				regulator-name = "vcca_1v8";
++				regulator-state-mem {
++					regulator-off-in-suspend;
++				};
++			};
++
++			vdd1v5_dvp: LDO_REG5 {
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-min-microvolt = <1500000>;
++				regulator-max-microvolt = <1500000>;
++
++				regulator-name = "vdd1v5_dvp";
++				regulator-state-mem {
++					regulator-off-in-suspend;
++				};
++			};
++
++			vcc_1v5: LDO_REG6 {
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-min-microvolt = <1500000>;
++				regulator-max-microvolt = <1500000>;
++
++				regulator-name = "vcc_1v5";
++				regulator-state-mem {
++					regulator-off-in-suspend;
++				};
++			};
++
++			vcc_3v0: LDO_REG7 {
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-min-microvolt = <3000000>;
++				regulator-max-microvolt = <3000000>;
++
++				regulator-name = "vcc_3v0";
++				regulator-state-mem {
++					regulator-off-in-suspend;
++				};
++			};
++
++			vccio_sd: LDO_REG8 {
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <3300000>;
++
++				regulator-name = "vccio_sd";
++				regulator-state-mem {
++					regulator-on-in-suspend;
++					regulator-suspend-microvolt = <3300000>;
++				};
++			};
++
++			vcc_sd: LDO_REG9 {
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-min-microvolt = <3300000>;
++				regulator-max-microvolt = <3300000>;
++
++				regulator-name = "vcc_sd";
++				regulator-state-mem {
++					regulator-on-in-suspend;
++					regulator-suspend-microvolt = <3300000>;
++				};
++			};
++
++			vcc5v0_usb: SWITCH_REG1 {
++				regulator-min-microvolt = <5000000>;
++				regulator-max-microvolt = <5000000>;
++
++				regulator-name = "vcc5v0_usb";
++				regulator-state-mem {
++					regulator-off-in-suspend;
++				};
++			};
++
++			vccio_3v3: SWITCH_REG2 {
++				regulator-always-on;
++				regulator-boot-on;
++				regulator-min-microvolt = <3300000>;
++				regulator-max-microvolt = <3300000>;
++
++				regulator-name = "vccio_3v3";
++				regulator-state-mem {
++					regulator-off-in-suspend;
++				};
++			};
++		};
++	};
++
++	vdd_cpu_b: tcs452x@1c {
++		compatible = "tcs,tcs452x";
++		reg = <0x1c>;
++		vin-supply = <&vcc5v0_sys>;
++		regulator-compatible = "fan53555-reg";
++		pinctrl-0 = <&vsel1_gpio>;
++		vsel-gpios = <&gpio1 RK_PC1 GPIO_ACTIVE_HIGH>;
++		regulator-name = "vdd_cpu_b";
++		regulator-min-microvolt = <712500>;
++		regulator-max-microvolt = <1500000>;
++		regulator-ramp-delay = <2300>;
++		fcs,suspend-voltage-selector = <1>;
++		regulator-always-on;
++		regulator-boot-on;
++		regulator-initial-state = <3>;
++		regulator-state-mem {
++			regulator-off-in-suspend;
++		};
++	};
++
++	vdd_gpu: tcs452x@10 {
++		compatible = "tcs,tcs452x";
++		status = "okay";
++		reg = <0x10>;
++		vin-supply = <&vcc5v0_sys>;
++		regulator-compatible = "fan53555-reg";
++		pinctrl-0 = <&vsel2_gpio>;
++		vsel-gpios = <&gpio1 RK_PB6 GPIO_ACTIVE_HIGH>;
++		regulator-name = "vdd_gpu";
++		regulator-min-microvolt = <735000>;
++		regulator-max-microvolt = <1400000>;
++		regulator-ramp-delay = <2300>;
++		fcs,suspend-voltage-selector = <1>;
++		regulator-always-on;
++		regulator-boot-on;
++		regulator-state-mem {
++			regulator-off-in-suspend;
++		};
++	};
++
++};
++
++&i2c8 {
++	status = "okay";
++	i2c-scl-rising-time-ns = <345>;
++	i2c-scl-falling-time-ns = <11>;
++	clock-frequency = <100000>;
++
++	fusb0: fusb30x@22 {
++		compatible = "fairchild,fusb302";
++		reg = <0x22>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&fusb0_int>;
++		int-n-gpios = <&gpio1 RK_PA2 GPIO_ACTIVE_HIGH>;
++		vbus-5v-gpios = <&gpio0 RK_PA1 GPIO_ACTIVE_LOW>;
++		status = "okay";
++	};
++
++};
++
++&io_domains {
++	status = "okay";
++	bt656-supply = <&vcca_1v8>; /* APIO2_VDD */
++	audio-supply = <&vcca_1v8>; /* APIO5_VDD */
++	sdmmc-supply = <&vccio_sd>; /* SDMMC0_VDD */
++	gpio1830-supply = <&vcc_1v8>; /* APIO4_VDD */
++};
++
++&pinctrl {
++	pinctrl-names = "default";
++	pinctrl-0 = <&npu_ref_clk>;
++
++	fusb30x {
++		fusb0_int: fusb0-int {
++			rockchip,pins =
++				<1 RK_PA2 0 &pcfg_pull_up>;
++		};
++	};
++
++	gpio-leds {
++		leds_gpio: leds-gpio {
++			rockchip,pins =
++				<2 5 RK_FUNC_GPIO &pcfg_pull_up>,
++				<2 4 RK_FUNC_GPIO &pcfg_pull_up>,
++				<2 3 RK_FUNC_GPIO &pcfg_pull_up>;
++		};
++	};
++
++	npu_clk {
++		npu_ref_clk: npu-ref-clk {
++			rockchip,pins =
++				<0 RK_PA2 1 &pcfg_pull_none>;
++		};
++	};
++
++	pmic {
++		pmic_int_l: pmic-int-l {
++			rockchip,pins =
++				<1 RK_PC2 0 &pcfg_pull_up>;
++		};
++
++		soc_slppin_gpio: soc-slppin-gpio {
++			rockchip,pins =
++				<1 RK_PA5 0 &pcfg_output_low>;
++		};
++
++		soc_slppin_slp: soc-slppin-slp {
++			rockchip,pins =
++				<1 RK_PA5 1 &pcfg_pull_down>;
++		};
++
++		vsel1_gpio: vsel1-gpio {
++			rockchip,pins =
++				<1 RK_PC1 0 &pcfg_pull_down>;
++		};
++
++		vsel2_gpio: vsel2-gpio {
++			rockchip,pins =
++				<1 RK_PB6 0 &pcfg_pull_down>;
++		};
++	};
++
++	usb3 {
++		usb3_host_en: usb3-host-en {
++			rockchip,pins =
++				<2 RK_PA2 RK_FUNC_GPIO &pcfg_output_high>;
++		};
++	};
++};
++
++&pmu_io_domains {
++	status = "okay";
++	pmu1830-supply = <&vcc_1v8>;
++};
++
++&pwm0 {
++	status = "okay";
++};
++
++&pwm2 {
++	status = "okay";
++};
++
++&saradc {
++	status = "okay";
++	vref-supply = <&vcc_1v8>;
++};
++
++&sdhci {
++	bus-width = <8>;
++	mmc-hs400-1_8v;
++	supports-emmc;
++	non-removable;
++	keep-power-in-suspend;
++	mmc-hs400-enhanced-strobe;
++	status = "okay";
++};
++
++&sdmmc {
++	clock-frequency = <150000000>;
++	clock-freq-min-max = <400000 150000000>;
++	supports-sd;
++	bus-width = <4>;
++	cap-mmc-highspeed;
++	cap-sd-highspeed;
++	disable-wp;
++	num-slots = <1>;
++	vqmmc-supply = <&vccio_sd>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_cd &sdmmc_bus4>;
++	status = "okay";
++};
++
++&tcphy0 {
++	extcon = <&fusb0>;
++	status = "okay";
++};
++
++&tcphy1 {
++	status = "okay";
++};
++
++&tsadc {
++	rockchip,hw-tshut-mode = <1>; /* tshut mode 0:CRU 1:GPIO */
++	rockchip,hw-tshut-polarity = <1>; /* tshut polarity 0:LOW 1:HIGH */
++	status = "okay";
++};
++
++&u2phy0 {
++	status = "okay";
++	extcon = <&fusb0>;
++
++	u2phy0_otg: otg-port {
++		status = "okay";
++	};
++
++	u2phy0_host: host-port {
++		phy-supply = <&vcc5v0_usb>;
++		status = "okay";
++	};
++};
++
++&u2phy1 {
++	status = "okay";
++
++	u2phy1_otg: otg-port {
++		status = "okay";
++	};
++
++	u2phy1_host: host-port {
++		phy-supply = <&vcc5v0_usb>;
++		status = "okay";
++	};
++};
++
++&uart0 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart0_xfer &uart0_cts>;
++	status = "okay";
++};
++
++&uart2 {
++	status = "okay";
++};
++
++&uart4 {
++	status = "okay";
++};
++
++&usb_host0_ehci {
++	status = "okay";
++};
++
++&usb_host1_ehci {
++	status = "okay";
++};
++
++&usb_host0_ohci {
++	status = "okay";
++};
++
++&usb_host1_ohci {
++	status = "okay";
++};
++
++&usbdrd3_0 {
++	extcon = <&fusb0>;
++	status = "okay";
++};
++
++&usbdrd3_1 {
++	status = "okay";
++	pinctrl-names = "default";
++	pinctrl-0 = <&usb3_host_en>;
++};
++
++&usbdrd_dwc3_0 {
++	status = "okay";
++};
++
++&usbdrd_dwc3_1 {
++	snps,dis-u3-autosuspend-quirk;
++	status = "okay";
++};
++
+-- 
+2.17.1
 
 
-On Thu, 11 Jul 2019, at 00:56, Hongwei Zhang wrote:
-> Add SGPIO driver support for Aspeed AST2500 SoC.
-> 
-> Signed-off-by: Hongwei Zhang <hongweiz@ami.com>
-> ---
->  drivers/gpio/sgpio-aspeed.c | 450 ++++++++++++++++++++++++++++++++++++++++++++
->  1 file changed, 450 insertions(+)
->  create mode 100644 drivers/gpio/sgpio-aspeed.c
-> 
-> diff --git a/drivers/gpio/sgpio-aspeed.c b/drivers/gpio/sgpio-aspeed.c
-> new file mode 100644
-> index 0000000..0743d22
-> --- /dev/null
-> +++ b/drivers/gpio/sgpio-aspeed.c
-> @@ -0,0 +1,450 @@
-> +// SPDX-License-Identifier: GPL-2.0+
-> +/*
-> + * Copyright 2019 American Megatrends International LLC.
-> + *
-> + * Author: Karthikeyan Mani <karthikeyanm@amiindia.co.in>
-> + */
-> +
-> +#include <linux/gpio/driver.h>
-> +#include <linux/gpio/aspeed.h>
-> +#include <linux/hashtable.h>
-> +#include <linux/init.h>
-> +#include <linux/io.h>
-> +#include <linux/kernel.h>
-> +#include <linux/module.h>
-> +#include <linux/pinctrl/consumer.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/spinlock.h>
-> +#include <linux/string.h>
-> +
-> +#define NR_SGPIO        80
-> +
-> +struct aspeed_sgpio {
-> +	struct gpio_chip chip;
-> +	spinlock_t lock;
-> +	void __iomem *base;
-> +	int irq;
-> +};
-> +
-> +struct aspeed_sgpio_bank {
-> +	uint16_t    val_regs;
-> +	uint16_t    rdata_reg;
-> +	uint16_t    irq_regs;
-> +	const char  names[4][3];
-> +};
-> +
-> +/*
-> + * Note: The "value" register returns the input value sampled on the
-> + *       line even when the GPIO is configured as an output. Since
-> + *       that input goes through synchronizers, writing, then reading
-> + *       back may not return the written value right away.
-> + *
-> + *       The "rdata" register returns the content of the write latch
-> + *       and thus can be used to read back what was last written
-> + *       reliably.
-> + */
-> +
-> +static const struct aspeed_sgpio_bank aspeed_sgpio_banks[] = {
-> +	{
-> +		.val_regs = 0x0000,
-> +		.rdata_reg = 0x0070,
-> +		.irq_regs = 0x0004,
-> +		.names = { "A", "B", "C", "D" },
-> +	},
-> +	{
-> +		.val_regs = 0x001C,
-> +		.rdata_reg = 0x0074,
-> +		.irq_regs = 0x0020,
-> +		.names = { "E", "F", "G", "H" },
-> +	},
-> +	{
-> +		.val_regs = 0x0038,
-> +		.rdata_reg = 0x0078,
-> +		.irq_regs = 0x003C,
-> +		.names = { "I", "J" },
-> +	},
-> +};
-> +
-> +enum aspeed_sgpio_reg {
-> +	reg_val,
-> +	reg_rdata,
-> +	reg_irq_enable,
-> +	reg_irq_type0,
-> +	reg_irq_type1,
-> +	reg_irq_type2,
-> +	reg_irq_status,
-> +};
-> +
-> +#define GPIO_VAL_VALUE      0x00
-> +#define GPIO_VAL_DIR        0x04
-> +#define GPIO_IRQ_ENABLE     0x00
-> +#define GPIO_IRQ_TYPE0      0x04
-> +#define GPIO_IRQ_TYPE1      0x08
-> +#define GPIO_IRQ_TYPE2      0x0C
-> +#define GPIO_IRQ_STATUS     0x10
-> +
-> +/* This will be resolved at compile time */
-> +static inline void __iomem *bank_reg(struct aspeed_sgpio *gpio,
-> +				     const struct aspeed_sgpio_bank *bank,
-> +				     const enum aspeed_sgpio_reg reg)
-> +{
-> +	switch (reg) {
-> +	case reg_val:
-> +		return gpio->base + bank->val_regs + GPIO_VAL_VALUE;
-> +	case reg_rdata:
-> +		return gpio->base + bank->rdata_reg;
-> +	case reg_irq_enable:
-> +		return gpio->base + bank->irq_regs + GPIO_IRQ_ENABLE;
-> +	case reg_irq_type0:
-> +		return gpio->base + bank->irq_regs + GPIO_IRQ_TYPE0;
-> +	case reg_irq_type1:
-> +		return gpio->base + bank->irq_regs + GPIO_IRQ_TYPE1;
-> +	case reg_irq_type2:
-> +		return gpio->base + bank->irq_regs + GPIO_IRQ_TYPE2;
-> +	case reg_irq_status:
-> +		return gpio->base + bank->irq_regs + GPIO_IRQ_STATUS;
-> +	default:
-> +		/* acturally if code runs to here, it's an error case */
-> +		WARN_ON(reg);
-> +		return gpio->base;
-> +	}
-> +}
-> +
-> +#define GPIO_BANK(x)    ((x) >> 5)
-> +#define GPIO_OFFSET(x)  ((x) & 0x1f)
-> +#define GPIO_BIT(x)     BIT(GPIO_OFFSET(x))
-> +
-> +static const struct aspeed_sgpio_bank *to_bank(unsigned int offset)
-> +{
-> +	unsigned int bank = GPIO_BANK(offset);
-> +
-> +	WARN_ON(bank >= ARRAY_SIZE(aspeed_sgpio_banks));
-> +	return &aspeed_sgpio_banks[bank];
-> +}
-> +
-> +static int aspeed_sgpio_get(struct gpio_chip *gc, unsigned int offset)
-> +{
-> +	struct aspeed_sgpio *gpio = gpiochip_get_data(gc);
-> +	const struct aspeed_sgpio_bank *bank = to_bank(offset);
-> +
-> +	return !!(ioread32(bank_reg(gpio, bank, reg_val)) & GPIO_BIT(offset));
-> +}
-> +
-> +static void aspeed_sgpio_set(struct gpio_chip *gc, unsigned int 
-> offset, int val)
-> +{
-> +	struct aspeed_sgpio *gpio = gpiochip_get_data(gc);
-> +	const struct aspeed_sgpio_bank *bank = to_bank(offset);
-> +	unsigned long flags;
-> +	void __iomem *addr;
-> +	u32 reg = 0;
-> +
-> +	spin_lock_irqsave(&gpio->lock, flags);
-> +
-> +	addr = bank_reg(gpio, bank, reg_val);
-> +
-> +	if (val)
-> +		reg |= GPIO_BIT(offset);
-> +	else
-> +		reg &= ~GPIO_BIT(offset);
-> +
-> +	iowrite32(reg, addr);
-> +	spin_unlock_irqrestore(&gpio->lock, flags);
-> +}
-> +
-> +static int aspeed_sgpio_dir_in(struct gpio_chip *gc, unsigned int 
-> offset)
-> +{
-> +	/* By default all SGPIO Pins are input */
-> +	return 0;
-> +}
-> +
-> +static int aspeed_sgpio_dir_out(struct gpio_chip *gc, unsigned int 
-> offset, int val)
-> +{
-> +	return 0;
-> +}
-> +
-> +static int aspeed_sgpio_get_direction(struct gpio_chip *gc, unsigned 
-> int offset)
-> +{
-> +	/* By default all SGPIO Pins are input */
-> +	return 1;
-> +
-> +}
 
-Please see my follow-up reply on v1 that helps clarify what we should do
-with the dir_in()/dir_out()/get_direction() implementations. The
-implementation here will confuse everything in the stack above it.
-
-> +
-> +static inline int irqd_to_aspeed_sgpio_data(struct irq_data *d,
-> +					    struct aspeed_sgpio **gpio,
-> +					    const struct aspeed_sgpio_bank **bank,
-> +					    u32 *bit, int *offset)
-> +{
-> +	struct aspeed_sgpio *internal;
-> +
-> +	*offset = irqd_to_hwirq(d);
-> +
-> +	internal = irq_data_get_irq_chip_data(d);
-> +
-> +	*gpio = internal;
-> +	*bank = to_bank(*offset);
-> +	*bit = GPIO_BIT(*offset);
-> +
-> +	return 0;
-> +}
-> +
-> +static void aspeed_sgpio_irq_ack(struct irq_data *d)
-> +{
-> +	const struct aspeed_sgpio_bank *bank;
-> +	struct aspeed_sgpio *gpio;
-> +	unsigned long flags;
-> +	void __iomem *status_addr;
-> +	int rc, offset;
-> +	u32 bit;
-> +
-> +	rc = irqd_to_aspeed_sgpio_data(d, &gpio, &bank, &bit, &offset);
-> +	if (rc)
-> +		return;
-> +
-> +	status_addr = bank_reg(gpio, bank, reg_irq_status);
-> +
-> +	spin_lock_irqsave(&gpio->lock, flags);
-> +
-> +	iowrite32(bit, status_addr);
-> +
-> +	spin_unlock_irqrestore(&gpio->lock, flags);
-> +}
-> +
-> +static void aspeed_sgpio_irq_set_mask(struct irq_data *d, bool set)
-> +{
-> +	const struct aspeed_sgpio_bank *bank;
-> +	struct aspeed_sgpio *gpio;
-> +	unsigned long flags;
-> +	u32 reg, bit;
-> +	void __iomem *addr;
-> +	int rc, offset;
-> +
-> +	rc = irqd_to_aspeed_sgpio_data(d, &gpio, &bank, &bit, &offset);
-> +	if (rc)
-> +		return;
-> +
-> +	addr = bank_reg(gpio, bank, reg_irq_enable);
-> +
-> +	spin_lock_irqsave(&gpio->lock, flags);
-> +
-> +	reg = ioread32(addr);
-> +	if (set)
-> +		reg |= bit;
-> +	else
-> +		reg &= ~bit;
-> +
-> +	iowrite32(reg, addr);
-> +
-> +	spin_unlock_irqrestore(&gpio->lock, flags);
-> +}
-> +
-> +static void aspeed_sgpio_irq_mask(struct irq_data *d)
-> +{
-> +	aspeed_sgpio_irq_set_mask(d, false);
-> +}
-> +
-> +static void aspeed_sgpio_irq_unmask(struct irq_data *d)
-> +{
-> +	aspeed_sgpio_irq_set_mask(d, true);
-> +}
-> +
-> +static int aspeed_sgpio_set_type(struct irq_data *d, unsigned int type)
-> +{
-> +	u32 type0 = 0;
-> +	u32 type1 = 0;
-> +	u32 type2 = 0;
-> +	u32 bit, reg;
-> +	const struct aspeed_sgpio_bank *bank;
-> +	irq_flow_handler_t handler;
-> +	struct aspeed_sgpio *gpio;
-> +	unsigned long flags;
-> +	void __iomem *addr;
-> +	int rc, offset;
-> +
-> +	rc = irqd_to_aspeed_sgpio_data(d, &gpio, &bank, &bit, &offset);
-> +	if (rc)
-> +		return -EINVAL;
-> +
-> +	switch (type & IRQ_TYPE_SENSE_MASK) {
-> +	case IRQ_TYPE_EDGE_BOTH:
-> +		type2 |= bit;
-> +		/* fall through */
-> +	case IRQ_TYPE_EDGE_RISING:
-> +		type0 |= bit;
-> +		/* fall through */
-> +	case IRQ_TYPE_EDGE_FALLING:
-> +		handler = handle_edge_irq;
-> +		break;
-> +	case IRQ_TYPE_LEVEL_HIGH:
-> +		type0 |= bit;
-> +		/* fall through */
-> +	case IRQ_TYPE_LEVEL_LOW:
-> +		type1 |= bit;
-> +		handler = handle_level_irq;
-> +		break;
-> +	default:
-> +		return -EINVAL;
-> +	}
-> +
-> +	spin_lock_irqsave(&gpio->lock, flags);
-> +
-> +	addr = bank_reg(gpio, bank, reg_irq_type0);
-> +	reg = ioread32(addr);
-> +	reg = (reg & ~bit) | type0;
-> +	iowrite32(reg, addr);
-> +
-> +	addr = bank_reg(gpio, bank, reg_irq_type1);
-> +	reg = ioread32(addr);
-> +	reg = (reg & ~bit) | type1;
-> +	iowrite32(reg, addr);
-> +
-> +	addr = bank_reg(gpio, bank, reg_irq_type2);
-> +	reg = ioread32(addr);
-> +	reg = (reg & ~bit) | type2;
-> +	iowrite32(reg, addr);
-> +
-> +	spin_unlock_irqrestore(&gpio->lock, flags);
-> +
-> +	irq_set_handler_locked(d, handler);
-> +
-> +	return 0;
-> +}
-> +
-> +static void aspeed_sgpio_irq_handler(struct irq_desc *desc)
-> +{
-> +	struct gpio_chip *gc = irq_desc_get_handler_data(desc);
-> +	struct irq_chip *ic = irq_desc_get_chip(desc);
-> +	struct aspeed_sgpio *data = gpiochip_get_data(gc);
-> +	unsigned int i, p, girq;
-> +	unsigned long reg;
-> +
-> +	chained_irq_enter(ic, desc);
-> +
-> +	for (i = 0; i < ARRAY_SIZE(aspeed_sgpio_banks); i++) {
-> +		const struct aspeed_sgpio_bank *bank = &aspeed_sgpio_banks[i];
-> +
-> +		reg = ioread32(bank_reg(data, bank, reg_irq_status));
-> +
-> +		for_each_set_bit(p, &reg, 32) {
-> +			girq = irq_find_mapping(gc->irq.domain, i * 32 + p);
-> +			generic_handle_irq(girq);
-> +		}
-> +
-> +	}
-> +
-> +	chained_irq_exit(ic, desc);
-> +}
-> +
-> +static struct irq_chip aspeed_sgpio_irqchip = {
-> +	.name       = "aspeed-sgpio",
-> +	.irq_ack    = aspeed_sgpio_irq_ack,
-> +	.irq_mask   = aspeed_sgpio_irq_mask,
-> +	.irq_unmask = aspeed_sgpio_irq_unmask,
-> +	.irq_set_type   = aspeed_sgpio_set_type,
-> +};
-> +
-> +static int aspeed_sgpio_setup_irqs(struct aspeed_sgpio *gpio,
-> +				   struct platform_device *pdev)
-> +{
-> +	int rc, i;
-> +	const struct aspeed_sgpio_bank *bank;
-> +
-> +	rc = platform_get_irq(pdev, 0);
-> +	if (rc < 0)
-> +		return rc;
-> +
-> +	gpio->irq = rc;
-> +
-> +	/* Disable IRQ and clear Interrupt status registers for all SPGIO 
-> Pins. */
-> +	for (i = 0; i < ARRAY_SIZE(aspeed_sgpio_banks); i++) {
-> +		bank =  &aspeed_sgpio_banks[i];
-> +		/* disable irq enable bits */
-> +		iowrite32(0x00000000, bank_reg(gpio, bank, reg_irq_enable));
-> +		/* clear status bits */
-> +		iowrite32(0xffffffff, bank_reg(gpio, bank, reg_irq_status));
-> +	}
-> +
-> +	rc = gpiochip_irqchip_add(&gpio->chip, &aspeed_sgpio_irqchip,
-> +				  0, handle_bad_irq, IRQ_TYPE_NONE);
-> +	if (rc) {
-> +		dev_info(&pdev->dev, "Could not add irqchip\n");
-> +		return rc;
-> +	}
-> +
-> +	gpiochip_set_chained_irqchip(&gpio->chip, &aspeed_sgpio_irqchip,
-> +				     gpio->irq, aspeed_sgpio_irq_handler);
-> +
-> +	/* set IRQ settings and Enable Interrupt */
-> +	for (i = 0; i < ARRAY_SIZE(aspeed_sgpio_banks); i++) {
-> +		bank = &aspeed_sgpio_banks[i];
-> +		/* set falling or level-low irq */
-> +		iowrite32(0x00000000, bank_reg(gpio, bank, reg_irq_type0));
-> +		/* trigger type is edge */
-> +		iowrite32(0x00000000, bank_reg(gpio, bank, reg_irq_type1));
-> +		/* dual edge trigger mode. */
-> +		iowrite32(0xffffffff, bank_reg(gpio, bank, reg_irq_type2));
-> +		/* enable irq */
-> +		iowrite32(0xffffffff, bank_reg(gpio, bank, reg_irq_enable));
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static int aspeed_sgpio_request(struct gpio_chip *chip, unsigned int 
-> offset)
-> +{
-> +	return (offset < NR_SGPIO);
-> +}
-
-I don't think this request() implementation is helpful, especially as it stands
-in the face of needing to pull the number of GPIOs to serialise from the
-devicetree.
-
-request() is an optional callback, lets just drop it.
-
-> +
-> +static const struct of_device_id aspeed_sgpio_of_table[] = {
-> +	{ .compatible = "aspeed,ast2400-sgpio" },
-> +	{ .compatible = "aspeed,ast2500-sgpio" },
-> +	{}
-> +};
-> +MODULE_DEVICE_TABLE(of, aspeed_sgpio_of_table);
-> +
-> +static int __init aspeed_sgpio_probe(struct platform_device *pdev)
-> +{
-> +	struct aspeed_sgpio *gpio;
-> +	struct resource *res;
-> +	int rc;
-> +
-> +	gpio = devm_kzalloc(&pdev->dev, sizeof(*gpio), GFP_KERNEL);
-> +	if (!gpio)
-> +		return -ENOMEM;
-> +
-> +	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> +	gpio->base = devm_ioremap_resource(&pdev->dev, res);
-> +	if (IS_ERR(gpio->base))
-> +		return PTR_ERR(gpio->base);
-> +
-> +	spin_lock_init(&gpio->lock);
-> +
-> +	gpio->chip.parent = &pdev->dev;
-> +	gpio->chip.ngpio = NR_SGPIO;
-> +	gpio->chip.direction_input = aspeed_sgpio_dir_in;
-> +	gpio->chip.direction_output = aspeed_sgpio_dir_out;
-> +	gpio->chip.get_direction = aspeed_sgpio_get_direction;
-> +	gpio->chip.request = aspeed_sgpio_request;
-> +	gpio->chip.free = NULL;
-> +	gpio->chip.get = aspeed_sgpio_get;
-> +	gpio->chip.set = aspeed_sgpio_set;
-> +	gpio->chip.set_config = NULL;
-> +	gpio->chip.label = dev_name(&pdev->dev);
-> +	gpio->chip.base = -1;
-> +
-> +	rc = devm_gpiochip_add_data(&pdev->dev, &gpio->chip, gpio);
-> +	if (rc < 0)
-> +		return rc;
-> +
-> +	return aspeed_sgpio_setup_irqs(gpio, pdev);
-> +}
-> +
-> +static struct platform_driver aspeed_sgpio_driver = {
-> +	.driver = {
-> +		.name = KBUILD_MODNAME,
-> +		.of_match_table = aspeed_sgpio_of_table,
-> +	},
-> +};
-> +
-> +module_platform_driver_probe(aspeed_sgpio_driver, aspeed_sgpio_probe);
-> +MODULE_DESCRIPTION("Aspeed Serial GPIO Driver");
-> +MODULE_LICENSE("GPL");
-> -- 
-> 2.7.4
-> 
->
 
 _______________________________________________
 linux-arm-kernel mailing list
