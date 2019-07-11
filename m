@@ -2,77 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D2DEC656DB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 14:28:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D3641656E8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 14:31:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Umw3ooVRnLPgLrKWdNDfwJoWMeu355VvZ2/JEB/zHEU=; b=kzWJ/ph0WI7Zv9
-	FzdVGCIwGTrxNp9ZT95UbAhfJJ/brZjX0kUn3pKZogemPGq8pZhPqJ4Bwg89tNNcH+Wg2KffSJGBN
-	7Ecz1gzqJr3rDXFoZmLw4p3bJleZcxpKm4cxDRyZH30w5Tp3apZOLZX7Q68QTA0MDKZCT9l+Y7gmX
-	J3FGNCbwow7XweLLQGEdZUbONY4qB3SUuP16NX0Ds6Xh/Jmbtl6JbX2nJvTL70MJsw/cRNhPDa1He
-	IibosXFp0Ei/k8UofwTdNii2aYSmiz20jSalttCLN/sRG/NfcO5L6bYsbnmtLK9Hhd1zbH0hwxNB4
-	fhVQn6XtYKgPnFXsU0qA==;
+	List-Owner; bh=AhVmdi66nHVKdwOLkfyVbnaK+otQ7hGUS/qNVOfoI8U=; b=hwH5T06iztb5Gm
+	aUkFroVAh41J14Ukao05MkfgJtG+C1qsymIRQpszAqfGNUOZdEh0xbEWc75DkFYHPBkPjaWsPPySo
+	hKJZveWOpq9AcpmMpVEpunlKSyNXn6IhjM1/XvchXo+lwkQABI6fBhspuUNETNzd+XjeBxOTHdMSJ
+	z99egnfDCv7RhoEGCU1CfullWvtpKHyqkcgKDTu0hs+8dioIo3oMBeqveIoXfuMm2xLzh9tqD7eAl
+	hdisXEnAHpdJJ+nLKH82hEv0Lz/F8/Kgg97TKX342HZvQZ7dZzruYFPi3l7m/7qbU8TlenETeLcV5
+	3f7bVrnJSbEB1RiXkXfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlYBd-0006V3-Dp; Thu, 11 Jul 2019 12:28:33 +0000
-Received: from mail-yw1-f67.google.com ([209.85.161.67])
+	id 1hlYEj-0008Lo-To; Thu, 11 Jul 2019 12:31:45 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlYBT-0006RE-6T
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 12:28:26 +0000
-Received: by mail-yw1-f67.google.com with SMTP id b143so3218006ywb.7
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 11 Jul 2019 05:28:22 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=JhuJhWxP1rUZnb+Vp6G8TuOnOq95+bSLey7FrYy8zQY=;
- b=SHS5NlU9rWEEj0RSvjZfbfW0smO9ZwWr1xeoyEEApf4iju0NkvQlmd1GmV8LiClyV5
- 3shXwNmLEJFLsJWLqVWnhBqb90UARjSUeb55CuCxaXc1jH3W1ecedNthoD3IRHEsNjos
- RDzCgRXnAjtWGiglUc2NrvwSKqFZDQDVUjVpFCxD9egDkuEczNnF+K3hVyoptinXDuUD
- jF2UUcNOnng1QYfmV79Z4HgiY0pvdTSVgxFDJlybRgm6y+MTfkC2ARJuUxqhA+Glvk4P
- 7nyWjZqOD4knF/X2AXYda65OGRWBnBosHNmHW4JVwIlj4vh9v1qtEBdP1n13SLyoXb4z
- GCMw==
-X-Gm-Message-State: APjAAAXLTZhFuCvzLKEKVnY258e0HtEGuoPsO1bzanfQL6y/46dUJ3Lc
- ym6Z4uxIONOASmONnjuWkqmHCVCA1LpckWd/+3QX/5SAxYo=
-X-Google-Smtp-Source: APXvYqxnENs8rD53npbxsD00xL3VrlCkW1LR5JPpFwT+zi16w+B/f9HTckdF0z/FhReYSAwdlJwKNwtGWfJSorUq86s=
-X-Received: by 2002:aed:33a4:: with SMTP id v33mr1942490qtd.18.1562848101449; 
- Thu, 11 Jul 2019 05:28:21 -0700 (PDT)
+ id 1hlYEa-0008Ky-Pb; Thu, 11 Jul 2019 12:31:38 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id F26FC20872;
+ Thu, 11 Jul 2019 12:31:32 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1562848296;
+ bh=taKYFaL4w66TAwI7MPXQRwN1YVw6ACtaT/WEv3sNJm4=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=I8t08CD65eN+1vdURSKrXiClbKBzmqV8BxOEB+RYrcsXeEC7JGnv38XHWFNfuEhZe
+ Fg3LNEGKB0Iy9Pmb7WmH+bzDCXLlNMZfPl3pfgJFwSxLmeRBm8cerDcIEVHkJX0JpZ
+ TevDVShZM2RAlid5HYXefWAbG56bGpv9Y1KjKVJo=
+Date: Thu, 11 Jul 2019 13:31:29 +0100
+From: Will Deacon <will@kernel.org>
+To: Yong Wu <yong.wu@mediatek.com>
+Subject: Re: [PATCH v8 07/21] iommu/io-pgtable-arm-v7s: Extend MediaTek 4GB
+ Mode
+Message-ID: <20190711123129.da4rg35b54u4svfw@willie-the-truck>
+References: <1561774167-24141-1-git-send-email-yong.wu@mediatek.com>
+ <1561774167-24141-8-git-send-email-yong.wu@mediatek.com>
+ <20190710143649.w5dplhzdpi3bxp7e@willie-the-truck>
+ <1562846036.31342.10.camel@mhfsdcap03>
 MIME-Version: 1.0
-References: <20190710130206.1670830-1-arnd@arndb.de>
- <33511b0e-6d7b-c156-c415-7a609b049567@arm.com>
-In-Reply-To: <33511b0e-6d7b-c156-c415-7a609b049567@arm.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Thu, 11 Jul 2019 14:28:04 +0200
-Message-ID: <CAK8P3a1EBaWdbAEzirFDSgHVJMtWjuNt2HGG8z+vpXeNHwETFQ@mail.gmail.com>
-Subject: Re: [PATCH] vsyscall: use __iter_div_u64_rem()
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Content-Disposition: inline
+In-Reply-To: <1562846036.31342.10.camel@mhfsdcap03>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_052823_275435_D458C2E7 
-X-CRM114-Status: GOOD (  14.05  )
-X-Spam-Score: 1.8 (+)
+X-CRM114-CacheID: sfid-20190711_053136_866215_7B0BD4B4 
+X-CRM114-Status: GOOD (  27.93  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.8 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.161.67 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.161.67 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,126 +79,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch <linux-arch@vger.kernel.org>, Shuah Khan <shuah@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Andy Lutomirski <luto@kernel.org>, Dmitry Safonov <0x7f454c46@gmail.com>,
- Huw Davies <huw@codeweavers.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
- linux-mips@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
- Russell King <linux@armlinux.org.uk>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Paul Burton <paul.burton@mips.com>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Thomas Gleixner <tglx@linutronix.de>, Mark Salyzyn <salyzyn@android.com>,
- Peter Collingbourne <pcc@google.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: youlin.pei@mediatek.com, devicetree@vger.kernel.org,
+ Nicolas Boichat <drinkcat@chromium.org>, cui.zhang@mediatek.com,
+ srv_heupstream@mediatek.com, chao.hao@mediatek.com,
+ Joerg Roedel <joro@8bytes.org>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, Evan Green <evgreen@chromium.org>,
+ Tomasz Figa <tfiga@google.com>, iommu@lists.linux-foundation.org,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, yingjoe.chen@mediatek.com,
+ anan.sun@mediatek.com, Robin Murphy <robin.murphy@arm.com>,
+ Matthias Kaehlcke <mka@chromium.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jul 11, 2019 at 2:14 PM Vincenzo Frascino
-<vincenzo.frascino@arm.com> wrote:
->
->
-> Could you please tell me which version of the compiler did you use?
->
-> My building command is:
->
-> # make mrproper && make CC=clang HOSTCC=clang i386_defconfig && make ARCH=i386
-> CC=clang HOSTCC=clang -j56
->
+On Thu, Jul 11, 2019 at 07:53:56PM +0800, Yong Wu wrote:
+> On Wed, 2019-07-10 at 15:36 +0100, Will Deacon wrote:
+> > On Sat, Jun 29, 2019 at 10:09:13AM +0800, Yong Wu wrote:
+> > > MediaTek extend the arm v7s descriptor to support the dram over 4GB.
+> > > 
+> > > In the mt2712 and mt8173, it's called "4GB mode", the physical address
+> > > is from 0x4000_0000 to 0x1_3fff_ffff, but from EMI point of view, it
+> > > is remapped to high address from 0x1_0000_0000 to 0x1_ffff_ffff, the
+> > > bit32 is always enabled. thus, in the M4U, we always enable the bit9
+> > > for all PTEs which means to enable bit32 of physical address.
+> > > 
+> > > but in mt8183, M4U support the dram from 0x4000_0000 to 0x3_ffff_ffff
+> > > which isn't remaped. We extend the PTEs: the bit9 represent bit32 of
+> > > PA and the bit4 represent bit33 of PA. Meanwhile the iova still is
+> > > 32bits.
+> > 
+> > What happens if bit4 is set in the pte for mt2712 or mt8173? Perhaps the
+> 
+> bit4 is ignored in mt2712 and mt8173(No effect).
+> 
+> > io-pgtable backend should be allowing oas > 32 when
+> > IO_PGTABLE_QUIRK_ARM_MTK_4GB is set, and then enforcing that itself.
+> 
+> About oas, It looks the oas doesn't work in current the v7s. 
+> 
+> How about I add a new simple preparing patch like this(copy from
+> io-pgtable-arm.c)?
 
-See below for the patch I am using locally to work around this.
-That patch is probably wrong, so I have not submitted it yet, but it
-gives you a clean build ;-)
+This looks like the right sort of idea. Basically, I was thinking that you
+can use the oas in conjunction with the quirk to specify whether or not
+your two magic bits should be set. You could also then cap the oas using
+the size of phys_addr_t to deal with my other comment.
 
-     Arnd
+Finally, I was hoping you could drop the |= BIT_ULL(32) and the &=
+~BIT_ULL(32) bits of the mtk driver if the pgtable code now accepts higher
+addresses. Did that not work out?
+> 
+> ==========================================
+> --- a/drivers/iommu/io-pgtable-arm-v7s.c
+> +++ b/drivers/iommu/io-pgtable-arm-v7s.c
+> @@ -495,7 +495,8 @@ static int arm_v7s_map(struct io_pgtable_ops *ops,
+> unsigned long iova,
+>         if (!(prot & (IOMMU_READ | IOMMU_WRITE)))
+>                 return 0;
+> 
+> -       if (WARN_ON(upper_32_bits(iova) || upper_32_bits(paddr)))
+> +       if (WARN_ON(iova >= (1ULL << data->iop.cfg.ias) ||
+> +                   paddr >= (1ULL << data->iop.cfg.oas)))
+>                 return -ERANGE;
+> 
+> ===============================================
+> 
+> Then, change the oas in MTK 4GB mode, like this:
+> 
+> ================================================
+> --- a/drivers/iommu/io-pgtable-arm-v7s.c
+> +++ b/drivers/iommu/io-pgtable-arm-v7s.c
+> @@ -721,7 +721,9 @@ static struct io_pgtable
+> *arm_v7s_alloc_pgtable(struct io_pgtable_cfg *cfg,
+>  {
+>         struct arm_v7s_io_pgtable *data;
+> 
+> -       if (cfg->ias > ARM_V7S_ADDR_BITS || cfg->oas >
+> ARM_V7S_ADDR_BITS)
+> +       if (cfg->ias > ARM_V7S_ADDR_BITS ||
+> +           (cfg->oas > ARM_V7S_ADDR_BITS &&
+> +            !(cfg->quirks & IO_PGTABLE_QUIRK_ARM_MTK_4GB)))
 
-8<---
-Subject: [PATCH] x86: percpu: fix clang 32-bit build
+This should probably still be capped at 34 bits.
 
-clang does not like an inline assembly with a "=q" contraint for
-a 64-bit output:
+> > > +	paddr = pte & mask;
+> > > +	if (cfg->quirks & IO_PGTABLE_QUIRK_ARM_MTK_4GB) {
+> > > +		if (pte & ARM_V7S_ATTR_MTK_PA_BIT32)
+> > > +			paddr |= BIT_ULL(32);
+> > > +		if (pte & ARM_V7S_ATTR_MTK_PA_BIT33)
+> > > +			paddr |= BIT_ULL(33);
+> > > +	}
+> > > +	return paddr;
+> > 
+> > I think this relies on CONFIG_PHYS_ADDR_T_64BIT, which isn't always set on
+> > 32-bit ARM.
+> 
+> This was discussed at [1]. Robin commented that this is not needed and
+> build won't complain about this.
 
-arch/x86/events/perf_event.h:824:21: error: invalid output size for
-constraint '=q'
-        u64 disable_mask = __this_cpu_read(cpu_hw_events.perf_ctr_virt_mask);
-                           ^
-include/linux/percpu-defs.h:447:2: note: expanded from macro '__this_cpu_read'
-        raw_cpu_read(pcp);                                              \
-        ^
-include/linux/percpu-defs.h:421:28: note: expanded from macro 'raw_cpu_read'
- #define raw_cpu_read(pcp)
-__pcpu_size_call_return(raw_cpu_read_, pcp)
-                                        ^
-include/linux/percpu-defs.h:322:23: note: expanded from macro
-'__pcpu_size_call_return'
-        case 1: pscr_ret__ = stem##1(variable); break;                  \
-                             ^
-<scratch space>:357:1: note: expanded from here
-raw_cpu_read_1
-^
-arch/x86/include/asm/percpu.h:394:30: note: expanded from macro 'raw_cpu_read_1'
- #define raw_cpu_read_1(pcp)             percpu_from_op(, "mov", pcp)
-                                        ^
-arch/x86/include/asm/percpu.h:189:15: note: expanded from macro 'percpu_from_op'
-                    : "=q" (pfo_ret__)                  \
-                            ^
+It's not so much the build I was worried about, but more that we'd silently
+be doing the wrong thing and I think we can fix that as I mentioned above.
 
-According to the commit that introduced the "q" constraint, this was
-needed to fix miscompilation, but it gives no further detail.
-
-Using the normal "=r" constraint seems to work so far.
-
-Fixes: 3c598766a2ba ("x86: fix percpu_{to,from}_op()")
-Cc: Jan Beulich <jbeulich@suse.com>
-Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-
-diff --git a/arch/x86/include/asm/percpu.h b/arch/x86/include/asm/percpu.h
-index 2278797c769d..e791fbf4018f 100644
---- a/arch/x86/include/asm/percpu.h
-+++ b/arch/x86/include/asm/percpu.h
-@@ -99,7 +99,7 @@ do {                                                  \
-        case 1:                                         \
-                asm qual (op "b %1,"__percpu_arg(0)     \
-                    : "+m" (var)                        \
--                   : "qi" ((pto_T__)(val)));           \
-+                   : "ri" ((pto_T__)(val)));           \
-                break;                                  \
-        case 2:                                         \
-                asm qual (op "w %1,"__percpu_arg(0)     \
-@@ -144,7 +144,7 @@ do {
-                         \
-                else                                                    \
-                        asm qual ("addb %1, "__percpu_arg(0)            \
-                            : "+m" (var)                                \
--                           : "qi" ((pao_T__)(val)));                   \
-+                           : "ri" ((pao_T__)(val)));                   \
-                break;                                                  \
-        case 2:                                                         \
-                if (pao_ID__ == 1)                                      \
-@@ -186,7 +186,7 @@ do {
-                         \
-        switch (sizeof(var)) {                          \
-        case 1:                                         \
-                asm qual (op "b "__percpu_arg(1)",%0"   \
--                   : "=q" (pfo_ret__)                  \
-+                   : "=r" (pfo_ret__)                  \
-                    : "m" (var));                       \
-                break;                                  \
-        case 2:                                         \
-@@ -215,7 +215,7 @@ do {
-                         \
-        switch (sizeof(var)) {                          \
-        case 1:                                         \
-                asm(op "b "__percpu_arg(P1)",%0"        \
--                   : "=q" (pfo_ret__)                  \
-+                   : "=r" (pfo_ret__)                  \
-                    : "p" (&(var)));                    \
-                break;                                  \
-        case 2:                                         \
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
