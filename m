@@ -2,64 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B085065EB0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 19:34:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 04DDA65EC7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 19:39:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jlY8S8xVWv8/l5MxTYnauOQEdaXW0FZowQu90tNPi/Q=; b=SamPu++Q6iLBFg
-	68fAMjAIC9pOmpBloweR4W/D8zvzhrvEUfzHkbK20PRJ01sLZZSWXlBsCDgOryxe49CeOiUNph772
-	uaOA3OMYAc01VPMPntnxHkBM2O6DmWGKwww6oOLinMU6wSwakflgs7UIGOPZAwgei3p4IFwmsI4Am
-	ZzoVuTPn8R02f021jgHSYCS5q5n2bgFl3Qhpm35mSP+R6vt8eENAmYVbE6C3/kVRdjwNq+wnMF+QX
-	yL5RHSbQLkpwkNYkisq+nRoSujVPlKP+1WB6ib70YcBQmFOGN8puTxYM3FugiZGKSPCHUv7JSaS8G
-	xDc96AVHrsa/qRea5Tww==;
+	List-Owner; bh=x1hztdDgb4hXFtga4kJ7rLW7bcl0t6007042n3LRyWg=; b=m9NNvvp1jORzUB
+	iH3+vXm8bFr9d7bQdhQ7MuKiOkQM5v6KvImRJXNoS3AaI56I8ksN4hQ8IK3ZHSDz7dBqq9VDpH0sL
+	i6Ya6/fFFxlQGZyESX/QIbiesdZL+5Tk0IwKNG99mRJqE29Xo2Xo3PiM+ToFlvk0yIFn6n9EkHBTU
+	MC1onvXCaY6KQmDAFogSaYom+yy5Am13c/8y2Ye1fLZRSp72A5/9FFzeSO3dNDDPpiMc+o1CcusDt
+	8Fh50Dd+MJy0Iyf/UaZXT0r9zs8U6elCOrSTM9w19CmpfgsO/G+E8h5weNVF4lPDnL9gC+pNSNUfI
+	9SMEZsKvwJCJK0UtqNlg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlcxI-00085Q-Q3; Thu, 11 Jul 2019 17:34:04 +0000
+	id 1hld2t-0001a3-Je; Thu, 11 Jul 2019 17:39:51 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlcwx-00084S-SP
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 17:33:45 +0000
-Received: from mail-qk1-f174.google.com (mail-qk1-f174.google.com
- [209.85.222.174])
+ id 1hld2f-0001ZE-0E
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 17:39:38 +0000
+Received: from mail-qt1-f170.google.com (mail-qt1-f170.google.com
+ [209.85.160.170])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 340B921670
+ by mail.kernel.org (Postfix) with ESMTPSA id 3926F21019
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 11 Jul 2019 17:33:42 +0000 (UTC)
+ Thu, 11 Jul 2019 17:39:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1562866422;
- bh=zqhPb2oAGKoCkNFyISU+5AP+rwJicpwT0WCuFuDmmfY=;
+ s=default; t=1562866776;
+ bh=hugYgSrexBh5gjgXuDomklK72XYyZ8cT4nX0Qebg6ko=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=mcSl8FdX2iGtSqxD6gKtzKChXuIH1McE33wG65Fu4kog2+zxp0w4pd5vkManrJzJT
- X788MV26q6BjJdmnvG7Mvxtc2ZTdPqjKpFJ/ETjI+peCvVygIZSEjpGc6GtNMm6xjo
- YOp5S64IdB9IgUybWec0FxJGs1hbsQWBCP+Ut6CQ=
-Received: by mail-qk1-f174.google.com with SMTP id t8so4283797qkt.1
+ b=wwR+A8NwWuDqr0JLLmsZL69uAwnfAQoNHYU4skeudiiubVvVaXt61l0BABrE0BkyF
+ IHLHlJE1xdlF3ksKrp6jKvf3xezGxxoRLC5HsVKsujIL735fBzpihcLQj2knMAy2Tz
+ QbxGn73Unfa4hIzIhENhFalum4Oss4FnkNoSJ58w=
+Received: by mail-qt1-f170.google.com with SMTP id x22so270599qtp.12
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 11 Jul 2019 10:33:42 -0700 (PDT)
-X-Gm-Message-State: APjAAAX6K/cHZWy/o3rSQz/VEDyG2X9ASOwC0bR56ZrN3coGLLsysK4C
- g+S0e3g6NI7uJOWag10wOQhQ4PU6HQdVOZHbQA==
-X-Google-Smtp-Source: APXvYqxiQdcwj4k5sQshf/YxJBG3tGFJGkg/XguY+QAVpESWH2Q0zZl+I1EhiBoulpQ6D5vcPivvknOAwfJkwC3o4Wo=
-X-Received: by 2002:a05:620a:1447:: with SMTP id
- i7mr2913253qkl.254.1562866421381; 
- Thu, 11 Jul 2019 10:33:41 -0700 (PDT)
+ Thu, 11 Jul 2019 10:39:36 -0700 (PDT)
+X-Gm-Message-State: APjAAAWOKkTpIItkmFLjow9emqaK6CcMJaKM2XmoiE1pXYpqmtMYqQrR
+ SWzMhQh9FXrRypIaM2yO3tMrk/cnxwhYHLbIHw==
+X-Google-Smtp-Source: APXvYqyT2ZIwbJfQnc73mMGcKaDkblCm8BU7qO69rHW7ICOYosjRSUIAZS+oSsH0oZmtAhPdnjtyfqtcO0OJGH5XABE=
+X-Received: by 2002:ac8:36b9:: with SMTP id a54mr2812702qtc.300.1562866775522; 
+ Thu, 11 Jul 2019 10:39:35 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190711092158.14678-1-maxime.ripard@bootlin.com>
-In-Reply-To: <20190711092158.14678-1-maxime.ripard@bootlin.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Thu, 11 Jul 2019 11:33:30 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqLh8QEwa-3v9-Vs=e55k3GyyvwsNVxmdBMWMD_VxqKMyA@mail.gmail.com>
-Message-ID: <CAL_JsqLh8QEwa-3v9-Vs=e55k3GyyvwsNVxmdBMWMD_VxqKMyA@mail.gmail.com>
-Subject: Re: [PATCH 1/3] dt-bindings: dma: Add YAML schemas for the generic
- DMA bindings
-To: Maxime Ripard <maxime.ripard@bootlin.com>,
- Jon Hunter <jonathanh@nvidia.com>, Peter Ujfalusi <peter.ujfalusi@ti.com>
+References: <20190710223119.8151-1-robh@kernel.org>
+ <20190711102303.pnvy4zlitusjjku7@willie-the-truck>
+In-Reply-To: <20190711102303.pnvy4zlitusjjku7@willie-the-truck>
+From: Rob Herring <robh@kernel.org>
+Date: Thu, 11 Jul 2019 11:39:24 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqJ6W-fFqNr9m1zQOdERjZ5v9EpVLTVyChevHKYFU4j4Jg@mail.gmail.com>
+Message-ID: <CAL_JsqJ6W-fFqNr9m1zQOdERjZ5v9EpVLTVyChevHKYFU4j4Jg@mail.gmail.com>
+Subject: Re: [RFC PATCH] iommu: io-pgtable: Drop WARN for empty PTEs on unmap
+To: Will Deacon <will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_103343_955375_F3C28AC0 
-X-CRM114-Status: GOOD (  34.46  )
+X-CRM114-CacheID: sfid-20190711_103937_070406_943A76AF 
+X-CRM114-Status: GOOD (  16.91  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -88,10 +86,8 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, Vinod Koul <vkoul@kernel.org>,
- "open list:DMA GENERIC OFFLOAD ENGINE SUBSYSTEM" <dmaengine@vger.kernel.org>,
- Frank Rowand <frowand.list@gmail.com>,
+Cc: Joerg Roedel <joro@8bytes.org>, Robin Murphy <robin.murphy@arm.com>,
+ Linux IOMMU <iommu@lists.linux-foundation.org>,
  "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
  <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
@@ -99,305 +95,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jul 11, 2019 at 3:34 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+On Thu, Jul 11, 2019 at 4:23 AM Will Deacon <will@kernel.org> wrote:
 >
-> The DMA controllers and consumers have a bunch of generic properties that
-> are needed in a device tree. Add a YAML schemas for those.
+> On Wed, Jul 10, 2019 at 04:31:19PM -0600, Rob Herring wrote:
+> > If a region has been mapped sparsely (such as on page faults), the user
+> > has to keep track of what was mapped or not in order to avoid warnings
+> > when unmapping the entire region. Remove the WARN on empty PTEs to allow
+> > unmapping sparsely mapped regions.
+> >
+> > Cc: Will Deacon <will@kernel.org>
+> > Cc: Robin Murphy <robin.murphy@arm.com>
+> > Cc: Joerg Roedel <joro@8bytes.org>
+> > Cc: linux-arm-kernel@lists.infradead.org
+> > Cc: iommu@lists.linux-foundation.org
+> > Signed-off-by: Rob Herring <robh@kernel.org>
+> > ---
+> > This is needed for large (up to 1GB AIUI) scratch buffers on panfrost
+> > which are mapped on demand on GPU page faults and can be unmapped on
+> > memory pressure. Alternatively, I'd need to have a bitmap of mapped
+> > pages to track what is mapped or not. Dropping the WARN seems like a
+> > much simpler solution.
 >
-> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
-> ---
->  .../devicetree/bindings/dma/dma-consumer.yaml |  60 +++++++++
+> I suppose an alternative would be to do an iova_to_phys() before you do the
+> unmap(). Would that be acceptable?
 
-This already exists in the dt-schema/schemas/dma/dma.yaml though not
-the descriptions because that needs relicensing.
+Yeah, that should work. Not that efficient, but I don't think
+releasing the memory is hot path.
 
-Looks like we need NVidia's (Jon H) and TI's (Peter U) permission.
+Thanks,
+Rob
 
->  .../bindings/dma/dma-controller.yaml          |  79 ++++++++++++
->  Documentation/devicetree/bindings/dma/dma.txt | 114 +-----------------
->  3 files changed, 140 insertions(+), 113 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/dma/dma-consumer.yaml
->  create mode 100644 Documentation/devicetree/bindings/dma/dma-controller.yaml
+> The WARN_ON() indicates invalid usage by
+> the IOMMU API, so it would be a shame to lose it entirely and I'm hesitant
+> to continue adding quirks at the rate we're currently doing so!
 >
-> diff --git a/Documentation/devicetree/bindings/dma/dma-consumer.yaml b/Documentation/devicetree/bindings/dma/dma-consumer.yaml
-> new file mode 100644
-> index 000000000000..2f6315863ad1
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/dma/dma-consumer.yaml
-> @@ -0,0 +1,60 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/dma/dma-consumer.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: DMA Consumer Generic Binding
-> +
-> +maintainers:
-> +  - Vinod Koul <vkoul@kernel.org>
-> +
-> +select: true
-> +
-> +properties:
-> +  dmas:
-> +    description:
-> +      List of one or more DMA specifiers, each consisting of
-> +          - A phandle pointing to DMA controller node
-> +          - A number of integer cells, as determined by the
-> +            \#dma-cells property in the node referenced by phandle
-> +            containing DMA controller specific information. This
-> +            typically contains a DMA request line number or a
-> +            channel number, but can contain any data that is
-> +            required for configuring a channel.
-> +
-> +  dma-names:
-> +    description:
-> +      Contains one identifier string for each DMA specifier in the
-> +      dmas property. The specific strings that can be used are defined
-> +      in the binding of the DMA client device.  Multiple DMA
-> +      specifiers can be used to represent alternatives and in this
-> +      case the dma-names for those DMA specifiers must be identical
-> +      (see examples).
-> +
-> +dependencies:
-> +  dma-names: [ dmas ]
-> +
-> +examples:
-> +  - |
-> +    /* A device with one DMA read channel, one DMA write channel */
-> +    i2c1: i2c@1 {
-> +         /* ... */
-> +         dmas = <&dma 2>,      /* read channel */
-> +                <&dma 3>;      /* write channel */
-> +        dma-names = "rx", "tx";
-> +        /* ... */
-> +    };
-> +
-> +  - |
-> +    /* A single read-write channel with three alternative DMA controllers */
-> +    dmas = <&dma1 5>, <&dma2 7>, <&dma3 2>;
-> +    dma-names = "rx-tx", "rx-tx", "rx-tx";
-> +
-> +  - |
-> +    /* A device with three channels, one of which has two alternatives */
-> +    dmas = <&dma1 2>,          /* read channel */
-> +           <&dma1 3>,          /* write channel */
-> +           <&dma2 0>,          /* error read */
-> +           <&dma3 0>;          /* alternative error read */
-> +    dma-names = "rx", "tx", "error", "error";
-> diff --git a/Documentation/devicetree/bindings/dma/dma-controller.yaml b/Documentation/devicetree/bindings/dma/dma-controller.yaml
-> new file mode 100644
-> index 000000000000..17c650131b78
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/dma/dma-controller.yaml
-> @@ -0,0 +1,79 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/dma/dma-controller.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: DMA Controller Generic Binding
-> +
-> +maintainers:
-> +  - Vinod Koul <vkoul@kernel.org>
-> +
-> +description:
-> +  Generic binding to provide a way for a driver using DMA Engine to
-> +  retrieve the DMA request or channel information that goes from a
-> +  hardware device to a DMA controller.
-> +
-> +properties:
-> +  $nodename:
-> +    pattern: "^dma-controller(@.*)?$"
-> +
-> +  "#dma-cells":
-> +    # minimum: 1
-> +    description:
-> +      Used to provide DMA controller specific information.
-> +
-> +  dma-channel-masks:
-> +    $ref: /schemas/types.yaml#definitions/uint32
-> +    description:
-> +      Bitmask of available DMA channels in ascending order that are
-> +      not reserved by firmware and are available to the
-> +      kernel. i.e. first channel corresponds to LSB.
-> +
-> +  dma-channels:
-> +    $ref: /schemas/types.yaml#definitions/uint32
-> +    description:
-> +      Number of DMA channels supported by the controller.
-> +
-> +  dma-masters:
-> +    $ref: /schemas/types.yaml#definitions/phandle-array
-> +    description:
-> +      DMA routers are transparent IP blocks used to route DMA request
-> +      lines from devices to the DMA controller. Some SoCs (like TI
-> +      DRA7x) have more peripherals integrated with DMA requests than
-> +      what the DMA controller can handle directly.
-> +
-> +      In such a case, dma-masters is an array of phandle to the DMA
-> +      controllers the router can direct the signal to.
-> +
-> +  dma-requests:
-> +    $ref: /schemas/types.yaml#definitions/uint32
-> +    description:
-> +      Number of DMA request signals supported by the controller.
-> +
-> +examples:
-> +  - |
-> +    dma: dma@48000000 {
-
-dma-controller@...
-
-This is a case where I'd like some check that the schema is actually
-applied to the schema's example.
-
-> +        compatible = "ti,omap-sdma";
-> +        reg = <0x48000000 0x1000>;
-> +        interrupts = <0 12 0x4
-> +                      0 13 0x4
-> +                      0 14 0x4
-> +                      0 15 0x4>;
-> +        #dma-cells = <1>;
-> +        dma-channels = <32>;
-> +        dma-requests = <127>;
-> +        dma-channel-mask = <0xfffe>;
-> +    };
-> +
-> +  - |
-> +    sdma_xbar: dma-router@4a002b78 {
-> +        compatible = "ti,dra7-dma-crossbar";
-> +        reg = <0x4a002b78 0xfc>;
-> +        #dma-cells = <1>;
-> +        dma-requests = <205>;
-> +        ti,dma-safe-map = <0>;
-> +        dma-masters = <&sdma>;
-> +    };
-> +
-> +...
-> diff --git a/Documentation/devicetree/bindings/dma/dma.txt b/Documentation/devicetree/bindings/dma/dma.txt
-> index eeb4e4d1771e..90a67a016a48 100644
-> --- a/Documentation/devicetree/bindings/dma/dma.txt
-> +++ b/Documentation/devicetree/bindings/dma/dma.txt
-> @@ -1,113 +1 @@
-> -* Generic DMA Controller and DMA request bindings
-> -
-> -Generic binding to provide a way for a driver using DMA Engine to retrieve the
-> -DMA request or channel information that goes from a hardware device to a DMA
-> -controller.
-> -
-> -
-> -* DMA controller
-> -
-> -Required property:
-> -- #dma-cells:          Must be at least 1. Used to provide DMA controller
-> -                       specific information. See DMA client binding below for
-> -                       more details.
-> -
-> -Optional properties:
-> -- dma-channels:        Number of DMA channels supported by the controller.
-> -- dma-requests:        Number of DMA request signals supported by the
-> -                       controller.
-> -- dma-channel-mask:    Bitmask of available DMA channels in ascending order
-> -                       that are not reserved by firmware and are available to
-> -                       the kernel. i.e. first channel corresponds to LSB.
-> -
-> -Example:
-> -
-> -       dma: dma@48000000 {
-> -               compatible = "ti,omap-sdma";
-> -               reg = <0x48000000 0x1000>;
-> -               interrupts = <0 12 0x4
-> -                             0 13 0x4
-> -                             0 14 0x4
-> -                             0 15 0x4>;
-> -               #dma-cells = <1>;
-> -               dma-channels = <32>;
-> -               dma-requests = <127>;
-> -               dma-channel-mask = <0xfffe>
-> -       };
-> -
-> -* DMA router
-> -
-> -DMA routers are transparent IP blocks used to route DMA request lines from
-> -devices to the DMA controller. Some SoCs (like TI DRA7x) have more peripherals
-> -integrated with DMA requests than what the DMA controller can handle directly.
-> -
-> -Required property:
-> -- dma-masters:         phandle of the DMA controller or list of phandles for
-> -                       the DMA controllers the router can direct the signal to.
-> -- #dma-cells:          Must be at least 1. Used to provide DMA router specific
-> -                       information. See DMA client binding below for more
-> -                       details.
-> -
-> -Optional properties:
-> -- dma-requests:        Number of incoming request lines the router can handle.
-> -- In the node pointed by the dma-masters:
-> -       - dma-requests: The router driver might need to look for this in order
-> -                       to configure the routing.
-> -
-> -Example:
-> -       sdma_xbar: dma-router@4a002b78 {
-> -               compatible = "ti,dra7-dma-crossbar";
-> -               reg = <0x4a002b78 0xfc>;
-> -               #dma-cells = <1>;
-> -               dma-requests = <205>;
-> -               ti,dma-safe-map = <0>;
-> -               dma-masters = <&sdma>;
-> -       };
-> -
-> -* DMA client
-> -
-> -Client drivers should specify the DMA property using a phandle to the controller
-> -followed by DMA controller specific data.
-> -
-> -Required property:
-> -- dmas:                        List of one or more DMA specifiers, each consisting of
-> -                       - A phandle pointing to DMA controller node
-> -                       - A number of integer cells, as determined by the
-> -                         #dma-cells property in the node referenced by phandle
-> -                         containing DMA controller specific information. This
-> -                         typically contains a DMA request line number or a
-> -                         channel number, but can contain any data that is
-> -                         required for configuring a channel.
-> -- dma-names:           Contains one identifier string for each DMA specifier in
-> -                       the dmas property. The specific strings that can be used
-> -                       are defined in the binding of the DMA client device.
-> -                       Multiple DMA specifiers can be used to represent
-> -                       alternatives and in this case the dma-names for those
-> -                       DMA specifiers must be identical (see examples).
-> -
-> -Examples:
-> -
-> -1. A device with one DMA read channel, one DMA write channel:
-> -
-> -       i2c1: i2c@1 {
-> -               ...
-> -               dmas = <&dma 2          /* read channel */
-> -                       &dma 3>;        /* write channel */
-> -               dma-names = "rx", "tx";
-> -               ...
-> -       };
-> -
-> -2. A single read-write channel with three alternative DMA controllers:
-> -
-> -       dmas = <&dma1 5
-> -               &dma2 7
-> -               &dma3 2>;
-> -       dma-names = "rx-tx", "rx-tx", "rx-tx";
-> -
-> -3. A device with three channels, one of which has two alternatives:
-> -
-> -       dmas = <&dma1 2                 /* read channel */
-> -               &dma1 3                 /* write channel */
-> -               &dma2 0                 /* error read */
-> -               &dma3 0>;               /* alternative error read */
-> -       dma-names = "rx", "tx", "error", "error";
-> +This file has been moved to dma-controller.yaml.
-> --
-> 2.21.0
->
+> Will
 
 _______________________________________________
 linux-arm-kernel mailing list
