@@ -2,44 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E98BC6611C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 23:28:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43F1266121
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 23:28:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5fPXiudtijSpwxQvGN5D9RpUyLnOkEzUB/IA/9oyspM=; b=PQ51SZKIpvos4c
-	eFGV4g0WYDI+pVeUl6nMVeV75EUgIZ9isvR+vwYTVu/Q3eX7ZrBcFSkHw9nHClDLTZrHHRsJA9J81
-	ukkPt5kXcp5HtwkUFiFxkkgr3h2ZTGCJLpAspLGE1EgbJGMitXqkIMm3uagsXHvfgjJ/7x4cKB/Ac
-	89+taa1+HhMKfbmMx6mn0hI3nbLGPB0dS6OVzRvUyPHTBCHU509bvPxQc91q3V1M7ZhPxBIpa3eTH
-	48mV+qK3KZdntVIIn5hKftxLMGAOqfD2JSLYRbfUYYDiBoR0935dhDZnFRbhznKcRsGjhGO765m42
-	LleEYaBIdNrjhVcrPNeg==;
+	List-Owner; bh=MklMBlBNLs0MLGA5XEEsfacAobkBoh1t0IbB1k2UatQ=; b=mheRP4YOahCAqz
+	lSzG4icGBwRlh7rBJoxq9m1CHpt7wdEiyVEJcJa5sRJswiZ9w/nuR6L4RiaoC9OnwixiZtbO5led6
+	QKxYxlWyG+Lbpdi2Z5XkSFi8WVEYlbB/Ks1e/vQyAVmD1fe4jlxfktbiZKoz5rf2Toro04zv1jSXT
+	RICywGdF/f/ycpzarvITqn8dgNXkSsh9DxDrWDFJhRFNe2/ICeggRDUhWP3CSB1Msj3kJSFcebKVW
+	qS7mMiViesv8j7g0sB9E+2Cnnx2HbE8WsoBpSSrDUzVmlw9cgMeaYBQk1tnyhk5/4ZT4KeovldvOb
+	k32xJlGhAHNah5hLH7aQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlgbr-0003tg-V5; Thu, 11 Jul 2019 21:28:11 +0000
+	id 1hlgcH-0004Li-Nx; Thu, 11 Jul 2019 21:28:37 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlgbd-0003sC-79; Thu, 11 Jul 2019 21:27:58 +0000
+ id 1hlgbz-0004F4-Pt; Thu, 11 Jul 2019 21:28:21 +0000
 Received: from ip5f5a6320.dynamic.kabel-deutschland.de ([95.90.99.32]
  helo=diego.localnet)
  by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1hlgbR-0006mP-RG; Thu, 11 Jul 2019 23:27:45 +0200
+ id 1hlgbu-0006n4-SN; Thu, 11 Jul 2019 23:28:14 +0200
 From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
 To: Douglas Anderson <dianders@chromium.org>
-Subject: Re: [PATCH v5 6/7] ARM: dts: rockchip: Specify
- rk3288-veyron-chromebook's display timings
-Date: Thu, 11 Jul 2019 23:27:44 +0200
-Message-ID: <4744731.Gbjux09qzx@diego>
-In-Reply-To: <20190401171724.215780-7-dianders@chromium.org>
+Subject: Re: [PATCH v5 7/7] ARM: dts: rockchip: Specify rk3288-veyron-minnie's
+ display timings
+Date: Thu, 11 Jul 2019 23:28:14 +0200
+Message-ID: <10427933.3dknIRnSiX@diego>
+In-Reply-To: <20190401171724.215780-8-dianders@chromium.org>
 References: <20190401171724.215780-1-dianders@chromium.org>
- <20190401171724.215780-7-dianders@chromium.org>
+ <20190401171724.215780-8-dianders@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_142757_415123_51DDD025 
-X-CRM114-Status: GOOD (  12.38  )
+X-CRM114-CacheID: sfid-20190711_142820_004032_20927844 
+X-CRM114-Status: GOOD (  16.16  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -72,27 +72,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am Montag, 1. April 2019, 19:17:23 CEST schrieb Douglas Anderson:
-> Let's document the display timings that most veyron chromebooks (like
-> jaq, jerry, mighty, speedy) have been using out in the field.  This
-> uses the standard blankings but a slightly slower clock rate, thus
-> getting a refresh rate 58.3 Hz.
+Am Montag, 1. April 2019, 19:17:24 CEST schrieb Douglas Anderson:
+> Just like we did for rk3288-veyron-chromebook, we want to be able to
+> use one of the fixed PLLs in the system to make the pixel clock for
+> minnie.
 > 
-> NOTE: this won't really do anything except cause DRM to properly
-> report the refresh rate since vop_crtc_mode_fixup() was rounding the
-> pixel clock to 74.25 MHz anyway.  Apparently the adjusted rate isn't
-> exposed to userspace so it's important that the rate we're trying to
-> achieve is mostly right.
+> Specifying these timings matches us with how the display is used on
+> the downstream Chrome OS kernel.  See https://crrev.com/c/323211.
 > 
-> For the downstream kernel change related to this see See
-> https://crrev.com/c/324558.
+> Unlike what we did for rk3288-veyron-chromebook, this CL actually
+> changes the timings (though not the pixel clock) that is used when
+> using the upstream kernel.  Booting up a minnie shows that it ended up
+> with a 66.67 MHz pixel clock but it was still using the
+> porches/blankings it would have wanted for a 72.5 MHz pixel clock.
 > 
-> NOTE: minnie uses a different panel will be fixed up in a future
-> patch, so for now we'll just delete the panel timings there.
+> NOTE: compared to the downstream kernel, this seems to cause a
+> slightly different result reported in the 'modetest' command on a
+> Chromebook.  The downstream kernel shows:
+>   1280x800 60 1280 1298 1330 1351 800 804 822 830 66667
+> 
+> With this patch we have:
+>   1280x800 59 1280 1298 1330 1351 800 804 822 830 66666
+> 
+> Specifically modetest was reporting 60 Hz on the downstream kernel but
+> the upstream kernel does the math and comesup with 59 (because we
+> actually achieve 59.45 Hz).  Also upstream doesn't round the Hz up
+> when converting to kHz--it seems to truncate.
+> 
+> ALSO NOTE: when I look at the EDID from the datasheet, I see:
+>   -hsync -vsync
+> ...but it seems like we've never actually run with that so I've
+> continued leaving that out.
 > 
 > Signed-off-by: Douglas Anderson <dianders@chromium.org>
 
-applied for 5.3
+applied for 5.4
 
 Thanks
 Heiko
