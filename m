@@ -2,53 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D77165A1B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 17:09:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B758C65A22
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 17:10:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LWIsO1/RrnA2GlmXacNGfipRDJf6qefa9H5WiHCGFSU=; b=ZCZZnGt1bGsMtN
-	W52o5tXZY2RUZvGbxeWjhlKypgFJNEJLLSBnRaTU79Au0MnKVPeRRBmPJ6Ma7eZseds6FHC8L28K2
-	zYsfgr0Kr1fGSVp1bQnyI5JR0TQr68N7OF3aNYHwXbE6j0O+68f6N/GL7agBZXtj0jCHD9bHNtQYA
-	1cdf7gdysSmWRsZ4C4Y5CP5tTgDbUcuOonEox25r1Vgn9ba8OYOD3YTNJyZo2JU5t8irRGj1RasWh
-	RViH0+2p1nbUhM3Y/PL2h2tnqlxVv1GopETgvgqpkmKMh4ePdowESkoTDecjjyFkY2hrfRLKYwoSk
-	jOKP4wcLQ+Bguue69MvA==;
+	List-Owner; bh=08SAN4M/yUYBWzDVvczhJ/r87pdC9OpZMWDA2vTXszg=; b=JSS3Itt6zREzRK
+	uTBj7fnesW62tRzlCXErRdtDcWy15478vAyTXQKWP612eVhgUv7/kRkvr61L50OycYmtt5MbSD5im
+	X1vTcRj6N0+HpX/HbhNdizMS4u/aCVpYX1UGR+yt3jqIipXmtzMhLlg8j0XNKYDWKd76azpI9tKrN
+	L9IiSBy4mSnkIb9CK5pfZDUmJ8mMfOu3V4BmzoJfxqtkIiC0Gj7fbA41y35l7HSGJE4pboKzGdwJv
+	ZkcS8gRIzKJhZcuN18IN3xhWmqVvduzr4D3wh92gFP2mTe+zl17cPlVjLiV0GnMQPuU6vZ/or1Bqg
+	aDrzWpfhRDp/m00qS6iA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlahd-0007Ip-UR; Thu, 11 Jul 2019 15:09:46 +0000
-Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+	id 1hlai8-0007XY-6y; Thu, 11 Jul 2019 15:10:16 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlahP-0007H4-QN
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 15:09:34 +0000
+ id 1hlahs-0007X4-D7
+ for linux-arm-kernel@bombadil.infradead.org; Thu, 11 Jul 2019 15:10:00 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+ Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=NydRS5amDj1kp9ZJgWP85hzOmwxf1CUR6Jdpb4mr50w=; b=rTtT7HGIDHIp77xfdA2M2C4gIA
+ YWptSUMdH1AwhpeRwcoMAS9YE3Fx06LBEXDq+41mCxnUdJKqs0o+OFmNioBoz8loAVbNTxYllhs3U
+ BxoFnO161TfVMy8G7mMIwA3me/FLDRhp+HtnhEQaZX3b0xUmXy78iXrSod7X42UugFskT7UkPME5A
+ nWF+lXpU5c3QN7c9583a469fgaKvPwjBFK/dTOoaQEQ7nSVfpERBbi4GfdumSyg7ktPoyAbPPZTxv
+ rKIqgBoHtP9qhlIGZXkkKxI5ESj+iDF76WE8QnPr7v2LS05Jx4e/OVBjUVY4ILbrWdKvQAFofsaKg
+ JFphovzQ==;
+Received: from relay6-d.mail.gandi.net ([217.70.183.198])
+ by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hlahp-0004n8-M5
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 15:09:58 +0000
 X-Originating-IP: 92.137.69.152
 Received: from localhost (alyon-656-1-672-152.w92-137.abo.wanadoo.fr
  [92.137.69.152]) (Authenticated sender: gregory.clement@bootlin.com)
- by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 5312C240021;
- Thu, 11 Jul 2019 15:03:14 +0000 (UTC)
+ by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id 6B866C000A;
+ Thu, 11 Jul 2019 15:09:24 +0000 (UTC)
 From: Gregory CLEMENT <gregory.clement@bootlin.com>
 To: Robin Murphy <robin.murphy@arm.com>, Joerg Roedel <joro@8bytes.org>,
  linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org
-Subject: [PATCH v2 3/4] dt-bindings: iommu/arm,
- smmu: add compatible string for Marvell
-Date: Thu, 11 Jul 2019 17:02:41 +0200
-Message-Id: <20190711150242.25290-4-gregory.clement@bootlin.com>
+Subject: [PATCH v2 4/4] arm64: dts: marvell: armada-ap806: add smmu support
+Date: Thu, 11 Jul 2019 17:02:42 +0200
+Message-Id: <20190711150242.25290-5-gregory.clement@bootlin.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190711150242.25290-1-gregory.clement@bootlin.com>
 References: <20190711150242.25290-1-gregory.clement@bootlin.com>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_080932_023806_CBC261A5 
-X-CRM114-Status: GOOD (  10.46  )
+X-Spam-Note: CRM114 invocation failed
 X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.198 listed in wl.mailspike.net]
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.193 listed in list.dnswl.org]
+ low trust [217.70.183.198 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -71,39 +86,48 @@ Cc: devicetree@vger.kernel.org, Jason Cooper <jason@lakedaemon.net>,
  Nadav Haklai <nadavh@marvell.com>, Rob Herring <robh+dt@kernel.org>,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
  =?UTF-8?q?Miqu=C3=A8l=20Raynal?= <miquel.raynal@bootlin.com>,
- Hanna Hawa <hannah@marvell.com>, linux-arm-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org,
  Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Hanna Hawa <hannah@marvell.com>
+Add IOMMU node for Marvell AP806 based SoCs.
 
-Add specific compatible string for Marvell usage due errata of
-accessing 64bits registers of ARM SMMU, in AP806.
-
-AP806 SoC uses the generic ARM-MMU500, and there's no specific
-implementation of Marvell, this compatible is used for errata only.
-
-Signed-off-by: Hanna Hawa <hannah@marvell.com>
 Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
 ---
- Documentation/devicetree/bindings/iommu/arm,smmu.txt | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm64/boot/dts/marvell/armada-ap806.dtsi | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/iommu/arm,smmu.txt b/Documentation/devicetree/bindings/iommu/arm,smmu.txt
-index 3133f3ba7567..7ed58d51846e 100644
---- a/Documentation/devicetree/bindings/iommu/arm,smmu.txt
-+++ b/Documentation/devicetree/bindings/iommu/arm,smmu.txt
-@@ -16,6 +16,7 @@ conditions.
-                         "arm,mmu-400"
-                         "arm,mmu-401"
-                         "arm,mmu-500"
-+                        "marvell,mmu-500"
-                         "cavium,smmu-v2"
-                         "qcom,smmu-v2"
+diff --git a/arch/arm64/boot/dts/marvell/armada-ap806.dtsi b/arch/arm64/boot/dts/marvell/armada-ap806.dtsi
+index 91dad7e4ee59..8e29d593970a 100644
+--- a/arch/arm64/boot/dts/marvell/armada-ap806.dtsi
++++ b/arch/arm64/boot/dts/marvell/armada-ap806.dtsi
+@@ -115,6 +115,23 @@
+ 				interrupts = <17>;
+ 			};
  
++			smmu: iommu@5000000 {
++				compatible = "marvell,mmu-500";
++				reg = <0x100000 0x100000>;
++				dma-coherent;
++				#iommu-cells = <1>;
++				#global-interrupts = <1>;
++				interrupts = <GIC_SPI 6 IRQ_TYPE_LEVEL_HIGH>,
++					    <GIC_SPI 6 IRQ_TYPE_LEVEL_HIGH>,
++					    <GIC_SPI 6 IRQ_TYPE_LEVEL_HIGH>,
++					    <GIC_SPI 6 IRQ_TYPE_LEVEL_HIGH>,
++					    <GIC_SPI 6 IRQ_TYPE_LEVEL_HIGH>,
++					    <GIC_SPI 6 IRQ_TYPE_LEVEL_HIGH>,
++					    <GIC_SPI 6 IRQ_TYPE_LEVEL_HIGH>,
++					    <GIC_SPI 6 IRQ_TYPE_LEVEL_HIGH>,
++					    <GIC_SPI 6 IRQ_TYPE_LEVEL_HIGH>;
++			};
++
+ 			odmi: odmi@300000 {
+ 				compatible = "marvell,odmi-controller";
+ 				interrupt-controller;
 -- 
 2.20.1
 
