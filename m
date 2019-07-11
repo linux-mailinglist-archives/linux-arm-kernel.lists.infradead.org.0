@@ -2,35 +2,35 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 549C966233
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 01:26:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EAE4666234
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 01:27:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IAc4twYHNCbf0hVuI3XnSsqhOz7nMvBeoct3sqdsdqo=; b=s6iFRU82HmFaUq
-	m10HVc0sKdf75qZajQy5pk2cvI38NMKTJlHVkPN36L00E5JsYgGpisVS73IkzAUIuwgCF7NAQBUFZ
-	t9j8FBnTln02eYDNUgGib50AUgblp2zaL/N90lwTUNQ7ni3ppLYDLZcV+j0NDgKIBHEGcimtcpfrJ
-	s4Fpc17trf6lmkwVZZMM5spQVfHJjZ+US3AXXdCk4cVPK/wZ7xhQKRPl+FDsS3585VXJ/djIKvSHQ
-	H/h8mk2n3SEgNfxsdmf+r+iABu4dskSp0rF60xRLxo1Kn28CalJkDB8UTL04WNosybe0hK3hrsXQn
-	LRasZmIyQk59lO/yqhaA==;
+	List-Owner; bh=jB0qg3V9alDsBZE/g+MdlYyuu1BgG8itilUBE+1JOEc=; b=oQ7wBOgNaAHQHf
+	yRfGN4sNm1Ko5KKCBkkDy3fs+aMa57B14KGsOybVn1431MrWLLwjTRloCenXUXBiYoyGHuWwSVoVj
+	LN0mi98+tRkMjyilsWw4y7bYI8wLTnwFkfb2V1WMQos86WC9Jz+cTcr5wDwm5xvWPaiyo8vpC8xN1
+	qObcq7KX21YkN7caaevKPNEBn9hex6XLIc+1E5tYU8ZhkO4Dsm2MaDFPhG2kV4xy/xUNlb9tMjTs5
+	M5MQmOqxtLYTv/n1Vexwt/TSIZqg47tsRWwUIMtVAaUxoxcF56Sd2Erb5tqiUkwWPoeABunSXp/1j
+	K+F6g7BnAs/G/6XFpl7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hliSc-0003iW-G2; Thu, 11 Jul 2019 23:26:46 +0000
+	id 1hliSu-0003x6-W4; Thu, 11 Jul 2019 23:27:05 +0000
 Received: from mail-eopbgr740098.outbound.protection.outlook.com
  ([40.107.74.98] helo=NAM01-BN3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hliRn-0003Bx-7k
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 23:25:56 +0000
+ id 1hliRo-0003Bx-Uv
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 23:25:58 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=X4vXsban/ZKB+8ROlk9ZJVQf010WgWSTIcMznQStaiLD6SK7boxTUQnZxashxZ+Ba3SC+AGLWALrBXlBrlUj3FsobSoe7byYBPqk5JkXZvv9T/mnyeJGgfY0ZymtWt95ohuieZNyZVElf9jwpFAEnwzeoDeRh0E641K0KljLm6YjCHWlbuTmKSz4CH15D71eM5i+6cX0xbbNs5aFVty+Hk0vCHgX0iPEbjFRrw2c5+jMTAYTeQJP4i6aircSknSObn28qL2NdaToJwUg2LbYPVZW/PzsgMJJGuHp298Q/R96qy18/ZSGUC55V3eoS8nBFs+ezPottZcDlOEtApAUyw==
+ b=nR5+TqydjcMHq22Z3jsKQcuLdcIdCmw84S6kSj9pXnL/xsCuR3PwCHPywFGkEFnYpehSaSUbw/rmX+JQFDgIW195hafOs8SoVaDfC5ieZC1XQs+hcB9MI+hLE1gN24k6LlngXzMbjSOABDqNOEdMhOr6gjCDmV4CLYMAyuG/6pls3GQ2KmBIFgAtj3s7v7hQqZOLbTBuaj17eYACF4ySIc66HYie1+W6KRP9XYcq9BalHXJY4uqzk9kGhpi1Z02O3ZOKF391HHHGBNhTF5lN1hPC7Anc2IPoGSUcLSBqqTFV0GhxaXHN/7rrODwzA3VrmLr+QLnBv7+FFqmNYvvwoQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=nv9Pvxp/gDaeRKsmwNevq52lzFBVsYZWQfbDDaOzjpI=;
- b=I/H/AS8orDud9iDIzKy/EZrnn33RmZMJcBW+KvjPhWeozEk6OyvYRKnucB3zHSYBSptEoQ9CueSanl5aYr8POdnSCID0DKjikfYu31Xb7T5uZJ0bBM0OV9kFL5H64ZMQK5skP17R89ZOqOMEQzIMHxoOOURuuGQqu+kAbfcVv/M6XutXvG78gz/nVVuYpuGA2qtf2JYplIbf4+WjpSJQFOprE42Dw5udQUsMnppebnIJg8Pvqlo6HQBueuocae5FCG5EROlNq5SCmhenJE4cs/ITNwGNX7AYpENW5xKwVln5kjqL8iTyyDn2U1Y3aDJ7QqUR+Tuap5UBetL4Ff/1Yw==
+ bh=qWV1MOUNxiDDw+u8HgB9VwvU/aKqnCn2F/F6C9LIbhY=;
+ b=Wvxz9J5qCCU9HqOY8DrUx/SN7DYqL9g3g4kdo0e/uIgqQjl9KviDQD90ZlykgjXlpd7tkSA9AQzZCEECyxIQkgsB0q96SSgmnnWfd098auHShkalM4OWxCRtYVoE+0Sn4K99/1SAdwF2fXgTniW+Vt75tqxFHCy8k/VItT9A/4ToA5/4x9qopeYUbSn/NHYwiVD/niCtLa00gGQNG6T6C0ZKuv+qruETD3CJSC8JrAVW7Pb/Pz5fjagQvPgTkaOrLHdvK6P+pWM6tPt+3XUlswxx5Cg4CbLRpFQqmPBf59tImOLyAJ81OEX1b53CxogmFoMdgLpvREdGuB2MWAP7jw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
  smtp.mailfrom=os.amperecomputing.com;dmarc=pass action=none
  header.from=os.amperecomputing.com;dkim=pass
@@ -38,16 +38,16 @@ ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=os.amperecomputing.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=nv9Pvxp/gDaeRKsmwNevq52lzFBVsYZWQfbDDaOzjpI=;
- b=ReMtk1NSKkckNw209I1pj6PpDd206QLAoZuUccoQ+U9xLEuTKf2c2lNtPoIJa7bbNMibSCca/DVQvHIYZr39u5AUNsWGjVVAsqKiEtWh4Fydz4R7TEKMh2zMIzyWBSdGyIL6J43K+1dnXo0A9ttoD4OINMN9vib9lnQYX99KjUs=
+ bh=qWV1MOUNxiDDw+u8HgB9VwvU/aKqnCn2F/F6C9LIbhY=;
+ b=RCSyljDiR/TMyiVIyYNiUkKu406+E574hzvAZMQ7e2IDGkIn5xe6bFqNC6GXeBc1/R2bhrqt8ySEVkgzwm3cJ7S6ndKzHR6FOHiNRmRQ/lNY912cKV5Tjvv5yaaXDHJ4GU30QhLUWcoCBJu9+EMAmwROIpMWCQNzQQVweqgmtCU=
 Received: from BYAPR01MB4085.prod.exchangelabs.com (52.135.237.22) by
  BYAPR01MB5557.prod.exchangelabs.com (20.179.88.205) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2073.10; Thu, 11 Jul 2019 23:25:49 +0000
+ 15.20.2073.10; Thu, 11 Jul 2019 23:25:52 +0000
 Received: from BYAPR01MB4085.prod.exchangelabs.com
  ([fe80::9dbb:1b4c:bace:ef80]) by BYAPR01MB4085.prod.exchangelabs.com
  ([fe80::9dbb:1b4c:bace:ef80%7]) with mapi id 15.20.2052.020; Thu, 11 Jul 2019
- 23:25:49 +0000
+ 23:25:51 +0000
 From: Hoan Tran OS <hoan@os.amperecomputing.com>
 To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon
  <will.deacon@arm.com>, Andrew Morton <akpm@linux-foundation.org>, Michal
@@ -61,12 +61,11 @@ To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon
  <hpa@zytor.com>, "David S . Miller" <davem@davemloft.net>, Heiko Carstens
  <heiko.carstens@de.ibm.com>, Vasily Gorbik <gor@linux.ibm.com>, Christian
  Borntraeger <borntraeger@de.ibm.com>
-Subject: [PATCH v2 2/5] powerpc: Kconfig: Remove CONFIG_NODES_SPAN_OTHER_NODES
-Thread-Topic: [PATCH v2 2/5] powerpc: Kconfig: Remove
- CONFIG_NODES_SPAN_OTHER_NODES
-Thread-Index: AQHVOD/57/uJcWsU4EKBP/fxzyJHWw==
-Date: Thu, 11 Jul 2019 23:25:49 +0000
-Message-ID: <1562887528-5896-3-git-send-email-Hoan@os.amperecomputing.com>
+Subject: [PATCH v2 3/5] x86: Kconfig: Remove CONFIG_NODES_SPAN_OTHER_NODES
+Thread-Topic: [PATCH v2 3/5] x86: Kconfig: Remove CONFIG_NODES_SPAN_OTHER_NODES
+Thread-Index: AQHVOD/6mMbG4b3xtkKwY5B+a64Pmg==
+Date: Thu, 11 Jul 2019 23:25:51 +0000
+Message-ID: <1562887528-5896-4-git-send-email-Hoan@os.amperecomputing.com>
 References: <1562887528-5896-1-git-send-email-Hoan@os.amperecomputing.com>
 In-Reply-To: <1562887528-5896-1-git-send-email-Hoan@os.amperecomputing.com>
 Accept-Language: en-US
@@ -82,12 +81,12 @@ x-ms-exchange-messagesentrepresentingtype: 1
 x-mailer: git-send-email 2.7.4
 x-originating-ip: [4.28.12.214]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: dc67312c-bd1d-4ac6-2268-08d706571b83
+x-ms-office365-filtering-correlation-id: 60e6bd66-cb09-4bd8-7c4e-08d706571cf4
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
  SRVR:BYAPR01MB5557; 
 x-ms-traffictypediagnostic: BYAPR01MB5557:
-x-microsoft-antispam-prvs: <BYAPR01MB55570D96BF58823729B3BA1FF1F30@BYAPR01MB5557.prod.exchangelabs.com>
+x-microsoft-antispam-prvs: <BYAPR01MB5557239AD4D7113B3B7ADD13F1F30@BYAPR01MB5557.prod.exchangelabs.com>
 x-ms-oob-tlc-oobclassifiers: OLM:3383;
 x-forefront-prvs: 0095BCF226
 x-forefront-antispam-report: SFV:NSPM;
@@ -98,18 +97,18 @@ x-forefront-antispam-report: SFV:NSPM;
 received-spf: None (protection.outlook.com: os.amperecomputing.com does not
  designate permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: izT+63HRnUuAKD5eGQE8YKlxJrqgWZx0flLjKl/QWe6GzX9REGSnQmtmPQEHM+Nb7SoECE7IHtcSR/0MAmMRDwAqNOJomwkyv8FLL1J2BX2KQSmTEoXofPO43EwIMPbl2dEGPQJ2bdnlbA/u/D+U0iZAVdoIDLDMP2a93+1SIMSSeVKLE5AFoI8dKv5oIkRhidLD3R0KGJX2ZslNvRF5ULYgNZxwyQxPuatZw+KuS2J24LSK6WbmSwfnPvnfQ2oEI8RHlikLOL2wkTPFlmdjjzXsZ7sBC1I6get/tead9+DbSFP8sRhTXA6sUCv9LJs6Z0vPUqxS8bJiDfwxpivxFm38e/ZR5AjUUI512L3kodi4FaZHfbUzHHYn+zB0kLMs2okuu/Iyn/MQ/fXHY+vUlaH1tjB+IWfRuA6MeCfCx/U=
+x-microsoft-antispam-message-info: +yD719DBgEH8rntLj0mGEtqpmWqARyiJM3JmReTrowtXLYcEkce3BJ+Tbd8hXmVF8TIDhHZ80KU1sC4uoLl7ZNHxc+Pqdw+J88LRaDtq0nHrmLM0Cn1nKNiS3589Xvar6n6GbAvvJLxPKKQ8pKcrK3Si6Lv7VhB+GUJTE1NyokRYTutBsj7Hv6kqhv7u1jtY3cvwJ0PPV05AikvwNjhsladmz394WfVMPSpnPaKrIujOgi0/ERXzvu53KywSzCJlQlkwtY3cs+oyb/xonwlfFLGtj6ki8sBbJvmdoYus+98UewK4fmG79RHNYRxaDKh2giGUarUOwVWbuGUuSWnIBE6W44Myl9zRNHbg4Moun1fzPdpOl94U3xF5L49W56OEtJUajSMJue12CuCucmItSAnK9UXqNdg5VvPjksaaiLc=
 MIME-Version: 1.0
 X-OriginatorOrg: os.amperecomputing.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: dc67312c-bd1d-4ac6-2268-08d706571b83
-X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Jul 2019 23:25:49.3382 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 60e6bd66-cb09-4bd8-7c4e-08d706571cf4
+X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Jul 2019 23:25:51.7318 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 3bc2b170-fd94-476d-b0ce-4229bdc904a7
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
 X-MS-Exchange-CrossTenant-userprincipalname: Hoan@os.amperecomputing.com
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR01MB5557
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_162555_322763_C87479CC 
+X-CRM114-CacheID: sfid-20190711_162557_008346_D9B3F225 
 X-CRM114-Status: UNSURE (   9.91  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.2 (+)
@@ -152,21 +151,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Remove CONFIG_NODES_SPAN_OTHER_NODES as it's enabled by
-default with NUMA.
+Remove CONFIG_NODES_SPAN_OTHER_NODES as it's enabled
+by default with NUMA.
 
 Signed-off-by: Hoan Tran <Hoan@os.amperecomputing.com>
 ---
- arch/powerpc/Kconfig | 9 ---------
+ arch/x86/Kconfig | 9 ---------
  1 file changed, 9 deletions(-)
 
-diff --git a/arch/powerpc/Kconfig b/arch/powerpc/Kconfig
-index 8c1c636..bdde8bc 100644
---- a/arch/powerpc/Kconfig
-+++ b/arch/powerpc/Kconfig
-@@ -629,15 +629,6 @@ config ARCH_MEMORY_PROBE
- 	def_bool y
- 	depends on MEMORY_HOTPLUG
+diff --git a/arch/x86/Kconfig b/arch/x86/Kconfig
+index 2bbbd4d..fa9318c 100644
+--- a/arch/x86/Kconfig
++++ b/arch/x86/Kconfig
+@@ -1567,15 +1567,6 @@ config X86_64_ACPI_NUMA
+ 	---help---
+ 	  Enable ACPI SRAT based node topology detection.
  
 -# Some NUMA nodes have memory ranges that span
 -# other nodes.  Even though a pfn is valid and
@@ -175,11 +174,11 @@ index 8c1c636..bdde8bc 100644
 -# for details.
 -config NODES_SPAN_OTHER_NODES
 -	def_bool y
--	depends on NEED_MULTIPLE_NODES
+-	depends on X86_64_ACPI_NUMA
 -
- config STDBINUTILS
- 	bool "Using standard binutils settings"
- 	depends on 44x
+ config NUMA_EMU
+ 	bool "NUMA emulation"
+ 	depends on NUMA
 -- 
 2.7.4
 
