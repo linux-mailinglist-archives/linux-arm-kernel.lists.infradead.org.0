@@ -2,64 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D7A77659EE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 17:04:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43F53659E7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 17:03:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=XIHjVjsl9FlgE9G4J6H5qu49EBX2MiRhNdIiMu84YoI=; b=K26OcEJhtyFODS
-	qZxdUMdropL1rfpvNXb4HVpO9lTuQhD41I3OSd7whS7ZS4ED6+XHcjwdhTSLbpRNcEobNDqSCXaG7
-	0LtS9YyWj9Vs84MNcpiyfwkmFoT0IhUmDsJ3UCLyOTJlSeELUWRnYl6awmSSJ5T4cJonlBrzCOTgQ
-	+OvEfdCRd4ZBZJwWCEtZssAjB+FwluBugjbYaimUvFmU/aARDOWd7jA5ADKRSnLVsR2fCb7UCE2iW
-	0FkE/s7hMLxmMNny1nczvK+4huvyV0B9s6k1NBfTPVwclZnKWtyLxpilJgkQUxU3CvIn63KWomwiH
-	eBkJ/97OP753sg7spJRw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=U1KkS8BvRC0mPRvQW1aal7VZvpReNbMRNrpeJDmGEEM=; b=CWLlaX/DRFuhfu
+	d232HUx3j4Tc+Jck2liQrK2+xSxzpruhnBgEgbL9xeOYHKyGBr55cm1uNgda1Q7HqN2eNkChAlGmb
+	KoFxUZr8LtQ9G4fgikovDy0XKT0jyfghqoJBIDDCSsGQ1oouiHCmFaVBHKOycYr/dB496JzcwMbsU
+	lts1f5oWoxPPPRPyIIJrYUXo2/FUZIIY062Lm+yeOVkt92GYm/rJIZehiRhLyYYqKGDPlQuY3YoJt
+	yF+yalw9D7JtHEHnluMa5CFrLphU/pr0OuV6vl8B0WK0pFHHjrXRsUnQ0tsVUCMxzvv9zH5ODh2Qa
+	yBTxZU43dttErn52uCTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlacQ-0004Nz-Q5; Thu, 11 Jul 2019 15:04:22 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hlabg-0003y1-Mk; Thu, 11 Jul 2019 15:03:36 +0000
+Received: from relay5-d.mail.gandi.net ([217.70.183.197])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlac3-0004HU-44
- for linux-arm-kernel@bombadil.infradead.org; Thu, 11 Jul 2019 15:03:59 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
- Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Z+rdqGtrDP2gNH3YuGneigtYCKwONXwI1ZywEJuPT2Q=; b=C/kX/eoZlwmvlUn1YwOTcKFKhK
- z2ztisgabCR/vVP41mBx54R5e/FWPtOPPA7Wf7SPo9w+BpjQqBwuaHrn6cRnJQVAf0NqPnWAjLODQ
- 8BicirH0ItUi7shm6L6P698PEHI2VrUzBVuP6Xzgbds12jNWiOf8E6oPC7noKQxR9X5r3Mq60XoJQ
- 7/ebL4yCY/Kn4Kfvd2nUQ0BNCNj+i5A3xOsPkuEuUQfw2Y5XX8ZZaKIzVeOxzSYIdhQg3dbYf5fv1
- 5+xKMyfRkXcGWj2Q3bUd6LZM5ucpM+18tNnbVBOSRuVKaNEeCKPO3Bw1YnwG7fZnxuoMxaBq5wPBC
- sdMyOM6g==;
-Received: from relay2-d.mail.gandi.net ([217.70.183.194])
- by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlac0-0004dM-8i
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 15:03:57 +0000
+ id 1hlabU-0003wh-3f
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 15:03:26 +0000
 X-Originating-IP: 92.137.69.152
 Received: from localhost (alyon-656-1-672-152.w92-137.abo.wanadoo.fr
  [92.137.69.152]) (Authenticated sender: gregory.clement@bootlin.com)
- by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id B75B84000B;
- Thu, 11 Jul 2019 15:03:06 +0000 (UTC)
+ by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id 22DB71C0017;
+ Thu, 11 Jul 2019 15:03:10 +0000 (UTC)
 From: Gregory CLEMENT <gregory.clement@bootlin.com>
 To: Robin Murphy <robin.murphy@arm.com>, Joerg Roedel <joro@8bytes.org>,
  linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org
-Subject: [PATCH v2 0/4]  Add system mmu support for Armada-806
-Date: Thu, 11 Jul 2019 17:02:38 +0200
-Message-Id: <20190711150242.25290-1-gregory.clement@bootlin.com>
+Subject: [PATCH v2 1/4] iommu/arm-smmu: Introduce wrapper for writeq/readq
+Date: Thu, 11 Jul 2019 17:02:39 +0200
+Message-Id: <20190711150242.25290-2-gregory.clement@bootlin.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190711150242.25290-1-gregory.clement@bootlin.com>
+References: <20190711150242.25290-1-gregory.clement@bootlin.com>
 MIME-Version: 1.0
-X-Spam-Note: CRM114 invocation failed
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190711_080324_464444_12C19994 
+X-CRM114-Status: GOOD (  13.20  )
 X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.194 listed in list.dnswl.org]
+ low trust [217.70.183.197 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -82,54 +70,130 @@ Cc: devicetree@vger.kernel.org, Jason Cooper <jason@lakedaemon.net>,
  Nadav Haklai <nadavh@marvell.com>, Rob Herring <robh+dt@kernel.org>,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
  =?UTF-8?q?Miqu=C3=A8l=20Raynal?= <miquel.raynal@bootlin.com>,
- linux-arm-kernel@lists.infradead.org,
+ Hanna Hawa <hannah@marvell.com>, linux-arm-kernel@lists.infradead.org,
  Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
+From: Hanna Hawa <hannah@marvell.com>
 
-last year a first version of this series was submitted to add support
-for IOMMU for AP806, including workaround for accessing ARM SMMU 64bit
-registers[1].
+This patch introduces the smmu_writeq_relaxed/smmu_readq_relaxed
+helpers, as preparation to add specific Marvell work-around for
+accessing 64 bits width registers of ARM SMMU.
 
-For the record, AP-806 can't access SMMU registers with 64bit width,
-this patches split the readq/writeq for 32bit access, due to erratanum
-#582743.
+Signed-off-by: Hanna Hawa <hannah@marvell.com>
+Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
+---
+ drivers/iommu/arm-smmu.c | 36 +++++++++++++++++++++++++++---------
+ 1 file changed, 27 insertions(+), 9 deletions(-)
 
-Based on the feedback from Robin Murphy, I also add code ensuring that
-we won't try to use AArch64 format with 32 bits acces.
-
-It was also discussed to not use compatible but propertu to support
-this workaround. I agree to make this change if needed, but for now I
-would like to have a feedback on the current code to know if it is
-acceptable if there is still potential issue.
-
-The series was tested on a vanilla v5.1 kernel, and without the
-series, an USB stick was not detected under QEMU whereas with this
-series it worked as expected.
-
-Greogry
-
-[1]: https://lkml.org/lkml/2018/10/15/373
-
-Gregory CLEMENT (1):
-  arm64: dts: marvell: armada-ap806: add smmu support
-
-Hanna Hawa (3):
-  iommu/arm-smmu: Introduce wrapper for writeq/readq
-  iommu/arm-smmu: Workaround for Marvell Armada-AP806 SoC erratum
-    #582743
-  dt-bindings: iommu/arm,smmu: add compatible string for Marvell
-
- Documentation/arm64/silicon-errata.txt        |  2 +
- .../devicetree/bindings/iommu/arm,smmu.txt    |  1 +
- arch/arm64/boot/dts/marvell/armada-ap806.dtsi | 17 +++++
- drivers/iommu/arm-smmu.c                      | 74 ++++++++++++++++---
- 4 files changed, 83 insertions(+), 11 deletions(-)
-
+diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
+index 045d93884164..ac0784b5b675 100644
+--- a/drivers/iommu/arm-smmu.c
++++ b/drivers/iommu/arm-smmu.c
+@@ -91,9 +91,11 @@
+  * therefore this actually makes more sense than it might first appear.
+  */
+ #ifdef CONFIG_64BIT
+-#define smmu_write_atomic_lq		writeq_relaxed
++#define smmu_write_atomic_lq(smmu, val, reg)	\
++					smmu_writeq_relaxed(smmu, val, reg)
+ #else
+-#define smmu_write_atomic_lq		writel_relaxed
++#define smmu_write_atomic_lq(smmu, val, reg)	\
++					writel_relaxed(val, reg)
+ #endif
+ 
+ /* Translation context bank */
+@@ -295,6 +297,19 @@ static struct arm_smmu_domain *to_smmu_domain(struct iommu_domain *dom)
+ 	return container_of(dom, struct arm_smmu_domain, domain);
+ }
+ 
++static inline void smmu_writeq_relaxed(struct arm_smmu_device *smmu,
++				       u64 val,
++				       void __iomem *addr)
++{
++	writeq_relaxed(val, addr);
++}
++
++static inline u64 smmu_readq_relaxed(struct arm_smmu_device *smmu,
++				     void __iomem *addr)
++{
++	return readq_relaxed(addr);
++}
++
+ static void parse_driver_options(struct arm_smmu_device *smmu)
+ {
+ 	int i = 0;
+@@ -495,6 +510,7 @@ static void arm_smmu_tlb_inv_range_nosync(unsigned long iova, size_t size,
+ 					  size_t granule, bool leaf, void *cookie)
+ {
+ 	struct arm_smmu_domain *smmu_domain = cookie;
++	struct arm_smmu_device *smmu = smmu_domain->smmu;
+ 	struct arm_smmu_cfg *cfg = &smmu_domain->cfg;
+ 	bool stage1 = cfg->cbar != CBAR_TYPE_S2_TRANS;
+ 	void __iomem *reg = ARM_SMMU_CB(smmu_domain->smmu, cfg->cbndx);
+@@ -516,7 +532,7 @@ static void arm_smmu_tlb_inv_range_nosync(unsigned long iova, size_t size,
+ 			iova >>= 12;
+ 			iova |= (u64)cfg->asid << 48;
+ 			do {
+-				writeq_relaxed(iova, reg);
++				smmu_writeq_relaxed(smmu, iova, reg);
+ 				iova += granule >> 12;
+ 			} while (size -= granule);
+ 		}
+@@ -525,7 +541,7 @@ static void arm_smmu_tlb_inv_range_nosync(unsigned long iova, size_t size,
+ 			      ARM_SMMU_CB_S2_TLBIIPAS2;
+ 		iova >>= 12;
+ 		do {
+-			smmu_write_atomic_lq(iova, reg);
++			smmu_write_atomic_lq(smmu, iova, reg);
+ 			iova += granule >> 12;
+ 		} while (size -= granule);
+ 	}
+@@ -584,7 +600,7 @@ static irqreturn_t arm_smmu_context_fault(int irq, void *dev)
+ 		return IRQ_NONE;
+ 
+ 	fsynr = readl_relaxed(cb_base + ARM_SMMU_CB_FSYNR0);
+-	iova = readq_relaxed(cb_base + ARM_SMMU_CB_FAR);
++	iova = smmu_readq_relaxed(smmu, cb_base + ARM_SMMU_CB_FAR);
+ 
+ 	dev_err_ratelimited(smmu->dev,
+ 	"Unhandled context fault: fsr=0x%x, iova=0x%08lx, fsynr=0x%x, cb=%d\n",
+@@ -734,9 +750,11 @@ static void arm_smmu_write_context_bank(struct arm_smmu_device *smmu, int idx)
+ 		writel_relaxed(cb->ttbr[0], cb_base + ARM_SMMU_CB_TTBR0);
+ 		writel_relaxed(cb->ttbr[1], cb_base + ARM_SMMU_CB_TTBR1);
+ 	} else {
+-		writeq_relaxed(cb->ttbr[0], cb_base + ARM_SMMU_CB_TTBR0);
++		smmu_writeq_relaxed(smmu, cb->ttbr[0],
++				    cb_base + ARM_SMMU_CB_TTBR0);
+ 		if (stage1)
+-			writeq_relaxed(cb->ttbr[1], cb_base + ARM_SMMU_CB_TTBR1);
++			smmu_writeq_relaxed(smmu, cb->ttbr[1],
++					    cb_base + ARM_SMMU_CB_TTBR1);
+ 	}
+ 
+ 	/* MAIRs (stage-1 only) */
+@@ -1367,7 +1385,7 @@ static phys_addr_t arm_smmu_iova_to_phys_hard(struct iommu_domain *domain,
+ 	/* ATS1 registers can only be written atomically */
+ 	va = iova & ~0xfffUL;
+ 	if (smmu->version == ARM_SMMU_V2)
+-		smmu_write_atomic_lq(va, cb_base + ARM_SMMU_CB_ATS1PR);
++		smmu_write_atomic_lq(smmu, va, cb_base + ARM_SMMU_CB_ATS1PR);
+ 	else /* Register is only 32-bit in v1 */
+ 		writel_relaxed(va, cb_base + ARM_SMMU_CB_ATS1PR);
+ 
+@@ -1380,7 +1398,7 @@ static phys_addr_t arm_smmu_iova_to_phys_hard(struct iommu_domain *domain,
+ 		return ops->iova_to_phys(ops, iova);
+ 	}
+ 
+-	phys = readq_relaxed(cb_base + ARM_SMMU_CB_PAR);
++	phys = smmu_readq_relaxed(smmu, cb_base + ARM_SMMU_CB_PAR);
+ 	spin_unlock_irqrestore(&smmu_domain->cb_lock, flags);
+ 	if (phys & CB_PAR_F) {
+ 		dev_err(dev, "translation fault!\n");
 -- 
 2.20.1
 
