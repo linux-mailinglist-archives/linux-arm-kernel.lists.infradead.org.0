@@ -2,81 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CD9B66580A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 15:45:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1385B65840
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 15:58:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0BeOTysP4aSiKg3cvrxvN/ZFE3oxypVb9FBmvY0ires=; b=FC1p81wKQWCi/A
-	R8ajUKYgKRy4gvq8hQENExz5ouWOYJi+XPSlya1E0Q+sanauFUcPs0Dl+8MgQeWYnQmbt5FJ91Wwq
-	T6HRL0HzLyJd5DEElycp+lBEyV79QXKCKM9ZuNrtRWKcoW7n3ul6+fWrYL7wCQLp27U3xrnPK1F7N
-	PS4RC7+lsDAtZNQfD2W34n2xakv7FIAukKnKUOVJMeOa+a2t6MAKE7uL6vZvwj6M6IaQvSQqUEJsd
-	Zj4pmulD5brliCXHiHcglgNHIEOYfS7J/w5piGu2mAUqP0DqYwe2PURZ9bw629WPvCHFzeqvrILk/
-	a9gE/d0carE5cEQNRAzA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jOUcDLGnDKpkgo4/VDQbZD8vN00mLn93HdomKXa6Bxw=; b=akcVEcLF8W0SCL
+	BKo5BuMVJFAG2NPRSuquA0yXJdy/XKTxKN9LJ4LPpuawW22G4qPIVwx+OZHZD0w6/bDqIQ2gfsZdt
+	ZxNChZ8kLLqq9ap3xg63xmE7i7+maQDq4AEm8L7H0Ke8ak30ZxCPz60y7Jw6qJ9hrpBuN36zRgDZQ
+	1Eny41TBhqrc7XQDqpdMw3HuvkG1AyWSejryuKzIUxcwbbkXdFp/2CyJlCWy8CVbxLYdWe5jpzg8b
+	KZ2pmjrPbMSGWV1Uo7p5dOWFuu9EZQRqG+V9llJZDivifEU4bmtUPZExW6S29F/EBcpiJQjf3NNDv
+	C5d+fJy8ijwvJZ5XwQYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlZNm-00005T-3f; Thu, 11 Jul 2019 13:45:10 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlZNO-0008Vw-Jd
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 13:44:47 +0000
-Received: from mail-yw1-f47.google.com (mail-yw1-f47.google.com
- [209.85.161.47])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B45582171F
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 11 Jul 2019 13:44:44 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1562852684;
- bh=N++HA0Suxx9LUIKShRqQi/IZ1Ui2WkJNndBcpnjBMgQ=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=wm3vRlDRGdEMSG3YtunRhi4IwGasCq6s62I9XVvLUlflydXVQb4uCmAgGGwUAIUTO
- MRtqyRKB01l40QErOdJ6ZbMzyh4eFCISYn5EpeNl60+hwRuAIbKG6Rd/y+J+7MnblI
- tbYQ8LE1IDxamvLGwLvxw9xlEzxS+HX8LUFIAe80=
-Received: by mail-yw1-f47.google.com with SMTP id l124so3600926ywd.0
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 11 Jul 2019 06:44:44 -0700 (PDT)
-X-Gm-Message-State: APjAAAU6qTsVM62nUUvZGfIjxnlM/KrW3w+up4VqmPk1soFlKMrrgxGy
- 4FrYkCtglLGc8mMTlL9ZYaltKGER7S4g6bSIkg==
-X-Google-Smtp-Source: APXvYqxXUf3DmAR2oJ8qhbFdfBnqovYOtOVQp9haN7U8g9xuxsnLzHC/CIkpCDNwFGMb0ePtFNApL5FEFuQ81Vj3Beg=
-X-Received: by 2002:aed:3fb0:: with SMTP id s45mr2268749qth.136.1562852683872; 
- Thu, 11 Jul 2019 06:44:43 -0700 (PDT)
+	id 1hlZaE-0004zH-AG; Thu, 11 Jul 2019 13:58:02 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hlZZz-0004yf-IP
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 13:57:49 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9B3BA2B;
+ Thu, 11 Jul 2019 06:57:44 -0700 (PDT)
+Received: from [10.1.197.45] (e112298-lin.cambridge.arm.com [10.1.197.45])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8A7BF3F59C;
+ Thu, 11 Jul 2019 06:57:42 -0700 (PDT)
+Subject: Re: [PATCH v4.4 00/45] V4.4 backport of arm64 Spectre patches
+To: Viresh Kumar <viresh.kumar@linaro.org>,
+ linux-arm-kernel@lists.infradead.org
+References: <cover.1560480942.git.viresh.kumar@linaro.org>
+From: Julien Thierry <julien.thierry@arm.com>
+Message-ID: <19247d89-8f83-f5f7-dc03-0f6106c6e28e@arm.com>
+Date: Thu, 11 Jul 2019 14:57:40 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-References: <20190710141611.21159-1-andrew@aj.id.au>
- <20190710141611.21159-2-andrew@aj.id.au>
- <CAL_JsqKrYcUbn_02z9GQO6U4rz7k=p3kB7_G0tKmv25MMZZNQg@mail.gmail.com>
- <3b0788cf-eee4-48b2-901d-d2ab6716ab1b@www.fastmail.com>
-In-Reply-To: <3b0788cf-eee4-48b2-901d-d2ab6716ab1b@www.fastmail.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Thu, 11 Jul 2019 07:44:31 -0600
-X-Gmail-Original-Message-ID: <CAL_Jsq+mAd=US3cbNQexFGrLxhkSyqi2XyGetyHrZV6QMd69EA@mail.gmail.com>
-Message-ID: <CAL_Jsq+mAd=US3cbNQexFGrLxhkSyqi2XyGetyHrZV6QMd69EA@mail.gmail.com>
-Subject: Re: [PATCH 1/2] dt-bindings: mmc: Document Aspeed SD controller
-To: Andrew Jeffery <andrew@aj.id.au>
+In-Reply-To: <cover.1560480942.git.viresh.kumar@linaro.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_064446_668165_0777D9FC 
-X-CRM114-Status: GOOD (  18.98  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190711_065747_656977_714FBB33 
+X-CRM114-Status: GOOD (  24.19  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,60 +62,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Ulf Hansson <ulf.hansson@linaro.org>, linux-aspeed@lists.ozlabs.org,
- Ryan Chen <ryanchen.aspeed@gmail.com>, linux-mmc <linux-mmc@vger.kernel.org>,
- Adrian Hunter <adrian.hunter@intel.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Joel Stanley <joel@jms.id.au>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ stable@vger.kernel.org, mark.brown@arm.com,
+ Russell King <rmk+kernel@arm.linux.org.uk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 10, 2019 at 6:56 PM Andrew Jeffery <andrew@aj.id.au> wrote:
->
->
->
-> On Thu, 11 Jul 2019, at 01:20, Rob Herring wrote:
-> > On Wed, Jul 10, 2019 at 8:16 AM Andrew Jeffery <andrew@aj.id.au> wrote:
-> > >
-> > > The ASPEED SD/SDIO/eMMC controller exposes two slots implementing the
-> > > SDIO Host Specification v2.00, with 1 or 4 bit data buses, or an 8 bit
-> > > data bus if only a single slot is enabled.
-> > >
-> > > Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
-> > > ---
-> > >  .../bindings/mmc/sdhci-of-aspeed.yaml         | 91 +++++++++++++++++++
-> >
-> > aspeed,sdhci.yaml
->
-> Ack. Previously I had separate documents for different compatibles, wasn't sure
-> how to tackle name one document covering multiple compatibles.
->
-> >
-> > >  1 file changed, 91 insertions(+)
-> > >  create mode 100644 Documentation/devicetree/bindings/mmc/sdhci-of-aspeed.yaml
-> > >
-> > > diff --git a/Documentation/devicetree/bindings/mmc/sdhci-of-aspeed.yaml b/Documentation/devicetree/bindings/mmc/sdhci-of-aspeed.yaml
-> > > new file mode 100644
-> > > index 000000000000..e98a2ac4d46d
-> > > --- /dev/null
-> > > +++ b/Documentation/devicetree/bindings/mmc/sdhci-of-aspeed.yaml
-> > > @@ -0,0 +1,91 @@
-> > > +# SPDX-License-Identifier: GPL-2.0-or-later
-> >
-> > The preferred license is (GPL-2.0 OR BSD-2-Clause) if that is okay with you.
->
-> I should poke people internally again, I had asked, just haven't got a clear
-> answer. What was the justification for the preference (just so I can pass that
-> on)?
+Hi Viresh,
 
-To use schema in non-GPL projects. *BSD, Zephyr, etc.
+On 14/06/2019 04:07, Viresh Kumar wrote:
+> Hello,
+> 
+> Here is an attempt to backport arm64 spectre patches to v4.4 stable
+> tree.
+> 
+> I have started this backport with Mark Rutland's backport of Spectre to
+> 4.9 [1] and tried applying the upstream version of them over 4.4 and
+> resolved conflicts by checking how they have been resolved in 4.9.
+> 
+> I had to pick few extra upstream patches to avoid unnecessary conflicts
+> (upstream commit ids mentioned):
+> 
+>   a842789837c0 arm64: remove duplicate macro __KERNEL__ check
+>   64f8ebaf115b mm/kasan: add API to check memory regions
+>   bffe1baff5d5 arm64: kasan: instrument user memory access API
+>   92406f0cc9e3 arm64: cpufeature: Add scope for capability check
+>   9eb8a2cdf65c arm64: cputype info for Broadcom Vulcan
+>   0d90718871fe arm64: cputype: Add MIDR values for Cavium ThunderX2 CPUs
+>   98dd64f34f47 ARM: 8478/2: arm/arm64: add arm-smccc
+> 
+> 
+> I had to drop few patches as well as they weren't getting applied
+> properly due to missing files/features (upstream commit id mentioned):
+> 
+>   93f339ef4175 arm64: cpufeature: __this_cpu_has_cap() shouldn't stop early
+>   3c31fa5a06b4 arm64: Run enable method for errata work arounds on late CPUs
+>   6840bdd73d07 arm64: KVM: Use per-CPU vector when BP hardening is enabled
+>   90348689d500 arm64: KVM: Make PSCI_VERSION a fast path
+> 
+> 
+> Since v4.4 doesn't contain arch/arm/kvm/hyp/switch.c file, changes for
+> it are dropped from some of the patches. The commit log of specific
+> patches are updated with this information.
+> 
+> Also for commit id (from 4.9 stable):
+>   c24c205d2528 arm64: Add ARM_SMCCC_ARCH_WORKAROUND_1 BP hardening support
+> 
+> I have dropped arch/arm64/crypto/sha256-core.S and sha512-core.S files
+> as they weren't part of the upstream commit. Not sure why it was
+> included by Mark as the commit log doesn't provide any reasoning for it.
+> 
+> The patches in this series are pushed here [2].
+> 
+> This is only build/boot tested by me as I don't have access to the
+> required test-suite which can verify spectre mitigations.
+> 
+> @Julien: Can you please help reviewing / testing them ? Thanks.
+> 
 
-Rob
+Since there were seems to be a lot of changes between the current branch
+and the patch series you posted, it would probably be good to post a new
+version on the mailing list once you believe you have them in a good shape.
+
+Testing the branch is fine, but reviewing is definitely something that
+should happen on patches posted on the mailing list.
+
+Thanks,
+
+-- 
+Julien Thierry
 
 _______________________________________________
 linux-arm-kernel mailing list
