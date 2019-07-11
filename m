@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C73D165B2A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 18:02:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D95665B2B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 18:03:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ru6rb0utVskbx78lubvjYr4MgGrl0kNcXvbPHVxYqig=; b=jmR5hZ8lr7qyG5
-	CtBwqF/JuFx3plo5+WzwsHEq/yHbQfWGROsXGKNyLU7a3Ys8CjhbHCOMQffART5MD4TaN7SXw/O6W
-	jlcnYp1whH2Etbcwzk2r4YiWzizj9S3yt/iV4dSP9v71No5HT+ul2pguLP4e2nH+/cvK+XpAaVShk
-	LHfKS+s72UonYBTEY8pjUdr/imrA+KWR8Nx9t3ryVV6EP29mRVOHaTICaFZ5o4Mj4S+tLKqwKpt7/
-	P67KwOGPYIoOmfXBN3gcfFJFSRPP0DPS3qWJijYiypadrJneWz8//5kUNyVJ5FdRRz7dxsYf1U1Ww
-	YitUVntUQYcIHEoDWelw==;
+	List-Owner; bh=plsgaptb7VbIXKzlyW7nBka0KuBweeTWFQ6c3rNSB/0=; b=A7vSpynXVrTMTz
+	x1OIlSgUZjG25IusVywEkBEkMeSzKknpgJMni6A9RHoKyPduClVZvKL7VJt6/hGprSPsM59mb/6pl
+	9XrN5ddlfHvLkEM+6WEVGje0TcbfqlFIJrwMvLxECvvpRxsGz1JGU3fgA0nSdFp5q9fJUgz8LamjM
+	sBCirUlHSLvlxRMnfBp1DT9Sc9NOP+E7tfq7CY6c1I39pd30hxJvgsObmhA8PXH/NozvxKaSYMOvM
+	s1GCMgfqEQE5NmQPumpj53ob9Xf1bEhg81DjSbwwCj9oKuNqtmXsbJ8M6EJO5e5PkUpFuoEPDGwjd
+	kdp7BiARFtlWL5sMTGUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlbWy-0004qc-GP; Thu, 11 Jul 2019 16:02:48 +0000
+	id 1hlbXG-00055U-03; Thu, 11 Jul 2019 16:03:06 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hlbVi-0003yG-WA
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 16:01:32 +0000
+ id 1hlbVl-0003zh-4k
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 16:01:34 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5EBB21477;
- Thu, 11 Jul 2019 09:01:30 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 375441424;
+ Thu, 11 Jul 2019 09:01:32 -0700 (PDT)
 Received: from e119886-lin.cambridge.arm.com (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CE0533F71F;
- Thu, 11 Jul 2019 09:01:28 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A6C543F71F;
+ Thu, 11 Jul 2019 09:01:30 -0700 (PDT)
 From: Andrew Murray <andrew.murray@arm.com>
 To: Mathieu Poirier <mathieu.poirier@linaro.org>,
  Suzuki K Poulose <suzuki.poulose@arm.com>,
  Alexander Shishkin <alexander.shishkin@linux.intel.com>
-Subject: [PATCH v3 3/6] coresight: etm4x: use module_param instead of
- module_param_named
-Date: Thu, 11 Jul 2019 17:01:11 +0100
-Message-Id: <20190711160114.634-4-andrew.murray@arm.com>
+Subject: [PATCH v3 4/6] coresight: etm4x: improve clarity of etm4_os_unlock
+ comment
+Date: Thu, 11 Jul 2019 17:01:12 +0100
+Message-Id: <20190711160114.634-5-andrew.murray@arm.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190711160114.634-1-andrew.murray@arm.com>
 References: <20190711160114.634-1-andrew.murray@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_090131_100390_9A40310D 
-X-CRM114-Status: GOOD (  10.36  )
+X-CRM114-CacheID: sfid-20190711_090133_322683_DAD8A7C0 
+X-CRM114-Status: GOOD (  11.51  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -70,32 +70,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Given that the user-exposed module parameter for 'boot_enable' matches
-the variable that it sets, let's use module_param instead of
-module_param_named.
+To improve clarity, let's update the comment for etm4_os_unlock
+to use the name of the register as per the ETM architecture
+specification.
 
-Let's also use octal permissions (checkpatch recommends this) and
-provide a module parameter description.
+The existing comment is also misleading as it suggests any value
+written to TRCOSLAR unlocks the trace registers, however it must
+be '0' - let's also correct this.
 
 Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 ---
- drivers/hwtracing/coresight/coresight-etm4x.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/hwtracing/coresight/coresight-etm4x.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
-index 3825a39e9a49..451f2b24cc03 100644
+index 451f2b24cc03..d993359e2117 100644
 --- a/drivers/hwtracing/coresight/coresight-etm4x.c
 +++ b/drivers/hwtracing/coresight/coresight-etm4x.c
-@@ -34,7 +34,8 @@
- #include "coresight-etm-perf.h"
+@@ -48,7 +48,7 @@ static enum cpuhp_state hp_online;
  
- static int boot_enable;
--module_param_named(boot_enable, boot_enable, int, S_IRUGO);
-+module_param(boot_enable, int, 0444);
-+MODULE_PARM_DESC(boot_enable, "Enable tracing on boot");
- 
- /* The number of ETMv4 currently registered */
- static int etm4_count;
+ static void etm4_os_unlock(struct etmv4_drvdata *drvdata)
+ {
+-	/* Writing any value to ETMOSLAR unlocks the trace registers */
++	/* Writing 0 to TRCOSLAR unlocks the trace registers */
+ 	writel_relaxed(0x0, drvdata->base + TRCOSLAR);
+ 	drvdata->os_unlock = true;
+ 	isb();
 -- 
 2.21.0
 
