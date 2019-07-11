@@ -2,49 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0080A652FA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 10:18:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C99265304
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 10:19:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
 	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dQc6zyjVaqpSfiDibcHkzSa/Szp6ZVm6FSxMfPIxP90=; b=sTQFTa1HGTYeZt
-	q0Dnsiy00sAf+g84V99Fye+DcmDkNVsJmiobH0srs2N2KfQEmHeLfgtnpMGxEbknUvA9qbz6oqS68
-	cpuuEKQVH442bm7yBdnbFQfD03C+fc/Cpz08b3J7W5ruQh2GvIi09b5lv1aQ/azn166M81c9QLkiU
-	NgrSnr11bz9tpqAAbu41hc5wvJSrXoJBnfW3AGij1Z4NKfZOSZFk02Wy9xwf54bSZXvFPedIt4GOi
-	18SFODL+4/d5HEmA5H4HYpI8f/D1rpgXGUn88SexVni3ZOnEwQVgk2u7g0kOBzllq/eKqFonbjZFp
-	GM2jGYVTamlHtzK0gQ7A==;
+	List-Owner; bh=vw9OkGczGtCY+pBsxPI+z0AXpiKVA+hyKhsHQ8HQyAY=; b=t6HT8o6YnzL+B6
+	Hu9WhMVWD0gn4K4mgMjOOr+ARUUl49MOtxK+HMS0MCxHTUTMvGwu/ysJ84YXxz9NT0he4yqz295+1
+	voyB0pYC7Rds6HMXmr0Wou7cV5VA4rU7Uk7TxboIdUO9NUZqVnkevtiiQCU2ioA7LhD+C7ufK0gHa
+	IaYv48tjXEWZ7zT3wHgVAThldWz/IUJQLy00Fv8pLE1bjQmSAcTqSzcawU3a3N9gdL2HgR7ULE7Kc
+	805qLSfpIRHd66Px3TqK3zWASichl8YeO5Mgp1qMp60LKNXRCnGIMLGyV3sVqEVhA7FeDcEU7/oB2
+	chFx9NS0FPwVb28ne4yw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlUHA-0007Au-Hq; Thu, 11 Jul 2019 08:18:00 +0000
-Received: from mail-eopbgr40054.outbound.protection.outlook.com ([40.107.4.54]
- helo=EUR03-DB5-obe.outbound.protection.outlook.com)
+	id 1hlUIa-0007SV-1d; Thu, 11 Jul 2019 08:19:28 +0000
+Received: from mail-ve1eur03on0627.outbound.protection.outlook.com
+ ([2a01:111:f400:fe09::627]
+ helo=EUR03-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlUGw-0007AN-UN
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 08:17:48 +0000
+ id 1hlUIK-0007S3-Rk
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 08:19:14 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=4BcQ8ST1TCyJRhGaB26DYgyyMidy+dNZNN8FpCr9uDk=;
- b=lv+SyOtLvrnm9lz00pmKGJH5KgKHhOdJDKJDvhIwTAJWD8BTdcnEVoePTsd7cWnmMb3SLpMYSs9wkTeJZZCryEg5wUw99lioO3Uj668mpdiftOX6IdJjfyKOlpsefEulUy5IB/SFHzP0eQWJaVoCOUKOpWvP4cZS18cjYnBMr7M=
+ bh=hvgKQOx3TQOMnqFyD2o+7crNPLMTxXcy//5zmcmS2vQ=;
+ b=TVq+40TBC2nARFt0rUIlhqnp1WxUuetfHry5RHjtLCUKPqPE7J2CLKwJ+Vg5+Rgb0u5UXi7qbpIrTJn4E9aPmOj5xVVB3G7ydH7P31LODwgi/+hKDGLHji3f+xJw4KnHcyFoFBXLogIpEP7ytHxG4+tS/SB8FVCjrxzGlWfK/rQ=
 Received: from AM0PR04MB5779.eurprd04.prod.outlook.com (20.178.202.151) by
- AM0PR04MB4626.eurprd04.prod.outlook.com (52.135.151.138) with Microsoft SMTP
+ AM0PR04MB5042.eurprd04.prod.outlook.com (20.177.41.14) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2052.19; Thu, 11 Jul 2019 08:17:44 +0000
+ 15.20.2052.18; Thu, 11 Jul 2019 08:19:09 +0000
 Received: from AM0PR04MB5779.eurprd04.prod.outlook.com
  ([fe80::a126:d121:200:367]) by AM0PR04MB5779.eurprd04.prod.outlook.com
  ([fe80::a126:d121:200:367%7]) with mapi id 15.20.2052.022; Thu, 11 Jul 2019
- 08:17:44 +0000
+ 08:19:09 +0000
 From: Abel Vesa <abel.vesa@nxp.com>
-To: Fancy Fang <chen.fang@nxp.com>
-Subject: Re: [RESEND PATCH 1/2] clk: imx8mm: rename lcdif pixel clock
-Thread-Topic: [RESEND PATCH 1/2] clk: imx8mm: rename lcdif pixel clock
-Thread-Index: AQHVNtXYsppc9iHvSUKCRoa1/AmVEabFFI6A
-Date: Thu, 11 Jul 2019 08:17:43 +0000
-Message-ID: <20190711081743.r73g5zqtrgdw5xlp@fsr-ub1664-175>
-References: <20190710041546.23422-1-chen.fang@nxp.com>
-In-Reply-To: <20190710041546.23422-1-chen.fang@nxp.com>
+To: Anson Huang <anson.huang@nxp.com>
+Subject: Re: [PATCH 3/4] clk: imx8mm: Add system counter to clock tree
+Thread-Topic: [PATCH 3/4] clk: imx8mm: Add system counter to clock tree
+Thread-Index: AQHVJ/++eyD/ffxNeUuXAhbVfUjkiabFMp8A
+Date: Thu, 11 Jul 2019 08:19:09 +0000
+Message-ID: <20190711081908.ray2pjtigbjaezyc@fsr-ub1664-175>
+References: <20190621070720.12395-1-Anson.Huang@nxp.com>
+ <20190621070720.12395-3-Anson.Huang@nxp.com>
+In-Reply-To: <20190621070720.12395-3-Anson.Huang@nxp.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -53,45 +55,46 @@ authentication-results: spf=none (sender IP is )
  smtp.mailfrom=abel.vesa@nxp.com; 
 x-originating-ip: [89.37.124.34]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: c4681e66-2fdc-45e5-2399-08d705d84001
+x-ms-office365-filtering-correlation-id: 5d5431ea-9207-4b60-2ca8-08d705d872d0
 x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:AM0PR04MB4626; 
-x-ms-traffictypediagnostic: AM0PR04MB4626:
-x-microsoft-antispam-prvs: <AM0PR04MB46265BDE847E9164CFF2B4DBF6F30@AM0PR04MB4626.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7691;
+ SRVR:AM0PR04MB5042; 
+x-ms-traffictypediagnostic: AM0PR04MB5042:
+x-microsoft-antispam-prvs: <AM0PR04MB50425AC223D7AC8D924927F3F6F30@AM0PR04MB5042.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:337;
 x-forefront-prvs: 0095BCF226
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(7916004)(136003)(376002)(39860400002)(366004)(396003)(346002)(189003)(199004)(186003)(256004)(26005)(6246003)(478600001)(7736002)(305945005)(1076003)(71190400001)(86362001)(68736007)(71200400001)(5660300002)(66066001)(91956017)(66946007)(76116006)(64756008)(66476007)(66556008)(66446008)(102836004)(6506007)(53546011)(11346002)(476003)(44832011)(446003)(33716001)(6862004)(2906002)(54906003)(25786009)(316002)(6486002)(4326008)(76176011)(6116002)(3846002)(8936002)(14454004)(9686003)(6512007)(229853002)(81156014)(99286004)(8676002)(81166006)(53936002)(6436002)(486006)(7416002)(6636002)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4626;
+ SFS:(10009020)(4636009)(7916004)(366004)(376002)(396003)(346002)(136003)(39860400002)(189003)(199004)(4326008)(81156014)(81166006)(8676002)(186003)(66066001)(102836004)(26005)(54906003)(8936002)(11346002)(6862004)(71200400001)(446003)(7416002)(229853002)(99286004)(476003)(305945005)(3846002)(71190400001)(7736002)(2906002)(6116002)(486006)(6506007)(53546011)(5660300002)(316002)(25786009)(76176011)(6636002)(53936002)(68736007)(66946007)(86362001)(6512007)(9686003)(478600001)(1076003)(44832011)(33716001)(6246003)(64756008)(66476007)(76116006)(91956017)(14454004)(66556008)(66446008)(256004)(6486002)(6436002)(32563001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5042;
  H:AM0PR04MB5779.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: XcdkKHSCVaZKZl2+v+Ss6YQ1arLDVJdMEHgrSpreNLXXCQSLjvBibpYfqB6c1YlFtKE+r+eofJQhkJA1JK2kpE5fHEoiVOQiNFonoDDXWiLb1rE6cyqQ3JgQ/SthqHF7mwezZOJ/jMypsJnIoQU6wZRZgT3Wyo2kUG+4V3NzDS7FzkxdyaZs0YWMmaxUccSJXFAe1AdcDdOJ8LDL0KyQCv3ufDdVM5jKsQ3l0lHr1ZeUZQK73Jo5mBu6vdW17wCr5dGTlTI2tNsYkI6Xo78nzuTVWJuWbMKFhU72wF2HKaK8ywJnpuvf33+ZNN3UyRbXNVCRfM8HGiO1rq3/cifo9XIzy7lfnaIeiEd3hGbm0b/3MEfmCxs0IwZ0M3tjOmbCTyguwwLuR64R9Q42DPU77IkQu0oGEDcQdvKOB+LMDQ8=
-Content-ID: <0031DD8A96E813439B342C5DCC30EFC0@eurprd04.prod.outlook.com>
+x-microsoft-antispam-message-info: rm6YTvqApxJjTFgcSp4Vj8A4skF1vxoxCBpM0HWi1zjXa4zyIsBY1Veg46KNfXqTcPXe2LGOYgShpv9KndG5AkhSI1/h0nJMuRdyc97OIpN9JqZxGojr/2hGahLz17QK+kJBHrjD4SdufZ/GD81NxElf3jLuOF/iK4WEgoL6qOnZW4jbXv9LulsFL0R4BNYJsugKE3kTUT48CyyNSr8IYChl/y+7Q3XoQ/WAsE5XL6zXH2QBVGlxpdcXulbbXhq1syCXZLxkoGJWlKFwnkJM5r7Qn+pMf33Tq0NOAhlTIiQnIKrZZ1Y6etrkazleeaKu6YAGqVgU6/eMxs8UWOX94ZcBHUD5cot2xE0v7Yc50SjMcSU37ae4Rf9dqmYPg5aiwy1sFwgSkU3MdZGCVkgSnZlV+0Zy5A0Z5NwzosyaQ8g=
+Content-ID: <5D9D0CDF90B35D4FB3BC742B2D394AB9@eurprd04.prod.outlook.com>
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c4681e66-2fdc-45e5-2399-08d705d84001
-X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Jul 2019 08:17:43.9886 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5d5431ea-9207-4b60-2ca8-08d705d872d0
+X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Jul 2019 08:19:09.2305 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
 X-MS-Exchange-CrossTenant-userprincipalname: abel.vesa@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4626
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5042
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_011746_982707_988E08EC 
-X-CRM114-Status: GOOD (  14.31  )
+X-CRM114-CacheID: sfid-20190711_011912_899963_260D4821 
+X-CRM114-Status: GOOD (  12.38  )
 X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.4.54 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [2a01:111:f400:fe09:0:0:0:627 listed in]
+ [list.dnswl.org]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -112,80 +115,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jacky Bai <ping.bai@nxp.com>, "sboyd@kernel.org" <sboyd@kernel.org>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "mturquette@baylibre.com" <mturquette@baylibre.com>,
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ Aisheng Dong <aisheng.dong@nxp.com>, Peng Fan <peng.fan@nxp.com>,
+ "festevam@gmail.com" <festevam@gmail.com>, Jacky Bai <ping.bai@nxp.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "sboyd@kernel.org" <sboyd@kernel.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Daniel Baluta <daniel.baluta@nxp.com>,
  "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
  "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
  "kernel@pengutronix.de" <kernel@pengutronix.de>,
  "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>, "will@kernel.org" <will@kernel.org>,
+ "mturquette@baylibre.com" <mturquette@baylibre.com>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 19-07-10 04:13:37, Fancy Fang wrote:
-> Rename 'lcdif' pixel clock related names to 'disp' names, since:
+On 19-06-21 15:07:19, Anson.Huang@nxp.com wrote:
+> From: Anson Huang <Anson.Huang@nxp.com>
 > 
-> First, the lcdif pixel clock is not supplied to LCDIF controller
-> directly, but to some LPCG clock in display mix. So rename it to
-> 'disp' pixel clock is more accurate.
+> i.MX8MM timer-imx-sysctr driver needs system counter clock
+> for proper function, add it into clock tree.
 > 
-> Second, in the imx8mn CCM specification which is designed after
-> imx8mm, this same pixel root clock name has been modified from
-> 'LCDIF_PIXEL_CLK_ROOT' to 'DISPLAY_PIXEL_CLK_ROOT'.
-> 
-> Signed-off-by: Fancy Fang <chen.fang@nxp.com>
-
-For the entire series.
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
 Reviewed-by: Abel Vesa <abel.vesa@nxp.com>
 
 > ---
->  drivers/clk/imx/clk-imx8mm.c             | 4 ++--
->  include/dt-bindings/clock/imx8mm-clock.h | 2 +-
->  2 files changed, 3 insertions(+), 3 deletions(-)
+>  drivers/clk/imx/clk-imx8mm.c | 2 ++
+>  1 file changed, 2 insertions(+)
 > 
 > diff --git a/drivers/clk/imx/clk-imx8mm.c b/drivers/clk/imx/clk-imx8mm.c
-> index 6b8e75df994d..42f1227a4952 100644
+> index 43fa9c3..56d53dd 100644
 > --- a/drivers/clk/imx/clk-imx8mm.c
 > +++ b/drivers/clk/imx/clk-imx8mm.c
-> @@ -210,7 +210,7 @@ static const char *imx8mm_pcie1_aux_sels[] = {"osc_24m", "sys_pll2_200m", "sys_p
->  static const char *imx8mm_dc_pixel_sels[] = {"osc_24m", "video_pll1_out", "audio_pll2_out", "audio_pll1_out",
->  					     "sys_pll1_800m", "sys_pll2_1000m", "sys_pll3_out", "clk_ext4", };
+> @@ -645,6 +645,8 @@ static int __init imx8mm_clocks_init(struct device_node *ccm_node)
+>  	clks[IMX8MM_CLK_DRAM_ALT_ROOT] = imx_clk_fixed_factor("dram_alt_root", "dram_alt", 1, 4);
+>  	clks[IMX8MM_CLK_DRAM_CORE] = imx_clk_mux2_flags("dram_core_clk", base + 0x9800, 24, 1, imx8mm_dram_core_sels, ARRAY_SIZE(imx8mm_dram_core_sels), CLK_IS_CRITICAL);
 >  
-> -static const char *imx8mm_lcdif_pixel_sels[] = {"osc_24m", "video_pll1_out", "audio_pll2_out", "audio_pll1_out",
-> +static const char *imx8mm_disp_pixel_sels[] = {"osc_24m", "video_pll1_out", "audio_pll2_out", "audio_pll1_out",
->  						"sys_pll1_800m", "sys_pll2_1000m", "sys_pll3_out", "clk_ext4", };
->  
->  static const char *imx8mm_sai1_sels[] = {"osc_24m", "audio_pll1_out", "audio_pll2_out", "video_pll1_out",
-> @@ -535,7 +535,7 @@ static int __init imx8mm_clocks_init(struct device_node *ccm_node)
->  	clks[IMX8MM_CLK_PCIE1_PHY] = imx8m_clk_composite("pcie1_phy", imx8mm_pcie1_phy_sels, base + 0xa380);
->  	clks[IMX8MM_CLK_PCIE1_AUX] = imx8m_clk_composite("pcie1_aux", imx8mm_pcie1_aux_sels, base + 0xa400);
->  	clks[IMX8MM_CLK_DC_PIXEL] = imx8m_clk_composite("dc_pixel", imx8mm_dc_pixel_sels, base + 0xa480);
-> -	clks[IMX8MM_CLK_LCDIF_PIXEL] = imx8m_clk_composite("lcdif_pixel", imx8mm_lcdif_pixel_sels, base + 0xa500);
-> +	clks[IMX8MM_CLK_DISP_PIXEL] = imx8m_clk_composite("disp_pixel", imx8mm_disp_pixel_sels, base + 0xa500);
->  	clks[IMX8MM_CLK_SAI1] = imx8m_clk_composite("sai1", imx8mm_sai1_sels, base + 0xa580);
->  	clks[IMX8MM_CLK_SAI2] = imx8m_clk_composite("sai2", imx8mm_sai2_sels, base + 0xa600);
->  	clks[IMX8MM_CLK_SAI3] = imx8m_clk_composite("sai3", imx8mm_sai3_sels, base + 0xa680);
-> diff --git a/include/dt-bindings/clock/imx8mm-clock.h b/include/dt-bindings/clock/imx8mm-clock.h
-> index 07e6c686f3ef..91ef77efebd9 100644
-> --- a/include/dt-bindings/clock/imx8mm-clock.h
-> +++ b/include/dt-bindings/clock/imx8mm-clock.h
-> @@ -119,7 +119,7 @@
->  #define IMX8MM_CLK_PCIE1_PHY			104
->  #define IMX8MM_CLK_PCIE1_AUX			105
->  #define IMX8MM_CLK_DC_PIXEL			106
-> -#define IMX8MM_CLK_LCDIF_PIXEL			107
-> +#define IMX8MM_CLK_DISP_PIXEL			107
->  #define IMX8MM_CLK_SAI1				108
->  #define IMX8MM_CLK_SAI2				109
->  #define IMX8MM_CLK_SAI3				110
+> +	clks[IMX8MM_CLK_SYS_CTR] = imx_clk_fixed_factor("sys_ctr", "osc_24m", 1, 3);
+> +
+>  	clks[IMX8MM_CLK_ARM] = imx_clk_cpu("arm", "arm_a53_div",
+>  					   clks[IMX8MM_CLK_A53_DIV],
+>  					   clks[IMX8MM_CLK_A53_SRC],
 > -- 
-> 2.17.1
+> 2.7.4
 > 
 _______________________________________________
 linux-arm-kernel mailing list
