@@ -2,72 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 65970655EB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 13:47:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D4BD65612
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 13:51:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:From:To:
-	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=W/22ZoQ7w/4HG+jD5A/Xs4ftkEUtjiDo+XVN3tX5Vto=; b=gXCKCXyUzdWpUJ
-	WBPS4tIHa6o0wIIgQLw3uqGgwNEYj2i+p37K6eWwaJsbHE2i8vdWKmKdsiBz0YNeTsLd2EnQftCZX
-	RlgBz4iy25YYsR6Euxt006nZitIQlpGwMni3r+cSZipQhq/sImffuZrXCAF5eIc5nsoTAFtMbGPMT
-	e6P1A8qRTgBReA71RyYiwwr+O8jwnu23ttjSNjibRTSK/5mkTFG4WJgyTBc7Arn4tdzUosp2d5Zef
-	um+J8pi97UtVzy7XTyRZZHzhsOdxMxNTLbNzwuHR7Wg7BFow4p3WfH8TQJt8ecMyezdFEGS1pyBZW
-	Cp+NSdb4N0BUkczg4v6w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=x1qGQY4+7lJHNGNPVrL7TLegHR8jnslV4eOMNzPoRhM=; b=DZBpK8HIQnQ+st
+	eLtER81tOvNprmt3NT2upX3LONnebRc6J2eyhTQY5rCRFKe2TQ7/7KlN7IprUVFlZpbrGmKMrZLo0
+	+x5SzCK0uQmWOV23l9d9efJl4QhfXG0b4dDYzfGFgHEWzwsCtLF44jlZHhxy4tp4O9QodXFC3ulHj
+	2r+EXyRBLowny2FUGRFzAQ1KTxinYf1lF8PQWix1jiN2mbHAfhKZxgN8AoiNWIQptWtIXN+fTAJGZ
+	RbR3PlJ+sY7e4Bzkdz/dEo1fZGESHZEcNhZOn/EfLQpQUah+tQU0DmD/4tm0ihbeguGpRjaTppEET
+	HPKuLqXGlQMkpkFD3ZJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlXY6-00052W-8S; Thu, 11 Jul 2019 11:47:42 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hlXbk-0006kl-9Q; Thu, 11 Jul 2019 11:51:28 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlXXy-00052C-UY
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 11:47:36 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2F4892166E;
- Thu, 11 Jul 2019 11:47:34 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1562845654;
- bh=tc/IOWP5K6rxZNhqWPvYtApLblz7tVOX4uUtP4LSEck=;
- h=Subject:To:Cc:From:Date:From;
- b=NEiq3Sp6yQIcGnjhy/bt7nZm7kuGkCamrTabdneiX2VyVgHU1YHbDjBWWMjhw+yte
- 77L+SjXvp36lZ7I0ZoCT+4lgs8545KwOm0JXSphxJkug53A3Y34J9YaTiCsC0DU4wc
- L+sy0LPaCQnLyO8Veqtrw7cI2HYR6quaNNR+r3qk=
-Subject: Patch "perf pmu: Fix uncore PMU alias list for ARM64" has been added
- to the 5.2-stable tree
-To: 1560521283-73314-2-git-send-email-john.garry@huawei.com, acme@redhat.com,
- alexander.shishkin@linux.intel.com, ben@decadent.org.uk,
- brueckner@linux.ibm.com, gregkh@linuxfoundation.org, john.garry@huawei.com,
- jolsa@redhat.com, kan.liang@linux.intel.com,
- linux-arm-kernel@lists.infradead.org, linuxarm@huawei.com,
- mark.rutland@arm.com, mathieu.poirier@linaro.org, namhyung@kernel.org,
- peterz@infradead.org, tmricht@linux.ibm.com, will.deacon@arm.com,
- zhangshaokun@hisilicon.com
-From: <gregkh@linuxfoundation.org>
-Date: Thu, 11 Jul 2019 13:45:59 +0200
-Message-ID: <15628455595263@kroah.com>
+ id 1hlXbd-0006je-6f
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 11:51:22 +0000
+Received: by mail-pl1-x644.google.com with SMTP id w24so2921461plp.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 11 Jul 2019 04:51:20 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=YADbvn2K6/u8nqZ8q9ZPF7M9RWPIMSzuiJIm7lkbc3Y=;
+ b=dR8W5eRiA/e3yOi4FOC4uHJMU1ECzIkaS4bxgdBNsa6BXDCrKbvda7odCkmQbvNdcH
+ YZoMSxJR0BYz3/xfoJkaYuvvI1fPrP/ynaRDty9gWT67FWK53dMGLMMlKD/njJJnwG/2
+ ev4GNOw3od3Y/XeE6wdIhqYSrJSNF5oqRiVH634uOV7zxQMZMoJ71+aXW0u3rmgbG0OL
+ 92E9bCnNpG9Ool9BikbAnYOLXmoUL1PxCXFNTVbkxD19su5nmpC3Vjiv1unpY8nDw+zF
+ k7FSnjPt3kEPNECLpxet7RvOHLPYL8wx5xQ8ETIxs3tM5xk8hgLMIr9b/A2K6AIpD8Zm
+ J8BA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=YADbvn2K6/u8nqZ8q9ZPF7M9RWPIMSzuiJIm7lkbc3Y=;
+ b=HyytsVz1Vn7/+kNBx3bc2bLXcZi6vB1GoZn7B3iRP+824IMkp7lSYMoUcPG5uZEzPY
+ ppfwZpoFrrsc0u2/hdRbryoDzkPBX76UOyA1+9sOB5sufPBLtwLh1FLrwQYDMKqMPhWd
+ PwjRVewO5qb8ROY6N5PW+XLo8kOlT00JEk9sh9RNPh7OUssTQXPTjwKg7zelPnbogfg5
+ YaF1cJCvgSeVLWM+mPw9yuznV7l/n6y27q2ArZhDyioGOzxaypjhTlRf3jWqjf6Qrpg9
+ Hj7rbeHTY12DoaNwsxVfxhUsRR6kzo5g8MC88+7qpYQVSxa2bFataO2/pSfnzm8AOYLV
+ xbLg==
+X-Gm-Message-State: APjAAAUlYNOb2nvidR87y7s8i8SkTzk90D+c2vvRopP7tXmY92suD5EU
+ UNnDeIhY9py/gtTDlSPhfKY=
+X-Google-Smtp-Source: APXvYqxcGYiazPJSNg+VJyMqpy0EBBHqn2dYQ4xvLYGpGoGXyLLw8DgEU53NFyfiW27LNl5svYK7jQ==
+X-Received: by 2002:a17:902:9a85:: with SMTP id
+ w5mr4200056plp.221.1562845879704; 
+ Thu, 11 Jul 2019 04:51:19 -0700 (PDT)
+Received: from icarus ([2001:268:c144:cf11:d03e:81be:e250:5da0])
+ by smtp.gmail.com with ESMTPSA id a21sm6426357pfi.27.2019.07.11.04.51.15
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 11 Jul 2019 04:51:18 -0700 (PDT)
+Date: Thu, 11 Jul 2019 20:50:59 +0900
+From: William Breathitt Gray <vilhelm.gray@gmail.com>
+To: Benjamin Gaignard <benjamin.gaignard@st.com>, jic23@kernel.org
+Subject: Re: [PATCH] IIO: stm32: Remove quadrature related functions from
+ trigger driver
+Message-ID: <20190711115059.GA7778@icarus>
+References: <20190507091224.17781-1-benjamin.gaignard@st.com>
 MIME-Version: 1.0
-X-stable: commit
-X-Patchwork-Hint: ignore 
+Content-Disposition: inline
+In-Reply-To: <20190507091224.17781-1-benjamin.gaignard@st.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_044735_237052_581C6B07 
-X-CRM114-Status: GOOD (  12.17  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190711_045121_271378_D3ABFAF8 
+X-CRM114-Status: GOOD (  10.13  )
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (vilhelm.gray[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,127 +102,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: stable-commits@vger.kernel.org
+Cc: lars@metafoo.de, alexandre.torgue@st.com, linux-iio@vger.kernel.org,
+ linux-kernel@vger.kernel.org, pmeerw@pmeerw.net, knaack.h@gmx.de,
+ fabrice.gasnier@st.com, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, May 07, 2019 at 11:12:24AM +0200, Benjamin Gaignard wrote:
+> Quadrature feature is now hosted on it own framework.
+> Remove quadrature related code from stm32-trigger driver to avoid
+> code duplication and simplify the ABI.
+> 
+> Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
 
-This is a note to let you know that I've just added the patch titled
+What is the status of this patch? Are there any objections currently for
+its inclusion?
 
-    perf pmu: Fix uncore PMU alias list for ARM64
-
-to the 5.2-stable tree which can be found at:
-    http://www.kernel.org/git/?p=linux/kernel/git/stable/stable-queue.git;a=summary
-
-The filename of the patch is:
-     perf-pmu-fix-uncore-pmu-alias-list-for-arm64.patch
-and it can be found in the queue-5.2 subdirectory.
-
-If you, or anyone else, feels it should not be added to the stable tree,
-please let <stable@vger.kernel.org> know about it.
-
-
-From 599ee18f0740d7661b8711249096db94c09bc508 Mon Sep 17 00:00:00 2001
-From: John Garry <john.garry@huawei.com>
-Date: Fri, 14 Jun 2019 22:07:59 +0800
-Subject: perf pmu: Fix uncore PMU alias list for ARM64
-
-From: John Garry <john.garry@huawei.com>
-
-commit 599ee18f0740d7661b8711249096db94c09bc508 upstream.
-
-In commit 292c34c10249 ("perf pmu: Fix core PMU alias list for X86
-platform"), we fixed the issue of CPU events being aliased to uncore
-events.
-
-Fix this same issue for ARM64, since the said commit left the (broken)
-behaviour untouched for ARM64.
-
-Signed-off-by: John Garry <john.garry@huawei.com>
-Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
-Cc: Ben Hutchings <ben@decadent.org.uk>
-Cc: Hendrik Brueckner <brueckner@linux.ibm.com>
-Cc: Jiri Olsa <jolsa@redhat.com>
-Cc: Kan Liang <kan.liang@linux.intel.com>
-Cc: Mark Rutland <mark.rutland@arm.com>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
-Cc: Namhyung Kim <namhyung@kernel.org>
-Cc: Peter Zijlstra <peterz@infradead.org>
-Cc: Shaokun Zhang <zhangshaokun@hisilicon.com>
-Cc: Thomas Richter <tmricht@linux.ibm.com>
-Cc: Will Deacon <will.deacon@arm.com>
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linuxarm@huawei.com
-Cc: stable@vger.kernel.org
-Fixes: 292c34c10249 ("perf pmu: Fix core PMU alias list for X86 platform")
-Link: http://lkml.kernel.org/r/1560521283-73314-2-git-send-email-john.garry@huawei.com
-Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
-Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-
----
- tools/perf/util/pmu.c |   28 ++++++++++++----------------
- 1 file changed, 12 insertions(+), 16 deletions(-)
-
---- a/tools/perf/util/pmu.c
-+++ b/tools/perf/util/pmu.c
-@@ -709,9 +709,7 @@ static void pmu_add_cpu_aliases(struct l
- {
- 	int i;
- 	struct pmu_events_map *map;
--	struct pmu_event *pe;
- 	const char *name = pmu->name;
--	const char *pname;
- 
- 	map = perf_pmu__find_map(pmu);
- 	if (!map)
-@@ -722,28 +720,26 @@ static void pmu_add_cpu_aliases(struct l
- 	 */
- 	i = 0;
- 	while (1) {
-+		const char *cpu_name = is_arm_pmu_core(name) ? name : "cpu";
-+		struct pmu_event *pe = &map->table[i++];
-+		const char *pname = pe->pmu ? pe->pmu : cpu_name;
- 
--		pe = &map->table[i++];
- 		if (!pe->name) {
- 			if (pe->metric_group || pe->metric_name)
- 				continue;
- 			break;
- 		}
- 
--		if (!is_arm_pmu_core(name)) {
--			pname = pe->pmu ? pe->pmu : "cpu";
-+		/*
-+		 * uncore alias may be from different PMU
-+		 * with common prefix
-+		 */
-+		if (pmu_is_uncore(name) &&
-+		    !strncmp(pname, name, strlen(pname)))
-+			goto new_alias;
- 
--			/*
--			 * uncore alias may be from different PMU
--			 * with common prefix
--			 */
--			if (pmu_is_uncore(name) &&
--			    !strncmp(pname, name, strlen(pname)))
--				goto new_alias;
--
--			if (strcmp(pname, name))
--				continue;
--		}
-+		if (strcmp(pname, name))
-+			continue;
- 
- new_alias:
- 		/* need type casts to override 'const' */
-
-
-Patches currently in stable-queue which might be from john.garry@huawei.com are
-
-queue-5.2/perf-pmu-fix-uncore-pmu-alias-list-for-arm64.patch
+William Breathitt Gray
 
 _______________________________________________
 linux-arm-kernel mailing list
