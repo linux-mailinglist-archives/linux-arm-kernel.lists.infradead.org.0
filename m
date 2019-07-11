@@ -2,88 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7FD1E64FB9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 02:57:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 90E1E64FC4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 03:05:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
-	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SCPT9dpJJ9SnEuerAmS9KtHWzxzSfO+gHmeAwIuW6ms=; b=rKX53H+knBwtR9
-	rsLRNIns0eYzi9/Qy8gFcVJxMyRZkIyIuR/L8drVYVnmVMkX/Eesh3V856flEBzQ4fAma7NhNt7X/
-	hfsDG/rvP49OnuCDVqMP8TyjBuhKsLeN2KmX1aR+vr+p/X/0ZmnCgxIuM/BE5OCScJQCq87yMbAOj
-	b8SwwL99NVJrcgfFZL4VgPl6MyTlKaCWhVFop6v41MCb1GFxxmB7NJMC9o568eUtlsrFTp+gnKjFY
-	Rk16p40wDRSM+kD6CD48nsTiQcMzdDjftCUo56Jh3p69TKwJwA2RZN/ecv/ynaDgfYmZ4IhUxTdKo
-	MGCwZIVRfVe4x1p11Tdg==;
+	List-Owner; bh=ygCeVL5oTRz2+4NT5owxbOY1M2QLuO6GcS2FGoE94pQ=; b=NRXkp8AKEBhz7P
+	/grtk5iMVWbbJaRH4WJABRYTI57oZ82aupTdie0Y0tZ77L7yrUavOJCpd3cSHRTvxq4xfeIWANoMd
+	9WNWw86uE16MXhySn+55QlLPg51LgzK9OLrO/kXWIXZnbTxQXSzJEuBXvlwRRUDiBIY59jlD/KdPP
+	WRb8S/Ij5zqgfqgMEWgVi66vUxDbiUcoVLdOQNntj1RCiLdxwBw3cSWxrQ6NtTwdB7aEPrOTBV3f2
+	FWzCjanPdEBFOZ5+KwUSX0mimf2yKYr5vJlxovXOku+roxDSJrwt1uCmMo7mwU0WlE67XX30E+508
+	JXBaVTAXldEPAOHBqWFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlNOP-0000rd-VG; Thu, 11 Jul 2019 00:57:02 +0000
-Received: from new2-smtp.messagingengine.com ([66.111.4.224])
+	id 1hlNWV-0002lZ-3A; Thu, 11 Jul 2019 01:05:23 +0000
+Received: from mail-eopbgr00047.outbound.protection.outlook.com ([40.107.0.47]
+ helo=EUR02-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlNO3-0000r8-IM
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 00:56:41 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id C158EBA1;
- Wed, 10 Jul 2019 20:56:34 -0400 (EDT)
-Received: from imap2 ([10.202.2.52])
- by compute4.internal (MEProxy); Wed, 10 Jul 2019 20:56:34 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
- mime-version:message-id:in-reply-to:references:date:from:to:cc
- :subject:content-type; s=fm3; bh=oNe9eio8XYT1BZ4ZF/+0zEh/gS2//e+
- l2qNxRtVLoLs=; b=aHdt9kG3CNNk/uJNVaKK+zTZTYd4G2PBndNMU3gfzXo3K8a
- H793vKvHpSsnsJAc2+SKuNPiw+aOx+rfHrSZXKLZD1C30e+EbB10RphqxX0mM0p7
- SWHCucYCRZQH3lcTXVq1C0V5JdOP6jhe6GN38FQiBfZCYTNaO/wJOElWgQ26lMoP
- Vjuq4NX70Cc0ihAB5bD93RD3o84lCTNPB2wrytWuqOfH7XcoojwrjAF8yrEhK30q
- 60fJqLau8FubRMml3YZiWGSlqtunOHSy6b12Lk3eQubDHrz46VGNKQYmwX1YxSV+
- 450qZDGvD9Q0dcvxKpalpkFkE+SXeHiAp2WBL4g==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=oNe9ei
- o8XYT1BZ4ZF/+0zEh/gS2//e+l2qNxRtVLoLs=; b=I/65hYuq2zmn5keq+6C8PH
- NxwdkOpfvf1nyNERs9UJOWKby6CQftNAf4LvRRAnnWhaXBoCrHzlrCi1GUjTv9XH
- 0OTvkchXsDFEo2zz0spJWg0hmKRr0qyqSlNlKNZqIkAN0kC5zCiVPzWaDVo88KMp
- WzvkSivVALoHRvU1/MkAZtYbr/T8nRw6xRpBHJahFqlAxtfAE6agadB6hoorcXvh
- J77GmLUM/FCzPx8XMJV8HgrnSGdZJPR2O4hWf2mVhjhHXQFUlBorVE4rbarjRBkF
- 1yjwPtcAuViFAVQDdUhBTAfJWWCzYh4TpytmwFrZILcWU893ypf1k87dCJYelFaA
- ==
-X-ME-Sender: <xms:QYkmXR8lZT_adM_lv3N9h5gHa0sVr9t71HeQW5r_VtHynhQ44X3RpA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrgeejgdegtdcutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpefofgggkfgjfhffhffvufgtsehttdertderredtnecuhfhrohhmpedftehnughr
- vgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucffohhmrg
- hinhepuggvvhhitggvthhrvggvrdhorhhgnecurfgrrhgrmhepmhgrihhlfhhrohhmpegr
- nhgurhgvfiesrghjrdhiugdrrghunecuvehluhhsthgvrhfuihiivgeptd
-X-ME-Proxy: <xmx:QYkmXZ-dI5mb9WW_DtQ7ayc-IDbLdgupyOdtfYdKdxcwThFCQcC4Tw>
- <xmx:QYkmXaDjBSZiQd2_f78ntiAjohRf-ODs9K0mhJsgmBdCop1P17LjZQ>
- <xmx:QYkmXZy0giH8SK5oBoAtC5Ynbt3J9YMxpvD5u9L32f9cmjteRwnlkg>
- <xmx:QokmXU5ofQenOuvHGAvTquwCH-_TqDcub4tzkQ7aKa6kmVdoIA-wKA>
-Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id 925B3E0162; Wed, 10 Jul 2019 20:56:33 -0400 (EDT)
-X-Mailer: MessagingEngine.com Webmail Interface
-User-Agent: Cyrus-JMAP/3.1.6-731-g19d3b16-fmstable-20190627v1
-Mime-Version: 1.0
-Message-Id: <3b0788cf-eee4-48b2-901d-d2ab6716ab1b@www.fastmail.com>
-In-Reply-To: <CAL_JsqKrYcUbn_02z9GQO6U4rz7k=p3kB7_G0tKmv25MMZZNQg@mail.gmail.com>
-References: <20190710141611.21159-1-andrew@aj.id.au>
- <20190710141611.21159-2-andrew@aj.id.au>
- <CAL_JsqKrYcUbn_02z9GQO6U4rz7k=p3kB7_G0tKmv25MMZZNQg@mail.gmail.com>
-Date: Thu, 11 Jul 2019 10:26:39 +0930
-From: "Andrew Jeffery" <andrew@aj.id.au>
-To: "Rob Herring" <robh+dt@kernel.org>
-Subject: Re: [PATCH 1/2] dt-bindings: mmc: Document Aspeed SD controller
+ id 1hlNW5-0002kx-Ib
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 01:04:59 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=wFFXG3NNPjiSl14l1zlB561UPLmSIOY60R1QUKn3dGg=;
+ b=ozto4Nprvvk893KuRSJoAGZdDBChX7cDeqiLJr3Elr20XK+2HxJKXl8K5n5vTwjASdIImkz/Pp1+890+vTNSp8SyZCzoBm0RQPdy2XTcIzvsx3DKs4Mu1f6gbbmIxQ5092bK3o6hgiJ2OIYMc6nXZpUQ1rh9knubNCQn01w0NvA=
+Received: from AM6PR0402MB3911.eurprd04.prod.outlook.com (52.133.30.10) by
+ AM6PR0402MB3512.eurprd04.prod.outlook.com (52.133.19.149) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2052.18; Thu, 11 Jul 2019 01:04:53 +0000
+Received: from AM6PR0402MB3911.eurprd04.prod.outlook.com
+ ([fe80::d5e6:6a87:7e6:95a]) by AM6PR0402MB3911.eurprd04.prod.outlook.com
+ ([fe80::d5e6:6a87:7e6:95a%5]) with mapi id 15.20.2073.008; Thu, 11 Jul 2019
+ 01:04:53 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Rob Herring <robh+dt@kernel.org>
+Subject: RE: [PATCH V4 2/5] clocksource/drivers/sysctr: Add clock-frequency
+ property
+Thread-Topic: [PATCH V4 2/5] clocksource/drivers/sysctr: Add clock-frequency
+ property
+Thread-Index: AQHVL/II1Ibi8cGYOUSIKmrgeiNcLabCyoSAgABPmdCAAMtKgIAAwymQ
+Date: Thu, 11 Jul 2019 01:04:52 +0000
+Message-ID: <AM6PR0402MB39117F91D660450647A692E8F5F30@AM6PR0402MB3911.eurprd04.prod.outlook.com>
+References: <20190701093826.5472-1-Anson.Huang@nxp.com>
+ <20190701093826.5472-2-Anson.Huang@nxp.com>
+ <CAL_JsqKeu-b8mbMJBtnNn1vL=RSvUXbo+g40haZnjXTW11CJ6w@mail.gmail.com>
+ <DB3PR0402MB39167FC68991F071E9E58D81F5F00@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <CAL_JsqJbHFZ2qcLvhZGk8Q-f80_QhdgQxcHe2TyCjc4GGRNJNQ@mail.gmail.com>
+In-Reply-To: <CAL_JsqJbHFZ2qcLvhZGk8Q-f80_QhdgQxcHe2TyCjc4GGRNJNQ@mail.gmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: dc7dfedb-ad9d-4db2-c9ad-08d7059bc81b
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:AM6PR0402MB3512; 
+x-ms-traffictypediagnostic: AM6PR0402MB3512:
+x-microsoft-antispam-prvs: <AM6PR0402MB35126F0D315C8D6E9231E525F5F30@AM6PR0402MB3512.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7691;
+x-forefront-prvs: 0095BCF226
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(136003)(396003)(366004)(346002)(376002)(39860400002)(199004)(189003)(74316002)(55016002)(52536014)(7736002)(305945005)(76116006)(8936002)(66446008)(64756008)(66556008)(66476007)(66946007)(476003)(486006)(44832011)(9686003)(14454004)(53936002)(7416002)(6246003)(256004)(86362001)(99286004)(4326008)(7696005)(76176011)(53546011)(186003)(6506007)(66066001)(229853002)(102836004)(33656002)(26005)(478600001)(316002)(54906003)(2906002)(5660300002)(81156014)(8676002)(81166006)(6116002)(3846002)(11346002)(446003)(71200400001)(71190400001)(6436002)(25786009)(68736007);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM6PR0402MB3512;
+ H:AM6PR0402MB3911.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: jb8cDzeXDHo6muqvAPZpRzmY7xd94hAKaP7ZkysaefZbWsqVHBTe20xcYiAsVB8PE/Ym36QnsxgxK+I5iU3MemydEDqcXd0GR4X/rJ8uofpE1VsP7ajmv10AMoKr3wGnEfqdyL48JRc1kMuK5FYIoDh7GvFgC44qDxDHAIQc0I+JSMaVbGqsg5zEbrOE9iA3IZF8wZi9aUbRGebCDf0PBtsmCFEgQNh7JS0sEhaKE1LPC6kGELule0ZtVbUEUgDjV9h5CcxQDIOOTWDhXeWbIeU6kVTyOPzrtHcId62gaO9bXff+O4LGGMxVVB9yvTFLK/CKrkIWskh2CbAMzn3v2ggxHfEc34K38oQnEKXzsYGKFQul5uReMdGwAg4Fc0GfPuIblMWUNLeKEdF+ToFJlJRt860bhzvKyJpym0odM8Q=
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: dc7dfedb-ad9d-4db2-c9ad-08d7059bc81b
+X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Jul 2019 01:04:52.7430 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: anson.huang@nxp.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR0402MB3512
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_175639_844198_7528C64D 
-X-CRM114-Status: GOOD (  25.41  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190710_180457_719566_B3365C42 
+X-CRM114-Status: GOOD (  31.24  )
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.224 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.0.47 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -93,6 +105,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,211 +117,131 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Ulf Hansson <ulf.hansson@linaro.org>, linux-aspeed@lists.ozlabs.org,
- Ryan Chen <ryanchen.aspeed@gmail.com>, linux-mmc <linux-mmc@vger.kernel.org>,
- Adrian Hunter <adrian.hunter@intel.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, "Angus
+ Ainslie \(Purism\)" <angus@akkea.ca>, Jacky Bai <ping.bai@nxp.com>,
+ Carlo Caione <ccaione@baylibre.com>, Andrey Smirnov <andrew.smirnov@gmail.com>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Joel Stanley <joel@jms.id.au>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+ Daniel Baluta <daniel.baluta@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
+ dl-linux-imx <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
+ Viresh Kumar <viresh.kumar@linaro.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ =?utf-8?B?R3VpZG8gR8O8bnRoZXI=?= <agx@sigxcpu.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM
+ ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>,
+ Lucas Stach <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi, Rob
 
-
-On Thu, 11 Jul 2019, at 01:20, Rob Herring wrote:
-> On Wed, Jul 10, 2019 at 8:16 AM Andrew Jeffery <andrew@aj.id.au> wrote:
+> On Tue, Jul 9, 2019 at 7:30 PM Anson Huang <anson.huang@nxp.com> wrote:
 > >
-> > The ASPEED SD/SDIO/eMMC controller exposes two slots implementing the
-> > SDIO Host Specification v2.00, with 1 or 4 bit data buses, or an 8 bit
-> > data bus if only a single slot is enabled.
+> > Hi, Rob
 > >
-> > Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
-> > ---
-> >  .../bindings/mmc/sdhci-of-aspeed.yaml         | 91 +++++++++++++++++++
-> 
-> aspeed,sdhci.yaml
-
-Ack. Previously I had separate documents for different compatibles, wasn't sure
-how to tackle name one document covering multiple compatibles.
-
-> 
-> >  1 file changed, 91 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/mmc/sdhci-of-aspeed.yaml
+> > > On Mon, Jul 1, 2019 at 3:47 AM <Anson.Huang@nxp.com> wrote:
+> > > >
+> > > > From: Anson Huang <Anson.Huang@nxp.com>
+> > >
+> > > 'dt-bindings: timer: ...' for the subject.
 > >
-> > diff --git a/Documentation/devicetree/bindings/mmc/sdhci-of-aspeed.yaml b/Documentation/devicetree/bindings/mmc/sdhci-of-aspeed.yaml
-> > new file mode 100644
-> > index 000000000000..e98a2ac4d46d
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/mmc/sdhci-of-aspeed.yaml
-> > @@ -0,0 +1,91 @@
-> > +# SPDX-License-Identifier: GPL-2.0-or-later
-> 
-> The preferred license is (GPL-2.0 OR BSD-2-Clause) if that is okay with you.
-
-I should poke people internally again, I had asked, just haven't got a clear
-answer. What was the justification for the preference (just so I can pass that
-on)?
-
-> 
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/mmc/sdhci-of-aspeed.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: ASPEED SD/SDIO/eMMC Controller
-> > +
-> > +maintainers:
-> > +  - Andrew Jeffery <andrew@aj.id.au>
-> > +  - Ryan Chen <ryanchen.aspeed@gmail.com>
-> > +
-> > +description: |+
-> > +  The ASPEED SD/SDIO/eMMC controller exposes two slots implementing the SDIO
-> > +  Host Specification v2.00, with 1 or 4 bit data buses, or an 8 bit data bus if
-> > +  only a single slot is enabled.
-> > +
-> > +  The two slots are supported by a common configuration area. As the SDHCIs for
-> > +  the slots are dependent on the common configuration area, they are described
-> > +  as child nodes.
-> > +
-> > +properties:
-> > +  compatible:
-> > +    enum: [ aspeed,ast2400-sdc, aspeed,ast2500-sdc ]
-> > +  reg:
-> > +    description: Common configuration registers
-> 
-> This should have a 'maxItems: 1'. Same for the child reg.
-
-Ack.
-
-> 
-> > +  ranges: true
-> > +  clocks:
-> > +    maxItems: 1
-> > +    description: The SD/SDIO controller clock gate
-> > +  sdhci:
-> 
-> This needs to be a pattern (under patternProperties) as these have
-> unit-addresses.
-
-Ah, I didn't think about that.
-
-> 
-> > +    type: object
-> > +    properties:
-> > +      compatible:
-> > +        allOf:
-> > +          - enum: [ aspeed,ast2400-sdhci, aspeed,ast2500-sdhci ]
-> > +          - const: sdhci
-> 
-> This condition can never be true. What you need is s/allOf/items/.
-> However, 'sdhci' is not really a useful compatible because every
-> implementation has quirks, so I'd drop it.
-
-Yeah, I was tossing up whether to include "sdhci". I'll drop it as you
-suggest.
-
-Pity the shorthand doesn't work how I expected. Might explain
-some of the behaviour I was seeing with the bindings make targets
-though.
-
-> 
-> > +      reg:
-> > +        description: The SDHCI registers
-> > +      clocks:
-> > +        maxItems: 1
-> > +        description: The SD bus clock
-> > +      slot:
-> > +        allOf:
-> > +          - $ref: /schemas/types.yaml#/definitions/uint32
-> > +          - enum: [0, 1]
-> 
-> Is this really needed? Offset 0x100 is slot 0 and offset 0x200 is slot
-> 1. Does that ever change?
-
-It doesn't in the SoCs at hand, but the downstream impact (driver
-implementation) is that you need to derive the slot index from the
-address and I was trying to avoid that. The slot index influences
-some bit index calculations.
-
-> 
-> > +      interrupts:
-> > +        maxItems: 1
-> > +        description: The SD interrupt shared between both slots
-> > +    required:
-> > +      - compatible
-> > +      - reg
-> > +      - clocks
-> > +      - slot
-> > +      - interrupts
-> > +
-> > +required:
-> > +  - compatible
-> > +  - reg
-> > +  - ranges
-> > +  - clocks
-> 
-> #address-cells and #size-cells are required too.
-
-Ack.
-
-> 
-> You should also add 'additionalProperties: false' here so other random
-> properties can't be present.
-
-Ah yes. Will fix.
-
-> 
-> > +
-> > +examples:
-> > +  - |
-> > +    #include <dt-bindings/clock/aspeed-clock.h>
-> > +    sdc@1e740000 {
-> > +            compatible = "aspeed,ast2500-sdc";
-> > +            reg = <0x1e740000 0x100>;
-> > +            #address-cells = <1>;
-> > +            #size-cells = <1>;
-> > +            ranges;
-> 
-> It's preferred to limit the range here and then the child addresses
-> are 0x100 and 0x200.
-
-Okay. Was just trying to dodge mental arithmetic where I could, but
-if that's the preference then I'll fix it up.
-
-Thanks for the review!
-
-Andrew
-
-> 
-> > +            clocks = <&syscon ASPEED_CLK_GATE_SDCLK>;
-> > +
-> > +            sdhci0: sdhci@1e740100 {
-> > +                    compatible = "aspeed,ast2500-sdhci", "sdhci";
-> > +                    reg = <0x1e740100 0x100>;
-> > +                    slot = <0>;
-> > +                    interrupts = <26>;
-> > +                    sdhci,auto-cmd12;
-> > +                    clocks = <&syscon ASPEED_CLK_SDIO>;
-> > +            };
-> > +
-> > +            sdhci1: sdhci@1e740200 {
-> > +                    compatible = "aspeed,ast2500-sdhci", "sdhci";
-> > +                    reg = <0x1e740200 0x100>;
-> > +                    slot = <1>;
-> > +                    interrupts = <26>;
-> > +                    sdhci,auto-cmd12;
-> > +                    clocks = <&syscon ASPEED_CLK_SDIO>;
-> > +            };
-> > +    };
-> > --
-> > 2.20.1
+> > OK, I made a mistake.
 > >
->
+> > >
+> > > >
+> > > > Systems which use platform driver model for clock driver require
+> > > > the clock frequency to be supplied via device tree when system
+> > > > counter driver is enabled.
+> > >
+> > > This is a DT binding. What's a platform driver?
+> >
+> > It is just trying to explain why we need to introduce this "clock-frequency"
+> > property, nothing about the binding and platform driver.
+> >
+> > >
+> > > >
+> > > > This is necessary as in the platform driver model the of_clk
+> > > > operations do not work correctly because system counter driver is
+> > > > initialized in early phase of system boot up, and clock driver
+> > > > using platform driver model is NOT ready at that time, it will
+> > > > cause system counter driver initialization failed.
+> > > >
+> > > > Add clock-frequency property to the device tree bindings of the
+> > > > NXP system counter, so the driver can tell timer-of driver to get
+> > > > clock frequency from DT directly instead of doing of_clk
+> > > > operations via clk APIs.
+> > >
+> > > While you've now given a good explanation why you need this, it all
+> > > sounds like linux specific issues and a DT change should not be necessary.
+> > >
+> > > Presumably, 'clocks' points to a fixed-clock node, right? Just parse the
+> 'clocks'
+> > > phandle and fetch the frequency from that node if you need to get
+> > > the frequency 'early'.
+> >
+> > Sound like a better solution, I will try that, since the system
+> > counter's clock is from osc_24m and divided by 3, since different
+> > platforms may have different divider, so maybe I can create a
+> > fixed-clock node in DT, then system counter driver can parse the clock and
+> fetch the frequency from that node, will redo a V5 patch.
+> 
+> The divide by 3 can be implied by the compatible. If you need a different
+> divider, add another compatible.
 
+Yes, we can consider it later, till now, all the platforms used are with an internal
+divider of 3 in system counter block, so I make it fixed divided by 3 in system counter
+driver.
+
+> 
+> > >
+> > > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> > > > ---
+> > > > No change.
+> > > > ---
+> > > >  .../devicetree/bindings/timer/nxp,sysctr-timer.txt        | 15 +++++++++--
+> ----
+> > > >  1 file changed, 9 insertions(+), 6 deletions(-)
+> > > >
+> > > > diff --git
+> > > > a/Documentation/devicetree/bindings/timer/nxp,sysctr-timer.txt
+> > > > b/Documentation/devicetree/bindings/timer/nxp,sysctr-timer.txt
+> > > > index d576599..7088a0e 100644
+> > > > --- a/Documentation/devicetree/bindings/timer/nxp,sysctr-timer.txt
+> > > > +++ b/Documentation/devicetree/bindings/timer/nxp,sysctr-timer.txt
+> > > > @@ -11,15 +11,18 @@ Required properties:
+> > > >  - reg :             Specifies the base physical address and size of the
+> comapre
+> > > >                      frame and the counter control, read & compare.
+> > > >  - interrupts :      should be the first compare frames' interrupt
+> > > > -- clocks :         Specifies the counter clock.
+> > > > -- clock-names:             Specifies the clock's name of this module
+> > > > +- clocks :          Specifies the counter clock, mutually exclusive with
+> clock-
+> > > frequency.
+> > > > +- clock-names :     Specifies the clock's name of this module, mutually
+> > > exclusive with
+> > > > +                   clock-frequency.
+> > > > +- clock-frequency : Specifies system counter clock frequency,
+> > > > +mutually
+> > > exclusive with
+> > > > +                   clocks/clock-names.
+> > >
+> > > It doesn't really work to say one or the other is needed unless you
+> > > make the OS support both cases.
+> >
+> > The OS already support both cases now with this patch series.
+> 
+> What about FreeBSD or any other OS?
+
+Now that in V5, I use the fixed clock of OSC as clock input of system counter,
+no need to have all these changes now. And also no changes needed in DT
+binding, thanks for your review.
+
+Anson.
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
