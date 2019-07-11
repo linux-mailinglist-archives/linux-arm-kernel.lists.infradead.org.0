@@ -2,120 +2,132 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7ACEA657E7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 15:33:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BACB3657F2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 15:37:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BxUrnah/3CoYd3RyPOeAwLwTctdATjdkT5Q70lZUM38=; b=moHRRGYiyaYJpT
-	NonQOfjh8WUBkpwQk1yDRHjPzoSnnvRbHdhYkDD0leL1S1gqXnTYl0fbs0SwQLq4QDN3ENiwF2nOd
-	4EH+ZZ8SbY1DMHHievXeq22OrIqwH0RygoByDLXhnPxYm3RTS4d0Mw+M9d0rF9q+uxpjv3HGuvc0l
-	QphZnQZqQGt+wRxcVbRjDNsh7qFcLQYzOIteztXRKRIWRhGFia0ljcmacb7NAlUttfz9cPcNwXLQJ
-	NCDB9xXa2nms21bBEzvJhgZdg1UlyH6M7SU7mfDFfqt2vGP0SPOdvdWGqX93gURrYre7/vQeNeglN
-	aeYWtQH5pKWaChcJ9UZw==;
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6OPOfnKU+uRX6cV17plHtrQRYH+CpUoaVhnROyvJrEA=; b=j86qilZQ+nOjPf
+	PqCjqNajB3Bzngq82T79C2OaB41wOD3R4UHrVfEbaZw9yibLbE84OSFGRmYO6dTBQW3eEcU810od1
+	5ZD0YwDHvTWzNW91kyXgMYSRvTGnqMZGHVbO8iGbmUQU92t3pxy0poqBXZCOPx1ydS0xhj9oSNWrI
+	CWdrQfrJvspqsSsN9/Dxl3xPYAJAqI9SLvfR9fGs3QY3Otu9uG6PV/xJhCBuPIpHMb0o4xI+VtPuW
+	wRz5j5lcPLuKZIyNoF2jQz8/xSAPRP/u3++Yk4etOo0b33B/xUhUO+y36niEFOG9OKPc+zgW8KSlf
+	c6ewg2ysCdWIvKwvBxkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlZCD-0004I3-MX; Thu, 11 Jul 2019 13:33:13 +0000
-Received: from mx07-00252a01.pphosted.com ([62.209.51.214])
+	id 1hlZGU-00067z-0S; Thu, 11 Jul 2019 13:37:38 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlZC3-0004HV-VM
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 13:33:07 +0000
-Received: from pps.filterd (m0102628.ppops.net [127.0.0.1])
- by mx07-00252a01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x6BDS51L018488
- for <linux-arm-kernel@lists.infradead.org>; Thu, 11 Jul 2019 14:32:58 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=raspberrypi.org;
- h=subject : to :
- cc : references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=pp;
- bh=2hTTEXVuXONlNhCNxuAzZoOouQQ5UNAC2JI0+sNuKCY=;
- b=XF3P2zjTEvpiqTmGMDA3NwcFDThMiiju0vWpGiK9zEh9pN/DoF+ev8WnZDoubefgIb0E
- GbCexZlBYHQ1nAsgjWoecQEv2NStzZber4PUSahBg9y5JAcvdBvoCTlJaTXJCb7/W7l8
- vTo30GRnvJSeIHlZMa66NiSCZCqBXtunhy+GBQPR2BRHgJzik1SJ+H1ILLrk0k/3kdzP
- fQ+J5EnJRs1ks7i5qDRGQ9uBn9sLTpH2SxonfoHmMdlyBv218JmZRcpTTGCaNuJZvjWC
- qt24aX9iwOHT1s9IdXbbSxxDlaXsRdVh0w1chvI3VvuWOfIrdbFfrPVVTe4+DIw43kLq 1A== 
-Received: from mail-wm1-f70.google.com (mail-wm1-f70.google.com
- [209.85.128.70])
- by mx07-00252a01.pphosted.com with ESMTP id 2tmd5fschf-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=OK)
- for <linux-arm-kernel@lists.infradead.org>; Thu, 11 Jul 2019 14:32:58 +0100
-Received: by mail-wm1-f70.google.com with SMTP id r9so1796294wme.8
+ id 1hlZFi-00067A-Qn
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 13:36:52 +0000
+Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
+ by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20190711133647euoutp02a5ec1d38e8d3f25f258d6ed3e4041d5a~wXc2GK_cG1672816728euoutp02U
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 11 Jul 2019 06:32:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=raspberrypi.org; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=2hTTEXVuXONlNhCNxuAzZoOouQQ5UNAC2JI0+sNuKCY=;
- b=QT/YEwMyumuvfFyFkS3smiC4VHAA7GZ8vd++9KyXPaO0HZLOep6Q0Stl6EW/Ps7Wzd
- 5HzBvFyE4ElRDDWH/od6kjFzwSASm2U46t4WQWYTCDCGjMAe29ErKMthIOD62ujeQ/6x
- 5OwQzBvXxG3lNyyEKxs1d15TSJntvk2dyXqoHAeOTJ32SBjp4cLmcedbiTFxIj0GYHZx
- 7nKxX05z0H7EoGPDYQcgcZH4UaYdrenQq7k4HoBGDQZXHrs6wFaCofF7gCW/jFXcbXRA
- l8VX+nrccok0NRuAbgqyILIpkoCYrouyCRmK/KpVapTRTwlDUPafGGeNrSx6wc2V9taO
- wKiw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=2hTTEXVuXONlNhCNxuAzZoOouQQ5UNAC2JI0+sNuKCY=;
- b=oNvVF3n4irhsib7sqwU/G1zdWwYFz+cdNf3qSEjp6GaMQnlGOrtbHH7/6Hvu3mmrFD
- 0ehiFVtEtI/WzGGXBBwkwV9+WNIA34HwDFq+MhzQrWOp8d8PLhVUX1MLOT5XVXondR5W
- 5zS9XrAV2XV50gJqiTpzdg8jaTkyMjvEF0n6G0sOSDDkVHLsGrmyTILWaZkM/TRY2RIG
- EzfGklaPGd+bcNC8J2GbR/mpS0rvKk1uK8EDlpAuj+VjpWcf/GheFHPvRMPvJZGWH3kn
- FytoBncyeJBGsRclhbqwLnlaMA4KtZcOnLIQZXqc4RpRT8/YHsf9cuLcH/NTojoU2H6D
- 4Fdg==
-X-Gm-Message-State: APjAAAUc++aDHIj/VZRAz9n8qnZyX/5cm1MS4A0EtSwK5oXCuJE1ZPTG
- TbFEYrTTw9YVTm8GX2yiiKxSnJiSSTRA3CERx2AvJeUFU16kNnVAxqQkeS5tvH5gzvcgUI/jPMA
- /otqBh82YyP21pq3iMFvSGFYRB2elGzFgdPI=
-X-Received: by 2002:adf:e843:: with SMTP id d3mr5484216wrn.249.1562851977745; 
- Thu, 11 Jul 2019 06:32:57 -0700 (PDT)
-X-Google-Smtp-Source: APXvYqyzlXiUq0/nvIHEumgp1iSASMSdpZp/OhpIdiXeevxhTEsUd2b6QZ9zciHRHRZvb3UqXJlt1w==
-X-Received: by 2002:adf:e843:: with SMTP id d3mr5484196wrn.249.1562851977499; 
- Thu, 11 Jul 2019 06:32:57 -0700 (PDT)
-Received: from ?IPv6:2a00:1098:3142:14:3df0:c4c3:bb86:e0f3?
- ([2a00:1098:3142:14:3df0:c4c3:bb86:e0f3])
- by smtp.gmail.com with ESMTPSA id e5sm5632399wro.41.2019.07.11.06.32.56
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 11 Jul 2019 06:32:56 -0700 (PDT)
-Subject: Re: Limiting the DMA zone in arm64
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Will Deacon <will@kernel.org>
-References: <0439cc08532849b1d0adb44a7b2cbc9ce5dceaf7.camel@suse.de>
- <20190711101717.meoyqu5h2zdptypf@willie-the-truck>
- <ba2796eab34eb4ec4a25e7c137faac851776c778.camel@suse.de>
-From: Phil Elwell <phil@raspberrypi.org>
-Message-ID: <331744ab-5c65-4379-42a6-68e1a077e72f@raspberrypi.org>
-Date: Thu, 11 Jul 2019 14:32:57 +0100
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
+ Thu, 11 Jul 2019 13:36:47 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
+ 20190711133647euoutp02a5ec1d38e8d3f25f258d6ed3e4041d5a~wXc2GK_cG1672816728euoutp02U
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1562852208;
+ bh=hapnjd460596E34R5EF9h7HtShY2YdFfJ/cJBJjjuB8=;
+ h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
+ b=a6sSMETdviIDhrWlA/cN3THO5YD/K8ol53OpmCB0ezjXTle1BI1qsMeH9ZjasWxnd
+ JYoBPsFOTqGqXLZbDI43JJPAkVVbJhiWz0TThQTCLhLAgp4usbqH9EGVSLNxPYlWD5
+ 8EA3a64DFJ0oa4sSfSUYYs3T//V604ed0CrZBxnc=
+Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTP id
+ 20190711133647eucas1p10e90994cb5ce5a56b1b9f13c3f6937f3~wXc1PY2YM1292912929eucas1p14;
+ Thu, 11 Jul 2019 13:36:47 +0000 (GMT)
+Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
+ eusmges2new.samsung.com (EUCPMTA) with SMTP id 21.D6.04377.E6B372D5; Thu, 11
+ Jul 2019 14:36:46 +0100 (BST)
+Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
+ 20190711133646eucas1p17268f944b0a1f3ab0a023b0379481326~wXc0fRNOx0579005790eucas1p1g;
+ Thu, 11 Jul 2019 13:36:46 +0000 (GMT)
+Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
+ eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20190711133646eusmtrp14a1606e8fd467e4612fa8ac535f42643~wXc0Q58Mf1914719147eusmtrp1x;
+ Thu, 11 Jul 2019 13:36:46 +0000 (GMT)
+X-AuditID: cbfec7f4-12dff70000001119-b5-5d273b6ed68f
+Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
+ eusmgms2.samsung.com (EUCPMTA) with SMTP id 06.69.04140.D6B372D5; Thu, 11
+ Jul 2019 14:36:45 +0100 (BST)
+Received: from [106.120.51.18] (unknown [106.120.51.18]) by
+ eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
+ 20190711133645eusmtip2fdfcf3a65fdaf9568af38b0b88a7aefc~wXczjIZwg1545915459eusmtip2Q;
+ Thu, 11 Jul 2019 13:36:45 +0000 (GMT)
+Subject: Re: [PATCH 2/3] devfreq: exynos-bus: convert to use
+ dev_pm_opp_set_rate()
+To: Krzysztof Kozlowski <krzk@kernel.org>
+From: Kamil Konieczny <k.konieczny@partner.samsung.com>
+Message-ID: <a5da4135-0471-3628-c78a-c4fffc75723b@partner.samsung.com>
+Date: Thu, 11 Jul 2019 15:36:50 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.2
 MIME-Version: 1.0
-In-Reply-To: <ba2796eab34eb4ec4a25e7c137faac851776c778.camel@suse.de>
+In-Reply-To: <CAJKOXPfWr-2t_e3f6oi7E6KLLRAbskzgEKz26XyK5n_9C8wV1w@mail.gmail.com>
 Content-Language: en-US
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:5.22.84,1.0.8
- definitions=2019-07-11_02:2019-07-11,2019-07-11 signatures=0
+X-Brightmail-Tracker: H4sIAAAAAAAAA02SeUhUURTGu/NWB0eeY+FJo2BEwkCtKLqVmUHLCEUWBW1SYz1M0qlmcssk
+ l1wzDSvSUcaETJnMnSaXBtFBK7VnlnulaCmZQqGhgUvOPCX/+53vfIdzvstlCfkA5cQGqW/w
+ GrUqWEFLyZdNfwV39e6N/psHRjxxeVYphbunRimcZ35P4YzhnwQWhDIGt8WNM7hiuIvCH2ty
+ aTx5z4xwlmCS4BfmLwwu6P4gwf2xRTQen2mT4ITXZgbPd5WTuHKwifaxVxbri5GywpBCKyuf
+ 3lamVxmQsrnHKFFOVqz3o89IvS7xwUFhvMbT+4L0stDmdy2HidB3PGNi0AKVimxY4LbBUJuR
+ SEVSVs4VITA8qUdiMYUgY7ZTIhaTCPJKO8jlkbS3JsLCcq4QQUnOddE0gaCz6Y/V5MCdgMa7
+ gnXHas4NuuemKYuJ4GZIiBmrtppobgcMGVslFpZxB6Gu/4tVJzlX6BvopS28hjsF78x6UvTY
+ w9vsb4vMsjbcMXhTFmSRCc4R+r7lSUTeAMaJXGse4BJYGCl/SIhX71+MM0SL7ABjzVWMyOug
+ 5UHaUrJw+J6fzojDdxAMJv1eauyGxuYPlGUxsZimtMZTlPdBaVy99R7g7KBnwl68wQ4yXz4m
+ RFkGyYly0e0O+oXWpWd3htSFEuo+UuhWBNOtSKNbkUb3f+8TRBqQIx+qDQnktVvVfLiHVhWi
+ DVUHely8GlKBFr9dy3zz1CtUMxvQgDgWKWxlPTs3+sspVZg2MqQBAUsoVstMh1z85bJLqsib
+ vObqeU1oMK9tQM4sqXCURa0aPCvnAlU3+Cs8f43XLHclrI1TDPIiyxnvN8m+0eOZrSRvl8bn
+ j0pjt5+zHTlZ/YNJr3MTUl4UChOfEg/hj0ecWB+Xr2f1h48bvNqjPFzT4jtNvaZP26a7yKSR
+ PTbScGMtjq4jkgt8s0vC1nbW7nKPGV3wihiL/ywcSD6a9Gtt6um7c8ytpOr2vdm+z1+NPTIG
+ dMcrSO1l1ZZNhEar+gesG9MScgMAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFvrEIsWRmVeSWpSXmKPExsVy+t/xe7p51uqxBluFLDbOWM9qcf3Lc1aL
+ +UfOsVr0P37NbHH+/AZ2i7NNb9gtNj2+xmpxedccNovPvUcYLWac38dksfbIXXaLpdcvMlnc
+ blzBZvHmx1kmi9a9R9gt/l3byGKx+cExNgdBjzXz1jB6bFrVyeaxeUm9R9+WVYwex29sZ/L4
+ vEkugC1Kz6Yov7QkVSEjv7jEVina0MJIz9DSQs/IxFLP0Ng81srIVEnfziYlNSezLLVI3y5B
+ L+P82YCC2ewV8y4tY29g/M/axcjJISFgItFzch9zFyMXh5DAUkaJjXNmM0IkpCUaT69mgrCF
+ Jf5c62KDKHrNKPHj6mxmkISwQIjE4e7zYJNEBDQlrv/9zgpSxCzwh0Wiq3EGI0THLCaJs5vf
+ gVWxCZhLPNp+Bmwsr4CbxJ7bd1lAbBYBVYlb92+ygdiiAhESk67tZIGoEZQ4OfMJkM3BwSkQ
+ KHFiQyZImFlAXeLPvEvMELa4xK0n85kgbHmJ7W/nME9gFJqFpHsWkpZZSFpmIWlZwMiyilEk
+ tbQ4Nz232EivODG3uDQvXS85P3cTIzC+tx37uWUHY9e74EOMAhyMSjy8NyzVY4VYE8uKK3MP
+ MUpwMCuJ8O5zV44V4k1JrKxKLcqPLyrNSS0+xGgK9NtEZinR5Hxg6skriTc0NTS3sDQ0NzY3
+ NrNQEuftEDgYIySQnliSmp2aWpBaBNPHxMEp1cDo/FlD3l5zWX/3uzCfuCt1WyrXfQoImTTl
+ 5mfNn9Mm6jpedt67++uX5NPRJ8suBM254Mv94VuIX8nmkMpozyNz5KfoGlWFf5kd+Els7jdH
+ iR/rHor75fiwFTAfqnNeOVnk1L4/xXWzrzrlPD+t6HlikvDO5sdnDRbbz0ifY3Co5Y6u9MPD
+ H2uXKbEUZyQaajEXFScCAGLPHXUFAwAA
+X-CMS-MailID: 20190711133646eucas1p17268f944b0a1f3ab0a023b0379481326
+X-Msg-Generator: CA
+X-RootMTR: 20190708141200eucas1p144ca3b2a5b4019aaa5773d23c0236f31
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20190708141200eucas1p144ca3b2a5b4019aaa5773d23c0236f31
+References: <CGME20190708141200eucas1p144ca3b2a5b4019aaa5773d23c0236f31@eucas1p1.samsung.com>
+ <20190708141140.24379-1-k.konieczny@partner.samsung.com>
+ <20190708141140.24379-3-k.konieczny@partner.samsung.com>
+ <CAJKOXPfWr-2t_e3f6oi7E6KLLRAbskzgEKz26XyK5n_9C8wV1w@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_063304_369939_ADD8350E 
-X-CRM114-Status: GOOD (  26.17  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190711_063651_146700_E586030F 
+X-CRM114-Status: GOOD (  14.68  )
+X-Spam-Score: -5.1 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.214 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.12 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -127,97 +139,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stefan Wahren <stefan.wahren@i2se.com>,
- Florian Fainelli <f.fainelli@gmail.com>, marc.zyngier@arm.com,
- andre.przywara@arm.com, Matthias Brugger <mbrugger@suse.com>,
- Catalin Marinas <catalin.marinas@arm.com>, robin.murphy@arm.com,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Nishanth Menon <nm@ti.com>,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Stephen Boyd <sboyd@kernel.org>, Viresh Kumar <vireshk@kernel.org>,
+ linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Kukjin Kim <kgene@kernel.org>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>, devicetree@vger.kernel.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Nicolas et al.
 
-On 11/07/2019 12:10, Nicolas Saenz Julienne wrote:
-> Hi Will, thanks for your response.
-> 
-> [+ Matthias and Phill who might be interested ]
-> 
-> On Thu, 2019-07-11 at 11:17 +0100, Will Deacon wrote:
->> Hi Nicolas,
->>
->> [+Robin, Andrew and Marc since we've been playing with getting arm64 Linux
->>  up and running too]
->>
->> On Thu, Jul 11, 2019 at 11:51:57AM +0200, Nicolas Saenz Julienne wrote:
->>> I'm trying to bring up the new RPi4 on arm64, and running into issues with
->>> DMA
->>> allocations. The device has up to 4GB of ram, but AFAIK only the first GB of
->>> ram can be used for DMA: the DMA address range is 0xc0000000-0xffffffff
->>> which
->>> is aliased to the first GB of memory 0x00000000-0x40000000.
->>
->> Do you know for sure that these aliases are equivalant and so it's
->> inconsequential if we use the lower addresses for DMA?
-> 
-> No, they are not exactly equivalent, see the 'dma-ranges' I posted on my other
-> reply. I was being overly generic to make the explanation simpler. The actual
-> size of the aliasing is smaller.
-> 
-> That said, I don't think using the lower addresses would work for DMA. I tested
-> some transfers and the offset is clearly being taken into account.
-> 
->> Also, does this
->> limitation apply to all DMA-capable peripherals, or just some of them?
-> 
-> I infer from '.dma_zone_size = SZ_1G' and dma-ranges that it's a device wide
-> limitation. Maybe Phill can contradict me.
 
-It is a limitation for one of the internal buses used by many of the peripherals.
-Newer components including the ARM cores, PCIe(*), GENET, and the 40-bit DMA
-channels, have a different view of the address space where RAM starts at 0, and
-peripherals etc. are positioned above 0x4_00000000.
-
->>> This is solved in arm32 using a board file with '.dma_zone_size = SZ_1G'.
->>> But I
->>> haven't found any similar mechanism for arm64. Any suggestions?
->>>
->>> Just it case it helps understand the issue, I managed to get things going by
->>> doing the following:
->>>
->>> diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
->>> index f3c795278def..ec3cb7b76a76 100644
->>> --- a/arch/arm64/mm/init.c
->>> +++ b/arch/arm64/mm/init.c
->>> @@ -407,7 +407,8 @@ void __init arm64_memblock_init(void)
->>>  
->>>         /* 4GB maximum for 32-bit only capable devices */
->>>         if (IS_ENABLED(CONFIG_ZONE_DMA32))
->>> -               arm64_dma_phys_limit = max_zone_dma_phys();
->>> +               arm64_dma_phys_limit = 0x40000000;
->>>         else
->>>                 arm64_dma_phys_limit = PHYS_MASK + 1;
+On 10.07.2019 19:04, Krzysztof Kozlowski wrote:
+> On Mon, 8 Jul 2019 at 16:12, <k.konieczny@partner.samsung.com> wrote:
 >>
->> My superficial understanding (mainly from talking to Robin, who actually
->> knows how this works), is that we'd need to extend our support for
->> dma-ranges in order to limit ZONE_DMA32 as you're proposing above.
-> 
-> Noted.
-> 
->> However, this may not help for streaming DMA, where we need to force
-> everything
->> above 1G through a bounce buffer and likely requires something weird like
->> a 30-bit DMA mask.
+>> From: Kamil Konieczny <k.konieczny@partner.samsung.com>
 >>
->> Do you know how streaming DMA is handled in the 32-bit port for rpi4?
+>> Reuse opp core code for setting bus clock and voltage. As a side
+>> effect this allow useage of coupled regulators feature (required
+>> for boards using Exynos5422/5800 SoCs) because dev_pm_opp_set_rate()
+>> uses regulator_set_voltage_triplet() for setting regulator voltage
+>> while the old code used regulator_set_voltage_tol() with fixed
+>> tolerance. This patch also removes no longer needed parsing of DT
+>> property "exynos,voltage-tolerance" (no Exynos devfreq DT node uses
 > 
-> Not really, I'll have a look and come back to you.
+> Please also update the bindings in such case. Both with removal of
+> unused property and with example/recommended regulator couplings.
 
-Phil
+Right, I will remove it.
 
-(*) The wrapper around the PCIe block has a bug preventing it from accessing beyond
-the first 3GB of RAM.
+-- 
+Best regards,
+Kamil Konieczny
+Samsung R&D Institute Poland
+
 
 _______________________________________________
 linux-arm-kernel mailing list
