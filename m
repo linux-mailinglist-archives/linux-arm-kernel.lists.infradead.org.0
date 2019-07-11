@@ -2,80 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B98E564F22
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 01:14:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7FD1E64FB9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 02:57:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
+	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DjRwJi4rZ1+vs1A1K043hIrc58gFh3jbs6vUipblO9o=; b=ND5GtcRpN3IsQE
-	8PcWGOId3bm9iKTguZ6oL1NWHAMGkc1D3Z+9PjCnXKLrt+dulf8OEoxmeS1/WySf068SS/7Wa3kIa
-	dKpV1ifd6H8k7ZvAjJmHqXp7BwS2m1ztrP5Z+H8NwgqZHeIFokB/Y6IyVvYjzU5DgCZLN9rQfrQqF
-	ocADCO7rX0hvIjMrUp7o4I0oZgZpnHR7zM9H64dnGAQTF7QeJXPyNnwfitFZRGo4AJODsrLcgjoh7
-	a6N8Ub5lYN5OZqKjTQ1lRag6j6CpBJAXp7AzSe4crghxCgeKglGWGKRqaPW152daFr7BXorNIxXxQ
-	NIaUIvk08XyqOjWuiRBQ==;
+	List-Owner; bh=SCPT9dpJJ9SnEuerAmS9KtHWzxzSfO+gHmeAwIuW6ms=; b=rKX53H+knBwtR9
+	rsLRNIns0eYzi9/Qy8gFcVJxMyRZkIyIuR/L8drVYVnmVMkX/Eesh3V856flEBzQ4fAma7NhNt7X/
+	hfsDG/rvP49OnuCDVqMP8TyjBuhKsLeN2KmX1aR+vr+p/X/0ZmnCgxIuM/BE5OCScJQCq87yMbAOj
+	b8SwwL99NVJrcgfFZL4VgPl6MyTlKaCWhVFop6v41MCb1GFxxmB7NJMC9o568eUtlsrFTp+gnKjFY
+	Rk16p40wDRSM+kD6CD48nsTiQcMzdDjftCUo56Jh3p69TKwJwA2RZN/ecv/ynaDgfYmZ4IhUxTdKo
+	MGCwZIVRfVe4x1p11Tdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlLnJ-0003Yl-At; Wed, 10 Jul 2019 23:14:37 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hlNOP-0000rd-VG; Thu, 11 Jul 2019 00:57:02 +0000
+Received: from new2-smtp.messagingengine.com ([66.111.4.224])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlLmz-0003YL-02
- for linux-arm-kernel@lists.infradead.org; Wed, 10 Jul 2019 23:14:18 +0000
-Received: by mail-pf1-x443.google.com with SMTP id c73so1781279pfb.13
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 10 Jul 2019 16:14:13 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=a0p78zfQtjvJ1wF9CI2kxfV/rizr8mz4VHJbrq5kTXI=;
- b=Z4afU9NpR/Pq3NNfpP2I3waBswgwVswI5yPPZvXZfOPqJwmA+BYnJxq85Qm0o1cvJ2
- YncnTJOmseS+x+9nr88TRHtZcykdgY0rLde/5j4t4Uu/DgKDZ2y80imMT50nT3plJ3yq
- OXe0oX/JPPnz+DG+lPT8SWxolXCQBpFzlqpR1VHXOSLuEQiQSlgnx0XRPv4OX5UPUkIu
- DfEYL02fNv+TMaKUkC2nbhUdqzLcD0mxMAWTiSpSgBcBlVWigibD1YB3SDDrbvndMA2u
- lP/asfHItGVbBBBhHBAY3Df/C0s1EwKprQAdJ2R45DXhTc8+Rv8d7MIUKFXrI8BX6nG4
- 2Z3g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=a0p78zfQtjvJ1wF9CI2kxfV/rizr8mz4VHJbrq5kTXI=;
- b=O3HWTIiT8h/law7tTha7UFm+1Zhg1qpnJ/SPhAsWNndoNYK7/MA0974uzkDAwBio74
- bFXBr2Rr0fIE0fBKZOX3vPNYsrMtGuWLprQWmnNOdeeVu2iMGzU2br82XxmBHMR1qVKZ
- UM7zoIKqLPS6fDIOs0+xhtQ17yn18KrHWJsi9DOx3jpoaUj7jquFgFqNsgzl8rQNUA9Y
- MlVRywxEhhZDelMFGBjxpOzlu2T142CkE734kv+zqadZLnm4hvGdhK35YAH5fuc7mpxQ
- YLsvFf9l4R2JXD+spIJJr9wP1HE+tSR2UYAKGLc1OD/TOq8aceiXwkTrjhIHKPDyUmzI
- dD5Q==
-X-Gm-Message-State: APjAAAVIxhXBYreAGhOjx8fsK2U0EbeT1zc/oqA87iY4mlBvbaXzgZxV
- S5pD8a1/HO0UOR3MLmSP3nowAGScYG/YlJ8Y05k1kg==
-X-Google-Smtp-Source: APXvYqyCChS1AVQpee8vXHkXCPkgMsVN6E29Hl9y+RoMb7Bjbd7EEa3m2FtFhTmHMe29nAjH0hZQlNepkxJAmiWVLMk=
-X-Received: by 2002:a63:52:: with SMTP id 79mr794264pga.381.1562800452174;
- Wed, 10 Jul 2019 16:14:12 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190705080231.123522-1-pcc@google.com>
-In-Reply-To: <20190705080231.123522-1-pcc@google.com>
-From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Wed, 10 Jul 2019 16:14:00 -0700
-Message-ID: <CAKwvOd=z4CTN9g7noKJxwF8Y4rp6knynxmkX+yEFF6dwCCj3ew@mail.gmail.com>
-Subject: Re: [PATCH] arm64: Add support for relocating the kernel with RELR
- relocations
-To: Peter Collingbourne <pcc@google.com>
+ id 1hlNO3-0000r8-IM
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 00:56:41 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailnew.nyi.internal (Postfix) with ESMTP id C158EBA1;
+ Wed, 10 Jul 2019 20:56:34 -0400 (EDT)
+Received: from imap2 ([10.202.2.52])
+ by compute4.internal (MEProxy); Wed, 10 Jul 2019 20:56:34 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
+ mime-version:message-id:in-reply-to:references:date:from:to:cc
+ :subject:content-type; s=fm3; bh=oNe9eio8XYT1BZ4ZF/+0zEh/gS2//e+
+ l2qNxRtVLoLs=; b=aHdt9kG3CNNk/uJNVaKK+zTZTYd4G2PBndNMU3gfzXo3K8a
+ H793vKvHpSsnsJAc2+SKuNPiw+aOx+rfHrSZXKLZD1C30e+EbB10RphqxX0mM0p7
+ SWHCucYCRZQH3lcTXVq1C0V5JdOP6jhe6GN38FQiBfZCYTNaO/wJOElWgQ26lMoP
+ Vjuq4NX70Cc0ihAB5bD93RD3o84lCTNPB2wrytWuqOfH7XcoojwrjAF8yrEhK30q
+ 60fJqLau8FubRMml3YZiWGSlqtunOHSy6b12Lk3eQubDHrz46VGNKQYmwX1YxSV+
+ 450qZDGvD9Q0dcvxKpalpkFkE+SXeHiAp2WBL4g==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=oNe9ei
+ o8XYT1BZ4ZF/+0zEh/gS2//e+l2qNxRtVLoLs=; b=I/65hYuq2zmn5keq+6C8PH
+ NxwdkOpfvf1nyNERs9UJOWKby6CQftNAf4LvRRAnnWhaXBoCrHzlrCi1GUjTv9XH
+ 0OTvkchXsDFEo2zz0spJWg0hmKRr0qyqSlNlKNZqIkAN0kC5zCiVPzWaDVo88KMp
+ WzvkSivVALoHRvU1/MkAZtYbr/T8nRw6xRpBHJahFqlAxtfAE6agadB6hoorcXvh
+ J77GmLUM/FCzPx8XMJV8HgrnSGdZJPR2O4hWf2mVhjhHXQFUlBorVE4rbarjRBkF
+ 1yjwPtcAuViFAVQDdUhBTAfJWWCzYh4TpytmwFrZILcWU893ypf1k87dCJYelFaA
+ ==
+X-ME-Sender: <xms:QYkmXR8lZT_adM_lv3N9h5gHa0sVr9t71HeQW5r_VtHynhQ44X3RpA>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrgeejgdegtdcutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpefofgggkfgjfhffhffvufgtsehttdertderredtnecuhfhrohhmpedftehnughr
+ vgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucffohhmrg
+ hinhepuggvvhhitggvthhrvggvrdhorhhgnecurfgrrhgrmhepmhgrihhlfhhrohhmpegr
+ nhgurhgvfiesrghjrdhiugdrrghunecuvehluhhsthgvrhfuihiivgeptd
+X-ME-Proxy: <xmx:QYkmXZ-dI5mb9WW_DtQ7ayc-IDbLdgupyOdtfYdKdxcwThFCQcC4Tw>
+ <xmx:QYkmXaDjBSZiQd2_f78ntiAjohRf-ODs9K0mhJsgmBdCop1P17LjZQ>
+ <xmx:QYkmXZy0giH8SK5oBoAtC5Ynbt3J9YMxpvD5u9L32f9cmjteRwnlkg>
+ <xmx:QokmXU5ofQenOuvHGAvTquwCH-_TqDcub4tzkQ7aKa6kmVdoIA-wKA>
+Received: by mailuser.nyi.internal (Postfix, from userid 501)
+ id 925B3E0162; Wed, 10 Jul 2019 20:56:33 -0400 (EDT)
+X-Mailer: MessagingEngine.com Webmail Interface
+User-Agent: Cyrus-JMAP/3.1.6-731-g19d3b16-fmstable-20190627v1
+Mime-Version: 1.0
+Message-Id: <3b0788cf-eee4-48b2-901d-d2ab6716ab1b@www.fastmail.com>
+In-Reply-To: <CAL_JsqKrYcUbn_02z9GQO6U4rz7k=p3kB7_G0tKmv25MMZZNQg@mail.gmail.com>
+References: <20190710141611.21159-1-andrew@aj.id.au>
+ <20190710141611.21159-2-andrew@aj.id.au>
+ <CAL_JsqKrYcUbn_02z9GQO6U4rz7k=p3kB7_G0tKmv25MMZZNQg@mail.gmail.com>
+Date: Thu, 11 Jul 2019 10:26:39 +0930
+From: "Andrew Jeffery" <andrew@aj.id.au>
+To: "Rob Herring" <robh+dt@kernel.org>
+Subject: Re: [PATCH 1/2] dt-bindings: mmc: Document Aspeed SD controller
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_161417_065542_A64F8059 
-X-CRM114-Status: GOOD (  18.89  )
-X-Spam-Score: -14.4 (--------------)
+X-CRM114-CacheID: sfid-20190710_175639_844198_7528C64D 
+X-CRM114-Status: GOOD (  25.41  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-14.4 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.224 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -84,9 +93,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,179 +104,210 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Jordan Rupprecht <rupprecht@google.com>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Ulf Hansson <ulf.hansson@linaro.org>, linux-aspeed@lists.ozlabs.org,
+ Ryan Chen <ryanchen.aspeed@gmail.com>, linux-mmc <linux-mmc@vger.kernel.org>,
+ Adrian Hunter <adrian.hunter@intel.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Joel Stanley <joel@jms.id.au>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jul 5, 2019 at 1:03 AM 'Peter Collingbourne' via Clang Built
-Linux <clang-built-linux@googlegroups.com> wrote:
+
+
+On Thu, 11 Jul 2019, at 01:20, Rob Herring wrote:
+> On Wed, Jul 10, 2019 at 8:16 AM Andrew Jeffery <andrew@aj.id.au> wrote:
+> >
+> > The ASPEED SD/SDIO/eMMC controller exposes two slots implementing the
+> > SDIO Host Specification v2.00, with 1 or 4 bit data buses, or an 8 bit
+> > data bus if only a single slot is enabled.
+> >
+> > Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
+> > ---
+> >  .../bindings/mmc/sdhci-of-aspeed.yaml         | 91 +++++++++++++++++++
+> 
+> aspeed,sdhci.yaml
+
+Ack. Previously I had separate documents for different compatibles, wasn't sure
+how to tackle name one document covering multiple compatibles.
+
+> 
+> >  1 file changed, 91 insertions(+)
+> >  create mode 100644 Documentation/devicetree/bindings/mmc/sdhci-of-aspeed.yaml
+> >
+> > diff --git a/Documentation/devicetree/bindings/mmc/sdhci-of-aspeed.yaml b/Documentation/devicetree/bindings/mmc/sdhci-of-aspeed.yaml
+> > new file mode 100644
+> > index 000000000000..e98a2ac4d46d
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/mmc/sdhci-of-aspeed.yaml
+> > @@ -0,0 +1,91 @@
+> > +# SPDX-License-Identifier: GPL-2.0-or-later
+> 
+> The preferred license is (GPL-2.0 OR BSD-2-Clause) if that is okay with you.
+
+I should poke people internally again, I had asked, just haven't got a clear
+answer. What was the justification for the preference (just so I can pass that
+on)?
+
+> 
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/mmc/sdhci-of-aspeed.yaml#
+> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > +
+> > +title: ASPEED SD/SDIO/eMMC Controller
+> > +
+> > +maintainers:
+> > +  - Andrew Jeffery <andrew@aj.id.au>
+> > +  - Ryan Chen <ryanchen.aspeed@gmail.com>
+> > +
+> > +description: |+
+> > +  The ASPEED SD/SDIO/eMMC controller exposes two slots implementing the SDIO
+> > +  Host Specification v2.00, with 1 or 4 bit data buses, or an 8 bit data bus if
+> > +  only a single slot is enabled.
+> > +
+> > +  The two slots are supported by a common configuration area. As the SDHCIs for
+> > +  the slots are dependent on the common configuration area, they are described
+> > +  as child nodes.
+> > +
+> > +properties:
+> > +  compatible:
+> > +    enum: [ aspeed,ast2400-sdc, aspeed,ast2500-sdc ]
+> > +  reg:
+> > +    description: Common configuration registers
+> 
+> This should have a 'maxItems: 1'. Same for the child reg.
+
+Ack.
+
+> 
+> > +  ranges: true
+> > +  clocks:
+> > +    maxItems: 1
+> > +    description: The SD/SDIO controller clock gate
+> > +  sdhci:
+> 
+> This needs to be a pattern (under patternProperties) as these have
+> unit-addresses.
+
+Ah, I didn't think about that.
+
+> 
+> > +    type: object
+> > +    properties:
+> > +      compatible:
+> > +        allOf:
+> > +          - enum: [ aspeed,ast2400-sdhci, aspeed,ast2500-sdhci ]
+> > +          - const: sdhci
+> 
+> This condition can never be true. What you need is s/allOf/items/.
+> However, 'sdhci' is not really a useful compatible because every
+> implementation has quirks, so I'd drop it.
+
+Yeah, I was tossing up whether to include "sdhci". I'll drop it as you
+suggest.
+
+Pity the shorthand doesn't work how I expected. Might explain
+some of the behaviour I was seeing with the bindings make targets
+though.
+
+> 
+> > +      reg:
+> > +        description: The SDHCI registers
+> > +      clocks:
+> > +        maxItems: 1
+> > +        description: The SD bus clock
+> > +      slot:
+> > +        allOf:
+> > +          - $ref: /schemas/types.yaml#/definitions/uint32
+> > +          - enum: [0, 1]
+> 
+> Is this really needed? Offset 0x100 is slot 0 and offset 0x200 is slot
+> 1. Does that ever change?
+
+It doesn't in the SoCs at hand, but the downstream impact (driver
+implementation) is that you need to derive the slot index from the
+address and I was trying to avoid that. The slot index influences
+some bit index calculations.
+
+> 
+> > +      interrupts:
+> > +        maxItems: 1
+> > +        description: The SD interrupt shared between both slots
+> > +    required:
+> > +      - compatible
+> > +      - reg
+> > +      - clocks
+> > +      - slot
+> > +      - interrupts
+> > +
+> > +required:
+> > +  - compatible
+> > +  - reg
+> > +  - ranges
+> > +  - clocks
+> 
+> #address-cells and #size-cells are required too.
+
+Ack.
+
+> 
+> You should also add 'additionalProperties: false' here so other random
+> properties can't be present.
+
+Ah yes. Will fix.
+
+> 
+> > +
+> > +examples:
+> > +  - |
+> > +    #include <dt-bindings/clock/aspeed-clock.h>
+> > +    sdc@1e740000 {
+> > +            compatible = "aspeed,ast2500-sdc";
+> > +            reg = <0x1e740000 0x100>;
+> > +            #address-cells = <1>;
+> > +            #size-cells = <1>;
+> > +            ranges;
+> 
+> It's preferred to limit the range here and then the child addresses
+> are 0x100 and 0x200.
+
+Okay. Was just trying to dodge mental arithmetic where I could, but
+if that's the preference then I'll fix it up.
+
+Thanks for the review!
+
+Andrew
+
+> 
+> > +            clocks = <&syscon ASPEED_CLK_GATE_SDCLK>;
+> > +
+> > +            sdhci0: sdhci@1e740100 {
+> > +                    compatible = "aspeed,ast2500-sdhci", "sdhci";
+> > +                    reg = <0x1e740100 0x100>;
+> > +                    slot = <0>;
+> > +                    interrupts = <26>;
+> > +                    sdhci,auto-cmd12;
+> > +                    clocks = <&syscon ASPEED_CLK_SDIO>;
+> > +            };
+> > +
+> > +            sdhci1: sdhci@1e740200 {
+> > +                    compatible = "aspeed,ast2500-sdhci", "sdhci";
+> > +                    reg = <0x1e740200 0x100>;
+> > +                    slot = <1>;
+> > +                    interrupts = <26>;
+> > +                    sdhci,auto-cmd12;
+> > +                    clocks = <&syscon ASPEED_CLK_SDIO>;
+> > +            };
+> > +    };
+> > --
+> > 2.20.1
+> >
 >
-> RELR is a relocation packing format for relative relocations.
-> The format is described in a generic-abi proposal:
-> https://groups.google.com/d/topic/generic-abi/bX460iggiKg/discussion
->
-> The LLD linker can be instructed to pack relocations in the RELR
-> format by passing the flag --pack-dyn-relocs=relr.
->
-> This patch adds a new config option, CONFIG_RELR. Enabling this option
-> instructs the linker to pack vmlinux's relative relocations in the RELR
-> format, and causes the kernel to apply the relocations at startup along
-> with the RELA relocations. RELA relocations still need to be applied
-> because the linker will emit RELA relative relocations if they are
-> unrepresentable in the RELR format (i.e. address not a multiple of 2).
->
-> Enabling CONFIG_RELR reduces the size of a defconfig kernel image
-> with CONFIG_RANDOMIZE_BASE by 3.5MB/16% uncompressed, or 550KB/5%
-> compressed (lz4).
->
-> Signed-off-by: Peter Collingbourne <pcc@google.com>
-
-Tested with:
-ToT llvm r365583
-mainline linux commit 5ad18b2e60b7
-
-pre-patch application:
-$ ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make CC=clang LD=ld.lld
-NM=llvm-nm OBJCOPY=llvm-objcopy -j71 defconfig
-$ ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make CC=clang LD=ld.lld
-NM=llvm-nm OBJCOPY=llvm-objcopy -j71
-$ du -h vmlinux
-227M vmlinux
-$ du -h arch/arm64/boot/Image
-25M arch/arm64/boot/Image
-$ du -h arch/arm64/boot/Image.gz
-9.0M arch/arm64/boot/Image.gz
-$ find . -name \*.ko | xargs du -ch | tail -n 1
-437M total
-$ qemu-system-aarch64 -kernel arch/arm64/boot/Image.gz -machine virt
--cpu cortex-a57 -nographic --append "console=ttyAMA0 root=/dev/ram0"
--m 2048 -initrd /android1/buildroot/output/images/rootfs.cpio
-...
-# cat /proc/version
-Linux version 5.2.0-00915-g5ad18b2e60b7
-(ndesaulniers@ndesaulniers1.mtv.corp.google.com) (clang version 9.0.0
-(https://github.com/llvm/llvm-project.git
-b1843e130ad9c4269ece5d08718b33566a41d919)) #66 SMP PREEMPT Tue Jul 9
-16:50:18 PDT 2019
-(qemu) q
-
-post-patch application:
-$ ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make CC=clang LD=ld.lld
-NM=llvm-nm OBJCOPY=llvm-objcopy -j71 clean
-$ git am /tmp/relr.eml
-Applying: arm64: Add support for relocating the kernel with RELR relocations
-$ ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make CC=clang LD=ld.lld
-NM=llvm-nm OBJCOPY=llvm-objcopy -j71
-...
-Use RELR relocation packing (RELR) [N/y/?] (NEW) y
-...
-$ du -h vmlinux
-224M vmlinux
-$ du -h arch/arm64/boot/Image
-21M arch/arm64/boot/Image
-$ du -h arch/arm64/boot/Image.gz
-8.7M arch/arm64/boot/Image.gz
-$ find . -name \*.ko | xargs du -ch | tail -n 1
-424M total
-$ qemu-system-aarch64 -kernel arch/arm64/boot/Image.gz -machine virt
--cpu cortex-a57 -nographic --append "console=ttyAMA0 root=/dev/ram0"
--m 2048 -initrd /android1/buildroot/output/images/rootfs.cpio
-...
-# cat /proc/version
-Linux version 5.2.0-00916-g3798f5948201
-(ndesaulniers@ndesaulniers1.mtv.corp.google.com) (clang version 9.0.0
-(https://github.com/llvm/llvm-project.git
-b1843e130ad9c4269ece5d08718b33566a41d919)) #67 SMP PREEMPT Wed Jul 10
-09:37:10 PDT 2019
-(qemu) q
-
-So for an arm64 defconfig, looks like roughly 1.32% savings on vmlinux
-size, 16% savings on Image size, 3.33% savings on compressed image
-size (when gzipping), and 2.97% savings in loadable kernel module
-size. (this is off the rounded value from `du -h` which isn't very
-precise).
-
-Moving on to an actual device kernel (we plan on shipping a device
-with an LLD linked kernel soon):
-
-pre-patch application:
-$ du -h vmlinux
-361M vmlinux
-$ du -h arch/arm64/boot/Image
-44M arch/arm64/boot/Image
-$ du -h arch/arm64/boot/Image.lz4
-20M arch/arm64/boot/Image.lz4
-$ find . -name \*.ko | xargs du -ch | tail -n 1
-37M total
-
-post patch application:
-$ du -h vmlinux
-359M vmlinux
-$ du -h arch/arm64/boot/Image
-42M arch/arm64/boot/Image
-$ du -h arch/arm64/boot/Image.lz4
-19M arch/arm64/boot/Image.lz4
-$ find . -name \*.ko | xargs du -ch | tail -n 1
-37M total
-
-0.55% savings on vmlinux, 4.5% savings on Image, 5% savings on
-compressed Image w/ LZ4 compression, no or very small savings on
-kernel modules.  For kernel modules, this could be because of my
-rounding with `du -h` or a bug in our kernel version scripts not
-applying these relocations to kernel modules.
-
-What should I grep for the relocation type in an ELF object to verify
-that RELR relocations exist?
-$ llvm-objdump -r *.ko| grep RELR
-?
-$ llvm-readelf -S vmlinux } grep relr
-<doesn't show anything>
-I'd have assumed by your patches change to the linker script a section
-called .relr.dyn to be listed.
-Are the tools not interpreting the section name and need to be fixed,
-or is your change to the linker script not necessary?
-Maybe both of those tools need to be updated to know about such a new
-relocation type?
-+ Jordan for heads up.
-
-Either way, I've confirmed the claimed 16% reduction in image size for
-the defconfig, and 5% savings in compressed images size w/ LZ4.
-
-Finally, I confirmed that this patch boots on a device.  I had to
-backport https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/char-misc.git/commit/?id=e9e08a07385e08f1a7f85c5d1e345c21c9564963
-for llvm-objcopy support.
-
-Then I ran 30 boot time measurements with 60s wait intervals in
-between test runs:
-prepatch:
-mean: 3049ms
-median: 3281ms
-stddev: 330ms
-
-postpatch:
-mean: 3091ms
-median: 3260ms
-stddev: 290ms
-
-While decompressing the kernel image quickly depends on its size, I
-assume processing these types of relocations and the volume of them
-takes longer?
-
-Finally, I boot tested mainline with CONFIG_RANDOMIZE_BASE disabled
-and this patch applied (it worked).
-
-Tested-by: Nick Desaulniers <ndesaulniers@google.com>
-Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
--- 
-Thanks,
-~Nick Desaulniers
 
 _______________________________________________
 linux-arm-kernel mailing list
