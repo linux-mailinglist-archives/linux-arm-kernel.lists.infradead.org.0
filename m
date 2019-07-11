@@ -2,67 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3953565DF7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 18:54:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B67265E01
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 18:55:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iGkybBXBQaIVFgsG81zBshEa80HKZm+ANoDIzfHUPVg=; b=D/Atb57AGRFIWS
-	WmPT18OT5MF8kAaFNv5VvC+DmycqghUhsodEnZgrZ2x6Mm0rMf4q6VhXJkA3idwASbPXVeZ4NKQIS
-	I0zdaDRr5KJrTXshTfvHXe5T5+525OUMdxVnWI12c392uZWm7L6P1FU5DWygVbHMoiXK38cS2GTPn
-	0CFJePeqrJqsLgpsiMyAFqbTmn+Laxclx2kgjn54GIt/z/m0JL4YGVF8zZ0Mo87VyzOqXtIETzBjw
-	zVtSbGuFrwpNMgsOJkkWEGTBrHLo5w9c8sQe7jvaumw9UcBZOuqrGcya29nFoxgRZ/xmSZBITWStf
-	QUvTKhT4o7yx2bAVCyHQ==;
+	List-Owner; bh=kKCYDemY3/ahuupFuUNW52WjcpkVdUWe3GSvsVUiOOk=; b=ZZb1ewkW69w3Dl
+	1xYCqjaFLhQjBDdqz5AV2vJ60Yq2IOsGrOefKDiygZhzzQ523jVzQym91oYmG6LZuGXbzHgFVEmfO
+	mISiMKckWLqfN3ooUsngIfkVvKl2+hFERZ7oOj2yzDIHJLtM9SuIOJHvk0FZbKdPHCpv/ohVOGIJc
+	f+EsNC9c9vdJbCTTZAZMizINzhE4f8CzxPAQsRK2PTxgSB2PKtGyxSkADzTZdhEB1UCYMilS1Qd47
+	6Wc1PQ8JfEI64NjgIO1KgcehoPMAFFIDw9TpNs0/btwWdn3piI7vMV/3kGRIUt9Fsk0L2arMo4tqS
+	EfP5nGje6fwdwmJ7kRwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlcL3-0000uP-Gt; Thu, 11 Jul 2019 16:54:33 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1hlcLz-0002Mr-T4; Thu, 11 Jul 2019 16:55:31 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlcKm-0000ts-6L
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 16:54:17 +0000
-Received: by mail-wr1-x444.google.com with SMTP id g17so7071409wrr.5
+ id 1hlcLk-0002MH-Du
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 16:55:17 +0000
+Received: by mail-wr1-x443.google.com with SMTP id z1so7029233wru.13
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 11 Jul 2019 09:54:15 -0700 (PDT)
+ Thu, 11 Jul 2019 09:55:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=NesWXuGbkASvqkB3OfHXJkarfZRKXQiML61VfYbpfEw=;
- b=VE858to2y7ZF+Yho6XDdzelgR7kQDjL4jiugFGdBeGx66hyP15ePL8ltL11wvW7IMw
- rjuLr3ip9sXleNjnR0pKFBQTRbGImm6L7qCJy0z81Jn6sHSFCJjgzGrP67Ul5n3CPtwD
- CzIHOI3K61AHNyNoUAOZ0pzNxQmgTDbJW+FBiNPlxPOb7DiqxgrReUbfigk5dPI8cPp/
- irSBolZvC3tkywfQncRHDp2IenZ1VnlIHTNqvGN8hfLzWISdPsF9E6oGjTYQ7203Cai2
- YbIlgvUDy9/2zLTYRKwKV5789L/Qx+uEu7ItJmpUNCen4ZX464uMO0qbRzOKdAja2I2A
- fWtQ==
+ bh=cW9evuaNHUhu3xKoRblEDbGLej8PzYak53HB5pCVWjU=;
+ b=oFX9gEXDAQ3+H/vT4H26l4Ol50OZG1qDmtkSHrTXHzx+qOSDK2mcRQyEeqpEms1luc
+ x2NseAhAxqROgC5+GS1WF3rEVZsiNMXy08Dli2EK8K27ulNcLYG2riP7T5Jzd+vde0hP
+ zIN7Lrge3OAkn/fwJmsI623UMVTf2l7xhGSijG+Jwofa1MH7yz/tvXF/m9mfhPUNhwd/
+ +DIFuDo3ryRGyAmP26G4/B+x+VANns65dIwMXh6eXc1zojM8dY5rskKyYm7Ap/gOHyD4
+ VIILEo9QuerSBwvNtsSaGEUsL+JEIpj31DYOiNVe/9JDVKZLqTL4F7UqQcOriKmJL2dk
+ jqHw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=NesWXuGbkASvqkB3OfHXJkarfZRKXQiML61VfYbpfEw=;
- b=B3pEKncyjoGeCAgYQUYXeLQwfVIao/z364ZQ9yYXMF++hVIyZJVKJTLtcRv8COQsXY
- XTWMVgfiB+MjvIYHCE8qmMmubf1wndtluS40n4FCM6oxMeu1AAvJo5mrTmFkEWSgxl42
- iolfszTLXk+tQyVnR9BLl+zJ0i6+Z4ffjNaUG9LdnPEX3eGdFAG8jt22f4xc3idPObuy
- R4Nxzepjik8IRTOJJNBUUywOGe6MZv1Ph+KoYBjTeQXYQOOL/lo/diLT9sxlILVAerg5
- j0cTLBI0G+4wZdipzkEvB/gEeRPhLNh2wc5DvJ8bAXUldCmwRJi0p76AF94h7cQ8I5ir
- lxtw==
-X-Gm-Message-State: APjAAAWGMs9EI/Uvgxtq8E5GFvgW121d2/W/lAxa+EEyx/pKgoOK0F8X
- gjEx+lpm713p158Vf+meXrU=
-X-Google-Smtp-Source: APXvYqxvQMOsPbq3fIdc8FXV42JE16f8lykhebXezEpi2QhaD/xtj/HV+Ano6Jw7WoDgSdzUkOiTFw==
-X-Received: by 2002:adf:e941:: with SMTP id m1mr6267917wrn.279.1562864054220; 
- Thu, 11 Jul 2019 09:54:14 -0700 (PDT)
+ bh=cW9evuaNHUhu3xKoRblEDbGLej8PzYak53HB5pCVWjU=;
+ b=AI2TI+3Odj5tLT1Rmv1CV/EWdBk06cZRW60oMnEz4RPu3yfmpTs6M4PJSFx26eQWJD
+ 9JMtFD9qtNEuf0LLpUEjtrYVRN99zdn8P5bzETXcSOKXNAvWv1HLhLfCgyoX4/Zqkyg3
+ K8rT6LU7vrCDDXwxzRn72s4jbZV9NMsXocDf/54DWRxejmtEeca99r3aBVqO8i+39Cd9
+ xO4YgCZlbhMiugDrYyKhfPA5RQr6Sa1DkS8DnXO/JhAaVxbP183aeIATNwTqxSD7Cvr1
+ bylM4DlhzstRDbQALuVoWn9ujX93qw71Hym3tFpu+Brxt51YVGbF8zVH63sazg51FxYF
+ YurA==
+X-Gm-Message-State: APjAAAUs4AIslTvtzzRUX1TcB4tnUxLG8zy72/MuKTedY5spl86o5dVS
+ VpJubnRJ1BiPb6nn/zVPA9U=
+X-Google-Smtp-Source: APXvYqyncqqeYoQxQNe4SwOZib3N1XzDI9ZUbBKHw4G85RoUNi5/s+EyoU18m/cNEEfjGlW4PRNmIg==
+X-Received: by 2002:a5d:4a46:: with SMTP id v6mr6165469wrs.105.1562864114874; 
+ Thu, 11 Jul 2019 09:55:14 -0700 (PDT)
 Received: from [10.67.49.31] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id d16sm4577249wrv.55.2019.07.11.09.54.01
+ by smtp.googlemail.com with ESMTPSA id n5sm5189493wmi.21.2019.07.11.09.54.54
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 11 Jul 2019 09:54:13 -0700 (PDT)
-Subject: Re: [PATCH v6 2/6] ARM: Disable instrumentation for some code
-To: Linus Walleij <linus.walleij@linaro.org>
+ Thu, 11 Jul 2019 09:55:14 -0700 (PDT)
+Subject: Re: [PATCH v6 1/6] ARM: Add TTBR operator for kasan_init
+To: Linus Walleij <linus.walleij@linaro.org>,
+ Russell King <rmk+kernel@armlinux.org.uk>
 References: <20190617221134.9930-1-f.fainelli@gmail.com>
- <20190617221134.9930-3-f.fainelli@gmail.com>
- <CACRpkdb3P6oQTK9FGUkMj4kax8us3rKH6c36pX=HD1_wMqcoJQ@mail.gmail.com>
+ <20190617221134.9930-2-f.fainelli@gmail.com>
+ <CACRpkdZGqiiax2m5L1y3=Enw0Q5cLc-idAQNae34uenf-drHDw@mail.gmail.com>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
@@ -119,23 +120,23 @@ Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  caxTGgc5zzQHeX67eMzrGomG3ZnIxmd1sAbgvJUDaD2GrYlulfwGWwWyTNbWRvMighVdPkSF
  6XFgQaosWxkV0OELLy2N485YrTr2Uq64VKyxpncLh50e2RnyAJ9Za0Dx0yyp44iD1OvHtkEI
  M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
-Message-ID: <aa45795c-7fa1-ebb8-5d26-cce4c8a60e1a@gmail.com>
-Date: Thu, 11 Jul 2019 09:53:51 -0700
+Message-ID: <0ad02a64-9470-936c-1db9-0079c0926cfb@gmail.com>
+Date: Thu, 11 Jul 2019 09:54:50 -0700
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.2
 MIME-Version: 1.0
-In-Reply-To: <CACRpkdb3P6oQTK9FGUkMj4kax8us3rKH6c36pX=HD1_wMqcoJQ@mail.gmail.com>
+In-Reply-To: <CACRpkdZGqiiax2m5L1y3=Enw0Q5cLc-idAQNae34uenf-drHDw@mail.gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_095416_240915_EB65C533 
-X-CRM114-Status: GOOD (  17.14  )
+X-CRM114-CacheID: sfid-20190711_095516_495681_C6941808 
+X-CRM114-Status: GOOD (  22.77  )
 X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -190,32 +191,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 7/2/19 2:56 PM, Linus Walleij wrote:
+On 7/2/19 2:03 PM, Linus Walleij wrote:
+> Hi Florian!
+> 
+> thanks for your patch!
+> 
 > On Tue, Jun 18, 2019 at 12:11 AM Florian Fainelli <f.fainelli@gmail.com> wrote:
 > 
->> @@ -236,7 +236,8 @@ static int unwind_pop_register(struct unwind_ctrl_block *ctrl,
->>                 if (*vsp >= (unsigned long *)ctrl->sp_high)
->>                         return -URC_FAILURE;
+>> From: Abbott Liu <liuwenliang@huawei.com>
 >>
->> -       ctrl->vrs[reg] = *(*vsp)++;
->> +       ctrl->vrs[reg] = READ_ONCE_NOCHECK(*(*vsp));
->> +       (*vsp)++;
+>> The purpose of this patch is to provide set_ttbr0/get_ttbr0 to
+>> kasan_init function. The definitions of cp15 registers should be in
+>> arch/arm/include/asm/cp15.h rather than arch/arm/include/asm/kvm_hyp.h,
+>> so move them.
+>>
+>> Cc: Andrey Ryabinin <aryabinin@virtuozzo.com>
+>> Reported-by: Marc Zyngier <marc.zyngier@arm.com>
+>> Signed-off-by: Abbott Liu <liuwenliang@huawei.com>
+>> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 > 
-> I would probably even put in a comment here so it is clear why we
-> do this. Passers-by may not know that READ_ONCE_NOCHECK() is
-> even related to KASan.
+>> +#include <linux/stringify.h>
+> 
+> What is this for? I think it can be dropped.
 
-Makes sense, I will add that, thanks!
+Indeed, that can be dropped came from an earlier version of the patch.
 
 > 
-> Other than that,
-> Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+> This stuff adding a whole bunch of accessors:
 > 
-> Yours,
-> Linus Walleij
+>> +static inline void set_par(u64 val)
+>> +{
+>> +       if (IS_ENABLED(CONFIG_ARM_LPAE))
+>> +               write_sysreg(val, PAR_64);
+>> +       else
+>> +               write_sysreg(val, PAR_32);
+>> +}
 > 
+> Can we put that in a separate patch since it is not
+> adding any users, so this is a pure refactoring patch for
+> the current code?
 
-
+Sure, that makes sense, first move all definitions, then add helper
+functions, finally make use of them.
 -- 
 Florian
 
