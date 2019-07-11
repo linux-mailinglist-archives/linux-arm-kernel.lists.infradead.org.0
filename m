@@ -2,79 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27C05650EF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 06:20:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62C1D650F0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 06:21:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U84x7PHAb9hglOmzASFUG1djCI4XilI8Qbid1Rqy1XE=; b=KRPCdGHu/i04j5
-	8T3zhYHAvhfDUxLTSvKEM+pmneLYd4b7M8Ay6PaPWb/h3tFugg2k9hhcI9zlKrFLfBYBELIcnuR8Y
-	/OitU8mCKMq8fd2gD05SOpn9BJYOkJZpTAL9HV3Vt1Xa5UgPE9T5SwEB6nOL+U7O/HTVQ+QTR/sS8
-	I7tsFFaNEStn6dZfu2h44Wm2mBxm+sT/gdw3x+/Io0RXGqRb0wuBmCNcPMIEFaAVWAs2CX21Rjpls
-	c85eZp2SLnuseXVJlUhp9n4bfOWmS/wgRzw5JnbbEjog2MIVxxanYI2thx6pEsqq+kJ/0gtrq/F3f
-	n/PRXmdMkkCR3+KPNQiQ==;
+	List-Owner; bh=z/dfj7LuaiwJUCL3wYObTxdQUEkHb2ei+YappVDROsk=; b=dO+JYhZjT9o3Pr
+	/3M/O4/EOvv/3TE09PJcmOdYYMeAt93BjrDNHptydWSMj8cduM03iS4Z7dVwWFV7JPzvUviAsSBuY
+	eVCL7E3XbcNNosME7Z2yCEAp11NAx7CJeJ2bUAZxxuqS6vr1JOcodwIuPVBV5vTcbnQI2KY9V/0KO
+	WkcCF0/5Vm7dJxqz4920DpV/2SgOT4tpC2UkRsI8XZj3a2IFhv4JIVsmSZ9yaBB33ptWi0rM87NBy
+	aA3nK7pQc3fga5Tck21MgV32MDdBrlPmVgTZPAGaovgnLTuk/TuhM1F6zjyLwT/9upcpWZb5eKtUV
+	GORWlRYvNOJuZ3netGxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlQZT-0007sw-Qo; Thu, 11 Jul 2019 04:20:39 +0000
+	id 1hlQZp-0008Da-1D; Thu, 11 Jul 2019 04:21:01 +0000
 Received: from new4-smtp.messagingengine.com ([66.111.4.230])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlQYn-0006QL-5p
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 04:19:59 +0000
+ id 1hlQYz-00077O-9Q
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 04:20:11 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 918242EE3;
- Thu, 11 Jul 2019 00:19:56 -0400 (EDT)
+ by mailnew.nyi.internal (Postfix) with ESMTP id C84A62F17;
+ Thu, 11 Jul 2019 00:20:07 -0400 (EDT)
 Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Thu, 11 Jul 2019 00:19:56 -0400
+ by compute4.internal (MEProxy); Thu, 11 Jul 2019 00:20:07 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=from
  :to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm3; bh=GOsamnhL9NfGE
- lhnvB1DWrI70yYLMfud0MVd7AWlK6A=; b=YrgvIb6H0Pd30dHQULH+rsjZo3Pu1
- 82zH4Vq7yXoQfhsATJsCeaEGBnc5lHhuUz7ju3SSNfogej+asLYun6Bs5TccEGjm
- 5GY3A6j50zvfQNaSkdHIeM0LTmX1Yu4ShMYbG7s4eUtgPwKAqDT5Ye8M5rfq6uXr
- 0a/yMBMyEeSN3ktkmTzXk6uo1mVgj3GUgK5TXH6kwF7SKWEoDYNbEBvjIp30RSRZ
- KX2Pckbce7Gy+Hw3eb5vEwb0BBCfI4McR9q+tSc/NiHiC11wo9rhm0vPItSFozd1
- PyxtEPcg3Eu1GThDcyn4oUC6RlS5pnCoPBrH+ttetbuqhkngQ1O3+IzUA==
+ :mime-version:content-transfer-encoding; s=fm3; bh=X7ftRY0n/ppqJ
+ obOZqCX51ux9OAohStr29ZTJLcVjmQ=; b=cGoviOEEGwngfl6VLqBvD9tiTy+gn
+ 5Z5a3WRS4Jp+DhIPj9NCeJ+FOceFEGaby0LVjS8GPNDesOjagd+nqS3FBtxK/53t
+ MgArao16EwjPNtcdSfCqq3tgB9XlapxIZ3nLZvH42soA1Uf+2QiHgKk9Qe+r+Smk
+ Zd09Estv6fuJawoAkUVDJejc14sz34VpIuN7U3Y7mEll4HsYm6FRHizPDHGV5IZR
+ t96aAGYDKgr7SPYh98Ancjrc4voIfX/E70R/R3jJyk40FW2JgiSmi8xTKbbXFNhP
+ ihDOyu6c5swp9yxWTpPKMCxqB6xGgZ9/Z7qxb3fpUNDU49WjSZNJY691g==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm3; bh=GOsamnhL9NfGElhnvB1DWrI70yYLMfud0MVd7AWlK6A=; b=vDfBfisP
- tshSqMwt2Ei29GFkd+yGdF5MvXmb1+Vsn24SocEuw6zxJ6vOdJxHtbQBURJ5wjmg
- AP4FvkicAuj73phowvCRSQ5Pu2PjGsy6ccV71+MYUHifA9El+P+MdulyGr0kgQ2j
- YvhYGO8u1vfmyKmEVnY300zsgtW43UI/piVUb6RxRS2HAlZAxkzFbO6zOCA0W24Q
- 3eFQUHezCQWtfggbfb0Qk4KgYj8/aU7IthGGdP07GDXZ9uuvg1RWweovyq9ax5d6
- yF5a/hGWiKUpqvIEUJ4rnTmNb7XTIGxrihDErcYXSxo1i+7+J7yPfOkwNJ0Lx1jf
- SytviL0r7eY2Yg==
-X-ME-Sender: <xms:7LgmXaKxVF2vgaIScJe4ZQsvMdrdMMVXetob53iubmAvjEWC6f1o0A>
+ fm3; bh=X7ftRY0n/ppqJobOZqCX51ux9OAohStr29ZTJLcVjmQ=; b=UgY7pz68
+ LTye52h5TiicEDEpqC9kIgHe78P6MqZ1z4BtIVmInsFFpGjXKcK4wuVc2TNx52N/
+ zxLMOjAS+UTtTY3pYZq6MOMJFffT9eiHZa+Fb/Yi+2IE6mK5HAiCnIht6SDQGIG3
+ gY4gxvQMKMpd7tQtIc32NrnJBrBIv/osIzubYmXvhzvPvC8i++0ywi7TcIXBgzL4
+ /RhK5wcaUG2HfbJNOySVAR+E/9OmdlHZg43t3+HdJuiP14pG0SYGw8PqLFSLY/tU
+ N8NYwQ4c8Zck5G2vwFzU/9CU10HfAPld883+R/rf5rLwsonEX3M4hCD94u5Eekhi
+ 3aNWRzo935K2kw==
+X-ME-Sender: <xms:97gmXSHWdXyR8jU9L3NN6LNlUybENPp3FLyCGAzC9-dWXbYtRQbkxw>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrgeejgdektdcutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecunecujfgurhephffvufffkffojghfggfgsedtkeertd
  ertddtnecuhfhrohhmpeetnhgurhgvficulfgvfhhfvghrhicuoegrnhgurhgvfiesrghj
- rdhiugdrrghuqeenucffohhmrghinhepuggvvhhitggvthhrvggvrdhorhhgnecukfhppe
- dvtddvrdekuddrudekrdeftdenucfrrghrrghmpehmrghilhhfrhhomheprghnughrvgif
- segrjhdrihgurdgruhenucevlhhushhtvghrufhiiigvpedt
-X-ME-Proxy: <xmx:7LgmXWYjJLMsRAYdypD7Z6KHGC2XuvkNGFoGvJY0XPwgGyDpOi0Hyw>
- <xmx:7LgmXVuj45XZnatyMy6kWf1WPLK_Bm8ZHwQTKnfzvGqvxWBXSVLDAg>
- <xmx:7LgmXTtZk-cb45j4w-PrYp6cft2nFXR25Tha5Ej3atC-qS7ezkHUPA>
- <xmx:7LgmXbavrKSaOlKClt2TDlnTeuSSg0T76aFaM4LrBW5ttEaneb7t2w>
+ rdhiugdrrghuqeenucfkphepvddtvddrkedurddukedrfedtnecurfgrrhgrmhepmhgrih
+ hlfhhrohhmpegrnhgurhgvfiesrghjrdhiugdrrghunecuvehluhhsthgvrhfuihiivgep
+ ud
+X-ME-Proxy: <xmx:97gmXfq-pKLObp_zTxyhqgp9iLqK3do0nZW9TuGKbrS718HwzSvr9Q>
+ <xmx:97gmXe71MC2DH0aPGg9NkavMTrCyZWynrfJn7YJB3IYbukWsLgVMQQ>
+ <xmx:97gmXd4pyC5Up-NMHZdcVogvRXYmgbvT7abDPFds3f2zk-breMQEtg>
+ <xmx:97gmXbC5x8nZyc7P83_laengR_lNbP4XtV2YgKuwBddGBGtLebKNKA>
 Received: from mistburn.au.ibm.com (bh02i525f01.au.ibm.com [202.81.18.30])
- by mail.messagingengine.com (Postfix) with ESMTPA id 6BA2A8005B;
- Thu, 11 Jul 2019 00:19:52 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 67E8780060;
+ Thu, 11 Jul 2019 00:20:02 -0400 (EDT)
 From: Andrew Jeffery <andrew@aj.id.au>
 To: linux-gpio@vger.kernel.org
-Subject: [PATCH 1/6] dt-bindings: pinctrl: aspeed: Document AST2600 pinmux
-Date: Thu, 11 Jul 2019 13:49:37 +0930
-Message-Id: <20190711041942.23202-2-andrew@aj.id.au>
+Subject: [PATCH 3/6] pinctrl: aspeed: Add PIN_DECL_3() helper
+Date: Thu, 11 Jul 2019 13:49:39 +0930
+Message-Id: <20190711041942.23202-4-andrew@aj.id.au>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190711041942.23202-1-andrew@aj.id.au>
 References: <20190711041942.23202-1-andrew@aj.id.au>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_211957_353706_216C24F4 
-X-CRM114-Status: UNSURE (   9.65  )
+X-CRM114-CacheID: sfid-20190710_212009_535005_33D795AC 
+X-CRM114-Status: UNSURE (   9.84  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -113,149 +113,103 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The AST260 differs from the 2400 and 2500 in that it supports multiple
-groups for a subset of functions.
+This case is common in the AST2600, so add to the collection.
 
 Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
 ---
- .../pinctrl/aspeed,ast2600-pinctrl.yaml       | 128 ++++++++++++++++++
- 1 file changed, 128 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/pinctrl/aspeed,ast2600-pinctrl.yaml
+ drivers/pinctrl/aspeed/pinmux-aspeed.h | 72 ++++++++++++++------------
+ 1 file changed, 40 insertions(+), 32 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/pinctrl/aspeed,ast2600-pinctrl.yaml b/Documentation/devicetree/bindings/pinctrl/aspeed,ast2600-pinctrl.yaml
-new file mode 100644
-index 000000000000..dd31f8e62433
---- /dev/null
-+++ b/Documentation/devicetree/bindings/pinctrl/aspeed,ast2600-pinctrl.yaml
-@@ -0,0 +1,128 @@
-+# SPDX-License-Identifier: GPL-2.0+
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/pinctrl/aspeed,ast2600-pinctrl.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
+diff --git a/drivers/pinctrl/aspeed/pinmux-aspeed.h b/drivers/pinctrl/aspeed/pinmux-aspeed.h
+index 0406beedd5ba..964dd5b242ac 100644
+--- a/drivers/pinctrl/aspeed/pinmux-aspeed.h
++++ b/drivers/pinctrl/aspeed/pinmux-aspeed.h
+@@ -604,38 +604,6 @@ struct aspeed_pin_desc {
+ 	static const struct aspeed_pin_desc PIN_SYM(pin) = \
+ 		{ #pin, PIN_EXPRS_PTR(pin) }
+ 
+-/**
+- * Declare a two-signal pin
+- *
+- * @pin: The pin number
+- * @other: Macro name for "other" functionality (subjected to stringification)
+- * @high: Macro name for the highest priority signal functions
+- * @low: Macro name for the low signal functions
+- *
+- * For example:
+- *
+- *     #define A8 56
+- *     SIG_EXPR_DECL(ROMD8, ROM16, SIG_DESC_SET(SCU90, 6));
+- *     SIG_EXPR_DECL(ROMD8, ROM16S, SIG_DESC_SET(HW_STRAP1, 4),
+- *              { HW_STRAP1, GENMASK(1, 0), 0, 0 });
+- *     SIG_EXPR_LIST_DECL(ROMD8, SIG_EXPR_PTR(ROMD8, ROM16),
+- *              SIG_EXPR_PTR(ROMD8, ROM16S));
+- *     SIG_EXPR_LIST_DECL_SINGLE(NCTS6, NCTS6, SIG_DESC_SET(SCU90, 7));
+- *     PIN_DECL_2(A8, GPIOH0, ROMD8, NCTS6);
+- */
+-#define PIN_DECL_2(pin, other, high, low) \
+-	SIG_EXPR_LIST_DECL_SINGLE(other, other); \
+-	PIN_DECL_(pin, \
+-			SIG_EXPR_LIST_PTR(high), \
+-			SIG_EXPR_LIST_PTR(low), \
+-			SIG_EXPR_LIST_PTR(other))
+-
+-#define PIN_GROUP_SYM(func) pins_ ## func
+-#define FUNC_GROUP_SYM(func) groups_ ## func
+-#define FUNC_GROUP_DECL(func, ...) \
+-	static const int PIN_GROUP_SYM(func)[] = { __VA_ARGS__ }; \
+-	static const char *FUNC_GROUP_SYM(func)[] = { #func }
+-
+ /**
+  * Declare a single signal pin
+  *
+@@ -670,6 +638,46 @@ struct aspeed_pin_desc {
+ 	SIG_EXPR_LIST_DECL_SINGLE(other, other); \
+ 	PIN_DECL_(pin, SIG_EXPR_LIST_PTR(sig), SIG_EXPR_LIST_PTR(other)); \
+ 	FUNC_GROUP_DECL(sig, pin)
++/**
++ * Declare a two-signal pin
++ *
++ * @pin: The pin number
++ * @other: Macro name for "other" functionality (subjected to stringification)
++ * @high: Macro name for the highest priority signal functions
++ * @low: Macro name for the low signal functions
++ *
++ * For example:
++ *
++ *     #define A8 56
++ *     SIG_EXPR_DECL(ROMD8, ROM16, SIG_DESC_SET(SCU90, 6));
++ *     SIG_EXPR_DECL(ROMD8, ROM16S, SIG_DESC_SET(HW_STRAP1, 4),
++ *              { HW_STRAP1, GENMASK(1, 0), 0, 0 });
++ *     SIG_EXPR_LIST_DECL(ROMD8, SIG_EXPR_PTR(ROMD8, ROM16),
++ *              SIG_EXPR_PTR(ROMD8, ROM16S));
++ *     SIG_EXPR_LIST_DECL_SINGLE(NCTS6, NCTS6, SIG_DESC_SET(SCU90, 7));
++ *     PIN_DECL_2(A8, GPIOH0, ROMD8, NCTS6);
++ */
++#define PIN_DECL_2(pin, other, high, low) \
++	SIG_EXPR_LIST_DECL_SINGLE(other, other); \
++	PIN_DECL_(pin, \
++			SIG_EXPR_LIST_PTR(high), \
++			SIG_EXPR_LIST_PTR(low), \
++			SIG_EXPR_LIST_PTR(other))
 +
-+title: ASPEED AST2600 Pin Controller
++#define PIN_DECL_3(pin, other, high, medium, low) \
++	SIG_EXPR_LIST_DECL_SINGLE(other, other); \
++	PIN_DECL_(pin, \
++			SIG_EXPR_LIST_PTR(high), \
++			SIG_EXPR_LIST_PTR(medium), \
++			SIG_EXPR_LIST_PTR(low), \
++			SIG_EXPR_LIST_PTR(other))
 +
-+maintainers:
-+  - Andrew Jeffery <andrew@aj.id.au>
++#define PIN_GROUP_SYM(func) pins_ ## func
++#define FUNC_GROUP_SYM(func) groups_ ## func
++#define FUNC_GROUP_DECL(func, ...) \
++	static const int PIN_GROUP_SYM(func)[] = { __VA_ARGS__ }; \
++	static const char *FUNC_GROUP_SYM(func)[] = { #func }
 +
-+description: |+
-+  The pin controller node should be the child of a syscon node with the
-+  required property:
-+
-+  - compatible: Should be one of the following:
-+                "aspeed,ast2600-scu", "syscon", "simple-mfd"
-+
-+  Refer to the the bindings described in
-+  Documentation/devicetree/bindings/mfd/syscon.txt
-+
-+properties:
-+  compatible:
-+    const: aspeed,ast2600-pinctrl
-+
-+patternProperties:
-+  '^.*$':
-+    if:
-+      type: object
-+    then:
-+      patternProperties:
-+        "^function$":
-+          allOf:
-+            - $ref: "/schemas/types.yaml#/definitions/string"
-+            - enum: [ "ADC0", "ADC1", "ADC10", "ADC11", "ADC12", "ADC13",
-+              "ADC14", "ADC15", "ADC2", "ADC3", "ADC4", "ADC5", "ADC6", "ADC7",
-+              "ADC8", "ADC9", "BMCINT", "ESPI", "ESPIALT", "FSI1", "FSI2",
-+              "FWSPIABR", "FWSPID", "FWSPIWP", "GPIT0", "GPIT1", "GPIT2",
-+              "GPIT3", "GPIT4", "GPIT5", "GPIT6", "GPIT7", "GPIU0", "GPIU1",
-+              "GPIU2", "GPIU3", "GPIU4", "GPIU5", "GPIU6", "GPIU7", "I2C1",
-+              "I2C10", "I2C11", "I2C12", "I2C13", "I2C14", "I2C15", "I2C16",
-+              "I2C2", "I2C3", "I2C4", "I2C5", "I2C6", "I2C7", "I2C8", "I2C9",
-+              "I3C3", "I3C4", "I3C5", "I3C6", "JTAGM", "LHPD", "LHSIRQ", "LPC",
-+              "LPCHC", "LPCPD", "LPCPME", "LPCSMI", "LSIRQ", "MACLINK1",
-+              "MACLINK2", "MACLINK3", "MACLINK4", "MDIO1", "MDIO2", "MDIO3",
-+              "MDIO4", "NCTS1", "NCTS2", "NCTS3", "NCTS4", "NDCD1", "NDCD2",
-+              "NDCD3", "NDCD4", "NDSR1", "NDSR2", "NDSR3", "NDSR4", "NDTR1",
-+              "NDTR2", "NDTR3", "NDTR4", "NRI1", "NRI2", "NRI3", "NRI4",
-+              "NRTS1", "NRTS2", "NRTS3", "NRTS4", "OSCCLK", "PEWAKE", "PWM0",
-+              "PWM1", "PWM10", "PWM11", "PWM12", "PWM13", "PWM14", "PWM15",
-+              "PWM2", "PWM3", "PWM4", "PWM5", "PWM6", "PWM7", "PWM8", "PWM9",
-+              "RGMII1", "RGMII2", "RGMII3", "RGMII4", "RMII1", "RMII2",
-+              "RMII3", "RMII4", "RXD1", "RXD2", "RXD3", "RXD4", "SALT1",
-+              "SALT10", "SALT11", "SALT12", "SALT13", "SALT14", "SALT15",
-+              "SALT16", "SALT2", "SALT3", "SALT4", "SALT5", "SALT6", "SALT7",
-+              "SALT8", "SALT9", "SD1", "SD2", "SD3", "SD3DAT4", "SD3DAT5",
-+              "SD3DAT6", "SD3DAT7", "SGPM1", "SGPS1", "SIOONCTRL", "SIOPBI",
-+              "SIOPBO", "SIOPWREQ", "SIOPWRGD", "SIOS3", "SIOS5", "SIOSCI",
-+              "SPI1", "SPI1ABR", "SPI1CS1", "SPI1WP", "SPI2", "SPI2CS1",
-+              "SPI2CS2", "TACH0", "TACH1", "TACH10", "TACH11", "TACH12",
-+              "TACH13", "TACH14", "TACH15", "TACH2", "TACH3", "TACH4", "TACH5",
-+              "TACH6", "TACH7", "TACH8", "TACH9", "THRU0", "THRU1", "THRU2",
-+              "THRU3", "TXD1", "TXD2", "TXD3", "TXD4", "UART10", "UART11",
-+              "UART12", "UART13", "UART6", "UART7", "UART8", "UART9", "VB",
-+              "VGAHS", "VGAVS", "WDTRST1", "WDTRST2", "WDTRST3", "WDTRST4", ]
-+        "^groups$":
-+          allOf:
-+            - $ref: "/schemas/types.yaml#/definitions/string"
-+            - enum: [ "ADC0", "ADC1", "ADC10", "ADC11", "ADC12", "ADC13",
-+              "ADC14", "ADC15", "ADC2", "ADC3", "ADC4", "ADC5", "ADC6", "ADC7",
-+              "ADC8", "ADC9", "BMCINT", "ESPI", "ESPIALT", "FSI1", "FSI2",
-+              "FWSPIABR", "FWSPID", "FWQSPID", "FWSPIWP", "GPIT0", "GPIT1",
-+              "GPIT2", "GPIT3", "GPIT4", "GPIT5", "GPIT6", "GPIT7", "GPIU0",
-+              "GPIU1", "GPIU2", "GPIU3", "GPIU4", "GPIU5", "GPIU6", "GPIU7",
-+              "HVI3C3", "HVI3C4", "I2C1", "I2C10", "I2C11", "I2C12", "I2C13",
-+              "I2C14", "I2C15", "I2C16", "I2C2", "I2C3", "I2C4", "I2C5",
-+              "I2C6", "I2C7", "I2C8", "I2C9", "I3C3", "I3C4", "I3C5", "I3C6",
-+              "JTAGM", "LHPD", "LHSIRQ", "LPC", "LPCHC", "LPCPD", "LPCPME",
-+              "LPCSMI", "LSIRQ", "MACLINK1", "MACLINK2", "MACLINK3",
-+              "MACLINK4", "MDIO1", "MDIO2", "MDIO3", "MDIO4", "NCTS1", "NCTS2",
-+              "NCTS3", "NCTS4", "NDCD1", "NDCD2", "NDCD3", "NDCD4", "NDSR1",
-+              "NDSR2", "NDSR3", "NDSR4", "NDTR1", "NDTR2", "NDTR3", "NDTR4",
-+              "NRI1", "NRI2", "NRI3", "NRI4", "NRTS1", "NRTS2", "NRTS3",
-+              "NRTS4", "OSCCLK", "PEWAKE", "PWM0", "PWM1", "PWM10G0",
-+              "PWM10G1", "PWM11G0", "PWM11G1", "PWM12G0", "PWM12G1", "PWM13G0",
-+              "PWM13G1", "PWM14G0", "PWM14G1", "PWM15G0", "PWM15G1", "PWM2",
-+              "PWM3", "PWM4", "PWM5", "PWM6", "PWM7", "PWM8G0", "PWM8G1",
-+              "PWM9G0", "PWM9G1", "QSPI1", "QSPI2", "RGMII1", "RGMII2",
-+              "RGMII3", "RGMII4", "RMII1", "RMII2", "RMII3", "RMII4", "RXD1",
-+              "RXD2", "RXD3", "RXD4", "SALT1", "SALT10G0", "SALT10G1",
-+              "SALT11G0", "SALT11G1", "SALT12G0", "SALT12G1", "SALT13G0",
-+              "SALT13G1", "SALT14G0", "SALT14G1", "SALT15G0", "SALT15G1",
-+              "SALT16G0", "SALT16G1", "SALT2", "SALT3", "SALT4", "SALT5",
-+              "SALT6", "SALT7", "SALT8", "SALT9G0", "SALT9G1", "SD1", "SD2",
-+              "SD3", "SD3DAT4", "SD3DAT5", "SD3DAT6", "SD3DAT7", "SGPM1",
-+              "SGPS1", "SIOONCTRL", "SIOPBI", "SIOPBO", "SIOPWREQ", "SIOPWRGD",
-+              "SIOS3", "SIOS5", "SIOSCI", "SPI1", "SPI1ABR", "SPI1CS1",
-+              "SPI1WP", "SPI2", "SPI2CS1", "SPI2CS2", "TACH0", "TACH1",
-+              "TACH10", "TACH11", "TACH12", "TACH13", "TACH14", "TACH15",
-+              "TACH2", "TACH3", "TACH4", "TACH5", "TACH6", "TACH7", "TACH8",
-+              "TACH9", "THRU0", "THRU1", "THRU2", "THRU3", "TXD1", "TXD2",
-+              "TXD3", "TXD4", "UART10", "UART11", "UART12G0", "UART12G1",
-+              "UART13G0", "UART13G1", "UART6", "UART7", "UART8", "UART9", "VB",
-+              "VGAHS", "VGAVS", "WDTRST1", "WDTRST2", "WDTRST3", "WDTRST4", ]
-+
-+required:
-+  - compatible
-+
-+examples:
-+  - |
-+    syscon: scu@1e6e2000 {
-+        compatible = "aspeed,ast2600-scu", "syscon", "simple-mfd";
-+        reg = <0x1e6e2000 0xf6c>;
-+
-+        pinctrl: pinctrl {
-+            compatible = "aspeed,g6-pinctrl";
-+
-+            pinctrl_pwm10g1_default: pwm10g1_default {
-+                function = "PWM10";
-+                groups = "PWM10G1";
-+            };
-+
-+            pinctrl_gpioh0_unbiased_default: gpioh0 {
-+                pins = "A18";
-+                bias-disable;
-+            };
-+        };
-+    };
+ 
+ #define GPIO_PIN_DECL(pin, gpio) \
+ 	SIG_EXPR_LIST_DECL_SINGLE(gpio, gpio); \
 -- 
 2.20.1
 
