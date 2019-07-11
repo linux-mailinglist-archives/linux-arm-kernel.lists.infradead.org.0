@@ -2,87 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 46BDC65070
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 05:10:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4602A65079
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 05:13:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=EoHRLND3pz48/+blsf2jEOsdrRUsh4aV3S/kGEKy2j4=; b=NimN6W8DXirwYjc0XFbG93Gh9
-	WJMfc7lC0Fbj7l4Tiawk4qDLgLCfgVvZhN9h+XgDOK/KdRBsAHvibqjQxBZIGZWusk3H9tPVdu97a
-	fxKrLPblcmYW7p5hSXnqzzjutJu8QesqlS0eWzFZ4PiR6op+3rlSiGEhzmoaMLhKvvmknwpTOF16Z
-	G12A+Lts/iiNnDLKF0UaiYHzx8Sq5Pyv4T+KLIdIjnu+6RbmAWleuj/GxyuALoJUSwm6SwJM6O/Df
-	VAX2xgmcQb8DtuDVnDMzfOMJdvh7NYtyzXEuvdk/kmhsGTjN7alHfOP0hBnm/xNgdIe0wK7ybSLG6
-	TGSsfa92A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sE+f127cH7MBf3k5K3N2zhdftxI6Jlq0bOLrMfg0tv8=; b=UINVmDuCD43b2s
+	uRgb2pkjtm+U9Q68e8KzEM9zEXvsDMkhW/V735xNP0BFGmgD0UtvwRRNxlRBOttait4mHCTfD1LIw
+	okBVGUMdZMLvDDVoskafuSntPTzX1GO3fPVmuv9cObPXR3js5AWRT8xWfTUOvCW4OMe60HmnLWqti
+	MRzA8+i17fdRZZvPnWrkqGVeU813eIJUHF3azVQU/1uROtbxyFNYZo3YlfR31/urjVWKA4MWoBJgT
+	BZ6zxFlr7bk9F6/XxTYMZycWzs+ogYuelKdNXPbKxo9S3pKORJPd1eJnl7qwfF1O3EWoEmQ9aiLB5
+	DNAF7KCoZcLSO3BCmMoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlPTx-0001VZ-La; Thu, 11 Jul 2019 03:10:53 +0000
-Received: from vern.gendns.com ([98.142.107.122])
+	id 1hlPW3-0001u8-Vs; Thu, 11 Jul 2019 03:13:04 +0000
+Received: from conssluserg-03.nifty.com ([210.131.2.82])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlPTj-0001Uk-3S
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 03:10:41 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=lechnology.com; s=default; h=Content-Transfer-Encoding:Content-Type:
- In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender
- :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Gb2Gjm7IVyvj8gswyKlmlRFz4xnZnHckCQx6Q5GZVBs=; b=JPryZWYSH66UQ6Ttfk6zAmZ1rN
- 0hYa/vX7vmpZpj5xFZbwPBoRO7ivPU6itWQ6o5HwMQDZeMaXNmxwfpGkEfFJCroiEpQX6KPeEkfpO
- azSpzsC5/a19PplBv8At0ghQ/PbcuJw0lE5Fyx3cETQeiAVoqfF4NUPbb4N3FH4cENNF9B1IzBoiV
- edzAO34s7D5a0QqE9RJxjzT6q5u3MAqX6Zey0iJr6JPowr7Kxu0JubzZfOwmxrh6rXZH84fRWJPxB
- S1QTyy6+Sp57br1O1w5lmOqEraK741PZKBJbmX/J3YHdKGNSzUDAoYr/UULXCz/JAtm94pk0yR72s
- rhZElLFw==;
-Received: from 108-198-5-147.lightspeed.okcbok.sbcglobal.net
- ([108.198.5.147]:35218 helo=[192.168.0.134])
- by vern.gendns.com with esmtpsa (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128)
- (Exim 4.92) (envelope-from <david@lechnology.com>)
- id 1hlPTe-002REK-1f; Wed, 10 Jul 2019 23:10:34 -0400
-Subject: Re: [PATCH 4/6] irqchip/irq-pruss-intc: Add helper functions to
- configure internal mapping
-To: Suman Anna <s-anna@ti.com>, Marc Zyngier <marc.zyngier@arm.com>,
- Rob Herring <robh+dt@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- Jason Cooper <jason@lakedaemon.net>
-References: <20190708035243.12170-1-s-anna@ti.com>
- <20190708035243.12170-5-s-anna@ti.com>
-From: David Lechner <david@lechnology.com>
-Message-ID: <9aa5acd8-81bf-10dc-5a86-cea2acd1132b@lechnology.com>
-Date: Wed, 10 Jul 2019 22:10:32 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ id 1hlPVr-0001tm-9C
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 03:12:52 +0000
+Received: from mail-ua1-f49.google.com (mail-ua1-f49.google.com
+ [209.85.222.49]) (authenticated)
+ by conssluserg-03.nifty.com with ESMTP id x6B3COvh022125
+ for <linux-arm-kernel@lists.infradead.org>; Thu, 11 Jul 2019 12:12:25 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-03.nifty.com x6B3COvh022125
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1562814745;
+ bh=bYunx1kcIHZGck01o8geflbRxYXWHGYyK1ZznzJtm3M=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=McsBnG9zkvnvz6bIAkfQ7sdBJ6uFXW+YzdiRoIXWzsCCUR5Kl3WaPni0Rd0eFO1mJ
+ ZC+0Aw+c12ltg0ms5mY2YZROAexakwSITPinhTOgU964B7EhEiWrVQVowJH5po39W7
+ Vk8pej9OfTfm4HkjKZxt0ZyaN7CJ2ujtUj1J4YoIhCV3LmJNRCkW6Rmh/oGzX09EBL
+ J/x4LsA4gX/L5vnalMoE4C+/ejcM6jxHkuUStBKP/pGCZ6J1ZSgkHlqiIk+g5PqQAL
+ u4wC5ev4Sof5T5P/Af76As4yegA8WNnfO343zzB3rd37VIOLA5Wtk24GaMmgNWSnPQ
+ tANC2510pB2bQ==
+X-Nifty-SrcIP: [209.85.222.49]
+Received: by mail-ua1-f49.google.com with SMTP id j2so1748151uaq.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 10 Jul 2019 20:12:25 -0700 (PDT)
+X-Gm-Message-State: APjAAAV0xwkPMES/J4dWCU2DXa+gD9Zy1FQtr02PMHxla4CHiqco2wrL
+ XiRXDlOQbvH5WDvUx2jqFEPIcmJkXNgJG+eZI+M=
+X-Google-Smtp-Source: APXvYqwiLJ4hWuVL8sVPnorgY996BnkP1X/FMoK33NSeF4ex50i5Xh7WDVQXRMt31mL2wW/6aQKJG7l29s2ddfgsDhQ=
+X-Received: by 2002:ab0:5ea6:: with SMTP id y38mr840230uag.40.1562814744318;
+ Wed, 10 Jul 2019 20:12:24 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190708035243.12170-5-s-anna@ti.com>
-Content-Language: en-US
-X-AntiAbuse: This header was added to track abuse,
- please include it with any abuse report
-X-AntiAbuse: Primary Hostname - vern.gendns.com
-X-AntiAbuse: Original Domain - lists.infradead.org
-X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
-X-AntiAbuse: Sender Address Domain - lechnology.com
-X-Get-Message-Sender-Via: vern.gendns.com: authenticated_id:
- davidmain+lechnology.com/only user confirmed/virtual account not confirmed
-X-Authenticated-Sender: vern.gendns.com: davidmain@lechnology.com
-X-Source: 
-X-Source-Args: 
-X-Source-Dir: 
+References: <20190711030713.4447-1-yamada.masahiro@socionext.com>
+In-Reply-To: <20190711030713.4447-1-yamada.masahiro@socionext.com>
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
+Date: Thu, 11 Jul 2019 12:11:48 +0900
+X-Gmail-Original-Message-ID: <CAK7LNAQZ3zyLV_6CfkhOFUDJm1mwUoq+xoOXUWCzu1HL7HK7bA@mail.gmail.com>
+Message-ID: <CAK7LNAQZ3zyLV_6CfkhOFUDJm1mwUoq+xoOXUWCzu1HL7HK7bA@mail.gmail.com>
+Subject: Re: [PATCH] ARM: fix O= building with CONFIG_FPE_FASTFPE
+To: arm-soc <arm@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_201039_311693_01644559 
-X-CRM114-Status: GOOD (  33.05  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190710_201251_547261_615FC24C 
+X-CRM114-Status: GOOD (  16.59  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [210.131.2.82 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -95,312 +82,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Grygorii Strashko <grygorii.strashko@ti.com>,
- Tony Lindgren <tony@atomide.com>, Sekhar Nori <nsekhar@ti.com>,
- linux-kernel@vger.kernel.org, "Andrew F. Davis" <afd@ti.com>,
- Lokesh Vutla <lokeshvutla@ti.com>, Murali Karicheri <m-karicheri2@ti.com>,
- linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Roger Quadros <rogerq@ti.com>
+Cc: Russell King <linux@armlinux.org.uk>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 7/7/19 10:52 PM, Suman Anna wrote:
-> The PRUSS INTC receives a number of system input interrupt source events
-> and supports individual control configuration and hardware prioritization.
-> These input events can be mapped to some output host interrupts through 2
-> levels of many-to-one mapping i.e. events to channel mapping and channels
-> to host interrupts.
-> 
-> This mapping information is provided through the PRU firmware that is
-> loaded onto a PRU core/s or through the device tree node of the PRU
+Arnd, Olof,
 
-What will the device tree bindings for this look like?
+Please ignore this.
 
-Looking back at Rob's comment on the initial series [1], I still think
-that increasing the #interrupt-cells sounds like a reasonable solution.
-
-[1]: https://patchwork.kernel.org/patch/10697705/#22375155
+I wanted to put this patch into Russell's patch tracker,
+but just sent it to a wrong ML.
 
 
+Masahiro Yamada
 
-> application. The mapping is configured by the PRU remoteproc driver, and
-> is setup before the PRU core is started and cleaned up after the PRU core
-> is stopped. This event mapping configuration logic is optimized to program
-> the Channel Map Registers (CMRx) and Host-Interrupt Map Registers (HMRx)
-> only when a new program is being loaded/started and simply disables the
-> same events and interrupt channels without zeroing out the corresponding
-> map registers when stopping a PRU.
-> 
-> Add two helper functions: pruss_intc_configure() & pruss_intc_unconfigure()
-> that the PRU remoteproc driver can use to configure the PRUSS INTC.
-> 
-> Signed-off-by: Suman Anna <s-anna@ti.com>
-> Signed-off-by: Andrew F. Davis <afd@ti.com>
-> Signed-off-by: Roger Quadros <rogerq@ti.com>
+On Thu, Jul 11, 2019 at 12:08 PM Masahiro Yamada
+<yamada.masahiro@socionext.com> wrote:
+>
+> To use Fastfpe, a user is supposed to enable CONFIG_FPE_FASTFPE
+> and put downstream source files into arch/arm/fastfpe/.
+>
+> It is not working for O= build because $(wildcard arch/arm/fastfpe)
+> checks if it exists in $(objtree), not in $(srctree).
+>
+> Add the $(srctree)/ prefix to fix it.
+>
+> While I was here, I slightly refactored the code.
+>
+> Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
 > ---
->   drivers/irqchip/irq-pruss-intc.c       | 258 ++++++++++++++++++++++++-
->   include/linux/irqchip/irq-pruss-intc.h |  33 ++++
->   2 files changed, 289 insertions(+), 2 deletions(-)
->   create mode 100644 include/linux/irqchip/irq-pruss-intc.h
-> 
-> diff --git a/drivers/irqchip/irq-pruss-intc.c b/drivers/irqchip/irq-pruss-intc.c
-> index 142d01b434e0..8118c2a2ac43 100644
-> --- a/drivers/irqchip/irq-pruss-intc.c
-> +++ b/drivers/irqchip/irq-pruss-intc.c
-> @@ -9,6 +9,7 @@
->   
->   #include <linux/irq.h>
->   #include <linux/irqchip/chained_irq.h>
-> +#include <linux/irqchip/irq-pruss-intc.h>
->   #include <linux/irqdomain.h>
->   #include <linux/module.h>
->   #include <linux/of_device.h>
-> @@ -24,8 +25,8 @@
->   /* minimum starting host interrupt number for MPU */
->   #define MIN_PRU_HOST_INT	2
->   
-> -/* maximum number of system events */
-> -#define MAX_PRU_SYS_EVENTS	64
-> +/* maximum number of host interrupts */
-> +#define MAX_PRU_HOST_INT	10
->   
->   /* PRU_ICSS_INTC registers */
->   #define PRU_INTC_REVID		0x0000
-> @@ -57,15 +58,29 @@
->   #define PRU_INTC_HINLR(x)	(0x1100 + (x) * 4)
->   #define PRU_INTC_HIER		0x1500
->   
-> +/* CMR register bit-field macros */
-> +#define CMR_EVT_MAP_MASK	0xf
-> +#define CMR_EVT_MAP_BITS	8
-> +#define CMR_EVT_PER_REG		4
-> +
-> +/* HMR register bit-field macros */
-> +#define HMR_CH_MAP_MASK		0xf
-> +#define HMR_CH_MAP_BITS		8
-> +#define HMR_CH_PER_REG		4
-> +
->   /* HIPIR register bit-fields */
->   #define INTC_HIPIR_NONE_HINT	0x80000000
->   
-> +/* use -1 to mark unassigned events and channels */
-> +#define FREE			-1
-
-It could be helpful to have this macro in the public header.
-
-> +
->   /**
->    * struct pruss_intc - PRUSS interrupt controller structure
->    * @irqs: kernel irq numbers corresponding to PRUSS host interrupts
->    * @base: base virtual address of INTC register space
->    * @irqchip: irq chip for this interrupt controller
->    * @domain: irq domain for this interrupt controller
-> + * @config_map: stored INTC configuration mapping data
->    * @lock: mutex to serialize access to INTC
->    * @host_mask: indicate which HOST IRQs are enabled
->    * @shared_intr: bit-map denoting if the MPU host interrupt is shared
-> @@ -76,6 +91,7 @@ struct pruss_intc {
->   	void __iomem *base;
->   	struct irq_chip *irqchip;
->   	struct irq_domain *domain;
-> +	struct pruss_intc_config config_map;
->   	struct mutex lock; /* PRUSS INTC lock */
->   	u32 host_mask;
->   	u16 shared_intr;
-> @@ -107,6 +123,238 @@ static int pruss_intc_check_write(struct pruss_intc *intc, unsigned int reg,
->   	return 0;
->   }
->   
-> +static struct pruss_intc *to_pruss_intc(struct device *pru_dev)
-> +{
-> +	struct device_node *np;
-> +	struct platform_device *pdev;
-> +	struct device *pruss_dev = pru_dev->parent;
-> +	struct pruss_intc *intc = ERR_PTR(-ENODEV);
-> +
-> +	np = of_get_child_by_name(pruss_dev->of_node, "interrupt-controller");
-> +	if (!np) {
-> +		dev_err(pruss_dev, "pruss does not have an interrupt-controller node\n");
-> +		return intc;
-> +	}
-> +
-> +	pdev = of_find_device_by_node(np);
-> +	if (!pdev) {
-> +		dev_err(pruss_dev, "no associated platform device\n");
-> +		goto out;
-> +	}
-> +
-> +	intc = platform_get_drvdata(pdev);
-> +	if (!intc) {
-> +		dev_err(pruss_dev, "pruss intc device probe failed?\n");
-> +		intc = ERR_PTR(-EINVAL);
-> +	}
-> +
-> +out:
-> +	of_node_put(np);
-> +	return intc;
-> +}
-> +
-> +/**
-> + * pruss_intc_configure() - configure the PRUSS INTC
-> + * @dev: pru device pointer
-> + * @intc_config: PRU core-specific INTC configuration
-> + *
-> + * Configures the PRUSS INTC with the provided configuration from
-> + * a PRU core. Any existing event to channel mappings or channel to
-> + * host interrupt mappings are checked to make sure there are no
-> + * conflicting configuration between both the PRU cores. The function
-> + * is intended to be used only by the PRU remoteproc driver.
-> + *
-> + * Returns 0 on success, or a suitable error code otherwise
-> + */
-> +int pruss_intc_configure(struct device *dev,
-
-It seems like this would be easier to use if it took an IRQ number
-or struct irq_data * as a parameter instead of struct device *. My
-line of thinking is that callers of this function will already be
-calling some variant of request_irq() so they will already have
-this info. It would cut out the pointer acrobatics in to_pruss_intc.
+>
+> KernelVersion: 5.2
+>
+>  arch/arm/Makefile | 9 ++-------
+>  1 file changed, 2 insertions(+), 7 deletions(-)
+>
+> diff --git a/arch/arm/Makefile b/arch/arm/Makefile
+> index f863c6935d0e..792f7fa16a24 100644
+> --- a/arch/arm/Makefile
+> +++ b/arch/arm/Makefile
+> @@ -271,14 +271,9 @@ endif
+>
+>  export TEXT_OFFSET GZFLAGS MMUEXT
+>
+> -# Do we have FASTFPE?
+> -FASTFPE                :=arch/arm/fastfpe
+> -ifeq ($(FASTFPE),$(wildcard $(FASTFPE)))
+> -FASTFPE_OBJ    :=$(FASTFPE)/
+> -endif
+> -
+>  core-$(CONFIG_FPE_NWFPE)       += arch/arm/nwfpe/
+> -core-$(CONFIG_FPE_FASTFPE)     += $(FASTFPE_OBJ)
+> +# Put arch/arm/fastfpe/ to use this.
+> +core-$(CONFIG_FPE_FASTFPE)     += $(patsubst $(srctree)/%,%,$(wildcard $(srctree)/arch/arm/fastfpe/))
+>  core-$(CONFIG_VFP)             += arch/arm/vfp/
+>  core-$(CONFIG_XEN)             += arch/arm/xen/
+>  core-$(CONFIG_KVM_ARM_HOST)    += arch/arm/kvm/
+> --
+> 2.17.1
+>
 
 
-> +			 struct pruss_intc_config *intc_config)
-> +{
-> +	struct pruss_intc *intc;
-> +	int i, idx, ret;
-> +	s8 ch, host;
-> +	u64 sysevt_mask = 0;
-> +	u32 ch_mask = 0;
-> +	u32 host_mask = 0;
-> +	u32 val;
-> +
-> +	intc = to_pruss_intc(dev);
-> +	if (IS_ERR(intc))
-> +		return PTR_ERR(intc);
-> +
-> +	mutex_lock(&intc->lock);
-> +
-> +	/*
-> +	 * configure channel map registers - each register holds map info
-> +	 * for 4 events, with each event occupying the lower nibble in
-> +	 * a register byte address in little-endian fashion
-> +	 */
-> +	for (i = 0; i < ARRAY_SIZE(intc_config->sysev_to_ch); i++) {
-> +		ch = intc_config->sysev_to_ch[i];
-> +		if (ch < 0)
-> +			continue;
-> +
-> +		/* check if sysevent already assigned */
-> +		if (intc->config_map.sysev_to_ch[i] != FREE) {
-> +			dev_err(dev, "event %d (req. channel %d) already assigned to channel %d\n",
-> +				i, ch, intc->config_map.sysev_to_ch[i]);
-> +			ret = -EEXIST;
-> +			goto unlock;
-
-If we fail here, shouldn't we unwind any previous mappings made?
-Otherwise, if we try to map the same event again, it will show as
-in use, even though it is not in use.
-
-> +		}
-> +
-> +		intc->config_map.sysev_to_ch[i] = ch;
-> +
-> +		idx = i / CMR_EVT_PER_REG;
-> +		val = pruss_intc_read_reg(intc, PRU_INTC_CMR(idx));
-> +		val &= ~(CMR_EVT_MAP_MASK <<
-> +			 ((i % CMR_EVT_PER_REG) * CMR_EVT_MAP_BITS));
-> +		val |= ch << ((i % CMR_EVT_PER_REG) * CMR_EVT_MAP_BITS);
-> +		pruss_intc_write_reg(intc, PRU_INTC_CMR(idx), val);
-> +		sysevt_mask |= BIT_ULL(i);
-> +		ch_mask |= BIT(ch);
-> +
-> +		dev_dbg(dev, "SYSEV%d -> CH%d (CMR%d 0x%08x)\n", i, ch, idx,
-> +			pruss_intc_read_reg(intc, PRU_INTC_CMR(idx)));
-> +	}
-> +
-> +	/*
-> +	 * set host map registers - each register holds map info for
-> +	 * 4 channels, with each channel occupying the lower nibble in
-> +	 * a register byte address in little-endian fashion
-> +	 */
-> +	for (i = 0; i < ARRAY_SIZE(intc_config->ch_to_host); i++) {
-> +		host = intc_config->ch_to_host[i];
-> +		if (host < 0)
-> +			continue;
-> +
-> +		/* check if channel already assigned */
-> +		if (intc->config_map.ch_to_host[i] != FREE) {
-> +			dev_err(dev, "channel %d (req. intr_no %d) already assigned to intr_no %d\n",
-> +				i, host, intc->config_map.ch_to_host[i]);
-> +			ret = -EEXIST;
-> +			goto unlock;
-
-Same comment about unwinding here and below.
-
-> +		}
-> +
-> +		/* check if host intr is already in use by other PRU */
-
-It seems like there would be use cases where someone might want to map
-multiple PRU system events, and therefore multiple channels, to a single
-host interrupt.
-
-> +		if (intc->host_mask & (1U << host)) {
-> +			dev_err(dev, "%s: host intr %d already in use\n",
-> +				__func__, host);
-> +			ret = -EEXIST;
-> +			goto unlock;
-> +		}
-> +
-
---snip--
-
-> diff --git a/include/linux/irqchip/irq-pruss-intc.h b/include/linux/irqchip/irq-pruss-intc.h
-> new file mode 100644
-> index 000000000000..f1f1bb150100
-> --- /dev/null
-> +++ b/include/linux/irqchip/irq-pruss-intc.h
-> @@ -0,0 +1,33 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +/*
-> + * PRU-ICSS sub-system private interfaces
-> + *
-> + * Copyright (C) 2019 Texas Instruments Incorporated - http://www.ti.com/
-> + *	Suman Anna <s-anna@ti.com>
-> + */
-> +
-> +#ifndef __LINUX_IRQ_PRUSS_INTC_H
-> +#define __LINUX_IRQ_PRUSS_INTC_H
-> +
-> +/* maximum number of system events */
-> +#define MAX_PRU_SYS_EVENTS	64
-> +
-> +/* maximum number of interrupt channels */
-> +#define MAX_PRU_CHANNELS	10
-> +
-> +/**
-> + * struct pruss_intc_config - INTC configuration info
-> + * @sysev_to_ch: system events to channel mapping information
-> + * @ch_to_host: interrupt channel to host interrupt information
-> + */
-> +struct pruss_intc_config {
-> +	s8 sysev_to_ch[MAX_PRU_SYS_EVENTS];
-> +	s8 ch_to_host[MAX_PRU_CHANNELS];
-> +};
-> +
-> +int pruss_intc_configure(struct device *dev,
-> +			 struct pruss_intc_config *intc_config);
-> +int pruss_intc_unconfigure(struct device *dev,
-> +			   struct pruss_intc_config *intc_config);
-> +
-> +#endif	/* __LINUX_IRQ_PRUSS_INTC_H */
-> 
-
-FYI, on AM18xx, events 0 to 31 can be muxed via CFGCHIP3[3].PRUSSEVTSEL
-so an additional bit of information will be needed in this struct for
-the mux selection. I don't see a probably with adding that later though.
-
+-- 
+Best Regards
+Masahiro Yamada
 
 _______________________________________________
 linux-arm-kernel mailing list
