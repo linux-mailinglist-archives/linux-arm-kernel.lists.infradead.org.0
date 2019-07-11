@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C9E8E65060
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 05:08:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A15865062
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 05:08:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=3nNwdPsYRYEp/U9mptWpXtyNX+J+HgLCizx3Uanq92Q=; b=SKe
-	/USgauHgayT8iA3RioTGG2n6We2oy+braIDFgXeiycYCieC6crEZP0p/WOyECS1/MD5oua8rbnOUO
-	V9o4ArNVr8WBbsLJiMR49pqI/3jHySpoC/qb7SG7IqaQL+LZuxgii2BbrKihp14C+u9SJMT60k9Rt
-	b2K27P+5sj8N/cmycNIKgz3+bsP6NJ3olooaWbzog/h35c22LsZKqiypnwFJVcE803jqG5DZTW3mC
-	F5XPQagr9/s5LAb/Oedtv8HhIm0RaIwBuAIMmYuxn7UVnRNUvrP8Xs+JdK847W3uuxrIFkSbhC1Lp
-	pf+fpqUxXDm5MAB5vFfxN2iIl0vuH2g==;
+	References:List-Owner; bh=3nNwdPsYRYEp/U9mptWpXtyNX+J+HgLCizx3Uanq92Q=; b=igA
+	xwsx8Ztbrh61B6fZB5hWN0/dQbRm+brx2Xu68PJfXV3MXvST8CrsUjc+6N9Xv1WArknNztvXNZRTj
+	1e6dIAvYvdxY1OUXZMOBRDIICeAHpfWLaq0Jk3ms+g7/DaSUzRwYSQXKbRh3Dx3MFQYoe9hX9G0Ry
+	Y5bbmqQ0ZyGvOXwxf4kj+C4E0xn/sa9OXxggQjLDiFpmY8KOmidBK1C0XpLwkaB9MuVLr9l7LQl5C
+	+7yIUoKgUGb0azvd5Xzfvdv5U6DUYLO9TAd5CzSlgVBzyluFVdh1y/1eScLpH1UkOUYwFl8Tlsr3G
+	Xgtdi6xJUM0OLtOmLazkz9KSQ7ZrirA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlPRD-0008AT-U6; Thu, 11 Jul 2019 03:08:04 +0000
-Received: from conuserg-09.nifty.com ([210.131.2.76])
+	id 1hlPRn-0008PR-0H; Thu, 11 Jul 2019 03:08:39 +0000
+Received: from conuserg-11.nifty.com ([210.131.2.78])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlPR0-00089e-Lj
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 03:07:52 +0000
+ id 1hlPRW-0008Oo-5u
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 03:08:23 +0000
 Received: from localhost.localdomain (p14092-ipngnfx01kyoto.kyoto.ocn.ne.jp
  [153.142.97.92]) (authenticated)
- by conuserg-09.nifty.com with ESMTP id x6B37G9W027198;
- Thu, 11 Jul 2019 12:07:16 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-09.nifty.com x6B37G9W027198
+ by conuserg-11.nifty.com with ESMTP id x6B37xiF002252;
+ Thu, 11 Jul 2019 12:07:59 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-11.nifty.com x6B37xiF002252
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1562814437;
+ s=dec2015msa; t=1562814480;
  bh=wDYz/yHhx6nItjKqfKQXfYFVLdaXf3nRB8CNeDF+UBU=;
  h=From:To:Cc:Subject:Date:From;
- b=eD7rAs8EKGC5P51XykS2mWVAA94CATwbNmy2EGX9wxCsfnZ2N+nX82uNV1oXLNDRJ
- hmE5opz4u7WIYBodpMeAswa/Tbt5fDbu1a1ohzDOay944iuA6+8yap8X90hT59kXZc
- Fh2HLRrFOOjtR/N5WRWq/i/YKNJ2av8OqB1bA/riW2PhZjb+VbZdwhDbQgCnIFHJmQ
- va6W9Uoebfkr/qqXPb9dDqk9/PPUupQhM035ktw9Bb1RJxhO8zSDYd4+/XBArLmrar
- 9zlpsgXZKC3NoMiOz3oKNCT/pQEX37SA1g+4IPZdJQcF6ykrijwfaDw415a1DZD4AA
- yzRDl1ctAij2A==
+ b=V9PkWY5tLYehK0nfbUXdhff3w2l+B7zk5PrPFh+Bh61Od5q54W9mfsVEyvL+pOs5J
+ Qw71DbB7253tKzAcTJNAXzc+nVFyVJBaKopJ8kEnL5cjtLsbcAgc+SWblGsia9paLm
+ MztR4nDGrdQMERC39gVxPJOxC2h5GVdE0qWLLbeS1lCAraFH/Siydi+fKyM1Qfk+Zr
+ OWnXUaVSFWKbQxtSl/MTu9NnIixkYqLEkxq61cqjQsPKChxSCjpiOKBTDaoNcvPtL0
+ hBCN78ryQOPYwdw4q+qefZQOznnVVmc7SPSVj/0MgeMszvzV3mO3hSFZUbATP0mdp0
+ CEyADH22YtY2g==
 X-Nifty-SrcIP: [153.142.97.92]
 From: Masahiro Yamada <yamada.masahiro@socionext.com>
-To: arm@kernel.org
+To: patches@arm.linux.org.uk
 Subject: [PATCH] ARM: fix O= building with CONFIG_FPE_FASTFPE
-Date: Thu, 11 Jul 2019 12:07:12 +0900
-Message-Id: <20190711030713.4447-1-yamada.masahiro@socionext.com>
+Date: Thu, 11 Jul 2019 12:07:56 +0900
+Message-Id: <20190711030756.4612-1-yamada.masahiro@socionext.com>
 X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_200751_052311_A79FBDE5 
-X-CRM114-Status: UNSURE (   8.22  )
+X-CRM114-CacheID: sfid-20190710_200822_462568_2784403F 
+X-CRM114-Status: UNSURE (   8.01  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -55,7 +55,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.76 listed in list.dnswl.org]
+ no trust [210.131.2.78 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [210.131.2.78 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
