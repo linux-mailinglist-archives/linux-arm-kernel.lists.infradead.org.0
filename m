@@ -2,88 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 35E8165E30
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 19:07:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D32DD65E4B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 19:14:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tL2rsCRpaAsQnyIyhUsia9iEBpMftBPtSDwfocJTeqE=; b=jm5f+UDKTtIAHO
-	ElFkYR7WTZ3/3e5NCBRyP4ZHXbDzZqPFS1K5r9M8eslyNunUlHrFpmfxEyFGUjlfvQG2kfoMmNJ4M
-	3KE6BD1QJ0jr9v1kcbeY3dfy2J8+23Wfc2UEWjNALEFsc2zX+Jrxzv4rvV39G3TnHASSiH5IRIdMG
-	BY34Mf7V8qP/qJuODRB9PtwFlRyT3HLy2HDJEnENT2rG7uRKVH89RxqKENSaCS5moDWERmvSnGont
-	Z4YaQPxcii9ekWZ1459nk3HyjVk5p2WleWijeGmsOSabQEION1GvRkc6PssfrqRWTLw4aRef1pgcJ
-	Q+UwaB1WVzHzXBmvNurw==;
+	List-Owner; bh=7Zw/BKKCGHD8jGkf2seegKMA3O+RuAkMFfLHeCYwi6g=; b=gcb1EecDq8Y7dB
+	5a3NaNZLLVQe8pHScFlWbNaEBD5WAMUWTX/S1pd3imgoLaJbUa7nI7Md5z93uhM4GLk155Bsjb6u3
+	UMgLkrOwWwm5JhlLL355T1jQeCrowdiPCyb10IItH4hmNCDKRyVHxTPpOhfZTWCc5e17iQmdi8dUA
+	vBxkMRtQL+fWxA/alw2zf7yGzLlOzwCBkQnltiMk6pAr+h2oTF3VdzsYiyIm36buZhHVXjth21u/H
+	hiWYlSW+Tr9kd0rO6DxHL/Y2Wvc2s8MBZUUhZuDn3TT3SmPYaIUDJ/wc/0VJHxwsEiFHkMCk19GVo
+	oXzENiWusmKJWfsNhfog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlcXX-00075t-Ox; Thu, 11 Jul 2019 17:07:27 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1hlceQ-0000zf-RV; Thu, 11 Jul 2019 17:14:34 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlcXJ-00075G-6R
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 17:07:14 +0000
-Received: by mail-lf1-x144.google.com with SMTP id r15so4547081lfm.11
+ id 1hlceF-0000zJ-6X
+ for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 17:14:24 +0000
+Received: by mail-pl1-x644.google.com with SMTP id i2so3371389plt.1
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 11 Jul 2019 10:07:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ Thu, 11 Jul 2019 10:14:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=kfBRiimj25YsoO7nzYueeiO+Hpjn+NuB2lsdFOn8ASY=;
- b=MnIXCj5RYWPm7eMWoapgUjGxVvFXMmywFQ2kQMOnRLX3V+487ibLxbLv78ywuQq+ZQ
- Bb0TFNwAZbH9dHpkdU/nMzrzRm7xDa9RvnJ0I8bALa3JJ5OTqxluOmph+56gJift2hpb
- 9gKUCFcOglW5bTH4n5VpxnMh2uET1mnARQRcM=
+ :cc; bh=ucw9rSRviGvxmtHa1eJcbGqoOfZIZgp2Nd0u5B3lWZA=;
+ b=Da22eipDrFV3sVjp5lhMK1Ag4ov7GIbghnsCPMLPbWr4HTpMO+0Xb4J2rn8DRx6qHT
+ raOPgwKUlI6vG5+eZKye7qCGQQETow7AmhpRoh5cHUdPCXlRT2cKL12Jq3MiFeBw679W
+ wk1YpqERzczakZBDQQ8pko2DW4C1f70wJ9S/ns+5k4w9umeU1hYehewCAr5tVqqhs2DW
+ GqdMBotLNyKw4ICag2o2Axnjtx62CvFcXWSjSNMUtdvoLBIYxzy7ujuT7vx9Sj96r9wA
+ vjLfAdfQxMO9pCXH+JWhO4dfi00ckikjgNwJov9+WJZ2h2rnzwxooDe//g0ahmSlempo
+ WnFQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=kfBRiimj25YsoO7nzYueeiO+Hpjn+NuB2lsdFOn8ASY=;
- b=K05Tbmm92NgMf98T2vlCoSbkedrsqE9K7sc4/81GnCYtx4kj6l7csdvjRBGjckzkOR
- KcbeRXnp943gar6SFr09lZEj9TXNZ4o+vB2Y9aQyVhrYzTFftXkB4Kr3imtUmCbxn0NH
- OtHo8jLYi2njlJxoOYNz++V75eO9KyQ15L2V9Ly1+ZpD6fIZqoyjXxgnasvT/N9Kw20B
- rr9r3YCkx/OcdA8AdwoRnh/wFMmMU+Bvc0ZAjgyHL+ss0OiwmClTPngEVxTj1wZLosvo
- 0v/rmB201Mg9HNAVF4x51bKezyZ8SxBpWp6Xwmq6DoPMrjZhyCop33uhNT6/L4mGy+u+
- 9NtA==
-X-Gm-Message-State: APjAAAWR9KcdeAVdt5rTHx7uiC0Bd+0Et9BaZhYJ06bdvX5aKo6XgzPz
- NbjvubbSzmwgC+rO6AY5YDdYC8NvnYw=
-X-Google-Smtp-Source: APXvYqy7qB0OyQ+ylycaOtilbBSoQs4o04AKnx4npfsNY3AlXrHCegSqUzwzJLIaKnk5BTZevXxmNA==
-X-Received: by 2002:a05:6512:21c:: with SMTP id
- a28mr2496598lfo.14.1562864830770; 
- Thu, 11 Jul 2019 10:07:10 -0700 (PDT)
-Received: from mail-lj1-f179.google.com (mail-lj1-f179.google.com.
- [209.85.208.179])
- by smtp.gmail.com with ESMTPSA id m4sm1069229ljc.56.2019.07.11.10.07.09
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Thu, 11 Jul 2019 10:07:09 -0700 (PDT)
-Received: by mail-lj1-f179.google.com with SMTP id i21so6539626ljj.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 11 Jul 2019 10:07:09 -0700 (PDT)
-X-Received: by 2002:a2e:970d:: with SMTP id r13mr3220679lji.126.1562864828672; 
- Thu, 11 Jul 2019 10:07:08 -0700 (PDT)
+ bh=ucw9rSRviGvxmtHa1eJcbGqoOfZIZgp2Nd0u5B3lWZA=;
+ b=THYHH4lxORF7vdfkhFA9WyakxHppmZblAO/jcSTeZhSyTsSaxIMAjmjmeLwlkBVwFW
+ IvFKSV7jB/+pL4w8gzNe9YnJDpYgEH2RxLK7FElWpGtBZ/R8gzmkqesWMxd4ARD+3dP1
+ npT1tlKRfvbskOrp/YdSExLzGohpcup89U0QQfh13sBgoA8/i+LvVElBtxVI/26wxh1y
+ cUDDNxZL1xqw/ebcR5ekGuDGcgu/sMgg/TVZC3nJH0wSq4xLzeW6Ckh9Dd20p6z6VeIM
+ oz8+wDRaEYgOD/lvijSUM25l8ocCC4Ytoa++V+0LYGQ7NfcFne3Gj/fFpWCNnChNAlar
+ 61jg==
+X-Gm-Message-State: APjAAAU2LTIWgT/ROxFujDFCQGsrd8qTcWu3UeXQsErE6AG91yFLHdYD
+ WGAvkmVweZZH//bK82mmo8Ug7jGk6/1+tANpnJ5TLQ==
+X-Google-Smtp-Source: APXvYqyCiqSqHnYjKAeXDLQuC0c8sZpZJD60JXgP1quXPWouPH4pF7fZdEdLqQyRgFNNeHBCL0hiMDCMtYcdYDM2b4s=
+X-Received: by 2002:a17:902:9f93:: with SMTP id
+ g19mr5777071plq.223.1562865261987; 
+ Thu, 11 Jul 2019 10:14:21 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190618091724.28232-1-georgi.djakov@linaro.org>
- <20190618091724.28232-3-georgi.djakov@linaro.org>
-In-Reply-To: <20190618091724.28232-3-georgi.djakov@linaro.org>
-From: Evan Green <evgreen@chromium.org>
-Date: Thu, 11 Jul 2019 10:06:32 -0700
-X-Gmail-Original-Message-ID: <CAE=gft7=ZbK3ARtWyv8n_hWJ4kuXRs0UA0QsE420pqL8R1quUQ@mail.gmail.com>
-Message-ID: <CAE=gft7=ZbK3ARtWyv8n_hWJ4kuXRs0UA0QsE420pqL8R1quUQ@mail.gmail.com>
-Subject: Re: [PATCH v2 2/2] interconnect: qcom: Add tagging and wake/sleep
- support for sdm845
-To: Georgi Djakov <georgi.djakov@linaro.org>
+References: <20190710130206.1670830-1-arnd@arndb.de>
+ <33511b0e-6d7b-c156-c415-7a609b049567@arm.com>
+ <CAK8P3a1EBaWdbAEzirFDSgHVJMtWjuNt2HGG8z+vpXeNHwETFQ@mail.gmail.com>
+In-Reply-To: <CAK8P3a1EBaWdbAEzirFDSgHVJMtWjuNt2HGG8z+vpXeNHwETFQ@mail.gmail.com>
+From: Nick Desaulniers <ndesaulniers@google.com>
+Date: Thu, 11 Jul 2019 10:14:10 -0700
+Message-ID: <CAKwvOdkubvsRCnJKCaesB=PF=DgXfsBzwzR8kyE9NzWPU8Gehg@mail.gmail.com>
+Subject: Re: [PATCH] vsyscall: use __iter_div_u64_rem()
+To: Arnd Bergmann <arnd@arndb.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_100713_237099_AD1899D6 
-X-CRM114-Status: GOOD (  29.16  )
-X-Spam-Score: 1.1 (+)
+X-CRM114-CacheID: sfid-20190711_101423_267790_1BE7A11D 
+X-CRM114-Status: UNSURE (   8.28  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -14.4 (--------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.1 points)
+ Content analysis details:   (-14.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -92,7 +88,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,277 +101,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pm@vger.kernel.org, Sean Sweeney <seansw@qti.qualcomm.com>,
- LKML <linux-kernel@vger.kernel.org>, David Dai <daidavid1@codeaurora.org>,
- Doug Anderson <dianders@chromium.org>, amit.kucheria@linaro.org,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: linux-arch <linux-arch@vger.kernel.org>, Shuah Khan <shuah@kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ Dmitry Safonov <0x7f454c46@gmail.com>, Mark Salyzyn <salyzyn@android.com>,
+ Huw Davies <huw@codeweavers.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ linux-mips@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
+ Russell King <linux@armlinux.org.uk>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Paul Burton <paul.burton@mips.com>, Andy Lutomirski <luto@kernel.org>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Peter Collingbourne <pcc@google.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Georgi and David,
+On Thu, Jul 11, 2019 at 5:28 AM Arnd Bergmann <arnd@arndb.de> wrote:
+> clang does not like an inline assembly with a "=q" contraint for
+> a 64-bit output:
 
-On Tue, Jun 18, 2019 at 2:17 AM Georgi Djakov <georgi.djakov@linaro.org> wrote:
->
-> From: David Dai <daidavid1@codeaurora.org>
->
-> Add support for wake and sleep commands by using a tag to indicate
-> whether or not the aggregate and set requests fall into execution
-> state specific bucket.
->
-> Signed-off-by: David Dai <daidavid1@codeaurora.org>
-> Signed-off-by: Georgi Djakov <georgi.djakov@linaro.org>
-> ---
->  drivers/interconnect/qcom/sdm845.c | 129 ++++++++++++++++++++++-------
->  1 file changed, 98 insertions(+), 31 deletions(-)
->
-> diff --git a/drivers/interconnect/qcom/sdm845.c b/drivers/interconnect/qcom/sdm845.c
-> index fb526004c82e..c100aab39415 100644
-> --- a/drivers/interconnect/qcom/sdm845.c
-> +++ b/drivers/interconnect/qcom/sdm845.c
-> @@ -66,6 +66,17 @@ struct bcm_db {
->  #define SDM845_MAX_BCM_PER_NODE        2
->  #define SDM845_MAX_VCD         10
->
-> +#define QCOM_ICC_BUCKET_AMC            0
+Seems like starting in GCC 7, GCC may not like it either:
+https://godbolt.org/z/UyBUfh
+it simply warns then proceeds with code gen.  Another difference may
+come from when GCC vs Clang perform dead code elimination (DCE) vs
+semantic analysis.
 
-What is AMC again? Is it the "right now" bucket? Maybe a comment on
-the meaning of this bucket would be helpful.
-
-> +#define QCOM_ICC_BUCKET_WAKE           1
-> +#define QCOM_ICC_BUCKET_SLEEP          2
-> +#define QCOM_ICC_NUM_BUCKETS           3
-> +#define QCOM_ICC_TAG_AMC               BIT(QCOM_ICC_BUCKET_AMC)
-> +#define QCOM_ICC_TAG_WAKE              BIT(QCOM_ICC_BUCKET_WAKE)
-> +#define QCOM_ICC_TAG_SLEEP             BIT(QCOM_ICC_BUCKET_SLEEP)
-> +#define QCOM_ICC_TAG_ACTIVE_ONLY       (QCOM_ICC_TAG_AMC | QCOM_ICC_TAG_WAKE)
-> +#define QCOM_ICC_TAG_ALWAYS            (QCOM_ICC_TAG_AMC | QCOM_ICC_TAG_WAKE |\
-> +                                        QCOM_ICC_TAG_SLEEP)
-> +
->  /**
->   * struct qcom_icc_node - Qualcomm specific interconnect nodes
->   * @name: the node name used in debugfs
-> @@ -75,7 +86,9 @@ struct bcm_db {
->   * @channels: num of channels at this node
->   * @buswidth: width of the interconnect between a node and the bus
->   * @sum_avg: current sum aggregate value of all avg bw requests
-> + * @sum_avg_cached: previous sum aggregate value of all avg bw requests
->   * @max_peak: current max aggregate value of all peak bw requests
-> + * @max_peak_cached: previous max aggregate value of all peak bw requests
->   * @bcms: list of bcms associated with this logical node
->   * @num_bcms: num of @bcms
->   */
-> @@ -86,8 +99,10 @@ struct qcom_icc_node {
->         u16 num_links;
->         u16 channels;
->         u16 buswidth;
-> -       u64 sum_avg;
-> -       u64 max_peak;
-> +       u64 sum_avg[QCOM_ICC_NUM_BUCKETS];
-> +       u64 sum_avg_cached[QCOM_ICC_NUM_BUCKETS];
-> +       u64 max_peak[QCOM_ICC_NUM_BUCKETS];
-> +       u64 max_peak_cached[QCOM_ICC_NUM_BUCKETS];
->         struct qcom_icc_bcm *bcms[SDM845_MAX_BCM_PER_NODE];
->         size_t num_bcms;
->  };
-> @@ -112,8 +127,8 @@ struct qcom_icc_bcm {
->         const char *name;
->         u32 type;
->         u32 addr;
-> -       u64 vote_x;
-> -       u64 vote_y;
-> +       u64 vote_x[QCOM_ICC_NUM_BUCKETS];
-> +       u64 vote_y[QCOM_ICC_NUM_BUCKETS];
->         bool dirty;
->         bool keepalive;
->         struct bcm_db aux_data;
-> @@ -555,7 +570,7 @@ inline void tcs_cmd_gen(struct tcs_cmd *cmd, u64 vote_x, u64 vote_y,
->                 cmd->wait = true;
->  }
->
-> -static void tcs_list_gen(struct list_head *bcm_list,
-> +static void tcs_list_gen(struct list_head *bcm_list, int bucket,
->                          struct tcs_cmd tcs_list[SDM845_MAX_VCD],
->                          int n[SDM845_MAX_VCD])
->  {
-> @@ -573,8 +588,8 @@ static void tcs_list_gen(struct list_head *bcm_list,
->                         commit = true;
->                         cur_vcd_size = 0;
->                 }
-> -               tcs_cmd_gen(&tcs_list[idx], bcm->vote_x, bcm->vote_y,
-> -                           bcm->addr, commit);
-> +               tcs_cmd_gen(&tcs_list[idx], bcm->vote_x[bucket],
-> +                           bcm->vote_y[bucket], bcm->addr, commit);
->                 idx++;
->                 n[batch]++;
->                 /*
-> @@ -595,32 +610,39 @@ static void tcs_list_gen(struct list_head *bcm_list,
->
->  static void bcm_aggregate(struct qcom_icc_bcm *bcm)
->  {
-> -       size_t i;
-> -       u64 agg_avg = 0;
-> -       u64 agg_peak = 0;
-> +       size_t i, bucket;
-> +       u64 agg_avg[QCOM_ICC_NUM_BUCKETS] = {0};
-> +       u64 agg_peak[QCOM_ICC_NUM_BUCKETS] = {0};
->         u64 temp;
->
-> -       for (i = 0; i < bcm->num_nodes; i++) {
-> -               temp = bcm->nodes[i]->sum_avg * bcm->aux_data.width;
-> -               do_div(temp, bcm->nodes[i]->buswidth * bcm->nodes[i]->channels);
-> -               agg_avg = max(agg_avg, temp);
-> +       for (bucket = 0; bucket < QCOM_ICC_NUM_BUCKETS; bucket++) {
-> +               for (i = 0; i < bcm->num_nodes; i++) {
-> +                       temp = bcm->nodes[i]->sum_avg_cached[bucket] * bcm->aux_data.width;
-> +                       do_div(temp, bcm->nodes[i]->buswidth * bcm->nodes[i]->channels);
-> +                       agg_avg[bucket] = max(agg_avg[bucket], temp);
->
-> -               temp = bcm->nodes[i]->max_peak * bcm->aux_data.width;
-> -               do_div(temp, bcm->nodes[i]->buswidth);
-
-Why is it that this one doesn't have the multiply by
-bcm->nodes[i]->channels again? I can't recall if there was a reason.
-If it's correct maybe it deserves a comment.
-
-> -               agg_peak = max(agg_peak, temp);
-> -       }
-> +                       temp = bcm->nodes[i]->max_peak_cached[bucket] * bcm->aux_data.width;
-> +                       do_div(temp, bcm->nodes[i]->buswidth);
-> +                       agg_peak[bucket] = max(agg_peak[bucket], temp);
->
-> -       temp = agg_avg * 1000ULL;
-> -       do_div(temp, bcm->aux_data.unit);
-> -       bcm->vote_x = temp;
-> +                       bcm->nodes[i]->sum_avg[bucket] = 0;
-> +                       bcm->nodes[i]->max_peak[bucket] = 0;
-
-I don't understand the sum_avg vs sum_avg_cached. Here's what I understand:
-1. qcom_icc_aggregate() does the math from the incoming values on
-sum_avg, and then clobbers sum_avg_cached with those values.
-2. bcm_aggregate() uses sum_avg_cached in its calculations, then clears sum_avg.
-
-But I don't get why that's needed. Why not just have sum_avg? Wouldn't
-it work the same? Ok, it wouldn't if you ended up calling
-bcm_aggregate() multiple times on the same bcm. But you have a dirty
-flag that prevents this from happening. So I think it's safe to remove
-the cached arrays, and just clear out the sum_avg when you aggregate.
-
-> +               }
->
-> -       temp = agg_peak * 1000ULL;
-> -       do_div(temp, bcm->aux_data.unit);
-> -       bcm->vote_y = temp;
-> +               temp = agg_avg[bucket] * 1000ULL;
-> +               do_div(temp, bcm->aux_data.unit);
-> +               bcm->vote_x[bucket] = temp;
->
-> -       if (bcm->keepalive && bcm->vote_x == 0 && bcm->vote_y == 0) {
-> -               bcm->vote_x = 1;
-> -               bcm->vote_y = 1;
-> +               temp = agg_peak[bucket] * 1000ULL;
-> +               do_div(temp, bcm->aux_data.unit);
-> +               bcm->vote_y[bucket] = temp;
-> +       }
-> +
-> +       if (bcm->keepalive && bcm->vote_x[0] == 0 && bcm->vote_y[0] == 0) {
-> +               bcm->vote_x[QCOM_ICC_BUCKET_AMC] = 1;
-> +               bcm->vote_x[QCOM_ICC_BUCKET_WAKE] = 1;
-> +               bcm->vote_y[QCOM_ICC_BUCKET_AMC] = 1;
-> +               bcm->vote_y[QCOM_ICC_BUCKET_WAKE] = 1;
->         }
->
->         bcm->dirty = false;
-> @@ -631,15 +653,25 @@ static int qcom_icc_aggregate(struct icc_node *node, u32 tag, u32 avg_bw,
->  {
->         size_t i;
->         struct qcom_icc_node *qn;
-> +       unsigned long tag_word = (unsigned long)tag;
->
->         qn = node->data;
->
-> +       if (!tag)
-> +               tag_word = QCOM_ICC_TAG_ALWAYS;
-> +
-> +       for (i = 0; i < QCOM_ICC_NUM_BUCKETS; i++) {
-> +               if (test_bit(i, &tag_word)) {
-
-I guess all this extra business with tag_word and casting is so that
-you can use test_bit, which is presumably a tiny bit faster? Does this
-actually make a measurable difference? Maybe in the name of simplicity
-we just do if (tag & BIT(i)), and then optimize if we find that
-conditional to be a hotspot?
-
-> +                       qn->sum_avg[i] += avg_bw;
-> +                       qn->max_peak[i] = max_t(u32, qn->max_peak[i], peak_bw);
-> +                       qn->sum_avg_cached[i] = qn->sum_avg[i];
-> +                       qn->max_peak_cached[i] = qn->max_peak[i];
-> +               }
-> +       }
-> +
->         *agg_avg += avg_bw;
->         *agg_peak = max_t(u32, *agg_peak, peak_bw);
->
-> -       qn->sum_avg = *agg_avg;
-> -       qn->max_peak = *agg_peak;
-> -
->         for (i = 0; i < qn->num_bcms; i++)
->                 qn->bcms[i]->dirty = true;
->
-> @@ -675,7 +707,7 @@ static int qcom_icc_set(struct icc_node *src, struct icc_node *dst)
->          * Construct the command list based on a pre ordered list of BCMs
->          * based on VCD.
->          */
-> -       tcs_list_gen(&commit_list, cmds, commit_idx);
-> +       tcs_list_gen(&commit_list, QCOM_ICC_BUCKET_AMC, cmds, commit_idx);
->
->         if (!commit_idx[0])
->                 return ret;
-> @@ -693,6 +725,41 @@ static int qcom_icc_set(struct icc_node *src, struct icc_node *dst)
->                 return ret;
->         }
->
-> +       INIT_LIST_HEAD(&commit_list);
-> +
-> +       for (i = 0; i < qp->num_bcms; i++) {
-> +               /*
-> +                * Only generate WAKE and SLEEP commands if a resource's
-> +                * requirements change as the execution environment transitions
-> +                * between different power states.
-> +                */
-> +               if (qp->bcms[i]->vote_x[QCOM_ICC_BUCKET_WAKE] !=
-> +                   qp->bcms[i]->vote_x[QCOM_ICC_BUCKET_SLEEP] ||
-> +                   qp->bcms[i]->vote_y[QCOM_ICC_BUCKET_WAKE] !=
-> +                   qp->bcms[i]->vote_y[QCOM_ICC_BUCKET_SLEEP]) {
-> +                       list_add_tail(&qp->bcms[i]->list, &commit_list);
-> +               }
-> +       }
-> +
-> +       if (list_empty(&commit_list))
-> +               return ret;
-> +
-> +       tcs_list_gen(&commit_list, QCOM_ICC_BUCKET_WAKE, cmds, commit_idx);
-> +
-> +       ret = rpmh_write_batch(qp->dev, RPMH_WAKE_ONLY_STATE, cmds, commit_idx);
-> +       if (ret) {
-> +               pr_err("Error sending WAKE RPMH requests (%d)\n", ret);
-> +               return ret;
-> +       }
-> +
-> +       tcs_list_gen(&commit_list, QCOM_ICC_BUCKET_SLEEP, cmds, commit_idx);
-> +
-> +       ret = rpmh_write_batch(qp->dev, RPMH_SLEEP_STATE, cmds, commit_idx);
-> +       if (ret) {
-> +               pr_err("Error sending SLEEP RPMH requests (%d)\n", ret);
-> +               return ret;
-> +       }
-> +
->         return ret;
->  }
->
+-- 
+Thanks,
+~Nick Desaulniers
 
 _______________________________________________
 linux-arm-kernel mailing list
