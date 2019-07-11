@@ -2,78 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A8900660F4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 22:55:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E98BC6611C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 11 Jul 2019 23:28:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JSoXRm8iOc4w65V9KLiMMc+0mDcCY1moVCt3eWiUB/M=; b=EAOE7xPNCW5r77
-	vNjo+6Rob5uXlC1LhakoYuC9WCJMFWmaEj2rLl2i95mRhvvFf644OP2euG7L2LmbhV81ZrtbmBaM0
-	FpjnUUnvEIDAtCnq8+uWDYuMcJX0SzjiWyKGNN2bhTsBjcPgMGUXeKQhjNUBJ1CgkD/dCBVM93CY2
-	FevGLH9JCCuZOhWRYrXTd+CH8xQ+t1War2bgKLBIbGfcKnG8J3YFVFWiMx2re1kU1WhhZWg1BFntU
-	GkNT0SVgRT32pChvD0nG7O9q8hiAZoQzzMAup+1ZHF6dBpmv0bxWmjIUIPB1UUotSNQ9wVLsy7lO8
-	CQv/LexQ7bnrB5P0nyGA==;
+	List-Owner; bh=5fPXiudtijSpwxQvGN5D9RpUyLnOkEzUB/IA/9oyspM=; b=PQ51SZKIpvos4c
+	eFGV4g0WYDI+pVeUl6nMVeV75EUgIZ9isvR+vwYTVu/Q3eX7ZrBcFSkHw9nHClDLTZrHHRsJA9J81
+	ukkPt5kXcp5HtwkUFiFxkkgr3h2ZTGCJLpAspLGE1EgbJGMitXqkIMm3uagsXHvfgjJ/7x4cKB/Ac
+	89+taa1+HhMKfbmMx6mn0hI3nbLGPB0dS6OVzRvUyPHTBCHU509bvPxQc91q3V1M7ZhPxBIpa3eTH
+	48mV+qK3KZdntVIIn5hKftxLMGAOqfD2JSLYRbfUYYDiBoR0935dhDZnFRbhznKcRsGjhGO765m42
+	LleEYaBIdNrjhVcrPNeg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlg6W-0002vW-NA; Thu, 11 Jul 2019 20:55:48 +0000
-Received: from mail-qk1-f196.google.com ([209.85.222.196])
+	id 1hlgbr-0003tg-V5; Thu, 11 Jul 2019 21:28:11 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlg6J-0002u2-Q1
- for linux-arm-kernel@lists.infradead.org; Thu, 11 Jul 2019 20:55:37 +0000
-Received: by mail-qk1-f196.google.com with SMTP id r4so4747066qkm.13
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 11 Jul 2019 13:55:34 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=bkUbgSgUpCwj2ldYWoCFso4Iwo3JgBB3YyrLSeP+omU=;
- b=WYwtS/GKmjpzsuHADSGO3pnk+QtJ1agM9cgLCF/AbnXwuP+RbgYgo1lpmXcl/nXpWm
- jSD+TY1xu3E9fbd24owb5ukYXNmVCCgHlam0wJqrM8cGac8CFOi/p/7Vvsxg1RdYiIJh
- tdJ2H45rNfwOWvetDSauqwWsTy5twUIbdscM7RMJC+VItvdvdOvu8suf8xNdbUUQQ7DJ
- lncKpBAuCHqP58A2RQqQiJcGuRIxu2+AD2Y7ubtiK+jOPrZCE3diHOs5SNDwLRbk3Bli
- uKsmYaNWuQ8d0magxeGjFy94MBXzFDSmsO2GoOkNMtPUTNjiUxs0HBZr95kU+Doua4Bz
- plUw==
-X-Gm-Message-State: APjAAAX2O+EeuZ4wIz7f5dFv8ZFKNmW3RiF4Nn6mn1Cz4uAkrWs/0KuE
- qY267S1Q87wCNqK8rtuQ1cmRrPnU1ISL1bh7IBU=
-X-Google-Smtp-Source: APXvYqwQU5LP7lDrmvENc8aGoi4MJ9DUgGa6g4gLLDo+V/u6iJpXHHHv1e+jDggnBJ3vpelagEiDSMznJ+7Vli7iWvE=
-X-Received: by 2002:a37:5f45:: with SMTP id t66mr3532512qkb.286.1562878533166; 
- Thu, 11 Jul 2019 13:55:33 -0700 (PDT)
+ id 1hlgbd-0003sC-79; Thu, 11 Jul 2019 21:27:58 +0000
+Received: from ip5f5a6320.dynamic.kabel-deutschland.de ([95.90.99.32]
+ helo=diego.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1hlgbR-0006mP-RG; Thu, 11 Jul 2019 23:27:45 +0200
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Douglas Anderson <dianders@chromium.org>
+Subject: Re: [PATCH v5 6/7] ARM: dts: rockchip: Specify
+ rk3288-veyron-chromebook's display timings
+Date: Thu, 11 Jul 2019 23:27:44 +0200
+Message-ID: <4744731.Gbjux09qzx@diego>
+In-Reply-To: <20190401171724.215780-7-dianders@chromium.org>
+References: <20190401171724.215780-1-dianders@chromium.org>
+ <20190401171724.215780-7-dianders@chromium.org>
 MIME-Version: 1.0
-References: <20190710130206.1670830-1-arnd@arndb.de>
- <33511b0e-6d7b-c156-c415-7a609b049567@arm.com>
- <CAK8P3a1EBaWdbAEzirFDSgHVJMtWjuNt2HGG8z+vpXeNHwETFQ@mail.gmail.com>
- <CAKwvOdkubvsRCnJKCaesB=PF=DgXfsBzwzR8kyE9NzWPU8Gehg@mail.gmail.com>
-In-Reply-To: <CAKwvOdkubvsRCnJKCaesB=PF=DgXfsBzwzR8kyE9NzWPU8Gehg@mail.gmail.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Thu, 11 Jul 2019 22:55:16 +0200
-Message-ID: <CAK8P3a3TfQnQsXzmktedsKaY7Tihue_PbLhLoD1z1jZBMTxWMg@mail.gmail.com>
-Subject: Re: [PATCH] vsyscall: use __iter_div_u64_rem()
-To: Nick Desaulniers <ndesaulniers@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_135535_852873_B7DCA0CA 
-X-CRM114-Status: GOOD (  10.97  )
-X-Spam-Score: 1.8 (+)
+X-CRM114-CacheID: sfid-20190711_142757_415123_51DDD025 
+X-CRM114-Status: GOOD (  12.38  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.8 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.196 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.222.196 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,45 +58,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch <linux-arch@vger.kernel.org>, Shuah Khan <shuah@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- Dmitry Safonov <0x7f454c46@gmail.com>, Mark Salyzyn <salyzyn@android.com>,
- Huw Davies <huw@codeweavers.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
- linux-mips@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
- Russell King <linux@armlinux.org.uk>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Paul Burton <paul.burton@mips.com>, Andy Lutomirski <luto@kernel.org>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Thomas Gleixner <tglx@linutronix.de>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Peter Collingbourne <pcc@google.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linux-rockchip@lists.infradead.org,
+ Thierry Reding <thierry.reding@gmail.com>, Sean Paul <seanpaul@chromium.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Enric =?ISO-8859-1?Q?Balletb=F2?= <enric.balletbo@collabora.com>,
+ Ezequiel Garcia <ezequiel@collabora.com>, mka@chromium.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jul 11, 2019 at 7:14 PM 'Nick Desaulniers' via Clang Built
-Linux <clang-built-linux@googlegroups.com> wrote:
->
-> On Thu, Jul 11, 2019 at 5:28 AM Arnd Bergmann <arnd@arndb.de> wrote:
-> > clang does not like an inline assembly with a "=q" contraint for
-> > a 64-bit output:
->
-> Seems like starting in GCC 7, GCC may not like it either:
-> https://godbolt.org/z/UyBUfh
-> it simply warns then proceeds with code gen.  Another difference may
-> come from when GCC vs Clang perform dead code elimination (DCE) vs
-> semantic analysis.
+Am Montag, 1. April 2019, 19:17:23 CEST schrieb Douglas Anderson:
+> Let's document the display timings that most veyron chromebooks (like
+> jaq, jerry, mighty, speedy) have been using out in the field.  This
+> uses the standard blankings but a slightly slower clock rate, thus
+> getting a refresh rate 58.3 Hz.
+> 
+> NOTE: this won't really do anything except cause DRM to properly
+> report the refresh rate since vop_crtc_mode_fixup() was rounding the
+> pixel clock to 74.25 MHz anyway.  Apparently the adjusted rate isn't
+> exposed to userspace so it's important that the rate we're trying to
+> achieve is mostly right.
+> 
+> For the downstream kernel change related to this see See
+> https://crrev.com/c/324558.
+> 
+> NOTE: minnie uses a different panel will be fixed up in a future
+> patch, so for now we'll just delete the panel timings there.
+> 
+> Signed-off-by: Douglas Anderson <dianders@chromium.org>
 
-Right, I also had the idea to work around it with a set of
-__builtin_choos_expr()
-instead of the switch()/case but did not complete that patch as the percpu
-code is rather complex and this would touch lots of code.
+applied for 5.3
 
-       Arnd
+Thanks
+Heiko
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
