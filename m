@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E1FB66693
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 07:46:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 66B3566695
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 07:46:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UbGw2Z0SAnNn5mN3/FzeLpCQGz32aKJ/L+1xY+rI7a4=; b=NnMNOiCU/2fACf
-	DualsP1yKrSByfImIDsdpxGIyO0arGELV66pLV6/CyOs+9JK6YouNPhr3B4q9658x6ojMoxBN/V0g
-	Jx/SWcVV/4qnwmYAQl8eA3jwOWgZJ6B4DVM6e/FB4A8djr1Iv+aGnPei1wG0HOLe3d9cVB23ccwS/
-	D3NwWnjwRyoyg42ukvkp3Q0nzAGOWdgYV7RzFMDdo066BCmgnnYIibjE3y6KJc/NUkP1hrFyqdnTX
-	hPpz7KQOV6q2VHidKKGX3/7JTG3dg/rBsRMWlsWPQM+0Brwl/9tQQxJgxmMVsGXTbjfa6khcGahNz
-	68wD1NCU94ci07cO2BSA==;
+	List-Owner; bh=4Tb6lLJaz2ZVakSy4Knqmqaad25btOTIJa6H1Qs7XH4=; b=Qks6zaVAMZwZig
+	AkONZNEEWvmjAHqkm0lcOnn8TzaickvaSzXu3Smy98rAaMTyxppe6pZAJf29bQdrj3fAOxycQvNLW
+	M6XdJM2Ah6GW8NvfOPjf/kjhNO0Mzp1FtMaGZc1Z2gjOhx4pig98x/oZ3Ggp8jwEAbgIZh4UmX4cp
+	zroW+lrnZlG42wbEa+iXYc2UVOzagZy3/tWAAaw+fUqFyB2HpR6MpCav64IzW+a9H22Rpi6mWrTR7
+	h1B5DItxS03udsN2P1jgt2PWbUTVJNITMveQ/vTJgl7kv+vOhRRG63IOJmI4FNbOz0co/H9J3UdEb
+	6/EruFTVOW7Y7RdNx3Bw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hloNS-0006Ms-M3; Fri, 12 Jul 2019 05:45:50 +0000
+	id 1hloO1-0006ki-OQ; Fri, 12 Jul 2019 05:46:25 +0000
 Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlo8k-0002gA-EB
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 05:30:41 +0000
-Received: by mail-pg1-x542.google.com with SMTP id u17so4003768pgi.6
+ id 1hlo8n-0002iD-9i
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 05:30:43 +0000
+Received: by mail-pg1-x542.google.com with SMTP id w10so4001460pgj.7
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 11 Jul 2019 22:30:38 -0700 (PDT)
+ Thu, 11 Jul 2019 22:30:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=z7GSqiJ6aBNFVvBBcZiH2v3S1Pbs9vo106t8SFNGIe4=;
- b=tcAbB1XCe4vsg0irqnOIM6f7OdPoVlA+nE9DQ3iCELNXazxdKNTX7JqL6YIuNOyzqp
- 1gZ0aRWd5itgdDqxNwelzN/3pYqDQ3wm++Lq+c/1GsBgxY+xL97+7R3Dv60KKat1CnmZ
- w+TDTAUdJrCwdEvHHImQh8zsvtQKROHmkviw4P8RSxG8EEK/gtU6buhHkmAvFpf0feFs
- tYltMKt7PUWT3FXC4X0+Ax7SMaZeuaVfPBXvw3yaXl4A/t6jzB/68xxT9lBHbRBWPKWS
- wqnaBGkmWANvWl1F2Jrd5SBRnzP5sywS35J9ObCnqvFWnZDPNVVbvFUyUdKONubvfb8s
- HPbw==
+ bh=lhetsf/v1WHqsODDPiuS8lCaAlBwJqZTnWnIuf4OhuE=;
+ b=G2tEld9uv2oYMaQUCTBFxqa1q7vQCKFskzW+3vZ7KHoRZZE+eDzTb/9OoIHlmsgi5c
+ dQcUGOLOIGWi7YGfHeUtx8CUU5a3d7VTyMVMNWiB6+JlPzSOxYezRtPnPUWdsotWuoVI
+ YWbywnI5sVGB9p3r2gnWsGDeW8PY73vperHXyfQacTZcENcb9fQTHVIl35QFWMDitbCg
+ hL9iaDqU7Jo8vVmiQg9Q+bRxP3RoTlvcD1ELyEuvVDADwr0Mzy3CbY41NKGps22/HgG4
+ ur76uc+Vf0fE0iBa00iavivhq6nMmZqiLxgZSnfiIiUfjjtBnFgIo5Vzu9L9WjeOQtOM
+ xs0w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=z7GSqiJ6aBNFVvBBcZiH2v3S1Pbs9vo106t8SFNGIe4=;
- b=I2kZO1ayVln1Z9beW+6papuJgrxT27ZlPV5eHdI1zWiTOHgKq1H73HAS7ZO1jwVh5I
- 52fveQuvU7uWtUBNXK0LgRwO92x2PJXQv2dpCHQdTgKTsMc1Ge/PYlAig+WhCK5YsX+p
- KfW/Dn0xAVArIW5mjTn3oywVGiQmAKTBDcm9xmg8JuUdmjXPBc+bFWPmq8R/unUw5gcC
- Hxm/rZYDZqhmGON0HN/DzkcVmc6ZhQVQAVysA7IF+DjEw/Zb59eVSpmD9k1AwbTY41hF
- H1okGvkSbbcfLh8frCuhQnhamt7xjeppT55kpEOJiYdsGvL7stz6f27PDll0DsL5u7pB
- FjXQ==
-X-Gm-Message-State: APjAAAVAyWcOM20Mpj7pABUW4/c63dXGFIxqFjrp9TSZ7rk/hogUk42G
- jL621STPeno+2898vYHibdrpfg==
-X-Google-Smtp-Source: APXvYqzfua/WaSi2v/9NaYC4vsYdyiPDgu+cEIj0uEmriPTMu+vUpayzFNtV/AvRJG2dFnn9SZy1yA==
-X-Received: by 2002:a65:55c9:: with SMTP id k9mr8788259pgs.142.1562909437702; 
- Thu, 11 Jul 2019 22:30:37 -0700 (PDT)
+ bh=lhetsf/v1WHqsODDPiuS8lCaAlBwJqZTnWnIuf4OhuE=;
+ b=eXWXsptrKmCQbSQIlPUaqozinYlL6xuQMyg5duw+rJQz+e74t0PTRFyIA+1Dtq5iVp
+ 0C6HhS88nK/K9lm1v617f+o5HtsSeSaTxTex1dAy+GHy5r2Q1T40oDyxCQmfdLO6P7bi
+ 3Old8+FWy1XH7D39vm7YeodM6/xGj9rBpOkPKhXRbzsxJenQs9Ln1S/FI+7z3PB+onNj
+ 4uO6syXty917i37anSQe64BwJRs4PbVW9vocD2gfmZNRDlIZT+VW80xo9RNi1hP+aDaL
+ WgvI4cke52sAGAbtUrOqDIWQhQueDv3s1jMD0fm1V5aJtrg/7OqmoIbc7Tt37yAksTob
+ 6AeA==
+X-Gm-Message-State: APjAAAXOXgn6WyBx/6IUqKJE8xA78oCEugl6fwMhyAXB60oKmyMSVJDk
+ ZdYC/Xxh/G/Nzu08h3LelyJ/4g==
+X-Google-Smtp-Source: APXvYqyU0wwjX1RQ1LS7189K6fCPtBPHn7spxLEhn1E3i0ZYo68woYmUYydbYl3EUP9FbO9sVq//1A==
+X-Received: by 2002:a17:90a:360c:: with SMTP id
+ s12mr9552818pjb.30.1562909440598; 
+ Thu, 11 Jul 2019 22:30:40 -0700 (PDT)
 Received: from localhost ([122.172.28.117])
- by smtp.gmail.com with ESMTPSA id m4sm9840773pgs.71.2019.07.11.22.30.36
+ by smtp.gmail.com with ESMTPSA id f19sm10134578pfk.180.2019.07.11.22.30.39
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 11 Jul 2019 22:30:37 -0700 (PDT)
+ Thu, 11 Jul 2019 22:30:40 -0700 (PDT)
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: stable@vger.kernel.org,
 	Julien Thierry <Julien.Thierry@arm.com>
-Subject: [PATCH v4.4 V2 36/43] arm64: KVM: Report SMCCC_ARCH_WORKAROUND_1 BP
- hardening support
-Date: Fri, 12 Jul 2019 10:58:24 +0530
-Message-Id: <7dd90325604da1ca7d424aeff0cd86ee3c18fdff.1562908075.git.viresh.kumar@linaro.org>
+Subject: [PATCH v4.4 V2 37/43] firmware/psci: Expose PSCI conduit
+Date: Fri, 12 Jul 2019 10:58:25 +0530
+Message-Id: <896d2efd09dbe687aa3132c5e03f6b11feb6da9b.1562908075.git.viresh.kumar@linaro.org>
 X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
 In-Reply-To: <cover.1562908074.git.viresh.kumar@linaro.org>
 References: <cover.1562908074.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_223038_788262_C06D9B62 
-X-CRM114-Status: GOOD (  10.89  )
+X-CRM114-CacheID: sfid-20190711_223041_357966_0FD1CE68 
+X-CRM114-Status: GOOD (  13.07  )
 X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.1 points)
@@ -111,42 +111,110 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Marc Zyngier <marc.zyngier@arm.com>
 
-commit 6167ec5c9145cdf493722dfd80a5d48bafc4a18a upstream.
+commit 09a8d6d48499f93e2abde691f5800081cd858726 upstream.
 
-A new feature of SMCCC 1.1 is that it offers firmware-based CPU
-workarounds. In particular, SMCCC_ARCH_WORKAROUND_1 provides
-BP hardening for CVE-2017-5715.
+In order to call into the firmware to apply workarounds, it is
+useful to find out whether we're using HVC or SMC. Let's expose
+this through the psci_ops.
 
-If the host has some mitigation for this issue, report that
-we deal with it using SMCCC_ARCH_WORKAROUND_1, as we apply the
-host workaround on every guest exit.
-
+Acked-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Reviewed-by: Robin Murphy <robin.murphy@arm.com>
 Tested-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Reviewed-by: Christoffer Dall <christoffer.dall@linaro.org>
 Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-[ Viresh: Picked on only arm-smccc.h changes ]
 Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- include/linux/arm-smccc.h | 5 +++++
- 1 file changed, 5 insertions(+)
+ drivers/firmware/psci.c | 28 +++++++++++++++++++++++-----
+ include/linux/psci.h    |  7 +++++++
+ 2 files changed, 30 insertions(+), 5 deletions(-)
 
-diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
-index da9f3916f9a9..1f02e4045a9e 100644
---- a/include/linux/arm-smccc.h
-+++ b/include/linux/arm-smccc.h
-@@ -73,6 +73,11 @@
- 			   ARM_SMCCC_SMC_32,				\
- 			   0, 1)
+diff --git a/drivers/firmware/psci.c b/drivers/firmware/psci.c
+index 290f8982e7b3..7b2665f6b38d 100644
+--- a/drivers/firmware/psci.c
++++ b/drivers/firmware/psci.c
+@@ -54,7 +54,9 @@ bool psci_tos_resident_on(int cpu)
+ 	return cpu == resident_cpu;
+ }
  
-+#define ARM_SMCCC_ARCH_WORKAROUND_1					\
-+	ARM_SMCCC_CALL_VAL(ARM_SMCCC_FAST_CALL,				\
-+			   ARM_SMCCC_SMC_32,				\
-+			   0, 0x8000)
+-struct psci_operations psci_ops;
++struct psci_operations psci_ops = {
++	.conduit = PSCI_CONDUIT_NONE,
++};
+ 
+ typedef unsigned long (psci_fn)(unsigned long, unsigned long,
+ 				unsigned long, unsigned long);
+@@ -187,6 +189,22 @@ static unsigned long psci_migrate_info_up_cpu(void)
+ 			      0, 0, 0);
+ }
+ 
++static void set_conduit(enum psci_conduit conduit)
++{
++	switch (conduit) {
++	case PSCI_CONDUIT_HVC:
++		invoke_psci_fn = __invoke_psci_fn_hvc;
++		break;
++	case PSCI_CONDUIT_SMC:
++		invoke_psci_fn = __invoke_psci_fn_smc;
++		break;
++	default:
++		WARN(1, "Unexpected PSCI conduit %d\n", conduit);
++	}
 +
- #ifndef __ASSEMBLY__
++	psci_ops.conduit = conduit;
++}
++
+ static int get_set_conduit_method(struct device_node *np)
+ {
+ 	const char *method;
+@@ -199,9 +217,9 @@ static int get_set_conduit_method(struct device_node *np)
+ 	}
  
- /**
+ 	if (!strcmp("hvc", method)) {
+-		invoke_psci_fn = __invoke_psci_fn_hvc;
++		set_conduit(PSCI_CONDUIT_HVC);
+ 	} else if (!strcmp("smc", method)) {
+-		invoke_psci_fn = __invoke_psci_fn_smc;
++		set_conduit(PSCI_CONDUIT_SMC);
+ 	} else {
+ 		pr_warn("invalid \"method\" property: %s\n", method);
+ 		return -EINVAL;
+@@ -463,9 +481,9 @@ int __init psci_acpi_init(void)
+ 	pr_info("probing for conduit method from ACPI.\n");
+ 
+ 	if (acpi_psci_use_hvc())
+-		invoke_psci_fn = __invoke_psci_fn_hvc;
++		set_conduit(PSCI_CONDUIT_HVC);
+ 	else
+-		invoke_psci_fn = __invoke_psci_fn_smc;
++		set_conduit(PSCI_CONDUIT_SMC);
+ 
+ 	return psci_probe();
+ }
+diff --git a/include/linux/psci.h b/include/linux/psci.h
+index 04b4d92c7791..e071a1b8ddb5 100644
+--- a/include/linux/psci.h
++++ b/include/linux/psci.h
+@@ -24,6 +24,12 @@ bool psci_tos_resident_on(int cpu);
+ bool psci_power_state_loses_context(u32 state);
+ bool psci_power_state_is_valid(u32 state);
+ 
++enum psci_conduit {
++	PSCI_CONDUIT_NONE,
++	PSCI_CONDUIT_SMC,
++	PSCI_CONDUIT_HVC,
++};
++
+ struct psci_operations {
+ 	u32 (*get_version)(void);
+ 	int (*cpu_suspend)(u32 state, unsigned long entry_point);
+@@ -33,6 +39,7 @@ struct psci_operations {
+ 	int (*affinity_info)(unsigned long target_affinity,
+ 			unsigned long lowest_affinity_level);
+ 	int (*migrate_info_type)(void);
++	enum psci_conduit conduit;
+ };
+ 
+ extern struct psci_operations psci_ops;
 -- 
 2.21.0.rc0.269.g1a574e7a288b
 
