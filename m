@@ -2,82 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 355396665A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 07:33:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF8796665B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 07:34:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DVtvxeu/VP0ep/BQySSAOwXcOE5xsL0da8ioB4t7j7c=; b=KlzJTPnUORG+fq
-	/Uv9Geyu/woF8XgRZHsqPc9psQXHe5INwBc13EzAj0iIeW5HGUMRG9yMzwKJntaGyuh1l57BYH5vM
-	QrqTOGOwEotIN8vrLofDRuZVTf0WnQ4ri+mvg2vbKYJ4+CA7DgycNS9pUWcasF+UYaQcM6Qv6vf9+
-	kagtuOvzQ58LUa2VZciq1OuUbdeCLo+cQF3ztyNvWh2hsGSeQlHN5PzYl/RIR58UtVYKh7op9Ykp+
-	5b+897mbC/QHTEGhVLQvMHsQrMfVKjHUaTTD4TpYAyX1Pf4Ki4gFNWHuZpQgBlKqfTnmMKc+RxyUP
-	KAFv7QF//rIW23quhOxQ==;
+	List-Owner; bh=4VxvPDWpLpSJ/ro1/i5RmihWfsEprYiIwwDJ1NVNPQ4=; b=VjQiGOKoa75cZu
+	fFROxAy8y9D1jHaZ2sjmd8ifwZO/0VqpsvFfqCZHPk4jt3eJl5/VhhVNjBFRKLPEkLJilUlsp4Dwt
+	sit1N3GJVvlub+vZB3fgHd5n1wp8OcypkVyM4XQtYrIxSf+k/F+GqQ39Xr/uRhJsE9k149Hzzit92
+	NdKze4BdF7sO1ITakbGZBa7+kHoFiRlyLzF0K4gmbCDYuyFffe1sj01uVN7V6idO0HtWD/PttjMks
+	0rhSG9QnEtWkaE7qqNiAhhHq7xSJadXcw1n79y8P44osTgzuzU4zMoDqd0DQbOLu4xMfonWEJjLw6
+	drP+FORuiLUQyAw/mpnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hloBp-0004W1-M4; Fri, 12 Jul 2019 05:33:49 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1hloCa-0004nQ-3R; Fri, 12 Jul 2019 05:34:36 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlo7d-0000bm-Ac
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 05:29:32 +0000
-Received: by mail-pg1-x542.google.com with SMTP id i18so3989875pgl.11
+ id 1hlo7g-0000dE-9O
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 05:29:34 +0000
+Received: by mail-pg1-x541.google.com with SMTP id f25so3992804pgv.10
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 11 Jul 2019 22:29:29 -0700 (PDT)
+ Thu, 11 Jul 2019 22:29:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=Zvf6a5n0b57m5571dEwc9PlwLEZ1HE7kAfPBhGFdWe4=;
- b=BXO6ZdC65Gr2YcWg3tab5LZz7c9ZXPbBtGBbfcTpwCu15ZhB3bu0mJDr+LDIRG1nfl
- yiIL00HOMPzKBkmhbFiG2RWepLz7uDUyb45fDeL8QRaR+XHvu4wE52/8v9qYmcl6Dfux
- 2C9YcTCQPzPuQJI5LNqiIiNbiJ3BNVn+LtZpZ+wfl4WqVLrz0+u9PN5EUbRXZ9abVxph
- UAIfSk537xmgGhzkCJbVLEwfuhtnxdWWHqNmb5psqUFKv7axmKiSK0kdQhEu9HTRlPa/
- eSKIY/3F9eIZ2nkw4PL5MghhC/B4FNCuk+AqG1Al3GVF8e+ZjNLZNkgZWvWh7flrazSz
- smGA==
+ bh=/kfHaZYBMHfOrWZM24aWUbS5m2tlkmGASsL26R9/1y0=;
+ b=cGmYhryoCvANnaH4geFrp/J9iYbsc93CKBZgUMA9oUfaIiy5wdBhR4DlJmw3lRYYkA
+ aVW9vCmzdn45ZIMZ1dMMq/N8JVs1GCVa8B89kv/v7c3FKhtB39xYSiG73QQR4kuM3JAb
+ cL1tc5wyGgB1cEYzqSLcMKjG3Zfs2ngs3HKGI2Fy4Xyuya6kSkwu/P5920GkpBbj4Wk5
+ 0q+nHiS2Ldbb8I+Wr9P0dryCEaZ2EiWQbjXGgDW2oeZoZQq2mF8seW0WrqTaTajMVkse
+ GAdrTI0Kwc1mmnP0MN7Jp2dKsjRroebJ8GorFrfv+bWbEsgna60JLumwtDgx9vOMEbyA
+ /O1w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=Zvf6a5n0b57m5571dEwc9PlwLEZ1HE7kAfPBhGFdWe4=;
- b=M/t0xh0vEPAxfcAQTs3BGqblS0v38C2+x8Dn6E1oujVI0eB+MZVY20PgGrCFDObdGJ
- 0KQHGlI6KbImNaojTMP2ROC4YH85adLxsTV7XvDx3YzBWknE9vpT8BaPOA3l6Rz3TxP3
- QYMWM5z3tN9o0ZILGqZVW3yWuHLiF6xiZyuCAnw5dGqpnH/Qk5PA+lbCxCL5hTsw3JJ7
- JnbnOsNMMLoiBV+HTElw4lp5KTfHC2WinlknXSW+CZWahoDQ44kvHEhQ8DcrWF8PmKup
- 9ZST/EbnFZmu8YTgjCU2XdadOLbMXij0qDLnpuJ/GLoS0bCxhTSbvxJbQ8kGUTf+sy7V
- CVFg==
-X-Gm-Message-State: APjAAAVVqlJVmswDIwtSfC/zsvyvgpYCLywfzOwWAE4rBoUmYoApWghK
- PPOw+Tvgwt6onR8GIUqflKarwg==
-X-Google-Smtp-Source: APXvYqzF25A1nR1oj8gzHHvkNLpF7lunSQZdedqU0N1lG8g5rEr/PFHSZ4TBcKyJAOwRlVDhfD+F5Q==
-X-Received: by 2002:a17:90a:f98a:: with SMTP id
- cq10mr9406226pjb.43.1562909368520; 
- Thu, 11 Jul 2019 22:29:28 -0700 (PDT)
+ bh=/kfHaZYBMHfOrWZM24aWUbS5m2tlkmGASsL26R9/1y0=;
+ b=q7ONoUTdbIBNc84hbv0H2LN4Xzp4H16fCMgVdct3VoY2pIJePVE3K/TQFNrgcQZS92
+ tlYdPeaqF6t9e37ZSTXIcdQ+0wSbzTFT9j3XCbcKZGDg9ggHsFFbgodSiMpIhJfnnnBy
+ iaL6+cupydO6xnRSzaPrmPT4oBP3RHSR8j+UFr27yAtr3TYeL2vgpaF1ybRog4WK5i30
+ /WklPhbVhYlPXXW6nQa1vGJNcdqNsPMgKYyQmCynH9eeQxhOmj3ea/iAOgVYst2RnbYB
+ 5Ma48roFKt6cvKs5W8Y3xt6tatrECNmefqNUQlzB0aGDDz++JqqFHjDRdV3jxKO1h2Je
+ GJEw==
+X-Gm-Message-State: APjAAAXdXL56nKPM4xacQr6qi3OAm0je1BSVyFDs7j0EQlWTUv3Zkd99
+ UUXk5H/VQyxFrdsHldImbjt0mw==
+X-Google-Smtp-Source: APXvYqw7lqHGTZ/Hgm2eHFlKzbfZLmRpmoEOP/cJeO/kZZ64V5Gso2jlmm+jCBMaKiG2BEsX52gCLw==
+X-Received: by 2002:a63:6981:: with SMTP id e123mr8520931pgc.136.1562909371293; 
+ Thu, 11 Jul 2019 22:29:31 -0700 (PDT)
 Received: from localhost ([122.172.28.117])
- by smtp.gmail.com with ESMTPSA id d15sm14649918pjc.8.2019.07.11.22.29.27
+ by smtp.gmail.com with ESMTPSA id e6sm8850058pfn.71.2019.07.11.22.29.30
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 11 Jul 2019 22:29:28 -0700 (PDT)
+ Thu, 11 Jul 2019 22:29:30 -0700 (PDT)
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: stable@vger.kernel.org,
 	Julien Thierry <Julien.Thierry@arm.com>
-Subject: [PATCH v4.4 V2 11/43] arm64: uaccess: Mask __user pointers for
- __arch_{clear, copy_*}_user
-Date: Fri, 12 Jul 2019 10:57:59 +0530
-Message-Id: <7d56c56af2f883958d5e74fa3178a1f774b9fd94.1562908075.git.viresh.kumar@linaro.org>
+Subject: [PATCH v4.4 V2 12/43] arm64: cpufeature: Test 'matches' pointer to
+ find the end of the list
+Date: Fri, 12 Jul 2019 10:58:00 +0530
+Message-Id: <64c9f2c29cd2e63aecbd233aa96fd9d18e165330.1562908075.git.viresh.kumar@linaro.org>
 X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
 In-Reply-To: <cover.1562908074.git.viresh.kumar@linaro.org>
 References: <cover.1562908074.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_222930_065052_5D4040C6 
-X-CRM114-Status: GOOD (  12.19  )
+X-CRM114-CacheID: sfid-20190711_222932_637074_0D755DAD 
+X-CRM114-Status: GOOD (  13.54  )
 X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -110,152 +109,85 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Will Deacon <will.deacon@arm.com>
+From: James Morse <james.morse@arm.com>
 
-commit f71c2ffcb20dd8626880747557014bb9a61eb90e upstream.
+commit 644c2ae198412c956700e55a2acf80b2541f6aa5 upstream.
 
-Like we've done for get_user and put_user, ensure that user pointers
-are masked before invoking the underlying __arch_{clear,copy_*}_user
-operations.
+CPU feature code uses the desc field as a test to find the end of the list,
+this means every entry must have a description. This generates noise for
+entries in the list that aren't really features, but combinations of them.
+e.g.
+> CPU features: detected feature: Privileged Access Never
+> CPU features: detected feature: PAN and not UAO
 
-Signed-off-by: Will Deacon <will.deacon@arm.com>
+These combination features are needed for corner cases with alternatives,
+where cpu features interact.
+
+Change all walkers of the arm64_features[] and arm64_hwcaps[] lists to test
+'matches' not 'desc', and only print 'desc' if it is non-NULL.
+
+Signed-off-by: James Morse <james.morse@arm.com>
+Reviewed-by : Suzuki K Poulose <suzuki.poulose@arm.com>
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-[ v4.4: fixup for v4.4 style uaccess primitives ]
 Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- arch/arm64/include/asm/uaccess.h | 20 ++++++++++++--------
- arch/arm64/kernel/arm64ksyms.c   |  4 ++--
- arch/arm64/lib/clear_user.S      |  6 +++---
- arch/arm64/lib/copy_in_user.S    |  4 ++--
- 4 files changed, 19 insertions(+), 15 deletions(-)
+ arch/arm64/kernel/cpufeature.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
 
-diff --git a/arch/arm64/include/asm/uaccess.h b/arch/arm64/include/asm/uaccess.h
-index 693a0d784534..a25b8726ffa9 100644
---- a/arch/arm64/include/asm/uaccess.h
-+++ b/arch/arm64/include/asm/uaccess.h
-@@ -303,19 +303,20 @@ do {									\
+diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+index c1eddc07d996..bdb4cd9ffccf 100644
+--- a/arch/arm64/kernel/cpufeature.c
++++ b/arch/arm64/kernel/cpufeature.c
+@@ -744,7 +744,7 @@ static void setup_cpu_hwcaps(void)
+ 	int i;
+ 	const struct arm64_cpu_capabilities *hwcaps = arm64_hwcaps;
  
- extern unsigned long __must_check __arch_copy_from_user(void *to, const void __user *from, unsigned long n);
- extern unsigned long __must_check __arch_copy_to_user(void __user *to, const void *from, unsigned long n);
--extern unsigned long __must_check __copy_in_user(void __user *to, const void __user *from, unsigned long n);
--extern unsigned long __must_check __clear_user(void __user *addr, unsigned long n);
-+extern unsigned long __must_check __arch_copy_in_user(void __user *to, const void __user *from, unsigned long n);
- 
- static inline unsigned long __must_check __copy_from_user(void *to, const void __user *from, unsigned long n)
+-	for (i = 0; hwcaps[i].desc; i++)
++	for (i = 0; hwcaps[i].matches; i++)
+ 		if (hwcaps[i].matches(&hwcaps[i]))
+ 			cap_set_hwcap(&hwcaps[i]);
+ }
+@@ -754,11 +754,11 @@ void update_cpu_capabilities(const struct arm64_cpu_capabilities *caps,
  {
- 	kasan_check_write(to, n);
--	return  __arch_copy_from_user(to, from, n);
-+	return __arch_copy_from_user(to, __uaccess_mask_ptr(from), n);
-+
- }
+ 	int i;
  
- static inline unsigned long __must_check __copy_to_user(void __user *to, const void *from, unsigned long n)
+-	for (i = 0; caps[i].desc; i++) {
++	for (i = 0; caps[i].matches; i++) {
+ 		if (!caps[i].matches(&caps[i]))
+ 			continue;
+ 
+-		if (!cpus_have_cap(caps[i].capability))
++		if (!cpus_have_cap(caps[i].capability) && caps[i].desc)
+ 			pr_info("%s %s\n", info, caps[i].desc);
+ 		cpus_set_cap(caps[i].capability);
+ 	}
+@@ -772,7 +772,7 @@ static void enable_cpu_capabilities(const struct arm64_cpu_capabilities *caps)
  {
- 	kasan_check_read(from, n);
--	return  __arch_copy_to_user(to, from, n);
-+	return __arch_copy_to_user(__uaccess_mask_ptr(to), from, n);
-+
- }
+ 	int i;
  
- static inline unsigned long __must_check copy_from_user(void *to, const void __user *from, unsigned long n)
-@@ -338,22 +339,25 @@ static inline unsigned long __must_check copy_to_user(void __user *to, const voi
- 	return n;
- }
+-	for (i = 0; caps[i].desc; i++)
++	for (i = 0; caps[i].matches; i++)
+ 		if (caps[i].enable && cpus_have_cap(caps[i].capability))
+ 			/*
+ 			 * Use stop_machine() as it schedules the work allowing
+@@ -884,7 +884,7 @@ void verify_local_cpu_capabilities(void)
+ 		return;
  
--static inline unsigned long __must_check copy_in_user(void __user *to, const void __user *from, unsigned long n)
-+static inline unsigned long __must_check __copy_in_user(void __user *to, const void __user *from, unsigned long n)
- {
- 	if (access_ok(VERIFY_READ, from, n) && access_ok(VERIFY_WRITE, to, n))
--		n = __copy_in_user(to, from, n);
-+		n = __arch_copy_in_user(__uaccess_mask_ptr(to), __uaccess_mask_ptr(from), n);
- 	return n;
- }
-+#define copy_in_user __copy_in_user
+ 	caps = arm64_features;
+-	for (i = 0; caps[i].desc; i++) {
++	for (i = 0; caps[i].matches; i++) {
+ 		if (!cpus_have_cap(caps[i].capability) || !caps[i].sys_reg)
+ 			continue;
+ 		/*
+@@ -897,7 +897,7 @@ void verify_local_cpu_capabilities(void)
+ 			caps[i].enable(NULL);
+ 	}
  
- #define __copy_to_user_inatomic __copy_to_user
- #define __copy_from_user_inatomic __copy_from_user
- 
--static inline unsigned long __must_check clear_user(void __user *to, unsigned long n)
-+extern unsigned long __must_check __arch_clear_user(void __user *to, unsigned long n);
-+static inline unsigned long __must_check __clear_user(void __user *to, unsigned long n)
- {
- 	if (access_ok(VERIFY_WRITE, to, n))
--		n = __clear_user(__uaccess_mask_ptr(to), n);
-+		n = __arch_clear_user(__uaccess_mask_ptr(to), n);
- 	return n;
- }
-+#define clear_user	__clear_user
- 
- extern long strncpy_from_user(char *dest, const char __user *src, long count);
- 
-diff --git a/arch/arm64/kernel/arm64ksyms.c b/arch/arm64/kernel/arm64ksyms.c
-index c654df05b7d7..abe4e0984dbb 100644
---- a/arch/arm64/kernel/arm64ksyms.c
-+++ b/arch/arm64/kernel/arm64ksyms.c
-@@ -35,8 +35,8 @@ EXPORT_SYMBOL(clear_page);
- 	/* user mem (segment) */
- EXPORT_SYMBOL(__arch_copy_from_user);
- EXPORT_SYMBOL(__arch_copy_to_user);
--EXPORT_SYMBOL(__clear_user);
--EXPORT_SYMBOL(__copy_in_user);
-+EXPORT_SYMBOL(__arch_clear_user);
-+EXPORT_SYMBOL(__arch_copy_in_user);
- 
- 	/* physical memory */
- EXPORT_SYMBOL(memstart_addr);
-diff --git a/arch/arm64/lib/clear_user.S b/arch/arm64/lib/clear_user.S
-index a9723c71c52b..fc6bb0f83511 100644
---- a/arch/arm64/lib/clear_user.S
-+++ b/arch/arm64/lib/clear_user.S
-@@ -24,7 +24,7 @@
- 
- 	.text
- 
--/* Prototype: int __clear_user(void *addr, size_t sz)
-+/* Prototype: int __arch_clear_user(void *addr, size_t sz)
-  * Purpose  : clear some user memory
-  * Params   : addr - user memory address to clear
-  *          : sz   - number of bytes to clear
-@@ -32,7 +32,7 @@
-  *
-  * Alignment fixed up by hardware.
-  */
--ENTRY(__clear_user)
-+ENTRY(__arch_clear_user)
- ALTERNATIVE("nop", __stringify(SET_PSTATE_PAN(0)), ARM64_HAS_PAN, \
- 	    CONFIG_ARM64_PAN)
- 	mov	x2, x1			// save the size for fixup return
-@@ -57,7 +57,7 @@ USER(9f, strb	wzr, [x0]	)
- ALTERNATIVE("nop", __stringify(SET_PSTATE_PAN(1)), ARM64_HAS_PAN, \
- 	    CONFIG_ARM64_PAN)
- 	ret
--ENDPROC(__clear_user)
-+ENDPROC(__arch_clear_user)
- 
- 	.section .fixup,"ax"
- 	.align	2
-diff --git a/arch/arm64/lib/copy_in_user.S b/arch/arm64/lib/copy_in_user.S
-index 81c8fc93c100..0219aa85b3cc 100644
---- a/arch/arm64/lib/copy_in_user.S
-+++ b/arch/arm64/lib/copy_in_user.S
-@@ -67,7 +67,7 @@
- 	.endm
- 
- end	.req	x5
--ENTRY(__copy_in_user)
-+ENTRY(__arch_copy_in_user)
- ALTERNATIVE("nop", __stringify(SET_PSTATE_PAN(0)), ARM64_HAS_PAN, \
- 	    CONFIG_ARM64_PAN)
- 	add	end, x0, x2
-@@ -76,7 +76,7 @@ ALTERNATIVE("nop", __stringify(SET_PSTATE_PAN(1)), ARM64_HAS_PAN, \
- 	    CONFIG_ARM64_PAN)
- 	mov	x0, #0
- 	ret
--ENDPROC(__copy_in_user)
-+ENDPROC(__arch_copy_in_user)
- 
- 	.section .fixup,"ax"
- 	.align	2
+-	for (i = 0, caps = arm64_hwcaps; caps[i].desc; i++) {
++	for (i = 0, caps = arm64_hwcaps; caps[i].matches; i++) {
+ 		if (!cpus_have_hwcap(&caps[i]))
+ 			continue;
+ 		if (!feature_matches(__raw_read_system_reg(caps[i].sys_reg), &caps[i]))
 -- 
 2.21.0.rc0.269.g1a574e7a288b
 
