@@ -2,92 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85D8D6673E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 08:50:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E785D66766
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 09:03:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VG2UNxoAaZUPmKsVLii9OlzCUWjK4RLvZ3wXKUFriKs=; b=uq/DMyhKGBwb/D
-	7KfuHKI+k88Nv80uSjLZRz9eY9gkrGLoM2G+m/huyg58hGEci7Qn6+WKzlY6oX8Mc/GR+YVUcVKUy
-	FrzO2vxVtrMYJ+n3O25iCnvuLDAPzYNffSS4peqsSQel1kmhpvlXuNE248mteQGSJkDEmF43JiCqd
-	/RF3tDA1/TDFpeUl8mcpAZg5r+9DcDnuKlAbl92RzNoyqdaPJl5TKVpkjnkKra6FIZqLbY8yzOET6
-	46zkMg0lR5M3ZWENOPeIdfbuoKJUv6XMyg9GZHif43dGmM5RagjiAFUuaU911WbJembXrqkpm8ZiW
-	4OSMDC7CHkoWIuoM0wHg==;
+	List-Owner; bh=NxZv+XCn/delZnmhxY/T43bQOFrbmgABZyKm3VNFPZQ=; b=q7PDe2H/VH6DN9
+	tYQard4Wof3VOAaL83J7lCtYzLK7XlVDGdzO+5h3CojOQzZ79vTUDHUfYXYw8Gi9/eDEuCLdhvG6K
+	8Re+/elwB10Qj8RWy1pdh6Yu5aCYp6hw04HVHrMuIlEOnyu1YRfyZp8S9cLbqKaX/9PYO5uNg0JOp
+	+/Pub+rItp6vWXrPk/wDyLXfedrP7hcZpy5stTKo+OcaD83kN3Jt930vHjYr/MFnl3DGbrZ/V4oGw
+	8tChZLpeB/+Y8if9svPbhPA5eHF7CLRTaJ4AWZ1jvgNpTwwRZOwJkDx1p4/STbL0Zo39PqzZOqrxP
+	7x5M1CG5XR8NE/xKWewA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlpOK-0006yW-7o; Fri, 12 Jul 2019 06:50:48 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1hlpaJ-0002Mc-Oy; Fri, 12 Jul 2019 07:03:11 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlpNt-0006r2-F7; Fri, 12 Jul 2019 06:50:22 +0000
-Received: by mail-pg1-x543.google.com with SMTP id s27so4107278pgl.2;
- Thu, 11 Jul 2019 23:50:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=nunM8EbMx8v6iauP2cPpdPNrk0NnDajKR4vWDYT01Xk=;
- b=iBft0C0HVos4tltf5LODpwQDILpaS8gGULpyrrSpgR2rrBFNotQ5rRfkQjeyhAUXKN
- /zUFfzkOcsFSuF76M8WstPCXUBey8SdLYYYSi9h0QR/WQ/EO4CgqoYM/ebyRq6XMdXNo
- TT3JHx9HR21hObmgoJqw7CIJBjp9XgpHkd74s4RRIFzvCRM7kNByB9tqvIitkVuWdBeN
- Z4JZcwkxGTie4QAVczcWFSwigA7H3Ip9cwr/QyyhP6TNgckO9tzJ1NodTzODYolHdPcB
- UbJEgCNv6g529cBZVjZXYWIViqCmUlsq/eFnNCUVJfbrV945+qyfkneSdQG6OwpLBfdB
- YF0w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=nunM8EbMx8v6iauP2cPpdPNrk0NnDajKR4vWDYT01Xk=;
- b=k2tUthDDqh4A7/BvV3IoqnrUNkWOJPza5gZmAQVl5Nn7eRxYNEpqwYAiwGBwFo0MB/
- 81zG4uBtwMyduo+kwjlA/xOiwxqgqVAoPQYwL+hqFMfya75Ed3GG3fqqCmvRemYGW+3+
- os0YS0a4QJERKgvrxrZNX9xTGw+lKgqICyyCZA0iRU1cLy/wuBx3hJD0D3V0xX8nnySR
- 0mhHH6D/fe0ia3gyF6oNK09qXue29WbyDKSy0s11pVnome71YcCo+rv6eASinJR4bsHQ
- CF+Ekm1FX7gUjc27qyd6G3NGTTF2cwei2iNCSJF3pcEdPTNNiHNC3Dd5DUakhIsjQzck
- F3eA==
-X-Gm-Message-State: APjAAAVQvY6/wFaNfzT8oIwPcAl3hTNxzNlBzYT+ejBeZ1uNdhqjfnN+
- n7xgo2Vkuf4vlgKBVGTpErdhBgyguBM=
-X-Google-Smtp-Source: APXvYqzK1qh1Vj/ulA4pekaBdPxj0EeE2flqAmPZtwiASLmygbcbdwa0L7WHSYjzYLBaONH9v/hNfw==
-X-Received: by 2002:a63:ab08:: with SMTP id p8mr9230016pgf.340.1562914220292; 
- Thu, 11 Jul 2019 23:50:20 -0700 (PDT)
-Received: from dtor-ws ([2620:15c:202:201:3adc:b08c:7acc:b325])
- by smtp.gmail.com with ESMTPSA id 3sm8494091pfg.186.2019.07.11.23.50.19
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 11 Jul 2019 23:50:19 -0700 (PDT)
-Date: Thu, 11 Jul 2019 23:50:17 -0700
-From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-To: Nishka Dasgupta <nishkadg.linux@gmail.com>
-Subject: Re: [PATCH] input: keyboard: mtk-pmic-keys: Add of_node_put() before
- return
-Message-ID: <20190712065017.GF150689@dtor-ws>
-References: <20190709180019.14339-1-nishkadg.linux@gmail.com>
+ id 1hlpa0-0002Ld-Io
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 07:02:54 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 21758AFF9;
+ Fri, 12 Jul 2019 07:02:50 +0000 (UTC)
+Date: Fri, 12 Jul 2019 09:02:47 +0200
+From: Michal Hocko <mhocko@kernel.org>
+To: Hoan Tran OS <hoan@os.amperecomputing.com>
+Subject: Re: [PATCH v2 0/5] mm: Enable CONFIG_NODES_SPAN_OTHER_NODES by
+ default for NUMA
+Message-ID: <20190712070247.GM29483@dhcp22.suse.cz>
+References: <1562887528-5896-1-git-send-email-Hoan@os.amperecomputing.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190709180019.14339-1-nishkadg.linux@gmail.com>
+In-Reply-To: <1562887528-5896-1-git-send-email-Hoan@os.amperecomputing.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_235021_554593_13724D27 
-X-CRM114-Status: GOOD (  14.63  )
-X-Spam-Score: 1.1 (+)
+X-CRM114-CacheID: sfid-20190712_000252_875661_FCB58CA9 
+X-CRM114-Status: GOOD (  13.38  )
+X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.1 points)
+ Content analysis details:   (-1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (dmitry.torokhov[at]gmail.com)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,70 +61,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: matthias.bgg@gmail.com, linux-mediatek@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-input@vger.kernel.org
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>,
+ "open list:MEMORY MANAGEMENT" <linux-mm@kvack.org>,
+ Paul Mackerras <paulus@samba.org>, "H . Peter Anvin" <hpa@zytor.com>,
+ "sparclinux@vger.kernel.org" <sparclinux@vger.kernel.org>,
+ Alexander Duyck <alexander.h.duyck@linux.intel.com>,
+ "linux-s390@vger.kernel.org" <linux-s390@vger.kernel.org>,
+ Michael Ellerman <mpe@ellerman.id.au>, "x86@kernel.org" <x86@kernel.org>,
+ Mike Rapoport <rppt@linux.ibm.com>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Vlastimil Babka <vbabka@suse.cz>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Open Source Submission <patches@amperecomputing.com>,
+ Pavel Tatashin <pavel.tatashin@microsoft.com>,
+ Vasily Gorbik <gor@linux.ibm.com>, Will Deacon <will.deacon@arm.com>,
+ Borislav Petkov <bp@alien8.de>, Thomas Gleixner <tglx@linutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Oscar Salvador <osalvador@suse.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
+ "David S . Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jul 09, 2019 at 11:30:19PM +0530, Nishka Dasgupta wrote:
-> Each iteration of for_each_child_of_node puts the previous
-> node, but in the case of a return from the middle of the loop, there is
-> no put, thus causing a memory leak. Hence add an of_node_put before the
-> return in three places.
-> Issue found with Coccinelle.
+On Thu 11-07-19 23:25:44, Hoan Tran OS wrote:
+> In NUMA layout which nodes have memory ranges that span across other nodes,
+> the mm driver can detect the memory node id incorrectly.
 > 
-> Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
+> For example, with layout below
+> Node 0 address: 0000 xxxx 0000 xxxx
+> Node 1 address: xxxx 1111 xxxx 1111
+> 
+> Note:
+>  - Memory from low to high
+>  - 0/1: Node id
+>  - x: Invalid memory of a node
+> 
+> When mm probes the memory map, without CONFIG_NODES_SPAN_OTHER_NODES
+> config, mm only checks the memory validity but not the node id.
+> Because of that, Node 1 also detects the memory from node 0 as below
+> when it scans from the start address to the end address of node 1.
+> 
+> Node 0 address: 0000 xxxx xxxx xxxx
+> Node 1 address: xxxx 1111 1111 1111
+> 
+> This layout could occur on any architecture. This patch enables
+> CONFIG_NODES_SPAN_OTHER_NODES by default for NUMA to fix this issue.
 
-Applied, thank you.
-
-> ---
->  drivers/input/keyboard/mtk-pmic-keys.c | 9 +++++++--
->  1 file changed, 7 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/input/keyboard/mtk-pmic-keys.c b/drivers/input/keyboard/mtk-pmic-keys.c
-> index 746ff06eaf8d..62391d6c7da6 100644
-> --- a/drivers/input/keyboard/mtk-pmic-keys.c
-> +++ b/drivers/input/keyboard/mtk-pmic-keys.c
-> @@ -277,8 +277,10 @@ static int mtk_pmic_keys_probe(struct platform_device *pdev)
->  		keys->keys[index].regs = &mtk_pmic_regs->keys_regs[index];
->  
->  		keys->keys[index].irq = platform_get_irq(pdev, index);
-> -		if (keys->keys[index].irq < 0)
-> +		if (keys->keys[index].irq < 0) {
-> +			of_node_put(child);
->  			return keys->keys[index].irq;
-> +		}
->  
->  		error = of_property_read_u32(child,
->  			"linux,keycodes", &keys->keys[index].keycode);
-> @@ -286,6 +288,7 @@ static int mtk_pmic_keys_probe(struct platform_device *pdev)
->  			dev_err(keys->dev,
->  				"failed to read key:%d linux,keycode property: %d\n",
->  				index, error);
-> +			of_node_put(child);
->  			return error;
->  		}
->  
-> @@ -293,8 +296,10 @@ static int mtk_pmic_keys_probe(struct platform_device *pdev)
->  			keys->keys[index].wakeup = true;
->  
->  		error = mtk_pmic_key_setup(keys, &keys->keys[index]);
-> -		if (error)
-> +		if (error) {
-> +			of_node_put(child);
->  			return error;
-> +		}
->  
->  		index++;
->  	}
-> -- 
-> 2.19.1
-> 
+Yes it can occur on any arch but most sane platforms simply do not
+overlap physical ranges. So I do not really see any reason to
+unconditionally enable the config for everybody. What is an advantage?
 
 -- 
-Dmitry
+Michal Hocko
+SUSE Labs
 
 _______________________________________________
 linux-arm-kernel mailing list
