@@ -2,103 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A0AB56682C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 10:03:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB7B86684D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 10:12:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=owrQVKYfgDiNTaVYHkw2WrkxTttK7zaKSmLtkyYbeqc=; b=moP1e/9Lg0rLbulh6h8C5PWAYs
-	Vmx0RzSB6G8vZS3+wGoUcm+OyEPzYzzQUss3dBquENOr8aRk7i5bIhbOuhPB6Lbowj7qofajQ33ms
-	uoitAKppHIxsJzrN+g7qJBPY7d+uw5xL3cJ5xh/R4KgvLnquaaTJBrBQs8W+TX4ZX/ZlrLYFFr12p
-	12Q6GJihiIF1hH6OEjSoXJqCoDEnLMBUuN7dSX3ijvWwUVFgx3Ezy+iu7Ex6lyzElqH3TDxx84Ooo
-	9JOUDvxElTTOrkynSmkuAyCDx8UbpS9XNpS31dUtNmwUD/SVNihsTgo4YAtuOerZ40XIO+McoriFe
-	Gbt7fWKQ==;
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2Hd5cfRqIWjNeS+1u3RbUticbUhN1O9YulFH0K9RFd4=; b=iVIDtOXDbaRFak
+	+1dJJJBo6mUmCCkeI5aZWSNUsESi1arxDvtyE3cPwrdYq3HSS/GcbwwqZENgJb5aag9jZHIo5OPYU
+	cAniRp85cWVwpRRyAxgvzR4rbiDfRLJyqy5O6vZ3d2INb+YVUVNxI89txKNcTigtmh9tbiFt2tevL
+	Qr9uZ9LzVrUSP02JIejpb4RRGUzLN8fFm33P4M/3BVeSynKcYfBeYLHmnVZPSY/HOW9O45p21+2y/
+	IZSbNSgqSGcadZU9hOKmCAg9PFcRDaz87nXgqDIDQLhWjmZJ9+LgIzLuxD89beO2psj6CcuJpRfrF
+	cGEhBvMJtXEkfVv6h+og==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlqWk-00086z-TG; Fri, 12 Jul 2019 08:03:35 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hlqWW-00086P-9P
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 08:03:21 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8508D337;
- Fri, 12 Jul 2019 01:03:16 -0700 (PDT)
-Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 11D7D3F59C; Fri, 12 Jul 2019 01:03:15 -0700 (PDT)
-Subject: Re: KVM: arm64: Update kvm_arm_exception_class and esr_class_str for
- new EC
-To: Zenghui Yu <yuzenghui@huawei.com>, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
-References: <e6e8cd90-d309-7f1a-c8d1-85aa03fe0dfb@huawei.com>
-From: Marc Zyngier <marc.zyngier@arm.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
- 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
- Z46HaNmN2hZS/oJ69c1DI5Rcww==
-Organization: ARM Ltd
-Message-ID: <ff38bfbd-7fd9-6df4-4878-26cc7fca0a67@arm.com>
-Date: Fri, 12 Jul 2019 09:03:14 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+	id 1hlqfO-0003yy-N5; Fri, 12 Jul 2019 08:12:30 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hlqfC-0003xr-1Z
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 08:12:19 +0000
+Received: from DGGEMS414-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 51D31B171A7986E02C84;
+ Fri, 12 Jul 2019 16:12:12 +0800 (CST)
+Received: from [127.0.0.1] (10.177.223.23) by DGGEMS414-HUB.china.huawei.com
+ (10.3.19.214) with Microsoft SMTP Server id 14.3.439.0; Fri, 12 Jul 2019
+ 16:12:10 +0800
+Subject: Re: [PATCH v2 0/5] Add NUMA-awareness to qspinlock
+To: Jan Glauber <jglauber@marvell.com>, Alex Kogan <alex.kogan@oracle.com>
+References: <20190329152006.110370-1-alex.kogan@oracle.com>
+ <CAEiAFz238Ywgn6iDAz9gM_3PgPhs-YuAVDptehUBv7MRRPx8Cw@mail.gmail.com>
+From: Hanjun Guo <guohanjun@huawei.com>
+Message-ID: <95683b80-f694-cf34-73fc-e6ec05462ee0@huawei.com>
+Date: Fri, 12 Jul 2019 16:12:05 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101
+ Thunderbird/52.5.0
 MIME-Version: 1.0
-In-Reply-To: <e6e8cd90-d309-7f1a-c8d1-85aa03fe0dfb@huawei.com>
+In-Reply-To: <CAEiAFz238Ywgn6iDAz9gM_3PgPhs-YuAVDptehUBv7MRRPx8Cw@mail.gmail.com>
 Content-Language: en-US
+X-Originating-IP: [10.177.223.23]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190712_010320_428965_AE1E5FBE 
-X-CRM114-Status: UNSURE (   9.78  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190712_011218_377338_B3D1073E 
+X-CRM114-Status: GOOD (  14.11  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.190 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,25 +66,104 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
+ Arnd Bergmann <arnd@arndb.de>, Peter Zijlstra <peterz@infradead.org>,
+ "dave.dice@oracle.com" <dave.dice@oracle.com>,
+ "x86@kernel.org" <x86@kernel.org>, Will Deacon <will.deacon@arm.com>,
+ "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
+ "steven.sistare@oracle.com" <steven.sistare@oracle.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "rahul.x.yadav@oracle.com" <rahul.x.yadav@oracle.com>,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ "hpa@zytor.com" <hpa@zytor.com>, "longman@redhat.com" <longman@redhat.com>,
+ "tglx@linutronix.de" <tglx@linutronix.de>,
+ "daniel.m.jordan@oracle.com" <daniel.m.jordan@oracle.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/07/2019 08:12, Zenghui Yu wrote:
-> Hi,
+On 2019/7/3 19:58, Jan Glauber wrote:
+> Hi Alex,
+> I've tried this series on arm64 (ThunderX2 with up to SMT=4  and 224 CPUs)
+> with the borderline testcase of accessing a single file from all
+> threads. With that
+> testcase the qspinlock slowpath is the top spot in the kernel.
 > 
-> I noticed that we've added two ESR exception classes for new hardware
-> extensions - ESR_ELx_EC_SVE and ESR_ELx_EC_PAC.  Should we also update
-> "kvm_arm_exception_class" and "esr_class_str" for these two EC, which
-> might be useful for debug in the future?
-Yes. Please send a patch (or two)!
+> The results look really promising:
+> 
+> CPUs    normal    numa-qspinlocks
+> ---------------------------------------------
+> 56        149.41          73.90
+> 224      576.95          290.31
+> 
+> Also frontend-stalls are reduced to 50% and interconnect traffic is
+> greatly reduced.
+> Tested-by: Jan Glauber <jglauber@marvell.com>
 
-Thanks,
+Tested this patchset on Kunpeng920 ARM64 server (96 cores,
+4 NUMA nodes), and with the same test case from Jan, I can
+see 150%+ boost! (Need to add a patch below [1].)
 
-	M.
--- 
-Jazz is not dead. It just smells funny...
+For the real workload such as Nginx I can see about 10%
+performance improvement as well.
+
+Tested-by: Hanjun Guo <guohanjun@huawei.com>
+
+Please cc me for new versions and I'm willing to test it.
+
+Thanks
+Hanjun
+
+[1]
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index 657bbc5..72c1346 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -792,6 +792,20 @@ config NODES_SHIFT
+          Specify the maximum number of NUMA Nodes available on the target
+          system.  Increases memory reserved to accommodate various tables.
+
++config NUMA_AWARE_SPINLOCKS
++ bool "Numa-aware spinlocks"
++ depends on NUMA
++ default y
++ help
++   Introduce NUMA (Non Uniform Memory Access) awareness into
++   the slow path of spinlocks.
++
++   The kernel will try to keep the lock on the same node,
++   thus reducing the number of remote cache misses, while
++   trading some of the short term fairness for better performance.
++
++   Say N if you want absolute first come first serve fairness.
++
+ config USE_PERCPU_NUMA_NODE_ID
+        def_bool y
+        depends on NUMA
+diff --git a/kernel/locking/qspinlock_cna.h b/kernel/locking/qspinlock_cna.h
+index 2994167..be5dd44 100644
+--- a/kernel/locking/qspinlock_cna.h
++++ b/kernel/locking/qspinlock_cna.h
+@@ -4,7 +4,7 @@
+ #endif
+
+ #include <linux/random.h>
+-
++#include <linux/topology.h>
+ /*
+  * Implement a NUMA-aware version of MCS (aka CNA, or compact NUMA-aware lock).
+  *
+@@ -170,7 +170,7 @@ static __always_inline void cna_init_node(struct mcs_spinlock *node, int cpuid,
+                                          u32 tail)
+ {
+        if (decode_numa_node(node->node_and_count) == -1)
+-           store_numa_node(node, numa_cpu_node(cpuid));
++         store_numa_node(node, cpu_to_node(cpuid));
+        node->encoded_tail = tail;
+ }
+
 
 _______________________________________________
 linux-arm-kernel mailing list
