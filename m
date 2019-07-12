@@ -2,62 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42C9666462
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 04:24:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B21BA66474
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 04:36:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a4DvuOH392B0dn4DAp6KErs6c93KdVxnlynoiaREu6Q=; b=oFe4dT+jmMFkg0
-	Bpt2Lm2qvlvhfbQaCI044keZ+mRPJhuqa9eL2Z0N49llfFZpaE2i4qXLXD4C8/EM8As67DHlq4WH5
-	CaWVpd4w22aMlms39sJsX+NG+VTz5EUAxFMVS3Jck2tf/hLw1pVEoYy/YmcxTEvWucsN7D06xWnag
-	VKPdt0eUQlSBD6pOE8u/PbyX7g+VAi+XazdTtYP+hwXsXlU7ZOEefVt/v+s4KsEbuyW30SQa5tnCu
-	8CZbb8uqCexnyKqXhoP1KBX9jT6oMQOzZBizNBLNlEXLt8OeAVN3IbQMcBekgnxeCFVVqR/iNg1Yc
-	G6pdTCEbfFhNQSthkzRw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7F/L8qWxpeqf6tN//ZRKVRFh/tpfXng4aoUYjGaNRo4=; b=WS7Iz7TRT1FX8+
+	8MwXyxRD1zgWyIqQ33A971nPnObPIDVRI/fTfCOeDLREcF/OkiveZmrpgt4gMZCXEiluorQsXRuHc
+	2mSnUNut+2xF7TIFLgRSB1SOmcJKCtBc3GNHPnzVgSerDAMPMFFrPpjVPDoXJjlCK3caF1FUO6TtZ
+	aYifE9ZKsn1ny42sHihr1zrGwuthJyv73tFDmEVjTY2e9RjO1aKCuanfDuNvak/0TQeDjlyisJh04
+	onTuGFYLdeWly7FxKi5zys4Aycb9TeDcTSieW5Lvl8IWTXbOod9Jv35PNmtHD1yJ2JK6NqYu+Icpw
+	DdtopgvlbexrPuMIOmTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hllEp-0001Tq-U3; Fri, 12 Jul 2019 02:24:44 +0000
-Received: from out30-131.freemail.mail.aliyun.com ([115.124.30.131])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hllAt-0007T8-FM; Fri, 12 Jul 2019 02:20:41 +0000
-X-Alimail-AntiSpam: AC=PASS; BC=-1|-1; BR=01201311R171e4; CH=green; DM=||false|;
- FP=0|-1|-1|-1|0|-1|-1|-1; HT=e01f04391; MF=alex.shi@linux.alibaba.com; NM=1;
- PH=DS; RN=21; SR=0; TI=SMTPD_---0TWfV401_1562898035; 
-Received: from localhost(mailfrom:alex.shi@linux.alibaba.com
- fp:SMTPD_---0TWfV401_1562898035) by smtp.aliyun-inc.com(127.0.0.1);
- Fri, 12 Jul 2019 10:20:35 +0800
-From: Alex Shi <alex.shi@linux.alibaba.com>
-To: linux-doc@vger.kernel.org,
-	Jonathan Corbet <corbet@lwn.net>
-Subject: [PATCH 12/12] Documentation/xtensa: repointer docs to
- Documentation/arch/
-Date: Fri, 12 Jul 2019 10:20:18 +0800
-Message-Id: <20190712022018.27989-12-alex.shi@linux.alibaba.com>
-X-Mailer: git-send-email 2.19.1.856.g8858448bb
-In-Reply-To: <20190712022018.27989-1-alex.shi@linux.alibaba.com>
-References: <20190712022018.27989-1-alex.shi@linux.alibaba.com>
+	id 1hllQJ-00074E-FZ; Fri, 12 Jul 2019 02:36:35 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hllQ4-00073n-TP
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 02:36:22 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 94C912B;
+ Thu, 11 Jul 2019 19:36:17 -0700 (PDT)
+Received: from [10.162.41.115] (p8cg001049571a15.blr.arm.com [10.162.41.115])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 6334B3F71F; Thu, 11 Jul 2019 19:36:12 -0700 (PDT)
+Subject: Re: [PATCH] arm: Extend the check for RAM in /dev/mem
+To: KarimAllah Ahmed <karahmed@amazon.de>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+References: <1562883681-18659-1-git-send-email-karahmed@amazon.de>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <14f02e29-77b2-29d9-a9f4-7f89ad0194f6@arm.com>
+Date: Fri, 12 Jul 2019 08:06:43 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
+In-Reply-To: <1562883681-18659-1-git-send-email-karahmed@amazon.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_192040_043986_CD8B383E 
-X-CRM114-Status: UNSURE (   6.94  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -8.0 (--------)
+X-CRM114-CacheID: sfid-20190711_193621_045641_1F806F65 
+X-CRM114-Status: GOOD (  21.16  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-8.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [115.124.30.131 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,51 +62,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, linux-fbdev@vger.kernel.org,
- linux-omap@vger.kernel.org, linux-ia64@vger.kernel.org,
- linux-scsi@vger.kernel.org, linux-parisc@vger.kernel.org,
- linux-sh@vger.kernel.org, linux-xtensa@linux-xtensa.org,
- linux-kernel@vger.kernel.org, linux-mips@vger.kernel.org,
- Max Filippov <jcmvbkbc@gmail.com>, linux-samsung-soc@vger.kernel.org,
- kvm@vger.kernel.org, Chris Zankel <chris@zankel.net>,
- linux-riscv@lists.infradead.org, Alex Shi <alex.shi@linux.alibaba.com>,
- linuxppc-dev@lists.ozlabs.org, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Enrico Weigelt <info@metux.net>,
+ Anders Roxell <anders.roxell@linaro.org>, Yu Zhao <yuzhao@google.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Russell King <linux@armlinux.org.uk>, Mike Rapoport <rppt@linux.ibm.com>,
+ Jun Yao <yaojun8558363@gmail.com>, James Morse <james.morse@arm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Robin Murphy <robin.murphy@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since we move Documentation/xtensa docs to Documentation/arch/xtensa
-dir, redirect the doc pointer to them.
 
-Signed-off-by: Alex Shi <alex.shi@linux.alibaba.com>
-Cc: Jonathan Corbet <corbet@lwn.net>
-Cc: linux-doc@vger.kernel.org
-Cc: Chris Zankel <chris@zankel.net>
-Cc: Max Filippov <jcmvbkbc@gmail.com>
-Cc: linux-xtensa@linux-xtensa.org
-Cc: linux-kernel@vger.kernel.org
----
- arch/xtensa/include/asm/initialize_mmu.h | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/xtensa/include/asm/initialize_mmu.h b/arch/xtensa/include/asm/initialize_mmu.h
-index 323d05789159..499fe4847490 100644
---- a/arch/xtensa/include/asm/initialize_mmu.h
-+++ b/arch/xtensa/include/asm/initialize_mmu.h
-@@ -42,7 +42,7 @@
- #if XCHAL_HAVE_S32C1I && (XCHAL_HW_MIN_VERSION >= XTENSA_HWVERSION_RC_2009_0)
- /*
-  * We Have Atomic Operation Control (ATOMCTL) Register; Initialize it.
-- * For details see Documentation/xtensa/atomctl.txt
-+ * For details see Documentation/arch/xtensa/atomctl.txt
-  */
- #if XCHAL_DCACHE_IS_COHERENT
- 	movi	a3, 0x25	/* For SMP/MX -- internal for writeback,
--- 
-2.19.1.856.g8858448bb
+On 07/12/2019 03:51 AM, KarimAllah Ahmed wrote:
+> Some valid RAM can live outside kernel control (e.g. using mem= kernel
+> command-line). For these regions, pfn_valid would return "false" causing
+> system RAM to be mapped as uncached. Use memblock instead to identify RAM.
 
+Once the remaining memory is outside of the kernel (as the admin would have
+intended with mem= command line) what is the particular concern regarding
+the way those get mapped (cached or not) ? It is not to be used any way.
+
+> 
+> Cc: Russell King <linux@armlinux.org.uk>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will@kernel.org>
+> Cc: Mike Rapoport <rppt@linux.ibm.com>
+> Cc: Andrew Morton <akpm@linux-foundation.org>
+> Cc: Anders Roxell <anders.roxell@linaro.org>
+> Cc: Enrico Weigelt <info@metux.net>
+> Cc: Thomas Gleixner <tglx@linutronix.de>
+> Cc: KarimAllah Ahmed <karahmed@amazon.de>
+> Cc: Mark Rutland <mark.rutland@arm.com>
+> Cc: James Morse <james.morse@arm.com>
+> Cc: Anshuman Khandual <anshuman.khandual@arm.com>
+> Cc: Jun Yao <yaojun8558363@gmail.com>
+> Cc: Yu Zhao <yuzhao@google.com>
+> Cc: Robin Murphy <robin.murphy@arm.com>
+> Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-kernel@vger.kernel.org
+> Signed-off-by: KarimAllah Ahmed <karahmed@amazon.de>
+> ---
+>  arch/arm/mm/mmu.c   | 2 +-
+>  arch/arm64/mm/mmu.c | 2 +-
+>  2 files changed, 2 insertions(+), 2 deletions(-)
+> 
+> diff --git a/arch/arm/mm/mmu.c b/arch/arm/mm/mmu.c
+> index 1aa2586..492774b 100644
+> --- a/arch/arm/mm/mmu.c
+> +++ b/arch/arm/mm/mmu.c
+> @@ -705,7 +705,7 @@ static void __init build_mem_type_table(void)
+>  pgprot_t phys_mem_access_prot(struct file *file, unsigned long pfn,
+>  			      unsigned long size, pgprot_t vma_prot)
+>  {
+> -	if (!pfn_valid(pfn))
+> +	if (!memblock_is_memory(__pfn_to_phys(pfn)))
+>  		return pgprot_noncached(vma_prot);
+>  	else if (file->f_flags & O_SYNC)
+>  		return pgprot_writecombine(vma_prot);
+> diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
+> index 3645f29..cdc3e8e 100644
+> --- a/arch/arm64/mm/mmu.c
+> +++ b/arch/arm64/mm/mmu.c
+> @@ -78,7 +78,7 @@ void set_swapper_pgd(pgd_t *pgdp, pgd_t pgd)
+>  pgprot_t phys_mem_access_prot(struct file *file, unsigned long pfn,
+>  			      unsigned long size, pgprot_t vma_prot)
+>  {
+> -	if (!pfn_valid(pfn))
+> +	if (!memblock_is_memory(__pfn_to_phys(pfn)))
+
+pfn_valid() on arm64 checks if the memblock region is mapped i.e does it have
+a linear mapping or not. If a segment of RAM is outside linear mapping due to
+mem= directive and lacks a linear mapping then why should it be mapped similarly
+like system RAM on this path ?
 
 _______________________________________________
 linux-arm-kernel mailing list
