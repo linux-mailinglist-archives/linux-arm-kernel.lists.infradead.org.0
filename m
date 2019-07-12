@@ -2,64 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C57C1675C8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 22:16:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB5BB675F1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 22:32:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s6P35d7AFv2PL7aE+cgFpR61lw+pBoSuoWrelQ8X7jg=; b=NSlV8XWugAnfKo
-	rTmRLt7jAC/RhTdm8mgWg1G7KyrYfFJpsv7K/t1LozVXlo+JZv+Ck0ihT7EA/hOAtLODPBQfpi2kS
-	jGYPbXExKsReQTjlKPNL7LQNzdRECu8YjFJUEkJdrmnsrCWoyv7+OacAJhZ+wuQTlwq2NWuMVyA4/
-	FWX2gjS/0umcC1R05CuonkVAKxJtKdkJCAfzm5EL9Z/7YavDk2hl/XIQwPA4wc8eDo5GjrqLQaaPQ
-	VKrUPkYdaeSKQZanjzsa06OvByRCsKkDyquZvo6Qyh5Avh2kIYXHXtDoZklCfJHId0Y6AZJHX/2rP
-	GAL7zlBmKfSLOtJsjkLg==;
+	List-Owner; bh=gG6D6xl/9tjdU1Dip6UTg4bgXBunv3I/+5TziQj3ORg=; b=AbLIW2a7XAMQCr
+	GdpvILUBn5SUIHwuyF4GuNW8fe9TcxvAiwifip7HqVOW4S8VlT62NnkB6slh1Vyuok0eQ2mrcDKHG
+	kWXL4y/rBCKxRFIo6hwJepariZ8xNaNzjlxoo2/GgoBgtGWJ1Ly5YCeFmY1UoRbQcwQwbDK6yh00F
+	2/H+GorMBECmlnsGKM9b8rVUHKXu2Lfr0N75gXQjseJXzHlxP6O+1RdDkuKE+JpGcKqOKFW2GurCV
+	rqUwFQDriVdcEazKia9Bc2zIVnCJGma/aFXRyz94vvdlqlwwTdfKCKaGfNlk4dhO5GUx/uesTpAuY
+	MvkZ6KI95lBWwL4NH3JQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hm1xr-0006lo-6Y; Fri, 12 Jul 2019 20:16:19 +0000
-Received: from relay2-d.mail.gandi.net ([217.70.183.194])
+	id 1hm2Db-0002z5-6f; Fri, 12 Jul 2019 20:32:35 +0000
+Received: from mail-qt1-f196.google.com ([209.85.160.196])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hm1xX-0006kz-8D
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 20:16:01 +0000
-X-Originating-IP: 90.89.68.76
-Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
- (Authenticated sender: maxime.ripard@bootlin.com)
- by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id 5BEF640002;
- Fri, 12 Jul 2019 20:15:44 +0000 (UTC)
-Date: Fri, 12 Jul 2019 22:15:43 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Vasily Khoruzhick <anarsoul@gmail.com>
-Subject: Re: [PATCH v2 7/7] arm64: dts: allwinner: a64: enable ANX6345 bridge
- on Teres-I
-Message-ID: <20190712201543.krhsfjepd3cqndla@flea>
-References: <20190607094030.GA12373@lst.de>
- <66707fcc-b48e-02d3-5ed7-6b7e77d53266@samsung.com>
- <20190612152022.c3cfhp4cauhzhfyr@flea>
- <bb2c2c00-b46e-1984-088f-861ac8952331@samsung.com>
- <20190701095842.fvganvycce2cy7jn@flea>
- <CA+E=qVdsYV2Bxk245=Myq=otd7-7WHzUnSJN8_1dciAzvSOG8g@mail.gmail.com>
- <20190709085532.cdqv7whuesrjs64c@flea>
- <CA+E=qVdz4vfU3rtTTKjYdM+4UA+=FWheJfWOMaDtFMnWQ1rHbw@mail.gmail.com>
- <20190710114042.ybgavnxb4hgqrtor@flea>
- <CA+E=qVdFoT137pADfxz3uMwhOqjqrA9+6hBeOfbJxuH-M-3Pjw@mail.gmail.com>
+ id 1hm2DQ-0002y5-Mc
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 20:32:26 +0000
+Received: by mail-qt1-f196.google.com with SMTP id d17so9466631qtj.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 12 Jul 2019 13:32:22 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=AXfiBSTFyabmGjKMPsBABh99TWn/O7kY2xAYWykOPE8=;
+ b=f+E/Cz5PZo6DLz82PpsmCsW0ybvpsefTBkMpCGZSK/wqrWkI5jlwe0Y8XN2KE4zZJu
+ wNglqdVLBBHOmsaIvdEMR2wkmT+fnWaV5J0VFiY8SMAl2MfP79s/2k+WrncfxvJvUMFb
+ HIFIWL2RKq694wnJOm1NLUbXFvLuvUkrpQO/YGBzAR8udp/+LpnKvhmNwMq6WlBA8Spd
+ w8zxloqdOnKsIf6QIrDjw1JkX+jJIf+DY+xUmiUw2D08hDBTSYGbaL+TkJMukCblDL/p
+ FQYGQ6MJSkdoVZGyeFSdsCvjbbML3MGK3GyxuNRjI1mxCgLCSSt6jLROJ0u9d9cfwtj7
+ UUxg==
+X-Gm-Message-State: APjAAAV1c4RlRdD/HJ6seiTJPnq76pBxtUEZfRKV36u8DOtuC9GpAH6K
+ ojGcA/sY5LVlOixqhogmLT3DnttQPDLMXG2tq64=
+X-Google-Smtp-Source: APXvYqwP7oaInE5SLjdLNdQozkvQJxIDjpYPZdC9jFiJOoGRL1tCCAtlmFUHahShBB5MOnXi5zlDIKX7BGRcTHffAm0=
+X-Received: by 2002:aed:3e7c:: with SMTP id m57mr8086459qtf.204.1562963541466; 
+ Fri, 12 Jul 2019 13:32:21 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CA+E=qVdFoT137pADfxz3uMwhOqjqrA9+6hBeOfbJxuH-M-3Pjw@mail.gmail.com>
-User-Agent: NeoMutt/20180716
+References: <20190712091357.744515-1-arnd@arndb.de>
+ <20190712173912.GA127917@archlinux-threadripper>
+ <CAKwvOd=-OE=uHCurw7VsHPUVHz9XWW7U_8vJEerGaYPii+f8RQ@mail.gmail.com>
+In-Reply-To: <CAKwvOd=-OE=uHCurw7VsHPUVHz9XWW7U_8vJEerGaYPii+f8RQ@mail.gmail.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Fri, 12 Jul 2019 22:32:05 +0200
+Message-ID: <CAK8P3a25CdaJiaPNrYf3rZ85vptZvkN3Z88t=MX6NeOnTs_V3A@mail.gmail.com>
+Subject: Re: [PATCH] dma: ste_dma40: fix unneeded variable warning
+To: Nick Desaulniers <ndesaulniers@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190712_131559_449270_FE26E909 
-X-CRM114-Status: GOOD (  20.15  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190712_133224_745874_C956B11D 
+X-CRM114-Status: GOOD (  13.83  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.194 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.160.196 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.196 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,69 +84,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Sean Paul <seanpaul@chromium.org>,
- David Airlie <airlied@linux.ie>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Andrzej Hajda <a.hajda@samsung.com>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Torsten Duwe <duwe@lst.de>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>, Harald Geyer <harald@ccbib.org>,
- Thierry Reding <thierry.reding@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- arm-linux <linux-arm-kernel@lists.infradead.org>,
- Icenowy Zheng <icenowy@aosc.io>
+Cc: Linus Walleij <linus.walleij@linaro.org>,
+ LKML <linux-kernel@vger.kernel.org>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Vinod Koul <vkoul@kernel.org>, dmaengine@vger.kernel.org,
+ Nathan Chancellor <natechancellor@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 10, 2019 at 03:11:04PM -0700, Vasily Khoruzhick wrote:
-> On Wed, Jul 10, 2019 at 4:40 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
-> > > > > There's another issue: if we introduce edp-connector we'll have to
-> > > > > specify power up delays somewhere (in dts? or in platform driver?), so
-> > > > > edp-connector doesn't really solve the issue of multiple panels with
-> > > > > same motherboard.
-> > > >
-> > > > And that's what that compatible is about :)
-> > >
-> > > Sorry, I fail to see how it would be different from using existing
-> > > panels infrastructure and different panels compatibles. I think Rob's
-> > > idea was to introduce generic edp-connector.
-> >
-> > Again, there's no such thing as a generic edp-connector. The spec
-> > doesn't define anything related to the power sequence for example.
-> >
-> > > If we can't make it generic then let's use panel infrastructure.
-> >
-> > Which uses a device specific compatible. Really, I'm not sure what
-> > your objection and / or argument is here.
-> >
-> > In addition, when that was brought up in the discussion, you rejected
-> > it because it was inconvenient:
-> > https://patchwork.freedesktop.org/patch/283012/?series=56163&rev=1#comment_535206
+On Fri, Jul 12, 2019 at 9:17 PM 'Nick Desaulniers' via Clang Built
+Linux <clang-built-linux@googlegroups.com> wrote:
 >
-> It is inconvenient, but I don't understand how having board-specific
-> connectors fixes it.
+> On Fri, Jul 12, 2019 at 10:39 AM Nathan Chancellor
+> <natechancellor@gmail.com> wrote:
+> >
+> > On Fri, Jul 12, 2019 at 11:13:30AM +0200, Arnd Bergmann wrote:
+> > > clang-9 points out that there are two variables that depending on the
+> > > configuration may only be used in an ARRAY_SIZE() expression but not
+> > > referenced:
+> > >
+> > > drivers/dma/ste_dma40.c:145:12: error: variable 'd40_backup_regs' is not needed and will not be emitted [-Werror,-Wunneeded-internal-declaration]
+> > > static u32 d40_backup_regs[] = {
+> > >            ^
+> > > drivers/dma/ste_dma40.c:214:12: error: variable 'd40_backup_regs_chan' is not needed and will not be emitted [-Werror,-Wunneeded-internal-declaration]
+> > > static u32 d40_backup_regs_chan[] = {
+> > >
+> > > Mark these __maybe_unused to shut up the warning.
+> > >
+> > > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+>
+> Thanks for the patch!
+>
+> >
+> > Might be worth mentioning that this warning will only appear when
+> > CONFIG_PM is unset (they are both used in d40_save_restore_registers).
+>
+> So would moving the definition into a
+> #ifdef CONFIG_PM
+> #endif
+> block be better than __maybe_unused?
+>
 
-How it would not fix it?
+That would not work here, since the driver still uses ARRAY_SIZE() on
+the variable.
+Even more #ifdefs could solve that as well, but I don't want to spend too much
+effort on this driver since it has almost no users.
 
-You'll have one connector, without the need to describe each and every
-panel in the device tree and rely on the EDID instead, and you'll have
-the option to power up the regulator you need.
-
-I really don't understand what's the issue here, so let's take a step
-back. What are is the issue , what are your requirements, and how
-would you like that to be described ?
-
-Maxime
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+      Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
