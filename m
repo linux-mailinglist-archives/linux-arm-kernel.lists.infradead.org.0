@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C5BB67283
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 17:34:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C1DE167294
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 17:38:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FVK/3Zy1mkYuB7saEesePj/sbKTHZOHcoT4Zn42HXWQ=; b=Mud6gjhVp3st0Q
-	Feq6tLtg22arQmmg3L2asroLlnfV4oO7/649kB6PtiV0fILHfswVrqjFvLWv5GyUxySas94qOKB3/
-	aJhI9n6FFfsqlwcYkcA/V4ksILciUPvOxWE984268lcqJCCofbin+fn55y6qPfCPyTKEHOSsObmZt
-	VZJjpD2+ccntBSvU+8jagqXhvtt6rchPGpXJFBMp4HDtEO9WlCt/jnxaRbBku6A+a1Gec7y0VOLX8
-	cC0YeyeV6R0xSBD42jfDzQCTvXE/ebzTWBFnImn0A9Ft9rjKMAhfEzcx6TGcfvW+yDBZ7w+EsU2Ml
-	xyyhcbstxKG0OV1kGRgQ==;
+	List-Owner; bh=JSj/KCocIC+DUuMAczA7TpxDPbLEn7AYZo4O1CDBk3k=; b=APW413qMXCEceB
+	d23JdkGj6Kode/hdrTlFG4vA7ve7iVTBzqBzZ38YrNENc8++nFWSdhwENEYsyx84frU5Nst30duN0
+	n1X7eqJ6ML5pWmNO1/BoRJgb35Gyn8eHhz6cXN4HzFGKJLwYxxKAB8SpI4bePwwHUn5adtnrGCp/t
+	KFv76zliescoHkSf/3Uqg3Sa4cQS34wRYStnfqUUMJTMGxBIx/YHpuq2nnIKiF/ZONmNsPmwfTEPf
+	xB9sI4vqFHW6oDxo8EnLid/ohAOi5Lt7i3lX4fLhkuETiukkesZvI8hCfSyabkUuHiLzNeglHZrCy
+	si3sg1GWuLBCSUsKUZCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlxZL-0006PH-Md; Fri, 12 Jul 2019 15:34:43 +0000
+	id 1hlxca-0008IK-KZ; Fri, 12 Jul 2019 15:38:04 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlxZ8-0006On-8B
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 15:34:31 +0000
+ id 1hlxcN-0008Hj-I8
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 15:37:52 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D8358208E4;
- Fri, 12 Jul 2019 15:34:26 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6E4FE20863;
+ Fri, 12 Jul 2019 15:37:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1562945669;
- bh=0Jq5bytHScmzuaUgkLOcMn+wkYvpVCOyFIY3QFlQlPA=;
+ s=default; t=1562945871;
+ bh=PH6b4FwrGMrv9z9RDpSOpBcty9ihP8OMeR1bpqd6mEQ=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=EcsX4XKIQ29y1tUOqb/gQ7R67pM4qGY9wMlQLPjygHdM6CzLF5q6w58H+PNWDbKq7
- jp4bnti/aIq2MeMoqkBEpiswGCsjM/U+6REw5bsOLPNoqagF9OaJUS+5reMSz+blsL
- +29+dJNduIXKl4ANdFw2W3EFliUz3id0zm6OMOKo=
-Date: Fri, 12 Jul 2019 16:34:23 +0100
+ b=EfVv4bKTgQPalAa/KFu4nQKKiH4mCnoSoMFyKsNqliy3LLQDTJPIj40hBDqZeGt79
+ Hg2rWJ6NfHY/NlcQFCm24ZJxIIPnN3W9JMZb7fhb5/V5r/Q83HQGp00w7bsTT6SjUq
+ fZjcvHBaq+IBbFJbKdu0JABrC1NjuLD9si4ga00Q=
+Date: Fri, 12 Jul 2019 16:37:46 +0100
 From: Will Deacon <will@kernel.org>
-To: "Raslan, KarimAllah" <karahmed@amazon.de>
-Subject: Re: [PATCH] arm: Extend the check for RAM in /dev/mem
-Message-ID: <20190712153423.ypyqexfmajrmsa5r@willie-the-truck>
-References: <1562883681-18659-1-git-send-email-karahmed@amazon.de>
- <20190712145711.mxmnuyn6kpv2dr7u@willie-the-truck>
- <1562944417.1345.17.camel@amazon.de>
+To: Naohiro Aota <naohiro.aota@wdc.com>
+Subject: Re: [PATCH v2 2/2] arm64/vdso: fix flip/flop vdso build bug
+Message-ID: <20190712153746.5dwwptgrle3z25m7@willie-the-truck>
+References: <20190712101556.17833-1-naohiro.aota@wdc.com>
+ <20190712101556.17833-2-naohiro.aota@wdc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1562944417.1345.17.camel@amazon.de>
+In-Reply-To: <20190712101556.17833-2-naohiro.aota@wdc.com>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190712_083430_305024_6A4B6194 
-X-CRM114-Status: GOOD (  13.72  )
+X-CRM114-CacheID: sfid-20190712_083751_622975_06921F76 
+X-CRM114-Status: GOOD (  12.32  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,54 +77,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "anders.roxell@linaro.org" <anders.roxell@linaro.org>,
- "yuzhao@google.com" <yuzhao@google.com>,
- "ard.biesheuvel@linaro.org" <ard.biesheuvel@linaro.org>,
- "info@metux.net" <info@metux.net>,
- "anshuman.khandual@arm.com" <anshuman.khandual@arm.com>,
- "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "yaojun8558363@gmail.com" <yaojun8558363@gmail.com>,
- "james.morse@arm.com" <james.morse@arm.com>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "tglx@linutronix.de" <tglx@linutronix.de>,
- "rppt@linux.ibm.com" <rppt@linux.ibm.com>,
- "robin.murphy@arm.com" <robin.murphy@arm.com>,
- "akpm@linux-foundation.org" <akpm@linux-foundation.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
+ linux-kernel@vger.kernel.org, Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Andy Lutomirski <luto@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Peter Collingbourne <pcc@google.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jul 12, 2019 at 03:13:38PM +0000, Raslan, KarimAllah wrote:
-> On Fri, 2019-07-12 at 15:57 +0100, Will Deacon wrote:
-> > On Fri, Jul 12, 2019 at 12:21:21AM +0200, KarimAllah Ahmed wrote:
-> > > =
+On Fri, Jul 12, 2019 at 07:15:56PM +0900, Naohiro Aota wrote:
+> Running "make" on an already compiled kernel tree will rebuild the kernel
+> even without any modifications:
+> 
+> $ make ARCH=arm64 CROSS_COMPILE=/usr/bin/aarch64-unknown-linux-gnu-
+> arch/arm64/Makefile:58: CROSS_COMPILE_COMPAT not defined or empty, the compat vDSO will not be built
+>   CALL    scripts/checksyscalls.sh
+>   CALL    scripts/atomic/check-atomics.sh
+>   VDSOCHK arch/arm64/kernel/vdso/vdso.so.dbg
+>   VDSOSYM include/generated/vdso-offsets.h
+>   CHK     include/generated/compile.h
+>   CC      arch/arm64/kernel/signal.o
+>   CC      arch/arm64/kernel/vdso.o
+>   CC      arch/arm64/kernel/signal32.o
+>   LD      arch/arm64/kernel/vdso/vdso.so.dbg
+>   OBJCOPY arch/arm64/kernel/vdso/vdso.so
+>   AS      arch/arm64/kernel/vdso/vdso.o
+>   AR      arch/arm64/kernel/vdso/built-in.a
+>   AR      arch/arm64/kernel/built-in.a
+>   GEN     .version
+>   CHK     include/generated/compile.h
+>   UPD     include/generated/compile.h
+>   CC      init/version.o
+>   AR      init/built-in.a
+>   LD      vmlinux.o
+> 
+> This is the same bug fixed in commit 92a4728608a8 ("x86/boot: Fix
+> if_changed build flip/flop bug"). We cannot use two "if_changed" in one
+> target. Fix this build bug by merging two commands into one function.
+> 
+> Cc: Masahiro Yamada <yamada.masahiro@socionext.com>
+> Fixes: 28b1a824a4f4 ("arm64: vdso: Substitute gettimeofday() with C implementation")
+> Signed-off-by: Naohiro Aota <naohiro.aota@wdc.com>
+> ---
+>  arch/arm64/kernel/vdso/Makefile | 6 ++++--
+>  1 file changed, 4 insertions(+), 2 deletions(-)
 
-> > > diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
-> > > index 3645f29..cdc3e8e 100644
-> > > --- a/arch/arm64/mm/mmu.c
-> > > +++ b/arch/arm64/mm/mmu.c
-> > > @@ -78,7 +78,7 @@ void set_swapper_pgd(pgd_t *pgdp, pgd_t pgd)
-> > >  pgprot_t phys_mem_access_prot(struct file *file, unsigned long pfn,
-> > >  			      unsigned long size, pgprot_t vma_prot)
-> > >  {
-> > > -	if (!pfn_valid(pfn))
-> > > +	if (!memblock_is_memory(__pfn_to_phys(pfn)))
-> > =
-
-> > This looks broken to me, since it will end up returning 'true' for nomap
-> > memory and we really don't want to map that using writeback attributes.
-> =
-
-> True, I will fix this by using=A0memblock_is_map_memory instead. That sai=
-d, do
-> you have any concerns about this approach in=A0general?
-
-If you do that, I don't understand why you need the patch at all given our
-implementation of pfn_valid() in arch/arm64/mm/init.c.
+Thanks. I've merged in Vincenzo's compat change too, so I'll send this at
+-rc1 for arm64.
 
 Will
 
