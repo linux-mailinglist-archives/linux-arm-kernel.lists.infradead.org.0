@@ -2,85 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 73F5F66630
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 07:29:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE7936663C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 07:30:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wVE5f/Q5Nj3SOHmGothpeltT7CJaCfVTPP9qGOmGPUM=; b=RqaRuVuWcLgCSN
-	mcFS/jZnXg03aco0BKW4alFKW5jkHo3a8tOhEXB5Lvd4PFzqDjw3usQmiSjFDxmUjwt4P7fbhaZRq
-	EZTFKCU4Y/YJy6jzuBM722N9TPVivfkO/V6+OgnuMUrE4BYE5b4j3040Fn37JO+MRN2ZGV6PGM4s4
-	VzUEtMbc/qhCeN+aJKfCtuy6GSinqJiaGeauOmAcIwcr919yS0NcUa0VKkiDc/6jy5AH8OmlEDOzt
-	eUJWBZ7iSBkUngrpoRQiRRYab2i2gkVcJIJNaMBsQwCxUJbA4XvJIvxUlsuKVBmH5tz3ZRkxPbsMp
-	FPSubHiic7hLGvizxJTg==;
+	List-Owner; bh=hGrTGUD8J/78pr87Qfo+1yvMxNqw5lJ2xHsoIQ5HGO8=; b=byvcwwsqjAfWkQ
+	Ioovn/b0noMPMbpa/LJWQAQsZWiPE+Ft9XYgaG0kKGRvu1DXIE1N9co5+OZ7FBnqohjddEBb2BwQI
+	F3A5WVOiKAf1xm7YaGcddSpLtYo6Ym6iuVb3t/Zl1chvSQBJsJO5puAq7h4Xa8Tp2kw5xQYJXmrk0
+	9P60Aruh8Z7Fnag3qQDduknZrya4lUIGAwT8mo680YWkh83jqUMjYhNEhsc8NnHGhgWPg1YZuC+5K
+	RBfdwBn0WP8V23RvY/lZs2+f/1PVJ6B2FVx0e4wkrV87Mr/4/O9dkwjY3izjMEiqktWbMWC5dzDxn
+	/mdGAajrLMXklc2NgbFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlo7n-0000R7-5f; Fri, 12 Jul 2019 05:29:39 +0000
+	id 1hlo8D-0000jK-3z; Fri, 12 Jul 2019 05:30:05 +0000
 Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlo7B-0000FF-U6
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 05:29:03 +0000
-Received: by mail-pl1-x642.google.com with SMTP id w24so4213488plp.2
+ id 1hlo7E-0000GM-IB
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 05:29:05 +0000
+Received: by mail-pl1-x642.google.com with SMTP id b3so4206096plr.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 11 Jul 2019 22:29:01 -0700 (PDT)
+ Thu, 11 Jul 2019 22:29:04 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=t+8ZINgorfc9/vHqnYTLmiCH63MmZJ4ah1lcUclNBnY=;
- b=vfEescdrZk7PAf9yh6XRXZTOpIl94QL0p7zhy0G6HKN/L7stQNe0GsU83l1vABWalR
- 40VfcXPgBqpZUStl85FVtb6u/dee46kXlWli0J8BZJMc/renFQMKfN3432e0Oms2ll51
- pytAaRdD5CFCthBLyq98D+cP1UBigqqFmAdgmKh1ceFPIVWWHQqCx1KlzrTb2n7DsfU3
- NyK/2R2NVZXGHW7UREDpV2hTAOEJudmW8ho0hO1AB0/3ZNHTvMsiatNstJWM63A2mrWN
- RabQ7GQclnS5EVa/l/thl+giSH96sRyalPlp+7465G1t7yNFinTicVk75JqPNPn9cIaj
- pYyw==
+ bh=QZmd1kVLh8a0enxFfoIC/p5hW82ft4CjkM7ASI4iKD4=;
+ b=JprPlE3jWUXLSHH6IEYKpZVLFEmbjwTJ1SlcNpUv0d1GSCe8JK/f0tNUq3RBbyxDEh
+ YaDWpMtRy3kUkllP6k3WuFY7bT6cKPm4KygCT/04Oos2vO+SVgCzlgkPuZ6Xu86jBZYL
+ +joRbYQT8HwYfhxbbhQOeFxZKodJnr7G//LB9Lgd6sS6X7pnWILRwWrvwv7pwn92phHu
+ 2BN/4SfoVMRM1fdlzw8BG9jH+cYIHFnui69Xb6O7cq93/IiqXBB7NpgD6CYe2XA87Kb0
+ /vcznTUHRGLdUeHKNW20eSp7yGm7eew+5xU0ZVYuqZO7qU5Kqb4wNcP5DHcXhFQGpWi5
+ YpzQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=t+8ZINgorfc9/vHqnYTLmiCH63MmZJ4ah1lcUclNBnY=;
- b=QosqqoNrHp6zZ6aittvM6r6CumqiEPZgtydHlhHbFKJfOBbjDEF8iUQJ4rufSQiIIo
- EUIHfNT6DsTrHVsGXkA5izioDTsZZ5vvkShNDmU6/6senn3+Balxp0HwpN2KSi7TIfUJ
- GvtmvTHufVHU+50QvUuUlcFW8V6SLIoZWqGBH9+dFImWg/3KKRIIbJr9HyY9NPTluam+
- z+KjFkSBjUqF9LLMjJwMPrYhs9eCSGcNutfWq8kf1oEFJQTrzzZ5F8UCr/vTlMXFGqqb
- mFmvigfX0NFr17eQ21uVHMbP2mlAIEcsXP3iteMemksILh9DeqWRyuh3WRdukSq+gSqo
- Aq3Q==
-X-Gm-Message-State: APjAAAXb1+/kXc2SC4JKC31a8rgLGSOXZzI6Mfb7o6OXussnwn9Oi4ns
- NxPeipMjzH7/NLge53SCfzq/dw==
-X-Google-Smtp-Source: APXvYqyzj4WENL7VncImhrhciTIHq1bzE5dqQ/AjbTemgvpK8K9quil1ia29VHn2YGn/rCxJo3TOJQ==
-X-Received: by 2002:a17:902:2869:: with SMTP id
- e96mr8804681plb.203.1562909341172; 
- Thu, 11 Jul 2019 22:29:01 -0700 (PDT)
+ bh=QZmd1kVLh8a0enxFfoIC/p5hW82ft4CjkM7ASI4iKD4=;
+ b=RfutpU6Tk0ENbNZ8h1Wdu8h0tCpBPIA4q3KInh3Jens4DhXeZpKxJQQr5EnGSfnHhY
+ LS3TckBdzN0ZOqwLA+Z5gmJNjMIGJZFizPrNm38Xe3xruXzj7Ov3gGtRMkM0P49f0HEv
+ v1Xdosb0E4MZLm0Rp3ur2E60yunV8hDZp0MkmlWJYGWERd/02JRWmOgWL7AokHqsk4av
+ k+sVtvmx/xhP4FSlVfeWOPexqkCY4TNEcqldTju4ZrZ2/NZ6IXFmn5q/PCROx2TzWG7m
+ 10UVSYtIHUAuY+MV5B8LrR+nLHGzE9m5MmSCGVz1xwBDlIoclcDd43Z7TxWbRhxdxBQs
+ TTFw==
+X-Gm-Message-State: APjAAAVNhWyJr7W7HGDU6W+jGZysSOWGN9w81vR+qI+az11xIaqci8kQ
+ VCC7ChJoqJI6y5PGG+exge8JNA==
+X-Google-Smtp-Source: APXvYqwHFaJB9Zpe8zTLxMInqnlwGqfIubCK1hUjti0PbcCUDUDRHDy2zd/5RP37X/vJwDpSxuvK+Q==
+X-Received: by 2002:a17:902:7043:: with SMTP id
+ h3mr9559497plt.10.1562909344101; 
+ Thu, 11 Jul 2019 22:29:04 -0700 (PDT)
 Received: from localhost ([122.172.28.117])
- by smtp.gmail.com with ESMTPSA id l31sm13056963pgm.63.2019.07.11.22.29.00
+ by smtp.gmail.com with ESMTPSA id b37sm14696355pjc.15.2019.07.11.22.29.03
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 11 Jul 2019 22:29:00 -0700 (PDT)
+ Thu, 11 Jul 2019 22:29:03 -0700 (PDT)
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: stable@vger.kernel.org,
 	Julien Thierry <Julien.Thierry@arm.com>
-Subject: [PATCH v4.4 V2 01/43] arm64: barrier: Add CSDB macros to control
- data-value prediction
-Date: Fri, 12 Jul 2019 10:57:49 +0530
-Message-Id: <fe952d04e88a653363f4ce73a8a7aedd2609c877.1562908074.git.viresh.kumar@linaro.org>
+Subject: [PATCH v4.4 V2 02/43] arm64: Implement array_index_mask_nospec()
+Date: Fri, 12 Jul 2019 10:57:50 +0530
+Message-Id: <271b3de6a35cd1d184f8c0a21afc0d801bc0b250.1562908074.git.viresh.kumar@linaro.org>
 X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
 In-Reply-To: <cover.1562908074.git.viresh.kumar@linaro.org>
 References: <cover.1562908074.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_222901_969809_896A4876 
-X-CRM114-Status: GOOD (  10.48  )
+X-CRM114-CacheID: sfid-20190711_222904_645125_D4C4F180 
+X-CRM114-Status: GOOD (  10.87  )
 X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -110,54 +109,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Will Deacon <will.deacon@arm.com>
+From: Robin Murphy <robin.murphy@arm.com>
 
-commit 669474e772b952b14f4de4845a1558fd4c0414a4 upstream.
+commit 022620eed3d0bc4bf2027326f599f5ad71c2ea3f upstream.
 
-For CPUs capable of data value prediction, CSDB waits for any outstanding
-predictions to architecturally resolve before allowing speculative execution
-to continue. Provide macros to expose it to the arch code.
+Provide an optimised, assembly implementation of array_index_mask_nospec()
+for arm64 so that the compiler is not in a position to transform the code
+in ways which affect its ability to inhibit speculation (e.g. by introducing
+conditional branches).
+
+This is similar to the sequence used by x86, modulo architectural differences
+in the carry/borrow flags.
 
 Reviewed-by: Mark Rutland <mark.rutland@arm.com>
+Signed-off-by: Robin Murphy <robin.murphy@arm.com>
 Signed-off-by: Will Deacon <will.deacon@arm.com>
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
 Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- arch/arm64/include/asm/assembler.h | 7 +++++++
- arch/arm64/include/asm/barrier.h   | 2 ++
- 2 files changed, 9 insertions(+)
+ arch/arm64/include/asm/barrier.h | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
 
-diff --git a/arch/arm64/include/asm/assembler.h b/arch/arm64/include/asm/assembler.h
-index f68abb17aa4b..683c2875278f 100644
---- a/arch/arm64/include/asm/assembler.h
-+++ b/arch/arm64/include/asm/assembler.h
-@@ -95,6 +95,13 @@
- 	dmb	\opt
- 	.endm
- 
-+/*
-+ * Value prediction barrier
-+ */
-+	.macro	csdb
-+	hint	#20
-+	.endm
-+
- #define USER(l, x...)				\
- 9999:	x;					\
- 	.section __ex_table,"a";		\
 diff --git a/arch/arm64/include/asm/barrier.h b/arch/arm64/include/asm/barrier.h
-index f2d2c0bbe21b..574486634c62 100644
+index 574486634c62..7c25e3e11b6d 100644
 --- a/arch/arm64/include/asm/barrier.h
 +++ b/arch/arm64/include/asm/barrier.h
-@@ -28,6 +28,8 @@
- #define dmb(opt)	asm volatile("dmb " #opt : : : "memory")
- #define dsb(opt)	asm volatile("dsb " #opt : : : "memory")
+@@ -37,6 +37,27 @@
+ #define dma_rmb()	dmb(oshld)
+ #define dma_wmb()	dmb(oshst)
  
-+#define csdb()		asm volatile("hint #20" : : : "memory")
++/*
++ * Generate a mask for array_index__nospec() that is ~0UL when 0 <= idx < sz
++ * and 0 otherwise.
++ */
++#define array_index_mask_nospec array_index_mask_nospec
++static inline unsigned long array_index_mask_nospec(unsigned long idx,
++						    unsigned long sz)
++{
++	unsigned long mask;
 +
- #define mb()		dsb(sy)
- #define rmb()		dsb(ld)
- #define wmb()		dsb(st)
++	asm volatile(
++	"	cmp	%1, %2\n"
++	"	sbc	%0, xzr, xzr\n"
++	: "=r" (mask)
++	: "r" (idx), "Ir" (sz)
++	: "cc");
++
++	csdb();
++	return mask;
++}
++
+ #define smp_mb()	dmb(ish)
+ #define smp_rmb()	dmb(ishld)
+ #define smp_wmb()	dmb(ishst)
 -- 
 2.21.0.rc0.269.g1a574e7a288b
 
