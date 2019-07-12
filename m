@@ -2,45 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5BEE96658E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 06:21:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5825E665D2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 06:34:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lI9hbKO64g9V4YAbbbBhIcG3XxdmWM5wkiWwgd7cmAw=; b=WK9sIrawC3ZxvU
-	Z9bTs58Ub8IC/q1UqPkfTKOp1IB9FmFVUc5UuaDtsf66zaaHkwvmcfbNlwxTEB3xdT3IlUs2/a964
-	RXO7TfXzizvpWtWc3uvpof4Qr0YSViv/PK+/qgMoDZHLgrY7PrvCaj5w8UEBCQwbO6Fp7dq+2Ezju
-	aTEDN+fQSv/xxppcz/tEG34dYu0zMkpLoekoXgXVCgbkklEYsnkpHa/XSoyDSup9FLvGNf1P3U4lb
-	W3KoZeZZxLf2XehG529NSb7y3/zP32p9lXGA0JY5k4PfmI6Sf689O5agMGJxf58+higsihghBmzif
-	O8ZV4yXZM3xK2/FVJ8nA==;
+	List-Owner; bh=5uvwB21YI/t8NsnpVxflk9RGeOwRUHu2EQw0IZMrf4c=; b=S2+HQhse/2C5hn
+	GWElPwoX0QMz+wl5p/fFZWLSMuEqvW+TE9o4cP3+FvkLtxiCabkb9xjfzWWAEVUlS5SaNd1+oV3g9
+	/G/rXCBcPAVxXFxck1IGn1iZ3yGJakiqx3qDr3WH7GbMoh5CuaYruM9uTt3GdlUqxidwYwjFfPCma
+	gfn8fGnl5zd8k/aLVLJiyryBd1kjnm3To1Pv5r6U/HkGeBQG97YvCfDzxkkn3qp60T+DF+6/wWfps
+	TnIgIPilTi505q/wEUCRRBrugDkSwb3lEgYqQG/4mDrzV8qb3GVLg32MFVdPrQhcHpBUN3Eouocei
+	oCDi9PnicuNSUP4BAFjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hln3s-0003p9-9g; Fri, 12 Jul 2019 04:21:32 +0000
+	id 1hlnGI-00075v-2Q; Fri, 12 Jul 2019 04:34:22 +0000
 Received: from zeniv.linux.org.uk ([195.92.253.2])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hln3f-0003oh-5I
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 04:21:20 +0000
+ id 1hlnG6-00074x-7X
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 04:34:11 +0000
 Received: from viro by ZenIV.linux.org.uk with local (Exim 4.92 #3 (Red Hat
- Linux)) id 1hln3C-0003A0-92; Fri, 12 Jul 2019 04:20:50 +0000
-Date: Fri, 12 Jul 2019 05:20:50 +0100
+ Linux)) id 1hlnFe-0003Rz-Ja; Fri, 12 Jul 2019 04:33:42 +0000
+Date: Fri, 12 Jul 2019 05:33:42 +0100
 From: Al Viro <viro@zeniv.linux.org.uk>
 To: Aleksa Sarai <cyphar@cyphar.com>
-Subject: Re: [PATCH v9 04/10] namei: split out nd->dfd handling to
- dirfd_path_init
-Message-ID: <20190712042050.GH17978@ZenIV.linux.org.uk>
+Subject: Re: [PATCH v9 05/10] namei: O_BENEATH-style path resolution flags
+Message-ID: <20190712043341.GI17978@ZenIV.linux.org.uk>
 References: <20190706145737.5299-1-cyphar@cyphar.com>
- <20190706145737.5299-5-cyphar@cyphar.com>
+ <20190706145737.5299-6-cyphar@cyphar.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190706145737.5299-5-cyphar@cyphar.com>
+In-Reply-To: <20190706145737.5299-6-cyphar@cyphar.com>
 User-Agent: Mutt/1.11.3 (2019-02-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_212119_204212_240BF1F7 
-X-CRM114-Status: UNSURE (   9.58  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190711_213410_270307_3D961444 
+X-CRM114-Status: GOOD (  11.22  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -85,29 +83,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Jul 07, 2019 at 12:57:31AM +1000, Aleksa Sarai wrote:
-> Previously, path_init's handling of *at(dfd, ...) was only done once,
-> but with LOOKUP_BENEATH (and LOOKUP_IN_ROOT) we have to parse the
-> initial nd->path at different times (before or after absolute path
-> handling) depending on whether we have been asked to scope resolution
-> within a root.
+On Sun, Jul 07, 2019 at 12:57:32AM +1000, Aleksa Sarai wrote:
 
->  	if (*s == '/') {
-> -		set_root(nd);
-> -		if (likely(!nd_jump_root(nd)))
-> -			return s;
-> -		return ERR_PTR(-ECHILD);
+> @@ -1442,8 +1464,11 @@ static int follow_dotdot_rcu(struct nameidata *nd)
+>  	struct inode *inode = nd->inode;
+>  
+>  	while (1) {
+> -		if (path_equal(&nd->path, &nd->root))
+> +		if (path_equal(&nd->path, &nd->root)) {
+> +			if (unlikely(nd->flags & LOOKUP_BENEATH))
+> +				return -EXDEV;
 
-> +		if (likely(!nd->root.mnt))
-> +			set_root(nd);
+> @@ -1468,6 +1493,8 @@ static int follow_dotdot_rcu(struct nameidata *nd)
+>  				return -ECHILD;
+>  			if (&mparent->mnt == nd->path.mnt)
+>  				break;
+> +			if (unlikely(nd->flags & LOOKUP_XDEV))
+> +				return -EXDEV;
+>  			/* we know that mountpoint was pinned */
+>  			nd->path.dentry = mountpoint;
+>  			nd->path.mnt = &mparent->mnt;
+> @@ -1482,6 +1509,8 @@ static int follow_dotdot_rcu(struct nameidata *nd)
+>  			return -ECHILD;
+>  		if (!mounted)
+>  			break;
+> +		if (unlikely(nd->flags & LOOKUP_XDEV))
+> +			return -EXDEV;
 
-How can we get there with non-NULL nd->root.mnt, when LOOKUP_ROOT case
-has been already handled by that point?
+Are you sure these failure exits in follow_dotdot_rcu() won't give
+suprious hard errors?
 
-> +		error = nd_jump_root(nd);
+> +	if (unlikely(nd->flags & LOOKUP_BENEATH)) {
+> +		error = dirfd_path_init(nd);
 > +		if (unlikely(error))
-> +			s = ERR_PTR(error);
+> +			return ERR_PTR(error);
+> +		nd->root = nd->path;
+> +		if (!(nd->flags & LOOKUP_RCU))
+> +			path_get(&nd->root);
+> +	}
+>  	if (*s == '/') {
+>  		if (likely(!nd->root.mnt))
+>  			set_root(nd);
+> @@ -2350,9 +2400,11 @@ static const char *path_init(struct nameidata *nd, unsigned flags)
+>  			s = ERR_PTR(error);
+>  		return s;
+>  	}
+> -	error = dirfd_path_init(nd);
+> -	if (unlikely(error))
+> -		return ERR_PTR(error);
+> +	if (likely(!nd->path.mnt)) {
 
+Is that a weird way of saying "if we hadn't already called dirfd_path_init()"?
 
 _______________________________________________
 linux-arm-kernel mailing list
