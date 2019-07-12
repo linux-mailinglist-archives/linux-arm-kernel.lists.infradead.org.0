@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1C7F66CC4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 14:23:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA0BC66D5D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 14:29:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Usl+E2sQAQKbX+MakXANQUy+2Dx/ONc4+crtIL2kgVA=; b=Pgcb8hwjOBfxKu
-	CkfQjgD7WNdRCK+WxOlkU9DlhZBCiGtep3AmlwJy9A3QbVHCK9DjR8RGUsHKvgmKtElRIOkMbAUwX
-	B3UPFI5aSyXH+KbqZ91RlpCV3dhXY5y03vl35kQrv+diWlGVbSzbeFzOcZRN8KITa7ZdtPG+mMxiF
-	SqOtB5aPBCG6GWhDghs5k2W2fOYTaDKYHoL5ekSyKrKYGV2vCJb94bjD2xPZ+QW8Cvh6SYLALOlkh
-	HPzHV2lsy6ZkPu9ifGQ9utw0T19FJK8j3KJ9R9dmmhEUEMyTSN9fgPbv3iW2GVCM0UqnqQ/4XLwCB
-	SeVndoZsKB29D32GyT/w==;
+	List-Owner; bh=oIWB6XOEOQ904Zt++KQKiMttjnEn1uM3biX9tDMkPbQ=; b=iCOND5v/PFLo8B
+	iRH9bv7Chk3ZVDOmWcYDrzq/1HjlfKGutucrp6O+ofFvPh4u+vQfj/GISeyU4vexy9FgKOSuiwEjz
+	vcWM/kXWTpPW91joJaiFXLQbdn9A0F7JSBGdwGkt1mz/p1ptR0P4V/tZQdnuK/VnwTqsS8KzdckSH
+	U/bdV1E21HX7sR1NnTt11LawodnLb/AWJFZ3F6+Mgbu0RZHEJ42iuEX7Agbu8jFevYPdm/EeL0LqP
+	xCeIdwhboAHQN7weCIq5wI061oIhlK5I+44j/LAisZsVBqLju/YXU0bos4UHMKgFIZ5KRiyhBsksA
+	tCBGYPxZ6tYGjZbXuIzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hluZx-0003sN-Cw; Fri, 12 Jul 2019 12:23:09 +0000
+	id 1hlugF-0006ZL-TQ; Fri, 12 Jul 2019 12:29:39 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hluZp-0003rB-Dm
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 12:23:03 +0000
+ id 1hlug7-0006Ym-FQ
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 12:29:33 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 106472084B;
- Fri, 12 Jul 2019 12:22:58 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6DEE02084B;
+ Fri, 12 Jul 2019 12:29:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1562934178;
- bh=+YH3dYAhwbEtcBYAH0X9EUm6oml7V9ajXNjfFfs9FWY=;
+ s=default; t=1562934570;
+ bh=dqGDFDIi2rDPmFMdQfVLnotYxhySOqw8XaoV8MfvQW0=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=kzfnWAO85h+KaeozbWmsV3lefwX0potl7TmQK/Br5ZQqY9f/FK5O5PwCidMoke0aB
- 8h1qBQVv/IMmlhjswIdjMEdV6JZuWay6DfmucUSMdrn9k5xJrOauPkhNQ7DQmBlNvw
- gA7eEhZRCf5g6WQxSStpo4x9LVttN2DWQYSkj7Aw=
+ b=HlZ6YAsk3Xx9CSqYc06bvq11lgcRqzLIjr7gbNUOZ7ji+z5csg6tGZOKhBY+E8EA6
+ XOgRXdG2v+Lmz4cKlTzW8n/G2KZ2IOdtxNAqJZWQPi3aw8/07ffZ9lQV0Rb3990/a7
+ 6j56BlcqHHe1Y4McfremD3hq2v4IMkiZKC0N/560=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 4.19 62/91] perf pmu: Fix uncore PMU alias list for ARM64
-Date: Fri, 12 Jul 2019 14:19:05 +0200
-Message-Id: <20190712121625.161181001@linuxfoundation.org>
+Subject: [PATCH 5.1 099/138] perf pmu: Fix uncore PMU alias list for ARM64
+Date: Fri, 12 Jul 2019 14:19:23 +0200
+Message-Id: <20190712121632.564396373@linuxfoundation.org>
 X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20190712121621.422224300@linuxfoundation.org>
-References: <20190712121621.422224300@linuxfoundation.org>
+In-Reply-To: <20190712121628.731888964@linuxfoundation.org>
+References: <20190712121628.731888964@linuxfoundation.org>
 User-Agent: quilt/0.66
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190712_052301_500056_75797964 
+X-CRM114-CacheID: sfid-20190712_052931_544745_8286A771 
 X-CRM114-Status: GOOD (  10.96  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -129,7 +129,7 @@ Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 
 --- a/tools/perf/util/pmu.c
 +++ b/tools/perf/util/pmu.c
-@@ -750,9 +750,7 @@ static void pmu_add_cpu_aliases(struct l
+@@ -709,9 +709,7 @@ static void pmu_add_cpu_aliases(struct l
  {
  	int i;
  	struct pmu_events_map *map;
@@ -139,7 +139,7 @@ Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
  
  	map = perf_pmu__find_map(pmu);
  	if (!map)
-@@ -763,28 +761,26 @@ static void pmu_add_cpu_aliases(struct l
+@@ -722,28 +720,26 @@ static void pmu_add_cpu_aliases(struct l
  	 */
  	i = 0;
  	while (1) {
