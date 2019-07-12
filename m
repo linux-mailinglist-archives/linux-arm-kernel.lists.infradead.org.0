@@ -2,62 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 125BE66F7E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 15:04:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 84AE366F9E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 15:07:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DSU52GCecKGNdtKLwGwwTVVg5v74cvB7kjCZwap2Kqc=; b=QjGhEf63pc9jrB
-	yV94RfGCpbb0XVqI0L8D6zBUbGqj2cPMbZbWWitbeLcYKG+Z/e0slV6olfqliJKBCKJxJHIa7Ml6h
-	+UU8i6b6WfrgDKsYDjx4P/yExpDxwu9ii9+8FpMj3i00lJkCEdvg6/4Nj/U785Hixd4RjavMBKMT6
-	7f9huKUNsPtQPuB3V51n1j8/9d07vjSyG9fvIs/l0mH88r3PcHMYGxMoytJxSeEh7MkA9muD76Nsf
-	9KoXqavWucN16gK/MLczc0QshDm+bm4o5LYBD+6lD3pRdtbWEUhnYh0hCDZyfDCX3T/g1LN6a8f+r
-	YlKP0vwmmNuXYRBwjBzg==;
+	List-Owner; bh=qHuTC4PIqm7+280B5X7rwyFcus/aBytYxo/IAujnN2I=; b=u1FbaJ7jFRnCAb
+	JpNtGujZkbV1AmcJRn3CLH4ocFe1jvXHZ81zyEnIW/ji6KfhydPFzNCihmcW4OIoNy2egqwuzJtvc
+	GYgcnpJ1ZCQKqgay8YFkNcAJy3PJWnvWaHA5vzFOpqBKd0YFSv3XS3PL3eqbIMi64glhnc83A/f+s
+	5hMa1xq3qIL0cbgmS6YfpQcd8l7JQoKadRCm5Tp2kfPBFxvdHPZaevrb8iJ76jDZ903GxEa+1sWor
+	ygHBhsjA1eESIQnpirW6x2zgN4o5A0e8S3B4+dlM1U4z2CdGjFj2KlMEwP8Zh87X+saMhKA5vrygb
+	QUEEAd6hBVXM6cProJZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlvDn-0004NK-EH; Fri, 12 Jul 2019 13:04:19 +0000
+	id 1hlvHF-0006IP-TR; Fri, 12 Jul 2019 13:07:53 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlvDf-0004Md-28
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 13:04:12 +0000
-Received: from mail-qt1-f174.google.com (mail-qt1-f174.google.com
- [209.85.160.174])
+ id 1hlvH4-0006He-UD
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 13:07:44 +0000
+Received: from mail-qk1-f175.google.com (mail-qk1-f175.google.com
+ [209.85.222.175])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 86968216C8
+ by mail.kernel.org (Postfix) with ESMTPSA id 89318216C4
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 12 Jul 2019 13:04:10 +0000 (UTC)
+ Fri, 12 Jul 2019 13:07:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1562936650;
- bh=j08i/yzt8yihm95wbKxIa8ANHeLTJGyB1LowMPZRoQs=;
+ s=default; t=1562936862;
+ bh=8J76JtIM5UW4BCsga1T8Xf5XDKop09AqspKP/Vk8ggU=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=tn4/f9n/k299HHdLN0F6ScJZKf/VYffpnnAYh+PPAzA7ZjRWQFYrqKf+oTQV+fuy4
- ACXtzrbqpM/naLe0Cz/a11svW1mUDqExyut4Wh/u8EXdbSDYghpYV5xdCObec1WWpU
- LNbCdcMo3gwFzWE9scGST+eZVaGIXGMXzio+pSbQ=
-Received: by mail-qt1-f174.google.com with SMTP id x22so3045954qtp.12
+ b=XUPNPXY4lv03ZbwHL8wnKmXnCnfoDk2qK3bWro79xj67IUSK7OKAGvlhOqU7VYwjk
+ mcTbX4Vq4+CDJx24I3iP7YIjLW0p3f24ZpXMTrs8ybfXqiQwUeHkKk3u2Ylm1hDBe9
+ H0F94uby5Z1sx44dAWNzYkj6CdShtLLOP7DcciMM=
+Received: by mail-qk1-f175.google.com with SMTP id g18so6316384qkl.3
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 12 Jul 2019 06:04:10 -0700 (PDT)
-X-Gm-Message-State: APjAAAWlwqn5X1pPj3vyVIYUL0uz5DnszGdRWIDzKFxw8/p1jx+znRPl
- 3z+NGRCMxL4tEUNXGrPfE+J/eeZUhafTqbJhtA==
-X-Google-Smtp-Source: APXvYqy0Gw33CPTr5i9Ny8C1aCwNSn1BsAcArqdhs4L6Ao3k4lrTO3dV3h27CfJYvsBcR6H2d01/a3fqfjUcmFKloV0=
-X-Received: by 2002:a0c:b786:: with SMTP id l6mr6598069qve.148.1562936649734; 
- Fri, 12 Jul 2019 06:04:09 -0700 (PDT)
+ Fri, 12 Jul 2019 06:07:42 -0700 (PDT)
+X-Gm-Message-State: APjAAAWPC7uQXohXzH3lllaL9ZxqRRl9dU4KfbwcRbOKc2Dn8PDxgjfv
+ heMe9l4P7+LAA8zq6O/Bn76T5EIwLTQenhtfLg==
+X-Google-Smtp-Source: APXvYqwPav7WNzk1nC8clhcOKZKa5N2Lh/bDVhexp0tydAW/XvWKuUtshKyZEaqfmvWDRKsvZut5biiZ/R7wYPtJ3pE=
+X-Received: by 2002:a05:620a:1447:: with SMTP id
+ i7mr6365679qkl.254.1562936861782; 
+ Fri, 12 Jul 2019 06:07:41 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190712033214.24713-1-andrew@aj.id.au>
- <20190712033214.24713-2-andrew@aj.id.au>
-In-Reply-To: <20190712033214.24713-2-andrew@aj.id.au>
+References: <20190711092158.14678-1-maxime.ripard@bootlin.com>
+ <20190711092158.14678-3-maxime.ripard@bootlin.com>
+In-Reply-To: <20190711092158.14678-3-maxime.ripard@bootlin.com>
 From: Rob Herring <robh+dt@kernel.org>
-Date: Fri, 12 Jul 2019 07:03:57 -0600
-X-Gmail-Original-Message-ID: <CAL_Jsq++J+K2goHiNrHJGnL6vrLjmKhM+vpYO=sTnmv6fm2sog@mail.gmail.com>
-Message-ID: <CAL_Jsq++J+K2goHiNrHJGnL6vrLjmKhM+vpYO=sTnmv6fm2sog@mail.gmail.com>
-Subject: Re: [PATCH v2 1/2] dt-bindings: mmc: Document Aspeed SD controller
-To: Andrew Jeffery <andrew@aj.id.au>
+Date: Fri, 12 Jul 2019 07:07:30 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqLrVRsWM5ORM9QwjgJyVuPUauCXcY24Qvevvo7wRWgvmw@mail.gmail.com>
+Message-ID: <CAL_JsqLrVRsWM5ORM9QwjgJyVuPUauCXcY24Qvevvo7wRWgvmw@mail.gmail.com>
+Subject: Re: [PATCH 3/3] dt-bindings: dma: Convert Allwinner A31 and A64 DMA
+ to a schema
+To: Maxime Ripard <maxime.ripard@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190712_060411_120155_ACF855EA 
-X-CRM114-Status: GOOD (  12.29  )
+X-CRM114-CacheID: sfid-20190712_060742_994173_13C46A12 
+X-CRM114-Status: GOOD (  13.60  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -87,11 +89,9 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Ulf Hansson <ulf.hansson@linaro.org>, linux-aspeed@lists.ozlabs.org,
- Ryan Chen <ryanchen.aspeed@gmail.com>, linux-mmc <linux-mmc@vger.kernel.org>,
- Adrian Hunter <adrian.hunter@intel.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Joel Stanley <joel@jms.id.au>,
+ Chen-Yu Tsai <wens@csie.org>, Vinod Koul <vkoul@kernel.org>,
+ "open list:DMA GENERIC OFFLOAD ENGINE SUBSYSTEM" <dmaengine@vger.kernel.org>,
+ Frank Rowand <frowand.list@gmail.com>,
  "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
  <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
@@ -99,29 +99,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jul 11, 2019 at 9:32 PM Andrew Jeffery <andrew@aj.id.au> wrote:
+On Thu, Jul 11, 2019 at 3:36 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
 >
-> The ASPEED SD/SDIO/eMMC controller exposes two slots implementing the
-> SDIO Host Specification v2.00, with 1 or 4 bit data buses, or an 8 bit
-> data bus if only a single slot is enabled.
+> The newer Allwinner SoCs have a DMA controller supported in Linux, with a
+> matching Device Tree binding.
 >
-> Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
+> Now that we have the DT validation in place, let's convert the device tree
+> bindings for that controller over to a YAML schemas.
+>
+> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
 > ---
-> In v2:
->
-> * Rename to aspeed,sdhci.yaml
-> * Rename sd-controller compatible
-> * Add `maxItems: 1` for reg properties
-> * Move sdhci subnode description to patternProperties
-> * Drop sdhci compatible requirement
-> * #address-cells and #size-cells are required
-> * Prevent additional properties
-> * Implement explicit ranges in example
-> * Remove slot property
->
->  .../devicetree/bindings/mmc/aspeed,sdhci.yaml | 90 +++++++++++++++++++
->  1 file changed, 90 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/mmc/aspeed,sdhci.yaml
+>  .../dma/allwinner,sun50i-a64-dma.yaml         | 88 +++++++++++++++++++
+>  .../bindings/dma/allwinner,sun6i-a31-dma.yaml | 62 +++++++++++++
+>  .../devicetree/bindings/dma/sun6i-dma.txt     | 81 -----------------
+>  3 files changed, 150 insertions(+), 81 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/dma/allwinner,sun50i-a64-dma.yaml
+>  create mode 100644 Documentation/devicetree/bindings/dma/allwinner,sun6i-a31-dma.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/dma/sun6i-dma.txt
 
 Reviewed-by: Rob Herring <robh@kernel.org>
 
