@@ -2,70 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C1DE167294
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 17:38:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 58507672A9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 17:45:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JSj/KCocIC+DUuMAczA7TpxDPbLEn7AYZo4O1CDBk3k=; b=APW413qMXCEceB
-	d23JdkGj6Kode/hdrTlFG4vA7ve7iVTBzqBzZ38YrNENc8++nFWSdhwENEYsyx84frU5Nst30duN0
-	n1X7eqJ6ML5pWmNO1/BoRJgb35Gyn8eHhz6cXN4HzFGKJLwYxxKAB8SpI4bePwwHUn5adtnrGCp/t
-	KFv76zliescoHkSf/3Uqg3Sa4cQS34wRYStnfqUUMJTMGxBIx/YHpuq2nnIKiF/ZONmNsPmwfTEPf
-	xB9sI4vqFHW6oDxo8EnLid/ohAOi5Lt7i3lX4fLhkuETiukkesZvI8hCfSyabkUuHiLzNeglHZrCy
-	si3sg1GWuLBCSUsKUZCw==;
+	List-Owner; bh=jyhm+lMbjw0YIadDQZis/JZOh0/GxQRmw0omw1EGpIg=; b=ivixvN0cvRKTa4
+	Dut9f50OzCy6sGo8PK3MAypt/p2km+J5S1MJlp227VL0ZPCZES9L9LDpKCxl5lIX4vcXVP5PeI8gI
+	ZETOz3R+M3/wvMDaRLYnZWeYwDb8UVjRP2YxVGiosqZ9GUL0w4sq2sDy1dnPr2PmySk5owPD/KccT
+	tYSE5ME58WdBwFzvzhOhbFcTdbUHUi0EIqTi2A/lPd6urC++4XTvcCIdMtzKCcEOsKV2bb70W3I62
+	8nd21ytiep4g7dgANFAll65k7/a7Y2fowiWXHEU0I97ehhUJRrBoh0pGtFi/L7fvAyuPkTXKG+GtE
+	i7Ex9oAbRx6APpuKRFuA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlxca-0008IK-KZ; Fri, 12 Jul 2019 15:38:04 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hlxjT-0002Aq-Um; Fri, 12 Jul 2019 15:45:11 +0000
+Received: from mail-io1-f66.google.com ([209.85.166.66])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlxcN-0008Hj-I8
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 15:37:52 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6E4FE20863;
- Fri, 12 Jul 2019 15:37:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1562945871;
- bh=PH6b4FwrGMrv9z9RDpSOpBcty9ihP8OMeR1bpqd6mEQ=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=EfVv4bKTgQPalAa/KFu4nQKKiH4mCnoSoMFyKsNqliy3LLQDTJPIj40hBDqZeGt79
- Hg2rWJ6NfHY/NlcQFCm24ZJxIIPnN3W9JMZb7fhb5/V5r/Q83HQGp00w7bsTT6SjUq
- fZjcvHBaq+IBbFJbKdu0JABrC1NjuLD9si4ga00Q=
-Date: Fri, 12 Jul 2019 16:37:46 +0100
-From: Will Deacon <will@kernel.org>
-To: Naohiro Aota <naohiro.aota@wdc.com>
-Subject: Re: [PATCH v2 2/2] arm64/vdso: fix flip/flop vdso build bug
-Message-ID: <20190712153746.5dwwptgrle3z25m7@willie-the-truck>
-References: <20190712101556.17833-1-naohiro.aota@wdc.com>
- <20190712101556.17833-2-naohiro.aota@wdc.com>
+ id 1hlxjC-000290-9B; Fri, 12 Jul 2019 15:44:55 +0000
+Received: by mail-io1-f66.google.com with SMTP id g20so21222813ioc.12;
+ Fri, 12 Jul 2019 08:44:53 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Flz2lLRzUd8jYEWKtYpt6MQ7g5ki02yJxXMItOlTOZg=;
+ b=We2rkLzx/ASt73n98R57oE/KK+m1QlgqKnjBHXLE5pWOjQ+6JNQlG4DKnpsaVAQa8m
+ 9AJO8HBPe6MYvx1D7tHKta9GNTGody33mGk1W2TWh0iTiphcW1JzJQrEOArZwEH1kmfp
+ 7gInPAgGR1MRuFIyJKP2e0lJz9b8Na3AWnBW0vIUyPiEnndFBykHRjbHh5I0RGgU6x47
+ 2EvXdTIq+YQGNl9v1FAl+3mwIrT+KZkK+/FN7CaQXLiRbe2z56ldqnypFLzBty/aoKks
+ AE4qFEPoQWmDR31bal5pV+HpBUult2vqKExhrVCFk2n5747CTBKeRca6TQiKCUi0+uZF
+ rzqg==
+X-Gm-Message-State: APjAAAWvbg/ayOWoOCSnrobn4WJTXdC8GmVDdfOH+eam+8LIFubrXKM7
+ dXfx33PqcG9y5sxnDLvRUIOAXctqmBvbgCz20vs83EBi
+X-Google-Smtp-Source: APXvYqxN8RQNuZM9vdEm/CAl+zuh4AN5lTPTDyHWochsrNu0wOHqh5l7I2dOMKuVQTeQcmrFPVSCkwj2CtRyhmmnvW8=
+X-Received: by 2002:a6b:e60b:: with SMTP id g11mr11691332ioh.9.1562946293139; 
+ Fri, 12 Jul 2019 08:44:53 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190712101556.17833-2-naohiro.aota@wdc.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+References: <59042b09-7651-be1d-347f-0dc4aa02a91b@gmx.co.uk>
+In-Reply-To: <59042b09-7651-be1d-347f-0dc4aa02a91b@gmx.co.uk>
+From: Emil Renner Berthing <kernel@esmil.dk>
+Date: Fri, 12 Jul 2019 17:44:40 +0200
+Message-ID: <CANBLGcyO5wAHgSVjYFB+hcp+SzaKY9d0QJm-hxqnSYbZ4Yv97g@mail.gmail.com>
+Subject: Re: Asus C101P Chromeboot fails to boot with Linux 5.2
+To: Alex Dewar <alex.dewar@gmx.co.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190712_083751_622975_06921F76 
-X-CRM114-Status: GOOD (  12.32  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190712_084454_319165_36DB4FC5 
+X-CRM114-Status: UNSURE (   7.28  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.66 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (emil.renner.berthing[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,57 +78,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
- linux-kernel@vger.kernel.org, Masahiro Yamada <yamada.masahiro@socionext.com>,
- Andy Lutomirski <luto@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Peter Collingbourne <pcc@google.com>, linux-arm-kernel@lists.infradead.org
+Cc: "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Heiko Stuebner <heiko@sntech.de>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jul 12, 2019 at 07:15:56PM +0900, Naohiro Aota wrote:
-> Running "make" on an already compiled kernel tree will rebuild the kernel
-> even without any modifications:
-> 
-> $ make ARCH=arm64 CROSS_COMPILE=/usr/bin/aarch64-unknown-linux-gnu-
-> arch/arm64/Makefile:58: CROSS_COMPILE_COMPAT not defined or empty, the compat vDSO will not be built
->   CALL    scripts/checksyscalls.sh
->   CALL    scripts/atomic/check-atomics.sh
->   VDSOCHK arch/arm64/kernel/vdso/vdso.so.dbg
->   VDSOSYM include/generated/vdso-offsets.h
->   CHK     include/generated/compile.h
->   CC      arch/arm64/kernel/signal.o
->   CC      arch/arm64/kernel/vdso.o
->   CC      arch/arm64/kernel/signal32.o
->   LD      arch/arm64/kernel/vdso/vdso.so.dbg
->   OBJCOPY arch/arm64/kernel/vdso/vdso.so
->   AS      arch/arm64/kernel/vdso/vdso.o
->   AR      arch/arm64/kernel/vdso/built-in.a
->   AR      arch/arm64/kernel/built-in.a
->   GEN     .version
->   CHK     include/generated/compile.h
->   UPD     include/generated/compile.h
->   CC      init/version.o
->   AR      init/built-in.a
->   LD      vmlinux.o
-> 
-> This is the same bug fixed in commit 92a4728608a8 ("x86/boot: Fix
-> if_changed build flip/flop bug"). We cannot use two "if_changed" in one
-> target. Fix this build bug by merging two commands into one function.
-> 
-> Cc: Masahiro Yamada <yamada.masahiro@socionext.com>
-> Fixes: 28b1a824a4f4 ("arm64: vdso: Substitute gettimeofday() with C implementation")
-> Signed-off-by: Naohiro Aota <naohiro.aota@wdc.com>
-> ---
->  arch/arm64/kernel/vdso/Makefile | 6 ++++--
->  1 file changed, 4 insertions(+), 2 deletions(-)
+Hi Alex,
 
-Thanks. I've merged in Vincenzo's compat change too, so I'll send this at
--rc1 for arm64.
+On Fri, 12 Jul 2019 at 17:02, Alex Dewar <alex.dewar@gmx.co.uk> wrote:
+> When I try to boot the screen just gets flooded with messages like this:
+> http://users.sussex.ac.uk/~ad374/boot_fail.jpg
 
-Will
+Those seem to be only audit messages. You can try booting with audit=0
+on the kernel command line to get rid of those messages, so you have a
+better chance of catching the real issue. (Or conclude that audit is
+what is broken.)
+
+/Emil
 
 _______________________________________________
 linux-arm-kernel mailing list
