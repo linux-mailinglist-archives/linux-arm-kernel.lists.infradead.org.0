@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3BE506645E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 04:24:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8BC676645D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 04:23:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CfD2qGj7Pc1Qrz9A+oPGoD/puJJnNTcbOyAvcPE2VLE=; b=I5mxy/JTm6ZX6N
-	FIYbBUm+sz4tkvQV9WIfvkmG6Oyb0Ec6nvKgC+lAttKKHBx+YIMtpdjKwLszavYJocs3AD0RR9YbV
-	RZneXxelNN1QJb7ZROMBey2z56nB13LPQcBvyALBvGU98XQVvR8zL2ld7XQFIoGQEIYYQdktOEwiH
-	0+bD+vxOx5f4ItH1xYNJ9RX2VYtEFpuadDN2PA2ut8QEBD8Uoz5lx6Tm1X5kVaHCqzDi9FFcT+7T7
-	ELSUN8leLlaoH0jejNbrsXkgu2L1SdtjDZSA+HvColarspoK3Kmul2RuYLW7jA7eb4++7p9x/1V6v
-	sxGf58IX59zJdfF4EpXg==;
+	List-Owner; bh=ZceN6seGmENlsc5Z1j4f0sXWToC3V2j35oEdBveqvrE=; b=MipQwqYsGqsT/D
+	Ey0T+GhPl+IeuR83dj5bUidIcyxJk0yYBL1EjNIbugKy5iBRTDb3yz3RIp5bCFnCz5Yg0DMjY/PQZ
+	Fk5fQx6e+0U9SFURZDnuvHLPw/+vLHDQhU0w1e82fw5JivuInDkOqAiamAKfIfli6oR2xaNCQKaJY
+	t6YcGmkv7aBc+/tFNrtIbfMVRnEYCiPlHj0ERk8ac2r3ORXaeZmuxk0IECPGpL35c32t0g4K65O0I
+	XmZtQtifU42d/FQ7DtkTXTI1MvV60d6zuzXSMTdZuPbcDJ0YFqLG0z40Ml3hY00Svm3A0nJWNgZuO
+	g2TPs9mi8mLpLNaHdnBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hllEK-000156-Tu; Fri, 12 Jul 2019 02:24:12 +0000
-Received: from out30-43.freemail.mail.aliyun.com ([115.124.30.43])
+	id 1hllDy-0000rn-U0; Fri, 12 Jul 2019 02:23:50 +0000
+Received: from out30-131.freemail.mail.aliyun.com ([115.124.30.131])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hllAq-0007S7-L8; Fri, 12 Jul 2019 02:20:39 +0000
-X-Alimail-AntiSpam: AC=PASS; BC=-1|-1; BR=01201311R151e4; CH=green; DM=||false|;
- FP=0|-1|-1|-1|0|-1|-1|-1; HT=e01e04400; MF=alex.shi@linux.alibaba.com; NM=1;
- PH=DS; RN=18; SR=0; TI=SMTPD_---0TWfK5gm_1562898033; 
+ id 1hllAr-0007SL-Ki; Fri, 12 Jul 2019 02:20:39 +0000
+X-Alimail-AntiSpam: AC=PASS; BC=-1|-1; BR=01201311R171e4; CH=green; DM=||false|;
+ FP=0|-1|-1|-1|0|-1|-1|-1; HT=e01e01422; MF=alex.shi@linux.alibaba.com; NM=1;
+ PH=DS; RN=19; SR=0; TI=SMTPD_---0TWfK5h._1562898034; 
 Received: from localhost(mailfrom:alex.shi@linux.alibaba.com
- fp:SMTPD_---0TWfK5gm_1562898033) by smtp.aliyun-inc.com(127.0.0.1);
+ fp:SMTPD_---0TWfK5h._1562898034) by smtp.aliyun-inc.com(127.0.0.1);
  Fri, 12 Jul 2019 10:20:34 +0800
 From: Alex Shi <alex.shi@linux.alibaba.com>
 To: linux-doc@vger.kernel.org,
 	Jonathan Corbet <corbet@lwn.net>
-Subject: [PATCH 09/12] Dcumentation/sh: repointer docs to Documentation/arch/
-Date: Fri, 12 Jul 2019 10:20:15 +0800
-Message-Id: <20190712022018.27989-9-alex.shi@linux.alibaba.com>
+Subject: [PATCH 10/12] Documentation/sparc: repointer docs to
+ Documentation/arch/
+Date: Fri, 12 Jul 2019 10:20:16 +0800
+Message-Id: <20190712022018.27989-10-alex.shi@linux.alibaba.com>
 X-Mailer: git-send-email 2.19.1.856.g8858448bb
 In-Reply-To: <20190712022018.27989-1-alex.shi@linux.alibaba.com>
 References: <20190712022018.27989-1-alex.shi@linux.alibaba.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_192036_874212_88F5AA52 
-X-CRM114-Status: UNSURE (   6.86  )
+X-CRM114-CacheID: sfid-20190711_192037_946712_7F9064E2 
+X-CRM114-Status: UNSURE (   7.48  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.5 (-----)
+X-Spam-Score: -8.0 (--------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.5 points)
+ Content analysis details:   (-8.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [115.124.30.43 listed in list.dnswl.org]
+ no trust [115.124.30.131 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
  white-list
@@ -74,67 +74,40 @@ Cc: linux-s390@vger.kernel.org, linux-fbdev@vger.kernel.org,
  linux-scsi@vger.kernel.org, linux-parisc@vger.kernel.org,
  linux-sh@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-mips@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- kvm@vger.kernel.org, linux-riscv@lists.infradead.org,
- Alex Shi <alex.shi@linux.alibaba.com>, linuxppc-dev@lists.ozlabs.org,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+ kvm@vger.kernel.org, sparclinux@vger.kernel.org,
+ linux-riscv@lists.infradead.org, Alex Shi <alex.shi@linux.alibaba.com>,
+ linuxppc-dev@lists.ozlabs.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since we move Documentation/sh docs to Documentation/arch/sh
+Since we move Documentation/sparc docs to Documentation/arch/sparc
 dir, redirect the doc pointer to them.
 
 Signed-off-by: Alex Shi <alex.shi@linux.alibaba.com>
 Cc: Jonathan Corbet <corbet@lwn.net>
 Cc: linux-doc@vger.kernel.org
+Cc: sparclinux@vger.kernel.org
 Cc: linux-kernel@vger.kernel.org
-Cc: linux-sh@vger.kernel.org
 ---
- Documentation/conf.py | 2 +-
- MAINTAINERS           | 2 +-
- arch/sh/Kconfig.cpu   | 2 +-
- 3 files changed, 3 insertions(+), 3 deletions(-)
+ drivers/sbus/char/oradax.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/Documentation/conf.py b/Documentation/conf.py
-index 3b2397bcb565..8bbe421c1d97 100644
---- a/Documentation/conf.py
-+++ b/Documentation/conf.py
-@@ -402,7 +402,7 @@ latex_documents = [
-      'The kernel development community', 'manual'),
-     ('security/index', 'security.tex', 'The kernel security subsystem manual',
-      'The kernel development community', 'manual'),
--    ('sh/index', 'sh.tex', 'SuperH architecture implementation manual',
-+    ('arch/sh/index', 'sh.tex', 'SuperH architecture implementation manual',
-      'The kernel development community', 'manual'),
-     ('sound/index', 'sound.tex', 'Linux Sound Subsystem Documentation',
-      'The kernel development community', 'manual'),
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 7a245d3f02fd..84448d5838b7 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -15169,7 +15169,7 @@ M:	Rich Felker <dalias@libc.org>
- L:	linux-sh@vger.kernel.org
- Q:	http://patchwork.kernel.org/project/linux-sh/list/
- S:	Maintained
--F:	Documentation/sh/
-+F:	Documentation/arch/sh/
- F:	arch/sh/
- F:	drivers/sh/
+diff --git a/drivers/sbus/char/oradax.c b/drivers/sbus/char/oradax.c
+index 8af216287a84..c7db146a1dd5 100644
+--- a/drivers/sbus/char/oradax.c
++++ b/drivers/sbus/char/oradax.c
+@@ -18,7 +18,7 @@
+  * the recommended way for applications to use the coprocessor, and
+  * the driver interface is not intended for general use.
+  *
+- * See Documentation/sparc/oradax/oracle-dax.rst for more details.
++ * See Documentation/arch/sparc/oradax/oracle-dax.rst for more details.
+  */
  
-diff --git a/arch/sh/Kconfig.cpu b/arch/sh/Kconfig.cpu
-index 4a4edc7e03d4..fdc8b565241b 100644
---- a/arch/sh/Kconfig.cpu
-+++ b/arch/sh/Kconfig.cpu
-@@ -94,7 +94,7 @@ config CPU_HAS_SR_RB
- 	  that are lacking this bit must have another method in place for
- 	  accomplishing what is taken care of by the banked registers.
- 
--	  See <file:Documentation/sh/register-banks.txt> for further
-+	  See <file:Documentation/arch/sh/register-banks.txt> for further
- 	  information on SR.RB and register banking in the kernel in general.
- 
- config CPU_HAS_PTEAEX
+ #include <linux/uaccess.h>
 -- 
 2.19.1.856.g8858448bb
 
