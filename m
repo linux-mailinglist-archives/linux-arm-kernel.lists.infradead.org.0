@@ -2,67 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 69E52667D8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 09:37:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A0AB56682C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 10:03:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=haf5bdnx50A+OS6kYdYWnJrMiWavJdTKXywh2gcydv8=; b=gaSFc1GevSY4pI
-	nK9kcwdf7poLYNCFRiJUtqaW+2hyUkeXxXcEVXIM1beeK1v0V1usgxbjQiseuN2W+Fko17UryjT1g
-	Ee3FqFGJkYqiNvaF+OCpRHH4Cbz8F/xmgSw7kVoNWfufInwAvqOvk+jV96QsZ9YIeSyw5a4IKEZG9
-	WLwLQlwZGP/Mp6Ai7JDGpYGAfQxUlALEKC1nH8IwF8lXqYB/o2ohk1Qm0AK898/kdv5WBkN6lQvxn
-	FPsLdfTmtKlmptn+iS9yr549VOCQ9iMmBr/AcrfP4mFYz3/Je+djbdeTgCHsSWJriE/Tsli/szcHD
-	gMV9zH4ButlE4kQtYS/w==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=owrQVKYfgDiNTaVYHkw2WrkxTttK7zaKSmLtkyYbeqc=; b=moP1e/9Lg0rLbulh6h8C5PWAYs
+	Vmx0RzSB6G8vZS3+wGoUcm+OyEPzYzzQUss3dBquENOr8aRk7i5bIhbOuhPB6Lbowj7qofajQ33ms
+	uoitAKppHIxsJzrN+g7qJBPY7d+uw5xL3cJ5xh/R4KgvLnquaaTJBrBQs8W+TX4ZX/ZlrLYFFr12p
+	12Q6GJihiIF1hH6OEjSoXJqCoDEnLMBUuN7dSX3ijvWwUVFgx3Ezy+iu7Ex6lyzElqH3TDxx84Ooo
+	9JOUDvxElTTOrkynSmkuAyCDx8UbpS9XNpS31dUtNmwUD/SVNihsTgo4YAtuOerZ40XIO+McoriFe
+	Gbt7fWKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlq7c-00085v-J6; Fri, 12 Jul 2019 07:37:36 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlq7Q-00084a-1F; Fri, 12 Jul 2019 07:37:25 +0000
-X-UUID: 4abe028e1b5c48ada68dd88742bb93bb-20190711
-X-UUID: 4abe028e1b5c48ada68dd88742bb93bb-20190711
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <houlong.wei@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 895729803; Thu, 11 Jul 2019 23:37:17 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 12 Jul 2019 00:37:15 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31N1.mediatek.inc
- (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Fri, 12 Jul 2019 15:37:12 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 12 Jul 2019 15:37:12 +0800
-Message-ID: <1562917032.29653.7.camel@mhfsdcap03>
-Subject: Re: [PATCH] media: platform: mtk-mdp: mtk_mdp_core: Add
- of_node_put() before goto
-From: houlong wei <houlong.wei@mediatek.com>
-To: Nishka Dasgupta <nishkadg.linux@gmail.com>
-Date: Fri, 12 Jul 2019 15:37:12 +0800
-In-Reply-To: <20190709172454.13648-1-nishkadg.linux@gmail.com>
-References: <20190709172454.13648-1-nishkadg.linux@gmail.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+	id 1hlqWk-00086z-TG; Fri, 12 Jul 2019 08:03:35 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hlqWW-00086P-9P
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 08:03:21 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8508D337;
+ Fri, 12 Jul 2019 01:03:16 -0700 (PDT)
+Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 11D7D3F59C; Fri, 12 Jul 2019 01:03:15 -0700 (PDT)
+Subject: Re: KVM: arm64: Update kvm_arm_exception_class and esr_class_str for
+ new EC
+To: Zenghui Yu <yuzenghui@huawei.com>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
+References: <e6e8cd90-d309-7f1a-c8d1-85aa03fe0dfb@huawei.com>
+From: Marc Zyngier <marc.zyngier@arm.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
+ 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
+ Z46HaNmN2hZS/oJ69c1DI5Rcww==
+Organization: ARM Ltd
+Message-ID: <ff38bfbd-7fd9-6df4-4878-26cc7fca0a67@arm.com>
+Date: Fri, 12 Jul 2019 09:03:14 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 79F4A719342E98B201861EFA9EC14351327E4D4119A09EDE5AA191DCE970379F2000:8
-X-MTK: N
+In-Reply-To: <e6e8cd90-d309-7f1a-c8d1-85aa03fe0dfb@huawei.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190712_003724_075840_23699D5C 
-X-CRM114-Status: GOOD (  13.11  )
+X-CRM114-CacheID: sfid-20190712_010320_428965_AE1E5FBE 
+X-CRM114-Status: UNSURE (   9.78  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,59 +110,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew-CT Chen =?UTF-8?Q?=28=E9=99=B3=E6=99=BA=E8=BF=AA=29?=
- <Andrew-CT.Chen@mediatek.com>,
- Minghsiu Tsai =?UTF-8?Q?=28=E8=94=A1=E6=98=8E=E4=BF=AE=29?=
- <Minghsiu.Tsai@mediatek.com>, houlong.wei@mediatek.com,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "mchehab@kernel.org" <mchehab@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2019-07-10 at 01:24 +0800, Nishka Dasgupta wrote:
-> Each iteration of for_each_child_of_node puts the previous node, but in
-> the case of a goto from the middle of the loop, there is no put, thus
-> causing a memory leak. Hence add an of_node_put before the goto in two
-> places.
-> Issue found with Coccinelle.
+On 12/07/2019 08:12, Zenghui Yu wrote:
+> Hi,
 > 
-> Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
-> ---
->  drivers/media/platform/mtk-mdp/mtk_mdp_core.c | 5 ++++-
->  1 file changed, 4 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/media/platform/mtk-mdp/mtk_mdp_core.c b/drivers/media/platform/mtk-mdp/mtk_mdp_core.c
-> index fc9faec85edb..d0a3f06ad83d 100644
-> --- a/drivers/media/platform/mtk-mdp/mtk_mdp_core.c
-> +++ b/drivers/media/platform/mtk-mdp/mtk_mdp_core.c
-> @@ -145,13 +145,16 @@ static int mtk_mdp_probe(struct platform_device *pdev)
->  		comp = devm_kzalloc(dev, sizeof(*comp), GFP_KERNEL);
->  		if (!comp) {
->  			ret = -ENOMEM;
-> +			of_node_put(node);
->  			goto err_comp;
->  		}
->  		mdp->comp[comp_id] = comp;
->  
->  		ret = mtk_mdp_comp_init(dev, node, comp, comp_id);
-> -		if (ret)
-> +		if (ret) {
-> +			of_node_put(node);
->  			goto err_comp;
-> +		}
->  	}
->  
->  	mdp->job_wq = create_singlethread_workqueue(MTK_MDP_MODULE_NAME);
+> I noticed that we've added two ESR exception classes for new hardware
+> extensions - ESR_ELx_EC_SVE and ESR_ELx_EC_PAC.  Should we also update
+> "kvm_arm_exception_class" and "esr_class_str" for these two EC, which
+> might be useful for debug in the future?
+Yes. Please send a patch (or two)!
 
-Thanks Nishka for fixing the bug.
+Thanks,
 
-Acked-by: Houlong Wei <houlong.wei@mediatek.com>
-
+	M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
