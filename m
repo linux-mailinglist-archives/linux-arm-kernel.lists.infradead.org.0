@@ -2,76 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1A66066503
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 05:32:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B6B0766504
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 05:33:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=F368IYa3jsigik0+IVjgy1n7ORARykFO+mFF7JKqVjA=; b=F/Xymz6c3AQ/PY
-	xcVMXK7rgBztvMxLZKVR6984VT3SyJ/91magnepcGEfRE56/eRLsEj3UdeAwHPpSXTf29Opa59NlR
-	4S+1tZrdQW45o/4Hh/P25Z34S+fSVewaobk9a/y8cU7gZoDYjjk/GvEtTUqo/ZvUgrPRDKDQPyWqE
-	39fatIjaINB1l9vJhTc4lGhWmsSvWGydF5KoOGGVfVXrZLiT8B5v5AVK5PifWGPUq7ygzzCohErOs
-	qiL4iM0L/PMP2xB2siPrxjZPaS01m3weqtcAO6d7a7TdOvhIx/n31XZWCDhg1Am37bfzU6h2YnE8H
-	QTg7YC8x3wfTXcjal3Cw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xZuLm3qEOoPkWGqAInhrbx15DejwF/7t7rQdJeaD+p0=; b=uB+fXzs5B4gHOW
+	muxPTKX9GupmS/e+CCfEI9QSj0dUQt2Xf+CP6JX+6cgqfdVxE+iX58MHNCTOq9Y68utY/pNAX82Ep
+	X+Ke7mPJP2M302T2LhGaipLx9BFBY4rx2CsLvBMxIlHISno9f9GITqCez9J8HjDPPMKarbFvSeyPw
+	MmLymXNbv+PY+MvQUutDjJo/uJzNUgUBUWR9eWCata870W8AMgk2J4vHgHdG/YD9qNMDZoeNhwg1I
+	LMy0FXPJv19wCQLurmmPVN8i6nbAcf6V8WGEaVaUtaO833ji1q71N35RdB6ap76aXGr6O96hp62ow
+	RopOfbVaJH9cdr0IIhBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlmIb-0000j1-MS; Fri, 12 Jul 2019 03:32:42 +0000
+	id 1hlmIs-0000v3-FR; Fri, 12 Jul 2019 03:32:58 +0000
 Received: from new4-smtp.messagingengine.com ([66.111.4.230])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlmIM-0000hW-5b
+ id 1hlmIM-0000ha-5a
  for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 03:32:27 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 458DB6A;
- Thu, 11 Jul 2019 23:32:20 -0400 (EDT)
+ by mailnew.nyi.internal (Postfix) with ESMTP id C10AC1B61;
+ Thu, 11 Jul 2019 23:32:23 -0400 (EDT)
 Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Thu, 11 Jul 2019 23:32:20 -0400
+ by compute4.internal (MEProxy); Thu, 11 Jul 2019 23:32:23 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=from
- :to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding; s=fm3; bh=0/ELW1INd9ZqSD2iZt9/xN6YTT
- BSlrGKdOYRNFKIJUg=; b=Fvlec1JqxpZpVwTKbLfwLKFE04wzCcdk8i1EZaFGr2
- ZzpcXbiFhQNj1yx/AEXqDHQ9Sm3gLkC0CYXzTZsSVUbkOYFBsofkPcr3wuwV/FNz
- 6w28BN4CKQEwTznF+gw2rrmCUHKSrtPhsPoL9KMm0C8iuqMDEypGZIZ2AfrNTi/Z
- 8NHm4HBtBiDHvyybIOgMgG+l9uMb4FdHyX63nGBdm1bStV9R0mvwiqxjxsp/Z5qE
- /1NMdPdd7L69Psx3T6T5zajbxJZL86Kem8/gHO1Hl4PmeR14pD1JdZs75qyGAVPV
- 4DU4T+p1LCPojanvrjq4i1Ufw8nL2x/ZTnpqeecMYiOA==
+ :to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding; s=fm3; bh=8OTTrn15u+3N9
+ pDWV3Ka61zLndSduUjJwrYMM8MILms=; b=Q90CrvOUoebID2ta1bqq8kxPeT2hw
+ 6PnXZ07fFtMufFlH0lypw7I3ASf2lleRSUO3xt3T70x41NHGsUmJ1VV3NvVAHZqD
+ JRltB0BssjVGZzYBMcW5y9iOsa5lHdgiZafE+HbjNSesbt0Xul3vZBUaw1KIzmi/
+ WITjOZYrr9ecmtw0fIpI5VUIyeWBO8LXAtM5O+omlHXMacpf3QaL9ok1VVfiT18h
+ LcFF5ogdYMD06XRSt0RDe4HjJDzyyVnOIeQ5BEm3FKEB2AX3pBB0ilWWbu7X+1zW
+ OLz9JZoWTQVw8aSwlrr4oVs4q369QI9ToYOXAE/Sure+Y9H+wFPDYGb/w==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
- :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
- :x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=0/ELW1INd9ZqSD2iZ
- t9/xN6YTTBSlrGKdOYRNFKIJUg=; b=Q9mRD1QjsjyrkWoHz3RBxWy8mnvRMPD0i
- 55YXDJWdg6+gf170T/VczeiyTaGBYuRg0ZVh9U4zj7qQ6MG5co+2UMP+2q8LGjst
- Xn1RtmERh9h0NtC79ra59js5DJy717Toj6Lw736k5NT7Tly2sRZvE2zxmIdSMC8N
- BC+py1aRqwOsN/Xq8E4bl9n/bKnh+MFaoQb2fuBE4WVBLVXCVoGLxj+yHdVYZJK0
- ieKyvyM2K6qz55lZaWcYUuBg/TqP1Xnafs5sxUjFlsME/MrxnNfmXW0ts4QO/IJu
- fdbDytVQMT+9dA5+bmFgxkqAwwLgGuiCYFsLE2P5zN6CJFNl1Sbxw==
-X-ME-Sender: <xms:Q_8nXQSdE5Erss_8QGL61LhbuZjUCt5Mwy_FM3ZOU3CnuyI4AYtndA>
+ :in-reply-to:message-id:mime-version:references:subject:to
+ :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
+ fm3; bh=8OTTrn15u+3N9pDWV3Ka61zLndSduUjJwrYMM8MILms=; b=o+oDEYuM
+ nBf8QPrJpDwucokTXM+LYxLYvzioci4sZ+UKx0JesDJnsB4VpU8BjZE5jITJfprQ
+ AVqYUOcBodZIqX5VIAoQxuhdygEDhw64Uv7pTmwUM8tn6xFZEy49jg1X+UT3q4t0
+ Wd3wwkFnG0ZAx4TCyCnhAUE0PTN9PFnisYlJ4hSOU6bB8KedCwrFpoyU2XhwvBwC
+ JCDPPWvvLiWYEknOcMx5DoYuBrYkaNBD3JMxge9fe0CFIWEsZnOm86U1xoWeeGOI
+ mvzBYXV+g1AWq70DQ2ZGtjPndEZktE10mBey/GTmETvJcTduWUtvvr2ASuiJm39V
+ vdGKzDduW1EDIg==
+X-ME-Sender: <xms:R_8nXcfX6S_LHtcgnTWXo-jPdwanjE1-4Bo9pPFP2D-BSjSWkRSvJQ>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrgeelgdejfecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecunecujfgurhephffvufffkffoggfgsedtkeertdertd
- dtnecuhfhrohhmpeetnhgurhgvficulfgvfhhfvghrhicuoegrnhgurhgvfiesrghjrdhi
- ugdrrghuqeenucffohhmrghinhepohiilhgrsghsrdhorhhgnecukfhppedvtddvrdekud
- drudekrdeftdenucfrrghrrghmpehmrghilhhfrhhomheprghnughrvgifsegrjhdrihgu
- rdgruhenucevlhhushhtvghrufhiiigvpedt
-X-ME-Proxy: <xmx:Q_8nXbQi68ssdcsMFb_0pb_VRRKJyffOPTyfAmIgDfdA-nYAwqZoFg>
- <xmx:Q_8nXZ6UsDQk92KtFurGIkDvBCvvpwSGEVI4kuothvpFXHB2VLheug>
- <xmx:Q_8nXRQjzrie9wXFy0adIKGp-9xxNxNFv40V2CTQFN_XoP7KQujpsg>
- <xmx:RP8nXTwqR9PV6Po46uzcDzzT7U6ki-Rkf2a2xnKl2UeggYyY2im12Q>
+ uegrihhlohhuthemuceftddtnecunecujfgurhephffvufffkffojghfggfgsedtkeertd
+ ertddtnecuhfhrohhmpeetnhgurhgvficulfgvfhhfvghrhicuoegrnhgurhgvfiesrghj
+ rdhiugdrrghuqeenucffohhmrghinhepuggvvhhitggvthhrvggvrdhorhhgnecukfhppe
+ dvtddvrdekuddrudekrdeftdenucfrrghrrghmpehmrghilhhfrhhomheprghnughrvgif
+ segrjhdrihgurdgruhenucevlhhushhtvghrufhiiigvpedt
+X-ME-Proxy: <xmx:R_8nXSefBp0KqkQhYIlxFNWJEjdEzT93OqB-5dH_46X0IG1J2w_RJw>
+ <xmx:R_8nXYi6bRp5LY-yEeG6Rz-E6POK6n6ldxl9UEk7mG1BMiMh4wHYNA>
+ <xmx:R_8nXWSlrcobXtpvUxqGmgfkUPGH-XiSq0hnKR5ttu8YOgF48nWGQA>
+ <xmx:R_8nXSPsTsCUllLbebsiWNu3ggDr2HT-M_8eEjbYv_ARCsXS-OFhzg>
 Received: from mistburn.au.ibm.com (bh02i525f01.au.ibm.com [202.81.18.30])
- by mail.messagingengine.com (Postfix) with ESMTPA id 5AA238005A;
- Thu, 11 Jul 2019 23:32:15 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id AC94B80060;
+ Thu, 11 Jul 2019 23:32:19 -0400 (EDT)
 From: Andrew Jeffery <andrew@aj.id.au>
 To: linux-mmc@vger.kernel.org
-Subject: [PATCH v2 0/2] mmc: Add support for the ASPEED SD controller
-Date: Fri, 12 Jul 2019 13:02:12 +0930
-Message-Id: <20190712033214.24713-1-andrew@aj.id.au>
+Subject: [PATCH v2 1/2] dt-bindings: mmc: Document Aspeed SD controller
+Date: Fri, 12 Jul 2019 13:02:13 +0930
+Message-Id: <20190712033214.24713-2-andrew@aj.id.au>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190712033214.24713-1-andrew@aj.id.au>
+References: <20190712033214.24713-1-andrew@aj.id.au>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_203226_386359_9B74C5C9 
-X-CRM114-Status: UNSURE (   7.54  )
+X-CRM114-CacheID: sfid-20190711_203226_386363_15994721 
+X-CRM114-Status: UNSURE (   9.96  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -110,29 +113,124 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
+The ASPEED SD/SDIO/eMMC controller exposes two slots implementing the
+SDIO Host Specification v2.00, with 1 or 4 bit data buses, or an 8 bit
+data bus if only a single slot is enabled.
 
-This is v2 of the ASPEED SD controller driver. v2 primarily addresses Rob's
-comments on the bindings in v1. The v1 series can be found here:
+Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
+---
+In v2:
 
-https://lists.ozlabs.org/pipermail/linux-aspeed/2019-July/001988.html
+* Rename to aspeed,sdhci.yaml
+* Rename sd-controller compatible
+* Add `maxItems: 1` for reg properties
+* Move sdhci subnode description to patternProperties
+* Drop sdhci compatible requirement
+* #address-cells and #size-cells are required
+* Prevent additional properties
+* Implement explicit ranges in example
+* Remove slot property
 
-Please review!
-
-Andrew
-
-Andrew Jeffery (2):
-  dt-bindings: mmc: Document Aspeed SD controller
-  mmc: Add support for the ASPEED SD controller
-
- .../devicetree/bindings/mmc/aspeed,sdhci.yaml |  90 +++++
- drivers/mmc/host/Kconfig                      |  12 +
- drivers/mmc/host/Makefile                     |   1 +
- drivers/mmc/host/sdhci-of-aspeed.c            | 326 ++++++++++++++++++
- 4 files changed, 429 insertions(+)
+ .../devicetree/bindings/mmc/aspeed,sdhci.yaml | 90 +++++++++++++++++++
+ 1 file changed, 90 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/mmc/aspeed,sdhci.yaml
- create mode 100644 drivers/mmc/host/sdhci-of-aspeed.c
 
+diff --git a/Documentation/devicetree/bindings/mmc/aspeed,sdhci.yaml b/Documentation/devicetree/bindings/mmc/aspeed,sdhci.yaml
+new file mode 100644
+index 000000000000..67a691c3348c
+--- /dev/null
++++ b/Documentation/devicetree/bindings/mmc/aspeed,sdhci.yaml
+@@ -0,0 +1,90 @@
++# SPDX-License-Identifier: GPL-2.0-or-later
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/mmc/aspeed,sdhci.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: ASPEED SD/SDIO/eMMC Controller
++
++maintainers:
++  - Andrew Jeffery <andrew@aj.id.au>
++  - Ryan Chen <ryanchen.aspeed@gmail.com>
++
++description: |+
++  The ASPEED SD/SDIO/eMMC controller exposes two slots implementing the SDIO
++  Host Specification v2.00, with 1 or 4 bit data buses, or an 8 bit data bus if
++  only a single slot is enabled.
++
++  The two slots are supported by a common configuration area. As the SDHCIs for
++  the slots are dependent on the common configuration area, they are described
++  as child nodes.
++
++properties:
++  compatible:
++    enum: [ aspeed,ast2400-sd-controller, aspeed,ast2500-sd-controller ]
++  reg:
++    maxItems: 1
++    description: Common configuration registers
++  ranges: true
++  clocks:
++    maxItems: 1
++    description: The SD/SDIO controller clock gate
++
++patternProperties:
++  "^sdhci@[0-9a-f]+$":
++    type: object
++    properties:
++      compatible:
++        enum: [ aspeed,ast2400-sdhci, aspeed,ast2500-sdhci ]
++      reg:
++        maxItems: 1
++        description: The SDHCI registers
++      clocks:
++        maxItems: 1
++        description: The SD bus clock
++      interrupts:
++        maxItems: 1
++        description: The SD interrupt shared between both slots
++    required:
++      - compatible
++      - reg
++      - clocks
++      - interrupts
++
++additionalProperties: false
++
++required:
++  - compatible
++  - reg
++  - "#address-cells"
++  - "#size-cells"
++  - ranges
++  - clocks
++
++examples:
++  - |
++    #include <dt-bindings/clock/aspeed-clock.h>
++    sdc@1e740000 {
++            compatible = "aspeed,ast2500-sd-controller";
++            reg = <0x1e740000 0x100>;
++            #address-cells = <1>;
++            #size-cells = <1>;
++            ranges = <0 0x1e740000 0x10000>;
++            clocks = <&syscon ASPEED_CLK_GATE_SDCLK>;
++
++            sdhci0: sdhci@100 {
++                    compatible = "aspeed,ast2500-sdhci";
++                    reg = <0x100 0x100>;
++                    interrupts = <26>;
++                    sdhci,auto-cmd12;
++                    clocks = <&syscon ASPEED_CLK_SDIO>;
++            };
++
++            sdhci1: sdhci@200 {
++                    compatible = "aspeed,ast2500-sdhci";
++                    reg = <0x200 0x100>;
++                    interrupts = <26>;
++                    sdhci,auto-cmd12;
++                    clocks = <&syscon ASPEED_CLK_SDIO>;
++            };
++    };
 -- 
 2.20.1
 
