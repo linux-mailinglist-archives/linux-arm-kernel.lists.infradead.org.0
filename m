@@ -2,60 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0AF77667B3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 09:22:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D70C667BB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 09:24:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Kzl0wX3fcZdSGOVW5habHw1ZTwfj8He4PglFKV8Wsh4=; b=gUalT0Wq2tmzV1zx3kEQg854c
-	sfXtyFI/5iRkKmzd8O/h8HEGNjpcRGiuhfpp7czfnizp0RhU2CBX5YgaI5OLsgMXGaoWiknsop9N5
-	wBthQijabdG7dQ635Rqh0aJ8vie6JuEiEwCjfpWZBv1F0XG4Gyvd5n0IWL8hcfRUrZDWqVtHvnIqN
-	1fW/jldA1Q1cfnyQ45yk9rNxubHMePBpQG/E0nGPlVCw03orhkWA++N4cD7dzXlH2+DjdqzI4cePj
-	lWoaHBzD3GTjy65W9oGY+z2ZOaGkKFPqB7mfgkPRuYSXYVkxj/xO/awCrvFUkbjBAiP5SBw4Qm9Uf
-	XMrCwwa3A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LAYV1/vrbQ2n7raQr/WCZSLQ3bavVvEjt+oHwnd/kc4=; b=oVtcsjO5poDGUV
+	psLy3K+QGojb8m/gnabKaYrPup2E6JSQdCwUwnLTYkGDqZuAiu6lH0KQgPXA9HB/5xjMmJA8B/EWB
+	2xVr6bbFpMohBW7Fm8dUZOldukygj43t1C7JUNtiplXB9gaAY1i8hhH7DZQjQ3JYDo8Z9mbzBWTSv
+	N08TkaRitaLhoj8AsFkVsq0dTjM78/8/fOtoqE5AiaiBNumyqTLD8cdtT1n3dwg7hcs1Ut1DOGEjr
+	nZS5sbn2BqzkD2nOow9zGVn/MUTJbuLCtAHN24ra+11f/TOSh7uErli4lOOTvJeapWlD1giLpyiKL
+	TYmadXK8YCD60eePQEBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlpsx-0002fK-KG; Fri, 12 Jul 2019 07:22:27 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1hlpuf-00032L-5P; Fri, 12 Jul 2019 07:24:13 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlpsi-0002QW-II
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 07:22:14 +0000
-Received: from DGGEMS414-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id D934FF49418E85D018DA;
- Fri, 12 Jul 2019 15:21:53 +0800 (CST)
-Received: from [127.0.0.1] (10.74.223.225) by DGGEMS414-HUB.china.huawei.com
- (10.3.19.214) with Microsoft SMTP Server id 14.3.439.0; Fri, 12 Jul 2019
- 15:21:50 +0800
-Subject: Re: [PATCH v3 1/2] ACPI/PPTT: Add support for ACPI 6.3 thread flag
-To: "Rafael J. Wysocki" <rafael@kernel.org>, Jeremy Linton
- <jeremy.linton@arm.com>
-References: <20190628181457.6609-1-jeremy.linton@arm.com>
- <20190628181457.6609-2-jeremy.linton@arm.com>
- <CAJZ5v0jh0+WU5fpd9enq0UHrHzh+0Sgv-xoRiJM3jgu9dQFvdw@mail.gmail.com>
-From: John Garry <john.garry@huawei.com>
-Message-ID: <fba206db-28ab-338c-2932-57b84448fc07@huawei.com>
-Date: Fri, 12 Jul 2019 15:21:46 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+ id 1hlpuR-00031e-22; Fri, 12 Jul 2019 07:24:00 +0000
+X-UUID: b5d97d5d317e497db47dd0e62f316301-20190711
+X-UUID: b5d97d5d317e497db47dd0e62f316301-20190711
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <houlong.wei@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 567170698; Thu, 11 Jul 2019 23:23:54 -0800
+Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 12 Jul 2019 00:23:52 -0700
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by mtkmbs08n1.mediatek.inc
+ (172.21.101.55) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Fri, 12 Jul 2019 15:23:38 +0800
+Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 12 Jul 2019 15:23:38 +0800
+Message-ID: <1562916217.29653.4.camel@mhfsdcap03>
+Subject: Re: [PATCH] [media] media: mtk-mdp: fix reference count on old
+ device tree
+From: houlong wei <houlong.wei@mediatek.com>
+To: Matthias Brugger <matthias.bgg@gmail.com>
+Date: Fri, 12 Jul 2019 15:23:37 +0800
+In-Reply-To: <e4d178ae-f43e-21d0-b0ab-78cc2ac71e7e@gmail.com>
+References: <20190621113250.4946-1-matthias.bgg@gmail.com>
+ <e4d178ae-f43e-21d0-b0ab-78cc2ac71e7e@gmail.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <CAJZ5v0jh0+WU5fpd9enq0UHrHzh+0Sgv-xoRiJM3jgu9dQFvdw@mail.gmail.com>
-X-Originating-IP: [10.74.223.225]
-X-CFilter-Loop: Reflected
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190712_002212_881956_9A9357E6 
-X-CRM114-Status: GOOD (  20.77  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190712_002359_102293_12799EA1 
+X-CRM114-Status: GOOD (  14.64  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,102 +74,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Will Deacon <will.deacon@arm.com>, Sudeep Holla <sudeep.holla@arm.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, Len Brown <lenb@kernel.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Andrew-CT Chen =?UTF-8?Q?=28=E9=99=B3=E6=99=BA=E8=BF=AA=29?=
+ <Andrew-CT.Chen@mediatek.com>,
+ Minghsiu Tsai =?UTF-8?Q?=28=E8=94=A1=E6=98=8E=E4=BF=AE=29?=
+ <Minghsiu.Tsai@mediatek.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "djkurtz@chromium.org" <djkurtz@chromium.org>,
+ Hans Verkuil <hans.verkuil@cisco.com>,
+ "stable@vger.kernel.org" <stable@vger.kernel.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "mchehab@kernel.org" <mchehab@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-5ZyoIDAzLzA3LzIwMTkgMTc6MjQsIFJhZmFlbCBKLiBXeXNvY2tpIOWGmemBkzoKPiBPbiBGcmks
-IEp1biAyOCwgMjAxOSBhdCA4OjE1IFBNIEplcmVteSBMaW50b24gPGplcmVteS5saW50b25AYXJt
-LmNvbT4gd3JvdGU6Cj4+Cj4+IEFDUEkgNi4zIGFkZHMgYSBmbGFnIHRvIHRoZSBDUFUgbm9kZSB0
-byBpbmRpY2F0ZSB3aGV0aGVyCj4+IHRoZSBnaXZlbiBQRSBpcyBhIHRocmVhZC4gQWRkIGEgZnVu
-Y3Rpb24gdG8gcmV0dXJuIHRoYXQKPj4gaW5mb3JtYXRpb24gZm9yIGEgZ2l2ZW4gbGludXggbG9n
-aWNhbCBDUFUuCj4+Cj4+IFNpZ25lZC1vZmYtYnk6IEplcmVteSBMaW50b24gPGplcmVteS5saW50
-b25AYXJtLmNvbT4KPj4gLS0tCj4+ICAgZHJpdmVycy9hY3BpL3BwdHQuYyAgfCA2MiArKysrKysr
-KysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrLQo+PiAgIGluY2x1ZGUvbGludXgv
-YWNwaS5oIHwgIDUgKysrKwo+PiAgIDIgZmlsZXMgY2hhbmdlZCwgNjYgaW5zZXJ0aW9ucygrKSwg
-MSBkZWxldGlvbigtKQo+Pgo+PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9hY3BpL3BwdHQuYyBiL2Ry
-aXZlcnMvYWNwaS9wcHR0LmMKPj4gaW5kZXggYjcyZTZhZmFhOGZiLi5iYjYxOTY0MjJmYWQgMTAw
-NjQ0Cj4+IC0tLSBhL2RyaXZlcnMvYWNwaS9wcHR0LmMKPj4gKysrIGIvZHJpdmVycy9hY3BpL3Bw
-dHQuYwo+PiBAQCAtNTE3LDYgKzUxNyw1MiBAQCBzdGF0aWMgaW50IGZpbmRfYWNwaV9jcHVfdG9w
-b2xvZ3lfdGFnKHVuc2lnbmVkIGludCBjcHUsIGludCBsZXZlbCwgaW50IGZsYWcpCj4+ICAgICAg
-ICAgIHJldHVybiByZXR2YWw7Cj4+ICAgfQo+Pgo+PiArLyoqCj4+ICsgKiBjaGVja19hY3BpX2Nw
-dV9mbGFnKCkgLSBEZXRlcm1pbmUgaWYgQ1BVIG5vZGUgaGFzIGEgZmxhZyBzZXQKPj4gKyAqIEBj
-cHU6IEtlcm5lbCBsb2dpY2FsIENQVSBudW1iZXIKPj4gKyAqIEByZXY6IFRoZSBQUFRUIHJldmlz
-aW9uIGRlZmluaW5nIHRoZSBmbGFnCj4+ICsgKiBAZmxhZzogVGhlIGZsYWcgaXRzZWxmCj4+ICsg
-Kgo+PiArICogQ2hlY2sgdGhlIG5vZGUgcmVwcmVzZW50aW5nIGEgQ1BVIGZvciBhIGdpdmVuIGZs
-YWcuCj4+ICsgKgo+PiArICogUmV0dXJuOiAtRU5PRU5UIGlmIHRoZSBQUFRUIGRvZXNuJ3QgZXhp
-c3QsIHRoZSBDUFUgY2Fubm90IGJlIGZvdW5kIG9yCj4+ICsgKiAgICAgICAgdGhlIHRhYmxlIHJl
-dmlzaW9uIGlzbid0IG5ldyBlbm91Z2guCj4+ICsgKiAgICAgICAgMSwgYW55IHBhc3NlZCBmbGFn
-IHNldAo+PiArICogICAgICAgIDAsIGZsYWcgdW5zZXQKPj4gKyAqLwo+PiArc3RhdGljIGludCBj
-aGVja19hY3BpX2NwdV9mbGFnKHVuc2lnbmVkIGludCBjcHUsIGludCByZXYsIHUzMiBmbGFnKQo+
-IAo+IFdoeSBub3QgYm9vbD8KPiAKPj4gK3sKPj4gKyAgICAgICBzdHJ1Y3QgYWNwaV90YWJsZV9o
-ZWFkZXIgKnRhYmxlOwo+PiArICAgICAgIGFjcGlfc3RhdHVzIHN0YXR1czsKPj4gKyAgICAgICB1
-MzIgYWNwaV9jcHVfaWQgPSBnZXRfYWNwaV9pZF9mb3JfY3B1KGNwdSk7Cj4+ICsgICAgICAgc3Ry
-dWN0IGFjcGlfcHB0dF9wcm9jZXNzb3IgKmNwdV9ub2RlID0gTlVMTDsKPj4gKyAgICAgICBpbnQg
-cmV0ID0gLUVOT0VOVDsKPj4gKyAgICAgICBzdGF0aWMgaW50IHNhdmVkX3BwdHRfcmV2ID0gLTE7
-Cj4+ICsKPj4gKyAgICAgICAvKiBDYWNoZSB0aGUgUFBUVCByZXZpc2lvbiB0byBhdm9pZCByZXBl
-YXQgdGFibGUgZ2V0L3B1dCBvbiBmYWlsdXJlICovCj4gCj4gVGhpcyBpcyBhIHJhdGhlciBxdWVz
-dGlvbmFibGUgb3B0aW1pemF0aW9uLgo+IAo+IERvZXMgdGhlIGV4dHJhIHRhYmxlIGdldC9wdXQg
-cmVhbGx5IG1hdHRlcj8KCkkgd291bGQgaGF2ZSBtYWRlIHNhdmVkX3BwdHRfcmV2IGEgZ2xvYmFs
-LCBidXQsIGluZGVlZCwgY2FjaGluZyB0aGUgCnZhbHVlIGlzIG5vdCBzbyBpbXBvcnRhbnQuCgo+
-IAo+PiArICAgICAgIGlmIChzYXZlZF9wcHR0X3JldiA+IC0xICYmIHNhdmVkX3BwdHRfcmV2IDwg
-cmV2KQo+PiArICAgICAgICAgICAgICAgcmV0dXJuIC1FTk9FTlQ7Cj4gCj4gSXQgc2hvdWxkIGJl
-IGZpbmUgdG8gcmV0dXJuICdmYWxzZScgaGVyZSwgc2hvdWxkbid0IGl0Pwo+IAo+PiArCj4+ICsg
-ICAgICAgc3RhdHVzID0gYWNwaV9nZXRfdGFibGUoQUNQSV9TSUdfUFBUVCwgMCwgJnRhYmxlKTsK
-Pj4gKyAgICAgICBpZiAoQUNQSV9GQUlMVVJFKHN0YXR1cykpIHsKPj4gKyAgICAgICAgICAgICAg
-IHNhdmVkX3BwdHRfcmV2ID0gMDsKPj4gKyAgICAgICAgICAgICAgIGFjcGlfcHB0dF93YXJuX21p
-c3NpbmcoKTsKPj4gKyAgICAgICAgICAgICAgIHJldHVybiByZXQ7Cj4gCj4gQW5kIGhlcmU/Cj4g
-Cj4+ICsgICAgICAgfQo+PiArCj4+ICsgICAgICAgc2F2ZWRfcHB0dF9yZXYgPSB0YWJsZS0+cmV2
-aXNpb247Cj4+ICsKPj4gKyAgICAgICBpZiAoc2F2ZWRfcHB0dF9yZXYgPj0gcmV2KQo+PiArICAg
-ICAgICAgICAgICAgY3B1X25vZGUgPSBhY3BpX2ZpbmRfcHJvY2Vzc29yX25vZGUodGFibGUsIGFj
-cGlfY3B1X2lkKTsKPj4gKwo+PiArICAgICAgIGlmIChjcHVfbm9kZSkKPj4gKyAgICAgICAgICAg
-ICAgIHJldCA9IChjcHVfbm9kZS0+ZmxhZ3MgJiBmbGFnKSAhPSAwOwo+IAo+IEFuZCB0aGlzIGNh
-biBiZQo+IAo+IHJldCA9ICEhKGNwdV9ub2RlLT5mbGFncyAmIGZsYWcpOwo+IAo+PiArCj4+ICsg
-ICAgICAgYWNwaV9wdXRfdGFibGUodGFibGUpOwo+PiArCj4+ICsgICAgICAgcmV0dXJuIHJldDsK
-Pj4gK30KPj4gKwo+PiAgIC8qKgo+PiAgICAqIGFjcGlfZmluZF9sYXN0X2NhY2hlX2xldmVsKCkg
-LSBEZXRlcm1pbmVzIHRoZSBudW1iZXIgb2YgY2FjaGUgbGV2ZWxzIGZvciBhIFBFCj4+ICAgICog
-QGNwdTogS2VybmVsIGxvZ2ljYWwgQ1BVIG51bWJlcgo+PiBAQCAtNTgxLDYgKzYyNywyMSBAQCBp
-bnQgY2FjaGVfc2V0dXBfYWNwaSh1bnNpZ25lZCBpbnQgY3B1KQo+PiAgICAgICAgICByZXR1cm4g
-c3RhdHVzOwo+PiAgIH0KPj4KPj4gKy8qKgo+PiArICogYWNwaV9wcHR0X2NwdV9pc190aHJlYWQo
-KSAtIERldGVybWluZSBpZiBDUFUgaXMgYSB0aHJlYWQKPj4gKyAqIEBjcHU6IEtlcm5lbCBsb2dp
-Y2FsIENQVSBudW1iZXIKPj4gKyAqCj4+ICsgKgo+PiArICogUmV0dXJuOiAxLCBhIHRocmVhZAo+
-PiArICogICAgICAgICAwLCBub3QgYSB0aHJlYWQKPj4gKyAqICAgICAgICAgLUVOT0VOVCAsaWYg
-dGhlIFBQVFQgZG9lc24ndCBleGlzdCwgdGhlIENQVSBjYW5ub3QgYmUgZm91bmQgb3IKPj4gKyAq
-ICAgICAgICAgdGhlIHRhYmxlIHJldmlzaW9uIGlzbid0IG5ldyBlbm91Z2guCj4+ICsgKi8KPj4g
-K2ludCBhY3BpX3BwdHRfY3B1X2lzX3RocmVhZCh1bnNpZ25lZCBpbnQgY3B1KQo+PiArewo+PiAr
-ICAgICAgIHJldHVybiBjaGVja19hY3BpX2NwdV9mbGFnKGNwdSwgMiwgQUNQSV9QUFRUX0FDUElf
-UFJPQ0VTU09SX0lTX1RIUkVBRCk7Cj4+ICt9CgpZb3UgY291bGQgYWxzbyBjb25zaWRlciB0aGUg
-Zm9sbG93aW5nIHRvIGF2b2lkIHRoZSB0cmktc3RhdGUgcmV0dXJuIHZhbHVlOgoKYm9vbCBhY3Bp
-X3BwdHRfY3B1X2ZpbmRfdGhyZWFkZWQodW5zaWduZWQgaW50IGNwdSwgYm9vbCAqaXNfdGhyZWFk
-ZWQpCgo+PiArCj4+ICAgLyoqCj4+ICAgICogZmluZF9hY3BpX2NwdV90b3BvbG9neSgpIC0gRGV0
-ZXJtaW5lIGEgdW5pcXVlIHRvcG9sb2d5IHZhbHVlIGZvciBhIGdpdmVuIENQVQo+PiAgICAqIEBj
-cHU6IEtlcm5lbCBsb2dpY2FsIENQVSBudW1iZXIKPj4gQEAgLTY0MSw3ICs3MDIsNiBAQCBpbnQg
-ZmluZF9hY3BpX2NwdV9jYWNoZV90b3BvbG9neSh1bnNpZ25lZCBpbnQgY3B1LCBpbnQgbGV2ZWwp
-Cj4+ICAgICAgICAgIHJldHVybiByZXQ7Cj4+ICAgfQo+Pgo+PiAtCj4+ICAgLyoqCj4+ICAgICog
-ZmluZF9hY3BpX2NwdV90b3BvbG9neV9wYWNrYWdlKCkgLSBEZXRlcm1pbmUgYSB1bmlxdWUgQ1BV
-IHBhY2thZ2UgdmFsdWUKPj4gICAgKiBAY3B1OiBLZXJuZWwgbG9naWNhbCBDUFUgbnVtYmVyCj4+
-IGRpZmYgLS1naXQgYS9pbmNsdWRlL2xpbnV4L2FjcGkuaCBiL2luY2x1ZGUvbGludXgvYWNwaS5o
-Cj4+IGluZGV4IGQzMTVkODY4NDRlNC4uM2UzMzkzNzVlMjEzIDEwMDY0NAo+PiAtLS0gYS9pbmNs
-dWRlL2xpbnV4L2FjcGkuaAo+PiArKysgYi9pbmNsdWRlL2xpbnV4L2FjcGkuaAo+PiBAQCAtMTMw
-MSwxMCArMTMwMSwxNSBAQCBzdGF0aWMgaW5saW5lIGludCBscGl0X3JlYWRfcmVzaWRlbmN5X2Nv
-dW50X2FkZHJlc3ModTY0ICphZGRyZXNzKQo+PiAgICNlbmRpZgo+Pgo+PiAgICNpZmRlZiBDT05G
-SUdfQUNQSV9QUFRUCj4+ICtpbnQgYWNwaV9wcHR0X2NwdV9pc190aHJlYWQodW5zaWduZWQgaW50
-IGNwdSk7Cj4+ICAgaW50IGZpbmRfYWNwaV9jcHVfdG9wb2xvZ3kodW5zaWduZWQgaW50IGNwdSwg
-aW50IGxldmVsKTsKPj4gICBpbnQgZmluZF9hY3BpX2NwdV90b3BvbG9neV9wYWNrYWdlKHVuc2ln
-bmVkIGludCBjcHUpOwo+PiAgIGludCBmaW5kX2FjcGlfY3B1X2NhY2hlX3RvcG9sb2d5KHVuc2ln
-bmVkIGludCBjcHUsIGludCBsZXZlbCk7Cj4+ICAgI2Vsc2UKPj4gK3N0YXRpYyBpbmxpbmUgaW50
-IGFjcGlfcHB0dF9jcHVfaXNfdGhyZWFkKHVuc2lnbmVkIGludCBjcHUpCj4+ICt7Cj4+ICsgICAg
-ICAgcmV0dXJuIC1FSU5WQUw7Cj4+ICt9Cj4+ICAgc3RhdGljIGlubGluZSBpbnQgZmluZF9hY3Bp
-X2NwdV90b3BvbG9neSh1bnNpZ25lZCBpbnQgY3B1LCBpbnQgbGV2ZWwpCj4+ICAgewo+PiAgICAg
-ICAgICByZXR1cm4gLUVJTlZBTDsKPj4gLS0KPj4gMi4yMS4wCj4+Cj4gCj4gLgo+IAoKCgpfX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2Vy
-bmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
-cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVs
-Cg==
+
+
+On Mon, 2019-07-08 at 17:06 +0800, Matthias Brugger wrote:
+> 
+> On 21/06/2019 13:32, Matthias Brugger wrote:
+> > of_get_next_child() increments the reference count of the returning
+> > device_node. Decrement it in the check if we are using the old or the
+> > new DTB.
+> > 
+> > Fixes: ba1f1f70c2c0 ("[media] media: mtk-mdp: Fix mdp device tree")
+> > Signed-off-by: Matthias Brugger <matthias.bgg@gmail.com>
+> 
+> Any comments on that?
+> 
+
+Hi Matthias,
+Thanks for fixing the bug. Sorry to reply late~
+
+Acked-by: Houlong Wei <houlong.wei@mediatek.com>
+
+
+> > ---
+> >  drivers/media/platform/mtk-mdp/mtk_mdp_core.c | 4 +++-
+> >  1 file changed, 3 insertions(+), 1 deletion(-)
+> > 
+> > diff --git a/drivers/media/platform/mtk-mdp/mtk_mdp_core.c b/drivers/media/platform/mtk-mdp/mtk_mdp_core.c
+> > index bbb24fb95b95..bafe53c5d54a 100644
+> > --- a/drivers/media/platform/mtk-mdp/mtk_mdp_core.c
+> > +++ b/drivers/media/platform/mtk-mdp/mtk_mdp_core.c
+> > @@ -118,7 +118,9 @@ static int mtk_mdp_probe(struct platform_device *pdev)
+> >  	mutex_init(&mdp->vpulock);
+> >  
+> >  	/* Old dts had the components as child nodes */
+> > -	if (of_get_next_child(dev->of_node, NULL)) {
+> > +	parent = of_get_next_child(dev->of_node, NULL);
+> > +	if (parent) {
+> > +		of_node_put(parent);
+> >  		parent = dev->of_node;
+> >  		dev_warn(dev, "device tree is out of date\n");
+> >  	} else {
+> > 
+
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
