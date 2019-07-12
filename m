@@ -2,54 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E785D66766
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 09:03:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 85A0C66779
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 09:08:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NxZv+XCn/delZnmhxY/T43bQOFrbmgABZyKm3VNFPZQ=; b=q7PDe2H/VH6DN9
-	tYQard4Wof3VOAaL83J7lCtYzLK7XlVDGdzO+5h3CojOQzZ79vTUDHUfYXYw8Gi9/eDEuCLdhvG6K
-	8Re+/elwB10Qj8RWy1pdh6Yu5aCYp6hw04HVHrMuIlEOnyu1YRfyZp8S9cLbqKaX/9PYO5uNg0JOp
-	+/Pub+rItp6vWXrPk/wDyLXfedrP7hcZpy5stTKo+OcaD83kN3Jt930vHjYr/MFnl3DGbrZ/V4oGw
-	8tChZLpeB/+Y8if9svPbhPA5eHF7CLRTaJ4AWZ1jvgNpTwwRZOwJkDx1p4/STbL0Zo39PqzZOqrxP
-	7x5M1CG5XR8NE/xKWewA==;
+	List-Owner; bh=GoBKWCG+I8kSLoQAm6E1eC+SZiUMMa2ca6NCckOiQqE=; b=HA3E3AmtPCiyD2
+	CJAQ5lgOIo5innZd9zhYjxqa2Vg6kRKhkFOTyhdpBIxrSVMxSlhB2W1CMi6cfukocIZjATy80OvO+
+	PESZg1/fRP2iiLmECLlG4EtsAS4sKzf3X9+H3KOKMwMldhlwRfRlulncaCfqn898GMRa1ln1De4fk
+	0oUvA1zvNqANCJJeOwQfayOb2HmWvBVGGkxN33mLWk+OyvWHTexqirRfJnSD584ABVtPrkNbN2wSC
+	iA2X/6Wtq5OKP9gFMqh0YqEznV9B9Hnb8AyWzeYstjgbXu350lgZ8sFFa3LA6d8NmgRCLWAGdb7Ev
+	O/6xRjK2/zE8yg/QBSDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlpaJ-0002Mc-Oy; Fri, 12 Jul 2019 07:03:11 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1hlpf7-0004E3-Ri; Fri, 12 Jul 2019 07:08:10 +0000
+Received: from bilbo.ozlabs.org ([2401:3900:2:1::2] helo=ozlabs.org)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlpa0-0002Ld-Io
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 07:02:54 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 21758AFF9;
- Fri, 12 Jul 2019 07:02:50 +0000 (UTC)
-Date: Fri, 12 Jul 2019 09:02:47 +0200
-From: Michal Hocko <mhocko@kernel.org>
-To: Hoan Tran OS <hoan@os.amperecomputing.com>
-Subject: Re: [PATCH v2 0/5] mm: Enable CONFIG_NODES_SPAN_OTHER_NODES by
- default for NUMA
-Message-ID: <20190712070247.GM29483@dhcp22.suse.cz>
-References: <1562887528-5896-1-git-send-email-Hoan@os.amperecomputing.com>
+ id 1hlpeq-0004D1-Dr
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 07:07:54 +0000
+Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by mail.ozlabs.org (Postfix) with ESMTPSA id 45lPBs30dBz9s00;
+ Fri, 12 Jul 2019 17:07:49 +1000 (AEST)
+From: Michael Ellerman <mpe@ellerman.id.au>
+To: Anshuman Khandual <anshuman.khandual@arm.com>,
+ Andrew Morton <akpm@linux-foundation.org>
+Subject: Re: [PATCH V2] mm/ioremap: Probe platform for p4d huge map support
+In-Reply-To: <fbc147c7-bec2-daed-b828-c4ae170010a9@arm.com>
+References: <1561699231-20991-1-git-send-email-anshuman.khandual@arm.com>
+ <20190702160630.25de5558e9fe2d7d845f3472@linux-foundation.org>
+ <fbc147c7-bec2-daed-b828-c4ae170010a9@arm.com>
+Date: Fri, 12 Jul 2019 17:07:48 +1000
+Message-ID: <87tvbrennf.fsf@concordia.ellerman.id.au>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1562887528-5896-1-git-send-email-Hoan@os.amperecomputing.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190712_000252_875661_FCB58CA9 
-X-CRM114-Status: GOOD (  13.38  )
-X-Spam-Score: -1.3 (-)
+X-CRM114-CacheID: sfid-20190712_000752_686162_9D9D6251 
+X-CRM114-Status: GOOD (  10.53  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.3 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ medium trust [2401:3900:2:1:0:0:0:2 listed in] [list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,64 +63,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>,
- "open list:MEMORY MANAGEMENT" <linux-mm@kvack.org>,
- Paul Mackerras <paulus@samba.org>, "H . Peter Anvin" <hpa@zytor.com>,
- "sparclinux@vger.kernel.org" <sparclinux@vger.kernel.org>,
- Alexander Duyck <alexander.h.duyck@linux.intel.com>,
- "linux-s390@vger.kernel.org" <linux-s390@vger.kernel.org>,
- Michael Ellerman <mpe@ellerman.id.au>, "x86@kernel.org" <x86@kernel.org>,
- Mike Rapoport <rppt@linux.ibm.com>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Vlastimil Babka <vbabka@suse.cz>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Open Source Submission <patches@amperecomputing.com>,
- Pavel Tatashin <pavel.tatashin@microsoft.com>,
- Vasily Gorbik <gor@linux.ibm.com>, Will Deacon <will.deacon@arm.com>,
- Borislav Petkov <bp@alien8.de>, Thomas Gleixner <tglx@linutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Oscar Salvador <osalvador@suse.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- "David S . Miller" <davem@davemloft.net>
+Cc: Stephen Rothwell <sfr@canb.auug.org.au>, x86@kernel.org,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>, Will Deacon <will.deacon@arm.com>,
+ Michal Hocko <mhocko@kernel.org>, linux-mm@kvack.org,
+ Ingo Molnar <mingo@redhat.com>, linux-arm-kernel@lists.infradead.org,
+ Andy Lutomirski <luto@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ linuxppc-dev@lists.ozlabs.org,
+ "Kirill A . Shutemov" <kirill.shutemov@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu 11-07-19 23:25:44, Hoan Tran OS wrote:
-> In NUMA layout which nodes have memory ranges that span across other nodes,
-> the mm driver can detect the memory node id incorrectly.
-> 
-> For example, with layout below
-> Node 0 address: 0000 xxxx 0000 xxxx
-> Node 1 address: xxxx 1111 xxxx 1111
-> 
-> Note:
->  - Memory from low to high
->  - 0/1: Node id
->  - x: Invalid memory of a node
-> 
-> When mm probes the memory map, without CONFIG_NODES_SPAN_OTHER_NODES
-> config, mm only checks the memory validity but not the node id.
-> Because of that, Node 1 also detects the memory from node 0 as below
-> when it scans from the start address to the end address of node 1.
-> 
-> Node 0 address: 0000 xxxx xxxx xxxx
-> Node 1 address: xxxx 1111 1111 1111
-> 
-> This layout could occur on any architecture. This patch enables
-> CONFIG_NODES_SPAN_OTHER_NODES by default for NUMA to fix this issue.
+Anshuman Khandual <anshuman.khandual@arm.com> writes:
+> On 07/03/2019 04:36 AM, Andrew Morton wrote:
+>> On Fri, 28 Jun 2019 10:50:31 +0530 Anshuman Khandual <anshuman.khandual@arm.com> wrote:
+>> 
+>>> Finishing up what the commit c2febafc67734a ("mm: convert generic code to
+>>> 5-level paging") started out while levelling up P4D huge mapping support
+>>> at par with PUD and PMD. A new arch call back arch_ioremap_p4d_supported()
+>>> is being added which just maintains status quo (P4D huge map not supported)
+>>> on x86, arm64 and powerpc.
+>> 
+>> Does this have any runtime effects?  If so, what are they and why?  If
+>> not, what's the actual point?
+>
+> It just finishes up what the previous commit c2febafc67734a ("mm: convert
+> generic code to 5-level paging") left off with respect p4d based huge page
+> enablement for ioremap. When HAVE_ARCH_HUGE_VMAP is enabled its just a simple
+> check from the arch about the support, hence runtime effects are minimal.
 
-Yes it can occur on any arch but most sane platforms simply do not
-overlap physical ranges. So I do not really see any reason to
-unconditionally enable the config for everybody. What is an advantage?
+The return value of arch_ioremap_p4d_supported() is stored in the
+variable ioremap_p4d_capable which is then returned by
+ioremap_p4d_enabled().
 
--- 
-Michal Hocko
-SUSE Labs
+That is used by ioremap_try_huge_p4d() called from ioremap_p4d_range()
+from ioremap_page_range().
+
+The runtime effect is that it prevents ioremap_page_range() from trying
+to create huge mappings at the p4d level on arches that don't support
+it.
+
+cheers
 
 _______________________________________________
 linux-arm-kernel mailing list
