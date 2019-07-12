@@ -2,36 +2,36 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9E3C667138
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 16:18:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D5966713B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 16:19:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tUK3U/miMvD7BywcucbfaHedBgK4Gi0yHkoTjaEPP0U=; b=TBnh/7ruvRDrTX
-	IjqYJOEuywmoPwA540Lrnb/dOGzBKvIjcI62h7q0P9uolfZw/sHN84qAwa7/dPx2TZcVJ5lH7/e2R
-	JLT4ekrrWxyww7mwXKNsLqNkJh5w6Gp8B/NumfAsqbi4fUj653IKWOFsLOOZjjKSjD2CW8NT3T4pf
-	d2uWrcaGd1KmGRmisqQyu21rH/oGi/JxLy/KPWXNWBNn2XBrsgFLhK8+nZbLD0xuW51/VjG77+bMs
-	1y/olzoSWBgJ9eTgIkvr4UgYBTMa7v8B7QONT6VJUeGH2FreeUOpNrTV8uwBbAdgAy3Xpq5iDbcNv
-	urc0a8B3mvkvoK8nnwyA==;
+	List-Owner; bh=Bb93+mHQKK+1sQCMvIeDdIPzVKEELDJO6tUM5jYCU74=; b=F9JztXlWEsWw9F
+	KX9J3n/3j6yLDyNX6tfSwVQZx7mP0NBkJD0qKz638F0sNVZoGQwpc2Qnf5FDm3DYOJRTe1w8y2X9x
+	UcmwTsLzgeyCOhTelGXKtmCgNDeKMLnYWoQg1L7Zkbh0JjEGv0cLK0jx6O6Dd72F3LhethpN3fvQF
+	zj6ZieIjShsp7Qfq/VQx2ljJh9cugdFEKwVCywTCE3CK/TmIyJcfo/btRbeqyX1zWivWYLjrgkM20
+	b+LmO6PYKRUytArSYZ2oWgW6FWEpLta8MyI3iA1URDrJPy2aAB2jOkt35/lRy3tLhPOdOROkGd5yr
+	c1JYF8f1GFbyfPv6A2OA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlwNf-0002CM-PM; Fri, 12 Jul 2019 14:18:36 +0000
+	id 1hlwO2-0002RN-Ht; Fri, 12 Jul 2019 14:18:58 +0000
 Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlwMY-0001X4-G0
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 14:17:30 +0000
+ id 1hlwMc-0001aA-5w
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 14:17:31 +0000
 Received: by smtp.codeaurora.org (Postfix, from userid 1000)
- id 23BD361783; Fri, 12 Jul 2019 14:17:23 +0000 (UTC)
+ id E011C60E7A; Fri, 12 Jul 2019 14:17:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1562941046;
- bh=ZLyrLF3gxoij3tWd6LLpsaHVZE9/f37v1XHJJ32CDWo=;
+ s=default; t=1562941049;
+ bh=j34YjdOI22zXeGZb1tMjjkyFGeXTEfmtACkRK82dp6w=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=lWbR2UNEwxfFqlsKI3EU0xMoOwSA1GJlv8eDHDI/tSuAcWCuSt2FZINjGD3+dukRz
- K+Et0E8tnR2nPUMLaB58kgCtYdB1+Os26O8btObcre1gDnXDYZ9a9QkZkZBHasx7z/
- q2CGz/M37+WnAS1DmKDlPcvMm+KXDuEL1Fpe81Oo=
+ b=oyW9mtD/R3K+xw45vMeHawqWd6bNOhhaCcfkniWrpcN9LGqGO2WQCREnlWXtRdur1
+ MH33lAw2psv27U+iYMWYSGdJWWLAPH2ZmhYPB8f/fxljvbBsq20+LaTtO2/eYNpuQ7
+ JtvazmXLbROL41rn+6tHeVhwPqYSE/xFbKxQEqJo=
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
  pdx-caf-mail.web.codeaurora.org
 X-Spam-Level: 
@@ -43,16 +43,16 @@ Received: from blr-ubuntu-253.qualcomm.com
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
  (Authenticated sender: saiprakash.ranjan@codeaurora.org)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id A6CB660E3F;
- Fri, 12 Jul 2019 14:17:17 +0000 (UTC)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id BC901617A3;
+ Fri, 12 Jul 2019 14:17:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1562941042;
- bh=ZLyrLF3gxoij3tWd6LLpsaHVZE9/f37v1XHJJ32CDWo=;
+ s=default; t=1562941048;
+ bh=j34YjdOI22zXeGZb1tMjjkyFGeXTEfmtACkRK82dp6w=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Xhe34wh3Rv4s9lSEFglyofbPRkR1qLSCI5lbeRncgZSsXYs6dg/jADkquEvbX9tdU
- sb+dm9YbR2r9JlwLjpC9jN1LOyUCcxd5HptD6B2SbvQR8tLg3a/6sR8BaBtaUybrSr
- sNsCmZAaDGEPeVKNxyRvYlcgdEX63mAB7EK7J3dM=
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org A6CB660E3F
+ b=I1Q43Zi+CwcMNDPK2F6kSyCxRvtugaCZMOTtnNkdIXixxWFZrk+NDqO8R3OfC1BUH
+ R5Wi4gkotdTEOSAkbCh4dMcuG9JIf/2zv7896yGOGbTHm9sqEz+SN/+N17tLAl2OdP
+ hqDUsmOsxRXrdOLUomowCpCVjIKcVKyXrtidbFgY=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org BC901617A3
 Authentication-Results: pdx-caf-mail.web.codeaurora.org;
  dmarc=none (p=none dis=none) header.from=codeaurora.org
 Authentication-Results: pdx-caf-mail.web.codeaurora.org; spf=none
@@ -65,16 +65,16 @@ To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Mike Leach <mike.leach@linaro.org>, Rob Herring <robh+dt@kernel.org>,
  Bjorn Andersson <bjorn.andersson@linaro.org>, devicetree@vger.kernel.org,
  David Brown <david.brown@linaro.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCHv8 4/5] coresight: etm4x: Add ETM PIDs for SDM845 and MSM8996
-Date: Fri, 12 Jul 2019 19:46:26 +0530
-Message-Id: <2694eae0731a07eeda11f666526ccff8c6b5842e.1562940244.git.saiprakash.ranjan@codeaurora.org>
+Subject: [PATCHv8 5/5] coresight: cpu-debug: Add support for Qualcomm Kryo
+Date: Fri, 12 Jul 2019 19:46:27 +0530
+Message-Id: <e2c4cc7c6ccaa5695f25af20c8e487ac53b39955.1562940244.git.saiprakash.ranjan@codeaurora.org>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <cover.1562940244.git.saiprakash.ranjan@codeaurora.org>
 References: <cover.1562940244.git.saiprakash.ranjan@codeaurora.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190712_071726_952270_60F47011 
-X-CRM114-Status: GOOD (  12.51  )
+X-CRM114-CacheID: sfid-20190712_071730_419322_154EF376 
+X-CRM114-Status: GOOD (  16.87  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -113,43 +113,97 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Instead of overriding the peripheral id(PID) check in AMBA
-by hardcoding them in DT, add the PIDs to the ETM4x driver.
-Here we use Unique Component Identifier(UCI) for MSM8996
-since the ETM and CPU debug module shares the same PIDs.
-SDM845 does not support CPU debug module.
+Add support for coresight CPU debug module on Qualcomm
+Kryo CPUs. This patch adds the UCI entries for Kryo CPUs
+found on MSM8996 which shares the same PIDs as ETMs.
+
+Without this, below error is observed on MSM8996:
+
+[    5.429867] OF: graph: no port node found in /soc/debug@3810000
+[    5.429938] coresight-etm4x: probe of 3810000.debug failed with error -22
+[    5.435415] coresight-cpu-debug 3810000.debug: Coresight debug-CPU0 initialized
+[    5.446474] OF: graph: no port node found in /soc/debug@3910000
+[    5.448927] coresight-etm4x: probe of 3910000.debug failed with error -22
+[    5.454681] coresight-cpu-debug 3910000.debug: Coresight debug-CPU1 initialized
+[    5.487765] OF: graph: no port node found in /soc/debug@3a10000
+[    5.488007] coresight-etm4x: probe of 3a10000.debug failed with error -22
+[    5.493024] coresight-cpu-debug 3a10000.debug: Coresight debug-CPU2 initialized
+[    5.501802] OF: graph: no port node found in /soc/debug@3b10000
+[    5.512901] coresight-etm4x: probe of 3b10000.debug failed with error -22
+[    5.513192] coresight-cpu-debug 3b10000.debug: Coresight debug-CPU3 initialized
 
 Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 ---
- drivers/hwtracing/coresight/coresight-etm4x.c | 14 +++++++++-----
- 1 file changed, 9 insertions(+), 5 deletions(-)
+ .../hwtracing/coresight/coresight-cpu-debug.c | 33 +++++++++----------
+ drivers/hwtracing/coresight/coresight-priv.h  | 10 +++---
+ 2 files changed, 21 insertions(+), 22 deletions(-)
 
-diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
-index 7bcac8896fc1..28bcc0e58d7a 100644
---- a/drivers/hwtracing/coresight/coresight-etm4x.c
-+++ b/drivers/hwtracing/coresight/coresight-etm4x.c
-@@ -1192,11 +1192,15 @@ static struct amba_cs_uci_id uci_id_etm4[] = {
+diff --git a/drivers/hwtracing/coresight/coresight-cpu-debug.c b/drivers/hwtracing/coresight/coresight-cpu-debug.c
+index 2463aa7ab4f6..96544b348c27 100644
+--- a/drivers/hwtracing/coresight/coresight-cpu-debug.c
++++ b/drivers/hwtracing/coresight/coresight-cpu-debug.c
+@@ -646,24 +646,23 @@ static int debug_remove(struct amba_device *adev)
+ 	return 0;
+ }
+ 
++static const struct amba_cs_uci_id uci_id_debug[] = {
++	{
++		/*  CPU Debug UCI data */
++		.devarch	= 0x47706a15,
++		.devarch_mask	= 0xfff0ffff,
++		.devtype	= 0x00000015,
++	}
++};
++
+ static const struct amba_id debug_ids[] = {
+-	{       /* Debug for Cortex-A53 */
+-		.id	= 0x000bbd03,
+-		.mask	= 0x000fffff,
+-	},
+-	{       /* Debug for Cortex-A57 */
+-		.id	= 0x000bbd07,
+-		.mask	= 0x000fffff,
+-	},
+-	{       /* Debug for Cortex-A72 */
+-		.id	= 0x000bbd08,
+-		.mask	= 0x000fffff,
+-	},
+-	{       /* Debug for Cortex-A73 */
+-		.id	= 0x000bbd09,
+-		.mask	= 0x000fffff,
+-	},
+-	{ 0, 0 },
++	CS_AMBA_ID(0x000bbd03),				/* Cortex-A53 */
++	CS_AMBA_ID(0x000bbd07),				/* Cortex-A57 */
++	CS_AMBA_ID(0x000bbd08),				/* Cortex-A72 */
++	CS_AMBA_ID(0x000bbd09),				/* Cortex-A73 */
++	CS_AMBA_UCI_ID(0x000f0205, uci_id_debug),	/* Qualcomm Kryo */
++	CS_AMBA_UCI_ID(0x000f0211, uci_id_debug),	/* Qualcomm Kryo */
++	{},
  };
  
- static const struct amba_id etm4_ids[] = {
--	CS_AMBA_ID(0x000bb95d),		/* Cortex-A53 */
--	CS_AMBA_ID(0x000bb95e),		/* Cortex-A57 */
--	CS_AMBA_ID(0x000bb95a),		/* Cortex-A72 */
--	CS_AMBA_ID(0x000bb959),		/* Cortex-A73 */
--	CS_AMBA_UCI_ID(0x000bb9da, uci_id_etm4),	/* Cortex-A35 */
-+	CS_AMBA_ID(0x000bb95d),			/* Cortex-A53 */
-+	CS_AMBA_ID(0x000bb95e),			/* Cortex-A57 */
-+	CS_AMBA_ID(0x000bb95a),			/* Cortex-A72 */
-+	CS_AMBA_ID(0x000bb959),			/* Cortex-A73 */
-+	CS_AMBA_UCI_ID(0x000bb9da, uci_id_etm4),/* Cortex-A35 */
-+	CS_AMBA_UCI_ID(0x000f0205, uci_id_etm4),/* Qualcomm Kryo */
-+	CS_AMBA_UCI_ID(0x000f0211, uci_id_etm4),/* Qualcomm Kryo */
-+	CS_AMBA_ID(0x000bb802),			/* Qualcomm Kryo 385 Cortex-A55 */
-+	CS_AMBA_ID(0x000bb803),			/* Qualcomm Kryo 385 Cortex-A75 */
- 	{},
- };
+ static struct amba_driver debug_driver = {
+diff --git a/drivers/hwtracing/coresight/coresight-priv.h b/drivers/hwtracing/coresight/coresight-priv.h
+index 7d401790dd7e..41ae5863104d 100644
+--- a/drivers/hwtracing/coresight/coresight-priv.h
++++ b/drivers/hwtracing/coresight/coresight-priv.h
+@@ -185,11 +185,11 @@ static inline int etm_writel_cp14(u32 off, u32 val) { return 0; }
+ 	}
  
+ /* coresight AMBA ID, full UCI structure: id table entry. */
+-#define CS_AMBA_UCI_ID(pid, uci_ptr)	\
+-	{				\
+-		.id	= pid,		\
+-		.mask	= 0x000fffff,	\
+-		.data	= uci_ptr	\
++#define CS_AMBA_UCI_ID(pid, uci_ptr)		\
++	{					\
++		.id	= pid,			\
++		.mask	= 0x000fffff,		\
++		.data	= (void *)uci_ptr	\
+ 	}
+ 
+ /* extract the data value from a UCI structure given amba_id pointer. */
 -- 
 QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
 of Code Aurora Forum, hosted by The Linux Foundation
