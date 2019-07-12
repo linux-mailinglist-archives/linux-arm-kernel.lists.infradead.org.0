@@ -2,55 +2,36 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B21BA66474
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 04:36:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B62B6648D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 04:45:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7F/L8qWxpeqf6tN//ZRKVRFh/tpfXng4aoUYjGaNRo4=; b=WS7Iz7TRT1FX8+
-	8MwXyxRD1zgWyIqQ33A971nPnObPIDVRI/fTfCOeDLREcF/OkiveZmrpgt4gMZCXEiluorQsXRuHc
-	2mSnUNut+2xF7TIFLgRSB1SOmcJKCtBc3GNHPnzVgSerDAMPMFFrPpjVPDoXJjlCK3caF1FUO6TtZ
-	aYifE9ZKsn1ny42sHihr1zrGwuthJyv73tFDmEVjTY2e9RjO1aKCuanfDuNvak/0TQeDjlyisJh04
-	onTuGFYLdeWly7FxKi5zys4Aycb9TeDcTSieW5Lvl8IWTXbOod9Jv35PNmtHD1yJ2JK6NqYu+Icpw
-	DdtopgvlbexrPuMIOmTw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FODlgq+LKLxmgOCt8DGqthnbrQsUe25HDi2CJ3h5fRI=; b=e9fCQgFWyz+uzS
+	5abqWYGQC/NFfCGEuGy4tnAzebLhLb7JkFXsKG+TRXZpQFUENHIfkbmjULr3QzT+HMCavqrr3bLeI
+	V5utyf3EQYpR082ynbf0OpLdURb1iwEuDGc9FKREnXoxL8ltATOm72A8EZVLlaKl2gI08RFTuHH91
+	TcFVkS2Y0lmlERULajpDX6F0ls5YiU/0zVESHQfT1O/7097cQEv0VXsvVdj19B/fje3CqMUgy9MpO
+	bXqnamjRyPmFhNbkBBWg+YmN1cb6HqxgBS6ZwE2JlpWKQ2z0dioZH8t3DbfjyUocIykXOR29fW4ZS
+	rR6UjncxGRT1zKdZnUzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hllQJ-00074E-FZ; Fri, 12 Jul 2019 02:36:35 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hllQ4-00073n-TP
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 02:36:22 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 94C912B;
- Thu, 11 Jul 2019 19:36:17 -0700 (PDT)
-Received: from [10.162.41.115] (p8cg001049571a15.blr.arm.com [10.162.41.115])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 6334B3F71F; Thu, 11 Jul 2019 19:36:12 -0700 (PDT)
-Subject: Re: [PATCH] arm: Extend the check for RAM in /dev/mem
-To: KarimAllah Ahmed <karahmed@amazon.de>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-References: <1562883681-18659-1-git-send-email-karahmed@amazon.de>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <14f02e29-77b2-29d9-a9f4-7f89ad0194f6@arm.com>
-Date: Fri, 12 Jul 2019 08:06:43 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1hllZM-0001sL-FQ; Fri, 12 Jul 2019 02:45:56 +0000
+Received: from willy by bombadil.infradead.org with local (Exim 4.92 #3 (Red
+ Hat Linux)) id 1hllYv-0001rK-Qf; Fri, 12 Jul 2019 02:45:29 +0000
+Date: Thu, 11 Jul 2019 19:45:29 -0700
+From: Matthew Wilcox <willy@infradead.org>
+To: Hoan Tran OS <hoan@os.amperecomputing.com>
+Subject: Re: [PATCH v2 0/5] mm: Enable CONFIG_NODES_SPAN_OTHER_NODES by
+ default for NUMA
+Message-ID: <20190712024529.GU32320@bombadil.infradead.org>
+References: <1562887528-5896-1-git-send-email-Hoan@os.amperecomputing.com>
 MIME-Version: 1.0
-In-Reply-To: <1562883681-18659-1-git-send-email-karahmed@amazon.de>
-Content-Language: en-US
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_193621_045641_1F806F65 
-X-CRM114-Status: GOOD (  21.16  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+Content-Disposition: inline
+In-Reply-To: <1562887528-5896-1-git-send-email-Hoan@os.amperecomputing.com>
+User-Agent: Mutt/1.11.4 (2019-03-13)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,83 +43,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Enrico Weigelt <info@metux.net>,
- Anders Roxell <anders.roxell@linaro.org>, Yu Zhao <yuzhao@google.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Russell King <linux@armlinux.org.uk>, Mike Rapoport <rppt@linux.ibm.com>,
- Jun Yao <yaojun8558363@gmail.com>, James Morse <james.morse@arm.com>,
- Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, Robin Murphy <robin.murphy@arm.com>
+Cc: Michal Hocko <mhocko@suse.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>,
+ "open list:MEMORY MANAGEMENT" <linux-mm@kvack.org>,
+ Paul Mackerras <paulus@samba.org>, "H . Peter Anvin" <hpa@zytor.com>,
+ "sparclinux@vger.kernel.org" <sparclinux@vger.kernel.org>,
+ Alexander Duyck <alexander.h.duyck@linux.intel.com>,
+ "linux-s390@vger.kernel.org" <linux-s390@vger.kernel.org>,
+ Michael Ellerman <mpe@ellerman.id.au>, "x86@kernel.org" <x86@kernel.org>,
+ Mike Rapoport <rppt@linux.ibm.com>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Vlastimil Babka <vbabka@suse.cz>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Open Source Submission <patches@amperecomputing.com>,
+ Pavel Tatashin <pavel.tatashin@microsoft.com>,
+ Vasily Gorbik <gor@linux.ibm.com>, Will Deacon <will.deacon@arm.com>,
+ Borislav Petkov <bp@alien8.de>, Thomas Gleixner <tglx@linutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Oscar Salvador <osalvador@suse.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
+ "David S . Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 07/12/2019 03:51 AM, KarimAllah Ahmed wrote:
-> Some valid RAM can live outside kernel control (e.g. using mem= kernel
-> command-line). For these regions, pfn_valid would return "false" causing
-> system RAM to be mapped as uncached. Use memblock instead to identify RAM.
-
-Once the remaining memory is outside of the kernel (as the admin would have
-intended with mem= command line) what is the particular concern regarding
-the way those get mapped (cached or not) ? It is not to be used any way.
-
+On Thu, Jul 11, 2019 at 11:25:44PM +0000, Hoan Tran OS wrote:
+> In NUMA layout which nodes have memory ranges that span across other nodes,
+> the mm driver can detect the memory node id incorrectly.
 > 
-> Cc: Russell King <linux@armlinux.org.uk>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Mike Rapoport <rppt@linux.ibm.com>
-> Cc: Andrew Morton <akpm@linux-foundation.org>
-> Cc: Anders Roxell <anders.roxell@linaro.org>
-> Cc: Enrico Weigelt <info@metux.net>
-> Cc: Thomas Gleixner <tglx@linutronix.de>
-> Cc: KarimAllah Ahmed <karahmed@amazon.de>
-> Cc: Mark Rutland <mark.rutland@arm.com>
-> Cc: James Morse <james.morse@arm.com>
-> Cc: Anshuman Khandual <anshuman.khandual@arm.com>
-> Cc: Jun Yao <yaojun8558363@gmail.com>
-> Cc: Yu Zhao <yuzhao@google.com>
-> Cc: Robin Murphy <robin.murphy@arm.com>
-> Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: linux-kernel@vger.kernel.org
-> Signed-off-by: KarimAllah Ahmed <karahmed@amazon.de>
-> ---
->  arch/arm/mm/mmu.c   | 2 +-
->  arch/arm64/mm/mmu.c | 2 +-
->  2 files changed, 2 insertions(+), 2 deletions(-)
+> For example, with layout below
+> Node 0 address: 0000 xxxx 0000 xxxx
+> Node 1 address: xxxx 1111 xxxx 1111
 > 
-> diff --git a/arch/arm/mm/mmu.c b/arch/arm/mm/mmu.c
-> index 1aa2586..492774b 100644
-> --- a/arch/arm/mm/mmu.c
-> +++ b/arch/arm/mm/mmu.c
-> @@ -705,7 +705,7 @@ static void __init build_mem_type_table(void)
->  pgprot_t phys_mem_access_prot(struct file *file, unsigned long pfn,
->  			      unsigned long size, pgprot_t vma_prot)
->  {
-> -	if (!pfn_valid(pfn))
-> +	if (!memblock_is_memory(__pfn_to_phys(pfn)))
->  		return pgprot_noncached(vma_prot);
->  	else if (file->f_flags & O_SYNC)
->  		return pgprot_writecombine(vma_prot);
-> diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
-> index 3645f29..cdc3e8e 100644
-> --- a/arch/arm64/mm/mmu.c
-> +++ b/arch/arm64/mm/mmu.c
-> @@ -78,7 +78,7 @@ void set_swapper_pgd(pgd_t *pgdp, pgd_t pgd)
->  pgprot_t phys_mem_access_prot(struct file *file, unsigned long pfn,
->  			      unsigned long size, pgprot_t vma_prot)
->  {
-> -	if (!pfn_valid(pfn))
-> +	if (!memblock_is_memory(__pfn_to_phys(pfn)))
+> Note:
+>  - Memory from low to high
+>  - 0/1: Node id
+>  - x: Invalid memory of a node
+> 
+> When mm probes the memory map, without CONFIG_NODES_SPAN_OTHER_NODES
+> config, mm only checks the memory validity but not the node id.
+> Because of that, Node 1 also detects the memory from node 0 as below
+> when it scans from the start address to the end address of node 1.
+> 
+> Node 0 address: 0000 xxxx xxxx xxxx
+> Node 1 address: xxxx 1111 1111 1111
+> 
+> This layout could occur on any architecture. This patch enables
+> CONFIG_NODES_SPAN_OTHER_NODES by default for NUMA to fix this issue.
 
-pfn_valid() on arm64 checks if the memblock region is mapped i.e does it have
-a linear mapping or not. If a segment of RAM is outside linear mapping due to
-mem= directive and lacks a linear mapping then why should it be mapped similarly
-like system RAM on this path ?
+How do you know it could occur on any architecture?  Surely you should
+just enable this for the architecture where you've noticed the problem.
 
 _______________________________________________
 linux-arm-kernel mailing list
