@@ -2,64 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 84AE366F9E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 15:07:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98AC166FAC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 15:09:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qHuTC4PIqm7+280B5X7rwyFcus/aBytYxo/IAujnN2I=; b=u1FbaJ7jFRnCAb
-	JpNtGujZkbV1AmcJRn3CLH4ocFe1jvXHZ81zyEnIW/ji6KfhydPFzNCihmcW4OIoNy2egqwuzJtvc
-	GYgcnpJ1ZCQKqgay8YFkNcAJy3PJWnvWaHA5vzFOpqBKd0YFSv3XS3PL3eqbIMi64glhnc83A/f+s
-	5hMa1xq3qIL0cbgmS6YfpQcd8l7JQoKadRCm5Tp2kfPBFxvdHPZaevrb8iJ76jDZ903GxEa+1sWor
-	ygHBhsjA1eESIQnpirW6x2zgN4o5A0e8S3B4+dlM1U4z2CdGjFj2KlMEwP8Zh87X+saMhKA5vrygb
-	QUEEAd6hBVXM6cProJZQ==;
+	List-Owner; bh=bMkVMUoFrMZnG71Ikdd17AbO27vNyjWVCnDU8Xolwz8=; b=pQp5TUrY3SOaTw
+	OWHCvZTK0oQm8Y35TJWhV7qlUXDhymUUauCzWGBpngp1dO9EiDRDqiurBUdyAuZITjjT3qKylMBIc
+	Es+sSE5er5jOVMXK7+1b7fn05wsdBi8YVTUOJyBrh/mJIEui0DmjWm995ahJUvakZjOGr8gApPdbK
+	H5wmLTVashEbn/DI4Ab9xMQrdaCqy7HTej89vWyHozuilASeBLal/m22SR/Qn3oysWsHy+5VukVmZ
+	Y5wWwu+qfv3hAgTwsICVOunRCDGKl5Mi0c9e2rvo+iaOlT+2HbQ3T+rY6H0+n6U67uNG/mnckE+NJ
+	WVsVsHgUpYVHdD5mllUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlvHF-0006IP-TR; Fri, 12 Jul 2019 13:07:53 +0000
+	id 1hlvIh-00078R-Fc; Fri, 12 Jul 2019 13:09:23 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlvH4-0006He-UD
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 13:07:44 +0000
-Received: from mail-qk1-f175.google.com (mail-qk1-f175.google.com
- [209.85.222.175])
+ id 1hlvIZ-00077m-8u
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 13:09:16 +0000
+Received: from mail-qk1-f173.google.com (mail-qk1-f173.google.com
+ [209.85.222.173])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 89318216C4
+ by mail.kernel.org (Postfix) with ESMTPSA id DFC9E216C4
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 12 Jul 2019 13:07:42 +0000 (UTC)
+ Fri, 12 Jul 2019 13:09:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1562936862;
- bh=8J76JtIM5UW4BCsga1T8Xf5XDKop09AqspKP/Vk8ggU=;
+ s=default; t=1562936955;
+ bh=W6YIjaFSzzjtMDBKWJodMGbfMMX0VBoh4+APVLIt+SA=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=XUPNPXY4lv03ZbwHL8wnKmXnCnfoDk2qK3bWro79xj67IUSK7OKAGvlhOqU7VYwjk
- mcTbX4Vq4+CDJx24I3iP7YIjLW0p3f24ZpXMTrs8ybfXqiQwUeHkKk3u2Ylm1hDBe9
- H0F94uby5Z1sx44dAWNzYkj6CdShtLLOP7DcciMM=
-Received: by mail-qk1-f175.google.com with SMTP id g18so6316384qkl.3
+ b=vUVTFwqC/zGAaW1/n5WXHjBkKD5Ypuvc083w2flxQ9TarX9sAG9ByX+2dIPw1VnBQ
+ /YYcR5XF85+qqJPxwWh9K7AmlV/l9CLUb3ty/1nToUwE0YKacb3+faHzp4yrfjm+yu
+ HU5arit/ux127/xK/l9dqc7i4fVFk64VHicdMbxY=
+Received: by mail-qk1-f173.google.com with SMTP id s22so6289769qkj.12
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 12 Jul 2019 06:07:42 -0700 (PDT)
-X-Gm-Message-State: APjAAAWPC7uQXohXzH3lllaL9ZxqRRl9dU4KfbwcRbOKc2Dn8PDxgjfv
- heMe9l4P7+LAA8zq6O/Bn76T5EIwLTQenhtfLg==
-X-Google-Smtp-Source: APXvYqwPav7WNzk1nC8clhcOKZKa5N2Lh/bDVhexp0tydAW/XvWKuUtshKyZEaqfmvWDRKsvZut5biiZ/R7wYPtJ3pE=
-X-Received: by 2002:a05:620a:1447:: with SMTP id
- i7mr6365679qkl.254.1562936861782; 
- Fri, 12 Jul 2019 06:07:41 -0700 (PDT)
+ Fri, 12 Jul 2019 06:09:14 -0700 (PDT)
+X-Gm-Message-State: APjAAAV7dmHJ49VIOsxB4IFF/u+eadIS2NX8xfw1muOB7Vfc1yMGyG6N
+ 5v+mxPC6ywtpRFBiiM0Ay6vR5MD+rYWdVSUMCg==
+X-Google-Smtp-Source: APXvYqwjdoQwR8x8UTFOyyGiPA50uzJD5f6PGF0aB6Ty2QtFOm2DGDacJSD7J67xZOfZmZOUg59B3SH4VdFNnGwzYkM=
+X-Received: by 2002:a37:a010:: with SMTP id j16mr6412048qke.152.1562936954182; 
+ Fri, 12 Jul 2019 06:09:14 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190711092158.14678-1-maxime.ripard@bootlin.com>
- <20190711092158.14678-3-maxime.ripard@bootlin.com>
-In-Reply-To: <20190711092158.14678-3-maxime.ripard@bootlin.com>
+ <20190711092158.14678-2-maxime.ripard@bootlin.com>
+In-Reply-To: <20190711092158.14678-2-maxime.ripard@bootlin.com>
 From: Rob Herring <robh+dt@kernel.org>
-Date: Fri, 12 Jul 2019 07:07:30 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqLrVRsWM5ORM9QwjgJyVuPUauCXcY24Qvevvo7wRWgvmw@mail.gmail.com>
-Message-ID: <CAL_JsqLrVRsWM5ORM9QwjgJyVuPUauCXcY24Qvevvo7wRWgvmw@mail.gmail.com>
-Subject: Re: [PATCH 3/3] dt-bindings: dma: Convert Allwinner A31 and A64 DMA
- to a schema
+Date: Fri, 12 Jul 2019 07:09:02 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqLJkoudu3mw9wVuN1RM-VPGSWj+Vv6L=C=N-DtW_vOAdA@mail.gmail.com>
+Message-ID: <CAL_JsqLJkoudu3mw9wVuN1RM-VPGSWj+Vv6L=C=N-DtW_vOAdA@mail.gmail.com>
+Subject: Re: [PATCH 2/3] dt-bindings: dma: Convert Allwinner A10 DMA to a
+ schema
 To: Maxime Ripard <maxime.ripard@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190712_060742_994173_13C46A12 
-X-CRM114-Status: GOOD (  13.60  )
+X-CRM114-CacheID: sfid-20190712_060915_326809_C1024C3D 
+X-CRM114-Status: GOOD (  13.11  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -101,7 +100,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Thu, Jul 11, 2019 at 3:36 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
 >
-> The newer Allwinner SoCs have a DMA controller supported in Linux, with a
+> The older Allwinner SoCs have a DMA controller supported in Linux, with a
 > matching Device Tree binding.
 >
 > Now that we have the DT validation in place, let's convert the device tree
@@ -109,13 +108,11 @@ On Thu, Jul 11, 2019 at 3:36 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
 >
 > Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
 > ---
->  .../dma/allwinner,sun50i-a64-dma.yaml         | 88 +++++++++++++++++++
->  .../bindings/dma/allwinner,sun6i-a31-dma.yaml | 62 +++++++++++++
->  .../devicetree/bindings/dma/sun6i-dma.txt     | 81 -----------------
->  3 files changed, 150 insertions(+), 81 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/dma/allwinner,sun50i-a64-dma.yaml
->  create mode 100644 Documentation/devicetree/bindings/dma/allwinner,sun6i-a31-dma.yaml
->  delete mode 100644 Documentation/devicetree/bindings/dma/sun6i-dma.txt
+>  .../bindings/dma/allwinner,sun4i-a10-dma.yaml | 55 +++++++++++++++++++
+>  .../devicetree/bindings/dma/sun4i-dma.txt     | 45 ---------------
+>  2 files changed, 55 insertions(+), 45 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/dma/allwinner,sun4i-a10-dma.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/dma/sun4i-dma.txt
 
 Reviewed-by: Rob Herring <robh@kernel.org>
 
