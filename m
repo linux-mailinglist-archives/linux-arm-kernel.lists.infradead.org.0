@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 995096665D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 07:36:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 930056665E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 07:36:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6OESTivtWnYGo1P5r1OAULCaXhXEFoNv2ovqjUi0hLU=; b=hevrffcEuVkBsf
-	KScqEc9192cRfk4awRznE5pPpSb95RIuavv/mKsNBzQOJ/SOG4UHfC4VeFVnLH9MY1CyvNFdcreHY
-	2avzbwaCee3qvt2Zbj7cXjMmmcuLrIFvqtkFaqUhgAAsTvoiVDeYlPCcBWEo/IQpZVRhWsBe++Iil
-	3fLzllco+NmXxDP4Io03wYGJmJ3fhS5NgbOPP6YQMEf9GCGRGRLgTni838hYtqIYlmdfXe7Qmmw0f
-	IMdN3YIQ8vlq0dERIT/HB+HohoUuqUhoL86JkV4SSZcaH/BB2qU3b1BqGFAIOQrLY/kA2fQQeyTXG
-	jHs+KJdbZUV5/Pc00amQ==;
+	List-Owner; bh=8Y+LCdjMjcExmOAIJvkAT02JfaAw/mjQ9+QKCJ4iHrk=; b=ITSm7CB6a+BX2l
+	76FGbriIbNOYO4CObkmjj4/9Pv4RL64NhmRuz/TvD14yeRVRun5TmXciMQ2o6WdVFxXLkpEe+7JAz
+	NvBcxsR1jatOBKW+ZBW2uuuRjhAg8DL54U4xmGdeWRaKWjrUMBEi+vwZhqMmmxVTFPFYKf4o6kKuS
+	cvv2htcMFyErkUiekHmoAjJeas47/hW1VaeLt3/Z3Eh1xEc5SwIs0gPDeMQpIjksR4FgfbfQVX1MO
+	hSIJd9pHOXRL2Z2ekmZAdDSxeup3F0B+Ov1lCMlq0drNB7dZZzWhg/FYGIinchFdRxt9Dc4deg3LH
+	fTLreXE6Uhh0TzfVSmrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hloDo-00066S-2L; Fri, 12 Jul 2019 05:35:52 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1hloEX-0006pI-6O; Fri, 12 Jul 2019 05:36:37 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlo7l-0000gx-Bu
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 05:29:38 +0000
-Received: by mail-pl1-x642.google.com with SMTP id i2so4215091plt.1
+ id 1hlo7o-0000jG-8M
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 05:29:42 +0000
+Received: by mail-pl1-x643.google.com with SMTP id c14so4198000plo.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 11 Jul 2019 22:29:37 -0700 (PDT)
+ Thu, 11 Jul 2019 22:29:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=ZERHer/S6V7v3IyXGHBRQXsjn5NA4nSXv7B2aoThKNw=;
- b=LTGjy4RbPjl9R3s4FBJE7KxiWqlXV2Jf5Pd7wO0KzlxPr4SUYEcUciTXuVXj7usHms
- PBQ0GacQJxLledV6d0cVnlYP7EdoN0ibucpvd5Ox2iDnM4lDcvrfAwBw9U3rins3V+uC
- C8hekJ0VKJ136OK57vbzVb/TQ2PkcO7zGjqhj+zavYVK/VEoiPLQXx5n5kxQm+P2TCHu
- QhCYjQR9YE9M+lQtk+SbouEYzEG5+J9vd5nBHptbGKNBegltTaQCKUt7YlzFwAelFi3i
- qFYfmRpohadOUJwGsZgQSyedLaAGEjxeLe/Fn5VrzZ0NCbgkUnncJO0AbbF5RRNRniql
- Ok3Q==
+ bh=XsKw19fTFieNWoM6VpeUN2a175ttgnWqs3kt6rmh49I=;
+ b=iKPYCzvWW+66Pm/bOsNKrq5P7zLX7Gse55VsuCQJOKsYEXQJgYwZTl6ufTBi8ViuYK
+ HVqUasJBncLGzqVq0OTEzoIpb21awZWXmMarGQg9BhWocyAf+boX3+XyZL9aO5fa20VQ
+ NF1Qswif37U9oRv/De8zZokR8aXCAren/Vq91hDz3kBpLbpAV5sfYUHeSUrPRQaslkcz
+ qVCNFXtFGaxFNIf+YJg1oWWhKMDwoYNEnadjNsjigTvmD1kqDDXndRa3Ktej+sBYoTaK
+ /utuZ7pqW9y8QXFOKLw704iIzoo5Qarpys4miw0IMnmfvclAOvlmTL5awCM03/XljFsO
+ +zIw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=ZERHer/S6V7v3IyXGHBRQXsjn5NA4nSXv7B2aoThKNw=;
- b=PAskQtA+zJTAOliZllV/PaIUAGxO//83NWtBBte5+k28n1NGN6WCHnseVsGlhoJnOU
- hsvw8MjVQX6qVgkYJZfzkwtgDYVApL1S1Wfh+bO0ZTzlGQu3DKGJAU5vFjjbkqqo0Lwc
- 7Da6US6km29A6/ioXcssNbo4dVQ567ji2rIZYiegKudTf6f+UP8LvYWOmqkFWLR2XKE6
- SvkJOQmA2M3iHSJUpvtgfSxVeoVunfqcXvkLv3xVaw4dBm7xVKaWRF2wrVA5dzZitBnI
- KCKcmirxOl8S6/5mMbcCQGqNlYdtCiJ6h6kRC0V9DHH4ZTB3J6Aa6ZavsYvFCVCYgwAI
- e9dQ==
-X-Gm-Message-State: APjAAAXLZyR/GSRG+rURHc/khrmvCx5t53bDqggtJIUnXQEo3fAam7hh
- VdW0d8rb4ojk80eu2oVgdcFVUQ==
-X-Google-Smtp-Source: APXvYqzkQsNGjcvFC1dsQGwJlq+DhpGSy6v41hr8up7BSid1MOh4Os1JsA+bK4AX8YSqfYHgABj3Mg==
-X-Received: by 2002:a17:902:8b88:: with SMTP id
- ay8mr8861169plb.139.1562909376770; 
- Thu, 11 Jul 2019 22:29:36 -0700 (PDT)
+ bh=XsKw19fTFieNWoM6VpeUN2a175ttgnWqs3kt6rmh49I=;
+ b=MCVKO0FnbZPq846nbz9hZUFP5b3rXydWn9h3p40o7Cuq2KgefaKog9D95vlULFgjIw
+ SC4fxcKBXsdq9t2bDSF5WS2pJ4D7HzpoBfjv76NpDdeZhkm1C6HfVEY80gfrJ7edLAck
+ i7M1a68VFXyGKddIopb5zaHMN2qElGanv165uKy+mrCdseMeTFlKJ+upYvKRuhhjLHbz
+ Muy1bv22SAyz1YR5z9kgBHMwI9/7wV0MK1gTNc3BklEx+Qu+gLhWoz9quiJiIyXY5aec
+ 191tFhguDRPUT5Dh8YiM0apHQq/0J1+i1Ojkn00E9hpqiSe4LRHZNz9036SZqVIIOz5U
+ EClA==
+X-Gm-Message-State: APjAAAUtNTpqyfklNLxUI3XvycaPzzm+oZkorVnkGjPPyBPUR2dFtYe4
+ glCobx3MU3gobJFnHbdJvwSEdA==
+X-Google-Smtp-Source: APXvYqxvUAGGZyaOV3mER1kvI8Y7VJk6rQ6uomE1FtsKj4vu6FKLnf2EM2So364aisCPwN6zEMhNOA==
+X-Received: by 2002:a17:902:aa09:: with SMTP id
+ be9mr8935831plb.52.1562909379536; 
+ Thu, 11 Jul 2019 22:29:39 -0700 (PDT)
 Received: from localhost ([122.172.28.117])
- by smtp.gmail.com with ESMTPSA id n98sm6937170pjc.26.2019.07.11.22.29.35
+ by smtp.gmail.com with ESMTPSA id 131sm10394940pfx.57.2019.07.11.22.29.38
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 11 Jul 2019 22:29:36 -0700 (PDT)
+ Thu, 11 Jul 2019 22:29:39 -0700 (PDT)
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: stable@vger.kernel.org,
 	Julien Thierry <Julien.Thierry@arm.com>
-Subject: [PATCH v4.4 V2 14/43] arm64: Introduce cpu_die_early
-Date: Fri, 12 Jul 2019 10:58:02 +0530
-Message-Id: <f6930181f7a0cfb8e126fcbd086e3b093d89136c.1562908075.git.viresh.kumar@linaro.org>
+Subject: [PATCH v4.4 V2 15/43] arm64: Move cpu_die_early to smp.c
+Date: Fri, 12 Jul 2019 10:58:03 +0530
+Message-Id: <dd031e0851c01a0cfe275c05dc24935580d2fd78.1562908075.git.viresh.kumar@linaro.org>
 X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
 In-Reply-To: <cover.1562908074.git.viresh.kumar@linaro.org>
 References: <cover.1562908074.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_222937_460691_E7B51321 
-X-CRM114-Status: GOOD (  15.25  )
+X-CRM114-CacheID: sfid-20190711_222940_360197_0C6C116A 
+X-CRM114-Status: GOOD (  14.69  )
 X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -111,83 +111,104 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Suzuki K Poulose <suzuki.poulose@arm.com>
 
-commit ee02a15919cf86c004142edaa05b43f7ff10edf0 upstream.
+commit fce6361fe9b0caeba0c05b7d72ceda406f8780df upstream.
 
-Or in other words, make fail_incapable_cpu() reusable.
-
-We use fail_incapable_cpu() to kill a secondary CPU early during the
-bringup, which doesn't have the system advertised capabilities.
-This patch makes the routine more generic, to kill a secondary
-booting CPU, getting rid of the dependency on capability struct.
-This can be used by checks which are not necessarily attached to
-a capability struct (e.g, cpu ASIDBits).
-
-In that process, renames the function to cpu_die_early() to better
-match its functionality. This will be moved to arch/arm64/kernel/smp.c
-later.
+This patch moves cpu_die_early to smp.c, where it fits better.
+No functional changes, except for adding the necessary checks
+for CONFIG_HOTPLUG_CPU.
 
 Cc: Mark Rutland <mark.rutland@arm.com>
 Acked-by: Will Deacon <will.deacon@arm.com>
 Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+[ Viresh: Resolved rebase conflict ]
 Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- arch/arm64/kernel/cpufeature.c | 24 +++++++++++++++---------
- 1 file changed, 15 insertions(+), 9 deletions(-)
+ arch/arm64/include/asm/smp.h   |  1 +
+ arch/arm64/kernel/cpufeature.c | 22 ----------------------
+ arch/arm64/kernel/smp.c        | 25 +++++++++++++++++++++++++
+ 3 files changed, 26 insertions(+), 22 deletions(-)
 
+diff --git a/arch/arm64/include/asm/smp.h b/arch/arm64/include/asm/smp.h
+index d9c3d6a6100a..13ce01fe6237 100644
+--- a/arch/arm64/include/asm/smp.h
++++ b/arch/arm64/include/asm/smp.h
+@@ -68,5 +68,6 @@ extern int __cpu_disable(void);
+ 
+ extern void __cpu_die(unsigned int cpu);
+ extern void cpu_die(void);
++extern void cpu_die_early(void);
+ 
+ #endif /* ifndef __ASM_SMP_H */
 diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-index d0c82bc02de4..b7f01bf47988 100644
+index b7f01bf47988..a0273cd8be51 100644
 --- a/arch/arm64/kernel/cpufeature.c
 +++ b/arch/arm64/kernel/cpufeature.c
-@@ -853,15 +853,15 @@ static inline void set_sys_caps_initialised(void)
+@@ -852,28 +852,6 @@ static inline void set_sys_caps_initialised(void)
+ 	sys_caps_initialised = true;
  }
  
+-/*
+- * Kill the calling secondary CPU, early in bringup before it is turned
+- * online.
+- */
+-void cpu_die_early(void)
+-{
+-	int cpu = smp_processor_id();
+-
+-	pr_crit("CPU%d: will not boot\n", cpu);
+-
+-	/* Mark this CPU absent */
+-	set_cpu_present(cpu, 0);
+-
+-	/* Check if we can park ourselves */
+-	if (cpu_ops[cpu] && cpu_ops[cpu]->cpu_die)
+-		cpu_ops[cpu]->cpu_die(cpu);
+-	asm(
+-	"1:	wfe\n"
+-	"	wfi\n"
+-	"	b	1b");
+-}
+-
  /*
-- * Park the CPU which doesn't have the capability as advertised
-- * by the system.
+  * Run through the enabled system capabilities and enable() it on this CPU.
+  * The capabilities were decided based on the available CPUs at the boot time.
+diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
+index 03c0946b79d2..752b53daac23 100644
+--- a/arch/arm64/kernel/smp.c
++++ b/arch/arm64/kernel/smp.c
+@@ -312,6 +312,31 @@ void cpu_die(void)
+ }
+ #endif
+ 
++/*
 + * Kill the calling secondary CPU, early in bringup before it is turned
 + * online.
-  */
--static void fail_incapable_cpu(char *cap_type,
--				 const struct arm64_cpu_capabilities *cap)
++ */
 +void cpu_die_early(void)
- {
- 	int cpu = smp_processor_id();
- 
--	pr_crit("CPU%d: missing %s : %s\n", cpu, cap_type, cap->desc);
++{
++	int cpu = smp_processor_id();
++
 +	pr_crit("CPU%d: will not boot\n", cpu);
 +
- 	/* Mark this CPU absent */
- 	set_cpu_present(cpu, 0);
- 
-@@ -902,8 +902,11 @@ void verify_local_cpu_capabilities(void)
- 		 * If the new CPU misses an advertised feature, we cannot proceed
- 		 * further, park the cpu.
- 		 */
--		if (!feature_matches(__raw_read_system_reg(caps[i].sys_reg), &caps[i]))
--			fail_incapable_cpu("arm64_features", &caps[i]);
-+		if (!feature_matches(__raw_read_system_reg(caps[i].sys_reg), &caps[i])) {
-+			pr_crit("CPU%d: missing feature: %s\n",
-+					smp_processor_id(), caps[i].desc);
-+			cpu_die_early();
-+		}
- 		if (caps[i].enable)
- 			caps[i].enable(NULL);
- 	}
-@@ -911,8 +914,11 @@ void verify_local_cpu_capabilities(void)
- 	for (i = 0, caps = arm64_hwcaps; caps[i].matches; i++) {
- 		if (!cpus_have_hwcap(&caps[i]))
- 			continue;
--		if (!feature_matches(__raw_read_system_reg(caps[i].sys_reg), &caps[i]))
--			fail_incapable_cpu("arm64_hwcaps", &caps[i]);
-+		if (!feature_matches(__raw_read_system_reg(caps[i].sys_reg), &caps[i])) {
-+			pr_crit("CPU%d: missing HWCAP: %s\n",
-+					smp_processor_id(), caps[i].desc);
-+			cpu_die_early();
-+		}
- 	}
- }
- 
++	/* Mark this CPU absent */
++	set_cpu_present(cpu, 0);
++
++#ifdef CONFIG_HOTPLUG_CPU
++	/* Check if we can park ourselves */
++	if (cpu_ops[cpu] && cpu_ops[cpu]->cpu_die)
++		cpu_ops[cpu]->cpu_die(cpu);
++#endif
++
++	asm(
++	"1:	wfe\n"
++	"	wfi\n"
++	"	b	1b");
++}
++
+ static void __init hyp_mode_check(void)
+ {
+ 	if (is_hyp_mode_available())
 -- 
 2.21.0.rc0.269.g1a574e7a288b
 
