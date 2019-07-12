@@ -2,58 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 52C0A66B3D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 12:58:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7439466C0F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 14:06:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=IKEYS+rvWcxSJJqMYAx6SBjPNHmu/u9vO8FmILEIi8k=; b=P4JQ/owuVt2SNaPyCVhtcGuy2
-	XlIijqZxHd2tgxJZVdA1SJpgg6sc2FSi1LAia0ZRkhtS/78ahdoAYQ1+oO1oowBjnUpN09nGJF/65
-	dGsgRHpsLc6ew546L0GLwmr83ctASIWmE4EA9S0WIBBBc9gUyU2THC0rnx+OMfE80pgHzFT0mfrSt
-	NJbfc9ldQDzWbk5oXYv5F52D/bWvLKgDPQHn5DK8PxIANX5+LA5EbPNNeSf+RUQeKtkO5KH5ny6X6
-	2r6P2ModURZbmHEY9ThGHM336+UkuiZqzUOCMbPWq8n4OaJdEFT16ENLqq1I/T9D9cYeJ54qIKAmY
-	rkZGl6hnA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CXnsbtDRfseNN9KpnTOAd7OXJcvt+AwtMN1A2HwLE1A=; b=o/VdmuvNhKxiNl
+	4e5Q9zJrMeqJrb+MkDwHt+E/1KGBH5lnyx3rL+XvxwDu7T4Q0NaMIdnQU3Kga9qhGWHbmoqpc1kTw
+	SOPeEPB44jaHKpj9y3YOcUHl1cq/imfhcdLdd1VcUEBn9sdXkOfeNKs3gMpiW3/ISwujOyBPRg6TY
+	IBItmxg2Lm3n7+O//PmVk7dQzwzFQcZJa/ewoNnEsF6D3sBjrpuMaKTQI4KAz6B3VOBQd7vVV/nZy
+	xo3Exn7BQon8qJANnCt5DviuAWpu7F0IOtMNcKvTJIgkE+vMV9fch2io9adGVhmiQ4xiGh9pWyT5n
+	gBj7juIIigC/NlCWlJSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hltG0-0006mk-Gn; Fri, 12 Jul 2019 10:58:28 +0000
-Received: from mx1.mailbox.org ([2001:67c:2050:104:0:1:25:1])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hltFm-0006g8-BQ
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 10:58:16 +0000
-Received: from smtp1.mailbox.org (smtp1.mailbox.org [80.241.60.240])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
- (No client certificate requested)
- by mx1.mailbox.org (Postfix) with ESMTPS id 648AF5427E;
- Fri, 12 Jul 2019 12:58:07 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp1.mailbox.org ([80.241.60.240])
- by spamfilter01.heinlein-hosting.de (spamfilter01.heinlein-hosting.de
- [80.241.56.115]) (amavisd-new, port 10030)
- with ESMTP id la_RnxBryad0; Fri, 12 Jul 2019 12:57:56 +0200 (CEST)
-Date: Fri, 12 Jul 2019 20:57:45 +1000
-From: Aleksa Sarai <cyphar@cyphar.com>
-To: Al Viro <viro@zeniv.linux.org.uk>
-Subject: Re: [PATCH v9 05/10] namei: O_BENEATH-style path resolution flags
-Message-ID: <20190712105745.nruaftgeat6irhzr@yavin>
-References: <20190706145737.5299-1-cyphar@cyphar.com>
- <20190706145737.5299-6-cyphar@cyphar.com>
- <20190712043341.GI17978@ZenIV.linux.org.uk>
+	id 1hluKD-00057n-32; Fri, 12 Jul 2019 12:06:53 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hluJx-000501-25
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 12:06:40 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9B4DD28;
+ Fri, 12 Jul 2019 05:06:34 -0700 (PDT)
+Received: from e119884-lin.cambridge.arm.com (e119884-lin.cambridge.arm.com
+ [10.1.196.72])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0DEBC3F71F;
+ Fri, 12 Jul 2019 05:06:31 -0700 (PDT)
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+To: linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] arm64: compat: Fix flip/flop vdso building bug
+Date: Fri, 12 Jul 2019 13:06:18 +0100
+Message-Id: <20190712120618.6207-1-vincenzo.frascino@arm.com>
+X-Mailer: git-send-email 2.22.0
+In-Reply-To: <20190712101556.17833-2-naohiro.aota@wdc.com>
+References: <20190712101556.17833-2-naohiro.aota@wdc.com>
 MIME-Version: 1.0
-In-Reply-To: <20190712043341.GI17978@ZenIV.linux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190712_035814_705589_B4AC36A5 
-X-CRM114-Status: GOOD (  20.86  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190712_050637_483261_B944EE71 
+X-CRM114-Status: GOOD (  10.88  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:67c:2050:104:0:1:25:1 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -67,134 +61,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
- Alexei Starovoitov <ast@kernel.org>, linux-kernel@vger.kernel.org,
- David Howells <dhowells@redhat.com>, linux-kselftest@vger.kernel.org,
- sparclinux@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
- linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
- Tycho Andersen <tycho@tycho.ws>, Aleksa Sarai <asarai@suse.de>,
- linux-arm-kernel@lists.infradead.org, linux-mips@vger.kernel.org,
- linux-xtensa@linux-xtensa.org, Kees Cook <keescook@chromium.org>,
- Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
- linuxppc-dev@lists.ozlabs.org, linux-m68k@lists.linux-m68k.org,
- Andy Lutomirski <luto@kernel.org>, Shuah Khan <skhan@linuxfoundation.org>,
- David Drysdale <drysdale@google.com>, Christian Brauner <christian@brauner.io>,
- "J. Bruce Fields" <bfields@fieldses.org>, linux-parisc@vger.kernel.org,
- linux-api@vger.kernel.org, Chanho Min <chanho.min@lge.com>,
- Jeff Layton <jlayton@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
- Eric Biederman <ebiederm@xmission.com>, linux-alpha@vger.kernel.org,
- linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- containers@lists.linux-foundation.org
-Content-Type: multipart/mixed; boundary="===============5359083911089031712=="
+Cc: naohiro.aota@wdc.com, luto@kernel.org, arnd@arndb.de, huw@codeweavers.com,
+ catalin.marinas@arm.com, daniel.lezcano@linaro.org, will.deacon@arm.com,
+ linux@armlinux.org.uk, salyzyn@android.com, yamada.masahiro@socionext.com,
+ andre.przywara@arm.com, john.stultz@linaro.org, 0x7f454c46@gmail.com,
+ linux@rasmusvillemoes.dk, Will Deacon <will@kernel.org>, tglx@linutronix.de,
+ sthotton@marvell.com, pcc@google.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Running "make" on an already compiled kernel tree will rebuild the
+vdso32 library even if this has not been modified.
 
---===============5359083911089031712==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="f3oogwkmh2sysq6o"
-Content-Disposition: inline
+$ make
+  GEN     Makefile
+  Using linux as source for kernel
+  CALL    linux/scripts/atomic/check-atomics.sh
+  CALL    linux/scripts/checksyscalls.sh
+  VDSOCHK arch/arm64/kernel/vdso32/vdso.so.raw
+  VDSOSYM include/generated/vdso32-offsets.h
+  CHK     include/generated/compile.h
+  CC      arch/arm64/kernel/signal.o
+  CC      arch/arm64/kernel/vdso.o
+  CC      arch/arm64/kernel/signal32.o
+  VDSOL   arch/arm64/kernel/vdso32/vdso.so.raw
+  MUNGE   arch/arm64/kernel/vdso32/vdso.so.dbg
+  OBJCOPY arch/arm64/kernel/vdso32/vdso.so
+  AS      arch/arm64/kernel/vdso32/vdso.o
+  AR      arch/arm64/kernel/vdso32/built-in.a
+  AR      arch/arm64/kernel/built-in.a
+  GEN     .version
+  CHK     include/generated/compile.h
+  UPD     include/generated/compile.h
+  CC      init/version.o
+  AR      init/built-in.a
+  LD      vmlinux.o
+  MODPOST vmlinux.o
 
+The issue is generated by the fact that "if_changed" is called twice
+in a single target.
 
---f3oogwkmh2sysq6o
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Fix the build bug merging the two commands into a single function.
 
-On 2019-07-12, Al Viro <viro@zeniv.linux.org.uk> wrote:
-> On Sun, Jul 07, 2019 at 12:57:32AM +1000, Aleksa Sarai wrote:
-> > @@ -1442,8 +1464,11 @@ static int follow_dotdot_rcu(struct nameidata *n=
-d)
-> >  	struct inode *inode =3D nd->inode;
-> > =20
-> >  	while (1) {
-> > -		if (path_equal(&nd->path, &nd->root))
-> > +		if (path_equal(&nd->path, &nd->root)) {
-> > +			if (unlikely(nd->flags & LOOKUP_BENEATH))
-> > +				return -EXDEV;
->=20
-> > @@ -1468,6 +1493,8 @@ static int follow_dotdot_rcu(struct nameidata *nd)
-> >  				return -ECHILD;
-> >  			if (&mparent->mnt =3D=3D nd->path.mnt)
-> >  				break;
-> > +			if (unlikely(nd->flags & LOOKUP_XDEV))
-> > +				return -EXDEV;
-> >  			/* we know that mountpoint was pinned */
-> >  			nd->path.dentry =3D mountpoint;
-> >  			nd->path.mnt =3D &mparent->mnt;
-> > @@ -1482,6 +1509,8 @@ static int follow_dotdot_rcu(struct nameidata *nd)
-> >  			return -ECHILD;
-> >  		if (!mounted)
-> >  			break;
-> > +		if (unlikely(nd->flags & LOOKUP_XDEV))
-> > +			return -EXDEV;
->=20
-> Are you sure these failure exits in follow_dotdot_rcu() won't give
-> suprious hard errors?
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Will Deacon <will@kernel.org>
+Fixes: a7f71a2c8903 ("arm64: compat: Add vDSO")
+Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+---
+ arch/arm64/kernel/vdso32/Makefile | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
 
-I could switch to -ECHILD for the *_rcu() checks if you'd prefer that.
-Though, I'd have (probably naively) thought that you'd have already
-gotten -ECHILD from the seqlock checks if there was a race during ".."
-handling.
+diff --git a/arch/arm64/kernel/vdso32/Makefile b/arch/arm64/kernel/vdso32/Makefile
+index 288c14d30b45..fb572b6f1bf5 100644
+--- a/arch/arm64/kernel/vdso32/Makefile
++++ b/arch/arm64/kernel/vdso32/Makefile
+@@ -144,8 +144,7 @@ $(obj)/vdso.so.dbg: $(obj)/vdso.so.raw $(obj)/$(munge) FORCE
+ 
+ # Link rule for the .so file, .lds has to be first
+ $(obj)/vdso.so.raw: $(src)/vdso.lds $(obj-vdso) FORCE
+-	$(call if_changed,vdsold)
+-	$(call if_changed,vdso_check)
++	$(call if_changed,vdsold_and_vdso_check)
+ 
+ # Compilation rules for the vDSO sources
+ $(c-obj-vdso): %.o: %.c FORCE
+@@ -156,6 +155,9 @@ $(asm-obj-vdso): %.o: %.S FORCE
+ 	$(call if_changed_dep,vdsoas)
+ 
+ # Actual build commands
++quiet_cmd_vdsold_and_vdso_check = LD   $@
++      cmd_vdsold_and_vdso_check = $(cmd_vdsold); $(cmd_vdso_check)
++
+ quiet_cmd_vdsold = VDSOL   $@
+       cmd_vdsold = $(COMPATCC) -Wp,-MD,$(depfile) $(VDSO_LDFLAGS) \
+                    -Wl,-T $(filter %.lds,$^) $(filter %.o,$^) -o $@
+-- 
+2.22.0
 
-> > +	if (unlikely(nd->flags & LOOKUP_BENEATH)) {
-> > +		error =3D dirfd_path_init(nd);
-> > +		if (unlikely(error))
-> > +			return ERR_PTR(error);
-> > +		nd->root =3D nd->path;
-> > +		if (!(nd->flags & LOOKUP_RCU))
-> > +			path_get(&nd->root);
-> > +	}
-> >  	if (*s =3D=3D '/') {
-> >  		if (likely(!nd->root.mnt))
-> >  			set_root(nd);
-> > @@ -2350,9 +2400,11 @@ static const char *path_init(struct nameidata *n=
-d, unsigned flags)
-> >  			s =3D ERR_PTR(error);
-> >  		return s;
-> >  	}
-> > -	error =3D dirfd_path_init(nd);
-> > -	if (unlikely(error))
-> > -		return ERR_PTR(error);
-> > +	if (likely(!nd->path.mnt)) {
->=20
-> Is that a weird way of saying "if we hadn't already called dirfd_path_ini=
-t()"?
-
-Yes. I did it to be more consistent with the other "have we got the
-root" checks elsewhere. Is there another way you'd prefer I do it?
-
---=20
-Aleksa Sarai
-Senior Software Engineer (Containers)
-SUSE Linux GmbH
-<https://www.cyphar.com/>
-
---f3oogwkmh2sysq6o
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQSxZm6dtfE8gxLLfYqdlLljIbnQEgUCXShnpgAKCRCdlLljIbnQ
-EgLTAP4nuVmi0292tyCAkB4Di0UUtazb2EsZPgKq9s2vRoyuFAD/UKONDBSK3VN9
-06Id1xrmV0JIYJSqOIdF2oJIncJ8ZwI=
-=5hbR
------END PGP SIGNATURE-----
-
---f3oogwkmh2sysq6o--
-
-
---===============5359083911089031712==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5359083911089031712==--
-
