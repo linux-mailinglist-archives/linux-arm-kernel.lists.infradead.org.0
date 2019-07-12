@@ -2,69 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0F57669C0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 11:14:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B19C5669FB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 11:35:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=p1XPgxf8YeeYDMEBBh1H2XGSxGd0nQqdMY6ao0OB1Yk=; b=Z2xNwvDf5CBPET
-	soClvLS3KsrxC7emkMNQUNRzebZRDGb443vYCjZzuOiYrf4N1zs4C2lDmf6r6RlxLKpk2bodGBg26
-	SNXjhUpDz53j3O5jrAulwzQdhjzLeAtUpZkatOirEcjhVtwXN1xybJiyfF9jMOBEro9hecneHHSza
-	qnibP96DKQ77lDepPK7Ix45Ns4kiKf+XHFu19/gQS9QdMBW6WdvO16eGE+vwFLti9ddQY/oYWtBbo
-	F7Z3/2jqTw3Wzidl7qeExnqbiUFAXZvCzMg/+Jdylq25F3eEwQXWTyLi2yfLELlwhJU2HCOrsRJ5C
-	l+sfFiThy6gOXF8KVawQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=n4MGtNIOdXCgtzgd+Ig3RO+YRWnqNLD2zFQu0nX4KHU=; b=ErAZWWihvLqFyze7aq7HVYbWu
+	SlPY44qmYiKSSDmj5P1AYGVvkdqU31zrE22V6qfLU2k6232lxy4hd6RPg8izdEaAfkKm7eNH1dloI
+	+LnkjpYJKUKgAWLYynCirVyKBVi2T8SDnrHpJdb63kZAstiBjIDRZzVsZbhW3ejPOGbJKskp4HkFv
+	GmI1ydmFsOj4U8o93GmTO+mESsFssedDAZ4gVbUS+mfVzOa43eITsmpetSMNlH5kWo4Elz+YNAd0y
+	yZrOCpArQUOg0iOUfIfH+bDm4VYeIwuZCeuAHl/BdjkcK6K63b4zx1WKERB7owSJsmRgi77Jv8V5J
+	Oul4bQg0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlrdA-0000PD-5s; Fri, 12 Jul 2019 09:14:16 +0000
-Received: from mout.kundenserver.de ([212.227.126.130])
+	id 1hlrxr-0002Qg-1z; Fri, 12 Jul 2019 09:35:39 +0000
+Received: from esa2.hgst.iphmx.com ([68.232.143.124])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlrcy-0000Nh-MR
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 09:14:06 +0000
-Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
- (mreue009 [212.227.15.129]) with ESMTPA (Nemesis) id
- 1N1fei-1iRkwp00C0-0123fC; Fri, 12 Jul 2019 11:13:59 +0200
-From: Arnd Bergmann <arnd@arndb.de>
-To: Linus Walleij <linus.walleij@linaro.org>,
-	Vinod Koul <vkoul@kernel.org>
-Subject: [PATCH] dma: ste_dma40: fix unneeded variable warning
-Date: Fri, 12 Jul 2019 11:13:30 +0200
-Message-Id: <20190712091357.744515-1-arnd@arndb.de>
-X-Mailer: git-send-email 2.20.0
+ id 1hlrxf-0002Q1-KP
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 09:35:29 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
+ t=1562924146; x=1594460146;
+ h=date:from:to:cc:subject:message-id:references:
+ mime-version:in-reply-to;
+ bh=TpCBTkzFGzmQdCiPVFXm16wdE64U9MBTIXWyfpTXNJQ=;
+ b=j+hB8m5XpEfVNdzpnUSfsl4Ug/Tb3T05Bdi2Daz6t6bmlv2YerJkX1W7
+ kQUQ6lKWA/vUaemcYdMXWrt1/1OZ1zixauns5qceFmJv19HKbVVV9HQUP
+ mlfTIXlkthibQrcQMNwgS5/dittsRQi0k8PtWE82by3rUHJKPc1P0oiKE
+ 0elIP+uUfUXbxwlS/u7DoVTamj+sphH4bY7vStTJ82bKj6Hy/rxHwQCj/
+ OEiAOHp3EDNaO5GODU2Cl8hisAZEnNHDyJuWtr51ZOjQ3wCGyu5B/D3vP
+ HEitxErXvMK9zpdxMNClk+jjDKV/0svswP6AehYUKxw9+cAbRdeaVZ4zE w==;
+IronPort-SDR: wwRW/07HmjeyqVOSD3HZzlPPql1SfCntMfMZP5//QG+rpNquS4QwmKPlQVr23r0J1fjBMh4/yJ
+ kWeHbHCAPAo6D/kA5KYJvVrAxgB6upmyn6zpUGTRrdF1HMMEjqQbEWf1Hs/r8aCdK8N+FWUuU4
+ vHxRGtahzQ960LsYuQuEnRJEZo+fyk0pHtj16WNW48wIMqoK/z5Z6a/b23K9yIY3UtVAC5uIIq
+ heEmzwToOZ3qPxSbRvicvsJEYQXZ2HmNJgtWDlXjeKV+6nlCL6ZePeb4ABUTqiXXwplUTCqBPP
+ LgI=
+X-IronPort-AV: E=Sophos;i="5.63,482,1557158400"; d="scan'208";a="212812215"
+Received: from uls-op-cesaip02.wdc.com (HELO uls-op-cesaep02.wdc.com)
+ ([199.255.45.15])
+ by ob1.hgst.iphmx.com with ESMTP; 12 Jul 2019 17:35:41 +0800
+IronPort-SDR: gI+UjM7IWcCR9LCpaTchGWagcavp+2KmemIBx48i16/pyi3HceCsplqGz+WeuRMHNNMAnbTxNB
+ JQ8EFU+vLQHkpLFsga0C/rpmDszzpOxcRDItbV3WVXwkDmAO8UUTB2htoABnlIDWl0dXPxIFGO
+ 525cWFnIlE7xxuRRP/GbWEtL+XMHaGQ804xlDq/lrKD1PuiE1oBh+SuzU+r9e2WhsknwGRhSwQ
+ QzcXmt4tT+5RAh770xvTvgICAVrIjyPw+RVV9JjoNCuRx16b+vvy0QUxgAYBlObqiE9t4qr++e
+ TAGyQSXvEvLu9AAIF69j5lWX
+Received: from uls-op-cesaip01.wdc.com ([10.248.3.36])
+ by uls-op-cesaep02.wdc.com with ESMTP; 12 Jul 2019 02:34:01 -0700
+IronPort-SDR: Icv6ySvSJspDmYJ5vbSAtuCW4bxsSUes4iqARdvgdhnCMoedSytzQ0lJmsNDg51Eu49eCh97oi
+ XF2CGoJ6d0r7aqKbsipaEOZJY3ZCOmQefwz411JSCccrGLemVz0m2ie1YZdwlwIdaBKilSqfzj
+ ywZv1xJ8teZSUiP0nomRAl7yYLmpKWaBI6XGYfkhYoAdHTjtSPfaUyJLdmCfIUVI36IjGu0VWd
+ Gi942Tv19xRa5QGhxgsUThZyq/IeT8lPwDQduGduJQhX16+8/jQis/J1J7BuEOyUQYjfTQK+lp
+ Ek4=
+Received: from naota.dhcp.fujisawa.hgst.com ([10.149.53.115])
+ by uls-op-cesaip01.wdc.com with SMTP; 12 Jul 2019 02:35:23 -0700
+Received: (nullmailer pid 25039 invoked by uid 1000);
+ Fri, 12 Jul 2019 09:35:22 -0000
+Date: Fri, 12 Jul 2019 18:35:22 +0900
+From: Naohiro Aota <naohiro.aota@wdc.com>
+To: Masahiro Yamada <yamada.masahiro@socionext.com>
+Subject: Re: [PATCH] x86/vdso, arm64/vdso: fix flip/flop vdso build bug
+Message-ID: <20190712093522.yhkxv2cq2rhqjncg@naota.dhcp.fujisawa.hgst.com>
+References: <20190712054350.12300-1-naohiro.aota@wdc.com>
+ <CAK7LNATFRqRMbJb3d4JoMyCdHDQWxmx05wJ2yBXyukcj05Au-g@mail.gmail.com>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:IqYlz58Jar5GCfS+BZKg5bdqodHpJJt/MRJG83qdyqbt2wfk7ay
- jgv77Bskqmv+zThYp5kQxBEEFUeJK/7TEWSZWua867UbUso4FFhHQKnxPAM/k8dUhftd1aX
- y7qCx5kTs23ZNbzvo1LLw0T8py9EL/oY97aciP7U+nRyTwDquP+Q3p4UaA05YRQuw1y8Kge
- hBQ0KI5XLuPXrw1icvKAQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:6sMZM3JYPV8=:jyJYAUc8zscanrU6pozE1G
- AX+FwJn88+Pr8mfWbhlSKByrpoMhzgLZCQYLOWr0kfZzOWog3drPLTiCLB1w80P7ooJSYjYs4
- Q/r+AzrbR6rxiU165D24jzF8eRXYFFa40MctPdcGfVURNTGf1UMWxg5z5AXM4KfegjpbJTY5+
- OPIF6md7cG9OA/ysWXOFLV1PQsndISFclli8Sl967GgvqSp9Znh+94EUaNHeWvEXLKEN0kygR
- CAgixXrKg/apAFlYh7wViBwKEy1Laxfds4HLQH8R52roaRnOqTUV51JUubf26QH78X/NsrtLB
- XNjW1HlYcf41tdHVnDj3QZDycjtEbdVA7qnfVDzi5WQATtIg32WC8WNSCobXgKXKdZrSugMF1
- zzozNu/5LLK83os0EscPV+OYd29crmsV7myk/5kpZ79nONHb5eakWYLhGbmTXkJg2eFfdr9nu
- KRgmTtmChv5BscbncoZF/SZq11klmYDmzaxmNhumLqO03tMj3PVPQlfcbTbh5EVb4+srb24rl
- BKWrKgkoB868mZGy1L7Yc98QnjbkjxQx0GEQjeH+208gc/qogGi/yqNTex07RNhSu1akZL+r2
- 0kjgrM0lkGEFH7qj6uo500ZqYWnmX/LDbgSvOPOv6ghorjrW2HgdIzvFjDVFanpRB/993IYe1
- LJZcifHQGymfvYOAKR0IUYyeuoqXMqd5rWrB9EbHJrBLR6Dkf39jFwIVPxynKNbnOnSnpl5z1
- rJG1dNpLPukoJm1tg3QKCmoTAKqZ0a2X5H1/PA==
+Content-Disposition: inline
+In-Reply-To: <CAK7LNATFRqRMbJb3d4JoMyCdHDQWxmx05wJ2yBXyukcj05Au-g@mail.gmail.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190712_021405_027916_5CA0A90B 
-X-CRM114-Status: GOOD (  10.45  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190712_023527_738726_31978692 
+X-CRM114-Status: UNSURE (   9.26  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.130 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.143.124 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.130 listed in wl.mailspike.net]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,56 +102,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dmaengine@vger.kernel.org, clang-built-linux@googlegroups.com,
- linux-arm-kernel@lists.infradead.org, Arnd Bergmann <arnd@arndb.de>,
- linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Peter Collingbourne <pcc@google.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, X86 ML <x86@kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Andy Lutomirski <luto@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-clang-9 points out that there are two variables that depending on the
-configuration may only be used in an ARRAY_SIZE() expression but not
-referenced:
+On Fri, Jul 12, 2019 at 03:24:01PM +0900, Masahiro Yamada wrote:
+>On Fri, Jul 12, 2019 at 2:46 PM Naohiro Aota <naohiro.aota@wdc.com> wrote:
+>>
+>> Two consecutive "make" on an already compiled kernel tree will show
+>> different behavior:
+>>
+>> $ make
+>>   CALL    scripts/checksyscalls.sh
+>>   CALL    scripts/atomic/check-atomics.sh
+>>   DESCEND  objtool
+>>   CHK     include/generated/compile.h
+>>   VDSOCHK arch/x86/entry/vdso/vdso64.so.dbg
+>>   VDSOCHK arch/x86/entry/vdso/vdso32.so.dbg
+>> Kernel: arch/x86/boot/bzImage is ready  (#3)
+>>   Building modules, stage 2.
+>>   MODPOST 12 modules
+>>
+>> $ make
+>>   CALL    scripts/checksyscalls.sh
+>>   CALL    scripts/atomic/check-atomics.sh
+>>   DESCEND  objtool
+>>   CHK     include/generated/compile.h
+>>   VDSO    arch/x86/entry/vdso/vdso64.so.dbg
+>>   OBJCOPY arch/x86/entry/vdso/vdso64.so
+>>   VDSO2C  arch/x86/entry/vdso/vdso-image-64.c
+>>   CC      arch/x86/entry/vdso/vdso-image-64.o
+>>   VDSO    arch/x86/entry/vdso/vdso32.so.dbg
+>>   OBJCOPY arch/x86/entry/vdso/vdso32.so
+>>   VDSO2C  arch/x86/entry/vdso/vdso-image-32.c
+>>   CC      arch/x86/entry/vdso/vdso-image-32.o
+>>   AR      arch/x86/entry/vdso/built-in.a
+>>   AR      arch/x86/entry/built-in.a
+>>   AR      arch/x86/built-in.a
+>>   GEN     .version
+>>   CHK     include/generated/compile.h
+>>   UPD     include/generated/compile.h
+>>   CC      init/version.o
+>>   AR      init/built-in.a
+>>   LD      vmlinux.o
+>> <snip>
+>>
+>> This is causing "LD vmlinux" once every two times even without any
+>> modifications. This is the same bug fixed in commit 92a4728608a8
+>> ("x86/boot: Fix if_changed build flip/flop bug").  We cannot use two
+>> "if_changed" in one target. Fix this build bug by merging two commands
+>> into one function.
+>>
+>> Signed-off-by: Naohiro Aota <naohiro.aota@wdc.com>
+>
+>
+>The code looks OK, but you should split this
+>into two patches, for arm64 and x86,
+>and then add Fixes: for each of them.
 
-drivers/dma/ste_dma40.c:145:12: error: variable 'd40_backup_regs' is not needed and will not be emitted [-Werror,-Wunneeded-internal-declaration]
-static u32 d40_backup_regs[] = {
-           ^
-drivers/dma/ste_dma40.c:214:12: error: variable 'd40_backup_regs_chan' is not needed and will not be emitted [-Werror,-Wunneeded-internal-declaration]
-static u32 d40_backup_regs_chan[] = {
+Thanks, I'll split and add the tags.
 
-Mark these __maybe_unused to shut up the warning.
-
-Signed-off-by: Arnd Bergmann <arnd@arndb.de>
----
- drivers/dma/ste_dma40.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/dma/ste_dma40.c b/drivers/dma/ste_dma40.c
-index 89d710899010..de8bfd9a76e9 100644
---- a/drivers/dma/ste_dma40.c
-+++ b/drivers/dma/ste_dma40.c
-@@ -142,7 +142,7 @@ enum d40_events {
-  * when the DMA hw is powered off.
-  * TODO: Add save/restore of D40_DREG_GCC on dma40 v3 or later, if that works.
-  */
--static u32 d40_backup_regs[] = {
-+static __maybe_unused u32 d40_backup_regs[] = {
- 	D40_DREG_LCPA,
- 	D40_DREG_LCLA,
- 	D40_DREG_PRMSE,
-@@ -211,7 +211,7 @@ static u32 d40_backup_regs_v4b[] = {
- 
- #define BACKUP_REGS_SZ_V4B ARRAY_SIZE(d40_backup_regs_v4b)
- 
--static u32 d40_backup_regs_chan[] = {
-+static __maybe_unused u32 d40_backup_regs_chan[] = {
- 	D40_CHAN_REG_SSCFG,
- 	D40_CHAN_REG_SSELT,
- 	D40_CHAN_REG_SSPTR,
--- 
-2.20.0
-
+>
+>
+>-- 
+>Best Regards
+>Masahiro Yamada
 
 _______________________________________________
 linux-arm-kernel mailing list
