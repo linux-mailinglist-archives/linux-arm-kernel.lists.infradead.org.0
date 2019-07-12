@@ -2,73 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 72D1D66692
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 07:45:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E1FB66693
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 07:46:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=omxFKkPj3yeX66G+BQ9myurZnQJtPMEODMip6b24S9U=; b=qiXv9ydfUrR7LI
-	NULBvFcI6fsPRpNF3VBZsGPEaWwgEynh7co7JzGrZ/OUYiXx5opNPXbAsH6Yi1CD5b6hepGpDiJZS
-	KE/JhW7No2Xc1xg6pX2KzPcjJFtb/78VypP4YoZ0gpm2VCOloFUubx/q4/dknaPTMubMJ93Wjb53f
-	dZV7UHtdCTDPiN8a0udyNkeeP2CPXwqSb3C6o8PIDKGO6Ws/rwMDEiK7R5/6Iv27g1Rs97AiYVvpa
-	W+ZyABOyUQqQ7QWJP93OGT31sqa9nWXwVyUuiM0uLP52Qf4pxJG+vCrpTpsPRvoayH58d1cwHr9Su
-	BlZW4nixI2mMtSPed5YA==;
+	List-Owner; bh=UbGw2Z0SAnNn5mN3/FzeLpCQGz32aKJ/L+1xY+rI7a4=; b=NnMNOiCU/2fACf
+	DualsP1yKrSByfImIDsdpxGIyO0arGELV66pLV6/CyOs+9JK6YouNPhr3B4q9658x6ojMoxBN/V0g
+	Jx/SWcVV/4qnwmYAQl8eA3jwOWgZJ6B4DVM6e/FB4A8djr1Iv+aGnPei1wG0HOLe3d9cVB23ccwS/
+	D3NwWnjwRyoyg42ukvkp3Q0nzAGOWdgYV7RzFMDdo066BCmgnnYIibjE3y6KJc/NUkP1hrFyqdnTX
+	hPpz7KQOV6q2VHidKKGX3/7JTG3dg/rBsRMWlsWPQM+0Brwl/9tQQxJgxmMVsGXTbjfa6khcGahNz
+	68wD1NCU94ci07cO2BSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hloN0-0004s0-RD; Fri, 12 Jul 2019 05:45:22 +0000
+	id 1hloNS-0006Ms-M3; Fri, 12 Jul 2019 05:45:50 +0000
 Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlo8i-0002em-SN
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 05:30:39 +0000
-Received: by mail-pg1-x542.google.com with SMTP id f25so3994021pgv.10
+ id 1hlo8k-0002gA-EB
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 05:30:41 +0000
+Received: by mail-pg1-x542.google.com with SMTP id u17so4003768pgi.6
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 11 Jul 2019 22:30:36 -0700 (PDT)
+ Thu, 11 Jul 2019 22:30:38 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=FDb8snX7fHtHRXPBtLwcic7/q7BlhqslXapsBvvT9m4=;
- b=eiibal9GFko1a+tgQN3krnXtrWdBZuqF3op4VIu+Wf3BT3yWBoqbTx9WQb/SIzb2Pv
- nU+5d2riU9FFB7ZObi6T0/FmOiVAW5aGYEmZjvrkkPJ2g6yeqttaBIBexfwHx+XltErC
- Y3DQoi4yokam/JVK9tv8g0c/tsQBw2y1zMoB/JHCIAUoY1gZtZBgHuw03VTQnbdwe9kP
- Pt6+p3ZXg8pzKllRVC4QKdzpBSOhLptnFhC4kPw4VLGxf9zD3HLpNXMD2tlXjktOiBhV
- WavqlMtulcslGCSBKhXOA08M969cG9OWXlkrqjc6vZeeITO1cX9t1Zu5KT2rCDtkxCAx
- U0cg==
+ bh=z7GSqiJ6aBNFVvBBcZiH2v3S1Pbs9vo106t8SFNGIe4=;
+ b=tcAbB1XCe4vsg0irqnOIM6f7OdPoVlA+nE9DQ3iCELNXazxdKNTX7JqL6YIuNOyzqp
+ 1gZ0aRWd5itgdDqxNwelzN/3pYqDQ3wm++Lq+c/1GsBgxY+xL97+7R3Dv60KKat1CnmZ
+ w+TDTAUdJrCwdEvHHImQh8zsvtQKROHmkviw4P8RSxG8EEK/gtU6buhHkmAvFpf0feFs
+ tYltMKt7PUWT3FXC4X0+Ax7SMaZeuaVfPBXvw3yaXl4A/t6jzB/68xxT9lBHbRBWPKWS
+ wqnaBGkmWANvWl1F2Jrd5SBRnzP5sywS35J9ObCnqvFWnZDPNVVbvFUyUdKONubvfb8s
+ HPbw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=FDb8snX7fHtHRXPBtLwcic7/q7BlhqslXapsBvvT9m4=;
- b=Q6L3ABwc8c5bnJPy/pIVZ9Bh9opaxNIAoXg9cv5Qd8IE6JRaXpRc/XOPEXl5HgV1fA
- bHpxYXFswuPzb5yU0aHeSITQMGPAQhnKKgs1qs4o6rYyTWLm/Ky9JrjTYnzqxZuVkAJe
- ++nq68keSl0qJwmx7aJBVMrRqvrXX9kvFBNIJKyR1MMqsgiI4W9qd/O7vO10JBCwwaoZ
- D0L3D49VYjYAciDCnbLA84OspBZE2iRIWMVk9sS4jRohjbP90I2rgqwMi7LbDiJr2Ehs
- jVIvXDEo7YK1uqd2QzmtWeZWoHuKEgoImK248IP9d5R+WXKWo0yY16xwhqSWgDw+0WI/
- gLhA==
-X-Gm-Message-State: APjAAAU9376Ri8KfBopvGSnovuojTLhoSsn3nqTOQRlvG36s+x/j9CRw
- Lth2p1xLdi9FfEZgbs3oA0TJ2A==
-X-Google-Smtp-Source: APXvYqyVf+gr+WKeb4pE+MswfAdJZHG+738tsKvri0lovTW3p6PsP27qAGYoMO8DaGXARfDH0ncu6A==
-X-Received: by 2002:a63:d04e:: with SMTP id s14mr8225037pgi.189.1562909435104; 
- Thu, 11 Jul 2019 22:30:35 -0700 (PDT)
+ bh=z7GSqiJ6aBNFVvBBcZiH2v3S1Pbs9vo106t8SFNGIe4=;
+ b=I2kZO1ayVln1Z9beW+6papuJgrxT27ZlPV5eHdI1zWiTOHgKq1H73HAS7ZO1jwVh5I
+ 52fveQuvU7uWtUBNXK0LgRwO92x2PJXQv2dpCHQdTgKTsMc1Ge/PYlAig+WhCK5YsX+p
+ KfW/Dn0xAVArIW5mjTn3oywVGiQmAKTBDcm9xmg8JuUdmjXPBc+bFWPmq8R/unUw5gcC
+ Hxm/rZYDZqhmGON0HN/DzkcVmc6ZhQVQAVysA7IF+DjEw/Zb59eVSpmD9k1AwbTY41hF
+ H1okGvkSbbcfLh8frCuhQnhamt7xjeppT55kpEOJiYdsGvL7stz6f27PDll0DsL5u7pB
+ FjXQ==
+X-Gm-Message-State: APjAAAVAyWcOM20Mpj7pABUW4/c63dXGFIxqFjrp9TSZ7rk/hogUk42G
+ jL621STPeno+2898vYHibdrpfg==
+X-Google-Smtp-Source: APXvYqzfua/WaSi2v/9NaYC4vsYdyiPDgu+cEIj0uEmriPTMu+vUpayzFNtV/AvRJG2dFnn9SZy1yA==
+X-Received: by 2002:a65:55c9:: with SMTP id k9mr8788259pgs.142.1562909437702; 
+ Thu, 11 Jul 2019 22:30:37 -0700 (PDT)
 Received: from localhost ([122.172.28.117])
- by smtp.gmail.com with ESMTPSA id 143sm12297066pgc.6.2019.07.11.22.30.34
+ by smtp.gmail.com with ESMTPSA id m4sm9840773pgs.71.2019.07.11.22.30.36
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 11 Jul 2019 22:30:34 -0700 (PDT)
+ Thu, 11 Jul 2019 22:30:37 -0700 (PDT)
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: stable@vger.kernel.org,
 	Julien Thierry <Julien.Thierry@arm.com>
-Subject: [PATCH v4.4 V2 35/43] arm/arm64: KVM: Advertise SMCCC v1.1
-Date: Fri, 12 Jul 2019 10:58:23 +0530
-Message-Id: <7c5975b0d2850d2b728f4688a3fedfed6bcbe75c.1562908075.git.viresh.kumar@linaro.org>
+Subject: [PATCH v4.4 V2 36/43] arm64: KVM: Report SMCCC_ARCH_WORKAROUND_1 BP
+ hardening support
+Date: Fri, 12 Jul 2019 10:58:24 +0530
+Message-Id: <7dd90325604da1ca7d424aeff0cd86ee3c18fdff.1562908075.git.viresh.kumar@linaro.org>
 X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
 In-Reply-To: <cover.1562908074.git.viresh.kumar@linaro.org>
 References: <cover.1562908074.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_223037_172491_EDF6E488 
-X-CRM114-Status: GOOD (  10.19  )
+X-CRM114-CacheID: sfid-20190711_223038_788262_C06D9B62 
+X-CRM114-Status: GOOD (  10.89  )
 X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.1 points)
@@ -110,44 +111,38 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Marc Zyngier <marc.zyngier@arm.com>
 
-commit 09e6be12effdb33bf7210c8867bbd213b66a499e upstream.
+commit 6167ec5c9145cdf493722dfd80a5d48bafc4a18a upstream.
 
-The new SMC Calling Convention (v1.1) allows for a reduced overhead
-when calling into the firmware, and provides a new feature discovery
-mechanism.
+A new feature of SMCCC 1.1 is that it offers firmware-based CPU
+workarounds. In particular, SMCCC_ARCH_WORKAROUND_1 provides
+BP hardening for CVE-2017-5715.
 
-Make it visible to KVM guests.
+If the host has some mitigation for this issue, report that
+we deal with it using SMCCC_ARCH_WORKAROUND_1, as we apply the
+host workaround on every guest exit.
 
 Tested-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 Reviewed-by: Christoffer Dall <christoffer.dall@linaro.org>
 Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-[ Viresh: Picked only arm-smccc.h changes ]
+[ Viresh: Picked on only arm-smccc.h changes ]
 Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- include/linux/arm-smccc.h | 13 +++++++++++++
- 1 file changed, 13 insertions(+)
+ include/linux/arm-smccc.h | 5 +++++
+ 1 file changed, 5 insertions(+)
 
 diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
-index 611d10580340..da9f3916f9a9 100644
+index da9f3916f9a9..1f02e4045a9e 100644
 --- a/include/linux/arm-smccc.h
 +++ b/include/linux/arm-smccc.h
-@@ -60,6 +60,19 @@
- #define ARM_SMCCC_OWNER_TRUSTED_OS	50
- #define ARM_SMCCC_OWNER_TRUSTED_OS_END	63
+@@ -73,6 +73,11 @@
+ 			   ARM_SMCCC_SMC_32,				\
+ 			   0, 1)
  
-+#define ARM_SMCCC_VERSION_1_0		0x10000
-+#define ARM_SMCCC_VERSION_1_1		0x10001
-+
-+#define ARM_SMCCC_VERSION_FUNC_ID					\
++#define ARM_SMCCC_ARCH_WORKAROUND_1					\
 +	ARM_SMCCC_CALL_VAL(ARM_SMCCC_FAST_CALL,				\
 +			   ARM_SMCCC_SMC_32,				\
-+			   0, 0)
-+
-+#define ARM_SMCCC_ARCH_FEATURES_FUNC_ID					\
-+	ARM_SMCCC_CALL_VAL(ARM_SMCCC_FAST_CALL,				\
-+			   ARM_SMCCC_SMC_32,				\
-+			   0, 1)
++			   0, 0x8000)
 +
  #ifndef __ASSEMBLY__
  
