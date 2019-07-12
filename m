@@ -2,86 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EEBCF67603
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 22:43:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A0B267612
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 23:02:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=oTgO2kiVR5GgphxKETJYu4HdWBMfskbMScELpF9INpA=; b=gpf85sX20RxkBN1gtbwfHlZpLT
-	5970UDAZN9cwH8v8g/Bj8tMu4puhvEJ+Iq3FM1/gohsFvvXCTwFcW9/AiamF0qTWgH8yI89/9kPbP
-	3fHn6UyO8Q1nNpsdQbtypP4Azw2GMYpdbCnVb+kBKGmqF7YogyPgRC2zIsvWVtNIi6FfhKzLmWy9Q
-	wYvOELOdRJo+pcX4x3OVhqD+DfirQT+Ioo01izdtM6Si1SQQcNyjFWXIQtUDCvWdoGgRI/MOC1rr0
-	3UVNq7LqGQv8n/yvKwJngWUoF3byUuwDhaM26nVSry/yOE0EPsD6KUveENjwYawD+DS0BQeU2N9MF
-	hH+as5/Q==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gu2QecqcWK87m2LQEWnf/GYBMT1PJMif2KRHpRKie2k=; b=YwjEDNPNpKmK6F
+	QLSUrkr5LtBmTHdIpibeGsVwN3juyrYJnmGYmdXV8QSqx6Kn1Mxcdw4Lihx5R7qXqTn/aKulskXv8
+	eNIsUsADorIU2B+YTe9YKkcmrJWyl+QQhE4Cj1V6e/DRlJt4HKMI/B89X/40eED1cwpDwvVWd87YA
+	KYT19bBMQr5urXVfdtyHbtq51rcoUaIzN93NHih81UXxOrl6b1PTnYDq8Oy/GUK8sTFjgri+awNVr
+	o4EarxqC9O3z5R+/azOfkaq/cNIlmEeA2IWLbPB3DDidPnySfeDeu5Pv+VBBerkUY0sGvolNRdjfd
+	hXJ8GcFRCtNRBnD2R6xA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hm2OV-0006E5-7o; Fri, 12 Jul 2019 20:43:51 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+	id 1hm2gZ-0003oN-10; Fri, 12 Jul 2019 21:02:31 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hm2O5-000631-A7
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 20:43:26 +0000
-Received: by mail-io1-xd41.google.com with SMTP id k8so23328281iot.1
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 12 Jul 2019 13:43:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=g31FrlFxuFM+xjFOCSjFHeI9OKsmJhFCkAkzNbx5Z+4=;
- b=X8hcH3V6OicPZyF+iBNl9yPFRYodLfeLabhL+gDENEtdOmHpWQQWe4jKCac6IbEqHv
- SnxWymnXOjRXXfhUZUBqZcfoUvFOBR6GoNp5IR9Gl9j7r+U9+0xdbn4I7Fx8XHOk6VGJ
- xiN7yncbQAeudz/U6f7RULTrnHlFEmofos+cV0FAdsWtn1UNEzNSWs2eE8w8v+KJ0oZH
- nG3MdR0F6HHV6Aw4LMrPplHeY7rUwYlbPAJtKovFIcbYUH7OE+oy89k0rBwf0i9z796O
- /i8Gz/HDdwkyZWjyAAIXr5eya1IKO4ue5S9UOEW2NGA3k/j31KZT2NLgraOp46zMH7um
- a9Hw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=g31FrlFxuFM+xjFOCSjFHeI9OKsmJhFCkAkzNbx5Z+4=;
- b=XbPJOtVx039kDhfMx5BoBWBs/syANSNuUC30bKv35Uu4nTLkK7Hy2hF88WgKq3e28n
- aM3z9RK7VJImFU0aBE/Ci/FARCgzZer8eARscGvS7DVCuZOrWNf5Y9K8OaAEJMOabNhq
- ZOp7n9mfUAXBvD9X2O5ZjmfXnrm/lRvX6fWVC8ULjMkEOOnbJqLwBisrX7Q+ZJq6EbL/
- 2Dkr5gDbr30sI5K61uaduijZ1F3/DybRULzQaWNSSz7ZM8e4h4Dqwtk+R1pxQlQ5dT07
- TY/IdIYcHRKKxB7LkF9nRArBgQ+9TzUoqS784NxmWgffGWl1PlWo0uhW85n9o9gm6ODo
- YiEg==
-X-Gm-Message-State: APjAAAVbGnC43QAThvY+6VNfFFwu7WsKc30neuNiyLedj6C73ujxcfov
- Ksgr50FjA4WV46cC7sXgPYw=
-X-Google-Smtp-Source: APXvYqxP2f2F9YZvE9gZj+i0IHuwbPUIDjLymCmzm8DfSmRxw+Mp7EzQ4drKtvZ8S8QQFWtaWNWzQw==
-X-Received: by 2002:a6b:ed09:: with SMTP id n9mr12266556iog.153.1562964202986; 
- Fri, 12 Jul 2019 13:43:22 -0700 (PDT)
-Received: from localhost.localdomain ([198.52.185.227])
- by smtp.gmail.com with ESMTPSA id l14sm9725013iob.1.2019.07.12.13.43.21
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Fri, 12 Jul 2019 13:43:22 -0700 (PDT)
-From: Sven Van Asbroeck <thesven73@gmail.com>
-X-Google-Original-From: Sven Van Asbroeck <TheSven73@gmail.com>
-To: Shawn Guo <shawnguo@kernel.org>,
-	Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH 2/2] dt-bindings: bus: imx-weim: document optional burst clock
- mode
-Date: Fri, 12 Jul 2019 16:43:16 -0400
-Message-Id: <20190712204316.16783-2-TheSven73@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190712204316.16783-1-TheSven73@gmail.com>
-References: <20190712204316.16783-1-TheSven73@gmail.com>
+ id 1hm2gH-0003nk-GP
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 21:02:15 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x6CL22jW058997;
+ Fri, 12 Jul 2019 16:02:02 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1562965322;
+ bh=coaQynstDqA5HGnoz6Wom66HS4fobTvO2GZTeSoACMM=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=Ig42kFf8tlOkVjHazoZ8sTZbCcIGBlfhM5Bmp/TBps7/4hxzvDP6Pis5eyATGhC3u
+ 5MU4E/LfOCRRNqku1GlthgklNRLp3OgImfvFAsy9q4KwF7zFNJHreOCh4ZTfCxyDY9
+ cOflcveCEpSTthHmoBDzUX7OhDy4UlvhOQ5bTyqE=
+Received: from DFLE102.ent.ti.com (dfle102.ent.ti.com [10.64.6.23])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x6CL22pk016056
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Fri, 12 Jul 2019 16:02:02 -0500
+Received: from DFLE114.ent.ti.com (10.64.6.35) by DFLE102.ent.ti.com
+ (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Fri, 12
+ Jul 2019 16:02:02 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE114.ent.ti.com
+ (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Fri, 12 Jul 2019 16:02:02 -0500
+Received: from [10.250.145.87] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x6CL20Ke100886;
+ Fri, 12 Jul 2019 16:02:00 -0500
+Subject: Re: [PATCH v4 3/3] dmaengine: ti: edma: Support for polled (memcpy)
+ completion
+To: Vinod Koul <vkoul@kernel.org>
+References: <20190618132148.26468-1-peter.ujfalusi@ti.com>
+ <20190618132148.26468-4-peter.ujfalusi@ti.com>
+ <20190705061714.GU2911@vkoul-mobl>
+From: Peter Ujfalusi <peter.ujfalusi@ti.com>
+Message-ID: <d695a2fa-61d4-e312-11d9-b501b6bc18a7@ti.com>
+Date: Sat, 13 Jul 2019 00:05:43 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
+MIME-Version: 1.0
+In-Reply-To: <20190705061714.GU2911@vkoul-mobl>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190712_134325_347033_A6B2583F 
-X-CRM114-Status: GOOD (  10.34  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190712_140213_679157_528783F0 
+X-CRM114-Status: GOOD (  14.92  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (thesven73[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (thesven73[at]gmail.com)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -91,6 +82,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,45 +94,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: dmaengine@vger.kernel.org, dan.j.williams@intel.com,
+ linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-An optional devicetree property was added to the imx-weim driver,
-which if present instructs it to operate in burst clock mode.
-Update the dt-bindings to reflect this.
 
-Signed-off-by: Sven Van Asbroeck <TheSven73@gmail.com>
----
- Documentation/devicetree/bindings/bus/imx-weim.txt | 4 ++++
- 1 file changed, 4 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/bus/imx-weim.txt b/Documentation/devicetree/bindings/bus/imx-weim.txt
-index dda7d6d66479..1b1d1c5c21ea 100644
---- a/Documentation/devicetree/bindings/bus/imx-weim.txt
-+++ b/Documentation/devicetree/bindings/bus/imx-weim.txt
-@@ -44,6 +44,10 @@ Optional properties:
- 			what bootloader sets up in IOMUXC_GPR1[11:0] will be
- 			used.
- 
-+ - fsl,burst-clk-enable	For "fsl,imx50-weim" and "fsl,imx6q-weim" type of
-+			devices, the presence of this property indicates that
-+			the weim bus should operate in Burst Clock Mode.
-+
- Timing property for child nodes. It is mandatory, not optional.
- 
-  - fsl,weim-cs-timing:	The timing array, contains timing values for the
+On 5.7.2019 9.17, Vinod Koul wrote:
+>> @@ -1840,18 +1847,40 @@ static enum dma_status edma_tx_status(struct dma_chan *chan,
+>>  {
+>>  	struct edma_chan *echan = to_edma_chan(chan);
+>>  	struct virt_dma_desc *vdesc;
+>> +	struct dma_tx_state txstate_tmp;
+>>  	enum dma_status ret;
+>>  	unsigned long flags;
+>>  
+>>  	ret = dma_cookie_status(chan, cookie, txstate);
+>> -	if (ret == DMA_COMPLETE || !txstate)
+>> +
+>> +	/* Provide a dummy dma_tx_state for completion checking */
+>> +	if (ret != DMA_COMPLETE && !txstate)
+>> +		txstate = &txstate_tmp;
+>> +
+>> +	if (ret == DMA_COMPLETE)
+>>  		return ret;
+> 
+> why not do:
+> 
+>         if (ret == DMA_COMPLETE)
+>                 return ret;
+> 
+>         if (!txstate)
+>                 txstate = &txstate_tmp;
+>
+
+Indeed it is much cleaner this way. Will send an updated series next week.
+
+>> +	txstate->residue = 0;
+>>  	spin_lock_irqsave(&echan->vchan.lock, flags);
+>>  	if (echan->edesc && echan->edesc->vdesc.tx.cookie == cookie)
+>>  		txstate->residue = edma_residue(echan->edesc);
+>>  	else if ((vdesc = vchan_find_desc(&echan->vchan, cookie)))
+>>  		txstate->residue = to_edma_desc(&vdesc->tx)->residue;
+>> +
+>> +	/*
+>> +	 * Mark the cookie completed if the residue is 0 for non cyclic
+>> +	 * transfers
+>> +	 */
+>> +	if (ret != DMA_COMPLETE && !txstate->residue &&
+>> +	    echan->edesc && echan->edesc->polled &&
+>> +	    echan->edesc->vdesc.tx.cookie == cookie) {
+>> +		edma_stop(echan);
+>> +		vchan_cookie_complete(&echan->edesc->vdesc);
+>> +		echan->edesc = NULL;
+>> +		edma_execute(echan);
+>> +		ret = DMA_COMPLETE;
+>> +	}
+>> +
+>>  	spin_unlock_irqrestore(&echan->vchan.lock, flags);
+>>  
+>>  	return ret;
+>> -- 
+>> Peter
+>>
+>> Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
+>> Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+> 
+
 -- 
-2.17.1
+Peter
 
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
+Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
 
 _______________________________________________
 linux-arm-kernel mailing list
