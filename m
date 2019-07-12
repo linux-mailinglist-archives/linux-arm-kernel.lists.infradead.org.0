@@ -2,76 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 30AD9666F0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 08:25:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 625FA66719
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 08:37:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4j0CPbgROFZ7UKTcKlRt21Bz6X5tvSYCpsv92DElbtI=; b=uevYIoHJOoK4BT
-	NflixW9p/KjMvzQeHNA2UCiFWLnV1MCLtsq1Lzl3yvc5sABQYLzInajuzcu0taKv2G0jR0795dDbG
-	wlAeXGrhn6MqdlgWpHUBuQ3jKhYmqIvgR93gd/72snid67kJLJ6GOpZT4fOLPGGATXwxyJwK/FvE/
-	/eyAh8X1UV92Q+J/fQAlU75hOn05wKugWh8wmrDdR7SgHvBV0CORvdeAWN498VoWGDvCyAblTvX/b
-	hM7rtb0thsyPdZhY/TObRiCyirAnZm3SpUoWG/WycBdu8/WqK9Us8usadYQZTYdn6h/96sqhfRWJq
-	AtFHDkNFGswq4gL8Ttuw==;
+	List-Owner; bh=YHgT0muLXHMCTWW+R+p5lrujffdOgnMNss1eYkmf/cY=; b=qUjwoUEHAdS4Nq
+	YDtakSPZAScPtSvTZsoOhgRLw+hYBTScoZXaPUEs1xnLks1aim841ADVsfCBdudtGG89OTP83Qlay
+	5ARt7d6SACV8KGvm1tMB3fNR9j/ux9/5I0ESb2yZXHOSBYT70OtbKUY+TSCncrZRCZnMjqdHXKxKP
+	aUc6VzjtGifk+ZdXqKucOhfmaVhiQPpbyV9YX9SikY91rG/mtoYdQ8FTkMbvh4F3RAZP46w20ai7c
+	7jxN3Vab+L9uvRArxMGFH5D0zpgoAPMHAMOTaZBIqPkwB06tpcV9YahETOMMEyEwXMw6vsjO4TZic
+	yg9NgF/X/xyX8H0zPt6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlozg-0005KG-W1; Fri, 12 Jul 2019 06:25:21 +0000
-Received: from conssluserg-01.nifty.com ([210.131.2.80])
+	id 1hlpB8-0001tj-5a; Fri, 12 Jul 2019 06:37:10 +0000
+Received: from zeniv.linux.org.uk ([195.92.253.2])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlozK-0005Fq-UC
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 06:25:00 +0000
-Received: from mail-ua1-f46.google.com (mail-ua1-f46.google.com
- [209.85.222.46]) (authenticated)
- by conssluserg-01.nifty.com with ESMTP id x6C6OcrN010920
- for <linux-arm-kernel@lists.infradead.org>; Fri, 12 Jul 2019 15:24:38 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-01.nifty.com x6C6OcrN010920
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1562912679;
- bh=beC6PlncI7VLFBQDho8ZRldcBbmcJMqjPnUh0ZyMQ1I=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=1i0PeyXqnMbPUzkpzDnoUiwHVGyxLNFu+b3zOrSGYG/KRJQut/VaYFtoaF71Xrfrv
- 1eyk31dFfOzIKyDfxh8xdB+af9I7ziI0k/Y+6FWVw+gZKNXm7m9wlQS9dAG/J8TMGy
- aKRDKtnBxoU/7Gjymez1744fS1sNQua7X8E7uKn+kd302PJHseDUpjv34zKanmPIJe
- HH4LOfHI9DGQYHAO7iFGq7goUqr0pl9AjjI5bLXV+NjGjYH9dixbgOiaHXUURZb4b1
- BolDm4DpMQJKwsIac6oHcs1+HPVfV5+YaUuMdmc6m2W7QrqKvYYlaRZYdQfn4j5iX4
- QXiWUTFfO3l5A==
-X-Nifty-SrcIP: [209.85.222.46]
-Received: by mail-ua1-f46.google.com with SMTP id v18so3567510uad.12
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 11 Jul 2019 23:24:38 -0700 (PDT)
-X-Gm-Message-State: APjAAAWHuR84IphAn10QJDBbV3MKupz915LJdtnJGO/P2fsDIjdWlsni
- WKsxHHyVhFDeoEZeZBI+56vLHpgkIyat2pGUcxQ=
-X-Google-Smtp-Source: APXvYqyG77NKkLEfjvk9tccV2S/mfm1w2Mnljrte9YX2RfJ87jgQC2i+nOjMV60Xi4I63bXGGCUOYU39jbWOVCnKa9U=
-X-Received: by 2002:ab0:5ea6:: with SMTP id y38mr7820294uag.40.1562912677515; 
- Thu, 11 Jul 2019 23:24:37 -0700 (PDT)
+ id 1hlpAp-0001sn-Kz
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 06:36:52 +0000
+Received: from viro by ZenIV.linux.org.uk with local (Exim 4.92 #3 (Red Hat
+ Linux)) id 1hlpAI-0006Xe-68; Fri, 12 Jul 2019 06:36:18 +0000
+Date: Fri, 12 Jul 2019 07:36:18 +0100
+From: Al Viro <viro@zeniv.linux.org.uk>
+To: Aleksa Sarai <cyphar@cyphar.com>
+Subject: Re: [PATCH v9 01/10] namei: obey trailing magic-link DAC permissions
+Message-ID: <20190712063617.GJ17978@ZenIV.linux.org.uk>
+References: <20190706145737.5299-1-cyphar@cyphar.com>
+ <20190706145737.5299-2-cyphar@cyphar.com>
+ <20190712041454.GG17978@ZenIV.linux.org.uk>
 MIME-Version: 1.0
-References: <20190712054350.12300-1-naohiro.aota@wdc.com>
-In-Reply-To: <20190712054350.12300-1-naohiro.aota@wdc.com>
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
-Date: Fri, 12 Jul 2019 15:24:01 +0900
-X-Gmail-Original-Message-ID: <CAK7LNATFRqRMbJb3d4JoMyCdHDQWxmx05wJ2yBXyukcj05Au-g@mail.gmail.com>
-Message-ID: <CAK7LNATFRqRMbJb3d4JoMyCdHDQWxmx05wJ2yBXyukcj05Au-g@mail.gmail.com>
-Subject: Re: [PATCH] x86/vdso, arm64/vdso: fix flip/flop vdso build bug
-To: Naohiro Aota <naohiro.aota@wdc.com>
+Content-Disposition: inline
+In-Reply-To: <20190712041454.GG17978@ZenIV.linux.org.uk>
+User-Agent: Mutt/1.11.3 (2019-02-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_232459_181737_63A877E3 
-X-CRM114-Status: UNSURE (   8.47  )
+X-CRM114-CacheID: sfid-20190711_233651_683928_FD86181F 
+X-CRM114-Status: UNSURE (   7.77  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.0 (+)
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.80 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.92.253.2 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,75 +61,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Collingbourne <pcc@google.com>,
- Catalin Marinas <catalin.marinas@arm.com>, X86 ML <x86@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Andy Lutomirski <luto@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Alexei Starovoitov <ast@kernel.org>, linux-kernel@vger.kernel.org,
+ David Howells <dhowells@redhat.com>, linux-kselftest@vger.kernel.org,
+ sparclinux@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ Tycho Andersen <tycho@tycho.ws>, Aleksa Sarai <asarai@suse.de>,
+ linux-arm-kernel@lists.infradead.org, linux-mips@vger.kernel.org,
+ linux-xtensa@linux-xtensa.org, Kees Cook <keescook@chromium.org>,
+ Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
+ linuxppc-dev@lists.ozlabs.org, linux-m68k@lists.linux-m68k.org,
+ Andy Lutomirski <luto@kernel.org>, Shuah Khan <skhan@linuxfoundation.org>,
+ David Drysdale <drysdale@google.com>, Christian Brauner <christian@brauner.io>,
+ "J. Bruce Fields" <bfields@fieldses.org>, linux-parisc@vger.kernel.org,
+ linux-api@vger.kernel.org, Chanho Min <chanho.min@lge.com>,
+ Jeff Layton <jlayton@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
+ Eric Biederman <ebiederm@xmission.com>, linux-alpha@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ containers@lists.linux-foundation.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jul 12, 2019 at 2:46 PM Naohiro Aota <naohiro.aota@wdc.com> wrote:
->
-> Two consecutive "make" on an already compiled kernel tree will show
-> different behavior:
->
-> $ make
->   CALL    scripts/checksyscalls.sh
->   CALL    scripts/atomic/check-atomics.sh
->   DESCEND  objtool
->   CHK     include/generated/compile.h
->   VDSOCHK arch/x86/entry/vdso/vdso64.so.dbg
->   VDSOCHK arch/x86/entry/vdso/vdso32.so.dbg
-> Kernel: arch/x86/boot/bzImage is ready  (#3)
->   Building modules, stage 2.
->   MODPOST 12 modules
->
-> $ make
->   CALL    scripts/checksyscalls.sh
->   CALL    scripts/atomic/check-atomics.sh
->   DESCEND  objtool
->   CHK     include/generated/compile.h
->   VDSO    arch/x86/entry/vdso/vdso64.so.dbg
->   OBJCOPY arch/x86/entry/vdso/vdso64.so
->   VDSO2C  arch/x86/entry/vdso/vdso-image-64.c
->   CC      arch/x86/entry/vdso/vdso-image-64.o
->   VDSO    arch/x86/entry/vdso/vdso32.so.dbg
->   OBJCOPY arch/x86/entry/vdso/vdso32.so
->   VDSO2C  arch/x86/entry/vdso/vdso-image-32.c
->   CC      arch/x86/entry/vdso/vdso-image-32.o
->   AR      arch/x86/entry/vdso/built-in.a
->   AR      arch/x86/entry/built-in.a
->   AR      arch/x86/built-in.a
->   GEN     .version
->   CHK     include/generated/compile.h
->   UPD     include/generated/compile.h
->   CC      init/version.o
->   AR      init/built-in.a
->   LD      vmlinux.o
-> <snip>
->
-> This is causing "LD vmlinux" once every two times even without any
-> modifications. This is the same bug fixed in commit 92a4728608a8
-> ("x86/boot: Fix if_changed build flip/flop bug").  We cannot use two
-> "if_changed" in one target. Fix this build bug by merging two commands
-> into one function.
->
-> Signed-off-by: Naohiro Aota <naohiro.aota@wdc.com>
+On Fri, Jul 12, 2019 at 05:14:54AM +0100, Al Viro wrote:
 
+> That's not quite guaranteed (it is possible to bind a symlink on top
+> of a regular file, and you will get LOOKUP_JUMPED on the entry into
+> trailing_symlink() when looking the result up).  Moreover, why bother
+> with LOOKUP_JUMPED here?  See that
+> 	nd->last_type = LAST_BIND;
+> several lines prior?  That's precisely to be able to recognize those
+> suckers.
 
-The code looks OK, but you should split this
-into two patches, for arm64 and x86,
-and then add Fixes: for each of them.
+... except that this won't work these days (once upon a time it used
+to, but that had been a long time ago).  However, that doesn't change
+the fact that the test is really wrong.  So let's do it right:
 
+* set a new flag along with LOOKUP_JUMPED in nd_jump_link()
+* clear it in get_link() right before
+	res = READ_ONCE(inode->i_link);
+* check it in trailing_symlink() (or callers thereof)
 
-
--- 
-Best Regards
-Masahiro Yamada
+The rest of comments stand, AFAICS.
 
 _______________________________________________
 linux-arm-kernel mailing list
