@@ -2,65 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 741AB66556
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 05:51:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CF89E66557
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 05:51:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0GdWhW2kBBKmClXy9a1P/K067ATeq2LDjo6/JBDauFs=; b=uV9M2fZvIiacX8
-	xNe9+SmqW4zYGuQuEoL4KcWV2nynouRm7WAod2IUQgNletifQ8HYETXq4ECVJr5kTe9BdcLBhVkYD
-	Y5CJqP5zj3qrOXmUMWM6Eg2SNHC9hcpyXHn2ViSP2ugiSUSxR87HfdjVIxDK+7tjw8inze9RoT7oo
-	gq6yTKSq6D55DDlyxStaEZrNJLU7SRvVIqpR1sEk33r6ijuiLAJF4iXdGOjKA/tEIkbyqeEj0exSu
-	jFoe4XrAhJGkJTrIvH9vPKq/AiD43NA9GGKP3D/H5FI+VG+y5jgWc3xJcHzUPXTMB02FKPisqhYHT
-	d5Yp93BPHApiHehQFBcw==;
+	List-Owner; bh=s9S2Pgc4ORipN828L0ZobUEogDVV9mTwLoi6G9voI4g=; b=maaNdO64rezj0+
+	zRccstZ74K9UaidNZ0VNeQdEWO2gHX89sloVzdC2KhYeSBerE9vffIWjJrLj3RJ9UUClaU6xpsncw
+	L0b/oBRFd8XAfBtElJTMl9AYc5aWkbPaiK6Q7R+K2nZK6UzQ2ablEZA3ELatq0yPBFZ95cw67A+pC
+	w1PS5e+1QjBLrDzEG/O5cOU8XiIgrdUstqjB+FVwpchACw2pT+WCosE85hGqv515PMibFXRLzWY8z
+	/3SY6rtEiTSHxNlyC31YQPYnJwKYgNc1ULVMSpcH6C15T4JP+Q4yxdncao5Klg27Cf4cbWc1UgNfC
+	y7hqtTj9qnGYv5mpsWnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlmaf-0001mn-VY; Fri, 12 Jul 2019 03:51:22 +0000
+	id 1hlmb2-00024M-8i; Fri, 12 Jul 2019 03:51:44 +0000
 Received: from gate2.alliedtelesis.co.nz ([202.36.163.20])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlmYo-0007nA-5i
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 03:49:29 +0000
+ id 1hlmYo-0007n9-5g
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 03:49:30 +0000
 Received: from mmarshal3.atlnz.lc (mmarshal3.atlnz.lc [10.32.18.43])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (Client did not present a certificate)
- by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id 2B5C9891B2;
+ by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id 5350A891B4;
  Fri, 12 Jul 2019 15:49:15 +1200 (NZST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alliedtelesis.co.nz;
  s=mail181024; t=1562903355;
- bh=YlJL9VdfrtMa6MepsmOIBxWXF9RyXS2+R/9YZ01ZhYU=;
+ bh=02ghrJdoNyIhrZDPFsjbaOpdEUmOgsH7iT2rLeTfeyQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References;
- b=b4O8Arsuyiu4cA+g9S2zTiH0XVjl4tf46+3e6b7T7XEFbjZGC5BgtYYDiV6xbxBOL
- XI1EHpV3nsv/kd5vy9cOrri7gcgaBT3XDbbgPu14YxLIt7yiGXoin+gN0Yz+g3pSl1
- RUy2HE06EHLDxpJB81madb37x6GumSMHP8BqPCLqE3iRYGNc0QQEgAlohvaHipWRn/
- IAiI1aRSkPm7x3yjYOQdzXgYCmk8vkG9qTidXst/4OKeRQcI1qw6FYkA1SMenrJm+O
- dO1xdzSSVNhQlkzaTkcaD1lbuKjZNzrAsmqdJ5AM7MySzGyw77/lhsytIYRLkxpiAa
- Shd1kYlNXzvGw==
+ b=wTXiUdkZeaAsGCJV9p9PsIP8yGROOHv1bI0GRJKAjmWLj/+fzKIH/ctcaV8edjqfS
+ TpyatjLy4TyNGdgMpS70MsX3iiXZkKD/JeZY73O2ngc3ITCBPRZId2K+Ydnu2EiaEa
+ Qj/sc7z0veB92HaT/5aafVAmM4KgqcMJTmfo8fnFEPImP+n+RlkdbT1z1M/3SmxzHH
+ x1uBW7uDvbbeD5NbriBcKfWwisRkRMArZ3Q3pkc6um6YX0ALgtH9KE9RsQ10aQ6zxZ
+ BOCGZUKbTi3IlnbdEVheCQrC8UFJ+VjpCTGxkU9trh7C7awc2QjcXQ3E2JdxYf8ors
+ 0nGdgxb8ExNdw==
 Received: from smtp (Not Verified[10.32.16.33]) by mmarshal3.atlnz.lc with
  Trustwave SEG (v7, 5, 8, 10121)
- id <B5d28033a0005>; Fri, 12 Jul 2019 15:49:14 +1200
+ id <B5d28033a0006>; Fri, 12 Jul 2019 15:49:14 +1200
 Received: from chrisp-dl.ws.atlnz.lc (chrisp-dl.ws.atlnz.lc [10.33.22.30])
- by smtp (Postfix) with ESMTP id 197EC13EF9C;
+ by smtp (Postfix) with ESMTP id 1D49313EF47;
  Fri, 12 Jul 2019 15:49:16 +1200 (NZST)
 Received: by chrisp-dl.ws.atlnz.lc (Postfix, from userid 1030)
- id 512AC1E1D7A; Fri, 12 Jul 2019 15:49:14 +1200 (NZST)
+ id 54A4F1E1D7A; Fri, 12 Jul 2019 15:49:14 +1200 (NZST)
 From: Chris Packham <chris.packham@alliedtelesis.co.nz>
 To: bp@alien8.de, robh+dt@kernel.org, mark.rutland@arm.com,
  linux@armlinux.org.uk, patches@armlinux.org.uk, mchehab@kernel.org,
  james.morse@arm.com, jlu@pengutronix.de
-Subject: [PATCH v9 5/8] ARM: l2x0: add marvell,ecc-enable property for aurora
-Date: Fri, 12 Jul 2019 15:49:01 +1200
-Message-Id: <20190712034904.5747-6-chris.packham@alliedtelesis.co.nz>
+Subject: [PATCH v9 6/8] EDAC: Add missing debugfs_create_x32 wrapper
+Date: Fri, 12 Jul 2019 15:49:02 +1200
+Message-Id: <20190712034904.5747-7-chris.packham@alliedtelesis.co.nz>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190712034904.5747-1-chris.packham@alliedtelesis.co.nz>
 References: <20190712034904.5747-1-chris.packham@alliedtelesis.co.nz>
 MIME-Version: 1.0
 x-atlnz-ls: pat
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_204926_437115_994E6D6E 
-X-CRM114-Status: GOOD (  10.25  )
+X-CRM114-CacheID: sfid-20190711_204926_610471_139BAD72 
+X-CRM114-Status: UNSURE (   9.51  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -88,47 +89,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  Chris Packham <chris.packham@alliedtelesis.co.nz>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Borislav Petkov <bp@suse.de>, linux-arm-kernel@lists.infradead.org,
  linux-edac@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The aurora cache on the Marvell Armada-XP SoC supports ECC protection
-for the L2 data arrays. Add a "marvell,ecc-enable" device tree property
-which can be used to enable this.
+From: Jan Luebbe <jlu@pengutronix.de>
 
-Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
-[jlu@pengutronix.de: use aurora specific define AURORA_ACR_ECC_EN]
+We already have wrappers for x8 and x16, so add the missing x32 one.
+
 Signed-off-by: Jan Luebbe <jlu@pengutronix.de>
+Reviewed-by: Borislav Petkov <bp@suse.de>
+Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
 ---
 
 Notes:
-    Changes in v7:
-    - remove marvell,ecc-disable
+    Changes in v9:
+    - Adapt debugfs_create_x32 to account for recent changes to debugfs apis
 
- arch/arm/mm/cache-l2x0.c | 5 +++++
- 1 file changed, 5 insertions(+)
+ drivers/edac/debugfs.c     | 11 +++++++++++
+ drivers/edac/edac_module.h |  4 ++++
+ 2 files changed, 15 insertions(+)
 
-diff --git a/arch/arm/mm/cache-l2x0.c b/arch/arm/mm/cache-l2x0.c
-index 46a616ec6b0c..12c26eb88afb 100644
---- a/arch/arm/mm/cache-l2x0.c
-+++ b/arch/arm/mm/cache-l2x0.c
-@@ -1493,6 +1493,11 @@ static void __init aurora_of_parse(const struct device_node *np,
- 		mask |= AURORA_ACR_FORCE_WRITE_POLICY_MASK;
- 	}
- 
-+	if (of_property_read_bool(np, "marvell,ecc-enable")) {
-+		mask |= AURORA_ACR_ECC_EN;
-+		val |= AURORA_ACR_ECC_EN;
-+	}
+diff --git a/drivers/edac/debugfs.c b/drivers/edac/debugfs.c
+index 1f943599a8ac..4804332d9946 100644
+--- a/drivers/edac/debugfs.c
++++ b/drivers/edac/debugfs.c
+@@ -138,3 +138,14 @@ void edac_debugfs_create_x16(const char *name, umode_t mode,
+ 	debugfs_create_x16(name, mode, parent, value);
+ }
+ EXPORT_SYMBOL_GPL(edac_debugfs_create_x16);
 +
- 	if (of_property_read_bool(np, "arm,parity-enable")) {
- 		mask |= AURORA_ACR_PARITY_EN;
- 		val |= AURORA_ACR_PARITY_EN;
++/* Wrapper for debugfs_create_x32() */
++void edac_debugfs_create_x32(const char *name, umode_t mode,
++			     struct dentry *parent, u32 *value)
++{
++	if (!parent)
++		parent = edac_debugfs;
++
++	debugfs_create_x32(name, mode, parent, value);
++}
++EXPORT_SYMBOL_GPL(edac_debugfs_create_x32);
+diff --git a/drivers/edac/edac_module.h b/drivers/edac/edac_module.h
+index b2f59ee76c22..388427d378b1 100644
+--- a/drivers/edac/edac_module.h
++++ b/drivers/edac/edac_module.h
+@@ -82,6 +82,8 @@ void edac_debugfs_create_x8(const char *name, umode_t mode,
+ 			    struct dentry *parent, u8 *value);
+ void edac_debugfs_create_x16(const char *name, umode_t mode,
+ 			     struct dentry *parent, u16 *value);
++void edac_debugfs_create_x32(const char *name, umode_t mode,
++			     struct dentry *parent, u32 *value);
+ #else
+ static inline void edac_debugfs_init(void)					{ }
+ static inline void edac_debugfs_exit(void)					{ }
+@@ -96,6 +98,8 @@ static inline void edac_debugfs_create_x8(const char *name, umode_t mode,
+ 					  struct dentry *parent, u8 *value)	{ }
+ static inline void edac_debugfs_create_x16(const char *name, umode_t mode,
+ 					   struct dentry *parent, u16 *value)	{ }
++static inline void edac_debugfs_create_x32(const char *name, umode_t mode,
++		       struct dentry *parent, u32 *value)			{ }
+ #endif
+ 
+ /*
 -- 
 2.22.0
 
