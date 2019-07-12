@@ -2,59 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB3AF67386
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 18:44:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E1BD67397
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 18:49:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=nZkdX1AA2YSPmPQwzkgJwxCGV/b+lAUQ0t1oh1CGnTY=; b=YX75aBIt7jN4gfZITReQV2jTa
-	zAZ8w+t5k8C/6vQ5G8fWrrgMHMaX6UDjBJ0yRgXrA+VikHHiuN9iDgYEGtofB+ZJC/Llo6W4UXpN+
-	vJKZwKlc5dT6d0BI+tcpc4E8J+asF6mJdxiNmGV7OZw0r/7oz42PW861e5ghL8ELsFOCYw0rJExRg
-	X7MCsnT3YDbvfGOSlcTPlsKyhRufp/wmHOaEwX+Tjqf4eZVV/W61vTnNpwULK9wFYZ0r0OFqt8yKH
-	VCCMeqCyUTzHbhD2fHkg4fNft70vtqkGc+BipVkwITrbTklCkeOXqL3Lbx6i0uadPOYpvVaZonl9n
-	RzWCU1oVw==;
+	 bh=h4U45SHta2mT2lqay/WtBU3XAcmoBQbmPpyi2RhF6W8=; b=e9XSzspZATiHai4AL9jtLZ8Ws
+	hk8nz8O19xn/pivHapeHzzZRXpSio+EjUUncZ11MaDHdkGeEFMoEsQZUJmbIO2Ar3NQjnNpdWoFnx
+	WWY0lpq3HVntfsG8JExuNmiI+eeY3Fv24z+uYNWgeIMuLDBI+cJGDrKtIE98pisG71i+IVpsyDp2i
+	vZsFegQYm16CsarChCLQeWMGHi+VDT4uNDdc1Ef5fpXaZpqj/yGkOi1mj/ofmm/tF4deifA8IDA6G
+	gGAd05q3bX45CXFDpb1Lzg4sntOQXEUpshSkVUbTUhhWCBxDekyc3na3f3SXwl4rBjR2WkJ+km5Ve
+	M5hfdjeUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlyf5-0008Mq-IJ; Fri, 12 Jul 2019 16:44:43 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hlyet-0008M9-EU
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 16:44:32 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 47AF22B;
- Fri, 12 Jul 2019 09:44:29 -0700 (PDT)
-Received: from dawn-kernel.cambridge.arm.com (unknown [10.1.197.116])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 274553F246;
- Fri, 12 Jul 2019 09:44:27 -0700 (PDT)
+	id 1hlyk1-0001zD-Fe; Fri, 12 Jul 2019 16:49:49 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hlyjo-0001y1-Ni
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 16:49:38 +0000
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id 442C160213; Fri, 12 Jul 2019 16:49:34 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1562950174;
+ bh=b1svF/gTguro1nK1BVoRt1d04OC7/a9WZZ0GYcXlh8Q=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=oHQbmGmHLU25x9yoH6gar5agOqbHYYwLbTBTI7AnUFQ539bfMmqzyvxMQ9X5JSY1f
+ XcEudci5ZxW5guTKNvJo0dX9Yy2LtzCIOMpqpmacIxekLYt6l2qHCeAGTLZGtszkek
+ 90vAhuwQbyUgp6TlnpCO3rblvYOYYTXSCUSDPNag=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED autolearn=no autolearn_force=no version=3.4.0
+Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
+ by smtp.codeaurora.org (Postfix) with ESMTP id 33FC960213;
+ Fri, 12 Jul 2019 16:49:33 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1562950173;
+ bh=b1svF/gTguro1nK1BVoRt1d04OC7/a9WZZ0GYcXlh8Q=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=Z26V7meMV9wSWGr9zlpTxsWeTq+y5Z9D7WaIEAdBJkpsc7uQntNv+ZZNhYirWM+lS
+ 5ya4cgcn3AFDmiWO2TBF2ZIl58c0kAHecFjXowk2W7RJT7fm4lmJqQNP9c7M7IALtg
+ ws8Dk7oOQzCd68ZquBweSEHPNux2Hzq67xFtFk/E=
+MIME-Version: 1.0
+Date: Fri, 12 Jul 2019 22:19:33 +0530
+From: saiprakash.ranjan@codeaurora.org
+To: Suzuki K Poulose <suzuki.poulose@arm.com>
 Subject: Re: [PATCHv8 1/5] arm64: dts: qcom: sdm845: Add Coresight support
-To: saiprakash.ranjan@codeaurora.org, gregkh@linuxfoundation.org,
- mathieu.poirier@linaro.org, leo.yan@linaro.org,
- alexander.shishkin@linux.intel.com, mike.leach@linaro.org,
- robh+dt@kernel.org, bjorn.andersson@linaro.org, devicetree@vger.kernel.org,
- david.brown@linaro.org, mark.rutland@arm.com
+In-Reply-To: <06c1a087-53f7-4841-1ae3-07ccbed22a72@arm.com>
 References: <cover.1562940244.git.saiprakash.ranjan@codeaurora.org>
  <52550ed9bbc10dca860eb1700aef5c97f644327b.1562940244.git.saiprakash.ranjan@codeaurora.org>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <06c1a087-53f7-4841-1ae3-07ccbed22a72@arm.com>
-Date: Fri, 12 Jul 2019 17:44:26 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
-MIME-Version: 1.0
-In-Reply-To: <52550ed9bbc10dca860eb1700aef5c97f644327b.1562940244.git.saiprakash.ranjan@codeaurora.org>
-Content-Language: en-US
+ <06c1a087-53f7-4841-1ae3-07ccbed22a72@arm.com>
+Message-ID: <8b82793e7b693dbb922ef4fdbffdb76f@codeaurora.org>
+X-Sender: saiprakash.ranjan@codeaurora.org
+User-Agent: Roundcube Webmail/1.2.5
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190712_094431_527463_4305AD60 
-X-CRM114-Status: GOOD (  15.43  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190712_094936_796848_79704B77 
+X-CRM114-Status: UNSURE (   9.48  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.145.29.96 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,52 +90,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: rnayak@codeaurora.org, marc.w.gonzalez@free.fr,
- linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- sibis@codeaurora.org, vivek.gautam@codeaurora.org,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, rnayak@codeaurora.org,
+ devicetree-owner@vger.kernel.org, mathieu.poirier@linaro.org,
+ marc.w.gonzalez@free.fr, alexander.shishkin@linux.intel.com,
+ gregkh@linuxfoundation.org, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, bjorn.andersson@linaro.org,
+ david.brown@linaro.org, robh+dt@kernel.org, sibis@codeaurora.org,
+ vivek.gautam@codeaurora.org, leo.yan@linaro.org,
+ linux-arm-kernel@lists.infradead.org, mike.leach@linaro.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sai,
+Hi Suzuki,
 
-On 12/07/2019 15:16, Sai Prakash Ranjan wrote:
-> Add coresight components found on Qualcomm SDM845 SoC.
-
+On 2019-07-12 22:14, Suzuki K Poulose wrote:
+> Hi Sai,
 > 
-> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-> Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-> Acked-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-> ---
->   arch/arm64/boot/dts/qcom/sdm845.dtsi | 451 +++++++++++++++++++++++++++
->   1 file changed, 451 insertions(+)
+> On 12/07/2019 15:16, Sai Prakash Ranjan wrote:
+>> Add coresight components found on Qualcomm SDM845 SoC.
 > 
-> diff --git a/arch/arm64/boot/dts/qcom/sdm845.dtsi b/arch/arm64/boot/dts/qcom/sdm845.dtsi
-> index 4babff5f19b5..5d7e3f8e0f91 100644
-> --- a/arch/arm64/boot/dts/qcom/sdm845.dtsi
-> +++ b/arch/arm64/boot/dts/qcom/sdm845.dtsi
-> @@ -1815,6 +1815,457 @@
->   			clock-names = "xo";
->   		};
->   
-> +		stm@6002000 {
-> +			compatible = "arm,coresight-stm", "arm,primecell";
-> +			reg = <0 0x06002000 0 0x1000>,
-> +			      <0 0x16280000 0 0x180000>;
-> +			reg-names = "stm-base", "stm-stimulus-base";
-> +
-> +			clocks = <&aoss_qmp>;
-> +			clock-names = "apb_pclk";
+>> 
+>> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+>> Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+>> Acked-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+>> ---
+>>   arch/arm64/boot/dts/qcom/sdm845.dtsi | 451 
+>> +++++++++++++++++++++++++++
+>>   1 file changed, 451 insertions(+)
+>> 
+>> diff --git a/arch/arm64/boot/dts/qcom/sdm845.dtsi 
+>> b/arch/arm64/boot/dts/qcom/sdm845.dtsi
+>> index 4babff5f19b5..5d7e3f8e0f91 100644
+>> --- a/arch/arm64/boot/dts/qcom/sdm845.dtsi
+>> +++ b/arch/arm64/boot/dts/qcom/sdm845.dtsi
+>> @@ -1815,6 +1815,457 @@
+>>   			clock-names = "xo";
+>>   		};
+>>   +		stm@6002000 {
+>> +			compatible = "arm,coresight-stm", "arm,primecell";
+>> +			reg = <0 0x06002000 0 0x1000>,
+>> +			      <0 0x16280000 0 0x180000>;
+>> +			reg-names = "stm-base", "stm-stimulus-base";
+>> +
+>> +			clocks = <&aoss_qmp>;
+>> +			clock-names = "apb_pclk";
+> 
+> 
+> Which tree is this based on ? I can't see aoss_qmp anywhere under 
+> dts/qcom
+> on 5.2-rc7.
+> 
 
+It's based on linux-next.
 
-Which tree is this based on ? I can't see aoss_qmp anywhere under dts/qcom
-on 5.2-rc7.
-
-
-Cheers
-Suzuki
+Thanks,
+Sai
 
 _______________________________________________
 linux-arm-kernel mailing list
