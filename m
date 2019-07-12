@@ -2,43 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E3AE666580
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 06:18:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5BEE96658E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 12 Jul 2019 06:21:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UYMiRrCHBBl8WlFftPUicpM55benoVilWwtZ6r1MY+M=; b=ih3PxJrCqUZLw7
-	uX+pWCVY675y2XZk0ztws3P8fcJgFli9Exqd8HbVkAg5cKWWIwZpT5OA7q95U8qiQqyXD1iCweq+L
-	4BZ8M5AAczuxG2HBcTIghNEvb5srH1ogYy5CAEY54xUtdLVLUlGM2M3b7GWXetkPj3PCQ30vAqIyf
-	FUwvalB/qWIPdyEIbwDdYAPi15f4JmfFEzepDBNpPYg4ay4lcA0qcW+63UJo6VpKkopPM9e5aPK/s
-	3NSKmbMtUXbNudPo2tlnxVJZi2xlmQxqZuPQJJIgu3OzrFb7wwoi7CCHTuYEE7x+R74RI5b0tSVNk
-	SpohRVWcn7p61tcNCRqQ==;
+	List-Owner; bh=lI9hbKO64g9V4YAbbbBhIcG3XxdmWM5wkiWwgd7cmAw=; b=WK9sIrawC3ZxvU
+	Z9bTs58Ub8IC/q1UqPkfTKOp1IB9FmFVUc5UuaDtsf66zaaHkwvmcfbNlwxTEB3xdT3IlUs2/a964
+	RXO7TfXzizvpWtWc3uvpof4Qr0YSViv/PK+/qgMoDZHLgrY7PrvCaj5w8UEBCQwbO6Fp7dq+2Ezju
+	aTEDN+fQSv/xxppcz/tEG34dYu0zMkpLoekoXgXVCgbkklEYsnkpHa/XSoyDSup9FLvGNf1P3U4lb
+	W3KoZeZZxLf2XehG529NSb7y3/zP32p9lXGA0JY5k4PfmI6Sf689O5agMGJxf58+higsihghBmzif
+	O8ZV4yXZM3xK2/FVJ8nA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hln0S-00024T-Fo; Fri, 12 Jul 2019 04:18:00 +0000
+	id 1hln3s-0003p9-9g; Fri, 12 Jul 2019 04:21:32 +0000
 Received: from zeniv.linux.org.uk ([195.92.253.2])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hln08-0001xg-Bk
- for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 04:17:42 +0000
+ id 1hln3f-0003oh-5I
+ for linux-arm-kernel@lists.infradead.org; Fri, 12 Jul 2019 04:21:20 +0000
 Received: from viro by ZenIV.linux.org.uk with local (Exim 4.92 #3 (Red Hat
- Linux)) id 1hlmxT-000330-0Q; Fri, 12 Jul 2019 04:14:55 +0000
-Date: Fri, 12 Jul 2019 05:14:54 +0100
+ Linux)) id 1hln3C-0003A0-92; Fri, 12 Jul 2019 04:20:50 +0000
+Date: Fri, 12 Jul 2019 05:20:50 +0100
 From: Al Viro <viro@zeniv.linux.org.uk>
 To: Aleksa Sarai <cyphar@cyphar.com>
-Subject: Re: [PATCH v9 01/10] namei: obey trailing magic-link DAC permissions
-Message-ID: <20190712041454.GG17978@ZenIV.linux.org.uk>
+Subject: Re: [PATCH v9 04/10] namei: split out nd->dfd handling to
+ dirfd_path_init
+Message-ID: <20190712042050.GH17978@ZenIV.linux.org.uk>
 References: <20190706145737.5299-1-cyphar@cyphar.com>
- <20190706145737.5299-2-cyphar@cyphar.com>
+ <20190706145737.5299-5-cyphar@cyphar.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190706145737.5299-2-cyphar@cyphar.com>
+In-Reply-To: <20190706145737.5299-5-cyphar@cyphar.com>
 User-Agent: Mutt/1.11.3 (2019-02-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_211740_404223_C2DD2207 
-X-CRM114-Status: GOOD (  12.97  )
+X-CRM114-CacheID: sfid-20190711_212119_204212_240BF1F7 
+X-CRM114-Status: UNSURE (   9.58  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -83,81 +85,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Jul 07, 2019 at 12:57:28AM +1000, Aleksa Sarai wrote:
+On Sun, Jul 07, 2019 at 12:57:31AM +1000, Aleksa Sarai wrote:
+> Previously, path_init's handling of *at(dfd, ...) was only done once,
+> but with LOOKUP_BENEATH (and LOOKUP_IN_ROOT) we have to parse the
+> initial nd->path at different times (before or after absolute path
+> handling) depending on whether we have been asked to scope resolution
+> within a root.
 
-> @@ -514,7 +516,14 @@ static void set_nameidata(struct nameidata *p, int dfd, struct filename *name)
->  	p->stack = p->internal;
->  	p->dfd = dfd;
->  	p->name = name;
-> -	p->total_link_count = old ? old->total_link_count : 0;
-> +	p->total_link_count = 0;
-> +	p->acc_mode = 0;
-> +	p->opath_mask = FMODE_PATH_READ | FMODE_PATH_WRITE;
-> +	if (old) {
-> +		p->total_link_count = old->total_link_count;
-> +		p->acc_mode = old->acc_mode;
-> +		p->opath_mask = old->opath_mask;
-> +	}
+>  	if (*s == '/') {
+> -		set_root(nd);
+> -		if (likely(!nd_jump_root(nd)))
+> -			return s;
+> -		return ERR_PTR(-ECHILD);
 
-Huh?  Could somebody explain why traversals of NFS4 referrals should inherit
-->acc_mode and ->opath_mask?
+> +		if (likely(!nd->root.mnt))
+> +			set_root(nd);
 
->  static __always_inline
-> -const char *get_link(struct nameidata *nd)
-> +const char *get_link(struct nameidata *nd, bool trailing)
->  {
->  	struct saved *last = nd->stack + nd->depth - 1;
->  	struct dentry *dentry = last->link.dentry;
-> @@ -1081,6 +1134,44 @@ const char *get_link(struct nameidata *nd)
->  		} else {
->  			res = get(dentry, inode, &last->done);
->  		}
-> +		/* If we just jumped it was because of a magic-link. */
-> +		if (unlikely(nd->flags & LOOKUP_JUMPED)) {
+How can we get there with non-NULL nd->root.mnt, when LOOKUP_ROOT case
+has been already handled by that point?
 
-That's not quite guaranteed (it is possible to bind a symlink on top
-of a regular file, and you will get LOOKUP_JUMPED on the entry into
-trailing_symlink() when looking the result up).  Moreover, why bother
-with LOOKUP_JUMPED here?  See that
-	nd->last_type = LAST_BIND;
-several lines prior?  That's precisely to be able to recognize those
-suckers.
+> +		error = nd_jump_root(nd);
+> +		if (unlikely(error))
+> +			s = ERR_PTR(error);
 
-And _that_ would've avoided another piece of ugliness - your LOOKUP_JUMPED
-kludge forces you to handle that cra^Wsclero^Wvaluable security hardening
-in get_link(), instead of trailing_symlink() where you apparently want
-it to be.  Simply because nd_jump_root() done later in get_link() will set
-LOOKUP_JUMPED for absolute symlinks, confusing your test.
-
-Moreover, I'm not sure that trailing_symlink() is the right place for
-that either - I would be rather tempted to fold do_o_path() into
-path_openat(), inline path_lookupat() there (as in
-        s = path_init(nd, flags);
-
-        while (!(error = link_path_walk(s, nd))
-                && ((error = lookup_last(nd)) > 0)) {
-                s = trailing_symlink(nd);
-        }
-        if (!error)
-                error = complete_walk(nd);
-        if (!error && nd->flags & LOOKUP_DIRECTORY)
-                if (!d_can_lookup(nd->path.dentry))
-                        error = -ENOTDIR;
-        if (!error) {
-                audit_inode(nd->name, nd->path.dentry, 0);
-                error = vfs_open(&nd->path, file);
-        }
-        terminate_walk(nd);
-- we don't need LOOKUP_DOWN there) and then we only care about the
-two callers of trailing_symlink() that are in path_openat().  Which
-is where you have your ->acc_mode and ->opath_mask without the need
-to dump them into nameidata.  Or to bring that mess into the
-things like stat(2) et.al. - it simply doesn't belong there.
-
-In any case, this "bool trailing" is completely wrong; whether that
-check belongs in trailing_symlink() or (some of) its callers, putting
-it into get_link() is a mistake, forced by kludgy check for procfs-style
-symlinks.
 
 _______________________________________________
 linux-arm-kernel mailing list
