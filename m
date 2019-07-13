@@ -2,83 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27DFA67A19
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 13 Jul 2019 14:11:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ECCBC67AA7
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 13 Jul 2019 16:37:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+zPyLVfOcYhv9mahKIhVex+nz/dz3Y/o3R8sSMXA1+k=; b=L0XhjwlNk9oeaM
-	WS4S54Wbus5XGZmT4jwQ5mK92+JCQCrjMUUlAZnZYX/qyfi04ARoOMwVgVgHAbiS72W1oUG8JQIIT
-	I5Bs+jFKr0U8/jX80/UY7xSzRwxoR6PP53VOOp1vD7Pfl0u9Th6WoaDyhU9VMgcSgruZsp7ZAwZC2
-	JgLzBalWdcwi+bsZFoWIAkuaoKk4OspQF6ZrUEQ+ncC4k6re/b+0cMnqj9i+CdHA3uRcPg5nfdUwA
-	piyuqTRkBk4jWgoItqaV8AG9SNdkzaz+1A/MQ3T639/yRdocg2K+aab4197KSKvzjaIWUly53HaEz
-	M5xZHWyh8RFB7E459dTg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zYVhBhn+F7Z98IgOZ5l4tsR/xbnfHBhl/C3MER5LUz8=; b=kR3exZQ/1XvZuX
+	xKjF0/yfob9BKy2Bg5fEYa5fPX5Cikf6qmvALAjp+o4AA902GjDXn6//Z2/w0MpbVtthsttoMGL3t
+	xwD8raEyGqs4yME8qVnJ9TPxmF6n/x1tE9uM4jkv5s2oUO0tkcCKaT+1dgbDez+x5DBxZgzJxhjFZ
+	wnFTDnLEV6Xa3M4tFTDh7KyJCCwbYH8g5JRGNMUTSGtoFtEMYoqNxVlxO5C6BTY1Fq7YshatTby4x
+	rKy/maOKZBTnW28i0k0K69X+JVz3yzBIQkx53fL6VIipRH5PvfacoCq5Zw1F1xA1Fe18nQKmlk/0C
+	D4h9uL3JHtztGLGXCwlA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hmGrj-00039N-Jo; Sat, 13 Jul 2019 12:10:59 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1hmJ9P-0007Tg-QI; Sat, 13 Jul 2019 14:37:23 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hmGra-000380-Nt
- for linux-arm-kernel@lists.infradead.org; Sat, 13 Jul 2019 12:10:52 +0000
-Received: by mail-pl1-x642.google.com with SMTP id ay6so6057213plb.9
+ id 1hmJ91-0007Sw-Co
+ for linux-arm-kernel@lists.infradead.org; Sat, 13 Jul 2019 14:37:01 +0000
+Received: by mail-pl1-x644.google.com with SMTP id c2so6140596plz.13
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 13 Jul 2019 05:10:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=uMsMB9alWJXn21cyiS2KbYfXMY5ISHzxyZ3o/iN70ko=;
- b=HOZpjuqFsmudWdWtSGDqPraT309548UOECdgNfidt3JfUfMGyZ9/OtEYjlAx3R41Mv
- eIZqqFVCwdVoX+C3siHhUFeJhQyQUc/AlnI/eatPiUL4h2ZAwh7c55uyHt4DcCNPJs5T
- Fd9Zn4BPobbCEOV3HrQmF5yj4aFdulSShSwo2cEm5EB8VHnCgt6E7wt++8hwBB5QhMO9
- SPcfiQJnZCK8jYRt+Sy2u5iJ7ZkCIi0opBv3RV7PqJS4o1sQMZ2PjvgPQFIKopiFmRvI
- bbXz86yHWSsJ3IcjjTgZlth+dHEH0d2s9LSCKCeaXpcrRHF4q+AUGYFhzx6A4icyl5U/
- dknA==
+ Sat, 13 Jul 2019 07:36:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=XZJBILp126Ti7TaOUDqWNUxDVtMZQoXCxXFV4fNNfns=;
+ b=hk1vqjj1QdEMpt92e0pcd6j7WxLzMOEoQdZTCDjMrNa0HkrUiEsZqeupS0y3sCdn3h
+ Okgw6azBc12gCAqKfqOB4Xz1abHnEA2W1X8rB1mW2onlGQobY9xmmxQk7fqBhTiKKo9g
+ rgftSUEq14JOriDlp49lotaLGYNPXhdzhYbqQcFQI+v0Eyz4Pxx9gtsdvYb8GjsvB5mD
+ IRSjY7lM/CNmTHzDfmdEgdJizOXE2Aspsmh22KnX/okyB2X58gdI8o7euF6zYz1tGRpl
+ 2R+gmMkM630F3aG5tP3a5yIuGpvrexfQbKqzTSfROSrIwfa4BFYINjNhm1mk9GzD1GEB
+ z79g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=uMsMB9alWJXn21cyiS2KbYfXMY5ISHzxyZ3o/iN70ko=;
- b=XC0QNAEBM4bnHsDh4/XwuUhAFse5988SGGFd0JjH0bt+rAQJczCavnOy7PGRBGJs7X
- UH2ZpxdIL4qHDcZfPeOZ8y/G6+9nVp3vHuRygtjFFsQwzDmm13rd8ce+jnyfGn/GC2om
- o+fs1yXcZWn4tEkxETGjSZXA5Lx84IyMd7HYR486j6Bl0n11v7y/LIQH8Q9IoVcQ4nw7
- J/b7qOISkRAmzl+1xTU6X9tGI07EnGpJYxAIXlIuFdVkS39SPCj1mnzZALp1/Nh8g+2/
- 4N4Sn/OIOtHVUMSEVuNjZbutuJDesjpOuFj827Upf+dixrhF5vrtdSTSnQQ/ZQRog2s+
- 36SQ==
-X-Gm-Message-State: APjAAAUCeg6bP9MucuMmoUKU+OfjTPxUctFDvb6FMGmMP3ATrEIv6HSR
- kjdNeI4Xl6XExJQCIHWfJi0=
-X-Google-Smtp-Source: APXvYqxb95m6jlsNrNbGNEwgTILxd0GBnRRN4epn7fe10bsKDuv+6q4EgQHKrnF4StSU/ISZkBAenQ==
-X-Received: by 2002:a17:902:6a85:: with SMTP id
- n5mr16278963plk.73.1563019849440; 
- Sat, 13 Jul 2019 05:10:49 -0700 (PDT)
-Received: from localhost.localdomain ([149.28.153.17])
- by smtp.gmail.com with ESMTPSA id h129sm10998372pfb.110.2019.07.13.05.10.38
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sat, 13 Jul 2019 05:10:48 -0700 (PDT)
-From: Changbin Du <changbin.du@gmail.com>
-To: rostedt@goodmis.org
-Subject: [PATCH] tracing/fgraph: support recording function return values
-Date: Sat, 13 Jul 2019 20:10:26 +0800
-Message-Id: <20190713121026.11030-1-changbin.du@gmail.com>
-X-Mailer: git-send-email 2.20.1
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=XZJBILp126Ti7TaOUDqWNUxDVtMZQoXCxXFV4fNNfns=;
+ b=Ldu3Kg9ntdf9Jv5gfOAwmwKJmEh9gvhPUJlC0B07fBWqPelj5fKUsNAxVIKsoK7xyM
+ BJh8cwB4/pSllr1uKWjC1d4nCL3Eai/Wy6Nmtqm+zs2kDaNJts1nGE1VZHp4bEmUEaBQ
+ /T7RwKAhDI5AgRPT+4tTrAnnGYyo2BfIaClNEiDsCs4S3ttr9tAL4T0Ihc88W+AGvGaf
+ fZGR0JXcju84XdDDWn9Rm2rKEdkGDbjMys+/GfOp0/0dGkReh97G3XAuZj7ksuRmK8Mj
+ D8P17PKF5IE5ay6sqHnXTTLZB82ALSlUHJ84DSrF+PARHlxPa8+TKRDLrUqsP88mU9l4
+ H4kA==
+X-Gm-Message-State: APjAAAU5TBg+1Lw+8k4As50dJgJh/sWZAOc98xZ2vDy12+hw9OvOhXYr
+ JNG9uUebm1gsN0jeft4fmVgk2Q==
+X-Google-Smtp-Source: APXvYqzEi3863S5AMZlUFLa6M20Uy9xKMDWWJGQSi/hEewmq7vMD722jrBAvpX1vVp+8GdwK/QTEug==
+X-Received: by 2002:a17:902:8490:: with SMTP id
+ c16mr18417039plo.1.1563028617618; 
+ Sat, 13 Jul 2019 07:36:57 -0700 (PDT)
+Received: from localhost ([122.172.28.117])
+ by smtp.gmail.com with ESMTPSA id a15sm9362092pgw.3.2019.07.13.07.36.55
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Sat, 13 Jul 2019 07:36:55 -0700 (PDT)
+From: Viresh Kumar <viresh.kumar@linaro.org>
+To: Rafael Wysocki <rjw@rjwysocki.net>, Markus Mayer <mmayer@broadcom.com>,
+ bcm-kernel-feedback-list@broadcom.com, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
+ Keguang Zhang <keguang.zhang@gmail.com>,
+ Jiaxun Yang <jiaxun.yang@flygoat.com>, Kevin Hilman <khilman@kernel.org>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Paul Mackerras <paulus@samba.org>, Michael Ellerman <mpe@ellerman.id.au>,
+ Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Jonathan Hunter <jonathanh@nvidia.com>
+Subject: [PATCH V2] cpufreq: Make cpufreq_generic_init() return void
+Date: Sat, 13 Jul 2019 20:06:49 +0530
+Message-Id: <1435f5d66bcbc29a03593e31c6149259c5b5c64b.1563028513.git.viresh.kumar@linaro.org>
+X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
+In-Reply-To: <ee8cf5fb4b4a01fdf9199037ff6d835b935cfd13.1562902877.git.viresh.kumar@linaro.org>
+References: <ee8cf5fb4b4a01fdf9199037ff6d835b935cfd13.1562902877.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190713_051050_809704_034FBB18 
-X-CRM114-Status: GOOD (  18.24  )
+X-CRM114-CacheID: sfid-20190713_073659_472599_241A362D 
+X-CRM114-Status: GOOD (  18.11  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (changbin.du[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -97,315 +108,433 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: corbet@lwn.net, catalin.marinas@arm.com, x86@kernel.org,
- linux-doc@vger.kernel.org, linux@armlinux.org.uk, linux-kernel@vger.kernel.org,
- mingo@redhat.com, bp@alien8.de, hpa@zytor.com, tglx@linutronix.de,
- will@kernel.org, linux-arm-kernel@lists.infradead.org,
- Changbin Du <changbin.du@gmail.com>
+Cc: linux-samsung-soc@vger.kernel.org, linux-pm@vger.kernel.org,
+ Viresh Kumar <viresh.kumar@linaro.org>, linux-mips@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-tegra@vger.kernel.org,
+ linux-omap@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch adds a new trace option 'funcgraph-retval' and is disabled by
-default. When this option is enabled, fgraph tracer will show the return
-value of each function. This is useful to find/analyze a original error
-source in a call graph.
+It always returns 0 (success) and its return type should really be void.
+Over that, many drivers have added error handling code based on its
+return value, which is not required at all.
 
-One limitation is that the kernel doesn't know the prototype of functions.
-So fgraph assumes all functions have a retvalue of type int. You must ignore
-the value of *void* function. And if the retvalue looks like an error code
-then both hexadecimal and decimal number are displayed.
+change its return type to void and update all the callers.
 
-In this patch, only x86 and ARM platforms are supported.
-
-Here is example showing the error is caused by vmx_create_vcpu() and the
-error code is -5 (-EIO).
-
-Here is an example:
-with echo 1 > /sys/kernel/debug/tracing/options/funcgraph-retval
-
- 3)               |  kvm_vm_ioctl() {
- 3)               |    mutex_lock() {
- 3)               |      _cond_resched() {
- 3)   0.234 us    |        rcu_all_qs(); /* ret=0x80000000 */
- 3)   0.704 us    |      } /* ret=0x0 */
- 3)   1.226 us    |    } /* ret=0x0 */
- 3)   0.247 us    |    mutex_unlock(); /* ret=0xffff8880738ed040 */
- 3)               |    kvm_arch_vcpu_create() {
- 3)               |      vmx_create_vcpu() {
- 3) + 17.969 us   |        kmem_cache_alloc(); /* ret=0xffff88813a980040 */
- 3) + 15.948 us   |        kmem_cache_alloc(); /* ret=0xffff88813aa99200 */
- 3)   0.653 us    |        allocate_vpid.part.88(); /* ret=0x1 */
- 3)   6.964 us    |        kvm_vcpu_init(); /* ret=0xfffffffb */
- 3)   0.323 us    |        free_vpid.part.89(); /* ret=0x1 */
- 3)   9.985 us    |        kmem_cache_free(); /* ret=0x80000000 */
- 3)   9.491 us    |        kmem_cache_free(); /* ret=0x80000000 */
- 3) + 69.858 us   |      } /* ret=0xfffffffffffffffb/-5 */
- 3) + 70.631 us   |    } /* ret=0xfffffffffffffffb/-5 */
- 3)               |    mutex_lock() {
- 3)               |      _cond_resched() {
- 3)   0.199 us    |        rcu_all_qs(); /* ret=0x80000000 */
- 3)   0.594 us    |      } /* ret=0x0 */
- 3)   1.067 us    |    } /* ret=0x0 */
- 3)   0.337 us    |    mutex_unlock(); /* ret=0xffff8880738ed040 */
- 3) + 92.730 us   |  } /* ret=0xfffffffffffffffb/-5 */
-
-Checking above fgraph output, we can easily know the original error is
-raised from function vmx_create_vcpu().
-
-Signed-off-by: Changbin Du <changbin.du@gmail.com>
-Cc: Steven Rostedt <rostedt@goodmis.org>
+Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- Documentation/trace/ftrace.rst       |  5 ++++
- arch/arm/kernel/entry-ftrace.S       |  1 +
- arch/arm64/kernel/entry-ftrace.S     |  1 +
- arch/x86/kernel/ftrace_32.S          |  1 +
- arch/x86/kernel/ftrace_64.S          |  1 +
- include/linux/ftrace.h               |  1 +
- kernel/trace/Kconfig                 |  4 +++
- kernel/trace/fgraph.c                | 17 +++++++++++-
- kernel/trace/trace.h                 |  1 +
- kernel/trace/trace_entries.h         |  1 +
- kernel/trace/trace_functions_graph.c | 39 ++++++++++++++++++++++++----
- 11 files changed, 66 insertions(+), 6 deletions(-)
+V1->V2:
+- Fixed compilation warning with s3c64xx driver by replace %d with %ld
+  (Reported by buildbot).
 
-diff --git a/Documentation/trace/ftrace.rst b/Documentation/trace/ftrace.rst
-index f60079259669..50dfb0378213 100644
---- a/Documentation/trace/ftrace.rst
-+++ b/Documentation/trace/ftrace.rst
-@@ -1264,6 +1264,11 @@ Options for function_graph tracer:
- 	only a closing curly bracket "}" is displayed for
- 	the return of a function.
+ drivers/cpufreq/bmips-cpufreq.c     |  7 ++-----
+ drivers/cpufreq/cpufreq.c           |  4 +---
+ drivers/cpufreq/davinci-cpufreq.c   |  3 ++-
+ drivers/cpufreq/imx6q-cpufreq.c     |  6 ++----
+ drivers/cpufreq/kirkwood-cpufreq.c  |  3 ++-
+ drivers/cpufreq/loongson1-cpufreq.c |  8 +++-----
+ drivers/cpufreq/loongson2_cpufreq.c |  3 ++-
+ drivers/cpufreq/maple-cpufreq.c     |  3 ++-
+ drivers/cpufreq/omap-cpufreq.c      | 15 +++++----------
+ drivers/cpufreq/pasemi-cpufreq.c    |  3 ++-
+ drivers/cpufreq/pmac32-cpufreq.c    |  3 ++-
+ drivers/cpufreq/pmac64-cpufreq.c    |  3 ++-
+ drivers/cpufreq/s3c2416-cpufreq.c   |  9 ++-------
+ drivers/cpufreq/s3c64xx-cpufreq.c   | 15 +++------------
+ drivers/cpufreq/s5pv210-cpufreq.c   |  3 ++-
+ drivers/cpufreq/sa1100-cpufreq.c    |  3 ++-
+ drivers/cpufreq/sa1110-cpufreq.c    |  3 ++-
+ drivers/cpufreq/spear-cpufreq.c     |  3 ++-
+ drivers/cpufreq/tegra20-cpufreq.c   |  8 +-------
+ include/linux/cpufreq.h             |  2 +-
+ 20 files changed, 42 insertions(+), 65 deletions(-)
+
+diff --git a/drivers/cpufreq/bmips-cpufreq.c b/drivers/cpufreq/bmips-cpufreq.c
+index 56a4ebbf00e0..2b187d802fe3 100644
+--- a/drivers/cpufreq/bmips-cpufreq.c
++++ b/drivers/cpufreq/bmips-cpufreq.c
+@@ -141,11 +141,8 @@ static int bmips_cpufreq_init(struct cpufreq_policy *policy)
+ 		return ret;
+ 	}
  
-+  funcgraph-retval - At the end of each function (the return) the
-+    return value the function  (though the function may not
-+    really have it) is displayed in hex and negative number
-+    if it looks like a error code.
-+
-   sleep-time
- 	When running function graph tracer, to include
- 	the time a task schedules out in its function.
-diff --git a/arch/arm/kernel/entry-ftrace.S b/arch/arm/kernel/entry-ftrace.S
-index a74289ebc803..94e8209f1a6b 100644
---- a/arch/arm/kernel/entry-ftrace.S
-+++ b/arch/arm/kernel/entry-ftrace.S
-@@ -259,6 +259,7 @@ ENDPROC(ftrace_graph_regs_caller)
- 	.globl return_to_handler
- return_to_handler:
- 	stmdb	sp!, {r0-r3}
-+	mov	r1, r0			@ return value
- 	mov	r0, fp			@ frame pointer
- 	bl	ftrace_return_to_handler
- 	mov	lr, r0			@ r0 has real ret addr
-diff --git a/arch/arm64/kernel/entry-ftrace.S b/arch/arm64/kernel/entry-ftrace.S
-index 33d003d80121..b7ce416969d0 100644
---- a/arch/arm64/kernel/entry-ftrace.S
-+++ b/arch/arm64/kernel/entry-ftrace.S
-@@ -199,6 +199,7 @@ ENTRY(return_to_handler)
- 	stp x4, x5, [sp, #32]
- 	stp x6, x7, [sp, #48]
+-	ret = cpufreq_generic_init(policy, freq_table, TRANSITION_LATENCY);
+-	if (ret)
+-		bmips_cpufreq_exit(policy);
+-	else
+-		pr_info("%s: registered\n", BMIPS_CPUFREQ_NAME);
++	cpufreq_generic_init(policy, freq_table, TRANSITION_LATENCY);
++	pr_info("%s: registered\n", BMIPS_CPUFREQ_NAME);
  
-+	mov	x1, x0			// return value
- 	mov	x0, x29			//     parent's fp
- 	bl	ftrace_return_to_handler// addr = ftrace_return_to_hander(fp);
- 	mov	x30, x0			// restore the original return address
-diff --git a/arch/x86/kernel/ftrace_32.S b/arch/x86/kernel/ftrace_32.S
-index 073aab525d80..539e80577a83 100644
---- a/arch/x86/kernel/ftrace_32.S
-+++ b/arch/x86/kernel/ftrace_32.S
-@@ -185,6 +185,7 @@ END(ftrace_graph_caller)
- return_to_handler:
- 	pushl	%eax
- 	pushl	%edx
-+	movl	%eax, %edx
- 	movl	$0, %eax
- 	call	ftrace_return_to_handler
- 	movl	%eax, %ecx
-diff --git a/arch/x86/kernel/ftrace_64.S b/arch/x86/kernel/ftrace_64.S
-index 809d54397dba..3b31a1959025 100644
---- a/arch/x86/kernel/ftrace_64.S
-+++ b/arch/x86/kernel/ftrace_64.S
-@@ -304,6 +304,7 @@ ENTRY(return_to_handler)
- 	movq %rax, (%rsp)
- 	movq %rdx, 8(%rsp)
- 	movq %rbp, %rdi
-+	movq %rax, %rsi
- 
- 	call ftrace_return_to_handler
- 
-diff --git a/include/linux/ftrace.h b/include/linux/ftrace.h
-index 25e2995d4a4c..83881bc47b50 100644
---- a/include/linux/ftrace.h
-+++ b/include/linux/ftrace.h
-@@ -734,6 +734,7 @@ struct ftrace_graph_ret {
- 	unsigned long overrun;
- 	unsigned long long calltime;
- 	unsigned long long rettime;
-+	unsigned long retval;
- 	int depth;
- } __packed;
- 
-diff --git a/kernel/trace/Kconfig b/kernel/trace/Kconfig
-index 564e5fdb025f..7d189ea461e8 100644
---- a/kernel/trace/Kconfig
-+++ b/kernel/trace/Kconfig
-@@ -25,6 +25,9 @@ config HAVE_FUNCTION_GRAPH_TRACER
- 	help
- 	  See Documentation/trace/ftrace-design.rst
- 
-+config HAVE_FTRACE_RETVAL
-+	bool
-+
- config HAVE_DYNAMIC_FTRACE
- 	bool
- 	help
-@@ -161,6 +164,7 @@ config FUNCTION_GRAPH_TRACER
- 	depends on HAVE_FUNCTION_GRAPH_TRACER
- 	depends on FUNCTION_TRACER
- 	depends on !X86_32 || !CC_OPTIMIZE_FOR_SIZE
-+	select HAVE_FTRACE_RETVAL if (X86 || ARM)
- 	default y
- 	help
- 	  Enable the kernel to trace a function at both its return
-diff --git a/kernel/trace/fgraph.c b/kernel/trace/fgraph.c
-index 8dfd5021b933..df27fe3a35f9 100644
---- a/kernel/trace/fgraph.c
-+++ b/kernel/trace/fgraph.c
-@@ -206,13 +206,15 @@ static struct notifier_block ftrace_suspend_notifier = {
-  * Send the trace to the ring-buffer.
-  * @return the original return address.
-  */
--unsigned long ftrace_return_to_handler(unsigned long frame_pointer)
-+static unsigned long _ftrace_return_to_handler(unsigned long frame_pointer,
-+					       unsigned long retval)
- {
- 	struct ftrace_graph_ret trace;
- 	unsigned long ret;
- 
- 	ftrace_pop_return_trace(&trace, &ret, frame_pointer);
- 	trace.rettime = trace_clock_local();
-+	trace.retval = retval;
- 	ftrace_graph_return(&trace);
- 	/*
- 	 * The ftrace_graph_return() may still access the current
-@@ -232,6 +234,19 @@ unsigned long ftrace_return_to_handler(unsigned long frame_pointer)
  	return ret;
  }
+diff --git a/drivers/cpufreq/cpufreq.c b/drivers/cpufreq/cpufreq.c
+index 4d6043ee7834..8dda62367816 100644
+--- a/drivers/cpufreq/cpufreq.c
++++ b/drivers/cpufreq/cpufreq.c
+@@ -159,7 +159,7 @@ EXPORT_SYMBOL_GPL(arch_set_freq_scale);
+  * - set policies transition latency
+  * - policy->cpus with all possible CPUs
+  */
+-int cpufreq_generic_init(struct cpufreq_policy *policy,
++void cpufreq_generic_init(struct cpufreq_policy *policy,
+ 		struct cpufreq_frequency_table *table,
+ 		unsigned int transition_latency)
+ {
+@@ -171,8 +171,6 @@ int cpufreq_generic_init(struct cpufreq_policy *policy,
+ 	 * share the clock and voltage and clock.
+ 	 */
+ 	cpumask_setall(policy->cpus);
+-
+-	return 0;
+ }
+ EXPORT_SYMBOL_GPL(cpufreq_generic_init);
  
-+#if defined(CONFIG_HAVE_FTRACE_RETVAL)
-+unsigned long ftrace_return_to_handler(unsigned long frame_pointer,
-+				       unsigned long retval)
-+{
-+	return _ftrace_return_to_handler(frame_pointer, retval);
-+}
-+#else
-+unsigned long ftrace_return_to_handler(unsigned long frame_pointer)
-+{
-+	return _ftrace_return_to_handler(frame_pointer, 0);
-+}
-+#endif
-+
- /**
-  * ftrace_graph_get_ret_stack - return the entry of the shadow stack
-  * @task: The task to read the shadow stack from
-diff --git a/kernel/trace/trace.h b/kernel/trace/trace.h
-index 005f08629b8b..483eecf0e9c3 100644
---- a/kernel/trace/trace.h
-+++ b/kernel/trace/trace.h
-@@ -905,6 +905,7 @@ static __always_inline bool ftrace_hash_empty(struct ftrace_hash *hash)
- #define TRACE_GRAPH_PRINT_TAIL          0x100
- #define TRACE_GRAPH_SLEEP_TIME          0x200
- #define TRACE_GRAPH_GRAPH_TIME          0x400
-+#define TRACE_GRAPH_PRINT_RETVAL	0x800
- #define TRACE_GRAPH_PRINT_FILL_SHIFT	28
- #define TRACE_GRAPH_PRINT_FILL_MASK	(0x3 << TRACE_GRAPH_PRINT_FILL_SHIFT)
- 
-diff --git a/kernel/trace/trace_entries.h b/kernel/trace/trace_entries.h
-index fc8e97328e54..4b5312cfed66 100644
---- a/kernel/trace/trace_entries.h
-+++ b/kernel/trace/trace_entries.h
-@@ -99,6 +99,7 @@ FTRACE_ENTRY_PACKED(funcgraph_exit, ftrace_graph_ret_entry,
- 		__field_desc(	unsigned long,	ret,		func	)
- 		__field_desc(	unsigned long long, ret,	calltime)
- 		__field_desc(	unsigned long long, ret,	rettime	)
-+		__field_desc(	unsigned long,	ret,		retval	)
- 		__field_desc(	unsigned long,	ret,		overrun	)
- 		__field_desc(	int,		ret,		depth	)
- 	),
-diff --git a/kernel/trace/trace_functions_graph.c b/kernel/trace/trace_functions_graph.c
-index 69ebf3c2f1b5..399382cf175b 100644
---- a/kernel/trace/trace_functions_graph.c
-+++ b/kernel/trace/trace_functions_graph.c
-@@ -66,6 +66,11 @@ static struct tracer_opt trace_opts[] = {
- 	{ TRACER_OPT(graph-time, TRACE_GRAPH_GRAPH_TIME) },
- #endif
- 
-+#ifdef CONFIG_HAVE_FTRACE_RETVAL
-+	/* Display return value of function */
-+	{ TRACER_OPT(funcgraph-retval, TRACE_GRAPH_PRINT_RETVAL) },
-+#endif
-+
- 	{ } /* Empty entry */
- };
- 
-@@ -624,6 +629,18 @@ print_graph_duration(struct trace_array *tr, unsigned long long duration,
- 	trace_seq_puts(s, "|  ");
+diff --git a/drivers/cpufreq/davinci-cpufreq.c b/drivers/cpufreq/davinci-cpufreq.c
+index 3de48ae60c29..297d23cad8b5 100644
+--- a/drivers/cpufreq/davinci-cpufreq.c
++++ b/drivers/cpufreq/davinci-cpufreq.c
+@@ -90,7 +90,8 @@ static int davinci_cpu_init(struct cpufreq_policy *policy)
+ 	 * Setting the latency to 2000 us to accommodate addition of drivers
+ 	 * to pre/post change notification list.
+ 	 */
+-	return cpufreq_generic_init(policy, freq_table, 2000 * 1000);
++	cpufreq_generic_init(policy, freq_table, 2000 * 1000);
++	return 0;
  }
  
-+static void print_graph_retval(struct trace_seq *s, unsigned long val, bool comment)
-+{
-+	if (comment)
-+		trace_seq_printf(s, " /* ");
-+	if (IS_ERR_VALUE(val))
-+		trace_seq_printf(s, "ret=0x%lx/%ld", val, val);
-+	else
-+		trace_seq_printf(s, "ret=0x%lx", val);
-+	if (comment)
-+		trace_seq_printf(s, " */");
-+}
-+
- /* Case of a leaf function on its call entry */
- static enum print_line_t
- print_graph_entry_leaf(struct trace_iterator *iter,
-@@ -668,7 +685,10 @@ print_graph_entry_leaf(struct trace_iterator *iter,
- 	for (i = 0; i < call->depth * TRACE_GRAPH_INDENT; i++)
- 		trace_seq_putc(s, ' ');
+ static struct cpufreq_driver davinci_driver = {
+diff --git a/drivers/cpufreq/imx6q-cpufreq.c b/drivers/cpufreq/imx6q-cpufreq.c
+index 47ccfa6b17b7..648a09a1778a 100644
+--- a/drivers/cpufreq/imx6q-cpufreq.c
++++ b/drivers/cpufreq/imx6q-cpufreq.c
+@@ -190,14 +190,12 @@ static int imx6q_set_target(struct cpufreq_policy *policy, unsigned int index)
  
--	trace_seq_printf(s, "%ps();\n", (void *)call->func);
-+	trace_seq_printf(s, "%ps();", (void *)call->func);
-+	if (flags & TRACE_GRAPH_PRINT_RETVAL)
-+		print_graph_retval(s, graph_ret->retval, true);
-+	trace_seq_puts(s, "\n");
+ static int imx6q_cpufreq_init(struct cpufreq_policy *policy)
+ {
+-	int ret;
+-
+ 	policy->clk = clks[ARM].clk;
+-	ret = cpufreq_generic_init(policy, freq_table, transition_latency);
++	cpufreq_generic_init(policy, freq_table, transition_latency);
+ 	policy->suspend_freq = max_freq;
+ 	dev_pm_opp_of_register_em(policy->cpus);
  
- 	print_graph_irq(iter, graph_ret->func, TRACE_GRAPH_RET,
- 			cpu, iter->ent->pid, flags);
-@@ -953,10 +973,19 @@ print_graph_return(struct ftrace_graph_ret *trace, struct trace_seq *s,
- 	 * belongs to, write out the function name. Always do
- 	 * that if the funcgraph-tail option is enabled.
+-	return ret;
++	return 0;
+ }
+ 
+ static struct cpufreq_driver imx6q_cpufreq_driver = {
+diff --git a/drivers/cpufreq/kirkwood-cpufreq.c b/drivers/cpufreq/kirkwood-cpufreq.c
+index 7ab564c1f7ae..cb74bdc5baaa 100644
+--- a/drivers/cpufreq/kirkwood-cpufreq.c
++++ b/drivers/cpufreq/kirkwood-cpufreq.c
+@@ -85,7 +85,8 @@ static int kirkwood_cpufreq_target(struct cpufreq_policy *policy,
+ /* Module init and exit code */
+ static int kirkwood_cpufreq_cpu_init(struct cpufreq_policy *policy)
+ {
+-	return cpufreq_generic_init(policy, kirkwood_freq_table, 5000);
++	cpufreq_generic_init(policy, kirkwood_freq_table, 5000);
++	return 0;
+ }
+ 
+ static struct cpufreq_driver kirkwood_cpufreq_driver = {
+diff --git a/drivers/cpufreq/loongson1-cpufreq.c b/drivers/cpufreq/loongson1-cpufreq.c
+index 21c9ce8526c0..0ea88778882a 100644
+--- a/drivers/cpufreq/loongson1-cpufreq.c
++++ b/drivers/cpufreq/loongson1-cpufreq.c
+@@ -81,7 +81,7 @@ static int ls1x_cpufreq_init(struct cpufreq_policy *policy)
+ 	struct device *cpu_dev = get_cpu_device(policy->cpu);
+ 	struct cpufreq_frequency_table *freq_tbl;
+ 	unsigned int pll_freq, freq;
+-	int steps, i, ret;
++	int steps, i;
+ 
+ 	pll_freq = clk_get_rate(cpufreq->pll_clk) / 1000;
+ 
+@@ -103,11 +103,9 @@ static int ls1x_cpufreq_init(struct cpufreq_policy *policy)
+ 	freq_tbl[i].frequency = CPUFREQ_TABLE_END;
+ 
+ 	policy->clk = cpufreq->clk;
+-	ret = cpufreq_generic_init(policy, freq_tbl, 0);
+-	if (ret)
+-		kfree(freq_tbl);
++	cpufreq_generic_init(policy, freq_tbl, 0);
+ 
+-	return ret;
++	return 0;
+ }
+ 
+ static int ls1x_cpufreq_exit(struct cpufreq_policy *policy)
+diff --git a/drivers/cpufreq/loongson2_cpufreq.c b/drivers/cpufreq/loongson2_cpufreq.c
+index da344696beed..890813e0bb76 100644
+--- a/drivers/cpufreq/loongson2_cpufreq.c
++++ b/drivers/cpufreq/loongson2_cpufreq.c
+@@ -95,7 +95,8 @@ static int loongson2_cpufreq_cpu_init(struct cpufreq_policy *policy)
+ 	}
+ 
+ 	policy->clk = cpuclk;
+-	return cpufreq_generic_init(policy, &loongson2_clockmod_table[0], 0);
++	cpufreq_generic_init(policy, &loongson2_clockmod_table[0], 0);
++	return 0;
+ }
+ 
+ static int loongson2_cpufreq_exit(struct cpufreq_policy *policy)
+diff --git a/drivers/cpufreq/maple-cpufreq.c b/drivers/cpufreq/maple-cpufreq.c
+index f5220b3d4ec5..28d346062166 100644
+--- a/drivers/cpufreq/maple-cpufreq.c
++++ b/drivers/cpufreq/maple-cpufreq.c
+@@ -140,7 +140,8 @@ static unsigned int maple_cpufreq_get_speed(unsigned int cpu)
+ 
+ static int maple_cpufreq_cpu_init(struct cpufreq_policy *policy)
+ {
+-	return cpufreq_generic_init(policy, maple_cpu_freqs, 12000);
++	cpufreq_generic_init(policy, maple_cpu_freqs, 12000);
++	return 0;
+ }
+ 
+ static struct cpufreq_driver maple_cpufreq_driver = {
+diff --git a/drivers/cpufreq/omap-cpufreq.c b/drivers/cpufreq/omap-cpufreq.c
+index 29643f06a3c3..8d14b42a8c6f 100644
+--- a/drivers/cpufreq/omap-cpufreq.c
++++ b/drivers/cpufreq/omap-cpufreq.c
+@@ -122,23 +122,18 @@ static int omap_cpu_init(struct cpufreq_policy *policy)
+ 			dev_err(mpu_dev,
+ 				"%s: cpu%d: failed creating freq table[%d]\n",
+ 				__func__, policy->cpu, result);
+-			goto fail;
++			clk_put(policy->clk);
++			return result;
+ 		}
+ 	}
+ 
+ 	atomic_inc_return(&freq_table_users);
+ 
+ 	/* FIXME: what's the actual transition time? */
+-	result = cpufreq_generic_init(policy, freq_table, 300 * 1000);
+-	if (!result) {
+-		dev_pm_opp_of_register_em(policy->cpus);
+-		return 0;
+-	}
++	cpufreq_generic_init(policy, freq_table, 300 * 1000);
++	dev_pm_opp_of_register_em(policy->cpus);
+ 
+-	freq_table_free();
+-fail:
+-	clk_put(policy->clk);
+-	return result;
++	return 0;
+ }
+ 
+ static int omap_cpu_exit(struct cpufreq_policy *policy)
+diff --git a/drivers/cpufreq/pasemi-cpufreq.c b/drivers/cpufreq/pasemi-cpufreq.c
+index 6b1e4abe3248..93f39a1d4c3d 100644
+--- a/drivers/cpufreq/pasemi-cpufreq.c
++++ b/drivers/cpufreq/pasemi-cpufreq.c
+@@ -196,7 +196,8 @@ static int pas_cpufreq_cpu_init(struct cpufreq_policy *policy)
+ 	policy->cur = pas_freqs[cur_astate].frequency;
+ 	ppc_proc_freq = policy->cur * 1000ul;
+ 
+-	return cpufreq_generic_init(policy, pas_freqs, get_gizmo_latency());
++	cpufreq_generic_init(policy, pas_freqs, get_gizmo_latency());
++	return 0;
+ 
+ out_unmap_sdcpwr:
+ 	iounmap(sdcpwr_mapbase);
+diff --git a/drivers/cpufreq/pmac32-cpufreq.c b/drivers/cpufreq/pmac32-cpufreq.c
+index 650104d729f3..73621bc11976 100644
+--- a/drivers/cpufreq/pmac32-cpufreq.c
++++ b/drivers/cpufreq/pmac32-cpufreq.c
+@@ -372,7 +372,8 @@ static int pmac_cpufreq_target(	struct cpufreq_policy *policy,
+ 
+ static int pmac_cpufreq_cpu_init(struct cpufreq_policy *policy)
+ {
+-	return cpufreq_generic_init(policy, pmac_cpu_freqs, transition_latency);
++	cpufreq_generic_init(policy, pmac_cpu_freqs, transition_latency);
++	return 0;
+ }
+ 
+ static u32 read_gpio(struct device_node *np)
+diff --git a/drivers/cpufreq/pmac64-cpufreq.c b/drivers/cpufreq/pmac64-cpufreq.c
+index 1af3492a000d..d7542a106e6b 100644
+--- a/drivers/cpufreq/pmac64-cpufreq.c
++++ b/drivers/cpufreq/pmac64-cpufreq.c
+@@ -321,7 +321,8 @@ static unsigned int g5_cpufreq_get_speed(unsigned int cpu)
+ 
+ static int g5_cpufreq_cpu_init(struct cpufreq_policy *policy)
+ {
+-	return cpufreq_generic_init(policy, g5_cpu_freqs, transition_latency);
++	cpufreq_generic_init(policy, g5_cpu_freqs, transition_latency);
++	return 0;
+ }
+ 
+ static struct cpufreq_driver g5_cpufreq_driver = {
+diff --git a/drivers/cpufreq/s3c2416-cpufreq.c b/drivers/cpufreq/s3c2416-cpufreq.c
+index f7ff1ed7fef1..106910351c41 100644
+--- a/drivers/cpufreq/s3c2416-cpufreq.c
++++ b/drivers/cpufreq/s3c2416-cpufreq.c
+@@ -447,21 +447,16 @@ static int s3c2416_cpufreq_driver_init(struct cpufreq_policy *policy)
+ 	/* Datasheet says PLL stabalisation time must be at least 300us,
+ 	 * so but add some fudge. (reference in LOCKCON0 register description)
  	 */
--	if (func_match && !(flags & TRACE_GRAPH_PRINT_TAIL))
--		trace_seq_puts(s, "}\n");
--	else
--		trace_seq_printf(s, "} /* %ps */\n", (void *)trace->func);
-+	if (func_match && !(flags & TRACE_GRAPH_PRINT_TAIL)) {
-+		trace_seq_puts(s, "}");
-+		if (flags & TRACE_GRAPH_PRINT_RETVAL)
-+			print_graph_retval(s, trace->retval, true);
-+		trace_seq_puts(s, "\n");
-+	} else {
-+		trace_seq_printf(s, "} /* %ps", (void *)trace->func);
-+		if (flags & TRACE_GRAPH_PRINT_RETVAL) {
-+			trace_seq_puts(s, ", ");
-+			print_graph_retval(s, trace->retval, false);
-+		}
-+		trace_seq_puts(s, " */\n");
-+	}
+-	ret = cpufreq_generic_init(policy, s3c_freq->freq_table,
++	cpufreq_generic_init(policy, s3c_freq->freq_table,
+ 			(500 * 1000) + s3c_freq->regulator_latency);
+-	if (ret)
+-		goto err_freq_table;
+-
+ 	register_reboot_notifier(&s3c2416_cpufreq_reboot_notifier);
  
- 	/* Overrun */
- 	if (flags & TRACE_GRAPH_PRINT_OVERRUN)
+ 	return 0;
+ 
+-err_freq_table:
+ #ifdef CONFIG_ARM_S3C2416_CPUFREQ_VCORESCALE
+-	regulator_put(s3c_freq->vddarm);
+ err_vddarm:
+-#endif
+ 	clk_put(s3c_freq->armclk);
++#endif
+ err_armclk:
+ 	clk_put(s3c_freq->hclk);
+ err_hclk:
+diff --git a/drivers/cpufreq/s3c64xx-cpufreq.c b/drivers/cpufreq/s3c64xx-cpufreq.c
+index 37df2d892eb0..af0c00dabb22 100644
+--- a/drivers/cpufreq/s3c64xx-cpufreq.c
++++ b/drivers/cpufreq/s3c64xx-cpufreq.c
+@@ -144,7 +144,6 @@ static void s3c64xx_cpufreq_config_regulator(void)
+ 
+ static int s3c64xx_cpufreq_driver_init(struct cpufreq_policy *policy)
+ {
+-	int ret;
+ 	struct cpufreq_frequency_table *freq;
+ 
+ 	if (policy->cpu != 0)
+@@ -165,8 +164,7 @@ static int s3c64xx_cpufreq_driver_init(struct cpufreq_policy *policy)
+ #ifdef CONFIG_REGULATOR
+ 	vddarm = regulator_get(NULL, "vddarm");
+ 	if (IS_ERR(vddarm)) {
+-		ret = PTR_ERR(vddarm);
+-		pr_err("Failed to obtain VDDARM: %d\n", ret);
++		pr_err("Failed to obtain VDDARM: %ld\n", PTR_ERR(vddarm));
+ 		pr_err("Only frequency scaling available\n");
+ 		vddarm = NULL;
+ 	} else {
+@@ -196,16 +194,9 @@ static int s3c64xx_cpufreq_driver_init(struct cpufreq_policy *policy)
+ 	 * the PLLs, which we don't currently) is ~300us worst case,
+ 	 * but add some fudge.
+ 	 */
+-	ret = cpufreq_generic_init(policy, s3c64xx_freq_table,
++	cpufreq_generic_init(policy, s3c64xx_freq_table,
+ 			(500 * 1000) + regulator_latency);
+-	if (ret != 0) {
+-		pr_err("Failed to configure frequency table: %d\n",
+-		       ret);
+-		regulator_put(vddarm);
+-		clk_put(policy->clk);
+-	}
+-
+-	return ret;
++	return 0;
+ }
+ 
+ static struct cpufreq_driver s3c64xx_cpufreq_driver = {
+diff --git a/drivers/cpufreq/s5pv210-cpufreq.c b/drivers/cpufreq/s5pv210-cpufreq.c
+index e5cb17d4be7b..5d10030f2560 100644
+--- a/drivers/cpufreq/s5pv210-cpufreq.c
++++ b/drivers/cpufreq/s5pv210-cpufreq.c
+@@ -541,7 +541,8 @@ static int s5pv210_cpu_init(struct cpufreq_policy *policy)
+ 	s5pv210_dram_conf[1].freq = clk_get_rate(dmc1_clk);
+ 
+ 	policy->suspend_freq = SLEEP_FREQ;
+-	return cpufreq_generic_init(policy, s5pv210_freq_table, 40000);
++	cpufreq_generic_init(policy, s5pv210_freq_table, 40000);
++	return 0;
+ 
+ out_dmc1:
+ 	clk_put(dmc0_clk);
+diff --git a/drivers/cpufreq/sa1100-cpufreq.c b/drivers/cpufreq/sa1100-cpufreq.c
+index ab5cab93e638..5c075ef6adc0 100644
+--- a/drivers/cpufreq/sa1100-cpufreq.c
++++ b/drivers/cpufreq/sa1100-cpufreq.c
+@@ -181,7 +181,8 @@ static int sa1100_target(struct cpufreq_policy *policy, unsigned int ppcr)
+ 
+ static int __init sa1100_cpu_init(struct cpufreq_policy *policy)
+ {
+-	return cpufreq_generic_init(policy, sa11x0_freq_table, 0);
++	cpufreq_generic_init(policy, sa11x0_freq_table, 0);
++	return 0;
+ }
+ 
+ static struct cpufreq_driver sa1100_driver __refdata = {
+diff --git a/drivers/cpufreq/sa1110-cpufreq.c b/drivers/cpufreq/sa1110-cpufreq.c
+index dab54e051c0e..d9d04d935b3a 100644
+--- a/drivers/cpufreq/sa1110-cpufreq.c
++++ b/drivers/cpufreq/sa1110-cpufreq.c
+@@ -303,7 +303,8 @@ static int sa1110_target(struct cpufreq_policy *policy, unsigned int ppcr)
+ 
+ static int __init sa1110_cpu_init(struct cpufreq_policy *policy)
+ {
+-	return cpufreq_generic_init(policy, sa11x0_freq_table, 0);
++	cpufreq_generic_init(policy, sa11x0_freq_table, 0);
++	return 0;
+ }
+ 
+ /* sa1110_driver needs __refdata because it must remain after init registers
+diff --git a/drivers/cpufreq/spear-cpufreq.c b/drivers/cpufreq/spear-cpufreq.c
+index 4074e2615522..73bd8dc47074 100644
+--- a/drivers/cpufreq/spear-cpufreq.c
++++ b/drivers/cpufreq/spear-cpufreq.c
+@@ -153,8 +153,9 @@ static int spear_cpufreq_target(struct cpufreq_policy *policy,
+ static int spear_cpufreq_init(struct cpufreq_policy *policy)
+ {
+ 	policy->clk = spear_cpufreq.clk;
+-	return cpufreq_generic_init(policy, spear_cpufreq.freq_tbl,
++	cpufreq_generic_init(policy, spear_cpufreq.freq_tbl,
+ 			spear_cpufreq.transition_latency);
++	return 0;
+ }
+ 
+ static struct cpufreq_driver spear_cpufreq_driver = {
+diff --git a/drivers/cpufreq/tegra20-cpufreq.c b/drivers/cpufreq/tegra20-cpufreq.c
+index 3c32cc7b0671..f84ecd22f488 100644
+--- a/drivers/cpufreq/tegra20-cpufreq.c
++++ b/drivers/cpufreq/tegra20-cpufreq.c
+@@ -118,17 +118,11 @@ static int tegra_target(struct cpufreq_policy *policy, unsigned int index)
+ static int tegra_cpu_init(struct cpufreq_policy *policy)
+ {
+ 	struct tegra20_cpufreq *cpufreq = cpufreq_get_driver_data();
+-	int ret;
+ 
+ 	clk_prepare_enable(cpufreq->cpu_clk);
+ 
+ 	/* FIXME: what's the actual transition time? */
+-	ret = cpufreq_generic_init(policy, freq_table, 300 * 1000);
+-	if (ret) {
+-		clk_disable_unprepare(cpufreq->cpu_clk);
+-		return ret;
+-	}
+-
++	cpufreq_generic_init(policy, freq_table, 300 * 1000);
+ 	policy->clk = cpufreq->cpu_clk;
+ 	policy->suspend_freq = freq_table[0].frequency;
+ 	return 0;
+diff --git a/include/linux/cpufreq.h b/include/linux/cpufreq.h
+index d757a56a74dc..536a049d7ecc 100644
+--- a/include/linux/cpufreq.h
++++ b/include/linux/cpufreq.h
+@@ -992,7 +992,7 @@ extern struct freq_attr *cpufreq_generic_attr[];
+ int cpufreq_table_validate_and_sort(struct cpufreq_policy *policy);
+ 
+ unsigned int cpufreq_generic_get(unsigned int cpu);
+-int cpufreq_generic_init(struct cpufreq_policy *policy,
++void cpufreq_generic_init(struct cpufreq_policy *policy,
+ 		struct cpufreq_frequency_table *table,
+ 		unsigned int transition_latency);
+ #endif /* _LINUX_CPUFREQ_H */
 -- 
-2.20.1
+2.21.0.rc0.269.g1a574e7a288b
 
 
 _______________________________________________
