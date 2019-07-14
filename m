@@ -2,62 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0917067E06
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 14 Jul 2019 09:12:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1557767E78
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 14 Jul 2019 12:09:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=G0czcRKxhvwb5XCm6dmcjqnlihfhGB+UoXi68T0UTf0=; b=Sxv+3gFjhV0b/16A42KTrGZze
-	E/VHOe59bBIYeZ0KkbuY5le9FPdv+c3YUWWH2GD/RaZ/OJ/dOopS5G4kw5AyNeOjHoef3+XriOoey
-	Kf1pSA8OYqleTLVXqaUxNFvk46CuiKeMspVa5bnOJtIMs/vb2NcEyg/BPaxUWPyLCR7hXvSzxkvje
-	19JWEAYvxfUKzWiUWp+mq/pEH4uAdi1UmQMh+PVIIIO7hpV7XQ0qdjtg2yhvQIHZ151w5QpdPhXv/
-	1UkBJ8mBqAlFrx9X5SJib6Og9bBztjByRwHx2DFTmqXDpoO1tltF8/MC+SBw9MBEGx0JRpFrvii2y
-	iOd/8e1bw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ooQMqMju8/XovXwkZozY3Se5v3yMjlP/GUhNKAJT9Zs=; b=fZd1ZeFOm/NGL5
+	iujjSXGebzlIfYd8COOzsn5qSwPCEi9TOgJ3IiUsEHl08CCaNT/5Y+5hLtMGYZ5gzt1u0Q0rIm2Cn
+	sH3OZ6go/0aRiusPpnQmsWlapAF2lOMkMzMZOzgMO2k7ZOpu8ysu3KyKK8zOhV8QO9HU9HjKKxw0T
+	XK/i0zkTwhEH7to662qMojYj2YKoSnu2RNVcFdfUlnm+R0Cdm+oW1v+xishvJW3zvISeV1EZsNvDM
+	vFAewX4TCoalxiAxqG/QifXpdRb1A0CExdHg42iJ0P2Koi1JlSfMKS93vbrTDDcMdBcYxgaKZwlNY
+	JIa9gmtvuRkPYikbZYvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hmYfw-0002H5-Of; Sun, 14 Jul 2019 07:12:00 +0000
-Received: from mx1.mailbox.org ([80.241.60.212])
+	id 1hmbRj-0007HQ-8v; Sun, 14 Jul 2019 10:09:31 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hmYfj-0002GO-1A
- for linux-arm-kernel@lists.infradead.org; Sun, 14 Jul 2019 07:11:48 +0000
-Received: from smtp1.mailbox.org (smtp1.mailbox.org
- [IPv6:2001:67c:2050:105:465:1:1:0])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
+ id 1hmbRL-0007Gz-GW
+ for linux-arm-kernel@lists.infradead.org; Sun, 14 Jul 2019 10:09:08 +0000
+Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
+ [82.4.196.95])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mx1.mailbox.org (Postfix) with ESMTPS id E49974EC6D;
- Sun, 14 Jul 2019 09:11:42 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp1.mailbox.org ([80.241.60.240])
- by spamfilter02.heinlein-hosting.de (spamfilter02.heinlein-hosting.de
- [80.241.56.116]) (amavisd-new, port 10030)
- with ESMTP id so9n73IONPC7; Sun, 14 Jul 2019 09:11:17 +0200 (CEST)
-Date: Sun, 14 Jul 2019 17:11:02 +1000
-From: Aleksa Sarai <cyphar@cyphar.com>
-To: Al Viro <viro@zeniv.linux.org.uk>
-Subject: Re: [PATCH v9 01/10] namei: obey trailing magic-link DAC permissions
-Message-ID: <20190714071102.gsc3kqpakz7chqt6@yavin>
-References: <20190706145737.5299-1-cyphar@cyphar.com>
- <20190706145737.5299-2-cyphar@cyphar.com>
- <20190712041454.GG17978@ZenIV.linux.org.uk>
- <20190712122017.xkowq2cjreylpotm@yavin>
- <20190712131005.GM17978@ZenIV.linux.org.uk>
+ by mail.kernel.org (Postfix) with ESMTPSA id 72AEA20838;
+ Sun, 14 Jul 2019 10:09:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1563098946;
+ bh=Yc6A1cGAFiY0v3G2IKWiF9mvk1/HlO1sJcd6V4N1RLw=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=ZDxY3BZOCdUdALgKCB7dBFPWLfaNlyx1FB5VCelksB9alIU6P3TV62dLIed2S0tlT
+ ve2lgBis3EJnUiaZ/rkU3FnfKX/xnpA7oZHs+IpX6Bfm+n0LiLQKGMrC1VAdO0ilGi
+ twjFVTSheEUNKMg7GCzp5m6bPbumKhpSSSo7P8ok=
+Date: Sun, 14 Jul 2019 11:09:01 +0100
+From: Jonathan Cameron <jic23@kernel.org>
+To: William Breathitt Gray <vilhelm.gray@gmail.com>
+Subject: Re: [PATCH] IIO: stm32: Remove quadrature related functions from
+ trigger driver
+Message-ID: <20190714110901.752643ae@archlinux>
+In-Reply-To: <20190711121620.GA11661@icarus>
+References: <20190507091224.17781-1-benjamin.gaignard@st.com>
+ <20190711115059.GA7778@icarus>
+ <CA+M3ks42Whd=QVQ-4==n5bRJKEwYpQtRHs=gBGEZ_Hr=_8YU1g@mail.gmail.com>
+ <20190711121620.GA11661@icarus>
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <20190712131005.GM17978@ZenIV.linux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190714_001147_379128_B21DDCC2 
-X-CRM114-Status: GOOD (  27.47  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190714_030907_569477_417B28C1 
+X-CRM114-Status: GOOD (  17.76  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [80.241.60.212 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,153 +80,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
- Alexei Starovoitov <ast@kernel.org>, linux-kernel@vger.kernel.org,
- David Howells <dhowells@redhat.com>, linux-kselftest@vger.kernel.org,
- sparclinux@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
- linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
- Tycho Andersen <tycho@tycho.ws>, Aleksa Sarai <asarai@suse.de>,
- linux-arm-kernel@lists.infradead.org, linux-mips@vger.kernel.org,
- linux-xtensa@linux-xtensa.org, Kees Cook <keescook@chromium.org>,
- Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
- linuxppc-dev@lists.ozlabs.org, linux-m68k@lists.linux-m68k.org,
- Andy Lutomirski <luto@kernel.org>, Shuah Khan <skhan@linuxfoundation.org>,
- David Drysdale <drysdale@google.com>, Christian Brauner <christian@brauner.io>,
- "J. Bruce Fields" <bfields@fieldses.org>, linux-parisc@vger.kernel.org,
- linux-api@vger.kernel.org, Chanho Min <chanho.min@lge.com>,
- Jeff Layton <jlayton@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
- Eric Biederman <ebiederm@xmission.com>, linux-alpha@vger.kernel.org,
- linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- containers@lists.linux-foundation.org
-Content-Type: multipart/mixed; boundary="===============7211031494562983831=="
+Cc: Lars-Peter Clausen <lars@metafoo.de>,
+ Benjamin Gaignard <benjamin.gaignard@st.com>, linux-iio@vger.kernel.org,
+ Peter Meerwald-Stadler <pmeerw@pmeerw.net>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Hartmut Knaack <knaack.h@gmx.de>, Fabrice Gasnier <fabrice.gasnier@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Alexandre Torgue <alexandre.torgue@st.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============7211031494562983831==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="gghwwblfl4frle37"
-Content-Disposition: inline
-
-
---gghwwblfl4frle37
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On 2019-07-12, Al Viro <viro@zeniv.linux.org.uk> wrote:
-> On Fri, Jul 12, 2019 at 10:20:17PM +1000, Aleksa Sarai wrote:
-> > On 2019-07-12, Al Viro <viro@zeniv.linux.org.uk> wrote:
-> > > On Sun, Jul 07, 2019 at 12:57:28AM +1000, Aleksa Sarai wrote:
-> > > > @@ -514,7 +516,14 @@ static void set_nameidata(struct nameidata *p,=
- int dfd, struct filename *name)
-> > > >  	p->stack =3D p->internal;
-> > > >  	p->dfd =3D dfd;
-> > > >  	p->name =3D name;
-> > > > -	p->total_link_count =3D old ? old->total_link_count : 0;
-> > > > +	p->total_link_count =3D 0;
-> > > > +	p->acc_mode =3D 0;
-> > > > +	p->opath_mask =3D FMODE_PATH_READ | FMODE_PATH_WRITE;
-> > > > +	if (old) {
-> > > > +		p->total_link_count =3D old->total_link_count;
-> > > > +		p->acc_mode =3D old->acc_mode;
-> > > > +		p->opath_mask =3D old->opath_mask;
-> > > > +	}
-> > >=20
-> > > Huh?  Could somebody explain why traversals of NFS4 referrals should =
-inherit
-> > > ->acc_mode and ->opath_mask?
-> >=20
-> > I'll be honest -- I don't understand what set_nameidata() did so I just
-> > did what I thought would be an obvious change (to just copy the
-> > contents). I thought it was related to some aspect of the symlink stack
-> > handling.
->=20
-> No.  It's handling of (very rare) nested pathwalk.  The only case I can t=
-hink
-> of is handling of NFS4 referrals - they are triggered by ->d_automount()
-> and include NFS4 mount.  Which does internal pathwalk of its own, to get
-> to the root of subtree being automounted.
->=20
-> NFS has its own recursion protection on that path (no deeper nesting than
-> one level of referral traversals), but there some nesting is inevitable;
-> we do get another nameidata instance on stack.  And for nd_jump_link() we
-> need to keep track of the innermost one.
->=20
-> For symlinks nothing of that sort happens - they are dealt with on the sa=
-me
-> struct nameidata.  ->total_link_count copying is there for one reason onl=
-y -
-> we want the total amount of symlinks traversed during the pathwalk (inclu=
-ding
-> the referral processing, etc.) to count towards MAXSYMLINKS check.  It co=
-uld've
-> been moved from nameidata to task_struct, but it's cheaper to handle it t=
-hat
-> way.
->=20
-> Again, nesting is *rare*.
-
-Thanks for the explanation, much appreciated. I will drop the old->...
-copying hunk.
-
-> > In that case, should they both be set to 0 on set_nameidata()? This will
-> > mean that fd re-opening (or magic-link opening) through a
-> > set_nameidata() would always fail.
->=20
-> Huh?  set_nameidata() is done for *all* instances - it's pretty much the
-> constructor of that object (and restore_nameidata() - a destructor).
-> Everything goes through it.
-
-Sorry, I meant to drop the copy-from-old logic -- not set it to zero
-explicitly in set_nameidata().
-
-> And again, I'm not sure we want these fields in nameidata - IMO they belo=
-ng
-> in open_flags.  Things like e.g. stat() don't need them at all.
-
-Yup, I'll work up a version that does the consolidation you mentioned
-in your other mail.
-
-> Incidentally, O_PATH opening of symlinks combined with subsequent procfs
-> symlink traversals is worth testing - that's where the things get subtle
-> and that's where it's easy to get in trouble on modifications.
-
-I have some self-tests of a symlink-to-a-magic-link in the last patch of
-the series. Did you mean something even more chained like a symlink to a
-/proc/self/fd/$n of an O_NOFOLLOW|O_PATH of a symlink?
-
---=20
-Aleksa Sarai
-Senior Software Engineer (Containers)
-SUSE Linux GmbH
-<https://www.cyphar.com/>
-
---gghwwblfl4frle37
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQSxZm6dtfE8gxLLfYqdlLljIbnQEgUCXSrVgAAKCRCdlLljIbnQ
-EupPAQDpi9m99/xBGy4or9AS/LoRkr4tSLDlWlOsdCn0tZ52WAEAqoZwgZWyT46F
-mjKoRQeNjgtDk5jRNWbrwkJAMPXy2AE=
-=GnH+
------END PGP SIGNATURE-----
-
---gghwwblfl4frle37--
-
-
---===============7211031494562983831==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7211031494562983831==--
-
+T24gVGh1LCAxMSBKdWwgMjAxOSAyMToxNjoyMCArMDkwMApXaWxsaWFtIEJyZWF0aGl0dCBHcmF5
+IDx2aWxoZWxtLmdyYXlAZ21haWwuY29tPiB3cm90ZToKCj4gT24gVGh1LCBKdWwgMTEsIDIwMTkg
+YXQgMDI6MTI6MjdQTSArMDIwMCwgQmVuamFtaW4gR2FpZ25hcmQgd3JvdGU6Cj4gPiBMZSBqZXUu
+IDExIGp1aWwuIDIwMTkgw6AgMTM6NTEsIFdpbGxpYW0gQnJlYXRoaXR0IEdyYXkKPiA+IDx2aWxo
+ZWxtLmdyYXlAZ21haWwuY29tPiBhIMOpY3JpdCA6ICAKPiA+ID4KPiA+ID4gT24gVHVlLCBNYXkg
+MDcsIDIwMTkgYXQgMTE6MTI6MjRBTSArMDIwMCwgQmVuamFtaW4gR2FpZ25hcmQgd3JvdGU6ICAK
+PiA+ID4gPiBRdWFkcmF0dXJlIGZlYXR1cmUgaXMgbm93IGhvc3RlZCBvbiBpdCBvd24gZnJhbWV3
+b3JrLgo+ID4gPiA+IFJlbW92ZSBxdWFkcmF0dXJlIHJlbGF0ZWQgY29kZSBmcm9tIHN0bTMyLXRy
+aWdnZXIgZHJpdmVyIHRvIGF2b2lkCj4gPiA+ID4gY29kZSBkdXBsaWNhdGlvbiBhbmQgc2ltcGxp
+ZnkgdGhlIEFCSS4KPiA+ID4gPgo+ID4gPiA+IFNpZ25lZC1vZmYtYnk6IEJlbmphbWluIEdhaWdu
+YXJkIDxiZW5qYW1pbi5nYWlnbmFyZEBzdC5jb20+ICAKPiA+ID4KPiA+ID4gV2hhdCBpcyB0aGUg
+c3RhdHVzIG9mIHRoaXMgcGF0Y2g/IEFyZSB0aGVyZSBhbnkgb2JqZWN0aW9ucyBjdXJyZW50bHkg
+Zm9yCj4gPiA+IGl0cyBpbmNsdXNpb24/ICAKPiA+IAo+ID4gWW91IHdlcmUgdGhlIG9ubHkgb25l
+IGFza2luZyBmb3IgbW9yZSBkZXRhaWxzIGFib3V0IGl0IDotKQo+ID4gSWYgeW91IGFncmVlIEkg
+dGhpbmsgdGhhdCBKb25hdGhhbiBjYW4gbWVyZ2UgaXQuCj4gPiAKPiA+IEJlbmphbWluICAKPiA+
+ID4KPiA+ID4gV2lsbGlhbSBCcmVhdGhpdHQgR3JheQo+ID4gPgo+ID4gPiBfX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwo+ID4gPiBsaW51eC1hcm0ta2VybmVs
+IG1haWxpbmcgbGlzdAo+ID4gPiBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcK
+PiA+ID4gaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
+cm0ta2VybmVsICAKPiAKPiBZZXMsIEpvbmF0aGFuIHBsZWFzZSBtZXJnZSB0aGlzIGlmIHlvdSBo
+YXZlIG5vIG9iamVjdGlvbnMsIEkgaGFkbid0Cj4gcmVhbGl6ZWQgSSB3YXMgZGVsYXlpbmcgaXQu
+Cj4gCj4gVGhhbmsgeW91LAo+IAo+IFdpbGxpYW0gQnJlYXRoaXR0IEdyYXkKT25lIGxhc3QgdGhp
+bmcuLi4gIFRoaXMgc2VlbXMgdG8gYmUgYSB1c2Vyc3BhY2UgQUJJIGNoYW5nZS4gIFdoYXQKYXJl
+IG91ciBwb3RlbnRpYWwgaXNzdWVzIHdpdGggdXNlcnMgb2YgdGhpcyBBQkk/CgpJdCdzIG5vdCB0
+aGF0IGNvc3RseSB0byBrZWVwIHRoZSBjb2RlLCB0aG91Z2ggZHJvcHBpbmcgdGhlIGRvY3Mgb3IK
+cHV0dGluZyBhIGRlcHJlY2lhdGVkIG5vdGUgaW4gdGhlbSBpcyBwcm9iYWJseSBhIGdvb2QgaWRl
+YS4gIEhlbmNlCkknbSBub3QgdG90YWxseSBjb252aW5jZWQgdGhlIHJpc2sgb2YgYSByZWdyZXNz
+aW9uIGlzIHdvcnRoIGl0LgoKSWYgd2UgdGhpbmsgaXQncyB0aGUgc29ydCBvZiBjaGFuZ2Ugbm8g
+b25lIHdpbGwgbm90aWNlLCB0aGVuCmZhaXIgZW5vdWdoIHdlJ2xsIGdpdmUgaXQgYSBnbyBhbmQg
+Y3Jvc3Mgb3VyIGZpbmdlcnMuCgpUaGFua3MsCgpKb25hdGhhbgoKCgpfX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcg
+bGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmlu
+ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
