@@ -2,64 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C38FA67DE5
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 14 Jul 2019 09:02:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0917067E06
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 14 Jul 2019 09:12:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=0tHaXdqtoqc+MX65G6COCiCp7598qfbJEK3MEhZI5Ks=; b=lF0OtRAX8G4oF6Rv+n3REEfgO
-	S/IQJ4M5UZzdjLfky6u7lbhUTaFyo2yew/HOeAdZ3QbV1gdwecjzgEqxc89PqHdUvXIwIYCeoK+x3
-	aPAatbGNUNWsL8x4imwtWEzwB1iCrk93oluNqGhDn5xiEXdN8LGhYa567/x8Tc1y5dfSTI6z3g6lC
-	4wuY/vriZTp9oBPvSteaK3yfYNEq1pAfBSk9E9uC4NEDVEfyyDwa5jjP7EdjbUSzZkTtbNMCcJtS+
-	Ik+EI7/vt+nXh/nMhAaRNdF+h8a9S2oPFIP9/zI2IZ/kkQkH+6fJ9m+SZQj+WzIT7zzue1j6Zi+sj
-	wATmg6vMw==;
+	 bh=G0czcRKxhvwb5XCm6dmcjqnlihfhGB+UoXi68T0UTf0=; b=Sxv+3gFjhV0b/16A42KTrGZze
+	E/VHOe59bBIYeZ0KkbuY5le9FPdv+c3YUWWH2GD/RaZ/OJ/dOopS5G4kw5AyNeOjHoef3+XriOoey
+	Kf1pSA8OYqleTLVXqaUxNFvk46CuiKeMspVa5bnOJtIMs/vb2NcEyg/BPaxUWPyLCR7hXvSzxkvje
+	19JWEAYvxfUKzWiUWp+mq/pEH4uAdi1UmQMh+PVIIIO7hpV7XQ0qdjtg2yhvQIHZ151w5QpdPhXv/
+	1UkBJ8mBqAlFrx9X5SJib6Og9bBztjByRwHx2DFTmqXDpoO1tltF8/MC+SBw9MBEGx0JRpFrvii2y
+	iOd/8e1bw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hmYWa-0007dF-Eg; Sun, 14 Jul 2019 07:02:20 +0000
-Received: from mx1.mailbox.org ([2001:67c:2050:104:0:1:25:1])
+	id 1hmYfw-0002H5-Of; Sun, 14 Jul 2019 07:12:00 +0000
+Received: from mx1.mailbox.org ([80.241.60.212])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hmYVv-0007c1-PT
- for linux-arm-kernel@lists.infradead.org; Sun, 14 Jul 2019 07:01:42 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
+ id 1hmYfj-0002GO-1A
+ for linux-arm-kernel@lists.infradead.org; Sun, 14 Jul 2019 07:11:48 +0000
+Received: from smtp1.mailbox.org (smtp1.mailbox.org
+ [IPv6:2001:67c:2050:105:465:1:1:0])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mx1.mailbox.org (Postfix) with ESMTPS id DAD124EEE5;
- Sun, 14 Jul 2019 09:01:28 +0200 (CEST)
+ by mx1.mailbox.org (Postfix) with ESMTPS id E49974EC6D;
+ Sun, 14 Jul 2019 09:11:42 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp2.mailbox.org ([80.241.60.241])
- by spamfilter05.heinlein-hosting.de (spamfilter05.heinlein-hosting.de
- [80.241.56.123]) (amavisd-new, port 10030)
- with ESMTP id 83Wg7f6TIzf1; Sun, 14 Jul 2019 09:01:20 +0200 (CEST)
-Date: Sun, 14 Jul 2019 17:00:29 +1000
+Received: from smtp1.mailbox.org ([80.241.60.240])
+ by spamfilter02.heinlein-hosting.de (spamfilter02.heinlein-hosting.de
+ [80.241.56.116]) (amavisd-new, port 10030)
+ with ESMTP id so9n73IONPC7; Sun, 14 Jul 2019 09:11:17 +0200 (CEST)
+Date: Sun, 14 Jul 2019 17:11:02 +1000
 From: Aleksa Sarai <cyphar@cyphar.com>
 To: Al Viro <viro@zeniv.linux.org.uk>
-Subject: Re: [PATCH v9 05/10] namei: O_BENEATH-style path resolution flags
-Message-ID: <20190714070029.m53etvm3y4etidxt@yavin>
+Subject: Re: [PATCH v9 01/10] namei: obey trailing magic-link DAC permissions
+Message-ID: <20190714071102.gsc3kqpakz7chqt6@yavin>
 References: <20190706145737.5299-1-cyphar@cyphar.com>
- <20190706145737.5299-6-cyphar@cyphar.com>
- <20190712043341.GI17978@ZenIV.linux.org.uk>
- <20190712105745.nruaftgeat6irhzr@yavin>
- <20190712123924.GK17978@ZenIV.linux.org.uk>
- <20190712125552.GL17978@ZenIV.linux.org.uk>
- <20190712132553.GN17978@ZenIV.linux.org.uk>
- <20190712150026.GO17978@ZenIV.linux.org.uk>
- <20190713024153.GA3817@ZenIV.linux.org.uk>
+ <20190706145737.5299-2-cyphar@cyphar.com>
+ <20190712041454.GG17978@ZenIV.linux.org.uk>
+ <20190712122017.xkowq2cjreylpotm@yavin>
+ <20190712131005.GM17978@ZenIV.linux.org.uk>
 MIME-Version: 1.0
-In-Reply-To: <20190713024153.GA3817@ZenIV.linux.org.uk>
+In-Reply-To: <20190712131005.GM17978@ZenIV.linux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190714_000140_128611_C7223495 
-X-CRM114-Status: GOOD (  21.22  )
+X-CRM114-CacheID: sfid-20190714_001147_379128_B21DDCC2 
+X-CRM114-Status: GOOD (  27.47  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:67c:2050:104:0:1:25:1 listed in]
- [list.dnswl.org]
+ low trust [80.241.60.212 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -92,93 +88,103 @@ Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
  linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
  Linus Torvalds <torvalds@linux-foundation.org>,
  containers@lists.linux-foundation.org
-Content-Type: multipart/mixed; boundary="===============4159050678518553086=="
+Content-Type: multipart/mixed; boundary="===============7211031494562983831=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============4159050678518553086==
+--===============7211031494562983831==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="33fhorotybcq4qkp"
+	protocol="application/pgp-signature"; boundary="gghwwblfl4frle37"
 Content-Disposition: inline
 
 
---33fhorotybcq4qkp
+--gghwwblfl4frle37
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On 2019-07-13, Al Viro <viro@zeniv.linux.org.uk> wrote:
-> On Fri, Jul 12, 2019 at 04:00:26PM +0100, Al Viro wrote:
-> > On Fri, Jul 12, 2019 at 02:25:53PM +0100, Al Viro wrote:
+On 2019-07-12, Al Viro <viro@zeniv.linux.org.uk> wrote:
+> On Fri, Jul 12, 2019 at 10:20:17PM +1000, Aleksa Sarai wrote:
+> > On 2019-07-12, Al Viro <viro@zeniv.linux.org.uk> wrote:
+> > > On Sun, Jul 07, 2019 at 12:57:28AM +1000, Aleksa Sarai wrote:
+> > > > @@ -514,7 +516,14 @@ static void set_nameidata(struct nameidata *p,=
+ int dfd, struct filename *name)
+> > > >  	p->stack =3D p->internal;
+> > > >  	p->dfd =3D dfd;
+> > > >  	p->name =3D name;
+> > > > -	p->total_link_count =3D old ? old->total_link_count : 0;
+> > > > +	p->total_link_count =3D 0;
+> > > > +	p->acc_mode =3D 0;
+> > > > +	p->opath_mask =3D FMODE_PATH_READ | FMODE_PATH_WRITE;
+> > > > +	if (old) {
+> > > > +		p->total_link_count =3D old->total_link_count;
+> > > > +		p->acc_mode =3D old->acc_mode;
+> > > > +		p->opath_mask =3D old->opath_mask;
+> > > > +	}
+> > >=20
+> > > Huh?  Could somebody explain why traversals of NFS4 referrals should =
+inherit
+> > > ->acc_mode and ->opath_mask?
 > >=20
-> > > 	if (flags & LOOKUP_BENEATH) {
-> > > 		nd->root =3D nd->path;
-> > > 		if (!(flags & LOOKUP_RCU))
-> > > 			path_get(&nd->root);
-> > > 		else
-> > > 			nd->root_seq =3D nd->seq;
-> >=20
-> > BTW, this assignment is needed for LOOKUP_RCU case.  Without it
-> > you are pretty much guaranteed that lazy pathwalk will fail,
-> > when it comes to complete_walk().
-> >=20
-> > Speaking of which, what would happen if LOOKUP_ROOT/LOOKUP_BENEATH
-> > combination would someday get passed?
+> > I'll be honest -- I don't understand what set_nameidata() did so I just
+> > did what I thought would be an obvious change (to just copy the
+> > contents). I thought it was related to some aspect of the symlink stack
+> > handling.
 >=20
-> I don't understand what's going on with ->r_seq in there - your
-> call of path_is_under() is after having (re-)sampled rename_lock,
-> but if that was the only .. in there, who's going to recheck
-> the value?  For that matter, what's to guarantee that the thing
-> won't get moved just as you are returning from handle_dots()?
+> No.  It's handling of (very rare) nested pathwalk.  The only case I can t=
+hink
+> of is handling of NFS4 referrals - they are triggered by ->d_automount()
+> and include NFS4 mount.  Which does internal pathwalk of its own, to get
+> to the root of subtree being automounted.
 >=20
-> IOW, what does LOOKUP_IN_ROOT guarantee for caller (openat2())?
+> NFS has its own recursion protection on that path (no deeper nesting than
+> one level of referral traversals), but there some nesting is inevitable;
+> we do get another nameidata instance on stack.  And for nd_jump_link() we
+> need to keep track of the innermost one.
+>=20
+> For symlinks nothing of that sort happens - they are dealt with on the sa=
+me
+> struct nameidata.  ->total_link_count copying is there for one reason onl=
+y -
+> we want the total amount of symlinks traversed during the pathwalk (inclu=
+ding
+> the referral processing, etc.) to count towards MAXSYMLINKS check.  It co=
+uld've
+> been moved from nameidata to task_struct, but it's cheaper to handle it t=
+hat
+> way.
+>=20
+> Again, nesting is *rare*.
 
-I tried to explain this in the commit message for "namei: aggressively
-check for nd->root escape on ".." resolution", but I probably could've
-explained it better.
+Thanks for the explanation, much appreciated. I will drop the old->...
+copying hunk.
 
-The basic property being guaranteed by LOOKUP_IN_ROOT is that it will
-not result in resolution of a path component which was not inside the
-root of the dirfd tree at some point during resolution (and that all
-absolute symlink and ".." resolution will be done relative to the
-dirfd). This may smell slightly of chroot(2), because unfortunately it
-is a similar concept -- the reason for this is to allow for a more
-efficient way to safely resolve paths inside a rootfs than spawning a
-separate process to then pass back the fd to the caller.
+> > In that case, should they both be set to 0 on set_nameidata()? This will
+> > mean that fd re-opening (or magic-link opening) through a
+> > set_nameidata() would always fail.
+>=20
+> Huh?  set_nameidata() is done for *all* instances - it's pretty much the
+> constructor of that object (and restore_nameidata() - a destructor).
+> Everything goes through it.
 
-We don't want to do a path_is_under() check for every ".." (otherwise
-lookups have a quadratic slowdown when doing many ".."s), so I instead
-only do a check after a rename or a mount (which are the only operations
-which could change what ".." points to). And since we do the
-path_is_under() check if m_seq or r_seq need a retry, we can re-take
-them[+].
+Sorry, I meant to drop the copy-from-old logic -- not set it to zero
+explicitly in set_nameidata().
 
-The main reason why I don't re-check path_is_under() after handle_dots()
-is that there is no way to be sure that a racing rename didn't happen
-after your last path_is_under() check. The rename could happen after the
-syscall returns, after all.
+> And again, I'm not sure we want these fields in nameidata - IMO they belo=
+ng
+> in open_flags.  Things like e.g. stat() don't need them at all.
 
-So, the main purpose of the check is to make sure that a ".."s after a
-rename doesn't result in an escape. If the rename happens after we've
-traversed through a ".." that means that the ".." was inside the root in
-the first place (a root ".." is handled by follow_dotdot). If the rename
-happens after we've gone through handle_dots() and there is no
-subsequent ".." then to userspace it looks identical to the rename
-occurring after the syscall has returned. If there is a subsequent ".."
-after a racing rename then we may have moved into a path that wasn't
-path_is_under() and so we have to check it.
+Yup, I'll work up a version that does the consolidation you mentioned
+in your other mail.
 
-The only way I could see you could solve the race completely is if you
-had a way for userspace to lock things from being able to be renamed (or
-MS_MOVE'd). And that feels like a really bad idea to me.
+> Incidentally, O_PATH opening of symlinks combined with subsequent procfs
+> symlink traversals is worth testing - that's where the things get subtle
+> and that's where it's easy to get in trouble on modifications.
 
-[+]: You asked why don't I re-take m_seq. The reason is that I don't
-	 fully understand all the other m_seq checks being done during
-	 resolution, and we aren't definitely doing them all in
-	 handle_dots(). So I assumed re-taking it could result in me
-	 breaking RCU-walk which obviously would be bad. Since I am the only
-	 thing using nd->r_seq, I can re-take it without issue.
+I have some self-tests of a symlink-to-a-magic-link in the last patch of
+the series. Did you mean something even more chained like a symlink to a
+/proc/self/fd/$n of an O_NOFOLLOW|O_PATH of a symlink?
 
 --=20
 Aleksa Sarai
@@ -186,21 +192,21 @@ Senior Software Engineer (Containers)
 SUSE Linux GmbH
 <https://www.cyphar.com/>
 
---33fhorotybcq4qkp
+--gghwwblfl4frle37
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQSxZm6dtfE8gxLLfYqdlLljIbnQEgUCXSrTCAAKCRCdlLljIbnQ
-EpwpAQD9KgKhzC1YZRQyynlFOIyKp8VXEUfhiNokL0RBBx4G5AD7BovFdb8KzxSf
-QrrP/0Vq6p6AFs4sMQbjc9M6I/5gzQ8=
-=fUib
+iHUEABYIAB0WIQSxZm6dtfE8gxLLfYqdlLljIbnQEgUCXSrVgAAKCRCdlLljIbnQ
+EupPAQDpi9m99/xBGy4or9AS/LoRkr4tSLDlWlOsdCn0tZ52WAEAqoZwgZWyT46F
+mjKoRQeNjgtDk5jRNWbrwkJAMPXy2AE=
+=GnH+
 -----END PGP SIGNATURE-----
 
---33fhorotybcq4qkp--
+--gghwwblfl4frle37--
 
 
---===============4159050678518553086==
+--===============7211031494562983831==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -211,5 +217,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============4159050678518553086==--
+--===============7211031494562983831==--
 
