@@ -2,55 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3EB416837E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 08:18:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB5E3683D8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 09:02:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=ETP0Mi7R1qhMcVT29Y6FVl8C1+YXRSGOIeh+TuhS4VE=; b=FH5X2FKQyXeYUVi/88OwbfNgaU
-	b1i7bh5UqhBnTo5Bp0BnmCu/S5ldXMoep0GCE82fUeA6v7cz/lzFsZG5U1Mt8/GZhL3lrYf1CjfEP
-	ymYKiuXQZXTBBGjOrnue8Iy6dqtS4pKR6WqOz6OUYKaQxwY4oYtVJZM4i5sSXhltlFj2LKbis7LgH
-	PqqJ7BJ9qy3QWdEzFllZtewRx/mt2qfljFQNNjSFN6RnhasCSeDnHWD5ZRD4r+9FE88BmDXe7c68J
-	H6Vr5b5EsTNcDZjiX2dmhIN3O79OIOiqzhJiYURcLroz+SrfH7unnifD9x69ep6QefO0hneDPOVjL
-	sw2Uuawg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MNWNXze0lu/UJT9TQ9Sao4FZv6qR2zcMOVxfFVgRSVg=; b=OAyegFTcM8LHVb
+	MkBCVA8CpgLooLF+ysMgadIo5tfcIwRgOSxnNmjBRVTjuGjpWg2ABYHXqcZrYJXxYh6jsnHiycUe6
+	RAiucIoDsX9AwzJL8356KpjsWJtsagiJRJWtNxgZouyPvcSL8rmRrbVzC7ycQAFHHzBjOyeTHyPkB
+	NEQnSLG7GEqtFsqBuw6sOvPWdn/83L4iX02giEebWfTBJAjmZLihSjta3a+GPUE5iM61mDJlGx+dQ
+	sUb+cmZudzHjg8SIdJKyVyA7R2k5NT8rOLPSCvZoy6mPNwuyZM4W+ut80ZTpBYxrSlmglj2QqgpVK
+	9Bp9a4zVhpGNfis08a1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hmuJs-0002bo-Ry; Mon, 15 Jul 2019 06:18:40 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hmuIw-00024P-OQ
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jul 2019 06:17:44 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 46752337;
- Sun, 14 Jul 2019 23:17:42 -0700 (PDT)
-Received: from p8cg001049571a15.blr.arm.com (p8cg001049571a15.blr.arm.com
- [10.162.40.143])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 17ABF3F71F;
- Sun, 14 Jul 2019 23:19:35 -0700 (PDT)
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-To: linux-mm@kvack.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, akpm@linux-foundation.org,
- catalin.marinas@arm.com, will.deacon@arm.com
-Subject: [PATCH V6 RESEND 3/3] arm64/mm: Enable memory hot remove
-Date: Mon, 15 Jul 2019 11:47:50 +0530
-Message-Id: <1563171470-3117-4-git-send-email-anshuman.khandual@arm.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1563171470-3117-1-git-send-email-anshuman.khandual@arm.com>
-References: <1563171470-3117-1-git-send-email-anshuman.khandual@arm.com>
+	id 1hmv0d-00024Q-Dq; Mon, 15 Jul 2019 07:02:51 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hmuzT-00022y-Qc
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jul 2019 07:01:43 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x6F6uSio030992; Mon, 15 Jul 2019 09:01:10 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=Zl4deGZbQ+vwkjKjMySHruoNEZ/Tdqr9qboU+Ck4czs=;
+ b=mNuPpWJUbgOtsdKvOrrjxjRe5FJn4yQ5m9gUfKCWt4Az42LPaH/qFaD6E5SKi5Sr3khE
+ P4urEGi0kp9oYCLif+cM3vFABuf0kmRFrSqlwBQD56IM5MGYxFfrAl/VM4NkZMqU5Ka0
+ W6bFfGJwZwgrRb8bYKCpUNvf98urVDrhNGBKdGuUSfvc/LqWGob3Pt3N+ltZTwN7Xknz
+ vaOPqmF5MasW0iGCW68hvqF4OpaWz0OHHcb8TAsHDMVJbVqFoA2byGwYpVN+3LZQJEec
+ bVWGt9WrvuwTOkuLPH63oj6+iboOzdKlQCi4yNn0bcqY4RqPsvilzISC+CYcZL1gGvY4 cQ== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2tq52u3xy5-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Mon, 15 Jul 2019 09:01:10 +0200
+Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 6839A38;
+ Mon, 15 Jul 2019 07:01:08 +0000 (GMT)
+Received: from Webmail-eu.st.com (Safex1hubcas22.st.com [10.75.90.92])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 0FEA515AB;
+ Mon, 15 Jul 2019 07:01:08 +0000 (GMT)
+Received: from SAFEX1HUBCAS24.st.com (10.75.90.95) by Safex1hubcas22.st.com
+ (10.75.90.92) with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 15 Jul
+ 2019 09:01:07 +0200
+Received: from [10.48.0.167] (10.48.0.167) by webmail-ga.st.com (10.75.90.48)
+ with Microsoft SMTP Server (TLS) id 14.3.439.0;
+ Mon, 15 Jul 2019 09:01:07 +0200
+Subject: Re: [PATCH v2 3/3] ARM: dts: stm32: add syscfg to ADC on stm32mp157c
+To: Jonathan Cameron <jic23@kernel.org>
+References: <1562148496-26789-1-git-send-email-fabrice.gasnier@st.com>
+ <1562148496-26789-4-git-send-email-fabrice.gasnier@st.com>
+ <20190714171310.1816afe3@archlinux>
+From: Fabrice Gasnier <fabrice.gasnier@st.com>
+Message-ID: <c69cff23-b67e-2aed-f250-c237e9cd4a3d@st.com>
+Date: Mon, 15 Jul 2019 09:01:05 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
+MIME-Version: 1.0
+In-Reply-To: <20190714171310.1816afe3@archlinux>
+Content-Language: en-US
+X-Originating-IP: [10.48.0.167]
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-07-15_02:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190714_231742_988355_78D76D4E 
-X-CRM114-Status: GOOD (  19.63  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190715_000140_764388_D5983A34 
+X-CRM114-Status: GOOD (  18.36  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,413 +98,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, mhocko@suse.com, david@redhat.com,
- ira.weiny@intel.com, steve.capper@arm.com, mgorman@techsingularity.net,
- cai@lca.pw, ard.biesheuvel@arm.com, cpandya@codeaurora.org,
- james.morse@arm.com, dan.j.williams@intel.com, logang@deltatee.com,
- arunks@codeaurora.org, osalvador@suse.de
-MIME-Version: 1.0
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lars@metafoo.de,
+ alexandre.torgue@st.com, linux-iio@vger.kernel.org, pmeerw@pmeerw.net,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, mcoquelin.stm32@gmail.com,
+ knaack.h@gmx.de, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The arch code for hot-remove must tear down portions of the linear map and
-vmemmap corresponding to memory being removed. In both cases the page
-tables mapping these regions must be freed, and when sparse vmemmap is in
-use the memory backing the vmemmap must also be freed.
+On 7/14/19 6:13 PM, Jonathan Cameron wrote:
+> On Wed, 3 Jul 2019 12:08:16 +0200
+> Fabrice Gasnier <fabrice.gasnier@st.com> wrote:
+> 
+>> On stm32mp157c, the ADC inputs are multiplexed with analog switches which
+>> have reduced performances when their supply is below 2.7V (vdda by
+>> default).
+>> Add syscfg registers that can be used on stm32mp157c, to get full ADC
+>> analog performances.
+>>
+>> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+> I've applied the patches using this on the assumption this will go via
+> the usual SoC route.
+> 
+> Thanks,
 
-This patch adds a new remove_pagetable() helper which can be used to tear
-down either region, and calls it from vmemmap_free() and
-___remove_pgd_mapping(). The sparse_vmap argument determines whether the
-backing memory will be freed.
+Hi Jonathan,
 
-remove_pagetable() makes two distinct passes over the kernel page table.
-In the first pass it unmaps, invalidates applicable TLB cache and frees
-backing memory if required (vmemmap) for each mapped leaf entry. In the
-second pass it looks for empty page table sections whose page table page
-can be unmapped, TLB invalidated and freed.
+Many thanks,
+Fabrice
 
-While freeing intermediate level page table pages bail out if any of its
-entries are still valid. This can happen for partially filled kernel page
-table either from a previously attempted failed memory hot add or while
-removing an address range which does not span the entire page table page
-range.
-
-The vmemmap region may share levels of table with the vmalloc region.
-There can be conflicts between hot remove freeing page table pages with
-a concurrent vmalloc() walking the kernel page table. This conflict can
-not just be solved by taking the init_mm ptl because of existing locking
-scheme in vmalloc(). Hence unlike linear mapping, skip freeing page table
-pages while tearing down vmemmap mapping.
-
-While here update arch_add_memory() to handle __add_pages() failures by
-just unmapping recently added kernel linear mapping. Now enable memory hot
-remove on arm64 platforms by default with ARCH_ENABLE_MEMORY_HOTREMOVE.
-
-This implementation is overall inspired from kernel page table tear down
-procedure on X86 architecture.
-
-Acked-by: Steve Capper <steve.capper@arm.com>
-Acked-by: David Hildenbrand <david@redhat.com>
-Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
----
- arch/arm64/Kconfig  |   3 +
- arch/arm64/mm/mmu.c | 290 ++++++++++++++++++++++++++++++++++++++++++++++++++--
- 2 files changed, 284 insertions(+), 9 deletions(-)
-
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 7442edb..b94daec 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -273,6 +273,9 @@ config ZONE_DMA32
- config ARCH_ENABLE_MEMORY_HOTPLUG
- 	def_bool y
- 
-+config ARCH_ENABLE_MEMORY_HOTREMOVE
-+	def_bool y
-+
- config SMP
- 	def_bool y
- 
-diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
-index 750a69d..282a4b2 100644
---- a/arch/arm64/mm/mmu.c
-+++ b/arch/arm64/mm/mmu.c
-@@ -722,6 +722,250 @@ int kern_addr_valid(unsigned long addr)
- 
- 	return pfn_valid(pte_pfn(pte));
- }
-+
-+#ifdef CONFIG_MEMORY_HOTPLUG
-+static void free_hotplug_page_range(struct page *page, size_t size)
-+{
-+	WARN_ON(!page || PageReserved(page));
-+	free_pages((unsigned long)page_address(page), get_order(size));
-+}
-+
-+static void free_hotplug_pgtable_page(struct page *page)
-+{
-+	free_hotplug_page_range(page, PAGE_SIZE);
-+}
-+
-+static void free_pte_table(pmd_t *pmdp, unsigned long addr)
-+{
-+	struct page *page;
-+	pte_t *ptep;
-+	int i;
-+
-+	ptep = pte_offset_kernel(pmdp, 0UL);
-+	for (i = 0; i < PTRS_PER_PTE; i++) {
-+		if (!pte_none(READ_ONCE(ptep[i])))
-+			return;
-+	}
-+
-+	page = pmd_page(READ_ONCE(*pmdp));
-+	pmd_clear(pmdp);
-+	__flush_tlb_kernel_pgtable(addr);
-+	free_hotplug_pgtable_page(page);
-+}
-+
-+static void free_pmd_table(pud_t *pudp, unsigned long addr)
-+{
-+	struct page *page;
-+	pmd_t *pmdp;
-+	int i;
-+
-+	if (CONFIG_PGTABLE_LEVELS <= 2)
-+		return;
-+
-+	pmdp = pmd_offset(pudp, 0UL);
-+	for (i = 0; i < PTRS_PER_PMD; i++) {
-+		if (!pmd_none(READ_ONCE(pmdp[i])))
-+			return;
-+	}
-+
-+	page = pud_page(READ_ONCE(*pudp));
-+	pud_clear(pudp);
-+	__flush_tlb_kernel_pgtable(addr);
-+	free_hotplug_pgtable_page(page);
-+}
-+
-+static void free_pud_table(pgd_t *pgdp, unsigned long addr)
-+{
-+	struct page *page;
-+	pud_t *pudp;
-+	int i;
-+
-+	if (CONFIG_PGTABLE_LEVELS <= 3)
-+		return;
-+
-+	pudp = pud_offset(pgdp, 0UL);
-+	for (i = 0; i < PTRS_PER_PUD; i++) {
-+		if (!pud_none(READ_ONCE(pudp[i])))
-+			return;
-+	}
-+
-+	page = pgd_page(READ_ONCE(*pgdp));
-+	pgd_clear(pgdp);
-+	__flush_tlb_kernel_pgtable(addr);
-+	free_hotplug_pgtable_page(page);
-+}
-+
-+static void unmap_hotplug_pte_range(pmd_t *pmdp, unsigned long addr,
-+				    unsigned long end, bool sparse_vmap)
-+{
-+	struct page *page;
-+	pte_t *ptep, pte;
-+
-+	do {
-+		ptep = pte_offset_kernel(pmdp, addr);
-+		pte = READ_ONCE(*ptep);
-+		if (pte_none(pte))
-+			continue;
-+
-+		WARN_ON(!pte_present(pte));
-+		page = sparse_vmap ? pte_page(pte) : NULL;
-+		pte_clear(&init_mm, addr, ptep);
-+		flush_tlb_kernel_range(addr, addr + PAGE_SIZE);
-+		if (sparse_vmap)
-+			free_hotplug_page_range(page, PAGE_SIZE);
-+	} while (addr += PAGE_SIZE, addr < end);
-+}
-+
-+static void unmap_hotplug_pmd_range(pud_t *pudp, unsigned long addr,
-+				    unsigned long end, bool sparse_vmap)
-+{
-+	unsigned long next;
-+	struct page *page;
-+	pmd_t *pmdp, pmd;
-+
-+	do {
-+		next = pmd_addr_end(addr, end);
-+		pmdp = pmd_offset(pudp, addr);
-+		pmd = READ_ONCE(*pmdp);
-+		if (pmd_none(pmd))
-+			continue;
-+
-+		WARN_ON(!pmd_present(pmd));
-+		if (pmd_sect(pmd)) {
-+			page = sparse_vmap ? pmd_page(pmd) : NULL;
-+			pmd_clear(pmdp);
-+			flush_tlb_kernel_range(addr, next);
-+			if (sparse_vmap)
-+				free_hotplug_page_range(page, PMD_SIZE);
-+			continue;
-+		}
-+		WARN_ON(!pmd_table(pmd));
-+		unmap_hotplug_pte_range(pmdp, addr, next, sparse_vmap);
-+	} while (addr = next, addr < end);
-+}
-+
-+static void unmap_hotplug_pud_range(pgd_t *pgdp, unsigned long addr,
-+				    unsigned long end, bool sparse_vmap)
-+{
-+	unsigned long next;
-+	struct page *page;
-+	pud_t *pudp, pud;
-+
-+	do {
-+		next = pud_addr_end(addr, end);
-+		pudp = pud_offset(pgdp, addr);
-+		pud = READ_ONCE(*pudp);
-+		if (pud_none(pud))
-+			continue;
-+
-+		WARN_ON(!pud_present(pud));
-+		if (pud_sect(pud)) {
-+			page = sparse_vmap ? pud_page(pud) : NULL;
-+			pud_clear(pudp);
-+			flush_tlb_kernel_range(addr, next);
-+			if (sparse_vmap)
-+				free_hotplug_page_range(page, PUD_SIZE);
-+			continue;
-+		}
-+		WARN_ON(!pud_table(pud));
-+		unmap_hotplug_pmd_range(pudp, addr, next, sparse_vmap);
-+	} while (addr = next, addr < end);
-+}
-+
-+static void unmap_hotplug_range(unsigned long addr, unsigned long end,
-+				bool sparse_vmap)
-+{
-+	unsigned long next;
-+	pgd_t *pgdp, pgd;
-+
-+	do {
-+		next = pgd_addr_end(addr, end);
-+		pgdp = pgd_offset_k(addr);
-+		pgd = READ_ONCE(*pgdp);
-+		if (pgd_none(pgd))
-+			continue;
-+
-+		WARN_ON(!pgd_present(pgd));
-+		unmap_hotplug_pud_range(pgdp, addr, next, sparse_vmap);
-+	} while (addr = next, addr < end);
-+}
-+
-+static void free_empty_pte_table(pmd_t *pmdp, unsigned long addr,
-+				 unsigned long end)
-+{
-+	pte_t *ptep, pte;
-+
-+	do {
-+		ptep = pte_offset_kernel(pmdp, addr);
-+		pte = READ_ONCE(*ptep);
-+		WARN_ON(!pte_none(pte));
-+	} while (addr += PAGE_SIZE, addr < end);
-+}
-+
-+static void free_empty_pmd_table(pud_t *pudp, unsigned long addr,
-+				 unsigned long end)
-+{
-+	unsigned long next;
-+	pmd_t *pmdp, pmd;
-+
-+	do {
-+		next = pmd_addr_end(addr, end);
-+		pmdp = pmd_offset(pudp, addr);
-+		pmd = READ_ONCE(*pmdp);
-+		if (pmd_none(pmd))
-+			continue;
-+
-+		WARN_ON(!pmd_present(pmd) || !pmd_table(pmd) || pmd_sect(pmd));
-+		free_empty_pte_table(pmdp, addr, next);
-+		free_pte_table(pmdp, addr);
-+	} while (addr = next, addr < end);
-+}
-+
-+static void free_empty_pud_table(pgd_t *pgdp, unsigned long addr,
-+				 unsigned long end)
-+{
-+	unsigned long next;
-+	pud_t *pudp, pud;
-+
-+	do {
-+		next = pud_addr_end(addr, end);
-+		pudp = pud_offset(pgdp, addr);
-+		pud = READ_ONCE(*pudp);
-+		if (pud_none(pud))
-+			continue;
-+
-+		WARN_ON(!pud_present(pud) || !pud_table(pud) || pud_sect(pud));
-+		free_empty_pmd_table(pudp, addr, next);
-+		free_pmd_table(pudp, addr);
-+	} while (addr = next, addr < end);
-+}
-+
-+static void free_empty_tables(unsigned long addr, unsigned long end)
-+{
-+	unsigned long next;
-+	pgd_t *pgdp, pgd;
-+
-+	do {
-+		next = pgd_addr_end(addr, end);
-+		pgdp = pgd_offset_k(addr);
-+		pgd = READ_ONCE(*pgdp);
-+		if (pgd_none(pgd))
-+			continue;
-+
-+		WARN_ON(!pgd_present(pgd));
-+		free_empty_pud_table(pgdp, addr, next);
-+		free_pud_table(pgdp, addr);
-+	} while (addr = next, addr < end);
-+}
-+
-+static void remove_pagetable(unsigned long start, unsigned long end,
-+			     bool sparse_vmap)
-+{
-+	unmap_hotplug_range(start, end, sparse_vmap);
-+	free_empty_tables(start, end);
-+}
-+#endif
-+
- #ifdef CONFIG_SPARSEMEM_VMEMMAP
- #if !ARM64_SWAPPER_USES_SECTION_MAPS
- int __meminit vmemmap_populate(unsigned long start, unsigned long end, int node,
-@@ -769,6 +1013,27 @@ int __meminit vmemmap_populate(unsigned long start, unsigned long end, int node,
- void vmemmap_free(unsigned long start, unsigned long end,
- 		struct vmem_altmap *altmap)
- {
-+#ifdef CONFIG_MEMORY_HOTPLUG
-+	/*
-+	 * FIXME: We should have called remove_pagetable(start, end, true).
-+	 * vmemmap and vmalloc virtual range might share intermediate kernel
-+	 * page table entries. Removing vmemmap range page table pages here
-+	 * can potentially conflict with a concurrent vmalloc() allocation.
-+	 *
-+	 * This is primarily because vmalloc() does not take init_mm ptl for
-+	 * the entire page table walk and it's modification. Instead it just
-+	 * takes the lock while allocating and installing page table pages
-+	 * via [p4d|pud|pmd|pte]_alloc(). A concurrently vanishing page table
-+	 * entry via memory hot remove can cause vmalloc() kernel page table
-+	 * walk pointers to be invalid on the fly which can cause corruption
-+	 * or worst, a crash.
-+	 *
-+	 * To avoid this problem, lets not free empty page table pages for
-+	 * given vmemmap range being hot-removed. Just unmap and free the
-+	 * range instead.
-+	 */
-+	unmap_hotplug_range(start, end, true);
-+#endif
- }
- #endif	/* CONFIG_SPARSEMEM_VMEMMAP */
- 
-@@ -1060,10 +1325,18 @@ int p4d_free_pud_page(p4d_t *p4d, unsigned long addr)
- }
- 
- #ifdef CONFIG_MEMORY_HOTPLUG
-+static void __remove_pgd_mapping(pgd_t *pgdir, unsigned long start, u64 size)
-+{
-+	unsigned long end = start + size;
-+
-+	WARN_ON(pgdir != init_mm.pgd);
-+	remove_pagetable(start, end, false);
-+}
-+
- int arch_add_memory(int nid, u64 start, u64 size,
- 			struct mhp_restrictions *restrictions)
- {
--	int flags = 0;
-+	int ret, flags = 0;
- 
- 	if (rodata_full || debug_pagealloc_enabled())
- 		flags = NO_BLOCK_MAPPINGS | NO_CONT_MAPPINGS;
-@@ -1071,9 +1344,14 @@ int arch_add_memory(int nid, u64 start, u64 size,
- 	__create_pgd_mapping(swapper_pg_dir, start, __phys_to_virt(start),
- 			     size, PAGE_KERNEL, __pgd_pgtable_alloc, flags);
- 
--	return __add_pages(nid, start >> PAGE_SHIFT, size >> PAGE_SHIFT,
-+	ret = __add_pages(nid, start >> PAGE_SHIFT, size >> PAGE_SHIFT,
- 			   restrictions);
-+	if (ret)
-+		__remove_pgd_mapping(swapper_pg_dir,
-+				     __phys_to_virt(start), size);
-+	return ret;
- }
-+
- void arch_remove_memory(int nid, u64 start, u64 size,
- 			struct vmem_altmap *altmap)
- {
-@@ -1081,14 +1359,8 @@ void arch_remove_memory(int nid, u64 start, u64 size,
- 	unsigned long nr_pages = size >> PAGE_SHIFT;
- 	struct zone *zone;
- 
--	/*
--	 * FIXME: Cleanup page tables (also in arch_add_memory() in case
--	 * adding fails). Until then, this function should only be used
--	 * during memory hotplug (adding memory), not for memory
--	 * unplug. ARCH_ENABLE_MEMORY_HOTREMOVE must not be
--	 * unlocked yet.
--	 */
- 	zone = page_zone(pfn_to_page(start_pfn));
- 	__remove_pages(zone, start_pfn, nr_pages, altmap);
-+	__remove_pgd_mapping(swapper_pg_dir, __phys_to_virt(start), size);
- }
- #endif
--- 
-2.7.4
-
+> 
+> Jonathan
+> 
+>> ---
+>>  arch/arm/boot/dts/stm32mp157c.dtsi | 1 +
+>>  1 file changed, 1 insertion(+)
+>>
+>> diff --git a/arch/arm/boot/dts/stm32mp157c.dtsi b/arch/arm/boot/dts/stm32mp157c.dtsi
+>> index 2dd5162..b9a5b58 100644
+>> --- a/arch/arm/boot/dts/stm32mp157c.dtsi
+>> +++ b/arch/arm/boot/dts/stm32mp157c.dtsi
+>> @@ -862,6 +862,7 @@
+>>  			clocks = <&rcc ADC12>, <&rcc ADC12_K>;
+>>  			clock-names = "bus", "adc";
+>>  			interrupt-controller;
+>> +			st,syscfg = <&syscfg>;
+>>  			#interrupt-cells = <1>;
+>>  			#address-cells = <1>;
+>>  			#size-cells = <0>;
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
