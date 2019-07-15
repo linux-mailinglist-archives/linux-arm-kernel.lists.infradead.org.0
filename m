@@ -2,81 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ACCBF68A84
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 15:27:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD17668B73
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 15:41:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+zd1JkUuCRzUtZ+wLPfN0KoVa9aluOS5iRR58iKKvH8=; b=hkrxfn5/5gJNSE
-	SS8iAD6g1Rf2d6TLVm2k/ezz5WY+TKfhypEy1mpPmrnktxAJ8ztP/o+eB7ZPO2G/xtB1wahpbb4UR
-	QuZcwgV5KKbS3sGE6yYm5tvRqCpk5QqAe/5x6v9LslJzlaenZ586vJAw4vIG9wKQAapWjlfMX8aO7
-	2qAiI6uKpjZ1AK7q3+t1Z8XaszaneOGKaXJrBfLzDaEUPNxzzn08NfBYCF+o7ddWtblLqdueZJMUJ
-	KlZSgxkB/zPOJfEgF6B+ATLES1y6KOoHkf/lyCEerDivaPW0FGqUmVQMBOiGoHrjVtMPYDjpXSqVO
-	jAk4QEYH87eaGxhiZuXg==;
+	List-Owner; bh=Mf0fT2okHyp1X7wdtW1cBZ2Rx4LUBuYzqFXQyRc8jX0=; b=ZuFNQeytL2RrmI
+	nbTjtSBpWh1aUzHAwZWkn1chcU0eHA/+zKqMKjAZjAkMWnX/hyCikotiE8/K6YKdMoDvuIwJ5/Z1r
+	5BPeGSIacKGaRdvdbRm5IsFsx1r1Ec1HQ+eLEFLvbvbPFMssmjuHQozpq2UfD99vemmYET394b4zb
+	nh6YivrtlJwYT0DSYm90u/eYkL8HvHWXJxIgskDfIo9GEDAtb+dFxlY6J7kOPljROvXhO/hCOQ8PO
+	Gks2RKswM7uZxeBMA2Cv9kW359qj9YbnCXxQvh+7R3n05oU7LYE82s147wVMMcKBw+9ykxJTJV2oV
+	SB/LSeUsQRQGUHvixWAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hn10k-00080c-Vj; Mon, 15 Jul 2019 13:27:23 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hn10Y-000803-F7
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jul 2019 13:27:12 +0000
-Received: from mail-qt1-f179.google.com (mail-qt1-f179.google.com
- [209.85.160.179])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3B74F2086C
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 15 Jul 2019 13:27:09 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563197229;
- bh=GxnhC/Ih/eTne4sAYFx1uwwKG/I5gMIwXQArnlAPCUg=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=NLvzd1fskhQwU1pIotSqBV89rbfMbVYWIngSGmpeuEsPxyKyJnFQ8pXKBNWzMEjxg
- D3ZoCNenBJ/ixDifgar+e716Ela2R+/V7T8rYIsf7M9DlVgKO3dZHd/aFNgOg05S+q
- IBso2tRwQXwTgPA9bnI/MYh0VNhzV0kjKVeP+6Yk=
-Received: by mail-qt1-f179.google.com with SMTP id n11so15545615qtl.5
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 15 Jul 2019 06:27:09 -0700 (PDT)
-X-Gm-Message-State: APjAAAUCC/QYSC0PR80wF6eVVj0605bbL4MU287tLdWo/1i7R5MYo28j
- BoFYDOdixubLzZui8mBzRGoEfGNr6GgWNBylsw==
-X-Google-Smtp-Source: APXvYqwvshJ20th9zSr6jf5QHFCKYj9JX7MhdNWF2Jwas5AFsAL8CZaYemA4OyF7S4hIa5OiVvjidb5D3A9mE6urluU=
-X-Received: by 2002:ac8:368a:: with SMTP id a10mr18044197qtc.143.1563197228400; 
- Mon, 15 Jul 2019 06:27:08 -0700 (PDT)
+	id 1hn1EG-0007BV-DC; Mon, 15 Jul 2019 13:41:20 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hn1E4-0007Af-Ck
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jul 2019 13:41:09 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 242E228;
+ Mon, 15 Jul 2019 06:41:03 -0700 (PDT)
+Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 390B03F71F;
+ Mon, 15 Jul 2019 06:41:02 -0700 (PDT)
+Date: Mon, 15 Jul 2019 14:41:00 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Guoheyi <guoheyi@huawei.com>
+Subject: Re: [RFC] Add virtual SDEI support in qemu
+Message-ID: <20190715134059.GJ2790@e103592.cambridge.arm.com>
+References: <1b0aa6b2-80b1-a72e-6849-7323c3b9c6bc@huawei.com>
 MIME-Version: 1.0
-References: <20190712033214.24713-1-andrew@aj.id.au>
- <20190712033214.24713-2-andrew@aj.id.au>
- <20190712131028.ba4d4jetg4btsx4u@flea>
- <5c831fd3-d0e2-474b-8a6e-8f51f92fbdf8@www.fastmail.com>
-In-Reply-To: <5c831fd3-d0e2-474b-8a6e-8f51f92fbdf8@www.fastmail.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Mon, 15 Jul 2019 07:26:57 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqK+oLFZof1zpvUs_Siek=+Rc+CPYL-_oE0KuiXwunr0vA@mail.gmail.com>
-Message-ID: <CAL_JsqK+oLFZof1zpvUs_Siek=+Rc+CPYL-_oE0KuiXwunr0vA@mail.gmail.com>
-Subject: Re: [PATCH v2 1/2] dt-bindings: mmc: Document Aspeed SD controller
-To: Andrew Jeffery <andrew@aj.id.au>
+Content-Disposition: inline
+In-Reply-To: <1b0aa6b2-80b1-a72e-6849-7323c3b9c6bc@huawei.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190715_062710_538382_10245688 
-X-CRM114-Status: GOOD (  25.92  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190715_064108_477782_E8BE34A3 
+X-CRM114-Status: GOOD (  15.56  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,145 +61,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Ulf Hansson <ulf.hansson@linaro.org>, linux-aspeed@lists.ozlabs.org,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Ryan Chen <ryanchen.aspeed@gmail.com>, linux-mmc <linux-mmc@vger.kernel.org>,
- Adrian Hunter <adrian.hunter@intel.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Joel Stanley <joel@jms.id.au>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Marc Zyngier <marc.zyngier@arm.com>, qemu-arm@nongnu.org,
+ qemu-devel@nongnu.org, linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Jul 14, 2019 at 8:30 PM Andrew Jeffery <andrew@aj.id.au> wrote:
->
->
->
-> On Fri, 12 Jul 2019, at 22:41, Maxime Ripard wrote:
-> > Hi,
-> >
-> > On Fri, Jul 12, 2019 at 01:02:13PM +0930, Andrew Jeffery wrote:
-> > > The ASPEED SD/SDIO/eMMC controller exposes two slots implementing the
-> > > SDIO Host Specification v2.00, with 1 or 4 bit data buses, or an 8 bit
-> > > data bus if only a single slot is enabled.
-> > >
-> > > Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
-> > > ---
-> > > In v2:
-> > >
-> > > * Rename to aspeed,sdhci.yaml
-> > > * Rename sd-controller compatible
-> > > * Add `maxItems: 1` for reg properties
-> > > * Move sdhci subnode description to patternProperties
-> > > * Drop sdhci compatible requirement
-> > > * #address-cells and #size-cells are required
-> > > * Prevent additional properties
-> > > * Implement explicit ranges in example
-> > > * Remove slot property
-> > >
-> > >  .../devicetree/bindings/mmc/aspeed,sdhci.yaml | 90 +++++++++++++++++++
-> > >  1 file changed, 90 insertions(+)
-> > >  create mode 100644 Documentation/devicetree/bindings/mmc/aspeed,sdhci.yaml
-> > >
-> > > diff --git a/Documentation/devicetree/bindings/mmc/aspeed,sdhci.yaml b/Documentation/devicetree/bindings/mmc/aspeed,sdhci.yaml
-> > > new file mode 100644
-> > > index 000000000000..67a691c3348c
-> > > --- /dev/null
-> > > +++ b/Documentation/devicetree/bindings/mmc/aspeed,sdhci.yaml
-> > > @@ -0,0 +1,90 @@
-> > > +# SPDX-License-Identifier: GPL-2.0-or-later
-> > > +%YAML 1.2
-> > > +---
-> > > +$id: http://devicetree.org/schemas/mmc/aspeed,sdhci.yaml#
-> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > +
-> > > +title: ASPEED SD/SDIO/eMMC Controller
-> > > +
-> > > +maintainers:
-> > > +  - Andrew Jeffery <andrew@aj.id.au>
-> > > +  - Ryan Chen <ryanchen.aspeed@gmail.com>
-> > > +
-> > > +description: |+
-> > > +  The ASPEED SD/SDIO/eMMC controller exposes two slots implementing the SDIO
-> > > +  Host Specification v2.00, with 1 or 4 bit data buses, or an 8 bit data bus if
-> > > +  only a single slot is enabled.
-> > > +
-> > > +  The two slots are supported by a common configuration area. As the SDHCIs for
-> > > +  the slots are dependent on the common configuration area, they are described
-> > > +  as child nodes.
-> > > +
-> > > +properties:
-> > > +  compatible:
-> > > +    enum: [ aspeed,ast2400-sd-controller, aspeed,ast2500-sd-controller ]
-> > > +  reg:
-> > > +    maxItems: 1
-> > > +    description: Common configuration registers
-> > > +  ranges: true
-> > > +  clocks:
-> > > +    maxItems: 1
-> > > +    description: The SD/SDIO controller clock gate
-> >
-> > #address-cells and #size-cells have not been described here.
-> >
-> > > +patternProperties:
-> > > +  "^sdhci@[0-9a-f]+$":
-> > > +    type: object
-> > > +    properties:
-> > > +      compatible:
-> > > +        enum: [ aspeed,ast2400-sdhci, aspeed,ast2500-sdhci ]
-> > > +      reg:
-> > > +        maxItems: 1
-> > > +        description: The SDHCI registers
-> > > +      clocks:
-> > > +        maxItems: 1
-> > > +        description: The SD bus clock
-> > > +      interrupts:
-> > > +        maxItems: 1
-> > > +        description: The SD interrupt shared between both slots
-> > > +    required:
-> > > +      - compatible
-> > > +      - reg
-> > > +      - clocks
-> > > +      - interrupts
-> > > +
-> > > +additionalProperties: false
-> >
-> > But that means that it will generate a warning in your DT if you ever
-> > use them.
-> >
-> > > +required:
-> > > +  - compatible
-> > > +  - reg
-> > > +  - "#address-cells"
-> > > +  - "#size-cells"
-> > > +  - ranges
-> > > +  - clocks
-> > > +
-> > > +examples:
-> > > +  - |
-> > > +    #include <dt-bindings/clock/aspeed-clock.h>
-> > > +    sdc@1e740000 {
-> > > +            compatible = "aspeed,ast2500-sd-controller";
-> > > +            reg = <0x1e740000 0x100>;
-> > > +            #address-cells = <1>;
-> > > +            #size-cells = <1>;
-> >
-> > Starting with your example.
->
-> Heh, right. Thanks. I was inspecting the output of the `dt_binding_check` and
-> `dtbs_check` make targets, though maybe I overlooked this. The aspeed dtsis
-> do generate a quite a number of warnings which make it hard to parse, so I'm
-> going to send a series to clean that up too.
+On Sat, Jul 13, 2019 at 05:53:57PM +0800, Guoheyi wrote:
+> Hi folks,
+> 
+> Do it make sense to implement virtual SDEI in qemu? So that we can have the
+> standard way for guest to handle NMI watchdog, RAS events and something else
+> which involves SDEI in a physical ARM64 machine.
+> 
+> My basic idea is like below:
+> 
+> 1. Change a few lines of code in kvm to allow unhandled SMC invocations
+> (like SDEI) to be sent to qemu, with exit reason of KVM_EXIT_HYPERCALL, so
+> we don't need to add new API.
 
-FYI, This will run checks with only the schema file you specify:
+So long as KVM_EXIT_HYPERCALL reports sufficient information so that
+userspace can identify the cause as an SMC and retrieve the SMC
+immediate field, this seems feasible.
 
-make dtbs_check DT_SCHEMA_FILES=path/to/schema/file
+For its own SMCCC APIs, KVM exclusively uses HVC, so rerouting SMC to
+userspace shouldn't conflict.
 
-Rob
+This bouncing of SMCs to userspace would need to be opt-in, otherwise
+old userspace would see exits that it doesn't know what to do with.
+
+> 2. qemu handles supported SDEI calls just as the spec says for what a
+> hypervisor should do for a guest OS.
+> 
+> 3. For interrupts bound to hypervisor, qemu should stop injecting the IRQ to
+> guest through KVM, but jump to the registered event handler directly,
+> including context saving and restoring. Some interrupts like virtual timer
+> are handled by kvm directly, so we may refuse to bind such interrupts to
+> SDEI events.
+
+Something like that.
+
+Interactions between SDEI and PSCI would need some thought: for example,
+after PSCI_CPU_ON, the newly online cpu needs to have SDEs masked.
+
+One option (suggested to me by James Morse) would be to allow userspace
+to disable in the in-kernel PSCI implementation and provide its own
+PSCI to the guest via SMC -- in which case userspace that wants to
+implement SDEI would have to implement PSCI as well.
+
+There may be reasons why this wouldn't work ... I haven't thought about
+it in depth.
+
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
