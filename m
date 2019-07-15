@@ -2,67 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 78EFF684D9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 10:08:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D68568506
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 10:16:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AvcIWB/Pl/9LtuY8Shbx4X2Smkq3jP8kedTQH5CauLc=; b=luUPs3td+FWLYB
-	5+dlP5aHjVUuO/VCVIfTVD3W63o7fe+y7s45ksuq6sxXhfbFAApf2GggsnOEO4ZB07fWHdxQOa88V
-	rMysyTF+lvYl0fnI+SDDt9oT462zbGstLP7dGr9iwbg1trOGrd2S4V566cm8vWflSl3ekYm2fu1pq
-	y2Juh6HDfPeVsLX85cXdQpC/2+7wnzyyDaXPbewKtNA+tp9h0xiN5CGLdKlQNNCkaxeCoiDAMnAMZ
-	N1A8s9dZaK4jDtmH7PuBSh1Tc/zJhaggHHoYqkOcrgILpOkGz8SjwMqrOT+bZiDrnGR4UMibWKQc6
-	NJ1WKKT5/MbKF83H8AhQ==;
+	List-Owner; bh=QL233qAAdmYvvmqfhEYoGC4rna5i/vI1RgcImLIzj0M=; b=NBBsNNiACT1DUf
+	bokA2WuLE4/runiJmI7m0SEhbjlgYm9rkLH7cWA8vsjdF9ElSKS20Puv3UM6xLM4xlVGjyzimq7Q3
+	Np0R+0CvUUWWT310mvvZalFbwB1cop7tIkioKH0sY7gyhqkzV+nUUisdtnZB8sJ6XfD5r1s4MRWC6
+	W9UoaP2uIe2RDzmEkXUFrV39Qg2A6h0FvQ3Mplp0y3e9eHcsGkYb9zPmUOiMYAmiyEsdXpGjT5NN9
+	/Q2rOBaKbsTATfHAs2xMDk4sp7jv+KY0sdTVEWbNfkOXmBqJ5x5rmoQ2VD+4q2t8i+CIZq6n4y0lH
+	M0WtrnQ+AyBexdVA6Rpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hmw1y-0005uB-D7; Mon, 15 Jul 2019 08:08:18 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hmw9O-0000yd-4O; Mon, 15 Jul 2019 08:15:58 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hmw1V-0005sW-8J; Mon, 15 Jul 2019 08:07:51 +0000
-X-UUID: 85d7f2a314d64bafa353643d4280f63b-20190715
-X-UUID: 85d7f2a314d64bafa353643d4280f63b-20190715
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1413346730; Mon, 15 Jul 2019 00:07:35 -0800
-Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 15 Jul 2019 01:07:34 -0700
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 15 Jul 2019 16:07:25 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 15 Jul 2019 16:07:25 +0800
-Message-ID: <1563178045.17756.5.camel@mtksdaap41>
-Subject: Re: [PATCH v6 14/14] arm64: dts: Add power controller device node
- of MT8183
-From: CK Hu <ck.hu@mediatek.com>
-To: Weiyi Lu <weiyi.lu@mediatek.com>
-Date: Mon, 15 Jul 2019 16:07:25 +0800
-In-Reply-To: <1561971461.12937.8.camel@mtksdaap41>
-References: <1560998286-9189-1-git-send-email-weiyi.lu@mediatek.com>
- <1560998286-9189-15-git-send-email-weiyi.lu@mediatek.com>
- <1561971461.12937.8.camel@mtksdaap41>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1hmw99-0000xx-JC
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jul 2019 08:15:46 +0000
+Received: from pc-375.home
+ (2a01cb0c88d94a005820d607da339aae.ipv6.abo.wanadoo.fr
+ [IPv6:2a01:cb0c:88d9:4a00:5820:d607:da33:9aae])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested) (Authenticated sender: bbrezillon)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 6C4D82852D6;
+ Mon, 15 Jul 2019 09:15:40 +0100 (BST)
+Date: Mon, 15 Jul 2019 10:15:37 +0200
+From: Boris Brezillon <boris.brezillon@collabora.com>
+To: Sam Ravnborg <sam@ravnborg.org>
+Subject: Re: [PATCH v1 14/33] drm/atmel_hlcdc: drop use of drmP.h
+Message-ID: <20190715101537.3c154bd6@pc-375.home>
+In-Reply-To: <20190630061922.7254-15-sam@ravnborg.org>
+References: <20190630061922.7254-1-sam@ravnborg.org>
+ <20190630061922.7254-15-sam@ravnborg.org>
+Organization: Collabora
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 00265334C7C4C211B255AB08A6A2B83B0965001444E0DE4F22F6DBA032388C482000:8
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190715_010749_302593_C7617414 
-X-CRM114-Status: GOOD (  21.32  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190715_011543_895030_4F2BFBB0 
+X-CRM114-Status: GOOD (  16.87  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,232 +62,172 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Nicolas Boichat <drinkcat@chromium.org>,
- srv_heupstream@mediatek.com, James Liao <jamesjj.liao@mediatek.com>,
- linux-kernel@vger.kernel.org, Fan Chen <fan.chen@mediatek.com>,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>, Yong Wu <yong.wu@mediatek.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Boris Brezillon <bbrezillon@kernel.org>, David Airlie <airlied@linux.ie>,
+ dri-devel@lists.freedesktop.org,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Daniel Vetter <daniel@ffwll.ch>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Weiyi:
+On Sun, 30 Jun 2019 08:19:03 +0200
+Sam Ravnborg <sam@ravnborg.org> wrote:
 
-On Mon, 2019-07-01 at 16:57 +0800, CK Hu wrote:
-> Hi, Weiyi:
+> Drop use of the deprecated header drmP.h.
+> Make header file self-contained, with only the required set
+> of include files.
+> And fixed fallout in remaining files.
+> Divide include files in blocks and sort them within each block.
 > 
-> On Thu, 2019-06-20 at 10:38 +0800, Weiyi Lu wrote:
-> > Add power controller node and smi-common node for MT8183
-> > In scpsys node, it contains clocks and regmapping of
-> > infracfg and smi-common for bus protection.
-> > 
-> > Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
-> > ---
-> >  arch/arm64/boot/dts/mediatek/mt8183.dtsi | 62 ++++++++++++++++++++++++++++++++
-> >  1 file changed, 62 insertions(+)
-> > 
-> > diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> > index 08274bf..75c4881 100644
-> > --- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> > +++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> > @@ -8,6 +8,7 @@
-> >  #include <dt-bindings/clock/mt8183-clk.h>
-> >  #include <dt-bindings/interrupt-controller/arm-gic.h>
-> >  #include <dt-bindings/interrupt-controller/irq.h>
-> > +#include <dt-bindings/power/mt8183-power.h>
-> >  
-> >  / {
-> >  	compatible = "mediatek,mt8183";
-> > @@ -196,6 +197,62 @@
-> >  			#clock-cells = <1>;
-> >  		};
-> >  
-> > +		scpsys: syscon@10006000 {
-> > +			compatible = "mediatek,mt8183-scpsys", "syscon";
-> > +			#power-domain-cells = <1>;
-> > +			reg = <0 0x10006000 0 0x1000>;
-> > +			clocks = <&topckgen CLK_TOP_MUX_AUD_INTBUS>,
-> > +				 <&infracfg CLK_INFRA_AUDIO>,
-> > +				 <&infracfg CLK_INFRA_AUDIO_26M_BCLK>,
-> > +				 <&topckgen CLK_TOP_MUX_MFG>,
-> > +				 <&topckgen CLK_TOP_MUX_MM>,
-> > +				 <&topckgen CLK_TOP_MUX_CAM>,
-> > +				 <&topckgen CLK_TOP_MUX_IMG>,
-> > +				 <&topckgen CLK_TOP_MUX_IPU_IF>,
-> > +				 <&topckgen CLK_TOP_MUX_DSP>,
-> > +				 <&topckgen CLK_TOP_MUX_DSP1>,
-> > +				 <&topckgen CLK_TOP_MUX_DSP2>,
-> > +				 <&mmsys CLK_MM_SMI_COMMON>,
-> > +				 <&mmsys CLK_MM_SMI_LARB0>,
-> > +				 <&mmsys CLK_MM_SMI_LARB1>,
-> > +				 <&mmsys CLK_MM_GALS_COMM0>,
-> > +				 <&mmsys CLK_MM_GALS_COMM1>,
-> > +				 <&mmsys CLK_MM_GALS_CCU2MM>,
-> > +				 <&mmsys CLK_MM_GALS_IPU12MM>,
-> > +				 <&mmsys CLK_MM_GALS_IMG2MM>,
-> > +				 <&mmsys CLK_MM_GALS_CAM2MM>,
-> > +				 <&mmsys CLK_MM_GALS_IPU2MM>,
+> Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
+> Cc: Boris Brezillon <bbrezillon@kernel.org>
 
-I've removed all mmsys clock in scpsys node and display still works, so
-I think these subsys clock could be removed from scpsys node. It's
-reasonable that subsys clock is controlled by subsys device or the
-device use it. In MT2712 [1], the scpsys does not control subsys clock
-and it works, so I think you should remove subsys clock in scpsys device
-node.
+Reviewed-by: Boris Brezillon <boris.brezillon@collabora.com>
 
-[1]
-https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/arch/arm64/boot/dts/mediatek/mt2712e.dtsi?h=v5.2
-
-Regards,
-CK
-
-
+> Cc: David Airlie <airlied@linux.ie>
+> Cc: Daniel Vetter <daniel@ffwll.ch>
+> Cc: Nicolas Ferre <nicolas.ferre@microchip.com>
+> Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>
+> Cc: Ludovic Desroches <ludovic.desroches@microchip.com>
+> Cc: linux-arm-kernel@lists.infradead.org
+> ---
+> The list of cc: was too large to add all recipients to the cover letter.
+> Please find cover letter here:
+> https://lists.freedesktop.org/archives/dri-devel/2019-June/thread.html
+> Search for "drm: drop use of drmp.h in drm-misc"
 > 
-> Up to now, MT8183 mmsys has the same resource with another device node:
+>         Sam
 > 
-> 		mmsys: syscon@14000000 {
-> 			compatible = "mediatek,mt8183-mmsys", "syscon";
-> 			reg = <0 0x14000000 0 0x1000>;
-> 			#clock-cells = <1>;
-> 		};
+>  .../gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c    | 12 +++++++----
+>  drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_dc.c  | 12 +++++++++++
+>  drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_dc.h  | 20 +++----------------
+>  .../gpu/drm/atmel-hlcdc/atmel_hlcdc_output.c  |  3 ++-
+>  .../gpu/drm/atmel-hlcdc/atmel_hlcdc_plane.c   | 10 ++++++++++
+>  5 files changed, 35 insertions(+), 22 deletions(-)
 > 
-> 		display_components: dispsys@14000000 {
-> 			compatible = "mediatek,mt8183-display";
-> 			reg = <0 0x14000000 0 0x1000>;
-> 			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
-> 		};
-> 
-> I think this two node should be merge into one node, so I've try to
-> merge them:
-> 
-> 		mmsys: syscon@14000000 {
-> 			compatible = "mediatek,mt8183-mmsys", "syscon";
-> 			reg = <0 0x14000000 0 0x1000>;
-> 			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
-> 			#clock-cells = <1>;
-> 		};
-> 
-> But I got a kernel panic when boot,
-> 
-> [    3.458523] Unable to handle kernel paging request at virtual address
-> fffffffffffffdfb
-> [    3.466999] Mem abort info:
-> [    3.470116]   ESR = 0x96000005
-> [    3.473268]   Exception class = DABT (current EL), IL = 32 bits
-> [    3.479375]   SET = 0, FnV = 0
-> [    3.482530]   EA = 0, S1PTW = 0
-> [    3.485785] Data abort info:
-> [    3.488831]   ISV = 0, ISS = 0x00000005
-> [    3.493067]   CM = 0, WnR = 0
-> [    3.496229] swapper pgtable: 4k pages, 39-bit VAs, pgdp =
-> 000000004f8fa26d
-> [    3.503214] [fffffffffffffdfb] pgd=0000000000000000,
-> pud=0000000000000000
-> [    3.510408] Internal error: Oops: 96000005 [#1] PREEMPT SMP
-> [    3.515974] Modules linked in:
-> [    3.519023] Process kworker/0:3 (pid: 106, stack limit =
-> 0x00000000281d0651)
-> [    3.526066] CPU: 0 PID: 106 Comm: kworker/0:3 Tainted: G        W
-> 4.19.43 #208
-> [    3.533974] Hardware name: MediaTek kukui rev1 board (DT)
-> [    3.539374] Workqueue: events deferred_probe_work_func
-> [    3.544507] pstate: 20000005 (nzCv daif -PAN -UAO)
-> [    3.549294] pc : clk_prepare+0x18/0x40
-> [    3.553038] lr : scpsys_clk_enable+0x40/0xb4
-> [    3.557299] sp : ffffff800855b9e0
-> [    3.560606] x29: ffffff800855b9f0 x28: ffffff93e1e5f594
-> [    3.565911] x27: 000000000000000f x26: ffffff93e1e5e9b8
-> [    3.571217] x25: 000000003b9aca00 x24: ffffff800858530c
-> [    3.576522] x23: ffffffffffffffff x22: fffffffffffffdfb
-> [    3.581827] x21: 000000000000000a x20: ffffffccb89aafc8
-> [    3.587132] x19: fffffffffffffdfb x18: 00005a5c77082016
-> [    3.592438] x17: 0000000000000400 x16: 0000000000000001
-> [    3.597743] x15: 0000000000000009 x14: ffffff93e271c908
-> [    3.603048] x13: 0000000000000b22 x12: 0000000000000008
-> [    3.608353] x11: 0000000001d063de x10: 0000000000000008
-> [    3.613659] x9 : 00000000ffffffed x8 : 0000000000000000
-> [    3.618964] x7 : 736d6c2dff7224fe x6 : 0000008000000000
-> [    3.624269] x5 : 0000000000000000 x4 : 0000000080000000
-> [    3.629575] x3 : 002f6d6e74000000 x2 : 0000000000000000
-> [    3.634880] x1 : 000000000000000a x0 : fffffffffffffdfb
-> [    3.640185] Call trace:
-> [    3.642625]  clk_prepare+0x18/0x40
-> [    3.646019]  scpsys_clk_enable+0x40/0xb4
-> [    3.649935]  scpsys_power_on+0x13c/0x304
-> [    3.653850]  scpsys_probe+0xe0/0x5fc
-> [    3.657419]  platform_drv_probe+0x80/0xb0
-> [    3.661420]  really_probe+0x114/0x28c
-> [    3.665075]  driver_probe_device+0x64/0xfc
-> [    3.669164]  __device_attach_driver+0xb8/0xd0
-> [    3.673513]  bus_for_each_drv+0x88/0xd0
-> [    3.677341]  __device_attach+0xac/0x130
-> [    3.681169]  device_initial_probe+0x20/0x2c
-> [    3.685344]  bus_probe_device+0x34/0x90
-> [    3.689172]  deferred_probe_work_func+0x74/0xac
-> [    3.693698]  process_one_work+0x210/0x420
-> [    3.697700]  worker_thread+0x278/0x3e4
-> [    3.701443]  kthread+0x11c/0x12c
-> [    3.704665]  ret_from_fork+0x10/0x18
-> 
-> I'm not really understand what happen, but scpsys and mmsys point to
-> each other in MT8183. Why these two node point to each other in MT8183?
-> If this is really hardware limitation, we need to solve this in driver.
-> If this is not a hardware limitation, I would like to re-organize device
-> tree to prevent this problem.
-> 
-> Regards,
-> CK
-> 
-> 
-> > +				 <&imgsys CLK_IMG_LARB5>,
-> > +				 <&imgsys CLK_IMG_LARB2>,
-> > +				 <&camsys CLK_CAM_LARB6>,
-> > +				 <&camsys CLK_CAM_LARB3>,
-> > +				 <&camsys CLK_CAM_SENINF>,
-> > +				 <&camsys CLK_CAM_CAMSV0>,
-> > +				 <&camsys CLK_CAM_CAMSV1>,
-> > +				 <&camsys CLK_CAM_CAMSV2>,
-> > +				 <&camsys CLK_CAM_CCU>,
-> > +				 <&ipu_conn CLK_IPU_CONN_IPU>,
-> > +				 <&ipu_conn CLK_IPU_CONN_AHB>,
-> > +				 <&ipu_conn CLK_IPU_CONN_AXI>,
-> > +				 <&ipu_conn CLK_IPU_CONN_ISP>,
-> > +				 <&ipu_conn CLK_IPU_CONN_CAM_ADL>,
-> > +				 <&ipu_conn CLK_IPU_CONN_IMG_ADL>;
-> > +			clock-names = "audio", "audio1", "audio2",
-> > +				      "mfg", "mm", "cam",
-> > +				      "isp", "vpu", "vpu1",
-> > +				      "vpu2", "vpu3", "mm-0",
-> > +				      "mm-1", "mm-2", "mm-3",
-> > +				      "mm-4", "mm-5", "mm-6",
-> > +				      "mm-7", "mm-8", "mm-9",
-> > +				      "isp-0", "isp-1", "cam-0",
-> > +				      "cam-1", "cam-2", "cam-3",
-> > +				      "cam-4", "cam-5", "cam-6",
-> > +				      "vpu-0", "vpu-1", "vpu-2",
-> > +				      "vpu-3", "vpu-4", "vpu-5";
-> > +			infracfg = <&infracfg>;
-> > +			smi_comm = <&smi_common>;
-> > +		};
-> > +
-> >  		apmixedsys: syscon@1000c000 {
-> >  			compatible = "mediatek,mt8183-apmixedsys", "syscon";
-> >  			reg = <0 0x1000c000 0 0x1000>;
-> > @@ -260,6 +317,11 @@
-> >  			#clock-cells = <1>;
-> >  		};
-> >  
-> > +		smi_common: smi@14019000 {
-> > +			compatible = "mediatek,mt8183-smi-common", "syscon";
-> > +			reg = <0 0x14019000 0 0x1000>;
-> > +		};
-> > +
-> >  		imgsys: syscon@15020000 {
-> >  			compatible = "mediatek,mt8183-imgsys", "syscon";
-> >  			reg = <0 0x15020000 0 0x1000>;
-> 
-
+> diff --git a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
+> index 81c50772df05..edcd0042bc9c 100644
+> --- a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
+> +++ b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
+> @@ -19,15 +19,19 @@
+>   */
+>  
+>  #include <linux/clk.h>
+> +#include <linux/mfd/atmel-hlcdc.h>
+> +#include <linux/pinctrl/consumer.h>
+>  #include <linux/pm.h>
+>  #include <linux/pm_runtime.h>
+> -#include <linux/pinctrl/consumer.h>
+>  
+> +#include <video/videomode.h>
+> +
+> +#include <drm/drm_atomic.h>
+> +#include <drm/drm_atomic_helper.h>
+>  #include <drm/drm_crtc.h>
+> +#include <drm/drm_modeset_helper_vtables.h>
+>  #include <drm/drm_probe_helper.h>
+> -#include <drm/drmP.h>
+> -
+> -#include <video/videomode.h>
+> +#include <drm/drm_vblank.h>
+>  
+>  #include "atmel_hlcdc_dc.h"
+>  
+> diff --git a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_dc.c b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_dc.c
+> index 2b794a50e7ab..891708048c8f 100644
+> --- a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_dc.c
+> +++ b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_dc.c
+> @@ -22,8 +22,20 @@
+>  #include <linux/clk.h>
+>  #include <linux/irq.h>
+>  #include <linux/irqchip.h>
+> +#include <linux/mfd/atmel-hlcdc.h>
+>  #include <linux/module.h>
+>  #include <linux/pm_runtime.h>
+> +#include <linux/platform_device.h>
+> +
+> +#include <drm/drm_atomic.h>
+> +#include <drm/drm_atomic_helper.h>
+> +#include <drm/drm_drv.h>
+> +#include <drm/drm_fb_helper.h>
+> +#include <drm/drm_gem_cma_helper.h>
+> +#include <drm/drm_gem_framebuffer_helper.h>
+> +#include <drm/drm_irq.h>
+> +#include <drm/drm_probe_helper.h>
+> +#include <drm/drm_vblank.h>
+>  
+>  #include "atmel_hlcdc_dc.h"
+>  
+> diff --git a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_dc.h b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_dc.h
+> index 0155efb9c443..b56c399f8715 100644
+> --- a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_dc.h
+> +++ b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_dc.h
+> @@ -22,23 +22,9 @@
+>  #ifndef DRM_ATMEL_HLCDC_H
+>  #define DRM_ATMEL_HLCDC_H
+>  
+> -#include <linux/clk.h>
+> -#include <linux/dmapool.h>
+> -#include <linux/irqdomain.h>
+> -#include <linux/mfd/atmel-hlcdc.h>
+> -#include <linux/pwm.h>
+> -
+> -#include <drm/drm_atomic.h>
+> -#include <drm/drm_atomic_helper.h>
+> -#include <drm/drm_crtc.h>
+> -#include <drm/drm_probe_helper.h>
+> -#include <drm/drm_fb_helper.h>
+> -#include <drm/drm_fb_cma_helper.h>
+> -#include <drm/drm_gem_cma_helper.h>
+> -#include <drm/drm_gem_framebuffer_helper.h>
+> -#include <drm/drm_panel.h>
+> -#include <drm/drm_plane_helper.h>
+> -#include <drm/drmP.h>
+> +#include <linux/regmap.h>
+> +
+> +#include <drm/drm_plane.h>
+>  
+>  #define ATMEL_HLCDC_LAYER_CHER			0x0
+>  #define ATMEL_HLCDC_LAYER_CHDR			0x4
+> diff --git a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_output.c b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_output.c
+> index f73d8a92274e..24938bd5adf6 100644
+> --- a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_output.c
+> +++ b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_output.c
+> @@ -19,9 +19,10 @@
+>   * this program.  If not, see <http://www.gnu.org/licenses/>.
+>   */
+>  
+> +#include <linux/media-bus-format.h>
+>  #include <linux/of_graph.h>
+>  
+> -#include <drm/drmP.h>
+> +#include <drm/drm_encoder.h>
+>  #include <drm/drm_of.h>
+>  #include <drm/drm_bridge.h>
+>  
+> diff --git a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_plane.c b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_plane.c
+> index 0ee5b7a3a4b0..e66ea9f32185 100644
+> --- a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_plane.c
+> +++ b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_plane.c
+> @@ -17,6 +17,16 @@
+>   * this program.  If not, see <http://www.gnu.org/licenses/>.
+>   */
+>  
+> +#include <linux/dmapool.h>
+> +#include <linux/mfd/atmel-hlcdc.h>
+> +
+> +#include <drm/drm_atomic.h>
+> +#include <drm/drm_atomic_helper.h>
+> +#include <drm/drm_fb_cma_helper.h>
+> +#include <drm/drm_fourcc.h>
+> +#include <drm/drm_gem_cma_helper.h>
+> +#include <drm/drm_plane_helper.h>
+> +
+>  #include "atmel_hlcdc_dc.h"
+>  
+>  /**
 
 
 _______________________________________________
