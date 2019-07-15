@@ -2,81 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E4D466868B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 11:44:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C343686AB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 11:52:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qid7axWK1OfjVaeBCmfJPfee/03eXjPYI07e8Pe3He4=; b=W/1WKfrYjzF6Yp
-	e4MHazMr+R1258RzZM6dKWBoOLIzzS2xSSSwMruw5/9IHUiQ4PSPDp6cmFLjeTRpfowTEdRNeUdoj
-	7YSxfJtDOEua77gFf8HhGNei9GZkdo+D3/mB/d5jHn94WUyoaaQWtTRwyW/p4g3mQ2+XEcK4tRLv/
-	E8Dg2xWhXhtvE2SPEj3L3iq2pTmv5xaesjuajGpIEjIJiLckjPiQbbBojeDVdZ9c3Uuk+bWEnbiKE
-	pO70JicfviFYARVrcuaeA16hEogEJQM2QQi60VjbmzjyODVCwl7X7G9LJtyE/cYwogo+gt9221MTy
-	MMpxYKbOTDtTh4qF1e/A==;
+	List-Owner; bh=piCopXgm9iQ2OI1hgt9YW5p2a+J17POnf+b7k1d9L60=; b=qdfiLhA09lA8Xa
+	zeqcpxugTizEdBpiMtKnTlFzus3997kIVHDs+dQ+GcBYYVum3Zx265Ti2edTXNwjNnjasdMki8Ihf
+	Hs9r3BjWKqQPCUVfTDgZNIVtUrQxpIDOtvI70/GTaj6Vn2gi2q6dTMYkaR5+Bj9ffMgrJjA/YeJWb
+	4E8jstxsZIowg3CHlZDBUjY5qiHbLRmVSH3WgYK2o65jGc3uQfw/QUOZXuTzV5DVSDHXgit+BLAc1
+	htjIA2ETrhbr1gyn75ZUvE6hCuN/LePrU04t9DXec4m9pZKlzGBw7lUZs25Orbs8+K9NTEz1WUqJq
+	RhYypFe5AXl250MHeBeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hmxWw-0003QN-MG; Mon, 15 Jul 2019 09:44:23 +0000
-Received: from mail-yb1-xb42.google.com ([2607:f8b0:4864:20::b42])
+	id 1hmxef-0006Wf-10; Mon, 15 Jul 2019 09:52:21 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hmxWZ-0003Pa-Pg
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jul 2019 09:44:01 +0000
-Received: by mail-yb1-xb42.google.com with SMTP id 187so5800134ybw.4
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 15 Jul 2019 02:43:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=fZZ8WVXuOszSeHc/0c/yAH4kX+d3pVHoqUHa9dvC8uU=;
- b=jPvQXZv+IvQvIOKDrE/1UTf4R3924nDi08kyG+WIj5baR4Tyt2FssXg65QToV335fR
- C3pQAHW0mt0y+pH4H5pHFNVigxkFaRpqcNAB3MLhLG5q2s+P4LyJ1aghN9dZyKbU8nLb
- +tDtSYrr0f8gdVeeIZpi09EmIyOIO0Q9X2MLV9gyJ1Q1Q1S5b8+YZVTEsmFL1iodhvC1
- vwusUno/4/rnjI4P48FdcE7GU2ufn+LjRZS9nxF32RlChRWlIdguzVsFOzZhaO2rojUJ
- xs1OnFebwIGoS6WFFiJQOVVdiD8lOq9z7qVhJUduZWLJUr9XeHSFuxdMZ1O0A5LWtLQr
- z1SA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=fZZ8WVXuOszSeHc/0c/yAH4kX+d3pVHoqUHa9dvC8uU=;
- b=q2nQV7dr1oR9lBTbT19XK2ESm7uyriwk81G6WmS2mYVG3iT3KoA+emr2QjrZgahx7z
- /XgJP7gAjmkkLfjlJeANI6OBo0cO0PJcv/yLJl6A6IhKvbdNy5bVdHnsTZZ7QcYPc9kt
- NK11a94smxcGr3ShBzXwT+jPtCkjvJtAef4krHngsazBssodK4foF8CHJHha05f5/7Ev
- hExjmclT/fwy4ACDs1XiUci3C3jAiVSZaSOzfP1stoHwscJfsuZ+3Vv7g7FdFZjMCH4N
- YeFIC+MGg/qjJwZY3PuTwwT9rajVYn+j950vSrzaTPynvdYm9acguSZGBeis4cW1sSrZ
- x17Q==
-X-Gm-Message-State: APjAAAUgSCaZhYQvysFdgT2pJDoD6X2TlaCGkYFzx0rMAfJqWpiahYfm
- h4JlcE0KYu5F6zyQyBgfM3GZwdua1ySllomf8Ls=
-X-Google-Smtp-Source: APXvYqyshMjLjL343jXJYNns0AL0x11WqCb1cH108fR2yfBk7X87b8Pi43a3JUgN8FWpco10Ejn9jCi8Y49UB0rrw84=
-X-Received: by 2002:a25:768f:: with SMTP id r137mr15582022ybc.8.1563183836782; 
- Mon, 15 Jul 2019 02:43:56 -0700 (PDT)
+ id 1hmxeO-0006WA-PN; Mon, 15 Jul 2019 09:52:06 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id C6F1C20868;
+ Mon, 15 Jul 2019 09:52:00 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1563184324;
+ bh=Sehveqjg8zwSH5xO1XpEINg8wkrvEYGXw3Z1knB6BbE=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=BhsQfTxgg8czwGQZz8JkgGjKDf1ZGfgLfcdEUEeuBK59aMQv0s0KkpWQli8kmNZu+
+ PYYQ5VTcRmhQQCSkuwCfjagxTyWoUkGvUbZlEV6y192UxDDiz41REyR9BaplKLTNNE
+ jV2NKFA41J30+3Siqmv1Yv+aWyjmNAWRQ8axIH+U=
+Date: Mon, 15 Jul 2019 10:51:57 +0100
+From: Will Deacon <will@kernel.org>
+To: Yong Wu <yong.wu@mediatek.com>
+Subject: Re: [PATCH v8 07/21] iommu/io-pgtable-arm-v7s: Extend MediaTek 4GB
+ Mode
+Message-ID: <20190715095156.xczfkbm6zpjueq32@willie-the-truck>
+References: <1561774167-24141-1-git-send-email-yong.wu@mediatek.com>
+ <1561774167-24141-8-git-send-email-yong.wu@mediatek.com>
+ <20190710143649.w5dplhzdpi3bxp7e@willie-the-truck>
+ <1562846036.31342.10.camel@mhfsdcap03>
+ <20190711123129.da4rg35b54u4svfw@willie-the-truck>
+ <1563079280.31342.22.camel@mhfsdcap03>
 MIME-Version: 1.0
-References: <CGME20190715090023eucas1p2ab541c5d4b4debe766295d3c6efbd1cd@eucas1p2.samsung.com>
- <20190715031851.6890-1-huangfq.daxian@gmail.com>
- <37046e7b-fdde-c10f-4850-0b3efd4a00cd@samsung.com>
-In-Reply-To: <37046e7b-fdde-c10f-4850-0b3efd4a00cd@samsung.com>
-From: Fuqian Huang <huangfq.daxian@gmail.com>
-Date: Mon, 15 Jul 2019 17:43:45 +0800
-Message-ID: <CABXRUiQ_N=N=weMnRea4d6PXjfghta=U1xhdv-tZpSvaGBnXGg@mail.gmail.com>
-Subject: Re: [PATCH v3 15/24] media: exynos4-is: Remove call to memset after
- dma_alloc_coherent
-To: Sylwester Nawrocki <s.nawrocki@samsung.com>
+Content-Disposition: inline
+In-Reply-To: <1563079280.31342.22.camel@mhfsdcap03>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190715_024359_855864_64371BCD 
-X-CRM114-Status: GOOD (  13.46  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190715_025204_864982_2CC7B0FF 
+X-CRM114-Status: GOOD (  28.78  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b42 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (huangfq.daxian[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -85,6 +69,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,44 +81,127 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>,
- Kyungmin Park <kyungmin.park@samsung.com>, Kukjin Kim <kgene@kernel.org>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
- linux-media@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: youlin.pei@mediatek.com, devicetree@vger.kernel.org,
+ Nicolas Boichat <drinkcat@chromium.org>, cui.zhang@mediatek.com,
+ srv_heupstream@mediatek.com, Tomasz Figa <tfiga@google.com>,
+ Joerg Roedel <joro@8bytes.org>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, Evan Green <evgreen@chromium.org>,
+ chao.hao@mediatek.com, iommu@lists.linux-foundation.org,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, yingjoe.chen@mediatek.com,
+ anan.sun@mediatek.com, Robin Murphy <robin.murphy@arm.com>,
+ Matthias Kaehlcke <mka@chromium.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-U3lsd2VzdGVyIE5hd3JvY2tpIDxzLm5hd3JvY2tpQHNhbXN1bmcuY29tPiDmlrwgMjAxOeW5tDfm
-nIgxNeaXpemAseS4gCDkuIvljYg1OjAw5a+r6YGT77yaCj4KPiBPbiA3LzE1LzE5IDA1OjE4LCBG
-dXFpYW4gSHVhbmcgd3JvdGU6Cj4gPiBJbiBjb21taXQgNTE4YTJmMTkyNWMzCj4gPiAoImRtYS1t
-YXBwaW5nOiB6ZXJvIG1lbW9yeSByZXR1cm5lZCBmcm9tIGRtYV9hbGxvY18qIiksCj4gPiBkbWFf
-YWxsb2NfY29oZXJlbnQgaGFzIGFscmVhZHkgemVyb2VkIHRoZSBtZW1vcnkuCj4gPiBTbyBtZW1z
-ZXQgaXMgbm90IG5lZWRlZAo+Cj4gSSBjYW4ndCBzZWUgYW55IGNoYW5nZXMgaW4gdGhlIGFib3Zl
-IG1lbnRpb25lZCBjb21taXQgdGhhdCB3b3VsZAo+IG1ha2UgZG1hX2FsbG9jX2NvaGVyZW50KCkg
-KGFybV9jb2hlcmVudF9kbWFfYWxsb2MoKSkgemVyb2luZyBpdHMKPiByZXR1cm5lZCBtZW1vcnku
-IE1heWJlIHlvdSBuZWVkIHRvIGFkZCBhIHJlZmVyZW5jZSB0byBzb21lIG90aGVyCj4gaW5zdGVh
-ZD8KPgpJbiB0aGUgbGFzdCB2ZXJzaW9uIHBhdGNoIHNldCwgSSByZWZlcmVuY2VkIHRoZSBjb21t
-aXQgYWY3ZGRkOGE2MjdjCigiTWVyZ2UgdGFnICdkbWEtbWFwcGluZy00LjIxJyBvZgpnaXQ6Ly9n
-aXQuaW5mcmFkZWFkLm9yZy91c2Vycy9oY2gvZG1hLW1hcHBpbmciKQppbiB0aGUgY29tbWl0IGxv
-Zy4KVGhlIG1lcmdlZCBjb21taXQgbWVudGlvbnMgdGhhdAoiZW5zdXJlIGRtYV9hbGxvY19jb2hl
-cmVudCByZXR1cm5zIHplcm9lZCBtZW1vcnkgdG8KYXZvaWQga2VybmVsIGRhdGEgbGVha3MgdGhy
-b3VnaCB1c2Vyc3BhY2UuCldlIGFscmVhZHkgZGlkIHRoaXMgZm9yIG1vc3QgY29tbW9uIGFyY2hp
-dGVjdHVyZXMsCmJ1dCB0aGlzIGVuc3VyZXMgd2UgZG8gaXQgZXZlcnl3aGVyZS4iCmRtYV9hbGxv
-Y19jb2hlcmVudCBoYXMgYWxyZWFkeSB6ZXJvZWQgdGhlIG1lbW9yeSBkdXJpbmcgYWxsb2NhdGlv
-bgphbmQgdGhlIGNvbW1pdCBhbHNvIGRlcHJlY2F0ZXMgZG1hX3phbGxvY19jb2hlcmVudC4KR3Jl
-ZyBhbmQgb3RoZXIgbWFpbnRhaW5lciB0b2xkIG1lIHRvIHVzZSB0aGUgYWN0dWFsIGNvbW1pdApy
-YXRoZXIgdGhhbiB0aGUgbWVyZ2VkIGNvbW1pdC4KU28gSSByZWZlcmVuY2UgdGhlIGNvbW1pdCB0
-aGF0IGVuc3VyZXMgdGhlIGRtYV9hbGxvY19jb2hlcmVudCB0bwpyZXR1cm5zIHplcm9lZCBtZW1v
-cnkgZXZlcnkgd2hlcmUuCk1heWJlIHRoaXMgYmVsb25ncyB0byB0aGUgYG1vc3QgY29tbW9uIGFj
-aGl0ZWN0dXJlc2AgYW5kIGlzIG5vdCBpbXBhY3RlZApieSB0aGUgbWVudGlvbmVkIGNoYW5nZS4K
-U2hvdWxkIEkgcmV3cml0ZSB0aGUgY29tbWl0IGxvZz8gSnVzdCBtZW50aW9uIHRoYXQgZG1hX2Fs
-bG9jX2NvaGVyZW50CmhhcyBhbHJlYWR5IHplcm9lZCB0aGUgbWVtb3J5IGFuZCBub3QgdG8gcmVm
-ZXJlbmNlIHRoZSBjb21taXQ/CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
-QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
-aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Sun, Jul 14, 2019 at 12:41:20PM +0800, Yong Wu wrote:
+> On Thu, 2019-07-11 at 13:31 +0100, Will Deacon wrote:
+> > This looks like the right sort of idea. Basically, I was thinking that you
+> > can use the oas in conjunction with the quirk to specify whether or not
+> > your two magic bits should be set. You could also then cap the oas using
+> > the size of phys_addr_t to deal with my other comment.
+> > 
+> > Finally, I was hoping you could drop the |= BIT_ULL(32) and the &=
+> > ~BIT_ULL(32) bits of the mtk driver if the pgtable code now accepts higher
+> > addresses. Did that not work out?
+> 
+> After the current patch, the pgtable has accepted the higher address.
+> the " |= BIT_ULL(32)" and "& = ~ BIT_ULL(32)" is for a special case(we
+> call it 4GB mode).
+> 
+> Now MediaTek IOMMU support 2 kind memory:
+> 1) normal case: PA is 0x4000_0000 - 0x3_ffff_ffff. the PA won't be
+> remapped. mt8183 and the non-4GB mode of mt8173/mt2712 use this mode.
+> 
+> 2) 4GB Mode: PA is 0x4000_0000 - 0x1_3fff_ffff. But the PA will remapped
+> to 0x1_0000_0000 to 0x1_ffff_ffff. This is for the 4GB mode of
+> mt8173/mt2712. This case is so special that we should change the PA
+> manually(add bit32).
+> (mt2712 and mt8173 have both mode: 4GB and non-4GB.)
+> 
+> If we try to use oas and our quirk to cover this two case. Then I can
+> use "oas == 33" only for this 4GB mode. and "oas == 34" for the normal
+> case even though the PA mayn't reach 34bit. Also I should add some
+> "workaround" for the 4GB mode(oas==33).
+> 
+> I copy the new patch in the mail below(have dropped the "|= BIT_ULL(32)"
+> and the "&= ~BIT_ULL(32)) in mtk iommu". please help have a look if it
+> is ok.
+> (another thing: Current the PA can support over 4GB. So the quirk name
+> "MTK_4GB" looks not suitable, I used a new patch rename to "MTK_EXT").
+
+Makes sense, thanks. One comment below.
+
+> @@ -205,7 +216,20 @@ static phys_addr_t iopte_to_paddr(arm_v7s_iopte
+> pte, int lvl,
+>  	else
+>  		mask = ARM_V7S_LVL_MASK(lvl);
+>  
+> -	return pte & mask;
+> +	paddr = pte & mask;
+> +	if (IS_ENABLED(CONFIG_PHYS_ADDR_T_64BIT) &&
+> +	    (cfg->quirks & IO_PGTABLE_QUIRK_ARM_MTK_EXT)) {
+> +		/*
+> +		 * Workaround for MTK 4GB Mode:
+> +		 * Add BIT32 only when PA < 0x4000_0000.
+> +		 */
+> +		if ((cfg->oas == 33 && paddr < 0x40000000UL) ||
+> +		    (cfg->oas > 33 && (pte & ARM_V7S_ATTR_MTK_PA_BIT32)))
+> +			paddr |= BIT_ULL(32);
+> +		if (pte & ARM_V7S_ATTR_MTK_PA_BIT33)
+> +			paddr |= BIT_ULL(33);
+> +	}
+> +	return paddr;
+>  }
+>  
+>  static arm_v7s_iopte *iopte_deref(arm_v7s_iopte pte, int lvl,
+> @@ -326,9 +350,6 @@ static arm_v7s_iopte arm_v7s_prot_to_pte(int prot,
+> int lvl,
+>  	if (lvl == 1 && (cfg->quirks & IO_PGTABLE_QUIRK_ARM_NS))
+>  		pte |= ARM_V7S_ATTR_NS_SECTION;
+>  
+> -	if (cfg->quirks & IO_PGTABLE_QUIRK_ARM_MTK_EXT)
+> -		pte |= ARM_V7S_ATTR_MTK_4GB;
+> -
+>  	return pte;
+>  }
+>  
+> @@ -742,7 +763,9 @@ static struct io_pgtable
+> *arm_v7s_alloc_pgtable(struct io_pgtable_cfg *cfg,
+>  {
+>  	struct arm_v7s_io_pgtable *data;
+>  
+> -	if (cfg->ias > ARM_V7S_ADDR_BITS || cfg->oas > ARM_V7S_ADDR_BITS)
+> +	if (cfg->ias > ARM_V7S_ADDR_BITS ||
+> +	    (cfg->oas > ARM_V7S_ADDR_BITS &&
+> +	     !(cfg->quirks & IO_PGTABLE_QUIRK_ARM_MTK_EXT)))
+>  		return NULL;
+
+I think you can rework this to do something like:
+
+	if (cfg->ias > ARM_V7S_ADDR_BITS)
+		return NULL;
+
+	if (cfg->quirks & IO_PGTABLE_QUIRK_ARM_MTK_EXT) {
+		if (!IS_ENABLED(CONFIG_PHYS_ADDR_T_64BIT))
+			cfg->oas = min(cfg->oas, ARM_V7S_ADDR_BITS);
+		else if (cfg->oas > 34)
+			return NULL;
+	} else if (cfg->oas > ARM_V7S_ADDR_BITS) {
+		return NULL;
+	}
+
+so that we clamp the oas when phys_addr_t is 32-bit for you. That should
+allow you to remove lots of the checking from iopte_to_paddr() too if you
+check against oas in the map() function.
+
+Does that make sense?
+
+Will
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
