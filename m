@@ -2,55 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CEEBB68BFC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 15:49:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D14368C64
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 15:51:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I+3K6RZfEFUeV+ZtqYKuJCOPlNMJWdK9XKjeqwwEoHc=; b=dgiGGg38/Dj7Q2
-	4uVkhjOnqsYWAJCJB0Ff5KT/V44Bh1NprWMNI7VtEcRosvuqhWwRX/5Nd3VSEuGWDXGUvD4ajFDE1
-	Dpk7qQs86ItkGOhSTKxZGCTbPpICSrBDfBx2Y+Xh9lOrhj5d+gy2xvt1L7GRzwLYWyQNv2356njVy
-	0/yZegByQx1nvJf0/SeCq/Bib2Xv3PlTihniwQc3VBH+3LWKFr4tsmFVeosJ/2/chcpK12X5FQRGT
-	jEBJeZd1OewCgQ24mClPw5Stfa6+SZ3yzOyPkSkkHMckNasuiPixc/4ne6q9gtJYATRWoupg28lQ3
-	wsT3Q9bofPeM+1U1HdxA==;
+	List-Owner; bh=j3P9clA6qMx0zqLev5PORi97YPtHekuB471b/U/SHpc=; b=M+Pm1FIlABVBo8
+	c4COwKIGfznDxVu8EuCB8bXiLS9MOYxTti3PCZaCNN0e1/uMy/XldMlGx8KRjE/51hOZ4GicGZCN9
+	HpnzSKHpD0Ml0Ex886QZa0UyJwt7QHEz/bmAexpTnpKgKRq/jB0+mhjkEiYJtrXe/J7bc4SfRl5dA
+	TkZ/AcnWMt0C4pv+6ixz2UwerbTvBDCiWu4uRIK9e6uPOT5agd6z4ARaozDlohksTwso1cARdvc9G
+	4CUY2HiASDtazsDJGaOZ1CCjSCn1q/VHfHo8Fg4Xb7KXQqv+j+FhNeLnW1/nTe150Fz3owBv2IgLk
+	vYygedfM+J+Q+eYD/XPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hn1Ln-00027E-Dw; Mon, 15 Jul 2019 13:49:07 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hn1LZ-00025E-EW
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jul 2019 13:48:54 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6DBAA28;
- Mon, 15 Jul 2019 06:48:52 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 697233F71F;
- Mon, 15 Jul 2019 06:48:51 -0700 (PDT)
-Date: Mon, 15 Jul 2019 14:48:49 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Dave Martin <Dave.Martin@arm.com>
-Subject: Re: [RFC] Add virtual SDEI support in qemu
-Message-ID: <20190715134848.GI56232@lakrids.cambridge.arm.com>
-References: <1b0aa6b2-80b1-a72e-6849-7323c3b9c6bc@huawei.com>
- <20190715134059.GJ2790@e103592.cambridge.arm.com>
+	id 1hn1OH-0004Qd-Vt; Mon, 15 Jul 2019 13:51:42 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hn1O1-0004PP-6B
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jul 2019 13:51:26 +0000
+Received: from sasha-vm.mshome.net (unknown [73.61.17.35])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id AF8A32067C;
+ Mon, 15 Jul 2019 13:51:22 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1563198684;
+ bh=21E28yYC78DofIBAFVkNU2FsYhLQKYybxmuuZCw+0KM=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=zYjbgSWPXk2jD9xFmFRXZztl8+wyRX4EXahFXIO9VbDF28R/YRby98XTZGBGuqPG9
+ HlTQeL4U/ofKwYpKEwd+74sbmVyjVnyMOVidpmxXErm8CtzSWaueal/aQjgnpcTF5U
+ nopZ4awGehkRvezR6DvlztB+WJPmGgj/jE3afkEU=
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH AUTOSEL 5.2 082/249] perf cs-etm: Properly set the value of
+ 'old' and 'head' in snapshot mode
+Date: Mon, 15 Jul 2019 09:44:07 -0400
+Message-Id: <20190715134655.4076-82-sashal@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190715134655.4076-1-sashal@kernel.org>
+References: <20190715134655.4076-1-sashal@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190715134059.GJ2790@e103592.cambridge.arm.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190715_064853_536493_153F8FEC 
-X-CRM114-Status: GOOD (  21.31  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190715_065125_265138_935B1BBA 
+X-CRM114-Status: GOOD (  22.83  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,79 +79,220 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Zyngier <marc.zyngier@arm.com>, qemu-devel@nongnu.org,
- qemu-arm@nongnu.org, Guoheyi <guoheyi@huawei.com>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki Poulouse <suzuki.poulose@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Arnaldo Carvalho de Melo <acme@redhat.com>,
+ Peter Zijlstra <peterz@infradead.org>, Leo Yan <leo.yan@linaro.org>,
+ Jiri Olsa <jolsa@redhat.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jul 15, 2019 at 02:41:00PM +0100, Dave Martin wrote:
-> On Sat, Jul 13, 2019 at 05:53:57PM +0800, Guoheyi wrote:
-> > Hi folks,
-> > 
-> > Do it make sense to implement virtual SDEI in qemu? So that we can have the
-> > standard way for guest to handle NMI watchdog, RAS events and something else
-> > which involves SDEI in a physical ARM64 machine.
-> > 
-> > My basic idea is like below:
-> > 
-> > 1. Change a few lines of code in kvm to allow unhandled SMC invocations
-> > (like SDEI) to be sent to qemu, with exit reason of KVM_EXIT_HYPERCALL, so
-> > we don't need to add new API.
-> 
-> So long as KVM_EXIT_HYPERCALL reports sufficient information so that
-> userspace can identify the cause as an SMC and retrieve the SMC
-> immediate field, this seems feasible.
-> 
-> For its own SMCCC APIs, KVM exclusively uses HVC, so rerouting SMC to
-> userspace shouldn't conflict.
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
 
-Be _very_ careful here! In systems without EL3 (and without NV), SMC
-UNDEFs rather than trapping to EL2. Given that, we shouldn't build a
-hypervisor ABI that depends on SMC.
+[ Upstream commit e45c48a9a4d20ebc7b639a62c3ef8f4b08007027 ]
 
-I am strongly of the opinion that (for !NV) we should always use HVC
-here and have KVM appropriately forward calls to userspace, rather than
-trying to use HVC/SMC to distinguish handled-by-kernel and
-handled-by-userspace events.
+This patch adds the necessary intelligence to properly compute the value
+of 'old' and 'head' when operating in snapshot mode.  That way we can
+get the latest information in the AUX buffer and be compatible with the
+generic AUX ring buffer mechanic.
 
-For NV, the first guest hypervisor would use SMC to talk to KVM, all
-else being the same.
+Tester notes:
 
-> This bouncing of SMCs to userspace would need to be opt-in, otherwise
-> old userspace would see exits that it doesn't know what to do with.
-> 
-> > 2. qemu handles supported SDEI calls just as the spec says for what a
-> > hypervisor should do for a guest OS.
-> > 
-> > 3. For interrupts bound to hypervisor, qemu should stop injecting the IRQ to
-> > guest through KVM, but jump to the registered event handler directly,
-> > including context saving and restoring. Some interrupts like virtual timer
-> > are handled by kvm directly, so we may refuse to bind such interrupts to
-> > SDEI events.
-> 
-> Something like that.
-> 
-> Interactions between SDEI and PSCI would need some thought: for example,
-> after PSCI_CPU_ON, the newly online cpu needs to have SDEs masked.
-> 
-> One option (suggested to me by James Morse) would be to allow userspace
-> to disable in the in-kernel PSCI implementation and provide its own
-> PSCI to the guest via SMC -- in which case userspace that wants to
-> implement SDEI would have to implement PSCI as well.
+> Leo, have you had the chance to test/review this one? Suzuki?
 
-I think this would be the best approach, since it puts userspace in
-charge of everything.
+Sure.  I applied this patch on the perf/core branch (with latest
+commit 3e4fbf36c1e3 'perf augmented_raw_syscalls: Move reading
+filename to the loop') and passed testing with below steps:
 
-However, this interacts poorly with FW-based mitigations that we
-implement in hyp. I suspect we'd probably need a mechanism to delegate
-that responsibility back to the kernel, and figure out if that has any
-interaction with thigns that got punted to userspace...
+  # perf record -e cs_etm/@tmc_etr0/ -S -m,64 --per-thread ./sort &
+  [1] 19097
+  Bubble sorting array of 30000 elements
 
-Thanks,
-Mark.
+  # kill -USR2 19097
+  # kill -USR2 19097
+  # kill -USR2 19097
+  [ perf record: Woken up 4 times to write data ]
+  [ perf record: Captured and wrote 0.753 MB perf.data ]
+
+Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+Tested-by: Leo Yan <leo.yan@linaro.org>
+Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
+Cc: Jiri Olsa <jolsa@redhat.com>
+Cc: Peter Zijlstra <peterz@infradead.org>
+Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
+Cc: linux-arm-kernel@lists.infradead.org
+Link: http://lkml.kernel.org/r/20190605161633.12245-1-mathieu.poirier@linaro.org
+Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ tools/perf/arch/arm/util/cs-etm.c | 127 +++++++++++++++++++++++++++++-
+ 1 file changed, 123 insertions(+), 4 deletions(-)
+
+diff --git a/tools/perf/arch/arm/util/cs-etm.c b/tools/perf/arch/arm/util/cs-etm.c
+index 911426721170..0a278bbcaba6 100644
+--- a/tools/perf/arch/arm/util/cs-etm.c
++++ b/tools/perf/arch/arm/util/cs-etm.c
+@@ -31,6 +31,8 @@ struct cs_etm_recording {
+ 	struct auxtrace_record	itr;
+ 	struct perf_pmu		*cs_etm_pmu;
+ 	struct perf_evlist	*evlist;
++	int			wrapped_cnt;
++	bool			*wrapped;
+ 	bool			snapshot_mode;
+ 	size_t			snapshot_size;
+ };
+@@ -536,16 +538,131 @@ static int cs_etm_info_fill(struct auxtrace_record *itr,
+ 	return 0;
+ }
+ 
+-static int cs_etm_find_snapshot(struct auxtrace_record *itr __maybe_unused,
++static int cs_etm_alloc_wrapped_array(struct cs_etm_recording *ptr, int idx)
++{
++	bool *wrapped;
++	int cnt = ptr->wrapped_cnt;
++
++	/* Make @ptr->wrapped as big as @idx */
++	while (cnt <= idx)
++		cnt++;
++
++	/*
++	 * Free'ed in cs_etm_recording_free().  Using realloc() to avoid
++	 * cross compilation problems where the host's system supports
++	 * reallocarray() but not the target.
++	 */
++	wrapped = realloc(ptr->wrapped, cnt * sizeof(bool));
++	if (!wrapped)
++		return -ENOMEM;
++
++	wrapped[cnt - 1] = false;
++	ptr->wrapped_cnt = cnt;
++	ptr->wrapped = wrapped;
++
++	return 0;
++}
++
++static bool cs_etm_buffer_has_wrapped(unsigned char *buffer,
++				      size_t buffer_size, u64 head)
++{
++	u64 i, watermark;
++	u64 *buf = (u64 *)buffer;
++	size_t buf_size = buffer_size;
++
++	/*
++	 * We want to look the very last 512 byte (chosen arbitrarily) in
++	 * the ring buffer.
++	 */
++	watermark = buf_size - 512;
++
++	/*
++	 * @head is continuously increasing - if its value is equal or greater
++	 * than the size of the ring buffer, it has wrapped around.
++	 */
++	if (head >= buffer_size)
++		return true;
++
++	/*
++	 * The value of @head is somewhere within the size of the ring buffer.
++	 * This can be that there hasn't been enough data to fill the ring
++	 * buffer yet or the trace time was so long that @head has numerically
++	 * wrapped around.  To find we need to check if we have data at the very
++	 * end of the ring buffer.  We can reliably do this because mmap'ed
++	 * pages are zeroed out and there is a fresh mapping with every new
++	 * session.
++	 */
++
++	/* @head is less than 512 byte from the end of the ring buffer */
++	if (head > watermark)
++		watermark = head;
++
++	/*
++	 * Speed things up by using 64 bit transactions (see "u64 *buf" above)
++	 */
++	watermark >>= 3;
++	buf_size >>= 3;
++
++	/*
++	 * If we find trace data at the end of the ring buffer, @head has
++	 * been there and has numerically wrapped around at least once.
++	 */
++	for (i = watermark; i < buf_size; i++)
++		if (buf[i])
++			return true;
++
++	return false;
++}
++
++static int cs_etm_find_snapshot(struct auxtrace_record *itr,
+ 				int idx, struct auxtrace_mmap *mm,
+-				unsigned char *data __maybe_unused,
++				unsigned char *data,
+ 				u64 *head, u64 *old)
+ {
++	int err;
++	bool wrapped;
++	struct cs_etm_recording *ptr =
++			container_of(itr, struct cs_etm_recording, itr);
++
++	/*
++	 * Allocate memory to keep track of wrapping if this is the first
++	 * time we deal with this *mm.
++	 */
++	if (idx >= ptr->wrapped_cnt) {
++		err = cs_etm_alloc_wrapped_array(ptr, idx);
++		if (err)
++			return err;
++	}
++
++	/*
++	 * Check to see if *head has wrapped around.  If it hasn't only the
++	 * amount of data between *head and *old is snapshot'ed to avoid
++	 * bloating the perf.data file with zeros.  But as soon as *head has
++	 * wrapped around the entire size of the AUX ring buffer it taken.
++	 */
++	wrapped = ptr->wrapped[idx];
++	if (!wrapped && cs_etm_buffer_has_wrapped(data, mm->len, *head)) {
++		wrapped = true;
++		ptr->wrapped[idx] = true;
++	}
++
+ 	pr_debug3("%s: mmap index %d old head %zu new head %zu size %zu\n",
+ 		  __func__, idx, (size_t)*old, (size_t)*head, mm->len);
+ 
+-	*old = *head;
+-	*head += mm->len;
++	/* No wrap has occurred, we can just use *head and *old. */
++	if (!wrapped)
++		return 0;
++
++	/*
++	 * *head has wrapped around - adjust *head and *old to pickup the
++	 * entire content of the AUX buffer.
++	 */
++	if (*head >= mm->len) {
++		*old = *head - mm->len;
++	} else {
++		*head += mm->len;
++		*old = *head - mm->len;
++	}
+ 
+ 	return 0;
+ }
+@@ -586,6 +703,8 @@ static void cs_etm_recording_free(struct auxtrace_record *itr)
+ {
+ 	struct cs_etm_recording *ptr =
+ 			container_of(itr, struct cs_etm_recording, itr);
++
++	zfree(&ptr->wrapped);
+ 	free(ptr);
+ }
+ 
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
