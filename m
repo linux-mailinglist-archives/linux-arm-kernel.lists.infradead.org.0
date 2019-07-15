@@ -2,63 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7412C69E7D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 23:45:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D407269ED2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 00:17:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z2tnb5gba8YGbM2YuqVNG5pMIRS4CpUGZ31qE1OBAVs=; b=DGslE1Iv0QnqAk
-	nXdDaqlm9iAeNmfKP2HDfHvdLE13bLHG4MpeVcmmiTOjb0OS88M8Q3oD9vg6xV8LftPMoaUA/ewBD
-	tlhEHIueTnRDyqMS7IkzYo6grmHCATrmrEX4gHCDMMjMsWvzINnviM29x5bpOr1OLYkgQVoOD/phZ
-	IGShxgeSPrfUk9wMoufhry7BfLQTi3sBVgsZi/ZvPbIGnep2W73/HbbY8zrvBpgZsTBr8xpI+NCG7
-	mFW33TuBJkkPSrYSkdGUGS5B/10cn1aM505zbV//XF3aFIN7jUYpRX9FTYe5sqNmDmQbJaP8UWCFL
-	0APBb7aN9iP5DnhNRV9A==;
+	List-Owner; bh=8BQHYhaHx2w3xgseFy4i57j9IhvoT7xvwVXt5iN56yQ=; b=Bp5IIto3xxnh44
+	Z0sUI5xBMdRCK8M1xaEBQbg6e+UN4YZkGQOnEgOZJq02XameUXzBu98Z3AzB7kh53Z7kjB28s2fAq
+	Vt+YhVgcV3RVsG51FTmXoUwjUh9+iucxcWTRqQotncd323LmuoXLQfURVzo7AyJ0XGBQae9SPHpWZ
+	hQQt0dRjNKL87K2ClN3EAUAELvAOuL0DN79GiyKk1vIHpO4Yel+ZgyL2Q7zS7Xa4EyXKYIc84ENZh
+	FREHJ6L3GCo0DxUCJCQ3VlpNmIjVzzSB7K8LnXkOpCIVUk9tN09wswMwxRLIb6Uo31N3cRCiW/KAb
+	zcYmXdl7I/hjWxvYZD8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hn8n6-0005tI-NC; Mon, 15 Jul 2019 21:45:48 +0000
+	id 1hn9HY-0001D9-Ri; Mon, 15 Jul 2019 22:17:16 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hn8mv-0005sp-S1
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jul 2019 21:45:39 +0000
-Received: from mail-qt1-f176.google.com (mail-qt1-f176.google.com
- [209.85.160.176])
+ id 1hn9HO-0001Cj-MQ
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jul 2019 22:17:08 +0000
+Received: from mail-qk1-f176.google.com (mail-qk1-f176.google.com
+ [209.85.222.176])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 124BC2086C
+ by mail.kernel.org (Postfix) with ESMTPSA id 529FB21743
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 15 Jul 2019 21:45:37 +0000 (UTC)
+ Mon, 15 Jul 2019 22:17:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563227137;
- bh=bOxv9M7FSpciDgt5fsuUf7+3jKRJ0QVRRRcpPCwYOrw=;
+ s=default; t=1563229026;
+ bh=BlwpHGRzUKug6tnX6UBU925svxeIAUzPx9AZvkYOfuc=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=WmLnbmURCH4WkzfOOmkBAw5lk7MnVQisf4J3MnwuyPiMhlhvBuN5JVyeGXEXB+Ixk
- xX3e4vtAccficMlMVXAiP+KyuXptRzGS8NOXbwTY73S7l8pOXpdzc4RYjZ5jwf1aCS
- Hxpz+CCxHWGCPJWm87wV8ehQ0urqeD+Y4R6DxHFs=
-Received: by mail-qt1-f176.google.com with SMTP id h21so17275315qtn.13
+ b=qCV88PL5gv6dKBdE4udTyZH0Mew03T4PslZjo7f69A4VS3mujZNQnJukYk1RIBwGe
+ 7gEEL7cR5AVZbNAcq4HXv9KvoXEIpIWNu0wH6aqqbuiMjFPb/RckAWHyqiLCd2TPQZ
+ BCqmABthxE36G96WtYzeEIuNPCaJZmkaYf9CYSaE=
+Received: by mail-qk1-f176.google.com with SMTP id d15so12957130qkl.4
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 15 Jul 2019 14:45:37 -0700 (PDT)
-X-Gm-Message-State: APjAAAUE2j/nLMvjBORhv5CiAaT/xlm38Mq14WVqiaaqCd/Sw5ey2Vo2
- b4EC/fv9NPu8IRl2JrVR8pcxYw9xHhVyRYC4+A==
-X-Google-Smtp-Source: APXvYqwx3zKms08dwfbW9Rrd7dTNSoAFjSjWmA1WWziCEAZ9wenpckHkrtk0kHSnx6k9ODHZtx+s9U+m7pB8Fa4kPOQ=
-X-Received: by 2002:a0c:b627:: with SMTP id f39mr21342915qve.72.1563227136354; 
- Mon, 15 Jul 2019 14:45:36 -0700 (PDT)
+ Mon, 15 Jul 2019 15:17:06 -0700 (PDT)
+X-Gm-Message-State: APjAAAVtGiQxDawO8HsmDYSAZPuWhnQMrYP2aqzrzP2Ihf4D7ClDnb87
+ OpyyMF95b1aWuwgM4EFLJYdCwwPCQL5z/JREIw==
+X-Google-Smtp-Source: APXvYqx/GbT4uRQgQ84L9Nym4k71tlUcZTQ8jCh8KLZ+3yf2bocUNGFhxoJY/nlG/vS0EgRIW62er26VYHNJB9FTr1c=
+X-Received: by 2002:a37:a48e:: with SMTP id
+ n136mr19091615qke.223.1563229025489; 
+ Mon, 15 Jul 2019 15:17:05 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190516225614.1458-1-robh@kernel.org>
- <20190520145830.GE3274@piout.net>
-In-Reply-To: <20190520145830.GE3274@piout.net>
-From: Rob Herring <robh@kernel.org>
-Date: Mon, 15 Jul 2019 15:45:24 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqK0piWGQBeqcOceF=fSX4vSW7_vyv0qAAxz-bg25qEVow@mail.gmail.com>
-Message-ID: <CAL_JsqK0piWGQBeqcOceF=fSX4vSW7_vyv0qAAxz-bg25qEVow@mail.gmail.com>
-Subject: Re: [PATCH] ARM: dts: at91: Avoid colliding 'display' node and
- property names
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
+References: <20190712033214.24713-1-andrew@aj.id.au>
+ <20190712033214.24713-2-andrew@aj.id.au>
+In-Reply-To: <20190712033214.24713-2-andrew@aj.id.au>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Mon, 15 Jul 2019 16:16:54 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqLkOtsAxj9NvNB=EEkH00k-dtNedNY042uuntSmcjhDhA@mail.gmail.com>
+Message-ID: <CAL_JsqLkOtsAxj9NvNB=EEkH00k-dtNedNY042uuntSmcjhDhA@mail.gmail.com>
+Subject: Re: [PATCH v2 1/2] dt-bindings: mmc: Document Aspeed SD controller
+To: Andrew Jeffery <andrew@aj.id.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190715_144537_931465_4F7018FB 
-X-CRM114-Status: GOOD (  18.76  )
+X-CRM114-CacheID: sfid-20190715_151706_766921_20125C1A 
+X-CRM114-Status: GOOD (  17.47  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -87,8 +87,12 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Ulf Hansson <ulf.hansson@linaro.org>, linux-aspeed@lists.ozlabs.org,
+ Ryan Chen <ryanchen.aspeed@gmail.com>, linux-mmc <linux-mmc@vger.kernel.org>,
+ Adrian Hunter <adrian.hunter@intel.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Joel Stanley <joel@jms.id.au>,
  "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
  <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
@@ -96,46 +100,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 20, 2019 at 8:58 AM Alexandre Belloni
-<alexandre.belloni@bootlin.com> wrote:
+On Thu, Jul 11, 2019 at 9:32 PM Andrew Jeffery <andrew@aj.id.au> wrote:
 >
-> On 16/05/2019 17:56:14-0500, Rob Herring wrote:
-> > While properties and child nodes with the same name are valid DT, the
-> > practice is not encouraged.
+> The ASPEED SD/SDIO/eMMC controller exposes two slots implementing the
+> SDIO Host Specification v2.00, with 1 or 4 bit data buses, or an 8 bit
+> data bus if only a single slot is enabled.
 >
-> I don't see anything mentioning that in the devicetree specification. I
-> think this is something you should add if you don't want that to happen
-> again.
-
-I suppose, but I prefer tools to enforce it.
-
+> Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
+> ---
+> In v2:
 >
-> > Furthermore, the collision is problematic for
-> > YAML encoded DT. Let's just avoid the issue and rename the nodes.
-> >
+> * Rename to aspeed,sdhci.yaml
+> * Rename sd-controller compatible
+> * Add `maxItems: 1` for reg properties
+> * Move sdhci subnode description to patternProperties
+> * Drop sdhci compatible requirement
+> * #address-cells and #size-cells are required
+> * Prevent additional properties
+> * Implement explicit ranges in example
+> * Remove slot property
 >
-> Or maybe you should fix the tool ;)
-
-You mean the YAML and JSON specifications because the problem is it is
-not valid YAML? (I think YAML allowed it at one time, but it is
-deprecated) The only way to fix it in the tool would be to define some
-way to handle the collision like renaming properties and then undoing
-that.
-
-> Do you plan to enforce it at some point? How close are you?
-
-Soon as this patch is merged. There's a switch in parsing tools to
-disallow the collision, so it will be an error instead of a warning.
-
-> > Cc: Nicolas Ferre <nicolas.ferre@microchip.com>
-> > Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>
-> > Cc: Ludovic Desroches <ludovic.desroches@microchip.com>
-> > Cc: linux-arm-kernel@lists.infradead.org
-> > Signed-off-by: Rob Herring <robh@kernel.org>
+>  .../devicetree/bindings/mmc/aspeed,sdhci.yaml | 90 +++++++++++++++++++
+>  1 file changed, 90 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/mmc/aspeed,sdhci.yaml
 >
-> Acked-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+> diff --git a/Documentation/devicetree/bindings/mmc/aspeed,sdhci.yaml b/Documentation/devicetree/bindings/mmc/aspeed,sdhci.yaml
+> new file mode 100644
+> index 000000000000..67a691c3348c
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/mmc/aspeed,sdhci.yaml
+> @@ -0,0 +1,90 @@
+> +# SPDX-License-Identifier: GPL-2.0-or-later
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/mmc/aspeed,sdhci.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: ASPEED SD/SDIO/eMMC Controller
+> +
+> +maintainers:
+> +  - Andrew Jeffery <andrew@aj.id.au>
+> +  - Ryan Chen <ryanchen.aspeed@gmail.com>
+> +
+> +description: |+
+> +  The ASPEED SD/SDIO/eMMC controller exposes two slots implementing the SDIO
+> +  Host Specification v2.00, with 1 or 4 bit data buses, or an 8 bit data bus if
+> +  only a single slot is enabled.
+> +
+> +  The two slots are supported by a common configuration area. As the SDHCIs for
+> +  the slots are dependent on the common configuration area, they are described
+> +  as child nodes.
+> +
+> +properties:
+> +  compatible:
+> +    enum: [ aspeed,ast2400-sd-controller, aspeed,ast2500-sd-controller ]
 
-Is someone going to apply this?
+This is actually a list of 4 strings. Please reformat to 1 per line.
 
 Rob
 
