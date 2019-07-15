@@ -2,91 +2,125 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88730688CC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 14:16:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4811E68969
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 14:47:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=CM+feabS3fR0FwL+cXBUDSBWvwk0QZs9yPCVIhzj4j0=; b=KSUHLidUo6hg2ZZcK8d9Kk6kO
-	mnfE4a+y/dDcY/Dnu39BjcX6japz6fXMXRHv2SlYP1lFz4tG2jYEShTPPXYeFPqrmV5l1r9uP34ew
-	nNkVOK8JhuhhqVCEeIj//OSptHgrHkXebJplIX43/Z8U0N8Iv5l0OUk849eemd8DpDzhLAr7lu9Tk
-	raYpFlIvgpj2BbAhtdo3U/8yt1qPCi3xCebrdf1Q6/wR42/e5xEXJp5BhvocLDxozPwYeJmg7vCQ6
-	3snGtQWOqBRZIU9gYJTuOQiolpKCl6dSLJWfvsKeln/gkbEB04n5Q9zvaHt/UKkYaRyruLZn15ICS
-	GdHPakqpA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	In-Reply-To:List-Owner; bh=Vr5qTcVz5L+dft8Fgg7c+DLVCC9ANfbTPOU6/5vTW/8=; b=PE
+	cjv4sIeRu+ynnW7Tz/j4JDbeoWaNzbxN9PLLHgvwqsPv2SoDeC7OHa/v0UlLUjwa4DIP3TO7ez8L0
+	dPfhwEDu5huRksY6LNBWf91u//BtgvlkSkAew0bPAJqelFiTujbaDoazMSmdCde3GqTeHWRn0hem2
+	FIGj/yT83O2v3uhaRQZ28QdRMJaM1PQ3cBesivPnTlH/P40PO8r9vw/eXqZJf8apXJxWGmwT1T208
+	jWRT/pwRcfiT1rJ/7y5u2tEiQo4R7uOU/Y26yDzYFoluQJjNgw+/l3jmXhjnwSE8qhSvA0zvG1QU7
+	P+bEDdsNy9GDzxcGnj5pILY7rF8Z//zw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hmzuR-0001YL-F8; Mon, 15 Jul 2019 12:16:47 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1hn0O0-0006Wl-MU; Mon, 15 Jul 2019 12:47:21 +0000
+Received: from mailout1.w1.samsung.com ([210.118.77.11])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hmzu3-0001XT-F5
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jul 2019 12:16:25 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x6FCBQ5h009666; Mon, 15 Jul 2019 14:16:17 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=0l0KWOudOwGD2GtNuFmuRfvglfpfZeZ5RNdf9uOHeo0=;
- b=HP6LhfEFwOGytesGTPLouOmjkvT73WCWzofcDDaFPsBk4E4YOdWvUKOce6D0w6HeycZm
- /TybVWNAgSX4N7fOuqV1k0XMUSBnjRYOg2OIyksaIr+8EA3JvvnrTZ/Ak2wbUr/VbehO
- u6yHIkPHG0cJExOajvnbGyF9EBLkjEl9Wd3IUoM9k6Xv0USFw5U3IZmY+w0gRKF6LiPd
- 5v8emB2hPy38flTQdjbGqHPY3Kffb6n//vJ1DGBqc2vJ902MqQLxzc0jpvfc0A0aKLij
- pomAXm24Nje8yyoUEL0Nsvary7/I+ERwb1ZbVsDPoMUhlKtn3cbI5lDJ47j6iLJJ+P/T /Q== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2tq52u5sfh-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Mon, 15 Jul 2019 14:16:17 +0200
-Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id BF70134;
- Mon, 15 Jul 2019 12:16:15 +0000 (GMT)
-Received: from Webmail-eu.st.com (sfhdag3node1.st.com [10.75.127.7])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 978E42A8D;
- Mon, 15 Jul 2019 12:16:15 +0000 (GMT)
-Received: from [10.48.0.131] (10.75.127.50) by SFHDAG3NODE1.st.com
- (10.75.127.7) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 15 Jul
- 2019 14:16:14 +0200
-Subject: Re: [RFC 2/2] rpmsg: imx: add the initial imx rpmsg support
-To: Richard Zhu <hongxing.zhu@nxp.com>, Oleksij Rempel
- <o.rempel@pengutronix.de>, "ohad@wizery.com" <ohad@wizery.com>,
- "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
- "linux-remoteproc@vger.kernel.org" <linux-remoteproc@vger.kernel.org>
-References: <AM0PR0402MB3570E209B4940C3772D56AC98CCF0@AM0PR0402MB3570.eurprd04.prod.outlook.com>
-From: Arnaud Pouliquen <arnaud.pouliquen@st.com>
-Message-ID: <03420f31-0982-4bd9-303a-60b787638775@st.com>
-Date: Mon, 15 Jul 2019 14:16:14 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
-MIME-Version: 1.0
-In-Reply-To: <AM0PR0402MB3570E209B4940C3772D56AC98CCF0@AM0PR0402MB3570.eurprd04.prod.outlook.com>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.50]
-X-ClientProxiedBy: SFHDAG6NODE1.st.com (10.75.127.16) To SFHDAG3NODE1.st.com
- (10.75.127.7)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-07-15_03:, , signatures=0
+ id 1hn0LR-0003ek-HE
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jul 2019 12:44:44 +0000
+Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
+ by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20190715124435euoutp014dac103066a3d6e7bac53ac8f02d922c~xlUZv1XfM1950319503euoutp01P
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 15 Jul 2019 12:44:35 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
+ 20190715124435euoutp014dac103066a3d6e7bac53ac8f02d922c~xlUZv1XfM1950319503euoutp01P
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1563194675;
+ bh=mnhr5Q+nqFJ14GP8+IuANmhop048Hw+aOQuTTF0FCuw=;
+ h=From:To:Cc:Subject:Date:References:From;
+ b=U28iKta98c/CNT1Llobctv6obP7c3dQscoN2M/IP5lAbswkUjZr5dLI0uHytSKU1T
+ 4icw9olaCK8eKLiLLHQDoRRV220DCThZBI3bkD2gNDJZVOJw6Vbei1/sjqQD+lvbOZ
+ tNqqWezmaqyKyeJgsRXgYkg8VVx+B8ZvJf9z/amY=
+Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTP id
+ 20190715124434eucas1p2480b9abb90ad28e0cc76cc7f246e847d~xlUY9WdeK1849318493eucas1p2i;
+ Mon, 15 Jul 2019 12:44:34 +0000 (GMT)
+Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
+ eusmges2new.samsung.com (EUCPMTA) with SMTP id 5F.C1.04377.2357C2D5; Mon, 15
+ Jul 2019 13:44:34 +0100 (BST)
+Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20190715124433eucas1p2a292f236ea55751117836742c1ca5d23~xlUYJsP131544915449eucas1p2t;
+ Mon, 15 Jul 2019 12:44:33 +0000 (GMT)
+Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
+ eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20190715124433eusmtrp1e8b56280bd67116b2f3b3afc781d1774~xlUX7bwbe0421504215eusmtrp1Z;
+ Mon, 15 Jul 2019 12:44:33 +0000 (GMT)
+X-AuditID: cbfec7f4-113ff70000001119-c4-5d2c7532e0f0
+Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
+ eusmgms1.samsung.com (EUCPMTA) with SMTP id CB.30.04146.1357C2D5; Mon, 15
+ Jul 2019 13:44:33 +0100 (BST)
+Received: from AMDC3778.DIGITAL.local (unknown [106.120.51.20]) by
+ eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
+ 20190715124432eusmtip2e09a4c7f98a6095cbf1fd25df33d3473~xlUXKIwlM0518605186eusmtip2b;
+ Mon, 15 Jul 2019 12:44:32 +0000 (GMT)
+From: Lukasz Luba <l.luba@partner.samsung.com>
+To: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
+ linux-clk@vger.kernel.org
+Subject: [PATCH v1 00/50] Exynos5x clocks and buses changes
+Date: Mon, 15 Jul 2019 14:43:27 +0200
+Message-Id: <20190715124417.4787-1-l.luba@partner.samsung.com>
+X-Mailer: git-send-email 2.17.1
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrLKsWRmVeSWpSXmKPExsWy7djP87pGpTqxBuu2CFncWneO1WLjjPWs
+ Fte/PGe1mH8EyO1//JrZ4vz5DewWZ5vesFvcapCx2PT4GqvFx557rBaXd81hs5hxfh+Txdoj
+ d9ktll6/yGRx8ZSrxe3GFWwWrXuPsFscftPOavHv2kYWB2GPNfPWMHq8v9HK7rFpVSebx+Yl
+ 9R4H3+1h8ujbsorR4/MmuQD2KC6blNSczLLUIn27BK6MOX//MxacM6nofbmBuYFxm1YXIyeH
+ hICJxPU1N5m6GLk4hARWMEq0TXsA5XxhlFixuYsdwvnMKLHpZAcLTMu/f9+ZQWwhgeWMEv33
+ HeA6Fp1dC1TEwcEmoCexY1UhSI2IwBJGiSM/k0BqmAVuMknsebKTFaRGWMBa4t9nNxCTRUBV
+ YnuTP0g5r4CdRM/pG2wQq+QlVm84wAzSKiGwiV3iWeM5JoiEi8TuA28ZIWxhiVfHt7BD2DIS
+ pyf3QN1ZLNHQuxCqpkbicf9cqBpricPHL4KdwCygKbF+lz5E2FHixc7JYGEJAT6JG28FQcLM
+ QOakbdOZIcK8Eh1tQhDVGhJbei5AHSMmsXzNNKjhHhKP1x1kBCkXEoiV2H9MdAKj3CyEVQsY
+ GVcxiqeWFuempxYb5aWW6xUn5haX5qXrJefnbmIEJqLT/45/2cG460/SIUYBDkYlHl6HFO1Y
+ IdbEsuLK3EOMEhzMSiK8tl+BQrwpiZVVqUX58UWlOanFhxilOViUxHmrGR5ECwmkJ5akZqem
+ FqQWwWSZODilGhi1Dyz0jnggs7f/wttdb44uLP+z4/QiXj4vU4H1xod8dFtjoq/x8Ya/fZh2
+ O9dNkC9drOP5vI1dDPlrPh1f7FqeZcVvcZv5hKyFwZP7auuUL0kl7Ny2KHtF2rNZr0w+rRWy
+ FzzYd2nW1ErG4PCge0W29Sam71oy00zqd4itu+XPpChhWmlglqnEUpyRaKjFXFScCAC8v07q
+ QAMAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFmphkeLIzCtJLcpLzFFi42I5/e/4PV3DUp1Yg33vJS1urTvHarFxxnpW
+ i+tfnrNazD8C5PY/fs1scf78BnaLs01v2C1uNchYbHp8jdXiY889VovLu+awWcw4v4/JYu2R
+ u+wWS69fZLK4eMrV4nbjCjaL1r1H2C0Ov2lntfh3bSOLg7DHmnlrGD3e32hl99i0qpPNY/OS
+ eo+D7/YwefRtWcXo8XmTXAB7lJ5NUX5pSapCRn5xia1StKGFkZ6hpYWekYmlnqGxeayVkamS
+ vp1NSmpOZllqkb5dgl7GnL//GQvOmVT0vtzA3MC4TauLkZNDQsBE4t+/78wgtpDAUkaJV/tD
+ IeJiEpP2bWeHsIUl/lzrYoOo+cQoMfMwkM3BwSagJ7FjVSFIWERgBaPE5BPeXYxcHMwCr5kk
+ jhx9xwpSIyxgLfHvsxuIySKgKrG9yR+knFfATqLn9A02iOnyEqs3HGCewMizgJFhFaNIamlx
+ bnpusaFecWJucWleul5yfu4mRmAMbDv2c/MOxksbgw8xCnAwKvHwOqRoxwqxJpYVV+YeYpTg
+ YFYS4bX9ChTiTUmsrEotyo8vKs1JLT7EaAq0eyKzlGhyPjA+80riDU0NzS0sDc2NzY3NLJTE
+ eTsEDsYICaQnlqRmp6YWpBbB9DFxcEo1MC6o91y8p+nT/PfqC3M+nXuabOfZ/mLea5FdsyXW
+ 3uRfmlbb92lTzGIvLq/2EtPgnNADS/b2btx0OPXe9U/5sx4HHDGvr516PFEwlFcn+/qKi8aC
+ D0scd30WCJr/36a2I1FUJfJ41kLrkkkJ6+R2lLfYyomphva37HqqKxhgFZDz4MTaFevkVJRY
+ ijMSDbWYi4oTAUUmgxOXAgAA
+X-CMS-MailID: 20190715124433eucas1p2a292f236ea55751117836742c1ca5d23
+X-Msg-Generator: CA
+X-RootMTR: 20190715124433eucas1p2a292f236ea55751117836742c1ca5d23
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20190715124433eucas1p2a292f236ea55751117836742c1ca5d23
+References: <CGME20190715124433eucas1p2a292f236ea55751117836742c1ca5d23@eucas1p2.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190715_051623_882500_3CF4AE75 
-X-CRM114-Status: GOOD (  28.75  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190715_054441_712100_A9EBA8B9 
+X-CRM114-Status: GOOD (  15.40  )
+X-Spam-Score: -5.1 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.11 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,170 +132,143 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- Fabien DESSENNE <fabien.dessenne@st.com>,
- "loic.pallardy@st.com" <loic.pallardy@st.com>,
- "elder@linaro.org" <elder@linaro.org>
+Cc: mark.rutland@arm.com, cw00.choi@samsung.com, b.zolnierkie@samsung.com,
+ sboyd@kernel.org, mturquette@baylibre.com, krzk@kernel.org,
+ Lukasz Luba <l.luba@partner.samsung.com>, a.hajda@samsung.com,
+ robh+dt@kernel.org, kyungmin.park@samsung.com, kgene@kernel.org,
+ myungjoo.ham@samsung.com, s.nawrocki@samsung.com, m.szyprowski@samsung.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi all,
 
+The patch set fixes clock settings for the Exynos5420/5422/5800 SoCs which
+can be found in Odroid XU3/4, Google Peach Pi. Support for DT board files
+with Exynos5420 (like Google Peach Pit) are under development.  The old
+implementation did not configure properly the clock rates or the
+connections which could cause performance issues or instability.  The
+Exynos5x SoC has complex clocks topology. Some of the NoC clock branches
+provide clock to the device internal buses or AXI interface and had wrong
+settings.
 
-On 7/15/19 10:22 AM, Richard Zhu wrote:
+In the old configuration the OPP values where not reflecting the actually
+set frequencies, which were possible by setting the divider value on the
+clock tree. The algorithms in governors, which use these frequencies,
+relied on wrong assumption during their calculations. It also applies to
+device drivers code, which does not check the rate of the clock but relay
+on OPP values, which in some cases are different.  It is not only the bus
+frequency but also the connected component internal buses (accelerators
+like e.g. G2D, scaler, rotator) frequency.  Wrong frequency set due to
+impossible division from PLL rate caused that some devices had lower than
+possible clock for internal logic and for the AXI bus which transfers the
+data.  For example fixes for MMC controller, where OPP max frequency
+changed from 150MHz to 240MHz, changing the PLL rate to proper value caused
+performance increase up to 20% (FSYS2 OPP table).
 
-<snip>
+Affected components inside SoC: image rotator, usb3.0 and 2.0 controller,
+jpeg accelerator, image/video scaler, mmc controller, ISP, display
+controller, all NoC buses.
 
->>>> sg693v6UjM%2BFEk7TYHxgg6RDX611%2FKfjqA%3D&amp;reserved=0
->>>>>
->>>>> M core/RTOS insists to run and manage its resources assigned by XRDC
->>>> standalone.
->>>>> All the interactions between A core and M core are transferred on
->>>>> RPMSG
->>>> channels.
->>>>> For example, the audio codec configuration and so on.
->>>>> So, what I do here is just setup the communication RPMSG channels
->>>>> between A core/Linux and M core/RTOS.
->>>>>
->>>>> One more concern, I'm afraid that I may mess up the current solid
->>>>> reproc flow and framework if  I force this implementation into the
->>>>> current
->>>> reproc drivers.
->>>>> So, I summit this patch-set in the end. Pre-reserved vring buffer,
->>>>> register virtio_device, establish the RPMSG channels lets A
->>>>> core/Linux and
->>>> M Core/RTOS can communicate with each other.
->>>>> That's all.
->>>> Your concern is valid, and as we have the same requirement, it would
->>>> be nice to find a common solution. That's why i propose this
->>>> alternative, which would have the advantage of reusing existing rpmsg
->> implementation.
->>>>
->>>    [Richard Zhu] I looked through the codes briefly. Correct me if my
->> understand
->>>    is wrong.
->>> It seems that the A core side does a lot of manipulations to the remote M4
->> core
->>>    on ST32M.
->>> During the start/stop/recovery operations, M4 acted as slave and waiting
->> for the
->>>    control constructions sent from the master A core/Linux side although
->> the
->>>    early_boot is set.
->>>
->>> There are some differences in the relationship between A core and M core.
->>> On ST32M: M4/RTOS would started/stopped/recovered by A core/Linux
->> side.
->>>
->>> In my purposed implementation, both A core/Linux and M core/RTOS
->> working in the real
->>>    independent mode.
->>> - M4/RTOS complete the start/stop/recovery and son on operations by itself,
->> it wouldn't
->>>    accept any start/stop/reset interactions from A core/Linux side. Same to
->> A core/Linux side.
->>> - SCFW monitors the running status of each side, would notify the other side,
->> if there is a
->>>    system stall at one side.
->>>    when the lived side receives the notification and know the other side is
->> reset,
->>>    It would only recover its own rpmsg stack, wait the rpmsg "ready" signal
->> of the opposite side,
->>>    then re-establish the rpmsg channels again.
->>>    A core/Linux or M core/RTOS wouldn't do the start/stop/recovery
->> operations on the opposite side.
->> On STM32MP1 we have not exactly the same strategy but it only a ST design
->> choice, implemented in our stm32 remoteproc driver. You should be able to
->> implement your expected behavior in your the imx remoteproc driver.
->>
->> On STM32MP1 we manage the M4 preloaded firmware in this way:
->> -  On Linux stm32 remoteproc probe:
->>          We detect that the firmware is preloaded (early-booted filed in DT)
->> and set the earl_boot variable.
->>          we provide the resource table address to the remoteproc core that
->> parses it an call the stm32_rproc_start. here we do nothing as M4 already
->> started we just set the hold boot to freeze the M4 in case of crash
->>
->> - On M4 crash we have not the same strategy as your one. We consider that
->> the M4 firmware can be corrupted and either we try to reload a firmware
->> which as been provided by application, or we don't let it restarting (hold boot
->> set on start).
->>
->> -We allow userland to stop the preloaded firmware to load and to run a new
->> one.
->>
->>>
->>> Anyway, let me do some more homework, and figure out that whether I
->>> can fit these into the existing remoteproc framework or not.
->> Sorry to give you homework... but seems (IMHO) possible to integrate your
->> constraint in rpmsg/remoteproc current design.
->>
-> [Richard Zhu] Hi Arnaud, I still can't find a way to combine this patch-set with the master/slave mode.
-> Regarding to my understand, almost all the defined items of the struct rproc is used by the master(A core/Linux) to control/manipulate the slave remote slave processor.
-> It's fine when the master(A core)/Slave(remote processor) mode is used.
-> 
-> But it's too hard to apply the slave/master mode into this scenario.
-> - M core/RTOS insists to run and manage its resources assigned by XRDC standalone.
-Please could you explain the dependency between XRDC management and the 
-RPMsg protocol, i don't figure out the blocking point here. So maybe i 
-missed something important.
-> - M core/RTOS wouldn't accept the start/stop/recover/reset operations issued from A core/Linux side.
-in addition with the patch https://lkml.org/lkml/2018/11/30/159 you can 
-control this in your platform driver using the rproc->preloaded variable
-> 
-> So the parallel mode is used in my proposal, both A core/Linux and M core/RTOS works in real independent mode. There is no slave/master in this implementation.
-They are independent in terms of live cycle but not in terms of 
-communication. So you still need synchronization.
-For instance your implementation uses a mailbox to synchronize both 
-(mailbox rdb). In existing rpmsg/virtio driver similar synchronization 
-is done through a status register in the resource table plus an optional 
-mailbox kick from Linux to remote processor.
+Some of the clocks have name which might indicate their max speed, e.g.
+CLK_DOUT_ACLK266 but it is not true.  The max speed clock from this example
+is 300MHz (according to the RM) and has been reflected accordingly in this
+patch set.
 
-In case the Cortex-M4 starts first:
-- The M4 firmware starts first (managing CAN)
-- The Linux OS starts: it just parses the resource table, 
-creates/allocates virtio rings and buffers, update the vdev status flag 
-in the resource table and kick the M4 via mailbox.
-- The M4 receive the mailbox kick, checks the vdev status and start the 
-rpmsg communication.
-This is what we have implemented on STM32MP1. And we are able to re-use 
-the same M4 firmware booted first (independent mode) or loaded by Linux.
+Main changes:
+- defined new clocks or added IDs to take them from DT nodes
+- set proper PLLs frequency for: MPLL, DPLL, which would handle children
+  clock requirements down in the tree,
+- changed parents of some clocks to proper PLL or to proper parent clock,
+- properly calculated OPP values for the buses keeping in mind the parent
+  clock frequency and possible values derived from there by one clock
+divider with proper bit length indicating maximum allowed divider; thanks
+to that it is possible to set the requested frequency in all children
+without changing the PLL frequency, which also makes the governor frequency
+values assumption true,
+- some OPPs were removed because it was not possible to set them due to
+  different base frequency, which would require of changing PLL rate, which
+might affect other devices connected to this PLL and their misscalculated
+rates.
 
-> All the items defined in the struct rproc can't be used in this scenario.
-I would say can be ignored, but the idea is that same rproc manages both 
-scenarios.
-> IMHO, this patch-set is just to setup one communication channel between A core and M core.
-> There are no salve remote processor instances at A core/Linux side, that can be controlled and manipulated by A core/Linux.
-Yes i agree with you, no need to manage the remote processor in your case.
-But the goal of remoteproc is not only the management of the remote 
-processor but also the management of the shared resources (rpmsg, 
-carveout, remote processor traces...). My proposal is to bypass the 
-management of the remote processor live cycle using Loic's patches, but 
-to keep the remoteproc part handling the associated resources to be able 
-to probe RPMsg bus driver.
+The last two patches touches Exynos5800 and are optional. They have been
+checked due to some issues with disabling parent, which accidently was
+populated up to MPLL and shut down the PLL. They might be used for testing
+on Peach Pi.
 
-> 
-> Is it possible to add another folder(e.x parallel_proc) under drivers/remoteproc/ to extend the current remoteproc work mode?
-> Then, the parallel work mode can be setup in it. And the original master/slave mode wouldn't messed up by the parallel mode extension.
-> Please to feel free to give the comments.
-> Any comments and suggestions are appreciated.
-IMHO, That's seems to be useless, if existing solution could be adapted. 
-But I'm not the maintainer... just a contributor.
+The patch set is based on Samsung clock repo and branch 'for-v5.3/next'
+[1].
 
+Regards,
+Lukasz Luba
 
-Best Regards
-Arnaud
+[1] https://git.kernel.org/pub/scm/linux/kernel/git/snawrocki/clk.git/log/?h=for-v5.3/next
 
-> 
-> Thanks in advanced.
-> 
-> Best Regards
-> Richard Zhu
->   
+Lukasz Luba (50):
+  clk: samsung: add new IDs for Exynos5420 clocks
+  clk: samsung: add IDs for Exynos5420 NoC clocks
+  clk: samsung: change parent of dout_aclk400_wcore in Exynos5420
+  clk: samsung: add IDs to manage aclk400_mscl in Exynos5420
+  clk: samsung: add IDs to aclk400_isp in Exynos5420
+  clk: samsung: add IDs to ACLK266 clocks in Exynos5420
+  clk: samsung: add IDs to ACLK266_G2D clocks in Exynos5420
+  clk: samsung: change aclk266_isp clocks definitions Exynos5420
+  clk: samsung: add IDs to FSYS clocks in Exynos5x
+  clk: samsung: change ACLK100_NOC clocks definitions Exynos5x
+  clk: samsung: add IDs to UART clocks in Exynos5420
+  clk: add ID to PWM MUX in Exynos5420
+  clk: samsung: add DPLL rate table in Exynos5420
+  clk: samsung: add CLK_MOUT_SCLK_CPLL in the Exynos5420
+  clk: samsung: add MPLL rate table in Exynos5420
+  clk: samsung: add SPLL rate table in Exynos5420
+  clk: samsung: add CLK_MOUT_MMC0 in the Exynos5420
+  ARM: dts: exynos: add bus_isp with OPP table
+  ARM: dts: exynos: change OPPs values for FSYS2 in Exynos5420
+  ARM: dts: exynos: change and rename FSYS OPP table in Exynos5420
+  ARM: dts: exynos: add OPP into FSYS APB bus in Exynos5420
+  ARM: dts: exynos: OPPs for bus_disp1 in Exynos5420
+  ARM: dts: exynos: change lowest OPP in bus_disp1_fimd in Exynos5420
+  ARM: dts: exynos: align OPPs with PLL rate for MSCL in Exynos5420
+  ARM: dts: exynos: add 300MHz to bus_disp1_fimd in Exynos5420
+  ARM: dts: exynos: align NOC100 bus OPPs in Exynos5420
+  ARM: dts: exynos: align bus_wcore OPPs in Exynos5420
+  ARM: dts: exynos: change OPPs for g2d and g2d_acp buses in Exynos5420
+  ARM: dts: exynos: align OPPs of bus_gen in Exynos5420
+  ARM: dts: exynos: add bus_isp266 into Exynos5800
+  ARM: dts: exynos: align lowest OPP in bus_jpeg in Exynos5420
+  ARM: dts: exynos: remove lowest OPP from bus_mfc in Exynos5420
+  ARM: dts: exynos: set parent clocks to UARTs in Exynos5420
+  ARM: dts: exynos: set parent clocks to PWM in Exynos5420
+  ARM: dts: exynos: change speed and parent of NoC clock in Exynos5420
+  ARM: dts: exynos: change ACLK100_NOC config in Exynos5422
+  ARM: dts: exynos: change parent and rate of bus_fsys in Exynos5422
+  ARM: dts: exynos: change parent and rate of bus_fsys2 in Exynos5422
+  ARM: dts: exynos: change parent and rate of bus_fsys_acp in Exynos5422
+  ARM: dts: exynos: change parent and rate of bus_gen in Exynos5422
+  ARM: dts: exynos: change parent and rate of bus_g2d in Exynos5422
+  ARM: dts: exynos: change parent and rate of bus_mscl in Exynos5422
+  ARM: dts: exynos: add bus_isp in Exynos5422
+  ARM: dts: exynos: change rate of bus_jpeg in Exynos5422
+  ARM: dts: exynos: change rate of bus_disp1_fimd in Exynos5422
+  ARM: dts: exynos: change rates of bus_disp1 in Exynos5422
+  ARM: dts: exynos: change rate of bus_gscl_scaler in Exynos5422
+  ARM: dts: exynos: set proper parents to bus_isp266 Exynos5422
+  ARM: dts: exynos: add buses support for Exynos5800 Peach Pi
+  ARM: dts: exynos: change MMC0 clock parent in Exynos5800 Peach Pi
 
-<Snip>
+ arch/arm/boot/dts/exynos5420.dtsi             | 116 +++++++-----
+ arch/arm/boot/dts/exynos5422-odroid-core.dtsi |  74 ++++++++
+ arch/arm/boot/dts/exynos5800-peach-pi.dts     | 175 ++++++++++++++++++
+ arch/arm/boot/dts/exynos5800.dtsi             |  10 +
+ drivers/clk/samsung/clk-exynos5420.c          | 109 +++++++----
+ include/dt-bindings/clock/exynos5420.h        |  27 ++-
+ 6 files changed, 429 insertions(+), 82 deletions(-)
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
