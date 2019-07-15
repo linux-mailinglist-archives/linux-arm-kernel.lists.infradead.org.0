@@ -2,72 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 26CD7692B3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 16:38:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9CDB692CA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 16:39:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zhy3dEkDP2M+uDcDNEGQU+BSrCj2bn+ls9nHEq7crLo=; b=gP6UvX5SrfDD8z
-	K/1+K7OzIYNX8G1GiH5Bj6wuSDsPXQmM9/BdqvdBoW3tvz7I/3e01PlCSm3X8qNStQ/1mIl8pGWMW
-	mCHqaBfGtX/fqQnvDmZUB/M0vsmDHSf5HXobKqmqrUEVUVzmuY137RIV0kJmRj9j0xdBSGWF+yOwD
-	0I6dyXipMNixuuuHcz3mt097iI7oEO67gpMv0c+FaSvJegy7oPtdwuqCBF67ws0jICB10nau1+6PR
-	qLRsL+L+kx+HO5hWtaautCN27JhV7L0QpA1QW2TPKWzqxdIlw98/YYr+XXWc3Wkkks07rHZjcJ4Kr
-	i32uvwdjqhtGP3wsWLYA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=n9LYbK+r1EpNiewNcLxDWvf8Bhxm8gWs76rOuqWTYeE=; b=VbAH0KUX5FSoUIUO8yMDxOo12
+	XXF43KxHi0LIV/vHpoPSHTcvPL5r56d4bYcRXqW48LSjQjOVgqcjkIK55jPHTSB7HbnjKH7lzHyoH
+	FzrJUaj04Dq/4P5At9F7CUYDBJXcWjBU2ijJGH3X6wpVvugQAMv2++G4ufvSyQI75argEKzMfpnP5
+	N3eztCyXeVmSVfD+vcfkYmBZS+yenFIuXoIXhuDFmuLsuK5z1bdVSfvWU33KKd9qMHxa6kuLerF9E
+	2r05faNIKKmHR/waq29nlXyFUiAX3mAmphFzUDwovPdVi5aUsn8WN+SCBtH70u/pvwQZYHWx+juQM
+	DXwqBvVXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hn27o-00075m-VH; Mon, 15 Jul 2019 14:38:45 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hn27d-00074v-Ci
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jul 2019 14:38:35 +0000
-Received: from sasha-vm.mshome.net (unknown [73.61.17.35])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 009C220868;
- Mon, 15 Jul 2019 14:38:26 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563201513;
- bh=AnPoVWWtb13VF4B+5KGlHXVgQkbhaOTRg4w180rYItU=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=FpBsfzk2dBYS5gkholHkyf8ZUMw72/p0tSb8unt8UdJR/jczlOFdpnlzOlDSh3Wc6
- Se7KF3o0uX0J/yiqm1Bc2jdKnkDtmbCyBDZrrPgbUDVted9kI86eDXYnSrwAfpcjwV
- xLeOfcvXLcqbiwAufECHZduFnSPjcehBeyrZc0E0=
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.9 31/73] perf cs-etm: Properly set the value of
- 'old' and 'head' in snapshot mode
-Date: Mon, 15 Jul 2019 10:35:47 -0400
-Message-Id: <20190715143629.10893-31-sashal@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190715143629.10893-1-sashal@kernel.org>
-References: <20190715143629.10893-1-sashal@kernel.org>
+	id 1hn28F-0007Hg-7C; Mon, 15 Jul 2019 14:39:11 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hn27q-0007Eu-Ae
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jul 2019 14:38:47 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C80BF28;
+ Mon, 15 Jul 2019 07:38:44 -0700 (PDT)
+Received: from [10.1.196.50] (e108454-lin.cambridge.arm.com [10.1.196.50])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A1A613F59C;
+ Mon, 15 Jul 2019 07:38:43 -0700 (PDT)
+Subject: Re: [RFC v2 12/14] arm64/lib: asid: Allow user to update the context
+ under the lock
+To: James Morse <james.morse@arm.com>
+References: <20190620130608.17230-1-julien.grall@arm.com>
+ <20190620130608.17230-13-julien.grall@arm.com>
+ <c5d1257c-b522-152f-cb2f-d23fd8110609@arm.com>
+From: Julien Grall <julien.grall@arm.com>
+Message-ID: <446cfa1a-71be-3ae2-4107-02dd0f164843@arm.com>
+Date: Mon, 15 Jul 2019 15:38:42 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.1
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
+In-Reply-To: <c5d1257c-b522-152f-cb2f-d23fd8110609@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190715_073833_462889_0E261FDF 
-X-CRM114-Status: GOOD (  22.72  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190715_073846_427300_84C95644 
+X-CRM114-Status: GOOD (  17.09  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,220 +64,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki Poulouse <suzuki.poulose@arm.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Arnaldo Carvalho de Melo <acme@redhat.com>,
- Peter Zijlstra <peterz@infradead.org>, Leo Yan <leo.yan@linaro.org>,
- Jiri Olsa <jolsa@redhat.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: julien.thierry@arm.com, marc.zyngier@arm.com, catalin.marinas@arm.com,
+ suzuki.poulose@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
 
-[ Upstream commit e45c48a9a4d20ebc7b639a62c3ef8f4b08007027 ]
 
-This patch adds the necessary intelligence to properly compute the value
-of 'old' and 'head' when operating in snapshot mode.  That way we can
-get the latest information in the AUX buffer and be compatible with the
-generic AUX ring buffer mechanic.
+On 03/07/2019 18:35, James Morse wrote:
+> Hi Julien,
 
-Tester notes:
+Hi James,
 
-> Leo, have you had the chance to test/review this one? Suzuki?
+> On 20/06/2019 14:06, Julien Grall wrote:
+>> Some users of the ASID allocator (e.g VMID) will require to update the
+>> context when a new ASID is generated. This has to be protected by a lock
+>> to prevent concurrent modification.
+>>
+>> Rather than introducing yet another lock, it is possible to re-use the
+>> allocator lock for that purpose. This patch introduces a new callback
+>> that will be call when updating the context.
+> 
+> You're using this later in the series to mask out the generation from the atomic64 to
+> leave just the vmid.
 
-Sure.  I applied this patch on the perf/core branch (with latest
-commit 3e4fbf36c1e3 'perf augmented_raw_syscalls: Move reading
-filename to the loop') and passed testing with below steps:
+You are right.
 
-  # perf record -e cs_etm/@tmc_etr0/ -S -m,64 --per-thread ./sort &
-  [1] 19097
-  Bubble sorting array of 30000 elements
+> 
+> Where does this concurrent modification happen? The value is only written if we have a
+> rollover, and while its active the only bits that could change are the generation.
+> (subsequent vCPUs that take the slow path for the same VM will see the updated generation
+> and skip the new_context call)
+> 
+> If we did the generation filtering in update_vmid() after the call to
+> asid_check_context(), what would go wrong?
+> It happens more often than is necessary and would need a WRITE_ONCE(), but the vmid can't
+> change until we become preemptible and another vCPU gets a chance to make its vmid active.
 
-  # kill -USR2 19097
-  # kill -USR2 19097
-  # kill -USR2 19097
-  [ perf record: Woken up 4 times to write data ]
-  [ perf record: Captured and wrote 0.753 MB perf.data ]
+I think I was over cautious. Pre-filtering after asid_check_context() is equally 
+fine as long as update_vttbr() is called from preemptible context.
 
-Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-Tested-by: Leo Yan <leo.yan@linaro.org>
-Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
-Cc: Jiri Olsa <jolsa@redhat.com>
-Cc: Peter Zijlstra <peterz@infradead.org>
-Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
-Cc: linux-arm-kernel@lists.infradead.org
-Link: http://lkml.kernel.org/r/20190605161633.12245-1-mathieu.poirier@linaro.org
-Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- tools/perf/arch/arm/util/cs-etm.c | 127 +++++++++++++++++++++++++++++-
- 1 file changed, 123 insertions(+), 4 deletions(-)
+Cheers,
 
-diff --git a/tools/perf/arch/arm/util/cs-etm.c b/tools/perf/arch/arm/util/cs-etm.c
-index 47d584da5819..f6cff278aa5d 100644
---- a/tools/perf/arch/arm/util/cs-etm.c
-+++ b/tools/perf/arch/arm/util/cs-etm.c
-@@ -41,6 +41,8 @@ struct cs_etm_recording {
- 	struct auxtrace_record	itr;
- 	struct perf_pmu		*cs_etm_pmu;
- 	struct perf_evlist	*evlist;
-+	int			wrapped_cnt;
-+	bool			*wrapped;
- 	bool			snapshot_mode;
- 	size_t			snapshot_size;
- };
-@@ -458,16 +460,131 @@ static int cs_etm_info_fill(struct auxtrace_record *itr,
- 	return 0;
- }
- 
--static int cs_etm_find_snapshot(struct auxtrace_record *itr __maybe_unused,
-+static int cs_etm_alloc_wrapped_array(struct cs_etm_recording *ptr, int idx)
-+{
-+	bool *wrapped;
-+	int cnt = ptr->wrapped_cnt;
-+
-+	/* Make @ptr->wrapped as big as @idx */
-+	while (cnt <= idx)
-+		cnt++;
-+
-+	/*
-+	 * Free'ed in cs_etm_recording_free().  Using realloc() to avoid
-+	 * cross compilation problems where the host's system supports
-+	 * reallocarray() but not the target.
-+	 */
-+	wrapped = realloc(ptr->wrapped, cnt * sizeof(bool));
-+	if (!wrapped)
-+		return -ENOMEM;
-+
-+	wrapped[cnt - 1] = false;
-+	ptr->wrapped_cnt = cnt;
-+	ptr->wrapped = wrapped;
-+
-+	return 0;
-+}
-+
-+static bool cs_etm_buffer_has_wrapped(unsigned char *buffer,
-+				      size_t buffer_size, u64 head)
-+{
-+	u64 i, watermark;
-+	u64 *buf = (u64 *)buffer;
-+	size_t buf_size = buffer_size;
-+
-+	/*
-+	 * We want to look the very last 512 byte (chosen arbitrarily) in
-+	 * the ring buffer.
-+	 */
-+	watermark = buf_size - 512;
-+
-+	/*
-+	 * @head is continuously increasing - if its value is equal or greater
-+	 * than the size of the ring buffer, it has wrapped around.
-+	 */
-+	if (head >= buffer_size)
-+		return true;
-+
-+	/*
-+	 * The value of @head is somewhere within the size of the ring buffer.
-+	 * This can be that there hasn't been enough data to fill the ring
-+	 * buffer yet or the trace time was so long that @head has numerically
-+	 * wrapped around.  To find we need to check if we have data at the very
-+	 * end of the ring buffer.  We can reliably do this because mmap'ed
-+	 * pages are zeroed out and there is a fresh mapping with every new
-+	 * session.
-+	 */
-+
-+	/* @head is less than 512 byte from the end of the ring buffer */
-+	if (head > watermark)
-+		watermark = head;
-+
-+	/*
-+	 * Speed things up by using 64 bit transactions (see "u64 *buf" above)
-+	 */
-+	watermark >>= 3;
-+	buf_size >>= 3;
-+
-+	/*
-+	 * If we find trace data at the end of the ring buffer, @head has
-+	 * been there and has numerically wrapped around at least once.
-+	 */
-+	for (i = watermark; i < buf_size; i++)
-+		if (buf[i])
-+			return true;
-+
-+	return false;
-+}
-+
-+static int cs_etm_find_snapshot(struct auxtrace_record *itr,
- 				int idx, struct auxtrace_mmap *mm,
--				unsigned char *data __maybe_unused,
-+				unsigned char *data,
- 				u64 *head, u64 *old)
- {
-+	int err;
-+	bool wrapped;
-+	struct cs_etm_recording *ptr =
-+			container_of(itr, struct cs_etm_recording, itr);
-+
-+	/*
-+	 * Allocate memory to keep track of wrapping if this is the first
-+	 * time we deal with this *mm.
-+	 */
-+	if (idx >= ptr->wrapped_cnt) {
-+		err = cs_etm_alloc_wrapped_array(ptr, idx);
-+		if (err)
-+			return err;
-+	}
-+
-+	/*
-+	 * Check to see if *head has wrapped around.  If it hasn't only the
-+	 * amount of data between *head and *old is snapshot'ed to avoid
-+	 * bloating the perf.data file with zeros.  But as soon as *head has
-+	 * wrapped around the entire size of the AUX ring buffer it taken.
-+	 */
-+	wrapped = ptr->wrapped[idx];
-+	if (!wrapped && cs_etm_buffer_has_wrapped(data, mm->len, *head)) {
-+		wrapped = true;
-+		ptr->wrapped[idx] = true;
-+	}
-+
- 	pr_debug3("%s: mmap index %d old head %zu new head %zu size %zu\n",
- 		  __func__, idx, (size_t)*old, (size_t)*head, mm->len);
- 
--	*old = *head;
--	*head += mm->len;
-+	/* No wrap has occurred, we can just use *head and *old. */
-+	if (!wrapped)
-+		return 0;
-+
-+	/*
-+	 * *head has wrapped around - adjust *head and *old to pickup the
-+	 * entire content of the AUX buffer.
-+	 */
-+	if (*head >= mm->len) {
-+		*old = *head - mm->len;
-+	} else {
-+		*head += mm->len;
-+		*old = *head - mm->len;
-+	}
- 
- 	return 0;
- }
-@@ -508,6 +625,8 @@ static void cs_etm_recording_free(struct auxtrace_record *itr)
- {
- 	struct cs_etm_recording *ptr =
- 			container_of(itr, struct cs_etm_recording, itr);
-+
-+	zfree(&ptr->wrapped);
- 	free(ptr);
- }
- 
 -- 
-2.20.1
-
+Julien Grall
 
 _______________________________________________
 linux-arm-kernel mailing list
