@@ -2,89 +2,112 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F1AA468240
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 04:31:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A4F2A68262
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 04:56:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
-	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BRl1Uxc4OdkNP24je9t1CiguJNDyf340DmS/7V87Q4U=; b=KLscZl4ELSoCEW
-	JNnnBguhrBfT+J5OoQaQymqrtsJ52EkdbyGwij5/RwRblOdp+hxvSzjoXFBuGtgS3jLEOyzWEmUO0
-	ROw4uPfaUK+Aup+QNCD7xRymp0OTodg7j3e4W6I/xPhJHc5zugkNVJ6I690RlpAP1Ft8Zjw5VEdBL
-	WbZEb3DFL8Z/COfAMAAtUYmxXTt/bHGe8TR+p0P+KaOHrPBo7k/aCkYFjXKMlJwBLsnliGar/yHjv
-	asHOnTIGoOXZdg8tWuO8cY+Rk+slVRWN8+zAB8cSGYq6oStSb+NoP3UAenROqNHTFK8FCDe4bR7ru
-	rCeRSTe6mJRa8rXSWWtg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=YgbOqEGhdLSvbt9gN/xy0RUwDX03jgI5QEBG3mewhh0=; b=KnugFeSYeWF8/7
+	JAIMeUDEukLHSjRLlnUlgJJ1cq3vBAGcYKH4NA5DYw5WFmFllnq/w/8Syuyo4qMl/eWgzVhNJyIma
+	UEUJaAPiAt7I4FYHzvxP8ZYseLZt9tcXDZF4YRLi6mutSkC4rIPuTjjkozIA66dPqbdJ2i13FuGY6
+	CBo0kLvLJSCAgLA5o/rYTBSWsfL5tu6zKKM1XLd2SdVVPhIaCEp/YFmnBACBP+5Sxv50g/XqXAqSd
+	/q39nENXSJYRvvCNJxhDkDFF8hgOlB43pbpq+okee4ht5G3A7sIHh48CruBS4QQKhF3SaFf11z/+U
+	BdJne50RgCrl3+Uy0V0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hmqlY-0004qx-Ui; Mon, 15 Jul 2019 02:31:01 +0000
-Received: from new2-smtp.messagingengine.com ([66.111.4.224])
+	id 1hmr9q-0004Vf-KR; Mon, 15 Jul 2019 02:56:06 +0000
+Received: from mail-eopbgr50053.outbound.protection.outlook.com ([40.107.5.53]
+ helo=EUR03-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hmqlJ-0004qG-Cj
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jul 2019 02:30:47 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 4827F2438;
- Sun, 14 Jul 2019 22:30:44 -0400 (EDT)
-Received: from imap2 ([10.202.2.52])
- by compute4.internal (MEProxy); Sun, 14 Jul 2019 22:30:44 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
- mime-version:message-id:in-reply-to:references:date:from:to:cc
- :subject:content-type; s=fm3; bh=8PAqwlgjdusJcJsV/ER++KrpN/QjUb2
- C+McWIpc95aI=; b=Zn7MMKTG/N0hIAqpr6U2P3rR8uuih0dpktX5UP23GxBiqKb
- IGq6Mu5YcLnJIAxNsYZg9fpMdKVLX+4jPgNpSdRiy3o4M8EQAtl5MaIWyDuF9QAm
- kntRmYY9LydzG3kOyRDebZN1ZSzwoCDcCtAtfHb/ersKcB5W3g/maymJRiWgqrB9
- X3IpJtQ8Z35klRtN+fJvZbpRgyoq7Q9IFt97ATA733OvBC9xM2Gi7k32JUKfTW9q
- 3YjnMoizzpTHg8FCvruuV4rTF9AQrmuqAbZVCKLZfHkZfbNWDvJJUjO+/Xi6ExX0
- uid+AiW5y/M933n5uasEL/a6Il8L2svkaKomZtA==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=8PAqwl
- gjdusJcJsV/ER++KrpN/QjUb2C+McWIpc95aI=; b=HKUWpvyhh5HjlEXQ6PnAt9
- LpFcYzeykPSA7yiyLihVw0GUoc1aQ/2A49XiPxOwMs3Bc0x2H6NFz0ThyafkXPMf
- caJazejBSLzCMzPqNduLp31hniMgl5zeuqozHCoRNWUfSe8KbejWB/cFbhsezkI4
- iNJXN7gHsZD2vo4xNuItJtf56p9+nAbtqrvDuCG5b0Sk92ZAmrBJzXvKVnwqsJVk
- URBX/iCM7gjyeb1t21TcKLzLInPCXisGHtRJzpa967X4ZxLj53iErveQkzsOj4ij
- sVQe8Zm2yIQRihKjDSqjqLUS70IPCOInjC5R+JU5+fy/Ui1uGCCFpkNTpjxGp/yg
- ==
-X-ME-Sender: <xms:UuUrXZQIHtCvu8L0EFuL5VK5wZkueralwqJ-7qRNZyaCQlnCkqkQWA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrheejgdeffecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpefofgggkfgjfhffhffvufgtsehttdertderredtnecuhfhrohhmpedftehnughr
- vgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucffohhmrg
- hinhepsghoohhtlhhinhdrtghomhdpuggvvhhitggvthhrvggvrdhorhhgnecurfgrrhgr
- mhepmhgrihhlfhhrohhmpegrnhgurhgvfiesrghjrdhiugdrrghunecuvehluhhsthgvrh
- fuihiivgeptd
-X-ME-Proxy: <xmx:UuUrXc2p2HFO4fIvPUthNItjF-iEv3Uw-kOVSQPdOo5PVgHJp7BzOQ>
- <xmx:UuUrXTzGdH5Ae_5p9EwuNR1Hs46Ks1guoCO3vHcyUJhJLxxYkkMGmw>
- <xmx:UuUrXYwyEAMIvev_3xEU_XwF0jr81pklcAWuDkexuZeAdG54yw9VAQ>
- <xmx:VOUrXcfV9pE5yGkvpr2ppxUq4JYI9NYjE2gYtsssTyY_CiEak84BLg>
-Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id 495A7E00CC; Sun, 14 Jul 2019 22:30:42 -0400 (EDT)
-X-Mailer: MessagingEngine.com Webmail Interface
-User-Agent: Cyrus-JMAP/3.1.6-731-g19d3b16-fmstable-20190627v1
-Mime-Version: 1.0
-Message-Id: <5c831fd3-d0e2-474b-8a6e-8f51f92fbdf8@www.fastmail.com>
-In-Reply-To: <20190712131028.ba4d4jetg4btsx4u@flea>
-References: <20190712033214.24713-1-andrew@aj.id.au>
- <20190712033214.24713-2-andrew@aj.id.au>
- <20190712131028.ba4d4jetg4btsx4u@flea>
-Date: Mon, 15 Jul 2019 12:00:51 +0930
-From: "Andrew Jeffery" <andrew@aj.id.au>
-To: "Maxime Ripard" <maxime.ripard@bootlin.com>
-Subject: Re: [PATCH v2 1/2] dt-bindings: mmc: Document Aspeed SD controller
+ id 1hmr9c-0004Uc-Ru
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jul 2019 02:55:54 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=NfSAbomGBhbPDUsGHK1oKeleeb0WsyVlThxvnjGtFt0az7yeXexqDEzdtfg7RImqGgFkdeX2XwOtP6szXZXk0cZxMRpLerGV6sfj5vjJQxGi3OgrqUuVe3vcddCCNRJVhYZ2kY7p5mGrBgW71hGsVglY9pM5BuOfVCF2j5TpAE38e+JMfJzWlgrCcgsyCxiRdcZAyZ4/uZmz90+FpXy+hUlorPIUbSsVl++bfmXV0PpNcXEovr7Uxczylqidbq31Doak+nCjfY9zZwVxFgzpImDir9yEa5R1X8vdpdGFtglmGp/ypvYhNrmY8wwU6KyjKfXdX4NXrd51j8rv+5ZChA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=jQoQKyp9ZpO6n6q0pUNdmkgFUgmV18JgaRhoA7DI/B4=;
+ b=nTv+ohY/DEUg8kRl39fWdoWhE1wpXUL8vtmNSOlHsMFB+TL0l/j2ZFhm1bD9yoFUu5r4vlNbNw1VIaCsadIg15CoFOa0YlISgdBpGh08LekUvHl26sTg/agmZg6cllji2E6tyImxlRq1LtX+7O9gBXTIWIFAAH1yC129+pOV7DQ0r24kAGl3nkxJFiJgiQviu6kXUW358zNz9JIUNc6pvDMZwljLihnDM5y7WSvCjYJbNvqKTwaVr8qP11OcPu/pHjDj2qt1RZcS/twxlMAr7zgb1PVcBHfEAHk6nbD62mLmDJFqJ28IlrMM+VOvQOG+VaZl9TsuArRCKcScDnXt0g==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
+ smtp.mailfrom=nxp.com;dmarc=pass action=none header.from=nxp.com;dkim=pass
+ header.d=nxp.com;arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=jQoQKyp9ZpO6n6q0pUNdmkgFUgmV18JgaRhoA7DI/B4=;
+ b=DgR8Muusg64+okD7qMR0FhWOJPiV1rl7+MCclTjEz4HKur3GLJlpC8P6c/eXY0OEZgu3GpK+Jk8c5iasgbRuU76hkkmVosh05wDavXzuyE4Jif52VqOMfBzI+YEgOyZnbXBBMRhba1AbnAqk1RUxgtB+YM95J11rHRze83byMIg=
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
+ AM0PR04MB4564.eurprd04.prod.outlook.com (52.135.149.14) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2073.14; Mon, 15 Jul 2019 02:55:43 +0000
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::2023:c0e5:8a63:2e47]) by AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::2023:c0e5:8a63:2e47%5]) with mapi id 15.20.2052.020; Mon, 15 Jul 2019
+ 02:55:43 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: "mturquette@baylibre.com" <mturquette@baylibre.com>, "sboyd@kernel.org"
+ <sboyd@kernel.org>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "kernel@pengutronix.de"
+ <kernel@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>
+Subject: [PATCH] clk: imx: imx8mm: fix audio pll setting
+Thread-Topic: [PATCH] clk: imx: imx8mm: fix audio pll setting
+Thread-Index: AQHVOrjKqRILo4kj1ESmmUTSG4SPJQ==
+Date: Mon, 15 Jul 2019 02:55:43 +0000
+Message-ID: <1563157783-31846-1-git-send-email-peng.fan@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: git-send-email 2.7.4
+x-clientproxiedby: HK0P153CA0011.APCP153.PROD.OUTLOOK.COM
+ (2603:1096:203:18::23) To AM0PR04MB4481.eurprd04.prod.outlook.com
+ (2603:10a6:208:70::15)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 90be77a5-80e8-46e5-3808-08d708cfed30
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:AM0PR04MB4564; 
+x-ms-traffictypediagnostic: AM0PR04MB4564:
+x-microsoft-antispam-prvs: <AM0PR04MB4564B49C82BE0F3BEDD7621388CF0@AM0PR04MB4564.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:5797;
+x-forefront-prvs: 00997889E7
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(366004)(136003)(39860400002)(396003)(346002)(376002)(189003)(199004)(2201001)(2501003)(68736007)(6506007)(26005)(386003)(6486002)(36756003)(86362001)(52116002)(316002)(54906003)(110136005)(6436002)(102836004)(7736002)(305945005)(14454004)(7416002)(64756008)(66476007)(71200400001)(71190400001)(66556008)(66446008)(50226002)(2906002)(25786009)(3846002)(66066001)(476003)(81166006)(99286004)(486006)(81156014)(8936002)(66946007)(2616005)(6116002)(8676002)(53936002)(256004)(5660300002)(478600001)(14444005)(186003)(4326008)(44832011)(6512007)(32563001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4564;
+ H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: iGmtbuVmqbZwSo+3xdRAWGERNJlEMF4DsReAv1XgDb7R7PW+w64qLwOfNLc4EmFcR/+8kNViCp/U573YStXKw3yHvC6nfSHwliIuowWWCKi0Yvg5rfJCx2AgJ7CjPyn/JCSmFmXbLBFdeoF6Bghu5Ib3GLjylKLB+gDUOvHlyN3hg8Q+OP0dJi96ccT5Pmw6iU/M28h8epNsIM9SxxeVohxFl15QjXzIFGMdw+l4Pqi4OSTrlye3X+b0UDMZRjA+vRoQFuBMyIyF7XydlUFnWq3IUfztnj0SxVyDcgOqvo3fdPQy8M8y+G+7X8fvUaK/IpdN8aq0in5uqg79o0qLWomwGb0Nko5Uatm4LTrw+lFUTAqbDM5rUmQ90CeD9lCE1s6flTswwjA6wiON+/h97cXQ7EbV4JkTdGxsdPOeCJs=
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 90be77a5-80e8-46e5-3808-08d708cfed30
+X-MS-Exchange-CrossTenant-originalarrivaltime: 15 Jul 2019 02:55:43.0365 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: peng.fan@nxp.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4564
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190714_193045_575302_CCDE1623 
-X-CRM114-Status: GOOD (  20.41  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190714_195552_989214_CD0AC95F 
+X-CRM114-Status: GOOD (  10.51  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.224 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.5.53 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.5.53 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -105,147 +128,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- Ulf Hansson <ulf.hansson@linaro.org>, linux-aspeed@lists.ozlabs.org,
- Ryan Chen <ryanchen.aspeed@gmail.com>, linux-mmc <linux-mmc@vger.kernel.org>,
- Adrian Hunter <adrian.hunter@intel.com>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
- linux-arm-kernel@lists.infradead.org
+Cc: Peng Fan <peng.fan@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
+ Anson Huang <anson.huang@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "stable@vger.kernel.org" <stable@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "van.freenix@gmail.com" <van.freenix@gmail.com>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+From: Peng Fan <peng.fan@nxp.com>
 
+The AUDIO PLL max support 650M, so the original clk settings violate
+spec. This patch makes the output 786432000 -> 393216000,
+and 722534400 -> 361267200 to aligned with NXP vendor kernel without any
+impact on audio functionality and go within 650MHz PLL limit.
 
-On Fri, 12 Jul 2019, at 22:41, Maxime Ripard wrote:
-> Hi,
-> 
-> On Fri, Jul 12, 2019 at 01:02:13PM +0930, Andrew Jeffery wrote:
-> > The ASPEED SD/SDIO/eMMC controller exposes two slots implementing the
-> > SDIO Host Specification v2.00, with 1 or 4 bit data buses, or an 8 bit
-> > data bus if only a single slot is enabled.
-> >
-> > Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
-> > ---
-> > In v2:
-> >
-> > * Rename to aspeed,sdhci.yaml
-> > * Rename sd-controller compatible
-> > * Add `maxItems: 1` for reg properties
-> > * Move sdhci subnode description to patternProperties
-> > * Drop sdhci compatible requirement
-> > * #address-cells and #size-cells are required
-> > * Prevent additional properties
-> > * Implement explicit ranges in example
-> > * Remove slot property
-> >
-> >  .../devicetree/bindings/mmc/aspeed,sdhci.yaml | 90 +++++++++++++++++++
-> >  1 file changed, 90 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/mmc/aspeed,sdhci.yaml
-> >
-> > diff --git a/Documentation/devicetree/bindings/mmc/aspeed,sdhci.yaml b/Documentation/devicetree/bindings/mmc/aspeed,sdhci.yaml
-> > new file mode 100644
-> > index 000000000000..67a691c3348c
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/mmc/aspeed,sdhci.yaml
-> > @@ -0,0 +1,90 @@
-> > +# SPDX-License-Identifier: GPL-2.0-or-later
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/mmc/aspeed,sdhci.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: ASPEED SD/SDIO/eMMC Controller
-> > +
-> > +maintainers:
-> > +  - Andrew Jeffery <andrew@aj.id.au>
-> > +  - Ryan Chen <ryanchen.aspeed@gmail.com>
-> > +
-> > +description: |+
-> > +  The ASPEED SD/SDIO/eMMC controller exposes two slots implementing the SDIO
-> > +  Host Specification v2.00, with 1 or 4 bit data buses, or an 8 bit data bus if
-> > +  only a single slot is enabled.
-> > +
-> > +  The two slots are supported by a common configuration area. As the SDHCIs for
-> > +  the slots are dependent on the common configuration area, they are described
-> > +  as child nodes.
-> > +
-> > +properties:
-> > +  compatible:
-> > +    enum: [ aspeed,ast2400-sd-controller, aspeed,ast2500-sd-controller ]
-> > +  reg:
-> > +    maxItems: 1
-> > +    description: Common configuration registers
-> > +  ranges: true
-> > +  clocks:
-> > +    maxItems: 1
-> > +    description: The SD/SDIO controller clock gate
-> 
-> #address-cells and #size-cells have not been described here.
-> 
-> > +patternProperties:
-> > +  "^sdhci@[0-9a-f]+$":
-> > +    type: object
-> > +    properties:
-> > +      compatible:
-> > +        enum: [ aspeed,ast2400-sdhci, aspeed,ast2500-sdhci ]
-> > +      reg:
-> > +        maxItems: 1
-> > +        description: The SDHCI registers
-> > +      clocks:
-> > +        maxItems: 1
-> > +        description: The SD bus clock
-> > +      interrupts:
-> > +        maxItems: 1
-> > +        description: The SD interrupt shared between both slots
-> > +    required:
-> > +      - compatible
-> > +      - reg
-> > +      - clocks
-> > +      - interrupts
-> > +
-> > +additionalProperties: false
-> 
-> But that means that it will generate a warning in your DT if you ever
-> use them.
-> 
-> > +required:
-> > +  - compatible
-> > +  - reg
-> > +  - "#address-cells"
-> > +  - "#size-cells"
-> > +  - ranges
-> > +  - clocks
-> > +
-> > +examples:
-> > +  - |
-> > +    #include <dt-bindings/clock/aspeed-clock.h>
-> > +    sdc@1e740000 {
-> > +            compatible = "aspeed,ast2500-sd-controller";
-> > +            reg = <0x1e740000 0x100>;
-> > +            #address-cells = <1>;
-> > +            #size-cells = <1>;
-> 
-> Starting with your example.
+Cc: <stable@vger.kernel.org>
+Fixes: ba5625c3e272 ("clk: imx: Add clock driver support for imx8mm")
+Signed-off-by: Peng Fan <peng.fan@nxp.com>
+---
+ drivers/clk/imx/clk-imx8mm.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-Heh, right. Thanks. I was inspecting the output of the `dt_binding_check` and
-`dtbs_check` make targets, though maybe I overlooked this. The aspeed dtsis
-do generate a quite a number of warnings which make it hard to parse, so I'm
-going to send a series to clean that up too.
+diff --git a/drivers/clk/imx/clk-imx8mm.c b/drivers/clk/imx/clk-imx8mm.c
+index 3a873e0e278f..b72bad064d8d 100644
+--- a/drivers/clk/imx/clk-imx8mm.c
++++ b/drivers/clk/imx/clk-imx8mm.c
+@@ -55,8 +55,8 @@ static const struct imx_pll14xx_rate_table imx8mm_pll1416x_tbl[] = {
+ };
+ 
+ static const struct imx_pll14xx_rate_table imx8mm_audiopll_tbl[] = {
+-	PLL_1443X_RATE(786432000U, 655, 5, 2, 23593),
+-	PLL_1443X_RATE(722534400U, 301, 5, 1, 3670),
++	PLL_1443X_RATE(393216000U, 262, 2, 3, 9437),
++	PLL_1443X_RATE(361267200U, 361, 3, 3, 17511),
+ };
+ 
+ static const struct imx_pll14xx_rate_table imx8mm_videopll_tbl[] = {
+-- 
+2.16.4
 
-Andrew
-
-> 
-> Maxime
-> 
-> --
-> Maxime Ripard, Bootlin
-> Embedded Linux and Kernel engineering
-> https://bootlin.com
-> 
-> Attachments:
-> * signature.asc
 
 _______________________________________________
 linux-arm-kernel mailing list
