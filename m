@@ -2,41 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A94C68748
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 12:46:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5BC9F6875F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 12:51:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yjteus7pYbq5Q8J0ywq9MmxzXDQxkJuePNLwMQit/AM=; b=SdPa4HiQuO2cP5
-	iLXFaQ2LE1wWcHeEKBFNOULlEazUkWAut7ngJ4eLSWYP/DQSSq7KHF8nXc5L9gGih53oSAz3wn/GO
-	6ugUrqUNEArVApEyWfYbKJ8rXL95zuHtsbZ9h3sCVqk8b21ZXm3zJ2FE8FoUD1pdctSBAaCu+7vmr
-	M1OKlc64JTivTS+xF9TatRwgS0+KVcq1ve6pzKYCxYORuLEiZB4QmWRgSw9hib2lBocM0czpzX5ZN
-	DzXj4KLL7NkxfOgP2p3ficzjScfaIC0xrR0m3JFTREGCpUNQzQZTb4LY73SQsSt7UvPuIsV6Lkz1Z
-	ZrEnVoW6NaR2NMFu/M5g==;
+	List-Owner; bh=Jo52zSQc18qU5mR06rVQyrYCnFuhYcb6xujOty9O4GI=; b=CZTRMQdmg8U/gS
+	sH8g/nJKdffOlVAtz5iE2NWUC2/QVfjqizC8EH2WgqPiygdfFVVhcLsloVDTsQNyjIgQgKZq7hans
+	5i21UAz36ije6cNTkdYpVVeF6UrR4wrG8lJTup87Sie8U9V2Tz0Usxktck4o3ldvXIv1+cFMXfuVx
+	yqezbnAak/ikFRgsDEkBodT+oqYXjnPZGuxVQ9ZOBlwj3YfMwupkfQIl7arofNnfIZ/uKoIdcvpxu
+	YTvDKfLgDw1K+NsurQ5eBlT1cUsR/EsPANOMbAYkfX3Ox5k4BbIKC+bQXJqtYQYTz9i229ZG0Id0L
+	nG/xip9r/NphoAmRjZQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hmyVV-0001FL-GN; Mon, 15 Jul 2019 10:46:57 +0000
+	id 1hmyaA-0002xF-5n; Mon, 15 Jul 2019 10:51:46 +0000
 Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hmyUX-00011u-QJ
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jul 2019 10:46:00 +0000
-Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
- [10.5.11.23])
+ id 1hmyZw-0002ws-Ek
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jul 2019 10:51:33 +0000
+Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
+ [10.5.11.22])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 3A70B85376;
- Mon, 15 Jul 2019 10:45:56 +0000 (UTC)
+ by mx1.redhat.com (Postfix) with ESMTPS id D41E9307D910;
+ Mon, 15 Jul 2019 10:51:31 +0000 (UTC)
 Received: from [10.36.117.137] (ovpn-117-137.ams2.redhat.com [10.36.117.137])
- by smtp.corp.redhat.com (Postfix) with ESMTP id CAB404505;
- Mon, 15 Jul 2019 10:45:52 +0000 (UTC)
-Subject: Re: [PATCH v3 03/11] s390x/mm: Implement arch_remove_memory()
+ by smtp.corp.redhat.com (Postfix) with ESMTP id A77F31001B17;
+ Mon, 15 Jul 2019 10:51:28 +0000 (UTC)
+Subject: Re: [PATCH v3 02/11] s390x/mm: Fail when an altmap is used for
+ arch_add_memory()
 To: Michal Hocko <mhocko@kernel.org>
 References: <20190527111152.16324-1-david@redhat.com>
- <20190527111152.16324-4-david@redhat.com>
- <20190701074503.GD6376@dhcp22.suse.cz> <20190701124717.GU6376@dhcp22.suse.cz>
+ <20190527111152.16324-3-david@redhat.com>
+ <20190701074306.GC6376@dhcp22.suse.cz> <20190701124628.GT6376@dhcp22.suse.cz>
 From: David Hildenbrand <david@redhat.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
@@ -83,19 +84,19 @@ Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
  +8Umfre0Xt4713VxMygW0PnQt5aSQdMD58jHFxTk092mU+yIHj5LeYgvwSgZN4airXk5yRXl
  SE+xAvmumFBY
 Organization: Red Hat GmbH
-Message-ID: <556f2941-4c76-37f2-cac1-91eca48cc0e9@redhat.com>
-Date: Mon, 15 Jul 2019 12:45:52 +0200
+Message-ID: <86f3ff3d-d035-a806-88b7-b8c7b77c206e@redhat.com>
+Date: Mon, 15 Jul 2019 12:51:27 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.2
 MIME-Version: 1.0
-In-Reply-To: <20190701124717.GU6376@dhcp22.suse.cz>
+In-Reply-To: <20190701124628.GT6376@dhcp22.suse.cz>
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
 X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.25]); Mon, 15 Jul 2019 10:45:56 +0000 (UTC)
+ (mx1.redhat.com [10.5.110.48]); Mon, 15 Jul 2019 10:51:32 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190715_034558_727888_B597C3D7 
-X-CRM114-Status: GOOD (  18.70  )
+X-CRM114-CacheID: sfid-20190715_035132_549773_47EA86E9 
+X-CRM114-Status: GOOD (  17.94  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -130,72 +131,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 01.07.19 14:47, Michal Hocko wrote:
-> On Mon 01-07-19 09:45:03, Michal Hocko wrote:
->> On Mon 27-05-19 13:11:44, David Hildenbrand wrote:
->>> Will come in handy when wanting to handle errors after
->>> arch_add_memory().
+On 01.07.19 14:46, Michal Hocko wrote:
+> On Mon 01-07-19 09:43:06, Michal Hocko wrote:
+>> On Mon 27-05-19 13:11:43, David Hildenbrand wrote:
+>>> ZONE_DEVICE is not yet supported, fail if an altmap is passed, so we
+>>> don't forget arch_add_memory()/arch_remove_memory() when unlocking
+>>> support.
 >>
->> I do not understand this. Why do you add a code for something that is
->> not possible on this HW (based on the comment - is it still valid btw?)
+>> Why do we need this? Sure ZONE_DEVICE is not supported for s390 and so
+>> might be the case for other arches which support hotplug. I do not see
+>> much point in adding warning to each of them.
 > 
-> Same as the previous patch (drop it).
-
-No. As the description says, this will be needed to handle errors in
-patch 6 cleanly.
-
-And BTW, with paravirtualied devices like virtio-pmem and virtio-mem,
-this will also see some other users in the future.
-
-Thanks.
-
-> 
->>> Cc: Martin Schwidefsky <schwidefsky@de.ibm.com>
->>> Cc: Heiko Carstens <heiko.carstens@de.ibm.com>
->>> Cc: Andrew Morton <akpm@linux-foundation.org>
->>> Cc: Michal Hocko <mhocko@suse.com>
->>> Cc: Mike Rapoport <rppt@linux.vnet.ibm.com>
->>> Cc: David Hildenbrand <david@redhat.com>
->>> Cc: Vasily Gorbik <gor@linux.ibm.com>
->>> Cc: Oscar Salvador <osalvador@suse.com>
->>> Signed-off-by: David Hildenbrand <david@redhat.com>
->>> ---
->>>  arch/s390/mm/init.c | 13 +++++++------
->>>  1 file changed, 7 insertions(+), 6 deletions(-)
->>>
->>> diff --git a/arch/s390/mm/init.c b/arch/s390/mm/init.c
->>> index d552e330fbcc..14955e0a9fcf 100644
->>> --- a/arch/s390/mm/init.c
->>> +++ b/arch/s390/mm/init.c
->>> @@ -243,12 +243,13 @@ int arch_add_memory(int nid, u64 start, u64 size,
->>>  void arch_remove_memory(int nid, u64 start, u64 size,
->>>  			struct vmem_altmap *altmap)
->>>  {
->>> -	/*
->>> -	 * There is no hardware or firmware interface which could trigger a
->>> -	 * hot memory remove on s390. So there is nothing that needs to be
->>> -	 * implemented.
->>> -	 */
->>> -	BUG();
->>> +	unsigned long start_pfn = start >> PAGE_SHIFT;
->>> +	unsigned long nr_pages = size >> PAGE_SHIFT;
->>> +	struct zone *zone;
->>> +
->>> +	zone = page_zone(pfn_to_page(start_pfn));
->>> +	__remove_pages(zone, start_pfn, nr_pages, altmap);
->>> +	vmem_remove_mapping(start, size);
->>>  }
->>>  #endif
->>>  #endif /* CONFIG_MEMORY_HOTPLUG */
->>> -- 
->>> 2.20.1
->>>
->>
->> -- 
->> Michal Hocko
->> SUSE Labs
+> I would drop this one. If there is a strong reason to have something
+> like that it should come with a better explanation and it can be done on
+> top.
 > 
 
+This was requested by Dan and I agree it is the right thing to do. In
+the context of paravirtualized devices (e.g., virtio-pmem), it makes
+sense to block functionality an arch does not support.
+
+I'll leave the decision to Andrew.
 
 -- 
 
