@@ -2,77 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA007698A2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 17:56:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2086D698B7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 18:00:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FSksB2lg4uiU1227JaUpH9UAXJiUxYvJ+8c53QcMMwk=; b=dl5sq3u0Q2CLCF
-	0qcRiuR0yL6fhKgm+FAdtD/dyz0t4zVIuk6ENZD7GwvGmZS6kDdBF1ROnnXe2gdJKR2RFi6gZffwv
-	UCiqu0UmdD/iIjNJXvE5wAwoh5ZVubS6eOKJhQ41Crl0vK4r6STb20w73fmTtLESzM33mTvT8UMjJ
-	+VqBoEMy0nCsqcS3GvQPmWOpTlNQ/3mRBw7xywiRYyuIler+6Si2AM55VdUvjB5Fm1WrlmUIlqUWd
-	slrEZ1HhgMliV5w2A+mdMDykMhC0Cf+2teN21j//9lu4d15qEuyLmFUqek5Cu1Ne9+xEDlzZFDryV
-	SiT35+EzRl13A/oqCYiQ==;
+	List-Owner; bh=lnnvGryPGTPkHZzZ9grLtpz370BqckkQlg/6945SeAc=; b=DlRPeLV6XHix4v
+	JDlMm1TjPhgZvO7xQJLGOTe1zU/GToGNrHgT1exLq0RQvM0D+pjnyX92nHwjn1lk3EkUG+NbKakeA
+	uwGjmIgXcCjCzq5YyAM7hzh5rfc8Uxf7+m6Gpp6F9r2tRMRZgUl61W+WF2r/z7Xqx2W+dePi5gZKp
+	fQVAP8U1Z7RI2v2v7CpaLCfgcKCNus/WtJ3ZY/lQ2asFE8CwnHeICgc2zNNdVFJl/fMmNUWh1JXCO
+	89chF8K72SXSB/TG1Gojalbj//pPbZZ512A2/7Gz8pRIDR5xsr7a3dzcEKpCBRCOiYjsQM608nnxR
+	XK8yaxFvk5ub1i44XIWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hn3LN-0006oh-46; Mon, 15 Jul 2019 15:56:49 +0000
-Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
+	id 1hn3Ox-0000bP-4a; Mon, 15 Jul 2019 16:00:31 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hn3LA-0006mv-HT
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jul 2019 15:56:37 +0000
-Received: by mail-ot1-x341.google.com with SMTP id r21so11471286otq.6
+ id 1hn3Ol-0000aF-Dt
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jul 2019 16:00:20 +0000
+Received: by mail-pf1-x442.google.com with SMTP id r7so7625226pfl.3
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 15 Jul 2019 08:56:32 -0700 (PDT)
+ Mon, 15 Jul 2019 09:00:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=BxdnANqifDB1z1Ih8rPgPPFQ52+wPGcxB0Lct34ID5Q=;
- b=SA30rmEvAAB/UeWM0cJpboyXWomGji7I7a5x3X8IC2z8RDCcu48fRpx3oXaTPieM78
- hMUBvyfACXuvhVyl7122TsYzmlo3PSQz9JgHl3IzAfFzF4LUSFpBOVOTOS1B1L4yygl7
- QOOGtMtHFpJt8B1LZKpTsfOdvejMLuCIDQCalifs34k7ukv+KzyMS3/rAXEkr2VMjwP1
- SBtlOVlmpKFktDXSl32r68WJn6RZP964o2hS1wrBNhCu42BpzNeAZYsIqnpYlDH19pdT
- IooGaAqomRnAwqqNrb8iHZz4u/RbyBz6uQU3gz+bKjgxr0xq0hFlSy/JRzbwLlHSQ+Nf
- EO5w==
+ :cc; bh=1pf3WGwA9D7m+i0fi13et95NxKX1fwC73+4IJDRPguM=;
+ b=CUwZ43K9ybSDvf08eErRqtarzGQdiyDymnpU0KIK2JQh0T9Sup32mLmqjhs/VSqLrM
+ MYwEWnD1tZLcOi15wredI/8U9xLO31vPqZvI1nsgvE8QGayvfGS4zJ8DFpd8xTqTB2Uu
+ X0XI38pv45yv7xUlijhdFuvP2joPIHdZCt3wPU6yGKh7zI1+RsRJeph15u1MMAsHXsmU
+ N/CNSsdTxOBDr+vJzIQZq74ITN4H5tRoqeyXjfz14O98vHdJyS9nZdunI9ZY16WRAzUr
+ aDjqrcEfrIeCTuDiF5a0mq44jqMLnJJxVYJo2ivJup10466XLsZAPQUB28/H/OHw+0N1
+ yN/g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=BxdnANqifDB1z1Ih8rPgPPFQ52+wPGcxB0Lct34ID5Q=;
- b=pexKT2tqBcKyszv8p3G7ReWbrdfWDnWdUohmL/Vz8OwzQswEnlhRzv/AwG4hcspkB3
- OF/g/lk1ATVJ05vj4m8SOl6Kfv5BpU1hlW2w5nuXhPBqU5dU/tOyWlAfFF+VhVmLoMP7
- NNqDU53eCatk2ax6+zCRzNbGEiHURty9qxUE4bX3jQ4CHAjtvQ17SnBofwPFQg40pk5m
- tz8Di1d/4LkPVGSc6MDnayAgP+SdxHUwYu+rarApp5XeRdJd3/4pa3GoTxLvIkuS4ujW
- JZtCvtq+UMAg2tcxPSWAo01PineMryqQyEHnYcPFS5Z3OHSl6f3huoIAu44ynGz5GJ5i
- NHpA==
-X-Gm-Message-State: APjAAAU8gvHuN7ajud8ftvi+7MSMzraNI2VK2epJjo3EVMEpQriFKSFZ
- k2rUjbyysYI/e+ttjlIBKzvpVxCr608BTtT7jQfIpQ==
-X-Google-Smtp-Source: APXvYqwsZvLcK5LidkOK7j4XvKdYHFQb2nVh/AtXUYin5kr5W0WlZFyIM9UGzPAW85pcfSoyZbDk7ZxnfK/q+cptnb0=
-X-Received: by 2002:a05:6830:1cd:: with SMTP id
- r13mr8619272ota.99.1563206191242; 
- Mon, 15 Jul 2019 08:56:31 -0700 (PDT)
+ bh=1pf3WGwA9D7m+i0fi13et95NxKX1fwC73+4IJDRPguM=;
+ b=ZbuJv6EVP3FR3P+tJydt2fPuh2rDeVKdaD7Kf8Q01u072Evchv/gUb1/MPaoNjbhPx
+ 37mPpb1JbpC+UB+s5E/6w1EIDxQxjzp/t1wkKbHqDF9oSKbRJBHBo+3IUo4lAbvNiFdc
+ rV8QTkZeVsVMsnHwTsRtNQkOke1Ktz886+uqLB5YOANaLx+09ulZQJ7Ya020Juy7xCZA
+ kKLCrV/g/5XfDNoRI+DUcOQU5D2QoecVmNr3nzPz9ee2dad12xqT1NjZNfF/7avoRYpN
+ shKgYFyxjXOxiPgIrxNnOmwIx8uv8sQ7ZozHn8JlSeXzTdCEASJuizQ2fOhmIr6o8jyk
+ bGiA==
+X-Gm-Message-State: APjAAAVHxxrChXuIcp26wtsDyykHvHAPg0F3DK4LOcOrkZ3e3uiW4E/r
+ kj/qL2SGoparIBJ1nF+/pkrR5z+VZZBVSaXG5pvq1w==
+X-Google-Smtp-Source: APXvYqxUxnVJIFmSjF/fduDJIdHHtTu2E7rs0M1v5DQsmsjwZzuX9klo19X53kLCG4pNPCe3wIEdLnHCwqNb7FnoP6U=
+X-Received: by 2002:a17:90a:a116:: with SMTP id
+ s22mr29852919pjp.47.1563206415768; 
+ Mon, 15 Jul 2019 09:00:15 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190712100443.221322-1-cychiang@chromium.org>
- <20190712100443.221322-2-cychiang@chromium.org>
- <20190712105745.xr7jxc626lwoaajx@shell.armlinux.org.uk>
-In-Reply-To: <20190712105745.xr7jxc626lwoaajx@shell.armlinux.org.uk>
-From: Tzung-Bi Shih <tzungbi@google.com>
-Date: Mon, 15 Jul 2019 23:56:19 +0800
-Message-ID: <CA+Px+wWbmUemETY3OMk1T9XS2w8ZXvZUhVEGzw_w6AxtU8R0rw@mail.gmail.com>
-Subject: Re: [PATCH v3 1/5] ASoC: hdmi-codec: Add an op to set callback
- function for plug event
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+References: <cover.1561386715.git.andreyknvl@google.com>
+ <41e0a911e4e4d533486a1468114e6878e21f9f84.1561386715.git.andreyknvl@google.com>
+ <20190624175009.GM29120@arrakis.emea.arm.com>
+In-Reply-To: <20190624175009.GM29120@arrakis.emea.arm.com>
+From: Andrey Konovalov <andreyknvl@google.com>
+Date: Mon, 15 Jul 2019 18:00:04 +0200
+Message-ID: <CAAeHK+x2TL057Fr0K7FZBTYgeEPVU3cC6scEeiSYk-Jkb3xgfg@mail.gmail.com>
+Subject: Re: [PATCH v18 07/15] fs/namespace: untag user pointers in
+ copy_mount_options
+To: Al Viro <viro@zeniv.linux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190715_085636_590075_41C283B7 
-X-CRM114-Status: GOOD (  19.57  )
+X-CRM114-CacheID: sfid-20190715_090019_491779_9B0C45F4 
+X-CRM114-Status: GOOD (  22.96  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
  white-list
@@ -100,83 +100,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ALSA development <alsa-devel@alsa-project.org>, tzungbi@chromium.org,
- Heiko Stuebner <heiko@sntech.de>, Liam Girdwood <lgirdwood@gmail.com>,
- David Airlie <airlied@linux.ie>, Mark Brown <broonie@kernel.org>,
- Takashi Iwai <tiwai@suse.com>, Douglas Anderson <dianders@chromium.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
  dri-devel@lists.freedesktop.org,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Hans Verkuil <hverkuil@xs4all.nl>, linux-rockchip@lists.infradead.org,
- Andrzej Hajda <a.hajda@samsung.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>, dgreid@chromium.org,
- Jaroslav Kysela <perex@perex.cz>, linux-arm-kernel@lists.infradead.org,
- Cheng-Yi Chiang <cychiang@chromium.org>
+ Linux Memory Management List <linux-mm@kvack.org>,
+ Khalid Aziz <khalid.aziz@oracle.com>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
+ Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
+ Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yishai Hadas <yishaih@mellanox.com>, LKML <linux-kernel@vger.kernel.org>,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jul 12, 2019 at 6:58 PM Russell King - ARM Linux admin
-<linux@armlinux.org.uk> wrote:
+On Mon, Jun 24, 2019 at 7:50 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
 >
-> On Fri, Jul 12, 2019 at 06:04:39PM +0800, Cheng-Yi Chiang wrote:
-> > Add an op in hdmi_codec_ops so codec driver can register callback
-> > function to handle plug event.
+> On Mon, Jun 24, 2019 at 04:32:52PM +0200, Andrey Konovalov wrote:
+> > This patch is a part of a series that extends kernel ABI to allow to pass
+> > tagged user pointers (with the top byte set to something else other than
+> > 0x00) as syscall arguments.
 > >
-> > Driver in DRM can use this callback function to report connector status.
+> > In copy_mount_options a user address is being subtracted from TASK_SIZE.
+> > If the address is lower than TASK_SIZE, the size is calculated to not
+> > allow the exact_copy_from_user() call to cross TASK_SIZE boundary.
+> > However if the address is tagged, then the size will be calculated
+> > incorrectly.
 > >
-> > Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
+> > Untag the address before subtracting.
+> >
+> > Reviewed-by: Khalid Aziz <khalid.aziz@oracle.com>
+> > Reviewed-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+> > Reviewed-by: Kees Cook <keescook@chromium.org>
+> > Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
+> > Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
 > > ---
-> >  include/sound/hdmi-codec.h    | 16 +++++++++++++
-> >  sound/soc/codecs/hdmi-codec.c | 45 +++++++++++++++++++++++++++++++++++
-> >  2 files changed, 61 insertions(+)
+> >  fs/namespace.c | 2 +-
+> >  1 file changed, 1 insertion(+), 1 deletion(-)
 > >
-> > diff --git a/include/sound/hdmi-codec.h b/include/sound/hdmi-codec.h
-> > index 7fea496f1f34..9a8661680256 100644
-> > --- a/include/sound/hdmi-codec.h
-> > +++ b/include/sound/hdmi-codec.h
-> > @@ -47,6 +47,9 @@ struct hdmi_codec_params {
-> >       int channels;
-> >  };
-> >
-> > +typedef void (*hdmi_codec_plugged_cb)(struct device *dev,
-> > +                                   bool plugged);
-> > +
+> > diff --git a/fs/namespace.c b/fs/namespace.c
+> > index 7660c2749c96..ec78f7223917 100644
+> > --- a/fs/namespace.c
+> > +++ b/fs/namespace.c
+> > @@ -2994,7 +2994,7 @@ void *copy_mount_options(const void __user * data)
+> >        * the remainder of the page.
+> >        */
+> >       /* copy_from_user cannot cross TASK_SIZE ! */
+> > -     size = TASK_SIZE - (unsigned long)data;
+> > +     size = TASK_SIZE - (unsigned long)untagged_addr(data);
+> >       if (size > PAGE_SIZE)
+> >               size = PAGE_SIZE;
 >
-> I'd like to pose a question for people to think about.
+> I think this patch needs an ack from Al Viro (cc'ed).
 >
-> Firstly, typedefs are generally shunned in the kernel.  However, for
-> these cases it seems to make sense.
->
-> However, should the "pointer"-ness be part of the typedef or not?  To
-> see what I mean, consider:
->
->         typedef void (*hdmi_foo)(void);
->
->         int register_foo(hdmi_foo foo);
->
-> vs
->
->         typedef void hdmi_foo(void);
->
->         int register_foo(hdmi_foo *foo);
->
-> which is more in keeping with how we code non-typedef'd code - it's
-> obvious that foo is a pointer while reading the code.
-I have a different opinion.  Its suffix "_cb" self-described it is a
-callback function.  Since function and function pointer are equivalent
-in the language, I think we don't need to emphasize that it is a
-function "pointer".
+> --
+> Catalin
 
+Hi Al,
 
-> It seems to me that the latter better matches what is in the kernel's
-> coding style, which states:
->
->   In general, a pointer, or a struct that has elements that can
->   reasonably be directly accessed should **never** be a typedef.
->
-> or maybe Documentation/process/coding-style.rst needs updating?
+Could you take a look and give your acked-by?
+
+Thanks!
 
 _______________________________________________
 linux-arm-kernel mailing list
