@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3CD6D689F6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 14:50:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 37FFE689F4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 14:50:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,111 +11,111 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=LGr+OutupsaSm+PNBWgJ5ZPk4aNqGeuO3lyHTkDAOQ0=; b=d3Fj5rXY3pdFOsqvnnGnJLSKt7
-	m9Slw61JYyc6GHnYV3nohBR6y5q3SIyc7E3HjXQtJkKZumblqM1EVocaaPpKBeMCv07rXgI+3LVKI
-	CHrimN+0Nh4Qxy/INPmlGGnAQZtpOxpWpuYAMLB44jGuew/7oR+dCDAfCydGG2I2Bj1ll+9VvfMwO
-	HKSIu+Kdf9sMb4cPJ4O5mjsYgYiXoKvg4aL7NJaZoFzwiWCeIu6waisX7SYrg0gDHQkYkX9EC+92O
-	LNBBa4n3/bVIn/joD5k780oV3m8rIYzSEgqkI/2S2eb3hzsKT3tjSXRh8P2fAyAK0lKyycjBWwPMt
-	lklQm9+w==;
+	bh=gC69DzUoEh7tXirqdnaOzglNDC/yIEruaP2TRZrqRmA=; b=egnBtkMSbvgEB+IvJwiFaTCm0i
+	SJZy7gpaT4hDMvTRMh+0/CTbxnq6aVjIpsKIkt8iK6JvHDr6PaEe/Yu0vJLt5UyerTeUr89vQhatK
+	Xe48tz2FLoN+3aX8QF2HHfw2OwzLen5F6vbJ630qc00HgHyM1M2ut5V9nhRweLTkSH1/Al5NMzUCT
+	DyP2iKbGyw6bEETMD6ihkwuxXL2rtuROKfsoXc/Wvv3U9kDeZL7adJG6EWdQpe0XZRdMhAnzOo+7O
+	RIbVyVXjCWWqPx4eKqBiH6BlGqrFR6yYr6waBn4eS/S10HfPNn4/QE2kC5WGGibgykQtnrN7NN0iC
+	QmM1kFXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hn0R3-0001ob-Lq; Mon, 15 Jul 2019 12:50:29 +0000
-Received: from mailout2.w1.samsung.com ([210.118.77.12])
+	id 1hn0Qm-0000VV-Bx; Mon, 15 Jul 2019 12:50:12 +0000
+Received: from mailout1.w1.samsung.com ([210.118.77.11])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hn0LY-0003kH-15
+ id 1hn0LX-0003jy-6X
  for linux-arm-kernel@lists.infradead.org; Mon, 15 Jul 2019 12:44:49 +0000
-Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
- by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
- 20190715124442euoutp02329383ff17c87dcde42504f37100a0ff~xlUgkXVLf0595105951euoutp02a
+Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
+ by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20190715124445euoutp01ab83aec9f304d63f61826be4c1c421ba~xlUjfCSqv1961119611euoutp01R
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 15 Jul 2019 12:44:42 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
- 20190715124442euoutp02329383ff17c87dcde42504f37100a0ff~xlUgkXVLf0595105951euoutp02a
+ Mon, 15 Jul 2019 12:44:45 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
+ 20190715124445euoutp01ab83aec9f304d63f61826be4c1c421ba~xlUjfCSqv1961119611euoutp01R
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1563194682;
- bh=xyPVVgSZeAAl0W8N7v1spNbK/C37A4Mttfo7IbZ7n/A=;
+ s=mail20170921; t=1563194685;
+ bh=I0OgqZ2CWuBbzFVPzjbpMciCe+FwTz52wvrMkQPDL5M=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Zu5di3CCoNhgRNrQNS9TiANUz9J2IOT0o34ZFTjFEN4ylN4deLgpNQFAAOGtJ3RU7
- db2fNA2bey5sC8rc97zay8UnzSQaWi5R4Q65Y5Bek5QIQBtm0/9nr79IrCKu2n/P/l
- HVTzpmS28pkoMeQKAH/5SIGQo7AIstTdmJHBPVKc=
-Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTP id
- 20190715124442eucas1p27990fa89f07a54f5e2b55434ac7019aa~xlUf_TUQq1386513865eucas1p2B;
- Mon, 15 Jul 2019 12:44:42 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges3new.samsung.com (EUCPMTA) with SMTP id 4A.A0.04325.9357C2D5; Mon, 15
- Jul 2019 13:44:41 +0100 (BST)
+ b=ObnQuiRvdNyYX9RLbw5zfKcJ7MZ2NjnNrcvhxw8X05vJ0upeI3HsX6Jb6Fzea4GUr
+ GvPbT4STPD4HhxVpVuZdo2xUR2g/ETfyhTXfBTX75RQCsEYZpKf2mfs79RAefkZc+a
+ KR/WxW6lN/GAv8jaYLvAoJ3LNf1VyeoQvUKcqYDo=
+Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTP id
+ 20190715124445eucas1p1cadbf6f8142613a4c6698072f6a76f2d~xlUjA0E280156501565eucas1p1E;
+ Mon, 15 Jul 2019 12:44:45 +0000 (GMT)
+Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
+ eusmges1new.samsung.com (EUCPMTA) with SMTP id 76.25.04298.D357C2D5; Mon, 15
+ Jul 2019 13:44:45 +0100 (BST)
 Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
- 20190715124441eucas1p12e1f58587318219a5a2c695faa200b17~xlUfK8FhO0146601466eucas1p1B;
- Mon, 15 Jul 2019 12:44:41 +0000 (GMT)
+ eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20190715124444eucas1p2683c9896e8be45d6a0cd4afeb681a2ea~xlUiPFHjO0850908509eucas1p2R;
+ Mon, 15 Jul 2019 12:44:44 +0000 (GMT)
 Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
  eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20190715124441eusmtrp14ee2327d0d20ba36d29035765359bfaa~xlUe815ik0462004620eusmtrp16;
- Mon, 15 Jul 2019 12:44:41 +0000 (GMT)
-X-AuditID: cbfec7f5-b75ff700000010e5-b7-5d2c7539b1de
+ 20190715124444eusmtrp1f2cf85a295731db67f52673a8212a215~xlUh7zPut0462004620eusmtrp1L;
+ Mon, 15 Jul 2019 12:44:44 +0000 (GMT)
+X-AuditID: cbfec7f2-f2dff700000010ca-ad-5d2c753d0c8a
 Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
- eusmgms2.samsung.com (EUCPMTA) with SMTP id 39.F6.04140.8357C2D5; Mon, 15
- Jul 2019 13:44:40 +0100 (BST)
+ eusmgms2.samsung.com (EUCPMTA) with SMTP id 1E.F6.04140.C357C2D5; Mon, 15
+ Jul 2019 13:44:44 +0100 (BST)
 Received: from AMDC3778.DIGITAL.local (unknown [106.120.51.20]) by
  eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20190715124440eusmtip2ea673178038ddf8fc3568c924a8628f6~xlUeCoi8h1184611846eusmtip2U;
- Mon, 15 Jul 2019 12:44:40 +0000 (GMT)
+ 20190715124443eusmtip2d58fdac071ad32fdd16f4b5966dd5450~xlUhJJv4X1176011760eusmtip2z;
+ Mon, 15 Jul 2019 12:44:43 +0000 (GMT)
 From: Lukasz Luba <l.luba@partner.samsung.com>
 To: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
  linux-clk@vger.kernel.org
-Subject: [PATCH v1 09/50] clk: samsung: add IDs to FSYS clocks in Exynos5x
-Date: Mon, 15 Jul 2019 14:43:36 +0200
-Message-Id: <20190715124417.4787-10-l.luba@partner.samsung.com>
+Subject: [PATCH v1 13/50] clk: samsung: add DPLL rate table in Exynos5420
+Date: Mon, 15 Jul 2019 14:43:40 +0200
+Message-Id: <20190715124417.4787-14-l.luba@partner.samsung.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190715124417.4787-1-l.luba@partner.samsung.com>
-X-Brightmail-Tracker: H4sIAAAAAAAAA0VSa0hTYRju2zln52y0OG5RH2Vag6CLza7w2dUo4SAEQdCPIuqYJ43csp2m
- WZEr0aWYmoGKXSVTmVY6zVsqpsuZw9SFWopdVLp5LRU5ZdZOZ9a/530u7/Py8VGYupZYQp00
- nOWMBjZCK1fi5U1C27oAk9+R9S5hI+p59JJAJVmPCdQ9+YlAd+3uMXVgCENtbcUkar0yTKIe
- szeyDXQR6FvyWwK9qr4lR1ltdTL00N5HogfdHTLU0RKEei8XyFF8rZ1EjcMWAs12leCBGqbo
- ThFgxl7Hk4zNmihnSnNjmWejNTImpcwKmAmbz37ykHJ7KBdxMooz+u88pgx3lOaByF+KcyXN
- WcAMnFQSUFCQ3gzTUgUiCSgpNV0AoLW+ApOGSQBb3lR5hgkAn8eNYnMR4eFLXBLyASyd6JT9
- i4z1tbsVipLTOlhpPSMGFtK5ANqFENGD0W9ksGawihAFDR0MXSk2XMQ4vRIOtnwBYlZF74JV
- iQelMl9YWFz/t1jhpoWMdrm4B9IuEl5/+k4umfbCTOGm5zoN/OooIyXsDZ03knEJ89B8LQdI
- +CIcSL3t8WyDjY4OQuzF6NXwcbW/RO+GCYV1pEhDegF8PeIl0pgbppdnYhKtglcT1JJ7FSxL
- bpdJeBHML8rwLGdg4bsGz+ukAziVYyPSgG/2/7J7AFjBYs7E68M4fpOBi9bxrJ43GcJ0x0/r
- bcD9qZyzjqlKUDcT0gBoCmjnqwJD1x5RE2wUH6NvAJDCtAtVO6bclCqUjTnPGU8fNZoiOL4B
- LKVw7WLVhXnvD6vpMPYsd4rjIjnjnCqjFEvM4Jiv+lZlZ58lJ+jSAiL1W78rVhnHOpdPf/g+
- 4vSKCnV+UnYHz1T8yHSkNPv7jT75Xbb1oy/Kyu41Tb+ydBQ4ogci+4XP5p+KLec3jLOznV1D
- sSt0+87t6U+4v+lAnqEYb+0dmbWMf2+6E6eZPjH5YqjVhNV/WKTxm/FRZQRcNC/T4nw4u2EN
- ZuTZPwkbD49QAwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprPIsWRmVeSWpSXmKPExsVy+t/xe7oWpTqxBi//WFvcWneO1WLjjPWs
+X-Brightmail-Tracker: H4sIAAAAAAAAA0WSaUwTQRTHnW73aKW6FoQJciQ1GrzAJn4YORQSSdYYTflkohhdYAMEWrBr
+ VdRoUfHACoIE1EgFU5UUPKgN1oqo0IBiuFEQo1HQiHc4asQIcZdF/fZ7v/m/eS+ToTC1Gw+k
+ 0g27OKOBzdQQSnld80T7ihjT8m0r84YxNHCjHUe1527iqG/8A44ueYSycOgzhjo6bpGo7fAX
+ Eg2Yg5Bj6DmORiyvcdTjvkigcx0NMnTd84pEV/q6ZKirNR69zK0iUN59D4mavhzH0dTzWnms
+ L1NjrQHM9/48knHYTxLMbdsh5tG3ehlT4LQDZswRoiO3KKNTuMz03ZwxYs0OZVrv+QdktnXu
+ 3pHmVWYw6pMPFBSkV8EGZxkhspquArD8rTYfKAUeB/DzQD2QijEAr/6+h/3t6HF4gdRxDcD8
+ XNm/jj5XgVBQFEGHQ5d9p5jxo20AeiaSxAxGv5DB+nd3cfHAl14PPzbXTrOcXgR73J3Ta6jo
+ tbDjyFG5NCwUVt96OD1YIfiJUjGjFHw3CU9Z6nEptA5Omq2kxL7wU4tzhoPg07OWmYt4aD5d
+ CSQ+AIcKy2cyUbCppQsXl8boJfCmO0LScdB75wIhakjPgf1f54kaE7C4rgyTtAqeOKaW0mHQ
+ aemUSewPr9WUklKEgRXFodLrFAPYMllFngGhF/7PqgDADgI4E69P5XitgdsTzrN63mRIDU/O
+ 0juA8KOeTrWMuoC3O6kR0BTQ+KhiU5ZtU+Psbj5H3wgghWn8VDFeQalS2Jx9nDFru9GUyfGN
+ YAEl1wSo9s96s1VNp7K7uAyOy+aMf09llCLQDDJrNEWRnQka/5HI2Sq3JThsCxxfPRDi2UAs
+ 3nC5YFPiL52u92tSsu4gOTUYa9hsrSxp7Y+Zo3gfyf3cNMbmLo6Ua0sS1MfbP2TMtz1u1SXY
+ 3G+HtSQW7Co0+T/zCdqYGK2vcKqejBdFpbcxKUF2R/WooosdXPiDKIg/GAffa+R8Gqtdihl5
+ 9g9aa1gHTQMAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprHIsWRmVeSWpSXmKPExsVy+t/xe7o2pTqxBi8WclrcWneO1WLjjPWs
  Fte/PGe1mH8EyO1//JrZ4vz5DewWZ5vesFvcapCx2PT4GqvFx557rBaXd81hs5hxfh+Txdoj
  d9ktll6/yGRx8ZSrxe3GFWwWrXuPsFscftPOavHv2kYWB2GPNfPWMHq8v9HK7rFpVSebx+Yl
  9R4H3+1h8ujbsorR4/MmuQD2KD2bovzSklSFjPziElulaEMLIz1DSws9IxNLPUNj81grI1Ml
- fTublNSczLLUIn27BL2M45uXMRb85azYeGIGYwPjaY4uRk4OCQETiZ9rz7F0MXJxCAksZZTY
- vnUyG0RCTGLSvu3sELawxJ9rXWwQRZ8YJRZ9uQeU4OBgE9CT2LGqEKRGRGAFo8TkE94gNcwC
- r5kkjhx9xwqSEBbwkrjUt4kFxGYRUJV4cuolI0gvr4C9xM7OMIj58hKrNxxgBrE5gcI/p10A
- u0FIwE5i8dGfTBMY+RYwMqxiFEktLc5Nzy020itOzC0uzUvXS87P3cQIjJxtx35u2cHY9S74
- EKMAB6MSD69DinasEGtiWXFl7iFGCQ5mJRFe269AId6UxMqq1KL8+KLSnNTiQ4ymQDdNZJYS
- Tc4HRnVeSbyhqaG5haWhubG5sZmFkjhvh8DBGCGB9MSS1OzU1ILUIpg+Jg5OqQbGSS9vXn+5
- 7n9Ckgz7LPlXR18tFriWwvBy8rOvn7s3vCnPilJO0Ejg7txyK9cniaHRoOnD3Jt/Z/WrG1Vz
- tT1V3vtu00nup2UCz6f57xLbu50p7u1n9UDDVeHrp62uMsud3JV22pl1+/Sa6X/5KlinfHsm
- FsAUe9Xhm4Z2+pJf/7lMd86cvNv2qxJLcUaioRZzUXEiAGEcT5KyAgAA
-X-CMS-MailID: 20190715124441eucas1p12e1f58587318219a5a2c695faa200b17
+ fTublNSczLLUIn27BL2MKzP3sxfM46/4eMykgfETTxcjJ4eEgInE5U1fGbsYuTiEBJYySvzY
+ 8o4JIiEmMWnfdnYIW1jiz7UuNhBbSOATo8TE2a5djBwcbAJ6EjtWFYKERQRWMEpMPuENModZ
+ 4DWTxJGj71hBEsICnhIvj20Es1kEVCUu77oANodXwF7ifHMLC8R8eYnVGw4wg9icQPGf0y5A
+ 7bKTWHz0J9MERr4FjAyrGEVSS4tz03OLjfSKE3OLS/PS9ZLzczcxAuNm27GfW3Ywdr0LPsQo
+ wMGoxMPrkKIdK8SaWFZcmXuIUYKDWUmE1/YrUIg3JbGyKrUoP76oNCe1+BCjKdBRE5mlRJPz
+ gTGdVxJvaGpobmFpaG5sbmxmoSTO2yFwMEZIID2xJDU7NbUgtQimj4mDU6qBMVts+YpvB12O
+ f882iLI+mPNzDdfNlJbItyZ39z5XYnPYHakw0eDU0mVlz5auXKwXYhK+aUb6fL2XabWfbjf2
+ nv66rsnvmE3l3pfztieINiwK/vR/R5fVYcvz//x03hrsm8HdHCO76dz9tdHNTboPn7padMVv
+ +XL6k4kVS1yy+IbVdpPWzj4RMl2JpTgj0VCLuag4EQDO9qW9sQIAAA==
+X-CMS-MailID: 20190715124444eucas1p2683c9896e8be45d6a0cd4afeb681a2ea
 X-Msg-Generator: CA
-X-RootMTR: 20190715124441eucas1p12e1f58587318219a5a2c695faa200b17
+X-RootMTR: 20190715124444eucas1p2683c9896e8be45d6a0cd4afeb681a2ea
 X-EPHeader: CA
 CMS-TYPE: 201P
-X-CMS-RootMailID: 20190715124441eucas1p12e1f58587318219a5a2c695faa200b17
+X-CMS-RootMailID: 20190715124444eucas1p2683c9896e8be45d6a0cd4afeb681a2ea
 References: <20190715124417.4787-1-l.luba@partner.samsung.com>
- <CGME20190715124441eucas1p12e1f58587318219a5a2c695faa200b17@eucas1p1.samsung.com>
+ <CGME20190715124444eucas1p2683c9896e8be45d6a0cd4afeb681a2ea@eucas1p2.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190715_054448_342210_05DC17EE 
-X-CRM114-Status: GOOD (  11.40  )
+X-CRM114-CacheID: sfid-20190715_054447_776924_2C81F9DE 
+X-CRM114-Status: GOOD (  13.84  )
 X-Spam-Score: -5.1 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.12 listed in list.dnswl.org]
+ high trust [210.118.77.11 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -146,34 +146,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add IDs to MUXes of ACLK200_FSYS, ACLK_FSYS2, PCLK200_FSYS to manage them
-from DT.
+The DPLL has fixed frequency left by the bootloader and it is not possible
+to change it. With this patch the DPLL gets rate table the same for the
+whole  PLL family (similar as APLL, KPLL according to RM) so the frequency
+might be changed to one of the values defined there.
+It is needed for further patches which change the DPLL frequency to feed
+the clocks with proper base.
+It also sets CLK_IS_CRITICAL for SCLK_DPLL due to some drivers which could
+disable master clock, which is then populated higher and tries to disable
+PLL, which casues system crash. The flag is needed for this kind of use
+cases.
 
 Signed-off-by: Lukasz Luba <l.luba@partner.samsung.com>
 ---
- drivers/clk/samsung/clk-exynos5420.c | 9 ++++++---
- 1 file changed, 6 insertions(+), 3 deletions(-)
+ drivers/clk/samsung/clk-exynos5420.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/clk/samsung/clk-exynos5420.c b/drivers/clk/samsung/clk-exynos5420.c
-index 5f251279b4c8..6164d0ca75e0 100644
+index 7f8221527633..2395b02ce8c5 100644
 --- a/drivers/clk/samsung/clk-exynos5420.c
 +++ b/drivers/clk/samsung/clk-exynos5420.c
-@@ -622,9 +622,12 @@ static const struct samsung_mux_clock exynos5x_mux_clks[] __initconst = {
- 	MUX(0, "mout_kfc", mout_kfc_p, SRC_KFC, 16, 1),
+@@ -694,7 +694,8 @@ static const struct samsung_mux_clock exynos5x_mux_clks[] __initconst = {
+ 	MUX(0, "mout_sclk_rpll", mout_rpll_p, SRC_TOP6, 16, 1),
+ 	MUX_F(CLK_MOUT_EPLL, "mout_sclk_epll", mout_epll_p, SRC_TOP6, 20, 1,
+ 			CLK_SET_RATE_PARENT, 0),
+-	MUX(0, "mout_sclk_dpll", mout_dpll_p, SRC_TOP6, 24, 1),
++	MUX_F(CLK_MOUT_SCLK_DPLL, "mout_sclk_dpll", mout_dpll_p,
++			SRC_TOP6, 24, 1, CLK_IS_CRITICAL, 0),
+ 	MUX(0, "mout_sclk_cpll", mout_cpll_p, SRC_TOP6, 28, 1),
  
- 	MUX(0, "mout_aclk200", mout_group1_p, SRC_TOP0, 8, 2),
--	MUX(0, "mout_aclk200_fsys2", mout_group1_p, SRC_TOP0, 12, 2),
--	MUX(0, "mout_pclk200_fsys", mout_group1_p, SRC_TOP0, 24, 2),
--	MUX(0, "mout_aclk200_fsys", mout_group1_p, SRC_TOP0, 28, 2),
-+	MUX(CLK_MOUT_ACLK200_FSYS2, "mout_aclk200_fsys2", mout_group1_p,
-+			SRC_TOP0, 12, 2),
-+	MUX(CLK_MOUT_PCLK200_FSYS, "mout_pclk200_fsys", mout_group1_p,
-+			SRC_TOP0, 24, 2),
-+	MUX(CLK_MOUT_ACLK200_FSYS, "mout_aclk200_fsys", mout_group1_p,
-+			SRC_TOP0, 28, 2),
+ 	MUX(CLK_MOUT_SW_ACLK400_ISP, "mout_sw_aclk400_isp",
+@@ -1514,6 +1515,7 @@ static void __init exynos5x_clk_init(struct device_node *np,
  
- 	MUX(0, "mout_aclk66", mout_group1_p, SRC_TOP1, 8, 2),
- 	MUX(0, "mout_aclk166", mout_group1_p, SRC_TOP1, 24, 2),
+ 	if (_get_rate("fin_pll") == 24 * MHZ) {
+ 		exynos5x_plls[apll].rate_table = exynos5420_pll2550x_24mhz_tbl;
++		exynos5x_plls[dpll].rate_table = exynos5420_pll2550x_24mhz_tbl;
+ 		exynos5x_plls[epll].rate_table = exynos5420_epll_24mhz_tbl;
+ 		exynos5x_plls[kpll].rate_table = exynos5420_pll2550x_24mhz_tbl;
+ 	}
 -- 
 2.17.1
 
