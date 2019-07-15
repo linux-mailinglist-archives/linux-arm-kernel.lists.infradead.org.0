@@ -2,57 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D1326998B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 19:07:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EF3D5699C7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 19:30:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=DAFhhOsrNRmBhuYRnXNx7wnemG+bftnXCqXEWiiMEHg=; b=ke9WoxzZaB/UK3bcZPJC05/Sw
-	JaFSktA28GqbJpNqPA9j3LP6IvIdUsFbmjfYh7d64zajVb0F0fqcY20oazloxaaDtKwRPjaZh8SvE
-	amIkBwx0w6VfBoVZMPK50nFW1a8A588ZwSLoWqS1uJPoimDZhD3p5zQeJySnrr8xoDuTrCiAsdD7i
-	1wA1SrGuobFf+CwNPOJfYHDTnX7RBd99geotnSS5eWQD30ASeaI1JViOU36KrfnhHcbs5H9dYDjb1
-	QnjC1pkodBy/UXFEMRdRj47ZfJW8HEqA1LY1ei0VU+6rzMZsmA+ttWSA12y0dN+ZQ4uwbrpEQHQDk
-	jQiPFyjkg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=C2Npx5mGS5mvqg9IrXStNhY5wMEb7nxsyzbd+xB2uX4=; b=qbpuSmnwcJF/KA
+	KXIsagblokNzWvJoS++Wf8J2l2PY6OYAxZ9cKFP7KtJDDZ2A+KBQSUZJ0Bvp83plzNNzY6ZKY6so9
+	EKmIIpkbRUQ6zqP2jzJ8dzU25v/t1IhYUqzdzukBZ2t5Xb4yf3cAZMkkhnIs6vOXA1pp/dJF2NHEa
+	AmAn1NW4rmx28aCUN6UnRL9VRwQUfb5WTj8uLDS2a+Mhxn5NjpGXZ8J6J0HquBrkIsld+N5d9w2Vx
+	qZkU9WMzRr/sYgo6k7bdCoHJ5ZuetH3xGWhSsAhKi1ShoY+5OeRhxeDQX1CCE/po4/howrNGdI5gG
+	qj2kJEWJUjAY/v6ih4fw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hn4RH-00081J-RZ; Mon, 15 Jul 2019 17:06:59 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hn4Qq-00080R-Hw
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jul 2019 17:06:39 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0D06328;
- Mon, 15 Jul 2019 10:06:31 -0700 (PDT)
-Received: from [10.1.196.50] (e108454-lin.cambridge.arm.com [10.1.196.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A41773F59C;
- Mon, 15 Jul 2019 10:06:29 -0700 (PDT)
-Subject: Re: [RFC v2 14/14] kvm/arm: Align the VMID allocation with the arm64
- ASID one
-To: James Morse <james.morse@arm.com>
-References: <20190620130608.17230-1-julien.grall@arm.com>
- <20190620130608.17230-15-julien.grall@arm.com>
- <39d47f54-459f-ce07-91c0-0158896a6783@arm.com>
-From: Julien Grall <julien.grall@arm.com>
-Message-ID: <4d926abe-9cdb-536d-43ee-7f14a84b0246@arm.com>
-Date: Mon, 15 Jul 2019 18:06:28 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.1
+	id 1hn4nm-0008Df-HQ; Mon, 15 Jul 2019 17:30:14 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hn4nK-0008Co-Nw
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jul 2019 17:29:48 +0000
+Received: by mail-lf1-x141.google.com with SMTP id q26so11590458lfc.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 15 Jul 2019 10:29:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=14LUvsDt1gvon+wQxuZkucZPfWNvGtdLSK5zNw+y+rA=;
+ b=ixrxfkci5dK+hglsPn5hYVamBJtCPCa0nsBEWDUI0EpA8GFehnCmVFI9GCfedQbpUu
+ FDTHVi3tV5sA67WmYGwasXnB3ivKrzwVNMy6/bWmDKs1XZOXtq1nTdETXmdcQPgyNfUk
+ 1MA2KKVN1yaehff8y0asY8lIZ/lmYp5WycT4JNS2YfiaxTGM6K72tIpyqEOMrvljCxL8
+ 23jzXHSLjHS0rfkSWtcqybyVS5dVDUVGziUOEgfy2SED+fBIQBxi4DSwau29FKuaqJSr
+ OaiFWePa0lYtnFBJ398YLihSjmxlSfB8wloB8tY0h+58x8eLb2FxgA2/zAOgdlO3qHJU
+ +Vxg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=14LUvsDt1gvon+wQxuZkucZPfWNvGtdLSK5zNw+y+rA=;
+ b=S0VC/aR/5UfsWJ70cpHOjCBOw/wCfTyBT5siE+/Y7tywkZwGDmI3v32Y14zE/X8Rfe
+ 4JN64fjuqpH9naHKaT8L3X9A2nWiuPsYPbkIz2WTMfM6SWGWOvX06+FhClvZl6z14R0R
+ petyNLOgMb4xCD1Zfmblo12zjCtW9ERaVaED7HBUm6ZXn1ohYsKmHePwHyG2QTX0DYo/
+ m7cwMcDhbeRZ89peXOYMhJW9qe5hHz+zQNWe0LYllHrr2LeOtaf8DhHxw4IraWf0tAuW
+ IUdMBr4Xk+ncIF8GMocLbK0LFcxDH1j7Tqndombbft0l0/K1A+1LKUd+z+Sg/BkrHJiD
+ UI6A==
+X-Gm-Message-State: APjAAAU/NSoIelH7/6NVFp10xpTIaCKd0ydHSDlsaAMbRuhngr14CkG7
+ s4ijg21Hb1d2QxCJyKRGPJ2CYBMh
+X-Google-Smtp-Source: APXvYqz03+U5F5T79TCqUrDKPWa9pW7113bB7WL9Hu2ZaUcqUgWSXnsTbG6w0fLEJMAFg3WfQLZ3lQ==
+X-Received: by 2002:ac2:5bc7:: with SMTP id u7mr12198271lfn.167.1563211784616; 
+ Mon, 15 Jul 2019 10:29:44 -0700 (PDT)
+Received: from localhost.localdomain (ppp79-139-233-208.pppoe.spdop.ru.
+ [79.139.233.208])
+ by smtp.gmail.com with ESMTPSA id b17sm3248765ljf.34.2019.07.15.10.29.42
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 15 Jul 2019 10:29:43 -0700 (PDT)
+From: Dmitry Osipenko <digetx@gmail.com>
+To: Thierry Reding <thierry.reding@gmail.com>,
+ Jonathan Hunter <jonathanh@nvidia.com>,
+ Peter De Schrijver <pdeschrijver@nvidia.com>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>
+Subject: [PATCH v3 00/13] Consolidate and improve NVIDIA Tegra CPUIDLE
+ driver(s)
+Date: Mon, 15 Jul 2019 20:26:16 +0300
+Message-Id: <20190715172629.4437-1-digetx@gmail.com>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-In-Reply-To: <39d47f54-459f-ce07-91c0-0158896a6783@arm.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190715_100632_689557_EB60872A 
-X-CRM114-Status: GOOD (  33.66  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190715_102946_787412_8550A01F 
+X-CRM114-Status: GOOD (  16.96  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (digetx[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,200 +102,121 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: julien.thierry@arm.com, marc.zyngier@arm.com, catalin.marinas@arm.com,
- suzuki.poulose@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: linux-tegra@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 03/07/2019 18:36, James Morse wrote:
-> Hi Julien,
+Hello,
 
-Hi James,
+I was spending quite some time recently trying to hunt down CPU-suspend
+bug on Tegra30 SoC and in the end it was nailed. During that time I
+realized that the CPU Idle drivers could get some polish and gain new
+features, thus that's what this series does:
 
-> On 20/06/2019 14:06, Julien Grall wrote:
->> At the moment, the VMID algorithm will send an SGI to all the CPUs to
->> force an exit and then broadcast a full TLB flush and I-Cache
->> invalidation.
->>
->> This patch re-use the new ASID allocator. The
->> benefits are:
->>      - CPUs are not forced to exit at roll-over. Instead the VMID will be
->>      marked reserved and the context will be flushed at next exit. This
->>      will reduce the IPIs traffic.
->>      - Context invalidation is now per-CPU rather than broadcasted.
-> 
-> + Catalin has a model of the asid-allocator.
+  1. Unifies Tegra20/30/114 drivers into a single driver and moves it out
+     into common drivers/cpuidle/ directory.
 
-That's a good point :).
+  2. Enables CPU cluster power-down idling state on Tegra30.
 
-> 
-> 
->> With the new algo, the code is now adapted:
->>      - The function __kvm_flush_vm_context() has been renamed to
->>      __kvm_flush_cpu_vmid_context and now only flushing the current CPU context.
->>      - The call to update_vttbr() will be done with preemption disabled
->>      as the new algo requires to store information per-CPU.
->>      - The TLBs associated to EL1 will be flushed when booting a CPU to
->>      deal with stale information. This was previously done on the
->>      allocation of the first VMID of a new generation.
->>
->> The measurement was made on a Seattle based SoC (8 CPUs), with the
->> number of VMID limited to 4-bit. The test involves running concurrently 40
->> guests with 2 vCPUs. Each guest will then execute hackbench 5 times
->> before exiting.
-> 
->> diff --git a/arch/arm64/include/asm/kvm_asid.h b/arch/arm64/include/asm/kvm_asid.h
->> new file mode 100644
->> index 000000000000..8b586e43c094
->> --- /dev/null
->> +++ b/arch/arm64/include/asm/kvm_asid.h
->> @@ -0,0 +1,8 @@
->> +/* SPDX-License-Identifier: GPL-2.0 */
->> +#ifndef __ARM64_KVM_ASID_H__
->> +#define __ARM64_KVM_ASID_H__
->> +
->> +#include <asm/asid.h>
->> +
->> +#endif /* __ARM64_KVM_ASID_H__ */
->> +
->> diff --git a/arch/arm64/include/asm/kvm_asm.h b/arch/arm64/include/asm/kvm_asm.h
->> index ff73f5462aca..06821f548c0f 100644
->> --- a/arch/arm64/include/asm/kvm_asm.h
->> +++ b/arch/arm64/include/asm/kvm_asm.h
->> @@ -62,7 +62,7 @@ extern char __kvm_hyp_init_end[];
->>   
->>   extern char __kvm_hyp_vector[];
->>   
->> -extern void __kvm_flush_vm_context(void);
->> +extern void __kvm_flush_cpu_vmid_context(void);
->>   extern void __kvm_tlb_flush_vmid_ipa(struct kvm *kvm, phys_addr_t ipa);
-> 
-> As we've got a __kvm_tlb_flush_local_vmid(), would __kvm_tlb_flush_local_all() fit in
-> better? (This mirrors local_flush_tlb_all() too)
+In the end there is a quite nice clean up of the Tegra CPUIDLE driver(s)
+and of the Tegra's arch code in general. Please review, thanks!
 
-I am happy with the renaming here.
+Changelog:
 
-> 
-> 
->>   extern void __kvm_tlb_flush_vmid(struct kvm *kvm);
->>   extern void __kvm_tlb_flush_local_vmid(struct kvm_vcpu *vcpu);
->> diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
->> index 4bcd9c1291d5..7ef45b7da4eb 100644
->> --- a/arch/arm64/include/asm/kvm_host.h
->> +++ b/arch/arm64/include/asm/kvm_host.h
->> @@ -68,8 +68,8 @@ int kvm_arch_vm_ioctl_check_extension(struct kvm *kvm, long ext);
->>   void __extended_idmap_trampoline(phys_addr_t boot_pgd, phys_addr_t idmap_start);
->>   
->>   struct kvm_vmid {
->> -	/* The VMID generation used for the virt. memory system */
->> -	u64    vmid_gen;
->> +	/* The ASID used for the ASID allocator */
->> +	atomic64_t asid;
-> 
-> Can we call this 'id' as happens in mm_context_t? (calling it asid is confusing)
+v3: - Addressed review comments that were made by Jon Hunter to v2 by
+      splitting patches into smaller (and simpler) chunks, better
+      documenting changes in the commit messages and using proper error
+      codes in the code.
 
-I am fine with this suggestion.
+      Warnings are replaced with a useful error messages in the code of
+      "Introduce unified driver for NVIDIA Tegra SoCs" patch.
 
-> 
->>   	u32    vmid;
-> 
-> Can we filter out the generation bits in kvm_get_vttbr() in the same way the arch code
-> does in cpu_do_switch_mm().
-> 
-> I think this saves writing back a cached pre-filtered version every time, or needing
-> special hooks to know when the value changed. (so we can remove this variable)
+      Secondary CPUs parking timeout increased to 100ms because I found
+      that it actually may happen to take more than 1ms if CPU is running
+      on a *very* low frequency.
 
-[...]
+      Added diagnostic messages that are reporting Flow Controller state
+      when CPU parking fails.
 
->> +static void vmid_update_ctxt(void *ctxt)
->>   {
->> +	struct kvm_vmid *vmid = ctxt;
->> +	u64 asid = atomic64_read(&vmid->asid);
-> 
->> +	vmid->vmid = asid & ((1ULL << kvm_get_vmid_bits()) - 1);
-> 
-> I don't like having to poke this through the asid-allocator as a kvm-specific hack. Can we
-> do it in kvm_get_vttbr()?
+      Further polished cpuidle driver's code.
 
-I will have a look.
+      The coupled state entering is now aborted if there is a pending SGI
+      (Software Generated Interrupt) because it will be lost after GIC's
+      power-cycling. Like it was done by the old Tegra20 CPUIDLE driver.
 
-> 
-> 
->>   }
-> 
->> @@ -487,48 +467,11 @@ static bool need_new_vmid_gen(struct kvm_vmid *vmid)
-> 
-> (git made a mess of the diff here... squashed to just the new code:)
-> 
->>   static void update_vmid(struct kvm_vmid *vmid)
->>   {
-> 
->> +	int cpu = get_cpu();
->>   
->> +	asid_check_context(&vmid_info, &vmid->asid, cpu, vmid);
->>   
->> +	put_cpu();
-> 
-> If we're calling update_vmid() in a pre-emptible context, aren't we already doomed?
+v2: - Added patches to enable the new cpuidle driver in the defconfigs:
 
-Yes we are. This made me realize that Linux-RT replaced the preempt_disable() in 
-the caller by migrate_disable(). The latter will prevent the task to move to 
-another CPU but allow preemption.
+        ARM: multi_v7_defconfig: Enable Tegra cpuidle driver
+        ARM: tegra: Enable Tegra cpuidle driver in tegra_defconfig
 
-This patch will likely makes things awfully broken for Linux-RT. I will have a 
-look to see if we can call this from preempt notifier.
+    - Dropped patches that removed CPUIDLE_FLAG_TIMER_STOP from the idling
+      states because that flag actually doesn't have any negative effects,
+      but still is correct for the case of a local CPU timer on older Tegra
+      SoCs:
 
-> 
-> Could we use smp_processor_id() instead.
-> 
-> 
->>   }
-> 
-> 
->> @@ -1322,6 +1271,8 @@ static void cpu_init_hyp_mode(void *dummy)
->>   
->>   	__cpu_init_hyp_mode(pgd_ptr, hyp_stack_ptr, vector_ptr);
->>   	__cpu_init_stage2();
-> 
-> 
->> +	kvm_call_hyp(__kvm_flush_cpu_vmid_context);
-> 
-> I think we only need to do this for VHE systems too. cpu_hyp_reinit() only does the call
-> to cpu_init_hyp_mode() if !is_kernel_in_hyp_mode().
+        cpuidle: tegra: Remove CPUIDLE_FLAG_TIMER_STOP from Tegra114/124 idle-state
+        cpuidle: tegra: Remove CPUIDLE_FLAG_TIMER_STOP from all states
 
-I guess you mean we need to do this for VHE system. If so, I agree that 
-cpu_init_hyp_mode() is not the best place. I will move it to cpu_hyp_reinit().
+    - The "Add unified driver for NVIDIA Tegra SoCs" patch got more polish.
+      Tegra30 and Terga114 states are now squashed into a single common C7
+      state (following Parker TRM terminology, see 17.2.2.2 Power Management
+      States), more comments added, etc minor changes.
 
-> 
-> 
->>   }
->>   
->>   static void cpu_hyp_reset(void)
->> @@ -1429,6 +1380,17 @@ static inline void hyp_cpu_pm_exit(void)
->>   
->>   static int init_common_resources(void)
->>   {
->> +	/*
->> +	 * Initialize the ASID allocator telling it to allocate a single
->> +	 * VMID per VM.
->> +	 */
->> +	if (asid_allocator_init(&vmid_info, kvm_get_vmid_bits(), 1,
->> +				vmid_flush_cpu_ctxt, vmid_update_ctxt))
->> +		panic("Failed to initialize VMID allocator\n");
-> 
-> Couldn't we return an error instead? The asid allocator is needed for user-space, its
-> pointless to keep running if it fails. The same isn't true here. (and it would make it
-> easier to debug what went wrong!)
+Dmitry Osipenko (13):
+  ARM: tegra: Remove cpuidle drivers to replace them with a new driver
+  ARM: tegra: Change tegra_set_cpu_in_lp2() type to void
+  ARM: tegra: Propagate error from tegra_idle_lp2_last()
+  ARM: tegra: Compile sleep-tegra20/30.S unconditionally
+  ARM: tegra: Expose PM functions required for new cpuidle driver
+  ARM: tegra: Rename some of the newly exposed PM functions
+  ARM: tegra: Add tegra_pm_park_secondary_cpu()
+  clk: tegra: Add missing stubs for the case of !CONFIG_PM_SLEEP
+  cpuidle: Introduce unified driver for NVIDIA Tegra SoCs
+  cpuidle: tegra: Support CPU cluster power-down state on Tegra30
+  ARM: tegra: Create simple platform device for cpuidle driver
+  ARM: multi_v7_defconfig: Enable Tegra cpuidle driver
+  ARM: tegra: Enable Tegra cpuidle driver in tegra_defconfig
 
-Fair point. I will update the next version.
-
-Cheers,
+ arch/arm/configs/multi_v7_defconfig           |   1 +
+ arch/arm/configs/tegra_defconfig              |   1 +
+ arch/arm/mach-tegra/Makefile                  |  23 +-
+ arch/arm/mach-tegra/cpuidle-tegra114.c        |  89 -----
+ arch/arm/mach-tegra/cpuidle-tegra20.c         | 212 -----------
+ arch/arm/mach-tegra/cpuidle-tegra30.c         | 132 -------
+ arch/arm/mach-tegra/cpuidle.c                 |  50 ---
+ arch/arm/mach-tegra/cpuidle.h                 |  21 --
+ arch/arm/mach-tegra/irq.c                     |   3 +-
+ arch/arm/mach-tegra/pm.c                      |  47 +--
+ arch/arm/mach-tegra/pm.h                      |   4 -
+ arch/arm/mach-tegra/reset-handler.S           |  11 -
+ arch/arm/mach-tegra/reset.h                   |   9 +-
+ arch/arm/mach-tegra/sleep-tegra20.S           | 170 ---------
+ arch/arm/mach-tegra/sleep-tegra30.S           |   6 +-
+ arch/arm/mach-tegra/sleep.h                   |  15 -
+ arch/arm/mach-tegra/tegra.c                   |   7 +-
+ drivers/cpuidle/Kconfig.arm                   |   8 +
+ drivers/cpuidle/Makefile                      |   1 +
+ drivers/cpuidle/cpuidle-tegra.c               | 348 ++++++++++++++++++
+ drivers/soc/tegra/Kconfig                     |   1 -
+ include/linux/clk/tegra.h                     |  13 +
+ include/soc/tegra/cpuidle.h                   |   2 +-
+ .../mach-tegra => include/soc/tegra}/irq.h    |   8 +-
+ include/soc/tegra/pm.h                        |  31 ++
+ 25 files changed, 450 insertions(+), 763 deletions(-)
+ delete mode 100644 arch/arm/mach-tegra/cpuidle-tegra114.c
+ delete mode 100644 arch/arm/mach-tegra/cpuidle-tegra20.c
+ delete mode 100644 arch/arm/mach-tegra/cpuidle-tegra30.c
+ delete mode 100644 arch/arm/mach-tegra/cpuidle.c
+ delete mode 100644 arch/arm/mach-tegra/cpuidle.h
+ create mode 100644 drivers/cpuidle/cpuidle-tegra.c
+ rename {arch/arm/mach-tegra => include/soc/tegra}/irq.h (59%)
 
 -- 
-Julien Grall
+2.22.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
