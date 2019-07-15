@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58ED168EAE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 16:08:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CF6DA68F04
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 16:11:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MYpXQD43Hqlys6iAhRwp0QJq1ZWJMiewGXSE78NsOpw=; b=JqJbWl282cl/hD
-	vW0TXlygCS0LiNe4nh7K+OE3hOu7FJPojdef8jWcJBnYqWu7jAkozyYmppf8QHLVJVYGAZIEjdj4k
-	x5rJ7Q0T3/nYf9nfXMFJFxsoYkjb/MGbpB1XpOD0euN39mtyXojFWNIe0Y2Dcc6/YMMqy0vKU8cGs
-	0wXyoWso7FCL9IHwdczhioAap76xJHeBwM+is4WSEW9YCh2ixdxfDIYnktWso/OivBqwvS2SW6fSZ
-	gDjV+lXTtDQH62/DRCYVKPTGcWT5PD4TJBA4FWMAkgCs3BeSRNCCbD/7UCOiJgNP3t2x2vtY3Gavl
-	2BqqDBzhc0wgwC8d/WCA==;
+	List-Owner; bh=W+2aCROXdgI76fvxNIRiNl4zDHr0gGcc9FmeFVnf4QE=; b=MQYI9HmQLrDCy0
+	Tzd8p+xPahqSkxLySD/24mVTbz9QzQC+Nj36AmNbokdiJ7PbLj4qBnzBEoNAfdQxU58d8p5Bj37Sr
+	OqzA4Ho4erop0oP3BdptDhdBEcFFCfzBifwwsG/KTOpihPjmv4MjUkeomBvAVMUL5metT+50KH4ld
+	CItfUs6gpmGQSTVePU5/SNVLN95JX9ybSRNI7WzWfNNNMqCypoKcyVmuUGIh3T4JMkCjRG+C9/t2e
+	7NsLZT1oDCiKkmFaAjqae+LC6jgifQBIsUqEmWOavFwXFkt83uwC0ncuTihnzZdtA5tzSl/kRogSP
+	J8zd9Jx2KcCGlNX6CPQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hn1ex-0005fm-PO; Mon, 15 Jul 2019 14:08:55 +0000
+	id 1hn1hj-0008LQ-DI; Mon, 15 Jul 2019 14:11:47 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hn1ek-0005ez-77
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jul 2019 14:08:43 +0000
+ id 1hn1gx-0007xM-Nz
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jul 2019 14:11:04 +0000
 Received: from sasha-vm.mshome.net (unknown [73.61.17.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6A145206B8;
- Mon, 15 Jul 2019 14:08:40 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id C4DE32081C;
+ Mon, 15 Jul 2019 14:10:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563199721;
- bh=Vf9dhXtpfS/QcS3lYWRNyCZxujAL6xgOdmJzWOxFcck=;
+ s=default; t=1563199859;
+ bh=qo2IJ9hAA6ifUIf1VzlEPtdMaecSdMeCUOTPV2OFIPc=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=caZz5As878PRK/A7xDo1/btMwY4c1Kl8VMccUKGccWJZOA4NCTufkHUGrGI7B3cu/
- DKoh1+p6MndJU9Z9EkhZg2lOXZt3E2IlNk+3In9pgGGS77o74EkKOebzGA9D4Pra4V
- G8KlzRz5WYGZdyKhs0xlWtYOWLI3JeyZoBUWR1uQ=
+ b=JEoeru8Q9ZZpQnp0KAxSxIySwtKDeiYO3BFZtfAyh3RTdzRiTa+VAUEV7nuj/E6tX
+ m1RB+Ae9bLirkonk30jlZi7Oy6tbRXNFDg2XJ1Vk2blo2lumBU+Wtq0i8IaboFMcfX
+ 0Wrn7fkqIrRodu8jAL7E++5u4DgvjmgzIFbjRge8=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.1 084/219] media: s5p-mfc: fix reading min scratch
- buffer size on MFC v6/v7
-Date: Mon, 15 Jul 2019 10:01:25 -0400
-Message-Id: <20190715140341.6443-84-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.1 126/219] media: s5p-mfc: Make additional clocks
+ optional
+Date: Mon, 15 Jul 2019 10:02:07 -0400
+Message-Id: <20190715140341.6443-126-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190715140341.6443-1-sashal@kernel.org>
 References: <20190715140341.6443-1-sashal@kernel.org>
@@ -49,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190715_070842_293066_9A81AECE 
-X-CRM114-Status: GOOD (  13.17  )
+X-CRM114-CacheID: sfid-20190715_071059_850624_B84FCD7C 
+X-CRM114-Status: GOOD (  12.26  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -91,72 +91,42 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Marek Szyprowski <m.szyprowski@samsung.com>
 
-[ Upstream commit be22203aec440c1761ce8542c2636ac6c8951e3a ]
+[ Upstream commit e08efef8fe7db87206314c19b341612c719f891a ]
 
-MFC v6 and v7 has no register to read min scratch buffer size, so it has
-to be read conditionally only if hardware supports it. This fixes following
-NULL pointer exception on SoCs with MFC v6/v7:
+Since the beginning the second clock ('special', 'sclk') was optional and
+it is not available on some variants of Exynos SoCs (i.e. Exynos5420 with
+v7 of MFC hardware).
 
-8<--- cut here ---
-Unable to handle kernel NULL pointer dereference at virtual address 00000000
-pgd = f25837f9
-[00000000] *pgd=bd93d835
-Internal error: Oops: 17 [#1] PREEMPT SMP ARM
-Modules linked in: btmrvl_sdio btmrvl bluetooth mwifiex_sdio mwifiex ecdh_generic ecc
-Hardware name: SAMSUNG EXYNOS (Flattened Device Tree)
-PC is at s5p_mfc_get_min_scratch_buf_size+0x30/0x3c
-LR is at s5p_mfc_get_min_scratch_buf_size+0x28/0x3c
-...
-[<c074f998>] (s5p_mfc_get_min_scratch_buf_size) from [<c0745bc0>] (s5p_mfc_irq+0x814/0xa5c)
-[<c0745bc0>] (s5p_mfc_irq) from [<c019a218>] (__handle_irq_event_percpu+0x64/0x3f8)
-[<c019a218>] (__handle_irq_event_percpu) from [<c019a5d8>] (handle_irq_event_percpu+0x2c/0x7c)
-[<c019a5d8>] (handle_irq_event_percpu) from [<c019a660>] (handle_irq_event+0x38/0x5c)
-[<c019a660>] (handle_irq_event) from [<c019ebc4>] (handle_fasteoi_irq+0xc4/0x180)
-[<c019ebc4>] (handle_fasteoi_irq) from [<c0199270>] (generic_handle_irq+0x24/0x34)
-[<c0199270>] (generic_handle_irq) from [<c0199888>] (__handle_domain_irq+0x7c/0xec)
-[<c0199888>] (__handle_domain_irq) from [<c04ac298>] (gic_handle_irq+0x58/0x9c)
-[<c04ac298>] (gic_handle_irq) from [<c0101ab0>] (__irq_svc+0x70/0xb0)
-Exception stack(0xe73ddc60 to 0xe73ddca8)
-...
-[<c0101ab0>] (__irq_svc) from [<c01967d8>] (console_unlock+0x5a8/0x6a8)
-[<c01967d8>] (console_unlock) from [<c01981d0>] (vprintk_emit+0x118/0x2d8)
-[<c01981d0>] (vprintk_emit) from [<c01983b0>] (vprintk_default+0x20/0x28)
-[<c01983b0>] (vprintk_default) from [<c01989b4>] (printk+0x30/0x54)
-[<c01989b4>] (printk) from [<c07500b8>] (s5p_mfc_init_decode_v6+0x1d4/0x284)
-[<c07500b8>] (s5p_mfc_init_decode_v6) from [<c07230d0>] (vb2_start_streaming+0x24/0x150)
-[<c07230d0>] (vb2_start_streaming) from [<c0724e4c>] (vb2_core_streamon+0x11c/0x15c)
-[<c0724e4c>] (vb2_core_streamon) from [<c07478b8>] (vidioc_streamon+0x64/0xa0)
-[<c07478b8>] (vidioc_streamon) from [<c0709640>] (__video_do_ioctl+0x28c/0x45c)
-[<c0709640>] (__video_do_ioctl) from [<c0709bc8>] (video_usercopy+0x260/0x8a4)
-[<c0709bc8>] (video_usercopy) from [<c02b3820>] (do_vfs_ioctl+0xb0/0x9fc)
-[<c02b3820>] (do_vfs_ioctl) from [<c02b41a0>] (ksys_ioctl+0x34/0x58)
-[<c02b41a0>] (ksys_ioctl) from [<c0101000>] (ret_fast_syscall+0x0/0x28)
-Exception stack(0xe73ddfa8 to 0xe73ddff0)
-...
----[ end trace 376cf5ba6e0bee93 ]---
+However commit 1bce6fb3edf1 ("[media] s5p-mfc: Rework clock handling")
+made handling of all specified clocks mandatory. This patch restores
+original behavior of the driver and fixes its operation on
+Exynos5420 SoCs.
 
+Fixes: 1bce6fb3edf1 ("[media] s5p-mfc: Rework clock handling")
 Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
 Signed-off-by: Hans Verkuil <hverkuil-cisco@xs4all.nl>
 Signed-off-by: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/media/platform/s5p-mfc/s5p_mfc.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/media/platform/s5p-mfc/s5p_mfc_pm.c | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-diff --git a/drivers/media/platform/s5p-mfc/s5p_mfc.c b/drivers/media/platform/s5p-mfc/s5p_mfc.c
-index 9a53d3908b52..2504fe9761bf 100644
---- a/drivers/media/platform/s5p-mfc/s5p_mfc.c
-+++ b/drivers/media/platform/s5p-mfc/s5p_mfc.c
-@@ -527,7 +527,8 @@ static void s5p_mfc_handle_seq_done(struct s5p_mfc_ctx *ctx,
- 				dev);
- 		ctx->mv_count = s5p_mfc_hw_call(dev->mfc_ops, get_mv_count,
- 				dev);
--		ctx->scratch_buf_size = s5p_mfc_hw_call(dev->mfc_ops,
-+		if (FW_HAS_E_MIN_SCRATCH_BUF(dev))
-+			ctx->scratch_buf_size = s5p_mfc_hw_call(dev->mfc_ops,
- 						get_min_scratch_buf_size, dev);
- 		if (ctx->img_width == 0 || ctx->img_height == 0)
- 			ctx->state = MFCINST_ERROR;
+diff --git a/drivers/media/platform/s5p-mfc/s5p_mfc_pm.c b/drivers/media/platform/s5p-mfc/s5p_mfc_pm.c
+index eb85cedc5ef3..5e080f32b0e8 100644
+--- a/drivers/media/platform/s5p-mfc/s5p_mfc_pm.c
++++ b/drivers/media/platform/s5p-mfc/s5p_mfc_pm.c
+@@ -38,6 +38,11 @@ int s5p_mfc_init_pm(struct s5p_mfc_dev *dev)
+ 	for (i = 0; i < pm->num_clocks; i++) {
+ 		pm->clocks[i] = devm_clk_get(pm->device, pm->clk_names[i]);
+ 		if (IS_ERR(pm->clocks[i])) {
++			/* additional clocks are optional */
++			if (i && PTR_ERR(pm->clocks[i]) == -ENOENT) {
++				pm->clocks[i] = NULL;
++				continue;
++			}
+ 			mfc_err("Failed to get clock: %s\n",
+ 				pm->clk_names[i]);
+ 			return PTR_ERR(pm->clocks[i]);
 -- 
 2.20.1
 
