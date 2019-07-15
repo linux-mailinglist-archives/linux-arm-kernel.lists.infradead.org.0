@@ -2,75 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3960A6991B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 18:33:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C78E69955
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 18:47:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=G9jullBzo/PE9XhwrcRY3wOQjcLZ9wxcGEdcOLxo3/U=; b=pqjMt9tgIZSwwF
-	VuhN1vK2zDwOg44ZqMICf3Rcuu+XkF0Ckdu0dj2xSa4JyIprLCnCdqOrlGtK6sF0S843kW8lof6Tk
-	UL52gzPlRqCpXAy9TqeLwm6S2GGFCvsLQfzXZlYSQOF2XpkseJvm6Uw2csU0KoAQEbO6NmYL5Mi1b
-	O82vmEo3aJqxf5xMOTpvyLaMd7LUjJgx/75dPy3D+Z9pMFZ3ijpZoLDcdCkxmsOR2DtRihmK2Dmfx
-	u5dGWeWPhASESbpW81gHeovNrfmBkkoYVsPgPN2Q4kVDLHKqRLJOsLcx6E8mimY3zQ7cCmoYKEjzv
-	8njGoEfz0U4dI6biAQAQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=6tcJkOfHwnHBVSyNmnJHr2f8RUcMNafUE40WcUj+cBA=; b=tep3o/xWe+2BZ9
+	dDUY0+oUWpXF/JgNeHELcpWl2SDlrxuRWX+RjETmILp0vyNAYBq7jQAldV2lKoVW0ZYhjuPXvqZ5c
+	ET0pc4uXj5EmNsTZy3J0/jd9q8cMZpjRKAOwzgR+ALte4HW+eXmxOmBRUPVofmfD1zCYyuNFMYjqH
+	NvPCC09XsKXAPVEf2SwI766TRc5AVsipJJqyEF6d52iAFXFrB8zRjstJDLkDJK+9eWXRyU29aQ+l4
+	HmzYOAvEh2O/89JQJTG7+fO6pRBFmGHtJowX7YbnhrZagL6DOIgZ1L4unVATW5vvA5J9/yMd0Dcw8
+	j07Zwq5Yk7IJdP/K7VAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hn3u8-0003dk-In; Mon, 15 Jul 2019 16:32:44 +0000
-Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
+	id 1hn48B-0008Sz-8i; Mon, 15 Jul 2019 16:47:15 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hn3tI-0003cZ-Vu
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jul 2019 16:31:55 +0000
-Received: by mail-vs1-xe42.google.com with SMTP id m23so11818023vso.1
+ id 1hn47u-0008Qh-EG
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jul 2019 16:46:59 +0000
+Received: by mail-lj1-x243.google.com with SMTP id t28so16949158lje.9
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 15 Jul 2019 09:31:52 -0700 (PDT)
+ Mon, 15 Jul 2019 09:46:57 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=l9coYjSe3XSNr091GZSS9724rWMOjYgkm8g/YPUGrBk=;
- b=NYNAvMcRho+50ikquItIbaA8xyQqZTsW5KuU71/3Q+SoqDVsAy0+FM2d2PDcePt7/n
- 11RZxGJC6mTRC4h6FGCGzw5ghhxx3RwnG0GjedgAFNGGoDc3a9QiHq+8ObcMmIqDsmmR
- J3Vsoi/0eyXbw2JYkw6d/qyG0Pcpoe3itkm/WnnZNuH1KiiwADvf3ntPy/+VrYE6PIw6
- uIF81NM9pWUyOV4tcN7jlhU8hIQWnXcFmd8zg9BnmqlN0/rWPA8H02F6iWBLylvyWZNz
- XJSLk/1VCaTu2yjDkpvSOUpRVRh2m0Rv0bmcg2VHCyu5QVYHl7BD6bBxYfh/jlUUzWJe
- HABQ==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=s01qK3uxx7mnUo5yTLfmogyNz5i6I9WLEPs8T+BH3IY=;
+ b=DbhUu9uOoUXeWcINAdNW82uFlZSjjuoqo+bNaAllLINGwKFYGexLs8II3qAw1dKMK+
+ xyX/Y201I9J391osgqyWs/NMFDYVC5S2T7EVWuHfWadUF4a8ymAWZkIbJUPyaOe1X0yL
+ RYkaDlAk1yS1kCH/CgIcNSq37OBS26zLhe7kJUvcI7+xGsLiTBcVziXLUcAj8PbYyFuS
+ ljo7KWGztLEXPGYufW0V6HNQYpj1WrLTrVEeyOQBZ4GT6BaqnMWD3dh2u3Vmw8Ql7p0p
+ pABxV8osiA2OipTjuJnkqLJaThsdh2l3X7zm0t3JmT0w29F0Vb72bjYamF7ch5ajuk17
+ v/3Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=l9coYjSe3XSNr091GZSS9724rWMOjYgkm8g/YPUGrBk=;
- b=YAc6uSe+ALxP0JrGqcOjukpPrAt+B/s9sxHrJDqP5JlE4SMP/eKm1QalV2JaFvshhZ
- bomzxDhpiddWY1UHRVM5TilvfwBPWp8eGsZoiS92ItByiBtDoDAgXtOnzDa5LhCp5izs
- IcAJscmPv7oqFGD7mt+jci2dr0P57DxXV8aeHSWTAlqcYSURGC0dqWxtNzmabnIg1cz3
- e2iGS6cKkO9aQ+NSRa7WDFnSroYPfxR0+GdvVJIM/FOT4/tDcMuB2t1rKQAW6h7NFbtv
- iwWV2UP32aigyhkSM3lG6IGF8wLK6nMGBMglFNRGGkrbwAW1blXHDr6N12qUYB/K6gJz
- YCDA==
-X-Gm-Message-State: APjAAAW1PCSN/BDXt8RtmEqhkr4fAEPckz6XTMxReTp2J8QIRdemtSUW
- aUBrxEzQ7nAhmLXfqo7f1x4hrfV0I7h8ey810uImCQ==
-X-Google-Smtp-Source: APXvYqyUVL5RPnQWYVDvWMTPG8b/y4kpVO36hdyZcWBMkgiuUbpz8JwBx7OzH4gYy2hAxp1kCITo99T3NjrGPMBeorE=
-X-Received: by 2002:a67:7a90:: with SMTP id
- v138mr16907417vsc.200.1563208311475; 
- Mon, 15 Jul 2019 09:31:51 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=s01qK3uxx7mnUo5yTLfmogyNz5i6I9WLEPs8T+BH3IY=;
+ b=VnP9r5IU0UIj2rVflVR6AlGazmnKf0A6/762vzIK+jsOySzrh5MwZID/Wpq6wPggZY
+ ibkA3vASLTFdwQB4zjk4K1QbjpO0RT08uvxohIYbMw7jf3IucIROffQ8N3SueOTUdalQ
+ 4cZsVx6hYtKbW5TIumTSxMf9e2RQwTvnv+Na6DmojIkcJOUCukzcgeAmBZSbl1Vyouk4
+ p8ZZ/wgRlywWfQrM40d7Pfz3BoJIOvWHYRq7/dEL2FBCmv9F7JjWXXzKwAKDU+Zkw3S/
+ Z+pLmKryI2wD6D0DIdMflQ9Q5GP5nXk/ugiMbH11wqS+kSEdahdqAyMdzJWYwWf5x9/+
+ 6TJw==
+X-Gm-Message-State: APjAAAUcBZziZsAeNb9F1XC3EgdVkG9cohxZsWCt147M4GBdRHQTCY0b
+ uioednsWGBw+efTCPs6gjB+lA1W6J8o=
+X-Google-Smtp-Source: APXvYqxN2EiRgDcHeNBBeImwb4enBRCl4pW/DzO31aUvfNg6C/CwfoGFxUZ5+Qo+zdYhRQpgXtpTYA==
+X-Received: by 2002:a05:651c:95:: with SMTP id
+ 21mr14708819ljq.128.1563209215595; 
+ Mon, 15 Jul 2019 09:46:55 -0700 (PDT)
+Received: from localhost.bredbandsbolaget
+ (c-22cd225c.014-348-6c756e10.bbcust.telenor.se. [92.34.205.34])
+ by smtp.gmail.com with ESMTPSA id e87sm3628329ljf.54.2019.07.15.09.46.54
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Mon, 15 Jul 2019 09:46:54 -0700 (PDT)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: linux-arm-kernel@lists.infradead.org,
+ Hans Ulli Kroll <ulli.kroll@googlemail.com>
+Subject: [PATCH 1/3] ARM: dts: gemini: Fix up confused pin settings
+Date: Mon, 15 Jul 2019 18:46:48 +0200
+Message-Id: <20190715164650.2883-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-References: <1559577325-19266-1-git-send-email-ludovic.Barre@st.com>
- <1559577325-19266-2-git-send-email-ludovic.Barre@st.com>
-In-Reply-To: <1559577325-19266-2-git-send-email-ludovic.Barre@st.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Mon, 15 Jul 2019 18:31:15 +0200
-Message-ID: <CAPDyKFpJPbpTnfA2cynFURyxFY_YCm7MRXw3m2nQyU+z=ZWsFA@mail.gmail.com>
-Subject: Re: [PATCH V3 1/3] mmc: mmci: fix read status for busy detect
-To: Ludovic Barre <ludovic.Barre@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190715_093153_290122_90088BBE 
-X-CRM114-Status: GOOD (  23.59  )
+X-CRM114-CacheID: sfid-20190715_094658_548613_FCE7B110 
+X-CRM114-Status: GOOD (  12.46  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e42 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -92,122 +97,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: DTML <devicetree@vger.kernel.org>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Linus Walleij <linus.walleij@linaro.org>,
+ Florian Fainelli <f.fainelli@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 3 Jun 2019 at 17:55, Ludovic Barre <ludovic.Barre@st.com> wrote:
->
-> From: Ludovic Barre <ludovic.barre@st.com>
->
-> "busy_detect_flag" is used to read & clear busy value of mmci status.
-> "busy_detect_mask" is used to manage busy irq of mmci mask.
-> So to read mmci status the busy_detect_flag must be take account.
-> if the variant does not support busy detect feature the flag is null
-> and there is no impact.
+The SL93512r board has its pin muxing set up for the wrong
+ASIC: SL3516 instead of SL3512 that it is using. Fix it
+up and reference the right GPIO for the WPS button.
 
-By reading the changelog, it doesn't tell me the purpose of this
-change. When going forward, please work harder on your changelogs.
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+---
+ arch/arm/boot/dts/gemini-sl93512r.dts | 19 +++++++++++--------
+ 1 file changed, 11 insertions(+), 8 deletions(-)
 
-Make sure to answer the questions, *why* is this change needed,
-*what/how* does the change do.
+diff --git a/arch/arm/boot/dts/gemini-sl93512r.dts b/arch/arm/boot/dts/gemini-sl93512r.dts
+index 2bb953440793..afe655593b28 100644
+--- a/arch/arm/boot/dts/gemini-sl93512r.dts
++++ b/arch/arm/boot/dts/gemini-sl93512r.dts
+@@ -36,8 +36,8 @@
+ 			wakeup-source;
+ 			linux,code = <KEY_WPS_BUTTON>;
+ 			label = "WPS";
+-			/* Conflict with NAND flash */
+-			gpios = <&gpio0 17 GPIO_ACTIVE_LOW>;
++			/* Conflicts with TVC and extended flash */
++			gpios = <&gpio0 0 GPIO_ACTIVE_LOW>;
+ 		};
+ 
+ 		button-setup {
+@@ -180,17 +180,20 @@
+ 		syscon: syscon@40000000 {
+ 			pinctrl {
+ 				/*
+-				 * gpio0egrp cover line 16 used by HD LED
+-				 * gpio0fgrp cover line 17, 18 used by wireless LED and reset button
+-				 * gpio0hgrp cover line 21, 22 used by MDIO for Marvell PHY
+-				 * gpio0kgrp cover line 31 used by USB LED
++				 * gpio0agrp cover line 0, used by WPS button
++				 * gpio0fgrp cover line 16 used by HD LED
++				 * gpio0ggrp cover line 17, 18 used by wireless LAN LED and
++				 * reset button OR USB ID select on 17 and USB VBUS select
++				 * on 18. (Confusing.)
++				 * gpio0igrp cover line 21, 22 used by MDIO for Marvell PHY
+ 				 */
+ 				gpio0_default_pins: pinctrl-gpio0 {
+ 					mux {
+ 						function = "gpio0";
+-						groups = "gpio0egrp",
++						groups = "gpio0agrp",
+ 						"gpio0fgrp",
+-						"gpio0hgrp";
++						"gpio0ggrp",
++						"gpio0igrp";
+ 					};
+ 				};
+ 				/*
+-- 
+2.21.0
 
->
-> Not need to re-read the status register in mmci_cmd_irq, the
-> status parameter can be used.
->
-> Signed-off-by: Ludovic Barre <ludovic.barre@st.com>
-> ---
->  drivers/mmc/host/mmci.c | 5 +++--
->  1 file changed, 3 insertions(+), 2 deletions(-)
->
-> diff --git a/drivers/mmc/host/mmci.c b/drivers/mmc/host/mmci.c
-> index 356833a..5b5cc45 100644
-> --- a/drivers/mmc/host/mmci.c
-> +++ b/drivers/mmc/host/mmci.c
-> @@ -1240,7 +1240,7 @@ mmci_cmd_irq(struct mmci_host *host, struct mmc_command *cmd,
->                  */
->                 if (!host->busy_status &&
->                     !(status & (MCI_CMDCRCFAIL|MCI_CMDTIMEOUT)) &&
-> -                   (readl(base + MMCISTATUS) & host->variant->busy_detect_flag)) {
-> +                   (status & host->variant->busy_detect_flag)) {
-
-I suggested you to do this change through some of my earlier comments,
-however I think it should be made as a stand alone change.
-
-Anyway, when looking at the details in your series, I decided to try
-to help out a bit, so I have prepared a couple of related patches for
-cleaning up and clarifying the busy detection code/comments in mmci. I
-have incorporated the above change, so let me post them asap.
-
->
->                         /* Clear the busy start IRQ */
->                         writel(host->variant->busy_detect_mask,
-> @@ -1517,7 +1517,8 @@ static irqreturn_t mmci_irq(int irq, void *dev_id)
->                  * to make sure that both start and end interrupts are always
->                  * cleared one after the other.
->                  */
-> -               status &= readl(host->base + MMCIMASK0);
-> +               status &= readl(host->base + MMCIMASK0) |
-> +                       host->variant->busy_detect_flag;
-
-As I told earlier in the review, this looks wrong to me.
-
-It means that you will add the bit for the ->busy_detect_flag to the
-status field we have just read from the MMCISTATUS register. That
-means the busy status may be set when it shouldn't.
-
->                 if (host->variant->busy_detect)
->                         writel(status & ~host->variant->busy_detect_mask,
->                                host->base + MMCICLEAR);
-> --
-> 2.7.4
->
-
-By looking at the other changes in the series, I assume @subject patch
-is intended to prepare for the other changes on top. But it's not
-really clear.
-
-Anyway, in that regards, the below is my observations of what seems to
-be important part, when supporting busy detection for the stm32 sdmmc
-variant (except the timeout things in patch2, which I intend to
-comment separately on).
-
-I figured, these are the involved register bits/masks:
-
-MMCISTATUS:
-MCI_STM32_BUSYD0 BIT(20)
-MCI_STM32_BUSYD0END BIT(21)
-
-MMCIMASK0:
-MCI_STM32_BUSYD0ENDMASK BIT(21)
-
-For the legacy ST variant, there is only one register bit in
-MMCISTATUS that is used for indicating busy (MCI_ST_CARDBUSY BIT(24)).
-There is no dedicated busy-end bit for the busy-end IRQ, which I
-believe is the reason to why the current code also is bit messy.
-
-It seems like the stm32 sdmmc variant have a separate status bit for
-the busy-end IRQ, correct?
-
-If I understand correctly by looking at patch3, you don't use the
-dedicated busy-end status bit (MCI_STM32_BUSYD0END), right? Then why
-not?
-
-Thoughts?
-
-Kind regards
-Uffe
 
 _______________________________________________
 linux-arm-kernel mailing list
