@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEA1C68A2D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 15:02:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8199768A2F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 15:03:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,105 +11,105 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=rMOToqMyMed7zwn3f0LciVctwQT/OTvbPh32UTmN6c8=; b=NzV1sKNZtCW3ErRH+K8X+5uAbl
-	8FHqRC7mVtPxC0Qo8aUFLa8tk2Oa3wl1lGSPB2/1w9Dbm3WT1ynlXHwBGP58ps9455JNpYAIEetIg
-	r8VwGHzC7t5V+OZi9THS0Kv7ufg6X/1irpifLO+XwbgAMpJpgRGLgJeSzPusPmwYAo2bw0W64LUmx
-	MGROKiym9dTRnbfUwcGwUVBjrR/r2tv83M8b9cAwI52Ehpk0eMUkA+inXKa4jzF1UB0RRUP5eMDdm
-	pw+zyXtzrG/Dee5HgIchmptKsbguGvEZuLSPZSjknF9UKjIuUbsoFa2gNlq1dbVMmubFpewiVzr8Q
-	5Vn1qyWA==;
+	bh=SZd2IaXoNDuLyTAcMKzIwSvJ9r+hUmaI3yzXsYl0AGQ=; b=ude5HHji1EKnqjbVb/RJ5nLNJc
+	64T+qMTU2HyO9V04a8u6co4J8bdkTRe6lfdE9v+nIYq1YUfqZzGqI2PRqiNJ1TV1vXBANAnv+DZty
+	/or+7CiszF7Uu9iHXuUdtFBAzR4AN9SyPWuGxh8eDjD3jio+r/SIxkh4jcm7N40Y3erCF0BplO4lQ
+	h7h8k6AloQ/7SloEhz6dPhUq0qj8KP6bOCwRX5IW2zaFVO2Ah6WQbnm3Qfsm6skMn3+WVdZqiveNJ
+	+aT0g1c4zvVTBhaMolLdl+28UCtbdfHNhEbFUKC9m3YjMkTEWsTDCfT76xeVV+TxUh1/wh4P+HsH2
+	Yp0Gi0dg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hn0cq-0005l3-K2; Mon, 15 Jul 2019 13:02:40 +0000
+	id 1hn0dA-0005yx-Rz; Mon, 15 Jul 2019 13:03:00 +0000
 Received: from mailout2.w1.samsung.com ([210.118.77.12])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hn0M2-00056T-MG
+ id 1hn0M3-0005BL-5d
  for linux-arm-kernel@lists.infradead.org; Mon, 15 Jul 2019 12:45:24 +0000
 Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
  by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
- 20190715124516euoutp02ed6a61675a6637cfafae9598d88be78f~xlVATlPiY0722707227euoutp02y
+ 20190715124517euoutp02209791b8484d7cea49e32e47e01bfe34~xlVBFZ4Vi0722707227euoutp02z
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 15 Jul 2019 12:45:16 +0000 (GMT)
+ Mon, 15 Jul 2019 12:45:17 +0000 (GMT)
 DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
- 20190715124516euoutp02ed6a61675a6637cfafae9598d88be78f~xlVATlPiY0722707227euoutp02y
+ 20190715124517euoutp02209791b8484d7cea49e32e47e01bfe34~xlVBFZ4Vi0722707227euoutp02z
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1563194716;
- bh=LR6wVN9M871+aI+Zz2/xAtq0PjCbEVYLnCfnQUmJAAU=;
+ s=mail20170921; t=1563194717;
+ bh=SlSGrP0biJS3zDm28jQoSzzy5NHzoOLSngg63Rw4Q50=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=TH3vrDwFxFP2684e7h0NgXK4tvPJE56+FYE1ZpKDcApesyklc74kuoE4o89jUNXNZ
- WtaJeuKrwBLJvDKD/cSuWEe9geyVdVfUorBFm6Eod29YHMdvy0I5nzEgPyFhGOpnbT
- 6g6UsYV5PaHO8IBCTmcof0/yt4CCxH3TxsyUh0B0=
-Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
+ b=uLg4LNhYLTRONvtmFq2gVSn98R37ztNRtB5hBMiD8+aSo/HugLjgJLfqKxlo074/J
+ w5YbGS22ldqFt7VRFsTZFCe8hPQEOkGiSjaXk/8Ca+f3meLOZhncl7C4u0gl/tR17I
+ gX05uQ7TMo7qpIe/jqT0hEwucXSDzPTYOFvstwF8=
+Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
  eucas1p1.samsung.com (KnoxPortal) with ESMTP id
- 20190715124515eucas1p108b426eaa33d9fe510ae208b72392523~xlU-SaHDx3191231912eucas1p1F;
+ 20190715124516eucas1p1c35ae1baf457096ce1dfb6d2cf4014bb~xlVADe4cT3144231442eucas1p16;
+ Mon, 15 Jul 2019 12:45:16 +0000 (GMT)
+Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
+ eusmges2new.samsung.com (EUCPMTA) with SMTP id 0D.F1.04377.C557C2D5; Mon, 15
+ Jul 2019 13:45:16 +0100 (BST)
+Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20190715124515eucas1p240a8c61dd62d56cbbd0e4d313be2273e~xlU-K-MxC0240802408eucas1p2O;
  Mon, 15 Jul 2019 12:45:15 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges3new.samsung.com (EUCPMTA) with SMTP id 53.D0.04325.B557C2D5; Mon, 15
- Jul 2019 13:45:15 +0100 (BST)
-Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
- 20190715124514eucas1p1dcbbcbac0503980825d5e4ebae32003b~xlU_X-DGF0146601466eucas1p1v;
- Mon, 15 Jul 2019 12:45:14 +0000 (GMT)
-Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
- eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20190715124514eusmtrp21c632d15dbbe3d9e5a7d65adb92ab2ef~xlU_J1NmX2735227352eusmtrp2N;
- Mon, 15 Jul 2019 12:45:14 +0000 (GMT)
-X-AuditID: cbfec7f5-b75ff700000010e5-24-5d2c755bde19
+Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
+ eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20190715124515eusmtrp12a318e65182f0b206d6366f52c851fbd~xlU_81_CM0524305243eusmtrp1f;
+ Mon, 15 Jul 2019 12:45:15 +0000 (GMT)
+X-AuditID: cbfec7f4-5632c9c000001119-51-5d2c755cd02f
 Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
- eusmgms1.samsung.com (EUCPMTA) with SMTP id AD.60.04146.A557C2D5; Mon, 15
- Jul 2019 13:45:14 +0100 (BST)
+ eusmgms2.samsung.com (EUCPMTA) with SMTP id EB.27.04140.B557C2D5; Mon, 15
+ Jul 2019 13:45:15 +0100 (BST)
 Received: from AMDC3778.DIGITAL.local (unknown [106.120.51.20]) by
  eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20190715124513eusmtip219fb635485904465e149061e04d5f99f~xlU9Yc20b1099510995eusmtip26;
- Mon, 15 Jul 2019 12:45:13 +0000 (GMT)
+ 20190715124514eusmtip21d70cd0d4c02b38744c66ad59139b0f8~xlU_KG5Bs1184611846eusmtip2d;
+ Mon, 15 Jul 2019 12:45:14 +0000 (GMT)
 From: Lukasz Luba <l.luba@partner.samsung.com>
 To: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
  linux-clk@vger.kernel.org
-Subject: [PATCH v1 49/50] ARM: dts: exynos: add buses support for Exynos5800
- Peach Pi
-Date: Mon, 15 Jul 2019 14:44:16 +0200
-Message-Id: <20190715124417.4787-50-l.luba@partner.samsung.com>
+Subject: [PATCH v1 50/50] ARM: dts: exynos: change MMC0 clock parent in
+ Exynos5800 Peach Pi
+Date: Mon, 15 Jul 2019 14:44:17 +0200
+Message-Id: <20190715124417.4787-51-l.luba@partner.samsung.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190715124417.4787-1-l.luba@partner.samsung.com>
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrHKsWRmVeSWpSXmKPExsWy7djP87rRpTqxBp2TJS1urTvHarFxxnpW
- i+tfnrNazD8C5PY/fs1scf78BnaLs01v2C1uNchYbHp8jdXiY889VovLu+awWcw4v4/JYu2R
- u+wWS69fZLK4eMrV4nbjCjaL1r1H2C0Ov2lntfh3bSOLg7DHmnlrGD3e32hl99i0qpPNY/OS
- eo+D7/YwefRtWcXo8XmTXAB7FJdNSmpOZllqkb5dAlfGzfnXmQp+aVXMmf2MsYFxt3IXIyeH
- hICJxKPJi9i6GLk4hARWMEpMu/iACcL5wijRO30eK4TzmVHi+o1n7DAt/663QCWWM0p8bn/A
- CtfSMvcoUBUHB5uAnsSOVYUgDSICSxgljvxMAqlhFrjJJLHnyU5WkISwQLjEjXlvmUFsFgFV
- iYe/lzOC2LwC9hL3Nn9hhdgmL7F6wwGwGk6g+M9pF8COlRC4xC5xuXsmE0SRi8S2N61sELaw
- xKvjW6BOlZH4v3M+VE2xREPvQkYIu0bicf9cqBpricPHL7KCHM0soCmxfpc+RNhRYtLFVhaQ
- sIQAn8SNt4IgYWYgc9K26cwQYV6JjjYhiGoNiS09F6AWiUksXzMNariHxOkPa5ghwTOJUWLr
- 7PdMExjlZyEsW8DIuIpRPLW0ODc9tdg4L7Vcrzgxt7g0L10vOT93EyMwVZ3+d/zrDsZ9f5IO
- MQpwMCrx8DqkaMcKsSaWFVfmHmKU4GBWEuG1/QoU4k1JrKxKLcqPLyrNSS0+xCjNwaIkzlvN
- 8CBaSCA9sSQ1OzW1ILUIJsvEwSnVwKj5nVme0+r4t3lB/buWrpM5ZbqtyczP1/+DXGmRaU0q
- vyrj3ZYvzMvbxc2YdTkvXHpzyE960ZsK6Yfbw0PZm/as+u386hnX9TQ/U85fG1gXPRbt093V
- XVmavbY+8jtf+sHbR/epC85arJ4pPaVfYy3bmpy7wWs/7zt5isX7fejhrItHZjiraCixFGck
- GmoxFxUnAgCUutmGUQMAAA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprPIsWRmVeSWpSXmKPExsVy+t/xe7pRpTqxBg1HZC1urTvHarFxxnpW
- i+tfnrNazD8C5PY/fs1scf78BnaLs01v2C1uNchYbHp8jdXiY889VovLu+awWcw4v4/JYu2R
- u+wWS69fZLK4eMrV4nbjCjaL1r1H2C0Ov2lntfh3bSOLg7DHmnlrGD3e32hl99i0qpPNY/OS
- eo+D7/YwefRtWcXo8XmTXAB7lJ5NUX5pSapCRn5xia1StKGFkZ6hpYWekYmlnqGxeayVkamS
- vp1NSmpOZllqkb5dgl7GzfnXmQp+aVXMmf2MsYFxt3IXIyeHhICJxL/rLaxdjFwcQgJLGSU6
- z/axQSTEJCbt284OYQtL/LnWxQZR9IlR4uhFkAQHB5uAnsSOVYUgNSICKxglJp/wBqlhFnjN
- JHHk6DtWkBphgVCJH32JIDUsAqoSD38vZwSxeQXsJe5t/sIKMV9eYvWGA8wgNidQ/Oe0C2A3
- CAnYSSw++pNpAiPfAkaGVYwiqaXFuem5xYZ6xYm5xaV56XrJ+bmbGIGRs+3Yz807GC9tDD7E
- KMDBqMTD65CiHSvEmlhWXJl7iFGCg1lJhNf2K1CINyWxsiq1KD++qDQntfgQoynQUROZpUST
- 84FRnVcSb2hqaG5haWhubG5sZqEkztshcDBGSCA9sSQ1OzW1ILUIpo+Jg1OqgVF7ezaP050e
- 9i12vrttukNcjjZN1V7294isxMWPd5zuTzxge32J7OwbXRZLpn84WbxBz8bS2vc2a176xjqF
- Zy3bfNtLmXkvnVeWn5pZE3k+O/fK+Yees6rzj0al2P858F3UcM1Bn0WOkpu3nnWqZZa6erDg
- 8Yz1J0uDMx6adJ//U1XHsnBqzzklluKMREMt5qLiRACmXNvfsgIAAA==
-X-CMS-MailID: 20190715124514eucas1p1dcbbcbac0503980825d5e4ebae32003b
+X-Brightmail-Tracker: H4sIAAAAAAAAA0WSe0gUURTGvTM7D6WNaQ29vrIWBM3UCpErlZkUDAU9CAoq0zUntXS1HbW0
+ xE0yTXyVpmIPFRRt87mJj8EiHykmtamUr5LSUDNNwi1YMmtnx+i/3/m+75xzOVwaV3QQjnSU
+ Op7TqFXRStJG1tJreu11JmFb8PbOR3I0Xv+aQE0lDQQaMc4SqKzHXOZNf8WRwdBIoVdpCxQa
+ 1zoj/fQ7An3PniTQsHCfRCWGZxiq6/lAoaqRQQwNvjyAJq7XkCj9aQ+FuhcyCLT6rkkWaMvW
+ PqwF7NJoOsXqdbdI9kllKtv5rQNjc5t1gF3WbzpKnbLZHc5FRyVyGp+AUJvIuvkVEKcjr9xb
+ egq0oIXIAjQNGV9YXBqRBWxoBVMD4JxxkZIKI4Bv36eRUrEMoPCiEM8C1pYO3XATJhnVAD7K
+ 12KiYWnpE/zFsSTjDdt0l0R5I1MJYI8pTMzjzBgGOz63E6JhywTDn38eUyLLGDeYuZRDiixn
+ 9sKCuklSWuYKHzc+tyy2NuumojeWF0FmiILTptW10H44m/twjW3hfF8zJbEzHCjIlknMQ21O
+ BZD4GpzOe7CW2QW7+wYtt8AZD9gg+EjyPjhjFMeIJ1oPRxc3iDJuxjstxbgky2HmTYWUdofN
+ 2W8wie1gdW3R2nAWztzuB9Kp7gD4STDg+cC19P+ycgB0wJ5L4GMiOH6nmrvszati+AR1hPe5
+ 2Bg9MP+pgdU+YxsQVsK6AEMD5Tp5YLhnsIJQJfJJMV0A0rhyo3zPD7MkD1clJXOa2BBNQjTH
+ dwEnWqa0l1+1+nhawUSo4rmLHBfHaf65GG3tqAVlBn11SnfTChaa435y8IKTnfK815GquxV+
+ Qb75h4oFT//yqmO7yyb0LYLg1nowoCNOvaGRZVLak9CJ1s0rU5EOh7dYBfz2uEFPmhyY0N7b
+ vcbVwmWXvP7lKzUBlc4uZ+X1QWNz9ou/pqIr/dmsgWS/ECfNl9SljKGU3K7jnbtUShkfqdqx
+ Fdfwqr9BJaHWTwMAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrAIsWRmVeSWpSXmKPExsVy+t/xe7rRpTqxBlNPiFjcWneO1WLjjPWs
+ Fte/PGe1mH8EyO1//JrZ4vz5DewWZ5vesFvcapCx2PT4GqvFx557rBaXd81hs5hxfh+Txdoj
+ d9ktll6/yGRx8ZSrxe3GFWwWrXuPsFscftPOavHv2kYWB2GPNfPWMHq8v9HK7rFpVSebx+Yl
+ 9R4H3+1h8ujbsorR4/MmuQD2KD2bovzSklSFjPziElulaEMLIz1DSws9IxNLPUNj81grI1Ml
+ fTublNSczLLUIn27BL2Mta/+MBasYquY/X4vYwPjNtYuRk4OCQETiVWXNzJ1MXJxCAksZZR4
+ P2kiVEJMYtK+7ewQtrDEn2tdbBBFnxglrv/+BpTg4GAT0JPYsaoQpEZEYAWjxOQT3iA1zAKv
+ mSSOHH0HNkhYIFpiy5cZbCA2i4CqRMf7XjCbV8BeYvLae2wQC+QlVm84wAxicwLFf067ABYX
+ ErCTWHz0J9MERr4FjAyrGEVSS4tz03OLjfSKE3OLS/PS9ZLzczcxAmNn27GfW3Ywdr0LPsQo
+ wMGoxMPrkKIdK8SaWFZcmXuIUYKDWUmE1/YrUIg3JbGyKrUoP76oNCe1+BCjKdBRE5mlRJPz
+ gXGdVxJvaGpobmFpaG5sbmxmoSTO2yFwMEZIID2xJDU7NbUgtQimj4mDU6qB0di6xtz3YEuF
+ ZUuYyDmNuWYbu+/v/ury0/38B6vVaVPvfF13TSjp66RPmwV6KgvezlCe+EVK90OqvXeJpcse
+ 34RO1QW/P8/4uuPp4a7rWT7cj/bMYMwp3Hijsev+gVv1KfzTtzXcUclMePfHVGvJdM1HE10W
+ lk/y3btA6k8A58YjV08GXbq7hF2JpTgj0VCLuag4EQAozPNCswIAAA==
+X-CMS-MailID: 20190715124515eucas1p240a8c61dd62d56cbbd0e4d313be2273e
 X-Msg-Generator: CA
-X-RootMTR: 20190715124514eucas1p1dcbbcbac0503980825d5e4ebae32003b
+X-RootMTR: 20190715124515eucas1p240a8c61dd62d56cbbd0e4d313be2273e
 X-EPHeader: CA
 CMS-TYPE: 201P
-X-CMS-RootMailID: 20190715124514eucas1p1dcbbcbac0503980825d5e4ebae32003b
+X-CMS-RootMailID: 20190715124515eucas1p240a8c61dd62d56cbbd0e4d313be2273e
 References: <20190715124417.4787-1-l.luba@partner.samsung.com>
- <CGME20190715124514eucas1p1dcbbcbac0503980825d5e4ebae32003b@eucas1p1.samsung.com>
+ <CGME20190715124515eucas1p240a8c61dd62d56cbbd0e4d313be2273e@eucas1p2.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190715_054519_140779_3F35820F 
-X-CRM114-Status: GOOD (  12.92  )
+X-CRM114-CacheID: sfid-20190715_054519_502069_503ABDC4 
+X-CRM114-Status: GOOD (  11.84  )
 X-Spam-Score: -5.1 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.1 points)
@@ -147,205 +147,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The patch adds SoC buses support. It also changes connections of the clocks
-pinning to the rigth parent. There is also frequency set of the needed
-clock to make it working at the right rate.
+Change MMC0 clock settings and set parent to MOUT_SPLL with proper rate.
 
 Signed-off-by: Lukasz Luba <l.luba@partner.samsung.com>
 ---
- arch/arm/boot/dts/exynos5800-peach-pi.dts | 172 ++++++++++++++++++++++
- 1 file changed, 172 insertions(+)
+ arch/arm/boot/dts/exynos5800-peach-pi.dts | 3 +++
+ 1 file changed, 3 insertions(+)
 
 diff --git a/arch/arm/boot/dts/exynos5800-peach-pi.dts b/arch/arm/boot/dts/exynos5800-peach-pi.dts
-index e0f470fe54c8..38edb00c7f1b 100644
+index 38edb00c7f1b..c8e02ecc6627 100644
 --- a/arch/arm/boot/dts/exynos5800-peach-pi.dts
 +++ b/arch/arm/boot/dts/exynos5800-peach-pi.dts
-@@ -151,6 +151,163 @@
- 	vdd-supply = <&ldo9_reg>;
- };
- 
-+&bus_wcore {
-+	devfreq-events = <&nocp_mem0_0>, <&nocp_mem0_1>,
-+			<&nocp_mem1_0>, <&nocp_mem1_1>;
-+	vdd-supply = <&buck3_reg>;
-+	exynos,saturation-ratio = <100>;
-+	assigned-clocks = <&clock CLK_MOUT_ACLK400_WCORE>,
-+			  <&clock CLK_MOUT_SW_ACLK400_WCORE>,
-+			  <&clock CLK_DOUT_ACLK400_WCORE>,
-+			  <&clock CLK_FOUT_DPLL>;
-+	assigned-clock-parents = <&clock CLK_MOUT_SCLK_DPLL>,
-+				 <&clock CLK_DOUT_ACLK400_WCORE>;
-+	assigned-clock-rates = <0>, <0>, <400000000>, <1200000000>;
-+	status = "okay";
-+};
-+
-+&bus_noc {
-+	devfreq = <&bus_wcore>;
-+	assigned-clocks = <&clock CLK_MOUT_ACLK100_NOC>,
-+			  <&clock CLK_DOUT_ACLK100_NOC>;
-+	assigned-clock-parents = <&clock CLK_FF_DOUT_SPLL2>;
-+	assigned-clock-rates = <0>, <100000000>;
-+	status = "okay";
-+};
-+
-+&bus_fsys_apb {
-+	devfreq = <&bus_wcore>;
-+	assigned-clocks = <&clock CLK_MOUT_PCLK200_FSYS>,
-+			  <&clock CLK_DOUT_PCLK200_FSYS>,
-+			  <&clock CLK_FOUT_MPLL>;
-+	assigned-clock-parents = <&clock CLK_MOUT_SCLK_MPLL>;
-+	assigned-clock-rates = <0>, <200000000>,<600000000>;
-+	status = "okay";
-+};
-+
-+&bus_fsys {
-+	devfreq = <&bus_wcore>;
-+	assigned-clocks = <&clock CLK_MOUT_ACLK200_FSYS>,
-+			  <&clock CLK_DOUT_ACLK200_FSYS>,
-+			  <&clock CLK_FOUT_DPLL>;
-+	assigned-clock-parents = <&clock CLK_MOUT_SCLK_DPLL>;
-+	assigned-clock-rates = <0>, <240000000>,<1200000000>;
-+	status = "okay";
-+};
-+
-+&bus_fsys2 {
-+	devfreq = <&bus_wcore>;
-+	assigned-clocks = <&clock CLK_MOUT_ACLK200_FSYS2>,
-+			  <&clock CLK_DOUT_ACLK200_FSYS2>,
-+			  <&clock CLK_FOUT_DPLL>;
-+	assigned-clock-parents = <&clock CLK_MOUT_SCLK_DPLL>;
-+	assigned-clock-rates = <0>, <240000000>,<1200000000>;
-+	status = "okay";
-+};
-+
-+&bus_mfc {
-+	devfreq = <&bus_wcore>;
-+	status = "okay";
-+};
-+
-+&bus_gen {
-+	devfreq = <&bus_wcore>;
-+	assigned-clocks = <&clock CLK_MOUT_ACLK266>,
-+			  <&clock CLK_DOUT_ACLK266>, <&clock CLK_FOUT_MPLL>;
-+	assigned-clock-parents = <&clock CLK_MOUT_SCLK_MPLL>;
-+	assigned-clock-rates = <0>, <300000000>,<600000000>;
-+	status = "okay";
-+};
-+
-+&bus_peri {
-+	devfreq = <&bus_wcore>;
-+	status = "okay";
-+};
-+
-+&bus_g2d {
-+	devfreq = <&bus_wcore>;
-+	assigned-clocks = <&clock CLK_MOUT_ACLK266_G2D>,
-+			  <&clock CLK_DOUT_ACLK266_G2D>,
-+			  <&clock CLK_FOUT_MPLL>;
-+	assigned-clock-parents = <&clock CLK_MOUT_SCLK_MPLL>;
-+	assigned-clock-rates = <0>, <300000000>,<600000000>;
-+	status = "okay";
-+};
-+
-+&bus_g2d_acp {
-+	devfreq = <&bus_wcore>;
-+	status = "okay";
-+};
-+
-+&bus_jpeg {
-+	devfreq = <&bus_wcore>;
-+	assigned-clocks = <&clock CLK_DOUT_ACLK300_JPEG>;
-+	assigned-clock-rates = <300000000>;
-+	status = "okay";
-+};
-+
-+&bus_jpeg_apb {
-+	devfreq = <&bus_wcore>;
-+	status = "okay";
-+};
-+
-+&bus_disp1_fimd {
-+	devfreq = <&bus_wcore>;
-+	assigned-clocks = <&clock CLK_DOUT_ACLK300_DISP1>;
-+	assigned-clock-rates = <300000000>;
-+	status = "okay";
-+};
-+
-+&bus_disp1 {
-+	devfreq = <&bus_wcore>;
-+	assigned-clocks = <&clock CLK_DOUT_ACLK200>,
-+			  <&clock CLK_DOUT_ACLK400_DISP1>;
-+	assigned-clock-rates = <200000000>, <400000000>;
-+	status = "okay";
-+};
-+
-+&bus_gscl_scaler {
-+	devfreq = <&bus_wcore>;
-+	assigned-clocks = <&clock CLK_DOUT_ACLK300_GSCL>;
-+	assigned-clock-rates = <300000000>;
-+	status = "okay";
-+};
-+
-+&bus_mscl {
-+	devfreq = <&bus_wcore>;
-+	assigned-clocks = <&clock CLK_MOUT_ACLK400_MSCL>,
-+			  <&clock CLK_MOUT_SW_ACLK400_MSCL>,
-+			  <&clock CLK_DOUT_ACLK400_MSCL>,
-+			  <&clock CLK_FOUT_DPLL>;
-+	assigned-clock-parents = <&clock CLK_MOUT_SCLK_DPLL>,
-+				 <&clock CLK_DOUT_ACLK400_MSCL>;
-+	assigned-clock-rates = <0>, <0>, <400000000>, <1200000000>;
-+	status = "okay";
-+};
-+
-+&bus_isp {
-+	devfreq = <&bus_wcore>;
-+	assigned-clocks = <&clock CLK_MOUT_ACLK400_ISP>,
-+			  <&clock CLK_MOUT_SW_ACLK400_ISP>,
-+			  <&clock CLK_DOUT_ACLK400_ISP>,
-+			  <&clock CLK_FOUT_DPLL>;
-+	assigned-clock-parents = <&clock CLK_MOUT_SCLK_DPLL>,
-+				 <&clock CLK_DOUT_ACLK400_ISP>;
-+	assigned-clock-rates = <0>, <0>, <400000000>, <1200000000>;
-+	status = "okay";
-+};
-+
-+&bus_isp266 {
-+	devfreq = <&bus_wcore>;
-+	assigned-clocks = <&clock CLK_MOUT_ACLK266_ISP>,
-+			  <&clock CLK_MOUT_USER_ACLK266_ISP>,
-+			  <&clock CLK_DOUT_ACLK266_ISP>;
-+	assigned-clock-parents = <&clock CLK_MOUT_SCLK_MPLL>,
-+				 <&clock CLK_MOUT_SW_ACLK266_ISP>;
-+	assigned-clock-rates = <0>, <0>,<300000000>;
-+	status = "okay";
-+};
-+
- &clock_audss {
- 	assigned-clocks = <&clock_audss EXYNOS_MOUT_AUDSS>;
- 	assigned-clock-parents = <&clock CLK_MAU_EPLL>;
-@@ -736,6 +893,21 @@
- 	bus-width = <4>;
- };
- 
-+&nocp_mem0_0 {
-+	status = "okay";
-+};
-+
-+&nocp_mem0_1 {
-+	status = "okay";
-+};
-+
-+&nocp_mem1_0 {
-+	status = "okay";
-+};
-+
-+&nocp_mem1_1 {
-+	status = "okay";
-+};
- 
- &pinctrl_0 {
+@@ -891,6 +891,9 @@
  	pinctrl-names = "default";
+ 	pinctrl-0 = <&sd2_clk &sd2_cmd &sd2_cd &sd2_bus1 &sd2_bus4>;
+ 	bus-width = <4>;
++	assigned-clocks = <&clock CLK_MOUT_MMC0>, <&clock CLK_FOUT_SPLL>;
++	assigned-clock-parents = <&clock CLK_MOUT_SCLK_SPLL>;
++	assigned-clock-rates = <0>, <800000000>;
+ };
+ 
+ &nocp_mem0_0 {
 -- 
 2.17.1
 
