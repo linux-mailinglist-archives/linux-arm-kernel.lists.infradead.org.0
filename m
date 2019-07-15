@@ -2,83 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 47C2869CDC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 22:34:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50D0569D37
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 15 Jul 2019 23:04:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1GIILCM2o+hMmBRaTqoEZZRgjL3aIl8cU865tFJJ+Sk=; b=YBtGUZ16CyetZb
-	1gw7NW1RpkUZ71d57iNRnTqnXiNBXKIHdctdLBLIiAqQUbcYxEdhxoYkjQMv+otTuPDloAqohwG1m
-	GkRqN5Fq1UmPY1037ye8izT/k3rePkVfKGM+L9hxAX4KecHTn/JY1jU27ALd+C2rr5/86Yp1WfMP7
-	XkMiBfxoZzLoudlZeOtx7IdALV6sCiXKPGOKMPf/MnAjKPAXE8NiQYKO3Q34XR/ei4EH2ckFwgSdI
-	sf0oOjpMdey2FTf3qqfbVotyxgAg5gIDR1RdrvdKPYXUkvVvEXyz8Wkx9NqMUDYwSsKwbQlN052Ki
-	v6F21w3xn0UpyRyb/L4w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=TbrHKt3SEI/8c7xrwDe0q01Izycw5COzEzAuvhN6pjU=; b=C+m1Iebwu09iGV
+	pzEebqvI6xGctQcxIuNg2aTj9IHSsQGCRty3BA5XbDz1SbIkbNkI9xCI6FBcAPq3i211hFHAaxm6S
+	shO/gzov2c7xwfoSMEA8BvMoWx4tvQa6WirapAOJIprTXT33odiqkBxl0WPdErdkc04V4jeHtsKpJ
+	doE/5yM29VME3pPFrVRJTSVbfYnecx6mzbNgwzaWBWgDKyP8VurOIZBd8JL6HjILeU/42C/MSM5UF
+	zZGgb6BCPn/oeya3Y10HR+SsuF4E4hccSMMa5ZMn2oxoQyBd4aWtXqeYa+LbtXVJOsjY+wOU/K7wB
+	8pwfCDWdAQgsmuwsTQuQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hn7gG-0004MC-3O; Mon, 15 Jul 2019 20:34:40 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1hn88r-0006AE-QU; Mon, 15 Jul 2019 21:04:13 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hn7fu-0004KR-VU
- for linux-arm-kernel@lists.infradead.org; Mon, 15 Jul 2019 20:34:20 +0000
-Received: by mail-io1-xd44.google.com with SMTP id m24so36362416ioo.2
+ id 1hn88g-00069t-CD
+ for linux-arm-kernel@lists.infradead.org; Mon, 15 Jul 2019 21:04:03 +0000
+Received: by mail-lj1-x241.google.com with SMTP id m23so17658375lje.12
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 15 Jul 2019 13:34:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=AAx+KCYrMtY/ELRUUN49P20LRASTzqK4lZ6I/S93X28=;
- b=RpIk7j3AS+hWigOL4/NO0cAujJh97clQ3BtY/u3jVW6nPPtiOE+viFrVvz1BSw1jkq
- 880IhXGdnLCoHPy7+X/IKtRH1i7P5ceG2u7W5MJbkzF2OztF7v4ydbwKsHWiTTMAK0SF
- iw4K1QKMbkgiintmdjECPloTU31lbV8Kobm9JhSUiPTFIVXKlebvDbx2ZRIyh/3IKB6a
- xZbNPDGZbCO+yXvorzfXx5/ieunWgh7zYy/W4s8BTzoUQBeZg7vEJPlqlM1A5X85zBsh
- iVh/hqli58GoSSj3JED7K6kjIoMdDJ3oFdKgUThYX03SmVwWru6AOF13fgiLF34Gbb1L
- yT1A==
+ Mon, 15 Jul 2019 14:04:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=0NqwVRQoz4/avZUmh/z2xzmFgh9JEO/HdW7vuqxB1fI=;
+ b=pDuL4HCd9EArviwyt9iAMvNVN80rLhrjhT8E9Zw8IQ+/Y2S2ZIKdZB44ZU8UTfBKWQ
+ Ntn6r3/65o8X5gt4owFvt9khyK+xjGPcLv3ILz5cExcC2ZImk4ngCfNfLubagIksnc1e
+ RjDoYP7Ycn7nnDv0SG4NiKclwSWPfLyX3uSD44UfP13egUsY9/yNOi6U3A49gvgj8gZm
+ hAIzm4/qYD/Vh+GsSbR50iKYw33ex81m7obJR5Z6o1E/i4rN5rBlkfEtFDlrOGPraScz
+ ffGziyn2j4u/xuSxyCWRyYnADovyDS+FMl8+17hvorGtCwZyQXtj6EGr1NbQxs7Jr4to
+ sH+A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
- :message-id:mime-version;
- bh=AAx+KCYrMtY/ELRUUN49P20LRASTzqK4lZ6I/S93X28=;
- b=tpm+BoikszvyhCaT+HiAfCcvS79uh2pGhs1o8VAh9aIzKdHoJZp7eYCNtXnIh9e7nl
- RkxIDDypG6wUKC1bFJjA24TzKrO7skwNC3GVtg9zuBwyzpm9DbDbwTxvPNceFpRWhQvd
- nr4CZbn3d1lZ2/eqSdVFvX13jIiYnTE+QwCo4vVmoG+OP7Z9SDQfKQrB8qqKzxaero31
- qXO6Xx1/9Oj6Vb1wdxS4EjSM30g2A3X/VHTHqlaHk5gVJ0XX0Q5XGoO1Yk8Ufj5eVJvr
- 840U6paSRlSpzR7Bw5ZVzB8wq4xaUjp3rTFuqdO6XrVfrz2nODRocGKlYOu09h+CmGDE
- m+OQ==
-X-Gm-Message-State: APjAAAXQRd/4iTs/Z5przbDUKXPS776xxs9G1psYQX7HvzGqy3der18k
- W7R+GHVJPZJz0xl0EetnKavcSg==
-X-Google-Smtp-Source: APXvYqywZfe4luOYTPj2bKAQyrauUOFxlaTpfEZs9VJMfxXbS3dpLgxSPAbPdcnwrPKuMusn2uh4OQ==
-X-Received: by 2002:a5e:d80d:: with SMTP id l13mr27309709iok.292.1563222857310; 
- Mon, 15 Jul 2019 13:34:17 -0700 (PDT)
-Received: from localhost (c-24-118-241-30.hsd1.mn.comcast.net. [24.118.241.30])
- by smtp.googlemail.com with ESMTPSA id n22sm40057663iob.37.2019.07.15.13.34.16
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 15 Jul 2019 13:34:16 -0700 (PDT)
-From: Kevin Hilman <khilman@baylibre.com>
-To: Neil Armstrong <narmstrong@baylibre.com>
-Subject: Re: [PATCH RESEND] arm64: dts: meson-g12a-sei510: enable IR controller
-In-Reply-To: <20190701115724.15801-1-narmstrong@baylibre.com>
-References: <20190701115724.15801-1-narmstrong@baylibre.com>
-Date: Mon, 15 Jul 2019 15:34:12 -0500
-Message-ID: <7hef2ryr3v.fsf@baylibre.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=0NqwVRQoz4/avZUmh/z2xzmFgh9JEO/HdW7vuqxB1fI=;
+ b=Trp4hgLcVZ0RE+XHkjO/qr5j1ds4XwZw88llthZfqYXnecbxmG7vFygIqjjyD1be+z
+ QSJoPSkSIOBNHEBopF/mcHza0myGnH8suMqFgLkG0QnwF3aYnJ9StyqYSVaSnAkJ4LEn
+ BIO81O1XE8bPNbsa99byWaohJXPPro4RHyywGjiCvcVJr/buSN9wkAVEj0VctU4YgbeM
+ Obmg92nhUw6VaGAROLfOCzNwuHxR4vfp3dJsaqsX8/WJpgfNKxrykijrcrtLVB5njsIT
+ 6JZRDY8QVwi7iezcNxRlF8DCHTfZwjuJejsKxdn3OI4De1HWHATt9l++jW5uvnjJC6OM
+ oxcA==
+X-Gm-Message-State: APjAAAWkkwOyq0hpbHns/EkrnqpVmHDdHBqJvclDzIFUdglBkvO9VAdG
+ Nxe1mx+iy3FMMd+HzlElO8eHn287fdI=
+X-Google-Smtp-Source: APXvYqxsWNZE24s5NS1xOqEqF9McOOOm00u+MLeBcgRh0eIPQATfmxhFa2EdwqGk5fIA0dL5cox/fg==
+X-Received: by 2002:a2e:b0ea:: with SMTP id h10mr9797147ljl.50.1563224639197; 
+ Mon, 15 Jul 2019 14:03:59 -0700 (PDT)
+Received: from localhost.bredbandsbolaget
+ (c-22cd225c.014-348-6c756e10.bbcust.telenor.se. [92.34.205.34])
+ by smtp.gmail.com with ESMTPSA id x22sm2503980lfq.20.2019.07.15.14.03.57
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Mon, 15 Jul 2019 14:03:58 -0700 (PDT)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] ARM: dts: nomadik: Set up the CS GPIO right
+Date: Mon, 15 Jul 2019 23:03:53 +0200
+Message-Id: <20190715210353.3736-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190715_133419_063895_CE3A47E5 
-X-CRM114-Status: UNSURE (   7.37  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190715_140402_480179_E8285150 
+X-CRM114-Status: GOOD (  11.25  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -92,23 +95,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Neil Armstrong <narmstrong@baylibre.com>
+Cc: Linus Walleij <linus.walleij@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Neil Armstrong <narmstrong@baylibre.com> writes:
+Now that the SPI GPIO driver knows how to handle these
+chip select GPIOs and we get nasty messages about the
+core having to enforce active low on the GPIO, fix this
+up by actually requesting the CS GPIO line as active
+low.
 
-> Enable the IR receiver controller on the SEI510 board.
->
-> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-> ---
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+---
+ arch/arm/boot/dts/ste-nomadik-nhk15.dts | 8 +-------
+ 1 file changed, 1 insertion(+), 7 deletions(-)
 
-Queued for v5.3-rc,
-
-Kevin
+diff --git a/arch/arm/boot/dts/ste-nomadik-nhk15.dts b/arch/arm/boot/dts/ste-nomadik-nhk15.dts
+index 04066f9cb8a3..41ed21a4fdc1 100644
+--- a/arch/arm/boot/dts/ste-nomadik-nhk15.dts
++++ b/arch/arm/boot/dts/ste-nomadik-nhk15.dts
+@@ -212,13 +212,7 @@
+ 		 */
+ 		gpio-sck = <&gpio0 5 GPIO_ACTIVE_HIGH>;
+ 		gpio-mosi = <&gpio0 4 GPIO_ACTIVE_HIGH>;
+-		/*
+-		 * It's not actually active high, but the frameworks assume
+-		 * the polarity of the passed-in GPIO is "normal" (active
+-		 * high) then actively drives the line low to select the
+-		 * chip.
+-		 */
+-		cs-gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>;
++		cs-gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
+ 		num-chipselects = <1>;
+ 
+ 		/*
+-- 
+2.21.0
 
 
 _______________________________________________
