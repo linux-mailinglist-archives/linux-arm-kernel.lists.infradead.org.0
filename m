@@ -2,61 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 927726A9B3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 15:34:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 645036A9B4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 15:35:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4XpAqTuJR8fWRl4AX8IdGsQwJJqDC8bILkMMZOJbDms=; b=DoEMjVk5Ag3ATt
-	BwtqdX4j9/Z9PxbO2NHlGVA98BILJ0H/ynt38CiU6GW/ERZxiMok4m+QEa9CWneCebapyxUVQYowN
-	9SHthnCmQ5Y/RAk5VmZfauET9CgSxnaIe/3qnnUegwhiZKoIHIKckdSpAK1LqGlfTGweWD6sH8aQl
-	wrft1g37Qpu0SZkq7+HOOzpcrLpPVpDr0+aP5+9nZwvBlIHLYCfv2jAlIYGl6/7jT37JD+PUyOH47
-	pvC0aryT4V+cAsdCPNWo/k19bxdapAll3VmbqGtWzSiJ9XOXd9ZSYNAZvl9KjWH6jg65pL7DQG4gB
-	hNcNfBsZUnMqa9PIqtvw==;
+	List-Owner; bh=1nMN9pprnNR7H/ORqjKwWSfweJFV0RuwVGvaAJiApBc=; b=MiW2Jq4p4nKjpW
+	GR64Gb86uqePsotNrRXqA4JCavbJadxHxdeiTT6mYwHbqfGOUs90pzJkcZK+hVMKjANNEJuWi9Ige
+	YJvnVFkAZ40yTn5tljVTFrTFDEfkJIW09yFI14sEvO21MrGrpHRImQ0s8AL7gxr28JOyWkML3NkM4
+	dMvtEOGrH+YsrAu+IZNuAbfVckSun1zd/dx5+a7gB9ZyRVtDZ+UZfLlGW3W10LNFumQ3vWZ58mLNP
+	sPqDeRMs7jeHmFeoaMVQll5GUcdkyaQwIggTvw2/RYBJFSOwPyvnr5Vops0CmktYVqGiyiyoFkIJS
+	mywww00e9BFxJjPxGhKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnNbK-00026f-6f; Tue, 16 Jul 2019 13:34:39 +0000
-Received: from mail-eopbgr80051.outbound.protection.outlook.com ([40.107.8.51]
- helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+	id 1hnNc7-0003aD-Op; Tue, 16 Jul 2019 13:35:27 +0000
+Received: from mail-eopbgr30064.outbound.protection.outlook.com ([40.107.3.64]
+ helo=EUR03-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnNb8-000258-9A
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 13:34:28 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=TxkHGrpsM0IRS/rjPSrhFJMBqUk5r+/tsi1Yoj6L1peL7K8fimZ24NzumXVSk/epyLrnSmzezSLKCtflMKNltNezHi0DxJOVxHS5a+jDAmHjDfNn7IWpGGWMtm1WyCxtDGt/LcLXOAffkSP9nTTU0ZqBBaHjTlIil25Hhl6cZXbu3BucNrhB8uZlkSL1XRS6i6VfYr2J1NV5/pfqQbGwMMY0mn4nKyG1DTDBT25AdCIqivhopkvO6jBh2lF02De5Fma+98xOacQLyMXRZJrO0SDiFNiSHoaQ3W5ty4C9x4TiXb0May/dNqcuNl0Nr44EGd+ei3OMxNLOyWu5MguIGg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=V1N0IKwNV2MC25ith0msIDRKMXe7xDmopw1HY1vWJVQ=;
- b=lS3O7BQPu3u7if4WNZocYVGAx+92jDGtc4qSNi1on4IiFrKlBlNYauUrHr6ocW0ASLwzinqGKZUeHO9+tWjWYVWuXKhJ3TRtOLGTCoXVGJDwzJ/6aH3MwEbx29V4pL5sm37+Pa7+72vwEpHcmnMzNCtcxOLTRLuq0DcxJefyeAAe8yCtRythjtxdZeh63uX3Mb1zYLfWrEAy8pH8o2QfDAagfZ9R8lsH61veZdD7dzwQcmNHIu81xTz478Ziyn6xCTtK0zv3W9s/swS7p4MmmhCYNLruFo6bvuY9y4BSRfDDRiUv6Km+Y1uEGh0ehPy/zHWCgnyj3dYJQR4ZUHHgHA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=nxp.com;dmarc=pass action=none header.from=nxp.com;dkim=pass
- header.d=nxp.com;arc=none
+ id 1hnNbs-0003ZV-6N
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 13:35:13 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=V1N0IKwNV2MC25ith0msIDRKMXe7xDmopw1HY1vWJVQ=;
- b=lwZ5ujfX+FIfrTGdBN/J8EJAfYvuulvPu9zkGlPEv9a+I2MN4mYEfdJwhTG7fcMY8nfz9Mt9DePWgENeNZn1BkPBfa4kZKOsqDK0Qi3d2YAnNWmC0kJB8h3bsC5km1+jskitlNplDJKbloK2YGc+6CLP1cDj/M+DYGKHRQOtwOs=
+ bh=54n732ypTHizSu7fcgnaXear4E0oGNFR0zbll9QcBMA=;
+ b=X/gAvfLjCSrM1WNXk3n5CgODSGMCNOv+97GqppU63YtaQnVF2HswJhnVV5iIpKfsT9ejkFMsH03GOtt0M2Mr2v4v/BI0RObcYKIsWTmyHKWpRFi3lnSl/nX4FJADHQECpNeUGizJNynSlIY+nuF/2cJdbFBZIhAl6tEsvb4JDRI=
 Received: from VI1PR04MB4910.eurprd04.prod.outlook.com (20.177.49.159) by
- VI1PR04MB4221.eurprd04.prod.outlook.com (52.134.31.20) with Microsoft SMTP
+ VI1PR04MB4686.eurprd04.prod.outlook.com (20.177.56.78) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2073.10; Tue, 16 Jul 2019 13:34:17 +0000
+ 15.20.2052.19; Tue, 16 Jul 2019 13:35:08 +0000
 Received: from VI1PR04MB4910.eurprd04.prod.outlook.com
  ([fe80::8577:908d:d4fa:67f4]) by VI1PR04MB4910.eurprd04.prod.outlook.com
  ([fe80::8577:908d:d4fa:67f4%4]) with mapi id 15.20.2073.008; Tue, 16 Jul 2019
- 13:34:17 +0000
+ 13:35:08 +0000
 From: Frank Li <frank.li@nxp.com>
 To: Leonard Crestez <leonard.crestez@nxp.com>, Shawn Guo
  <shawnguo@kernel.org>, Will Deacon <will@kernel.org>
-Subject: RE: [PATCH 1/3] perf/imx_ddr: Add MODULE_DEVICE_TABLE
-Thread-Topic: [PATCH 1/3] perf/imx_ddr: Add MODULE_DEVICE_TABLE
-Thread-Index: AQHVMkX3fhG3ntXnwU2AdTnhQDQH7KbNUZ+w
-Date: Tue, 16 Jul 2019 13:34:17 +0000
-Message-ID: <VI1PR04MB49100BE846047F44034DB9E388CE0@VI1PR04MB4910.eurprd04.prod.outlook.com>
+Subject: RE: [PATCH 2/3] arm64: dts: imx8m: Add ddr-pmu nodes
+Thread-Topic: [PATCH 2/3] arm64: dts: imx8m: Add ddr-pmu nodes
+Thread-Index: AQHVMkX5geEsNsO2L06+VkTTmHKXEabNUeQQ
+Date: Tue, 16 Jul 2019 13:35:08 +0000
+Message-ID: <VI1PR04MB4910AF706069756BF960115588CE0@VI1PR04MB4910.eurprd04.prod.outlook.com>
 References: <cover.1562230183.git.leonard.crestez@nxp.com>
- <6e88abe2ed5f361469cbb8ccccd4586036fc2fa2.1562230183.git.leonard.crestez@nxp.com>
-In-Reply-To: <6e88abe2ed5f361469cbb8ccccd4586036fc2fa2.1562230183.git.leonard.crestez@nxp.com>
+ <b8aeb9caf6c2380a7c8f65b19e420e18498d5c1a.1562230183.git.leonard.crestez@nxp.com>
+In-Reply-To: <b8aeb9caf6c2380a7c8f65b19e420e18498d5c1a.1562230183.git.leonard.crestez@nxp.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -65,43 +55,43 @@ authentication-results: spf=none (sender IP is )
  smtp.mailfrom=frank.li@nxp.com; 
 x-originating-ip: [64.157.242.222]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 5c30249c-d3f7-4472-d94e-08d709f24cf8
+x-ms-office365-filtering-correlation-id: 3ccef2c7-4533-4202-2ccf-08d709f26ba2
 x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(5600148)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
- SRVR:VI1PR04MB4221; 
-x-ms-traffictypediagnostic: VI1PR04MB4221:
-x-microsoft-antispam-prvs: <VI1PR04MB42212A61A5FC8FA71EA15EAB88CE0@VI1PR04MB4221.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:626;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:VI1PR04MB4686; 
+x-ms-traffictypediagnostic: VI1PR04MB4686:
+x-microsoft-antispam-prvs: <VI1PR04MB4686B987ECCA935F6901BC6388CE0@VI1PR04MB4686.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:361;
 x-forefront-prvs: 0100732B76
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(396003)(136003)(366004)(346002)(39860400002)(13464003)(189003)(199004)(44832011)(4326008)(2906002)(486006)(102836004)(54906003)(186003)(26005)(6436002)(6506007)(53546011)(68736007)(476003)(478600001)(14454004)(8936002)(110136005)(256004)(3846002)(6116002)(6246003)(33656002)(316002)(53936002)(55016002)(71200400001)(305945005)(229853002)(71190400001)(7736002)(5660300002)(9686003)(25786009)(66066001)(446003)(86362001)(99286004)(66946007)(76176011)(8676002)(66556008)(81166006)(64756008)(76116006)(66446008)(66476007)(7696005)(81156014)(52536014)(74316002)(11346002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB4221;
+ SFS:(10009020)(4636009)(396003)(39860400002)(376002)(346002)(366004)(136003)(189003)(199004)(13464003)(9686003)(478600001)(86362001)(53936002)(71200400001)(55016002)(256004)(71190400001)(4326008)(7736002)(305945005)(81166006)(8936002)(476003)(52536014)(486006)(229853002)(5660300002)(8676002)(11346002)(81156014)(446003)(25786009)(66476007)(66556008)(64756008)(66446008)(66946007)(76116006)(44832011)(6436002)(14454004)(3846002)(33656002)(66066001)(6116002)(68736007)(7696005)(76176011)(186003)(99286004)(102836004)(316002)(26005)(74316002)(2906002)(6246003)(6506007)(53546011)(54906003)(110136005)(32563001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB4686;
  H:VI1PR04MB4910.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: PUXBfhK7sEvTIFD2vy7zEumtLqWzCjo90fF1ke9SFHtypPBxK4uX2XjclOQcBsHLsngFMKQFUgb6FV5uTZH9vOn/fRy/Yz6KZOzOLqxjam7q8RjuIeprGMvitu1USom8va4u9yIyC/wqUGjqOyWZIfbRax39KgBNhBUL/Mn3xsI8laIUT0YF4ScBh6tpNbrCAuP4gRRa4XaCCuDvIlg1+uNtvSVWX/uNN2QFRP5skg2FqUSZ7jTS06J5J4X171C7wJx1I22RLs6ZbCN39kjEVYdFaiiBk6VH0F21M2IsZI8UxSXIUBHm4Pf6fZycvjtPZdyQX53kNejbPUIaQCFLsEfwQK2hnJNHs6TNiesTCmIK+i7+COA1m2tfoeq/g4LSDzfGQDOgPtiedhWQepQ68Ek6bKrpx36tRdsIrLTVayY=
+x-microsoft-antispam-message-info: vwqidFoaVPreF3WVjjx8vKn45DACZ1gNwtE2ibyDpWWGAeKri/DIlWduwXxz0/NxUwOipcida22ilqiVTCEpmfz6WSq9Bd1Z9HkzTTXT2GvWLKWzDS8/u17bTjx2VNC+ff+Y8najGZiwmNPawklqFxGnANlDISBLzfI7276PIh6imwsLwrPDeXdcN/57eiXzdZp0Pf7drG70tUjSqan+p+S6onTyklEuuFbA2MId0siY4qS5LR+nfvb3YvJ1+RMgRkaNH71bcoL5aA1sQ67MeFPSfTRSaKIufWCinsDm5Gyzbm6ynIXSHdX+1yXsLsKq3+a8oKu0ndcgDLwS8dj51zaJ0sh9mI1yth46b4X9zH7FHUXJNxksz6rwH+g2JF8BmFdOpjbCEvUDIXdxKfgy5smz9p6CugA7mV3/sbIBo08=
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5c30249c-d3f7-4472-d94e-08d709f24cf8
-X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Jul 2019 13:34:17.2258 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3ccef2c7-4533-4202-2ccf-08d709f26ba2
+X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Jul 2019 13:35:08.7581 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
 X-MS-Exchange-CrossTenant-userprincipalname: frank.li@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB4221
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB4686
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_063426_436581_BDEF750A 
-X-CRM114-Status: GOOD (  13.87  )
+X-CRM114-CacheID: sfid-20190716_063512_243928_41EA8994 
+X-CRM114-Status: GOOD (  13.76  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.8.51 listed in list.dnswl.org]
+ no trust [40.107.3.64 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -148,36 +138,66 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 > <fabio.estevam@nxp.com>; Jacky Bai <ping.bai@nxp.com>;
 > devicetree@vger.kernel.org; kernel@pengutronix.de; dl-linux-imx <linux-
 > imx@nxp.com>; linux-arm-kernel@lists.infradead.org
-> Subject: [PATCH 1/3] perf/imx_ddr: Add MODULE_DEVICE_TABLE
+> Subject: [PATCH 2/3] arm64: dts: imx8m: Add ddr-pmu nodes
 > 
-> This is required for automatic probing when driver is built as a module.
+> The same ddr perfomance counter IP from 8qxp is also available on imx8m
+> series so add it to dts.
 > 
-> Fixes: 9a66d36cc7ac ("drivers/perf: imx_ddr: Add DDR performance counter
-> support to perf")
+> Tested with `perf stat` and `memtester` on imx8mm-evk and obtained plausible
+> results.
+> 
 > Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
 
 Acked-by: Frank Li <frank.li@nxp.com>
 
 > ---
->  drivers/perf/fsl_imx8_ddr_perf.c | 1 +
->  1 file changed, 1 insertion(+)
+>  arch/arm64/boot/dts/freescale/imx8mm.dtsi | 7 +++++++
+> arch/arm64/boot/dts/freescale/imx8mq.dtsi | 7 +++++++
+>  2 files changed, 14 insertions(+)
 > 
-> diff --git a/drivers/perf/fsl_imx8_ddr_perf.c b/drivers/perf/fsl_imx8_ddr_perf.c
-> index 63fe21600072..0e3310dbb145 100644
-> --- a/drivers/perf/fsl_imx8_ddr_perf.c
-> +++ b/drivers/perf/fsl_imx8_ddr_perf.c
-> @@ -45,10 +45,11 @@ static DEFINE_IDA(ddr_ida);  static const struct
-> of_device_id imx_ddr_pmu_dt_ids[] = {
->  	{ .compatible = "fsl,imx8-ddr-pmu",},
->  	{ .compatible = "fsl,imx8m-ddr-pmu",},
->  	{ /* sentinel */ }
+> diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+> b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+> index 232a7412755a..9a8d8cd21ef0 100644
+> --- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+> +++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+> @@ -816,7 +816,14 @@
+>  			      <0x38880000 0xc0000>; /* GICR (RD_base +
+> SGI_base) */
+>  			#interrupt-cells = <3>;
+>  			interrupt-controller;
+>  			interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
+>  		};
+> +
+> +		ddr-pmu@3d800000 {
+> +			compatible = "fsl,imx8mm-ddr-pmu", "fsl,imx8m-ddr-
+> pmu";
+> +			reg = <0x3d800000 0x400000>;
+> +			interrupt-parent = <&gic>;
+> +			interrupts = <GIC_SPI 98 IRQ_TYPE_LEVEL_HIGH>;
+> +		};
+>  	};
 >  };
-> +MODULE_DEVICE_TABLE(of, imx_ddr_pmu_dt_ids);
-> 
->  struct ddr_pmu {
->  	struct pmu pmu;
->  	void __iomem *base;
->  	unsigned int cpu;
+> diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+> b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+> index d09b808eff87..fb0fdee5f889 100644
+> --- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+> +++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+> @@ -1031,7 +1031,14 @@
+>  			#interrupt-cells = <3>;
+>  			interrupt-controller;
+>  			interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
+>  			interrupt-parent = <&gic>;
+>  		};
+> +
+> +		ddr-pmu@3d800000 {
+> +			compatible = "fsl,imx8mq-ddr-pmu", "fsl,imx8m-ddr-
+> pmu";
+> +			reg = <0x3d800000 0x400000>;
+> +			interrupt-parent = <&gic>;
+> +			interrupts = <GIC_SPI 98 IRQ_TYPE_LEVEL_HIGH>;
+> +		};
+>  	};
+>  };
 > --
 > 2.17.1
 
