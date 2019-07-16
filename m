@@ -2,90 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D856E69FFF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 02:40:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4846A6A038
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 03:27:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
-	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5LNV6IOgqPhGsU8BcG8p8Kj7aUpKpLs9zDVNnB4fY7w=; b=hmxZ0vKpdtfppQ
-	Ng7eyrFArQBRhsOoTvVvsR86Cf9TE9iHBQAXorbHpPWXNT92L+77DoAQcOyyrO3w66qAhDRuTbUSZ
-	gMNQOU/59OXwb0ao1yHxaV44SxR5o3Y33SrN1Vz0i68AYRPemSrhJGnHcsVBnQqqB4QQVnr2e4EZZ
-	iuZ7QOxJGf1XmHXMwe/3W34nmYc7EAnrj0kV+IzyFMaSGQVxjDklCdfGdsnf18rZWtY1lLSoHqpKW
-	Feiuyh6BNFPajcHLpk3Qm40X+OUQR9mtduQFZUmC31Ton30PYmSqWg9XQ3x69PE42Y+MvvvwXlBow
-	7wEItceNbYUhKf9ABH5w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
+	References:In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=fLZjemYXLSfc9Tu4ekCFObV5V3lCydvHzQLlU7LAySc=; b=ja3utQiOzWzeNhc5bFjYPgAk2h
+	jrWsl5QcCi2nXeoCditUXZREvwsA0zlcXGcQQ3iGGDPljub/8vi9v1RQAIltKsNbLBPIRrmml6mgN
+	i6tOYAdX9fMgEj0rB6pQoG0ZqKxMl/iKPw5B2hvNf7dCSdxRR1KAeEcME4wW153ahABJhu6d+KgBN
+	nZmReB5yTK/FGm2ZwJgex8JB66HMvZsGur1SzSwQBOpIZKIzEuGJWVF53RKGXrBza9jZz/3yA4S1n
+	g9zKQvKKuXxYattGV4PCOQOuCoTxgVZazCN7enW7yX4vofHoFFRiFa+QKQtQTnb1mQgv+supTOaw5
+	0+2kT+9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnBVh-0005qw-IP; Tue, 16 Jul 2019 00:40:01 +0000
-Received: from out4-smtp.messagingengine.com ([66.111.4.28])
+	id 1hnCFa-00059k-Ok; Tue, 16 Jul 2019 01:27:26 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnBVS-0005qV-S4
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 00:39:48 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id 0C6E5218C1;
- Mon, 15 Jul 2019 20:39:46 -0400 (EDT)
-Received: from imap2 ([10.202.2.52])
- by compute4.internal (MEProxy); Mon, 15 Jul 2019 20:39:46 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
- mime-version:message-id:in-reply-to:references:date:from:to:cc
- :subject:content-type; s=fm3; bh=h4lyw1ckqr2NsnVmVrOHlFNltSVlShU
- XUZlbmu/yAvo=; b=nA/XJjh7eKpE9zZB3wjvRz0KgEovPjrsdFfyE8Lsv/MnNru
- q+KzxQwRBZ5ZkU26CP0Myhs18TtKNe0qsTMjs0w+fFtGHhSVFyQfVMfJ5IxymITg
- HZPNZzLszXPNz5pm7Pt/+Y1dhXaieTjK5OKCAla90rENCc708cMOV9ckgCKhBJjk
- TVUuBaaKwJ4V/nYzVMJlLA9I6ZLEFly0rAqKESdkS0NI5Ao3K5uRlb9L4w2DPIVi
- FGj81uEyt8UxzBvTAoAfUlzE9qWdLTnCCBB7tCTB1MCxLel+ChXecLzDCGsEsHAU
- Ng8B0YxvZ3nuauqpHSldJh8SM6Cq+Y41bo5CW9w==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=h4lyw1
- ckqr2NsnVmVrOHlFNltSVlShUXUZlbmu/yAvo=; b=c77O8R8J9MQVcy0S97WVVs
- cgYZ6mLuXzQfT0klylrIK8UEwIyIxGVo9XPuKW6HUWAE/eH0ebCNAJ0fThKo7uYX
- x2h/TJvnb1aRlysGF2NgH9MSRys3eZdgcf+JqLlP1bch2bYoQ9BsUzwox7Sqw05z
- rvgcKZYB4mIKJQQMvub6Bcdh8jBxx1J9A+I91ya0czQbzwanEq+gwsbUO99TXNZA
- lJsUQkBdkCXvciWbvrfySwpe5JAVXLuZ3s4eEom4iUdMcf1oq2oP3kVeTtSxwOxP
- 4Rs4lSwDpTHqOc25rV8MyMsJYOZPe9j1DN7D0HdFUYyLlwTdiBY47i+SsO+jAJBw
- ==
-X-ME-Sender: <xms:0RwtXYIrXtUpuNL8gxuU2eQdef0Mm3SGqxaIjaaGSm19xB3BAQLr0g>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrheelgdefgecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpefofgggkfgjfhffhffvufgtsehttdertderreejnecuhfhrohhmpedftehnughr
- vgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucfrrghrrg
- hmpehmrghilhhfrhhomheprghnughrvgifsegrjhdrihgurdgruhenucevlhhushhtvghr
- ufhiiigvpedu
-X-ME-Proxy: <xmx:0RwtXReEZT2H-RGf34PvnZWEpkO5AucxK_eFS_-sqA2P3UFMYQi0xQ>
- <xmx:0RwtXQtR61mbvJi2E0-W-KNhvCTYxokNbvsDjmHBx7Pq8oQki10-7w>
- <xmx:0RwtXfHCNDgw_Ovr5mkyttfXbRcJLA4vnT6euo92rkl5wVKmONjq0Q>
- <xmx:0hwtXcY0BkKpboEJGhZqV-EwKHgZEENyb4Xr4phADP5nZTsdlwQtJg>
-Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id 3A815E00CC; Mon, 15 Jul 2019 20:39:45 -0400 (EDT)
-X-Mailer: MessagingEngine.com Webmail Interface
-User-Agent: Cyrus-JMAP/3.1.6-731-g19d3b16-fmstable-20190627v1
-Mime-Version: 1.0
-Message-Id: <ec16c833-371d-4dce-828d-dd99dccc43ee@www.fastmail.com>
-In-Reply-To: <CACPK8Xdz98CQzgE2KCjz8eOhPtx=H8jTe1hVT7LvP77U_gGASQ@mail.gmail.com>
-References: <20190715223725.12924-1-robh@kernel.org>
- <CACPK8Xdz98CQzgE2KCjz8eOhPtx=H8jTe1hVT7LvP77U_gGASQ@mail.gmail.com>
-Date: Tue, 16 Jul 2019 10:09:55 +0930
-From: "Andrew Jeffery" <andrew@aj.id.au>
-To: "Joel Stanley" <joel@jms.id.au>, "Rob Herring" <robh@kernel.org>
-Subject: =?UTF-8?Q?Re:_[PATCH]_dt-bindings:_pinctrl:_aspeed:_Fix_'compatible'_sch?=
- =?UTF-8?Q?ema_errors?=
+ id 1hnCFM-00059N-PY
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 01:27:14 +0000
+Received: from localhost (unknown [23.100.24.84])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 53D2320659;
+ Tue, 16 Jul 2019 01:27:10 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1563240430;
+ bh=sh4ZD2n/Wnxya33LOsKQv54jHWqu/sdJYn9wdgedWOQ=;
+ h=Date:From:To:To:To:Cc:Cc:Cc:Subject:In-Reply-To:References:From;
+ b=pnKclTkvxS5sEkIbywKL/bJIrSh3SKF+Z5VEi4PVGbefZanhkFX9ANeOC1CiQIvWH
+ 185b5ZHl9YoSWRq4iICfV4Y3a5jdbSwRF9IOQ2ps4bYLCo5j5n2JJ4JEXeMd1QXrwP
+ WWjEGGOc9HtQs5LQI7SNkx5UIX47GHgpLoPcmGzU=
+Date: Tue, 16 Jul 2019 01:27:09 +0000
+From: Sasha Levin <sashal@kernel.org>
+To: Sasha Levin <sashal@kernel.org>
+To: Linus Walleij <linus.walleij@linaro.org>
+To: arm@kernel.org, soc@kernel.org
+Subject: Re: [PATCH] ARM: dts: gemini: Set DIR-685 SPI CS as active low
+In-Reply-To: <20190715202101.16060-1-linus.walleij@linaro.org>
+References: <20190715202101.16060-1-linus.walleij@linaro.org>
+Message-Id: <20190716012710.53D2320659@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190715_173947_043039_DE24268B 
-X-CRM114-Status: GOOD (  10.61  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190715_182712_851724_84A73919 
+X-CRM114-Status: UNSURE (   9.12  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.28 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -93,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,47 +77,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- linux-aspeed@lists.ozlabs.org, linux-gpio@vger.kernel.org
+Cc: , stable@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi,
+
+[This is an automated email]
+
+This commit has been processed because it contains a -stable tag.
+The stable tag indicates that it's relevant for the following trees: all
+
+The bot has tested the following trees: v5.2.1, v5.1.18, v4.19.59, v4.14.133, v4.9.185, v4.4.185.
+
+v5.2.1: Build OK!
+v5.1.18: Build OK!
+v4.19.59: Failed to apply! Possible dependencies:
+    Unable to calculate
+
+v4.14.133: Failed to apply! Possible dependencies:
+    ea6f23f59331 ("ARM: dts: Add TVE/TVC and ILI9322 panel to DIR-685")
+
+v4.9.185: Failed to apply! Possible dependencies:
+    22789ae3bbb1 ("ARM: dts: Add DTS file for D-Link DIR-685")
+    9be0d7f87eff ("ARM: dts: add device tree for Gemini SoC and SQ201")
+    ea6f23f59331 ("ARM: dts: Add TVE/TVC and ILI9322 panel to DIR-685")
+    fe7bf9dcfff5 ("ARM: dts: add a devicetree for Raidsonic NAS IB-4220-B")
+
+v4.4.185: Failed to apply! Possible dependencies:
+    22789ae3bbb1 ("ARM: dts: Add DTS file for D-Link DIR-685")
+    9be0d7f87eff ("ARM: dts: add device tree for Gemini SoC and SQ201")
+    ea6f23f59331 ("ARM: dts: Add TVE/TVC and ILI9322 panel to DIR-685")
+    fe7bf9dcfff5 ("ARM: dts: add a devicetree for Raidsonic NAS IB-4220-B")
 
 
-On Tue, 16 Jul 2019, at 08:47, Joel Stanley wrote:
-> On Mon, 15 Jul 2019 at 22:37, Rob Herring <robh@kernel.org> wrote:
-> >
-> > The Aspeed pinctl schema have errors in the 'compatible' schema:
-> >
-> > Documentation/devicetree/bindings/pinctrl/aspeed,ast2400-pinctrl.yaml: \
-> > properties:compatible:enum: ['aspeed', 'ast2400-pinctrl', 'aspeed', 'g4-pinctrl'] has non-unique elements
-> > Documentation/devicetree/bindings/pinctrl/aspeed,ast2500-pinctrl.yaml: \
-> > properties:compatible:enum: ['aspeed', 'ast2500-pinctrl', 'aspeed', 'g5-pinctrl'] has non-unique elements
-> >
-> > Flow style sequences have to be quoted if the vales contain ','. Fix
-> > this by using the more common one line per entry formatting.
-> 
-> >
-> >  properties:
-> >    compatible:
-> > -    enum: [ aspeed,ast2400-pinctrl, aspeed,g4-pinctrl ]
-> > +    enum:
-> > +      - aspeed,ast2400-pinctrl
-> > +      - aspeed,g4-pinctrl
-> 
-> Thanks for the fix. However, we've standardised on the first form for
-> all of our device trees, so we can drop the second compatible string
-> from the bindings.
-> 
-> I think Andrew already has a patch cooking to do this.
+NOTE: The patch will not be queued to stable trees until it is upstream.
 
-Yes, I have a series in the works. Will send patches soon.
+How should we proceed with this patch?
 
-Andrew
+--
+Thanks,
+Sasha
 
 _______________________________________________
 linux-arm-kernel mailing list
