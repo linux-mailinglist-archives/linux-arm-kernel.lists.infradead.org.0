@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0296D6ABA1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 17:24:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 902426ABA0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 17:24:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,42 +11,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=LtDFT8oa23BtzO/Xq/W5yknWxfdiTatJynnA5aFpRFo=; b=X/ZodhMeoTwfeDZ5eVbS9IQMNl
-	GowEj5t01Uy1Qqreta21ty5wD1KMYqOkVpEbTTcoOUbYCvnkCG2F3/p1YfFIMTmzjXk6RfOjLecIT
-	rkTL6hyBGMoMq1hPhK55Nx+k3cQE9rPGwQim+XPVeEeuLF3MLLKf+fKsBc/pM0Wu1rPa3ggXAdX16
-	ujk5usDtc83iJxxX2NHrnAyRBqehE2KMcqeGFBkg2nAB0dlmQkbLFAb+w3hI6XqEWEhlr7BPM2Ax4
-	a/qrUJ7P2rOZS1wkHWMZECsq46AUoGRY1XDJDoZF0ceDGiL7BPjpeHwWFndUdl4NvNpzpJDWRYvaH
-	C8i53KfA==;
+	bh=eITHwGaWqz+HEbPJ2mp3+TPYTqq13dA6y99Q5lCGZwM=; b=tcUFb17fMoKnXrvulcXz4hc7/i
+	NKzVEqu+9e0gTCc8r0hQCGJMldHMmb8lhKFWdRDmcspoz9XCe7i6mtp4CZ5SCoaxEQBMJYbQzdnZq
+	lKlRqlILRJ37lxo0ZljWskzVuwL2BPMQ6x8XZ9xjVNu44Zdn6zbZVNU9TMvk7nLb1vQbvnI+zEUcR
+	hnmAJdQvLsVlA8+nfRPzIUFnPTRXEZbnTiELXsIR6SQH3surLVMdn99He5cw15CzIiYjaUIAW5dES
+	iGshbO+Io0au+NSPxpJZpILsw9aWjE7eqE7XmtSD08lYeE5gQ4bLBkj3IXGTN0OJFYuQGNgINXTBh
+	7AAB3ajQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnPJt-00064X-2n; Tue, 16 Jul 2019 15:24:45 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1hnPJX-0005mj-2P; Tue, 16 Jul 2019 15:24:23 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnPIR-00055x-H0
+ id 1hnPIS-00056e-GY
  for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 15:23:18 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 5A16D20001C;
- Tue, 16 Jul 2019 17:23:14 +0200 (CEST)
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 369BB1A000D;
+ Tue, 16 Jul 2019 17:23:15 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 815E6200055;
- Tue, 16 Jul 2019 17:23:09 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 61AA11A0043;
+ Tue, 16 Jul 2019 17:23:10 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 47FA8402EE;
- Tue, 16 Jul 2019 23:23:03 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 3DCA4402F7;
+ Tue, 16 Jul 2019 23:23:04 +0800 (SGT)
 From: Dong Aisheng <aisheng.dong@nxp.com>
 To: linux-clk@vger.kernel.org
-Subject: [PATCH v3 05/11] clk: imx: scu: allow scu clk to take device pointer
-Date: Tue, 16 Jul 2019 23:00:59 +0800
-Message-Id: <1563289265-10977-6-git-send-email-aisheng.dong@nxp.com>
+Subject: [PATCH v3 06/11] clk: imx: scu: add runtime pm support
+Date: Tue, 16 Jul 2019 23:01:00 +0800
+Message-Id: <1563289265-10977-7-git-send-email-aisheng.dong@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1563289265-10977-1-git-send-email-aisheng.dong@nxp.com>
 References: <1563289265-10977-1-git-send-email-aisheng.dong@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_082315_868465_FDFB7CAB 
-X-CRM114-Status: UNSURE (   7.43  )
+X-CRM114-CacheID: sfid-20190716_082316_730753_A10A015D 
+X-CRM114-Status: UNSURE (   9.57  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -54,7 +54,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -78,7 +78,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Used to support runtime pm.
+Add runtime pm support
 
 Cc: Stephen Boyd <sboyd@kernel.org>
 Cc: Shawn Guo <shawnguo@kernel.org>
@@ -89,69 +89,56 @@ Signed-off-by: Dong Aisheng <aisheng.dong@nxp.com>
 ChangeLog:
 v3: new patch
 ---
- drivers/clk/imx/clk-scu.c | 7 ++++---
- drivers/clk/imx/clk-scu.h | 9 +++++----
- 2 files changed, 9 insertions(+), 7 deletions(-)
+ drivers/clk/imx/clk-scu.c | 22 ++++++++++++++++++++--
+ 1 file changed, 20 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/clk/imx/clk-scu.c b/drivers/clk/imx/clk-scu.c
-index 5f935b1..30d6ff7 100644
+index 30d6ff7..edc39d7 100644
 --- a/drivers/clk/imx/clk-scu.c
 +++ b/drivers/clk/imx/clk-scu.c
-@@ -382,8 +382,9 @@ static const struct clk_ops clk_scu_cpu_ops = {
- 	.unprepare = clk_scu_unprepare,
- };
+@@ -11,6 +11,7 @@
+ #include <linux/of_platform.h>
+ #include <linux/platform_device.h>
+ #include <linux/pm_domain.h>
++#include <linux/pm_runtime.h>
+ #include <linux/slab.h>
  
--struct clk_hw *__imx_clk_scu(const char *name, const char * const *parents,
--			     int num_parents, u32 rsrc_id, u8 clk_type)
-+struct clk_hw *__imx_clk_scu(struct device *dev, const char *name,
-+			     const char * const *parents, int num_parents,
-+			     u32 rsrc_id, u8 clk_type)
- {
- 	struct clk_init_data init;
- 	struct clk_scu *clk;
-@@ -417,7 +418,7 @@ struct clk_hw *__imx_clk_scu(const char *name, const char * const *parents,
- 	clk->hw.init = &init;
+ #include "clk-scu.h"
+@@ -448,15 +449,32 @@ static int imx_clk_scu_probe(struct platform_device *pdev)
+ 	struct device *dev = &pdev->dev;
+ 	struct imx_scu_clk_node *clk = dev_get_platdata(dev);
+ 	struct clk_hw *hw;
++	int ret;
++
++	pm_runtime_set_suspended(dev);
++	pm_runtime_set_autosuspend_delay(dev, 50);
++	pm_runtime_use_autosuspend(&pdev->dev);
++	pm_runtime_enable(dev);
++
++	ret = pm_runtime_get_sync(dev);
++	if (ret) {
++		pm_runtime_disable(dev);
++		return ret;
++	}
  
- 	hw = &clk->hw;
--	ret = clk_hw_register(NULL, hw);
-+	ret = clk_hw_register(dev, hw);
- 	if (ret) {
- 		kfree(clk);
- 		hw = ERR_PTR(ret);
-diff --git a/drivers/clk/imx/clk-scu.h b/drivers/clk/imx/clk-scu.h
-index 819dc32..a2c6b42 100644
---- a/drivers/clk/imx/clk-scu.h
-+++ b/drivers/clk/imx/clk-scu.h
-@@ -20,8 +20,9 @@ struct clk_hw *imx_clk_scu_alloc_dev(const char *name,
- 				     const char * const *parents,
- 				     int num_parents, u32 rsrc_id, u8 clk_type);
+-	hw = __imx_clk_scu(clk->name, clk->parents, clk->num_parents,
++	hw = __imx_clk_scu(dev, clk->name, clk->parents, clk->num_parents,
+ 			   clk->rsrc, clk->clk_type);
+-	if (IS_ERR(hw))
++	if (IS_ERR(hw)) {
++		pm_runtime_disable(dev);
+ 		return PTR_ERR(hw);
++	}
  
--struct clk_hw *__imx_clk_scu(const char *name, const char * const *parents,
--			     int num_parents, u32 rsrc_id, u8 clk_type);
-+struct clk_hw *__imx_clk_scu(struct device *dev, const char *name,
-+			     const char * const *parents, int num_parents,
-+			     u32 rsrc_id, u8 clk_type);
+ 	clk->hw = hw;
+ 	list_add_tail(&clk->node, &imx_scu_clks[clk->rsrc]);
  
- static inline struct clk_hw *imx_clk_scu(const char *name, u32 rsrc_id,
- 					 u8 clk_type)
-@@ -29,7 +30,7 @@ static inline struct clk_hw *imx_clk_scu(const char *name, u32 rsrc_id,
- 	if (clock_cells == 2)
- 		return imx_clk_scu_alloc_dev(name, NULL, 0, rsrc_id, clk_type);
- 	else
--		return __imx_clk_scu(name, NULL, 0, rsrc_id, clk_type);
-+		return __imx_clk_scu(NULL, name, NULL, 0, rsrc_id, clk_type);
- }
++	pm_runtime_mark_last_busy(&pdev->dev);
++	pm_runtime_put_autosuspend(&pdev->dev);
++
+ 	dev_dbg(dev, "register SCU clock rsrc:%d type:%d\n", clk->rsrc,
+ 		clk->clk_type);
  
- static inline struct clk_hw *imx_clk_scu2(const char *name, const char * const *parents,
-@@ -38,7 +39,7 @@ static inline struct clk_hw *imx_clk_scu2(const char *name, const char * const *
- 	if (clock_cells == 2)
- 		return imx_clk_scu_alloc_dev(name, parents, num_parents, rsrc_id, clk_type);
- 	else
--		return __imx_clk_scu(name, parents, num_parents, rsrc_id, clk_type);
-+		return __imx_clk_scu(NULL, name, parents, num_parents, rsrc_id, clk_type);
- }
- 
- struct clk_hw *imx_clk_lpcg_scu(const char *name, const char *parent_name,
 -- 
 2.7.4
 
