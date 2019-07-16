@@ -2,103 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6ABC26AB08
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 16:54:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 291C86AB05
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 16:54:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d2WllqGrSOUGIg/K7YtNjxEuvTMBN0azUMUgstiSHXI=; b=nd1qe4EVdU2/PW
-	5L/gTvwp8ekobK6QEzc0ylabLMNu6OMsgFo8Gs3uHqUl0O9XCI1RzDR2x40U3uCmEM9RY1PMtz26R
-	DEhzKpbtv81VwKwUNtTVS7e6Q2u5qozkZNsKByIUuLbzvPDmvkFIN0ZQPXx34V2MzMBf7KnHtU3Di
-	feZWnyRA4CQghubx8ZGC1gdp34dGy4rNgh7nOBaTuA6f0/Um1aoooVXNWh5/rw7Qt7Ak1Ak+cVjR/
-	EH5svIVz2nI1O3YEwXXjk/M0tm40axUuWW1bnyA7UwsD88Avg+nQR8u42oTCuJ+f8rElA3XSWQ08L
-	7L2J1JmgIouat+U8bgEg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=i3ll1XkBE7oU3d1o+YbiSdVSVaoa1Igx1q+EWSALRcM=; b=BsoTiY7+7ximYX
+	lNlAqaRD5x0Fkr0VBLO8+uZvzoxEgx7FnZx/maXHsQw3kIjpXYOA4exgT25Q9SY5gJlxHixfwchT9
+	pqs/Ms2B0KA2eGKUQ94JlNeY27mON74MpkhUkJDTEHCS1jcULtPIMpiLDr1vDg3pLUb/PTibGZ9CB
+	zfyQjaGCudAKENjRj1wQlgcMk8fR9mbrj/VcYfJ0VRw7xPaG8Rn2suoYkWLKW/Jjji9lizELQigpu
+	914ZVaFziN2reFWYISvSkHWlJ2/FdiL/JnSEcZeTWUMIz4LlbBec2y3LhW1dAPERfkraTeBf1qT4b
+	8qTXQfp0uv2rKlnT3AKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnOqL-0002HJ-2D; Tue, 16 Jul 2019 14:54:13 +0000
-Received: from userp2130.oracle.com ([156.151.31.86])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnOps-0001vt-Fm
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 14:53:45 +0000
-Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
- by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x6GEmcI4125879;
- Tue, 16 Jul 2019 14:53:08 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=content-type :
- mime-version : subject : from : in-reply-to : date : cc :
- content-transfer-encoding : message-id : references : to;
- s=corp-2018-07-02; bh=jMrbDq6/gbs2hZj13b/yWOFJhrxf6vLsu7dgoGkQCnQ=;
- b=QqmIswjnPG8I98M0sG7apghVmwVrT0Sj3eu3GI5ZetScM+7aZhnuZosT7cMwyTi/OULk
- Yhkrqy4VxurAGVNzlj87C3i8GPUxt0eAPj7jRqSr5hQLvYtLXk1Wl9liXZRlGHe/JZo6
- GrGhzBl+yveWTjZT2jEyMmKlse867MdDlLq5RylH11PSss9Sy2cgoELBhRt5VUToKErG
- S0JLzC9rBKj3+jrPP/ymx5I2xeOIxBHiJ0UZLPpDbh2FwdzOxHiu3XBcSihdQ71WAqSo
- Hufnto1Fpzzz2FH8pYRS8j9BolLFQnHkjGINwWSbUU+CdVGa+L+G4FyiY7UixacVvExW wg== 
-Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
- by userp2130.oracle.com with ESMTP id 2tq6qtn4qc-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 16 Jul 2019 14:53:08 +0000
-Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
- by userp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x6GEqkxD129539;
- Tue, 16 Jul 2019 14:53:08 GMT
-Received: from userv0122.oracle.com (userv0122.oracle.com [156.151.31.75])
- by userp3030.oracle.com with ESMTP id 2tq4dtynsf-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 16 Jul 2019 14:53:08 +0000
-Received: from abhmp0002.oracle.com (abhmp0002.oracle.com [141.146.116.8])
- by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id x6GEr4JB015648;
- Tue, 16 Jul 2019 14:53:04 GMT
-Received: from [10.39.235.122] (/10.39.235.122)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Tue, 16 Jul 2019 14:53:04 +0000
-Mime-Version: 1.0 (Mac OS X Mail 10.2 \(3259\))
-Subject: Re: [PATCH v3 2/5] locking/qspinlock: Refactor the qspinlock slow path
-From: Alex Kogan <alex.kogan@oracle.com>
-In-Reply-To: <20190716102034.GN3419@hirez.programming.kicks-ass.net>
-Date: Tue, 16 Jul 2019 10:53:02 -0400
-Message-Id: <9D5B6F33-6003-4CCA-BBE5-998B5A679B9C@oracle.com>
-References: <20190715192536.104548-1-alex.kogan@oracle.com>
- <20190715192536.104548-3-alex.kogan@oracle.com>
- <20190716102034.GN3419@hirez.programming.kicks-ass.net>
-To: Peter Zijlstra <peterz@infradead.org>
-X-Mailer: Apple Mail (2.3259)
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9320
- signatures=668688
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=888
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1810050000 definitions=main-1907160183
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9320
- signatures=668688
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=933 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
- definitions=main-1907160182
+	id 1hnOq5-0001wr-Qs; Tue, 16 Jul 2019 14:53:57 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hnOpq-0001vZ-IT
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 14:53:44 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 54E0A337;
+ Tue, 16 Jul 2019 07:53:41 -0700 (PDT)
+Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A28203F59C;
+ Tue, 16 Jul 2019 07:53:38 -0700 (PDT)
+Date: Tue, 16 Jul 2019 15:53:36 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Ulf Hansson <ulf.hansson@linaro.org>
+Subject: Re: [PATCH 07/18] drivers: firmware: psci: Prepare to use OS
+ initiated suspend mode
+Message-ID: <20190716145336.GC7250@e107155-lin>
+References: <20190513192300.653-1-ulf.hansson@linaro.org>
+ <20190513192300.653-8-ulf.hansson@linaro.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190513192300.653-8-ulf.hansson@linaro.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_075344_611858_91075C7D 
-X-CRM114-Status: GOOD (  14.88  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190716_075342_701361_AA97845F 
+X-CRM114-Status: GOOD (  21.74  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.86 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,46 +62,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, guohanjun@huawei.com, arnd@arndb.de,
- dave.dice@oracle.com, jglauber@marvell.com, x86@kernel.org,
- will.deacon@arm.com, linux@armlinux.org.uk, steven.sistare@oracle.com,
- linux-kernel@vger.kernel.org, rahul.x.yadav@oracle.com, mingo@redhat.com,
- bp@alien8.de, hpa@zytor.com, longman@redhat.com, tglx@linutronix.de,
- daniel.m.jordan@oracle.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Kevin Hilman <khilman@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ Viresh Kumar <viresh.kumar@linaro.org>, linux-pm@vger.kernel.org,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
+ Amit Kucheria <amit.kucheria@linaro.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Tony Lindgren <tony@atomide.com>,
+ Lina Iyer <ilina@codeaurora.org>, linux-arm-msm@vger.kernel.org,
+ Niklas Cassel <niklas.cassel@linaro.org>,
+ Souvik Chakravarty <souvik.chakravarty@arm.com>,
+ "Raju P . L . S . S . S . N" <rplsssn@codeaurora.org>,
+ Lina Iyer <lina.iyer@linaro.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gSnVsIDE2LCAyMDE5LCBhdCA2OjIwIEFNLCBQZXRlciBaaWpsc3RyYSA8cGV0ZXJ6QGluZnJh
-ZGVhZC5vcmc+IHdyb3RlOgo+IAo+IE9uIE1vbiwgSnVsIDE1LCAyMDE5IGF0IDAzOjI1OjMzUE0g
-LTA0MDAsIEFsZXggS29nYW4gd3JvdGU6Cj4gCj4+ICsvKgo+PiArICogc2V0X2xvY2tlZF9lbXB0
-eV9tY3MgLSBUcnkgdG8gc2V0IHRoZSBzcGlubG9jayB2YWx1ZSB0byBfUV9MT0NLRURfVkFMLAo+
-PiArICogYW5kIGJ5IGRvaW5nIHRoYXQgdW5sb2NrIHRoZSBNQ1MgbG9jayB3aGVuIGl0cyB3YWl0
-aW5nIHF1ZXVlIGlzIGVtcHR5Cj4+ICsgKiBAbG9jazogUG9pbnRlciB0byBxdWV1ZWQgc3Bpbmxv
-Y2sgc3RydWN0dXJlCj4+ICsgKiBAdmFsOiBDdXJyZW50IHZhbHVlIG9mIHRoZSBsb2NrCj4+ICsg
-KiBAbm9kZTogUG9pbnRlciB0byB0aGUgTUNTIG5vZGUgb2YgdGhlIGxvY2sgaG9sZGVyCj4+ICsg
-Kgo+PiArICogKiwqLCogLT4gMCwwLDEKPj4gKyAqLwo+PiArc3RhdGljIF9fYWx3YXlzX2lubGlu
-ZSBib29sIF9fc2V0X2xvY2tlZF9lbXB0eV9tY3Moc3RydWN0IHFzcGlubG9jayAqbG9jaywKPj4g
-KwkJCQkJCSAgIHUzMiB2YWwsCj4+ICsJCQkJCQkgICBzdHJ1Y3QgbWNzX3NwaW5sb2NrICpub2Rl
-KQo+PiArewo+PiArCXJldHVybiBhdG9taWNfdHJ5X2NtcHhjaGdfcmVsYXhlZCgmbG9jay0+dmFs
-LCAmdmFsLCBfUV9MT0NLRURfVkFMKTsKPj4gK30KPiAKPiBUaGF0IG5hbWUgaXMgbm9uc2Vuc2Uu
-IEl0IHNob3VsZCBiZSBzb21ldGhpbmcgbGlrZToKPiAKPiBzdGF0aWMgX19hbHdheXNfaW5saW5l
-IGJvb2wgX190cnlfY2xlYXJfdGFpbCjigKYpCgpXZSBhbHJlYWR5IGhhdmUgc2V0X2xvY2tlZCgp
-LCBzbyBJIHdhcyB0cnlpbmcgdG8gY29udmV5IHRoZSBmYWN0IHRoYXQgd2UgYXJlCmRvaW5nIHRo
-ZSBzYW1lIGhlcmUsIGJ1dCBvbmx5IHdoZW4gdGhlIE1DUyBjaGFpbiBpcyBlbXB0eS4KCkkgY2Fu
-IHVzZSBfX3RyeV9jbGVhcl90YWlsKCkgaW5zdGVhZC4KCj4gCj4gCj4+ICsvKgo+PiArICogcGFz
-c19tY3NfbG9jayAtIHBhc3MgdGhlIE1DUyBsb2NrIHRvIHRoZSBuZXh0IHdhaXRlcgo+PiArICog
-QG5vZGU6IFBvaW50ZXIgdG8gdGhlIE1DUyBub2RlIG9mIHRoZSBsb2NrIGhvbGRlcgo+PiArICog
-QG5leHQ6IFBvaW50ZXIgdG8gdGhlIE1DUyBub2RlIG9mIHRoZSBmaXJzdCB3YWl0ZXIgaW4gdGhl
-IE1DUyBxdWV1ZQo+PiArICovCj4+ICtzdGF0aWMgX19hbHdheXNfaW5saW5lIHZvaWQgX19wYXNz
-X21jc19sb2NrKHN0cnVjdCBtY3Nfc3BpbmxvY2sgKm5vZGUsCj4+ICsJCQkJCSAgICBzdHJ1Y3Qg
-bWNzX3NwaW5sb2NrICpuZXh0KQo+PiArewo+PiArCWFyY2hfbWNzX3NwaW5fdW5sb2NrX2NvbnRl
-bmRlZCgmbmV4dC0+bG9ja2VkLCAxKTsKPj4gK30KPiAKPiBJJ20gbm90IGVudGlyZWx5IGhhcHB5
-IHdpdGggdGhhdCBuYW1lIGVpdGhlcjsgYnV0IGl0J3Mgbm90IGhvcnJpYmxlIGxpa2UKPiB0aGUg
-b3RoZXIgb25lLiBXaHkgbm90IG1jc19zcGluX3VubG9ja19jb250ZW5kZWQoKSA/CgpTdXJlLCBJ
-IGNhbiB1c2UgbWNzX3NwaW5fdW5sb2NrX2NvbnRlbmRlZCgpIGluc3RlYWQuCgpUaGFua3MsCuKA
-lCBBbGV4CgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
-bGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZy
-YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
-dXgtYXJtLWtlcm5lbAo=
+On Mon, May 13, 2019 at 09:22:49PM +0200, Ulf Hansson wrote:
+> The per CPU variable psci_power_state, contains an array of fixed values,
+> which reflects the corresponding arm,psci-suspend-param parsed from DT, for
+> each of the available CPU idle states.
+>
+> This isn't sufficient when using the hierarchical CPU topology in DT in
+> combination with having PSCI OS initiated (OSI) mode enabled. More
+> precisely, in OSI mode, Linux is responsible of telling the PSCI FW what
+> idle state the cluster (a group of CPUs) should enter, while in PSCI
+> Platform Coordinated (PC) mode, each CPU independently votes for an idle
+> state of the cluster.
+>
+> For this reason, let's introduce an additional per CPU variable called
+> domain_state and implement two helper functions to read/write its values.
+> Following patches, which implements PM domain support for PSCI, will use
+> the domain_state variable and set it to corresponding bits that represents
+> the selected idle state for the cluster.
+>
+> Finally, in psci_cpu_suspend_enter() and psci_suspend_finisher(), let's
+> take into account the values in the domain_state, as to get the complete
+> suspend parameter.
+>
+> Co-developed-by: Lina Iyer <lina.iyer@linaro.org>
+> Signed-off-by: Lina Iyer <lina.iyer@linaro.org>
+> Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
+> ---
+>
+> Changes:
+> 	- Clarify changelog.
+> 	- Drop changes in psci_cpu_on() as it belongs in the patch for hotplug.
+> 	- Move some code inside "#ifdef CONFIG_CPU_IDLE".
+>
+> ---
+>  drivers/firmware/psci/psci.c | 24 ++++++++++++++++++++----
+>  1 file changed, 20 insertions(+), 4 deletions(-)
+>
+> diff --git a/drivers/firmware/psci/psci.c b/drivers/firmware/psci/psci.c
+> index b11560f7c4b9..4aec513136e4 100644
+> --- a/drivers/firmware/psci/psci.c
+> +++ b/drivers/firmware/psci/psci.c
+> @@ -285,6 +285,17 @@ static int __init psci_features(u32 psci_func_id)
+>
+>  #ifdef CONFIG_CPU_IDLE
+>  static DEFINE_PER_CPU_READ_MOSTLY(u32 *, psci_power_state);
+> +static DEFINE_PER_CPU(u32, domain_state);
+> +
+> +static inline u32 psci_get_domain_state(void)
+> +{
+> +	return __this_cpu_read(domain_state);
+> +}
+> +
+> +static inline void psci_set_domain_state(u32 state)
+> +{
+> +	__this_cpu_write(domain_state, state);
+> +}
+>
+>  static int psci_dt_parse_state_node(struct device_node *np, u32 *state)
+>  {
+> @@ -420,15 +431,17 @@ int psci_cpu_init_idle(struct cpuidle_driver *drv, unsigned int cpu)
+>  static int psci_suspend_finisher(unsigned long index)
+>  {
+>  	u32 *state = __this_cpu_read(psci_power_state);
+> +	u32 composite_state = state[index - 1] | psci_get_domain_state();
+>
+
+The more I read this code and PSCI spec, I think it's not simple OR here
+unless the specification states that. ACPI LPI explicitly stated that as
+it was generic and PSCI doesn't. It can be made workable for original
+format, but I think it's not that simple for extended format unless the
+suspend parameters are carefully designed to achieve that, so we can't
+just convert existing platforms the way it's shown on HiKey in this series.
+
+--
+Regards,
+Sudeep
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
