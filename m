@@ -2,79 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 811346B16D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 23:56:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 242D36B234
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 01:07:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=QKsd2nrySm9MQYQTHZJeh8KgoZBlhDlxPyU6bhDZKtE=; b=KATUaLzokPKtl0
-	1+J2RpWhubyNbAnmRkphYNliL0uoi3SqeVxs6d/MQZcubwwo6NfDYDEipZZwTnQrS4n5gUFMnM3ym
-	bKragXaeV49UyRFTiGrm5E0DAgCJzc1acuZsCMqC8/JWhSFcJkt5CQijCxcBYgME/KgKgBfgiEO5W
-	EYZy/hThlwQVEWpQJOt5WTSXWtwAvZLgnousFSyVdemBneywwa8G4jD9pFyBpDTsjMU/6FVAajEk9
-	ExY+EshWY/3VRTtCbmxv2ep1zsDrbRYgqvS9D3REvsrwz6bdDiwxQCODuqtSVrqLWMcxQ1rbunhQX
-	Vup0Q7YilOqd8dbopQ0g==;
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:MIME-Version:In-Reply-To:
+	References:To:Subject:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=aJZ1zYwsQmkh7HlLGOjbgUnqFoWqnc9IVxTslBuv5rw=; b=IjZJBDtV7S7F1m
+	9KBXH3jkaj2U5Prw9TRN8NqCQz63Y+B7177lue0Nr7TJdN+lFtnwwSVUIcn02cA8IFcELLH7Td//T
+	+necghcC1WsZE/7kFGNhB0rfamavOlzGkhVzzzbN1erUTaDfXA73wuG99x+rbBKcjMPZKrEbjEo+J
+	HBuceZfMlEDBj9OzI8AQMD9nmxwMss1NS/GwRiLU0vncjvWQw0RXCwEfoatPr2/pl68yK8TweE1SW
+	mIWd+ZiDUWY+tvbktFv9zCVn9D01E9JgTU6zZQJeDMRS829uWaNEO/6V0wfJvfwpzdr35jFDpCbPH
+	bDZJpCxdl/JySHCL1P3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnVR1-0005ei-2M; Tue, 16 Jul 2019 21:56:31 +0000
-Received: from mail-io1-f66.google.com ([209.85.166.66])
+	id 1hnWXu-0003sa-J5; Tue, 16 Jul 2019 23:07:42 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnVQr-0005eD-Ak
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 21:56:22 +0000
-Received: by mail-io1-f66.google.com with SMTP id q22so42503766iog.4
+ id 1hnWXY-0003rj-GX
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 23:07:21 +0000
+Received: by mail-pg1-x544.google.com with SMTP id s1so3857708pgr.2
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jul 2019 14:56:20 -0700 (PDT)
+ Tue, 16 Jul 2019 16:07:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:subject:to:cc:references:in-reply-to:mime-version
+ :user-agent:message-id:content-transfer-encoding;
+ bh=YF5uWvW0lLwROvyPf53Wapwm3mzwcjBd4TlGJz7uSQc=;
+ b=Rgtqp4IDVXbKUFwCa8iBTAmLZ3icHtHxZ0xxcPrO34ppbQnUbbi4wGbJ8Y3Hs1LJaj
+ IrXL2sIU6q0QMst9f5/CtKr1eXCd2I5pUylvKHhErt5+buRBS/8nxqklBlIbKIqQzKXp
+ KZUbwdumcqMBoO47sqDNZ+7zfDRq4/0in70LDstQEsC8lof1FeQ6BHqXDzCRAjcdl/re
+ ups9T2L11lLTRQfrQj7Iglktz7n41R5ywDI3qu3fRS80qVNjJhV5Dam8hKUk46lU5OIt
+ h7rFnLUcqNhbjl8uAJwzmaeEJjBPl71yU8h1Ualjnp+D/5tWP6WS7v0Qh0wqDV0h+Ryi
+ 8SXw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=kADd+NQKUgWUED+820fdDO7gVP7dDmGj1gYm9p5p3sw=;
- b=MK7HVPMlnNXYpbOr35vmxDuGRn+upC+FUtrkRzQnVd6wU4JgC63Q9QEQv3tctTOd79
- zm0LKw4TbfUYvANPv5vg3xRLWq3Vpb4o+G1o3bo/VFq2CHXnkoMjyrrkBgKmVVT+OdHO
- tO1c5DVbhSvJwRl7WSTENEX+mLgiDrtVxcHuyfru4VaHKI39FB7fbjU/X0oIMV4+PG1e
- tVM3rqMpYeXxlHjpQ3jEkYvBigEdf2XdVaHa7DZTQ1r6toqi8XtHgP3+ypKaSuq/byyC
- pbiac2rvXuP7kDviW0XfhIkqegM6RSg/nomw6pKqRlZVhClbW+ZpPKMZp3YAGSJL3biG
- orZQ==
-X-Gm-Message-State: APjAAAWhq/kKw9T8cdUP6qAs8hJM69wVrZoEH1JLd96bZwxHivzW/Hf9
- iXamts2Jp0mbduDucDj0qw==
-X-Google-Smtp-Source: APXvYqwDMRb0ggHvOfuex4HW4eSe1qMvzAf6AwQILMzFafLTkg23I/dov4glX6kdigbpojvrSAFSjQ==
-X-Received: by 2002:a5e:d51a:: with SMTP id e26mr26126978iom.71.1563314179727; 
- Tue, 16 Jul 2019 14:56:19 -0700 (PDT)
-Received: from xps15.herring.priv ([64.188.179.249])
- by smtp.googlemail.com with ESMTPSA id f17sm20074646ioc.2.2019.07.16.14.56.18
+ h=x-gm-message-state:date:from:subject:to:cc:references:in-reply-to
+ :mime-version:user-agent:message-id:content-transfer-encoding;
+ bh=YF5uWvW0lLwROvyPf53Wapwm3mzwcjBd4TlGJz7uSQc=;
+ b=N1E2ynTGLgjYmuf3l+ju0Qzzk2x6fpU2tv6fMp+LvLRfTAAj+MOF6pjbZE/d6QQsnQ
+ TQLB1/DG4jzkSMYSXLXHoQRhI4igQhgadSuGi0BprMYnGEFXD8oRs34D/gSIXKMWmfDN
+ ewVhLthK4tW6gRFJuNBvF7n4ggNnV5DvWxq4yyic7Pkq36nwXsa0/XrcJHGadkAMXxc6
+ bVSyvRgHi3FzdEZ5vwByOFkYfduo8GUhiRbxMpDU40kJGN94A6WzbOrPZD78LSF/jaBi
+ +Ih80b3BcKaqUq89T4Wz4e7dXCmv7HN7wUwBoEM9flGN2LgN7CAScgivnxMOYwXfQK2H
+ mHTw==
+X-Gm-Message-State: APjAAAXhSZb7ZNX68B0/AdwHQINW7gCJjZmfVdOW0TLG2OaCo4ioj4nS
+ 2yQRFNArnCXFrr/1SPi4fUU=
+X-Google-Smtp-Source: APXvYqxbSot0tXbWZTT8zOiFvyxu3Z1k54Da4RuRhE16yCPnDE+TL5XF8kjTOt8H3YqXHJTMsqtj+g==
+X-Received: by 2002:a17:90a:3086:: with SMTP id
+ h6mr40520027pjb.14.1563318437747; 
+ Tue, 16 Jul 2019 16:07:17 -0700 (PDT)
+Received: from localhost ([203.220.8.141])
+ by smtp.gmail.com with ESMTPSA id s12sm19683707pgr.79.2019.07.16.16.07.15
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 16 Jul 2019 14:56:19 -0700 (PDT)
-From: Rob Herring <robh@kernel.org>
-To: Linus Walleij <linus.walleij@linaro.org>
-Subject: [PATCH] dt-bindings: pinctrl: stm32: Fix missing 'clocks' property in
- examples
-Date: Tue, 16 Jul 2019 15:56:18 -0600
-Message-Id: <20190716215618.29757-1-robh@kernel.org>
-X-Mailer: git-send-email 2.20.1
+ Tue, 16 Jul 2019 16:07:16 -0700 (PDT)
+Date: Wed, 17 Jul 2019 09:07:09 +1000
+From: Nicholas Piggin <npiggin@gmail.com>
+Subject: Re: [PATCH v3 0/5] Add NUMA-awareness to qspinlock
+To: Alex Kogan <alex.kogan@oracle.com>
+References: <20190715192536.104548-1-alex.kogan@oracle.com>
+ <1563277166.m9swqogbqb.astroid@bobo.none>
+ <7D29555E-8F72-4EDD-8A87-B1A59C3945A6@oracle.com>
+In-Reply-To: <7D29555E-8F72-4EDD-8A87-B1A59C3945A6@oracle.com>
 MIME-Version: 1.0
+User-Agent: astroid/0.14.0 (https://github.com/astroidmail/astroid)
+Message-Id: <1563317552.qsi08y8lyr.astroid@bobo.none>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_145621_368295_4C52DFF6 
-X-CRM114-Status: UNSURE (   8.49  )
+X-CRM114-CacheID: sfid-20190716_160720_578983_424A6AEE 
+X-CRM114-Status: UNSURE (   9.08  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.5 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.66 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
+ provider (npiggin[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,77 +102,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Alexandre Torgue <alexandre.torgue@st.com>,
- linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: linux-arch@vger.kernel.org, x86@kernel.org, Arnd Bergmann <arnd@arndb.de>,
+ peterz@infradead.org, linux-kernel@vger.kernel.org, jglauber@marvell.com,
+ guohanjun@huawei.com, dave.dice@oracle.com, linux@armlinux.org.uk,
+ steven.sistare@oracle.com, daniel.m.jordan@oracle.com,
+ rahul.x.yadav@oracle.com, mingo@redhat.com, bp@alien8.de, hpa@zytor.com,
+ will.deacon@arm.com, longman@redhat.com, tglx@linutronix.de,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that examples are validated against the DT schema, an error with
-required 'clocks' property missing is exposed:
+Alex Kogan's on July 17, 2019 12:45 am:
+> 
+>> On Jul 16, 2019, at 7:47 AM, Nicholas Piggin <npiggin@gmail.com> wrote:
+>> 
+>> Alex Kogan's on July 16, 2019 5:25 am:
+>>> Our evaluation shows that CNA also improves performance of user 
+>>> applications that have hot pthread mutexes. Those mutexes are 
+>>> blocking, and waiting threads park and unpark via the futex 
+>>> mechanism in the kernel. Given that kernel futex chains, which
+>>> are hashed by the mutex address, are each protected by a 
+>>> chain-specific spin lock, the contention on a user-mode mutex 
+>>> translates into contention on a kernel level spinlock. 
+>> 
+>> What applications are those, what performance numbers? Arguably that's
+>> much more interesting than microbenchmarks (which are mainly useful to
+>> help ensure the fast paths are not impacted IMO).
+> 
+> Those are applications that use locks in which waiting threads can park (block),
+> e.g., pthread mutexes. Under (user-level) contention, the park-unpark mechanism
+> in the kernel creates contention on (kernel) spin locks protecting futex chains.
+> As an example, we experimented with LevelDB (key-value store), and included
+> performance numbers in the patch. Or you are looking for something else?
 
-Documentation/devicetree/bindings/pinctrl/st,stm32-pinctrl.example.dt.yaml: \
-pinctrl@40020000: gpio@0: 'clocks' is a required property
-Documentation/devicetree/bindings/pinctrl/st,stm32-pinctrl.example.dt.yaml: \
-pinctrl@50020000: gpio@1000: 'clocks' is a required property
-Documentation/devicetree/bindings/pinctrl/st,stm32-pinctrl.example.dt.yaml: \
-pinctrl@50020000: gpio@2000: 'clocks' is a required property
+Oh, no that's good. I confused myself thinking that was another will it
+scale benchmark. The speedup becomes significant on readrandom, I wonder
+if of it might be that you're gating which threads get to complete the 
+futex operation and so the effect is amplified beyond just the critical
+section of the spin lock?
 
-Add the missing 'clocks' properties to the examples to fix the errors.
+Am I reading the table correctly, this test gets about 2.1x speedup when
+scaling from 1 to 142 threads in the patch-CNA case?
 
-Fixes: 2c9239c125f0 ("dt-bindings: pinctrl: Convert stm32 pinctrl bindings to json-schema")
-Cc: Linus Walleij <linus.walleij@linaro.org>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>
-Cc: linux-gpio@vger.kernel.org
-Cc: linux-stm32@st-md-mailman.stormreply.com
-Signed-off-by: Rob Herring <robh@kernel.org>
----
- .../devicetree/bindings/pinctrl/st,stm32-pinctrl.yaml         | 4 ++++
- 1 file changed, 4 insertions(+)
-
-diff --git a/Documentation/devicetree/bindings/pinctrl/st,stm32-pinctrl.yaml b/Documentation/devicetree/bindings/pinctrl/st,stm32-pinctrl.yaml
-index 3ac5d2088e49..91d3e78b3395 100644
---- a/Documentation/devicetree/bindings/pinctrl/st,stm32-pinctrl.yaml
-+++ b/Documentation/devicetree/bindings/pinctrl/st,stm32-pinctrl.yaml
-@@ -197,6 +197,7 @@ required:
- examples:
-   - |
-     #include <dt-bindings/pinctrl/stm32-pinfunc.h>
-+    #include <dt-bindings/mfd/stm32f4-rcc.h>
-     //Example 1
-       pinctrl@40020000 {
-               #address-cells = <1>;
-@@ -210,6 +211,7 @@ examples:
-                       #gpio-cells = <2>;
-                       reg = <0x0 0x400>;
-                       resets = <&reset_ahb1 0>;
-+                      clocks = <&rcc 0 STM32F4_AHB1_CLOCK(GPIOA)>;
-                       st,bank-name = "GPIOA";
-               };
-        };
-@@ -227,6 +229,7 @@ examples:
-                       #gpio-cells = <2>;
-                       reg = <0x1000 0x400>;
-                       resets = <&reset_ahb1 0>;
-+                      clocks = <&rcc 0 STM32F4_AHB1_CLOCK(GPIOB)>;
-                       st,bank-name = "GPIOB";
-                       gpio-ranges = <&pinctrl 0 0 16>;
-               };
-@@ -236,6 +239,7 @@ examples:
-                       #gpio-cells = <2>;
-                       reg = <0x2000 0x400>;
-                       resets = <&reset_ahb1 0>;
-+                      clocks = <&rcc 0 STM32F4_AHB1_CLOCK(GPIOC)>;
-                       st,bank-name = "GPIOC";
-                       ngpios = <5>;
-                       gpio-ranges = <&pinctrl 0 16 3>,
--- 
-2.20.1
-
+Thanks,
+Nick
 
 _______________________________________________
 linux-arm-kernel mailing list
