@@ -2,59 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D134F6A421
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 10:47:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 162566A42C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 10:48:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bKiUAsFS2guMzr5iQ+Kvvum9apnA7bHfa2RA5nqwLS8=; b=tSR328dn1gGNiT
-	WoKqVEly3hyU3me0bh5qH+X0ZKOKa1qjsOdRjgiBg0pPRtvipTrAVlI+szQWe0pMBVofDmIg+glO5
-	rqN4FEoMklgiKagD4ZxWJz2z2fY81//lWvYt2Uo+d0cv1eacrs7Ms0CYZyCplwFDDp6YFLC2sRlOC
-	vRb4uNgbwhV8W9SlrAwl8/2IcIDduA50PZJYcxeghZPJeoerJT8eSiVBsy35bH7K7rlViog4S9Tgw
-	TMUo5FwPBWO8Pdk/jMAFdQajAKDwlinWmHrzv89fxtE4vmnCDbRc73WJR0m9rZ7wXNrOXuJEbrbKm
-	0eUGLnl4iAHkSSQ2Eszw==;
+	List-Owner; bh=vinAreuGDw6yakOHT6d676W/iAdjQI9H9MMID2KMlTk=; b=hxGFXlI+XCXSGB
+	36AGse3IR3e7XpSs2C5XUnPcI/OwQenxR+gJdWxgmCSlM2iHhex+NPkwFpMUonM/LWJdPi1QA7G+W
+	m3gbvBUQ33cE5DAjQ6ECFJqaI4mK7j9ACUuRcHro+5FaofFpZgO7B/G2GxAgntlVzdLob3tg7AVrC
+	I7E7aEQWRLRKMLxMhdHpiDodGS2lSCq4yb9PggxkvgypwV+EdQVnh0/V/Mji1xQAjZKd76nJAX1kl
+	3hvTtdSpQG00pIO1syt2TuVjV709l1e7BCGe4xxVwy8+8o26Koi6k/CpU9WaGzWn2vL+ROXdQ2iqK
+	sE/QByFjNsGhJU2OLqsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnJ7r-0000NB-Q1; Tue, 16 Jul 2019 08:47:56 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1hnJ8H-0000kp-Sz; Tue, 16 Jul 2019 08:48:21 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnJ6g-0000AJ-LC
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 08:46:44 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 51E92AFCE;
- Tue, 16 Jul 2019 08:46:38 +0000 (UTC)
-Date: Tue, 16 Jul 2019 10:46:34 +0200
-From: Oscar Salvador <osalvador@suse.de>
-To: David Hildenbrand <david@redhat.com>
-Subject: Re: [PATCH v3 10/11] mm/memory_hotplug: Make
- unregister_memory_block_under_nodes() never fail
-Message-ID: <20190716084626.GA12394@linux>
-References: <20190527111152.16324-1-david@redhat.com>
- <20190527111152.16324-11-david@redhat.com>
- <20190701085144.GJ6376@dhcp22.suse.cz>
- <20190701093640.GA17349@linux>
- <20190701102756.GO6376@dhcp22.suse.cz>
- <d450488d-7a82-f7a9-c8d3-b69a0bca48c6@redhat.com>
+ id 1hnJ6n-0000DT-M4
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 08:46:51 +0000
+Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
+ [10.5.11.13])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 3DA1A308FBAF;
+ Tue, 16 Jul 2019 08:46:47 +0000 (UTC)
+Received: from krava (unknown [10.43.17.77])
+ by smtp.corp.redhat.com (Postfix) with SMTP id A007A611DC;
+ Tue, 16 Jul 2019 08:46:44 +0000 (UTC)
+Date: Tue, 16 Jul 2019 10:46:43 +0200
+From: Jiri Olsa <jolsa@redhat.com>
+To: Igor Lubashev <ilubashe@akamai.com>
+Subject: Re: [PATCH 1/3] perf: Add capability-related utilities
+Message-ID: <20190716084643.GA22317@krava>
+References: <1562112605-6235-1-git-send-email-ilubashe@akamai.com>
+ <1562112605-6235-2-git-send-email-ilubashe@akamai.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <d450488d-7a82-f7a9-c8d3-b69a0bca48c6@redhat.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <1562112605-6235-2-git-send-email-ilubashe@akamai.com>
+User-Agent: Mutt/1.12.0 (2019-05-25)
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.43]); Tue, 16 Jul 2019 08:46:47 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_014643_020500_49308849 
-X-CRM114-Status: GOOD (  18.07  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190716_014649_944614_953EB9C4 
+X-CRM114-Status: GOOD (  15.78  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,64 +69,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, linux-ia64@vger.kernel.org,
- linux-sh@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Mark Brown <broonie@kernel.org>, "Rafael J. Wysocki" <rafael@kernel.org>,
- linux-kernel@vger.kernel.org, Chris Wilson <chris@chris-wilson.co.uk>,
- Michal Hocko <mhocko@kernel.org>, linux-mm@kvack.org,
- "David S. Miller" <davem@davemloft.net>,
- Jonathan Cameron <Jonathan.Cameron@huawei.com>,
- Alex Deucher <alexander.deucher@amd.com>, Igor Mammedov <imammedo@redhat.com>,
- akpm@linux-foundation.org, Wei Yang <richard.weiyang@gmail.com>,
- linuxppc-dev@lists.ozlabs.org, Dan Williams <dan.j.williams@intel.com>,
+Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Peter Zijlstra <peterz@infradead.org>, linux-kernel@vger.kernel.org,
+ Arnaldo Carvalho de Melo <acme@kernel.org>, James Morris <jmorris@namei.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jul 15, 2019 at 01:10:33PM +0200, David Hildenbrand wrote:
-> On 01.07.19 12:27, Michal Hocko wrote:
-> > On Mon 01-07-19 11:36:44, Oscar Salvador wrote:
-> >> On Mon, Jul 01, 2019 at 10:51:44AM +0200, Michal Hocko wrote:
-> >>> Yeah, we do not allow to offline multi zone (node) ranges so the current
-> >>> code seems to be over engineered.
-> >>>
-> >>> Anyway, I am wondering why do we have to strictly check for already
-> >>> removed nodes links. Is the sysfs code going to complain we we try to
-> >>> remove again?
-> >>
-> >> No, sysfs will silently "fail" if the symlink has already been removed.
-> >> At least that is what I saw last time I played with it.
-> >>
-> >> I guess the question is what if sysfs handling changes in the future
-> >> and starts dropping warnings when trying to remove a symlink is not there.
-> >> Maybe that is unlikely to happen?
-> > 
-> > And maybe we handle it then rather than have a static allocation that
-> > everybody with hotremove configured has to pay for.
-> > 
+On Tue, Jul 02, 2019 at 08:10:03PM -0400, Igor Lubashev wrote:
+> Add utilities to help checking capabilities of the running process.
+> Make perf link with libcap.
 > 
-> So what's the suggestion? Dropping the nodemask_t completely and calling
-> sysfs_remove_link() on already potentially removed links?
+> Signed-off-by: Igor Lubashev <ilubashe@akamai.com>
+> ---
+>  tools/perf/Makefile.config         |  2 +-
+>  tools/perf/util/Build              |  1 +
+>  tools/perf/util/cap.c              | 24 ++++++++++++++++++++++++
+>  tools/perf/util/cap.h              | 10 ++++++++++
+>  tools/perf/util/event.h            |  1 +
+>  tools/perf/util/python-ext-sources |  1 +
+>  tools/perf/util/util.c             |  9 +++++++++
+>  7 files changed, 47 insertions(+), 1 deletion(-)
+>  create mode 100644 tools/perf/util/cap.c
+>  create mode 100644 tools/perf/util/cap.h
 > 
-> Of course, we can also just use mem_blk->nid and rest assured that it
-> will never be called for memory blocks belonging to multiple nodes.
+> diff --git a/tools/perf/Makefile.config b/tools/perf/Makefile.config
+> index 85fbcd265351..21470a50ed39 100644
+> --- a/tools/perf/Makefile.config
+> +++ b/tools/perf/Makefile.config
+> @@ -259,7 +259,7 @@ CXXFLAGS += -Wno-strict-aliasing
+>  # adding assembler files missing the .GNU-stack linker note.
+>  LDFLAGS += -Wl,-z,noexecstack
+>  
+> -EXTLIBS = -lpthread -lrt -lm -ldl
+> +EXTLIBS = -lpthread -lrt -lm -ldl -lcap
 
-Hi David,
+I wonder we should detect libcap or it's everywhere.. Arnaldo's compile test suite might tell
 
-While it is easy to construct a scenario where a memblock belongs to multiple
-nodes, I have to confess that I yet have not seen that in a real-world scenario.
-
-Given said that, I think that the less risky way is to just drop the nodemask_t
-and do not care about calling sysfs_remove_link() for already removed links.
-As I said, sysfs_remove_link() will silently fail when it fails to find the
-symlink, so I do not think it is a big deal.
-
-
--- 
-Oscar Salvador
-SUSE L3
+jirka
 
 _______________________________________________
 linux-arm-kernel mailing list
