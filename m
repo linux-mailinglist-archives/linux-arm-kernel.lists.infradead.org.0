@@ -2,68 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B9AE6AFC6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 21:26:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 94D6B6AFD1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 21:28:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mV4QaaIueQjAT5GsWBblDLvw+QIVs3ap+fJWTlpS4tU=; b=OnTe8shQhdp3EJ
-	gpOEcZs4xHGyHWsHTtAOFUj6XvkjEXYMoHY5aheFFoI+N4jTgtpVM8bT3jpRdvygjh3iihTA0IcDJ
-	wM6KPAjBSyhTkxIb9Qp+yrgkRXkbhC1HI3ZNyZtFx0cyyTBAG70hoBJkmZa8jCHVWU5FsXfUWFbKr
-	g1gT1at+oEY+Jot3qYWlx7diYZ/39Xdf6lVoRb6LUbzGtNkdq6pi7GvKhAkjmWg8GCu4f2Rlm8pG/
-	Fg4C/yd7tysHllKWLVi31DXrojB+So4BlmsAktafEwKoJ8bQsaYRFl9JTbVNIMsQc3bbGCPMIlNre
-	BhkNTcPWUdy132H2YfmA==;
+	List-Owner; bh=o48Af750ZanzsvMIMcMRITttnXmlk7t/0yfrbKQIHsM=; b=dDnl9CELBT6Ch0
+	Uf8VPD6JdmvFQSn93PJMv/tf873mQiEugrcnIfSsde+NvcijJxZGZmRAPZw6/PwiYPW+f9IQu5dGx
+	B4Nds1mfJNAMAGIb9CmAVos1pEVgffvq/wFutyhhaQXj7XKt3ukuu8RlNRC0hryzuUYKjEWnA0zon
+	0adzhyrtfnFbBs6G7t2LqfE25cz6SX+2x/3edrJ8ZgXWSnH9twwEhSK8YkjjMHk0yFRsLM1BvnCEe
+	ycKU3pWN4HaIxqp+hs+cQiqJCeNv1wfy2vU6odxQAkh3kcJjxpsH6+LDBH5JuWQe0lgySd0etVI+s
+	Y4yyU7RrPyZxrJyYk8PQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnT60-0007sA-N8; Tue, 16 Jul 2019 19:26:41 +0000
+	id 1hnT7y-0000GU-BE; Tue, 16 Jul 2019 19:28:42 +0000
 Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnT5o-0007rh-C6
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 19:26:29 +0000
-Received: by mail-lj1-x242.google.com with SMTP id t28so21099121lje.9
+ id 1hnT7j-0000FF-9L
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 19:28:28 +0000
+Received: by mail-lj1-x242.google.com with SMTP id v18so21104249ljh.6
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jul 2019 12:26:28 -0700 (PDT)
+ Tue, 16 Jul 2019 12:28:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=dbAoe9hwIKJ4M7ymTbvXmotoCz6oA9QthrbOb4BXzF8=;
- b=HaySDeWx9KzxLRUocYtBpeBUusKF6mSrKQLFyEQaQMby9oxdJzyU+ZKl8wbOVfURIe
- UC4t5C/+dydJ4dnY/hWi62eieun5UCxZL4bc+oECqxMj0E3Q5B07iUnWsCwDTWs5Lk9e
- 7R2JT9OFMnkWRXmHU16cOtAbPpYvs+gmSm9bqC4IY37GmpfMc4z3u8Kmh12zTQQnE9sw
- bwQ2NCyVwd2DfyQmcPlFFoMMXKR6twM9+7LuHJkvGl358NVXZchhQVfm5QprxKUiSi62
- uVI+k4WZyOZC1oDZQa4Em2EnD57IwERKOGaeJV3FxR+dT7UszqbEXK1JV9YOtyuplJOq
- 2MKQ==
+ :cc; bh=YusULDKtvbaFl4EVjjwq8xCVpUXm7QI7zzqzoLVeBuI=;
+ b=mhTDz/D0OskKZMo3HE8550xVnGiC9jLh8q+9T61FpCJQf+l5OKx0RXL1gKiRgdWQYw
+ AbIKrOmSECVoQscbUZqufL7SFkovNrMppMuR+mpoRgNhnZRqVb0MMABOUip82pFfE3pA
+ R0KqE9borwHUpSlN2j5Jug1Q77+/0D7dFcXv0tHNhVcGUGDyJItOQpMUeNMC8Bk9Her6
+ zIWo7OBatil6hgBApRzsLm11OIFpKRVa2sYctDblab4ehBO4k+BJh+LsZV+KY3LPuHtz
+ /ajAmjy9bSC+5UQIaI3kjqXD0USAm2o2TRauds2Ep6TjoxwZzqMBRU8hcXqodi5P23Ry
+ /Wqg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=dbAoe9hwIKJ4M7ymTbvXmotoCz6oA9QthrbOb4BXzF8=;
- b=BMfzkf7bK1XZ7QY5kK2yW16zmFM6CBHhWlKZ9kme9DLKolkTKaZUl6by7/mXClAUcA
- T+HcL69eYrdD+nOgo0o/S0/YijyIFNcuSFo7j0aNGnLsyFxanIJ6z9Rx7zmc+/Z3rBys
- N2Z2/N9n44JTtm2gKL/KkSOmAe/3HGjUm3QcPVsH8VU/xIxVKkVqJ77gNyWD3+p4oXHJ
- h/SZmLaSiL1HLnuZb4x/hccQTGVUXycCmpX8WaGnFvu5//OMkQ7qiJOf+SjTIhkx0twy
- TwryhaIjhFRQtQJFykDH7B0JfnKk/o2U+KeZFZ+Dhaw2h29wdEKMOOhDHi+9+uNCQYYS
- NvwA==
-X-Gm-Message-State: APjAAAUAtygmIOJA4G+vd2KfCPIsp33frZJ9aYRoEM0zpKBQZiLZoOG/
- DyoyVt31XeYwxP7QcIFsELLXH3Se/Brz5MTNIMzRqA==
-X-Google-Smtp-Source: APXvYqxSIlAjQmTokcZ+T6GNymk/pwOEDmsMPM1Pfptxz6wUfTUNozrJZvvn9We17XXVQfGllb2pPyiNqLwv67CvMAk=
-X-Received: by 2002:a2e:2c07:: with SMTP id s7mr18711250ljs.44.1563305186596; 
- Tue, 16 Jul 2019 12:26:26 -0700 (PDT)
+ bh=YusULDKtvbaFl4EVjjwq8xCVpUXm7QI7zzqzoLVeBuI=;
+ b=IZBixrWGcNhJoTj1xuXITdC7Grfx3RH778yXdz1S6wxCPDlfa6MRJFmog5uAZDV9UR
+ wbRdMG4Cyd0HzQ95J1yP++LCh60xz7szCCdH+11D2qLOXnsOWOESBp5P1PahBK4Vgj9Y
+ Tuh5wgOkZb4d/DrzsqKznipv/nRZhYgTlZMp9UUGuNMqyugKW6CpnanuzRONl5Uqkmfg
+ 3wSepSsYizatfYXII+tPkVnTMQiq46qD8JH2XjcaPLm/qk2MzB8qZiKeSELiyI+1EPma
+ ZCv9AVDaDwVKvFoR7io2N/ExHjE96iGgKJbM712oxWY/r/c7mmDRywTOusrSZnjgu18n
+ Pffg==
+X-Gm-Message-State: APjAAAWGu0lvkteQL4ELmVYUUkslci+nKUtZHyo67Gilcvrk64YcrgdS
+ 0PT58C8RRDvl+AbqdgLgJmH7RYiLbhQSXCKRq8E=
+X-Google-Smtp-Source: APXvYqzSdyI4sNlpn8VOfFJ3mQLAKcdxygNOIblNaIK5HBO6A5//BJ9WSLuwARQlvQAg7YW5y6IDIu9f0XmIIYbO0ZA=
+X-Received: by 2002:a2e:a311:: with SMTP id l17mr17966337lje.214.1563305305275; 
+ Tue, 16 Jul 2019 12:28:25 -0700 (PDT)
 MIME-Version: 1.0
 References: <1563290089-11085-1-git-send-email-aisheng.dong@nxp.com>
- <1563290089-11085-3-git-send-email-aisheng.dong@nxp.com>
-In-Reply-To: <1563290089-11085-3-git-send-email-aisheng.dong@nxp.com>
+ <1563290089-11085-7-git-send-email-aisheng.dong@nxp.com>
+In-Reply-To: <1563290089-11085-7-git-send-email-aisheng.dong@nxp.com>
 From: Fabio Estevam <festevam@gmail.com>
-Date: Tue, 16 Jul 2019 16:26:23 -0300
-Message-ID: <CAOMZO5CMM94rAOryvfmHpuAsJnCRj-98kX3rfiZSn5EZt_c0kA@mail.gmail.com>
-Subject: Re: [PATCH v2 02/15] arm64: dts: imx8qxp: move scu pd node before scu
- clock node
+Date: Tue, 16 Jul 2019 16:28:22 -0300
+Message-ID: <CAOMZO5CdBhJmdbavfWzpx0YPhAXgQvA+ik3GMz0e5U1j6ytyHg@mail.gmail.com>
+Subject: Re: [PATCH v2 06/15] arm64: dts: imx8: add adma lpcg clocks
 To: Dong Aisheng <aisheng.dong@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_122628_412521_F6342F79 
-X-CRM114-Status: UNSURE (   7.79  )
+X-CRM114-CacheID: sfid-20190716_122827_322896_62669A81 
+X-CRM114-Status: UNSURE (   8.07  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -110,12 +109,21 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On Tue, Jul 16, 2019 at 12:37 PM Dong Aisheng <aisheng.dong@nxp.com> wrote:
->
-> SCU clock depends on SCU Power domain. So let's move scu pd node
-> before scu clock to make it probe earlier.
 
-This looks like a fragile solution. Shouldn't this be handled via
-probe deferring?
+> +       uart0_lpcg: clock-controller@5a460000 {
+> +               reg = <0x5a460000 0x10000>;
+> +               #clock-cells = <1>;
+> +               clocks = <&clk IMX_ADMA_UART0_CLK>,
+> +                        <&dma_ipg_clk>;
+
+Putting the clocks into a single line helps readability, even if it is
+over 80 col.
+
+> +               bit-offset = <0 16>;
+> +               clock-output-names = "uart0_lpcg_baud_clk",
+> +                                    "uart0_lpcg_ipg_clk";
+
+Same here.
 
 _______________________________________________
 linux-arm-kernel mailing list
