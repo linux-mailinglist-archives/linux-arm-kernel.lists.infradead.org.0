@@ -2,80 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 46F9369FF4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 02:37:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E59269FF8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 02:37:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
 	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XTS86vaQa8F/wU3icSRSbvLMg1uSYJvtH+mPdsDMR20=; b=icPWyrQZHMxZQn
-	67MlfQPZzHaHo7EggRBd9Wd9Qr/fJe0sxNrTgfr8KWS4gRAvX+3HyJQ3VJ5/SMwgbNo1nZn0NNt75
-	Wm0PUSe2MVy36hOvPTM25xgZHm7wD1ADON2FXsJAgdwu73LleJIhFCu71x57t6uGA6WA076U8Ir30
-	IxIf0UgJqmGQSAUyecNmqq82oXPA6Q/5QZc81WeFJeq0hi+1gEzztKDNm/qGF7aE+WxqKaTGQokyI
-	zaz+lTOyXLgZO1UqmpQ0oBa71MgjjO4kJUXpci+pjLZ5cejtt93ys5xbpy0w0w23Z+W30XsHZen+9
-	d1ajZ3eVFFlRa6N3Yrlw==;
+	List-Owner; bh=M5r+NhUuKNdpxzUz+mlp8SW2+8g0d1IH6YdsYxKcaQw=; b=JUtM7ce6bB0DJn
+	vORgTGZSiVmh2KwUSoS4ptN3d0We4bhWDzHEiOvQS7q5gj1Pb3sIGCoP/57s2D0MsfW0hP33DTIcP
+	D2r5tvDUxDi82DvAh5Y2tuPbsrnFLVa6ofwqQXLU3M3ZjoX6R9EJlduFACnr+Z7Jx8NgOrgqodWzM
+	6L78doMlvXwZCqR2HbA9fNJtFfTaY731z+8EVa1RV6PY5Pjl5LQNG7cxeum97VGU4YNTl2d4fnPLh
+	wwr1Wu7ceYIOQeOnSpI78I6k0u4SCfKplqC63GeXqWN1xfhQS+Cb8y8R/taMy8NnD3SmM92G2nKwh
+	Qx+zRTEwv4AtVMC0Uc2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnBSu-0005Hn-Ft; Tue, 16 Jul 2019 00:37:08 +0000
+	id 1hnBTY-0005X7-Ep; Tue, 16 Jul 2019 00:37:48 +0000
 Received: from out4-smtp.messagingengine.com ([66.111.4.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnBSf-0005HG-9F
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 00:36:54 +0000
+ id 1hnBTI-0005WU-G4
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 00:37:34 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id 1E8482177A;
- Mon, 15 Jul 2019 20:36:52 -0400 (EDT)
+ by mailout.nyi.internal (Postfix) with ESMTP id 941BF218C1;
+ Mon, 15 Jul 2019 20:37:31 -0400 (EDT)
 Received: from imap2 ([10.202.2.52])
- by compute4.internal (MEProxy); Mon, 15 Jul 2019 20:36:52 -0400
+ by compute4.internal (MEProxy); Mon, 15 Jul 2019 20:37:31 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
  mime-version:message-id:in-reply-to:references:date:from:to:cc
- :subject:content-type; s=fm3; bh=XWZLz+txdqRGTGaK1dZN+f7z4rUZi4Y
- KqrDw0xfe4HM=; b=jjqyglpudjzsVZLhnWYx9xgxywyjAovUnur4o64PIiE6/oD
- bWfRfH8iiS9ycGEwevHjy+kbgjyu9pUpzn+mCUPRAaS1VhEZ73Lo+ujf3f4XpbzQ
- l4u05mmZ20sCCjd2+KqBwldWeIkTVKcqJIexOK34ChugLII8CANTvCdHKhc5+TFV
- S7+ivSTItRNt3VBS8XDvKhaKaCwXydCuvKZjY287WLETJw3O1eMYT82si4f2ynFv
- 79nkZsIerPn6hR0FEwOYtO720zAgCJ0jvje2zHwbjNYCUXAe6yCXsn7QTO8XZhzR
- j2U/3I+V75KNy6/h5HPouB9xa/8o2tctdpUytLA==
+ :subject:content-type; s=fm3; bh=dfqDwOhQ9WBt6ksH+5VF00Qt1urgtHH
+ QLOlTLa0F4XU=; b=M9Br2+QfxAgSsZIGKX482YVEKwFDfQHQRPsHJKVASZMdCw3
+ 1NrDz5ETEsYUfJ0BXZndHbZAUEKsWIu8UTGb515lBQzACUX/tyAht0vIkalMlwSB
+ /3f9D19Vs8QYix4J+UjYh2aVYcXiHimUExbeXrnvkemw+S9YoRS0C+huGR2A89hD
+ 6Iy9izesvxmFspwZFKFRIL6dTStsHaeSSrWAF7uFgrJiFx3gPeCkaO409bH3aQBH
+ IQrHOXUJAnorNegQ/AU6zHxDnrhFLPEB99l/WH3bo4a2dGrYqWvHnc0fnNSJ2uom
+ Ie2H57UaPK4paMfUrwOI9ywFZ3/Ivx2rmyGr4eg==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-type:date:from:in-reply-to
  :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=XWZLz+
- txdqRGTGaK1dZN+f7z4rUZi4YKqrDw0xfe4HM=; b=W3Iw272ICRf0EDD/DryRQz
- M5dgPRk1xQvHrQs93w1bkKWbZgZn1vTF+9PV/ExXAAHxsN8N1Wx8lN8aJa4+WpuC
- fwbPfdOwBd56RcFprff+ERt8NK48SyNzd1nyJlkxcoqK1PA/gpKvjpb3FPwjHgBA
- 5lUCnbumFehUxGcoKzUm7HDVPmzaf5fyCwCk5F3WddYYpDu1VC9tNfxrw9jELTjH
- 1xuWAFeWWASs+ayB7EeABPtY+jAsZR4trJc0bpGh8rr9mMffRxDR09MZGHIkfxvN
- WiPdQEJAN4uaNvzSj85q5b/2V8joyK5I/zbIVsUUBmRnS0n7qB4syHO+LbTdGo6A
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=dfqDwO
+ hQ9WBt6ksH+5VF00Qt1urgtHHQLOlTLa0F4XU=; b=XWunKyj8jEiZAro3Kf0qXc
+ ioEEzH97MzpEIom6FeoT4fm2NBQvVdhERU0k06B2Kx52EMpqLTccYaOH9iHRI3fT
+ 5S8F1eiHRxcni46cj3qYHkEyoK62Ow3kTH+GVLowoVV2S53OaSD7oxRaEuZSS5Zt
+ D1zcou2WpCGI+8DcC9FK5qq3JD/IaM5KXbdAOA/3CqzYx82lPUbo0WBk2JNJJgmu
+ gKvbISkqbowSft8YTb6PwIcE7AO1FBBDmyIkQFoOsdswDqr+Q/bhErYXwmhaw9ej
+ H6z/Ow6SXhGClj5i1QplpQaTF337wFoYpxuNYdcla6RQ0AXXLvfalQYub7o+wNqw
  ==
-X-ME-Sender: <xms:IxwtXf77jaxpTbBAQIqoOaKT_tPfi6eUud37XX8Gz4Hh5OqWyYH6yQ>
+X-ME-Sender: <xms:SxwtXZNbZfxSQwFBGpSYhNkRXnCZtqB22Cj-z6NaSILw9FD_xFYLSA>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrheelgdefgecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpefofgggkfgjfhffhffvufgtsehttdertderredtnecuhfhrohhmpedftehnughr
+ fjughrpefofgggkfgjfhffhffvufgtsehttdertderreejnecuhfhrohhmpedftehnughr
  vgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucfrrghrrg
  hmpehmrghilhhfrhhomheprghnughrvgifsegrjhdrihgurdgruhenucevlhhushhtvghr
  ufhiiigvpedt
-X-ME-Proxy: <xmx:IxwtXSYv0so1UDrxrgCP1PBLZvAeIFb_V_kjuVYMHzyqQstLt5UPCw>
- <xmx:IxwtXShNV6dv1iDjgpJ93yiW76yzP8ZaamiNxj9NBCBzLf8ltayVmA>
- <xmx:IxwtXdaxzh5FPwQrKjuHo-IzB93hG52ZGB7Uw84OjqtWpB0EgeUxXg>
- <xmx:JBwtXVuV7atOVYa2dOZe8UAscvlNOzzmLO_aKGt7mGM0b_WwnKk3qA>
+X-ME-Proxy: <xmx:SxwtXSWOXL8yKJEpa42VbHWWcfSlbo6jQP41r4fixPSybQSzZH9wnw>
+ <xmx:SxwtXUjlKT8FKPtKeGkiDDTI12HNmIkC0zOsY87Z-Jm6jVi81jHdKg>
+ <xmx:SxwtXTjvoryiWJ00-VsOKIfGbswMi8sjgGoFMRsjl7bKw4xzd6Bp2Q>
+ <xmx:SxwtXQZIqd26NqbRVW2wwMl5uas0xqV6T42EqUlWyvKsosL39osAtg>
 Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id D358CE00CC; Mon, 15 Jul 2019 20:36:51 -0400 (EDT)
+ id 531A9E01C8; Mon, 15 Jul 2019 20:37:31 -0400 (EDT)
 X-Mailer: MessagingEngine.com Webmail Interface
 User-Agent: Cyrus-JMAP/3.1.6-731-g19d3b16-fmstable-20190627v1
 Mime-Version: 1.0
-Message-Id: <0b4f89e7-a60f-4978-ba9c-1e04c551b1f1@www.fastmail.com>
-In-Reply-To: <20190715224841.6771-1-robh@kernel.org>
-References: <20190715224841.6771-1-robh@kernel.org>
-Date: Tue, 16 Jul 2019 10:07:01 +0930
+Message-Id: <3c579d04-1a52-4573-825e-44e2ce25adbd@www.fastmail.com>
+In-Reply-To: <20190715223725.12924-1-robh@kernel.org>
+References: <20190715223725.12924-1-robh@kernel.org>
+Date: Tue, 16 Jul 2019 10:07:41 +0930
 From: "Andrew Jeffery" <andrew@aj.id.au>
 To: "Rob Herring" <robh@kernel.org>, devicetree@vger.kernel.org,
  "Linus Walleij" <linus.walleij@linaro.org>
-Subject: Re: [PATCH] dt-bindings: pinctrl: aspeed: Fix AST2500 example errors
+Subject: =?UTF-8?Q?Re:_[PATCH]_dt-bindings:_pinctrl:_aspeed:_Fix_'compatible'_sch?=
+ =?UTF-8?Q?ema_errors?=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190715_173653_461002_1D9E0FC3 
-X-CRM114-Status: GOOD (  11.58  )
+X-CRM114-CacheID: sfid-20190715_173732_672561_61FC3E14 
+X-CRM114-Status: GOOD (  12.05  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -112,17 +113,22 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On Tue, 16 Jul 2019, at 08:18, Rob Herring wrote:
-> The schema examples are now validated against the schema itself. The
-> AST2500 pinctrl schema has a couple of errors:
+On Tue, 16 Jul 2019, at 08:07, Rob Herring wrote:
+> The Aspeed pinctl schema have errors in the 'compatible' schema:
 > 
-> Documentation/devicetree/bindings/pinctrl/aspeed,ast2500-pinctrl.example.dt.yaml: \
-> example-0: $nodename:0: 'example-0' does not match 
-> '^(bus|soc|axi|ahb|apb)(@[0-9a-f]+)?$'
-> Documentation/devicetree/bindings/pinctrl/aspeed,ast2500-pinctrl.example.dt.yaml: \
-> pinctrl: aspeed,external-nodes: [[1, 2]] is too short
+> Documentation/devicetree/bindings/pinctrl/aspeed,ast2400-pinctrl.yaml: \
+> properties:compatible:enum: ['aspeed', 'ast2400-pinctrl', 'aspeed', 
+> 'g4-pinctrl'] has non-unique elements
+> Documentation/devicetree/bindings/pinctrl/aspeed,ast2500-pinctrl.yaml: \
+> properties:compatible:enum: ['aspeed', 'ast2500-pinctrl', 'aspeed', 
+> 'g5-pinctrl'] has non-unique elements
+> 
+> Flow style sequences have to be quoted if the vales contain ','. Fix
+> this by using the more common one line per entry formatting.
 > 
 > Fixes: 0a617de16730 ("dt-bindings: pinctrl: aspeed: Convert AST2500 
+> bindings to json-schema")
+> Fixes: 07457937bb5c ("dt-bindings: pinctrl: aspeed: Convert AST2400 
 > bindings to json-schema")
 > Cc: Andrew Jeffery <andrew@aj.id.au>
 > Cc: Linus Walleij <linus.walleij@linaro.org>
@@ -135,36 +141,48 @@ On Tue, 16 Jul 2019, at 08:18, Rob Herring wrote:
 Acked-by: Andrew Jeffery <andrew@aj.id.au>
 
 > ---
->  .../devicetree/bindings/pinctrl/aspeed,ast2500-pinctrl.yaml  | 5 +----
->  1 file changed, 1 insertion(+), 4 deletions(-)
+>  .../devicetree/bindings/pinctrl/aspeed,ast2400-pinctrl.yaml   | 4 +++-
+>  .../devicetree/bindings/pinctrl/aspeed,ast2500-pinctrl.yaml   | 4 +++-
+>  2 files changed, 6 insertions(+), 2 deletions(-)
 > 
+> diff --git 
+> a/Documentation/devicetree/bindings/pinctrl/aspeed,ast2400-pinctrl.yaml 
+> b/Documentation/devicetree/bindings/pinctrl/aspeed,ast2400-pinctrl.yaml
+> index 61a110a7db8a..125599a2dc5e 100644
+> --- 
+> a/Documentation/devicetree/bindings/pinctrl/aspeed,ast2400-pinctrl.yaml
+> +++ 
+> b/Documentation/devicetree/bindings/pinctrl/aspeed,ast2400-pinctrl.yaml
+> @@ -22,7 +22,9 @@ description: |+
+>  
+>  properties:
+>    compatible:
+> -    enum: [ aspeed,ast2400-pinctrl, aspeed,g4-pinctrl ]
+> +    enum:
+> +      - aspeed,ast2400-pinctrl
+> +      - aspeed,g4-pinctrl
+>  
+>  patternProperties:
+>    '^.*$':
 > diff --git 
 > a/Documentation/devicetree/bindings/pinctrl/aspeed,ast2500-pinctrl.yaml 
 > b/Documentation/devicetree/bindings/pinctrl/aspeed,ast2500-pinctrl.yaml
-> index a464cfa0cba3..3e6d85318577 100644
+> index cf561bd55128..a464cfa0cba3 100644
 > --- 
 > a/Documentation/devicetree/bindings/pinctrl/aspeed,ast2500-pinctrl.yaml
 > +++ 
 > b/Documentation/devicetree/bindings/pinctrl/aspeed,ast2500-pinctrl.yaml
-> @@ -76,9 +76,6 @@ required:
+> @@ -22,7 +22,9 @@ description: |+
 >  
->  examples:
->    - |
-> -    compatible = "simple-bus";
-> -    ranges;
-> -
->      apb {
->          compatible = "simple-bus";
->          #address-cells = <1>;
-> @@ -91,7 +88,7 @@ examples:
->  
->              pinctrl: pinctrl {
->                  compatible = "aspeed,g5-pinctrl";
-> -                aspeed,external-nodes = <&gfx &lhc>;
-> +                aspeed,external-nodes = <&gfx>, <&lhc>;
->  
->                  pinctrl_i2c3_default: i2c3_default {
->                      function = "I2C3";
+>  properties:
+>    compatible:
+> -    enum: [ aspeed,ast2500-pinctrl, aspeed,g5-pinctrl ]
+> +    enum:
+> +      - aspeed,ast2500-pinctrl
+> +      - aspeed,g5-pinctrl
+>    aspeed,external-nodes:
+>      minItems: 2
+>      maxItems: 2
 > -- 
 > 2.20.1
 > 
