@@ -2,41 +2,40 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8809C6AC59
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 17:59:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D3B466AC5A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 17:59:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WopwJxuUcxQ1FmMB5KG558pGZuvM3Awt9ns1MBJLZZQ=; b=KIjL4mhnyCVESk
-	zgNeo7L8Jj8PCwh9pKnU+feLpBJBml2eQg8ccD4q4MPEvMbWhVG7VngqskuGSrxeCHzLUrRXWaaSB
-	Cvejl9u8qUW8CiPc+CXjo1GA50vYehKttkcJnYlgddxOmML2ucbZ0cWn81YYPPxpAwqLFZhtsCfk6
-	1UANQ6Hjzmd8tEpz9gVBYz7cZpusaKogFsaATNK1BBKPjC/ph9FKTsmIQRVDgOOJK/u8lEMTYlim3
-	rCyD9Icn4cy2jsg4jhrBT87okAze5yuKIcsPT6B3G3EhTXcjNr4L12OcoVDA7CXbAou0aR4BXB83t
-	ejYtUzOz7Iqf0a0AEXUA==;
+	List-Owner; bh=vTPmrGemKNrhPBl2jYXX5aZXsAzvUYDLca53CO2wzMM=; b=bwOxlb/Zx/fHIE
+	7WirqYCFwrG+lLckqQTqF0ybEGBe81k8g+V9A4FWWXUXlfAzI/Q7A44q3n3102GjPV4u5f9IjHHLe
+	EQ4kmC9Bo5hQzvbj5IuW641iHgyPZhrSFLHI8Le4pOsuPHMNwxJ9mT9gqeBre6OwrFSytlZpz4ncu
+	u7yaz59vv7px9Hw2sUzRzo3Tl+948bszkshgrnLm3uLSKGiQJZAPgyl4oan3kSfNVPlf8X/Z6lTdz
+	jiJe23bD/G4UXusruN1Cd0Pr3uL/m6LiRwLNhxZqwd3QA3cKNg20t0UjQkj2GDgQQsV0gHauVnG2h
+	cFVC65VzYc+eIFgvRvyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnPrH-00014j-1y; Tue, 16 Jul 2019 15:59:15 +0000
+	id 1hnPrY-0001Go-34; Tue, 16 Jul 2019 15:59:32 +0000
 Received: from j217100.upc-j.chello.nl ([24.132.217.100]
  helo=hirez.programming.kicks-ass.net)
  by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hnPqj-0000xJ-1S; Tue, 16 Jul 2019 15:58:41 +0000
+ id 1hnPr4-00015I-B2; Tue, 16 Jul 2019 15:59:02 +0000
 Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
- id 61DFF2059DEA3; Tue, 16 Jul 2019 17:58:39 +0200 (CEST)
-Date: Tue, 16 Jul 2019 17:58:39 +0200
+ id B55F12059DEA3; Tue, 16 Jul 2019 17:59:00 +0200 (CEST)
+Date: Tue, 16 Jul 2019 17:59:00 +0200
 From: Peter Zijlstra <peterz@infradead.org>
 To: Alex Kogan <alex.kogan@oracle.com>
-Subject: Re: [PATCH v3 2/5] locking/qspinlock: Refactor the qspinlock slow path
-Message-ID: <20190716155839.GF3402@hirez.programming.kicks-ass.net>
+Subject: Re: [PATCH v3 4/5] locking/qspinlock: Introduce starvation avoidance
+ into CNA
+Message-ID: <20190716155900.GS3419@hirez.programming.kicks-ass.net>
 References: <20190715192536.104548-1-alex.kogan@oracle.com>
- <20190715192536.104548-3-alex.kogan@oracle.com>
- <20190716102034.GN3419@hirez.programming.kicks-ass.net>
- <9D5B6F33-6003-4CCA-BBE5-998B5A679B9C@oracle.com>
+ <20190715192536.104548-5-alex.kogan@oracle.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <9D5B6F33-6003-4CCA-BBE5-998B5A679B9C@oracle.com>
+In-Reply-To: <20190715192536.104548-5-alex.kogan@oracle.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -55,34 +54,70 @@ Cc: linux-arch@vger.kernel.org, guohanjun@huawei.com, arnd@arndb.de,
  linux-kernel@vger.kernel.org, rahul.x.yadav@oracle.com, mingo@redhat.com,
  bp@alien8.de, hpa@zytor.com, longman@redhat.com, tglx@linutronix.de,
  daniel.m.jordan@oracle.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVHVlLCBKdWwgMTYsIDIwMTkgYXQgMTA6NTM6MDJBTSAtMDQwMCwgQWxleCBLb2dhbiB3cm90
-ZToKPiBPbiBKdWwgMTYsIDIwMTksIGF0IDY6MjAgQU0sIFBldGVyIFppamxzdHJhIDxwZXRlcnpA
-aW5mcmFkZWFkLm9yZz4gd3JvdGU6Cj4gPiAKPiA+IE9uIE1vbiwgSnVsIDE1LCAyMDE5IGF0IDAz
-OjI1OjMzUE0gLTA0MDAsIEFsZXggS29nYW4gd3JvdGU6Cj4gPiAKPiA+PiArLyoKPiA+PiArICog
-c2V0X2xvY2tlZF9lbXB0eV9tY3MgLSBUcnkgdG8gc2V0IHRoZSBzcGlubG9jayB2YWx1ZSB0byBf
-UV9MT0NLRURfVkFMLAo+ID4+ICsgKiBhbmQgYnkgZG9pbmcgdGhhdCB1bmxvY2sgdGhlIE1DUyBs
-b2NrIHdoZW4gaXRzIHdhaXRpbmcgcXVldWUgaXMgZW1wdHkKPiA+PiArICogQGxvY2s6IFBvaW50
-ZXIgdG8gcXVldWVkIHNwaW5sb2NrIHN0cnVjdHVyZQo+ID4+ICsgKiBAdmFsOiBDdXJyZW50IHZh
-bHVlIG9mIHRoZSBsb2NrCj4gPj4gKyAqIEBub2RlOiBQb2ludGVyIHRvIHRoZSBNQ1Mgbm9kZSBv
-ZiB0aGUgbG9jayBob2xkZXIKPiA+PiArICoKPiA+PiArICogKiwqLCogLT4gMCwwLDEKPiA+PiAr
-ICovCj4gPj4gK3N0YXRpYyBfX2Fsd2F5c19pbmxpbmUgYm9vbCBfX3NldF9sb2NrZWRfZW1wdHlf
-bWNzKHN0cnVjdCBxc3BpbmxvY2sgKmxvY2ssCj4gPj4gKwkJCQkJCSAgIHUzMiB2YWwsCj4gPj4g
-KwkJCQkJCSAgIHN0cnVjdCBtY3Nfc3BpbmxvY2sgKm5vZGUpCj4gPj4gK3sKPiA+PiArCXJldHVy
-biBhdG9taWNfdHJ5X2NtcHhjaGdfcmVsYXhlZCgmbG9jay0+dmFsLCAmdmFsLCBfUV9MT0NLRURf
-VkFMKTsKPiA+PiArfQo+ID4gCj4gPiBUaGF0IG5hbWUgaXMgbm9uc2Vuc2UuIEl0IHNob3VsZCBi
-ZSBzb21ldGhpbmcgbGlrZToKPiA+IAo+ID4gc3RhdGljIF9fYWx3YXlzX2lubGluZSBib29sIF9f
-dHJ5X2NsZWFyX3RhaWwo4oCmKQo+IAo+IFdlIGFscmVhZHkgaGF2ZSBzZXRfbG9ja2VkKCksIHNv
-IEkgd2FzIHRyeWluZyB0byBjb252ZXkgdGhlIGZhY3QgdGhhdCB3ZSBhcmUKPiBkb2luZyB0aGUg
-c2FtZSBoZXJlLCBidXQgb25seSB3aGVuIHRoZSBNQ1MgY2hhaW4gaXMgZW1wdHkuCj4gCj4gSSBj
-YW4gdXNlIF9fdHJ5X2NsZWFyX3RhaWwoKSBpbnN0ZWFkLgoKVGhpbmcgaXMsIHdlIGdvIGludG8g
-dGhpcyBmdW5jdGlvbiB3aXRoOiAqLDAsMSBhbmQgYXJlIHRyeWluZyB0byBvYnRhaW4KMCwwLDEu
-IElPVywgd2UncmUgdHJ5aW5nIHRvIGNsZWFyIHRoZSB0YWlsLCB3aGlsZSBwcmVzZXJ2aW5nIHBl
-bmRpbmcgYW5kCmxvY2tlZC4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
-bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Mon, Jul 15, 2019 at 03:25:35PM -0400, Alex Kogan wrote:
+
+> @@ -36,6 +37,33 @@ struct cna_node {
+>  
+>  #define CNA_NODE(ptr) ((struct cna_node *)(ptr))
+>  
+> +/* Per-CPU pseudo-random number seed */
+> +static DEFINE_PER_CPU(u32, seed);
+> +
+> +/*
+> + * Controls the probability for intra-node lock hand-off. It can be
+> + * tuned and depend, e.g., on the number of CPUs per node. For now,
+> + * choose a value that provides reasonable long-term fairness without
+> + * sacrificing performance compared to a version that does not have any
+> + * fairness guarantees.
+> + */
+> +#define INTRA_NODE_HANDOFF_PROB_ARG 0x10000
+> +
+> +/*
+> + * Return false with probability 1 / @range.
+> + * @range must be a power of 2.
+> + */
+> +static bool probably(unsigned int range)
+> +{
+> +	u32 s;
+> +
+> +	s = this_cpu_read(seed);
+> +	s = next_pseudo_random32(s);
+> +	this_cpu_write(seed, s);
+> +
+> +	return s & (range - 1);
+
+This is fragile, better to take a number of bits as argument.
+
+> +}
+> +
+>  static void cna_init_node(struct mcs_spinlock *node)
+>  {
+>  	struct cna_node *cn = CNA_NODE(node);
+> @@ -140,7 +168,13 @@ static inline void cna_pass_mcs_lock(struct mcs_spinlock *node,
+>  	u64 *var = &next->locked;
+>  	u64 val = 1;
+>  
+> -	succ = find_successor(node);
+> +	/*
+> +	 * Try to pass the lock to a thread running on the same node.
+> +	 * For long-term fairness, search for such a thread with high
+> +	 * probability rather than always.
+> +	 */
+> +	if (probably(INTRA_NODE_HANDOFF_PROB_ARG))
+> +		succ = find_successor(node);
+>  
+>  	if (succ) {
+>  		var = &succ->mcs.locked;
+
+And this is where that tertiary condition comes from.. I think.
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
