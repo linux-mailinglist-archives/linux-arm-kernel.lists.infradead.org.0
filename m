@@ -2,80 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2088B6AB59
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 17:05:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 28E8F6AB5D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 17:05:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2KAXZdjJ9cAzwmlMwtyvpUhmnEtCbOEoOQapGzklLTU=; b=eerQHldHpbHvBM
-	3m1PaB4H664PATzvlQWMc+xN6SFoeduhbcxYer9//sIfeSp1V5sfpXe/9A5Dl66nNiQrDz/1Ng9Aw
-	Uy+azzbmak7KY4c6n8LBhwK1JvOhwk7kniS9tmUtyAX65Va/ww7EfADcf4FxtBSoaWKhSxHm5ufaU
-	igt+jmDteM1SMzy184pm2/eySGgVVSXZYNVReqaIUAd3RfLDNfCFH88VZLRqUM03M86euYvTza4An
-	F64NjXVDrlVuMd6xduKHCWHSWhsBt9rM+v30HAG/rZ42zb/Cr9XHax+0w72djO/ydhpSMawr5Uxtd
-	QaX7aeJzGzMovp6ZoHSg==;
+	List-Owner; bh=RqKQAyj2TOCejOTtseVxKEv4QmINXO/vSyvc9HQjssw=; b=EdRHAzaEcP/OVe
+	hlqBPryIMxpMjhRcYdqSJoRrul5JAALs8FO7dkZzxTwwP6uHcyw75ePXa0DgZ/wQyXAH5x4L17pKb
+	A3pDSaONTuAP06ooFCGYb6XZbngTEXxXrNKuKt3qFdWjrIQ0bU3IiK/AjvIb/lYytYCdy2DgvOqEz
+	xGcPbeYI2ACCvSQWhdsQo1VbPfL4aUQyeu6q2O84LxFb0IFiU8Wj5rtrUTtvbzm1tNYZ1cHLhoiGv
+	6XuBIZ1rnnBCTHdmJESwnXGQxAHgeuYj32OSZzw7VanBhphpxlxRpvjbp18XC8bZ0PdLqpT1ik0NF
+	26Hbgv7ebbmnH1booISw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnP12-0006aL-6u; Tue, 16 Jul 2019 15:05:16 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnP0m-0006Vc-7O
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 15:05:01 +0000
-Received: from mail-qk1-f182.google.com (mail-qk1-f182.google.com
- [209.85.222.182])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9E8DC20693
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jul 2019 15:04:59 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563289499;
- bh=qMHT4LhKbcv+81uzP1b96TgMB2OKJqjrClLOLrRU3oY=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=oaUfITiv0hgNcoMzLW5x0E3tl1bFDM+0lhBpP6AXrQwJVWslnjSba/YecYFcrrIHJ
- RAs7GpHEICPg/7+qPj5o9FC4PnFzSWAMw+CpiOTO4IQ1JqpquMsCTlhLGhy24nWOjQ
- HYDDRSSPyYlI+2cI5N6rp8YSJpJQNE0bf6WvVQJk=
-Received: by mail-qk1-f182.google.com with SMTP id v22so14821967qkj.8
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jul 2019 08:04:59 -0700 (PDT)
-X-Gm-Message-State: APjAAAWhFEZXnDFuQ57FJ8/fFJy5/NtA2yXFmmDrf2Zr1ez5Bt3wKPPd
- C2XGtfLT/sO9P0753VLnXZm9dfAM/jdf+BtSqg==
-X-Google-Smtp-Source: APXvYqzc1lGEIRKUk6W2DI5gAbyEEw14Pfpx9QFeFOfiGi6kMZ0tKAfX5GbQ1wOWhsE111TtrPjFiaJgvs+cASy4LFY=
-X-Received: by 2002:a37:a44a:: with SMTP id n71mr21002339qke.393.1563289498889; 
- Tue, 16 Jul 2019 08:04:58 -0700 (PDT)
+	id 1hnP1f-00086z-Ih; Tue, 16 Jul 2019 15:05:55 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hnP1Q-00086E-Eo
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 15:05:41 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 39EE6337;
+ Tue, 16 Jul 2019 08:05:39 -0700 (PDT)
+Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 63B843F59C;
+ Tue, 16 Jul 2019 08:05:36 -0700 (PDT)
+Date: Tue, 16 Jul 2019 16:05:34 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Ulf Hansson <ulf.hansson@linaro.org>
+Subject: Re: [PATCH 09/18] drivers: firmware: psci: Add support for PM
+ domains using genpd
+Message-ID: <20190716150533.GD7250@e107155-lin>
+References: <20190513192300.653-1-ulf.hansson@linaro.org>
+ <20190513192300.653-10-ulf.hansson@linaro.org>
 MIME-Version: 1.0
-References: <20190715223725.12924-1-robh@kernel.org>
- <CACPK8Xdz98CQzgE2KCjz8eOhPtx=H8jTe1hVT7LvP77U_gGASQ@mail.gmail.com>
-In-Reply-To: <CACPK8Xdz98CQzgE2KCjz8eOhPtx=H8jTe1hVT7LvP77U_gGASQ@mail.gmail.com>
-From: Rob Herring <robh@kernel.org>
-Date: Tue, 16 Jul 2019 09:04:47 -0600
-X-Gmail-Original-Message-ID: <CAL_Jsq+AJDNZ-676iP=vv6G-pjWqBJyZ3bJ26o7i=c=KWbozSw@mail.gmail.com>
-Message-ID: <CAL_Jsq+AJDNZ-676iP=vv6G-pjWqBJyZ3bJ26o7i=c=KWbozSw@mail.gmail.com>
-Subject: Re: [PATCH] dt-bindings: pinctrl: aspeed: Fix 'compatible' schema
- errors
-To: Joel Stanley <joel@jms.id.au>
+Content-Disposition: inline
+In-Reply-To: <20190513192300.653-10-ulf.hansson@linaro.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_080500_286273_3FBB5FB3 
-X-CRM114-Status: GOOD (  13.81  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190716_080540_600789_FD32B120 
+X-CRM114-Status: GOOD (  27.16  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,45 +62,118 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>, linux-aspeed@lists.ozlabs.org,
- Andrew Jeffery <andrew@aj.id.au>, Linus Walleij <linus.walleij@linaro.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>, Tony Lindgren <tony@atomide.com>,
+ Viresh Kumar <viresh.kumar@linaro.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Lina Iyer <ilina@codeaurora.org>,
+ Lina Iyer <lina.iyer@linaro.org>,
+ Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
+ Kevin Hilman <khilman@kernel.org>, Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Raju P . L . S . S . S . N" <rplsssn@codeaurora.org>,
+ Souvik Chakravarty <souvik.chakravarty@arm.com>, linux-pm@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Stephen Boyd <sboyd@kernel.org>, "Rafael J . Wysocki" <rjw@rjwysocki.net>,
+ linux-kernel@vger.kernel.org, Amit Kucheria <amit.kucheria@linaro.org>,
+ Sudeep Holla <sudeep.holla@arm.com>, Niklas Cassel <niklas.cassel@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jul 15, 2019 at 5:17 PM Joel Stanley <joel@jms.id.au> wrote:
+On Mon, May 13, 2019 at 09:22:51PM +0200, Ulf Hansson wrote:
+> When the hierarchical CPU topology layout is used in DT, we need to setup
+> the corresponding PM domain data structures, as to allow a CPU and a group
+> of CPUs to be power managed accordingly. Let's enable this by deploying
+> support through the genpd interface.
 >
-> On Mon, 15 Jul 2019 at 22:37, Rob Herring <robh@kernel.org> wrote:
-> >
-> > The Aspeed pinctl schema have errors in the 'compatible' schema:
-> >
-> > Documentation/devicetree/bindings/pinctrl/aspeed,ast2400-pinctrl.yaml: \
-> > properties:compatible:enum: ['aspeed', 'ast2400-pinctrl', 'aspeed', 'g4-pinctrl'] has non-unique elements
-> > Documentation/devicetree/bindings/pinctrl/aspeed,ast2500-pinctrl.yaml: \
-> > properties:compatible:enum: ['aspeed', 'ast2500-pinctrl', 'aspeed', 'g5-pinctrl'] has non-unique elements
-> >
-> > Flow style sequences have to be quoted if the vales contain ','. Fix
-> > this by using the more common one line per entry formatting.
+> Additionally, when the OS initiated mode is supported by the PSCI FW, let's
+> also parse the domain idle states DT bindings as to make genpd responsible
+> for the state selection, when the states are compatible with
+> "domain-idle-state". Otherwise, when only Platform Coordinated mode is
+> supported, we rely solely on the state selection to be managed through the
+> regular cpuidle framework.
 >
-> >
-> >  properties:
-> >    compatible:
-> > -    enum: [ aspeed,ast2400-pinctrl, aspeed,g4-pinctrl ]
-> > +    enum:
-> > +      - aspeed,ast2400-pinctrl
-> > +      - aspeed,g4-pinctrl
+> If the initialization of the PM domain data structures succeeds and the OS
+> initiated mode is supported, we try to switch to it. In case it fails,
+> let's fall back into a degraded mode, rather than bailing out and returning
+> an error code.
 >
-> Thanks for the fix. However, we've standardised on the first form for
-> all of our device trees, so we can drop the second compatible string
-> from the bindings.
+> Due to that the OS initiated mode may become enabled, we need to adjust to
+> maintain backwards compatibility for a kernel started through a kexec call.
+> Do this by explicitly switch to Platform Coordinated mode during boot.
+>
+> Finally, the actual initialization of the PM domain data structures, is
+> done via calling the new shared function, psci_dt_init_pm_domains().
+> However, this is implemented by subsequent changes.
+>
+> Co-developed-by: Lina Iyer <lina.iyer@linaro.org>
+> Signed-off-by: Lina Iyer <lina.iyer@linaro.org>
+> Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
+> ---
+>
+> Changes:
+> 	- Simplify code setting domain_state at power off.
+> 	- Use the genpd ->free_state() callback to manage freeing of states.
+> 	- Fixup a bogus while loop.
+>
+> ---
+>  drivers/firmware/psci/Makefile         |   2 +-
+>  drivers/firmware/psci/psci.c           |   7 +-
+>  drivers/firmware/psci/psci.h           |   5 +
+>  drivers/firmware/psci/psci_pm_domain.c | 268 +++++++++++++++++++++++++
+>  4 files changed, 280 insertions(+), 2 deletions(-)
+>  create mode 100644 drivers/firmware/psci/psci_pm_domain.c
+>
 
-Doing that would introduce validation warnings until the dts file is
-updated. So we still need this change until that happens.
+[...]
 
-Rob
+>  #endif /* __PSCI_H */
+> diff --git a/drivers/firmware/psci/psci_pm_domain.c b/drivers/firmware/psci/psci_pm_domain.c
+> new file mode 100644
+> index 000000000000..3c6ca846caf4
+> --- /dev/null
+> +++ b/drivers/firmware/psci/psci_pm_domain.c
+> @@ -0,0 +1,268 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * PM domains for CPUs via genpd - managed by PSCI.
+> + *
+> + * Copyright (C) 2019 Linaro Ltd.
+> + * Author: Ulf Hansson <ulf.hansson@linaro.org>
+> + *
+> + */
+> +
+
+[...]
+
+> +static int psci_pd_power_off(struct generic_pm_domain *pd)
+> +{
+> +	struct genpd_power_state *state = &pd->states[pd->state_idx];
+> +	u32 *pd_state;
+> +
+> +	/* If we have failed to enable OSI mode, then abort power off. */
+> +	if (psci_has_osi_support() && !osi_mode_enabled)
+> +		return -EBUSY;
+> +
+> +	if (!state->data)
+> +		return 0;
+> +
+> +	/* When OSI mode is enabled, set the corresponding domain state. */
+> +	pd_state = state->data;
+> +	psci_set_domain_state(*pd_state);
+
+I trying to understand how would this scale to level 2(cluster of
+clusters or for simply system). The current code for psci_set_domain_state
+just stores the value @pd_state into per-cpu domain_state. E.g.: Now if
+the system level pd is getting called after cluster PD, it will set the
+domain state to system level PD state. It won't work with original
+format and it may work with extended format if it's carefully crafted.
+In short, the point is just over-writing domain_state is asking for
+troubles IMO.
+
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
