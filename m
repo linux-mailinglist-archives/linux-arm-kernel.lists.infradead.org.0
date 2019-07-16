@@ -2,84 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7FC6D6A9E7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 15:54:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C243B6AA35
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 16:03:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=nFlfQ5Dyit57iXp+UMlwMJkTIuCWn1/SoC7ypl6cmgQ=; b=en26O06T/F8REEYOKE6yOb0+n
-	og3QmAE5rqwkPP65iyk9N4FTZQ5k/0AvHCuu7dq6wK5jj14jPFSTjvecawbe9BdzQYSz/qrZBAVAI
-	WZ3TbZbTfU8JFKIhRvbQNL+fuO5H9wC+jp5HOJsDuqt9peo5gzYab1ioHJfryeXLBYWrX539bOpV5
-	rMV0cmFJJ10mwenP1zihXHQYJk3Q2TYIVMtvgi74MRMDsJ9Lsi7t83+XEAhGGiuuSbZJn8+LRkBUb
-	4i2dOqUzpNRUGtOmAvwrIdiX6L0u5jGoApqWzQJL4y924loCTxPJa2D8u7wfQ9TLG1WrwayYfsm3m
-	e+dssaukw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/+0M7to7vI+k43bJPuazltf3d1ZfLoTR0X9M1klAKaU=; b=gM9PE8CN/nP5OI
+	dWe20lYyj7cvagIvDo0wbBPnaYM/NGBDsFwzW63lcstVsg1ALbR+e8BtHCx25weHzJEOOAS4URlHW
+	TXAcaxCDPzT5aIUs/dc7NLI992p1SJnQEEkyL54Mgaggo8CpFS2SRVCh8KtKbCRAXEflJs+B84t6B
+	udf/wFKHGVT6dDBYZO0rCWy6JtAJnOvKVrshzQrAzBumDHDo/YKj8tzXyl9/ul15ILPLxHYRPsfKa
+	k5sBuA2Qt1jta0a1hvN/pQ701QcaX1Cb3bSA6tk/XJqR2cNWgGFdSt0rTW3MzcvmsnQf61Sh0hxgR
+	n5UJZnxKhV694zBkhapQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnNuL-00027n-D0; Tue, 16 Jul 2019 13:54:17 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1hnO3D-0005m7-93; Tue, 16 Jul 2019 14:03:27 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnNtb-00026Z-Ua
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 13:53:34 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x6GDq8U6020278; Tue, 16 Jul 2019 15:53:26 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=CHNA4tkvEu0cJ3QFC0kdm6/Gc6q8tsA6zYPTdJ9kyFw=;
- b=D0GHWmbzX5M8MFo6PO5H+w/kYFPTWz3hLphkHFFkQNhq6GfO8EZ6zWSQWCBQB80H1ECC
- 4QL18qn3kXYEvWhYcguizWm+6XKfETP2gpktd/gcwn/MDrLGLYRP7pF33NJC0ZPIqbBJ
- 188OwWcF17vPSdOTM6yt8AzDtePo/7BNZEt5+jo+VdQ5eTEngGHXG7UyG+73qOpy4JXK
- yctJ94C3tOuX0a42s2C6pAgVEwTtxD6MxnyOrO940GdsoUZCBbo0R7V6mNB/vBBYq+A+
- YteujFJRZiYwCqPLf74bPAWgbuc6O/83Muz8M3eSI0mC3pserBmeOxYI4VNFRfszFxBm qw== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2tsdep8ukp-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Tue, 16 Jul 2019 15:53:26 +0200
-Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 6B8F834;
- Tue, 16 Jul 2019 13:53:25 +0000 (GMT)
-Received: from Webmail-eu.st.com (sfhdag3node1.st.com [10.75.127.7])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id D4CA72CD1;
- Tue, 16 Jul 2019 13:53:24 +0000 (GMT)
-Received: from [10.48.0.131] (10.75.127.49) by SFHDAG3NODE1.st.com
- (10.75.127.7) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 16 Jul
- 2019 15:53:24 +0200
-Subject: Re: [EXT] Re: [RFC 2/2] rpmsg: imx: add the initial imx rpmsg support
-To: Richard Zhu <hongxing.zhu@nxp.com>, Oleksij Rempel
- <o.rempel@pengutronix.de>, "ohad@wizery.com" <ohad@wizery.com>,
- "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
- "linux-remoteproc@vger.kernel.org" <linux-remoteproc@vger.kernel.org>
-References: <AM0PR0402MB3570E209B4940C3772D56AC98CCF0@AM0PR0402MB3570.eurprd04.prod.outlook.com>
- <03420f31-0982-4bd9-303a-60b787638775@st.com>
- <AM0PR0402MB357004D25FACA8C610F8E36C8CCE0@AM0PR0402MB3570.eurprd04.prod.outlook.com>
-From: Arnaud Pouliquen <arnaud.pouliquen@st.com>
-Message-ID: <fa9b912a-43d3-5826-2bc2-9e62f77d3de8@st.com>
-Date: Tue, 16 Jul 2019 15:53:23 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ id 1hnO2t-0005jx-UG; Tue, 16 Jul 2019 14:03:10 +0000
+Received: by mail-wr1-x444.google.com with SMTP id f9so21066103wre.12;
+ Tue, 16 Jul 2019 07:03:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=HZsItjPjDhQYPiLA6jmNU77ULk0G5DWzpiz/8LZXXSk=;
+ b=VRHAZYMT9D42bjajdP/6USvr9GlsAxFcKo5j4w9FQt1ZG9pUDYWAlIh625DEtEbyET
+ uSnnyqMAMjyqMfuk9P7YJ39a9xPF17UFEVIkFR1EZ6e8CkoOgkK9aH1q9EEtHMf8zR8k
+ D0zLhVoxinPZLVP5xYqwZ76Q8XemLQxxFpnpjL30sTswQDSXxunRxu97DpIkFIyUVgcE
+ f1YEnuy9F0dBmwh1u59Ny/9TjPBrdBOP2D42D22pMIsVEcQXUUa/KisIfXeMwW70Hf9+
+ k64GEzaYVL3E5l0vPpojvythV1DX2YOXJJXtOBub3ROzfDAFOQVOEbhoz3YvpbNbfihs
+ zJ0w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=HZsItjPjDhQYPiLA6jmNU77ULk0G5DWzpiz/8LZXXSk=;
+ b=KW5r0+ai3bOLNB4dlxhmFNtBh1Dkj5uqO3LdYvPCYW2WkungohjbcnEA2EI2v5Eb+1
+ iMzgrN7b684HfOv4TmQhjJZRqhM7yOwTvMNszMrvJfiXk7A2jp4RJ730fcY6j9IpezVB
+ kJML7P/CD7rtdX4o3SrJNEHQN7eUIr9SczQK8QvKkwBwUGhakQV7sMfgdjsqIdr4duFl
+ 6E+HyPIC8RUU5mcQrTiDiFPBCtzsTClXIquuKJZ487WORmNpMdthgnUxO79bYQz8mI/H
+ iRoR7vc0fkhs7Lz5PA4cN8JzerbtfcY1Gay9dOf+ZZbpg1RP7eQq/7BTZ16VFNget4yC
+ nBaQ==
+X-Gm-Message-State: APjAAAWKjgNZAhJnRTGUfJhdlBhIBDMpdMy71Y/d5Yuvl5R+61M85Ju4
+ Y1h3oDwv33HOFvvIRuQAsAhdFStcyhpC1FR/yqQ=
+X-Google-Smtp-Source: APXvYqyrTALRgwm52FtUUSHJC/fTjOAydgpAzcUmYUQvpIlNqt7flB2n3sMgMFbOCc2q1aK2KOMDEz5r2YaTBLJ4VnI=
+X-Received: by 2002:adf:a299:: with SMTP id s25mr29029454wra.74.1563285784578; 
+ Tue, 16 Jul 2019 07:03:04 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <AM0PR0402MB357004D25FACA8C610F8E36C8CCE0@AM0PR0402MB3570.eurprd04.prod.outlook.com>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.49]
-X-ClientProxiedBy: SFHDAG8NODE1.st.com (10.75.127.22) To SFHDAG3NODE1.st.com
- (10.75.127.7)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-07-16_04:, , signatures=0
+References: <20190716064220.18157-1-sam@ravnborg.org>
+ <20190716064220.18157-20-sam@ravnborg.org>
+In-Reply-To: <20190716064220.18157-20-sam@ravnborg.org>
+From: Alex Deucher <alexdeucher@gmail.com>
+Date: Tue, 16 Jul 2019 10:02:53 -0400
+Message-ID: <CADnq5_NL0v941Pg0+=ova-6N4jm1nmFzj9To5oQBRSqeYbzLWA@mail.gmail.com>
+Subject: Re: [PATCH v2 19/19] drm/mediatek: drop use of drmP.h
+To: Sam Ravnborg <sam@ravnborg.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_065332_352960_566A4A5E 
-X-CRM114-Status: GOOD (  31.57  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190716_070308_015482_60504136 
+X-CRM114-Status: GOOD (  15.25  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (alexdeucher[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -100,205 +91,351 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- Fabien DESSENNE <fabien.dessenne@st.com>,
- "loic.pallardy@st.com" <loic.pallardy@st.com>,
- "elder@linaro.org" <elder@linaro.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: David Airlie <airlied@linux.ie>,
+ Maling list - DRI developers <dri-devel@lists.freedesktop.org>,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Emil Velikov <emil.velikov@collabora.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpPbiA3LzE2LzE5IDEwOjA0IEFNLCBSaWNoYXJkIFpodSB3cm90ZToKPj4gLS0tLS1PcmlnaW5h
-bCBNZXNzYWdlLS0tLS0KPj4gRnJvbTogQXJuYXVkIFBvdWxpcXVlbiA8YXJuYXVkLnBvdWxpcXVl
-bkBzdC5jb20+Cj4+IFNlbnQ6IDIwMTnlubQ35pyIMTXml6UgMjA6MTYKPj4gVG86IFJpY2hhcmQg
-Wmh1IDxob25neGluZy56aHVAbnhwLmNvbT47IE9sZWtzaWogUmVtcGVsCj4+IDxvLnJlbXBlbEBw
-ZW5ndXRyb25peC5kZT47IG9oYWRAd2l6ZXJ5LmNvbTsgYmpvcm4uYW5kZXJzc29uQGxpbmFyby5v
-cmc7Cj4+IGxpbnV4LXJlbW90ZXByb2NAdmdlci5rZXJuZWwub3JnCj4+IENjOiBsb2ljLnBhbGxh
-cmR5QHN0LmNvbTsgRmFiaWVuIERFU1NFTk5FIDxmYWJpZW4uZGVzc2VubmVAc3QuY29tPjsKPj4g
-ZWxkZXJAbGluYXJvLm9yZzsgbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCj4+
-IFN1YmplY3Q6IFtFWFRdIFJlOiBbUkZDIDIvMl0gcnBtc2c6IGlteDogYWRkIHRoZSBpbml0aWFs
-IGlteCBycG1zZyBzdXBwb3J0Cj4+Cj4+IE9uIDcvMTUvMTkgMTA6MjIgQU0sIFJpY2hhcmQgWmh1
-IHdyb3RlOgo+Pgo+PiA8c25pcD4KPj4KPj4+Pj4+IHNnNjkzdjZVak0lMkJGRWs3VFlIeGdnNlJE
-WDYxMSUyRktmanFBJTNEJmFtcDtyZXNlcnZlZD0wCj4+Pj4+Pj4KPj4+Pj4+PiBNIGNvcmUvUlRP
-UyBpbnNpc3RzIHRvIHJ1biBhbmQgbWFuYWdlIGl0cyByZXNvdXJjZXMgYXNzaWduZWQgYnkKPj4+
-Pj4+PiBYUkRDCj4+Pj4+PiBzdGFuZGFsb25lLgo+Pj4+Pj4+IEFsbCB0aGUgaW50ZXJhY3Rpb25z
-IGJldHdlZW4gQSBjb3JlIGFuZCBNIGNvcmUgYXJlIHRyYW5zZmVycmVkIG9uCj4+Pj4+Pj4gUlBN
-U0cKPj4+Pj4+IGNoYW5uZWxzLgo+Pj4+Pj4+IEZvciBleGFtcGxlLCB0aGUgYXVkaW8gY29kZWMg
-Y29uZmlndXJhdGlvbiBhbmQgc28gb24uCj4+Pj4+Pj4gU28sIHdoYXQgSSBkbyBoZXJlIGlzIGp1
-c3Qgc2V0dXAgdGhlIGNvbW11bmljYXRpb24gUlBNU0cgY2hhbm5lbHMKPj4+Pj4+PiBiZXR3ZWVu
-IEEgY29yZS9MaW51eCBhbmQgTSBjb3JlL1JUT1MuCj4+Pj4+Pj4KPj4+Pj4+PiBPbmUgbW9yZSBj
-b25jZXJuLCBJJ20gYWZyYWlkIHRoYXQgSSBtYXkgbWVzcyB1cCB0aGUgY3VycmVudCBzb2xpZAo+
-Pj4+Pj4+IHJlcHJvYyBmbG93IGFuZCBmcmFtZXdvcmsgaWYgIEkgZm9yY2UgdGhpcyBpbXBsZW1l
-bnRhdGlvbiBpbnRvIHRoZQo+Pj4+Pj4+IGN1cnJlbnQKPj4+Pj4+IHJlcHJvYyBkcml2ZXJzLgo+
-Pj4+Pj4+IFNvLCBJIHN1bW1pdCB0aGlzIHBhdGNoLXNldCBpbiB0aGUgZW5kLiBQcmUtcmVzZXJ2
-ZWQgdnJpbmcgYnVmZmVyLAo+Pj4+Pj4+IHJlZ2lzdGVyIHZpcnRpb19kZXZpY2UsIGVzdGFibGlz
-aCB0aGUgUlBNU0cgY2hhbm5lbHMgbGV0cyBBCj4+Pj4+Pj4gY29yZS9MaW51eCBhbmQKPj4+Pj4+
-IE0gQ29yZS9SVE9TIGNhbiBjb21tdW5pY2F0ZSB3aXRoIGVhY2ggb3RoZXIuCj4+Pj4+Pj4gVGhh
-dCdzIGFsbC4KPj4+Pj4+IFlvdXIgY29uY2VybiBpcyB2YWxpZCwgYW5kIGFzIHdlIGhhdmUgdGhl
-IHNhbWUgcmVxdWlyZW1lbnQsIGl0Cj4+Pj4+PiB3b3VsZCBiZSBuaWNlIHRvIGZpbmQgYSBjb21t
-b24gc29sdXRpb24uIFRoYXQncyB3aHkgaSBwcm9wb3NlIHRoaXMKPj4+Pj4+IGFsdGVybmF0aXZl
-LCB3aGljaCB3b3VsZCBoYXZlIHRoZSBhZHZhbnRhZ2Ugb2YgcmV1c2luZyBleGlzdGluZwo+Pj4+
-Pj4gcnBtc2cKPj4+PiBpbXBsZW1lbnRhdGlvbi4KPj4+Pj4+Cj4+Pj4+ICAgICBbUmljaGFyZCBa
-aHVdIEkgbG9va2VkIHRocm91Z2ggdGhlIGNvZGVzIGJyaWVmbHkuIENvcnJlY3QgbWUgaWYKPj4+
-Pj4gbXkKPj4+PiB1bmRlcnN0YW5kCj4+Pj4+ICAgICBpcyB3cm9uZy4KPj4+Pj4gSXQgc2VlbXMg
-dGhhdCB0aGUgQSBjb3JlIHNpZGUgZG9lcyBhIGxvdCBvZiBtYW5pcHVsYXRpb25zIHRvIHRoZQo+
-Pj4+PiByZW1vdGUgTTQKPj4+PiBjb3JlCj4+Pj4+ICAgICBvbiBTVDMyTS4KPj4+Pj4gRHVyaW5n
-IHRoZSBzdGFydC9zdG9wL3JlY292ZXJ5IG9wZXJhdGlvbnMsIE00IGFjdGVkIGFzIHNsYXZlIGFu
-ZAo+Pj4+PiB3YWl0aW5nCj4+Pj4gZm9yIHRoZQo+Pj4+PiAgICAgY29udHJvbCBjb25zdHJ1Y3Rp
-b25zIHNlbnQgZnJvbSB0aGUgbWFzdGVyIEEgY29yZS9MaW51eCBzaWRlCj4+Pj4+IGFsdGhvdWdo
-Cj4+Pj4gdGhlCj4+Pj4+ICAgICBlYXJseV9ib290IGlzIHNldC4KPj4+Pj4KPj4+Pj4gVGhlcmUg
-YXJlIHNvbWUgZGlmZmVyZW5jZXMgaW4gdGhlIHJlbGF0aW9uc2hpcCBiZXR3ZWVuIEEgY29yZSBh
-bmQgTQo+PiBjb3JlLgo+Pj4+PiBPbiBTVDMyTTogTTQvUlRPUyB3b3VsZCBzdGFydGVkL3N0b3Bw
-ZWQvcmVjb3ZlcmVkIGJ5IEEgY29yZS9MaW51eAo+Pj4+IHNpZGUuCj4+Pj4+Cj4+Pj4+IEluIG15
-IHB1cnBvc2VkIGltcGxlbWVudGF0aW9uLCBib3RoIEEgY29yZS9MaW51eCBhbmQgTSBjb3JlL1JU
-T1MKPj4+PiB3b3JraW5nIGluIHRoZSByZWFsCj4+Pj4+ICAgICBpbmRlcGVuZGVudCBtb2RlLgo+
-Pj4+PiAtIE00L1JUT1MgY29tcGxldGUgdGhlIHN0YXJ0L3N0b3AvcmVjb3ZlcnkgYW5kIHNvbiBv
-biBvcGVyYXRpb25zIGJ5Cj4+Pj4+IGl0c2VsZiwKPj4+PiBpdCB3b3VsZG4ndAo+Pj4+PiAgICAg
-YWNjZXB0IGFueSBzdGFydC9zdG9wL3Jlc2V0IGludGVyYWN0aW9ucyBmcm9tIEEgY29yZS9MaW51
-eCBzaWRlLgo+Pj4+PiBTYW1lIHRvCj4+Pj4gQSBjb3JlL0xpbnV4IHNpZGUuCj4+Pj4+IC0gU0NG
-VyBtb25pdG9ycyB0aGUgcnVubmluZyBzdGF0dXMgb2YgZWFjaCBzaWRlLCB3b3VsZCBub3RpZnkg
-dGhlCj4+Pj4+IG90aGVyIHNpZGUsCj4+Pj4gaWYgdGhlcmUgaXMgYQo+Pj4+PiAgICAgc3lzdGVt
-IHN0YWxsIGF0IG9uZSBzaWRlLgo+Pj4+PiAgICAgd2hlbiB0aGUgbGl2ZWQgc2lkZSByZWNlaXZl
-cyB0aGUgbm90aWZpY2F0aW9uIGFuZCBrbm93IHRoZSBvdGhlcgo+Pj4+PiBzaWRlIGlzCj4+Pj4g
-cmVzZXQsCj4+Pj4+ICAgICBJdCB3b3VsZCBvbmx5IHJlY292ZXIgaXRzIG93biBycG1zZyBzdGFj
-aywgd2FpdCB0aGUgcnBtc2cgInJlYWR5Igo+Pj4+PiBzaWduYWwKPj4+PiBvZiB0aGUgb3Bwb3Np
-dGUgc2lkZSwKPj4+Pj4gICAgIHRoZW4gcmUtZXN0YWJsaXNoIHRoZSBycG1zZyBjaGFubmVscyBh
-Z2Fpbi4KPj4+Pj4gICAgIEEgY29yZS9MaW51eCBvciBNIGNvcmUvUlRPUyB3b3VsZG4ndCBkbyB0
-aGUgc3RhcnQvc3RvcC9yZWNvdmVyeQo+Pj4+IG9wZXJhdGlvbnMgb24gdGhlIG9wcG9zaXRlIHNp
-ZGUuCj4+Pj4gT24gU1RNMzJNUDEgd2UgaGF2ZSBub3QgZXhhY3RseSB0aGUgc2FtZSBzdHJhdGVn
-eSBidXQgaXQgb25seSBhIFNUCj4+Pj4gZGVzaWduIGNob2ljZSwgaW1wbGVtZW50ZWQgaW4gb3Vy
-IHN0bTMyIHJlbW90ZXByb2MgZHJpdmVyLiBZb3Ugc2hvdWxkCj4+Pj4gYmUgYWJsZSB0byBpbXBs
-ZW1lbnQgeW91ciBleHBlY3RlZCBiZWhhdmlvciBpbiB5b3VyIHRoZSBpbXggcmVtb3RlcHJvYwo+
-PiBkcml2ZXIuCj4+Pj4KPj4+PiBPbiBTVE0zMk1QMSB3ZSBtYW5hZ2UgdGhlIE00IHByZWxvYWRl
-ZCBmaXJtd2FyZSBpbiB0aGlzIHdheToKPj4+PiAtICBPbiBMaW51eCBzdG0zMiByZW1vdGVwcm9j
-IHByb2JlOgo+Pj4+ICAgICAgICAgICBXZSBkZXRlY3QgdGhhdCB0aGUgZmlybXdhcmUgaXMgcHJl
-bG9hZGVkIChlYXJseS1ib290ZWQgZmlsZWQKPj4+PiBpbiBEVCkgYW5kIHNldCB0aGUgZWFybF9i
-b290IHZhcmlhYmxlLgo+Pj4+ICAgICAgICAgICB3ZSBwcm92aWRlIHRoZSByZXNvdXJjZSB0YWJs
-ZSBhZGRyZXNzIHRvIHRoZSByZW1vdGVwcm9jIGNvcmUKPj4+PiB0aGF0IHBhcnNlcyBpdCBhbiBj
-YWxsIHRoZSBzdG0zMl9ycHJvY19zdGFydC4gaGVyZSB3ZSBkbyBub3RoaW5nIGFzCj4+Pj4gTTQg
-YWxyZWFkeSBzdGFydGVkIHdlIGp1c3Qgc2V0IHRoZSBob2xkIGJvb3QgdG8gZnJlZXplIHRoZSBN
-NCBpbiBjYXNlCj4+Pj4gb2YgY3Jhc2gKPj4+Pgo+Pj4+IC0gT24gTTQgY3Jhc2ggd2UgaGF2ZSBu
-b3QgdGhlIHNhbWUgc3RyYXRlZ3kgYXMgeW91ciBvbmUuIFdlIGNvbnNpZGVyCj4+Pj4gdGhhdCB0
-aGUgTTQgZmlybXdhcmUgY2FuIGJlIGNvcnJ1cHRlZCBhbmQgZWl0aGVyIHdlIHRyeSB0byByZWxv
-YWQgYQo+Pj4+IGZpcm13YXJlIHdoaWNoIGFzIGJlZW4gcHJvdmlkZWQgYnkgYXBwbGljYXRpb24s
-IG9yIHdlIGRvbid0IGxldCBpdAo+Pj4+IHJlc3RhcnRpbmcgKGhvbGQgYm9vdCBzZXQgb24gc3Rh
-cnQpLgo+Pj4+Cj4+Pj4gLVdlIGFsbG93IHVzZXJsYW5kIHRvIHN0b3AgdGhlIHByZWxvYWRlZCBm
-aXJtd2FyZSB0byBsb2FkIGFuZCB0byBydW4KPj4+PiBhIG5ldyBvbmUuCj4+Pj4KPj4+Pj4KPj4+
-Pj4gQW55d2F5LCBsZXQgbWUgZG8gc29tZSBtb3JlIGhvbWV3b3JrLCBhbmQgZmlndXJlIG91dCB0
-aGF0IHdoZXRoZXIgSQo+Pj4+PiBjYW4gZml0IHRoZXNlIGludG8gdGhlIGV4aXN0aW5nIHJlbW90
-ZXByb2MgZnJhbWV3b3JrIG9yIG5vdC4KPj4+PiBTb3JyeSB0byBnaXZlIHlvdSBob21ld29yay4u
-LiBidXQgc2VlbXMgKElNSE8pIHBvc3NpYmxlIHRvIGludGVncmF0ZQo+Pj4+IHlvdXIgY29uc3Ry
-YWludCBpbiBycG1zZy9yZW1vdGVwcm9jIGN1cnJlbnQgZGVzaWduLgo+Pj4+Cj4+PiBbUmljaGFy
-ZCBaaHVdIEhpIEFybmF1ZCwgSSBzdGlsbCBjYW4ndCBmaW5kIGEgd2F5IHRvIGNvbWJpbmUgdGhp
-cyBwYXRjaC1zZXQKPj4gd2l0aCB0aGUgbWFzdGVyL3NsYXZlIG1vZGUuCj4+PiBSZWdhcmRpbmcg
-dG8gbXkgdW5kZXJzdGFuZCwgYWxtb3N0IGFsbCB0aGUgZGVmaW5lZCBpdGVtcyBvZiB0aGUgc3Ry
-dWN0IHJwcm9jCj4+IGlzIHVzZWQgYnkgdGhlIG1hc3RlcihBIGNvcmUvTGludXgpIHRvIGNvbnRy
-b2wvbWFuaXB1bGF0ZSB0aGUgc2xhdmUgcmVtb3RlCj4+IHNsYXZlIHByb2Nlc3Nvci4KPj4+IEl0
-J3MgZmluZSB3aGVuIHRoZSBtYXN0ZXIoQSBjb3JlKS9TbGF2ZShyZW1vdGUgcHJvY2Vzc29yKSBt
-b2RlIGlzIHVzZWQuCj4+Pgo+Pj4gQnV0IGl0J3MgdG9vIGhhcmQgdG8gYXBwbHkgdGhlIHNsYXZl
-L21hc3RlciBtb2RlIGludG8gdGhpcyBzY2VuYXJpby4KPj4+IC0gTSBjb3JlL1JUT1MgaW5zaXN0
-cyB0byBydW4gYW5kIG1hbmFnZSBpdHMgcmVzb3VyY2VzIGFzc2lnbmVkIGJ5IFhSREMKPj4gc3Rh
-bmRhbG9uZS4KPj4gUGxlYXNlIGNvdWxkIHlvdSBleHBsYWluIHRoZSBkZXBlbmRlbmN5IGJldHdl
-ZW4gWFJEQyBtYW5hZ2VtZW50IGFuZAo+PiB0aGUgUlBNc2cgcHJvdG9jb2wsIGkgZG9uJ3QgZmln
-dXJlIG91dCB0aGUgYmxvY2tpbmcgcG9pbnQgaGVyZS4gU28gbWF5YmUgaQo+PiBtaXNzZWQgc29t
-ZXRoaW5nIGltcG9ydGFudC4KPiBbUmljaGFyZCBaaHVdIFRoZXJlIGFyZSBhY2Nlc3MgY29udHJv
-bCBtYW5hZ2VtZW50cyBpbiB0aGlzIHVzZSBjYXNlLgo+IFJlZ2FyZGluZyB0byB0aGUgc2VjdXJp
-dHkgcmVhc29ucyBvciBzb21ldGhpbmcgZWxzZSwgdGhlIFhSREMgYXJyYW5nZXMgdGhlIEhXIGFj
-Y2VzcyBjb250cm9sIG1hbmFnZW1lbnRzLgo+IEl0IHdvdWxkIGFzc2lnbiB0aGUgYWNjZXNzIGNh
-cGFiaWxpdGllcyBvZiB0aGUgSFcgcmVzb3VyY2VzIHRvIGRpZmZlcmVudCBkb21haW5zLgo+IFRo
-dXMsIHRoZSBIVyByZXNvdXJjZSByZXF1aXJlZCBieSBNNCBjYW4gYmUgcmVzZXJ2ZWQgZm9yIE00
-IGJ5IFhSREMuCj4gU2FtZSB0byBBIGNvcmUvTGludXggc2lkZS4KPiBCb3RoIG9mIHRoZW0sIG1h
-bmlwdWxhdGUgdGhlaXIgSFcgcmVzb3VyY2VzIGluZGVwZW5kZW50bHksIGFuZCB3b3VsZG4ndCBo
-YXZlIHRoZSBIVyBjb25mbGljdGlvbnMuCj4gU0NGVyB3b3VsZG4ndCBhbGxvdyB0aGUgY3Jvc3Mt
-dGhlIGJvcmRlciBhY2Nlc3MuCj4gQWxsIG9mIHRoaXMgaXMgcHJlY29uZmlndXJlZCBpbiBTQ0ZX
-LCBvbmUgc3lzdGVtIGNvbnRyb2wgZmlybXdhcmUgb24gdG9wIG9mIGJvb3Rsb2FkZXIvTGludXgv
-YW5kIFJUT1MuCj4gCj4gUlBNU0cgcHJvdG9jb2wgaXMgdXNlZCB0byBzZXR1cCB0aGUgY29tbXVu
-aWNhdGlvbiBiZXR3ZWVuIEEgY29yZS9MaW51eCBhbmQgTSBjb3JlL1JUT1MsCj4gd2hlbiB0aGUg
-QSBjb3JlL0xpbnV4IHdhbnRzIHRvIHVzZSBzb21lIEhXIHJlc291cmNlcyB1bmRlciBjb250cm9s
-bGVkIGJ5IE0gY29yZS9SVE9TLgo+IC0gQSBjb3JlL0xpbnV4IHdvdWxkIHNlbmQgdGhlIFJQTVNH
-IHRvIE0gY29yZS9SVE9TLgo+IC0gUmVjZWl2ZSB0aGUgcmVzdWx0cyBhZnRlciBNIGNvcmUvUlRP
-UyBmaW5pc2ggdGhlIGV4ZWN1dGlvbi4KPiAKT2sgdGhpcyBzaW1pbGFyIHRvIHdoYXQgd2UgcHJv
-cG9zZWQgYW5kIGhhcyBiZWVuIG1lbnRpb25lZCBieSBPbGVrc2lqOgoicmVtb3RlcHJvYzogYWRk
-IHN5c3RlbSByZXNvdXJjZSBtYW5hZ2VyIGRldmljZSIgcGF0Y2ggc2V0ClNvIHRoaXMgaXMgaGFu
-ZGxlZCBieSBhIGNsaWVudCBvbiB0b3Agb2YgcnBtc2csIG5vIGltcGFjdCBvbiB0aGUgcnBtc2cg
-CnZyaW5ncyBpbml0aWFsaXphdGlvbiBhbmQgbWFuYWdlbWVudC4KCj4+PiAtIE0gY29yZS9SVE9T
-IHdvdWxkbid0IGFjY2VwdCB0aGUgc3RhcnQvc3RvcC9yZWNvdmVyL3Jlc2V0IG9wZXJhdGlvbnMK
-Pj4gaXNzdWVkIGZyb20gQSBjb3JlL0xpbnV4IHNpZGUuCj4+IGluIGFkZGl0aW9uIHdpdGggdGhl
-IHBhdGNoCj4+IGh0dHBzOi8vZXVyMDEuc2FmZWxpbmtzLnByb3RlY3Rpb24ub3V0bG9vay5jb20v
-P3VybD1odHRwcyUzQSUyRiUyRmxrbWwub3IKPj4gZyUyRmxrbWwlMkYyMDE4JTJGMTElMkYzMCUy
-RjE1OSZhbXA7ZGF0YT0wMiU3QzAxJTdDaG9uZ3hpbmcuego+PiBodSU0MG54cC5jb20lN0M1MzJl
-NzU0NDRhZGQ0NDc1MDM2MjA4ZDcwOTFlNDI2ZCU3QzY4NmVhMWQzYmMyCj4+IGI0YzZmYTkyY2Q5
-OWM1YzMwMTYzNSU3QzAlN0MwJTdDNjM2OTg3ODk3ODgzOTYwNzk3JmFtcDtzZGF0YT0KPj4gSHQz
-JTJCS2JkcUxuJTJCSUZVTzhRajIzZXY4dUZBdGQ5RmZmT0drc3NtMVFtbFElM0QmYW1wO3Jlc2Vy
-dgo+PiBlZD0wIHlvdSBjYW4gY29udHJvbCB0aGlzIGluIHlvdXIgcGxhdGZvcm0gZHJpdmVyIHVz
-aW5nIHRoZSBycHJvYy0+cHJlbG9hZGVkCj4+IHZhcmlhYmxlCj4+Pgo+Pj4gU28gdGhlIHBhcmFs
-bGVsIG1vZGUgaXMgdXNlZCBpbiBteSBwcm9wb3NhbCwgYm90aCBBIGNvcmUvTGludXggYW5kIE0K
-Pj4gY29yZS9SVE9TIHdvcmtzIGluIHJlYWwgaW5kZXBlbmRlbnQgbW9kZS4gVGhlcmUgaXMgbm8g
-c2xhdmUvbWFzdGVyIGluIHRoaXMKPj4gaW1wbGVtZW50YXRpb24uCj4+IFRoZXkgYXJlIGluZGVw
-ZW5kZW50IGluIHRlcm1zIG9mIGxpdmUgY3ljbGUgYnV0IG5vdCBpbiB0ZXJtcyBvZiBjb21tdW5p
-Y2F0aW9uLgo+PiBTbyB5b3Ugc3RpbGwgbmVlZCBzeW5jaHJvbml6YXRpb24uCj4+IEZvciBpbnN0
-YW5jZSB5b3VyIGltcGxlbWVudGF0aW9uIHVzZXMgYSBtYWlsYm94IHRvIHN5bmNocm9uaXplIGJv
-dGgKPj4gKG1haWxib3ggcmRiKS4gSW4gZXhpc3RpbmcgcnBtc2cvdmlydGlvIGRyaXZlciBzaW1p
-bGFyIHN5bmNocm9uaXphdGlvbiBpcyBkb25lCj4+IHRocm91Z2ggYSBzdGF0dXMgcmVnaXN0ZXIg
-aW4gdGhlIHJlc291cmNlIHRhYmxlIHBsdXMgYW4gb3B0aW9uYWwgbWFpbGJveCBraWNrCj4+IGZy
-b20gTGludXggdG8gcmVtb3RlIHByb2Nlc3Nvci4KPj4KPj4gSW4gY2FzZSB0aGUgQ29ydGV4LU00
-IHN0YXJ0cyBmaXJzdDoKPj4gLSBUaGUgTTQgZmlybXdhcmUgc3RhcnRzIGZpcnN0IChtYW5hZ2lu
-ZyBDQU4pCj4+IC0gVGhlIExpbnV4IE9TIHN0YXJ0czogaXQganVzdCBwYXJzZXMgdGhlIHJlc291
-cmNlIHRhYmxlLCBjcmVhdGVzL2FsbG9jYXRlcyB2aXJ0aW8KPj4gcmluZ3MgYW5kIGJ1ZmZlcnMs
-IHVwZGF0ZSB0aGUgdmRldiBzdGF0dXMgZmxhZyBpbiB0aGUgcmVzb3VyY2UgdGFibGUgYW5kIGtp
-Y2sKPj4gdGhlIE00IHZpYSBtYWlsYm94Lgo+IFtSaWNoYXJkIFpodV0gVGhlIHZyaW5nIGFuZCBi
-dWZmZXIgYWRkcmVzcyBhcmUgZGVmaW5lZCBpbiB0aGUgRFRTIGZpbGVzLgo+IFNvLCB0aGUgcmVz
-b3VyY2UgdGFibGUgY29udGFpbnMgdGhlIGNsa3MvcHdyIG9yIHNvbWUgb3RoZXIgSFcgcmVzb3Vy
-Y2VzIHJlcXVpcmVkIGJ5IE00Lgo+IEl0IHNlZW1zIHRoYXQgdGhlIHJlc291cmNlIHRhYmxlIGlz
-IG5vdCBtYW5kYXRvcnkgcmVxdWlyZWQgaW4gdGhpcyBzY2VuYXJpbywgYmVjYXVzZSB0aGF0IGFs
-bCB0aGUgSFcgcmVzb3VyY2VzIGFyZSBwcmUtYXNzaWduZWQgYW5kIG1hbmFnZWQgYnkgWFJEQyBh
-bHJlYWR5Lgo+IApUaGUgcmVzb3VyY2UgdGFibGUgbWFpbmx5IGNvbnRhaW5zIGRlZmluaXRpb25z
-IHJlbGF0ZWQgdG8gdGhlIHNoYXJlZCAKbWVtb3JpZXMsIG5vIEhXIFBlcmlwaGVyYWwgKGJ1dCBj
-b3VsZCBiZSB1c2VkIGluIGZ1dHVyZSBmb3IgdGhpcyBraW5kIG9mIApkZWNsYXJhdGlvbiBzaG91
-bGQgYmUgcG9zc2libGUgc29vbjsgaHR0cHM6Ly9sa21sLm9yZy9sa21sLzIwMTkvNi8yOS8xODcp
-LgpSZXNvdXJjZSB0YWJsZSBpcyBub3QgbWFuZGF0b3J5LCBidXQgaXQgaXMgdGhlIGdlbmVyaWMg
-d2F5IHRvIGRlZmluZSAKcnBtc2cgbWVtb3JpZXMgYW5kIHByb2JlIHRoZSBycG1zZyBidXMgZHJp
-dmVyLiBIZXJlIGlzIGFuIGV4ZW1wbGUgb2YgCnJlc291cmNlIHRhYmxlOgpodHRwczovL2dpdGh1
-Yi5jb20vemVwaHlycHJvamVjdC1ydG9zL29wZW4tYW1wL3B1bGwvMi9maWxlcyNkaWZmLTY1ZGVm
-OTc1MWI0ZmJjMTA5NzNlMTg0YjVkYWE4MGU5CgpraW5kIHJlZ2FyZHMKQXJuYXVkCj4gVGhlIHZk
-ZXYgc3RhdHVzIGZsYWcgaXMgYW4gaW50ZXJlc3Rpbmcgc3luY2hyb25pemF0aW9uIG1lY2hhbmlz
-bSBpbiB0aGUgcmVzb3VyY2UgdGFibGUuCj4gCj4+IC0gVGhlIE00IHJlY2VpdmUgdGhlIG1haWxi
-b3gga2ljaywgY2hlY2tzIHRoZSB2ZGV2IHN0YXR1cyBhbmQgc3RhcnQgdGhlIHJwbXNnCj4+IGNv
-bW11bmljYXRpb24uCj4+IFRoaXMgaXMgd2hhdCB3ZSBoYXZlIGltcGxlbWVudGVkIG9uIFNUTTMy
-TVAxLiBBbmQgd2UgYXJlIGFibGUgdG8gcmUtdXNlCj4+IHRoZSBzYW1lIE00IGZpcm13YXJlIGJv
-b3RlZCBmaXJzdCAoaW5kZXBlbmRlbnQgbW9kZSkgb3IgbG9hZGVkIGJ5IExpbnV4Lgo+Pgo+IFtS
-aWNoYXJkIFpodV0gVGhhbmtzIGEgbG90IGZvciB5b3VyIGtpbmRseSBjbGFyaWZpY2F0aW9uLgo+
-IAo+Pj4gQWxsIHRoZSBpdGVtcyBkZWZpbmVkIGluIHRoZSBzdHJ1Y3QgcnByb2MgY2FuJ3QgYmUg
-dXNlZCBpbiB0aGlzIHNjZW5hcmlvLgo+PiBJIHdvdWxkIHNheSBjYW4gYmUgaWdub3JlZCwgYnV0
-IHRoZSBpZGVhIGlzIHRoYXQgc2FtZSBycHJvYyBtYW5hZ2VzIGJvdGgKPj4gc2NlbmFyaW9zLgo+
-Pj4gSU1ITywgdGhpcyBwYXRjaC1zZXQgaXMganVzdCB0byBzZXR1cCBvbmUgY29tbXVuaWNhdGlv
-biBjaGFubmVsIGJldHdlZW4gQQo+PiBjb3JlIGFuZCBNIGNvcmUuCj4+PiBUaGVyZSBhcmUgbm8g
-c2FsdmUgcmVtb3RlIHByb2Nlc3NvciBpbnN0YW5jZXMgYXQgQSBjb3JlL0xpbnV4IHNpZGUsIHRo
-YXQgY2FuCj4+IGJlIGNvbnRyb2xsZWQgYW5kIG1hbmlwdWxhdGVkIGJ5IEEgY29yZS9MaW51eC4K
-Pj4gWWVzIGkgYWdyZWUgd2l0aCB5b3UsIG5vIG5lZWQgdG8gbWFuYWdlIHRoZSByZW1vdGUgcHJv
-Y2Vzc29yIGluIHlvdXIgY2FzZS4KPj4gQnV0IHRoZSBnb2FsIG9mIHJlbW90ZXByb2MgaXMgbm90
-IG9ubHkgdGhlIG1hbmFnZW1lbnQgb2YgdGhlIHJlbW90ZQo+PiBwcm9jZXNzb3IgYnV0IGFsc28g
-dGhlIG1hbmFnZW1lbnQgb2YgdGhlIHNoYXJlZCByZXNvdXJjZXMgKHJwbXNnLCBjYXJ2ZW91dCwK
-Pj4gcmVtb3RlIHByb2Nlc3NvciB0cmFjZXMuLi4pLiBNeSBwcm9wb3NhbCBpcyB0byBieXBhc3Mg
-dGhlIG1hbmFnZW1lbnQgb2YgdGhlCj4+IHJlbW90ZSBwcm9jZXNzb3IgbGl2ZSBjeWNsZSB1c2lu
-ZyBMb2ljJ3MgcGF0Y2hlcywgYnV0IHRvIGtlZXAgdGhlIHJlbW90ZXByb2MKPj4gcGFydCBoYW5k
-bGluZyB0aGUgYXNzb2NpYXRlZCByZXNvdXJjZXMgdG8gYmUgYWJsZSB0byBwcm9iZSBSUE1zZyBi
-dXMgZHJpdmVyLgo+Pgo+IFtSaWNoYXJkIFpodV0gR290IHRoYXQsIHdvdWxkIHRyeSB0byBmb2xs
-b3cgdGhhdCBkaXJlY3Rpb24uCj4gVGhhbmtzLgo+IAo+Pj4KPj4+IElzIGl0IHBvc3NpYmxlIHRv
-IGFkZCBhbm90aGVyIGZvbGRlcihlLnggcGFyYWxsZWxfcHJvYykgdW5kZXIKPj4gZHJpdmVycy9y
-ZW1vdGVwcm9jLyB0byBleHRlbmQgdGhlIGN1cnJlbnQgcmVtb3RlcHJvYyB3b3JrIG1vZGU/Cj4+
-PiBUaGVuLCB0aGUgcGFyYWxsZWwgd29yayBtb2RlIGNhbiBiZSBzZXR1cCBpbiBpdC4gQW5kIHRo
-ZSBvcmlnaW5hbAo+PiBtYXN0ZXIvc2xhdmUgbW9kZSB3b3VsZG4ndCBtZXNzZWQgdXAgYnkgdGhl
-IHBhcmFsbGVsIG1vZGUgZXh0ZW5zaW9uLgo+Pj4gUGxlYXNlIHRvIGZlZWwgZnJlZSB0byBnaXZl
-IHRoZSBjb21tZW50cy4KPj4+IEFueSBjb21tZW50cyBhbmQgc3VnZ2VzdGlvbnMgYXJlIGFwcHJl
-Y2lhdGVkLgo+PiBJTUhPLCBUaGF0J3Mgc2VlbXMgdG8gYmUgdXNlbGVzcywgaWYgZXhpc3Rpbmcg
-c29sdXRpb24gY291bGQgYmUgYWRhcHRlZC4KPj4gQnV0IEknbSBub3QgdGhlIG1haW50YWluZXIu
-Li4ganVzdCBhIGNvbnRyaWJ1dG9yLgo+Pgo+IFtSaWNoYXJkIFpodV0gVW5kZXJzdGFuZC4gVGhh
-bmtzLiDwn5iKCj4gCj4gQmVzdCBSZWdhcmRzCj4gUmljaGFyZAo+Pgo+PiBCZXN0IFJlZ2FyZHMK
-Pj4gQXJuYXVkCj4+Cj4+Pgo+Pj4gVGhhbmtzIGluIGFkdmFuY2VkLgo+Pj4KPj4+IEJlc3QgUmVn
-YXJkcwo+Pj4gUmljaGFyZCBaaHUKPj4+Cj4+Cj4+IDxTbmlwPgoKX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxp
-c3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
-YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Tue, Jul 16, 2019 at 2:45 AM Sam Ravnborg <sam@ravnborg.org> wrote:
+>
+> Drop use of the deprecated drmP.h header file.
+>
+> While touching the include files divide them up in blocks
+> in the typical order:
+>
+> \#include <linux/*>
+>
+> \#include <video/*>
+>
+> \#include <drm/*>
+>
+> \#include ""
+>
+> And sort the includes in the blocks
+> Add the necessary includes to fix build after removal of drmP.h
+>
+> Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
+> Acked-by: Emil Velikov <emil.velikov@collabora.com>
+> Cc: CK Hu <ck.hu@mediatek.com>
+> Cc: Philipp Zabel <p.zabel@pengutronix.de>
+> Cc: David Airlie <airlied@linux.ie>
+> Cc: Daniel Vetter <daniel@ffwll.ch>
+> Cc: Matthias Brugger <matthias.bgg@gmail.com>
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-mediatek@lists.infradead.org
+
+
+Reviewed-by: Alex Deucher <alexander.deucher@amd.com>
+
+> ---
+>  drivers/gpu/drm/mediatek/mtk_disp_color.c   |  2 +-
+>  drivers/gpu/drm/mediatek/mtk_disp_ovl.c     |  2 +-
+>  drivers/gpu/drm/mediatek/mtk_disp_rdma.c    |  2 +-
+>  drivers/gpu/drm/mediatek/mtk_dpi.c          | 18 ++++++++++--------
+>  drivers/gpu/drm/mediatek/mtk_drm_crtc.c     | 10 ++++++----
+>  drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c |  2 +-
+>  drivers/gpu/drm/mediatek/mtk_drm_drv.c      | 16 ++++++++++------
+>  drivers/gpu/drm/mediatek/mtk_drm_fb.c       |  7 ++++---
+>  drivers/gpu/drm/mediatek/mtk_drm_gem.c      |  6 ++++--
+>  drivers/gpu/drm/mediatek/mtk_drm_plane.c    |  2 +-
+>  drivers/gpu/drm/mediatek/mtk_dsi.c          | 14 ++++++++------
+>  drivers/gpu/drm/mediatek/mtk_hdmi.c         | 14 +++++++++-----
+>  12 files changed, 56 insertions(+), 39 deletions(-)
+>
+> diff --git a/drivers/gpu/drm/mediatek/mtk_disp_color.c b/drivers/gpu/drm/mediatek/mtk_disp_color.c
+> index f33d98b356d6..59de2a46aa49 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_disp_color.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_disp_color.c
+> @@ -3,9 +3,9 @@
+>   * Copyright (c) 2017 MediaTek Inc.
+>   */
+>
+> -#include <drm/drmP.h>
+>  #include <linux/clk.h>
+>  #include <linux/component.h>
+> +#include <linux/module.h>
+>  #include <linux/of_device.h>
+>  #include <linux/of_irq.h>
+>  #include <linux/platform_device.h>
+> diff --git a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
+> index c4f07c28c74f..21851756c579 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
+> @@ -3,9 +3,9 @@
+>   * Copyright (c) 2015 MediaTek Inc.
+>   */
+>
+> -#include <drm/drmP.h>
+>  #include <linux/clk.h>
+>  #include <linux/component.h>
+> +#include <linux/module.h>
+>  #include <linux/of_device.h>
+>  #include <linux/of_irq.h>
+>  #include <linux/platform_device.h>
+> diff --git a/drivers/gpu/drm/mediatek/mtk_disp_rdma.c b/drivers/gpu/drm/mediatek/mtk_disp_rdma.c
+> index 9a6f0a29e43c..405afef31407 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_disp_rdma.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_disp_rdma.c
+> @@ -3,9 +3,9 @@
+>   * Copyright (c) 2015 MediaTek Inc.
+>   */
+>
+> -#include <drm/drmP.h>
+>  #include <linux/clk.h>
+>  #include <linux/component.h>
+> +#include <linux/module.h>
+>  #include <linux/of_device.h>
+>  #include <linux/of_irq.h>
+>  #include <linux/platform_device.h>
+> diff --git a/drivers/gpu/drm/mediatek/mtk_dpi.c b/drivers/gpu/drm/mediatek/mtk_dpi.c
+> index bacd989cc9aa..be6d95c5ff25 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_dpi.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_dpi.c
+> @@ -3,21 +3,23 @@
+>   * Copyright (c) 2014 MediaTek Inc.
+>   * Author: Jie Qiu <jie.qiu@mediatek.com>
+>   */
+> -#include <drm/drmP.h>
+> -#include <drm/drm_crtc.h>
+> -#include <drm/drm_atomic_helper.h>
+> -#include <drm/drm_of.h>
+> -#include <linux/kernel.h>
+> +
+> +#include <linux/clk.h>
+>  #include <linux/component.h>
+> -#include <linux/platform_device.h>
+> +#include <linux/interrupt.h>
+> +#include <linux/kernel.h>
+>  #include <linux/of.h>
+>  #include <linux/of_device.h>
+>  #include <linux/of_graph.h>
+> -#include <linux/interrupt.h>
+> +#include <linux/platform_device.h>
+>  #include <linux/types.h>
+> -#include <linux/clk.h>
+> +
+>  #include <video/videomode.h>
+>
+> +#include <drm/drm_atomic_helper.h>
+> +#include <drm/drm_crtc.h>
+> +#include <drm/drm_of.h>
+> +
+>  #include "mtk_dpi_regs.h"
+>  #include "mtk_drm_ddp_comp.h"
+>
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> index a9007210dda1..34a731755791 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> @@ -3,14 +3,16 @@
+>   * Copyright (c) 2015 MediaTek Inc.
+>   */
+>
+> +#include <linux/clk.h>
+> +#include <linux/pm_runtime.h>
+> +
+>  #include <asm/barrier.h>
+> -#include <drm/drmP.h>
+> +#include <soc/mediatek/smi.h>
+> +
+>  #include <drm/drm_atomic_helper.h>
+>  #include <drm/drm_plane_helper.h>
+>  #include <drm/drm_probe_helper.h>
+> -#include <linux/clk.h>
+> -#include <linux/pm_runtime.h>
+> -#include <soc/mediatek/smi.h>
+> +#include <drm/drm_vblank.h>
+>
+>  #include "mtk_drm_drv.h"
+>  #include "mtk_drm_crtc.h"
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
+> index b38963f1f2ec..efa85973e46b 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
+> @@ -12,7 +12,7 @@
+>  #include <linux/of_irq.h>
+>  #include <linux/of_platform.h>
+>  #include <linux/platform_device.h>
+> -#include <drm/drmP.h>
+> +
+>  #include "mtk_drm_drv.h"
+>  #include "mtk_drm_plane.h"
+>  #include "mtk_drm_ddp_comp.h"
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> index 2d5caf532431..2ee809a6f3dc 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> @@ -4,22 +4,26 @@
+>   * Author: YT SHEN <yt.shen@mediatek.com>
+>   */
+>
+> -#include <drm/drmP.h>
+> +#include <linux/component.h>
+> +#include <linux/iommu.h>
+> +#include <linux/module.h>
+> +#include <linux/of_address.h>
+> +#include <linux/of_platform.h>
+> +#include <linux/pm_runtime.h>
+> +
+>  #include <drm/drm_atomic.h>
+>  #include <drm/drm_atomic_helper.h>
+> +#include <drm/drm_drv.h>
+>  #include <drm/drm_fb_helper.h>
+>  #include <drm/drm_gem.h>
+>  #include <drm/drm_gem_cma_helper.h>
+>  #include <drm/drm_of.h>
+>  #include <drm/drm_probe_helper.h>
+> -#include <linux/component.h>
+> -#include <linux/iommu.h>
+> -#include <linux/of_address.h>
+> -#include <linux/of_platform.h>
+> -#include <linux/pm_runtime.h>
+> +#include <drm/drm_vblank.h>
+>
+>  #include "mtk_drm_crtc.h"
+>  #include "mtk_drm_ddp.h"
+> +#include "mtk_drm_ddp.h"
+>  #include "mtk_drm_ddp_comp.h"
+>  #include "mtk_drm_drv.h"
+>  #include "mtk_drm_fb.h"
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_fb.c b/drivers/gpu/drm/mediatek/mtk_drm_fb.c
+> index 396ba497986d..ae40b080ae47 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_fb.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_fb.c
+> @@ -3,13 +3,14 @@
+>   * Copyright (c) 2015 MediaTek Inc.
+>   */
+>
+> -#include <drm/drmP.h>
+> +#include <linux/dma-buf.h>
+> +#include <linux/reservation.h>
+> +
+>  #include <drm/drm_modeset_helper.h>
+>  #include <drm/drm_fb_helper.h>
+> +#include <drm/drm_fourcc.h>
+>  #include <drm/drm_gem.h>
+>  #include <drm/drm_gem_framebuffer_helper.h>
+> -#include <linux/dma-buf.h>
+> -#include <linux/reservation.h>
+>
+>  #include "mtk_drm_drv.h"
+>  #include "mtk_drm_fb.h"
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_gem.c b/drivers/gpu/drm/mediatek/mtk_drm_gem.c
+> index 0d69698f8173..9434f88c6341 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_gem.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_gem.c
+> @@ -3,10 +3,12 @@
+>   * Copyright (c) 2015 MediaTek Inc.
+>   */
+>
+> -#include <drm/drmP.h>
+> -#include <drm/drm_gem.h>
+>  #include <linux/dma-buf.h>
+>
+> +#include <drm/drm_device.h>
+> +#include <drm/drm_gem.h>
+> +#include <drm/drm_prime.h>
+> +
+>  #include "mtk_drm_drv.h"
+>  #include "mtk_drm_gem.h"
+>
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_plane.c b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
+> index 42cc9823eaaa..584a9ecadce6 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_plane.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
+> @@ -4,9 +4,9 @@
+>   * Author: CK Hu <ck.hu@mediatek.com>
+>   */
+>
+> -#include <drm/drmP.h>
+>  #include <drm/drm_atomic.h>
+>  #include <drm/drm_atomic_helper.h>
+> +#include <drm/drm_fourcc.h>
+>  #include <drm/drm_plane_helper.h>
+>  #include <drm/drm_gem_framebuffer_helper.h>
+>
+> diff --git a/drivers/gpu/drm/mediatek/mtk_dsi.c b/drivers/gpu/drm/mediatek/mtk_dsi.c
+> index b91c4616644a..224afb666881 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_dsi.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_dsi.c
+> @@ -3,12 +3,6 @@
+>   * Copyright (c) 2015 MediaTek Inc.
+>   */
+>
+> -#include <drm/drmP.h>
+> -#include <drm/drm_atomic_helper.h>
+> -#include <drm/drm_mipi_dsi.h>
+> -#include <drm/drm_panel.h>
+> -#include <drm/drm_of.h>
+> -#include <drm/drm_probe_helper.h>
+>  #include <linux/clk.h>
+>  #include <linux/component.h>
+>  #include <linux/iopoll.h>
+> @@ -17,9 +11,17 @@
+>  #include <linux/of_platform.h>
+>  #include <linux/phy/phy.h>
+>  #include <linux/platform_device.h>
+> +
+>  #include <video/mipi_display.h>
+>  #include <video/videomode.h>
+>
+> +#include <drm/drm_atomic_helper.h>
+> +#include <drm/drm_mipi_dsi.h>
+> +#include <drm/drm_of.h>
+> +#include <drm/drm_panel.h>
+> +#include <drm/drm_print.h>
+> +#include <drm/drm_probe_helper.h>
+> +
+>  #include "mtk_drm_ddp_comp.h"
+>
+>  #define DSI_START              0x00
+> diff --git a/drivers/gpu/drm/mediatek/mtk_hdmi.c b/drivers/gpu/drm/mediatek/mtk_hdmi.c
+> index 5d6a9f094df5..ce91b61364eb 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_hdmi.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_hdmi.c
+> @@ -3,11 +3,7 @@
+>   * Copyright (c) 2014 MediaTek Inc.
+>   * Author: Jie Qiu <jie.qiu@mediatek.com>
+>   */
+> -#include <drm/drmP.h>
+> -#include <drm/drm_atomic_helper.h>
+> -#include <drm/drm_crtc.h>
+> -#include <drm/drm_probe_helper.h>
+> -#include <drm/drm_edid.h>
+> +
+>  #include <linux/arm-smccc.h>
+>  #include <linux/clk.h>
+>  #include <linux/delay.h>
+> @@ -23,7 +19,15 @@
+>  #include <linux/phy/phy.h>
+>  #include <linux/platform_device.h>
+>  #include <linux/regmap.h>
+> +
+>  #include <sound/hdmi-codec.h>
+> +
+> +#include <drm/drm_atomic_helper.h>
+> +#include <drm/drm_crtc.h>
+> +#include <drm/drm_edid.h>
+> +#include <drm/drm_print.h>
+> +#include <drm/drm_probe_helper.h>
+> +
+>  #include "mtk_cec.h"
+>  #include "mtk_hdmi.h"
+>  #include "mtk_hdmi_regs.h"
+> --
+> 2.20.1
+>
+> _______________________________________________
+> dri-devel mailing list
+> dri-devel@lists.freedesktop.org
+> https://lists.freedesktop.org/mailman/listinfo/dri-devel
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
