@@ -2,114 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B6E916A795
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 13:42:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A1DC46A7A5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 13:47:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:MIME-Version:In-Reply-To:
+	References:To:Subject:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IRegjIxWO4ZTVdJgkcTJDXJBCaPirqdMEQr5Aq4ARGc=; b=dE6izZecGE/F9P
-	VRd5vHhZCarXmWJH9B4+mQ78AmgPc5Dee5EuMVZsh9paiDYSIyr9rNHrL5VLdWq4sxKquTgtvdgL0
-	E5uMTWUmInkUvDxA1k8rFjCMEL04p1xG8MQ0FIJA0dlzVRzGCO7weOsr5cQt7dEo4Tx1Ze6Ega4+t
-	aTBVyvXr2vkiM8aaYqGv5Qtwo8KGucmxIOymz+qHY6pLU1T2Y+3pYuh4ePyFlIOZbcWm9D13T9q8b
-	fix+yO0gZFVOZ8K+dEczezaEwLD2SXrgpnmTkSFLtbcIeWi+iUguhAw/ECVNlzQyD6cN58i+/AuGP
-	YrwBLz+xuOfeT2+QK3CQ==;
+	List-Owner; bh=QPgcZi1xVvbpvX96AExrae858qO0kJucZJ8PxSbcCZo=; b=YZTcdcbvDSXcUa
+	y7dlRjrcvXPFtXNCfTQRXAZm1zVy2q+dqbbc0hVGJxNrXKNf0S8xt2enIN+LEgUG2NILxsgmIEO9/
+	rP9srpBvtOXictfSQLMjSBqdREXfjKYz1Zzbq53WXZftFKmb0KGM62RBjkrH3TJ8PfdmkdPuukMUl
+	NHlm4DxFjFgRLqR3NdAGCEcGJYUmF4dyKW1moEZb5CHeBC6jAKUaSdcMGpNpYQG3HtBmcmPtGGUUY
+	2fADDPS6/dG30eBoHE51AOI0T6hpoC5UmxWlJeXUYsnK9Ym7fHhOSgAlbBunOQ7IqTyMixsu8R7ch
+	Ml/59cTNmISzT47AHUTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnLr6-00056M-Jl; Tue, 16 Jul 2019 11:42:48 +0000
-Received: from mail-eopbgr790133.outbound.protection.outlook.com
- ([40.107.79.133] helo=NAM03-CO1-obe.outbound.protection.outlook.com)
+	id 1hnLvv-000779-Mj; Tue, 16 Jul 2019 11:47:47 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnLqt-00054A-9g
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 11:42:37 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=iAR+wiwErDFrYoBGPyUvIsGb1gS4HK/t7gYyBUxbRvlFYvNKb0yQhN8TUKolgaQ4Lkgp2Y+d4hqQRtSqBwvLyCZty39FnmspnrejtdzNcsO3MzVzfaaBDZyMb2yc5Y8ryPQk3f4MaPb/+lTavhFYzLv7A8nupkzAVusc+3gt540CVO+rrZKMmeu/ez/Di9/vBNNGzwAk+PG0gTDc70s+95ge0i2Azm0uNQSD2YNKEM0mUlnqfNAvTVXLYsrEvjrq/vV6uqofH4c2mhx65Xr0RNczi6OM8g56oljqjhKHDJXlV0Bfl7QQcVXoPIiU/8UTOWA7YUsKOG/nWZ2Jcfxadw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5h8tABCJzsxE2qmQ9CG9PmZ//DE/W5dzQF1ycVlUs+M=;
- b=RaK/VNm2IvM/AV+Ljs7sBqMFT2SiBORQK2pf3f+GNWZuNIvEcqAx2LkjrG6m9gAVU+XIeXPdHNIfD/0TjHr0XR7CqIK/xl2N7ylZpyo3xWEGLQxarB4AMUsTIaUqDoLxAPYU05QHKKcxMoSxhM1krpjhkxKq4nTE9SvNHi6dTaPU9GxGfhdq18/zt1P4oKfsQV47UMz18rZRFTveaLlW0dayqxixdMicM015rf0jwF6Pib2V7CqxRl31XBLg51mJ8dNIQ1jfts9kVMnks5n4JrWB/4EQTCM0cbf0bcmkdo9rKu6LzPhutR/LdphUh86hFVHRbMdzpO+v0af/KRjOjw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=wavecomp.com;dmarc=pass action=none
- header.from=mips.com;dkim=pass header.d=mips.com;arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=wavesemi.onmicrosoft.com; s=selector1-wavesemi-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5h8tABCJzsxE2qmQ9CG9PmZ//DE/W5dzQF1ycVlUs+M=;
- b=nORXN4Nc8wEmqwTCDsOfDSTNt7prkYCxo+uWAt/WY7fT/7LvIZnGT+X/e5vJhmxD1phfIwvm9rWk+QSivfyi3Clb74hxAhjE1APi2VV06dYwX06DLoyn0Z8uFxv4ETI2NQpA7yxCco4DF5q2WXLwl3M4v4QH4FOven1igQ2PiT8=
-Received: from MWHPR2201MB1277.namprd22.prod.outlook.com (10.172.60.12) by
- MWHPR2201MB1552.namprd22.prod.outlook.com (10.174.170.165) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2073.10; Tue, 16 Jul 2019 11:42:27 +0000
-Received: from MWHPR2201MB1277.namprd22.prod.outlook.com
- ([fe80::746d:883d:31:522e]) by MWHPR2201MB1277.namprd22.prod.outlook.com
- ([fe80::746d:883d:31:522e%5]) with mapi id 15.20.2073.012; Tue, 16 Jul 2019
- 11:42:27 +0000
-From: Paul Burton <paul.burton@mips.com>
-To: Stephen Rothwell <sfr@canb.auug.org.au>
-Subject: Re: [PATCH] MIPS: fix some more fall through errors in arch/mips
-Thread-Topic: [PATCH] MIPS: fix some more fall through errors in arch/mips
-Thread-Index: AQHVOwtgel77smof50yH54sFVwDx+abNIPEA
-Date: Tue, 16 Jul 2019 11:42:27 +0000
-Message-ID: <MWHPR2201MB12779F73ACB565148B256387C1CE0@MWHPR2201MB1277.namprd22.prod.outlook.com>
-References: <20190715224640.5e086766@canb.auug.org.au>
-In-Reply-To: <20190715224640.5e086766@canb.auug.org.au>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: LO2P265CA0072.GBRP265.PROD.OUTLOOK.COM
- (2603:10a6:600:60::36) To MWHPR2201MB1277.namprd22.prod.outlook.com
- (2603:10b6:301:18::12)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=pburton@wavecomp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [212.140.138.203]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 80dbaf4d-f130-4fce-5f23-08d709e2ad36
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:MWHPR2201MB1552; 
-x-ms-traffictypediagnostic: MWHPR2201MB1552:
-x-microsoft-antispam-prvs: <MWHPR2201MB155269C46285DB7C539486E6C1CE0@MWHPR2201MB1552.namprd22.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:2150;
-x-forefront-prvs: 0100732B76
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(366004)(346002)(396003)(39830400003)(136003)(376002)(199004)(189003)(42882007)(5660300002)(52536014)(8676002)(81166006)(66946007)(66476007)(71190400001)(64756008)(66446008)(71200400001)(66556008)(81156014)(8936002)(68736007)(54906003)(316002)(6916009)(74316002)(229853002)(7416002)(7736002)(305945005)(6116002)(3846002)(11346002)(66066001)(4326008)(2906002)(7696005)(52116002)(478600001)(76176011)(99286004)(386003)(6436002)(6246003)(25786009)(186003)(26005)(33656002)(14454004)(9686003)(53936002)(55016002)(4744005)(44832011)(476003)(446003)(256004)(6506007)(102836004)(486006);
- DIR:OUT; SFP:1102; SCL:1; SRVR:MWHPR2201MB1552;
- H:MWHPR2201MB1277.namprd22.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: wavecomp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: Yj6zyCOZ1E5Kzfqy4sNNL5T3SCdnVehY/28gRLShhFVQYw8U8fiYY18A0FMjpVpEYvQFAjF/K+5i1SV/SFEBfXSPZ2RN6+c1Zgo3uZZxP4yPTctk+CBM25ppbYrbaGlbKjfWmIHxdSjkcuaTSSUPWan9CQ09FLglQdd1AhE4oTaa11tdapIyKQ58ltLydWdHlcBi/0RRFtkTdef/E9VefYog+N65gYtCauWOK+WgK6uTb+LEPCSpMl9iAv1JEjEP7Pki7eRlzAFPJJQYI1NLFxM0G0kGNma6YLlC9w5T11GzrNVLu1KkEx0Xs0qZJHlZA9CUe+Z5mNYzaDyMBzHOkres5hPA/xvc2zw2Y6LGG+qne9AiB8pxWgnCYNu264Ycc8lV2fYIBLiNk0amxNI5FFvfAVzt065J/ETOmcNp+Yk=
+ id 1hnLvj-00076Y-7p
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 11:47:36 +0000
+Received: by mail-pg1-x544.google.com with SMTP id n9so3102674pgc.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 16 Jul 2019 04:47:34 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:subject:to:cc:references:in-reply-to:mime-version
+ :user-agent:message-id:content-transfer-encoding;
+ bh=qPnqoEfs2c2FJiT2itcjWmfJK1RsKaw7z2dBi7iQTJ8=;
+ b=GWz4yv38B5GHtENqY4vKofVQ91e0o/Wf3To5Ps1dYZG0HD5Ek2EHO2Dc7Ow7eTInF8
+ 6V2Ylge8TO9m/bByMpQYgvAJMrZvdG3hSLoe3le3WrAf4DJkafN2xpBGM8XjRxts22Wl
+ fwEiPyHbfrkm6UMLSuHMn/gd7z8YK8aSErG8WB+A5roIC5O0ZPZ/6GMpagTh5qiyB+K7
+ yG6MrQ7ON432Xy90IZVQ3KnMcyWz9iH91bIQQjqhHjYLmAxiZwGFc9kDORakmYFFow9m
+ dvKHxsEKn/ChfEWmG3TrgmHbJEuO1ziKFvpkOF6Z/rwgSAH09LcgUIkZ09KBkugy6xrh
+ 5rJg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:subject:to:cc:references:in-reply-to
+ :mime-version:user-agent:message-id:content-transfer-encoding;
+ bh=qPnqoEfs2c2FJiT2itcjWmfJK1RsKaw7z2dBi7iQTJ8=;
+ b=bLSB05c2TleyBsTX88IvjV8UlGaAXAK6il9P6db3SulFsX63pCpb3LiFjrX+6GrErL
+ ihyGNuMtBQmDkrRDHCIpQK0TJneF2Rp6Lj0V0oC612K79QNQ+7tKHoJciGCTLrfTYW8H
+ YPHuf5MzOE1JVoG1sjj8ZyCEohbIA0Y4sH3haZm5k1+XD+NVk6ww1IMPFgnbIR063u2C
+ NOcuG1fRJBXZOjkvp0jho566ynQVn+/IHBpxZ8G9cxFeJfWg7lwT7icmogukhp1Al5wC
+ z71wGBZJLGmEeqpwn1KjXutpA+2l5IEIW/W+ltGWPRgtB9vFXE6Ov3dwTQQY92PSKRYF
+ NioA==
+X-Gm-Message-State: APjAAAVdbjmdx3sEjYueBO49dWqrRdHXCghfYRLKmcWWNnloFV+VYl4V
+ jVAlDvU5qvLO4BcKl/3fwY4=
+X-Google-Smtp-Source: APXvYqzHZwrzaDAsguaX2IsIyUiWc2RXpFglPckISYDzHT896XmmxWdI422IRFIGhq+LtZkupLz2ig==
+X-Received: by 2002:a63:60a:: with SMTP id 10mr2299610pgg.381.1563277654138;
+ Tue, 16 Jul 2019 04:47:34 -0700 (PDT)
+Received: from localhost ([203.220.8.141])
+ by smtp.gmail.com with ESMTPSA id t10sm19804313pjr.13.2019.07.16.04.47.32
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 16 Jul 2019 04:47:33 -0700 (PDT)
+Date: Tue, 16 Jul 2019 21:47:27 +1000
+From: Nicholas Piggin <npiggin@gmail.com>
+Subject: Re: [PATCH v3 0/5] Add NUMA-awareness to qspinlock
+To: Alex Kogan <alex.kogan@oracle.com>, arnd@arndb.de, bp@alien8.de,
+ guohanjun@huawei.com, hpa@zytor.com, jglauber@marvell.com,
+ linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux@armlinux.org.uk, linux-kernel@vger.kernel.org, longman@redhat.com,
+ mingo@redhat.com, peterz@infradead.org, tglx@linutronix.de,
+ will.deacon@arm.com, x86@kernel.org
+References: <20190715192536.104548-1-alex.kogan@oracle.com>
+In-Reply-To: <20190715192536.104548-1-alex.kogan@oracle.com>
 MIME-Version: 1.0
-X-OriginatorOrg: mips.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 80dbaf4d-f130-4fce-5f23-08d709e2ad36
-X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Jul 2019 11:42:27.5740 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 463607d3-1db3-40a0-8a29-970c56230104
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: pburton@wavecomp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR2201MB1552
+User-Agent: astroid/0.14.0 (https://github.com/astroidmail/astroid)
+Message-Id: <1563277166.m9swqogbqb.astroid@bobo.none>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_044235_483114_D7B22619 
-X-CRM114-Status: UNSURE (   6.74  )
+X-CRM114-CacheID: sfid-20190716_044735_309030_C1F271AC 
+X-CRM114-Status: UNSURE (   5.97  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.2 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.79.133 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (npiggin[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -123,54 +104,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Paul Burton <pburton@wavecomp.com>, Florian Fainelli <f.fainelli@gmail.com>,
- Kees Cook <keescook@chromium.org>,
- "Gustavo A. R. Silva" <gustavo@embeddedor.com>,
- James Hogan <jhogan@kernel.org>,
- "linux-mips@vger.kernel.org" <linux-mips@vger.kernel.org>,
- Ralf Baechle <ralf@linux-mips.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "bcm-kernel-feedback-list@broadcom.com"
- <bcm-kernel-feedback-list@broadcom.com>, John Crispin <john@phrozen.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- Matthias Schiffer <mschiffer@universe-factory.net>,
- =?Windows-1252?Q?Petr_=8Atetiar_?= <ynezz@true.cz>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="windows-1252"
-Content-Transfer-Encoding: quoted-printable
+Cc: rahul.x.yadav@oracle.com, dave.dice@oracle.com, steven.sistare@oracle.com,
+ daniel.m.jordan@oracle.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
+Alex Kogan's on July 16, 2019 5:25 am:
+> Our evaluation shows that CNA also improves performance of user 
+> applications that have hot pthread mutexes. Those mutexes are 
+> blocking, and waiting threads park and unpark via the futex 
+> mechanism in the kernel. Given that kernel futex chains, which
+> are hashed by the mutex address, are each protected by a 
+> chain-specific spin lock, the contention on a user-mode mutex 
+> translates into contention on a kernel level spinlock. 
 
-Stephen Rothwell wrote:
-> Fix these errors:
-> =
-
-> arch/mips/cavium-octeon/executive/cvmx-pko.c:489:7: error: this statement=
- may fall through [-Werror=3Dimplicit-fallthrough=3D]
-> arch/mips/bcm63xx/dev-flash.c:89:3: error: this statement may fall throug=
-h [-Werror=3Dimplicit-fallthrough=3D]
-> arch/mips/ath79/setup.c:155:17: error: this statement may fall through [-=
-Werror=3Dimplicit-fallthrough=3D]
-> arch/mips/ar7/setup.c:50:3: error: this statement may fall through [-Werr=
-or=3Dimplicit-fallthrough=3D]
-> =
-
-> Cc: Florian Fainelli <f.fainelli@gmail.com>
-> Cc: Thomas Gleixner <tglx@linutronix.de>
-> Cc: John Crispin <john@phrozen.org>
-> Cc: Matthias Schiffer <mschiffer@universe-factory.net>
-> Cc: "Petr =C5=A0tetiar" <ynezz@true.cz>
-> Signed-off-by: Stephen Rothwell <sfr@canb.auug.org.au>
-
-Applied to mips-next.
+What applications are those, what performance numbers? Arguably that's
+much more interesting than microbenchmarks (which are mainly useful to
+help ensure the fast paths are not impacted IMO).
 
 Thanks,
-    Paul
-
-[ This message was auto-generated; if you believe anything is incorrect
-  then please email paul.burton@mips.com to report it. ]
+Nick
 
 _______________________________________________
 linux-arm-kernel mailing list
