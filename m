@@ -2,58 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E33C36A64E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 12:18:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99C336A65C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 12:21:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hRAvm3pFlV0wTn30NNZA3zCNL9S3IY2QBbCJS8tDvcM=; b=ZHeFKS+2bdWbQy
-	VjFA/CseWvjVzRk55tIXZAx05HtOmXPnqew09ZdoIhk3iWwW3J4jHbdICdaYkfqCEKsCMAQ4XGoQl
-	Rlfdh6bbjKuNxvfeRtQFRudbgSAqCvMoqZsOK4hX9FERjfApTE0oG6nOxJ8KnOq7eAeUM98MnhxvJ
-	CrdJiUikoUjqKrxDYayFmjyQdWh+UTvm5NVjzbd/1oCKHfqBJLD6nDtZXU9vCRNS/Lwt+Iba3QsYH
-	EzHuyNpKEq8IG+L/HtuB81+WAdbAJhXTQnJw68Fm3R1aXovc/jwn3m/IvfiCIVcPA06x7brkXp+i9
-	Vr3JG0lfDT/XIn5j+smQ==;
+	List-Owner; bh=DRhPAdMOayfY8ExFpvaLkE3GKeSEvtmNR6BPqPAzfLs=; b=nIPvt6CRtQ6QfJ
+	KqZGOPLaJS1lvkYACqpfUjZedchLzLlIqNbzy3jXl8HUWXbVmjAsBMEoPzmAx0y1uaJUyw63ZinNk
+	uuMuX5DLuK5YvK2Yo3Ozvuhld9ELelw9iBq/YqZWBTEmAknOBHtbh+TOyO3Ga76W2h6hDKvBgixF6
+	Z1llTC2A7LIdKz6MgCYFvARNHHY5EpkZJZ8Q1X3rI+OBvxuxRQD45yXfZulDKpLOlwhliZYYsQB0K
+	xMBuF9wos0XOeQG1z2z8cN1DTCRJNle+BqK+hWwh8k/hcr32QK+JvNVB+Madue9hE1qeFUEFXN8VF
+	xI1A8AIjqsgXYXe22jkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnKXC-0002x6-Sx; Tue, 16 Jul 2019 10:18:10 +0000
-Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+	id 1hnKZw-0004pf-7o; Tue, 16 Jul 2019 10:21:00 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnKWz-0002wO-LP
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 10:17:59 +0000
-X-Originating-IP: 92.137.69.152
-Received: from localhost (alyon-656-1-672-152.w92-137.abo.wanadoo.fr
- [92.137.69.152])
- (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id C768224003A;
- Tue, 16 Jul 2019 10:15:25 +0000 (UTC)
-Date: Tue, 16 Jul 2019 12:15:24 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH] ARM: dts: at91: Avoid colliding 'display' node and
- property names
-Message-ID: <20190716101524.GM4732@piout.net>
-References: <20190516225614.1458-1-robh@kernel.org>
- <20190520145830.GE3274@piout.net>
- <CAL_JsqK0piWGQBeqcOceF=fSX4vSW7_vyv0qAAxz-bg25qEVow@mail.gmail.com>
+ id 1hnKZi-0004p2-KK
+ for linux-arm-kernel@bombadil.infradead.org; Tue, 16 Jul 2019 10:20:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=+jPmiLFoLFkErQnsFP18srbHMWPmmDSQUv0S0HNnLWo=; b=1FCCrHiw6wHWzTKNNLJJ628q3
+ sfZxcu4lXp8UOSjklMM84EEttE7cH/rxMVbAXKhQFu/3gZ+10G+GnD+QOGbggR+a4ntTcNNLYXw6j
+ HQwYBI7Ip3s3jo0xYu5aAhxsO3PdiOkRFEk7AC6tY7L756h2yeZid6XR7FOoEIDs4wrGIKWBypx6+
+ 29+ITIL/Aw/WCMapng0MkEzqtfJq2WfLPttOSGcTayXz12kmjfnqKQ1/O4cinbNjMouqSZ1YNkODG
+ xCHWvcC8YQP8U9hwBoJRuKV0DN2nezJlsVl3CsaH//S3ws6GsMrkZoCA9+TfD1jPwDtslYWwL3NIq
+ t5kPYIzrg==;
+Received: from j217100.upc-j.chello.nl ([24.132.217.100]
+ helo=hirez.programming.kicks-ass.net)
+ by merlin.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
+ id 1hnKZX-0005uN-La; Tue, 16 Jul 2019 10:20:36 +0000
+Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
+ id 58FB52021C301; Tue, 16 Jul 2019 12:20:34 +0200 (CEST)
+Date: Tue, 16 Jul 2019 12:20:34 +0200
+From: Peter Zijlstra <peterz@infradead.org>
+To: Alex Kogan <alex.kogan@oracle.com>
+Subject: Re: [PATCH v3 2/5] locking/qspinlock: Refactor the qspinlock slow path
+Message-ID: <20190716102034.GN3419@hirez.programming.kicks-ass.net>
+References: <20190715192536.104548-1-alex.kogan@oracle.com>
+ <20190715192536.104548-3-alex.kogan@oracle.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAL_JsqK0piWGQBeqcOceF=fSX4vSW7_vyv0qAAxz-bg25qEVow@mail.gmail.com>
-User-Agent: Mutt/1.12.0 (2019-05-25)
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_031757_860018_5AC8C760 
-X-CRM114-Status: GOOD (  19.37  )
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.193 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+In-Reply-To: <20190715192536.104548-3-alex.kogan@oracle.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,65 +63,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: linux-arch@vger.kernel.org, guohanjun@huawei.com, arnd@arndb.de,
+ dave.dice@oracle.com, jglauber@marvell.com, x86@kernel.org,
+ will.deacon@arm.com, linux@armlinux.org.uk, steven.sistare@oracle.com,
+ linux-kernel@vger.kernel.org, rahul.x.yadav@oracle.com, mingo@redhat.com,
+ bp@alien8.de, hpa@zytor.com, longman@redhat.com, tglx@linutronix.de,
+ daniel.m.jordan@oracle.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 15/07/2019 15:45:24-0600, Rob Herring wrote:
-> On Mon, May 20, 2019 at 8:58 AM Alexandre Belloni
-> <alexandre.belloni@bootlin.com> wrote:
-> >
-> > On 16/05/2019 17:56:14-0500, Rob Herring wrote:
-> > > While properties and child nodes with the same name are valid DT, the
-> > > practice is not encouraged.
-> >
-> > I don't see anything mentioning that in the devicetree specification. I
-> > think this is something you should add if you don't want that to happen
-> > again.
-> 
-> I suppose, but I prefer tools to enforce it.
-> 
-> >
-> > > Furthermore, the collision is problematic for
-> > > YAML encoded DT. Let's just avoid the issue and rename the nodes.
-> > >
-> >
-> > Or maybe you should fix the tool ;)
-> 
-> You mean the YAML and JSON specifications because the problem is it is
-> not valid YAML? (I think YAML allowed it at one time, but it is
-> deprecated) The only way to fix it in the tool would be to define some
-> way to handle the collision like renaming properties and then undoing
-> that.
-> 
-> > Do you plan to enforce it at some point? How close are you?
-> 
-> Soon as this patch is merged. There's a switch in parsing tools to
-> disallow the collision, so it will be an error instead of a warning.
-> 
-> > > Cc: Nicolas Ferre <nicolas.ferre@microchip.com>
-> > > Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>
-> > > Cc: Ludovic Desroches <ludovic.desroches@microchip.com>
-> > > Cc: linux-arm-kernel@lists.infradead.org
-> > > Signed-off-by: Rob Herring <robh@kernel.org>
-> >
-> > Acked-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
-> 
-> Is someone going to apply this?
-> 
+On Mon, Jul 15, 2019 at 03:25:33PM -0400, Alex Kogan wrote:
 
-I'll apply it for the next cycle, sorry about that.
+> +/*
+> + * set_locked_empty_mcs - Try to set the spinlock value to _Q_LOCKED_VAL,
+> + * and by doing that unlock the MCS lock when its waiting queue is empty
+> + * @lock: Pointer to queued spinlock structure
+> + * @val: Current value of the lock
+> + * @node: Pointer to the MCS node of the lock holder
+> + *
+> + * *,*,* -> 0,0,1
+> + */
+> +static __always_inline bool __set_locked_empty_mcs(struct qspinlock *lock,
+> +						   u32 val,
+> +						   struct mcs_spinlock *node)
+> +{
+> +	return atomic_try_cmpxchg_relaxed(&lock->val, &val, _Q_LOCKED_VAL);
+> +}
+
+That name is nonsense. It should be something like:
+
+static __always_inline bool __try_clear_tail(...)
 
 
--- 
-Alexandre Belloni, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+> +/*
+> + * pass_mcs_lock - pass the MCS lock to the next waiter
+> + * @node: Pointer to the MCS node of the lock holder
+> + * @next: Pointer to the MCS node of the first waiter in the MCS queue
+> + */
+> +static __always_inline void __pass_mcs_lock(struct mcs_spinlock *node,
+> +					    struct mcs_spinlock *next)
+> +{
+> +	arch_mcs_spin_unlock_contended(&next->locked, 1);
+> +}
+
+I'm not entirely happy with that name either; but it's not horrible like
+the other one. Why not mcs_spin_unlock_contended() ?
 
 _______________________________________________
 linux-arm-kernel mailing list
