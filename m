@@ -2,61 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9AD166A0C6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 05:19:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D05EC6A0D1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 05:31:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=C7G6XWfh9a3/ApbCgfFcDdLX50ZZyrBJBOZqhnM49uM=; b=aN/
-	JUL4mU7738SGyrj+H8FZbT8oYse0NJ8dSIBAQE+ucoGwuL4D/cOJTXKirLW7bB2+eyEjSxYSJuAPy
-	DdoVUNw1+vZl7wMfESFxToUByWjtzREdE6JD39bUWPTXOtrvg3lP9uam3ubRuiT1BUE38Ufnx6DCZ
-	Dd/Qja5gATYL+7w3HO/SoWn4mXQ9RiIM0evOOLfxflwZ5ERgEDC4DSdcRCN6q4cqLALDIbadV4con
-	G8lyBxXlr34C86KYb5VI2oSQX8eSLWyYPvBt34mwM22GenRBzGxTknzHSKuVIJqOhe3xVMVJItA9w
-	HZSSnyqQ8F2RviE0/j8MMlRlvncspWA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YfrVFNPfUZYE536xDzGuBDZOpO8Iay+dmumoq778Ly0=; b=Zy/3aD/274grDc
+	ythkioQROl1HWUQZkausjEFxoHvwSv+r2GxrQHW3dGdBe3NWxhkrapxF7KNEFeDuUeGnz5x18vYq1
+	XEY4GKpnSUtJDn5CDkNRH5jsYRWn7Byc6jBpnEGchRiwup9nhNbk7vyS5DZzcFgCRCqnsvcqxtNVK
+	WxROOFeADqlEGxei7Pji6q7Nkgoh1rxIZYa7Pd/YpHTe9J3fwsCdRISn8nMAyCe/OfX3vYepulayB
+	7s8Kew5bQM8WwZuc8/7CRM/qrkMqaTskm7kipqhOIv2qUWENhPOriibZOH70RkqyUzqeccY6236Ht
+	X8hwfqnakT0meW8+3INg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnDzi-0007NG-Am; Tue, 16 Jul 2019 03:19:10 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1hnEC4-00045w-Ou; Tue, 16 Jul 2019 03:31:57 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnDzW-0007MJ-9D
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 03:18:59 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id E9580200066;
- Tue, 16 Jul 2019 05:18:54 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 4B10E200029;
- Tue, 16 Jul 2019 05:18:48 +0200 (CEST)
-Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id A4358402D5;
- Tue, 16 Jul 2019 11:18:39 +0800 (SGT)
-From: Anson.Huang@nxp.com
-To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
- s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
- ping.bai@nxp.com, aisheng.dong@nxp.com, linus.walleij@linaro.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH] arm64: dts: imx8mm: Correct SAI3 RXC/TXFS pin's mux option #1
-Date: Tue, 16 Jul 2019 11:09:33 +0800
-Message-Id: <20190716030933.30894-1-Anson.Huang@nxp.com>
-X-Mailer: git-send-email 2.9.5
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1hnEBr-000451-9e; Tue, 16 Jul 2019 03:31:44 +0000
+Received: from mail-wm1-f45.google.com (mail-wm1-f45.google.com
+ [209.85.128.45])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1EB8E21738;
+ Tue, 16 Jul 2019 03:31:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1563247901;
+ bh=nkLC7Do/0/ASx+htK3W0deCY/L7u52YvatK3PThzs1o=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=bOmSYmFwgJoFlxLXY0jcxork4cP46Hw0+GSfRe0St3ZR0NPWSU7OH04NHQzXB8AVq
+ xC5enZlHYqatS/fVlSf/0vI5R8YiIYDxKt7mnew6O4KX/QKodKFpVFFPEwBC7jUGlV
+ iUvYO2H5sEaclssF++r91+dLjJklm/J0ax/BT9Ms=
+Received: by mail-wm1-f45.google.com with SMTP id x15so17090275wmj.3;
+ Mon, 15 Jul 2019 20:31:41 -0700 (PDT)
+X-Gm-Message-State: APjAAAUlNwyezz19/tTXKUmMPUUUpIWhogeiN64fP64C7AAQueD7pRvu
+ l2mMHg0SpZCLqdsPGJ4DOG+gE3pTSOgmchAfVmM=
+X-Google-Smtp-Source: APXvYqyPa5rP95ycs6b3WYMG+EzG85EsRWTZkZHjobdrhwBuzs6W/qfB+TTyLjN39USlTZAaWUOIcPqk90kThcB1O2E=
+X-Received: by 2002:a7b:c212:: with SMTP id x18mr26821859wmi.77.1563247899662; 
+ Mon, 15 Jul 2019 20:31:39 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190321163623.20219-1-julien.grall@arm.com>
+ <20190321163623.20219-12-julien.grall@arm.com>
+ <0dfe120b-066a-2ac8-13bc-3f5a29e2caa3@arm.com>
+ <CAJF2gTTXHHgDboaexdHA284y6kNZVSjLis5-Q2rDnXCxr4RSmA@mail.gmail.com>
+ <c871a5ae-914f-a8bb-9474-1dcfec5d45bf@arm.com>
+ <CAJF2gTStSR7Jmu7=HaO5Wxz=Zn8A5-RD8ktori3oKEhM9vozAA@mail.gmail.com>
+ <20190621141606.GF18954@arrakis.emea.arm.com>
+ <CAJF2gTTVUToRkRtxTmtWDotMGXy5YQCpL1h_2neTBuN3e6oz1w@mail.gmail.com>
+ <20190624153820.GH29120@arrakis.emea.arm.com>
+ <CAJF2gTRUzHUNV+nzECUp5n2L1akdy=Aovb6tSd+PNVnpasBrqw@mail.gmail.com>
+ <20190701091711.GA21774@arrakis.emea.arm.com>
+In-Reply-To: <20190701091711.GA21774@arrakis.emea.arm.com>
+From: Guo Ren <guoren@kernel.org>
+Date: Tue, 16 Jul 2019 11:31:27 +0800
+X-Gmail-Original-Message-ID: <CAJF2gTTEbhA-pZCPGuUNqXT9F-vk8fSTyNJyEOpn=QE=toAN3g@mail.gmail.com>
+Message-ID: <CAJF2gTTEbhA-pZCPGuUNqXT9F-vk8fSTyNJyEOpn=QE=toAN3g@mail.gmail.com>
+Subject: Re: [PATCH RFC 11/14] arm64: Move the ASID allocator code in a
+ separate file
+To: Catalin Marinas <catalin.marinas@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190715_201858_465992_45398C5D 
-X-CRM114-Status: UNSURE (   5.99  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190715_203143_380223_6DE527D9 
+X-CRM114-Status: GOOD (  21.49  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,51 +93,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-MIME-Version: 1.0
+Cc: julien.thierry@arm.com, aou@eecs.berkeley.edu, james.morse@arm.com,
+ suzuki.poulose@arm.com, Marc Zyngier <marc.zyngier@arm.com>,
+ Anup Patel <anup.Patel@wdc.com>, Will Deacon <will.deacon@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-csky@vger.kernel.org, rppt@linux.ibm.com, hch@infradead.org,
+ Atish Patra <Atish.Patra@wdc.com>, Julien Grall <julien.grall@arm.com>,
+ Palmer Dabbelt <palmer@sifive.com>, gary@garyguo.net, paul.walmsley@sifive.com,
+ christoffer.dall@arm.com, linux-riscv@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Anson Huang <Anson.Huang@nxp.com>
+Hello Catalin,
 
-According to i.MX8MM reference manual Rev.1, 03/2019:
+Thanks for sharing about CnP assid experience. See my comment below.
 
-SAI3_RXC pin's mux option #1 should be GPT1_CLK, NOT GPT1_CAPTURE2;
-SAI3_TXFS pin's mux option #1 should be GPT1_CAPTURE2, NOT GPT1_CLK.
+On Mon, Jul 1, 2019 at 5:17 PM Catalin Marinas
+> From the ASID reservation/allocation perspective, the mechanism is the
+> same between multi-threaded with a shared TLB and multi-core. On arm64,
+> a local_flush_tlb_all() on a thread invalidates the TLB for the other
+> threads of the same core.
+>
+> The actual problem with multi-threaded CPUs is a lot more subtle.
+> Digging some internal email from 1.5 years ago and pasting it below
+> (where "current ASID algorithm" refers to the one prior to the fix and
+> CnP - Common Not Private - means shared TLBs on a multi-threaded CPU):
+>
+>
+> The current ASID roll-over algorithm allows for a small window where
+> active_asids for a CPU (P1) is different from the actual ASID in TTBR0.
+> This can lead to a roll-over on a different CPU (P2) allocating an ASID
+> (for a different task) which is still hardware-active on P1.
+>
+> A TLBI on a CPU (or a peer CPU with CnP) does not guarantee that all the
+> entries corresponding to a valid TTBRx are removed as they can still be
+> speculatively loaded immediately after TLBI.
+>
+> While having two different page tables with the same ASID on different
+> CPUs should be fine without CnP, it becomes problematic when CnP is
+> enabled:
+>
+> P1                                      P2
+> --                                      --
+> TTBR0.BADDR = T1
+> TTBR0.ASID = A1
+> check_and_switch_context(T2,A2)
+>   asid_maps[P1] = A2
+>   goto fastpath
+>                                         check_and_switch_context(T3,A0)
+>                                           new_context
+>                                             ASID roll-over allocates A1
+>                                               since it is not active
+>                                           TLBI ALL
+> speculate TTBR0.ASID = A1 entry
+>                                           TTBR0.BADDR = T3
+>                                           TTBR0.ASID = A1
+>   TTBR0.BADDR = T2
+>   TTBR0.ASID = A2
+>
+> After this, the common TLB on P1 and P2 (CnP) contains entries
+> corresponding to the old T1 and A1. Task T3 using the same ASID A1 can
+> hit such entries. (T1,A1) will eventually be removed from the TLB on the
+> next context switch on P1 since tlb_flush_pending was set but this is
+> not guaranteed to happen.
+>
+>
+> The fix on arm64 (as part of 5ffdfaedfa0a - "arm64: mm: Support Common
+> Not Private translations") was to set the reserved TTBR0 in
+> check_and_switch_context(), preventing speculative loads into the TLB
+> being tagged with the wrong ASID. So this is specific to the ARM CPUs
+> behaviour w.r.t. speculative TLB loads, it may not be the case (yet) for
+> your architecture.
 
-Fixes: c1c9d41319c3 ("dt-bindings: imx: Add pinctrl binding doc for imx8mm")
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
----
- arch/arm64/boot/dts/freescale/imx8mm-pinfunc.h | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+The most important thing is that TLBI ALL occurs between
+"asid_maps[P1] = A2" and "TTBR0.BADDR = T2", then speculative
+execution after TLBI which access to user space code/data will result
+in a valid asid entry which re-filled into the TLB by PTW.
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mm-pinfunc.h b/arch/arm64/boot/dts/freescale/imx8mm-pinfunc.h
-index e25f7fc..cffa899 100644
---- a/arch/arm64/boot/dts/freescale/imx8mm-pinfunc.h
-+++ b/arch/arm64/boot/dts/freescale/imx8mm-pinfunc.h
-@@ -462,7 +462,7 @@
- #define MX8MM_IOMUXC_SAI3_RXFS_GPIO4_IO28                                   0x1CC 0x434 0x000 0x5 0x0
- #define MX8MM_IOMUXC_SAI3_RXFS_TPSMP_HTRANS0                                0x1CC 0x434 0x000 0x7 0x0
- #define MX8MM_IOMUXC_SAI3_RXC_SAI3_RX_BCLK                                  0x1D0 0x438 0x000 0x0 0x0
--#define MX8MM_IOMUXC_SAI3_RXC_GPT1_CAPTURE2                                 0x1D0 0x438 0x000 0x1 0x0
-+#define MX8MM_IOMUXC_SAI3_RXC_GPT1_CLK                                      0x1D0 0x438 0x000 0x1 0x0
- #define MX8MM_IOMUXC_SAI3_RXC_SAI5_RX_BCLK                                  0x1D0 0x438 0x4D0 0x2 0x2
- #define MX8MM_IOMUXC_SAI3_RXC_GPIO4_IO29                                    0x1D0 0x438 0x000 0x5 0x0
- #define MX8MM_IOMUXC_SAI3_RXC_TPSMP_HTRANS1                                 0x1D0 0x438 0x000 0x7 0x0
-@@ -472,7 +472,7 @@
- #define MX8MM_IOMUXC_SAI3_RXD_GPIO4_IO30                                    0x1D4 0x43C 0x000 0x5 0x0
- #define MX8MM_IOMUXC_SAI3_RXD_TPSMP_HDATA0                                  0x1D4 0x43C 0x000 0x7 0x0
- #define MX8MM_IOMUXC_SAI3_TXFS_SAI3_TX_SYNC                                 0x1D8 0x440 0x000 0x0 0x0
--#define MX8MM_IOMUXC_SAI3_TXFS_GPT1_CLK                                     0x1D8 0x440 0x000 0x1 0x0
-+#define MX8MM_IOMUXC_SAI3_TXFS_GPT1_CAPTURE2                                0x1D8 0x440 0x000 0x1 0x0
- #define MX8MM_IOMUXC_SAI3_TXFS_SAI5_RX_DATA1                                0x1D8 0x440 0x4D8 0x2 0x2
- #define MX8MM_IOMUXC_SAI3_TXFS_GPIO4_IO31                                   0x1D8 0x440 0x000 0x5 0x0
- #define MX8MM_IOMUXC_SAI3_TXFS_TPSMP_HDATA1                                 0x1D8 0x440 0x000 0x7 0x0
+A similar problem should exist if C-SKY ISA supports SMT. Although the
+C-SKY kernel prohibits the kernel from speculating on user space code
+directly, ld/st can access user space memory in csky kernel mode.
+Therefore, a similar problem occurs when it speculatively executes
+copy_from / to_user codes in that window.
+
+RISC-V ISA has a SUM setting bit that prevents the kernel from
+speculating access to user space. So this problem has been bypassed
+from the design.
+
+I saw arm64 to prevent speculation by temporarily setting TTBR0.el1 to
+a zero page table. Is that used to prevent speculative execution user
+space code or just prevent ld/st in copy_use_* ?
+
 -- 
-2.7.4
+Best Regards
+ Guo Ren
 
+ML: https://lore.kernel.org/linux-csky/
 
 _______________________________________________
 linux-arm-kernel mailing list
