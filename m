@@ -2,83 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A7986AD2F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 18:57:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 34C866AD30
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 18:57:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=t7XHg4UOsFQqdG4T2Mf/TtwIZtm31WwEqMHJUye7wyM=; b=TO6rzJF7LsZe6Q
-	ZpjxXX3xY19QpLInpi2ANwlm+TpRtg0Fs0dws2smKQQ5rTn6TUf7dcfpWbbVifW0GfsD9uyBq4yrT
-	oEcNlFjklagIHSxFA5Bbc7JC7hYNIuYWfoo0p8GXJtzTC1/TYQz5iV7WtE417LWzEAN82B5EMKYSG
-	9h143OoFF5uKAfqDNq2Rqk6FIwhw/ZJWfeee/5OtEW4i7yQIVvgN2qpD3G54WuQTDLEwhqJSbzh9q
-	k+UPN5tAFyZzhBSVB1jw83Vpg11kuBC1rt1wigExvYPOhSv/hw0DI0xVlQVm0LaC0/C23zqIWfr9U
-	p5QhsTdJM9A4SgJRVi0A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6AVueCBwdDpMpYlXnq32e+c/N3PDbscAUi1NFjVcR68=; b=BPKVKPC6hcl4za
+	owTSBPoQa1bA7LVxdb4RPZVSvCOcsjy0Pcmz4GFIWotuqy/vkrkLaMNaPw6YjfcAzA0DhgR7MfExW
+	1QMl4iqrpKRdRuds5WDvcs4Zv1kZI9ST5q29ElY/HuTX543uhGlkdyBQaJ5L8LVMRIYhgdPN1yL26
+	40T2fX8p49MdAzNIC29ELrdaAFiW12QNn3bNm9uzPxL6UWdYMTlFXJX41Ntsl/C712WfZcjroaQbH
+	VlUgFTFfKxtZHlz+d8ZC3swir39+/PGAewEF7AVbx6ChRtUMEZKWJB0EZd5Ul+Krk3irobE5CFVpZ
+	KdfDRwU3hbgXHQ/oZtOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnQlK-00056j-88; Tue, 16 Jul 2019 16:57:10 +0000
-Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
+	id 1hnQlc-0005LP-QM; Tue, 16 Jul 2019 16:57:28 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnQku-00052J-UV
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 16:56:46 +0000
-Received: by mail-qk1-x742.google.com with SMTP id t8so15163725qkt.1
+ id 1hnQkv-00052R-FU
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 16:56:48 +0000
+Received: by mail-qt1-x841.google.com with SMTP id y26so20307352qto.4
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jul 2019 09:56:43 -0700 (PDT)
+ Tue, 16 Jul 2019 09:56:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
- h=from:to:subject:date:message-id:mime-version
+ h=from:to:subject:date:message-id:in-reply-to:references:mime-version
  :content-transfer-encoding;
- bh=6Lzzb/85EG5OgOgZivNuRXqXu1x2wo0l3U6fbMwd+XY=;
- b=lh1neXWXugGNV0dD3EYhMNUpg7DZEDvz1t0tPOAnKx+unFKLPJPHDaTqfhAhJrO1ZH
- mNDj0YIw9TasLeLCzxrWbrrpvlNFANnKcnhW+RYEYFz1veXLvn464WK7Uldc+ROkhHU6
- gdElKf2YCz/I9fx4lW976vyQZemYOJOs0W/FJt9XWP/+Uk3iHkG2NaYBcvmDvF9L/Gcb
- lylbDHe/GsntFtMCjRbO98XFP4ShcUE2rJZKzH53KEv7x85o17zAKq89GXy3kTt5A9Lb
- K4rqNY0m41+yBjl4R+5BymQAPQSDBNeOFvlftEQZd4uTQfNuhWaPVVfcdvQzOPmWX6Lg
- POrA==
+ bh=JkgYB201+YgtZ67xz124QalImKwHhD6hCX1vEDo1XAU=;
+ b=h5Lfrj4oD0WIqU6ygkd/Fq6YtgSA5kUklS4HcoiluHDChhEtO4DfF3FXAOHZoNSeCm
+ Qhej/p8oi+GphDHnwLxKOaFOAJeBkg6l9mlc/+E4PJtYlKxvBn+HtZ4Ta4dpZVmxhbZX
+ 1K9RtH/Q50Ei12r27O9HiDA+aOe1WIV7OpE+Ur5ro2lt2huOfTy2h/vYCnccPex7x35l
+ bxf3Hq39Q/gK7xyaA+Ok5qq5QKv5KwayqGxpnxBPP38fc9PySfALkm1xG8plhfjIY5au
+ Ubi4eL+bANK8Z/oL4+ZVTiLwR63VOBupKwcL+wUi6xtjo6aMfBD77X+qKxDGAflTHmNX
+ oCUQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=6Lzzb/85EG5OgOgZivNuRXqXu1x2wo0l3U6fbMwd+XY=;
- b=KViGnbY1DwLvjQ5IU6cdMfR5h7Mp3g2fdjDYTsgz2q6PIMYgwXY1QnDmT+K8GBS8Vx
- /Bex8pe1OZrzAncPMJUD5Z5F/7/8cKB0OT7S3eheuWPykrrv/+yMbSaWE6+K3RbW5cwf
- PrS9bcqX567UkSBYtS3gLGZgvgqSF3zwxrwVgvOebTRj5MwB69WPBeTis25WQJRjJXcr
- tnE+mnuxEZVmJIRLCPKk4syedHgq62PpYYlXhAYRD1nZq4JuvVcydME795SxBvMYZKUw
- WUvMXzMbCn/AdHqyXcbW/1ZIYnSwZd34pLYq64PNok126VFqEw9FzstNjQtwr2BlYXWp
- z7XQ==
-X-Gm-Message-State: APjAAAV/wghwTExeVvHIMUN9nBL+2cM+J3EsAP2VP8ZcSYBNQZsHYNoe
- t+uxIrZ9ipaUfoS0aYjpPR0=
-X-Google-Smtp-Source: APXvYqz9+3MPpBLc2mmfXv0e2ASGs2pqg3VhykHLyEYnWb9ZZDcdSJoSxY9+HqM4r5uxzR7M4+5VFA==
-X-Received: by 2002:a37:c20a:: with SMTP id i10mr20823361qkm.76.1563296202999; 
- Tue, 16 Jul 2019 09:56:42 -0700 (PDT)
+ h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=JkgYB201+YgtZ67xz124QalImKwHhD6hCX1vEDo1XAU=;
+ b=HlY/mmWxdJLdeN62EyvaVYWSbHdIp2ZTX0RrB/DsX8pf2lsG7J6vY91Xum2tSNMJRh
+ gFBrzKhMLQ6j36yrd1NiA7e2dU8K89k3HhCk29XLui+/JjoGQMF8TfJ+JFY7+iYQJpx6
+ zOQ9WEdGuIfx2kVYbT+PmISIyKCtW4cTqb18ZcNWXkgFeOvOG/oVwqAniQeDTqxa0ND0
+ T6BzpZwMQmb1079FdzVPXh7v7i/OYpNrQYEKHIldGvelQfFPMDqSrsMvQv/NEQzumCuc
+ QPbQBIt5sisOgBW5mfxe2nyB9Z+JkhHc92CuRBL36xBHk25CZy8ygRWnqXkaKmElL91V
+ lnkQ==
+X-Gm-Message-State: APjAAAWqe6/dvQxv3HgJtzA98WqYaIED1Kaa9L9hUxUfpJfF55/RL2WF
+ RuYRDxdafKfZ2/UKKsxEdqY=
+X-Google-Smtp-Source: APXvYqwZZYB7JTSxjflHH6PzEmuWW65i2dKDOtRvxBkvqU4u3mcg8TDxomQhWhsJDugWob8iCPoiBw==
+X-Received: by 2002:ac8:2b49:: with SMTP id 9mr24808489qtv.343.1563296204311; 
+ Tue, 16 Jul 2019 09:56:44 -0700 (PDT)
 Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
  [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id f20sm8519538qkh.15.2019.07.16.09.56.41
+ by smtp.gmail.com with ESMTPSA id f20sm8519538qkh.15.2019.07.16.09.56.43
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 16 Jul 2019 09:56:42 -0700 (PDT)
+ Tue, 16 Jul 2019 09:56:43 -0700 (PDT)
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
 To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  ebiederm@xmission.com, kexec@lists.infradead.org,
  linux-kernel@vger.kernel.org, corbet@lwn.net, catalin.marinas@arm.com,
  will@kernel.org, linux-doc@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [RFC v1 0/4] arm64: MMU enabled kexec kernel relocation
-Date: Tue, 16 Jul 2019 12:56:37 -0400
-Message-Id: <20190716165641.6990-1-pasha.tatashin@soleen.com>
+Subject: [RFC v1 1/4] arm64, mm: identity mapped page table
+Date: Tue, 16 Jul 2019 12:56:38 -0400
+Message-Id: <20190716165641.6990-2-pasha.tatashin@soleen.com>
 X-Mailer: git-send-email 2.22.0
+In-Reply-To: <20190716165641.6990-1-pasha.tatashin@soleen.com>
+References: <20190716165641.6990-1-pasha.tatashin@soleen.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_095645_170339_55DEB752 
-X-CRM114-Status: UNSURE (   9.92  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190716_095645_518362_B6E211C9 
+X-CRM114-Status: GOOD (  14.37  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -105,40 +106,169 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Added identity mapped page table, and keep MMU enabled while
-kernel is being relocated from sparse pages to the final
-destination during kexec.
+Created identiy mapped page table that maps 1 to 1 virtual to physical
+addresses.
 
-More description about the problem I am trying to solve here, can be
-found here:
-https://lore.kernel.org/lkml/20190709182014.16052-1-pasha.tatashin@soleen.com/
+Similarly to x86, this table can be used in kasan, hibernate, and kexec.
 
-This patch series works in terms, that I can kexec-reboot both in QEMU
-and on a physical machine. However, I do not see performance improvement
-during relocation. The performance is just as slow as before with disabled
-caches.
-
-Am I missing something? Perhaps, there is some flag that I should also
-enable in page table? Please provide me with any suggestions.
-
-Pavel Tatashin (4):
-  arm64, mm: identity mapped page table
-  arm64, kexec: interface preparation for mmu enabled kexec
-  arm64, kexec: add kexec's own identity page table
-  arm64: Keep MMU on while kernel is being relocated
-
- arch/arm64/include/asm/ident_map.h  |  26 ++++++
- arch/arm64/include/asm/kexec.h      |   5 +-
- arch/arm64/kernel/cpu-reset.S       |   8 --
- arch/arm64/kernel/cpu-reset.h       |   7 +-
- arch/arm64/kernel/machine_kexec.c   | 128 +++++++++++++++++++++-------
- arch/arm64/kernel/relocate_kernel.S |  36 +++++---
- arch/arm64/mm/Makefile              |   1 +
- arch/arm64/mm/ident_map.c           |  99 +++++++++++++++++++++
- 8 files changed, 255 insertions(+), 55 deletions(-)
+Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
+---
+ arch/arm64/include/asm/ident_map.h | 26 ++++++++
+ arch/arm64/mm/Makefile             |  1 +
+ arch/arm64/mm/ident_map.c          | 99 ++++++++++++++++++++++++++++++
+ 3 files changed, 126 insertions(+)
  create mode 100644 arch/arm64/include/asm/ident_map.h
  create mode 100644 arch/arm64/mm/ident_map.c
 
+diff --git a/arch/arm64/include/asm/ident_map.h b/arch/arm64/include/asm/ident_map.h
+new file mode 100644
+index 000000000000..1bb9fcd27368
+--- /dev/null
++++ b/arch/arm64/include/asm/ident_map.h
+@@ -0,0 +1,26 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright (c) 2019, Microsoft Corporation.
++ * Pavel Tatashin <patatash@linux.microsoft.com>
++ */
++
++#ifndef _ASM_IDENT_MAP_H
++#define _ASM_IDENT_MAP_H
++
++#include <linux/types.h>
++#include <asm/pgtable.h>
++
++struct ident_map_info {
++	void * (*alloc_pgt_page)(void *);	/* allocate a page  */
++	void *alloc_arg;			/* arg. for alloc_pgt_page */
++	unsigned long page_flags;		/* PMD or PUD flags */
++	unsigned long offset;			/* ident mapping offset */
++	bool pud_pages;				/* PUD level huge pages */
++};
++
++int ident_map_pgd_populate(struct ident_map_info *info,
++			   phys_addr_t pgd_page,
++			   phys_addr_t addr,
++			   phys_addr_t end);
++
++#endif /* _ASM_ARM64_IDENT_MAP_H */
+diff --git a/arch/arm64/mm/Makefile b/arch/arm64/mm/Makefile
+index 849c1df3d214..dfa5a074a360 100644
+--- a/arch/arm64/mm/Makefile
++++ b/arch/arm64/mm/Makefile
+@@ -5,6 +5,7 @@ obj-y				:= dma-mapping.o extable.o fault.o init.o \
+ 				   context.o proc.o pageattr.o
+ obj-$(CONFIG_HUGETLB_PAGE)	+= hugetlbpage.o
+ obj-$(CONFIG_ARM64_PTDUMP_CORE)	+= dump.o
++obj-$(CONFIG_KEXEC_CORE)	+= ident_map.o
+ obj-$(CONFIG_ARM64_PTDUMP_DEBUGFS)	+= ptdump_debugfs.o
+ obj-$(CONFIG_NUMA)		+= numa.o
+ obj-$(CONFIG_DEBUG_VIRTUAL)	+= physaddr.o
+diff --git a/arch/arm64/mm/ident_map.c b/arch/arm64/mm/ident_map.c
+new file mode 100644
+index 000000000000..bcfff5e2573b
+--- /dev/null
++++ b/arch/arm64/mm/ident_map.c
+@@ -0,0 +1,99 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Copyright (c) 2019, Microsoft Corporation.
++ * Pavel Tatashin <patatash@linux.microsoft.com>
++ */
++
++#include <asm/ident_map.h>
++#include <asm/pgalloc.h>
++
++/* Initialize PMD size huge entries in page table */
++static void ident_map_pmd_init(struct ident_map_info *info,
++			       phys_addr_t pmd_page, phys_addr_t addr,
++			       phys_addr_t end)
++{
++	const unsigned long flags = info->page_flags;
++	const unsigned long offset = info->offset;
++	pmd_t *pmdp = (pmd_t *)__va(pmd_page) + pmd_index(addr);
++
++	addr &= PMD_MASK;
++	for (; addr < end; addr += PMD_SIZE, pmdp++) {
++		set_pmd(pmdp, __pmd(__phys_to_pmd_val(addr - offset) | flags));
++	}
++}
++
++/* Initialize PUD size huge entries in page table */
++static void ident_map_pud_init(struct ident_map_info *info,
++			       phys_addr_t pud_page, phys_addr_t addr,
++			       phys_addr_t end)
++{
++	const unsigned long flags = info->page_flags;
++	const unsigned long offset = info->offset;
++	pud_t *pudp = (pud_t *)__va(pud_page) + pud_index(addr);
++
++	addr &= PUD_MASK;
++	for (; addr < end; addr += PUD_SIZE, pudp++) {
++		set_pud(pudp, __pud(__phys_to_pud_val(addr - offset) | flags));
++	}
++}
++
++/* Populate PUD level with PMD entries */
++static int ident_map_pud_populate(struct ident_map_info *info,
++				  phys_addr_t pud_page, phys_addr_t addr,
++				  phys_addr_t end)
++{
++	pud_t *pudp = (pud_t *)__va(pud_page) + pud_index(addr);
++	phys_addr_t pmd_page, next;
++
++	for (; addr < end; addr = next, pudp++) {
++		next = pud_addr_end(addr, end);
++		if (pud_none(*pudp)) {
++			void *pmd = info->alloc_pgt_page(info->alloc_arg);
++
++			if (!pmd)
++				return -ENOMEM;
++
++			clear_page(pmd);
++			__pud_populate(pudp, __pa(pmd), PUD_TYPE_TABLE);
++		}
++		pmd_page = __pud_to_phys(*pudp);
++		ident_map_pmd_init(info, pmd_page, addr, next);
++	}
++
++	return 0;
++}
++
++/* Populate identify mapped page table with physical range[addr, end) */
++int ident_map_pgd_populate(struct ident_map_info *info,
++			   phys_addr_t pgd_page, phys_addr_t addr,
++			   phys_addr_t end)
++{
++	const bool pud_pages = info->pud_pages;
++	pgd_t *pgdp = (pgd_t *)__va(pgd_page) + pgd_index(addr);
++	phys_addr_t pud_page, next;
++
++	for (; addr < end; addr = next, pgdp++) {
++		next = pgd_addr_end(addr, end);
++		if (pgd_none(*pgdp)) {
++			void *pud = info->alloc_pgt_page(info->alloc_arg);
++
++			if (!pud)
++				return -ENOMEM;
++
++			clear_page(pud);
++			__pgd_populate(pgdp, __pa(pud), PUD_TYPE_TABLE);
++		}
++		pud_page = __pgd_to_phys(*pgdp);
++		if (pud_pages) {
++			ident_map_pud_init(info, pud_page, addr, next);
++		} else {
++			int rv = ident_map_pud_populate(info, pud_page, addr,
++				 next);
++
++			if (rv)
++				return rv;
++		}
++	}
++
++	return 0;
++}
 -- 
 2.22.0
 
