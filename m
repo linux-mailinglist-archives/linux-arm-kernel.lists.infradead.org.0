@@ -2,76 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D05EC6A0D1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 05:31:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD1976A0EE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 05:45:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YfrVFNPfUZYE536xDzGuBDZOpO8Iay+dmumoq778Ly0=; b=Zy/3aD/274grDc
-	ythkioQROl1HWUQZkausjEFxoHvwSv+r2GxrQHW3dGdBe3NWxhkrapxF7KNEFeDuUeGnz5x18vYq1
-	XEY4GKpnSUtJDn5CDkNRH5jsYRWn7Byc6jBpnEGchRiwup9nhNbk7vyS5DZzcFgCRCqnsvcqxtNVK
-	WxROOFeADqlEGxei7Pji6q7Nkgoh1rxIZYa7Pd/YpHTe9J3fwsCdRISn8nMAyCe/OfX3vYepulayB
-	7s8Kew5bQM8WwZuc8/7CRM/qrkMqaTskm7kipqhOIv2qUWENhPOriibZOH70RkqyUzqeccY6236Ht
-	X8hwfqnakT0meW8+3INg==;
+	List-Owner; bh=hGidgAYZHUswHPrrdcKcncvwmAK8/4r+htjIA83K6Ug=; b=FfZPH/Zlm299y/
+	lxH0Q+P0Ahbt3IUQOUYcdyRGtiPwWaROUNihHoOjORqa/WjoyhPwYDUn6SH5HGQ7zOR9spn5uFsSU
+	P8zBzPjq6f4PIvv9wmd95KbJQhFnKJlaDMex4Yuk2LiVPT++nAqqMAxCeCxcOBBg+uwUJlrl3rOmw
+	g9NL7NQqSnwWvTeAyx05Ggal/6vYrJR1ui1uy8BVuJ282Y0mEojlEbim5EUZALkW1zMQ+6me+U79u
+	cZenXmXzurKunPdxZ91TvQAjuk8nX2lBXfsEaHTc7KrqMShnGHkXBNWbXrFCopzHoZEoa34LfjAMq
+	Mc3Ac/XOy2D/WjQaQMBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnEC4-00045w-Ou; Tue, 16 Jul 2019 03:31:57 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hnEOd-0007aK-FK; Tue, 16 Jul 2019 03:44:55 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnEBr-000451-9e; Tue, 16 Jul 2019 03:31:44 +0000
-Received: from mail-wm1-f45.google.com (mail-wm1-f45.google.com
- [209.85.128.45])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1EB8E21738;
- Tue, 16 Jul 2019 03:31:41 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563247901;
- bh=nkLC7Do/0/ASx+htK3W0deCY/L7u52YvatK3PThzs1o=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=bOmSYmFwgJoFlxLXY0jcxork4cP46Hw0+GSfRe0St3ZR0NPWSU7OH04NHQzXB8AVq
- xC5enZlHYqatS/fVlSf/0vI5R8YiIYDxKt7mnew6O4KX/QKodKFpVFFPEwBC7jUGlV
- iUvYO2H5sEaclssF++r91+dLjJklm/J0ax/BT9Ms=
-Received: by mail-wm1-f45.google.com with SMTP id x15so17090275wmj.3;
- Mon, 15 Jul 2019 20:31:41 -0700 (PDT)
-X-Gm-Message-State: APjAAAUlNwyezz19/tTXKUmMPUUUpIWhogeiN64fP64C7AAQueD7pRvu
- l2mMHg0SpZCLqdsPGJ4DOG+gE3pTSOgmchAfVmM=
-X-Google-Smtp-Source: APXvYqyPa5rP95ycs6b3WYMG+EzG85EsRWTZkZHjobdrhwBuzs6W/qfB+TTyLjN39USlTZAaWUOIcPqk90kThcB1O2E=
-X-Received: by 2002:a7b:c212:: with SMTP id x18mr26821859wmi.77.1563247899662; 
- Mon, 15 Jul 2019 20:31:39 -0700 (PDT)
+ id 1hnEOR-0007Ys-5X
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 03:44:44 +0000
+Received: by mail-pf1-x444.google.com with SMTP id y15so8405079pfn.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 15 Jul 2019 20:44:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=HAbLIcu7Y20FNSdYESSfYWN0X3RSwMnzsh7JLim98Ng=;
+ b=yKegYub9QM21pRBwJqRi8F7TMNXEId9/ySwc7QINpN5uD4U+n1p44JjV3eA/OqTnvV
+ Fj5JMWC1s6/aaaAIgNxP6aXrqZM2z28G/TuoS/cKOI5fImpiNmGIAABDDxRTi/x8zgSs
+ qDhUk4CmUXpAlWbWemWBVPqNwL8dvuZc0kzNpTWfUOChO/yGROao6ZRDEWTZWQbDe5A1
+ qby6s15XKz0DYAIEiwMs356UINM7Zqw2pGSHUudVEKGRA2YlB6EEzyxObeyRN49XMeiQ
+ 72LyTwIb8qPvXQogyOtk4zMLcTn2DJPhSaEfl9WwB6R0YHCHfEzy4ozhvn5eHa0kip7m
+ 996w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=HAbLIcu7Y20FNSdYESSfYWN0X3RSwMnzsh7JLim98Ng=;
+ b=kxzhU+ev2UKWkjlMR6uwNowWMtwIYJZBBAPlUUIPCW8VjW3x7CIiGj5VX5aXiYQDFi
+ bejrVSIBwN+KTdYGN3J7MW5C2/3TPrsdik6Kk8gvZf6oWy8JqZTviB9s9tbD2Bbrrv+/
+ TbL1/qjzIpbDWpZOYBP/M9FCn4PNXvKyqSmZnEu8Oj8NHoJGcQXSRm7siArWg3OFy2vM
+ qBpSHpzwlLs0pyecVLO13rRh9JlJ52DAPJ+UtAeJmHN/tDfdwlQx+RVi7DWZmabxt+aH
+ HjhZFVIkQM58O8yH/L8Zk3dkj4x2SpmJFQJUsgAjUw4WpMaNtQ4v8zCgUHdF5uBLoSKe
+ ER0g==
+X-Gm-Message-State: APjAAAVxE1MwufYtp++fIQw5gheyOIIEQr6iHyZrdG6ZKTAn6FZHr6Ci
+ paQHGBfhGLN0pOOZVXK/wKIAFB7yIcs=
+X-Google-Smtp-Source: APXvYqyh2bo4bQr+Uxcy92vuimvnkN7dPco681H2kbg5jPAu33xrMkg0wuu6HD4e5qQkyrKUiJau7A==
+X-Received: by 2002:a17:90a:fa12:: with SMTP id
+ cm18mr33204852pjb.137.1563248680896; 
+ Mon, 15 Jul 2019 20:44:40 -0700 (PDT)
+Received: from localhost ([122.172.28.117])
+ by smtp.gmail.com with ESMTPSA id u16sm19716809pjb.2.2019.07.15.20.44.38
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 15 Jul 2019 20:44:39 -0700 (PDT)
+Date: Tue, 16 Jul 2019 09:14:37 +0530
+From: Viresh Kumar <viresh.kumar@linaro.org>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH v4.4 V2 00/43] V4.4 backport of arm64 Spectre patches
+Message-ID: <20190716034437.gq4q4bsftfzqd2ll@vireshk-i7>
+References: <cover.1562908074.git.viresh.kumar@linaro.org>
+ <20190715130936.GH56232@lakrids.cambridge.arm.com>
 MIME-Version: 1.0
-References: <20190321163623.20219-1-julien.grall@arm.com>
- <20190321163623.20219-12-julien.grall@arm.com>
- <0dfe120b-066a-2ac8-13bc-3f5a29e2caa3@arm.com>
- <CAJF2gTTXHHgDboaexdHA284y6kNZVSjLis5-Q2rDnXCxr4RSmA@mail.gmail.com>
- <c871a5ae-914f-a8bb-9474-1dcfec5d45bf@arm.com>
- <CAJF2gTStSR7Jmu7=HaO5Wxz=Zn8A5-RD8ktori3oKEhM9vozAA@mail.gmail.com>
- <20190621141606.GF18954@arrakis.emea.arm.com>
- <CAJF2gTTVUToRkRtxTmtWDotMGXy5YQCpL1h_2neTBuN3e6oz1w@mail.gmail.com>
- <20190624153820.GH29120@arrakis.emea.arm.com>
- <CAJF2gTRUzHUNV+nzECUp5n2L1akdy=Aovb6tSd+PNVnpasBrqw@mail.gmail.com>
- <20190701091711.GA21774@arrakis.emea.arm.com>
-In-Reply-To: <20190701091711.GA21774@arrakis.emea.arm.com>
-From: Guo Ren <guoren@kernel.org>
-Date: Tue, 16 Jul 2019 11:31:27 +0800
-X-Gmail-Original-Message-ID: <CAJF2gTTEbhA-pZCPGuUNqXT9F-vk8fSTyNJyEOpn=QE=toAN3g@mail.gmail.com>
-Message-ID: <CAJF2gTTEbhA-pZCPGuUNqXT9F-vk8fSTyNJyEOpn=QE=toAN3g@mail.gmail.com>
-Subject: Re: [PATCH RFC 11/14] arm64: Move the ASID allocator code in a
- separate file
-To: Catalin Marinas <catalin.marinas@arm.com>
+Content-Disposition: inline
+In-Reply-To: <20190715130936.GH56232@lakrids.cambridge.arm.com>
+User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190715_203143_380223_6DE527D9 
-X-CRM114-Status: GOOD (  21.49  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190715_204443_220580_64AFF9F5 
+X-CRM114-Status: UNSURE (   9.86  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -81,7 +89,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,105 +100,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: julien.thierry@arm.com, aou@eecs.berkeley.edu, james.morse@arm.com,
- suzuki.poulose@arm.com, Marc Zyngier <marc.zyngier@arm.com>,
- Anup Patel <anup.Patel@wdc.com>, Will Deacon <will.deacon@arm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-csky@vger.kernel.org, rppt@linux.ibm.com, hch@infradead.org,
- Atish Patra <Atish.Patra@wdc.com>, Julien Grall <julien.grall@arm.com>,
- Palmer Dabbelt <palmer@sifive.com>, gary@garyguo.net, paul.walmsley@sifive.com,
- christoffer.dall@arm.com, linux-riscv@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: Julien Thierry <Julien.Thierry@arm.com>,
+ Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will.deacon@arm.com>, stable@vger.kernel.org, mark.brown@arm.com,
+ Russell King <rmk+kernel@arm.linux.org.uk>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Catalin,
+On 15-07-19, 14:09, Mark Rutland wrote:
+> It looks like I messed up spectacularly when backporting that commit;
+> those files should not have been added. I must have had those lying
+> around from a rebase or similar.
 
-Thanks for sharing about CnP assid experience. See my comment below.
+That's what I thought :)
 
-On Mon, Jul 1, 2019 at 5:17 PM Catalin Marinas
-> From the ASID reservation/allocation perspective, the mechanism is the
-> same between multi-threaded with a shared TLB and multi-core. On arm64,
-> a local_flush_tlb_all() on a thread invalidates the TLB for the other
-> threads of the same core.
->
-> The actual problem with multi-threaded CPUs is a lot more subtle.
-> Digging some internal email from 1.5 years ago and pasting it below
-> (where "current ASID algorithm" refers to the one prior to the fix and
-> CnP - Common Not Private - means shared TLBs on a multi-threaded CPU):
->
->
-> The current ASID roll-over algorithm allows for a small window where
-> active_asids for a CPU (P1) is different from the actual ASID in TTBR0.
-> This can lead to a roll-over on a different CPU (P2) allocating an ASID
-> (for a different task) which is still hardware-active on P1.
->
-> A TLBI on a CPU (or a peer CPU with CnP) does not guarantee that all the
-> entries corresponding to a valid TTBRx are removed as they can still be
-> speculatively loaded immediately after TLBI.
->
-> While having two different page tables with the same ASID on different
-> CPUs should be fine without CnP, it becomes problematic when CnP is
-> enabled:
->
-> P1                                      P2
-> --                                      --
-> TTBR0.BADDR = T1
-> TTBR0.ASID = A1
-> check_and_switch_context(T2,A2)
->   asid_maps[P1] = A2
->   goto fastpath
->                                         check_and_switch_context(T3,A0)
->                                           new_context
->                                             ASID roll-over allocates A1
->                                               since it is not active
->                                           TLBI ALL
-> speculate TTBR0.ASID = A1 entry
->                                           TTBR0.BADDR = T3
->                                           TTBR0.ASID = A1
->   TTBR0.BADDR = T2
->   TTBR0.ASID = A2
->
-> After this, the common TLB on P1 and P2 (CnP) contains entries
-> corresponding to the old T1 and A1. Task T3 using the same ASID A1 can
-> hit such entries. (T1,A1) will eventually be removed from the TLB on the
-> next context switch on P1 since tlb_flush_pending was set but this is
-> not guaranteed to happen.
->
->
-> The fix on arm64 (as part of 5ffdfaedfa0a - "arm64: mm: Support Common
-> Not Private translations") was to set the reserved TTBR0 in
-> check_and_switch_context(), preventing speculative loads into the TLB
-> being tagged with the wrong ASID. So this is specific to the ARM CPUs
-> behaviour w.r.t. speculative TLB loads, it may not be the case (yet) for
-> your architecture.
+> I'll spin a patch for v4.9.y to drop the bits I added erroneously.
+> 
+> It is somewhat concerning that no-one spotted that (myself included)
+> when the v4.9.y backport was originally made. :/
 
-The most important thing is that TLBI ALL occurs between
-"asid_maps[P1] = A2" and "TTBR0.BADDR = T2", then speculative
-execution after TLBI which access to user space code/data will result
-in a valid asid entry which re-filled into the TLB by PTW.
-
-A similar problem should exist if C-SKY ISA supports SMT. Although the
-C-SKY kernel prohibits the kernel from speculating on user space code
-directly, ld/st can access user space memory in csky kernel mode.
-Therefore, a similar problem occurs when it speculatively executes
-copy_from / to_user codes in that window.
-
-RISC-V ISA has a SUM setting bit that prevents the kernel from
-speculating access to user space. So this problem has been bypassed
-from the design.
-
-I saw arm64 to prevent speculation by temporarily setting TTBR0.el1 to
-a zero page table. Is that used to prevent speculative execution user
-space code or just prevent ld/st in copy_use_* ?
+Looks like no one reviewed the patches seriously as they came from you
+and people thought they should be okay. We know Mark :)
 
 -- 
-Best Regards
- Guo Ren
-
-ML: https://lore.kernel.org/linux-csky/
+viresh
 
 _______________________________________________
 linux-arm-kernel mailing list
