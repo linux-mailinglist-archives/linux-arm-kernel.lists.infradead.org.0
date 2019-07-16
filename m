@@ -2,86 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 421A56AA54
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 16:08:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D9FF6AA65
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 16:13:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D4GFsiYAxEoTFSJgq3JRKk9pAXEwCJXVxU/jIYO7HRY=; b=Hfuvm5HYP/ts0h
-	akVzPCMCfvCgP6k1/pn8rTUXg13/IzKQPm1b+juCXraj8w+kEqKGp2AtOCU4BeRX3Dt33D+IqB11i
-	r8CtrJszEvJ8I8fbEXsdk0s1dUeCT3sZo86PN54y1eP4dHKtMITmeUi5CD+BBTDAsMX8DQeCbtYDq
-	eQh02ERIvXF9ZQnzZ8zzmpSeJn5h/cfIQ/RKl5cEk0wZReEpa93F/waWOJUKH0OPOe5ZvrpeyGcrd
-	ESOTPFhbbvmqzeWcPWmI25dILS6qYwXciLyZmcIYcSM5RtQAxx2n2XtSPuNuRgla7JaA8FNmkaEHw
-	OVSKv1z76EhtRtuCKGRA==;
+	List-Owner; bh=38BzpLlE8s57byzpNwKbow8PR+LfWeFgodTA3AVYtLc=; b=IZJX9IHs/Qryqm
+	DJkh2tXQp5RT+si3olIKMYsCq/FwxzfwI3650ydkvqr2W+dzetarAdQZzeF/DXNr8xJopc8T8h4k2
+	PI0HL1fO7u+EiiBsyIEWSaH6BOM2VREEDzA8zy3FeqkVbqy0jI11mPTq8nAX0HICXEdsXQ4c/TOmW
+	6ZqKg5AdE225eR1Vt/okqUaP+XM/Egz7VSgzpmt+nRN0++JJzFOJE8SW1J8x1gEWflxt/2vafTDY3
+	YZh+sRqeC9LkhhSX2bCJAPr5QBrUE2clF3GL5h+UskmyVVu6U+ohjwRZFui3zsonXOyK/SVkqVWEp
+	E5rkKU1tVv99RpemwuyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnO8M-00089w-DF; Tue, 16 Jul 2019 14:08:46 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1hnOCY-0001KQ-CN; Tue, 16 Jul 2019 14:13:06 +0000
+Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnO87-00088x-Jj
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 14:08:33 +0000
-Received: by mail-pg1-x542.google.com with SMTP id u17so9509313pgi.6
+ id 1hnOCF-0001Ie-IY
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 14:12:48 +0000
+Received: by mail-oi1-x241.google.com with SMTP id v186so15660121oie.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jul 2019 07:08:30 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=2p5yNB9Fr54gFlTDgHP10Sy9vEwRFeMQvHFiEZuA438=;
- b=aKYEDpBl++j6Z+a9BhBDhIxY5CbfJ/+EEYObi3h17m/9O4CKQZBGVFubw4N5lG0O1q
- YRKAVpnuVHVl4o95IGdObu2WBSNTcoW2M2H1F1oRO/OT9ToPmMmyUQ/Pu8b+wTK/T1Xx
- q10qAI+DCgCA47SjxmPdZv3fPlxlB/0W0gTWV88XNWZ5TVAFnuNyaZ1ZegYV67jN4nLQ
- 3kczgUENKTNic5f1Kjatpmozpj1co8jj2E5aHO3ohTNA4/hOzP/zCoozh93Z7utHVV8h
- NFX9QG6Vz7fNu9tRmV2sjcGlZEdwaSQolcJ0IuqI+EWNmwrk9RsTvpPybUo7KfbVIypY
- GJHg==
+ Tue, 16 Jul 2019 07:12:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=h2XmDxxbJ7tU8jfvsRxWlaoaHsfnqizOFxorb/Xd+co=;
+ b=Py5/obzLg1G6q0q9QNni2A4i6WspW9cxnxlS1QfRxEg9BRt1PWoOjwnaxWlw95wDhQ
+ zk2XLC499vm6MTxijwxdPPDVhCQaRCFyw+qJHWt86AFA40hRMjwDOMZvCgKaj30892nR
+ 3Y8vkOpVAnYdsAR5GQ+/ylt+8cSq9qlPxSumsex88ZyIHEBPsauTOuHf7FrJRJlSNJ0G
+ xBmJ7n3Wiqq/pFgIxlIeJn3Ms4InCCNSdUmRXMfbYZ6pVE4XIRvI/r3dn+K84uxn5ttw
+ 1GFLELKY4droqXKN0zwWh5as8vN/6BK+LpPAHSpEFtr3f0XWt77DBVSuhXUHhjHdb072
+ ArzA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=2p5yNB9Fr54gFlTDgHP10Sy9vEwRFeMQvHFiEZuA438=;
- b=pEoqdV4I8t7H9KV7mN+UuG0Tq2Y3sJGQvULQELqoIr2lLUL2l3A3Owov23EhtcixVv
- M5hHZ21rXq0NAAwJF0gWILFj9BJwHUMiz9AW/UrQtLwqTqZ0eqK7bj0Eug00NHcYDQ6G
- 9cRTCSCt1BiYZJ5NGnb8MnYrU/ul/uuOBexiYlJpNDe/1raFz0BC4uVBOhByNMrSZrM0
- xQmb1/IhHPLYJSU4Pp6Ut5lsflRjLDsgWAeNdX8RNFaKgQ5iuWj0IddlGgpTJIEyjmB1
- 0NB0OlF4QWBc2K5xq7oSzC79mdBUm3ACqQ2SQ9Kn6zunKA90Envltsp23q30fOfaf7uv
- 04pA==
-X-Gm-Message-State: APjAAAUsH4gzHMBu+GGuZ7P/GP0rqV8mre/5MkQCOMOTEGC2la87iLuv
- UkSDR3ZgCDYKmothWx93HMJVnH90uDPOpA==
-X-Google-Smtp-Source: APXvYqzXpC63Aq383Ig6mtxbu2pKS8pBKp355OE6zLLHJi/TnGO3GwbhnVGRoMB+h1scO6W8iCKeXA==
-X-Received: by 2002:a17:90a:9a83:: with SMTP id
- e3mr36023349pjp.105.1563286109956; 
- Tue, 16 Jul 2019 07:08:29 -0700 (PDT)
-Received: from mail.google.com ([149.28.153.17])
- by smtp.gmail.com with ESMTPSA id c23sm12665035pgj.62.2019.07.16.07.08.22
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 16 Jul 2019 07:08:29 -0700 (PDT)
-Date: Tue, 16 Jul 2019 22:08:18 +0800
-From: Changbin Du <changbin.du@gmail.com>
-To: Peter Zijlstra <peterz@infradead.org>
-Subject: Re: [PATCH] tracing/fgraph: support recording function return values
-Message-ID: <20190716140817.za4rad3hx76efqgp@mail.google.com>
-References: <20190713121026.11030-1-changbin.du@gmail.com>
- <20190715082930.uyxn2kklgw4yri5l@willie-the-truck>
- <20190715101231.GB3419@hirez.programming.kicks-ass.net>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=h2XmDxxbJ7tU8jfvsRxWlaoaHsfnqizOFxorb/Xd+co=;
+ b=KOZATo3jL63fdbt1DfoVp52L0rnAzwg8zV0RmmrtvfttsTJ285HJWeySpcaQBoYBQG
+ CGxtgHRP8JtmTsUKJJ7rxcgTn6rdfe1ifU00oCIc1WG1HnbmKFbH7JGHgUaYEWsR/a3Z
+ ALXmB8NY8Jol1GEOiQoWsLE4swqAVrHZzZqKHvl2A6CQ+MthrEvOo+9AUDeMAfqN2Hzb
+ TQQq3XUIXg/EpoSe6lB9+3249e6sh9uN5kNUGcGgNhiAlyX/sfkJ6vElrnsZCmUQgkgt
+ w/c5PU5yEsEPlJvEUBSLUhl4804MOFDOnnG2Q9Ayh1MI3Z8UVhyPtZkrpNqKaXErWDm8
+ k5QQ==
+X-Gm-Message-State: APjAAAXXJoR7Hi0fKxBTy/n2BqGr3uHuEo+t3Zd3bH8DsK/9hbkQWOFO
+ VBRqKcU7O3k3tzYD/i+EPsAMdGNIWlKwd2NbYnHYPg==
+X-Google-Smtp-Source: APXvYqwhUee7Js74E9R15ZB55hgPPsCjc9xmGxHsFteJRH0BqOq9zdyWRfoMvFTu0iFTMewZbXes9U0eh+oPZWTTRe8=
+X-Received: by 2002:aca:4d84:: with SMTP id a126mr17188257oib.23.1563286366223; 
+ Tue, 16 Jul 2019 07:12:46 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190715101231.GB3419@hirez.programming.kicks-ass.net>
-User-Agent: NeoMutt/20180716
+References: <20190716115725.66558-1-cychiang@chromium.org>
+ <20190716115725.66558-3-cychiang@chromium.org>
+In-Reply-To: <20190716115725.66558-3-cychiang@chromium.org>
+From: Tzung-Bi Shih <tzungbi@google.com>
+Date: Tue, 16 Jul 2019 22:12:35 +0800
+Message-ID: <CA+Px+wWuCBvWra8+=szQOrvr3iv2YPMeoHHVtJ1vmaZWEEQ44A@mail.gmail.com>
+Subject: Re: [PATCH v4 2/5] drm: bridge: dw-hdmi: Report connector status
+ using callback
+To: Cheng-Yi Chiang <cychiang@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_070831_982109_CBA7DFCE 
-X-CRM114-Status: GOOD (  19.70  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190716_071247_643678_D2035DE5 
+X-CRM114-Status: GOOD (  12.79  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (changbin.du[at]gmail.com)
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -91,6 +85,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,78 +98,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: corbet@lwn.net, catalin.marinas@arm.com, x86@kernel.org,
- linux-doc@vger.kernel.org, linux@armlinux.org.uk, rostedt@goodmis.org,
- linux-kernel@vger.kernel.org, mingo@redhat.com, bp@alien8.de, hpa@zytor.com,
- tglx@linutronix.de, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Changbin Du <changbin.du@gmail.com>
+Cc: ALSA development <alsa-devel@alsa-project.org>,
+ Douglas Anderson <dianders@chromium.org>, Heiko Stuebner <heiko@sntech.de>,
+ Liam Girdwood <lgirdwood@gmail.com>, David Airlie <airlied@linux.ie>,
+ dri-devel@lists.freedesktop.org, Takashi Iwai <tiwai@suse.com>,
+ tzungbi@chromium.org, Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Hans Verkuil <hverkuil@xs4all.nl>, Andrzej Hajda <a.hajda@samsung.com>,
+ Russell King <rmk+kernel@armlinux.org.uk>, Mark Brown <broonie@kernel.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Daniel Vetter <daniel@ffwll.ch>, linux-rockchip@lists.infradead.org,
+ dgreid@chromium.org, Jaroslav Kysela <perex@perex.cz>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jul 15, 2019 at 12:12:31PM +0200, Peter Zijlstra wrote:
-> On Mon, Jul 15, 2019 at 09:29:30AM +0100, Will Deacon wrote:
-> > On Sat, Jul 13, 2019 at 08:10:26PM +0800, Changbin Du wrote:
-> > > This patch adds a new trace option 'funcgraph-retval' and is disabled by
-> > > default. When this option is enabled, fgraph tracer will show the return
-> > > value of each function. This is useful to find/analyze a original error
-> > > source in a call graph.
-> > > 
-> > > One limitation is that the kernel doesn't know the prototype of functions.
-> > > So fgraph assumes all functions have a retvalue of type int. You must ignore
-> > > the value of *void* function. And if the retvalue looks like an error code
-> > > then both hexadecimal and decimal number are displayed.
-> > 
-> > This seems like quite a significant drawback and I think it could be pretty
-> > confusing if you have to filter out bogus return values from the trace.
-> > 
-> > For example, in your snippet:
-> > 
-> > >  3)               |  kvm_vm_ioctl() {
-> > >  3)               |    mutex_lock() {
-> > >  3)               |      _cond_resched() {
-> > >  3)   0.234 us    |        rcu_all_qs(); /* ret=0x80000000 */
-> > >  3)   0.704 us    |      } /* ret=0x0 */
-> > >  3)   1.226 us    |    } /* ret=0x0 */
-> > >  3)   0.247 us    |    mutex_unlock(); /* ret=0xffff8880738ed040 */
-> > 
-> > mutex_unlock() is wrongly listed as returning something.
-> > 
-> > How much of this could be achieved from userspace by placing kretprobes on
-> > non-void functions instead?
-> 
-> Alternatively, we can have recordmcount (or objtool) mark all functions
-> with a return value when the build has DEBUG_INFO on. The dwarves know
-> the function signature.
+On Tue, Jul 16, 2019 at 7:57 PM Cheng-Yi Chiang <cychiang@chromium.org> wrote:
 >
-We can extend the recordmcount tool to search 'subprogram' tag in the DIE tree.
-In below example, the 'DW_AT_type' is the type of function pidfd_create().
+> Change the Kconfig of DRM_DW_HDMI so it selects SND_SOC_HDMI_CODEC.
+> This is for the typedef of hdmi_codec_plugged_cb to be used in dw-hdmi.c.
+Not sure why you select SND_SOC_HDMI_CODEC in this patch.  To have
+definition of hdmi_codec_plugged_cb, include hdmi-codec.h should be
+sufficient.
 
-$ readelf -w kernel/pid.o
- [...]
- <1><1b914>: Abbrev Number: 232 (DW_TAG_subprogram)
-    <1b916>   DW_AT_name        : (indirect string, offset: 0x415e): pidfd_create
-    <1b91a>   DW_AT_decl_file   : 1
-    <1b91b>   DW_AT_decl_line   : 471
-    <1b91d>   DW_AT_decl_column : 12
-    <1b91e>   DW_AT_prototyped  : 1
-    <1b91e>   DW_AT_type        : <0xcc>
-    <1b922>   DW_AT_low_pc      : 0x450
-    <1b92a>   DW_AT_high_pc     : 0x50
-    <1b932>   DW_AT_frame_base  : 1 byte block: 9c 	(DW_OP_call_frame_cfa)
-    <1b934>   DW_AT_GNU_all_call_sites: 1
-    <1b934>   DW_AT_sibling     : <0x1b9d9>
- [...]
+>
+> diff --git a/drivers/gpu/drm/bridge/synopsys/Kconfig b/drivers/gpu/drm/bridge/synopsys/Kconfig
+> index 21a1be3ced0f..309da052db97 100644
+> --- a/drivers/gpu/drm/bridge/synopsys/Kconfig
+> +++ b/drivers/gpu/drm/bridge/synopsys/Kconfig
+> @@ -4,6 +4,7 @@ config DRM_DW_HDMI
+>         select DRM_KMS_HELPER
+>         select REGMAP_MMIO
+>         select CEC_CORE if CEC_NOTIFIER
+> +       select SND_SOC_HDMI_CODEC
+So that it is weird to select this option.
 
-To that end, we need to introduce libdw library for recordmcount. I will have a
-try this week.
-
-And probably, we can also record the parameters?
-
--- 
-Cheers,
-Changbin Du
+>
+>  config DRM_DW_HDMI_AHB_AUDIO
+>         tristate "Synopsys Designware AHB Audio interface"
+> @@ -20,7 +21,6 @@ config DRM_DW_HDMI_I2S_AUDIO
+>         tristate "Synopsys Designware I2S Audio interface"
+>         depends on SND_SOC
+>         depends on DRM_DW_HDMI
+> -       select SND_SOC_HDMI_CODEC
+Also strange for deselecting the option.  Should be in another commit
+for another reason?
 
 _______________________________________________
 linux-arm-kernel mailing list
