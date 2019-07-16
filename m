@@ -2,86 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F7376AD43
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 18:58:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E1846AD4B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 19:02:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q3+e80Y/FyztU0yuOHA2jYYdDFbcf8M2P5OqwkZ4yig=; b=LNu/p+tL0jcqol
-	trWKGKJXJPy8AEHr7PxJ0fbcDDG9ZTtcZW66ecrtKq7MK6UQofDHfvPAHMi86KC2osvtFUjDXvuHb
-	enxeoPGpqmlDhCH4UKRBGEl4+HVPOArw4T2CsGaNyLkierPYe1UGPBqNOfXUJL8Qq+eMCnqqxLIrd
-	9J9SdvpjZ4b4XEfzrAwvLm4kdAKjnhu77lPJzQWHX48dIbUCsyQNN8IWKaj3IZutBOMp5Ci71z1uN
-	JHEqcDJW/6KR5d/onbrHwoBhKhmSzUE/WOBdD/DRSG7Tq8HGgrOHa3YGjTWY1HHbe+NV8SJD8Aw7O
-	FfXOfma3nlhGseG08+2A==;
+	List-Owner; bh=NmkXp/v3VZDf5k9BIXhSOsFvDayMx4yNhSifXqAsSj8=; b=bAReto+SdsmfaI
+	/0Kd05VrM/mFHC46RxlM/9c5otkfjzHQUg3/h5n3G6WNB46JEJF/PlJ9ByuMLlMs5a7DlM/dnCPQ4
+	fvEazrM85fIDg2EqEBc5WSH+5d9cm1+nSRE4B5l08pLuW6G0SCnPM9fbTJk0tCnm2yzJy28rx11M1
+	fJYMkoTUx0Gic0LGcZ3dvg02+EUsFwEHoPGQ65tuqP05Zgo/qQ/iaEQTlpohPJxw0L9J1pYv7lFPT
+	MQILBLwZhxsGhn6ogsCHjag9alxqnltkMo850Qs/W+XrYLQKxJ8oblBWHyPeOdwQz3lJi2QEpOaOz
+	LCgXskDcaEgL3tb9qaGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnQmo-0006Jx-Dx; Tue, 16 Jul 2019 16:58:42 +0000
-Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
+	id 1hnQq9-0008I0-VA; Tue, 16 Jul 2019 17:02:10 +0000
+Received: from mx0a-00190b01.pphosted.com ([2620:100:9001:583::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnQkz-00055H-J1
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 16:56:51 +0000
-Received: by mail-qt1-x844.google.com with SMTP id 44so20246024qtg.11
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jul 2019 09:56:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
- h=from:to:subject:date:message-id:in-reply-to:references:mime-version
- :content-transfer-encoding;
- bh=OHreDCpotkEUucxoE5EiEKrcc9yzecv+duVH9vOORKc=;
- b=GGIQw/kgAUl/eG3d2NKYO7rrigP3xCd6L3ITkDfbZyMEUnoEj0yVHLsV2LlbgRYbC+
- wxGDoUKvbsOD49xDxxVjVMA/cVW24Ta7j9hj3+wxoFsCV7bE/6zX1BcHliTfmRJa2HL6
- t1GMulrmuUdkYdtWJR3tWcDBbewttH11SYty1lYTYPi9/xqOKf63ADEYQ5vRWxW8OT6H
- VHjxbQVnM+5FFok1c8bap5vm+E40C8t2yYrwiy22m4L+k24TpV5SxJbfpoBHfRpCqzb2
- H6dm0a1hIjm8g/mZThetxdugoRf8Pcyv6ZduRuCZRIwQmu9srFbLpacSM3DPtY1OABO9
- 4vlw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=OHreDCpotkEUucxoE5EiEKrcc9yzecv+duVH9vOORKc=;
- b=dhhBgqPBYCTciL99jeda9JHgecemgsvsYyCuOs0KLrYs/s95CJziNZI0GshMc7DK6H
- Ck1yibY6OK/ZacIHAIKjZrEOXjPd4H5jNW7wntCvTSdLYSZAwFvvd7Xpc7Q4DvzJeNUV
- 2Pu/sK+vwBxl1RpXFeLmJS5L7zWIeCJDraRJRINT7RTdoOjhY5IhoC2k6KI+kkYs5kOX
- VVXWpX3ecJQ8aJrVz5EOZM8aej0Xle9x5xwkyPoNLtnYz45NSzAJocyfESO/hmko1Ul5
- LsGbApUXXxaDC0O62LaU2PMGRIw4CiLQQaPcy+pdZgpZQ+zaPBmcr71slYbpRwjlTWDd
- Z8iw==
-X-Gm-Message-State: APjAAAUuYFffq6/aU2vw3msegcyT7djpCwFYGou9vjud4dsNQH91zS2W
- gphnRtmzi16CDpTZjNEUQbA=
-X-Google-Smtp-Source: APXvYqwxJ0A/FHhU5OVW66jrPFnnHKm79duNOHFiKTe25GUCXmo7/DTY10UCE+L1XIgV2bRdwMnQ6w==
-X-Received: by 2002:ac8:41d1:: with SMTP id o17mr23857397qtm.17.1563296207876; 
- Tue, 16 Jul 2019 09:56:47 -0700 (PDT)
-Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
- [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id f20sm8519538qkh.15.2019.07.16.09.56.46
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 16 Jul 2019 09:56:47 -0700 (PDT)
-From: Pavel Tatashin <pasha.tatashin@soleen.com>
-To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
- ebiederm@xmission.com, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org, corbet@lwn.net, catalin.marinas@arm.com,
- will@kernel.org, linux-doc@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Subject: [RFC v1 4/4] arm64: Keep MMU on while kernel is being relocated
-Date: Tue, 16 Jul 2019 12:56:41 -0400
-Message-Id: <20190716165641.6990-5-pasha.tatashin@soleen.com>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20190716165641.6990-1-pasha.tatashin@soleen.com>
-References: <20190716165641.6990-1-pasha.tatashin@soleen.com>
+ id 1hnQpu-0008HT-K6
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 17:01:56 +0000
+Received: from pps.filterd (m0050093.ppops.net [127.0.0.1])
+ by m0050093.ppops.net-00190b01. (8.16.0.27/8.16.0.27) with SMTP id
+ x6GGvuZl014604; Tue, 16 Jul 2019 18:01:30 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=akamai.com;
+ h=from : to : cc :
+ subject : date : message-id : references : in-reply-to : content-type :
+ content-transfer-encoding : mime-version; s=jan2016.eng;
+ bh=7gQqMuNYWO+yEB9XDR6J/mWwz7karJedcXgTGFaBj84=;
+ b=VX6iIDn8xzLvk/DFMGBI/Pf2vc6gETpH7tFvZLiQHwQUsB480t3s7GxiPHDdH2WRhrtI
+ M//hfdwWHFZK+uVA4up2v7UdEvj6lhFXSjxPbF9MR2YTmJQaQ6kYkqpKBCOMgyJSFNR/
+ Hp1VdTIA76oe/X+y5ScZ/WCh9JSW59+fj1HFUiTr77WpCaveA/LYyi+MDZpW9vEjM7ng
+ UjI8LBvp0omxFp6/XpRlO7LHbTiekQgqz/+i+hPSiYU3zbywu+NfWWcK8B1/GDzgWAp7
+ DjR+XGGwXkklw9/LdRCaAy3aLVc5DvmKP+qdF8fLpqwrIAavx//VJxXTfZ3YG9GQXAhk mA== 
+Received: from prod-mail-ppoint1 (prod-mail-ppoint1.akamai.com [184.51.33.18]
+ (may be forged))
+ by m0050093.ppops.net-00190b01. with ESMTP id 2tsa7j1tpj-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 16 Jul 2019 18:01:29 +0100
+Received: from pps.filterd (prod-mail-ppoint1.akamai.com [127.0.0.1])
+ by prod-mail-ppoint1.akamai.com (8.16.0.27/8.16.0.27) with SMTP id
+ x6GGknvk006091; Tue, 16 Jul 2019 13:01:28 -0400
+Received: from email.msg.corp.akamai.com ([172.27.25.31])
+ by prod-mail-ppoint1.akamai.com with ESMTP id 2tqamw5b42-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
+ Tue, 16 Jul 2019 13:01:28 -0400
+Received: from USTX2EX-DAG1MB5.msg.corp.akamai.com (172.27.27.105) by
+ ustx2ex-dag1mb5.msg.corp.akamai.com (172.27.27.105) with Microsoft SMTP
+ Server (TLS) id 15.0.1473.3; Tue, 16 Jul 2019 12:01:27 -0500
+Received: from USTX2EX-DAG1MB5.msg.corp.akamai.com ([172.27.27.105]) by
+ ustx2ex-dag1mb5.msg.corp.akamai.com ([172.27.27.105]) with mapi id
+ 15.00.1473.004; Tue, 16 Jul 2019 12:01:27 -0500
+From: "Lubashev, Igor" <ilubashe@akamai.com>
+To: Jiri Olsa <jolsa@redhat.com>
+Subject: RE: [PATCH 2/3] perf: Use CAP_SYS_ADMIN with perf_event_paranoid
+ checks
+Thread-Topic: [PATCH 2/3] perf: Use CAP_SYS_ADMIN with perf_event_paranoid
+ checks
+Thread-Index: AQHVMTPFo1SW8Ha07Ua7MbRsBb5FgabNV64AgAAy/wA=
+Date: Tue, 16 Jul 2019 17:01:26 +0000
+Message-ID: <cd2b162a59804cdaa7f4de18c3337aa8@ustx2ex-dag1mb5.msg.corp.akamai.com>
+References: <1562112605-6235-1-git-send-email-ilubashe@akamai.com>
+ <1562112605-6235-3-git-send-email-ilubashe@akamai.com>
+ <20190716084744.GB22317@krava>
+In-Reply-To: <20190716084744.GB22317@krava>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [172.19.37.140]
 MIME-Version: 1.0
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-07-16_04:, , signatures=0
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1810050000 definitions=main-1907160206
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-07-16_04:, , signatures=0
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
+ definitions=main-1907160209
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_095649_697406_C379A0FC 
-X-CRM114-Status: UNSURE (   9.57  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190716_100154_970184_D56B712C 
+X-CRM114-Status: GOOD (  13.67  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2620:100:9001:583:0:0:0:1 listed in] [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -91,6 +108,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,108 +120,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, Peter
+ Zijlstra <peterz@infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, Arnaldo
+ Carvalho de Melo <acme@kernel.org>, James Morris <jmorris@namei.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It is inefficient to do kernel relocation with MMU disabled. This is
-because if MMU is disabled,  dcache must also be disabled.
+I could add another patch to the series for that.  Any suggestion for what capability to check for here?
 
-Now, that we have identity page table we can disable MMU after relocation
-is completed.
+(There is always an alternative to not check for anything and let the kernel refuse to perform actions that the user does not have permissions to perform.)
 
-Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
----
- arch/arm64/kernel/cpu-reset.S       |  8 -------
- arch/arm64/kernel/relocate_kernel.S | 36 ++++++++++++++++++-----------
- 2 files changed, 22 insertions(+), 22 deletions(-)
+- Igor
 
-diff --git a/arch/arm64/kernel/cpu-reset.S b/arch/arm64/kernel/cpu-reset.S
-index 6ea337d464c4..d5cfc17b8e1f 100644
---- a/arch/arm64/kernel/cpu-reset.S
-+++ b/arch/arm64/kernel/cpu-reset.S
-@@ -30,14 +30,6 @@
-  * flat identity mapping.
-  */
- ENTRY(__cpu_soft_restart)
--	/* Clear sctlr_el1 flags. */
--	mrs	x12, sctlr_el1
--	ldr	x13, =SCTLR_ELx_FLAGS
--	bic	x12, x12, x13
--	pre_disable_mmu_workaround
--	msr	sctlr_el1, x12
--	isb
--
- 	cbz	x0, 1f				// el2_switch?
- 	mov	x0, #HVC_SOFT_RESTART
- 	hvc	#0				// no return
-diff --git a/arch/arm64/kernel/relocate_kernel.S b/arch/arm64/kernel/relocate_kernel.S
-index c1d7db71a726..e2724fedd082 100644
---- a/arch/arm64/kernel/relocate_kernel.S
-+++ b/arch/arm64/kernel/relocate_kernel.S
-@@ -36,18 +36,6 @@ ENTRY(arm64_relocate_new_kernel)
- 	mov	x14, xzr			/* x14 = entry ptr */
- 	mov	x13, xzr			/* x13 = copy dest */
- 
--	/* Clear the sctlr_el2 flags. */
--	mrs	x0, CurrentEL
--	cmp	x0, #CurrentEL_EL2
--	b.ne	1f
--	mrs	x0, sctlr_el2
--	ldr	x1, =SCTLR_ELx_FLAGS
--	bic	x0, x0, x1
--	pre_disable_mmu_workaround
--	msr	sctlr_el2, x0
--	isb
--1:
--
- 	/* Check if the new image needs relocation. */
- 	tbnz	x16, IND_DONE_BIT, .Ldone
- 
-@@ -63,10 +51,10 @@ ENTRY(arm64_relocate_new_kernel)
- 	add     x20, x0, #PAGE_SIZE
- 	sub     x1, x15, #1
- 	bic     x0, x0, x1
--2:	dc      ivac, x0
-+1:	dc      ivac, x0
- 	add     x0, x0, x15
- 	cmp     x0, x20
--	b.lo    2b
-+	b.lo    1b
- 	dsb     sy
- 
- 	mov x20, x13
-@@ -104,6 +92,26 @@ ENTRY(arm64_relocate_new_kernel)
- 	dsb	nsh
- 	isb
- 
-+	/* Clear sctlr_el1 flags. */
-+	mrs	x12, sctlr_el1
-+	ldr	x13, =SCTLR_ELx_FLAGS
-+	bic	x12, x12, x13
-+	pre_disable_mmu_workaround
-+	msr	sctlr_el1, x12
-+	isb
-+
-+	/* Clear the sctlr_el2 flags. */
-+	mrs	x0, CurrentEL
-+	cmp	x0, #CurrentEL_EL2
-+	b.ne	2f
-+	mrs	x0, sctlr_el2
-+	ldr	x1, =SCTLR_ELx_FLAGS
-+	bic	x0, x0, x1
-+	pre_disable_mmu_workaround
-+	msr	sctlr_el2, x0
-+	isb
-+2:
-+
- 	/* Start new image. */
- 	mov	x0, x18
- 	mov	x1, xzr
--- 
-2.22.0
+-----Original Message-----
+From: Jiri Olsa <jolsa@redhat.com> 
+Sent: Tuesday, July 16, 2019 4:48 AM
+Subject: Re: [PATCH 2/3] perf: Use CAP_SYS_ADMIN with perf_event_paranoid checks
 
+On Tue, Jul 02, 2019 at 08:10:04PM -0400, Igor Lubashev wrote:
+> The kernel is using CAP_SYS_ADMIN instead of euid==0 to override
+> perf_event_paranoid check. Make perf do the same.
+
+I see another geteuid check in __cmd_ftrace,
+perhaps we should cover this one as well
+
+jirka
 
 _______________________________________________
 linux-arm-kernel mailing list
