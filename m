@@ -2,83 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 82A4F6AC39
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 17:53:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7EAEB6AC3F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 17:53:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Pp6wA7IEUfvTxJ8mvAO/reignkWuJzg/ch0zd4Y5u6k=; b=rbMbiWFFzgsoZN
-	eWpiQBhwDDa0HdJyVcOlGOrlzltCd6ZQqTVpgRte1eufdWV2yvnIemCPzhwyVL5pC2dupdehl53Oz
-	pXOu4/W8C/90b51rWVxHGTNwC93i9y5FYnm6ePQPMJw+me6eORDPrG702lRX/aoPcECAvMJXfSY2o
-	gexWkFyOZA4Cj65qm87C5zWuW+Q9aT8W9iuPxkcr1D7EvEi272Z7bKQq578seHUltlyx2ObzlKfIq
-	2vpn+fYr9lweaVtYdWZ4dYfyv2qD0gMPsK7O7TgiAOyFHkFHzBYxDzeB2Z++2qbGeg7ospkGkGryo
-	kV0nebvru4LyEweygXHw==;
+	List-Owner; bh=aKI6Du9riaGyUBJYR+fXyhyGRkHSIXTD/e81YlMWOXU=; b=Qyk4YHtG0CdGo5
+	Kt7P0FKRs0atXVKXtTnIrecg0GozTYZDtkxyBvwmgioD2g/w0v2rxW3xvSnh47CgdMbUaBcz0dcMG
+	PINPe56Gbh8xpnI5dBWc6sFxv/XT9Ncb95OBQ9Qr8mtzJmBZTYZPyb835SwUF24X4r87n8qnbUK0d
+	+w7bBUqYLwwA1yvIiK9v3kYadf5vIwgkteBdc+LTqCjC6gCFvsZ3SsnYyanbCJQoRQZ5dcpB0SDL3
+	GhFv/GTMAqn6MzIHD+TYYNyMU7TWDd9XQMedTJp48u3Zen2z2tNIGLUvdFL5C3RHWkqjhfqHxlSDQ
+	5CgPCQBaLv/sf/z6Eglw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnPlH-0005uT-2F; Tue, 16 Jul 2019 15:53:03 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1hnPlY-00067R-U7; Tue, 16 Jul 2019 15:53:20 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnPl1-0005t5-PI
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 15:52:49 +0000
-Received: by mail-wm1-x341.google.com with SMTP id x15so19188162wmj.3
+ id 1hnPl3-0005tV-1o
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 15:52:50 +0000
+Received: by mail-wm1-x342.google.com with SMTP id s3so19189128wms.2
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jul 2019 08:52:47 -0700 (PDT)
+ Tue, 16 Jul 2019 08:52:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=QZlXIYch//vjsQS5IhxArL7mBgEBULuqsYOVzCul4YQ=;
- b=MMenY9J1ysV9zeyoY7fmHEWxKUgVUIP9S1SDxUuL99M1Gu7B3DyxRGC4BDFLm2OPqh
- XnitNO5zCT4YGt3nCOk4geb5WbERmpzckizcwsFbQ5TVMWYQ4nWD3tTlNjOD4OdDqz95
- xTNBpMhYQjVrHSI86ZS/NGB6BNm/1KvKKfrksCiMQ9SSjVPnkLcicD6wLdc1zfoYKJ3b
- A0XhdPBwjDBQehCwZW7GoA7whBYI0cj/RuDo2QGwlwCwI7wqYZxtPpAad0MZLtVMCNdZ
- C7TlRQhdwLC7do17AOdZHCiTofD11vARY7mOMvd2ElyAyVmIw65Ut+1t3OeZkL7HLJ2Y
- Lraw==
+ bh=JHEJAcHpxpqB/5WwCVp7qv0sj+5JXZzrvNuF6df3GOM=;
+ b=ryj1mNYfTGZoWWwcTcXw/EOHE4YvwjuhI8m8R3lIwQPFl3Xkn2yivg9ZDbpwWTVgco
+ oKO5nPBPttR30M0505XzZygey9PRJ5IVnbW3ajsZnzZvi/Rz055QaWaE0X1h+iVtj3Nm
+ H1JO2fj7rE39WJNMyVOLELFTofA8DRCaVSgjyz3ssxx+Spev0nJa1nPdKNAAR+5lGOuX
+ kiuH0Y3HaxxfLzvJ1uBjSuCm3LFaCR4DlaVw5PqRHkQwCRXpAPbqraCjub9/I0DutHV4
+ CYcpIWj3wxV9eFmnXBgKsz401uR3M/H5MA4E84tJCMM3LhYJAn+/gBmLrtlYZrtVeCKP
+ CUGQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=QZlXIYch//vjsQS5IhxArL7mBgEBULuqsYOVzCul4YQ=;
- b=b3+0NLqTttmf/2inkunXQe9AWwa3E0qKAor8CpC5OcVgsxjMK1pEIreCYIAzOWT2OH
- m31FIXGDqLpXjyevLUXJUt+bkNecvWhvhnErXqgQWc+z9imIOU3s2kDw8F5N3jH8O5Ka
- lzUo6pgyuHzpWSBA6JAZL3+CKhFXvdgtAnQGAHkzLgEQhyi7kq4YG8yvjq8Yn9lgKOyK
- 5ueIOrji5pDI/EVr3q7a4uh58YRsnndMoOa0dylYThSjFDkGR3qZDeIPOkpyCsZkYHkr
- bJdcLd4JwKYoqT1Tg7eAboVgrsX9Nfioyoq7BGGuAMVKp/zLOeDnjq3QgZe4Wr6yffMi
- 9wJQ==
-X-Gm-Message-State: APjAAAWar3uyA1TJYOHzIOd/kC0QYU9nxIxdhbOvoHvobw6/7M0W2aom
- jNYNn4eKGMEJkbgaPZ+0GPI=
-X-Google-Smtp-Source: APXvYqz8TQNkJU4OCFeEtOXMbiP0H9wTNLX33hKfJjGDRodNcdGB2pirJtv7K7oKGPBb/ZVLPzmN1A==
-X-Received: by 2002:a1c:9dc5:: with SMTP id g188mr32043583wme.93.1563292365488; 
- Tue, 16 Jul 2019 08:52:45 -0700 (PDT)
+ bh=JHEJAcHpxpqB/5WwCVp7qv0sj+5JXZzrvNuF6df3GOM=;
+ b=Fbm+sc78djTQi9kweWj9wtg0sVjFAZRT70FSajQH0Jnrrjjvyde4Ol9YNysjGDxjEG
+ VO/MGcFYiyrQVVVshQN/M0Y/2TE1F9vCV+V4gUtuJEb32ObY373Lr9uCeVQluKXJBZ0X
+ gMKNFmxUwingfFocnIrNKEXv38pnzMLVbQrwlhMQ2myU65GmkZG4bX/h5uyVnNmeL2Hj
+ mzSzxmmC8lvbSJ345vm1X6fCdAC5/UlsRnuuqlT3gzS9o3AdSFu8KNBqN9trs545XXZ0
+ m4Gdj29k7JRakEZpVSHyimnm1CCklznS5nKhWo8gSAgjsE/Rxc2kIzao8Xr3SX/YNZc1
+ liNQ==
+X-Gm-Message-State: APjAAAW56j9iU+FUyrxJT9fDGnt1soa3S14wTNPofWl74KSh4TcrORzb
+ uwrj5JUfjvxB5mhFKuwktWI=
+X-Google-Smtp-Source: APXvYqyErcXiLrrh4SRjL3HTBO2DkdGSpCuxmTLN02YykIsCihI8eV96X3gn+bCTQy26xG6LJJAuqg==
+X-Received: by 2002:a05:600c:20d:: with SMTP id
+ 13mr31417888wmi.141.1563292367161; 
+ Tue, 16 Jul 2019 08:52:47 -0700 (PDT)
 Received: from localhost (smbhubinfra01.hotspot.hub-one.net. [213.174.99.146])
  by smtp.gmail.com with ESMTPSA id
- w24sm17520636wmc.30.2019.07.16.08.52.44
+ o20sm48698020wrh.8.2019.07.16.08.52.46
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 16 Jul 2019 08:52:44 -0700 (PDT)
-Date: Tue, 16 Jul 2019 09:30:44 +0200
+ Tue, 16 Jul 2019 08:52:46 -0700 (PDT)
+Date: Tue, 16 Jul 2019 09:32:13 +0200
 From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
 To: Mukesh Ojha <mojha@codeaurora.org>
-Subject: Re: [PATCH 1/5] Input: fsl-imx25-tcq: Use
+Subject: Re: [PATCH 2/5] Input: mxs-lradc-ts.c: Use
  devm_platform_ioremap_resource()
-Message-ID: <20190716073044.GA1182@penguin>
+Message-ID: <20190716073213.GB1182@penguin>
 References: <1554362243-2888-1-git-send-email-mojha@codeaurora.org>
- <1554362243-2888-2-git-send-email-mojha@codeaurora.org>
+ <1554362243-2888-3-git-send-email-mojha@codeaurora.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1554362243-2888-2-git-send-email-mojha@codeaurora.org>
+In-Reply-To: <1554362243-2888-3-git-send-email-mojha@codeaurora.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_085247_827441_A2B724C2 
-X-CRM114-Status: GOOD (  14.82  )
+X-CRM114-CacheID: sfid-20190716_085249_092028_E73A4633 
+X-CRM114-Status: GOOD (  14.68  )
 X-Spam-Score: 0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  1.1 DATE_IN_PAST_06_12     Date: is 6 to 12 hours before Received: date
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -111,45 +112,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Apr 04, 2019 at 12:47:19PM +0530, Mukesh Ojha wrote:
+On Thu, Apr 04, 2019 at 12:47:20PM +0530, Mukesh Ojha wrote:
 > devm_platform_ioremap_resource() internally have platform_get_resource()
 > and devm_ioremap_resource() in it. So instead of calling them separately
 > use devm_platform_ioremap_resource() directly.
 > 
 > Signed-off-by: Mukesh Ojha <mojha@codeaurora.org>
-
-Applied, thank you.
-
 > ---
->  drivers/input/touchscreen/fsl-imx25-tcq.c | 4 +---
->  1 file changed, 1 insertion(+), 3 deletions(-)
+>  drivers/input/touchscreen/mxs-lradc-ts.c | 6 +-----
+>  1 file changed, 1 insertion(+), 5 deletions(-)
 > 
-> diff --git a/drivers/input/touchscreen/fsl-imx25-tcq.c b/drivers/input/touchscreen/fsl-imx25-tcq.c
-> index 1d6c8f4..b66df8a 100644
-> --- a/drivers/input/touchscreen/fsl-imx25-tcq.c
-> +++ b/drivers/input/touchscreen/fsl-imx25-tcq.c
-> @@ -503,7 +503,6 @@ static int mx25_tcq_probe(struct platform_device *pdev)
->  	struct input_dev *idev;
->  	struct mx25_tcq_priv *priv;
->  	struct mx25_tsadc *tsadc = dev_get_drvdata(dev->parent);
-> -	struct resource *res;
->  	void __iomem *mem;
->  	int error;
+> diff --git a/drivers/input/touchscreen/mxs-lradc-ts.c b/drivers/input/touchscreen/mxs-lradc-ts.c
+> index c850b51..af047fa 100644
+> --- a/drivers/input/touchscreen/mxs-lradc-ts.c
+> +++ b/drivers/input/touchscreen/mxs-lradc-ts.c
+> @@ -615,7 +615,6 @@ static int mxs_lradc_ts_probe(struct platform_device *pdev)
+>  	struct device_node *node = dev->parent->of_node;
+>  	struct mxs_lradc *lradc = dev_get_drvdata(dev->parent);
+>  	struct mxs_lradc_ts *ts;
+> -	struct resource *iores;
+>  	int ret, irq, virq, i;
+>  	u32 ts_wires = 0, adapt;
 >  
-> @@ -512,8 +511,7 @@ static int mx25_tcq_probe(struct platform_device *pdev)
+> @@ -629,10 +628,7 @@ static int mxs_lradc_ts_probe(struct platform_device *pdev)
+>  	ts->dev = dev;
+>  	spin_lock_init(&ts->lock);
+>  
+> -	iores = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> -	if (!iores)
+> -		return -EINVAL;
+> -	ts->base = devm_ioremap(dev, iores->start, resource_size(iores));
+> +	ts->base = devm_platform_ioremap_resource(pdev, 0);
+>  	if (!ts->base)
 >  		return -ENOMEM;
->  	priv->dev = dev;
->  
-> -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> -	mem = devm_ioremap_resource(dev, res);
-> +	mem = devm_platform_ioremap_resource(pdev, 0);
->  	if (IS_ERR(mem))
->  		return PTR_ERR(mem);
->  
-> -- 
-> Qualcomm India Private Limited, on behalf of Qualcomm Innovation Center,
-> Inc. is a member of the Code Aurora Forum, a Linux Foundation Collaborative Project
-> 
+
+This driver did not implement error handling properly (should have used
+IS_ERR()/PTR_ERR()), I adjusted and applied.
+
+Thanks.
 
 -- 
 Dmitry
