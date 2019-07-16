@@ -2,138 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 38CFA6A78F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 13:39:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B82466A792
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 13:41:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/gX3OZ/ZE3SzLwTZF8rY3rr4eKZgO8A6WID6+ERXCBM=; b=hJDjY/TjewrPLl
-	g3ByjTn6fNMKNTX3lGdqNm0zCdo7N18eYmhPKb3h+28q2FKihXu1CgJpEbC2YTEwqDrWdyFQY0L77
-	o4WKD1+22apbgPxZW4Fqyu0QRSp4EZytLTfZ0z7CY4nuqSacP6+CXGLOs9yccv5cBiXjRAU92tuoF
-	5atcDzhQ0MSqWlNkLCO+6gYWX73+fiE+aF9EBMQYQMi25ypv1QV5tapycdBG0KTqhNK6fTcg0DeE7
-	5MOeDkSvjD3nSfpNH+Re5sDZVC8Q+ZDn4lSsjfCGqmhqxXLWnB7aMStRNQyRdFg1YHDF0eqvY5opT
-	jV0pbsuW+fb3V8h0b1zw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IQI+BqTtenSazfniD1WiPNKKnU/dblBQ0rbgAJ5asTA=; b=M/PvAZtxjyd1V7
+	dtvoIMDRJFo7o5/vHQjrkaS6IGT/MSLLwdfgLUOfml9kp73tPq2iUw1qlQJyIJhh2zAiRRgKsBWLk
+	n9yP8HtFhfP/UL5BpTLkoEOrxHCEiOWoW7jPMr2m82k/lv9AUyrBUO3p2ShVCqNLuXznSWDIaNI/L
+	MCY2TK6DTss1A7MML3XbEbRmj0Cel/oIvfD/pv+h8WoBh0Xko4FzBKOCue7sgLhAO0+Xq96iRBJcn
+	t72Y/5/tv1FRlqUSWFDtMvZoWdlnZxIesEtKhtk/sV4s5JSi82QJp6wSR0Kya0UVxIufXCfsG/B7h
+	m+IBmYkH5jDz4S7oLn6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnLoH-00038J-SO; Tue, 16 Jul 2019 11:39:54 +0000
-Received: from mailout1.w1.samsung.com ([210.118.77.11])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnLo4-00037Q-Cy
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 11:39:43 +0000
-Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
- by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
- 20190716113937euoutp01b49b07eb912452047ebae65bb10ae1b2~x4E94sKXy3106131061euoutp01E
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jul 2019 11:39:37 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
- 20190716113937euoutp01b49b07eb912452047ebae65bb10ae1b2~x4E94sKXy3106131061euoutp01E
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1563277177;
- bh=fMb9MXvIHQMWmLmlYL443kSG4HRn1rGQIO9yE41AQpE=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=iRodbfpsWIXuv5hO8Hs60wTLuMO6m5B2tpVE2HIO1fOGWwHYbiIkl/AZSkTwhOPo3
- tCB+becVrz7omQVKHTrFElW5HtQdCQquo6XrtDrkHCaQjHpqDOYVTGYCVF7qJYslHg
- CcwyBMhMDfWkyFCmbSJOj5RaNVhmE0i9lOMFN8tw=
-Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTP id
- 20190716113936eucas1p2f38cf6dbfdeacc0f609727c9b2a8a368~x4E9HGLtN1772817728eucas1p2S;
- Tue, 16 Jul 2019 11:39:36 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges2new.samsung.com (EUCPMTA) with SMTP id 83.75.04377.877BD2D5; Tue, 16
- Jul 2019 12:39:36 +0100 (BST)
-Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
- 20190716113936eucas1p1e7674eeed8fcabbd0e9b984d58891347~x4E8Z6nDN1106611066eucas1p1D;
- Tue, 16 Jul 2019 11:39:36 +0000 (GMT)
-Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
- eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20190716113935eusmtrp24509b691f2fdbdcfebcbcdd099187932~x4E8Lg7mM0827908279eusmtrp2F;
- Tue, 16 Jul 2019 11:39:35 +0000 (GMT)
-X-AuditID: cbfec7f4-12dff70000001119-a7-5d2db778bbb1
-Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
- eusmgms1.samsung.com (EUCPMTA) with SMTP id 0A.1E.04146.777BD2D5; Tue, 16
- Jul 2019 12:39:35 +0100 (BST)
-Received: from [106.120.51.71] (unknown [106.120.51.71]) by
- eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20190716113934eusmtip1e1a0ac3811597a893390ec244f48246a~x4E7bezhL1380313803eusmtip16;
- Tue, 16 Jul 2019 11:39:34 +0000 (GMT)
-Subject: Re: [PATCH v2 2/4] devfreq: exynos-bus: convert to use
- dev_pm_opp_set_rate()
-To: Chanwoo Choi <cw00.choi@samsung.com>
-From: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
-Message-ID: <1a9e5752-bc2b-3b08-a36b-fc02ca51764c@samsung.com>
-Date: Tue, 16 Jul 2019 13:39:25 +0200
+	id 1hnLpe-0004kX-Ua; Tue, 16 Jul 2019 11:41:19 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hnLpQ-0004jS-E5
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 11:41:06 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 282372B;
+ Tue, 16 Jul 2019 04:41:02 -0700 (PDT)
+Received: from [10.1.196.217] (e121566-lin.cambridge.arm.com [10.1.196.217])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 351A63F71A;
+ Tue, 16 Jul 2019 04:41:01 -0700 (PDT)
+Subject: Re: [PATCH 50/59] KVM: arm64: nv: Nested GICv3 Support
+To: Marc Zyngier <marc.zyngier@arm.com>,
+ linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
+ kvm@vger.kernel.org
+References: <20190621093843.220980-1-marc.zyngier@arm.com>
+ <20190621093843.220980-51-marc.zyngier@arm.com>
+From: Alexandru Elisei <alexandru.elisei@arm.com>
+Message-ID: <7ac8cf77-990d-cfdd-c2f5-55786599f764@arm.com>
+Date: Tue, 16 Jul 2019 12:41:00 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-In-Reply-To: <29cfafc4-ee22-6d38-4c67-776c48bfed8a@samsung.com>
+In-Reply-To: <20190621093843.220980-51-marc.zyngier@arm.com>
 Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA01Sa0iTYRjt/e6OFp+r8EHFYmB0VYvAF28ZRuxHP/pjRrJq1YdKTmXTsqum
- Zipp2t0VTkXTZhebprUsSJca4aZkaq4wvGDptEIrG2npPiX/ned5znnPOfBypOwL7c7FxCUK
- mjhVrJyRUHXNv62bkus3Kf2qLF64e3KYxnqzhcZ5L/4ifGlglMRWazWL29LsLDYOdNH4rek2
- gydyzQjftL4g8H3zRxaXd3cQ2HauksH2qTYCn39uZvFM1yMK13xqZkJdFfeK7iGF0ZDNKGrK
- UhQvxxsIRV6tASlaeuoJxYTRaze7TxJ0RIiNOSZofEMOSqJ16VephKlSlDxWamNTUeuZHOTC
- Ab8VPuSmETlIwsn4SgQ59mvzwySCru46JA4TCLILTMyCRNdhIcVDBYJ84ygrDmMIPhRmUHOs
- 5XwEOPpMaA6v4NdC4XSn8ymSb6egucpGzx0YPgAKLhicJCkfAr0lZU4xxXvDL4vZyVnJ74W+
- 5mpa5LjC68JBJ8eF3wbZuY+ckUjeDXoH9YSIV0H641vOeMDnclCQYSfF3DugxtZHi3g5jLTU
- siL2hL9P9YQoeIBgOuvzvLoeQcWVmfnWgdDU0jGr5mYt1sFDk6+43g795x3E3Br4ZdAz5iqG
- WAaX626Q4loKWZkykb0Gqu9UMwu2OU/vkvlIrltUTbeojm5RHd1/32JEGZCbkKRVRwnaLXHC
- cR+tSq1NiovyORyvNqLZD/hmpmXyCTL9OdSIeA7Jl0pbGzYqZbTqmPaEuhEBR8pXSIN/bFDK
- pEdUJ04KmvgDmqRYQduIPDhK7iY9teRTpIyPUiUKRwUhQdAsXAnOxT0VyQoTAg/7H3Ac/5pV
- oofa/baKs2M+Htej+odWR6eUB3V+16/r7Ar3L0peXXExMtYgfxZeLk1OVRzMDmPDAvZsD7Na
- firdX8Uot3ng6edNJUO/hycj9EsbPu6yO6yDEe22CT/OMzS4nX4/Upwy/m5K4lBFFO3scfNm
- Dp3+ltlU1SCntNGqzetJjVb1D/uEv/98AwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFvrJIsWRmVeSWpSXmKPExsVy+t/xu7rl23VjDf5d1rS4/uU5q8X8I+dY
- Lfr2/We06H/8mtni/PkN7BZnm96wW2x6fI3V4vKuOWwWn3uPMFrMOL+PyWLtkbvsFkuvX2Sy
- uN24gs3izY+zTBate4+wW/y7tpHFYvODY2wOgh5r5q1h9Ni0qpPNY/OSeo+D7/YwefRtWcXo
- cfzGdiaPz5vkAtij9GyK8ktLUhUy8otLbJWiDS2M9AwtLfSMTCz1DI3NY62MTJX07WxSUnMy
- y1KL9O0S9DJmNU9hKfixiLHi7aLb7A2MJ2q7GDk5JARMJGZdPMfcxcjFISSwlFHi3tNtbF2M
- HEAJGYnj68sgaoQl/lzrYoOoec0oMfN5JxtIQlggXOLX/V2MILaIgIbEzL9XwGxmgUssEs3T
- SyEabjFLbJo+lwUkwSZgJTGxfRVYEa+AncSthUvA4iwCqhLfzx1hBbFFBSIkzrxfwQJRIyhx
- cuYTMJtTwF6is3cjG8QCdYk/8y4xQ9jiEreezGeCsOUlmrfOZp7AKDQLSfssJC2zkLTMQtKy
- gJFlFaNIamlxbnpusaFecWJucWleul5yfu4mRmC0bzv2c/MOxksbgw8xCnAwKvHwntijEyvE
- mlhWXJl7iFGCg1lJhNf2q3asEG9KYmVValF+fFFpTmrxIUZToOcmMkuJJucDE1FeSbyhqaG5
- haWhubG5sZmFkjhvh8DBGCGB9MSS1OzU1ILUIpg+Jg5OqQbGGNndO349WJrIdkgy+8jma73s
- 3wofKZulcaUz8641cQvR05ji3M0z36l2k1r1pbAVDs+ao7S1pHa6Vfz/e7v0qLrl1Z7MaVqn
- 8+bP518Ye6zqS8rmZWnq/yd9DxY2C+ZyX+KY5bjo0L4VDy5yZxWaaM9bcG/+wu9zNNKc50pk
- feeb7rbw78lXSizFGYmGWsxFxYkAbxhu0gwDAAA=
-X-CMS-MailID: 20190716113936eucas1p1e7674eeed8fcabbd0e9b984d58891347
-X-Msg-Generator: CA
-X-RootMTR: 20190715120431eucas1p215eae81d0ca772d7e2a22a803669068a
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20190715120431eucas1p215eae81d0ca772d7e2a22a803669068a
-References: <20190715120416.3561-1-k.konieczny@partner.samsung.com>
- <CGME20190715120431eucas1p215eae81d0ca772d7e2a22a803669068a@eucas1p2.samsung.com>
- <20190715120416.3561-3-k.konieczny@partner.samsung.com>
- <7f7cf551-005a-c647-d571-77eb5426478a@samsung.com>
- <3d1687b7-4825-ad82-2706-a712c30e530b@samsung.com>
- <5612547b-47c8-0dc4-cb3c-e972782d5a26@samsung.com>
- <3ba736fa-832c-a72c-e60b-f4328e54c524@samsung.com>
- <29cfafc4-ee22-6d38-4c67-776c48bfed8a@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_043940_789230_38BDA129 
-X-CRM114-Status: GOOD (  28.26  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190716_044104_566291_B84C621C 
+X-CRM114-Status: GOOD (  29.42  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.11 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -145,377 +64,736 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Nishanth Menon <nm@ti.com>,
- linux-samsung-soc@vger.kernel.org, devicetree@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, Viresh Kumar <vireshk@kernel.org>,
- linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org,
- Krzysztof Kozlowski <krzk@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Kyungmin Park <kyungmin.park@samsung.com>, Kukjin Kim <kgene@kernel.org>,
- MyungJoo Ham <myungjoo.ham@samsung.com>,
- Kamil Konieczny <k.konieczny@partner.samsung.com>,
- linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Andre Przywara <andre.przywara@arm.com>, Dave Martin <Dave.Martin@arm.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Ck9uIDcvMTYvMTkgMToyNiBQTSwgQ2hhbndvbyBDaG9pIHdyb3RlOgo+IEhpLAo+IAo+IE9uIDE5
-LiA3LiAxNi4g7Jik7ZuEIDc6NTksIEJhcnRsb21pZWogWm9sbmllcmtpZXdpY3ogd3JvdGU6Cj4+
-Cj4+IE9uIDcvMTYvMTkgMTI6MzMgUE0sIENoYW53b28gQ2hvaSB3cm90ZToKPj4+IEhpIEJhcnRs
-b21pZWosCj4+Pgo+Pj4gT24gMTkuIDcuIDE2LiDsmKTtm4QgNzoxMywgQmFydGxvbWllaiBab2xu
-aWVya2lld2ljeiB3cm90ZToKPj4+Pgo+Pj4+IEhpIENoYW53b28sCj4+Pj4KPj4+PiBPbiA3LzE2
-LzE5IDU6NTYgQU0sIENoYW53b28gQ2hvaSB3cm90ZToKPj4+Pj4gSGkgS2FtaWwsCj4+Pj4+Cj4+
-Pj4+IExvb2tzIGdvb2QgdG8gbWUuIEJ1dCwgdGhpcyBwYXRjaCBoYXMgc29tZSBpc3N1ZS4KPj4+
-Pj4gSSBhZGRlZCB0aGUgZGV0YWlsZWQgcmV2aWV3cy4KPj4+Pj4KPj4+Pj4gSSByZWNvbW1lbmQg
-dGhhdCB5b3UgbWFrZSB0aGUgc2VwYXJhdGUgcGF0Y2hlcyBhcyBmb2xsb3dpbmcKPj4+Pj4gaW4g
-b3JkZXIgdG8gY2xhcmlmeSB0aGUgcm9sZSBvZiB3aGljaCBhcHBseSB0aGUgZGV2X3BtX29wcF8q
-IGZ1bmN0aW9uLgo+Pj4+Pgo+Pj4+PiBGaXJzdCBwYXRjaCwKPj4+Pj4gTmVlZCB0byBjb25zb2xp
-ZGF0ZSB0aGUgZm9sbG93aW5nIHR3byBmdW5jdGlvbiBpbnRvIG9uZSBmdW5jdGlvbi4KPj4+Pj4g
-YmVjYXVzZSB0aGUgb3JpZ2luYWwgZXh5bm9zLWJ1cy5jIGhhcyB0aGUgcHJvYmxlbSB0aGF0IHRo
-ZSByZWd1bGF0b3IKPj4+Pj4gb2YgcGFyZW50IGRldmZyZXEgZGV2aWNlIGhhdmUgdG8gYmUgZW5h
-YmxlZCBiZWZvcmUgZW5hYmxpbmcgdGhlIGNsb2NrLgo+Pj4+PiBUaGlzIGlzc3VlIGRpZCBub3Qg
-aGFwcGVuIGJlY2F1c2UgYm9vdGxvYWRlciBlbmFibGVzIHRoZSBidXMtcmVsYXRlZAo+Pj4+PiBy
-ZWd1bGF0b3JzIGJlZm9yZSBrZXJuZWwgYm9vdGluZy4KPj4+Pj4gLSBleHlub3NfYnVzX3BhcnNl
-X29mKCkKPj4+Pj4gLSBleHlub3NfYnVzX3BhcmVudF9wYXJzZV9vZigpCj4+Pj4+PiBTZWNvbmQg
-cGF0Y2gsCj4+Pj4+IEFwcGx5IGRldl9wbV9vcHBfc2V0X3JlZ3VsYXRvcnMoKSBhbmQgZGV2X3Bt
-X29wcF9zZXRfcmF0ZSgpCj4+Pj4+Cj4+Pj4+Cj4+Pj4+IE9uIDE5LiA3LiAxNS4g7Jik7ZuEIDk6
-MDQsIEthbWlsIEtvbmllY3pueSB3cm90ZToKPj4+Pj4+IFJldXNlIG9wcCBjb3JlIGNvZGUgZm9y
-IHNldHRpbmcgYnVzIGNsb2NrIGFuZCB2b2x0YWdlLiBBcyBhIHNpZGUKPj4+Pj4+IGVmZmVjdCB0
-aGlzIGFsbG93IHVzZWFnZSBvZiBjb3VwbGVkIHJlZ3VsYXRvcnMgZmVhdHVyZSAocmVxdWlyZWQK
-Pj4+Pj4+IGZvciBib2FyZHMgdXNpbmcgRXh5bm9zNTQyMi81ODAwIFNvQ3MpIGJlY2F1c2UgZGV2
-X3BtX29wcF9zZXRfcmF0ZSgpCj4+Pj4+PiB1c2VzIHJlZ3VsYXRvcl9zZXRfdm9sdGFnZV90cmlw
-bGV0KCkgZm9yIHNldHRpbmcgcmVndWxhdG9yIHZvbHRhZ2UKPj4+Pj4+IHdoaWxlIHRoZSBvbGQg
-Y29kZSB1c2VkIHJlZ3VsYXRvcl9zZXRfdm9sdGFnZV90b2woKSB3aXRoIGZpeGVkCj4+Pj4+PiB0
-b2xlcmFuY2UuIFRoaXMgcGF0Y2ggYWxzbyByZW1vdmVzIG5vIGxvbmdlciBuZWVkZWQgcGFyc2lu
-ZyBvZiBEVAo+Pj4+Pj4gcHJvcGVydHkgImV4eW5vcyx2b2x0YWdlLXRvbGVyYW5jZSIgKG5vIEV4
-eW5vcyBkZXZmcmVxIERUIG5vZGUgdXNlcwo+Pj4+Pj4gaXQpLgo+Pj4+Pj4KPj4+Pj4+IFNpZ25l
-ZC1vZmYtYnk6IEthbWlsIEtvbmllY3pueSA8ay5rb25pZWN6bnlAcGFydG5lci5zYW1zdW5nLmNv
-bT4KPj4+Pj4+IC0tLQo+Pj4+Pj4gIGRyaXZlcnMvZGV2ZnJlcS9leHlub3MtYnVzLmMgfCAxNzIg
-KysrKysrKysrKysrKystLS0tLS0tLS0tLS0tLS0tLS0tLS0KPj4+Pj4+ICAxIGZpbGUgY2hhbmdl
-ZCwgNjYgaW5zZXJ0aW9ucygrKSwgMTA2IGRlbGV0aW9ucygtKQo+Pj4+Pj4KPj4+Pj4+IGRpZmYg
-LS1naXQgYS9kcml2ZXJzL2RldmZyZXEvZXh5bm9zLWJ1cy5jIGIvZHJpdmVycy9kZXZmcmVxL2V4
-eW5vcy1idXMuYwo+Pj4+Pj4gaW5kZXggNDg2Y2M1YjQyMmYxLi43ZmM0Zjc2YmQ4NDggMTAwNjQ0
-Cj4+Pj4+PiAtLS0gYS9kcml2ZXJzL2RldmZyZXEvZXh5bm9zLWJ1cy5jCj4+Pj4+PiArKysgYi9k
-cml2ZXJzL2RldmZyZXEvZXh5bm9zLWJ1cy5jCj4+Pj4+PiBAQCAtMjUsNyArMjUsNiBAQAo+Pj4+
-Pj4gICNpbmNsdWRlIDxsaW51eC9zbGFiLmg+Cj4+Pj4+PiAgCj4+Pj4+PiAgI2RlZmluZSBERUZB
-VUxUX1NBVFVSQVRJT05fUkFUSU8JNDAKPj4+Pj4+IC0jZGVmaW5lIERFRkFVTFRfVk9MVEFHRV9U
-T0xFUkFOQ0UJMgo+Pj4+Pj4gIAo+Pj4+Pj4gIHN0cnVjdCBleHlub3NfYnVzIHsKPj4+Pj4+ICAJ
-c3RydWN0IGRldmljZSAqZGV2Owo+Pj4+Pj4gQEAgLTM3LDkgKzM2LDkgQEAgc3RydWN0IGV4eW5v
-c19idXMgewo+Pj4+Pj4gIAo+Pj4+Pj4gIAl1bnNpZ25lZCBsb25nIGN1cnJfZnJlcTsKPj4+Pj4+
-ICAKPj4+Pj4+IC0Jc3RydWN0IHJlZ3VsYXRvciAqcmVndWxhdG9yOwo+Pj4+Pj4gKwlzdHJ1Y3Qg
-b3BwX3RhYmxlICpvcHBfdGFibGU7Cj4+Pj4+PiArCj4+Pj4+PiAgCXN0cnVjdCBjbGsgKmNsazsK
-Pj4+Pj4+IC0JdW5zaWduZWQgaW50IHZvbHRhZ2VfdG9sZXJhbmNlOwo+Pj4+Pj4gIAl1bnNpZ25l
-ZCBpbnQgcmF0aW87Cj4+Pj4+PiAgfTsKPj4+Pj4+ICAKPj4+Pj4+IEBAIC05OSw1NiArOTgsMjUg
-QEAgc3RhdGljIGludCBleHlub3NfYnVzX3RhcmdldChzdHJ1Y3QgZGV2aWNlICpkZXYsIHVuc2ln
-bmVkIGxvbmcgKmZyZXEsIHUzMiBmbGFncykKPj4+Pj4+ICB7Cj4+Pj4+PiAgCXN0cnVjdCBleHlu
-b3NfYnVzICpidXMgPSBkZXZfZ2V0X2RydmRhdGEoZGV2KTsKPj4+Pj4+ICAJc3RydWN0IGRldl9w
-bV9vcHAgKm5ld19vcHA7Cj4+Pj4+PiAtCXVuc2lnbmVkIGxvbmcgb2xkX2ZyZXEsIG5ld19mcmVx
-LCBuZXdfdm9sdCwgdG9sOwo+Pj4+Pj4gIAlpbnQgcmV0ID0gMDsKPj4+Pj4+IC0KPj4+Pj4+IC0J
-LyogR2V0IG5ldyBvcHAtYnVzIGluc3RhbmNlIGFjY29yZGluZyB0byBuZXcgYnVzIGNsb2NrICov
-Cj4+Pj4+PiArCS8qCj4+Pj4+PiArCSAqIE5ldyBmcmVxdWVuY3kgZm9yIGJ1cyBtYXkgbm90IGJl
-IGV4YWN0bHkgbWF0Y2hlZCB0byBvcHAsIGFkanVzdAo+Pj4+Pj4gKwkgKiAqZnJlcSB0byBjb3Jy
-ZWN0IHZhbHVlLgo+Pj4+Pj4gKwkgKi8KPj4+Pj4KPj4+Pj4gWW91IGJldHRlciB0byBjaGFuZ2Ug
-dGhpcyBjb21tZW50IHdpdGggZm9sbG93aW5nIHN0eWxlcwo+Pj4+PiB0byBrZWVwIHRoZSBjb25z
-aXN0ZW5jeToKPj4+Pj4KPj4+Pj4gCS8qIEdldCBjb3JyZWN0IGZyZXF1ZW5jeSBmb3IgYnVzIC4u
-LiAqLwo+Pj4+Pgo+Pj4+Pj4gIAluZXdfb3BwID0gZGV2ZnJlcV9yZWNvbW1lbmRlZF9vcHAoZGV2
-LCBmcmVxLCBmbGFncyk7Cj4+Pj4+PiAgCWlmIChJU19FUlIobmV3X29wcCkpIHsKPj4+Pj4+ICAJ
-CWRldl9lcnIoZGV2LCAiZmFpbGVkIHRvIGdldCByZWNvbW1lbmRlZCBvcHAgaW5zdGFuY2VcbiIp
-Owo+Pj4+Pj4gIAkJcmV0dXJuIFBUUl9FUlIobmV3X29wcCk7Cj4+Pj4+PiAgCX0KPj4+Pj4+ICAK
-Pj4+Pj4+IC0JbmV3X2ZyZXEgPSBkZXZfcG1fb3BwX2dldF9mcmVxKG5ld19vcHApOwo+Pj4+Pj4g
-LQluZXdfdm9sdCA9IGRldl9wbV9vcHBfZ2V0X3ZvbHRhZ2UobmV3X29wcCk7Cj4+Pj4+PiAgCWRl
-dl9wbV9vcHBfcHV0KG5ld19vcHApOwo+Pj4+Pj4gIAo+Pj4+Pj4gLQlvbGRfZnJlcSA9IGJ1cy0+
-Y3Vycl9mcmVxOwo+Pj4+Pj4gLQo+Pj4+Pj4gLQlpZiAob2xkX2ZyZXEgPT0gbmV3X2ZyZXEpCj4+
-Pj4+PiAtCQlyZXR1cm4gMDsKPj4+Pj4+IC0JdG9sID0gbmV3X3ZvbHQgKiBidXMtPnZvbHRhZ2Vf
-dG9sZXJhbmNlIC8gMTAwOwo+Pj4+Pj4gLQo+Pj4+Pj4gIAkvKiBDaGFuZ2Ugdm9sdGFnZSBhbmQg
-ZnJlcXVlbmN5IGFjY29yZGluZyB0byBuZXcgT1BQIGxldmVsICovCj4+Pj4+PiAgCW11dGV4X2xv
-Y2soJmJ1cy0+bG9jayk7Cj4+Pj4+PiArCXJldCA9IGRldl9wbV9vcHBfc2V0X3JhdGUoZGV2LCAq
-ZnJlcSk7Cj4+Pj4+PiArCWlmICghcmV0KQo+Pj4+Pj4gKwkJYnVzLT5jdXJyX2ZyZXEgPSAqZnJl
-cTsKPj4+Pj4KPj4+Pj4gSGF2ZSB0byBwcmludCB0aGUgZXJyb3IgbG9nIGlmIHJldCBoYXMgbWlu
-dXMgZXJyb3IgdmFsdWUuCj4+Pj4KPj4+PiBkZXZfcG1fb3BwX3NldF9yYXRlKCkgc2hvdWxkIHBy
-aW50IHRoZSBlcnJvciBtZXNzYWdlIG9uIGFsbAo+Pj4+IGVycm9ycyBzbyB3b3VsZG4ndCBwcmlu
-dGluZyB0aGUgZXJyb3IgbG9nIGFsc28gaGVyZSBiZSBzdXBlcmZsdW91cz8KPj4+Pgo+Pj4+IFsg
-UGxlYXNlIGFsc28gbm90ZSB0aGF0IHRoZSBvdGhlciB1c2VyIG9mIGRldl9wbV9vcHBfc2V0X3Jh
-dGUoKQo+Pj4+ICAgKGNwdWZyZXEtZHQgY3B1ZnJlcSBkcml2ZXIpIGRvZXNuJ3QgZG8gdGhpcy4g
-XQo+Pj4KPj4+IE9LLiBUaGFua3MgZm9yIHRoZSBleHBsYW5hdGlvbi4gCj4+Pgo+Pj4+Cj4+Pj4+
-IE1vZGlmeSBpdCBhcyBmb2xsb3dpbmc6Cj4+Pj4+Cj4+Pj4+IAlpZiAocmV0IDwgMCkgewo+Pj4+
-PiAJCWRldl9lcnIoZGV2LCAiZmFpbGVkIHRvIHNldCBidXMgcmF0ZVxuIik7Cj4+Pj4+IAkJZ290
-byBlcnI6Cj4+Pj4+IAl9Cj4+Pj4+IAlidXMtPmN1cnJfZnJlcSA9ICpmcmVxOwo+Pj4+Pgo+Pj4+
-PiBlcnI6Cj4+Pj4+IAltdXRleF91bmxvY2soJmJ1cy0+bG9jayk7Cj4+Pj4+IAkKPj4+Pj4gCXJl
-dHVybiByZXQ7Cj4+Pj4+Cj4+Pj4+PiAgCj4+Pj4+PiAtCWlmIChvbGRfZnJlcSA8IG5ld19mcmVx
-KSB7Cj4+Pj4+PiAtCQlyZXQgPSByZWd1bGF0b3Jfc2V0X3ZvbHRhZ2VfdG9sKGJ1cy0+cmVndWxh
-dG9yLCBuZXdfdm9sdCwgdG9sKTsKPj4+Pj4+IC0JCWlmIChyZXQgPCAwKSB7Cj4+Pj4+PiAtCQkJ
-ZGV2X2VycihidXMtPmRldiwgImZhaWxlZCB0byBzZXQgdm9sdGFnZVxuIik7Cj4+Pj4+PiAtCQkJ
-Z290byBvdXQ7Cj4+Pj4+PiAtCQl9Cj4+Pj4+PiAtCX0KPj4+Pj4+IC0KPj4+Pj4+IC0JcmV0ID0g
-Y2xrX3NldF9yYXRlKGJ1cy0+Y2xrLCBuZXdfZnJlcSk7Cj4+Pj4+PiAtCWlmIChyZXQgPCAwKSB7
-Cj4+Pj4+PiAtCQlkZXZfZXJyKGRldiwgImZhaWxlZCB0byBjaGFuZ2UgY2xvY2sgb2YgYnVzXG4i
-KTsKPj4+Pj4+IC0JCWNsa19zZXRfcmF0ZShidXMtPmNsaywgb2xkX2ZyZXEpOwo+Pj4+Pj4gLQkJ
-Z290byBvdXQ7Cj4+Pj4+PiAtCX0KPj4+Pj4+IC0KPj4+Pj4+IC0JaWYgKG9sZF9mcmVxID4gbmV3
-X2ZyZXEpIHsKPj4+Pj4+IC0JCXJldCA9IHJlZ3VsYXRvcl9zZXRfdm9sdGFnZV90b2woYnVzLT5y
-ZWd1bGF0b3IsIG5ld192b2x0LCB0b2wpOwo+Pj4+Pj4gLQkJaWYgKHJldCA8IDApIHsKPj4+Pj4+
-IC0JCQlkZXZfZXJyKGJ1cy0+ZGV2LCAiZmFpbGVkIHRvIHNldCB2b2x0YWdlXG4iKTsKPj4+Pj4+
-IC0JCQlnb3RvIG91dDsKPj4+Pj4+IC0JCX0KPj4+Pj4+IC0JfQo+Pj4+Pj4gLQlidXMtPmN1cnJf
-ZnJlcSA9IG5ld19mcmVxOwo+Pj4+Pj4gLQo+Pj4+Pj4gLQlkZXZfZGJnKGRldiwgIlNldCB0aGUg
-ZnJlcXVlbmN5IG9mIGJ1cyAoJWx1SHogLT4gJWx1SHosICVsdUh6KVxuIiwKPj4+Pj4+IC0JCQlv
-bGRfZnJlcSwgbmV3X2ZyZXEsIGNsa19nZXRfcmF0ZShidXMtPmNsaykpOwo+Pj4+Pj4gLW91dDoK
-Pj4+Pj4+ICAJbXV0ZXhfdW5sb2NrKCZidXMtPmxvY2spOwo+Pj4+Pj4gIAo+Pj4+Pj4gIAlyZXR1
-cm4gcmV0Owo+Pj4+Pj4gQEAgLTE5NCwxMCArMTYyLDExIEBAIHN0YXRpYyB2b2lkIGV4eW5vc19i
-dXNfZXhpdChzdHJ1Y3QgZGV2aWNlICpkZXYpCj4+Pj4+PiAgCWlmIChyZXQgPCAwKQo+Pj4+Pj4g
-IAkJZGV2X3dhcm4oZGV2LCAiZmFpbGVkIHRvIGRpc2FibGUgdGhlIGRldmZyZXEtZXZlbnQgZGV2
-aWNlc1xuIik7Cj4+Pj4+PiAgCj4+Pj4+PiAtCWlmIChidXMtPnJlZ3VsYXRvcikKPj4+Pj4+IC0J
-CXJlZ3VsYXRvcl9kaXNhYmxlKGJ1cy0+cmVndWxhdG9yKTsKPj4+Pj4+ICsJaWYgKGJ1cy0+b3Bw
-X3RhYmxlKQo+Pj4+Pj4gKwkJZGV2X3BtX29wcF9wdXRfcmVndWxhdG9ycyhidXMtPm9wcF90YWJs
-ZSk7Cj4+Pj4+Cj4+Pj4+IEhhdmUgdG8gZGlzYWJsZSByZWd1bGF0b3IgYWZ0ZXIgZGlzYWJsaW5n
-IHRoZSBjbG9jawo+Pj4+PiB0byBwcmV2ZW50IHRoZSBoL3cgZmF1bHQuCj4+Pj4+Cj4+Pj4+IEkg
-dGhpbmsgdGhhdCB5b3Ugc2hvdWxkIGNhbGwgdGhlbSB3aXRoIGZvbGxvd2luZyBzZXF1ZW5jZToK
-Pj4+Pj4KPj4+Pj4gCWNsa19kaXNhYmxlX3VucHJlcGFyZShidXMtPmNsayk7Cj4+Pj4+IAlpZiAo
-YnVzLT5vcHBfdGFibGUpCj4+Pj4+IAkJZGV2X3BtX29wcF9wdXRfcmVndWxhdG9ycyhidXMtPm9w
-cF90YWJsZSk7Cj4+Pj4+IAlkZXZfcG1fb3BwX29mX3JlbW92ZV90YWJsZShkZXYpOwo+Pj4+Pgo+
-Pj4+Pj4gIAo+Pj4+Pj4gIAlkZXZfcG1fb3BwX29mX3JlbW92ZV90YWJsZShkZXYpOwo+Pj4+Pj4g
-Kwo+Pj4+Pj4gIAljbGtfZGlzYWJsZV91bnByZXBhcmUoYnVzLT5jbGspOwo+Pj4+Pj4gIH0KPj4+
-Pj4+ICAKPj4+Pj4+IEBAIC0yMDksMzkgKzE3OCwyNiBAQCBzdGF0aWMgaW50IGV4eW5vc19idXNf
-cGFzc2l2ZV90YXJnZXQoc3RydWN0IGRldmljZSAqZGV2LCB1bnNpZ25lZCBsb25nICpmcmVxLAo+
-Pj4+Pj4gIHsKPj4+Pj4+ICAJc3RydWN0IGV4eW5vc19idXMgKmJ1cyA9IGRldl9nZXRfZHJ2ZGF0
-YShkZXYpOwo+Pj4+Pj4gIAlzdHJ1Y3QgZGV2X3BtX29wcCAqbmV3X29wcDsKPj4+Pj4+IC0JdW5z
-aWduZWQgbG9uZyBvbGRfZnJlcSwgbmV3X2ZyZXE7Cj4+Pj4+PiAtCWludCByZXQgPSAwOwo+Pj4+
-Pj4gKwlpbnQgcmV0Owo+Pj4+Pj4gIAo+Pj4+Pj4gLQkvKiBHZXQgbmV3IG9wcC1idXMgaW5zdGFu
-Y2UgYWNjb3JkaW5nIHRvIG5ldyBidXMgY2xvY2sgKi8KPj4+Pj4+ICsJLyoKPj4+Pj4+ICsJICog
-TmV3IGZyZXF1ZW5jeSBmb3IgYnVzIG1heSBub3QgYmUgZXhhY3RseSBtYXRjaGVkIHRvIG9wcCwg
-YWRqdXN0Cj4+Pj4+PiArCSAqICpmcmVxIHRvIGNvcnJlY3QgdmFsdWUuCj4+Pj4+PiArCSAqLwo+
-Pj4+Pgo+Pj4+PiBZb3UgYmV0dGVyIHRvIGNoYW5nZSB0aGlzIGNvbW1lbnQgd2l0aCBmb2xsb3dp
-bmcgc3R5bGVzCj4+Pj4+IHRvIGtlZXAgdGhlIGNvbnNpc3RlbmN5Ogo+Pj4+Pgo+Pj4+PiAJLyog
-R2V0IGNvcnJlY3QgZnJlcXVlbmN5IGZvciBidXMgLi4uICovCj4+Pj4+Cj4+Pj4+PiAgCW5ld19v
-cHAgPSBkZXZmcmVxX3JlY29tbWVuZGVkX29wcChkZXYsIGZyZXEsIGZsYWdzKTsKPj4+Pj4+ICAJ
-aWYgKElTX0VSUihuZXdfb3BwKSkgewo+Pj4+Pj4gIAkJZGV2X2VycihkZXYsICJmYWlsZWQgdG8g
-Z2V0IHJlY29tbWVuZGVkIG9wcCBpbnN0YW5jZVxuIik7Cj4+Pj4+PiAgCQlyZXR1cm4gUFRSX0VS
-UihuZXdfb3BwKTsKPj4+Pj4+ICAJfQo+Pj4+Pj4gIAo+Pj4+Pj4gLQluZXdfZnJlcSA9IGRldl9w
-bV9vcHBfZ2V0X2ZyZXEobmV3X29wcCk7Cj4+Pj4+PiAgCWRldl9wbV9vcHBfcHV0KG5ld19vcHAp
-Owo+Pj4+Pj4gIAo+Pj4+Pj4gLQlvbGRfZnJlcSA9IGJ1cy0+Y3Vycl9mcmVxOwo+Pj4+Pj4gLQo+
-Pj4+Pj4gLQlpZiAob2xkX2ZyZXEgPT0gbmV3X2ZyZXEpCj4+Pj4+PiAtCQlyZXR1cm4gMDsKPj4+
-Pj4+IC0KPj4+Pj4+ICAJLyogQ2hhbmdlIHRoZSBmcmVxdWVuY3kgYWNjb3JkaW5nIHRvIG5ldyBP
-UFAgbGV2ZWwgKi8KPj4+Pj4+ICAJbXV0ZXhfbG9jaygmYnVzLT5sb2NrKTsKPj4+Pj4+ICsJcmV0
-ID0gZGV2X3BtX29wcF9zZXRfcmF0ZShkZXYsICpmcmVxKTsKPj4+Pj4+ICsJaWYgKCFyZXQpCj4+
-Pj4+PiArCQlidXMtPmN1cnJfZnJlcSA9ICpmcmVxOwo+Pj4+Pgo+Pj4+PiBkaXR0by4gSGF2ZSB0
-byBwcmludCB0aGUgZXJyb3IgbG9nLCBjaGVjayBhYm92ZSBjb21tZW50Lgo+Pj4+Pgo+Pj4+Pj4g
-IAo+Pj4+Pj4gLQlyZXQgPSBjbGtfc2V0X3JhdGUoYnVzLT5jbGssIG5ld19mcmVxKTsKPj4+Pj4+
-IC0JaWYgKHJldCA8IDApIHsKPj4+Pj4+IC0JCWRldl9lcnIoZGV2LCAiZmFpbGVkIHRvIHNldCB0
-aGUgY2xvY2sgb2YgYnVzXG4iKTsKPj4+Pj4+IC0JCWdvdG8gb3V0Owo+Pj4+Pj4gLQl9Cj4+Pj4+
-PiAtCj4+Pj4+PiAtCSpmcmVxID0gbmV3X2ZyZXE7Cj4+Pj4+PiAtCWJ1cy0+Y3Vycl9mcmVxID0g
-bmV3X2ZyZXE7Cj4+Pj4+PiAtCj4+Pj4+PiAtCWRldl9kYmcoZGV2LCAiU2V0IHRoZSBmcmVxdWVu
-Y3kgb2YgYnVzICglbHVIeiAtPiAlbHVIeiwgJWx1SHopXG4iLAo+Pj4+Pj4gLQkJCW9sZF9mcmVx
-LCBuZXdfZnJlcSwgY2xrX2dldF9yYXRlKGJ1cy0+Y2xrKSk7Cj4+Pj4+PiAtb3V0Ogo+Pj4+Pj4g
-IAltdXRleF91bmxvY2soJmJ1cy0+bG9jayk7Cj4+Pj4+PiAgCj4+Pj4+PiAgCXJldHVybiByZXQ7
-Cj4+Pj4+PiBAQCAtMjU5LDIwICsyMTUsNyBAQCBzdGF0aWMgaW50IGV4eW5vc19idXNfcGFyZW50
-X3BhcnNlX29mKHN0cnVjdCBkZXZpY2Vfbm9kZSAqbnAsCj4+Pj4+PiAgCQkJCQlzdHJ1Y3QgZXh5
-bm9zX2J1cyAqYnVzKQo+Pj4+Pj4gIHsKPj4+Pj4+ICAJc3RydWN0IGRldmljZSAqZGV2ID0gYnVz
-LT5kZXY7Cj4+Pj4+PiAtCWludCBpLCByZXQsIGNvdW50LCBzaXplOwo+Pj4+Pj4gLQo+Pj4+Pj4g
-LQkvKiBHZXQgdGhlIHJlZ3VsYXRvciB0byBwcm92aWRlIGVhY2ggYnVzIHdpdGggdGhlIHBvd2Vy
-ICovCj4+Pj4+PiAtCWJ1cy0+cmVndWxhdG9yID0gZGV2bV9yZWd1bGF0b3JfZ2V0KGRldiwgInZk
-ZCIpOwo+Pj4+Pj4gLQlpZiAoSVNfRVJSKGJ1cy0+cmVndWxhdG9yKSkgewo+Pj4+Pj4gLQkJZGV2
-X2VycihkZXYsICJmYWlsZWQgdG8gZ2V0IFZERCByZWd1bGF0b3JcbiIpOwo+Pj4+Pj4gLQkJcmV0
-dXJuIFBUUl9FUlIoYnVzLT5yZWd1bGF0b3IpOwo+Pj4+Pj4gLQl9Cj4+Pj4+PiAtCj4+Pj4+PiAt
-CXJldCA9IHJlZ3VsYXRvcl9lbmFibGUoYnVzLT5yZWd1bGF0b3IpOwo+Pj4+Pj4gLQlpZiAocmV0
-IDwgMCkgewo+Pj4+Pj4gLQkJZGV2X2VycihkZXYsICJmYWlsZWQgdG8gZW5hYmxlIFZERCByZWd1
-bGF0b3JcbiIpOwo+Pj4+Pj4gLQkJcmV0dXJuIHJldDsKPj4+Pj4+IC0JfQo+Pj4+Pj4gKwlpbnQg
-aSwgY291bnQsIHNpemU7Cj4+Pj4+PiAgCj4+Pj4+PiAgCS8qCj4+Pj4+PiAgCSAqIEdldCB0aGUg
-ZGV2ZnJlcS1ldmVudCBkZXZpY2VzIHRvIGdldCB0aGUgY3VycmVudCB1dGlsaXphdGlvbiBvZgo+
-Pj4+Pj4gQEAgLTI4MSwyNCArMjI0LDIwIEBAIHN0YXRpYyBpbnQgZXh5bm9zX2J1c19wYXJlbnRf
-cGFyc2Vfb2Yoc3RydWN0IGRldmljZV9ub2RlICpucCwKPj4+Pj4+ICAJY291bnQgPSBkZXZmcmVx
-X2V2ZW50X2dldF9lZGV2X2NvdW50KGRldik7Cj4+Pj4+PiAgCWlmIChjb3VudCA8IDApIHsKPj4+
-Pj4+ICAJCWRldl9lcnIoZGV2LCAiZmFpbGVkIHRvIGdldCB0aGUgY291bnQgb2YgZGV2ZnJlcS1l
-dmVudCBkZXZcbiIpOwo+Pj4+Pj4gLQkJcmV0ID0gY291bnQ7Cj4+Pj4+PiAtCQlnb3RvIGVycl9y
-ZWd1bGF0b3I7Cj4+Pj4+PiArCQlyZXR1cm4gY291bnQ7Cj4+Pj4+PiAgCX0KPj4+Pj4+ICsKPj4+
-Pj4+ICAJYnVzLT5lZGV2X2NvdW50ID0gY291bnQ7Cj4+Pj4+PiAgCj4+Pj4+PiAgCXNpemUgPSBz
-aXplb2YoKmJ1cy0+ZWRldikgKiBjb3VudDsKPj4+Pj4+ICAJYnVzLT5lZGV2ID0gZGV2bV9remFs
-bG9jKGRldiwgc2l6ZSwgR0ZQX0tFUk5FTCk7Cj4+Pj4+PiAtCWlmICghYnVzLT5lZGV2KSB7Cj4+
-Pj4+PiAtCQlyZXQgPSAtRU5PTUVNOwo+Pj4+Pj4gLQkJZ290byBlcnJfcmVndWxhdG9yOwo+Pj4+
-Pj4gLQl9Cj4+Pj4+PiArCWlmICghYnVzLT5lZGV2KQo+Pj4+Pj4gKwkJcmV0dXJuIC1FTk9NRU07
-Cj4+Pj4+PiAgCj4+Pj4+PiAgCWZvciAoaSA9IDA7IGkgPCBjb3VudDsgaSsrKSB7Cj4+Pj4+PiAg
-CQlidXMtPmVkZXZbaV0gPSBkZXZmcmVxX2V2ZW50X2dldF9lZGV2X2J5X3BoYW5kbGUoZGV2LCBp
-KTsKPj4+Pj4+IC0JCWlmIChJU19FUlIoYnVzLT5lZGV2W2ldKSkgewo+Pj4+Pj4gLQkJCXJldCA9
-IC1FUFJPQkVfREVGRVI7Cj4+Pj4+PiAtCQkJZ290byBlcnJfcmVndWxhdG9yOwo+Pj4+Pj4gLQkJ
-fQo+Pj4+Pj4gKwkJaWYgKElTX0VSUihidXMtPmVkZXZbaV0pKQo+Pj4+Pj4gKwkJCXJldHVybiAt
-RVBST0JFX0RFRkVSOwo+Pj4+Pj4gIAl9Cj4+Pj4+PiAgCj4+Pj4+PiAgCS8qCj4+Pj4+PiBAQCAt
-MzE0LDIyICsyNTMsMTUgQEAgc3RhdGljIGludCBleHlub3NfYnVzX3BhcmVudF9wYXJzZV9vZihz
-dHJ1Y3QgZGV2aWNlX25vZGUgKm5wLAo+Pj4+Pj4gIAlpZiAob2ZfcHJvcGVydHlfcmVhZF91MzIo
-bnAsICJleHlub3Msc2F0dXJhdGlvbi1yYXRpbyIsICZidXMtPnJhdGlvKSkKPj4+Pj4+ICAJCWJ1
-cy0+cmF0aW8gPSBERUZBVUxUX1NBVFVSQVRJT05fUkFUSU87Cj4+Pj4+PiAgCj4+Pj4+PiAtCWlm
-IChvZl9wcm9wZXJ0eV9yZWFkX3UzMihucCwgImV4eW5vcyx2b2x0YWdlLXRvbGVyYW5jZSIsCj4+
-Pj4+PiAtCQkJCQkmYnVzLT52b2x0YWdlX3RvbGVyYW5jZSkpCj4+Pj4+PiAtCQlidXMtPnZvbHRh
-Z2VfdG9sZXJhbmNlID0gREVGQVVMVF9WT0xUQUdFX1RPTEVSQU5DRTsKPj4+Pj4+IC0KPj4+Pj4+
-ICAJcmV0dXJuIDA7Cj4+Pj4+PiAtCj4+Pj4+PiAtZXJyX3JlZ3VsYXRvcjoKPj4+Pj4+IC0JcmVn
-dWxhdG9yX2Rpc2FibGUoYnVzLT5yZWd1bGF0b3IpOwo+Pj4+Pj4gLQo+Pj4+Pj4gLQlyZXR1cm4g
-cmV0Owo+Pj4+Pj4gIH0KPj4+Pj4+ICAKPj4+Pj4+ICBzdGF0aWMgaW50IGV4eW5vc19idXNfcGFy
-c2Vfb2Yoc3RydWN0IGRldmljZV9ub2RlICpucCwKPj4+Pj4+IC0JCQkgICAgICBzdHJ1Y3QgZXh5
-bm9zX2J1cyAqYnVzKQo+Pj4+Pj4gKwkJCSAgICAgIHN0cnVjdCBleHlub3NfYnVzICpidXMsIGJv
-b2wgcGFzc2l2ZSkKPj4+Pj4+ICB7Cj4+Pj4+PiAgCXN0cnVjdCBkZXZpY2UgKmRldiA9IGJ1cy0+
-ZGV2Owo+Pj4+Pj4gKwlzdHJ1Y3Qgb3BwX3RhYmxlICpvcHBfdGFibGU7Cj4+Pj4+PiArCWNvbnN0
-IGNoYXIgKnZkZCA9ICJ2ZGQiOwo+Pj4+Pj4gIAlzdHJ1Y3QgZGV2X3BtX29wcCAqb3BwOwo+Pj4+
-Pj4gIAl1bnNpZ25lZCBsb25nIHJhdGU7Cj4+Pj4+PiAgCWludCByZXQ7Cj4+Pj4+PiBAQCAtMzQ3
-LDExICsyNzksMjIgQEAgc3RhdGljIGludCBleHlub3NfYnVzX3BhcnNlX29mKHN0cnVjdCBkZXZp
-Y2Vfbm9kZSAqbnAsCj4+Pj4+PiAgCQlyZXR1cm4gcmV0Owo+Pj4+Pj4gIAl9Cj4+Pj4+PiAgCj4+
-Pj4+PiArCWlmICghcGFzc2l2ZSkgewo+Pj4+Pj4gKwkJb3BwX3RhYmxlID0gZGV2X3BtX29wcF9z
-ZXRfcmVndWxhdG9ycyhkZXYsICZ2ZGQsIDEpOwo+Pj4+Pj4gKwkJaWYgKElTX0VSUihvcHBfdGFi
-bGUpKSB7Cj4+Pj4+PiArCQkJcmV0ID0gUFRSX0VSUihvcHBfdGFibGUpOwo+Pj4+Pj4gKwkJCWRl
-dl9lcnIoZGV2LCAiZmFpbGVkIHRvIHNldCByZWd1bGF0b3JzICVkXG4iLCByZXQpOwo+Pj4+Pj4g
-KwkJCWdvdG8gZXJyX2NsazsvCj4+Pj4+PiArCQl9Cj4+Pj4+PiArCj4+Pj4+PiArCQlidXMtPm9w
-cF90YWJsZSA9IG9wcF90YWJsZTsKPj4+Pj4+ICsJfQo+Pj4+Pgo+Pj4+PiBUaGlzIGRyaXZlciBo
-YXMgZXh5bm9zX2J1c19wYXJlbnRfcGFyc2Vfb2YoKSBmdW5jdGlvbiBmb3IgcGFyZW50IGRldmZy
-ZXEgZGV2aWNlLgo+Pj4+PiBkZXZfcG1fb3BwX3NldF9yZWd1bGF0b3JzKCkgaGF2ZSB0byBiZSBj
-YWxsZWQgaW4gZXh5bm9zX2J1c19wYXJlbnRfcGFyc2Vfb2YoKQo+Pj4+PiBiZWNhdXNlIHRoZSBy
-ZWd1bGF0b3IgaXMgb25seSB1c2VkIGJ5IHBhcmVudCBkZXZmcmVxIGRldmljZS4KPj4+Pgo+Pj4+
-IGV4eW5vc19idXNfcGFyc2Vfb2YoKSBpcyBjYWxsZWQgZm9yIGFsbCBkZXZmcmVxIGRldmljZXMg
-KGluY2x1ZGluZwo+Pj4+IHBhcmVudCkgYW5kIChhcyB5b3UndmUgbm90aWNlZCkgdGhlIHJlZ3Vs
-YXRvciBzaG91bGQgYmUgZW5hYmxlZCBiZWZvcmUKPj4+PiBlbmFibGluZyBjbG9jayAod2hpY2gg
-aXMgZG9uZSBpbiBleHlub3NfYnVzX3BhcnNlX29mKCkpIHNvIGFkZGluZwo+Pj4+IGV4dHJhIGFy
-Z3VtZW50IHRvIGV4eW5vc19idXNfcGFyc2Vfb2YoKSAobGlrZSBpdCBpcyBkb25lIGN1cnJlbnRs
-eSBpbgo+Pj4+IHRoZSBwYXRjaCkgCj4+Pgo+Pj4gSSB0aGluayB0aGF0IHRoaXMgcGF0Y2ggaGFz
-IHN0aWxsIHRoZSBwcm9ibGVtIGFib3V0IGNhbGwgc2VxdWVuY2UKPj4+IGJldHdlZW4gY2xvY2sg
-YW5kIHJlZ3VsYXRvciBhcyBmb2xsb3dpbmc6Cj4+Cj4+IFllcywgdGhpcyBzaG91bGQgYmUgZml4
-ZWQgKHRob3VnaCB0aGUgd3Jvbmcgc2VxdWVuY2UgYmV0d2VlbiByZWd1bGF0b3IKPj4gYW5kIGNs
-b2NrIGhhbmRsaW5nIGlzIG5vdCBpbnRyb2R1Y2VkIGJ5IHRoZSBwYXRjaHNldCBpdHNlbGYgYW5k
-IGlzIHByZXNlbnQKPj4gaW4gdGhlIG9yaWdpbmFsIGRyaXZlciBjb2RlKS4KPj4KPj4+IDI3MyAg
-ICAgICAgIHJldCA9IGNsa19wcmVwYXJlX2VuYWJsZShidXMtPmNsayk7ICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgIAo+Pj4gMjc0ICAgICAgICAgaWYgKHJldCA8IDApIHsgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCj4+
-PiAyNzUgICAgICAgICAgICAgICAgIGRldl9lcnIoZGV2LCAiZmFpbGVkIHRvIGdldCBlbmFibGUg
-Y2xvY2tcbiIpOyAgICAgICAgICAgICAgICAgICAKPj4+IDI3NiAgICAgICAgICAgICAgICAgcmV0
-dXJuIHJldDsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgIAo+Pj4gMjc3ICAgICAgICAgfSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCj4+PiAyNzggICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAKPj4+IDI3OSAgICAgICAgIGlmICghcGFzc2l2ZSkgeyAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAo+Pj4gMjgwICAgICAg
-ICAgICAgICAgICBvcHBfdGFibGUgPSBkZXZfcG1fb3BwX3NldF9yZWd1bGF0b3JzKGRldiwgJnZk
-ZCwgMSk7ICAgICAgICAgICAgCj4+PiAyODEgICAgICAgICAgICAgICAgIGlmIChJU19FUlIob3Bw
-X3RhYmxlKSkgeyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKPj4+IDI4
-MiAgICAgICAgICAgICAgICAgICAgICAgICByZXQgPSBQVFJfRVJSKG9wcF90YWJsZSk7ICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgIAo+Pj4gMjgzICAgICAgICAgICAgICAgICAgICAgICAg
-IGRldl9lcnIoZGV2LCAiZmFpbGVkIHRvIHNldCByZWd1bGF0b3JzICVkXG4iLCByZXQpOyAgICAg
-Cj4+PiAyODQgICAgICAgICAgICAgICAgICAgICAgICAgZ290byBlcnJfY2xrOyAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKPj4+IDI4NSAgICAgICAgICAgICAgICAg
-fSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgIAo+Pj4gMjg2ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCj4+PiAyODcgICAgICAgICAg
-ICAgICAgIGJ1cy0+b3BwX3RhYmxlID0gb3BwX3RhYmxlOyAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAKPj4+IDI4OCAgICAgICAgIH0gICAgICAgICAgICAgICAgICAgCj4+Pgo+
-Pj4gbWFrZXMgaXQgcG9zc2libGUgdG8gZG8gdGhlIHNldHVwIGNvcnJlY3RseSB3aXRob3V0IHRo
-ZSBuZWVkCj4+Pj4gb2YgbWVyZ2luZyBib3RoIGZ1bmN0aW9ucyBpbnRvIG9uZSBodWdlIGZ1bmN0
-aW9uICh3aGljaCB3b3VsZCBiZSBtb3JlCj4+Pj4gZGlmZmljdWx0IHRvIGZvbGxvdyB0aGFuIHR3
-byBzaW1wbGVyIGZ1bmN0aW9ucyBJTUhPKS4gSXMgdGhhdCBhcHByb2FjaAo+Pj4+IGFjY2VwdGFi
-bGUgb3IgZG8geW91IHByZWZlciBvbmUgYmlnIGZ1bmN0aW9uPwo+Pj4KPj4+IEFjdHVhbGx5LCBJ
-IGRvbid0IGZvcmNlIHRvIG1ha2Ugb25lIGZ1bmN0aW9uIGZvciBib3RoCj4+PiBleHlub3NfYnVz
-X3BhcnNlX29mKCkgYW5kIGV4eW5vc19idXNfcGFyZW50X3BhcnNlX29mKCkuCj4+Pgo+Pj4gSWYg
-d2UganVzdCBrZWVwIHRoaXMgY29kZSwgZGV2X3BtX29wcF9zZXRfcmVndWxhdG9ycygpCj4+PiBz
-aG91bGQgYmUgaGFuZGxlZCBpbiBleHlub3NfYnVzX3BhcmVudF9wYXJzZV9vZigpCj4+PiBiZWNh
-dXNlIG9ubHkgcGFyZW50IGRldmZyZXEgZGV2aWNlIGNvbnRyb2xzIHRoZSByZWd1bGF0b3IuCj4+
-Cj4+IENvdWxkIHlvdXIgcGxlYXNlIGV4cGxhaW4gcmF0aW9uYWxlIGZvciB0aGlzIHJlcXVpcmVt
-ZW50IChiZXNpZGVzCj4+IGZ1bmN0aW9uIG5hbWUpPwo+IAo+IE9LLiBJIGhvcGUgdG8gc2F0aXNm
-eSB0aGUgZm9sbG93aW5nIHJlcXVpcmVtZW50czoKPiAKPiAxLiBGaXggdGhlIHNlcXVlbmNlIHBy
-b2JsZW0gYmV0d2VlbiBjbG9jayBhbmQgcmVndWxhdG9yIGZvciBlbmFibGluZyB0aGVtLgo+IDIu
-IGRldl9wbV9vcHBfc2V0X3JlZ3VsYXRvcigpIGhhdmUgdG8gYmUgaGFuZGxlZCBpbiBleHlub3Nf
-YnVzX3BhcmVudF9wYXJzZV9vZigpCj4gICAgaW5zdGVhZCBvZiBleHlub3NfYnVzX3BhcnNlX29m
-KCkgZm9yIG9ubHkgcGFyZW50IGRldmZyZXEgZGV2aWNlLgo+IDMuIGV4eW5vc19idXNfcGFyc2Vf
-b2YoKSBoYXZlIHRvIGhhbmRsZSB0aGUgb25seSBjb21tb24gcHJvcGVydGllcwo+ICAgIG9mIGJv
-dGggcGFyZW50IGRldmZyZXEgZGV2aWNlIGFuZCBwYXNzaXZlIGRldmZyZXEgZGV2aWNlLgo+IAo+
-Pgo+PiBUaGUgcGF0Y2ggYWRkcyAnYm9vbCBwYXNzaXZlJyBhcmd1bWVudCAod2hpY2ggaXMgc2V0
-IHRvIGZhbHNlIGZvcgo+PiBwYXJlbnQgZGV2ZnJlcSBkZXZpY2UgYW5kIHRydWUgZm9yIGNoaWxk
-IGRldmZyZXEgZGV2aWNlKSB0bwo+PiBleHlub3NfYnVzX3BhcnNlX29mKCkgKHdoaWNoIGlzIGNh
-bGxlZCBmb3IgKmFsbCogZGV2ZnJlcSBkZXZpY2VzCj4gCj4gQXMgSSBtZW50ZWlvbmQsIGV4eW5v
-c19idXNfcGFyc2Vfb2YgaGF2ZSB0byBoYW5kbGUgdGhlIG9ubHkgY29tbW9uCj4gcHJvcGVydGll
-cyBvZiBib3RoIHBhcmVudCBkZXZpY2UgYW5kIHBhc3NpdmUgZGV2aWNlLiAKPiAKPiBJIGdhdGhl
-cmVkIHRoZSBwcm9wZXJ0aWVzIGZvciBwYXJlbnQgZGV2aWNlIGludG8gZXh5bm9zX2J1c19wYXJl
-bnRfcGFyc2Vfb2YoKQo+IFRoaXMgd2F5IHVzaW5nICdib29sIHBhc3NpdmUnIGFyZ3VtZW50IGlz
-IG5vdCBwcm9wZXIgaW4gZXh5bm9zX2J1c19wYXJzZV9vZigpLgo+IAo+IAo+PiBhbmQgaXMgY2Fs
-bGVkIGJlZm9yZSBleHlub3NfYnVzX3BhcmVudF9wYXJzZV9vZigpKSBhbmQgdGhlcmUgaXMKPj4g
-bm8gaGFyZCByZXF1aXJlbWVudCB0byBjYWxsIGRldl9wbV9vcHBfc2V0X3JlZ3VsYXRvcnMoKSBp
-bgo+PiBleHlub3NfYnVzX3BhcmVudF9wYXJzZV9vZigpIHNvIGFmdGVyIG9ubHkgY2hhbmdpbmcg
-dGhlIG9yZGVyaW5nCj4+IGJldHdlZW4gcmVndWxhdG9yIGFuZCBjbG9jayBoYW5kbGluZyB0aGUg
-c2V0dXAgY29kZSBzaG91bGQgYmUKPj4gY29ycmVjdC4KPj4KPj4gWyBQbGVhc2Ugbm90ZSB0aGF0
-IHRoaXMgcGF0Y2ggbW92ZXMgcGFyZW50L2NoaWxkIGRldGVjdGlvbiBiZWZvcmUKPj4gICBleHlu
-b3NfYnVzX3BhcnNlX29mKCkgY2FsbC4gXQo+Pgo+Pj4gSW4gb3JkZXIgdG8ga2VlcCB0aGUgdHdv
-IGZ1bmN0aW9ucywgbWF5YmUgaGF2ZSB0byBjaGFuZ2UKPj4+IHRoZSBjYWxsIHRoZSBzZXF1ZW5j
-ZSBiZXR3ZWVuIGV4eW5vc19idXNfcGFyc2Vfb2YoKSBhbmQKPj4+IGV4eW5vc19idXNfcGFyZW50
-X3BhcnNlX29mKCkuCj4+Cj4+IERvZXNuJ3Qgc2VlbSB0byBiZSBuZWVkZWQsIGNhcmUgdG8gZXhw
-bGFpbiBpdCBtb3JlPwo+IAo+IEluIG9yZGVyIHRvIGZpeCB0aGUgc2VxdWVuY2UgcHJvYmxlbSBi
-ZXR3ZWVuIGNsb2NrIGFuZCByZWd1bGF0b3IKPiB3aXRoIGRldl9wbV9vcHBfc2V0X3JlZ3VhbHRv
-cigpIGFuZCB3YW50IHRvIGtlZXAgdHdvIGZ1bmN0aW9ucwo+IChleHlub3NfYnVzX3BhcmVudF9w
-YXJzZV9vZigpIGFuZCBleHlub3NfYnVzX3BhcnNlX29mKCkpLAo+IGhhdmUgdG8gY2hhbmdlIHRo
-ZSBjYWxsIG9yZGVyIGFzIGZvbGxvd2luZyBhbmQgdGhlbiBtb2RpZnkKPiB0aGUgZXhjZXB0aW9u
-IGhhbmRsaW5nIGNvZGUgd2hlbiBlcnJvciBoYXBwZW4uCj4gCj4gCW5vZGUgPSBvZl9wYXJzZV9w
-aGFuZGxlKGRldi0+b2Zfbm9kZSwgImRldmZyZXEiLCAwKTsgICAgICAgICAgICAgICAgICAgIAo+
-IAlpZiAobm9kZSkgeyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAKPiAJCW9mX25vZGVfcHV0KG5vZGUpOyAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKPiAJCXBhc3NpdmUgPSB0cnVlCj4gCX0KPiAK
-PiAJaWYgKCFwYXNzaXZlKQkKPiAJCWV4eW5vc19idXNfcGFyZW50X3BhcnNlX29mKCkKPiAJCQlk
-ZXZfcG1fb3BwX3NldF9yZWd1bGF0b3IKPiAKPiAJZXh5bm9zX2J1c19wYXJzZV9vZigpCgpPSy4g
-VGhpcyBzZWVtcyBsaWtlIGEgc29sdXRpb24uCgpCZXN0IHJlZ2FyZHMsCi0tCkJhcnRsb21pZWog
-Wm9sbmllcmtpZXdpY3oKU2Ftc3VuZyBSJkQgSW5zdGl0dXRlIFBvbGFuZApTYW1zdW5nIEVsZWN0
-cm9uaWNzCgo+Pgo+Pj4gT25jZSBhZ2FpbiwgSSBkb24ndCBmb3JjZSBhbnkgZml4ZWQgbWV0aG9k
-LiBJIHdhbnQgdG8gZml4IHRoZW0KPj4+IHdpdGggY29ycmVjdCB3YXkuCj4+Pgo+Pj4+Cj4+Pj4+
-PiArCj4+Pj4+PiAgCS8qIEdldCB0aGUgZnJlcSBhbmQgdm9sdGFnZSBmcm9tIE9QUCB0YWJsZSB0
-byBzY2FsZSB0aGUgYnVzIGZyZXEgKi8KPj4+Pj4+ICAJcmV0ID0gZGV2X3BtX29wcF9vZl9hZGRf
-dGFibGUoZGV2KTsKPj4+Pj4+ICAJaWYgKHJldCA8IDApIHsKPj4+Pj4+ICAJCWRldl9lcnIoZGV2
-LCAiZmFpbGVkIHRvIGdldCBPUFAgdGFibGVcbiIpOwo+Pj4+Pj4gLQkJZ290byBlcnJfY2xrOwo+
-Pj4+Pj4gKwkJZ290byBlcnJfcmVndWxhdG9yOwo+Pj4+Pj4gIAl9Cj4+Pj4+PiAgCj4+Pj4+PiAg
-CXJhdGUgPSBjbGtfZ2V0X3JhdGUoYnVzLT5jbGspOwo+Pj4+Pj4gQEAgLTM2Miw2ICszMDUsNyBA
-QCBzdGF0aWMgaW50IGV4eW5vc19idXNfcGFyc2Vfb2Yoc3RydWN0IGRldmljZV9ub2RlICpucCwK
-Pj4+Pj4+ICAJCXJldCA9IFBUUl9FUlIob3BwKTsKPj4+Pj4+ICAJCWdvdG8gZXJyX29wcDsKPj4+
-Pj4+ICAJfQo+Pj4+Pj4gKwo+Pj4+Pj4gIAlidXMtPmN1cnJfZnJlcSA9IGRldl9wbV9vcHBfZ2V0
-X2ZyZXEob3BwKTsKPj4+Pj4+ICAJZGV2X3BtX29wcF9wdXQob3BwKTsKPj4+Pj4+ICAKPj4+Pj4+
-IEBAIC0zNjksNiArMzEzLDEzIEBAIHN0YXRpYyBpbnQgZXh5bm9zX2J1c19wYXJzZV9vZihzdHJ1
-Y3QgZGV2aWNlX25vZGUgKm5wLAo+Pj4+Pj4gIAo+Pj4+Pj4gIGVycl9vcHA6Cj4+Pj4+PiAgCWRl
-dl9wbV9vcHBfb2ZfcmVtb3ZlX3RhYmxlKGRldik7Cj4+Pj4+PiArCj4+Pj4+PiArZXJyX3JlZ3Vs
-YXRvcjoKPj4+Pj4+ICsJaWYgKGJ1cy0+b3BwX3RhYmxlKSB7Cj4+Pj4+PiArCQlkZXZfcG1fb3Bw
-X3B1dF9yZWd1bGF0b3JzKGJ1cy0+b3BwX3RhYmxlKTsKPj4+Pj4+ICsJCWJ1cy0+b3BwX3RhYmxl
-ID0gTlVMTDsKPj4+Pj4+ICsJfQo+Pj4+Pgo+Pj4+PiBBcyBJIG1lbnRpb25lZCBhYm92ZSwgaXQg
-aXQgd3JvbmcgdG8gY2FsbCBkZXZfcG1fb3BwX3B1dF9yZWd1bGF0b3JzKCkKPj4+Pj4gYWZ0ZXIg
-cmVtb3ZpbmcgdGhlIG9wcF90YWJsZSBieSBkZXZfcG1fb3BwX29mX3JlbW92ZV90YWJsZSgpLgo+
-Pj4+Pgo+Pj4+Pj4gKwo+Pj4+Pj4gIGVycl9jbGs6Cj4+Pj4+PiAgCWNsa19kaXNhYmxlX3VucHJl
-cGFyZShidXMtPmNsayk7Cj4+Pj4+PiAgCj4+Pj4+PiBAQCAtMzg2LDYgKzMzNyw3IEBAIHN0YXRp
-YyBpbnQgZXh5bm9zX2J1c19wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+Pj4+
-Pj4gIAlzdHJ1Y3QgZXh5bm9zX2J1cyAqYnVzOwo+Pj4+Pj4gIAlpbnQgcmV0LCBtYXhfc3RhdGU7
-Cj4+Pj4+PiAgCXVuc2lnbmVkIGxvbmcgbWluX2ZyZXEsIG1heF9mcmVxOwo+Pj4+Pj4gKwlib29s
-IHBhc3NpdmUgPSBmYWxzZTsKPj4+Pj4+ICAKPj4+Pj4+ICAJaWYgKCFucCkgewo+Pj4+Pj4gIAkJ
-ZGV2X2VycihkZXYsICJmYWlsZWQgdG8gZmluZCBkZXZpY2V0cmVlIG5vZGVcbiIpOwo+Pj4+Pj4g
-QEAgLTM5NSwxMiArMzQ3LDE4IEBAIHN0YXRpYyBpbnQgZXh5bm9zX2J1c19wcm9iZShzdHJ1Y3Qg
-cGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+Pj4+Pj4gIAlidXMgPSBkZXZtX2t6YWxsb2MoJnBkZXYt
-PmRldiwgc2l6ZW9mKCpidXMpLCBHRlBfS0VSTkVMKTsKPj4+Pj4+ICAJaWYgKCFidXMpCj4+Pj4+
-PiAgCQlyZXR1cm4gLUVOT01FTTsKPj4+Pj4+ICsKPj4+Pj4+ICAJbXV0ZXhfaW5pdCgmYnVzLT5s
-b2NrKTsKPj4+Pj4+ICAJYnVzLT5kZXYgPSAmcGRldi0+ZGV2Owo+Pj4+Pj4gIAlwbGF0Zm9ybV9z
-ZXRfZHJ2ZGF0YShwZGV2LCBidXMpOwo+Pj4+Pj4gKwlub2RlID0gb2ZfcGFyc2VfcGhhbmRsZShk
-ZXYtPm9mX25vZGUsICJkZXZmcmVxIiwgMCk7Cj4+Pj4+PiArCWlmIChub2RlKSB7Cj4+Pj4+PiAr
-CQlvZl9ub2RlX3B1dChub2RlKTsKPj4+Pj4+ICsJCXBhc3NpdmUgPSB0cnVlOwo+Pj4+Pj4gKwl9
-Cj4+Pj4+PiAgCj4+Pj4+PiAgCS8qIFBhcnNlIHRoZSBkZXZpY2UtdHJlZSB0byBnZXQgdGhlIHJl
-c291cmNlIGluZm9ybWF0aW9uICovCj4+Pj4+PiAtCXJldCA9IGV4eW5vc19idXNfcGFyc2Vfb2Yo
-bnAsIGJ1cyk7Cj4+Pj4+PiArCXJldCA9IGV4eW5vc19idXNfcGFyc2Vfb2YobnAsIGJ1cywgcGFz
-c2l2ZSk7Cj4+Pj4+PiAgCWlmIChyZXQgPCAwKQo+Pj4+Pj4gIAkJcmV0dXJuIHJldDsKPj4+Pj4+
-ICAKPj4+Pj4+IEBAIC00MTAsMTMgKzM2OCwxMCBAQCBzdGF0aWMgaW50IGV4eW5vc19idXNfcHJv
-YmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKPj4+Pj4+ICAJCWdvdG8gZXJyOwo+Pj4+
-Pj4gIAl9Cj4+Pj4+PiAgCj4+Pj4+PiAtCW5vZGUgPSBvZl9wYXJzZV9waGFuZGxlKGRldi0+b2Zf
-bm9kZSwgImRldmZyZXEiLCAwKTsKPj4+Pj4+IC0JaWYgKG5vZGUpIHsKPj4+Pj4+IC0JCW9mX25v
-ZGVfcHV0KG5vZGUpOwo+Pj4+Pj4gKwlpZiAocGFzc2l2ZSkKPj4+Pj4+ICAJCWdvdG8gcGFzc2l2
-ZTsKPj4+Pj4+IC0JfSBlbHNlIHsKPj4+Pj4+IC0JCXJldCA9IGV4eW5vc19idXNfcGFyZW50X3Bh
-cnNlX29mKG5wLCBidXMpOwo+Pj4+Pj4gLQl9Cj4+Pj4+PiArCj4+Pj4+PiArCXJldCA9IGV4eW5v
-c19idXNfcGFyZW50X3BhcnNlX29mKG5wLCBidXMpOwo+Pj4+Pj4gIAo+Pj4+Pgo+Pj4+PiBSZW1v
-dmUgdW5uZWVkZWQgYmxhbmsgbGluZS4KPj4+Pj4KPj4+Pj4+ICAJaWYgKHJldCA8IDApCj4+Pj4+
-PiAgCQlnb3RvIGVycjsKPj4+Pj4+IEBAIC01MDksNiArNDY0LDExIEBAIHN0YXRpYyBpbnQgZXh5
-bm9zX2J1c19wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+Pj4+Pj4gIAo+Pj4+
-Pj4gIGVycjoKPj4+Pj4+ICAJZGV2X3BtX29wcF9vZl9yZW1vdmVfdGFibGUoZGV2KTsKPj4+Pj4+
-ICsJaWYgKGJ1cy0+b3BwX3RhYmxlKSB7Cj4+Pj4+PiArCQlkZXZfcG1fb3BwX3B1dF9yZWd1bGF0
-b3JzKGJ1cy0+b3BwX3RhYmxlKTsKPj4+Pj4+ICsJCWJ1cy0+b3BwX3RhYmxlID0gTlVMTDsKPj4+
-Pj4+ICsJfQo+Pj4+Pj4gKwo+Pj4+Pgo+Pj4+PiBkaXR0by4KPj4+Pj4gSGF2ZSB0byBkaXNhYmxl
-IHJlZ3VsYXRvciBhZnRlciBkaXNhYmxpbmcgdGhlIGNsb2NrCj4+Pj4+IHRvIHByZXZlbnQgdGhl
-IGgvdyBmYXVsdC4KPj4+Pj4KPj4+Pj4gSSB0aGluayB0aGF0IHlvdSBzaG91bGQgY2FsbCB0aGVt
-IHdpdGggZm9sbG93aW5nIHNlcXVlbmNlOgo+Pj4+Pgo+Pj4+PiAJY2xrX2Rpc2FibGVfdW5wcmVw
-YXJlKGJ1cy0+Y2xrKTsKPj4+Pj4gCWlmIChidXMtPm9wcF90YWJsZSkKPj4+Pj4gCQlkZXZfcG1f
-b3BwX3B1dF9yZWd1bGF0b3JzKGJ1cy0+b3BwX3RhYmxlKTsKPj4+Pj4gCWRldl9wbV9vcHBfb2Zf
-cmVtb3ZlX3RhYmxlKGRldik7Cj4+Pj4+Cj4+Pj4+PiAgCWNsa19kaXNhYmxlX3VucHJlcGFyZShi
-dXMtPmNsayk7Cj4+Pj4+PiAgCj4+Pj4+PiAgCXJldHVybiByZXQ7Cj4+Pj4KPj4+PiBCZXN0IHJl
-Z2FyZHMsCj4+Pj4gLS0KPj4+PiBCYXJ0bG9taWVqIFpvbG5pZXJraWV3aWN6Cj4+Pj4gU2Ftc3Vu
-ZyBSJkQgSW5zdGl0dXRlIFBvbGFuZAo+Pj4+IFNhbXN1bmcgRWxlY3Ryb25pY3MKPj4KPj4gQmVz
-dCByZWdhcmRzLAo+PiAtLQo+PiBCYXJ0bG9taWVqIFpvbG5pZXJraWV3aWN6Cj4+IFNhbXN1bmcg
-UiZEIEluc3RpdHV0ZSBQb2xhbmQKPj4gU2Ftc3VuZyBFbGVjdHJvbmljcwoKX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWls
-aW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0
-cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On 6/21/19 10:38 AM, Marc Zyngier wrote:
+> From: Jintack Lim <jintack@cs.columbia.edu>
+>
+> When entering a nested VM, we set up the hypervisor control interface
+> based on what the guest hypervisor has set. Especially, we investigate
+> each list register written by the guest hypervisor whether HW bit is
+> set.  If so, we translate hw irq number from the guest's point of view
+> to the real hardware irq number if there is a mapping.
+>
+> Signed-off-by: Jintack Lim <jintack@cs.columbia.edu>
+> [Rewritten to support GICv3 instead of GICv2]
+> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
+> [Redesigned execution flow around vcpu load/put]
+> Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
+> ---
+>  arch/arm/include/asm/kvm_emulate.h |   1 +
+>  arch/arm/include/asm/kvm_host.h    |   6 +-
+>  arch/arm64/include/asm/kvm_host.h  |   5 +-
+>  arch/arm64/kvm/Makefile            |   1 +
+>  arch/arm64/kvm/nested.c            |  10 ++
+>  arch/arm64/kvm/sys_regs.c          | 178 ++++++++++++++++++++++++++++-
+>  include/kvm/arm_vgic.h             |  18 +++
+>  virt/kvm/arm/arm.c                 |   7 +-
+>  virt/kvm/arm/vgic/vgic-v3-nested.c | 177 ++++++++++++++++++++++++++++
+>  virt/kvm/arm/vgic/vgic-v3.c        |  28 +++++
+>  virt/kvm/arm/vgic/vgic.c           |  32 ++++++
+>  11 files changed, 456 insertions(+), 7 deletions(-)
+>  create mode 100644 virt/kvm/arm/vgic/vgic-v3-nested.c
+>
+> diff --git a/arch/arm/include/asm/kvm_emulate.h b/arch/arm/include/asm/kvm_emulate.h
+> index 865ce545b465..a53f19041e16 100644
+> --- a/arch/arm/include/asm/kvm_emulate.h
+> +++ b/arch/arm/include/asm/kvm_emulate.h
+> @@ -334,5 +334,6 @@ static inline unsigned long vcpu_data_host_to_guest(struct kvm_vcpu *vcpu,
+>  static inline void vcpu_ptrauth_setup_lazy(struct kvm_vcpu *vcpu) {}
+>  
+>  static inline bool is_hyp_ctxt(struct kvm_vcpu *vcpu) { return false; }
+> +static inline int kvm_inject_nested_irq(struct kvm_vcpu *vcpu) { BUG(); }
+>  
+>  #endif /* __ARM_KVM_EMULATE_H__ */
+> diff --git a/arch/arm/include/asm/kvm_host.h b/arch/arm/include/asm/kvm_host.h
+> index cc761610e41e..d6923ed55796 100644
+> --- a/arch/arm/include/asm/kvm_host.h
+> +++ b/arch/arm/include/asm/kvm_host.h
+> @@ -35,10 +35,12 @@
+>  #define KVM_MAX_VCPUS VGIC_V2_MAX_CPUS
+>  #endif
+>  
+> +/* KVM_REQ_GUEST_HYP_IRQ_PENDING is actually unused */
+>  #define KVM_REQ_SLEEP \
+>  	KVM_ARCH_REQ_FLAGS(0, KVM_REQUEST_WAIT | KVM_REQUEST_NO_WAKEUP)
+> -#define KVM_REQ_IRQ_PENDING	KVM_ARCH_REQ(1)
+> -#define KVM_REQ_VCPU_RESET	KVM_ARCH_REQ(2)
+> +#define KVM_REQ_IRQ_PENDING		KVM_ARCH_REQ(1)
+> +#define KVM_REQ_VCPU_RESET		KVM_ARCH_REQ(2)
+> +#define KVM_REQ_GUEST_HYP_IRQ_PENDING	KVM_ARCH_REQ(3)
+>  
+>  DECLARE_STATIC_KEY_FALSE(userspace_irqchip_in_use);
+>  
+> diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
+> index e0fe9acb46bf..e2e44cc650bf 100644
+> --- a/arch/arm64/include/asm/kvm_host.h
+> +++ b/arch/arm64/include/asm/kvm_host.h
+> @@ -53,8 +53,9 @@
+>  
+>  #define KVM_REQ_SLEEP \
+>  	KVM_ARCH_REQ_FLAGS(0, KVM_REQUEST_WAIT | KVM_REQUEST_NO_WAKEUP)
+> -#define KVM_REQ_IRQ_PENDING	KVM_ARCH_REQ(1)
+> -#define KVM_REQ_VCPU_RESET	KVM_ARCH_REQ(2)
+> +#define KVM_REQ_IRQ_PENDING		KVM_ARCH_REQ(1)
+> +#define KVM_REQ_VCPU_RESET		KVM_ARCH_REQ(2)
+> +#define KVM_REQ_GUEST_HYP_IRQ_PENDING	KVM_ARCH_REQ(3)
+>  
+>  DECLARE_STATIC_KEY_FALSE(userspace_irqchip_in_use);
+>  
+> diff --git a/arch/arm64/kvm/Makefile b/arch/arm64/kvm/Makefile
+> index f11bd8b0d837..045a8f18f465 100644
+> --- a/arch/arm64/kvm/Makefile
+> +++ b/arch/arm64/kvm/Makefile
+> @@ -38,3 +38,4 @@ kvm-$(CONFIG_KVM_ARM_PMU) += $(KVM)/arm/pmu.o
+>  
+>  kvm-$(CONFIG_KVM_ARM_HOST) += nested.o
+>  kvm-$(CONFIG_KVM_ARM_HOST) += emulate-nested.o
+> +kvm-$(CONFIG_KVM_ARM_HOST) += $(KVM)/arm/vgic/vgic-v3-nested.o
+> diff --git a/arch/arm64/kvm/nested.c b/arch/arm64/kvm/nested.c
+> index 214d59019935..df2db9ab7cfb 100644
+> --- a/arch/arm64/kvm/nested.c
+> +++ b/arch/arm64/kvm/nested.c
+> @@ -539,3 +539,13 @@ void kvm_arch_flush_shadow_all(struct kvm *kvm)
+>  	kvm->arch.nested_mmus_size = 0;
+>  	kvm_free_stage2_pgd(&kvm->arch.mmu);
+>  }
+> +
+> +bool vgic_state_is_nested(struct kvm_vcpu *vcpu)
+> +{
+> +	bool imo = __vcpu_sys_reg(vcpu, HCR_EL2) & HCR_IMO;
+> +	bool fmo = __vcpu_sys_reg(vcpu, HCR_EL2) & HCR_FMO;
+> +
+> +	WARN(imo != fmo, "Separate virtual IRQ/FIQ settings not supported\n");
+> +
+> +	return nested_virt_in_use(vcpu) && imo && fmo && !is_hyp_ctxt(vcpu);
+> +}
+> diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
+> index 2031a59fcf49..ba3bcd29c02d 100644
+> --- a/arch/arm64/kvm/sys_regs.c
+> +++ b/arch/arm64/kvm/sys_regs.c
+> @@ -26,6 +26,8 @@
+>  #include <linux/printk.h>
+>  #include <linux/uaccess.h>
+>  
+> +#include <linux/irqchip/arm-gic-v3.h>
+> +
+>  #include <asm/cacheflush.h>
+>  #include <asm/cputype.h>
+>  #include <asm/debug-monitors.h>
+> @@ -505,6 +507,18 @@ static bool access_vm_reg(struct kvm_vcpu *vcpu,
+>  	return true;
+>  }
+>  
+> +/*
+> + * The architecture says that non-secure write accesses to this register from
+> + * EL1 are trapped to EL2, if either:
+> + *  - HCR_EL2.FMO==1, or
+> + *  - HCR_EL2.IMO==1
+> + */
+> +static bool sgi_traps_to_vel2(struct kvm_vcpu *vcpu)
+> +{
+> +	return !vcpu_mode_el2(vcpu) &&
+> +		!!(__vcpu_sys_reg(vcpu, HCR_EL2) & (HCR_IMO | HCR_FMO));
+> +}
+> +
+>  /*
+>   * Trap handler for the GICv3 SGI generation system register.
+>   * Forward the request to the VGIC emulation.
+> @@ -520,6 +534,11 @@ static bool access_gic_sgi(struct kvm_vcpu *vcpu,
+>  	if (!p->is_write)
+>  		return read_from_write_only(vcpu, p, r);
+>  
+> +	if (sgi_traps_to_vel2(vcpu)) {
+> +		kvm_inject_nested_sync(vcpu, kvm_vcpu_get_hsr(vcpu));
+> +		return false;
+> +	}
+> +
+>  	/*
+>  	 * In a system where GICD_CTLR.DS=1, a ICC_SGI0R_EL1 access generates
+>  	 * Group0 SGIs only, while ICC_SGI1R_EL1 can generate either group,
+> @@ -563,7 +582,13 @@ static bool access_gic_sre(struct kvm_vcpu *vcpu,
+>  	if (p->is_write)
+>  		return ignore_write(vcpu, p);
+>  
+> -	p->regval = vcpu->arch.vgic_cpu.vgic_v3.vgic_sre;
+> +	if (p->Op1 == 4) {	/* ICC_SRE_EL2 */
+> +		p->regval = (ICC_SRE_EL2_ENABLE | ICC_SRE_EL2_SRE |
+> +			     ICC_SRE_EL1_DIB | ICC_SRE_EL1_DFB);
+> +	} else {		/* ICC_SRE_EL1 */
+> +		p->regval = vcpu->arch.vgic_cpu.vgic_v3.vgic_sre;
+> +	}
+> +
+>  	return true;
+>  }
+>  
+> @@ -1793,6 +1818,122 @@ static bool access_id_aa64pfr0_el1(struct kvm_vcpu *v,
+>  	return true;
+>  }
+>  
+> +static bool access_gic_apr(struct kvm_vcpu *vcpu,
+> +			   struct sys_reg_params *p,
+> +			   const struct sys_reg_desc *r)
+> +{
+> +	struct vgic_v3_cpu_if *cpu_if = &vcpu->arch.vgic_cpu.nested_vgic_v3;
+> +	u32 index, *base;
+> +
+> +	index = r->Op2;
+> +	if (r->CRm == 8)
+> +		base = cpu_if->vgic_ap0r;
+> +	else
+> +		base = cpu_if->vgic_ap1r;
+> +
+> +	if (p->is_write)
+> +		base[index] = p->regval;
+> +	else
+> +		p->regval = base[index];
+> +
+> +	return true;
+> +}
+> +
+> +static bool access_gic_hcr(struct kvm_vcpu *vcpu,
+> +			   struct sys_reg_params *p,
+> +			   const struct sys_reg_desc *r)
+> +{
+> +	struct vgic_v3_cpu_if *cpu_if = &vcpu->arch.vgic_cpu.nested_vgic_v3;
+> +
+> +	if (p->is_write)
+> +		cpu_if->vgic_hcr = p->regval;
+
+Probably because there's only enough NV support to run an L1 KVM hypervisor + L2
+guest, but the L1 guest ICH_HCR_EL2 value is written to the register unmodified
+in vgic_v3_load, and there's no support for forwarding traps that can be
+configured via ICH_HCR_EL2 (or even handling some traps - ICV_CTLR_EL1 can be
+trapped when ICH_HCR_EL2.TC = 1).
+
+> +	else
+> +		p->regval = cpu_if->vgic_hcr;
+> +
+> +	return true;
+> +}
+> +
+> +static bool access_gic_vtr(struct kvm_vcpu *vcpu,
+> +			   struct sys_reg_params *p,
+> +			   const struct sys_reg_desc *r)
+> +{
+> +	if (p->is_write)
+> +		return write_to_read_only(vcpu, p, r);
+> +
+> +	p->regval = kvm_vgic_global_state.ich_vtr_el2;
+> +
+> +	return true;
+> +}
+> +
+> +static bool access_gic_misr(struct kvm_vcpu *vcpu,
+> +			    struct sys_reg_params *p,
+> +			    const struct sys_reg_desc *r)
+> +{
+> +	if (p->is_write)
+> +		return write_to_read_only(vcpu, p, r);
+> +
+> +	p->regval = vgic_v3_get_misr(vcpu);
+> +
+> +	return true;
+> +}
+> +
+> +static bool access_gic_eisr(struct kvm_vcpu *vcpu,
+> +			    struct sys_reg_params *p,
+> +			    const struct sys_reg_desc *r)
+> +{
+> +	if (p->is_write)
+> +		return write_to_read_only(vcpu, p, r);
+> +
+> +	p->regval = vgic_v3_get_eisr(vcpu);
+> +
+> +	return true;
+> +}
+> +
+> +static bool access_gic_elrsr(struct kvm_vcpu *vcpu,
+> +			     struct sys_reg_params *p,
+> +			     const struct sys_reg_desc *r)
+> +{
+> +	if (p->is_write)
+> +		return write_to_read_only(vcpu, p, r);
+> +
+> +	p->regval = vgic_v3_get_elrsr(vcpu);
+> +
+> +	return true;
+> +}
+> +
+> +static bool access_gic_vmcr(struct kvm_vcpu *vcpu,
+> +			    struct sys_reg_params *p,
+> +			    const struct sys_reg_desc *r)
+> +{
+> +	struct vgic_v3_cpu_if *cpu_if = &vcpu->arch.vgic_cpu.nested_vgic_v3;
+> +
+> +	if (p->is_write)
+> +		cpu_if->vgic_vmcr = p->regval;
+> +	else
+> +		p->regval = cpu_if->vgic_vmcr;
+> +
+> +	return true;
+> +}
+> +
+> +static bool access_gic_lr(struct kvm_vcpu *vcpu,
+> +			  struct sys_reg_params *p,
+> +			  const struct sys_reg_desc *r)
+> +{
+> +	struct vgic_v3_cpu_if *cpu_if = &vcpu->arch.vgic_cpu.nested_vgic_v3;
+> +	u32 index;
+> +
+> +	index = p->Op2;
+> +	if (p->CRm == 13)
+> +		index += 8;
+> +
+> +	if (p->is_write)
+> +		cpu_if->vgic_lr[index] = p->regval;
+> +	else
+> +		p->regval = cpu_if->vgic_lr[index];
+> +
+> +	return true;
+> +}
+> +
+>  /*
+>   * Architected system registers.
+>   * Important: Must be sorted ascending by Op0, Op1, CRn, CRm, Op2
+> @@ -2123,6 +2264,41 @@ static const struct sys_reg_desc sys_reg_descs[] = {
+>  	{ SYS_DESC(SYS_RMR_EL2), access_rw, reset_val, RMR_EL2, 0 },
+>  	{ SYS_DESC(SYS_VDISR_EL2), trap_undef },
+>  
+> +	{ SYS_DESC(SYS_ICH_AP0R0_EL2), access_gic_apr },
+> +	{ SYS_DESC(SYS_ICH_AP0R1_EL2), access_gic_apr },
+> +	{ SYS_DESC(SYS_ICH_AP0R2_EL2), access_gic_apr },
+> +	{ SYS_DESC(SYS_ICH_AP0R3_EL2), access_gic_apr },
+> +	{ SYS_DESC(SYS_ICH_AP1R0_EL2), access_gic_apr },
+> +	{ SYS_DESC(SYS_ICH_AP1R1_EL2), access_gic_apr },
+> +	{ SYS_DESC(SYS_ICH_AP1R2_EL2), access_gic_apr },
+> +	{ SYS_DESC(SYS_ICH_AP1R3_EL2), access_gic_apr },
+> +
+> +	{ SYS_DESC(SYS_ICC_SRE_EL2), access_gic_sre },
+> +
+> +	{ SYS_DESC(SYS_ICH_HCR_EL2), access_gic_hcr },
+> +	{ SYS_DESC(SYS_ICH_VTR_EL2), access_gic_vtr },
+> +	{ SYS_DESC(SYS_ICH_MISR_EL2), access_gic_misr },
+> +	{ SYS_DESC(SYS_ICH_EISR_EL2), access_gic_eisr },
+> +	{ SYS_DESC(SYS_ICH_ELRSR_EL2), access_gic_elrsr },
+> +	{ SYS_DESC(SYS_ICH_VMCR_EL2), access_gic_vmcr },
+> +
+> +	{ SYS_DESC(SYS_ICH_LR0_EL2), access_gic_lr },
+> +	{ SYS_DESC(SYS_ICH_LR1_EL2), access_gic_lr },
+> +	{ SYS_DESC(SYS_ICH_LR2_EL2), access_gic_lr },
+> +	{ SYS_DESC(SYS_ICH_LR3_EL2), access_gic_lr },
+> +	{ SYS_DESC(SYS_ICH_LR4_EL2), access_gic_lr },
+> +	{ SYS_DESC(SYS_ICH_LR5_EL2), access_gic_lr },
+> +	{ SYS_DESC(SYS_ICH_LR6_EL2), access_gic_lr },
+> +	{ SYS_DESC(SYS_ICH_LR7_EL2), access_gic_lr },
+> +	{ SYS_DESC(SYS_ICH_LR8_EL2), access_gic_lr },
+> +	{ SYS_DESC(SYS_ICH_LR9_EL2), access_gic_lr },
+> +	{ SYS_DESC(SYS_ICH_LR10_EL2), access_gic_lr },
+> +	{ SYS_DESC(SYS_ICH_LR11_EL2), access_gic_lr },
+> +	{ SYS_DESC(SYS_ICH_LR12_EL2), access_gic_lr },
+> +	{ SYS_DESC(SYS_ICH_LR13_EL2), access_gic_lr },
+> +	{ SYS_DESC(SYS_ICH_LR14_EL2), access_gic_lr },
+> +	{ SYS_DESC(SYS_ICH_LR15_EL2), access_gic_lr },
+> +
+>  	{ SYS_DESC(SYS_CONTEXTIDR_EL2), access_rw, reset_val, CONTEXTIDR_EL2, 0 },
+>  	{ SYS_DESC(SYS_TPIDR_EL2), access_rw, reset_val, TPIDR_EL2, 0 },
+>  
+> diff --git a/include/kvm/arm_vgic.h b/include/kvm/arm_vgic.h
+> index 163b132e100e..707fbe627155 100644
+> --- a/include/kvm/arm_vgic.h
+> +++ b/include/kvm/arm_vgic.h
+> @@ -310,6 +310,15 @@ struct vgic_cpu {
+>  
+>  	struct vgic_irq private_irqs[VGIC_NR_PRIVATE_IRQS];
+>  
+> +	/* CPU vif control registers for the virtual GICH interface */
+> +	struct vgic_v3_cpu_if	nested_vgic_v3;
+> +
+> +	/*
+> +	 * The shadow vif control register loaded to the hardware when
+> +	 * running a nested L2 guest with the virtual IMO/FMO bit set.
+> +	 */
+> +	struct vgic_v3_cpu_if	shadow_vgic_v3;
+> +
+>  	raw_spinlock_t ap_list_lock;	/* Protects the ap_list */
+>  
+>  	/*
+> @@ -366,6 +375,13 @@ int kvm_vgic_vcpu_pending_irq(struct kvm_vcpu *vcpu);
+>  void kvm_vgic_load(struct kvm_vcpu *vcpu);
+>  void kvm_vgic_put(struct kvm_vcpu *vcpu);
+>  
+> +void vgic_v3_load_nested(struct kvm_vcpu *vcpu);
+> +void vgic_v3_put_nested(struct kvm_vcpu *vcpu);
+> +void vgic_v3_handle_nested_maint_irq(struct kvm_vcpu *vcpu);
+> +u16 vgic_v3_get_eisr(struct kvm_vcpu *vcpu);
+> +u16 vgic_v3_get_elrsr(struct kvm_vcpu *vcpu);
+> +u64 vgic_v3_get_misr(struct kvm_vcpu *vcpu);
+> +
+>  #define irqchip_in_kernel(k)	(!!((k)->arch.vgic.in_kernel))
+>  #define vgic_initialized(k)	((k)->arch.vgic.initialized)
+>  #define vgic_ready(k)		((k)->arch.vgic.ready)
+> @@ -411,4 +427,6 @@ int kvm_vgic_v4_unset_forwarding(struct kvm *kvm, int irq,
+>  void kvm_vgic_v4_enable_doorbell(struct kvm_vcpu *vcpu);
+>  void kvm_vgic_v4_disable_doorbell(struct kvm_vcpu *vcpu);
+>  
+> +bool vgic_state_is_nested(struct kvm_vcpu *vcpu);
+> +
+>  #endif /* __KVM_ARM_VGIC_H */
+> diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
+> index ca10a11e044e..ddcab58ae440 100644
+> --- a/virt/kvm/arm/arm.c
+> +++ b/virt/kvm/arm/arm.c
+> @@ -634,6 +634,9 @@ static void check_vcpu_requests(struct kvm_vcpu *vcpu)
+>  		 * that a VCPU sees new virtual interrupts.
+>  		 */
+>  		kvm_check_request(KVM_REQ_IRQ_PENDING, vcpu);
+> +
+> +		if (kvm_check_request(KVM_REQ_GUEST_HYP_IRQ_PENDING, vcpu))
+> +			kvm_inject_nested_irq(vcpu);
+>  	}
+>  }
+>  
+> @@ -680,10 +683,10 @@ int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu, struct kvm_run *run)
+>  		 */
+>  		cond_resched();
+>  
+> -		update_vmid(&vcpu->arch.hw_mmu->vmid);
+> -
+>  		check_vcpu_requests(vcpu);
+>  
+> +		update_vmid(&vcpu->arch.hw_mmu->vmid);
+
+Was this change made to prevent having a mmu with a valid vmid_gen, but which
+was never actually run? Or something else entirely?
+
+> +
+>  		/*
+>  		 * Preparing the interrupts to be injected also
+>  		 * involves poking the GIC, which must be done in a
+> diff --git a/virt/kvm/arm/vgic/vgic-v3-nested.c b/virt/kvm/arm/vgic/vgic-v3-nested.c
+> new file mode 100644
+> index 000000000000..6fb81dfbb679
+> --- /dev/null
+> +++ b/virt/kvm/arm/vgic/vgic-v3-nested.c
+> @@ -0,0 +1,177 @@
+> +#include <linux/cpu.h>
+> +#include <linux/kvm.h>
+> +#include <linux/kvm_host.h>
+> +#include <linux/interrupt.h>
+> +#include <linux/io.h>
+> +#include <linux/uaccess.h>
+> +
+> +#include <linux/irqchip/arm-gic-v3.h>
+> +
+> +#include <asm/kvm_emulate.h>
+> +#include <asm/kvm_arm.h>
+> +#include <kvm/arm_vgic.h>
+> +
+> +#include "vgic.h"
+> +
+> +static inline struct vgic_v3_cpu_if *vcpu_nested_if(struct kvm_vcpu *vcpu)
+> +{
+> +	return &vcpu->arch.vgic_cpu.nested_vgic_v3;
+> +}
+
+Not especially relevant at this stage, but the nested_vgic_v3 member is accesses
+in several other places in sys_regs.c and vgic-v3.c. Perhaps this function could
+be moved to include/kvm/arm_vgic.h in a future revision.
+
+> +
+> +static inline struct vgic_v3_cpu_if *vcpu_shadow_if(struct kvm_vcpu *vcpu)
+> +{
+> +	return &vcpu->arch.vgic_cpu.shadow_vgic_v3;
+> +}
+> +
+> +static inline bool lr_triggers_eoi(u64 lr)
+> +{
+> +	return !(lr & (ICH_LR_STATE | ICH_LR_HW)) && (lr & ICH_LR_EOI);
+> +}
+> +
+> +u16 vgic_v3_get_eisr(struct kvm_vcpu *vcpu)
+> +{
+> +	struct vgic_v3_cpu_if *cpu_if = vcpu_nested_if(vcpu);
+> +	u16 reg = 0;
+> +	int i;
+> +
+> +	for (i = 0; i < kvm_vgic_global_state.nr_lr; i++) {
+> +		if (lr_triggers_eoi(cpu_if->vgic_lr[i]))
+> +			reg |= BIT(i);
+> +	}
+> +
+> +	return reg;
+> +}
+> +
+> +u16 vgic_v3_get_elrsr(struct kvm_vcpu *vcpu)
+> +{
+> +	struct vgic_v3_cpu_if *cpu_if = vcpu_nested_if(vcpu);
+> +	u16 reg = 0;
+> +	int i;
+> +
+> +	for (i = 0; i < kvm_vgic_global_state.nr_lr; i++) {
+> +		if (!(cpu_if->vgic_lr[i] & ICH_LR_STATE))
+> +			reg |= BIT(i);
+> +	}
+> +
+> +	return reg;
+> +}
+> +
+> +u64 vgic_v3_get_misr(struct kvm_vcpu *vcpu)
+> +{
+> +	struct vgic_v3_cpu_if *cpu_if = vcpu_nested_if(vcpu);
+> +	int nr_lr = kvm_vgic_global_state.nr_lr;
+> +	u64 reg = 0;
+> +
+> +	if (vgic_v3_get_eisr(vcpu))
+> +		reg |= ICH_MISR_EOI;
+> +
+> +	if (cpu_if->vgic_hcr & ICH_HCR_UIE) {
+> +		int used_lrs;
+> +
+> +		used_lrs = nr_lr - hweight16(vgic_v3_get_elrsr(vcpu));
+> +		if (used_lrs <= 1)
+> +			reg |= ICH_MISR_U;
+> +	}
+> +
+> +	/* TODO: Support remaining bits in this register */
+> +	return reg;
+> +}
+> +
+> +/*
+> + * For LRs which have HW bit set such as timer interrupts, we modify them to
+> + * have the host hardware interrupt number instead of the virtual one programmed
+> + * by the guest hypervisor.
+> + */
+> +static void vgic_v3_create_shadow_lr(struct kvm_vcpu *vcpu)
+> +{
+> +	struct vgic_v3_cpu_if *cpu_if = vcpu_nested_if(vcpu);
+> +	struct vgic_v3_cpu_if *s_cpu_if = vcpu_shadow_if(vcpu);
+> +	struct vgic_irq *irq;
+> +	int i;
+> +
+> +	for (i = 0; i < kvm_vgic_global_state.nr_lr; i++) {
+> +		u64 lr = cpu_if->vgic_lr[i];
+> +		int l1_irq;
+> +
+> +		if (!(lr & ICH_LR_HW))
+> +			goto next;
+> +
+> +		/* We have the HW bit set */
+> +		l1_irq = (lr & ICH_LR_PHYS_ID_MASK) >> ICH_LR_PHYS_ID_SHIFT;
+> +		irq = vgic_get_irq(vcpu->kvm, vcpu, l1_irq);
+> +
+> +		if (!irq || !irq->hw) {
+> +			/* There was no real mapping, so nuke the HW bit */
+> +			lr &= ~ICH_LR_HW;
+> +			if (irq)
+> +				vgic_put_irq(vcpu->kvm, irq);
+> +			goto next;
+> +		}
+> +
+> +		/* Translate the virtual mapping to the real one */
+> +		lr &= ~ICH_LR_EOI; /* Why? */
+> +		lr &= ~ICH_LR_PHYS_ID_MASK;
+> +		lr |= (u64)irq->hwintid << ICH_LR_PHYS_ID_SHIFT;
+> +		vgic_put_irq(vcpu->kvm, irq);
+> +
+> +next:
+> +		s_cpu_if->vgic_lr[i] = lr;
+> +	}
+> +
+> +	s_cpu_if->used_lrs = kvm_vgic_global_state.nr_lr;
+> +}
+> +
+> +/*
+> + * Change the shadow HWIRQ field back to the virtual value before copying over
+> + * the entire shadow struct to the nested state.
+> + */
+> +static void vgic_v3_fixup_shadow_lr_state(struct kvm_vcpu *vcpu)
+> +{
+> +	struct vgic_v3_cpu_if *cpu_if = vcpu_nested_if(vcpu);
+> +	struct vgic_v3_cpu_if *s_cpu_if = vcpu_shadow_if(vcpu);
+> +	int lr;
+> +
+> +	for (lr = 0; lr < kvm_vgic_global_state.nr_lr; lr++) {
+> +		s_cpu_if->vgic_lr[lr] &= ~ICH_LR_PHYS_ID_MASK;
+> +		s_cpu_if->vgic_lr[lr] |= cpu_if->vgic_lr[lr] & ICH_LR_PHYS_ID_MASK;
+> +	}
+> +}
+> +
+> +void vgic_v3_load_nested(struct kvm_vcpu *vcpu)
+> +{
+> +	struct vgic_cpu *vgic_cpu = &vcpu->arch.vgic_cpu;
+> +
+> +	vgic_cpu->shadow_vgic_v3 = vgic_cpu->nested_vgic_v3;
+> +	vgic_v3_create_shadow_lr(vcpu);
+> +	__vgic_v3_restore_state(vcpu_shadow_if(vcpu));
+> +}
+> +
+> +void vgic_v3_put_nested(struct kvm_vcpu *vcpu)
+> +{
+> +	struct vgic_cpu *vgic_cpu = &vcpu->arch.vgic_cpu;
+> +
+> +	__vgic_v3_save_state(vcpu_shadow_if(vcpu));
+> +
+> +	/*
+> +	 * Translate the shadow state HW fields back to the virtual ones
+> +	 * before copying the shadow struct back to the nested one.
+> +	 */
+> +	vgic_v3_fixup_shadow_lr_state(vcpu);
+> +	vgic_cpu->nested_vgic_v3 = vgic_cpu->shadow_vgic_v3;
+> +}
+> +
+> +void vgic_v3_handle_nested_maint_irq(struct kvm_vcpu *vcpu)
+> +{
+> +	struct vgic_v3_cpu_if *cpu_if = vcpu_nested_if(vcpu);
+> +
+> +	/*
+> +	 * If we exit a nested VM with a pending maintenance interrupt from the
+> +	 * GIC, then we need to forward this to the guest hypervisor so that it
+> +	 * can re-sync the appropriate LRs and sample level triggered interrupts
+> +	 * again.
+> +	 */
+> +	if (vgic_state_is_nested(vcpu) &&
+> +	    (cpu_if->vgic_hcr & ICH_HCR_EN) &&
+> +	    vgic_v3_get_misr(vcpu))
+> +		kvm_inject_nested_irq(vcpu);
+> +}
+
+I don't see this function used anywhere, shouldn't it be part of #53 "KVM:
+arm64: nv: Implement maintenance interrupt forwarding"?
+
+> diff --git a/virt/kvm/arm/vgic/vgic-v3.c b/virt/kvm/arm/vgic/vgic-v3.c
+> index 77d23e817756..25edf32c28fb 100644
+> --- a/virt/kvm/arm/vgic/vgic-v3.c
+> +++ b/virt/kvm/arm/vgic/vgic-v3.c
+> @@ -18,6 +18,7 @@
+>  #include <kvm/arm_vgic.h>
+>  #include <asm/kvm_hyp.h>
+>  #include <asm/kvm_mmu.h>
+> +#include <asm/kvm_nested.h>
+>  #include <asm/kvm_asm.h>
+>  
+>  #include "vgic.h"
+> @@ -298,6 +299,12 @@ void vgic_v3_enable(struct kvm_vcpu *vcpu)
+>  		vgic_v3->vgic_sre = (ICC_SRE_EL1_DIB |
+>  				     ICC_SRE_EL1_DFB |
+>  				     ICC_SRE_EL1_SRE);
+> +		/*
+> +		 * If nesting is allowed, force GICv3 onto the nested
+> +		 * guests as well.
+> +		 */
+> +		if (nested_virt_in_use(vcpu))
+> +			vcpu->arch.vgic_cpu.nested_vgic_v3.vgic_sre = vgic_v3->vgic_sre;
+>  		vcpu->arch.vgic_cpu.pendbaser = INITIAL_PENDBASER_VALUE;
+>  	} else {
+>  		vgic_v3->vgic_sre = 0;
+> @@ -660,6 +667,13 @@ void vgic_v3_load(struct kvm_vcpu *vcpu)
+>  {
+>  	struct vgic_v3_cpu_if *cpu_if = &vcpu->arch.vgic_cpu.vgic_v3;
+>  
+> +	/*
+> +	 * vgic_v3_load_nested only affects the LRs in the shadow
+> +	 * state, so it is fine to pass the nested state around.
+> +	 */
+> +	if (vgic_state_is_nested(vcpu))
+> +		cpu_if = &vcpu->arch.vgic_cpu.nested_vgic_v3;
+> +
+>  	/*
+>  	 * If dealing with a GICv2 emulation on GICv3, VMCR_EL2.VFIQen
+>  	 * is dependent on ICC_SRE_EL1.SRE, and we have to perform the
+> @@ -672,12 +686,18 @@ void vgic_v3_load(struct kvm_vcpu *vcpu)
+>  
+>  	if (has_vhe())
+>  		__vgic_v3_activate_traps(cpu_if);
+> +
+> +	if (vgic_state_is_nested(vcpu))
+> +		vgic_v3_load_nested(vcpu);
+>  }
+>  
+>  void vgic_v3_put(struct kvm_vcpu *vcpu)
+>  {
+>  	struct vgic_v3_cpu_if *cpu_if = &vcpu->arch.vgic_cpu.vgic_v3;
+>  
+> +	if (vgic_state_is_nested(vcpu))
+> +		cpu_if = &vcpu->arch.vgic_cpu.shadow_vgic_v3;
+> +
+>  	if (likely(cpu_if->vgic_sre))
+>  		cpu_if->vgic_vmcr = kvm_call_hyp_ret(__vgic_v3_read_vmcr);
+>  
+> @@ -685,4 +705,12 @@ void vgic_v3_put(struct kvm_vcpu *vcpu)
+>  
+>  	if (has_vhe())
+>  		__vgic_v3_deactivate_traps(cpu_if);
+> +
+> +	if (vgic_state_is_nested(vcpu))
+> +		vgic_v3_put_nested(vcpu);
+>  }
+> +
+> +__weak void vgic_v3_sync_nested(struct kvm_vcpu *vcpu) {}
+> +__weak void vgic_v3_handle_nested_maint_irq(struct kvm_vcpu *vcpu) {}
+> +__weak void vgic_v3_load_nested(struct kvm_vcpu *vcpu) {}
+> +__weak void vgic_v3_put_nested(struct kvm_vcpu *vcpu) {}
+> diff --git a/virt/kvm/arm/vgic/vgic.c b/virt/kvm/arm/vgic/vgic.c
+> index 6953aefecbb6..f32f49b0c803 100644
+> --- a/virt/kvm/arm/vgic/vgic.c
+> +++ b/virt/kvm/arm/vgic/vgic.c
+> @@ -872,6 +872,10 @@ void kvm_vgic_sync_hwstate(struct kvm_vcpu *vcpu)
+>  {
+>  	int used_lrs;
+>  
+> +	/* If nesting, this is a load/put affair, not flush/sync. */
+> +	if (vgic_state_is_nested(vcpu))
+> +		return;
+> +
+>  	WARN_ON(vgic_v4_sync_hwstate(vcpu));
+>  
+>  	/* An empty ap_list_head implies used_lrs == 0 */
+> @@ -920,6 +924,29 @@ void kvm_vgic_flush_hwstate(struct kvm_vcpu *vcpu)
+>  	    !vgic_supports_direct_msis(vcpu->kvm))
+>  		return;
+>  
+> +	/*
+> +	 * If in a nested state, we must return early. Two possibilities:
+> +	 *
+> +	 * - If we have any pending IRQ for the guest and the guest
+> +	 *   expects IRQs to be handled in its virtual EL2 mode (the
+> +	 *   virtual IMO bit is set) and it is not already running in
+> +	 *   virtual EL2 mode, then we have to emulate an IRQ
+> +	 *   exception to virtual EL2.
+> +	 *
+> +	 *   We do that by placing a request to ourselves which will
+> +	 *   abort the entry procedure and inject the exception at the
+> +	 *   beginning of the run loop.
+> +	 *
+> +	 * - Otherwise, do exactly *NOTHING*. The guest state is
+> +	 *   already loaded, and we can carry on with running it.
+> +	 */
+> +	if (vgic_state_is_nested(vcpu)) {
+> +		if (kvm_vgic_vcpu_pending_irq(vcpu))
+> +			kvm_make_request(KVM_REQ_GUEST_HYP_IRQ_PENDING, vcpu);
+> +
+> +		return;
+> +	}
+> +
+>  	DEBUG_SPINLOCK_BUG_ON(!irqs_disabled());
+>  
+>  	if (!list_empty(&vcpu->arch.vgic_cpu.ap_list_head)) {
+> @@ -1022,3 +1049,8 @@ bool kvm_vgic_map_is_active(struct kvm_vcpu *vcpu, unsigned int vintid)
+>  
+>  	return map_is_active;
+>  }
+> +
+> +__weak bool vgic_state_is_nested(struct kvm_vcpu *vcpu)
+> +{
+> +	return false;
+> +}
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
