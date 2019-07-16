@@ -2,86 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1DC996A830
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 14:05:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6BBD76A836
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 14:06:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=frbBXkU2MLcqn1iekJA1r72odJa//iKbGWyXFESW3Pc=; b=RaUwOUhr6nleHz
-	+KXm/TuMAk4fSvvcOoSxNMVqt9R+yONvziOKhojkgfUkhlPUGa+PryzG8O6Vcw4aKdFytiEzJns1h
-	xHD8wIdndkIrHf8m6lBMdhBX2YjFuvqsvIDNGMKp66reXa5+gMhdWFjjOrug8FBHXz2jH4qnL/DbK
-	udSSJJyzxem26ZiF5INUWsO4reAW5+lyOOlWmF9zlhI7/DyeVCU3FtAKAe44Sp6rIaM3e1MOvFaa2
-	yqd3ZkHqO0QCN2sjv+v2jJ5rg79HYOCaACdBE+QkwnYRORskm+7lnx9QG5QpJ/ZTOB4KyaxNNJiTO
-	4bVwOYXLVD/c9w0jB94Q==;
+	List-Owner; bh=cKmI8Uk8r9R5z+rfEZTbGusw8odH5LY8o06wIZRyOek=; b=VtmTgrog/a0QQx
+	ZWclUgNoEqk5SqK79UlXPWSdBijT0l5GeLvIoLuJ0oU//A6ima2hlDKu2c483IjRWHrTUNxxpLOCL
+	aLCJet752AwOR8yAEyMBy+Wj8F2/o8420fR799XKTX0sdgcBSgIWfaOzL6d2pDBdVGhBjwg5yejHb
+	5IgctKmyz5pJ5c9eFJEevy/FCB+CER2hAVcLasSJO1pTsI0Cb2x/+IMC7SNxVNGKcte9l2v3ILhQo
+	0Gmy5G/ngoiAoL9BKfva+FasqAsx1i610cGbv/25Sx0YX8NxZBEtIEFSmlfS1iCz7Y8w2cbOdtwCM
+	No6ugAff2r1/VmMx7rpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnMCs-0001E3-Rr; Tue, 16 Jul 2019 12:05:18 +0000
-Received: from mail-vk1-xa42.google.com ([2607:f8b0:4864:20::a42])
+	id 1hnMED-0002zl-DK; Tue, 16 Jul 2019 12:06:41 +0000
+Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnMCW-00012j-Iz
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 12:04:58 +0000
-Received: by mail-vk1-xa42.google.com with SMTP id b64so4109808vke.13
+ id 1hnMDz-0002z2-6f
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 12:06:28 +0000
+Received: by mail-qt1-x843.google.com with SMTP id h18so19206159qtm.9
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jul 2019 05:04:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=P7ULxAuKEaSYzWYdGTr4IlP25QOrvD8KBofH6zWNyzQ=;
- b=mkw993/neQKAw2c2FfYVkxn+sOjDePcI0SFBqSo2uQ9XgxU7qFjPiY3YH5IUddHb1f
- 0Zi+0q7QkAQBUfFLrw7PZjyy/zDoBIwIax+0NNKvtUxDk8C+SkzNSpFCXzQ0EZg4L/nh
- NgyhuIC9Ws15LrFjfBQKOKwslddMzuYtVkZiU=
+ Tue, 16 Jul 2019 05:06:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ziepe.ca; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=QhpcQElL3lG0JSgeqXLUe/9qK61Ylnz+wgQS3Fp7AjE=;
+ b=D1pZEppikXtQIEAGheASyppn4vPK1DguzWZpiaVk939PKpSlX+xsQppOI0OBkx+nKq
+ 1JMeoAeO2RtNcmtGWYdKLbdcc2TbWA6drTUMGhZaq0sz3Geu8LfsJw1hCEqbsa4Bc/j+
+ JrOL+39tH0pc4sSRyK3u0NuDnGgXAecwBuMSo8RvbrqgC5vpbNsoC1TREtbzabbzYUMS
+ k9WxSC0qQS+DehVxRxUbV/PWa/pVTJQcjtukye20Ck/yNfMpOiGdSRCyc7pAxi48HA7M
+ W3ECRyTg6vWSNWsyBv8+jZrvPzt1c26ISNAUAqR3Nk0GH9Y/cYJuNImJ996hTYW3Y9ab
+ lyPQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=P7ULxAuKEaSYzWYdGTr4IlP25QOrvD8KBofH6zWNyzQ=;
- b=Ox0Iu9OVla7bn/Fpu0trBPm2R9EMjvt+dibTneLBBZ5Sev8g1hoSqmGineavF0Dvo+
- VOr5rX3a0WBJAlSGWw7A8PxVBSKVFKdDomkLqOCmHR73DgGqihUYhbGchMar1cB+sK7r
- 4Kev3mk4+y/wHFiGqeKhlq2Wg11T9W/HWpDohka09I3ygKdYyniI/X3kWSU8May4BYR/
- Spluli2qv1qkxRGA28Utz4ZIF2WCV4h7/jJ8zsW7tUl+KZXDCUMkEUYvmQsvupAtTepN
- rVJIBK7UfJB8q4CwYDgPJ/cGuHiPQ95bhl6aPDyUtU6GAezQ6zQbrwCJiXHKi4UPi1G2
- Zd7g==
-X-Gm-Message-State: APjAAAUaiyVYy0z6Bgb7lIH7zpxeUgSQaYWPF8YggAnqO1QEpF1WNI1j
- sAxZ+rxda9HhWm/kAjbFb6gdZ24Wonm0sHDJvc90qQ==
-X-Google-Smtp-Source: APXvYqyV5nIBgRiOBlht43v8TH2KL+F06jklrgKSVXF6ezSHVkI2KPhvG8Y407cVFJ0e5gFjSSA+0asgnIsC1+p+aiY=
-X-Received: by 2002:a1f:3692:: with SMTP id d140mr11929548vka.88.1563278694560; 
- Tue, 16 Jul 2019 05:04:54 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=QhpcQElL3lG0JSgeqXLUe/9qK61Ylnz+wgQS3Fp7AjE=;
+ b=FhBeUk+vVyZRSdqvcPNmKvmLysCu/SnmLYhRabmYl1bZx9mCu1kj53m4DKNDezLxeK
+ 670ZjN/anCp1Tve4CuywQiSeIR94tmw428/iU2fdoX23nMnes5KW+TfBm92cVjHliyUk
+ J51CFrtgs48Zlk/0AtDpE4LKjdJmQxOwXqpq7V311REHJ9pwiwhfPnfVH6WA69yYT7GX
+ kKBD/GUEWY8FGaZxpDKkuv7mmd04crDMp39nMxz9e4QLXkVE4Hr67m0l936nKV9M8fxy
+ B4Vb01EO43CTR27iy7n7QVvh6IY6aEPZ7vvVuNdOc0QtaDysK7zkWOF614yMfF7SNgnv
+ SkEg==
+X-Gm-Message-State: APjAAAW81qKbQ2v6Bc92rHkI30gz+5lFZDXaZFgyVgOhtEatWF93PuzN
+ Vlq5+DOo/UlH6Tis9OvYK9gzYw==
+X-Google-Smtp-Source: APXvYqwaXFZZiwZu977J+QGokWcpz5v06kUp2glLI/ZNMEHnjOvZ6hmUglcng9VwXT1727jmbSrxcg==
+X-Received: by 2002:a0c:e703:: with SMTP id d3mr22592037qvn.194.1563278785764; 
+ Tue, 16 Jul 2019 05:06:25 -0700 (PDT)
+Received: from ziepe.ca
+ (hlfxns017vw-156-34-55-100.dhcp-dynamic.fibreop.ns.bellaliant.net.
+ [156.34.55.100])
+ by smtp.gmail.com with ESMTPSA id a6sm8577367qkn.59.2019.07.16.05.06.25
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 16 Jul 2019 05:06:25 -0700 (PDT)
+Received: from jgg by mlx.ziepe.ca with local (Exim 4.90_1)
+ (envelope-from <jgg@ziepe.ca>)
+ id 1hnMDw-0007mK-JQ; Tue, 16 Jul 2019 09:06:24 -0300
+Date: Tue, 16 Jul 2019 09:06:24 -0300
+From: Jason Gunthorpe <jgg@ziepe.ca>
+To: Andrey Konovalov <andreyknvl@google.com>
+Subject: Re: [PATCH v18 11/15] IB/mlx4: untag user pointers in mlx4_get_umem_mr
+Message-ID: <20190716120624.GA29727@ziepe.ca>
+References: <cover.1561386715.git.andreyknvl@google.com>
+ <ea0ff94ef2b8af12ea6c222c5ebd970e0849b6dd.1561386715.git.andreyknvl@google.com>
+ <20190624174015.GL29120@arrakis.emea.arm.com>
+ <CAAeHK+y8vE=G_odK6KH=H064nSQcVgkQkNwb2zQD9swXxKSyUQ@mail.gmail.com>
+ <20190715180510.GC4970@ziepe.ca>
+ <CAAeHK+xPQqJP7p_JFxc4jrx9k7N0TpBWEuB8Px7XHvrfDU1_gw@mail.gmail.com>
 MIME-Version: 1.0
-References: <20190712100443.221322-1-cychiang@chromium.org>
- <20190712100443.221322-3-cychiang@chromium.org>
- <20190712104748.zlgxgdjbtj2gw4yz@shell.armlinux.org.uk>
-In-Reply-To: <20190712104748.zlgxgdjbtj2gw4yz@shell.armlinux.org.uk>
-From: Cheng-yi Chiang <cychiang@chromium.org>
-Date: Tue, 16 Jul 2019 20:04:28 +0800
-Message-ID: <CAFv8NwLBr+USzOJvSZzMt_EzxA=07-NTGzuKdusaMxbFyrBjFQ@mail.gmail.com>
-Subject: Re: [PATCH v3 2/5] drm: bridge: dw-hdmi: Report connector status
- using callback
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+Content-Disposition: inline
+In-Reply-To: <CAAeHK+xPQqJP7p_JFxc4jrx9k7N0TpBWEuB8Px7XHvrfDU1_gw@mail.gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_050456_658927_51146D69 
-X-CRM114-Status: GOOD (  31.10  )
-X-Spam-Score: -7.4 (-------)
+X-CRM114-CacheID: sfid-20190716_050627_393928_51A15259 
+X-CRM114-Status: GOOD (  18.97  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-7.4 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a42 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
  [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,251 +107,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "moderated list:SOUND - SOC LAYER / DYNAMIC AUDIO POWER MANAGEM..."
- <alsa-devel@alsa-project.org>, tzungbi@chromium.org,
- Heiko Stuebner <heiko@sntech.de>, Liam Girdwood <lgirdwood@gmail.com>,
- David Airlie <airlied@linux.ie>, Mark Brown <broonie@kernel.org>,
- Takashi Iwai <tiwai@suse.com>, linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel@lists.freedesktop.org, Doug Anderson <dianders@chromium.org>,
- Hans Verkuil <hverkuil@xs4all.nl>, linux-rockchip@lists.infradead.org,
- Andrzej Hajda <a.hajda@samsung.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>, Dylan Reid <dgreid@chromium.org>,
- Jaroslav Kysela <perex@perex.cz>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org,
+ Linux Memory Management List <linux-mm@kvack.org>,
+ Khalid Aziz <khalid.aziz@oracle.com>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Christoph Hellwig <hch@infradead.org>, Dmitry Vyukov <dvyukov@google.com>,
+ Dave Martin <Dave.Martin@arm.com>, Evgeniy Stepanov <eugenis@google.com>,
+ linux-media@vger.kernel.org, Kevin Brodsky <kevin.brodsky@arm.com>,
+ Kees Cook <keescook@chromium.org>, Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yishai Hadas <yishaih@mellanox.com>, LKML <linux-kernel@vger.kernel.org>,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jul 12, 2019 at 6:48 PM Russell King - ARM Linux admin
-<linux@armlinux.org.uk> wrote:
->
-> On Fri, Jul 12, 2019 at 06:04:40PM +0800, Cheng-Yi Chiang wrote:
-> > Allow codec driver register callback function for plug event.
+On Tue, Jul 16, 2019 at 12:42:07PM +0200, Andrey Konovalov wrote:
+> On Mon, Jul 15, 2019 at 8:05 PM Jason Gunthorpe <jgg@ziepe.ca> wrote:
 > >
-> > The callback registration flow:
-> > dw-hdmi <--- hw-hdmi-i2s-audio <--- hdmi-codec
+> > On Mon, Jul 15, 2019 at 06:01:29PM +0200, Andrey Konovalov wrote:
+> > > On Mon, Jun 24, 2019 at 7:40 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
+> > > >
+> > > > On Mon, Jun 24, 2019 at 04:32:56PM +0200, Andrey Konovalov wrote:
+> > > > > This patch is a part of a series that extends kernel ABI to allow to pass
+> > > > > tagged user pointers (with the top byte set to something else other than
+> > > > > 0x00) as syscall arguments.
+> > > > >
+> > > > > mlx4_get_umem_mr() uses provided user pointers for vma lookups, which can
+> > > > > only by done with untagged pointers.
+> > > > >
+> > > > > Untag user pointers in this function.
+> > > > >
+> > > > > Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
+> > > > >  drivers/infiniband/hw/mlx4/mr.c | 7 ++++---
+> > > > >  1 file changed, 4 insertions(+), 3 deletions(-)
+> > > >
+> > > > Acked-by: Catalin Marinas <catalin.marinas@arm.com>
+> > > >
+> > > > This patch also needs an ack from the infiniband maintainers (Jason).
+> > >
+> > > Hi Jason,
+> > >
+> > > Could you take a look and give your acked-by?
 > >
-> > dw-hdmi-i2s-audio implements hook_plugged_cb op
-> > so codec driver can register the callback.
-> >
-> > dw-hdmi implements set_plugged_cb op so platform device can register the
-> > callback.
-> >
-> > When connector plug/unplug event happens, report this event using the
-> > callback.
-> >
-> > Make sure that audio and drm are using the single source of truth for
-> > connector status.
-> >
-> > Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
-> > ---
-> >  .../gpu/drm/bridge/synopsys/dw-hdmi-audio.h   |  3 +
-> >  .../drm/bridge/synopsys/dw-hdmi-i2s-audio.c   | 10 ++++
-> >  drivers/gpu/drm/bridge/synopsys/dw-hdmi.c     | 55 ++++++++++++++++++-
-> >  3 files changed, 67 insertions(+), 1 deletion(-)
-> >
-> > diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-audio.h b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-audio.h
-> > index 63b5756f463b..f523c590984e 100644
-> > --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-audio.h
-> > +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-audio.h
-> > @@ -2,6 +2,8 @@
-> >  #ifndef DW_HDMI_AUDIO_H
-> >  #define DW_HDMI_AUDIO_H
-> >
-> > +#include <sound/hdmi-codec.h>
-> > +
-> >  struct dw_hdmi;
-> >
-> >  struct dw_hdmi_audio_data {
-> > @@ -17,6 +19,7 @@ struct dw_hdmi_i2s_audio_data {
-> >
-> >       void (*write)(struct dw_hdmi *hdmi, u8 val, int offset);
-> >       u8 (*read)(struct dw_hdmi *hdmi, int offset);
-> > +     int (*set_plugged_cb)(struct dw_hdmi *hdmi, hdmi_codec_plugged_cb fn);
-> >  };
-> >
-> >  #endif
-> > diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-> > index 5cbb71a866d5..7b93cf05c985 100644
-> > --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-> > +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-> > @@ -104,10 +104,20 @@ static int dw_hdmi_i2s_get_dai_id(struct snd_soc_component *component,
-> >       return -EINVAL;
-> >  }
-> >
-> > +static int dw_hdmi_i2s_hook_plugged_cb(struct device *dev, void *data,
-> > +                                    hdmi_codec_plugged_cb fn)
-> > +{
-> > +     struct dw_hdmi_i2s_audio_data *audio = data;
-> > +     struct dw_hdmi *hdmi = audio->hdmi;
-> > +
-> > +     return audio->set_plugged_cb(hdmi, fn);
-> > +}
-> > +
-> >  static struct hdmi_codec_ops dw_hdmi_i2s_ops = {
-> >       .hw_params      = dw_hdmi_i2s_hw_params,
-> >       .audio_shutdown = dw_hdmi_i2s_audio_shutdown,
-> >       .get_dai_id     = dw_hdmi_i2s_get_dai_id,
-> > +     .hook_plugged_cb = dw_hdmi_i2s_hook_plugged_cb,
-> >  };
-> >
-> >  static int snd_dw_hdmi_probe(struct platform_device *pdev)
-> > diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-> > index 045b1b13fd0e..ce6646067472 100644
-> > --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-> > +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-> > @@ -26,6 +26,8 @@
-> >  #include <drm/drm_probe_helper.h>
-> >  #include <drm/bridge/dw_hdmi.h>
-> >
-> > +#include <sound/hdmi-codec.h>
-> > +
-> >  #include <uapi/linux/media-bus-format.h>
-> >  #include <uapi/linux/videodev2.h>
-> >
-> > @@ -185,6 +187,9 @@ struct dw_hdmi {
-> >       void (*disable_audio)(struct dw_hdmi *hdmi);
-> >
-> >       struct cec_notifier *cec_notifier;
-> > +
-> > +     hdmi_codec_plugged_cb plugged_cb;
-> > +     enum drm_connector_status last_connector_result;
-> >  };
-> >
-> >  #define HDMI_IH_PHY_STAT0_RX_SENSE \
-> > @@ -209,6 +214,40 @@ static inline u8 hdmi_readb(struct dw_hdmi *hdmi, int offset)
-> >       return val;
-> >  }
-> >
-> > +static void handle_plugged_change(struct dw_hdmi *hdmi, bool plugged)
-> > +{
-> > +     struct platform_device *codec_pdev;
-> > +
-> > +     if (!hdmi->audio || IS_ERR(hdmi->audio))
-> > +             return;
-> > +     codec_pdev = platform_get_drvdata(hdmi->audio);
-> > +     if (!codec_pdev || IS_ERR(codec_pdev))
-> > +             return;
->
-> This looks fragile to me, poking about in another device's driver data
-> from another driver is really not a good design decision.  I think this
-> can be simplified if the registration function took the function
-> pointer and the struct device pointer, and then you only need one test
-> below:
->
-Hi Russell, Thank you for the detailed review.
-ACK to this suggestion.
-I have updated the registration function following your suggestion in v4.
-It looks much cleaner.
+> > Oh, I think I did this a long time ago. Still looks OK.
+> 
+> Hm, maybe that was we who lost it. Thanks!
+> 
+> > You will send it?
+> 
+> I will resend the patchset once the merge window is closed, if that's
+> what you mean.
 
-> > +     if (!hdmi->plugged_cb)
-> > +             return;
-> > +
-> > +     hdmi->plugged_cb(&codec_pdev->dev, plugged);
-> > +}
-> > +
-> > +static int hdmi_set_plugged_cb(struct dw_hdmi *hdmi, hdmi_codec_plugged_cb fn)
-> > +{
-> > +     bool plugged;
-> > +     struct platform_device *codec_pdev;
-> > +
-> > +     if (!hdmi->audio || IS_ERR(hdmi->audio))
-> > +             return -EINVAL;
->
-> Given the current code structure, how can this ever be true when the
-> function is called?
->
-ACK
-Removed in v4.
-> > +     codec_pdev = platform_get_drvdata(hdmi->audio);
-> > +     if (!codec_pdev || IS_ERR(codec_pdev))
-> > +             return -EINVAL;
->
-> This doesn't seem like a good idea as I've pointed out above.
->
-ACK
-Fixed in v4.
-> > +
-> > +     mutex_lock(&hdmi->mutex);
-> > +     hdmi->plugged_cb = fn;
-> > +     plugged = hdmi->last_connector_result == connector_status_connected;
-> > +     handle_plugged_change(hdmi, plugged);
-> > +     mutex_unlock(&hdmi->mutex);
->
-> Should be a blank line here for readability.
->
-ACK
-Fixed in v4.
-> > +     return 0;
-> > +}
-> > +
-> >  static void hdmi_modb(struct dw_hdmi *hdmi, u8 data, u8 mask, unsigned reg)
-> >  {
-> >       regmap_update_bits(hdmi->regm, reg << hdmi->reg_shift, mask, data);
-> > @@ -2044,6 +2083,7 @@ dw_hdmi_connector_detect(struct drm_connector *connector, bool force)
-> >  {
-> >       struct dw_hdmi *hdmi = container_of(connector, struct dw_hdmi,
-> >                                            connector);
-> > +     enum drm_connector_status result;
-> >
-> >       mutex_lock(&hdmi->mutex);
-> >       hdmi->force = DRM_FORCE_UNSPECIFIED;
-> > @@ -2051,7 +2091,18 @@ dw_hdmi_connector_detect(struct drm_connector *connector, bool force)
-> >       dw_hdmi_update_phy_mask(hdmi);
-> >       mutex_unlock(&hdmi->mutex);
-> >
-> > -     return hdmi->phy.ops->read_hpd(hdmi, hdmi->phy.data);
-> > +     result = hdmi->phy.ops->read_hpd(hdmi, hdmi->phy.data);
-> > +
-> > +     mutex_lock(&hdmi->mutex);
-> > +     if (result != hdmi->last_connector_result) {
-> > +             dev_dbg(hdmi->dev, "read_hpd result: %d", result);
-> > +             handle_plugged_change(hdmi,
-> > +                                   result == connector_status_connected);
-> > +             hdmi->last_connector_result = result;
-> > +     }
-> > +     mutex_unlock(&hdmi->mutex);
-> > +
-> > +     return result;
-> >  }
-> >
-> >  static int dw_hdmi_connector_get_modes(struct drm_connector *connector)
-> > @@ -2460,6 +2511,7 @@ __dw_hdmi_probe(struct platform_device *pdev,
-> >       hdmi->rxsense = true;
-> >       hdmi->phy_mask = (u8)~(HDMI_PHY_HPD | HDMI_PHY_RX_SENSE);
-> >       hdmi->mc_clkdis = 0x7f;
-> > +     hdmi->last_connector_result = connector_status_disconnected;
-> >
-> >       mutex_init(&hdmi->mutex);
-> >       mutex_init(&hdmi->audio_mutex);
-> > @@ -2653,6 +2705,7 @@ __dw_hdmi_probe(struct platform_device *pdev,
-> >               audio.hdmi      = hdmi;
-> >               audio.write     = hdmi_writeb;
-> >               audio.read      = hdmi_readb;
-> > +             audio.set_plugged_cb = hdmi_set_plugged_cb;
->
-> Why is this necessary?
->
-> The I2S audio driver already depends on the dw-hdmi module through its
-> use of functions already exported.  Indirecting this through the
-> platform data makes no sense.
->
-> Just rename hdmi_set_plugged_cb to dw_hdmi_set_plugged_cb() and export
-> it for dw-hdmi-i2s-audio.c to use.
-ACK.
-Your suggestion makes sense.
-Removed in v4.
+No.. I mean who send it to Linus's tree? ie do you want me to take
+this patch into rdma?
 
->
-> Thanks.
-Thanks so much!
-
->
-> --
-> RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-> FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-> According to speedtest.net: 11.9Mbps down 500kbps up
+Jason
 
 _______________________________________________
 linux-arm-kernel mailing list
