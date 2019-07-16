@@ -2,82 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1609B6A376
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 10:02:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BCF9D6A386
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 10:04:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vwK93rlNrrVF/6JSop0wHxBy5Tcs//sFw4MZiqmAUlc=; b=asqQkTR0PmZ6y/
-	02eIIUIusQwcSE/A0kEK6jO4tj1E0TdzK09by34tiHNwx5Q1pC5gTDIdJE6wRuqHf66Gndwk0s0pz
-	ZCP5vvcddU8CPoNePf9VCi534Jx14TeXiNzTOeq/JQykuYV7gupzoJwOwfz3kIs43Rr7lx/6Q6kpF
-	G1hy9bdMwieSQW2N8SdMxMD9qabwjx6XC/Gez8RgykEQMDbYN2sxa853LUUGZO40SZO/QVrOODIDl
-	H2N/9U+sg+RYEh66XlnE0LGTOZ2/iB8FcbugTe98Z3WyWVivcMuwP97ZaBo9I3Z60lzIciTXvIUIX
-	GQ58zUOF1reIV3dChzyA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=iF4cBXqYxyMzHmjAmIOL2w+MODk5k2xmV8FBzeLBEus=; b=Kpm8zy9BbXsZYmaFzvkXEB0cA
+	w4F5rc5RuMO4TENa27aANHDIpaWPzmpjsvb+DUQbIvlJnc++nryM/RKUlhanHBL1zbu0JUMXqcuKq
+	q3h5aJA+V897DyweCLe8nlzvTIDyBgRCC+YyRtv8MgdcTKsl2JSFHFilEcEfI483C8YG1epKfjuNx
+	Aj9+KAvfz2x66GIMP8o0oACLjVO++MePbMOopl9uRITa5tTteoa/mNKpLYE2bJze+wFqd3tt6wvN3
+	UeURVjF7SWDWigkhFHsO1Zx730f0m82jUV8qWuRvL2b+ebgWnZFogXX3omcwsut47H+1pNI1nwWuD
+	umNsOiPMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnIQF-0006WY-M9; Tue, 16 Jul 2019 08:02:51 +0000
-Received: from skedge03.snt-world.com ([91.208.41.68])
+	id 1hnIRl-0006uD-Pt; Tue, 16 Jul 2019 08:04:26 +0000
+Received: from mx1.mailbox.org ([80.241.60.212])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnIQ1-0006VW-EI
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 08:02:39 +0000
-Received: from sntmail14r.snt-is.com (unknown [10.203.32.184])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1hnIRV-0006sK-8u
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 08:04:11 +0000
+Received: from smtp1.mailbox.org (smtp1.mailbox.org [80.241.60.240])
+ (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by skedge03.snt-world.com (Postfix) with ESMTPS id 215CF67AB4D;
- Tue, 16 Jul 2019 10:02:23 +0200 (CEST)
-Received: from sntmail12r.snt-is.com (10.203.32.182) by sntmail14r.snt-is.com
- (10.203.32.184) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Tue, 16 Jul
- 2019 10:02:22 +0200
-Received: from sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305]) by
- sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305%3]) with mapi id
- 15.01.1713.004; Tue, 16 Jul 2019 10:02:22 +0200
-From: Schrempf Frieder <frieder.schrempf@kontron.de>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Subject: Re: [PATCH] ARM: dts: imx6ul-kontron-ul2: Add Exceet/Kontron iMX6-UL2
- SoM
-Thread-Topic: [PATCH] ARM: dts: imx6ul-kontron-ul2: Add Exceet/Kontron
- iMX6-UL2 SoM
-Thread-Index: AQHVOL1dBqnDgiFo/UyQBjMEMaNniabG+AIAgAXLSACAAANMAA==
-Date: Tue, 16 Jul 2019 08:02:22 +0000
-Message-ID: <74823caa-ace4-7f24-98f3-7da6f2a4e5c2@kontron.de>
-References: <20190712141242.4915-1-krzk@kernel.org>
- <5cbd8bb2-6ecb-7e55-1580-e580e2c340dd@kontron.de>
- <CAJKOXPdq5e1OPmxamicAVf4ZDoSAuD=yvfOgZD04aQD9PtnCEQ@mail.gmail.com>
-In-Reply-To: <CAJKOXPdq5e1OPmxamicAVf4ZDoSAuD=yvfOgZD04aQD9PtnCEQ@mail.gmail.com>
-Accept-Language: de-DE, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [172.25.9.193]
-x-c2processedorg: 51b406b7-48a2-4d03-b652-521f56ac89f3
-Content-ID: <8338E8458D9FB44BA707B7261589B984@snt-world.com>
+ by mx1.mailbox.org (Postfix) with ESMTPS id 65FB4506CB;
+ Tue, 16 Jul 2019 10:03:57 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at heinlein-support.de
+Received: from smtp1.mailbox.org ([80.241.60.240])
+ by gerste.heinlein-support.de (gerste.heinlein-support.de [91.198.250.173])
+ (amavisd-new, port 10030)
+ with ESMTP id FP9J3tccLygu; Tue, 16 Jul 2019 10:03:51 +0200 (CEST)
+Date: Tue, 16 Jul 2019 18:03:38 +1000
+From: Aleksa Sarai <cyphar@cyphar.com>
+To: Al Viro <viro@zeniv.linux.org.uk>
+Subject: Re: [PATCH v9 05/10] namei: O_BENEATH-style path resolution flags
+Message-ID: <20190716080338.al4cnwdfvdbpzh3r@yavin>
+References: <20190706145737.5299-1-cyphar@cyphar.com>
+ <20190706145737.5299-6-cyphar@cyphar.com>
+ <20190712043341.GI17978@ZenIV.linux.org.uk>
+ <20190712105745.nruaftgeat6irhzr@yavin>
+ <20190712123924.GK17978@ZenIV.linux.org.uk>
+ <20190712125552.GL17978@ZenIV.linux.org.uk>
+ <20190712132553.GN17978@ZenIV.linux.org.uk>
+ <20190712150026.GO17978@ZenIV.linux.org.uk>
+ <20190713024153.GA3817@ZenIV.linux.org.uk>
+ <20190714035826.GQ17978@ZenIV.linux.org.uk>
 MIME-Version: 1.0
-X-SnT-MailScanner-Information: Please contact the ISP for more information
-X-SnT-MailScanner-ID: 215CF67AB4D.AEE78
-X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
- Provider for details
-X-SnT-MailScanner-SpamCheck: 
-X-SnT-MailScanner-From: frieder.schrempf@kontron.de
-X-SnT-MailScanner-To: devicetree@vger.kernel.org, festevam@gmail.com,
- kernel@pengutronix.de, krzk@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com,
- linux-kernel@vger.kernel.org, s.hauer@pengutronix.de,
- shawnguo@kernel.org
-X-Spam-Status: No
+In-Reply-To: <20190714035826.GQ17978@ZenIV.linux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_010237_814830_168295CF 
-X-CRM114-Status: GOOD (  18.14  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190716_010409_617594_C81CBF3A 
+X-CRM114-Status: GOOD (  24.82  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [91.208.41.68 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [80.241.60.212 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -91,85 +73,127 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
+ Alexei Starovoitov <ast@kernel.org>, linux-kernel@vger.kernel.org,
+ David Howells <dhowells@redhat.com>, linux-kselftest@vger.kernel.org,
+ sparclinux@vger.kernel.org, Shuah Khan <shuah@kernel.org>, raven@themaw.net,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ Tycho Andersen <tycho@tycho.ws>, paul@paul-moore.com,
+ Aleksa Sarai <asarai@suse.de>, linux-arm-kernel@lists.infradead.org,
+ linux-mips@vger.kernel.org, linux-xtensa@linux-xtensa.org,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ Jann Horn <jannh@google.com>, linuxppc-dev@lists.ozlabs.org,
+ linux-m68k@lists.linux-m68k.org, Andy Lutomirski <luto@kernel.org>,
+ Shuah Khan <skhan@linuxfoundation.org>, David Drysdale <drysdale@google.com>,
+ Christian Brauner <christian@brauner.io>,
+ "J. Bruce Fields" <bfields@fieldses.org>, linux-parisc@vger.kernel.org,
+ rgb@redhat.com, linux-api@vger.kernel.org, Chanho Min <chanho.min@lge.com>,
+ Jeff Layton <jlayton@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
+ Eric Biederman <ebiederm@xmission.com>, linux-alpha@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ containers@lists.linux-foundation.org
+Content-Type: multipart/mixed; boundary="===============6358504605546429070=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 16.07.19 09:50, Krzysztof Kozlowski wrote:
-> On Fri, 12 Jul 2019 at 17:21, Schrempf Frieder
-> <frieder.schrempf@kontron.de> wrote:
->>
->> Hi Krzysztof,
->>
->> On 12.07.19 16:12, Krzysztof Kozlowski wrote:
->>> Add support for iMX6-UL2 modules from Kontron Electronics GmbH (before
->>> acquisition: Exceet Electronics) and evalkit boards based on it:
->>>
->>> 1. i.MX6 UL System-on-Module, a 25x25 mm solderable module (LGA pads and
->>>      pin castellations) with 256 MB RAM, 1 MB NOR-Flash, 256 MB NAND and
->>>      other interfaces,
->>> 1. UL2 evalkit, w/wo eMMC, without display,
->>> 2. UL2 evalkit with 4.3" display,
->>> 3. UL2 evalkit with 5.0" display.
->>>
->>> This includes device nodes for unsupported displays (Admatec
->>> T043C004800272T2A and T070P133T0S301).
->>>
->>> The work is based on Exceet source code (GPLv2) with numerous changes:
->>> 1. Reorganize files,
->>> 2. Rename Exceet -> Kontron,
->>> 3. Fix coding style errors,
->>> 4. Fix DTC warnings,
->>> 5. Extend compatibles so eval boards inherit the SoM compatible,
->>> 6. Use defines instead of GPIO flag values,
->>> 7. Adjust operating points of CPU0,
->>> 8. Sort nodes alphabetically.
->>>
->>> In downstream BSP the Exceet name still appears in multiple places
->>> therefore I left it in the model names.
->>
->> First, thanks for your work. I planned to upstream these boards myself
->> after the FSL QSPI spi-mem driver was merged in 5.1, but didn't have
->> time to finalize and send the patches.
->>
->> Meanwhile we came up with a new naming scheme for our boards, that
->> hasn't been implemented yet. But I would like to take this chance to
->> implement the new scheme.
-> 
-> Sure, I see no problem in using different names, matching downstream
-> kernel. Just point me to proper names.
-> 
->> Also there are some more flavors of the SoM (with i.MX6ULL instead of
->> i.MX6UL, with 512MiB instead of 256MiB flash/RAM), that I would like to
->> add and for which common parts of the SoM dtsi would need to be factored
->> out to a separate file.
-> 
-> I have only this one particular flavor so I would prefer to upstream
-> only this one. I do not know all the possible combinations or for
-> example the most interesting ones. I think after this patchset we can
-> refactor the DTS whenever its needed - split common parts, add new
-> files.
-> 
->> I would prefer to at least apply the naming changes before merging. The
->> additional board flavors could be added before merging or I could send
->> them as follow-up patches. What do you think?
-> 
-> Let's change the naming and add new flavors as follow ups?
 
-Ok, let's do it like this. I will soon send another reply to the 
-original patch with the proposed naming changes.
+--===============6358504605546429070==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="lshvdcpckvdb4crm"
+Content-Disposition: inline
 
-Thanks,
-Frieder
+
+--lshvdcpckvdb4crm
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On 2019-07-14, Al Viro <viro@zeniv.linux.org.uk> wrote:
+> On Sat, Jul 13, 2019 at 03:41:53AM +0100, Al Viro wrote:
+> > On Fri, Jul 12, 2019 at 04:00:26PM +0100, Al Viro wrote:
+> > > On Fri, Jul 12, 2019 at 02:25:53PM +0100, Al Viro wrote:
+> > >=20
+> > > > 	if (flags & LOOKUP_BENEATH) {
+> > > > 		nd->root =3D nd->path;
+> > > > 		if (!(flags & LOOKUP_RCU))
+> > > > 			path_get(&nd->root);
+> > > > 		else
+> > > > 			nd->root_seq =3D nd->seq;
+> > >=20
+> > > BTW, this assignment is needed for LOOKUP_RCU case.  Without it
+> > > you are pretty much guaranteed that lazy pathwalk will fail,
+> > > when it comes to complete_walk().
+> > >=20
+> > > Speaking of which, what would happen if LOOKUP_ROOT/LOOKUP_BENEATH
+> > > combination would someday get passed?
+> >=20
+> > I don't understand what's going on with ->r_seq in there - your
+> > call of path_is_under() is after having (re-)sampled rename_lock,
+> > but if that was the only .. in there, who's going to recheck
+> > the value?  For that matter, what's to guarantee that the thing
+> > won't get moved just as you are returning from handle_dots()?
+> >=20
+> > IOW, what does LOOKUP_IN_ROOT guarantee for caller (openat2())?
+>=20
+> Sigh...  Usual effects of trying to document things:
+>=20
+> 1) LOOKUP_NO_EVAL looks bogus.  It had been introduced by commit 57d46577=
+16ac
+> (audit: ignore fcaps on umount) and AFAICS it's crap.  It is set in
+> ksys_umount() and nowhere else.  It's ignored by everything except
+> filename_mountpoint().  The thing is, call graph for filename_mountpoint()
+> is
+> 	filename_mountpoint()
+> 		<- user_path_mountpoint_at()
+> 			<- ksys_umount()
+> 		<- kern_path_mountpoint()
+> 			<- autofs_dev_ioctl_ismountpoint()
+> 			<- find_autofs_mount()
+> 				<- autofs_dev_ioctl_open_mountpoint()
+> 				<- autofs_dev_ioctl_requester()
+> 				<- autofs_dev_ioctl_ismountpoint()
+> In other words, that flag is basically "was filename_mountpoint()
+> been called by umount(2) or has it come from an autofs ioctl?".
+> And looking at the rationale in that commit, autofs ioctls need
+> it just as much as umount(2) does.  Why is it not set for those
+> as well?  And why is it conditional at all?
+
+In addition, LOOKUP_NO_EVAL =3D=3D LOOKUP_OPEN (0x100). Is that meant to be
+the case? Also I just saw you have a patch in work.namei that fixes this
+up -- do you want me to rebase on top of that?
+
+--=20
+Aleksa Sarai
+Senior Software Engineer (Containers)
+SUSE Linux GmbH
+<https://www.cyphar.com/>
+
+--lshvdcpckvdb4crm
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQSxZm6dtfE8gxLLfYqdlLljIbnQEgUCXS2E1wAKCRCdlLljIbnQ
+EvUWAP4hDKNKmCaghR/nSF7B9A3mjchQtut9n7vItMKjRPJjLAD9GRABOJCnZ47q
+TqUSuZfxKfq260PQMTx91hQd/K+//QE=
+=XoHc
+-----END PGP SIGNATURE-----
+
+--lshvdcpckvdb4crm--
+
+
+--===============6358504605546429070==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6358504605546429070==--
+
