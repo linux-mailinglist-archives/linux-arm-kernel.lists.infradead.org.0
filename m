@@ -2,43 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A2716AF13
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 20:47:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 90DAF6AF7B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 21:01:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VBUys8/P8p0eyxHd+wxsIuqdjYe+PU7z0i2bLuu5P4k=; b=siZi5e6JHwtul9
-	LdWqJY9dOMkHB7Qgz51vyMA4NS0xSJCEwcbJPgTdZoSCqAIQqnevzD7JsXkas40ZIOfGpC7IbhSFf
-	2RxINYYHpCS1KhHUJ7TpTI8vR89FsPHIlIZV2gh7KD3ZW/ZML7FdVqKg4SvHZAV9jCHLx+pMFNY+K
-	oLI7M4w/yfmlFd0onyMUehdnK9cgsKYn11Z36+6/FyH7A26HDPXaE2M/mEx1lLLd7Dy3ob1AcIjmP
-	jNUIAzE4tFIcSeTqblZ83QAP+4zggkH41P5seHv2tAGilDmn9kfu9St4Xzhtb2aBsulLUhidqOsru
-	1vZFDAmq1zkY8uo2VzsQ==;
+	List-Owner; bh=giFIz+Yh197RY/pPEdVfHRnCyajBUUmf84xFEw2tZeA=; b=pysWR8Kkclp6Lw
+	BVOD3bUxA/TYOApsp07IftKZheonFxxHSZ0vkajBn9IxlWtGfFMUFZtQGyjKAnmfvaWXtWwbe10ue
+	Bi68Hlzs0mKjXeKfT4TnGiGU35fg8jN9cVDTlYkrXrGuy3b0q5s+NZNv+Xgi0plTD0PD55YFtRiPd
+	2PAUCvbnfeCc9uxLyN5meWedZFqTWyhs+za7yKVvSDofcfZoWVrZFkXk2R66od71jgNrSkpa+W6aI
+	t1FlrlVXoWC3mlOhlAorJ+Hy3diSDq3Jp9E/uGEcLOuz2WSYXwZODWiBLgBczc22eCuWZmq1PSlZv
+	SGClCRHNL2L7/o5ckdeg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnSUG-0001lU-KN; Tue, 16 Jul 2019 18:47:40 +0000
-Received: from j217100.upc-j.chello.nl ([24.132.217.100]
- helo=hirez.programming.kicks-ass.net)
- by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hnSU2-0001lF-KP; Tue, 16 Jul 2019 18:47:27 +0000
-Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
- id 10F9D202173EA; Tue, 16 Jul 2019 20:47:24 +0200 (CEST)
-Date: Tue, 16 Jul 2019 20:47:24 +0200
-From: Peter Zijlstra <peterz@infradead.org>
-To: Alex Kogan <alex.kogan@oracle.com>
-Subject: Re: [PATCH v3 3/5] locking/qspinlock: Introduce CNA into the slow
- path of qspinlock
-Message-ID: <20190716184724.GH3402@hirez.programming.kicks-ass.net>
-References: <20190715192536.104548-1-alex.kogan@oracle.com>
- <20190715192536.104548-4-alex.kogan@oracle.com>
- <20190716155022.GR3419@hirez.programming.kicks-ass.net>
- <193BBB31-F376-451F-BDE1-D4807140EB51@oracle.com>
+	id 1hnSh0-0006vg-7u; Tue, 16 Jul 2019 19:00:50 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hnSgU-0006hz-Fk
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 19:00:20 +0000
+Received: from localhost (unknown [69.71.4.100])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 205B620665;
+ Tue, 16 Jul 2019 19:00:16 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1563303617;
+ bh=PcKLpA+pS1VyNuIrEf+5mScc/jl5xMwC/Ln9VrThiwM=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=Ds6GCOFDWGbqaeNEXsfyh5tTrSYmUSx2y6p+eKtWUUz6ysDpx1PT+fCUkaFwglGSE
+ t11NOTkWtJPELCIfTSIY/hr7rfCOG445Vc4M6SbnWLkvumfjge1koPnOC50gsqRC4K
+ jj3+9KVPYqnbOCetP8iEXNID4IrEyoeh5AeMtseM=
+Date: Tue, 16 Jul 2019 14:00:13 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Subject: Re: [PATCH V13 12/12] PCI: tegra: Add Tegra194 PCIe support
+Message-ID: <20190716190013.GB4470@google.com>
+References: <20190710062212.1745-1-vidyas@nvidia.com>
+ <20190710062212.1745-13-vidyas@nvidia.com>
+ <20190711125433.GB26088@e121166-lin.cambridge.arm.com>
+ <986d0b1a-666a-7b05-a9f3-e761518bdc92@nvidia.com>
+ <20190712160754.GA24285@e121166-lin.cambridge.arm.com>
+ <a5f8689b-1358-dd2d-4f54-7e68a6ab158b@nvidia.com>
+ <20190716112225.GA24335@e121166-lin.cambridge.arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <193BBB31-F376-451F-BDE1-D4807140EB51@oracle.com>
+In-Reply-To: <20190716112225.GA24335@e121166-lin.cambridge.arm.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190716_120018_793666_61F1D571 
+X-CRM114-Status: GOOD (  27.37  )
+X-Spam-Score: -5.2 (-----)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-5.2 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -50,98 +82,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, guohanjun@huawei.com, arnd@arndb.de,
- dave.dice@oracle.com, jglauber@marvell.com, x86@kernel.org,
- will.deacon@arm.com, linux@armlinux.org.uk, steven.sistare@oracle.com,
- linux-kernel@vger.kernel.org, rahul.x.yadav@oracle.com, mingo@redhat.com,
- bp@alien8.de, hpa@zytor.com, longman@redhat.com, tglx@linutronix.de,
- daniel.m.jordan@oracle.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, mperttunen@nvidia.com,
+ mmaddireddy@nvidia.com, linux-pci@vger.kernel.org, catalin.marinas@arm.com,
+ Vidya Sagar <vidyas@nvidia.com>, will.deacon@arm.com,
+ linux-kernel@vger.kernel.org, kishon@ti.com, kthota@nvidia.com,
+ robh+dt@kernel.org, thierry.reding@gmail.com, gustavo.pimentel@synopsys.com,
+ jingoohan1@gmail.com, linux-tegra@vger.kernel.org, digetx@gmail.com,
+ jonathanh@nvidia.com, linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVHVlLCBKdWwgMTYsIDIwMTkgYXQgMDE6MTk6MTZQTSAtMDQwMCwgQWxleCBLb2dhbiB3cm90
-ZToKPiA+IE9uIEp1bCAxNiwgMjAxOSwgYXQgMTE6NTAgQU0sIFBldGVyIFppamxzdHJhIDxwZXRl
-cnpAaW5mcmFkZWFkLm9yZz4gd3JvdGU6Cgo+ID4gc3RhdGljIHZvaWQgY25hX21vdmUoc3RydWN0
-IGNuYV9ub2RlICpjbiwgc3RydWN0IGNuYV9ub2RlICpjbmkpCj4gPiB7Cj4gPiAJc3RydWN0IGNu
-YV9ub2RlICpoZWFkLCAqdGFpbDsKPiA+IAo+ID4gCS8qIHJlbW92ZSBAY25pICovCj4gPiAJV1JJ
-VEVfT05DRShjbi0+bWNzLm5leHQsIGNuaS0+bWNzLm5leHQpOwo+ID4gCj4gPiAJLyogc3RpY2sg
-QGNuaSBvbiB0aGUgJ290aGVyJyBsaXN0IHRhaWwgKi8KPiA+IAljbmktPm1jcy5uZXh0ID0gTlVM
-TDsKPiA+IAo+ID4gCWlmIChjbi0+bWNzLmxvY2tlZCA8PSAxKSB7Cj4gPiAJCS8qIGhlYWQgPSB0
-YWlsID0gY25pICovCj4gPiAJCWhlYWQgPSBjbmk7Cj4gPiAJCWhlYWQtPnRhaWwgPSBjbmk7Cj4g
-PiAJCWNuLT5tY3MubG9ja2VkID0gaGVhZC0+ZW5jb2RlZF90YWlsOwo+ID4gCX0gZWxzZSB7Cj4g
-PiAJCS8qIGFkZCB0byB0YWlsICovCj4gPiAJCWhlYWQgPSAoc3RydWN0IGNuYV9ub2RlICopZGVj
-b2RlX3RhaWwoY24tPm1jcy5sb2NrZWQpOwo+ID4gCQl0YWlsID0gdGFpbC0+dGFpbDsKPiA+IAkJ
-dGFpbC0+bmV4dCA9IGNuaTsKPiA+IAl9Cj4gPiB9Cj4gPiAKPiA+IHN0YXRpYyBzdHJ1Y3QgY25h
-X25vZGUgKmNuYV9maW5kX25leHQoc3RydWN0IG1jc19zcGlubG9jayAqbm9kZSkKPiA+IHsKPiA+
-IAlzdHJ1Y3QgY25hX25vZGUgKmNuaSwgKmNuID0gKHN0cnVjdCBjbmFfbm9kZSAqKW5vZGU7Cj4g
-PiAKPiA+IAl3aGlsZSAoKGNuaSA9IChzdHJ1Y3QgY25hX25vZGUgKilSRUFEX09OQ0UoY24tPm1j
-cy5uZXh0KSkpIHsKPiA+IAkJaWYgKGxpa2VseShjbmktPm5vZGUgPT0gY24tPm5vZGUpKQo+ID4g
-CQkJYnJlYWs7Cj4gPiAKPiA+IAkJY25hX21vdmUoY24sIGNuaSk7Cj4gPiAJfQo+ID4gCj4gPiAJ
-cmV0dXJuIGNuaTsKPiA+IH0KPiBCdXQgdGhlbiB5b3UgbW92ZSBub2RlcyBmcm9tIHRoZSBtYWlu
-IGxpc3QgdG8gdGhlIOKAmG90aGVy4oCZIGxpc3Qgb25lLWJ5LW9uZS4KPiBJ4oCZbSBhZnJhaWQg
-dGhpcyB3b3VsZCBiZSB1bm5lY2Vzc2FyeSBleHBlbnNpdmUuCj4gUGx1cywgYWxsIHRoaXMgZXh0
-cmEgd29yayBpcyB3YXN0ZWQgaWYgeW91IGRvIG5vdCBmaW5kIGEgdGhyZWFkIG9uIHRoZSBzYW1l
-IAo+IE5VTUEgbm9kZSAoeW91IG1vdmUgZXZlcnlvbmUgdG8gdGhlIOKAmG90aGVy4oCZIGxpc3Qg
-b25seSB0byBtb3ZlIHRoZW0gYmFjayBpbiAKPiBjbmFfbWNzX3Bhc3NfbG9jaygpKS4KCk15IHBy
-aW1hcnkgY29uY2VybiB3YXMgcmVhZGFiaWxpdHk7IEkgZmluZCB0aGUgYWJvdmUgc3VnZ2VzdGlv
-biBtdWNoCm1vcmUgcmVhZGFibGUuIE1heWJlIGl0IGNhbiBiZSB3cml0dGVuIGRpZmZlcmVudGx5
-OyB5b3UnbGwgaGF2ZSB0byBwbGF5CmFyb3VuZCBhIGJpdC4KCj4gPj4gK3N0YXRpYyBpbmxpbmUg
-Ym9vbCBjbmFfc2V0X2xvY2tlZF9lbXB0eV9tY3Moc3RydWN0IHFzcGlubG9jayAqbG9jaywgdTMy
-IHZhbCwKPiA+PiArCQkJCQlzdHJ1Y3QgbWNzX3NwaW5sb2NrICpub2RlKQo+ID4+ICt7Cj4gPj4g
-KwkvKiBDaGVjayB3aGV0aGVyIHRoZSBzZWNvbmRhcnkgcXVldWUgaXMgZW1wdHkuICovCj4gPj4g
-KwlpZiAobm9kZS0+bG9ja2VkIDw9IDEpIHsKPiA+PiArCQlpZiAoYXRvbWljX3RyeV9jbXB4Y2hn
-X3JlbGF4ZWQoJmxvY2stPnZhbCwgJnZhbCwKPiA+PiArCQkJCV9RX0xPQ0tFRF9WQUwpKQo+ID4+
-ICsJCQlyZXR1cm4gdHJ1ZTsgLyogTm8gY29udGVudGlvbiAqLwo+ID4+ICsJfSBlbHNlIHsKPiA+
-PiArCQkvKgo+ID4+ICsJCSAqIFBhc3MgdGhlIGxvY2sgdG8gdGhlIGZpcnN0IHRocmVhZCBpbiB0
-aGUgc2Vjb25kYXJ5Cj4gPj4gKwkJICogcXVldWUsIGJ1dCBmaXJzdCB0cnkgdG8gdXBkYXRlIHRo
-ZSBxdWV1ZSdzIHRhaWwgdG8KPiA+PiArCQkgKiBwb2ludCB0byB0aGUgbGFzdCBub2RlIGluIHRo
-ZSBzZWNvbmRhcnkgcXVldWUuCj4gPiAKPiA+IAo+ID4gVGhhdCBjb21tZW50IGRvZXNuJ3QgbWFr
-ZSBzZW5zZTsgdGhlcmUncyBhdCBsZWFzdCBvbmUgY29uZGl0aW9uYWwKPiA+IG1pc3NpbmcuCj4g
-SW4gQ05BLCB3ZSBjYW5ub3QganVzdCBjbGVhciB0aGUgdGFpbCB3aGVuIHRoZSBNQ1MgY2hhaW4g
-aXMgZW1wdHksIGFzIAo+IHRoZXJlIG1pZ2h0IGJlIG5vZGVzIGluIHRoZSDigJhvdGhlcuKAmSBj
-aGFpbi4gSW4gdGhhdCBjYXNlICh0aGlzIGlzIHRoZSDigJxlbHNl4oCdIHBhcnQpLAo+IHdlIHdh
-bnQgdG8gcGFzcyB0aGUgbG9jayB0byB0aGUgZmlyc3Qgbm9kZSBpbiB0aGUg4oCYb3RoZXLigJkg
-Y2hhaW4sIGJ1dCAKPiBmaXJzdCB3ZSBuZWVkIHRvIHB1dCB0aGUgbGFzdCBub2RlIGZyb20gdGhh
-dCBjaGFpbiBpbnRvIHRoZSB0YWlsLiBQZXJoYXBzIHRoZQo+IGNvbW1lbnQgc2hvdWxkIHJlYWQg
-4oCc4oCmICBidXQgZmlyc3QgdHJ5IHRvIHVwZGF0ZSB0aGUgKnByaW1hcnkqIHF1ZXVlJ3MgdGFp
-bCDigKbigJ0sIAo+IGlmIHRoYXQgbWFrZXMgbW9yZSBzZW5zZS4KCkl0IGlzICd0cnkgYW5kIHBh
-c3MgdGhlIGxvY2snIGF0IGJlc3QuIEl0IGlzIG5vdCBhCmRlZmluaXRlL3VuY29uZGl0aW9uYWwg
-dGhpbmcgd2UncmUgZG9pbmcuCgo+ID4+ICsJCSAqLwo+ID4+ICsJCXN0cnVjdCBjbmFfbm9kZSAq
-c3VjYyA9IENOQV9OT0RFKG5vZGUtPmxvY2tlZCk7Cj4gPj4gKwkJdTMyIG5ldyA9IHN1Y2MtPnRh
-aWwtPmVuY29kZWRfdGFpbCArIF9RX0xPQ0tFRF9WQUw7Cj4gPj4gKwo+ID4+ICsJCWlmIChhdG9t
-aWNfdHJ5X2NtcHhjaGdfcmVsYXhlZCgmbG9jay0+dmFsLCAmdmFsLCBuZXcpKSB7Cj4gPj4gKwkJ
-CWFyY2hfbWNzX3NwaW5fdW5sb2NrX2NvbnRlbmRlZCgmc3VjYy0+bWNzLmxvY2tlZCwgMSk7Cj4g
-Pj4gKwkJCXJldHVybiB0cnVlOwo+ID4+ICsJCX0KPiA+PiArCX0KPiA+PiArCj4gPj4gKwlyZXR1
-cm4gZmFsc2U7Cj4gPj4gK30KCj4gPj4gK3N0YXRpYyBpbmxpbmUgdm9pZCBjbmFfcGFzc19tY3Nf
-bG9jayhzdHJ1Y3QgbWNzX3NwaW5sb2NrICpub2RlLAo+ID4+ICsJCQkJICAgICBzdHJ1Y3QgbWNz
-X3NwaW5sb2NrICpuZXh0KQo+ID4+ICt7Cj4gPj4gKwlzdHJ1Y3QgY25hX25vZGUgKnN1Y2MgPSBO
-VUxMOwo+ID4+ICsJdTY0ICp2YXIgPSAmbmV4dC0+bG9ja2VkOwo+ID4+ICsJdTY0IHZhbCA9IDE7
-Cj4gPj4gKwo+ID4+ICsJc3VjYyA9IGZpbmRfc3VjY2Vzc29yKG5vZGUpOwo+ID4+ICsKPiA+PiAr
-CWlmIChzdWNjKSB7Cj4gPj4gKwkJdmFyID0gJnN1Y2MtPm1jcy5sb2NrZWQ7Cj4gPj4gKwkJLyoK
-PiA+PiArCQkgKiBXZSB1bmxvY2sgYSBzdWNjZXNzb3IgYnkgcGFzc2luZyBhIG5vbi16ZXJvIHZh
-bHVlLAo+ID4+ICsJCSAqIHNvIHNldCBAdmFsIHRvIDEgaWZmIEBsb2NrZWQgaXMgMCwgd2hpY2gg
-d2lsbCBoYXBwZW4KPiA+PiArCQkgKiBpZiB3ZSBhY3F1aXJlZCB0aGUgTUNTIGxvY2sgd2hlbiBp
-dHMgcXVldWUgd2FzIGVtcHR5Cj4gPj4gKwkJICovCj4gPj4gKwkJdmFsID0gbm9kZS0+bG9ja2Vk
-ICsgKG5vZGUtPmxvY2tlZCA9PSAwKTsKPiA+PiArCX0gZWxzZSBpZiAobm9kZS0+bG9ja2VkID4g
-MSkgeyAvKiBpZiB0aGUgc2Vjb25kYXJ5IHF1ZXVlIGlzIG5vdCBlbXB0eSAqLwo+ID4+ICsJCS8q
-IHBhc3MgdGhlIGxvY2sgdG8gdGhlIGZpcnN0IG5vZGUgaW4gdGhhdCBxdWV1ZSAqLwo+ID4+ICsJ
-CXN1Y2MgPSBDTkFfTk9ERShub2RlLT5sb2NrZWQpOwo+ID4+ICsJCXN1Y2MtPnRhaWwtPm1jcy5u
-ZXh0ID0gbmV4dDsKPiA+PiArCQl2YXIgPSAmc3VjYy0+bWNzLmxvY2tlZDsKPiA+IAo+ID4+ICsJ
-fQkvKgo+ID4+ICsJCSAqIE90aGVyd2lzZSwgcGFzcyB0aGUgbG9jayB0byB0aGUgaW1tZWRpYXRl
-IHN1Y2Nlc3Nvcgo+ID4+ICsJCSAqIGluIHRoZSBtYWluIHF1ZXVlLgo+ID4+ICsJCSAqLwo+ID4g
-Cj4gPiBJIGRvbid0IHRoaW5rIHRoaXMgbWlzLWluZGVudGVkIGNvbW1lbnQgY2FuIGhhcHBlbi4g
-VGhlIGNhbGwtc2l0ZQo+ID4gZ3VhcmFudGVlcyBAbmV4dCBpcyBub24tbnVsbC4KPiA+IAo+ID4g
-VGhlcmVmb3JlLCBjbmFfZmluZF9uZXh0KCkgd2lsbCBlaXRoZXIgcmV0dXJuIGl0LCBvciBwbGFj
-ZSBpdCBvbiB0aGUKPiA+IHNlY29uZGFyeSBsaXN0LiBJZiBpdCAoY25hX2ZpbmRfbmV4dCkgcmV0
-dXJucyBOVUxMLCB3ZSBtdXN0IGhhdmUgYQo+ID4gbm9uLWVtcHR5IHNlY29uZGFyeSBsaXN0Lgo+
-ID4gCj4gPiBJbiBubyBjYXNlIGRvIEkgc2VlIHRoaXMgdGVydGlhcnkgY29uZGl0aW9uIGJlaW5n
-IHBvc3NpYmxlLgo+IGZpbmRfc3VjY2Vzc29yKCkgd2lsbCByZXR1cm4gTlVMTCBpZiBpdCBkb2Vz
-IG5vdCBmaW5kIGEgdGhyZWFkIHJ1bm5pbmcgb24gdGhlIAo+IHNhbWUgTlVNQSBub2RlLiBBbmQg
-dGhlIHNlY29uZGFyeSBxdWV1ZSBtaWdodCBiZSBlbXB0eSBhdCB0aGF0IHRpbWUuCgpTZWU7IEkg
-Y291bGRuJ3QgdW50YW5nbGUgdGhhdCBjYXNlIGZyb20gdGhlIGNvZGUuIE1lYW5zIHJlYWRhYmxp
-bHR5Cm5lZWRzIGltcHJvdmluZy4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJu
-ZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Tue, Jul 16, 2019 at 12:22:25PM +0100, Lorenzo Pieralisi wrote:
+> On Sat, Jul 13, 2019 at 12:34:34PM +0530, Vidya Sagar wrote:
+
+> > > > > So if the link is not up we still go ahead and make probe
+> > > > > succeed. What for ?
+> > > > We may need root port to be available to support hot-plugging of
+> > > > endpoint devices, so, we don't fail the probe.
+> > > 
+> > > We need it or we don't. If you do support hotplugging of endpoint
+> > > devices point me at the code, otherwise link up failure means
+> > > failure to probe.
+> > Currently hotplugging of endpoint is not supported, but it is one of
+> > the use cases that we may add support for in future. 
+> 
+> You should elaborate on this, I do not understand what you mean,
+> either the root port(s) supports hotplug or it does not.
+> 
+> > But, why should we fail probe if link up doesn't happen? As such,
+> > nothing went wrong in terms of root port initialization right?  I
+> > checked other DWC based implementations and following are not failing
+> > the probe pci-dra7xx.c, pcie-armada8k.c, pcie-artpec6.c, pcie-histb.c,
+> > pcie-kirin.c, pcie-spear13xx.c, pci-exynos.c, pci-imx6.c,
+> > pci-keystone.c, pci-layerscape.c
+> > 
+> > Although following do fail the probe if link is not up.  pcie-qcom.c,
+> > pcie-uniphier.c, pci-meson.c
+> > 
+> > So, to me, it looks more like a choice we can make whether to fail the
+> > probe or not and in this case we are choosing not to fail.
+> 
+> I disagree. I had an offline chat with Bjorn and whether link-up should
+> fail the probe or not depends on whether the root port(s) is hotplug
+> capable or not and this in turn relies on the root port "Slot
+> implemented" bit in the PCI Express capabilities register.
+
+There might be a little more we can talk about in this regard.  I did
+bring up the "Slot implemented" bit, but after thinking about it more,
+I don't really think the host bridge driver should be looking at that.
+That's a PCIe concept, and it's really *downstream* from the host
+bridge itself.  The host bridge is logically a device on the CPU bus,
+not the PCI bus.
+
+I'm starting to think that the host bridge driver probe should be
+disconnected from question of whether the root port links are up.
+
+Logically, the host bridge driver connects the CPU bus to a PCI root
+bus, so it converts CPU-side accesses to PCI config, memory, or I/O
+port transactions.  Given that, the PCI core can enumerate devices on
+the root bus and downstream buses.
+
+Devices on the root bus typically include Root Ports, but might also
+include endpoints, Root Complex Integrated Endpoints, Root Complex
+Event Collectors, etc.  I think in principle, we would want the host
+bridge probe to succeed so we can use these devices even if none of
+the Root Ports have a link.
+
+If a Root Port is present, I think users will expect to see it in the
+"lspci" output, even if its downstream link is not up.  That will
+enable things like manually poking the Root Port via "setpci" for
+debug.  And if it has a connector, the generic pciehp should be able
+to handle hot-add events without any special help from the host bridge
+driver.
+
+On ACPI systems there is no concept of the host bridge driver probe
+failing because of lack of link on a Root Port.  If a Root Port
+doesn't have an operational link, we still keep the pci_root.c driver,
+and we'll enumerate the Root Port itself.  So I tend to think DT
+systems should behave the same way, i.e., the driver probe should
+succeed unless it fails to allocate resources or something similar.  I
+think this is analogous to a NIC or USB adapter driver, where the
+probe succeeds even if there's no network cable or USB device
+attached.
+
+Bjorn
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
