@@ -2,59 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1BD246ABB1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 17:26:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC59C6ABB8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 17:27:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=4b7oKv4AlhKOL4Xm21PF2nyyQmrwSe0939j/kGHn3hk=; b=NIIUapcXgcmsospKb2XooEujlg
-	aNY+7W+XJ9xttgGSPU44J2GMfzCAxfAbD/DT6rq4+uWjMjCPcPPBHy5MzzI4o6Mm2d8iQtHguVkWK
-	LUqvP9JdEBUDN5NE7eG+BUjD65TyeO39k06EbWIEQEBKGEqhcWxsfo+EjPcSV0m8W5CPPUuUB/y8c
-	PzHMTP1WzoA82dCgi9dbcyTkLXTT07vKqLtfHig/IZI8sOwdFLONQFgl5jHshPILtWMA3FZvCQ6Gp
-	vGpKdKmgrjR+1CwA2Te2KvELvKUonWuG+JXIYBg8/4TZV6u2pSQJloFt5p0+JH8t7jLstTNpvq+8d
-	7Yh9csbA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0gC/hJhG+qGChk52+BkdrdYTKusnNKi+Os2JhCnYVY4=; b=GPMjIhn+jMry7/
+	0s7AJWhVmFmFBswdfPGPqqICcITAvHGfraRmsprUFb3oAhUSFTQ9/jiC1BN76S6sVHCi/jeL1Jg2I
+	Q9JVhoRmdzQ6PkiW3b0GN9OQZG1gp0x43xZnvvPT/dOvwp1oHOHiw0e7iXGOgKompmR20jo0cTWUC
+	D29xa5nITTuVy+XqeREqO72xe9vtYTCE/hr9FUYuc4Upy/it7rdnf4kHuxzyul5sCqLqDd7g/Y6S5
+	C6TBxZKu3mx/dQI/yHU9oXMt+FDSkxfO3DaZYNbeuiFuEQhRhVJaQZbXVo2T3cZZC2JtUugjZtfU7
+	wlBhm3fDnbCdLg/+kLYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnPLc-0000I2-ND; Tue, 16 Jul 2019 15:26:32 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1hnPMH-0000rZ-3V; Tue, 16 Jul 2019 15:27:13 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnPIZ-0005DG-Im
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 15:23:25 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 5337E1A000D;
- Tue, 16 Jul 2019 17:23:22 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 7CE4A1A004C;
- Tue, 16 Jul 2019 17:23:17 +0200 (CEST)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 062CA40327;
- Tue, 16 Jul 2019 23:23:08 +0800 (SGT)
-From: Dong Aisheng <aisheng.dong@nxp.com>
-To: linux-clk@vger.kernel.org
-Subject: [PATCH v3 11/11] clk: imx: lpcg: add suspend/resume support
-Date: Tue, 16 Jul 2019 23:01:05 +0800
-Message-Id: <1563289265-10977-12-git-send-email-aisheng.dong@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1563289265-10977-1-git-send-email-aisheng.dong@nxp.com>
-References: <1563289265-10977-1-git-send-email-aisheng.dong@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1hnPJl-00069N-HU
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 15:24:39 +0000
+Received: from gandalf.local.home (cpe-66-24-58-225.stny.res.rr.com
+ [66.24.58.225])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 86DE1217D9;
+ Tue, 16 Jul 2019 15:24:35 +0000 (UTC)
+Date: Tue, 16 Jul 2019 11:24:33 -0400
+From: Steven Rostedt <rostedt@goodmis.org>
+To: Peter Zijlstra <peterz@infradead.org>
+Subject: Re: [PATCH] tracing/fgraph: support recording function return values
+Message-ID: <20190716112433.5936c60f@gandalf.local.home>
+In-Reply-To: <20190716142005.GE3402@hirez.programming.kicks-ass.net>
+References: <20190713121026.11030-1-changbin.du@gmail.com>
+ <20190715082930.uyxn2kklgw4yri5l@willie-the-truck>
+ <20190715101231.GB3419@hirez.programming.kicks-ass.net>
+ <20190716140817.za4rad3hx76efqgp@mail.google.com>
+ <20190716142005.GE3402@hirez.programming.kicks-ass.net>
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_082323_803949_7FB5728C 
-X-CRM114-Status: GOOD (  10.64  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190716_082437_760000_322B517D 
+X-CRM114-Status: GOOD (  18.25  )
+X-Spam-Score: -4.8 (----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-4.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -67,107 +67,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dong Aisheng <aisheng.dong@nxp.com>, sboyd@kernel.org,
- mturquette@baylibre.com, linux-imx@nxp.com, kernel@pengutronix.de,
- fabio.estevam@nxp.com, shawnguo@kernel.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: corbet@lwn.net, catalin.marinas@arm.com, x86@kernel.org,
+ linux-doc@vger.kernel.org, linux@armlinux.org.uk, linux-kernel@vger.kernel.org,
+ mingo@redhat.com, bp@alien8.de, hpa@zytor.com, tglx@linutronix.de,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Changbin Du <changbin.du@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-LPCG clock state may be lost when it's power domain is completely
-off during system suspend/resume and we need save and restore the
-state properly.
+On Tue, 16 Jul 2019 16:20:05 +0200
+Peter Zijlstra <peterz@infradead.org> wrote:
 
-Signed-off-by: Dong Aisheng <aisheng.dong@nxp.com>
----
-ChangeLog:
-v3: new patch
----
- drivers/clk/imx/clk-imx8qxp-lpcg.c |  1 +
- drivers/clk/imx/clk-lpcg-scu.c     | 33 +++++++++++++++++++++++++++++++++
- drivers/clk/imx/clk-scu.h          |  1 +
- 3 files changed, 35 insertions(+)
+> On Tue, Jul 16, 2019 at 10:08:18PM +0800, Changbin Du wrote:
+> > On Mon, Jul 15, 2019 at 12:12:31PM +0200, Peter Zijlstra wrote:  
+> 
+> > > Alternatively, we can have recordmcount (or objtool) mark all functions
+> > > with a return value when the build has DEBUG_INFO on. The dwarves know
+> > > the function signature.
+> > >  
+> > We can extend the recordmcount tool to search 'subprogram' tag in the DIE tree.
+> > In below example, the 'DW_AT_type' is the type of function pidfd_create().
+> > 
+> > $ readelf -w kernel/pid.o
+> >  [...]
+> >  <1><1b914>: Abbrev Number: 232 (DW_TAG_subprogram)
+> >     <1b916>   DW_AT_name        : (indirect string, offset: 0x415e): pidfd_create
+> >     <1b91a>   DW_AT_decl_file   : 1
+> >     <1b91b>   DW_AT_decl_line   : 471
+> >     <1b91d>   DW_AT_decl_column : 12
+> >     <1b91e>   DW_AT_prototyped  : 1
+> >     <1b91e>   DW_AT_type        : <0xcc>
+> >     <1b922>   DW_AT_low_pc      : 0x450
+> >     <1b92a>   DW_AT_high_pc     : 0x50
+> >     <1b932>   DW_AT_frame_base  : 1 byte block: 9c 	(DW_OP_call_frame_cfa)
+> >     <1b934>   DW_AT_GNU_all_call_sites: 1
+> >     <1b934>   DW_AT_sibling     : <0x1b9d9>
+> >  [...]
+> > 
+> > To that end, we need to introduce libdw library for recordmcount. I will have a
+> > try this week.  
+> 
+> Right; but only when this config option is set.
 
-diff --git a/drivers/clk/imx/clk-imx8qxp-lpcg.c b/drivers/clk/imx/clk-imx8qxp-lpcg.c
-index 0043639..fa5edaa 100644
---- a/drivers/clk/imx/clk-imx8qxp-lpcg.c
-+++ b/drivers/clk/imx/clk-imx8qxp-lpcg.c
-@@ -312,6 +312,7 @@ static struct platform_driver imx8qxp_lpcg_clk_driver = {
- 	.driver = {
- 		.name = "imx8qxp-lpcg-clk",
- 		.of_match_table = imx8qxp_lpcg_match,
-+		.pm = &imx_clk_lpcg_scu_pm_ops,
- 		.suppress_bind_attrs = true,
- 	},
- 	.probe = imx8qxp_lpcg_clk_probe,
-diff --git a/drivers/clk/imx/clk-lpcg-scu.c b/drivers/clk/imx/clk-lpcg-scu.c
-index 3c092a0..4df0818 100644
---- a/drivers/clk/imx/clk-lpcg-scu.c
-+++ b/drivers/clk/imx/clk-lpcg-scu.c
-@@ -33,6 +33,9 @@ struct clk_lpcg_scu {
- 	void __iomem *reg;
- 	u8 bit_idx;
- 	bool hw_gate;
-+
-+	/* for state save&restore */
-+	u32 state;
- };
- 
- #define to_clk_lpcg_scu(_hw) container_of(_hw, struct clk_lpcg_scu, hw)
-@@ -112,5 +115,35 @@ struct clk_hw *__imx_clk_lpcg_scu(struct device *dev, const char *name,
- 		hw = ERR_PTR(ret);
- 	}
- 
-+	if (dev)
-+		dev_set_drvdata(dev, clk);
-+
- 	return hw;
- }
-+
-+int __maybe_unused imx_clk_lpcg_scu_suspend(struct device *dev)
-+{
-+	struct clk_lpcg_scu *clk = dev_get_drvdata(dev);
-+
-+	clk->state = readl_relaxed(clk->reg);
-+	dev_dbg(dev, "save lpcg state 0x%x\n", clk->state);
-+
-+	return 0;
-+}
-+
-+int __maybe_unused imx_clk_lpcg_scu_resume(struct device *dev)
-+{
-+	struct clk_lpcg_scu *clk = dev_get_drvdata(dev);
-+
-+	/* FIXME: double write in case a failure */
-+	writel(clk->state, clk->reg);
-+	writel(clk->state, clk->reg);
-+	dev_dbg(dev, "restore lpcg state 0x%x\n", clk->state);
-+
-+	return 0;
-+}
-+
-+const struct dev_pm_ops imx_clk_lpcg_scu_pm_ops = {
-+	SET_NOIRQ_SYSTEM_SLEEP_PM_OPS(imx_clk_lpcg_scu_suspend,
-+				      imx_clk_lpcg_scu_resume)
-+};
-diff --git a/drivers/clk/imx/clk-scu.h b/drivers/clk/imx/clk-scu.h
-index 84efda3..6d4b6e2 100644
---- a/drivers/clk/imx/clk-scu.h
-+++ b/drivers/clk/imx/clk-scu.h
-@@ -12,6 +12,7 @@
- 
- extern u32 clock_cells;
- extern struct list_head imx_scu_clks[];
-+extern const struct dev_pm_ops imx_clk_lpcg_scu_pm_ops;
- 
- int imx_clk_scu_init(struct device_node *np);
- struct clk_hw *imx_scu_of_clk_src_get(struct of_phandle_args *clkspec,
--- 
-2.7.4
+Sure, and we can have fgraph support of return values depend on that
+option ;-)
 
+> 
+> > And probably, we can also record the parameters?  
+> 
+> The 'fun' part is where to store all this information in the kernel and
+> how fast you can find it while tracing.
+
+This has been on my TODO list for a long time (I'm really happy if
+someone else would do it!). My thought is that this information would
+need to be able to be a module and loaded (like config.gz can be). And
+then you can load the info, do the tracing, and then unload it.
+
+For the speed part, we can add a way to hook the function with the
+parameters, which shouldn't be an issue, as we already do that when
+filtering for function graph. There's a function hash table that fgraph
+users have that is tested to see if it should trace the function or
+not. And the functions themselves are recorded in a mostly binary array
+that can be looked up via a binary search from the ip address.
+
+-- Steve
 
 _______________________________________________
 linux-arm-kernel mailing list
