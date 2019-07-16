@@ -2,79 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 646A96A1E1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 07:39:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F6176A1F9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 07:55:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=tNd4BvSmFdGFPK4IYPztDOik1l3+4QymKuRJTZ1TdPs=; b=SVle+JQ+LQje8v
-	ZYThBeyhq5wSBGN6rTru3VcJWb+d9IxwnsHULwya/+U0PSCIKU0i2a7L4JzbQP+r/UWcw6cN31mfS
-	8hxpl7EQq17mluy0gHld725LKGCAa4cdx9SWd3rV3sc0bMOudCo0WiFk3xNR8ZXHpMFQbmLcuR04n
-	9jB+yNlnpUeproRebE9u7MEFSVsdvhLR34AI5qMkIpXDEDmHrJjJrm/QM4mCROmgSFJ4PU9fPT3mm
-	/dyut3ZoxQ5wIdgYpvw7aFvlu+EsKYy/2tt62zwXfM5FfxSanzoTj3KNTGdeQfZqbvL2FtB9qY4eh
-	TkTjSfDPKLrv4Sa9TeCQ==;
+	List-Owner; bh=AdzPt8O4Y7EoQb887+N2VC5ierOMiUqjQiuF0Gvwqvs=; b=R5JYe+HkthBOg8
+	FezSqxnP1Sen899b38l4yWUPtUDpKf59e9lnF1iXHmcb0SWUPblspOK+YGlgK+JhpQs6c4NBldleX
+	+89kBfx1Wl/m1S1WclW2Kb0kfhRd64vZ8tI3mrtUcyvgC5ehFl/L9jiO9npE824ISEcWhoouSirRx
+	mxvJ3mpmkbxOww17v4saLgJe2B2YNSkKQbIm1+KqBDTmNa2lOMpVWhhN+RkUo/rKaGXMYXcpNKxrx
+	eVs2b2TAgH/hGc8CAhxb3TELi8KaRMK/0vNzROXiXJeVNWpFSvGgaDkPplmkAB4oTiZTnkE4863oy
+	YjwZS09IbSnAGD7OP+rw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnGAz-0002Lh-Bd; Tue, 16 Jul 2019 05:38:57 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1hnGQy-0008Ud-Tn; Tue, 16 Jul 2019 05:55:28 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnGAo-0002Ky-27
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 05:38:47 +0000
-Received: by mail-pf1-x444.google.com with SMTP id y15so8528959pfn.5
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 15 Jul 2019 22:38:45 -0700 (PDT)
+ id 1hnGQn-0008UI-Kq; Tue, 16 Jul 2019 05:55:18 +0000
+Received: by mail-pl1-x643.google.com with SMTP id 4so2551004pld.10;
+ Mon, 15 Jul 2019 22:55:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=dkDvJESbfgarF5psH5TI9KfGPlZBY5Pvyob+Ly4gKF8=;
- b=o1wZbqSpkuQBVBsXUFfptyzSKhzuaZmxcFFIoWCXB/xynZ5BVwDkmj6etKX8HHtnLk
- OhR8Nuory5f3D0SCk7V9A/rb3VpoF49qI0OHhkSQ1z+yVXVEEVJT2PJ1Q7VVznXaQBbO
- qgCwerr5jIeXOxISQoJlT2muWTKVXzXYXWL44sMQG1T4zXEU9bBnBlY1ULHT5DNtdZFT
- KQ6qp6lO6+70Z08oJm+ipg5ry/kI0ukjiRHiA9WAKhu1PlohST8mvYzUhYcpSA6WlmqX
- EA6w7LUyY6o7dCCF8KwrrvldyH4c3d/uJDZteKBYrO0ahiQwkDhNrkxCBG5mvMcfmPTf
- nmzg==
+ bh=RlCA90112tAvbzPxVBehLoEGm+dZ8qWusJBsaqezzKQ=;
+ b=HJ0GlqX9vNn5vyxctp74cdCbjz9LEVbhrk+p9eA0p2nK9nPpRuTOort7hvWFlkEQZ1
+ Ew7LwFerYdTHFIFvbadzxE6pOIveTNOWTcYInHyxxXbvcpvZ+2gR5FAOkqn4Kf2IfJwR
+ A2rfO5rcuggbU94Cq/khoqv2jp11FtO2+ROyczZyLA4fvbTVcLGXXhndCw3Tgq6Qyedm
+ wUIVNdsj8uHgxz7DWBwTvuLe4aJDGIHsPyrjAnwx3B/miZ7wNRAbBvaewiKh54ni9JDn
+ F39jfn5yoQS1rt86M8KDzvEJ863o1kDCYTSC464UQbv7k0eZ0FQhs3Z57S0k1bRSLSiO
+ RRpw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=dkDvJESbfgarF5psH5TI9KfGPlZBY5Pvyob+Ly4gKF8=;
- b=tQVvqtNlsLaENWYqoFv/G3lSP7mCA70mvpi5NY7axoGrNm5oZrLI0Rfalu8uGocibj
- L1KKcU6Si/rSS9MTwnN9ATr7QfNDtJpH3DKlMI6BszE700fEZlQSxKRE3caS2xSemCJW
- Vi/+gihd7E8zFYBG2YQ9+V69MzN7hU2G5rv/5sFehaXi35xawdZGYCrfPRnnVnh8a5xM
- FlmRfYfYGHDioAYrsUImkrUbcO3fNHc5nDnRwv3VVGpxs6pmNHMwItbBnWxWUkTsSPb7
- t/5GSHVS1lZ9aQK4+vVJ+BnmFE41Uiv69tfzviBKhWUzO/t33XghAuO3qmW68mCmMhs/
- m1JA==
-X-Gm-Message-State: APjAAAVc9i3GgVm4rxTKDvdR5DSZoCRTtcDTupzUgvqKVtc9G0ZV22IK
- oYhaSjHCpq0la71xQN1JeoY=
-X-Google-Smtp-Source: APXvYqz29Kt/DIaEzG6cZYr8hZNUNgfuMYgQvzVP23DdS0M9Uhhi4hD3xTJFEKv4Lg9FdY/yuZI/PQ==
-X-Received: by 2002:a65:4509:: with SMTP id n9mr15786941pgq.133.1563255524645; 
- Mon, 15 Jul 2019 22:38:44 -0700 (PDT)
+ bh=RlCA90112tAvbzPxVBehLoEGm+dZ8qWusJBsaqezzKQ=;
+ b=OeTPA2m45irxHVztiii6loOKa5qAPY4nhEmLEKRsweb3IALtlqrEpGGktL45QpDXSe
+ h99/2BdF0w8AKqDy92I3Owi+2GGAJwrlXDTGnZYN6imPH+EKmNK+rbh8nLqT+EIevbgh
+ wgxqwoekX/uaIVMYWycMlSGoeFlndG0IWXNo8HvPJdoXhV3DZ8T8Rega+tRaNKn/qK6i
+ XDXW8sY/FGU+SnMyx4YM3q6zKuYFEkW9D2HtB/J7dgqFyuKFKnMxx0Zm8XzzAf13JPUn
+ gNXcyeLIrO9Mfm4Dv+nC1bdqoDxLdrQFumgk+KuNmT+KQfM2xEcl5+8hz/31ujvQnVWp
+ 6XYA==
+X-Gm-Message-State: APjAAAUzqRPyIvkQnYRDcbrFfQcDsUZm5lJrMSGoxBeFC80m85MKOcvG
+ +HtDX7qTxGgiQ7Ipc/IS/YQ=
+X-Google-Smtp-Source: APXvYqxIcfcb9KUVUeGLcIrM9l2ZeilXyPBlIyHa8kHAGZnRTQBO3fAUfhL61rCxNjOQG/fTtECgpw==
+X-Received: by 2002:a17:902:b186:: with SMTP id
+ s6mr32909467plr.343.1563256517040; 
+ Mon, 15 Jul 2019 22:55:17 -0700 (PDT)
 Received: from localhost.localdomain ([110.227.64.207])
- by smtp.gmail.com with ESMTPSA id v27sm22866779pgn.76.2019.07.15.22.38.41
+ by smtp.gmail.com with ESMTPSA id d8sm14787330pgh.45.2019.07.15.22.55.13
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 15 Jul 2019 22:38:44 -0700 (PDT)
+ Mon, 15 Jul 2019 22:55:16 -0700 (PDT)
 From: Nishka Dasgupta <nishkadg.linux@gmail.com>
-To: patrice.chotard@st.com, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Subject: [PATCH] media: platform: sti: c8sectpfe: core: Add of_node_put() at
- goto
-Date: Tue, 16 Jul 2019 11:08:31 +0530
-Message-Id: <20190716053831.2613-1-nishkadg.linux@gmail.com>
+To: nbd@openwrt.org, john@phrozen.org, sean.wang@mediatek.com,
+ davem@davemloft.net, netdev@vger.kernel.org, matthias.bgg@gmail.com,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org
+Subject: [PATCH] net: ethernet: mediatek: mtk_eth_soc: Add of_node_put()
+ before goto
+Date: Tue, 16 Jul 2019 11:25:04 +0530
+Message-Id: <20190716055504.3113-1-nishkadg.linux@gmail.com>
 X-Mailer: git-send-email 2.19.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190715_223846_105422_2A343687 
-X-CRM114-Status: GOOD (  11.93  )
+X-CRM114-CacheID: sfid-20190715_225517_709951_101227DA 
+X-CRM114-Status: UNSURE (   9.34  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -106,100 +107,30 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Each iteration of for_each_child_of_node puts the previous node, but in
 the case of a goto from the middle of the loop, there is no put, thus
-causing a memory leak. Hence add a new label that puts the last used
-node, and edit the goto statements in the middle of the loop to first go
-to the new label.
+causing a memory leak. Hence add an of_node_put before the goto.
 Issue found with Coccinelle.
 
 Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
 ---
- .../platform/sti/c8sectpfe/c8sectpfe-core.c    | 18 ++++++++++--------
- 1 file changed, 10 insertions(+), 8 deletions(-)
+ drivers/net/ethernet/mediatek/mtk_eth_soc.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/media/platform/sti/c8sectpfe/c8sectpfe-core.c b/drivers/media/platform/sti/c8sectpfe/c8sectpfe-core.c
-index 3c05b3dc49ec..85ab20492c2d 100644
---- a/drivers/media/platform/sti/c8sectpfe/c8sectpfe-core.c
-+++ b/drivers/media/platform/sti/c8sectpfe/c8sectpfe-core.c
-@@ -771,7 +771,7 @@ static int c8sectpfe_probe(struct platform_device *pdev)
+diff --git a/drivers/net/ethernet/mediatek/mtk_eth_soc.c b/drivers/net/ethernet/mediatek/mtk_eth_soc.c
+index b20b3a5a1ebb..c39d7f4ab1d4 100644
+--- a/drivers/net/ethernet/mediatek/mtk_eth_soc.c
++++ b/drivers/net/ethernet/mediatek/mtk_eth_soc.c
+@@ -2548,8 +2548,10 @@ static int mtk_probe(struct platform_device *pdev)
+ 			continue;
  
- 		if (!fei->channel_data[index]) {
- 			ret = -ENOMEM;
--			goto err_clk_disable;
-+			goto err_node_put;
- 		}
+ 		err = mtk_add_mac(eth, mac_np);
+-		if (err)
++		if (err) {
++			of_node_put(mac_np);
+ 			goto err_deinit_hw;
++		}
+ 	}
  
- 		tsin = fei->channel_data[index];
-@@ -781,7 +781,7 @@ static int c8sectpfe_probe(struct platform_device *pdev)
- 		ret = of_property_read_u32(child, "tsin-num", &tsin->tsin_id);
- 		if (ret) {
- 			dev_err(&pdev->dev, "No tsin_num found\n");
--			goto err_clk_disable;
-+			goto err_node_put;
- 		}
- 
- 		/* sanity check value */
-@@ -790,7 +790,7 @@ static int c8sectpfe_probe(struct platform_device *pdev)
- 				"tsin-num %d specified greater than number\n\tof input block hw in SoC! (%d)",
- 				tsin->tsin_id, fei->hw_stats.num_ib);
- 			ret = -EINVAL;
--			goto err_clk_disable;
-+			goto err_node_put;
- 		}
- 
- 		tsin->invert_ts_clk = of_property_read_bool(child,
-@@ -806,14 +806,14 @@ static int c8sectpfe_probe(struct platform_device *pdev)
- 					&tsin->dvb_card);
- 		if (ret) {
- 			dev_err(&pdev->dev, "No dvb-card found\n");
--			goto err_clk_disable;
-+			goto err_node_put;
- 		}
- 
- 		i2c_bus = of_parse_phandle(child, "i2c-bus", 0);
- 		if (!i2c_bus) {
- 			dev_err(&pdev->dev, "No i2c-bus found\n");
- 			ret = -ENODEV;
--			goto err_clk_disable;
-+			goto err_node_put;
- 		}
- 		tsin->i2c_adapter =
- 			of_find_i2c_adapter_by_node(i2c_bus);
-@@ -821,7 +821,7 @@ static int c8sectpfe_probe(struct platform_device *pdev)
- 			dev_err(&pdev->dev, "No i2c adapter found\n");
- 			of_node_put(i2c_bus);
- 			ret = -ENODEV;
--			goto err_clk_disable;
-+			goto err_node_put;
- 		}
- 		of_node_put(i2c_bus);
- 
-@@ -832,7 +832,7 @@ static int c8sectpfe_probe(struct platform_device *pdev)
- 			dev_err(dev,
- 				"reset gpio for tsin%d not valid (gpio=%d)\n",
- 				tsin->tsin_id, tsin->rst_gpio);
--			goto err_clk_disable;
-+			goto err_node_put;
- 		}
- 
- 		ret = devm_gpio_request_one(dev, tsin->rst_gpio,
-@@ -840,7 +840,7 @@ static int c8sectpfe_probe(struct platform_device *pdev)
- 		if (ret && ret != -EBUSY) {
- 			dev_err(dev, "Can't request tsin%d reset gpio\n"
- 				, fei->channel_data[index]->tsin_id);
--			goto err_clk_disable;
-+			goto err_node_put;
- 		}
- 
- 		if (!ret) {
-@@ -883,6 +883,8 @@ static int c8sectpfe_probe(struct platform_device *pdev)
- 
- 	return 0;
- 
-+err_node_put:
-+	of_node_put(child);
- err_clk_disable:
- 	clk_disable_unprepare(fei->c8sectpfeclk);
- 	return ret;
+ 	if (MTK_HAS_CAPS(eth->soc->caps, MTK_SHARED_INT)) {
 -- 
 2.19.1
 
