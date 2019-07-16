@@ -2,36 +2,36 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 03EFB6A6F7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 13:09:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A874C6A6F8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 13:09:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z6Zpc3opovSeJPvNLUzgvxh9HOW8gj0tLnRhUIiES4M=; b=OO8xevBB3rFSHk
-	RhqOH1JCI/6f0/66xjD6Pdn7KeRJWSKxKXyrbYzHX0MrKl2Yg6SlJNhGWR+D/bDIsDdt5D5fLbGSO
-	RPqh3X3lgkMRPgJmoPHKpc2QJPpLUy1Plhl78/4tzpJ2g/ymquiNH81bqIwZwpbBOLLyiqbINKsmY
-	Am5F/uTmUj4r4Oh9dUgjS5/k7XfHfgDirx2iqjeOxUj/t1scOWYLyt63MWpBip63DkAlmHYzo9/xg
-	WhM/QFA4hlwpTV1aOOiz8RJJJYuEVOqtCC/3yw8jd1qPqGEiM/zWtbh3xaT80GknV7l+g+xnDXHPd
-	w4fVE/R3rocVym1QggJQ==;
+	List-Owner; bh=YaP6zSFhcOxW5OkkV0C00aoXZJ4Hl9BXegVHJlfME7k=; b=l4gPz1MUZoxyxL
+	8ICzPMS+mhV1Z5uXN1mOujQZ8em/CHU/ddxrPjOIHbzI5DXiJREVu/fwRWXFJZ+Tf5asInBTMQefe
+	9IOK00ntD1UjBtOj/kKgYDP2rudXI1+9/9NJh6Ku4DpC97u0pReDAfZDZk/8hERy/vP245mqz55XJ
+	4ZSJ15s5/VuwHKGAz91054FZqw1m9/EF+5eNiAXDGvIHtV6uiB+drWJzynrdcswjRdBsyBROdc52s
+	giDkY42N7jJalh0T8nHWteBSSjxi59gGIlyTKu4c5rhIRkFBPp6clnODK/W9qopiw9yUzgEswuyfb
+	IGcPG/9HEQ3qlQxAWLPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnLKl-0006dS-0t; Tue, 16 Jul 2019 11:09:23 +0000
+	id 1hnLL4-0006qr-2Y; Tue, 16 Jul 2019 11:09:42 +0000
 Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnLKS-0006d8-8b
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 11:09:05 +0000
+ id 1hnLKc-0006j0-1u
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 11:09:15 +0000
 Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
  [10.5.11.23])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id E40DD30832E9;
- Tue, 16 Jul 2019 11:09:02 +0000 (UTC)
+ by mx1.redhat.com (Postfix) with ESMTPS id 623062BE9A;
+ Tue, 16 Jul 2019 11:09:13 +0000 (UTC)
 Received: from [10.36.116.218] (ovpn-116-218.ams2.redhat.com [10.36.116.218])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 8BC1419C59;
- Tue, 16 Jul 2019 11:08:57 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 6DC9519C68;
+ Tue, 16 Jul 2019 11:09:07 +0000 (UTC)
 Subject: Re: [PATCH v3 10/11] mm/memory_hotplug: Make
  unregister_memory_block_under_nodes() never fail
 To: Oscar Salvador <osalvador@suse.de>
@@ -87,8 +87,8 @@ Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
  +8Umfre0Xt4713VxMygW0PnQt5aSQdMD58jHFxTk092mU+yIHj5LeYgvwSgZN4airXk5yRXl
  SE+xAvmumFBY
 Organization: Red Hat GmbH
-Message-ID: <d9e63646-f81d-c349-a54c-e17cdccb0760@redhat.com>
-Date: Tue, 16 Jul 2019 13:08:56 +0200
+Message-ID: <eb51f770-b0a3-f50c-daa4-babe6e8d3fc4@redhat.com>
+Date: Tue, 16 Jul 2019 13:09:06 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.2
 MIME-Version: 1.0
@@ -96,9 +96,9 @@ In-Reply-To: <20190716084626.GA12394@linux>
 Content-Language: en-US
 X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
 X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.44]); Tue, 16 Jul 2019 11:09:03 +0000 (UTC)
+ (mx1.redhat.com [10.5.110.39]); Tue, 16 Jul 2019 11:09:13 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_040904_348917_954AEDA4 
+X-CRM114-CacheID: sfid-20190716_040914_175107_31F98080 
 X-CRM114-Status: GOOD (  22.97  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -180,7 +180,7 @@ On 16.07.19 10:46, Oscar Salvador wrote:
 As far as I can tell we
 
 a) don't allow offlining of memory that belongs to multiple nodes
-already (as pointed out by Michael recently)
+already (as pointed out by Michal recently)
 
 b) users cannot add memory blocks that belong to multiple nodes via
 add_memory()
