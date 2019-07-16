@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ADBF56ABA2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 17:25:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57B0E6AB9C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 17:23:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,50 +11,49 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=K/gTGwlISFs6GMvBJ238Ko0/atH+fndxvN9/34Rgk4s=; b=mszUvDnv2xk8SH9/jOEwMYC9vc
-	PCc5WcUno5yrqU8m1hZcz8n75+wQfPY/i8PbBbWLAt6rMULa9JYJ24Bw43JhM+xx7Mlb9Fn4OX3KQ
-	rQiMpisXotu8pQ8A5lYDmThwWBGWnh9bDrVdWEW24x9FIoRrK2DMibZnp9W6PaHADpber4iwkkLMp
-	jsthxUuRPjCR6peJQqcvg3SLhEyXjNjaMOOHfI54AnaZuTTmJSpcpc6ALd8JeE+FJrja2z/tFcmGz
-	4ztQATjtRlYPzf/JJO4mwo/zqufDS5bSlWvAVuH8VJ5+hGRqZJ+oqJhzJEUdPG98jTBDaqznkYV74
-	ThLR2Y+g==;
+	bh=rcklqtFI4Su/DfYJkXCAt2UNmhjcpjZqAkChEfSpO/E=; b=BWTvCMB4+li2DbsMlK37TiL7BJ
+	ahFI1F1+rq6BZ8U9hhyznjrVQAUM9JK7VB3YHaHy4csMsuHcrkdrDQMjOKTpflbl0tcHJGyrXmDxc
+	m6B8hyFsTtIvw9eOkJ0zFgyppOEIjb3zauJUpCvSzGDy1LEVDg3bPXCfTVaGP1f9xH2xOVjRilS3g
+	zGFkHs5FFZZG9qPBrHb1QHYR0XerHlprkV7fZdljQaK2d9BTGKHItuhb0I3gEQF1ozthxaFNWhs7/
+	nuCjZWAyft9rREAQ2SeOBqY1d3EjHpvhjRqp8Djjcsy5mJM0olWNd7DcU4ELCPPKzHccYqggFjAA6
+	SE49bvsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnPKH-0006Ik-4h; Tue, 16 Jul 2019 15:25:09 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1hnPIx-0005J6-Oq; Tue, 16 Jul 2019 15:23:47 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnPIQ-00055j-TB
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 15:23:18 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 6E916200060;
- Tue, 16 Jul 2019 17:23:13 +0200 (CEST)
+ id 1hnPIP-00055T-N8
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 15:23:15 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 869EF1A00C0;
+ Tue, 16 Jul 2019 17:23:12 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 6D4BD20001C;
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 785681A004C;
  Tue, 16 Jul 2019 17:23:07 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 3A450402D6;
- Tue, 16 Jul 2019 23:23:00 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 54DAA402E3;
+ Tue, 16 Jul 2019 23:23:01 +0800 (SGT)
 From: Dong Aisheng <aisheng.dong@nxp.com>
 To: linux-clk@vger.kernel.org
-Subject: [PATCH v3 02/11] dt-bindings: clock: imx-lpcg: add support to parse
- clocks from device tree
-Date: Tue, 16 Jul 2019 23:00:56 +0800
-Message-Id: <1563289265-10977-3-git-send-email-aisheng.dong@nxp.com>
+Subject: [PATCH v3 03/11] clk: imx: scu: add two cells binding support
+Date: Tue, 16 Jul 2019 23:00:57 +0800
+Message-Id: <1563289265-10977-4-git-send-email-aisheng.dong@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1563289265-10977-1-git-send-email-aisheng.dong@nxp.com>
 References: <1563289265-10977-1-git-send-email-aisheng.dong@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_082315_224616_7119FFD2 
-X-CRM114-Status: GOOD (  11.35  )
+X-CRM114-CacheID: sfid-20190716_082314_031703_8A7D22F8 
+X-CRM114-Status: GOOD (  17.60  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -68,103 +67,287 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dong Aisheng <aisheng.dong@nxp.com>, devicetree@vger.kernel.org,
- sboyd@kernel.org, mturquette@baylibre.com, Rob Herring <robh+dt@kernel.org>,
- linux-imx@nxp.com, kernel@pengutronix.de, fabio.estevam@nxp.com,
- shawnguo@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Dong Aisheng <aisheng.dong@nxp.com>, sboyd@kernel.org,
+ mturquette@baylibre.com, linux-imx@nxp.com, kernel@pengutronix.de,
+ fabio.estevam@nxp.com, shawnguo@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MX8QM and MX8QXP LPCG Clocks are mostly the same except they may reside
-in different subsystems across CPUs and also vary a bit on the availability.
+This patch implements the new two cells binding for SCU clocks.
+The usage is as follows:
+clocks = <&uart0_clk IMX_SC_R_UART_0 IMX_SC_PM_CLK_PER>
 
-Same as SCU clock, we want to move the clock definition into device tree
-which can fully decouple the dependency of Clock ID definition from device
-tree and make us be able to write a fully generic lpcg clock driver.
+Due to each SCU clock is associated with a power domain, without power
+on the domain, the SCU clock can't work. So we create platform devices
+for each domain clock respectively and manually attach the required domain
+before register the clock devices, then we can register clocks in the
+clock platform driver accordingly.
 
-And we can also use the existence of clock nodes in device tree to address
-the device and clock availability differences across different SoCs.
+Note because we do not have power domain info in device tree and the SCU
+resource ID is the same for power domain and clock, so we use resource ID
+to find power domains.
 
-Cc: Rob Herring <robh+dt@kernel.org>
+Later, we will also use this clock platform driver to support suspend/resume
+and runtime pm.
+
 Cc: Stephen Boyd <sboyd@kernel.org>
 Cc: Shawn Guo <shawnguo@kernel.org>
 Cc: Sascha Hauer <kernel@pengutronix.de>
 Cc: Michael Turquette <mturquette@baylibre.com>
-Cc: devicetree@vger.kernel.org
 Signed-off-by: Dong Aisheng <aisheng.dong@nxp.com>
 ---
 ChangeLog:
-v2->v3:
- * no changes
-v1->v2:
- * Update example
- * Add power domain property
+v3: new patch
 ---
- .../devicetree/bindings/clock/imx8qxp-lpcg.txt     | 34 ++++++++++++++++++----
- 1 file changed, 28 insertions(+), 6 deletions(-)
+ drivers/clk/imx/clk-imx8qxp.c |   9 ++-
+ drivers/clk/imx/clk-scu.c     | 138 +++++++++++++++++++++++++++++++++++++++++-
+ drivers/clk/imx/clk-scu.h     |  21 ++++++-
+ 3 files changed, 161 insertions(+), 7 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/clock/imx8qxp-lpcg.txt b/Documentation/devicetree/bindings/clock/imx8qxp-lpcg.txt
-index 965cfa4..6fc2fd8 100644
---- a/Documentation/devicetree/bindings/clock/imx8qxp-lpcg.txt
-+++ b/Documentation/devicetree/bindings/clock/imx8qxp-lpcg.txt
-@@ -11,6 +11,21 @@ enabled by these control bits, it might still not be running based
- on the base resource.
+diff --git a/drivers/clk/imx/clk-imx8qxp.c b/drivers/clk/imx/clk-imx8qxp.c
+index 5e2903e..1ad3f2a 100644
+--- a/drivers/clk/imx/clk-imx8qxp.c
++++ b/drivers/clk/imx/clk-imx8qxp.c
+@@ -24,7 +24,7 @@ static int imx8qxp_clk_probe(struct platform_device *pdev)
+ 	struct clk_hw **clks;
+ 	int ret, i;
  
- Required properties:
-+- compatible:		Should be one of:
-+			  "fsl,imx8qxp-lpcg"
-+			  "fsl,imx8qm-lpcg" followed by "fsl,imx8qxp-lpcg".
-+- reg:			Address and length of the register set.
-+- #clock-cells:		Should be 1. One LPCG supports multiple clocks.
-+- clocks:		Input parent clocks phandle array for each clock.
-+- bit-offset:		An integer array indicating the bit offset for each clock.
-+- hw-autogate:		Boolean array indicating whether supports HW autogate for
-+			each clock.
-+- clock-output-names:	Shall be the corresponding names of the outputs.
-+			NOTE this property must be specified in the same order
-+			as the clock bit-offset and hw-autogate property.
-+- power-domains:	Should contain the power domain used by this clock.
+-	ret = imx_clk_scu_init();
++	ret = imx_clk_scu_init(ccm_node);
+ 	if (ret)
+ 		return ret;
+ 
+@@ -134,7 +134,12 @@ static int imx8qxp_clk_probe(struct platform_device *pdev)
+ 				i, PTR_ERR(clks[i]));
+ 	}
+ 
+-	return of_clk_add_hw_provider(ccm_node, of_clk_hw_onecell_get, clk_data);
++	if (clock_cells == 2)
++		ret = of_clk_add_hw_provider(ccm_node, imx_scu_of_clk_src_get, imx_scu_clks);
++	else
++		ret = of_clk_add_hw_provider(ccm_node, of_clk_hw_onecell_get, clk_data);
 +
-+Legacy binding (DEPRECATED):
- - compatible:	Should be one of:
- 		  "fsl,imx8qxp-lpcg-adma",
- 		  "fsl,imx8qxp-lpcg-conn",
-@@ -33,10 +48,17 @@ Examples:
++	return ret;
+ }
  
- #include <dt-bindings/clock/imx8qxp-clock.h>
+ static const struct of_device_id imx8qxp_match[] = {
+diff --git a/drivers/clk/imx/clk-scu.c b/drivers/clk/imx/clk-scu.c
+index fbef740..48bfb08 100644
+--- a/drivers/clk/imx/clk-scu.c
++++ b/drivers/clk/imx/clk-scu.c
+@@ -8,6 +8,9 @@
+ #include <linux/arm-smccc.h>
+ #include <linux/clk-provider.h>
+ #include <linux/err.h>
++#include <linux/of_platform.h>
++#include <linux/platform_device.h>
++#include <linux/pm_domain.h>
+ #include <linux/slab.h>
  
--conn_lpcg: clock-controller@5b200000 {
--	compatible = "fsl,imx8qxp-lpcg-conn";
--	reg = <0x5b200000 0xb0000>;
-+sdhc0_lpcg: clock-controller@5b200000 {
-+	compatible = "fsl,imx8qxp-lpcg";
-+	reg = <0x5b200000 0x10000>;
- 	#clock-cells = <1>;
-+	clocks = <&sdhc0_clk IMX_SC_PM_CLK_PER>,
-+		 <&conn_ipg_clk>, <&conn_axi_clk>;
-+	bit-offset = <0 16 20>;
-+	clock-output-names = "sdhc0_lpcg_per_clk",
-+			     "sdhc0_lpcg_ipg_clk",
-+			     "sdhc0_lpcg_ahb_clk";
-+	power-domains = <&pd IMX_SC_R_SDHC_0>;
- };
+ #include "clk-scu.h"
+@@ -16,6 +19,21 @@
+ #define IMX_SIP_SET_CPUFREQ		0x00
  
- usdhc1: mmc@5b010000 {
-@@ -44,8 +66,8 @@ usdhc1: mmc@5b010000 {
- 	interrupt-parent = <&gic>;
- 	interrupts = <GIC_SPI 232 IRQ_TYPE_LEVEL_HIGH>;
- 	reg = <0x5b010000 0x10000>;
--	clocks = <&conn_lpcg IMX8QXP_CONN_LPCG_SDHC0_IPG_CLK>,
--		 <&conn_lpcg IMX8QXP_CONN_LPCG_SDHC0_PER_CLK>,
--		 <&conn_lpcg IMX8QXP_CONN_LPCG_SDHC0_HCLK>;
-+	clocks = <&sdhc0_lpcg 1>,
-+		 <&sdhc0_lpcg 0>,
-+		 <&sdhc0_lpcg 2>;
- 	clock-names = "ipg", "per", "ahb";
- };
+ static struct imx_sc_ipc *ccm_ipc_handle;
++struct device_node *pd_np;
++u32 clock_cells;
++
++struct imx_scu_clk_node {
++	const char *name;
++	u32 rsrc;
++	u8 clk_type;
++	const char * const *parents;
++	int num_parents;
++
++	struct clk_hw *hw;
++	struct list_head node;
++};
++
++struct list_head imx_scu_clks[IMX_SC_R_LAST];
+ 
+ /*
+  * struct clk_scu - Description of one SCU clock
+@@ -128,9 +146,29 @@ static inline struct clk_scu *to_clk_scu(struct clk_hw *hw)
+ 	return container_of(hw, struct clk_scu, hw);
+ }
+ 
+-int imx_clk_scu_init(void)
++int imx_clk_scu_init(struct device_node *np)
+ {
+-	return imx_scu_get_handle(&ccm_ipc_handle);
++	struct platform_device *pd_dev;
++	int ret, i;
++
++	ret = imx_scu_get_handle(&ccm_ipc_handle);
++	if (ret)
++		return ret;
++
++	if (of_property_read_u32(np, "#clock-cells", &clock_cells))
++		return -EINVAL;
++
++	if (clock_cells == 2) {
++		for (i = 0; i < IMX_SC_R_LAST; i++)
++			INIT_LIST_HEAD(&imx_scu_clks[i]);
++
++		pd_np = of_find_compatible_node(NULL, NULL, "fsl,scu-pd");
++		pd_dev = of_find_device_by_node(pd_np);
++		if (!pd_dev || !device_is_bound(&pd_dev->dev))
++			return -EPROBE_DEFER;
++	}
++
++	return 0;
+ }
+ 
+ /*
+@@ -387,3 +425,99 @@ struct clk_hw *__imx_clk_scu(const char *name, const char * const *parents,
+ 
+ 	return hw;
+ }
++
++struct clk_hw *imx_scu_of_clk_src_get(struct of_phandle_args *clkspec,
++				      void *data)
++{
++	unsigned int rsrc = clkspec->args[0];
++	unsigned int idx = clkspec->args[1];
++	struct list_head *scu_clks = data;
++	struct imx_scu_clk_node *clk;
++
++	list_for_each_entry(clk, &scu_clks[rsrc], node) {
++		if (clk->clk_type == idx)
++			return clk->hw;
++	}
++
++	return ERR_PTR(-ENODEV);
++}
++
++static int imx_clk_scu_probe(struct platform_device *pdev)
++{
++	struct device *dev = &pdev->dev;
++	struct imx_scu_clk_node *clk = dev_get_platdata(dev);
++	struct clk_hw *hw;
++
++	hw = __imx_clk_scu(clk->name, clk->parents, clk->num_parents,
++			   clk->rsrc, clk->clk_type);
++	if (IS_ERR(hw))
++		return PTR_ERR(hw);
++
++	clk->hw = hw;
++	list_add_tail(&clk->node, &imx_scu_clks[clk->rsrc]);
++
++	dev_dbg(dev, "register SCU clock rsrc:%d type:%d\n", clk->rsrc,
++		clk->clk_type);
++
++	return 0;
++}
++
++static struct platform_driver imx_clk_scu_driver = {
++	.driver = {
++		.name = "imx-scu-clk",
++		.suppress_bind_attrs = true,
++	},
++	.probe = imx_clk_scu_probe,
++};
++builtin_platform_driver(imx_clk_scu_driver);
++
++static int imx_clk_scu_attach_pd(struct device *dev, u32 rsrc_id)
++{
++	struct of_phandle_args genpdspec = {
++		.np = pd_np,
++		.args_count = 1,
++		.args[0] = rsrc_id,
++	};
++
++	return of_genpd_add_device(&genpdspec, dev);
++}
++
++struct clk_hw *imx_clk_scu_alloc_dev(const char *name,
++				     const char * const *parents,
++				     int num_parents, u32 rsrc_id, u8 clk_type)
++{
++	struct imx_scu_clk_node clk = {
++		.name = name,
++		.rsrc = rsrc_id,
++		.clk_type = clk_type,
++		.parents = parents,
++		.num_parents = num_parents,
++	};
++	struct platform_device *pdev;
++	int ret;
++
++	pdev = platform_device_alloc(name, PLATFORM_DEVID_NONE);
++	if (!pdev) {
++		pr_err("%s: failed to allocate scu clk dev rsrc %d type %d\n",
++		       name, rsrc_id, clk_type);
++		return ERR_PTR(-ENOMEM);
++	}
++
++	ret = platform_device_add_data(pdev, &clk, sizeof(clk));
++	if (ret) {
++		platform_device_put(pdev);
++		return ERR_PTR(-ENOMEM);
++	}
++
++	pdev->driver_override = "imx-scu-clk";
++
++	ret = imx_clk_scu_attach_pd(&pdev->dev, rsrc_id);
++	if (ret)
++		pr_warn("%s: failed to attached the power domain %d\n",
++			name, ret);
++
++	platform_device_add(pdev);
++
++	/* For API backwards compatiblilty, simply return NULL for success */
++	return NULL;
++}
+diff --git a/drivers/clk/imx/clk-scu.h b/drivers/clk/imx/clk-scu.h
+index 2bcfaf0..819dc32 100644
+--- a/drivers/clk/imx/clk-scu.h
++++ b/drivers/clk/imx/clk-scu.h
+@@ -8,8 +8,17 @@
+ #define __IMX_CLK_SCU_H
+ 
+ #include <linux/firmware/imx/sci.h>
++#include <linux/of.h>
+ 
+-int imx_clk_scu_init(void);
++extern u32 clock_cells;
++extern struct list_head imx_scu_clks[];
++
++int imx_clk_scu_init(struct device_node *np);
++struct clk_hw *imx_scu_of_clk_src_get(struct of_phandle_args *clkspec,
++				      void *data);
++struct clk_hw *imx_clk_scu_alloc_dev(const char *name,
++				     const char * const *parents,
++				     int num_parents, u32 rsrc_id, u8 clk_type);
+ 
+ struct clk_hw *__imx_clk_scu(const char *name, const char * const *parents,
+ 			     int num_parents, u32 rsrc_id, u8 clk_type);
+@@ -17,13 +26,19 @@ struct clk_hw *__imx_clk_scu(const char *name, const char * const *parents,
+ static inline struct clk_hw *imx_clk_scu(const char *name, u32 rsrc_id,
+ 					 u8 clk_type)
+ {
+-	return __imx_clk_scu(name, NULL, 0, rsrc_id, clk_type);
++	if (clock_cells == 2)
++		return imx_clk_scu_alloc_dev(name, NULL, 0, rsrc_id, clk_type);
++	else
++		return __imx_clk_scu(name, NULL, 0, rsrc_id, clk_type);
+ }
+ 
+ static inline struct clk_hw *imx_clk_scu2(const char *name, const char * const *parents,
+ 					  int num_parents, u32 rsrc_id, u8 clk_type)
+ {
+-	return __imx_clk_scu(name, parents, num_parents, rsrc_id, clk_type);
++	if (clock_cells == 2)
++		return imx_clk_scu_alloc_dev(name, parents, num_parents, rsrc_id, clk_type);
++	else
++		return __imx_clk_scu(name, parents, num_parents, rsrc_id, clk_type);
+ }
+ 
+ struct clk_hw *imx_clk_lpcg_scu(const char *name, const char *parent_name,
 -- 
 2.7.4
 
