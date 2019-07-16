@@ -2,72 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0F6176A1F9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 07:55:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 06F186A200
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 07:59:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=AdzPt8O4Y7EoQb887+N2VC5ierOMiUqjQiuF0Gvwqvs=; b=R5JYe+HkthBOg8
-	FezSqxnP1Sen899b38l4yWUPtUDpKf59e9lnF1iXHmcb0SWUPblspOK+YGlgK+JhpQs6c4NBldleX
-	+89kBfx1Wl/m1S1WclW2Kb0kfhRd64vZ8tI3mrtUcyvgC5ehFl/L9jiO9npE824ISEcWhoouSirRx
-	mxvJ3mpmkbxOww17v4saLgJe2B2YNSkKQbIm1+KqBDTmNa2lOMpVWhhN+RkUo/rKaGXMYXcpNKxrx
-	eVs2b2TAgH/hGc8CAhxb3TELi8KaRMK/0vNzROXiXJeVNWpFSvGgaDkPplmkAB4oTiZTnkE4863oy
-	YjwZS09IbSnAGD7OP+rw==;
+	List-Owner; bh=35eIJI9halIv2J3JV5/nGisKMLhlKJcVFsIGpcOFqYc=; b=WJkfeOCSDG/1vY
+	diWQl471x5r3QRSt55qgbKD0wvVYPDor4uek9qvOC36ZSikcWr07rDcVWdLvmHIFQygJeks8sMQ4y
+	P5WYTQsxv2VFiQoNwvmKCYWBZltWXuM4QuIRPsdveFfgTxvS8j5fywTW6YiR/71ie30BvGTjF6u9B
+	9ZIX6Ug2NrepDNmLIvtYo4mfv7EazYxi9+RkJUAdJFXjLW4zwycFjTVVJr+KKaTFt0U5ECsHAqxqT
+	xfyofvWHvzcVFfPbez9uCeL/q3915VQyxUzAdQk7XpEg+QJQA6tj/aHBTc0WxJZenyFNR+74KA/YJ
+	VbUpmT6UPCSADDUbDA3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnGQy-0008Ud-Tn; Tue, 16 Jul 2019 05:55:28 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1hnGV4-0000aR-FS; Tue, 16 Jul 2019 05:59:42 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnGQn-0008UI-Kq; Tue, 16 Jul 2019 05:55:18 +0000
-Received: by mail-pl1-x643.google.com with SMTP id 4so2551004pld.10;
- Mon, 15 Jul 2019 22:55:17 -0700 (PDT)
+ id 1hnGUm-0000Wb-Gj; Tue, 16 Jul 2019 05:59:26 +0000
+Received: by mail-pl1-x641.google.com with SMTP id y8so9505455plr.12;
+ Mon, 15 Jul 2019 22:59:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=RlCA90112tAvbzPxVBehLoEGm+dZ8qWusJBsaqezzKQ=;
- b=HJ0GlqX9vNn5vyxctp74cdCbjz9LEVbhrk+p9eA0p2nK9nPpRuTOort7hvWFlkEQZ1
- Ew7LwFerYdTHFIFvbadzxE6pOIveTNOWTcYInHyxxXbvcpvZ+2gR5FAOkqn4Kf2IfJwR
- A2rfO5rcuggbU94Cq/khoqv2jp11FtO2+ROyczZyLA4fvbTVcLGXXhndCw3Tgq6Qyedm
- wUIVNdsj8uHgxz7DWBwTvuLe4aJDGIHsPyrjAnwx3B/miZ7wNRAbBvaewiKh54ni9JDn
- F39jfn5yoQS1rt86M8KDzvEJ863o1kDCYTSC464UQbv7k0eZ0FQhs3Z57S0k1bRSLSiO
- RRpw==
+ bh=6l7dCx5edcO6RwvaAinlu+M2qmX8TDyHV2A8jZAyY8Q=;
+ b=i92Tmb+Bal3+8XJqpnTg9inAk6FNoZv4I/FihJEuFZXhnG0D0D4hIXa94lhe2KJk8k
+ rvezLDbCgyNbFMWBT8O/kz7NRM0+NvzV+dK9jHUq84WKoH9MmXv0O9dS6FtrjrQEMBNv
+ r3JTgsWg+opPqpMkWhrVmE/J7WoAa20OaMig+ySUDxe8JiPwq4Iu+IGE/F5Dvyhk6ftN
+ RQhS2Mr6EX2d/Sbh0124BIKBWJzqR6ixjL1+mqT7z3rTZCIlhPfFcnM39luo8HWToCD/
+ wGWVfxRQIuUCUniBGYzLSCEx0T7prZ/sn3uy2isSCd1OiORZTLi/S2stcMv6OYx6DY5V
+ 8LDg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=RlCA90112tAvbzPxVBehLoEGm+dZ8qWusJBsaqezzKQ=;
- b=OeTPA2m45irxHVztiii6loOKa5qAPY4nhEmLEKRsweb3IALtlqrEpGGktL45QpDXSe
- h99/2BdF0w8AKqDy92I3Owi+2GGAJwrlXDTGnZYN6imPH+EKmNK+rbh8nLqT+EIevbgh
- wgxqwoekX/uaIVMYWycMlSGoeFlndG0IWXNo8HvPJdoXhV3DZ8T8Rega+tRaNKn/qK6i
- XDXW8sY/FGU+SnMyx4YM3q6zKuYFEkW9D2HtB/J7dgqFyuKFKnMxx0Zm8XzzAf13JPUn
- gNXcyeLIrO9Mfm4Dv+nC1bdqoDxLdrQFumgk+KuNmT+KQfM2xEcl5+8hz/31ujvQnVWp
- 6XYA==
-X-Gm-Message-State: APjAAAUzqRPyIvkQnYRDcbrFfQcDsUZm5lJrMSGoxBeFC80m85MKOcvG
- +HtDX7qTxGgiQ7Ipc/IS/YQ=
-X-Google-Smtp-Source: APXvYqxIcfcb9KUVUeGLcIrM9l2ZeilXyPBlIyHa8kHAGZnRTQBO3fAUfhL61rCxNjOQG/fTtECgpw==
-X-Received: by 2002:a17:902:b186:: with SMTP id
- s6mr32909467plr.343.1563256517040; 
- Mon, 15 Jul 2019 22:55:17 -0700 (PDT)
+ bh=6l7dCx5edcO6RwvaAinlu+M2qmX8TDyHV2A8jZAyY8Q=;
+ b=VvbBZ+456iRw7qLb3HMSG4Vo0VQ9dc/JhiWIjN7rCRJOfCkhqLBQUb3Hu+SNyfrYcX
+ EfKmfiuTDrGyW3YmXgABvUF7POZkZnmZltdDGyPNMNkI5PANQZC+95L477rUXC6SaR6C
+ Tf4P4/L7KNWSekvTDmjvPpB/NjuQ1YGfd1jR9XGNKHhN/N0xAIkMcTl5epG2VgzY5hb/
+ 831BWsXfxgPmnk2qvZM7IxDRKFnXDz0HlvrSgvcBDp3xuq0oTWO5rXOP0J58vslqQKlE
+ EBJUtx1hyajp3OmH2NK290p3P2dk8o2dtDM/+NybFjz0KSIMg3XuiBqvS+13qQvIgXbB
+ XS3A==
+X-Gm-Message-State: APjAAAWXN5TLt9A4vLzX96VWV5je1ln1c76lJnQx1f8aOi3+sQ1bZlPd
+ eCU0SNhHKzf99ke0BrBbNbQ=
+X-Google-Smtp-Source: APXvYqwCf6KtHt2GyDgvCvteTRTOTBdHkHuk8xPTjXlosefuw+fShIhw1w8zMJCW1TlCUQJEM1N2DA==
+X-Received: by 2002:a17:902:e512:: with SMTP id
+ ck18mr31355635plb.53.1563256763728; 
+ Mon, 15 Jul 2019 22:59:23 -0700 (PDT)
 Received: from localhost.localdomain ([110.227.64.207])
- by smtp.gmail.com with ESMTPSA id d8sm14787330pgh.45.2019.07.15.22.55.13
+ by smtp.gmail.com with ESMTPSA id w14sm20801735pfn.47.2019.07.15.22.59.21
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 15 Jul 2019 22:55:16 -0700 (PDT)
+ Mon, 15 Jul 2019 22:59:23 -0700 (PDT)
 From: Nishka Dasgupta <nishkadg.linux@gmail.com>
-To: nbd@openwrt.org, john@phrozen.org, sean.wang@mediatek.com,
- davem@davemloft.net, netdev@vger.kernel.org, matthias.bgg@gmail.com,
- linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org
-Subject: [PATCH] net: ethernet: mediatek: mtk_eth_soc: Add of_node_put()
- before goto
-Date: Tue, 16 Jul 2019 11:25:04 +0530
-Message-Id: <20190716055504.3113-1-nishkadg.linux@gmail.com>
+To: gregkh@linuxfoundation.org, matthias.bgg@gmail.com,
+ devel@driverdev.osuosl.org, linux-arm-kernel@lists.infradead.org,
+ linux-mediatek@lists.infradead.org
+Subject: [PATCH] staging: mt7621-pinctrl: Add of_node_put() before return
+Date: Tue, 16 Jul 2019 11:29:08 +0530
+Message-Id: <20190716055908.3183-1-nishkadg.linux@gmail.com>
 X-Mailer: git-send-email 2.19.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190715_225517_709951_101227DA 
-X-CRM114-Status: UNSURE (   9.34  )
+X-CRM114-CacheID: sfid-20190715_225924_867867_FB94557E 
+X-CRM114-Status: UNSURE (   9.43  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -75,7 +74,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -105,32 +104,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Each iteration of for_each_child_of_node puts the previous node, but in
-the case of a goto from the middle of the loop, there is no put, thus
-causing a memory leak. Hence add an of_node_put before the goto.
+Each iteration of for_each_compatible_node puts the previous node, but
+in the case of a return from the middle of the loop, there is no put,
+thus causing a memory leak. Add an of_node_put before the return.
 Issue found with Coccinelle.
 
 Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
 ---
- drivers/net/ethernet/mediatek/mtk_eth_soc.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ drivers/staging/mt7621-pinctrl/pinctrl-rt2880.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/net/ethernet/mediatek/mtk_eth_soc.c b/drivers/net/ethernet/mediatek/mtk_eth_soc.c
-index b20b3a5a1ebb..c39d7f4ab1d4 100644
---- a/drivers/net/ethernet/mediatek/mtk_eth_soc.c
-+++ b/drivers/net/ethernet/mediatek/mtk_eth_soc.c
-@@ -2548,8 +2548,10 @@ static int mtk_probe(struct platform_device *pdev)
- 			continue;
+diff --git a/drivers/staging/mt7621-pinctrl/pinctrl-rt2880.c b/drivers/staging/mt7621-pinctrl/pinctrl-rt2880.c
+index 9b52d44abef1..d0f06790d38f 100644
+--- a/drivers/staging/mt7621-pinctrl/pinctrl-rt2880.c
++++ b/drivers/staging/mt7621-pinctrl/pinctrl-rt2880.c
+@@ -358,12 +358,15 @@ static int rt2880_pinmux_probe(struct platform_device *pdev)
+ 		gpiobase = of_get_property(np, "ralink,gpio-base", NULL);
+ 		if (!ngpio || !gpiobase) {
+ 			dev_err(&pdev->dev, "failed to load chip info\n");
++			of_node_put(np);
+ 			return -EINVAL;
+ 		}
  
- 		err = mtk_add_mac(eth, mac_np);
--		if (err)
-+		if (err) {
-+			of_node_put(mac_np);
- 			goto err_deinit_hw;
+ 		range = devm_kzalloc(p->dev, sizeof(*range), GFP_KERNEL);
+-		if (!range)
++		if (!range) {
++			of_node_put(np);
+ 			return -ENOMEM;
 +		}
- 	}
- 
- 	if (MTK_HAS_CAPS(eth->soc->caps, MTK_SHARED_INT)) {
+ 		range->name = "pio";
+ 		range->npins = __be32_to_cpu(*ngpio);
+ 		range->base = __be32_to_cpu(*gpiobase);
 -- 
 2.19.1
 
