@@ -2,66 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 991FC6A3CC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 10:26:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1AD076A3CF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 16 Jul 2019 10:27:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=79VUekppBF20PKtS7CsVJch6n4yrx4wr72Wrr4f8mr0=; b=i3Ja6jAyv5wWOG
-	21c+0SSkHvFykBpXM/Tyu/faR5NVt5Ncu1NhAwk5rPHW3MFjCr0a7V2MLhrDZrOkiEoHM/0af7UkN
-	BlAIYUW2g3X2Y2VqreMNgv4sI/ftrA8ErFZThStrBzcwb3Gx6yLhAALuTzw5lNIDNhwk75WqYgcLf
-	7ycuMpb73F0By1EBV1JLfu8G03Pkq0rYP2Sxq8ErM2BxVQxyo21fY8au6DyUmhDVPb5B9l0bM9bGX
-	89cImOaSpmnI0Z+XUgAcKZw0eHFGTWIe9/g6YDT9e8xBvNIkvO/S8LFpD8MyGAS53L67yMe8/NRYp
-	8yN4alaAY3XTb/r2ja0w==;
+	List-Owner; bh=avjirVCvelootWYfHJaywwZ/3gzFElTizagrcdfGGbI=; b=qP1uaRVdMQJTrx
+	szAzewId5dxRmYXO46Ye83Vjcmb4BZm1RExSuShU2m9sHl2f02nDYqRWoOdhHwYyA3o8U1P+TRLCv
+	58VyA4j+8qwU5LvWBue9OivD29NXxNVI+tf0k0UAh9BLSn0FPMlKE17+PH9yFhb6smKVOZyQwhpia
+	0TfQXW1f5jOlZJ/vJ1EvD3LqKhYf9QQ/TjS4rJihTxZvEoPTI4usRcBVI55YWmU471bYzvx7BXkAA
+	uFwZckLx2aa1H6x9+M+WIHW7JrHOijKaq9SRF8spXny0jLZ+SXBMEPC6WiKRSB1UvZcvXxeY7wCdy
+	Q8KMZrSs0/4g9bkfDUTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnIn1-0007Qt-Sb; Tue, 16 Jul 2019 08:26:24 +0000
+	id 1hnInr-00088T-K2; Tue, 16 Jul 2019 08:27:15 +0000
 Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnImj-0007PR-BH
- for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 08:26:09 +0000
+ id 1hnImk-0007PS-NI
+ for linux-arm-kernel@lists.infradead.org; Tue, 16 Jul 2019 08:26:10 +0000
 Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x6G8Q2o9114429;
- Tue, 16 Jul 2019 03:26:02 -0500
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x6G8Q47R114442;
+ Tue, 16 Jul 2019 03:26:04 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1563265562;
- bh=0M/bHMm/nUf3WaVg6DIzI6PI09k1r/G2ByMKP6TEV1Q=;
+ s=ti-com-17Q1; t=1563265564;
+ bh=INN8eT9Tuq8HUrMekaBYruIJDFB4niwn3CDGYmdZlz4=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=omVZfygnT6SVwu+bIwMkZXmZze8cXHjCdpK+v7tL4vW72QwhBvxwCyMDyLY4KTXw7
- F1Zhq3fSL3pAMZW57AdvCCgEefhA3kyksafzsgBkXvUzMS4IGKw5ht4ECEmoq4YJht
- gX+OSY9YTpi849r+Ho74qIJ9sPmsW9TSfkw+ZgQ4=
-Received: from DLEE101.ent.ti.com (dlee101.ent.ti.com [157.170.170.31])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x6G8Q2CE102218
+ b=F6L+LqbgAYmwu/oCbR/YjbnSLrvApeMDtbO8aTDr8Ga4FYB/ZJrSQ1RDszlr7Bs+z
+ XlkEDznObLeEil7wqdT1HQXQqfn/TW+YTxwgdm6awLHo8rRDFX6rkgWgB7KNFQDeOQ
+ 6LQcaGfRZ/56YHrEoIAd/vVgf7guJiEsKDbLpHX0=
+Received: from DFLE102.ent.ti.com (dfle102.ent.ti.com [10.64.6.23])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x6G8Q4V7102469
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 16 Jul 2019 03:26:02 -0500
-Received: from DLEE105.ent.ti.com (157.170.170.35) by DLEE101.ent.ti.com
- (157.170.170.31) with Microsoft SMTP Server (version=TLS1_2,
+ Tue, 16 Jul 2019 03:26:04 -0500
+Received: from DFLE104.ent.ti.com (10.64.6.25) by DFLE102.ent.ti.com
+ (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 16
- Jul 2019 03:26:01 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE105.ent.ti.com
- (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
+ Jul 2019 03:26:03 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE104.ent.ti.com
+ (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Tue, 16 Jul 2019 03:26:01 -0500
+ Frontend Transport; Tue, 16 Jul 2019 03:26:03 -0500
 Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x6G8PuBp103858;
- Tue, 16 Jul 2019 03:26:00 -0500
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x6G8PuBq103858;
+ Tue, 16 Jul 2019 03:26:01 -0500
 From: Peter Ujfalusi <peter.ujfalusi@ti.com>
 To: <vkoul@kernel.org>
-Subject: [PATCH v5 2/3] dmaengine: ti: edma: Correct the residue calculation
- (fix for memcpy)
-Date: Tue, 16 Jul 2019 11:26:54 +0300
-Message-ID: <20190716082655.1620-3-peter.ujfalusi@ti.com>
+Subject: [PATCH v5 3/3] dmaengine: ti: edma: Support for polled (memcpy)
+ completion
+Date: Tue, 16 Jul 2019 11:26:55 +0300
+Message-ID: <20190716082655.1620-4-peter.ujfalusi@ti.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190716082655.1620-1-peter.ujfalusi@ti.com>
 References: <20190716082655.1620-1-peter.ujfalusi@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_012607_766944_5AED1739 
-X-CRM114-Status: GOOD (  18.85  )
+X-CRM114-CacheID: sfid-20190716_012607_796759_E11CE05C 
+X-CRM114-Status: GOOD (  19.53  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -97,91 +97,103 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For memcpy we never stored the start address of the transfer for the pset
-which rendered the memcpy residue calculation completely broken.
+When a DMA client driver does not set the DMA_PREP_INTERRUPT because it
+does not want to use interrupts for DMA completion or because it can not
+rely on DMA interrupts due to executing the memcpy when interrupts are
+disabled it will poll the status of the transfer.
 
-In the edma_residue() function we also need to to some correction for the
-calculations:
-Instead waiting for all EDMA channels to be idle (in a busy system it can
-take few iteration to hit a point when all queues are idle) wait for the
-event pending on the given channel (SH_ER for hw synchronized channels,
-SH_ESR for manually triggered channels).
-
-If the position returned by EMDA is 0 it imiplies that the last paRAM set
-has been consumed and we are at the closing dummy set, thus we can conclude
-that the transfer is completed and we can return 0 as residue.
+Since we can not tell from any EDMA register that the transfer is
+completed, we can only know that the paRAM set has been sent to TPTC for
+processing we need to check the residue of the transfer, if it is 0 then
+the transfer is completed.
 
 Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
 ---
- drivers/dma/ti/edma.c | 31 +++++++++++++++++++++++--------
- 1 file changed, 23 insertions(+), 8 deletions(-)
+ drivers/dma/ti/edma.c | 37 +++++++++++++++++++++++++++++++++----
+ 1 file changed, 33 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/dma/ti/edma.c b/drivers/dma/ti/edma.c
-index a39f817b3888..5b8cbd6d7610 100644
+index 5b8cbd6d7610..bcd431283d8a 100644
 --- a/drivers/dma/ti/edma.c
 +++ b/drivers/dma/ti/edma.c
-@@ -1026,6 +1026,7 @@ static int edma_config_pset(struct dma_chan *chan, struct edma_pset *epset,
- 		src_cidx = cidx;
- 		dst_bidx = acnt;
- 		dst_cidx = cidx;
-+		epset->addr = src_addr;
+@@ -180,6 +180,7 @@ struct edma_desc {
+ 	struct list_head		node;
+ 	enum dma_transfer_direction	direction;
+ 	int				cyclic;
++	bool				polled;
+ 	int				absync;
+ 	int				pset_nr;
+ 	struct edma_chan		*echan;
+@@ -1227,8 +1228,9 @@ static struct dma_async_tx_descriptor *edma_prep_dma_memcpy(
+ 
+ 	edesc->pset[0].param.opt |= ITCCHEN;
+ 	if (nslots == 1) {
+-		/* Enable transfer complete interrupt */
+-		edesc->pset[0].param.opt |= TCINTEN;
++		/* Enable transfer complete interrupt if requested */
++		if (tx_flags & DMA_PREP_INTERRUPT)
++			edesc->pset[0].param.opt |= TCINTEN;
  	} else {
- 		dev_err(dev, "%s: direction not implemented yet\n", __func__);
- 		return -EINVAL;
-@@ -1736,7 +1737,11 @@ static u32 edma_residue(struct edma_desc *edesc)
- 	int loop_count = EDMA_MAX_TR_WAIT_LOOPS;
- 	struct edma_chan *echan = edesc->echan;
- 	struct edma_pset *pset = edesc->pset;
--	dma_addr_t done, pos;
-+	dma_addr_t done, pos, pos_old;
-+	int channel = EDMA_CHAN_SLOT(echan->ch_num);
-+	int idx = EDMA_REG_ARRAY_INDEX(channel);
-+	int ch_bit = EDMA_CHANNEL_BIT(channel);
-+	int event_reg;
- 	int i;
+ 		/* Enable transfer complete chaining for the first slot */
+ 		edesc->pset[0].param.opt |= TCCHEN;
+@@ -1255,9 +1257,14 @@ static struct dma_async_tx_descriptor *edma_prep_dma_memcpy(
+ 		}
  
- 	/*
-@@ -1749,16 +1754,20 @@ static u32 edma_residue(struct edma_desc *edesc)
- 	 * "pos" may represent a transfer request that is still being
- 	 * processed by the EDMACC or EDMATC. We will busy wait until
- 	 * any one of the situations occurs:
--	 *   1. the DMA hardware is idle
--	 *   2. a new transfer request is setup
-+	 *   1. while and event is pending for the channel
-+	 *   2. a position updated
- 	 *   3. we hit the loop limit
- 	 */
--	while (edma_read(echan->ecc, EDMA_CCSTAT) & EDMA_CCSTAT_ACTV) {
--		/* check if a new transfer request is setup */
--		if (edma_get_position(echan->ecc,
--				      echan->slot[0], dst) != pos) {
-+	if (is_slave_direction(edesc->direction))
-+		event_reg = SH_ER;
-+	else
-+		event_reg = SH_ESR;
-+
-+	pos_old = pos;
-+	while (edma_shadow0_read_array(echan->ecc, event_reg, idx) & ch_bit) {
-+		pos = edma_get_position(echan->ecc, echan->slot[0], dst);
-+		if (pos != pos_old)
- 			break;
--		}
- 
- 		if (!--loop_count) {
- 			dev_dbg_ratelimited(echan->vchan.chan.device->dev,
-@@ -1783,6 +1792,12 @@ static u32 edma_residue(struct edma_desc *edesc)
- 		return edesc->residue_stat;
+ 		edesc->pset[1].param.opt |= ITCCHEN;
+-		edesc->pset[1].param.opt |= TCINTEN;
++		/* Enable transfer complete interrupt if requested */
++		if (tx_flags & DMA_PREP_INTERRUPT)
++			edesc->pset[1].param.opt |= TCINTEN;
  	}
  
++	if (!(tx_flags & DMA_PREP_INTERRUPT))
++		edesc->polled = true;
++
+ 	return vchan_tx_prep(&echan->vchan, &edesc->vdesc, tx_flags);
+ }
+ 
+@@ -1827,18 +1834,40 @@ static enum dma_status edma_tx_status(struct dma_chan *chan,
+ {
+ 	struct edma_chan *echan = to_edma_chan(chan);
+ 	struct virt_dma_desc *vdesc;
++	struct dma_tx_state txstate_tmp;
+ 	enum dma_status ret;
+ 	unsigned long flags;
+ 
+ 	ret = dma_cookie_status(chan, cookie, txstate);
+-	if (ret == DMA_COMPLETE || !txstate)
++
++	if (ret == DMA_COMPLETE)
+ 		return ret;
+ 
++	/* Provide a dummy dma_tx_state for completion checking */
++	if (!txstate)
++		txstate = &txstate_tmp;
++
++	txstate->residue = 0;
+ 	spin_lock_irqsave(&echan->vchan.lock, flags);
+ 	if (echan->edesc && echan->edesc->vdesc.tx.cookie == cookie)
+ 		txstate->residue = edma_residue(echan->edesc);
+ 	else if ((vdesc = vchan_find_desc(&echan->vchan, cookie)))
+ 		txstate->residue = to_edma_desc(&vdesc->tx)->residue;
++
 +	/*
-+	 * If the position is 0, then EDMA loaded the closing dummy slot, the
-+	 * transfer is completed
++	 * Mark the cookie completed if the residue is 0 for non cyclic
++	 * transfers
 +	 */
-+	if (!pos)
-+		return 0;
- 	/*
- 	 * For SG operation we catch up with the last processed
- 	 * status.
++	if (ret != DMA_COMPLETE && !txstate->residue &&
++	    echan->edesc && echan->edesc->polled &&
++	    echan->edesc->vdesc.tx.cookie == cookie) {
++		edma_stop(echan);
++		vchan_cookie_complete(&echan->edesc->vdesc);
++		echan->edesc = NULL;
++		edma_execute(echan);
++		ret = DMA_COMPLETE;
++	}
++
+ 	spin_unlock_irqrestore(&echan->vchan.lock, flags);
+ 
+ 	return ret;
 -- 
 Peter
 
