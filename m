@@ -2,59 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED4966BEB2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 17:01:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A1E2B6BEBE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 17:03:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zG9qM1TfPQpq8JFPl1UM32avWo2VEQjYpNN5eH4QQy4=; b=QKXEkR1J8MRz62
-	RyYkRVS1bbSqy6tgmbHMQuN+hHljIVY5ZUv5NfiCIhjH1xt7iliO7w7ffm9/vQEWOJ+ayt2vsG0pG
-	pWhjBShloTU4Eqke57vUroJOfm+iK4oNH8AGIc+/mOQGf7hxDJIqZWf9msc4706mcDeObbXSqeCkM
-	829wff8C0oDzFK/pSalCN0o8QdXNYXnRf1kaOmvNzgVr2egiWRpfCl1cQzLFqkGt1/HG0oCoqQD8Y
-	5aYhJ8ZmvownDBbomXBDW6rgpBiNoMKRbF58bVJFklpmzJ+lHq0sWvgMUduQk08mWlW/BmZgDjjLY
-	YtQTz8oQG9BGvfrhzKYA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=7GPUM3S0XMfO2fw2DEAoUKDT4dt+1eQTlC+MO67uD/A=; b=i6C6QGgPSVa7N8
+	sp3RoK5ROyqCyHHyTnR6gfd9lf98+QNOUQKjXEs5HqDhSI/5Zde39+1/r8GOrqSy3GE8rZ2ny42Vp
+	0Fcpe26PdP+XMyRXtyDo1/x0HN+cCcfIKOKsLoIWNrTFjQxicoXSQb9XcnfXE2CXL3CmKXor63gw+
+	/hUzhRqVUIrKl/EXgNwwCY4PRRBwMzB0+MXuSlwlmL+ltnh225SIQQVtd7Gv3XxpG7lFfeq25jb6I
+	Kxbba0NH2+u9kuaPclF73lPEALkQCucleZW6mv7ayJ+6UKVC8N8Sjr2nkjldA0AOqgwieYzvKewSZ
+	52xf/e0WbJKahdL/fYTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnlRB-0000PO-VI; Wed, 17 Jul 2019 15:01:45 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hnlQ5-0000F8-2h
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 15:00:38 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8B405337;
- Wed, 17 Jul 2019 08:00:34 -0700 (PDT)
-Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- E0A773F71A; Wed, 17 Jul 2019 08:00:32 -0700 (PDT)
-Subject: Re: [PATCH] KVM: arm/arm64: Assign pmc->idx before
- kvm_pmu_stop_counter()
-To: Julien Thierry <julien.thierry@arm.com>, Zenghui Yu
- <yuzenghui@huawei.com>, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
-References: <1563366019-31200-1-git-send-email-yuzenghui@huawei.com>
- <01fa98c1-8274-445c-5e04-219372920ba2@arm.com>
-From: Marc Zyngier <maz@kernel.org>
-Organization: Approximate
-Message-ID: <26b64d48-5ff9-7d62-bc44-601fdcc43223@kernel.org>
-Date: Wed, 17 Jul 2019 16:00:31 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+	id 1hnlSe-0001E2-C6; Wed, 17 Jul 2019 15:03:16 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hnlSP-0001C3-6J
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 15:03:02 +0000
+Received: by mail-pl1-x642.google.com with SMTP id az7so12109249plb.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 17 Jul 2019 08:03:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=e+35wY4n6TRGBA25+7fjzjSlCN1Rhjq9o1vYnjDLMlM=;
+ b=VkkRlIN8iWWTBSr2SSVDfUDbi3S8rHZmETaBALoYvm0uoLEHS9lTpx7rWdKPwUYCll
+ cFSr4ZMYCOp8bo/BprPz75j5hPk7X6rAjE5geNVNx+xA2L7B4oz+sNo5M0P4t5N6LX58
+ TVtHHSXyMuQozCIOz4kw8aCVkeLalvCcLnRNRoSckmEPW9Ts2+UjfcDD4TWX2s7ryWa/
+ j3aM6FhZuFP+riAQ9K/aIhSuvet42KUH+t2KiOWUk/Zmw6sDKkpKaH9YzWDDuH6p0IOb
+ 6omt3KOrGCEo8GKuhsPmIyGgFt+dd/rS7dMkMtbyfe86a2qCMpU2gXZYQWDjNngKMwar
+ AMtA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=e+35wY4n6TRGBA25+7fjzjSlCN1Rhjq9o1vYnjDLMlM=;
+ b=YHISjFsXcHEwMUM5sNQwSw49u8qpcG0fnbp6jV/duF50N8J5WXkkEP4jg5m0+jquzG
+ yMSYSGsxh5nPOR+Qpcv4m/HLBrPrPHH+csrmgTsb3JohwRVxc6zMy3ngLhEt8et1bh+I
+ VvakFQfznwCRkxfgMogJG0+X5mOlXDrKsrM8LFgDxHlzgnCiRNI24WoS5Fb2VPqy/JC5
+ r7ApIpWEqfgUzzY0LPsN/P9J2TCz/B7c/yy/hoIdJidsGOXKSnDcixy98aK2cKfo14DL
+ TpUFuoitsayLhz3u2B4ACCgyc179CwD7fHNvhmeIL7VJvl3yGeTJQj1YgTHeABf6tNlg
+ McWw==
+X-Gm-Message-State: APjAAAXX5q7MLqvHumn52atMwtCMCaIMm/PVl06QwpSobW8ZXZV0kN63
+ EmIUPh4xNzEAWr3gVd6WGdkyuyPa
+X-Google-Smtp-Source: APXvYqy7mQH4W8sbb/Iy1eG7LeTPa5Sk5gMkSlfKVdCrI7UaDwrnXGmpietbpJAA8uI8R7gBpbiDng==
+X-Received: by 2002:a17:902:bf09:: with SMTP id
+ bi9mr40905784plb.143.1563375779825; 
+ Wed, 17 Jul 2019 08:02:59 -0700 (PDT)
+Received: from localhost.lan (c-67-185-54-80.hsd1.wa.comcast.net.
+ [67.185.54.80])
+ by smtp.gmail.com with ESMTPSA id b37sm44728961pjc.15.2019.07.17.08.02.58
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Wed, 17 Jul 2019 08:02:59 -0700 (PDT)
+From: Andrey Smirnov <andrew.smirnov@gmail.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH 1/3] ARM: dts: vf610-zii-spb4: Drop unused pinctrl_i2c1 pinmux
+ config
+Date: Wed, 17 Jul 2019 08:02:51 -0700
+Message-Id: <20190717150253.20107-1-andrew.smirnov@gmail.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-In-Reply-To: <01fa98c1-8274-445c-5e04-219372920ba2@arm.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_080037_217587_CEBDBC94 
-X-CRM114-Status: GOOD (  18.51  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190717_080301_259704_36687C0D 
+X-CRM114-Status: UNSURE (   7.84  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (andrew.smirnov[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,81 +100,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: suzuki.poulose@arm.com, marc.zyngier@arm.com, linux-kernel@vger.kernel.org,
- james.morse@arm.com, andrew.murray@arm.com, wanghaibin.wang@huawei.com,
- julien.thierry.kdev@gmail.com
+Cc: Cory Tusar <cory.tusar@zii.aero>, Andrey Smirnov <andrew.smirnov@gmail.com>,
+ Shawn Guo <shawnguo@kernel.org>, linux-kernel@vger.kernel.org,
+ Fabio Estevam <festevam@gmail.com>, Chris Healy <cphealy@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 17/07/2019 14:44, Julien Thierry wrote:
-> Hi Zenghui,
-> 
-> On 17/07/2019 13:20, Zenghui Yu wrote:
->> We use "pmc->idx" and the "chained" bitmap to determine if the pmc is
->> chained, in kvm_pmu_pmc_is_chained().  But idx might be uninitialized
->> (and random) when we doing this decision, through a KVM_ARM_VCPU_INIT
->> ioctl -> kvm_pmu_vcpu_reset(). And the test_bit() against this random
->> idx will potentially hit a KASAN BUG [1].
->>
->> Fix it by moving the assignment of idx before kvm_pmu_stop_counter().
->>
->> [1] https://www.spinics.net/lists/kvm-arm/msg36700.html
->>
->> Fixes: 80f393a23be6 ("KVM: arm/arm64: Support chained PMU counters")
->> Suggested-by: Andrew Murray <andrew.murray@arm.com>
->> Cc: Marc Zyngier <maz@kernel.org>
->> Signed-off-by: Zenghui Yu <yuzenghui@huawei.com>> ---
->>  virt/kvm/arm/pmu.c | 2 +-
->>  1 file changed, 1 insertion(+), 1 deletion(-)
->>
->> diff --git a/virt/kvm/arm/pmu.c b/virt/kvm/arm/pmu.c
->> index 3dd8238..521bfdd 100644
->> --- a/virt/kvm/arm/pmu.c
->> +++ b/virt/kvm/arm/pmu.c
->> @@ -225,8 +225,8 @@ void kvm_pmu_vcpu_reset(struct kvm_vcpu *vcpu)
->>  	struct kvm_pmu *pmu = &vcpu->arch.pmu;
->>  
->>  	for (i = 0; i < ARMV8_PMU_MAX_COUNTERS; i++) {
->> -		kvm_pmu_stop_counter(vcpu, &pmu->pmc[i]);
->>  		pmu->pmc[i].idx = i;
-> 
-> Yes, this is kind of a static property that should really be part of a
-> "kvm_pmu_vcpu_init()" or "kvm_pmu_vcpu_create()" and is not expected to
-> be modified across resets...
-> 
-> There is no such function at the time and I'm unsure whether this
-> warrants creating that separate function (I would still suggest creating
-> it to make things clearer).
+Pinctrl_i2c1 pinmux config is not used anywhere. Drop it.
 
-Yup, that's pretty bad, now that you mention it. I'd be all for the
-introduction of kvm_pmu_vcpu_init(), given that we already have
-kvm_pmu_vcpu_destroy().
+Signed-off-by: Andrey Smirnov <andrew.smirnov@gmail.com>
+Cc: Shawn Guo <shawnguo@kernel.org>
+Cc: Chris Healy <cphealy@gmail.com>
+Cc: Fabio Estevam <festevam@gmail.com>
+Cc: Cory Tusar <cory.tusar@zii.aero>
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+---
+ arch/arm/boot/dts/vf610-zii-spb4.dts | 7 -------
+ 1 file changed, 7 deletions(-)
 
-> 
->> +		kvm_pmu_stop_counter(vcpu, &pmu->pmc[i]);
-> 
-> Whatever other opinions are on splitting pmu_vcpu_init/reset, that
-> change makes sense and fixes the issue:
-> 
-> Acked-by: Julien Thierry <julien.thierry@arm.com>
-> 
->>  	}
->>  
->>  	bitmap_zero(vcpu->arch.pmu.chained, ARMV8_PMU_MAX_COUNTER_PAIRS);
->>
-> 
-> Cheers,
-> 
-
-Zenghui, could you please update your patch to take the above into account?
-
-Thanks,
-
-	M.
+diff --git a/arch/arm/boot/dts/vf610-zii-spb4.dts b/arch/arm/boot/dts/vf610-zii-spb4.dts
+index 9dde83ccb9d1..77e1484211e4 100644
+--- a/arch/arm/boot/dts/vf610-zii-spb4.dts
++++ b/arch/arm/boot/dts/vf610-zii-spb4.dts
+@@ -316,13 +316,6 @@
+ 		>;
+ 	};
+ 
+-	pinctrl_i2c1: i2c1grp {
+-		fsl,pins = <
+-			VF610_PAD_PTB16__I2C1_SCL		0x37ff
+-			VF610_PAD_PTB17__I2C1_SDA		0x37ff
+-		>;
+-	};
+-
+ 	pinctrl_leds_debug: pinctrl-leds-debug {
+ 		fsl,pins = <
+ 			VF610_PAD_PTD3__GPIO_82			0x31c2
 -- 
-Jazz is not dead, it just smells funny...
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
