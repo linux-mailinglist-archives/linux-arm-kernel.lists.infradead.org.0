@@ -2,60 +2,107 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1AE66C088
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 19:42:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CADBA6C096
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 19:45:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
+	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/s5RjQsVw59pcd+ZeZhD8IEKKAvivzAbreL7/19ZiuE=; b=dddT0Qbxo+jmfo
-	IihXUZtW7iXJoR8TiPHGg8brGTX5gSqGDMtifahz+G7u/37f2sJwjd9f9lHB8eo3NhXc2QYP6eoP4
-	WPaFqjUo+BP/mHb2K5IvqkL+d3uCno8RSkVZ/8cQOUVqBrjRnGGS2TzRux/lKcgfPhWJsGU3LD6Q4
-	tIb4wKAt0FjDlYuLcrn6M+KVSpL8ByfbEzCWqdakGq145CjRF75Yv5AryW4uPSWbkzmVMweDUtmn3
-	zTHZvPGys1x9AXAaTclcGBipFhla9+6JqKCItXWvBbNmBZvnZgNQmLclSFSWQ0iDEqwCZoM8pBQFt
-	38zy4krg0S/QlSXsw/pg==;
+	List-Owner; bh=L299voAno9Qg6yJKsW/ZeqcETPJjlKm6k4mUzx2QNZY=; b=hHyfSDwLFX/ykt
+	65FvEsg06SlTepeMgXkuDj3y9iNHhCtPZV/jYhS5bI1V3Im3pQepUfzw+HRRoh2sAH9mBuNmxECXV
+	eARThAQ6jTV2+moucfL+ZibkPuwuYP3Q+2GdVNXmL5ZYXBj277B8Xp/EJxbWmBG+Owyno/wuDIiUt
+	2Py6NsVTiPo7UNGqoMVpurR/hIC0hy3TFgKTljtHXtLD65Bf0HxtfL0k6uQcygEbf1Nt5cDc6FuZG
+	Vxiq6kfOLT5JgIy3oirIB0iVRiF2LOIrOcfLk13GMBDmlHNGjPkTwP+/aw4xigvooCCAqenZTJLNn
+	BHdBvCxcAFu/5wtgdjCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnnwR-0005tK-C4; Wed, 17 Jul 2019 17:42:11 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hnnw7-0005sK-54
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 17:41:53 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3C29328;
- Wed, 17 Jul 2019 10:41:50 -0700 (PDT)
-Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A26D43F71F;
- Wed, 17 Jul 2019 10:41:47 -0700 (PDT)
-Subject: Re: [PATCH RFC 2/4] arm64: mm: Add RAS extension system register
- check to SEA handling
-To: Tyler Baicar OS <baicar@os.amperecomputing.com>,
- "mark.rutland@arm.com" <mark.rutland@arm.com>
-References: <1562086280-5351-1-git-send-email-baicar@os.amperecomputing.com>
- <1562086280-5351-3-git-send-email-baicar@os.amperecomputing.com>
- <df262b97-eda2-0556-d6ef-532a0d697131@arm.com>
- <BYAPR01MB39754DFAF8130743448FDEC6E3F00@BYAPR01MB3975.prod.exchangelabs.com>
- <BYAPR01MB3975FB635454503D3BFBBD53E3F30@BYAPR01MB3975.prod.exchangelabs.com>
-From: James Morse <james.morse@arm.com>
-Message-ID: <80d7ad43-5426-3117-0445-0add5bc008f5@arm.com>
-Date: Wed, 17 Jul 2019 18:41:44 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
-MIME-Version: 1.0
-In-Reply-To: <BYAPR01MB3975FB635454503D3BFBBD53E3F30@BYAPR01MB3975.prod.exchangelabs.com>
-Content-Language: en-GB
+	id 1hnnzz-0007X7-Tc; Wed, 17 Jul 2019 17:45:52 +0000
+Received: from aserp2120.oracle.com ([141.146.126.78])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hnnzm-0007W5-1s
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 17:45:39 +0000
+Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
+ by aserp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x6HHijqc161484;
+ Wed, 17 Jul 2019 17:44:45 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=content-type :
+ mime-version : subject : from : in-reply-to : date : cc :
+ content-transfer-encoding : message-id : references : to;
+ s=corp-2018-07-02; bh=62sEJWENTox02eq//OEvqptJE1QVSLzhejqBb2Dgys0=;
+ b=ZqEOUtFxwUHRZVHpcDOHEbE1e3rzBc871Kkfn2mfgW4bWwpvTbuNI0ZinFisENp1SNXd
+ P+HRtpZSYYvoU/uPwfSc+vPKP4ky8HUVwo0JUh+FOTdXv2k3U1I5S/VMhLr8dm1VVaHk
+ imTpM5iNqhozKjaQ6KIxG8EUY1N48a6tLNB+HJ86VERkXc6N2Vn8hdnFMYLNV9kQ/9n9
+ wBnSGPITc12cBnirah3+7wQBMOhmeqGLX2vXqAXzZJLDrEp8z/sjtpB1uk0VraLMf5X/
+ 7KE70pr+LJs+r5OaFX/zqqJ80g+AuIlNmwak+lQZr/MReOLJVWcJ7On/VKdiS7BVx8xE +g== 
+Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
+ by aserp2120.oracle.com with ESMTP id 2tq78pvcxj-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 17 Jul 2019 17:44:45 +0000
+Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
+ by userp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x6HHhOkX003742;
+ Wed, 17 Jul 2019 17:44:44 GMT
+Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
+ by userp3020.oracle.com with ESMTP id 2tsmccj814-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 17 Jul 2019 17:44:44 +0000
+Received: from abhmp0006.oracle.com (abhmp0006.oracle.com [141.146.116.12])
+ by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id x6HHiVve022414;
+ Wed, 17 Jul 2019 17:44:32 GMT
+Received: from [192.168.0.21] (/209.6.165.165)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Wed, 17 Jul 2019 17:44:31 +0000
+Mime-Version: 1.0 (Mac OS X Mail 10.2 \(3259\))
+Subject: Re: [PATCH v3 3/5] locking/qspinlock: Introduce CNA into the slow
+ path of qspinlock
+From: Alex Kogan <alex.kogan@oracle.com>
+In-Reply-To: <2a7a3ea8-7a94-52d4-b8ef-581de28e0063@redhat.com>
+Date: Wed, 17 Jul 2019 13:44:28 -0400
+Message-Id: <10197432-47E5-49D7-AD68-8A412782012B@oracle.com>
+References: <20190715192536.104548-1-alex.kogan@oracle.com>
+ <20190715192536.104548-4-alex.kogan@oracle.com>
+ <77bba626-f3e6-45a8-aae8-43b945d0fab9@redhat.com>
+ <aa73b86d-902a-bb6f-d372-8645c8299a6d@redhat.com>
+ <C1C55A40-FDB1-43B5-B551-F9B8BE776DF8@oracle.com>
+ <2a7a3ea8-7a94-52d4-b8ef-581de28e0063@redhat.com>
+To: Waiman Long <longman@redhat.com>
+X-Mailer: Apple Mail (2.3259)
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9321
+ signatures=668688
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1810050000 definitions=main-1907170203
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9321
+ signatures=668688
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
+ definitions=main-1907170203
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_104151_284776_53A4E460 
-X-CRM114-Status: GOOD (  22.82  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190717_104538_190801_FB28CAD2 
+X-CRM114-Status: GOOD (  16.71  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [141.146.126.78 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,153 +114,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "lorenzo.pieralisi@arm.com" <lorenzo.pieralisi@arm.com>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "guohanjun@huawei.com" <guohanjun@huawei.com>,
- "rjw@rjwysocki.net" <rjw@rjwysocki.net>,
- "Matteo.Carlini@arm.com" <Matteo.Carlini@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-acpi@vger.kernel.org" <linux-acpi@vger.kernel.org>,
- "tony.luck@intel.com" <tony.luck@intel.com>, "bp@alien8.de" <bp@alien8.de>,
- "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
- "Andrew.Murray@arm.com" <Andrew.Murray@arm.com>,
- Open Source Submission <patches@amperecomputing.com>,
- "linux-edac@vger.kernel.org" <linux-edac@vger.kernel.org>,
- "will@kernel.org" <will@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "lenb@kernel.org" <lenb@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-arch@vger.kernel.org, guohanjun@huawei.com, arnd@arndb.de,
+ Peter Zijlstra <peterz@infradead.org>, dave.dice@oracle.com,
+ jglauber@marvell.com, x86@kernel.org, Will Deacon <will.deacon@arm.com>,
+ linux@armlinux.org.uk, linux-kernel@vger.kernel.org, rahul.x.yadav@oracle.com,
+ Ingo Molnar <mingo@redhat.com>, bp@alien8.de, hpa@zytor.com,
+ steven.sistare@oracle.com, tglx@linutronix.de, daniel.m.jordan@oracle.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Tyler,
-
-On 11/07/2019 05:14, Tyler Baicar OS wrote:
-> On Tue, Jul 9, 2019 at 8:52 PM Tyler Baicar OS <baicar@os.amperecomputing.com> wrote:
->> On Mon, Jul 8, 2019 at 10:10 AM James Morse <james.morse@arm.com> wrote:
->>> On 02/07/2019 17:51, Tyler Baicar OS wrote:
->>>> @@ -632,6 +633,8 @@ static int do_sea(unsigned long addr, unsigned int esr, struct pt_regs *regs)
->>>>
->>>>       inf = esr_to_fault_info(esr);
->>>>
->>>> +     arch_arm_ras_report_error();
->>>> +
->>>>       /*
->>>>        * Return value ignored as we rely on signal merging.
->>>>        * Future patches will make this more robust.
->>>>
->>>
->>> If we interrupted a preemptible context, do_sea() is preemptible too... This means we
->>> can't know if we're still running on the same CPU as the one that took the external-abort.
->>> (until this series, it hasn't mattered).
->>>
->>> Fixing this means cramming something into entry.S's el1_da, as this may unmask interrupts
->>> before calling do_mem_abort(). But its going to be ugly because some of do_mem_abort()s
->>> ESR values need to be preemptible because they sleep, e.g. page-faults calling
->>> handle_mm_fault().
->>> For do_sea(), do_exit() will 'fix' the preempt count if we kill the thread, but if we
->>> don't, it still needs to be balanced. Doing all this in assembly is going to be unreadable!
->>>
->>> Mark Rutland has a series to move the entry assembly into C [0]. Based on that that it
->>> should be possible for the new el1_abort() to spot a Synchronous-External-Abort ESR, and
->>> wrap the do_mem_abort() with preempt enable/disable, before inheriting the flags. (which
->>> for synchronous exceptions, I think we should always do)
->>>
->>> [0] https://git.kernel.org/pub/scm/linux/kernel/git/mark/linux.git/log/?h=arm64/entry-deasm
-
->> Good catch! I didn't think the synchronous route was preemptible.
-
->> I wasn't seeing this issue when testing this on emulation, but I was able to
->> test and prove the issue on a Neoverse N1 SDP:
->>
->> root@genericarmv8:~# echo 0x100000000 > /proc/cached_read
->> [   42.985622] Reading from address 0x100000000
->> [   42.989893] WARNING: CPU: 0 PID: 2812 at /home/tyler/neoverse/arm-reference-
->> platforms/linux/arch/arm64/kernel/cpufeature.c:1940 this_cpu_has_cap+0x68/0x78
-
-[...]
-
->> [   43.175647] Internal error: synchronous external abort: 96000410 [#1]
->> PREEMPT SMP
-
-[...]
-
->> I'll pull Mark's series in and add the preempt enable/disable around the call
->> to do_mem_abort() in el1_abort() and test that out!
-> 
-> I was able to pull in the series mentioned [0] and add a patch to wrap
-> do_mem_abort with preempt disable/enable and the warning has gone away.
-
-Great.
-
-I spoke to Mark who commented he hadn't had the time to finish rebasing it onto
-for-next/core. (which I guess is why it didn't get posted!).
-
-I've taken a stab at picking out the 'synchronous' parts and rebasing it onto arm64's
-for-next/core. That tree is here:
-http://www.linux-arm.org/git?p=linux-jm.git;a=shortlog;h=refs/heads/deasm_sync_only/v0
-
-(this should save you doing the rebase)
-
-I'll aim to rebase/retest and post it next week.
-
-
-> diff --git a/arch/arm64/kernel/entry-common.c b/arch/arm64/kernel/entry-common.c
-> index 43aa78331e72..26cdf7db511a 100644
-> --- a/arch/arm64/kernel/entry-common.c
-> +++ b/arch/arm64/kernel/entry-common.c
-> @@ -118,7 +118,25 @@ static void el1_abort(struct pt_regs *regs, unsigned long esr)
-
-el0_ia/da will have the same problem.
-
-
->  	unsigned long far = read_sysreg(far_el1);
->  	local_daif_inherit(regs);
->  	far = untagged_addr(far);
-> -	do_mem_abort(far, esr, regs);
-> +
-> +	switch (esr & ESR_ELx_FSC) {
-> +	case ESR_ELx_FSC_EXTABT:	// Synchronous External Abort
-> +	case 0x14:			// SEA level 0 translation table walk
-> +	case 0x15:			// SEA level 1 translation table walk
-> +	case 0x16:			// SEA level 2 translation table walk
-> +	case 0x17:			// SEA level 3 translation table walk
-> +	case 0x18:			// Synchronous ECC error
-> +	case 0x1c:			// SECC level 0 translation table walk
-> +	case 0x1d:			// SECC level 1 translation table walk
-> +	case 0x1e:			// SECC level 2 translation table walk
-> +	case 0x1f:			// SECC level 3 translation table walk
-
-Hex numbers, lovely. KVM has a helper for this, can we move/clean that so we can use it here?
-
-
-> +		preempt_disable();
-
-This is still too late. You can take an interrupt between local_daif_inherit() and be
-migrated, before you call preempt_disable() here.
-
-The local_daif_inherit() may need to move into the switch() too.
-
-It may be simpler to fold the 'is_extabt(esr)' check into el1_sync, so that these bypass
-el1_abort() and call do_sea() directly, which could then handle the far-read,
-preempt-count and daif-inherit itself. I prefer ... whichever looks cleanest!
-
-
-> +		do_mem_abort(far, esr, regs);
-> +		preempt_enable();
-> +		break;
-> +	default:
-> +		do_mem_abort(far, esr, regs);
-> +	};
->  }
-
-
-Thanks,
-
-James
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Cj4gT24gSnVsIDE2LCAyMDE5LCBhdCAxMDo1MCBBTSwgV2FpbWFuIExvbmcgPGxvbmdtYW5AcmVk
+aGF0LmNvbT4gd3JvdGU6Cj4gCj4gT24gNy8xNi8xOSAxMDoyOSBBTSwgQWxleCBLb2dhbiB3cm90
+ZToKPj4gCj4+PiBPbiBKdWwgMTUsIDIwMTksIGF0IDc6MjIgUE0sIFdhaW1hbiBMb25nIDxsb25n
+bWFuQHJlZGhhdC5jb20KPj4+IDxtYWlsdG86bG9uZ21hbkByZWRoYXQuY29tPj4gd3JvdGU6Cj4+
+PiAKPj4+IE9uIDcvMTUvMTkgNTozMCBQTSwgV2FpbWFuIExvbmcgd3JvdGU6Cj4+Pj4+IC0jaWZu
+ZGVmIF9HRU5fUFZfTE9DS19TTE9XUEFUSAo+Pj4+PiArI2lmICFkZWZpbmVkKF9HRU5fUFZfTE9D
+S19TTE9XUEFUSCkgJiYgIWRlZmluZWQoX0dFTl9DTkFfTE9DS19TTE9XUEFUSCkKPj4+Pj4gCj4+
+Pj4+ICNpbmNsdWRlIDxsaW51eC9zbXAuaD4KPj4+Pj4gI2luY2x1ZGUgPGxpbnV4L2J1Zy5oPgo+
+Pj4+PiBAQCAtNzcsMTggKzc3LDE0IEBACj4+Pj4+ICNkZWZpbmUgTUFYX05PREVTCTQKPj4+Pj4g
+Cj4+Pj4+IC8qCj4+Pj4+IC0gKiBPbiA2NC1iaXQgYXJjaGl0ZWN0dXJlcywgdGhlIG1jc19zcGlu
+bG9jayBzdHJ1Y3R1cmUgd2lsbCBiZSAxNiBieXRlcyBpbgo+Pj4+PiAtICogc2l6ZSBhbmQgZm91
+ciBvZiB0aGVtIHdpbGwgZml0IG5pY2VseSBpbiBvbmUgNjQtYnl0ZSBjYWNoZWxpbmUuIEZvcgo+
+Pj4+PiAtICogcHZxc3BpbmxvY2ssIGhvd2V2ZXIsIHdlIG5lZWQgbW9yZSBzcGFjZSBmb3IgZXh0
+cmEgZGF0YS4gVG8gYWNjb21tb2RhdGUKPj4+Pj4gLSAqIHRoYXQsIHdlIGluc2VydCB0d28gbW9y
+ZSBsb25nIHdvcmRzIHRvIHBhZCBpdCB1cCB0byAzMiBieXRlcy4gSU9XLCBvbmx5Cj4+Pj4+IC0g
+KiB0d28gb2YgdGhlbSBjYW4gZml0IGluIGEgY2FjaGVsaW5lIGluIHRoaXMgY2FzZS4gVGhhdCBp
+cyBPSyBhcyBpdCBpcyByYXJlCj4+Pj4+IC0gKiB0byBoYXZlIG1vcmUgdGhhbiAyIGxldmVscyBv
+ZiBzbG93cGF0aCBuZXN0aW5nIGluIGFjdHVhbCB1c2UuIFdlIGRvbid0Cj4+Pj4+IC0gKiB3YW50
+IHRvIHBlbmFsaXplIHB2cXNwaW5sb2NrcyB0byBvcHRpbWl6ZSBmb3IgYSByYXJlIGNhc2UgaW4g
+bmF0aXZlCj4+Pj4+IC0gKiBxc3BpbmxvY2tzLgo+Pj4+PiArICogT24gNjQtYml0IGFyY2hpdGVj
+dHVyZXMsIHRoZSBtY3Nfc3BpbmxvY2sgc3RydWN0dXJlIHdpbGwgYmUgMjAgYnl0ZXMgaW4KPj4+
+Pj4gKyAqIHNpemUuIEZvciBwdnFzcGlubG9jayBvciB0aGUgTlVNQS1hd2FyZSB2YXJpYW50LCBo
+b3dldmVyLCB3ZSBuZWVkIG1vcmUKPj4+Pj4gKyAqIHNwYWNlIGZvciBleHRyYSBkYXRhLiBUbyBh
+Y2NvbW1vZGF0ZSB0aGF0LCB3ZSBpbnNlcnQgdHdvIG1vcmUgbG9uZyB3b3Jkcwo+Pj4+PiArICog
+dG8gcGFkIGl0IHVwIHRvIDM2IGJ5dGVzLgo+Pj4+PiAqLwo+Pj4+IFRoZSAyMCBieXRlcyBmaWd1
+cmUgaXMgd3JvbmcuIEl0IGlzIGFjdHVhbGx5IDI0IGJ5dGVzIGZvciA2NC1iaXQgYXMgdGhlCj4+
+Pj4gbWNzX3NwaW5sb2NrIHN0cnVjdHVyZSBpcyA4LWJ5dGUgYWxpZ25lZC4gRm9yIGJldHRlciBj
+YWNoZWxpbmUKPj4+PiBhbGlnbm1lbnQsIEkgd2lsbCBsaWtlIHRvIGtlZXAgbWNzX3NwaW5sb2Nr
+IHRvIDE2IGJ5dGVzIGFzIGJlZm9yZS4KPj4+PiBJbnN0ZWFkLCB5b3UgY2FuIHVzZSBlbmNvZGVf
+dGFpbCgpIHRvIHN0b3JlIHRoZSBDTkEgbm9kZSBwb2ludGVyIGluCj4+Pj4gImxvY2tlZCIuIEZv
+ciBpbnN0YW5jZSwgdXNlIChlbmNvZGVfdGFpbCgpIDw8IDEpIGluIGxvY2tlZCB0bwo+Pj4+IGRp
+c3Rpbmd1aXNoIGl0IGZyb20gdGhlIHJlZ3VsYXIgbG9ja2VkPTEgdmFsdWUuCj4+PiAKPj4+IEFj
+dHVhbGx5LCB0aGUgZW5jb2RlZCB0YWlsIHZhbHVlIGlzIGFscmVhZHkgc2hpZnQgbGVmdCBlaXRo
+ZXIgMTYgYml0cwo+Pj4gb3IgOSBiaXRzLiBTbyB0aGVyZSBpcyBubyBuZWVkIHRvIHNoaWZ0IGl0
+LiBZb3UgY2FuIGFzc2lnbmVkIGl0IGRpcmVjdGx5Ogo+Pj4gCj4+PiBtY3MtPmxvY2tlZCA9IGNu
+YS0+ZW5jb2RlZF90YWlsOwo+Pj4gCj4+PiBZb3UgZG8gbmVlZCB0byBjaGFuZ2UgdGhlIHR5cGUg
+b2YgbG9ja2VkIHRvICJ1bnNpZ25lZCBpbnQiLCB0aG91Z2gsCj4+PiBmb3IgcHJvcGVyIGNvbXBh
+cmlzb24gd2l0aCAiMSIuCj4+PiAKPj4gR290IGl0LCB0aGFua3MuCj4+IAo+IEkgZm9yZ290IHRv
+IG1lbnRpb24gdGhhdCBJIHdvdWxkIGxpa2UgdG8gc2VlIGEgYm9vdCBjb21tYW5kIGxpbmUgb3B0
+aW9uCj4gdG8gZm9yY2Ugb2ZmIGFuZCBtYXliZSBvbiBhcyB3ZWxsIHRoZSBudW1hIHFzcGlubG9j
+ayBjb2RlLiBUaGlzIGNhbiBoZWxwCj4gaW4gdGVzdGluZyBhcyB5b3UgZG9uJ3QgbmVlZCB0byBi
+dWlsZCAyIHNlcGFyYXRlIGtlcm5lbHMsIG9uZSB3aXRoCj4gTlVNQV9BV0FSRV9TUElOTE9DS1Mg
+b24gYW5kIG9uZSB3aXRoIGl0IG9mZi4KSUlVQyBpdCBzaG91bGQgYmUgZWFzeSB0byBhZGQgYSBi
+b290IG9wdGlvbiB0byBmb3JjZSBvZmYgdGhlIE5VTUEtYXdhcmUgc3BpbmxvY2sgCmV2ZW4gaWYg
+aXQgaXMgZW5hYmxlZCB0aG91Z2ggY29uZmlnLCBidXQgdGhlIG90aGVyIHdheSBhcm91bmQgd291
+bGQgcmVxdWlyZSAKY29tcGlsaW5nIGluIHRoZSBOVU1BLWF3YXJlIHNwaW5sb2NrIHN0dWZmIGV2
+ZW4gaWYgdGhlIGNvbmZpZyBvcHRpb24gaXMgZGlzYWJsZWQuCklzIHRoYXQgb2s/CgpBbHNvLCB3
+aGF0IHNob3VsZCB0aGUgb3B0aW9uIG5hbWUgYmU/CiJudW1hX3NwaW5sb2NrPW9uL29mZuKAnSBp
+ZiB3ZSB3YW50IGJvdGggd2F5cywgb3Ig4oCcbm9fbnVtYV9zcGlubG9jayIgaWYgd2Ugd2FudCBq
+dXN0IHRoZSDigJxmb3JjZSBvZmbigJ0gb3B0aW9uPwoKPiBGb3Igc21hbGwgMi1zb2NrZXQgc3lz
+dGVtcywKPiBudW1hIHFzcGlubG9jayBtYXkgbm90IGhlbHAgbXVjaC4KSXQgYWN0dWFsbHkgaGVs
+cHMgcXVpdGUgYSBiaXQgKGUuZy4sIHNwZWVkdXAgb2YgdXAgdG8gNDItNTclIGZvciB3aWxsLWl0
+LXNjYWxlIG9uIGEgZHVhbC1zb2NrZXQgeDg2IHN5c3RlbSkuCldlIGhhdmUgbnVtYmVycyBhbmQg
+cGxvdHMgaW4gb3VyIHBhcGVyIG9uIGFyeGl2LgoKUmVnYXJkcywK4oCUIEFsZXgKCgpfX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVs
+IG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
+L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
