@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E8E9D6B807
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 10:19:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 915C66B808
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 10:19:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=E/VTKhe7ou2IHltxOuTKJ9HeaGStaG/0qdEitqbjXyM=; b=hUEdt4vg/a0jMQbdQWfj1rDobu
-	ZpQu0hTkacoXD1omh1ZTvV9EBiJWvKzKvMM3ogyyBIhXgKGHAUmLbSnxEK0Q8svSmXlXMmPl8hMgV
-	VDQMzPk8j7k6d9vC9v82Pxj+9HFrtYAkACcjCj21F/F3dTM309jBuKmsfh0p8TnNlcEaR3Q48DIjf
-	h48Zp7Ezh/j6qWXG58uffmWXbQz88RuHs210Q/dekhmwM8Q8xS5fVG1nyM+ra9KXeRUTojJ0n4gYU
-	6F0M8dm6ukCXBhqqIVdhEgLk0ZsEhuDHDpNtxBVz+/iQtJ9ZgAqz0hJIxknRnRguPzq1r/EwxoACA
-	k97yXPFg==;
+	bh=sBY5Yht84q0M19uFpDHEqtmkRb5GsixfYk1Nl9/N87U=; b=FtxH3s312L8tiBGqE6+1/aOWe0
+	S43xTU7iSklB01jrdL4+wJ11uMld/hJNLzFSfK/b7sq3Va3BECIGa5w3TEzrF/yVDfQ5irOCt1lAV
+	ktxil4F23FVD6YHKDSpJnnQuos06ADDNW2vY+vi8gD0CEJgm5kJGWVYCRA4ZJ0fJBlv7xLoQPxzz+
+	2IYND5zongB8oWt6n0kfDi3ZuhCfeJJHHOluul9mEkqHF5XyVaVg1fHTPILNQWfm1MCcLwQaYM+JA
+	uPZOewNPMVQA353zguWuYBVAIwaax361dOSTQy2FYurXoQnaTkrgu0XkFpzJ4GmdWNZbSfWvsf7Ew
+	byUpNrKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnf9P-0004bU-CZ; Wed, 17 Jul 2019 08:18:59 +0000
+	id 1hnf9f-0004pd-3X; Wed, 17 Jul 2019 08:19:15 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hnf7u-0003Hw-Vn
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 08:17:30 +0000
+ id 1hnf7w-0003Lo-U4
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 08:17:31 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 075C3344;
- Wed, 17 Jul 2019 01:17:26 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C78B81515;
+ Wed, 17 Jul 2019 01:17:27 -0700 (PDT)
 Received: from e112298-lin.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 6E0053F71A;
- Wed, 17 Jul 2019 01:19:24 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 3A4C33F71A;
+ Wed, 17 Jul 2019 01:19:26 -0700 (PDT)
 From: Julien Thierry <julien.thierry@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v4 4/9] arm: perf: Remove Remove PMU locking
-Date: Wed, 17 Jul 2019 09:17:07 +0100
-Message-Id: <1563351432-55652-5-git-send-email-julien.thierry@arm.com>
+Subject: [PATCH v4 5/9] perf/arm_pmu: Move PMU lock to ARMv6 events
+Date: Wed, 17 Jul 2019 09:17:08 +0100
+Message-Id: <1563351432-55652-6-git-send-email-julien.thierry@arm.com>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1563351432-55652-1-git-send-email-julien.thierry@arm.com>
 References: <1563351432-55652-1-git-send-email-julien.thierry@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_011727_157470_5146B4E7 
-X-CRM114-Status: GOOD (  11.89  )
+X-CRM114-CacheID: sfid-20190717_011729_146432_3E0A32CD 
+X-CRM114-Status: GOOD (  14.68  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,13 +71,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since the PMU interrupt saves and restores the value of the selector
-register, there is no need to serialize register accesses against the
-interrupt contexts.
+Perf event backend for ARMv8 and ARMv7 no longer uses the pmu_lock.
+The only remaining user is the ARMv6 event backend.
 
-For operations that can be called with interrupts enabled, preemption
-still needs to be disabled to ensure the programming of the PMU is
-done on the expected CPU and not migrated mid-programming.
+Move the pmu_lock out of the generic arm_pmu driver into the ARMv6 code.
 
 Signed-off-by: Julien Thierry <julien.thierry@arm.com>
 Cc: Will Deacon <will.deacon@arm.com>
@@ -90,193 +87,182 @@ Cc: Jiri Olsa <jolsa@redhat.com>
 Cc: Namhyung Kim <namhyung@kernel.org>
 Cc: Russell King <linux@armlinux.org.uk>
 ---
- arch/arm/kernel/perf_event_v7.c | 54 ++---------------------------------------
- 1 file changed, 2 insertions(+), 52 deletions(-)
+ arch/arm/kernel/perf_event_v6.c | 43 ++++++++++++++++++++++++-----------------
+ drivers/perf/arm_pmu.c          |  1 -
+ include/linux/perf/arm_pmu.h    |  5 -----
+ 3 files changed, 25 insertions(+), 24 deletions(-)
 
-diff --git a/arch/arm/kernel/perf_event_v7.c b/arch/arm/kernel/perf_event_v7.c
-index b7be2a3..9655127 100644
---- a/arch/arm/kernel/perf_event_v7.c
-+++ b/arch/arm/kernel/perf_event_v7.c
-@@ -882,10 +882,8 @@ static void armv7_pmnc_dump_regs(struct arm_pmu *cpu_pmu)
+diff --git a/arch/arm/kernel/perf_event_v6.c b/arch/arm/kernel/perf_event_v6.c
+index 1ae99de..2af0d4a 100644
+--- a/arch/arm/kernel/perf_event_v6.c
++++ b/arch/arm/kernel/perf_event_v6.c
+@@ -69,6 +69,12 @@ enum armv6_counters {
+ };
 
- static void armv7pmu_enable_event(struct perf_event *event)
+ /*
++ * Hardware lock to serialize accesses to PMU registers. Needed for the
++ * read/modify/write sequences.
++ */
++DEFINE_PER_CPU(raw_spinlock_t, pmu_lock);
++
++/*
+  * The hardware events that we support. We do support cache operations but
+  * we have harvard caches and no way to combine instruction and data
+  * accesses/misses in hardware.
+@@ -269,9 +275,8 @@ static inline void armv6pmu_write_counter(struct perf_event *event, u64 value)
+ static void armv6pmu_enable_event(struct perf_event *event)
  {
--	unsigned long flags;
+ 	unsigned long val, mask, evt, flags;
+-	struct arm_pmu *cpu_pmu = to_arm_pmu(event->pmu);
  	struct hw_perf_event *hwc = &event->hw;
- 	struct arm_pmu *cpu_pmu = to_arm_pmu(event->pmu);
 -	struct pmu_hw_events *events = this_cpu_ptr(cpu_pmu->hw_events);
++	raw_spinlock_t *lock = this_cpu_ptr(&pmu_lock);
  	int idx = hwc->idx;
 
- 	if (!armv7_pmnc_counter_valid(cpu_pmu, idx)) {
-@@ -898,7 +896,6 @@ static void armv7pmu_enable_event(struct perf_event *event)
- 	 * Enable counter and interrupt, and set the counter to count
- 	 * the event that we're interested in.
+ 	if (ARMV6_CYCLE_COUNTER == idx) {
+@@ -294,12 +299,12 @@ static void armv6pmu_enable_event(struct perf_event *event)
+ 	 * Mask out the current event and set the counter to count the event
+ 	 * that we're interested in.
  	 */
 -	raw_spin_lock_irqsave(&events->pmu_lock, flags);
-
- 	/*
- 	 * Disable counter
-@@ -922,16 +919,12 @@ static void armv7pmu_enable_event(struct perf_event *event)
- 	 * Enable counter
- 	 */
- 	armv7_pmnc_enable_counter(idx);
--
++	raw_spin_lock_irqsave(lock, flags);
+ 	val = armv6_pmcr_read();
+ 	val &= ~mask;
+ 	val |= evt;
+ 	armv6_pmcr_write(val);
 -	raw_spin_unlock_irqrestore(&events->pmu_lock, flags);
++	raw_spin_unlock_irqrestore(lock, flags);
  }
 
- static void armv7pmu_disable_event(struct perf_event *event)
+ static irqreturn_t
+@@ -363,25 +368,25 @@ static void armv6pmu_enable_event(struct perf_event *event)
+ static void armv6pmu_start(struct arm_pmu *cpu_pmu)
  {
--	unsigned long flags;
- 	struct hw_perf_event *hwc = &event->hw;
- 	struct arm_pmu *cpu_pmu = to_arm_pmu(event->pmu);
+ 	unsigned long flags, val;
 -	struct pmu_hw_events *events = this_cpu_ptr(cpu_pmu->hw_events);
++	raw_spinlock_t *lock = this_cpu_ptr(&pmu_lock);
+
+-	raw_spin_lock_irqsave(&events->pmu_lock, flags);
++	raw_spin_lock_irqsave(lock, flags);
+ 	val = armv6_pmcr_read();
+ 	val |= ARMV6_PMCR_ENABLE;
+ 	armv6_pmcr_write(val);
+-	raw_spin_unlock_irqrestore(&events->pmu_lock, flags);
++	raw_spin_unlock_irqrestore(lock, flags);
+ }
+
+ static void armv6pmu_stop(struct arm_pmu *cpu_pmu)
+ {
+ 	unsigned long flags, val;
+-	struct pmu_hw_events *events = this_cpu_ptr(cpu_pmu->hw_events);
++	raw_spinlock_t *lock = this_cpu_ptr(&pmu_lock);
+
+-	raw_spin_lock_irqsave(&events->pmu_lock, flags);
++	raw_spin_lock_irqsave(lock, flags);
+ 	val = armv6_pmcr_read();
+ 	val &= ~ARMV6_PMCR_ENABLE;
+ 	armv6_pmcr_write(val);
+-	raw_spin_unlock_irqrestore(&events->pmu_lock, flags);
++	raw_spin_unlock_irqrestore(lock, flags);
+ }
+
+ static int
+@@ -420,9 +425,8 @@ static void armv6pmu_clear_event_idx(struct pmu_hw_events *cpuc,
+ static void armv6pmu_disable_event(struct perf_event *event)
+ {
+ 	unsigned long val, mask, evt, flags;
+-	struct arm_pmu *cpu_pmu = to_arm_pmu(event->pmu);
+ 	struct hw_perf_event *hwc = &event->hw;
+-	struct pmu_hw_events *events = this_cpu_ptr(cpu_pmu->hw_events);
++	raw_spinlock_t *lock = this_cpu_ptr(&pmu_lock);
  	int idx = hwc->idx;
 
- 	if (!armv7_pmnc_counter_valid(cpu_pmu, idx)) {
-@@ -941,11 +934,6 @@ static void armv7pmu_disable_event(struct perf_event *event)
+ 	if (ARMV6_CYCLE_COUNTER == idx) {
+@@ -444,20 +448,19 @@ static void armv6pmu_disable_event(struct perf_event *event)
+ 	 * of ETM bus signal assertion cycles. The external reporting should
+ 	 * be disabled and so this should never increment.
+ 	 */
+-	raw_spin_lock_irqsave(&events->pmu_lock, flags);
++	raw_spin_lock_irqsave(lock, flags);
+ 	val = armv6_pmcr_read();
+ 	val &= ~mask;
+ 	val |= evt;
+ 	armv6_pmcr_write(val);
+-	raw_spin_unlock_irqrestore(&events->pmu_lock, flags);
++	raw_spin_unlock_irqrestore(lock, flags);
+ }
+
+ static void armv6mpcore_pmu_disable_event(struct perf_event *event)
+ {
+ 	unsigned long val, mask, flags, evt = 0;
+-	struct arm_pmu *cpu_pmu = to_arm_pmu(event->pmu);
+ 	struct hw_perf_event *hwc = &event->hw;
+-	struct pmu_hw_events *events = this_cpu_ptr(cpu_pmu->hw_events);
++	raw_spinlock_t *lock = this_cpu_ptr(&pmu_lock);
+ 	int idx = hwc->idx;
+
+ 	if (ARMV6_CYCLE_COUNTER == idx) {
+@@ -475,12 +478,12 @@ static void armv6mpcore_pmu_disable_event(struct perf_event *event)
+ 	 * Unlike UP ARMv6, we don't have a way of stopping the counters. We
+ 	 * simply disable the interrupt reporting.
+ 	 */
+-	raw_spin_lock_irqsave(&events->pmu_lock, flags);
++	raw_spin_lock_irqsave(lock, flags);
+ 	val = armv6_pmcr_read();
+ 	val &= ~mask;
+ 	val |= evt;
+ 	armv6_pmcr_write(val);
+-	raw_spin_unlock_irqrestore(&events->pmu_lock, flags);
++	raw_spin_unlock_irqrestore(lock, flags);
+ }
+
+ static int armv6_map_event(struct perf_event *event)
+@@ -502,6 +505,8 @@ static void armv6pmu_init(struct arm_pmu *cpu_pmu)
+ 	cpu_pmu->stop		= armv6pmu_stop;
+ 	cpu_pmu->map_event	= armv6_map_event;
+ 	cpu_pmu->num_events	= 3;
++
++	raw_spin_lock_init(this_cpu_ptr(&pmu_lock));
+ }
+
+ static int armv6_1136_pmu_init(struct arm_pmu *cpu_pmu)
+@@ -554,6 +559,8 @@ static int armv6mpcore_pmu_init(struct arm_pmu *cpu_pmu)
+ 	cpu_pmu->map_event	= armv6mpcore_map_event;
+ 	cpu_pmu->num_events	= 3;
+
++	raw_spin_lock_init(this_cpu_ptr(&pmu_lock));
++
+ 	return 0;
+ }
+
+diff --git a/drivers/perf/arm_pmu.c b/drivers/perf/arm_pmu.c
+index 2d06b80..7fd9f15 100644
+--- a/drivers/perf/arm_pmu.c
++++ b/drivers/perf/arm_pmu.c
+@@ -823,7 +823,6 @@ static struct arm_pmu *__armpmu_alloc(gfp_t flags)
+ 		struct pmu_hw_events *events;
+
+ 		events = per_cpu_ptr(pmu->hw_events, cpu);
+-		raw_spin_lock_init(&events->pmu_lock);
+ 		events->percpu_pmu = pmu;
  	}
 
- 	/*
--	 * Disable counter and interrupt
--	 */
--	raw_spin_lock_irqsave(&events->pmu_lock, flags);
--
+diff --git a/include/linux/perf/arm_pmu.h b/include/linux/perf/arm_pmu.h
+index 71f525a..8640b23 100644
+--- a/include/linux/perf/arm_pmu.h
++++ b/include/linux/perf/arm_pmu.h
+@@ -54,11 +54,6 @@ struct pmu_hw_events {
+ 	 */
+ 	DECLARE_BITMAP(used_mask, ARMPMU_MAX_HWEVENTS);
+
 -	/*
- 	 * Disable counter
- 	 */
- 	armv7_pmnc_disable_counter(idx);
-@@ -954,8 +942,6 @@ static void armv7pmu_disable_event(struct perf_event *event)
- 	 * Disable interrupt for this counter
- 	 */
- 	armv7_pmnc_disable_intens(idx);
--
--	raw_spin_unlock_irqrestore(&events->pmu_lock, flags);
- }
-
- static irqreturn_t armv7pmu_handle_irq(struct arm_pmu *cpu_pmu)
-@@ -1030,24 +1016,16 @@ static irqreturn_t armv7pmu_handle_irq(struct arm_pmu *cpu_pmu)
-
- static void armv7pmu_start(struct arm_pmu *cpu_pmu)
- {
--	unsigned long flags;
--	struct pmu_hw_events *events = this_cpu_ptr(cpu_pmu->hw_events);
--
--	raw_spin_lock_irqsave(&events->pmu_lock, flags);
-+	WARN_ON_ONCE(preemptible());
- 	/* Enable all counters */
- 	armv7_pmnc_write(armv7_pmnc_read() | ARMV7_PMNC_E);
--	raw_spin_unlock_irqrestore(&events->pmu_lock, flags);
- }
-
- static void armv7pmu_stop(struct arm_pmu *cpu_pmu)
- {
--	unsigned long flags;
--	struct pmu_hw_events *events = this_cpu_ptr(cpu_pmu->hw_events);
--
--	raw_spin_lock_irqsave(&events->pmu_lock, flags);
-+	WARN_ON_ONCE(preemptible());
- 	/* Disable all counters */
- 	armv7_pmnc_write(armv7_pmnc_read() & ~ARMV7_PMNC_E);
--	raw_spin_unlock_irqrestore(&events->pmu_lock, flags);
- }
-
- static int armv7pmu_get_event_idx(struct pmu_hw_events *cpuc,
-@@ -1513,14 +1491,8 @@ static void krait_clearpmu(u32 config_base)
-
- static void krait_pmu_disable_event(struct perf_event *event)
- {
--	unsigned long flags;
- 	struct hw_perf_event *hwc = &event->hw;
- 	int idx = hwc->idx;
--	struct arm_pmu *cpu_pmu = to_arm_pmu(event->pmu);
--	struct pmu_hw_events *events = this_cpu_ptr(cpu_pmu->hw_events);
--
--	/* Disable counter and interrupt */
--	raw_spin_lock_irqsave(&events->pmu_lock, flags);
-
- 	/* Disable counter */
- 	armv7_pmnc_disable_counter(idx);
-@@ -1533,23 +1505,17 @@ static void krait_pmu_disable_event(struct perf_event *event)
-
- 	/* Disable interrupt for this counter */
- 	armv7_pmnc_disable_intens(idx);
--
--	raw_spin_unlock_irqrestore(&events->pmu_lock, flags);
- }
-
- static void krait_pmu_enable_event(struct perf_event *event)
- {
--	unsigned long flags;
- 	struct hw_perf_event *hwc = &event->hw;
- 	int idx = hwc->idx;
--	struct arm_pmu *cpu_pmu = to_arm_pmu(event->pmu);
--	struct pmu_hw_events *events = this_cpu_ptr(cpu_pmu->hw_events);
+-	 * Hardware lock to serialize accesses to PMU registers. Needed for the
+-	 * read/modify/write sequences.
+-	 */
+-	raw_spinlock_t		pmu_lock;
 
  	/*
- 	 * Enable counter and interrupt, and set the counter to count
- 	 * the event that we're interested in.
- 	 */
--	raw_spin_lock_irqsave(&events->pmu_lock, flags);
-
- 	/* Disable counter */
- 	armv7_pmnc_disable_counter(idx);
-@@ -1569,8 +1535,6 @@ static void krait_pmu_enable_event(struct perf_event *event)
-
- 	/* Enable counter */
- 	armv7_pmnc_enable_counter(idx);
--
--	raw_spin_unlock_irqrestore(&events->pmu_lock, flags);
- }
-
- static void krait_pmu_reset(void *info)
-@@ -1846,14 +1810,8 @@ static void scorpion_clearpmu(u32 config_base)
-
- static void scorpion_pmu_disable_event(struct perf_event *event)
- {
--	unsigned long flags;
- 	struct hw_perf_event *hwc = &event->hw;
- 	int idx = hwc->idx;
--	struct arm_pmu *cpu_pmu = to_arm_pmu(event->pmu);
--	struct pmu_hw_events *events = this_cpu_ptr(cpu_pmu->hw_events);
--
--	/* Disable counter and interrupt */
--	raw_spin_lock_irqsave(&events->pmu_lock, flags);
-
- 	/* Disable counter */
- 	armv7_pmnc_disable_counter(idx);
-@@ -1866,23 +1824,17 @@ static void scorpion_pmu_disable_event(struct perf_event *event)
-
- 	/* Disable interrupt for this counter */
- 	armv7_pmnc_disable_intens(idx);
--
--	raw_spin_unlock_irqrestore(&events->pmu_lock, flags);
- }
-
- static void scorpion_pmu_enable_event(struct perf_event *event)
- {
--	unsigned long flags;
- 	struct hw_perf_event *hwc = &event->hw;
- 	int idx = hwc->idx;
--	struct arm_pmu *cpu_pmu = to_arm_pmu(event->pmu);
--	struct pmu_hw_events *events = this_cpu_ptr(cpu_pmu->hw_events);
-
- 	/*
- 	 * Enable counter and interrupt, and set the counter to count
- 	 * the event that we're interested in.
- 	 */
--	raw_spin_lock_irqsave(&events->pmu_lock, flags);
-
- 	/* Disable counter */
- 	armv7_pmnc_disable_counter(idx);
-@@ -1902,8 +1854,6 @@ static void scorpion_pmu_enable_event(struct perf_event *event)
-
- 	/* Enable counter */
- 	armv7_pmnc_enable_counter(idx);
--
--	raw_spin_unlock_irqrestore(&events->pmu_lock, flags);
- }
-
- static void scorpion_pmu_reset(void *info)
+ 	 * When using percpu IRQs, we need a percpu dev_id. Place it here as we
 --
 1.9.1
 
