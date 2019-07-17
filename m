@@ -2,93 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C5FD6BBC0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 13:47:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57F846BBF2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 13:54:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AzrPC8+cfzp4bRCPEnoaaOsp24XFBbZxl5VZY6JHnjc=; b=HC0wU+/sMkrsZ5
-	n2wFMHrQwnUQf/K77fu1Kl38uRzaRJgiTXhYcdiENm7Syc6Qqw/9DdVGeQXLzftYqrCkuH+RIWf52
-	hMpnH///nx4bzNx9IFy7dcit2BKVy6VUFLNded4oDK+X9lP/0rZJjK9Q76L1FLoTM+PZhfbPAVKCC
-	sMQiX80LXUA405IhfcUYapZbJPyPcA2EwI0r6ZEvHRocmM4M1xiO+QpuFCD3ppvp5WS0kgokx1IES
-	7wyZaVmprmWVrKUmvwxoe+jUjTFDN9GmG9tQvpjGAiHJwDoahUbIKbEy6o2BqaW2QxyV5iJECObwU
-	KLJHWXiUBo4d4mi7XyOw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=zE3RJdd58nRCeb0sse3hbKeqEDFxtB/O1lqC2kDoT+k=; b=DUljq5sjGEj+HaoQwSstvSM40
+	Z6+Ta5MU109jYmi888t66/1Wnl9mK35HqDdgLIxJm2LmOZvw3WHTuYFqiibGcL2lBRxNe8jREhuTf
+	gTaQKGO8Gehpih2ZnnriW5+V72is2VgDS1IBd5OD9dj6j+t20djbrvueseAdeqPSourgvlHxiwGpH
+	ouOTwKWXTCgjxt72Fm+aWlPnK50Zr7pim8r7pHEAK2z9sYFY41J5qGoa+VNLYwWKennLHk+Pa9t7d
+	IsCZidm/8SDbBgzrfECMp9LznQELoAZCg0orytH4uUCycUePrg51WX1tj7Xhyze0/USEfBAhErLEB
+	xwa2l5ceA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hniOw-00028e-10; Wed, 17 Jul 2019 11:47:14 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1hniVs-0004Zf-0X; Wed, 17 Jul 2019 11:54:24 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hniOm-000289-3h
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 11:47:05 +0000
-Received: by mail-pl1-x643.google.com with SMTP id k8so11858613plt.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 17 Jul 2019 04:47:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=XH7pgHFzkwihJR5psn/ZNzGH7d1Hcpwg4ypt2aGmLUk=;
- b=q9rg5oP+7QfRryee4CQfI+zTuO8vcNkAU+Zb8S/XX5gbQKX1OYbsUUbB3B8KK9hFmU
- UHgvh4Mz+Kyv0D5E5zvwH3nJNYoE2P1kzcK2Rg1yMoExsViP4+PURLjfYPF2WZhrd0MF
- a+zGI8yxCxdvE8nZGITXCK8/RaYQDCnkR7z8XELwz+GgVBZndcqvcfCaF4ihTHl0HyVo
- bFY7Esho++ViErb2avPSuS/M58xcsz7oUebcD6xLNGIpCphqGpuQ31GuhoMHpSqGmldC
- ZKZZNvAff0cBNn4NnOvQXzgW64bJR2BOmy7dIGzstZ5vq+Xgsj3OiBdAV2LIo/WRsiLm
- aMOQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=XH7pgHFzkwihJR5psn/ZNzGH7d1Hcpwg4ypt2aGmLUk=;
- b=ZfmXtXEPyfHOT3RB/tij5eXayqZBHcPg9TZT2gfzPKNT+Ftgc+2p/BeGR2ZNnXTKBG
- RJfjfbJx7Tr5KjRe4XzNtd95pU805wnoOtBvYDCYW3KwxAyXVs4ZE/jqrbUE4FSPLGXJ
- AwxNJ4w4hTSkaRYFmm7SQeJdb/5Yl8ltrNP2ZPk4F9hGXTOMpA6avxr7/w6sa+lPxLBV
- NZfoakLx3cY0n00SIUJfzPgy1rqnvowD3GMSPXvbj3BiFeUv1FyM8EqM/93akRQXiNaT
- 9AJ+mu7W6EMNXhs2O6dvh5M8KQy4RX+OgXUgwBGfoD+HJPuJC178fS+TyWfFBbcIYM2v
- T75Q==
-X-Gm-Message-State: APjAAAUL1h6ml0xRtAADbfBXryEASQlTHLVP1l4/nSsOZpXL1cfY9y/+
- 1TP76wf0YuQSOoZFSKFnAKYAlsev0LvMhAUBDydcHA==
-X-Google-Smtp-Source: APXvYqz8S3jyPxed+oPtsIDmi9g4NsD5ItlfcVysZ7+qze2pU/edo+3e3aBEztJRj4XnLTpHjY2eNg/431rKCehxHqk=
-X-Received: by 2002:a17:902:8689:: with SMTP id
- g9mr39736837plo.252.1563364023206; 
- Wed, 17 Jul 2019 04:47:03 -0700 (PDT)
+ id 1hniVa-0004YI-N3; Wed, 17 Jul 2019 11:54:08 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=bNOnC8lxCe3aDAnG0jcKQgNER1fc49FPtWHXlWhI7Rw=; b=u2vA0thvYVj2uWis+6spoRzNj
+ c9AB8hzRFLHxONpE0pk1P+hArYT9OAzNX43036VzrZJ/gglEoyrzsJWoNmbQplliAwniVbis1MUig
+ EAXUNaDLRm6rxOCIUFjXuzSf+e8MNFKCoUtzJNiVvQnonYFhLS5pRfC6Y5DDWDG/zG3Og=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=ypsilon.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1hniVX-0000Ub-2i; Wed, 17 Jul 2019 11:54:03 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id C1E682742C26; Wed, 17 Jul 2019 12:54:01 +0100 (BST)
+Date: Wed, 17 Jul 2019 12:54:01 +0100
+From: Mark Brown <broonie@kernel.org>, Rob Herring <robh@kernel.org>,
+ Tomeu Vizoso <tomeu.vizoso@collabora.com>
+To: Kevin Hilman <khilman@baylibre.com>
+Subject: Re: next/master boot: 265 boots: 17 failed, 243 passed with 4
+ offline, 1 conflict (next-20190717)
+Message-ID: <20190717115401.GC4459@sirena.org.uk>
+References: <5d2f063c.1c69fb81.69fe8.9d45@mx.google.com>
 MIME-Version: 1.0
-References: <cover.1561386715.git.andreyknvl@google.com>
- <d8e3b9a819e98d6527e506027b173b128a148d3c.1561386715.git.andreyknvl@google.com>
- <20190624175120.GN29120@arrakis.emea.arm.com>
- <20190717110910.GA12017@rapoport-lnx>
-In-Reply-To: <20190717110910.GA12017@rapoport-lnx>
-From: Andrey Konovalov <andreyknvl@google.com>
-Date: Wed, 17 Jul 2019 13:46:52 +0200
-Message-ID: <CAAeHK+yB=d_oXOVZ2TuVe2UkBAx-GM_f+mu88JeVWqPO95xVHQ@mail.gmail.com>
-Subject: Re: [PATCH v18 08/15] userfaultfd: untag user pointers
-To: Mike Rapoport <rppt@linux.ibm.com>
+In-Reply-To: <5d2f063c.1c69fb81.69fe8.9d45@mx.google.com>
+X-Cookie: Fremen add life to spice!
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_044704_185521_67E84FE8 
-X-CRM114-Status: GOOD (  23.37  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190717_045406_776481_9CB38D3A 
+X-CRM114-Status: UNSURE (   8.13  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,162 +80,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org,
- Linux Memory Management List <linux-mm@kvack.org>,
- Khalid Aziz <khalid.aziz@oracle.com>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- Felix Kuehling <Felix.Kuehling@amd.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
- Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
- Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
- Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
- Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Al Viro <viro@zeniv.linux.org.uk>, Mauro Carvalho Chehab <mchehab@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Kostya Serebryany <kcc@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yishai Hadas <yishaih@mellanox.com>, LKML <linux-kernel@vger.kernel.org>,
- Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
- Robin Murphy <robin.murphy@arm.com>,
- Christian Koenig <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-amlogic@lists.infradead.org, dri-devel@lists.freedesktop.org,
+ linux-arm-kernel@lists.infradead.org, kernel-build-reports@lists.linaro.org
+Content-Type: multipart/mixed; boundary="===============3045732315254902107=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 17, 2019 at 1:09 PM Mike Rapoport <rppt@linux.ibm.com> wrote:
->
-> On Mon, Jun 24, 2019 at 06:51:21PM +0100, Catalin Marinas wrote:
-> > On Mon, Jun 24, 2019 at 04:32:53PM +0200, Andrey Konovalov wrote:
-> > > This patch is a part of a series that extends kernel ABI to allow to pass
-> > > tagged user pointers (with the top byte set to something else other than
-> > > 0x00) as syscall arguments.
-> > >
-> > > userfaultfd code use provided user pointers for vma lookups, which can
-> > > only by done with untagged pointers.
-> > >
-> > > Untag user pointers in validate_range().
-> > >
-> > > Reviewed-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
-> > > Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
-> > > Reviewed-by: Kees Cook <keescook@chromium.org>
-> > > Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
-> > > ---
-> > >  fs/userfaultfd.c | 22 ++++++++++++----------
-> > >  1 file changed, 12 insertions(+), 10 deletions(-)
-> >
-> > Same here, it needs an ack from Al Viro.
->
-> The userfault patches usually go via -mm tree, not sure if Al looks at them :)
 
-Ah, OK, I guess than Andrew will take a look at them when merging.
+--===============3045732315254902107==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="hYooF8G/hrfVAmum"
+Content-Disposition: inline
 
->
-> FWIW, you can add
->
-> Reviewed-by: Mike Rapoport <rppt@linux.ibm.com>
 
-I will, thanks!
+--hYooF8G/hrfVAmum
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
->
-> > > diff --git a/fs/userfaultfd.c b/fs/userfaultfd.c
-> > > index ae0b8b5f69e6..c2be36a168ca 100644
-> > > --- a/fs/userfaultfd.c
-> > > +++ b/fs/userfaultfd.c
-> > > @@ -1261,21 +1261,23 @@ static __always_inline void wake_userfault(struct userfaultfd_ctx *ctx,
-> > >  }
-> > >
-> > >  static __always_inline int validate_range(struct mm_struct *mm,
-> > > -                                     __u64 start, __u64 len)
-> > > +                                     __u64 *start, __u64 len)
-> > >  {
-> > >     __u64 task_size = mm->task_size;
-> > >
-> > > -   if (start & ~PAGE_MASK)
-> > > +   *start = untagged_addr(*start);
-> > > +
-> > > +   if (*start & ~PAGE_MASK)
-> > >             return -EINVAL;
-> > >     if (len & ~PAGE_MASK)
-> > >             return -EINVAL;
-> > >     if (!len)
-> > >             return -EINVAL;
-> > > -   if (start < mmap_min_addr)
-> > > +   if (*start < mmap_min_addr)
-> > >             return -EINVAL;
-> > > -   if (start >= task_size)
-> > > +   if (*start >= task_size)
-> > >             return -EINVAL;
-> > > -   if (len > task_size - start)
-> > > +   if (len > task_size - *start)
-> > >             return -EINVAL;
-> > >     return 0;
-> > >  }
-> > > @@ -1325,7 +1327,7 @@ static int userfaultfd_register(struct userfaultfd_ctx *ctx,
-> > >             goto out;
-> > >     }
-> > >
-> > > -   ret = validate_range(mm, uffdio_register.range.start,
-> > > +   ret = validate_range(mm, &uffdio_register.range.start,
-> > >                          uffdio_register.range.len);
-> > >     if (ret)
-> > >             goto out;
-> > > @@ -1514,7 +1516,7 @@ static int userfaultfd_unregister(struct userfaultfd_ctx *ctx,
-> > >     if (copy_from_user(&uffdio_unregister, buf, sizeof(uffdio_unregister)))
-> > >             goto out;
-> > >
-> > > -   ret = validate_range(mm, uffdio_unregister.start,
-> > > +   ret = validate_range(mm, &uffdio_unregister.start,
-> > >                          uffdio_unregister.len);
-> > >     if (ret)
-> > >             goto out;
-> > > @@ -1665,7 +1667,7 @@ static int userfaultfd_wake(struct userfaultfd_ctx *ctx,
-> > >     if (copy_from_user(&uffdio_wake, buf, sizeof(uffdio_wake)))
-> > >             goto out;
-> > >
-> > > -   ret = validate_range(ctx->mm, uffdio_wake.start, uffdio_wake.len);
-> > > +   ret = validate_range(ctx->mm, &uffdio_wake.start, uffdio_wake.len);
-> > >     if (ret)
-> > >             goto out;
-> > >
-> > > @@ -1705,7 +1707,7 @@ static int userfaultfd_copy(struct userfaultfd_ctx *ctx,
-> > >                        sizeof(uffdio_copy)-sizeof(__s64)))
-> > >             goto out;
-> > >
-> > > -   ret = validate_range(ctx->mm, uffdio_copy.dst, uffdio_copy.len);
-> > > +   ret = validate_range(ctx->mm, &uffdio_copy.dst, uffdio_copy.len);
-> > >     if (ret)
-> > >             goto out;
-> > >     /*
-> > > @@ -1761,7 +1763,7 @@ static int userfaultfd_zeropage(struct userfaultfd_ctx *ctx,
-> > >                        sizeof(uffdio_zeropage)-sizeof(__s64)))
-> > >             goto out;
-> > >
-> > > -   ret = validate_range(ctx->mm, uffdio_zeropage.range.start,
-> > > +   ret = validate_range(ctx->mm, &uffdio_zeropage.range.start,
-> > >                          uffdio_zeropage.range.len);
-> > >     if (ret)
-> > >             goto out;
-> > > --
-> > > 2.22.0.410.gd8fdbe21b5-goog
->
-> --
-> Sincerely yours,
-> Mike.
->
+On Wed, Jul 17, 2019 at 04:27:56AM -0700, kernelci.org bot wrote:
+
+Today's -next fails to boot on meson-gxm-khadas-vim2 in a variety
+of configurations:
+
+>     defconfig:
+>         gcc-8:
+>           meson-gxm-khadas-vim2:
+>               lab-baylibre: new failure (last pass: next-20190705)
+
+>     defconfig+CONFIG_CPU_BIG_ENDIAN=y:
+>         gcc-8:
+>           meson-gxm-khadas-vim2:
+>               lab-baylibre: new failure (last pass: next-20190705)
+
+>     defconfig+CONFIG_RANDOMIZE_BASE=y:
+>         gcc-8:
+>           meson-gxm-khadas-vim2:
+>               lab-baylibre: new failure (last pass: next-20190705)
+
+It looks like it gets to userspace and then hangs (end of the log
+below).  More details at:
+
+    https://kernelci.org/boot/id/5d2ed6ad59b514a0e649e937/
+
+Compared to working boots in mainline it looks like the main difference
+is the addition of the panfrost driver but that could be a complete red
+herring.
+
+08:00:51.567064  [   14.844034] Run /init as init process
+08:00:51.590902  Starting syslogd: OK
+08:00:51.645937  Starting klogd: OK
+08:00:51.650193  Populating /dev using udev: [   14.894327] udevd[214]: starting version 3.2.7
+08:00:51.651409  [   14.894906] random: udevd: uninitialized urandom read (16 bytes read)
+08:00:51.652703  [   14.899720] random: udevd: uninitialized urandom read (16 bytes read)
+08:00:51.653946  [   14.905958] random: udevd: uninitialized urandom read (16 bytes read)
+08:00:51.655192  [   14.913972] udevd[214]: specified group 'kvm' unknown
+08:00:51.656495  [   14.920901] udevd[215]: starting eudev-3.2.7
+08:00:51.790817  [BL31]: tee size: 0
+08:00:51.820838  [   15.089001] meson-gx-mmc d0070000.mmc: allocated mmc-pwrseq
+08:00:51.860744  [   15.106647] meson8b-dwmac c9410000.ethernet: PTP uses main clock
+08:00:51.865096  [   15.107020] meson8b-dwmac c9410000.ethernet: no reset control found
+08:00:51.866318  [   15.114743] meson8b-dwmac c9410000.ethernet: User ID: 0x11, Synopsys ID: 0x37
+08:00:51.867556  [   15.120434] meson8b-dwmac c9410000.ethernet: 	DWMAC1000
+08:00:51.868872  [   15.123055] panfrost d00c0000.gpu: clock rate = 666666666
+08:00:51.870123  [   15.125580] meson8b-dwmac c9410000.ethernet: DMA HW capability register supported
+08:00:51.871365  [   15.126609] meson-drm d0100000.vpu: Queued 2 outputs on vpu
+08:00:51.903478  [   15.131066] panfrost d00c0000.gpu: mali-t820 id 0x820 major 0x1 minor 0x0 status 0x0
+08:00:51.907981  [   15.138262] meson8b-dwmac c9410000.ethernet: RX Checksum Offload Engine supported
+08:00:51.909205  [   15.138269] meson8b-dwmac c9410000.ethernet: COE Type 2
+08:00:51.910449  [   15.143806] panfrost d00c0000.gpu: features: 00000000,101e76ff, issues: 00000000,24040400
+08:00:51.911698  [   15.145058] Bluetooth: Core ver 2.22
+08:00:51.913009  [   15.145170] NET: Registered protocol family 31
+08:00:51.914253  [   15.145175] Bluetooth: HCI device and connection manager initialized
+08:00:51.919829  [   15.145197] Bluetooth: HCI socket layer initialized
+08:02:48.216650  ShellCommand command timed out.: Sending # in case of corruption. Connection timeout 00:04:20, retry in 00:02:10
+08:02:48.321432  #
+
+--hYooF8G/hrfVAmum
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl0vDFgACgkQJNaLcl1U
+h9AmnAf6A2RyN/7aPmjn2gXehhdC8E4x5bEjyk2uiDng1fvvwtm1sj+3wlvUMRPX
+t8oF0pAgE2WzeVc5xAfLk6T0WHeKXuRR3wzKXobQL1fcABuaJIMLEMsgadcPIiMD
+wrL5VJ2bjkrascfygj+e1o1cdSTXweJ/nMAYeQXJ+S1vfxMgh1d1lC8X7R4prk+Z
+Rx4BZEjAG+uCNFV9lbZrfnZ3ObVL9xa3uLBiswEcHW4fgXC6iVsnKfU5ZFJFmxks
+kpCnj7Gs3KHCVrLpZ4P6sr1sveQ+tyJ+iOXaSYP53GX0dNXPfI9hpgGJet0pVecJ
+/rg0vgOW7d+ypGJXJZjY0FTqvL3wFg==
+=7gnR
+-----END PGP SIGNATURE-----
+
+--hYooF8G/hrfVAmum--
+
+
+--===============3045732315254902107==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3045732315254902107==--
+
