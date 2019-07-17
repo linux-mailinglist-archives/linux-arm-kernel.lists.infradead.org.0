@@ -2,63 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E1256B9A8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 12:03:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2972E6B9B8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 12:05:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lyF4cebQGaVGCqnEveNwQSZs6uEovYvMK007bCtSfL0=; b=oCMSq/+tF2Lc6m
-	6l1JQPgCOGZLXdNQnE7cJ/RHuxIQIivY3SZkcnABjoMfb0I8cb8Gq5UoqXAUiJPXo4zL4QxdjN2IJ
-	ydxBa8Q/yuoWYggQ4He7OWcH8Z3liK8kTO182jf9SrkNp4G8C9LHBYeV8yfF8qLwj3ME1MSD4X4E7
-	r/RlXERKwZTg3nmlCOEDJ6eZ91PQUIkIQPma+68075lx23govtMMJnlT3RFa4GGapqwvWjA8Bw5Sd
-	VlylRwwvlKhmJKNnncH8ktsdp9uRyqLfzB3GrxbptZKfSI661c7LZDuAeFzZS4pGbazbOgwFgzMXN
-	b7pmJJnly62P2bL37VwA==;
+	List-Owner; bh=09QyOL4Vg+PrqpSi001iPpr2E3snWFmBMif1QOsleN0=; b=XqpaGFtGtbUnuu
+	TJcKAS38NOkE6+Vl+G8Cu/+4eu6GOtGbR+SkIA962U5W49TrJyd01NR35CLKTAjP5+OxfbwXBEiLk
+	aO2bqS7CXLXgHZQjzabi5yj2nXpuUxgtERhLGHkh4fnRZp9uK+iQRBBvwp+bBuZzUTPxdbUnj3G5p
+	tL6pOXxZw5jy0IK3Ksl0obSJ01Zdn5WMPPBFjW9P16CUUNZqiXRz39Sp8kN579py5QALJLIIuuDXP
+	SqPeBwWR5KFGOp3auGpCZsWo99/rLJcovplJCnGDdvTfnF3Y6H2C8jAaEcekXzNgI3dws8G4An1yF
+	v6rg1DkLUMt5IXnjexSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hngmG-0004jP-L9; Wed, 17 Jul 2019 10:03:12 +0000
+	id 1hngoD-0005E2-Cx; Wed, 17 Jul 2019 10:05:13 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hngm5-0004j2-Vw
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 10:03:03 +0000
-Received: from mail-lf1-f41.google.com (mail-lf1-f41.google.com
- [209.85.167.41])
+ id 1hngnq-0005DF-N1
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 10:04:51 +0000
+Received: from mail-lj1-f175.google.com (mail-lj1-f175.google.com
+ [209.85.208.175])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id F235E21848
+ by mail.kernel.org (Postfix) with ESMTPSA id 209BB2182B
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 17 Jul 2019 10:03:00 +0000 (UTC)
+ Wed, 17 Jul 2019 10:04:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563357781;
- bh=NCz+/qyUYefzxnwUGAYv3ttjqTH35P9ZY0JImQSzg+k=;
+ s=default; t=1563357890;
+ bh=cxrHAxpbFgJEYGfTBwEGfvIpkQdM8v6E7N7v7YKfsyo=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=sOofdmjAyc3VxH7un9C/GsVWaOAuRKhoZen/6U8N0nnxZcKOoQa7R8eX0+vRiTxTB
- tXXHlEd9es9CZNRR7G3eSkRRnXbiOSWpNQJ49Sftyyh9PdcN9ivmwWP+lJTNJy7mtg
- Qe40JNLJi0cJ4RvUdWSdBUkm82nwZxugeHZLcwOo=
-Received: by mail-lf1-f41.google.com with SMTP id b29so8742527lfq.1
+ b=ce0Djo5SGxrZvFuUFJCysw5byh7FkXoy/2aP1lYiuGvzZlM3HfFHuO+EnGWglmaTM
+ TyRksP1eePtU/ApVj16anmAtz6ktbuSQIUP/6H6yGnSCLYPq4Plw+1ZtRu41mCmGmT
+ TmBD/RuS/K79iuEnAsGLsyc+xslh5oFzU6sQsLpQ=
+Received: by mail-lj1-f175.google.com with SMTP id h10so23030858ljg.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 17 Jul 2019 03:03:00 -0700 (PDT)
-X-Gm-Message-State: APjAAAUC9BHqvz9MZrOWdcGTk5OLG4t75qUj/ttAWJTIs6wBouL05gYo
- GWhOHWkIFPqEDYrijMG0PBTIlS8Jdor+GumSczA=
-X-Google-Smtp-Source: APXvYqyfLXa1g6BfJ5mBA85Kb0T2X5T4F2Y48Ege4Izqj7dAHq+EW8Ogwx/5Kmpks+6IYktMG7J9ZoO5iZ63myk+05Q=
-X-Received: by 2002:ac2:4891:: with SMTP id x17mr17980541lfc.60.1563357779221; 
- Wed, 17 Jul 2019 03:02:59 -0700 (PDT)
+ Wed, 17 Jul 2019 03:04:50 -0700 (PDT)
+X-Gm-Message-State: APjAAAWcwJhvEGglB/OOtjaEr0wBWjc98RnPoyX8Af7ZQI9qK51smJ2q
+ /1z1MsxpI4p94/M2yXRYwlIY48DW6I0RDeXoVsY=
+X-Google-Smtp-Source: APXvYqyUF6RwWmtpq2St1SUUGe05KtJonxRDAPvTHfsETJ19YFTa2yjFxeqxPAGfIR3HLu1rlVn3N4W4P43GH7prZcw=
+X-Received: by 2002:a2e:124b:: with SMTP id t72mr20711008lje.143.1563357888437; 
+ Wed, 17 Jul 2019 03:04:48 -0700 (PDT)
 MIME-Version: 1.0
-References: <CGME20190715124509eucas1p1f2e44af951158fbef1a245467956ef93@eucas1p1.samsung.com>
+References: <CGME20190715124454eucas1p1cd37552b222539b02629cb52e646ae29@eucas1p1.samsung.com>
  <20190715124417.4787-1-l.luba@partner.samsung.com>
- <20190715124417.4787-44-l.luba@partner.samsung.com>
-In-Reply-To: <20190715124417.4787-44-l.luba@partner.samsung.com>
+ <20190715124417.4787-26-l.luba@partner.samsung.com>
+In-Reply-To: <20190715124417.4787-26-l.luba@partner.samsung.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
-Date: Wed, 17 Jul 2019 12:02:47 +0200
-X-Gmail-Original-Message-ID: <CAJKOXPcsH9YRzLOA1P5xc0Y3Zqh9+5o0RSxP-JcYOVEm7eO0Sw@mail.gmail.com>
-Message-ID: <CAJKOXPcsH9YRzLOA1P5xc0Y3Zqh9+5o0RSxP-JcYOVEm7eO0Sw@mail.gmail.com>
-Subject: Re: [PATCH v1 43/50] ARM: dts: exynos: add bus_isp in Exynos5422
+Date: Wed, 17 Jul 2019 12:04:36 +0200
+X-Gmail-Original-Message-ID: <CAJKOXPcfqp2mUXW70=puti7mf0S5LoXF4hFQt5-9tvCgLzjknQ@mail.gmail.com>
+Message-ID: <CAJKOXPcfqp2mUXW70=puti7mf0S5LoXF4hFQt5-9tvCgLzjknQ@mail.gmail.com>
+Subject: Re: [PATCH v1 25/50] ARM: dts: exynos: add 300MHz to bus_disp1_fimd
+ in Exynos5420
 To: Lukasz Luba <l.luba@partner.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_030302_060630_7101C729 
-X-CRM114-Status: GOOD (  16.39  )
+X-CRM114-CacheID: sfid-20190717_030450_768931_97D5FBEF 
+X-CRM114-Status: GOOD (  10.47  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -102,54 +103,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 15 Jul 2019 at 14:45, Lukasz Luba <l.luba@partner.samsung.com> wrote:
+On Mon, 15 Jul 2019 at 14:44, Lukasz Luba <l.luba@partner.samsung.com> wrote:
 >
-> Add bus_isp which changes ACLK400_ISP clock speed according to the bus
-> documentation in the documentation. The bus_isp OPP table has been
-> aligned to the new parent rate.
+> According to the documentation max frequency for ACLK300_DISP1 is 300MHz.
+> Add an OPP which makes it possible to use the full performance when needed.
 
-Title and msg needs fixing.
+Squash it with #23.
 
-Please squash it with patch 18.
-
-Best regards,
+BR,
 Krzysztof
-
-> This patch sets the proper parent and
-> picks the init frequency before the devfreq governor starts working.
-> It sets also parent rate (DPLL to 1200MHz).
->
-> Signed-off-by: Lukasz Luba <l.luba@partner.samsung.com>
-> ---
->  arch/arm/boot/dts/exynos5422-odroid-core.dtsi | 12 ++++++++++++
->  1 file changed, 12 insertions(+)
->
-> diff --git a/arch/arm/boot/dts/exynos5422-odroid-core.dtsi b/arch/arm/boot/dts/exynos5422-odroid-core.dtsi
-> index 990fe03fce75..852cb3dd495d 100644
-> --- a/arch/arm/boot/dts/exynos5422-odroid-core.dtsi
-> +++ b/arch/arm/boot/dts/exynos5422-odroid-core.dtsi
-> @@ -166,6 +166,18 @@
->         status = "okay";
->  };
->
-> +&bus_isp {
-> +       devfreq = <&bus_wcore>;
-> +       assigned-clocks = <&clock CLK_MOUT_ACLK400_ISP>,
-> +                         <&clock CLK_MOUT_SW_ACLK400_ISP>,
-> +                         <&clock CLK_DOUT_ACLK400_ISP>,
-> +                         <&clock CLK_FOUT_DPLL>;
-> +       assigned-clock-parents = <&clock CLK_MOUT_SCLK_DPLL>,
-> +                                <&clock CLK_DOUT_ACLK400_ISP>;
-> +       assigned-clock-rates = <0>, <0>, <400000000>, <1200000000>;
-> +       status = "okay";
-> +};
-> +
->  &cpu0 {
->         cpu-supply = <&buck6_reg>;
->  };
-> --
-> 2.17.1
->
 
 _______________________________________________
 linux-arm-kernel mailing list
