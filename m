@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E6426C1C5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 21:55:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DEC206C1C1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 21:53:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,29 +11,29 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=R0ZfjjW40uUyvpHBUbMJNrYXY2UXCYo9H4Eh/GcQCRc=; b=imSQ1yhG64p0KLg9ev5A0rMPZB
-	RpcrgRDMIFe1CTnVi9krT0O/KsEB8bAwPmPC9aUpcG5buzKzF4wdQ1XPwfD6Cg9hl+M1Zt9NrQo96
-	K3dMGouhiDmBD9llQjgVEPHwsfi84ZeUUPNpCTcEJiGkvEMPFjXRryPqjmnmjRnN3zIHbVLcMvpd+
-	BpUHXFzuTGvEcy/lOOJdUvK03Z/7sSpwCBGLKX/IhRGsS3qGhIBocpXa6Fqz1CTj2LP33cXL1i01z
-	OcIB37Rw8EFLstl9pDueXZyt0bBFmp83dOhPjneTkpk2X6RYIsDsRx5zrRcLdsqoX5APaP3ibn02T
-	YMSta90A==;
+	bh=gR3m9PKnWaXyAAzz437Qe61VFuNiL2V8GQxu26INjaY=; b=JpeKULAtKSfJV4YaNybKJt1O9n
+	GaUxNti9KSPFziCzW9/jDIIqXu+lA51rPdaCYW61F/SXBxkp9PzQ7giMhdypRk6OE61xkb7EwECZL
+	DkOc3ZrYJ6C5rp9ODju9sVLAqRq7mWB1LWt0fmMyfR3saLcoWxhQkYgZhXYrN7WHp5yUOlrV4rtvk
+	HJeeU3UaQ0DTwaIkvWNMlvdgiaQF/iDl+EjItZChD3KeoOTfb4FUTgE6+CLB8gaM7MQywmcZu5/FK
+	6AEyH8dS1s9tjio44ZGqtkz6/GtfZhfPWa9fmCmCxttiszb8Hp2JUzNtnCznBf3PBJoFy+3zqhWno
+	eM6k9qww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnq1F-00064z-ME; Wed, 17 Jul 2019 19:55:17 +0000
+	id 1hnpzx-0004sq-Dr; Wed, 17 Jul 2019 19:53:57 +0000
 Received: from mout.gmx.net ([212.227.17.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnpx4-0002tS-QO; Wed, 17 Jul 2019 19:51:05 +0000
+ id 1hnpx3-0002tR-No; Wed, 17 Jul 2019 19:51:03 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
  s=badeba3b8450; t=1563393046;
- bh=MjYDuc6QsIM+npV5DIdNaHuG0Osttr0SwYf0sdv6rIE=;
+ bh=WOVNn//5VSTYo4vhSDrls8pRJwZusUo3NZilyrpEYh0=;
  h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=bmYIaZHGx5y2WkhrQTWNwaY5vdQpDp0siZAv+UndP0QpacyT/9gpwuDTeEtuDFc2H
- EzgGM9kHluVPyTpfU+N3Ir6eZHUg0RMP6N68yd3xpPoerK3P3qUlHzVYRcemLlrBLo
- ZTfOlNLeO/3bv3iuhF+jqg9XW6rzYhiADTjDH+n0=
+ b=g5u7Yi3IMzHegEU2nfFoRDxcxJ6E1kSVDtFMnCi2hfviO4+7K94kCtDHOyZJRoZWU
+ 02OBsa+FIjFjSPiWIZnyIwqwx8VJueutplucJbjUC9APezUHIwcB1eSnhNTvYJjZk+
+ ZmEgPtU187ishh4fkb71zdWgUaLW/TB8Fo7Bbyvg=
 X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
 Received: from localhost.localdomain ([37.4.249.103]) by mail.gmx.com
  (mrgmx101 [212.227.17.168]) with ESMTPSA (Nemesis) id
- 0Lfolq-1iFxuB3kL4-00pNjB; Wed, 17 Jul 2019 21:50:46 +0200
+ 0Lyi0B-1iYKGX2Ait-01658K; Wed, 17 Jul 2019 21:50:46 +0200
 From: Stefan Wahren <wahrenst@gmx.net>
 To: Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
  Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
@@ -43,38 +43,37 @@ To: Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
  Michael Turquette <mturquette@baylibre.com>,
  Stephen Boyd <sboyd@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
  Adrian Hunter <adrian.hunter@intel.com>, Mark Brown <broonie@kernel.org>
-Subject: [PATCH RFC 10/18] pinctrl: bcm2835: bcm7211: Add support for 7211
- pull-up functionality
-Date: Wed, 17 Jul 2019 21:50:18 +0200
-Message-Id: <1563393026-17118-11-git-send-email-wahrenst@gmx.net>
+Subject: [PATCH RFC 11/18] pinctrl: bcm2835: Fix BCM7211 pinconf handling
+Date: Wed, 17 Jul 2019 21:50:19 +0200
+Message-Id: <1563393026-17118-12-git-send-email-wahrenst@gmx.net>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1563393026-17118-1-git-send-email-wahrenst@gmx.net>
 References: <1563393026-17118-1-git-send-email-wahrenst@gmx.net>
-X-Provags-ID: V03:K1:jsna6FmkwWfK0Sozkjk0lkfkTYaHeb7wn5FR1K/E07/BZkelD0W
- u0Ca3BGKkiOAdkz/djPgS9xnYGj7fWM+1/1dA+8l56a5h6//Bqou29lU4sFuf/1N9DzGvIr
- AepyXGAzE3f/zmrECcqkLHZVtua/stCGo+p5rmNa5e+VOiGtzgOhrv8MciEKXlxdRNR5Q/A
- 39MrSXyc1/wql7D1VZUXA==
+X-Provags-ID: V03:K1:q340osXNt2MIqoSmFRq896014RbMyi72mNiv8JYjo0i2OK0dvz6
+ 8QqUWu7jdo9MJbinU2FVN6yC6/TeldleHoOflJ/uIEkGZqkMDr+2FdoIMrIDtbU3/pd95x9
+ +GB7AAcdgftshHhjhH/r2bcO8GxUrQliEegZ95qap9h4PcQjsBxHjkVos5/c4EZiJEJtiZi
+ lLq4qRDbtHZ1V6/jjmCfA==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:CANcB4XUUT4=:NHucmbzKfiyJLkmOYVjID1
- tSSxwf/rs9uLOnteIWSsN+0V7cmt6HpzpuZZ7LjgI5ZGSJcAVyjHPz1Sabt8kcDsxtOqj/FHd
- o4Cmt+n3ejeSMqr4XP/TrUTempwNlFstgm5d/tz/4EMfsRIzgoaprUGULH8Eq1MzoZFVJ2c3h
- 5XmOCbhjVMhKQCWZi6rGy9YfHxgBhvCGRfUubciB0EU9gMqVlXHEYEd6/wrWh3procI17whx6
- AyyNhjpgmz9Gl0eAQiGEdXz5O0kMX0PSBw2dTZNcNtUpPgmo3k2Xh6KOaVLP6ZMC566WAdnlW
- 5wI6/F1vwG8NcjUXpUgN11HqF05jJMqIi4NkJ8xGPTT6BmRcko9XSB+IT+McuH8SlR7okRCQk
- LAxM6qTyH3vxQvRcMinWy6JIr4+jj8S1KiXcP67Pmpo//BYW3I0u2HIP3sa+g4cs0LsZ7hpoa
- h0nzRNOZp4PSFqIVvbbyKJLZSJbzvja1ryEQOdAYHg/OKYC8z3aEF8yu8GtW0O0CZ0guW1Lts
- nx7nByitTlgZd+rC5zS/ZUckDdEa942VSvDuy77ItNogJzJ/zx/y6LWQthcuyNMwbPEflZKq1
- aJ5Hty/3VzTocu1nRvNhei9Xoq6K6kx8x4XDWs0eSNDlaJQayT9SySdgZsXE0b2r2uFeU1N5a
- GJKc4bV/gGneKj5lhqdrH3LuNybWYA6qcTQODKBpdaorV87WcSyJd7qom2ALGHOGdwH0wqH0y
- gacVCU+2LEZ1lqKgPNik0+F+5BJeWRM/pulqPl7LC8ClbK/b2RPGs6aWG9Z15PQpw+TSOfKw/
- C3sdjH1f7m4yIDPV2Rpk9MmDjG8InaXdG37SVGsTM9FNChPAVsmuRDo+xnOZgTbHAQhhRnoVa
- mwzEaelhate8zbzK9A62gZfJM6OtDD2uQeo/JUVAXZdy6162Y7RS1Yq8Eq1/qe0+fQ/bgKWQa
- c4BQV5OyM5KnCSL/qeXX9i/p9X/4kzjcbeUyItWLjelf5lJssPkKO6dHqqE1GSj6ZG1MkgmJw
- eCImzx7opUsRCVWbAIjGUUoU0kJmxGZ8kMTWLvkMzIKCBvVeP8qi5msgaR6rXbbJD9W5NIFMC
- ZOAiGf1WKzLLa4=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:BXBDGoF3MMk=:Sy4/oQ1oFBn4ZaIfiWMWvF
+ 9lX86q5Ks1VH96ihXXsbC/5V85o4dnhP6rfLb8tTsjC1uMR8yr7AJdDodBc8r5Y+qxewNbkZn
+ Pj5jp3zd8rUYXdkMK/kN3L+JYBUPaV1LaVKDKrIkdp2NZQpLtheMsSfrSrOyZZypcaOnn6ulq
+ tDuNQxJEKfogcIWTG6fMxgbh8SEMiWN0qnfgIpqGuPYX7JgclQY5n6fs30dhYEWetN8/qDPQn
+ ZXzZscRHdgA2lW1C/m8mU2LsT+R8ckkTO1744YQEgl42CfkasbGgcULF5O6KLA12vM83n9wgC
+ jaWbpJUILBaTiaekEpph5jFdtkFmhXPPmyQTQaYvcOSBlnrTBeuhWAtV0G2MndawRznA4nWE8
+ DETodbg0e3jd93fLnW6Nlf3vk/6vcbkmxNDdFZlOAb1XI+a10TbNXm7cdRAgEd2aNcK3Dy0Gb
+ jRrlSuVDvytZwpViH9PXGnrRA/3ob2R5/Vylmng4zRv7RqKoRdKgwkcZhQRGLmM2IvjU8rkiD
+ QNm2vNIlSp6OtjEmHPlOX+yAg69sNCHK9ab8krAGHylMvlsR2V75c6vvY5l3t+LsGRl8/XaDn
+ 2JW+RImM/g5/V12kYlbG9GOBjIzoQ1fIxad6jtZXaEAtnUM3+Ek92ld543pIq5dR4O9wpc5It
+ ylD4R2kIZqtas+Jho79q7zu3qZ/JaoT8B/o0+KDwaZclKBlJ0C+Uro+KyYJD6gbXxgXLO3m/X
+ H9d5pw7HU//dl+J/phja92ZWcJ6zK6e1Dn7jTYTdZbHxSF74dosHErtFFs7N+88KU+L5QmOUo
+ xKLMJtH5dhpi8hE4snu4MRrF5lAUaPH0zQiYinUoyGkAxbMP14JFMkCtgQjIAntqiuOH2HnlF
+ jNAyxdg1XhYRVF6uragysumbTWagkbna0wJ/vN1fLtYdXMyeKcW1V6Bs/KQhRyeRdY2rDwAPM
+ aYpojh3cTNjQCBu/HB5T6Mnfdw/A+meX3VzONkrv/S0GOsyVBGSFbfVRsLUuRb2mRefkFnF1X
+ aZuIZEQtUt80jFG5THjDHFa3J2Bhsr++/BjnvTD/Cm2YynX+QXZA7eKBSF+8U5/Dtp+Gkve3A
+ 01SByvA0ifJ3V4=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_125059_188851_EC8604FD 
-X-CRM114-Status: GOOD (  18.83  )
+X-CRM114-CacheID: sfid-20190717_125058_080498_DC3C6883 
+X-CRM114-Status: GOOD (  12.87  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -104,170 +103,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Al Cooper <alcooperx@gmail.com>, bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, Stefan Wahren <wahrenst@gmx.net>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Al Cooper <alcooperx@gmail.com>
+The BCM7211 pinconf doesn't look correct and behaves differently
+to BCM2835. So fix this accordingly.
 
-The 7211 has a new way of selecting the pull-up/pull-down setting
-for a GPIO pin. The registers used for the bcm2837, GP_PUD and
-GP_PUDCLKn0, are no longer connected. A new set of registers,
-GP_GPIO_PUP_PDN_CNTRL_REGx must be used. This commit will add
-a new compatible string "brcm,bcm7211-gpio" and the kernel
-driver will use it to select which method is used to select
-pull-up/pull-down.
-
-Signed-off-by: Al Cooper <alcooperx@gmail.com>
-Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
 ---
- drivers/pinctrl/bcm/pinctrl-bcm2835.c | 85 ++++++++++++++++++++++++++++++++---
- 1 file changed, 80 insertions(+), 5 deletions(-)
+ drivers/pinctrl/bcm/pinctrl-bcm2835.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/pinctrl/bcm/pinctrl-bcm2835.c b/drivers/pinctrl/bcm/pinctrl-bcm2835.c
-index 183d1ff..35d9f95 100644
+index 35d9f95..029adad 100644
 --- a/drivers/pinctrl/bcm/pinctrl-bcm2835.c
 +++ b/drivers/pinctrl/bcm/pinctrl-bcm2835.c
-@@ -57,15 +57,26 @@
- #define GPAFEN0		0x88	/* Pin Async Falling Edge Detect */
- #define GPPUD		0x94	/* Pin Pull-up/down Enable */
- #define GPPUDCLK0	0x98	/* Pin Pull-up/down Enable Clock */
-+#define GP_GPIO_PUP_PDN_CNTRL_REG0 0xe4 /* 7211 Pin Pull-up/down select */
+@@ -999,12 +999,10 @@ static int bcm7211_pinconf_set(struct pinctrl_dev *pctldev,
 
- #define FSEL_REG(p)		(GPFSEL0 + (((p) / 10) * 4))
- #define FSEL_SHIFT(p)		(((p) % 10) * 3)
- #define GPIO_REG_OFFSET(p)	((p) / 32)
- #define GPIO_REG_SHIFT(p)	((p) % 32)
+ 	for (i = 0; i < num_configs; i++) {
+ 		param = pinconf_to_config_param(configs[i]);
+-		if (param != BCM2835_PINCONF_PARAM_PULL)
+-			return -EINVAL;
+ 		arg = pinconf_to_config_argument(configs[i]);
 
-+#define PUD_7211_MASK		0x3
-+#define PUD_7211_REG_OFFSET(p)	((p) / 16)
-+#define PUD_7211_REG_SHIFT(p)	(((p) % 16) * 2)
-+
- /* argument: bcm2835_pinconf_pull */
- #define BCM2835_PINCONF_PARAM_PULL	(PIN_CONFIG_END + 1)
+ 		/* convert to 7211 value */
+-		switch (arg) {
++		switch (param) {
+ 		case PIN_CONFIG_BIAS_DISABLE:
+ 			arg = BCM7211_PINCONFIG_PULL_NONE;
+ 			break;
+@@ -1014,6 +1012,8 @@ static int bcm7211_pinconf_set(struct pinctrl_dev *pctldev,
+ 		case PIN_CONFIG_BIAS_PULL_UP:
+ 			arg = BCM7211_PINCONFIG_PULL_UP;
+ 			break;
++		default:
++			return -ENOTSUPP;
+ 		}
 
-+enum bcm7211_pinconf_pull {
-+	BCM7211_PINCONFIG_PULL_NONE,
-+	BCM7211_PINCONFIG_PULL_UP,
-+	BCM7211_PINCONFIG_PULL_DOWN,
-+};
-+
- struct bcm2835_pinctrl {
- 	struct device *dev;
- 	void __iomem *base;
-@@ -975,6 +986,55 @@ static const struct pinconf_ops bcm2835_pinconf_ops = {
- 	.pin_config_set = bcm2835_pinconf_set,
- };
-
-+static int bcm7211_pinconf_set(struct pinctrl_dev *pctldev,
-+			       unsigned int pin, unsigned long *configs,
-+			       unsigned int num_configs)
-+{
-+	struct bcm2835_pinctrl *pc = pinctrl_dev_get_drvdata(pctldev);
-+	u32 param, arg;
-+	u32 shifter;
-+	u32 value;
-+	u32 off;
-+	int i;
-+
-+	for (i = 0; i < num_configs; i++) {
-+		param = pinconf_to_config_param(configs[i]);
-+		if (param != BCM2835_PINCONF_PARAM_PULL)
-+			return -EINVAL;
-+		arg = pinconf_to_config_argument(configs[i]);
-+
-+		/* convert to 7211 value */
-+		switch (arg) {
-+		case PIN_CONFIG_BIAS_DISABLE:
-+			arg = BCM7211_PINCONFIG_PULL_NONE;
-+			break;
-+		case PIN_CONFIG_BIAS_PULL_DOWN:
-+			arg = BCM7211_PINCONFIG_PULL_DOWN;
-+			break;
-+		case PIN_CONFIG_BIAS_PULL_UP:
-+			arg = BCM7211_PINCONFIG_PULL_UP;
-+			break;
-+		}
-+
-+		off = PUD_7211_REG_OFFSET(pin);
-+		shifter = PUD_7211_REG_SHIFT(pin);
-+
-+		value = bcm2835_gpio_rd(pc, GP_GPIO_PUP_PDN_CNTRL_REG0 +
-+					(off * 4));
-+		value &= ~(PUD_7211_MASK << shifter);
-+		value |= (arg << shifter);
-+		bcm2835_gpio_wr(pc, GP_GPIO_PUP_PDN_CNTRL_REG0 + (off * 4),
-+				value);
-+	} /* for each config */
-+
-+	return 0;
-+}
-+
-+static const struct pinconf_ops bcm7211_pinconf_ops = {
-+	.pin_config_get = bcm2835_pinconf_get,
-+	.pin_config_set = bcm7211_pinconf_set,
-+};
-+
- static struct pinctrl_desc bcm2835_pinctrl_desc = {
- 	.name = MODULE_NAME,
- 	.pins = bcm2835_gpio_pins,
-@@ -990,6 +1050,18 @@ static struct pinctrl_gpio_range bcm2835_pinctrl_gpio_range = {
- 	.npins = BCM2835_NUM_GPIOS,
- };
-
-+static const struct of_device_id bcm2835_pinctrl_match[] = {
-+	{
-+		.compatible = "brcm,bcm2835-gpio",
-+		.data = &bcm2835_pinconf_ops,
-+	},
-+	{
-+		.compatible = "brcm,bcm7211-gpio",
-+		.data = &bcm7211_pinconf_ops,
-+	},
-+	{}
-+};
-+
- static int bcm2835_pinctrl_probe(struct platform_device *pdev)
- {
- 	struct device *dev = &pdev->dev;
-@@ -997,6 +1069,8 @@ static int bcm2835_pinctrl_probe(struct platform_device *pdev)
- 	struct bcm2835_pinctrl *pc;
- 	struct resource iomem;
- 	int err, i;
-+	const struct of_device_id *match;
-+
- 	BUILD_BUG_ON(ARRAY_SIZE(bcm2835_gpio_pins) != BCM2835_NUM_GPIOS);
- 	BUILD_BUG_ON(ARRAY_SIZE(bcm2835_gpio_groups) != BCM2835_NUM_GPIOS);
-
-@@ -1073,6 +1147,12 @@ static int bcm2835_pinctrl_probe(struct platform_device *pdev)
- 					     bcm2835_gpio_irq_handler);
- 	}
-
-+	match = of_match_node(bcm2835_pinctrl_match, pdev->dev.of_node);
-+	if (match) {
-+		bcm2835_pinctrl_desc.confops =
-+			(const struct pinconf_ops *)match->data;
-+	}
-+
- 	pc->pctl_dev = devm_pinctrl_register(dev, &bcm2835_pinctrl_desc, pc);
- 	if (IS_ERR(pc->pctl_dev)) {
- 		gpiochip_remove(&pc->gpio_chip);
-@@ -1087,11 +1167,6 @@ static int bcm2835_pinctrl_probe(struct platform_device *pdev)
- 	return 0;
+ 		off = PUD_7211_REG_OFFSET(pin);
+@@ -1031,6 +1031,7 @@ static int bcm7211_pinconf_set(struct pinctrl_dev *pctldev,
  }
 
--static const struct of_device_id bcm2835_pinctrl_match[] = {
--	{ .compatible = "brcm,bcm2835-gpio" },
--	{}
--};
--
- static struct platform_driver bcm2835_pinctrl_driver = {
- 	.probe = bcm2835_pinctrl_probe,
- 	.driver = {
+ static const struct pinconf_ops bcm7211_pinconf_ops = {
++	.is_generic = true,
+ 	.pin_config_get = bcm2835_pinconf_get,
+ 	.pin_config_set = bcm7211_pinconf_set,
+ };
 --
 2.7.4
 
