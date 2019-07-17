@@ -2,81 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A3D516BA30
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 12:31:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 316826BA43
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 12:32:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WCLeRJRr5nkIa8kGhZ2F2gUkhQgwTvmg7nJf/4cWLKg=; b=MqaablBMbIk+T2
-	pUGGC8nmVkjeetL1p7C51smyEB2nFFAZCUx86OlkvoEBmeRgPa5xKdyLNtCj/TkMUwvJD6LcxwLaL
-	OSQbpMzSqGrMgS+6PR1f1BAfQdDV44pBVgBqy39+p9ViWFTqqYVMi+fUhi4MOPC2CjuAdVvSoYRrd
-	Heg8XSHtTOFFWmoK5vPs+MKZnf8FZqn7dxr40e253VxhCY1dYeCGEMAmVKppHKiDmEZh+JPew3qqJ
-	ddksgZybK21EA2iaFOMAv1rSHc7Tcp+5K+jzXKaYUjqbPVIvkdo3wI33Yn6VO4vLkxJtBIS6bW9b4
-	YnSYypFxgpYOUmqoQxlQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=AY8Gv39tqKXvRByy1LWE4yRQav+TXwxkT3ktggyxi0Q=; b=FXk
+	U+XZdQAo9wwoFTUSFIGUa0j0wKgLJ34cHOrfvj9ue3GOWWkIYolf4N9SgUH9Kb24U+f1y8FzLx1uk
+	BALHukiWtJFJl22hEW073sVqvt/4w/s7t4BBUB9M+QLnJUBPwFgraIe3SkHl6to4ntUj5T/1f/jxh
+	Xd/IaLGA6s4WMAxc7kRDbYWg/Rk2WOPf/rIKBG7oYMUBcnZF58iqathEraO21EYIbzz2e/OqMG5rR
+	jVsAL9//u/IKkalGjfLKz0YS/bMPt9X6vIMApbyzIaU2xquPLciFW7cgghNsKzOluCA43Weg5qqMq
+	317/A6yymgX4FMJpOtE7+o2PZ3Apvzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnhDY-000336-VD; Wed, 17 Jul 2019 10:31:25 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnhDL-00032e-PD
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 10:31:12 +0000
-Received: from mail-lj1-f171.google.com (mail-lj1-f171.google.com
- [209.85.208.171])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2FF8121848
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 17 Jul 2019 10:31:11 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563359471;
- bh=w1TbVMvUz2tK6FJesNjUIqjiZRhlXxyRUlrQtX3Zs/A=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=1aRaZgzMNwMc/cSnLPza1zZd8YLsXbjs8yBoKnyqbgvVFefJs7HEgdAk9k2xSEOvr
- XUWnVRi6oroq7hDBml2YU8Es7DBdc4b3baiyr7cVFWvcTgsDL2WGXNEL92hwRVKOsv
- t5FZ7capFlHWNOZBKFPhMEfomGeykqsK4zlnreJ8=
-Received: by mail-lj1-f171.google.com with SMTP id v24so23115385ljg.13
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 17 Jul 2019 03:31:11 -0700 (PDT)
-X-Gm-Message-State: APjAAAUBr3tSa8KWQn0pLyJFvlQltA6Rof0RrbVpJdNWhH5bHWkDoDTV
- rVIFH8zI11OLOm0ZXc2nBYxxYi0vOhBV39hmBPo=
-X-Google-Smtp-Source: APXvYqwzoJ1Cxx4+M2lANaxvQqdCL3041mmaU3c52UP1ABWgSTNdykCbwT/nVHS71aYau/97TYX1+5b60Eo6CrIfc68=
-X-Received: by 2002:a2e:50e:: with SMTP id 14mr20713536ljf.5.1563359469475;
- Wed, 17 Jul 2019 03:31:09 -0700 (PDT)
-MIME-Version: 1.0
-References: <CGME20190715124459eucas1p2a1d8795e57a82704ff221567a8810485@eucas1p2.samsung.com>
- <20190715124417.4787-1-l.luba@partner.samsung.com>
- <20190715124417.4787-32-l.luba@partner.samsung.com>
-In-Reply-To: <20190715124417.4787-32-l.luba@partner.samsung.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Date: Wed, 17 Jul 2019 12:30:58 +0200
-X-Gmail-Original-Message-ID: <CAJKOXPf1tZMLPT9pJrM5wM5wUEMdw1iEPVjaz6K3iq17KdbAxw@mail.gmail.com>
-Message-ID: <CAJKOXPf1tZMLPT9pJrM5wM5wUEMdw1iEPVjaz6K3iq17KdbAxw@mail.gmail.com>
-Subject: Re: [PATCH v1 31/50] ARM: dts: exynos: align lowest OPP in bus_jpeg
- in Exynos5420
-To: Lukasz Luba <l.luba@partner.samsung.com>
+	id 1hnhEr-0003Wn-NZ; Wed, 17 Jul 2019 10:32:45 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hnhEg-0003WU-Ap
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 10:32:35 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B648628;
+ Wed, 17 Jul 2019 03:32:33 -0700 (PDT)
+Received: from e112298-lin.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 3B0EF3F71A;
+ Wed, 17 Jul 2019 03:32:32 -0700 (PDT)
+From: Julien Thierry <julien.thierry@arm.com>
+To: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu
+Subject: [PATCH] MAINTAINERS: Update my email address
+Date: Wed, 17 Jul 2019 11:32:15 +0100
+Message-Id: <1563359535-2762-1-git-send-email-julien.thierry@arm.com>
+X-Mailer: git-send-email 1.9.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_033111_832925_B64FA965 
-X-CRM114-Status: GOOD (  16.26  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190717_033234_415365_3F23A1D8 
+X-CRM114-Status: UNSURE (   9.10  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,56 +59,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
- =?UTF-8?B?QmFydMWCb21pZWogxbtvxYJuaWVya2lld2ljeg==?=
- <b.zolnierkie@samsung.com>, sboyd@kernel.org, mturquette@baylibre.com,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- Andrzej Hajda <a.hajda@samsung.com>, Chanwoo Choi <cw00.choi@samsung.com>,
- kyungmin.park@samsung.com, kgene@kernel.org, myungjoo.ham@samsung.com,
- s.nawrocki@samsung.com, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: mark.rutland@arm.com, suzuki.poulose@arm.com, maz@kernel.org,
+ Julien Thierry <julien.thierry@arm.com>, james.morse@arm.com,
+ catalin.marinas@arm.com, will@kernel.org, julien.thierry.kdev@gmail.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 15 Jul 2019 at 14:45, Lukasz Luba <l.luba@partner.samsung.com> wrote:
->
-> Make the lowest OPP frequency possible to set using a clock divider keeping
-> in mind the master clock rate.
+My @arm.com address will stop working in a couple of weeks. Update
+MAINTAINERS and .mailmap files with an address I'll have access to.
 
-As in previous patch - lowest->slowest. I think OPPs are not
-associated with the height or altitude but speed (slow/fast). You
-could also add "frequency" which would make it also correct and
-specific but slightly longer in title.
+Signed-off-by: Julien Thierry <julien.thierry@arm.com>
+---
+ .mailmap    | 1 +
+ MAINTAINERS | 2 +-
+ 2 files changed, 2 insertions(+), 1 deletion(-)
 
-Best regards,
-Krzysztof
+diff --git a/.mailmap b/.mailmap
+index 0fef932..468bced8 100644
+--- a/.mailmap
++++ b/.mailmap
+@@ -116,6 +116,7 @@ John Stultz <johnstul@us.ibm.com>
+ Juha Yrjola <at solidboot.com>
+ Juha Yrjola <juha.yrjola@nokia.com>
+ Juha Yrjola <juha.yrjola@solidboot.com>
++Julien Thierry <julien.thierry.kdev@gmail.com> <julien.thierry@arm.com>
+ Kay Sievers <kay.sievers@vrfy.org>
+ Kenneth W Chen <kenneth.w.chen@intel.com>
+ Konstantin Khlebnikov <koct9i@gmail.com> <k.khlebnikov@samsung.com>
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 91d8700..9525601 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -8808,7 +8808,7 @@ F:	arch/x86/kvm/svm.c
+ KERNEL VIRTUAL MACHINE FOR ARM/ARM64 (KVM/arm, KVM/arm64)
+ M:	Marc Zyngier <marc.zyngier@arm.com>
+ R:	James Morse <james.morse@arm.com>
+-R:	Julien Thierry <julien.thierry@arm.com>
++R:	Julien Thierry <julien.thierry.kdev@gmail.com>
+ R:	Suzuki K Pouloze <suzuki.poulose@arm.com>
+ L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+ L:	kvmarm@lists.cs.columbia.edu
+-- 
+1.9.1
 
->
-> Signed-off-by: Lukasz Luba <l.luba@partner.samsung.com>
-> ---
->  arch/arm/boot/dts/exynos5420.dtsi | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
->
-> diff --git a/arch/arm/boot/dts/exynos5420.dtsi b/arch/arm/boot/dts/exynos5420.dtsi
-> index f2e2e77a86d6..0be799f843dc 100644
-> --- a/arch/arm/boot/dts/exynos5420.dtsi
-> +++ b/arch/arm/boot/dts/exynos5420.dtsi
-> @@ -1250,7 +1250,7 @@
->                         compatible = "operating-points-v2";
->
->                         opp00 {
-> -                               opp-hz = /bits/ 64 <75000000>;
-> +                               opp-hz = /bits/ 64 <100000000>;
->                         };
->                         opp01 {
->                                 opp-hz = /bits/ 64 <150000000>;
-> --
-> 2.17.1
->
 
 _______________________________________________
 linux-arm-kernel mailing list
