@@ -2,67 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C99D86BD1E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 15:36:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 28D2F6BD2A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 15:37:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q/nwTycGpP8Dh9NH/ncckMezwmrDCaoi+9nDcQCI2tM=; b=kpx/wFA/gWmNve
-	GgKIl90ypoRGSSRSXenruNXVpGH6UzYvdngiLvTbZrwypq9kw2EH/yjJC7L2/gFmgroDTuxt6ZZVJ
-	gQ9KkgC3w9ZiLnEdvxf9hhOLsBf74x0Fw2MeXypAloJ1Oy3i/73ynEj430HxOYeT6vNE3J2ous83E
-	ZFr7neokcPrXvWO6kZYzr0glQkQ3lxU5FM6W8byhZxgyd5vX3T4Yxd+jT6jkv66q+uzZp32KvhThb
-	yk8I51QLQ/1XK3Wf+6Qo//mnl/0/zNluvtlzmew6Q7hXefV6cFsAgZ49bYm/uXKa40uTzNG2ScYRm
-	Da4/ZdPZU0x+MbEyffUA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Gk9TOTsD/fUBNg3BEaE1NPeqx8IE0CE2Jec4zjT5V6o=; b=CBaxEIjaOCL6cr
+	W5e2mGmwKwCMoYbeGQVpTH0N3tPmrsHKdualbKZgtwH9kHd1orWdzxVtyc1R9P8fs8d/AA5EFdJgX
+	o1D6UVtR00+lgEuC4aJu5ASp729HZYHvB06RIJUuAjDbhC30+nIUc6EkJifSz2n9FkOt4F1QvYgr2
+	2/r65j5MpBgUc/T7fzze1ukm77RLk+UOrnFD6eFCRq2WUVJtli2hgZNSSZTuPxEC2gq/HoFGCvuUc
+	+apbQSWn/WQWw38AR+n8yR+NmP9YR1A4rv00M1yOdmqKDljZELq1ni0wKtgbnOKgcsTD6dKEQ3FWH
+	K97KpQduiRb9EVzS80Jg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnk6A-0001l9-2s; Wed, 17 Jul 2019 13:35:58 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1hnk79-00025z-2L; Wed, 17 Jul 2019 13:36:59 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnk61-0001kA-SD
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 13:35:51 +0000
-Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
- [10.5.11.14])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id EFE3159465;
- Wed, 17 Jul 2019 13:35:48 +0000 (UTC)
-Received: from llong.remote.csb (dhcp-17-160.bos.redhat.com [10.18.17.160])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 85BC65DA34;
- Wed, 17 Jul 2019 13:35:46 +0000 (UTC)
-Subject: Re: [PATCH v3 3/5] locking/qspinlock: Introduce CNA into the slow
- path of qspinlock
-To: Peter Zijlstra <peterz@infradead.org>
-References: <20190715192536.104548-1-alex.kogan@oracle.com>
- <20190715192536.104548-4-alex.kogan@oracle.com>
- <9fa54e98-0b9b-0931-db32-c6bd6ccfe75b@redhat.com>
- <20190717074435.GU3419@hirez.programming.kicks-ass.net>
-From: Waiman Long <longman@redhat.com>
-Organization: Red Hat
-Message-ID: <378093ad-46cc-7ecb-5a06-1e22ee5ce4a1@redhat.com>
-Date: Wed, 17 Jul 2019 09:35:46 -0400
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ id 1hnk70-000251-0z
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 13:36:51 +0000
+Received: by mail-pf1-x442.google.com with SMTP id t16so10844148pfe.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 17 Jul 2019 06:36:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=upJur9hX33jRa5ZDAABYWCcVNIU4OKrA323sUj0kiJ0=;
+ b=jU/Zat9i+mrs8cSnCYXrBiEONUz0WXxyKyOECIIPiTvG8WEhtGZGjK61290IX8o36U
+ OrHTHQ7Woyg/qn3+sukX8RWKFmT/Ab3vSFlM0FM2BRuiucJNWXV94DF4e2NhGQgdA44A
+ dT08TPfZUZgkz0of54cXYItyNEHlQbHBkArsYbqcDoUXDHAB+kz50O9ewS939NtAQV8u
+ N3pg+MG4dZM9J1oQTBELA9KEuGXZuE94dTh2nx4VJ6oW11nUXuKKdq/o5lVXbnas7dEB
+ 7eGFT9GZTTNoP+bU6YviC4h7qnZidfElkMDjIpsDOMoPQb/nzifgWXLs7MlD24BgMlQq
+ Xslw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=upJur9hX33jRa5ZDAABYWCcVNIU4OKrA323sUj0kiJ0=;
+ b=k3hQmSYDGrMCisRjPrEGBTdJ/Li9S8pdZgKmPlC7EGyE5cx/piaMh4n1m1grlC/6hb
+ 9LfnvyzKWyL0Yh9A+F5cKLAg+13+x49kMeWNNsJwP7CSHQvNt7cICOpE7cNFtePYM+Ri
+ ItmSlJMblH9MdV8Oy4TjvBS/cQIeSY4NhEcdOC7hfhqMSiOOCKcdfEjpgLRqdCX0XgF4
+ dVRRfjlkkCpOehGSdoikkCH3oc3lIVUGpUG87kDqM4p4cLFwjPDpFv+1elnC74jjD4nZ
+ uqOvsW/TgU3qxQqIUjnx/vak5VSOZSx2RVkik1a6gFox6t6ISltIkgXyGZ3ogBYsuKer
+ KShg==
+X-Gm-Message-State: APjAAAWlI5kSeFsSBEiG5G/SVP+5h+tytnmYhOG+AOOQP1AB6ufSDuiN
+ gIyUCFwZIk77ObSK9N9yMPw96JPX1T4SrCyl1WnGxw==
+X-Google-Smtp-Source: APXvYqz7m/UfmCxQEvGyEZmLKWfGDEQqrP2qzxF/oMVv3Ek5NDX+f4ncbRdtOgqzhkxO4Lp3vwbZe7MPyGJ1vZM4Wx0=
+X-Received: by 2002:a17:90a:2488:: with SMTP id
+ i8mr43162554pje.123.1563370608796; 
+ Wed, 17 Jul 2019 06:36:48 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190717074435.GU3419@hirez.programming.kicks-ass.net>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.39]); Wed, 17 Jul 2019 13:35:49 +0000 (UTC)
+References: <cover.1561386715.git.andreyknvl@google.com>
+ <ea0ff94ef2b8af12ea6c222c5ebd970e0849b6dd.1561386715.git.andreyknvl@google.com>
+ <20190624174015.GL29120@arrakis.emea.arm.com>
+ <CAAeHK+y8vE=G_odK6KH=H064nSQcVgkQkNwb2zQD9swXxKSyUQ@mail.gmail.com>
+ <20190715180510.GC4970@ziepe.ca>
+ <CAAeHK+xPQqJP7p_JFxc4jrx9k7N0TpBWEuB8Px7XHvrfDU1_gw@mail.gmail.com>
+ <20190716120624.GA29727@ziepe.ca>
+ <CAAeHK+xPPQ9QjAksbfWG-Zmnawt-cdw9eO_6GVxjEYcaDGvaRA@mail.gmail.com>
+ <20190717115828.GE12119@ziepe.ca>
+In-Reply-To: <20190717115828.GE12119@ziepe.ca>
+From: Andrey Konovalov <andreyknvl@google.com>
+Date: Wed, 17 Jul 2019 15:36:37 +0200
+Message-ID: <CAAeHK+yyQpc6cxyVeUUWUwiQYy8iAgVXmOVO=EQYSNzy9G8Q0A@mail.gmail.com>
+Subject: Re: [PATCH v18 11/15] IB/mlx4: untag user pointers in mlx4_get_umem_mr
+To: Jason Gunthorpe <jgg@ziepe.ca>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_063549_952744_9D6F2276 
-X-CRM114-Status: GOOD (  12.19  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190717_063650_100448_F6CB722E 
+X-CRM114-Status: GOOD (  24.92  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,48 +105,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, guohanjun@huawei.com, arnd@arndb.de,
- dave.dice@oracle.com, jglauber@marvell.com, x86@kernel.org,
- will.deacon@arm.com, linux@armlinux.org.uk, linux-kernel@vger.kernel.org,
- rahul.x.yadav@oracle.com, mingo@redhat.com, bp@alien8.de, hpa@zytor.com,
- Alex Kogan <alex.kogan@oracle.com>, steven.sistare@oracle.com,
- tglx@linutronix.de, daniel.m.jordan@oracle.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org,
+ Linux Memory Management List <linux-mm@kvack.org>,
+ Khalid Aziz <khalid.aziz@oracle.com>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Christoph Hellwig <hch@infradead.org>, Dmitry Vyukov <dvyukov@google.com>,
+ Dave Martin <Dave.Martin@arm.com>, Evgeniy Stepanov <eugenis@google.com>,
+ linux-media@vger.kernel.org, Kevin Brodsky <kevin.brodsky@arm.com>,
+ Kees Cook <keescook@chromium.org>, Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yishai Hadas <yishaih@mellanox.com>, LKML <linux-kernel@vger.kernel.org>,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gNy8xNy8xOSAzOjQ0IEFNLCBQZXRlciBaaWpsc3RyYSB3cm90ZToKPiBPbiBUdWUsIEp1bCAx
-NiwgMjAxOSBhdCAxMDoxNjoyOVBNIC0wNDAwLCBXYWltYW4gTG9uZyB3cm90ZToKPj4gIEEgc2lt
-cGxlIGdyYXBoaWMgdG8gaWxsdXN0cmF0ZSB0aG9zZSBxdWV1ZXMgd2lsbCBoZWxwIHRvbywgZm9y
-IGV4YW1wbGUKPiBWZXJ5IG11Y2ggeWVzIQo+Cj4+IC8qCj4+IMKgKiBNQ1MgbG9jayBob2xkZXIK
-Pj4gwqAqID09PT09PT09PT09PT09PQo+PiDCoCrCoMKgwqAgbWNzX25vZGUKPj4gwqAqwqDCoCAr
-LS0tLS0tLS0rwqDCoMKgwqDCoCArLS0tLSvCoMKgwqDCoMKgwqDCoMKgICstLS0tKwo+PiDCoCrC
-oMKgIHwgbmV4dMKgwqAgfCAtLS0+IHxuZXh0fCAtPiAuLi7CoCB8bmV4dHwgLT4gTlVMTMKgIFtN
-YWluIHF1ZXVlXQo+PiDCoCrCoMKgIHwgbG9ja2VkIHwgLSvCoMKgICstLS0tK8KgwqDCoMKgwqDC
-oMKgwqAgKy0tLS0rCj4+IMKgKsKgwqAgKy0tLS0tLS0tK8KgIHwKPj4gwqAqwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoCB8wqDCoCArLS0tLSvCoMKgwqDCoMKgwqDCoMKgICstLS0tKwo+PiDC
-oCrCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICstPiB8bmV4dHwgLT4gLi4uwqAgfG5leHR8
-IC0+IFjCoMKgwqDCoCBbU2Vjb25kYXJ5IHF1ZXVlXQo+PiDCoCrCoMKgwqAgY25hX25vZGXCoMKg
-wqDCoMKgwqAgKy0tLS0rwqDCoMKgwqDCoMKgwqDCoCArLS0tLSsKPj4gwqAqwqDCoCArLS0tLS0t
-LS0qwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgXgo+PiDCoCrC
-oMKgIHwgdGFpbMKgwqAgfCAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tKwo+PiDCoCrCoMKgICstLS0t
-LS0tLSrCoMKgwqAKPiBBbG1vc3Q7IElJVUMgdGhhdCBjbmFfbm9kZSBpcyB0aGUgc2FtZSBhcyB0
-aGUgb25lIGZyb20gbG9ja2VkLCBzbyB5b3UKPiBlbmQgdXAgd2l0aCBzb21ldGhpbmcgbGlrZToK
-Pgo+PiDCoCrCoMKgwqAgbWNzX25vZGUKPj4gwqAqwqDCoCArLS0tLS0tLS0rwqDCoMKgwqDCoCAr
-LS0tLSvCoMKgwqDCoMKgwqDCoMKgICstLS0tKwo+PiDCoCrCoMKgIHwgbmV4dMKgwqAgfCAtLS0+
-IHxuZXh0fCAtPiAuLi7CoCB8bmV4dHwgLT4gTlVMTMKgIFtNYWluIHF1ZXVlXQo+PiDCoCrCoMKg
-IHwgbG9ja2VkIHwgLSvCoMKgICstLS0tK8KgwqDCoMKgwqDCoMKgwqAgKy0tLS0rCj4+IMKgKsKg
-wqAgKy0tLS0tLS0tK8KgIHwKPj4gwqAqwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB8wqDC
-oCArLS0tLS0tLS0tK8KgwqDCoMKgwqDCoMKgwqAgKy0tLS0rCj4+IMKgKsKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqAgKy0+IHxtY3M6Om5leHR8IC0+IC4uLsKgIHxuZXh0fCAtPiBOVUxMwqDC
-oMKgwqAgW1NlY29uZGFyeSBxdWV1ZV0KPj4gICogICAgICAgICAgICAgICAgICAgfGNuYTo6dGFp
-bHwgLSsgICAgICArLS0tLSsKPj4gwqAqwqDCoMKgICAgICAgICAgIMKgwqDCoMKgwqAgKy0tLS0t
-LS0tLSsgIHwgICAgICAgIF4KPj4gICogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICst
-LS0tLS0tLSsKPj4gwqAqCj4+IMKgKiBOLkIuIGxvY2tlZCA9IDEgaWYgc2Vjb25kYXJ5IHF1ZXVl
-IGlzIGFic2VudC4KPj4gwqAqLwoKWWVzLCB5b3UgYXJlIHJpZ2h0LiBUaGFua3MgZm9yIHRoZSBj
-b3JyZWN0aW9uLgoKQ2hlZXJzLApMb25nbWFuCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgt
-YXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
-L21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Wed, Jul 17, 2019 at 1:58 PM Jason Gunthorpe <jgg@ziepe.ca> wrote:
+>
+> On Wed, Jul 17, 2019 at 01:44:07PM +0200, Andrey Konovalov wrote:
+> > On Tue, Jul 16, 2019 at 2:06 PM Jason Gunthorpe <jgg@ziepe.ca> wrote:
+> > >
+> > > On Tue, Jul 16, 2019 at 12:42:07PM +0200, Andrey Konovalov wrote:
+> > > > On Mon, Jul 15, 2019 at 8:05 PM Jason Gunthorpe <jgg@ziepe.ca> wrote:
+> > > > >
+> > > > > On Mon, Jul 15, 2019 at 06:01:29PM +0200, Andrey Konovalov wrote:
+> > > > > > On Mon, Jun 24, 2019 at 7:40 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
+> > > > > > >
+> > > > > > > On Mon, Jun 24, 2019 at 04:32:56PM +0200, Andrey Konovalov wrote:
+> > > > > > > > This patch is a part of a series that extends kernel ABI to allow to pass
+> > > > > > > > tagged user pointers (with the top byte set to something else other than
+> > > > > > > > 0x00) as syscall arguments.
+> > > > > > > >
+> > > > > > > > mlx4_get_umem_mr() uses provided user pointers for vma lookups, which can
+> > > > > > > > only by done with untagged pointers.
+> > > > > > > >
+> > > > > > > > Untag user pointers in this function.
+> > > > > > > >
+> > > > > > > > Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
+> > > > > > > >  drivers/infiniband/hw/mlx4/mr.c | 7 ++++---
+> > > > > > > >  1 file changed, 4 insertions(+), 3 deletions(-)
+> > > > > > >
+> > > > > > > Acked-by: Catalin Marinas <catalin.marinas@arm.com>
+> > > > > > >
+> > > > > > > This patch also needs an ack from the infiniband maintainers (Jason).
+> > > > > >
+> > > > > > Hi Jason,
+> > > > > >
+> > > > > > Could you take a look and give your acked-by?
+> > > > >
+> > > > > Oh, I think I did this a long time ago. Still looks OK.
+> > > >
+> > > > Hm, maybe that was we who lost it. Thanks!
+> > > >
+> > > > > You will send it?
+> > > >
+> > > > I will resend the patchset once the merge window is closed, if that's
+> > > > what you mean.
+> > >
+> > > No.. I mean who send it to Linus's tree? ie do you want me to take
+> > > this patch into rdma?
+> >
+> > I think the plan was to merge the whole series through the mm tree.
+> > But I don't mind if you want to take this patch into your tree. It's
+> > just that this patch doesn't make much sense without the rest of the
+> > series.
+>
+> Generally I prefer if subsystem changes stay in subsystem trees. If
+> the patch is good standalone, and the untag API has already been
+> merged, this is a better strategy.
+
+OK, feel free to take this into your tree, this works for me.
+
+>
+> Jason
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
