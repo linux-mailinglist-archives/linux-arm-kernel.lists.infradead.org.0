@@ -2,84 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F0C756BFCD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 18:44:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 31BA76BFF5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 18:56:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SSPPTiqN04lhbF3sPTxtq+KlKAkFANH1JSGg/5gkOB8=; b=d3X/iaRofsWA7Y
-	27U44p7+jCkUuk33C8KfUyBk3CaZ2W6NfIVnVVkZjlgqQEI53hVb/+6wZOqnVEDtJIgayLsQCskVL
-	W+0djRQHoG6jEIHUxtv6J0R6wi7KfmxX6CIFnTG+TqeneIyTsX1ojmwURkbxImuZD3XTYOCURPmnQ
-	MNDQrqt3E3RZsNNK8L3Al8skn0eZM7Vw1winDXL07ZSuJLKVGqsrE1NSTADuC/Rz01ij0bcPXJvVc
-	D+VslYDa7MBEKw2sRuXuamz3jQqSxtjesFcn6adHBLqTfnyHpH8wXgxy2Ed7hMA7kUjDXYxpjWpa4
-	YQxDfKexODGwHl6svSjQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=6HQX6M2dbf/VQoRzSLYjq4hNz1nECi39XwfXlJqWnyg=; b=fnpTbcJTgbWnL8
+	5ZZN4PURBn3Hm/3S4y/nGcPY1DuGBBSf/GszBFAWr0ULhXQObTdKEzrLOuk3HcFCAOhRwRamrCoD/
+	TSyqhmjNBR5lP8IPUJvTVI11m4nkPGzhjXQdF7s/inilcLz8/reb50pZ+kTFKufGEsUHqF6W2/xf3
+	F+psrm6fOVxDNjHO4xPApzMu3lfYw9lMZ9A1qnyQxWC8STHuPdLd8KYhAFF1fNffxCgZjfIE02lYk
+	3V3O+ifiXn0wOh3HrycyYGcNfuf8YKTVLAvsqwa4VIItRN/FenlLtLpdqNiV3iwYTwV3RaveausEh
+	APRSw5jKUsNOMaYaIjMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnn31-0004fJ-Lu; Wed, 17 Jul 2019 16:44:55 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnn2l-0004et-Pk
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 16:44:41 +0000
-Received: by mail-lf1-x144.google.com with SMTP id z15so12716799lfh.13
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 17 Jul 2019 09:44:39 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=yk4XP9CZ1kslTNlitSHU1MG+UFO4IaHTa/axM5q+rdo=;
- b=F2vezRmfQSUXDCV1cPzbOl2mzviZagTPoHiu/ODYdsVpUBhK9w9YTNxRiMunEfJhbe
- 3mqlmRvWWVWE6Wv2vMgJ/3fBXkb3weOGO4vSXqe1TpskMrzWhuzEuBnbHN2a2Hq7gQ+N
- E0BypQok1qcNIHv9hOwhsaElTu9JZ9Rqp2IpbKSGBiLu7ZE4GXKoNRauH2aKK/ljCC5z
- monU+OXeYlqNMgfB3NMS8HM2UQQH3Q12XmDlf9eAzdg0CjaNheV90gHdKVequ8iaodmB
- iPe07LMAM179eQNaYMQKSFAIGnaQEVwfW9GcMigIERJVLEFsmYpeY5n5M4g2gsHVL8c2
- 047g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=yk4XP9CZ1kslTNlitSHU1MG+UFO4IaHTa/axM5q+rdo=;
- b=WOsRZdb/ErlsUUS2YK/4VBTHqy41YndMYxoDqn+n/IhDSEhh1SAwa1Wn3GQikCSIq3
- n4p0WZ2Lqnwa8IH6tXvWMZSYa8QkY3fC5qvNqwE7ZRYPgFVKWtAqYhs1FhTq2P9tehGu
- OQwAx3W+/GG2CXzNfOo0lQCGI20foywe5pxsKnritjmw4cRuzo3Oa4tPDrlXh2tqqIDV
- 4foqy4xGzMcIUSbFeT8AG9JhAVIidnccltd7sgmcdhHxH7JZV3yllw4A0vTUEkO0/hxs
- 3CBjSbup0VT6SCX6tQt40mQOCfQP4e7PfGKcH1yDIa2OzjzMu4NfkZ/zJty3gmO7V3QU
- CJlw==
-X-Gm-Message-State: APjAAAWlJcv+G8+Q/NQwT7RW0XuBGC6NqfTavX80Rkif949do3ijnBph
- zie2+Dv9mc8XU3tHLXF7tiL/b8H6qN6fFuT7ZrEpGw==
-X-Google-Smtp-Source: APXvYqwQLMvsudJ95j/wcOmtZU/P9Yg5GgR6Iscd/wl6FHMGs+YoknUb+sFGT6wakjO1DBNIm8fyfNl1xZoU/iz67ug=
-X-Received: by 2002:ac2:5c42:: with SMTP id s2mr7368803lfp.61.1563381877741;
- Wed, 17 Jul 2019 09:44:37 -0700 (PDT)
+	id 1hnnEV-0001GX-Ro; Wed, 17 Jul 2019 16:56:47 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hnnDy-00016N-Tf
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 16:56:16 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3F4DE28;
+ Wed, 17 Jul 2019 09:56:12 -0700 (PDT)
+Received: from eglon.cambridge.arm.com (eglon.cambridge.arm.com [10.1.196.105])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 711743F71F;
+ Wed, 17 Jul 2019 09:56:11 -0700 (PDT)
+From: James Morse <james.morse@arm.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] arm64: entry: SP Alignment Fault doesn't write to FAR_EL1
+Date: Wed, 17 Jul 2019 17:56:02 +0100
+Message-Id: <20190717165602.114502-1-james.morse@arm.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-References: <20190712091357.744515-1-arnd@arndb.de>
-In-Reply-To: <20190712091357.744515-1-arnd@arndb.de>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Wed, 17 Jul 2019 18:44:26 +0200
-Message-ID: <CACRpkdaKNk3eE5cfh8fKQ341PhDxOCRqVz8Cay5to_ZZ3t_7Vg@mail.gmail.com>
-Subject: Re: [PATCH] dma: ste_dma40: fix unneeded variable warning
-To: Arnd Bergmann <arnd@arndb.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_094439_898265_6A56A362 
-X-CRM114-Status: UNSURE (   8.77  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190717_095615_220937_E7ECF621 
+X-CRM114-Status: GOOD (  10.36  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,36 +57,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dmaengine@vger.kernel.org, clang-built-linux@googlegroups.com,
- Vinod Koul <vkoul@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ James Morse <james.morse@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jul 12, 2019 at 11:14 AM Arnd Bergmann <arnd@arndb.de> wrote:
+Comparing the arm-arm's  pseudocode for AArch64.PCAlignmentFault() with
+AArch64.SPAlignmentFault() shows that SP faults don't copy the faulty-SP
+to FAR_EL1, but this is where we read from, and the address we provide
+to user-space with the BUS_ADRALN signal.
 
-> clang-9 points out that there are two variables that depending on the
-> configuration may only be used in an ARRAY_SIZE() expression but not
-> referenced:
->
-> drivers/dma/ste_dma40.c:145:12: error: variable 'd40_backup_regs' is not needed and will not be emitted [-Werror,-Wunneeded-internal-declaration]
-> static u32 d40_backup_regs[] = {
->            ^
-> drivers/dma/ste_dma40.c:214:12: error: variable 'd40_backup_regs_chan' is not needed and will not be emitted [-Werror,-Wunneeded-internal-declaration]
-> static u32 d40_backup_regs_chan[] = {
->
-> Mark these __maybe_unused to shut up the warning.
->
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+This value will be UNKNOWN due to the previous ERET to user-space.
+If the last value is preserved, on systems with KASLR or KPTI this will
+be the user-space link-register left in FAR_EL1 by tramp_exit().
 
-Seems like a reasonable fix:
-Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+Fix this to retrieve the original sp_el0 value, and pass this to
+do_sp_pc_fault().
 
-Yours,
-Linus Walleij
+Fixes: 60ffc30d5652 ("arm64: Exception handling")
+Signed-off-by: James Morse <james.morse@arm.com>
+---
+ arch/arm64/kernel/entry.S | 25 ++++++++++++++++++++-----
+ 1 file changed, 20 insertions(+), 5 deletions(-)
+
+diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
+index 165da78815c5..023e533c537e 100644
+--- a/arch/arm64/kernel/entry.S
++++ b/arch/arm64/kernel/entry.S
+@@ -743,9 +743,9 @@ el0_sync:
+ 	ccmp	x24, #ESR_ELx_EC_WFx, #4, ne
+ 	b.eq	el0_sys
+ 	cmp	x24, #ESR_ELx_EC_SP_ALIGN	// stack alignment exception
+-	b.eq	el0_sp_pc
++	b.eq	el0_sp
+ 	cmp	x24, #ESR_ELx_EC_PC_ALIGN	// pc alignment exception
+-	b.eq	el0_sp_pc
++	b.eq	el0_pc
+ 	cmp	x24, #ESR_ELx_EC_UNKNOWN	// unknown exception in EL0
+ 	b.eq	el0_undef
+ 	cmp	x24, #ESR_ELx_EC_BREAKPT_LOW	// debug exception in EL0
+@@ -769,7 +769,7 @@ el0_sync_compat:
+ 	cmp	x24, #ESR_ELx_EC_FP_EXC32	// FP/ASIMD exception
+ 	b.eq	el0_fpsimd_exc
+ 	cmp	x24, #ESR_ELx_EC_PC_ALIGN	// pc alignment exception
+-	b.eq	el0_sp_pc
++	b.eq	el0_pc
+ 	cmp	x24, #ESR_ELx_EC_UNKNOWN	// unknown exception in EL0
+ 	b.eq	el0_undef
+ 	cmp	x24, #ESR_ELx_EC_CP15_32	// CP15 MRC/MCR trap
+@@ -869,9 +869,24 @@ el0_fpsimd_exc:
+ 	mov	x1, sp
+ 	bl	do_fpsimd_exc
+ 	b	ret_to_user
+-el0_sp_pc:
++el0_sp:
+ 	/*
+-	 * Stack or PC alignment exception handling
++	 * Stack alignment exception handling
++	 */
++	gic_prio_kentry_setup tmp=x0
++	enable_da_f
++#ifdef CONFIG_TRACE_IRQFLAGS
++	bl	trace_hardirqs_off
++#endif
++	ct_user_exit
++	ldr	x0, [sp, #S_SP]
++	mov	x1, x25
++	mov	x2, sp
++	bl	do_sp_pc_abort
++	b	ret_to_user
++el0_pc:
++	/*
++	 * PC alignment exception handling
+ 	 */
+ 	mrs	x26, far_el1
+ 	gic_prio_kentry_setup tmp=x0
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
