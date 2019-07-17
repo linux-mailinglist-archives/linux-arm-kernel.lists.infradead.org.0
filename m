@@ -2,69 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57F846BBF2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 13:54:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A8F606BC03
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 13:58:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=zE3RJdd58nRCeb0sse3hbKeqEDFxtB/O1lqC2kDoT+k=; b=DUljq5sjGEj+HaoQwSstvSM40
-	Z6+Ta5MU109jYmi888t66/1Wnl9mK35HqDdgLIxJm2LmOZvw3WHTuYFqiibGcL2lBRxNe8jREhuTf
-	gTaQKGO8Gehpih2ZnnriW5+V72is2VgDS1IBd5OD9dj6j+t20djbrvueseAdeqPSourgvlHxiwGpH
-	ouOTwKWXTCgjxt72Fm+aWlPnK50Zr7pim8r7pHEAK2z9sYFY41J5qGoa+VNLYwWKennLHk+Pa9t7d
-	IsCZidm/8SDbBgzrfECMp9LznQELoAZCg0orytH4uUCycUePrg51WX1tj7Xhyze0/USEfBAhErLEB
-	xwa2l5ceA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1zar32vO6KLUWZkvO11be2qNnv4/p/tJ7tHZpa+24sk=; b=BxNtG8CwqctszT
+	AQB3KADRjl94Ou+NyWsafI0K13xFuav5TJ2hDL5WNcDHyrrVhlD3IZ2KxmvBVM5oECS6cfQJnvF/y
+	cRZUB4bq+o/8z0IsQ+/8fDFw2h9myZrOhmDjWxNeGnj3wSs6jEdAPfFlwE3WdX3vElyMglkGboOMj
+	M/o1z2V84gkBOzbMCRpR23ZVQtUEwPxmEp4Oe8n0UhjFH393Ipb6bdQd/sGGUjFyBoatt81rMmtrO
+	tcnWWSx/bHP15d3Nv/KnGmaJXXES/qF6zLJ8Qec48EL4wmKUZUGEmw/AWY2CYJqcGyGstqPH7W3+r
+	leNxSWYz6rfJlAGkr/CQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hniVs-0004Zf-0X; Wed, 17 Jul 2019 11:54:24 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+	id 1hnia2-0007FM-Go; Wed, 17 Jul 2019 11:58:42 +0000
+Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hniVa-0004YI-N3; Wed, 17 Jul 2019 11:54:08 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=bNOnC8lxCe3aDAnG0jcKQgNER1fc49FPtWHXlWhI7Rw=; b=u2vA0thvYVj2uWis+6spoRzNj
- c9AB8hzRFLHxONpE0pk1P+hArYT9OAzNX43036VzrZJ/gglEoyrzsJWoNmbQplliAwniVbis1MUig
- EAXUNaDLRm6rxOCIUFjXuzSf+e8MNFKCoUtzJNiVvQnonYFhLS5pRfC6Y5DDWDG/zG3Og=;
-Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
- ([82.37.168.47] helo=ypsilon.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <broonie@sirena.org.uk>)
- id 1hniVX-0000Ub-2i; Wed, 17 Jul 2019 11:54:03 +0000
-Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id C1E682742C26; Wed, 17 Jul 2019 12:54:01 +0100 (BST)
-Date: Wed, 17 Jul 2019 12:54:01 +0100
-From: Mark Brown <broonie@kernel.org>, Rob Herring <robh@kernel.org>,
- Tomeu Vizoso <tomeu.vizoso@collabora.com>
-To: Kevin Hilman <khilman@baylibre.com>
-Subject: Re: next/master boot: 265 boots: 17 failed, 243 passed with 4
- offline, 1 conflict (next-20190717)
-Message-ID: <20190717115401.GC4459@sirena.org.uk>
-References: <5d2f063c.1c69fb81.69fe8.9d45@mx.google.com>
+ id 1hniZr-0007En-4v
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 11:58:32 +0000
+Received: by mail-qt1-x843.google.com with SMTP id x22so18069813qtp.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 17 Jul 2019 04:58:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ziepe.ca; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=CtIW38CyixiEAESJE2x/hR6vvP9ZY7lyz3jE6erJEA4=;
+ b=WsXmWAFNLS9Y5gyPmjyVBufuKshUnoz9oYQO3m2Kyy2wMtQLDRqxhz084Ma4sggKxA
+ VrwuLzOtiAy8rszSQKzE18fvnWZV7M1q7YnEAmJigLzdicTLpZGoNiZ3Gar/CFdANUGQ
+ +gt0fDflhj1oNluiZIVGuibWAh1JTcQepAsHP/YRP7PCiQsEbkufbX49wfrYCtAj9p/q
+ ZpOMd9vVDGljJ+MPyoKgDKJFbWpQx34cZ14/YkYB9E0gHWhEQolXuspRkMtBiWOO9Km7
+ Ew1EzqQInlJf4dxI+ivorIznpDm2P9V/p9lWf5oiX205bEqIkGxkVFU6X6xClAOP44Zp
+ QzPQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=CtIW38CyixiEAESJE2x/hR6vvP9ZY7lyz3jE6erJEA4=;
+ b=UoOjcy5bPVFCbMI2FeIna82QWTW/dH1d4fVpkAMWHUOEolGt6S8UbULPiVCxLxj74C
+ m0cvKM9XzQZj401luyZsN/lD6R0HOu7cJb7NLSc2ndpDqYMZLltYuJ8qYvwZ9C5bqtSe
+ ReCTnhA+TdoA7JoveyhuHtKyqBxdvjT3c5JA06uM/enzo0U628tQftf1kHYkWxJqDM2R
+ SADVwOKbbF0MyxL7AVi0Q0xLBf00IaiEvcgi4O0Ppgqavrz1Fm7IZ1Z2Ibcpyrdashy2
+ 0qkOVE7W/b5Vg4xMBqul8vslzZwPMmSFgd4i2FiuujdPZ3R6mnbqDX5V/j7n1xxK0DK7
+ TLnA==
+X-Gm-Message-State: APjAAAWL2TgfijYPQZhj3Spjc/vZapQ0XWOZeRSiHchVrdkkAI0N2I13
+ KfoxrYjKRq4nRRYOP10pRSN26A==
+X-Google-Smtp-Source: APXvYqx+j7x9Tmvjx0AtdL0JLRa2IEARVY42fsMnhsZXPsgl7xwQHvLdp4tWEgHcwSJhOki+ORlGpQ==
+X-Received: by 2002:ac8:394b:: with SMTP id t11mr26922427qtb.286.1563364709720; 
+ Wed, 17 Jul 2019 04:58:29 -0700 (PDT)
+Received: from ziepe.ca
+ (hlfxns017vw-156-34-55-100.dhcp-dynamic.fibreop.ns.bellaliant.net.
+ [156.34.55.100])
+ by smtp.gmail.com with ESMTPSA id n18sm10459998qtr.28.2019.07.17.04.58.29
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 17 Jul 2019 04:58:29 -0700 (PDT)
+Received: from jgg by mlx.ziepe.ca with local (Exim 4.90_1)
+ (envelope-from <jgg@ziepe.ca>)
+ id 1hniZo-0003Vz-Og; Wed, 17 Jul 2019 08:58:28 -0300
+Date: Wed, 17 Jul 2019 08:58:28 -0300
+From: Jason Gunthorpe <jgg@ziepe.ca>
+To: Andrey Konovalov <andreyknvl@google.com>
+Subject: Re: [PATCH v18 11/15] IB/mlx4: untag user pointers in mlx4_get_umem_mr
+Message-ID: <20190717115828.GE12119@ziepe.ca>
+References: <cover.1561386715.git.andreyknvl@google.com>
+ <ea0ff94ef2b8af12ea6c222c5ebd970e0849b6dd.1561386715.git.andreyknvl@google.com>
+ <20190624174015.GL29120@arrakis.emea.arm.com>
+ <CAAeHK+y8vE=G_odK6KH=H064nSQcVgkQkNwb2zQD9swXxKSyUQ@mail.gmail.com>
+ <20190715180510.GC4970@ziepe.ca>
+ <CAAeHK+xPQqJP7p_JFxc4jrx9k7N0TpBWEuB8Px7XHvrfDU1_gw@mail.gmail.com>
+ <20190716120624.GA29727@ziepe.ca>
+ <CAAeHK+xPPQ9QjAksbfWG-Zmnawt-cdw9eO_6GVxjEYcaDGvaRA@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <5d2f063c.1c69fb81.69fe8.9d45@mx.google.com>
-X-Cookie: Fremen add life to spice!
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Disposition: inline
+In-Reply-To: <CAAeHK+xPPQ9QjAksbfWG-Zmnawt-cdw9eO_6GVxjEYcaDGvaRA@mail.gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_045406_776481_9CB38D3A 
-X-CRM114-Status: UNSURE (   8.13  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190717_045831_197515_F9AFDCB9 
+X-CRM114-Status: GOOD (  23.86  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -80,109 +109,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, dri-devel@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org, kernel-build-reports@lists.linaro.org
-Content-Type: multipart/mixed; boundary="===============3045732315254902107=="
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org,
+ Linux Memory Management List <linux-mm@kvack.org>,
+ Khalid Aziz <khalid.aziz@oracle.com>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Christoph Hellwig <hch@infradead.org>, Dmitry Vyukov <dvyukov@google.com>,
+ Dave Martin <Dave.Martin@arm.com>, Evgeniy Stepanov <eugenis@google.com>,
+ linux-media@vger.kernel.org, Kevin Brodsky <kevin.brodsky@arm.com>,
+ Kees Cook <keescook@chromium.org>, Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yishai Hadas <yishaih@mellanox.com>, LKML <linux-kernel@vger.kernel.org>,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed, Jul 17, 2019 at 01:44:07PM +0200, Andrey Konovalov wrote:
+> On Tue, Jul 16, 2019 at 2:06 PM Jason Gunthorpe <jgg@ziepe.ca> wrote:
+> >
+> > On Tue, Jul 16, 2019 at 12:42:07PM +0200, Andrey Konovalov wrote:
+> > > On Mon, Jul 15, 2019 at 8:05 PM Jason Gunthorpe <jgg@ziepe.ca> wrote:
+> > > >
+> > > > On Mon, Jul 15, 2019 at 06:01:29PM +0200, Andrey Konovalov wrote:
+> > > > > On Mon, Jun 24, 2019 at 7:40 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
+> > > > > >
+> > > > > > On Mon, Jun 24, 2019 at 04:32:56PM +0200, Andrey Konovalov wrote:
+> > > > > > > This patch is a part of a series that extends kernel ABI to allow to pass
+> > > > > > > tagged user pointers (with the top byte set to something else other than
+> > > > > > > 0x00) as syscall arguments.
+> > > > > > >
+> > > > > > > mlx4_get_umem_mr() uses provided user pointers for vma lookups, which can
+> > > > > > > only by done with untagged pointers.
+> > > > > > >
+> > > > > > > Untag user pointers in this function.
+> > > > > > >
+> > > > > > > Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
+> > > > > > >  drivers/infiniband/hw/mlx4/mr.c | 7 ++++---
+> > > > > > >  1 file changed, 4 insertions(+), 3 deletions(-)
+> > > > > >
+> > > > > > Acked-by: Catalin Marinas <catalin.marinas@arm.com>
+> > > > > >
+> > > > > > This patch also needs an ack from the infiniband maintainers (Jason).
+> > > > >
+> > > > > Hi Jason,
+> > > > >
+> > > > > Could you take a look and give your acked-by?
+> > > >
+> > > > Oh, I think I did this a long time ago. Still looks OK.
+> > >
+> > > Hm, maybe that was we who lost it. Thanks!
+> > >
+> > > > You will send it?
+> > >
+> > > I will resend the patchset once the merge window is closed, if that's
+> > > what you mean.
+> >
+> > No.. I mean who send it to Linus's tree? ie do you want me to take
+> > this patch into rdma?
+> 
+> I think the plan was to merge the whole series through the mm tree.
+> But I don't mind if you want to take this patch into your tree. It's
+> just that this patch doesn't make much sense without the rest of the
+> series.
 
---===============3045732315254902107==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="hYooF8G/hrfVAmum"
-Content-Disposition: inline
+Generally I prefer if subsystem changes stay in subsystem trees. If
+the patch is good standalone, and the untag API has already been
+merged, this is a better strategy.
 
-
---hYooF8G/hrfVAmum
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Wed, Jul 17, 2019 at 04:27:56AM -0700, kernelci.org bot wrote:
-
-Today's -next fails to boot on meson-gxm-khadas-vim2 in a variety
-of configurations:
-
->     defconfig:
->         gcc-8:
->           meson-gxm-khadas-vim2:
->               lab-baylibre: new failure (last pass: next-20190705)
-
->     defconfig+CONFIG_CPU_BIG_ENDIAN=y:
->         gcc-8:
->           meson-gxm-khadas-vim2:
->               lab-baylibre: new failure (last pass: next-20190705)
-
->     defconfig+CONFIG_RANDOMIZE_BASE=y:
->         gcc-8:
->           meson-gxm-khadas-vim2:
->               lab-baylibre: new failure (last pass: next-20190705)
-
-It looks like it gets to userspace and then hangs (end of the log
-below).  More details at:
-
-    https://kernelci.org/boot/id/5d2ed6ad59b514a0e649e937/
-
-Compared to working boots in mainline it looks like the main difference
-is the addition of the panfrost driver but that could be a complete red
-herring.
-
-08:00:51.567064  [   14.844034] Run /init as init process
-08:00:51.590902  Starting syslogd: OK
-08:00:51.645937  Starting klogd: OK
-08:00:51.650193  Populating /dev using udev: [   14.894327] udevd[214]: starting version 3.2.7
-08:00:51.651409  [   14.894906] random: udevd: uninitialized urandom read (16 bytes read)
-08:00:51.652703  [   14.899720] random: udevd: uninitialized urandom read (16 bytes read)
-08:00:51.653946  [   14.905958] random: udevd: uninitialized urandom read (16 bytes read)
-08:00:51.655192  [   14.913972] udevd[214]: specified group 'kvm' unknown
-08:00:51.656495  [   14.920901] udevd[215]: starting eudev-3.2.7
-08:00:51.790817  [BL31]: tee size: 0
-08:00:51.820838  [   15.089001] meson-gx-mmc d0070000.mmc: allocated mmc-pwrseq
-08:00:51.860744  [   15.106647] meson8b-dwmac c9410000.ethernet: PTP uses main clock
-08:00:51.865096  [   15.107020] meson8b-dwmac c9410000.ethernet: no reset control found
-08:00:51.866318  [   15.114743] meson8b-dwmac c9410000.ethernet: User ID: 0x11, Synopsys ID: 0x37
-08:00:51.867556  [   15.120434] meson8b-dwmac c9410000.ethernet: 	DWMAC1000
-08:00:51.868872  [   15.123055] panfrost d00c0000.gpu: clock rate = 666666666
-08:00:51.870123  [   15.125580] meson8b-dwmac c9410000.ethernet: DMA HW capability register supported
-08:00:51.871365  [   15.126609] meson-drm d0100000.vpu: Queued 2 outputs on vpu
-08:00:51.903478  [   15.131066] panfrost d00c0000.gpu: mali-t820 id 0x820 major 0x1 minor 0x0 status 0x0
-08:00:51.907981  [   15.138262] meson8b-dwmac c9410000.ethernet: RX Checksum Offload Engine supported
-08:00:51.909205  [   15.138269] meson8b-dwmac c9410000.ethernet: COE Type 2
-08:00:51.910449  [   15.143806] panfrost d00c0000.gpu: features: 00000000,101e76ff, issues: 00000000,24040400
-08:00:51.911698  [   15.145058] Bluetooth: Core ver 2.22
-08:00:51.913009  [   15.145170] NET: Registered protocol family 31
-08:00:51.914253  [   15.145175] Bluetooth: HCI device and connection manager initialized
-08:00:51.919829  [   15.145197] Bluetooth: HCI socket layer initialized
-08:02:48.216650  ShellCommand command timed out.: Sending # in case of corruption. Connection timeout 00:04:20, retry in 00:02:10
-08:02:48.321432  #
-
---hYooF8G/hrfVAmum
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl0vDFgACgkQJNaLcl1U
-h9AmnAf6A2RyN/7aPmjn2gXehhdC8E4x5bEjyk2uiDng1fvvwtm1sj+3wlvUMRPX
-t8oF0pAgE2WzeVc5xAfLk6T0WHeKXuRR3wzKXobQL1fcABuaJIMLEMsgadcPIiMD
-wrL5VJ2bjkrascfygj+e1o1cdSTXweJ/nMAYeQXJ+S1vfxMgh1d1lC8X7R4prk+Z
-Rx4BZEjAG+uCNFV9lbZrfnZ3ObVL9xa3uLBiswEcHW4fgXC6iVsnKfU5ZFJFmxks
-kpCnj7Gs3KHCVrLpZ4P6sr1sveQ+tyJ+iOXaSYP53GX0dNXPfI9hpgGJet0pVecJ
-/rg0vgOW7d+ypGJXJZjY0FTqvL3wFg==
-=7gnR
------END PGP SIGNATURE-----
-
---hYooF8G/hrfVAmum--
-
-
---===============3045732315254902107==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Jason
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3045732315254902107==--
-
