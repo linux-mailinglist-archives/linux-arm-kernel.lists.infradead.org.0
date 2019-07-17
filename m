@@ -2,56 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D04D16B8D7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 11:07:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B623D6B8EB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 11:08:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fPP8eHt/0ngy958vREMcD2Q1FPXQoxf8MzqSOqehENo=; b=QYGVQlXgYF9z8H
-	uTaObnjM28GvmttUBrnrA0e/79HlqjcPpn6AST1vgX1QIoUZNFFEqA/tfR0CaPWsBD6uMy8+8908z
-	WhUZ4hmCGYUI2iRiKpO472x2Ymwg3ySHSptDeJxd/ssmvT/5bF1ZbYxwVBf2YSy0XJnVI56Ak3KjK
-	Zo7yDc0ShS7QORO7G9NW6oayP4htWGlYNMfEJYZsQYOprkSoJfcSsfVxy885XrF9Preh7fhC86Zo1
-	ERO3F8o94lwhUmY7pgtghSlcMn9iVLq8ME5LC7auAEaTfIVjNYo9PX+urAzBaQQYmhyaZTV31TWN8
-	+Jiseaffxk7m8I0awpKA==;
+	List-Owner; bh=k8cmgdZHSoT/QcR4qFbhsjk8BYTk7GvJlOKwCAJrghE=; b=LPWOFE7G/VTA5a
+	Q1oVq66lORT8IXJnQQ/xMe2+/RTNOoNsM9rAJF0WWSsomKy//4GdhkQXSxOqUCVaTo+MVIVxYlOa1
+	S792DjOVPv8+hmCQIPfxV1MDrdEmpSB8s+80IA4zfW4snLGvEUAAsuvNQcT7A3of7rOYZp62fKE0a
+	dE/KjFYam1GnbvVSe1z1mdO//JG0PWFcg+umHdRHnK3Tf0j1wQo15lWaKqSrm3pFnFYKfnHIjhaUW
+	RRm1jabNKRN6nsKz1FZNEctYYdBYcXIxulgiq2qgHDpO0yuHwjUSS+JF5yPKTY7ZcRytLgs+ax97E
+	Zc1aMN8dXESH1T+lolJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnfuK-0006XK-LC; Wed, 17 Jul 2019 09:07:28 +0000
-Received: from relay10.mail.gandi.net ([217.70.178.230])
+	id 1hnfvU-0007Br-VG; Wed, 17 Jul 2019 09:08:40 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnfu1-0006Wk-Ra; Wed, 17 Jul 2019 09:07:12 +0000
-Received: from localhost (alyon-656-1-672-152.w92-137.abo.wanadoo.fr
- [92.137.69.152])
- (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay10.mail.gandi.net (Postfix) with ESMTPSA id 34A23240008;
- Wed, 17 Jul 2019 09:06:55 +0000 (UTC)
-Date: Wed, 17 Jul 2019 11:06:55 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Ran Bi <ran.bi@mediatek.com>
-Subject: Re: [PATCH 2/3] rtc: Add support for the MediaTek MT2712 RTC
-Message-ID: <20190717090655.GA21823@piout.net>
-References: <20190702032120.16539-1-ran.bi@mediatek.com>
- <20190702032120.16539-3-ran.bi@mediatek.com>
- <20190713211231.GD4732@piout.net>
- <1563353694.19945.33.camel@mhfsdcap03>
+ id 1hnfvF-0007Ay-53
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 09:08:26 +0000
+Received: from mail-lf1-f49.google.com (mail-lf1-f49.google.com
+ [209.85.167.49])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 700AC21850
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 17 Jul 2019 09:08:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1563354504;
+ bh=4vu4Okxb5WZcflRFF6tQdhHwvtvePiCyc0cLWLfo7E0=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=RALEPS5CHWpeiDfu+HsvmOaOtvbO5k1yXwr0S9XTymblJwDF6sHvV4gEFnM2bVK9j
+ yKQMewHedSijshe748912a1/XBQpOFpER3JlkGbAUAI0kxVSMiGP7AzuAWb+5Y5IyL
+ Qh+O+M84QxD+z/qPh2CYiANXO29KI04JSGWeFggE=
+Received: by mail-lf1-f49.google.com with SMTP id r15so10978596lfm.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 17 Jul 2019 02:08:24 -0700 (PDT)
+X-Gm-Message-State: APjAAAUPew0JKEb9p8yGuRHW4mX0Q7uT2ywqWFFV2B3pRKNw15zJOMcj
+ RgiHG24UuQij2OSl+bRmOBDwbvowH56XDn70X34=
+X-Google-Smtp-Source: APXvYqzPzGPDBYSh581qW48n1T0W9q70m0vdtu/7IVr2GTIxxD6DYirb0vG3PGSnLIb3eXrPmw69lCfnIFHh/iYbG8w=
+X-Received: by 2002:ac2:4d1c:: with SMTP id r28mr16685179lfi.159.1563354502661; 
+ Wed, 17 Jul 2019 02:08:22 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1563353694.19945.33.camel@mhfsdcap03>
-User-Agent: Mutt/1.12.0 (2019-05-25)
+References: <CGME20190715124452eucas1p294d89255359b2036b19213427f558dbf@eucas1p2.samsung.com>
+ <20190715124417.4787-1-l.luba@partner.samsung.com>
+ <20190715124417.4787-24-l.luba@partner.samsung.com>
+In-Reply-To: <20190715124417.4787-24-l.luba@partner.samsung.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Date: Wed, 17 Jul 2019 11:08:11 +0200
+X-Gmail-Original-Message-ID: <CAJKOXPeTsS_4MGfgT6ZnP8PzeaaP7Du71TxD3cQZXougGgvKXw@mail.gmail.com>
+Message-ID: <CAJKOXPeTsS_4MGfgT6ZnP8PzeaaP7Du71TxD3cQZXougGgvKXw@mail.gmail.com>
+Subject: Re: [PATCH v1 23/50] ARM: dts: exynos: change lowest OPP in
+ bus_disp1_fimd in Exynos5420
+To: Lukasz Luba <l.luba@partner.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_020710_055441_E3AB4ED4 
-X-CRM114-Status: GOOD (  19.56  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190717_020825_215634_27C7146E 
+X-CRM114-Status: GOOD (  11.10  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.230 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,84 +88,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Alessandro Zummo <a.zummo@towertech.it>, Flora Fu <flora.fu@mediatek.com>,
- srv_heupstream@mediatek.com, devicetree@vger.kernel.org,
- Sean Wang <sean.wang@mediatek.com>, linux-kernel@vger.kernel.org,
- YT Shen <yt.shen@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- Yingjoe Chen <yingjoe.chen@mediatek.com>,
- Eddie Huang <eddie.huang@mediatek.com>, linux-arm-kernel@lists.infradead.org,
- linux-rtc@vger.kernel.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ =?UTF-8?B?QmFydMWCb21pZWogxbtvxYJuaWVya2lld2ljeg==?=
+ <b.zolnierkie@samsung.com>, sboyd@kernel.org, mturquette@baylibre.com,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ Andrzej Hajda <a.hajda@samsung.com>, Chanwoo Choi <cw00.choi@samsung.com>,
+ kyungmin.park@samsung.com, kgene@kernel.org, myungjoo.ham@samsung.com,
+ s.nawrocki@samsung.com, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 17/07/2019 16:54:54+0800, Ran Bi wrote:
-> > > +
-> > > +/* we map HW YEAR 0 to 1968 not 1970 because 2000 is the leap year */
-> > > +#define RTC_MIN_YEAR		1968
-> > > +#define RTC_BASE_YEAR		1900
-> > > +#define RTC_MIN_YEAR_OFFSET	(RTC_MIN_YEAR - RTC_BASE_YEAR)
-> > 
-> > Do not do that. If this RTC range starts in 200, ths is what the driver
-> > has to support, you should not care about dates before 2000. Note that
-> > the RTC core can still properly shift the range if it is absolutely
-> > necessary.
-> > 
-> 
-> Do we need to care about default alarm date 1970-01-01? Or can I just
-> set it to 2000-01-01?
-> 
+On Mon, 15 Jul 2019 at 14:44, Lukasz Luba <l.luba@partner.samsung.com> wrote:
+>
+> The lowest OPP must be aligned to possible value after division of parent
+> clock rate. Thus, change it to the value which is true for clock 1200MHz.
 
-You never have to set a default value. It doesn't add any value versus
-an unknown value.
+I think this is getting slightly too granular. It seems you are
+solving the same problem (or very small subset of the same problem) as
+in patch 22:
+https://patchwork.kernel.org/patch/11043849/
 
-> > > +
-> > > +static inline u32 rtc_readl(struct mt2712_rtc *rtc, u32 reg)
-> > 
-> > Please use a more descriptive prefix than just rtc_.
-> > 
-> 
-> Do you mean it's better to use prefix "mt2712_rtc_"?
-> 
+Please combine such changes per IP block, unless you have really
+reproducible different issues (e.g. reproducible different performance
+problem or OOPS, but not just what clk_summary prints). I imagine that
+you align entire subsystem (DISP) buses to real clock frequencies (or
+to match real frequencies, or to achieve more granular scaling, or to
+get slightly better performance).
 
-Yes.
-
-> > > +
-> > > +	/*
-> > > +	 * register status was not correct,
-> > > +	 * need set time and alarm to default
-> > > +	 */
-> > > +	if (p1 != RTC_POWERKEY1_KEY || p2 != RTC_POWERKEY2_KEY
-> > > +	    || !valid_rtc_time(rtc)) {
-> > > +		reset_rtc_time(rtc);
-> > 
-> > Do not do that. This is valuable information. If the time is invalid,
-> > report it as such in read_time and read_alarm. Resetting the time here
-> > will lead to more issues later (i.e. userspace is not able to know
-> > whether the time is set correctly or not).
-> > 
-> 
-> When RTC's power run out, RTC will lost it's registers value and time
-> data at next boot up. We even cannot know what the date and time it
-> shows. We want to check this state here and set a default RTC date. Do
-> you think it's no need here and the date should be set by system?
-> 
-
-If I understand correctly, the POWERKEY register will lose their value.
-This means that you know that the time is incorrect. instead of setting
-it to a default value and losing that valuable information, simply check
-for that in read_time and return EINVAL in that case. then on the next
-set_time invocation, you can set the POWERKEY registers and set the time
-to a known value.
-
-
--- 
-Alexandre Belloni, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+Best regards,
+Krzysztof
 
 _______________________________________________
 linux-arm-kernel mailing list
