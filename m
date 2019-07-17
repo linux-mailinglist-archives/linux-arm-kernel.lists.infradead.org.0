@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEC206C1C1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 21:53:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 811A96C1B8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 21:52:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,29 +11,29 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=gR3m9PKnWaXyAAzz437Qe61VFuNiL2V8GQxu26INjaY=; b=JpeKULAtKSfJV4YaNybKJt1O9n
-	GaUxNti9KSPFziCzW9/jDIIqXu+lA51rPdaCYW61F/SXBxkp9PzQ7giMhdypRk6OE61xkb7EwECZL
-	DkOc3ZrYJ6C5rp9ODju9sVLAqRq7mWB1LWt0fmMyfR3saLcoWxhQkYgZhXYrN7WHp5yUOlrV4rtvk
-	HJeeU3UaQ0DTwaIkvWNMlvdgiaQF/iDl+EjItZChD3KeoOTfb4FUTgE6+CLB8gaM7MQywmcZu5/FK
-	6AEyH8dS1s9tjio44ZGqtkz6/GtfZhfPWa9fmCmCxttiszb8Hp2JUzNtnCznBf3PBJoFy+3zqhWno
-	eM6k9qww==;
+	bh=c8EaMCvYvwPAGREuWS4/6G/WLymSLNE5orDls62EZ3c=; b=egTJrJnutspQrpONm21v8p4HHM
+	/jATcwFnTCDelkXgCegME7XOJL303fyBFWmZmUJsmIlqhMTbH7BzyopL/v/hleVaQXuI+IwIL+msj
+	W1msriZm79ZuLHqdX3TccNKZ8d924XgvHQdjYhS60lOsKVPjTZhpnmlqQnTnSDjT1/DcvafdVIv9v
+	nFHDMuwrneJ5LUc4vupn7bK2dUe9N1n9RC0FETO2Bo2LTlDHIzy80q0lXXWxRlw03jpU6P0O6sk2t
+	RZmWVPB/VSWbgte2GrZvlix2ZkjJjSv7k5HM/oW4c8JSHBOa2WIDyk9GMheM4MNazzst/7BqLMbcM
+	Oz5YG7rg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnpzx-0004sq-Dr; Wed, 17 Jul 2019 19:53:57 +0000
-Received: from mout.gmx.net ([212.227.17.21])
+	id 1hnpyA-0003TA-Sv; Wed, 17 Jul 2019 19:52:06 +0000
+Received: from mout.gmx.net ([212.227.17.20])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnpx3-0002tR-No; Wed, 17 Jul 2019 19:51:03 +0000
+ id 1hnpx3-0002tU-7B; Wed, 17 Jul 2019 19:51:00 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1563393046;
- bh=WOVNn//5VSTYo4vhSDrls8pRJwZusUo3NZilyrpEYh0=;
+ s=badeba3b8450; t=1563393047;
+ bh=TctOuDTMF2+mTkyAAYxQiJpzWSxmzO7gifGGf/XX1Q0=;
  h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=g5u7Yi3IMzHegEU2nfFoRDxcxJ6E1kSVDtFMnCi2hfviO4+7K94kCtDHOyZJRoZWU
- 02OBsa+FIjFjSPiWIZnyIwqwx8VJueutplucJbjUC9APezUHIwcB1eSnhNTvYJjZk+
- ZmEgPtU187ishh4fkb71zdWgUaLW/TB8Fo7Bbyvg=
+ b=gWiw+9dnz7FLf0EG/+I69QvoKRreNyQhm+22sy3ZkrZm3do0oQT2q9ryxX/5g84OA
+ M/rwQAo0jJ8mHTNRJ3mBDHnS+elh4asiq/bFNoJyWSS33sb3LKWr5O2EdL3h3h8Rqw
+ Acowz8oKwwmzBdhLcCQwakhfpiLk0wCIwvP097NI=
 X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
 Received: from localhost.localdomain ([37.4.249.103]) by mail.gmx.com
  (mrgmx101 [212.227.17.168]) with ESMTPSA (Nemesis) id
- 0Lyi0B-1iYKGX2Ait-01658K; Wed, 17 Jul 2019 21:50:46 +0200
+ 0M7CRe-1ihQw50cgI-00x2i1; Wed, 17 Jul 2019 21:50:47 +0200
 From: Stefan Wahren <wahrenst@gmx.net>
 To: Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
  Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
@@ -43,44 +43,45 @@ To: Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
  Michael Turquette <mturquette@baylibre.com>,
  Stephen Boyd <sboyd@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
  Adrian Hunter <adrian.hunter@intel.com>, Mark Brown <broonie@kernel.org>
-Subject: [PATCH RFC 11/18] pinctrl: bcm2835: Fix BCM7211 pinconf handling
-Date: Wed, 17 Jul 2019 21:50:19 +0200
-Message-Id: <1563393026-17118-12-git-send-email-wahrenst@gmx.net>
+Subject: [PATCH RFC 12/18] dt-bindings: pinctrl: bcm2835: Add brcm,
+ bcm2838 compatible
+Date: Wed, 17 Jul 2019 21:50:20 +0200
+Message-Id: <1563393026-17118-13-git-send-email-wahrenst@gmx.net>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1563393026-17118-1-git-send-email-wahrenst@gmx.net>
 References: <1563393026-17118-1-git-send-email-wahrenst@gmx.net>
-X-Provags-ID: V03:K1:q340osXNt2MIqoSmFRq896014RbMyi72mNiv8JYjo0i2OK0dvz6
- 8QqUWu7jdo9MJbinU2FVN6yC6/TeldleHoOflJ/uIEkGZqkMDr+2FdoIMrIDtbU3/pd95x9
- +GB7AAcdgftshHhjhH/r2bcO8GxUrQliEegZ95qap9h4PcQjsBxHjkVos5/c4EZiJEJtiZi
- lLq4qRDbtHZ1V6/jjmCfA==
+X-Provags-ID: V03:K1:87Ew/UJtWXs2QXR91bCBFqHCtMnLslfvTGx0KTFgyUdg135m0/c
+ ut5pTxI1URukaSdaowrBdos5TzvcM4Zr7PCZBMgRUk56rBmXptyk5k9uhT/A/JFP4pdsoJi
+ vipXTnrTROxCq4lznmxb8pxy1EzNHwmscJjeGKHZS2fs/7LH44yNATm1BMN602VX+xkz7qA
+ ZuF3TP6jXjsGJO4auiSPQ==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:BXBDGoF3MMk=:Sy4/oQ1oFBn4ZaIfiWMWvF
- 9lX86q5Ks1VH96ihXXsbC/5V85o4dnhP6rfLb8tTsjC1uMR8yr7AJdDodBc8r5Y+qxewNbkZn
- Pj5jp3zd8rUYXdkMK/kN3L+JYBUPaV1LaVKDKrIkdp2NZQpLtheMsSfrSrOyZZypcaOnn6ulq
- tDuNQxJEKfogcIWTG6fMxgbh8SEMiWN0qnfgIpqGuPYX7JgclQY5n6fs30dhYEWetN8/qDPQn
- ZXzZscRHdgA2lW1C/m8mU2LsT+R8ckkTO1744YQEgl42CfkasbGgcULF5O6KLA12vM83n9wgC
- jaWbpJUILBaTiaekEpph5jFdtkFmhXPPmyQTQaYvcOSBlnrTBeuhWAtV0G2MndawRznA4nWE8
- DETodbg0e3jd93fLnW6Nlf3vk/6vcbkmxNDdFZlOAb1XI+a10TbNXm7cdRAgEd2aNcK3Dy0Gb
- jRrlSuVDvytZwpViH9PXGnrRA/3ob2R5/Vylmng4zRv7RqKoRdKgwkcZhQRGLmM2IvjU8rkiD
- QNm2vNIlSp6OtjEmHPlOX+yAg69sNCHK9ab8krAGHylMvlsR2V75c6vvY5l3t+LsGRl8/XaDn
- 2JW+RImM/g5/V12kYlbG9GOBjIzoQ1fIxad6jtZXaEAtnUM3+Ek92ld543pIq5dR4O9wpc5It
- ylD4R2kIZqtas+Jho79q7zu3qZ/JaoT8B/o0+KDwaZclKBlJ0C+Uro+KyYJD6gbXxgXLO3m/X
- H9d5pw7HU//dl+J/phja92ZWcJ6zK6e1Dn7jTYTdZbHxSF74dosHErtFFs7N+88KU+L5QmOUo
- xKLMJtH5dhpi8hE4snu4MRrF5lAUaPH0zQiYinUoyGkAxbMP14JFMkCtgQjIAntqiuOH2HnlF
- jNAyxdg1XhYRVF6uragysumbTWagkbna0wJ/vN1fLtYdXMyeKcW1V6Bs/KQhRyeRdY2rDwAPM
- aYpojh3cTNjQCBu/HB5T6Mnfdw/A+meX3VzONkrv/S0GOsyVBGSFbfVRsLUuRb2mRefkFnF1X
- aZuIZEQtUt80jFG5THjDHFa3J2Bhsr++/BjnvTD/Cm2YynX+QXZA7eKBSF+8U5/Dtp+Gkve3A
- 01SByvA0ifJ3V4=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:GXSscg8RGqY=:hpwIUehAdXwVH/35BucHtV
+ 8ye1FO5m9O/4KO0U5tNWO8XxUEzYdJ3A7k5O9KqH60oIzIY+nzYi0y1NLE6Z2vtwyfDv5UTQT
+ 4mbNP8Nxpqp6Cwl8pXXGnEPskXuz/1aHf3jGN1V7Ov5k7jZzoOZY1vKp7/AP9ig7M1YcQLrv3
+ poZgRpklJqG3q5UVw02YHhjv25gBKpcJisFVNHqjjf6CvKAb9OlGLkP9uTKuqoED9oeBQHSpW
+ WykxukO2dzf54v4RFY1pghLqufE16fdyVWUb+BZQkNE3XObfuAliqdjYwdBM8YtIaacgIbfa4
+ EDCREuxgOlYAIojNB2ZvaSZr8Mdi8BJ9vMHIFR59eNid2Lr6BnN6vduYlGx/R02SGUC9+BWxt
+ pJIAKhM++HH+Hp4JUuA8ZlzN4UvjA7G+1MDgWHaI7O2i+1fbGP0CY522GrdAyvXTNxM8xzIe2
+ RqhYRMLxZmtxdrm8/PLdmZVZp5R9/J8YOEkpa/jNdIxWakpr9Vx8bE7fMp3SsT1HrZOKw1x6f
+ +Ewun1yFxxbJ1HPX2ak4e0TjG7qA4vIYOWqbMAIQhCsb30VrpK/ydjBZ6lcvji9r1S4GuB6GA
+ 1f0Z6wpItlbSsNx5bzv4wLHSyECuWflmuGtn6J7rlBdXFsGsALeNjeLfs8hxAp7ilUksvhuZa
+ +yMHomGr9nT9UeDiYk1wdBi6SXZI6yp+M+M4FJpvuDuptWL4Uf39cZ5ogooJRw4tD5AVqRLDZ
+ ptQCEYNkWxZ0Z7OKM5irkFyw5FR2ey4sde0HyG7+ytmZRw80CMkN9uRLo02k15HmQDlTTS+Gt
+ 4cPptUyh1OafXfugx3bpRY8pU0oc5+dirMGzUAOHoacDaSAbsFPe5XwTCJ3kwOxRBn5gY3Do/
+ GkWCpl4/vxRlpmsW3L5t1YXVq7g4fxKiN0SDiGWJAPcRq5XdFhWm57jL4L/F7Q1eaHc49gKcK
+ RaeIq6gBEsyzlmX19gVpuEO0KfKNn2uuYuWu12QbaF5lT8I6eCiAa/Xw3+4LKSvwSUZtgIhvg
+ J4+dY2/jZgRKQlX8qJD+dhMmgNr1i16/ZYGI5qkZC7y306cIgZBVTtZetS8/Yxl5xG0kxmBYH
+ w0zepiH7Ytb4vo=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_125058_080498_DC3C6883 
-X-CRM114-Status: GOOD (  12.87  )
+X-CRM114-CacheID: sfid-20190717_125057_559924_8114ED99 
+X-CRM114-Status: GOOD (  11.87  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.21 listed in list.dnswl.org]
+ low trust [212.227.17.20 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (wahrenst[at]gmx.net)
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -111,49 +112,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The BCM7211 pinconf doesn't look correct and behaves differently
-to BCM2835. So fix this accordingly.
+Add a new compatible for the BCM2838.
 
 Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
 ---
- drivers/pinctrl/bcm/pinctrl-bcm2835.c | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
+ Documentation/devicetree/bindings/pinctrl/brcm,bcm2835-gpio.txt | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/pinctrl/bcm/pinctrl-bcm2835.c b/drivers/pinctrl/bcm/pinctrl-bcm2835.c
-index 35d9f95..029adad 100644
---- a/drivers/pinctrl/bcm/pinctrl-bcm2835.c
-+++ b/drivers/pinctrl/bcm/pinctrl-bcm2835.c
-@@ -999,12 +999,10 @@ static int bcm7211_pinconf_set(struct pinctrl_dev *pctldev,
-
- 	for (i = 0; i < num_configs; i++) {
- 		param = pinconf_to_config_param(configs[i]);
--		if (param != BCM2835_PINCONF_PARAM_PULL)
--			return -EINVAL;
- 		arg = pinconf_to_config_argument(configs[i]);
-
- 		/* convert to 7211 value */
--		switch (arg) {
-+		switch (param) {
- 		case PIN_CONFIG_BIAS_DISABLE:
- 			arg = BCM7211_PINCONFIG_PULL_NONE;
- 			break;
-@@ -1014,6 +1012,8 @@ static int bcm7211_pinconf_set(struct pinctrl_dev *pctldev,
- 		case PIN_CONFIG_BIAS_PULL_UP:
- 			arg = BCM7211_PINCONFIG_PULL_UP;
- 			break;
-+		default:
-+			return -ENOTSUPP;
- 		}
-
- 		off = PUD_7211_REG_OFFSET(pin);
-@@ -1031,6 +1031,7 @@ static int bcm7211_pinconf_set(struct pinctrl_dev *pctldev,
- }
-
- static const struct pinconf_ops bcm7211_pinconf_ops = {
-+	.is_generic = true,
- 	.pin_config_get = bcm2835_pinconf_get,
- 	.pin_config_set = bcm7211_pinconf_set,
- };
+diff --git a/Documentation/devicetree/bindings/pinctrl/brcm,bcm2835-gpio.txt b/Documentation/devicetree/bindings/pinctrl/brcm,bcm2835-gpio.txt
+index ac6d614..f7835a6 100644
+--- a/Documentation/devicetree/bindings/pinctrl/brcm,bcm2835-gpio.txt
++++ b/Documentation/devicetree/bindings/pinctrl/brcm,bcm2835-gpio.txt
+@@ -7,6 +7,7 @@ Required properties:
+ - compatible: "brcm,bcm2835-gpio"
+ - compatible: should be one of:
+   "brcm,bcm2835-gpio" - BCM2835 compatible pinctrl
++  "brcm,bcm2838-gpio" - BCM2838 compatible pinctrl
+   "brcm,bcm7211-gpio" - BCM7211 compatible pinctrl
+ - reg: Should contain the physical address of the GPIO module's registers.
+ - gpio-controller: Marks the device node as a GPIO controller.
 --
 2.7.4
 
