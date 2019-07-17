@@ -2,65 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09BBC6B744
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 09:11:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 903806B770
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 09:45:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bsFkggbTDgkftHcX+iZntIVKyhObQ2qycaNPm1TqF88=; b=b6LHaYaiyRo4v5
-	io6jvXqWucnB9P/bRQC+qJhcKoMKqpGbtqQ6F9He7iBCuQGgTwyvB0Y1wpBE71KaJ5WT6E+It2b/4
-	3ptzaPmrVHrfeolqGA2DzwjF2deOfd0vUF3Rqex0YaGewZ9tUCealH5MCU1XQQRkAqdAzGS6ow7BF
-	KOg203bwcUYmwIxhjCDe0/ALobowIhGrnlPPbBbQE2Wda05ZWo+NSF16JuEsFcXTxdNmru+guVX+5
-	T09LL0X2MhTlY9wxiK1gu4g/pBxCr67p0AnjIe4JxAPQHY/gOqEr/UPHjjZF9w9S1uRkOQNjPEmpA
-	Z2TxuSbY/HBOvGNNfc+g==;
+	List-Owner; bh=fZWBOR6CbsScstmFVB4wLt6LCzWyI4fFrktzDU8sZRw=; b=nkh/BOhaFsuQCa
+	kR7hUnJsyjj+XqzgoXgnunNXs9HrvshOttykdFVx5pjB8FuejhNmHUl3jaEIM83qdPGL2bhRo45kh
+	StAaC1/P73Ahb+utuho/Hyp+OQ/Tebz7H6tPDKKZOWUx6nQIaLTybuzd1dqLy8t6CnyCu+F05dxcV
+	oizn7R3bdnUjZZXxQYyaTIIwaoxmcYmVbbX4RUqr03DYX32qamNpLkKL61qUsbf7Rg0t26CaoPXXh
+	B/QkD67xEKfRU6mvRv/QzrYriOT3X5KEpCJwqH9cFq0MSMxtrJ0q/pk/VUo9YY++rqvDPXjXXuSqK
+	oNe3WG3OJnfVTvqSD/NA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hne6E-0000GJ-Po; Wed, 17 Jul 2019 07:11:39 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1hnecT-00035z-PR; Wed, 17 Jul 2019 07:44:58 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hne5A-0000Eq-Pb
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 07:10:42 +0000
-Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
- [10.5.11.22])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id EC8BB81F1B;
- Wed, 17 Jul 2019 07:10:30 +0000 (UTC)
-Received: from krava (unknown [10.43.17.77])
- by smtp.corp.redhat.com (Postfix) with SMTP id 32C711001B0E;
- Wed, 17 Jul 2019 07:10:28 +0000 (UTC)
-Date: Wed, 17 Jul 2019 09:10:27 +0200
-From: Jiri Olsa <jolsa@redhat.com>
-To: "Lubashev, Igor" <ilubashe@akamai.com>
-Subject: Re: [PATCH 2/3] perf: Use CAP_SYS_ADMIN with perf_event_paranoid
- checks
-Message-ID: <20190717071027.GG28722@krava>
-References: <1562112605-6235-1-git-send-email-ilubashe@akamai.com>
- <1562112605-6235-3-git-send-email-ilubashe@akamai.com>
- <20190716084744.GB22317@krava>
- <cd2b162a59804cdaa7f4de18c3337aa8@ustx2ex-dag1mb5.msg.corp.akamai.com>
+ id 1hnecG-00035i-TO
+ for linux-arm-kernel@bombadil.infradead.org; Wed, 17 Jul 2019 07:44:44 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Transfer-Encoding:
+ Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+ Sender:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=a+w5j6eHYvJzioLr+1nRU4VPj/HkjhXiSU4Y9J8b7R8=; b=YbNCb/0gjQZL0XpBqEiPAwf+A9
+ 3CgD9+vHlITW3ap2VMwt3sgVkwTzhRuRP/kgyZkGXM4XSu0z6A6ofUZh7f//Sux0TTeqwycROgOyW
+ mLxn1uh9uXpCSJnqhfhbJdGj+v0bNg1lHzvz/yqDdsRlq+uKC9Ugrjw8MjS6FdMQsWpzu6XKr18uv
+ WaT+N+4woH/KJYWFG573iBJIz5dq7RZjKNF11vp/WY7jPjvztxxaroPXOZPOogzOFYZazsr/lMDfq
+ Cr6oTbCR8umH6TQpwxREIHsW/uUlzeCDHYQiMnCyPBHR0Af3bvNHEZk/DterF+Yju8ZMnXLDyTUoc
+ J3NLOz9A==;
+Received: from j217100.upc-j.chello.nl ([24.132.217.100]
+ helo=hirez.programming.kicks-ass.net)
+ by merlin.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
+ id 1hnec8-0008Nx-I5; Wed, 17 Jul 2019 07:44:36 +0000
+Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
+ id 148B02059DEA3; Wed, 17 Jul 2019 09:44:35 +0200 (CEST)
+Date: Wed, 17 Jul 2019 09:44:35 +0200
+From: Peter Zijlstra <peterz@infradead.org>
+To: Waiman Long <longman@redhat.com>
+Subject: Re: [PATCH v3 3/5] locking/qspinlock: Introduce CNA into the slow
+ path of qspinlock
+Message-ID: <20190717074435.GU3419@hirez.programming.kicks-ass.net>
+References: <20190715192536.104548-1-alex.kogan@oracle.com>
+ <20190715192536.104548-4-alex.kogan@oracle.com>
+ <9fa54e98-0b9b-0931-db32-c6bd6ccfe75b@redhat.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <cd2b162a59804cdaa7f4de18c3337aa8@ustx2ex-dag1mb5.msg.corp.akamai.com>
-User-Agent: Mutt/1.12.0 (2019-05-25)
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.25]); Wed, 17 Jul 2019 07:10:31 +0000 (UTC)
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_001034_091716_D5815F17 
-X-CRM114-Status: GOOD (  16.30  )
-X-Spam-Score: -5.0 (-----)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+In-Reply-To: <9fa54e98-0b9b-0931-db32-c6bd6ccfe75b@redhat.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,51 +65,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Peter Zijlstra <peterz@infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Arnaldo Carvalho de Melo <acme@kernel.org>, James Morris <jmorris@namei.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-arch@vger.kernel.org, guohanjun@huawei.com, arnd@arndb.de,
+ dave.dice@oracle.com, jglauber@marvell.com, x86@kernel.org,
+ will.deacon@arm.com, linux@armlinux.org.uk, linux-kernel@vger.kernel.org,
+ rahul.x.yadav@oracle.com, mingo@redhat.com, bp@alien8.de, hpa@zytor.com,
+ Alex Kogan <alex.kogan@oracle.com>, steven.sistare@oracle.com,
+ tglx@linutronix.de, daniel.m.jordan@oracle.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jul 16, 2019 at 05:01:26PM +0000, Lubashev, Igor wrote:
-> I could add another patch to the series for that.  Any suggestion for what capability to check for here?
+On Tue, Jul 16, 2019 at 10:16:29PM -0400, Waiman Long wrote:
+>  A simple graphic to illustrate those queues will help too, for example
 
-it's:
+Very much yes!
 
-	if (geteuid() != 0) {
-		pr_err("ftrace only works for root!\n");
-		return -1
-	}
+> /*
+> =A0* MCS lock holder
+> =A0* =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+> =A0*=A0=A0=A0 mcs_node
+> =A0*=A0=A0 +--------+=A0=A0=A0=A0=A0 +----+=A0=A0=A0=A0=A0=A0=A0=A0 +----+
+> =A0*=A0=A0 | next=A0=A0 | ---> |next| -> ...=A0 |next| -> NULL=A0 [Main q=
+ueue]
+> =A0*=A0=A0 | locked | -+=A0=A0 +----+=A0=A0=A0=A0=A0=A0=A0=A0 +----+
+> =A0*=A0=A0 +--------+=A0 |
+> =A0*=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 |=A0=A0 +----+=A0=A0=A0=A0=
+=A0=A0=A0=A0 +----+
+> =A0*=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 +-> |next| -> ...=A0 |next=
+| -> X=A0=A0=A0=A0 [Secondary queue]
+> =A0*=A0=A0=A0 cna_node=A0=A0=A0=A0=A0=A0 +----+=A0=A0=A0=A0=A0=A0=A0=A0 +=
+----+
+> =A0*=A0=A0 +--------*=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
+=A0=A0=A0=A0=A0 ^
+> =A0*=A0=A0 | tail=A0=A0 | ----------------------+
+> =A0*=A0=A0 +--------*=A0=A0=A0
 
-so I think check for CAP_SYS_ADMIN should be fine in here
+Almost; IIUC that cna_node is the same as the one from locked, so you
+end up with something like:
 
-jirka
-
-> 
-> (There is always an alternative to not check for anything and let the kernel refuse to perform actions that the user does not have permissions to perform.)
-> 
-> - Igor
-> 
-> -----Original Message-----
-> From: Jiri Olsa <jolsa@redhat.com> 
-> Sent: Tuesday, July 16, 2019 4:48 AM
-> Subject: Re: [PATCH 2/3] perf: Use CAP_SYS_ADMIN with perf_event_paranoid checks
-> 
-> On Tue, Jul 02, 2019 at 08:10:04PM -0400, Igor Lubashev wrote:
-> > The kernel is using CAP_SYS_ADMIN instead of euid==0 to override
-> > perf_event_paranoid check. Make perf do the same.
-> 
-> I see another geteuid check in __cmd_ftrace,
-> perhaps we should cover this one as well
-> 
-> jirka
+> =A0*=A0=A0=A0 mcs_node
+> =A0*=A0=A0 +--------+=A0=A0=A0=A0=A0 +----+=A0=A0=A0=A0=A0=A0=A0=A0 +----+
+> =A0*=A0=A0 | next=A0=A0 | ---> |next| -> ...=A0 |next| -> NULL=A0 [Main q=
+ueue]
+> =A0*=A0=A0 | locked | -+=A0=A0 +----+=A0=A0=A0=A0=A0=A0=A0=A0 +----+
+> =A0*=A0=A0 +--------+=A0 |
+> =A0*=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 |=A0=A0 +---------+=A0=A0=
+=A0=A0=A0=A0=A0=A0 +----+
+> =A0*=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 +-> |mcs::next| -> ...=A0 =
+|next| -> NULL=A0=A0=A0=A0 [Secondary queue]
+>  *                   |cna::tail| -+      +----+
+> =A0*=A0=A0=A0          =A0=A0=A0=A0=A0 +---------+  |        ^
+>  *                                +--------+
+> =A0*
+> =A0* N.B. locked =3D 1 if secondary queue is absent.
+> =A0*/
 
 _______________________________________________
 linux-arm-kernel mailing list
