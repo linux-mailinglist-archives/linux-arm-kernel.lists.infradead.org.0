@@ -2,66 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F3CE6B93E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 11:33:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A81036B959
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 11:34:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OE3zLozuXljehZPZ1YEnYrhxXLSOGnBvvkGWZvCPqUY=; b=KshVPybnoBiFuk
-	Mxj9PYYLu7lsL0x8QbJHM97OIlVPTujGOwXf73GNy8bvfGkgpjZYysrw+JZCKrsTjQgJmqNRFSf7u
-	dDC+9+36/Sbh6ODjJrjAp0V8Uv8APSrKK3uSbopdnBg9wDc0/z2e39NyxWmAaDyRCr9D85rJZbBPG
-	MTPOccfsZK1CTo7YAJW2JDGwpfmdfQdA4XA4WZ1y/vkJIRwHIi04O/f754PMhL/2dnrL0NoTNhDwH
-	BqABqEv+VJWAephfvNbxj5HMMA4V8xyjGLFAt8o3c+sqlrIXVq2bgYNm+LtWdC30qOcN231TOD4i/
-	DLw5+lMPRE4oye7wTpDQ==;
+	List-Owner; bh=kdOdC2HQoMNwR107H6eiTOeFF9VDeo0oyUHIS1XP+b0=; b=cosnXpDxFACjDi
+	/6nBssYuA+zbnbT4wjy4OVpIh/dKgGZ1iZ5wWbgzaM7lfvxIW8wLg46VERmM/gP+uIWuEGXc2+mfZ
+	8ZTf48N0e9qx7Du0fCCuXRLwgYZpug4j36o4pxrN+Oqhp/9A8e9Qz+z5JaDWDzXmSLN9QXEJ6npys
+	sS9LbsNzISBjxw3jY84oXDRHoYRnorG3JT6YoU/AfLI2Ah85QdoTixjC5DAnyWjgKLTDqqiXJg5YS
+	FBRZfKPD70d+hIIMhaj94kBfxMBVRTglp7LvX7/0QjuSuU4q8GdFAooKATMWrzR0LR+z+zOLGks51
+	fR7QdpPQ5YuJ84qLRFUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hngJU-0001jC-H0; Wed, 17 Jul 2019 09:33:28 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hngKj-0002cX-RP; Wed, 17 Jul 2019 09:34:46 +0000
+Received: from relay6-d.mail.gandi.net ([217.70.183.198])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hngIr-0001U1-KF; Wed, 17 Jul 2019 09:32:51 +0000
-X-UUID: 35fa26bdbb3c4a3ca8cbb05012635ee1-20190717
-X-UUID: 35fa26bdbb3c4a3ca8cbb05012635ee1-20190717
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <xia.jiang@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1157696841; Wed, 17 Jul 2019 01:32:31 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 17 Jul 2019 02:32:29 -0700
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 17 Jul 2019 17:32:28 +0800
-Received: from localhost.localdomain (10.17.3.153) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 17 Jul 2019 17:32:27 +0800
-From: Xia Jiang <xia.jiang@mediatek.com>
-To: Hans Verkuil <hverkuil-cisco@xs4all.nl>, Rob Herring <robh+dt@kernel.org>, 
- Matthias Brugger <matthias.bgg@gmail.com>, Rick Chang
- <rick.chang@mediatek.com>
-Subject: [PATCH 5/5] arm: dts: add jpeg enc device tree node
-Date: Wed, 17 Jul 2019 17:30:34 +0800
-Message-ID: <20190717093034.22826-6-xia.jiang@mediatek.com>
-X-Mailer: git-send-email 2.18.0
-In-Reply-To: <20190717093034.22826-1-xia.jiang@mediatek.com>
-References: <20190717093034.22826-1-xia.jiang@mediatek.com>
+ id 1hngK3-0002Gk-9K
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 09:34:05 +0000
+X-Originating-IP: 86.250.200.211
+Received: from aptenodytes (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
+ [86.250.200.211])
+ (Authenticated sender: paul.kocialkowski@bootlin.com)
+ by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id A14BAC000D;
+ Wed, 17 Jul 2019 09:33:48 +0000 (UTC)
+Date: Wed, 17 Jul 2019 11:33:48 +0200
+From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+To: Nishka Dasgupta <nishkadg.linux@gmail.com>
+Subject: Re: [PATCH 2/2] staging: media: sunxi: Replace function
+ cedrus_check_format()
+Message-ID: <20190717093348.GB26951@aptenodytes>
+References: <20190703081317.22795-1-nishkadg.linux@gmail.com>
+ <20190703081317.22795-2-nishkadg.linux@gmail.com>
+ <20190705102650.GB1645@aptenodytes>
+ <1c5bd5a6-757e-2bce-6adf-6dafbf6956a6@gmail.com>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <1c5bd5a6-757e-2bce-6adf-6dafbf6956a6@gmail.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_023249_766599_AA995711 
-X-CRM114-Status: UNSURE (   8.17  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190717_023403_844429_776111BB 
+X-CRM114-Status: GOOD (  16.50  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.198 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.198 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,50 +68,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Xia Jiang <xia.jiang@mediatek.com>, devicetree@vger.kernel.org,
- srv_heupstream@mediatek.com, linux-kernel@vger.kernel.org,
- Tomasz Figa <tfiga@chromium.org>, linux-mediatek@lists.infradead.org,
- linux-media@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: devel@driverdev.osuosl.org, maxime.ripard@bootlin.com,
+ gregkh@linuxfoundation.org, wens@csie.org, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-add jpeg enc device tree node
+Hi,
 
-Change-Id: I901602f04540d619a490746ed61c8cd8b420b051
-Signed-off-by: Xia Jiang <xia.jiang@mediatek.com>
----
- arch/arm/boot/dts/mt2701.dtsi | 12 ++++++++++++
- 1 file changed, 12 insertions(+)
+On Fri 05 Jul 19, 17:43, Nishka Dasgupta wrote:
+> On 05/07/19 3:56 PM, Paul Kocialkowski wrote:
+> > Hi,
+> > 
+> > On Wed 03 Jul 19, 13:43, Nishka Dasgupta wrote:
+> > > Remove function cedrus_check_format as all it does is call
+> > > cedrus_find_format.
+> > > Rename cedrus_find_format to cedrus_check_format to maintain
+> > > compatibility with call sites.
+> > > Issue found with Coccinelle.
+> > 
+> > Maybe we could have a !! or a bool cast to make coccinelle happy here?
+> 
+> Coccinelle didn't flag the type mismatch, just the single-line functions. I
+> could add the bool cast then?
 
-diff --git a/arch/arm/boot/dts/mt2701.dtsi b/arch/arm/boot/dts/mt2701.dtsi
-index 51e1305c6471..560f27fd9d9e 100644
---- a/arch/arm/boot/dts/mt2701.dtsi
-+++ b/arch/arm/boot/dts/mt2701.dtsi
-@@ -569,6 +569,18 @@
- 			 <&iommu MT2701_M4U_PORT_JPGDEC_BSDMA>;
- 	};
- 
-+	jpegenc: jpegenc@1500a000 {
-+		compatible = "mediatek,mt2701-jpgenc", "mediatek,mtk-jpgenc";
-+		reg = <0 0x1500a000 0 0x1000>;
-+		interrupts = <GIC_SPI 141 IRQ_TYPE_LEVEL_LOW>;
-+		clocks =  <&imgsys CLK_IMG_VENC>;
-+		clock-names = "jpgenc";
-+		power-domains = <&scpsys MT2701_POWER_DOMAIN_ISP>;
-+		mediatek,larb = <&larb2>;
-+		iommus = <&iommu MT2701_M4U_PORT_JPGENC_RDMA>,
-+			<&iommu MT2701_M4U_PORT_JPGENC_BSDMA>;
-+	};
-+
- 	vdecsys: syscon@16000000 {
- 		compatible = "mediatek,mt2701-vdecsys", "syscon";
- 		reg = <0 0x16000000 0 0x1000>;
+Looks like I failed to follow-up on this in due time, sorry.
+
+Yes a bool cast would definitely be welcome :)
+
+Cheers,
+
+Paul
+
+> Thanking you,
+> Nishka
+> 
+> > Cheers,
+> > 
+> > Paul
+> > 
+> > > Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
+> > > ---
+> > >   drivers/staging/media/sunxi/cedrus/cedrus_video.c | 10 ++--------
+> > >   1 file changed, 2 insertions(+), 8 deletions(-)
+> > > 
+> > > diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_video.c b/drivers/staging/media/sunxi/cedrus/cedrus_video.c
+> > > index 0ec31b9e0aea..d5cc9ed04fd2 100644
+> > > --- a/drivers/staging/media/sunxi/cedrus/cedrus_video.c
+> > > +++ b/drivers/staging/media/sunxi/cedrus/cedrus_video.c
+> > > @@ -55,8 +55,8 @@ static inline struct cedrus_ctx *cedrus_file2ctx(struct file *file)
+> > >   	return container_of(file->private_data, struct cedrus_ctx, fh);
+> > >   }
+> > > -static bool cedrus_find_format(u32 pixelformat, u32 directions,
+> > > -			       unsigned int capabilities)
+> > > +static bool cedrus_check_format(u32 pixelformat, u32 directions,
+> > > +				unsigned int capabilities)
+> > >   {
+> > >   	struct cedrus_format *fmt;
+> > >   	unsigned int i;
+> > > @@ -76,12 +76,6 @@ static bool cedrus_find_format(u32 pixelformat, u32 directions,
+> > >   	return false;
+> > >   }
+> > > -static bool cedrus_check_format(u32 pixelformat, u32 directions,
+> > > -				unsigned int capabilities)
+> > > -{
+> > > -	return cedrus_find_format(pixelformat, directions, capabilities);
+> > > -}
+> > > -
+> > >   static void cedrus_prepare_format(struct v4l2_pix_format *pix_fmt)
+> > >   {
+> > >   	unsigned int width = pix_fmt->width;
+> > > -- 
+> > > 2.19.1
+> > > 
+> > 
+> 
+
 -- 
-2.18.0
-
+Paul Kocialkowski, Bootlin
+Embedded Linux and kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
