@@ -2,90 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6531B6B668
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 08:13:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 150746B6B7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 08:36:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CWLXeDVUbQxYXvOxs5Zg6ZKvG5ncldTBKAyT8pvxjlg=; b=MHKcx+8ICYceN2
-	cBMKqA7JU7ntbir/LGLBa6UpZH/CnvtJUevl5y3JVDgHSrEDTVBtuUSjaGggz0f9cV0T9fxPPijne
-	rIRQcw07QLqA0YFhJPpuZsKnsVTWyzZkF/hIw2Gax5sWJrcTHz8Ht3psnOLUc0pFyWakwibtd+EEV
-	as85Zhl3OJxnalCM4PJaBNSnlDbJ+7tXqKS5v2B0kT9PAPRSSCs+8y+7UHNpwBZjlb+y4ZnFzQ5wq
-	ldJDbQrklzaTIUlpVChVBHQQcPWd3CaP2McVY0SV3JP5vL+DuM8uzvw5pybyX+xJNRseFodNHpDMn
-	H7DJ4p1g/jU/kb1y8zxw==;
+	List-Owner; bh=FPB2t+y7+l12QynXzQqCZqOJf4b113Eow5sk/mWYgW8=; b=XP8CnUP1vEEQrp
+	uHUJcEqh+DfEgCI6sJaIhcVXtDdp5+O7W2z0P80mYDEtbbXB7trGhI+26whNyQtyW8sORexHqPXHp
+	5Q9gxQdwbrWkG93o7DeXbzFHwQFzAERdndx3bTqsWJTCrvD4IY6NJ+hSUkQ2yi+6qiPMUYn7yEKLx
+	UVe2DZy+8QiUnEIJ0kJBdm97p+iKyjxiLUH0WWbbca4voKT/3NKAHue/eYILtqNfn2FMutywLB/AF
+	U4J12sjhO984DBUwDuKg6Pix/VjfZsMiFR/9ribKRJomzRyC1m0lvRglCGC49uL/vUUnLXW/PzNLu
+	YyoZXKgMTkxQXDQxrmqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hndBw-0008EE-QT; Wed, 17 Jul 2019 06:13:28 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1hndYO-0000eZ-OW; Wed, 17 Jul 2019 06:36:40 +0000
+Received: from szxga08-in.huawei.com ([45.249.212.255] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hndBc-0008Ae-2M
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 06:13:10 +0000
-Received: by mail-pf1-x442.google.com with SMTP id 19so10295086pfa.4
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jul 2019 23:13:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=98wHL3V8M3pNyD7AjD/VjmdvFc90F9O3DnpKK14WS+8=;
- b=DXblnYwgj3/tbURi1UsD4ktaRj5BJuWdPdDx2aRF+ahc2OC9u5xmYevXLh6oHpMwWy
- 7hqdBA7l4KtXHRkTTp62+KZNyXi257cnXVrXLf6vLBCEEbHH6dTtIlPfeHxlkr+ZxR30
- aB/ZUGP/pdGBn7Dlttvi1kBzIrUqOn0biGEPM=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=98wHL3V8M3pNyD7AjD/VjmdvFc90F9O3DnpKK14WS+8=;
- b=P909Uj49T/NjjE0XiWSVy9WIQUbBIUIb+VO9Qa06ywistl85FXFr8pHtztdDkWt4Wv
- VzMw5Er3UMPC5esRddmAjP6VW12oYnwPmIwYoYprepFPQcvAxr5Llf3b5xCflepDXfDJ
- bv0z7y/N5xvbSWXunTNNBBDMV4JQCNq3+kXRqWgj3ReQ1JX/D1aMExiSnBJDAR0kF/T0
- FnM0WgqsLHUymC2o1+ZHdVGKifvYpFwe0UUSr9iG8OcTp1Sn8WRPd/a4QtE68+F+K5CX
- J7kNjnA8fokiD/TEINTiP96PPI/V4VP8QHCa3SDfdUgPQQfujC6DBomgd6T0XsdtbG99
- FuFw==
-X-Gm-Message-State: APjAAAUKxaQtg7aU5sAFozY3hoBXF/PnUyX4HEkZHNTDP5esFPVNWlG1
- y42UcsViCivYWX35JxIOQI+lAZGBgQ8hwQ==
-X-Google-Smtp-Source: APXvYqw0QPqTLvm4/cwncq8kMZs1M60f3vtMOpvmiHWE5FPXcczz63uk9yFFWGip4Q4mA9MXPHtqIg==
-X-Received: by 2002:a17:90a:a410:: with SMTP id
- y16mr42325982pjp.62.1563343987347; 
- Tue, 16 Jul 2019 23:13:07 -0700 (PDT)
-Received: from hsinyi-z840.tpe.corp.google.com
- ([2401:fa00:1:10:b852:bd51:9305:4261])
- by smtp.gmail.com with ESMTPSA id y23sm24079706pfo.106.2019.07.16.23.13.05
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Tue, 16 Jul 2019 23:13:06 -0700 (PDT)
-From: Hsin-Yi Wang <hsinyi@chromium.org>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH RFC v2 2/2] cpufreq: mediatek: Support vproc shared by
- multiple component
-Date: Wed, 17 Jul 2019 14:11:27 +0800
-Message-Id: <20190717061124.453-3-hsinyi@chromium.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190717061124.453-1-hsinyi@chromium.org>
-References: <20190717061124.453-1-hsinyi@chromium.org>
+ id 1hndYA-0000Ik-3V
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 06:36:28 +0000
+Received: from DGGEMM402-HUB.china.huawei.com (unknown [172.30.72.54])
+ by Forcepoint Email with ESMTP id 7D03515792F57B4A9A3D;
+ Wed, 17 Jul 2019 14:36:14 +0800 (CST)
+Received: from DGGEMM423-HUB.china.huawei.com (10.1.198.40) by
+ DGGEMM402-HUB.china.huawei.com (10.3.20.210) with Microsoft SMTP Server (TLS)
+ id 14.3.439.0; Wed, 17 Jul 2019 14:36:13 +0800
+Received: from DGGEMM506-MBX.china.huawei.com ([169.254.3.227]) by
+ dggemm423-hub.china.huawei.com ([10.1.198.40]) with mapi id 14.03.0439.000;
+ Wed, 17 Jul 2019 14:36:09 +0800
+From: "Zengtao (B)" <prime.zeng@hisilicon.com>
+To: Maxime Ripard <maxime.ripard@bootlin.com>
+Subject: RE: [PATCH] phy: Change the configuration interface param to void*
+ to make it more general
+Thread-Topic: [PATCH] phy: Change the configuration interface param to void*
+ to make it more general
+Thread-Index: AQHVN9Ajzwa2MbZo40exGsBlwJEt36bEv5mAgAln51A=
+Date: Wed, 17 Jul 2019 06:36:09 +0000
+Message-ID: <678F3D1BB717D949B966B68EAEB446ED2FF5B22D@DGGEMM506-MBX.china.huawei.com>
+References: <1562868255-31467-1-git-send-email-prime.zeng@hisilicon.com>
+ <20190711112039.leuvelpm7opeoaxq@flea>
+In-Reply-To: <20190711112039.leuvelpm7opeoaxq@flea>
+Accept-Language: zh-CN, en-US
+Content-Language: zh-CN
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [10.67.222.33]
 MIME-Version: 1.0
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_231308_135399_D5EFE5EB 
-X-CRM114-Status: GOOD (  13.48  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190716_233626_322251_EC1FB64D 
+X-CRM114-Status: GOOD (  11.17  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.255 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,88 +74,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pm@vger.kernel.org, Viresh Kumar <viresh.kumar@linaro.org>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
- Chanwoo Choi <cw00.choi@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- "MyungJoo Ham \)" <myungjoo.ham@samsung.com>,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>
+Cc: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "kishon@ti.com" <kishon@ti.com>, Paul
+ Kocialkowski <paul.kocialkowski@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-mt8183-cci shares vproc with small cluster. If the regulator is shared
-between several devices then the lowest request voltage that meets the
-system constraints will be used.
+Hi Maxime:
 
-However, previous mediatek cpufreq implementation would cause race condition
-if vproc is shared by multiple devices, which would crash device due to
-incorrect voltage supply.
+Thanks for your reply.
 
-A race condition example:
-cci sets vproc 90 --> vproc=90
-cpu0 sets vproc 50 --> vproc=max(50,90)=90
-cpu0 sets vproc 70 --> cpu0 reads vproc 90, target is lower, so decide to scale
-                       up frequency first, but before it set voltage...
-cci sets vproc 60 --> vproc=max(60,50)=60. cpu0 already set freq to 70, but
-                      before it set voltage, vproc becomes 60, which is not
-                      sufficient for cpu0.
+>-----Original Message-----
+>From: Maxime Ripard [mailto:maxime.ripard@bootlin.com]
+>Sent: Thursday, July 11, 2019 7:21 PM
+>To: Zengtao (B) <prime.zeng@hisilicon.com>
+>Cc: kishon@ti.com; Chen-Yu Tsai <wens@csie.org>; Paul Kocialkowski
+><paul.kocialkowski@bootlin.com>; Sakari Ailus <sakari.ailus@linux.intel.com>;
+>linux-kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org
+>Subject: Re: [PATCH] phy: Change the configuration interface param to void*
+>to make it more general
+>
+>* PGP Signed by an unknown key
+>
+>On Fri, Jul 12, 2019 at 02:04:08AM +0800, Zeng Tao wrote:
+>> The phy framework now allows runtime configurations, but only limited
+>> to mipi now, and it's not reasonable to introduce user specified
+>> configurations into the union phy_configure_opts structure. An simple
+>> way is to replace with a void *.
+>
+>I'm not sure why it's unreasonable?
+>
+The phy.h will need to include vendor specific phy headers, and the union phy_configure_opts
+will become more complex. I don't think this is a good solution to include all vendor specific phy
+configs into a single union structure. 
 
-Let cpu and cci manages their own previous target voltage can avoid such race.
-
-Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
----
- drivers/cpufreq/mediatek-cpufreq.c | 16 ++++++++++++----
- 1 file changed, 12 insertions(+), 4 deletions(-)
-
-diff --git a/drivers/cpufreq/mediatek-cpufreq.c b/drivers/cpufreq/mediatek-cpufreq.c
-index 7282834e8fe2..f5e737b862f0 100644
---- a/drivers/cpufreq/mediatek-cpufreq.c
-+++ b/drivers/cpufreq/mediatek-cpufreq.c
-@@ -46,6 +46,7 @@ struct mtk_cpu_dvfs_info {
- 	struct notifier_block opp_nb;
- 	int opp_cpu;
- 	unsigned long opp_freq;
-+	int old_vproc;
- };
- 
- static LIST_HEAD(dvfs_info_list);
-@@ -196,11 +197,16 @@ static int mtk_cpufreq_voltage_tracking(struct mtk_cpu_dvfs_info *info,
- 
- static int mtk_cpufreq_set_voltage(struct mtk_cpu_dvfs_info *info, int vproc)
- {
-+	int ret;
-+
- 	if (info->need_voltage_tracking)
--		return mtk_cpufreq_voltage_tracking(info, vproc);
-+		ret = mtk_cpufreq_voltage_tracking(info, vproc);
- 	else
--		return regulator_set_voltage(info->proc_reg, vproc,
--					     vproc + VOLT_TOL);
-+		ret = regulator_set_voltage(info->proc_reg, vproc,
-+					     MAX_VOLT_LIMIT);
-+	if (!ret)
-+		info->old_vproc = vproc;
-+	return ret;
- }
- 
- static int mtk_cpufreq_set_target(struct cpufreq_policy *policy,
-@@ -218,7 +224,9 @@ static int mtk_cpufreq_set_target(struct cpufreq_policy *policy,
- 	inter_vproc = info->intermediate_voltage;
- 
- 	old_freq_hz = clk_get_rate(cpu_clk);
--	old_vproc = regulator_get_voltage(info->proc_reg);
-+	old_vproc = info->old_vproc;
-+	if (old_vproc == 0)
-+		old_vproc = regulator_get_voltage(info->proc_reg);
- 	if (old_vproc < 0) {
- 		pr_err("%s: invalid Vproc value: %d\n", __func__, old_vproc);
- 		return old_vproc;
--- 
-2.20.1
-
-
+>> We have already got some phy drivers which introduce private phy API
+>> for runtime configurations, and with this patch, they can switch to
+>> the phy_configure as a replace.
+>
+>If you have a custom mode of operation, then you'll need a custom
+>phy_mode as well, and surely you can have a custom set of parameters.
+>
+>Since those functions are meant to provide a two-way negotiation of the
+>various parameters, you'll have to have that structure shared between the
+>two either way, so the only thing required in addition to what you would have
+>passing a void is one line to add that structure in the union.
+>
+>That's barely unreasonable.
+>
+>Maxime
+>
+>--
+>Maxime Ripard, Bootlin
+>Embedded Linux and Kernel engineering
+>https://bootlin.com
+>
+>* Unknown Key
+>* 0x671851C5
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
