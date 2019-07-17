@@ -2,61 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 372AB6BC9A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 14:53:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 00BBA6BCA1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 14:55:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0fQtthyBIx90CC2ieB+H1jApo4f5J3SVOsNdtauoDzI=; b=Y2iv99wNIABAFr
-	ostGRz+VFFZUJT72H5ELSDv7rdPJmjbSu/Q9vKR5jnUSz0V0tM3ruzAi4k4P0eJ7JwbJghgKN/Iw8
-	BjlIe/7KmYqLWCDiEXR4SAWThXi7rrsEL4LX3e63PwcCp9n8pXcBdzUb3vnJl/O6uP8wxoOszdlBr
-	0+KjcTJUqOnL6jDvDmy/lMAQZbnROaYcy2dEhuqjv5HsEitmNNq21nhZzeCZEXrqqDlpxcQiTrHRP
-	Jgjh07HsvM6QzbkkZz65qBkHiQUm0rw3p8T0ctdbZ63CpdKblmKBobcQLV0JQrRobmEgHCt2f91L2
-	+0Cl+/fK9VeApvkdsHEA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=fhCD+zgFJdPkKFZgzihdydAbbH3aMAchW1CNTwxBDFU=; b=JJdKt4YzxaCgEN
+	RhOwXkKOx/LsFCDUCv0D6LT1pCG+Xunqxi6awv9mKfZCBWcCAhI+JIemcm9zlkD47XZ8fKg7cIO7f
+	06rv0blHx5FcZ8z1p4ddSm8UpttSRkvIZu6dtPhpz2hPwdFlVJk7qt710iOoUybzkH1k691JNekYq
+	o3Eh8HDHAXy/9i3a4JHD1wGeiulOsHVTatvd6Zz7zxXMjalIxNjcmrSbIFzOkmQnvTlrJtym4mf3v
+	Rt4otHy588inbSzuFWh5x8O14rPitTHxbUB9ddGkJJUg4qASlVO+HCJs1rZGq4mWPdSqWpEeO+b0i
+	7KUMcxlZae+izcf1vX0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnjRG-00088S-WA; Wed, 17 Jul 2019 12:53:43 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
+	id 1hnjSZ-0000GG-OF; Wed, 17 Jul 2019 12:55:03 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnjR7-00087i-6U
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 12:53:35 +0000
-Received: from DGGEMS410-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id CD092324AFD7D42E44D9;
- Wed, 17 Jul 2019 20:53:21 +0800 (CST)
-Received: from [127.0.0.1] (10.177.223.23) by DGGEMS410-HUB.china.huawei.com
- (10.3.19.210) with Microsoft SMTP Server id 14.3.439.0; Wed, 17 Jul 2019
- 20:53:18 +0800
-Subject: Re: [PATCH v5] arm64: kernel: implement fast refcount checking
-To: Will Deacon <will@kernel.org>, Ard Biesheuvel <ard.biesheuvel@linaro.org>
-References: <20190619105431.2630-1-ard.biesheuvel@linaro.org>
- <20190703134028.6aru52r2zd2jnpm4@willie-the-truck>
- <CAKv+Gu9bCuXxJ54WMt=GcsRhkbwn_jXnjwJGuopS-7V3dHipLw@mail.gmail.com>
- <20190710122117.kk5xgei56r7vfmmj@willie-the-truck>
-From: Hanjun Guo <guohanjun@huawei.com>
-Message-ID: <5402fb46-8d22-498a-8277-8a145e874cd9@huawei.com>
-Date: Wed, 17 Jul 2019 20:53:10 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101
- Thunderbird/52.5.0
+ id 1hnjSQ-0000Ff-25; Wed, 17 Jul 2019 12:54:55 +0000
+X-UUID: 0254a407e1f24d57a939efd4199e7dc3-20190717
+X-UUID: 0254a407e1f24d57a939efd4199e7dc3-20190717
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <changqi.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 788299521; Wed, 17 Jul 2019 04:54:45 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 17 Jul 2019 05:54:44 -0700
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 17 Jul 2019 20:54:43 +0800
+Received: from localhost.localdomain (10.17.3.153) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 17 Jul 2019 20:54:42 +0800
+From: Changqi Hu <changqi.hu@mediatek.com>
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Jiri Slaby
+ <jslaby@suse.com>, Matthias Brugger <matthias.bgg@gmail.com>
+Subject: [PATCH] modify mtk uart power and clock management
+Date: Wed, 17 Jul 2019 20:54:39 +0800
+Message-ID: <1563368079-29684-1-git-send-email-changqi.hu@mediatek.com>
+X-Mailer: git-send-email 1.8.1.1.dirty
 MIME-Version: 1.0
-In-Reply-To: <20190710122117.kk5xgei56r7vfmmj@willie-the-truck>
-Content-Language: en-US
-X-Originating-IP: [10.177.223.23]
-X-CFilter-Loop: Reflected
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_055333_444372_E06D3262 
-X-CRM114-Status: GOOD (  13.47  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190717_055454_110490_360EC486 
+X-CRM114-Status: GOOD (  13.92  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,57 +69,156 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Jan
- Glauber <jglauber@marvell.com>, Will Deacon <will.deacon@arm.com>,
- Jayachandran Chandrasekharan Nair <jnair@marvell.com>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Peter Shih <pihsun@chromium.org>, Changqi Hu <changqi.hu@mediatek.com>,
+ "Gustavo A. R. Silva" <gustavo@embeddedor.com>, linux-kernel@vger.kernel.org,
+ srv_heupstream@mediatek.com, linux-mediatek@lists.infradead.org,
+ linux-serial@vger.kernel.org, Yingjoe Chen <yingjoe.chen@mediatek.com>,
+ Eddie Huang <eddie.huang@mediatek.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019/7/10 20:21, Will Deacon wrote:
-> On Wed, Jul 03, 2019 at 08:12:12PM +0200, Ard Biesheuvel wrote:
->> There was a lot of pushback against the use of refcount_t in the
->> beginning, given that the checked flavor was slower than unchecked
->> atomic_t, and IIRC, it was mainly the networking folks that opposed
->> it. So the whole idea is that the code performs as closely to atomic_t
->> as possible, which is why the code is simply the atomic_t asm
->> implementations, but with a -s suffix added to the arithmetic
->> instructions so they set PSTATE, and one or two conditional branch
->> instructions added.
->>
->> Your approach is going to require one or two additional compare
->> instructions, increasing the instruction count. This may not matter on
->> fast OoO cores, but it probably will affect somebody's benchmark
->> somewhere.
->>
->> However, I'd be in favour of switching to your code, since it is much
->> simpler and more maintainable, so if you spin it as a proper patch, we
->> can do some comparative analysis of the performance.
-> 
-> I'll post the patches after the merge window, but I've pushed them here in
-> the meantime in case anybody gets a chance to take them for a spin:
-> 
-> https://git.kernel.org/pub/scm/linux/kernel/git/will/linux.git/log/?h=refcount/full
+modify mtk uart runtime interface, add uart clock use count.
 
-Hmm, tested with Jan's test case on a 96 cores ARM server, I can
-see 5% better performance than Ard's patch for 16, 32, 48 cores,
-and even 9% better for 72 cores and 96 cores (48 cores per socket,
-24 cores per CPU die, two CPU dies in the same socket, and the latency
-from socket to socket is higher than the latency between CPU dies in
-the same socket). I tested this for two rounds and the test result is
-stable. Not sure why it's better than Ard's patch, maybe it's related
-our fast OoO cores :)
+Signed-off-by: Changqi Hu <changqi.hu@mediatek.com>
+---
+ drivers/tty/serial/8250/8250_mtk.c | 65 ++++++++++++++++++++++++--------------
+ 1 file changed, 42 insertions(+), 23 deletions(-)
 
-Anyway,
-
-Tested-by: Hanjun Guo <guohanjun@huawei.com>
-
-Thanks
-Hanjun
+diff --git a/drivers/tty/serial/8250/8250_mtk.c b/drivers/tty/serial/8250/8250_mtk.c
+index f470ded..b0113d1 100644
+--- a/drivers/tty/serial/8250/8250_mtk.c
++++ b/drivers/tty/serial/8250/8250_mtk.c
+@@ -31,6 +31,7 @@
+ #define MTK_UART_RXTRI_AD	0x14	/* RX Trigger address */
+ #define MTK_UART_FRACDIV_L	0x15	/* Fractional divider LSB address */
+ #define MTK_UART_FRACDIV_M	0x16	/* Fractional divider MSB address */
++#define MTK_UART_DEBUG0	0x18
+ #define MTK_UART_IER_XOFFI	0x20	/* Enable XOFF character interrupt */
+ #define MTK_UART_IER_RTSI	0x40	/* Enable RTS Modem status interrupt */
+ #define MTK_UART_IER_CTSI	0x80	/* Enable CTS Modem status interrupt */
+@@ -386,9 +387,18 @@ static void mtk8250_set_flow_ctrl(struct uart_8250_port *up, int mode)
+ static int __maybe_unused mtk8250_runtime_suspend(struct device *dev)
+ {
+ 	struct mtk8250_data *data = dev_get_drvdata(dev);
++	struct uart_8250_port *up = serial8250_get_port(data->line);
+ 
+-	clk_disable_unprepare(data->uart_clk);
+-	clk_disable_unprepare(data->bus_clk);
++	/*wait until UART in idle status*/
++	while
++		(serial_in(up, MTK_UART_DEBUG0));
++
++	if (data->clk_count == 0U) {
++		dev_dbg(dev, "%s clock count is 0\n", __func__);
++	} else {
++		clk_disable_unprepare(data->bus_clk);
++		data->clk_count--;
++	}
+ 
+ 	return 0;
+ }
+@@ -398,16 +408,16 @@ static int __maybe_unused mtk8250_runtime_resume(struct device *dev)
+ 	struct mtk8250_data *data = dev_get_drvdata(dev);
+ 	int err;
+ 
+-	err = clk_prepare_enable(data->uart_clk);
+-	if (err) {
+-		dev_warn(dev, "Can't enable clock\n");
+-		return err;
+-	}
+-
+-	err = clk_prepare_enable(data->bus_clk);
+-	if (err) {
+-		dev_warn(dev, "Can't enable bus clock\n");
+-		return err;
++	if (data->clk_count > 0U) {
++		dev_dbg(dev, "%s clock count is %d\n", __func__,
++			data->clk_count);
++	} else {
++		err = clk_prepare_enable(data->bus_clk);
++		if (err) {
++			dev_warn(dev, "Can't enable bus clock\n");
++			return err;
++		}
++		data->clk_count++;
+ 	}
+ 
+ 	return 0;
+@@ -416,13 +426,23 @@ static int __maybe_unused mtk8250_runtime_resume(struct device *dev)
+ static void
+ mtk8250_do_pm(struct uart_port *port, unsigned int state, unsigned int old)
+ {
+-	if (!state)
+-		pm_runtime_get_sync(port->dev);
++	struct uart_8250_port *up = up_to_u8250p(port);
++
++	if (!state) {
++		if (!(up->capabilities & UART_CAP_RPM))
++			mtk8250_runtime_resume(port->dev);
++		else
++			pm_runtime_get_sync(port->dev);
++	}
+ 
+ 	serial8250_do_pm(port, state, old);
+ 
+-	if (state)
+-		pm_runtime_put_sync_suspend(port->dev);
++	if (state) {
++		if (!(up->capabilities & UART_CAP_RPM))
++			mtk8250_runtime_suspend(port->dev);
++		else
++			pm_runtime_put_sync_suspend(port->dev);
++	}
+ }
+ 
+ #ifdef CONFIG_SERIAL_8250_DMA
+@@ -499,6 +519,8 @@ static int mtk8250_probe(struct platform_device *pdev)
+ 	if (!data)
+ 		return -ENOMEM;
+ 
++	data->clk_count = 0;
++
+ 	if (pdev->dev.of_node) {
+ 		err = mtk8250_probe_of(pdev, &uart.port, data);
+ 		if (err)
+@@ -531,17 +553,12 @@ static int mtk8250_probe(struct platform_device *pdev)
+ 
+ 	platform_set_drvdata(pdev, data);
+ 
+-	err = mtk8250_runtime_resume(&pdev->dev);
+-	if (err)
+-		return err;
++	pm_runtime_enable(&pdev->dev);
+ 
+ 	data->line = serial8250_register_8250_port(&uart);
+ 	if (data->line < 0)
+ 		return data->line;
+ 
+-	pm_runtime_set_active(&pdev->dev);
+-	pm_runtime_enable(&pdev->dev);
+-
+ 	return 0;
+ }
+ 
+@@ -552,11 +569,13 @@ static int mtk8250_remove(struct platform_device *pdev)
+ 	pm_runtime_get_sync(&pdev->dev);
+ 
+ 	serial8250_unregister_port(data->line);
+-	mtk8250_runtime_suspend(&pdev->dev);
+ 
+ 	pm_runtime_disable(&pdev->dev);
+ 	pm_runtime_put_noidle(&pdev->dev);
+ 
++	if (!pm_runtime_status_suspended(&pdev->dev))
++		mtk8250_runtime_suspend(&pdev->dev);
++
+ 	return 0;
+ }
+ 
+-- 
+1.8.1.1.dirty
 
 
 _______________________________________________
