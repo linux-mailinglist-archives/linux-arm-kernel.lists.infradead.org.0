@@ -2,79 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 466906BBB0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 13:44:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C5FD6BBC0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 13:47:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i+XE6q3jgnV5P30/QckUrsBIHZ2y6h3pL3rRsBGGXnk=; b=CpBFW7JNpkupQD
-	Xqo2McfQDN9uBoIOoJnADfa2ON2aZr2jt93aDHsPEQKJje2h+y0OOBlKT3yjqoFz1sXUp0chJCXua
-	m/kEewtVAakKAGhN8pJd1Cwh/KUEkrywFalw4dmmwOdsNuzubSxua/Vpdkihy5/8KwWbbDlvYkazX
-	vX+JgXr3SWKy58T0G0Wg1vPADJEx2sE7e2RqhyYR/7I4+I2/g/x4M3BMem/E9yKq6bWgZUwd/uOtH
-	dkplXjyKdJwnxpkM1c0tK7E5LFGKjOrxqChaguw+q4LPyH5mzpdY17O9ZWNp1BgYELxiBA7Anucg5
-	yZYI6raJSFqXYGbsWavg==;
+	List-Owner; bh=AzrPC8+cfzp4bRCPEnoaaOsp24XFBbZxl5VZY6JHnjc=; b=HC0wU+/sMkrsZ5
+	n2wFMHrQwnUQf/K77fu1Kl38uRzaRJgiTXhYcdiENm7Syc6Qqw/9DdVGeQXLzftYqrCkuH+RIWf52
+	hMpnH///nx4bzNx9IFy7dcit2BKVy6VUFLNded4oDK+X9lP/0rZJjK9Q76L1FLoTM+PZhfbPAVKCC
+	sMQiX80LXUA405IhfcUYapZbJPyPcA2EwI0r6ZEvHRocmM4M1xiO+QpuFCD3ppvp5WS0kgokx1IES
+	7wyZaVmprmWVrKUmvwxoe+jUjTFDN9GmG9tQvpjGAiHJwDoahUbIKbEy6o2BqaW2QxyV5iJECObwU
+	KLJHWXiUBo4d4mi7XyOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hniMJ-0006hp-OC; Wed, 17 Jul 2019 11:44:31 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1hniOw-00028e-10; Wed, 17 Jul 2019 11:47:14 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hniM7-0006aV-FO
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 11:44:20 +0000
-Received: by mail-pf1-x441.google.com with SMTP id y15so10722739pfn.5
+ id 1hniOm-000289-3h
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 11:47:05 +0000
+Received: by mail-pl1-x643.google.com with SMTP id k8so11858613plt.3
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 17 Jul 2019 04:44:19 -0700 (PDT)
+ Wed, 17 Jul 2019 04:47:03 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=s96tbUHAJa/3W+S33QuecksVNxzPE4B+rwrtGBTPIRg=;
- b=YNTzEvLokDKfBiND0F2uTRtNbbscQoeYlRAIZ4D4gm+fPunaVpSxT9yFu1P0pJ6lio
- xWTqHSLTx3ZiQsVVIdfvcsAEZX+UwZ3GwnRk6z/9j+jj49uvH9o3OWPLDccY+IbVHGze
- VX/w7SlL3Vzx+t0xrwbctuweCHGIlBKbcd05Q0zBlUJIzL3VkiYxJwnzmtUL5R2SnxIl
- RhMYnRo7T8e4Wl/4YHx7n44SfOzOXvvpPCN5gZKipQVyiczav3qSb50tsdB3ZZ0CfrCh
- dofC27Pihb8FLt/R6YXAogt8ZfxAC6UrwAQzPlEU0+w5SGEaRflsRUqY/qTdnOsoVA2h
- liiA==
+ :cc; bh=XH7pgHFzkwihJR5psn/ZNzGH7d1Hcpwg4ypt2aGmLUk=;
+ b=q9rg5oP+7QfRryee4CQfI+zTuO8vcNkAU+Zb8S/XX5gbQKX1OYbsUUbB3B8KK9hFmU
+ UHgvh4Mz+Kyv0D5E5zvwH3nJNYoE2P1kzcK2Rg1yMoExsViP4+PURLjfYPF2WZhrd0MF
+ a+zGI8yxCxdvE8nZGITXCK8/RaYQDCnkR7z8XELwz+GgVBZndcqvcfCaF4ihTHl0HyVo
+ bFY7Esho++ViErb2avPSuS/M58xcsz7oUebcD6xLNGIpCphqGpuQ31GuhoMHpSqGmldC
+ ZKZZNvAff0cBNn4NnOvQXzgW64bJR2BOmy7dIGzstZ5vq+Xgsj3OiBdAV2LIo/WRsiLm
+ aMOQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=s96tbUHAJa/3W+S33QuecksVNxzPE4B+rwrtGBTPIRg=;
- b=S6cDWrtSi/b4I6AnHUWMRbq662m4sm44jGqTDUqnRDVN4zdtiJIPz4Mz8u4P89yg/q
- VveSNj8/LKkbOGFAbxC0w9Ylr7lKUj2TqxIdbmCRXqondijiHCGo0fQvGzdwd4IL+amW
- M9738rU/p4ip6JytL4lpIPyoXEprNstMjMtsPY9WqiaMAJdFg+sBHLi/S4kZd/KAY0EF
- NypFe4G2y4RUqasj3iImTaWrFrbj8G87PCq0qm1PpIjiYyRvaE6lcIs7+F4Y8jZ9DZf+
- CQ521zl5KYtKituqjFJrtA5ekcXc8pZOA0WWS4/R4QAXFopSJ2SRN3ANHKX9ZqkBwoD9
- NjMQ==
-X-Gm-Message-State: APjAAAXGijB9lNdGlLG3YhCa7sPnoxEFJOj/fdcJcod+Vm2g5cb0mN/f
- HGkS7ItSKd71U4ODGol3hgdFt1P+iapVvirWIkmIXgTLUnk=
-X-Google-Smtp-Source: APXvYqxCr99MNxoD8F3ipCKfGH5Ic+wArEB2kJiBZjN+Ft8BlSUogLYhlY5cWCf0y3NDyGKfQgFMQFiKtGoY4M7YZGQ=
-X-Received: by 2002:a63:c442:: with SMTP id m2mr41068862pgg.286.1563363858315; 
- Wed, 17 Jul 2019 04:44:18 -0700 (PDT)
+ bh=XH7pgHFzkwihJR5psn/ZNzGH7d1Hcpwg4ypt2aGmLUk=;
+ b=ZfmXtXEPyfHOT3RB/tij5eXayqZBHcPg9TZT2gfzPKNT+Ftgc+2p/BeGR2ZNnXTKBG
+ RJfjfbJx7Tr5KjRe4XzNtd95pU805wnoOtBvYDCYW3KwxAyXVs4ZE/jqrbUE4FSPLGXJ
+ AwxNJ4w4hTSkaRYFmm7SQeJdb/5Yl8ltrNP2ZPk4F9hGXTOMpA6avxr7/w6sa+lPxLBV
+ NZfoakLx3cY0n00SIUJfzPgy1rqnvowD3GMSPXvbj3BiFeUv1FyM8EqM/93akRQXiNaT
+ 9AJ+mu7W6EMNXhs2O6dvh5M8KQy4RX+OgXUgwBGfoD+HJPuJC178fS+TyWfFBbcIYM2v
+ T75Q==
+X-Gm-Message-State: APjAAAUL1h6ml0xRtAADbfBXryEASQlTHLVP1l4/nSsOZpXL1cfY9y/+
+ 1TP76wf0YuQSOoZFSKFnAKYAlsev0LvMhAUBDydcHA==
+X-Google-Smtp-Source: APXvYqz8S3jyPxed+oPtsIDmi9g4NsD5ItlfcVysZ7+qze2pU/edo+3e3aBEztJRj4XnLTpHjY2eNg/431rKCehxHqk=
+X-Received: by 2002:a17:902:8689:: with SMTP id
+ g9mr39736837plo.252.1563364023206; 
+ Wed, 17 Jul 2019 04:47:03 -0700 (PDT)
 MIME-Version: 1.0
 References: <cover.1561386715.git.andreyknvl@google.com>
- <ea0ff94ef2b8af12ea6c222c5ebd970e0849b6dd.1561386715.git.andreyknvl@google.com>
- <20190624174015.GL29120@arrakis.emea.arm.com>
- <CAAeHK+y8vE=G_odK6KH=H064nSQcVgkQkNwb2zQD9swXxKSyUQ@mail.gmail.com>
- <20190715180510.GC4970@ziepe.ca>
- <CAAeHK+xPQqJP7p_JFxc4jrx9k7N0TpBWEuB8Px7XHvrfDU1_gw@mail.gmail.com>
- <20190716120624.GA29727@ziepe.ca>
-In-Reply-To: <20190716120624.GA29727@ziepe.ca>
+ <d8e3b9a819e98d6527e506027b173b128a148d3c.1561386715.git.andreyknvl@google.com>
+ <20190624175120.GN29120@arrakis.emea.arm.com>
+ <20190717110910.GA12017@rapoport-lnx>
+In-Reply-To: <20190717110910.GA12017@rapoport-lnx>
 From: Andrey Konovalov <andreyknvl@google.com>
-Date: Wed, 17 Jul 2019 13:44:07 +0200
-Message-ID: <CAAeHK+xPPQ9QjAksbfWG-Zmnawt-cdw9eO_6GVxjEYcaDGvaRA@mail.gmail.com>
-Subject: Re: [PATCH v18 11/15] IB/mlx4: untag user pointers in mlx4_get_umem_mr
-To: Jason Gunthorpe <jgg@ziepe.ca>
+Date: Wed, 17 Jul 2019 13:46:52 +0200
+Message-ID: <CAAeHK+yB=d_oXOVZ2TuVe2UkBAx-GM_f+mu88JeVWqPO95xVHQ@mail.gmail.com>
+Subject: Re: [PATCH v18 08/15] userfaultfd: untag user pointers
+To: Mike Rapoport <rppt@linux.ibm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_044419_541168_D125B00C 
-X-CRM114-Status: GOOD (  21.10  )
+X-CRM114-CacheID: sfid-20190717_044704_185521_67E84FE8 
+X-CRM114-Status: GOOD (  23.37  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
  white-list
@@ -113,13 +111,14 @@ Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
  Vincenzo Frascino <vincenzo.frascino@arm.com>,
  Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
  linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- Christoph Hellwig <hch@infradead.org>, Dmitry Vyukov <dvyukov@google.com>,
- Dave Martin <Dave.Martin@arm.com>, Evgeniy Stepanov <eugenis@google.com>,
- linux-media@vger.kernel.org, Kevin Brodsky <kevin.brodsky@arm.com>,
- Kees Cook <keescook@chromium.org>, Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
+ Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
+ Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
  Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
  Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Al Viro <viro@zeniv.linux.org.uk>, Mauro Carvalho Chehab <mchehab@kernel.org>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>,
  Kostya Serebryany <kcc@google.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
@@ -135,55 +134,126 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jul 16, 2019 at 2:06 PM Jason Gunthorpe <jgg@ziepe.ca> wrote:
+On Wed, Jul 17, 2019 at 1:09 PM Mike Rapoport <rppt@linux.ibm.com> wrote:
 >
-> On Tue, Jul 16, 2019 at 12:42:07PM +0200, Andrey Konovalov wrote:
-> > On Mon, Jul 15, 2019 at 8:05 PM Jason Gunthorpe <jgg@ziepe.ca> wrote:
+> On Mon, Jun 24, 2019 at 06:51:21PM +0100, Catalin Marinas wrote:
+> > On Mon, Jun 24, 2019 at 04:32:53PM +0200, Andrey Konovalov wrote:
+> > > This patch is a part of a series that extends kernel ABI to allow to pass
+> > > tagged user pointers (with the top byte set to something else other than
+> > > 0x00) as syscall arguments.
 > > >
-> > > On Mon, Jul 15, 2019 at 06:01:29PM +0200, Andrey Konovalov wrote:
-> > > > On Mon, Jun 24, 2019 at 7:40 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
-> > > > >
-> > > > > On Mon, Jun 24, 2019 at 04:32:56PM +0200, Andrey Konovalov wrote:
-> > > > > > This patch is a part of a series that extends kernel ABI to allow to pass
-> > > > > > tagged user pointers (with the top byte set to something else other than
-> > > > > > 0x00) as syscall arguments.
-> > > > > >
-> > > > > > mlx4_get_umem_mr() uses provided user pointers for vma lookups, which can
-> > > > > > only by done with untagged pointers.
-> > > > > >
-> > > > > > Untag user pointers in this function.
-> > > > > >
-> > > > > > Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
-> > > > > >  drivers/infiniband/hw/mlx4/mr.c | 7 ++++---
-> > > > > >  1 file changed, 4 insertions(+), 3 deletions(-)
-> > > > >
-> > > > > Acked-by: Catalin Marinas <catalin.marinas@arm.com>
-> > > > >
-> > > > > This patch also needs an ack from the infiniband maintainers (Jason).
-> > > >
-> > > > Hi Jason,
-> > > >
-> > > > Could you take a look and give your acked-by?
+> > > userfaultfd code use provided user pointers for vma lookups, which can
+> > > only by done with untagged pointers.
 > > >
-> > > Oh, I think I did this a long time ago. Still looks OK.
+> > > Untag user pointers in validate_range().
+> > >
+> > > Reviewed-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+> > > Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
+> > > Reviewed-by: Kees Cook <keescook@chromium.org>
+> > > Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
+> > > ---
+> > >  fs/userfaultfd.c | 22 ++++++++++++----------
+> > >  1 file changed, 12 insertions(+), 10 deletions(-)
 > >
-> > Hm, maybe that was we who lost it. Thanks!
-> >
-> > > You will send it?
-> >
-> > I will resend the patchset once the merge window is closed, if that's
-> > what you mean.
+> > Same here, it needs an ack from Al Viro.
 >
-> No.. I mean who send it to Linus's tree? ie do you want me to take
-> this patch into rdma?
+> The userfault patches usually go via -mm tree, not sure if Al looks at them :)
 
-I think the plan was to merge the whole series through the mm tree.
-But I don't mind if you want to take this patch into your tree. It's
-just that this patch doesn't make much sense without the rest of the
-series.
+Ah, OK, I guess than Andrew will take a look at them when merging.
 
 >
-> Jason
+> FWIW, you can add
+>
+> Reviewed-by: Mike Rapoport <rppt@linux.ibm.com>
+
+I will, thanks!
+
+>
+> > > diff --git a/fs/userfaultfd.c b/fs/userfaultfd.c
+> > > index ae0b8b5f69e6..c2be36a168ca 100644
+> > > --- a/fs/userfaultfd.c
+> > > +++ b/fs/userfaultfd.c
+> > > @@ -1261,21 +1261,23 @@ static __always_inline void wake_userfault(struct userfaultfd_ctx *ctx,
+> > >  }
+> > >
+> > >  static __always_inline int validate_range(struct mm_struct *mm,
+> > > -                                     __u64 start, __u64 len)
+> > > +                                     __u64 *start, __u64 len)
+> > >  {
+> > >     __u64 task_size = mm->task_size;
+> > >
+> > > -   if (start & ~PAGE_MASK)
+> > > +   *start = untagged_addr(*start);
+> > > +
+> > > +   if (*start & ~PAGE_MASK)
+> > >             return -EINVAL;
+> > >     if (len & ~PAGE_MASK)
+> > >             return -EINVAL;
+> > >     if (!len)
+> > >             return -EINVAL;
+> > > -   if (start < mmap_min_addr)
+> > > +   if (*start < mmap_min_addr)
+> > >             return -EINVAL;
+> > > -   if (start >= task_size)
+> > > +   if (*start >= task_size)
+> > >             return -EINVAL;
+> > > -   if (len > task_size - start)
+> > > +   if (len > task_size - *start)
+> > >             return -EINVAL;
+> > >     return 0;
+> > >  }
+> > > @@ -1325,7 +1327,7 @@ static int userfaultfd_register(struct userfaultfd_ctx *ctx,
+> > >             goto out;
+> > >     }
+> > >
+> > > -   ret = validate_range(mm, uffdio_register.range.start,
+> > > +   ret = validate_range(mm, &uffdio_register.range.start,
+> > >                          uffdio_register.range.len);
+> > >     if (ret)
+> > >             goto out;
+> > > @@ -1514,7 +1516,7 @@ static int userfaultfd_unregister(struct userfaultfd_ctx *ctx,
+> > >     if (copy_from_user(&uffdio_unregister, buf, sizeof(uffdio_unregister)))
+> > >             goto out;
+> > >
+> > > -   ret = validate_range(mm, uffdio_unregister.start,
+> > > +   ret = validate_range(mm, &uffdio_unregister.start,
+> > >                          uffdio_unregister.len);
+> > >     if (ret)
+> > >             goto out;
+> > > @@ -1665,7 +1667,7 @@ static int userfaultfd_wake(struct userfaultfd_ctx *ctx,
+> > >     if (copy_from_user(&uffdio_wake, buf, sizeof(uffdio_wake)))
+> > >             goto out;
+> > >
+> > > -   ret = validate_range(ctx->mm, uffdio_wake.start, uffdio_wake.len);
+> > > +   ret = validate_range(ctx->mm, &uffdio_wake.start, uffdio_wake.len);
+> > >     if (ret)
+> > >             goto out;
+> > >
+> > > @@ -1705,7 +1707,7 @@ static int userfaultfd_copy(struct userfaultfd_ctx *ctx,
+> > >                        sizeof(uffdio_copy)-sizeof(__s64)))
+> > >             goto out;
+> > >
+> > > -   ret = validate_range(ctx->mm, uffdio_copy.dst, uffdio_copy.len);
+> > > +   ret = validate_range(ctx->mm, &uffdio_copy.dst, uffdio_copy.len);
+> > >     if (ret)
+> > >             goto out;
+> > >     /*
+> > > @@ -1761,7 +1763,7 @@ static int userfaultfd_zeropage(struct userfaultfd_ctx *ctx,
+> > >                        sizeof(uffdio_zeropage)-sizeof(__s64)))
+> > >             goto out;
+> > >
+> > > -   ret = validate_range(ctx->mm, uffdio_zeropage.range.start,
+> > > +   ret = validate_range(ctx->mm, &uffdio_zeropage.range.start,
+> > >                          uffdio_zeropage.range.len);
+> > >     if (ret)
+> > >             goto out;
+> > > --
+> > > 2.22.0.410.gd8fdbe21b5-goog
+>
+> --
+> Sincerely yours,
+> Mike.
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
