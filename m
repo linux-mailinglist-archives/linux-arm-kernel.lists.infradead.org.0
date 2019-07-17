@@ -2,91 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C37896C2A9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 23:32:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD1066C2C4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 23:49:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1zdzWXguFuxQM9K7SYmCwf0BehreW7yjzdQ/sQxhwo8=; b=fWKF+MKEYU3x/x
-	nRPb3YVKP6TDkN5EUyRUPZjoDOA7WwKEPDJvstvzHjXQm8kGJb+t19l5hbwStY5699dbj9gDaFANC
-	xQ/G0vuEYh+BtM19tOn3WYp9GYbqM3JxpHwn0V24Iy85Eajw7lzrIYu05PgsoqcBLWgXhXZzC50AO
-	F5FzdNdcQoVK6Ns8+8MTcvSKf0gS2LV6ETIo+HAV1ptXp/rTYuACI0I3/9D/lYbKSgAfKq/91EtGO
-	40cVOBSycvh9yzzuJ2zsxz+qzLrmP/81ED5AavJWoXsPeJ3z9sZlizbK5LSAxraGEcV4bllqJwHkF
-	XAoSCe3hFwjMAA5vkV+Q==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=589IZCwNwsuM4b13vreA5GDPNCDOCn9bbA44jXTlj9U=; b=Nc9zyJysoa4C2H
+	oDPwt2VzOXScP085qE++BviirboU8IAFj873p7Q3nK2+xfO2JlwKPLB1PliZdVQEQvY7FnlJAY0Zp
+	pALcKiDhF+8biJMGUTQJdEITcEivnBpjOvODBcXzl9pxqTiRlHVXmUm1id7UVGO60Y9KQUdv1n4Un
+	EVhcxfUAvoTNjrA6AeOHEpkFW6cWt0DPp3xM4Re5faNNN3yWf0vPvokB1a2lp6aE2hQ9w/RpEFdOn
+	pO+05D4PGLCBbKHies/2dpWGX0gcbgQK88+hEf6//2rdu2m2KoWdCbMA54JTZBQHPz7raunnVXSri
+	w3YSL+dHfLB05M2AUQpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnrXd-000846-2j; Wed, 17 Jul 2019 21:32:49 +0000
-Received: from mout.gmx.net ([212.227.15.18])
+	id 1hnrnj-00056X-31; Wed, 17 Jul 2019 21:49:27 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnrXO-00083O-Sl; Wed, 17 Jul 2019 21:32:36 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1563399139;
- bh=4dqt+fFOEEfbl9asEddCjFKOOBUm9UCS3d/o0b87bO0=;
- h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
- b=NekURAyNlhqtY+GoqsWAyY+gmZ2U6svM+/tMsScW9erXV410w6q0v3DKyAyK68O0B
- Xf8/3iWNg3cp2Y3zQqgvlEfTrWo721lrxF4FRt3STfYj/rUv9h57qRnn8Sa3mFxDiP
- BMGbIYLA0ug/fB6t1slthLLdMoOzJdhEpdaNtJHw=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [192.168.1.162] ([37.4.249.103]) by mail.gmx.com (mrgmx001
- [212.227.17.190]) with ESMTPSA (Nemesis) id 0LsChr-1iRi2O0oXf-013t3Y; Wed, 17
- Jul 2019 23:32:19 +0200
-Subject: Re: [PATCH RFC 18/18] ARM: dts: Add minimal Raspberry Pi 4 support
-To: Florian Fainelli <f.fainelli@gmail.com>, Eric Anholt <eric@anholt.net>,
- Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
- <sboyd@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
- Adrian Hunter <adrian.hunter@intel.com>, Mark Brown <broonie@kernel.org>
-References: <1563398164-2679-1-git-send-email-wahrenst@gmx.net>
- <1563398164-2679-5-git-send-email-wahrenst@gmx.net>
- <57dea1a5-2a33-5644-05c5-174753307fc0@gmail.com>
-From: Stefan Wahren <wahrenst@gmx.net>
-Message-ID: <abde5797-3bd4-c0c0-ec8a-f2408121dc8f@gmx.net>
-Date: Wed, 17 Jul 2019 23:32:16 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1hnrnV-00055M-Ea
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 21:49:15 +0000
+Received: by mail-qk1-x741.google.com with SMTP id m14so18715366qka.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 17 Jul 2019 14:49:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=ejsg9zFg1SBlFMIbKb0gYl6rd1BQSyw/OZUvkIgAnYs=;
+ b=TaxnU2Oyx2xFw2mWD1NKL4w1DaCcE7Y+7E0ijhbB4LV85kcJJFyakph9adbzXQFHOz
+ 878Z2XS7PJvMkQstz8d2kM8Kv7PEN4jRzmh6HzEWEDzyxpeFJz6gON8Dvj5Ye2rZvKH3
+ 6EiuYt1IV5zpofrOF9eJsX4oYBwWwKBOexo0M=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ejsg9zFg1SBlFMIbKb0gYl6rd1BQSyw/OZUvkIgAnYs=;
+ b=oneB/8ZSyiPvQ5OYb7AluJLC1megalJN+G18p0RwOHX5esMXoZpR0YKRGMVGUdXT0I
+ ++q945JLNp5RMNWKQcvKhK3pCkT558i35DsCmWE+5Qe9oXAazvy4rs0bEgmalmCHaEAb
+ hX62n/ienSqx44Y67yEEDDz5u/SPX5DZGDlJZqYyMZSl2GpdRiRNp18/MDgKFWgkorni
+ 2RMQkVQA9I6WfZ1Jpa5U/1MkYMx7AuZhu/IGbvh8Z21iperHvYubHBEvkfWOWeNDa95i
+ xYwqnMRQ6bcRpCIuLhUx/jmXs0bUC+/t1EU0Ks0/pJikbOEhf/vd9gtGHYAc1yvUibE9
+ r4sg==
+X-Gm-Message-State: APjAAAW26JwlB/FXDO5w1Dzn1MAWvScyOs2bl/kkrMJuYHh7Opzm41uX
+ 2bDv65hme8FtGRUAz+iJqed7BTVc95lPPebjbFCpXQ==
+X-Google-Smtp-Source: APXvYqyNm7b7/Vdeq0kcv6bDvARYwnBGZlOZ5GZXhVqH5sSSwkvumU2WuAPzCpUXnbYRnopJaVkUVvXRBo30p08cZDQ=
+X-Received: by 2002:a37:48d0:: with SMTP id
+ v199mr27184138qka.318.1563400149938; 
+ Wed, 17 Jul 2019 14:49:09 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <57dea1a5-2a33-5644-05c5-174753307fc0@gmail.com>
-Content-Language: en-US
-X-Provags-ID: V03:K1:1Sy6eM6oNyEOnA4LCKv7JqTA59Gusl8Skshrgfcf01a2I1VVRSp
- 1kxqStCjKEvprp21C+kOcr/szLtp41HmZUugM415vDyyb0RmabjVZCrpkdtdDmxWZzJ67I5
- 16hqdqYc1GhB1xXIhYA9/01Jaam+eM6zuVAnjXI2tt/MIABcjTv9VSpMGk5789iylQe4zXA
- wCQ5/80r9sq8FjciBI57w==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:Oe8GwltFnuw=:4Pt+8vuy3SKoUSo6zefU19
- QxR0RnRs7VLX7ePuJV4aNmMr/o6QxOFpLLWAUX3mSb5h/47Ky5OI/pj0vdM0JgZk3J1IqtTM8
- W0S7WMBqzz+ndPIpYBdF+b21KqMBZxDRpKq4KPFSB+5iJqxJSb/M8FXD/QGPhUQP0DvIkKZx9
- bMWWZMdpkZaDuG8chlE1RlwGdpqFxF2R8WuG5KRSjqnrI7c4MLtOx9UriYE+nsnhU+o/b8DQh
- Cqfyyt8U2dT459w622u1rkMTaYx0dxKJhi/r2WQ5XsqREApZwQ+Iz6IHJbr6KBQBk4WGvXp+F
- ZadVE7v48IpzT/jjhBmpxAn9AvRuprs6VidYOANTYMTaQV7JxA3+S6nmqlTMvq8t+BCkbUxKl
- OQjmSjPmIsiyTKRPJcOB1J5G2hUva8vqH8t5WoGQn6Npk6VSxmRm9dvU2jt3p/AlgbJSvzgLl
- g2Rc0+vTFWR0pAv0mKtQrV6ynMCPeM0s5nYJbC9Ffv3DVNur6c8AjYUdBeN7dkP3WqDUbHYF3
- Fkd2Pledi3DtrTAT984N9r0Ec1ch0cLQvIunTpSMrWYzKzA4/oliD3VkgpJpoHwNhORNVC/Fy
- 3Dd+nVNIpLa7k2THVJJ4G/A+3VgD933GNxZ2V5e4fAmF+gR0D+UC2nSrMo6guSWnTd4aPEzQH
- BQkUfQSZcXNOp4Lg29evra6PMyKVCRaAeZsNmKCTzRmFTlcfrXSTiCHIPoqFx9Jdvz2yemjr7
- UIjU+oSEXpx5rCSQfTtDOjIfOlROy43DrTVJXWC2XFSy2hfHWDfGEU0qmunFWnrrl89Kp7HLp
- Td+VpYlVWjWDFYzvrR0DEgUhdBFRuMv0e3sqDwWupQtn77oT0aeZzU9y7rD1jyK+umsX0r1t1
- J78RJUv+k4N4Sbqr0yxF/6wpaxpC3Ps9Nd4O2kVd/7/gQplkkZg/wWulCaMv2QOyhH5LEenOE
- bk37r+Ndwnih9EX9hLih7NYmNv2WtMl4QxVDput37zleS5aWTjujzHK0BXWf3oBrlUc64mmva
- g5QzFSx57sf1h+NBJp/M/nj95F4K1+m8Tfd+//1Akz/0bpakRAOPpEcZJgokMWzCup8qVD7p4
- IPltC5oTRzTHSs=
+References: <20190627080116.40264-1-jitao.shi@mediatek.com>
+ <20190627080116.40264-2-jitao.shi@mediatek.com>
+ <1561702259.18399.7.camel@mtksdaap41>
+In-Reply-To: <1561702259.18399.7.camel@mtksdaap41>
+From: Ryan Case <ryandcase@chromium.org>
+Date: Wed, 17 Jul 2019 14:48:59 -0700
+Message-ID: <CACjz--k+Z2QqLEyrWoWSma_K1eP9jcaN3osc80UJQNK9m8=TFQ@mail.gmail.com>
+Subject: Re: [v5 1/7] drm/mediatek: move mipi_dsi_host_register to probe
+To: CK Hu <ck.hu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_143235_226119_46C6ECAA 
-X-CRM114-Status: GOOD (  15.03  )
+X-CRM114-CacheID: sfid-20190717_144913_526170_5A9A622C 
+X-CRM114-Status: GOOD (  21.97  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.15.18 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wahrenst[at]gmx.net)
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -96,6 +79,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,52 +91,226 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-pwm@vger.kernel.org,
+ David Airlie <airlied@linux.ie>, stonea168@163.com,
+ dri-devel@lists.freedesktop.org, Ajay Kumar <ajaykumar.rs@samsung.com>,
+ Vincent Palatin <vpalatin@chromium.org>, cawa.cheng@mediatek.com,
+ bibby.hsieh@mediatek.com, Russell King <rmk+kernel@arm.linux.org.uk>,
+ Thierry Reding <treding@nvidia.com>, Sean Paul <seanpaul@chromium.org>,
+ devicetree@vger.kernel.org, Jitao Shi <jitao.shi@mediatek.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Pawel Moll <pawel.moll@arm.com>,
+ Ian Campbell <ijc+devicetree@hellion.org.uk>, Inki Dae <inki.dae@samsung.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ yingjoe.chen@mediatek.com, Matthias Brugger <matthias.bgg@gmail.com>,
+ eddie.huang@mediatek.com, linux-arm-kernel@lists.infradead.org,
+ Rahul Sharma <rahul.sharma@samsung.com>, srv_heupstream@mediatek.com,
+ linux-kernel@vger.kernel.org, Sascha Hauer <kernel@pengutronix.de>,
+ Andy Yan <andy.yan@rock-chips.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Florian,
-
-Am 17.07.19 um 23:22 schrieb Florian Fainelli:
+On Thu, Jun 27, 2019 at 11:11 PM CK Hu <ck.hu@mediatek.com> wrote:
 >
-> On 7/17/2019 2:16 PM, Stefan Wahren wrote:
->> This adds minimal support for the new Raspberry Pi 4 without the
->> fancy stuff like GENET, PCIe, XHCI, 40 bit DMA and V3D. The RPi 4 is avail=
->> able
->> in 3 different variants (1, 2 and 4 GB RAM), so leave the memory size to z=
->> ero
->> and let the bootloader take care of it.
->>
->> Other differences to the Raspberry Pi 3:
->> - additional GIC 400 Interrupt controller
->> - new thermal IP and HWRNG
->> - additional MMC interface (emmc2)
->> - additional UART, I2C, SPI and PWM interfaces
->>
->> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
->> =2D--
-> [snip]
+> Hi, Jitao:
 >
->> +		rng@7e104000 {
->> +			interrupts =3D <GIC_SPI 125 IRQ_TYPE_LEVEL_HIGH>;
->> +
->> +			/* RNG is incompatible to brcm,bcm2835-rng */
->> +			status =3D "disabled";
-> It's an iproc-rng200, so you can either re-use the bcm7211-rng
-> compatible string that was just recently added or you can define a
-> bcm2838-rng if you prefer.
+> On Thu, 2019-06-27 at 16:01 +0800, Jitao Shi wrote:
+> > DSI panel driver need attach function which is inculde in
+> > mipi_dsi_host_ops.
+> >
+> > If mipi_dsi_host_register is not in probe, dsi panel will
+> > probe more delay.
+> >
+> > So move the mipi_dsi_host_register to probe from bind.
+> >
+> > Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
+> > Reviewed-by: CK Hu <ck.hu@mediatek.com>
+>
+> This version is different than v4, so please remove reviewed-by tag when
+> this patch change. When I see a reviewed-by tag of mine, I would just
+> skip review it again because I assume this patch is the same as previous
+> version.
+>
+> For this version, I give still give it a
+>
+> Reviewed-by: CK Hu <ck.hu@mediatek.com>
+>
+> > ---
+> >  drivers/gpu/drm/mediatek/mtk_dsi.c | 53 +++++++++++++++++-------------
+> >  1 file changed, 31 insertions(+), 22 deletions(-)
+> >
+> > diff --git a/drivers/gpu/drm/mediatek/mtk_dsi.c b/drivers/gpu/drm/mediatek/mtk_dsi.c
+> > index b00eb2d2e086..595b3b047c7b 100644
+> > --- a/drivers/gpu/drm/mediatek/mtk_dsi.c
+> > +++ b/drivers/gpu/drm/mediatek/mtk_dsi.c
+> > @@ -528,7 +528,7 @@ static s32 mtk_dsi_switch_to_cmd_mode(struct mtk_dsi *dsi, u8 irq_flag, u32 t)
+> >
+> >  static int mtk_dsi_poweron(struct mtk_dsi *dsi)
+> >  {
+> > -     struct device *dev = dsi->dev;
+> > +     struct device *dev = dsi->->host.dev;
 
-i know [1], but this is not essential and the series is long enough.
+single -> here
 
-Thanks
-Stefan
-
-[1] -
-https://github.com/raspberrypi/linux/commit/5e74aadfd1e0e6c00994521863ba044ce25b40de#diff-472f0181289458c487c07a343f767a81
-
+> >       int ret;
+> >       u64 pixel_clock, total_bits;
+> >       u32 htotal, htotal_bits, bit_per_pixel, overhead_cycles, overhead_bits;
+> > @@ -1045,12 +1045,6 @@ static int mtk_dsi_bind(struct device *dev, struct device *master, void *data)
+> >               return ret;
+> >       }
+> >
+> > -     ret = mipi_dsi_host_register(&dsi->host);
+> > -     if (ret < 0) {
+> > -             dev_err(dev, "failed to register DSI host: %d\n", ret);
+> > -             goto err_ddp_comp_unregister;
+> > -     }
+> > -
+> >       ret = mtk_dsi_create_conn_enc(drm, dsi);
+> >       if (ret) {
+> >               DRM_ERROR("Encoder create failed with %d\n", ret);
+> > @@ -1060,8 +1054,6 @@ static int mtk_dsi_bind(struct device *dev, struct device *master, void *data)
+> >       return 0;
+> >
+> >  err_unregister:
+> > -     mipi_dsi_host_unregister(&dsi->host);
+> > -err_ddp_comp_unregister:
+> >       mtk_ddp_comp_unregister(drm, &dsi->ddp_comp);
+> >       return ret;
+> >  }
+> > @@ -1073,7 +1065,6 @@ static void mtk_dsi_unbind(struct device *dev, struct device *master,
+> >       struct mtk_dsi *dsi = dev_get_drvdata(dev);
+> >
+> >       mtk_dsi_destroy_conn_enc(dsi);
+> > -     mipi_dsi_host_unregister(&dsi->host);
+> >       mtk_ddp_comp_unregister(drm, &dsi->ddp_comp);
+> >  }
+> >
+> > @@ -1097,31 +1088,36 @@ static int mtk_dsi_probe(struct platform_device *pdev)
+> >
+> >       dsi->host.ops = &mtk_dsi_ops;
+> >       dsi->host.dev = dev;
+> > +     ret = mipi_dsi_host_register(&dsi->host);
+> > +     if (ret < 0) {
+> > +             dev_err(dev, "failed to register DSI host: %d\n", ret);
+> > +             return ret;
+> > +     }
+> >
+> >       ret = drm_of_find_panel_or_bridge(dev->of_node, 0, 0,
+> >                                         &dsi->panel, &dsi->bridge);
+> >       if (ret)
+> > -             return ret;
+> > +             goto err_unregister_host;
+> >
+> >       dsi->engine_clk = devm_clk_get(dev, "engine");
+> >       if (IS_ERR(dsi->engine_clk)) {
+> >               ret = PTR_ERR(dsi->engine_clk);
+> >               dev_err(dev, "Failed to get engine clock: %d\n", ret);
+> > -             return ret;
+> > +             goto err_unregister_host;
+> >       }
+> >
+> >       dsi->digital_clk = devm_clk_get(dev, "digital");
+> >       if (IS_ERR(dsi->digital_clk)) {
+> >               ret = PTR_ERR(dsi->digital_clk);
+> >               dev_err(dev, "Failed to get digital clock: %d\n", ret);
+> > -             return ret;
+> > +             goto err_unregister_host;
+> >       }
+> >
+> >       dsi->hs_clk = devm_clk_get(dev, "hs");
+> >       if (IS_ERR(dsi->hs_clk)) {
+> >               ret = PTR_ERR(dsi->hs_clk);
+> >               dev_err(dev, "Failed to get hs clock: %d\n", ret);
+> > -             return ret;
+> > +             goto err_unregister_host;
+> >       }
+> >
+> >       regs = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> > @@ -1129,33 +1125,35 @@ static int mtk_dsi_probe(struct platform_device *pdev)
+> >       if (IS_ERR(dsi->regs)) {
+> >               ret = PTR_ERR(dsi->regs);
+> >               dev_err(dev, "Failed to ioremap memory: %d\n", ret);
+> > -             return ret;
+> > +             goto err_unregister_host;
+> >       }
+> >
+> >       dsi->phy = devm_phy_get(dev, "dphy");
+> >       if (IS_ERR(dsi->phy)) {
+> >               ret = PTR_ERR(dsi->phy);
+> >               dev_err(dev, "Failed to get MIPI-DPHY: %d\n", ret);
+> > -             return ret;
+> > +             goto err_unregister_host;
+> >       }
+> >
+> >       comp_id = mtk_ddp_comp_get_id(dev->of_node, MTK_DSI);
+> >       if (comp_id < 0) {
+> >               dev_err(dev, "Failed to identify by alias: %d\n", comp_id);
+> > -             return comp_id;
+> > +             ret = comp_id;
+> > +             goto err_unregister_host;
+> >       }
+> >
+> >       ret = mtk_ddp_comp_init(dev, dev->of_node, &dsi->ddp_comp, comp_id,
+> >                               &mtk_dsi_funcs);
+> >       if (ret) {
+> >               dev_err(dev, "Failed to initialize component: %d\n", ret);
+> > -             return ret;
+> > +             goto err_unregister_host;
+> >       }
+> >
+> >       irq_num = platform_get_irq(pdev, 0);
+> >       if (irq_num < 0) {
+> > -             dev_err(&pdev->dev, "failed to request dsi irq resource\n");
+> > -             return -EPROBE_DEFER;
+> > +             dev_err(&pdev->dev, "failed to get dsi irq_num: %d\n", irq_num);
+> > +             ret = irq_num;
+> > +             goto err_unregister_host;
+> >       }
+> >
+> >       irq_set_status_flags(irq_num, IRQ_TYPE_LEVEL_LOW);
+> > @@ -1163,14 +1161,24 @@ static int mtk_dsi_probe(struct platform_device *pdev)
+> >                              IRQF_TRIGGER_LOW, dev_name(&pdev->dev), dsi);
+> >       if (ret) {
+> >               dev_err(&pdev->dev, "failed to request mediatek dsi irq\n");
+> > -             return -EPROBE_DEFER;
+> > +             goto err_unregister_host;
+> >       }
+> >
+> >       init_waitqueue_head(&dsi->irq_wait_queue);
+> >
+> >       platform_set_drvdata(pdev, dsi);
+> >
+> > -     return component_add(&pdev->dev, &mtk_dsi_component_ops);
+> > +     ret = component_add(&pdev->dev, &mtk_dsi_component_ops);
+> > +     if (ret) {
+> > +             dev_err(&pdev->dev, "failed to add component: %d\n", ret);
+> > +             goto err_unregister_host;
+> > +     }
+> > +
+> > +     return 0;
+> > +
+> > +err_unregister_host:
+> > +     mipi_dsi_host_unregister(&dsi->host);
+> > +     return ret;
+> >  }
+> >
+> >  static int mtk_dsi_remove(struct platform_device *pdev)
+> > @@ -1179,6 +1187,7 @@ static int mtk_dsi_remove(struct platform_device *pdev)
+> >
+> >       mtk_output_dsi_disable(dsi);
+> >       component_del(&pdev->dev, &mtk_dsi_component_ops);
+> > +     mipi_dsi_host_unregister(&dsi->host);
+> >
+> >       return 0;
+> >  }
+>
+>
+>
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
