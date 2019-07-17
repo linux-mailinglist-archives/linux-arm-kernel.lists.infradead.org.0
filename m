@@ -2,37 +2,38 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DFFC56C1C4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 21:54:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0206D6C1BC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 21:53:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=Y40XeQmQXkW29+0azEhjT8IX/FF7v2Q875VlTfwKEYs=; b=Lo/
-	6mQbfCapkooe1mGX4iEO6KyCYgegho17CO2Rl3OVkWwQvtZfw+b84qZrREhRLSP5WokWMNlZZQFJN
-	S+zJAlbEANjy2ZojBC7d63P5eWfDWIRv3uLtGjeBJJsUrbgUVgb//QQR5GXx3qQR/Hk+gaQsa5KXQ
-	kFxm47i6hOVnkgMYvgUtcBLDznBjUOs1vy+LUPxqj2lvq2TV0TCAAJV927971oEN+ndS2y1Agec1X
-	Fx/Af5bu9qLvcNu6yiqnWFgxyN9ba+kkOhn1xMRipOc6loslNNIR+3aLM/ON01n8mqOcRFSxJL/bL
-	bc1eLCXgf5OfpsZC5AHqMaXejTvLmvw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=568eLGYGsgvhR8usMBZbWTKxu2W8YA1NA9yyqykwgjM=; b=mxAykdRN7eBF0gRfL1IA/Fwhv4
+	KVlPaXFU9bZvr58TCVf6KEs5dnuG/TwKeD/cdBdHrRXQESrEoeXKo2UPWWU1OFXPOS59jVOOLm8Ia
+	014oMJgIknOzURnL4ltcL9HsvUiIwtdIjk0XjDf0Ggzx1ri52H9Btnw7lnq3ecBQZlYprUNzTD3t5
+	GIaXQnIdcx6HQjvG2TpZKVWTNMQvQuLOXYbmE7sTeo5EpAzrHP8rKeU9PECCoBpsP0A8pCsmckcIv
+	swkGE+j/jZvavdoor+pgPq2r2ohKYK8kjnDrO4nn7sTS7CZwI1pP9cmQBJ868mTG1l0NDPBhk0740
+	W9/pM1QA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnq0t-0005qx-Pa; Wed, 17 Jul 2019 19:54:55 +0000
-Received: from mout.gmx.net ([212.227.17.22])
+	id 1hnpzN-0004QH-Ke; Wed, 17 Jul 2019 19:53:21 +0000
+Received: from mout.gmx.net ([212.227.17.20])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnpx3-0002tJ-Qz; Wed, 17 Jul 2019 19:51:04 +0000
+ id 1hnpx3-0002tM-0H; Wed, 17 Jul 2019 19:51:00 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1563393039;
- bh=5UDCMes6YxnQqdbOpB1DqmIS9XgXrBZFyZtYmOi5kW0=;
- h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
- b=GLlFe5CTi9psPRckK9Z1MbWNg6IB0Z4X3RSe4rMeZw53yY9hewO8LBFekOF1+7xFp
- v4y3TZP16GN8IbOStYpES/M+he1IYmY0/FbtwfELUr9ePVzChZGahx/BSaHFnSLLdb
- vtw9IMKo2T0YZjn7RAlNYVI/l+yqCdItUoU8Oe5M=
+ s=badeba3b8450; t=1563393040;
+ bh=/s7RMumfEwstl7olzGA0BrPMCx0k4sO1vVXkkHXi5NQ=;
+ h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
+ b=DQT9SRiMDY7EAJx0y1jQ+KIpPbedDgA05TuwXyNBsdyuz8S3/IpJO7C73eBBy6EKT
+ tWvFg8Owi3d0OcWxcyPao7tx2uQGZ9cn11tc12IyRA1TEJMl74p3rtyPEQdmd7Y+lS
+ o3D4ofiQsDUu27r2XV5+s1XIacAXV7DadXDYgUDk=
 X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
 Received: from localhost.localdomain ([37.4.249.103]) by mail.gmx.com
  (mrgmx101 [212.227.17.168]) with ESMTPSA (Nemesis) id
- 0MQvDO-1hsfmz1Vb4-00UGP3; Wed, 17 Jul 2019 21:50:39 +0200
+ 0LwW8p-1iW7LU49CJ-018I3U; Wed, 17 Jul 2019 21:50:40 +0200
 From: Stefan Wahren <wahrenst@gmx.net>
 To: Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
  Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
@@ -42,42 +43,45 @@ To: Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
  Michael Turquette <mturquette@baylibre.com>,
  Stephen Boyd <sboyd@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
  Adrian Hunter <adrian.hunter@intel.com>, Mark Brown <broonie@kernel.org>
-Subject: [PATCH RFC 00/18] ARM: Add minimal Raspberry Pi 4 support
-Date: Wed, 17 Jul 2019 21:50:08 +0200
-Message-Id: <1563393026-17118-1-git-send-email-wahrenst@gmx.net>
+Subject: [PATCH RFC 01/18] ARM: bcm283x: Reduce register ranges for UART,
+ SPI and I2C
+Date: Wed, 17 Jul 2019 21:50:09 +0200
+Message-Id: <1563393026-17118-2-git-send-email-wahrenst@gmx.net>
 X-Mailer: git-send-email 2.7.4
-X-Provags-ID: V03:K1:G1tJr+A1DQl6I1doj5SlccbvsQo2oRFnJtoDftIP7G7iXAyVylM
- Pg5JYe4N3HcwC+6Uxj1qu7NmBcJVYNARzKx8mKeisUCAEVhLCBE952mBUl2GEu3rew7fD/A
- eszpSfoAdAY8Y6x3G1XsntgFq/Z1iwvakQzp/E7o1KBYkr/MRE74jq5j6CewXpFEMo6OI/W
- pQeBL57dKMbnjuanHkRNg==
+In-Reply-To: <1563393026-17118-1-git-send-email-wahrenst@gmx.net>
+References: <1563393026-17118-1-git-send-email-wahrenst@gmx.net>
+X-Provags-ID: V03:K1:CJ8wET5URohu2KkeXrcHhHmDGXGjU8/uihiC24UzNWPG8WPnILf
+ MfvakcJvuZMx9UYZpnoVxqjUjj9CFUPr9HYpW6wquTSG8xiks3u6xDlibcCFNAeVhnDuFPt
+ PU3dL773rKuf1yzm9BsVVJgJScV2VvCZtN8VVDCjxyJuGIR+TVfkYtLbk8Zf9S0Fz38QO5W
+ Vdiv7O8Pi4EOwg6UBF2bw==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:usz1zgziBmc=:/3I+vaWuMVAIcAlzP/wd7i
- PamsLKbtaTaqYMURiTAkEMQULVFJCIyOdWhBDzcqMPXW9IZAkzoBRd1QeIOetoQ0kskbAhxix
- WKKLdfwTyHgQU4fyljeKPraa0dU8nDbNiHF3wPcDWLgegQdvJ7pn5W4vVmmZs42O3/dqqVUb8
- S5nx4BGyksDCyNbYSmT1LXecfJKDCffeH5UG19F4CniPotiqAXr3XZI6aTx+dfWESTgbg2TX9
- iRVeLNZCm0cqOaTPbMm+jhHrUp9sSau2xDiWIDqDkl2woF9fzBXyelBAeWaYeUvZ66W8AhZDH
- Z4RVmllKjPqGXA9Hcyij5SjyO9ENohnL0KBLpSOruKPUtlan/tEXCTdaftXMgx5mpe5ODdIzM
- WbfFZuG067jkiRfZpJITpN2nDgE1XzH6HoalcOvToHMZVEbBPmxjEpwEPdO5aid8RghE8kbGs
- Ss60bD1kkkvmM9i83SThPqhj16tgJrkwGMDwUvDs7HHAR0WzZmAh9bgwf2WcSegPzpguawKIU
- XZCbMzvpHB1rrOWHpbQL7I2hRFEvgc6u6Rd58iZ1rF/3IEXi+JJ/EG1MI4ed5BMU2B08rJbPK
- oQWkkJ3ZmoOVWFzM3CPyFEBCtUH24HM12xnKdJYuwAk+5dPeShBsGfbvqXgl/We12IFsx/3sl
- dCrp7niihDzDxPjBRFNXXuwJlyD+PpGBu983nIzChvq8cgcfBCJXdkH9r37HjC7OMBIHAGqu2
- +mDcQ3YxxyQ8MPVCxL5IfeA3Fp4ht4kxUi1mYwk96ruRd8sb89pTAI1K/qiE4/SKjoPFEuEUY
- UU/rT03+POmHUnbBso+93oTdJSZH6aeTfc9TGrTPgnBCghjUX/OEPe3DXIMmXQBammvg5CWQu
- vXKLsoo5NNiUByDJWlpFrdsigUK6KZbUUGy6SPT0qlmGY+3Q+xm+lNuGn0SkAEEnIdl74ptcq
- h5LzJX/Ciqc3A/Tz4YTxEQwBwJKBqUKPAuJXVpQimJQFOK72CQ8rizbF7T275HCpss/YGEUUN
- V6sHbTqg7uIovf+BGLCcRSaX0jHvk/MGQD4I6V24P9ZdwGx4M5au0vP8JTJmfOgCJfvY42xUB
- 8n8vcrTMFAfJOc=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:tseAc+LVRIM=:cZ8AUJyQf/pMWFJC1pvF3B
+ hPcGoFpHwxoX+DpKZ8sE95r/GV5N/Jj1xSw/ePw/hpvVGBdWUYHecfFO2CYtaTOYG60sHAgVs
+ IWrLdqlISLsm+pjLnEwJaux78AyX/98ndTWzcvuOFjj+grV4um8qMVHsbaJLqtWh2098rv3Bc
+ MK6+SnhAtW8XWk43KAlAb3UDqtYQkBEYmIdmL6N2KMovL6AwDz+4MDc59BWViwCKBN7P/QakF
+ N30QI2Aa6e5btOUMhlgw/TcXue2vqnkk/46dThDehB+tRzbmbMFC1ugCg7xYr+3Rqx6Qo45U3
+ cE84UAXceqqK+c32ZlhimUgu/0ShIhaVb+6EYSadiWbV2u68X0/yDue7YavVnT0kwi0zmueuF
+ s9VUCO3xu40ZETp7lIN2WzQWuiVfmoLaz2jBsumEUF6omT2ePfMMzE3t3p7FfC/tba6XRhDum
+ 8sYwVfRXGsPD3rCtVjKwLlHef8FBACIIOT7kv5iAdbDSs8qw3WzQ2JHcyGC3MxCECqJnpdhQG
+ mwyeUhkb3we70Z83/6rCGhAPudd9orsgoD+Get9DOP93RXsTMJSFQhY8YctYdS/0PdQfIZyFu
+ J5b7edClUN97ecMDl41d8tk152BE/wwo8MdBoUa8g24rl1+1BlwWrc1zSlkZD5c0C9uCtdPIB
+ ZjeYOpHXLmFznEjTXhDTpn4U2XW7RVc9g+D2cSoQdmv2tRUg+xhNkLtbnlEcUNUkx1OcxaHiC
+ 5yFqVHYmJv6Qilt7lwd6X+c1zUsfRnOBifBd9N+rjZ9R/RBXu7GQhjY61w8LpkAfmZaLjvcvB
+ axFvv3lWDEwmifet47dgKooTblXd/ykOdXx3kBPQLwUbKK4opFrKQE0MctT1trFOQ4iRCAeUv
+ vMPcB6dPzOm3IjB5EK+JbDzyQ8Irz9gJ/DVr3du1/UufdQ5mhAyHg4Mc+u4NAarYOJ5APnC4V
+ aGmTyO1c8dXuAAT3gR+8aNk+6rXU7Bfbw7hGqYlA9qprlOxSKivfNt4lPUP8YdZQOl1QSUNAO
+ 1UT29IYmOFgt02uDfUd8gODihZYYI3FERshOmkfW/ANYtvTK/GRRpQrkpDtd9hFkmzX/fEiba
+ LBvZlDz3MZ6CL4=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_125058_169767_29FB35CA 
-X-CRM114-Status: GOOD (  16.99  )
+X-CRM114-CacheID: sfid-20190717_125057_338988_12702098 
+X-CRM114-Status: GOOD (  11.74  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.22 listed in list.dnswl.org]
+ low trust [212.227.17.20 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (wahrenst[at]gmx.net)
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -108,96 +112,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series adds minimal support for the new Raspberry Pi 4, so we are able
-to login via debug UART.
+The assigned register ranges for UART, SPI and I2C were too wasteful.
+In order to avoid overlapping with the new functions on BCM2838
+reduce the ranges.
 
-Patch 1-5:   Prepare platform and DTS for the new SoC BMC2838
-Patch 6-9:   Enable support for emmc2 on BCM2838
-Patch 10-14: Enable pinctrl for BCM2838
-Patch 15:    Enable SPI support for BCM2838
-Patch 16-18: Add Raspberry Pi 4 DTS support
+Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
+---
+ arch/arm/boot/dts/bcm283x.dtsi | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-Unfortunately the Raspberry Pi Foundation didn't released a
-peripheral documentation for the new SoC yet. So we only have a preliminary
-datasheet [1] and reduced schematics [2].
+diff --git a/arch/arm/boot/dts/bcm283x.dtsi b/arch/arm/boot/dts/bcm283x.dtsi
+index 4b21ddb..2d191fc 100644
+--- a/arch/arm/boot/dts/bcm283x.dtsi
++++ b/arch/arm/boot/dts/bcm283x.dtsi
+@@ -397,7 +397,7 @@
 
-This series is marked as RFC because some parts (e.g. pinctrl) are still
-work in progress.
+ 		uart0: serial@7e201000 {
+ 			compatible = "brcm,bcm2835-pl011", "arm,pl011", "arm,primecell";
+-			reg = <0x7e201000 0x1000>;
++			reg = <0x7e201000 0x200>;
+ 			interrupts = <2 25>;
+ 			clocks = <&clocks BCM2835_CLOCK_UART>,
+ 				 <&clocks BCM2835_CLOCK_VPU>;
+@@ -428,7 +428,7 @@
 
-[1] - https://www.raspberrypi.org/documentation/hardware/raspberrypi/bcm2711/rpi_DATA_2711_1p0_preliminary.pdf
-[2] - https://www.raspberrypi.org/documentation/hardware/raspberrypi/schematics/rpi_SCH_4b_4p0_reduced.pdf
+ 		spi: spi@7e204000 {
+ 			compatible = "brcm,bcm2835-spi";
+-			reg = <0x7e204000 0x1000>;
++			reg = <0x7e204000 0x200>;
+ 			interrupts = <2 22>;
+ 			clocks = <&clocks BCM2835_CLOCK_VPU>;
+ 			dmas = <&dma 6>, <&dma 7>;
+@@ -440,7 +440,7 @@
 
-Discussible things:
-- SoC compatible BCM2711 (as on the SoC label) vs BCM2838 (existing naming scheme)
-- ARCH membership ARCH_BCM2835 vs ARCH_BCMSTB
-...
-
-
-Al Cooper (1):
-  pinctrl: bcm2835: bcm7211: Add support for 7211 pull-up functionality
-
-Martin Sperl (1):
-  spi: bcm2835: enable shared interrupt support
-
-Phil Elwell (2):
-  ARM: bcm2835: DMA can only address 1GB
-  ARM: bcm2835: Add bcm2838 compatible string
-
-Stefan Wahren (14):
-  ARM: bcm283x: Reduce register ranges for UART, SPI and I2C
-  ARM: dts: bcm283x: Move BCM2835/6/7 specific to bcm2835-common.dtsi
-  ARM: dts: bcm283x: Define MMC interfaces at board level
-  ARM: dts: bcm283x: Define memory at board level
-  dt-bindings: bcm2835-cprman: Add bcm2838 support
-  clk: bcm2835: Add BCM2838_CLOCK_EMMC2 support
-  dt-bindings: sdhci-iproc: Add brcm,bcm2838-emmc2
-  mmc: sdhci-iproc: Add support for emmc2 of the BCM2838
-  pinctrl: bcm2835: Fix BCM7211 pinconf handling
-  dt-bindings: pinctrl: bcm2835: Add brcm,bcm2838 compatible
-  pinctrl: bcm2835: Add BCM2838 support
-  HACK: pinctrl: bcm2835: Implement legacy pull for BCM7211
-  dt-bindings: bcm: Add Raspberry Pi 4 B
-  ARM: dts: Add minimal Raspberry Pi 4 support
-
- .../devicetree/bindings/arm/bcm/brcm,bcm2835.txt   |   4 +
- .../bindings/clock/brcm,bcm2835-cprman.txt         |   4 +-
- .../devicetree/bindings/mmc/brcm,sdhci-iproc.txt   |   4 +-
- .../bindings/pinctrl/brcm,bcm2835-gpio.txt         |   1 +
- arch/arm/boot/dts/Makefile                         |   1 +
- arch/arm/boot/dts/bcm2835-common.dtsi              | 173 ++++++
- arch/arm/boot/dts/bcm2835-rpi-a-plus.dts           |  12 +
- arch/arm/boot/dts/bcm2835-rpi-a.dts                |  12 +
- arch/arm/boot/dts/bcm2835-rpi-b-plus.dts           |  12 +
- arch/arm/boot/dts/bcm2835-rpi-b-rev2.dts           |  12 +
- arch/arm/boot/dts/bcm2835-rpi-b.dts                |  12 +
- arch/arm/boot/dts/bcm2835-rpi-cm1-io1.dts          |   7 +
- arch/arm/boot/dts/bcm2835-rpi-cm1.dtsi             |   5 +
- arch/arm/boot/dts/bcm2835-rpi-zero-w.dts           |  12 +
- arch/arm/boot/dts/bcm2835-rpi-zero.dts             |  12 +
- arch/arm/boot/dts/bcm2835-rpi.dtsi                 |  18 -
- arch/arm/boot/dts/bcm2835.dtsi                     |   1 +
- arch/arm/boot/dts/bcm2836-rpi-2-b.dts              |   8 +
- arch/arm/boot/dts/bcm2836.dtsi                     |   1 +
- arch/arm/boot/dts/bcm2837-rpi-3-a-plus.dts         |   1 +
- arch/arm/boot/dts/bcm2837-rpi-3-b-plus.dts         |   1 +
- arch/arm/boot/dts/bcm2837-rpi-3-b.dts              |   1 +
- arch/arm/boot/dts/bcm2837-rpi-cm3-io3.dts          |   7 +
- arch/arm/boot/dts/bcm2837-rpi-cm3.dtsi             |   1 +
- arch/arm/boot/dts/bcm2837.dtsi                     |   1 +
- arch/arm/boot/dts/bcm2838-rpi-4-b.dts              | 120 ++++
- arch/arm/boot/dts/bcm2838.dtsi                     | 657 +++++++++++++++++++++
- arch/arm/boot/dts/bcm283x.dtsi                     | 166 +-----
- arch/arm/mach-bcm/board_bcm2835.c                  |   2 +
- drivers/clk/bcm/clk-bcm2835.c                      |  33 +-
- drivers/mmc/host/sdhci-iproc.c                     |   9 +
- drivers/pinctrl/bcm/pinctrl-bcm2835.c              |  97 ++-
- drivers/spi/spi-bcm2835.c                          |   8 +-
- include/dt-bindings/clock/bcm2835.h                |   2 +
- 34 files changed, 1232 insertions(+), 185 deletions(-)
- create mode 100644 arch/arm/boot/dts/bcm2835-common.dtsi
- create mode 100644 arch/arm/boot/dts/bcm2838-rpi-4-b.dts
- create mode 100644 arch/arm/boot/dts/bcm2838.dtsi
-
+ 		i2c0: i2c@7e205000 {
+ 			compatible = "brcm,bcm2835-i2c";
+-			reg = <0x7e205000 0x1000>;
++			reg = <0x7e205000 0x200>;
+ 			interrupts = <2 21>;
+ 			clocks = <&clocks BCM2835_CLOCK_VPU>;
+ 			#address-cells = <1>;
 --
 2.7.4
 
