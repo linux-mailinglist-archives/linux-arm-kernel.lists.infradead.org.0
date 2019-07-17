@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 851B46B859
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 10:36:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A6AE6B85D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 10:37:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iPqxXvgXcaDxACeP8iNwkLIOGe4fUQHvDIGpWSOewGM=; b=iOlUcAcM/qoXhF
-	7vyxC5IY1WuN73W1esqBSM008fSdIK2ULIt8R2/SnME+eLIULZjq0pW9cXVKn7EucCeAVNEZzqEtU
-	aY0AlcP7VWG7LBzQ9DYVXMEx10EKhe28li2tZmArXqOYAwOdElFkQQRHKuM+7tp5yHsj0EEvHoDbH
-	kUw8Yh9xERo2l3/yvX+a1QDiotGi8IjE5w8wq49WDb1WCnhaiD0x37vN0tfrYfDYKcYhqiD3cta7p
-	P/DI4io/S53ce0lx+eJW5FayYW9Fy/CO2F3T0Xpcdyl7Y6uL9RTEmxSX5TPXbvk5nUMJiAz9bZrHc
-	sZKaZZmUbojuOfOhq2Hg==;
+	List-Owner; bh=5LJKuUIQLPAOsF5LMQuKSzcQsEldhe0Xq67ak65Zj0g=; b=ko51nTMgKurQBu
+	sFRYB4WQfgUfUrca/okpIEUUzIdIJ0LoHvNUYTemOm1v9ykFsSvsrNNWH975AfXkvS3cXz4djzn3V
+	lpN+61V27JcENkw8PuTRp+m8zoJyZi3EZboE0RC1Nj1wBrQrO+Qx+4MeAWtiTilLDH/gWYyPMdxw8
+	hb/wGKTocKnGC4WZl0DoDQ/CUZNdbsHLphroTFOiXVu45eU19GUZ4ml6OJYtP4MNreS9bZG/9gINK
+	YSGHMEZmkCrk5nYsClr5JZEZT45wVFE/L7eVWlkZeSHhHFYILihnumdlu5leqNFYmVT+kOxhhMYRw
+	mY62Ohg66jHwZWipwJlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnfQK-00080T-Th; Wed, 17 Jul 2019 08:36:28 +0000
-Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
+	id 1hnfRd-0008Rr-1W; Wed, 17 Jul 2019 08:37:49 +0000
+Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnfP7-0006st-3J
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 08:35:14 +0000
-Received: by mail-qt1-x843.google.com with SMTP id r6so18288820qtt.0
+ id 1hnfRO-0008R4-1O
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 08:37:35 +0000
+Received: by mail-qt1-x844.google.com with SMTP id n11so22489367qtl.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 17 Jul 2019 01:35:12 -0700 (PDT)
+ Wed, 17 Jul 2019 01:37:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Ry+MzwHDIHpb/9BQL6U47IaqQPJx3BKYqS3CpMjifoY=;
- b=vMLalo+L/IIAOYtRRggYh08gz4EUGIoknTz9dXt0nx1IEelHQMaTKDlgMsLeQr+Ckh
- HUYqpBPeFUUUmUcAh2g+atuM10ImyWztAf7D+0NImSQd/NE65C7oCU4gQnjF5whflX6i
- H50lbswKhrHASrFvTn70By5otCpgLgBNSdMshtHN7QAn8uuVPFjQVdpsuNNLxYmOXd4z
- IPhr3XU2k95v24WvA0j1HZAUO3cK577MwxQbkXAC3yfAnuqA/2T9CDN28/QYa54SFSIH
- 3hCaKUiUH7JeBLFKmy0ZLt4LgyP6i+uQEa70PFHc7GLyap662g6pDpzo+jnpZXuo662W
- vIVA==
+ :cc; bh=jFHVY++CWkwFboy+OGl7LS09ZrvgUC0vsq/EPA7fk5g=;
+ b=NGomhEn8h7i0Fu8iT4PoPmKLmHMV09tnb/17a4UCa0dDumKBXWzy1sWlPHchDF0QlM
+ DSjlMgBLSW+qLwKwWMjXgVcMhqyK1R+YZOehBDLA7/qpNmfGAIiBOqAz7jdErpQUJ7iH
+ StHnO3Ayc/SLL8CmXfNI8sHjAUq7tgBHhQXgFf/2/5rsK6AXzkxEOrJUxKRdl8+VjZww
+ AjQnJuQY6Yg+oC2NKGPWtssFJfL6htBZ8+PA0EEwSD95Lx9oUdLaRfxL16Etu10E8Dst
+ 3UlT/SC2qvL37bMxyM+iO7ufegplfSh3M2DaEthMxLZq0dKdqLototY/999RmuXhHWDg
+ eW6A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=Ry+MzwHDIHpb/9BQL6U47IaqQPJx3BKYqS3CpMjifoY=;
- b=M0CwQDeYVw4CTM1tuS6CIYrwc+T65HmxS58FcUXnNx2Pja55KWdkQuIbe8IClMRUPJ
- UQ6CmG98hrEqaf6mMdFH2bUyrQXSH42XZryKpj+HMlsI4+tyoH266OnjBmKM+T3nSHYi
- 6e+INlmnzIwO9mDp++/k4UzCJPCnoCWma6H2Bx3S5DeHUq8t9OCH3ho8h8IsGxkURIk6
- cz7Zasqf1AxxOQend2/r2d2dXlnq+lh3hk7z3IJZoRfsaKlxS6LOUH/TqPI5rq/MkbGm
- NUUJ3ADHBCr6HUoyS4erW2SAH84WoFIx9UZFiohocXFIkwf5mcaE3BOGIwksWQ8DVJaJ
- mmTw==
-X-Gm-Message-State: APjAAAW98psXqgMOONXKVZIsfz/Op4EadYB2X+h9zDjNkiT3Y8aR8sqD
- GWw/IcSCqTrxmVuE2MdjCulBFb0t0gFth4VY3M31hA==
-X-Google-Smtp-Source: APXvYqziPJO1KRjHolx5k/4Q2eX8wSDr3YvFQfFnKotTHXYJdSW7xA10kL7Hbc02A83aPhvErcljmU7bWXgKFLHZ+XU=
-X-Received: by 2002:ac8:354d:: with SMTP id z13mr27515741qtb.340.1563352512060; 
- Wed, 17 Jul 2019 01:35:12 -0700 (PDT)
+ bh=jFHVY++CWkwFboy+OGl7LS09ZrvgUC0vsq/EPA7fk5g=;
+ b=Jve0DHY6R1trcDHB5FCemlZ9fvZqTOG0RQ5K5DAz1PteyejR7kZ1xTaUe+3erqdnuo
+ GruLcmUaF7m8IF9bnYb0pRsxLweLa/Ce11HZlQY8wgBiFxOZubAV9TjIOA0T+/97URsI
+ SBQm4Tyg0AeQPtBieA8q+4DrZ/uptbz0+NS4DNNYlRlNb7cAb+uBTgaab0VrPpN7AYjv
+ G6ltHxHbW/OzjIaMATUCxepXeU9dpliMBBiZbPXNlROvGV4QOSn5wQuzcxg4HMBghSVS
+ WAfKm7dnAe/jKSGzf1P5cCWIBeFycMS5D3RVom0PYyYqhboda4N88Gjnhjt9JgUT1LZF
+ HcPg==
+X-Gm-Message-State: APjAAAXz36ztgz2VpMyo53jnC1JQ1b+RyrQzrUk0obF0WMUkWsJfCtuG
+ N9HgL8NWEcwFMiZB/xPKIaqpPKWwrhcgUQU551c=
+X-Google-Smtp-Source: APXvYqylETEVZyJ5bZs0M/73MZ0v+WfKFP9/iMi1z7+GuZ6FQevCbKcHOeFaECNy3yzLSyj2R9IRW3HnCG4fEUAaPtg=
+X-Received: by 2002:ac8:5042:: with SMTP id h2mr24681589qtm.96.1563352653233; 
+ Wed, 17 Jul 2019 01:37:33 -0700 (PDT)
 MIME-Version: 1.0
 References: <1563290089-11085-1-git-send-email-aisheng.dong@nxp.com>
- <1563290089-11085-11-git-send-email-aisheng.dong@nxp.com>
- <CAOMZO5B=yK_S=2xRFt_1pAJ2iYE7CCCenOKQ3rjOeF3e+=vQtQ@mail.gmail.com>
-In-Reply-To: <CAOMZO5B=yK_S=2xRFt_1pAJ2iYE7CCCenOKQ3rjOeF3e+=vQtQ@mail.gmail.com>
+ <1563290089-11085-14-git-send-email-aisheng.dong@nxp.com>
+ <CAOMZO5Cc6XLjFFEVd59Pru7t72jvW=OCikyXK7W6E8rWRVO3jA@mail.gmail.com>
+In-Reply-To: <CAOMZO5Cc6XLjFFEVd59Pru7t72jvW=OCikyXK7W6E8rWRVO3jA@mail.gmail.com>
 From: Dong Aisheng <dongas86@gmail.com>
-Date: Wed, 17 Jul 2019 16:26:16 +0800
-Message-ID: <CAA+hA=S=JMZDsbeJdzCRH+pikfy9nry-8UHq9V-75LuM0gxH6A@mail.gmail.com>
-Subject: Re: [PATCH v2 10/15] arm64: dts: imx8qm: add conn ss support
+Date: Wed, 17 Jul 2019 16:28:37 +0800
+Message-ID: <CAA+hA=R5H3ArKEPGjeWRV+EpaBJ2xZRVdpRj5KFMkgRrOg_y5A@mail.gmail.com>
+Subject: Re: [PATCH v2 13/15] arm64: dts: imx: add imx8qm common dts file
 To: Fabio Estevam <festevam@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_013513_359741_03D0A5FB 
-X-CRM114-Status: GOOD (  10.98  )
+X-CRM114-CacheID: sfid-20190717_013734_106961_6F98D003 
+X-CRM114-Status: GOOD (  10.55  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (dongas86[at]gmail.com)
@@ -110,18 +110,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 17, 2019 at 3:31 AM Fabio Estevam <festevam@gmail.com> wrote:
+On Wed, Jul 17, 2019 at 3:33 AM Fabio Estevam <festevam@gmail.com> wrote:
 >
 > On Tue, Jul 16, 2019 at 12:37 PM Dong Aisheng <aisheng.dong@nxp.com> wrote:
-> >
-> > The CONN SS of MX8QM is mostly the same as MX8QXP except it has one more
-> > USB HSIC module support. So we can fully reuse the exist CONN SS dtsi.
-> > Add <soc>-ss-conn.dtsi with compatible string updated according to
-> > imx8-ss-conn.dtsi.
 >
-> Subject and commit log does not match what the patch is actually doing.
+> > --- a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
+> > +++ b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
+> > @@ -144,7 +144,7 @@
+> >                 };
+> >
+> >                 clk: clock-controller {
+> > -                       compatible = "fsl,imx8qxp-clk";
+> > +                       compatible = "fsl,imx8qxp-clk", "fsl,scu-clk";
+>
+> This looks like unrelated to adding imx8qm support.
 
-What 'not match' did you mean?
+Sorry, it's a mistake. Will remove in next version.
+I will first wait to see if any more comments on the rest part.
 
 Regards
 Aisheng
