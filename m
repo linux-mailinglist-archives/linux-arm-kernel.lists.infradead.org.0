@@ -2,90 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6AD926B81F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 10:23:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D59D76B80E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 10:20:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BNqFxSabCBfRgWA3pE21tjsxpr8RdQNAkMkZW5PiUyM=; b=d5ywkxfuoauWzW
-	hdmNnRNN/P6uCLQzujjN8iaR4gqIqSWWC8BV+Vh4x4ZkPqFkz3sH0sZz1/3Nds0ZOXhka9mkQ6laM
-	4DGVRn7atzi4xSOk6UNctiCZYWfqrOm64RSb3ZJHPn1C2TwSFZMBQ1EafBebfHJ8MyyunPVI2sUfx
-	xIzTey2s6phRgRlh6yiEZsHiR7ugdSYwWcQuRD4GeBDLasJQz5xlfY6e2eePq+bf1RAucAKb00WR8
-	WdcKi3vzE/x3g45X+JWb1xxGvOgmMVN94/Atwx2H2ldhmDV0UeglqC1kcqb6zdcHrnGjkuIKDYzu/
-	pMD3uz0j8IF9mgZmYHnw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=FZN4licD2tMmUQc9icY+8YK0uSvp1ChLcmkKtWv2rnk=; b=UibdGqaQrEjPF9gZ/ZRBLjpxUZ
+	Fh63JtpmhrWLpc883cBdxxUe40MmyzPjZCXDIXe9QwQ+JRDID6PRo+UGMoEZFvN/9Q488d/wxY38I
+	VTLEcwzdEfO3sDKFubIS7P6RVLxNUSqe6tSQiG06u99lU9LOZwgTZJoYjSVWBKUaYEyU2coapGTqE
+	8XB7f7r9aar4tsgQMnseNrANIZ1S7wCOS1bqTG8Jv6xp6mOrphQbcylqMNaMTHiDN4+DFWW9zkRrE
+	DNQf/YtvLR5Kflf2orrNeKxq9FuiwTPFzL+pSfTAHnzQdHBv0Tnf3TyP7pU4YtQPjj/QSxua7V+r4
+	1CZ05rbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnfE3-0008FS-8S; Wed, 17 Jul 2019 08:23:47 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnfDp-0008Eh-4k
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 08:23:34 +0000
-Received: by mail-qt1-x841.google.com with SMTP id d17so22406432qtj.8
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 17 Jul 2019 01:23:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=TwgvgwFAr9ZbQyJY7OLlrukFEYAp4mCTYSJJ8JLqJDI=;
- b=LqN/2tU7/8cN6JIMAfFFhaNTFqe+tnHiecppE1yZpQYHqyUZs6w7PtqAVb9/wYk/DJ
- Hw/P3qO0ZJVGfNgBuBk6uo3jshv+LhvpPWUYMfp1IXxQzEapsQzDgFmwlHIFT2oLmIBF
- oyvjcWSD0BYEqkAo1SBqP+RpM01tuQWnxjfS6Prol/I42c65szJI9OTGnlxrneHDZGzw
- KAMJh3jhtDtBQH/Pkf08SsUyP0YbNo8vCG3EYMpxZHlmqfsEX9j0KOZilAtJJ2ckYWKH
- ZwZWymxn7ua/IvTKh704LOQmKeOhjLqmwkksCaqfAFaMEQ9pCSUfbYPcy1xWmYOb49wA
- Acxg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=TwgvgwFAr9ZbQyJY7OLlrukFEYAp4mCTYSJJ8JLqJDI=;
- b=uQGqoIUVgC+RI0UTxRbHQ6I0qdg53+XFOn+/UKOuguE7vplaVN9IyZwLaqXzb9lOL3
- V2kv6GxhTL09oXaqL8TEGYwiLuLDA20DtjpYi2FMGJyJhJPy+qeRx75IQ25sj+rvNcHl
- HeqWEyw5oM80JalMvvUgCavS9AvpEWTpaVd3bORu3Iw6zXIR+DrZOKyvTshWZchw/d9Z
- Iq3T53/BCSnrgbCLY/HhXnVEpwnSwIHF/kxilW2RbzzG13eQrI9XjvfNvSOPIJRdq1CS
- LWsrAX1lxFuAhI2RTCTZWdj3Wf+KuCJgsxEqsrWxOCcRHk6FQKnWrdd+Jv4rjgvoPsl5
- HrSQ==
-X-Gm-Message-State: APjAAAXdetN9HCJmqQiDVAgHc9aXjxR3KbA2ciR3BPumDDQE5TN06cCy
- K3qBNsYHJHo4z3vZR/WRqGFAVDGnDQ3DTB6tMbg=
-X-Google-Smtp-Source: APXvYqz4uw+BGfWaRI1pKAcWBiBCJ/F+kVqI+JVx9Yb6o8jGx7Ac6x2yJWAUJGKhx7FGXMrX+H6mpEe+Xh9h5nHDjeA=
-X-Received: by 2002:ac8:f8c:: with SMTP id b12mr27121586qtk.381.1563351811577; 
- Wed, 17 Jul 2019 01:23:31 -0700 (PDT)
-MIME-Version: 1.0
-References: <1563290089-11085-1-git-send-email-aisheng.dong@nxp.com>
- <1563290089-11085-3-git-send-email-aisheng.dong@nxp.com>
- <CAOMZO5CMM94rAOryvfmHpuAsJnCRj-98kX3rfiZSn5EZt_c0kA@mail.gmail.com>
-In-Reply-To: <CAOMZO5CMM94rAOryvfmHpuAsJnCRj-98kX3rfiZSn5EZt_c0kA@mail.gmail.com>
-From: Dong Aisheng <dongas86@gmail.com>
-Date: Wed, 17 Jul 2019 16:14:35 +0800
-Message-ID: <CAA+hA=RknQ+EbZ258t-X_VktBFKs1Y7vBn_KTMkbyQAFW5k-Mw@mail.gmail.com>
-Subject: Re: [PATCH v2 02/15] arm64: dts: imx8qxp: move scu pd node before scu
- clock node
-To: Fabio Estevam <festevam@gmail.com>
+	id 1hnfAa-0005h1-DY; Wed, 17 Jul 2019 08:20:12 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hnf82-0003Y1-5i
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 08:17:36 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BD3B0344;
+ Wed, 17 Jul 2019 01:17:33 -0700 (PDT)
+Received: from e112298-lin.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 48FE73F71A;
+ Wed, 17 Jul 2019 01:19:32 -0700 (PDT)
+From: Julien Thierry <julien.thierry@arm.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v4 8/9] arm_pmu: Introduce pmu_irq_ops
+Date: Wed, 17 Jul 2019 09:17:11 +0100
+Message-Id: <1563351432-55652-9-git-send-email-julien.thierry@arm.com>
+X-Mailer: git-send-email 1.9.1
+In-Reply-To: <1563351432-55652-1-git-send-email-julien.thierry@arm.com>
+References: <1563351432-55652-1-git-send-email-julien.thierry@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_012333_185433_8D1CBBBA 
-X-CRM114-Status: GOOD (  10.44  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190717_011734_453871_CAB2E541 
+X-CRM114-Status: GOOD (  13.93  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (dongas86[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (dongas86[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,38 +60,185 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dong Aisheng <aisheng.dong@nxp.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>, Rob Herring <robh+dt@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>, Mark Rutland <mark.rutland@arm.com>,
- Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, Julien Thierry <julien.thierry@arm.com>,
+ peterz@infradead.org, jolsa@redhat.com, will.deacon@arm.com, acme@kernel.org,
+ alexander.shishkin@linux.intel.com, mingo@redhat.com, namhyung@kernel.org,
+ sthotton@marvell.com, liwei391@huawei.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 17, 2019 at 3:26 AM Fabio Estevam <festevam@gmail.com> wrote:
->
-> On Tue, Jul 16, 2019 at 12:37 PM Dong Aisheng <aisheng.dong@nxp.com> wrote:
-> >
-> > SCU clock depends on SCU Power domain. So let's move scu pd node
-> > before scu clock to make it probe earlier.
->
-> This looks like a fragile solution. Shouldn't this be handled via
-> probe deferring?
+Currently the PMU interrupt can either be a normal irq or a percpu irq.
+Supporting NMI will introduce two cases for each existing one. It becomes
+a mess of 'if's when managing the interrupt.
 
-Not like a normal case that there may be only a few devices may get deferred,
-for qm/qxp, almost all the devices (~100) may get deferred without
-this patch. e.g. scu clk, lpcg clk and all other devices which depend on clk.
+Define sets of callbacks for operations commonly done on the interrupt. The
+appropriate set of callbacks is selected at interrupt request time and
+simplifies interrupt enabling/disabling and freeing.
 
-So i think it's really unnecessary to do that.
+Signed-off-by: Julien Thierry <julien.thierry@arm.com>
+Tested-by: Shijith Thotton <sthotton@marvell.com>
+Cc: Will Deacon <will.deacon@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>
+---
+ drivers/perf/arm_pmu.c | 86 ++++++++++++++++++++++++++++++++++++++++----------
+ 1 file changed, 70 insertions(+), 16 deletions(-)
 
-Regards
-Aisheng
+diff --git a/drivers/perf/arm_pmu.c b/drivers/perf/arm_pmu.c
+index 7fd9f15..9ac072a 100644
+--- a/drivers/perf/arm_pmu.c
++++ b/drivers/perf/arm_pmu.c
+@@ -26,8 +26,46 @@
+
+ #include <asm/irq_regs.h>
+
++static int armpmu_count_irq_users(const int irq);
++
++struct pmu_irq_ops {
++	void (*enable_pmuirq)(unsigned int irq);
++	void (*disable_pmuirq)(unsigned int irq);
++	void (*free_pmuirq)(unsigned int irq, int cpu, void __percpu *devid);
++};
++
++static void armpmu_free_pmuirq(unsigned int irq, int cpu, void __percpu *devid)
++{
++	free_irq(irq, per_cpu_ptr(devid, cpu));
++}
++
++static const struct pmu_irq_ops pmuirq_ops = {
++	.enable_pmuirq = enable_irq,
++	.disable_pmuirq = disable_irq_nosync,
++	.free_pmuirq = armpmu_free_pmuirq
++};
++
++static void armpmu_enable_percpu_pmuirq(unsigned int irq)
++{
++	enable_percpu_irq(irq, IRQ_TYPE_NONE);
++}
++
++static void armpmu_free_percpu_pmuirq(unsigned int irq, int cpu,
++				   void __percpu *devid)
++{
++	if (armpmu_count_irq_users(irq) == 1)
++		free_percpu_irq(irq, devid);
++}
++
++static const struct pmu_irq_ops percpu_pmuirq_ops = {
++	.enable_pmuirq = armpmu_enable_percpu_pmuirq,
++	.disable_pmuirq = disable_percpu_irq,
++	.free_pmuirq = armpmu_free_percpu_pmuirq
++};
++
+ static DEFINE_PER_CPU(struct arm_pmu *, cpu_armpmu);
+ static DEFINE_PER_CPU(int, cpu_irq);
++static DEFINE_PER_CPU(const struct pmu_irq_ops *, cpu_irq_ops);
+
+ static inline u64 arm_pmu_event_max_period(struct perf_event *event)
+ {
+@@ -544,6 +582,19 @@ static int armpmu_count_irq_users(const int irq)
+ 	return count;
+ }
+
++static const struct pmu_irq_ops *armpmu_find_irq_ops(int irq)
++{
++	int cpu;
++
++	for_each_possible_cpu(cpu) {
++		if (per_cpu(cpu_irq, cpu) == irq
++		    && per_cpu(cpu_irq_ops, cpu))
++			return per_cpu(cpu_irq_ops, cpu);
++	}
++
++	return NULL;
++}
++
+ void armpmu_free_irq(int irq, int cpu)
+ {
+ 	if (per_cpu(cpu_irq, cpu) == 0)
+@@ -551,18 +602,18 @@ void armpmu_free_irq(int irq, int cpu)
+ 	if (WARN_ON(irq != per_cpu(cpu_irq, cpu)))
+ 		return;
+
+-	if (!irq_is_percpu_devid(irq))
+-		free_irq(irq, per_cpu_ptr(&cpu_armpmu, cpu));
+-	else if (armpmu_count_irq_users(irq) == 1)
+-		free_percpu_irq(irq, &cpu_armpmu);
++	per_cpu(cpu_irq_ops, cpu)->free_pmuirq(irq, cpu, &cpu_armpmu);
+
+ 	per_cpu(cpu_irq, cpu) = 0;
++	per_cpu(cpu_irq_ops, cpu) = NULL;
+ }
+
+ int armpmu_request_irq(int irq, int cpu)
+ {
+ 	int err = 0;
+ 	const irq_handler_t handler = armpmu_dispatch_irq;
++	const struct pmu_irq_ops *irq_ops;
++
+ 	if (!irq)
+ 		return 0;
+
+@@ -584,15 +635,26 @@ int armpmu_request_irq(int irq, int cpu)
+ 		irq_set_status_flags(irq, IRQ_NOAUTOEN);
+ 		err = request_irq(irq, handler, irq_flags, "arm-pmu",
+ 				  per_cpu_ptr(&cpu_armpmu, cpu));
++
++		irq_ops = &pmuirq_ops;
+ 	} else if (armpmu_count_irq_users(irq) == 0) {
+ 		err = request_percpu_irq(irq, handler, "arm-pmu",
+ 					 &cpu_armpmu);
++
++		irq_ops = &percpu_pmuirq_ops;
++	} else {
++		/* Per cpudevid irq was already requested by another CPU */
++		irq_ops = armpmu_find_irq_ops(irq);
++
++		if (WARN_ON(!irq_ops))
++			err = -EINVAL;
+ 	}
+
+ 	if (err)
+ 		goto err_out;
+
+ 	per_cpu(cpu_irq, cpu) = irq;
++	per_cpu(cpu_irq_ops, cpu) = irq_ops;
+ 	return 0;
+
+ err_out:
+@@ -625,12 +687,8 @@ static int arm_perf_starting_cpu(unsigned int cpu, struct hlist_node *node)
+ 	per_cpu(cpu_armpmu, cpu) = pmu;
+
+ 	irq = armpmu_get_cpu_irq(pmu, cpu);
+-	if (irq) {
+-		if (irq_is_percpu_devid(irq))
+-			enable_percpu_irq(irq, IRQ_TYPE_NONE);
+-		else
+-			enable_irq(irq);
+-	}
++	if (irq)
++		per_cpu(cpu_irq_ops, cpu)->enable_pmuirq(irq);
+
+ 	return 0;
+ }
+@@ -644,12 +702,8 @@ static int arm_perf_teardown_cpu(unsigned int cpu, struct hlist_node *node)
+ 		return 0;
+
+ 	irq = armpmu_get_cpu_irq(pmu, cpu);
+-	if (irq) {
+-		if (irq_is_percpu_devid(irq))
+-			disable_percpu_irq(irq);
+-		else
+-			disable_irq_nosync(irq);
+-	}
++	if (irq)
++		per_cpu(cpu_irq_ops, cpu)->disable_pmuirq(irq);
+
+ 	per_cpu(cpu_armpmu, cpu) = NULL;
+
+--
+1.9.1
 
 _______________________________________________
 linux-arm-kernel mailing list
