@@ -2,121 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 73A406BA0B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 12:25:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C6466BA15
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 12:26:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jcUrgwkLDa6uGwCWxqRwPFqGofhe4yLFrhyT0ei0r9Y=; b=TGZ2xCg/aP22YX
-	gkXCcwpn7Ypqf4p2T7tBRclDN8zeKlABxB1FAdOdwwdLdTs7y7ihwA7KjQeS1Uo50euDig4lU3WWH
-	HS7ivdshhqdrLUwUJzhoeO2x0+do4Ujo0OPtcD7d9m/SwayGzC/7i52lv2N/lnZ2yCAyJQ53+36Ic
-	hIjEiD93RCUTqOO92Fdrnt34eYbOqzHoy50KgZKBfK7uwhXQUVRLpDWb49wlF10jukBcGk4y+5n6Y
-	TRYXCGVwCdCyVILZsr0xjeQf/ylcgEjmVBtWMFeYIJfWR93wcyaMfM/FDQw0zBc+ZYt2Fz2Pkgg3g
-	Hpzc6ZTKIDlGKMPT4i3A==;
+	List-Owner; bh=5C08A8wG4kbsuuzDafs0AeGjr1WpRjmPwXzNu9Zh6e0=; b=rjnL9BTglzDymL
+	RjqCxVRUklzE/8MpKqOhLBKXNPWqjgqQ0V+yUQkEAPwbuidMu6j+oL0ehzGhYFz3TUnRIP1Vjh+Nb
+	f89wWpd0ZEvAOrYWohlKec41z7x3lqfrJB5fIceRA2uZsWv/xosrTBsITFG34vXdiKo+ky6UWM1Oi
+	d/mRVAkSyEFo7M4Ui/HU+VyBC6WEBsjjSVJk+Ih4pGbAbbr+XrZMKQHPWBuh4yWOSiQYRKaoRb9dL
+	dqzL740xwI4l4ki3rkegOaoKI+QSeNHUm2Rw9UElLk2nigbshBD4iByj0g25A4b/Y2eOykIrrSNvZ
+	vYuvYPBZd4/CfEmunstQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnh7M-0006Hc-9i; Wed, 17 Jul 2019 10:25:00 +0000
-Received: from mail-eopbgr00040.outbound.protection.outlook.com ([40.107.0.40]
- helo=EUR02-AM5-obe.outbound.protection.outlook.com)
+	id 1hnh8a-0007ll-AA; Wed, 17 Jul 2019 10:26:16 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnh79-0006H2-NL
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 10:24:48 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=KRAlDqn+Mi2mdDkdyDAyyL4dIh2yFBn4Zt9Kb/d/6LrhFKsLQa1wTfmoY82CdLDL5XF2Ua7xRyT046c+IAtIpC9clcKAKjii2YwdWXsdi4ShijV3CY6taa6U2318HmYOuGTfiATftyKt6uFx+If91w8G8KUGeXP/FiY3fT7PTZ7mHz+zGO8ONRcf51y6qDbrv1hAVAm6N0tqpZciXOjK9pFfddqYeAy2ZtpEBxa0Np/QYxSNsHZgoRMJy7ZIizlQxDoq+1xUOV4CSVm0DweYuUjnB53fkDj4tCLe1p0xc5F1UHBvlWU/tochROVLr9+nA7/TM/j48ENtctVDQCnVZw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DPaPT2czoME/hYVRz4ZLl0n89PINpuSoCKA/T7QGlF4=;
- b=MPVq5yILoTfMjDR0AteqDYPrx4snc0kUHN5kRVHL3eGfHm25YoYavj0o7Hov8GxEQ03nzpfVm739ANePGWL4lBM+uf+1+ak45M3upLC7UR+5DO4e8i/F3/8B/RSuVBjtNCI6mzMQbrpLlaweBfybX8d3jN6nBX/z4OuNIeg+3AYUaWCKZY/3G7mhAgUQy+0OvMUVFH2Ucw3WkwVbzQs4XxPpqBIFTM1jYJbS7Pc669koyBLL9Fva3he3xB8L3boXOMq8cigxhijNm05V3DKuNV/LGvj9GGcPb6sSkxyFkUClJ5Gami8tDUzJi323kTucW8kjMMFxfjgFEerMTDUxQw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=nxp.com;dmarc=pass action=none header.from=nxp.com;dkim=pass
- header.d=nxp.com;arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DPaPT2czoME/hYVRz4ZLl0n89PINpuSoCKA/T7QGlF4=;
- b=ZS3ZHe4Qy2UDElGOCAgwU2CEo8qkZt6a0YZJNZvKT/IUpK3oJMNFdFW2Dl2+mlXczfo/szWAUVEOCyNQS7MdMuSKHILs5kK+3QHZxoYpgcQlStoc7U40aEEekFG1nQyGwDdetc8rXlhEVp4UmqztybvHvQ43IajRLg7AfKU1Ajs=
-Received: from AM0PR04MB4211.eurprd04.prod.outlook.com (52.134.92.158) by
- AM0PR04MB5604.eurprd04.prod.outlook.com (20.178.203.80) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2073.14; Wed, 17 Jul 2019 10:24:44 +0000
-Received: from AM0PR04MB4211.eurprd04.prod.outlook.com
- ([fe80::7882:51:e491:8431]) by AM0PR04MB4211.eurprd04.prod.outlook.com
- ([fe80::7882:51:e491:8431%7]) with mapi id 15.20.2073.012; Wed, 17 Jul 2019
- 10:24:44 +0000
-From: Aisheng Dong <aisheng.dong@nxp.com>
-To: Anson Huang <anson.huang@nxp.com>, "mpm@selenic.com" <mpm@selenic.com>,
- "herbert@gondor.apana.org.au" <herbert@gondor.apana.org.au>, "arnd@arndb.de"
- <arnd@arndb.de>, "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>, "s.hauer@pengutronix.de"
- <s.hauer@pengutronix.de>, "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>, "rfontana@redhat.com"
- <rfontana@redhat.com>, "allison@lohutok.net" <allison@lohutok.net>,
- "kstewart@linuxfoundation.org" <kstewart@linuxfoundation.org>,
- "tglx@linutronix.de" <tglx@linutronix.de>, "linux-crypto@vger.kernel.org"
- <linux-crypto@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>
-Subject: RE: [PATCH 2/2] char: hw_random: mxc-rnga: use
- devm_platform_ioremap_resource() to simplify code
-Thread-Topic: [PATCH 2/2] char: hw_random: mxc-rnga: use
- devm_platform_ioremap_resource() to simplify code
-Thread-Index: AQHVPH/8+IsxXD8FhUCRO+/vflUVhqbOmptw
-Date: Wed, 17 Jul 2019 10:24:44 +0000
-Message-ID: <AM0PR04MB42113B130EF5F03C0AF1801A80C90@AM0PR04MB4211.eurprd04.prod.outlook.com>
-References: <20190717090438.31522-1-Anson.Huang@nxp.com>
- <20190717090438.31522-2-Anson.Huang@nxp.com>
-In-Reply-To: <20190717090438.31522-2-Anson.Huang@nxp.com>
-Accept-Language: zh-CN, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=aisheng.dong@nxp.com; 
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 0b07ef63-8af8-411a-95d2-08d70aa0fc8d
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:AM0PR04MB5604; 
-x-ms-traffictypediagnostic: AM0PR04MB5604:
-x-microsoft-antispam-prvs: <AM0PR04MB56043F92844E560614CEAF5680C90@AM0PR04MB5604.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1247;
-x-forefront-prvs: 01018CB5B3
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(136003)(39860400002)(366004)(396003)(376002)(346002)(199004)(189003)(8936002)(6506007)(53936002)(102836004)(71190400001)(44832011)(7696005)(2201001)(81156014)(76176011)(66446008)(66556008)(66476007)(76116006)(64756008)(71200400001)(5660300002)(2906002)(99286004)(305945005)(2501003)(66946007)(52536014)(229853002)(26005)(8676002)(6436002)(66066001)(6246003)(476003)(446003)(55016002)(11346002)(478600001)(86362001)(3846002)(186003)(110136005)(6116002)(25786009)(68736007)(33656002)(316002)(256004)(4326008)(74316002)(558084003)(14454004)(486006)(7416002)(7736002)(81166006)(9686003)(921003)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5604;
- H:AM0PR04MB4211.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: kopargwr+xnTBicKRrzy37X/5hnuGPmbGu3/tvOg0a9W7HFW9jj5Au98Ie7PkrL7JM8rKkhvqQL4MaBF6SPu71sx7DskS2FErurmGWNmiReDZ4ZZbUdxYYq9IyMbeJ5p/dFm3jHlGn/3O5bxuCf4Fc92lOF0poQ0SvnVHZxjdrtzE9tFQtdukFTx6g24UBObFrnpkVdt54AJ0xNv45EVMfQgeyn6MTtHm01GXHiecvalSmdiL2jgnvyWomr0MpfDFPbV3Bsrl5jsC7VMtCXOuUOxeqHilbvqojgHPhZEnuluOrqmc3A4vOt/sII7Yh0U2AWs2C5LXZa4Q6Rrkv7DgE05F+wDK08LOIHvEvWhFaSvTxIVnwQsEJdRUDuP0vi/xEKjkAJJYW83TmeOe6Tar5dZw68zar4dYMCabBX5eQQ=
+ id 1hnh8M-0007lM-Oj
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 10:26:04 +0000
+Received: from mail-lj1-f174.google.com (mail-lj1-f174.google.com
+ [209.85.208.174])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0E2BF21841
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 17 Jul 2019 10:26:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1563359162;
+ bh=6ZNHeUjYuFQvwhrizsFFiOMOLAXaj7gSQIwq8zSpTAg=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=Pngu4lq7W1y/+7EN4IucarRpmRnEYrCvK0QN/7WhL7xpSdddYI2M7CzpAcibsyN0C
+ /Va+7loYPp+zR1or36eLxfLO0BFJZVX9un2oUHcv7X6/e7p5SAGTvZ8a15LR7imL4V
+ Qr80/bW9NTISoEq1ORMwAWLkH09fRSWMPSL0aHRM=
+Received: by mail-lj1-f174.google.com with SMTP id h10so23092154ljg.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 17 Jul 2019 03:26:01 -0700 (PDT)
+X-Gm-Message-State: APjAAAWhk1OUdEqaC5WatKoiHbt+QXHDIeiJKcpH9MB1gldb/KwkV1FO
+ 2HA8toAGeJxT+8f0YpRS4JHVP+1zJ/moTLmGF5c=
+X-Google-Smtp-Source: APXvYqyvg4XjQv6SY7ijdQp1cHJGuHEqi7FxlzWlNF0TzqNk1YWygMDN7/OybFeXVFj7TbU7p4IRgf/XVeDzaeXH91Q=
+X-Received: by 2002:a2e:3008:: with SMTP id w8mr20847944ljw.13.1563359160319; 
+ Wed, 17 Jul 2019 03:26:00 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 0b07ef63-8af8-411a-95d2-08d70aa0fc8d
-X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Jul 2019 10:24:44.3877 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: aisheng.dong@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5604
+References: <CGME20190715124504eucas1p1afe0da2c6ac3a8b45d85017a77ba9edf@eucas1p1.samsung.com>
+ <20190715124417.4787-1-l.luba@partner.samsung.com>
+ <20190715124417.4787-38-l.luba@partner.samsung.com>
+In-Reply-To: <20190715124417.4787-38-l.luba@partner.samsung.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Date: Wed, 17 Jul 2019 12:25:48 +0200
+X-Gmail-Original-Message-ID: <CAJKOXPfrGgAczQ-=1aE453RpJ9BN10ZDmFcrEMPkNyF6GcGtNA@mail.gmail.com>
+Message-ID: <CAJKOXPfrGgAczQ-=1aE453RpJ9BN10ZDmFcrEMPkNyF6GcGtNA@mail.gmail.com>
+Subject: Re: [PATCH v1 37/50] ARM: dts: exynos: change parent and rate of
+ bus_fsys in Exynos5422
+To: Lukasz Luba <l.luba@partner.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_032447_762812_F374F99C 
-X-CRM114-Status: UNSURE (   6.81  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190717_032602_834568_3A6902EA 
+X-CRM114-Status: GOOD (  18.04  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.0.40 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -124,6 +76,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -135,25 +88,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ =?UTF-8?B?QmFydMWCb21pZWogxbtvxYJuaWVya2lld2ljeg==?=
+ <b.zolnierkie@samsung.com>, sboyd@kernel.org, mturquette@baylibre.com,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ Andrzej Hajda <a.hajda@samsung.com>, Chanwoo Choi <cw00.choi@samsung.com>,
+ kyungmin.park@samsung.com, kgene@kernel.org, myungjoo.ham@samsung.com,
+ s.nawrocki@samsung.com, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> From: Anson.Huang@nxp.com <Anson.Huang@nxp.com>
-> Sent: Wednesday, July 17, 2019 5:05 PM
-> 
-> Use the new helper devm_platform_ioremap_resource() which wraps the
-> platform_get_resource() and devm_ioremap_resource() together, to simplify
-> the code.
-> 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+On Mon, 15 Jul 2019 at 14:45, Lukasz Luba <l.luba@partner.samsung.com> wrote:
+>
+> The FSYS bus OPP table has been aligned to the new parent rate. This patch
+> sets the proper parent and picks the init frequency before the devfreq
+> governor starts working. It sets also parent rate (DPLL to 1200MHz).
 
-Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
+1. I see what the patch is doing, but please write why you are doing
+this. What problem are you solving here?
+2. Commit title is wrong - it is not Exynos 5422 but Odroid XU3/XU4
+family of boards.
 
-Regards
-Aisheng
+>
+> Signed-off-by: Lukasz Luba <l.luba@partner.samsung.com>
+> ---
+>  arch/arm/boot/dts/exynos5422-odroid-core.dtsi | 5 +++++
+>  1 file changed, 5 insertions(+)
+>
+> diff --git a/arch/arm/boot/dts/exynos5422-odroid-core.dtsi b/arch/arm/boot/dts/exynos5422-odroid-core.dtsi
+> index d460041f716c..6a82dd175b8a 100644
+> --- a/arch/arm/boot/dts/exynos5422-odroid-core.dtsi
+> +++ b/arch/arm/boot/dts/exynos5422-odroid-core.dtsi
+> @@ -72,6 +72,11 @@
+>
+>  &bus_fsys {
+>         devfreq = <&bus_wcore>;
+> +       assigned-clocks = <&clock CLK_MOUT_ACLK200_FSYS>,
+> +                         <&clock CLK_DOUT_ACLK200_FSYS>,
+> +                         <&clock CLK_FOUT_DPLL>;
+> +       assigned-clock-parents = <&clock CLK_MOUT_SCLK_DPLL>;
+> +       assigned-clock-rates = <0>, <240000000>,<1200000000>;
+
+Here and in all other patches:
+I am not entirely sure that this should be here. It looks like
+property of the SoC. Do we expect that buses will be configured to
+different clock rates between different boards? Since the OPP tables
+are shared (they are property of the SoC, not board) then I would
+assume that default frequency is shared as well.
+
+Best regards,
+Krzysztof
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
