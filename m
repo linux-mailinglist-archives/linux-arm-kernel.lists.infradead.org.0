@@ -2,69 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CBD036B6DD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 08:43:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 84EE56B6E7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 08:48:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D7gLJi0CMGuWL+2klnsjsCguAN/qeYN2+Mk8f1CDraE=; b=KDWou+bIA7Trrk
-	goBWh61K33raj/MB66Dc3r18NAOqjhqt7Y4cttEH+HPcCDOse6xEX6l3URHt6r3s/CVnndnHOXjXY
-	XA0/VMw3087F3LScLy6DpjsqvxJMFnXaJRKFCaeKu7dbz6yzQk7vb0wET2EfR7KZih+Abgef3hy0c
-	evIUniINavpHeI1wRJwgRM0VxQzMaIzuwvJgVlCd2r7Ab7Lp5MFnSY1RybeVGIzzb9+JX2UwCneih
-	HWxhZQ8h26B7eXLvS47lt/AFMEc4Hnzk+OkdNshsnyyEQWRa6S7Z8MRPHPjbF1zHkhNkTkrde9NcY
-	UhltT2Ao2yBWscYN5wsw==;
+	List-Owner; bh=aH1pUsHBohesLbOJ17ElTmdtUDtu890W3mLMLfKVhQ8=; b=cpPSnZY4CexJWI
+	zo54LnhcbDZs0PbCPEL9jZEbQg0YD4WxwZujPsNfm6iZI6/keH9t8akMFCXnfETSbmg2buHt05Hmv
+	6fPCwa1nr2RNmlyS7tFNFSGVUsxUmd399GliWPX/5S0L6zu0vClw6aVBv+9cmCQ8VyzTy51CAS8hR
+	On1Q6yhu0trpberySyM+ImfIiiiFHUTJjh8wJwEF6Tk32pfTxpTRcVcLe3cwU9YPAEvA36TOsVSdB
+	z0v9SzM0s5u3ypXC/CKgTeLqp5WWAyFhXcIZiDdNkoe5M7CQ7a1yZpRsB96QeKqygVGICGZ8pxcCU
+	GRcgOcEIDkthmUMn2kjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hndfD-0005Dl-LN; Wed, 17 Jul 2019 06:43:43 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hndje-0007kv-S9; Wed, 17 Jul 2019 06:48:18 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnder-0005D6-Vi
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 06:43:23 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DE6B120651;
- Wed, 17 Jul 2019 06:43:18 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563345801;
- bh=rpX3FlNAUKO8GVGTnuVeNc+iCU/DRSE4jAZjnlhh6/U=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=1Vhrd6HEP6Ym1QpvFRVB2pgGZDP5qGRMoJkZYzXkAT27BZk5SUBotZROwJh1ayhnO
- A8zUaGmoGJ/E0pJrpvM2gBtZDwuJMN8OGYggKcdz90mSOXoLd7PbT1rTrWua8/6X2p
- Za0+sksAuoM3znqHViWu2lp7dyiSu2O3GUGD4ajs=
-Date: Wed, 17 Jul 2019 07:43:15 +0100
-From: Will Deacon <will@kernel.org>
-To: Marc Zyngier <marc.zyngier@arm.com>
-Subject: Re: [PATCH] MAINTAINERS: Update my email address to @kernel.org
-Message-ID: <20190717064315.tn26dss343iv33oj@willie-the-truck>
-References: <20190716174308.17147-1-marc.zyngier@arm.com>
+ id 1hndjM-0007kL-Ay; Wed, 17 Jul 2019 06:48:01 +0000
+X-UUID: c25fc237a6d24adaa6dce40846a2f738-20190716
+X-UUID: c25fc237a6d24adaa6dce40846a2f738-20190716
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 347045516; Tue, 16 Jul 2019 22:47:54 -0800
+Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 16 Jul 2019 23:47:52 -0700
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ MTKMBS31DR.mediatek.inc (172.27.6.102) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 17 Jul 2019 14:47:44 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 17 Jul 2019 14:47:44 +0800
+Message-ID: <1563346064.29169.24.camel@mtksdaap41>
+Subject: Re: [PATCH v4, 23/33] drm/mediatek: add ovl0/ovl_2l0 usecase
+From: CK Hu <ck.hu@mediatek.com>
+To: <yongqiang.niu@mediatek.com>
+Date: Wed, 17 Jul 2019 14:47:44 +0800
+In-Reply-To: <1562625253-29254-24-git-send-email-yongqiang.niu@mediatek.com>
+References: <1562625253-29254-1-git-send-email-yongqiang.niu@mediatek.com>
+ <1562625253-29254-24-git-send-email-yongqiang.niu@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190716174308.17147-1-marc.zyngier@arm.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+X-TM-SNTS-SMTP: A5A28C9657D5B5F25C8B81486A932DBAE9B3E8F9A39C0F7D0938311551FCC0742000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_234322_038135_D8823EC7 
-X-CRM114-Status: GOOD (  14.02  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190716_234800_386296_9EAA6DC6 
+X-CRM114-Status: GOOD (  19.25  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,47 +74,131 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Radim =?utf-8?B?S3LEjW3DocWZ?= <rkrcmar@redhat.com>,
- Jason Cooper <jason@lakedaemon.net>, kvm@vger.kernel.org,
- Julien Thierry <julien.thierry@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, linux-kernel@vger.kernel.org,
- Russell King <linux@arm.linux.org.uk>, James Morse <james.morse@arm.com>,
- maz@kernel.org, Paolo Bonzini <pbonzini@redhat.com>,
- Thomas Gleixner <tglx@linutronix.de>, kvmarm@lists.cs.columbia.edu,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Daniel Vetter <daniel@ffwll.ch>, Matthias Brugger <matthias.bgg@gmail.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jul 16, 2019 at 06:43:08PM +0100, Marc Zyngier wrote:
-> I will soon lose access to my @arm.com email address, so let's
-> update the MAINTAINERS file to point to my @kernel.org address,
-> as well as .mailmap for good measure.
+Hi, Yongqiang:
+
+On Tue, 2019-07-09 at 06:34 +0800, yongqiang.niu@mediatek.com wrote:
+> From: Yongqiang Niu <yongqiang.niu@mediatek.com>
 > 
-> Note that my @arm.com address will still work, but someone else
-> will be reading whatever is sent there. Don't say you didn't know!
+> This patch add ovl0/ovl_2l0 usecase
+> in ovl->ovl_2l0 direct link usecase:
+> 1. the crtc support layer number will 4+2
+> 2. ovl_2l0 background color input select ovl0 when crtc init
+> and disable it when crtc finish
+> 3. config ovl_2l0 layer, if crtc config layer number is
+> bigger than ovl0 support layers(max is 4)
 > 
-> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
+> Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
 > ---
+>  drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 38 +++++++++++++++++++++++++++++++--
+>  1 file changed, 36 insertions(+), 2 deletions(-)
 > 
-> Notes:
->     Yes, I'm sending this from my ARM address. That's intentional.
->     I'll probably send it as part of a pull request later in the
->     cycle, but that's just so that people know what is coming.
-> 
->  .mailmap    | 1 +
->  MAINTAINERS | 8 ++++----
->  2 files changed, 5 insertions(+), 4 deletions(-)
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> index 5eac376..9ee9ce2 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> @@ -282,6 +282,15 @@ static int mtk_crtc_ddp_hw_init(struct mtk_drm_crtc *mtk_crtc)
+>  
+>  	for (i = 0; i < mtk_crtc->ddp_comp_nr; i++) {
+>  		struct mtk_ddp_comp *comp = mtk_crtc->ddp_comp[i];
+> +		enum mtk_ddp_comp_id prev;
+> +
+> +		if (i > 0)
+> +			prev = mtk_crtc->ddp_comp[i - 1]->id;
+> +		else
+> +			prev = DDP_COMPONENT_ID_MAX;
+> +
+> +		if (prev == DDP_COMPONENT_OVL0)
+> +			mtk_ddp_comp_bgclr_in_on(comp);
 
-Let's see if you manage a better job of getting people to use your new
-address than I have:
+I does not like to use a specific component id to check, that is not
+general. For now, you could simply call mtk_ddp_comp_bgclr_in_on(comp);
+for all component because only ovl_2l has implemented it.
 
-Acked-by: Will Deacon <will@kernel.org>
+Regards,
+CK
 
-Will
+>  
+>  		mtk_ddp_comp_config(comp, width, height, vrefresh, bpc);
+>  		mtk_ddp_comp_start(comp);
+> @@ -291,9 +300,18 @@ static int mtk_crtc_ddp_hw_init(struct mtk_drm_crtc *mtk_crtc)
+>  	for (i = 0; i < mtk_crtc->layer_nr; i++) {
+>  		struct drm_plane *plane = &mtk_crtc->planes[i];
+>  		struct mtk_plane_state *plane_state;
+> +		struct mtk_ddp_comp *comp = mtk_crtc->ddp_comp[0];
+> +		unsigned int comp_layer_nr = mtk_ddp_comp_layer_nr(comp);
+> +		unsigned int local_layer;
+>  
+>  		plane_state = to_mtk_plane_state(plane->state);
+> -		mtk_ddp_comp_layer_config(mtk_crtc->ddp_comp[0], i,
+> +
+> +		if (i >= comp_layer_nr) {
+> +			comp = mtk_crtc->ddp_comp[1];
+> +			local_layer = i - comp_layer_nr;
+> +		} else
+> +			local_layer = i;
+> +		mtk_ddp_comp_layer_config(comp , local_layer,
+>  					  plane_state);
+>  	}
+>  
+> @@ -319,6 +337,7 @@ static void mtk_crtc_ddp_hw_fini(struct mtk_drm_crtc *mtk_crtc)
+>  					   mtk_crtc->ddp_comp[i]->id);
+>  	mtk_disp_mutex_disable(mtk_crtc->mutex);
+>  	for (i = 0; i < mtk_crtc->ddp_comp_nr - 1; i++) {
+> +		mtk_ddp_comp_bgclr_in_off(mtk_crtc->ddp_comp[i]);
+>  		mtk_ddp_remove_comp_from_path(mtk_crtc->config_regs,
+>  					      mtk_crtc->mmsys_reg_data,
+>  					      mtk_crtc->ddp_comp[i]->id,
+> @@ -339,6 +358,8 @@ static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
+>  	struct mtk_crtc_state *state = to_mtk_crtc_state(mtk_crtc->base.state);
+>  	struct mtk_ddp_comp *comp = mtk_crtc->ddp_comp[0];
+>  	unsigned int i;
+> +	unsigned int comp_layer_nr = mtk_ddp_comp_layer_nr(comp);
+> +	unsigned int local_layer;
+>  
+>  	/*
+>  	 * TODO: instead of updating the registers here, we should prepare
+> @@ -361,7 +382,14 @@ static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
+>  			plane_state = to_mtk_plane_state(plane->state);
+>  
+>  			if (plane_state->pending.config) {
+> -				mtk_ddp_comp_layer_config(comp, i, plane_state);
+> +				if (i >= comp_layer_nr) {
+> +					comp = mtk_crtc->ddp_comp[1];
+> +					local_layer = i - comp_layer_nr;
+> +				} else
+> +					local_layer = i;
+> +
+> +				mtk_ddp_comp_layer_config(comp, local_layer,
+> +							  plane_state);
+>  				plane_state->pending.config = false;
+>  			}
+>  		}
+> @@ -592,6 +620,12 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
+>  	}
+>  
+>  	mtk_crtc->layer_nr = mtk_ddp_comp_layer_nr(mtk_crtc->ddp_comp[0]);
+> +	if (mtk_crtc->ddp_comp_nr > 1) {
+> +		struct mtk_ddp_comp *comp = mtk_crtc->ddp_comp[1];
+> +
+> +		if (comp->funcs->bgclr_in_on)
+> +			mtk_crtc->layer_nr += mtk_ddp_comp_layer_nr(comp);
+> +	}
+>  	mtk_crtc->planes = devm_kcalloc(dev, mtk_crtc->layer_nr,
+>  					sizeof(struct drm_plane),
+>  					GFP_KERNEL);
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
