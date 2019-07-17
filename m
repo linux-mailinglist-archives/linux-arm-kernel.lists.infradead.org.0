@@ -2,77 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D3F26B84C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 10:35:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D5E3F6B850
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 10:35:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3262/rnaxDxV2EyRVwKRa5NckpZ8WnJVVggHpekVtt8=; b=brDGX4SKI4Ux3u
-	GFivREN+g2lkUwtQwAjbltIcPwV5MrbJh5lxivJYZpzY9CDwiMOwJ+735an9ccdyXRC3ZxeQF/aC1
-	SqMeaI9DfMuEqCc4w24C1WgaxiCegF66TSS/Y5GGN9ZuhyJ0vCR7V0DKWt+RJzn6NPfIdzPCcm1Ad
-	s4nhO7iQA59C91M4B/2kMO56SbOc6BIsWAuYHZ7YjJ95dkGGqkUJB0DiocVMU3vZ0wI1kPJHqlMn7
-	IO3rwwwlwZxro/M/e/NokiIOw7bWsaM//PT8sPeP3PQ+KtdiSUgI7OtkKVpYRRLaYmGDAF0BkzcFJ
-	5vtHYs5t5agVSIjhm6Gw==;
+	List-Owner; bh=xCbz7nLiLV9gQLLGbImvDdi6+JZ4IvGE0tGxbZxKZwQ=; b=c8Upigtsoneb4K
+	5ItOPvpXmyAogVI0qgrrXXv0+UL+q4WE1vHcJisk+iqBVW0u2mRALMv6LcBMjg99a1ER0hSab4NOS
+	FBh/XyQ7yVIrf7FwDULw+Kg4gf4SZ4mMN6PPdZek9ueJifnmiuc3YSUTbJlXsImJe2XpJedBCEZwi
+	6Vf1ES0t6Y590JCC0kCY5HLxgWTOJqAPkiZBrA936LG2yFoDYSJ+74o6sMyAz5PrZK5WAQWCgpOVJ
+	g7+lHGR9p9E/t7n9Dyhfgt4iRQ+uxmP45EBNyfGKIqqGVuV7CdTyZBDhptHs+Kara2ZJJr83vDwss
+	/rotHu+g5UsoFu8MadOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnfOx-0005c2-7H; Wed, 17 Jul 2019 08:35:03 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1hnfPK-0006it-N5; Wed, 17 Jul 2019 08:35:26 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnfNl-0004ml-Kk
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 08:33:52 +0000
-Received: by mail-pf1-x441.google.com with SMTP id i189so10479784pfg.10
+ id 1hnfNr-0004r7-Rb
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 08:34:01 +0000
+Received: by mail-pl1-x643.google.com with SMTP id y8so11574139plr.12
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 17 Jul 2019 01:33:49 -0700 (PDT)
+ Wed, 17 Jul 2019 01:33:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=5TBZYfajN5HVRea84QAJKLSTPB155HmdASNn879m/EQ=;
- b=IZmFxnxuDP3SuQvqoNRO+M8bB3TSTsZBFrAjJvHPnM9kp7cArfgRl3fNvJnOhR6Nt/
- owbNXXyCv73kC3TUprNz5BR5MHcpZuh2mG8YWDAxqt28eldSBGCdTQdgybXQOvetlHuN
- oDKjd96uLQtPAXxkS81Zld3NvoTHxNAXtJZts=
+ bh=Iwx8d0RGJRMbsUh5MH2Q2PhdCBXrR+QSvVmkF9EObNI=;
+ b=F73HcBqrBdoliIS0TswjZsyoSTqV3pr2Ql2l/+xRVG6vho0qliFDVTHs//UMlQounu
+ kEc4t3ESghyIZxz4hI2DjAdn2PYy6Oil5zMAepaL1RrirWnjneNK4E+B4sYNLYJgquCv
+ S4jUygxjiyQWrQTWl4lWN1R5b/Et1sgk6xOm8=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=5TBZYfajN5HVRea84QAJKLSTPB155HmdASNn879m/EQ=;
- b=IHkS1yoXEuz4uML+5NUU4/BrGJxJDT+Pkh1qC4ohVKOt8DQ6FOb0V74ZqDJYGJr3CI
- xttFw4qUiNWJHeVXFBjN3seU4lUuKqBtc0mwXSdZLyTnNsKy4i+WMc115mRdxsXQ2Kfa
- ug3qO187sa2R08bewiyhT6mdFrryK3QmG+IfYudBlMqbHhguH6Zq+gX1KpYgF+E+gxOe
- 2zCXPeFMU8j+DVK/D7CYrFxKlHxEd9xFqGLhLL2hXYdz2+xLLdN2SQwPne1NAXvCuH7N
- W14J6i6maN+4GFxseBuRFaa5czl5JbjD68AAF2c3b/DT6cNVBLehu/MlLcVabVzekY0l
- zWWw==
-X-Gm-Message-State: APjAAAVBP7Xl2tbxRrNV4kBCf1Ai9TmjH9bCVJO6qokYY6LSU2asO0Nw
- 2NNqYaCeS1zKMY2lA18+SXP/yw==
-X-Google-Smtp-Source: APXvYqxPydhnliUzK2uNkEbcc7+2J2IwaFMzYdUrhNnVBedPggzZ6oqRnJJXOC3B5Xd5pYqgORkgkQ==
-X-Received: by 2002:a65:41c6:: with SMTP id b6mr39402014pgq.269.1563352429076; 
- Wed, 17 Jul 2019 01:33:49 -0700 (PDT)
+ bh=Iwx8d0RGJRMbsUh5MH2Q2PhdCBXrR+QSvVmkF9EObNI=;
+ b=Hy3JBu2/siFqcMxp5koeci6x+PU7q1WU8aojzrU3vEr4Fg4fO+d2nzBE5TaMv5oVpl
+ ub5RUVXpeP7A6CzRl5VquEiUBntV4UMRJiL8nANB6ikWFc0QseLQu09QM+k9cRABTJdR
+ bsxRgHY05hFOLujlsSPbKtIHAwz6rmION+9OHCcLpHAOZnz2FaTT/3My+PThFujlQ9gK
+ 2YIUK1zxNEnYZsXpMRLq1cQpsnh8tQkuYD8SteBkX2kTzMBHoUpkc492AoPtUFdRmwFO
+ 45D5Shn8ZAkwF8nLVu5E3aU+scDsYgw9vRj4lhxWewAZ4Rbyv/80buLvsQXwSsY4O4Ty
+ YHUA==
+X-Gm-Message-State: APjAAAVUDsRPCeN+GczDGCvMBXwUNC4E0NeV4DmmeTPOr24F7q1cL+HU
+ +VqImTSEHP/eODo6oRTcsgfJnw==
+X-Google-Smtp-Source: APXvYqwca1yGfzgDVKjSr7q4qrti7DaSd7VKgHhWePyggYEHnIDdCbOEu9LujfkOwBuEBZ2NWDHJFA==
+X-Received: by 2002:a17:902:3181:: with SMTP id
+ x1mr40824727plb.135.1563352434649; 
+ Wed, 17 Jul 2019 01:33:54 -0700 (PDT)
 Received: from localhost ([2401:fa00:1:b:e688:dfd2:a1a7:2956])
- by smtp.gmail.com with ESMTPSA id e6sm27560082pfn.71.2019.07.17.01.33.45
+ by smtp.gmail.com with ESMTPSA id b1sm22020443pfi.91.2019.07.17.01.33.51
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 17 Jul 2019 01:33:48 -0700 (PDT)
+ Wed, 17 Jul 2019 01:33:54 -0700 (PDT)
 From: Cheng-Yi Chiang <cychiang@chromium.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v5 2/5] drm: bridge: dw-hdmi: Report connector status using
- callback
-Date: Wed, 17 Jul 2019 16:33:24 +0800
-Message-Id: <20190717083327.47646-3-cychiang@chromium.org>
+Subject: [PATCH v5 3/5] drm: dw-hdmi-i2s: Use fixed id for codec device
+Date: Wed, 17 Jul 2019 16:33:25 +0800
+Message-Id: <20190717083327.47646-4-cychiang@chromium.org>
 X-Mailer: git-send-email 2.22.0.510.g264f2c817a-goog
 In-Reply-To: <20190717083327.47646-1-cychiang@chromium.org>
 References: <20190717083327.47646-1-cychiang@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_013350_046969_32A921B4 
-X-CRM114-Status: GOOD (  14.91  )
+X-CRM114-CacheID: sfid-20190717_013356_208568_196EDAAB 
+X-CRM114-Status: GOOD (  13.86  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -110,158 +110,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Allow codec driver register callback function for plug event.
+The problem of using auto ID is that the device name will be like
+hdmi-audio-codec.<id number>.auto.
 
-The callback registration flow:
-dw-hdmi <--- hw-hdmi-i2s-audio <--- hdmi-codec
+The number might be changed when there are other platform devices being
+created before hdmi-audio-codec device.
+Use a fixed name so machine driver can set codec name on the DAI link.
 
-dw-hdmi-i2s-audio implements hook_plugged_cb op
-so codec driver can register the callback.
+Using the fixed name should be fine because there will only be one
+hdmi-audio-codec device.
 
-dw-hdmi exports a function dw_hdmi_set_plugged_cb so platform device
-can register the callback.
-
-When connector plug/unplug event happens, report this event using the
-callback.
-
-Make sure that audio and drm are using the single source of truth for
-connector status.
+Fix the codec name in rockchip rk3288_hdmi_analog machine driver.
 
 Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
 ---
- .../drm/bridge/synopsys/dw-hdmi-i2s-audio.c   | 11 +++++
- drivers/gpu/drm/bridge/synopsys/dw-hdmi.c     | 41 ++++++++++++++++++-
- include/drm/bridge/dw_hdmi.h                  |  4 ++
- 3 files changed, 55 insertions(+), 1 deletion(-)
+ drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c | 2 +-
+ sound/soc/rockchip/rk3288_hdmi_analog.c             | 3 ++-
+ 2 files changed, 3 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-index 5cbb71a866d5..ca56783fae47 100644
+index ca56783fae47..bc608f9258be 100644
 --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
 +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-@@ -104,10 +104,21 @@ static int dw_hdmi_i2s_get_dai_id(struct snd_soc_component *component,
- 	return -EINVAL;
- }
+@@ -135,7 +135,7 @@ static int snd_dw_hdmi_probe(struct platform_device *pdev)
  
-+static int dw_hdmi_i2s_hook_plugged_cb(struct device *dev, void *data,
-+				       hdmi_codec_plugged_cb fn,
-+				       struct device *codec_dev)
-+{
-+	struct dw_hdmi_i2s_audio_data *audio = data;
-+	struct dw_hdmi *hdmi = audio->hdmi;
-+
-+	return dw_hdmi_set_plugged_cb(hdmi, fn, codec_dev);
-+}
-+
- static struct hdmi_codec_ops dw_hdmi_i2s_ops = {
- 	.hw_params	= dw_hdmi_i2s_hw_params,
- 	.audio_shutdown	= dw_hdmi_i2s_audio_shutdown,
- 	.get_dai_id	= dw_hdmi_i2s_get_dai_id,
-+	.hook_plugged_cb = dw_hdmi_i2s_hook_plugged_cb,
- };
- 
- static int snd_dw_hdmi_probe(struct platform_device *pdev)
-diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-index 045b1b13fd0e..f32c66a6873d 100644
---- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-+++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-@@ -185,6 +185,10 @@ struct dw_hdmi {
- 	void (*disable_audio)(struct dw_hdmi *hdmi);
- 
- 	struct cec_notifier *cec_notifier;
-+
-+	hdmi_codec_plugged_cb plugged_cb;
-+	struct device *codec_dev;
-+	enum drm_connector_status last_connector_result;
- };
- 
- #define HDMI_IH_PHY_STAT0_RX_SENSE \
-@@ -209,6 +213,28 @@ static inline u8 hdmi_readb(struct dw_hdmi *hdmi, int offset)
- 	return val;
- }
- 
-+static void handle_plugged_change(struct dw_hdmi *hdmi, bool plugged)
-+{
-+	if (hdmi->plugged_cb && hdmi->codec_dev)
-+		hdmi->plugged_cb(hdmi->codec_dev, plugged);
-+}
-+
-+int dw_hdmi_set_plugged_cb(struct dw_hdmi *hdmi, hdmi_codec_plugged_cb fn,
-+			   struct device *codec_dev)
-+{
-+	bool plugged;
-+
-+	mutex_lock(&hdmi->mutex);
-+	hdmi->plugged_cb = fn;
-+	hdmi->codec_dev = codec_dev;
-+	plugged = hdmi->last_connector_result == connector_status_connected;
-+	handle_plugged_change(hdmi, plugged);
-+	mutex_unlock(&hdmi->mutex);
-+
-+	return 0;
-+}
-+EXPORT_SYMBOL_GPL(dw_hdmi_set_plugged_cb);
-+
- static void hdmi_modb(struct dw_hdmi *hdmi, u8 data, u8 mask, unsigned reg)
- {
- 	regmap_update_bits(hdmi->regm, reg << hdmi->reg_shift, mask, data);
-@@ -2044,6 +2070,7 @@ dw_hdmi_connector_detect(struct drm_connector *connector, bool force)
- {
- 	struct dw_hdmi *hdmi = container_of(connector, struct dw_hdmi,
- 					     connector);
-+	enum drm_connector_status result;
- 
- 	mutex_lock(&hdmi->mutex);
- 	hdmi->force = DRM_FORCE_UNSPECIFIED;
-@@ -2051,7 +2078,18 @@ dw_hdmi_connector_detect(struct drm_connector *connector, bool force)
- 	dw_hdmi_update_phy_mask(hdmi);
- 	mutex_unlock(&hdmi->mutex);
- 
--	return hdmi->phy.ops->read_hpd(hdmi, hdmi->phy.data);
-+	result = hdmi->phy.ops->read_hpd(hdmi, hdmi->phy.data);
-+
-+	mutex_lock(&hdmi->mutex);
-+	if (result != hdmi->last_connector_result) {
-+		dev_dbg(hdmi->dev, "read_hpd result: %d", result);
-+		handle_plugged_change(hdmi,
-+				      result == connector_status_connected);
-+		hdmi->last_connector_result = result;
-+	}
-+	mutex_unlock(&hdmi->mutex);
-+
-+	return result;
- }
- 
- static int dw_hdmi_connector_get_modes(struct drm_connector *connector)
-@@ -2460,6 +2498,7 @@ __dw_hdmi_probe(struct platform_device *pdev,
- 	hdmi->rxsense = true;
- 	hdmi->phy_mask = (u8)~(HDMI_PHY_HPD | HDMI_PHY_RX_SENSE);
- 	hdmi->mc_clkdis = 0x7f;
-+	hdmi->last_connector_result = connector_status_disconnected;
- 
- 	mutex_init(&hdmi->mutex);
- 	mutex_init(&hdmi->audio_mutex);
-diff --git a/include/drm/bridge/dw_hdmi.h b/include/drm/bridge/dw_hdmi.h
-index b4ca970a5b75..d6c925236c55 100644
---- a/include/drm/bridge/dw_hdmi.h
-+++ b/include/drm/bridge/dw_hdmi.h
-@@ -6,6 +6,8 @@
- #ifndef __DW_HDMI__
- #define __DW_HDMI__
- 
+ 	memset(&pdevinfo, 0, sizeof(pdevinfo));
+ 	pdevinfo.parent		= pdev->dev.parent;
+-	pdevinfo.id		= PLATFORM_DEVID_AUTO;
++	pdevinfo.id		= PLATFORM_DEVID_NONE;
+ 	pdevinfo.name		= HDMI_CODEC_DRV_NAME;
+ 	pdevinfo.data		= &pdata;
+ 	pdevinfo.size_data	= sizeof(pdata);
+diff --git a/sound/soc/rockchip/rk3288_hdmi_analog.c b/sound/soc/rockchip/rk3288_hdmi_analog.c
+index 767700c34ee2..8286025a8747 100644
+--- a/sound/soc/rockchip/rk3288_hdmi_analog.c
++++ b/sound/soc/rockchip/rk3288_hdmi_analog.c
+@@ -15,6 +15,7 @@
+ #include <linux/gpio.h>
+ #include <linux/of_gpio.h>
+ #include <sound/core.h>
 +#include <sound/hdmi-codec.h>
-+
- struct drm_connector;
- struct drm_display_mode;
- struct drm_encoder;
-@@ -152,6 +154,8 @@ struct dw_hdmi *dw_hdmi_bind(struct platform_device *pdev,
+ #include <sound/jack.h>
+ #include <sound/pcm.h>
+ #include <sound/pcm_params.h>
+@@ -142,7 +143,7 @@ static const struct snd_soc_ops rk_ops = {
+ SND_SOC_DAILINK_DEFS(audio,
+ 	DAILINK_COMP_ARRAY(COMP_EMPTY()),
+ 	DAILINK_COMP_ARRAY(COMP_CODEC(NULL, NULL),
+-			   COMP_CODEC("hdmi-audio-codec.2.auto", "i2s-hifi")),
++			   COMP_CODEC(HDMI_CODEC_DRV_NAME, "i2s-hifi")),
+ 	DAILINK_COMP_ARRAY(COMP_EMPTY()));
  
- void dw_hdmi_setup_rx_sense(struct dw_hdmi *hdmi, bool hpd, bool rx_sense);
- 
-+int dw_hdmi_set_plugged_cb(struct dw_hdmi *hdmi, hdmi_codec_plugged_cb fn,
-+			   struct device *codec_dev);
- void dw_hdmi_set_sample_rate(struct dw_hdmi *hdmi, unsigned int rate);
- void dw_hdmi_audio_enable(struct dw_hdmi *hdmi);
- void dw_hdmi_audio_disable(struct dw_hdmi *hdmi);
+ static struct snd_soc_dai_link rk_dailink = {
 -- 
 2.22.0.510.g264f2c817a-goog
 
