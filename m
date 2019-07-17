@@ -2,76 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 48B456B840
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 10:34:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 851B46B859
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 10:36:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8Bc4m2lL/oER+U51JyfrE/zon55ka10rC8Q51mzQXws=; b=mwCvNuSHRc1/QP
-	kGrhupABySZGy9p0v7EpiUQUoEtyhlq1n+xLja0CvIDolACMII7JqdGt8R6xVUBD2Jgf6hx8N4+vi
-	hrXfFLArJMUJvHvUJVr7sbMijbyApbqQHLzINp2BmV2RHToI8lLjIcO7SqG8SK9uS20AhzVHATgUs
-	4QN/55bSF3XvM+GgoVy7ESTMdYhDmukqFY6j0TFGkv7wFBTSjcHPXHFnUPGFxqtgzlVhkjLHHpt4k
-	t2Hw/5kbrVaiIo65h+LQ+Q76udirKGXOZmWWBchwOjFT3G1ju3Kg8M0Pl9YNfP9zKSV0vwjajuag6
-	AborhaJ7bkrWegi27+4A==;
+	List-Owner; bh=iPqxXvgXcaDxACeP8iNwkLIOGe4fUQHvDIGpWSOewGM=; b=iOlUcAcM/qoXhF
+	7vyxC5IY1WuN73W1esqBSM008fSdIK2ULIt8R2/SnME+eLIULZjq0pW9cXVKn7EucCeAVNEZzqEtU
+	aY0AlcP7VWG7LBzQ9DYVXMEx10EKhe28li2tZmArXqOYAwOdElFkQQRHKuM+7tp5yHsj0EEvHoDbH
+	kUw8Yh9xERo2l3/yvX+a1QDiotGi8IjE5w8wq49WDb1WCnhaiD0x37vN0tfrYfDYKcYhqiD3cta7p
+	P/DI4io/S53ce0lx+eJW5FayYW9Fy/CO2F3T0Xpcdyl7Y6uL9RTEmxSX5TPXbvk5nUMJiAz9bZrHc
+	sZKaZZmUbojuOfOhq2Hg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnfNu-0004d0-SJ; Wed, 17 Jul 2019 08:33:58 +0000
-Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
+	id 1hnfQK-00080T-Th; Wed, 17 Jul 2019 08:36:28 +0000
+Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnfNW-0004ZJ-SA
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 08:33:36 +0000
-Received: by mail-qk1-x742.google.com with SMTP id a27so16824042qkk.5
+ id 1hnfP7-0006st-3J
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 08:35:14 +0000
+Received: by mail-qt1-x843.google.com with SMTP id r6so18288820qtt.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 17 Jul 2019 01:33:30 -0700 (PDT)
+ Wed, 17 Jul 2019 01:35:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=tIm4KlLOoNVt9Pt6U/trSBmscVAnv1Ig8wWdGFQn/hY=;
- b=Gc2p+YiBGXCJnt1XJPMRd37VRMz9i9aEmp0M74zhniTKsjfTNV4cAC0ce27H/H+OED
- m/sD0e/q92iRLFlM3+ydWCz8wgiFbEDb/e8QnpHjVEyGafhl1BFjOGNLOVXMPF2Tk8CD
- viM42PTWZi74tlZHt9CTk7VI1yTtFxwBzn0agz7D+EcfOk0C/PBh5unBxDp2RXiy+nFf
- LGz/yypuclxQTdhBBemaEjGItkO6VLtXaqCVKVARGvo4W7ciFR5Bsc3L/XELIXWJ1h2+
- TLVGVgeX///EBiaOCE9TMgjrKSQOxqCh/rCJG+bKJU3pqi6wZrDqPOk8RRWun2eK9Bi+
- tXIA==
+ :cc; bh=Ry+MzwHDIHpb/9BQL6U47IaqQPJx3BKYqS3CpMjifoY=;
+ b=vMLalo+L/IIAOYtRRggYh08gz4EUGIoknTz9dXt0nx1IEelHQMaTKDlgMsLeQr+Ckh
+ HUYqpBPeFUUUmUcAh2g+atuM10ImyWztAf7D+0NImSQd/NE65C7oCU4gQnjF5whflX6i
+ H50lbswKhrHASrFvTn70By5otCpgLgBNSdMshtHN7QAn8uuVPFjQVdpsuNNLxYmOXd4z
+ IPhr3XU2k95v24WvA0j1HZAUO3cK577MwxQbkXAC3yfAnuqA/2T9CDN28/QYa54SFSIH
+ 3hCaKUiUH7JeBLFKmy0ZLt4LgyP6i+uQEa70PFHc7GLyap662g6pDpzo+jnpZXuo662W
+ vIVA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=tIm4KlLOoNVt9Pt6U/trSBmscVAnv1Ig8wWdGFQn/hY=;
- b=UPIir1vSVw9M/eSqxowsuvcHhvB9uj11H8R9G+a268BKpNCUftn84Qf/daMOTJH+e6
- thdJJw+7fNajSkR5IWZwbq5XQJ9JfzZ/gmfSbZq2ndcYstnZoViFcUEIf3J9zEKbtPoK
- fq861QzNk/sKRfaDNKLBA3Jfj6jGyZ7DOWxYr+Wt76rl64fX/8wV6uvnkpUmojyGvRXZ
- ZWOXYL6sXE2MD4Na4R38guTxESAoRLOWFrc4MBBY8R8udDbshuJA+jOrWMyNLc/pK6cM
- QTGwjNQ3rVVuTO+ugqydzM2Ledt0VfZcO2Rm/vci7z9V6rLsG/i7Bx1aln52xwcYXjYK
- P4EQ==
-X-Gm-Message-State: APjAAAXYKmAQzMw/xuMk8OkfLjBrRrKJWtZDiZtzfn5JNq/7h2yFXVec
- HYe5lFw8p23nYWjVfpcYXFyEmLRRGbCcakserdQ=
-X-Google-Smtp-Source: APXvYqxuYM6/C+OX9eNQbUfcLHpDXFqZ1XBtFE9lSmnzU48LoWDVyYEmqZVWCU/md+siv1MluEqAIxuKDWVy5k3Wrho=
-X-Received: by 2002:a37:4f16:: with SMTP id d22mr25526429qkb.307.1563352409491; 
- Wed, 17 Jul 2019 01:33:29 -0700 (PDT)
+ bh=Ry+MzwHDIHpb/9BQL6U47IaqQPJx3BKYqS3CpMjifoY=;
+ b=M0CwQDeYVw4CTM1tuS6CIYrwc+T65HmxS58FcUXnNx2Pja55KWdkQuIbe8IClMRUPJ
+ UQ6CmG98hrEqaf6mMdFH2bUyrQXSH42XZryKpj+HMlsI4+tyoH266OnjBmKM+T3nSHYi
+ 6e+INlmnzIwO9mDp++/k4UzCJPCnoCWma6H2Bx3S5DeHUq8t9OCH3ho8h8IsGxkURIk6
+ cz7Zasqf1AxxOQend2/r2d2dXlnq+lh3hk7z3IJZoRfsaKlxS6LOUH/TqPI5rq/MkbGm
+ NUUJ3ADHBCr6HUoyS4erW2SAH84WoFIx9UZFiohocXFIkwf5mcaE3BOGIwksWQ8DVJaJ
+ mmTw==
+X-Gm-Message-State: APjAAAW98psXqgMOONXKVZIsfz/Op4EadYB2X+h9zDjNkiT3Y8aR8sqD
+ GWw/IcSCqTrxmVuE2MdjCulBFb0t0gFth4VY3M31hA==
+X-Google-Smtp-Source: APXvYqziPJO1KRjHolx5k/4Q2eX8wSDr3YvFQfFnKotTHXYJdSW7xA10kL7Hbc02A83aPhvErcljmU7bWXgKFLHZ+XU=
+X-Received: by 2002:ac8:354d:: with SMTP id z13mr27515741qtb.340.1563352512060; 
+ Wed, 17 Jul 2019 01:35:12 -0700 (PDT)
 MIME-Version: 1.0
 References: <1563290089-11085-1-git-send-email-aisheng.dong@nxp.com>
- <1563290089-11085-10-git-send-email-aisheng.dong@nxp.com>
- <CAOMZO5DZDX4hGmLLT0+5e0VDhws-DknhAwyKyAxva8x5F2BYjw@mail.gmail.com>
-In-Reply-To: <CAOMZO5DZDX4hGmLLT0+5e0VDhws-DknhAwyKyAxva8x5F2BYjw@mail.gmail.com>
+ <1563290089-11085-11-git-send-email-aisheng.dong@nxp.com>
+ <CAOMZO5B=yK_S=2xRFt_1pAJ2iYE7CCCenOKQ3rjOeF3e+=vQtQ@mail.gmail.com>
+In-Reply-To: <CAOMZO5B=yK_S=2xRFt_1pAJ2iYE7CCCenOKQ3rjOeF3e+=vQtQ@mail.gmail.com>
 From: Dong Aisheng <dongas86@gmail.com>
-Date: Wed, 17 Jul 2019 16:24:33 +0800
-Message-ID: <CAA+hA=Sy3=6VF1eZJ-g_nhqbpCy+td+VEOUUK2pLrZAQpbAcFA@mail.gmail.com>
-Subject: Re: [PATCH v2 09/15] arm64: dts: imx8qm: add lsio ss support
+Date: Wed, 17 Jul 2019 16:26:16 +0800
+Message-ID: <CAA+hA=S=JMZDsbeJdzCRH+pikfy9nry-8UHq9V-75LuM0gxH6A@mail.gmail.com>
+Subject: Re: [PATCH v2 10/15] arm64: dts: imx8qm: add conn ss support
 To: Fabio Estevam <festevam@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_013334_921397_ABC302A5 
-X-CRM114-Status: UNSURE (   8.87  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190717_013513_359741_03D0A5FB 
+X-CRM114-Status: GOOD (  10.98  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (dongas86[at]gmail.com)
@@ -111,17 +110,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 17, 2019 at 3:30 AM Fabio Estevam <festevam@gmail.com> wrote:
+On Wed, Jul 17, 2019 at 3:31 AM Fabio Estevam <festevam@gmail.com> wrote:
 >
 > On Tue, Jul 16, 2019 at 12:37 PM Dong Aisheng <aisheng.dong@nxp.com> wrote:
+> >
+> > The CONN SS of MX8QM is mostly the same as MX8QXP except it has one more
+> > USB HSIC module support. So we can fully reuse the exist CONN SS dtsi.
+> > Add <soc>-ss-conn.dtsi with compatible string updated according to
+> > imx8-ss-conn.dtsi.
 >
-> > +&lsio_gpio0 {
-> > +       compatible = "fsl,imx8qm-gpio", "fsl,imx35-gpio";
->
-> fsl,imx8qm-gpio needs to be documented.
+> Subject and commit log does not match what the patch is actually doing.
 
-Yes, as documented in cover-letter.
-Will submit in a separate patch.
+What 'not match' did you mean?
 
 Regards
 Aisheng
