@@ -2,62 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 748F56BED0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 17:09:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EA7216BF27
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 17:32:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MAHVzrnxshuA7F/3Nkn565n/YNhReEP10CkN89Xm6Ag=; b=dO0RaY8SjiR7O9
-	LiVCuvKRr0XD3jdZzK4QjkM2oel1yb8CiBmNbKye+rr3UsQwrGfGZT3CX2simaRMVzm/KsiG562XD
-	7REcpEnL9eJVi3nf9beEWwFdYC52TFU8YpuYaFAR7QD6oa5UXlrsuhJbMqC28vDxUVS6ZSUVxRI8U
-	KHyPyO7z2no7ZyXxDSJ+Xao/+DnUZCCr13pHcsHA2OarH+cRfiGbPhV31GI0v5OZR5yHdacgRq4Rf
-	MLNMvYQ+QNcH+c4eSmmLbjRwIztTxhCFYriLbB8uFXlz5Y0vPGHYce9R84LIUjBW9d6apzA4dTIP0
-	ZkcF98lUheWjg1DN13zQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=r68yLhY1lmWlis4hizdoiLe8B43KYJXTNb0Wq7e/UPk=; b=k2SNljdlPum3Nu
+	1hYuci/lxwPAhlAgH1iK/B2opfS6RFTbQdhZHqSz9xjjOkDr2DGNhmw50pzyNvtE1gdKNOES+Crs9
+	jG1gZssG74VnkkXo6upbusutgsfbwy1gMrH1VUG7nBSqp9VZiUDCdq3iXJurv42pMnOrTd1EU6pmH
+	RW8pt+3DA5IaY/3sDkdTHT6d/riyFccRoJjZnZBliEIpgniaVXkaAdOltiTOnGUIfHGGC9teCyelG
+	dVaL/3cxbZLUiCcJq+oTFQ7SgWybYXcDCA+xEMw/1PQdufIvhxoSgx0FoIbIFvzZG1ZMf7KOh4TjJ
+	r6MwiGlpGpVD/8B/HBgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnlYn-0003iX-Mb; Wed, 17 Jul 2019 15:09:37 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hnluk-00046F-4G; Wed, 17 Jul 2019 15:32:18 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnlYd-0003iK-E7
- for linux-arm-kernel@bombadil.infradead.org; Wed, 17 Jul 2019 15:09:27 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Transfer-Encoding:
- Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
- Sender:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=SVWkaeTZUofn6ExxaVIGuAizGoZUu1XC7cjSP278ehA=; b=hgNH4C3meP6H4QR8nVYYGc/a0B
- ChHUKb4btr0qAx6C8fV9B8xFTttU5BMmi0L6YuyZ64y1yIRegluNaML0nKc+5l/8CQuVKgI20C/OV
- x9sInHemezlesMlXmU075RKKJtz9YcsfHCrG6tFv0U2oLGdDXqIM2XsUQKIposBfNnkc+kQ5NFgUC
- PgPjZzUUQ5NquuE4WRBPEoarvydOg6GiwXe8TXmfScxRR26HP2a7l8ZcvTWI90urs1qmoa/ds2VrB
- 1FrwevaggTNefAgs2WpgVJcEJe9ceT7ZJNvvnX0ntVY+ZigWIRIZdPYGY4sds6P/X9/3tMIErtBLB
- 3VyyNAgA==;
-Received: from j217100.upc-j.chello.nl ([24.132.217.100]
- helo=hirez.programming.kicks-ass.net)
- by merlin.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hnlYR-0002yN-5C; Wed, 17 Jul 2019 15:09:15 +0000
-Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
- id DA14B20197A67; Wed, 17 Jul 2019 17:09:13 +0200 (CEST)
-Date: Wed, 17 Jul 2019 17:09:13 +0200
-From: Peter Zijlstra <peterz@infradead.org>
-To: Alex Kogan <alex.kogan@oracle.com>
-Subject: Re: [PATCH v3 3/5] locking/qspinlock: Introduce CNA into the slow
- path of qspinlock
-Message-ID: <20190717150913.GY3419@hirez.programming.kicks-ass.net>
-References: <20190715192536.104548-1-alex.kogan@oracle.com>
- <20190715192536.104548-4-alex.kogan@oracle.com>
- <20190716155022.GR3419@hirez.programming.kicks-ass.net>
- <193BBB31-F376-451F-BDE1-D4807140EB51@oracle.com>
- <20190716184724.GH3402@hirez.programming.kicks-ass.net>
- <20190717083944.GR3463@hirez.programming.kicks-ass.net>
- <FFC2D45A-24B3-40E1-ABBB-1D696E830B23@oracle.com>
+ id 1hnluG-0003jl-8n
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 15:31:49 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id A2753AF5B;
+ Wed, 17 Jul 2019 15:31:44 +0000 (UTC)
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: linux-arm-kernel@lists.infradead.org, Robin Murphy <robin.murphy@arm.com>,
+ iommu@lists.linux-foundation.org
+Subject: [RFC 0/4] Raspberry Pi 4 DMA addressing support
+Date: Wed, 17 Jul 2019 17:31:31 +0200
+Message-Id: <20190717153135.15507-1-nsaenzjulienne@suse.de>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <FFC2D45A-24B3-40E1-ABBB-1D696E830B23@oracle.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190717_083148_464816_F050B8ED 
+X-CRM114-Status: GOOD (  11.73  )
+X-Spam-Score: -2.3 (--)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-2.3 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,68 +58,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, guohanjun@huawei.com, arnd@arndb.de,
- dave.dice@oracle.com, jglauber@marvell.com, x86@kernel.org,
- will.deacon@arm.com, linux@armlinux.org.uk, steven.sistare@oracle.com,
- linux-kernel@vger.kernel.org, rahul.x.yadav@oracle.com, mingo@redhat.com,
- bp@alien8.de, hpa@zytor.com, longman@redhat.com, tglx@linutronix.de,
- daniel.m.jordan@oracle.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: stefan.wahren@i2se.com, f.fainelli@gmail.com, catalin.marinas@arm.com,
+ phil@raspberrypi.org, linux-kernel@vger.kernel.org,
+ Jisheng.Zhang@synaptics.com, mbrugger@suse.com, will@kernel.org, hch@lst.de,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, m.szyprowski@samsung.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gV2VkLCBKdWwgMTcsIDIwMTkgYXQgMTA6Mjc6MzBBTSAtMDQwMCwgQWxleCBLb2dhbiB3cm90
-ZToKPiA+IE9uIEp1bCAxNywgMjAxOSwgYXQgNDozOSBBTSwgUGV0ZXIgWmlqbHN0cmEgPHBldGVy
-ekBpbmZyYWRlYWQub3JnPiB3cm90ZToKCj4gPiBzdGF0aWMgdm9pZCBjbmFfc3BsaWNlX3RhaWwo
-c3RydWN0IGNuYV9ub2RlICpjbiwgc3RydWN0IGNuYV9ub2RlICpoZWFkLCBzdHJ1Y3QgY25hX25v
-ZGUgKnRhaWwpCj4gPiB7Cj4gPiAJc3RydWN0IGNuYV9ub2RlICpsaXN0Owo+ID4gCj4gPiAJLyog
-cmVtb3ZlIFtoZWFkLHRhaWxdICovCj4gPiAJV1JJVEVfT05DRShjbi0+bWNzLm5leHQsIHRhaWwt
-Pm1jcy5uZXh0KTsKPiA+IAl0YWlsLT5tY3MubmV4dCA9IE5VTEw7Cj4gPiAKPiA+IAkvKiBzdGlj
-ayBbaGVhZCx0YWlsXSBvbiB0aGUgc2Vjb25kYXJ5IGxpc3QgdGFpbCAqLwo+ID4gCWlmIChjbi0+
-bWNzLmxvY2tlZCA8PSAxKSB7Cj4gPiAJCS8qIGNyZWF0ZSBzZWNvbmRhcnkgbGlzdCAqLwo+ID4g
-CQloZWFkLT50YWlsID0gdGFpbDsKPiA+IAkJY24tPm1jcy5sb2NrZWQgPSBoZWFkLT5lbmNvZGVk
-X3RhaWw7Cj4gPiAJfSBlbHNlIHsKPiA+IAkJLyogYWRkIHRvIHRhaWwgKi8KPiA+IAkJbGlzdCA9
-IChzdHJ1Y3QgY25hX25vZGUgKilkZWNvZGVfdGFpbChjbi0+bWNzLmxvY2tlZCk7Cj4gPiAJCWxp
-c3QtPnRhaWwtPm5leHQgPSBoZWFkOwo+ID4gCQlsaXN0LT50YWlsID0gdGFpbDsKPiA+IAl9Cj4g
-PiB9Cj4gPiAKPiA+IHN0YXRpYyBzdHJ1Y3QgY25hX25vZGUgKmNuYV9maW5kX25leHQoc3RydWN0
-IG1jc19zcGlubG9jayAqbm9kZSkKPiA+IHsKPiA+IAlzdHJ1Y3QgY25hX25vZGUgKmNuaSwgKmNu
-ID0gKHN0cnVjdCBjbmFfbm9kZSAqKW5vZGU7Cj4gPiAJc3RydWN0IGNuYV9ub2RlICpoZWFkLCAq
-dGFpbCA9IE5VTEw7Cj4gPiAKPiA+IAkvKiBmaW5kIGFueSBuZXh0IGxvY2sgZnJvbSAnb3VyJyBu
-b2RlICovCj4gPiAJZm9yIChoZWFkID0gY25pID0gKHN0cnVjdCBjbmFfbm9kZSAqKVJFQURfT05D
-RShjbi0+bWNzLm5leHQpOwo+ID4gCSAgICAgY25pICYmIGNuaS0+bm9kZSAhPSBjbi0+bm9kZTsK
-PiA+IAkgICAgIHRhaWwgPSBjbmksIGNuaSA9IChzdHJ1Y3QgY25hX25vZGUgKilSRUFEX09OQ0Uo
-Y25pLT5tY3MubmV4dCkpCj4gPiAJCTsKPiA+IAo+ID4gCS8qIHdoZW4gZm91bmQsIHNwbGljZSBh
-bnkgc2tpcHBlZCBsb2NrcyBvbnRvIHRoZSBzZWNvbmRhcnkgbGlzdCAqLwo+ID4gCWlmIChjbmkg
-JiYgdGFpbCkKPiA+IAkJY25hX3NwbGljZV90YWlsKGNuLCBoZWFkLCB0YWlsKTsKPiA+IAo+ID4g
-CXJldHVybiBjbmk7Cj4gPiB9Cj4gPiAKPiA+IEhvdydzIHRoYXQ/Cj4gCj4gVGhpcyBpcyBhbG1v
-c3QgcGVyZmVjdCEhIDopCj4gCj4gVGhlIGFib3ZlIHNob3VsZCB3b3JrLCBidXQgSSB0aGluayB3
-ZSBzaG91bGQgaGF2ZSBhIHNwZWNpYWxpemVkIGZhc3QtcGF0aCBmb3IgCj4gY2hlY2tpbmcgdGhl
-IGltbWVkaWF0ZSBuZXh0IG5vZGUgaW4gdGhlIG1haW4gcXVldWUuIFRoaXMgd291bGQgYmUgdGhl
-IGNvbW1vbgo+IGNhc2UsIG9uY2Ugd2Ugc3BsaWNlIOKAmG90aGVy4oCZIG5vZGVzIG9udG8gdGhl
-IHNlY29uZGFyeSBxdWV1ZS4gSW4gdGhlIGFib3ZlIHdlCj4gd291bGQgZ28gdGhyb3VnaCBmb3Vy
-IGJyYW5jaGVzIGJlZm9yZSByZXR1cm5pbmcgZnJvbSBjbmFfZmluZF9uZXh0KCkuIEluIHRoZSAK
-PiBmb2xsb3dpbmcgd2Ugd291bGQgaGF2ZSBqdXN0IG9uZToKClJpZ2h0LCBidXQgY2FuIHlvdSBt
-ZWFzdXJlIGEgZGlmZmVyZW5jZT8gOy0pIEFueXdheSwgbm8gcmVhbCBvYmplY3Rpb24sCmp1c3Qg
-cGxheWluZyBkZXZpbHMgYWR2b2NhdGUgaGVyZS4KCj4gPiBzdGF0aWMgc3RydWN0IGNuYV9ub2Rl
-ICpjbmFfZmluZF9uZXh0KHN0cnVjdCBtY3Nfc3BpbmxvY2sgKm5vZGUpCj4gPiB7Cj4gPiAJc3Ry
-dWN0IGNuYV9ub2RlICpjbiA9IChzdHJ1Y3QgY25hX25vZGUgKilub2RlOwo+IAkgICBzdHJ1Y3Qg
-Y25hX25vZGUgKmNuaSA9IChzdHJ1Y3QgY25hX25vZGUgKilSRUFEX09OQ0UoY24tPm1jcy5uZXh0
-KTsKPiA+IAo+ID4gCXN0cnVjdCBjbmFfbm9kZSAqaGVhZCwgKnRhaWwgPSBOVUxMOwo+ID4gCj4g
-CSAgIC8qIGZhc3QgcGF0aCAqLwo+IAkgICBpZiAoY25pLT5ub2RlID09IGNuLT5ub2RlKSAKPiAJ
-CXJldHVybiBjbmk7Cj4gCj4gPiAJLyogZmluZCBhbnkgbmV4dCBsb2NrIGZyb20gJ291cicgbm9k
-ZSAqLwo+ID4gCWZvciAoaGVhZCA9IGNuLT5tY3MubmV4dDsKCSAgICAgaGVhZCA9IGNuaSwKCnlv
-dSBqdXN0IGRpZCB0aGF0IGxvYWQgOi0pCgo+ID4gCSAgICAgY25pICYmIGNuaS0+bm9kZSAhPSBj
-bi0+bm9kZTsKPiA+IAkgICAgIHRhaWwgPSBjbmksIGNuaSA9IChzdHJ1Y3QgY25hX25vZGUgKilS
-RUFEX09OQ0UoY25pLT5tY3MubmV4dCkpCj4gPiAJCTsKPiA+IAo+ID4gCS8qIHdoZW4gZm91bmQs
-IHNwbGljZSBhbnkgc2tpcHBlZCBsb2NrcyBvbnRvIHRoZSBzZWNvbmRhcnkgbGlzdCAqLwo+ID4g
-CWlmIChjbmkgJiYgdGFpbCkKPiA+IAkJY25hX3NwbGljZV90YWlsKGNuLCBoZWFkLCB0YWlsKTsK
-PiA+IAo+ID4gCXJldHVybiBjbmk7Cj4gPiB9Cj4gCj4gCj4gQWxzbywgYW55IHJlYXNvbiB5b3Ug
-c2F5IOKAmGxvY2vigJkgaW5zdGVhZCBvZiDigJlub2Rl4oCZIGluIHRoZSBjb21tZW50cz8KPiBJ
-LmUuLCBJIHRoaW5rICJ3aGVuIGZvdW5kLCBzcGxpY2UgYW55IHNraXBwZWQgbG9ja3Mgb250byB0
-aGUgc2Vjb25kYXJ5IGxpc3TigJ0gc2hvdWxkIGJlCj4gIndoZW4gZm91bmQsIHNwbGljZSBhbnkg
-c2tpcHBlZCBub2RlcyBvbnRvIHRoZSBzZWNvbmRhcnkgbGlzdOKAnS4KCkR1ZSB0byB0aGUgY29u
-ZnVzaW9uIGJldHdlZW4gbG9jayB3YWl0ZXIgbm9kZSBhbmQgbnVtYSBub2RlIDotKQoKX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5l
-bCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6
-Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Hi all,
+this series attempts to address some issues we found while bringing up the new
+Raspberry Pi 4 in arm64 and it's intended to serve as a follow up to this:
+https://www.spinics.net/lists/arm-kernel/msg740650.html
+
+The new Raspberry Pi 4 has up to 4GB of ram but most devices can only address
+the first GB of ram: the DMA address range is 0xc0000000-0xfc000000 which is
+aliased to the first GB of memory 0x00000000-0x3c000000. Note that only some
+devices have this limitations, the ARM cores, PCIe, GENET, and 40-bit DMA
+channels have a wider view of the address space.
+
+This is solved in arm32 by setting up the correct '.dma_zone_size = SZ_1G'
+which takes care of the allocating the coherent memory area at the right spot
+and also is taken into account in the arch specific 'dma_map_ops'.
+
+Unfortunately there is no such thing as '.dma_zone_size' in arm64, to make
+things worse it's assumed that all devices will be able to adress the first 4GB
+of memory.
+
+This raises two issues: the coherent memory reserves are located in an area not
+accessible by most devices, and DMA streaming's dma_supported(), which fails
+for most devices since it's min_mask isn't properly set. Note that the rest if
+DMA streaming works fine thanks to the help of swiotlb.
+
+On one hand I've implemented a function that parses the 'dma-range' on all
+interconnects and tries to select a location for the coherent memory reserves
+that'll fit all devices. I made the algorithm as simple as possible, based on
+the existing devices limitations.
+
+On the other I've added a new variable in dma-direct that allows modifying the
+min_mask during the init process and taken care of setting it accordingly in
+the arm64's init code.
+
+Regards,
+Nicolas
+
+---
+
+Nicolas Saenz Julienne (4):
+  arm64: mm: use arm64_dma_phys_limit instead of calling max_zone_dma_phys()
+  arm64: mm: parse dma-ranges in order to better estimate arm64_dma_phys_limit
+  dma-direct: add dma_direct_min_mask
+  arm64: mm: set direct_dma_min_mask according to dma-ranges
+
+ arch/arm64/mm/init.c | 69 ++++++++++++++++++++++++++++++++++++++++----
+ kernel/dma/direct.c  |  4 ++-
+ 2 files changed, 67 insertions(+), 6 deletions(-)
+
+-- 
+2.22.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
