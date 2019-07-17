@@ -2,175 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24A6A6B8C6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 11:03:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D2A76B8D1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 11:05:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vVIsLdqU7vm2d3Qvgv5zgUJIE6r8E1flXaqaeTt4qQQ=; b=mKWNwN6Cy0Yf/H
-	CJsjQX4b2cdZiqb8ocNt/lQ8+mw25Dx5Y5baj/7g61u7NPNDpKjJjeC2DXyXUICSrcy/Y4l0L0gMu
-	aOaZ+NH5NsKFLCEsvUYS8tF0UmLzxMzeth7bpi22WIUmi/qdWS7qb3UE9TkwYKVrl4L8m6Y44lF1i
-	kz0oVQJCiyjOlo+u1tb3yRTamjEtcx4/tgQpNsVEwR3EIZ7H/HF6pZWx5CzBzWAmRUxSJKtf24MDN
-	TFNaral+x0h5BFi4Vhm2Xbn+xIVz3wMLqoKcJ5AmqS37IscpuVBrMBQY/BKjX6KKYFNjP6NN7VZL6
-	XaVgZFvg5A9tk71WseKA==;
+	List-Owner; bh=ZgQHSJ8s4rpklzvzTEZ295Ju8z8AY+BVtiYYew8OD4w=; b=enpr3gHwFj9twP
+	PzkVO4Q86zCOR+PCKAcvHWAqF3s2xHvpXYVCbyFqQxxOgm84V5O9Z39xFscPqyYnNWWs0cpotL/PO
+	QwYZ6dHjQVZFLddvZvXcUakFtiDj8ULjhS1CgOWuN2VrXoC+1Qwf2N5EBIaTqUgE9mBPoD3Xe58Sb
+	s6snLLSHTk5Ek8TP10WDm/BUnXmert8khDqQZRO5mlAdc4cpT6siCPubAyLK50SdYyBhnYVPInBYT
+	bcbKIyCCMbN0Kg8THxzOqtymHW6r60WKpzOsTKmD6oxyOvkaP/SrJGqDqBIjfGB1YVlh0Q2KTUuwf
+	N5UxB+t4E6o4d7ZHvgnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnfpy-0003zu-NT; Wed, 17 Jul 2019 09:02:58 +0000
-Received: from mail-eopbgr80079.outbound.protection.outlook.com ([40.107.8.79]
- helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+	id 1hnfsh-0006Cr-Nf; Wed, 17 Jul 2019 09:05:47 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnfpj-0003xX-Jv
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 09:02:45 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
- s=selector2-armh-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=9u3/Y/ve4jN9sZOx1jFJy//BQFvyQfJiCilchh8sQGQ=;
- b=xQkru8slMWtvbENK/HYFfpMoNPgy4iC6Y9dKUdMS5pd/H40QCGyCmfBI7jqwcM5Jru428Lfyt1/U9rkftEpJkGCT5z16Fx3qqxtzolQJrwI2mfcEzon7r58zuPB19B/4bQ3D1MoGByRx7Fvxigbhle+R29ESehm8YBPCXOj4LeA=
-Received: from DB7PR08CA0016.eurprd08.prod.outlook.com (2603:10a6:5:16::29) by
- DB8PR08MB4953.eurprd08.prod.outlook.com (2603:10a6:10:ef::12) with
- Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2073.14; Wed, 17 Jul 2019 09:02:39 +0000
-Received: from AM5EUR03FT015.eop-EUR03.prod.protection.outlook.com
- (2a01:111:f400:7e08::204) by DB7PR08CA0016.outlook.office365.com
- (2603:10a6:5:16::29) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.2073.14 via Frontend
- Transport; Wed, 17 Jul 2019 09:02:39 +0000
-Authentication-Results: spf=temperror (sender IP is 63.35.35.123)
- smtp.mailfrom=arm.com; lists.infradead.org; dkim=pass (signature was
- verified) header.d=armh.onmicrosoft.com;lists.infradead.org; dmarc=temperror
- action=none header.from=arm.com;
-Received-SPF: TempError (protection.outlook.com: error in processing during
- lookup of arm.com: DNS Timeout)
-Received: from 64aa7808-outbound-1.mta.getcheckrecipient.com (63.35.35.123) by
- AM5EUR03FT015.mail.protection.outlook.com (10.152.16.132) with
- Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
- 15.20.2052.18 via Frontend Transport; Wed, 17 Jul 2019 09:02:37 +0000
-Received: ("Tessian outbound 350ce6c32571:v24");
- Wed, 17 Jul 2019 09:02:33 +0000
-X-CheckRecipientChecked: true
-X-CR-MTA-CID: adc3316a26e277aa
-X-CR-MTA-TID: 64aa7808
-Received: from a06154e96236.2 (cr-mta-lb-1.cr-mta-net [104.47.13.52])
- by 64aa7808-outbound-1.mta.getcheckrecipient.com id
- 3939E523-FC5A-4F69-A23C-6DAA81D399A3.1; 
- Wed, 17 Jul 2019 09:02:28 +0000
-Received: from EUR04-HE1-obe.outbound.protection.outlook.com
- (mail-he1eur04lp2052.outbound.protection.outlook.com [104.47.13.52])
- by 64aa7808-outbound-1.mta.getcheckrecipient.com with ESMTPS id a06154e96236.2
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384);
- Wed, 17 Jul 2019 09:02:28 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Cv5hhMEJljWkqvSRWmCCnyfaw5qphFnQFzr7MbiKsiZ/wcbQqBbOUaPrENVZ95rWn0NghHR7dkBhlmL5eNomV7icc2raHCdDhbYdRq2ybHPuw+YMyRn4sk2KFfq71UvwmgT4Tx7FhTaunB7YcFQqHW8KLk/0j9R13xhcHJZh69oa7EsdoHmnNEZB9TaGUfNXChAhM6jDCDSQd5PUHkmzR3wjfeMzMyiMJwhzOZC3LCTBCTV6nS1QcpYQrYvQkmXUlOquVOD/DYRko47zHqXIxktPM6YOa7l5/xiGQzqwueKsAV2VaIl+SczdTX6tpTrIWAhQHUIeQEwkGkOfrF34OA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=qHnNO+bFfyvKmGIicsXfo82VuadD0iHbd3lPL3gvkSs=;
- b=PGOCy0GvRBSSv9rusB11D0vHddLGFR3VjHVot01cLfZ34arPEk+iWQf4zGHT0hmfs2g8/zie2bqo9VytqlvkqBZ4EChzNcmCjwn/RFwUp3AEXtWIJvLB5hw4QP0XXI0MoXkj2zEvuJ9mFKwUNYyZSzUu0wcZMyOxCULmIP8DJC9adiax46a09+KYYs8DsVVuckrp05w/T5ztqlJN5FUy3AZna4TnFF9bjSSOdfiu/8sXun+eiV6r0nbGlehe+0QStOZtY/MXhAQ4j8Zp501cNGW3FaTNwF1rWhkq/95mezWoUhIFrdVjEAVQbaQBEBN1B0TiDqda+yk03iBJ0xxcBQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=arm.com;dmarc=pass action=none header.from=arm.com;dkim=pass
- header.d=arm.com;arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
- s=selector2-armh-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=qHnNO+bFfyvKmGIicsXfo82VuadD0iHbd3lPL3gvkSs=;
- b=wTf5JAj3N3w3sNFmmPxwupahEOh9w5hKXjKUfBD9DgmFJgSR+aGTjbK9gwvc+P14ZIHbd6QBc9bWvjIcZ0yC5NWrPykDM+4wix3MCjK+StxhX3DYioAnsHNxO/8w/iUj35qWWmMtdwCnm/l1k5JPuT3T/EolA8T6ctFsECHOXfw=
-Received: from DB7PR08MB3082.eurprd08.prod.outlook.com (52.134.110.24) by
- DB7PR08MB3130.eurprd08.prod.outlook.com (52.135.129.143) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2073.14; Wed, 17 Jul 2019 09:02:25 +0000
-Received: from DB7PR08MB3082.eurprd08.prod.outlook.com
- ([fe80::a13f:5848:5d6d:beef]) by DB7PR08MB3082.eurprd08.prod.outlook.com
- ([fe80::a13f:5848:5d6d:beef%5]) with mapi id 15.20.2073.012; Wed, 17 Jul 2019
- 09:02:25 +0000
-From: Julien Thierry <Julien.Thierry@arm.com>
-To: "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>
-Subject: Re: [PATCH v4 0/9] arm_pmu: Use NMI for perf interrupt
-Thread-Topic: [PATCH v4 0/9] arm_pmu: Use NMI for perf interrupt
-Thread-Index: AQHVPHgZk+0n20lWJkmyjEpsx95THqbOg8IA
-Date: Wed, 17 Jul 2019 09:02:25 +0000
-Message-ID: <b5229f5d-2708-7a6b-c911-c83b715798b6@arm.com>
-References: <1563351432-55652-1-git-send-email-julien.thierry@arm.com>
-In-Reply-To: <1563351432-55652-1-git-send-email-julien.thierry@arm.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: LO2P123CA0012.GBRP123.PROD.OUTLOOK.COM
- (2603:10a6:600:a6::24) To DB7PR08MB3082.eurprd08.prod.outlook.com
- (2603:10a6:5:1d::24)
-Authentication-Results-Original: spf=none (sender IP is )
- smtp.mailfrom=Julien.Thierry@arm.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [217.140.106.55]
-x-ms-publictraffictype: Email
-X-MS-Office365-Filtering-Correlation-Id: 66184963-505b-4a6b-132b-08d70a9583d8
-X-MS-Office365-Filtering-HT: Tenant
-X-Microsoft-Antispam-Untrusted: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(5600148)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
- SRVR:DB7PR08MB3130; 
-X-MS-TrafficTypeDiagnostic: DB7PR08MB3130:|DB8PR08MB4953:
-X-MS-Exchange-PUrlCount: 3
-X-Microsoft-Antispam-PRVS: <DB8PR08MB49530680EC81FF640E9C42C89DC90@DB8PR08MB4953.eurprd08.prod.outlook.com>
-x-checkrecipientrouted: true
-x-ms-oob-tlc-oobclassifiers: OLM:7219;OLM:7219;
-x-forefront-prvs: 01018CB5B3
-X-Forefront-Antispam-Report-Untrusted: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(366004)(39860400002)(376002)(396003)(136003)(189003)(199004)(14454004)(478600001)(2351001)(71200400001)(8676002)(71190400001)(229853002)(316002)(966005)(54906003)(4326008)(25786009)(99286004)(6116002)(3846002)(7736002)(36756003)(305945005)(66066001)(52116002)(31696002)(8936002)(5660300002)(81156014)(81166006)(76176011)(31686004)(446003)(11346002)(66476007)(2616005)(86362001)(476003)(2501003)(102836004)(44832011)(26005)(66946007)(486006)(64756008)(386003)(53546011)(66556008)(6486002)(2906002)(6916009)(68736007)(66446008)(256004)(6506007)(186003)(5640700003)(6436002)(6512007)(6306002)(6246003)(53936002)(14444005);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB7PR08MB3130;
- H:DB7PR08MB3082.eurprd08.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: arm.com does not designate
- permitted sender hosts)
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Message-Info-Original: v9KOjMyjafrLYqbQ6+5qkNCYuConzk5VEBCFV/bacsfw3IngpaT+7IoGz5Iegt3n7HtYXGEYHqFsPKZoDumxT5DELnILf0RgFSZAiJzyyT86sxl9yamMxNRBKqH+Al+eWhsh7YO0xl6cmhkhTMAAmgmhVmHO9JvBo+mzsAR59hVOAYQamUMdXR5I7WPdkSayEFach+4IYS0EnsxCqihuWxjelvZeo/oMrXf2/bcZXyM3/FBy0lTfE7eJdJXtrYhsCsFc39xU3OHZuwZ+/AZw4N39T4h0lrtfXgrKv0FEtgKJJJcJS3aG0ABd3BXtkYdQ0ZKXf7HXBn/e407PsOphJb4j54hSRIF8XHQreWj3U11ckvq0BTPWmMjZaqXvH2/75kIl5OD2LgXFc7eIp3gPN5UKjbFW0OahxxrE8HC/us8=
-Content-ID: <DE7B862ED2A0044A8F3575041DC722CA@eurprd08.prod.outlook.com>
+ id 1hnfsT-0006CT-Bc
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 09:05:35 +0000
+Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2A49B2077C;
+ Wed, 17 Jul 2019 09:05:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1563354333;
+ bh=hfhBRpDbi1WiaurfbGeV89jyXszNvMLKA0Pq41fCS8E=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=mf7qYJgkfXF1IWlrD2oMPe5TOJwoWc4hbx/bLQMGjWMCe1gNwnuZOlVQoaOjA6lg7
+ 0vFN4AwVdxGW/u37ULwvtBvtle9yCJGFZrnfBnRbPeCNmAR+7P5FajFgKzESpeLpfu
+ hZlXEoxpf3JZ3v5AJtbfbtvLpWpLrp3m/Qb+CjhU=
+Date: Wed, 17 Jul 2019 17:05:18 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Oliver Graute <oliver.graute@gmail.com>
+Subject: Re: [PATCH 2/2] ARM: dts: Add support for i.MX6 UltraLite DART
+ Variscite Customboard
+Message-ID: <20190717090517.GF3738@dragon>
+References: <1561398017-10548-1-git-send-email-oliver.graute@gmail.com>
+ <1561398017-10548-3-git-send-email-oliver.graute@gmail.com>
 MIME-Version: 1.0
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR08MB3130
-Original-Authentication-Results: spf=none (sender IP is )
- smtp.mailfrom=Julien.Thierry@arm.com; 
-X-EOPAttributedMessage: 0
-X-MS-Exchange-Transport-CrossTenantHeadersStripped: AM5EUR03FT015.eop-EUR03.prod.protection.outlook.com
-X-Forefront-Antispam-Report: CIP:63.35.35.123; IPV:CAL; SCL:-1; CTRY:IE;
- EFV:NLI; SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(396003)(376002)(346002)(136003)(2980300002)(199004)(189003)(40434004)(26005)(2906002)(6486002)(36756003)(186003)(356004)(31686004)(4326008)(336012)(63370400001)(14454004)(63350400001)(76130400001)(11346002)(5024004)(436003)(14444005)(6916009)(446003)(25786009)(2616005)(476003)(6246003)(22756006)(3846002)(6116002)(86362001)(76176011)(2486003)(126002)(23676004)(31696002)(102836004)(386003)(53546011)(2351001)(70206006)(6306002)(70586007)(107886003)(6512007)(2501003)(50466002)(6506007)(54906003)(47776003)(8936002)(8676002)(229853002)(486006)(99286004)(5640700003)(36906005)(81156014)(66066001)(316002)(305945005)(26826003)(81166006)(7736002)(966005)(5660300002)(478600001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB8PR08MB4953;
- H:64aa7808-outbound-1.mta.getcheckrecipient.com; FPR:; SPF:TempError; LANG:en;
- PTR:ec2-63-35-35-123.eu-west-1.compute.amazonaws.com; A:1; MX:1; 
-X-MS-Office365-Filtering-Correlation-Id-Prvs: 88cfc260-1c14-4870-f68c-08d70a957c95
-X-Microsoft-Antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(710020)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:DB8PR08MB4953; 
-X-Forefront-PRVS: 01018CB5B3
-X-Microsoft-Antispam-Message-Info: CzjkwFoBxPex0uDBfMghgsXDsl+J/Uq0UryQM9U9F+prfhZFWFETHObmGy3IajFn/AxkIhGXQdLcmvb8tn3OtSiQqgP2TBAeVqKq19fGA3QWznOn961F4rXMvGus6VIuXZ3a2HB6CXm9TFkcSLBe8SZB+RlL1xYShqXxayqS9GHcSkOESafIrNhYH8cglB/ZzRuPh+7sqM96AyCjJENICwRMyGRRs//o6b2gE3Qtdl9UtwtCyQqewXXoGlhbawLlsu5Fzqx35MazpDNyO90LM57qeYqi0cyRBFshJjkHCxcInR+qijrN1UQnOXLCBCO1E3023AX5P1hd8P89SQwHL3D7JMSCKMCTJmsikY8akmuVeVTECSO0De6gR0qpQcopxe3kW3jLnQLDtJ8bEGrYTq7MeyE9B7WRApFiciT05jI=
-X-OriginatorOrg: arm.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Jul 2019 09:02:37.3774 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 66184963-505b-4a6b-132b-08d70a9583d8
-X-MS-Exchange-CrossTenant-Id: f34e5979-57d9-4aaa-ad4d-b122a662184d
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=f34e5979-57d9-4aaa-ad4d-b122a662184d; Ip=[63.35.35.123];
- Helo=[64aa7808-outbound-1.mta.getcheckrecipient.com]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB8PR08MB4953
+Content-Disposition: inline
+In-Reply-To: <1561398017-10548-3-git-send-email-oliver.graute@gmail.com>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_020243_733160_DB94D835 
-X-CRM114-Status: GOOD (  17.62  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190717_020533_427459_06D6F379 
+X-CRM114-Status: GOOD (  19.41  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.8.79 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -182,75 +78,260 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>,
- "peterz@infradead.org" <peterz@infradead.org>,
- "jolsa@redhat.com" <jolsa@redhat.com>, Will
- Deacon <Will.Deacon@arm.com>, "acme@kernel.org" <acme@kernel.org>,
- "alexander.shishkin@linux.intel.com" <alexander.shishkin@linux.intel.com>,
- "mingo@redhat.com" <mingo@redhat.com>,
- "namhyung@kernel.org" <namhyung@kernel.org>,
- "sthotton@marvell.com" <sthotton@marvell.com>,
- "liwei391@huawei.com" <liwei391@huawei.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ narmstrong@baylibre.com, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Mon, Jun 24, 2019 at 07:40:13PM +0200, Oliver Graute wrote:
+> This patch adds DeviceTree Source for the i.MX6 UltraLite DART NAND/WIFI
+> 
+> Signed-off-by: Oliver Graute <oliver.graute@gmail.com>
+> ---
+>  arch/arm/boot/dts/Makefile                      |   1 +
+>  arch/arm/boot/dts/imx6ul-var-6ulcustomboard.dts | 203 ++++++++++++++++++++++++
+>  2 files changed, 204 insertions(+)
+>  create mode 100644 arch/arm/boot/dts/imx6ul-var-6ulcustomboard.dts
+> 
+> diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+> index c4742af..5dc3fbf 100644
+> --- a/arch/arm/boot/dts/Makefile
+> +++ b/arch/arm/boot/dts/Makefile
+> @@ -577,6 +577,7 @@ dtb-$(CONFIG_SOC_IMX6UL) += \
+>  	imx6ul-tx6ul-0010.dtb \
+>  	imx6ul-tx6ul-0011.dtb \
+>  	imx6ul-tx6ul-mainboard.dtb \
+> +	imx6ul-var-6ulcustomboard.dtb \
+>  	imx6ull-14x14-evk.dtb \
+>  	imx6ull-colibri-eval-v3.dtb \
+>  	imx6ull-colibri-wifi-eval-v3.dtb \
+> diff --git a/arch/arm/boot/dts/imx6ul-var-6ulcustomboard.dts b/arch/arm/boot/dts/imx6ul-var-6ulcustomboard.dts
+> new file mode 100644
+> index 0000000..59354e6
+> --- /dev/null
+> +++ b/arch/arm/boot/dts/imx6ul-var-6ulcustomboard.dts
+> @@ -0,0 +1,203 @@
+> +// SPDX-License-Identifier: (GPL-2.0)
+> +/*
+> + * Support for Variscite DART-6UL Module
+> + *
+> + * Copyright (C) 2015 Freescale Semiconductor, Inc.
+> + * Copyright (C) 2015-2016 Variscite Ltd. - http://www.variscite.com
+> + * Copyright (C) 2018-2019 Oliver Graute <oliver.graute@gmail.com>
+> + */
+> +
+> +/dts-v1/;
+> +
+> +#include <dt-bindings/input/input.h>
+> +#include "imx6ul-imx6ull-var-dart-common.dtsi"
+> +
+> +/ {
+> +	model = "Variscite i.MX6 UltraLite Carrier-board";
+> +	compatible = "fsl,6ulcustomboard", "fsl,imx6ul";
 
+The board compatible is documented?
 
-On 17/07/2019 09:17, Julien Thierry wrote:
-> Hi,
->
-> After fixing the arm64 Pseudo-NMIs, I'm dusting off this series.
->
-> The series makes the arm_pmu driver use NMIs for the perf interrupt when
-> NMIs are available on the platform (currently, only arm64 + GICv3).
->
-> * Patches 1 to 4 remove the need to use spinlocks for the Arm PMU
->   driver for Armv7 and Armv8 (aarch64).
-> * Patches 5 moves the locking to Armv6 specific code which is the sole
->   user
-> * Patches 6 and 7 make the PMU interrupt handler NMI-safe
-> * Patches 8 and 9 enable using pseudo-NMI for the PMU interrupt when
->   the feature is available
->
-> Changes since v3[3]:
-> - Added tags
-> - Fix build issue for perf_event_v6
-> - Don't disable preemption in pmu->enable()
-> - Always rely on IPI_IRQ_WORK to run the queued work
-> - Fixed typos + cleanups
->
-> Changes since v2[2]:
-> - Rebased on recent linux-next (next-20190708)
-> - Fixed a number of bugs with indices (reported by Wei)
-> - Minor style fixes
->
-> Changes since v1[3]:
-> - Rebased on v5.1-rc1
-> - Pseudo-NMI has changed a lot since then, use the (now merged) NMI API
-> - Remove locking from armv7 perf_event
-> - Use locking only in armv6 perf_event
-> - Use direct counter/type registers insted of selector register for armv8
->
-> [1] http://lists.infradead.org/pipermail/linux-arm-kernel/2019-March/640536.html
-> [2] http://lists.infradead.org/pipermail/linux-arm-kernel/2018-January/554611.html
->
+> +
+> +	backlight {
+> +		compatible = "pwm-backlight";
+> +		pwms = <&pwm1 0 20000>;
+> +		brightness-levels = <0 4 8 16 32 64 128 255>;
+> +		default-brightness-level = <6>;
+> +	};
+> +
+> +	gpio-keys {
+> +		compatible = "gpio-keys";
+> +
+> +		user {
+> +			gpios = <&gpio1 0 GPIO_ACTIVE_LOW>;
+> +			linux,code = <KEY_BACK>;
+> +			gpio-key,wakeup;
+> +		};
+> +	};
+> +
+> +	gpio-leds {
+> +		compatible = "gpio-leds";
+> +
+> +		d16-led {
+> +			gpios = <&gpio4 20 GPIO_ACTIVE_HIGH>;
+> +			linux,default-trigger = "heartbeat";
+> +		};
+> +	};
+> +
+> +	sound {
+> +		compatible = "simple-audio-card";
+> +		simple-audio-card,name = "wm8731audio";
+> +		simple-audio-card,widgets =
+> +			"Headphone", "Headphone Jack",
+> +			"Line", "Line Jack",
+> +			"Microphone", "Mic Jack";
+> +		simple-audio-card,routing =
+> +			"Headphone Jack", "RHPOUT",
+> +			"Headphone Jack", "LHPOUT",
+> +			"LLINEIN", "Line Jack",
+> +			"RLINEIN", "Line Jack",
+> +			"MICIN", "Mic Bias",
+> +			"Mic Bias", "Mic Jack";
+> +		simple-audio-card,format = "i2s";
+> +		simple-audio-card,bitclock-master = <&sound_master>;
+> +		simple-audio-card,frame-master = <&sound_master>;
+> +
+> +		sound_master: simple-audio-card,cpu {
+> +				sound-dai = <&sai2>;
+> +		};
+> +	};
+> +};
+> +
+> +&can1 {
+> +	status = "okay";
+> +};
+> +
+> +&can2 {
+> +	status = "okay";
+> +};
+> +
+> +&gpc {
+> +	fsl,cpu_pupscr_sw2iso = <0x2>;
+> +	fsl,cpu_pupscr_sw = <0x1>;
+> +	fsl,cpu_pdnscr_iso2sw = <0x1>;
+> +	fsl,cpu_pdnscr_iso = <0x1>;
+> +	fsl,ldo-bypass = <0>; /* DCDC, ldo-enable */
 
-Huh, I forgot to update the links, sorry:
+These are not supported by mainline kernel, IIRC.
 
-[1]
-http://lists.infradead.org/pipermail/linux-arm-kernel/2019-July/665339.html
-[2]
-http://lists.infradead.org/pipermail/linux-arm-kernel/2019-March/640536.html
-[3]
-http://lists.infradead.org/pipermail/linux-arm-kernel/2018-January/554611.html
+Shawn
 
-Cheers,
+> +};
+> +
+> +&fec1 {
+> +	phy-mode = "rgmii";
+> +	phy-reset-gpios = <&gpio5 0 GPIO_ACTIVE_LOW>;
+> +	phy-handle = <&ethphy0>;
+> +	status = "okay";
+> +};
+> +
+> +&fec2 {
+> +	phy-mode = "rgmii";
+> +	phy-reset-gpios = <&gpio1 10 GPIO_ACTIVE_LOW>;
+> +	phy-handle = <&ethphy1>;
+> +	status = "okay";
+> +};
+> +
+> +&i2c1 {
+> +	clock-frequency = <400000>;
+> +	status = "okay";
+> +};
+> +
+> +&i2c2 {
+> +	clock_frequency = <100000>;
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_i2c2>;
+> +	status = "okay";
+> +
+> +	wm8731: audio-codec@1a {
+> +		#sound-dai-cells = <0>;
+> +		compatible = "wlf,wm8731";
+> +		reg = <0x1a>;
+> +		clocks = <&clks IMX6UL_CLK_SAI2>;
+> +		clock-names = "mclk";
+> +	};
+> +
+> +	touchscreen@38 {
+> +		compatible = "edt,edt-ft5x06";
+> +		reg = <0x38>;
+> +		interrupt-parent = <&gpio3>;
+> +		interrupts = <4 0>;
+> +		touchscreen-size-x = <800>;
+> +		touchscreen-size-y = <480>;
+> +		touchscreen-inverted-x;
+> +		touchscreen-inverted-y;
+> +	};
+> +
+> +	rtc@68 {
+> +		compatible = "dallas,ds1337";
+> +		reg = <0x68>;
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&pinctrl_rtc>;
+> +		interrupt-parent = <&gpio5>;
+> +		interrupts = <7 IRQ_TYPE_EDGE_FALLING>;
+> +	};
+> +};
+> +
+> +&lcdif {
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_lcdif_dat
+> +		     &pinctrl_lcdif_ctrl>;
+> +	display = <&display0>;
+> +	status = "okay";
+> +
+> +	display0: display0 {
+> +		bits-per-pixel = <16>;
+> +		bus-width = <24>;
+> +
+> +		display-timings {
+> +			native-mode = <&timing0>;
+> +			timing0: timing0 {
+> +				clock-frequency =<35000000>;
+> +				hactive = <800>;
+> +				vactive = <480>;
+> +				hfront-porch = <40>;
+> +				hback-porch = <40>;
+> +				hsync-len = <48>;
+> +				vback-porch = <29>;
+> +				vfront-porch = <13>;
+> +				vsync-len = <3>;
+> +				hsync-active = <0>;
+> +				vsync-active = <0>;
+> +				de-active = <1>;
+> +				pixelclk-active = <0>;
+> +			};
+> +		};
+> +	};
+> +};
+> +
+> +&pwm1 {
+> +	status = "okay";
+> +};
+> +
+> +&uart1 {
+> +	status = "okay";
+> +};
+> +
+> +&uart2 {
+> +	status = "okay";
+> +};
+> +
+> +&uart3 {
+> +	status = "okay";
+> +};
+> +
+> +&usbotg1 {
+> +	dr_mode = "host";
+> +	status = "okay";
+> +};
+> +
+> +&usbotg2 {
+> +	dr_mode = "host";
+> +	status = "okay";
+> +};
+> +
+> +&iomuxc {
+> +	pinctrl_rtc: rtcgrp {
+> +		fsl,pins = <
+> +			MX6UL_PAD_SNVS_TAMPER7__GPIO5_IO07	0x1b0b0
+> +		>;
+> +	};
+> +};
+> -- 
+> 2.7.4
+> 
 
---
-Julien Thierry
-IMPORTANT NOTICE: The contents of this email and any attachments are confidential and may also be privileged. If you are not the intended recipient, please notify the sender immediately and do not disclose the contents to any other person, use it for any purpose, or store or copy the information in any medium. Thank you.
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
