@@ -2,83 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD6F96C2F4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 00:03:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8B0F6C39B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 01:47:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pHp4BunqxRZ5s+AZqGXh2Ezq7DtNKhtviIdgDI/wL64=; b=Dub0pOVe+4A6VE
-	Iwdw5yk2sFkNz8fkGXbgJ6bldQoMZ74WyG9iFNL7PwlodpPS9VRFyzZDqfQ65Gfk+3oE/3veSIu73
-	HnUERX4iHIZokH0S79NTTijlCuouXXNWDb2YqN7/dn4EFqNIcw9WW/NofuKdx/T1U2GCJ+VYlXodF
-	HvJV5FY3SnSulgmDIZllzPbd/dklleSA3Lo0U1+zs2m+YvIvLOvxonT2fQ/eN50s0CVpt9xoPWrF9
-	wtFuWruYKOSWZy/0oBw8qA2i+x0Kbeb4dHem0AbsbGAEig/l3mv/k8V075IYtHKDqNmMUN7po+jMb
-	XWTZPhZcX1+uvK7PrAEQ==;
+	List-Owner; bh=ILg9HlUHcJrrmdCt44QotAVkk3Jczbnr3/erpOXtqi8=; b=cMrKalDFUoINDH
+	dYOrwResuX0AXdN7nJUf7/xLUo89fNZQzGVtg+PbNJJc2yaCQEwvJZjd4s6RYLPfYK3Pw6QBgg4C4
+	l9qIGZPVokBv7sqAVkJ3EglCf2SAgcUvTtFGSgMk47C/uhf8/eJPJGnvnMGI6OoPn6tk0wtDRHp8Y
+	MXSG/JCZhEQqMnr/pIawkS5a2Vk21D4r50MjwHKUTQVKWOELdkiHLgpI4nTkL4HIgDGYpebLKQSqD
+	Pv/hhUYwCdqDyH21dZIGa0Qz6+vB9KsvVwsYNF/hiGpxrUk5N/iAk21sZ56f202ifiudAdtfNBEU9
+	3oe/3y0JN0ABGCZNMf/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hns1I-0002UL-Rj; Wed, 17 Jul 2019 22:03:28 +0000
-Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
+	id 1hntdd-0001uU-Le; Wed, 17 Jul 2019 23:47:09 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hns14-0002Td-NQ
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 22:03:16 +0000
-Received: by mail-qt1-x844.google.com with SMTP id n11so25056093qtl.5
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 17 Jul 2019 15:03:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=eUlTffAvSCym+EN8x6Xer387d72KBIqU0xjI+Qp9AZQ=;
- b=mRBQVsxJ5hH7rx0TDoqbXg3hVL+LxBLAH/7WcvKGedYSVPk79cuwiagqxujDX9kDgl
- yOKEhn8NeODMUeWG4XjuJuub6jwZh0qQGYAFL+JU+F0uC+liJCT37Cvb92U0Wcw79QTz
- zunhLyVbf7FSSRSTmGugqijqQ7/8tB3XKe/oY=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=eUlTffAvSCym+EN8x6Xer387d72KBIqU0xjI+Qp9AZQ=;
- b=isXxN32KGIFX4WVv2ludFwsNqyh/RY4jMSWFw2AfoX2rd15L00aJOmkc3dfgc0DOJ8
- PARRZjVF4pbStB2KJn7AVhkZvrUVYb4NOY+acG5LP/I1SMoJ/yLsqqywtD29tIde/yIM
- wmTauinyuSx6SlReSPUcedWjd0l+pCqxUFqpJ9zo9v8nfVq2KO2oijGCdJSqXzkjcJyu
- 7nXuDDygomU10rcRa9gGwoGkAkaqp3HA+cqzf/mOjfuNv7Nm0Y55hOfuMPyGuJrreMyW
- yHwBUi6AIusLI+OY/auNYzHCJnZSGxq+4X5lerCuoSTrIxL/Tev/+EsDp2fHyIXOp16q
- GwPg==
-X-Gm-Message-State: APjAAAUHnzxhSOgFsixYmy588bUcJdvkxcrHFV+7xoW4aXlHnU3x54Gt
- RyjDUfEcL1epjclyZzAlFLzBNBYCo7O3xCAgsMmLjQ==
-X-Google-Smtp-Source: APXvYqwlZ/+M4C2ZxvRJLy8gaEXSFZyKFFT5fxDNnE2XZA0FFCCziGYDv5isP9eILwhLMyxH0KfusFXlDRxsixsO5GA=
-X-Received: by 2002:aed:3b1c:: with SMTP id p28mr28131013qte.312.1563400993457; 
- Wed, 17 Jul 2019 15:03:13 -0700 (PDT)
+ id 1hntdS-0001qS-FF
+ for linux-arm-kernel@bombadil.infradead.org; Wed, 17 Jul 2019 23:46:58 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=Ip9lNfmhhDb5HCtfgW2jjjNOGJYDxsuUzii/0A7QOTM=; b=frgLHdaqfkQAJYJ2VLWWL5hXv
+ PjwjMqZLZB1AmOHomP6ipyj+XZpLTrQr8RQ0UMbiGRmi5BxFmEWNfrqc17vGRLhDL9fX8KzzrMnj8
+ AFZMA5yi+EmlsyJLJzrkfsK3D9bX5At013bvPu2C3Bq8gf0KW4YaYOkhYyHYbjGXAiF0ccVjKInAw
+ c5axFbcWgFQEOAuJutUKnSHVZzcbjnL604mtzNQh73iUSt5qWRA+T36+EAg4JT+gPgdadD9HVKh3s
+ 5mt7d6HCfsB69OqNfgisjE7Oss4lykTaCgoAdCDNMT9P7zsMk4B7GyLLufxKqAblfXLdU9WP5RjQR
+ 2PAIAH/4A==;
+Received: from [179.97.35.11] (helo=quaco.ghostprotocols.net)
+ by merlin.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
+ id 1hntdQ-0006s1-5A; Wed, 17 Jul 2019 23:46:56 +0000
+Received: by quaco.ghostprotocols.net (Postfix, from userid 1000)
+ id 8AB9E40340; Wed, 17 Jul 2019 20:46:52 -0300 (-03)
+Date: Wed, 17 Jul 2019 20:46:52 -0300
+From: Arnaldo Carvalho de Melo <acme@kernel.org>
+To: Jiri Olsa <jolsa@redhat.com>
+Subject: Re: [PATCH 1/3] perf: Add capability-related utilities
+Message-ID: <20190717234652.GJ3624@kernel.org>
+References: <1562112605-6235-1-git-send-email-ilubashe@akamai.com>
+ <1562112605-6235-2-git-send-email-ilubashe@akamai.com>
+ <20190716084643.GA22317@krava> <20190717210551.GI3624@kernel.org>
 MIME-Version: 1.0
-References: <20190627080116.40264-1-jitao.shi@mediatek.com>
- <20190627080116.40264-7-jitao.shi@mediatek.com>
- <1561945387.17120.4.camel@mtksdaap41>
-In-Reply-To: <1561945387.17120.4.camel@mtksdaap41>
-From: Ryan Case <ryandcase@chromium.org>
-Date: Wed, 17 Jul 2019 15:03:02 -0700
-Message-ID: <CACjz--m8BuJbe80m7HfakVi8uXj5mTj72=6YZ5+OAa-gF29M8Q@mail.gmail.com>
-Subject: Re: [v5 6/7] drm/mediatek: change the dsi phytiming calculate method
-To: CK Hu <ck.hu@mediatek.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_150314_795211_72746BC9 
-X-CRM114-Status: GOOD (  21.45  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+Content-Disposition: inline
+In-Reply-To: <20190717210551.GI3624@kernel.org>
+X-Url: http://acmel.wordpress.com
+User-Agent: Mutt/1.12.0 (2019-05-25)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,245 +64,118 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- David Airlie <airlied@linux.ie>, stonea168@163.com,
- dri-devel@lists.freedesktop.org, yingjoe.chen@mediatek.com,
- Ajay Kumar <ajaykumar.rs@samsung.com>, Vincent Palatin <vpalatin@chromium.org>,
- cawa.cheng@mediatek.com, bibby.hsieh@mediatek.com,
- Russell King <rmk+kernel@arm.linux.org.uk>,
- Thierry Reding <treding@nvidia.com>, linux-pwm@vger.kernel.org,
- Jitao Shi <jitao.shi@mediatek.com>, Sascha Hauer <kernel@pengutronix.de>,
- Pawel Moll <pawel.moll@arm.com>, Ian Campbell <ijc+devicetree@hellion.org.uk>,
- Inki Dae <inki.dae@samsung.com>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Andy Yan <andy.yan@rock-chips.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, eddie.huang@mediatek.com,
- linux-arm-kernel@lists.infradead.org, Rahul Sharma <rahul.sharma@samsung.com>,
- srv_heupstream@mediatek.com, linux-kernel@vger.kernel.org,
- Philipp Zabel <p.zabel@pengutronix.de>, Sean Paul <seanpaul@chromium.org>
+Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Peter Zijlstra <peterz@infradead.org>, Igor Lubashev <ilubashe@akamai.com>,
+ linux-kernel@vger.kernel.org, James Morris <jmorris@namei.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Jun 30, 2019 at 6:43 PM CK Hu <ck.hu@mediatek.com> wrote:
->
-> Hi, Jitao:
->
-> On Thu, 2019-06-27 at 16:01 +0800, Jitao Shi wrote:
-> > Change the method of frame rate calc which can get more accurate
-> > frame rate.
-> >
-> > data rate = pixel_clock * bit_per_pixel / lanes
-> > Adjust hfp_wc to adapt the additional phy_data
-> >
-> > if MIPI_DSI_MODE_VIDEO_BURST
-> >       hfp_wc = hfp * bpp - data_phy_cycles * lanes - 12 - 6;
-> > else
-> >       hfp_wc = hfp * bpp - data_phy_cycles * lanes - 12;
-> >
-> > Note:
-> > //(2: 1 for sync, 1 for phy idle)
-> > data_phy_cycles = T_hs_exit + T_lpx + T_hs_prepare + T_hs_zero + 2;
-> >
-> > bpp: bit per pixel
-> >
-> > Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
-> > Tested-by: Ryan Case <ryandcase@chromium.org>
-> > Reviewed-by: CK Hu <ck.hu@mediatek.com>
->
-> This version is different than previous version, so you should remove
-> Reviewed-by tag. For this version, I still give you a
->
-> Reviewed-by: CK Hu <ck.hu@mediatek.com>
->
-> > ---
-> >  drivers/gpu/drm/mediatek/mtk_dsi.c | 117 ++++++++++++++++++++---------
-> >  1 file changed, 80 insertions(+), 37 deletions(-)
-> >
-> > diff --git a/drivers/gpu/drm/mediatek/mtk_dsi.c b/drivers/gpu/drm/mediatek/mtk_dsi.c
-> > index 1621e8cdacc2..cefdcb1509cb 100644
-> > --- a/drivers/gpu/drm/mediatek/mtk_dsi.c
-> > +++ b/drivers/gpu/drm/mediatek/mtk_dsi.c
-> > @@ -144,12 +144,6 @@
-> >  #define DATA_0                               (0xff << 16)
-> >  #define DATA_1                               (0xff << 24)
-> >
-> > -#define T_LPX                5
-> > -#define T_HS_PREP    6
-> > -#define T_HS_TRAIL   8
-> > -#define T_HS_EXIT    7
-> > -#define T_HS_ZERO    10
-> > -
-> >  #define NS_TO_CYCLE(n, c)    ((n) / (c) + (((n) % (c)) ? 1 : 0))
-> >
-> >  #define MTK_DSI_HOST_IS_READ(type) \
-> > @@ -158,6 +152,25 @@
-> >       (type == MIPI_DSI_GENERIC_READ_REQUEST_2_PARAM) || \
-> >       (type == MIPI_DSI_DCS_READ))
-> >
-> > +struct mtk_phy_timing {
-> > +     u32 lpx;
-> > +     u32 da_hs_prepare;
-> > +     u32 da_hs_zero;
-> > +     u32 da_hs_trail;
-> > +
-> > +     u32 ta_go;
-> > +     u32 ta_sure;
-> > +     u32 ta_get;
-> > +     u32 da_hs_exit;
-> > +
-> > +     u32 clk_hs_zero;
-> > +     u32 clk_hs_trail;
-> > +
-> > +     u32 clk_hs_prepare;
-> > +     u32 clk_hs_post;
-> > +     u32 clk_hs_exit;
-> > +};
-> > +
-> >  struct phy;
-> >
-> >  struct mtk_dsi_driver_data {
-> > @@ -188,6 +201,7 @@ struct mtk_dsi {
-> >       enum mipi_dsi_pixel_format format;
-> >       unsigned int lanes;
-> >       struct videomode vm;
-> > +     struct mtk_phy_timing phy_timing;
-> >       int refcount;
-> >       bool enabled;
-> >       u32 irq_data;
-> > @@ -221,17 +235,36 @@ static void mtk_dsi_phy_timconfig(struct mtk_dsi *dsi)
-> >  {
-> >       u32 timcon0, timcon1, timcon2, timcon3;
-> >       u32 ui, cycle_time;
-> > +     struct mtk_phy_timing *timing = &dsi->phy_timing;
-> > +
-> > +     ui = 1000000000 / dsi->data_rate;
-> > +     cycle_time = div_u64(8000000000ULL, dsi->data_rate);
-> > +
-> > +     timing->lpx = NS_TO_CYCLE(60, cycle_time);
-> > +     timing->da_hs_prepare = NS_TO_CYCLE(40 + 5 * ui, cycle_time);
-> > +     timing->da_hs_zero = NS_TO_CYCLE(110 + 6 * ui, cycle_time);
-> > +     timing->da_hs_trail = NS_TO_CYCLE(80 + 4 * ui, cycle_time);
-> >
-> > -     ui = 1000 / dsi->data_rate + 0x01;
-> > -     cycle_time = 8000 / dsi->data_rate + 0x01;
-> > +     timing->ta_go = 4 * timing->lpx;
-> > +     timing->ta_sure = 3 * timing->lpx / 2;
-> > +     timing->ta_get = 5 * timing->lpx;
-> > +     timing->da_hs_exit = 2 * timing->lpx;
-> >
-> > -     timcon0 = T_LPX | T_HS_PREP << 8 | T_HS_ZERO << 16 | T_HS_TRAIL << 24;
-> > -     timcon1 = 4 * T_LPX | (3 * T_LPX / 2) << 8 | 5 * T_LPX << 16 |
-> > -               T_HS_EXIT << 24;
-> > -     timcon2 = ((NS_TO_CYCLE(0x64, cycle_time) + 0xa) << 24) |
-> > -               (NS_TO_CYCLE(0x150, cycle_time) << 16);
-> > -     timcon3 = NS_TO_CYCLE(0x40, cycle_time) | (2 * T_LPX) << 16 |
-> > -               NS_TO_CYCLE(80 + 52 * ui, cycle_time) << 8;
-> > +     timing->clk_hs_zero = NS_TO_CYCLE(336, cycle_time);
-> > +     timing->clk_hs_trail = NS_TO_CYCLE(100, cycle_time) + 10;
-> > +
-> > +     timing->clk_hs_prepare = NS_TO_CYCLE(64, cycle_time);
-> > +     timing->clk_hs_post = NS_TO_CYCLE(80 + 52 * ui, cycle_time);
-> > +     timing->clk_hs_exit = 2 * timing->lpx;
-> > +
-> > +     timcon0 = timing->lpx | timing->da_hs_prepare << 8 |
-> > +               timing->da_hs_zero << 16 | timing->da_hs_trail << 24;
-> > +     timcon1 = timing->ta_go | timing->ta_sure << 8 |
-> > +               timing->ta_get << 16 | timing->da_hs_exit << 24;
-> > +     timcon2 = 1 << 8 | timing->clk_hs_zero << 16 |
-> > +               timing->clk_hs_trail << 24;
-> > +     timcon3 = timing->clk_hs_prepare | timing->clk_hs_post << 8 |
-> > +               timing->clk_hs_exit << 16;
-> >
-> >       writel(timcon0, dsi->regs + DSI_PHY_TIMECON0);
-> >       writel(timcon1, dsi->regs + DSI_PHY_TIMECON1);
-> > @@ -418,7 +451,8 @@ static void mtk_dsi_config_vdo_timing(struct mtk_dsi *dsi)
-> >       u32 horizontal_sync_active_byte;
-> >       u32 horizontal_backporch_byte;
-> >       u32 horizontal_frontporch_byte;
-> > -     u32 dsi_tmp_buf_bpp;
-> > +     u32 dsi_tmp_buf_bpp, data_phy_cycles;
-> > +     struct mtk_phy_timing *timing = &dsi->phy_timing;
-> >
-> >       struct videomode *vm = &dsi->vm;
-> >
-> > @@ -445,7 +479,34 @@ static void mtk_dsi_config_vdo_timing(struct mtk_dsi *dsi)
-> >               horizontal_backporch_byte = ((vm->hback_porch + vm->hsync_len) *
-> >                       dsi_tmp_buf_bpp - 10);
-> >
-> > -     horizontal_frontporch_byte = (vm->hfront_porch * dsi_tmp_buf_bpp - 12);
-> > +     data_phy_cycles = timing->lpx + timing->da_hs_prepare +
-> > +                               timing->da_hs_zero + timing->da_hs_exit + 2;
-> > +
-> > +     if (dsi->mode_flags & MIPI_DSI_MODE_VIDEO_BURST) {
-> > +             if (vm->hfront_porch * dsi_tmp_buf_bpp >
-> > +                 data_phy_cycles * dsi->lanes + 18) {
-> > +                     horizontal_frontporch_byte = vm->hfront_porch *
-> > +                                                  dsi_tmp_buf_bpp -
-> > +                                                  data_phy_cycles *
-> > +                                                  dsi->lanes - 18;
-> > +             } else {
-> > +                     DRM_WARN("HFP less than d-phy, FPS will under 60Hz\n");
-> > +                     horizontal_frontporch_byte = vm->hfront_porch *
-> > +                                                  dsi_tmp_buf_bpp;
-> > +             }
-> > +     } else {
-> > +             if (vm->hfront_porch * dsi_tmp_buf_bpp >
-> > +                 data_phy_cycles * dsi->lanes + 12) {
-> > +                     horizontal_frontporch_byte = vm->hfront_porch *
-> > +                                                  dsi_tmp_buf_bpp -
-> > +                                                  data_phy_cycles *
-> > +                                                  dsi->lanes - 12;
-> > +             } else {
-> > +                     DRM_WARN("HFP less than d-phy, FPS will under 60Hz\n");
-> > +                     horizontal_frontporch_byte = vm->hfront_porch *
-> > +                                                  dsi_tmp_buf_bpp;
-> > +             }
-> > +     }
-> >
-> >       writel(horizontal_sync_active_byte, dsi->regs + DSI_HSA_WC);
-> >       writel(horizontal_backporch_byte, dsi->regs + DSI_HBP_WC);
-> > @@ -545,8 +606,7 @@ static int mtk_dsi_poweron(struct mtk_dsi *dsi)
-> >  {
-> >       struct device *dev = dsi->->host.dev;
-> >       int ret;
-> > -     u64 pixel_clock, total_bits;
-> > -     u32 htotal, htotal_bits, bit_per_pixel, overhead_cycles, overhead_bits;
-> > +     u32 bit_per_pixel;
-> >
-> >       if (++dsi->refcount != 1)
-> >               return 0;
-> > @@ -565,24 +625,7 @@ static int mtk_dsi_poweron(struct mtk_dsi *dsi)
-> >               break;
-> >       }
-> >
-> > -     /**
-> > -      * htotal_time = htotal * byte_per_pixel / num_lanes
-> > -      * overhead_time = lpx + hs_prepare + hs_zero + hs_trail + hs_exit
-> > -      * mipi_ratio = (htotal_time + overhead_time) / htotal_time
-> > -      * data_rate = pixel_clock * bit_per_pixel * mipi_ratio / num_lanes;
-> > -      */
-> > -     pixel_clock = dsi->vm.pixelclock;
-> > -     htotal = dsi->vm.hactive + dsi->vm.hback_porch + dsi->vm.hfront_porch +
-> > -                     dsi->vm.hsync_len;
-> > -     htotal_bits = htotal * bit_per_pixel;
-> > -
-> > -     overhead_cycles = T_LPX + T_HS_PREP + T_HS_ZERO + T_HS_TRAIL +
-> > -                     T_HS_EXIT;
-> > -     overhead_bits = overhead_cycles * dsi->lanes * 8;
-> > -     total_bits = htotal_bits + overhead_bits;
-> > -
-> > -     dsi->data_rate = DIV_ROUND_UP_ULL(pixel_clock * total_bits,
-> > -                                       htotal * dsi->lanes);
-> > +     dsi->data_rate = DIV_ROUND_UP_ULL(dsi->vm.pixelclock * bit_per_pixel, dsi->lanes);
+Em Wed, Jul 17, 2019 at 06:05:51PM -0300, Arnaldo Carvalho de Melo escreveu:
+> Em Tue, Jul 16, 2019 at 10:46:43AM +0200, Jiri Olsa escreveu:
+> > On Tue, Jul 02, 2019 at 08:10:03PM -0400, Igor Lubashev wrote:
+> > > Add utilities to help checking capabilities of the running process.
+> > > Make perf link with libcap.
+> > > 
+> > > Signed-off-by: Igor Lubashev <ilubashe@akamai.com>
+> > > ---
+> > >  tools/perf/Makefile.config         |  2 +-
+> > >  tools/perf/util/Build              |  1 +
+> > >  tools/perf/util/cap.c              | 24 ++++++++++++++++++++++++
+> > >  tools/perf/util/cap.h              | 10 ++++++++++
+> > >  tools/perf/util/event.h            |  1 +
+> > >  tools/perf/util/python-ext-sources |  1 +
+> > >  tools/perf/util/util.c             |  9 +++++++++
+> > >  7 files changed, 47 insertions(+), 1 deletion(-)
+> > >  create mode 100644 tools/perf/util/cap.c
+> > >  create mode 100644 tools/perf/util/cap.h
+> > > 
+> > > diff --git a/tools/perf/Makefile.config b/tools/perf/Makefile.config
+> > > index 85fbcd265351..21470a50ed39 100644
+> > > --- a/tools/perf/Makefile.config
+> > > +++ b/tools/perf/Makefile.config
+> > > @@ -259,7 +259,7 @@ CXXFLAGS += -Wno-strict-aliasing
+> > >  # adding assembler files missing the .GNU-stack linker note.
+> > >  LDFLAGS += -Wl,-z,noexecstack
+> > >  
+> > > -EXTLIBS = -lpthread -lrt -lm -ldl
+> > > +EXTLIBS = -lpthread -lrt -lm -ldl -lcap
+> > 
+> > I wonder we should detect libcap or it's everywhere.. Arnaldo's compile test suite might tell
+> 
+> I'll add this tentatively and try to build it in my test suite.
 
-nit: Wrap this line, it's over 80 characters.
+So, not even in my notebook this worked straight away:
 
-> >
-> >       ret = clk_set_rate(dsi->hs_clk, dsi->data_rate);
-> >       if (ret < 0) {
->
->
+  CC       /tmp/build/perf/util/cap.o
+  CC       /tmp/build/perf/util/config.o
+In file included from util/cap.c:5:
+util/cap.h:6:10: fatal error: sys/capability.h: No such file or directory
+    6 | #include <sys/capability.h>
+      |          ^~~~~~~~~~~~~~~~~~
+compilation terminated.
+mv: cannot stat '/tmp/build/perf/util/.cap.o.tmp': No such file or directory
+
+
+I had to first do:
+
+dnf install libcap-devel
+
+So we need to have a feature test and fail if that is not installed,
+i.e. libcap becomes a hard req for building perf, which I think is
+reasonable, one more shouldn't hurt, right?
+
+With all the features enabled:
+
+[acme@quaco perf]$ ldd ~/bin/perf
+	linux-vdso.so.1 (0x00007ffe7278a000)
+	libunwind-x86_64.so.8 => /lib64/libunwind-x86_64.so.8 (0x00007f7be52f1000)
+	libunwind.so.8 => /lib64/libunwind.so.8 (0x00007f7be52d7000)
+	liblzma.so.5 => /lib64/liblzma.so.5 (0x00007f7be52ae000)
+	libpthread.so.0 => /lib64/libpthread.so.0 (0x00007f7be528d000)
+	librt.so.1 => /lib64/librt.so.1 (0x00007f7be5283000)
+	libm.so.6 => /lib64/libm.so.6 (0x00007f7be513d000)
+	libdl.so.2 => /lib64/libdl.so.2 (0x00007f7be5135000)
+	libcap.so.2 => /lib64/libcap.so.2 (0x00007f7be512e000)
+	libelf.so.1 => /lib64/libelf.so.1 (0x00007f7be5113000)
+	libdw.so.1 => /lib64/libdw.so.1 (0x00007f7be50c0000)
+	libslang.so.2 => /lib64/libslang.so.2 (0x00007f7be4de8000)
+	libperl.so.5.28 => /lib64/libperl.so.5.28 (0x00007f7be4ac2000)
+	libc.so.6 => /lib64/libc.so.6 (0x00007f7be48fa000)
+	libpython2.7.so.1.0 => /lib64/libpython2.7.so.1.0 (0x00007f7be4690000)
+	libz.so.1 => /lib64/libz.so.1 (0x00007f7be4676000)
+	libzstd.so.1 => /lib64/libzstd.so.1 (0x00007f7be45d1000)
+	libnuma.so.1 => /lib64/libnuma.so.1 (0x00007f7be45c3000)
+	libbabeltrace-ctf.so.1 => /lib64/libbabeltrace-ctf.so.1 (0x00007f7be456d000)
+	libgcc_s.so.1 => /lib64/libgcc_s.so.1 (0x00007f7be4551000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f7be5331000)
+	libbz2.so.1 => /lib64/libbz2.so.1 (0x00007f7be453d000)
+	libcrypt.so.2 => /lib64/libcrypt.so.2 (0x00007f7be4502000)
+	libutil.so.1 => /lib64/libutil.so.1 (0x00007f7be44fd000)
+	libbabeltrace.so.1 => /lib64/libbabeltrace.so.1 (0x00007f7be44ed000)
+	libpopt.so.0 => /lib64/libpopt.so.0 (0x00007f7be44dd000)
+	libuuid.so.1 => /lib64/libuuid.so.1 (0x00007f7be44d3000)
+	libgmodule-2.0.so.0 => /lib64/libgmodule-2.0.so.0 (0x00007f7be44cd000)
+	libglib-2.0.so.0 => /lib64/libglib-2.0.so.0 (0x00007f7be43a9000)
+	libpcre.so.1 => /lib64/libpcre.so.1 (0x00007f7be4335000)
+[acme@quaco perf]$
+
+;-)
+
+So, please check tools/build/feature/ and check how this is done and add
+a test and the warning in tools/perf/Makefile.config so that we get an
+error message stating that libcap-dev or libcap-devel should be
+installed.
+
+I'll do it if there is any difficulty, just not right now as I'm busy
+and want to get a pull req out of the door.
+
+- Arnaldo
 
 _______________________________________________
 linux-arm-kernel mailing list
