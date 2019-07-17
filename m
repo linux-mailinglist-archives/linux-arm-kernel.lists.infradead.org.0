@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 40CCF6B657
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 08:11:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 22B276B65A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 08:12:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,64 +11,64 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=6fN9NQvh8LgFhSOGPvZHTz7Z4D7XVhBSFAAZEUk+lkw=; b=vClK9SUCz8GiPSm1NMAWfIdPAf
-	ENhVC5lelYqmVDTuM9uExa85/H6cY2EAObwnIfL3HCP4CbTgNhaLf0BUmFxu+0z0t9m8C6q4U0Lc8
-	98N7x4ZM9yrRIumv+aaK03iiVw0hQ1Mh00SeCrFUTfbuv7nO9nnTvx+yWEwE8CYZnD1beXt5eCHjM
-	bZUq0s0ZDvEN8IOeQ8sJPukyN3rYa+gtBCDyT10h3VM2w+m6vMex7iLnbpXmnO8WVRA3qGDZXDsH3
-	Rm3EkAHPIwBD7DZQ8rdwObePpjHbinFm7MxMTbaPvEjUmtQQbp+G+DvHn/qMwRAYbZd3lNDCHLrGS
-	HEc3zZsA==;
+	bh=dKVQX+3Jy5YiuMPM+prj8c7nOjdPTdtLml5hg9HldZQ=; b=B3YTDe/6TBXYQChvK7kwpMVwmZ
+	lh2w/4v5wJEklqCA++FJBvKZ4b47ctbjAc1Kh7fn55xq5gIXAtwhOo14gnynnM5CTTd9nUvQU0t6A
+	DZs7hMZE/sFrzPK3hvJ+FBaz2p/vJCAnSFTH59XnD2hmgk1TPeQMeHzllcW4BFmzAEqeDxrVLJuN2
+	dy4xg6ob1wykY5ZJuvQ/wRewT9nhwZerrYSXe5g/+Ktba4AYux+dlz/frpcf1ANwd44AqJIXqgG22
+	H/wPdTNBlEO0IdryLOJiwPmPAYYM1iJHcE454UrAY0OJ96CWD2I/XQSP31szeKg3CUSNDzQBSTwh6
+	hf2uu/VA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hndA1-0006bW-UF; Wed, 17 Jul 2019 06:11:29 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1hndAM-0006t4-QB; Wed, 17 Jul 2019 06:11:50 +0000
+Received: from mail-pg1-x532.google.com ([2607:f8b0:4864:20::532])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnd9a-0006QR-VA
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 06:11:04 +0000
-Received: by mail-pg1-x542.google.com with SMTP id u17so10613443pgi.6
+ id 1hnd9h-0006Wu-9l
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 06:11:12 +0000
+Received: by mail-pg1-x532.google.com with SMTP id o13so10597820pgp.12
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 16 Jul 2019 23:11:02 -0700 (PDT)
+ Tue, 16 Jul 2019 23:11:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=vN79lmOQ+vzumU1jDpqE7NFEQZL1EfXi0bwxGYdVrVI=;
- b=tm2mbZg6hha+q1G9c4kaetRiZMsb6+GMeXdyEK9s+xiCXMjwjzqAlHeOQ/fMUbeD0W
- wu7s49zatRRw/wpRb1aXNDxc0go3LI4pFc7EDAr6aM+ulHogSDI/U80Bnl/r/zzHe3j2
- YGhGdP/d2w6s6BKVDvRX2pMu5/XTHZuOy2cancQoj++vMHTsxfSETaYjfCDUD2zEcUCL
- VobPZkRq+xDb3YPUowTi6AtLYK5IEkI5VpIhbW8rp6z09XXJti3sX1sIaYOm6g43B3kQ
- z5SCDiQBfNbgcduk5aiGCI8fxY64zdLYmaZxU75GDSfo7WoosRucOGlfddt9WvHeTrMF
- 5+Aw==
+ bh=rxjGrJMP1hpxMB6zVTeQy9AZszZ72B624ErR+RAbbCM=;
+ b=ZzYceC2OChsPGS2vpmrexEdklm5EoB5tf1aBMFg6jA2ot+XYQR7urjAGkuAjghzku4
+ 65l51zAlox2SI6SdyenABJDJC8LgCqAUD49JhfC7t7bH9/fKLZIKabhoq9fUct10LV9O
+ 97AibNE35b4hi9WjZPrDjXnqlYDf67IJPaKvF+L8L8oryM81dk12ebnqyZXJ4FaQs2pj
+ SqVIjwlXHiljM9WLoPAApn09WwzojHRNWlGmc36mo9gLQ8wooCOUy1kRBa+00iVDYqpC
+ vvbKTPaa0/WVu+Lcl3owMVpKHxUInduj7w6jbB5B9YY0M9CJpcRpLkY883dFgb+cHgSy
+ 2q7A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=vN79lmOQ+vzumU1jDpqE7NFEQZL1EfXi0bwxGYdVrVI=;
- b=SHBJSe6VEC33R7BJGCNkFgYky6gBz+e/ozUpm9KO0TB/hCsAh5ysHeFEVK4Vl0iXcg
- 73kgwLCpqLnLBtoIL+6cvirvs3Jm2Exb4figIe9Fr+rkQ2uUykorOQcQ4GrUE1Bp8+P/
- g9ELVf0z34W45G5zfoH3WCC4OgWvK+QK2KE+5UngcEGYl5aOsmqQhGnnsgvf5vPTWPmy
- 58aJaqlgnizXSAHowbOuK1w0ZJVHnWqpVhuZY+sDxchw+QGSH37xQj+dgfWmX175HYAo
- gL+HEYNy4YW54rSdoYD4ocmBbGpHceIxHPR2QVM5ma9nEmMhNTDx2OKabsIIGVkKomrG
- P9Fg==
-X-Gm-Message-State: APjAAAWGhuiH34TI//bbivPjOh/8v/uyB92grTJ4qxT5pLZN0QJ/0ZxK
- iyJgdmnBzAxIl/IRNcc9oAq6
-X-Google-Smtp-Source: APXvYqzsCsoCU0LtZpW6aTjrP7Q95hULw+ZhlXOavzCScJo+T+BGRa+MK/t5qSfF8EgwqbbRpxPRkg==
-X-Received: by 2002:a65:458d:: with SMTP id o13mr38583589pgq.34.1563343861778; 
- Tue, 16 Jul 2019 23:11:01 -0700 (PDT)
+ bh=rxjGrJMP1hpxMB6zVTeQy9AZszZ72B624ErR+RAbbCM=;
+ b=SraTCxa7g+zPPsLMYJyxM/kMc+U4RRCecSjW7kZYeYwpma6wtaMB+PnNU0sld+CsAU
+ D2vI9rKKRU6v+f8S87txyZFLLOygoxXR9p6Jft+rL/MaocxelNYBvtUS2G5BKt9/j5qn
+ xaa7LcvDF6TDpJbyz+/ftnNV2bkvDJp4S+lPUXLZ9SyZUZi8KH32FO39BYqw5eBm+HqI
+ r/cl7RF6a1jBBypQOlXprNRysTdKOdYkozuOaRe8hVKIFtiMzm3ICadiB3BIzhcO61Jl
+ 4A331Hf2FQ35XgNc9loIZhSrVv/+AgQNzNrUYH+a5DfZ1/npTFYzVugjMkAo1vJ0YWeE
+ Waew==
+X-Gm-Message-State: APjAAAWm7XTnhtiMGffW1H557yiZO9Yp/+F9MRPZQyGK8aUtYGJJV+dT
+ nFtPwrVrC4K9XCXC+PswFlTF
+X-Google-Smtp-Source: APXvYqzXP8tcS4UU5zL6p3U9o3cY9LFJ9E45fr8SnzhLehnihIs217ic/N+BCZP+YeattNw8ToK/Yw==
+X-Received: by 2002:a63:4185:: with SMTP id o127mr1301569pga.82.1563343868160; 
+ Tue, 16 Jul 2019 23:11:08 -0700 (PDT)
 Received: from localhost.localdomain ([2405:204:7301:59e6:f493:40df:9c8a:5041])
- by smtp.gmail.com with ESMTPSA id r27sm25993313pgn.25.2019.07.16.23.10.55
+ by smtp.gmail.com with ESMTPSA id r27sm25993313pgn.25.2019.07.16.23.11.02
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 16 Jul 2019 23:11:01 -0700 (PDT)
+ Tue, 16 Jul 2019 23:11:07 -0700 (PDT)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: shawnguo@kernel.org,
 	s.hauer@pengutronix.de,
 	robh+dt@kernel.org
-Subject: [PATCH 1/3] dt-bindings: Add Vendor prefix for Einfochips
-Date: Wed, 17 Jul 2019 11:40:37 +0530
-Message-Id: <20190717061039.9271-2-manivannan.sadhasivam@linaro.org>
+Subject: [PATCH 2/3] dt-bindings: arm: Document i.MX8QXP AI_ML board binding
+Date: Wed, 17 Jul 2019 11:40:38 +0530
+Message-Id: <20190717061039.9271-3-manivannan.sadhasivam@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190717061039.9271-1-manivannan.sadhasivam@linaro.org>
 References: <20190717061039.9271-1-manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_231103_123813_F1CD839F 
-X-CRM114-Status: UNSURE (   8.79  )
+X-CRM114-CacheID: sfid-20190716_231109_457466_CF245C15 
+X-CRM114-Status: UNSURE (   9.10  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -76,7 +76,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:532 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -109,27 +109,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add devicetree vendor prefix for Einfochips.
-https://www.einfochips.com/
+Document devicetree binding of i.MX8QXP AI_ML board from Einfochips.
 
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 ---
- Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
- 1 file changed, 2 insertions(+)
+ Documentation/devicetree/bindings/arm/fsl.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/Documentation/devicetree/bindings/vendor-prefixes.yaml b/Documentation/devicetree/bindings/vendor-prefixes.yaml
-index 1acf806b62bf..9b74c4de5676 100644
---- a/Documentation/devicetree/bindings/vendor-prefixes.yaml
-+++ b/Documentation/devicetree/bindings/vendor-prefixes.yaml
-@@ -255,6 +255,8 @@ patternProperties:
-     description: Emerging Display Technologies
-   "^eeti,.*":
-     description: eGalax_eMPIA Technology Inc
-+  "^einfochips,.*":
-+    description: Einfochips
-   "^elan,.*":
-     description: Elan Microelectronic Corp.
-   "^elgin,.*":
+diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
+index 407138ebc0d0..8e9209a75478 100644
+--- a/Documentation/devicetree/bindings/arm/fsl.yaml
++++ b/Documentation/devicetree/bindings/arm/fsl.yaml
+@@ -180,6 +180,7 @@ properties:
+       - description: i.MX8QXP based Boards
+         items:
+           - enum:
++              - einfochips,imx8qxp-ai_ml  # i.MX8QXP AI_ML Board
+               - fsl,imx8qxp-mek           # i.MX8QXP MEK Board
+           - const: fsl,imx8qxp
+ 
 -- 
 2.17.1
 
