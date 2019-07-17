@@ -2,67 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 150746B6B7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 08:36:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 25B116B6CA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 08:42:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FPB2t+y7+l12QynXzQqCZqOJf4b113Eow5sk/mWYgW8=; b=XP8CnUP1vEEQrp
-	uHUJcEqh+DfEgCI6sJaIhcVXtDdp5+O7W2z0P80mYDEtbbXB7trGhI+26whNyQtyW8sORexHqPXHp
-	5Q9gxQdwbrWkG93o7DeXbzFHwQFzAERdndx3bTqsWJTCrvD4IY6NJ+hSUkQ2yi+6qiPMUYn7yEKLx
-	UVe2DZy+8QiUnEIJ0kJBdm97p+iKyjxiLUH0WWbbca4voKT/3NKAHue/eYILtqNfn2FMutywLB/AF
-	U4J12sjhO984DBUwDuKg6Pix/VjfZsMiFR/9ribKRJomzRyC1m0lvRglCGC49uL/vUUnLXW/PzNLu
-	YyoZXKgMTkxQXDQxrmqg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ui6N8lLhVQgfcMMI4qtGXxCrDsvbCXkpGBaK7wSuNug=; b=t9oFx7PUtMKqVb
+	vdDTydirObuzMe+04ql/970XmJ26LCFLAqjM9EAMDdIrtBuNC57ce926bUDYzr9fedqmIZkaMbBz9
+	8tD5H6vs7I91Djxzmf8JNqPM9ix0nRZn3IuQI8CQ41PNIdyAAtqAKkpGp+tQg5Z7WGOQyoo2JdEWi
+	e36/Qk2dFo4fQMKETap0ow8GkTuZAxUzfTpGEmk7/P1KcAwYLVG36T5sf7kztIYSOcl0OQP3xJUdh
+	8HCumiV8xKx3Gz0PMJ714P6p3LgERi4HpcYeAIofBuC6AC46iwLGIFyjkizVvBgcF/Pmnp4ZmUzW+
+	PA+zMsfdaq+HpJH6o6DQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hndYO-0000eZ-OW; Wed, 17 Jul 2019 06:36:40 +0000
-Received: from szxga08-in.huawei.com ([45.249.212.255] helo=huawei.com)
+	id 1hnddl-0004P8-V1; Wed, 17 Jul 2019 06:42:14 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hndYA-0000Ik-3V
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 06:36:28 +0000
-Received: from DGGEMM402-HUB.china.huawei.com (unknown [172.30.72.54])
- by Forcepoint Email with ESMTP id 7D03515792F57B4A9A3D;
- Wed, 17 Jul 2019 14:36:14 +0800 (CST)
-Received: from DGGEMM423-HUB.china.huawei.com (10.1.198.40) by
- DGGEMM402-HUB.china.huawei.com (10.3.20.210) with Microsoft SMTP Server (TLS)
- id 14.3.439.0; Wed, 17 Jul 2019 14:36:13 +0800
-Received: from DGGEMM506-MBX.china.huawei.com ([169.254.3.227]) by
- dggemm423-hub.china.huawei.com ([10.1.198.40]) with mapi id 14.03.0439.000;
- Wed, 17 Jul 2019 14:36:09 +0800
-From: "Zengtao (B)" <prime.zeng@hisilicon.com>
-To: Maxime Ripard <maxime.ripard@bootlin.com>
-Subject: RE: [PATCH] phy: Change the configuration interface param to void*
- to make it more general
-Thread-Topic: [PATCH] phy: Change the configuration interface param to void*
- to make it more general
-Thread-Index: AQHVN9Ajzwa2MbZo40exGsBlwJEt36bEv5mAgAln51A=
-Date: Wed, 17 Jul 2019 06:36:09 +0000
-Message-ID: <678F3D1BB717D949B966B68EAEB446ED2FF5B22D@DGGEMM506-MBX.china.huawei.com>
-References: <1562868255-31467-1-git-send-email-prime.zeng@hisilicon.com>
- <20190711112039.leuvelpm7opeoaxq@flea>
-In-Reply-To: <20190711112039.leuvelpm7opeoaxq@flea>
-Accept-Language: zh-CN, en-US
-Content-Language: zh-CN
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [10.67.222.33]
+ id 1hnddY-0004OJ-Rl
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 06:42:02 +0000
+Received: by mail-lj1-x242.google.com with SMTP id v18so22413141ljh.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 16 Jul 2019 23:42:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=n5aqcp2NSGgY4pex0qsofteYZtwUFwtOhxOnuOJSh34=;
+ b=kQDEi21Jyk3Neupuj4rhxxlekmTi3nIP/p6wtsbTUv6OPWlcKJA4wzmJx4dIddGZ33
+ OV4EthJYZxonNLf15aYqc29VtKGyM6OVKCf9LXViY+CnQkqCC+bRifcCBb/7MGI368gQ
+ hEjPaDZbBHLvHDzcqTp7U/p3gJXHPHxOHmfDaI5wUMaNbB4i8ql03BulC3JDjBRs9XlZ
+ WnOieEPxHpUeZguxMbNn+j3remcl3KEQc6FUrIjRtTsifMtOTlKWi+HXKuuECD2yoywr
+ mnOKyQtVQKligAGHdWFlluHE8SizGNTMJN6r2Ll+kHmsI+jLoKCMbzy8MUNASAMExyBT
+ T4Jw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=n5aqcp2NSGgY4pex0qsofteYZtwUFwtOhxOnuOJSh34=;
+ b=nKybzqjXmn+Gqx0NNbGKWubZN+YeWqiHC6Ci+l9pr15kW0utbyooqP822OX0dFugh+
+ aizdR2WtoNXCw/MpXdSqvvGVQhFiLm6Sdsq+6+cqVF6/yUpm42BchYHJUZCVrP7GLKGN
+ bbVM3WrLlv0WqqqK9VhzsSZCm/UtmsDUcMv7hDy86gdZF4sOJZgoaZ42yvXG05IYaIVg
+ 7m/T14LwUHR2gKUApeBEUK8fi0lkxx18544dwJX7LfUVJD7XG7StVMvr48Pa9uRpY3Pd
+ 1SQ4cRKSwWFC0GOeQDJTCIIGdGmtgqwQq8fVAO58aSQ1Tkb8oTa2/mVmLzae7IUGSSii
+ FnNw==
+X-Gm-Message-State: APjAAAUzIqcKO0Woh3Gb5WfYUOWn2cMeOfN5jT0v+Nnu20uNkrePQHhO
+ Wtd7HO4UJZTtpZBWHAouy9VcU+TH/G8=
+X-Google-Smtp-Source: APXvYqy21qPPCsIpWBZ451ouJKR0lP5c9caOxkVAxaR2RxYDTYnX2epOoJIu977PN7n+5irpT/90iA==
+X-Received: by 2002:a2e:9ac4:: with SMTP id p4mr19521969ljj.185.1563345718537; 
+ Tue, 16 Jul 2019 23:41:58 -0700 (PDT)
+Received: from localhost.localdomain
+ (c-22cd225c.014-348-6c756e10.bbcust.telenor.se. [92.34.205.34])
+ by smtp.gmail.com with ESMTPSA id l24sm4271854lji.78.2019.07.16.23.41.57
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 16 Jul 2019 23:41:57 -0700 (PDT)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] ARM: ux500: Stop populating the PRCMU devices early
+Date: Wed, 17 Jul 2019 08:39:54 +0200
+Message-Id: <20190717063954.7469-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_233626_322251_EC1FB64D 
-X-CRM114-Status: GOOD (  11.17  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190716_234200_910169_CFD89363 
+X-CRM114-Status: GOOD (  10.92  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.255 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,67 +95,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "kishon@ti.com" <kishon@ti.com>, Paul
- Kocialkowski <paul.kocialkowski@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Linus Walleij <linus.walleij@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Maxime:
+The PRCMU devices are getting populated from the MFD
+driver and that is enough for them to come up. We already
+have an early quirk for the things that need to happen
+really early and the PRCMU timer that need to be registered
+really early will find its own node just fine as the
+timer/clocksource subsystem looks through the whole device
+tree for compatible nodes.
 
-Thanks for your reply.
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+---
+ arch/arm/mach-ux500/cpu-db8500.c | 1 -
+ 1 file changed, 1 deletion(-)
 
->-----Original Message-----
->From: Maxime Ripard [mailto:maxime.ripard@bootlin.com]
->Sent: Thursday, July 11, 2019 7:21 PM
->To: Zengtao (B) <prime.zeng@hisilicon.com>
->Cc: kishon@ti.com; Chen-Yu Tsai <wens@csie.org>; Paul Kocialkowski
-><paul.kocialkowski@bootlin.com>; Sakari Ailus <sakari.ailus@linux.intel.com>;
->linux-kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org
->Subject: Re: [PATCH] phy: Change the configuration interface param to void*
->to make it more general
->
->* PGP Signed by an unknown key
->
->On Fri, Jul 12, 2019 at 02:04:08AM +0800, Zeng Tao wrote:
->> The phy framework now allows runtime configurations, but only limited
->> to mipi now, and it's not reasonable to introduce user specified
->> configurations into the union phy_configure_opts structure. An simple
->> way is to replace with a void *.
->
->I'm not sure why it's unreasonable?
->
-The phy.h will need to include vendor specific phy headers, and the union phy_configure_opts
-will become more complex. I don't think this is a good solution to include all vendor specific phy
-configs into a single union structure. 
+diff --git a/arch/arm/mach-ux500/cpu-db8500.c b/arch/arm/mach-ux500/cpu-db8500.c
+index 9580525102da..3875027ef8fc 100644
+--- a/arch/arm/mach-ux500/cpu-db8500.c
++++ b/arch/arm/mach-ux500/cpu-db8500.c
+@@ -110,7 +110,6 @@ static void ux500_restart(enum reboot_mode mode, const char *cmd)
+ static const struct of_device_id u8500_local_bus_nodes[] = {
+ 	/* only create devices below soc node */
+ 	{ .compatible = "stericsson,db8500", },
+-	{ .compatible = "stericsson,db8500-prcmu", },
+ 	{ .compatible = "simple-bus"},
+ 	{ },
+ };
+-- 
+2.21.0
 
->> We have already got some phy drivers which introduce private phy API
->> for runtime configurations, and with this patch, they can switch to
->> the phy_configure as a replace.
->
->If you have a custom mode of operation, then you'll need a custom
->phy_mode as well, and surely you can have a custom set of parameters.
->
->Since those functions are meant to provide a two-way negotiation of the
->various parameters, you'll have to have that structure shared between the
->two either way, so the only thing required in addition to what you would have
->passing a void is one line to add that structure in the union.
->
->That's barely unreasonable.
->
->Maxime
->
->--
->Maxime Ripard, Bootlin
->Embedded Linux and Kernel engineering
->https://bootlin.com
->
->* Unknown Key
->* 0x671851C5
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
