@@ -2,61 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F132D6B822
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 10:24:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6AD926B81F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 10:23:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=hAmIakgfp7LKRnOntnyeeXDAbwaS6U6c3XdhLSxB5sA=; b=Mp2
-	qYVg5yJNBTgfOaJ30tG5CLWYWo15fsawxUbWv4130k/4Mw4W3NfSVFpqz4cOgfXVIYoO1D95zHAQA
-	PsqeT2pLcMqakV35b09iZRezUkLgTljl9TwN+3sRidAUnqBrzXefUR2lsJKoAHnRxC2RMpIuopW4h
-	Oy7SZbnWc05fMyrIog9/1IELqct2PYgX7Dpq/LacyCnzkcQWT6/0Loahua6jdDSms6b4SOsPmcKar
-	BmGZR/Uuo07N8fD5qAjPm9OtgVNNdqgu62VGf0WAsO8ILXZC675aiptY7szoWI1v1rcCkiU7ZzcJa
-	u/KXI0n/lhlXNKc80zg3ofXN2V6fiZQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=BNqFxSabCBfRgWA3pE21tjsxpr8RdQNAkMkZW5PiUyM=; b=d5ywkxfuoauWzW
+	hdmNnRNN/P6uCLQzujjN8iaR4gqIqSWWC8BV+Vh4x4ZkPqFkz3sH0sZz1/3Nds0ZOXhka9mkQ6laM
+	4DGVRn7atzi4xSOk6UNctiCZYWfqrOm64RSb3ZJHPn1C2TwSFZMBQ1EafBebfHJ8MyyunPVI2sUfx
+	xIzTey2s6phRgRlh6yiEZsHiR7ugdSYwWcQuRD4GeBDLasJQz5xlfY6e2eePq+bf1RAucAKb00WR8
+	WdcKi3vzE/x3g45X+JWb1xxGvOgmMVN94/Atwx2H2ldhmDV0UeglqC1kcqb6zdcHrnGjkuIKDYzu/
+	pMD3uz0j8IF9mgZmYHnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnfEJ-0008QT-9f; Wed, 17 Jul 2019 08:24:03 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1hnfE3-0008FS-8S; Wed, 17 Jul 2019 08:23:47 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnfDp-0008Ee-Ta
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 08:23:35 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id C20EF1A00A0;
- Wed, 17 Jul 2019 10:23:30 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 5D7E81A0085;
- Wed, 17 Jul 2019 10:23:25 +0200 (CEST)
-Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 7A458402C3;
- Wed, 17 Jul 2019 16:23:18 +0800 (SGT)
-From: Anson.Huang@nxp.com
-To: a.zummo@towertech.it, alexandre.belloni@bootlin.com, shawnguo@kernel.org,
- s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
- linux-rtc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH] rtc: imxdi: use devm_platform_ioremap_resource() to simplify
- code
-Date: Wed, 17 Jul 2019 16:14:11 +0800
-Message-Id: <20190717081411.30622-1-Anson.Huang@nxp.com>
-X-Mailer: git-send-email 2.9.5
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1hnfDp-0008Eh-4k
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 08:23:34 +0000
+Received: by mail-qt1-x841.google.com with SMTP id d17so22406432qtj.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 17 Jul 2019 01:23:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=TwgvgwFAr9ZbQyJY7OLlrukFEYAp4mCTYSJJ8JLqJDI=;
+ b=LqN/2tU7/8cN6JIMAfFFhaNTFqe+tnHiecppE1yZpQYHqyUZs6w7PtqAVb9/wYk/DJ
+ Hw/P3qO0ZJVGfNgBuBk6uo3jshv+LhvpPWUYMfp1IXxQzEapsQzDgFmwlHIFT2oLmIBF
+ oyvjcWSD0BYEqkAo1SBqP+RpM01tuQWnxjfS6Prol/I42c65szJI9OTGnlxrneHDZGzw
+ KAMJh3jhtDtBQH/Pkf08SsUyP0YbNo8vCG3EYMpxZHlmqfsEX9j0KOZilAtJJ2ckYWKH
+ ZwZWymxn7ua/IvTKh704LOQmKeOhjLqmwkksCaqfAFaMEQ9pCSUfbYPcy1xWmYOb49wA
+ Acxg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=TwgvgwFAr9ZbQyJY7OLlrukFEYAp4mCTYSJJ8JLqJDI=;
+ b=uQGqoIUVgC+RI0UTxRbHQ6I0qdg53+XFOn+/UKOuguE7vplaVN9IyZwLaqXzb9lOL3
+ V2kv6GxhTL09oXaqL8TEGYwiLuLDA20DtjpYi2FMGJyJhJPy+qeRx75IQ25sj+rvNcHl
+ HeqWEyw5oM80JalMvvUgCavS9AvpEWTpaVd3bORu3Iw6zXIR+DrZOKyvTshWZchw/d9Z
+ Iq3T53/BCSnrgbCLY/HhXnVEpwnSwIHF/kxilW2RbzzG13eQrI9XjvfNvSOPIJRdq1CS
+ LWsrAX1lxFuAhI2RTCTZWdj3Wf+KuCJgsxEqsrWxOCcRHk6FQKnWrdd+Jv4rjgvoPsl5
+ HrSQ==
+X-Gm-Message-State: APjAAAXdetN9HCJmqQiDVAgHc9aXjxR3KbA2ciR3BPumDDQE5TN06cCy
+ K3qBNsYHJHo4z3vZR/WRqGFAVDGnDQ3DTB6tMbg=
+X-Google-Smtp-Source: APXvYqz4uw+BGfWaRI1pKAcWBiBCJ/F+kVqI+JVx9Yb6o8jGx7Ac6x2yJWAUJGKhx7FGXMrX+H6mpEe+Xh9h5nHDjeA=
+X-Received: by 2002:ac8:f8c:: with SMTP id b12mr27121586qtk.381.1563351811577; 
+ Wed, 17 Jul 2019 01:23:31 -0700 (PDT)
+MIME-Version: 1.0
+References: <1563290089-11085-1-git-send-email-aisheng.dong@nxp.com>
+ <1563290089-11085-3-git-send-email-aisheng.dong@nxp.com>
+ <CAOMZO5CMM94rAOryvfmHpuAsJnCRj-98kX3rfiZSn5EZt_c0kA@mail.gmail.com>
+In-Reply-To: <CAOMZO5CMM94rAOryvfmHpuAsJnCRj-98kX3rfiZSn5EZt_c0kA@mail.gmail.com>
+From: Dong Aisheng <dongas86@gmail.com>
+Date: Wed, 17 Jul 2019 16:14:35 +0800
+Message-ID: <CAA+hA=RknQ+EbZ258t-X_VktBFKs1Y7vBn_KTMkbyQAFW5k-Mw@mail.gmail.com>
+Subject: Re: [PATCH v2 02/15] arm64: dts: imx8qxp: move scu pd node before scu
+ clock node
+To: Fabio Estevam <festevam@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_012334_090325_CDCD4FCB 
-X-CRM114-Status: UNSURE (   7.04  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190717_012333_185433_8D1CBBBA 
+X-CRM114-Status: GOOD (  10.44  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (dongas86[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (dongas86[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,49 +97,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-MIME-Version: 1.0
+Cc: Dong Aisheng <aisheng.dong@nxp.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will.deacon@arm.com>, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
+ Fabio Estevam <fabio.estevam@nxp.com>, Mark Rutland <mark.rutland@arm.com>,
+ Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Anson Huang <Anson.Huang@nxp.com>
+On Wed, Jul 17, 2019 at 3:26 AM Fabio Estevam <festevam@gmail.com> wrote:
+>
+> On Tue, Jul 16, 2019 at 12:37 PM Dong Aisheng <aisheng.dong@nxp.com> wrote:
+> >
+> > SCU clock depends on SCU Power domain. So let's move scu pd node
+> > before scu clock to make it probe earlier.
+>
+> This looks like a fragile solution. Shouldn't this be handled via
+> probe deferring?
 
-Use the new helper devm_platform_ioremap_resource() which wraps the
-platform_get_resource() and devm_ioremap_resource() together, to
-simplify the code.
+Not like a normal case that there may be only a few devices may get deferred,
+for qm/qxp, almost all the devices (~100) may get deferred without
+this patch. e.g. scu clk, lpcg clk and all other devices which depend on clk.
 
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
----
- drivers/rtc/rtc-imxdi.c | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
+So i think it's really unnecessary to do that.
 
-diff --git a/drivers/rtc/rtc-imxdi.c b/drivers/rtc/rtc-imxdi.c
-index 3f3d652..f21dc6b 100644
---- a/drivers/rtc/rtc-imxdi.c
-+++ b/drivers/rtc/rtc-imxdi.c
-@@ -740,7 +740,6 @@ static void dryice_work(struct work_struct *work)
-  */
- static int __init dryice_rtc_probe(struct platform_device *pdev)
- {
--	struct resource *res;
- 	struct imxdi_dev *imxdi;
- 	int norm_irq, sec_irq;
- 	int rc;
-@@ -751,8 +750,7 @@ static int __init dryice_rtc_probe(struct platform_device *pdev)
- 
- 	imxdi->pdev = pdev;
- 
--	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	imxdi->ioaddr = devm_ioremap_resource(&pdev->dev, res);
-+	imxdi->ioaddr = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(imxdi->ioaddr))
- 		return PTR_ERR(imxdi->ioaddr);
- 
--- 
-2.7.4
-
+Regards
+Aisheng
 
 _______________________________________________
 linux-arm-kernel mailing list
