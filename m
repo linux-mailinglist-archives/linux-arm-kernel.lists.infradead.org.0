@@ -2,119 +2,134 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0789F6BA6E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 12:40:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A4D586BA77
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 12:41:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T+rDrr5qXijGpR8jQbmuS5cmmuseuRngU17oOYfwdWc=; b=SvJCD/tHVP5n1B
-	qaSnRHitN9/UjuEUih5lF1ll+soMXwTpznTx2F+XIhKeJLuughlklSsMg31WEonYqTsFiTmHR7pXn
-	jQOTavltsGGUhegNeHnNt+aMbHsMaIC4QURheHKsak1OFB2zHN+mCa2+f4zomgnCJZ5xu7baSMBCr
-	AbNkSaIDOXqftPNEYxq61QR5bzogCxY8yi2jSesdKJIwE1t3KhfwF9BCntAOnWEMB6nvX4ATGSwNU
-	nRs8CoqkWe3TiFkXZQBPcFuvS/c0SotZPiQmzydk+z589munOg8CUQjJTxvO/KxD/SyxcWBZadCf3
-	2Z2cARhaAssdGqitrAqA==;
+	List-Owner; bh=oFarjxaPwnH66pKUkunSC38AeGVhRv6RH6eKIG9XgQk=; b=cOqKlaDgxETxoe
+	MET9qLYF5TNYE5BQebJGKZYTNVywfLHA1QVs8nk7fnYn81dZAZn4C228w9MQ1rOlVHrkaYc6yjpym
+	RYBf33iEY6YOtL8F5+4kNMDgKKw/USsZZyY6u4E6NMwWeFEUvLCbERTCVRDuWunOC95Stzm6vJGq3
+	Kb84ydJz9lSZ0f1G4WPrWy35KyEH38FjMjRbinbHRnf0HnfWhZMm8kIJen6ZAfY2CMyQPXV7QKgal
+	Q6IDCkcPsiwUlI/ndh7B9atkq12mmlmC7vdILkzsf4E/SWEqtIQcCaU7F4hfarvSTwY6tzDD5pvjd
+	okZaBK+WYAf4+oWxIwIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnhMF-0003hP-8u; Wed, 17 Jul 2019 10:40:23 +0000
-Received: from mail-eopbgr140075.outbound.protection.outlook.com
- ([40.107.14.75] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
+	id 1hnhNd-00040E-2w; Wed, 17 Jul 2019 10:41:49 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnhM6-0003gs-H3
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 10:40:16 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=XPrqfERK6iwkrwHhDzDgXufhneKtZsSvG1BExmnoI5lxnZ9pawi39PYVyhWDM3S9DQRXgPvjePEIFGlr1oqQDvl9ya4FqeQSdxadol9v4Sk/poY7QmGyXLjsDsf3YNk+mbrL/Bq3RZn2JfHM4BoWb08sx3KBAs4cGoqAMdPom4VO/ZIYjXN/K7PF53ykEayDEBAUr6kg3TiGzkM/GPuOSVWnZaIzNtfqoKt9I4O6WOrU1BYdHxUY6kuH+XfPyLDuVXPBlDd19DV9nlGJbvhI6LMXglv8VFpO9sOPI9RF3Z4Iutb+Wz0OwVlgDb0JBJMLta+D0BRahNs1C81ba0CTKw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=HwFbI+vQd6QQnotc+vs1JKUEVDwLROgizAzIFebp+es=;
- b=TMZoTwXzCfZ2GG/3hDzr8e6gffr0mdGveEqTDUKbSa4S+uG2Q9lGMBSXvZEagRDx8MBsdCGxGmuYqD6LuYa1DgRR64M0uRkNkSQnqBiSYqK2qhdNEalFRtZ5PyTcz6qLuD5qYLgVbWS81f3QdTZFG17pHS8gsnKuEzGOvk3zqK3GZ/dfZxV7tBWofBJDbpso3lzYvSj0bTd2bvG5dhgX4J3uMlWlm8G1CUJMnX3vS5k6Avo1KEXRCFx12mfQEPb13mOGyiFcfcjbKk+GVOAvoya1tkz6Qls5cT7VGJLa/FRA4h8jxq5PMiwivvX3XfteBhuvf4JwEtDpZy/v0j8S8w==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=nxp.com;dmarc=pass action=none header.from=nxp.com;dkim=pass
- header.d=nxp.com;arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=HwFbI+vQd6QQnotc+vs1JKUEVDwLROgizAzIFebp+es=;
- b=Y2X99bnTife9wZ8qbKcF93Lr4OJekQHvR6UgrKniHUZ0XiISl7OeUQ3a+vl5MjiUps62+Up9SWUQMCtlEXliANssw/fTaRDc+dfNzKT1HYpK0CbBY5C0pQIhrYRmrZfS7rFaBbHqR2sRP+MX5XACDtAUMc6kQNpXWezXvmXvF0w=
-Received: from AM0PR04MB4211.eurprd04.prod.outlook.com (52.134.92.158) by
- AM0PR04MB5812.eurprd04.prod.outlook.com (20.178.119.145) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2073.14; Wed, 17 Jul 2019 10:40:10 +0000
-Received: from AM0PR04MB4211.eurprd04.prod.outlook.com
- ([fe80::7882:51:e491:8431]) by AM0PR04MB4211.eurprd04.prod.outlook.com
- ([fe80::7882:51:e491:8431%7]) with mapi id 15.20.2073.012; Wed, 17 Jul 2019
- 10:40:10 +0000
-From: Aisheng Dong <aisheng.dong@nxp.com>
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>, "s.hauer@pengutronix.de"
- <s.hauer@pengutronix.de>, "robh+dt@kernel.org" <robh+dt@kernel.org>
-Subject: RE: [PATCH 3/3] arm64: dts: freescale: Add support for i.MX8QXP AI_ML
- board
-Thread-Topic: [PATCH 3/3] arm64: dts: freescale: Add support for i.MX8QXP
- AI_ML board
-Thread-Index: AQHVPGZyIR348aAD1EKdeUBRiwSuo6bOm9pA
-Date: Wed, 17 Jul 2019 10:40:10 +0000
-Message-ID: <AM0PR04MB42116A61D7E32E6BA36D1CBA80C90@AM0PR04MB4211.eurprd04.prod.outlook.com>
-References: <20190717061039.9271-1-manivannan.sadhasivam@linaro.org>
- <20190717061039.9271-4-manivannan.sadhasivam@linaro.org>
-In-Reply-To: <20190717061039.9271-4-manivannan.sadhasivam@linaro.org>
-Accept-Language: zh-CN, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=aisheng.dong@nxp.com; 
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 70bc771e-7e35-4714-69c5-08d70aa32454
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:AM0PR04MB5812; 
-x-ms-traffictypediagnostic: AM0PR04MB5812:
-x-ld-processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
-x-microsoft-antispam-prvs: <AM0PR04MB5812097B334B2C07C6C9637080C90@AM0PR04MB5812.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6790;
-x-forefront-prvs: 01018CB5B3
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(376002)(396003)(366004)(136003)(39860400002)(199004)(189003)(4326008)(486006)(53936002)(99286004)(7696005)(66066001)(6246003)(14454004)(256004)(81156014)(478600001)(25786009)(7416002)(446003)(81166006)(33656002)(476003)(8676002)(7736002)(71200400001)(71190400001)(64756008)(316002)(305945005)(74316002)(54906003)(2501003)(6506007)(66476007)(66446008)(2201001)(102836004)(6436002)(6116002)(68736007)(5660300002)(8936002)(66946007)(11346002)(229853002)(76176011)(3846002)(86362001)(2906002)(26005)(66556008)(55016002)(76116006)(186003)(44832011)(9686003)(110136005)(52536014)(414714003)(473944003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5812;
- H:AM0PR04MB4211.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: kvAoUaSsU73Hx5GbeBNiWwGwVAGXSmUD99iTaCh3nryV1vbpG2hk9NBRWsG3nQ6J++SknhxeLbr5E2Dr6RTkP0d6duRlpmPhPff1JrXcVmjEAxpkyac0H8fNJVmzZ6y185wtIqBgesqiTPnKutF7njVRuk08syc/NUQPpKRzqxyPpI58HOYuNGyMmDgrCXpeqx/9JxBykYZhg1im6IesXqHNx+dTxhtUtmiM9/HMNbaxK0qwCcEKZomiGC/uytIj/vqYAXWHPoLXmD6e+ikY9r+yWlY4GgBS23DX1NieLXMj0RQNM46Ttag3PW/cbsVha0EcRf0SxiN+jFOgbYaQyMEME/MRW9oiEuH99qMgA3l71ljFUT/sV+SyOOD7qDr1iQ6TZSAqWdn2a8VzC45tpIREXbcEoQiog45lFx1J7Ck=
+ id 1hnhNT-0003z0-OP
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 10:41:41 +0000
+Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
+ by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20190717104136euoutp02f0cf4f649766a9f7c9a7b9580b1fc54a~yK7mQrGl22400124001euoutp02T
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 17 Jul 2019 10:41:36 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
+ 20190717104136euoutp02f0cf4f649766a9f7c9a7b9580b1fc54a~yK7mQrGl22400124001euoutp02T
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1563360096;
+ bh=ur/U/d/s9uABMg5oCLoBp1Iq4clZ6MAMcHqjH8l6u6s=;
+ h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
+ b=qnpMTFBHAVao6jDySlOJVnFWhaXTGAEV+OLXyzQ8mOXQ9YHa5IWkmLAuQPYGuNBkg
+ Rwi1CnCjIjwAqk4jbU23O2C86q0YQIWdk1z9Y9oyZ+7ELadGiBus6KChN5+PTfwZ0e
+ fNkH+eKntukB5pSXs7lyR4g6VPMgFEIR3uiwOGwk=
+Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTP id
+ 20190717104135eucas1p297d04249c9be595e1401ad7fa74cb6b3~yK7lQSJUE0829608296eucas1p2N;
+ Wed, 17 Jul 2019 10:41:35 +0000 (GMT)
+Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
+ eusmges1new.samsung.com (EUCPMTA) with SMTP id AA.4D.04298.F5BFE2D5; Wed, 17
+ Jul 2019 11:41:35 +0100 (BST)
+Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20190717104134eucas1p2a35d37e96f71333e4be84bf4d5029aba~yK7kVMZ-P0935709357eucas1p22;
+ Wed, 17 Jul 2019 10:41:34 +0000 (GMT)
+Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
+ eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20190717104134eusmtrp109bcda1aa5e79d9e3e8b5a2ff38b64d8~yK7kG9JHQ0641306413eusmtrp1O;
+ Wed, 17 Jul 2019 10:41:34 +0000 (GMT)
+X-AuditID: cbfec7f2-f2dff700000010ca-20-5d2efb5f215f
+Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
+ eusmgms1.samsung.com (EUCPMTA) with SMTP id 00.6D.04146.E5BFE2D5; Wed, 17
+ Jul 2019 11:41:34 +0100 (BST)
+Received: from [106.120.51.20] (unknown [106.120.51.20]) by
+ eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
+ 20190717104133eusmtip1ad16838f92af42c0f3768a6473d18284~yK7jUx3Q72450824508eusmtip1Y;
+ Wed, 17 Jul 2019 10:41:33 +0000 (GMT)
+Subject: Re: [PATCH v1 26/50] ARM: dts: exynos: align NOC100 bus OPPs in
+ Exynos5420
+To: Krzysztof Kozlowski <krzk@kernel.org>
+From: Lukasz Luba <l.luba@partner.samsung.com>
+Message-ID: <4d91a2fd-b6cf-37cc-d453-eb147ea6a1da@partner.samsung.com>
+Date: Wed, 17 Jul 2019 12:41:32 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.1
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 70bc771e-7e35-4714-69c5-08d70aa32454
-X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Jul 2019 10:40:10.0224 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: aisheng.dong@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5812
+In-Reply-To: <CAJKOXPdMUV6JP0R4kj=cFKd7QUdrtMXtSm4S9pfF77zvKu4v1g@mail.gmail.com>
+Content-Language: en-US
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrIKsWRmVeSWpSXmKPExsWy7djP87rxv/ViDY68FLS4te4cq8XGGetZ
+ La5/ec5qMf8IkNv/+DWzxfnzG9gtzja9YbfY9Pgaq8XHnnusFpd3zWGzmHF+H5PF2iN32S2W
+ Xr/IZHHxlKvF7cYVbBate4+wWxx+085q8e/aRhYHIY8189Ywery/0crusWlVJ5vH5iX1Hn1b
+ VjF6fN4kF8AWxWWTkpqTWZZapG+XwJVx8MFJloLDnBVXV61hbWDcxd7FyMkhIWAi8fZPNwuI
+ LSSwglHi1UqmLkYuIPsLo8SMs1PZIJzPjBKf5y1hgum43HSXFaJjOaPEriYpiKK3jBKH3t0E
+ GyssECoxYVYPmC0ioClx/e93VpAiZoGrLBI/7n8H2sfBwSagJ7FjVSFIDa+Am0TjpEawM1gE
+ VCWmXd8EtkxUIELi8pZdjBA1ghInZz4Bq+EUCJTYfnsWWJxZQFzi1pP5TBC2vMT2t3OYIQ7t
+ 5JBo310OYbtIfOqYBfWAsMSr41ug3peROD25hwXCLpZo6F3ICGHXSDzunwtVYy1x+PhFVpCT
+ mYF+Wb9LHyLsKPH98F92kLCEAJ/EjbeCEBfwSUzaNp0ZIswr0dEmBFGtIbGl5wLUAWISy9dM
+ Y5/AqDQLyV+zkPwyC8kvsxD2LmBkWcUonlpanJueWmyYl1quV5yYW1yal66XnJ+7iRGY8E7/
+ O/5pB+PXS0mHGAU4GJV4eD0O68YKsSaWFVfmHmKU4GBWEuG1/aodK8SbklhZlVqUH19UmpNa
+ fIhRmoNFSZy3muFBtJBAemJJanZqakFqEUyWiYNTqoHRk8s09Yo1T4vQebYf7TXXNtZZ3Xsj
+ nr54nsyy6h3uNjb91RrP9Pk2bZrDnLWgyefUTNE9jTyFC93OzuxnMTr+xsHt58GFJspSve97
+ lket73mxZup+5S9aPBcFZswqd4y6Ja/Z4Hoydh5vdO7OWWIRu2fm/3i/oZIrIU6zOLLvYaLJ
+ Sv4fYqxKLMUZiYZazEXFiQDN73wsdAMAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFvrGIsWRmVeSWpSXmKPExsVy+t/xu7pxv/ViDZ4s5Le4te4cq8XGGetZ
+ La5/ec5qMf8IkNv/+DWzxfnzG9gtzja9YbfY9Pgaq8XHnnusFpd3zWGzmHF+H5PF2iN32S2W
+ Xr/IZHHxlKvF7cYVbBate4+wWxx+085q8e/aRhYHIY8189Ywery/0crusWlVJ5vH5iX1Hn1b
+ VjF6fN4kF8AWpWdTlF9akqqQkV9cYqsUbWhhpGdoaaFnZGKpZ2hsHmtlZKqkb2eTkpqTWZZa
+ pG+XoJdx8MFJloLDnBVXV61hbWDcxd7FyMkhIWAicbnpLiuILSSwlFFi/6IsiLiYxKR926Fq
+ hCX+XOtig6h5zSgxo80JxBYWCJWYMKsHrEZEQFPi+t/vQHO4OJgFrrJITHm1kR3EERKYzCwx
+ +8oC5i5GDg42AT2JHasKQRp4BdwkGic1soDYLAKqEtOub2ICsUUFIiT62mazQdQISpyc+QSs
+ hlMgUGL77VmMIDazgJnEvM0PmSFscYlbT+YzQdjyEtvfzmGewCg0C0n7LCQts5C0zELSsoCR
+ ZRWjSGppcW56brGhXnFibnFpXrpecn7uJkZgnG879nPzDsZLG4MPMQpwMCrx8Hoc1o0VYk0s
+ K67MPcQowcGsJMJr+1U7Vog3JbGyKrUoP76oNCe1+BCjKdBzE5mlRJPzgSkoryTe0NTQ3MLS
+ 0NzY3NjMQkmct0PgYIyQQHpiSWp2ampBahFMHxMHp1QDo8dqjkeJkYbLlxnLFn92XsTvz1u7
+ +myzgbfS6dkrr4nt7099dq+udud79YduFnea5sS264uJ7l68zIPtgNgDc8YyUd1GewkBl5/L
+ HpuqRXPPjgxN4TL9o6Q9+9nFR1uMuP6V59RGm/qpmM2I9fd7Zj7rmJnvDe80cfY/+418/ZZd
+ i5hxVadKiaU4I9FQi7moOBEAzmjlkQkDAAA=
+X-CMS-MailID: 20190717104134eucas1p2a35d37e96f71333e4be84bf4d5029aba
+X-Msg-Generator: CA
+X-RootMTR: 20190715124455eucas1p13bfc0c1d113225db9607e4c0dbac353c
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20190715124455eucas1p13bfc0c1d113225db9607e4c0dbac353c
+References: <CGME20190715124455eucas1p13bfc0c1d113225db9607e4c0dbac353c@eucas1p1.samsung.com>
+ <20190715124417.4787-1-l.luba@partner.samsung.com>
+ <20190715124417.4787-27-l.luba@partner.samsung.com>
+ <CAJKOXPc3qsM5Xe5JViDZXYfes+_veb-KX3fnZjpkUCrphBcu-Q@mail.gmail.com>
+ <8ed83c77-57f7-78a4-e437-714cfc7b5c58@partner.samsung.com>
+ <CAJKOXPdMUV6JP0R4kj=cFKd7QUdrtMXtSm4S9pfF77zvKu4v1g@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_034014_916945_BC1BEB0B 
-X-CRM114-Status: GOOD (  18.05  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190717_034139_934045_8FE0A2D8 
+X-CRM114-Status: GOOD (  15.21  )
+X-Spam-Score: -5.1 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.14.75 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.12 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -126,372 +141,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Kinjan Patel <Kinjan.patel@einfochips.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Darshak Patel <Darshak.patel@einfochips.com>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Prajose John <Prajose.john@einfochips.com>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ =?UTF-8?Q?Bart=c5=82omiej_=c5=bbo=c5=82nierkiewicz?=
+ <b.zolnierkie@samsung.com>, sboyd@kernel.org, mturquette@baylibre.com,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ Andrzej Hajda <a.hajda@samsung.com>, Chanwoo Choi <cw00.choi@samsung.com>,
+ kyungmin.park@samsung.com, kgene@kernel.org, myungjoo.ham@samsung.com,
+ s.nawrocki@samsung.com, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> Sent: Wednesday, July 17, 2019 2:11 PM
+
+
+On 7/17/19 12:38 PM, Krzysztof Kozlowski wrote:
+> On Wed, 17 Jul 2019 at 12:27, Lukasz Luba <l.luba@partner.samsung.com> wrote:
+>>
+>>
+>> On 7/17/19 12:10 PM, Krzysztof Kozlowski wrote:
+>>> On Mon, 15 Jul 2019 at 14:44, Lukasz Luba <l.luba@partner.samsung.com> wrote:
+>>>>
+>>>> The NOC100 has a parent which clock rate is set tot 400MHz. The OPPs which
+>>>> are not possible to set are removed and new one is added.
+>>>
+>>> I think it is just NOC bus... or are there more of such and this is 100 MHz one?
+>> Yes, there is a bus NOC100 with a dedicated clock tree in the HW (with
+>> 3 muxes and one divider), which makes possible to take different PLL as
+>> a source then WCORE have, divide the rate from it and even switch for a
+>> while to alternative stable PLL (on the 2nd mux to SPLL (after a
+>> divider)) to wait for main PLL rate change stability delay. Max rate is
+>> limited to 100MHz for this NOC100 bus.
 > 
-> Add support for i.MX8QXP AI_ML board from Einfochips. This board is one of
-> the Consumer Edition boards of the 96Boards family based on i.MX8QXP SoC
-> from NXP/Freescale.
+> I think we misunderstood each other. I am saying, that the bus is
+> called "NOC" in the DTSI. Not NOC100. So unless there are more of
+> NOCs, stick to existing name NOC, even if it is not the most accurate.
+OK, got it, thanks!
+
+Lukasz
 > 
-> The initial support includes following peripherals which are tested and known
-> to be working:
+> Best regards,
+> Krzysztof
 > 
-> 1. Debug serial via UART2
-> 2. uSD
-> 3. WiFi
-> 4. Ethernet
 > 
-> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-
-The patch looks good to me. Only a few nitpicks below.
-Otherwise,
-Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
-
-Regards
-Dong Aisheng
-
-> ---
->  arch/arm64/boot/dts/freescale/Makefile        |   1 +
->  .../boot/dts/freescale/imx8qxp-ai_ml.dts      | 249 ++++++++++++++++++
->  2 files changed, 250 insertions(+)
->  create mode 100644 arch/arm64/boot/dts/freescale/imx8qxp-ai_ml.dts
-> 
-> diff --git a/arch/arm64/boot/dts/freescale/Makefile
-> b/arch/arm64/boot/dts/freescale/Makefile
-> index 0bd122f60549..bd8460549d1a 100644
-> --- a/arch/arm64/boot/dts/freescale/Makefile
-> +++ b/arch/arm64/boot/dts/freescale/Makefile
-> @@ -24,4 +24,5 @@ dtb-$(CONFIG_ARCH_MXC) += imx8mm-evk.dtb
->  dtb-$(CONFIG_ARCH_MXC) += imx8mq-evk.dtb
->  dtb-$(CONFIG_ARCH_MXC) += imx8mq-zii-ultra-rmb3.dtb
->  dtb-$(CONFIG_ARCH_MXC) += imx8mq-zii-ultra-zest.dtb
-> +dtb-$(CONFIG_ARCH_MXC) += imx8qxp-ai_ml.dtb
->  dtb-$(CONFIG_ARCH_MXC) += imx8qxp-mek.dtb diff --git
-> a/arch/arm64/boot/dts/freescale/imx8qxp-ai_ml.dts
-> b/arch/arm64/boot/dts/freescale/imx8qxp-ai_ml.dts
-> new file mode 100644
-> index 000000000000..dcd36e57d916
-> --- /dev/null
-> +++ b/arch/arm64/boot/dts/freescale/imx8qxp-ai_ml.dts
-> @@ -0,0 +1,249 @@
-> +// SPDX-License-Identifier: GPL-2.0+
-> +/*
-> + * Copyright 2018 Einfochips
-> + * Copyright 2019 Linaro Ltd.
-> + */
-> +
-> +/dts-v1/;
-> +
-> +#include "imx8qxp.dtsi"
-> +
-> +/ {
-> +	model = "Einfochips i.MX8QXP AI_ML";
-> +	compatible = "einfochips,imx8qxp-ai_ml", "fsl,imx8qxp";
-> +
-> +	aliases {
-> +		serial1 = &adma_lpuart1;
-> +		serial2 = &adma_lpuart2;
-> +		serial3 = &adma_lpuart3;
-> +	};
-> +
-> +	chosen {
-> +		stdout-path = &adma_lpuart2;
-> +	};
-> +
-> +	memory@80000000 {
-> +		device_type = "memory";
-> +		reg = <0x00000000 0x80000000 0 0x80000000>;
-> +	};
-> +
-> +	leds {
-> +		compatible = "gpio-leds";
-> +		pinctrl-names = "default";
-> +		pinctrl-0 = <&pinctrl_leds>;
-> +
-> +		user_led1 {
-> +			label = "green:user1";
-> +			gpios = <&lsio_gpio4 16 GPIO_ACTIVE_HIGH>;
-> +			linux,default-trigger = "heartbeat";
-> +		};
-> +
-> +		user_led2 {
-> +			label = "green:user2";
-> +			gpios = <&lsio_gpio0 6 GPIO_ACTIVE_HIGH>;
-> +			linux,default-trigger = "none";
-> +		};
-> +
-> +		user_led3 {
-> +			label = "green:user3";
-> +			gpios = <&lsio_gpio0 7 GPIO_ACTIVE_HIGH>;
-> +			linux,default-trigger = "mmc1";
-> +			default-state = "off";
-> +		};
-> +
-> +		user_led4 {
-> +			label = "green:user4";
-> +			gpios = <&lsio_gpio4 21 GPIO_ACTIVE_HIGH>;
-> +			panic-indicator;
-> +			linux,default-trigger = "none";
-> +		};
-> +
-> +		wlan_active_led {
-> +			label = "yellow:wlan";
-> +			gpios = <&lsio_gpio4 17 GPIO_ACTIVE_HIGH>;
-> +			linux,default-trigger = "phy0tx";
-> +			default-state = "off";
-> +		};
-> +
-> +		bt_active_led {
-> +			label = "blue:bt";
-> +			gpios = <&lsio_gpio4 18 GPIO_ACTIVE_HIGH>;
-> +			linux,default-trigger = "hci0-power";
-> +			default-state = "off";
-> +		};
-> +	};
-> +
-> +	sdio_pwrseq: sdio-pwrseq {
-> +		compatible = "mmc-pwrseq-simple";
-> +		pinctrl-names = "default";
-> +		pinctrl-0 = <&pinctrl_wifi_reg_on>;
-> +		reset-gpios = <&lsio_gpio3 24 GPIO_ACTIVE_LOW>;
-> +	};
-> +};
-> +
-> +/* BT */
-> +&adma_lpuart0 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_lpuart0>;
-> +	uart-has-rtscts;
-> +	status = "okay";
-> +};
-> +
-> +/* LS-I2C0 */
-
-Typo?
-
-> +&adma_lpuart1 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_lpuart1>;
-> +	status = "okay";
-> +};
-> +
-> +/* Debug */
-> +&adma_lpuart2 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_lpuart2>;
-> +	status = "okay";
-> +};
-> +
-> +/* PCI-E */
-
-A bit confusing for the comments...
-
-> +&adma_lpuart3 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_lpuart3>;
-> +	status = "okay";
-> +};
-> +
-> +&fec1 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_fec1>;
-> +	phy-mode = "rgmii-id";
-> +	phy-handle = <&ethphy0>;
-> +	fsl,magic-packet;
-> +	status = "okay";
-> +
-> +	mdio {
-> +		#address-cells = <1>;
-> +		#size-cells = <0>;
-> +
-> +		ethphy0: ethernet-phy@0 {
-> +			compatible = "ethernet-phy-ieee802.3-c22";
-> +			reg = <0>;
-> +		};
-> +	};
-> +};
-> +
-> +/* WiFi */
-> +&usdhc1 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_usdhc1>;
-> +	bus-width = <4>;
-> +	no-sd;
-> +	non-removable;
-> +	mmc-pwrseq = <&sdio_pwrseq>;
-> +	#address-cells = <1>;
-> +	#size-cells = <0>;
-
-Nitpick: we usually put this two properties at the first place.
-
-> +	status = "okay";
-> +
-> +	brcmf: wifi@1 {
-> +		reg = <1>;
-> +		compatible = "brcm,bcm4329-fmac";
-> +	};
-> +};
-> +
-> +/* SD */
-> +&usdhc2 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_usdhc2>;
-> +	bus-width = <4>;
-> +	cd-gpios = <&lsio_gpio4 22 GPIO_ACTIVE_LOW>;
-> +	status = "okay";
-> +};
-> +
-> +&iomuxc {
-> +	pinctrl_fec1: fec1grp {
-> +		fsl,pins = <
-> +			IMX8QXP_ENET0_MDC_CONN_ENET0_MDC
-> 	0x06000020
-> +			IMX8QXP_ENET0_MDIO_CONN_ENET0_MDIO
-> 	0x06000020
-> +			IMX8QXP_ENET0_RGMII_TX_CTL_CONN_ENET0_RGMII_TX_CTL
-> 	0x06000020
-> +			IMX8QXP_ENET0_RGMII_TXC_CONN_ENET0_RGMII_TXC
-> 	0x06000020
-> +			IMX8QXP_ENET0_RGMII_TXD0_CONN_ENET0_RGMII_TXD0
-> 	0x06000020
-> +			IMX8QXP_ENET0_RGMII_TXD1_CONN_ENET0_RGMII_TXD1
-> 	0x06000020
-> +			IMX8QXP_ENET0_RGMII_TXD2_CONN_ENET0_RGMII_TXD2
-> 	0x06000020
-> +			IMX8QXP_ENET0_RGMII_TXD3_CONN_ENET0_RGMII_TXD3
-> 	0x06000020
-> +			IMX8QXP_ENET0_RGMII_RXC_CONN_ENET0_RGMII_RXC
-> 	0x06000020
-> +			IMX8QXP_ENET0_RGMII_RX_CTL_CONN_ENET0_RGMII_RX_CTL
-> 	0x06000020
-> +			IMX8QXP_ENET0_RGMII_RXD0_CONN_ENET0_RGMII_RXD0
-> 	0x06000020
-> +			IMX8QXP_ENET0_RGMII_RXD1_CONN_ENET0_RGMII_RXD1
-> 	0x06000020
-> +			IMX8QXP_ENET0_RGMII_RXD2_CONN_ENET0_RGMII_RXD2
-> 	0x06000020
-> +			IMX8QXP_ENET0_RGMII_RXD3_CONN_ENET0_RGMII_RXD3
-> 	0x06000020
-> +		>;
-> +	};
-> +
-> +	pinctrl_leds: ledsgrp{
-> +		fsl,pins = <
-> +			IMX8QXP_ESAI0_TX2_RX3_LSIO_GPIO0_IO06
-> 	0x00000021
-> +			IMX8QXP_ESAI0_TX3_RX2_LSIO_GPIO0_IO07
-> 	0x00000021
-> +			IMX8QXP_EMMC0_DATA7_LSIO_GPIO4_IO16
-> 	0x00000021
-> +			IMX8QXP_USDHC1_WP_LSIO_GPIO4_IO21
-> 	0x00000021
-> +			IMX8QXP_EMMC0_STROBE_LSIO_GPIO4_IO17
-> 	0x00000021
-> +			IMX8QXP_EMMC0_RESET_B_LSIO_GPIO4_IO18
-> 	0x00000021
-> +		>;
-> +	};
-> +
-> +	pinctrl_lpuart0: lpuart0grp {
-> +		fsl,pins = <
-> +			IMX8QXP_UART0_RX_ADMA_UART0_RX
-> 	0X06000020
-> +			IMX8QXP_UART0_TX_ADMA_UART0_TX
-> 	0X06000020
-> +			IMX8QXP_FLEXCAN0_TX_ADMA_UART0_CTS_B
-> 	0x06000020
-> +			IMX8QXP_FLEXCAN0_RX_ADMA_UART0_RTS_B
-> 	0x06000020
-> +		>;
-> +	};
-> +
-> +	pinctrl_lpuart1: lpuart1grp {
-> +		fsl,pins = <
-> +			IMX8QXP_UART1_RX_ADMA_UART1_RX
-> 	0X06000020
-> +			IMX8QXP_UART1_TX_ADMA_UART1_TX
-> 	0X06000020
-> +		>;
-> +	};
-> +
-> +	pinctrl_lpuart2: lpuart2grp {
-> +		fsl,pins = <
-> +			IMX8QXP_UART2_RX_ADMA_UART2_RX
-> 	0X06000020
-> +			IMX8QXP_UART2_TX_ADMA_UART2_TX
-> 	0X06000020
-> +		>;
-> +	};
-> +
-> +	pinctrl_lpuart3: lpuart3grp {
-> +		fsl,pins = <
-> +			IMX8QXP_FLEXCAN2_RX_ADMA_UART3_RX
-> 	0X06000020
-> +			IMX8QXP_FLEXCAN2_TX_ADMA_UART3_TX
-> 	0X06000020
-> +		>;
-> +	};
-> +
-> +	pinctrl_usdhc1: usdhc1grp {
-> +		fsl,pins = <
-> +			IMX8QXP_EMMC0_CLK_CONN_EMMC0_CLK
-> 	0x06000041
-> +			IMX8QXP_EMMC0_CMD_CONN_EMMC0_CMD
-> 	0x00000021
-> +			IMX8QXP_EMMC0_DATA0_CONN_EMMC0_DATA0
-> 	0x00000021
-> +			IMX8QXP_EMMC0_DATA1_CONN_EMMC0_DATA1
-> 	0x00000021
-> +			IMX8QXP_EMMC0_DATA2_CONN_EMMC0_DATA2
-> 	0x00000021
-> +			IMX8QXP_EMMC0_DATA3_CONN_EMMC0_DATA3
-> 	0x00000021
-> +		>;
-> +	};
-> +
-> +	pinctrl_usdhc2: usdhc2grp {
-> +		fsl,pins = <
-> +			IMX8QXP_USDHC1_CLK_CONN_USDHC1_CLK
-> 	0x06000041
-> +			IMX8QXP_USDHC1_CMD_CONN_USDHC1_CMD
-> 	0x00000021
-> +			IMX8QXP_USDHC1_DATA0_CONN_USDHC1_DATA0
-> 	0x00000021
-> +			IMX8QXP_USDHC1_DATA1_CONN_USDHC1_DATA1
-> 	0x00000021
-> +			IMX8QXP_USDHC1_DATA2_CONN_USDHC1_DATA2
-> 	0x00000021
-> +			IMX8QXP_USDHC1_DATA3_CONN_USDHC1_DATA3
-> 	0x00000021
-> +			IMX8QXP_USDHC1_VSELECT_CONN_USDHC1_VSELECT
-> 	0x00000021
-> +			IMX8QXP_USDHC1_CD_B_LSIO_GPIO4_IO22
-> 	0x00000021
-> +		>;
-> +	};
-> +
-> +	pinctrl_wifi_reg_on: wifiregongrp {
-> +		fsl,pins = <
-> +			IMX8QXP_QSPI0B_SS1_B_LSIO_GPIO3_IO24
-> 	0x00000021
-> +		>;
-> +	};
-> +};
-> --
-> 2.17.1
 
 _______________________________________________
 linux-arm-kernel mailing list
