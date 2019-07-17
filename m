@@ -2,82 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 536FF6BEC0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 17:03:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F3D6F6BEBF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 17:03:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S3CEPWmzGnDE5e4VBWzfidmkARIDH6ryuPbJe/fJW4s=; b=qwCqoSB8l8mWtr
-	DCumAZk4L5t7+U9HV10hwVvMELz9c44zajnOw34j0Qv4d85+6fT4u92tJSglXxFVW4tQfQPR0cOs2
-	EvVK6pRpwJBdSGpbyDjigsfajVaQGhgRhzRQvaXn6rQJ6HElhwPhcKoUPBYW20C0ljntAB+TChqki
-	x+tM5KzNuFUMrAItSCZn6L1CAwfRA1P3xPQ3Nx8+E5gufHKHiqI0FW0TaSGNkZ9RA56u5+zEw1tpl
-	NGsh6ssJvWUYt9z3OZhTpFXUO+kBBdTzjQw6kDJOAE7Tgv57wFDP94B8a0okGKgzEPmRehCW++33O
-	34zarsFeeh+eOCy5MGbA==;
+	List-Owner; bh=ef0O6vaztgVeNIqwHJyUmCu4JEi6rxuGC4P9qmVCMm8=; b=r9BCWR3xwEND5L
+	advYomZid/tQ31Wvt91vsTSc9GxUyCppB5YopyqD4ZgsAD/KJ7zMEZ+z03Wm9l9NG/DgH2wOo3glz
+	3jujre4iM2mzUvAPpIvRbucoNuO/+0yVrjfmzdo0Dv47La8DxASCF1w2Hg+vybd9X8W4adVgIj7ea
+	tLNNoFsgkMpGvrTcSPteneCHQy8jZHOdURpXxEx4ZrjsN/q0n/RjhSxaG6ntJj5NRxAVjcoh/8Etm
+	tKcH6DnYlsU/I7d5jU1RzZH089qHMDWVN2meTx8LW+SPLm7fCeugk+NhFw30vuNjT75RhMVQv0g3c
+	qqtrFRb8n6BN8+NvApng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnlT2-0001eD-8i; Wed, 17 Jul 2019 15:03:40 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1hnlSo-0001RQ-5s; Wed, 17 Jul 2019 15:03:26 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnlSQ-0001Cz-DX
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 15:03:03 +0000
-Received: by mail-pf1-x441.google.com with SMTP id i189so10969687pfg.10
+ id 1hnlSR-0001Ec-Ps
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 15:03:05 +0000
+Received: by mail-pg1-x544.google.com with SMTP id n9so5076056pgc.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 17 Jul 2019 08:03:02 -0700 (PDT)
+ Wed, 17 Jul 2019 08:03:03 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=OvPD4V/2GZaORYFcR4jNZsYwHU4GxPLSWCPMlgr5s7U=;
- b=IgrOIjmJgKBptnHAlAOggl4vyW2xDVXq6Qa3xqi0E0Hx4InuRoNtZV6BfDII03Uaom
- u2fK5IKS82Lvqe5V27rjDjoONDlTjc77hLgCk0G5XEoeH0H+huhvKjU1Pd9MipLs9Zus
- gpq+lcg7uVf7Pb8jLrT5HhM/oiQKQyic0NWKackH6Zo1SAuVpm3g9OWDBmL+pcpTtpsl
- GN7j+CsrPHHEtIt25XEYEi8zTXimuiNG592oFUUa+x/V2k8YC1hHpgxhDVX4VRumMeoS
- a5j9FoVrcfEdURkf60purDrwGXZya8yBs86W9D1dqAizMD77pI5Q4Eqmx/PE9/2UPzmr
- ztaw==
+ bh=EOkS5kDhQCp2QpKFvcqRvsCtdLy33nkr3AyjAFEDqsc=;
+ b=L9HjDAtOqAIwTm1Lr6ddDZgSgitwesUyPfW+GKyfk5rR9Cdwl2bZR7Cck92k4ZgD2t
+ 1fNCgSZLmX6eWT5xahDRSRok3OyY5+sM0wWqnUrIVpyL8Tc+xt84klQuAmg1RNUJ+dI0
+ i8SotKUn8Vds8TSGznpmKwo+ObQXvy2uYdYVZhDbT8oZbst2j3Rg0PljSOFMMCJOkklZ
+ ZaqAHlIElcwKC0SkHhWBFmg2bo1NHN0wmO15TyPDNN5F4+gNe/gljVI6/1ABXSL6dTjr
+ MYJtVhtZIuIZvOvKJU1HPVDq+ASRh5x5F1DAY7QlyoJMKkNqRuv1s6dKxxOJfidG2a8j
+ p7WQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=OvPD4V/2GZaORYFcR4jNZsYwHU4GxPLSWCPMlgr5s7U=;
- b=aSjIopnvWalSSTndfbbp9LvgqpGbVZN61DWl5j3mZSdGagvA+0CSWn019Bbs8xg650
- Y9j18z7JdC8ZJYFT/yW9EKshOyV3wFvCvJQvWWc1I40KNxhiUio5qZack0B1yN+0EEiu
- HTVSH6snnls/EPjf37g61V5ILzAQLkGncPL8w1CDHYpvm/8P0IVoEveTwETzCMw0aZCA
- z5Bb2jxi6nZpbRPK8B37hbbndrM2W3JWGJIlqHUHHeGOrxRQYn6kDNZHO3AE+qWG51OG
- itV3MPGkyYyM3VDXCNiWnGKUuDJoXvJNMLVwZyu9f71eKCOuaLgOjvSz3la3Gwm827tN
- iuWA==
-X-Gm-Message-State: APjAAAUcFJcf/3BmJ5a5cMTje0rH3K3WqM6qarmTgUUwzFOvxZNS5OgP
- t2rF90X7kR63KXpkyQL4/EBSEGmt
-X-Google-Smtp-Source: APXvYqwlKK93KUyr6TQlswdXXuF/PevkzQcVQAjxUomXEGl+4Rh1zM9IdLtXuOUmNwh77E04NQJUdg==
-X-Received: by 2002:a17:90a:2768:: with SMTP id
- o95mr44323526pje.37.1563375781161; 
- Wed, 17 Jul 2019 08:03:01 -0700 (PDT)
+ bh=EOkS5kDhQCp2QpKFvcqRvsCtdLy33nkr3AyjAFEDqsc=;
+ b=jUYvw9SpuExerMnpLQX9h77v9accpmqpiNiMYNVaLwpkKHzMgroOdezkPBA7XSjI7S
+ yPrZFLHrMaewxoc7bobWSnocZ63gcHZ3v0vuaKJ6tnwSF3wXfgpx4PZexFGmoLSr2p7l
+ opPPUW79Mq+PxnkaLXGmh1wYA59m+jmqZSSyk9GmO3J8bmFQi9eyVFjYQcu92peXOwoa
+ RARU+7BrgWmNhp0ZUYw93XQle1mv9R2faVLnl1mqBnb5Aet/S3T4six0w8o8FhPd0r1X
+ oDidiLEqn5Fg8q8Xv6g+np9Y7lk6TEzAviKvQHJZnddw3u2If4XItg9/+HPrKl8i2IIy
+ kfLA==
+X-Gm-Message-State: APjAAAW936gZSMbP6ZlK4H98Yigfa8lj2KXVv2LBJhuE105yB1KqHtM6
+ JSCLctWPpL+o3FnKJcnns/wT/jPT
+X-Google-Smtp-Source: APXvYqxxdOY210KODL0TOfULUp7JPCmDhod340RciukIdE/d0HsJRiE1Gwbfc0pNVYDm7Q8lq19uaA==
+X-Received: by 2002:a17:90a:a404:: with SMTP id
+ y4mr46001132pjp.58.1563375782825; 
+ Wed, 17 Jul 2019 08:03:02 -0700 (PDT)
 Received: from localhost.lan (c-67-185-54-80.hsd1.wa.comcast.net.
  [67.185.54.80])
- by smtp.gmail.com with ESMTPSA id b37sm44728961pjc.15.2019.07.17.08.03.00
+ by smtp.gmail.com with ESMTPSA id b37sm44728961pjc.15.2019.07.17.08.03.01
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 17 Jul 2019 08:03:00 -0700 (PDT)
+ Wed, 17 Jul 2019 08:03:01 -0700 (PDT)
 From: Andrey Smirnov <andrew.smirnov@gmail.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 2/3] ARM: dts: vf610-zii-scu4-aib: Fix pinctrl_i2c1's
- identation
-Date: Wed, 17 Jul 2019 08:02:52 -0700
-Message-Id: <20190717150253.20107-2-andrew.smirnov@gmail.com>
+Subject: [PATCH 3/3] ARM: dts: vf610-zii-scu4-aib: Drop unused pinctrl_i2c3
+ pinmux config
+Date: Wed, 17 Jul 2019 08:02:53 -0700
+Message-Id: <20190717150253.20107-3-andrew.smirnov@gmail.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190717150253.20107-1-andrew.smirnov@gmail.com>
 References: <20190717150253.20107-1-andrew.smirnov@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_080302_459618_F9420AE3 
-X-CRM114-Status: GOOD (  10.33  )
+X-CRM114-CacheID: sfid-20190717_080303_869397_3EFA3012 
+X-CRM114-Status: UNSURE (   8.66  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (andrew.smirnov[at]gmail.com)
@@ -109,7 +110,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fix pinctrl_i2c1's inconsistent identation.
+Pinctrl_i2c3 pinmux config is not used anywhere. Drop it.
 
 Signed-off-by: Andrey Smirnov <andrew.smirnov@gmail.com>
 Cc: Shawn Guo <shawnguo@kernel.org>
@@ -119,23 +120,27 @@ Cc: Cory Tusar <cory.tusar@zii.aero>
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- arch/arm/boot/dts/vf610-zii-scu4-aib.dts | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ arch/arm/boot/dts/vf610-zii-scu4-aib.dts | 7 -------
+ 1 file changed, 7 deletions(-)
 
 diff --git a/arch/arm/boot/dts/vf610-zii-scu4-aib.dts b/arch/arm/boot/dts/vf610-zii-scu4-aib.dts
-index d7019e89f588..a64de809299f 100644
+index a64de809299f..666ec27a73e3 100644
 --- a/arch/arm/boot/dts/vf610-zii-scu4-aib.dts
 +++ b/arch/arm/boot/dts/vf610-zii-scu4-aib.dts
-@@ -777,7 +777,8 @@
- 			VF610_PAD_PTB15__I2C0_SDA		0x37ff
+@@ -792,13 +792,6 @@
  		>;
  	};
--		pinctrl_i2c1: i2c1grp {
-+
-+	pinctrl_i2c1: i2c1grp {
+ 
+-	pinctrl_i2c3: i2c3grp {
+-		fsl,pins = <
+-			VF610_PAD_PTA30__I2C3_SCL		0x37ff
+-			VF610_PAD_PTA31__I2C3_SDA		0x37ff
+-		>;
+-	};
+-
+ 	pinctrl_leds_debug: pinctrl-leds-debug {
  		fsl,pins = <
- 			VF610_PAD_PTB16__I2C1_SCL		0x37ff
- 			VF610_PAD_PTB17__I2C1_SDA		0x37ff
+ 			 VF610_PAD_PTB26__GPIO_96		0x31c2
 -- 
 2.21.0
 
