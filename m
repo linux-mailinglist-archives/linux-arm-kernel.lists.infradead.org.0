@@ -2,104 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B6EE6BDE3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 16:13:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EAF5C6BDF8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 16:15:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
 	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cBKV0NGnOKO9QCudZQ6roqwXVnoqSm3eHDgsudQyE98=; b=adhPoW0PlGRk9s
-	oIbmnGGIlBzG95MrocG6CUtYCDyKVOvdHv/YrYTR9SX/voAF02K0KEf+wc3rhFHcDgzt2IYezrB02
-	8apgaJmBPSc8VfWsPO56QPDalJJ4awOwaD+70JfvYWlAM6dkzNPc9ObbIdafQSBlzE5obcrUEqlgm
-	oSHlcutJfDCzof1pmx6tAlwpBGrPuWLgC2cuw6Q1oDxep/QymPeEpebgQ4CN3qXORD3AzBOm0fD7Q
-	JOSUZTLOYNeRwHfmriBTp92+iRVSTzCOKYhhX35iOHjLI2iXhxSYory3u5z2kW/BQtdJGChGO6tVm
-	uHDgDpDleWifpkiE/aAA==;
+	List-Owner; bh=6CTt3bQ/ZHgKHpw89LuQcmNynQ1l3ddNuOlfucnvNVY=; b=I912FOV6J8NthI
+	/ql8fs0fnW/tGv2KS/4jJ0ernIc/EzpyK6Bo5Io1k778beumaCwx/UiYWVIus4HEcL4aKwbSY4WXy
+	OOldnuc57kThMNG+Xmnp6CGQVxiFiLqzTFTOyojO45NK1z8aEvV6tEUVAU/YIsTD3KACeBvQRTgXg
+	ZhkYi5tlQdLFeQs67jNyEaSqOzQUIB8z6jFiCxFrMGLWfZROjrGoL3YMnfJnLR7eE5yLhbaWl0wBT
+	9M+yvSlSwfvBX4h7lDVTVPLYJ71hbLJvnUUURTRAKKQCI9GZEwhrFZxI3gTyrg3Nac4Fd5DGwyoww
+	TadJJFqeGIaK4HhzLOwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnkg0-00076v-DI; Wed, 17 Jul 2019 14:13:00 +0000
-Received: from mailout1.w1.samsung.com ([210.118.77.11])
+	id 1hnki9-0000NN-W1; Wed, 17 Jul 2019 14:15:14 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnkfr-00075j-NK
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 14:12:53 +0000
+ id 1hnkhw-0000D9-0O
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 14:15:01 +0000
 Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
- by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
- 20190717141246euoutp0158c2306713f9cdd05803f9a28f98fc88~yNz9_s5vC0961709617euoutp01u
+ by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20190717141458euoutp02d46664a35f205f0b102da94f3b958c99~yN14dT52b1441314413euoutp02Y
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 17 Jul 2019 14:12:46 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
- 20190717141246euoutp0158c2306713f9cdd05803f9a28f98fc88~yNz9_s5vC0961709617euoutp01u
+ Wed, 17 Jul 2019 14:14:58 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
+ 20190717141458euoutp02d46664a35f205f0b102da94f3b958c99~yN14dT52b1441314413euoutp02Y
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1563372766;
- bh=e7owagyzm32/x8fQaeiUS1HzPuby4JB3XeoTnzx54mQ=;
+ s=mail20170921; t=1563372898;
+ bh=fNdvBycqAzOsl6BRjfW8bEg4vOX4q3GZdaaLfQQ1784=;
  h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=ABpsfu/AoPIpQ92e1e+OBC5bBSrkVN1FDhP4sqoygoxo8n0bTjyktWFxwegStsYog
- lnh3m1MItmuBO2A7SR05R/CGqpxlYFsFHW5Pp+dbD8whn9Q+SFaxS91pSHqkpMgaM5
- hCeLB9S3jPiZKjX66W+VJZPXuAm7z9sdIEyIdeCc=
-Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTP id
- 20190717141245eucas1p2c16ff22a3ed0ebf0f56c021d47ca5616~yNz9Otly70335803358eucas1p2Y;
- Wed, 17 Jul 2019 14:12:45 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges1new.samsung.com (EUCPMTA) with SMTP id E5.49.04298.DDC2F2D5; Wed, 17
- Jul 2019 15:12:45 +0100 (BST)
-Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
- 20190717141244eucas1p2f2a29627d97d942a7afad36f794a5190~yNz8UkrW40549205492eucas1p2P;
- Wed, 17 Jul 2019 14:12:44 +0000 (GMT)
-Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
- eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20190717141244eusmtrp298844cfbbfdb6604b73f714120ca8a82~yNz8GN5zb3155131551eusmtrp2H;
- Wed, 17 Jul 2019 14:12:44 +0000 (GMT)
-X-AuditID: cbfec7f2-f2dff700000010ca-1d-5d2f2cdd021f
-Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
- eusmgms1.samsung.com (EUCPMTA) with SMTP id 36.A8.04146.CDC2F2D5; Wed, 17
- Jul 2019 15:12:44 +0100 (BST)
+ b=tpdvtAXVZ5S1tm9BSWIhB/0HdF9nCiTtyGAlBO788Ho8Tki7Kh+mpWD6yD+dfB/JE
+ 7scWmm0qPCSc7vQFF8UUltAt5GIpshsiQ/0K96dKTSgvSGTsZGPYElxVW4SY6P33tE
+ aQjmXqbCHCcXDHqvT1VdNqEgVz0y97UAVLH2xM+0=
+Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTP id
+ 20190717141457eucas1p18e06f7dfb9e56fc44f64ac71ef517c9c~yN13u7C9t2448224482eucas1p1s;
+ Wed, 17 Jul 2019 14:14:57 +0000 (GMT)
+Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
+ eusmges2new.samsung.com (EUCPMTA) with SMTP id C7.A7.04377.06D2F2D5; Wed, 17
+ Jul 2019 15:14:56 +0100 (BST)
+Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
+ 20190717141456eucas1p188c4893c75ce04a9c1c10d41ecd9eef5~yN13CPcRo3260032600eucas1p1M;
+ Wed, 17 Jul 2019 14:14:56 +0000 (GMT)
+Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
+ eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20190717141456eusmtrp17d1d73dbd2e54903ada6b09075072a25~yN13BgcCN1477414774eusmtrp1n;
+ Wed, 17 Jul 2019 14:14:56 +0000 (GMT)
+X-AuditID: cbfec7f4-113ff70000001119-ae-5d2f2d60d555
+Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
+ eusmgms2.samsung.com (EUCPMTA) with SMTP id CB.80.04140.06D2F2D5; Wed, 17
+ Jul 2019 15:14:56 +0100 (BST)
 Received: from [106.120.51.18] (unknown [106.120.51.18]) by
- eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20190717141243eusmtip2a6e78e0dcb3c2d83be7dcabbbaf919ef~yNz7aE4OC2299922999eusmtip2e;
- Wed, 17 Jul 2019 14:12:43 +0000 (GMT)
+ eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
+ 20190717141455eusmtip1dd79072acb7a012c06e6ad5b0825b8a2~yN12UtBET2565325653eusmtip1H;
+ Wed, 17 Jul 2019 14:14:55 +0000 (GMT)
 Subject: Re: [PATCH v2 1/4] opp: core: add regulators enable and disable
-To: Chanwoo Choi <cw00.choi@samsung.com>
+To: Viresh Kumar <viresh.kumar@linaro.org>
 From: Kamil Konieczny <k.konieczny@partner.samsung.com>
-Message-ID: <297179a4-a542-0836-6192-e06369fdcae5@partner.samsung.com>
-Date: Wed, 17 Jul 2019 16:12:42 +0200
+Message-ID: <237a3f15-7a44-01ce-5477-be94092295ec@partner.samsung.com>
+Date: Wed, 17 Jul 2019 16:14:54 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <9acc7dd0-614b-ccd3-a485-eeca3dab494b@samsung.com>
+In-Reply-To: <20190716100539.4uqelbxqz7bmtmea@vireshk-i7>
 Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA02Se0iTURjGO/su+xSnx7nwRSNjEV3UWZR0SLtSuaAioj/Cslz6YZIz3Zym
- /dFmljdSUciaogXdMM2ctxS7TXOEmpRRM82GZnaTyksk0sztU/K/33ne5+F9XjgcJbUxPlxs
- fBKviVfFyVlXuqF9qjvwfUBQxNrqSh9Sc6WaIW8nRhhS3vaCIflD3yjS3X1fTLrSv4uJaegN
- Q3qaS1kyfqkNkSvdj0Skqu29mNx8+1JE+gx3WPL9T5eIXHjYJib2NzU0qbW1s9s8lZVllUhp
- qshmlbU3zinz6iqQ0mJtFCnHTUsPsOGuodF8XGwyrwnaEul60lRURCfUys68erZPj5pwDnLh
- AG+A6SfXaAdL8R0EVaMJOch1licQFD0zscJjHEF7p5GdT0ykD1LC4DaC4inrnGsUwZcffxmH
- ywsrwfJ6xJmQ4VVw9e9r5DBRuIeGy4OFThOLN8JgY6fIwRK8G2rqOygH03gF6PP6neHF+DCM
- 2VoZweMJz69+dJZ1wVuh4XMfcjCFveHdx3KRwH5wvr7EWQ+wgYOahlqx0Hsn5NfdpAT2gq+W
- ujl9Ccw0CWHAKTB8PU8shDMQ2DJ/0cIgBFotL2dbcLMbVkN1c5Agb4fCklvIIQN2B+uop9DB
- HQobiilBlkDWRangDoSymU5GYF/ImbnHFCC5ccFlxgXXGBdcY/y/9xqiK5A3r9OqY3jtung+
- RaFVqbW6+BhF1Gm1Cc3+uw67ZewBmnx1wowwh+RuEv2yoAgpo0rWpqrNCDhKLpNsnvSPkEqi
- ValpvOb0cY0ujteakS9Hy70lZxfZjkhxjCqJP8XzCbxmfiriXHz0qGhTpf6xLHuP/ZZcEZi4
- 0l4SOp15uXeAoxWG372dBn84pkg/6rXb/jQsuEWeV74yY/Gn9A8juYl+VVmKkVHdGVl4wMAO
- jyFDeEtHT1rpXc1a893P0ba44ahNVY3rM04Eq62HdMF7H3lEin8O9O9fnniwYFe026rsXOtF
- c25+SJi3nNaeVK1bQ2m0qn9iGAzTcwMAAA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFvrMIsWRmVeSWpSXmKPExsVy+t/xe7p3dPRjDfZdlbTYOGM9q8X1L89Z
- LeYfOcdq0f/4NbPF+fMb2C3ONr1ht9j0+BqrxeVdc9gsPvceYbSYcX4fk8XaI3fZLZZev8hk
- cbtxBZvFmx9nmSxa9x5ht/h3bSOLxeYHx9gcBD3WzFvD6LFpVSebx+Yl9R59W1Yxehy/sZ3J
- 4/MmuQC2KD2bovzSklSFjPziElulaEMLIz1DSws9IxNLPUNj81grI1MlfTublNSczLLUIn27
- BL2MTZMnsxRsFqm4dNS3gXGnQBcjJ4eEgInEl6ZHzF2MXBxCAksZJS7uecUKkZCWaDy9mgnC
- Fpb4c62LDaLoNaPEs77zYEXCAh4Sx688ZwOxRQQ0JGb+vcIIUsQscJVF4vzGOWAJIYE2Jon3
- E1RBbDYBc4lH28+ATeUVcJPYuPU0M4jNIqAq0dB3B6xeVCBC4vCOWYwQNYISJ2c+YQGxOQXs
- Jba9uA0WZxZQl/gz7xIzhC0ucevJfCYIW16ieets5gmMQrOQtM9C0jILScssJC0LGFlWMYqk
- lhbnpucWG+oVJ+YWl+al6yXn525iBEb4tmM/N+9gvLQx+BCjAAejEg/vDSX9WCHWxLLiytxD
- jBIczEoivLZftWOFeFMSK6tSi/Lji0pzUosPMZoCPTeRWUo0OR+YfPJK4g1NDc0tLA3Njc2N
- zSyUxHk7BA7GCAmkJ5akZqemFqQWwfQxcXBKNTAWVIhl16SXv1+4ws8/RNiDp2/fGY7bfGKx
- VhflZj3kUJ4T3VFYe6h+5blAEdO8jeEhBRfVl/2PiH/Im7raZlPN5RknueN0W68ceBrZaSMY
- OEdwysLIwoc22kf7ctPa+5XuJlp0JpsIaHnePeYyS/xr86cpot63mOO6/u1cr7PU6+uqJr9t
- O5VYijMSDbWYi4oTAS3AVUMGAwAA
-X-CMS-MailID: 20190717141244eucas1p2f2a29627d97d942a7afad36f794a5190
+X-Brightmail-Tracker: H4sIAAAAAAAAA02Se0hTURzHPbv37l5Hq+PU/JVhMRBMUSuiTk8KLG4PwqCiB6IrL1o+2Zxm
+ QZmllmlqD3RLpqWVmJaPUrPSsuUIX4gyHxUNp1mWUTrBIiznNfK/z/n9Pr9zfl84HKX4xCzm
+ jkfHCepoVaRSKqNrmn+2+4b4+getyH69gVTmPWRIj22YIQXGdoZkWb9QpKOjgiVtyV9ZUmU1
+ M6SrPl9KxjONiOR1NEhIufE9S+70dErI23MlUvJ1sk1CUp4bWTJlrqRJ5QRPqi3N0i0KvsxQ
+ hviq0ktS/p35mZSvLj7LX3lUinhTb62EH6/yCGQPyzaGCpHH4wW1/+YQWfhor46OTXM9ef7J
+ BJuEfuB05MgBXg1ZDzKQnRW4BMHHbI90JJtmG4LLTROs2BhH8PvDmn8DxW0GRpTuIdCPdM8e
+ RhGU97yU2i1nzIOpe3iaOc4Fe8PnPsHuUPgnDRVdlTO3SvFaGKhtldhZjrdDkjllZpbGnpBb
+ NDzjuOKDMGZ5xYiOE7zRDdJ2dsTroCHXPMMUdoP+wQKJyEuhdjSfsj8GOIeDX521tLh2ADR+
+ n2JEdoYR0yNW5CXQci1j1kmAoVtXWHH4AgJL2o/ZxgZ4Zepk7GkovBwe1vuL5a1w9eZdZC8D
+ ng+9o07iDvPhak0uJZblcDFVIdq+YPjTOruBO6T/ecBkI6V+TjL9nDT6OWn0/98tRHQpchO0
+ mqgwQbMqWkjw06iiNNroML9jMVFVaPr/tUyZbHWo/vfRJoQ5pJwnT1rmH6RgVPGaxKgmBByl
+ dJFvmvAJUshDVYmnBHVMsFobKWiakDtHK93kpx0sRxQ4TBUnRAhCrKD+15VwjouT0IH+Hfm7
+ 87rPb9OWmZ569w/lLpF5ZmSl9oUsHNy1z7D3cXq1S841S/KhCssRsHX0e714ur5v8nHhWmve
+ 9W0D3TbvnbrN3wTdyNIYh5xS3aaA/daFjXFOEdqaujNxCRLh9JexE7FjYUqj833rnswS/aJT
+ 45NeJTKXRcFFqT43FtxuDlTSmnDVSm9KrVH9BaPPjJ97AwAA
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFvrDIsWRmVeSWpSXmKPExsVy+t/xu7oJuvqxBo9WSVlsnLGe1eL6l+es
+ FvOPnGO16H/8mtni/PkN7BZnm96wW2x6fI3V4vKuOWwWn3uPMFrMOL+PyWLtkbvsFkuvX2Sy
+ uN24gs3izY+zTBate4+wW/y7tpHFYuNXD4vND46xOQh5rJm3htFj06pONo871/aweWxeUu/R
+ t2UVo8fxG9uZPD5vkgtgj9KzKcovLUlVyMgvLrFVija0MNIztLTQMzKx1DM0No+1MjJV0rez
+ SUnNySxLLdK3S9DLeHtjJktBu2hF886v7A2MHwW6GDk5JARMJJacnccKYgsJLGWU2PhNCCIu
+ LdF4ejUThC0s8edaF1sXIxdQzWtGieW/Z4I1CAt4SBy/8hwowcEhIqAl8fJmKkgNs8BvFon9
+ C89DNTQwSbzcNoEZpIFNwFzi0fYzYFN5BdwkGq61soHYLAKqEtMXP2cHsUUFIiQO75jFCFEj
+ KHFy5hMWEJtTwFJi3/RrYDazgLrEn3mXmCFscYlbT+YzQdjyEtvfzmGewCg0C0n7LCQts5C0
+ zELSsoCRZRWjSGppcW56brGRXnFibnFpXrpecn7uJkZgzG879nPLDsaud8GHGAU4GJV4eG8o
+ 6ccKsSaWFVfmHmKU4GBWEuG1/aodK8SbklhZlVqUH19UmpNafIjRFOi5icxSosn5wHSUVxJv
+ aGpobmFpaG5sbmxmoSTO2yFwMEZIID2xJDU7NbUgtQimj4mDU6qBcZbPs/c/3HJa8j3vOPm+
+ No7be7T93LkuXlutTqO+XhMmlo47c6+lf+x6U2OZaXlIt3uKlKnFEr5Zl2qye1NWXTL/GBhT
+ FW/WKTdTZLXVydm3D++wWbc+hutk8fT5PxY09LhcWFh8+X5iQFyXrI16oI5B8sq3bELLbD+5
+ vZzQpRe5mVv15L2pSizFGYmGWsxFxYkAmjqHig8DAAA=
+X-CMS-MailID: 20190717141456eucas1p188c4893c75ce04a9c1c10d41ecd9eef5
 X-Msg-Generator: CA
 X-RootMTR: 20190715120430eucas1p19dddcc93756e6a110d3476229f9428b3
 X-EPHeader: CA
@@ -108,17 +108,17 @@ X-CMS-RootMailID: 20190715120430eucas1p19dddcc93756e6a110d3476229f9428b3
 References: <20190715120416.3561-1-k.konieczny@partner.samsung.com>
  <CGME20190715120430eucas1p19dddcc93756e6a110d3476229f9428b3@eucas1p1.samsung.com>
  <20190715120416.3561-2-k.konieczny@partner.samsung.com>
- <9acc7dd0-614b-ccd3-a485-eeca3dab494b@samsung.com>
+ <20190716100539.4uqelbxqz7bmtmea@vireshk-i7>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_071251_898809_2DE0DAFD 
-X-CRM114-Status: GOOD (  24.78  )
+X-CRM114-CacheID: sfid-20190717_071500_189964_3273B87E 
+X-CRM114-Status: GOOD (  24.92  )
 X-Spam-Score: -5.1 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.11 listed in list.dnswl.org]
+ high trust [210.118.77.12 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -139,64 +139,110 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, Nishanth Menon <nm@ti.com>,
- linux-samsung-soc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-samsung-soc@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel@lists.infradead.org,
  Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
  Stephen Boyd <sboyd@kernel.org>, Viresh Kumar <vireshk@kernel.org>,
  linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org,
- Krzysztof Kozlowski <krzk@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>,
  Kyungmin Park <kyungmin.park@samsung.com>, Kukjin Kim <kgene@kernel.org>,
  MyungJoo Ham <myungjoo.ham@samsung.com>, devicetree@vger.kernel.org,
  Marek Szyprowski <m.szyprowski@samsung.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMTYuMDcuMjAxOSAwNjowMywgQ2hhbndvbyBDaG9pIHdyb3RlOgo+IEhpIEthbWlsLAo+IAo+
-IE9uIDE5LiA3LiAxNS4g7Jik7ZuEIDk6MDQsIEthbWlsIEtvbmllY3pueSB3cm90ZToKPj4gQWRk
-IGVuYWJsZSByZWd1bGF0b3JzIHRvIGRldl9wbV9vcHBfc2V0X3JlZ3VsYXRvcnMoKSBhbmQgZGlz
-YWJsZQo+PiByZWd1bGF0b3JzIHRvIGRldl9wbV9vcHBfcHV0X3JlZ3VsYXRvcnMoKS4gVGhpcyBw
-cmVwYXJlcyBmb3IKPj4gY29udmVydGluZyBleHlub3MtYnVzIGRldmZyZXEgZHJpdmVyIHRvIHVz
-ZSBkZXZfcG1fb3BwX3NldF9yYXRlKCkuCj4gCj4gSU1ITywgaXQgaXMgbm90IHByb3BlciB0byBt
-ZW50aW9uIHRoZSBzcGVjaWZpYyBkcml2ZXIgbmFtZS4KPiBJZiB5b3UgZXhwbGFpbiB0aGUgcmVh
-c29uIHdoeSBlbmFibGUgdGhlIHJlZ3VsYXRvciBiZWZvcmUgdXNpbmcgaXQsCj4gaXQgaXMgZW5v
-dWdoIGRlc2NyaXB0aW9uLgo+IAo+Pgo+PiBTaWduZWQtb2ZmLWJ5OiBLYW1pbCBLb25pZWN6bnkg
-PGsua29uaWVjem55QHBhcnRuZXIuc2Ftc3VuZy5jb20+Cj4+IC0tCj4+IENoYW5nZXMgaW4gdjI6
-Cj4+Cj4+IC0gbW92ZSByZWd1bGF0b3IgZW5hYmxlIGFuZCBkaXNhYmxlIGludG8gbG9vcAo+Pgo+
-PiAtLS0KPj4gIGRyaXZlcnMvb3BwL2NvcmUuYyB8IDE4ICsrKysrKysrKysrKysrKy0tLQo+PiAg
-MSBmaWxlIGNoYW5nZWQsIDE1IGluc2VydGlvbnMoKyksIDMgZGVsZXRpb25zKC0pCj4+Cj4+IGRp
-ZmYgLS1naXQgYS9kcml2ZXJzL29wcC9jb3JlLmMgYi9kcml2ZXJzL29wcC9jb3JlLmMKPj4gaW5k
-ZXggMGU3NzAzZmU3MzNmLi4wNjljNWNmODgyN2UgMTAwNjQ0Cj4+IC0tLSBhL2RyaXZlcnMvb3Bw
-L2NvcmUuYwo+PiArKysgYi9kcml2ZXJzL29wcC9jb3JlLmMKPj4gQEAgLTE1NzAsNiArMTU3MCwx
-MCBAQCBzdHJ1Y3Qgb3BwX3RhYmxlICpkZXZfcG1fb3BwX3NldF9yZWd1bGF0b3JzKHN0cnVjdCBk
-ZXZpY2UgKmRldiwKPj4gIAkJCWdvdG8gZnJlZV9yZWd1bGF0b3JzOwo+PiAgCQl9Cj4+ICAKPj4g
-KwkJcmV0ID0gcmVndWxhdG9yX2VuYWJsZShyZWcpOwo+PiArCQlpZiAocmV0IDwgMCkKPj4gKwkJ
-CWdvdG8gZGlzYWJsZTsKPj4gKwo+PiAgCQlvcHBfdGFibGUtPnJlZ3VsYXRvcnNbaV0gPSByZWc7
-Cj4+ICAJfQo+PiAgCj4+IEBAIC0xNTgyLDkgKzE1ODYsMTUgQEAgc3RydWN0IG9wcF90YWJsZSAq
-ZGV2X3BtX29wcF9zZXRfcmVndWxhdG9ycyhzdHJ1Y3QgZGV2aWNlICpkZXYsCj4+ICAKPj4gIAly
-ZXR1cm4gb3BwX3RhYmxlOwo+PiAgCj4+ICtkaXNhYmxlOgo+PiArCXJlZ3VsYXRvcl9wdXQocmVn
-KTsKPj4gKwktLWk7Cj4+ICsKPj4gIGZyZWVfcmVndWxhdG9yczoKPj4gLQl3aGlsZSAoaSAhPSAw
-KQo+PiAtCQlyZWd1bGF0b3JfcHV0KG9wcF90YWJsZS0+cmVndWxhdG9yc1stLWldKTsKPj4gKwlm
-b3IgKDsgaSA+PSAwOyAtLWkpIHsKPj4gKwkJcmVndWxhdG9yX2Rpc2FibGUob3BwX3RhYmxlLT5y
-ZWd1bGF0b3JzW2ldKTsKPj4gKwkJcmVndWxhdG9yX3B1dChvcHBfdGFibGUtPnJlZ3VsYXRvcnNb
-aV0pOwo+PiArCX0KPj4gIAo+PiAgCWtmcmVlKG9wcF90YWJsZS0+cmVndWxhdG9ycyk7Cj4+ICAJ
-b3BwX3RhYmxlLT5yZWd1bGF0b3JzID0gTlVMTDsKPj4gQEAgLTE2MTAsOCArMTYyMCwxMCBAQCB2
-b2lkIGRldl9wbV9vcHBfcHV0X3JlZ3VsYXRvcnMoc3RydWN0IG9wcF90YWJsZSAqb3BwX3RhYmxl
-KQo+PiAgCS8qIE1ha2Ugc3VyZSB0aGVyZSBhcmUgbm8gY29uY3VycmVudCByZWFkZXJzIHdoaWxl
-IHVwZGF0aW5nIG9wcF90YWJsZSAqLwo+PiAgCVdBUk5fT04oIWxpc3RfZW1wdHkoJm9wcF90YWJs
-ZS0+b3BwX2xpc3QpKTsKPj4gIAo+PiAtCWZvciAoaSA9IG9wcF90YWJsZS0+cmVndWxhdG9yX2Nv
-dW50IC0gMTsgaSA+PSAwOyBpLS0pCj4+ICsJZm9yIChpID0gb3BwX3RhYmxlLT5yZWd1bGF0b3Jf
-Y291bnQgLSAxOyBpID49IDA7IGktLSkgewo+PiArCQlyZWd1bGF0b3JfZGlzYWJsZShvcHBfdGFi
-bGUtPnJlZ3VsYXRvcnNbaV0pOwo+PiAgCQlyZWd1bGF0b3JfcHV0KG9wcF90YWJsZS0+cmVndWxh
-dG9yc1tpXSk7Cj4+ICsJfQo+PiAgCj4+ICAJX2ZyZWVfc2V0X29wcF9kYXRhKG9wcF90YWJsZSk7
-Cj4+ICAKPj4KPiAKPiBJIGFncmVlIHRvIGVuYWJsZSB0aGUgcmVndWxhdG9yIGJlZm9yZSB1c2lu
-ZyBpdC4KPiBUaGUgYm9vdGxvYWRlciBtaWdodCBub3QgZW5hYmxlIHRoZSByZWd1bGF0b3JzCj4g
-YW5kIHRoZSBrZXJuZWwgbmVlZCB0byBlbmFibGUgcmVndWxhdG9yIGluIG9yZGVyIHRvIGluY3Jl
-YXNlCj4gdGhlIHJlZmVyZW5jZSBjb3VudCBleHBsaWNpdGx5IGV2ZW50IGlmIGJvb3Rsb2FkZXIg
-ZW5hYmxlcyBpdC4KPiAKPiBSZXZpZXdlZC1ieTogQ2hhbndvbyBDaG9pIDxjdzAwLmNob2lAc2Ft
-c3VuZy5jb20+CgpUaGFuayB5b3UsIEkgd2lsbCBjaGFuZ2UgY29tbWl0IGRlc2NyaXB0aW9uIGFu
-ZCBzZW5kIHYzLgoKLS0gCkJlc3QgcmVnYXJkcywKS2FtaWwgS29uaWVjem55ClNhbXN1bmcgUiZE
-IEluc3RpdHV0ZSBQb2xhbmQKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
-QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
-aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On 16.07.2019 12:05, Viresh Kumar wrote:
+> On 15-07-19, 14:04, Kamil Konieczny wrote:
+>> Add enable regulators to dev_pm_opp_set_regulators() and disable
+>> regulators to dev_pm_opp_put_regulators(). This prepares for
+>> converting exynos-bus devfreq driver to use dev_pm_opp_set_rate().
+>>
+>> Signed-off-by: Kamil Konieczny <k.konieczny@partner.samsung.com>
+>> --
+>> Changes in v2:
+>>
+>> - move regulator enable and disable into loop
+>>
+>> ---
+>>  drivers/opp/core.c | 18 +++++++++++++++---
+>>  1 file changed, 15 insertions(+), 3 deletions(-)
+>>
+>> diff --git a/drivers/opp/core.c b/drivers/opp/core.c
+>> index 0e7703fe733f..069c5cf8827e 100644
+>> --- a/drivers/opp/core.c
+>> +++ b/drivers/opp/core.c
+>> @@ -1570,6 +1570,10 @@ struct opp_table *dev_pm_opp_set_regulators(struct device *dev,
+>>  			goto free_regulators;
+>>  		}
+>>  
+>> +		ret = regulator_enable(reg);
+>> +		if (ret < 0)
+>> +			goto disable;
+> 
+> The name of this label is logically incorrect because we won't disable
+> the regulator from there but put it. Over that, I would rather prefer
+> to remove the label and add regulator_put() here itself.
+
+I will change this and following according to your suggestions and will send v3.
+
+>> +
+>>  		opp_table->regulators[i] = reg;
+>>  	}
+>>  
+>> @@ -1582,9 +1586,15 @@ struct opp_table *dev_pm_opp_set_regulators(struct device *dev,
+>>  
+>>  	return opp_table;
+>>  
+>> +disable:
+>> +	regulator_put(reg);
+>> +	--i;
+>> +
+>>  free_regulators:
+>> -	while (i != 0)
+>> -		regulator_put(opp_table->regulators[--i]);
+>> +	for (; i >= 0; --i) {
+>> +		regulator_disable(opp_table->regulators[i]);
+>> +		regulator_put(opp_table->regulators[i]);
+> 
+> This is incorrect as this will now try to put/disable the regulator
+> which we failed to acquire. As --i happens only after the loop has run
+> once. You can rather do:
+> 
+> 	while (i--) {
+> 		regulator_disable(opp_table->regulators[i]);
+> 		regulator_put(opp_table->regulators[i]);
+>         }
+> 
+> 
+>> +	}
+>>  
+>>  	kfree(opp_table->regulators);
+>>  	opp_table->regulators = NULL;
+>> @@ -1610,8 +1620,10 @@ void dev_pm_opp_put_regulators(struct opp_table *opp_table)
+>>  	/* Make sure there are no concurrent readers while updating opp_table */
+>>  	WARN_ON(!list_empty(&opp_table->opp_list));
+>>  
+>> -	for (i = opp_table->regulator_count - 1; i >= 0; i--)
+>> +	for (i = opp_table->regulator_count - 1; i >= 0; i--) {
+>> +		regulator_disable(opp_table->regulators[i]);
+>>  		regulator_put(opp_table->regulators[i]);
+>> +	}
+>>  
+>>  	_free_set_opp_data(opp_table);
+>>  
+>> -- 
+>> 2.22.0
+> 
+
+-- 
+Best regards,
+Kamil Konieczny
+Samsung R&D Institute Poland
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
