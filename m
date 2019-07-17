@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1D906C1B6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 21:51:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B7BE6C1C0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 21:53:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,29 +11,29 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=cbx0QRID+SPvOrjWC/GiM1LdrwmpooheiLD+1z9LsD8=; b=KC8sRmy8xUlnYOvOg51ZeqC0Xy
-	q/j7yNbPibvtetDWTi78zOU2dtLqbpAKtWRhTNxAieXGcGtVrV6YJW9gfR8Nopml5gOMHLnKTvaFj
-	mIkH5uAgg7m3suEPDugaOwUQBHce5HDffea+I43zIQ/RmNQU7hAqhML3FzAfqyYJ/aKk+lA2iLbdt
-	kgscUE4sNSmEHftIfpu7p4DTmNKVQKXuo6jfU3vZbS9WD/udy+7CI1o6PcakuaWhdmutRGMeqi3wY
-	R2j9FYun1M2yZd4d63bbRtH/dtYtKrazyScxkdFRNmmnxycOJsFyFrI5ilnjnzmTWNVmaphqBZKKX
-	XYRvbDFA==;
+	bh=AwnYS5wQ7vVq3D/R+FKcr9mNdKYtMOHrBiA0t0GUZzc=; b=hYP6Co0AdWGG8uJgNvotz4lhUb
+	b34yE71mwll6L5XT1PFwNef8DgdzI2tl0O9wrfBE63bMS8aBCwVMMqU0yFFP5EcdXyPxiDRw7pmo6
+	FSPr+mGze8JIxS/tQWHa0ts+1qQOSoQoIB8Ka9ka/ZBzPYv29TH1iz4J69Ki9FTASoh5VYJapdSlX
+	AR8XgpE3Ma3bs62S8IHwQRlj/3smOK+ZjPPBttyAc/byX9H7ZeP3wOIGbQXvgXlclrmODdb07clhA
+	bNd9HA+glyJPl6lNHneHHq0QgvmtVveFjmq7Px5m5nYITGoKGTuNezJJvrBqA/CsNFW7X0tUMBQaB
+	R1P1lQ/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnpxH-0002x6-Qw; Wed, 17 Jul 2019 19:51:11 +0000
+	id 1hnpzh-0004ds-2I; Wed, 17 Jul 2019 19:53:41 +0000
 Received: from mout.gmx.net ([212.227.17.22])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnpx2-0002tI-Sk; Wed, 17 Jul 2019 19:50:58 +0000
+ id 1hnpx3-0002tK-R0; Wed, 17 Jul 2019 19:51:03 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
  s=badeba3b8450; t=1563393043;
- bh=bMN5HaH7xs5OZI3fgydBkJ1gPM3MHOTFQvPIB1gYS7c=;
+ bh=1E1WYZ9UNXig/XjZbrNwH2B/Uz0L71XIHibc51jpswM=;
  h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=ObADk1ltN1b9eAZFJ/dvTcdwnghiCQ0i9PA0gj4ybp0QO7yLlHX3u2uc59Zm0LWCF
- wODuRZqXZ7UgrztIprbNAJXfTBcxj32HQcD5GJYZvipazdnG7Tlq4ORH30CRCGawgT
- OBinZnXcMijsdPEh1dmj7MOrQHSDwzI19sWf417w=
+ b=ay8CZ/2quxkRrjGfJkjdNVC6PtL5emHaXbpeaZJT6EPxrNRQcH6rM1j0RBBFEkmN3
+ kVYo3L/IKNMxv2rITpsbrQgYoZUrUBAVzCCjNV/+ea0BNnomNqLYYntELQP2hYb44x
+ u2VOFWGL2MBHVTWdfOKk+RthHCF4LF0yPOjPSN28=
 X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
 Received: from localhost.localdomain ([37.4.249.103]) by mail.gmx.com
  (mrgmx101 [212.227.17.168]) with ESMTPSA (Nemesis) id
- 0MZxch-1i1EVB3LCh-00LlwW; Wed, 17 Jul 2019 21:50:42 +0200
+ 0LhB9P-1iGnNk1k4F-00oYFU; Wed, 17 Jul 2019 21:50:43 +0200
 From: Stefan Wahren <wahrenst@gmx.net>
 To: Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
  Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
@@ -43,37 +43,37 @@ To: Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
  Michael Turquette <mturquette@baylibre.com>,
  Stephen Boyd <sboyd@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
  Adrian Hunter <adrian.hunter@intel.com>, Mark Brown <broonie@kernel.org>
-Subject: [PATCH RFC 05/18] ARM: dts: bcm283x: Define memory at board level
-Date: Wed, 17 Jul 2019 21:50:13 +0200
-Message-Id: <1563393026-17118-6-git-send-email-wahrenst@gmx.net>
+Subject: [PATCH RFC 06/18] dt-bindings: bcm2835-cprman: Add bcm2838 support
+Date: Wed, 17 Jul 2019 21:50:14 +0200
+Message-Id: <1563393026-17118-7-git-send-email-wahrenst@gmx.net>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1563393026-17118-1-git-send-email-wahrenst@gmx.net>
 References: <1563393026-17118-1-git-send-email-wahrenst@gmx.net>
-X-Provags-ID: V03:K1:+qUlbWv36YNvHIARxY8HjLdDd7OcImGMezScPmhJq9+C42OBSZS
- oSzdMEKkwp0h37hik0ttB5RDWntsuG7X/3Dqu31vFTRi2wY7mt3AEMBS+njOoZnxsqIwwwl
- zK4MFx5U6c2KtItuLklpEKp6iV8JquGYPGaqa/shqagci8tWLc2z74O1Hmql6jd2AtC4rE+
- A5cnvENUeT3ldFCHdDVsg==
+X-Provags-ID: V03:K1:otG1bhmBIpT4ePgWexdXOh6jWbIk6hLbeRBVV7g/EvQ0SPzgNmm
+ pB2ELjR445W2htcYtD7+pIRijISaun31bKLNZRZlY/G4h+QQupCDKBxhF9XRwAb8NLKFrdX
+ acgvhavysceFMzQDmcg5pNJki2PO1G1PrUyA467p8O+7fZRmqe5Rxk1JWSxut+SGeoa6z0T
+ 65kVq9Fs5CQubt5W/u8/A==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:UBGlykYIrRQ=:hwtxnuQFCUsIlxGIGJnNPv
- PS0CAZAqf/qCM883EeF/jNLcXOL4XMNtntkYy7Dbh3T1uLuDCHu+b66N4tSSpoP1LV8sIyjF+
- dRGhyTAa+RnTFLBjw8ZisM7pwy442D5FKcajIwP+YJoWK4XhyDdWAE++DUpVrM+te6AOBOtUc
- zZW10nFWmzlZiWyPHZdLpDE3s+nffs57+O4IIj7O61n9wZWVIMiX9ZyQpNUfzgsZd0Go/jf89
- yvh+rLVbVa4hemP6kwiLOqhZhDzBmVivi9JAGKPQeOOAxCSQMA7bfI3KNqgV67u1HZ0cLxn+A
- Sj5w35Zh094VTdJdU+mECb+LtyzUo70B0hPh8MnCSpa6pVXuch2q17PkfAfzQyYCVhS+tSod9
- 75BfHoM8v6bmEj+qHGqTRSmTrRcqP1baDhIUsJ9Jrm+HSBsEm02nok9D9D8GEPy0DrQMldRmI
- cRgULSXBvCgr6BiZMel3/oHgMJvlhYuRUBrAtoG4rlqhBMl6NnWXd64F+FD2H6QF8Tx5pE6/b
- SPnHLPkdl474yytm2ExwIDMnc39fmWnN7J88At+xxTxpsfekVkdcJR9Ko853r6V9OMj+Nhj//
- SMcR5+Tmbn6PNw9gjH0YFYu90UIdCjAl7BIRzGwO0/R0pOutSCM3ggHuqWHTCSI23ZZFCQ6pg
- vz7JeAXOfgB3iR3ZyEy1UMPtDpn0D2Boyi6grxH2mw72WbaWjd9kQrA3zk/16bnBN85to9pNa
- QKFYzAyOigjq1jxvbEgi/Oz2UfPwPFqwUtVOMPRrcGNAj2My3QZnbicuB5z6L45rOeqxIIjBq
- eBp/EuroSUYuijo9/GO5LQ8q7fFh0pZM5xRwE7SpbYJGdm4ft6R9M1iE7Wuf3zNcKbL/42WRQ
- 2uuizn9n5meXF3NllHRzHWOUlVQ0I9Yta+YiGF5AqpYlC7W4/j+g21m18Lz0phjZFHiHU7H+X
- rgwE39tggipRbX4Y3p35QK2inUm6PrOFY+L8aupro9GN/qgrkaHjqSMHCeSTbfQvS2f/FZMob
- rjQzPcEbC5SEY5a6rdiFduzDkwco/MQnS82/jrzLjLgTu5QnN/Tt2EJ32MjTxmb5I0T6Am6Rm
- 7ljcWM+9vygPpw=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:phn0F9BrgZY=:TFY2ntK3hwWEUmvEUuK8yL
+ JYIYMoBB6jorvtcS6K8kh1Up38KTe5lxMQsaSveZX4E9gY8m+/5EO/ttJsZwgIDZojvVvKFdw
+ 0sZnRnAKqfCpKwS0rytmEBr3jU87yNG6jx8P1/uiSxhQvgHw+Be55k9ylt0DpJT8vZoN22aoK
+ cpIVXxQEWEwOpWW+Egb7jMF63m/waXl8pTVVUV5EJZyOAKROCSJTUArLUslRYIUVKpHnFtwr7
+ ehNpDyB29trql1tLd/cAXgjtKMCMvq33A15MyR7U0k0pVwc3lBkrokfp20RPmNNbdFVUnO4JT
+ AQO4YwrY3Avrs2njcymQr8JWfxsQsLWCs3wQJST6nBYOCrYp/K9KpEk5bU1PlNsF963w4x1Me
+ HwRHHwanOJGWSUNUN268mOvx841H5Px9CO/npuDsSKQsuu4OguwcBLkU/b9rX8dgDPUfu8MQu
+ aKl8ONUNXhWKsArOT0pvohKMssqFOBSuuDNPsUBujTkT72oM/KN9BpFiKeL8/EwQCTpPlEoh8
+ 7qiZbj6PVGImV60VKgb9Ys/eV5qKM7ZKsN1hLOvV+ZBrT1GJ0yxoGuLwFRZPJFRykE72a/zXR
+ BgAyYJUxf5gQsftL9enXkBz2KGbal02dJO5l5f1Ye1YgKOLgEcxgeHiPyTdDhcm9gTW0O+Ngu
+ ehbW+fdZGuzIEnpz50A2vIdFlp+UK4Kx4EIwHl1j9ETKM4drVYpM+OEpaPZqO483XVTXqIe8n
+ Az/maY7h7EWdiqkBpZV3AQF2/pKnmJOq9Nv8lJC0pD1OOKqwj/1Rs0cFSAfkfx1OXcCdcg9Ar
+ gWVaaHdIxiFzySnKGVmgjJ9SGVNuksNZb+0QrA6aQJh2HJkKoNMNOgogemPxumBRtOfCy39xE
+ VMRTUUBEujaLjuFFUNcQgjbl8yXO4XzxykMueMvkTLO0B+Fl+GAHoM2hykTo1b/4OzsJAIueT
+ 5gVguBWXqrG1Kr7nmQ3pIuIMNEYDexv8C/GNawW25BgQNwnxYpXKBdAvzjzpbq26rtTmhPbUP
+ 610ubaBOVX0KqGJfhpi/irWSYDLllV4NSKIOwmzAXJ2m6e5IqJ4P/7v0MdWI5SnBYe1ilMq9U
+ yCF/bHgVNxeHwg=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_125057_236314_CC3B6114 
-X-CRM114-Status: GOOD (  13.94  )
+X-CRM114-CacheID: sfid-20190717_125058_164260_502C4E99 
+X-CRM114-Status: GOOD (  12.79  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -111,232 +111,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now with the varity of several RPi boards, the memory should be defined
-at board level. This step gives us the chance to fix the memory size
-of the RPi 1 B+, Zero (incl. W) and Compute Module 1.
+The new BCM2838 supports an additional clock for the emmc2 block.
+So we need an additional compatible.
 
 Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
 ---
- arch/arm/boot/dts/bcm2835-rpi-a-plus.dts   | 5 +++++
- arch/arm/boot/dts/bcm2835-rpi-a.dts        | 5 +++++
- arch/arm/boot/dts/bcm2835-rpi-b-plus.dts   | 5 +++++
- arch/arm/boot/dts/bcm2835-rpi-b-rev2.dts   | 5 +++++
- arch/arm/boot/dts/bcm2835-rpi-b.dts        | 5 +++++
- arch/arm/boot/dts/bcm2835-rpi-cm1.dtsi     | 5 +++++
- arch/arm/boot/dts/bcm2835-rpi-zero-w.dts   | 5 +++++
- arch/arm/boot/dts/bcm2835-rpi-zero.dts     | 5 +++++
- arch/arm/boot/dts/bcm2835-rpi.dtsi         | 5 -----
- arch/arm/boot/dts/bcm2836-rpi-2-b.dts      | 1 +
- arch/arm/boot/dts/bcm2837-rpi-3-a-plus.dts | 1 +
- arch/arm/boot/dts/bcm2837-rpi-3-b-plus.dts | 1 +
- arch/arm/boot/dts/bcm2837-rpi-3-b.dts      | 1 +
- arch/arm/boot/dts/bcm2837-rpi-cm3.dtsi     | 1 +
- 14 files changed, 45 insertions(+), 5 deletions(-)
+ Documentation/devicetree/bindings/clock/brcm,bcm2835-cprman.txt | 4 +++-
+ include/dt-bindings/clock/bcm2835.h                             | 2 ++
+ 2 files changed, 5 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm/boot/dts/bcm2835-rpi-a-plus.dts b/arch/arm/boot/dts/bcm2835-rpi-a-plus.dts
-index cb3f08d..5b42e9a 100644
---- a/arch/arm/boot/dts/bcm2835-rpi-a-plus.dts
-+++ b/arch/arm/boot/dts/bcm2835-rpi-a-plus.dts
-@@ -8,6 +8,11 @@
- 	compatible = "raspberrypi,model-a-plus", "brcm,bcm2835";
- 	model = "Raspberry Pi Model A+";
+diff --git a/Documentation/devicetree/bindings/clock/brcm,bcm2835-cprman.txt b/Documentation/devicetree/bindings/clock/brcm,bcm2835-cprman.txt
+index dd906db..e395795 100644
+--- a/Documentation/devicetree/bindings/clock/brcm,bcm2835-cprman.txt
++++ b/Documentation/devicetree/bindings/clock/brcm,bcm2835-cprman.txt
+@@ -12,7 +12,9 @@ clock generators, but a few (like the ARM or HDMI) will source from
+ the PLL dividers directly.
 
-+	memory@0 {
-+		device_type = "memory";
-+		reg = <0 0x10000000>;
-+	};
+ Required properties:
+-- compatible:	Should be "brcm,bcm2835-cprman"
++- compatible:	should be one of the following,
++	"brcm,bcm2835-cprman"
++	"brcm,bcm2838-cprman"
+ - #clock-cells:	Should be <1>. The permitted clock-specifier values can be
+ 		  found in include/dt-bindings/clock/bcm2835.h
+ - reg:		Specifies base physical address and size of the registers
+diff --git a/include/dt-bindings/clock/bcm2835.h b/include/dt-bindings/clock/bcm2835.h
+index 2cec01f..d73acd8 100644
+--- a/include/dt-bindings/clock/bcm2835.h
++++ b/include/dt-bindings/clock/bcm2835.h
+@@ -58,3 +58,5 @@
+ #define BCM2835_CLOCK_DSI1E		48
+ #define BCM2835_CLOCK_DSI0P		49
+ #define BCM2835_CLOCK_DSI1P		50
 +
- 	leds {
- 		act {
- 			gpios = <&gpio 47 GPIO_ACTIVE_HIGH>;
-diff --git a/arch/arm/boot/dts/bcm2835-rpi-a.dts b/arch/arm/boot/dts/bcm2835-rpi-a.dts
-index 2d167d9..b716214 100644
---- a/arch/arm/boot/dts/bcm2835-rpi-a.dts
-+++ b/arch/arm/boot/dts/bcm2835-rpi-a.dts
-@@ -8,6 +8,11 @@
- 	compatible = "raspberrypi,model-a", "brcm,bcm2835";
- 	model = "Raspberry Pi Model A";
-
-+	memory@0 {
-+		device_type = "memory";
-+		reg = <0 0x10000000>;
-+	};
-+
- 	leds {
- 		act {
- 			gpios = <&gpio 16 GPIO_ACTIVE_LOW>;
-diff --git a/arch/arm/boot/dts/bcm2835-rpi-b-plus.dts b/arch/arm/boot/dts/bcm2835-rpi-b-plus.dts
-index 83a3a60..3318082 100644
---- a/arch/arm/boot/dts/bcm2835-rpi-b-plus.dts
-+++ b/arch/arm/boot/dts/bcm2835-rpi-b-plus.dts
-@@ -9,6 +9,11 @@
- 	compatible = "raspberrypi,model-b-plus", "brcm,bcm2835";
- 	model = "Raspberry Pi Model B+";
-
-+	memory@0 {
-+		device_type = "memory";
-+		reg = <0 0x20000000>;
-+	};
-+
- 	leds {
- 		act {
- 			gpios = <&gpio 47 GPIO_ACTIVE_HIGH>;
-diff --git a/arch/arm/boot/dts/bcm2835-rpi-b-rev2.dts b/arch/arm/boot/dts/bcm2835-rpi-b-rev2.dts
-index b6b4fea..97d7eb5 100644
---- a/arch/arm/boot/dts/bcm2835-rpi-b-rev2.dts
-+++ b/arch/arm/boot/dts/bcm2835-rpi-b-rev2.dts
-@@ -9,6 +9,11 @@
- 	compatible = "raspberrypi,model-b-rev2", "brcm,bcm2835";
- 	model = "Raspberry Pi Model B rev2";
-
-+	memory@0 {
-+		device_type = "memory";
-+		reg = <0 0x10000000>;
-+	};
-+
- 	leds {
- 		act {
- 			gpios = <&gpio 16 GPIO_ACTIVE_LOW>;
-diff --git a/arch/arm/boot/dts/bcm2835-rpi-b.dts b/arch/arm/boot/dts/bcm2835-rpi-b.dts
-index b5782fa..37e02a1 100644
---- a/arch/arm/boot/dts/bcm2835-rpi-b.dts
-+++ b/arch/arm/boot/dts/bcm2835-rpi-b.dts
-@@ -9,6 +9,11 @@
- 	compatible = "raspberrypi,model-b", "brcm,bcm2835";
- 	model = "Raspberry Pi Model B";
-
-+	memory@0 {
-+		device_type = "memory";
-+		reg = <0 0x10000000>;
-+	};
-+
- 	leds {
- 		act {
- 			gpios = <&gpio 16 GPIO_ACTIVE_LOW>;
-diff --git a/arch/arm/boot/dts/bcm2835-rpi-cm1.dtsi b/arch/arm/boot/dts/bcm2835-rpi-cm1.dtsi
-index ef22c2d..58059c2 100644
---- a/arch/arm/boot/dts/bcm2835-rpi-cm1.dtsi
-+++ b/arch/arm/boot/dts/bcm2835-rpi-cm1.dtsi
-@@ -10,6 +10,11 @@
- 		};
- 	};
-
-+	memory@0 {
-+		device_type = "memory";
-+		reg = <0 0x20000000>;
-+	};
-+
- 	reg_3v3: fixed-regulator {
- 		compatible = "regulator-fixed";
- 		regulator-name = "3V3";
-diff --git a/arch/arm/boot/dts/bcm2835-rpi-zero-w.dts b/arch/arm/boot/dts/bcm2835-rpi-zero-w.dts
-index 5ecc403..f38f388 100644
---- a/arch/arm/boot/dts/bcm2835-rpi-zero-w.dts
-+++ b/arch/arm/boot/dts/bcm2835-rpi-zero-w.dts
-@@ -12,6 +12,11 @@
- 	compatible = "raspberrypi,model-zero-w", "brcm,bcm2835";
- 	model = "Raspberry Pi Zero W";
-
-+	memory@0 {
-+		device_type = "memory";
-+		reg = <0 0x20000000>;
-+	};
-+
- 	chosen {
- 		/* 8250 auxiliary UART instead of pl011 */
- 		stdout-path = "serial1:115200n8";
-diff --git a/arch/arm/boot/dts/bcm2835-rpi-zero.dts b/arch/arm/boot/dts/bcm2835-rpi-zero.dts
-index 84c7035..5fd0686 100644
---- a/arch/arm/boot/dts/bcm2835-rpi-zero.dts
-+++ b/arch/arm/boot/dts/bcm2835-rpi-zero.dts
-@@ -12,6 +12,11 @@
- 	compatible = "raspberrypi,model-zero", "brcm,bcm2835";
- 	model = "Raspberry Pi Zero";
-
-+	memory@0 {
-+		device_type = "memory";
-+		reg = <0 0x20000000>;
-+	};
-+
- 	leds {
- 		act {
- 			gpios = <&gpio 47 GPIO_ACTIVE_HIGH>;
-diff --git a/arch/arm/boot/dts/bcm2835-rpi.dtsi b/arch/arm/boot/dts/bcm2835-rpi.dtsi
-index 40bac52e..f5125b7 100644
---- a/arch/arm/boot/dts/bcm2835-rpi.dtsi
-+++ b/arch/arm/boot/dts/bcm2835-rpi.dtsi
-@@ -1,11 +1,6 @@
- #include <dt-bindings/power/raspberrypi-power.h>
-
- / {
--	memory@0 {
--		device_type = "memory";
--		reg = <0 0x10000000>;
--	};
--
- 	leds {
- 		compatible = "gpio-leds";
-
-diff --git a/arch/arm/boot/dts/bcm2836-rpi-2-b.dts b/arch/arm/boot/dts/bcm2836-rpi-2-b.dts
-index f97ec95..6a89999 100644
---- a/arch/arm/boot/dts/bcm2836-rpi-2-b.dts
-+++ b/arch/arm/boot/dts/bcm2836-rpi-2-b.dts
-@@ -10,6 +10,7 @@
- 	model = "Raspberry Pi 2 Model B";
-
- 	memory@0 {
-+		device_type = "memory";
- 		reg = <0 0x40000000>;
- 	};
-
-diff --git a/arch/arm/boot/dts/bcm2837-rpi-3-a-plus.dts b/arch/arm/boot/dts/bcm2837-rpi-3-a-plus.dts
-index 7f4437a..0e29aaa 100644
---- a/arch/arm/boot/dts/bcm2837-rpi-3-a-plus.dts
-+++ b/arch/arm/boot/dts/bcm2837-rpi-3-a-plus.dts
-@@ -14,6 +14,7 @@
- 	};
-
- 	memory@0 {
-+		device_type = "memory";
- 		reg = <0 0x20000000>;
- 	};
-
-diff --git a/arch/arm/boot/dts/bcm2837-rpi-3-b-plus.dts b/arch/arm/boot/dts/bcm2837-rpi-3-b-plus.dts
-index c6fa34c..a1487ae 100644
---- a/arch/arm/boot/dts/bcm2837-rpi-3-b-plus.dts
-+++ b/arch/arm/boot/dts/bcm2837-rpi-3-b-plus.dts
-@@ -15,6 +15,7 @@
- 	};
-
- 	memory@0 {
-+		device_type = "memory";
- 		reg = <0 0x40000000>;
- 	};
-
-diff --git a/arch/arm/boot/dts/bcm2837-rpi-3-b.dts b/arch/arm/boot/dts/bcm2837-rpi-3-b.dts
-index ce71f57..a36bfdb 100644
---- a/arch/arm/boot/dts/bcm2837-rpi-3-b.dts
-+++ b/arch/arm/boot/dts/bcm2837-rpi-3-b.dts
-@@ -15,6 +15,7 @@
- 	};
-
- 	memory@0 {
-+		device_type = "memory";
- 		reg = <0 0x40000000>;
- 	};
-
-diff --git a/arch/arm/boot/dts/bcm2837-rpi-cm3.dtsi b/arch/arm/boot/dts/bcm2837-rpi-cm3.dtsi
-index 81399b2..7c3cb7e 100644
---- a/arch/arm/boot/dts/bcm2837-rpi-cm3.dtsi
-+++ b/arch/arm/boot/dts/bcm2837-rpi-cm3.dtsi
-@@ -5,6 +5,7 @@
-
- / {
- 	memory@0 {
-+		device_type = "memory";
- 		reg = <0 0x40000000>;
- 	};
-
++#define BCM2838_CLOCK_EMMC2		51
 --
 2.7.4
 
