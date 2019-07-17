@@ -2,102 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 07F546C281
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 23:22:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2195F6C29B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 23:30:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eUtG3TM1Zex2YW6MFFY5FbSWi1Y/c8EvwsHUIUbbIU0=; b=KuYvemOHoL7UEI
-	bLvWmazb4Sl4mb+jR+tpxijFw3fLsgpiGd3HogYI3oQRj3Ihkhm0jf/hlBjDXTtZpOCKwfITO9t4g
-	7koQqHq+McEjIcDs/UBcHgjORhOYHFw0qIfpQrAY4SbHiEfkB4/GNEH7bIWNPwUrt+0JKQbf393pi
-	YQcSAIpCb1dShVImndT1dd47N8Q19oT7p9KhVoleFGGdAzhSqjQRYVHptz1MjE2gQB0GsQ0mJdS22
-	Y31ZCYGhUTCEZzoYk0BjHh4UyeNM5TqAcm0hTNQGF6xOWFCai2/S3rc60qJ43fImpybUyM0RaUBLA
-	p86tELs+dAcZAEmXHlHg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gJHjBIdSrQBa3bNkUkgg+xvTa8muJ2YEtxUKAinEiNs=; b=aMA+yA/CkjiOUk
+	ylDJUZPEKxu2ODpOtI94RtmwMzUapgQlv5Zi7Lnm63An/hbvxJZeN3wUAJiK9iUxgvzZLIyq4621M
+	WFyRJGQ6zzZTZMBGAIVOFY5lorcRRWVyDgC4TBQoekqdk8f914vTBv+pwtZ4SET77jiC3rW2rmzxB
+	ISXc962sIrGHv+C+Ot+gL97ONtcI5SVZTDlwgsZDuN8k9aSa2d6INpzEWUU9DT4uTAhbGghHV+CqU
+	bMiZwplLlaRhhe/w1085vK+lnmplnTgDlDamS/u381BVlgMZeiEYtcHEOFCGcOFmSP2XlZkr+dori
+	rT6+jraVHJy+qkYQS8RA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnrNy-0003yT-7p; Wed, 17 Jul 2019 21:22:50 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1hnrVD-0007Ox-9A; Wed, 17 Jul 2019 21:30:19 +0000
+Received: from atlmailgw1.ami.com ([63.147.10.40])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnrNk-0003y7-AX; Wed, 17 Jul 2019 21:22:37 +0000
-Received: by mail-pg1-x542.google.com with SMTP id i8so11748715pgm.13;
- Wed, 17 Jul 2019 14:22:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:openpgp:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=4yUywu2WnKUMQb0jqcoCVv139ZtPaCDPI8rhh9pJHJ4=;
- b=W3WXhy4up0DIlzqtRSmW983qP+//a+ZuW0ARrcJBib8Bikrtl5LvV5QxqxvhcYckJn
- 7rj3yPBUlwc02eiDl44p4ccjModgbSqomJXrQij/QvemVifHBlRRj+HedCVsFyjWz6SG
- kYZaOyyBZ1Z0U9MG354oe675q+T0lzK8+20N7EXxdgyfg+1QJLG63iW6BLWP+U/zfQM2
- hU7ifCiBDE2mDwcGhT269wDXxgF6zRjRaLR459bK1gtbVOTp7JVY42eNeB9SsXUjS/l1
- W8A5SwPt00uR7i3S+tvj1uDyBHUhUy3zp1Cjx7tyTrYKMA+Mqqd5DoGkP4e7KEzmdAdR
- mJSA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=4yUywu2WnKUMQb0jqcoCVv139ZtPaCDPI8rhh9pJHJ4=;
- b=M5TPHCiiFGDNhRg+pYdjUjhkQd23k0Q8tRwKQew0nCP2Xa+plct5iL+NHkEn82OTDm
- cO/+NLXWXXCKZn9UxwSNXOIVe2g8+cBNMAwTFdjgraT350eMo89z/Ee8nz2tISPGwFTl
- C2WFAAX9cH2w15ZX1ekU1Wn4Di8YsoghDSBN3GtuYWFp+TXlGU0kNytAgmFD8G7Lxf/G
- zBsgaKj+COjJgLMHrzHwfnY1LARBzGleq2AX2oTXRqwDqdbl4EyyCkbYj23hW1aZrJGF
- V4zaJVm2nllERQXG473SLc8rTqVvYKABcTgiYAZiIKN+8jBK0NeLmGMge6Cm9qW5Lrh0
- 5eIg==
-X-Gm-Message-State: APjAAAU+uluHXqhx3PkWC7V71c6/L+tt2Z+D8e9RRlj79LwqrP8F3DQM
- DRBN8isxvQEQigLJh3sQMwlCtng1
-X-Google-Smtp-Source: APXvYqxJTapxSxdWonFK0G05Tttcwd9GXdBeiI6cS0UbKzCw379ry9WYhyo/a4ZE3GuOxaQA5K4OLg==
-X-Received: by 2002:a17:90a:bd8c:: with SMTP id
- z12mr46790877pjr.60.1563398554321; 
- Wed, 17 Jul 2019 14:22:34 -0700 (PDT)
-Received: from [10.69.78.41] ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id q7sm32530592pff.2.2019.07.17.14.22.31
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 17 Jul 2019 14:22:32 -0700 (PDT)
-Subject: Re: [PATCH RFC 18/18] ARM: dts: Add minimal Raspberry Pi 4 support
-To: Stefan Wahren <wahrenst@gmx.net>, Eric Anholt <eric@anholt.net>,
- Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
- <sboyd@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
- Adrian Hunter <adrian.hunter@intel.com>, Mark Brown <broonie@kernel.org>
-References: <1563398164-2679-1-git-send-email-wahrenst@gmx.net>
- <1563398164-2679-5-git-send-email-wahrenst@gmx.net>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Openpgp: preference=signencrypt
-Message-ID: <57dea1a5-2a33-5644-05c5-174753307fc0@gmail.com>
-Date: Wed, 17 Jul 2019 14:22:30 -0700
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <1563398164-2679-5-git-send-email-wahrenst@gmx.net>
+ id 1hnrUz-0006Px-CH
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 21:30:08 +0000
+X-AuditID: ac1060b2-413ff70000003a7d-4d-5d2f93673523
+Received: from atlms1.us.megatrends.com (atlms1.us.megatrends.com
+ [172.16.96.144])
+ (using TLS with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by atlmailgw1.ami.com (Symantec Messaging Gateway) with SMTP id
+ 50.26.14973.7639F2D5; Wed, 17 Jul 2019 17:30:15 -0400 (EDT)
+Received: from ATLMS2.us.megatrends.com ([fe80::29dc:a91e:ea0c:cdeb]) by
+ atlms1.us.megatrends.com ([fe80::8c55:daf0:ef05:5605%12]) with mapi id
+ 14.03.0415.000; Wed, 17 Jul 2019 17:30:01 -0400
+From: Hongwei Zhang <Hongweiz@ami.com>
+To: Andrew Jeffery <andrew@aj.id.au>, Joel Stanley <joel@jms.id.au>, "Linus
+ Walleij" <linus.walleij@linaro.org>, "devicetree@vger.kernel.org"
+ <devicetree@vger.kernel.org>
+Subject: RE: [PATCH 2/3 v3] dt-bindings: gpio: aspeed: Add SGPIO support
+Thread-Topic: [PATCH 2/3 v3] dt-bindings: gpio: aspeed: Add SGPIO support
+Thread-Index: AQHVPCA9xk4+FoHpyUSSpCgW8q92M6bOb/iAgADg2/A=
+Date: Wed, 17 Jul 2019 21:30:00 +0000
+Message-ID: <14D3C8298A3B0F42A1EB31EE961CFF82AA8F4B3C@atlms2.us.megatrends.com>
+References: <1563313711-17961-1-git-send-email-hongweiz@ami.com>
+ <91ebb817-3cc6-4b87-8c2b-cfcd66f4c284@www.fastmail.com>
+In-Reply-To: <91ebb817-3cc6-4b87-8c2b-cfcd66f4c284@www.fastmail.com>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [172.16.100.241]
+MIME-Version: 1.0
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrFIsWRmVeSWpSXmKPExsWyRiBhgm76ZP1Yg8WnJCx2Xeaw+DL3FIvF
+ /CPnWC1+n//LbDHlz3Imi02Pr7FaNK8+x2yxef4fRovLu+awWSy9fpHJonXvEXYHbo+r7bvY
+ PdbMW8Po8f5GK7vHxY/HmD02repk87hzbQ+bx+Yl9R7nZyxk9Pi8SS6AM4rLJiU1J7MstUjf
+ LoErY91Ul4JFCxkrZm5/z9TA+LK2i5GTQ0LAROLdh4XMXYxcHEICu5gkuq4sY4dwDjNKLH+2
+ hRmkik1ATeLpnwawhIjAOkaJ6V/62UAcZoEJzBJ9S6+wglQJC3hInDg6mQ3EFhHwlNjRdxDK
+ tpLo6pnMBGKzCKhKNPd1sYDYvAL+Ep+mtQBN5QBaVyUx8R9YmFPARWLJ11tgixkFxCS+n1oD
+ 1sosIC5x68l8JoizBSSW7DnPDGGLSrx8/I8VwlaSaFjxD6peR2LB7k9sELa2xLKFr5kh1gpK
+ nJz5hGUCo+gsJGNnIWmZhaRlFpKWBYwsqxiFEktychMzc9LLDfUSczP1kvNzNzFC4nfTDsaW
+ i+aHGJk4GA8xSnAwK4nw2n7VjhXiTUmsrEotyo8vKs1JLT7EKM3BoiTOu3LNtxghgfTEktTs
+ 1NSC1CKYLBMHp1QDY2T0masrdfuPLo+KYp37uWhHW6zmCs4Wd0fnFT8YLuw7csxoWrWNnJ3U
+ +bCJ1dv/Mh/oXta0ZPXEnZW/F4XWrNS98Py3plj/Vd793WeCN01g/8VY8UzD49PUUFmBJ92/
+ eQXOiewps1DsNZgcIebNeUCQu8Hxv+yO+n32Yh0HPz49t+j5ntVMZkosxRmJhlrMRcWJAG2d
+ f5/NAgAA
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_142236_393243_2FF3E875 
-X-CRM114-Status: GOOD (  17.48  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190717_143005_580904_57366DED 
+X-CRM114-Status: GOOD (  32.64  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
+ no trust [63.147.10.40 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,45 +87,688 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
+ "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hello Andrew,
+Thanks for your review, please find the v4 in separate email. We merged all your suggestion in v4.
 
+Best Regards,
+--Hongwei
+-----Original Message-----
 
-On 7/17/2019 2:16 PM, Stefan Wahren wrote:
-> This adds minimal support for the new Raspberry Pi 4 without the
-> fancy stuff like GENET, PCIe, XHCI, 40 bit DMA and V3D. The RPi 4 is avail=
-> able
-> in 3 different variants (1, 2 and 4 GB RAM), so leave the memory size to z=
-> ero
-> and let the bootloader take care of it.
+> From:	Andrew Jeffery <andrew@aj.id.au>
+> Sent:	Tuesday, July 16, 2019 11:26 PM
+> To:	Hongwei Zhang; Bartosz Golaszewski; Joel Stanley; Linus Walleij
+> Cc:	linux-gpio@vger.kernel.org; linux-arm-kernel@lists.infradead.org; linux-aspeed@lists.ozlabs.org; 
+> linux-kernel@vger.kernel.org
+> Subject:	Re: [PATCH 2/3 v3] ARM: dts: aspeed: Add SGPIO driver
 > 
-> Other differences to the Raspberry Pi 3:
-> - additional GIC 400 Interrupt controller
-> - new thermal IP and HWRNG
-> - additional MMC interface (emmc2)
-> - additional UART, I2C, SPI and PWM interfaces
+> Hello Hongwei,
 > 
-> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
-> =2D--
+> Please send patches and feedback on prior iterations separately. Please send the output of `git format-
+> patch ...`directly; format-patch spits the patch out in email form ready to go and can be fed straight to 
+> `git send-email`.
+> 
+> On Wed, 17 Jul 2019, at 06:54, Hongwei Zhang wrote:
+> > Add SGPIO driver support for Aspeed AST2500 SoC.
+> > 
+> > Signed-off-by: Hongwei Zhang <hongweiz@ami.com>
+> > ---
+> >  drivers/gpio/sgpio-aspeed.c | 487 
+> > ++++++++++++++++++++++++++++++++++++++++++++
+> >  1 file changed, 487 insertions(+)
+> >  create mode 100644 drivers/gpio/sgpio-aspeed.c
+> > 
+> > diff --git a/drivers/gpio/sgpio-aspeed.c b/drivers/gpio/sgpio-aspeed.c 
+> > new file mode 100644 index 0000000..ade2cb7
+> > --- /dev/null
+> > +++ b/drivers/gpio/sgpio-aspeed.c
+> > @@ -0,0 +1,487 @@
+> > +// SPDX-License-Identifier: GPL-2.0+
+> > +/*
+> > + * Copyright 2019 American Megatrends International LLC.
+> > + *
+> > + * Author: Karthikeyan Mani <karthikeyanm@amiindia.co.in>  */
+> > +
+> > +#include <linux/gpio/driver.h>
+> > +#include <linux/gpio/aspeed.h>
+> 
+> linux/gpio/aspeed.h is specific to the parallel GPIO driver, please drop this include.
+> 
 
-[snip]
+Removed it.
 
-> +		rng@7e104000 {
-> +			interrupts =3D <GIC_SPI 125 IRQ_TYPE_LEVEL_HIGH>;
-> +
-> +			/* RNG is incompatible to brcm,bcm2835-rng */
-> +			status =3D "disabled";
+> > +#include <linux/hashtable.h>
+> > +#include <linux/bitfield.h>
+> > +#include <linux/init.h>
+> > +#include <linux/clk.h>
+> > +#include <linux/io.h>
+> > +#include <linux/kernel.h>
+> > +#include <linux/module.h>
+> > +#include <linux/pinctrl/consumer.h>
+> 
+> This driver doesn't have any direct interaction with pinctrl, so I think we can remove this header
+> 
 
-It's an iproc-rng200, so you can either re-use the bcm7211-rng
-compatible string that was just recently added or you can define a
-bcm2838-rng if you prefer.
--- 
-Florian
+Removed it.
+
+> > +#include <linux/platform_device.h>
+> > +#include <linux/spinlock.h>
+> > +#include <linux/string.h>
+> > +#include <linux/gpio.h>
+> > +
+> > +#define MAX_NR_SGPIO			80
+> > +
+> > +#define ASPEED_SGPIO_CTRL		0x54
+> > +
+> > +#define ASPEED_SGPIO_PINS_MASK		GENMASK(9, 6)
+> > +#define ASPEED_SGPIO_CLK_DIV_MASK	GENMASK(31, 16)
+> > +#define ASPEED_SGPIO_ENABLE		BIT(0)
+> > +
+> > +// default sgpio direction is input.
+> > +static uint32_t sgpio_dir_val[3] = {0xffffffff, 0xffffffff, 
+> > +0xffffffff
+> > };
+> 
+> Why not make it a member of struct aspeed_sgpio (below)? I'd prefer we encode the comment in the 
+> variable name as well, e.g.
+> sgpio_dir_in`- this way when reading the code that uses it we know which bit state means what (set is 
+> input, clear is output).
+> 
+
+Done.
+
+> > +
+> > +struct aspeed_sgpio {
+> > +	struct gpio_chip chip;
+> > +	struct clk *pclk;
+> > +	spinlock_t lock;
+> > +	void __iomem *base;
+> > +	int irq;
+> > +};
+> > +
+> > +struct aspeed_sgpio_bank {
+> > +	uint16_t    val_regs;
+> > +	uint16_t    rdata_reg;
+> > +	uint16_t    irq_regs;
+> > +	const char  names[4][3];
+> > +};
+> > +
+> > +/*
+> > + * Note: The "value" register returns the input value sampled on the
+> > + *       line even when the GPIO is configured as an output. Since
+> > + *       that input goes through synchronizers, writing, then reading
+> > + *       back may not return the written value right away.
+> 
+> The paragraph above is somewhat specific to the parallel GPIO driver.
+> It would be good to rework it for the context of the SGPIO driver.
+> Documenting the split of the "value" and "rdata" register is a good thing.
+> 
+> > + *
+> > + *       The "rdata" register returns the content of the write latch
+> > + *       and thus can be used to read back what was last written
+> > + *       reliably.
+> > + */
+> > +static const struct aspeed_sgpio_bank aspeed_sgpio_banks[] = {
+> > +	{
+> > +		.val_regs = 0x0000,
+> > +		.rdata_reg = 0x0070,
+> > +		.irq_regs = 0x0004,
+> > +		.names = { "A", "B", "C", "D" },
+> > +	},
+> > +	{
+> > +		.val_regs = 0x001C,
+> > +		.rdata_reg = 0x0074,
+> > +		.irq_regs = 0x0020,
+> > +		.names = { "E", "F", "G", "H" },
+> > +	},
+> > +	{
+> > +		.val_regs = 0x0038,
+> > +		.rdata_reg = 0x0078,
+> > +		.irq_regs = 0x003C,
+> > +		.names = { "I", "J" },
+> > +	},
+> > +};
+> > +
+> > +enum aspeed_sgpio_reg {
+> > +	reg_val,
+> > +	reg_rdata,
+> > +	reg_irq_enable,
+> > +	reg_irq_type0,
+> > +	reg_irq_type1,
+> > +	reg_irq_type2,
+> > +	reg_irq_status,
+> > +};
+> > +
+> > +#define GPIO_VAL_VALUE      0x00
+> > +#define GPIO_VAL_DIR        0x04
+> > +#define GPIO_IRQ_ENABLE     0x00
+> > +#define GPIO_IRQ_TYPE0      0x04
+> > +#define GPIO_IRQ_TYPE1      0x08
+> > +#define GPIO_IRQ_TYPE2      0x0C
+> > +#define GPIO_IRQ_STATUS     0x10
+> > +
+> > +/* This will be resolved at compile time */ static inline void 
+> > +__iomem *bank_reg(struct aspeed_sgpio *gpio,
+> > +				     const struct aspeed_sgpio_bank *bank,
+> > +				     const enum aspeed_sgpio_reg reg) {
+> > +	switch (reg) {
+> > +	case reg_val:
+> > +		return gpio->base + bank->val_regs + GPIO_VAL_VALUE;
+> > +	case reg_rdata:
+> > +		return gpio->base + bank->rdata_reg;
+> > +	case reg_irq_enable:
+> > +		return gpio->base + bank->irq_regs + GPIO_IRQ_ENABLE;
+> > +	case reg_irq_type0:
+> > +		return gpio->base + bank->irq_regs + GPIO_IRQ_TYPE0;
+> > +	case reg_irq_type1:
+> > +		return gpio->base + bank->irq_regs + GPIO_IRQ_TYPE1;
+> > +	case reg_irq_type2:
+> > +		return gpio->base + bank->irq_regs + GPIO_IRQ_TYPE2;
+> > +	case reg_irq_status:
+> > +		return gpio->base + bank->irq_regs + GPIO_IRQ_STATUS;
+> > +	default:
+> > +		/* acturally if code runs to here, it's an error case */
+> > +		BUG_ON(1);
+> > +	}
+> > +}
+> > +
+> > +#define GPIO_BANK(x)    ((x) >> 5)
+> > +#define GPIO_OFFSET(x)  ((x) & 0x1f)
+> > +#define GPIO_BIT(x)     BIT(GPIO_OFFSET(x))
+> > +
+> > +static const struct aspeed_sgpio_bank *to_bank(unsigned int offset) {
+> > +	unsigned int bank = GPIO_BANK(offset);
+> > +
+> > +	WARN_ON(bank >= ARRAY_SIZE(aspeed_sgpio_banks));
+> > +	return &aspeed_sgpio_banks[bank];
+> > +}
+> > +
+> > +static int aspeed_sgpio_get(struct gpio_chip *gc, unsigned int 
+> > +offset) {
+> > +	struct aspeed_sgpio *gpio = gpiochip_get_data(gc);
+> > +	const struct aspeed_sgpio_bank *bank = to_bank(offset);
+> > +
+> > +	if (sgpio_dir_val[GPIO_BANK(offset)] & GPIO_BIT(offset))
+> > +		return !!(ioread32(bank_reg(gpio, bank, reg_val)) &
+> > GPIO_BIT(offset));
+> > +	else
+> > +		return !!(ioread32(bank_reg(gpio, bank, reg_rdata)) &
+> > GPIO_BIT(offset));
+> 
+> We don't need the else because we return from the body of the true case,
+> and this could be written in a less redundant fashion. Also we need to do
+> the read under gpio.lock for consistency with aspeed_sgpio_set().
+> 
+> enum aspeed_sgpio_reg from;
+> unsigned long flags;
+> bool input;
+> int rc;
+> 
+> ...
+> 
+> spin_lock_irqsave(&gpio->lock, flags);
+> input = sgpio_dir_val[GPIO_BANK(offset)] & GPIO_BIT(offset);
+> from = input ? reg_val : reg_rdata;
+> rc = !!(ioread32(bank_reg(gpio, bank, from)) & GPIO_BIT(offset));
+> spin_unlock_irqrestore(&gpio->lock, flags);
+> 
+> return rc;
+> 
+
+Updated code accordingly.
+
+> > +
+> > +}
+> > +
+> > +static void aspeed_sgpio_set(struct gpio_chip *gc, unsigned int 
+> > offset, int val)
+> > +{
+> > +	struct aspeed_sgpio *gpio = gpiochip_get_data(gc);
+> > +	const struct aspeed_sgpio_bank *bank = to_bank(offset);
+> > +	unsigned long flags;
+> > +	void __iomem *addr;
+> > +	u32 reg = 0;
+> > +
+> > +	spin_lock_irqsave(&gpio->lock, flags);
+> > +
+> > +	addr = bank_reg(gpio, bank, reg_val);
+> > +
+> > +	if (val)
+> > +		reg |= GPIO_BIT(offset);
+> > +	else
+> > +		reg &= ~GPIO_BIT(offset);
+> > +
+> > +	iowrite32(reg, addr);
+> > +	spin_unlock_irqrestore(&gpio->lock, flags);
+> > +}
+> > +
+> > +static int aspeed_sgpio_dir_in(struct gpio_chip *gc, unsigned int 
+> > offset)
+> > +{
+> > +	sgpio_dir_val[GPIO_BANK(offset)] |= GPIO_BIT(offset);
+> 
+> Also do all manipulations of sgpio_dir_val under the spinlock.
+> 
+
+Added spinlock as you suggested.
+
+> > +	return 0;
+> > +}
+> > +
+> > +static int aspeed_sgpio_dir_out(struct gpio_chip *gc, unsigned int 
+> > offset, int val)
+> > +{
+> > +	sgpio_dir_val[GPIO_BANK(offset)] &= ~GPIO_BIT(offset);
+> 
+> Again here.
+> 
+> > +	return 0;
+> > +}
+> > +
+> > +static int aspeed_sgpio_get_direction(struct gpio_chip *gc, unsigned 
+> > int offset)
+> > +{
+> > +	return sgpio_dir_val[GPIO_BANK(offset)] & GPIO_BIT(offset);
+> 
+> Again here.
+> 
+> > +
+> > +}
+> > +
+> > +static inline int irqd_to_aspeed_sgpio_data(struct irq_data *d,
+> > +					    struct aspeed_sgpio **gpio,
+> > +					    const struct aspeed_sgpio_bank **bank,
+> > +					    u32 *bit, int *offset)
+> > +{
+> > +	struct aspeed_sgpio *internal;
+> > +
+> > +	*offset = irqd_to_hwirq(d);
+> > +
+> > +	internal = irq_data_get_irq_chip_data(d);
+> > +
+> > +	*gpio = internal;
+> > +	*bank = to_bank(*offset);
+> > +	*bit = GPIO_BIT(*offset);
+> > +
+> > +	return 0;
+> 
+> It looks like this function could be a void function instead, and we
+> could eliminate error checking from the callsites. If you're feeling
+> paranoid you could `WARN_ON(!internal);` after the call to
+> `irq_data_get_irq_chip_data(d)`.
+> 
+
+Updated.
+
+> > +}
+> > +
+> > +static void aspeed_sgpio_irq_ack(struct irq_data *d)
+> > +{
+> > +	const struct aspeed_sgpio_bank *bank;
+> > +	struct aspeed_sgpio *gpio;
+> > +	unsigned long flags;
+> > +	void __iomem *status_addr;
+> > +	int rc, offset;
+> > +	u32 bit;
+> > +
+> > +	rc = irqd_to_aspeed_sgpio_data(d, &gpio, &bank, &bit, &offset);
+> > +	if (rc)
+> > +		return;
+> > +
+> > +	status_addr = bank_reg(gpio, bank, reg_irq_status);
+> > +
+> > +	spin_lock_irqsave(&gpio->lock, flags);
+> > +
+> > +	iowrite32(bit, status_addr);
+> > +
+> > +	spin_unlock_irqrestore(&gpio->lock, flags);
+> > +}
+> > +
+> > +static void aspeed_sgpio_irq_set_mask(struct irq_data *d, bool set)
+> > +{
+> > +	const struct aspeed_sgpio_bank *bank;
+> > +	struct aspeed_sgpio *gpio;
+> > +	unsigned long flags;
+> > +	u32 reg, bit;
+> > +	void __iomem *addr;
+> > +	int rc, offset;
+> > +
+> > +	rc = irqd_to_aspeed_sgpio_data(d, &gpio, &bank, &bit, &offset);
+> > +	if (rc)
+> > +		return;
+> > +
+> > +	addr = bank_reg(gpio, bank, reg_irq_enable);
+> > +
+> > +	spin_lock_irqsave(&gpio->lock, flags);
+> > +
+> > +	reg = ioread32(addr);
+> > +	if (set)
+> > +		reg |= bit;
+> > +	else
+> > +		reg &= ~bit;
+> > +
+> > +	iowrite32(reg, addr);
+> > +
+> > +	spin_unlock_irqrestore(&gpio->lock, flags);
+> > +}
+> > +
+> > +static void aspeed_sgpio_irq_mask(struct irq_data *d)
+> > +{
+> > +	aspeed_sgpio_irq_set_mask(d, false);
+> > +}
+> > +
+> > +static void aspeed_sgpio_irq_unmask(struct irq_data *d)
+> > +{
+> > +	aspeed_sgpio_irq_set_mask(d, true);
+> > +}
+> > +
+> > +static int aspeed_sgpio_set_type(struct irq_data *d, unsigned int type)
+> > +{
+> > +	u32 type0 = 0;
+> > +	u32 type1 = 0;
+> > +	u32 type2 = 0;
+> > +	u32 bit, reg;
+> > +	const struct aspeed_sgpio_bank *bank;
+> > +	irq_flow_handler_t handler;
+> > +	struct aspeed_sgpio *gpio;
+> > +	unsigned long flags;
+> > +	void __iomem *addr;
+> > +	int rc, offset;
+> > +
+> > +	rc = irqd_to_aspeed_sgpio_data(d, &gpio, &bank, &bit, &offset);
+> > +	if (rc)
+> > +		return -EINVAL;
+> > +
+> > +	switch (type & IRQ_TYPE_SENSE_MASK) {
+> > +	case IRQ_TYPE_EDGE_BOTH:
+> > +		type2 |= bit;
+> > +		/* fall through */
+> > +	case IRQ_TYPE_EDGE_RISING:
+> > +		type0 |= bit;
+> > +		/* fall through */
+> > +	case IRQ_TYPE_EDGE_FALLING:
+> > +		handler = handle_edge_irq;
+> > +		break;
+> > +	case IRQ_TYPE_LEVEL_HIGH:
+> > +		type0 |= bit;
+> > +		/* fall through */
+> > +	case IRQ_TYPE_LEVEL_LOW:
+> > +		type1 |= bit;
+> > +		handler = handle_level_irq;
+> > +		break;
+> > +	default:
+> > +		return -EINVAL;
+> > +	}
+> > +
+> > +	spin_lock_irqsave(&gpio->lock, flags);
+> > +
+> > +	addr = bank_reg(gpio, bank, reg_irq_type0);
+> > +	reg = ioread32(addr);
+> > +	reg = (reg & ~bit) | type0;
+> > +	iowrite32(reg, addr);
+> > +
+> > +	addr = bank_reg(gpio, bank, reg_irq_type1);
+> > +	reg = ioread32(addr);
+> > +	reg = (reg & ~bit) | type1;
+> > +	iowrite32(reg, addr);
+> > +
+> > +	addr = bank_reg(gpio, bank, reg_irq_type2);
+> > +	reg = ioread32(addr);
+> > +	reg = (reg & ~bit) | type2;
+> > +	iowrite32(reg, addr);
+> > +
+> > +	spin_unlock_irqrestore(&gpio->lock, flags);
+> > +
+> > +	irq_set_handler_locked(d, handler);
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static void aspeed_sgpio_irq_handler(struct irq_desc *desc)
+> > +{
+> > +	struct gpio_chip *gc = irq_desc_get_handler_data(desc);
+> > +	struct irq_chip *ic = irq_desc_get_chip(desc);
+> > +	struct aspeed_sgpio *data = gpiochip_get_data(gc);
+> > +	unsigned int i, p, girq;
+> > +	unsigned long reg;
+> > +
+> > +	chained_irq_enter(ic, desc);
+> > +
+> > +	for (i = 0; i < ARRAY_SIZE(aspeed_sgpio_banks); i++) {
+> > +		const struct aspeed_sgpio_bank *bank = &aspeed_sgpio_banks[i];
+> > +
+> > +		reg = ioread32(bank_reg(data, bank, reg_irq_status));
+> > +
+> > +		for_each_set_bit(p, &reg, 32) {
+> > +			girq = irq_find_mapping(gc->irq.domain, i * 32 + p);
+> > +			generic_handle_irq(girq);
+> > +		}
+> > +
+> > +	}
+> > +
+> > +	chained_irq_exit(ic, desc);
+> > +}
+> > +
+> > +static struct irq_chip aspeed_sgpio_irqchip = {
+> > +	.name       = "aspeed-sgpio",
+> > +	.irq_ack    = aspeed_sgpio_irq_ack,
+> > +	.irq_mask   = aspeed_sgpio_irq_mask,
+> > +	.irq_unmask = aspeed_sgpio_irq_unmask,
+> > +	.irq_set_type   = aspeed_sgpio_set_type,
+> > +};
+> > +
+> > +static int aspeed_sgpio_setup_irqs(struct aspeed_sgpio *gpio,
+> > +				   struct platform_device *pdev)
+> > +{
+> > +	int rc, i;
+> > +	const struct aspeed_sgpio_bank *bank;
+> > +
+> > +	rc = platform_get_irq(pdev, 0);
+> > +	if (rc < 0)
+> > +		return rc;
+> > +
+> > +	gpio->irq = rc;
+> > +
+> > +	/* Disable IRQ and clear Interrupt status registers for all SPGIO 
+> > Pins. */
+> > +	for (i = 0; i < ARRAY_SIZE(aspeed_sgpio_banks); i++) {
+> > +		bank =  &aspeed_sgpio_banks[i];
+> > +		/* disable irq enable bits */
+> > +		iowrite32(0x00000000, bank_reg(gpio, bank, reg_irq_enable));
+> > +		/* clear status bits */
+> > +		iowrite32(0xffffffff, bank_reg(gpio, bank, reg_irq_status));
+> > +	}
+> > +
+> > +	rc = gpiochip_irqchip_add(&gpio->chip, &aspeed_sgpio_irqchip,
+> > +				  0, handle_bad_irq, IRQ_TYPE_NONE);
+> > +	if (rc) {
+> > +		dev_info(&pdev->dev, "Could not add irqchip\n");
+> > +		return rc;
+> > +	}
+> > +
+> > +	gpiochip_set_chained_irqchip(&gpio->chip, &aspeed_sgpio_irqchip,
+> > +				     gpio->irq, aspeed_sgpio_irq_handler);
+> > +
+> > +	/* set IRQ settings and Enable Interrupt */
+> > +	for (i = 0; i < ARRAY_SIZE(aspeed_sgpio_banks); i++) {
+> > +		bank = &aspeed_sgpio_banks[i];
+> > +		/* set falling or level-low irq */
+> > +		iowrite32(0x00000000, bank_reg(gpio, bank, reg_irq_type0));
+> > +		/* trigger type is edge */
+> > +		iowrite32(0x00000000, bank_reg(gpio, bank, reg_irq_type1));
+> > +		/* dual edge trigger mode. */
+> > +		iowrite32(0xffffffff, bank_reg(gpio, bank, reg_irq_type2));
+> > +		/* enable irq */
+> > +		iowrite32(0xffffffff, bank_reg(gpio, bank, reg_irq_enable));
+> > +	}
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static const struct of_device_id aspeed_sgpio_of_table[] = {
+> > +	{ .compatible = "aspeed,ast2400-sgpio" },
+> > +	{ .compatible = "aspeed,ast2500-sgpio" },
+> > +	{}
+> > +};
+> > +MODULE_DEVICE_TABLE(of, aspeed_sgpio_of_table);
+> > +
+> > +static int __init aspeed_sgpio_probe(struct platform_device *pdev)
+> > +{
+> > +	struct aspeed_sgpio *gpio;
+> > +	struct resource *res;
+> > +	u32 nr_gpios, sgpio_freq;
+> > +	int rc;
+> > +	u16 sgpio_clk_div;
+> 
+> Lets make this a u32 as it will help error detection below.
+> 
+> > +	unsigned long apb_freq;
+> > +
+> > +	gpio = devm_kzalloc(&pdev->dev, sizeof(*gpio), GFP_KERNEL);
+> > +	if (!gpio)
+> > +		return -ENOMEM;
+> > +
+> > +	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> > +	gpio->base = devm_ioremap_resource(&pdev->dev, res);
+> 
+> Please use devm_platform_ioremap_resource() here.
+> 
+> > +	if (IS_ERR(gpio->base))
+> > +		return PTR_ERR(gpio->base);
+> > +
+> > +	rc = of_property_read_u32(pdev->dev.of_node, "nr-gpios", &nr_gpios);
+> > +	if ((rc < 0) || (nr_gpios > MAX_NR_SGPIO))
+> > +		nr_gpios = MAX_NR_SGPIO;
+> 
+> This is an error state, not something we should paper over. This should be
+> `return -EINVAL;`
+> 
+
+Updated.
+
+> > +
+> > +	rc = of_property_read_u32(pdev->dev.of_node, "bus-frequency", 
+> > &sgpio_freq);
+> > +	if (rc < 0) {
+> > +		dev_err(&pdev->dev, "Could not read bus-frequency property\n");
+> > +		sgpio_freq = 12000000;
+> 
+> Again, I suggested previously that this is a required property, not optional.
+> As such there should not be fall-back code here. This is another case of
+> `return -EINVAL;`.
+> 
+
+Updated.
+
+> > +	}
+> > +
+> > +	gpio->pclk = devm_clk_get(&pdev->dev, NULL);
+> > +	if (IS_ERR(gpio->pclk)) {
+> > +		dev_err(&pdev->dev, "devm_clk_get failed\n");
+> > +		return PTR_ERR(gpio->pclk);
+> > +	}
+> > +
+> > +	apb_freq = clk_get_rate(gpio->pclk);
+> > +	sgpio_clk_div = 2 * ((apb_freq % sgpio_freq == 0) ?
+> > +			     (apb_freq / sgpio_freq) - 1 : (apb_freq / sgpio_freq));
+> 
+> This calculation seems overly complex and possibly incorrect (need to
+> multiply the denominator or divide the result, not multiply the result)?
+> 
+> From the datasheet, the SGPM clock period calculation is:
+> 
+> period = 1/PCLK * 2 * (GPIO254[31:16] + 1)
+> 
+> rearranging:
+> 
+> period = 2 * (GPIO254[31:16] + 1) / PCLK
+> 
+> Converting back to bus frequency:
+> 
+> frequency = 1 / (2 * (GPIO254[31:16] + 1) / PCLK)
+> 
+> Which rearranges to:
+> 
+> frequency = PCLK / (2 * (GPIO254[31:16] + 1))
+> 
+> Extracting GPIO254[31:16] in terms of PCLK / frequency from above:
+> 
+> frequency * 2 * (GPIO254[31:16] + 1) = PCLK
+> 
+> And so:
+> 
+> GPIO254[31:16] = PCLK / (frequency * 2) - 1
+> 
+> From that, the code should look something like:
+> 
+> if (sgpio_freq == 0)
+>         return -EINVAL;
+> 
+> sgpio_clk_div = apb_freq / (sgpio_freq * 2) - 1;
+> 
+> if (sgpio_clk_div > (1 << 16) - 1)
+>         return -EINVAL;
+> 
+> This seems to work at the extremes (sgpio_clk_div = 0 and
+> sgpio_clk_div = 65535), and we get 32766.99 on a round-trip of
+> the divider value 32768, which if we truncate gives an error of 0.023Hz
+> with an APB of 24.75MHz (value reported from one of our boards).
+> 
+> Andrew
+> 
+
+Thanks for the formula and detailed suggestion, really appreciated.
+
+> > +	iowrite32(FIELD_PREP(ASPEED_SGPIO_CLK_DIV_MASK, sgpio_clk_div) |
+> > +		  FIELD_PREP(ASPEED_SGPIO_PINS_MASK, (nr_gpios / 8)) |
+> > +		  ASPEED_SGPIO_ENABLE,
+> > +		  gpio->base + ASPEED_SGPIO_CTRL);
+> > +
+> > +	spin_lock_init(&gpio->lock);
+> > +
+> > +	gpio->chip.parent = &pdev->dev;
+> > +	gpio->chip.ngpio = nr_gpios;
+> > +	gpio->chip.direction_input = aspeed_sgpio_dir_in;
+> > +	gpio->chip.direction_output = aspeed_sgpio_dir_out;
+> > +	gpio->chip.get_direction = aspeed_sgpio_get_direction;
+> > +	gpio->chip.request = NULL;
+> > +	gpio->chip.free = NULL;
+> > +	gpio->chip.get = aspeed_sgpio_get;
+> > +	gpio->chip.set = aspeed_sgpio_set;
+> > +	gpio->chip.set_config = NULL;
+> > +	gpio->chip.label = dev_name(&pdev->dev);
+> > +	gpio->chip.base =  ARCH_NR_GPIOS - MAX_NR_SGPIO;
+> > +
+> > +	rc = devm_gpiochip_add_data(&pdev->dev, &gpio->chip, gpio);
+> > +	if (rc < 0)
+> > +		return rc;
+> > +
+> > +	return aspeed_sgpio_setup_irqs(gpio, pdev);
+> > +}
+> > +
+> > +static struct platform_driver aspeed_sgpio_driver = {
+> > +	.driver = {
+> > +		.name = KBUILD_MODNAME,
+> > +		.of_match_table = aspeed_sgpio_of_table,
+> > +	},
+> > +};
+> > +
+> > +module_platform_driver_probe(aspeed_sgpio_driver, aspeed_sgpio_probe);
+> > +MODULE_DESCRIPTION("Aspeed Serial GPIO Driver");
+> > +MODULE_LICENSE("GPL");
+> > -- 
+> > 2.7.4
 
 _______________________________________________
 linux-arm-kernel mailing list
