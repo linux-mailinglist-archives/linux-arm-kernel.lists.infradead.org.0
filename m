@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 59CBF6C1BB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 21:53:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D1D906C1B6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 21:51:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,29 +11,29 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=NSKGpaGXPZMIMaqFmsOpt0rrps3rsC30VldLtae9J6c=; b=uC8PHEpk5dBjj4ONXJlatKjbXj
-	K83AsvdPZhcFExlm/wYk7AXhLZD35azDfHsYk+OHg21j/MtfTf4+cHHonyF1+Z9zKTalwfKuvzbP6
-	pVRee5ok3dBpfYBFCA3RwUT21Zdq5OJYZA61SN2f/1n2RJXkCaWmURnZ3SQc7ee07DgRcK46utYnW
-	pGZ3YQLFSIFCHlynnAyfujiPonSsdwuDU9XZOmf84nesh9bCObDBAD1858g+IgRbZl2z+sCt5aH2E
-	e9MpY5/iunPAiaiTry4XHziVkNJLDPwcKb3JHHpI3SBhvYpQRTHu2tqYUzfS1gkVcyaklqwxFzeoC
-	QO+3Ie2A==;
+	bh=cbx0QRID+SPvOrjWC/GiM1LdrwmpooheiLD+1z9LsD8=; b=KC8sRmy8xUlnYOvOg51ZeqC0Xy
+	q/j7yNbPibvtetDWTi78zOU2dtLqbpAKtWRhTNxAieXGcGtVrV6YJW9gfR8Nopml5gOMHLnKTvaFj
+	mIkH5uAgg7m3suEPDugaOwUQBHce5HDffea+I43zIQ/RmNQU7hAqhML3FzAfqyYJ/aKk+lA2iLbdt
+	kgscUE4sNSmEHftIfpu7p4DTmNKVQKXuo6jfU3vZbS9WD/udy+7CI1o6PcakuaWhdmutRGMeqi3wY
+	R2j9FYun1M2yZd4d63bbRtH/dtYtKrazyScxkdFRNmmnxycOJsFyFrI5ilnjnzmTWNVmaphqBZKKX
+	XYRvbDFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnpz5-0004Ba-Cs; Wed, 17 Jul 2019 19:53:03 +0000
+	id 1hnpxH-0002x6-Qw; Wed, 17 Jul 2019 19:51:11 +0000
 Received: from mout.gmx.net ([212.227.17.22])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnpx3-0002tQ-2t; Wed, 17 Jul 2019 19:51:01 +0000
+ id 1hnpx2-0002tI-Sk; Wed, 17 Jul 2019 19:50:58 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1563393042;
- bh=f172zsKe8yNWds5ywNLrH91B/sTzHWIKm+VpqMgCJDM=;
+ s=badeba3b8450; t=1563393043;
+ bh=bMN5HaH7xs5OZI3fgydBkJ1gPM3MHOTFQvPIB1gYS7c=;
  h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=Tv4A/dDgMolikNBm+JtZ0RlECJ3ZyUChhY66nAUeHgMSSN29uiUxCmTndGMwxzJDa
- wH4q+BUod2AqZzek2yfBtDvP8azIEDQZmZMjYizNmNjWJnp2GWzAAULyI9qDGJn/pv
- n2lQH60H03uBOxGUNLreKK1pKnKvpXeyN1JFOCyg=
+ b=ObADk1ltN1b9eAZFJ/dvTcdwnghiCQ0i9PA0gj4ybp0QO7yLlHX3u2uc59Zm0LWCF
+ wODuRZqXZ7UgrztIprbNAJXfTBcxj32HQcD5GJYZvipazdnG7Tlq4ORH30CRCGawgT
+ OBinZnXcMijsdPEh1dmj7MOrQHSDwzI19sWf417w=
 X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
 Received: from localhost.localdomain ([37.4.249.103]) by mail.gmx.com
  (mrgmx101 [212.227.17.168]) with ESMTPSA (Nemesis) id
- 0Lqm3a-1iR0Vs0b46-00ePMb; Wed, 17 Jul 2019 21:50:42 +0200
+ 0MZxch-1i1EVB3LCh-00LlwW; Wed, 17 Jul 2019 21:50:42 +0200
 From: Stefan Wahren <wahrenst@gmx.net>
 To: Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
  Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
@@ -43,38 +43,37 @@ To: Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
  Michael Turquette <mturquette@baylibre.com>,
  Stephen Boyd <sboyd@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
  Adrian Hunter <adrian.hunter@intel.com>, Mark Brown <broonie@kernel.org>
-Subject: [PATCH RFC 04/18] ARM: dts: bcm283x: Define MMC interfaces at board
- level
-Date: Wed, 17 Jul 2019 21:50:12 +0200
-Message-Id: <1563393026-17118-5-git-send-email-wahrenst@gmx.net>
+Subject: [PATCH RFC 05/18] ARM: dts: bcm283x: Define memory at board level
+Date: Wed, 17 Jul 2019 21:50:13 +0200
+Message-Id: <1563393026-17118-6-git-send-email-wahrenst@gmx.net>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1563393026-17118-1-git-send-email-wahrenst@gmx.net>
 References: <1563393026-17118-1-git-send-email-wahrenst@gmx.net>
-X-Provags-ID: V03:K1:H8tyGOQ3tJi9HfWsUh8IFqaDsyoK8hSWvUbKpltQvTPzJX6qe0f
- HgR+Rntga2x/7aiAKrTlT1yAxRFZqlaQDlEorJuMrdGO6vsoGjBiycREYAlkBszNeKBGhIf
- 3+P/0oIZ6+NwaMgLEosm+lH1tqm1SLjb0+b7UXy9IL9S5MAtwYjSGZSJ4lIrUUo4SvPVmfW
- 97oyK/XM8cpqRxz/r5XMw==
+X-Provags-ID: V03:K1:+qUlbWv36YNvHIARxY8HjLdDd7OcImGMezScPmhJq9+C42OBSZS
+ oSzdMEKkwp0h37hik0ttB5RDWntsuG7X/3Dqu31vFTRi2wY7mt3AEMBS+njOoZnxsqIwwwl
+ zK4MFx5U6c2KtItuLklpEKp6iV8JquGYPGaqa/shqagci8tWLc2z74O1Hmql6jd2AtC4rE+
+ A5cnvENUeT3ldFCHdDVsg==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:M6Ulwco7aDI=:jO2dIyMmdhPx9EfRZATEDg
- pu97MlafezUqgKn4IBooFf4ejlf99GrlQgofCsWTvEiycJj8YJUfFVzNLnT0OhRaENatHAi3c
- HgRhOG1xQH695LfztmmFndFfTUsDA5vYLuet2EMuhdpstb+8RdKN+eG+3MGM4Y8Hawi67sR17
- ZgbkkyEstWHD78Vh3cMw3K0CD1FMPquZl293kXfdqJdTGfN2NrgOZOIy5p/qwmTGAR8MacD2m
- 2FLYeyOse+XM8M26gfcXyTYxh/pSZajw/5GhjGNlMmegWoS0XpfKetpsVWlVDO4A7YhcUTNOJ
- oYQqVEV9My8c6nG+TkLI+xJv2JVSOVH5SzWxrVea/YyBd6JaGS8+oFh2u+9QyvDYhGjVfmmb/
- C58H/yqeplgS0EM0vpbF5J0rw4m2maj3gxTmrEdusapSwg6zbJ//63ywzSLwTHRU4CP7nlrop
- 1hhcajeRiSN1LdNn4RJjd5lnFer311nofo6ObFdXHdRWJziYh7NoPcMjF6DkEeGTWNeUp0HeF
- SwZj0q/JL7kT+7SuH7YP6bgXpePJv6xmAgLdTgPmR31mUI80u6f3siYzm3gwp1CrzxH7Y8Q6+
- ORmiW6EMbbbsN4AJNeKSRPsr1uwCFN5aAbVi9AVITpNBwloyI7LMSCBU4Fo87k48s1y+isCkR
- 2Wqq2NZG8E7bZjV1JElxceU4KrJk/8JVgejYT5GQr92Ajg7NeIDUAOX9kWVzNRSPWxGYOJM1X
- RsnwWqHnJWvkj7gWp8cAs+DjHuLTXSEkky7TAx7bUOlIhUvgUETbY6Ky1tXMCDvYkR5ov6Cqd
- ouXSSSnMrI1yH3bFqzdHgW//79X7k48u2SF0AflAPFB9qCbHfK2Ntt5K8EuPbP3qznudN5DjZ
- +jLL5tzZNd4MthI+IkH81yS3ATyzFD77QCBCOe5jReIJTbqoMV3Ohdx3bO447s9d7umCW9bN1
- Cxs73m7Ao5Ur5NlwuQCy9X+AkU2m6azqSFiCH3HUMYR++833n8OA+K4aFuOmGiAPx8b/ENuVU
- l4A3JX0cI+4ChYgM+XDZ997xRBan44HLuzLM+1h3JVCOSifpdlYtX2NZhvigpaWcg68+Bxzmo
- D5lz5gihNSIbzg=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:UBGlykYIrRQ=:hwtxnuQFCUsIlxGIGJnNPv
+ PS0CAZAqf/qCM883EeF/jNLcXOL4XMNtntkYy7Dbh3T1uLuDCHu+b66N4tSSpoP1LV8sIyjF+
+ dRGhyTAa+RnTFLBjw8ZisM7pwy442D5FKcajIwP+YJoWK4XhyDdWAE++DUpVrM+te6AOBOtUc
+ zZW10nFWmzlZiWyPHZdLpDE3s+nffs57+O4IIj7O61n9wZWVIMiX9ZyQpNUfzgsZd0Go/jf89
+ yvh+rLVbVa4hemP6kwiLOqhZhDzBmVivi9JAGKPQeOOAxCSQMA7bfI3KNqgV67u1HZ0cLxn+A
+ Sj5w35Zh094VTdJdU+mECb+LtyzUo70B0hPh8MnCSpa6pVXuch2q17PkfAfzQyYCVhS+tSod9
+ 75BfHoM8v6bmEj+qHGqTRSmTrRcqP1baDhIUsJ9Jrm+HSBsEm02nok9D9D8GEPy0DrQMldRmI
+ cRgULSXBvCgr6BiZMel3/oHgMJvlhYuRUBrAtoG4rlqhBMl6NnWXd64F+FD2H6QF8Tx5pE6/b
+ SPnHLPkdl474yytm2ExwIDMnc39fmWnN7J88At+xxTxpsfekVkdcJR9Ko853r6V9OMj+Nhj//
+ SMcR5+Tmbn6PNw9gjH0YFYu90UIdCjAl7BIRzGwO0/R0pOutSCM3ggHuqWHTCSI23ZZFCQ6pg
+ vz7JeAXOfgB3iR3ZyEy1UMPtDpn0D2Boyi6grxH2mw72WbaWjd9kQrA3zk/16bnBN85to9pNa
+ QKFYzAyOigjq1jxvbEgi/Oz2UfPwPFqwUtVOMPRrcGNAj2My3QZnbicuB5z6L45rOeqxIIjBq
+ eBp/EuroSUYuijo9/GO5LQ8q7fFh0pZM5xRwE7SpbYJGdm4ft6R9M1iE7Wuf3zNcKbL/42WRQ
+ 2uuizn9n5meXF3NllHRzHWOUlVQ0I9Yta+YiGF5AqpYlC7W4/j+g21m18Lz0phjZFHiHU7H+X
+ rgwE39tggipRbX4Y3p35QK2inUm6PrOFY+L8aupro9GN/qgrkaHjqSMHCeSTbfQvS2f/FZMob
+ rjQzPcEbC5SEY5a6rdiFduzDkwco/MQnS82/jrzLjLgTu5QnN/Tt2EJ32MjTxmb5I0T6Am6Rm
+ 7ljcWM+9vygPpw=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_125057_438535_AD2966F2 
-X-CRM114-Status: GOOD (  12.97  )
+X-CRM114-CacheID: sfid-20190717_125057_236314_CC3B6114 
+X-CRM114-Status: GOOD (  13.94  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -112,230 +111,232 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Starting with RPi 4 this is the first board, which doesn't use sdhost
-as default SD interface. So the MMC interfaces should be defined finally at
-board level. Since all boards using sdhci already does this, we can drop the
-pinctrl part from bcm2835-rpi.dtsi.
+Now with the varity of several RPi boards, the memory should be defined
+at board level. This step gives us the chance to fix the memory size
+of the RPi 1 B+, Zero (incl. W) and Compute Module 1.
 
 Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
 ---
- arch/arm/boot/dts/bcm2835-rpi-a-plus.dts  |  7 +++++++
- arch/arm/boot/dts/bcm2835-rpi-a.dts       |  7 +++++++
- arch/arm/boot/dts/bcm2835-rpi-b-plus.dts  |  7 +++++++
- arch/arm/boot/dts/bcm2835-rpi-b-rev2.dts  |  7 +++++++
- arch/arm/boot/dts/bcm2835-rpi-b.dts       |  7 +++++++
- arch/arm/boot/dts/bcm2835-rpi-cm1-io1.dts |  7 +++++++
- arch/arm/boot/dts/bcm2835-rpi-zero-w.dts  |  7 +++++++
- arch/arm/boot/dts/bcm2835-rpi-zero.dts    |  7 +++++++
- arch/arm/boot/dts/bcm2835-rpi.dtsi        | 13 -------------
- arch/arm/boot/dts/bcm2836-rpi-2-b.dts     |  7 +++++++
- arch/arm/boot/dts/bcm2837-rpi-cm3-io3.dts |  7 +++++++
- 11 files changed, 70 insertions(+), 13 deletions(-)
+ arch/arm/boot/dts/bcm2835-rpi-a-plus.dts   | 5 +++++
+ arch/arm/boot/dts/bcm2835-rpi-a.dts        | 5 +++++
+ arch/arm/boot/dts/bcm2835-rpi-b-plus.dts   | 5 +++++
+ arch/arm/boot/dts/bcm2835-rpi-b-rev2.dts   | 5 +++++
+ arch/arm/boot/dts/bcm2835-rpi-b.dts        | 5 +++++
+ arch/arm/boot/dts/bcm2835-rpi-cm1.dtsi     | 5 +++++
+ arch/arm/boot/dts/bcm2835-rpi-zero-w.dts   | 5 +++++
+ arch/arm/boot/dts/bcm2835-rpi-zero.dts     | 5 +++++
+ arch/arm/boot/dts/bcm2835-rpi.dtsi         | 5 -----
+ arch/arm/boot/dts/bcm2836-rpi-2-b.dts      | 1 +
+ arch/arm/boot/dts/bcm2837-rpi-3-a-plus.dts | 1 +
+ arch/arm/boot/dts/bcm2837-rpi-3-b-plus.dts | 1 +
+ arch/arm/boot/dts/bcm2837-rpi-3-b.dts      | 1 +
+ arch/arm/boot/dts/bcm2837-rpi-cm3.dtsi     | 1 +
+ 14 files changed, 45 insertions(+), 5 deletions(-)
 
 diff --git a/arch/arm/boot/dts/bcm2835-rpi-a-plus.dts b/arch/arm/boot/dts/bcm2835-rpi-a-plus.dts
-index db8a601..cb3f08d 100644
+index cb3f08d..5b42e9a 100644
 --- a/arch/arm/boot/dts/bcm2835-rpi-a-plus.dts
 +++ b/arch/arm/boot/dts/bcm2835-rpi-a-plus.dts
-@@ -107,6 +107,13 @@
- 	status = "okay";
- };
+@@ -8,6 +8,11 @@
+ 	compatible = "raspberrypi,model-a-plus", "brcm,bcm2835";
+ 	model = "Raspberry Pi Model A+";
 
-+&sdhost {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&sdhost_gpio48>;
-+	bus-width = <4>;
-+	status = "okay";
-+};
++	memory@0 {
++		device_type = "memory";
++		reg = <0 0x10000000>;
++	};
 +
- &uart0 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&uart0_gpio14>;
+ 	leds {
+ 		act {
+ 			gpios = <&gpio 47 GPIO_ACTIVE_HIGH>;
 diff --git a/arch/arm/boot/dts/bcm2835-rpi-a.dts b/arch/arm/boot/dts/bcm2835-rpi-a.dts
-index 067d1f0..2d167d9 100644
+index 2d167d9..b716214 100644
 --- a/arch/arm/boot/dts/bcm2835-rpi-a.dts
 +++ b/arch/arm/boot/dts/bcm2835-rpi-a.dts
-@@ -102,6 +102,13 @@
- 	status = "okay";
- };
+@@ -8,6 +8,11 @@
+ 	compatible = "raspberrypi,model-a", "brcm,bcm2835";
+ 	model = "Raspberry Pi Model A";
 
-+&sdhost {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&sdhost_gpio48>;
-+	bus-width = <4>;
-+	status = "okay";
-+};
++	memory@0 {
++		device_type = "memory";
++		reg = <0 0x10000000>;
++	};
 +
- &uart0 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&uart0_gpio14>;
+ 	leds {
+ 		act {
+ 			gpios = <&gpio 16 GPIO_ACTIVE_LOW>;
 diff --git a/arch/arm/boot/dts/bcm2835-rpi-b-plus.dts b/arch/arm/boot/dts/bcm2835-rpi-b-plus.dts
-index 1e40d67..83a3a60 100644
+index 83a3a60..3318082 100644
 --- a/arch/arm/boot/dts/bcm2835-rpi-b-plus.dts
 +++ b/arch/arm/boot/dts/bcm2835-rpi-b-plus.dts
-@@ -109,6 +109,13 @@
- 	status = "okay";
- };
+@@ -9,6 +9,11 @@
+ 	compatible = "raspberrypi,model-b-plus", "brcm,bcm2835";
+ 	model = "Raspberry Pi Model B+";
 
-+&sdhost {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&sdhost_gpio48>;
-+	bus-width = <4>;
-+	status = "okay";
-+};
++	memory@0 {
++		device_type = "memory";
++		reg = <0 0x20000000>;
++	};
 +
- &uart0 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&uart0_gpio14>;
+ 	leds {
+ 		act {
+ 			gpios = <&gpio 47 GPIO_ACTIVE_HIGH>;
 diff --git a/arch/arm/boot/dts/bcm2835-rpi-b-rev2.dts b/arch/arm/boot/dts/bcm2835-rpi-b-rev2.dts
-index 28e7513..b6b4fea 100644
+index b6b4fea..97d7eb5 100644
 --- a/arch/arm/boot/dts/bcm2835-rpi-b-rev2.dts
 +++ b/arch/arm/boot/dts/bcm2835-rpi-b-rev2.dts
-@@ -102,6 +102,13 @@
- 	status = "okay";
- };
+@@ -9,6 +9,11 @@
+ 	compatible = "raspberrypi,model-b-rev2", "brcm,bcm2835";
+ 	model = "Raspberry Pi Model B rev2";
 
-+&sdhost {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&sdhost_gpio48>;
-+	bus-width = <4>;
-+	status = "okay";
-+};
++	memory@0 {
++		device_type = "memory";
++		reg = <0 0x10000000>;
++	};
 +
- &uart0 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&uart0_gpio14>;
+ 	leds {
+ 		act {
+ 			gpios = <&gpio 16 GPIO_ACTIVE_LOW>;
 diff --git a/arch/arm/boot/dts/bcm2835-rpi-b.dts b/arch/arm/boot/dts/bcm2835-rpi-b.dts
-index 31ff602..b5782fa 100644
+index b5782fa..37e02a1 100644
 --- a/arch/arm/boot/dts/bcm2835-rpi-b.dts
 +++ b/arch/arm/boot/dts/bcm2835-rpi-b.dts
-@@ -97,6 +97,13 @@
- 	status = "okay";
- };
+@@ -9,6 +9,11 @@
+ 	compatible = "raspberrypi,model-b", "brcm,bcm2835";
+ 	model = "Raspberry Pi Model B";
 
-+&sdhost {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&sdhost_gpio48>;
-+	bus-width = <4>;
-+	status = "okay";
-+};
++	memory@0 {
++		device_type = "memory";
++		reg = <0 0x10000000>;
++	};
 +
- &uart0 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&uart0_gpio14>;
-diff --git a/arch/arm/boot/dts/bcm2835-rpi-cm1-io1.dts b/arch/arm/boot/dts/bcm2835-rpi-cm1-io1.dts
-index 4764a25..41afea4 100644
---- a/arch/arm/boot/dts/bcm2835-rpi-cm1-io1.dts
-+++ b/arch/arm/boot/dts/bcm2835-rpi-cm1-io1.dts
-@@ -81,6 +81,13 @@
- 	hpd-gpios = <&gpio 46 GPIO_ACTIVE_LOW>;
- };
+ 	leds {
+ 		act {
+ 			gpios = <&gpio 16 GPIO_ACTIVE_LOW>;
+diff --git a/arch/arm/boot/dts/bcm2835-rpi-cm1.dtsi b/arch/arm/boot/dts/bcm2835-rpi-cm1.dtsi
+index ef22c2d..58059c2 100644
+--- a/arch/arm/boot/dts/bcm2835-rpi-cm1.dtsi
++++ b/arch/arm/boot/dts/bcm2835-rpi-cm1.dtsi
+@@ -10,6 +10,11 @@
+ 		};
+ 	};
 
-+&sdhost {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&sdhost_gpio48>;
-+	bus-width = <4>;
-+	status = "okay";
-+};
++	memory@0 {
++		device_type = "memory";
++		reg = <0 0x20000000>;
++	};
 +
- &uart0 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&uart0_gpio14>;
+ 	reg_3v3: fixed-regulator {
+ 		compatible = "regulator-fixed";
+ 		regulator-name = "3V3";
 diff --git a/arch/arm/boot/dts/bcm2835-rpi-zero-w.dts b/arch/arm/boot/dts/bcm2835-rpi-zero-w.dts
-index ba0167d..5ecc403 100644
+index 5ecc403..f38f388 100644
 --- a/arch/arm/boot/dts/bcm2835-rpi-zero-w.dts
 +++ b/arch/arm/boot/dts/bcm2835-rpi-zero-w.dts
-@@ -116,6 +116,13 @@
- 	};
- };
+@@ -12,6 +12,11 @@
+ 	compatible = "raspberrypi,model-zero-w", "brcm,bcm2835";
+ 	model = "Raspberry Pi Zero W";
 
-+&sdhost {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&sdhost_gpio48>;
-+	bus-width = <4>;
-+	status = "okay";
-+};
++	memory@0 {
++		device_type = "memory";
++		reg = <0 0x20000000>;
++	};
 +
- &uart0 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&uart0_gpio32 &uart0_ctsrts_gpio30>;
+ 	chosen {
+ 		/* 8250 auxiliary UART instead of pl011 */
+ 		stdout-path = "serial1:115200n8";
 diff --git a/arch/arm/boot/dts/bcm2835-rpi-zero.dts b/arch/arm/boot/dts/bcm2835-rpi-zero.dts
-index 3b35a8a..84c7035 100644
+index 84c7035..5fd0686 100644
 --- a/arch/arm/boot/dts/bcm2835-rpi-zero.dts
 +++ b/arch/arm/boot/dts/bcm2835-rpi-zero.dts
-@@ -98,6 +98,13 @@
- 	hpd-gpios = <&gpio 46 GPIO_ACTIVE_LOW>;
- };
+@@ -12,6 +12,11 @@
+ 	compatible = "raspberrypi,model-zero", "brcm,bcm2835";
+ 	model = "Raspberry Pi Zero";
 
-+&sdhost {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&sdhost_gpio48>;
-+	bus-width = <4>;
-+	status = "okay";
-+};
++	memory@0 {
++		device_type = "memory";
++		reg = <0 0x20000000>;
++	};
 +
- &uart0 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&uart0_gpio14>;
+ 	leds {
+ 		act {
+ 			gpios = <&gpio 47 GPIO_ACTIVE_HIGH>;
 diff --git a/arch/arm/boot/dts/bcm2835-rpi.dtsi b/arch/arm/boot/dts/bcm2835-rpi.dtsi
-index 715d50c..40bac52e 100644
+index 40bac52e..f5125b7 100644
 --- a/arch/arm/boot/dts/bcm2835-rpi.dtsi
 +++ b/arch/arm/boot/dts/bcm2835-rpi.dtsi
-@@ -68,19 +68,6 @@
- 	status = "okay";
- };
+@@ -1,11 +1,6 @@
+ #include <dt-bindings/power/raspberrypi-power.h>
 
--&sdhci {
--	pinctrl-names = "default";
--	pinctrl-0 = <&emmc_gpio48>;
--	bus-width = <4>;
--};
+ / {
+-	memory@0 {
+-		device_type = "memory";
+-		reg = <0 0x10000000>;
+-	};
 -
--&sdhost {
--	pinctrl-names = "default";
--	pinctrl-0 = <&sdhost_gpio48>;
--	status = "okay";
--	bus-width = <4>;
--};
--
- &usb {
- 	power-domains = <&power RPI_POWER_DOMAIN_USB>;
- };
+ 	leds {
+ 		compatible = "gpio-leds";
+
 diff --git a/arch/arm/boot/dts/bcm2836-rpi-2-b.dts b/arch/arm/boot/dts/bcm2836-rpi-2-b.dts
-index 7b4e651..f97ec95 100644
+index f97ec95..6a89999 100644
 --- a/arch/arm/boot/dts/bcm2836-rpi-2-b.dts
 +++ b/arch/arm/boot/dts/bcm2836-rpi-2-b.dts
-@@ -113,6 +113,13 @@
- 	status = "okay";
- };
+@@ -10,6 +10,7 @@
+ 	model = "Raspberry Pi 2 Model B";
 
-+&sdhost {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&sdhost_gpio48>;
-+	bus-width = <4>;
-+	status = "okay";
-+};
-+
- &uart0 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&uart0_gpio14>;
-diff --git a/arch/arm/boot/dts/bcm2837-rpi-cm3-io3.dts b/arch/arm/boot/dts/bcm2837-rpi-cm3-io3.dts
-index 6c8233a..433e306 100644
---- a/arch/arm/boot/dts/bcm2837-rpi-cm3-io3.dts
-+++ b/arch/arm/boot/dts/bcm2837-rpi-cm3-io3.dts
-@@ -80,6 +80,13 @@
- 	hpd-gpios = <&expgpio 1 GPIO_ACTIVE_LOW>;
- };
+ 	memory@0 {
++		device_type = "memory";
+ 		reg = <0 0x40000000>;
+ 	};
 
-+&sdhost {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&sdhost_gpio48>;
-+	bus-width = <4>;
-+	status = "okay";
-+};
-+
- &uart0 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&uart0_gpio14>;
+diff --git a/arch/arm/boot/dts/bcm2837-rpi-3-a-plus.dts b/arch/arm/boot/dts/bcm2837-rpi-3-a-plus.dts
+index 7f4437a..0e29aaa 100644
+--- a/arch/arm/boot/dts/bcm2837-rpi-3-a-plus.dts
++++ b/arch/arm/boot/dts/bcm2837-rpi-3-a-plus.dts
+@@ -14,6 +14,7 @@
+ 	};
+
+ 	memory@0 {
++		device_type = "memory";
+ 		reg = <0 0x20000000>;
+ 	};
+
+diff --git a/arch/arm/boot/dts/bcm2837-rpi-3-b-plus.dts b/arch/arm/boot/dts/bcm2837-rpi-3-b-plus.dts
+index c6fa34c..a1487ae 100644
+--- a/arch/arm/boot/dts/bcm2837-rpi-3-b-plus.dts
++++ b/arch/arm/boot/dts/bcm2837-rpi-3-b-plus.dts
+@@ -15,6 +15,7 @@
+ 	};
+
+ 	memory@0 {
++		device_type = "memory";
+ 		reg = <0 0x40000000>;
+ 	};
+
+diff --git a/arch/arm/boot/dts/bcm2837-rpi-3-b.dts b/arch/arm/boot/dts/bcm2837-rpi-3-b.dts
+index ce71f57..a36bfdb 100644
+--- a/arch/arm/boot/dts/bcm2837-rpi-3-b.dts
++++ b/arch/arm/boot/dts/bcm2837-rpi-3-b.dts
+@@ -15,6 +15,7 @@
+ 	};
+
+ 	memory@0 {
++		device_type = "memory";
+ 		reg = <0 0x40000000>;
+ 	};
+
+diff --git a/arch/arm/boot/dts/bcm2837-rpi-cm3.dtsi b/arch/arm/boot/dts/bcm2837-rpi-cm3.dtsi
+index 81399b2..7c3cb7e 100644
+--- a/arch/arm/boot/dts/bcm2837-rpi-cm3.dtsi
++++ b/arch/arm/boot/dts/bcm2837-rpi-cm3.dtsi
+@@ -5,6 +5,7 @@
+
+ / {
+ 	memory@0 {
++		device_type = "memory";
+ 		reg = <0 0x40000000>;
+ 	};
+
 --
 2.7.4
 
