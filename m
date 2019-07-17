@@ -2,68 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E9FF6B62D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 07:58:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BBE116B64F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 08:11:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N/aajnQ3T4bm2OOUoBU4XTknRpJEH9ZXA+YUxr5XYns=; b=iw6dRzXRnfoDYv
-	8DdOkoIUtiyrZAcZmmN2E/QubnhEBIJwyRw5zH6/UdkdJ9iEBT6y1PE25hkmTX+NriX88ZwJiQheY
-	NOT8OIQ+vO6HcnveYEtSs8tPdehW8/uZpUECC0OtXVc2mLC7wQfWWlWcFQekw6FOiMfoL/vrLTGH2
-	l+z9v7ZV8TOgsiqkslWVE4D6qUhkvZRf7I8UQObsSgCmEmnwrFJteg/6Zqhht+BOTketdcfxXUfUh
-	inq1ytUgzqckwlitOh/Sky01TZ0H/5S3ivT/XkiarkngRhb0JeXZl+7HE2tZTjJcP8LiaTNnZqQRn
-	XjnsqmOHLhgxzJN5A8ag==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=XiT59KPGpBj/KxUO0+mDLKWvuH1YJbldhpRfHl6HFCQ=; b=kAh
+	ME+otZWRwa+juB9rU3phYo7vG3TyEaeJQtUYxCK6DhSKRQBdNk6+CKZcgEF9bzMImTxt7cr9Rp3XU
+	PfLUgwdHjewv+ItAy0LzQ81Rvv31Mt0oz8q0mLsSQvH2Sf0CEYqkjPvvGnof+DWErYqBpzMDuqXZs
+	EKKSsUSMd/CyPubK6zBMFR1WPhGdeXemzXj6XJ7uo2cQNwsKhvzvKo8PgXywCD1If0g6qDYfDliBH
+	mRWQG2J7MHAgSt586/7TpUWYUPxuBfCvU07iNIdnFiTrQ9VFXg+VM3bHxp4chh1HbFe8gXgJekWPQ
+	rTcVzwdxWE2y5mTkLPav+tglXr9rBbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hncxt-0000pu-3K; Wed, 17 Jul 2019 05:58:57 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hnd9j-0006Nu-IZ; Wed, 17 Jul 2019 06:11:11 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hncxe-0000om-Cm; Wed, 17 Jul 2019 05:58:44 +0000
-X-UUID: bbaed3a78b9f467f9fa00cd0d6e28c9b-20190716
-X-UUID: bbaed3a78b9f467f9fa00cd0d6e28c9b-20190716
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 63650857; Tue, 16 Jul 2019 21:58:35 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 16 Jul 2019 22:58:34 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- MTKMBS31N1.mediatek.inc (172.27.4.69) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 17 Jul 2019 13:58:29 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 17 Jul 2019 13:58:29 +0800
-Message-ID: <1563343109.29169.19.camel@mtksdaap41>
-Subject: Re: [PATCH v4, 22/33] drm/mediatek: add background color input
- select function for ovl/ovl_2l
-From: CK Hu <ck.hu@mediatek.com>
-To: <yongqiang.niu@mediatek.com>
-Date: Wed, 17 Jul 2019 13:58:29 +0800
-In-Reply-To: <1562625253-29254-23-git-send-email-yongqiang.niu@mediatek.com>
-References: <1562625253-29254-1-git-send-email-yongqiang.niu@mediatek.com>
- <1562625253-29254-23-git-send-email-yongqiang.niu@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
-MIME-Version: 1.0
-X-TM-SNTS-SMTP: AA45BD5AFD08249059BE630450E0D8590C726157CC07B85B922BBAE9C01B21812000:8
-X-MTK: N
+ id 1hnd9U-0006ND-G7
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 06:10:58 +0000
+Received: by mail-pf1-x444.google.com with SMTP id y15so10296297pfn.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 16 Jul 2019 23:10:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=tcOipK/CbddDVGFHFiGY3BJRXPaA4gC2lnfl7Hga/DI=;
+ b=BrJDYCZJB9PG2HE+zn1d3uzhxRGw8nkXBBsMHHsFrRnoKeB07FH6aBz2TGAHjuOp0u
+ bMwUGjgVUahRq2G8WwuPSF/hj3iKHxf4F5ptDWZZfaBUevxVf/iSdoi6hZKhe/e70Bco
+ /E3DzKUFLNdGkZYFhmukS2xeKpUl7SzGaXjZDi1GhwHDoJqkcrAneHe4+7mq2beYs0q9
+ vQTiBYCUMuuRsxteC/AaQaqJ5pq7gq8drIUbOqlQ3FgJXQ8rbis09pge2Ixb/fASqSOG
+ Yv6wFtchoJpRuhsS7sa8ITOyR0whajNhJASDzc58bridZxkGG4iSxY/IdDdloKvjMLe/
+ l6LQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=tcOipK/CbddDVGFHFiGY3BJRXPaA4gC2lnfl7Hga/DI=;
+ b=TN5Ilz6fW/Puk9jGMXQNjraMsxpVFmIZWQCxxFLPHuLoulWmfbVc3RMGvpukmbgT6u
+ PFBvkJz3fX+38Ou9A2Ln4yXIhED5r8NV15qu3DKd1M+KMViM7n8YBRjSmBAqixK6iONA
+ 8qZviA7ZhAdpwePRMdTrbkq2y8kfV3qrWpsQH8YOqaWAAgRvbpyts+mI6p2st3EiU3vG
+ F5drGMqqj9FRErnmCQEQBu/3e+EaH0gYp652S+GoAilfL2j6DAoa+4TppWZ2hbMG4DlR
+ MJW//g14IN+P6JtjKKsA7b11uwifCWuoca0gKrUYgK32y56KbIFN/5za5V9WEMoyOGru
+ v1HQ==
+X-Gm-Message-State: APjAAAWN5F6AtSXjiobrVgQFymDKe5VoZ53dvXj6HNt0Wb7iDjjRRD3o
+ 1AVEe+5RNbtTwV0lnh2Kn+A0
+X-Google-Smtp-Source: APXvYqy4gNVYEdgjbXvPK6KcNs5PTafuSPkKcmK8Hq2gFAval1OLYy1Y5GCOnKFcSedCx4Kq8YXApg==
+X-Received: by 2002:a17:90a:dac3:: with SMTP id
+ g3mr41743202pjx.45.1563343855049; 
+ Tue, 16 Jul 2019 23:10:55 -0700 (PDT)
+Received: from localhost.localdomain ([2405:204:7301:59e6:f493:40df:9c8a:5041])
+ by smtp.gmail.com with ESMTPSA id r27sm25993313pgn.25.2019.07.16.23.10.47
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 16 Jul 2019 23:10:54 -0700 (PDT)
+From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+To: shawnguo@kernel.org,
+	s.hauer@pengutronix.de,
+	robh+dt@kernel.org
+Subject: [PATCH 0/3] Add support for i.MXQXP AI_ML board
+Date: Wed, 17 Jul 2019 11:40:36 +0530
+Message-Id: <20190717061039.9271-1-manivannan.sadhasivam@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_225842_438484_262B07CF 
-X-CRM114-Status: GOOD (  17.08  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190716_231056_572895_108BA01B 
+X-CRM114-Status: UNSURE (   8.57  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,100 +95,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Daniel Vetter <daniel@ffwll.ch>, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, kinjan.patel@einfochips.com,
+ linux-kernel@vger.kernel.org, Darshak.Patel@einfochips.com, linux-imx@nxp.com,
+ kernel@pengutronix.de,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>, festevam@gmail.com,
+ linux-arm-kernel@lists.infradead.org, prajose.john@einfochips.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Yongqiang:
+Hello,
 
-On Tue, 2019-07-09 at 06:34 +0800, yongqiang.niu@mediatek.com wrote:
-> From: Yongqiang Niu <yongqiang.niu@mediatek.com>
-> 
-> This patch add background color input select function for ovl/ovl_2l
-> 
-> ovl include 4 DRAM layer and 1 background color layer
-> ovl_2l include 4 DRAM layer and 1 background color layer
-> DRAM layer frame buffer data from render hardware, GPU for example.
-> backgournd color layer is embed in ovl/ovl_2l, we can only set
-> it color, but not support DRAM frame buffer.
-> 
-> for ovl0->ovl0_2l direct link usecase,
-> we need set ovl0_2l background color intput select from ovl0
-> if render send DRAM buffer layer number <=4, all these layer read
-> by ovl.
-> layer0 is at the bottom of all layers.
-> layer3 is at the top of all layers.
-> if render send DRAM buffer layer numbfer >=4 && <=6
-> ovl0 read layer0~3
-> ovl0_2l read layer4~5
-> layer5 is at the top ot all these layers.
-> 
-> the decision of how to setting ovl0/ovl0_2l read these layer data
-> is controlled in mtk crtc, which will be another patch
-> 
+This patchset adds support for i.MXQXP AI_ML board from Einfochips.
+This board is one of the Consumer Edition boards of the 96Boards family
+based on i.MX8QXP SoC from NXP/Freescale.
 
-Reviewed-by: CK Hu <ck.hu@mediatek.com>
+The initial support includes following peripherals which are tested and
+known to be working:
 
-> Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
-> ---
->  drivers/gpu/drm/mediatek/mtk_disp_ovl.c | 22 ++++++++++++++++++++++
->  1 file changed, 22 insertions(+)
-> 
-> diff --git a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-> index a0ab760..8ca4965 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-> @@ -27,6 +27,8 @@
->  #define DISP_REG_OVL_EN				0x000c
->  #define DISP_REG_OVL_RST			0x0014
->  #define DISP_REG_OVL_ROI_SIZE			0x0020
-> +#define DISP_REG_OVL_DATAPATH_CON		0x0024
-> +#define OVL_BGCLR_SEL_IN				BIT(2)
->  #define DISP_REG_OVL_ROI_BGCLR			0x0028
->  #define DISP_REG_OVL_SRC_CON			0x002c
->  #define DISP_REG_OVL_CON(n)			(0x0030 + 0x20 * (n))
-> @@ -245,6 +247,24 @@ static void mtk_ovl_layer_config(struct mtk_ddp_comp *comp, unsigned int idx,
->  		mtk_ovl_layer_on(comp, idx);
->  }
->  
-> +static void mtk_ovl_bgclr_in_on(struct mtk_ddp_comp *comp)
-> +{
-> +	unsigned int reg;
-> +
-> +	reg = readl(comp->regs + DISP_REG_OVL_DATAPATH_CON);
-> +	reg = reg | OVL_BGCLR_SEL_IN;
-> +	writel(reg, comp->regs + DISP_REG_OVL_DATAPATH_CON);
-> +}
-> +
-> +static void mtk_ovl_bgclr_in_off(struct mtk_ddp_comp *comp)
-> +{
-> +	unsigned int reg;
-> +
-> +	reg = readl(comp->regs + DISP_REG_OVL_DATAPATH_CON);
-> +	reg = reg & ~OVL_BGCLR_SEL_IN;
-> +	writel(reg, comp->regs + DISP_REG_OVL_DATAPATH_CON);
-> +}
-> +
->  static const struct mtk_ddp_comp_funcs mtk_disp_ovl_funcs = {
->  	.config = mtk_ovl_config,
->  	.start = mtk_ovl_start,
-> @@ -255,6 +275,8 @@ static void mtk_ovl_layer_config(struct mtk_ddp_comp *comp, unsigned int idx,
->  	.layer_on = mtk_ovl_layer_on,
->  	.layer_off = mtk_ovl_layer_off,
->  	.layer_config = mtk_ovl_layer_config,
-> +	.bgclr_in_on = mtk_ovl_bgclr_in_on,
-> +	.bgclr_in_off = mtk_ovl_bgclr_in_off,
->  };
->  
->  static int mtk_disp_ovl_bind(struct device *dev, struct device *master,
+1. Debug serial via UART2
+2. uSD
+3. WiFi
+4. Ethernet
 
+More information about this board can be found in Arrow website:
+https://www.arrow.com/en/products/imx8-ai-ml/arrow-development-tools
+
+Thanks,
+Mani
+
+Manivannan Sadhasivam (3):
+  dt-bindings: Add Vendor prefix for Einfochips
+  dt-bindings: arm: Document i.MX8QXP AI_ML board binding
+  arm64: dts: freescale: Add support for i.MX8QXP AI_ML board
+
+ .../devicetree/bindings/arm/fsl.yaml          |   1 +
+ .../devicetree/bindings/vendor-prefixes.yaml  |   2 +
+ arch/arm64/boot/dts/freescale/Makefile        |   1 +
+ .../boot/dts/freescale/imx8qxp-ai_ml.dts      | 249 ++++++++++++++++++
+ 4 files changed, 253 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/freescale/imx8qxp-ai_ml.dts
+
+-- 
+2.17.1
 
 
 _______________________________________________
