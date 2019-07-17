@@ -2,59 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A81036B959
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 11:34:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CBF66B996
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 17 Jul 2019 11:54:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kdOdC2HQoMNwR107H6eiTOeFF9VDeo0oyUHIS1XP+b0=; b=cosnXpDxFACjDi
-	/6nBssYuA+zbnbT4wjy4OVpIh/dKgGZ1iZ5wWbgzaM7lfvxIW8wLg46VERmM/gP+uIWuEGXc2+mfZ
-	8ZTf48N0e9qx7Du0fCCuXRLwgYZpug4j36o4pxrN+Oqhp/9A8e9Qz+z5JaDWDzXmSLN9QXEJ6npys
-	sS9LbsNzISBjxw3jY84oXDRHoYRnorG3JT6YoU/AfLI2Ah85QdoTixjC5DAnyWjgKLTDqqiXJg5YS
-	FBRZfKPD70d+hIIMhaj94kBfxMBVRTglp7LvX7/0QjuSuU4q8GdFAooKATMWrzR0LR+z+zOLGks51
-	fR7QdpPQ5YuJ84qLRFUw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OdHuZ5jVRO7sHpcxCQxQoG+xh9I9wrWwVJGZ1GKylQo=; b=IKLwKh+vAVxgrP
+	wf43gF+WKqI0C4d4J8T1C/fn7yOyNusIUJccs4LFqrwzUjfFPA9QjSNlZTqySUBbahAMpNXrZRa12
+	ipf/KFVjZGCuED3SrVnrYTSzdrFGZbL0Oc6bz6W4zCMdr/WH72gJM80icGkX00qQHM3fD7pxz1LyD
+	Hj6x4LD8aR+cNb+fnojKMYWPFM43WZtv/q4X8VforKZRLh4fhvFuRS5iJ2CegIsPxf69Rztoy6/j8
+	LZhK840LnK95RI4POnOWXc0INsLeB4k72QlwiPVprA70YXy/+5TXbpgXXLQE1rIQG29zEVFVIbDAL
+	xUWk1BsHoXRhPyJ5nf8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hngKj-0002cX-RP; Wed, 17 Jul 2019 09:34:46 +0000
-Received: from relay6-d.mail.gandi.net ([217.70.183.198])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hngK3-0002Gk-9K
- for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 09:34:05 +0000
-X-Originating-IP: 86.250.200.211
-Received: from aptenodytes (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
- [86.250.200.211])
- (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id A14BAC000D;
- Wed, 17 Jul 2019 09:33:48 +0000 (UTC)
-Date: Wed, 17 Jul 2019 11:33:48 +0200
-From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-To: Nishka Dasgupta <nishkadg.linux@gmail.com>
-Subject: Re: [PATCH 2/2] staging: media: sunxi: Replace function
- cedrus_check_format()
-Message-ID: <20190717093348.GB26951@aptenodytes>
-References: <20190703081317.22795-1-nishkadg.linux@gmail.com>
- <20190703081317.22795-2-nishkadg.linux@gmail.com>
- <20190705102650.GB1645@aptenodytes>
- <1c5bd5a6-757e-2bce-6adf-6dafbf6956a6@gmail.com>
+	id 1hngdr-0001Bx-9I; Wed, 17 Jul 2019 09:54:31 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hngdg-0001BT-6j
+ for linux-arm-kernel@lists.infradead.org; Wed, 17 Jul 2019 09:54:21 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A16CC28;
+ Wed, 17 Jul 2019 02:54:15 -0700 (PDT)
+Received: from [10.0.2.15] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 9483A3F71A;
+ Wed, 17 Jul 2019 02:54:14 -0700 (PDT)
+Subject: Re: [PATCH] arm64: Avoid pointless schedule_preempt_irq() invocations
+To: Thomas Gleixner <tglx@linutronix.de>,
+ LAK <linux-arm-kernel@lists.infradead.org>
+References: <alpine.DEB.2.21.1907171036490.1767@nanos.tec.linutronix.de>
+From: Valentin Schneider <valentin.schneider@arm.com>
+Message-ID: <e47e8298-af21-64fa-eac3-6fdfbf11c502@arm.com>
+Date: Wed, 17 Jul 2019 10:54:09 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1c5bd5a6-757e-2bce-6adf-6dafbf6956a6@gmail.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <alpine.DEB.2.21.1907171036490.1767@nanos.tec.linutronix.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_023403_844429_776111BB 
-X-CRM114-Status: GOOD (  16.50  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190717_025420_288576_CF482AE3 
+X-CRM114-Status: GOOD (  14.92  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.198 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.198 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -68,88 +62,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, maxime.ripard@bootlin.com,
- gregkh@linuxfoundation.org, wens@csie.org, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ LKML <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On Fri 05 Jul 19, 17:43, Nishka Dasgupta wrote:
-> On 05/07/19 3:56 PM, Paul Kocialkowski wrote:
-> > Hi,
-> > 
-> > On Wed 03 Jul 19, 13:43, Nishka Dasgupta wrote:
-> > > Remove function cedrus_check_format as all it does is call
-> > > cedrus_find_format.
-> > > Rename cedrus_find_format to cedrus_check_format to maintain
-> > > compatibility with call sites.
-> > > Issue found with Coccinelle.
-> > 
-> > Maybe we could have a !! or a bool cast to make coccinelle happy here?
+On 17/07/2019 09:43, Thomas Gleixner wrote:
+> When preempt_count is zero on return from interrupt then
+> schedule_preempt_irq() is invoked even if TIF_NEED_RESCHED is not set.
 > 
-> Coccinelle didn't flag the type mismatch, just the single-line functions. I
-> could add the bool cast then?
-
-Looks like I failed to follow-up on this in due time, sorry.
-
-Yes a bool cast would definitely be welcome :)
-
-Cheers,
-
-Paul
-
-> Thanking you,
-> Nishka
+> That does not make sense because schedule_preempt_irq() has to go through a
+> full __schedule() for nothing in that case.
 > 
-> > Cheers,
-> > 
-> > Paul
-> > 
-> > > Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
-> > > ---
-> > >   drivers/staging/media/sunxi/cedrus/cedrus_video.c | 10 ++--------
-> > >   1 file changed, 2 insertions(+), 8 deletions(-)
-> > > 
-> > > diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_video.c b/drivers/staging/media/sunxi/cedrus/cedrus_video.c
-> > > index 0ec31b9e0aea..d5cc9ed04fd2 100644
-> > > --- a/drivers/staging/media/sunxi/cedrus/cedrus_video.c
-> > > +++ b/drivers/staging/media/sunxi/cedrus/cedrus_video.c
-> > > @@ -55,8 +55,8 @@ static inline struct cedrus_ctx *cedrus_file2ctx(struct file *file)
-> > >   	return container_of(file->private_data, struct cedrus_ctx, fh);
-> > >   }
-> > > -static bool cedrus_find_format(u32 pixelformat, u32 directions,
-> > > -			       unsigned int capabilities)
-> > > +static bool cedrus_check_format(u32 pixelformat, u32 directions,
-> > > +				unsigned int capabilities)
-> > >   {
-> > >   	struct cedrus_format *fmt;
-> > >   	unsigned int i;
-> > > @@ -76,12 +76,6 @@ static bool cedrus_find_format(u32 pixelformat, u32 directions,
-> > >   	return false;
-> > >   }
-> > > -static bool cedrus_check_format(u32 pixelformat, u32 directions,
-> > > -				unsigned int capabilities)
-> > > -{
-> > > -	return cedrus_find_format(pixelformat, directions, capabilities);
-> > > -}
-> > > -
-> > >   static void cedrus_prepare_format(struct v4l2_pix_format *pix_fmt)
-> > >   {
-> > >   	unsigned int width = pix_fmt->width;
-> > > -- 
-> > > 2.19.1
-> > > 
-> > 
+> Check TIF_NEED_RESCHED and invoke schedule_preempt_irq() only if set.
 > 
+> Signed-off-by: Thomas Gleixner <tglx@linutronix.de>
 
--- 
-Paul Kocialkowski, Bootlin
-Embedded Linux and kernel engineering
-https://bootlin.com
+Don't we have NEED_RESCHED squashed into preempt count?
+
+  396244692232 ("arm64: preempt: Provide our own implementation of asm/preempt.h")
+
+So the existing check should cover that, unless I'm missing something?
+
+> ---
+> Found while staring at some RT wrecakge in that area.
+> ---
+>  arch/arm64/kernel/entry.S |    4 ++++
+>  1 file changed, 4 insertions(+)
+> 
+> --- a/arch/arm64/kernel/entry.S
+> +++ b/arch/arm64/kernel/entry.S
+> @@ -680,6 +680,10 @@ alternative_if ARM64_HAS_IRQ_PRIO_MASKIN
+>  	orr	x24, x24, x0
+>  alternative_else_nop_endif
+>  	cbnz	x24, 1f				// preempt count != 0 || NMI return path
+> +
+> +	ldr	x0, [tsk, #TSK_TI_FLAGS]        // get flags
+> +	tbz	x0, #TIF_NEED_RESCHED, 1f      	// needs rescheduling?
+> +
+>  	bl	preempt_schedule_irq		// irq en/disable is done inside
+>  1:
+>  #endif
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
