@@ -2,65 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BAAD56CA8F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 10:02:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 505F36CA95
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 10:04:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Bd/vQFW7F6Op3Du0wncvJ4KJuDFDNuNg5/lBX7qNN+k=; b=dyd6yclCuO9WSW
-	sfcLH5hxwJ2TV5B9tOuz+N7BuggDJ16LOmR91ph81lkwCfHD1nQZlp0538KfuFYwu6g0SrJMCLSyE
-	2t5FJOcDm/VRZCkKiYdMGLh69ZMk08lqraBOGeVuUSbmfd2SByzISJ0XbMlC5zDk519ODukmp+Uo+
-	VwTx5MA8FOleOMHJrCCxjNeicu9qliNVsToAOJG+yAJG0DjvYEVVq4ZjM8dwWRIZ2k5qOgjHKIHPT
-	60qV+Fx85FP0hA2iTLTw6cx++3V/HKKz4x5G9BpNl9B5E7tCj/XoricwcX3BH+THM3qBPwX/fyEBR
-	DNO+l6mzyjW+rVE7gM3g==;
+	List-Owner; bh=E26TrzOXTUc40hkbTdf57x8BOb+g525MTsv3MIu/Z6s=; b=ThspBmoN6QoIui
+	cfjwehBDDIQN0PnksIb+uzP46SFWfJoivGuQnZENNU/tUHkLnruXgn7Oh32iIQzhfHK6G1IL2HUy/
+	6UMa6Gn/FsciWCf50clq/xBpDLcuruUsVbJuQ5+byU1vmnhgX6W9XyqrZkjxt7adP+rGuYQP58n27
+	JLgT/NEyE0AbrM9USrpVa8ysFozVwlC04JHDYrBB0NURC8bNW7ZkTiQr343K0RmJcDX/HI4uupnnq
+	juqrCQEULmZRjyhoIQEhpvPOsAPpBVj0UBNLA9i1zKJu521+/knKLfib19f7kkfmqA8Y1/grK1/Rr
+	GwMDx/4tIikYfNj0+PSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ho1Mj-00017h-71; Thu, 18 Jul 2019 08:02:13 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1ho1PA-0002IF-36; Thu, 18 Jul 2019 08:04:44 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ho1M9-0000w4-Ii; Thu, 18 Jul 2019 08:01:39 +0000
-X-UUID: 6e648b24c3dc44a7bec79d81d2c9053a-20190718
-X-UUID: 6e648b24c3dc44a7bec79d81d2c9053a-20190718
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <zhiyong.tao@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2128258724; Thu, 18 Jul 2019 00:01:34 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 18 Jul 2019 01:01:33 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 18 Jul 2019 16:01:26 +0800
-Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 18 Jul 2019 16:01:25 +0800
-From: Zhiyong Tao <zhiyong.tao@mediatek.com>
-To: <robh+dt@kernel.org>, <jic23@kernel.org>, <knaack.h@gmx.de>,
- <lars@metafoo.de>, <pmeerw@pmeerw.net>
-Subject: [PATCH v1 2/2] auxadc: mediatek: support efuse calibration in auxadc
- driver
-Date: Thu, 18 Jul 2019 16:01:19 +0800
-Message-ID: <20190718080119.30707-3-zhiyong.tao@mediatek.com>
-X-Mailer: git-send-email 2.12.5
-In-Reply-To: <20190718080119.30707-1-zhiyong.tao@mediatek.com>
-References: <20190718080119.30707-1-zhiyong.tao@mediatek.com>
+ id 1ho1Oo-0002HL-34
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 08:04:23 +0000
+Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 84F5D208C0;
+ Thu, 18 Jul 2019 08:04:10 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1563437059;
+ bh=E0bLEAP3B1LCOK+JmfNMki+fkUB1oBDmiJFqCk7d3z4=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=USpNpihtlTs5cwv+eEh3e1xNwu3qmdbLx7FNEBHVdjr6KnddtNezQJ6nvWZGKxlvR
+ /fJNvvgg3LFmupkj2VGQMcbCRVvN+OQW4Rz3cU+jVJMKWuQeIVRklIxTUVlxi/63Zm
+ 4KhuoE3Zvl85Z7YSE55/hIQ39qAv/rP78deAwS4c=
+Date: Thu, 18 Jul 2019 16:03:57 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Anson.Huang@nxp.com
+Subject: Re: [PATCH V2 1/2] arm64: dts: imx8mm: Correct OPP table according
+ to latest datasheet
+Message-ID: <20190718080356.GL3738@dragon>
+References: <20190629102157.8026-1-Anson.Huang@nxp.com>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20190629102157.8026-1-Anson.Huang@nxp.com>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_010137_617213_1448F33D 
-X-CRM114-Status: GOOD (  13.18  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190718_010422_148714_0B7E5E75 
+X-CRM114-Status: UNSURE (   8.67  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,138 +78,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, sean.wang@mediatek.com,
- srv_heupstream@mediatek.com, linux-iio@vger.kernel.org,
- Zhiyong Tao <zhiyong.tao@mediatek.com>, erin.lo@mediatek.com,
- hui.liu@mediatek.com, linux-kernel@vger.kernel.org, sj.huang@mediatek.com,
- linux-mediatek@lists.infradead.org, eddie.huang@mediatek.com,
- matthias.bgg@gmail.com, yingjoe.chen@mediatek.com, jg_poxu@mediatek.com,
- s.hauer@pengutronix.de, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, ping.bai@nxp.com,
+ ccaione@baylibre.com, andrew.smirnov@gmail.com, viresh.kumar@linaro.org,
+ s.hauer@pengutronix.de, angus@akkea.ca, linux-kernel@vger.kernel.org,
+ daniel.baluta@nxp.com, abel.vesa@nxp.com, robh+dt@kernel.org,
+ Linux-imx@nxp.com, kernel@pengutronix.de, leonard.crestez@nxp.com,
+ festevam@gmail.com, agx@sigxcpu.org, linux-arm-kernel@lists.infradead.org,
+ l.stach@pengutronix.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch support efuse calibration in auxadc driver
+On Sat, Jun 29, 2019 at 06:21:56PM +0800, Anson.Huang@nxp.com wrote:
+> From: Anson Huang <Anson.Huang@nxp.com>
+> 
+> According to latest datasheet (Rev.0.2, 04/2019) from below links,
+> 1.8GHz is ONLY available for consumer part, so the market segment
+> bits for 1.8GHz opp should ONLY available for consumer part accordingly.
+> 
+> https://www.nxp.com/docs/en/data-sheet/IMX8MMIEC.pdf
+> https://www.nxp.com/docs/en/data-sheet/IMX8MMCEC.pdf
+> 
+> Fixes: f403a26c865b (arm64: dts: imx8mm: Add cpu speed grading and all OPPs)
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
-Signed-off-by: Zhiyong Tao <zhiyong.tao@mediatek.com>
-Signed-off-by: jg_poxu <jg_poxu@mediatek.com>
----
- drivers/iio/adc/mt6577_auxadc.c | 71 +++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 71 insertions(+)
-
-diff --git a/drivers/iio/adc/mt6577_auxadc.c b/drivers/iio/adc/mt6577_auxadc.c
-index 95d76abb64ec..e30d9736b1a5 100644
---- a/drivers/iio/adc/mt6577_auxadc.c
-+++ b/drivers/iio/adc/mt6577_auxadc.c
-@@ -17,12 +17,14 @@
- #include <linux/err.h>
- #include <linux/kernel.h>
- #include <linux/module.h>
-+#include <linux/nvmem-consumer.h>
- #include <linux/of.h>
- #include <linux/of_device.h>
- #include <linux/platform_device.h>
- #include <linux/iopoll.h>
- #include <linux/io.h>
- #include <linux/iio/iio.h>
-+#include <linux/slab.h>
- 
- /* Register definitions */
- #define MT6577_AUXADC_CON0                    0x00
-@@ -42,6 +44,13 @@
- #define MT6577_AUXADC_POWER_READY_MS          1
- #define MT6577_AUXADC_SAMPLE_READY_US         25
- 
-+#define ADC_GE_A_SHIFT      10
-+#define ADC_GE_A_MASK       (0x3ff << ADC_GE_A_SHIFT)
-+#define ADC_OE_A_SHIFT      0
-+#define ADC_OE_A_MASK       (0x3ff << ADC_OE_A_SHIFT)
-+#define ADC_CALI_EN_A_SHIFT 20
-+#define ADC_CALI_EN_A_MASK  (0x1 << ADC_CALI_EN_A_SHIFT)
-+
- struct mt6577_auxadc_device {
- 	void __iomem *reg_base;
- 	struct clk *adc_clk;
-@@ -74,6 +83,64 @@ static const struct iio_chan_spec mt6577_auxadc_iio_channels[] = {
- 	MT6577_AUXADC_CHANNEL(15),
- };
- 
-+s32 cali_oe;
-+s32 cali_ge;
-+struct adc_cali_info {
-+	u32 cali_ge_a;
-+	u32 cali_oe_a;
-+	u32 gain;
-+};
-+static struct adc_cali_info adc_cali;
-+
-+static int mt6577_auxadc_update_cali(struct device *dev)
-+{
-+	struct nvmem_cell *cell;
-+	u32 *buf;
-+	size_t len;
-+	int ret = 0;
-+
-+	cali_oe = 0;
-+	cali_ge = 0;
-+
-+	cell = nvmem_cell_get(dev, "calibration-data");
-+	if (IS_ERR(cell)) {
-+		if (PTR_ERR(cell) == -EPROBE_DEFER)
-+			return PTR_ERR(cell);
-+		return 0;
-+	}
-+
-+	buf = (u32 *)nvmem_cell_read(cell, &len);
-+
-+	nvmem_cell_put(cell);
-+
-+	if (IS_ERR(buf))
-+		return PTR_ERR(buf);
-+
-+	if (len < sizeof(u32)) {
-+		dev_warn(dev, "invalid calibration data\n");
-+		ret = -EINVAL;
-+		goto out;
-+	}
-+
-+	if (((buf[0] & ADC_CALI_EN_A_MASK) >> ADC_CALI_EN_A_SHIFT) != 0) {
-+		adc_cali.cali_oe_a =
-+			(buf[0] & ADC_OE_A_MASK) >> ADC_OE_A_SHIFT;
-+		adc_cali.cali_ge_a =
-+			((buf[0] & ADC_GE_A_MASK) >> ADC_GE_A_SHIFT);
-+
-+		cali_ge = adc_cali.cali_ge_a - 512;
-+		cali_oe = adc_cali.cali_oe_a - 512;
-+		adc_cali.gain = 1 + cali_ge;
-+	}  else {
-+		dev_info(dev, "Device not calibrated, using default calibration values\n");
-+	}
-+
-+out:
-+	kfree(buf);
-+
-+	return ret;
-+}
-+
- static inline void mt6577_auxadc_mod_reg(void __iomem *reg,
- 					 u32 or_mask, u32 and_mask)
- {
-@@ -274,6 +341,10 @@ static int mt6577_auxadc_probe(struct platform_device *pdev)
- 		goto err_power_off;
- 	}
- 
-+	ret = mt6577_auxadc_update_cali(&pdev->dev);
-+	if (ret)
-+		return ret;
-+
- 	return 0;
- 
- err_power_off:
--- 
-2.12.5
-
+Applied both, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
