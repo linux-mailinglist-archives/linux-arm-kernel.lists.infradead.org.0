@@ -2,59 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E94026D0DA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 17:15:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D493F6D102
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 17:22:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=5CrddvcKXefbaRr9y62m28fextwU1CNh6Tfdy9Bmw/I=; b=ZLaL+5dO106POt61SsjzigNzKg
-	wjltjpJ5zTcqQHflbdkTaCNpTPQlM/bzRuls9jD7eTz2PWkPMtXpPa161oEtvXQUp4OERETKkcD/K
-	jAgoe+vv/LHwc6k1AuOiBDTihin2MJ6HZjHJbiD1rE5wNiN6n1+t+iA+jt29A+yI/b+wFX8MQmMXx
-	3GXs7CFRsLcH9UaoMneWPR1tF+LC7IPAyxjO34Mg3Im0XY3qM2KefyyXOSazRoSxgBGYH9C2Oxo+5
-	R83ZaJmvyviwNLn2sQElBVmvzG6/FcFrKuI0umVwAxF1ip3s0VSpuwXAgDShEZgfTM87f3UpkJjsQ
-	H6PITS/g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=e0WCb/w8btnhnuVaGe2WrWitEuz2YVwNYYgT3u68L0c=; b=bst/ujaVSc1+BB1iC0nK56hT9
+	6C9/XKXOBBuMF/HMSV+bLgQLq/LRAhdrj9K7eRsVwyHm+TgURceWTRWiSC8S3AKy84Arw08RZi+Sj
+	3DWeLVaksRitQPxzdfBjpBcoZJOS7kw1tHYyVAVcdw/gjr2DZw4Nttmaf+wk9jDCbZu9G+zqPvePF
+	spPrguDDQ3kCHL97EdecG2NzjgwDmJ2EScF2FKOW5cpdPstbsFD/Woh1CNG4swxgqkAq2f77gdX2i
+	liytO4W+K26MM+EDKNktyB/NE4IcbhMl6CKAiIoGZVsualJz8ViG6fv3V1jGxuTLPFZm2AfQj6hkq
+	b6qkQD6hw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ho87p-00051a-0W; Thu, 18 Jul 2019 15:15:17 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1ho8Ew-00009d-IN; Thu, 18 Jul 2019 15:22:38 +0000
+Received: from mx1.mailbox.org ([80.241.60.212])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ho86T-0004Ir-N1
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 15:13:55 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 5D1A11A035C;
- Thu, 18 Jul 2019 17:13:52 +0200 (CEST)
-Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
- [134.27.226.22])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 508B41A011E;
- Thu, 18 Jul 2019 17:13:52 +0200 (CEST)
-Received: from fsr-ub1864-103.ea.freescale.net
- (fsr-ub1864-103.ea.freescale.net [10.171.82.17])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 769DB205C7;
- Thu, 18 Jul 2019 17:13:51 +0200 (CEST)
-From: Daniel Baluta <daniel.baluta@nxp.com>
-To: shawnguo@kernel.org
-Subject: [PATCH 3/3] dt-bindings: dsp: fsl: Add DSP core binding support
-Date: Thu, 18 Jul 2019 18:13:46 +0300
-Message-Id: <20190718151346.3523-4-daniel.baluta@nxp.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190718151346.3523-1-daniel.baluta@nxp.com>
-References: <20190718151346.3523-1-daniel.baluta@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1ho8Ee-00008n-5e
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 15:22:23 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org
+ [IPv6:2001:67c:2050:105:465:1:2:0])
+ (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
+ (No client certificate requested)
+ by mx1.mailbox.org (Postfix) with ESMTPS id A31DB4DF37;
+ Thu, 18 Jul 2019 17:22:15 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at heinlein-support.de
+Received: from smtp2.mailbox.org ([80.241.60.241])
+ by hefe.heinlein-support.de (hefe.heinlein-support.de [91.198.250.172])
+ (amavisd-new, port 10030)
+ with ESMTP id xmIYYji9PWVu; Thu, 18 Jul 2019 17:22:09 +0200 (CEST)
+Date: Fri, 19 Jul 2019 01:21:23 +1000
+From: Aleksa Sarai <cyphar@cyphar.com>
+To: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+Subject: Re: [PATCH v9 08/10] open: openat2(2) syscall
+Message-ID: <20190718152123.m33t44dapy6y4nwy@yavin>
+References: <20190706145737.5299-1-cyphar@cyphar.com>
+ <20190706145737.5299-9-cyphar@cyphar.com>
+ <845e4364-685f-343b-46fb-c418766dce3e@rasmusvillemoes.dk>
+MIME-Version: 1.0
+In-Reply-To: <845e4364-685f-343b-46fb-c418766dce3e@rasmusvillemoes.dk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_081354_148576_EFF3F137 
-X-CRM114-Status: UNSURE (   8.52  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190718_082220_521961_12D9F52A 
+X-CRM114-Status: GOOD (  24.06  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [80.241.60.212 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -68,125 +67,156 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, aisheng.dong@nxp.com, peng.fan@nxp.com,
- anson.huang@nxp.com, devicetree@vger.kernel.org, daniel.baluta@nxp.com,
- s.hauer@pengutronix.de, Frank.Li@nxp.com, linux-kernel@vger.kernel.org,
- paul.olaru@nxp.com, robh+dt@kernel.org, linux-imx@nxp.com,
- kernel@pengutronix.de, leonard.crestez@nxp.com, festevam@gmail.com,
- shengjiu.wang@nxp.com, linux-arm-kernel@lists.infradead.org,
- sound-open-firmware@alsa-project.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Alexei Starovoitov <ast@kernel.org>, linux-kernel@vger.kernel.org,
+ David Howells <dhowells@redhat.com>, linux-kselftest@vger.kernel.org,
+ sparclinux@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ Tycho Andersen <tycho@tycho.ws>, Aleksa Sarai <asarai@suse.de>,
+ linux-arm-kernel@lists.infradead.org, linux-mips@vger.kernel.org,
+ linux-xtensa@linux-xtensa.org, Kees Cook <keescook@chromium.org>,
+ Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
+ linuxppc-dev@lists.ozlabs.org, linux-m68k@lists.linux-m68k.org,
+ Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
+ Shuah Khan <skhan@linuxfoundation.org>, David Drysdale <drysdale@google.com>,
+ Christian Brauner <christian@brauner.io>,
+ "J. Bruce Fields" <bfields@fieldses.org>, linux-parisc@vger.kernel.org,
+ linux-api@vger.kernel.org, Chanho Min <chanho.min@lge.com>,
+ Jeff Layton <jlayton@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
+ Eric Biederman <ebiederm@xmission.com>, linux-alpha@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ containers@lists.linux-foundation.org
+Content-Type: multipart/mixed; boundary="===============3658038151413770839=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This describes the DSP device tree node.
 
-Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
----
- .../devicetree/bindings/dsp/fsl,dsp.yaml      | 87 +++++++++++++++++++
- 1 file changed, 87 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/dsp/fsl,dsp.yaml
+--===============3658038151413770839==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="x55cx7xfpotu25go"
+Content-Disposition: inline
 
-diff --git a/Documentation/devicetree/bindings/dsp/fsl,dsp.yaml b/Documentation/devicetree/bindings/dsp/fsl,dsp.yaml
-new file mode 100644
-index 000000000000..d112486eda0e
---- /dev/null
-+++ b/Documentation/devicetree/bindings/dsp/fsl,dsp.yaml
-@@ -0,0 +1,87 @@
-+# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/arm/freescale/fsl,dsp.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: NXP i.MX8 DSP core
-+
-+maintainers:
-+  - Daniel Baluta <daniel.baluta@nxp.com>
-+
-+description: |
-+  Some boards from i.MX8 family contain a DSP core used for
-+  advanced pre- and post- audio processing.
-+
-+properties:
-+  compatible:
-+    enum:
-+      - fsl,imx8qxp-dsp
-+
-+  reg:
-+    description: Should contain register location and length
-+
-+  clocks:
-+    items:
-+      - description: ipg clock
-+      - description: ocram clock
-+      - description: core clock
-+
-+  clock-names:
-+    items:
-+      - const: ipg
-+      - const: ocram
-+      - const: core
-+
-+  power-domains:
-+    description:
-+      List of phandle and PM domain specifier as documented in
-+      Documentation/devicetree/bindings/power/power_domain.txt
-+
-+  mboxes:
-+    description:
-+      List of <&phandle type channel> - 2 channels for TXDB, 2 channels for RXDB
-+      (see mailbox/fsl,mu.txt)
-+    maxItems: 4
-+
-+  mbox-names:
-+    items:
-+      - const: txdb0
-+      - const: txdb1
-+      - const: rxdb0
-+      - const: rxdb1
-+
-+  memory-region:
-+    description:
-+       phandle to a node describing reserved memory (System RAM memory)
-+       used by DSP (see bindings/reserved-memory/reserved-memory.txt)
-+    maxItems: 1
-+
-+required:
-+  - compatible
-+  - reg
-+  - clocks
-+  - clock-names
-+  - power-domains
-+  - mboxes
-+  - mbox-names
-+  - memory-region
-+
-+examples:
-+  - |
-+    #include <dt-bindings/firmware/imx/rsrc.h>
-+    #include <dt-bindings/clock/imx8-clock.h>
-+    dsp@596e8000 {
-+        compatbile = "fsl,imx8qxp-dsp";
-+        reg = <0x596e8000 0x88000>;
-+        clocks = <&adma_lpcg IMX_ADMA_LPCG_DSP_IPG_CLK>,
-+                 <&adma_lpcg IMX_ADMA_LPCG_OCRAM_IPG_CLK>,
-+                 <&adma_lpcg IMX_ADMA_LPCG_DSP_CORE_CLK>;
-+        clock-names = "ipg", "ocram", "core";
-+        power-domains = <&pd IMX_SC_R_MU_13A>,
-+                        <&pd IMX_SC_R_MU_13B>,
-+                        <&pd IMX_SC_R_DSP>,
-+                        <&pd IMX_SC_R_DSP_RAM>;
-+        mbox-names = "txdb0", "txdb1", "rxdb0", "rxdb1";
-+        mboxes = <&lsio_mu13 2 0>, <&lsio_mu13 2 1>, <&lsio_mu13 3 0>, <&lsio_mu13 3 1>;
-+    };
--- 
-2.17.1
 
+--x55cx7xfpotu25go
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On 2019-07-18, Rasmus Villemoes <linux@rasmusvillemoes.dk> wrote:
+> On 06/07/2019 16.57, Aleksa Sarai wrote:
+> > --- a/fs/open.c
+> > +++ b/fs/open.c
+> > @@ -928,24 +928,32 @@ struct file *open_with_fake_path(const struct pat=
+h *path, int flags,
+> >  }
+> >  EXPORT_SYMBOL(open_with_fake_path);
+> > =20
+> > -static inline int build_open_flags(int flags, umode_t mode, struct ope=
+n_flags *op)
+> > +static inline int build_open_flags(struct open_how how, struct open_fl=
+ags *op)
+> >  {
+>=20
+> How does passing such a huge struct by value affect code generation?
+> Does gcc actually inline the function (and does it even inline the old
+> one given that it's already non-trivial and has more than one caller).
+
+I'm not sure, but I'll just do what you suggested with passing a const
+reference and just copying the few fields that actually are touched by
+this function.
+
+> > =20
+> > diff --git a/include/linux/fcntl.h b/include/linux/fcntl.h
+> > index 2868ae6c8fc1..e59917292213 100644
+> > --- a/include/linux/fcntl.h
+> > +++ b/include/linux/fcntl.h
+> > @@ -4,13 +4,26 @@
+> > =20
+> >  #include <uapi/linux/fcntl.h>
+> > =20
+> > -/* list of all valid flags for the open/openat flags argument: */
+> > +/* Should open_how.mode be set for older syscalls wrappers? */
+> > +#define OPENHOW_MODE(flags, mode) \
+> > +	(((flags) | (O_CREAT | __O_TMPFILE)) ? (mode) : 0)
+> > +
+>=20
+> Typo: (((flags) & (O_CREAT | __O_TMPFILE)) ? (mode) : 0)
+
+Yup, thanks. I'm not sure why my tests passed on v9 with this bug (they
+didn't pass in my v10-draft until I fixed this bug earlier today).
+
+>=20
+> > +/**
+> > + * Arguments for how openat2(2) should open the target path. If @extra=
+ is zero,
+> > + * then openat2(2) is identical to openat(2).
+> > + *
+> > + * @flags: O_* flags (unknown flags ignored).
+> > + * @mode: O_CREAT file mode (ignored otherwise).
+>=20
+> should probably say "O_CREAT/O_TMPFILE file mode".
+
+:+1:
+
+> > + * @upgrade_mask: restrict how the O_PATH may be re-opened (ignored ot=
+herwise).
+> > + * @resolve: RESOLVE_* flags (-EINVAL on unknown flags).
+> > + * @reserved: reserved for future extensions, must be zeroed.
+> > + */
+> > +struct open_how {
+> > +	__u32 flags;
+> > +	union {
+> > +		__u16 mode;
+> > +		__u16 upgrade_mask;
+> > +	};
+> > +	__u16 resolve;
+>=20
+> So mode and upgrade_mask are naturally u16 aka mode_t. And yes, they
+> probably never need to be used together, so the union works. That then
+> makes the next member 2-byte aligned, so using a u16 for the resolve
+> flags brings us to an 8-byte boundary, and 11 unused flag bits should be
+> enough for a while. But it seems a bit artificial to cram all this
+> together and then add 56 bytes of reserved space.
+
+I will happily admit that padding to 64 bytes is probably _very_ extreme
+(I picked it purely because it's the size of a cache-line so anything
+bigger makes even less sense). I was hoping someone would suggest a
+better size once I posted the patchset, since I couldn't think of a good
+answer myself.
+
+Do you have any suggestions for a better layout or padding size?
+
+--=20
+Aleksa Sarai
+Senior Software Engineer (Containers)
+SUSE Linux GmbH
+<https://www.cyphar.com/>
+
+--x55cx7xfpotu25go
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQSxZm6dtfE8gxLLfYqdlLljIbnQEgUCXTCOcAAKCRCdlLljIbnQ
+EllZAP4qSUDEVdU4aP8+s9uysbQoCi6l463vJM+jdHxpJ66OfQEAxlI5lXwcL6G0
+jPCtI0Vs5LI5kpJuE2k98ol8BVMyZAg=
+=2lKS
+-----END PGP SIGNATURE-----
+
+--x55cx7xfpotu25go--
+
+
+--===============3658038151413770839==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3658038151413770839==--
+
