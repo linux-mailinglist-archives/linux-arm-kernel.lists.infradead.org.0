@@ -2,69 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 246DA6CCF3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 12:49:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8188D6CD16
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 13:05:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Di6kz8/f0NJBGM6zeAM/kEmO911N4HlD8PktNttLV2k=; b=mcnX5QTbH7FAN3
-	UKsqxQa/m3uuV0i1IUYUdAap+sfqDg64pGEkiVuzymnQvsUmVTIlt++8J8TUkaD3HmdwPlyW6qBPX
-	e3FdyQl1U5YRR1Ob/IySylP82oLPLiTcqG/I6BT7LoD8Q9+SaBKaVAWmaOTJXCZuY2ZcvSkObJJcx
-	sWmaWfOa+/sW/02HNMOW5SDR4IL4q+7jqezR6MuvZ6S44Q83m5E7yZC3crO8yqzSK+5LaegLIk+6Q
-	fV0ugmAc/PboEVVN7SCNWnvMOn9B5oSDlUjjuH1BqwtFbnMhqOixPWDOtJdsqSGp2fDQRJGAnCwkZ
-	dw+riJU4KLx1vN37RCvw==;
+	List-Owner; bh=OkyNPu3glGxytlIkayZNRcROKNEjB2V4i035D2JfsQc=; b=a4oRpFoqd/I+WS
+	wq4Fo3z1qanCSl5zqHumSoVSBCfyldHSCiSFmKewrDbDKdM9bLbeMK0TGtQx6xuS/R6oA5Eysz8Af
+	GdeG2EqdolG4pBp8CxYs8elGRLhGaodbxqlYXqFgAAj3kDUiYbMIHwf3E3KEGGIg7IxxBdo7i0V9j
+	hdaDqgTLhWqA58gjwmPpj5EQFLjiZ6DQ6BWkM5BjC8UkmeIDjTWHp37WXWttYJ0q3F53t9FIs+JT/
+	Do2HPKZy7tV+G0+J7yYiUr0JEIGm2pNQq2+ovvC7NYxxqQBmWk/4ejnJR4D2jeMc6sPrWA4XpRk43
+	AOd4pLf/35n9bKq6KjjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ho3y8-0005YG-6h; Thu, 18 Jul 2019 10:49:00 +0000
+	id 1ho4DR-0001w7-OT; Thu, 18 Jul 2019 11:04:49 +0000
 Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ho3y0-0005XH-8I
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 10:48:53 +0000
-Received: by mail-vs1-xe44.google.com with SMTP id r3so18747267vsr.13
+ id 1ho4DI-0001vc-UZ
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 11:04:42 +0000
+Received: by mail-vs1-xe44.google.com with SMTP id u124so18807808vsu.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 18 Jul 2019 03:48:51 -0700 (PDT)
+ Thu, 18 Jul 2019 04:04:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=NppfMkA9YSp2bcd8lowDgozs69+YWUjU8R8XC2mh2Ng=;
- b=EMo3sNQfR8AxwQbc/nsBmFB2MttmgcYpKR6+imTy+1EG/hxf2H1FX4coJIjBZs9MU4
- T5gfuRfY0RJvbYIUjVknrZr6Eg6Zw3N5HG7aed/9UdUeTX7a1AlUZLU0w2OsoUoEoMMt
- rNcp0hzFlDtjweQ0S7IYVyCrtnbDY7fv+TpkkRIQfdT9q0pWwfYCh9v0s/AYlWjWKojb
- Q+FcvGHicvaXo3IiVCcV9apv0MI03oWm1qSfSilrp9K00e6Am331V9AMy4viOYZqv9JI
- kKEBYgZiDcA6zHuKe3PNvCPdq/SzEDbDaWOug2ZuxcVj6N1EZ6a6yqkw7R+JUtFUrKoi
- rCtg==
+ :cc; bh=b0wwbY2e6RbRH4G1F2pGlnS3oUwQ5tYaheKqHK1+rAU=;
+ b=ttbeDTZWonMsXhhF6MKJjUbS9xB63ArZlyQGS0QGDUinoAJno6rTVe45koBlUp/Qjh
+ NQVkV3+Uhr8LVEmlJkoTd3j1VUjoTle0yuSKtRst+PQkt/gZVYtUy6lqHTEGXjhT/c+g
+ IQGDz/tqooHxFmm+bsy+QWxFnl/gJ3yFFGgnAhEwcoQT9j9yKAE847bZbd1nj2DTVUjQ
+ 4Eym5SbEmuUMvs4Bez2aMkN9joceM718Uj77COGoAbpsJLZM8viL9KtrIwGx7UFskjyi
+ pLZSUBIJjDLvyPPpTNjVox8LYn55p7hVHfYjzWOLJ8OD+D/+a5uRfl9hwqYR1RVKk0l5
+ gVAA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=NppfMkA9YSp2bcd8lowDgozs69+YWUjU8R8XC2mh2Ng=;
- b=f4U7p1kaa3/ZxMhXMc4Htwxiw5XNlyhYmLKFWgssI4syVaQsz0wmXLa1NZsxO6/ngi
- jUtzo7NITOPT4qqoxTMBvOuVp8WmYB2hj66oJnizYytVyzQjPFHkM4TcADD0dzYOXU+Q
- UWkD+li/nk4pRRYJbe0hPVkMq5tet/Kln1+enQP2Bb8DXDtnImTwztoXl2P0JDAlO/3u
- YK4B/zYBEsy6yt1mVNYXZPrKtULFKkR4L2Yfy9NHH3Ne9My12rYuLA+j5MlDgsvdB0Jz
- lHuP1opEKOv/beXP5ZXzlq85fUgq1NB14+QdvjbOUqna3zH+let0K3nNTUQ7CUL8Ahal
- lh9g==
-X-Gm-Message-State: APjAAAXdwfMrkAXLlkI5neyuC6FagBjE1D3d6sTAPhr//04DrBbaZZ1+
- +g/t5jpmC3clql4Tki4gaa/NC2bz7iPbXiKbbFW5Sw==
-X-Google-Smtp-Source: APXvYqztqpfIkQ19AlRQPrqfsqTvP4cIR4ExKB8fsNIFkHPM8GZNpANZzIhR9gX186T9JnVglUf6rgxAB2sJLtT7RWg=
-X-Received: by 2002:a67:ee16:: with SMTP id f22mr28577969vsp.191.1563446930654; 
- Thu, 18 Jul 2019 03:48:50 -0700 (PDT)
+ bh=b0wwbY2e6RbRH4G1F2pGlnS3oUwQ5tYaheKqHK1+rAU=;
+ b=q35C9OrlTSiSK6WNrFUArMLLI0GmpUSdimO2BmKEJUlCKw/kB/Tts0jlzg4d0Fg177
+ D9Qi63LsZ3eLu8SXljqU0xgwPxjyWaQYJrdWGaiH7e+gGfmM5yq9g6EUtBjFCvWLdVaE
+ YiJt2RTMOFnA1sjnUiLqctLB1g4e3IeAX+FCN8mu3JemKYxJfUo2ZrW58F+Wa7vs4Rn8
+ P7X5XSaqVUIa70SZA6KgA2fbGYnpJ8hVfOsLH8d6SfziVIkgE0WlVUWla8nz/lZfDO6p
+ pCCEK48qHPBhVE4NRZMYcdbggfQmo1HySthG9o0gZ7dlgs9gi1l7dYc/ve7bb/hY6Y/H
+ 3WKQ==
+X-Gm-Message-State: APjAAAXOTf1MHu4uHRC247tTIPXLbIVJQ/EGkOt2LFyapRpAx1jl0Bpk
+ 91SkAC9W9FMJrfmDd+eqYcEGreXJR5oyZBuXXfiexw==
+X-Google-Smtp-Source: APXvYqySoFX2rcy6+ZHMwG7nItFm59GgexC/++PhaOS4J9XEwThQRKUsU9BuTaLZC+JTYiMmN5ylobCku0JfERVc6Vg=
+X-Received: by 2002:a67:ee16:: with SMTP id f22mr28613664vsp.191.1563447879628; 
+ Thu, 18 Jul 2019 04:04:39 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190513192300.653-1-ulf.hansson@linaro.org>
- <20190513192300.653-19-ulf.hansson@linaro.org>
- <20190716144744.GB7250@e107155-lin>
-In-Reply-To: <20190716144744.GB7250@e107155-lin>
+ <20190513192300.653-10-ulf.hansson@linaro.org>
+ <20190716150533.GD7250@e107155-lin>
+In-Reply-To: <20190716150533.GD7250@e107155-lin>
 From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Thu, 18 Jul 2019 12:48:14 +0200
-Message-ID: <CAPDyKFpc26yL6rOnfwawL=eL649NsgTMrF1WrMHZv7AVd=3PCA@mail.gmail.com>
-Subject: Re: [PATCH 18/18] arm64: dts: hikey: Convert to the hierarchical CPU
- topology layout
+Date: Thu, 18 Jul 2019 13:04:03 +0200
+Message-ID: <CAPDyKFqaE2L419siFY=LGDsotAnpBt+H_vpmG62AqQw8UQJZJA@mail.gmail.com>
+Subject: Re: [PATCH 09/18] drivers: firmware: psci: Add support for PM domains
+ using genpd
 To: Sudeep Holla <sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_034852_310477_1D4DD0D3 
-X-CRM114-Status: GOOD (  15.89  )
+X-CRM114-CacheID: sfid-20190718_040440_993463_26DE5A03 
+X-CRM114-Status: GOOD (  30.54  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -106,70 +106,118 @@ Cc: Mark Rutland <mark.rutland@arm.com>,
  Lina Iyer <ilina@codeaurora.org>,
  linux-arm-msm <linux-arm-msm@vger.kernel.org>,
  Niklas Cassel <niklas.cassel@linaro.org>,
- Souvik Chakravarty <souvik.chakravarty@arm.com>, Wei Xu <xuwei5@hisilicon.com>,
+ Souvik Chakravarty <souvik.chakravarty@arm.com>,
  "Raju P . L . S . S . S . N" <rplsssn@codeaurora.org>,
+ Lina Iyer <lina.iyer@linaro.org>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 16 Jul 2019 at 16:47, Sudeep Holla <sudeep.holla@arm.com> wrote:
+On Tue, 16 Jul 2019 at 17:05, Sudeep Holla <sudeep.holla@arm.com> wrote:
 >
-> On Mon, May 13, 2019 at 09:23:00PM +0200, Ulf Hansson wrote:
-> > To enable the OS to manage last-man standing activities for a CPU, while an
-> > idle state for a group of CPUs is selected, let's convert the Hikey
-> > platform into using the hierarchical CPU topology layout.
+> On Mon, May 13, 2019 at 09:22:51PM +0200, Ulf Hansson wrote:
+> > When the hierarchical CPU topology layout is used in DT, we need to setup
+> > the corresponding PM domain data structures, as to allow a CPU and a group
+> > of CPUs to be power managed accordingly. Let's enable this by deploying
+> > support through the genpd interface.
 > >
-> > Cc: Wei Xu <xuwei5@hisilicon.com>
+> > Additionally, when the OS initiated mode is supported by the PSCI FW, let's
+> > also parse the domain idle states DT bindings as to make genpd responsible
+> > for the state selection, when the states are compatible with
+> > "domain-idle-state". Otherwise, when only Platform Coordinated mode is
+> > supported, we rely solely on the state selection to be managed through the
+> > regular cpuidle framework.
+> >
+> > If the initialization of the PM domain data structures succeeds and the OS
+> > initiated mode is supported, we try to switch to it. In case it fails,
+> > let's fall back into a degraded mode, rather than bailing out and returning
+> > an error code.
+> >
+> > Due to that the OS initiated mode may become enabled, we need to adjust to
+> > maintain backwards compatibility for a kernel started through a kexec call.
+> > Do this by explicitly switch to Platform Coordinated mode during boot.
+> >
+> > Finally, the actual initialization of the PM domain data structures, is
+> > done via calling the new shared function, psci_dt_init_pm_domains().
+> > However, this is implemented by subsequent changes.
+> >
+> > Co-developed-by: Lina Iyer <lina.iyer@linaro.org>
+> > Signed-off-by: Lina Iyer <lina.iyer@linaro.org>
 > > Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
 > > ---
 > >
 > > Changes:
-> >       - None.
+> >       - Simplify code setting domain_state at power off.
+> >       - Use the genpd ->free_state() callback to manage freeing of states.
+> >       - Fixup a bogus while loop.
 > >
 > > ---
-> >  arch/arm64/boot/dts/hisilicon/hi6220.dtsi | 87 ++++++++++++++++++++---
-> >  1 file changed, 76 insertions(+), 11 deletions(-)
+> >  drivers/firmware/psci/Makefile         |   2 +-
+> >  drivers/firmware/psci/psci.c           |   7 +-
+> >  drivers/firmware/psci/psci.h           |   5 +
+> >  drivers/firmware/psci/psci_pm_domain.c | 268 +++++++++++++++++++++++++
+> >  4 files changed, 280 insertions(+), 2 deletions(-)
+> >  create mode 100644 drivers/firmware/psci/psci_pm_domain.c
 > >
-> > diff --git a/arch/arm64/boot/dts/hisilicon/hi6220.dtsi b/arch/arm64/boot/dts/hisilicon/hi6220.dtsi
-> > index 108e2a4227f6..36ff460f428f 100644
-> > --- a/arch/arm64/boot/dts/hisilicon/hi6220.dtsi
-> > +++ b/arch/arm64/boot/dts/hisilicon/hi6220.dtsi
-> >       cpus {
 >
 > [...]
 >
-> > @@ -70,9 +128,8 @@
-> >                       };
-> >
-> >                       CLUSTER_SLEEP: cluster-sleep {
-> > -                             compatible = "arm,idle-state";
-> > -                             local-timer-stop;
-> > -                             arm,psci-suspend-param = <0x1010000>;
-> > +                             compatible = "domain-idle-state";
-> > +                             arm,psci-suspend-param = <0x1000000>;
-> >                               entry-latency-us = <1000>;
-> >                               exit-latency-us = <700>;
-> >                               min-residency-us = <2700>;
+> >  #endif /* __PSCI_H */
+> > diff --git a/drivers/firmware/psci/psci_pm_domain.c b/drivers/firmware/psci/psci_pm_domain.c
+> > new file mode 100644
+> > index 000000000000..3c6ca846caf4
+> > --- /dev/null
+> > +++ b/drivers/firmware/psci/psci_pm_domain.c
+> > @@ -0,0 +1,268 @@
+> > +// SPDX-License-Identifier: GPL-2.0
+> > +/*
+> > + * PM domains for CPUs via genpd - managed by PSCI.
+> > + *
+> > + * Copyright (C) 2019 Linaro Ltd.
+> > + * Author: Ulf Hansson <ulf.hansson@linaro.org>
+> > + *
+> > + */
+> > +
 >
-> Again this must be original format and as per PSCI spec, your patch
-> changes this cluster sleep state into cluster retention state which I
-> think is not what you intended.
+> [...]
+>
+> > +static int psci_pd_power_off(struct generic_pm_domain *pd)
+> > +{
+> > +     struct genpd_power_state *state = &pd->states[pd->state_idx];
+> > +     u32 *pd_state;
+> > +
+> > +     /* If we have failed to enable OSI mode, then abort power off. */
+> > +     if (psci_has_osi_support() && !osi_mode_enabled)
+> > +             return -EBUSY;
+> > +
+> > +     if (!state->data)
+> > +             return 0;
+> > +
+> > +     /* When OSI mode is enabled, set the corresponding domain state. */
+> > +     pd_state = state->data;
+> > +     psci_set_domain_state(*pd_state);
+>
+> I trying to understand how would this scale to level 2(cluster of
+> clusters or for simply system). The current code for psci_set_domain_state
+> just stores the value @pd_state into per-cpu domain_state. E.g.: Now if
+> the system level pd is getting called after cluster PD, it will set the
+> domain state to system level PD state. It won't work with original
+> format and it may work with extended format if it's carefully crafted.
+> In short, the point is just over-writing domain_state is asking for
+> troubles IMO.
 
-If the hierarchical topology is used, the parameter for cluster states
-are ORed with the deepest idle state for the CPU.
+Thanks for spotting this!
 
-CPU_SLEEP: 0x0010000
-CLUSTER_SLEEP: 0x1000000
+While walking upwards in the PM domain topology, I thought I was ORing
+the domain states, but clearly the code isn't doing that.
 
-After the ORed operation
-CLUSTER_SLEEP: 0x1010000
+In principle we need to do the below instead.
 
-So, this indeed works as expected.
-
-However, are you saying that ORing the state parameters like above has
-other problems? I am reading your other replies...
+pd_state = state->data;
+composite_pd_state = *pd_state | psci_get_domain_state();
+psci_set_domain_state(composite_pd_state);
 
 Kind regards
 Uffe
