@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DCF856D33B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 19:53:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9B976D33F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 19:53:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nRXkLtz6JWZ1cLO47q1HDc4JSnAcQNuvqc6+n2l64aI=; b=QI0moxiKFS5+KH
-	Kc93g0T7mNcjjiOqEDmgxJWohfcFesrK6FwTrMWls90ixfrS5PppqjFUZfJqr9ePg4ndLN46Eohon
-	+ESBpzEAGhzLz/alhu8kkOPV7Y5MQzgCkl/D42duvzLezC219goRRp47AQ0w3sDLGTCgZp3MoeRGi
-	tW+zxZ3GCykRjXWu4D7vcuTtGb+HcjU+GjnrMXxk/yBhNLlrGbINqKGKCEVxcT/aH74rxtU74dhW9
-	xcHdrt+UsVPrzSgmr3MvIyjJgCqErhz9jsuNpcM7EakifrVBNrG0hBxzprIxRJOlNq5LKkZAsOsR/
-	Gj7a/azXcDntFOkQZFjg==;
+	List-Owner; bh=4VPesESezOAcGvurxFqP7Bo122hY3qzKmgZ53V+n5PA=; b=Y0rrIckGrAphPF
+	+6dFfoo2/n1pE1wq/qiTMqIX6sykEaaM8cax/wwLWfALzHUZKazjxdnIk9e/XYAZmBg8cLfZCX2zi
+	0LW1my8xtja6bzD+1797+q08xX6ChU5kse5JtRMbrikxKotXcjP+sxZYiICMDGPm8CTK7Ujj/Jmb1
+	6i77y4Hi6Z7JkM/KVMujk42vW3zhHgXedT9tETok1yWdkubHt+1989FLILM6B2bPAKtq6tfSVGl0/
+	7FJ0LaBF/A04jfjPp5rumS8b7WUg8fWtBO7MNPPpjKa1rmmwDnLJ2QQYiHmgeS5dgHICLoNfqoUO7
+	++VZvySn2frmXHE3D+Fw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoAaR-00088U-Hg; Thu, 18 Jul 2019 17:52:59 +0000
-Received: from mail-yb1-xb43.google.com ([2607:f8b0:4864:20::b43])
+	id 1hoAar-0008V0-IW; Thu, 18 Jul 2019 17:53:25 +0000
+Received: from mail-yb1-xb44.google.com ([2607:f8b0:4864:20::b44])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hoAZI-0007P7-NX
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 17:51:50 +0000
-Received: by mail-yb1-xb43.google.com with SMTP id f195so11580268ybg.9
+ id 1hoAZY-0007am-13
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 17:52:08 +0000
+Received: by mail-yb1-xb44.google.com with SMTP id j199so11585094ybg.5
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 18 Jul 2019 10:51:48 -0700 (PDT)
+ Thu, 18 Jul 2019 10:52:03 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=poorly.run; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=54ISCPh3k3SUs+5FdfI6KvwQ1Id9kdGWoRZ1Spsr+ls=;
- b=W4A30FAznhmdJU8pXe6EsfiaP1RyvKu6XSBCEBVQWldz2S8BHvUHw9Vmr5fLdrGEUK
- XJgF6G/UYXEe+Ymt7+Wp6yysRLhxy8uv7cDZwY/+jELEnbv2GsPK3XoS9tFAM4AII++c
- 2w+/NP1KdvbPLfD9ay9P96cqSsT5894vJaGudaqSqeI7z/M0mduo/yxUhC+pWynVPuY/
- OuxminUzPuPv/8AT5aVCmyrxTyD8Wf/9xGzk86/UTBhLZD2R71BWqt5VK2uspcSihcdG
- XgyB3zNnZUbCMZgTqpIbCYuEYscvjuHYYT9mSg2B56fmVPwsLIBlZHgPgp0WVt2NuzpD
- KTwg==
+ :content-disposition:in-reply-to:user-agent;
+ bh=Ytxi1J+6NWcdsuePHv1vEGWkQEmEFR4ovcBSii3Z5X4=;
+ b=SWBkUNwOZudBXbT2gOLHDVwoeLAF4gW7eRLWLc8RCpBbf8UkED2HAwTr+JEJjeMHJk
+ aeS0epOZWz7f4ug7ZVRqDNf00V/5XvUD2U/agsp/8L1Fdc6UX60pnsjZZ2jrksV1xj6M
+ ZZj1NlbdD1INB2bcNpUsvambY4bJ+u4xMf4l5CgirZeeOuiAMDewiSgYMD0WrxzBnAFu
+ 7wjx0g3iA0FWkrSixn7pB+WD4HBQx3HTVn3H+NZuo5d1piEbfzy8FtDfa5q3uiKUvBN0
+ TigWYr+dfiODy3UimTvgkQ8gxUX4y8L6oZ4JN34/unRs9FDQZG9cxfpgX5c9q3ZbHUm7
+ qFjA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=54ISCPh3k3SUs+5FdfI6KvwQ1Id9kdGWoRZ1Spsr+ls=;
- b=EWnK3iTCycBx8VIuGarF3w+NOcKwAWqEFYWG9CQPDsaUdoidH7Tj47KRuMK8i0pvHm
- VZBigDVclKvF9uCzmAq3mGa5PmKG5mJW5Fn456ysrcOXvRNIcweTI8zWlh3UdFj1vmPX
- k0DADtLx5qyW8hDmoZMTLmf/J5H8X6YB8wSc5FagsCypsXnBB1ggFp143Lb7+yj2nLCa
- uQTdsv38ayN0297CGzpG6TpCaQxut5O9ZAUS6t2sWGV0DhpjaeHFbFllCgnVw0YIpoO3
- VA/TI0aHtEg4qX11eH94OpL+gcLuCuly5e5xJczKCW8fUA8S6sViwYx2g5uGQZFJUDze
- qpFA==
-X-Gm-Message-State: APjAAAXkbAtc5Al1LqqxXA/4Z7YEfFksgWkytCpDu3IeFO7HiQTwjPrk
- 9qrrDpVbQm4/L2Q3BhtidYWnfg==
-X-Google-Smtp-Source: APXvYqwriywGParEUult+Nn3tYrbq2xB8U4bR7esM0/Bqo29nmAIWodN6W0SDyfIGK8YXoAWISkutg==
-X-Received: by 2002:a25:1d02:: with SMTP id d2mr29012730ybd.311.1563472307859; 
- Thu, 18 Jul 2019 10:51:47 -0700 (PDT)
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=Ytxi1J+6NWcdsuePHv1vEGWkQEmEFR4ovcBSii3Z5X4=;
+ b=YlB8HEDMIxERd/+lPFvuqz4jxbe1WBXUtGHY/g0GRByIt7A30Ixcdh0EHqL0OmFgph
+ 4yl2ARIgPcfyX7Mm6LuWb14bhTkzRl82Jb0gAO2h/bVLbzkYEp+72C0WTBS2eyiu8puw
+ v7JNvepLGyrfPP8yEBH1sCdnSF2UwfdPSz5KWp3Y5D/zi4UchhfGdAcGA7gQPbIBKLYE
+ Wk/+I5/dF3bszGom2f/EU0lhae64bmcS9y4lt74AjNdMif47kNMeZkk661qyAiDLvbgd
+ xWlS9WCeYQ2am8jEpFJVqsYPmfvMzgWnhVUFFWZBr0BlLcAqUNfLt6eZ3YvNHWnNLQy9
+ 86vA==
+X-Gm-Message-State: APjAAAWRayb6RiCvHpVehRB89ULn8yWsrlkxWjp1hQpjM57n3FBkIf1Q
+ A/mC8cBpVAU7Uw+1f6ChU5ZqCw==
+X-Google-Smtp-Source: APXvYqxXc2uyAAgBufPnLgYEUBonLIhhaICqxLwpJsNNFgCh2Xf1KYBy6azPnl6WFiy0oNc1vYPG0Q==
+X-Received: by 2002:a25:b284:: with SMTP id k4mr31241127ybj.118.1563472322962; 
+ Thu, 18 Jul 2019 10:52:02 -0700 (PDT)
 Received: from localhost ([2620:0:1013:11:89c6:2139:5435:371d])
- by smtp.gmail.com with ESMTPSA id 82sm6791584ywr.52.2019.07.18.10.51.47
+ by smtp.gmail.com with ESMTPSA id p128sm6929475ywp.24.2019.07.18.10.52.02
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 18 Jul 2019 10:51:47 -0700 (PDT)
-Date: Thu, 18 Jul 2019 13:51:47 -0400
+ Thu, 18 Jul 2019 10:52:02 -0700 (PDT)
+Date: Thu, 18 Jul 2019 13:52:01 -0400
 From: Sean Paul <sean@poorly.run>
 To: Sam Ravnborg <sam@ravnborg.org>
-Subject: Re: [PATCH v1 09/11] drm: direct include of drm.h in drm_syncobj.c
-Message-ID: <20190718175147.GL31819@art_vandelay>
+Subject: Re: [PATCH v1 10/11] drm/mediatek: direct include of drm.h in
+ mtk_drm_gem.c
+Message-ID: <20190718175201.GM31819@art_vandelay>
 References: <20190718161507.2047-1-sam@ravnborg.org>
- <20190718161507.2047-10-sam@ravnborg.org>
+ <20190718161507.2047-11-sam@ravnborg.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190718161507.2047-10-sam@ravnborg.org>
+In-Reply-To: <20190718161507.2047-11-sam@ravnborg.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_105148_892467_E18D8B55 
-X-CRM114-Status: GOOD (  14.26  )
+X-CRM114-CacheID: sfid-20190718_105204_137660_154057B2 
+X-CRM114-Status: GOOD (  15.37  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b43 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:b44 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -106,7 +106,6 @@ Cc: David Airlie <airlied@linux.ie>, Liviu Dudau <Liviu.Dudau@arm.com>,
  CK Hu <ck.hu@mediatek.com>, Thierry Reding <treding@nvidia.com>,
  Daniel Vetter <daniel@ffwll.ch>, Chunming Zhou <david1.zhou@amd.com>,
  Jani Nikula <jani.nikula@intel.com>,
- Christian =?iso-8859-1?Q?K=F6nig?= <ckoenig.leichtzumerken@gmail.com>,
  Intel Graphics Development <intel-gfx@lists.freedesktop.org>,
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
  linux-mediatek@lists.infradead.org,
@@ -117,54 +116,45 @@ Cc: David Airlie <airlied@linux.ie>, Liviu Dudau <Liviu.Dudau@arm.com>,
  Noralf =?iso-8859-1?Q?Tr=F8nnes?= <noralf@tronnes.org>,
  Philipp Zabel <p.zabel@pengutronix.de>,
  Christian =?iso-8859-1?Q?K=F6nig?= <christian.koenig@amd.com>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jul 18, 2019 at 06:15:05PM +0200, Sam Ravnborg wrote:
+On Thu, Jul 18, 2019 at 06:15:06PM +0200, Sam Ravnborg wrote:
 > Do not rely on including drm.h from drm_file.h,
 > as the include in drm_file.h will be dropped.
-> =
-
+> 
 > Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
 
 Reviewed-by: Sean Paul <sean@poorly.run>
 
-> Cc: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>
-> Cc: Maxime Ripard <maxime.ripard@bootlin.com>
-> Cc: Sean Paul <sean@poorly.run>
-> Cc: David Airlie <airlied@linux.ie>
-> Cc: Daniel Vetter <daniel@ffwll.ch>
-> Cc: Lionel Landwerlin <lionel.g.landwerlin@intel.com>
-> Cc: Chunming Zhou <david1.zhou@amd.com>
-> Cc: Christian K=F6nig <ckoenig.leichtzumerken@gmail.com>
+> Cc: CK Hu <ck.hu@mediatek.com>
+> Cc: Philipp Zabel <p.zabel@pengutronix.de>
+> Cc: Matthias Brugger <matthias.bgg@gmail.com>
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-mediatek@lists.infradead.org
 > ---
->  drivers/gpu/drm/drm_syncobj.c | 1 +
+>  drivers/gpu/drm/mediatek/mtk_drm_gem.c | 1 +
 >  1 file changed, 1 insertion(+)
-> =
-
-> diff --git a/drivers/gpu/drm/drm_syncobj.c b/drivers/gpu/drm/drm_syncobj.c
-> index a199c8d56b95..75cb4bb7619e 100644
-> --- a/drivers/gpu/drm/drm_syncobj.c
-> +++ b/drivers/gpu/drm/drm_syncobj.c
-> @@ -53,6 +53,7 @@
->  #include <linux/sync_file.h>
->  #include <linux/uaccess.h>
->  =
-
+> 
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_gem.c b/drivers/gpu/drm/mediatek/mtk_drm_gem.c
+> index 9434f88c6341..ca672f1d140d 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_gem.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_gem.c
+> @@ -5,6 +5,7 @@
+>  
+>  #include <linux/dma-buf.h>
+>  
 > +#include <drm/drm.h>
->  #include <drm/drm_drv.h>
->  #include <drm/drm_file.h>
+>  #include <drm/drm_device.h>
 >  #include <drm/drm_gem.h>
-> -- =
-
+>  #include <drm/drm_prime.h>
+> -- 
 > 2.20.1
-> =
+> 
 
-
--- =
-
+-- 
 Sean Paul, Software Engineer, Google / Chromium OS
 
 _______________________________________________
