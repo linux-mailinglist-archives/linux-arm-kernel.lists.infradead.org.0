@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC0466CBCF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 11:24:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E74E06CBD8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 11:25:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,44 +11,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=CjjZdhlevu4fltdojlX04R5lNNZcZXuPCl7OS7kEBSA=; b=FaDOFUPQ6MXZmsBhGyhER0jl62
-	DDvSELjBvJC1ih2eNyfnxn74JYozJiYqAUu9dG08VzMPnb6UMteKwIpzIp/YoWuR0QOYZy+8T28VX
-	7TMg2Ao+l2IniTxKkRA9MUw3ijJXLmcRAO6AopfI1D+cFhalfwoYYD8sLyhxZQDOk+O8vbkgWFt9d
-	6aivJ0BbxCD5LZj9MmyLEYvTMmhDyb04sluE/I9glpVlNJQzbK9TuByuxx613ILh5DXAeHACoTj63
-	sa4kJezkXz1l26rnxSo3geUzJqNlQwww0Qu9UfdK5fQIXOMyN4T8WyZZHrOhrQW+AfWuDIHu6qc17
-	7LdnbC/w==;
+	bh=xuCZ2pnReBtp0M7mqYkucWMqPF0Qi8xwO6eyN0W1Y6Y=; b=LrnFSdYFeMJbeOwRrrvh3wWQoR
+	88HDWfZhxTug+lSddJjuPumpRNQn6GMRm1eMkaWsGVUF0hlDTLED+eOhvT5VSuLbtaDcyybBizLfn
+	fJpBE2NT9+kx+DzcF1ueNkKFR2+NiqcHH4Fc6IT2k4oAIUdbkGJcCkjG/IlUnfSf5h8trAp5d6Q3H
+	Oogl+NoMSwPnxG0hXYHHxKoXfs9kBdsJ3hzITZwuHy5Zq1ySJUsLm6iDj7sr9JeNixB/viywAmKKk
+	54KPlBigWDY45PdBfe+FsmVVya+oKPqmk4xkgN3LnARRA9/z/ZcHvEZVRsoDrBRd3wtAPwiIpKfzc
+	D+V0NBqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ho2ee-0000Fv-Hh; Thu, 18 Jul 2019 09:24:48 +0000
+	id 1ho2fH-0001k5-ML; Thu, 18 Jul 2019 09:25:27 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ho2eO-0000EL-Ud
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 09:24:34 +0000
+ id 1ho2eP-0000EO-Ct
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 09:24:35 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 78B741A011D;
- Thu, 18 Jul 2019 11:24:29 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 858291A011A;
+ Thu, 18 Jul 2019 11:24:30 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 333E41A00EE;
- Thu, 18 Jul 2019 11:24:24 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 3DDB01A0352;
+ Thu, 18 Jul 2019 11:24:25 +0200 (CEST)
 Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 6FD70402CF;
- Thu, 18 Jul 2019 17:24:17 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 8648C402D5;
+ Thu, 18 Jul 2019 17:24:18 +0800 (SGT)
 From: Anson.Huang@nxp.com
 To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH 2/4] ARM: dts: imx6sl: move GIC to right location in DT
-Date: Thu, 18 Jul 2019 17:15:06 +0800
-Message-Id: <20190718091508.3248-2-Anson.Huang@nxp.com>
+Subject: [PATCH 3/4] ARM: dts: imx6ul: move GIC to right location in DT
+Date: Thu, 18 Jul 2019 17:15:07 +0800
+Message-Id: <20190718091508.3248-3-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.9.5
 In-Reply-To: <20190718091508.3248-1-Anson.Huang@nxp.com>
 References: <20190718091508.3248-1-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_022433_143002_25CFEEC9 
-X-CRM114-Status: UNSURE (   7.40  )
+X-CRM114-CacheID: sfid-20190718_022433_570326_8B3B91CF 
+X-CRM114-Status: UNSURE (   7.47  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -84,45 +84,51 @@ be located inside of soc node in DT.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
- arch/arm/boot/dts/imx6sl.dtsi | 18 +++++++++---------
- 1 file changed, 9 insertions(+), 9 deletions(-)
+ arch/arm/boot/dts/imx6ul.dtsi | 24 ++++++++++++------------
+ 1 file changed, 12 insertions(+), 12 deletions(-)
 
-diff --git a/arch/arm/boot/dts/imx6sl.dtsi b/arch/arm/boot/dts/imx6sl.dtsi
-index b36fc01..3a96b55 100644
---- a/arch/arm/boot/dts/imx6sl.dtsi
-+++ b/arch/arm/boot/dts/imx6sl.dtsi
-@@ -77,15 +77,6 @@
+diff --git a/arch/arm/boot/dts/imx6ul.dtsi b/arch/arm/boot/dts/imx6ul.dtsi
+index 81d4b49..da1eae6 100644
+--- a/arch/arm/boot/dts/imx6ul.dtsi
++++ b/arch/arm/boot/dts/imx6ul.dtsi
+@@ -93,18 +93,6 @@
  		};
  	};
  
 -	intc: interrupt-controller@a01000 {
--		compatible = "arm,cortex-a9-gic";
+-		compatible = "arm,gic-400", "arm,cortex-a7-gic";
+-		interrupts = <GIC_PPI 9 (GIC_CPU_MASK_SIMPLE(1) | IRQ_TYPE_LEVEL_HIGH)>;
 -		#interrupt-cells = <3>;
 -		interrupt-controller;
--		reg = <0x00a01000 0x1000>,
--		      <0x00a00100 0x100>;
 -		interrupt-parent = <&intc>;
+-		reg = <0x00a01000 0x1000>,
+-		      <0x00a02000 0x2000>,
+-		      <0x00a04000 0x2000>,
+-		      <0x00a06000 0x2000>;
 -	};
 -
- 	clocks {
- 		ckil {
- 			compatible = "fixed-clock";
-@@ -133,6 +124,15 @@
- 			clocks = <&clks IMX6SL_CLK_OCRAM>;
+ 	timer {
+ 		compatible = "arm,armv7-timer";
+ 		interrupts = <GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(1) | IRQ_TYPE_LEVEL_LOW)>,
+@@ -171,6 +159,18 @@
+ 			reg = <0x00900000 0x20000>;
  		};
  
 +		intc: interrupt-controller@a01000 {
-+			compatible = "arm,cortex-a9-gic";
++			compatible = "arm,gic-400", "arm,cortex-a7-gic";
++			interrupts = <GIC_PPI 9 (GIC_CPU_MASK_SIMPLE(1) | IRQ_TYPE_LEVEL_HIGH)>;
 +			#interrupt-cells = <3>;
 +			interrupt-controller;
-+			reg = <0x00a01000 0x1000>,
-+			      <0x00a00100 0x100>;
 +			interrupt-parent = <&intc>;
++			reg = <0x00a01000 0x1000>,
++			      <0x00a02000 0x2000>,
++			      <0x00a04000 0x2000>,
++			      <0x00a06000 0x2000>;
 +		};
 +
- 		L2: l2-cache@a02000 {
- 			compatible = "arm,pl310-cache";
- 			reg = <0x00a02000 0x1000>;
+ 		dma_apbh: dma-apbh@1804000 {
+ 			compatible = "fsl,imx6q-dma-apbh", "fsl,imx28-dma-apbh";
+ 			reg = <0x01804000 0x2000>;
 -- 
 2.7.4
 
