@@ -2,99 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BF3BE6D266
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 18:53:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B375E6D26B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 18:55:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mtjpW/VBxiwShFoymxVNUa67u7gjCMM9j1OoCoRw6i0=; b=R+3idee/cqpzQt
-	kgNqyTpFlZ/0PyUgaRf8+CNNJ337yfL5ycuPQvS8hIhL2UPx7zwPdluTSoPMuVhKdjPDXo1ipAxWE
-	YMYeyQ+GV0NKG9Dm4OhPKc74cfkxJ/ikBXXFcOaFX8dibnb6YtPEt14/SmlPJrs1FDilOxAvc1MeQ
-	JxKmzI816tydIK+i9KRnDKpcO+mdxihP2dtSoQihhikY6q/W2XXE77ogVmEdm72tBQ13CL+nWSeL4
-	S7brzOjesigLGDTtmqtKP6O9Ylw7q+y4N0M8mvFLEETEYuzp3SbWfGW3bD/60sn1oW5IH7yiN9W4W
-	97kHCP0t4DByC5R44Vrw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kK0Yg+aYkFmsu0jzqOvtOXz40exyp9A1wfjtdawb9ps=; b=AHFq+6rz9vB8Co
+	sfmcL3kBQJnfcktUwdCRbc0dyfhbVD75Dus3LxlqWF1M1eSDUTRl/jkrJaYTqjNdodu0Izg8WeZcg
+	yZgu7gAaTw5hEZ7DdMdqJj8aH72awdKK9ZLxMdZGpZLOGlDeLFr5GkXy/OAzIZKzNW1nCKMHwbM6I
+	6hAgTyW3+OANn6cYuy3l7a1zyv9Vry6rCF/aMEoftb8sWFgaKdhYthQa4GduHJFIDkAuHOSZjJz2F
+	OjPlTuaMd1Xzf/ig5/Srwp83gex2wlkwBIt5UOpFVOpaVWMFGzZeBBn4SD6ercvhTZnPgbQzcK3JJ
+	8CGhwgkTZhGPbtH03M8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ho9eR-0003IK-V4; Thu, 18 Jul 2019 16:53:04 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1ho9h1-0004y4-14; Thu, 18 Jul 2019 16:55:43 +0000
+Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ho9eE-0003HU-OX; Thu, 18 Jul 2019 16:52:52 +0000
-Received: by mail-pl1-x643.google.com with SMTP id y8so14173731plr.12;
- Thu, 18 Jul 2019 09:52:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:openpgp:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=B9sXbIAgCUxYbdMP7tdn/QQo9lsNyd/aDKcl5v3D8RA=;
- b=TCteih+D7dKNx87H8hXAvFATrkrFijrBrYpkrzkW7KHHPYj10IoUBDMuR35/P2rinM
- dfOuRHULT6V1KnJdWIT8dZizQzw/+DQ5tRKCsfNqPu3ewSvfwX225S/IK+5i8GwNyJCX
- zCNPG4y1ZogBH5FLv+Z8x265Of/oiTGPMT3TfF3Fu2MbN/tpV+nr7IF2JRRiKBOXJ8Ma
- bvufOeKdU513oB1ynVfhLNvryhVmdfwubGqDpNZxjip/HeCsQkZub/q2Q63JxDUVYneA
- wNXnYvXW4qpL67qWoqY5eRGdW4JTXyKBwuiOB60iQ+S0m92BmrwDFMw9fUZMwPgmGZso
- XzQw==
+ id 1ho9gn-0004xX-SF
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 16:55:31 +0000
+Received: by mail-vs1-xe41.google.com with SMTP id v6so19629041vsq.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 18 Jul 2019 09:55:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=UbJA1LvVSBKZi34z8EvemKhQnL5/c6wyw0dFUXsJ7H4=;
+ b=v+KXmWJJHgzxhzH/ByzH+UGInDESBlyCnkXDLOYXkFL108hatd/9puy+QFFba3m5WD
+ bhtTKrLRw2YAQnFRC5M36S3T5i8Oe9gGBtNFE7ZdCJ/1I4gLyUmnIjKdORLB/9odeMnw
+ FhmH4wyOwzolrzleyGwIui2FQ8MLa67j+7E28mZP0dcFPtbM1CXxugMkHsdZeP6VkJ9g
+ pXT21JDk/94eK4JtwLYOUv7st8v723fVliWhRYVAZKpLQy8dM/d+IyfGekDqo5K749U+
+ kzXKq432p3MGhIBhb+v8kvOZnTcKOkNOpxCcu9VamQd7Pt/FKJqG22ZTWj0nzsbngz0X
+ 0K4A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=B9sXbIAgCUxYbdMP7tdn/QQo9lsNyd/aDKcl5v3D8RA=;
- b=VerqbvzQJ4EthweeSCr26xLQjoHM3/FdwNzCsK2U2HUTIamBmSOYMLDVYf/w1bMs/+
- 6fQOW4oMyLV+g19TD+sPsLWvIEm4sh4ujT8f+MBuo5TSe/h1C8/0gQOm145xnN+AnKWo
- QzjXe6gYIHMmBQYzS+KPXVEdh77lPlZhqfHCSK/HeXeRhIOsU/EoI+rh4buaUjpPxcYC
- +f+HhiRyMefel3jRb+ZtQYFnew135LNjBemnqwTegJw/Wayk4zW/s99ilktFbGtQaNgZ
- c1UvTKeteH68kHL7dJakA1S79MdJ7OZr+0KxPSxRF2+d33J1u34bj4dAemsL+XD374pX
- kaow==
-X-Gm-Message-State: APjAAAUj8GhNpLKRwfbL3UQ/bVmjBeVeFVYvgWjjBANKM2Azow3VBXot
- kDpxdPPpRu06q912BYTkXb6pg/tS
-X-Google-Smtp-Source: APXvYqxgeoD5rDkr7xeJEqCRyltcCncP/y9ZbNPntH98GjiSYNsZOXrP3ja+LLmtTtyj5WZlWhvjrg==
-X-Received: by 2002:a17:902:8d92:: with SMTP id
- v18mr51721388plo.211.1563468769579; 
- Thu, 18 Jul 2019 09:52:49 -0700 (PDT)
-Received: from [10.69.78.41] ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id r188sm45669521pfr.16.2019.07.18.09.52.42
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 18 Jul 2019 09:52:48 -0700 (PDT)
-Subject: Re: [PATCH RFC 09/18] mmc: sdhci-iproc: Add support for emmc2 of the
- BCM2838
-To: Matthias Brugger <matthias.bgg@gmail.com>,
- Florian Fainelli <f.fainelli@gmail.com>, Stefan Wahren <wahrenst@gmx.net>,
- Eric Anholt <eric@anholt.net>, Ray Jui <rjui@broadcom.com>,
- Scott Branden <sbranden@broadcom.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
- <sboyd@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
- Adrian Hunter <adrian.hunter@intel.com>, Mark Brown <broonie@kernel.org>
-References: <1563393026-17118-1-git-send-email-wahrenst@gmx.net>
- <1563393026-17118-10-git-send-email-wahrenst@gmx.net>
- <048fc038-4ba8-ddc9-fbdb-aefa7a35b41a@gmail.com>
- <2a400a9b-9351-ba6f-adff-3e3916efa6be@gmail.com>
- <74ee5be5-3840-3a70-0f2a-60d86bcbeefa@gmail.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Openpgp: preference=signencrypt
-Message-ID: <978251ed-502c-168b-705e-12e596c05685@gmail.com>
-Date: Thu, 18 Jul 2019 09:52:40 -0700
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=UbJA1LvVSBKZi34z8EvemKhQnL5/c6wyw0dFUXsJ7H4=;
+ b=LvSmuxTYjsdJqy0pTC99B90t59UAzVnwl5bkWOz6O6kCmrUr+0e8GLF7P5cPa4mpyA
+ /xsHySbjkgDq5WfJvNEu4pzG/4hCxStyem6wDG/ZaG4uM3sx0FsEHWGM55gPU8un4E5w
+ fDFpxigX0wGzuvGa9MQpMNJsyrqyhy0n3rf0gxCeA/RlZPbbktm1iN6JQ/AIUSfhfmfF
+ FEApN9zy6PQN+cGUzWOzaTUE13IOd1idr4388lgiKFKXPtr5ZAoYU02ls6Bqn7ELPDAB
+ 5awm3flPzuYrSxypPD9DchxsoOZ7r0Yig5q23w6kCBsKJqtCpWoIIx0MD6TMk73jZIBc
+ y5wQ==
+X-Gm-Message-State: APjAAAVM7LxK0MdNzXwCbCj7zF8/chPfgMvEIGBS7OXbqP+iYOSza8a5
+ cbV/2HRL/Pt++a6PSHLj6i0gz834FO8fyLFsr0ZIEg==
+X-Google-Smtp-Source: APXvYqz3H7NW9n8k3hccLVjUE4vzSLFYDceNlDN7TRygVSGTeYT1EPbUZoWXTC9qw+g+yzQp96xVbuz30qFeCiP1+X8=
+X-Received: by 2002:a67:61c7:: with SMTP id
+ v190mr28723774vsb.165.1563468928660; 
+ Thu, 18 Jul 2019 09:55:28 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <74ee5be5-3840-3a70-0f2a-60d86bcbeefa@gmail.com>
-Content-Language: en-US
+References: <20190513192300.653-1-ulf.hansson@linaro.org>
+ <20190513192300.653-15-ulf.hansson@linaro.org>
+ <20190716155317.GB32490@e121166-lin.cambridge.arm.com>
+ <CAPDyKFrJ75mo+s6GuUCTQ-nVv7C+9YJyTVmwuBZ2RKFOvOi3Nw@mail.gmail.com>
+ <20190718133053.GA27222@e121166-lin.cambridge.arm.com>
+In-Reply-To: <20190718133053.GA27222@e121166-lin.cambridge.arm.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Thu, 18 Jul 2019 18:54:52 +0200
+Message-ID: <CAPDyKFr4NmichQk4uf+Wgbanh=5idKYY=37WCb6U_hNFDVYg=w@mail.gmail.com>
+Subject: Re: [PATCH 14/18] drivers: firmware: psci: Manage runtime PM in the
+ idle path for CPUs
+To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_095250_805698_C980A778 
-X-CRM114-Status: GOOD (  17.91  )
+X-CRM114-CacheID: sfid-20190718_095529_917963_F1F9CEF8 
+X-CRM114-Status: GOOD (  20.31  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -115,52 +96,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Kevin Hilman <khilman@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ Viresh Kumar <viresh.kumar@linaro.org>, Linux PM <linux-pm@vger.kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Amit Kucheria <amit.kucheria@linaro.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Tony Lindgren <tony@atomide.com>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Lina Iyer <ilina@codeaurora.org>, Sudeep Holla <sudeep.holla@arm.com>,
+ Niklas Cassel <niklas.cassel@linaro.org>,
+ Souvik Chakravarty <souvik.chakravarty@arm.com>,
+ "Raju P . L . S . S . S . N" <rplsssn@codeaurora.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, 18 Jul 2019 at 15:31, Lorenzo Pieralisi
+<lorenzo.pieralisi@arm.com> wrote:
+>
+> On Thu, Jul 18, 2019 at 12:35:07PM +0200, Ulf Hansson wrote:
+> > On Tue, 16 Jul 2019 at 17:53, Lorenzo Pieralisi
+> > <lorenzo.pieralisi@arm.com> wrote:
+> > >
+> > > On Mon, May 13, 2019 at 09:22:56PM +0200, Ulf Hansson wrote:
+> > > > When the hierarchical CPU topology layout is used in DT, let's allow the
+> > > > CPU to be power managed through its PM domain, via deploying runtime PM
+> > > > support.
+> > > >
+> > > > To know for which idle states runtime PM reference counting is needed,
+> > > > let's store the index of deepest idle state for the CPU, in a per CPU
+> > > > variable. This allows psci_cpu_suspend_enter() to compare this index with
+> > > > the requested idle state index and then act accordingly.
+> > >
+> > > I do not see why a system with two CPU CPUidle states, say CPU retention
+> > > and CPU shutdown, should not be calling runtime PM on CPU retention
+> > > entry.
+> >
+> > If the CPU idle governor did select the CPU retention for the CPU, it
+> > was probably because the target residency for the CPU shutdown state
+> > could not be met.
+>
+> The kernel does not know what those cpu states represent, so, this is an
+> assumption you are making and it must be made clear that this code works
+> as long as your assumption is valid.
+>
+> If eg a "cluster" retention state has lower target_residency than
+> the deepest CPU idle state this assumption is wrong.
 
+Good point, you are right. I try to find a place to document this assumption.
 
-On 7/18/2019 9:48 AM, Matthias Brugger wrote:
-> 
-> 
-> On 18/07/2019 18:40, Florian Fainelli wrote:
->>
->>
->> On 7/18/2019 1:34 AM, Matthias Brugger wrote:
->>
->> [snip]
->>
->>>>  static const struct of_device_id sdhci_iproc_of_match[] = {
->>>>  	{ .compatible = "brcm,bcm2835-sdhci", .data = &bcm2835_data },
->>>> +	{ .compatible = "brcm,bcm2838-emmc2", .data = &bcm2838_data },
->>>
->>> As far as I'm aware of, the RPi4 FW provides a device-tree with compatible:
->>> brcm,bcm2711-emmc2. Shouldn't we add this as well so that we can use the DT
->>> passed by the FW?
->>
->> Downstream typically used 2708, 2709, 2710 because those are the
->> Broadcom internal part numbers, and upstream has been using what's on
->> the package: 2835, 2836, 2837, 2838. At the end of the day, it does not
->> make much functional difference, but if if we have to be consistent,
->> then Stefan's approach here follows the consistency here.
->>
-> 
-> So I propose to add both, so that we can use the upstream kernel with downstream
-> devcie-tree. I'm thinking of the device-tree provided at run-time by the FW.
+>
+> And CPUidle and genPD governor decisions are not synced anyway so,
+> again, this is an assumption, not a certainty.
+>
+> > In this case, there is no point in allowing any other deeper idle
+> > states for cluster/package/system, since those have even greater
+> > residencies, hence calling runtime PM doesn't make sense.
+>
+> On the systems you are testing on.
 
-Adding both for the Pi4 (2711) specifically, or should we go back and
-also add bcm2708/9/10?
+So what you are saying typically means, that if all CPUs in the same
+cluster have entered the CPU retention state, on some system the
+cluster may also put into a cluster retention state (assuming the
+target residency is met)?
 
-The Device Tree on the Pi can be updated (AFAICT), so the ABI concerns,
-and the requirement for upstream to maintain backwards compatibility
-with a binding that has not been submitted/reviewed is not going to be a
-compelling argument IMHO.
--- 
-Florian
+Do you know of any systems that has these characteristics?
+
+[...]
+
+Kind regards
+Uffe
 
 _______________________________________________
 linux-arm-kernel mailing list
