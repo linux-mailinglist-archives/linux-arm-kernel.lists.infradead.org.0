@@ -2,80 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AB2C76D1C8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 18:17:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F0996D1C9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 18:17:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FsuRmT2J91nb84feZ36zkytJ7ryof5bJop4bSkMuuOU=; b=WLu0YY7xgVGf4v
-	l2sonvrcbqJtXab3ANNqVGe4VfJ4KeeEjGzOktiCKX8aYGDMwGBut82R9wz/ZG8+/v4/61Oaaiv8W
-	D3aSI+P+MMkFcgkIOKN/xzeK2qkky9rfkc+0s2ikN95SDx0YTYQ70jfxDaX8NH8JAFj6nOpFHDR6Z
-	b/R6UG4lV4rBslYVdGEwel1gXe72EZO0YuUJ7pisY2WwF8tBNG5nMWV+NO8bUXySGk/lUffKFkhtb
-	619KRrZ6LXsujDPcNyl9Lu4/fuxZM/WmoDMTbZXfLONCZGPbylzgUegMf/KrFUyybi3RGH+Rtex62
-	DlYgnKmwBT6L0BZ1sQYg==;
+	List-Owner; bh=F0fuJgK2X8dwEAQfySyLpi09low5zX6cn9XCJ0Ktb30=; b=M/35I+HSTP6pS6
+	9Ot+4DtDci4cnoAkX5D7EwRdNfOUq35PVadQeAQezjk5NJebD9dcI3HnskrZfrGI5L2lSU717ectf
+	FJcLS//UZHO4gQPoiDUJ3oIMAvDp8mQUT2eSZN+XFQfx7D9m2ZPmeBbQzSoA11A70FqOYDd7KoH9l
+	lq5KJlh85SHcqpsLeQAn2aKu8acj4xqEthgGV//ztjdNU/fV82HCoVgfl8RAlQpBpWPY8wn5MphnD
+	54JZyPt0TPMtfmg/GZ2fkN/azPNtqpoP/jFBeiJsqGzcdUJyeSkm0DB1/DH+HNW3JM2I1CxICd0C7
+	OiZr680oROFhdUs2sEIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ho95Y-00017S-Qr; Thu, 18 Jul 2019 16:17:00 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1ho95q-0001MU-VZ; Thu, 18 Jul 2019 16:17:19 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ho947-0007m9-07; Thu, 18 Jul 2019 16:15:32 +0000
-Received: by mail-lj1-x244.google.com with SMTP id v18so27900740ljh.6;
- Thu, 18 Jul 2019 09:15:30 -0700 (PDT)
+ id 1ho948-0007og-8V; Thu, 18 Jul 2019 16:15:34 +0000
+Received: by mail-lf1-x141.google.com with SMTP id b17so19642962lff.7;
+ Thu, 18 Jul 2019 09:15:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=6MYIEn1ZPyuv1rXYHIstqwkz6PcLGLc7Ica5A/O2ta8=;
- b=l/+A5TefNobm66FT7NA+1L1326lmg05N3R1te0STjlI/DicLKKwWdKIY2ffs2mhBOL
- kkjv9qFYw15vXqqFFAU9sEJM8CKG+KSw7PRGlqcLJa/9F7LsquNb3BHtsONIORKzC2qd
- N7+NAPnu749BDYCKNMo1fmjSOX1joYwHLHnffqp/TAgyjt/VDreMIqOFsazjOz5yvMRS
- qJhujeZDJuAY0Chs5hTRgGU3dzpNox/cPHJRbdEmZHk21I10l1L6lzfKzsmdsDEy0zN6
- yA3s3GZcX62oNEzKWMAHA3TfZUlL7L1P2nP6AYCTPrKLyMJ5Hj2RrA65pTnKp2PnEYRt
- Nf4A==
+ bh=TBzEtdfCBC7JeGboomJdNlsAe05PLJaxt5wvtDjrcuc=;
+ b=rCmwKJR0Ch/XIKuvX/iHVKTyWuto858/ULPTJNZuoxCPXol4vTi8kjxj+OdaXRHT2p
+ 6X2P9wZze0CqOaL4cU4Fu+dF5nzao2U+If/3C1Ki+1MGinO/FNJEwAznmWmf3mgwZopF
+ cjQJhUjrAaTQ7iESM5EOl8nbtN5Kd82P/bCbjr9z/u0JOwcVUoQoGQeIsjyTbQwtPb8x
+ rzCup7ZkSowfDduPVWmrzvT/m59PrUV7GE6LkJD8zixS/9mAKNe5A+RJhaj0lUXzlkhN
+ 2V+r1O1M7tPiHg09aIT6VLwMqOplw0dPGxu03kCzU5Too4xcj+CwW98qLmBs2roVk8GE
+ 0sJQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
  :in-reply-to:references:mime-version:content-transfer-encoding;
- bh=6MYIEn1ZPyuv1rXYHIstqwkz6PcLGLc7Ica5A/O2ta8=;
- b=N0UIZ9NmSOnNj1Ln72y64CowEbRBKG5UO/lRlu5+uvRE7CXHYGeoolObWPKg7Iv/wS
- XZr3gDk/crYXKrjs3+WW3QOP1+/vs6M/1zLEQMSJ+NSMuK55YKGg0GK8j5Vqf83hrEB/
- qWebC7BgvjvQ3pgULA795XXSrbHZmdMPQt7pB/3Bk5vpnP406DN2Whe1XoryHHNZ19S/
- PLDubXFuHxY3YTcnh4/r+0EKDbtW/yYe9SXW8LgOFtW2DfXW1V9ioJu9KKXOEhPBsyYF
- 7+BkkfPjPGy1oa6VR09bP/Vomrz6JzBbqboXUFbJ0GtIo6VFVnJjFgbGVPEeFZvvIZHk
- sfAw==
-X-Gm-Message-State: APjAAAWfLE2H/JrU2oOKykzIbZGM7mPqqb26s2Qu9OoDQNAF8XGPjKMm
- Zfu7L8IPE9GZu95bfzNpvQY=
-X-Google-Smtp-Source: APXvYqx2GdlPCoRvteVmwbMwCMh5PJuLakxwccuByFw+yBBnrjbiYfadk2aOmQ7u2DxEu65vuBdQrA==
-X-Received: by 2002:a2e:8ed2:: with SMTP id e18mr24703434ljl.235.1563466529166; 
- Thu, 18 Jul 2019 09:15:29 -0700 (PDT)
+ bh=TBzEtdfCBC7JeGboomJdNlsAe05PLJaxt5wvtDjrcuc=;
+ b=nv+u+QQFKgFAOw7sASK+mCjyuXZYZrPB9mFQ2wE8Vgqf9iBmQemcmdD0Z4QIXwHWRC
+ i95M+cM2HIXwO+auvh/ngBH1D+I9K7BjQj8MsD9W4ITCXFMUkhXeOYgDaJfUPy1XKaSa
+ nc51GY+3Yewz42sYKIMkxENkXVEggtbAM/C5NWFy9pdcyaDinxdcOnIdrE4qZqUdy2Sq
+ W0l9bJzSVA2Fi3001PgguAq0rF2sx8i+brIOQX72BeqFI5C0I0JIsJZ3+nCsj//sHQvy
+ H8TkiYYNMAlKfO4wW/nOJOU/RxdykTueIaLoE6YGmVanpuX4gWN13ArhAo0dt3YLiPCy
+ Mfrw==
+X-Gm-Message-State: APjAAAV96MK+F/CY4pkZJLW5Ha529h13ldY2wevYnLGBOQq+q50z10Oi
+ wIz3YXOXERaApc81/skJ/iU=
+X-Google-Smtp-Source: APXvYqxR6UJvyzBrpoBKJ1t/MeC7+3uFD4fwDUCOIFsQ9De/62GDc97lhKJZ2LBIEMtYzSPi07yrWA==
+X-Received: by 2002:ac2:5a01:: with SMTP id q1mr7852749lfn.46.1563466530686;
+ Thu, 18 Jul 2019 09:15:30 -0700 (PDT)
 Received: from saturn.lan (18.158-248-194.customer.lyse.net. [158.248.194.18])
  by smtp.gmail.com with ESMTPSA id
- d21sm4057995lfc.73.2019.07.18.09.15.27
+ d21sm4057995lfc.73.2019.07.18.09.15.29
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 18 Jul 2019 09:15:28 -0700 (PDT)
+ Thu, 18 Jul 2019 09:15:30 -0700 (PDT)
 From: Sam Ravnborg <sam@ravnborg.org>
 To: dri-devel@lists.freedesktop.org,
  Intel Graphics Development <intel-gfx@lists.freedesktop.org>
-Subject: [PATCH v1 03/11] drm: drop uapi dependency from drm_vblank.h
-Date: Thu, 18 Jul 2019 18:14:59 +0200
-Message-Id: <20190718161507.2047-4-sam@ravnborg.org>
+Subject: [PATCH v1 04/11] drm/ati_pcigart: drop dependency on drm_os_linux.h
+Date: Thu, 18 Jul 2019 18:15:00 +0200
+Message-Id: <20190718161507.2047-5-sam@ravnborg.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190718161507.2047-1-sam@ravnborg.org>
 References: <20190718161507.2047-1-sam@ravnborg.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_091531_278242_F7555417 
-X-CRM114-Status: UNSURE (   9.78  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190718_091532_365784_5A62F7A9 
+X-CRM114-Status: GOOD (  11.31  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (sam.ravnborg[at]gmail.com)
@@ -101,8 +100,7 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: David Airlie <airlied@linux.ie>, Daniel Vetter <daniel.vetter@ffwll.ch>,
- Liviu Dudau <Liviu.Dudau@arm.com>,
+Cc: David Airlie <airlied@linux.ie>, Liviu Dudau <Liviu.Dudau@arm.com>,
  Lionel Landwerlin <lionel.g.landwerlin@intel.com>,
  Chris Wilson <chris@chris-wilson.co.uk>, Eric Anholt <eric@anholt.net>,
  Sam Ravnborg <sam@ravnborg.org>, Rob Herring <robh@kernel.org>,
@@ -122,38 +120,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-drm_vblank.h included uapi/drm/drm.h.
-It turns out this include was not required - delete it.
-
-Note: uapi/drm/drm.h is included indirect via drm_file.h,
-but there are no dependencies in drm_vblank.h so the removal
-is legit.
+The drm_os_linux.h header is deprecated.
+Just opencode the sole DRM_WRITE32().
 
 Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
-Reviewed-by: Daniel Vetter <daniel.vetter@ffwll.ch>
 Cc: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>
 Cc: Maxime Ripard <maxime.ripard@bootlin.com>
 Cc: Sean Paul <sean@poorly.run>
 Cc: David Airlie <airlied@linux.ie>
 Cc: Daniel Vetter <daniel@ffwll.ch>
-Cc: Stefan Agner <stefan@agner.ch>
-Cc: Thierry Reding <treding@nvidia.com>
 ---
- include/drm/drm_vblank.h | 1 -
- 1 file changed, 1 deletion(-)
+ drivers/gpu/drm/ati_pcigart.c | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
 
-diff --git a/include/drm/drm_vblank.h b/include/drm/drm_vblank.h
-index e528bb2f659d..9fe4ba8bc622 100644
---- a/include/drm/drm_vblank.h
-+++ b/include/drm/drm_vblank.h
-@@ -30,7 +30,6 @@
+diff --git a/drivers/gpu/drm/ati_pcigart.c b/drivers/gpu/drm/ati_pcigart.c
+index 2a413e291a60..580aa2676358 100644
+--- a/drivers/gpu/drm/ati_pcigart.c
++++ b/drivers/gpu/drm/ati_pcigart.c
+@@ -35,7 +35,6 @@
  
- #include <drm/drm_file.h>
- #include <drm/drm_modes.h>
--#include <uapi/drm/drm.h>
+ #include <drm/ati_pcigart.h>
+ #include <drm/drm_device.h>
+-#include <drm/drm_os_linux.h>
+ #include <drm/drm_pci.h>
+ #include <drm/drm_print.h>
  
- struct drm_device;
- struct drm_crtc;
+@@ -169,6 +168,7 @@ int drm_ati_pcigart_init(struct drm_device *dev, struct drm_ati_pcigart_info *ga
+ 		page_base = (u32) entry->busaddr[i];
+ 
+ 		for (j = 0; j < (PAGE_SIZE / ATI_PCIGART_PAGE_SIZE); j++) {
++			u32 offset;
+ 			u32 val;
+ 
+ 			switch(gart_info->gart_reg_if) {
+@@ -184,10 +184,12 @@ int drm_ati_pcigart_init(struct drm_device *dev, struct drm_ati_pcigart_info *ga
+ 				break;
+ 			}
+ 			if (gart_info->gart_table_location ==
+-			    DRM_ATI_GART_MAIN)
++			    DRM_ATI_GART_MAIN) {
+ 				pci_gart[gart_idx] = cpu_to_le32(val);
+-			else
+-				DRM_WRITE32(map, gart_idx * sizeof(u32), val);
++			} else {
++				offset = gart_idx * sizeof(u32);
++				writel(val, (void __iomem *)map->handle + offset);
++			}
+ 			gart_idx++;
+ 			page_base += ATI_PCIGART_PAGE_SIZE;
+ 		}
 -- 
 2.20.1
 
