@@ -2,60 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D493F6D102
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 17:22:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E82CE6D12B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 17:31:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=e0WCb/w8btnhnuVaGe2WrWitEuz2YVwNYYgT3u68L0c=; b=bst/ujaVSc1+BB1iC0nK56hT9
-	6C9/XKXOBBuMF/HMSV+bLgQLq/LRAhdrj9K7eRsVwyHm+TgURceWTRWiSC8S3AKy84Arw08RZi+Sj
-	3DWeLVaksRitQPxzdfBjpBcoZJOS7kw1tHYyVAVcdw/gjr2DZw4Nttmaf+wk9jDCbZu9G+zqPvePF
-	spPrguDDQ3kCHL97EdecG2NzjgwDmJ2EScF2FKOW5cpdPstbsFD/Woh1CNG4swxgqkAq2f77gdX2i
-	liytO4W+K26MM+EDKNktyB/NE4IcbhMl6CKAiIoGZVsualJz8ViG6fv3V1jGxuTLPFZm2AfQj6hkq
-	b6qkQD6hw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FapGZdyqlCd1QmKX38/M37CVdTCdUCPMobsdwS3KOzo=; b=TCuQmw04PNEDW2
+	8mEkKpP/kRCq4LuaafBjZ4jzVu7c48+x/WDKlTMQRuqdd166aj8lqB+tBGpkbXL17YEbmOvQdPu1W
+	nHmjp0UV3hEEC/EBxO5IN0mWR3YjMFY3SbxG/Mm9cVQ5zPRlCoOKy507uTJdppAASq9Ly7NLK22oG
+	Ax8kFGJXoW4YKCjWszui6EbjC5RsqEqdQ7WmXRUH9HPqHWQY/bn06hVmgFOl29Nm/3jLCMhyHXMhJ
+	fdbyLe78svzco+yhF632C4x9d9GBVFIKP0xOtMNR+AAB+l2U9bSpsnyDn5f8al4DRfaOv85ErFfVq
+	pS5OOw1ZQRdZNkpasbJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ho8Ew-00009d-IN; Thu, 18 Jul 2019 15:22:38 +0000
-Received: from mx1.mailbox.org ([80.241.60.212])
+	id 1ho8NS-0003Yz-Vz; Thu, 18 Jul 2019 15:31:27 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ho8Ee-00008n-5e
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 15:22:23 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org
- [IPv6:2001:67c:2050:105:465:1:2:0])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
- (No client certificate requested)
- by mx1.mailbox.org (Postfix) with ESMTPS id A31DB4DF37;
- Thu, 18 Jul 2019 17:22:15 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp2.mailbox.org ([80.241.60.241])
- by hefe.heinlein-support.de (hefe.heinlein-support.de [91.198.250.172])
- (amavisd-new, port 10030)
- with ESMTP id xmIYYji9PWVu; Thu, 18 Jul 2019 17:22:09 +0200 (CEST)
-Date: Fri, 19 Jul 2019 01:21:23 +1000
-From: Aleksa Sarai <cyphar@cyphar.com>
-To: Rasmus Villemoes <linux@rasmusvillemoes.dk>
-Subject: Re: [PATCH v9 08/10] open: openat2(2) syscall
-Message-ID: <20190718152123.m33t44dapy6y4nwy@yavin>
-References: <20190706145737.5299-1-cyphar@cyphar.com>
- <20190706145737.5299-9-cyphar@cyphar.com>
- <845e4364-685f-343b-46fb-c418766dce3e@rasmusvillemoes.dk>
+ id 1ho8NF-0003YF-1x
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 15:31:14 +0000
+Received: by mail-io1-xd42.google.com with SMTP id h6so52064616iom.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 18 Jul 2019 08:31:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=aKCPVJWUs1Jjo618+zN06BNfCZDhzZnUlux4ybl+pq0=;
+ b=Sm2v261v5xekTmZUZ6N0X1DwSi7Qx28ytpUwnL6RR4/HA9RM1I1uHbxQ5Tr2RsDxnF
+ uHfozpBvobDMz50HATWjhVmujLg+klkHLJ9pvtoaL0bSj4Xbwt0hy+2s95Bt9PrLwjHP
+ 9WrW9oAO56vn4LHlOWXQZlyF01y48G0k5vnVYgdbvDJLuIe7VXgftZScWAzSwPg4upTL
+ MB0EMRjd0/GafWtn+YldSQCyNyizBD/TzUOX5f+PsG2DaEIfWwVFdiK2B/TZ6sY4lWjl
+ Qi26tf9hfQYQ+MtdpFd3yi9DfJfOtWqxINoykwaPsPDhZbGjJpNY3h2J1aupKeY6xiGH
+ YSKg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=aKCPVJWUs1Jjo618+zN06BNfCZDhzZnUlux4ybl+pq0=;
+ b=JQ0dDcrUUk7gLjA054iSGKtBHzRjPFpYBw4qEOQ3kBh1HYEF3/SIxVrUnHjvz42blt
+ NjHMAIjMvzvnV3iDk20d3Qf6vtQBanyvpmmlTyyg0GzYafmmYKnd5yoCB/Vb0isbtfE8
+ jlUL6q2adqZkDjDwM7fdg0ZLVcSpQkQSbeP2ZP2ztQKGY5BcUyrQb4lrMlbG9PeRsq1q
+ 8oMTkzoLnSjX3lni1avmxXv9s3dHZjiJsRFD//eNTkkM5oV4Sj7BQsTWp8BAVY/ITyQx
+ eb7Tg2HmxPgqMWI8SMTgiCu6ot5uKPQECYKHERwhAopN5qdc+6U9LQ5wTbdRx/7VSNy8
+ VCzQ==
+X-Gm-Message-State: APjAAAW8ktYEIBEPsrSuXZnnzKcZWDsr1xsBfC4Lll53PMwJkionmie0
+ GxWKg6fvSGOyKH5aqSHTV7ASth+8VU70oU5HO6gtfg==
+X-Google-Smtp-Source: APXvYqzG2U1bPJ/OOAVgRh5Mkg7P6+I1KqVOXN4mBoflGrY+UlQJR3tPL8mnMgJRePKuw3SKg/qvS4IJ79JZmTu478c=
+X-Received: by 2002:a05:6638:517:: with SMTP id
+ i23mr48290113jar.71.1563463871438; 
+ Thu, 18 Jul 2019 08:31:11 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <845e4364-685f-343b-46fb-c418766dce3e@rasmusvillemoes.dk>
+References: <cover.1562940244.git.saiprakash.ranjan@codeaurora.org>
+ <2fa725fbc09306f1a95befc62715a708b4c0fad0.1562940244.git.saiprakash.ranjan@codeaurora.org>
+ <20190717170050.GB4271@xps15>
+ <f28d9c8f-017c-c990-2f00-0ef5a62f3b40@codeaurora.org>
+In-Reply-To: <f28d9c8f-017c-c990-2f00-0ef5a62f3b40@codeaurora.org>
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+Date: Thu, 18 Jul 2019 09:31:00 -0600
+Message-ID: <CANLsYkx9X36OJmczNK1255y8fKJfkyVq1zyQUDihqMewcU6Kxw@mail.gmail.com>
+Subject: Re: [PATCHv8 3/5] arm64: dts: qcom: msm8996: Add Coresight support
+To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_082220_521961_12D9F52A 
-X-CRM114-Status: GOOD (  24.06  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190718_083113_099410_953FEFB8 
+X-CRM114-Status: GOOD (  16.82  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [80.241.60.212 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,156 +94,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
- Alexei Starovoitov <ast@kernel.org>, linux-kernel@vger.kernel.org,
- David Howells <dhowells@redhat.com>, linux-kselftest@vger.kernel.org,
- sparclinux@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
- linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
- Tycho Andersen <tycho@tycho.ws>, Aleksa Sarai <asarai@suse.de>,
- linux-arm-kernel@lists.infradead.org, linux-mips@vger.kernel.org,
- linux-xtensa@linux-xtensa.org, Kees Cook <keescook@chromium.org>,
- Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
- linuxppc-dev@lists.ozlabs.org, linux-m68k@lists.linux-m68k.org,
- Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
- Shuah Khan <skhan@linuxfoundation.org>, David Drysdale <drysdale@google.com>,
- Christian Brauner <christian@brauner.io>,
- "J. Bruce Fields" <bfields@fieldses.org>, linux-parisc@vger.kernel.org,
- linux-api@vger.kernel.org, Chanho Min <chanho.min@lge.com>,
- Jeff Layton <jlayton@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
- Eric Biederman <ebiederm@xmission.com>, linux-alpha@vger.kernel.org,
- linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- containers@lists.linux-foundation.org
-Content-Type: multipart/mixed; boundary="===============3658038151413770839=="
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Rajendra Nayak <rnayak@codeaurora.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Marc Gonzalez <marc.w.gonzalez@free.fr>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ David Brown <david.brown@linaro.org>, Rob Herring <robh+dt@kernel.org>,
+ Sibi Sankar <sibis@codeaurora.org>, Vivek Gautam <vivek.gautam@codeaurora.org>,
+ Leo Yan <leo.yan@linaro.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Mike Leach <mike.leach@linaro.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed, 17 Jul 2019 at 23:47, Sai Prakash Ranjan
+<saiprakash.ranjan@codeaurora.org> wrote:
+>
+> Hi Mathieu,
+>
+> On 7/17/2019 10:30 PM, Mathieu Poirier wrote:
+> > On Fri, Jul 12, 2019 at 07:46:25PM +0530, Sai Prakash Ranjan wrote:
+> >> From: Vivek Gautam <vivek.gautam@codeaurora.org>
+> >>
+> >> Enable coresight support by adding device nodes for the
+> >> available source, sinks and channel blocks on msm8996.
+> >>
+> >> This also adds coresight cpu debug nodes.
+> >>
+> >> Signed-off-by: Vivek Gautam <vivek.gautam@codeaurora.org>
+> >> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+> >> Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+> >> Acked-By: Suzuki K Poulose <suzuki.poulose@arm.com>
+> >> ---
+> >>   arch/arm64/boot/dts/qcom/msm8996.dtsi | 434 ++++++++++++++++++++++++++
+> >>   1 file changed, 434 insertions(+)
+> >>
+> >
+> > We've gone trhough 8 iteration of this set and I'm still finding checkpatch
+> > problems, and I'm not referring to lines over 80 characters.
+> >
+>
+> I only get below 2 checkpatch warnings:
+>
+> If you are talking about the below one, then it was not added manually.
+> It was taken automatically when I pulled in the v7. Should I be
+> resending this patch for this?
 
---===============3658038151413770839==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="x55cx7xfpotu25go"
-Content-Disposition: inline
+That depends if you want David and Andy to pickup your patches - I am
+sure they'll point out exactly the same thing.
 
-
---x55cx7xfpotu25go
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On 2019-07-18, Rasmus Villemoes <linux@rasmusvillemoes.dk> wrote:
-> On 06/07/2019 16.57, Aleksa Sarai wrote:
-> > --- a/fs/open.c
-> > +++ b/fs/open.c
-> > @@ -928,24 +928,32 @@ struct file *open_with_fake_path(const struct pat=
-h *path, int flags,
-> >  }
-> >  EXPORT_SYMBOL(open_with_fake_path);
-> > =20
-> > -static inline int build_open_flags(int flags, umode_t mode, struct ope=
-n_flags *op)
-> > +static inline int build_open_flags(struct open_how how, struct open_fl=
-ags *op)
-> >  {
->=20
-> How does passing such a huge struct by value affect code generation?
-> Does gcc actually inline the function (and does it even inline the old
-> one given that it's already non-trivial and has more than one caller).
-
-I'm not sure, but I'll just do what you suggested with passing a const
-reference and just copying the few fields that actually are touched by
-this function.
-
-> > =20
-> > diff --git a/include/linux/fcntl.h b/include/linux/fcntl.h
-> > index 2868ae6c8fc1..e59917292213 100644
-> > --- a/include/linux/fcntl.h
-> > +++ b/include/linux/fcntl.h
-> > @@ -4,13 +4,26 @@
-> > =20
-> >  #include <uapi/linux/fcntl.h>
-> > =20
-> > -/* list of all valid flags for the open/openat flags argument: */
-> > +/* Should open_how.mode be set for older syscalls wrappers? */
-> > +#define OPENHOW_MODE(flags, mode) \
-> > +	(((flags) | (O_CREAT | __O_TMPFILE)) ? (mode) : 0)
-> > +
->=20
-> Typo: (((flags) & (O_CREAT | __O_TMPFILE)) ? (mode) : 0)
-
-Yup, thanks. I'm not sure why my tests passed on v9 with this bug (they
-didn't pass in my v10-draft until I fixed this bug earlier today).
-
->=20
-> > +/**
-> > + * Arguments for how openat2(2) should open the target path. If @extra=
- is zero,
-> > + * then openat2(2) is identical to openat(2).
-> > + *
-> > + * @flags: O_* flags (unknown flags ignored).
-> > + * @mode: O_CREAT file mode (ignored otherwise).
->=20
-> should probably say "O_CREAT/O_TMPFILE file mode".
-
-:+1:
-
-> > + * @upgrade_mask: restrict how the O_PATH may be re-opened (ignored ot=
-herwise).
-> > + * @resolve: RESOLVE_* flags (-EINVAL on unknown flags).
-> > + * @reserved: reserved for future extensions, must be zeroed.
-> > + */
-> > +struct open_how {
-> > +	__u32 flags;
-> > +	union {
-> > +		__u16 mode;
-> > +		__u16 upgrade_mask;
-> > +	};
-> > +	__u16 resolve;
->=20
-> So mode and upgrade_mask are naturally u16 aka mode_t. And yes, they
-> probably never need to be used together, so the union works. That then
-> makes the next member 2-byte aligned, so using a u16 for the resolve
-> flags brings us to an 8-byte boundary, and 11 unused flag bits should be
-> enough for a while. But it seems a bit artificial to cram all this
-> together and then add 56 bytes of reserved space.
-
-I will happily admit that padding to 64 bytes is probably _very_ extreme
-(I picked it purely because it's the size of a cache-line so anything
-bigger makes even less sense). I was hoping someone would suggest a
-better size once I posted the patchset, since I couldn't think of a good
-answer myself.
-
-Do you have any suggestions for a better layout or padding size?
-
---=20
-Aleksa Sarai
-Senior Software Engineer (Containers)
-SUSE Linux GmbH
-<https://www.cyphar.com/>
-
---x55cx7xfpotu25go
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQSxZm6dtfE8gxLLfYqdlLljIbnQEgUCXTCOcAAKCRCdlLljIbnQ
-EllZAP4qSUDEVdU4aP8+s9uysbQoCi6l463vJM+jdHxpJ66OfQEAxlI5lXwcL6G0
-jPCtI0Vs5LI5kpJuE2k98ol8BVMyZAg=
-=2lKS
------END PGP SIGNATURE-----
-
---x55cx7xfpotu25go--
-
-
---===============3658038151413770839==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+>
+> $ ./scripts/checkpatch.pl -g 2fa725fbc09306f1a95befc62715a708b4c0fad0
+> WARNING: 'Acked-by:' is the preferred signature form
+> #14:
+> Acked-By: Suzuki K Poulose <suzuki.poulose@arm.com>
+>
+> WARNING: line over 80 characters
+> #154: FILE: arch/arm64/boot/dts/qcom/msm8996.dtsi:763:
+> +                       compatible = "arm,coresight-dynamic-replicator",
+> "arm,primecell";
+>
+> total: 0 errors, 2 warnings, 440 lines checked
+>
+>
+> -Sai
+>
+> --
+> QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
+> of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3658038151413770839==--
-
