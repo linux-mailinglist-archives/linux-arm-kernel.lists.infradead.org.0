@@ -2,70 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CCBF46D1B7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 18:15:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D92B96D1BF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 18:16:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=En/wynQXDZ2S6FrSuVxCqgLuLXirWUTI24RuTS3oAAo=; b=pMH9VwimJ0zkVS
-	WXeHEixU8/76DLIWz2R4akv8YmvjCslFIDltADkob8XTY9Lsr/I854xW6Uqqlcw20JCmdhtvDBUy/
-	oVxkOmYeHo9izz1p1DDei8PAC/nCGRtubMMuQSEWOA53SaaADtsJqQygfPvj/PIthjghg5M8JW5kR
-	fGVOhpVmmjDiMKlJnV63I8MLiylXG6/ivpr2rsQw07MVlVigpGzTgWeHz2zUUf4fwu0WfaXexVcz7
-	Q52FaNPNrJp5tWQ7LoJKjea2/wwkozkoLaqJXEAsnfamtoPxx4h9JLrTQKbv+eeVWaYR6HKGN2rks
-	mwUYB3kzDXewSTTsZp+w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=680ouvHdn4r1W9l/IXPRyITB1y0Bo9fBVvZQwA1NYzU=; b=BWyioWPOdbBpR+
+	OByRWFnlOrJgICEQmLxZ2zahKyl6X3mTtj3tr6rmPGT2RL8BryI1V3o69CxvbCax4AJ7kGeYSDkDG
+	SY06zpFr+Do51G0M5gZP9alcJ6v+ilNWgnmWBk/sOXZoDg521rhSDDdlqxRQEmHqJdtrszD2Ho0po
+	WlaTIOMXv3JzcB8roa5HOug5dcXJ41CoxlkYid7H9zg5LsAWCsVb2i0stbpsHJeFKc7KbYpNUYLPw
+	9BlAcQd676nuSHhM5k4W82kywoUCQoWYH8lHU4Yv4Olezntk/WpvVieJMEMoooAhllC4m1m7XXTKs
+	5QTH3Xs9l42lE3/xlhYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ho94O-0007mD-Ic; Thu, 18 Jul 2019 16:15:48 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1ho94n-0008DP-RI; Thu, 18 Jul 2019 16:16:13 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ho942-0007kr-PL; Thu, 18 Jul 2019 16:15:28 +0000
-Received: by mail-lj1-x242.google.com with SMTP id x25so27968844ljh.2;
- Thu, 18 Jul 2019 09:15:25 -0700 (PDT)
+ id 1ho943-0007ku-M3; Thu, 18 Jul 2019 16:15:29 +0000
+Received: by mail-lj1-x241.google.com with SMTP id y17so3354742ljk.10;
+ Thu, 18 Jul 2019 09:15:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=EY90CNEDdHNbOElz8YZpDtXjzPT/Q84D5PZmTmIpGX8=;
- b=itZM25Ur2DNSgdCPTYxc1+6AWdelUsfTCuPKiH4yU0Vxvl/HFKVUgLIbY0oYYwPT4n
- 5xegi+nIKfQQDNCkDw5ccvNyOYjupF/8DHrwJSYqXf+M3AqvdYj7L2O1E/y/QZc3jiL7
- USryYEk/mVNS/AjvpUEKhtWHJB7WekMcwvrx0Yjy5ispcLeDsDGH7iwm2OaUZWrHN5ln
- m+Qz2ysC2BChEippJPXiRw4C3gld6ecmxppxIrOJ5rTT2B4uZH4qttge580bz4xXgQv1
- 71M/11WaguMQMZi6Xj8bdlbWW3UVQEiMmIjy6JWDnWYeBLMkspFvdfzw/EtNtJ973MH9
- Ox9w==
+ h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=xuHi/x4to3SX7TRrtv62bR81bCU79XMtB/fuZqAmK/4=;
+ b=ccIpMj7bhqxadUhNYMQ8D6hZbjvh1AFYYDWwpHuL4jXZxpIWt1NRNWHGGxm/4zWkRX
+ OjFGkqH9blEdvYLUOfyXGZ+I5aCmIUdxkPhT78M1nxDqGFphQCPafb8D+kaFVnoxB9OF
+ pjCBT8Y1UHgxZgDNYGw5y+89GY17TgS0OytKu4Bv93YoVbtU6hiC+hf00a3CNSsLasKd
+ MEUK0SZrZ7yHvSQVNPdPig/hu3XSvMNtoXVNBVZdQrF4lNvyH5r6YEzisPPOVdCRv3JK
+ RPbsQsokKKabA/u3yRc5DJEXGwUhjcH5bBsdJpASfO2qWGblFfltPmUDAE0hO++IeSx6
+ FRLA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
- :mime-version:content-transfer-encoding;
- bh=EY90CNEDdHNbOElz8YZpDtXjzPT/Q84D5PZmTmIpGX8=;
- b=rvgaMfWFgRSwnMyiao2QqyQ2CxGkUQb9rhWdF7joxk3lyj97WztGglcid7OfP7oT9p
- +Ni8qMucbHiqKPykgC+wnsHJE0ubhyv7wXPpBflaM/recCrPJvpm6ztqAX+qFEly0c0t
- iI99L603mIuXgLyBtk4sv1lPuNOjnt+dAw3IdcZchGERLcgG5yxqJs/2EdC0nxIKGQn0
- um7ivngvKr86FiWjcZN6TrFTARO7tyyak7sez+R02r7eCTVbE+B37RgIeX3GF6Cl59yK
- K+8gmWyLfhlbDc5OEFQWALr7H7V/1Ei27doW7TalVNmXA485yqTUIPEYzj4sVoASZY8u
- bA5A==
-X-Gm-Message-State: APjAAAX8sv2rQOPNuZEqC4Zro7qRi+wf8Wg9TTbskbV7RVfJ3UMd+LHO
- PObbiTqzDzpmwhag/8n0k3A=
-X-Google-Smtp-Source: APXvYqzVjo2ZCjNil0fwN9rUrxtrZjDevN1yhDPv0wEE2mg0vhc7qvUO5C/iYAPZpjsQ0AAV3icYmA==
-X-Received: by 2002:a2e:8741:: with SMTP id q1mr24568969ljj.144.1563466524176; 
- Thu, 18 Jul 2019 09:15:24 -0700 (PDT)
+ :in-reply-to:references:mime-version:content-transfer-encoding;
+ bh=xuHi/x4to3SX7TRrtv62bR81bCU79XMtB/fuZqAmK/4=;
+ b=V9NPad4C/zPnT95EVimLYtRbl/HCbvbFPo/RaeEI1JdA5UKeWsw1SRfUGxKApmWBei
+ Mc7tdpwjHsE6UUSpBXR/OrwMZTjYbIcyz7/Ce1HFsIrkMTv8jpcJKoAYCP9Jt6KXkQLB
+ F4qL6VFzDrr7B4xN00DK0kTJr9G2Ai7pTIp3p4LZ2Dby7u1BXDScx1oAarE8TPpyAXCJ
+ XefnzG9ovHGA6cgpgQw51iI4zmc0qYgMlKgjIx7Yres1eiI2VRqWU9GGMllLoapYkgWV
+ XGBHNbmA7R+ZHoSs56XHSwgAXFBzFJfXItTDJY8PSoOdkVKGP5+d/Ykhadj9xhbKVOLR
+ Q3DQ==
+X-Gm-Message-State: APjAAAWQWFsV1ngDJSwgn2CllQu/qO2qNiR+ZnkFG1LSg3oBQL/0OxhM
+ AzGEKo4dEd0Lf5BfsyUwQPc=
+X-Google-Smtp-Source: APXvYqxopRd2EXz7d6DIiAHotDUEDdlvCMB5sah0WnzkQlftdAyegfCZa4HP9SqflNRkyus/8Vkv5w==
+X-Received: by 2002:a2e:9753:: with SMTP id f19mr24655350ljj.113.1563466525895; 
+ Thu, 18 Jul 2019 09:15:25 -0700 (PDT)
 Received: from saturn.lan (18.158-248-194.customer.lyse.net. [158.248.194.18])
  by smtp.gmail.com with ESMTPSA id
- d21sm4057995lfc.73.2019.07.18.09.15.22
+ d21sm4057995lfc.73.2019.07.18.09.15.24
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 18 Jul 2019 09:15:23 -0700 (PDT)
+ Thu, 18 Jul 2019 09:15:25 -0700 (PDT)
 From: Sam Ravnborg <sam@ravnborg.org>
 To: dri-devel@lists.freedesktop.org,
  Intel Graphics Development <intel-gfx@lists.freedesktop.org>
-Subject: [PATCH v1 0/11] drm: header maintenance
-Date: Thu, 18 Jul 2019 18:14:56 +0200
-Message-Id: <20190718161507.2047-1-sam@ravnborg.org>
+Subject: [PATCH v1 01/11] drm/panel: make drm_panel.h self-contained
+Date: Thu, 18 Jul 2019 18:14:57 +0200
+Message-Id: <20190718161507.2047-2-sam@ravnborg.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190718161507.2047-1-sam@ravnborg.org>
+References: <20190718161507.2047-1-sam@ravnborg.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_091526_856679_DC40354C 
-X-CRM114-Status: UNSURE (   8.50  )
+X-CRM114-CacheID: sfid-20190718_091527_719433_ED37B07D 
+X-CRM114-Status: UNSURE (   9.82  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -73,7 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (sam.ravnborg[at]gmail.com)
@@ -102,11 +104,12 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: David Airlie <airlied@linux.ie>, Liviu Dudau <Liviu.Dudau@arm.com>,
  Lionel Landwerlin <lionel.g.landwerlin@intel.com>,
  Chris Wilson <chris@chris-wilson.co.uk>, Eric Anholt <eric@anholt.net>,
- Rob Herring <robh@kernel.org>, Maxime Ripard <maxime.ripard@bootlin.com>,
- CK Hu <ck.hu@mediatek.com>, Thierry Reding <treding@nvidia.com>,
- Daniel Vetter <daniel@ffwll.ch>, Chunming Zhou <david1.zhou@amd.com>,
- Jani Nikula <jani.nikula@intel.com>,
+ Sam Ravnborg <sam@ravnborg.org>, Rob Herring <robh@kernel.org>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, CK Hu <ck.hu@mediatek.com>,
+ Thierry Reding <treding@nvidia.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Chunming Zhou <david1.zhou@amd.com>, Jani Nikula <jani.nikula@intel.com>,
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Boris Brezillon <boris.brezillon@bootlin.com>,
  linux-mediatek@lists.infradead.org, Stefan Agner <stefan@agner.ch>,
  Matthias Brugger <matthias.bgg@gmail.com>, Sean Paul <sean@poorly.run>,
  linux-arm-kernel@lists.infradead.org, Boris Brezillon <bbrezillon@kernel.org>,
@@ -114,61 +117,35 @@ Cc: David Airlie <airlied@linux.ie>, Liviu Dudau <Liviu.Dudau@arm.com>,
  =?UTF-8?q?Noralf=20Tr=C3=B8nnes?= <noralf@tronnes.org>,
  Philipp Zabel <p.zabel@pengutronix.de>,
  =?UTF-8?q?Christian=20K=C3=B6nig?= <christian.koenig@amd.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-First patch from Jani fixes so drm_print.h is self-contained.
-Next two patches are trivial removal of uapi dependencies.
-
-ati_pcigart is fixed to drop use of drm_os_linux.h
-
-drm_vblank is likewise fixed to drop use of drm_os_linux.h
-This was a non-trivial conversion, *review requested!*
-
-The remaining patches are preparation for and removal of
-uapi/drm/drmh from drm_file.h.
-There were a few files where we had to push include
-of drm/drm.h out to to have a clean build.
-
-CK Hu - please let me apply the mediatek patch to
-drm-misc-next, as it is required for the final patch.
-Or push it to drm-misc-next yourself.
-
-	Sam
-
-Jani Nikula (1):
-      drm/panel: make drm_panel.h self-contained
-
-Sam Ravnborg (10):
-      drm: drop uapi dependency from drm_print.h
-      drm: drop uapi dependency from drm_vblank.h
-      drm/ati_pcigart: drop dependency on drm_os_linux.h
-      drm/vblank: drop use of DRM_WAIT_ON()
-      drm: direct include of drm.h in drm_gem.c
-      drm: direct include of drm.h in drm_gem_shmem_helper.c
-      drm: direct include of drm.h in drm_prime.c
-      drm: direct include of drm.h in drm_syncobj.c
-      drm/mediatek: direct include of drm.h in mtk_drm_gem.c
-      drm: drop uapi dependency from drm_file.h
-
- drivers/gpu/drm/ati_pcigart.c          | 10 ++++++----
- drivers/gpu/drm/drm_gem.c              |  1 +
- drivers/gpu/drm/drm_gem_shmem_helper.c |  1 +
- drivers/gpu/drm/drm_prime.c            |  1 +
- drivers/gpu/drm/drm_syncobj.c          |  1 +
- drivers/gpu/drm/drm_vblank.c           | 29 ++++++++++++++++++++---------
- drivers/gpu/drm/mediatek/mtk_drm_gem.c |  1 +
- include/drm/drm_file.h                 |  4 +---
- include/drm/drm_panel.h                |  1 +
- include/drm/drm_print.h                |  4 +---
- include/drm/drm_vblank.h               |  1 -
- 11 files changed, 34 insertions(+), 20 deletions(-)
-
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+RnJvbTogSmFuaSBOaWt1bGEgPGphbmkubmlrdWxhQGludGVsLmNvbT4KCkZpeCBidWlsZCB3YXJu
+aW5nIGlmIGRybV9wYW5lbC5oIGlzIGJ1aWx0IHdpdGggQ09ORklHX09GPW4gb3IKQ09ORklHX0RS
+TV9QQU5FTD1uIGFuZCBpbmNsdWRlZCB3aXRob3V0IHRoZSBwcmVyZXF1aXNpdGUgZXJyLmg6Cgou
+L2luY2x1ZGUvZHJtL2RybV9wYW5lbC5oOiBJbiBmdW5jdGlvbiDigJhvZl9kcm1fZmluZF9wYW5l
+bOKAmToKLi9pbmNsdWRlL2RybS9kcm1fcGFuZWwuaDoyMDM6OTogZXJyb3I6IGltcGxpY2l0IGRl
+Y2xhcmF0aW9uIG9mIGZ1bmN0aW9uIOKAmEVSUl9QVFLigJkgWy1XZXJyb3I9aW1wbGljaXQtZnVu
+Y3Rpb24tZGVjbGFyYXRpb25dCiAgcmV0dXJuIEVSUl9QVFIoLUVOT0RFVik7CiAgICAgICAgIF5+
+fn5+fn4KLi9pbmNsdWRlL2RybS9kcm1fcGFuZWwuaDoyMDM6OTogZXJyb3I6IHJldHVybmluZyDi
+gJhpbnTigJkgZnJvbSBhIGZ1bmN0aW9uIHdpdGggcmV0dXJuIHR5cGUg4oCYc3RydWN0IGRybV9w
+YW5lbCAq4oCZIG1ha2VzIHBvaW50ZXIgZnJvbSBpbnRlZ2VyIHdpdGhvdXQgYSBjYXN0IFstV2Vy
+cm9yPWludC1jb252ZXJzaW9uXQogIHJldHVybiBFUlJfUFRSKC1FTk9ERVYpOwogICAgICAgICBe
+fn5+fn5+fn5+fn5+fn5+CgpGaXhlczogNWZhOGU0YTIyMTgyICgiZHJtL3BhbmVsOiBNYWtlIG9m
+X2RybV9maW5kX3BhbmVsKCkgcmV0dXJuIGFuIEVSUl9QVFIoKSBpbnN0ZWFkIG9mIE5VTEwiKQpD
+YzogQm9yaXMgQnJlemlsbG9uIDxib3Jpcy5icmV6aWxsb25AYm9vdGxpbi5jb20+ClNpZ25lZC1v
+ZmYtYnk6IEphbmkgTmlrdWxhIDxqYW5pLm5pa3VsYUBpbnRlbC5jb20+CkFja2VkLWJ5OiBUaGll
+cnJ5IFJlZGluZyA8dHJlZGluZ0BudmlkaWEuY29tPgpSZXZpZXdlZC1ieTogU2FtIFJhdm5ib3Jn
+IDxzYW1AcmF2bmJvcmcub3JnPgotLS0KIGluY2x1ZGUvZHJtL2RybV9wYW5lbC5oIHwgMSArCiAx
+IGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRpb24oKykKCmRpZmYgLS1naXQgYS9pbmNsdWRlL2RybS9k
+cm1fcGFuZWwuaCBiL2luY2x1ZGUvZHJtL2RybV9wYW5lbC5oCmluZGV4IDhjNzM4YzBlNmU5Zi4u
+MjYzNzc4MzYxNDFjIDEwMDY0NAotLS0gYS9pbmNsdWRlL2RybS9kcm1fcGFuZWwuaAorKysgYi9p
+bmNsdWRlL2RybS9kcm1fcGFuZWwuaApAQCAtMjQsNiArMjQsNyBAQAogI2lmbmRlZiBfX0RSTV9Q
+QU5FTF9IX18KICNkZWZpbmUgX19EUk1fUEFORUxfSF9fCiAKKyNpbmNsdWRlIDxsaW51eC9lcnIu
+aD4KICNpbmNsdWRlIDxsaW51eC9lcnJuby5oPgogI2luY2x1ZGUgPGxpbnV4L2xpc3QuaD4KIAot
+LSAKMi4yMC4xCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
+bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
+bGludXgtYXJtLWtlcm5lbAo=
