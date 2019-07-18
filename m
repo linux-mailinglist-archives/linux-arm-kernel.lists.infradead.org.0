@@ -2,52 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 559E26D21B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 18:38:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6EDBF6D21D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 18:40:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:From:To:Subject:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dkmLUPu8GZ0jRd7SOzgi42OrdxE/hIjS3Qp6L6FCoaM=; b=I/Mz3pyXEa48dK
-	vMFJjGTSXhp3mBgeiv63y5aHqJxEkZXB2j0nRarJX3hrmSGj3FLm4b7AIaY/hzYxK4cd3MjtxNSHV
-	VCyH/LwRZErf0IEui9wTg646nucc5ExKS2jXutLVzLJn+k+PwlYojTZgYbxeWuznmp9xxN49bBLtD
-	ik5CZKQ+e+x8LN9az9dvKPu89lH2aQ3mTIMZluj54bkGwmfwaquBSO/A9YxjRNy8uDI42GqM55k/i
-	5Y7VWPSEQ485m/dnMxcuQ6HuYKoqAP1qC3M5CA/VHByaOxaliJzZ8HSyKcZpwb+CMRh1w5CtH2iZh
-	SZxXzFcdsovOh5XiHd6Q==;
+	List-Owner; bh=X0OpLAI/qiauHAWEDdGKcVC4j5HelA9ZjbjvLId9fVw=; b=GORUF0MVp1Op+M
+	nar+GzAdXj+d9jj9WVHeru+BdjlgDFpHO/WpUcVhT8BSIYjF/TGMIh64cZnTWRj95zszjNfFr9eoG
+	KeGDtKBuPhbTYG++IaYGgoGTqHAoxuY7n+yARSl+/R7HOnIB0hMUfazRzJil63w1kObQZsoVFresF
+	VfMHRG+YMaaf3492ggK3FCO/+BTjat7LJKY6syyxr9JVhAFen4iRWt5vUnENiZHTblJT4rA+H1E05
+	c4ro3cWB0gezyNxLKjaG+PS8GHoGALdfcI0yo2hE0gsHGGiB80M7hk0sT3jZAKQNC6a6vd9APi07m
+	0So3SDdrZr8tcIHYMG4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ho9QF-0004Ff-EL; Thu, 18 Jul 2019 16:38:23 +0000
+	id 1ho9SZ-0005um-Ej; Thu, 18 Jul 2019 16:40:47 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ho9Q2-0004F6-IT
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 16:38:12 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1ho9SM-0005uC-BC
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 16:40:35 +0000
+Received: from mail-qk1-f181.google.com (mail-qk1-f181.google.com
+ [209.85.222.181])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9D25D217F4;
- Thu, 18 Jul 2019 16:38:09 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9B3AA21851
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 18 Jul 2019 16:40:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563467889;
- bh=K7meXXjYyqnlzFMrv9ruLArIEJv9/k7mncV9ahtFaCI=;
- h=In-Reply-To:References:Subject:To:Cc:From:Date:From;
- b=NW0FgVPtksE6PaWqreV/FSqVjgryxwQIHd+9a+1BNx6usHg+ghnR7rOPjh++hA+Qf
- tWdtj/vFoNv0cma8UIyZYRBgiPpU3l4Ada4FasGQuBQ2x3jR5LBaGqJDPy9wU3bp2x
- vhu7fUSQQseLvY8GdjlZ+/prIfZj7NEH6oZWE42U=
+ s=default; t=1563468033;
+ bh=SoxBswTgqu3zk9pazxOUTdpNqF8pc1lImoZfHK7GaSc=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=k53XkTAdW2L3x0HMVdmq1AIlRDuUDJ03qy50yY8JIhkN/JizWAkTqVUPrkEqRO3pj
+ GQvuvKNtOmZ4vIKqWtaAV4NXQZIdbRoLQ1vVP9/wywGQlL3uLDckVk8msc59H6yUkD
+ 6tXmtkV4Zt/I97JMrEWrg6J8nSJVQ0dsRu40HcdQ=
+Received: by mail-qk1-f181.google.com with SMTP id v22so20955155qkj.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 18 Jul 2019 09:40:33 -0700 (PDT)
+X-Gm-Message-State: APjAAAVHRUDgUHS5YSyIG7IWYQZDCoLotLffzBo2UAW+vhEIY8or5IXA
+ /JVyoBaIzlrVU9wOZ9WvJVKwM4mUTG2CnpgA3Q==
+X-Google-Smtp-Source: APXvYqzYt1/30r8Pv683cCeZXN3F53wLwdoIVf8tHruIuBQFZ/92FMoJmJnLK7FPweOEUpG5T8+Ty50dEcq1H3lbMXs=
+X-Received: by 2002:a37:6944:: with SMTP id e65mr29073338qkc.119.1563468032800; 
+ Thu, 18 Jul 2019 09:40:32 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <E1hhAN0-0007Jn-NP@rmk-PC.armlinux.org.uk>
-References: <E1hhAN0-0007Jn-NP@rmk-PC.armlinux.org.uk>
-Subject: Re: [PATCH] ARM: sa1100: convert to common clock framework
-To: Michael Turquette <mturquette@baylibre.com>,
- Russell King <rmk+kernel@armlinux.org.uk>
-From: Stephen Boyd <sboyd@kernel.org>
-User-Agent: alot/0.8.1
-Date: Thu, 18 Jul 2019 09:38:08 -0700
-Message-Id: <20190718163809.9D25D217F4@mail.kernel.org>
+References: <20190718151346.3523-1-daniel.baluta@nxp.com>
+ <20190718151346.3523-4-daniel.baluta@nxp.com>
+In-Reply-To: <20190718151346.3523-4-daniel.baluta@nxp.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Thu, 18 Jul 2019 10:40:21 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqJ6o9mTjLYjnfcYgfSFKb95W8FseZBBb8RLosB__GNBcw@mail.gmail.com>
+Message-ID: <CAL_JsqJ6o9mTjLYjnfcYgfSFKb95W8FseZBBb8RLosB__GNBcw@mail.gmail.com>
+Subject: Re: [PATCH 3/3] dt-bindings: dsp: fsl: Add DSP core binding support
+To: Daniel Baluta <daniel.baluta@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_093810_649403_61166D7E 
-X-CRM114-Status: GOOD (  16.24  )
+X-CRM114-CacheID: sfid-20190718_094034_421586_A18473C0 
+X-CRM114-Status: GOOD (  18.59  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,147 +86,131 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Dong Aisheng <aisheng.dong@nxp.com>,
+ Peng Fan <peng.fan@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ devicetree@vger.kernel.org, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Frank Li <Frank.Li@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ paul.olaru@nxp.com, NXP Linux Team <linux-imx@nxp.com>,
+ Sascha Hauer <kernel@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>, Fabio Estevam <festevam@gmail.com>,
+ "S.j. Wang" <shengjiu.wang@nxp.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, sound-open-firmware@alsa-project.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Russell King (2019-06-29 03:14:10)
-> Convert sa1100 to use the common clock framework.
-> 
-> Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+On Thu, Jul 18, 2019 at 9:13 AM Daniel Baluta <daniel.baluta@nxp.com> wrote:
+>
+> This describes the DSP device tree node.
+>
+> Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
 > ---
-> Please ack; this is part of a larger series.  Thanks.
-
-Just a few minor comments but otherwise looks good to me.
-
-> diff --git a/arch/arm/mach-sa1100/clock.c b/arch/arm/mach-sa1100/clock.c
-> index 6199e87447ca..523ef25618f7 100644
-> --- a/arch/arm/mach-sa1100/clock.c
-> +++ b/arch/arm/mach-sa1100/clock.c
-> +static const char * const clk_tucr_parents[] = {
-> +       "clk32768", "clk3686400",
->  };
-
-It would be great if you used the new way of specifying clk parents with
-direct pointers instead of strings. See commit fc0c209c147f ("clk: Allow
-parents to be specified without string names") for some details.
-
->  
-> -struct clk {
-> -       const struct clkops     *ops;
-> -       unsigned int            enabled;
-> -};
-> -
-> -#define DEFINE_CLK(_name, _ops)                                \
-> -struct clk clk_##_name = {                             \
-> -               .ops    = _ops,                         \
-> -       }
-> -
-> -static DEFINE_SPINLOCK(clocks_lock);
-> -
-> -/* Dummy clk routine to build generic kernel parts that may be using them */
-> -long clk_round_rate(struct clk *clk, unsigned long rate)
-> -{
-> -       return clk_get_rate(clk);
-> -}
-> -EXPORT_SYMBOL(clk_round_rate);
-> -
-> -int clk_set_rate(struct clk *clk, unsigned long rate)
-> -{
-> -       return 0;
-> -}
-> -EXPORT_SYMBOL(clk_set_rate);
-> -
-> -int clk_set_parent(struct clk *clk, struct clk *parent)
-> -{
-> -       return 0;
-> -}
-> -EXPORT_SYMBOL(clk_set_parent);
-> +static DEFINE_SPINLOCK(tucr_lock);
->  
-> -struct clk *clk_get_parent(struct clk *clk)
-> +static int clk_gpio27_enable(struct clk_hw *hw)
->  {
-> -       return NULL;
-> -}
-> -EXPORT_SYMBOL(clk_get_parent);
-> +       unsigned long flags;
->  
-> -static void clk_gpio27_enable(struct clk *clk)
-> -{
->         /*
->          * First, set up the 3.6864MHz clock on GPIO 27 for the SA-1111:
->          * (SA-1110 Developer's Manual, section 9.1.2.1)
->          */
-> +       local_irq_save(flags);
->         GAFR |= GPIO_32_768kHz;
->         GPDR |= GPIO_32_768kHz;
-> -       TUCR = TUCR_3_6864MHz;
-> +       local_irq_restore(flags);
+>  .../devicetree/bindings/dsp/fsl,dsp.yaml      | 87 +++++++++++++++++++
+>  1 file changed, 87 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/dsp/fsl,dsp.yaml
+>
+> diff --git a/Documentation/devicetree/bindings/dsp/fsl,dsp.yaml b/Documentation/devicetree/bindings/dsp/fsl,dsp.yaml
+> new file mode 100644
+> index 000000000000..d112486eda0e
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/dsp/fsl,dsp.yaml
+> @@ -0,0 +1,87 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/arm/freescale/fsl,dsp.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
-> +       return 0;
->  }
->  
-> -static void clk_gpio27_disable(struct clk *clk)
-> +static void clk_gpio27_disable(struct clk_hw *hw)
->  {
-> -       TUCR = 0;
-> +       unsigned long flags;
+> +title: NXP i.MX8 DSP core
 > +
-> +       local_irq_save(flags);
-
-Why just disable irqs here?
-
->         GPDR &= ~GPIO_32_768kHz;
->         GAFR &= ~GPIO_32_768kHz;
-> +       local_irq_restore(flags);
->  }
->  
-> -static void clk_cpu_enable(struct clk *clk)
-> -{
-> -}
-> +static const struct clk_ops clk_gpio27_ops = {
-> +       .enable = clk_gpio27_enable,
-> +       .disable = clk_gpio27_disable,
-> +};
->  
-> -static void clk_cpu_disable(struct clk *clk)
-> -{
-> -}
-> +static const char * const clk_gpio27_parents[] = {
-> +       "tucr-mux",
-> +};
->  
-> -static unsigned long clk_cpu_get_rate(struct clk *clk)
-> +static const struct clk_init_data clk_gpio27_init_data __initconst = {
-> +       .name = "gpio27",
-> +       .ops = &clk_gpio27_ops,
-> +       .parent_names = clk_gpio27_parents,
-> +       .num_parents = ARRAY_SIZE(clk_gpio27_parents),
-> +       .flags = CLK_IS_BASIC,
-
-CLK_IS_BASIC is gone. Please don't use it.
-
-> +};
+> +maintainers:
+> +  - Daniel Baluta <daniel.baluta@nxp.com>
 > +
-> +/*
-> + * Derived from the table 8-1 in the SA1110 manual, the MPLL appears to
-> + * multiply its input rate by 4 x (4 + PPCR).  This calculation gives
-> + * the exact rate.  The figures given in the table are the rates rounded
-> + * to 100kHz.  Stick with sa11x0_getspeed() for the time being.
-[...]
-> +static const struct clk_init_data clk_mpll_init_data __initconst = {
-> +       .name = "mpll",
-> +       .ops = &clk_mpll_ops,
-> +       .parent_names = clk_mpll_parents,
-> +       .num_parents = ARRAY_SIZE(clk_mpll_parents),
-> +       .flags = CLK_IS_BASIC | CLK_GET_RATE_NOCACHE | CLK_IS_CRITICAL,
+> +description: |
+> +  Some boards from i.MX8 family contain a DSP core used for
+> +  advanced pre- and post- audio processing.
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - fsl,imx8qxp-dsp
+> +
+> +  reg:
+> +    description: Should contain register location and length
+> +
+> +  clocks:
+> +    items:
+> +      - description: ipg clock
+> +      - description: ocram clock
+> +      - description: core clock
+> +
+> +  clock-names:
+> +    items:
+> +      - const: ipg
+> +      - const: ocram
+> +      - const: core
+> +
+> +  power-domains:
+> +    description:
+> +      List of phandle and PM domain specifier as documented in
+> +      Documentation/devicetree/bindings/power/power_domain.txt
 
-Please add a comment about these last two flags so we know why the rate
-can't be cached and the clk is critical.
+How many? 4?
 
+> +
+> +  mboxes:
+> +    description:
+> +      List of <&phandle type channel> - 2 channels for TXDB, 2 channels for RXDB
+> +      (see mailbox/fsl,mu.txt)
+> +    maxItems: 4
+> +
+> +  mbox-names:
+> +    items:
+> +      - const: txdb0
+> +      - const: txdb1
+> +      - const: rxdb0
+> +      - const: rxdb1
+> +
+> +  memory-region:
+> +    description:
+> +       phandle to a node describing reserved memory (System RAM memory)
+> +       used by DSP (see bindings/reserved-memory/reserved-memory.txt)
+> +    maxItems: 1
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - clocks
+> +  - clock-names
+> +  - power-domains
+> +  - mboxes
+> +  - mbox-names
+> +  - memory-region
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/firmware/imx/rsrc.h>
+> +    #include <dt-bindings/clock/imx8-clock.h>
+> +    dsp@596e8000 {
+> +        compatbile = "fsl,imx8qxp-dsp";
+> +        reg = <0x596e8000 0x88000>;
+> +        clocks = <&adma_lpcg IMX_ADMA_LPCG_DSP_IPG_CLK>,
+> +                 <&adma_lpcg IMX_ADMA_LPCG_OCRAM_IPG_CLK>,
+> +                 <&adma_lpcg IMX_ADMA_LPCG_DSP_CORE_CLK>;
+> +        clock-names = "ipg", "ocram", "core";
+> +        power-domains = <&pd IMX_SC_R_MU_13A>,
+> +                        <&pd IMX_SC_R_MU_13B>,
+> +                        <&pd IMX_SC_R_DSP>,
+> +                        <&pd IMX_SC_R_DSP_RAM>;
+> +        mbox-names = "txdb0", "txdb1", "rxdb0", "rxdb1";
+> +        mboxes = <&lsio_mu13 2 0>, <&lsio_mu13 2 1>, <&lsio_mu13 3 0>, <&lsio_mu13 3 1>;
+> +    };
+> --
+> 2.17.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
