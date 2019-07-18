@@ -2,76 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2DE816CCD5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 12:36:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 246DA6CCF3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 12:49:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7PnX3gyRX8JGArOa3xNdzGMD0lV1EzaEv7kr//117eg=; b=h56oTW1bm2797V
-	wR9qvA6WGdYZMgGki6ELR42Cf3NmQwr4mIwUSHLPWPjfRJ2qI8Jt6A6VGW49fEKVH9d1gLCpQfBKl
-	vQ/sHy/FwC5DjbJpLlsHUezCUa4WNKoEgImTfZW/qyTT+01klfsxZ0CCmrwTsQkep9ECPMDP3uWbS
-	iOP8w23F5+19CWjhyg6OJ7DzElrF7QapN9WXx4xtpZzLDrq+cUMLxdNzO6IisHCBkW52QQaCmdaFC
-	L+gkC7GFlU9erjTKldr/rK43PdTRrmDwmUsOml+zLsv6xDM4/u1weX2Tt//sITZumJkpqIBlrUNTe
-	PC234Ik03rgmlxCdBQHg==;
+	List-Owner; bh=Di6kz8/f0NJBGM6zeAM/kEmO911N4HlD8PktNttLV2k=; b=mcnX5QTbH7FAN3
+	UKsqxQa/m3uuV0i1IUYUdAap+sfqDg64pGEkiVuzymnQvsUmVTIlt++8J8TUkaD3HmdwPlyW6qBPX
+	e3FdyQl1U5YRR1Ob/IySylP82oLPLiTcqG/I6BT7LoD8Q9+SaBKaVAWmaOTJXCZuY2ZcvSkObJJcx
+	sWmaWfOa+/sW/02HNMOW5SDR4IL4q+7jqezR6MuvZ6S44Q83m5E7yZC3crO8yqzSK+5LaegLIk+6Q
+	fV0ugmAc/PboEVVN7SCNWnvMOn9B5oSDlUjjuH1BqwtFbnMhqOixPWDOtJdsqSGp2fDQRJGAnCwkZ
+	dw+riJU4KLx1vN37RCvw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ho3lU-00023K-6s; Thu, 18 Jul 2019 10:35:56 +0000
-Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
+	id 1ho3y8-0005YG-6h; Thu, 18 Jul 2019 10:49:00 +0000
+Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ho3lK-00022u-AD
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 10:35:47 +0000
-Received: by mail-vs1-xe42.google.com with SMTP id 190so18748318vsf.9
+ id 1ho3y0-0005XH-8I
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 10:48:53 +0000
+Received: by mail-vs1-xe44.google.com with SMTP id r3so18747267vsr.13
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 18 Jul 2019 03:35:45 -0700 (PDT)
+ Thu, 18 Jul 2019 03:48:51 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=bPsZyaY1avB4NmRKihmlAbRWMA/+wWnkWYAQnUJy/uc=;
- b=hRS9tdns/W1JgD4gXX9suvoW/sEfa10WszlqRMNyTDVGE4pvXMTTfwq/5kkohrxDM7
- W7+I5ziWAyIuiHrX/lcoOj0SJw+f5YG4xCubaO4tE70Z+vieiYB4B26jaOQUvlMI4S+U
- xyN1krAtJQAXe2Vz8klpfFqYJMDNdZ8cfzuW9QcUmMv6R4UjK1Kq/58lPsgA4sCtpTzA
- 0qFoFw674o5/tuQ1z4FPQeyxpwMSw1+qVsC8O6HgdTQBOqM/uGIyiyS0Pf5HCXETQW4d
- 5Gyb4/sUE+H9nH3Nb/q1LqBqKoM5Uq2R4rYtA1XYgsHvHKaCOvYtSeHXrL6RULNV1DnO
- IYpg==
+ :cc; bh=NppfMkA9YSp2bcd8lowDgozs69+YWUjU8R8XC2mh2Ng=;
+ b=EMo3sNQfR8AxwQbc/nsBmFB2MttmgcYpKR6+imTy+1EG/hxf2H1FX4coJIjBZs9MU4
+ T5gfuRfY0RJvbYIUjVknrZr6Eg6Zw3N5HG7aed/9UdUeTX7a1AlUZLU0w2OsoUoEoMMt
+ rNcp0hzFlDtjweQ0S7IYVyCrtnbDY7fv+TpkkRIQfdT9q0pWwfYCh9v0s/AYlWjWKojb
+ Q+FcvGHicvaXo3IiVCcV9apv0MI03oWm1qSfSilrp9K00e6Am331V9AMy4viOYZqv9JI
+ kKEBYgZiDcA6zHuKe3PNvCPdq/SzEDbDaWOug2ZuxcVj6N1EZ6a6yqkw7R+JUtFUrKoi
+ rCtg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=bPsZyaY1avB4NmRKihmlAbRWMA/+wWnkWYAQnUJy/uc=;
- b=HzP7br3PHIgZjoMZe0q20GY6IIk7xVM/XpMbwhIdn6flwO6Wh40rJnrBJeFJ3a/mJO
- dkVoazpnAJFfJx2khkG6buLryjpHaRull/jaT0S0laPE5Gk89pBG3V9vZ1b5ND5Q320g
- q7Nw1BLihuhXegyAFFWIL4Cj5qWkGYHqXJscioBANsO+sLlwZ+ZHZahPe3N9dsUbEks/
- OWpbMr+VOfilujmlYjUSO71q/xZxxao8FNw8eZypF2w3xt0bbEIblLRL8ZaylUkIca6l
- RlmYavtx/npUfzzQppXxmPE+Peu5Ohg4OEbwR+GYH86xsDGpk+3Kq87CSTLYPDe56/nc
- HVLQ==
-X-Gm-Message-State: APjAAAXVj7M4f+th6FUrVSNJJJ4rg5Nbey/ZdVqlOd4nH8A3lAW3/uUJ
- 6zhC4UEhZHcRTURJF+2HzUhtPmsYcdymyUNVvb4LJQ==
-X-Google-Smtp-Source: APXvYqzSx0aR/M+aRW6giaR+8hf163WchtvCdbWRJMcDQ/HVNG1W8viO5bTF5uxNvGiQXgL7jxarygjbk3mkugNqF9Q=
-X-Received: by 2002:a67:ee16:: with SMTP id f22mr28548547vsp.191.1563446144144; 
- Thu, 18 Jul 2019 03:35:44 -0700 (PDT)
+ bh=NppfMkA9YSp2bcd8lowDgozs69+YWUjU8R8XC2mh2Ng=;
+ b=f4U7p1kaa3/ZxMhXMc4Htwxiw5XNlyhYmLKFWgssI4syVaQsz0wmXLa1NZsxO6/ngi
+ jUtzo7NITOPT4qqoxTMBvOuVp8WmYB2hj66oJnizYytVyzQjPFHkM4TcADD0dzYOXU+Q
+ UWkD+li/nk4pRRYJbe0hPVkMq5tet/Kln1+enQP2Bb8DXDtnImTwztoXl2P0JDAlO/3u
+ YK4B/zYBEsy6yt1mVNYXZPrKtULFKkR4L2Yfy9NHH3Ne9My12rYuLA+j5MlDgsvdB0Jz
+ lHuP1opEKOv/beXP5ZXzlq85fUgq1NB14+QdvjbOUqna3zH+let0K3nNTUQ7CUL8Ahal
+ lh9g==
+X-Gm-Message-State: APjAAAXdwfMrkAXLlkI5neyuC6FagBjE1D3d6sTAPhr//04DrBbaZZ1+
+ +g/t5jpmC3clql4Tki4gaa/NC2bz7iPbXiKbbFW5Sw==
+X-Google-Smtp-Source: APXvYqztqpfIkQ19AlRQPrqfsqTvP4cIR4ExKB8fsNIFkHPM8GZNpANZzIhR9gX186T9JnVglUf6rgxAB2sJLtT7RWg=
+X-Received: by 2002:a67:ee16:: with SMTP id f22mr28577969vsp.191.1563446930654; 
+ Thu, 18 Jul 2019 03:48:50 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190513192300.653-1-ulf.hansson@linaro.org>
- <20190513192300.653-15-ulf.hansson@linaro.org>
- <20190716155317.GB32490@e121166-lin.cambridge.arm.com>
-In-Reply-To: <20190716155317.GB32490@e121166-lin.cambridge.arm.com>
+ <20190513192300.653-19-ulf.hansson@linaro.org>
+ <20190716144744.GB7250@e107155-lin>
+In-Reply-To: <20190716144744.GB7250@e107155-lin>
 From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Thu, 18 Jul 2019 12:35:07 +0200
-Message-ID: <CAPDyKFrJ75mo+s6GuUCTQ-nVv7C+9YJyTVmwuBZ2RKFOvOi3Nw@mail.gmail.com>
-Subject: Re: [PATCH 14/18] drivers: firmware: psci: Manage runtime PM in the
- idle path for CPUs
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Date: Thu, 18 Jul 2019 12:48:14 +0200
+Message-ID: <CAPDyKFpc26yL6rOnfwawL=eL649NsgTMrF1WrMHZv7AVd=3PCA@mail.gmail.com>
+Subject: Re: [PATCH 18/18] arm64: dts: hikey: Convert to the hierarchical CPU
+ topology layout
+To: Sudeep Holla <sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_033546_381313_03433B46 
-X-CRM114-Status: GOOD (  16.23  )
+X-CRM114-CacheID: sfid-20190718_034852_310477_1D4DD0D3 
+X-CRM114-Status: GOOD (  15.89  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e42 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -94,6 +94,7 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
+ Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
  Geert Uytterhoeven <geert+renesas@glider.be>,
  Kevin Hilman <khilman@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
  Viresh Kumar <viresh.kumar@linaro.org>, Linux PM <linux-pm@vger.kernel.org>,
@@ -102,10 +103,10 @@ Cc: Mark Rutland <mark.rutland@arm.com>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
  Amit Kucheria <amit.kucheria@linaro.org>,
  Bjorn Andersson <bjorn.andersson@linaro.org>, Tony Lindgren <tony@atomide.com>,
+ Lina Iyer <ilina@codeaurora.org>,
  linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Lina Iyer <ilina@codeaurora.org>, Sudeep Holla <sudeep.holla@arm.com>,
  Niklas Cassel <niklas.cassel@linaro.org>,
- Souvik Chakravarty <souvik.chakravarty@arm.com>,
+ Souvik Chakravarty <souvik.chakravarty@arm.com>, Wei Xu <xuwei5@hisilicon.com>,
  "Raju P . L . S . S . S . N" <rplsssn@codeaurora.org>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
@@ -113,45 +114,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 16 Jul 2019 at 17:53, Lorenzo Pieralisi
-<lorenzo.pieralisi@arm.com> wrote:
+On Tue, 16 Jul 2019 at 16:47, Sudeep Holla <sudeep.holla@arm.com> wrote:
 >
-> On Mon, May 13, 2019 at 09:22:56PM +0200, Ulf Hansson wrote:
-> > When the hierarchical CPU topology layout is used in DT, let's allow the
-> > CPU to be power managed through its PM domain, via deploying runtime PM
-> > support.
+> On Mon, May 13, 2019 at 09:23:00PM +0200, Ulf Hansson wrote:
+> > To enable the OS to manage last-man standing activities for a CPU, while an
+> > idle state for a group of CPUs is selected, let's convert the Hikey
+> > platform into using the hierarchical CPU topology layout.
 > >
-> > To know for which idle states runtime PM reference counting is needed,
-> > let's store the index of deepest idle state for the CPU, in a per CPU
-> > variable. This allows psci_cpu_suspend_enter() to compare this index with
-> > the requested idle state index and then act accordingly.
+> > Cc: Wei Xu <xuwei5@hisilicon.com>
+> > Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
+> > ---
+> >
+> > Changes:
+> >       - None.
+> >
+> > ---
+> >  arch/arm64/boot/dts/hisilicon/hi6220.dtsi | 87 ++++++++++++++++++++---
+> >  1 file changed, 76 insertions(+), 11 deletions(-)
+> >
+> > diff --git a/arch/arm64/boot/dts/hisilicon/hi6220.dtsi b/arch/arm64/boot/dts/hisilicon/hi6220.dtsi
+> > index 108e2a4227f6..36ff460f428f 100644
+> > --- a/arch/arm64/boot/dts/hisilicon/hi6220.dtsi
+> > +++ b/arch/arm64/boot/dts/hisilicon/hi6220.dtsi
+> >       cpus {
 >
-> I do not see why a system with two CPU CPUidle states, say CPU retention
-> and CPU shutdown, should not be calling runtime PM on CPU retention
-> entry.
-
-If the CPU idle governor did select the CPU retention for the CPU, it
-was probably because the target residency for the CPU shutdown state
-could not be met.
-
-In this case, there is no point in allowing any other deeper idle
-states for cluster/package/system, since those have even greater
-residencies, hence calling runtime PM doesn't make sense.
-
+> [...]
 >
-> The question then is what cluster/package/system states
-> are allowed for a given CPU idle state, to understand
-> what idle states can be actually entered at any hierarchy
-> level given the choice made for the CPU idle state.
+> > @@ -70,9 +128,8 @@
+> >                       };
+> >
+> >                       CLUSTER_SLEEP: cluster-sleep {
+> > -                             compatible = "arm,idle-state";
+> > -                             local-timer-stop;
+> > -                             arm,psci-suspend-param = <0x1010000>;
+> > +                             compatible = "domain-idle-state";
+> > +                             arm,psci-suspend-param = <0x1000000>;
+> >                               entry-latency-us = <1000>;
+> >                               exit-latency-us = <700>;
+> >                               min-residency-us = <2700>;
 >
-> In the case above, a CPU entering retention state should prevent
-> runtime PM selecting a cluster shutdown state; most likely firmware
-> would demote the request to cluster retention but still, we should
-> find a way to describe these dependencies.
+> Again this must be original format and as per PSCI spec, your patch
+> changes this cluster sleep state into cluster retention state which I
+> think is not what you intended.
 
-See above.
+If the hierarchical topology is used, the parameter for cluster states
+are ORed with the deepest idle state for the CPU.
 
-[...]
+CPU_SLEEP: 0x0010000
+CLUSTER_SLEEP: 0x1000000
+
+After the ORed operation
+CLUSTER_SLEEP: 0x1010000
+
+So, this indeed works as expected.
+
+However, are you saying that ORing the state parameters like above has
+other problems? I am reading your other replies...
 
 Kind regards
 Uffe
