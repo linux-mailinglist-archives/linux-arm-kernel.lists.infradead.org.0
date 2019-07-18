@@ -2,95 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16E9F6D305
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 19:47:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A8E116D314
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 19:49:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l314RASEIUx9MeLSA+FnM0DBsI7B7Yr7U5Je2md97rM=; b=n45mns1fUEleNl
-	VbZBguHhXuBygj5plwmsMpbQk4KVG52cvPzJDYjtGuYLeki3tGS1i1M9SzonBjcVdjwmNYGy5/sv5
-	ySlKTl7VN0HaH8jLSxhR8PdEti0GZk4yaIaxWsjIfBsIy32Az8s5bKncz2W62asbkoQgURwxiuPG5
-	XygYtDAjSkQzdcvCZCIemvghsH+QICjVWV0B4N9ikpmgX81JW33D6kLvegXeBrUX2SsHBMAPlvqWN
-	+KYvq3zBQBLDXnJ/mt6tHF2TzhZogC8bIGKT4Y8sdSR8p1L02swfvpeySN5992xl/jmUqbN6MVs6H
-	rGrHYkLkTWZO5JG9MIUg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RqseMqiL97mvEGH9DTUuUP/5+xQPlQBjqdD0tosAh8w=; b=GWU0Y+gZfBosLe
+	XxZSi3qRUGMQ7h/4G7O6zI4GFH+QMmePsLpZvV7XMZuUVJALzXLmFaclZ7hptof8uqrfdo7MaJ6U+
+	Qa6QP174kctj22rLYQIfcmlhjP7lOrx9QFkHOaVEmbvUzQkPFb9GAr0cntJTxli6k1G9xm2kYzkGg
+	bKXW6h017qFkEwIW+VcH8pM38DgQ6Hhy5q3Wi7HU6NTitDzdzQ5KPP0+OG4tnk98KT979GCSK7CjM
+	c/9c5jeS0licUt0CDKB7zGKUC399PFdiXWk8jqMdnAQYFZ5BMqGNb9paPOaTQRG0i03HM3bg60zNo
+	qsFtG/Brih0+aNOUI8vg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoAUv-0004q5-H8; Thu, 18 Jul 2019 17:47:17 +0000
-Received: from mout.gmx.net ([212.227.17.22])
+	id 1hoAWt-0005CU-V6; Thu, 18 Jul 2019 17:49:20 +0000
+Received: from mail-yw1-xc42.google.com ([2607:f8b0:4864:20::c42])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hoAUi-0004pi-MD; Thu, 18 Jul 2019 17:47:06 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1563472009;
- bh=aguOxYRftbcWJytD0D36nlyxeVSr/tdPtrg5qADo0bU=;
- h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
- b=eBymyvc+xaOcpdgjOTr1xMhIEri0+djxcv0wDO1aceNXav3T1638IaD2Fqw5SPrPr
- v6xbOT/OhQueZWpNY4YG1OEba2qLQsenEjo9pMEX+dN8xYwKCipUF0WM8PfchbB9zm
- WfNJMAGH5xlZRNknywvw0WRpn0O4haSA8dsNeJC0=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [192.168.1.162] ([37.4.249.117]) by mail.gmx.com (mrgmx103
- [212.227.17.168]) with ESMTPSA (Nemesis) id 0MO7Ca-1hkr6r23s4-005WYC; Thu, 18
- Jul 2019 19:46:49 +0200
-Subject: Re: [PATCH RFC 09/18] mmc: sdhci-iproc: Add support for emmc2 of the
- BCM2838
-To: Matthias Brugger <matthias.bgg@gmail.com>,
- Florian Fainelli <f.fainelli@gmail.com>, Eric Anholt <eric@anholt.net>,
- Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
- <sboyd@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
- Adrian Hunter <adrian.hunter@intel.com>, Mark Brown <broonie@kernel.org>
-References: <1563393026-17118-1-git-send-email-wahrenst@gmx.net>
- <1563393026-17118-10-git-send-email-wahrenst@gmx.net>
- <048fc038-4ba8-ddc9-fbdb-aefa7a35b41a@gmail.com>
- <2a400a9b-9351-ba6f-adff-3e3916efa6be@gmail.com>
- <74ee5be5-3840-3a70-0f2a-60d86bcbeefa@gmail.com>
-From: Stefan Wahren <wahrenst@gmx.net>
-Message-ID: <2175129a-1541-8883-cf3c-fe17c354faaa@gmx.net>
-Date: Thu, 18 Jul 2019 19:46:45 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1hoAWh-0005Ap-Cq
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 17:49:08 +0000
+Received: by mail-yw1-xc42.google.com with SMTP id n205so12535126ywb.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 18 Jul 2019 10:49:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=poorly.run; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=TcHEhgeLg4wCyvAuCh277bKvKMlAO9sX0vLEQ8gbuaw=;
+ b=H6wkH+Ja6Vv25R0kLDO3V4VVaS5ztNs9UcAubxqNI+3MthILN+2PFYat2u8m43w84T
+ dAl/y87QY25XTUsQar+5BsMFrCcgZZr2GZBLhuqyQHujiIFXoQSWk06OtnL5c36L74TC
+ VxBLEPjDdkPgpMEK7dFUqwRJj+fvhBAX6RIVfav3Jv8IKNZRSO4hEMAaQJ+tiTHT8GCC
+ 58uDhvWDf0K5kwRrrRpoDq/1sHOiikD5rNc1/JfuBN9AtOcD6T+9q+hREa6IMDY3J47U
+ XJ1yiFscnRKTlmsHD1sW4ywez1baijXdAhIcjPWMvudB7QJGXHuaGaZUZArhWVOxGrjq
+ WC9A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=TcHEhgeLg4wCyvAuCh277bKvKMlAO9sX0vLEQ8gbuaw=;
+ b=fI/Owj5yHI1e6RBU3p1/tHJZiHO/lBr+znBaHG56dD26FRknBvZp2XCNR+Poxsphq9
+ xh8Hzrh6pcUXkY7Y+gyXRD8CucPBP7d/c0K1joon8n7wQjd3HqSLP3SJq9QNij/WefF5
+ b9QtO8713XZOtsa9Q/uJIJufkuxr7/F3JJnJhNEljmv/MzOs39GyguMopZWsCxpIhdCC
+ oXr9U1jb0BvQlbqy2ePMMOKZOAnai9rY2jb2KSDwsNf9E2UV8t/GCJWiNO57YidBRlEC
+ 3Gxl7PAZGKYbEAWgY6BMyaM8dlmGvIR5OlRP3SdCORyye60LhQLMkzt0qoIlCCghfqeP
+ ghtg==
+X-Gm-Message-State: APjAAAXEvYYI+32ZvRVTnDtLqA0/pc6rB7xmr8Myl8ZHyHfktSighTYE
+ JbECKFsb0yumiqkDuBWidOpwLQ==
+X-Google-Smtp-Source: APXvYqx6Uslwcgt6FXtPTtAmiDT6PsPZOZfSYSrx+5nJhVWwXm/mkQxhro4Op23WJMYr87U7zzwBEg==
+X-Received: by 2002:a81:5fd4:: with SMTP id
+ t203mr27254887ywb.300.1563472146017; 
+ Thu, 18 Jul 2019 10:49:06 -0700 (PDT)
+Received: from localhost ([2620:0:1013:11:89c6:2139:5435:371d])
+ by smtp.gmail.com with ESMTPSA id j67sm6907891ywa.39.2019.07.18.10.49.05
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Thu, 18 Jul 2019 10:49:05 -0700 (PDT)
+Date: Thu, 18 Jul 2019 13:49:05 -0400
+From: Sean Paul <sean@poorly.run>
+To: Sam Ravnborg <sam@ravnborg.org>
+Subject: Re: [PATCH v1 04/11] drm/ati_pcigart: drop dependency on
+ drm_os_linux.h
+Message-ID: <20190718174905.GG31819@art_vandelay>
+References: <20190718161507.2047-1-sam@ravnborg.org>
+ <20190718161507.2047-5-sam@ravnborg.org>
 MIME-Version: 1.0
-In-Reply-To: <74ee5be5-3840-3a70-0f2a-60d86bcbeefa@gmail.com>
-Content-Language: en-US
-X-Provags-ID: V03:K1:l+Qw9+8D3n5A/Mb7OA4Ke9idH6JYFoaTg2LnHpnUoDWDdjcPu/N
- 4b1tRkzRSvMkgdK9SSGSW8gS6gG13R/bBDLfPpV2dJpTo6b6A2EtGmNlsIWB4Y1lng72gRJ
- Fhx+L0poG4fxbPuRQO0+7NdkYJQJegLkJ/4RtkEEX7Wayg1Y9xE9y6FSWoc8vD4OxtaXJZn
- NU1iBYXaE7ilNUdEhRhTA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:SdO45pCRDE0=:Zjve6wLYTCZ6R2Jf5bOey7
- f2Bb7ps0kiVPiHz4JGbFwRvKfKyRg7m1gC5dRMw7jYe6mHmGefNTjtUrv+FpvnbPV2/0OS0gr
- 8a5loGF66mVxRNwLAHoKnph4QPjpCgI9OG2iXUemUf4gNMQkFzTGIngAggAsXj4CKCETn2Kwb
- WAdgfG6t44c2gXao6NhIbvE5Nfh4BjujJJWraTX0nP7IUgrN0nTJHLfgJidK2jmO7XrF2GfBR
- 3xkgXnI81kRgSCSij4PkdGILaFIMljMM/wzzlvCOVHz7owU94WjP7zXq3Xuxzr1zzk2uios4Z
- zsOb5tv6XQSbhZK9Ukv/t8XIDvMLhJwUrbApFgYMs59WSSdHwq71FDxB1L2GnGQhi2rrMgq0R
- B1gQvqR7XGGCrLowFoIXt4gtXDwzHb+TedYZPVkNIcAKxVgiOuBTUyOKsFeMPA1NQOv0wZOif
- UjwxtWi1tzGBJs31baBMltG8vT6Bgg+dtW96z12rS4TpEhuU8bSgRDGBnkLLTqabRUixSuiew
- ElW0XWx9nEybk0/+umfPTSL1z/5lsYOsxlk/2YzKQQ6EoA9WsjKhHBzWn49S8juFVVaGth5Yq
- 7nYuYnKAXUwe7J6D65n3qaRJkJvg8U9vFXpye3A77LDfo/gcj95P3sXcj3ClU+rEZMUm/iOOj
- ksDxjbUUQ7TOnc9OYiVKbUAp61KaFRMxIPhnmYBJ6LHz9cbsHDXfLXSBjiM/FmBycyTJuTNBv
- qRejE6zRskZ+6zdkasdTsg4AziIFtgT1x5CHqzOxm4ruSffd7hLtDleSGFJ0aTT1ihi6cFJKu
- atyJNv1GP4d6xurud5p6QsAxXaUsK3Vrs3BhumoaMQ5soGy04TWkzfp2ziT26MU04UW4dGlve
- plRr/H8kaVL5zrX0VUAjI0GkoCY+mnhtFE1uBryhIIF01NEuzUFzNv+juR4T/zK669aH+pTzV
- gRbIs1MkLnAqMVAa0BaT2jrFbmYKKr3/id+KSVq2428vX3J+Bipmkxs8Fa/oGDE7yFbgFcJPW
- tJj1s1ZNVJptb2M6u+z2a8NGL6GGew4POaxdh/EobBRqUdlNmt8zg+EtOZK+dzvJZI8MZcpCz
- DqE7B1RZ/ti+Lo=
+Content-Disposition: inline
+In-Reply-To: <20190718161507.2047-5-sam@ravnborg.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_104705_056818_5E056A89 
-X-CRM114-Status: GOOD (  17.32  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190718_104907_435383_F7E5C92F 
+X-CRM114-Status: GOOD (  19.15  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.22 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wahrenst[at]gmx.net)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:c42 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -111,51 +100,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: David Airlie <airlied@linux.ie>, Liviu Dudau <Liviu.Dudau@arm.com>,
+ dri-devel@lists.freedesktop.org, Chris Wilson <chris@chris-wilson.co.uk>,
+ Eric Anholt <eric@anholt.net>, Rob Herring <robh@kernel.org>,
+ Stefan Agner <stefan@agner.ch>, Maxime Ripard <maxime.ripard@bootlin.com>,
+ CK Hu <ck.hu@mediatek.com>, Thierry Reding <treding@nvidia.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Chunming Zhou <david1.zhou@amd.com>,
+ Jani Nikula <jani.nikula@intel.com>,
+ Intel Graphics Development <intel-gfx@lists.freedesktop.org>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ linux-mediatek@lists.infradead.org,
+ Lionel Landwerlin <lionel.g.landwerlin@intel.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Sean Paul <sean@poorly.run>,
+ linux-arm-kernel@lists.infradead.org, Boris Brezillon <bbrezillon@kernel.org>,
+ Thomas Zimmermann <tzimmermann@suse.de>, Rob Clark <robdclark@gmail.com>,
+ Noralf =?iso-8859-1?Q?Tr=F8nnes?= <noralf@tronnes.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Christian =?iso-8859-1?Q?K=F6nig?= <christian.koenig@amd.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am 18.07.19 um 18:48 schrieb Matthias Brugger:
->
-> On 18/07/2019 18:40, Florian Fainelli wrote:
->>
->> On 7/18/2019 1:34 AM, Matthias Brugger wrote:
->>
->> [snip]
->>
->>>>  static const struct of_device_id sdhci_iproc_of_match[] = {
->>>>  	{ .compatible = "brcm,bcm2835-sdhci", .data = &bcm2835_data },
->>>> +	{ .compatible = "brcm,bcm2838-emmc2", .data = &bcm2838_data },
->>> As far as I'm aware of, the RPi4 FW provides a device-tree with compatible:
->>> brcm,bcm2711-emmc2. Shouldn't we add this as well so that we can use the DT
->>> passed by the FW?
->> Downstream typically used 2708, 2709, 2710 because those are the
->> Broadcom internal part numbers, and upstream has been using what's on
->> the package: 2835, 2836, 2837, 2838. At the end of the day, it does not
->> make much functional difference, but if if we have to be consistent,
->> then Stefan's approach here follows the consistency here.
->>
-> So I propose to add both, so that we can use the upstream kernel with downstream
-> devcie-tree. I'm thinking of the device-tree provided at run-time by the FW.
+On Thu, Jul 18, 2019 at 06:15:00PM +0200, Sam Ravnborg wrote:
+> The drm_os_linux.h header is deprecated.
+> Just opencode the sole DRM_WRITE32().
 
-AFAIK the FW doesn't know anything about the devicetree part of the
-emmc2. So i suggest to add the upstream compatible in the downstream
-tree. This way we keep out all the downstream stuff (as before) and
-avoid confusion in the devicetree bindings.
+Any plans for the other users of DRM_WRITE<N>()? It seems like it'd be trivial
+to fix it up for via and mga. I don't really have any background on
+drm_os_linux.h, but it doesn't seem like it'd be that much more effort to just
+remove the whole thing.
 
-Stefan
+Sean
 
->
-> Regards,
-> Matthias
->
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> 
+> Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
+> Cc: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>
+> Cc: Maxime Ripard <maxime.ripard@bootlin.com>
+> Cc: Sean Paul <sean@poorly.run>
+> Cc: David Airlie <airlied@linux.ie>
+> Cc: Daniel Vetter <daniel@ffwll.ch>
+> ---
+>  drivers/gpu/drm/ati_pcigart.c | 10 ++++++----
+>  1 file changed, 6 insertions(+), 4 deletions(-)
+> 
+> diff --git a/drivers/gpu/drm/ati_pcigart.c b/drivers/gpu/drm/ati_pcigart.c
+> index 2a413e291a60..580aa2676358 100644
+> --- a/drivers/gpu/drm/ati_pcigart.c
+> +++ b/drivers/gpu/drm/ati_pcigart.c
+> @@ -35,7 +35,6 @@
+>  
+>  #include <drm/ati_pcigart.h>
+>  #include <drm/drm_device.h>
+> -#include <drm/drm_os_linux.h>
+>  #include <drm/drm_pci.h>
+>  #include <drm/drm_print.h>
+>  
+> @@ -169,6 +168,7 @@ int drm_ati_pcigart_init(struct drm_device *dev, struct drm_ati_pcigart_info *ga
+>  		page_base = (u32) entry->busaddr[i];
+>  
+>  		for (j = 0; j < (PAGE_SIZE / ATI_PCIGART_PAGE_SIZE); j++) {
+> +			u32 offset;
+>  			u32 val;
+>  
+>  			switch(gart_info->gart_reg_if) {
+> @@ -184,10 +184,12 @@ int drm_ati_pcigart_init(struct drm_device *dev, struct drm_ati_pcigart_info *ga
+>  				break;
+>  			}
+>  			if (gart_info->gart_table_location ==
+> -			    DRM_ATI_GART_MAIN)
+> +			    DRM_ATI_GART_MAIN) {
+>  				pci_gart[gart_idx] = cpu_to_le32(val);
+> -			else
+> -				DRM_WRITE32(map, gart_idx * sizeof(u32), val);
+> +			} else {
+> +				offset = gart_idx * sizeof(u32);
+> +				writel(val, (void __iomem *)map->handle + offset);
+> +			}
+>  			gart_idx++;
+>  			page_base += ATI_PCIGART_PAGE_SIZE;
+>  		}
+> -- 
+> 2.20.1
+> 
+
+-- 
+Sean Paul, Software Engineer, Google / Chromium OS
 
 _______________________________________________
 linux-arm-kernel mailing list
