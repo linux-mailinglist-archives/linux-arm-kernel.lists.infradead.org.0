@@ -2,62 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AC03C6CC70
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 11:59:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4670A6CC5F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 11:54:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Qe3tAE7/AclT3+bLRz4oqZ+L3uqvceHQa4YQ7iOjPbk=; b=FNTPFfo+T0zD/k
-	g3Y6+uSDEUzBuJJqJKx5Tg6VB46tIY5262AEQFBdaRAI5St5bjZfVUR1fyDYZBBHZaY6vxamBp/mh
-	fK+y+MZCk72xrsLiR/ie400rD7qr4LA0WXMMXT8GJ36iUk3JpXk/lLimkwxcYoORqdZ0STyKcCU1J
-	7q4in6RpLB7x/EjS0Dnt+MexiQO+BRrUDVpQ6yoPFZ2+q7hYSB3GpqFMY8geXZ6A1RpdOc8oSlQIS
-	5ZVlc41Aso1harWvjXdV59ULAFZn6fMbxz5FON0SdZyH6s8HMUkbPvb+/+UIfiPdOJLN4nERb+pa9
-	eCi08XezilWajutkemmA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=zp7pn4/UO/np1eBUKh0GwyfzFfNNTSdX57KI+g9PbR0=; b=EdtWVLIkN19nmmpaGgBq6PNyR
+	g9oqhcpW5ICkP4dbJ21u3tKTGmLmqDQOCypzgjtnae1GF5gxnJiIrpjna0RhFmMxHYq2G9A7c3EyF
+	RsjyKQzAu72bTJxdnAjJ7ahreXq9eamwiqSGIe1JMzvoUojixYa2Pxp7I+QYVIkP+Z4YiUaLXILyi
+	34JpPVnHlwidJwF2nkRe/Yl/XYZEGXgKmH7fConYE211qHdrvAD83KsBlCIvN9HXeh8btJpHtk/3L
+	6UxOwUlBhl9V1DroK757sUjlw/tThg36yvtahiExsPhpeGCFvKWS2CoIO5PZc69i366nfhMnvM/f7
+	PQ+UVUSew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ho3CA-0005XO-6Z; Thu, 18 Jul 2019 09:59:26 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1ho37B-0003cS-A0; Thu, 18 Jul 2019 09:54:17 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ho3Bi-0005Ms-Tl
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 09:59:00 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 812141A0047;
- Thu, 18 Jul 2019 11:58:57 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 802091A00EE;
- Thu, 18 Jul 2019 11:58:51 +0200 (CEST)
-Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 479FE402D5;
- Thu, 18 Jul 2019 17:58:44 +0800 (SGT)
-From: Hui Song <hui.song_1@nxp.com>
-To: Shawn Guo <shawnguo@kernel.org>, Li Yang <leoyang.li@nxp.com>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>
-Subject: [PATCH 2/2] gpio: mpc8xxx: Add ls1028a device specify function.
-Date: Thu, 18 Jul 2019 17:49:02 +0800
-Message-Id: <20190718094902.15562-2-hui.song_1@nxp.com>
-X-Mailer: git-send-email 2.9.5
-In-Reply-To: <20190718094902.15562-1-hui.song_1@nxp.com>
-References: <20190718094902.15562-1-hui.song_1@nxp.com>
+ id 1ho36w-0003bt-4L
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 09:54:03 +0000
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id B6FA0616D3; Thu, 18 Jul 2019 09:54:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1563443641;
+ bh=OQ/MD3YIdSMBrwnP8BDEG6Jw1d6HD1QPQooLjyZnEQ8=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=lO4z8bR5105oNnaJ6YcqkK653dcUmfzedbtUJtwc/RenDwLMrPdK0Otz+EyOT4ryt
+ nZCkTvARyn1XEnkCwYX08TiZacBZKelA9JKbzEbnpHgB3aRgrgar4kUkVeG/vEMlJl
+ LrjhdYQxpNXuBkvhTFn/VVRzByuMyOuDKu92zHx8=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
+ version=3.4.0
+Received: from [192.168.43.47] (unknown [157.49.202.231])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ (Authenticated sender: saiprakash.ranjan@smtp.codeaurora.org)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id B33D560E40;
+ Thu, 18 Jul 2019 09:53:52 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1563443640;
+ bh=OQ/MD3YIdSMBrwnP8BDEG6Jw1d6HD1QPQooLjyZnEQ8=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=BNXObLhCuY1vX0ITvrPpNRCgTCe6f5MCZ4kxgDcu/KqePp1F9+dxW/G2tf/Way3I4
+ T3lXQ1F3tNbVeM1x13k3SeiQx+CHSwmidV42bBWJDBoSsWcPyv/jNo9FpzsCLhDbLS
+ PJ4RioLwbkRJDqaweKZ+gxgB/GOXPbm228lDX9X8=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org B33D560E40
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: pdx-caf-mail.web.codeaurora.org; spf=none
+ smtp.mailfrom=saiprakash.ranjan@codeaurora.org
+Subject: Re: [PATCHv8 2/5] arm64: dts: qcom: msm8998: Add Coresight support
+To: Suzuki K Poulose <suzuki.poulose@arm.com>, gregkh@linuxfoundation.org,
+ mathieu.poirier@linaro.org, leo.yan@linaro.org,
+ alexander.shishkin@linux.intel.com, mike.leach@linaro.org,
+ robh+dt@kernel.org, bjorn.andersson@linaro.org, devicetree@vger.kernel.org,
+ david.brown@linaro.org, mark.rutland@arm.com
+References: <cover.1562940244.git.saiprakash.ranjan@codeaurora.org>
+ <e510df23f741205fac9030f2c95d06d607549caa.1562940244.git.saiprakash.ranjan@codeaurora.org>
+ <3b192063-f31f-b861-d913-61d737cecc57@arm.com>
+ <4854b0f7-6a81-bc87-3e63-d2b7c68a44f6@codeaurora.org>
+ <281e3548-af53-f9a7-b9e4-813b448ab078@arm.com>
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+Message-ID: <2b08943b-3900-ceb5-15ac-28ef2bbad03e@codeaurora.org>
+Date: Thu, 18 Jul 2019 15:23:49 +0530
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-Virus-Scanned: ClamAV using ClamSMTP
+In-Reply-To: <281e3548-af53-f9a7-b9e4-813b448ab078@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_025859_333023_BC000564 
-X-CRM114-Status: GOOD (  11.97  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190718_025402_206274_F65A6EB1 
+X-CRM114-Status: GOOD (  14.23  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [198.145.29.96 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,68 +105,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Song Hui <hui.song_1@nxp.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-gpio@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: rnayak@codeaurora.org, marc.w.gonzalez@free.fr,
+ linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ sibis@codeaurora.org, vivek.gautam@codeaurora.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RnJvbTogU29uZyBIdWkgPGh1aS5zb25nXzFAbnhwLmNvbT4KClRoZXJlIGlzIGEgZGV2aWNlIHNw
-ZWNpZnkgcmVnaXN0ZXIobmFtZWQgR1BJT19JQkUpCm9uIGxzMTAyOGEgbmVlZCB0byBlbmFibGUg
-aW4gaW5pdGlhbCBzdGFnZS4KClNpZ25lZC1vZmYtYnk6IFNvbmcgSHVpIDxodWkuc29uZ18xQG54
-cC5jb20+Ci0tLQogZHJpdmVycy9ncGlvL2dwaW8tbXBjOHh4eC5jIHwgMzEgKysrKysrKysrKysr
-KysrKysrKysrKysrKysrKysrKwogMSBmaWxlIGNoYW5nZWQsIDMxIGluc2VydGlvbnMoKykKCmRp
-ZmYgLS1naXQgYS9kcml2ZXJzL2dwaW8vZ3Bpby1tcGM4eHh4LmMgYi9kcml2ZXJzL2dwaW8vZ3Bp
-by1tcGM4eHh4LmMKaW5kZXggYzg2NzNhNS4uMWE2ODBhYSAxMDA2NDQKLS0tIGEvZHJpdmVycy9n
-cGlvL2dwaW8tbXBjOHh4eC5jCisrKyBiL2RyaXZlcnMvZ3Bpby9ncGlvLW1wYzh4eHguYwpAQCAt
-MzIsNiArMzIsNyBAQAogI2RlZmluZSBHUElPX0lNUgkJMHgxMAogI2RlZmluZSBHUElPX0lDUgkJ
-MHgxNAogI2RlZmluZSBHUElPX0lDUjIJCTB4MTgKKyNkZWZpbmUgR1BJT19JQkUJCTB4MTgKIAog
-c3RydWN0IG1wYzh4eHhfZ3Bpb19jaGlwIHsKIAlzdHJ1Y3QgZ3Bpb19jaGlwCWdjOwpAQCAtNDUs
-NiArNDYsMjcgQEAgc3RydWN0IG1wYzh4eHhfZ3Bpb19jaGlwIHsKIAl1bnNpZ25lZCBpbnQgaXJx
-bjsKIH07CiAKKy8qIFRoZSBHUElPIElucHV0IEJ1ZmZlciBFbmFibGUgcmVnaXN0ZXIoR1BJT19J
-QkUpIGlzIHVzZWQgdG8KKyAqIGNvbnRyb2wgdGhlIGlucHV0IGVuYWJsZSBvZiBlYWNoIGluZGl2
-aWR1YWwgR1BJTyBwb3J0LgorICogV2hlbiBhbiBpbmRpdmlkdWFsIEdQSU8gcG9ydOKAmXMgZGly
-ZWN0aW9uIGlzIHNldCB0bworICogaW5wdXQgKEdQSU9fR1BESVJbRFJuPTBdKSwgdGhlIGFzc29j
-aWF0ZWQgaW5wdXQgZW5hYmxlIG11c3QgYmUKKyAqIHNldCAoR1BJT3hHUElFW0lFbl09MSkgdG8g
-cHJvcGFnYXRlIHRoZSBwb3J0IHZhbHVlIHRvIHRoZSBHUElPCisgKiBEYXRhIFJlZ2lzdGVyLgor
-ICovCitzdGF0aWMgaW50IGxzMTAyOGFfZ3Bpb19kaXJfaW5faW5pdChzdHJ1Y3QgZ3Bpb19jaGlw
-ICpnYykKK3sKKwl1bnNpZ25lZCBsb25nIGZsYWdzOworCXN0cnVjdCBtcGM4eHh4X2dwaW9fY2hp
-cCAqbXBjOHh4eF9nYyA9IGdwaW9jaGlwX2dldF9kYXRhKGdjKTsKKworCXNwaW5fbG9ja19pcnFz
-YXZlKCZnYy0+YmdwaW9fbG9jaywgZmxhZ3MpOworCisJZ2MtPndyaXRlX3JlZyhtcGM4eHh4X2dj
-LT5yZWdzICsgR1BJT19JQkUsIDB4ZmZmZmZmZmYpOworCisJc3Bpbl91bmxvY2tfaXJxcmVzdG9y
-ZSgmZ2MtPmJncGlvX2xvY2ssIGZsYWdzKTsKKworCXJldHVybiAwOworfQorCiAvKgogICogVGhp
-cyBoYXJkd2FyZSBoYXMgYSBiaWcgZW5kaWFuIGJpdCBhc3NpZ25tZW50IHN1Y2ggdGhhdCBHUElP
-IGxpbmUgMCBpcwogICogY29ubmVjdGVkIHRvIGJpdCAzMSwgbGluZSAxIHRvIGJpdCAzMCAuLi4g
-bGluZSAzMSB0byBiaXQgMC4KQEAgLTI2MSw2ICsyODMsNyBAQCBzdGF0aWMgY29uc3Qgc3RydWN0
-IGlycV9kb21haW5fb3BzIG1wYzh4eHhfZ3Bpb19pcnFfb3BzID0gewogfTsKIAogc3RydWN0IG1w
-Yzh4eHhfZ3Bpb19kZXZ0eXBlIHsKKwlpbnQgKCpncGlvX2Rpcl9pbl9pbml0KShzdHJ1Y3QgZ3Bp
-b19jaGlwICpjaGlwKTsKIAlpbnQgKCpncGlvX2Rpcl9vdXQpKHN0cnVjdCBncGlvX2NoaXAgKiwg
-dW5zaWduZWQgaW50LCBpbnQpOwogCWludCAoKmdwaW9fZ2V0KShzdHJ1Y3QgZ3Bpb19jaGlwICos
-IHVuc2lnbmVkIGludCk7CiAJaW50ICgqaXJxX3NldF90eXBlKShzdHJ1Y3QgaXJxX2RhdGEgKiwg
-dW5zaWduZWQgaW50KTsKQEAgLTI3MSw2ICsyOTQsMTAgQEAgc3RhdGljIGNvbnN0IHN0cnVjdCBt
-cGM4eHh4X2dwaW9fZGV2dHlwZSBtcGM1MTJ4X2dwaW9fZGV2dHlwZSA9IHsKIAkuaXJxX3NldF90
-eXBlID0gbXBjNTEyeF9pcnFfc2V0X3R5cGUsCiB9OwogCitzdGF0aWMgY29uc3Qgc3RydWN0IG1w
-Yzh4eHhfZ3Bpb19kZXZ0eXBlIGxzMTAyOGFfZ3Bpb19kZXZ0eXBlID0geworCS5ncGlvX2Rpcl9p
-bl9pbml0ID0gbHMxMDI4YV9ncGlvX2Rpcl9pbl9pbml0LAorfTsKKwogc3RhdGljIGNvbnN0IHN0
-cnVjdCBtcGM4eHh4X2dwaW9fZGV2dHlwZSBtcGM1MTI1X2dwaW9fZGV2dHlwZSA9IHsKIAkuZ3Bp
-b19kaXJfb3V0ID0gbXBjNTEyNV9ncGlvX2Rpcl9vdXQsCiAJLmlycV9zZXRfdHlwZSA9IG1wYzUx
-MnhfaXJxX3NldF90eXBlLApAQCAtMjkxLDYgKzMxOCw3IEBAIHN0YXRpYyBjb25zdCBzdHJ1Y3Qg
-b2ZfZGV2aWNlX2lkIG1wYzh4eHhfZ3Bpb19pZHNbXSA9IHsKIAl7IC5jb21wYXRpYmxlID0gImZz
-bCxtcGM1MTIxLWdwaW8iLCAuZGF0YSA9ICZtcGM1MTJ4X2dwaW9fZGV2dHlwZSwgfSwKIAl7IC5j
-b21wYXRpYmxlID0gImZzbCxtcGM1MTI1LWdwaW8iLCAuZGF0YSA9ICZtcGM1MTI1X2dwaW9fZGV2
-dHlwZSwgfSwKIAl7IC5jb21wYXRpYmxlID0gImZzbCxwcTMtZ3BpbyIsICAgICB9LAorCXsgLmNv
-bXBhdGlibGUgPSAiZnNsLGxzMTAyOGEtZ3BpbyIsIC5kYXRhID0gJmxzMTAyOGFfZ3Bpb19kZXZ0
-eXBlLCB9LAogCXsgLmNvbXBhdGlibGUgPSAiZnNsLHFvcmlxLWdwaW8iLCAgIH0sCiAJe30KIH07
-CkBAIC0zNzYsNiArNDA0LDkgQEAgc3RhdGljIGludCBtcGM4eHh4X3Byb2JlKHN0cnVjdCBwbGF0
-Zm9ybV9kZXZpY2UgKnBkZXYpCiAJLyogYWNrIGFuZCBtYXNrIGFsbCBpcnFzICovCiAJZ2MtPndy
-aXRlX3JlZyhtcGM4eHh4X2djLT5yZWdzICsgR1BJT19JRVIsIDB4ZmZmZmZmZmYpOwogCWdjLT53
-cml0ZV9yZWcobXBjOHh4eF9nYy0+cmVncyArIEdQSU9fSU1SLCAwKTsKKwkvKiBlbmFibGUgaW5w
-dXQgYnVmZmVyICAqLworCWlmIChkZXZ0eXBlLT5ncGlvX2Rpcl9pbl9pbml0KQorCQlkZXZ0eXBl
-LT5ncGlvX2Rpcl9pbl9pbml0KGdjKTsKIAogCWlycV9zZXRfY2hhaW5lZF9oYW5kbGVyX2FuZF9k
-YXRhKG1wYzh4eHhfZ2MtPmlycW4sCiAJCQkJCSBtcGM4eHh4X2dwaW9faXJxX2Nhc2NhZGUsIG1w
-Yzh4eHhfZ2MpOwotLSAKMi45LjUKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2Vy
-bmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
-bi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Hi,
+
+On 7/18/2019 3:07 PM, Suzuki K Poulose wrote:
+> 
+> 
+> Using the sysfs doesn't guarantee that the ETR actually uses SG mode, 
+> unless
+> the buffer size selected is > 1M, which is why I am more interested in the
+> perf usage. Alternatively you may configure a larger buffer size (say, 
+> 8MB) via:
+> 
+> echo 0x800000 > /sys/bus/coresight/.../tmc_etr0/buffer_size
+> 
+
+Yes, you had mentioned about setting buffer size > 1M in the same 
+thread[1] and I had followed the same.
+
+[1] https://lkml.org/lkml/2019/1/18/311
+
+> 
+>>
+>> As said in one of the series initially [1], QCOM msm downstream kernels
+>> have been using scatter gather mode and we haven't seen any fatal issues.
+>>
+>> [1] https://patchwork.kernel.org/patch/10769535/
+> 
+> I haven't seen any test results there either.
+> 
+
+You did not ask for it there ;)
+
+I do not have the test results handy now and those platforms.
+I will arrange for them and post some test results.
+
+Just to confirm, do you need some traces or just the buffer size
+and sink set?
+
+Thanks,
+Sai
+
+-- 
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
+of Code Aurora Forum, hosted by The Linux Foundation
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
