@@ -2,86 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 915306D3C4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 20:22:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 258176D3D0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 20:25:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/RgBC538EC/XRHxthx/2ksIjXBZNEglcLkvXAAa7JvM=; b=TkfH2oqHFo2IVi
-	Wvd1mLJCh+QUrYLXShGoUlKJqXRklisDpyHK29dWNdllzd0KVbpywqAerfEovapj7KdOkMtLWwUox
-	mEm4X9lDtpEV20zzI8vlKtN9JNQ7scgpQzql8+6JW+fTHfx+RhZkX3/E/5Y3E8WQig06AFHQ07IxA
-	Qg7o0bJRKQWhThmIJpaDH6BYh0/Oa22R42Lace6yqQEQznPNZcdXhyanD/oA0yZ3KiA039Ba4D8+9
-	CCblRY3hEWREDgiqK94Oo/nqMXWwnlg1bZxp0Ypala0rGNcLH/gbIURfU5g4AkNMuEIfhVNFmkVZ4
-	rK/DsDbN/VBHzM83wBgQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pnZqhg2duv1TML9h1Jj6LNqI94cR+u5HMYtP9C/wNBE=; b=GxX+u/aYFaQQPW
+	4aKSC83ENUHV7sItmGABg4hE5JEWdR7lVRY3mQOPUH2+qyB9WZSMugmzd+Yfi/gtSR8PLwm/QkLsJ
+	NplYPEg3/Ur79k9JVFYYxW9YZ5c4b04pAWn/34XwGW4P3rVZ9BxKi0NEm/NoaDknexMCrttgqpU3J
+	lGnspR7ihxO29HYXPjko1wFKa+ZebyzyhnZu48enOAEplZaLjUdi/7/Mpi9QpDNX/jRt/Kldsjy1X
+	oFrlPLoci+asCAE33OykPwskykqTOqBbjWnQD77+phlj1qMVL62+ljdB4CGJJDfKie3vzYNUn32p9
+	94c8Cd7ekNjN8WAUarjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoB2l-0000ju-Jw; Thu, 18 Jul 2019 18:22:15 +0000
-Received: from mout.gmx.net ([212.227.17.21])
+	id 1hoB5O-0002z3-PO; Thu, 18 Jul 2019 18:24:58 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hoB2W-0000dA-Ci; Thu, 18 Jul 2019 18:22:02 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1563474102;
- bh=LEb+QreJh0nhKeLgLrWCsyepc4FfQRzGAEBsJlBjezs=;
- h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
- b=FE6gMsjxZVvDt32CJbzix65lH6BwOpQIiAQcz53GOmGtVwLHzd67qCbU9X4FiiXeJ
- 7UlSbT8ming4vzrhRMA90rny/6mnfcYUrIU6nVQX1m5ZXUXBysWxAsPwHebhIU/pR7
- C+b2CqbmRDoXncgfx1tuhiQgTVaEx4hYhZEkcWz8=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [192.168.1.162] ([37.4.249.117]) by mail.gmx.com (mrgmx103
- [212.227.17.168]) with ESMTPSA (Nemesis) id 0MQ2Tn-1hkaWr2vPn-005F2B; Thu, 18
- Jul 2019 20:21:42 +0200
-Subject: Re: [PATCH RFC 15/18] spi: bcm2835: enable shared interrupt support
-To: Florian Fainelli <f.fainelli@gmail.com>, Mark Brown <broonie@kernel.org>
-References: <1563398164-2679-1-git-send-email-wahrenst@gmx.net>
- <1563398164-2679-2-git-send-email-wahrenst@gmx.net>
- <20190718124205.GC5761@sirena.org.uk>
- <b23c7a5a-a432-5af6-a7dc-0a7dfbe57712@gmx.net>
- <fdbdbc92-e6fc-4e88-ea8f-bb0bc3224b90@gmail.com>
-From: Stefan Wahren <wahrenst@gmx.net>
-Message-ID: <28dd33bc-c1b5-b976-ad19-ebf681df8647@gmx.net>
-Date: Thu, 18 Jul 2019 20:21:36 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1hoB5D-0002yI-Gu
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 18:24:49 +0000
+Received: by mail-wr1-x442.google.com with SMTP id c2so26534103wrm.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 18 Jul 2019 11:24:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=O1MLsFyrIiqvStGeCSXekqChu7olGe+ghfPuNjb84x8=;
+ b=FjNL/oukgm65Nil+7w8dcOOxwccuBKh63CXRVczAIPfM75Zl54MiGe1Z9uQiTxBUU4
+ atUrfVS6UcxjtwAlHMlur0lFE7HnNutU5ra5ppuejfqjJMGZR8toKlCsBXxWTvC86DTu
+ /+ysKj8yAeD0RBUY2oM/eLfV18qGmzIVqWL44Ceq0iIO+XiveK0Zo/G2R3v2+jKK5smY
+ C0/zcSJHebPRYhBtSZ/UZnyrECB9ZjfRyn/ti7Tqnq22HQ/ExzOhn6W43o1GpbcEveP/
+ Z3NqvfSJpAiSTw3PWJtCxXt4nP1NcQBDuV3cArPXokV5NWLdfhja69S0GurGicWD/94W
+ D7/A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=O1MLsFyrIiqvStGeCSXekqChu7olGe+ghfPuNjb84x8=;
+ b=BeddTyYn2SYZGLmMb3Vdl+4AJhmc+a+FtuHMr9+8emv8/BhHnV7eQ0RiCuAdIdD0hl
+ GfCyWbpc31dP8EKOVTrCCsknUFMEWVveTcHZZT7JfR7rMdg33S0X+2SuNAUstqWtJMWB
+ rwB4IN3VOx1gDAF0/FzF+XXXY58hAOXP1shwGds7/d1+ZF+fXdkHNJz9R6avehkEOeY8
+ uh8RlfBgawttnHlslB71cv23uCyY2maTC3J1Q10PvMVIFIaTVXJjXqSbIRsCizR0jyEg
+ sN34i6LZ8Wux+KMiSBDOhk6MrT947jS+pXiVDur9155okijgxFbMwbwybE9wRQUxHMvn
+ SZ4w==
+X-Gm-Message-State: APjAAAXkQIdupZx8hMHUHpTI/RxZxV5jU+dS7SbqgMDhzUGO5HMnUhju
+ LCbP3D/Xyk6oLZu5aqFSPglpP3A99JySik/cBP8=
+X-Google-Smtp-Source: APXvYqwwcEOHikHbOz2la4SirUJmOhF3n2AoPZ7ouMvC4ShHI3jKSnpGRLPqufrOZdouzpDb7nl+mJjKrSjFA59b9tI=
+X-Received: by 2002:a5d:46cf:: with SMTP id g15mr53051168wrs.93.1563474285527; 
+ Thu, 18 Jul 2019 11:24:45 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <fdbdbc92-e6fc-4e88-ea8f-bb0bc3224b90@gmail.com>
-Content-Language: en-US
-X-Provags-ID: V03:K1:OMa7ss/FQ3gEvRCvujL0m2ZpsEsDrGKiMMy9r4AE/oiZKECsRXW
- swy0E0Ck11lrwH5Delw6+pPeE9AwIvFPcr9Y5ulqxeJZ4kQzbfZOAD2/Ta+PwEOPOsi5xKK
- eRh+YrKEQohuGFV3Ph19UGA2NMq1jhnz9dylQb9xgPH2nYAPMYNX8R5ZI/mU7L2R+VgK8C+
- 2oz9SR6Brc6/4JdERXzeg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:kcwmTVhPOkQ=:/2opJO7ezNBUMlmY5ZjZmP
- enEnAnPwJ9Wws7agK22p0HPh4On+cPZxgsLyqG5MBJTnpq1jQmUyir4mkjkjbtA9gipH+4WlO
- fbGoVmpXhNdUX/9sMJCyA/Tk/8qXmZW9wDLFhTiP3jMgiKihb16gCCiRnHrm9kkj0ffnRX3O0
- rK7BVGHEBDHX7MNS8YicfX+YO6joWL/9zERWvOuafMVE6lGeneKlfGkDmihhmzM+QS8TbSx4E
- 9MHxN+fhAb4DSdFoA34A36v+4dPbNlnwyCEjsYUT2ev4cYdHxrPTR3zK55yHV5P9DBRcP+OBm
- TQbmhjrx1OlWAiUTJtegviMzICqEVQwyUKr7nMeSw++rKGAweZ9k9Gsud8RYhBPhZdekkQag8
- zr8yWaEzIjrVP4SIZD2nAZPT/jNMJByW59V8Bw7dlf6tGOHFr2fxtepXiljgkKQ+tHwJDCgw3
- 8V/UHBY7KfVGi67CQumTVyByLyZUemOZQ9qGTgq0SOBMvuj+/Ws0ortZ5zuW0HtLw+XBCXemZ
- F5UHOrOpMfnBwmjd5DU5Lbq5rYNszKX1QUS+YIYKTuE/Do3aBJY0UkEHUYGcXtUwEZKukmyct
- 0R5WviOx98d4XnjYmbDfK33PhAh8TIXs46cPbiFMvK2x7dgn6wf13+WO9bYAAkv/i5bwL/rXY
- o0KTh73NsdKF6iHYtp/5i5VQT5LqbfDLZyjsZEF0R6N5VrbovXzbCf/dewtOwUgjVi8H3jUbW
- szmev4LvdGuh0S+enGSsZ8WhJ2rxzQ2p5BWN1BrS4FRq7qwYTdUXSVFmZF7J+D/7TnpH920SX
- f3MA8riCwc58HL/LplD6A1hLV+FAR0Uoht0209H4BRn9hTgA3IgXdvyGFi3JRVP5bIlRNMWnK
- nSO9DAOZ+y2oMVMQr1CsV231ur6/KZeraAO0wjNc9PxGKdtdgU0jx4e9Qzx5tfK4mPT8MQUKH
- fIpE1HrzZmzbGa5qXT6/07ROq/9sJOdmVSaX22sI5rU4WdOk1PlxkgQQffQpj/WFaLZR9bL+4
- wLX6KA+Ex1v2E/fLPkuY9Y4VwhG/n2JxRdJalHrq5ZrGZcwEHK2OYn8icwXuYmlkXaXTEYjzX
- VGMrJPWDAmYk7s=
+References: <20190718151346.3523-1-daniel.baluta@nxp.com>
+ <20190718151346.3523-4-daniel.baluta@nxp.com>
+ <CAL_JsqJ6o9mTjLYjnfcYgfSFKb95W8FseZBBb8RLosB__GNBcw@mail.gmail.com>
+In-Reply-To: <CAL_JsqJ6o9mTjLYjnfcYgfSFKb95W8FseZBBb8RLosB__GNBcw@mail.gmail.com>
+From: Daniel Baluta <daniel.baluta@gmail.com>
+Date: Thu, 18 Jul 2019 21:24:34 +0300
+Message-ID: <CAEnQRZBubFz90Xf8irDwc=erTXmByXX4rkzZy9r8ymfAuQEsZA@mail.gmail.com>
+Subject: Re: [PATCH 3/3] dt-bindings: dsp: fsl: Add DSP core binding support
+To: Rob Herring <robh+dt@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_112200_729882_FE230C0D 
-X-CRM114-Status: GOOD (  14.90  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190718_112447_573264_81C1C81F 
+X-CRM114-Status: GOOD (  18.77  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.21 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wahrenst[at]gmx.net)
+ provider (daniel.baluta[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -102,44 +94,140 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
- Scott Branden <sbranden@broadcom.com>, Stephen Boyd <sboyd@kernel.org>,
- Ray Jui <rjui@broadcom.com>, Linus Walleij <linus.walleij@linaro.org>,
- Adrian Hunter <adrian.hunter@intel.com>, Eric Anholt <eric@anholt.net>,
- Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- linux-arm-kernel@lists.infradead.org, Martin Sperl <kernel@martin.sperl.org>,
- Michael Turquette <mturquette@baylibre.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-rpi-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Dong Aisheng <aisheng.dong@nxp.com>,
+ Peng Fan <peng.fan@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ Devicetree List <devicetree@vger.kernel.org>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Frank Li <Frank.Li@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Daniel Baluta <daniel.baluta@nxp.com>, paul.olaru@nxp.com,
+ NXP Linux Team <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ "S.j. Wang" <shengjiu.wang@nxp.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, sound-open-firmware@alsa-project.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Florian,
-
-Am 18.07.19 um 20:05 schrieb Florian Fainelli:
-> On 7/18/19 10:53 AM, Stefan Wahren wrote:
->> Hi Mark,
->>
-> I was about to submit a change to address that since we also have that
-> shared interrupt on BCM7211:
+On Thu, Jul 18, 2019 at 7:41 PM Rob Herring <robh+dt@kernel.org> wrote:
 >
-> https://github.com/ffainelli/linux/commit/15d96d82bd42991dc71369128131312d5338f65c
+> On Thu, Jul 18, 2019 at 9:13 AM Daniel Baluta <daniel.baluta@nxp.com> wrote:
+> >
+> > This describes the DSP device tree node.
+> >
+> > Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
+> > ---
+> >  .../devicetree/bindings/dsp/fsl,dsp.yaml      | 87 +++++++++++++++++++
+> >  1 file changed, 87 insertions(+)
+> >  create mode 100644 Documentation/devicetree/bindings/dsp/fsl,dsp.yaml
+> >
+> > diff --git a/Documentation/devicetree/bindings/dsp/fsl,dsp.yaml b/Documentation/devicetree/bindings/dsp/fsl,dsp.yaml
+> > new file mode 100644
+> > index 000000000000..d112486eda0e
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/dsp/fsl,dsp.yaml
+> > @@ -0,0 +1,87 @@
+> > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/arm/freescale/fsl,dsp.yaml#
+> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > +
+> > +title: NXP i.MX8 DSP core
+> > +
+> > +maintainers:
+> > +  - Daniel Baluta <daniel.baluta@nxp.com>
+> > +
+> > +description: |
+> > +  Some boards from i.MX8 family contain a DSP core used for
+> > +  advanced pre- and post- audio processing.
+> > +
+> > +properties:
+> > +  compatible:
+> > +    enum:
+> > +      - fsl,imx8qxp-dsp
+> > +
+> > +  reg:
+> > +    description: Should contain register location and length
+> > +
+> > +  clocks:
+> > +    items:
+> > +      - description: ipg clock
+> > +      - description: ocram clock
+> > +      - description: core clock
+> > +
+> > +  clock-names:
+> > +    items:
+> > +      - const: ipg
+> > +      - const: ocram
+> > +      - const: core
+> > +
+> > +  power-domains:
+> > +    description:
+> > +      List of phandle and PM domain specifier as documented in
+> > +      Documentation/devicetree/bindings/power/power_domain.txt
 >
-> Martin's patch is more efficient in terms of amount of register
-> accesses, but I am bit worried (based on the register description) that
-> the INTR bit is only asserted with the read FIFO crossing a certain
-> condition and that a TX only transfer may not be captured by that condition.
+> How many? 4?
+
+Yes, 4 for i.MX8QXP. Also, the same number is for i.MX8QM. Anyhow, I didn't
+added added a limit here because I really don't know how many will be
+in upcoming
+i.MX platforms.
+
 >
-> Maybe we can just check spi_controller::idling to determine if that
-> specific instance generated an interrupt?
-
-sorry, i'm not that SPI expert. I suggest to drop this non-essential
-patch from the series and discuss this separate.
-
-Stefan
-
+> > +
+> > +  mboxes:
+> > +    description:
+> > +      List of <&phandle type channel> - 2 channels for TXDB, 2 channels for RXDB
+> > +      (see mailbox/fsl,mu.txt)
+> > +    maxItems: 4
+> > +
+> > +  mbox-names:
+> > +    items:
+> > +      - const: txdb0
+> > +      - const: txdb1
+> > +      - const: rxdb0
+> > +      - const: rxdb1
+> > +
+> > +  memory-region:
+> > +    description:
+> > +       phandle to a node describing reserved memory (System RAM memory)
+> > +       used by DSP (see bindings/reserved-memory/reserved-memory.txt)
+> > +    maxItems: 1
+> > +
+> > +required:
+> > +  - compatible
+> > +  - reg
+> > +  - clocks
+> > +  - clock-names
+> > +  - power-domains
+> > +  - mboxes
+> > +  - mbox-names
+> > +  - memory-region
+> > +
+> > +examples:
+> > +  - |
+> > +    #include <dt-bindings/firmware/imx/rsrc.h>
+> > +    #include <dt-bindings/clock/imx8-clock.h>
+> > +    dsp@596e8000 {
+> > +        compatbile = "fsl,imx8qxp-dsp";
+> > +        reg = <0x596e8000 0x88000>;
+> > +        clocks = <&adma_lpcg IMX_ADMA_LPCG_DSP_IPG_CLK>,
+> > +                 <&adma_lpcg IMX_ADMA_LPCG_OCRAM_IPG_CLK>,
+> > +                 <&adma_lpcg IMX_ADMA_LPCG_DSP_CORE_CLK>;
+> > +        clock-names = "ipg", "ocram", "core";
+> > +        power-domains = <&pd IMX_SC_R_MU_13A>,
+> > +                        <&pd IMX_SC_R_MU_13B>,
+> > +                        <&pd IMX_SC_R_DSP>,
+> > +                        <&pd IMX_SC_R_DSP_RAM>;
+> > +        mbox-names = "txdb0", "txdb1", "rxdb0", "rxdb1";
+> > +        mboxes = <&lsio_mu13 2 0>, <&lsio_mu13 2 1>, <&lsio_mu13 3 0>, <&lsio_mu13 3 1>;
+> > +    };
+> > --
+> > 2.17.1
+> >
 
 _______________________________________________
 linux-arm-kernel mailing list
