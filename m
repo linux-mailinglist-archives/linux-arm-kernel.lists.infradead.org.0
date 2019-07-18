@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E86066CCBD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 12:26:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A72EF6CCBE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 12:26:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,42 +11,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=ej7JfSGkeXCd/ZdObDHW8nPU+aTLA4odASS+ZQv17fs=; b=JYlSsEzH1r0H2qW0T2amyUXakx
-	64YfIlXjbatjqLl/H+15g4cOVcX4wz99W2DS9ZpkjPusCRYUa9v1nMyIEW6xdKRmFzzn00UuZG7Tp
-	CqAWdLW8iLE+Gtfsw0scz7udFI1P48IXFV3nQGE6QbRPbIBm3RlB7Bo12bl7TDteBX41B/gXFltFs
-	/J35xqJNbUWLya3zGaMERmxm5dFumpQV1SUH4Ct4blQ+4003DtUzawglMPyoiz8j6Lki7W2/4C057
-	Mx/qMGqc+X89bicDMeVAV3ERVY+bm3LGmRu4nOSwBazDBA99RjAeWUhLv1Fpt9svVUOFGIHOFRG44
-	o/X/uW2g==;
+	bh=2fAKgD33P1fWN5RlQvegQZlAsWxAQUt4+ZGleD7IRQM=; b=jnzEDA59Q3aS5D3QMBpJAFSV80
+	+KcYl+DS6Kx7TBnTomfQTn+J1tjg1QTKqVEcq3JWs/zdn3WSNOxmwuHBaoSfhZYf2FMjqaoQypbWF
+	erRrkYrR7dqIoi+JBFgpZbZHDwoEHjXrE4bgs+v1QjzemSjg/zdbPh0xXdczzRGo5rzSmIUiD/UVw
+	1uPFrh+IDWuk9guFFa9frGce7NAYpLbZMyIxjQao29k8kN7Jx+jjJslkeTO5xKIzmP+kXXOjgVEs+
+	7Wy1vf3mL9ErnD3Luv1ovPx9eL5wfTeaHcV07Rd+72J/6WyGZiNk7Q9IrJA3hjkKdlWUmNIUHwtCq
+	GG2iqbmw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ho3c9-0006jl-GS; Thu, 18 Jul 2019 10:26:17 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1ho3cQ-0006y0-Ni; Thu, 18 Jul 2019 10:26:34 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ho3bJ-0006HQ-4F
+ id 1ho3bJ-0006HR-68
  for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 10:25:26 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 5D32D2002D6;
- Thu, 18 Jul 2019 12:25:23 +0200 (CEST)
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 029F41A011A;
+ Thu, 18 Jul 2019 12:25:24 +0200 (CEST)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 50B092000B9;
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id EA4F71A0009;
  Thu, 18 Jul 2019 12:25:23 +0200 (CEST)
 Received: from fsr-ub1864-103.ea.freescale.net
  (fsr-ub1864-103.ea.freescale.net [10.171.82.17])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id BBA77205C7;
- Thu, 18 Jul 2019 12:25:22 +0200 (CEST)
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 60C4A205C7;
+ Thu, 18 Jul 2019 12:25:23 +0200 (CEST)
 From: Daniel Baluta <daniel.baluta@nxp.com>
 To: shawnguo@kernel.org
-Subject: [PATCH v2 2/3] firmware: imx: scu-pd: Add mu13 b side PD range
-Date: Thu, 18 Jul 2019 13:25:18 +0300
-Message-Id: <20190718102519.31855-3-daniel.baluta@nxp.com>
+Subject: [PATCH v2 3/3] firmware: imx: scu-pd: Add IRQSTR_DSP PD range
+Date: Thu, 18 Jul 2019 13:25:19 +0300
+Message-Id: <20190718102519.31855-4-daniel.baluta@nxp.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190718102519.31855-1-daniel.baluta@nxp.com>
 References: <20190718102519.31855-1-daniel.baluta@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_032525_307006_8358F8FB 
-X-CRM114-Status: UNSURE (   7.64  )
+X-CRM114-CacheID: sfid-20190718_032525_366961_8A1B0C5F 
+X-CRM114-Status: UNSURE (   6.50  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -54,7 +54,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -79,44 +79,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-LSIO subsystem contains 14 MU instances.
-
-5 MUs to communicate between AP <-> SCU
-  - side-A PD range managed by AP
-  - side-B PD range managed by SCU
-
-9 MUs to communicate between all cores (AP/M4/DSP).
-  - side-A PD range managed by core-A (AP/M4/DSP)
-  - side-B PD range managed by core-B (AP/M4/DSP).
-
-Communication between AP <-> DSP is done through the
-assigned MU number 13.
-
-So, we power up side-A by the AP and we decide to
-power up side-B also from AP. This is because powering
-it up from DSP would be painful.
-
-Powering up side B from DSP would require the DSP to
-communicate with SCU and to keep things simple we don't
-want that now.
+The DSP interrupt steer gathers interrupts from the system
+and can be used to steer them to DSP.
 
 Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
+Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
 ---
  drivers/firmware/imx/scu-pd.c | 1 +
  1 file changed, 1 insertion(+)
 
 diff --git a/drivers/firmware/imx/scu-pd.c b/drivers/firmware/imx/scu-pd.c
-index 950d30238186..eb9700b66a76 100644
+index eb9700b66a76..b556612207e5 100644
 --- a/drivers/firmware/imx/scu-pd.c
 +++ b/drivers/firmware/imx/scu-pd.c
-@@ -93,6 +93,7 @@ static const struct imx_sc_pd_range imx8qxp_scu_pd_ranges[] = {
- 	{ "kpp", IMX_SC_R_KPP, 1, false, 0 },
- 	{ "fspi", IMX_SC_R_FSPI_0, 2, true, 0 },
- 	{ "mu_a", IMX_SC_R_MU_0A, 14, true, 0 },
-+	{ "mu_b", IMX_SC_R_MU_13B, 1, true, 13 },
+@@ -131,6 +131,7 @@ static const struct imx_sc_pd_range imx8qxp_scu_pd_ranges[] = {
+ 	{ "lcd0-pwm", IMX_SC_R_LCD_0_PWM_0, 1, true, 0 },
+ 	{ "lpuart", IMX_SC_R_UART_0, 4, true, 0 },
+ 	{ "lpspi", IMX_SC_R_SPI_0, 4, true, 0 },
++	{ "irqstr_dsp", IMX_SC_R_IRQSTR_DSP, 1, false, 0 },
  
- 	/* CONN SS */
- 	{ "usb", IMX_SC_R_USB_0, 2, true, 0 },
+ 	/* VPU SS */
+ 	{ "vpu", IMX_SC_R_VPU, 1, false, 0 },
 -- 
 2.17.1
 
