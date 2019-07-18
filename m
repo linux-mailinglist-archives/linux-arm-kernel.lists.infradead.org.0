@@ -2,69 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9CC4C6CADE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 10:22:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 600916CAEA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 10:29:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=99G+Tyy7FqxOO3hn8CLJswNRBqJWuDMwd+hf6yrGgQY=; b=uOtgYjqIrpukS4
-	5UzXDUN95tTknU3RkPbpWmHGfUmYeIr8q1AzAsmPYvCr5gEPG1ySs32pDLc/WdYH3FnCLImu0JlNy
-	RZJt3uUyJ6BDSk72VaYSPZOAFrn2Q4p8G6rQn+bm0/U7ZO3bBZ1oqgKJAtjqZbMUSsIxj1QHoWzyB
-	58GFKxVkPST8taE9d0EIFjiXFmRsJlaM+SU1cXO2PqidIesamSYPYJ2i7FrXk7ETzyMk4MpyMBGfi
-	bEuBNqwMnskcUNs9o2iZOfg9HvNfwKKIlPftnqBOmruc2jv1nrhq28SbGj8eQRsAsCw/iCqTjA9V2
-	StPlVurhQmHNOWUVBysA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=tp6opn/S9ehqtyqg0wFtASB1hKtvXSXBdZZifAmU0qw=; b=eCFbtX8MWTCEodg3f9VMp+wyR
+	uXFovGzSoThGOUEbwpSar0XCDJeBbBA+xcfZ4DsX6Y5j8sIlWa+bHbxcNhNW76p+VIsg/1ao1w/UR
+	DRPhapy5eFpTTO4qO4Pmb5morBlgYT2pXZ6dKOuV7CaZPCLCFN6cgUUatWouJOf8Wn4ikwbjdBLGH
+	ys1Yekdjp+MdVDJ2vB3QCnPSntl+LUYXS7R/oYeCns87uT0CZ2YxgXQj8b10ov8JFn+F/6hr4zx+E
+	38BJFbn1x876qFYzpMG6kHFnvXyvAUa1JgCgKb+cVjMRLhV7nXTwbWyCZs7567+snVaXUOv0zuMNp
+	nmqM982eA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ho1gh-00016i-Co; Thu, 18 Jul 2019 08:22:51 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ho1gP-00016O-DB
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 08:22:34 +0000
-Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3A1A32173B;
- Thu, 18 Jul 2019 08:22:29 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563438153;
- bh=g4IuIvW9pxmuWhc4yVBUShOQ7C6dIX/1CpC97IThK1A=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=KFLfokf78OfrmVaEQ82oKyna3QYuK1PvnANlsbLTa+qRGtykWAWvvcCbmMyV85ut6
- WFvLS2A/4SWlaVUtLc5HRoCWOLAjfm1OCtvQBZhSVEdtJWMDhva2rX4Q996k46K2eM
- L8MXo/fdx6oytGFxjHN5iFZGPRaIHRgDcnG4moPQ=
-Date: Thu, 18 Jul 2019 16:22:17 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Anson.Huang@nxp.com, Marco Felsch <m.felsch@pengutronix.de>
-Subject: Re: [PATCH V3] soc: imx-scu: Add SoC UID(unique identifier) support
-Message-ID: <20190718082216.GO3738@dragon>
-References: <20190702074545.48267-1-Anson.Huang@nxp.com>
+	id 1ho1mn-0003R7-3c; Thu, 18 Jul 2019 08:29:09 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1ho1mY-0003Q2-Vt
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 08:28:56 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3805F28;
+ Thu, 18 Jul 2019 01:28:52 -0700 (PDT)
+Received: from dawn-kernel.cambridge.arm.com (unknown [10.1.197.116])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 147763F71F;
+ Thu, 18 Jul 2019 01:28:49 -0700 (PDT)
+Subject: Re: [PATCHv8 2/5] arm64: dts: qcom: msm8998: Add Coresight support
+To: saiprakash.ranjan@codeaurora.org, gregkh@linuxfoundation.org,
+ mathieu.poirier@linaro.org, leo.yan@linaro.org,
+ alexander.shishkin@linux.intel.com, mike.leach@linaro.org,
+ robh+dt@kernel.org, bjorn.andersson@linaro.org, devicetree@vger.kernel.org,
+ david.brown@linaro.org, mark.rutland@arm.com
+References: <cover.1562940244.git.saiprakash.ranjan@codeaurora.org>
+ <e510df23f741205fac9030f2c95d06d607549caa.1562940244.git.saiprakash.ranjan@codeaurora.org>
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
+Message-ID: <3b192063-f31f-b861-d913-61d737cecc57@arm.com>
+Date: Thu, 18 Jul 2019 09:28:48 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190702074545.48267-1-Anson.Huang@nxp.com>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+In-Reply-To: <e510df23f741205fac9030f2c95d06d607549caa.1562940244.git.saiprakash.ranjan@codeaurora.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_012233_458567_FD9684F9 
-X-CRM114-Status: GOOD (  16.59  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190718_012855_074653_6E1CA4E5 
+X-CRM114-Status: GOOD (  15.61  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,99 +66,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: aisheng.dong@nxp.com, abel.vesa@nxp.com, s.hauer@pengutronix.de,
- linux-kernel@vger.kernel.org, Linux-imx@nxp.com, kernel@pengutronix.de,
- festevam@gmail.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: rnayak@codeaurora.org, marc.w.gonzalez@free.fr,
+ linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ sibis@codeaurora.org, vivek.gautam@codeaurora.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jul 02, 2019 at 03:45:45PM +0800, Anson.Huang@nxp.com wrote:
-> From: Anson Huang <Anson.Huang@nxp.com>
-> 
-> Add i.MX SCU SoC's UID(unique identifier) support, user
-> can read it from sysfs:
-> 
-> root@imx8qxpmek:~# cat /sys/devices/soc0/soc_uid
-> 7B64280B57AC1898
-> 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> Reviewed-by: Daniel Baluta <daniel.baluta@nxp.com>
+Hi Sai,
 
-@Marco, are you happy with it?
-
-Shawn
-
+On 12/07/2019 15:16, Sai Prakash Ranjan wrote:
+> Enable coresight support by adding device nodes for the
+> available source, sinks and channel blocks on MSM8998.
+> 
+> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+> Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+> Acked-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 > ---
-> Change since V2:
-> 	- The SCU FW API for getting UID does NOT have response, so we should set
-> 	  imx_scu_call_rpc()'s 3rd parameter as false and still can check the returned
-> 	  value, and comment is no needed any more.
-> ---
->  drivers/soc/imx/soc-imx-scu.c | 39 +++++++++++++++++++++++++++++++++++++++
->  1 file changed, 39 insertions(+)
+>   arch/arm64/boot/dts/qcom/msm8998.dtsi | 435 ++++++++++++++++++++++++++
+>   1 file changed, 435 insertions(+)
 > 
-> diff --git a/drivers/soc/imx/soc-imx-scu.c b/drivers/soc/imx/soc-imx-scu.c
-> index 676f612..50831eb 100644
-> --- a/drivers/soc/imx/soc-imx-scu.c
-> +++ b/drivers/soc/imx/soc-imx-scu.c
-> @@ -27,6 +27,40 @@ struct imx_sc_msg_misc_get_soc_id {
->  	} data;
->  } __packed;
->  
-> +struct imx_sc_msg_misc_get_soc_uid {
-> +	struct imx_sc_rpc_msg hdr;
-> +	u32 uid_low;
-> +	u32 uid_high;
-> +} __packed;
+> diff --git a/arch/arm64/boot/dts/qcom/msm8998.dtsi b/arch/arm64/boot/dts/qcom/msm8998.dtsi
+> index c13ed7aeb1e0..ad9cb5e8675d 100644
+> --- a/arch/arm64/boot/dts/qcom/msm8998.dtsi
+> +++ b/arch/arm64/boot/dts/qcom/msm8998.dtsi
+> @@ -822,6 +822,441 @@
+
+
+		etr@6048000 {
+> +			compatible = "arm,coresight-tmc", "arm,primecell";
+> +			reg = <0x06048000 0x1000>;
 > +
-> +static ssize_t soc_uid_show(struct device *dev,
-> +			    struct device_attribute *attr, char *buf)
-> +{
-> +	struct imx_sc_msg_misc_get_soc_uid msg;
-> +	struct imx_sc_rpc_msg *hdr = &msg.hdr;
-> +	u64 soc_uid;
-> +	int ret;
-> +
-> +	hdr->ver = IMX_SC_RPC_VERSION;
-> +	hdr->svc = IMX_SC_RPC_SVC_MISC;
-> +	hdr->func = IMX_SC_MISC_FUNC_UNIQUE_ID;
-> +	hdr->size = 1;
-> +
-> +	ret = imx_scu_call_rpc(soc_ipc_handle, &msg, false);
-> +	if (ret) {
-> +		pr_err("%s: get soc uid failed, ret %d\n", __func__, ret);
-> +		return ret;
-> +	}
-> +
-> +	soc_uid = msg.uid_high;
-> +	soc_uid <<= 32;
-> +	soc_uid |= msg.uid_low;
-> +
-> +	return sprintf(buf, "%016llX\n", soc_uid);
-> +}
-> +
-> +static DEVICE_ATTR_RO(soc_uid);
-> +
->  static int imx_scu_soc_id(void)
->  {
->  	struct imx_sc_msg_misc_get_soc_id msg;
-> @@ -102,6 +136,11 @@ static int imx_scu_soc_probe(struct platform_device *pdev)
->  		goto free_revision;
->  	}
->  
-> +	ret = device_create_file(soc_device_to_device(soc_dev),
-> +				 &dev_attr_soc_uid);
-> +	if (ret)
-> +		goto free_revision;
-> +
->  	return 0;
->  
->  free_revision:
-> -- 
-> 2.7.4
-> 
+> +			clocks = <&rpmcc RPM_SMD_QDSS_CLK>, <&rpmcc RPM_SMD_QDSS_A_CLK>;
+> +			clock-names = "apb_pclk", "atclk";
+> +			arm,scatter-gather;
+
+Please could you confirm that you have tested the scatter-gather mode with ETR ? 
+Either via perf/sysfs. Please could you share your results ? Unless verified
+this is going to be fatal for the system.
+
+Similarly for other platforms.
+
+Kind regards
+Suzuki
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
