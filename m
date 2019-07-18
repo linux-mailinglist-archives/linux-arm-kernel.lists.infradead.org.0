@@ -2,157 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B949B6D445
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 20:58:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C6756D456
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 21:06:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Cg6fs4OM+UPYFJXNyg+Nyk52Gt5ajDR1iyIHXBIh3+8=; b=SsZBUv+bMXhOLN
-	7cX3wXss6WiNEk29/NLX09Dv7oCO5AmjuyOD9+Shug6zKw2Yl5+CMKew5Pl/YjLId4BUwfOsFkI4q
-	qgxvvPKKT/INJDUXsAZtkhWiGlbfdMezLgJf84Uf6a65B8y6XJBPsfDgNOjBU9LW/Y1yDsph4F6Db
-	krMLeTgMOeNnf6QTY/cT8t/jSMeNskUDBeu+T15gzFSvsydi1W5G4KGdyfvbsUVAZlBUD7WId5xhL
-	tMbv9do1Hu8xvlefx5ydUkNTqtJKtp81oa18isYRmoDXL4d2zBidZWpfnvQILU7etkOqaMqmKQwNj
-	ZaVjrcTxX8IBK/WobhHg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=OYzSEufZOl1WlOa6RbrED5kBp/+wB4HT4r+2ls26DHk=; b=rpn
+	2E6CdljNi2TklL71MyenyUibmaUUg4voRSjhiYVNTHzJD1ZZPZZwAp4wWoZG/LN13Tu1+g0eg61X/
+	JYTaJ7NoMh7vcZC0+8ARNFFWxSKawpE9ixUAs5+hBRTH6Mw8oL3RUg4wPXP7d8AgV5dUTIWuovSq5
+	fdu71N5ZbTSNF21jHiP/SUvB8BtSOAPXqummLTlEpTxUvx2eJv32dAukB51vbJhPaS62kY2pumtwH
+	rnOPi0UTaMfB9nyCsxRpZXhWWK0RulS/dQI9vUbF5lpYhEqIgfLU9brv+CbxCmaL5AV0LcQTKen/4
+	T6PZGPF2m7EKyrUZYooHcQzCeiJUQlA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoBc0-0008R8-R7; Thu, 18 Jul 2019 18:58:40 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1hoBjO-0004j6-Nz; Thu, 18 Jul 2019 19:06:18 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hoBbo-0008Qe-BY; Thu, 18 Jul 2019 18:58:29 +0000
-Received: by mail-wm1-x342.google.com with SMTP id p74so26572153wme.4;
- Thu, 18 Jul 2019 11:58:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=oAlLFP+b5zUZZJkte4OyhOejGsBw/wFGPIF0P/9GGho=;
- b=tY7IMnm+QTUbn+73EHx8OTX1xCmEHNzk/cD0Z/ZCI0sHj+oauus6wfJynNC19eAMbc
- kf2V32x8EPoCYviRh7hOc95HAytGfS9+lTgh1YIk23NFLwIYAIOu55mecyir4tkEoGCa
- 3/YN1UxP9C3wDkljsrAImdN7ptnwMaooh7Ko8mKr7GgSAvStDK6WtcbMcXKqJ1OjRvuj
- 4H12JO8oOtdlGa5IKMpYInDBSrmPMb9NqMQFOaFAk3cCQ19jgA8fYG1bqw19F/fVZTfb
- mttTvZ0OmdvT/Ba6qa61x9khVtKi64bLtd7UHSP5qZx1pRbV58SIbCw44R6WZtjIjf7y
- Qizw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=oAlLFP+b5zUZZJkte4OyhOejGsBw/wFGPIF0P/9GGho=;
- b=tlIm0lu7QF7yjLMKmjcf5UN/PVpDH8FNN572/gImoYabwYSi7Hv9Fkg3c1v3ZhEed3
- psjA//PpBCs9tXXYaZfo68UAtdyWSKLF3vusYUhu4slMkoUZBaidbEGQ8y2Lfh4jdaHr
- Msho+zTY/IsfGS1HrnXHXQ5b/yD9nOwX90aGavhcAwtklt56cg+TQC52sV/Mbafs3rfa
- sNSGtQ9Ra5xa1UMAmDrHBlXIVSUEKxxwBRQsoJh53cGpVT1tQZouAr0sBSawP6K7CWLu
- 5uNtAQzxDDcmZxK3AVv0M1qCXZOIgORfn3mMWqpVJXESKPL7QsRJkL4t9RH1Qi6qXOsr
- QDIQ==
-X-Gm-Message-State: APjAAAUyv0BIRFYbsOw6fImDT63VW0buSItr6saD0FdicbJbdwf4yEJo
- MH5WVeTIK7oIjpgm2x9K0w+R1Mua
-X-Google-Smtp-Source: APXvYqwUcMDAzsHI73mQIreixfhh/DajX4b4gNmOkgE/TxUEYTeVDNPRs6gKYy+8iJK2Ss1Zrxm2lA==
-X-Received: by 2002:a1c:c747:: with SMTP id x68mr43691147wmf.138.1563476305920; 
- Thu, 18 Jul 2019 11:58:25 -0700 (PDT)
-Received: from [10.67.49.31] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id x24sm28190141wmh.5.2019.07.18.11.58.22
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 18 Jul 2019 11:58:25 -0700 (PDT)
-Subject: Re: [PATCH RFC 00/18] ARM: Add minimal Raspberry Pi 4 support
-To: Eric Anholt <eric@anholt.net>, Stefan Wahren <wahrenst@gmx.net>,
- Florian Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>,
- Scott Branden <sbranden@broadcom.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
- <sboyd@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
- Adrian Hunter <adrian.hunter@intel.com>, Mark Brown <broonie@kernel.org>
-References: <1563393026-17118-1-git-send-email-wahrenst@gmx.net>
- <877e8fgp1t.fsf@anholt.net>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
-Message-ID: <27411ef2-cbe2-b1a7-f9c3-15d71a1302ce@gmail.com>
-Date: Thu, 18 Jul 2019 11:58:15 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
-MIME-Version: 1.0
-In-Reply-To: <877e8fgp1t.fsf@anholt.net>
-Content-Language: en-US
+ id 1hoBjB-0004hw-UO
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 19:06:08 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id EFDD62003A4;
+ Thu, 18 Jul 2019 21:06:02 +0200 (CEST)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
+ [134.27.226.22])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id E163320011C;
+ Thu, 18 Jul 2019 21:06:02 +0200 (CEST)
+Received: from fsr-ub1864-112.ea.freescale.net
+ (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 560B3205C7;
+ Thu, 18 Jul 2019 21:06:02 +0200 (CEST)
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Stephen Boyd <sboyd@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>
+Subject: [RFC v3] clk: imx8mm: Add dram freq switch support
+Date: Thu, 18 Jul 2019 22:06:00 +0300
+Message-Id: <d2ff5121bced3e5632ff246a51e1f56ee3fe03f9.1563476560.git.leonard.crestez@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_115828_400700_F26394B6 
-X-CRM114-Status: GOOD (  20.76  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190718_120606_265364_1C738F83 
+X-CRM114-Status: GOOD (  18.78  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -164,60 +65,460 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Dong Aisheng <aisheng.dong@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
+ Anson Huang <Anson.Huang@nxp.com>, linux-imx@nxp.com,
+ Alexandre Bailon <abailon@baylibre.com>, kernel@pengutronix.de,
+ Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Jacky Bai <ping.bai@nxp.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 7/18/19 11:45 AM, Eric Anholt wrote:
-> Stefan Wahren <wahrenst@gmx.net> writes:
-> 
->> This series adds minimal support for the new Raspberry Pi 4, so we are able
->> to login via debug UART.
->>
->> Patch 1-5:   Prepare platform and DTS for the new SoC BMC2838
->> Patch 6-9:   Enable support for emmc2 on BCM2838
->> Patch 10-14: Enable pinctrl for BCM2838
->> Patch 15:    Enable SPI support for BCM2838
->> Patch 16-18: Add Raspberry Pi 4 DTS support
->>
->> Unfortunately the Raspberry Pi Foundation didn't released a
->> peripheral documentation for the new SoC yet. So we only have a preliminary
->> datasheet [1] and reduced schematics [2].
->>
->> This series is marked as RFC because some parts (e.g. pinctrl) are still
->> work in progress.
->>
->> [1] - https://www.raspberrypi.org/documentation/hardware/raspberrypi/bcm2711/rpi_DATA_2711_1p0_preliminary.pdf
->> [2] - https://www.raspberrypi.org/documentation/hardware/raspberrypi/schematics/rpi_SCH_4b_4p0_reduced.pdf
->>
->> Discussible things:
->> - SoC compatible BCM2711 (as on the SoC label) vs BCM2838 (existing naming scheme)
->> - ARCH membership ARCH_BCM2835 vs ARCH_BCMSTB
-> 
-> Thanks for taking this on!
-> 
-> I would love to see us drop this silly upstream/downstream compatible
-> string naming scheme and just use 2711 (or 7211 for modules shared with
-> 7211 that were enabled there first).  However, I don't feel that
-> strongly about it when I'm not the one doing the work.
+Add a compound clock encapsulating dram frequency switch support for
+imx8m chips. This allows higher-level DVFS code to manipulate dram
+frequency using standard clock framework APIs.
 
-2711 and 7211 are really different chips so we would need to keep
-differentiating the two form a hardware description perspective, even if
-the driver behavior is strictly the same (that's a software
-implementation detail).
+Only some preparation is done inside the kernel, the actual freq switch
+is performed from TF-A code which runs from an SRAM area. After the freq
+is changed the rates and parents are refreshed on linux side.
 
-> 
-> Other than the SPI shared interrupt change that looks dodgy, and a
-> preference for the clock change being data-driven instead, I would be
-> willing to ack the whole thing.
-> 
+A "clk_hw_reinit_parent" function is added to deal with external
+reparenting. It's similar to CLK_GET_RATE_NOCACHE but for muxes (and
+needs to be called explicitly).
 
-It does look good to me as well, will do a more thorough pass again.
+Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+
+---
+Objections were raised to earlier hacky versions that this doesn't
+really belong inside clk, however if we need to "refresh" clk tree after
+a complex frequency switch then it makes sense to do it inside a clk
+provider rather than some other random driver.
+
+There are other clk implementations which internally wrap multiple
+clocks or deal with DDR or are implemented via SMC: imx_clk_cpu,
+tegra/clk-emc and rockchip/clk-ddr.
+
+Out-of-tree ATF patches are required, this branch can be used for
+testing: https://github.com/cdleonard/arm-trusted-firmware/commits/imx_2.0.y_caf_busfreq
+
+Firmware API could be adjusted to make this more palatable for
+inclusion; for example maybe info about new parents could be provided so
+that CLK can enable them in advance? In pratice they're always on.
+
+Also a linux branch with extra patches for testing:
+https://github.com/cdleonard/linux/commits/next_imx8mm_busfreq
+
+Changes since v2:
+* Remove IRQ handling (thanks Jacky for ATF patch)
+* Fetch supported rates from firmware instead of hardcoding imx8mm-evk.
+Should now work for all imx8m chips/board/ddr types
+* Add clk_hw_reinit_parent instead of explicit set_parent
+* Use fewer consumer APIs in provider
+* Explicitly mark dram_alt/apb with GET_RATE_NOCACHE
+Link to v2: https://patchwork.kernel.org/patch/11021565/
+
+diff --git a/drivers/clk/clk.c b/drivers/clk/clk.c
+index b1c79a58d734..be9663b1e254 100644
+--- a/drivers/clk/clk.c
++++ b/drivers/clk/clk.c
+@@ -2388,10 +2388,35 @@ void clk_hw_reparent(struct clk_hw *hw, struct clk_hw *new_parent)
+ 		return;
+ 
+ 	clk_core_reparent(hw->core, !new_parent ? NULL : new_parent->core);
+ }
+ 
++/**
++ * clk_hw_reinit_parent - update clock tree after reparent outside framework
++ * @clk: clock source
++ * @parent: parent clock source
++ *
++ * This function should be used after a clock is reparented externally (for
++ * example with a firmware call or some ASM sequence).
++ *
++ * It will call clk_ops.get_parent again and reassign parents.
++ */
++void clk_hw_reinit_parent(struct clk_hw *hw)
++{
++	struct clk_core *new_parent, *old_parent;
++
++	lockdep_assert_held(&prepare_lock);
++	if (!hw)
++		return;
++
++	new_parent = __clk_init_parent(hw->core);
++	old_parent = __clk_set_parent_before(hw->core, new_parent);
++	clk_core_reparent(hw->core, new_parent);
++	__clk_set_parent_after(hw->core, new_parent, old_parent);
++}
++EXPORT_SYMBOL_GPL(clk_hw_reinit_parent);
++
+ /**
+  * clk_has_parent - check if a clock is a possible parent for another
+  * @clk: clock source
+  * @parent: parent clock source
+  *
+diff --git a/drivers/clk/imx/Makefile b/drivers/clk/imx/Makefile
+index 05641c64b317..0fc7195d6d3a 100644
+--- a/drivers/clk/imx/Makefile
++++ b/drivers/clk/imx/Makefile
+@@ -10,10 +10,11 @@ obj-$(CONFIG_MXC_CLK) += \
+ 	clk-fixup-div.o \
+ 	clk-fixup-mux.o \
+ 	clk-frac-pll.o \
+ 	clk-gate-exclusive.o \
+ 	clk-gate2.o \
++	clk-imx8m-dram.o \
+ 	clk-pfd.o \
+ 	clk-pfdv2.o \
+ 	clk-pllv1.o \
+ 	clk-pllv2.o \
+ 	clk-pllv3.o \
+diff --git a/drivers/clk/imx/clk-imx8m-dram.c b/drivers/clk/imx/clk-imx8m-dram.c
+new file mode 100644
+index 000000000000..d6971fe72cbe
+--- /dev/null
++++ b/drivers/clk/imx/clk-imx8m-dram.c
+@@ -0,0 +1,242 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Copyright (c) 2019 NXP
++ */
++
++#include <linux/arm-smccc.h>
++#include <linux/clk.h>
++#include <linux/clk-provider.h>
++#include <linux/device.h>
++#include <linux/interrupt.h>
++#include <linux/slab.h>
++#include "clk.h"
++
++#define IMX_SIP_DDR_DVFS                	0xc2000004
++
++/* Values starting from 0 switch to specific frequency */
++#define IMX_SIP_DDR_FREQ_SET_HIGH		0x00
++
++/* Deprecated after moving IRQ handling to ATF */
++#define IMX_SIP_DDR_DVFS_WAIT_CHANGE		0x0F
++
++/* Query available frequencies. */
++#define IMX_SIP_DDR_DVFS_GET_FREQ_COUNT		0x10
++#define IMX_SIP_DDR_DVFS_GET_FREQ_INFO		0x11
++
++/* Hardware limitation */
++#define IMX8M_DRAM_MAX_OPP			4
++
++struct imx8m_dram_opp {
++	unsigned long	rate;
++	unsigned int	smcarg;
++};
++
++/*
++ * This clk wraps the following structure (abridged):
++ *
++ * +----------+       |\            +------+
++ * | dram_pll |-------|M| dram_core |      |
++ * +----------+       |U|---------->| D    |
++ *                 /--|X|           |  D   |
++ *   dram_alt_root |  |/            |   R  |
++ *                 |                |    C |
++ *            +---------+           |      |
++ *            |FIX DIV/4|           |      |
++ *            +---------+           |      |
++ *  composite:     |                |      |
++ * +----------+    |                |      |
++ * | dram_alt |----/                |      |
++ * +----------+                     |      |
++ * | dram_apb |-------------------->|      |
++ * +----------+                     +------+
++ *
++ * The DDR data rate is 4x dram_core
++ *
++ * The APB interface is only used for control registers and can otherwise
++ * be shut off.
++ *
++ * The dram_pll is used for higher rates and dram_alt is used for lower rates.
++ */
++struct dram_clk {
++	struct clk_hw	hw;
++	struct clk_hw	*dram_core;
++	struct clk_hw	*dram_apb;
++	struct clk_hw	*dram_pll;
++	struct clk_hw	*dram_alt;
++	struct clk_hw	*dram_alt_root;
++
++	unsigned int		opp_count;
++	struct imx8m_dram_opp	table[IMX8M_DRAM_MAX_OPP];
++};
++
++static inline struct dram_clk *to_dram_clk(struct clk_hw *hw)
++{
++	return container_of(hw, struct dram_clk, hw);
++}
++
++static int update_bus_freq(int target_freq)
++{
++	struct arm_smccc_res res;
++	u32 online_cpus = 0;
++	int cpu = 0;
++
++	local_irq_disable();
++
++	for_each_online_cpu(cpu)
++		online_cpus |= (1 << (cpu * 8));
++
++	/* change the ddr freqency */
++	arm_smccc_smc(IMX_SIP_DDR_DVFS, target_freq, online_cpus,
++		0, 0, 0, 0, 0, &res);
++
++	local_irq_enable();
++
++	return 0;
++}
++
++/* Round UP */
++static struct imx8m_dram_opp *dram_clk_find_rate(
++		struct dram_clk *priv,
++		unsigned long rate)
++{
++	int i;
++
++	for (i = priv->opp_count - 1; i >= 0; --i)
++		if (priv->table[i].rate >= rate)
++			return &priv->table[i];
++
++	return &priv->table[0];
++}
++
++/* Round UP taking min and max into account */
++static int dram_clk_determine_rate(
++		struct clk_hw *hw,
++		struct clk_rate_request *req)
++{
++	struct dram_clk *priv = to_dram_clk(hw);
++	unsigned long tab_rate;
++	int i;
++
++	for (i = priv->opp_count - 1; i >= 0; --i) {
++		tab_rate = priv->table[i].rate;
++		if (tab_rate >= req->rate &&
++		    tab_rate >= req->min_rate &&
++		    tab_rate <= req->max_rate)
++		{
++			req->rate = tab_rate;
++			return 0;
++		}
++	}
++
++	return -EINVAL;
++}
++
++static int dram_clk_set_rate(
++		struct clk_hw *hw,
++		unsigned long rate,
++		unsigned long parent_rate)
++{
++	struct dram_clk *priv = to_dram_clk(hw);
++	struct imx8m_dram_opp *opp = dram_clk_find_rate(priv, rate);
++	int ret;
++
++	/*
++	 * The actual switch is done inside ATF, here just reload parents.
++	 * all we do here is reload parents
++	 */
++	clk_prepare_enable(priv->dram_alt_root->clk);
++	clk_prepare_enable(priv->dram_pll->clk);
++	ret = update_bus_freq(opp->smcarg);
++	clk_hw_reinit_parent(priv->dram_alt);
++	clk_hw_reinit_parent(priv->dram_apb);
++	clk_hw_reinit_parent(priv->dram_core);
++	clk_disable_unprepare(priv->dram_alt_root->clk);
++	clk_disable_unprepare(priv->dram_pll->clk);
++
++	if (ret == 0)
++		pr_debug("%s freq set to %lu\n", clk_hw_get_name(hw), opp->rate);
++	else
++		pr_err("%s freq set fail: %d\n", clk_hw_get_name(hw), ret);
++
++	return ret;
++}
++
++static unsigned long dram_clk_recalc_rate(struct clk_hw *hw, unsigned long parent_rate)
++{
++	struct dram_clk *priv = to_dram_clk(hw);
++
++	return clk_hw_get_rate(priv->dram_core);
++}
++
++static const struct clk_ops dram_clk_ops = {
++	.determine_rate	= dram_clk_determine_rate,
++	.recalc_rate	= dram_clk_recalc_rate,
++	.set_rate	= dram_clk_set_rate,
++};
++
++struct clk* imx8m_dram_clk(
++		const char *name, const char* parent_name,
++		struct clk_hw* dram_core,
++		struct clk_hw* dram_apb,
++		struct clk_hw* dram_pll,
++		struct clk_hw* dram_alt,
++		struct clk_hw* dram_alt_root)
++{
++	struct arm_smccc_res res;
++	struct dram_clk *priv;
++	struct clk *clk;
++	struct clk_init_data init;
++	int opp_count, index;
++	int err;
++
++	/*
++	 * Count available frequencies
++	 * An error here means DDR DVFS not supported by firmware
++	 */
++	arm_smccc_smc(IMX_SIP_DDR_DVFS, IMX_SIP_DDR_DVFS_GET_FREQ_COUNT,
++			0, 0, 0, 0, 0, 0, &res);
++	opp_count = res.a0;
++	if (opp_count <= 0 || opp_count > IMX8M_DRAM_MAX_OPP)
++		return ERR_PTR(-ENOSYS);
++
++	priv = kzalloc(sizeof(*priv), GFP_KERNEL);
++	if (!priv)
++		return ERR_PTR(-ENOMEM);
++
++	priv->dram_apb = dram_apb;
++	priv->dram_core = dram_core;
++	priv->dram_pll = dram_pll;
++	priv->dram_alt = dram_alt;
++	priv->dram_alt_root = dram_alt_root;
++
++	priv->opp_count = opp_count;
++	for (index = 0; index < opp_count; ++index) {
++		arm_smccc_smc(IMX_SIP_DDR_DVFS, IMX_SIP_DDR_DVFS_GET_FREQ_INFO,
++				index, 0, 0, 0, 0, 0, &res);
++		/* Results should be strictly positive */
++		if ((long)res.a0 <= 0) {
++			err = -ENOSYS;
++			goto err_free_priv;
++		}
++		priv->table[index].smcarg = index;
++		priv->table[index].rate = res.a0 * 250000;
++	}
++
++	init.name = name;
++	init.ops = &dram_clk_ops;
++	init.flags = CLK_IS_CRITICAL;
++	init.parent_names = &parent_name;
++	init.num_parents = 1;
++
++	priv->hw.init = &init;
++	clk = clk_register(NULL, &priv->hw);
++	if (IS_ERR(clk)) {
++		err = PTR_ERR(clk);
++		goto err_free_priv;
++	}
++	return clk;
++
++err_free_priv:
++	kfree(priv);
++	return ERR_PTR(err);
++}
+diff --git a/drivers/clk/imx/clk-imx8mm.c b/drivers/clk/imx/clk-imx8mm.c
+index 6b8e75df994d..e37442a12fed 100644
+--- a/drivers/clk/imx/clk-imx8mm.c
++++ b/drivers/clk/imx/clk-imx8mm.c
+@@ -523,12 +523,14 @@ static int __init imx8mm_clocks_init(struct device_node *ccm_node)
+ 	/* IPG */
+ 	clks[IMX8MM_CLK_IPG_ROOT] = imx_clk_divider2("ipg_root", "ahb", base + 0x9080, 0, 1);
+ 	clks[IMX8MM_CLK_IPG_AUDIO_ROOT] = imx_clk_divider2("ipg_audio_root", "audio_ahb", base + 0x9180, 0, 1);
+ 
+ 	/* IP */
+-	clks[IMX8MM_CLK_DRAM_ALT] = imx8m_clk_composite("dram_alt", imx8mm_dram_alt_sels, base + 0xa000);
+-	clks[IMX8MM_CLK_DRAM_APB] = imx8m_clk_composite_critical("dram_apb", imx8mm_dram_apb_sels, base + 0xa080);
++	clks[IMX8MM_CLK_DRAM_ALT] = __imx8m_clk_composite("dram_alt", imx8mm_dram_alt_sels, base + 0xa000,
++			CLK_GET_RATE_NOCACHE);
++	clks[IMX8MM_CLK_DRAM_APB] = __imx8m_clk_composite("dram_apb", imx8mm_dram_apb_sels, base + 0xa080,
++			CLK_GET_RATE_NOCACHE | CLK_IS_CRITICAL);
+ 	clks[IMX8MM_CLK_VPU_G1] = imx8m_clk_composite("vpu_g1", imx8mm_vpu_g1_sels, base + 0xa100);
+ 	clks[IMX8MM_CLK_VPU_G2] = imx8m_clk_composite("vpu_g2", imx8mm_vpu_g2_sels, base + 0xa180);
+ 	clks[IMX8MM_CLK_DISP_DTRC] = imx8m_clk_composite("disp_dtrc", imx8mm_disp_dtrc_sels, base + 0xa200);
+ 	clks[IMX8MM_CLK_DISP_DC8000] = imx8m_clk_composite("disp_dc8000", imx8mm_disp_dc8000_sels, base + 0xa280);
+ 	clks[IMX8MM_CLK_PCIE1_CTRL] = imx8m_clk_composite("pcie1_ctrl", imx8mm_pcie1_ctrl_sels, base + 0xa300);
+@@ -660,10 +662,18 @@ static int __init imx8mm_clocks_init(struct device_node *ccm_node)
+ 	clks[IMX8MM_CLK_GPT_3M] = imx_clk_fixed_factor("gpt_3m", "osc_24m", 1, 8);
+ 
+ 	clks[IMX8MM_CLK_DRAM_ALT_ROOT] = imx_clk_fixed_factor("dram_alt_root", "dram_alt", 1, 4);
+ 	clks[IMX8MM_CLK_DRAM_CORE] = imx_clk_mux2_flags("dram_core_clk", base + 0x9800, 24, 1, imx8mm_dram_core_sels, ARRAY_SIZE(imx8mm_dram_core_sels), CLK_IS_CRITICAL);
+ 
++	clks[IMX8MM_CLK_DRAM] = imx8m_dram_clk(
++			"dram", "dram_core_clk",
++			__clk_get_hw(clks[IMX8MM_CLK_DRAM_CORE]),
++			__clk_get_hw(clks[IMX8MM_CLK_DRAM_APB]),
++			__clk_get_hw(clks[IMX8MM_DRAM_PLL_OUT]),
++			__clk_get_hw(clks[IMX8MM_CLK_DRAM_ALT]),
++			__clk_get_hw(clks[IMX8MM_CLK_DRAM_ALT_ROOT]));
++
+ 	clks[IMX8MM_CLK_ARM] = imx_clk_cpu("arm", "arm_a53_div",
+ 					   clks[IMX8MM_CLK_A53_DIV],
+ 					   clks[IMX8MM_CLK_A53_SRC],
+ 					   clks[IMX8MM_ARM_PLL_OUT],
+ 					   clks[IMX8MM_CLK_24M]);
+diff --git a/drivers/clk/imx/clk.h b/drivers/clk/imx/clk.h
+index d94d9cb079d3..f0f42b3a5d8d 100644
+--- a/drivers/clk/imx/clk.h
++++ b/drivers/clk/imx/clk.h
+@@ -468,6 +468,15 @@ struct clk *imx8m_clk_composite_flags(const char *name,
+ 
+ struct clk_hw *imx_clk_divider_gate(const char *name, const char *parent_name,
+ 		unsigned long flags, void __iomem *reg, u8 shift, u8 width,
+ 		u8 clk_divider_flags, const struct clk_div_table *table,
+ 		spinlock_t *lock);
++
++struct clk* imx8m_dram_clk(
++		const char *name, const char* parent_name,
++		struct clk_hw* dram_core,
++		struct clk_hw* dram_apb,
++		struct clk_hw* dram_pll,
++		struct clk_hw* dram_alt,
++		struct clk_hw* dram_alt_root);
++
+ #endif
+diff --git a/include/dt-bindings/clock/imx8mm-clock.h b/include/dt-bindings/clock/imx8mm-clock.h
+index 07e6c686f3ef..dde146b923a8 100644
+--- a/include/dt-bindings/clock/imx8mm-clock.h
++++ b/include/dt-bindings/clock/imx8mm-clock.h
+@@ -246,8 +246,10 @@
+ #define IMX8MM_CLK_GPIO5_ROOT			227
+ 
+ #define IMX8MM_CLK_SNVS_ROOT			228
+ #define IMX8MM_CLK_GIC				229
+ 
+-#define IMX8MM_CLK_END				230
++#define IMX8MM_CLK_DRAM				230
++
++#define IMX8MM_CLK_END				231
+ 
+ #endif
+diff --git a/include/linux/clk-provider.h b/include/linux/clk-provider.h
+index 2ae7604783dd..f85f1fb8621b 100644
+--- a/include/linux/clk-provider.h
++++ b/include/linux/clk-provider.h
+@@ -836,10 +836,11 @@ int __clk_mux_determine_rate_closest(struct clk_hw *hw,
+ 				     struct clk_rate_request *req);
+ int clk_mux_determine_rate_flags(struct clk_hw *hw,
+ 				 struct clk_rate_request *req,
+ 				 unsigned long flags);
+ void clk_hw_reparent(struct clk_hw *hw, struct clk_hw *new_parent);
++void clk_hw_reinit_parent(struct clk_hw *hw);
+ void clk_hw_set_rate_range(struct clk_hw *hw, unsigned long min_rate,
+ 			   unsigned long max_rate);
+ 
+ static inline void __clk_hw_set_clk(struct clk_hw *dst, struct clk_hw *src)
+ {
 -- 
-Florian
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
