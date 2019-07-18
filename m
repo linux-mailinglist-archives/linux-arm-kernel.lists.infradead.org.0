@@ -2,63 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 823C76D261
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 18:52:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF3BE6D266
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 18:53:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dc3xJ100ZeRv/StgC2ezPn+z0AXH76vDz8audFMFx+g=; b=cW+eD2hXcEvEuc
-	6M6NSOHVdXtDEFYVlss0DKKNac56yJtgDnBUX0Sa7T8PWd/SzRofrX3Kw7lYI8uw6MaNpeGBZRe7V
-	LeAnaaVVn1IhcG4VcRwLZQVOvxWnYKYycSMrZxFPximX+4rKoTGw2wFhD8qZVPQRVDIDXb3CRTp1n
-	AuRUtFX9eNqiVnXDd2r2SrDq1+izvTkJnM4ztE+5JrjCm9lt/4q0Y9XMk33vMmsX74Rg/2/4+EZUS
-	UOOa9aGv9OUPP3g5AicWyccZ7AeJV0jVUqLHzq8g26XvSsTUcqx8kHeDUW8tiISmdTHOMNHCvWRhM
-	CLrQW4Kp+VB9bEoxBb8Q==;
+	List-Owner; bh=mtjpW/VBxiwShFoymxVNUa67u7gjCMM9j1OoCoRw6i0=; b=R+3idee/cqpzQt
+	kgNqyTpFlZ/0PyUgaRf8+CNNJ337yfL5ycuPQvS8hIhL2UPx7zwPdluTSoPMuVhKdjPDXo1ipAxWE
+	YMYeyQ+GV0NKG9Dm4OhPKc74cfkxJ/ikBXXFcOaFX8dibnb6YtPEt14/SmlPJrs1FDilOxAvc1MeQ
+	JxKmzI816tydIK+i9KRnDKpcO+mdxihP2dtSoQihhikY6q/W2XXE77ogVmEdm72tBQ13CL+nWSeL4
+	S7brzOjesigLGDTtmqtKP6O9Ylw7q+y4N0M8mvFLEETEYuzp3SbWfGW3bD/60sn1oW5IH7yiN9W4W
+	97kHCP0t4DByC5R44Vrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ho9db-0002uH-QC; Thu, 18 Jul 2019 16:52:12 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1ho9eR-0003IK-V4; Thu, 18 Jul 2019 16:53:04 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ho9dO-0002tQ-So; Thu, 18 Jul 2019 16:52:00 +0000
-Received: by mail-pf1-x442.google.com with SMTP id b13so12900779pfo.1;
- Thu, 18 Jul 2019 09:51:56 -0700 (PDT)
+ id 1ho9eE-0003HU-OX; Thu, 18 Jul 2019 16:52:52 +0000
+Received: by mail-pl1-x643.google.com with SMTP id y8so14173731plr.12;
+ Thu, 18 Jul 2019 09:52:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:openpgp:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=ZdV1mAzD3Cgqxh8f2pMmvuwnJDxnjQimZT7HAnQWZkc=;
- b=cIFigrq5d7WpQNn4DL3MiEfG1Tg6ms0HbI7qTrBjDx1NKi2h/O0MnDlU7a6gZvB0cm
- /Fb5YCaSq9DuBENmAvsnqKfBYg95UXxtAOQ2A+w+qMyVIJIR7m6HxBe7cMYIdk/9VD1L
- O1kEzCJQG7CiFs+lP7GSkCldOKmLGSD+IcmhpCi8sxvDbsrjfJ5+jpjQpVDGduZMK0kN
- L2QY5G3Kr6yx/U0YJgG1eAkd+oGmUjyTSVN/6KsdwWFGt2BDuDyvLsI2tsBwpTwWP9JU
- 3bH2gzL4Ohz9Ej8nFjNXLCPPGjsojGrrTFuhdHjX6IaBDY1XoyvxhBioTyF54JbkZz6D
- XRPQ==
+ bh=B9sXbIAgCUxYbdMP7tdn/QQo9lsNyd/aDKcl5v3D8RA=;
+ b=TCteih+D7dKNx87H8hXAvFATrkrFijrBrYpkrzkW7KHHPYj10IoUBDMuR35/P2rinM
+ dfOuRHULT6V1KnJdWIT8dZizQzw/+DQ5tRKCsfNqPu3ewSvfwX225S/IK+5i8GwNyJCX
+ zCNPG4y1ZogBH5FLv+Z8x265Of/oiTGPMT3TfF3Fu2MbN/tpV+nr7IF2JRRiKBOXJ8Ma
+ bvufOeKdU513oB1ynVfhLNvryhVmdfwubGqDpNZxjip/HeCsQkZub/q2Q63JxDUVYneA
+ wNXnYvXW4qpL67qWoqY5eRGdW4JTXyKBwuiOB60iQ+S0m92BmrwDFMw9fUZMwPgmGZso
+ XzQw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:message-id
  :date:user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=ZdV1mAzD3Cgqxh8f2pMmvuwnJDxnjQimZT7HAnQWZkc=;
- b=k3L6ScCewUZckAU22DZAeKEjdnhLCCQnAT7Kl5WszG49DXkEWXcmKMwG9YDTSEQeSE
- Att60yNuayVm82c0mx7H7BSmsHpBvNIfTWNah7+BZDy15K5vUlMa1B0Njc/QApYMSHoM
- KuOsCaqd6A9ciuZYnh5+iNfJr8WYg53VzMqKKMrHpCsdsim6yFptJ1pjYiFQdyN4AcmQ
- ooYYkyUcTHD1+nSAptsPOkRQb6YSfKHT0Chalo4txygJGkTFvGIxTYubY2lqZHn7AyAS
- 5NSZcjVJQvmSr5oqWdYpb4VA2U5iONEmATCXAxxmQ5yT57iuqWNPymXVbETtpNpAe68+
- 72tg==
-X-Gm-Message-State: APjAAAWrmjQWLd2mjWmjAVCA3QYZ+ikXxBL4r/r/AB7wdfywWTozID6u
- s1qBzXz7iPT7HQh7cm1pEV1IszBp
-X-Google-Smtp-Source: APXvYqyWs5m3meIu1COhQwH0E/qK9hh8EvzdQjsZwYpEk0qlCEhcJB2KCFmOP7K1Xf4ii3tTZHilQQ==
-X-Received: by 2002:a65:43c2:: with SMTP id n2mr48665564pgp.110.1563468715632; 
- Thu, 18 Jul 2019 09:51:55 -0700 (PDT)
+ bh=B9sXbIAgCUxYbdMP7tdn/QQo9lsNyd/aDKcl5v3D8RA=;
+ b=VerqbvzQJ4EthweeSCr26xLQjoHM3/FdwNzCsK2U2HUTIamBmSOYMLDVYf/w1bMs/+
+ 6fQOW4oMyLV+g19TD+sPsLWvIEm4sh4ujT8f+MBuo5TSe/h1C8/0gQOm145xnN+AnKWo
+ QzjXe6gYIHMmBQYzS+KPXVEdh77lPlZhqfHCSK/HeXeRhIOsU/EoI+rh4buaUjpPxcYC
+ +f+HhiRyMefel3jRb+ZtQYFnew135LNjBemnqwTegJw/Wayk4zW/s99ilktFbGtQaNgZ
+ c1UvTKeteH68kHL7dJakA1S79MdJ7OZr+0KxPSxRF2+d33J1u34bj4dAemsL+XD374pX
+ kaow==
+X-Gm-Message-State: APjAAAUj8GhNpLKRwfbL3UQ/bVmjBeVeFVYvgWjjBANKM2Azow3VBXot
+ kDpxdPPpRu06q912BYTkXb6pg/tS
+X-Google-Smtp-Source: APXvYqxgeoD5rDkr7xeJEqCRyltcCncP/y9ZbNPntH98GjiSYNsZOXrP3ja+LLmtTtyj5WZlWhvjrg==
+X-Received: by 2002:a17:902:8d92:: with SMTP id
+ v18mr51721388plo.211.1563468769579; 
+ Thu, 18 Jul 2019 09:52:49 -0700 (PDT)
 Received: from [10.69.78.41] ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id g18sm48837025pgm.9.2019.07.18.09.51.47
+ by smtp.gmail.com with ESMTPSA id r188sm45669521pfr.16.2019.07.18.09.52.42
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 18 Jul 2019 09:51:53 -0700 (PDT)
-Subject: Re: [PATCH RFC 07/18] clk: bcm2835: Add BCM2838_CLOCK_EMMC2 support
+ Thu, 18 Jul 2019 09:52:48 -0700 (PDT)
+Subject: Re: [PATCH RFC 09/18] mmc: sdhci-iproc: Add support for emmc2 of the
+ BCM2838
 To: Matthias Brugger <matthias.bgg@gmail.com>,
- Stefan Wahren <wahrenst@gmx.net>, Eric Anholt <eric@anholt.net>,
- Florian Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>,
+ Florian Fainelli <f.fainelli@gmail.com>, Stefan Wahren <wahrenst@gmx.net>,
+ Eric Anholt <eric@anholt.net>, Ray Jui <rjui@broadcom.com>,
  Scott Branden <sbranden@broadcom.com>,
  Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
@@ -67,27 +69,29 @@ To: Matthias Brugger <matthias.bgg@gmail.com>,
  <sboyd@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
  Adrian Hunter <adrian.hunter@intel.com>, Mark Brown <broonie@kernel.org>
 References: <1563393026-17118-1-git-send-email-wahrenst@gmx.net>
- <1563393026-17118-8-git-send-email-wahrenst@gmx.net>
- <f6d8fecd-94d3-a5a8-2d4c-c1ae2b6a0919@gmail.com>
+ <1563393026-17118-10-git-send-email-wahrenst@gmx.net>
+ <048fc038-4ba8-ddc9-fbdb-aefa7a35b41a@gmail.com>
+ <2a400a9b-9351-ba6f-adff-3e3916efa6be@gmail.com>
+ <74ee5be5-3840-3a70-0f2a-60d86bcbeefa@gmail.com>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Openpgp: preference=signencrypt
-Message-ID: <3b691366-81b1-efe3-8b7e-a81f0fc9c2fb@gmail.com>
-Date: Thu, 18 Jul 2019 09:51:43 -0700
+Message-ID: <978251ed-502c-168b-705e-12e596c05685@gmail.com>
+Date: Thu, 18 Jul 2019 09:52:40 -0700
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <f6d8fecd-94d3-a5a8-2d4c-c1ae2b6a0919@gmail.com>
+In-Reply-To: <74ee5be5-3840-3a70-0f2a-60d86bcbeefa@gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_095158_937606_60547E9B 
-X-CRM114-Status: GOOD (  21.40  )
+X-CRM114-CacheID: sfid-20190718_095250_805698_C980A778 
+X-CRM114-Status: GOOD (  17.91  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (f.fainelli[at]gmail.com)
@@ -120,110 +124,41 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 7/18/2019 1:47 AM, Matthias Brugger wrote:
+On 7/18/2019 9:48 AM, Matthias Brugger wrote:
 > 
 > 
-> On 17/07/2019 21:50, Stefan Wahren wrote:
->> The new BCM2838 supports an additional clock for the emmc2 block.
->> So add a new compatible to register this clock only for BCM2838.
+> On 18/07/2019 18:40, Florian Fainelli wrote:
 >>
->> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
->> ---
->>  drivers/clk/bcm/clk-bcm2835.c | 33 +++++++++++++++++++++++++++++++--
->>  1 file changed, 31 insertions(+), 2 deletions(-)
 >>
->> diff --git a/drivers/clk/bcm/clk-bcm2835.c b/drivers/clk/bcm/clk-bcm2835.c
->> index 867ae3c..5fe4695 100644
->> --- a/drivers/clk/bcm/clk-bcm2835.c
->> +++ b/drivers/clk/bcm/clk-bcm2835.c
->> @@ -31,7 +31,8 @@
->>  #include <linux/delay.h>
->>  #include <linux/io.h>
->>  #include <linux/module.h>
->> -#include <linux/of.h>
->> +#include <linux/of_device.h>
->> +
->>  #include <linux/platform_device.h>
->>  #include <linux/slab.h>
->>  #include <dt-bindings/clock/bcm2835.h>
->> @@ -114,6 +115,8 @@
->>  #define CM_AVEODIV		0x1bc
->>  #define CM_EMMCCTL		0x1c0
->>  #define CM_EMMCDIV		0x1c4
->> +#define CM_EMMC2CTL		0x1d0
->> +#define CM_EMMC2DIV		0x1d4
+>> On 7/18/2019 1:34 AM, Matthias Brugger wrote:
 >>
->>  /* General bits for the CM_*CTL regs */
->>  # define CM_ENABLE			BIT(4)
->> @@ -1950,6 +1953,15 @@ static const struct bcm2835_clk_desc clk_desc_array[] = {
->>  		.frac_bits = 8,
->>  		.tcnt_mux = 39),
+>> [snip]
 >>
->> +	/* EMMC2 clock (only available for BCM2838) */
->> +	[BCM2838_CLOCK_EMMC2]	= REGISTER_PER_CLK(
->> +		.name = "emmc2",
->> +		.ctl_reg = CM_EMMC2CTL,
->> +		.div_reg = CM_EMMC2DIV,
->> +		.int_bits = 4,
->> +		.frac_bits = 8,
->> +		.tcnt_mux = 42),
->> +
->>  	/* General purpose (GPIO) clocks */
->>  	[BCM2835_CLOCK_GP0]	= REGISTER_PER_CLK(
->>  		.name = "gp0",
->> @@ -2101,6 +2113,14 @@ static int bcm2835_mark_sdc_parent_critical(struct clk *sdc)
->>  	return clk_prepare_enable(parent);
->>  }
+>>>>  static const struct of_device_id sdhci_iproc_of_match[] = {
+>>>>  	{ .compatible = "brcm,bcm2835-sdhci", .data = &bcm2835_data },
+>>>> +	{ .compatible = "brcm,bcm2838-emmc2", .data = &bcm2838_data },
+>>>
+>>> As far as I'm aware of, the RPi4 FW provides a device-tree with compatible:
+>>> brcm,bcm2711-emmc2. Shouldn't we add this as well so that we can use the DT
+>>> passed by the FW?
 >>
->> +bool bcm2835_has_clk(size_t index) {
->> +	return index != BCM2838_CLOCK_EMMC2;
->> +}
->> +
->> +bool bcm2838_has_clk(size_t index) {
->> +	return true;
->> +}
->> +
->>  static int bcm2835_clk_probe(struct platform_device *pdev)
->>  {
->>  	struct device *dev = &pdev->dev;
->> @@ -2109,9 +2129,14 @@ static int bcm2835_clk_probe(struct platform_device *pdev)
->>  	struct resource *res;
->>  	const struct bcm2835_clk_desc *desc;
->>  	const size_t asize = ARRAY_SIZE(clk_desc_array);
->> +	bool (*has_clk_func)(size_t);
->>  	size_t i;
->>  	int ret;
+>> Downstream typically used 2708, 2709, 2710 because those are the
+>> Broadcom internal part numbers, and upstream has been using what's on
+>> the package: 2835, 2836, 2837, 2838. At the end of the day, it does not
+>> make much functional difference, but if if we have to be consistent,
+>> then Stefan's approach here follows the consistency here.
 >>
->> +	has_clk_func = of_device_get_match_data(&pdev->dev);
->> +	if (!has_clk_func)
->> +		return -ENODEV;
->> +
->>  	cprman = devm_kzalloc(dev,
->>  			      struct_size(cprman, onecell.hws, asize),
->>  			      GFP_KERNEL);
->> @@ -2146,6 +2171,9 @@ static int bcm2835_clk_probe(struct platform_device *pdev)
->>  	hws = cprman->onecell.hws;
->>
->>  	for (i = 0; i < asize; i++) {
->> +		if (!has_clk_func(i))
->> +			continue;
->> +
 > 
-> I think that's very hacky. Can't we just create a per SoC list which get's
-> passed via .data and in probe we iterate through that list and enable the
-> clocks? That would make clear which clocks are just for bcm2838, basically emmc2.
+> So I propose to add both, so that we can use the upstream kernel with downstream
+> devcie-tree. I'm thinking of the device-tree provided at run-time by the FW.
 
-Or within the structure, add a flag that indicates whether the clock is
-available or not for a given chip? That would avoid having to introduce
-bcm283x_has_clk() functions that needs to maintain a possibly growing
-list of clocks. You would still have to check the flag though.
+Adding both for the Pi4 (2711) specifically, or should we go back and
+also add bcm2708/9/10?
 
-The trade-off here is a large table (larger than necessary) versus more
-run time checks.
-
-We could consider having a base table that gets copied into a bcm2838
-specific table, and overlay that base structure with what's specific
-with bcm2838, is that you have in mind?
+The Device Tree on the Pi can be updated (AFAICT), so the ABI concerns,
+and the requirement for upstream to maintain backwards compatibility
+with a binding that has not been submitted/reviewed is not going to be a
+compelling argument IMHO.
 -- 
 Florian
 
