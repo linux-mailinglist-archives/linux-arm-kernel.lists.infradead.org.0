@@ -2,62 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D74616CA94
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 10:02:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B7776CA8D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 10:02:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=0jYaZiaemLKl56Fs+Y/Sv2xChtVloowjckh+xYVTrCg=; b=YKrOaHtU6RyK2k
-	KrghRyVsoT3EsgMbMj+u3bkuDKhloSLM6ZlcGZzPpdnDz/7DJFti/4SNOHKnCpFJHEz0H5zy/LUxx
-	CFSeUHwO1qpuHheyVmmnRm+Et8qzMmimt5IS1CQaTJfDa34e5tq1nzPyCjxSt+pRfkAux/BR8BiFx
-	CIlr1TyZ1hwWS9+nnvpFlft5AfMM+KRB1PZ67D3CLZFU6XGbADYYjXFxMOJfv/sqRKIAorXnwu6bd
-	DTFHoQH4j9BI15S/kTsUSTvN5NzAB4Ty49/3yOoTrIf+2iyRxWPfhEJKQwGOeu4oE4l9NIK45zWSm
-	9P0NlkaN+NnEfCv1sVdQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GcthsAATWklj5JbVB6/wyvh4ZIyiUmaDQYt3VaWBzn4=; b=uo0bab4luj+ApV
+	MCZuF+zkAsAaUGU6S+SXAKx4AwP5ekY1VAT9/melz3vBm0plbQNQY3bP7/qn0DKGMhZOJYaBslFxK
+	960Dl2dUHXtK3psSqmcXEqoL2Bv8YnenxuNkpCOU1rwe2yhtYll0XbeBEdrfNuuhWn1MGXZS1P+Q2
+	jI551sxTrqJqOXU/2TO8gLo+ZgrfcFZ/1iOvpPxRfenF6sruLfdmpQs7yU0M1yW3KeIpt39xB1Hiq
+	yvVa8SBgDnAK3IOF5i8s3XB5FgtAZWjU2NjoRoshBIuMIP1+Axkfn7XoznY4mEMrPfF7hq5bIrd7w
+	ot6Mm1jgVevT2x9+xG9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ho1NE-0001Yy-DO; Thu, 18 Jul 2019 08:02:44 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1ho1MO-0000xU-Th; Thu, 18 Jul 2019 08:01:53 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ho1MV-0001Bi-SM; Thu, 18 Jul 2019 08:02:01 +0000
-X-UUID: cdc9013166ae418b8e45c091fc82a43c-20190718
-X-UUID: cdc9013166ae418b8e45c091fc82a43c-20190718
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ id 1ho1M9-0000vw-H9; Thu, 18 Jul 2019 08:01:39 +0000
+X-UUID: 6ad5c864ddc6460fb00fae8c4852cdaa-20190718
+X-UUID: 6ad5c864ddc6460fb00fae8c4852cdaa-20190718
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <zhiyong.tao@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1960186096; Thu, 18 Jul 2019 00:01:33 -0800
-Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ with ESMTP id 1877761854; Thu, 18 Jul 2019 00:01:34 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
  15.0.1395.4; Thu, 18 Jul 2019 01:01:32 -0700
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 18 Jul 2019 16:01:23 +0800
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 18 Jul 2019 16:01:25 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 18 Jul 2019 16:01:22 +0800
+ Transport; Thu, 18 Jul 2019 16:01:24 +0800
 From: Zhiyong Tao <zhiyong.tao@mediatek.com>
 To: <robh+dt@kernel.org>, <jic23@kernel.org>, <knaack.h@gmx.de>,
  <lars@metafoo.de>, <pmeerw@pmeerw.net>
-Subject: [PATCH v1 0/2] AUXADC: support efuse calibration on MT818 
-Date: Thu, 18 Jul 2019 16:01:17 +0800
-Message-ID: <20190718080119.30707-1-zhiyong.tao@mediatek.com>
+Subject: [PATCH v1 1/2] arm64: dts: mt8183: auxadc: add efuse information in
+ device tree
+Date: Thu, 18 Jul 2019 16:01:18 +0800
+Message-ID: <20190718080119.30707-2-zhiyong.tao@mediatek.com>
 X-Mailer: git-send-email 2.12.5
+In-Reply-To: <20190718080119.30707-1-zhiyong.tao@mediatek.com>
+References: <20190718080119.30707-1-zhiyong.tao@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 655C57B55616B30867184C87976E81790A029DB57092B498944C9C7194938B5F2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_010159_969148_E6AFEE38 
-X-CRM114-Status: UNSURE (   5.05  )
+X-CRM114-CacheID: sfid-20190718_010137_592735_FF06C1E3 
+X-CRM114-Status: UNSURE (   7.88  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -74,7 +74,8 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: devicetree@vger.kernel.org, sean.wang@mediatek.com,
- srv_heupstream@mediatek.com, linux-iio@vger.kernel.org, erin.lo@mediatek.com,
+ srv_heupstream@mediatek.com, linux-iio@vger.kernel.org,
+ Zhiyong Tao <zhiyong.tao@mediatek.com>, erin.lo@mediatek.com,
  hui.liu@mediatek.com, linux-kernel@vger.kernel.org, sj.huang@mediatek.com,
  linux-mediatek@lists.infradead.org, eddie.huang@mediatek.com,
  matthias.bgg@gmail.com, yingjoe.chen@mediatek.com, jg_poxu@mediatek.com,
@@ -84,19 +85,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series includes two patches:
-1.Add mt8183 auxadc efuse information in device tree.
-1.Add mt8183 efuse calibration function in auxadc driver.
+The commit add add efuse information in device tree
 
-Zhiyong Tao (2):
-  arm64: dts: mt8183: auxadc: add efuse information in device tree
-  auxadc: mediatek: support efuse calibration in auxadc driver
+Signed-off-by: Zhiyong Tao <zhiyong.tao@mediatek.com>
+Signed-off-by: jg_poxu <jg_poxu@mediatek.com>
+---
+ arch/arm64/boot/dts/mediatek/mt8183.dtsi | 5 +++++
+ 1 file changed, 5 insertions(+)
 
- arch/arm64/boot/dts/mediatek/mt8183.dtsi |  5 +++
- drivers/iio/adc/mt6577_auxadc.c          | 71 ++++++++++++++++++++++++++++++++
- 2 files changed, 76 insertions(+)
-
---
+diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
+index c2749c4631bc..59b4f3d933b5 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
+@@ -261,6 +261,8 @@
+ 			clocks = <&infracfg CLK_INFRA_AUXADC>;
+ 			clock-names = "main";
+ 			#io-channel-cells = <1>;
++			nvmem-cells = <&auxadc_calibration>;
++			nvmem-cell-names = "calibration-data";
+ 			status = "disabled";
+ 		};
+ 
+@@ -382,6 +384,9 @@
+ 			compatible = "mediatek,mt8183-efuse",
+ 				     "mediatek,efuse";
+ 			reg = <0 0x11f10000 0 0x1000>;
++			auxadc_calibration: auxadccali@1b4 {
++				reg = <0x1b4 0x4>;
++			};
+ 		};
+ 
+ 		mfgcfg: syscon@13000000 {
+-- 
 2.12.5
 
 
