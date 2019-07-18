@@ -2,79 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B375E6D26B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 18:55:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F08E6D2DD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 19:36:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kK0Yg+aYkFmsu0jzqOvtOXz40exyp9A1wfjtdawb9ps=; b=AHFq+6rz9vB8Co
-	sfmcL3kBQJnfcktUwdCRbc0dyfhbVD75Dus3LxlqWF1M1eSDUTRl/jkrJaYTqjNdodu0Izg8WeZcg
-	yZgu7gAaTw5hEZ7DdMdqJj8aH72awdKK9ZLxMdZGpZLOGlDeLFr5GkXy/OAzIZKzNW1nCKMHwbM6I
-	6hAgTyW3+OANn6cYuy3l7a1zyv9Vry6rCF/aMEoftb8sWFgaKdhYthQa4GduHJFIDkAuHOSZjJz2F
-	OjPlTuaMd1Xzf/ig5/Srwp83gex2wlkwBIt5UOpFVOpaVWMFGzZeBBn4SD6ercvhTZnPgbQzcK3JJ
-	8CGhwgkTZhGPbtH03M8w==;
+	List-Owner; bh=m/czJmmNn7Arb+dXp+RsMbJIwWo3jYL9orPO5KwHIYo=; b=SVlh51mSaLYsur
+	/hp5xrTXjpliJq60kbba8ALA9TcGtGhaxwaxSsjUkn31qcDtrDQG9K3JXo0DriCd6ti5r/z9deQay
+	HtSSQZ1qzIBX8g4D7c/Aw/hHmtleLla7KqmRQ18aS0dy4KFmL02YyqPDxjG+cB0dytH29iSwlMNPE
+	TDGvlprYcJ5T9/Ge5LBa8OCKaB8brNdT4G6mNR68ftRIYRA5HwwPO9mEvOhouiKYUcvpwY22d/C7d
+	kLOvMsysfyeWP0aceD9voYoiouqTOc18h+9yv086Kx7QxbcftlK1/CmHxG/ra8JCxfbVG1CVo/Xmq
+	wUpD9G2QjDxYnEQPy1Mw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ho9h1-0004y4-14; Thu, 18 Jul 2019 16:55:43 +0000
-Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
+	id 1hoAKn-0000Jf-K5; Thu, 18 Jul 2019 17:36:49 +0000
+Received: from mail-yw1-xc43.google.com ([2607:f8b0:4864:20::c43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ho9gn-0004xX-SF
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 16:55:31 +0000
-Received: by mail-vs1-xe41.google.com with SMTP id v6so19629041vsq.4
+ id 1hoAKc-0000IY-AQ
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 17:36:39 +0000
+Received: by mail-yw1-xc43.google.com with SMTP id i138so12527429ywg.8
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 18 Jul 2019 09:55:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=UbJA1LvVSBKZi34z8EvemKhQnL5/c6wyw0dFUXsJ7H4=;
- b=v+KXmWJJHgzxhzH/ByzH+UGInDESBlyCnkXDLOYXkFL108hatd/9puy+QFFba3m5WD
- bhtTKrLRw2YAQnFRC5M36S3T5i8Oe9gGBtNFE7ZdCJ/1I4gLyUmnIjKdORLB/9odeMnw
- FhmH4wyOwzolrzleyGwIui2FQ8MLa67j+7E28mZP0dcFPtbM1CXxugMkHsdZeP6VkJ9g
- pXT21JDk/94eK4JtwLYOUv7st8v723fVliWhRYVAZKpLQy8dM/d+IyfGekDqo5K749U+
- kzXKq432p3MGhIBhb+v8kvOZnTcKOkNOpxCcu9VamQd7Pt/FKJqG22ZTWj0nzsbngz0X
- 0K4A==
+ Thu, 18 Jul 2019 10:36:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=poorly.run; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=GcxDt0FJq/Q5nQPNi8FyeQ+pWfJar+1/aIszgyAzxqc=;
+ b=OdFu2z7pBe3my11Ww4bUV5tI7KuWrWNF2YKs9uuWrX5z3s6d6Ad9/bXXTrJicDQm8G
+ 5xbcwJ8FAkd+gRq9jNEj9wSWALLA6AiPeG81ujeFQXwz1ojoSFYKHUskb/Z4XENyTRZK
+ P5bVB8YZwpY8Fgpq3x4kZIeJ2+Gsx+6aky7pXn/G4SJZF/bT6D+CsqBBfvS/Hw+/MwKM
+ vvoqwEayWpw0pm2dgiwIOkU5wunXHzIzy8IiSlPVSdYIXjEHc9qHq930U5w/FBzytLbr
+ uqwmmKiBGQa5cLIHW9xHuQRH9fWI2Ln0+9XCAmYVfJrNz7IZlgqyQ88LeStgwHfk7JuJ
+ hapA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=UbJA1LvVSBKZi34z8EvemKhQnL5/c6wyw0dFUXsJ7H4=;
- b=LvSmuxTYjsdJqy0pTC99B90t59UAzVnwl5bkWOz6O6kCmrUr+0e8GLF7P5cPa4mpyA
- /xsHySbjkgDq5WfJvNEu4pzG/4hCxStyem6wDG/ZaG4uM3sx0FsEHWGM55gPU8un4E5w
- fDFpxigX0wGzuvGa9MQpMNJsyrqyhy0n3rf0gxCeA/RlZPbbktm1iN6JQ/AIUSfhfmfF
- FEApN9zy6PQN+cGUzWOzaTUE13IOd1idr4388lgiKFKXPtr5ZAoYU02ls6Bqn7ELPDAB
- 5awm3flPzuYrSxypPD9DchxsoOZ7r0Yig5q23w6kCBsKJqtCpWoIIx0MD6TMk73jZIBc
- y5wQ==
-X-Gm-Message-State: APjAAAVM7LxK0MdNzXwCbCj7zF8/chPfgMvEIGBS7OXbqP+iYOSza8a5
- cbV/2HRL/Pt++a6PSHLj6i0gz834FO8fyLFsr0ZIEg==
-X-Google-Smtp-Source: APXvYqz3H7NW9n8k3hccLVjUE4vzSLFYDceNlDN7TRygVSGTeYT1EPbUZoWXTC9qw+g+yzQp96xVbuz30qFeCiP1+X8=
-X-Received: by 2002:a67:61c7:: with SMTP id
- v190mr28723774vsb.165.1563468928660; 
- Thu, 18 Jul 2019 09:55:28 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=GcxDt0FJq/Q5nQPNi8FyeQ+pWfJar+1/aIszgyAzxqc=;
+ b=oWVvT0D53AqLfyH+wLRYZ4nkSBQKB3+NBkuDAYcye/53d+5+L/t1/JjMksmXVJPRAc
+ z/IvNhE91R3j1xziLj7Qr6fbKPnc/dsjGKQ3JH8rPoM6m7T9aHGNpba5ItspWCiY0s7z
+ LnUcBfXWZNz+smcHab+AtWihMvFgGOE5uhx1htdNfauKgqhOLAMMXBKkH3vGSKJiP33s
+ 7h5YlraaNfRxRIasQPJ9HADl5jF9d/bux64JO4s15668aw5nLRYTa1SKIrXGNOrtTCN3
+ iFI9jDWk9IYbYXkB4Ms/HHeijXtZ9YB9raWxOPrf8mhBgwe+h5wDuIzlDRV+SUv/13kf
+ GsdA==
+X-Gm-Message-State: APjAAAWNIWgVlK3fwrn6QjaP0X7za4hiwwfohE//5Ji5hBtoS2qT6xf6
+ tNR8YBgzigAAE4LBO4D3sn37xg==
+X-Google-Smtp-Source: APXvYqy83QIZS5TdGzUNaA3dWvj2m8DDjthwvTWjojfBcTlcP/oTRJZ6UAzdGN0lxGtCHnn5fvBIoQ==
+X-Received: by 2002:a81:98f:: with SMTP id 137mr30487003ywj.293.1563471395250; 
+ Thu, 18 Jul 2019 10:36:35 -0700 (PDT)
+Received: from localhost ([2620:0:1013:11:89c6:2139:5435:371d])
+ by smtp.gmail.com with ESMTPSA id j207sm6575870ywj.35.2019.07.18.10.36.34
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Thu, 18 Jul 2019 10:36:34 -0700 (PDT)
+Date: Thu, 18 Jul 2019 13:36:34 -0400
+From: Sean Paul <sean@poorly.run>
+To: Sam Ravnborg <sam@ravnborg.org>
+Subject: Re: [PATCH v1 01/11] drm/panel: make drm_panel.h self-contained
+Message-ID: <20190718173634.GD31819@art_vandelay>
+References: <20190718161507.2047-1-sam@ravnborg.org>
+ <20190718161507.2047-2-sam@ravnborg.org>
 MIME-Version: 1.0
-References: <20190513192300.653-1-ulf.hansson@linaro.org>
- <20190513192300.653-15-ulf.hansson@linaro.org>
- <20190716155317.GB32490@e121166-lin.cambridge.arm.com>
- <CAPDyKFrJ75mo+s6GuUCTQ-nVv7C+9YJyTVmwuBZ2RKFOvOi3Nw@mail.gmail.com>
- <20190718133053.GA27222@e121166-lin.cambridge.arm.com>
-In-Reply-To: <20190718133053.GA27222@e121166-lin.cambridge.arm.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Thu, 18 Jul 2019 18:54:52 +0200
-Message-ID: <CAPDyKFr4NmichQk4uf+Wgbanh=5idKYY=37WCb6U_hNFDVYg=w@mail.gmail.com>
-Subject: Re: [PATCH 14/18] drivers: firmware: psci: Manage runtime PM in the
- idle path for CPUs
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Content-Disposition: inline
+In-Reply-To: <20190718161507.2047-2-sam@ravnborg.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_095529_917963_F1F9CEF8 
-X-CRM114-Status: GOOD (  20.31  )
+X-CRM114-CacheID: sfid-20190718_103638_409058_F95F2F39 
+X-CRM114-Status: GOOD (  17.01  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:c43 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -96,83 +99,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Kevin Hilman <khilman@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>, Linux PM <linux-pm@vger.kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Amit Kucheria <amit.kucheria@linaro.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, Tony Lindgren <tony@atomide.com>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Lina Iyer <ilina@codeaurora.org>, Sudeep Holla <sudeep.holla@arm.com>,
- Niklas Cassel <niklas.cassel@linaro.org>,
- Souvik Chakravarty <souvik.chakravarty@arm.com>,
- "Raju P . L . S . S . S . N" <rplsssn@codeaurora.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: David Airlie <airlied@linux.ie>, Liviu Dudau <Liviu.Dudau@arm.com>,
+ dri-devel@lists.freedesktop.org, Chris Wilson <chris@chris-wilson.co.uk>,
+ Eric Anholt <eric@anholt.net>, Rob Herring <robh@kernel.org>,
+ Stefan Agner <stefan@agner.ch>, Maxime Ripard <maxime.ripard@bootlin.com>,
+ CK Hu <ck.hu@mediatek.com>, Thierry Reding <treding@nvidia.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Chunming Zhou <david1.zhou@amd.com>,
+ Jani Nikula <jani.nikula@intel.com>,
+ Intel Graphics Development <intel-gfx@lists.freedesktop.org>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Boris Brezillon <boris.brezillon@bootlin.com>,
+ linux-mediatek@lists.infradead.org,
+ Lionel Landwerlin <lionel.g.landwerlin@intel.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Sean Paul <sean@poorly.run>,
+ linux-arm-kernel@lists.infradead.org, Boris Brezillon <bbrezillon@kernel.org>,
+ Thomas Zimmermann <tzimmermann@suse.de>, Rob Clark <robdclark@gmail.com>,
+ Noralf =?iso-8859-1?Q?Tr=F8nnes?= <noralf@tronnes.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Christian =?iso-8859-1?Q?K=F6nig?= <christian.koenig@amd.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 18 Jul 2019 at 15:31, Lorenzo Pieralisi
-<lorenzo.pieralisi@arm.com> wrote:
->
-> On Thu, Jul 18, 2019 at 12:35:07PM +0200, Ulf Hansson wrote:
-> > On Tue, 16 Jul 2019 at 17:53, Lorenzo Pieralisi
-> > <lorenzo.pieralisi@arm.com> wrote:
-> > >
-> > > On Mon, May 13, 2019 at 09:22:56PM +0200, Ulf Hansson wrote:
-> > > > When the hierarchical CPU topology layout is used in DT, let's allow the
-> > > > CPU to be power managed through its PM domain, via deploying runtime PM
-> > > > support.
-> > > >
-> > > > To know for which idle states runtime PM reference counting is needed,
-> > > > let's store the index of deepest idle state for the CPU, in a per CPU
-> > > > variable. This allows psci_cpu_suspend_enter() to compare this index with
-> > > > the requested idle state index and then act accordingly.
-> > >
-> > > I do not see why a system with two CPU CPUidle states, say CPU retention
-> > > and CPU shutdown, should not be calling runtime PM on CPU retention
-> > > entry.
-> >
-> > If the CPU idle governor did select the CPU retention for the CPU, it
-> > was probably because the target residency for the CPU shutdown state
-> > could not be met.
->
-> The kernel does not know what those cpu states represent, so, this is an
-> assumption you are making and it must be made clear that this code works
-> as long as your assumption is valid.
->
-> If eg a "cluster" retention state has lower target_residency than
-> the deepest CPU idle state this assumption is wrong.
-
-Good point, you are right. I try to find a place to document this assumption.
-
->
-> And CPUidle and genPD governor decisions are not synced anyway so,
-> again, this is an assumption, not a certainty.
->
-> > In this case, there is no point in allowing any other deeper idle
-> > states for cluster/package/system, since those have even greater
-> > residencies, hence calling runtime PM doesn't make sense.
->
-> On the systems you are testing on.
-
-So what you are saying typically means, that if all CPUs in the same
-cluster have entered the CPU retention state, on some system the
-cluster may also put into a cluster retention state (assuming the
-target residency is met)?
-
-Do you know of any systems that has these characteristics?
-
-[...]
-
-Kind regards
-Uffe
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVGh1LCBKdWwgMTgsIDIwMTkgYXQgMDY6MTQ6NTdQTSArMDIwMCwgU2FtIFJhdm5ib3JnIHdy
+b3RlOgo+IEZyb206IEphbmkgTmlrdWxhIDxqYW5pLm5pa3VsYUBpbnRlbC5jb20+Cj4gCj4gRml4
+IGJ1aWxkIHdhcm5pbmcgaWYgZHJtX3BhbmVsLmggaXMgYnVpbHQgd2l0aCBDT05GSUdfT0Y9biBv
+cgo+IENPTkZJR19EUk1fUEFORUw9biBhbmQgaW5jbHVkZWQgd2l0aG91dCB0aGUgcHJlcmVxdWlz
+aXRlIGVyci5oOgo+IAo+IC4vaW5jbHVkZS9kcm0vZHJtX3BhbmVsLmg6IEluIGZ1bmN0aW9uIOKA
+mG9mX2RybV9maW5kX3BhbmVs4oCZOgo+IC4vaW5jbHVkZS9kcm0vZHJtX3BhbmVsLmg6MjAzOjk6
+IGVycm9yOiBpbXBsaWNpdCBkZWNsYXJhdGlvbiBvZiBmdW5jdGlvbiDigJhFUlJfUFRS4oCZIFst
+V2Vycm9yPWltcGxpY2l0LWZ1bmN0aW9uLWRlY2xhcmF0aW9uXQo+ICAgcmV0dXJuIEVSUl9QVFIo
+LUVOT0RFVik7Cj4gICAgICAgICAgXn5+fn5+fgo+IC4vaW5jbHVkZS9kcm0vZHJtX3BhbmVsLmg6
+MjAzOjk6IGVycm9yOiByZXR1cm5pbmcg4oCYaW504oCZIGZyb20gYSBmdW5jdGlvbiB3aXRoIHJl
+dHVybiB0eXBlIOKAmHN0cnVjdCBkcm1fcGFuZWwgKuKAmSBtYWtlcyBwb2ludGVyIGZyb20gaW50
+ZWdlciB3aXRob3V0IGEgY2FzdCBbLVdlcnJvcj1pbnQtY29udmVyc2lvbl0KPiAgIHJldHVybiBF
+UlJfUFRSKC1FTk9ERVYpOwo+ICAgICAgICAgIF5+fn5+fn5+fn5+fn5+fn4KPiAKPiBGaXhlczog
+NWZhOGU0YTIyMTgyICgiZHJtL3BhbmVsOiBNYWtlIG9mX2RybV9maW5kX3BhbmVsKCkgcmV0dXJu
+IGFuIEVSUl9QVFIoKSBpbnN0ZWFkIG9mIE5VTEwiKQo+IENjOiBCb3JpcyBCcmV6aWxsb24gPGJv
+cmlzLmJyZXppbGxvbkBib290bGluLmNvbT4KPiBTaWduZWQtb2ZmLWJ5OiBKYW5pIE5pa3VsYSA8
+amFuaS5uaWt1bGFAaW50ZWwuY29tPgo+IEFja2VkLWJ5OiBUaGllcnJ5IFJlZGluZyA8dHJlZGlu
+Z0BudmlkaWEuY29tPgo+IFJldmlld2VkLWJ5OiBTYW0gUmF2bmJvcmcgPHNhbUByYXZuYm9yZy5v
+cmc+CgpSZXZpZXdlZC1ieTogU2VhbiBQYXVsIDxzZWFuQHBvb3JseS5ydW4+Cgo+IC0tLQo+ICBp
+bmNsdWRlL2RybS9kcm1fcGFuZWwuaCB8IDEgKwo+ICAxIGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRp
+b24oKykKPiAKPiBkaWZmIC0tZ2l0IGEvaW5jbHVkZS9kcm0vZHJtX3BhbmVsLmggYi9pbmNsdWRl
+L2RybS9kcm1fcGFuZWwuaAo+IGluZGV4IDhjNzM4YzBlNmU5Zi4uMjYzNzc4MzYxNDFjIDEwMDY0
+NAo+IC0tLSBhL2luY2x1ZGUvZHJtL2RybV9wYW5lbC5oCj4gKysrIGIvaW5jbHVkZS9kcm0vZHJt
+X3BhbmVsLmgKPiBAQCAtMjQsNiArMjQsNyBAQAo+ICAjaWZuZGVmIF9fRFJNX1BBTkVMX0hfXwo+
+ICAjZGVmaW5lIF9fRFJNX1BBTkVMX0hfXwo+ICAKPiArI2luY2x1ZGUgPGxpbnV4L2Vyci5oPgo+
+ICAjaW5jbHVkZSA8bGludXgvZXJybm8uaD4KPiAgI2luY2x1ZGUgPGxpbnV4L2xpc3QuaD4KPiAg
+Cj4gLS0gCj4gMi4yMC4xCj4gCgotLSAKU2VhbiBQYXVsLCBTb2Z0d2FyZSBFbmdpbmVlciwgR29v
+Z2xlIC8gQ2hyb21pdW0gT1MKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
+bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
+c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
