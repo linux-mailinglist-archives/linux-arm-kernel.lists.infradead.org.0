@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 505F36CA95
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 10:04:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B153A6CABD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 10:15:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E26TrzOXTUc40hkbTdf57x8BOb+g525MTsv3MIu/Z6s=; b=ThspBmoN6QoIui
-	cfjwehBDDIQN0PnksIb+uzP46SFWfJoivGuQnZENNU/tUHkLnruXgn7Oh32iIQzhfHK6G1IL2HUy/
-	6UMa6Gn/FsciWCf50clq/xBpDLcuruUsVbJuQ5+byU1vmnhgX6W9XyqrZkjxt7adP+rGuYQP58n27
-	JLgT/NEyE0AbrM9USrpVa8ysFozVwlC04JHDYrBB0NURC8bNW7ZkTiQr343K0RmJcDX/HI4uupnnq
-	juqrCQEULmZRjyhoIQEhpvPOsAPpBVj0UBNLA9i1zKJu521+/knKLfib19f7kkfmqA8Y1/grK1/Rr
-	GwMDx/4tIikYfNj0+PSw==;
+	List-Owner; bh=YoKAiD3Z+IJDU8z0OmAtVYNCTjdSn0ExdIlIvO9C+Do=; b=uFDc0ouWeJYuXh
+	VKl0UygbLVJjHEL/uIGel4RWRVIJ14/zxOCL/zyeFZWdb1dVSgyGjNLFfSPrgFASOLkp/MFFJzan3
+	iteNoyyieNQJCL4fp5ThHbCiY7AnTnx0jiW+7n4AJk6Aaukre8NbVM9APRfy5Wn0MFLfV87Jg/Hqr
+	/PAwvzcfN/urZcuLg8/7KpLDYrcgL0Az0aAzyMcjn0Ht1Ge1Us3OSVp/sArXYBi6Lxvf0TMpkXmhR
+	tVsbZfLyZnBxVhJ2eSbaF/NmSKZm8bTp3BPwmBiTkUtP2TpbG2c+0pdtmMyk+rlTN/30ZtnwwA4J/
+	oq2K5k2dgzzWt4GnUCUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ho1PA-0002IF-36; Thu, 18 Jul 2019 08:04:44 +0000
+	id 1ho1Zh-000741-Lg; Thu, 18 Jul 2019 08:15:37 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ho1Oo-0002HL-34
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 08:04:23 +0000
+ id 1ho1ZP-00073e-UD
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 08:15:21 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 84F5D208C0;
- Thu, 18 Jul 2019 08:04:10 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 255832173B;
+ Thu, 18 Jul 2019 08:15:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563437059;
- bh=E0bLEAP3B1LCOK+JmfNMki+fkUB1oBDmiJFqCk7d3z4=;
+ s=default; t=1563437719;
+ bh=NXP1dxMRStA2YoZIugG0Hfaixlo5PPncW8E/6st36ck=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=USpNpihtlTs5cwv+eEh3e1xNwu3qmdbLx7FNEBHVdjr6KnddtNezQJ6nvWZGKxlvR
- /fJNvvgg3LFmupkj2VGQMcbCRVvN+OQW4Rz3cU+jVJMKWuQeIVRklIxTUVlxi/63Zm
- 4KhuoE3Zvl85Z7YSE55/hIQ39qAv/rP78deAwS4c=
-Date: Thu, 18 Jul 2019 16:03:57 +0800
+ b=vFFbhUW1Vk4qL91O8zs/wnRq17O2v+nBsHGqgNG1fQWGrH76f7mvP2R8Fzq8e0jws
+ nryRGuJnwg0srh9I6wgqTg54lCEYY9fNeXVts1t/ZXEfRX1qrFbdz0HcMW2DavFY88
+ Y686nLMjxJanA3xR7TH7pP7OBl0GBuEQrV8JKmms=
+Date: Thu, 18 Jul 2019 16:14:57 +0800
 From: Shawn Guo <shawnguo@kernel.org>
 To: Anson.Huang@nxp.com
-Subject: Re: [PATCH V2 1/2] arm64: dts: imx8mm: Correct OPP table according
- to latest datasheet
-Message-ID: <20190718080356.GL3738@dragon>
-References: <20190629102157.8026-1-Anson.Huang@nxp.com>
+Subject: Re: [PATCH 1/2] arm64: dts: imx8mq: Add gpio-ranges property
+Message-ID: <20190718081456.GN3738@dragon>
+References: <20190702014400.33554-1-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190629102157.8026-1-Anson.Huang@nxp.com>
+In-Reply-To: <20190702014400.33554-1-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_010422_148714_0B7E5E75 
-X-CRM114-Status: UNSURE (   8.67  )
+X-CRM114-CacheID: sfid-20190718_011519_996188_D1DECC4F 
+X-CRM114-Status: UNSURE (   7.49  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -90,17 +89,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Jun 29, 2019 at 06:21:56PM +0800, Anson.Huang@nxp.com wrote:
+On Tue, Jul 02, 2019 at 09:43:59AM +0800, Anson.Huang@nxp.com wrote:
 > From: Anson Huang <Anson.Huang@nxp.com>
 > 
-> According to latest datasheet (Rev.0.2, 04/2019) from below links,
-> 1.8GHz is ONLY available for consumer part, so the market segment
-> bits for 1.8GHz opp should ONLY available for consumer part accordingly.
+> Add "gpio-ranges" property to establish connections between GPIOs
+> and PINs on i.MX8MQ pinctrl driver.
 > 
-> https://www.nxp.com/docs/en/data-sheet/IMX8MMIEC.pdf
-> https://www.nxp.com/docs/en/data-sheet/IMX8MMCEC.pdf
-> 
-> Fixes: f403a26c865b (arm64: dts: imx8mm: Add cpu speed grading and all OPPs)
 > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
 Applied both, thanks.
