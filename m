@@ -2,62 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D5D16C4C7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 04:02:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B7B976C4F7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 04:28:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Jm896STBa/vB0bwQa5UMVMPD4/UY52lt4TWQQZ2XosY=; b=l7tuvEOBEthBBeJ9hG6n8keYm
-	2Cj3gz8JOPuyMI31U1pDykdX1Kv51+VXhtLirOLmFPDqv5SvPMfR1koNO2WFXBFe11q4cy88xed2I
-	7luw/ApGUucx48OGse1SB0sD+tVdUAKTHIzsLuxjdc0HtgL5o3RDnIfQ4Mo4OUCpv9YCY/tdqZ8+W
-	iSNN+4R2BjtQGP90p2ldsH7mucA0fd6wk4hP9UfDBG1riIuVMV0IU2v9TSWRRofCFQdEQkiD7nB//
-	oFR2UjN3qioaMfVpSV7hMr8Awb8vOX6B4ayuFmJ2HmxuBO0q1W2V6t65eVh3MqKfWz6cgBzpUyJDi
-	T6ewfJT6A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HzuGI5FeyUXRXeA12BlnyJ5ir9vAaQcKCcxk3ja1hUM=; b=KmHgKJaxKv2Hym
+	B+/uEydrBrR+pbElPUf028lOdkTKlTBGvEpc6TB+dmOCIbSI+D7eQjrYko7IZiu+mWvQqxiD2GrN3
+	JG68YUIZPZuxR/dR+bDZQgWuX+MNzLhNzL9S76GCwT6MgR9zUaGja33nfcI2ewWDw3mmiP8xHS87W
+	xzaX9e4wTHEKhIeBRvFFYqyrWcuV8vuPvRW8hO5SCCi6Vh/9JFeRuDrnE35MYgkZwdw7fIe06gx7e
+	T4uWgR0FPVnDKqZwT8cbTyaEUqw/eC2eNQmfCSnjEgwACdmqyr/qgz+jOgB+XM4PTaDjZAK4JkbBo
+	KJcSW4MdwWL3x1p6U2nw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnvkJ-00078N-P9; Thu, 18 Jul 2019 02:02:11 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1hnw9h-0007E0-PU; Thu, 18 Jul 2019 02:28:25 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnvk7-00077c-OJ
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 02:02:01 +0000
-Received: from DGGEMS413-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id B923175E6D083B2475B5;
- Thu, 18 Jul 2019 10:01:52 +0800 (CST)
-Received: from [127.0.0.1] (10.184.12.158) by DGGEMS413-HUB.china.huawei.com
- (10.3.19.213) with Microsoft SMTP Server id 14.3.439.0; Thu, 18 Jul 2019
- 10:01:46 +0800
-Subject: Re: [PATCH] KVM: arm/arm64: Assign pmc->idx before
- kvm_pmu_stop_counter()
-To: Marc Zyngier <maz@kernel.org>, Julien Thierry <julien.thierry@arm.com>,
- <kvmarm@lists.cs.columbia.edu>, <linux-arm-kernel@lists.infradead.org>
-References: <1563366019-31200-1-git-send-email-yuzenghui@huawei.com>
- <01fa98c1-8274-445c-5e04-219372920ba2@arm.com>
- <26b64d48-5ff9-7d62-bc44-601fdcc43223@kernel.org>
-From: Zenghui Yu <yuzenghui@huawei.com>
-Message-ID: <ae65afd1-fd9a-280f-285f-543b1fa246f3@huawei.com>
-Date: Thu, 18 Jul 2019 09:59:46 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:64.0) Gecko/20100101
- Thunderbird/64.0
+ id 1hnw9V-0007DE-Sw
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 02:28:15 +0000
+Received: from X250 (98.142.130.235.16clouds.com [98.142.130.235])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 96F2720665;
+ Thu, 18 Jul 2019 02:28:10 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1563416892;
+ bh=7uF+16PHLQHJzGvyU3LH7QsLAWoecUrJYJRlCqppMZY=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=aP2ScQbNTUarll89m8VWM5DT8FNP43osyd6czm+PKuhyFBr1wljLWwYQsv1jyHnYv
+ mKz+dAwclZ0abtEvVkv1rkspp8hIS+e8n5c2GCPFFuCwKr1kS7feeM0J+fYHarH6IJ
+ Nl712nnmgDp5in/ozo2jKAJycLJ5n51+VHaO4MuM=
+Date: Thu, 18 Jul 2019 10:28:05 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Fabio Estevam <festevam@gmail.com>
+Subject: Re: [PATCH 1/2] ARM: dts: imx7d-zii-rpu2: Remove unneeded
+ snvs_pwrkey node
+Message-ID: <20190718022804.GA11324@X250>
+References: <20190624205432.16727-1-festevam@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <26b64d48-5ff9-7d62-bc44-601fdcc43223@kernel.org>
-Content-Language: en-US
-X-Originating-IP: [10.184.12.158]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <20190624205432.16727-1-festevam@gmail.com>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_190159_957498_FEC20684 
-X-CRM114-Status: GOOD (  15.13  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190717_192813_958101_79BB1620 
+X-CRM114-Status: UNSURE (   7.74  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,87 +78,21 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: suzuki.poulose@arm.com, marc.zyngier@arm.com, linux-kernel@vger.kernel.org,
- james.morse@arm.com, andrew.murray@arm.com, wanghaibin.wang@huawei.com,
- julien.thierry.kdev@gmail.com
+Cc: stefan@agner.ch, cphealy@gmail.com, Anson.Huang@nxp.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Julien, Marc,
-
-On 2019/7/17 23:00, Marc Zyngier wrote:
-> On 17/07/2019 14:44, Julien Thierry wrote:
->> Hi Zenghui,
->>
->> On 17/07/2019 13:20, Zenghui Yu wrote:
->>> We use "pmc->idx" and the "chained" bitmap to determine if the pmc is
->>> chained, in kvm_pmu_pmc_is_chained().  But idx might be uninitialized
->>> (and random) when we doing this decision, through a KVM_ARM_VCPU_INIT
->>> ioctl -> kvm_pmu_vcpu_reset(). And the test_bit() against this random
->>> idx will potentially hit a KASAN BUG [1].
->>>
->>> Fix it by moving the assignment of idx before kvm_pmu_stop_counter().
->>>
->>> [1] https://www.spinics.net/lists/kvm-arm/msg36700.html
->>>
->>> Fixes: 80f393a23be6 ("KVM: arm/arm64: Support chained PMU counters")
->>> Suggested-by: Andrew Murray <andrew.murray@arm.com>
->>> Cc: Marc Zyngier <maz@kernel.org>
->>> Signed-off-by: Zenghui Yu <yuzenghui@huawei.com>> ---
->>>   virt/kvm/arm/pmu.c | 2 +-
->>>   1 file changed, 1 insertion(+), 1 deletion(-)
->>>
->>> diff --git a/virt/kvm/arm/pmu.c b/virt/kvm/arm/pmu.c
->>> index 3dd8238..521bfdd 100644
->>> --- a/virt/kvm/arm/pmu.c
->>> +++ b/virt/kvm/arm/pmu.c
->>> @@ -225,8 +225,8 @@ void kvm_pmu_vcpu_reset(struct kvm_vcpu *vcpu)
->>>   	struct kvm_pmu *pmu = &vcpu->arch.pmu;
->>>   
->>>   	for (i = 0; i < ARMV8_PMU_MAX_COUNTERS; i++) {
->>> -		kvm_pmu_stop_counter(vcpu, &pmu->pmc[i]);
->>>   		pmu->pmc[i].idx = i;
->>
->> Yes, this is kind of a static property that should really be part of a
->> "kvm_pmu_vcpu_init()" or "kvm_pmu_vcpu_create()" and is not expected to
->> be modified across resets...
->>
->> There is no such function at the time and I'm unsure whether this
->> warrants creating that separate function (I would still suggest creating
->> it to make things clearer).
+On Mon, Jun 24, 2019 at 05:54:31PM -0300, Fabio Estevam wrote:
+> Since commit 4664179fe679 ("ARM: dts: imx7s: Enable SNVS power key
+> according to board design") snvs_pwrkey is disabled by default, so there
+> is no need for disabling it explicitly in the board dts anymore.
 > 
-> Yup, that's pretty bad, now that you mention it. I'd be all for the
-> introduction of kvm_pmu_vcpu_init(), given that we already have
-> kvm_pmu_vcpu_destroy().
-> 
->>
->>> +		kvm_pmu_stop_counter(vcpu, &pmu->pmc[i]);
->>
->> Whatever other opinions are on splitting pmu_vcpu_init/reset, that
->> change makes sense and fixes the issue:
->>
->> Acked-by: Julien Thierry <julien.thierry@arm.com>
->>
->>>   	}
->>>   
->>>   	bitmap_zero(vcpu->arch.pmu.chained, ARMV8_PMU_MAX_COUNTER_PAIRS);
->>>
->>
->> Cheers,
->>
-> 
-> Zenghui, could you please update your patch to take the above into account?
+> Signed-off-by: Fabio Estevam <festevam@gmail.com>
 
-Sure. I will send a v2 with the new subject (may be "KVM: arm/arm64:
-Introduce kvm_pmu_vcpu_init() to ...").
-
-Thanks for your suggestions!
-
-
-zenghui
-
+Applied both, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
