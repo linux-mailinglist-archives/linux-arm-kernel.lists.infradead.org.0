@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 73B9B6C502
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 04:42:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1BDE96C50E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 04:49:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zu6tXpFG/fk2Fvx4bEPN4kgkNRwbrlzWLmSsb2c8Ihk=; b=J8bTPCbwvD+aFt
-	k6ZDSyxI63696eKjIjrCO2ur/2ljTAPCNM52yDuVCL0IWG19OxiTEFJW7UFRpKVMcV9/vBvg791f1
-	+mKubyoMXsGlKTZDf+lOe8uQfn52vnFvVObsXO2QK4cT+NoJef9rLkvOcRiQGHJgznEYYlrIWoIvW
-	geFNXcTZXAbSXx6tV0twkfepLPSEQq8QRQ2qADgeGLXjj0gfrBfDc2383Dk5gTI8eTjYVQW1obHj/
-	U6Lsnydm21aQRnzdMd+wawjhF3UfTJogBUMeA2PgEeSeM5cmUkYZdMlqybO11RrOYTxiK376iwSnX
-	67DyS1JKjJ/5S+j4mcng==;
+	List-Owner; bh=e6UlqNyPyQXYDgP9i44/6pL7KPEjLywSG+WAka5PrFg=; b=cOORNUShi5PKzN
+	yu/rfFRnVDyfb7yD64wD3g8fGdP040AnRdw0E+6mWRoOCqNA8b+7xkSvnCmPSAXv3MY8+MvSY71Az
+	ql3javQ95UjTHdwV8J8voTEgpQ+P5A9aPxH5fRi1FB2oIP9HUP1q+xf5eD0pD+O4lFMfKnLop6P9A
+	dfWnHZ2+RUVMzhcYGHyi2CI6ESg5BL2hTaA1Rr/Mtk+8NaAgIoA1KVoINyw3u1xhBW4LMoy12yT3Z
+	KdRQ5xNJhQg1pFJtS3fJqBVAcPLkmHn6TdN8qi6Ff0h1rPnt5M1ms6PUDqf61uspdYFZNpsGEnls5
+	2kmWnw0I4JeNhdX4Tbgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnwNL-0003jf-FG; Thu, 18 Jul 2019 02:42:31 +0000
+	id 1hnwUJ-0005qk-2r; Thu, 18 Jul 2019 02:49:43 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnwNB-0003jC-6Q
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 02:42:22 +0000
+ id 1hnwU8-0005qM-NC
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 02:49:33 +0000
 Received: from X250 (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3C9DC205F4;
- Thu, 18 Jul 2019 02:42:12 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B76E5205F4;
+ Thu, 18 Jul 2019 02:49:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563417740;
- bh=sjxuin9zTS4szxUyX8Q0ubzRlgU41diTfn7okIvvlkc=;
+ s=default; t=1563418172;
+ bh=jdNPPY/nagQO4z4SbeSxOZ2+EDMQori7e6umb/X7wII=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=VG1DrduHwFM0tp6ajZDSCEp8z6g7EYUN7s7GURoz8uJRNBkcG+NAAZmFK1LwEMPRc
- 2m3BkuDyWpreNzFAMsl3h5phmzJwBmZNQCytg73gRL+FFTyK89BaxJrc8hM3NC1pgE
- vwUBb7KKisIxy+S0RzBIrL+puo53mfkq5pcthwmc=
-Date: Thu, 18 Jul 2019 10:42:08 +0800
+ b=2scJcYPaWEnC8O4BuYyROLVOluc2QUVDfFyzDltCMUOGU1YaYhJXRkUz6OdZ/MFIh
+ tseMR2zXmwtg2wmQ+eP+MnVB1t+R6+CHVD+Og6kauZA4tWLC1cBk5JnS1SBMfQ5hsT
+ V6tnMol1y6TXf44Mb9hc2xH6I9DoPfIRwsPgefFU=
+Date: Thu, 18 Jul 2019 10:49:21 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
-Subject: Re: [PATCH 0/2] arm64: dts: imx8mq: Add DT node for the Mixel MIPI
- D-PHY
-Message-ID: <20190718024207.GB11324@X250>
-References: <cover.1561451144.git.agx@sigxcpu.org>
+To: yibin.gong@nxp.com
+Subject: Re: [PATCH v5 6/6] ARM: dts: imx7ulp: add edma device node
+Message-ID: <20190718024920.GC11324@X250>
+References: <20190625094324.19196-1-yibin.gong@nxp.com>
+ <20190625094324.19196-7-yibin.gong@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <cover.1561451144.git.agx@sigxcpu.org>
+In-Reply-To: <20190625094324.19196-7-yibin.gong@nxp.com>
 User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_194221_255965_61FEFB5A 
-X-CRM114-Status: UNSURE (   9.67  )
+X-CRM114-CacheID: sfid-20190717_194932_771338_C5FCF205 
+X-CRM114-Status: UNSURE (   7.87  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -78,31 +78,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Pavel Machek <pavel@ucw.cz>, Anson Huang <Anson.Huang@nxp.com>,
- Carlo Caione <ccaione@baylibre.com>, Andrey Smirnov <andrew.smirnov@gmail.com>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- "Angus Ainslie \(Purism\)" <angus@akkea.ca>, linux-kernel@vger.kernel.org,
- Abel Vesa <abel.vesa@nxp.com>, Rob Herring <robh+dt@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
- Lucas Stach <l.stach@pengutronix.de>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: mark.rutland@arm.com, robh@kernel.org, angelo@sysam.it,
+ devicetree@vger.kernel.org, s.hauer@pengutronix.de,
+ linux-kernel@vger.kernel.org, vkoul@kernel.org, linux-imx@nxp.com,
+ kernel@pengutronix.de, dmaengine@vger.kernel.org, dan.j.williams@intel.com,
+ festevam@gmail.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 25, 2019 at 10:27:19AM +0200, Guido G=FCnther wrote:
-> Now that the driver is in linux-next as of 20190624 let's have a DT node
-> for the i.MX8mq and enable it on the Librem 5 devkit.
-> =
+On Tue, Jun 25, 2019 at 05:43:24PM +0800, yibin.gong@nxp.com wrote:
+> From: Robin Gong <yibin.gong@nxp.com>
+> 
+> Add edma device node in dts.
+> 
+> Signed-off-by: Robin Gong <yibin.gong@nxp.com>
 
-> Guido G=FCnther (2):
->   arm64: dts: imx8mq: Add MIPI D-PHY
->   arm64: dts: imx8mq-librem5: Enable MIPI D-PHY
-
-Applied both, thanks.
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
