@@ -2,67 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B8436D425
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 20:45:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA32D6D438
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 20:53:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:Message-ID:Date:References:In-Reply-To:Subject:To:From:Reply-To:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=5Id1AFbM6N0Gr5scsSlejWq9+Q6629NslA+tHhPqV4I=; b=EwIj+R0jwWRW4cXEjwhNzOK7m
-	0MpWIMwXcKkE+FhJrfE7LYGHUNjPd6ZAAxXFstzs1kSgWfMgJdIZTu3G+vrJJ3Go9C4x+Sj+BxUNt
-	WVwg7IM3uAKjDll9qLE4YzXi2rTYS5jXghSbw1ExuzJ+XOJlih53k9Dr0tUq2EjZyB24sTbpbLqcQ
-	+bonhTvngTa3iG1UfmFDb1C1UhgU47ycqD7DTrCUwYatwGuNatcWD783lA3CTmIAhFyVE6tRKak4L
-	hwZklOzyK+TeRqKdnGg/aaP+EjX88dgbM1CC83pH3ZWWAPVb5WszfKc5iozWaqRCQno5SUTnC6hBO
-	4YC8PxSXg==;
+	 bh=jBrBHXMUcSr7Rc0slN1ewqnR4ttjx3t/xVv6OR24UwI=; b=FzwOGtjl95U4bTVttPtDJ4aX4
+	2OBdIv0mvqrlgnYGQFnravgjb21TunRCdUlrCrDAWAiVQB8LuMI82hdF9D3p48HWgb2x0ErZnYOKy
+	e9ODNM1Tp8PiJl8OalT2n6Pkt4KHjDeD/XEvL31Xj9mEtaeqK0vpDsqidHiPJI/QsvcbOcycpWx9S
+	M7y1qq+87ByKeplV5Qdn5jJIejZeKjhV8KnY2+XfYqNt34Tjlbri9Cc/quXQMoMlDpc8h/fJMCAdD
+	ugRkwVDC0P2gAmdcVOZ7h6RpqWRjjrurpId9mT6ErGdep3bUKRMAPUmuFGtzjt29hI57rhvre+V+Q
+	L4VrGHthA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoBP4-00042x-Fo; Thu, 18 Jul 2019 18:45:18 +0000
-Received: from anholt.net ([50.246.234.109])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hoBOq-0003dT-QG; Thu, 18 Jul 2019 18:45:06 +0000
-Received: from localhost (localhost [127.0.0.1])
- by anholt.net (Postfix) with ESMTP id EA80710A34E5;
- Thu, 18 Jul 2019 11:45:03 -0700 (PDT)
-X-Virus-Scanned: Debian amavisd-new at anholt.net
-Received: from anholt.net ([127.0.0.1])
- by localhost (kingsolver.anholt.net [127.0.0.1]) (amavisd-new, port 10024)
- with LMTP id VJxnEHBTTwGh; Thu, 18 Jul 2019 11:45:01 -0700 (PDT)
-Received: from eliezer.anholt.net (localhost [127.0.0.1])
- by anholt.net (Postfix) with ESMTP id DBDB010A1AE9;
- Thu, 18 Jul 2019 11:45:01 -0700 (PDT)
-Received: by eliezer.anholt.net (Postfix, from userid 1000)
- id 03B782FE2547; Thu, 18 Jul 2019 11:45:03 -0700 (PDT)
-From: Eric Anholt <eric@anholt.net>
-To: Stefan Wahren <wahrenst@gmx.net>, Florian Fainelli <f.fainelli@gmail.com>,
- Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>,
- Ulf Hansson <ulf.hansson@linaro.org>, Adrian Hunter <adrian.hunter@intel.com>,
- Mark Brown <broonie@kernel.org>
-Subject: Re: [PATCH RFC 00/18] ARM: Add minimal Raspberry Pi 4 support
-In-Reply-To: <1563393026-17118-1-git-send-email-wahrenst@gmx.net>
-References: <1563393026-17118-1-git-send-email-wahrenst@gmx.net>
-User-Agent: Notmuch/0.22.2+1~gb0bcfaa (http://notmuchmail.org) Emacs/26.1
- (x86_64-pc-linux-gnu)
-Date: Thu, 18 Jul 2019 11:45:02 -0700
-Message-ID: <877e8fgp1t.fsf@anholt.net>
+	id 1hoBWd-0006Wn-By; Thu, 18 Jul 2019 18:53:07 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hoBWT-0006WB-4I; Thu, 18 Jul 2019 18:52:58 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=v4vCvGRGvUHn6CC4va2L0tFZHJtNopsWhOoDhb3bUuc=; b=X1xbwNx/BKxxT35ppmYKyYzmb
+ NmvAYVpOXJyGz0LSRB0UtyjQM8dtFuAeUuM0s9z4BOH3KlJWcdnR7WedF5lxLoi2xh7Z880ez0ofg
+ FsZdxphCtQZfbKYP4WrUHbFCebdMoSxd/i+bcK4aklJkZQwKVKbCaKlgFlk9c/iz40vtg=;
+Received: from ypsilon.sirena.org.uk ([2001:470:1f1d:6b5::7])
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1hoBWB-0005od-Vq; Thu, 18 Jul 2019 18:52:40 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id 20FE22741738; Thu, 18 Jul 2019 19:52:39 +0100 (BST)
+Date: Thu, 18 Jul 2019 19:52:38 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Stefan Wahren <wahrenst@gmx.net>
+Subject: Re: [PATCH RFC 15/18] spi: bcm2835: enable shared interrupt support
+Message-ID: <20190718185238.GH5761@sirena.org.uk>
+References: <1563398164-2679-1-git-send-email-wahrenst@gmx.net>
+ <1563398164-2679-2-git-send-email-wahrenst@gmx.net>
+ <20190718124205.GC5761@sirena.org.uk>
+ <b23c7a5a-a432-5af6-a7dc-0a7dfbe57712@gmx.net>
 MIME-Version: 1.0
+In-Reply-To: <b23c7a5a-a432-5af6-a7dc-0a7dfbe57712@gmx.net>
+X-Cookie: Oh, wow!  Look at the moon!
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_114504_896717_EDE0561A 
-X-CRM114-Status: GOOD (  16.97  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190718_115257_182511_555AB1CA 
+X-CRM114-Status: GOOD (  18.61  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [50.246.234.109 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,78 +79,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, Stefan Wahren <wahrenst@gmx.net>
-Content-Type: multipart/mixed; boundary="===============0045168248185277525=="
+Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
+ Florian Fainelli <f.fainelli@gmail.com>, Scott Branden <sbranden@broadcom.com>,
+ Stephen Boyd <sboyd@kernel.org>, Ray Jui <rjui@broadcom.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Adrian Hunter <adrian.hunter@intel.com>, Eric Anholt <eric@anholt.net>,
+ Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
+ linux-arm-kernel@lists.infradead.org, Martin Sperl <kernel@martin.sperl.org>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ linux-rpi-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============7804270549648038227=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============0045168248185277525==
-Content-Type: multipart/signed; boundary="=-=-=";
-	micalg=pgp-sha512; protocol="application/pgp-signature"
 
---=-=-=
-Content-Type: text/plain
+--===============7804270549648038227==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="KR/qxknboQ7+Tpez"
+Content-Disposition: inline
 
-Stefan Wahren <wahrenst@gmx.net> writes:
 
-> This series adds minimal support for the new Raspberry Pi 4, so we are able
-> to login via debug UART.
->
-> Patch 1-5:   Prepare platform and DTS for the new SoC BMC2838
-> Patch 6-9:   Enable support for emmc2 on BCM2838
-> Patch 10-14: Enable pinctrl for BCM2838
-> Patch 15:    Enable SPI support for BCM2838
-> Patch 16-18: Add Raspberry Pi 4 DTS support
->
-> Unfortunately the Raspberry Pi Foundation didn't released a
-> peripheral documentation for the new SoC yet. So we only have a preliminary
-> datasheet [1] and reduced schematics [2].
->
-> This series is marked as RFC because some parts (e.g. pinctrl) are still
-> work in progress.
->
-> [1] - https://www.raspberrypi.org/documentation/hardware/raspberrypi/bcm2711/rpi_DATA_2711_1p0_preliminary.pdf
-> [2] - https://www.raspberrypi.org/documentation/hardware/raspberrypi/schematics/rpi_SCH_4b_4p0_reduced.pdf
->
-> Discussible things:
-> - SoC compatible BCM2711 (as on the SoC label) vs BCM2838 (existing naming scheme)
-> - ARCH membership ARCH_BCM2835 vs ARCH_BCMSTB
+--KR/qxknboQ7+Tpez
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-Thanks for taking this on!
+On Thu, Jul 18, 2019 at 07:53:43PM +0200, Stefan Wahren wrote:
+> Am 18.07.19 um 14:42 schrieb Mark Brown:
+> > On Wed, Jul 17, 2019 at 11:16:01PM +0200, Stefan Wahren wrote:
 
-I would love to see us drop this silly upstream/downstream compatible
-string naming scheme and just use 2711 (or 7211 for modules shared with
-7211 that were enabled there first).  However, I don't feel that
-strongly about it when I'm not the one doing the work.
+> >> +	/* check if we got interrupt enabled */
+> >> +	if (!(bcm2835_rd(bs, BCM2835_SPI_CS) & BCM2835_SPI_CS_INTR))
+> >> +		return IRQ_NONE;
 
-Other than the SPI shared interrupt change that looks dodgy, and a
-preference for the clock change being data-driven instead, I would be
-willing to ack the whole thing.
+> > Is that checking if the interrupt is enabled or if it is asserted?
 
---=-=-=
+> the BCM2835 doesn't provide a SPI register, which shows that the
+> interrupt has been asserted.
+
+> So i think, Martin tried to adapt the workaround from spi-bcm2835-aux
+> which has the same problem.
+
+OK, I don't know what that workaround was or exactly what this is
+checking but if it's just checking if the interrupt was enabled then
+there's going to be cases where this gets called while interrupts are
+enabled but due to another device asserting the interrupt.  If the
+driver can cope with that and this is just an optimization then fine but
+if it's relying on this there's an issue.
+
+--KR/qxknboQ7+Tpez
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEE/JuuFDWp9/ZkuCBXtdYpNtH8nugFAl0wvi4ACgkQtdYpNtH8
-nuiZRBAAljJpthQvWXCClvxeRHJYGp0vPGv1je6Rn2HvKTfNezTxpRWlVbfr0hj6
-jOOCNheqif3GOEz0ExfQM4Fwvdv1W/bt4594sEm9RoXGjxuQioMYsf5rSs0fYN+l
-hMEGfJ0lOLU1qeeeyFMJRu4O+LM7ZY8UPa2BQo3btYBHfuG/W1lgTTLl1YWe90fQ
-dBXJTxoKfdpa0kOhsw1LbkMsgbm32+zG97tMdzNAOVP4NeDfnmrr+LVWTq09N8af
-0PSkmf3GHmwXAkZ21y2g0MsviJgFBZIOPWv4YVZUknz4uyflxjnInVTp4Q8i7VC8
-iS20wEgmzcuIOZq7iyTCIUQXHbite6kzAbNT11VxBiesRg+YW4CWcMvFasZ6AzcD
-plLuHXgIzKBOfN+xeQB36Zo9cEcHHe+2uH8uZNvgLVcWLJuzs0EWCFdJLQSCDkX9
-pVaIEXtRl7Cbux7sdVmWFyFuHwgHjZ4fnmykDBSNubS/+OjjvSL05Pn+hzelxJam
-XzMY/v38TY5xRCZQlWrc7Lyhij686M9rrCU9h/n4AxQb9uZ6REE3JLh3dHzWbSD9
-FXEAAQU24Rzix4iBHu/6NyXU/xFp9WuZ2uMqeNLQuDQXbxqp6KOq71Ti//aTtQwN
-wDDt0T904SpZrjJRCUSjMqRECziHcCp6lnNg+V+Dj+fGKO8rOdc=
-=Zs2Q
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl0wv/YACgkQJNaLcl1U
+h9D8ugf/Yqa+EMN+dWqnAv+bqeF9ydPnXTxlwHr0IBS4W6gCC6WlCL4eq0oQ/h2S
+oOWRu8bSy6KZqh+MuL0dmI6CywFhc8498IDv8GnUsgJc1C7yzMn6paJu2yShluzk
+bY39YeACqjyrRmGq5gPynzzvvk46YWSapkdg0yjSUb+u6oO4PHTsz5H2xpCzU56S
+rY2fMljx7AUhfKWe0olLV/uwHeXIut40kh1WKrOw/e3Hij3ltXeHryQD1Rg96j4+
+jKV9t+MqtL5rG22Qz5sGwGAeq1gmJhZrHmmV9fgGZaIItFmxxf7MuMI7lkuoyZx3
+zKE4Dj7fj6mKKpb5jJxG0s6vDS0Q1w==
+=dhAE
 -----END PGP SIGNATURE-----
---=-=-=--
+
+--KR/qxknboQ7+Tpez--
 
 
---===============0045168248185277525==
+--===============7804270549648038227==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -156,5 +156,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============0045168248185277525==--
+--===============7804270549648038227==--
 
