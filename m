@@ -2,49 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D604B6CCBB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 12:25:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 738F46CCBC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 12:26:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=xOOp4HFdAsS9XL0d98LCBA+IWbojxoO7VKGxGWDvbBE=; b=s3IgDnCFwKeaRD
-	gQa35JvvGK/FmRlQkFPo0ANhxeqYB4keTvMiit7Mmeyif2AV2u0iy04dxGOl2H2XQ9EzB9n+anVAT
-	m+zjePO43BDYScxfj9/gntDx63HwyZTg/UvMDL29uJH1kdEC4NgfyWQMfuFBe4/G/guRZE+ODoPxn
-	saECj+BaSpkcWNUBsiPzE6kwEkPtd3rXqRaMnrEb3haK+scpZ0FR/PUrqSI0RocawD8Zd0rzzvk7h
-	C7qO45zBsLyZh0UhNQ5yz3XbXyGzjntM4qLTASaLFXE4Qxp//ptxZIh/u33bpWdf1AO5NbZQatqDv
-	Gu5haMHp1hN6plJCj0Xw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9Ot1O0jk2jDbj4aiVsTSIWTUBITtpuiDRZRWmeESLGk=; b=pXXJQD7MV/rG5e
+	pndX7pXVlK3DRkS9gls6EkFzK2NKl3kSub3gQzOvbiESfquf4L1mTrn4wWQ12cll4bAVb8fx7UrCU
+	u7Ew2DOpzqgAw99W3h66BknSJNU9AIh6bzJTkhYV/g5JbvGdMSJw7YYrItcOJJpy15IVI6sV84Jtj
+	eJeibA1+uYkSU42SJz0mjkWLeyoUC51cYVMGGoSdiKVPzuufD4adihAD0mdG8wUuWdamzExj4Y9vX
+	KtvDjaD2U4MKBQ0zvhFGuqPs6vH4rylnag0RnawXZDN9gladJ/vMUNgMnytB+xDzUPfKnlnfpgU2h
+	3cBUw3CBI5aunh+LIhLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ho3ba-0006J0-CA; Thu, 18 Jul 2019 10:25:42 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1ho3br-0006Vl-QO; Thu, 18 Jul 2019 10:25:59 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ho3bI-0006HO-7k
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 10:25:25 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 1E1A41A0047;
+ id 1ho3bJ-0006HP-4F
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 10:25:26 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id B7F532000C0;
  Thu, 18 Jul 2019 12:25:22 +0200 (CEST)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 121221A0009;
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id AB3B72000AF;
  Thu, 18 Jul 2019 12:25:22 +0200 (CEST)
 Received: from fsr-ub1864-103.ea.freescale.net
  (fsr-ub1864-103.ea.freescale.net [10.171.82.17])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 7CCC9205C7;
- Thu, 18 Jul 2019 12:25:21 +0200 (CEST)
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 22673205C7;
+ Thu, 18 Jul 2019 12:25:22 +0200 (CEST)
 From: Daniel Baluta <daniel.baluta@nxp.com>
 To: shawnguo@kernel.org
-Subject: [PATCH v2 0/3] Add power domain range for MU13 side b / IRQSTR_DSP
-Date: Thu, 18 Jul 2019 13:25:16 +0300
-Message-Id: <20190718102519.31855-1-daniel.baluta@nxp.com>
+Subject: [PATCH v2 1/3] firmware: imx: scu-pd: Rename mu PD range to mu_a
+Date: Thu, 18 Jul 2019 13:25:17 +0300
+Message-Id: <20190718102519.31855-2-daniel.baluta@nxp.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190718102519.31855-1-daniel.baluta@nxp.com>
+References: <20190718102519.31855-1-daniel.baluta@nxp.com>
 MIME-Version: 1.0
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_032524_417210_E03BD8EF 
-X-CRM114-Status: UNSURE (   5.45  )
+X-CRM114-CacheID: sfid-20190718_032525_305962_FFEF45CF 
+X-CRM114-Status: UNSURE (   8.09  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -52,7 +54,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -71,32 +73,29 @@ Cc: aisheng.dong@nxp.com, =kernel@pengutronix.de,
  ulf.hansson@linaro.org, linux-kernel@vger.kernel.org, paul.olaru@nxp.com,
  linux-imx@nxp.com, festevam@gmail.com, shengjiu.wang@nxp.com,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch adds power domain range for MU13 side b and irqsteer in
-preparation for adding support for DSP <-> AP IPC communication.
-
-Changes since v1:
-	- fixed typo in patch 1/3 commit message
-	- enhance commit message for patch 2/3 as per Aisheng's comments
-	- only add PD range for mu 13 side B
-	
-Daniel Baluta (3):
-  firmware: imx: scu-pd: Rename mu PD range to mu_a
-  firmware: imx: scu-pd: Add mu13 b side PD range
-  firmware: imx: scu-pd: Add IRQSTR_DSP PD range
-
- drivers/firmware/imx/scu-pd.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
--- 
-2.17.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VGhlIE1lc3NhZ2luZyBVbml0IG1vZHVsZSBlbmFibGVzIHR3byBwcm9jZXNzb3JzIHdpdGhpbiB0
+aGUgU29DIHRvCmNvbW11bmljYXRlIGFuZCBjb29yZGluYXRlIGJ5IHBhc3NpbmcgbWVzc2FnZXMg
+dGhyb3VnaCB0aGUgTVUgaW50ZXJmYWNlLgoKTVVzIGhhdmUgMiDigJxzaWRlc+KAnSB3aXRoIGlu
+ZGVwZW5kZW50IHByb2dyYW1taW5nIGludGVyZmFjZXMuIFJlbmFtZQptdSBQRCByYW5nZSB0byBt
+dV9hIGJlY2F1c2UgaXQncyBhY3R1YWxseSBzaWRlIEEgb2YgTVVzLgoKU2lnbmVkLW9mZi1ieTog
+RGFuaWVsIEJhbHV0YSA8ZGFuaWVsLmJhbHV0YUBueHAuY29tPgpSZXZpZXdlZC1ieTogRG9uZyBB
+aXNoZW5nIDxhaXNoZW5nLmRvbmdAbnhwLmNvbT4KLS0tCiBkcml2ZXJzL2Zpcm13YXJlL2lteC9z
+Y3UtcGQuYyB8IDIgKy0KIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKSwgMSBkZWxldGlv
+bigtKQoKZGlmZiAtLWdpdCBhL2RyaXZlcnMvZmlybXdhcmUvaW14L3NjdS1wZC5jIGIvZHJpdmVy
+cy9maXJtd2FyZS9pbXgvc2N1LXBkLmMKaW5kZXggNDgwY2VjNjllMmM5Li45NTBkMzAyMzgxODYg
+MTAwNjQ0Ci0tLSBhL2RyaXZlcnMvZmlybXdhcmUvaW14L3NjdS1wZC5jCisrKyBiL2RyaXZlcnMv
+ZmlybXdhcmUvaW14L3NjdS1wZC5jCkBAIC05Miw3ICs5Miw3IEBAIHN0YXRpYyBjb25zdCBzdHJ1
+Y3QgaW14X3NjX3BkX3JhbmdlIGlteDhxeHBfc2N1X3BkX3Jhbmdlc1tdID0gewogCXsgImdwdCIs
+IElNWF9TQ19SX0dQVF8wLCA1LCB0cnVlLCAwIH0sCiAJeyAia3BwIiwgSU1YX1NDX1JfS1BQLCAx
+LCBmYWxzZSwgMCB9LAogCXsgImZzcGkiLCBJTVhfU0NfUl9GU1BJXzAsIDIsIHRydWUsIDAgfSwK
+LQl7ICJtdSIsIElNWF9TQ19SX01VXzBBLCAxNCwgdHJ1ZSwgMCB9LAorCXsgIm11X2EiLCBJTVhf
+U0NfUl9NVV8wQSwgMTQsIHRydWUsIDAgfSwKIAogCS8qIENPTk4gU1MgKi8KIAl7ICJ1c2IiLCBJ
+TVhfU0NfUl9VU0JfMCwgMiwgdHJ1ZSwgMCB9LAotLSAKMi4xNy4xCgoKX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5n
+IGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5p
+bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
