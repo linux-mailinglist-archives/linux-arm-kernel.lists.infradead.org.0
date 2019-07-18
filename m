@@ -2,49 +2,196 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8AD786CB36
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 10:47:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD9366CB37
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 10:48:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dYEnczEYhLApP34/zSBjwCD2nZj7/CoYj3CO5202O6Q=; b=fc2pszEk5j1+m8
-	DlgkrwQy/5nspQaC/jDuaPclftRHd/XjsuKwqO0Rs5T1KJruk2tIqX8uUoHyoet8coOW7Vi7TRfTd
-	FRMIfQWBYMMN31zmGZwOzaw9XJyHJDiBYxiEWkCq+2wWWwDA97Bq4WjcPx9IXzuME8A/4eiNzz0H3
-	6QtIFTB0UXvEvgZUgd2es5fF01cGxfCtzm1WIEc8ORQfGblQNjHpzipVHWvvEOD18r9lwtW5BFzF4
-	gojkYb2GR8xlp2okTE8XhgaNIR01JR1p8Q6TkJkPOYE5XqE3lVgdSFaVITARIGiyVkZw7wwjSYHrN
-	hHuRt4p0BNg6jt+4Xf/A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Ir+cdj2op73uTJcYVE9lCcNLUF098NGzVYkcyJ0tORA=; b=mgyMxJ42mVum4o
+	ZqZnB/GgSoELCI7wERiztXXidpLAAkMjBcvpd5te5yGBOi9Mphj1VhYfIsvBZ5zTN8vdDOWX3YAyZ
+	72ZxAGWH0jPoFd5Jz4ZwnBTxeldI6bZO4iS0ydrjj3nDw/nEKtTdp7z/L+wgWVnvH7fonKoJRu/LS
+	7NlS2AIZT2NYT4s9SqN7CmsPYQdp6pdkYMPxye/Q/5/5xVWvb4JQPAaRYNEbh9ER9cm+7MmbKfXBZ
+	SYvYwgpHmPhRYQJRMN4MqMvtIR7M4T57bA9Kc5s52J12V9+eJZ/M8aRN7lJQyrP0+Gu54RQ/ku61c
+	CQeqE+W88cvsqhbzHeLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ho24y-00032t-Ok; Thu, 18 Jul 2019 08:47:56 +0000
-Received: from cloudserver094114.home.pl ([79.96.170.134])
+	id 1ho25N-0003Iv-Bh; Thu, 18 Jul 2019 08:48:21 +0000
+Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ho24h-000325-B5
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 08:47:41 +0000
-Received: from 79.184.255.39.ipv4.supernova.orange.pl (79.184.255.39) (HELO
- kreacher.localnet)
- by serwer1319399.home.pl (79.96.170.134) with SMTP (IdeaSmtpServer 0.83.267)
- id 20351725900aa3ec; Thu, 18 Jul 2019 10:47:37 +0200
-From: "Rafael J. Wysocki" <rjw@rjwysocki.net>
-To: Viresh Kumar <viresh.kumar@linaro.org>
-Subject: Re: [PATCH V3] cpufreq: Make cpufreq_generic_init() return void
-Date: Thu, 18 Jul 2019 10:47:37 +0200
-Message-ID: <2600442.BuetrrJ8M2@kreacher>
-In-Reply-To: <770b46d99e2fa88bc8cdfd95388374284c8b3cf8.1563249700.git.viresh.kumar@linaro.org>
-References: <770b46d99e2fa88bc8cdfd95388374284c8b3cf8.1563249700.git.viresh.kumar@linaro.org>
+ id 1ho24n-00032v-A1; Thu, 18 Jul 2019 08:47:47 +0000
+Received: by mail-ed1-x543.google.com with SMTP id p15so29420066eds.8;
+ Thu, 18 Jul 2019 01:47:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=BPXsJZVGRVQCDARbmoiwYNJ39gbydL6edtlbzf5FHtQ=;
+ b=WXX/rCys2n1NsX8soXgZOnC5rBzyJFhNlyjAANhD/74gpLh2J9as67Q2AOHvdBHowb
+ +xjRjcoT6cDIMNutuEOXbuXLuyF5aNLdG9vmoH1HHGJI/IE9BqFsQbSDPRe8RSfjBqwx
+ 6YBy+uYXEq1HM/AfWhrXgjPvWanVWPDfvtWTLBBumq2EWOrtD4B91Omj5Yj1Jowo8Qcc
+ 64T+MI2lEbPV9p/uJXZGmUXGl/4S1oZRdxIb+Fbnfil3uLvpNDoTMsnqX4DSs6wz0G/V
+ G6oCFU+gp2Xwbj2zMHCGYbxUGi6Jv5qebf3V3SkNL/FuyIBywyRFPmlwkLpHXnAJdv7u
+ 32pw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=BPXsJZVGRVQCDARbmoiwYNJ39gbydL6edtlbzf5FHtQ=;
+ b=RPYJQF7HOtrtbLqNS23GZcPHdXIp/CCNg0vZKaGkU1K21Eh1xyZbJ/+qbe9+6pztOg
+ HuXeyBGaBEP6B4ihziBudRh3nwN5YjryCa4GRhOI7dk/qd6WduIkjNG2X9+RNiBX/GRy
+ uE/PKJyJgvY6vvddAtn66kuvygPe4OukI3yLDG1iG+nEN9be2DQ3sRPDF52ev/WbpVGM
+ NSzwPDn8u1whdyEitfJ6Jl2KD+EVtBz7TTdjN7u1pzrO6+M9+H5mTpF3wMqtP2eghJ4h
+ dLQqI8WNn7RvEvGQv7La3wYvlyS46mAXoQe6DokD25RCs3uVYTxsMY3meyhJOu2qiNx2
+ lf7A==
+X-Gm-Message-State: APjAAAXkD7YAHyrGfzaapu5bq0AAsBkhOV6OzBKeF5fviOFclh5JKlNS
+ Bh9OufSsjh7XUlRhAzxxyATQlFViDns=
+X-Google-Smtp-Source: APXvYqws5nmN09ENWpIf72PXaoSc52QWIq1vr77n1O7cQh3mB6joHDc8c6IUvMlfcUlxUe+noOlQsQ==
+X-Received: by 2002:a50:b155:: with SMTP id l21mr39372012edd.186.1563439662509; 
+ Thu, 18 Jul 2019 01:47:42 -0700 (PDT)
+Received: from ziggy.stardust ([37.223.144.190])
+ by smtp.gmail.com with ESMTPSA id p43sm7742724edc.3.2019.07.18.01.47.40
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Thu, 18 Jul 2019 01:47:41 -0700 (PDT)
+Subject: Re: [PATCH RFC 07/18] clk: bcm2835: Add BCM2838_CLOCK_EMMC2 support
+To: Stefan Wahren <wahrenst@gmx.net>, Eric Anholt <eric@anholt.net>,
+ Florian Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>,
+ Scott Branden <sbranden@broadcom.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
+ <sboyd@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
+ Adrian Hunter <adrian.hunter@intel.com>, Mark Brown <broonie@kernel.org>
+References: <1563393026-17118-1-git-send-email-wahrenst@gmx.net>
+ <1563393026-17118-8-git-send-email-wahrenst@gmx.net>
+From: Matthias Brugger <matthias.bgg@gmail.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
+ 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
+ jrHWeQEI2ucSKsNa8FllDmG/fQ==
+Message-ID: <f6d8fecd-94d3-a5a8-2d4c-c1ae2b6a0919@gmail.com>
+Date: Thu, 18 Jul 2019 10:47:40 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
+In-Reply-To: <1563393026-17118-8-git-send-email-wahrenst@gmx.net>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_014739_708624_F004C69A 
-X-CRM114-Status: GOOD (  20.78  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190718_014745_407992_A6EACDFE 
+X-CRM114-Status: GOOD (  25.24  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (matthias.bgg[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -56,465 +203,130 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Jiaxun Yang <jiaxun.yang@flygoat.com>, linux-mips@vger.kernel.org,
- Thierry Reding <thierry.reding@gmail.com>, Paul Mackerras <paulus@samba.org>,
- Fabio Estevam <festevam@gmail.com>, linux-samsung-soc@vger.kernel.org,
- Kevin Hilman <khilman@kernel.org>, Michael Ellerman <mpe@ellerman.id.au>,
- Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
- Kukjin Kim <kgene@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- NXP Linux Team <linux-imx@nxp.com>, Keguang Zhang <keguang.zhang@gmail.com>,
- linux-pm@vger.kernel.org, Sascha Hauer <s.hauer@pengutronix.de>,
- Markus Mayer <mmayer@broadcom.com>, linux-tegra@vger.kernel.org,
- linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linuxppc-dev@lists.ozlabs.org, linux-kernel@vger.kernel.org,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>
+Cc: bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tuesday, July 16, 2019 6:06:08 AM CEST Viresh Kumar wrote:
-> It always returns 0 (success) and its return type should really be void.
-> Over that, many drivers have added error handling code based on its
-> return value, which is not required at all.
+
+
+On 17/07/2019 21:50, Stefan Wahren wrote:
+> The new BCM2838 supports an additional clock for the emmc2 block.
+> So add a new compatible to register this clock only for BCM2838.
 > 
-> change its return type to void and update all the callers.
-> 
-> Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
+> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
 > ---
-> V2->V3:
-> - Update bmips cpufreq driver to avoid "warning: 'ret' may be used
->   uninitialized".
-> - Build bot reported this issue almost after 4 days of posting this
->   patch, I was expecting this a lot earlier :)
+>  drivers/clk/bcm/clk-bcm2835.c | 33 +++++++++++++++++++++++++++++++--
+>  1 file changed, 31 insertions(+), 2 deletions(-)
 > 
->  drivers/cpufreq/bmips-cpufreq.c     | 17 ++++++-----------
->  drivers/cpufreq/cpufreq.c           |  4 +---
->  drivers/cpufreq/davinci-cpufreq.c   |  3 ++-
->  drivers/cpufreq/imx6q-cpufreq.c     |  6 ++----
->  drivers/cpufreq/kirkwood-cpufreq.c  |  3 ++-
->  drivers/cpufreq/loongson1-cpufreq.c |  8 +++-----
->  drivers/cpufreq/loongson2_cpufreq.c |  3 ++-
->  drivers/cpufreq/maple-cpufreq.c     |  3 ++-
->  drivers/cpufreq/omap-cpufreq.c      | 15 +++++----------
->  drivers/cpufreq/pasemi-cpufreq.c    |  3 ++-
->  drivers/cpufreq/pmac32-cpufreq.c    |  3 ++-
->  drivers/cpufreq/pmac64-cpufreq.c    |  3 ++-
->  drivers/cpufreq/s3c2416-cpufreq.c   |  9 ++-------
->  drivers/cpufreq/s3c64xx-cpufreq.c   | 15 +++------------
->  drivers/cpufreq/s5pv210-cpufreq.c   |  3 ++-
->  drivers/cpufreq/sa1100-cpufreq.c    |  3 ++-
->  drivers/cpufreq/sa1110-cpufreq.c    |  3 ++-
->  drivers/cpufreq/spear-cpufreq.c     |  3 ++-
->  drivers/cpufreq/tegra20-cpufreq.c   |  8 +-------
->  include/linux/cpufreq.h             |  2 +-
->  20 files changed, 46 insertions(+), 71 deletions(-)
+> diff --git a/drivers/clk/bcm/clk-bcm2835.c b/drivers/clk/bcm/clk-bcm2835.c
+> index 867ae3c..5fe4695 100644
+> --- a/drivers/clk/bcm/clk-bcm2835.c
+> +++ b/drivers/clk/bcm/clk-bcm2835.c
+> @@ -31,7 +31,8 @@
+>  #include <linux/delay.h>
+>  #include <linux/io.h>
+>  #include <linux/module.h>
+> -#include <linux/of.h>
+> +#include <linux/of_device.h>
+> +
+>  #include <linux/platform_device.h>
+>  #include <linux/slab.h>
+>  #include <dt-bindings/clock/bcm2835.h>
+> @@ -114,6 +115,8 @@
+>  #define CM_AVEODIV		0x1bc
+>  #define CM_EMMCCTL		0x1c0
+>  #define CM_EMMCDIV		0x1c4
+> +#define CM_EMMC2CTL		0x1d0
+> +#define CM_EMMC2DIV		0x1d4
 > 
-> diff --git a/drivers/cpufreq/bmips-cpufreq.c b/drivers/cpufreq/bmips-cpufreq.c
-> index 56a4ebbf00e0..f7c23fa468f0 100644
-> --- a/drivers/cpufreq/bmips-cpufreq.c
-> +++ b/drivers/cpufreq/bmips-cpufreq.c
-> @@ -131,23 +131,18 @@ static int bmips_cpufreq_exit(struct cpufreq_policy *policy)
->  static int bmips_cpufreq_init(struct cpufreq_policy *policy)
->  {
->  	struct cpufreq_frequency_table *freq_table;
-> -	int ret;
->  
->  	freq_table = bmips_cpufreq_get_freq_table(policy);
->  	if (IS_ERR(freq_table)) {
-> -		ret = PTR_ERR(freq_table);
-> -		pr_err("%s: couldn't determine frequency table (%d).\n",
-> -			BMIPS_CPUFREQ_NAME, ret);
-> -		return ret;
-> +		pr_err("%s: couldn't determine frequency table (%ld).\n",
-> +			BMIPS_CPUFREQ_NAME, PTR_ERR(freq_table));
-> +		return PTR_ERR(freq_table);
->  	}
->  
-> -	ret = cpufreq_generic_init(policy, freq_table, TRANSITION_LATENCY);
-> -	if (ret)
-> -		bmips_cpufreq_exit(policy);
-> -	else
-> -		pr_info("%s: registered\n", BMIPS_CPUFREQ_NAME);
-> +	cpufreq_generic_init(policy, freq_table, TRANSITION_LATENCY);
-> +	pr_info("%s: registered\n", BMIPS_CPUFREQ_NAME);
->  
-> -	return ret;
-> +	return 0;
->  }
->  
->  static struct cpufreq_driver bmips_cpufreq_driver = {
-> diff --git a/drivers/cpufreq/cpufreq.c b/drivers/cpufreq/cpufreq.c
-> index 4d6043ee7834..8dda62367816 100644
-> --- a/drivers/cpufreq/cpufreq.c
-> +++ b/drivers/cpufreq/cpufreq.c
-> @@ -159,7 +159,7 @@ EXPORT_SYMBOL_GPL(arch_set_freq_scale);
->   * - set policies transition latency
->   * - policy->cpus with all possible CPUs
->   */
-> -int cpufreq_generic_init(struct cpufreq_policy *policy,
-> +void cpufreq_generic_init(struct cpufreq_policy *policy,
->  		struct cpufreq_frequency_table *table,
->  		unsigned int transition_latency)
->  {
-> @@ -171,8 +171,6 @@ int cpufreq_generic_init(struct cpufreq_policy *policy,
->  	 * share the clock and voltage and clock.
->  	 */
->  	cpumask_setall(policy->cpus);
-> -
-> -	return 0;
->  }
->  EXPORT_SYMBOL_GPL(cpufreq_generic_init);
->  
-> diff --git a/drivers/cpufreq/davinci-cpufreq.c b/drivers/cpufreq/davinci-cpufreq.c
-> index 3de48ae60c29..297d23cad8b5 100644
-> --- a/drivers/cpufreq/davinci-cpufreq.c
-> +++ b/drivers/cpufreq/davinci-cpufreq.c
-> @@ -90,7 +90,8 @@ static int davinci_cpu_init(struct cpufreq_policy *policy)
->  	 * Setting the latency to 2000 us to accommodate addition of drivers
->  	 * to pre/post change notification list.
->  	 */
-> -	return cpufreq_generic_init(policy, freq_table, 2000 * 1000);
-> +	cpufreq_generic_init(policy, freq_table, 2000 * 1000);
-> +	return 0;
->  }
->  
->  static struct cpufreq_driver davinci_driver = {
-> diff --git a/drivers/cpufreq/imx6q-cpufreq.c b/drivers/cpufreq/imx6q-cpufreq.c
-> index 47ccfa6b17b7..648a09a1778a 100644
-> --- a/drivers/cpufreq/imx6q-cpufreq.c
-> +++ b/drivers/cpufreq/imx6q-cpufreq.c
-> @@ -190,14 +190,12 @@ static int imx6q_set_target(struct cpufreq_policy *policy, unsigned int index)
->  
->  static int imx6q_cpufreq_init(struct cpufreq_policy *policy)
->  {
-> -	int ret;
-> -
->  	policy->clk = clks[ARM].clk;
-> -	ret = cpufreq_generic_init(policy, freq_table, transition_latency);
-> +	cpufreq_generic_init(policy, freq_table, transition_latency);
->  	policy->suspend_freq = max_freq;
->  	dev_pm_opp_of_register_em(policy->cpus);
->  
-> -	return ret;
-> +	return 0;
->  }
->  
->  static struct cpufreq_driver imx6q_cpufreq_driver = {
-> diff --git a/drivers/cpufreq/kirkwood-cpufreq.c b/drivers/cpufreq/kirkwood-cpufreq.c
-> index 7ab564c1f7ae..cb74bdc5baaa 100644
-> --- a/drivers/cpufreq/kirkwood-cpufreq.c
-> +++ b/drivers/cpufreq/kirkwood-cpufreq.c
-> @@ -85,7 +85,8 @@ static int kirkwood_cpufreq_target(struct cpufreq_policy *policy,
->  /* Module init and exit code */
->  static int kirkwood_cpufreq_cpu_init(struct cpufreq_policy *policy)
->  {
-> -	return cpufreq_generic_init(policy, kirkwood_freq_table, 5000);
-> +	cpufreq_generic_init(policy, kirkwood_freq_table, 5000);
-> +	return 0;
->  }
->  
->  static struct cpufreq_driver kirkwood_cpufreq_driver = {
-> diff --git a/drivers/cpufreq/loongson1-cpufreq.c b/drivers/cpufreq/loongson1-cpufreq.c
-> index 21c9ce8526c0..0ea88778882a 100644
-> --- a/drivers/cpufreq/loongson1-cpufreq.c
-> +++ b/drivers/cpufreq/loongson1-cpufreq.c
-> @@ -81,7 +81,7 @@ static int ls1x_cpufreq_init(struct cpufreq_policy *policy)
->  	struct device *cpu_dev = get_cpu_device(policy->cpu);
->  	struct cpufreq_frequency_table *freq_tbl;
->  	unsigned int pll_freq, freq;
-> -	int steps, i, ret;
-> +	int steps, i;
->  
->  	pll_freq = clk_get_rate(cpufreq->pll_clk) / 1000;
->  
-> @@ -103,11 +103,9 @@ static int ls1x_cpufreq_init(struct cpufreq_policy *policy)
->  	freq_tbl[i].frequency = CPUFREQ_TABLE_END;
->  
->  	policy->clk = cpufreq->clk;
-> -	ret = cpufreq_generic_init(policy, freq_tbl, 0);
-> -	if (ret)
-> -		kfree(freq_tbl);
-> +	cpufreq_generic_init(policy, freq_tbl, 0);
->  
-> -	return ret;
-> +	return 0;
->  }
->  
->  static int ls1x_cpufreq_exit(struct cpufreq_policy *policy)
-> diff --git a/drivers/cpufreq/loongson2_cpufreq.c b/drivers/cpufreq/loongson2_cpufreq.c
-> index da344696beed..890813e0bb76 100644
-> --- a/drivers/cpufreq/loongson2_cpufreq.c
-> +++ b/drivers/cpufreq/loongson2_cpufreq.c
-> @@ -95,7 +95,8 @@ static int loongson2_cpufreq_cpu_init(struct cpufreq_policy *policy)
->  	}
->  
->  	policy->clk = cpuclk;
-> -	return cpufreq_generic_init(policy, &loongson2_clockmod_table[0], 0);
-> +	cpufreq_generic_init(policy, &loongson2_clockmod_table[0], 0);
-> +	return 0;
->  }
->  
->  static int loongson2_cpufreq_exit(struct cpufreq_policy *policy)
-> diff --git a/drivers/cpufreq/maple-cpufreq.c b/drivers/cpufreq/maple-cpufreq.c
-> index f5220b3d4ec5..28d346062166 100644
-> --- a/drivers/cpufreq/maple-cpufreq.c
-> +++ b/drivers/cpufreq/maple-cpufreq.c
-> @@ -140,7 +140,8 @@ static unsigned int maple_cpufreq_get_speed(unsigned int cpu)
->  
->  static int maple_cpufreq_cpu_init(struct cpufreq_policy *policy)
->  {
-> -	return cpufreq_generic_init(policy, maple_cpu_freqs, 12000);
-> +	cpufreq_generic_init(policy, maple_cpu_freqs, 12000);
-> +	return 0;
->  }
->  
->  static struct cpufreq_driver maple_cpufreq_driver = {
-> diff --git a/drivers/cpufreq/omap-cpufreq.c b/drivers/cpufreq/omap-cpufreq.c
-> index 29643f06a3c3..8d14b42a8c6f 100644
-> --- a/drivers/cpufreq/omap-cpufreq.c
-> +++ b/drivers/cpufreq/omap-cpufreq.c
-> @@ -122,23 +122,18 @@ static int omap_cpu_init(struct cpufreq_policy *policy)
->  			dev_err(mpu_dev,
->  				"%s: cpu%d: failed creating freq table[%d]\n",
->  				__func__, policy->cpu, result);
-> -			goto fail;
-> +			clk_put(policy->clk);
-> +			return result;
->  		}
->  	}
->  
->  	atomic_inc_return(&freq_table_users);
->  
->  	/* FIXME: what's the actual transition time? */
-> -	result = cpufreq_generic_init(policy, freq_table, 300 * 1000);
-> -	if (!result) {
-> -		dev_pm_opp_of_register_em(policy->cpus);
-> -		return 0;
-> -	}
-> +	cpufreq_generic_init(policy, freq_table, 300 * 1000);
-> +	dev_pm_opp_of_register_em(policy->cpus);
->  
-> -	freq_table_free();
-> -fail:
-> -	clk_put(policy->clk);
-> -	return result;
-> +	return 0;
->  }
->  
->  static int omap_cpu_exit(struct cpufreq_policy *policy)
-> diff --git a/drivers/cpufreq/pasemi-cpufreq.c b/drivers/cpufreq/pasemi-cpufreq.c
-> index 6b1e4abe3248..93f39a1d4c3d 100644
-> --- a/drivers/cpufreq/pasemi-cpufreq.c
-> +++ b/drivers/cpufreq/pasemi-cpufreq.c
-> @@ -196,7 +196,8 @@ static int pas_cpufreq_cpu_init(struct cpufreq_policy *policy)
->  	policy->cur = pas_freqs[cur_astate].frequency;
->  	ppc_proc_freq = policy->cur * 1000ul;
->  
-> -	return cpufreq_generic_init(policy, pas_freqs, get_gizmo_latency());
-> +	cpufreq_generic_init(policy, pas_freqs, get_gizmo_latency());
-> +	return 0;
->  
->  out_unmap_sdcpwr:
->  	iounmap(sdcpwr_mapbase);
-> diff --git a/drivers/cpufreq/pmac32-cpufreq.c b/drivers/cpufreq/pmac32-cpufreq.c
-> index 650104d729f3..73621bc11976 100644
-> --- a/drivers/cpufreq/pmac32-cpufreq.c
-> +++ b/drivers/cpufreq/pmac32-cpufreq.c
-> @@ -372,7 +372,8 @@ static int pmac_cpufreq_target(	struct cpufreq_policy *policy,
->  
->  static int pmac_cpufreq_cpu_init(struct cpufreq_policy *policy)
->  {
-> -	return cpufreq_generic_init(policy, pmac_cpu_freqs, transition_latency);
-> +	cpufreq_generic_init(policy, pmac_cpu_freqs, transition_latency);
-> +	return 0;
->  }
->  
->  static u32 read_gpio(struct device_node *np)
-> diff --git a/drivers/cpufreq/pmac64-cpufreq.c b/drivers/cpufreq/pmac64-cpufreq.c
-> index 1af3492a000d..d7542a106e6b 100644
-> --- a/drivers/cpufreq/pmac64-cpufreq.c
-> +++ b/drivers/cpufreq/pmac64-cpufreq.c
-> @@ -321,7 +321,8 @@ static unsigned int g5_cpufreq_get_speed(unsigned int cpu)
->  
->  static int g5_cpufreq_cpu_init(struct cpufreq_policy *policy)
->  {
-> -	return cpufreq_generic_init(policy, g5_cpu_freqs, transition_latency);
-> +	cpufreq_generic_init(policy, g5_cpu_freqs, transition_latency);
-> +	return 0;
->  }
->  
->  static struct cpufreq_driver g5_cpufreq_driver = {
-> diff --git a/drivers/cpufreq/s3c2416-cpufreq.c b/drivers/cpufreq/s3c2416-cpufreq.c
-> index f7ff1ed7fef1..106910351c41 100644
-> --- a/drivers/cpufreq/s3c2416-cpufreq.c
-> +++ b/drivers/cpufreq/s3c2416-cpufreq.c
-> @@ -447,21 +447,16 @@ static int s3c2416_cpufreq_driver_init(struct cpufreq_policy *policy)
->  	/* Datasheet says PLL stabalisation time must be at least 300us,
->  	 * so but add some fudge. (reference in LOCKCON0 register description)
->  	 */
-> -	ret = cpufreq_generic_init(policy, s3c_freq->freq_table,
-> +	cpufreq_generic_init(policy, s3c_freq->freq_table,
->  			(500 * 1000) + s3c_freq->regulator_latency);
-> -	if (ret)
-> -		goto err_freq_table;
-> -
->  	register_reboot_notifier(&s3c2416_cpufreq_reboot_notifier);
->  
->  	return 0;
->  
-> -err_freq_table:
->  #ifdef CONFIG_ARM_S3C2416_CPUFREQ_VCORESCALE
-> -	regulator_put(s3c_freq->vddarm);
->  err_vddarm:
-> -#endif
->  	clk_put(s3c_freq->armclk);
-> +#endif
->  err_armclk:
->  	clk_put(s3c_freq->hclk);
->  err_hclk:
-> diff --git a/drivers/cpufreq/s3c64xx-cpufreq.c b/drivers/cpufreq/s3c64xx-cpufreq.c
-> index 37df2d892eb0..af0c00dabb22 100644
-> --- a/drivers/cpufreq/s3c64xx-cpufreq.c
-> +++ b/drivers/cpufreq/s3c64xx-cpufreq.c
-> @@ -144,7 +144,6 @@ static void s3c64xx_cpufreq_config_regulator(void)
->  
->  static int s3c64xx_cpufreq_driver_init(struct cpufreq_policy *policy)
->  {
-> -	int ret;
->  	struct cpufreq_frequency_table *freq;
->  
->  	if (policy->cpu != 0)
-> @@ -165,8 +164,7 @@ static int s3c64xx_cpufreq_driver_init(struct cpufreq_policy *policy)
->  #ifdef CONFIG_REGULATOR
->  	vddarm = regulator_get(NULL, "vddarm");
->  	if (IS_ERR(vddarm)) {
-> -		ret = PTR_ERR(vddarm);
-> -		pr_err("Failed to obtain VDDARM: %d\n", ret);
-> +		pr_err("Failed to obtain VDDARM: %ld\n", PTR_ERR(vddarm));
->  		pr_err("Only frequency scaling available\n");
->  		vddarm = NULL;
->  	} else {
-> @@ -196,16 +194,9 @@ static int s3c64xx_cpufreq_driver_init(struct cpufreq_policy *policy)
->  	 * the PLLs, which we don't currently) is ~300us worst case,
->  	 * but add some fudge.
->  	 */
-> -	ret = cpufreq_generic_init(policy, s3c64xx_freq_table,
-> +	cpufreq_generic_init(policy, s3c64xx_freq_table,
->  			(500 * 1000) + regulator_latency);
-> -	if (ret != 0) {
-> -		pr_err("Failed to configure frequency table: %d\n",
-> -		       ret);
-> -		regulator_put(vddarm);
-> -		clk_put(policy->clk);
-> -	}
-> -
-> -	return ret;
-> +	return 0;
->  }
->  
->  static struct cpufreq_driver s3c64xx_cpufreq_driver = {
-> diff --git a/drivers/cpufreq/s5pv210-cpufreq.c b/drivers/cpufreq/s5pv210-cpufreq.c
-> index e5cb17d4be7b..5d10030f2560 100644
-> --- a/drivers/cpufreq/s5pv210-cpufreq.c
-> +++ b/drivers/cpufreq/s5pv210-cpufreq.c
-> @@ -541,7 +541,8 @@ static int s5pv210_cpu_init(struct cpufreq_policy *policy)
->  	s5pv210_dram_conf[1].freq = clk_get_rate(dmc1_clk);
->  
->  	policy->suspend_freq = SLEEP_FREQ;
-> -	return cpufreq_generic_init(policy, s5pv210_freq_table, 40000);
-> +	cpufreq_generic_init(policy, s5pv210_freq_table, 40000);
-> +	return 0;
->  
->  out_dmc1:
->  	clk_put(dmc0_clk);
-> diff --git a/drivers/cpufreq/sa1100-cpufreq.c b/drivers/cpufreq/sa1100-cpufreq.c
-> index ab5cab93e638..5c075ef6adc0 100644
-> --- a/drivers/cpufreq/sa1100-cpufreq.c
-> +++ b/drivers/cpufreq/sa1100-cpufreq.c
-> @@ -181,7 +181,8 @@ static int sa1100_target(struct cpufreq_policy *policy, unsigned int ppcr)
->  
->  static int __init sa1100_cpu_init(struct cpufreq_policy *policy)
->  {
-> -	return cpufreq_generic_init(policy, sa11x0_freq_table, 0);
-> +	cpufreq_generic_init(policy, sa11x0_freq_table, 0);
-> +	return 0;
->  }
->  
->  static struct cpufreq_driver sa1100_driver __refdata = {
-> diff --git a/drivers/cpufreq/sa1110-cpufreq.c b/drivers/cpufreq/sa1110-cpufreq.c
-> index dab54e051c0e..d9d04d935b3a 100644
-> --- a/drivers/cpufreq/sa1110-cpufreq.c
-> +++ b/drivers/cpufreq/sa1110-cpufreq.c
-> @@ -303,7 +303,8 @@ static int sa1110_target(struct cpufreq_policy *policy, unsigned int ppcr)
->  
->  static int __init sa1110_cpu_init(struct cpufreq_policy *policy)
->  {
-> -	return cpufreq_generic_init(policy, sa11x0_freq_table, 0);
-> +	cpufreq_generic_init(policy, sa11x0_freq_table, 0);
-> +	return 0;
->  }
->  
->  /* sa1110_driver needs __refdata because it must remain after init registers
-> diff --git a/drivers/cpufreq/spear-cpufreq.c b/drivers/cpufreq/spear-cpufreq.c
-> index 4074e2615522..73bd8dc47074 100644
-> --- a/drivers/cpufreq/spear-cpufreq.c
-> +++ b/drivers/cpufreq/spear-cpufreq.c
-> @@ -153,8 +153,9 @@ static int spear_cpufreq_target(struct cpufreq_policy *policy,
->  static int spear_cpufreq_init(struct cpufreq_policy *policy)
->  {
->  	policy->clk = spear_cpufreq.clk;
-> -	return cpufreq_generic_init(policy, spear_cpufreq.freq_tbl,
-> +	cpufreq_generic_init(policy, spear_cpufreq.freq_tbl,
->  			spear_cpufreq.transition_latency);
-> +	return 0;
->  }
->  
->  static struct cpufreq_driver spear_cpufreq_driver = {
-> diff --git a/drivers/cpufreq/tegra20-cpufreq.c b/drivers/cpufreq/tegra20-cpufreq.c
-> index 3c32cc7b0671..f84ecd22f488 100644
-> --- a/drivers/cpufreq/tegra20-cpufreq.c
-> +++ b/drivers/cpufreq/tegra20-cpufreq.c
-> @@ -118,17 +118,11 @@ static int tegra_target(struct cpufreq_policy *policy, unsigned int index)
->  static int tegra_cpu_init(struct cpufreq_policy *policy)
->  {
->  	struct tegra20_cpufreq *cpufreq = cpufreq_get_driver_data();
-> -	int ret;
->  
->  	clk_prepare_enable(cpufreq->cpu_clk);
->  
->  	/* FIXME: what's the actual transition time? */
-> -	ret = cpufreq_generic_init(policy, freq_table, 300 * 1000);
-> -	if (ret) {
-> -		clk_disable_unprepare(cpufreq->cpu_clk);
-> -		return ret;
-> -	}
-> -
-> +	cpufreq_generic_init(policy, freq_table, 300 * 1000);
->  	policy->clk = cpufreq->cpu_clk;
->  	policy->suspend_freq = freq_table[0].frequency;
->  	return 0;
-> diff --git a/include/linux/cpufreq.h b/include/linux/cpufreq.h
-> index d757a56a74dc..536a049d7ecc 100644
-> --- a/include/linux/cpufreq.h
-> +++ b/include/linux/cpufreq.h
-> @@ -992,7 +992,7 @@ extern struct freq_attr *cpufreq_generic_attr[];
->  int cpufreq_table_validate_and_sort(struct cpufreq_policy *policy);
->  
->  unsigned int cpufreq_generic_get(unsigned int cpu);
-> -int cpufreq_generic_init(struct cpufreq_policy *policy,
-> +void cpufreq_generic_init(struct cpufreq_policy *policy,
->  		struct cpufreq_frequency_table *table,
->  		unsigned int transition_latency);
->  #endif /* _LINUX_CPUFREQ_H */
+>  /* General bits for the CM_*CTL regs */
+>  # define CM_ENABLE			BIT(4)
+> @@ -1950,6 +1953,15 @@ static const struct bcm2835_clk_desc clk_desc_array[] = {
+>  		.frac_bits = 8,
+>  		.tcnt_mux = 39),
 > 
+> +	/* EMMC2 clock (only available for BCM2838) */
+> +	[BCM2838_CLOCK_EMMC2]	= REGISTER_PER_CLK(
+> +		.name = "emmc2",
+> +		.ctl_reg = CM_EMMC2CTL,
+> +		.div_reg = CM_EMMC2DIV,
+> +		.int_bits = 4,
+> +		.frac_bits = 8,
+> +		.tcnt_mux = 42),
+> +
+>  	/* General purpose (GPIO) clocks */
+>  	[BCM2835_CLOCK_GP0]	= REGISTER_PER_CLK(
+>  		.name = "gp0",
+> @@ -2101,6 +2113,14 @@ static int bcm2835_mark_sdc_parent_critical(struct clk *sdc)
+>  	return clk_prepare_enable(parent);
+>  }
+> 
+> +bool bcm2835_has_clk(size_t index) {
+> +	return index != BCM2838_CLOCK_EMMC2;
+> +}
+> +
+> +bool bcm2838_has_clk(size_t index) {
+> +	return true;
+> +}
+> +
+>  static int bcm2835_clk_probe(struct platform_device *pdev)
+>  {
+>  	struct device *dev = &pdev->dev;
+> @@ -2109,9 +2129,14 @@ static int bcm2835_clk_probe(struct platform_device *pdev)
+>  	struct resource *res;
+>  	const struct bcm2835_clk_desc *desc;
+>  	const size_t asize = ARRAY_SIZE(clk_desc_array);
+> +	bool (*has_clk_func)(size_t);
+>  	size_t i;
+>  	int ret;
+> 
+> +	has_clk_func = of_device_get_match_data(&pdev->dev);
+> +	if (!has_clk_func)
+> +		return -ENODEV;
+> +
+>  	cprman = devm_kzalloc(dev,
+>  			      struct_size(cprman, onecell.hws, asize),
+>  			      GFP_KERNEL);
+> @@ -2146,6 +2171,9 @@ static int bcm2835_clk_probe(struct platform_device *pdev)
+>  	hws = cprman->onecell.hws;
+> 
+>  	for (i = 0; i < asize; i++) {
+> +		if (!has_clk_func(i))
+> +			continue;
+> +
 
-Applied, thanks!
+I think that's very hacky. Can't we just create a per SoC list which get's
+passed via .data and in probe we iterate through that list and enable the
+clocks? That would make clear which clocks are just for bcm2838, basically emmc2.
 
+Regards,
+Matthias
 
-
+>  		desc = &clk_desc_array[i];
+>  		if (desc->clk_register && desc->data)
+>  			hws[i] = desc->clk_register(cprman, desc->data);
+> @@ -2160,7 +2188,8 @@ static int bcm2835_clk_probe(struct platform_device *pdev)
+>  }
+> 
+>  static const struct of_device_id bcm2835_clk_of_match[] = {
+> -	{ .compatible = "brcm,bcm2835-cprman", },
+> +	{ .compatible = "brcm,bcm2835-cprman", .data = bcm2835_has_clk },
+> +	{ .compatible = "brcm,bcm2838-cprman", .data = bcm2838_has_clk },
+>  	{}
+>  };
+>  MODULE_DEVICE_TABLE(of, bcm2835_clk_of_match);
+> --
+> 2.7.4
+> 
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
