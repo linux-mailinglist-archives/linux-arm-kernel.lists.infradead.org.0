@@ -2,86 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A8E116D314
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 19:49:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57BDB6D332
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 19:52:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RqseMqiL97mvEGH9DTUuUP/5+xQPlQBjqdD0tosAh8w=; b=GWU0Y+gZfBosLe
-	XxZSi3qRUGMQ7h/4G7O6zI4GFH+QMmePsLpZvV7XMZuUVJALzXLmFaclZ7hptof8uqrfdo7MaJ6U+
-	Qa6QP174kctj22rLYQIfcmlhjP7lOrx9QFkHOaVEmbvUzQkPFb9GAr0cntJTxli6k1G9xm2kYzkGg
-	bKXW6h017qFkEwIW+VcH8pM38DgQ6Hhy5q3Wi7HU6NTitDzdzQ5KPP0+OG4tnk98KT979GCSK7CjM
-	c/9c5jeS0licUt0CDKB7zGKUC399PFdiXWk8jqMdnAQYFZ5BMqGNb9paPOaTQRG0i03HM3bg60zNo
-	qsFtG/Brih0+aNOUI8vg==;
+	List-Owner; bh=TQYj94P4XWicGuMIVpblPJtzDJQiwKDwV1NC6g5wmy4=; b=n/MGR+dRrnAV+N
+	Sso9NH2bYYMW8HwxudNQJMMoWNzo8qRiddXPjlmZf8J2yXyefpdPgQSsFYltm1zEilnIRUQdMmxSM
+	HJ8PsDZeqO85+NTEHW3djJtNItQf8bSkpZ6nH9FfSTYXuljPqneK/eWVJNML4LdH8dJ76gmcO9YVp
+	srZ79Xswolbgcn45h/E3hBZ0DGseSPN+E9Rvl325Y0MJUkxmL70hqZkJRiT+EEz9s/eXF9u/cxMF4
+	F1+F/D0Xugo1RRZ8gW81tg6OgSnMKROyNAPWRBSUzoBA5sUCUSjw6hEQwRdFLWvV4b6ZtkmPycXbZ
+	FgSw3fDbujQacpGQRIhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoAWt-0005CU-V6; Thu, 18 Jul 2019 17:49:20 +0000
-Received: from mail-yw1-xc42.google.com ([2607:f8b0:4864:20::c42])
+	id 1hoAZV-0007Ke-F6; Thu, 18 Jul 2019 17:52:01 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hoAWh-0005Ap-Cq
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 17:49:08 +0000
-Received: by mail-yw1-xc42.google.com with SMTP id n205so12535126ywb.10
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 18 Jul 2019 10:49:06 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=poorly.run; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=TcHEhgeLg4wCyvAuCh277bKvKMlAO9sX0vLEQ8gbuaw=;
- b=H6wkH+Ja6Vv25R0kLDO3V4VVaS5ztNs9UcAubxqNI+3MthILN+2PFYat2u8m43w84T
- dAl/y87QY25XTUsQar+5BsMFrCcgZZr2GZBLhuqyQHujiIFXoQSWk06OtnL5c36L74TC
- VxBLEPjDdkPgpMEK7dFUqwRJj+fvhBAX6RIVfav3Jv8IKNZRSO4hEMAaQJ+tiTHT8GCC
- 58uDhvWDf0K5kwRrrRpoDq/1sHOiikD5rNc1/JfuBN9AtOcD6T+9q+hREa6IMDY3J47U
- XJ1yiFscnRKTlmsHD1sW4ywez1baijXdAhIcjPWMvudB7QJGXHuaGaZUZArhWVOxGrjq
- WC9A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=TcHEhgeLg4wCyvAuCh277bKvKMlAO9sX0vLEQ8gbuaw=;
- b=fI/Owj5yHI1e6RBU3p1/tHJZiHO/lBr+znBaHG56dD26FRknBvZp2XCNR+Poxsphq9
- xh8Hzrh6pcUXkY7Y+gyXRD8CucPBP7d/c0K1joon8n7wQjd3HqSLP3SJq9QNij/WefF5
- b9QtO8713XZOtsa9Q/uJIJufkuxr7/F3JJnJhNEljmv/MzOs39GyguMopZWsCxpIhdCC
- oXr9U1jb0BvQlbqy2ePMMOKZOAnai9rY2jb2KSDwsNf9E2UV8t/GCJWiNO57YidBRlEC
- 3Gxl7PAZGKYbEAWgY6BMyaM8dlmGvIR5OlRP3SdCORyye60LhQLMkzt0qoIlCCghfqeP
- ghtg==
-X-Gm-Message-State: APjAAAXEvYYI+32ZvRVTnDtLqA0/pc6rB7xmr8Myl8ZHyHfktSighTYE
- JbECKFsb0yumiqkDuBWidOpwLQ==
-X-Google-Smtp-Source: APXvYqx6Uslwcgt6FXtPTtAmiDT6PsPZOZfSYSrx+5nJhVWwXm/mkQxhro4Op23WJMYr87U7zzwBEg==
-X-Received: by 2002:a81:5fd4:: with SMTP id
- t203mr27254887ywb.300.1563472146017; 
- Thu, 18 Jul 2019 10:49:06 -0700 (PDT)
-Received: from localhost ([2620:0:1013:11:89c6:2139:5435:371d])
- by smtp.gmail.com with ESMTPSA id j67sm6907891ywa.39.2019.07.18.10.49.05
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 18 Jul 2019 10:49:05 -0700 (PDT)
-Date: Thu, 18 Jul 2019 13:49:05 -0400
-From: Sean Paul <sean@poorly.run>
-To: Sam Ravnborg <sam@ravnborg.org>
-Subject: Re: [PATCH v1 04/11] drm/ati_pcigart: drop dependency on
- drm_os_linux.h
-Message-ID: <20190718174905.GG31819@art_vandelay>
-References: <20190718161507.2047-1-sam@ravnborg.org>
- <20190718161507.2047-5-sam@ravnborg.org>
+ id 1hoAYm-0005Ba-Qr
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 17:51:20 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=92pp11O0w/KygeJfU6KKGXI60apu6fEQZEzEHiKx8AI=; b=06E/D9xSxeTyEkX282S8AJCHr
+ jlsqmlbJjKEnRJO2K+WRb4bLh3dDu3Ysr85Nuu6aCgpOWauBUGRi/eeI1+SsoldJN3BnoGVeCFkLT
+ jglWEMcIJmSVzXjiDc5OyPGuU7w7HlSwwo3CcXNdq3f45tU5t6B1KvOt//kDuEs/vPkAKhqan8KZg
+ 3JxUQKvhBvhw0iJmoM7Ls63K5LpHODzQ41UjKlnr4isPiD4I/xXLDckYUheivrj6jUC77FrdP+BHG
+ 2AR2wK696zW+t+K2e0bxiNYaq5yGHQef3xXcqtQBw/AAeQ2ombwAHa3V6mxpbTQVd5sB9xnxTx/ai
+ R55qKMzwQ==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:60468)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1hoAWd-0008Hp-Ri; Thu, 18 Jul 2019 18:49:04 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.89)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1hoAWb-0002kb-Qn; Thu, 18 Jul 2019 18:49:01 +0100
+Date: Thu, 18 Jul 2019 18:49:01 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [PATCH] ARM: sa1100: convert to common clock framework
+Message-ID: <20190718174901.t6hlrdq6h3xhzlbj@shell.armlinux.org.uk>
+References: <E1hhAN0-0007Jn-NP@rmk-PC.armlinux.org.uk>
+ <20190718163809.9D25D217F4@mail.kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190718161507.2047-5-sam@ravnborg.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190718163809.9D25D217F4@mail.kernel.org>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_104907_435383_F7E5C92F 
-X-CRM114-Status: GOOD (  19.15  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190718_105117_120135_9C43D92C 
+X-CRM114-Status: GOOD (  22.82  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c42 listed in]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -100,92 +87,169 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: David Airlie <airlied@linux.ie>, Liviu Dudau <Liviu.Dudau@arm.com>,
- dri-devel@lists.freedesktop.org, Chris Wilson <chris@chris-wilson.co.uk>,
- Eric Anholt <eric@anholt.net>, Rob Herring <robh@kernel.org>,
- Stefan Agner <stefan@agner.ch>, Maxime Ripard <maxime.ripard@bootlin.com>,
- CK Hu <ck.hu@mediatek.com>, Thierry Reding <treding@nvidia.com>,
- Daniel Vetter <daniel@ffwll.ch>, Chunming Zhou <david1.zhou@amd.com>,
- Jani Nikula <jani.nikula@intel.com>,
- Intel Graphics Development <intel-gfx@lists.freedesktop.org>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- linux-mediatek@lists.infradead.org,
- Lionel Landwerlin <lionel.g.landwerlin@intel.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, Sean Paul <sean@poorly.run>,
- linux-arm-kernel@lists.infradead.org, Boris Brezillon <bbrezillon@kernel.org>,
- Thomas Zimmermann <tzimmermann@suse.de>, Rob Clark <robdclark@gmail.com>,
- Noralf =?iso-8859-1?Q?Tr=F8nnes?= <noralf@tronnes.org>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Christian =?iso-8859-1?Q?K=F6nig?= <christian.koenig@amd.com>
+Cc: Michael Turquette <mturquette@baylibre.com>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jul 18, 2019 at 06:15:00PM +0200, Sam Ravnborg wrote:
-> The drm_os_linux.h header is deprecated.
-> Just opencode the sole DRM_WRITE32().
+On Thu, Jul 18, 2019 at 09:38:08AM -0700, Stephen Boyd wrote:
+> Quoting Russell King (2019-06-29 03:14:10)
+> > Convert sa1100 to use the common clock framework.
+> > 
+> > Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+> > ---
+> > Please ack; this is part of a larger series.  Thanks.
+> 
+> Just a few minor comments but otherwise looks good to me.
+> 
+> > diff --git a/arch/arm/mach-sa1100/clock.c b/arch/arm/mach-sa1100/clock.c
+> > index 6199e87447ca..523ef25618f7 100644
+> > --- a/arch/arm/mach-sa1100/clock.c
+> > +++ b/arch/arm/mach-sa1100/clock.c
+> > +static const char * const clk_tucr_parents[] = {
+> > +       "clk32768", "clk3686400",
+> >  };
+> 
+> It would be great if you used the new way of specifying clk parents with
+> direct pointers instead of strings. See commit fc0c209c147f ("clk: Allow
+> parents to be specified without string names") for some details.
 
-Any plans for the other users of DRM_WRITE<N>()? It seems like it'd be trivial
-to fix it up for via and mga. I don't really have any background on
-drm_os_linux.h, but it doesn't seem like it'd be that much more effort to just
-remove the whole thing.
-
-Sean
+I don't see at the moment how this is used with clk-mux.c - can you
+provide some hints?
 
 > 
-> Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
-> Cc: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>
-> Cc: Maxime Ripard <maxime.ripard@bootlin.com>
-> Cc: Sean Paul <sean@poorly.run>
-> Cc: David Airlie <airlied@linux.ie>
-> Cc: Daniel Vetter <daniel@ffwll.ch>
-> ---
->  drivers/gpu/drm/ati_pcigart.c | 10 ++++++----
->  1 file changed, 6 insertions(+), 4 deletions(-)
+> >  
+> > -struct clk {
+> > -       const struct clkops     *ops;
+> > -       unsigned int            enabled;
+> > -};
+> > -
+> > -#define DEFINE_CLK(_name, _ops)                                \
+> > -struct clk clk_##_name = {                             \
+> > -               .ops    = _ops,                         \
+> > -       }
+> > -
+> > -static DEFINE_SPINLOCK(clocks_lock);
+> > -
+> > -/* Dummy clk routine to build generic kernel parts that may be using them */
+> > -long clk_round_rate(struct clk *clk, unsigned long rate)
+> > -{
+> > -       return clk_get_rate(clk);
+> > -}
+> > -EXPORT_SYMBOL(clk_round_rate);
+> > -
+> > -int clk_set_rate(struct clk *clk, unsigned long rate)
+> > -{
+> > -       return 0;
+> > -}
+> > -EXPORT_SYMBOL(clk_set_rate);
+> > -
+> > -int clk_set_parent(struct clk *clk, struct clk *parent)
+> > -{
+> > -       return 0;
+> > -}
+> > -EXPORT_SYMBOL(clk_set_parent);
+> > +static DEFINE_SPINLOCK(tucr_lock);
+> >  
+> > -struct clk *clk_get_parent(struct clk *clk)
+> > +static int clk_gpio27_enable(struct clk_hw *hw)
+> >  {
+> > -       return NULL;
+> > -}
+> > -EXPORT_SYMBOL(clk_get_parent);
+> > +       unsigned long flags;
+> >  
+> > -static void clk_gpio27_enable(struct clk *clk)
+> > -{
+> >         /*
+> >          * First, set up the 3.6864MHz clock on GPIO 27 for the SA-1111:
+> >          * (SA-1110 Developer's Manual, section 9.1.2.1)
+> >          */
+> > +       local_irq_save(flags);
+> >         GAFR |= GPIO_32_768kHz;
+> >         GPDR |= GPIO_32_768kHz;
+> > -       TUCR = TUCR_3_6864MHz;
+> > +       local_irq_restore(flags);
+> > +
+> > +       return 0;
+> >  }
+> >  
+> > -static void clk_gpio27_disable(struct clk *clk)
+> > +static void clk_gpio27_disable(struct clk_hw *hw)
+> >  {
+> > -       TUCR = 0;
+> > +       unsigned long flags;
+> > +
+> > +       local_irq_save(flags);
 > 
-> diff --git a/drivers/gpu/drm/ati_pcigart.c b/drivers/gpu/drm/ati_pcigart.c
-> index 2a413e291a60..580aa2676358 100644
-> --- a/drivers/gpu/drm/ati_pcigart.c
-> +++ b/drivers/gpu/drm/ati_pcigart.c
-> @@ -35,7 +35,6 @@
->  
->  #include <drm/ati_pcigart.h>
->  #include <drm/drm_device.h>
-> -#include <drm/drm_os_linux.h>
->  #include <drm/drm_pci.h>
->  #include <drm/drm_print.h>
->  
-> @@ -169,6 +168,7 @@ int drm_ati_pcigart_init(struct drm_device *dev, struct drm_ati_pcigart_info *ga
->  		page_base = (u32) entry->busaddr[i];
->  
->  		for (j = 0; j < (PAGE_SIZE / ATI_PCIGART_PAGE_SIZE); j++) {
-> +			u32 offset;
->  			u32 val;
->  
->  			switch(gart_info->gart_reg_if) {
-> @@ -184,10 +184,12 @@ int drm_ati_pcigart_init(struct drm_device *dev, struct drm_ati_pcigart_info *ga
->  				break;
->  			}
->  			if (gart_info->gart_table_location ==
-> -			    DRM_ATI_GART_MAIN)
-> +			    DRM_ATI_GART_MAIN) {
->  				pci_gart[gart_idx] = cpu_to_le32(val);
-> -			else
-> -				DRM_WRITE32(map, gart_idx * sizeof(u32), val);
-> +			} else {
-> +				offset = gart_idx * sizeof(u32);
-> +				writel(val, (void __iomem *)map->handle + offset);
-> +			}
->  			gart_idx++;
->  			page_base += ATI_PCIGART_PAGE_SIZE;
->  		}
-> -- 
-> 2.20.1
+> Why just disable irqs here?
+
+What do you mean?  Do you mean "why are you only disabling IRQs and not
+taking a spinlock" or do you mean "why are you disabling IRQs here" ?
+
 > 
+> >         GPDR &= ~GPIO_32_768kHz;
+> >         GAFR &= ~GPIO_32_768kHz;
+> > +       local_irq_restore(flags);
+> >  }
+> >  
+> > -static void clk_cpu_enable(struct clk *clk)
+> > -{
+> > -}
+> > +static const struct clk_ops clk_gpio27_ops = {
+> > +       .enable = clk_gpio27_enable,
+> > +       .disable = clk_gpio27_disable,
+> > +};
+> >  
+> > -static void clk_cpu_disable(struct clk *clk)
+> > -{
+> > -}
+> > +static const char * const clk_gpio27_parents[] = {
+> > +       "tucr-mux",
+> > +};
+> >  
+> > -static unsigned long clk_cpu_get_rate(struct clk *clk)
+> > +static const struct clk_init_data clk_gpio27_init_data __initconst = {
+> > +       .name = "gpio27",
+> > +       .ops = &clk_gpio27_ops,
+> > +       .parent_names = clk_gpio27_parents,
+> > +       .num_parents = ARRAY_SIZE(clk_gpio27_parents),
+> > +       .flags = CLK_IS_BASIC,
+> 
+> CLK_IS_BASIC is gone. Please don't use it.
+
+The patch is against 5.1, and you're right, so that was removed for the
+version that ended up going upstream.
+
+> 
+> > +};
+> > +
+> > +/*
+> > + * Derived from the table 8-1 in the SA1110 manual, the MPLL appears to
+> > + * multiply its input rate by 4 x (4 + PPCR).  This calculation gives
+> > + * the exact rate.  The figures given in the table are the rates rounded
+> > + * to 100kHz.  Stick with sa11x0_getspeed() for the time being.
+> [...]
+> > +static const struct clk_init_data clk_mpll_init_data __initconst = {
+> > +       .name = "mpll",
+> > +       .ops = &clk_mpll_ops,
+> > +       .parent_names = clk_mpll_parents,
+> > +       .num_parents = ARRAY_SIZE(clk_mpll_parents),
+> > +       .flags = CLK_IS_BASIC | CLK_GET_RATE_NOCACHE | CLK_IS_CRITICAL,
+> 
+> Please add a comment about these last two flags so we know why the rate
+> can't be cached and the clk is critical.
+
+Ok, I'll do that with a follow-up patch once the merge window is over.
+
+Thanks.
 
 -- 
-Sean Paul, Software Engineer, Google / Chromium OS
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
