@@ -2,83 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8BDED6D6A4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 23:50:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F75A6D6DB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 00:42:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SMsh2geoI1mYmbKyBdMiSaaL9wbs2u0fuI40bXT1ydQ=; b=Sk13URzqp/lbYU
-	5uDd0xbXO+n9pW+YPXwwdE9vYjQgoGxawxP8WYCDCaBz4dLhGkXfidMLRTN4/VjejALkm/RstoRaZ
-	cIu9YuHxMyUZHOnp4ZrRupfS2QkDwadsayMCf8fGYW8TtO02iRRNip71JCAakcfkxdRSxPHH2iHwA
-	Hjsq5fyZWnFcHyCn5dYvCVkHWyFw7rFgDifmoqdv9DXhMOFINXMKK8akuBLPKkyU7O8NtIbEJdY2J
-	BGzIjJMWI/KNWtsTC36tXee7TBsxwM4FKSjWW7az3iwEP5hcFldj3R3Jc5oj70QxFS3MzU4IzKVHe
-	kmhIbohDH2I8plRCLacQ==;
+	List-Owner; bh=ByPfFZoOv1+8enbTMwLaKStbtBqTbcO08SC7VtLgpDg=; b=WU9Y+psRWKIHyo
+	kmPvrx91r2svJIOODaZ1SbrqAleFOkVIsxPMmWyZo+wz4nsKnSlW2Cp92u0PbvWl1K+Cl2hWC9TJ7
+	0KYuP4gBZglHzlHs2PP28lrxegJ3X3oXcg1sfywXcp+vZo8turH1bJXzj652tGFdwlJBb6RKNDIYt
+	ME0O031OK1uMczhareCLh2lImykr09RzIx0jOgTt8jNO1SnLN1bElRTmrEHynyOM04pdOzSUGu6Pn
+	ln+O3ABnQLaLXVlOvFEwMVtyE6PTWAhWHAfqWmbgeFKmvzhYx38aKALScOF5w7TCIeueIgy2nechP
+	7rzLYWy21ncYEOBL5rog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoEHy-0001l6-OV; Thu, 18 Jul 2019 21:50:10 +0000
-Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
+	id 1hoF65-0003Pm-OA; Thu, 18 Jul 2019 22:41:57 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hoEHd-0001Zu-PH
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 21:49:51 +0000
-Received: by mail-vs1-xe43.google.com with SMTP id k9so20202139vso.5
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 18 Jul 2019 14:49:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=vVaakzPBBxcCnU1uQoatmOIcAq9lkWIyC/ZitRYoNgg=;
- b=X0bRe+v4iwS6jdXfFpHS/B1EX7o/Ag7+xrNChOx3rwtQf1rriCNbBBc2AORVmlG9gC
- KVxWBeK9NBQ8gBXi8w3Av9R1Yh8r3h7xlJoRYPAOSzyytZUVC4+ejy9Cn3PMuHz9YpW/
- IxLuV6N64nVRcqJGyugTEStIUQQsmFjSjI3Fy/4XjJOaWPe1Tv10djjEfP5VnAyre9Oz
- +v6sV/2I3P9kSX69DLaBAK+GbpCi9bKxUIteMutCxdGAkTLk6xGcGP1HExLaCbrye+OE
- 8gxLRO/Twcav0vXVKqTdUtgl/TBIEzaP0a1edGLGuHPegpLd/TMcEm8b/qDG4Ok3mPbw
- W7Xw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=vVaakzPBBxcCnU1uQoatmOIcAq9lkWIyC/ZitRYoNgg=;
- b=CqixFE1cviLAhY//5Ocxse6CXwvSCkm6cIQLZH7xUHl+m76cxzHyrrLaskhLtbRSsl
- b5fzTZkzaH4uTz+UJkuOTc2MDhR0HigfRPrpxco4op7hBddYaif+1ascaZp2O9x0SKWp
- 5VCa8l2k/2NYfOrcY/8XmIP26OMae5vZxSEzM3dE+hy8hljk7a8jekbMESFFUX5gQDcz
- Qh0ZxJi2ByeH8BpdPMJVIvoPpR0WrhNYXBCfRnENeiBUhuRo0SZ+kecNKflVTWEpPj1J
- zs3ENSQUFK7OQhxiA7mxj1B3v1D2pHyX4qS/hETsqGLuTJWZlOTXv1oWOoJ+a3qQZUw6
- 3Nkw==
-X-Gm-Message-State: APjAAAVCAvQ1TgUgrMhQQLbKrql6M2Y2dcpb1Nnu2UJY6I8ezQCwSwc5
- nFz1j7pO2MPTLd/BDWw9CcKLTxVPFg4zy+D6g7zqbA==
-X-Google-Smtp-Source: APXvYqx6w0adJ6xepr9OilXJBz3+Zq+jx9/hhhjOwrMjwd3XZB1LUnFpt9Xc9uk4rPa7wYkP1TAGbNJcQe6BKGLWrJs=
-X-Received: by 2002:a67:e454:: with SMTP id n20mr31593172vsm.34.1563486587134; 
- Thu, 18 Jul 2019 14:49:47 -0700 (PDT)
+ id 1hoF5s-0003PR-5v
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 22:41:47 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=36BZtPLq/CaxSXzOtJxH8ypuKReHxIuhr0TFBrP0Uh4=; b=p8RLhlmg/xEimAbs3PuIbdPLk
+ ti/Ji+4uUHPFAtQNzyvMbUf+8EbZXMAtSBGVIrJ8Us+hdJmthrLfVz+H7yOMPUGvpAXrIdosqLUdP
+ FTl/m9APcimgYRv+tIza3tfLutBluv06M9/GD+12M2ovVj/OS8NYX+ZSsUXhaVm6cnWhF7KXhA+e2
+ AjlpljDfZfnEYw1R8fyOOQeZYIUoYV+cEW9iqVEzj0mPrKTaVqh1bhLudvI7jxsNcosU1etBMcfGv
+ zV0pqK8/XXFRhChP6hg/cx8frSi/KxkkpXy9MX6HCLrx7cj7lcXnEvJoTpwUlk0jpN1BvbJn092QH
+ 2/BXCrN5A==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:60470)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1hoF5h-0000zq-F0; Thu, 18 Jul 2019 23:41:33 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.89)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1hoF5c-0002uC-ID; Thu, 18 Jul 2019 23:41:28 +0100
+Date: Thu, 18 Jul 2019 23:41:28 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [PATCH] ARM: sa1100: convert to common clock framework
+Message-ID: <20190718224128.bm7zfq3pg6psfai4@shell.armlinux.org.uk>
+References: <E1hhAN0-0007Jn-NP@rmk-PC.armlinux.org.uk>
+ <20190718163809.9D25D217F4@mail.kernel.org>
+ <20190718174901.t6hlrdq6h3xhzlbj@shell.armlinux.org.uk>
+ <20190718184308.C8E24205F4@mail.kernel.org>
 MIME-Version: 1.0
-References: <20190513192300.653-1-ulf.hansson@linaro.org>
- <20190513192300.653-15-ulf.hansson@linaro.org>
- <20190716155317.GB32490@e121166-lin.cambridge.arm.com>
- <CAPDyKFrJ75mo+s6GuUCTQ-nVv7C+9YJyTVmwuBZ2RKFOvOi3Nw@mail.gmail.com>
- <20190718133053.GA27222@e121166-lin.cambridge.arm.com>
- <CAPDyKFr4NmichQk4uf+Wgbanh=5idKYY=37WCb6U_hNFDVYg=w@mail.gmail.com>
- <20190718174116.GD25567@codeaurora.org>
-In-Reply-To: <20190718174116.GD25567@codeaurora.org>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Thu, 18 Jul 2019 23:49:11 +0200
-Message-ID: <CAPDyKFrxBdZfskyp2HOb5YykkAqkBzRfW4-LLbcj1DAaL65XpA@mail.gmail.com>
-Subject: Re: [PATCH 14/18] drivers: firmware: psci: Manage runtime PM in the
- idle path for CPUs
-To: Lina Iyer <ilina@codeaurora.org>
+Content-Disposition: inline
+In-Reply-To: <20190718184308.C8E24205F4@mail.kernel.org>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_144949_838258_FD11365A 
-X-CRM114-Status: GOOD (  26.60  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190718_154145_177031_ECA0E797 
+X-CRM114-Status: GOOD (  28.25  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -97,104 +89,161 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Kevin Hilman <khilman@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>, Linux PM <linux-pm@vger.kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Amit Kucheria <amit.kucheria@linaro.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, Tony Lindgren <tony@atomide.com>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Sudeep Holla <sudeep.holla@arm.com>, Niklas Cassel <niklas.cassel@linaro.org>,
- Souvik Chakravarty <souvik.chakravarty@arm.com>,
- "Raju P . L . S . S . S . N" <rplsssn@codeaurora.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Michael Turquette <mturquette@baylibre.com>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 18 Jul 2019 at 19:41, Lina Iyer <ilina@codeaurora.org> wrote:
->
-> On Thu, Jul 18 2019 at 10:55 -0600, Ulf Hansson wrote:
-> >On Thu, 18 Jul 2019 at 15:31, Lorenzo Pieralisi
-> ><lorenzo.pieralisi@arm.com> wrote:
-> >>
-> >> On Thu, Jul 18, 2019 at 12:35:07PM +0200, Ulf Hansson wrote:
-> >> > On Tue, 16 Jul 2019 at 17:53, Lorenzo Pieralisi
-> >> > <lorenzo.pieralisi@arm.com> wrote:
-> >> > >
-> >> > > On Mon, May 13, 2019 at 09:22:56PM +0200, Ulf Hansson wrote:
-> >> > > > When the hierarchical CPU topology layout is used in DT, let's allow the
-> >> > > > CPU to be power managed through its PM domain, via deploying runtime PM
-> >> > > > support.
-> >> > > >
-> >> > > > To know for which idle states runtime PM reference counting is needed,
-> >> > > > let's store the index of deepest idle state for the CPU, in a per CPU
-> >> > > > variable. This allows psci_cpu_suspend_enter() to compare this index with
-> >> > > > the requested idle state index and then act accordingly.
-> >> > >
-> >> > > I do not see why a system with two CPU CPUidle states, say CPU retention
-> >> > > and CPU shutdown, should not be calling runtime PM on CPU retention
-> >> > > entry.
-> >> >
-> >> > If the CPU idle governor did select the CPU retention for the CPU, it
-> >> > was probably because the target residency for the CPU shutdown state
-> >> > could not be met.
-> >>
-> >> The kernel does not know what those cpu states represent, so, this is an
-> >> assumption you are making and it must be made clear that this code works
-> >> as long as your assumption is valid.
-> >>
-> >> If eg a "cluster" retention state has lower target_residency than
-> >> the deepest CPU idle state this assumption is wrong.
-> >
-> >Good point, you are right. I try to find a place to document this assumption.
-> >
-> >>
-> >> And CPUidle and genPD governor decisions are not synced anyway so,
-> >> again, this is an assumption, not a certainty.
-> >>
-> >> > In this case, there is no point in allowing any other deeper idle
-> >> > states for cluster/package/system, since those have even greater
-> >> > residencies, hence calling runtime PM doesn't make sense.
-> >>
-> >> On the systems you are testing on.
-> >
-> >So what you are saying typically means, that if all CPUs in the same
-> >cluster have entered the CPU retention state, on some system the
-> >cluster may also put into a cluster retention state (assuming the
-> >target residency is met)?
-> >
-> >Do you know of any systems that has these characteristics?
-> >
-> Many QCOM SoCs can do that. But with the hardware improving, the
-> power-performance benefits skew the results in favor of powering off
-> the cluster than keeping the CPU and cluster in retention.
->
-> Kevin H and I thought of this problem earlier on. But that is a second
-> level problem to solve and definitely to be thought of after we have the
-> support for the deepest states in the kernel. We left that out for a
-> later date. The idea would have been to setup the allowable state(s) in
-> the DT for CPU and cluster state definitions and have the genpd take
-> that into consideration when deciding the idle state for the domain.
+On Thu, Jul 18, 2019 at 11:43:07AM -0700, Stephen Boyd wrote:
+> Quoting Russell King - ARM Linux admin (2019-07-18 10:49:01)
+> > On Thu, Jul 18, 2019 at 09:38:08AM -0700, Stephen Boyd wrote:
+> > > Quoting Russell King (2019-06-29 03:14:10)
+> > > > Convert sa1100 to use the common clock framework.
+> > > > 
+> > > > Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+> > > > ---
+> > > > Please ack; this is part of a larger series.  Thanks.
+> > > 
+> > > Just a few minor comments but otherwise looks good to me.
+> > > 
+> > > > diff --git a/arch/arm/mach-sa1100/clock.c b/arch/arm/mach-sa1100/clock.c
+> > > > index 6199e87447ca..523ef25618f7 100644
+> > > > --- a/arch/arm/mach-sa1100/clock.c
+> > > > +++ b/arch/arm/mach-sa1100/clock.c
+> > > > +static const char * const clk_tucr_parents[] = {
+> > > > +       "clk32768", "clk3686400",
+> > > >  };
+> > > 
+> > > It would be great if you used the new way of specifying clk parents with
+> > > direct pointers instead of strings. See commit fc0c209c147f ("clk: Allow
+> > > parents to be specified without string names") for some details.
+> > 
+> > I don't see at the moment how this is used with clk-mux.c - can you
+> > provide some hints?
+> 
+> In this case both the parents are clk_hw pointers I think so an array
+> where first element is the clk_hw pointer to clk32768 and the second
+> element is the clk_hw pointer to clk3686400 would be assigned to
+> clk_init_data's parent_hws member.
+> 
+> 
+> 	struct clk_hw *clk_tucr_parents[] = {
+> 		&clk32768_hw, 
+> 		&clk3686400_hw,
+> 	};
+> 
+> 	clk_tucr_init.parent_hws = clk_tucr_parents;
 
-Thanks for confirming.
+Thanks.
 
-This more or less means we need to improve the hierarchical support in
-genpd to support more levels, such that it makes sense to have a genpd
-governor assigned at more than one level. This doesn't work well
-today. As I also have stated, this is on my todo list for genpd.
+> > > > -static void clk_gpio27_enable(struct clk *clk)
+> > > > -{
+> > > >         /*
+> > > >          * First, set up the 3.6864MHz clock on GPIO 27 for the SA-1111:
+> > > >          * (SA-1110 Developer's Manual, section 9.1.2.1)
+> > > >          */
+> > > > +       local_irq_save(flags);
+> > > >         GAFR |= GPIO_32_768kHz;
+> > > >         GPDR |= GPIO_32_768kHz;
+> > > > -       TUCR = TUCR_3_6864MHz;
+> > > > +       local_irq_restore(flags);
+> > > > +
+> > > > +       return 0;
+> > > >  }
+> > > >  
+> > > > -static void clk_gpio27_disable(struct clk *clk)
+> > > > +static void clk_gpio27_disable(struct clk_hw *hw)
+> > > >  {
+> > > > -       TUCR = 0;
+> > > > +       unsigned long flags;
+> > > > +
+> > > > +       local_irq_save(flags);
+> > > 
+> > > Why just disable irqs here?
+> > 
+> > What do you mean?  Do you mean "why are you only disabling IRQs and not
+> > taking a spinlock" or do you mean "why are you disabling IRQs here" ?
+> 
+> I mean, why are you disabling irqs and not taking a spinlock? Must be
+> because there's already a spinlock in the clk framework?
 
-However, I also agree with your standpoint, that let's start simple to
-enable the deepest state as a start with, then we can improve things
-on top.
+Nope - it's because there's no point taking a spinlock on something
+that is fundamentally only a uniprocessor architecture.  There's never
+going to be a SA11x0 compatible SoC that has more than one core.
 
-Kind regards
-Uffe
+> > > >         GPDR &= ~GPIO_32_768kHz;
+> > > >         GAFR &= ~GPIO_32_768kHz;
+> > > > +       local_irq_restore(flags);
+> > > >  }
+> > > >  
+> > > > -static void clk_cpu_enable(struct clk *clk)
+> > > > -{
+> > > > -}
+> > > > +static const struct clk_ops clk_gpio27_ops = {
+> > > > +       .enable = clk_gpio27_enable,
+> > > > +       .disable = clk_gpio27_disable,
+> > > > +};
+> > > >  
+> > > > -static void clk_cpu_disable(struct clk *clk)
+> > > > -{
+> > > > -}
+> > > > +static const char * const clk_gpio27_parents[] = {
+> > > > +       "tucr-mux",
+> > > > +};
+> > > >  
+> > > > -static unsigned long clk_cpu_get_rate(struct clk *clk)
+> > > > +static const struct clk_init_data clk_gpio27_init_data __initconst = {
+> > > > +       .name = "gpio27",
+> > > > +       .ops = &clk_gpio27_ops,
+> > > > +       .parent_names = clk_gpio27_parents,
+> > > > +       .num_parents = ARRAY_SIZE(clk_gpio27_parents),
+> > > > +       .flags = CLK_IS_BASIC,
+> > > 
+> > > CLK_IS_BASIC is gone. Please don't use it.
+> > 
+> > The patch is against 5.1, and you're right, so that was removed for the
+> > version that ended up going upstream.
+> 
+> Oh did this get sent to Linus already? I guess I should have reviewed
+> this earlier.
+
+Generally, SA11x0 stuff doesn't interest people, and patches I send out
+don't attract comments - so I tend to wait a couple of weeks before
+queuing them for merging.
+
+It hasn't yet been merged, but is in the queue - arm-soc has taken it
+into their late merges, but those haven't yet been sent.
+
+> > > > +};
+> > > > +
+> > > > +/*
+> > > > + * Derived from the table 8-1 in the SA1110 manual, the MPLL appears to
+> > > > + * multiply its input rate by 4 x (4 + PPCR).  This calculation gives
+> > > > + * the exact rate.  The figures given in the table are the rates rounded
+> > > > + * to 100kHz.  Stick with sa11x0_getspeed() for the time being.
+> > > [...]
+> > > > +static const struct clk_init_data clk_mpll_init_data __initconst = {
+> > > > +       .name = "mpll",
+> > > > +       .ops = &clk_mpll_ops,
+> > > > +       .parent_names = clk_mpll_parents,
+> > > > +       .num_parents = ARRAY_SIZE(clk_mpll_parents),
+> > > > +       .flags = CLK_IS_BASIC | CLK_GET_RATE_NOCACHE | CLK_IS_CRITICAL,
+> > > 
+> > > Please add a comment about these last two flags so we know why the rate
+> > > can't be cached and the clk is critical.
+> > 
+> > Ok, I'll do that with a follow-up patch once the merge window is over.
+> > 
+> 
+> Ok, thanks.
+> 
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
