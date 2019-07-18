@@ -2,79 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 413676D1CD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 18:18:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F9CA6D1D2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 18:18:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L74YPbzvCEV4BkjQKewLK7p0D4tAlRcyjoY9qs35KFg=; b=lghAGibEV3SjLh
-	YvhOmVEqJxcaLvcFLy26/iMOhrj/+wATNgyagBa93fiMPYQmrGaRtigUwTtiwwnmDaR7Dgt9B+Cir
-	VoYKOqxtqUe78i3VlPB9oUMF1Bk+g8ODkMkNJCPllQEbIkclCThKVewfW9eHXobHYMQZMwh5KvzxU
-	B/d73pR46OsioS4TDZHn53W1J9pbvb1q6v8NmD3XDPTGjRKCLi5GRdEu+60eV6pBCu8qcVZiwtaJf
-	4hU57JVj/Bsj3LNetcTTd8Zn4Fq4gObLQB864katbGfm7eNq5lVMEV2NSH6MHGyg3Obyhc71WSs5X
-	dNwIfsghWLzUadG5mdIw==;
+	List-Owner; bh=d7W953ewlMDLiXGIHs2vBH2Et+M0Yx+6CrUfYkZB64o=; b=IZpV/piD/ouNzt
+	NrgCoL/s0EPiVPzSZtbNpniQCiGWbJezc/PmRm1HBP38ALxFEkdxr5opJ+hVZesy14i52mCcH4VSC
+	nVCHCpyOicB0Ka+eOJlC5NUp0J+BnGuQnXkaktmOpqzG4xfPzTa/c8vFjXim+xMWMRiBBvpcYFpSH
+	jIYW43XrXdsAbqozJR4NpywW+pvGm+xI5Ytbn2avqV0am8wFJo34W0/stIl1sb+3UcsT28yYALC51
+	d3zytw8ltmnN9s9BSXmKZMg7gk68ff+q0+yBzOl+jlVGy+qv48iBIcYChCIbq0o9g84BXHfzO5HPd
+	76vkvoxt/6vdfPS5NZCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ho96V-00023x-9u; Thu, 18 Jul 2019 16:17:59 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1ho96v-0002Uz-0c; Thu, 18 Jul 2019 16:18:25 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ho94B-0007w4-9N; Thu, 18 Jul 2019 16:15:37 +0000
-Received: by mail-lj1-x243.google.com with SMTP id r9so27930993ljg.5;
- Thu, 18 Jul 2019 09:15:35 -0700 (PDT)
+ id 1ho94D-00080Z-17; Thu, 18 Jul 2019 16:15:39 +0000
+Received: by mail-lj1-x241.google.com with SMTP id v18so27901041ljh.6;
+ Thu, 18 Jul 2019 09:15:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=frt3PhKQBylKx3tn0yMJrH+277gjX7vmRE3rzWAOnE8=;
- b=sor6nM1ennhFjpJNXT+dUZW2uvyNCzkQJQRqB632N4GQ876fQQFM/wgqZsa1bMU6B3
- M/KjIDrmU8AGE+Oe9pZMW6fBGZKFarfZ/nqedHcps4Zy/nfngrk4qOQil2ISENMPYqJe
- vNzgB+H/7gRCrZfLczjmymi0WS+3so2KJaOqwVA3DYOdCDMRZIAL7DlQAEJVdLOTLLcR
- vPl05yR+hc+5wI7LGtSJURbTpSSaqGGQZB5W1jFB2caPRc4o9WxyKS+vJ68YDkqd0J7o
- TiNzz1ZT1MG7h+Id5PVwEQmix9WnOtmMplqQX30/Okmk/+DRu755WLWbnSTNnRh7y/LT
- cyFQ==
+ bh=5iHBuVq6OVoL5g2SO+kAMAMUgwsbAup21Am8Hz+Y/h8=;
+ b=E9gugjjWV1jLxjI45/LuVHSYg55YE91n6oSkaD3jd6eUsNv0C8K0Ovk+0vwwvx8+YS
+ TVeVeVXEseK36WOlEQy2UyV0qhuvVuaCKZ5csLO4yo2jQav5j7MLXWtBPYRRatgSignP
+ b6gJwXiHGR2s/H3eZtzhw/bRUeunyxT8PKYFacKSnaERK9T2ymCVsdtyVNT6hGHm2aYB
+ Z/D6scPpvrdeZaops4w5/6dMz2egQ1NvbbE99eqmGAPFKqLmzXdm4FvRsF3cIfCgFXGE
+ r2qFAAsP6tqaqWO6zU9IsDJX08BwWCLbg6nvlb8NWDlR0oVoxQ6UFBofC1PtR7Vq8cuW
+ MYyg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
  :in-reply-to:references:mime-version:content-transfer-encoding;
- bh=frt3PhKQBylKx3tn0yMJrH+277gjX7vmRE3rzWAOnE8=;
- b=ohPE3+FmL3URULouBf6mq+GDx+CabHGxECZMCpFHzTKhIYueMMkf1q4XWu/xjd1NAw
- I8XuOkSX9QlOxtbqQnV6pZJbD+2zFNVfLpQi5Ol912sJ/USBufCxDB9T9q9M0tLHteD/
- klQxPe14kyYCI8l6B/oTEXoR4PtC7T5bIqF6Yo6Nltbpkjr7QB/spR6M9bcGO61oiUf/
- AmWjEyWZUcmWBp5QvmBOczVLgpz95gPQQFFlzIsW2YiYpClJLcnah+YJOMVHD15ZfTrI
- 4HivIHYf0d8sgKNzioEF10/FhCjZqWll3aCgJeLQW3lQTIReuiir+jQc3JvQ4aUjpNx8
- W0ZA==
-X-Gm-Message-State: APjAAAUI2tVKdCLpmRJy5reaWcnTGgTiC7EoLyEAPy+fV1JLRCBXy1eC
- rAiCaQDUnGsINA1KG5QwXV4=
-X-Google-Smtp-Source: APXvYqz/RnnkqyLtk3obXJqtNg+i+wdOYBauoGyguf1eiAnrv5wKKJGQGPe8OZoel1lFzRD+6rhT2g==
-X-Received: by 2002:a2e:3807:: with SMTP id f7mr11394109lja.87.1563466533469; 
- Thu, 18 Jul 2019 09:15:33 -0700 (PDT)
+ bh=5iHBuVq6OVoL5g2SO+kAMAMUgwsbAup21Am8Hz+Y/h8=;
+ b=AVZbyI4K7kDG16GqV1trYiRCRWEcFqJPO6CGQWk3w6+EmDjfwZfcbV3mHQYwDVrAO5
+ 1CER9NCKaodhoKdUyDRA2e4RXK4j+4Nm3K2cBfbJqcpJ5dLtbn6kaIt7Nxt8iU3p4wZv
+ N9sKOXc5o7//eYp7PkddJLatgkIsO1WzhWWZAzew6jdWe0c0Ez5FTktQutC1/hpZZ8aH
+ CfWQnMmWy6oLBjgDyW6BvOaikKSqu/9SmVZ1ybI/JQ/Zk4/dJg8aRCXLNDTqX1N6MAuG
+ 5QUEzX0CrAU+7kG390Zcw/XmSjoAAbAZ2bs1GjudWHfz5f1WTr19WZHVQqv5+UfPkcbk
+ daIw==
+X-Gm-Message-State: APjAAAULIGFh5H4yuCKTzD1kJa7qPZwdSxo+WMdPZQ+vldt1DyoXavkU
+ PeKzdDoDmKzQydv8JZd2Z7A=
+X-Google-Smtp-Source: APXvYqygrJMJtCucev6Ri5vM6W9Y/vQi+gWsKgWZ7kWFT2xIA7iXrlP3B0wYUJ6SqdZxmRzieBQObA==
+X-Received: by 2002:a2e:8007:: with SMTP id j7mr24880722ljg.191.1563466535069; 
+ Thu, 18 Jul 2019 09:15:35 -0700 (PDT)
 Received: from saturn.lan (18.158-248-194.customer.lyse.net. [158.248.194.18])
  by smtp.gmail.com with ESMTPSA id
- d21sm4057995lfc.73.2019.07.18.09.15.32
+ d21sm4057995lfc.73.2019.07.18.09.15.33
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 18 Jul 2019 09:15:33 -0700 (PDT)
+ Thu, 18 Jul 2019 09:15:34 -0700 (PDT)
 From: Sam Ravnborg <sam@ravnborg.org>
 To: dri-devel@lists.freedesktop.org,
  Intel Graphics Development <intel-gfx@lists.freedesktop.org>
-Subject: [PATCH v1 06/11] drm: direct include of drm.h in drm_gem.c
-Date: Thu, 18 Jul 2019 18:15:02 +0200
-Message-Id: <20190718161507.2047-7-sam@ravnborg.org>
+Subject: [PATCH v1 07/11] drm: direct include of drm.h in
+ drm_gem_shmem_helper.c
+Date: Thu, 18 Jul 2019 18:15:03 +0200
+Message-Id: <20190718161507.2047-8-sam@ravnborg.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190718161507.2047-1-sam@ravnborg.org>
 References: <20190718161507.2047-1-sam@ravnborg.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_091535_384327_A6C7977A 
-X-CRM114-Status: GOOD (  10.46  )
+X-CRM114-CacheID: sfid-20190718_091537_306448_3FEB7DAE 
+X-CRM114-Status: GOOD (  10.77  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (sam.ravnborg[at]gmail.com)
@@ -133,21 +134,21 @@ Cc: Eric Anholt <eric@anholt.net>
 Cc: Thomas Zimmermann <tzimmermann@suse.de>
 Cc: Rob Herring <robh@kernel.org>
 ---
- drivers/gpu/drm/drm_gem.c | 1 +
+ drivers/gpu/drm/drm_gem_shmem_helper.c | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/drivers/gpu/drm/drm_gem.c b/drivers/gpu/drm/drm_gem.c
-index e6c12c6ec728..243f43d70f42 100644
---- a/drivers/gpu/drm/drm_gem.c
-+++ b/drivers/gpu/drm/drm_gem.c
-@@ -39,6 +39,7 @@
- #include <linux/mem_encrypt.h>
- #include <linux/pagevec.h>
+diff --git a/drivers/gpu/drm/drm_gem_shmem_helper.c b/drivers/gpu/drm/drm_gem_shmem_helper.c
+index 472ea5d81f82..2f64667ac805 100644
+--- a/drivers/gpu/drm/drm_gem_shmem_helper.c
++++ b/drivers/gpu/drm/drm_gem_shmem_helper.c
+@@ -10,6 +10,7 @@
+ #include <linux/slab.h>
+ #include <linux/vmalloc.h>
  
 +#include <drm/drm.h>
  #include <drm/drm_device.h>
  #include <drm/drm_drv.h>
- #include <drm/drm_file.h>
+ #include <drm/drm_gem_shmem_helper.h>
 -- 
 2.20.1
 
