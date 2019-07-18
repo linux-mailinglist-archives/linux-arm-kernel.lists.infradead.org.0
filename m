@@ -2,109 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1241B6C463
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 03:43:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E7736C48A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 03:45:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
+	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Yvk27mvlqi3DAU5VHiDELv+uwO8fkOEB02rFAgL08bw=; b=Ych0roTrfal0Ge
-	OyZjAVjPgOiogvZoSQ4zkLC+Fb5xql4ouayHM2U0DqgaATwQo64iielx9yXUAdDw5c+T7agKOedoi
-	7CXo/h06JgzT6/Fx47/0LpFQ8/aUsEg6z5rwkabtdQUh6iDuLBeygVkljEoRiVmnSIglAXZTERuNv
-	qrI3EmoHG4PvQrxQwmPjdtUsq7a03QLzdVPx5PnnwELF5ppqq2k1K8xw1F9DkRWEtepJzSwjsv0i+
-	ogqgmxGot8Fj7skGfYqyyshRdYlB0i+9mzTFDXiilT49jdvdBjoatHTUdcIJTYR8r9ZhbHTyOuqqQ
-	ZerAqaMLZB6dVjW1gwQw==;
+	List-Owner; bh=4FdTg6wq7rcKpZF5iPZ9MOwl6Odq0IByBPdC0nF66AA=; b=g/ySmKg/efVwTP
+	J8ae/qd+G/vQQNJrmhWeEfs3CQ6x2w3PdpxEFB7c/UhuzgwpQwR/H+zFq9A/HXO9t/sm8W5Vh+ipE
+	8NUWpGEFcWwJlLUOCBcTMnShdM+g22rTAxr5yvw0hfgY8z/1/zLdCn1oaPnbs+9ouKSoIzV8DkXM5
+	eaZvbMnim36A2fQBUSSOTaSKVDDMtzileAoXXnykoxCiTsih8UDpVlAXd1dvKSslUfxJkjywqOh61
+	8ybnTKshE92Q1y02SstSCqt1JYvLn9evArBglPiNriUL8kef+New+KFJRdBD9cmjyfCMjzqiyku5C
+	Gy2f0FgPDhM1Ip4b1dfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnvRy-00086P-U2; Thu, 18 Jul 2019 01:43:15 +0000
-Received: from mail-eopbgr10067.outbound.protection.outlook.com ([40.107.1.67]
- helo=EUR02-HE1-obe.outbound.protection.outlook.com)
+	id 1hnvU0-0001PN-3Z; Thu, 18 Jul 2019 01:45:20 +0000
+Received: from out1-smtp.messagingengine.com ([66.111.4.25])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnvRm-00085O-Dq
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 01:43:04 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=On+J+56MN0+7umQWgArBfdK3LAUlyWGe4C+2HAORAKDWLeMydNrxgl2xSgoWmJ+duyHURFELRNB8V+xuOVBGT/jyCXqzt2KXeMAOMNS0PiGuByqBAqkg6KbpK38P7YYhR+yuI7+isIAfBsZ3jfOtymyHSo+7amuN3uOz0k7tDrqkYlR6UaGn+hWhppyCcxPD4Cx2a0cNLVT/pad+qeFS+hFPag++/71Wi6VnyGRKYQJqparbbrqWID3b4bsi41Vzzwp36U1DZdFuDXUGMtBfQRtr3FlSulbUTEJDqddhRejz7LLxUSQBeY8V/zXgY7Z/3VvXAk0/ymkmis48Y7OtiQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=p/0gsWW2r9nUPujKn+CUXWuDZt7h3TiMWe7F8dTj2xw=;
- b=CoRbN/+C55J2u/94ldHm2wixbWilyEanDf6OzGnN9+YQXAAF/D24gzoTHtbxS4D34rxt/SbW08pXZLnRg5+B9DGa9hWym3FKLaebz6ZS9mndzvJc5fHzSfNZfVqFO8HiLX71Bkdu5qeAER5yHUG2x7ONiVdQa7DRBt2Bn94tjuXPL7UbxjwfXsyQSAWmhhmVsnBZGT76/aWGq6qN30XOsGUd0W9i8WSi3wWGOPVXdoA/wdeTbb2zSlaIgRIFcDUPonkpsTvpyn37n68hMYPPCICHzN9VAp7A2AGCuDCtFLkrUVk6M+dwIRpuzHfXJVCxE/RY/mGA8zf6iWPLk9ypHg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=nxp.com;dmarc=pass action=none header.from=nxp.com;dkim=pass
- header.d=nxp.com;arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=p/0gsWW2r9nUPujKn+CUXWuDZt7h3TiMWe7F8dTj2xw=;
- b=Ub2C+/NuL0XHYMrcxyKatb02gQYHekhxspcGOYfLpRPVGURBiUaLxNR0pOV9+gBcrzy3yxh60/15Ud8yQwBVE7cf54FzSvW4qLAVh0FcEsycOFXV30Rjn/zW/z2EHZQh2kF6E1uIXR2IA2+ubaVH4O7bFWwwfMZEJOzgL02B644=
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB4434.eurprd04.prod.outlook.com (52.135.145.26) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2094.11; Thu, 18 Jul 2019 01:42:53 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::2023:c0e5:8a63:2e47]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::2023:c0e5:8a63:2e47%5]) with mapi id 15.20.2094.011; Thu, 18 Jul 2019
- 01:42:53 +0000
-From: Peng Fan <peng.fan@nxp.com>
-To: Rob Herring <robh+dt@kernel.org>
-Subject: RE: [PATCH v3 1/2] dt-bindings: mailbox: add binding doc for the ARM
- SMC/HVC mailbox
-Thread-Topic: [PATCH v3 1/2] dt-bindings: mailbox: add binding doc for the ARM
- SMC/HVC mailbox
-Thread-Index: AQHVOvV8miufREPgWk29kTcXKZEuBabL6GiAgAO0YqA=
-Date: Thu, 18 Jul 2019 01:42:52 +0000
-Message-ID: <AM0PR04MB44816D1B4251E7DDE34C5BDE88C80@AM0PR04MB4481.eurprd04.prod.outlook.com>
-References: <1563184103-8493-1-git-send-email-peng.fan@nxp.com>
- <1563184103-8493-2-git-send-email-peng.fan@nxp.com>
- <CAL_JsqJkt7pX9F9NggL2EXxS=2oiF07VJCOqVTvF-Zwz=cjmvg@mail.gmail.com>
-In-Reply-To: <CAL_JsqJkt7pX9F9NggL2EXxS=2oiF07VJCOqVTvF-Zwz=cjmvg@mail.gmail.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-x-originating-ip: [119.31.174.71]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: c05f2507-53f7-4350-5972-08d70b213ff6
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:AM0PR04MB4434; 
-x-ms-traffictypediagnostic: AM0PR04MB4434:
-x-ms-exchange-purlcount: 1
-x-microsoft-antispam-prvs: <AM0PR04MB44345D11C9EE48D4CDDD60A588C80@AM0PR04MB4434.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 01026E1310
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(136003)(39860400002)(396003)(376002)(366004)(346002)(199004)(189003)(186003)(7696005)(44832011)(26005)(68736007)(76176011)(486006)(99286004)(102836004)(6506007)(53936002)(53546011)(15650500001)(14444005)(33656002)(6436002)(52536014)(3846002)(2906002)(64756008)(81156014)(256004)(476003)(11346002)(446003)(8676002)(55016002)(6306002)(9686003)(6116002)(54906003)(86362001)(14454004)(316002)(25786009)(478600001)(6246003)(7736002)(4326008)(8936002)(229853002)(71200400001)(305945005)(76116006)(66556008)(5660300002)(81166006)(74316002)(66446008)(66946007)(66476007)(66066001)(71190400001)(45080400002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4434;
- H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: OraqSPcUiNVQFMPUjigpl7L2hcZKsVn7mUavw+EKN9wBtJHCwMo2dgqRyc1cIRjlHgVIuimR2GR97JZfrgDG5nZ7pOFVPmw7kHdW0lzds2o1y4YlMktR4KRiYyHgSKmocaparUq6LhUgqi7uGyDU/CNUHTbnyh2/QfT8rjbDl965hPZgaGqa8qeZAm+zQ9Sv/FcENumC+jXkN1WhH5yVW0DQQfrCmgq8+VU+S5M7FrmaZRoe3MszAWBUGZdsHORZF8giI/z0x4YmB4au7bZ10xv9kbZyUYv7DJhaNxZ+6ppc0D3t8CHld+RhOJSbPyJTIFrIhorDeqg793U03+eRtvkCvOHMmk0LyuqTkJOQYL+9Pgfk08szeB+rVP/eS+aLz8+jvhW9rculLJfYcJ10yfPlXRP4LDKiq7NqFnJH7u8=
-MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c05f2507-53f7-4350-5972-08d70b213ff6
-X-MS-Exchange-CrossTenant-originalarrivaltime: 18 Jul 2019 01:42:52.9910 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: peng.fan@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4434
+ id 1hnvTn-000097-5B
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 01:45:09 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailout.nyi.internal (Postfix) with ESMTP id 9244521B6B;
+ Wed, 17 Jul 2019 21:45:00 -0400 (EDT)
+Received: from imap2 ([10.202.2.52])
+ by compute4.internal (MEProxy); Wed, 17 Jul 2019 21:45:00 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
+ mime-version:message-id:in-reply-to:references:date:from:to:cc
+ :subject:content-type; s=fm3; bh=s1qt3Qibxm6g4Vlk9mLJ8LpBCY1+UU4
+ OMqSSBQKD17U=; b=Mi7mXRvCui2lfxJ/QqX4g/vJjwWHx+Nv9zvNRQu4/pxnR2+
+ F/x8au7odQvblv4dq6027PXSmYtSyAWiWuKAsgmtzUfAnL2fCqrY3rPbbbg7eoMp
+ tqJLAeHv5tsYBsyb36CCVSwpcPVRrV7mdhCLT2bAZnBz6P93EwloHpS0T38qU4Mt
+ N6PTGrAsSTx6VxdETqJHLXBa99YGyeMzUol2FrH4BtZc8ZPyZm16bvAjZAjFXDMO
+ XmyL1vdowc2OX1gItYE7dO8BiRWu1qSraoJBTSHC6EsumWp40vx0K8hfpgZxb9f0
+ DzHZDhdXcaFvGGPejRWeLU7CBCizcl0xZjbUlIg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=s1qt3Q
+ ibxm6g4Vlk9mLJ8LpBCY1+UU4OMqSSBQKD17U=; b=H2N4oKhb0j0b36nyQsHlCS
+ 8uIAW4u84RHJbQv/Gk/USddRZ4YQFyl9XnnD5nHKJ/n2uGjIH0+IqomxXq+tzLQV
+ yrDLQhGi4OaNly0SctYvgOvY1r/Gx9KFlhQO9FH+D3OfP0FQN1la4Zk5Wyw9axon
+ FTEXw5h4o2PmpUqZnlf/DDjIujGQaiGoN04V4DxDhALVip+l8ViKXTko90vicq8T
+ +snYVDH4hPdpXRqLTuLsvE6L+5NM7NAryl/BLeks+6gEfufLoX3dLlYgRZFcJOYn
+ ULC0jOWuITFuz+pwQZ0schvvW0wFc4j4517tIdPbUDDzm667bjJnHjvPHs1xfdoQ
+ ==
+X-ME-Sender: <xms:G88vXWSb8qGvTYhZOTadxHVPgiPM-tQPY-v2jYh6JJpWrRQPlWJWqQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrieeggdegkecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpefofgggkfgjfhffhffvufgtsehttdertderredtnecuhfhrohhmpedftehnughr
+ vgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucffohhmrg
+ hinhepkhgvrhhnvghlrdhorhhgnecurfgrrhgrmhepmhgrihhlfhhrohhmpegrnhgurhgv
+ fiesrghjrdhiugdrrghunecuvehluhhsthgvrhfuihiivgeptd
+X-ME-Proxy: <xmx:G88vXdCC8X9HixU1qR65xmX6LUCvPviQYJPbS-0CwP-Mv_LwAusQSg>
+ <xmx:G88vXZJNu7o6K8LhxA40ryxxiaGpUUqNANzGlA_VGAAzaObIrxCDdQ>
+ <xmx:G88vXf_EQbe9CJXs2qxNxJyGqnPmMRIIb65qHtsYmMBTaXvDWDnmAQ>
+ <xmx:HM8vXSl4sJ-s-ZSzs25dKdmKILadIQNW3oHWnWaw3FCNUe4bCaUmXA>
+Received: by mailuser.nyi.internal (Postfix, from userid 501)
+ id F0D08E03EA; Wed, 17 Jul 2019 21:44:58 -0400 (EDT)
+X-Mailer: MessagingEngine.com Webmail Interface
+User-Agent: Cyrus-JMAP/3.1.6-731-g19d3b16-fmstable-20190627v1
+Mime-Version: 1.0
+Message-Id: <87073970-39cd-43e1-8197-d794537fa58a@www.fastmail.com>
+In-Reply-To: <1563399020-16905-1-git-send-email-hongweiz@ami.com>
+References: <1563399020-16905-1-git-send-email-hongweiz@ami.com>
+Date: Thu, 18 Jul 2019 11:14:32 +0930
+From: "Andrew Jeffery" <andrew@aj.id.au>
+To: "Hongwei Zhang" <hongweiz@ami.com>,
+ "Bartosz Golaszewski" <bgolaszewski@baylibre.com>,
+ "Joel Stanley" <joel@jms.id.au>, "Linus Walleij" <linus.walleij@linaro.org>
+Subject: Re: [PATCH 2/3 v4] ARM: dts: aspeed: Add SGPIO driver
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_184302_942178_87E65FEE 
-X-CRM114-Status: GOOD (  32.70  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190717_184507_473917_E3084BC5 
+X-CRM114-Status: GOOD (  24.02  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.1.67 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.25 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -125,247 +104,614 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
- "andre.przywara@arm.com" <andre.przywara@arm.com>,
- "jassisinghbrar@gmail.com" <jassisinghbrar@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: linux-gpio@vger.kernel.org, linux-aspeed@lists.ozlabs.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob,
+Hello Hongwei,
 
-> Subject: Re: [PATCH v3 1/2] dt-bindings: mailbox: add binding doc for the ARM
-> SMC/HVC mailbox
+The driver is shaping up! I have a few remaining nitpicks below:
+
+The first is the patch subject:
+
+[PATCH 2/3 v4] ARM: dts: aspeed: Add SGPIO driver
+
+I think one of the first iterations of the patch included the devicetree changes. It doesn't
+any more, as the devicetree updates should be done in a separate patch, however the
+subject is now inaccurate. Disregarding the [PATCH ...] prefix, it should be:
+
+gpio: aspeed: Add SPGIO driver
+
+As for the [PATCH ...] prefix business, both your bindings patch and your driver patch are
+listed as patch 2/3, and there's no third patch in the series. `git format-patch` takes
+care of all this for you - I encourage you to get `git send-email` working so you can
+use it to send the patches produced from `git format-patch` (as they won't have these
+problems). Further, if you're sending multiple patches it's useful to include a cover
+letter as the patches will be properly threaded underneath it, which helps keep related
+patches together and provides a place to talk about your patches that isn't the commit
+message.
+
+On Thu, 18 Jul 2019, at 07:00, Hongwei Zhang wrote:
+> Add SGPIO driver support for Aspeed AST2500 SoC.
 > 
-> On Mon, Jul 15, 2019 at 4:10 AM Peng Fan <peng.fan@nxp.com> wrote:
-> >
-> > From: Peng Fan <peng.fan@nxp.com>
-> >
-> > The ARM SMC/HVC mailbox binding describes a firmware interface to
-> > trigger actions in software layers running in the EL2 or EL3 exception levels.
-> > The term "ARM" here relates to the SMC instruction as part of the ARM
-> > instruction set, not as a standard endorsed by ARM Ltd.
-> >
-> > Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> > ---
-> >
-> > V3:
-> >  Convert to yaml
-> >  Drop interrupt
-> >  Introudce transports to indicate mem/reg  The func id is still kept
-> > as optional, because like SCMI it only  cares about message.
-> >
-> > V2:
-> >  Introduce interrupts as a property.
-> >
-> >  .../devicetree/bindings/mailbox/arm-smc.yaml       | 124
-> +++++++++++++++++++++
-> >  1 file changed, 124 insertions(+)
-> >  create mode 100644
-> > Documentation/devicetree/bindings/mailbox/arm-smc.yaml
-> >
-> > diff --git a/Documentation/devicetree/bindings/mailbox/arm-smc.yaml
-> > b/Documentation/devicetree/bindings/mailbox/arm-smc.yaml
-> > new file mode 100644
-> > index 000000000000..da9b1a03bc4e
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/mailbox/arm-smc.yaml
-> > @@ -0,0 +1,124 @@
-> > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause) %YAML 1.2
-> > +---
-> > +$id:
-> > +https://eur01.safelinks.protection.outlook.com/?url=http%3A%2F%2Fdevi
-> >
-> +cetree.org%2Fschemas%2Fmailbox%2Farm-smc.yaml%23&amp;data=02%7
-> C01%7Cp
-> >
-> +eng.fan%40nxp.com%7C424e0d1c19c344406b6008d709465591%7C686ea1
-> d3bc2b4c
-> >
-> +6fa92cd99c5c301635%7C0%7C0%7C636988070002772705&amp;sdata=DV
-> stQ%2FhuN
-> > +c67%2Bt08yXibQrX7sIeocHziYp3dkkeRoJ4%3D&amp;reserved=0
-> > +$schema:
-> > +https://eur01.safelinks.protection.outlook.com/?url=http%3A%2F%2Fdevi
-> >
-> +cetree.org%2Fmeta-schemas%2Fcore.yaml%23&amp;data=02%7C01%7Cpe
-> ng.fan%
-> >
-> +40nxp.com%7C424e0d1c19c344406b6008d709465591%7C686ea1d3bc2b4
-> c6fa92cd9
-> >
-> +9c5c301635%7C0%7C0%7C636988070002782698&amp;sdata=D%2Fa2SU
-> W%2FCqclJdy
-> > +RbFggqqL%2BAEumER0K3rAaisY2bMc%3D&amp;reserved=0
-> > +
-> > +title: ARM SMC Mailbox Interface
-> > +
-> > +maintainers:
-> > +  - Peng Fan <peng.fan@nxp.com>
-> > +
-> > +description: |
-> > +  This mailbox uses the ARM smc (secure monitor call) and hvc
-> > +(hypervisor
-> > +  call) instruction to trigger a mailbox-connected activity in
-> > +firmware,
-> > +  executing on the very same core as the caller. By nature this
-> > +operation
-> > +  is synchronous and this mailbox provides no way for asynchronous
-> > +messages
-> > +  to be delivered the other way round, from firmware to the OS, but
-> > +  asynchronous notification could also be supported. However the
-> > +value of
-> > +  r0/w0/x0 the firmware returns after the smc call is delivered as a
-> > +received
-> > +  message to the mailbox framework, so a synchronous communication
-> > +can be
-> > +  established, for a asynchronous notification, no value will be returned.
-> > +  The exact meaning of both the action the mailbox triggers as well
-> > +as the
-> > +  return value is defined by their users and is not subject to this binding.
-> > +
-> > +  One use case of this mailbox is the SCMI interface, which uses
-> > + shared memory  to transfer commands and parameters, and a mailbox
-> to
-> > + trigger a function  call. This allows SoCs without a separate
-> > + management processor (or when  such a processor is not available or
-> > + used) to use this standardized  interface anyway.
-> > +
-> > +  This binding describes no hardware, but establishes a firmware
-> interface.
-> > +  Upon receiving an SMC using one of the described SMC function
-> > + identifiers,  the firmware is expected to trigger some mailbox connected
-> functionality.
-> > +  The communication follows the ARM SMC calling convention.
-> > +  Firmware expects an SMC function identifier in r0 or w0. The
-> > + supported  identifiers are passed from consumers, or listed in the
-> > + the arm,func-ids  properties as described below. The firmware can
-> > + return one value in  the first SMC result register, it is expected
-> > + to be an error value,  which shall be propagated to the mailbox client.
-> > +
-> > +  Any core which supports the SMC or HVC instruction can be used, as
-> > + long as  a firmware component running in EL3 or EL2 is handling these
-> calls.
-> > +
-> > +properties:
-> > +  compatible:
-> > +    const: arm,smc-mbox
-> > +
-> > +  "#mbox-cells":
-> > +    const: 1
-> > +
-> > +  arm,num-chans:
-> > +    description: The number of channels supported.
-> > +    $ref: /schemas/types.yaml#/definitions/uint32
+> Signed-off-by: Hongwei Zhang <hongweiz@ami.com>
+> ---
+>  drivers/gpio/sgpio-aspeed.c | 518 ++++++++++++++++++++++++++++++++++++++++++++
+>  1 file changed, 518 insertions(+)
+>  create mode 100644 drivers/gpio/sgpio-aspeed.c
 > 
-> Constraints? 0 is valid? 2^32?
+> diff --git a/drivers/gpio/sgpio-aspeed.c b/drivers/gpio/sgpio-aspeed.c
+> new file mode 100644
+> index 0000000..715052c
+> --- /dev/null
+> +++ b/drivers/gpio/sgpio-aspeed.c
+> @@ -0,0 +1,518 @@
+> +// SPDX-License-Identifier: GPL-2.0+
+> +/*
+> + * Copyright 2019 American Megatrends International LLC.
+> + *
+> + * Author: Karthikeyan Mani <karthikeyanm@amiindia.co.in>
+> + */
+> +
+> +#include <linux/gpio/driver.h>
+> +#include <linux/gpio/aspeed.h>
+> +#include <linux/hashtable.h>
+> +#include <linux/bitfield.h>
+> +#include <linux/init.h>
+> +#include <linux/clk.h>
+> +#include <linux/io.h>
+> +#include <linux/kernel.h>
+> +#include <linux/module.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/spinlock.h>
+> +#include <linux/string.h>
+> +#include <linux/gpio.h>
 
-0 is not valid. There should be limited channels, but depends on firmware design.
+It would be nice if these were sorted alphabetically. Not overly fussed though.
 
+> +
+> +#define MAX_NR_SGPIO			80
+> +
+> +#define ASPEED_SGPIO_CTRL		0x54
+> +
+> +#define ASPEED_SGPIO_PINS_MASK		GENMASK(9, 6)
+> +#define ASPEED_SGPIO_CLK_DIV_MASK	GENMASK(31, 16)
+> +#define ASPEED_SGPIO_ENABLE		BIT(0)
+> +
+> +struct aspeed_sgpio {
+> +	struct gpio_chip chip;
+> +	struct clk *pclk;
+> +	spinlock_t lock;
+> +	void __iomem *base;
+> +	uint32_t dir_in[3];
+> +	int irq;
+> +};
+> +
+> +struct aspeed_sgpio_bank {
+> +	uint16_t    val_regs;
+> +	uint16_t    rdata_reg;
+> +	uint16_t    irq_regs;
+> +	const char  names[4][3];
+> +};
+> +
+> +/*
+> + * Note: The "value" register returns the input value when the GPIO is
+> + *	 configured as an input.
+> + *
+> + *	 The "rdata" register returns the output value when the GPIO is
+> + *	 configured as an output.
+> + */
+> +static const struct aspeed_sgpio_bank aspeed_sgpio_banks[] = {
+> +	{
+> +		.val_regs = 0x0000,
+> +		.rdata_reg = 0x0070,
+> +		.irq_regs = 0x0004,
+> +		.names = { "A", "B", "C", "D" },
+> +	},
+> +	{
+> +		.val_regs = 0x001C,
+> +		.rdata_reg = 0x0074,
+> +		.irq_regs = 0x0020,
+> +		.names = { "E", "F", "G", "H" },
+> +	},
+> +	{
+> +		.val_regs = 0x0038,
+> +		.rdata_reg = 0x0078,
+> +		.irq_regs = 0x003C,
+> +		.names = { "I", "J" },
+> +	},
+> +};
+> +
+> +enum aspeed_sgpio_reg {
+> +	reg_val,
+> +	reg_rdata,
+> +	reg_irq_enable,
+> +	reg_irq_type0,
+> +	reg_irq_type1,
+> +	reg_irq_type2,
+> +	reg_irq_status,
+> +};
+> +
+> +#define GPIO_VAL_VALUE      0x00
+> +#define GPIO_IRQ_ENABLE     0x00
+> +#define GPIO_IRQ_TYPE0      0x04
+> +#define GPIO_IRQ_TYPE1      0x08
+> +#define GPIO_IRQ_TYPE2      0x0C
+> +#define GPIO_IRQ_STATUS     0x10
+> +
+> +/* This will be resolved at compile time */
+> +static inline void __iomem *bank_reg(struct aspeed_sgpio *gpio,
+> +				     const struct aspeed_sgpio_bank *bank,
+> +				     const enum aspeed_sgpio_reg reg)
+> +{
+> +	switch (reg) {
+> +	case reg_val:
+> +		return gpio->base + bank->val_regs + GPIO_VAL_VALUE;
+> +	case reg_rdata:
+> +		return gpio->base + bank->rdata_reg;
+> +	case reg_irq_enable:
+> +		return gpio->base + bank->irq_regs + GPIO_IRQ_ENABLE;
+> +	case reg_irq_type0:
+> +		return gpio->base + bank->irq_regs + GPIO_IRQ_TYPE0;
+> +	case reg_irq_type1:
+> +		return gpio->base + bank->irq_regs + GPIO_IRQ_TYPE1;
+> +	case reg_irq_type2:
+> +		return gpio->base + bank->irq_regs + GPIO_IRQ_TYPE2;
+> +	case reg_irq_status:
+> +		return gpio->base + bank->irq_regs + GPIO_IRQ_STATUS;
+> +	default:
+> +		/* acturally if code runs to here, it's an error case */
+> +		BUG_ON(1);
+> +	}
+> +}
+> +
+> +#define GPIO_BANK(x)    ((x) >> 5)
+> +#define GPIO_OFFSET(x)  ((x) & 0x1f)
+> +#define GPIO_BIT(x)     BIT(GPIO_OFFSET(x))
+> +
+> +static const struct aspeed_sgpio_bank *to_bank(unsigned int offset)
+> +{
+> +	unsigned int bank = GPIO_BANK(offset);
+> +
+> +	WARN_ON(bank >= ARRAY_SIZE(aspeed_sgpio_banks));
+> +	return &aspeed_sgpio_banks[bank];
+> +}
+> +
+> +static int aspeed_sgpio_get(struct gpio_chip *gc, unsigned int offset)
+> +{
+> +	struct aspeed_sgpio *gpio = gpiochip_get_data(gc);
+> +	const struct aspeed_sgpio_bank *bank = to_bank(offset);
+> +	unsigned long flags;
+> +	enum aspeed_sgpio_reg reg;
+> +	bool is_input;
+> +	int rc = 0;
+> +
+> +	spin_lock_irqsave(&gpio->lock, flags);
+> +
+> +	is_input = gpio->dir_in[GPIO_BANK(offset)] & GPIO_BIT(offset);
+> +	reg = is_input ? reg_val : reg_rdata;
+> +	rc = !!(ioread32(bank_reg(gpio, bank, reg)) & GPIO_BIT(offset));
+> +
+> +	spin_unlock_irqrestore(&gpio->lock, flags);
+> +
+> +	return rc;
+> +}
+> +
+> +static void aspeed_sgpio_set(struct gpio_chip *gc, unsigned int 
+> offset, int val)
+> +{
+> +	struct aspeed_sgpio *gpio = gpiochip_get_data(gc);
+> +	const struct aspeed_sgpio_bank *bank = to_bank(offset);
+> +	unsigned long flags;
+> +	void __iomem *addr;
+> +	u32 reg = 0;
+> +
+> +	spin_lock_irqsave(&gpio->lock, flags);
+> +
+> +	addr = bank_reg(gpio, bank, reg_val);
+> +
+> +	if (val)
+> +		reg |= GPIO_BIT(offset);
+> +	else
+> +		reg &= ~GPIO_BIT(offset);
+> +
+> +	iowrite32(reg, addr);
+> +
+> +	spin_unlock_irqrestore(&gpio->lock, flags);
+> +}
+> +
+> +static int aspeed_sgpio_dir_in(struct gpio_chip *gc, unsigned int 
+> offset)
+> +{
+> +	struct aspeed_sgpio *gpio = gpiochip_get_data(gc);
+> +	unsigned long flags;
+> +
+> +	spin_lock_irqsave(&gpio->lock, flags);
+> +	gpio->dir_in[GPIO_BANK(offset)] |= GPIO_BIT(offset);
+> +	spin_unlock_irqrestore(&gpio->lock, flags);
+> +
+> +	return 0;
+> +}
+> +
+> +static int aspeed_sgpio_dir_out(struct gpio_chip *gc, unsigned int 
+> offset, int val)
+> +{
+> +	struct aspeed_sgpio *gpio = gpiochip_get_data(gc);
+> +	unsigned long flags;
+> +
+> +	spin_lock_irqsave(&gpio->lock, flags);
+> +	gpio->dir_in[GPIO_BANK(offset)] &= ~GPIO_BIT(offset);
+> +	spin_unlock_irqrestore(&gpio->lock, flags);
+> +
+> +	return 0;
+> +}
+> +
+> +static int aspeed_sgpio_get_direction(struct gpio_chip *gc, unsigned 
+> int offset)
+> +{
+> +	int dir_status;
+> +	struct aspeed_sgpio *gpio = gpiochip_get_data(gc);
+> +	unsigned long flags;
+> +
+> +	spin_lock_irqsave(&gpio->lock, flags);
+> +	dir_status = gpio->dir_in[GPIO_BANK(offset)] & GPIO_BIT(offset);
+> +	spin_unlock_irqrestore(&gpio->lock, flags);
+> +
+> +	return dir_status;
+> +
+> +}
+> +
+> +static inline void irqd_to_aspeed_sgpio_data(struct irq_data *d,
+> +					     struct aspeed_sgpio **gpio,
+> +					     const struct aspeed_sgpio_bank **bank,
+> +					     u32 *bit, int *offset)
+> +{
+> +	struct aspeed_sgpio *internal;
+> +
+> +	*offset = irqd_to_hwirq(d);
+> +	internal = irq_data_get_irq_chip_data(d);
+> +	WARN_ON(!internal);
+> +
+> +	*gpio = internal;
+> +	*bank = to_bank(*offset);
+> +	*bit = GPIO_BIT(*offset);
+> +}
+> +
+> +static void aspeed_sgpio_irq_ack(struct irq_data *d)
+> +{
+> +	const struct aspeed_sgpio_bank *bank;
+> +	struct aspeed_sgpio *gpio;
+> +	unsigned long flags;
+> +	void __iomem *status_addr;
+> +	int offset;
+> +	u32 bit;
+> +
+> +	irqd_to_aspeed_sgpio_data(d, &gpio, &bank, &bit, &offset);
+> +
+> +	status_addr = bank_reg(gpio, bank, reg_irq_status);
+> +
+> +	spin_lock_irqsave(&gpio->lock, flags);
+> +
+> +	iowrite32(bit, status_addr);
+> +
+> +	spin_unlock_irqrestore(&gpio->lock, flags);
+> +}
+> +
+> +static void aspeed_sgpio_irq_set_mask(struct irq_data *d, bool set)
+> +{
+> +	const struct aspeed_sgpio_bank *bank;
+> +	struct aspeed_sgpio *gpio;
+> +	unsigned long flags;
+> +	u32 reg, bit;
+> +	void __iomem *addr;
+> +	int offset;
+> +
+> +	irqd_to_aspeed_sgpio_data(d, &gpio, &bank, &bit, &offset);
+> +	addr = bank_reg(gpio, bank, reg_irq_enable);
+> +
+> +	spin_lock_irqsave(&gpio->lock, flags);
+> +
+> +	reg = ioread32(addr);
+> +	if (set)
+> +		reg |= bit;
+> +	else
+> +		reg &= ~bit;
+> +
+> +	iowrite32(reg, addr);
+> +
+> +	spin_unlock_irqrestore(&gpio->lock, flags);
+> +}
+> +
+> +static void aspeed_sgpio_irq_mask(struct irq_data *d)
+> +{
+> +	aspeed_sgpio_irq_set_mask(d, false);
+> +}
+> +
+> +static void aspeed_sgpio_irq_unmask(struct irq_data *d)
+> +{
+> +	aspeed_sgpio_irq_set_mask(d, true);
+> +}
+> +
+> +static int aspeed_sgpio_set_type(struct irq_data *d, unsigned int type)
+> +{
+> +	u32 type0 = 0;
+> +	u32 type1 = 0;
+> +	u32 type2 = 0;
+> +	u32 bit, reg;
+> +	const struct aspeed_sgpio_bank *bank;
+> +	irq_flow_handler_t handler;
+> +	struct aspeed_sgpio *gpio;
+> +	unsigned long flags;
+> +	void __iomem *addr;
+> +	int offset;
+> +
+> +	irqd_to_aspeed_sgpio_data(d, &gpio, &bank, &bit, &offset);
+> +
+> +	switch (type & IRQ_TYPE_SENSE_MASK) {
+> +	case IRQ_TYPE_EDGE_BOTH:
+> +		type2 |= bit;
+> +		/* fall through */
+> +	case IRQ_TYPE_EDGE_RISING:
+> +		type0 |= bit;
+> +		/* fall through */
+> +	case IRQ_TYPE_EDGE_FALLING:
+> +		handler = handle_edge_irq;
+> +		break;
+> +	case IRQ_TYPE_LEVEL_HIGH:
+> +		type0 |= bit;
+> +		/* fall through */
+> +	case IRQ_TYPE_LEVEL_LOW:
+> +		type1 |= bit;
+> +		handler = handle_level_irq;
+> +		break;
+> +	default:
+> +		return -EINVAL;
+> +	}
+> +
+> +	spin_lock_irqsave(&gpio->lock, flags);
+> +
+> +	addr = bank_reg(gpio, bank, reg_irq_type0);
+> +	reg = ioread32(addr);
+> +	reg = (reg & ~bit) | type0;
+> +	iowrite32(reg, addr);
+> +
+> +	addr = bank_reg(gpio, bank, reg_irq_type1);
+> +	reg = ioread32(addr);
+> +	reg = (reg & ~bit) | type1;
+> +	iowrite32(reg, addr);
+> +
+> +	addr = bank_reg(gpio, bank, reg_irq_type2);
+> +	reg = ioread32(addr);
+> +	reg = (reg & ~bit) | type2;
+> +	iowrite32(reg, addr);
+> +
+> +	spin_unlock_irqrestore(&gpio->lock, flags);
+> +
+> +	irq_set_handler_locked(d, handler);
+> +
+> +	return 0;
+> +}
+> +
+> +static void aspeed_sgpio_irq_handler(struct irq_desc *desc)
+> +{
+> +	struct gpio_chip *gc = irq_desc_get_handler_data(desc);
+> +	struct irq_chip *ic = irq_desc_get_chip(desc);
+> +	struct aspeed_sgpio *data = gpiochip_get_data(gc);
+> +	unsigned int i, p, girq;
+> +	unsigned long reg;
+> +
+> +	chained_irq_enter(ic, desc);
+> +
+> +	for (i = 0; i < ARRAY_SIZE(aspeed_sgpio_banks); i++) {
+> +		const struct aspeed_sgpio_bank *bank = &aspeed_sgpio_banks[i];
+> +
+> +		reg = ioread32(bank_reg(data, bank, reg_irq_status));
+> +
+> +		for_each_set_bit(p, &reg, 32) {
+> +			girq = irq_find_mapping(gc->irq.domain, i * 32 + p);
+> +			generic_handle_irq(girq);
+> +		}
+> +
+> +	}
+> +
+> +	chained_irq_exit(ic, desc);
+> +}
+> +
+> +static struct irq_chip aspeed_sgpio_irqchip = {
+> +	.name       = "aspeed-sgpio",
+> +	.irq_ack    = aspeed_sgpio_irq_ack,
+> +	.irq_mask   = aspeed_sgpio_irq_mask,
+> +	.irq_unmask = aspeed_sgpio_irq_unmask,
+> +	.irq_set_type   = aspeed_sgpio_set_type,
+> +};
+> +
+> +static int aspeed_sgpio_setup_irqs(struct aspeed_sgpio *gpio,
+> +				   struct platform_device *pdev)
+> +{
+> +	int rc, i;
+> +	const struct aspeed_sgpio_bank *bank;
+> +
+> +	rc = platform_get_irq(pdev, 0);
+> +	if (rc < 0)
+> +		return rc;
+> +
+> +	gpio->irq = rc;
+> +
+> +	/* Disable IRQ and clear Interrupt status registers for all SPGIO 
+> Pins. */
+> +	for (i = 0; i < ARRAY_SIZE(aspeed_sgpio_banks); i++) {
+> +		bank =  &aspeed_sgpio_banks[i];
+> +		/* disable irq enable bits */
+> +		iowrite32(0x00000000, bank_reg(gpio, bank, reg_irq_enable));
+> +		/* clear status bits */
+> +		iowrite32(0xffffffff, bank_reg(gpio, bank, reg_irq_status));
+> +	}
+> +
+> +	rc = gpiochip_irqchip_add(&gpio->chip, &aspeed_sgpio_irqchip,
+> +				  0, handle_bad_irq, IRQ_TYPE_NONE);
+> +	if (rc) {
+> +		dev_info(&pdev->dev, "Could not add irqchip\n");
+> +		return rc;
+> +	}
+> +
+> +	gpiochip_set_chained_irqchip(&gpio->chip, &aspeed_sgpio_irqchip,
+> +				     gpio->irq, aspeed_sgpio_irq_handler);
+> +
+> +	/* set IRQ settings and Enable Interrupt */
+> +	for (i = 0; i < ARRAY_SIZE(aspeed_sgpio_banks); i++) {
+> +		bank = &aspeed_sgpio_banks[i];
+> +		/* set falling or level-low irq */
+> +		iowrite32(0x00000000, bank_reg(gpio, bank, reg_irq_type0));
+> +		/* trigger type is edge */
+> +		iowrite32(0x00000000, bank_reg(gpio, bank, reg_irq_type1));
+> +		/* dual edge trigger mode. */
+> +		iowrite32(0xffffffff, bank_reg(gpio, bank, reg_irq_type2));
+> +		/* enable irq */
+> +		iowrite32(0xffffffff, bank_reg(gpio, bank, reg_irq_enable));
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct of_device_id aspeed_sgpio_of_table[] = {
+> +	{ .compatible = "aspeed,ast2400-sgpio" },
+> +	{ .compatible = "aspeed,ast2500-sgpio" },
+> +	{}
+> +};
+> +MODULE_DEVICE_TABLE(of, aspeed_sgpio_of_table);
+> +
+> +static int __init aspeed_sgpio_probe(struct platform_device *pdev)
+> +{
+> +	struct aspeed_sgpio *gpio;
+> +	u32 nr_gpios, sgpio_freq, sgpio_clk_div;
+> +	int rc;
+> +	unsigned long apb_freq;
+> +
+> +	gpio = devm_kzalloc(&pdev->dev, sizeof(*gpio), GFP_KERNEL);
+> +	if (!gpio)
+> +		return -ENOMEM;
+> +
+> +	gpio->base = devm_platform_ioremap_resource(pdev, 0);
+> +	if (IS_ERR(gpio->base))
+> +		return PTR_ERR(gpio->base);
+> +
+> +	rc = of_property_read_u32(pdev->dev.of_node, "nr-gpios", &nr_gpios);
+
+I just checked and the standard property is "ngpios", not "nr-gpios"[1]. Please fix
+this and the bindings document.
+
+[1] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/gpio/gpio.txt?h=v5.2#n141
+
+> +	if ((rc < 0) || (nr_gpios > MAX_NR_SGPIO)) {
+> +		dev_err(&pdev->dev, "Could not read nr-gpios property\n");
+
+Triggering this error message with the `nr_gpios > MAX_NR_SGPIO`
+condition is a bit confusing. I think you should check that in a separate
+conditional block if you would like to issue a dev_err():
+
+if (rc < 0) {
+        dev_err(&pdev->dev, "Could not read nr-gpios property\n");
+        return -EINVAL;
+} else if (nr_gpios > MAX_NR_GPIOS) {
+        dev_err(&pdev->dev, "Number of GPIOs exceeds the maximum of %d: %d\n",
+                         MAX_NR_SGPIO, nr_gpios);
+        return -EINVAL;
+}
+
+> +		return -EINVAL;
+> +	}
+> +
+> +	rc = of_property_read_u32(pdev->dev.of_node, "bus-frequency", 
+> &sgpio_freq);
+> +	if (rc < 0) {
+> +		dev_err(&pdev->dev, "Could not read bus-frequency property\n");
+> +		return -EINVAL;
+> +	}
+> +
+> +	gpio->pclk = devm_clk_get(&pdev->dev, NULL);
+> +	if (IS_ERR(gpio->pclk)) {
+> +		dev_err(&pdev->dev, "devm_clk_get failed\n");
+> +		return PTR_ERR(gpio->pclk);
+> +	}
+> +
+> +	apb_freq = clk_get_rate(gpio->pclk);
+> +
+> +	/*
+> +	 * From the datasheet,
+> +	 *	SGPIO period = 1/PCLK * 2 * (GPIO254[31:16] + 1)
+> +	 *	period = 2 * (GPIO254[31:16] + 1) / PCLK
+> +	 *	frequency = 1 / (2 * (GPIO254[31:16] + 1) / PCLK)
+> +	 *	frequency = PCLK / (2 * (GPIO254[31:16] + 1))
+> +	 *	frequency * 2 * (GPIO254[31:16] + 1) = PCLK
+> +	 *	GPIO254[31:16] = PCLK / (frequency * 2) - 1
+> +	 */
+> +	if (sgpio_freq == 0)
+> +		return -EINVAL;
+> +
+> +	sgpio_clk_div = (apb_freq / (sgpio_freq * 2)) - 1;
+> +
+> +	if (sgpio_clk_div > (1 << 16) - 1)
+> +		return -EINVAL;
+> +
+> +	iowrite32(FIELD_PREP(ASPEED_SGPIO_CLK_DIV_MASK, sgpio_clk_div) |
+> +		  FIELD_PREP(ASPEED_SGPIO_PINS_MASK, (nr_gpios / 8)) |
+> +		  ASPEED_SGPIO_ENABLE,
+> +		  gpio->base + ASPEED_SGPIO_CTRL);
+> +
+> +	spin_lock_init(&gpio->lock);
+> +
+> +	gpio->chip.parent = &pdev->dev;
+> +	gpio->chip.ngpio = nr_gpios;
+> +	gpio->chip.direction_input = aspeed_sgpio_dir_in;
+> +	gpio->chip.direction_output = aspeed_sgpio_dir_out;
+> +	gpio->chip.get_direction = aspeed_sgpio_get_direction;
+> +	gpio->chip.request = NULL;
+> +	gpio->chip.free = NULL;
+> +	gpio->chip.get = aspeed_sgpio_get;
+> +	gpio->chip.set = aspeed_sgpio_set;
+> +	gpio->chip.set_config = NULL;
+> +	gpio->chip.label = dev_name(&pdev->dev);
+> +	gpio->chip.base =  ARCH_NR_GPIOS - MAX_NR_SGPIO;
+
+Please set this to -1 so the base is chosen for you by the gpio subsystem.
+
+> +
+> +	/* set all SGPIO pins as input. */
+> +	memset(gpio->dir_in, 0xff, sizeof(gpio->dir_in));
+
+You've used devm_kzalloc() above, so the memory is already zeroed. You can
+remove the memset(), maybe just shift the comment to the devm_kzalloc().
+
+Other than these small issues, looks good to me. Thanks for iterating on it.
+
+Andrew
+
+> +
+> +	rc = devm_gpiochip_add_data(&pdev->dev, &gpio->chip, gpio);
+> +	if (rc < 0)
+> +		return rc;
+> +
+> +	return aspeed_sgpio_setup_irqs(gpio, pdev);
+> +}
+> +
+> +static struct platform_driver aspeed_sgpio_driver = {
+> +	.driver = {
+> +		.name = KBUILD_MODNAME,
+> +		.of_match_table = aspeed_sgpio_of_table,
+> +	},
+> +};
+> +
+> +module_platform_driver_probe(aspeed_sgpio_driver, aspeed_sgpio_probe);
+> +MODULE_DESCRIPTION("Aspeed Serial GPIO Driver");
+> +MODULE_LICENSE("GPL");
+> -- 
+> 2.7.4
 > 
-> > +
-> > +  method:
-> > +    items:
-> > +      - enum:
-> > +          - smc
-> > +          - hvc
-> > +
-> > +  transports:
-> > +    items:
-> > +      - enum:
-> > +          - mem
-> > +          - reg
-> 
-> What if someone wants to configure this per channel? Perhaps #mbox-cells
-> should be 2 and this can be a client parameter.
+>
 
-I need to check. Currently I only use one type. There might be people
-want to use different transports for each channels.
-
-> 
-> Minimally, this needs a 'arm' vendor prefix if it stays.
-
-"arm,transports" in v4.
-
-> 
-> > +
-> > +  arm,func-ids:
-> > +    description: |
-> > +      An array of 32-bit values specifying the function IDs used by each
-> > +      mailbox channel. Those function IDs follow the ARM SMC calling
-> > +      convention standard [1].
-> 
-> What's the default if not specified? Or this should be required?
-
-If not specified, it means the client firmware driver will pass it to mailbox driver.
-
-Thanks,
-Peng.
-
-> 
-> > +
-> > +      There is one identifier per channel and the number of supported
-> > +      channels is determined by the length of this array.
-> > +    minItems: 0
-> > +    maxItems: 4096   # Should be enough?
-> > +
-> > +required:
-> > +  - compatible
-> > +  - "#mbox-cells"
-> > +  - arm,num-chans
-> > +  - transports
-> > +  - method
-> > +
-> > +examples:
-> > +  - |
-> > +    sram@910000 {
-> > +      compatible = "mmio-sram";
-> > +      reg = <0x0 0x93f000 0x0 0x1000>;
-> > +      #address-cells = <1>;
-> > +      #size-cells = <1>;
-> > +      ranges = <0 0x0 0x93f000 0x1000>;
-> > +
-> > +        cpu_scp_lpri: scp-shmem@0 {
-> > +          compatible = "arm,scmi-shmem";
-> > +          reg = <0x0 0x200>;
-> > +        };
-> > +
-> > +        cpu_scp_hpri: scp-shmem@200 {
-> > +          compatible = "arm,scmi-shmem";
-> > +          reg = <0x200 0x200>;
-> > +        };
-> > +    };
-> > +
-> > +    firmware {
-> > +      smc_mbox: mailbox {
-> > +        #mbox-cells = <1>;
-> > +        compatible = "arm,smc-mbox";
-> > +        method = "smc";
-> > +        arm,num-chans = <0x2>;
-> > +        transports = "mem";
-> > +        /* Optional */
-> > +        arm,func-ids = <0xc20000fe>, <0xc20000ff>;
-> > +      };
-> > +
-> > +      scmi {
-> > +        compatible = "arm,scmi";
-> > +        mboxes = <&mailbox 0 &mailbox 1>;
-> > +        mbox-names = "tx", "rx";
-> > +        shmem = <&cpu_scp_lpri &cpu_scp_hpri>;
-> > +      };
-> > +    };
-> > +
-> > +...
-> > --
-> > 2.16.4
-> >
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
