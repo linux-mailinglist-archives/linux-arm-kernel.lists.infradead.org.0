@@ -2,72 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0FA306D696
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 23:38:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8BDED6D6A4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 23:50:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qUApj/9X1Y+O0de3OzQZ/X5BSCgDbnMSFBOsBcIGTXE=; b=VMOLhVqXp2oTLy
-	HixOsxSQadIItCC7pC7lpwRgd67WCHuXiGNgI0VtIj/F3QvDnD0wPcD7FwqF5X2Rd3hd5gidzfqCe
-	n2YQ7fsmyCncFmqdFraHi9HofMubBpA+1slqoQzHkvoHQSAOf5l3ipQOe9rVCf4WG07i2IPfg20Fn
-	Ns9CiSxD5rG2KGP+8QVtyQ1msOLNCYime8Cnn26vt5SqAFjcfVkmbzKyT1BDOE/pDxNhia/FxkROF
-	TL2XxMBqbzlf1lH7f/B6+JureijqTXCutI6y1jE6XDhy+kcCb4TJGdK41vZQ1n/+70/I+GHyk6+Ka
-	EhMq6muqUVv4E89PqDhw==;
+	List-Owner; bh=SMsh2geoI1mYmbKyBdMiSaaL9wbs2u0fuI40bXT1ydQ=; b=Sk13URzqp/lbYU
+	5uDd0xbXO+n9pW+YPXwwdE9vYjQgoGxawxP8WYCDCaBz4dLhGkXfidMLRTN4/VjejALkm/RstoRaZ
+	cIu9YuHxMyUZHOnp4ZrRupfS2QkDwadsayMCf8fGYW8TtO02iRRNip71JCAakcfkxdRSxPHH2iHwA
+	Hjsq5fyZWnFcHyCn5dYvCVkHWyFw7rFgDifmoqdv9DXhMOFINXMKK8akuBLPKkyU7O8NtIbEJdY2J
+	BGzIjJMWI/KNWtsTC36tXee7TBsxwM4FKSjWW7az3iwEP5hcFldj3R3Jc5oj70QxFS3MzU4IzKVHe
+	kmhIbohDH2I8plRCLacQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoE6l-0006Eh-Bx; Thu, 18 Jul 2019 21:38:35 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1hoEHy-0001l6-OV; Thu, 18 Jul 2019 21:50:10 +0000
+Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hoE6X-0006EH-M2
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 21:38:23 +0000
-Received: by mail-wr1-x444.google.com with SMTP id n4so30250991wrs.3
+ id 1hoEHd-0001Zu-PH
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 21:49:51 +0000
+Received: by mail-vs1-xe43.google.com with SMTP id k9so20202139vso.5
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 18 Jul 2019 14:38:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
+ Thu, 18 Jul 2019 14:49:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=z+FGbujzBVRUzZS3EuvBY5bVX5YXWlOtTiKoMmRz84Y=;
- b=DgfDvK7FGxLI/O77JY/2aKRy1KXlsW37LgMzM6vJNeTtF5x85mBfk54kbS2ywxYNAz
- 6jHI038QczhddKegJule4a0vq8ElgD2SIRgMebNFKLxQqkp01dxgn8cyXsYpcG+x9Asg
- egRrh1gHYjPXrJS3bBLQ0BNATWFeR0u2ZE3KI=
+ :cc; bh=vVaakzPBBxcCnU1uQoatmOIcAq9lkWIyC/ZitRYoNgg=;
+ b=X0bRe+v4iwS6jdXfFpHS/B1EX7o/Ag7+xrNChOx3rwtQf1rriCNbBBc2AORVmlG9gC
+ KVxWBeK9NBQ8gBXi8w3Av9R1Yh8r3h7xlJoRYPAOSzyytZUVC4+ejy9Cn3PMuHz9YpW/
+ IxLuV6N64nVRcqJGyugTEStIUQQsmFjSjI3Fy/4XjJOaWPe1Tv10djjEfP5VnAyre9Oz
+ +v6sV/2I3P9kSX69DLaBAK+GbpCi9bKxUIteMutCxdGAkTLk6xGcGP1HExLaCbrye+OE
+ 8gxLRO/Twcav0vXVKqTdUtgl/TBIEzaP0a1edGLGuHPegpLd/TMcEm8b/qDG4Ok3mPbw
+ W7Xw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=z+FGbujzBVRUzZS3EuvBY5bVX5YXWlOtTiKoMmRz84Y=;
- b=Z6TfN/IAt6H0PTdlMViScME7KZeaURfdivWtfcK0J3n+t2FoDq1ez11GkbDfyDTyep
- dTDeNYCm2DO6c4ZTGFc/VNupxcPXmtAM2+HxTcssvtXUJywt1qptECPU7K1CmUqnhlSq
- 8N03Ct69O6sS1yFcJguIxdyD/12RLvNQ+whFuHt2w89/4qVpeXKs3jcEUHCr0a2p+lPl
- 4XafPu7+UUGPZk1dMvmM+wEhGETASP8vXGXmqWLtbY5Zk9vS4+Xh5TosqUM0kfjKAGIP
- OyOKxuBL6XWU9+ZdBHvOTQz8QnSbjyr8+kw++uAUSqBbISCFtJhCNY6KNKts/wCWKauT
- mr0A==
-X-Gm-Message-State: APjAAAWAxonhMkGixLutabXKeqDpEWraB58yQGWN/mdztlt8Tt5qVFvb
- uEU1nEqKqmZBvr0OB+1TuGQGGMjshTajMPhWe5fNbg==
-X-Google-Smtp-Source: APXvYqxEvfjjloxKtJ0h+W7vsorcEIGkrZ172Ps6WcXS/yeZ8sglb8k+n2yK4Ev7ZboM9yozm6Qc82RKhGWhXeyKYZQ=
-X-Received: by 2002:a5d:4e4d:: with SMTP id r13mr1671177wrt.295.1563485899977; 
- Thu, 18 Jul 2019 14:38:19 -0700 (PDT)
+ bh=vVaakzPBBxcCnU1uQoatmOIcAq9lkWIyC/ZitRYoNgg=;
+ b=CqixFE1cviLAhY//5Ocxse6CXwvSCkm6cIQLZH7xUHl+m76cxzHyrrLaskhLtbRSsl
+ b5fzTZkzaH4uTz+UJkuOTc2MDhR0HigfRPrpxco4op7hBddYaif+1ascaZp2O9x0SKWp
+ 5VCa8l2k/2NYfOrcY/8XmIP26OMae5vZxSEzM3dE+hy8hljk7a8jekbMESFFUX5gQDcz
+ Qh0ZxJi2ByeH8BpdPMJVIvoPpR0WrhNYXBCfRnENeiBUhuRo0SZ+kecNKflVTWEpPj1J
+ zs3ENSQUFK7OQhxiA7mxj1B3v1D2pHyX4qS/hETsqGLuTJWZlOTXv1oWOoJ+a3qQZUw6
+ 3Nkw==
+X-Gm-Message-State: APjAAAVCAvQ1TgUgrMhQQLbKrql6M2Y2dcpb1Nnu2UJY6I8ezQCwSwc5
+ nFz1j7pO2MPTLd/BDWw9CcKLTxVPFg4zy+D6g7zqbA==
+X-Google-Smtp-Source: APXvYqx6w0adJ6xepr9OilXJBz3+Zq+jx9/hhhjOwrMjwd3XZB1LUnFpt9Xc9uk4rPa7wYkP1TAGbNJcQe6BKGLWrJs=
+X-Received: by 2002:a67:e454:: with SMTP id n20mr31593172vsm.34.1563486587134; 
+ Thu, 18 Jul 2019 14:49:47 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190708154730.16643-1-sudeep.holla@arm.com>
- <20190708154730.16643-8-sudeep.holla@arm.com>
-In-Reply-To: <20190708154730.16643-8-sudeep.holla@arm.com>
-From: Jim Quinlan <james.quinlan@broadcom.com>
-Date: Thu, 18 Jul 2019 17:38:06 -0400
-Message-ID: <CA+-6iNyFToC8QSf042OcqvAStvaF=voy_ohayvQBVCppgtyD7A@mail.gmail.com>
-Subject: Re: [PATCH 07/11] firmware: arm_scmi: Add support for asynchronous
- commands and delayed response
-To: Sudeep Holla <sudeep.holla@arm.com>
+References: <20190513192300.653-1-ulf.hansson@linaro.org>
+ <20190513192300.653-15-ulf.hansson@linaro.org>
+ <20190716155317.GB32490@e121166-lin.cambridge.arm.com>
+ <CAPDyKFrJ75mo+s6GuUCTQ-nVv7C+9YJyTVmwuBZ2RKFOvOi3Nw@mail.gmail.com>
+ <20190718133053.GA27222@e121166-lin.cambridge.arm.com>
+ <CAPDyKFr4NmichQk4uf+Wgbanh=5idKYY=37WCb6U_hNFDVYg=w@mail.gmail.com>
+ <20190718174116.GD25567@codeaurora.org>
+In-Reply-To: <20190718174116.GD25567@codeaurora.org>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Thu, 18 Jul 2019 23:49:11 +0200
+Message-ID: <CAPDyKFrxBdZfskyp2HOb5YykkAqkBzRfW4-LLbcj1DAaL65XpA@mail.gmail.com>
+Subject: Re: [PATCH 14/18] drivers: firmware: psci: Manage runtime PM in the
+ idle path for CPUs
+To: Lina Iyer <ilina@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_143821_734727_DD7A1BF1 
-X-CRM114-Status: GOOD (  27.84  )
+X-CRM114-CacheID: sfid-20190718_144949_838258_FD11365A 
+X-CRM114-Status: GOOD (  26.60  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -78,7 +86,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,168 +97,104 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peng Fan <peng.fan@nxp.com>, Bo Zhang <bozhang.zhang@broadcom.com>,
- Volodymyr Babchuk <volodymyr_babchuk@epam.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Kevin Hilman <khilman@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ Viresh Kumar <viresh.kumar@linaro.org>, Linux PM <linux-pm@vger.kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Amit Kucheria <amit.kucheria@linaro.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Tony Lindgren <tony@atomide.com>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Sudeep Holla <sudeep.holla@arm.com>, Niklas Cassel <niklas.cassel@linaro.org>,
+ Souvik Chakravarty <souvik.chakravarty@arm.com>,
+ "Raju P . L . S . S . S . N" <rplsssn@codeaurora.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sudeep,
+On Thu, 18 Jul 2019 at 19:41, Lina Iyer <ilina@codeaurora.org> wrote:
+>
+> On Thu, Jul 18 2019 at 10:55 -0600, Ulf Hansson wrote:
+> >On Thu, 18 Jul 2019 at 15:31, Lorenzo Pieralisi
+> ><lorenzo.pieralisi@arm.com> wrote:
+> >>
+> >> On Thu, Jul 18, 2019 at 12:35:07PM +0200, Ulf Hansson wrote:
+> >> > On Tue, 16 Jul 2019 at 17:53, Lorenzo Pieralisi
+> >> > <lorenzo.pieralisi@arm.com> wrote:
+> >> > >
+> >> > > On Mon, May 13, 2019 at 09:22:56PM +0200, Ulf Hansson wrote:
+> >> > > > When the hierarchical CPU topology layout is used in DT, let's allow the
+> >> > > > CPU to be power managed through its PM domain, via deploying runtime PM
+> >> > > > support.
+> >> > > >
+> >> > > > To know for which idle states runtime PM reference counting is needed,
+> >> > > > let's store the index of deepest idle state for the CPU, in a per CPU
+> >> > > > variable. This allows psci_cpu_suspend_enter() to compare this index with
+> >> > > > the requested idle state index and then act accordingly.
+> >> > >
+> >> > > I do not see why a system with two CPU CPUidle states, say CPU retention
+> >> > > and CPU shutdown, should not be calling runtime PM on CPU retention
+> >> > > entry.
+> >> >
+> >> > If the CPU idle governor did select the CPU retention for the CPU, it
+> >> > was probably because the target residency for the CPU shutdown state
+> >> > could not be met.
+> >>
+> >> The kernel does not know what those cpu states represent, so, this is an
+> >> assumption you are making and it must be made clear that this code works
+> >> as long as your assumption is valid.
+> >>
+> >> If eg a "cluster" retention state has lower target_residency than
+> >> the deepest CPU idle state this assumption is wrong.
+> >
+> >Good point, you are right. I try to find a place to document this assumption.
+> >
+> >>
+> >> And CPUidle and genPD governor decisions are not synced anyway so,
+> >> again, this is an assumption, not a certainty.
+> >>
+> >> > In this case, there is no point in allowing any other deeper idle
+> >> > states for cluster/package/system, since those have even greater
+> >> > residencies, hence calling runtime PM doesn't make sense.
+> >>
+> >> On the systems you are testing on.
+> >
+> >So what you are saying typically means, that if all CPUs in the same
+> >cluster have entered the CPU retention state, on some system the
+> >cluster may also put into a cluster retention state (assuming the
+> >target residency is met)?
+> >
+> >Do you know of any systems that has these characteristics?
+> >
+> Many QCOM SoCs can do that. But with the hardware improving, the
+> power-performance benefits skew the results in favor of powering off
+> the cluster than keeping the CPU and cluster in retention.
+>
+> Kevin H and I thought of this problem earlier on. But that is a second
+> level problem to solve and definitely to be thought of after we have the
+> support for the deepest states in the kernel. We left that out for a
+> later date. The idea would have been to setup the allowable state(s) in
+> the DT for CPU and cluster state definitions and have the genpd take
+> that into consideration when deciding the idle state for the domain.
 
-Just a comment in general.  The asynchronous commands you are
-implementing are not really asynchronous to the caller.  Yes it is is
-"async" at the low level, but there is no way to use scmi_do_xfer() or
-scmi_do_xfer_with_response()  and have the calling thread be able to
-continue on in parallel with the command being processed by the
-platform.   This will limit the types of applications that can use
-SCMI (perhaps this is intentional).  I was hoping that true async
-would be possible, and that the caller could also register a callback
-function to be invoked  when the command was completed.  Is this
-something that may be added in the future?  It does overlap with
-notifications, because with those messages you will need some kind of
-callback or handler thread.
+Thanks for confirming.
 
-BTW, if scmi_do_xfer_with_response()  returns --ETIMEDOUT the caller
-has no way of knowing whether it was the command ack timeout or the
-command execution timeout.
+This more or less means we need to improve the hierarchical support in
+genpd to support more levels, such that it makes sense to have a genpd
+governor assigned at more than one level. This doesn't work well
+today. As I also have stated, this is on my todo list for genpd.
 
-Regards,
-Jim
+However, I also agree with your standpoint, that let's start simple to
+enable the deepest state as a start with, then we can improve things
+on top.
 
-On Mon, Jul 8, 2019 at 11:47 AM Sudeep Holla <sudeep.holla@arm.com> wrote:
->
-> Messages that are sent to platform, also known as commands and can be:
->
-> 1. Synchronous commands that block the channel until the requested work
-> has been completed. The platform responds to these commands over the
-> same channel and hence can't be used to send another command until the
-> previous command has completed.
->
-> 2. Asynchronous commands on the other hand, the platform schedules the
-> requested work to complete later in time and returns almost immediately
-> freeing the channel for new commands. The response indicates the success
-> or failure in the ability to schedule the requested work. When the work
-> has completed, the platform sends an additional delayed response message.
->
-> Using the same transmit buffer used for sending the asynchronous command
-> even for the delayed response corresponding to it simplifies handling of
-> the delayed response. It's the caller of asynchronous command that is
-> responsible for allocating the completion flag that scmi driver can
-> complete to indicate the arrival of delayed response.
->
-> Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
-> ---
->  drivers/firmware/arm_scmi/common.h |  6 ++++-
->  drivers/firmware/arm_scmi/driver.c | 43 ++++++++++++++++++++++++++++--
->  2 files changed, 46 insertions(+), 3 deletions(-)
->
-> diff --git a/drivers/firmware/arm_scmi/common.h b/drivers/firmware/arm_scmi/common.h
-> index 4349d836b392..f89fa3f74a6f 100644
-> --- a/drivers/firmware/arm_scmi/common.h
-> +++ b/drivers/firmware/arm_scmi/common.h
-> @@ -84,17 +84,21 @@ struct scmi_msg {
->   * @rx: Receive message, the buffer should be pre-allocated to store
->   *     message. If request-ACK protocol is used, we can reuse the same
->   *     buffer for the rx path as we use for the tx path.
-> - * @done: completion event
-> + * @done: command message transmit completion event
-> + * @async: pointer to delayed response message received event completion
->   */
->  struct scmi_xfer {
->         struct scmi_msg_hdr hdr;
->         struct scmi_msg tx;
->         struct scmi_msg rx;
->         struct completion done;
-> +       struct completion *async_done;
->  };
->
->  void scmi_xfer_put(const struct scmi_handle *h, struct scmi_xfer *xfer);
->  int scmi_do_xfer(const struct scmi_handle *h, struct scmi_xfer *xfer);
-> +int scmi_do_xfer_with_response(const struct scmi_handle *h,
-> +                              struct scmi_xfer *xfer);
->  int scmi_xfer_get_init(const struct scmi_handle *h, u8 msg_id, u8 prot_id,
->                        size_t tx_size, size_t rx_size, struct scmi_xfer **p);
->  int scmi_handle_put(const struct scmi_handle *handle);
-> diff --git a/drivers/firmware/arm_scmi/driver.c b/drivers/firmware/arm_scmi/driver.c
-> index b384c818d8dd..049bb4af6b60 100644
-> --- a/drivers/firmware/arm_scmi/driver.c
-> +++ b/drivers/firmware/arm_scmi/driver.c
-> @@ -347,6 +347,8 @@ __scmi_xfer_put(struct scmi_xfers_info *minfo, struct scmi_xfer *xfer)
->   */
->  static void scmi_rx_callback(struct mbox_client *cl, void *m)
->  {
-> +       u8 msg_type;
-> +       u32 msg_hdr;
->         u16 xfer_id;
->         struct scmi_xfer *xfer;
->         struct scmi_chan_info *cinfo = client_to_scmi_chan_info(cl);
-> @@ -355,7 +357,12 @@ static void scmi_rx_callback(struct mbox_client *cl, void *m)
->         struct scmi_xfers_info *minfo = &info->tx_minfo;
->         struct scmi_shared_mem __iomem *mem = cinfo->payload;
->
-> -       xfer_id = MSG_XTRACT_TOKEN(ioread32(&mem->msg_header));
-> +       msg_hdr = ioread32(&mem->msg_header);
-> +       msg_type = MSG_XTRACT_TYPE(msg_hdr);
-> +       xfer_id = MSG_XTRACT_TOKEN(msg_hdr);
-> +
-> +       if (msg_type == MSG_TYPE_NOTIFICATION)
-> +               return; /* Notifications not yet supported */
->
->         /* Are we even expecting this? */
->         if (!test_bit(xfer_id, minfo->xfer_alloc_table)) {
-> @@ -368,7 +375,11 @@ static void scmi_rx_callback(struct mbox_client *cl, void *m)
->         scmi_dump_header_dbg(dev, &xfer->hdr);
->
->         scmi_fetch_response(xfer, mem);
-> -       complete(&xfer->done);
-> +
-> +       if (msg_type == MSG_TYPE_DELAYED_RESP)
-> +               complete(xfer->async_done);
-> +       else
-> +               complete(&xfer->done);
->  }
->
->  /**
-> @@ -472,6 +483,34 @@ int scmi_do_xfer(const struct scmi_handle *handle, struct scmi_xfer *xfer)
->         return ret;
->  }
->
-> +#define SCMI_MAX_RESPONSE_TIMEOUT      (2 * MSEC_PER_SEC)
-> +
-> +/**
-> + * scmi_do_xfer_with_response() - Do one transfer and wait until the delayed
-> + *     response is received
-> + *
-> + * @handle: Pointer to SCMI entity handle
-> + * @xfer: Transfer to initiate and wait for response
-> + *
-> + * Return: -ETIMEDOUT in case of no delayed response, if transmit error,
-> + *     return corresponding error, else if all goes well, return 0.
-> + */
-> +int scmi_do_xfer_with_response(const struct scmi_handle *handle,
-> +                              struct scmi_xfer *xfer)
-> +{
-> +       int ret, timeout = msecs_to_jiffies(SCMI_MAX_RESPONSE_TIMEOUT);
-> +       DECLARE_COMPLETION_ONSTACK(async_response);
-> +
-> +       xfer->async_done = &async_response;
-> +
-> +       ret = scmi_do_xfer(handle, xfer);
-> +       if (!ret && !wait_for_completion_timeout(xfer->async_done, timeout))
-> +               ret = -ETIMEDOUT;
-> +
-> +       xfer->async_done = NULL;
-> +       return ret;
-> +}
-> +
->  /**
->   * scmi_xfer_get_init() - Allocate and initialise one message for transmit
->   *
-> --
-> 2.17.1
->
+Kind regards
+Uffe
 
 _______________________________________________
 linux-arm-kernel mailing list
