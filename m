@@ -2,59 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 053606CC03
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 11:37:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E0FA66CC6F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 11:59:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=2kCXnWwVrTUjL4MpD/fn9m9MA7JioNQg7E3b4m/JTTo=; b=dIRT7X92rytuVigVzOI4s62LL
-	tfxBkj6DvBoSTFaaVpRxVLHTn5vbP/ahImXsYxHluYZvbcC53nn5U+uzW8IPejtuGU/fB0fZ1CHAJ
-	30aKDDpYXvQLmY/K+vfJ8RHQ4psMd7NDm8dIFUu8kWxYs1/cSV94EXWWdRyvc65qwPV6N90+XkXbk
-	W2YmRIBNsi3vTAiCbDnoWW6/e31eUQx7lBUTtfpAtk4E782ClrRYnfVUMTxD0TBpOThpp5jDiEMJC
-	Ei43jawAiFclsjU7ST9aOYlWVTs60oRPhrxYdsj4cCqIzbSHm72wh1qMKyV4fU16uKjJA12jzJvGz
-	auNamjExg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=9kMkIDzdhp0s0KnClfeYa8xFRoGFLiYCbbsFIMA0u2s=; b=Lkp
+	Y//9Q58eAyzNL5hHl8cVv5hjJ9BP+Po3A4K1shlsZJAyvPBNfuQSu7BxxrqW9/6rYakAvBWRtn1ut
+	3ndxPQ4IFO0/0WBZ13fvCxtLerRKNxmouI0GFfzR/+jxnmuj4UTlsgzE40bj0jT8S6Ta1y/MYc43E
+	1570xlG3r0+82TJ9UxTEjo+zscQom/0VAqChmDRVU2a1n6ET8cwgdncxpe9CqrNqZ/8CL7bcWTs2v
+	RAb+V83RlZdxidUMECjGIKVwnRsPCkMb2Fqr2aQx03qCc0zRpzDeHGOpz5Idk7NlY/V4Ab4xS+2nb
+	Kh3KeuoPJxaxiXZt2yCBPryreJM0y8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ho2r5-0006Lg-Me; Thu, 18 Jul 2019 09:37:39 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1ho2qq-0006Ku-HS
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 09:37:26 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A992D28;
- Thu, 18 Jul 2019 02:37:22 -0700 (PDT)
-Received: from dawn-kernel.cambridge.arm.com (unknown [10.1.197.116])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 89B973F71A;
- Thu, 18 Jul 2019 02:37:20 -0700 (PDT)
-Subject: Re: [PATCHv8 2/5] arm64: dts: qcom: msm8998: Add Coresight support
-To: saiprakash.ranjan@codeaurora.org, gregkh@linuxfoundation.org,
- mathieu.poirier@linaro.org, leo.yan@linaro.org,
- alexander.shishkin@linux.intel.com, mike.leach@linaro.org,
- robh+dt@kernel.org, bjorn.andersson@linaro.org, devicetree@vger.kernel.org,
- david.brown@linaro.org, mark.rutland@arm.com
-References: <cover.1562940244.git.saiprakash.ranjan@codeaurora.org>
- <e510df23f741205fac9030f2c95d06d607549caa.1562940244.git.saiprakash.ranjan@codeaurora.org>
- <3b192063-f31f-b861-d913-61d737cecc57@arm.com>
- <4854b0f7-6a81-bc87-3e63-d2b7c68a44f6@codeaurora.org>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <281e3548-af53-f9a7-b9e4-813b448ab078@arm.com>
-Date: Thu, 18 Jul 2019 10:37:19 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
-MIME-Version: 1.0
-In-Reply-To: <4854b0f7-6a81-bc87-3e63-d2b7c68a44f6@codeaurora.org>
-Content-Language: en-US
+	id 1ho3Bs-0005Kf-BD; Thu, 18 Jul 2019 09:59:08 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1ho3Bd-0005Ji-50
+ for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 09:58:54 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 1801A2000AF;
+ Thu, 18 Jul 2019 11:58:50 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 5611C200018;
+ Thu, 18 Jul 2019 11:58:44 +0200 (CEST)
+Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 1D47940296;
+ Thu, 18 Jul 2019 17:58:37 +0800 (SGT)
+From: Hui Song <hui.song_1@nxp.com>
+To: Shawn Guo <shawnguo@kernel.org>, Li Yang <leoyang.li@nxp.com>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>
+Subject: [PATCH 1/2] arm64: dts: ls1028a: Fix GPIO work fail.
+Date: Thu, 18 Jul 2019 17:49:01 +0800
+Message-Id: <20190718094902.15562-1-hui.song_1@nxp.com>
+X-Mailer: git-send-email 2.9.5
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_023724_625516_BD023503 
-X-CRM114-Status: GOOD (  16.11  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190718_025853_336384_080CF8DD 
+X-CRM114-Status: UNSURE (   6.87  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -68,44 +67,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: rnayak@codeaurora.org, marc.w.gonzalez@free.fr,
- linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- sibis@codeaurora.org, vivek.gautam@codeaurora.org,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: devicetree@vger.kernel.org, Song Hui <hui.song_1@nxp.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-gpio@vger.kernel.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpPbiAxOC8wNy8yMDE5IDEwOjE0LCBTYWkgUHJha2FzaCBSYW5qYW4gd3JvdGU6Cj4gSGkgU3V6
-dWtpLAo+IAo+IE9uIDcvMTgvMjAxOSAxOjU4IFBNLCBTdXp1a2kgSyBQb3Vsb3NlIHdyb3RlOgo+
-PiBIaSBTYWksCj4+Cj4+Cj4+ICAgwqDCoMKgwqDCoMKgwqAgZXRyQDYwNDgwMDAgewo+Pj4gK8Kg
-wqDCoMKgwqDCoMKgwqDCoMKgwqAgY29tcGF0aWJsZSA9ICJhcm0sY29yZXNpZ2h0LXRtYyIsICJh
-cm0scHJpbWVjZWxsIjsKPj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHJlZyA9IDwweDA2MDQ4
-MDAwIDB4MTAwMD47Cj4+PiArCj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBjbG9ja3MgPSA8
-JnJwbWNjIFJQTV9TTURfUURTU19DTEs+LCA8JnJwbWNjCj4+PiBSUE1fU01EX1FEU1NfQV9DTEs+
-Owo+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAgY2xvY2stbmFtZXMgPSAiYXBiX3BjbGsiLCAi
-YXRjbGsiOwo+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAgYXJtLHNjYXR0ZXItZ2F0aGVyOwo+
-Pgo+PiBQbGVhc2UgY291bGQgeW91IGNvbmZpcm0gdGhhdCB5b3UgaGF2ZSB0ZXN0ZWQgdGhlIHNj
-YXR0ZXItZ2F0aGVyIG1vZGUKPj4gd2l0aCBFVFIgPyBFaXRoZXIgdmlhIHBlcmYvc3lzZnMuIFBs
-ZWFzZSBjb3VsZCB5b3Ugc2hhcmUgeW91ciByZXN1bHRzID8KPj4gVW5sZXNzIHZlcmlmaWVkCj4+
-IHRoaXMgaXMgZ29pbmcgdG8gYmUgZmF0YWwgZm9yIHRoZSBzeXN0ZW0uCj4+Cj4+IFNpbWlsYXJs
-eSBmb3Igb3RoZXIgcGxhdGZvcm1zLgo+Pgo+IAo+IFllcyBJIGhhdmUgdGVzdGVkIHdpdGggc2Nh
-dHRlci1nYXRoZXIgbW9kZSB3aXRoIEVUUiBvbiBhbGwgcGxhdGZvcm1zCj4gd2hpY2ggSSBoYXZl
-IHBvc3RlZCB2aWEgc3lzZnMobm90IHBlcmYpIGJlZm9yZSBvbiBwcmV2aW91cyB2ZXJzaW9ucyBv
-Zgo+IHRoaXMgcGF0Y2ggc2VyaWVzIGFuZCBubyBpc3N1ZXMgd2VyZSBmb3VuZC4gQW5kIEkgc3Vw
-cG9zZSB0aGlzIHdhcwo+IGRpc2N1c3NlZCBpbiB2MiBvZiB0aGlzIHBhdGNoIHNlcmllcyBbMV0u
-CgpVc2luZyB0aGUgc3lzZnMgZG9lc24ndCBndWFyYW50ZWUgdGhhdCB0aGUgRVRSIGFjdHVhbGx5
-IHVzZXMgU0cgbW9kZSwgdW5sZXNzCnRoZSBidWZmZXIgc2l6ZSBzZWxlY3RlZCBpcyA+IDFNLCB3
-aGljaCBpcyB3aHkgSSBhbSBtb3JlIGludGVyZXN0ZWQgaW4gdGhlCnBlcmYgdXNhZ2UuIEFsdGVy
-bmF0aXZlbHkgeW91IG1heSBjb25maWd1cmUgYSBsYXJnZXIgYnVmZmVyIHNpemUgKHNheSwgOE1C
-KSB2aWE6CgplY2hvIDB4ODAwMDAwID4gL3N5cy9idXMvY29yZXNpZ2h0Ly4uLi90bWNfZXRyMC9i
-dWZmZXJfc2l6ZQoKCj4gCj4gQXMgc2FpZCBpbiBvbmUgb2YgdGhlIHNlcmllcyBpbml0aWFsbHkg
-WzFdLCBRQ09NIG1zbSBkb3duc3RyZWFtIGtlcm5lbHMKPiBoYXZlIGJlZW4gdXNpbmcgc2NhdHRl
-ciBnYXRoZXIgbW9kZSBhbmQgd2UgaGF2ZW4ndCBzZWVuIGFueSBmYXRhbCBpc3N1ZXMuCj4gCj4g
-WzFdIGh0dHBzOi8vcGF0Y2h3b3JrLmtlcm5lbC5vcmcvcGF0Y2gvMTA3Njk1MzUvCgpJIGhhdmVu
-J3Qgc2VlbiBhbnkgdGVzdCByZXN1bHRzIHRoZXJlIGVpdGhlci4KCkNoZWVycwpTdXp1a2kKCl9f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1r
-ZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
-dHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJu
-ZWwK
+From: Song Hui <hui.song_1@nxp.com>
+
+Add ls1028a device specify compatible.
+Make gpio as little-endian deal.
+
+Signed-off-by: Song Hui <hui.song_1@nxp.com>
+---
+ arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+index 7975519..488602b 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
++++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+@@ -277,33 +277,36 @@
+ 		};
+ 
+ 		gpio1: gpio@2300000 {
+-			compatible = "fsl,qoriq-gpio";
++			compatible = "fsl,ls1028a-gpio","fsl,qoriq-gpio";
+ 			reg = <0x0 0x2300000 0x0 0x10000>;
+ 			interrupts = <GIC_SPI 36 IRQ_TYPE_LEVEL_HIGH>;
+ 			gpio-controller;
+ 			#gpio-cells = <2>;
+ 			interrupt-controller;
+ 			#interrupt-cells = <2>;
++			little-endian;
+ 		};
+ 
+ 		gpio2: gpio@2310000 {
+-			compatible = "fsl,qoriq-gpio";
++			compatible = "fsl,ls1028a-gpio","fsl,qoriq-gpio";
+ 			reg = <0x0 0x2310000 0x0 0x10000>;
+ 			interrupts = <GIC_SPI 36 IRQ_TYPE_LEVEL_HIGH>;
+ 			gpio-controller;
+ 			#gpio-cells = <2>;
+ 			interrupt-controller;
+ 			#interrupt-cells = <2>;
++			little-endian;
+ 		};
+ 
+ 		gpio3: gpio@2320000 {
+-			compatible = "fsl,qoriq-gpio";
++			compatible = "fsl,ls1028a-gpio","fsl,qoriq-gpio";
+ 			reg = <0x0 0x2320000 0x0 0x10000>;
+ 			interrupts = <GIC_SPI 37 IRQ_TYPE_LEVEL_HIGH>;
+ 			gpio-controller;
+ 			#gpio-cells = <2>;
+ 			interrupt-controller;
+ 			#interrupt-cells = <2>;
++			little-endian;
+ 		};
+ 
+ 		usb0: usb@3100000 {
+-- 
+2.9.5
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
