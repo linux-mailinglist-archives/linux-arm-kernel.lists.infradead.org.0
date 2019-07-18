@@ -2,88 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09D656C95D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 08:40:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69F856C961
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 18 Jul 2019 08:43:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IMVjvtMYPIqRNkBAVVaUOOqkZjW6uYD8xRpF8lZ6bGA=; b=Bk7rXyy5TMZGnu
-	7nRETS0zYrGhHvWeaJyQO1LCLq2yiK47HF1TDsQ6R++aDtWMWIJQ1dlDSCDl/TNtAfrLHuTTPJrml
-	DxuAiBcohgEBZIsf1EmxS7kZlVBGVtmK/QdYnWypUYw1R4AjYWrtfszmNm7WUuvcFMQ/+CjlzKCJw
-	LHP09XvrWzR6fUKCnKXJQVUNbzPiDiqzRhOPsMTjlsKAo0hJErI7LjA35l/Df27DefJtrstmc0ViD
-	gFpaqPNg0m87KlQnxot+6K3hDIIkLKjXPTBTpnXfInJkYRHPdi/G6BifOTHfep59VsnphsvTObfEN
-	PcxZDYFV01evWiVzqGDA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=6oYPyvY2/UVLRpTPhk3etEMZEdzqfhrVL0k5CgH9Q5M=; b=AnSdOtomVwI2eo
+	vwWSaY6TxvBIlxYy6Tp4xcY6GNWpfgQb6nqK3FKEa0WGmn46OQxvK3dJmaPmg7P4q0VSot2brMUX4
+	/O/s5n+54V++/+M7u5dJ5i5FbIRg9qCtM3DUMyhaQuFoOnjjkkh8sup3oM1lvIEX9G/vrdsaZoL3c
+	Y3ZABaHLpk80pQd+hV+wZBVI6WvFaLJn01pZ2mfDHHIs2iG0QyX4rPLSbNSMGOmFEBYWSB8c4Xs2y
+	+a3B4NYSdl/6+c8yQ+Jqx6Pv++qPGPasnWaHAOOwd5QR31+WcxyA/zdp887NF8PI42ukFGSc1pqfa
+	AugQKUmpnY5BnBNu7dVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ho05e-0002sm-9J; Thu, 18 Jul 2019 06:40:30 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1ho088-0003SA-DH; Thu, 18 Jul 2019 06:43:04 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ho05N-0002sO-BS
- for linux-arm-kernel@lists.infradead.org; Thu, 18 Jul 2019 06:40:15 +0000
-Received: by mail-wr1-x443.google.com with SMTP id p13so27285267wru.10
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 17 Jul 2019 23:40:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Yiq84YH0EGr0jtd9Nm3le9TtbVZfQEjSL3GrWPPx5Ow=;
- b=ROcsAp0QHtwZEhwBmcUJ5paGNdRrs5oBThUgR6Uc7kozaOlhTNiv1mnQGrQD3xOiE4
- Xp2x34O3VyotqZW/IV2mcEiimpf7LxI1/OTQXZyyXRLY20MIRMBXTQx8A4uDEmbYbiE9
- HtiIHJaKWRKR7k7WhFxEZMXbSnlPTgXKwsAM66K5Fss6vNR47RG3LwWZAIc73MMb1sGQ
- zHuaXVOg4WAjScaWAGKvA2NUPeqhk2nY+7yBBQCoNkXlkhQRTmCu5KUOn+h97F7V5Lag
- tdLyGAfcROQWeaZXf8D3SrPz6MK6C1HgGlPm5iCoVkMe+5ygfDxoVJIEPpKP3H97qA8c
- UVsQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Yiq84YH0EGr0jtd9Nm3le9TtbVZfQEjSL3GrWPPx5Ow=;
- b=opbEcaEYP7cuzRiuRQ0CcfJhVLdPWB9WjBWdC8IEMF/YL1PMhXNIPn+tyZ3BJk1JGl
- sHpTaCn9ch6NIJIedlGv+g01sIP7fNYa/hvC0BJXs8CagCEV50N/Jv79BwGd84KaWqib
- 4VkwHpU0AImKvFsFOxOen4K7WC5dz6j14/q6jtCxM2C5RQnkRWg/Acu87BA0KSMTdnbZ
- To7XPqMkyp6mCYOM3WaPNSU1tcBLCBgLt1pQXfWmYN0+xmPZqIiH9GvmrOalHO91Z2R9
- m7fsjR1mrlpwWpJmR1hOlYZg4hsOd+GrPx09GxG/8+W3Af0JLgz7G0d+ysNVljN7cGbg
- ifyw==
-X-Gm-Message-State: APjAAAWkgx7VcOAIk1aBA5xs4w9RWAVUM141WL6xXf3aweB0NgNW6PzJ
- xbY45LpKnN+i4fvGeT3ae49nBUVMM5JpSN6GXHw=
-X-Google-Smtp-Source: APXvYqwpiPk4ZG/hJIPPlfVcSZOii/3M88OIcBbI+tPybGZtXnTNGx+rIJik+xaOd2Eb8HzkdMLlrCMIktsOZnfj+/M=
-X-Received: by 2002:a5d:46cf:: with SMTP id g15mr49231594wrs.93.1563432011604; 
- Wed, 17 Jul 2019 23:40:11 -0700 (PDT)
+ id 1ho07k-0003R4-PW; Thu, 18 Jul 2019 06:42:43 +0000
+X-UUID: 7a30a71709a641dfa291e2a1df04777c-20190717
+X-UUID: 7a30a71709a641dfa291e2a1df04777c-20190717
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <yong.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 2050246; Wed, 17 Jul 2019 22:42:35 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 17 Jul 2019 23:42:34 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 18 Jul 2019 14:42:32 +0800
+Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 18 Jul 2019 14:42:31 +0800
+From: Yong Wu <yong.wu@mediatek.com>
+To: Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>
+Subject: [RFC PATCH] regulator: core: Move device_link_remove out from
+ regulator_list_mutex
+Date: Thu, 18 Jul 2019 14:42:26 +0800
+Message-ID: <1563432146-28097-1-git-send-email-yong.wu@mediatek.com>
+X-Mailer: git-send-email 1.9.1
 MIME-Version: 1.0
-References: <20190627081205.22065-1-daniel.baluta@nxp.com>
- <20190627081205.22065-2-daniel.baluta@nxp.com>
- <CAEnQRZAGTdMpsnH-F_Xoaae0+nX8WTqYOrMJUjeQ6vhWvZ1y1Q@mail.gmail.com>
- <20190709120241.nlzy7o6etucn5udk@pengutronix.de>
-In-Reply-To: <20190709120241.nlzy7o6etucn5udk@pengutronix.de>
-From: Daniel Baluta <daniel.baluta@gmail.com>
-Date: Thu, 18 Jul 2019 09:40:00 +0300
-Message-ID: <CAEnQRZA=5q-EnvHs41k0nFxYLt591C65GPhO6b5iOtOqBMuCYg@mail.gmail.com>
-Subject: Re: [PATCH v2 1/2] firmware: imx: Add DSP IPC protocol interface
-To: Oleksij Rempel <o.rempel@pengutronix.de>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_234013_399912_42BB1C37 
-X-CRM114-Status: GOOD (  31.63  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190717_234240_837451_6116A7AC 
+X-CRM114-Status: GOOD (  13.41  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (daniel.baluta[at]gmail.com)
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,352 +72,235 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>,
- "mark.rutland@arm.com" <mark.rutland@arm.com>,
- Anson Huang <anson.huang@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Daniel Baluta <daniel.baluta@nxp.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "S.j. Wang" <shengjiu.wang@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: youlin.pei@mediatek.com, anan.sun@mediatek.com,
+ Nicolas Boichat <drinkcat@chromium.org>, cui.zhang@mediatek.com,
+ srv_heupstream@mediatek.com, chao.hao@mediatek.com,
+ Robin Murphy <robin.murphy@arm.com>, Joerg Roedel <joro@8bytes.org>,
+ linux-kernel@vger.kernel.org, Evan Green <evgreen@chromium.org>,
+ Tomasz Figa <tfiga@google.com>, iommu@lists.linux-foundation.org,
+ Matthias Kaehlcke <mka@chromium.org>, linux-mediatek@lists.infradead.org,
+ yong.wu@mediatek.com, ming-fan.chen@mediatek.com, Will
+ Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-I just made some minor changes and will send the patch right now.
-Shawn please skip this.
+The MediaTek SMI adding device_link patch looks reveal a deadlock
+issue reported in [1], This patch is to fix this deadlock issue.
 
-On Tue, Jul 9, 2019 at 3:02 PM Oleksij Rempel <o.rempel@pengutronix.de> wrote:
->
-> On Tue, Jul 09, 2019 at 08:48:20AM +0300, Daniel Baluta wrote:
-> > Hi Oleksij,
-> >
-> > Any comments on this?
->
-> Looks good for me. All my suggestions was fixed.
->
-> Reviewed-by: <o.rempel@pengutronix.de>
->
-> > On Thu, Jun 27, 2019 at 11:14 AM Daniel Baluta <daniel.baluta@nxp.com> wrote:
-> > >
-> > > Some of i.MX8 processors (e.g i.MX8QM, i.MX8QXP) contain
-> > > the Tensilica HiFi4 DSP for advanced pre- and post-audio
-> > > processing.
-> > >
-> > > The communication between Host CPU and DSP firmware is
-> > > taking place using a shared memory area for message passing
-> > > and a dedicated Messaging Unit for notifications.
-> > >
-> > > DSP IPC protocol driver offers a doorbell interface using
-> > > imx-mailbox API.
-> > >
-> > > We use 4 MU channels (2 x TXDB, 2 x RXDB) to implement a
-> > > request-reply protocol.
-> > >
-> > > Connection 0 (txdb0, rxdb0):
-> > >         - Host writes messasge to shared memory [SHMEM]
-> > >         - Host sends a request [MU]
-> > >         - DSP handles request [SHMEM]
-> > >         - DSP sends reply [MU]
-> > >
-> > > Connection 1 (txdb1, rxdb1):
-> > >         - DSP writes a message to shared memory [SHMEM]
-> > >         - DSP sends a request [MU]
-> > >         - Host handles request [SHMEM]
-> > >         - Host sends reply [MU]
-> > >
-> > > The protocol driver will be used by a Host client to
-> > > communicate with the DSP. First client will be the i.MX8
-> > > part from Sound Open Firmware infrastructure.
-> > >
-> > > The protocol drivers offers the following interface:
-> > >
-> > > On Tx:
-> > >    - imx_dsp_ring_doorbell, will be called to notify the DSP
-> > >    that it needs to handle a request.
-> > >
-> > > On Rx:
-> > >    - clients need to provide two callbacks:
-> > >         .handle_reply
-> > >         .handle_request
-> > >   - the callbacks will be used by the protocol driver on
-> > >     notification arrival from DSP.
-> > >
-> > > Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
-> > > ---
-> > >  drivers/firmware/imx/Kconfig     |  11 +++
-> > >  drivers/firmware/imx/Makefile    |   1 +
-> > >  drivers/firmware/imx/imx-dsp.c   | 142 +++++++++++++++++++++++++++++++
-> > >  include/linux/firmware/imx/dsp.h |  67 +++++++++++++++
-> > >  4 files changed, 221 insertions(+)
-> > >  create mode 100644 drivers/firmware/imx/imx-dsp.c
-> > >  create mode 100644 include/linux/firmware/imx/dsp.h
-> > >
-> > > diff --git a/drivers/firmware/imx/Kconfig b/drivers/firmware/imx/Kconfig
-> > > index 42b566f8903f..ddb241708c31 100644
-> > > --- a/drivers/firmware/imx/Kconfig
-> > > +++ b/drivers/firmware/imx/Kconfig
-> > > @@ -1,4 +1,15 @@
-> > >  # SPDX-License-Identifier: GPL-2.0-only
-> > > +config IMX_DSP
-> > > +       bool "IMX DSP Protocol driver"
-> > > +       depends on IMX_MBOX
-> > > +       help
-> > > +         This enables DSP IPC protocol between host CPU (Linux)
-> > > +         and the firmware running on DSP.
-> > > +         DSP exists on some i.MX8 processors (e.g i.MX8QM, i.MX8QXP).
-> > > +
-> > > +         It acts like a doorbell. Client might use shared memory to
-> > > +         exchange information with DSP side.
-> > > +
-> > >  config IMX_SCU
-> > >         bool "IMX SCU Protocol driver"
-> > >         depends on IMX_MBOX
-> > > diff --git a/drivers/firmware/imx/Makefile b/drivers/firmware/imx/Makefile
-> > > index 802c4ad8e8f9..08bc9ddfbdfb 100644
-> > > --- a/drivers/firmware/imx/Makefile
-> > > +++ b/drivers/firmware/imx/Makefile
-> > > @@ -1,3 +1,4 @@
-> > >  # SPDX-License-Identifier: GPL-2.0
-> > > +obj-$(CONFIG_IMX_DSP)          += imx-dsp.o
-> > >  obj-$(CONFIG_IMX_SCU)          += imx-scu.o misc.o imx-scu-irq.o
-> > >  obj-$(CONFIG_IMX_SCU_PD)       += scu-pd.o
-> > > diff --git a/drivers/firmware/imx/imx-dsp.c b/drivers/firmware/imx/imx-dsp.c
-> > > new file mode 100644
-> > > index 000000000000..c4d34a2fbff3
-> > > --- /dev/null
-> > > +++ b/drivers/firmware/imx/imx-dsp.c
-> > > @@ -0,0 +1,142 @@
-> > > +// SPDX-License-Identifier: GPL-2.0+
-> > > +/*
-> > > + * Copyright 2019 NXP
-> > > + *  Author: Daniel Baluta <daniel.baluta@nxp.com>
-> > > + *
-> > > + * Implementation of the DSP IPC interface (host side)
-> > > + */
-> > > +
-> > > +#include <linux/firmware/imx/dsp.h>
-> > > +#include <linux/kernel.h>
-> > > +#include <linux/mailbox_client.h>
-> > > +#include <linux/module.h>
-> > > +#include <linux/of_platform.h>
-> > > +#include <linux/platform_device.h>
-> > > +#include <linux/slab.h>
-> > > +
-> > > +/*
-> > > + * imx_dsp_ring_doorbell - triggers an interrupt on the other side (DSP)
-> > > + *
-> > > + * @dsp: DSP IPC handle
-> > > + * @chan_idx: index of the channel where to trigger the interrupt
-> > > + *
-> > > + * Returns non-negative value for success, negative value for error
-> > > + */
-> > > +int imx_dsp_ring_doorbell(struct imx_dsp_ipc *ipc, unsigned int idx)
-> > > +{
-> > > +       int ret;
-> > > +       struct imx_dsp_chan *dsp_chan;
-> > > +
-> > > +       if (idx >= DSP_MU_CHAN_NUM)
-> > > +               return -EINVAL;
-> > > +
-> > > +       dsp_chan = &ipc->chans[idx];
-> > > +       ret = mbox_send_message(dsp_chan->ch, NULL);
-> > > +       if (ret < 0)
-> > > +               return ret;
-> > > +
-> > > +       return 0;
-> > > +}
-> > > +EXPORT_SYMBOL(imx_dsp_ring_doorbell);
-> > > +
-> > > +/*
-> > > + * imx_dsp_handle_rx - rx callback used by imx mailbox
-> > > + *
-> > > + * @c: mbox client
-> > > + * @msg: message received
-> > > + *
-> > > + * Users of DSP IPC will need to privde handle_reply and handle_request
-> > > + * callbacks.
-> > > + */
-> > > +static void imx_dsp_handle_rx(struct mbox_client *c, void *msg)
-> > > +{
-> > > +       struct imx_dsp_chan *chan = container_of(c, struct imx_dsp_chan, cl);
-> > > +
-> > > +       if (chan->idx == 0) {
-> > > +               chan->ipc->ops->handle_reply(chan->ipc);
-> > > +       } else {
-> > > +               chan->ipc->ops->handle_request(chan->ipc);
-> > > +               imx_dsp_ring_doorbell(chan->ipc, 1);
-> > > +       }
-> > > +}
-> > > +
-> > > +static int imx_dsp_probe(struct platform_device *pdev)
-> > > +{
-> > > +       struct device *dev = &pdev->dev;
-> > > +       struct imx_dsp_ipc *dsp_ipc;
-> > > +       struct imx_dsp_chan *dsp_chan;
-> > > +       struct mbox_client *cl;
-> > > +       char *chan_name;
-> > > +       int ret;
-> > > +       int i, j;
-> > > +
-> > > +       dsp_ipc = devm_kzalloc(dev, sizeof(*dsp_ipc), GFP_KERNEL);
-> > > +       if (!dsp_ipc)
-> > > +               return -ENOMEM;
-> > > +
-> > > +       for (i = 0; i < DSP_MU_CHAN_NUM; i++) {
-> > > +               if (i < 2)
-> > > +                       chan_name = kasprintf(GFP_KERNEL, "txdb%d", i);
-> > > +               else
-> > > +                       chan_name = kasprintf(GFP_KERNEL, "rxdb%d", i - 2);
-> > > +
-> > > +               if (!chan_name)
-> > > +                       return -ENOMEM;
-> > > +
-> > > +               dsp_chan = &dsp_ipc->chans[i];
-> > > +               cl = &dsp_chan->cl;
-> > > +               cl->dev = dev;
-> > > +               cl->tx_block = false;
-> > > +               cl->knows_txdone = true;
-> > > +               cl->rx_callback = imx_dsp_handle_rx;
-> > > +
-> > > +               dsp_chan->ipc = dsp_ipc;
-> > > +               dsp_chan->idx = i % 2;
-> > > +               dsp_chan->ch = mbox_request_channel_byname(cl, chan_name);
-> > > +               if (IS_ERR(dsp_chan->ch)) {
-> > > +                       ret = PTR_ERR(dsp_chan->ch);
-> > > +                       if (ret != -EPROBE_DEFER)
-> > > +                               dev_err(dev, "Failed to request mbox chan %s ret %d\n",
-> > > +                                       chan_name, ret);
-> > > +                       goto out;
-> > > +               }
-> > > +
-> > > +               dev_dbg(dev, "request mbox chan %s\n", chan_name);
-> > > +               /* chan_name is not used anymore by framework */
-> > > +               kfree(chan_name);
-> > > +       }
-> > > +
-> > > +       dsp_ipc->dev = dev;
-> > > +
-> > > +       dev_set_drvdata(dev, dsp_ipc);
-> > > +
-> > > +       dev_info(dev, "NXP i.MX DSP IPC initialized\n");
-> > > +
-> > > +       return devm_of_platform_populate(dev);
-> > > +out:
-> > > +       kfree(chan_name);
-> > > +       for (j = 0; j < i; j++) {
-> > > +               dsp_chan = &dsp_ipc->chans[j];
-> > > +               mbox_free_channel(dsp_chan->ch);
-> > > +       }
-> > > +
-> > > +       return ret;
-> > > +}
-> > > +
-> > > +static const struct of_device_id imx_dsp_match[] = {
-> > > +       { .compatible = "fsl,imx8qxp-dsp", },
-> > > +       { /* Sentinel */ }
-> > > +};
-> > > +
-> > > +static struct platform_driver imx_dsp_driver = {
-> > > +       .driver = {
-> > > +               .name = "imx-dsp",
-> > > +               .of_match_table = imx_dsp_match,
-> > > +       },
-> > > +       .probe = imx_dsp_probe,
-> > > +};
-> > > +builtin_platform_driver(imx_dsp_driver);
-> > > +
-> > > +MODULE_AUTHOR("Daniel Baluta <daniel.baluta@nxp.com>");
-> > > +MODULE_DESCRIPTION("IMX DSP IPC protocol driver");
-> > > +MODULE_LICENSE("GPL v2");
-> > > diff --git a/include/linux/firmware/imx/dsp.h b/include/linux/firmware/imx/dsp.h
-> > > new file mode 100644
-> > > index 000000000000..7562099c9e46
-> > > --- /dev/null
-> > > +++ b/include/linux/firmware/imx/dsp.h
-> > > @@ -0,0 +1,67 @@
-> > > +/* SPDX-License-Identifier: GPL-2.0+ */
-> > > +/*
-> > > + * Copyright 2019 NXP
-> > > + *
-> > > + * Header file for the DSP IPC implementation
-> > > + */
-> > > +
-> > > +#ifndef _IMX_DSP_IPC_H
-> > > +#define _IMX_DSP_IPC_H
-> > > +
-> > > +#include <linux/device.h>
-> > > +#include <linux/types.h>
-> > > +#include <linux/mailbox_client.h>
-> > > +
-> > > +#define DSP_MU_CHAN_NUM                4
-> > > +
-> > > +struct imx_dsp_chan {
-> > > +       struct imx_dsp_ipc *ipc;
-> > > +       struct mbox_client cl;
-> > > +       struct mbox_chan *ch;
-> > > +       char *name;
-> > > +       int idx;
-> > > +};
-> > > +
-> > > +struct imx_dsp_ops {
-> > > +       void (*handle_reply)(struct imx_dsp_ipc *ipc);
-> > > +       void (*handle_request)(struct imx_dsp_ipc *ipc);
-> > > +};
-> > > +
-> > > +struct imx_dsp_ipc {
-> > > +       /* Host <-> DSP communication uses 2 txdb and 2 rxdb channels */
-> > > +       struct imx_dsp_chan chans[DSP_MU_CHAN_NUM];
-> > > +       struct device *dev;
-> > > +       struct imx_dsp_ops *ops;
-> > > +       void *private_data;
-> > > +};
-> > > +
-> > > +static inline void imx_dsp_set_data(struct imx_dsp_ipc *ipc, void *data)
-> > > +{
-> > > +       if (!ipc)
-> > > +               return;
-> > > +
-> > > +       ipc->private_data = data;
-> > > +}
-> > > +
-> > > +static inline void *imx_dsp_get_data(struct imx_dsp_ipc *ipc)
-> > > +{
-> > > +       if (!ipc)
-> > > +               return NULL;
-> > > +
-> > > +       return ipc->private_data;
-> > > +}
-> > > +
-> > > +#if IS_ENABLED(CONFIG_IMX_DSP)
-> > > +
-> > > +int imx_dsp_ring_doorbell(struct imx_dsp_ipc *dsp, unsigned int chan_idx);
-> > > +
-> > > +#else
-> > > +
-> > > +static inline int imx_dsp_ring_doorbell(struct imx_dsp_ipc *ipc,
-> > > +                                       unsigned int chan_idx)
-> > > +{
-> > > +       return -ENOTSUPP;
-> > > +}
-> > > +
-> > > +#endif
-> > > +#endif /* _IMX_DSP_IPC_H */
-> > > --
-> > > 2.17.1
-> > >
-> >
->
-> --
-> Pengutronix e.K.                           |                             |
-> Industrial Linux Solutions                 | http://www.pengutronix.de/  |
-> Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
-> Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+This is the detailed log:
+
+[    4.664194] ======================================================
+[    4.670368] WARNING: possible circular locking dependency detected
+[    4.676545] 5.2.0-rc2-next-20190528-44527-g6c94b6475c04 #20 Tainted: G S
+[    4.684539] ------------------------------------------------------
+[    4.690714] kworker/4:1/51 is trying to acquire lock:
+[    4.695760] (____ptrval____) (regulator_list_mutex){+.+.},
+at:regulator_lock_dependent+0xdc/0x6c4
+[    4.704732]
+[    4.704732] but task is already holding lock:
+[    4.710556] (____ptrval____) (&genpd->mlock/1){+.+.},
+at:genpd_lock_nested_mtx+0x24/0x30
+[    4.718740]
+[    4.718740] which lock already depends on the new lock.
+[    4.718740]
+[    4.726908]
+[    4.726908] the existing dependency chain (in reverse order) is:
+[    4.734382]
+[    4.734382] -> #4 (&genpd->mlock/1){+.+.}:
+[    4.739963]        __mutex_lock_common+0x1a0/0x1fe8
+[    4.744836]        mutex_lock_nested+0x40/0x50
+[    4.749275]        genpd_lock_nested_mtx+0x24/0x30
+[    4.754063]        genpd_add_subdomain+0x150/0x524
+[    4.758850]        pm_genpd_add_subdomain+0x3c/0x5c
+[    4.763723]        scpsys_probe+0x520/0xe78
+[    4.767902]        platform_drv_probe+0xf4/0x134
+[    4.772517]        really_probe+0x214/0x4dc
+[    4.776696]        driver_probe_device+0xcc/0x1d4
+[    4.781396]        __device_attach_driver+0x10c/0x180
+[    4.786442]        bus_for_each_drv+0x124/0x184
+[    4.790968]        __device_attach+0x1c0/0x2d8
+[    4.795407]        device_initial_probe+0x20/0x2c
+[    4.800106]        bus_probe_device+0x80/0x16c
+[    4.804546]        deferred_probe_work_func+0x120/0x168
+[    4.809767]        process_one_work+0x858/0x1208
+[    4.814379]        worker_thread+0x9ec/0xcb8
+[    4.818644]        kthread+0x2b8/0x2d0
+[    4.822391]        ret_from_fork+0x10/0x18
+[    4.826480]
+[    4.826480] -> #3 (&genpd->mlock){+.+.}:
+[    4.831880]        __mutex_lock_common+0x1a0/0x1fe8
+[    4.836752]        mutex_lock_nested+0x40/0x50
+[    4.841190]        genpd_lock_mtx+0x20/0x2c
+[    4.845369]        genpd_runtime_resume+0x140/0x434
+[    4.850241]        __rpm_callback+0xb0/0x1e4
+[    4.854506]        rpm_callback+0x54/0x1a8
+[    4.858597]        rpm_resume+0xc6c/0x10c4
+[    4.862689]        __pm_runtime_resume+0xb4/0x124
+[    4.867387]        device_link_add+0x598/0x8d0
+[    4.871829]        mtk_smi_larb_probe+0x2b0/0x340
+[    4.876528]        platform_drv_probe+0xf4/0x134
+[    4.881141]        really_probe+0x214/0x4dc
+[    4.885320]        driver_probe_device+0xcc/0x1d4
+[    4.890020]        __device_attach_driver+0x10c/0x180
+[    4.895066]        bus_for_each_drv+0x124/0x184
+[    4.899591]        __device_attach+0x1c0/0x2d8
+[    4.904031]        device_initial_probe+0x20/0x2c
+[    4.908730]        bus_probe_device+0x80/0x16c
+[    4.913169]        deferred_probe_work_func+0x120/0x168
+[    4.918387]        process_one_work+0x858/0x1208
+[    4.923000]        worker_thread+0x9ec/0xcb8
+[    4.927264]        kthread+0x2b8/0x2d0
+[    4.931009]        ret_from_fork+0x10/0x18
+[    4.935098]
+[    4.935098] -> #2 (dpm_list_mtx){+.+.}:
+[    4.940412]        __mutex_lock_common+0x1a0/0x1fe8
+[    4.945284]        mutex_lock_nested+0x40/0x50
+[    4.949722]        device_pm_lock+0x1c/0x24
+[    4.953900]        device_link_add+0x98/0x8d0
+[    4.958252]        _regulator_get+0x3f0/0x504
+[    4.962606]        _devm_regulator_get+0x58/0xb8
+[    4.967218]        devm_regulator_get+0x28/0x34
+[    4.971746]        pwm_backlight_probe+0x61c/0x1b90
+[    4.976617]        platform_drv_probe+0xf4/0x134
+[    4.981230]        really_probe+0x214/0x4dc
+[    4.985409]        driver_probe_device+0xcc/0x1d4
+[    4.990108]        device_driver_attach+0xe4/0x104
+[    4.994894]        __driver_attach+0x134/0x14c
+[    4.999333]        bus_for_each_dev+0x120/0x180
+[    5.003859]        driver_attach+0x48/0x54
+[    5.007950]        bus_add_driver+0x2ac/0x44c
+[    5.012303]        driver_register+0x160/0x288
+[    5.016742]        __platform_driver_register+0xcc/0xdc
+[    5.021964]        pwm_backlight_driver_init+0x1c/0x24
+[    5.027097]        do_one_initcall+0x38c/0x994
+[    5.031536]        do_initcall_level+0x3a4/0x4b8
+[    5.036148]        do_basic_setup+0x84/0xa0
+[    5.036153]        kernel_init_freeable+0x23c/0x324
+[    5.036158]        kernel_init+0x14/0x110
+[    5.036164]        ret_from_fork+0x10/0x18
+[    5.036166]
+[    5.036166] -> #1 (device_links_lock){+.+.}:
+[    5.065905]        __mutex_lock_common+0x1a0/0x1fe8
+[    5.070777]        mutex_lock_nested+0x40/0x50
+[    5.075215]        device_link_remove+0x40/0xe0
+[    5.079740]        _regulator_put+0x104/0x2d8
+[    5.084093]        regulator_put+0x30/0x44
+[    5.088184]        devm_regulator_release+0x38/0x44
+[    5.093056]        release_nodes+0x604/0x670
+[    5.097320]        devres_release_all+0x70/0x8c
+[    5.101846]        really_probe+0x270/0x4dc
+[    5.106024]        driver_probe_device+0xcc/0x1d4
+[    5.110724]        device_driver_attach+0xe4/0x104
+[    5.115510]        __driver_attach+0x134/0x14c
+[    5.119949]        bus_for_each_dev+0x120/0x180
+[    5.124474]        driver_attach+0x48/0x54
+[    5.128566]        bus_add_driver+0x2ac/0x44c
+[    5.132919]        driver_register+0x160/0x288
+[    5.137357]        __platform_driver_register+0xcc/0xdc
+[    5.142576]        pwm_backlight_driver_init+0x1c/0x24
+[    5.147708]        do_one_initcall+0x38c/0x994
+[    5.152146]        do_initcall_level+0x3a4/0x4b8
+[    5.156758]        do_basic_setup+0x84/0xa0
+[    5.160936]        kernel_init_freeable+0x23c/0x324
+[    5.165807]        kernel_init+0x14/0x110
+[    5.169813]        ret_from_fork+0x10/0x18
+[    5.173901]
+[    5.173901] -> #0 (regulator_list_mutex){+.+.}:
+[    5.179910]        lock_acquire+0x350/0x4d4
+[    5.184088]        __mutex_lock_common+0x1a0/0x1fe8
+[    5.184095]        mutex_lock_nested+0x40/0x50
+[    5.197475]        regulator_lock_dependent+0xdc/0x6c4
+[    5.197482]        regulator_disable+0xa0/0x138
+[    5.197487]        scpsys_power_off+0x38c/0x4bc
+[    5.197495]        genpd_power_off+0x3d8/0x6a0
+[    5.209399]        genpd_power_off+0x530/0x6a0
+[    5.209406]        genpd_power_off_work_fn+0x74/0xc0
+[    5.209411]        process_one_work+0x858/0x1208
+[    5.209419]        worker_thread+0x9ec/0xcb8
+[    5.219067]        kthread+0x2b8/0x2d0
+[    5.219073]        ret_from_fork+0x10/0x18
+[    5.219077]
+[    5.219077] other info that might help us debug this:
+[    5.219077]
+[    5.219080] Chain exists of:
+[    5.219080]   regulator_list_mutex --> &genpd->mlock --> &genpd->mlock/1
+[    5.219080]
+[    5.228039]  Possible unsafe locking scenario:
+[    5.228039]
+[    5.228042]        CPU0                    CPU1
+[    5.228046]        ----                    ----
+[    5.228048]   lock(&genpd->mlock/1);
+[    5.228058]                                lock(&genpd->mlock);
+[    5.311647]                                lock(&genpd->mlock/1);
+[    5.317736]   lock(regulator_list_mutex);
+[    5.321742]
+[    5.321742]  *** DEADLOCK ***
+[    5.321742]
+[    5.327655] 4 locks held by kworker/4:1/51:
+[    5.331831]  #0: (____ptrval____) ((wq_completion)pm){+.+.},
+at:process_one_work+0x57c/0x1208
+[    5.340444]  #1: (____ptrval____)
+((work_completion)(&genpd->power_off_work)){+.+.},
+at:process_one_work+0x5b8/0x1208
+[    5.351139]  #2: (____ptrval____) (&genpd->mlock){+.+.},
+at:genpd_lock_mtx+0x20/0x2c
+[    5.358970]  #3: (____ptrval____) (&genpd->mlock/1){+.+.},
+at:genpd_lock_nested_mtx+0x24/0x30
+[    5.367584]
+[    5.367584] stack backtrace:
+[    5.371939] CPU: 4 PID: 51 Comm: kworker/4:1 Tainted: G S
+     5.2.0-rc2-next-20190528-44527-g6c94b6475c04 #20
+[    5.382809] Workqueue: pm genpd_power_off_work_fn
+[    5.382816] Call trace:
+[    5.382822]  dump_backtrace+0x0/0x2c0
+[    5.382830]  show_stack+0x20/0x2c
+[    5.409174]  dump_stack+0x10c/0x17c
+[    5.412659]  print_circular_bug+0x42c/0x4d0
+[    5.416838]  __lock_acquire+0x4c88/0x5484
+[    5.420843]  lock_acquire+0x350/0x4d4
+[    5.424500]  __mutex_lock_common+0x1a0/0x1fe8
+[    5.428851]  mutex_lock_nested+0x40/0x50
+[    5.432770]  regulator_lock_dependent+0xdc/0x6c4
+[    5.437383]  regulator_disable+0xa0/0x138
+[    5.441389]  scpsys_power_off+0x38c/0x4bc
+[    5.445393]  genpd_power_off+0x3d8/0x6a0
+[    5.449310]  genpd_power_off+0x530/0x6a0
+[    5.453229]  genpd_power_off_work_fn+0x74/0xc0
+[    5.457667]  process_one_work+0x858/0x1208
+[    5.461758]  worker_thread+0x9ec/0xcb8
+[    5.465503]  kthread+0x2b8/0x2d0
+[    5.468727]  ret_from_fork+0x10/0x18
+
+[1] https://patchwork.kernel.org/patch/10984803/
+
+Reported-by: Pi-Hsun Shih <pihsun@chromium.org>
+Suggested-by: Evan Green <evgreen@chromium.org>
+Signed-off-by: Yong Wu <yong.wu@mediatek.com>
+---
+We are not so familiar with lockdep and regulator, Mark this as RFC.
+---
+ drivers/regulator/core.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/drivers/regulator/core.c b/drivers/regulator/core.c
+index 955a0a1..3db9350 100644
+--- a/drivers/regulator/core.c
++++ b/drivers/regulator/core.c
+@@ -2048,7 +2048,9 @@ static void _regulator_put(struct regulator *regulator)
+ 	debugfs_remove_recursive(regulator->debugfs);
+ 
+ 	if (regulator->dev) {
++		mutex_unlock(&regulator_list_mutex);
+ 		device_link_remove(regulator->dev, &rdev->dev);
++		mutex_lock(&regulator_list_mutex);
+ 
+ 		/* remove any sysfs entries */
+ 		sysfs_remove_link(&rdev->dev.kobj, regulator->supply_name);
+-- 
+1.9.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
