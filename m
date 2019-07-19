@@ -2,90 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37BFD6E10A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 08:35:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BBD166E11F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 08:45:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SYfz1sAgZi60eoPUUcAWl6oPf6BQu+USdfYLNstCGEs=; b=OyqxJina7dYJ60
-	r9zTmFehNxDAVOZoymasqReU9karZoTK9LdURdn7QEWTQyBrtqs1pibbMqbfkWFIyoN53/yQVxPpc
-	yzv418xTLeqUOMnafkMR8WqcnRW4/QPcVqvKTnFsbKM4ka4zdLlDQsJD5eJUZm3/vBsw4iKBav/k9
-	XOQL0pa7wpTb6o3PATgTY55O3t2y5wdQTIhDY01gEXgd/WqjKB3z5FYEXpiUpGZe+sZndFaBvX1C0
-	s6dVPcjN/ydvKHDyY5jNQOp1Cm0JnDbQK71N5qcXSlhj4kmmYly26JLJWfIHKTPSY38RAR2NXBDJl
-	IMnkbyCI/GnncdAkyuqA==;
+	List-Owner; bh=HI+hgcUS8UUVhTli3NL9Qt54ApK5j0cSgXWjnPrq99w=; b=oUT8mIXsncZDrb
+	kYbN/nealnMeQ3SKdlICvKTM9lwD5k7HnRtdEVa6ZZE/BIoTM+TkBmwffZhaaoy6P5Ld8BTv6M2Rj
+	FC9VRx2VDbo1ET3HXJm/Fs01oQ6Qs+/o8NkJWV4rxzI7nyhIR1hegsfMy4A5AOU37iBS9MTWrbgLV
+	961mrCkxO6KeC1LF+Pz8VvkICdxwJrkznNZIfIjyaC1G0+OihswmcEnL2BmhMFZLUF5scI5wb6ti9
+	kmVbXTgLp+ejFD1DCf3Y5fddPpoIPA60eQmZ0ewAOt1Ls2DqrpiowC2Qqlo0vOJK2y5S4oh9egRrJ
+	iKkn7DHYabDCpdi3Cxzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoMTz-0002r8-Bz; Fri, 19 Jul 2019 06:35:07 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1hoMe2-0007NO-LO; Fri, 19 Jul 2019 06:45:31 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hoMTj-0002qI-BM
- for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 06:34:52 +0000
-Received: by mail-wr1-x441.google.com with SMTP id n4so31097806wrs.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 18 Jul 2019 23:34:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=kMcKTsEVyji+n2fYLtlne8FEnWZcMA2/ktkd0SxT+VI=;
- b=QSOwOufE4zhKaOthPkDk7gWdX3qwYegZikq56s0mkeTwW5vSbnTSAff0lcnACu34zb
- vdRjrjSoxzugWQ5xieksmi9CByUQ5AnlvJvPceiVK6Sma4J2CcItR6GSqE/+xv2rjim9
- hszdEfhJIQs0Cvwusfs52LSo1AccmTUPJozjSty8KUF6cjhaQHqgQxUAgI0dd8a4xTnH
- BZ8cKAEWJkxNC2IOVZ6nJ+kTlghlY5buBFzyqooQ2Jiy3cOwUPAYOLNzB/9wFrTNfb72
- p9dkMyMTd4O6yToPz/j1GJ9UScDq+CL+Hi80pQVbp5CH5uBdZp0mNnDg/VSEYBXXVgOE
- ehYQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=kMcKTsEVyji+n2fYLtlne8FEnWZcMA2/ktkd0SxT+VI=;
- b=A6gpMgUSPaJVJsmoPvOr5idBvMN20K80ivhskoe3XRPb7ry6WW8lXT5yQez6ZIFTfh
- LwrUvg7BBekRyb1UuOA5Gy14H3fOlPeJsJl6LGurZFwWBnuC3Y0SfpjToKiRUH0DyaF8
- Qqc2tVgIGx1+9nQK8Y8h+OdBj8OgmyHklXmHD3BmqzBdT7frNgjqo+8kTxgidoS0Ew0O
- Oo8om54K0zsCyckNzt8zIFBYu1lT9PIsLfme+XdEHFOwkdLrfqVgwBiGmobPCp6FZPPo
- Xz6Hdh0ImI/rgwIe1R6ZNMDOhArS4DKvhMXSkOjDvaRvgmw5UIg10XhsXQs1wqLTSiBT
- 9orQ==
-X-Gm-Message-State: APjAAAV63y/7l4o1Yqp03g1QKP6jwvfPEsek0ZbJXF3MBlcSK/6Iv7zW
- w3QotGjbXxzsh/EZUSrBtf2A7AUR1KgSf2Hnk8k=
-X-Google-Smtp-Source: APXvYqzkF6gS1MNZBLZ1Ty1LQtpQfLnkNKW7cn72gR9MP8uHzDu7PJQxe2xQB/GaBTVdYHWPDS52KzZOIEH2mFQtBgM=
-X-Received: by 2002:a05:6000:14b:: with SMTP id
- r11mr54574650wrx.196.1563518086309; 
- Thu, 18 Jul 2019 23:34:46 -0700 (PDT)
+ id 1hoMdl-0007Mg-2i
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 06:45:14 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 6BDADAC8F;
+ Fri, 19 Jul 2019 06:45:11 +0000 (UTC)
+Date: Fri, 19 Jul 2019 08:45:10 +0200
+From: Michal Hocko <mhocko@kernel.org>
+To: David Hildenbrand <david@redhat.com>
+Subject: Re: [PATCH v3 02/11] s390x/mm: Fail when an altmap is used for
+ arch_add_memory()
+Message-ID: <20190719064510.GL30461@dhcp22.suse.cz>
+References: <20190527111152.16324-1-david@redhat.com>
+ <20190527111152.16324-3-david@redhat.com>
+ <20190701074306.GC6376@dhcp22.suse.cz>
+ <20190701124628.GT6376@dhcp22.suse.cz>
+ <86f3ff3d-d035-a806-88b7-b8c7b77c206e@redhat.com>
 MIME-Version: 1.0
-References: <20190718151346.3523-1-daniel.baluta@nxp.com>
- <20190718151346.3523-4-daniel.baluta@nxp.com>
- <CAL_JsqJ6o9mTjLYjnfcYgfSFKb95W8FseZBBb8RLosB__GNBcw@mail.gmail.com>
- <CAEnQRZBubFz90Xf8irDwc=erTXmByXX4rkzZy9r8ymfAuQEsZA@mail.gmail.com>
- <VI1PR04MB5055597B7C3AC114FEB7E3E5EEC80@VI1PR04MB5055.eurprd04.prod.outlook.com>
-In-Reply-To: <VI1PR04MB5055597B7C3AC114FEB7E3E5EEC80@VI1PR04MB5055.eurprd04.prod.outlook.com>
-From: Daniel Baluta <daniel.baluta@gmail.com>
-Date: Fri, 19 Jul 2019 09:34:34 +0300
-Message-ID: <CAEnQRZC+LyoZ_C3_0RVgRpBFVMuMT26KPVZunqqNKC=OJcERog@mail.gmail.com>
-Subject: Re: [PATCH 3/3] dt-bindings: dsp: fsl: Add DSP core binding support
-To: Leonard Crestez <leonard.crestez@nxp.com>
+Content-Disposition: inline
+In-Reply-To: <86f3ff3d-d035-a806-88b7-b8c7b77c206e@redhat.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_233451_394549_D6B61685 
-X-CRM114-Status: GOOD (  14.28  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190718_234513_269965_8A741764 
+X-CRM114-Status: GOOD (  18.19  )
+X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (daniel.baluta[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,60 +65,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Aisheng Dong <aisheng.dong@nxp.com>,
- Peng Fan <peng.fan@nxp.com>, Fabio Estevam <festevam@gmail.com>,
- Anson Huang <anson.huang@nxp.com>,
- Devicetree List <devicetree@vger.kernel.org>,
- Daniel Baluta <daniel.baluta@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- Frank Li <frank.li@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Paul Olaru <paul.olaru@nxp.com>, Rob Herring <robh+dt@kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>, "S.j. Wang" <shengjiu.wang@nxp.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- "sound-open-firmware@alsa-project.org" <sound-open-firmware@alsa-project.org>
+Cc: Oscar Salvador <osalvador@suse.com>, linux-s390@vger.kernel.org,
+ linux-ia64@vger.kernel.org, Vasily Gorbik <gor@linux.ibm.com>,
+ linux-sh@vger.kernel.org, Heiko Carstens <heiko.carstens@de.ibm.com>,
+ linux-kernel@vger.kernel.org, Wei Yang <richard.weiyang@gmail.com>,
+ linux-mm@kvack.org, Mike Rapoport <rppt@linux.vnet.ibm.com>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Igor Mammedov <imammedo@redhat.com>, akpm@linux-foundation.org,
+ linuxppc-dev@lists.ozlabs.org, Dan Williams <dan.j.williams@intel.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jul 18, 2019 at 9:40 PM Leonard Crestez <leonard.crestez@nxp.com> wrote:
->
-> On 18.07.2019 21:24, Daniel Baluta wrote:
-> > On Thu, Jul 18, 2019 at 7:41 PM Rob Herring <robh+dt@kernel.org> wrote:
+On Mon 15-07-19 12:51:27, David Hildenbrand wrote:
+> On 01.07.19 14:46, Michal Hocko wrote:
+> > On Mon 01-07-19 09:43:06, Michal Hocko wrote:
+> >> On Mon 27-05-19 13:11:43, David Hildenbrand wrote:
+> >>> ZONE_DEVICE is not yet supported, fail if an altmap is passed, so we
+> >>> don't forget arch_add_memory()/arch_remove_memory() when unlocking
+> >>> support.
 > >>
-> >> On Thu, Jul 18, 2019 at 9:13 AM Daniel Baluta <daniel.baluta@nxp.com> wrote:
-> >>>
-> >>> This describes the DSP device tree node.
-> >>>
-> >>> Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
->
-> >>> +  power-domains:
-> >>> +    description:
-> >>> +      List of phandle and PM domain specifier as documented in
-> >>> +      Documentation/devicetree/bindings/power/power_domain.txt
-> >>
-> >> How many? 4?
-> >
-> > Yes, 4 for i.MX8QXP. Also, the same number is for i.MX8QM. Anyhow, I didn't
-> > added added a limit here because I really don't know how many will be
-> > in upcoming i.MX platforms.
->
-> Which 4? It might help to use power-domain-names explicitly just like
-> it's done for clocks and mboxes.
->
-> This is very common for phandle lists.
+> >> Why do we need this? Sure ZONE_DEVICE is not supported for s390 and so
+> >> might be the case for other arches which support hotplug. I do not see
+> >> much point in adding warning to each of them.
+> > 
+> > I would drop this one. If there is a strong reason to have something
+> > like that it should come with a better explanation and it can be done on
+> > top.
+> > 
+> 
+> This was requested by Dan and I agree it is the right thing to do.
 
-4 like in the example at the bottom of the patch:
+This is probably a matter of taste. I would argue that altmap doesn't
+really equal ZONE_DEVICE. This is more a mechanism to use an alternative
+memmap allocator. Sure ZONE_DEVICE is the only in tree user of the
+feature but I really do not see why the arh specific code should care
+about it. The lack of altmap allocator is handled in the sparse code so
+this is just adding an early check which might confuse people in future.
 
-+   power-domains = <&pd IMX_SC_R_MU_13A>,
-+                        <&pd IMX_SC_R_MU_13B>,
-+                        <&pd IMX_SC_R_DSP>,
-+                        <&pd IMX_SC_R_DSP_RAM>;
+> In
+> the context of paravirtualized devices (e.g., virtio-pmem), it makes
+> sense to block functionality an arch does not support.
 
-Not sure if it makes sense to use power-domain-names as the driver parses
-directly the "power-domains" property.
+Then block it on the config dependences.
+
+-- 
+Michal Hocko
+SUSE Labs
 
 _______________________________________________
 linux-arm-kernel mailing list
