@@ -2,54 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F1E6B6E3D3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 12:03:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 327766E3EC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 12:08:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JWmU7xQgaFQQOj2BA9AqvenSLIbXT47Q7sDh2M32xJ0=; b=mT+osesD34ZHAA
-	SxwWa3hsBXK8umKd/MeHDbc49O97a8OY1uMIJ0fv3eRKPx8BqF97tC4YUtaIbXruck9YTW+yjUmdk
-	ZH3CAg1p0Dh9hJZL1XaHFRhmZxeJBZByr51szpB+tmPMJ1E3IFTffnzv/CdkohZoAXCYyoDr7s90l
-	icE2b97yrM73QBojWRwsvt2bax6MmcIGjUfHEsb4CKOGpXgStUWUIlDJUB+DLyG6R4i4HMWZLwBSc
-	cYpj3GgAukkaPCnt/mVYmRwwtf36RiTSqCcTHQhj/AFZEKO87q+c+l1Hw1/xBK02Opj0nGjzZp0rt
-	afjG7Mq8z5/SAN3w/esg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gApjexotVf18YS8SVLmBHmySgrbea2TJDiwzz1CMV0k=; b=J/L1yvDcJis68T
+	mYwtZ8CTvVkSWJKQNSmwC9eOkEHWAZ9dwXJBOLAwe9EkC0lycQhLGcLqQoeIXDZ3mqmk7L3i39qbt
+	9qQg0W53KX32RK1se3VGCp6f0TtBhSETz7kNEcCHHXWS+mtEst4t5uHbfyXLQlGL7E76NSeWsxGXm
+	NCH4GC1QbZ/kUK+y77aIVrQEubBMZK9F/E3nwFWAcmjNkjeBabwRaxsAbL3ikIss+P/+Re2lygB3C
+	Iteu9E+9KegUHuYV54dvvefdDJpN3wH7qt78IP9DXS+5YN+30aBKQuGQ+Z3/rJULYkA31beVtTeg0
+	rlTeaPNM39zSCJjj6Xpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoPjN-00026h-Hd; Fri, 19 Jul 2019 10:03:13 +0000
+	id 1hoPny-0003qy-So; Fri, 19 Jul 2019 10:07:59 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hoPj7-00026H-7Y
- for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 10:02:58 +0000
+ id 1hoPnj-0003qE-5j
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 10:07:45 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6D6AC337;
- Fri, 19 Jul 2019 03:02:56 -0700 (PDT)
-Received: from e121166-lin.cambridge.arm.com (unknown [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D8CBE3F59C;
- Fri, 19 Jul 2019 03:02:53 -0700 (PDT)
-Date: Fri, 19 Jul 2019 11:02:16 +0100
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Ulf Hansson <ulf.hansson@linaro.org>
-Subject: Re: [PATCH 14/18] drivers: firmware: psci: Manage runtime PM in the
- idle path for CPUs
-Message-ID: <20190719100216.GA8587@e121166-lin.cambridge.arm.com>
-References: <20190513192300.653-1-ulf.hansson@linaro.org>
- <20190513192300.653-15-ulf.hansson@linaro.org>
- <20190716155317.GB32490@e121166-lin.cambridge.arm.com>
- <CAPDyKFrJ75mo+s6GuUCTQ-nVv7C+9YJyTVmwuBZ2RKFOvOi3Nw@mail.gmail.com>
- <20190718133053.GA27222@e121166-lin.cambridge.arm.com>
- <CAPDyKFr4NmichQk4uf+Wgbanh=5idKYY=37WCb6U_hNFDVYg=w@mail.gmail.com>
- <20190718174116.GD25567@codeaurora.org>
- <CAPDyKFrxBdZfskyp2HOb5YykkAqkBzRfW4-LLbcj1DAaL65XpA@mail.gmail.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A3C0D337;
+ Fri, 19 Jul 2019 03:07:39 -0700 (PDT)
+Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 625283F59C;
+ Fri, 19 Jul 2019 03:07:38 -0700 (PDT)
+Subject: Re: [PATCH 1/3] arm64: kprobes: Recover pstate.D in single-step
+ exception handler
+To: Masami Hiramatsu <mhiramat@kernel.org>
+References: <156342860634.8565.14804606041960884732.stgit@devnote2>
+ <156342861775.8565.9122725195458920037.stgit@devnote2>
+From: James Morse <james.morse@arm.com>
+Message-ID: <3a198660-35cc-0c65-6a6d-e30d2494ff21@arm.com>
+Date: Fri, 19 Jul 2019 11:07:33 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAPDyKFrxBdZfskyp2HOb5YykkAqkBzRfW4-LLbcj1DAaL65XpA@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <156342861775.8565.9122725195458920037.stgit@devnote2>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190719_030257_370631_6600CD9C 
-X-CRM114-Status: GOOD (  30.51  )
+X-CRM114-CacheID: sfid-20190719_030744_056559_21E5E232 
+X-CRM114-Status: GOOD (  26.51  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -68,113 +63,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Kevin Hilman <khilman@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>, Linux PM <linux-pm@vger.kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Lina Iyer <ilina@codeaurora.org>, Bjorn Andersson <bjorn.andersson@linaro.org>,
- Tony Lindgren <tony@atomide.com>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Amit Kucheria <amit.kucheria@linaro.org>, Sudeep Holla <sudeep.holla@arm.com>,
- Niklas Cassel <niklas.cassel@linaro.org>,
- Souvik Chakravarty <souvik.chakravarty@arm.com>,
- "Raju P . L . S . S . S . N" <rplsssn@codeaurora.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Dan Rue <dan.rue@linaro.org>, Daniel Diaz <daniel.diaz@linaro.org>,
+ Anders Roxell <anders.roxell@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Naresh Kamboju <naresh.kamboju@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, Matt Hart <matthew.hart@linaro.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jul 18, 2019 at 11:49:11PM +0200, Ulf Hansson wrote:
-> On Thu, 18 Jul 2019 at 19:41, Lina Iyer <ilina@codeaurora.org> wrote:
-> >
-> > On Thu, Jul 18 2019 at 10:55 -0600, Ulf Hansson wrote:
-> > >On Thu, 18 Jul 2019 at 15:31, Lorenzo Pieralisi
-> > ><lorenzo.pieralisi@arm.com> wrote:
-> > >>
-> > >> On Thu, Jul 18, 2019 at 12:35:07PM +0200, Ulf Hansson wrote:
-> > >> > On Tue, 16 Jul 2019 at 17:53, Lorenzo Pieralisi
-> > >> > <lorenzo.pieralisi@arm.com> wrote:
-> > >> > >
-> > >> > > On Mon, May 13, 2019 at 09:22:56PM +0200, Ulf Hansson wrote:
-> > >> > > > When the hierarchical CPU topology layout is used in DT, let's allow the
-> > >> > > > CPU to be power managed through its PM domain, via deploying runtime PM
-> > >> > > > support.
-> > >> > > >
-> > >> > > > To know for which idle states runtime PM reference counting is needed,
-> > >> > > > let's store the index of deepest idle state for the CPU, in a per CPU
-> > >> > > > variable. This allows psci_cpu_suspend_enter() to compare this index with
-> > >> > > > the requested idle state index and then act accordingly.
-> > >> > >
-> > >> > > I do not see why a system with two CPU CPUidle states, say CPU retention
-> > >> > > and CPU shutdown, should not be calling runtime PM on CPU retention
-> > >> > > entry.
-> > >> >
-> > >> > If the CPU idle governor did select the CPU retention for the CPU, it
-> > >> > was probably because the target residency for the CPU shutdown state
-> > >> > could not be met.
-> > >>
-> > >> The kernel does not know what those cpu states represent, so, this is an
-> > >> assumption you are making and it must be made clear that this code works
-> > >> as long as your assumption is valid.
-> > >>
-> > >> If eg a "cluster" retention state has lower target_residency than
-> > >> the deepest CPU idle state this assumption is wrong.
-> > >
-> > >Good point, you are right. I try to find a place to document this assumption.
-> > >
-> > >>
-> > >> And CPUidle and genPD governor decisions are not synced anyway so,
-> > >> again, this is an assumption, not a certainty.
-> > >>
-> > >> > In this case, there is no point in allowing any other deeper idle
-> > >> > states for cluster/package/system, since those have even greater
-> > >> > residencies, hence calling runtime PM doesn't make sense.
-> > >>
-> > >> On the systems you are testing on.
-> > >
-> > >So what you are saying typically means, that if all CPUs in the same
-> > >cluster have entered the CPU retention state, on some system the
-> > >cluster may also put into a cluster retention state (assuming the
-> > >target residency is met)?
-> > >
-> > >Do you know of any systems that has these characteristics?
-> > >
-> > Many QCOM SoCs can do that. But with the hardware improving, the
-> > power-performance benefits skew the results in favor of powering off
-> > the cluster than keeping the CPU and cluster in retention.
-> >
-> > Kevin H and I thought of this problem earlier on. But that is a second
-> > level problem to solve and definitely to be thought of after we have the
-> > support for the deepest states in the kernel. We left that out for a
-> > later date. The idea would have been to setup the allowable state(s) in
-> > the DT for CPU and cluster state definitions and have the genpd take
-> > that into consideration when deciding the idle state for the domain.
-> 
-> Thanks for confirming.
-> 
-> This more or less means we need to improve the hierarchical support in
-> genpd to support more levels, such that it makes sense to have a genpd
-> governor assigned at more than one level. This doesn't work well
-> today. As I also have stated, this is on my todo list for genpd.
-> 
-> However, I also agree with your standpoint, that let's start simple to
-> enable the deepest state as a start with, then we can improve things
-> on top.
-
-How to solve this in the kernel I don't know but please do make sure
-that the DT bindings allow you to describe what's needed, once they are
-merged you won't be able to change them and I won't bodge the code to
-make things fit, so if anything let's focus on getting them right as a
-matter of priority to get this done please.
-
-Thanks,
-Lorenzo
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkhCgpPbiAxOC8wNy8yMDE5IDA2OjQzLCBNYXNhbWkgSGlyYW1hdHN1IHdyb3RlOgo+IE9uIGFy
+bTY0LCBpZiBhIG5lc3RlZCBrcHJvYmVzIGhpdCwgaXQgY2FuIGNyYXNoIHRoZSBrZXJuZWwgd2l0
+aCBiZWxvdwo+IGVycm9yIG1lc3NhZ2UuCj4gCj4gWyAgMTUyLjExODkyMV0gVW5leHBlY3RlZCBr
+ZXJuZWwgc2luZ2xlLXN0ZXAgZXhjZXB0aW9uIGF0IEVMMQo+IAo+IFRoaXMgaXMgYmVjYXVzZSBj
+b21taXQgNzQxOTMzM2ZhMTVlICgiYXJtNjQ6IGtwcm9iZTogQWx3YXlzIGNsZWFyCj4gcHN0YXRl
+LkQgaW4gYnJlYWtwb2ludCBleGNlcHRpb24gaGFuZGxlciIpIGNsZWFycyBwc3RhdGUuRCBhbHdh
+eXMgaW4KPiB0aGUgbmVzdGVkIGtwcm9iZXMuIFRoYXQgaXMgY29ycmVjdCAqdW5sZXNzKiBhbnkg
+bmVzdGVkIGtwcm9iZXMKPiAoc2luZ2xlLXN0ZXBwaW5nKSBydW5zIGluc2lkZSBvdGhlciBrcHJv
+YmVzIChpbmNsdWRpbmcga3Byb2JlcyBpbgo+ICB1c2VyIGhhbmRsZXIpLgoKa3Byb2JlcyBwcm9i
+aW5nIGtwcm9iZXMhPyAuLi4gd2h5IGRvIHdlIHN1cHBvcnQgdGhpcz8KCldlIHRyZWF0ICdkZWJ1
+ZycgYXMgb3VyIGhpZ2hlc3QgZXhjZXB0aW9uIGxldmVsLCBpdCBjYW4gaW50ZXJydXB0IHBOTUkg
+YW5kIFJBUy1lcnJvcnMuCkxldHRpbmcgaXQgbG9vcCBkb2Vzbid0IHNvdW5kIGxpa2UgYSBnb29k
+IGlkZWEuCgoKPiBXaGVuIHRoZSAxc3Qga3Byb2JlIGhpdHMsIGRvX2RlYnVnX2V4Y2VwdGlvbigp
+IHdpbGwgYmUgY2FsbGVkLiBBdCB0aGlzCj4gcG9pbnQsIGRlYnVnIGV4Y2VwdGlvbiAoPSBwc3Rh
+dGUuRCkgbXVzdCBiZSBtYXNrZWQgKD0xKS4KCj4gV2hlbiB0aGUgMm5kIChuZXN0ZWQpIGtwcm9i
+ZSBpcyBoaXQgYmVmb3JlIHNpbmdsZS1zdGVwIG9mIHRoZSBmaXJzdCBrcHJvYmUsCgpIb3cgZG9l
+cyB0aGlzIGhhcHBlbj8KSSBndWVzcyB0aGUga3Byb2JlLWhlbHBlci1mdW5jdGlvbiBnZXRzIGNh
+bGxlZCBpbiBkZWJ1ZyBjb250ZXh0LCBidXQgc3VyZWx5IHlvdSBjYW4ndAprcHJvYmUgYSBrcHJv
+YmUtaGVscGVyLWZ1bmN0aW9uPyBXaGF0IHN0b3BzIHRoaXMgZ29pbmcgaW4gYSBsb29wPwoKCj4g
+aXQgbW9kaWZpZXMgZGVidWcgZXhjZXB0aW9uIGNsZWFyIChwc3RhdGUuRCA9IDApLgoKQWZ0ZXIg
+dGFraW5nIHRoZSBmaXJzdCBCUkssIERBSUY9MHhmLCBldmVyeXRoaW5nIGlzIG1hc2tlZC4gV2hl
+biB5b3UgdGFrZSB0aGUgc2Vjb25kIEJSSwp0aGlzIHNob3VsZG4ndCBjaGFuZ2UuCgpUaG9zZSBz
+cHNyX3NldF9kZWJ1Z19mbGFnKCkgY2FsbHMgYXJlIG1vZGlmeWluZyB0aGUgc3BzciBpbiB0aGUg
+cmVncyBzdHJ1Y3R1cmUsIHRoZXkgb25seQpiZWNvbWUgUFNUQVRFIHdoZW4gd2UgZXJldCBmb3Ig
+c2luZ2xlLXN0ZXAuCgoKPiBUaGVuLCB3aGVuIHRoZSAxc3Qga3Byb2JlIHNldHRpbmcgdXAgc2lu
+Z2xlLXN0ZXAsIGl0IHNhdmVzIGN1cnJlbnQKPiBEQUlGLCBtYXNrIERBSUYsIGVuYWJsZSBzaW5n
+bGUtc3RlcCwgYW5kIHJlc3RvcmUgREFJRi4KCj4gSG93ZXZlciwgc2luY2UgIkQiIGZsYWcgaW4g
+REFJRiBpcyBjbGVhcmVkIGJ5IHRoZSAybmQga3Byb2JlLCB0aGUKPiBzaW5nbGUtc3RlcCBleGNl
+cHRpb24gaGFwcGVucyBzb29uIGFmdGVyIHJlc3RvcmluZyBEQUlGLgoKUFNUQVRFLkQgYml0IGNs
+ZWFyaW5nIHNob3VsZCBvbmx5IGJlIGVmZmVjdGl2ZSBmb3IgdGhlIGR1cmF0aW9uIG9mIHRoZSBz
+aW5nbGUtc3RlcC4KCgo+IFRvIHNvbHZlIHRoaXMgaXNzdWUsIHRoaXMgcmVmZXJzIHNhdmVkIHBz
+dGF0ZSByZWdpc3RlciB0byBjaGVjayB0aGUKPiBwcmV2aW91cyBwc3RhdGUuRCBhbmQgcmVjb3Zl
+ciBpdCBpZiBuZWVkZWQuCgooVGhpcyBzb3VuZHMgbGlrZSB1bmRvaW5nIHNvbWV0aGluZyB0aGF0
+IHNob3VsZG4ndCBoYXZlIGhhcHBlbmVkIGluIHRoZSBmaXJzdCBwbGFjZSkKCgo+IGRpZmYgLS1n
+aXQgYS9hcmNoL2FybTY0L2tlcm5lbC9wcm9iZXMva3Byb2Jlcy5jIGIvYXJjaC9hcm02NC9rZXJu
+ZWwvcHJvYmVzL2twcm9iZXMuYwo+IGluZGV4IGJkNWRmZmZjYTI3Mi4uNmUxZGMwYmI0YzgyIDEw
+MDY0NAo+IC0tLSBhL2FyY2gvYXJtNjQva2VybmVsL3Byb2Jlcy9rcHJvYmVzLmMKPiArKysgYi9h
+cmNoL2FybTY0L2tlcm5lbC9wcm9iZXMva3Byb2Jlcy5jCj4gQEAgLTIwMSwxMiArMjAxLDE0IEBA
+IHNwc3Jfc2V0X2RlYnVnX2ZsYWcoc3RydWN0IHB0X3JlZ3MgKnJlZ3MsIGludCBtYXNrKQo+ICAg
+KiBpbnRlcnJ1cHQgb2NjdXJyZW5jZSBpbiB0aGUgcGVyaW9kIG9mIGV4Y2VwdGlvbiByZXR1cm4g
+YW5kICBzdGFydCBvZgo+ICAgKiBvdXQtb2YtbGluZSBzaW5nbGUtc3RlcCwgdGhhdCByZXN1bHQg
+aW4gd3JvbmdseSBzaW5nbGUgc3RlcHBpbmcKPiAgICogaW50byB0aGUgaW50ZXJydXB0IGhhbmRs
+ZXIuCj4gKyAqIFRoaXMgYWxzbyBjb250cm9scyBkZWJ1ZyBmbGFnLCBzbyB0aGF0IHdlIGNhbiBy
+ZWZlciB0aGUgc2F2ZWQgcHN0YXRlLgo+ICAgKi8KPiAgc3RhdGljIHZvaWQgX19rcHJvYmVzIGtw
+cm9iZXNfc2F2ZV9sb2NhbF9pcnFmbGFnKHN0cnVjdCBrcHJvYmVfY3RsYmxrICprY2IsCj4gIAkJ
+CQkJCXN0cnVjdCBwdF9yZWdzICpyZWdzKQo+ICB7Cj4gIAlrY2ItPnNhdmVkX2lycWZsYWcgPSBy
+ZWdzLT5wc3RhdGU7Cj4gIAlyZWdzLT5wc3RhdGUgfD0gUFNSX0lfQklUOwo+ICsJc3Bzcl9zZXRf
+ZGVidWdfZmxhZyhyZWdzLCAwKTsKCihOaXQ6IHRoaXMgaXMgdGhlIG9ubHkgY2FsbGVyIG9mIHNw
+c3Jfc2V0X2RlYnVnX2ZsYWcoKSwgYXMgd2UncmUgbW9kaWZpbmcgcmVncy0+cHN0YXRlCmRpcmVj
+dGx5IGhlcmUsIGNhbiB3ZSBsb3NlIHRoZSBoZWxwZXIgYW5kIGp1c3QgbWFuaXB1bGF0ZSByZWdz
+LT5wc3RhdGU/ICkKCj4gIH0KPiAgCj4gIHN0YXRpYyB2b2lkIF9fa3Byb2JlcyBrcHJvYmVzX3Jl
+c3RvcmVfbG9jYWxfaXJxZmxhZyhzdHJ1Y3Qga3Byb2JlX2N0bGJsayAqa2NiLAo+IEBAIC0yNDUs
+MTUgKzI1MSwxMiBAQCBzdGF0aWMgdm9pZCBfX2twcm9iZXMgc2V0dXBfc2luZ2xlc3RlcChzdHJ1
+Y3Qga3Byb2JlICpwLAo+ICAJCWtjYi0+a3Byb2JlX3N0YXR1cyA9IEtQUk9CRV9ISVRfU1M7Cj4g
+IAl9Cj4KPiAtCj4gIAlpZiAocC0+YWluc24uYXBpLmluc24pIHsKPiAgCQkvKiBwcmVwYXJlIGZv
+ciBzaW5nbGUgc3RlcHBpbmcgKi8KPiAgCQlzbG90ID0gKHVuc2lnbmVkIGxvbmcpcC0+YWluc24u
+YXBpLmluc247Cj4KPiAgCQlzZXRfc3NfY29udGV4dChrY2IsIHNsb3QpOwkvKiBtYXJrIHBlbmRp
+bmcgc3MgKi8KPgo+IC0JCXNwc3Jfc2V0X2RlYnVnX2ZsYWcocmVncywgMCk7Cj4gLQo+ICAJCS8q
+IElSUXMgYW5kIHNpbmdsZSBzdGVwcGluZyBkbyBub3QgbWl4IHdlbGwuICovCj4gIAkJa3Byb2Jl
+c19zYXZlX2xvY2FsX2lycWZsYWcoa2NiLCByZWdzKTsKPiAgCQlrZXJuZWxfZW5hYmxlX3Npbmds
+ZV9zdGVwKHJlZ3MpOwoKVGhlc2UgdHdvIGh1bmtzIGxvb2sgbGlrZSBjbGVhbnVwLCBjb3VsZCB3
+ZSBkbyB0aGlzIHNlcGFyYXRlbHkgZnJvbSBhIGZpeCBmb3Igc3RhYmxlPwoKCgo+IEBAIC0yMTYs
+NiArMjE4LDEwIEBAIHN0YXRpYyB2b2lkIF9fa3Byb2JlcyBrcHJvYmVzX3Jlc3RvcmVfbG9jYWxf
+aXJxZmxhZyhzdHJ1Y3Qga3Byb2JlX2N0bGJsayAqa2NiLAo+ICAJCXJlZ3MtPnBzdGF0ZSB8PSBQ
+U1JfSV9CSVQ7Cj4gIAllbHNlCj4gIAkJcmVncy0+cHN0YXRlICY9IH5QU1JfSV9CSVQ7Cj4gKwo+
+ICsJLyogUmVjb3ZlciBwc3RhdGUuRCBtYXNrIGlmIG5lZWRlZCAqLwo+ICsJaWYgKGtjYi0+c2F2
+ZWRfaXJxZmxhZyAmIFBTUl9EX0JJVCkKPiArCQlzcHNyX3NldF9kZWJ1Z19mbGFnKHJlZ3MsIDEp
+Owo+ICB9CgpVZ2guIC4uIEkgZ2V0IGl0IC4uCgpJIHRoaW5rIHRoZSBzaW1wbGVzdCBzdW1tYXJ5
+IG9mIHRoZSBwcm9ibGVtIGlzOgpLcHJvYmVzIHVubWFza3MgZGVidWcgZXhjZXB0aW9ucyBmb3Ig
+c2luZ2xlLXN0ZXAsIHRoZW4gbGVhdmVzIHRoZW0gdW5tYXNrZWQgd2hlbiB0aGUKcHJvYmVkIGZ1
+bmN0aW9uIGlzIHJlc3RhcnRlZC4KCkknZCBsaWtlIHRvIGtub3cgbW9yZSBhYm91dCB0aGlzIG5l
+c3RlZCBjYXNlLCBidXQgSSBkb24ndCB0aGluayBpdHMgdGhlIHNpbXBsZXN0IGV4YW1wbGUKb2Yg
+dGhpcyBwcm9ibGVtLgpUaGUgY29tbWl0IG1lc3NhZ2UgaXMgZGVzY3JpYmluZyBib3RoIHRoZSBp
+bnRlcnJ1cHRlZCBhbmQgcnVubmluZyBQU1RBVEUgYXMgUFNUQVRFLiBJCnRoaW5rIGl0IHdvdWxk
+IGJlIGNsZWFyZXIgaWYgeW91IGNhbGxlZCB0aGUgaW50ZXJydXB0ZWQgb25lIFNQU1IgKHNhdmVk
+IHBzdGF0ZSByZWdpc3RlcikuClRoYXQncyB0aGUgdmFsdWUgaW4gdGhlIHJlZ3Mgc3RydWN0dXJl
+LgoKClBsZWFzZSBkb24ndCByZS1tYW5pcHVsYXRlIHRoZSBmbGFncywgaXRzIG92ZXJseSB2ZXJi
+b3NlIGFuZCB3ZSd2ZSBhbHJlYWR5IGdvdCB0aGlzIHdyb25nCm9uY2UhIFdlIHNob3VsZCBqdXN0
+IGJsaW5kbHkgcmVzdG9yZSB0aGUgREFJRiBzZXR0aW5nIHdlIGhhZCBiZWZvcmUgYXMgaXRzIHNp
+bXBsZXIuCgpDb3VsZCB3ZSBjaGFuZ2Uga3Byb2Jlc19zYXZlX2xvY2FsX2lycWZsYWcoKSB0byBz
+YXZlIHRoZSBEQUlGIGJpdHMgb2YgcHN0YXRlOgp84oCDa2NiLT5zYXZlZF9pcnFmbGFnID0gcmVn
+cy0+cHN0YXRlICYgREFJRl9NQVNLOwooREFJRl9NQVNLIGlzIGFsbCBmb3VyIFBTUiBiaXRzKQoK
+U28gdGhhdCB3ZSBjYW4gdGhlbiBmaXggdGhpcyBpbiBrcHJvYmVzX3Jlc3RvcmVfbG9jYWxfaXJx
+ZmxhZygpIHdpdGg6CnwgcmVncy0+cHN0YXRlICY9IH5EQUlGX01BU0s7CnwgcmVncy0+cHN0YXRl
+IHw9IGtjYi0+c2F2ZWRfaXJxZmxhZwoKKHRoZSB2YWx1ZSBzcGxpY2luZyBpcyBuZWVkZWQgYmVj
+YXVzZSByZWdzLT5wc3RhdGUgYWxzbyBob2xkcyB0aGUgJ2NvbmRpdGlvbiBjb2RlJyBmbGFncywK
+d2hpY2ggY291bGQgYmUgbW9kaWZpZWQgYnkgdGhlIHNpbmdsZS1zdGVwIGluc3RydWN0aW9uLCB0
+aGVuIGRlcGVuZGVkIG9uIGFmdGVyd2FyZHMuKQoKClRoYW5rcywKCkphbWVzCgpfX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
+aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
+c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
