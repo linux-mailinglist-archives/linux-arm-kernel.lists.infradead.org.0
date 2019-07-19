@@ -2,49 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9AEAA6E43E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 12:26:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1661C6E43F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 12:27:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=mbaL5KUWncvkLVYXFcv684A/NDobNejPUqRyIBY/1dw=; b=QrpUY/mv/N2v+qYfQ51dvg1jk
-	WyfSu4jdHYlHSphc0qtAnaoaNX5EFcqzaPF3zm0ciWGmP731ZVhpg6ZX4Xxh8KbumyqXtEjcOSlsh
-	e4DPp1D/U9FYxQc6a0gqQULGnceEVz4nKk1U1uDwOqjgO+Z5Vk7E7HymFemWSrJB88xEOUcddse7E
-	4sq5bTnRuVmep3Ccm290cFgOJiyM094/NEncdBazkh9atQCWtGZwWB3sIQ6gX7aInz4N3ILIicNbG
-	UNOIw/elrQ7STk2N1QZswR7460TZdXTAlTmeSLhWE7DgQDEi6AD7zUwQ/YLqO3OCleLTBKjM35Wvy
-	Ire/4+lRg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6UmwBVW+IIqAYu63ExhF15h534iEOdxh2H2haYVwN2w=; b=XKaXOene6DwPOM
+	t4DZFwWIdt+J5ORnWVooBfcEfBu/1EpqBI2RXNEHCRBzC3IO29Q44wWrZvo4h552UHTXizF10NwF6
+	dME3SMLY8lD0i4QYhqYc2TfGq9obNCUftFIeXYh5WMfmGJRIv+YS4M+Q7BLhW4sqzrIklJXI7/rG/
+	6/uXr5vAogPy1tznDSX1ziwXKQN4J+tJ7AeQtYKRCt88CpzQMrIH04xJ50E9zBM236n3eIannPyKw
+	yPW0sE0fRXjwSgtF3EmD/Qvl2r6fVwkwscdGpuymyb6QXfy5bTnFDKW+1S+I6YwxSgx44yUuUuQjg
+	cUrUt0MmzWv664kAiqYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoQ6I-0002dD-5d; Fri, 19 Jul 2019 10:26:54 +0000
+	id 1hoQ72-00036l-82; Fri, 19 Jul 2019 10:27:40 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hoQ5Y-0002RO-2o
- for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 10:26:09 +0000
+ id 1hoQ6F-0002sP-IG
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 10:26:54 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D8769337;
- Fri, 19 Jul 2019 03:26:04 -0700 (PDT)
-Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EE6633F59C;
- Fri, 19 Jul 2019 03:26:03 -0700 (PDT)
-Subject: Re: [PATCH] perf: imx8_ddr_perf: add AXI ID filter support
-To: Joakim Zhang <qiangqing.zhang@nxp.com>, "will@kernel.org"
- <will@kernel.org>, "mark.rutland@arm.com" <mark.rutland@arm.com>,
- Frank Li <frank.li@nxp.com>
-References: <20190719075421.11093-1-qiangqing.zhang@nxp.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <da9c7509-fc37-c70a-51eb-12c852c735db@arm.com>
-Date: Fri, 19 Jul 2019 11:25:58 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D95B1337;
+ Fri, 19 Jul 2019 03:26:50 -0700 (PDT)
+Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F14BC3F59C;
+ Fri, 19 Jul 2019 03:26:49 -0700 (PDT)
+Date: Fri, 19 Jul 2019 11:26:36 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Jim Quinlan <james.quinlan@broadcom.com>
+Subject: Re: [PATCH 02/11] firmware: arm_scmi: Segregate tx channel handling
+ and prepare to add rx
+Message-ID: <20190719102636.GA18022@e107155-lin>
+References: <20190708154730.16643-1-sudeep.holla@arm.com>
+ <20190708154730.16643-3-sudeep.holla@arm.com>
+ <CA+-6iNzmkT26cEdpD_C=L0bJ4TOEZwGuakin+GR4brSjSETfRA@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20190719075421.11093-1-qiangqing.zhang@nxp.com>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <CA+-6iNzmkT26cEdpD_C=L0bJ4TOEZwGuakin+GR4brSjSETfRA@mail.gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190719_032608_322115_F9190056 
-X-CRM114-Status: GOOD (  27.30  )
+X-CRM114-CacheID: sfid-20190719_032651_867265_09AD30FB 
+X-CRM114-Status: GOOD (  21.86  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -63,152 +63,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "kernel@pengutronix.de" <kernel@pengutronix.de>,
- dl-linux-imx <linux-imx@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Peng Fan <peng.fan@nxp.com>, Bo Zhang <bozhang.zhang@broadcom.com>,
+ Volodymyr Babchuk <volodymyr_babchuk@epam.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 19/07/2019 08:56, Joakim Zhang wrote:
-> AXI filtering is used by CSV modes 0x41 and 0x42 to count reads or
-> writes with an ARID or AXID matching filter setting. Granularity is at
-> subsystem level. Implementation does not allow filtring between masters
-> within a subsystem. Filter is defined with 2 configuration registers.
+On Thu, Jul 18, 2019 at 05:23:10PM -0400, Jim Quinlan wrote:
+> On Mon, Jul 8, 2019 at 11:47 AM Sudeep Holla <sudeep.holla@arm.com> wrote:
+> >
+> > The transmit(Tx) channels are specified as the first entry and the
+> > receive(Rx) channels are the second entry as per the device tree
+> > bindings. Since we currently just support Tx, index 0 is hardcoded at
+> > all required callsites.
+> >
+> > In order to prepare for adding Rx support, let's remove those hardcoded
+> > index and add boolean parameter to identify Tx/Rx channels when setting
+> > them up.
+> >
+> > Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+> > ---
+> >  drivers/firmware/arm_scmi/driver.c | 33 ++++++++++++++++--------------
+> >  1 file changed, 18 insertions(+), 15 deletions(-)
+> >
+> > diff --git a/drivers/firmware/arm_scmi/driver.c b/drivers/firmware/arm_scmi/driver.c
+> > index 0bd2af0a008f..f7fb6d5bfc64 100644
+> > --- a/drivers/firmware/arm_scmi/driver.c
+> > +++ b/drivers/firmware/arm_scmi/driver.c
+> > @@ -112,7 +112,7 @@ struct scmi_chan_info {
+> >   * @version: SCMI revision information containing protocol version,
+> >   *     implementation version and (sub-)vendor identification.
+> >   * @minfo: Message info
+> > - * @tx_idr: IDR object to map protocol id to channel info pointer
+> > + * @tx_idr: IDR object to map protocol id to Tx channel info pointer
+> >   * @protocols_imp: List of protocols implemented, currently maximum of
+> >   *     MAX_PROTOCOLS_IMP elements allocated by the base protocol
+> >   * @node: List head
+> > @@ -640,22 +640,26 @@ static int scmi_xfer_info_init(struct scmi_info *sinfo)
+> >         return 0;
+> >  }
+> >
+> > -static int scmi_mailbox_check(struct device_node *np)
+> > +static int scmi_mailbox_check(struct device_node *np, int idx)
+> >  {
+> > -       return of_parse_phandle_with_args(np, "mboxes", "#mbox-cells", 0, NULL);
+> > +       return of_parse_phandle_with_args(np, "mboxes", "#mbox-cells",
+> > +                                         idx, NULL);
+> >  }
+> >
+> > -static inline int
+> > -scmi_mbox_chan_setup(struct scmi_info *info, struct device *dev, int prot_id)
+> > +static int scmi_mbox_chan_setup(struct scmi_info *info, struct device *dev,
+> > +                               int prot_id, bool tx)
+> >  {
+> > -       int ret;
+> > +       int ret, idx;
+> >         struct resource res;
+> >         resource_size_t size;
+> >         struct device_node *shmem, *np = dev->of_node;
+> >         struct scmi_chan_info *cinfo;
+> >         struct mbox_client *cl;
+> >
+> > -       if (scmi_mailbox_check(np)) {
+> > +       /* Transmit channel is first entry i.e. index 0 */
+> > +       idx = tx ? 0 : 1;
+> > +
+> > +       if (scmi_mailbox_check(np, idx)) {
+> >                 cinfo = idr_find(&info->tx_idr, SCMI_PROTOCOL_BASE);
+> >                 goto idr_alloc;
+> >         }
+> > @@ -669,11 +673,11 @@ scmi_mbox_chan_setup(struct scmi_info *info, struct device *dev, int prot_id)
+> >         cl = &cinfo->cl;
+> >         cl->dev = dev;
+> >         cl->rx_callback = scmi_rx_callback;
+> > -       cl->tx_prepare = scmi_tx_prepare;
+> > +       cl->tx_prepare = tx ? scmi_tx_prepare : NULL;
+> >         cl->tx_block = false;
+> > -       cl->knows_txdone = true;
+> > +       cl->knows_txdone = tx;
+> >
+> > -       shmem = of_parse_phandle(np, "shmem", 0);
+> > +       shmem = of_parse_phandle(np, "shmem", idx);
+> Hi Sudeep,
 > 
-> --AXI_ID defines AxID matching value
-> --AXI_MASKING defines which bits of AxID are meaningful for the matching
+> You can't see it in the diff but you have two error messages that use
+> "Tx"; should this be changed to "Tx/Rx"?
 > 
-> When non-masked bits are matching corresponding AXI_ID bits then counter
-> is incremented. This filter allows counting read or write access from a
-> subsystem or multiple subsystems.
-> 
-> Perf counter is incremented if AxID && AXI_MASKING == AXI_ID && AXI_MASKING
-> 
-> AXI_ID and AXI_MASKING are mapped on DPCR1 register in performance counter.
-> 
-> e.g.
-> perf stat -a -e imx8_ddr0/axi-id-read,axi_id=0xMMMMDDDD/ cmd
-> MMMM: AXI_MASKING
-> DDDD: AXI_ID
-> 
-> Signed-off-by: Joakim Zhang <qiangqing.zhang@nxp.com>
-> ---
->   drivers/perf/fsl_imx8_ddr_perf.c | 38 ++++++++++++++++++++++++++++++--
->   1 file changed, 36 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/perf/fsl_imx8_ddr_perf.c b/drivers/perf/fsl_imx8_ddr_perf.c
-> index 63fe21600072..cd05f12ed5c4 100644
-> --- a/drivers/perf/fsl_imx8_ddr_perf.c
-> +++ b/drivers/perf/fsl_imx8_ddr_perf.c
-> @@ -42,9 +42,22 @@
->   
->   static DEFINE_IDA(ddr_ida);
->   
-> +/* DDR Perf hardware feature */
-> +#define DDR_CAP_AXI_ID_FILTER		0x1	/* support AXI ID filter */
-> +
-> +struct fsl_ddr_devtype_data {
-> +	unsigned int quirks;	/* quirks needed for different DDR Perf core */
-> +};
-> +
-> +static const struct fsl_ddr_devtype_data imx8_devtype_data;
-> +
-> +static const struct fsl_ddr_devtype_data imx8m_devtype_data = {
-> +	.quirks = DDR_CAP_AXI_ID_FILTER,
-> +};
-> +
->   static const struct of_device_id imx_ddr_pmu_dt_ids[] = {
-> -	{ .compatible = "fsl,imx8-ddr-pmu",},
-> -	{ .compatible = "fsl,imx8m-ddr-pmu",},
-> +	{ .compatible = "fsl,imx8-ddr-pmu", .data = &imx8_devtype_data},
-> +	{ .compatible = "fsl,imx8m-ddr-pmu", .data = &imx8m_devtype_data},
->   	{ /* sentinel */ }
->   };
->   
-> @@ -57,6 +70,7 @@ struct ddr_pmu {
->   	struct perf_event *events[NUM_COUNTERS];
->   	int active_events;
->   	enum cpuhp_state cpuhp_state;
-> +	const struct fsl_ddr_devtype_data *devtype_data;
->   	int irq;
->   	int id;
->   };
-> @@ -128,6 +142,8 @@ static struct attribute *ddr_perf_events_attrs[] = {
->   	IMX8_DDR_PMU_EVENT_ATTR(refresh, 0x37),
->   	IMX8_DDR_PMU_EVENT_ATTR(write, 0x38),
->   	IMX8_DDR_PMU_EVENT_ATTR(raw-hazard, 0x39),
-> +	IMX8_DDR_PMU_EVENT_ATTR(axi-id-read, 0x41),
-> +	IMX8_DDR_PMU_EVENT_ATTR(axi-id-write, 0x42),
->   	NULL,
->   };
->   
-> @@ -137,9 +153,11 @@ static struct attribute_group ddr_perf_events_attr_group = {
->   };
->   
->   PMU_FORMAT_ATTR(event, "config:0-7");
-> +PMU_FORMAT_ATTR(axi_id, "config1:0-31");
->   
->   static struct attribute *ddr_perf_format_attrs[] = {
->   	&format_attr_event.attr,
-> +	&format_attr_axi_id.attr,
->   	NULL,
->   };
->   
-> @@ -274,6 +292,15 @@ static void ddr_perf_event_start(struct perf_event *event, int flags)
->   	struct hw_perf_event *hwc = &event->hw;
->   	int counter = hwc->idx;
->   
-> +	if (pmu->devtype_data->quirks & DDR_CAP_AXI_ID_FILTER) {
-> +		if (event->attr.config == 0x41 ||
-> +		    event->attr.config == 0x42) {
-> +			int val = event->attr.config1;
-> +
-> +			writel(val, pmu->base + COUNTER_DPCR1);
 
-As was touched upon in the original driver review, if this filter is 
-shared between counters, then what happens if the user specifies 
-EVENT_AXI_READ and EVENT_AXI_WRITE at the same time but with different 
-masks?
+Thanks for spotting, will fix it.
 
-> +		}
-> +	}
-> +
->   	local64_set(&hwc->prev_count, 0);
->   
->   	ddr_perf_counter_enable(pmu, event->attr.config, counter, true);
-> @@ -445,6 +472,7 @@ static int ddr_perf_offline_cpu(unsigned int cpu, struct hlist_node *node)
->   
->   static int ddr_perf_probe(struct platform_device *pdev)
->   {
-> +	const struct of_device_id *of_id;
->   	struct ddr_pmu *pmu;
->   	struct device_node *np;
->   	void __iomem *base;
-> @@ -472,6 +500,12 @@ static int ddr_perf_probe(struct platform_device *pdev)
->   	if (!name)
->   		return -ENOMEM;
->   
-> +	of_id = of_match_device(imx_ddr_pmu_dt_ids, &pdev->dev);
-> +	if (of_id)
-> +		pmu->devtype_data = of_id->data;
-
-Use of_device_get_match_data()...
-
-> +	else
-> +		return -ENODEV;
-
-...and either way this should be impossible - if there was no match, the 
-OF code would never have called our probe routine in the first place.
-
-Robin.
-
-> +
->   	pmu->cpu = raw_smp_processor_id();
->   	ret = cpuhp_setup_state_multi(CPUHP_AP_ONLINE_DYN,
->   				      DDR_CPUHP_CB_NAME,
-> 
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
