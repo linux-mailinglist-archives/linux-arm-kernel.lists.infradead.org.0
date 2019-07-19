@@ -2,86 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 59CA26EB81
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 22:17:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16B016EB87
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 22:20:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8045gl8SckqE4qX25U5t5C9LYbL02oLVLZL7NCsPA9A=; b=tzjpYDLnw+AJjS
-	2uIGW4iI8BXRU8HtYyFAdLB639u+XW+zug2lJ/rL5ZOxjbAksUlETIhHG39hdRL0bg9bUHZYzZl2M
-	+wK/wsY6ktp4IcqPIG5UP/3HMClC39+sJ6j++NrBKwYsNE44t+arEzMBYudetvvNsOSDug5HCBKTC
-	h0jop88fDMij5wDVze8dFRIinm3kuTkML+Hfg0JTKIFckGNFEPT7+C4H0q67shDIetpG4OwEMPYi7
-	iuhdHFF8sM4e8LInEItbmjviey4zcP0ARB83GsBqNoAB6+4qqZLbRfosTqIelZkUUkan3PIJqqYG4
-	KFapjsTTTY4+9y9cjNcg==;
+	List-Owner; bh=aZGkYMPexFbDEFH0vfNJ26xRP6/1R01qiec2orTmCZE=; b=avHAuT2/dQ5EGF
+	poNmt2RukpyGvmo0sfGZcWioMeUKNYs7kPwu38CwJddSsDwdn/BoOnKXcdSmvvbzq2HlL6QGj1w0P
+	Cv36m2fUhG9hVLtLQn3njxYNFPapp9/x4JSeOr+TWK6tHw99b5mmdSxMGw98WtPjhdREwbuZPt5jf
+	P/touw+i5PYXNP+QZ2XE/PHeE5FyYrzmIW33HO3B8wm2bPdQab+qLqbTbXCTnBF1d7EsGi23wGuUY
+	47WPwc/vB68Dj/uUZyzTpzLlD8wiZWYoMojTyTF/IRQaiiMEwpEPCdxPs4DrqlN9v4k/Txx+isCKx
+	3aVn73WGR70TZI/e/wvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoZJR-0000sw-8Z; Fri, 19 Jul 2019 20:17:05 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1hoZMU-0001oV-2W; Fri, 19 Jul 2019 20:20:14 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hoZIe-0000X4-8C
- for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 20:16:18 +0000
-Received: by mail-wm1-x341.google.com with SMTP id f17so30065418wme.2
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 19 Jul 2019 13:16:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=qRQ+uU5wn2WQEQOnZ2UubgfeFVqhZgd9kjVnCaHPrfs=;
- b=Im0DR1UFeZCq0zpB8KVCXvKG4l8B7MMe+rdKU9q1VGpDDB5w+wAaQZF6rnhC1qRfWy
- rcJTvwWi6fHM7Ba2khVUk6x8u++hR78UsmpytMV9E/jZmM/uSWALP4WQRh76lXsD3JKm
- JG3pMxHpuN+1zi+Kf5xUGmAj/PyY1nU7rp3gc=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=qRQ+uU5wn2WQEQOnZ2UubgfeFVqhZgd9kjVnCaHPrfs=;
- b=QEqiPsV/K/4454IalEjyVDrdd7iggMHc60AVVxci8/5pnynkRUtOSHWBk0Lq8nrOQ0
- o5WEmV6uNEeyGsp/rQNqSSONR8N9LcuuPg8V+QgnTz9VF4nOfI0AzRlmQS24d8vCuf7N
- 7B8fAyHraIV2aYcuIrERJwtrDNjHCx2GmykBI+CvpRP0F4DG1D9jvTYV/zuJBerJdW8O
- kY5vCg4KLJrrT9Q3HTQTXi4LI0uF4g9sy0IHZSmoeLWAK2ECNfJC45SkTj74/DK0sbPN
- 9BPU6ooVI04/mXvwxjb2+bIWoA0ZgbMN4zSrJPQrZDF4FpYNXtmq1EVYtwIxbMYGz6xI
- rDRA==
-X-Gm-Message-State: APjAAAWQNS8w6Dw1J6EO+aseeO/IEALuiSqYtud7Q3+P3B5lLg6cDknf
- mz91RfhPOcFxnwLSfNFb8lXWJDN/rmWqXSsoDK1yjw==
-X-Google-Smtp-Source: APXvYqwUUphzrItlkDPidpodRtl/C08h8HR9wxM4T7PXeAtVwjCeOoOjvdEgpCVdshASDZhounhK56wQQqk+6ddCGKo=
-X-Received: by 2002:a1c:ac81:: with SMTP id
- v123mr51072312wme.145.1563567374453; 
- Fri, 19 Jul 2019 13:16:14 -0700 (PDT)
+ id 1hoZMC-0001o1-1L
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 20:19:57 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1hoZM8-0006aX-IH; Fri, 19 Jul 2019 22:19:52 +0200
+Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1hoZM5-0005uR-7Z; Fri, 19 Jul 2019 22:19:49 +0200
+Date: Fri, 19 Jul 2019 22:19:49 +0200
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Sergey Organov <sorganov@gmail.com>
+Subject: Re: [PATCH v4 1/3] serial: imx: set_termios(): do not enable autoRTS
+ if RTS is unset
+Message-ID: <20190719201949.ldqlcwjhcmt7wwhg@pengutronix.de>
+References: <20190614072801.3187-1-s.hauer@pengutronix.de>
+ <1563526074-20399-1-git-send-email-sorganov@gmail.com>
+ <1563526074-20399-2-git-send-email-sorganov@gmail.com>
+ <20190719091143.uhjxeibtolgswq2l@pengutronix.de>
+ <87h87idxq2.fsf@osv.gnss.ru>
+ <20190719143151.gx43ndn2oy35h247@pengutronix.de>
+ <87woge9hvz.fsf@osv.gnss.ru>
 MIME-Version: 1.0
-References: <20190708154730.16643-1-sudeep.holla@arm.com>
- <20190708154730.16643-8-sudeep.holla@arm.com>
- <CA+-6iNyFToC8QSf042OcqvAStvaF=voy_ohayvQBVCppgtyD7A@mail.gmail.com>
- <20190719110320.GC18022@e107155-lin>
-In-Reply-To: <20190719110320.GC18022@e107155-lin>
-From: Jim Quinlan <james.quinlan@broadcom.com>
-Date: Fri, 19 Jul 2019 16:16:02 -0400
-Message-ID: <CA+-6iNwgza49jmDbTM-_MUx+VPDFpG=1fN8i8v5vXdQNoOk93Q@mail.gmail.com>
-Subject: Re: [PATCH 07/11] firmware: arm_scmi: Add support for asynchronous
- commands and delayed response
-To: Sudeep Holla <sudeep.holla@arm.com>
+Content-Disposition: inline
+In-Reply-To: <87woge9hvz.fsf@osv.gnss.ru>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190719_131616_417601_4262E303 
-X-CRM114-Status: GOOD (  25.64  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190719_131956_079754_45E9734C 
+X-CRM114-Status: GOOD (  21.53  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,77 +74,114 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peng Fan <peng.fan@nxp.com>, Bo Zhang <bozhang.zhang@broadcom.com>,
- Volodymyr Babchuk <volodymyr_babchuk@epam.com>, linux-kernel@vger.kernel.org,
+Cc: linux-serial@vger.kernel.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jul 19, 2019 at 7:03 AM Sudeep Holla <sudeep.holla@arm.com> wrote:
->
-> On Thu, Jul 18, 2019 at 05:38:06PM -0400, Jim Quinlan wrote:
-> > Hi Sudeep,
-> >
-> > Just a comment in general.  The asynchronous commands you are
-> > implementing are not really asynchronous to the caller.
->
-> Yes, but as per specification, the idea is to release the channel for
-> other communication.
->
-> > Yes it is is "async" at the low level, but there is no way to use
-> > scmi_do_xfer() or scmi_do_xfer_with_response() and have the calling
-> > thread be able to continue on in parallel with the command being
-> > processed by the platform. This will limit the types of applications
-> > that can use SCMI (perhaps this is intentional).
->
-> Yes indeed, it's intentional and async is applicable for channel usage.
->
-> > I was hoping that true async would be possible, and that the caller
-> > could also register a callback function to be invoked when the command
-> > was completed.  Is this something that may be added in the future?
->
-> This is how notifications are designed and must work. I would suggest
-> to use notifications instead. Do you see any issues with that approach ?
->
-> > It does overlap with notifications, because with those messages you
-> > will need some kind of callback or handler thread.
-> >
->
-> Ah you do mention about overlap. I am replying as I read, sorry for that.
-> Anyways, let me know if we can just use notifications. Also the current
-> sync users(mainly clocks and sensors), may need even change in Linux
-> infrastructure if we need to make it work in notification style.
->
-> It would be good to know the use case you are referring.
-Hi Sudeep,
+On Fri, Jul 19, 2019 at 06:13:52PM +0300, Sergey Organov wrote:
+> Hello Uwe,
+> =
 
-Well, I'm just curious how you would implement notifications.  Would
-you have a per-protorcol callback?  The Spec says that multiple agents
-can receive them; in our usage we have only one agent and it is Linux.
-
-We have one use case where that this patchset will do wonderfully.  We
-have another use case where we would like to go crazy on the
-asynchrony of the messages (caller's perspective, that is).
-This usage, which I don't think I can talk about, would like to use
-notifications and a per-protocol callback function.
->
-> > BTW, if scmi_do_xfer_with_response()  returns --ETIMEDOUT the caller
-> > has no way of knowing whether it was the command ack timeout or the
-> > command execution timeout.
+> Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de> writes:
+> > Hello Sergey,
 > >
-> Yes, I did think about this but I left it as is thinking it may not be
-> important. Do you think that makes a difference ? I am fine to change
-> if there are users that needs to handle the difference.
-I can't think of a case where it would matter.  Just thought I'd mention it.
+> > On Fri, Jul 19, 2019 at 03:18:13PM +0300, Sergey Organov wrote:
+> >> Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de> writes:
+> >> > On Fri, Jul 19, 2019 at 11:47:52AM +0300, Sergey Organov wrote:
+> >> >> diff --git a/drivers/tty/serial/imx.c b/drivers/tty/serial/imx.c
+> >> >> index 57d6e6b..95d7984 100644
+> >> >> --- a/drivers/tty/serial/imx.c
+> >> >> +++ b/drivers/tty/serial/imx.c
+> >> >> @@ -405,7 +405,8 @@ static void imx_uart_rts_inactive(struct imx_po=
+rt *sport, u32 *ucr2)
+> >> >>  /* called with port.lock taken and irqs caller dependent */
+> >> >>  static void imx_uart_rts_auto(struct imx_port *sport, u32 *ucr2)
+> >> >>  {
+> >> >> -	*ucr2 |=3D UCR2_CTSC;
+> >> >> +	if (*ucr2 & UCR2_CTS)
+> >> >> +		*ucr2 |=3D UCR2_CTSC;
+> >> >
+> >> > I think this patch is wrong or the commit log is insufficient.
+> >> > imx_uart_rts_auto() has only a single caller and there ucr2 & UCR2_C=
+TS is
+> >> > never true. And CTSC isn't restored anywhere, is it?
+> >> =
 
-Cheers,
-Jim
->
-> --
-> Regards,
-> Sudeep
+> >> This is rebase to 'tty-next' branch, and you need to look at it in that
+> >> context. There, ucr2 & UCR2_CTS does already make sense, due to previo=
+us
+> >> fix that is already there.
+> >
+> > I looked at 57d6e6b which is the file you patched. And there
+> > imx_uart_rts_auto is only ever called with *ucr2 not having UCR2_CTS.
+> >
+> > If you still think I'm wrong, please improve the commit log
+> > accordingly.
+> =
+
+> I still think you are wrong, but I don't know how to improve commit log.
+> =
+
+> To check it once again, I just did:
+> =
+
+> $ git show 57d6e6b > imx.c
+> =
+
+> There, in imx_uart_set_termios(), I see:
+> =
+
+> 1569:	old_ucr2 =3D imx_uart_readl(sport, UCR2);
+> 1570:	ucr2 =3D old_ucr2 & (UCR2_TXEN | UCR2_RXEN | UCR2_ATEN | UCR2_CTS);
+> =
+
+> Here, current UCR2 value is read into 'old_ucr2' and then its /current/
+> UCR2_CTS bit is copied into 'ucr2' (along with 3 other bits).
+> =
+
+> Then, later in the same function:
+> =
+
+> 1591:		imx_uart_rts_auto(sport, &ucr2);
+> =
+
+> is called that can check /current/ state of UCR2_CTS bit in '*ucr2'.
+> =
+
+> That's what the patch does, checks this bit.
+> =
+
+> Sorry, I fail to see how you came to conclusion that "*ucr2 not having
+> UCR2_CTS". Do we maybe still read different versions of the file?
+
+No, it's just that I failed to see that UCR2_CTS is in the set of bits
+that are retained even when looking twice :-|
+
+So you convinced me that you are right and if you update the commit log
+as agreed already before and even add a comment in imx_uart_rts_auto
+along the lines of
+
+	/*
+	 * Only let the receiver control RTS output if we were not
+	 * requested to have RTS inactive (which then should take
+	 * precedence).
+	 */
+
+you can have my Ack.
+
+Best regards
+Uwe
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
 
 _______________________________________________
 linux-arm-kernel mailing list
