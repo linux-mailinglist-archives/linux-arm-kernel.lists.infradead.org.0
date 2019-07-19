@@ -2,56 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AFEC36E4A7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 13:03:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 746D96E4B3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 13:08:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ev3J53Vq2B/P0lnWElTWhuE5TOGm/2FpqVdYC/9R7Ww=; b=SbwNprlGzDeefZ
-	J8FMvwjfAlvpZhBjwCvKG7NpHcBedXCsX7rdlpjoaiUSJHGbN896G1RcYtWckGPde1DyESVSSqXEh
-	yOrOpSsJzuCrmAbHRzCs1qSZb7qDsfV8I/iZNFym0n3JuBwuSriM4uCgH3nB8tUIwk8IeofvGHViN
-	vWWI6fsrjqCoBkwcO11LSCCtY9u7lcHZJZqiucc9m22eJOwjbDQQlsm2at+w35DmIGVrS3uDc0pUk
-	JfRUgrnhSs3cw5Cot2lH/0qbYRcS66DRcz8LbjnjZO9Tt6ih7GHMtnXQhWZzNI/VbFZSYCzUc0tO7
-	P0dzi5E7vuFHgeLG0Ovg==;
+	List-Owner; bh=27jeeSP/A/AubxE3sUTxyV1WgrMh8eopQt5BGnRqN6o=; b=iY8ZzLnp1+sjvy
+	y44i17lvQMpqlTPCp7nHjxGsMf+Ud43Y/hAz1ZchtECoRI5Bp5CgjzqavV+RNWBGP/NSirjDFo6Qq
+	iFI/9f4z5uNej9keRPV05EpgVql7v8+Zuf7jjP/0zoraz0FFZo5w7MQC93rlsonJcxDEC1gKe9YyR
+	C8lbCdJS88I2ukWb/t5xOqtD5Y1eIhLUODAB7TbrR8slOYSISqLzxJSzfdb2RDUz4GD5r5lgKB3xP
+	PVSKmCUq2/6apkaugCW+UCcg9GSkP29g8u8vP9znuoYzvjNKlVGwIQ2FG06vYuieKyXu+DJAVlylL
+	qU+RzvIkCJGs1rP1AKRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoQft-0000kY-7y; Fri, 19 Jul 2019 11:03:41 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hoQfe-0000jk-1p
- for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 11:03:27 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C1676337;
- Fri, 19 Jul 2019 04:03:23 -0700 (PDT)
-Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D5BE23F59C;
- Fri, 19 Jul 2019 04:03:22 -0700 (PDT)
-Date: Fri, 19 Jul 2019 12:03:20 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Jim Quinlan <james.quinlan@broadcom.com>
-Subject: Re: [PATCH 07/11] firmware: arm_scmi: Add support for asynchronous
- commands and delayed response
-Message-ID: <20190719110320.GC18022@e107155-lin>
-References: <20190708154730.16643-1-sudeep.holla@arm.com>
- <20190708154730.16643-8-sudeep.holla@arm.com>
- <CA+-6iNyFToC8QSf042OcqvAStvaF=voy_ohayvQBVCppgtyD7A@mail.gmail.com>
+	id 1hoQkb-0002l4-9k; Fri, 19 Jul 2019 11:08:33 +0000
+Received: from asavdk3.altibox.net ([109.247.116.14])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hoQkB-0002hk-WC; Fri, 19 Jul 2019 11:08:09 +0000
+Received: from ravnborg.org (unknown [158.248.194.18])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by asavdk3.altibox.net (Postfix) with ESMTPS id 24E792008A;
+ Fri, 19 Jul 2019 13:08:01 +0200 (CEST)
+Date: Fri, 19 Jul 2019 13:08:00 +0200
+From: Sam Ravnborg <sam@ravnborg.org>
+To: "Koenig, Christian" <Christian.Koenig@amd.com>
+Subject: Re: [PATCH v1 11/11] drm: drop uapi dependency from drm_file.h
+Message-ID: <20190719110800.GA3247@ravnborg.org>
+References: <20190718161507.2047-1-sam@ravnborg.org>
+ <20190718161507.2047-12-sam@ravnborg.org>
+ <57ad927c-4b7f-d6e2-edda-720386190054@amd.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CA+-6iNyFToC8QSf042OcqvAStvaF=voy_ohayvQBVCppgtyD7A@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <57ad927c-4b7f-d6e2-edda-720386190054@amd.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CMAE-Score: 0
+X-CMAE-Analysis: v=2.3 cv=dqr19Wo4 c=1 sm=1 tr=0
+ a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
+ a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10
+ a=eF2l136HLxNaSI10T0kA:9 a=CjuIK1q_8ugA:10
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190719_040326_137315_2E169D97 
-X-CRM114-Status: GOOD (  20.34  )
+X-CRM114-CacheID: sfid-20190719_040808_216702_84C76961 
+X-CRM114-Status: GOOD (  14.59  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [109.247.116.14 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,60 +67,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peng Fan <peng.fan@nxp.com>, Bo Zhang <bozhang.zhang@broadcom.com>,
- Volodymyr Babchuk <volodymyr_babchuk@epam.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: David Airlie <airlied@linux.ie>, Daniel Vetter <daniel.vetter@ffwll.ch>,
+ Liviu Dudau <Liviu.Dudau@arm.com>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ Chris Wilson <chris@chris-wilson.co.uk>, Eric Anholt <eric@anholt.net>, "Zhou,
+ David\(ChunMing\)" <David1.Zhou@amd.com>, Stefan Agner <stefan@agner.ch>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, CK Hu <ck.hu@mediatek.com>,
+ Thierry Reding <treding@nvidia.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Rob Herring <robh@kernel.org>, Jani Nikula <jani.nikula@intel.com>,
+ Intel Graphics Development <intel-gfx@lists.freedesktop.org>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ Lionel Landwerlin <lionel.g.landwerlin@intel.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Sean Paul <sean@poorly.run>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Boris Brezillon <bbrezillon@kernel.org>,
+ Thomas Zimmermann <tzimmermann@suse.de>, Rob Clark <robdclark@gmail.com>,
+ Noralf =?iso-8859-1?Q?Tr=F8nnes?= <noralf@tronnes.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Sean Paul <seanpaul@chromium.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jul 18, 2019 at 05:38:06PM -0400, Jim Quinlan wrote:
-> Hi Sudeep,
+Hi Christian.
+
+Thanks for your comments and very valid question.
+
+On Fri, Jul 19, 2019 at 06:56:47AM +0000, Koenig, Christian wrote:
+> Am 18.07.19 um 18:15 schrieb Sam Ravnborg:
+> > drm_file used drm_magic_t from uapi/drm/drm.h.
+> > This is a simple unsigned int.
+> > Just opencode it as such to break the dependency from this header file
+> > to uapi.
 > 
-> Just a comment in general.  The asynchronous commands you are
-> implementing are not really asynchronous to the caller.
+> Mhm, why do you want to remove UAPI dependency here in the first place?
 
-Yes, but as per specification, the idea is to release the channel for
-other communication.
+The idea is to make include/drm/* independent of uapi/drm/* so the
+header files are less tangled up thus easier to read and comprehend.
 
-> Yes it is is "async" at the low level, but there is no way to use
-> scmi_do_xfer() or scmi_do_xfer_with_response() and have the calling
-> thread be able to continue on in parallel with the command being
-> processed by the platform. This will limit the types of applications
-> that can use SCMI (perhaps this is intentional).
+.c files that requires uapi can then include the uapi headers.
 
-Yes indeed, it's intentional and async is applicable for channel usage.
+For now my focus was solely on uapi/drm/drm.h - so I dunno if this
+is an achievable goal for include/drm/*.
 
-> I was hoping that true async would be possible, and that the caller
-> could also register a callback function to be invoked when the command
-> was completed.  Is this something that may be added in the future?
+For uapi/drm/* headers things are more clear. They shall be
+independent of include/drm/* as they are exported.
 
-This is how notifications are designed and must work. I would suggest
-to use notifications instead. Do you see any issues with that approach ?
+> I mean the type can't change because it is UAPI, but it is rather bad 
+> for a documentation point of view.
 
-> It does overlap with notifications, because with those messages you
-> will need some kind of callback or handler thread.
->
+For a widely used type I would agree.
+For struct auth, that is ony used in drm_auth.c then the documentation
+impact is minor. But your point is indeed valid.
+(struct auth has one field of type magic_t).
 
-Ah you do mention about overlap. I am replying as I read, sorry for that.
-Anyways, let me know if we can just use notifications. Also the current
-sync users(mainly clocks and sensors), may need even change in Linux
-infrastructure if we need to make it work in notification style.
+I will await further feedback before we decide to apply this patch or
+not.
+The patches that pushes include of drm/drm.h to the respective .c
+files are legit as we drop the dependency on an indirectly included
+header file. I will process these patches.
 
-It would be good to know the use case you are referring.
-
-> BTW, if scmi_do_xfer_with_response()  returns --ETIMEDOUT the caller
-> has no way of knowing whether it was the command ack timeout or the
-> command execution timeout.
->
-Yes, I did think about this but I left it as is thinking it may not be
-important. Do you think that makes a difference ? I am fine to change
-if there are users that needs to handle the difference.
-
---
-Regards,
-Sudeep
+	Sam
 
 _______________________________________________
 linux-arm-kernel mailing list
