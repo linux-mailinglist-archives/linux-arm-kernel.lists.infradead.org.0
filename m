@@ -2,142 +2,109 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9AFBE6E1FA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 09:52:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F32D6E20B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 09:57:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XmRJC59ZgMVjv/lWwwrqgO0DWugjg6DLoayCtRp3oZw=; b=FP7gxQAZI/RWf8
-	k0QDeBbeEFfW7l3IEbwxvrbPrnsvByIP5zf0Ui9wykkEptttOuwA1n4ixFMGxJRL7+fSIQraDpNLa
-	4ZELJ9lXVwQlPFLyeYa3f3EpeKnOF02KOpcQ2rkTCi5CIobCOS890jB/Oe35cWei/9a0/3k9do96q
-	dPaME2DCZipPkwYpYo2TDuxKw6fOIjKMYlz+WGJ5SLUArFGRA2HAQtZyk+ybaSexax6YVOxPQeYy4
-	Je0dM9ApVMVunUA4geW8J7100EU3vbLFRDKS2Xrfa0zn5sXMaO+qUR/iA2k69B+6nRAsRGyL48MY5
-	N1PNIc/0n/WI9qPXW3Mg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=4FFTdUZcsoGdWbVVMBx/149+eCXpOTFs4FjqfkArEjc=; b=lSYUCesKcD0zSd
+	jKtfQJAGxe37bBypXZQdzt4Ekpfyn9P5Mzd0idRzFTYuuVubVWUgNsgX16gqbgKcW/NP8w6lk0syj
+	xNTvaP99YXMBI9aLxDMw48ftyVEHRNJUNXc1qfGuDp+1/K1rqimNv7uuOib3WoDlZjWix+Z301QWL
+	boNxuHzR8BLKkb9ZIVdkfIOyCIczQyW6bWm10ljgRRMeYeQT88MupZtzOHaS17AP39lzB9doOO1C3
+	DVpYuNipaFqNJfqbnPAJlGzmATE9oEswcp4jQBnDgjPvOq55Ey3ueJdQvE3VafvoHF81k8bmmMI4K
+	5PXpcofA3EEaJXdglcNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoNgh-00031I-QT; Fri, 19 Jul 2019 07:52:19 +0000
-Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
- helo=smtprelay-out1.synopsys.com)
+	id 1hoNlV-0005Rh-Ag; Fri, 19 Jul 2019 07:57:17 +0000
+Received: from mail-eopbgr140047.outbound.protection.outlook.com
+ ([40.107.14.47] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hoNfz-0002vg-Pm
- for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 07:51:38 +0000
-Received: from mailhost.synopsys.com (dc8-mailhost1.synopsys.com
- [10.13.135.209])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 0D6BFC0AEF;
- Fri, 19 Jul 2019 07:51:30 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1563522691; bh=HxqED4y9EylyQ+j0jlMmu2gWC2EhaU0l0QwmnH8Ds/Q=;
- h=From:To:CC:Subject:Date:References:In-Reply-To:From;
- b=hgrkQZ3aOQRxDVqJOcJUniIVj2nz85hOXkji0OM/Ndo76NvcdnStre6gTJKNsLEn/
- kZsiAEs7zAZoY8Vi2z5Kto2IND/OOsuQWTzvrfLyGTIgrzhPy/YTY22G9qKyQMPNqA
- 5l4xfW1DEAQFvpedz4V2JRI0gZOe0yNSmgYsV5yJBvWlKOdctHfB5bFCcGSjzlKKe9
- G0SVMvii8zT8jO4j/IBHpWsh1MkKTmdRZpQvD7pExa4mPMX+JQXBGdlWCgckEHKe+I
- q0oRO64E/8xLU4L+lo5htIaoLtpVOtZDtjEDBX+P5D90z6CMlpsH6t1s6JflzQJJaj
- aLvggx5XHKumg==
-Received: from US01WEHTC2.internal.synopsys.com
- (us01wehtc2.internal.synopsys.com [10.12.239.237])
- (using TLSv1.2 with cipher AES128-SHA256 (128/128 bits))
- (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id B4702A023B;
- Fri, 19 Jul 2019 07:51:24 +0000 (UTC)
-Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
- US01WEHTC2.internal.synopsys.com (10.12.239.237) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Fri, 19 Jul 2019 00:51:15 -0700
-Received: from NAM05-BY2-obe.outbound.protection.outlook.com (10.13.134.195)
- by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
- 14.3.408.0; Fri, 19 Jul 2019 00:51:14 -0700
+ id 1hoNl9-00058H-1S
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 07:56:56 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=XsdAXDobrymd/UTErCKqie0EZ4myVSKXO63qS47iyq3U1HxN7ozoCA8jJV6AOQ/tfR/v4WXZibWkmpm13TYSxb4UhH8NX51BjfgtcZFpoNmHDrysWH0RH5XuS2P7vH6zcyvfE6mumlQVywTMWhRXFrOrCH+j1FCaZpq6sZofKvv/DaPP26MzyQon7WhwbOXI08TuWQ/uu61m3A/Y0bdgId+mt+nR9MolinJQB0OLRDFh8vmeeINI/Wm8MUopvHHbTEX1wOcICuN8JCp6fJoOVflb+L9Ax+fhXsE2Av895dAb3/BqHXa5DCpHOLkvJMKr+gpwdDuPEmQXmiZTUmnXNg==
+ b=cvWXK3ZPOYU09UmhCrR70Q1m2b1IfAYHSVywi2wXrN7dBNa1E3I38JBahu9O3RxACbOPRkwzW3HG0+Oag2KNN352XDqJvtAce2xgowjjr/9in1zXdvZKJerj8cDeLrHqw3q6KHbGLXqzbktQ+g/0ApBGbt3xmCbhBiknyhO3woEgue0FonuQpkZLy8W1IqNroSx6W+VHo0rIfFuITIuI609EH9LKeK2L11CbjwUIlHym8RkZLtv5QNmXPABh35Isfv8VO8lLy4pqNfCJ/7Iii/6BiMgHyjXozD3YouDgtP/58Y//POADa05Ia82ORDnYq/AuHMC6uw/6whrDaE3+dw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=HxqED4y9EylyQ+j0jlMmu2gWC2EhaU0l0QwmnH8Ds/Q=;
- b=DCNTr7K/49AjOJglqIDXsRK0gr3H/uOrHVRdArQlTItdueXjqwrK2hWNJAS2uAi7aN6pGJvpRQ5Ijqqq3OiVPr4zwI/7wg2vvKYv/yf5KRyWyscepMWBoltm9p9PT8QliD136mEWTcYcRkAVyRu3GtTq1qcqgVqSZ0z5L3lp280ijLRf2iM2y6FVJygfC5AkpD510aBtWovpw3RFLQp9MAr/bTT2Cgtkx1ODej+bZkAAeRPFHYGDjtpYb0hoHy0utk4jQEJINyC0uvkcSrbKekNKL1TZ6++zNTZKcy4RpQWluqGMPbLMme1YCsgZqTenrb4lQZmrJRLf5YyDxVX4ww==
+ bh=WTpLhVpwgf8hAsWBBoXKS1o+vANfueKFgYHbYjyVC74=;
+ b=YI/TSjsZc4BVdcm+XJbT89FPXIeAqRj/r+iG/xa2g06lr0MbHupvmLzO+oTviPZUYsoVS4puQi53GTLPuZ7GrSOUguCN6f1OPRlF61jnYiRJYitG7t2FFYHGzMaV15y7tR+wnALNZnU+cfoNViwheZUcNfV9QYwdU27zwMFVXovv1IZNHV92tGQWcLnnfbRv+ZUg35aYQheJliu2ILMQvxcVGfUQMbwHVD7SANe7Ci8gTiD0Pw/CYi4Otrpd5C+3bmsp9qO2XuTJxOpnonKOGmfTyzeY8fbwbYooUNDUsoQzmkrXsH4lfoKKlxYlFsA7Vkg1EB4dStbYXM5IG8XEBw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=synopsys.com;dmarc=pass action=none
- header.from=synopsys.com;dkim=pass header.d=synopsys.com;arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=synopsys.onmicrosoft.com; s=selector1-synopsys-onmicrosoft-com;
+ smtp.mailfrom=nxp.com;dmarc=pass action=none header.from=nxp.com;dkim=pass
+ header.d=nxp.com;arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=HxqED4y9EylyQ+j0jlMmu2gWC2EhaU0l0QwmnH8Ds/Q=;
- b=fMGqmBAGnhUbQMZOZWalE51VxxScsEup9VQPtnwPXytbhUFilzzeaDFwDmFL0fkjdUm6gO2P8dTURJaDV0SAYR7y+fsd2YRuC1ItESKH4PCDEjq6wEV/iH5UGSOiP1ceFPqGmm+excpfIU4H2uhn5UG85HxhHWvRiZ+DAvwTX3Q=
-Received: from BN8PR12MB3266.namprd12.prod.outlook.com (20.179.66.159) by
- BN8PR12MB3426.namprd12.prod.outlook.com (20.178.211.208) with Microsoft SMTP
+ bh=WTpLhVpwgf8hAsWBBoXKS1o+vANfueKFgYHbYjyVC74=;
+ b=gzTMPVzYRhgy2unxSUrpotvm/oWTDc3HrG0MR8gYBEEkKCIOPIS+T880rWI4V3lw/hSLadH/eEtnYR23ym6YkwIa0t7JVj5XPTko/BG1AJH6yYfxsb2WOmtoy/Ti/DWEvsWS+QP6jqd7RKGiCqZWlrgKnHP8PSLWbtfST3pgCHI=
+Received: from DB7PR04MB4618.eurprd04.prod.outlook.com (52.135.139.151) by
+ DB7PR04MB4058.eurprd04.prod.outlook.com (52.134.109.20) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2073.11; Fri, 19 Jul 2019 07:51:13 +0000
-Received: from BN8PR12MB3266.namprd12.prod.outlook.com
- ([fe80::61ef:5598:59e0:fc9d]) by BN8PR12MB3266.namprd12.prod.outlook.com
- ([fe80::61ef:5598:59e0:fc9d%5]) with mapi id 15.20.2073.012; Fri, 19 Jul 2019
- 07:51:13 +0000
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-To: Jon Hunter <jonathanh@nvidia.com>, Jose Abreu <Jose.Abreu@synopsys.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>, 
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Subject: RE: [PATCH net-next 3/3] net: stmmac: Introducing support for Page
- Pool
-Thread-Topic: [PATCH net-next 3/3] net: stmmac: Introducing support for Page
- Pool
-Thread-Index: AQHVMYtq2Zx4WVoG/U2kL8GCK0bP/abPQEOAgADTx+CAABvLAIABeX5g
-Date: Fri, 19 Jul 2019 07:51:12 +0000
-Message-ID: <BN8PR12MB3266960A104A7CDBB4E59192D3CB0@BN8PR12MB3266.namprd12.prod.outlook.com>
-References: <cover.1562149883.git.joabreu@synopsys.com>
- <1b254bb7fc6044c5e6e2fdd9e00088d1d13a808b.1562149883.git.joabreu@synopsys.com>
- <29dcc161-f7c8-026e-c3cc-5adb04df128c@nvidia.com>
- <BN8PR12MB32661E919A8DEBC7095BAA12D3C80@BN8PR12MB3266.namprd12.prod.outlook.com>
- <6a6bac84-1d29-2740-1636-d3adb26b6bcc@nvidia.com>
-In-Reply-To: <6a6bac84-1d29-2740-1636-d3adb26b6bcc@nvidia.com>
+ 15.20.2073.10; Fri, 19 Jul 2019 07:56:49 +0000
+Received: from DB7PR04MB4618.eurprd04.prod.outlook.com
+ ([fe80::6553:8d04:295c:774b]) by DB7PR04MB4618.eurprd04.prod.outlook.com
+ ([fe80::6553:8d04:295c:774b%5]) with mapi id 15.20.2094.011; Fri, 19 Jul 2019
+ 07:56:49 +0000
+From: Joakim Zhang <qiangqing.zhang@nxp.com>
+To: "will@kernel.org" <will@kernel.org>, "mark.rutland@arm.com"
+ <mark.rutland@arm.com>, Frank Li <frank.li@nxp.com>
+Subject: [PATCH] perf: imx8_ddr_perf: add AXI ID filter support
+Thread-Topic: [PATCH] perf: imx8_ddr_perf: add AXI ID filter support
+Thread-Index: AQHVPgeES6AYZMH+7kCt15qSmASJMQ==
+Date: Fri, 19 Jul 2019 07:56:49 +0000
+Message-ID: <20190719075421.11093-1-qiangqing.zhang@nxp.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
+x-mailer: git-send-email 2.17.1
+x-clientproxiedby: SG2PR04CA0181.apcprd04.prod.outlook.com
+ (2603:1096:4:14::19) To DB7PR04MB4618.eurprd04.prod.outlook.com
+ (2603:10a6:5:38::23)
 authentication-results: spf=none (sender IP is )
- smtp.mailfrom=joabreu@synopsys.com; 
-x-originating-ip: [83.174.63.141]
+ smtp.mailfrom=qiangqing.zhang@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [119.31.174.71]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 9ea94c97-b1a0-44ab-e4c6-08d70c1ddf01
+x-ms-office365-filtering-correlation-id: a220961e-1936-4631-d5fd-08d70c1ea71d
+x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:BN8PR12MB3426; 
-x-ms-traffictypediagnostic: BN8PR12MB3426:
-x-microsoft-antispam-prvs: <BN8PR12MB34269876D4B8BE437EDF11A5D3CB0@BN8PR12MB3426.namprd12.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:5516;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:DB7PR04MB4058; 
+x-ms-traffictypediagnostic: DB7PR04MB4058:
+x-microsoft-antispam-prvs: <DB7PR04MB4058BDBB69B70BE4B87D610EE6CB0@DB7PR04MB4058.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6108;
 x-forefront-prvs: 01039C93E4
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(366004)(39860400002)(376002)(396003)(136003)(346002)(199004)(189003)(68736007)(305945005)(7696005)(76176011)(316002)(11346002)(66946007)(14444005)(486006)(256004)(446003)(54906003)(110136005)(2906002)(74316002)(66066001)(52536014)(99286004)(5660300002)(4744005)(26005)(33656002)(6506007)(7416002)(6116002)(478600001)(186003)(102836004)(7736002)(81166006)(81156014)(8676002)(25786009)(6436002)(66476007)(4326008)(66556008)(64756008)(66446008)(76116006)(476003)(2501003)(86362001)(53936002)(9686003)(71190400001)(71200400001)(14454004)(3846002)(6246003)(229853002)(8936002)(2201001)(55016002);
- DIR:OUT; SFP:1102; SCL:1; SRVR:BN8PR12MB3426;
- H:BN8PR12MB3266.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ SFS:(10009020)(4636009)(346002)(396003)(366004)(136003)(376002)(39860400002)(199004)(189003)(86362001)(478600001)(6436002)(6512007)(7736002)(186003)(99286004)(52116002)(26005)(14444005)(486006)(256004)(2906002)(305945005)(25786009)(50226002)(66946007)(66066001)(2501003)(386003)(476003)(4326008)(66556008)(64756008)(66446008)(2616005)(66476007)(81156014)(54906003)(68736007)(6506007)(81166006)(8676002)(316002)(36756003)(8936002)(102836004)(6636002)(6486002)(6116002)(71190400001)(14454004)(1076003)(53936002)(71200400001)(3846002)(110136005)(5660300002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB7PR04MB4058;
+ H:DB7PR04MB4618.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: synopsys.com does not designate
+received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: CVbDGFbkln/9giuEhyX7xLULd2s7WlnW+iyq0ofhYhyDX93vZ2kcM8BfE9zRf0ovt0UxPf2fwct4vKxrpDou/2/Uou4t+N2stznSzVFi8lcDvF5Rc0Yj4pLz/sLkRaA3Jy3BNmVCzwfXQOaVNpZHcYhvhjKsFIFPVLTe+NCb6VHYPEvRPcBrhsjcKiowKPVqyj/P1uZTBBDDRstkPbFLgk8kvyKZfs69/0wR9HMiOvDmcZ+5YuCFodUcBxHR4Oj5dqUaB5lkOUXWwxuBdLjVFZmQT1LZ1IBVKmipJBxPgAKgkZNcXw4iDDcPkhOMJlE8YYieABdxxJLa0JcyGj7kAt4IiJ2Q6l5NFft/IIQBeR3evNMLH2v/aooUZCQM6Fz7lBD7PbqpUDfqDQI0g6oC9gBELGBkLks6phK+SeF4Hik=
+x-microsoft-antispam-message-info: uN2Tyil86WBj1T3LnveBPU0VrmpO5mHM2MafXeSAS4sLfhNqVB8E/V4dzT88K6ojwHl3/3BvtMc99Qilt43J63Ke3LqdsRIsv5nMMHgBpkG9jxRHz04MjO1wipW2iO917WFKvlhyp4z5HZGKqOSFy7JCA+Y5FpRTrVXDRADKAo1Xt9xAL1qqDJmIoXUT6iJntnfYuoQXdiOnMI3zb5+x5JTHlkfjoom967V36xg8dZtS+LzjDfKMzHDfPxLbQ2tdBoBrEHfCSU4PZgtqAzN+jgnBepPvwyUm/Np5SaG19o0Rj4DqjGapSiBT3Xx+PlTpWh2DadOyji+twSH9wziHiaiECmzAsawC+QexhTGnoarma0J7oLd68F19k835zugyNaJ+97WkskvFJgNMyP5zxZ4aRFBrDIpd1El7uy9sxnA=
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 9ea94c97-b1a0-44ab-e4c6-08d70c1ddf01
-X-MS-Exchange-CrossTenant-originalarrivaltime: 19 Jul 2019 07:51:13.0722 (UTC)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: a220961e-1936-4631-d5fd-08d70c1ea71d
+X-MS-Exchange-CrossTenant-originalarrivaltime: 19 Jul 2019 07:56:49.1095 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: joabreu@synopsys.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN8PR12MB3426
-X-OriginatorOrg: synopsys.com
+X-MS-Exchange-CrossTenant-userprincipalname: qiangqing.zhang@nxp.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR04MB4058
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190719_005137_049557_42034422 
-X-CRM114-Status: UNSURE (   9.39  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190719_005655_094822_72C6B255 
+X-CRM114-Status: GOOD (  15.18  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.14.47 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -157,32 +124,140 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Joao Pinto <Joao.Pinto@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-tegra <linux-tegra@vger.kernel.org>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S . Miller" <davem@davemloft.net>
+Cc: "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Joakim Zhang <qiangqing.zhang@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jon Hunter <jonathanh@nvidia.com>
-Date: Jul/18/2019, 10:16:20 (UTC+00:00)
+AXI filtering is used by CSV modes 0x41 and 0x42 to count reads or
+writes with an ARID or AXID matching filter setting. Granularity is at
+subsystem level. Implementation does not allow filtring between masters
+within a subsystem. Filter is defined with 2 configuration registers.
 
-> Have you tried using NFS on a board with this ethernet controller?
+--AXI_ID defines AxID matching value
+--AXI_MASKING defines which bits of AxID are meaningful for the matching
 
-I'm having some issues setting up the NFS server in order to replicate 
-so this may take some time.
+When non-masked bits are matching corresponding AXI_ID bits then counter
+is incremented. This filter allows counting read or write access from a
+subsystem or multiple subsystems.
 
-Are you able to add some debug in stmmac_init_rx_buffers() to see what's 
-the buffer address ?
+Perf counter is incremented if AxID && AXI_MASKING == AXI_ID && AXI_MASKING
 
+AXI_ID and AXI_MASKING are mapped on DPCR1 register in performance counter.
+
+e.g.
+perf stat -a -e imx8_ddr0/axi-id-read,axi_id=0xMMMMDDDD/ cmd
+MMMM: AXI_MASKING
+DDDD: AXI_ID
+
+Signed-off-by: Joakim Zhang <qiangqing.zhang@nxp.com>
 ---
-Thanks,
-Jose Miguel Abreu
+ drivers/perf/fsl_imx8_ddr_perf.c | 38 ++++++++++++++++++++++++++++++--
+ 1 file changed, 36 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/perf/fsl_imx8_ddr_perf.c b/drivers/perf/fsl_imx8_ddr_perf.c
+index 63fe21600072..cd05f12ed5c4 100644
+--- a/drivers/perf/fsl_imx8_ddr_perf.c
++++ b/drivers/perf/fsl_imx8_ddr_perf.c
+@@ -42,9 +42,22 @@
+ 
+ static DEFINE_IDA(ddr_ida);
+ 
++/* DDR Perf hardware feature */
++#define DDR_CAP_AXI_ID_FILTER		0x1	/* support AXI ID filter */
++
++struct fsl_ddr_devtype_data {
++	unsigned int quirks;	/* quirks needed for different DDR Perf core */
++};
++
++static const struct fsl_ddr_devtype_data imx8_devtype_data;
++
++static const struct fsl_ddr_devtype_data imx8m_devtype_data = {
++	.quirks = DDR_CAP_AXI_ID_FILTER,
++};
++
+ static const struct of_device_id imx_ddr_pmu_dt_ids[] = {
+-	{ .compatible = "fsl,imx8-ddr-pmu",},
+-	{ .compatible = "fsl,imx8m-ddr-pmu",},
++	{ .compatible = "fsl,imx8-ddr-pmu", .data = &imx8_devtype_data},
++	{ .compatible = "fsl,imx8m-ddr-pmu", .data = &imx8m_devtype_data},
+ 	{ /* sentinel */ }
+ };
+ 
+@@ -57,6 +70,7 @@ struct ddr_pmu {
+ 	struct perf_event *events[NUM_COUNTERS];
+ 	int active_events;
+ 	enum cpuhp_state cpuhp_state;
++	const struct fsl_ddr_devtype_data *devtype_data;
+ 	int irq;
+ 	int id;
+ };
+@@ -128,6 +142,8 @@ static struct attribute *ddr_perf_events_attrs[] = {
+ 	IMX8_DDR_PMU_EVENT_ATTR(refresh, 0x37),
+ 	IMX8_DDR_PMU_EVENT_ATTR(write, 0x38),
+ 	IMX8_DDR_PMU_EVENT_ATTR(raw-hazard, 0x39),
++	IMX8_DDR_PMU_EVENT_ATTR(axi-id-read, 0x41),
++	IMX8_DDR_PMU_EVENT_ATTR(axi-id-write, 0x42),
+ 	NULL,
+ };
+ 
+@@ -137,9 +153,11 @@ static struct attribute_group ddr_perf_events_attr_group = {
+ };
+ 
+ PMU_FORMAT_ATTR(event, "config:0-7");
++PMU_FORMAT_ATTR(axi_id, "config1:0-31");
+ 
+ static struct attribute *ddr_perf_format_attrs[] = {
+ 	&format_attr_event.attr,
++	&format_attr_axi_id.attr,
+ 	NULL,
+ };
+ 
+@@ -274,6 +292,15 @@ static void ddr_perf_event_start(struct perf_event *event, int flags)
+ 	struct hw_perf_event *hwc = &event->hw;
+ 	int counter = hwc->idx;
+ 
++	if (pmu->devtype_data->quirks & DDR_CAP_AXI_ID_FILTER) {
++		if (event->attr.config == 0x41 ||
++		    event->attr.config == 0x42) {
++			int val = event->attr.config1;
++
++			writel(val, pmu->base + COUNTER_DPCR1);
++		}
++	}
++
+ 	local64_set(&hwc->prev_count, 0);
+ 
+ 	ddr_perf_counter_enable(pmu, event->attr.config, counter, true);
+@@ -445,6 +472,7 @@ static int ddr_perf_offline_cpu(unsigned int cpu, struct hlist_node *node)
+ 
+ static int ddr_perf_probe(struct platform_device *pdev)
+ {
++	const struct of_device_id *of_id;
+ 	struct ddr_pmu *pmu;
+ 	struct device_node *np;
+ 	void __iomem *base;
+@@ -472,6 +500,12 @@ static int ddr_perf_probe(struct platform_device *pdev)
+ 	if (!name)
+ 		return -ENOMEM;
+ 
++	of_id = of_match_device(imx_ddr_pmu_dt_ids, &pdev->dev);
++	if (of_id)
++		pmu->devtype_data = of_id->data;
++	else
++		return -ENODEV;
++
+ 	pmu->cpu = raw_smp_processor_id();
+ 	ret = cpuhp_setup_state_multi(CPUHP_AP_ONLINE_DYN,
+ 				      DDR_CPUHP_CB_NAME,
+-- 
+2.17.1
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
