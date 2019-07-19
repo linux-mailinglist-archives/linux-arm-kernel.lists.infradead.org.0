@@ -2,64 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 436656E474
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 12:46:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A8F066E482
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 12:49:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=t1gTwKgF8XPdBYXhkvBaB3ByK15HG3D8GwUYwzuNF6s=; b=DhIITFevnXUv3n
-	wYExlNy7dV2XyGxSeXy6zKM4V+sXa6r2GUt6cqUs+mDX2k2LKk8M0KdCmpE5PQV1RyUXjz1R2iztH
-	PUca4eXVmy9V5tjRqq6wHXZIdkjyAP7l94eKnJ8ZyejVhBmy/2QhLbrjeyrtITP6WsSS6ND4Tb36l
-	Q7YCWic/WDTL/G113tHOIQd44dgyrkzJvvt5UEFtItpEF/SxKh1RPcMCNO1Y+4WNe8cgJLNMJH3Ai
-	lc0Kwx0AhigkvVuMycOgXvDVvd4WO+T2P1GOEuX4sLfb1gVOkSrFGmXYEUx/X9tzUkYCTtoQVPKxL
-	PWns8gqY/Ny/wEu/AAmw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=mUVP9TGwILP4C3NQyovuBmctBD4ON4Q7Nq/YjczkrsI=; b=OFx
+	Ni6OUyAHmPxWh4t07QZbeF8Skn1BGG9Vs7KxI/zTFQQFgZ/AvkJQmWzRfos0fAEEkBvYlMu+w2wmO
+	YIhYJ1KnoCJYm3nRy4tCQBV3Cj3Vs6rwEFN9yi7ncl+jfENFBpnD6zj3uPbetufL75dARndWVpqI5
+	NelT5XZAX+uEpnP6lto5UgrcKkF0vfYyCypkSC2uXG89ATAQtdZeynZ0mfIhUwQnCJlmxt1uMpUud
+	NN1HXTbVH5x43T8YmzLgijCUtMx74MXlR3+attdnNWRSlPEPqPdy3BcJSyiPH6g0VZAqvwhsfmAYJ
+	35K2fNMdljNa8TyHo+LBgaqftscwf3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoQPa-0002TW-Ek; Fri, 19 Jul 2019 10:46:50 +0000
-Received: from mail.savoirfairelinux.com ([208.88.110.44])
+	id 1hoQRi-0003Bc-Ks; Fri, 19 Jul 2019 10:49:02 +0000
+Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hoQPL-0002S7-GE
- for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 10:46:36 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.savoirfairelinux.com (Postfix) with ESMTP id 08D8F9C01AF;
- Fri, 19 Jul 2019 06:46:25 -0400 (EDT)
-Received: from mail.savoirfairelinux.com ([127.0.0.1])
- by localhost (mail.savoirfairelinux.com [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id pDmCSr7ERjkb; Fri, 19 Jul 2019 06:46:24 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
- by mail.savoirfairelinux.com (Postfix) with ESMTP id 4E0E09C0279;
- Fri, 19 Jul 2019 06:46:24 -0400 (EDT)
-X-Virus-Scanned: amavisd-new at mail.savoirfairelinux.com
-Received: from mail.savoirfairelinux.com ([127.0.0.1])
- by localhost (mail.savoirfairelinux.com [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id Yj8MoRMJPG9k; Fri, 19 Jul 2019 06:46:24 -0400 (EDT)
-Received: from localhost.localdomain (unknown [37.165.9.228])
- by mail.savoirfairelinux.com (Postfix) with ESMTPSA id 0194D9C01AF;
- Fri, 19 Jul 2019 06:46:21 -0400 (EDT)
-From: Gilles DOFFE <gilles.doffe@savoirfairelinux.com>
-To: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH v2] arm: dts: imx6qdl: add gpio expander pca9535
-Date: Fri, 19 Jul 2019 12:46:15 +0200
-Message-Id: <20190719104615.5329-1-gilles.doffe@savoirfairelinux.com>
-X-Mailer: git-send-email 2.19.1
-MIME-Version: 1.0
+ id 1hoQR9-0002yS-HH
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 10:48:32 +0000
+Received: by mail-wm1-x32a.google.com with SMTP id w9so23447876wmd.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 19 Jul 2019 03:48:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=R5IjW3oGqQUq2Up+LhsQmfFvBYfe7qjR4zv8CoQiT3g=;
+ b=PUFXT19kUMbTrbKT+P/Ooq6STWmP4QVWYX3TzEK60ioRCOY+okcyE/Ye7H495VxV7m
+ 3aJaWJ1aujmBY5GSWMvk4ZyZI3mf6edExMJngLHGU8wmSHmLrsNGYkcekQ+t/tVhQy0U
+ B6abbtQay8f2toveRVzDVB/TR8jGEXtVDcbAb4s8YpfTwwAz7f4CTvKzSQNXL1NsuRlP
+ xc9Q1LMX8jnO39V+U5HDErK+esl6JU7aEKDnplwOJw9j5WGmilfyZ/VXq82nYm/6L+wq
+ pDKgk3xK6swBuotGcq2vKqb2hGB4SPWlgt17pvtRPZWgofQQeePudi4SFItjgDjsSlvO
+ 5XCQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=R5IjW3oGqQUq2Up+LhsQmfFvBYfe7qjR4zv8CoQiT3g=;
+ b=L9kaD0cqTAIAPW8dbVi6Ss/xHID4CxXbiQ1KcjL8anenkHmPo+h9W0C4tAMP85KfHW
+ S7ZpeD843xYl5p02VPxmDeyW4vMcPmIAPvBPno6OTeW96Eh9uStl7W6vcQ2cjWxsQEdg
+ xqJPkpzYAa1MJbVWHo9f989azWZ3CB/XJDcJvNH/HjczkcsSQ3OHaAlE28QCwFLt229o
+ eBYdUT09I9EvEYWm9XnJGdHwY0Nb//JFElCAwkqlbi6t7XcD58XVfrb664kpkyTieWQ7
+ nLkXVaOu9VEU9ivwzFzEBB084+CTyw8Iihc+5N1f4kyW8rHIg8qAOCEorexeM4XRS7CV
+ RDvA==
+X-Gm-Message-State: APjAAAUoFASUFcXsRboMtHm19SxUy643URh/8luCsiLgTZcxVl03EgY2
+ Ax4kPlDOhTCqLpZhfcBRgEw=
+X-Google-Smtp-Source: APXvYqxVPF4ktHM35tLzJSykO3KFUi5qSeDGE9eS/cE1UXxbHInkSFMksSH+nYOmCxFeTLN0ceoqHw==
+X-Received: by 2002:a1c:d185:: with SMTP id i127mr49196684wmg.63.1563533304710; 
+ Fri, 19 Jul 2019 03:48:24 -0700 (PDT)
+Received: from localhost.localdomain ([212.146.100.6])
+ by smtp.gmail.com with ESMTPSA id j17sm39635565wrb.35.2019.07.19.03.48.22
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 19 Jul 2019 03:48:24 -0700 (PDT)
+From: andradanciu1997 <andradanciu1997@gmail.com>
+To: shawnguo@kernel.org
+Subject: [PATCH v4 0/2] Add basic support for pico-pi-imx8m
+Date: Fri, 19 Jul 2019 13:48:00 +0300
+Message-Id: <20190719104802.18070-1-andradanciu1997@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190719_034635_608985_1D3D6AD7 
-X-CRM114-Status: UNSURE (   6.83  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190719_034828_191584_8FF5F5BE 
+X-CRM114-Status: GOOD (  12.73  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [208.88.110.44 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:32a listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (andradanciu1997[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (andradanciu1997[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,65 +95,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, festevam@gmail.com, s.hauer@pengutronix.de,
- rennes@savoirfairelinux.com, robh+dt@kernel.org, linux-imx@nxp.com,
- kernel@pengutronix.de, jerome.oufella@savoirfairelinux.com,
- shawnguo@kernel.org
+Cc: mark.rutland@arm.com, ping.bai@nxp.com, bhaskar.upadhaya@nxp.com,
+ angus@akkea.ca, manivannan.sadhasivam@linaro.org, sriram.dash@nxp.com,
+ festevam@gmail.com, richard.hu@technexion.com, andrew.smirnov@gmail.com,
+ pankaj.bansal@nxp.com, linux-imx@nxp.com, devicetree@vger.kernel.org,
+ andradanciu1997@gmail.com, Michal.Vokac@ysoft.com, pramod.kumar_1@nxp.com,
+ s.hauer@pengutronix.de, robh+dt@kernel.org, vabhav.sharma@nxp.com,
+ linux-arm-kernel@lists.infradead.org, aisheng.dong@nxp.com,
+ linux-kernel@vger.kernel.org, leoyang.li@nxp.com, kernel@pengutronix.de,
+ l.stach@pengutronix.de
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The pca9535 gpio expander is present on the Rex baseboard, but missing
-from the dtsi.
+Add support for TechNexion PICO-PI-IMX8M based on patches from Richard Hu
+Datasheet is at: https://s3.us-east-2.amazonaws.com/technexion/datasheets/picopiimx8m.pdf
 
-Add the new gpio controller and the associated interrupt line
-MX6QDL_PAD_NANDF_CS3__GPIO6_IO16.
+Changes since v3:
+ - renamed pico-pi-8m.dts to imx8mq-pico-pi.dts
+ - moved iomuxc node as the last one
+ - removed pinctrl-assert-gpios property from fec1 node
+ - removed at803x,led-act-blind-workaround, at803x,eee-disabled
+   properties from mdio node
+ - added pinctrl-names = "default" to i2c1 node
+ - changed bd71837 pmic support properties according to
+   Documentation/devicetree/bindings/regulator/rohm,bd71837-regulator.txt
+ - removed A53_0 node
 
-Signed-off-by: Gilles DOFFE <gilles.doffe@savoirfairelinux.com>
----
- arch/arm/boot/dts/imx6qdl-rex.dtsi | 19 +++++++++++++++++++
- 1 file changed, 19 insertions(+)
+Changes since v2:
+ - changed PICO-PI-8M bord compatible from wand,imx8mq-pico-pi to
+   technexion,pico-pi-imx8m
+ - removed bootargs property
+ - removed regulators node and put fixed regulator directly under root node
+ - changed node name from usb_otg_vbus to regulator-usb-otg-vbus
+ - removed pinctrl-names property from iomuxc node
+ - removed wand-pi-8m container node
+ - sorted pinctrl nodes alphabetically
+ - removed tusb320_irqgrp, tusb320_irqgrp nodes because there is no upstream
+   driver
+ - changed properties' order in usb_dwc3_1 node
 
-diff --git a/arch/arm/boot/dts/imx6qdl-rex.dtsi b/arch/arm/boot/dts/imx6qdl-rex.dtsi
-index 97f1659144ea..b517efb22fcb 100644
---- a/arch/arm/boot/dts/imx6qdl-rex.dtsi
-+++ b/arch/arm/boot/dts/imx6qdl-rex.dtsi
-@@ -136,6 +136,19 @@
- 		compatible = "atmel,24c02";
- 		reg = <0x57>;
- 	};
-+
-+	pca9535: gpio8@27 {
-+		compatible = "nxp,pca9535";
-+		reg = <0x27>;
-+		gpio-controller;
-+		#gpio-cells = <2>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&pinctrl_pca9535>;
-+		interrupt-parent = <&gpio6>;
-+		interrupts = <16 IRQ_TYPE_LEVEL_LOW>;
-+		interrupt-controller;
-+		#interrupt-cells = <2>;
-+	};
- };
- 
- &i2c3 {
-@@ -237,6 +250,12 @@
- 			>;
- 		};
- 
-+		pinctrl_pca9535: pca9535 {
-+			fsl,pins = <
-+				MX6QDL_PAD_NANDF_CS3__GPIO6_IO16	0x00017059
-+		   >;
-+		};
-+
- 		pinctrl_uart1: uart1grp {
- 			fsl,pins = <
- 				MX6QDL_PAD_CSI0_DAT10__UART1_TX_DATA	0x1b0b1
+Changes since v1:
+ - renamed wandboard-pi-8m.dts to pico-pi-8m.dts
+ - removed pinctrl_csi1, pinctrl_wifi_ctrl
+ - used generic name for pmic
+ - removed gpo node
+ - delete regulator-virtuals node
+ - remove always-on property from buck1-8 and ldo3-7
+ - remove pmic-buck-uses-i2c-dvs property for buck1-4
+
+Andra Danciu (1):
+  dt-bindings: arm: fsl: Add the pico-pi-imx8m board
+
+Richard Hu (1):
+  arm64: dts: fsl: pico-pi: Add a device tree for the PICO-PI-IMX8M
+
+ Documentation/devicetree/bindings/arm/fsl.yaml   |   1 +
+ arch/arm64/boot/dts/freescale/Makefile           |   1 +
+ arch/arm64/boot/dts/freescale/imx8mq-pico-pi.dts | 417 +++++++++++++++++++++++
+ 3 files changed, 419 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/freescale/imx8mq-pico-pi.dts
+
 -- 
-2.19.1
+2.11.0
 
 
 _______________________________________________
