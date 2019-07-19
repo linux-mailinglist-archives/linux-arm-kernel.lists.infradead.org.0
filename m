@@ -2,59 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3255D6E0D8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 08:05:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 37BFD6E10A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 08:35:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gXrthnGPsLJhHZPYzolH/Ymdd7DOlBsUVq6lcdSLZ1c=; b=L0j04P9tHs43WY
-	Z3bhUDCvl9ZXMFV8HC3VyRz+oYsYAjH+Tq9Me6tDS98Cw5HeSkTAeZ+VNUZR8sRJ2eYN71DVKJnSr
-	Ku4rA7u9Mfj0De0nxHZIMXtRr+TJFS9kANsf73dnqRDXksgf+Em5yp2ipj3EDonLNiU+5f8Jxs41W
-	r7LnkdH8L1Lyz6tboNyP2TgHkFfABYoijpQ1GURbcbvwpTiTV9N4QeOCFEN4loMgE3exr30+w+TX9
-	naY8iOVyb36qteQzog8gbkvRMB2OwPxFEZe3BPJu6MdGi5KAvlwIDD8ZoQ7E61w/0Up4wkwN3EoiY
-	ey34SxLv4JcWHq1z0XOg==;
+	List-Owner; bh=SYfz1sAgZi60eoPUUcAWl6oPf6BQu+USdfYLNstCGEs=; b=OyqxJina7dYJ60
+	r9zTmFehNxDAVOZoymasqReU9karZoTK9LdURdn7QEWTQyBrtqs1pibbMqbfkWFIyoN53/yQVxPpc
+	yzv418xTLeqUOMnafkMR8WqcnRW4/QPcVqvKTnFsbKM4ka4zdLlDQsJD5eJUZm3/vBsw4iKBav/k9
+	XOQL0pa7wpTb6o3PATgTY55O3t2y5wdQTIhDY01gEXgd/WqjKB3z5FYEXpiUpGZe+sZndFaBvX1C0
+	s6dVPcjN/ydvKHDyY5jNQOp1Cm0JnDbQK71N5qcXSlhj4kmmYly26JLJWfIHKTPSY38RAR2NXBDJl
+	IMnkbyCI/GnncdAkyuqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoM1E-0002Qw-LH; Fri, 19 Jul 2019 06:05:24 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1hoMTz-0002r8-Bz; Fri, 19 Jul 2019 06:35:07 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hoM0w-0001qR-OJ
- for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 06:05:08 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 6FB6CB0B3;
- Fri, 19 Jul 2019 06:05:04 +0000 (UTC)
-Date: Fri, 19 Jul 2019 08:05:02 +0200
-From: Michal Hocko <mhocko@kernel.org>
-To: David Hildenbrand <david@redhat.com>
-Subject: Re: [PATCH v3 10/11] mm/memory_hotplug: Make
- unregister_memory_block_under_nodes() never fail
-Message-ID: <20190719060502.GG30461@dhcp22.suse.cz>
-References: <20190527111152.16324-1-david@redhat.com>
- <20190527111152.16324-11-david@redhat.com>
- <20190701085144.GJ6376@dhcp22.suse.cz>
- <20190701093640.GA17349@linux>
- <20190701102756.GO6376@dhcp22.suse.cz>
- <d450488d-7a82-f7a9-c8d3-b69a0bca48c6@redhat.com>
+ id 1hoMTj-0002qI-BM
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 06:34:52 +0000
+Received: by mail-wr1-x441.google.com with SMTP id n4so31097806wrs.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 18 Jul 2019 23:34:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=kMcKTsEVyji+n2fYLtlne8FEnWZcMA2/ktkd0SxT+VI=;
+ b=QSOwOufE4zhKaOthPkDk7gWdX3qwYegZikq56s0mkeTwW5vSbnTSAff0lcnACu34zb
+ vdRjrjSoxzugWQ5xieksmi9CByUQ5AnlvJvPceiVK6Sma4J2CcItR6GSqE/+xv2rjim9
+ hszdEfhJIQs0Cvwusfs52LSo1AccmTUPJozjSty8KUF6cjhaQHqgQxUAgI0dd8a4xTnH
+ BZ8cKAEWJkxNC2IOVZ6nJ+kTlghlY5buBFzyqooQ2Jiy3cOwUPAYOLNzB/9wFrTNfb72
+ p9dkMyMTd4O6yToPz/j1GJ9UScDq+CL+Hi80pQVbp5CH5uBdZp0mNnDg/VSEYBXXVgOE
+ ehYQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=kMcKTsEVyji+n2fYLtlne8FEnWZcMA2/ktkd0SxT+VI=;
+ b=A6gpMgUSPaJVJsmoPvOr5idBvMN20K80ivhskoe3XRPb7ry6WW8lXT5yQez6ZIFTfh
+ LwrUvg7BBekRyb1UuOA5Gy14H3fOlPeJsJl6LGurZFwWBnuC3Y0SfpjToKiRUH0DyaF8
+ Qqc2tVgIGx1+9nQK8Y8h+OdBj8OgmyHklXmHD3BmqzBdT7frNgjqo+8kTxgidoS0Ew0O
+ Oo8om54K0zsCyckNzt8zIFBYu1lT9PIsLfme+XdEHFOwkdLrfqVgwBiGmobPCp6FZPPo
+ Xz6Hdh0ImI/rgwIe1R6ZNMDOhArS4DKvhMXSkOjDvaRvgmw5UIg10XhsXQs1wqLTSiBT
+ 9orQ==
+X-Gm-Message-State: APjAAAV63y/7l4o1Yqp03g1QKP6jwvfPEsek0ZbJXF3MBlcSK/6Iv7zW
+ w3QotGjbXxzsh/EZUSrBtf2A7AUR1KgSf2Hnk8k=
+X-Google-Smtp-Source: APXvYqzkF6gS1MNZBLZ1Ty1LQtpQfLnkNKW7cn72gR9MP8uHzDu7PJQxe2xQB/GaBTVdYHWPDS52KzZOIEH2mFQtBgM=
+X-Received: by 2002:a05:6000:14b:: with SMTP id
+ r11mr54574650wrx.196.1563518086309; 
+ Thu, 18 Jul 2019 23:34:46 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <d450488d-7a82-f7a9-c8d3-b69a0bca48c6@redhat.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20190718151346.3523-1-daniel.baluta@nxp.com>
+ <20190718151346.3523-4-daniel.baluta@nxp.com>
+ <CAL_JsqJ6o9mTjLYjnfcYgfSFKb95W8FseZBBb8RLosB__GNBcw@mail.gmail.com>
+ <CAEnQRZBubFz90Xf8irDwc=erTXmByXX4rkzZy9r8ymfAuQEsZA@mail.gmail.com>
+ <VI1PR04MB5055597B7C3AC114FEB7E3E5EEC80@VI1PR04MB5055.eurprd04.prod.outlook.com>
+In-Reply-To: <VI1PR04MB5055597B7C3AC114FEB7E3E5EEC80@VI1PR04MB5055.eurprd04.prod.outlook.com>
+From: Daniel Baluta <daniel.baluta@gmail.com>
+Date: Fri, 19 Jul 2019 09:34:34 +0300
+Message-ID: <CAEnQRZC+LyoZ_C3_0RVgRpBFVMuMT26KPVZunqqNKC=OJcERog@mail.gmail.com>
+Subject: Re: [PATCH 3/3] dt-bindings: dsp: fsl: Add DSP core binding support
+To: Leonard Crestez <leonard.crestez@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_230506_970224_FD452D71 
-X-CRM114-Status: GOOD (  16.17  )
-X-Spam-Score: -1.3 (-)
+X-CRM114-CacheID: sfid-20190718_233451_394549_D6B61685 
+X-CRM114-Status: GOOD (  14.28  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (daniel.baluta[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,50 +97,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, linux-ia64@vger.kernel.org,
- linux-sh@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Mark Brown <broonie@kernel.org>, "Rafael J. Wysocki" <rafael@kernel.org>,
- linux-kernel@vger.kernel.org, Wei Yang <richard.weiyang@gmail.com>,
- linux-mm@kvack.org, "David S. Miller" <davem@davemloft.net>,
- Jonathan Cameron <Jonathan.Cameron@huawei.com>,
- Alex Deucher <alexander.deucher@amd.com>, Igor Mammedov <imammedo@redhat.com>,
- akpm@linux-foundation.org, Chris Wilson <chris@chris-wilson.co.uk>,
- linuxppc-dev@lists.ozlabs.org, Dan Williams <dan.j.williams@intel.com>,
- linux-arm-kernel@lists.infradead.org, Oscar Salvador <osalvador@suse.de>
+Cc: Mark Rutland <mark.rutland@arm.com>, Aisheng Dong <aisheng.dong@nxp.com>,
+ Peng Fan <peng.fan@nxp.com>, Fabio Estevam <festevam@gmail.com>,
+ Anson Huang <anson.huang@nxp.com>,
+ Devicetree List <devicetree@vger.kernel.org>,
+ Daniel Baluta <daniel.baluta@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Frank Li <frank.li@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Paul Olaru <paul.olaru@nxp.com>, Rob Herring <robh+dt@kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>, "S.j. Wang" <shengjiu.wang@nxp.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ "sound-open-firmware@alsa-project.org" <sound-open-firmware@alsa-project.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon 15-07-19 13:10:33, David Hildenbrand wrote:
-> On 01.07.19 12:27, Michal Hocko wrote:
-> > On Mon 01-07-19 11:36:44, Oscar Salvador wrote:
-> >> On Mon, Jul 01, 2019 at 10:51:44AM +0200, Michal Hocko wrote:
-> >>> Yeah, we do not allow to offline multi zone (node) ranges so the current
-> >>> code seems to be over engineered.
+On Thu, Jul 18, 2019 at 9:40 PM Leonard Crestez <leonard.crestez@nxp.com> wrote:
+>
+> On 18.07.2019 21:24, Daniel Baluta wrote:
+> > On Thu, Jul 18, 2019 at 7:41 PM Rob Herring <robh+dt@kernel.org> wrote:
+> >>
+> >> On Thu, Jul 18, 2019 at 9:13 AM Daniel Baluta <daniel.baluta@nxp.com> wrote:
 > >>>
-> >>> Anyway, I am wondering why do we have to strictly check for already
-> >>> removed nodes links. Is the sysfs code going to complain we we try to
-> >>> remove again?
+> >>> This describes the DSP device tree node.
+> >>>
+> >>> Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
+>
+> >>> +  power-domains:
+> >>> +    description:
+> >>> +      List of phandle and PM domain specifier as documented in
+> >>> +      Documentation/devicetree/bindings/power/power_domain.txt
 > >>
-> >> No, sysfs will silently "fail" if the symlink has already been removed.
-> >> At least that is what I saw last time I played with it.
-> >>
-> >> I guess the question is what if sysfs handling changes in the future
-> >> and starts dropping warnings when trying to remove a symlink is not there.
-> >> Maybe that is unlikely to happen?
-> > 
-> > And maybe we handle it then rather than have a static allocation that
-> > everybody with hotremove configured has to pay for.
-> > 
-> 
-> So what's the suggestion? Dropping the nodemask_t completely and calling
-> sysfs_remove_link() on already potentially removed links?
+> >> How many? 4?
+> >
+> > Yes, 4 for i.MX8QXP. Also, the same number is for i.MX8QM. Anyhow, I didn't
+> > added added a limit here because I really don't know how many will be
+> > in upcoming i.MX platforms.
+>
+> Which 4? It might help to use power-domain-names explicitly just like
+> it's done for clocks and mboxes.
+>
+> This is very common for phandle lists.
 
-Yes. In a follow up patch.
--- 
-Michal Hocko
-SUSE Labs
+4 like in the example at the bottom of the patch:
+
++   power-domains = <&pd IMX_SC_R_MU_13A>,
++                        <&pd IMX_SC_R_MU_13B>,
++                        <&pd IMX_SC_R_DSP>,
++                        <&pd IMX_SC_R_DSP_RAM>;
+
+Not sure if it makes sense to use power-domain-names as the driver parses
+directly the "power-domains" property.
 
 _______________________________________________
 linux-arm-kernel mailing list
