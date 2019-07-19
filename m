@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7146F6DC1C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 06:13:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EF3936DC21
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 06:14:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VnxwFmhjGQHdKKeefJELpqo1Y2CDZTZvHxl9VN9qCwQ=; b=G8lARFtdOcg60L
-	2ra115Yiy8qwdUdA/OA3gTiDFgm2+i4j4yXincSHBVwxVXtEeAaAX5gEVnoQ0MagnynOSo2dTBo+6
-	zrnYIN3cihiEwqWWqbXXrG3O5DxgZVU2O73NVZIgS+EHv5Y6fYzmi6tCupRijUgrc1Qu+VHc275JH
-	gCFxcOOpGkKuPz5dDslM9b7B5vV6zlxriAdCkX8XAjmdhGT9vnZvQaAb9meOaCGaONgDDtPg82i1o
-	0UWHnqcrRTqVzgMFXK6MOItlF4cl5CQnpNpcw1wbBDBlARBhVb0VWJhKfz0i8gtkMSXAP72O3Jr5c
-	h9D8hw8SymgqnnF3C+Lw==;
+	List-Owner; bh=7Axh2xhqVpnFtUhr+Ym7rCvY4U5E4zRVOrF93v5GY40=; b=qwbFma7F60MCd/
+	sbuTR6MIqbhMc8I9lrsgmFsrRTRnFcA3W4Qf7MhZUUnuAHptWGsOH5wMrPOXjau48qRzdShhl+NVh
+	lDNWVwfHzFs6KosUQpbDgeRvL4tzo5GHfDXcaqNvV3dsdBeIbJfMmVRMaP8N1Y6itz03+xYSX7WhU
+	SuJL+Hhk1bth+7Pj3w95l4R5qs892H0TPh0wfgVJsETBIOA7gfcYAwaI9oTfr7xF1NJqNOoaiFxA6
+	42BDhXbJdZILlASHwlyBd72foq51IhiDyuk3TvyWlolE1X6kH//zrZqKpin59oyXEsmXE+GhiqhAz
+	dfV/mDIxNKewxFmUVXQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoKHL-0008M2-1W; Fri, 19 Jul 2019 04:13:55 +0000
+	id 1hoKHi-0000H5-Tz; Fri, 19 Jul 2019 04:14:19 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hoKDj-0005g5-O6
- for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 04:10:19 +0000
+ id 1hoKG1-0007h2-2n
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 04:12:35 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 27D4421873;
- Fri, 19 Jul 2019 04:10:10 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 287072189D;
+ Fri, 19 Jul 2019 04:12:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563509411;
- bh=KQXRWLpvg3f6u5eNc9Y06iXg7JBR/qR+veOkWDudE40=;
+ s=default; t=1563509552;
+ bh=oXOiVDPKokV0YoJp0VcieNm7AmxS3aIBuNZIJn63Vbk=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=O4jMA0/8p9H9dDLrpl2QpIAsvcfqaNzslrowqY7P5CrkvLlz7hDEOIvjaZTtenIVv
- IpvW7AYNlLFZ1t7VgJlzc7cHIn4mHsuAsq+LnhQSYJgUPG185Ad0xDmHskGTVScdJv
- Fj7gc7a90xLSS45Wy5SPXg0zk4BQ8o6Keop1L4Wc=
+ b=az9HOBf+995fDjoDFoxFBCKa1UNqO9MMn97vFtBgLh2m3CrqkFyJqRWg4mvxo+aGm
+ KfvVfHByibr0cjayXLOzvw5hAX9keA1STcu6FSCgf/Anbv2go/ayHg/xSLy4ko1qsz
+ iym4KeIiXkBPE6KvPp/wvaO2C7CgsvwW2Vk+FfLk=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 076/101] perf hists browser: Fix potential NULL
- pointer dereference found by the smatch tool
-Date: Fri, 19 Jul 2019 00:07:07 -0400
-Message-Id: <20190719040732.17285-76-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.14 44/60] perf session: Fix potential NULL pointer
+ dereference found by the smatch tool
+Date: Fri, 19 Jul 2019 00:10:53 -0400
+Message-Id: <20190719041109.18262-44-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190719040732.17285-1-sashal@kernel.org>
-References: <20190719040732.17285-1-sashal@kernel.org>
+In-Reply-To: <20190719041109.18262-1-sashal@kernel.org>
+References: <20190719041109.18262-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_211012_093336_B9D0B012 
-X-CRM114-Status: GOOD (  11.82  )
+X-CRM114-CacheID: sfid-20190718_211233_487884_24B416BD 
+X-CRM114-Status: GOOD (  11.39  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,14 +80,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Andi Kleen <ak@linux.intel.com>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki Poulouse <suzuki.poulose@arm.com>,
+Cc: Song Liu <songliubraving@fb.com>,
+ Konstantin Khlebnikov <khlebnikov@yandex-team.ru>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>, Jin Yao <yao.jin@linux.intel.com>,
+ Sasha Levin <sashal@kernel.org>, Andi Kleen <ak@linux.intel.com>,
+ Alexey Budankov <alexey.budankov@linux.intel.com>,
  Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Suzuki Poulouse <suzuki.poulose@arm.com>,
+ Arnaldo Carvalho de Melo <acme@redhat.com>,
+ Alexios Zavras <alexios.zavras@intel.com>, Davidlohr Bueso <dave@stgolabs.net>,
+ Namhyung Kim <namhyung@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Thomas Richter <tmricht@linux.ibm.com>,
  Adrian Hunter <adrian.hunter@intel.com>,
- Arnaldo Carvalho de Melo <acme@redhat.com>, Jiri Olsa <jolsa@kernel.org>,
- Leo Yan <leo.yan@linaro.org>, Namhyung Kim <namhyung@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+ "David S . Miller" <davem@davemloft.net>, Changbin Du <changbin.du@intel.com>,
+ Peter Zijlstra <peterz@infradead.org>, Jiri Olsa <jolsa@kernel.org>,
+ Leo Yan <leo.yan@linaro.org>,
+ Eric Saint-Etienne <eric.saint.etienne@oracle.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -95,89 +105,77 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Leo Yan <leo.yan@linaro.org>
 
-[ Upstream commit ceb75476db1617a88cc29b09839acacb69aa076e ]
+[ Upstream commit f3c8d90757724982e5f07cd77d315eb64ca145ac ]
 
 Based on the following report from Smatch, fix the potential
 NULL pointer dereference check.
 
-  tools/perf/ui/browsers/hists.c:641
-  hist_browser__run() error: we previously assumed 'hbt' could be
-  null (see line 625)
+  tools/perf/util/session.c:1252
+  dump_read() error: we previously assumed 'evsel' could be null
+  (see line 1249)
 
-  tools/perf/ui/browsers/hists.c:3088
-  perf_evsel__hists_browse() error: we previously assumed
-  'browser->he_selection' could be null (see line 2902)
+  tools/perf/util/session.c
+  1240 static void dump_read(struct perf_evsel *evsel, union perf_event *event)
+  1241 {
+  1242         struct read_event *read_event = &event->read;
+  1243         u64 read_format;
+  1244
+  1245         if (!dump_trace)
+  1246                 return;
+  1247
+  1248         printf(": %d %d %s %" PRIu64 "\n", event->read.pid, event->read.tid,
+  1249                evsel ? perf_evsel__name(evsel) : "FAIL",
+  1250                event->read.value);
+  1251
+  1252         read_format = evsel->attr.read_format;
+                             ^^^^^^^
 
-  tools/perf/ui/browsers/hists.c:3272
-  perf_evsel_menu__run() error: we previously assumed 'hbt' could be
-  null (see line 3260)
-
-This patch firstly validating the pointers before access them, so can
-fix potential NULL pointer dereference.
+'evsel' could be NULL pointer, for this case this patch directly bails
+out without dumping read_event.
 
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
 Acked-by: Jiri Olsa <jolsa@kernel.org>
 Cc: Adrian Hunter <adrian.hunter@intel.com>
 Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
+Cc: Alexey Budankov <alexey.budankov@linux.intel.com>
+Cc: Alexios Zavras <alexios.zavras@intel.com>
 Cc: Andi Kleen <ak@linux.intel.com>
+Cc: Changbin Du <changbin.du@intel.com>
+Cc: David S. Miller <davem@davemloft.net>
+Cc: Davidlohr Bueso <dave@stgolabs.net>
+Cc: Eric Saint-Etienne <eric.saint.etienne@oracle.com>
+Cc: Jin Yao <yao.jin@linux.intel.com>
+Cc: Konstantin Khlebnikov <khlebnikov@yandex-team.ru>
 Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
 Cc: Namhyung Kim <namhyung@kernel.org>
+Cc: Peter Zijlstra <peterz@infradead.org>
+Cc: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+Cc: Song Liu <songliubraving@fb.com>
 Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
+Cc: Thomas Gleixner <tglx@linutronix.de>
+Cc: Thomas Richter <tmricht@linux.ibm.com>
 Cc: linux-arm-kernel@lists.infradead.org
-Link: http://lkml.kernel.org/r/20190708143937.7722-2-leo.yan@linaro.org
+Link: http://lkml.kernel.org/r/20190702103420.27540-9-leo.yan@linaro.org
 Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- tools/perf/ui/browsers/hists.c | 15 +++++++++++----
- 1 file changed, 11 insertions(+), 4 deletions(-)
+ tools/perf/util/session.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/tools/perf/ui/browsers/hists.c b/tools/perf/ui/browsers/hists.c
-index a96f62ca984a..692d2fa31c35 100644
---- a/tools/perf/ui/browsers/hists.c
-+++ b/tools/perf/ui/browsers/hists.c
-@@ -633,7 +633,11 @@ int hist_browser__run(struct hist_browser *browser, const char *help,
- 		switch (key) {
- 		case K_TIMER: {
- 			u64 nr_entries;
--			hbt->timer(hbt->arg);
+diff --git a/tools/perf/util/session.c b/tools/perf/util/session.c
+index da55081aefc6..c49e8ea1a42c 100644
+--- a/tools/perf/util/session.c
++++ b/tools/perf/util/session.c
+@@ -1145,6 +1145,9 @@ static void dump_read(struct perf_evsel *evsel, union perf_event *event)
+ 	       evsel ? perf_evsel__name(evsel) : "FAIL",
+ 	       event->read.value);
+ 
++	if (!evsel)
++		return;
 +
-+			WARN_ON_ONCE(!hbt);
-+
-+			if (hbt)
-+				hbt->timer(hbt->arg);
+ 	read_format = evsel->attr.read_format;
  
- 			if (hist_browser__has_filter(browser) ||
- 			    symbol_conf.report_hierarchy)
-@@ -2707,7 +2711,7 @@ static int perf_evsel__hists_browse(struct perf_evsel *evsel, int nr_events,
- {
- 	struct hists *hists = evsel__hists(evsel);
- 	struct hist_browser *browser = perf_evsel_browser__new(evsel, hbt, env, annotation_opts);
--	struct branch_info *bi;
-+	struct branch_info *bi = NULL;
- #define MAX_OPTIONS  16
- 	char *options[MAX_OPTIONS];
- 	struct popup_action actions[MAX_OPTIONS];
-@@ -2973,7 +2977,9 @@ static int perf_evsel__hists_browse(struct perf_evsel *evsel, int nr_events,
- 			goto skip_annotation;
- 
- 		if (sort__mode == SORT_MODE__BRANCH) {
--			bi = browser->he_selection->branch_info;
-+
-+			if (browser->he_selection)
-+				bi = browser->he_selection->branch_info;
- 
- 			if (bi == NULL)
- 				goto skip_annotation;
-@@ -3144,7 +3150,8 @@ static int perf_evsel_menu__run(struct perf_evsel_menu *menu,
- 
- 		switch (key) {
- 		case K_TIMER:
--			hbt->timer(hbt->arg);
-+			if (hbt)
-+				hbt->timer(hbt->arg);
- 
- 			if (!menu->lost_events_warned &&
- 			    menu->lost_events &&
+ 	if (read_format & PERF_FORMAT_TOTAL_TIME_ENABLED)
 -- 
 2.20.1
 
