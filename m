@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BB0496DA6B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 06:02:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F9BA6DA6D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 06:02:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F4IxgyJ9V/sY5Rao7RdwQzRRHODCuoPU2CG4Z5aRioQ=; b=QBgwMcQlDnrgra
-	tGVKEJDhBeuk4Jzbc9QT03JMJ2K2hPyqKAqQU+DOUAt/e8+xGfur/jH6ClYblzLThr9pNnoct6aqH
-	0uSE/t2FxrpN4c72JZVLFLj4t0/beiC+wmRmF51NkW1HjTtDIysc7iCCvfdo0fWXKFFoipibF/0mo
-	ueh4GXFoZgeS4fx9gTqhQuHzOmYbyDQt8asSoDOc1W353m3Dme9nQJn+89oIB8/VlfucpISSnt9x5
-	jZ1ThqmAZlUBa/bF5k3ySjISlqS0Nqoklz6Y5VyBssDOeVZz3+Bac//2gSczVijfDbh1Qd0AYSAYf
-	DAElA94Ts75amIc9BXZA==;
+	List-Owner; bh=bn4ysp+3hLbJd6TaWKFsv0JtYsGs10EtZSmX1fmrX8w=; b=cxlzNpu0Sw0eMw
+	ckZ8o9paJ6aG6A3yeSLTBfnCn6bONBlBHobTSAWpP+deNlqihxr+4dRP1FaoK/BE9UuGzO4y4oHfQ
+	FUxmTudsZba57CDui5UW3/P6seyArQJcd5mvHZW/36WVC86Anx37VFex+muE6Lr7IDtj2Pas0aARX
+	ggK+oWmbLdIRKt7InAn9PqtxdoS6u5OoF/2tcqY9nszABbiyNa8sqH7mye5XtxbIiXASBXVFU3rQG
+	BJBOPelum3EJFuRp1XpCnr1250YPIBPi8iMSeti0dDFPz+lWpVQrMxl56rzrQBgkXNwMFkxImqHP9
+	XGPwro/SqzKmQNMduD4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoK6A-00079W-72; Fri, 19 Jul 2019 04:02:22 +0000
+	id 1hoK6R-0007QW-Ho; Fri, 19 Jul 2019 04:02:39 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hoK4s-0006Pk-Bl
- for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 04:01:04 +0000
+ id 1hoK4w-0006T2-FN
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 04:01:14 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8D80421850;
- Fri, 19 Jul 2019 04:00:59 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id AA3AB218BA;
+ Fri, 19 Jul 2019 04:01:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563508861;
- bh=VZYhGO+wZgOgOOzXf5CsdNH7PZ6O3JbGnuCqN9yB02I=;
+ s=default; t=1563508866;
+ bh=DFafnbAHopfkugyR/u2EBGYtfhirSvbWGoa3dRt0uaQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=0/ZDM53LLB52WVgdmEBiXHGDNc4YiNa1BWQ4K+BHQz0SESePHKTgybVOIflOTGhi7
- PoeQFOw4BI+StAsUbxJtA8FIaqj1v2USRRqm3J3UvhhA+Tcu1dcmNi51absy+IFPmE
- WnaMApvBHDt8vY1GHUVSCe5NVtgiz5hqAbowcR6A=
+ b=gz6+rTugbr1rNkKcKRCTMm8M5FYcrGPBQY0x3zX7kHzpj796ssfuh96kvF4Z3lZsa
+ L3j74SKhGFm49IS3l50DSjlEia7G3RaCi/iLmjP0PVlgxXpWgfA8kU/o+D3fhwZJfJ
+ vjaxOf5Gjad/BdghK2z/6FRynE+dfwS5b6pRnvJ4=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.2 127/171] perf session: Fix potential NULL pointer
- dereference found by the smatch tool
-Date: Thu, 18 Jul 2019 23:55:58 -0400
-Message-Id: <20190719035643.14300-127-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.2 128/171] perf map: Fix potential NULL pointer
+ dereference found by smatch tool
+Date: Thu, 18 Jul 2019 23:55:59 -0400
+Message-Id: <20190719035643.14300-128-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190719035643.14300-1-sashal@kernel.org>
 References: <20190719035643.14300-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_210102_500870_A240B353 
-X-CRM114-Status: GOOD (  11.41  )
+X-CRM114-CacheID: sfid-20190718_210106_728903_3C3CC81C 
+X-CRM114-Status: GOOD (  11.77  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -105,33 +105,36 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Leo Yan <leo.yan@linaro.org>
 
-[ Upstream commit f3c8d90757724982e5f07cd77d315eb64ca145ac ]
+[ Upstream commit 363bbaef63ffebcc745239fe80a953ebb5ac9ec9 ]
 
-Based on the following report from Smatch, fix the potential
-NULL pointer dereference check.
+Based on the following report from Smatch, fix the potential NULL
+pointer dereference check.
 
-  tools/perf/util/session.c:1252
-  dump_read() error: we previously assumed 'evsel' could be null
-  (see line 1249)
+  tools/perf/util/map.c:479
+  map__fprintf_srccode() error: we previously assumed 'state' could be
+  null (see line 466)
 
-  tools/perf/util/session.c
-  1240 static void dump_read(struct perf_evsel *evsel, union perf_event *event)
-  1241 {
-  1242         struct read_event *read_event = &event->read;
-  1243         u64 read_format;
-  1244
-  1245         if (!dump_trace)
-  1246                 return;
-  1247
-  1248         printf(": %d %d %s %" PRIu64 "\n", event->read.pid, event->read.tid,
-  1249                evsel ? perf_evsel__name(evsel) : "FAIL",
-  1250                event->read.value);
-  1251
-  1252         read_format = evsel->attr.read_format;
-                             ^^^^^^^
+  tools/perf/util/map.c
+  465         /* Avoid redundant printing */
+  466         if (state &&
+  467             state->srcfile &&
+  468             !strcmp(state->srcfile, srcfile) &&
+  469             state->line == line) {
+  470                 free(srcfile);
+  471                 return 0;
+  472         }
+  473
+  474         srccode = find_sourceline(srcfile, line, &len);
+  475         if (!srccode)
+  476                 goto out_free_line;
+  477
+  478         ret = fprintf(fp, "|%-8d %.*s", line, len, srccode);
+  479         state->srcfile = srcfile;
+              ^^^^^^^
+  480         state->line = line;
+              ^^^^^^^
 
-'evsel' could be NULL pointer, for this case this patch directly bails
-out without dumping read_event.
+This patch validates 'state' pointer before access its elements.
 
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
 Acked-by: Jiri Olsa <jolsa@kernel.org>
@@ -155,27 +158,32 @@ Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
 Cc: Thomas Gleixner <tglx@linutronix.de>
 Cc: Thomas Richter <tmricht@linux.ibm.com>
 Cc: linux-arm-kernel@lists.infradead.org
-Link: http://lkml.kernel.org/r/20190702103420.27540-9-leo.yan@linaro.org
+Fixes: dd2e18e9ac20 ("perf tools: Support 'srccode' output")
+Link: http://lkml.kernel.org/r/20190702103420.27540-8-leo.yan@linaro.org
 Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- tools/perf/util/session.c | 3 +++
- 1 file changed, 3 insertions(+)
+ tools/perf/util/map.c | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
 
-diff --git a/tools/perf/util/session.c b/tools/perf/util/session.c
-index 54cf163347f7..2e61dd6a3574 100644
---- a/tools/perf/util/session.c
-+++ b/tools/perf/util/session.c
-@@ -1249,6 +1249,9 @@ static void dump_read(struct perf_evsel *evsel, union perf_event *event)
- 	       evsel ? perf_evsel__name(evsel) : "FAIL",
- 	       event->read.value);
+diff --git a/tools/perf/util/map.c b/tools/perf/util/map.c
+index ee71efb9db62..9c81ee092784 100644
+--- a/tools/perf/util/map.c
++++ b/tools/perf/util/map.c
+@@ -470,8 +470,11 @@ int map__fprintf_srccode(struct map *map, u64 addr,
+ 		goto out_free_line;
  
-+	if (!evsel)
-+		return;
+ 	ret = fprintf(fp, "|%-8d %.*s", line, len, srccode);
+-	state->srcfile = srcfile;
+-	state->line = line;
 +
- 	read_format = evsel->attr.read_format;
++	if (state) {
++		state->srcfile = srcfile;
++		state->line = line;
++	}
+ 	return ret;
  
- 	if (read_format & PERF_FORMAT_TOTAL_TIME_ENABLED)
+ out_free_line:
 -- 
 2.20.1
 
