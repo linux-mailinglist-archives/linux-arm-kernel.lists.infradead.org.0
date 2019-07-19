@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F9A66DB2F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 06:07:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 689606DB39
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 06:08:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6/YQnbpiqF+NNPgD/3OLUfbgxUJ7l8LaNAiNjT+QrCg=; b=oP2xDqLwAUECsG
-	RsPSJ+DPQph8pSz9hFHt9uMRwkToOfMzxJZaGRu+fR7g0kV5cD1EhcLYSAmgKeDSDTCuzhMQNPLjd
-	MesofnwFXDj/2pMudD6wybLlJkmPClzFKtdYxQ/DNUlQGZAL6o3JXrq5zJSodLB6IEZyoP8IQxe7A
-	wdTSRQoPbAEXgyAD0+jhWASQ3UcBte06dA2WRXdg3mkpB7LxmxpNOXjWkG3AN3x66b86OSBaLpCYQ
-	PV+jqp/ov1aow5aGCtZqfZaNg4uxmMgfc9qekocjHVstN6leY78v+ff0osXGSGc1sLa6sVu7GSR/4
-	qd0zAwC9cSa+JeCqbBJw==;
+	List-Owner; bh=aCZeAIhCnGwYukDMHiHCA4QokkOJuPq5NR5q0XNHbVw=; b=LLTkXZRa+Y+xBv
+	W94lFoUnqmcJ0EgOwrgN37gvhTaEIPlM0jkRB4SQYQQXMNG+7qYANL9J9j5orU23FhCCJpznbr8Sj
+	tdTMCENeKaHiaYwO0Vmy9eHmt/a+Oz8NpUGQEW4In+fWmHmDrwkquGI0a7KDTSdap8sfs8zK0qcdj
+	VQnF+n6+5WctEXFQsL/6tGoYHp+EopYyEP+hvZBixALfG34fWe18lzDVHBliZ0qCQRTSSH58rBX04
+	HD6GNxzl8FLI0IsxtU2twM0zQJAisoAunA04WLHGMB6l2514Pxh/x8m3Cyr6C2lN1WmqU/RGu+kD8
+	N5RnECS3X6I1FmvH3xBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoKBF-00039e-Ex; Fri, 19 Jul 2019 04:07:37 +0000
+	id 1hoKBm-0003TE-Ox; Fri, 19 Jul 2019 04:08:10 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hoK9b-0002ee-A9
- for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 04:06:10 +0000
+ id 1hoK9f-0002hU-8u
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 04:06:12 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 74594218D1;
- Fri, 19 Jul 2019 04:05:52 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5DC94218CD;
+ Fri, 19 Jul 2019 04:05:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563509154;
- bh=DMiXV2Y3bxC3tjEsHuHMAMM5Zn2EY1lsfePC4T8uFNQ=;
+ s=default; t=1563509158;
+ bh=k7QAffQXw553EroqdjJ8tEfUCJgxUsz07l+cr6WL5jA=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=OW0nsqpFPUIlTYES4t+MLnvIzFOQHnxSGtkSsdaFhu1L3vehgRosiznK0HdIgB1fm
- sUsgF+kouIM9G6QWcRVRGi4ah8OpF+CGi+vWRP0bNsLWWeWsm9ADgJiKlEONX8NL29
- oQ+LfqsBwX7zYvySkMGs0lLP2p673vxXN/ChnY9E=
+ b=B4/B6oP4opcjwsbwC9WPIN9xVCUrKOzO4FBPR/lfN+qBopI13NLeJeGTTscYpsUiD
+ +OkH+Initwl78nPweWOd4Xy8DGe4Bm27eScMLzArPYg6Hgjg191cYcaXoteS/V3aFS
+ zcTPLyeA+9K7mwmpTbWuKFg1q+Lz/eE7+IEVSlpA=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.1 099/141] perf trace: Fix potential NULL pointer
+Subject: [PATCH AUTOSEL 5.1 100/141] perf session: Fix potential NULL pointer
  dereference found by the smatch tool
-Date: Fri, 19 Jul 2019 00:02:04 -0400
-Message-Id: <20190719040246.15945-99-sashal@kernel.org>
+Date: Fri, 19 Jul 2019 00:02:05 -0400
+Message-Id: <20190719040246.15945-100-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190719040246.15945-1-sashal@kernel.org>
 References: <20190719040246.15945-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_210555_506045_26A74044 
-X-CRM114-Status: GOOD (  13.64  )
+X-CRM114-CacheID: sfid-20190718_210559_385111_E55164F3 
+X-CRM114-Status: GOOD (  11.39  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -105,28 +105,33 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Leo Yan <leo.yan@linaro.org>
 
-[ Upstream commit 7a6d49dc8cad8fa1f3d63994102af8f9ae9c859f ]
+[ Upstream commit f3c8d90757724982e5f07cd77d315eb64ca145ac ]
 
-Based on the following report from Smatch, fix the potential NULL
-pointer dereference check.
+Based on the following report from Smatch, fix the potential
+NULL pointer dereference check.
 
-  tools/perf/builtin-trace.c:1044
-  thread_trace__new() error: we previously assumed 'ttrace' could be
-  null (see line 1041).
+  tools/perf/util/session.c:1252
+  dump_read() error: we previously assumed 'evsel' could be null
+  (see line 1249)
 
-  tools/perf/builtin-trace.c
-  1037 static struct thread_trace *thread_trace__new(void)
-  1038 {
-  1039         struct thread_trace *ttrace =  zalloc(sizeof(struct thread_trace));
-  1040
-  1041         if (ttrace)
-  1042                 ttrace->files.max = -1;
-  1043
-  1044         ttrace->syscall_stats = intlist__new(NULL);
-               ^^^^^^^^
-  1045
-  1046         return ttrace;
-  1047 }
+  tools/perf/util/session.c
+  1240 static void dump_read(struct perf_evsel *evsel, union perf_event *event)
+  1241 {
+  1242         struct read_event *read_event = &event->read;
+  1243         u64 read_format;
+  1244
+  1245         if (!dump_trace)
+  1246                 return;
+  1247
+  1248         printf(": %d %d %s %" PRIu64 "\n", event->read.pid, event->read.tid,
+  1249                evsel ? perf_evsel__name(evsel) : "FAIL",
+  1250                event->read.value);
+  1251
+  1252         read_format = evsel->attr.read_format;
+                             ^^^^^^^
+
+'evsel' could be NULL pointer, for this case this patch directly bails
+out without dumping read_event.
 
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
 Acked-by: Jiri Olsa <jolsa@kernel.org>
@@ -150,32 +155,27 @@ Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
 Cc: Thomas Gleixner <tglx@linutronix.de>
 Cc: Thomas Richter <tmricht@linux.ibm.com>
 Cc: linux-arm-kernel@lists.infradead.org
-Link: http://lkml.kernel.org/r/20190702103420.27540-6-leo.yan@linaro.org
-[ Just made it look like other tools/perf constructors, same end result ]
+Link: http://lkml.kernel.org/r/20190702103420.27540-9-leo.yan@linaro.org
 Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- tools/perf/builtin-trace.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ tools/perf/util/session.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/tools/perf/builtin-trace.c b/tools/perf/builtin-trace.c
-index f5b3a1e9c1dd..aca22e8f6947 100644
---- a/tools/perf/builtin-trace.c
-+++ b/tools/perf/builtin-trace.c
-@@ -998,10 +998,10 @@ static struct thread_trace *thread_trace__new(void)
- {
- 	struct thread_trace *ttrace =  zalloc(sizeof(struct thread_trace));
+diff --git a/tools/perf/util/session.c b/tools/perf/util/session.c
+index bad5f87ae001..656ef536b3ab 100644
+--- a/tools/perf/util/session.c
++++ b/tools/perf/util/session.c
+@@ -1147,6 +1147,9 @@ static void dump_read(struct perf_evsel *evsel, union perf_event *event)
+ 	       evsel ? perf_evsel__name(evsel) : "FAIL",
+ 	       event->read.value);
  
--	if (ttrace)
-+	if (ttrace) {
- 		ttrace->files.max = -1;
--
--	ttrace->syscall_stats = intlist__new(NULL);
-+		ttrace->syscall_stats = intlist__new(NULL);
-+	}
++	if (!evsel)
++		return;
++
+ 	read_format = evsel->attr.read_format;
  
- 	return ttrace;
- }
+ 	if (read_format & PERF_FORMAT_TOTAL_TIME_ENABLED)
 -- 
 2.20.1
 
