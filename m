@@ -2,66 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DEC86D86F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 03:35:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 59A1C6D894
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 03:49:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b2N8q67DRDRDHUd2MYTGX0NQStlBpPrhCikVCVqNm64=; b=mdCQnD8uggIHB8
-	+Wu/nRLwwTbk9hgWDYHO9TH8SyhW8+DDrXkb7M39FxAOL/p7Y21XUOqLSYxtl4nWZH7iW7ItiCAD3
-	ACNNI7evtwk+dvrYWISfkAx4uwSgyyl7916aMf9bjThfupvexwjFGkCxw82aUX7WGH6oGzp97oK2X
-	gwhABTZKRqIrbiekRCXgMXhLYe+cYopSTzrtJqBlFNams08bGYZgxSGJ+8WefXQi1Y5LbVD8E/zzZ
-	HL6CXzjHBOrTeoifcxmqkU5lrGvMP4ofqMNAcVscOziTgu8RENJHULUUG/OmeIjt4S33l5WndfrC2
-	3/knTchiN+NtJfR+2XcQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=MjhFTgkaGsYf3aFeRRITpVdP7sLHqFRabAe2Y6EqBEw=; b=VIKOffIrPZ87zBCaqIgpidHta
+	esDKmuBwcauCuhoA2lHmcBu6sK+0HNEcRWVMoS7FTxLYCr6UU/ftaacJZuE3s//52dXmC/j49Iavu
+	eiVCwZXiieyrfM2EqgpMdctCH3x9i1VA9fes5GFWqVGkabQkW0q+rIhzJudqox2r339z6IafvR+Gc
+	H9FW6PGK+3QDBM1lcuPbaxvpuhH9Bt/tnC/3lSpvW1tiZfw4qfCVWOgFWpVyWr6P0z0o84GZDJEJE
+	MK9TLD+SswKesFPuJqv9AbfHapZfRLDkOpN+5Jj1esajl3IcoUSEToMKbthxfKftwGP3J4JG8CjXP
+	9NMvaNrnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoHnl-0006nc-Qe; Fri, 19 Jul 2019 01:35:13 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hoI1t-00032h-7q; Fri, 19 Jul 2019 01:49:49 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hoHnT-0006mu-U4; Fri, 19 Jul 2019 01:34:57 +0000
-X-UUID: dffd4726e4454c46862cc88848e282c6-20190718
-X-UUID: dffd4726e4454c46862cc88848e282c6-20190718
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 357023112; Thu, 18 Jul 2019 17:34:52 -0800
-Received: from mtkexhb01.mediatek.inc (172.21.101.102) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 18 Jul 2019 18:34:51 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by mtkexhb01.mediatek.inc
- (172.21.101.102) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Fri, 19 Jul 2019 09:34:49 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 19 Jul 2019 09:34:49 +0800
-Message-ID: <1563500089.5889.0.camel@mtksdaap41>
-Subject: Re: [PATCH v1 10/11] drm/mediatek: direct include of drm.h in
- mtk_drm_gem.c
-From: CK Hu <ck.hu@mediatek.com>
-To: Sam Ravnborg <sam@ravnborg.org>
-Date: Fri, 19 Jul 2019 09:34:49 +0800
-In-Reply-To: <1563499801.3884.0.camel@mtksdaap41>
-References: <20190718161507.2047-1-sam@ravnborg.org>
- <20190718161507.2047-11-sam@ravnborg.org>
- <1563499801.3884.0.camel@mtksdaap41>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1hoI1f-000325-Sc
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 01:49:37 +0000
+Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 946D830309C0A785A41F;
+ Fri, 19 Jul 2019 09:49:28 +0800 (CST)
+Received: from [127.0.0.1] (10.133.216.73) by DGGEMS401-HUB.china.huawei.com
+ (10.3.19.201) with Microsoft SMTP Server id 14.3.439.0; Fri, 19 Jul 2019
+ 09:49:22 +0800
+Subject: Re: [RFC] Add virtual SDEI support in qemu
+To: Dave Martin <Dave.Martin@arm.com>, Mark Rutland <mark.rutland@arm.com>
+References: <1b0aa6b2-80b1-a72e-6849-7323c3b9c6bc@huawei.com>
+ <20190715134059.GJ2790@e103592.cambridge.arm.com>
+ <20190715134848.GI56232@lakrids.cambridge.arm.com>
+ <4daefb19-6c15-f82c-31e9-1ae035d45bd5@arm.com>
+ <20190715144446.GK56232@lakrids.cambridge.arm.com>
+ <20190716084734.GL2790@e103592.cambridge.arm.com>
+From: Guoheyi <guoheyi@huawei.com>
+Message-ID: <287f566e-7697-3763-56b8-eb4821bd8347@huawei.com>
+Date: Fri, 19 Jul 2019 09:49:22 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101
+ Thunderbird/45.7.1
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <20190716084734.GL2790@e103592.cambridge.arm.com>
+X-Originating-IP: [10.133.216.73]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_183455_970915_B75A9689 
-X-CRM114-Status: GOOD (  13.92  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190718_184936_086963_0A5BA556 
+X-CRM114-Status: GOOD (  17.45  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.32 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,66 +69,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: David Airlie <airlied@linux.ie>, Liviu Dudau <Liviu.Dudau@arm.com>,
- dri-devel@lists.freedesktop.org, Chris Wilson <chris@chris-wilson.co.uk>,
- Eric Anholt <eric@anholt.net>, Rob Herring <robh@kernel.org>,
- Stefan Agner <stefan@agner.ch>, Maxime Ripard <maxime.ripard@bootlin.com>,
- Thierry Reding <treding@nvidia.com>, Daniel
- Vetter <daniel@ffwll.ch>, Chunming Zhou <david1.zhou@amd.com>,
- Jani Nikula <jani.nikula@intel.com>,
- Intel Graphics Development <intel-gfx@lists.freedesktop.org>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- linux-mediatek@lists.infradead.org,
- Lionel Landwerlin <lionel.g.landwerlin@intel.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, Sean Paul <sean@poorly.run>,
- linux-arm-kernel@lists.infradead.org, Boris Brezillon <bbrezillon@kernel.org>,
- Thomas Zimmermann <tzimmermann@suse.de>, Rob Clark <robdclark@gmail.com>,
- Noralf =?ISO-8859-1?Q?Tr=F8nnes?= <noralf@tronnes.org>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Christian =?ISO-8859-1?Q?K=F6nig?= <christian.koenig@amd.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Marc Zyngier <marc.zyngier@arm.com>, qemu-devel@nongnu.org,
+ qemu-arm@nongnu.org, James Morse <james.morse@arm.com>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Sam:
+Thanks for all your comments. I'm going to write a simple demo to go 
+through the whole workflow first, and then adjust the policies following 
+the conclusions of our discussion.
 
-You could apply this patch into drm-misc-next by yourself, thanks.
+Heyi
 
-Regards,
-CK
 
-On Fri, 2019-07-19 at 09:30 +0800, CK Hu wrote:
-> On Thu, 2019-07-18 at 18:15 +0200, Sam Ravnborg wrote:
-> > Do not rely on including drm.h from drm_file.h,
-> > as the include in drm_file.h will be dropped.
-> > 
-> 
-> Acked-by: CK Hu <ck.hu@mediatek.com>
-> 
-> > Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
-> > Cc: CK Hu <ck.hu@mediatek.com>
-> > Cc: Philipp Zabel <p.zabel@pengutronix.de>
-> > Cc: Matthias Brugger <matthias.bgg@gmail.com>
-> > Cc: linux-arm-kernel@lists.infradead.org
-> > Cc: linux-mediatek@lists.infradead.org
-> > ---
-> >  drivers/gpu/drm/mediatek/mtk_drm_gem.c | 1 +
-> >  1 file changed, 1 insertion(+)
-> > 
-> > diff --git a/drivers/gpu/drm/mediatek/mtk_drm_gem.c b/drivers/gpu/drm/mediatek/mtk_drm_gem.c
-> > index 9434f88c6341..ca672f1d140d 100644
-> > --- a/drivers/gpu/drm/mediatek/mtk_drm_gem.c
-> > +++ b/drivers/gpu/drm/mediatek/mtk_drm_gem.c
-> > @@ -5,6 +5,7 @@
-> >  
-> >  #include <linux/dma-buf.h>
-> >  
-> > +#include <drm/drm.h>
-> >  #include <drm/drm_device.h>
-> >  #include <drm/drm_gem.h>
-> >  #include <drm/drm_prime.h>
-> 
+On 2019/7/16 16:47, Dave Martin wrote:
+> On Mon, Jul 15, 2019 at 03:44:46PM +0100, Mark Rutland wrote:
+>> On Mon, Jul 15, 2019 at 03:26:39PM +0100, James Morse wrote:
+>>> On 15/07/2019 14:48, Mark Rutland wrote:
+>>>> On Mon, Jul 15, 2019 at 02:41:00PM +0100, Dave Martin wrote:
+>>>>> One option (suggested to me by James Morse) would be to allow userspace
+>>>>> to disable in the in-kernel PSCI implementation and provide its own
+>>>>> PSCI to the guest via SMC -- in which case userspace that wants to
+>>>>> implement SDEI would have to implement PSCI as well.
+>>>> I think this would be the best approach, since it puts userspace in
+>>>> charge of everything.
+>>>>
+>>>> However, this interacts poorly with FW-based mitigations that we
+>>>> implement in hyp. I suspect we'd probably need a mechanism to delegate
+>>>> that responsibility back to the kernel, and figure out if that has any
+>>>> interaction with thigns that got punted to userspace...
+>>> This has come up before:
+>>> https://lore.kernel.org/r/59C139D0.3040507@arm.com
+>>>
+>>> I agree Qemu should opt-in to this, it needs to be a feature that is enabled.
+>>>
+>>> I had an early version of something like this for testing SDEI before
+>>> there was firmware available. The review feedback from Christoffer was
+>>> that it should include HVC and SMC, their immediates, and shouldn't be
+>>> tied to SMC-CC ranges.
+>>>
+>>> I think this should be a catch-all as Heyi describes to deliver
+>>> 'unhandled SMC/HVC' to user-space as hypercall exits. We should
+>>> include the immediate in the struct.
+>>>
+>>> We can allow Qemu to disable the in-kernel PSCI implementation, which
+>>> would let it be done in user-space via this catch-all mechanism. (PSCI
+>>> in user-space has come up on another thread recently). The in-kernel
+>>> PSCI needs to be default-on for backwards compatibility.
+>>>
+>>> As Mark points out, the piece that's left is the 'arch workaround'
+>>> stuff. We always need to handle these in the kernel. I don't think
+>>> these should be routed-back, they should be un-obtainable by
+>>> user-space.
+>> Sure; I meant that those should be handled in the kernel rather than
+>> going to host userspace and back.
+>>
+>> I was suggesting was that userspace would opt into taking ownership of
+>> all HVC calls, then explicitly opt-in to the kernel handling specific
+>> (sets of) calls.
+> The most logical thing to do would be to have userspace handle all
+> calls, but add an ioctl to forward a call to KVM.  This puts userspace
+> in charge of the SMCCC interface, with KVM handling only those things
+> that userspace can't do for itself, on request.
+>
+> If the performance overhead is unacceptable for certain calls, we could
+> have a way to delegate specific function IDs to KVM.  I suspect that
+> will be the exception rather than the rule.
+>
+>> There are probably issues with that, but I suspect defining "all
+>> undandled calls" will be problematic otherwise.
+> Agreed: the set of calls not handled by KVM will mutate over time.
+>
+> Cheers
+> ---Dave
+>
+> .
+>
 
 
 
