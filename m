@@ -2,102 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F18506E8E6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 18:41:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 088AE6E8EE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 18:43:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Nig6lvGacWRc357yfm90DVyUTPKJ+SN58LUoHSCWLfs=; b=rRMYoSDQJkaAUs
-	dKopHGJhSw9kGLMTBzCToafFYU6VaYswq7ZFL7w5C7fuSA88gmn3lwd7E+hp8daHETM0tm/7yLGf9
-	+/KChwSmD9yMBh+oYJOOIdgvL6Ad5wIe7biNFNZoJm1lH4Dbd+HB8QvPhCcKMPXQ7Bh56E2BntiQe
-	ADiYduPN5TRwDy2Ie7J7h2gx1/4xdbOxV8AnUhvpSY4ltpY9ESGq9XlzNMq0NTDakmCebXeXH/QH7
-	wUVBJU0XhyqT3EqPQNLuDhzPt/7kvd5saowoIh3m/PMJjKPjvrYKdYVGLqcr9v9QFC0W2SbkvVex+
-	d9r+SDEsELkfDkwzua1A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=HDOPpFEkIq86cmzfL67K7YOLhePusVSAqc+bdG1HUaA=; b=R+aysMdM/NMBnJ
+	bwsdiWObjq1rP7+3BpBUjXl/0Q+yy91S12ih+1nrYS4W/hHvZcRTbJJ0JntxspVGQZdI3T9Qjvqao
+	GzWxGdNgZsoMtkJo4vEGxbcrn2xU0O6KroECLb2u2wigU7xNsoLpa0xfAMKAi+MqiAxMu6YSNVRmG
+	0KuKTvbKUkjtkAUWKVEt4j8M6UPPKNMf/7WoJqDCxVkVd41hZHHevy+dooahxUrnkXHjYtvQOXbK+
+	akgPxBtgLu9Fyi0SbEpwqrEK5yaDtxUFrf2/7g8FZIX9NLT02UOLrIZLX+bqjMdrV2B/Ar9nBuhXK
+	yw0G7TH5weC3l9JM9w3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoVwY-0005tM-IF; Fri, 19 Jul 2019 16:41:14 +0000
-Received: from mout.gmx.net ([212.227.15.18])
+	id 1hoVyt-0007JY-LB; Fri, 19 Jul 2019 16:43:39 +0000
+Received: from mx2.mailbox.org ([80.241.60.215])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hoVwI-0005sR-EY; Fri, 19 Jul 2019 16:41:00 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1563554440;
- bh=IMEGqzZNsE6t2a8Ul3Df+zdB6i1Ek2lruijHlGU41rE=;
- h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
- b=aUu9hHbeBAv3TiOpIu1KiC1CbaqE2+XqWl+B7E/ptnY7rr5f9s3o+iwvFbeqrxUcq
- 38bfiwVQUYtwMKiDBQ76g79fI/Im1LKD1sfclLnw+AOTocgT5v+GBlETOkrtTHBhHZ
- LymTi6zZ/qSmL/7to6+8D2clQhXPTMwsfztVzq14=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [192.168.1.162] ([37.4.249.166]) by mail.gmx.com (mrgmx001
- [212.227.17.190]) with ESMTPSA (Nemesis) id 0M0y8F-1iigtD0DEt-00v7WP; Fri, 19
- Jul 2019 18:40:40 +0200
-Subject: Re: [PATCH RFC 07/18] clk: bcm2835: Add BCM2838_CLOCK_EMMC2 support
-To: Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, Ray Jui <rjui@broadcom.com>,
- Scott Branden <sbranden@broadcom.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
- <sboyd@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
- Adrian Hunter <adrian.hunter@intel.com>, Mark Brown <broonie@kernel.org>
-References: <1563393026-17118-1-git-send-email-wahrenst@gmx.net>
- <1563393026-17118-8-git-send-email-wahrenst@gmx.net>
- <f6d8fecd-94d3-a5a8-2d4c-c1ae2b6a0919@gmail.com>
- <3b691366-81b1-efe3-8b7e-a81f0fc9c2fb@gmail.com> <87blxrgpdu.fsf@anholt.net>
-From: Stefan Wahren <wahrenst@gmx.net>
-Message-ID: <efa635ca-4626-e569-0232-fcbec32f309a@gmx.net>
-Date: Fri, 19 Jul 2019 18:40:37 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1hoVyY-0007I7-P6
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 16:43:21 +0000
+Received: from smtp1.mailbox.org (smtp1.mailbox.org [80.241.60.240])
+ (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
+ (No client certificate requested)
+ by mx2.mailbox.org (Postfix) with ESMTPS id 7E66EA1033;
+ Fri, 19 Jul 2019 18:43:12 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at heinlein-support.de
+Received: from smtp1.mailbox.org ([80.241.60.240])
+ by hefe.heinlein-support.de (hefe.heinlein-support.de [91.198.250.172])
+ (amavisd-new, port 10030)
+ with ESMTP id yblAqspWwNbi; Fri, 19 Jul 2019 18:43:06 +0200 (CEST)
+From: Aleksa Sarai <cyphar@cyphar.com>
+To: Al Viro <viro@zeniv.linux.org.uk>, Jeff Layton <jlayton@kernel.org>,
+ "J. Bruce Fields" <bfields@fieldses.org>, Arnd Bergmann <arnd@arndb.de>,
+ David Howells <dhowells@redhat.com>, Shuah Khan <shuah@kernel.org>,
+ Shuah Khan <skhan@linuxfoundation.org>
+Subject: [PATCH v10 0/9] namei: openat2(2) path resolution restrictions
+Date: Sat, 20 Jul 2019 02:42:16 +1000
+Message-Id: <20190719164225.27083-1-cyphar@cyphar.com>
 MIME-Version: 1.0
-In-Reply-To: <87blxrgpdu.fsf@anholt.net>
-Content-Language: en-US
-X-Provags-ID: V03:K1:dVLzwX4O1u91cS2AMI9zUJuseb7+Wu09sUoLA1U0S1aMdyuFkxb
- DPmrA8YmhGoxqo7MbBfkEdP557EWgqMDL6gbX0eKmJVeSRIeZDv+YX+MZRKbIPRwLIhjshW
- J+gPteh3VoHMJUJzzDG76XYduOcu9wsOxNooMVHNukwReqrmqmI/COMevhoMMmlMhQHyra7
- fEVudm4wZERhhdLQW6maQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:yEvWNQVOyro=:11T1R3goCRi6JAU/LOYCP/
- 3Pxl4PmNc55ZuHhe7NPRWNPGhUCbFRtf3SXm0iBUHN+lSqPG0UJ6OCzcedUOF8wY2Xbxft42W
- a+U++MzaIKkm8BMuqKd6a7WyCcQmuinRXzejt1HZ/E4PQPbNp3vjUc+HR7kLArx9ifyIM0eJ3
- kxweR9kVCFaCWeSWzmsx2gMKiAwpkv8/SKb2opxiEXt8UeRMMqWjy2yOfhskD07me4vUudaiB
- B6+icMBbVWcO6UoHrzTzuSlO/O0PEQOnolTB4PUJIPB83nvsBO/sqR6VpiyJGTbBQMSAdZqMC
- s5bdNXtSk6rq6ZJ7Pu9C8+qkzTlZX3xiPsj5LF01EHSWixT5UqpCmk8G2mB7dvM0r8zbsyh0Q
- zli90Z6jpSm2ekh9moXLkf2ZTWPqbvYXx6oZLoIEpbmBT/PYSrKCNJjzmSk484OhzbHIFrhTZ
- 8FRyxPOnXXdIpCnbF27F7/7HABQZZDoGfcUty6/GGLVZb12rDNcdj/Q4JAAcRlBapsuZINR+h
- THMaR6+Q4vMc50Gs+nZ6q67qDvkEOoHQC8yLAmJEjO/IpkKKmKKyhNvZf607dUT+hi30B5ILq
- r+09Pb1C5guVGJ8hvRG4opGMiS9PsU2lb8Bik9wESWrrm8VdMQntvYgLQs6Wviqhq0MLJIGXx
- GH/es1yu08meKmz20pwYOjvEb++NLin1xosQBe3wpoI/J0ax3QkIQbSBZdSIGo9DT1Flu0KpT
- PJmPanf7dMd9q5uyQkm4eIuVUw3MBkXmzIi3JWCYZC/ihfF9OUS/SSTdqo7UqDCiSBWzrzINL
- +uEEwlksSnkCGlXgGUiVMiY5WprjrR7IFe6BAZ6Yu48eieXAdHyYaRX3gH/MRY8zrmBeb+UhL
- Iz+DtEVV2YjXsf1U5KB5gtMy4lk9B4b8kJ9IT/4GqSVMqfcUd6ukwviP3OqFG0QcVuNLLgzCM
- Z//fL2Z7NmK2OeYL7up7rx19AnaFdgDgxYpnnK2tmb9pBAR9NcRQUd6YxFdQxrW4Exkhla0Gb
- 23fm3ZM5ESm0BSBV8MmF9T2R1kAOu+tT6zWvJq6sKHzaRjZK4YDGMaWC3sqYhipQafDGAokNr
- s0MTKO+6vo/uIs=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190719_094058_828815_8508B415 
-X-CRM114-Status: GOOD (  18.00  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190719_094319_127595_7CF465DD 
+X-CRM114-Status: GOOD (  25.06  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.15.18 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wahrenst[at]gmx.net)
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [80.241.60.215 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,124 +65,242 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Alexei Starovoitov <ast@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
+ linux-kselftest@vger.kernel.org, sparclinux@vger.kernel.org,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ Tycho Andersen <tycho@tycho.ws>, Aleksa Sarai <asarai@suse.de>,
+ linux-arm-kernel@lists.infradead.org, linux-mips@vger.kernel.org,
+ linux-xtensa@linux-xtensa.org, Kees Cook <keescook@chromium.org>,
+ Jann Horn <jannh@google.com>, linuxppc-dev@lists.ozlabs.org,
+ Aleksa Sarai <cyphar@cyphar.com>, Andy Lutomirski <luto@kernel.org>,
+ David Drysdale <drysdale@google.com>, Christian Brauner <christian@brauner.io>,
+ linux-parisc@vger.kernel.org, linux-m68k@lists.linux-m68k.org,
+ linux-api@vger.kernel.org, containers@lists.linux-foundation.org,
+ linux-kernel@vger.kernel.org, Eric Biederman <ebiederm@xmission.com>,
+ linux-alpha@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ Chanho Min <chanho.min@lge.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+This patch is being developed here (with snapshots of each series
+version being stashed in separate branches with names of the form
+"resolveat/vX-summary"):
+    <https://github.com/cyphar/linux/tree/resolveat/master>
 
-Am 18.07.19 um 20:37 schrieb Eric Anholt:
-> Florian Fainelli <f.fainelli@gmail.com> writes:
->
->> On 7/18/2019 1:47 AM, Matthias Brugger wrote:
->>>
->>> On 17/07/2019 21:50, Stefan Wahren wrote:
->>>> The new BCM2838 supports an additional clock for the emmc2 block.
->>>> So add a new compatible to register this clock only for BCM2838.
->>>>
->>>> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
->>>> ---
->>>>  drivers/clk/bcm/clk-bcm2835.c | 33 +++++++++++++++++++++++++++++++--
->>>>  1 file changed, 31 insertions(+), 2 deletions(-)
->>>>
->>>> diff --git a/drivers/clk/bcm/clk-bcm2835.c b/drivers/clk/bcm/clk-bcm2835.c
->>>> index 867ae3c..5fe4695 100644
->>>> --- a/drivers/clk/bcm/clk-bcm2835.c
->>>> +++ b/drivers/clk/bcm/clk-bcm2835.c
->>>> @@ -31,7 +31,8 @@
->>>>  #include <linux/delay.h>
->>>>  #include <linux/io.h>
->>>>  #include <linux/module.h>
->>>> -#include <linux/of.h>
->>>> +#include <linux/of_device.h>
->>>> +
->>>>  #include <linux/platform_device.h>
->>>>  #include <linux/slab.h>
->>>>  #include <dt-bindings/clock/bcm2835.h>
->>>> @@ -114,6 +115,8 @@
->>>>  #define CM_AVEODIV		0x1bc
->>>>  #define CM_EMMCCTL		0x1c0
->>>>  #define CM_EMMCDIV		0x1c4
->>>> +#define CM_EMMC2CTL		0x1d0
->>>> +#define CM_EMMC2DIV		0x1d4
->>>>
->>>>  /* General bits for the CM_*CTL regs */
->>>>  # define CM_ENABLE			BIT(4)
->>>> @@ -1950,6 +1953,15 @@ static const struct bcm2835_clk_desc clk_desc_array[] = {
->>>>  		.frac_bits = 8,
->>>>  		.tcnt_mux = 39),
->>>>
->>>> +	/* EMMC2 clock (only available for BCM2838) */
->>>> +	[BCM2838_CLOCK_EMMC2]	= REGISTER_PER_CLK(
->>>> +		.name = "emmc2",
->>>> +		.ctl_reg = CM_EMMC2CTL,
->>>> +		.div_reg = CM_EMMC2DIV,
->>>> +		.int_bits = 4,
->>>> +		.frac_bits = 8,
->>>> +		.tcnt_mux = 42),
->>>> +
->>>>  	/* General purpose (GPIO) clocks */
->>>>  	[BCM2835_CLOCK_GP0]	= REGISTER_PER_CLK(
->>>>  		.name = "gp0",
->>>> @@ -2101,6 +2113,14 @@ static int bcm2835_mark_sdc_parent_critical(struct clk *sdc)
->>>>  	return clk_prepare_enable(parent);
->>>>  }
->>>>
->>>> +bool bcm2835_has_clk(size_t index) {
->>>> +	return index != BCM2838_CLOCK_EMMC2;
->>>> +}
->>>> +
->>>> +bool bcm2838_has_clk(size_t index) {
->>>> +	return true;
->>>> +}
->>>> +
->>>>  static int bcm2835_clk_probe(struct platform_device *pdev)
->>>>  {
->>>>  	struct device *dev = &pdev->dev;
->>>> @@ -2109,9 +2129,14 @@ static int bcm2835_clk_probe(struct platform_device *pdev)
->>>>  	struct resource *res;
->>>>  	const struct bcm2835_clk_desc *desc;
->>>>  	const size_t asize = ARRAY_SIZE(clk_desc_array);
->>>> +	bool (*has_clk_func)(size_t);
->>>>  	size_t i;
->>>>  	int ret;
->>>>
->>>> +	has_clk_func = of_device_get_match_data(&pdev->dev);
->>>> +	if (!has_clk_func)
->>>> +		return -ENODEV;
->>>> +
->>>>  	cprman = devm_kzalloc(dev,
->>>>  			      struct_size(cprman, onecell.hws, asize),
->>>>  			      GFP_KERNEL);
->>>> @@ -2146,6 +2171,9 @@ static int bcm2835_clk_probe(struct platform_device *pdev)
->>>>  	hws = cprman->onecell.hws;
->>>>
->>>>  	for (i = 0; i < asize; i++) {
->>>> +		if (!has_clk_func(i))
->>>> +			continue;
->>>> +
->>> I think that's very hacky. Can't we just create a per SoC list which get's
->>> passed via .data and in probe we iterate through that list and enable the
->>> clocks? That would make clear which clocks are just for bcm2838, basically emmc2.
->> Or within the structure, add a flag that indicates whether the clock is
->> available or not for a given chip? That would avoid having to introduce
->> bcm283x_has_clk() functions that needs to maintain a possibly growing
->> list of clocks. You would still have to check the flag though.
-> I think this is a good solution.
+Patch changelog:
+ v10:
+    * Ensure that unlazy_walk() will fail if we are in a scoped walk and
+      the caller has zeroed nd->root (this happens in a few places, I'm
+      not sure why because unlazy_walk() does legitimize_path()
+      already). In this case we need to go through path_init() again to
+      reset it (otherwise we will have a breakout because set_root()
+      will breakout).
+      * Also add a WARN_ON (and return -ENOTRECOVERABLE) if
+        LOOKUP_IN_ROOT is set and we are in set_root() -- which should
+        never happen and will cause a breakout.
+    * Make changes suggested by Al Viro:
+      * Remove nd->{opath_mask,acc_mode} by moving all of the magic-link
+        permission logic be done after trailing_symlink() (with
+        trailing_magiclink()) only within path_openat().
+      * Introduce LOOKUP_MAGICLINK_JUMPED to be able to detect
+        magic-link jumps done with nd_jump_link() (so we don't end up
+        blocking other LOOKUP_JUMPED cases).
+      * Simplify all of the path_init() changes to make the code far
+        less confusing. dirfd_path_init() turns out to be un-necessary.
+    * Make openat2(2) also -EINVAL on unknown how->flags.
+      [Dmitry V. Levin]
+    * Clean up bad definitions of O_EMPTYPATH on architectures where O_*
+      flags are subtly different to <asm-generic/fcntl.h>.
+    * Switch away from passing a struct to build_open_flags() and
+      instead just copy the one field we need to temporarily modify
+      (how->flags). Also fix a bug in OPENHOW_MODE. [Rasmus Villemoes]
+    * Fix syscall linkages and switch to 437. [Arnd Bergmann]
+    * Clean up text in commit messages and the cover-letter.
+      [Rolf Eike Beer]
+    * Fix openat2 selftest makefile. [Michael Ellerman]
 
-i only want to make sure that i get it right:
+The need for some sort of control over VFS's path resolution (to avoid
+malicious paths resulting in inadvertent breakouts) has been a very
+long-standing desire of many userspace applications. This patchset is a
+revival of Al Viro's old AT_NO_JUMPS[1,2] patchset (which was a variant
+of David Drysdale's O_BENEATH patchset[3] which was a spin-off of the
+Capsicum project[4]) with a few additions and changes made based on the
+previous discussion within [5] as well as others I felt were useful.
 
-- add a new member supported (e.g. unsigned int) into struct
-bcm2835_clk_desc
-- bit 1 should be BCM2835 and 2 should be BCM2711 (so BCM7211 could use
-3 and so ...)
-- during probing we should check the bit against the SoC bit before
-registration
+In line with the conclusions of the original discussion of AT_NO_JUMPS,
+the flag has been split up into separate flags. However, instead of
+being an openat(2) flag it is provided through a new syscall openat2(2)
+which provides an alternative way to get an O_PATH file descriptor (the
+reasoning for doing this is included in the patch description). The
+following new LOOKUP_* flags are added:
 
-Stefan
+  * LOOKUP_NO_XDEV blocks all mountpoint crossings (upwards, downwards,
+    or through absolute links). Absolute pathnames alone in openat(2) do
+    not trigger this.
+
+  * LOOKUP_NO_MAGICLINKS blocks resolution through /proc/$pid/fd-style
+    links. This is done by blocking the usage of nd_jump_link() during
+    resolution in a filesystem. The term "magic-links" is used to match
+    with the only reference to these links in Documentation/, but I'm
+    happy to change the name.
+
+    It should be noted that this is different to the scope of
+    ~LOOKUP_FOLLOW in that it applies to all path components. However,
+    you can do openat2(NO_FOLLOW|NO_MAGICLINKS) on a magic-link and it
+    will *not* fail (assuming that no parent component was a
+    magic-link), and you will have an fd for the magic-link.
+
+  * LOOKUP_BENEATH disallows escapes to outside the starting dirfd's
+    tree, using techniques such as ".." or absolute links. Absolute
+    paths in openat(2) are also disallowed. Conceptually this flag is to
+    ensure you "stay below" a certain point in the filesystem tree --
+    but this requires some additional to protect against various races
+    that would allow escape using "..".
+
+    Currently LOOKUP_BENEATH implies LOOKUP_NO_MAGICLINKS, because it
+    can trivially beam you around the filesystem (breaking the
+    protection). In future, there might be similar safety checks done as
+    in LOOKUP_IN_ROOT, but that requires more discussion.
+
+In addition, two new flags are added that expand on the above ideas:
+
+  * LOOKUP_NO_SYMLINKS does what it says on the tin. No symlink
+    resolution is allowed at all, including magic-links. Just as with
+    LOOKUP_NO_MAGICLINKS this can still be used with NOFOLLOW to open an
+    fd for the symlink as long as no parent path had a symlink
+    component.
+
+  * LOOKUP_IN_ROOT is an extension of LOOKUP_BENEATH that, rather than
+    blocking attempts to move past the root, forces all such movements
+    to be scoped to the starting point. This provides chroot(2)-like
+    protection but without the cost of a chroot(2) for each filesystem
+    operation, as well as being safe against race attacks that chroot(2)
+    is not.
+
+    If a race is detected (as with LOOKUP_BENEATH) then an error is
+    generated, and similar to LOOKUP_BENEATH it is not permitted to cross
+    magic-links with LOOKUP_IN_ROOT.
+
+    The primary need for this is from container runtimes, which
+    currently need to do symlink scoping in userspace[6] when opening
+    paths in a potentially malicious container. There is a long list of
+    CVEs that could have bene mitigated by having RESOLVE_THIS_ROOT
+    (such as CVE-2017-1002101, CVE-2017-1002102, CVE-2018-15664, and
+    CVE-2019-5736, just to name a few).
+
+And further, several semantics of file descriptor "re-opening" are now
+changed to prevent attacks like CVE-2019-5736 by restricting how
+magic-links can be resolved (based on their mode). This required some
+other changes to the semantics of the modes of O_PATH file descriptor's
+associated /proc/self/fd magic-links. openat2(2) has the ability to
+further restrict re-opening of its own O_PATH fds, so that users can
+make even better use of this feature.
+
+Finally, O_EMPTYPATH was added so that users can do /proc/self/fd-style
+re-opening without depending on procfs. The new restricted semantics for
+magic-links are applied here too.
+
+In order to make all of the above more usable, I'm working on
+libpathrs[7] which is a C-friendly library for safe path resolution. It
+features a userspace-emulated backend if the kernel doesn't support
+openat2(2). Hopefully we can get userspace to switch to using it, and
+thus get openat2(2) support for free once it's ready.
+
+Cc: Al Viro <viro@zeniv.linux.org.uk>
+Cc: Eric Biederman <ebiederm@xmission.com>
+Cc: Andy Lutomirski <luto@kernel.org>
+Cc: David Howells <dhowells@redhat.com>
+Cc: Jann Horn <jannh@google.com>
+Cc: Christian Brauner <christian@brauner.io>
+Cc: David Drysdale <drysdale@google.com>
+Cc: Tycho Andersen <tycho@tycho.ws>
+Cc: Kees Cook <keescook@chromium.org>
+Cc: Linus Torvalds <torvalds@linux-foundation.org>
+Cc: <containers@lists.linux-foundation.org>
+Cc: <linux-fsdevel@vger.kernel.org>
+Cc: <linux-api@vger.kernel.org>
+
+[1]: https://lwn.net/Articles/721443/
+[2]: https://lore.kernel.org/patchwork/patch/784221/
+[3]: https://lwn.net/Articles/619151/
+[4]: https://lwn.net/Articles/603929/
+[5]: https://lwn.net/Articles/723057/
+[6]: https://github.com/cyphar/filepath-securejoin
+[7]: https://github.com/openSUSE/libpathrs
+
+Aleksa Sarai (9):
+  namei: obey trailing magic-link DAC permissions
+  procfs: switch magic-link modes to be more sane
+  open: O_EMPTYPATH: procfs-less file descriptor re-opening
+  namei: O_BENEATH-style path resolution flags
+  namei: LOOKUP_IN_ROOT: chroot-like path resolution
+  namei: aggressively check for nd->root escape on ".." resolution
+  open: openat2(2) syscall
+  kselftest: save-and-restore errno to allow for %m formatting
+  selftests: add openat2(2) selftests
+
+ Documentation/filesystems/path-lookup.rst     |  12 +-
+ arch/alpha/include/uapi/asm/fcntl.h           |   1 +
+ arch/alpha/kernel/syscalls/syscall.tbl        |   1 +
+ arch/arm/tools/syscall.tbl                    |   1 +
+ arch/arm64/include/asm/unistd.h               |   2 +-
+ arch/arm64/include/asm/unistd32.h             |   2 +
+ arch/ia64/kernel/syscalls/syscall.tbl         |   1 +
+ arch/m68k/kernel/syscalls/syscall.tbl         |   1 +
+ arch/microblaze/kernel/syscalls/syscall.tbl   |   1 +
+ arch/mips/kernel/syscalls/syscall_n32.tbl     |   1 +
+ arch/mips/kernel/syscalls/syscall_n64.tbl     |   1 +
+ arch/mips/kernel/syscalls/syscall_o32.tbl     |   1 +
+ arch/parisc/include/uapi/asm/fcntl.h          |  39 +-
+ arch/parisc/kernel/syscalls/syscall.tbl       |   1 +
+ arch/powerpc/kernel/syscalls/syscall.tbl      |   1 +
+ arch/s390/kernel/syscalls/syscall.tbl         |   1 +
+ arch/sh/kernel/syscalls/syscall.tbl           |   1 +
+ arch/sparc/include/uapi/asm/fcntl.h           |   1 +
+ arch/sparc/kernel/syscalls/syscall.tbl        |   1 +
+ arch/x86/entry/syscalls/syscall_32.tbl        |   1 +
+ arch/x86/entry/syscalls/syscall_64.tbl        |   1 +
+ arch/xtensa/kernel/syscalls/syscall.tbl       |   1 +
+ fs/fcntl.c                                    |   2 +-
+ fs/internal.h                                 |   1 +
+ fs/namei.c                                    | 270 ++++++++++--
+ fs/open.c                                     | 112 ++++-
+ fs/proc/base.c                                |  20 +-
+ fs/proc/fd.c                                  |  23 +-
+ fs/proc/namespaces.c                          |   2 +-
+ include/linux/fcntl.h                         |  17 +-
+ include/linux/fs.h                            |   8 +-
+ include/linux/namei.h                         |   9 +
+ include/linux/syscalls.h                      |  17 +-
+ include/uapi/asm-generic/fcntl.h              |   4 +
+ include/uapi/asm-generic/unistd.h             |   4 +-
+ include/uapi/linux/fcntl.h                    |  42 ++
+ tools/testing/selftests/Makefile              |   1 +
+ tools/testing/selftests/kselftest.h           |  15 +
+ tools/testing/selftests/memfd/memfd_test.c    |   7 +-
+ tools/testing/selftests/openat2/.gitignore    |   1 +
+ tools/testing/selftests/openat2/Makefile      |   8 +
+ tools/testing/selftests/openat2/helpers.c     | 162 +++++++
+ tools/testing/selftests/openat2/helpers.h     | 114 +++++
+ .../testing/selftests/openat2/linkmode_test.c | 326 ++++++++++++++
+ .../selftests/openat2/rename_attack_test.c    | 124 ++++++
+ .../testing/selftests/openat2/resolve_test.c  | 397 ++++++++++++++++++
+ 46 files changed, 1652 insertions(+), 107 deletions(-)
+ create mode 100644 tools/testing/selftests/openat2/.gitignore
+ create mode 100644 tools/testing/selftests/openat2/Makefile
+ create mode 100644 tools/testing/selftests/openat2/helpers.c
+ create mode 100644 tools/testing/selftests/openat2/helpers.h
+ create mode 100644 tools/testing/selftests/openat2/linkmode_test.c
+ create mode 100644 tools/testing/selftests/openat2/rename_attack_test.c
+ create mode 100644 tools/testing/selftests/openat2/resolve_test.c
+
+-- 
+2.22.0
 
 
 _______________________________________________
