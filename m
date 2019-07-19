@@ -2,83 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 26CF56E541
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 13:53:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 334C96E557
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 14:04:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VfEbRjoKRB2j/AogVvhqp1u9yk+FeojIEg6YeVuaxno=; b=YOLVrDowA2/GXu
-	dElyNDcZ04VM4zPl37mNhFTXaqSOAAjv/pDu28rajCGhE2jHvQS9WncJDcMG7LUnabLs6e8ph5Aae
-	dUoGE/3DY2MNhuMEgHY8g7hvxTmS1worvQ/kfFqKgAHW+/niVpBgmVMmrNemqoaA+1sa1Ex55f0RV
-	jnmpWnc9vouw/bZAxt4ed6mzs/CBsKzPIw1aAlSpoEcTGS1gaM5mub1c7+EVK4OGRetbnsw/Xu3e/
-	m8TbZr8rM1uSCCShXtcFr8et6nTdRJn9i2+AzM53rV9AyUjQ0P3c3/ReJue9dBF3rMNM/eV9O9xbd
-	qqOv0JlS9Itwh6VdY83A==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7lHPCk4xkFvV4F7kJDy21B23EymIirt8MLla8b7e8j0=; b=kwGb5sqMJgW4XV
+	qLa886oNKNdcHaFgbipJualRDl0JhhCzRp3P2BQi40qS2LO9SemaxjFCYN8QZyat6k8nNyYAJgx/m
+	ORM18g2wNVt+brNoSWc/7C+W0TD7I6Z3SPe+k5forf9b9ZPYnFrDDLZt/9k1oyfrv9GUnQB1MWL6t
+	SHxm1eDSTyNgnMUzZ7blsiYXoypYmEtEmgZNQqpOEhKGtzZZsPsoqVB19jwp+5jvuLjBYwTOrbW6n
+	rgOQldppn7OKKotD94jdA4bvgvunQsfKiIaPQw91Jkm7XJUzw+w8pYtOQiwt/ALF1Fb2OSgMUuHE/
+	6oJXhuNwMgxbIrmH2G6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoRSI-0001uN-G6; Fri, 19 Jul 2019 11:53:42 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1hoRcn-0005jp-8u; Fri, 19 Jul 2019 12:04:33 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hoRS4-0001tz-Sc
- for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 11:53:30 +0000
-Received: by mail-pf1-x441.google.com with SMTP id y15so14092666pfn.5
+ id 1hoRcZ-0005jQ-5B
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 12:04:20 +0000
+Received: by mail-wr1-x441.google.com with SMTP id c2so28818969wrm.8
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 19 Jul 2019 04:53:28 -0700 (PDT)
+ Fri, 19 Jul 2019 05:04:18 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=7BQWVFk5xnfvY43V3HP4RUSBIEVm8NfFwU/OWhiUguc=;
- b=m14xS8Ld/wkugydyp1wPJICiD4EZ+GAzIwpCJUIwTOwmHroduRA2AOmXy/2OTSy/OH
- b2nY8TqpAn7eD29M+OJ7jQ0xs2NmYlTleUX8hIvZ4JCn4nOcKyWrTIoxOk7PHqw+2efO
- dVcoDfo17nQotY+imVuy8lIqw3klmXSskBNldqft1gmIyGmG2g8LMgOfs94K9S0arRIf
- 88aZ0VvQhi3NEMoQlfBebxeqbKVZTAJhII1aoMMX1cydv8DwmHNwZh2ooqHmwapnuDPy
- aWNzM32UK/trXBmqx3+upJTFRdcUYLqJIoP5BmNjuyTF+4U5ThU/l2qwHix6qP6/il0H
- 7N6A==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=d8IFcivDoTqK2Ev9EUILZscktm0lR7SvblA9hq9LNWg=;
+ b=j/bj0S4PAnoMQzdMr/jqG6zHX3uvlVV4jQWKFchLU2VUyGh6TOQ7NZK/qEEv9WMMMt
+ mFolvVmLLT0Tiu04cvEdBVhpHbv2VKKvtzHbVl0jAexSvVIjQgXRMo6dz4pl9JlRQAgC
+ Kz91969RlF85z7Hidel82qDRb6mdahXnAcvckGD6nMBOWfK5bMRuk30/I1EjocxaJlbe
+ MwKxdqEHN5Mbpo+Fx5Xh00dnlS+f8GT18YRQo39Zd9NIFOqWadxyLySllGPcRsuS4nVG
+ s28HKmZw7xMGb8K9Om2DN+nsp54I1cnKsJets1anYAbfvCATzz89M8sEf0sFSneJzAzE
+ cZdw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=7BQWVFk5xnfvY43V3HP4RUSBIEVm8NfFwU/OWhiUguc=;
- b=ZAe60y2MsDRpxA7dCD7f8PDBGMoXZHpF/5B7URBjWiqdCHQi7X5LnO2dAqAAmjX4if
- GqiBtNkFAD6NBSjPQJ8UUHK5SZbEAyETjlcD74PU+xlhZ/34ufeNxw8KkhJjYZKr72Mc
- 3/DhWs94zD7SSaDcAj/W/IGatloxGRmb90qaraRHhdrhQiCliIno1MFDC4aYN2wR2VLK
- ImROhwpJz2PGv7HbOoeEsmuVb2dxPS6IWRQHYIymcyk9xDeJhlCbnP2wN79bvKVKy4g6
- JIJrJNKQIHkntoyoJL6E/0ThJ3VMtDn572irS5km+ImT98A2qx8EKlPgPFP9Sx1KB5tY
- g/eA==
-X-Gm-Message-State: APjAAAVODPdy9WHHJI/63FZvRInfBako1cwegbMhRtt0oz/8jvOAqNJR
- kbYzFTYbMcnOAIMfLHx12eM=
-X-Google-Smtp-Source: APXvYqwsybHi6eEwHb23QA32buHWpS8rl4ER9/dYM50aRVRtMMZZpWQTfL6OT5LSZ/rAAsXAj618tg==
-X-Received: by 2002:a63:4c17:: with SMTP id z23mr14499235pga.167.1563537208055; 
- Fri, 19 Jul 2019 04:53:28 -0700 (PDT)
-Received: from suzukaze.ipads-lab.se.sjtu.edu.cn ([89.31.126.54])
- by smtp.gmail.com with ESMTPSA id v184sm30587380pfb.82.2019.07.19.04.53.25
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Fri, 19 Jul 2019 04:53:27 -0700 (PDT)
-From: Chuhong Yuan <hslester96@gmail.com>
-To: 
-Subject: [PATCH] Input: touchscreen - Use dev_get_drvdata
-Date: Fri, 19 Jul 2019 19:53:08 +0800
-Message-Id: <20190719115307.22124-1-hslester96@gmail.com>
-X-Mailer: git-send-email 2.20.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=d8IFcivDoTqK2Ev9EUILZscktm0lR7SvblA9hq9LNWg=;
+ b=eaQIvL8hy0TIa8sWYh1KvlWFrmgdE+b/R/hcY6uY11rs3kXF0+MKyGO/PcH19wwXeK
+ aKobQuSs3xCa/EVsUDFW36iGZRwahm9y5gf9JNU3rTk+zLOhlYCAL22q7PH0KkbX2wg1
+ OCNY/7nx+bmfYFXQ8fv40bozMnyinmbm/IjM51APEBf0n9rUCKQBN15x8296nlXAy0HB
+ AUq7ceBs+nMa3s8cV651W2JwKWujnuAHzAVxWfz+1tBwa1b31op277Xahfv5tkl0wBjZ
+ JMdihyPj1zJyDj442SEJzSzpw4RUkmMCt8BpPs/0KciLeRxsyaMWOKuIKvsV4kVmCsOe
+ hJPw==
+X-Gm-Message-State: APjAAAX826iDre06qdZPulld4a1kiDSwOt/eiAaXUrCNUZ1AkpFlYzec
+ gSJiW1RgIaRbExxaVvgUKxJjSdewOVe9UP0gZsk=
+X-Google-Smtp-Source: APXvYqwBxjlxJegOY2UTKf4DLSgACoj1+MUtFGTXOMcJBBbqQCcN6MmCZg9QAv307R1lFOoMUph5BNq9+6hcKREQlao=
+X-Received: by 2002:a5d:46cf:: with SMTP id g15mr58332007wrs.93.1563537857525; 
+ Fri, 19 Jul 2019 05:04:17 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190719104802.18070-1-andradanciu1997@gmail.com>
+ <20190719104802.18070-2-andradanciu1997@gmail.com>
+ <CAOMZO5Btu1Shou=dGRrG74e5UjHnh7NtR4+4ETK0t_1Zt48Crw@mail.gmail.com>
+In-Reply-To: <CAOMZO5Btu1Shou=dGRrG74e5UjHnh7NtR4+4ETK0t_1Zt48Crw@mail.gmail.com>
+From: Daniel Baluta <daniel.baluta@gmail.com>
+Date: Fri, 19 Jul 2019 15:04:05 +0300
+Message-ID: <CAEnQRZByhULeq14BLbH4JzJwgL2+5hUaPn8=osZqVWrEMpCN6g@mail.gmail.com>
+Subject: Re: [PATCH v4 1/2] arm64: dts: fsl: pico-pi: Add a device tree for
+ the PICO-PI-IMX8M
+To: Fabio Estevam <festevam@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190719_045328_951973_20AA42CA 
-X-CRM114-Status: UNSURE (   9.87  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190719_050419_204686_7F001D0F 
+X-CRM114-Status: GOOD (  11.15  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (hslester96[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (hslester96[at]gmail.com)
+ provider (daniel.baluta[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -99,52 +95,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sascha Hauer <s.hauer@pengutronix.de>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- Chuhong Yuan <hslester96@gmail.com>, linux-kernel@vger.kernel.org,
- linux-input@vger.kernel.org, Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Ping Bai <ping.bai@nxp.com>,
+ Bhaskar Upadhaya <bhaskar.upadhaya@nxp.com>,
+ "Angus Ainslie \(Purism\)" <angus@akkea.ca>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>, sriram.dash@nxp.com,
+ Richard Hu <richard.hu@technexion.com>,
+ Andrey Smirnov <andrew.smirnov@gmail.com>, pankaj.bansal@nxp.com,
+ NXP Linux Team <linux-imx@nxp.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, andradanciu1997 <andradanciu1997@gmail.com>,
+ =?UTF-8?B?TWljaGFsIFZva8OhxI0=?= <Michal.Vokac@ysoft.com>,
+ Pramod Kumar <pramod.kumar_1@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Rob Herring <robh+dt@kernel.org>, Vabhav Sharma <vabhav.sharma@nxp.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Dong Aisheng <aisheng.dong@nxp.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>, Li Yang <leoyang.li@nxp.com>,
+ Sascha Hauer <kernel@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>,
+ Lucas Stach <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-dev_get_drvdata is a simpler implementation comparing
-to to_platform_device + platform_get_drvdata.
-This makes the code simpler.
+On Fri, Jul 19, 2019 at 2:22 PM Fabio Estevam <festevam@gmail.com> wrote:
+>
+> Hi Andra,
+>
+> On Fri, Jul 19, 2019 at 7:48 AM andradanciu1997
+> <andradanciu1997@gmail.com> wrote:
+>
+> > +       pmic: pmic@4b {
+> > +               reg = <0x4b>;
+> > +               compatible = "rohm,bd71837";
+> > +               /* PMIC BD71837 PMIC_nINT GPIO1_IO12 */
+> > +               pinctrl-names = "default";
+> > +               pinctrl-0 = <&pinctrl_pmic>;
+> > +               clocks = <&pmic_osc>;
+> > +               clock-names = "osc";
+> > +               clock-output-names = "pmic_clk";
+> > +               interrupt-parent = <&gpio1>;
+> > +               interrupts = <3 GPIO_ACTIVE_LOW>;
+> > +               interrupt-names = "irq";
+> > +
+> > +               regulators {
+> > +                       #address-cells = <1>;
+> > +                       #size-cells = <0>;
+>
+> #address-cells and  #size-cells are not needed and they cause warnings with W=1:
+>
+>   DTC     arch/arm64/boot/dts/freescale/imx8mq-pico-pi.dtb
+> arch/arm64/boot/dts/freescale/imx8mq-pico-pi.dts:77.14-196.5: Warning
+> (avoid_unnecessary_addr_size):
+> /soc@0/bus@30800000/i2c@30a20000/pmic@4b/regulators: unnecessary
+> #address-cells/#size-cells without "ranges" or child "reg" property
+>
+> Please remove them.
 
-Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
----
- drivers/input/touchscreen/imx6ul_tsc.c | 6 ++----
- 1 file changed, 2 insertions(+), 4 deletions(-)
+Thanks Fabio for review, we learned something new today :).
 
-diff --git a/drivers/input/touchscreen/imx6ul_tsc.c b/drivers/input/touchscreen/imx6ul_tsc.c
-index e04eecd65bbb..655652f449ec 100644
---- a/drivers/input/touchscreen/imx6ul_tsc.c
-+++ b/drivers/input/touchscreen/imx6ul_tsc.c
-@@ -507,8 +507,7 @@ static int imx6ul_tsc_probe(struct platform_device *pdev)
- 
- static int __maybe_unused imx6ul_tsc_suspend(struct device *dev)
- {
--	struct platform_device *pdev = to_platform_device(dev);
--	struct imx6ul_tsc *tsc = platform_get_drvdata(pdev);
-+	struct imx6ul_tsc *tsc = dev_get_drvdata(dev);
- 	struct input_dev *input_dev = tsc->input;
- 
- 	mutex_lock(&input_dev->mutex);
-@@ -527,8 +526,7 @@ static int __maybe_unused imx6ul_tsc_suspend(struct device *dev)
- 
- static int __maybe_unused imx6ul_tsc_resume(struct device *dev)
- {
--	struct platform_device *pdev = to_platform_device(dev);
--	struct imx6ul_tsc *tsc = platform_get_drvdata(pdev);
-+	struct imx6ul_tsc *tsc = dev_get_drvdata(dev);
- 	struct input_dev *input_dev = tsc->input;
- 	int retval = 0;
- 
--- 
-2.20.1
-
+Daniel.
 
 _______________________________________________
 linux-arm-kernel mailing list
