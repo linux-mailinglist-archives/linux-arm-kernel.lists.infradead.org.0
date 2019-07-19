@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C3AD86DBF2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 06:12:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C96B6DC09
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 06:13:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/z5MgQLB2jG7RRZzAj6I+SG0EUhnWZvxDDnu1G62pJg=; b=JIQbE7+RfPT6p5
-	fS+ezkgrgjsAiFr4AMarNkuivLrpGz/DYx3dghCGVliIEtvobDAaI3+LcxqO1gL0cY/svU+zZv0GW
-	m/JLg1gLW0zAfia29iouRO8R/cERDjWpvDCEFD/Z/SGOEyGcqunp/dBHT0/J/8JIGn+ulrPlXBWTR
-	EGijQCFV4VI0FvypwrjEyk26ZRI7Njo57xj0Zx8zqhDz9WHVPcYauEGgDZVktD9Omgbhg7Tnrn8Pe
-	NFbX7E10aEwnJ3t3v+EGN4YxgqRClPNqnuq6UpPMaGBJokFX8A8fT6g+MV6eZbLYvqQIvZ/BOg3dZ
-	EP7EX1f9hjapWSLLmmmw==;
+	List-Owner; bh=SdccieGptA5gXzl+mjv4wlcQcZliHuXTS1pmEbW5pb8=; b=TCh3uxVyAk/ob4
+	2P2idbUKj45bGEQH4d6shHYacHNhD0XOnWcu91lpBJwFmycJwo6G47DsXFp3YTgZ9xSJq6INDtbSK
+	Zgsz0BIjEUO/vPLUHDfPLUxkO1VLlVNBdUpRMuBEGhDBiadEDcqsHQPjG2kWmQsZt8EXfWJB96Ow8
+	z/+ZX/KigBpd6GcTe0aJMSt5/7zcTe65JdM7rgC0wbrKG0LSNCacfa32SX5HsJXf3R4BdabYTcLd1
+	BeiihYVKlGPKvDcmj1E8PGooDFQVdIzyFXR6zJdPnBIvXa9q2JgfvrMv/mGj/jndbA7z29AKBzwQ8
+	qtKOMxt6Wwf2rWYozyBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoKGJ-0007dK-Kq; Fri, 19 Jul 2019 04:12:51 +0000
+	id 1hoKGq-00081K-Ah; Fri, 19 Jul 2019 04:13:24 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hoKDc-00055h-Lv
- for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 04:10:08 +0000
+ id 1hoKDg-0005QO-Pp
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 04:10:13 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A5EE3218BB;
- Fri, 19 Jul 2019 04:10:01 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id F3BD7218FC;
+ Fri, 19 Jul 2019 04:10:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563509404;
- bh=CBkSy7d+E674j8wY1H4Ek5ANstwowXqLvTKGUaCkgZU=;
+ s=default; t=1563509408;
+ bh=uGoQiG/mJkaOvh55gbvtuV4pv/7oBnZU9VHpmmBJNm0=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=rH7Lojd4Z00gjyX7jGAkDLqtw8zNNvzMcTXCcp6jQVOgpi1Vm3F2O8RYHH9ZQxutH
- ct6SzjIeeb2Y4eB3F7tSW7NaLu4ijHsynmWcckk2061Efr+AnHTjC7WAUzpAkWHoSz
- 381BHRl11gR7ICTkWEiLsMqvBU88EzThlJwdRd+U=
+ b=GqMwNA3oDzaWCiaHZR1mbZrQ6UlSE2c5BwM1OQx3Kj5J0bb+NgXc76J14C4ivBpOP
+ 54cwZKLOzF8OFcI/obw8aSCcKoajDp8oxvlhTMr8L0XmEcpf1Nk7/nlKuBJxtL5qEz
+ R/sN0g9rg3sC1oTRvJPHJLgn/KHyH9zTpNwFVtIY=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 074/101] perf session: Fix potential NULL pointer
- dereference found by the smatch tool
-Date: Fri, 19 Jul 2019 00:07:05 -0400
-Message-Id: <20190719040732.17285-74-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 075/101] perf annotate: Fix dereferencing freed
+ memory found by the smatch tool
+Date: Fri, 19 Jul 2019 00:07:06 -0400
+Message-Id: <20190719040732.17285-75-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190719040732.17285-1-sashal@kernel.org>
 References: <20190719040732.17285-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_211005_588429_9476A72A 
-X-CRM114-Status: GOOD (  11.39  )
+X-CRM114-CacheID: sfid-20190718_211009_092370_AAF249FD 
+X-CRM114-Status: GOOD (  13.28  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -105,33 +105,47 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Leo Yan <leo.yan@linaro.org>
 
-[ Upstream commit f3c8d90757724982e5f07cd77d315eb64ca145ac ]
+[ Upstream commit 600c787dbf6521d8d07ee717ab7606d5070103ea ]
 
 Based on the following report from Smatch, fix the potential
-NULL pointer dereference check.
+dereferencing freed memory check.
 
-  tools/perf/util/session.c:1252
-  dump_read() error: we previously assumed 'evsel' could be null
-  (see line 1249)
+  tools/perf/util/annotate.c:1125
+  disasm_line__parse() error: dereferencing freed memory 'namep'
 
-  tools/perf/util/session.c
-  1240 static void dump_read(struct perf_evsel *evsel, union perf_event *event)
-  1241 {
-  1242         struct read_event *read_event = &event->read;
-  1243         u64 read_format;
-  1244
-  1245         if (!dump_trace)
-  1246                 return;
-  1247
-  1248         printf(": %d %d %s %" PRIu64 "\n", event->read.pid, event->read.tid,
-  1249                evsel ? perf_evsel__name(evsel) : "FAIL",
-  1250                event->read.value);
-  1251
-  1252         read_format = evsel->attr.read_format;
-                             ^^^^^^^
+  tools/perf/util/annotate.c
+  1100 static int disasm_line__parse(char *line, const char **namep, char **rawp)
+  1101 {
+  1102         char tmp, *name = ltrim(line);
 
-'evsel' could be NULL pointer, for this case this patch directly bails
-out without dumping read_event.
+  [...]
+
+  1114         *namep = strdup(name);
+  1115
+  1116         if (*namep == NULL)
+  1117                 goto out_free_name;
+
+  [...]
+
+  1124 out_free_name:
+  1125         free((void *)namep);
+                            ^^^^^
+  1126         *namep = NULL;
+               ^^^^^^
+  1127         return -1;
+  1128 }
+
+If strdup() fails to allocate memory space for *namep, we don't need to
+free memory with pointer 'namep', which is resident in data structure
+disasm_line::ins::name; and *namep is NULL pointer for this failure, so
+it's pointless to assign NULL to *namep again.
+
+Committer note:
+
+Freeing namep, which is the address of the first entry of the 'struct
+ins' that is the first member of struct disasm_line would in fact free
+that disasm_line instance, if it was allocated via malloc/calloc, which,
+later, would a dereference of freed memory.
 
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
 Acked-by: Jiri Olsa <jolsa@kernel.org>
@@ -155,27 +169,36 @@ Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
 Cc: Thomas Gleixner <tglx@linutronix.de>
 Cc: Thomas Richter <tmricht@linux.ibm.com>
 Cc: linux-arm-kernel@lists.infradead.org
-Link: http://lkml.kernel.org/r/20190702103420.27540-9-leo.yan@linaro.org
+Link: http://lkml.kernel.org/r/20190702103420.27540-5-leo.yan@linaro.org
 Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- tools/perf/util/session.c | 3 +++
- 1 file changed, 3 insertions(+)
+ tools/perf/util/annotate.c | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
 
-diff --git a/tools/perf/util/session.c b/tools/perf/util/session.c
-index 11086097fc9f..f016d1b330e5 100644
---- a/tools/perf/util/session.c
-+++ b/tools/perf/util/session.c
-@@ -1141,6 +1141,9 @@ static void dump_read(struct perf_evsel *evsel, union perf_event *event)
- 	       evsel ? perf_evsel__name(evsel) : "FAIL",
- 	       event->read.value);
+diff --git a/tools/perf/util/annotate.c b/tools/perf/util/annotate.c
+index dfee110b3a58..63e2b4efe817 100644
+--- a/tools/perf/util/annotate.c
++++ b/tools/perf/util/annotate.c
+@@ -1080,16 +1080,14 @@ static int disasm_line__parse(char *line, const char **namep, char **rawp)
+ 	*namep = strdup(name);
  
-+	if (!evsel)
-+		return;
-+
- 	read_format = evsel->attr.read_format;
+ 	if (*namep == NULL)
+-		goto out_free_name;
++		goto out;
  
- 	if (read_format & PERF_FORMAT_TOTAL_TIME_ENABLED)
+ 	(*rawp)[0] = tmp;
+ 	*rawp = ltrim(*rawp);
+ 
+ 	return 0;
+ 
+-out_free_name:
+-	free((void *)namep);
+-	*namep = NULL;
++out:
+ 	return -1;
+ }
+ 
 -- 
 2.20.1
 
