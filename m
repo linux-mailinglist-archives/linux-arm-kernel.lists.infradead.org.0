@@ -2,65 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16B016EB87
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 22:20:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EBDD26EBAA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 22:38:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aZGkYMPexFbDEFH0vfNJ26xRP6/1R01qiec2orTmCZE=; b=avHAuT2/dQ5EGF
-	poNmt2RukpyGvmo0sfGZcWioMeUKNYs7kPwu38CwJddSsDwdn/BoOnKXcdSmvvbzq2HlL6QGj1w0P
-	Cv36m2fUhG9hVLtLQn3njxYNFPapp9/x4JSeOr+TWK6tHw99b5mmdSxMGw98WtPjhdREwbuZPt5jf
-	P/touw+i5PYXNP+QZ2XE/PHeE5FyYrzmIW33HO3B8wm2bPdQab+qLqbTbXCTnBF1d7EsGi23wGuUY
-	47WPwc/vB68Dj/uUZyzTpzLlD8wiZWYoMojTyTF/IRQaiiMEwpEPCdxPs4DrqlN9v4k/Txx+isCKx
-	3aVn73WGR70TZI/e/wvQ==;
+	List-Owner; bh=DnJmvZFJC9iPheSMVG5ZhiN5xh+G44NXGSyeQbruaXw=; b=Cm1c7xUyuHRpME
+	QXEW+Ib6aruYm8B/WJqnYzmjcdXHVaRxEhxdtMBsNXiMwdEi9TK/cThvY79LnIML1ZJmpBD9iBopm
+	BCNuK1XH6sCqzJEdA2r2tixbYWpSa+vzLwM2JxFvrez8MEMUWJZORdYc7vTtvljNDL/T5yVgHN4oH
+	rTfvxU2lU3gw6UEmcIKNltbCaw8CIHqwY+QsPzeGS1sIo7GIQnRQXqM/YsHOZ9w/nxFxbHk7NY8zN
+	9qof/JkNWziw/O4NbHswWkMsU0vANW1bdXQZn42FCFuA9f3aBxRo0YxQDnSDBAU7yVsp3t5ZxQVr2
+	PdE/avmTyKFc72bDN98w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoZMU-0001oV-2W; Fri, 19 Jul 2019 20:20:14 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1hoZeL-0007qE-FK; Fri, 19 Jul 2019 20:38:41 +0000
+Received: from atlmailgw1.ami.com ([63.147.10.40])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hoZMC-0001o1-1L
- for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 20:19:57 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1hoZM8-0006aX-IH; Fri, 19 Jul 2019 22:19:52 +0200
-Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1hoZM5-0005uR-7Z; Fri, 19 Jul 2019 22:19:49 +0200
-Date: Fri, 19 Jul 2019 22:19:49 +0200
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Sergey Organov <sorganov@gmail.com>
-Subject: Re: [PATCH v4 1/3] serial: imx: set_termios(): do not enable autoRTS
- if RTS is unset
-Message-ID: <20190719201949.ldqlcwjhcmt7wwhg@pengutronix.de>
-References: <20190614072801.3187-1-s.hauer@pengutronix.de>
- <1563526074-20399-1-git-send-email-sorganov@gmail.com>
- <1563526074-20399-2-git-send-email-sorganov@gmail.com>
- <20190719091143.uhjxeibtolgswq2l@pengutronix.de>
- <87h87idxq2.fsf@osv.gnss.ru>
- <20190719143151.gx43ndn2oy35h247@pengutronix.de>
- <87woge9hvz.fsf@osv.gnss.ru>
+ id 1hoZe7-0007pN-Iu
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 20:38:29 +0000
+X-AuditID: ac1060b2-3fdff70000003a7d-d3-5d322a4365dd
+Received: from atlms1.us.megatrends.com (atlms1.us.megatrends.com
+ [172.16.96.144])
+ (using TLS with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by atlmailgw1.ami.com (Symantec Messaging Gateway) with SMTP id
+ AD.8C.14973.34A223D5; Fri, 19 Jul 2019 16:38:27 -0400 (EDT)
+Received: from hongweiz-Ubuntu-AMI.us.megatrends.com (172.16.98.93) by
+ atlms1.us.megatrends.com (172.16.96.144) with Microsoft SMTP Server (TLS) id
+ 14.3.408.0; Fri, 19 Jul 2019 16:38:24 -0400
+From: Hongwei Zhang <hongweiz@ami.com>
+To: <hongweiz@ami.com>, Andrew Jeffery <andrew@aj.id.au>, Linus Walleij
+ <linus.walleij@linaro.org>, <linux-gpio@vger.kernel.org>
+Subject: dt-bindings: gpio: aspeed: Add SGPIO support 
+Date: Fri, 19 Jul 2019 16:37:24 -0400
+Message-ID: <1563568644-10392-1-git-send-email-hongweiz@ami.com>
+X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1563394325-15941-1-git-send-email-hongweiz@ami.com>
+References: <1563394325-15941-1-git-send-email-hongweiz@ami.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <87woge9hvz.fsf@osv.gnss.ru>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+X-Originating-IP: [172.16.98.93]
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrGLMWRmVeSWpSXmKPExsWyRiBhgq6zllGswdyFsha7LnNYfJl7isVi
+ /pFzrBa/z/9ltpjyZzmTxabH11gtmlefY7bYPP8Po8XlXXPYLJZev8hk0br3CLsDt8fV9l3s
+ HmvmrWH0eH+jld3j4sdjzB6bVnWyedy5tofNY/OSeo/zMxYyenzeJBfAGcVlk5Kak1mWWqRv
+ l8CVcWw9S8ENuYqVz24yNjDOluhi5OSQEDCReLr4J2sXIxeHkMAuJonuExeZIJzDjBKr755i
+ BKliE1CT2Lt5DlhCRKCJUeJt02cwh1lgBZNE87Q37CBVwgJmEm8mnGQDsVkEVCXOrF7JCmLz
+ CjhIdJ5rZYbYJydx81wnmM0p4Cgx+eU8MFsIqObN02NMEPWCEidnPmEBsZkFJCQOvngBVSMr
+ cevQYyaIOQoSz/ses0xgFJiFpGUWkpYFjEyrGIUSS3JyEzNz0ssN9RJzM/WS83M3MULiYtMO
+ xpaL5ocYmTgYDzFKcDArifDefqkfK8SbklhZlVqUH19UmpNafIhRmoNFSZx35ZpvMUIC6Ykl
+ qdmpqQWpRTBZJg5OqQZGYXNpDvuN5RdiYoOenjvHVrb9X7Fv8IzT82acjtSboHD2/Jmzsra5
+ r3p7P1SvnKPE4hwU9vTjRdtPFWzX/QoF/fr3mUen9YhYzlyzs3fK5NczPa9/O/Kr7d5UZv62
+ DwrX7TidK9Qa91xjMO/8X8Pk8nWN2vurX/jSXqfo/E37yCryvX/eun4dJZbijERDLeai4kQA
+ krwKtHkCAAA=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190719_131956_079754_45E9734C 
-X-CRM114-Status: GOOD (  21.53  )
+X-CRM114-CacheID: sfid-20190719_133827_691320_0E8A98A8 
+X-CRM114-Status: GOOD (  26.41  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [63.147.10.40 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -74,114 +79,130 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-serial@vger.kernel.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-aspeed@lists.ozlabs.org, linux-kernel@vger.kernel.org,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jul 19, 2019 at 06:13:52PM +0300, Sergey Organov wrote:
-> Hello Uwe,
-> =
+Hello Andrew,
 
-> Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de> writes:
-> > Hello Sergey,
+Thanks for reviewing and please see my inline comments.
+
+--Hongwei
+
+> From:	Andrew Jeffery <andrew@aj.id.au>
+> Sent:	Wednesday, July 17, 2019 9:48 PM
+> To:	Hongwei Zhang; Joel Stanley; Linus Walleij; devicetree@vger.kernel.org
+> Cc:	Rob Herring; Mark Rutland; Bartosz Golaszewski; linux-aspeed@lists.ozlabs.org; linux-
+> kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org; linux-gpio@vger.kernel.org
+> Subject:	Re: [PATCH 2/3 v4] dt-bindings: gpio: aspeed: Add SGPIO support
+> 
+> The subject is largely correct, but please see the discussion on the driver patch about how to clean up 
+> the [PATCH ...] prefix.
+> 
+> On Thu, 18 Jul 2019, at 05:42, Hongwei Zhang wrote:
+> > Add bindings to support SGPIO on AST2400 or AST2500.
+> > 
+> > Signed-off-by: Hongwei Zhang <hongweiz@ami.com>
+> > ---
+> >  .../devicetree/bindings/gpio/sgpio-aspeed.txt      | 55 ++++++++++++++++++++++
+> >  1 file changed, 55 insertions(+)
+> >  create mode 100644 
+> > Documentation/devicetree/bindings/gpio/sgpio-aspeed.txt
+> > 
+> > diff --git a/Documentation/devicetree/bindings/gpio/sgpio-aspeed.txt
+> > b/Documentation/devicetree/bindings/gpio/sgpio-aspeed.txt
+> > new file mode 100644
+> > index 0000000..2d6305e
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/gpio/sgpio-aspeed.txt
+> > @@ -0,0 +1,55 @@
+> > +Aspeed SGPIO controller Device Tree Bindings
+> > +-------------------------------------------
+> > +
+> > +This SGPIO controller is for ASPEED AST2500 SoC, it supports up to 80
+> > full
+> > +featured Serial GPIOs. Each of the Serial GPIO pins can be programmed
+> > to
+> > +support the following options:
+> > +- Support interrupt option for each input port and various interrupt
+> > +  sensitivity option (level-high, level-low, edge-high, edge-low)
+> > +- Support reset tolerance option for each output port
+> > +- Directly connected to APB bus and its shift clock is from APB bus
+> > clock
+> > +  divided by a programmable value.
+> > +- Co-work with external signal-chained TTL components 
+> > +(74LV165/74LV595)
+> > +
+> > +
+> > +Required properties:
+> > +
+> > +- compatible		: Either "aspeed,ast2400-sgpio" or "aspeed,ast2500-sgpio"
+> > +
+> > +- #gpio-cells 		: Should be two
+> > +			  - First cell is the GPIO line number
+> > +			  - Second cell is used to specify optional
+> > +			    parameters (unused)
+> > +
+> > +- reg			: Address and length of the register set for the device
+> > +- gpio-controller	: Marks the device node as a GPIO controller
+> > +- interrupts		: Interrupt specifier (see interrupt bindings for
+> > +			  details)
+> > +
+> > +- interrupt-controller	: Mark the GPIO controller as an 
+> > interrupt-controller
+> > +
+> > +- nr-gpios		: number of GPIO pins to serialise. 
+> > +			  (should be multiple of 8, up to 80 pins)
+> 
+> Please change the property name to "ngpios", as per the generic GPIO bindings[1].
+> 
+> [1] 
+> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindi
+> ngs/gpio/gpio.txt?h=v5.2#n141
+
+done
+
+> 
+> Cheers,
+> 
+> Andrew
+> 
+> > +
+> > +- clocks                : A phandle to the APB clock for SGPM clock 
+> > division
+> > +
+> > +- bus-frequency		: SGPM CLK frequency
+> > +
+> > +
+> > +The sgpio and interrupt properties are further described in their
+> > respective bindings documentation:
+> > +
+> > +- Documentation/devicetree/bindings/sgpio/gpio.txt
+> > +- 
+> > +Documentation/devicetree/bindings/interrupt-controller/interrupts.txt
+> > +
+> > +  Example:
+> > +	sgpio: sgpio@1e780200 {
+> > +		#gpio-cells = <2>;
+> > +		compatible = "aspeed,ast2500-sgpio";
+> > +		gpio-controller;
+> > +		interrupts = <40>;
+> > +		reg = <0x1e780200 0x0100>;
+> > +		clocks = <&syscon ASPEED_CLK_APB>;
+> > +		interrupt-controller;
+> > +		nr-gpios = <8>;
+> > +		bus-frequency = <12000000>;
+> > +	};
+> > --
+> > 2.7.4
+> > 
 > >
-> > On Fri, Jul 19, 2019 at 03:18:13PM +0300, Sergey Organov wrote:
-> >> Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de> writes:
-> >> > On Fri, Jul 19, 2019 at 11:47:52AM +0300, Sergey Organov wrote:
-> >> >> diff --git a/drivers/tty/serial/imx.c b/drivers/tty/serial/imx.c
-> >> >> index 57d6e6b..95d7984 100644
-> >> >> --- a/drivers/tty/serial/imx.c
-> >> >> +++ b/drivers/tty/serial/imx.c
-> >> >> @@ -405,7 +405,8 @@ static void imx_uart_rts_inactive(struct imx_po=
-rt *sport, u32 *ucr2)
-> >> >>  /* called with port.lock taken and irqs caller dependent */
-> >> >>  static void imx_uart_rts_auto(struct imx_port *sport, u32 *ucr2)
-> >> >>  {
-> >> >> -	*ucr2 |=3D UCR2_CTSC;
-> >> >> +	if (*ucr2 & UCR2_CTS)
-> >> >> +		*ucr2 |=3D UCR2_CTSC;
-> >> >
-> >> > I think this patch is wrong or the commit log is insufficient.
-> >> > imx_uart_rts_auto() has only a single caller and there ucr2 & UCR2_C=
-TS is
-> >> > never true. And CTSC isn't restored anywhere, is it?
-> >> =
-
-> >> This is rebase to 'tty-next' branch, and you need to look at it in that
-> >> context. There, ucr2 & UCR2_CTS does already make sense, due to previo=
-us
-> >> fix that is already there.
-> >
-> > I looked at 57d6e6b which is the file you patched. And there
-> > imx_uart_rts_auto is only ever called with *ucr2 not having UCR2_CTS.
-> >
-> > If you still think I'm wrong, please improve the commit log
-> > accordingly.
-> =
-
-> I still think you are wrong, but I don't know how to improve commit log.
-> =
-
-> To check it once again, I just did:
-> =
-
-> $ git show 57d6e6b > imx.c
-> =
-
-> There, in imx_uart_set_termios(), I see:
-> =
-
-> 1569:	old_ucr2 =3D imx_uart_readl(sport, UCR2);
-> 1570:	ucr2 =3D old_ucr2 & (UCR2_TXEN | UCR2_RXEN | UCR2_ATEN | UCR2_CTS);
-> =
-
-> Here, current UCR2 value is read into 'old_ucr2' and then its /current/
-> UCR2_CTS bit is copied into 'ucr2' (along with 3 other bits).
-> =
-
-> Then, later in the same function:
-> =
-
-> 1591:		imx_uart_rts_auto(sport, &ucr2);
-> =
-
-> is called that can check /current/ state of UCR2_CTS bit in '*ucr2'.
-> =
-
-> That's what the patch does, checks this bit.
-> =
-
-> Sorry, I fail to see how you came to conclusion that "*ucr2 not having
-> UCR2_CTS". Do we maybe still read different versions of the file?
-
-No, it's just that I failed to see that UCR2_CTS is in the set of bits
-that are retained even when looking twice :-|
-
-So you convinced me that you are right and if you update the commit log
-as agreed already before and even add a comment in imx_uart_rts_auto
-along the lines of
-
-	/*
-	 * Only let the receiver control RTS output if we were not
-	 * requested to have RTS inactive (which then should take
-	 * precedence).
-	 */
-
-you can have my Ack.
-
-Best regards
-Uwe
-
--- =
-
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
 
 _______________________________________________
 linux-arm-kernel mailing list
