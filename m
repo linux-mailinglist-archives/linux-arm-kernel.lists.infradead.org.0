@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 17A216DAA7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 06:03:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 883F26DB17
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 06:06:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Bs/KbfYDNXthjIDlZbOBxB9eeM8HVrGuMr2XLjhCzJU=; b=m+03UAs4Xp4/vt
-	mQPF+fW4h7H1qiE0UpuhQRabuMdnjVHUe+gMQD+wTDDLlAZVSLJS25CP9a0F5ZUGBx4NiMkzpL6jI
-	w8TQmgwPDi2DmGIbUWAz/ndJKJYfHMXxxci+q04N7CMENG8OeCIMrjcuFNjEj9M+r7VWhlg2pd2Wd
-	7gSF64D+ZFXC3MUTWPt31SD4KkNMpWF41h/t/vwUQmYPT49k8e5snMB9t47MgHZbGoaihAy42Yj/1
-	WXcOpUJnTW8MtFUIIckD5J59MerPKjslB3zhFachuKBViBjym6opJK2+RkGey8D27zJQpkGe3ogmZ
-	cMfYAfNsrLyQYg5qKe4Q==;
+	List-Owner; bh=jC0A/C7KX9Gt30iQyw+Zlr8JRV1lARfbGb9H564m1po=; b=rVHtft/iwrQoIz
+	P7JIrF+c0ZDzWx2P6sumeNemn0/zfyVBj87hIZ2wZG9p06CLbe2puUm41GVuIn8eYCGLSv09lAQzO
+	w+uTnWYWoIdBL4QWJOivHjGPG8prRHFquFeTnmUCutFiyHzXo+fxdHG4cCqRcSMSPNnquhVS7n9FC
+	TIHy6zaJc7s9P8iNlE8gjym5fbxQKVi9HLmhcx480VQeQ0JbYW5/Qvhuhp3rAUNru0MfS3J2fnT1/
+	/VHSom5D5scw2q1mXsFbzJTkRZmxrZ35MOSPzmoTjqIbRksNUYTmqpZVaXHESCGKYTJXcqD+A8wZf
+	Gf9TU6LbudGJIEDrhMEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoK7Q-0008Hv-79; Fri, 19 Jul 2019 04:03:40 +0000
+	id 1hoKAJ-0002tQ-UH; Fri, 19 Jul 2019 04:06:40 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hoK5A-0006cR-ET
- for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 04:01:25 +0000
+ id 1hoK9Y-0002cy-N6
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 04:06:09 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7FC2F218BA;
- Fri, 19 Jul 2019 04:01:18 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id AE1F0218BC;
+ Fri, 19 Jul 2019 04:05:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563508879;
- bh=KvJVT3OxbW7ZfxoOeAj1LriJxnXXyQaXFDAw6GDtAw4=;
+ s=default; t=1563509152;
+ bh=uVOmfcGqr9MtGJMPPvp0QPQzFti5byiwdK2D7EFkMxY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ktqjFaQaWmZaDRYTXFVLDw7CKX4EgxcJacJjbJMGO04YuGqzYig5DgYgX0nv///Kl
- zTHEPC/ioVgf3e4vCNIXuKt5vTToTfLUDEEng4vEHhDFAuHv5dxRcNBeR12Pk9rxO9
- Z8HIyVh9ci6y0pEbdi/+CrrZFwHM/oTOV7tJTbSc=
+ b=Abuj0Z5Svq0paMwdVE/4okaZBzIJnrcQzSkRUG/+5nLbM9wfkHSMmLI6ENc3FsLSJ
+ FR/oUL9if+GnzxAjI6/bpP/drO3shRidTBNjgvbZEk0MU91MJnaW9/PBPodO/QU7M1
+ 7n9f3dsYCXTmf+2Hua4xuzLUll3vg3r/KBlNYR9g=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.2 133/171] perf intel-bts: Fix potential NULL
- pointer dereference found by the smatch tool
-Date: Thu, 18 Jul 2019 23:56:04 -0400
-Message-Id: <20190719035643.14300-133-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.1 098/141] perf top: Fix potential NULL pointer
+ dereference detected by the smatch tool
+Date: Fri, 19 Jul 2019 00:02:03 -0400
+Message-Id: <20190719040246.15945-98-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190719035643.14300-1-sashal@kernel.org>
-References: <20190719035643.14300-1-sashal@kernel.org>
+In-Reply-To: <20190719040246.15945-1-sashal@kernel.org>
+References: <20190719040246.15945-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_210120_536981_40676576 
-X-CRM114-Status: GOOD (  12.00  )
+X-CRM114-CacheID: sfid-20190718_210553_131616_8E68F76B 
+X-CRM114-Status: GOOD (  12.79  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,14 +80,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Andi Kleen <ak@linux.intel.com>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki Poulouse <suzuki.poulose@arm.com>,
+Cc: Song Liu <songliubraving@fb.com>,
+ Konstantin Khlebnikov <khlebnikov@yandex-team.ru>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>, Jin Yao <yao.jin@linux.intel.com>,
+ Sasha Levin <sashal@kernel.org>, Andi Kleen <ak@linux.intel.com>,
+ Alexey Budankov <alexey.budankov@linux.intel.com>,
  Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Suzuki Poulouse <suzuki.poulose@arm.com>,
+ Arnaldo Carvalho de Melo <acme@redhat.com>,
+ Alexios Zavras <alexios.zavras@intel.com>, Davidlohr Bueso <dave@stgolabs.net>,
+ Namhyung Kim <namhyung@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Thomas Richter <tmricht@linux.ibm.com>,
  Adrian Hunter <adrian.hunter@intel.com>,
- Arnaldo Carvalho de Melo <acme@redhat.com>, Leo Yan <leo.yan@linaro.org>,
- Namhyung Kim <namhyung@kernel.org>, Jiri Olsa <jolsa@redhat.com>,
- linux-arm-kernel@lists.infradead.org
+ "David S . Miller" <davem@davemloft.net>, Changbin Du <changbin.du@intel.com>,
+ Peter Zijlstra <peterz@infradead.org>, Jiri Olsa <jolsa@kernel.org>,
+ Leo Yan <leo.yan@linaro.org>,
+ Eric Saint-Etienne <eric.saint.etienne@oracle.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -95,71 +105,102 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Leo Yan <leo.yan@linaro.org>
 
-[ Upstream commit 1d481458816d9424c8a05833ce0ebe72194a350e ]
+[ Upstream commit 111442cfc8abdeaa7ec1407f07ef7b3e5f76654e ]
 
 Based on the following report from Smatch, fix the potential NULL
 pointer dereference check.
 
-  tools/perf/util/intel-bts.c:898
-  intel_bts_process_auxtrace_info() error: we previously assumed
-  'session->itrace_synth_opts' could be null (see line 894)
+  tools/perf/builtin-top.c:109
+  perf_top__parse_source() warn: variable dereferenced before check 'he'
+  (see line 103)
 
-  tools/perf/util/intel-bts.c:899
-  intel_bts_process_auxtrace_info() warn: variable dereferenced before
-  check 'session->itrace_synth_opts' (see line 898)
+  tools/perf/builtin-top.c:233
+  perf_top__show_details() warn: variable dereferenced before check 'he'
+  (see line 228)
 
-  tools/perf/util/intel-bts.c
-  894         if (session->itrace_synth_opts && session->itrace_synth_opts->set) {
-  895                 bts->synth_opts = *session->itrace_synth_opts;
-  896         } else {
-  897                 itrace_synth_opts__set_default(&bts->synth_opts,
-  898                                 session->itrace_synth_opts->default_no_sample);
-                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  899                 if (session->itrace_synth_opts)
-                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  900                         bts->synth_opts.thread_stack =
-  901                                 session->itrace_synth_opts->thread_stack;
-  902         }
+  tools/perf/builtin-top.c
+  101 static int perf_top__parse_source(struct perf_top *top, struct hist_entry *he)
+  102 {
+  103         struct perf_evsel *evsel = hists_to_evsel(he->hists);
+                                                        ^^^^
+  104         struct symbol *sym;
+  105         struct annotation *notes;
+  106         struct map *map;
+  107         int err = -1;
+  108
+  109         if (!he || !he->ms.sym)
+  110                 return -1;
 
-'session->itrace_synth_opts' is impossible to be a NULL pointer in
-intel_bts_process_auxtrace_info(), thus this patch removes the NULL test
-for 'session->itrace_synth_opts'.
+This patch moves the values assignment after validating pointer 'he'.
 
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
-Acked-by: Adrian Hunter <adrian.hunter@intel.com>
+Acked-by: Jiri Olsa <jolsa@kernel.org>
+Cc: Adrian Hunter <adrian.hunter@intel.com>
 Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
+Cc: Alexey Budankov <alexey.budankov@linux.intel.com>
+Cc: Alexios Zavras <alexios.zavras@intel.com>
 Cc: Andi Kleen <ak@linux.intel.com>
-Cc: Jiri Olsa <jolsa@redhat.com>
+Cc: Changbin Du <changbin.du@intel.com>
+Cc: David S. Miller <davem@davemloft.net>
+Cc: Davidlohr Bueso <dave@stgolabs.net>
+Cc: Eric Saint-Etienne <eric.saint.etienne@oracle.com>
+Cc: Jin Yao <yao.jin@linux.intel.com>
+Cc: Konstantin Khlebnikov <khlebnikov@yandex-team.ru>
 Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
 Cc: Namhyung Kim <namhyung@kernel.org>
+Cc: Peter Zijlstra <peterz@infradead.org>
+Cc: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+Cc: Song Liu <songliubraving@fb.com>
 Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
+Cc: Thomas Gleixner <tglx@linutronix.de>
+Cc: Thomas Richter <tmricht@linux.ibm.com>
 Cc: linux-arm-kernel@lists.infradead.org
-Link: http://lkml.kernel.org/r/20190708143937.7722-3-leo.yan@linaro.org
+Link: http://lkml.kernel.org/r/20190702103420.27540-4-leo.yan@linaro.org
 Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- tools/perf/util/intel-bts.c | 5 ++---
- 1 file changed, 2 insertions(+), 3 deletions(-)
+ tools/perf/builtin-top.c | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
 
-diff --git a/tools/perf/util/intel-bts.c b/tools/perf/util/intel-bts.c
-index e32dbffebb2f..625ad3639a7e 100644
---- a/tools/perf/util/intel-bts.c
-+++ b/tools/perf/util/intel-bts.c
-@@ -891,13 +891,12 @@ int intel_bts_process_auxtrace_info(union perf_event *event,
- 	if (dump_trace)
- 		return 0;
+diff --git a/tools/perf/builtin-top.c b/tools/perf/builtin-top.c
+index fbbb0da43abb..42e3a4d07b18 100644
+--- a/tools/perf/builtin-top.c
++++ b/tools/perf/builtin-top.c
+@@ -101,7 +101,7 @@ static void perf_top__resize(struct perf_top *top)
  
--	if (session->itrace_synth_opts && session->itrace_synth_opts->set) {
-+	if (session->itrace_synth_opts->set) {
- 		bts->synth_opts = *session->itrace_synth_opts;
- 	} else {
- 		itrace_synth_opts__set_default(&bts->synth_opts,
- 				session->itrace_synth_opts->default_no_sample);
--		if (session->itrace_synth_opts)
--			bts->synth_opts.thread_stack =
-+		bts->synth_opts.thread_stack =
- 				session->itrace_synth_opts->thread_stack;
- 	}
+ static int perf_top__parse_source(struct perf_top *top, struct hist_entry *he)
+ {
+-	struct perf_evsel *evsel = hists_to_evsel(he->hists);
++	struct perf_evsel *evsel;
+ 	struct symbol *sym;
+ 	struct annotation *notes;
+ 	struct map *map;
+@@ -110,6 +110,8 @@ static int perf_top__parse_source(struct perf_top *top, struct hist_entry *he)
+ 	if (!he || !he->ms.sym)
+ 		return -1;
+ 
++	evsel = hists_to_evsel(he->hists);
++
+ 	sym = he->ms.sym;
+ 	map = he->ms.map;
+ 
+@@ -226,7 +228,7 @@ static void perf_top__record_precise_ip(struct perf_top *top,
+ static void perf_top__show_details(struct perf_top *top)
+ {
+ 	struct hist_entry *he = top->sym_filter_entry;
+-	struct perf_evsel *evsel = hists_to_evsel(he->hists);
++	struct perf_evsel *evsel;
+ 	struct annotation *notes;
+ 	struct symbol *symbol;
+ 	int more;
+@@ -234,6 +236,8 @@ static void perf_top__show_details(struct perf_top *top)
+ 	if (!he)
+ 		return;
+ 
++	evsel = hists_to_evsel(he->hists);
++
+ 	symbol = he->ms.sym;
+ 	notes = symbol__annotation(symbol);
  
 -- 
 2.20.1
