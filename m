@@ -2,84 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E63696EA8F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 20:17:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 700D66EACD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 20:46:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=EwkTC8lIkenTh9pRLt11UuctzBURApAsA1fmbp+UIco=; b=S6hLq5AD0ZoVMhR5qQumY1ySl
-	OgCggZWHATBBvWXCQQMu7/vMx7kdmk5HbQvkry9bl1OtcY7p+Izs/SCT4OSRIJEHSdz4CbPWkbDgr
-	PsHB4cPEc++VyEvYOcIZa78zWsHO771bbuWUxxL6GEmLvvhcI56pNB/Cq/P7u/vkoKqhb2fOZ92ZP
-	8vuSuLlxQ0qPA4YyhiHcEmEM/e/7pt5xpAp2e84CPExluognNxoAFHdafAK74GWNGBtYSsgFB5rDc
-	MxqtHFqO3NqJvTysE4OrnqZb2w3doTFOlQ/HOgFRGapwp5REi2wM9iex4Y5xHwGJWKfGvng4iXuhX
-	1rvTdrZ5w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=JKrVYEOkRr38X+qQHlfRjXGmrusXHxZXTFAgWORAnpY=; b=IFFTyQhFtoBkTb
+	DNigOsC1Bom0vJUShgcwNsokn5dQsLV1nvrnIQ+/TBjsLnNlWRTQVN0TRb6ll2zUEVuE9LUWtBI+i
+	39TJeiuviSWyL2Y8ixKxKXFEPLnCLCWKWfKW2ATvsZka8dDEZAdWS6wMVOxZqlPe68nyCkEvItkx2
+	QjkS3z9m2cTobTaxdOvPtslFCK8ZpLIAEG6rtgFSIWI5f0fRw1Ubts7e2g7ed3ZaxEc8+QNNWZuDb
+	FM/S+z3DkY/hctDBnLePL1C1WLBQdi7ZyXTe10YAdZguHz2grZnkHnfuOn+/qGxoYPeu1MIcGf2t5
+	ndFcPhq6RuD4D2aTSJ9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoXRM-0004n0-FW; Fri, 19 Jul 2019 18:17:08 +0000
-Received: from smtp.codeaurora.org ([198.145.29.96])
+	id 1hoXtm-0005It-NR; Fri, 19 Jul 2019 18:46:30 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hoXRA-0004mg-Ho
- for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 18:16:57 +0000
-Received: by smtp.codeaurora.org (Postfix, from userid 1000)
- id 74E8C616D3; Fri, 19 Jul 2019 18:16:53 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1563560213;
- bh=F5sWNpcJ28oNodSGcimGImD/hlCWjjVrH5lpLk/SNN8=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=awRv8UAkVGOsizyFlGIfs8U28DNRbquQ2tNmJ3D2gMWqH5m4XYUkE0Mz4r83sxJpM
- q0tNK19z65SBtx434oHpdek/0EroZ9wnKP8pcK+s4DgeKh5PvKFHRPg0IwTbQZK392
- Tc0obup6TcXws00/kfnHKhbCADygZbT6wig0IThU=
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- pdx-caf-mail.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
- DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
- version=3.4.0
-Received: from [10.204.78.89]
- (blr-c-bdr-fw-01_globalnat_allzones-outside.qualcomm.com [103.229.19.19])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- (Authenticated sender: neeraju@smtp.codeaurora.org)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 4555860E5F;
- Fri, 19 Jul 2019 18:16:51 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1563560212;
- bh=F5sWNpcJ28oNodSGcimGImD/hlCWjjVrH5lpLk/SNN8=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=VnOXZJn+Dp/xGCosQH1qsDfrUTo0otNLEoRpKLlYpB44io40GOe8O5CqvZHBGkzvh
- 8tYA8/mVayrZfzZQDvKm3MxeNUkXbx7AOCSKpAKmrzAlyY0VMNgbhVT6vAaHjQwZop
- 6dWdOAsrWQ2nsx6HFnMeWE/eldBlCx2TthWntlz0=
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 4555860E5F
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- spf=none smtp.mailfrom=neeraju@codeaurora.org
-Subject: Re: [PATCH] arm64: Force SSBS on context switch
-To: Marc Zyngier <marc.zyngier@arm.com>, Will Deacon <will@kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Mark Rutland <mark.rutland@arm.com>
-References: <20190719171651.26165-1-marc.zyngier@arm.com>
-From: Neeraj Upadhyay <neeraju@codeaurora.org>
-Message-ID: <ab273dea-827f-1bac-bad6-e22736c7c001@codeaurora.org>
-Date: Fri, 19 Jul 2019 23:46:49 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.4.0
+ id 1hoXtY-0005I1-TI
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 18:46:18 +0000
+Received: by mail-pf1-x441.google.com with SMTP id i189so14551493pfg.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 19 Jul 2019 11:46:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:subject:message-id:mime-version:content-disposition
+ :user-agent; bh=LgCwfeb0qUeGvteEDqnpqo5FEOvlxmkPiJSvQEyBpA4=;
+ b=LtGE7qyzqvqQis+0QWaAc6EydmIRM2jL00m9b+Go8yQAU7Lt9OzQe2emBMW8bIJ5D6
+ YHIGHKqaOCDJ36TRTari/GqdWkzG0KYvhYZ6PntA3qeQ5EIVPqsACyM1fcQPL8TcrUCR
+ Y+r7tmV91mI67L1Is2NyEazqRwqS2xr+0GGD8+3PC/OzLtth1DC9mwH4R3oiGKj2k8HP
+ 4AMyHclQbhR2qTQYqNVAYYBJu+aiOq+rUzmMuGOSESv+55R94I6VbBbZqbkXW4CuaeVR
+ b5pIhP6P58n83e/wWatxPwFjXc2PiFBBYFsPBccsetuOybLQETZMdtYJPwOXAoBIYXky
+ KxeA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:subject:message-id:mime-version
+ :content-disposition:user-agent;
+ bh=LgCwfeb0qUeGvteEDqnpqo5FEOvlxmkPiJSvQEyBpA4=;
+ b=PRSwjdEfyURBoBF4GjKWs/WzRGw0hIB6knP7DUaZkUthNfvQ/j0OjyfRVY4SQVNK4T
+ uAJCewHiZOpoq+v6/N5ITI/g91gybqp9hVONCHt8lz86Io3WgIwR56y/kkB7aswW3oPM
+ VDhxAqcHf/xSFJO1SFiu8tdTUB9eOEl3/ySMSoSzf/f0Gs30dgt1Mvz7xOjKHj2/yyxB
+ VggX5ZMRwZR5/AEEf8hYPYPYtHTnZ0p3CXN6LlojyDiksEWhJ59lmDWR++qKvYgjPaC+
+ C0Ip1kufQncl8crXKRgs0F7CZfkN8ZADSq0Ryy3uo7f8jNLsWf87H8aBGQUJRtl48vw4
+ MPSg==
+X-Gm-Message-State: APjAAAUbl61ye71Ov/IIgpJ/hIJj6zerUn9IaCX2d1Y+sdbV1ryx9mgZ
+ hyaWkkfXWeR0vpZDfDoGjUA=
+X-Google-Smtp-Source: APXvYqxkdYNpO/9sbTcC3Gwdlyw8Fp+lp6d3baaiN8Qy+GZcZufOZdcjl3SXt9qBB2rqD7nWprPrHQ==
+X-Received: by 2002:a63:188:: with SMTP id 130mr54815202pgb.231.1563561973341; 
+ Fri, 19 Jul 2019 11:46:13 -0700 (PDT)
+Received: from hari-Inspiron-1545 ([183.83.86.126])
+ by smtp.gmail.com with ESMTPSA id g18sm55976033pgm.9.2019.07.19.11.46.09
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 19 Jul 2019 11:46:12 -0700 (PDT)
+Date: Sat, 20 Jul 2019 00:16:06 +0530
+From: Hariprasad Kelam <hariprasad.kelam@gmail.com>
+To: Thomas Gleixner <tglx@linutronix.de>, Jason Cooper <jason@lakedaemon.net>,
+ Marc Zyngier <marc.zyngier@arm.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] rqchip/stm32: Remove unneeded call to kfree
+Message-ID: <20190719184606.GA4701@hari-Inspiron-1545>
 MIME-Version: 1.0
-In-Reply-To: <20190719171651.26165-1-marc.zyngier@arm.com>
-Content-Language: en-US
+Content-Disposition: inline
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190719_111656_628991_532D350A 
-X-CRM114-Status: GOOD (  21.32  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190719_114616_971538_6D48223E 
+X-CRM114-Status: GOOD (  10.82  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.145.29.96 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (hariprasad.kelam[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -100,114 +101,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
+Memory allocated by devm_ alloc will be freed upon device detachment. So
+we may not require free memory.
 
-Patch looks good to me. Thanks!
+Signed-off-by: Hariprasad Kelam <hariprasad.kelam@gmail.com>
+---
+ drivers/irqchip/irq-stm32-exti.c | 2 --
+ 1 file changed, 2 deletions(-)
 
-On 7/19/19 10:46 PM, Marc Zyngier wrote:
-> On a CPU that doesn't support SSBS, PSTATE[12] is RES0.  In a system
-> where only some of the CPUs implement SSBS, we end-up losing track of
-> the SSBS bit across task migration.
->
-> To address this issue, let's force the SSBS bit on context switch.
->
-> Fixes: 8f04e8e6e29c ("arm64: ssbd: Add support for PSTATE.SSBS rather than trapping to EL3")
-> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
-> ---
->   arch/arm64/include/asm/processor.h | 14 ++++++++++++--
->   arch/arm64/kernel/process.c        | 15 +++++++++++++++
->   2 files changed, 27 insertions(+), 2 deletions(-)
->
-> diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
-> index fd5b1a4efc70..844e2964b0f5 100644
-> --- a/arch/arm64/include/asm/processor.h
-> +++ b/arch/arm64/include/asm/processor.h
-> @@ -193,6 +193,16 @@ static inline void start_thread_common(struct pt_regs *regs, unsigned long pc)
->   		regs->pmr_save = GIC_PRIO_IRQON;
->   }
->   
-> +static inline void set_ssbs_bit(struct pt_regs *regs)
-> +{
-> +	regs->pstate |= PSR_SSBS_BIT;
-> +}
-> +
-> +static inline void set_compat_ssbs_bit(struct pt_regs *regs)
-> +{
-> +	regs->pstate |= PSR_AA32_SSBS_BIT;
-> +}
-> +
->   static inline void start_thread(struct pt_regs *regs, unsigned long pc,
->   				unsigned long sp)
->   {
-> @@ -200,7 +210,7 @@ static inline void start_thread(struct pt_regs *regs, unsigned long pc,
->   	regs->pstate = PSR_MODE_EL0t;
->   
->   	if (arm64_get_ssbd_state() != ARM64_SSBD_FORCE_ENABLE)
-> -		regs->pstate |= PSR_SSBS_BIT;
-> +		set_ssbs_bit(regs);
->   
->   	regs->sp = sp;
->   }
-> @@ -219,7 +229,7 @@ static inline void compat_start_thread(struct pt_regs *regs, unsigned long pc,
->   #endif
->   
->   	if (arm64_get_ssbd_state() != ARM64_SSBD_FORCE_ENABLE)
-> -		regs->pstate |= PSR_AA32_SSBS_BIT;
-> +		set_compat_ssbs_bit(regs);
->   
->   	regs->compat_sp = sp;
->   }
-> diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
-> index 9856395ccdb7..2fb91c8728ae 100644
-> --- a/arch/arm64/kernel/process.c
-> +++ b/arch/arm64/kernel/process.c
-> @@ -442,6 +442,20 @@ void uao_thread_switch(struct task_struct *next)
->   	}
->   }
->   
-> +static void ssbs_thread_switch(struct task_struct *next)
-> +{
-> +	if (likely(!(next->flags & PF_KTHREAD)) &&
-> +	    arm64_get_ssbd_state() != ARM64_SSBD_FORCE_ENABLE &&
-> +	    !test_tsk_thread_flag(next, TIF_SSBD)) {
-> +		struct pt_regs *regs = task_pt_regs(next);
-> +
-> +		if (compat_user_mode(regs))
-> +			set_compat_ssbs_bit(regs);
-> +		else if (user_mode(regs))
-> +			set_ssbs_bit(regs);
-> +	}
-> +}
-> +
-
-Minor: Can also modify copy_thread() to use set_ssbs_bit(childregs)
-
-
-Thanks
-
-Neeraj
-
->   /*
->    * We store our current task in sp_el0, which is clobbered by userspace. Keep a
->    * shadow copy so that we can restore this upon entry from userspace.
-> @@ -471,6 +485,7 @@ __notrace_funcgraph struct task_struct *__switch_to(struct task_struct *prev,
->   	entry_task_switch(next);
->   	uao_thread_switch(next);
->   	ptrauth_thread_switch(next);
-> +	ssbs_thread_switch(next);
->   
->   	/*
->   	 * Complete any pending TLB or cache maintenance on this CPU in case
-
+diff --git a/drivers/irqchip/irq-stm32-exti.c b/drivers/irqchip/irq-stm32-exti.c
+index e00f2fa..46ec0af 100644
+--- a/drivers/irqchip/irq-stm32-exti.c
++++ b/drivers/irqchip/irq-stm32-exti.c
+@@ -779,8 +779,6 @@ static int __init stm32_exti_init(const struct stm32_exti_drv_data *drv_data,
+ 	irq_domain_remove(domain);
+ out_unmap:
+ 	iounmap(host_data->base);
+-	kfree(host_data->chips_data);
+-	kfree(host_data);
+ 	return ret;
+ }
+ 
 -- 
-QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a
-member of the Code Aurora Forum, hosted by The Linux Foundation
+2.7.4
 
 
 _______________________________________________
