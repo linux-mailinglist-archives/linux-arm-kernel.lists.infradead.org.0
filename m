@@ -2,62 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 59A1C6D894
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 03:49:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 606D46D8B4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 04:00:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=MjhFTgkaGsYf3aFeRRITpVdP7sLHqFRabAe2Y6EqBEw=; b=VIKOffIrPZ87zBCaqIgpidHta
-	esDKmuBwcauCuhoA2lHmcBu6sK+0HNEcRWVMoS7FTxLYCr6UU/ftaacJZuE3s//52dXmC/j49Iavu
-	eiVCwZXiieyrfM2EqgpMdctCH3x9i1VA9fes5GFWqVGkabQkW0q+rIhzJudqox2r339z6IafvR+Gc
-	H9FW6PGK+3QDBM1lcuPbaxvpuhH9Bt/tnC/3lSpvW1tiZfw4qfCVWOgFWpVyWr6P0z0o84GZDJEJE
-	MK9TLD+SswKesFPuJqv9AbfHapZfRLDkOpN+5Jj1esajl3IcoUSEToMKbthxfKftwGP3J4JG8CjXP
-	9NMvaNrnw==;
+	 bh=n0QSGc5P/J/1Hd7/t8BOVepEkHb/I1MomJVIdJu7RB4=; b=Zc/xXgbfVo4dqe8Jdx2nJhMuk
+	R4Sx6b/xmL1S4lk8AHJlLrJbMp3bMjUcvlt+8MY5FH5FMU8ZJJYMw5INRMorG1q190uCKTuCYXNem
+	FI/qp1qbr2bDLvkTh/V84nFX4ApPOUnNsIUxDz/i1NZafurmw5RUS24v51B833spNQiWmCdJEGTAM
+	WQeDAQ2vB2DtdrXRZg8GT/grsVM7I5BBQHQHU8bd2+ogXBm532z0F/mO0NvZmX7ogWPVz3lCUB5e1
+	nLFmYuQ7iPMwasP1Jw8m8RxH8splw8wdEQ9ffJF9U6rj4+fTHaEW6MIKS4khJXF1jTkBTbKXokm+y
+	Md5/1IU4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoI1t-00032h-7q; Fri, 19 Jul 2019 01:49:49 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hoI1f-000325-Sc
- for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 01:49:37 +0000
-Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 946D830309C0A785A41F;
- Fri, 19 Jul 2019 09:49:28 +0800 (CST)
-Received: from [127.0.0.1] (10.133.216.73) by DGGEMS401-HUB.china.huawei.com
- (10.3.19.201) with Microsoft SMTP Server id 14.3.439.0; Fri, 19 Jul 2019
- 09:49:22 +0800
-Subject: Re: [RFC] Add virtual SDEI support in qemu
-To: Dave Martin <Dave.Martin@arm.com>, Mark Rutland <mark.rutland@arm.com>
-References: <1b0aa6b2-80b1-a72e-6849-7323c3b9c6bc@huawei.com>
- <20190715134059.GJ2790@e103592.cambridge.arm.com>
- <20190715134848.GI56232@lakrids.cambridge.arm.com>
- <4daefb19-6c15-f82c-31e9-1ae035d45bd5@arm.com>
- <20190715144446.GK56232@lakrids.cambridge.arm.com>
- <20190716084734.GL2790@e103592.cambridge.arm.com>
-From: Guoheyi <guoheyi@huawei.com>
-Message-ID: <287f566e-7697-3763-56b8-eb4821bd8347@huawei.com>
-Date: Fri, 19 Jul 2019 09:49:22 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.7.1
+	id 1hoIBc-00062A-GU; Fri, 19 Jul 2019 01:59:52 +0000
+Received: from vmicros1.altlinux.org ([194.107.17.57])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hoIBO-00061G-PT
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 01:59:40 +0000
+Received: from mua.local.altlinux.org (mua.local.altlinux.org [192.168.1.14])
+ by vmicros1.altlinux.org (Postfix) with ESMTP id 492A272CA65;
+ Fri, 19 Jul 2019 04:59:34 +0300 (MSK)
+Received: by mua.local.altlinux.org (Postfix, from userid 508)
+ id 3B39E7CC774; Fri, 19 Jul 2019 04:59:34 +0300 (MSK)
+Date: Fri, 19 Jul 2019 04:59:34 +0300
+From: "Dmitry V. Levin" <ldv@altlinux.org>
+To: Aleksa Sarai <cyphar@cyphar.com>
+Subject: Re: [PATCH v9 08/10] open: openat2(2) syscall
+Message-ID: <20190719015933.GA18022@altlinux.org>
+References: <20190706145737.5299-1-cyphar@cyphar.com>
+ <20190706145737.5299-9-cyphar@cyphar.com>
 MIME-Version: 1.0
-In-Reply-To: <20190716084734.GL2790@e103592.cambridge.arm.com>
-X-Originating-IP: [10.133.216.73]
-X-CFilter-Loop: Reflected
+In-Reply-To: <20190706145737.5299-9-cyphar@cyphar.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_184936_086963_0A5BA556 
-X-CRM114-Status: GOOD (  17.45  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190718_185939_020007_48EEBB54 
+X-CRM114-Status: UNSURE (   8.74  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [194.107.17.57 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,88 +61,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Zyngier <marc.zyngier@arm.com>, qemu-devel@nongnu.org,
- qemu-arm@nongnu.org, James Morse <james.morse@arm.com>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Alexei Starovoitov <ast@kernel.org>, linux-kernel@vger.kernel.org,
+ David Howells <dhowells@redhat.com>, linux-kselftest@vger.kernel.org,
+ sparclinux@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ Tycho Andersen <tycho@tycho.ws>, Aleksa Sarai <asarai@suse.de>,
+ linux-arm-kernel@lists.infradead.org, linux-mips@vger.kernel.org,
+ linux-xtensa@linux-xtensa.org, Kees Cook <keescook@chromium.org>,
+ Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
+ linuxppc-dev@lists.ozlabs.org, linux-m68k@lists.linux-m68k.org,
+ Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
+ Shuah Khan <skhan@linuxfoundation.org>, David Drysdale <drysdale@google.com>,
+ Christian Brauner <christian@brauner.io>,
+ "J. Bruce Fields" <bfields@fieldses.org>, linux-parisc@vger.kernel.org,
+ linux-api@vger.kernel.org, Chanho Min <chanho.min@lge.com>,
+ Jeff Layton <jlayton@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
+ Eric Biederman <ebiederm@xmission.com>, linux-alpha@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ containers@lists.linux-foundation.org
+Content-Type: multipart/mixed; boundary="===============4456213219966011470=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Thanks for all your comments. I'm going to write a simple demo to go 
-through the whole workflow first, and then adjust the policies following 
-the conclusions of our discussion.
 
-Heyi
-
-
-On 2019/7/16 16:47, Dave Martin wrote:
-> On Mon, Jul 15, 2019 at 03:44:46PM +0100, Mark Rutland wrote:
->> On Mon, Jul 15, 2019 at 03:26:39PM +0100, James Morse wrote:
->>> On 15/07/2019 14:48, Mark Rutland wrote:
->>>> On Mon, Jul 15, 2019 at 02:41:00PM +0100, Dave Martin wrote:
->>>>> One option (suggested to me by James Morse) would be to allow userspace
->>>>> to disable in the in-kernel PSCI implementation and provide its own
->>>>> PSCI to the guest via SMC -- in which case userspace that wants to
->>>>> implement SDEI would have to implement PSCI as well.
->>>> I think this would be the best approach, since it puts userspace in
->>>> charge of everything.
->>>>
->>>> However, this interacts poorly with FW-based mitigations that we
->>>> implement in hyp. I suspect we'd probably need a mechanism to delegate
->>>> that responsibility back to the kernel, and figure out if that has any
->>>> interaction with thigns that got punted to userspace...
->>> This has come up before:
->>> https://lore.kernel.org/r/59C139D0.3040507@arm.com
->>>
->>> I agree Qemu should opt-in to this, it needs to be a feature that is enabled.
->>>
->>> I had an early version of something like this for testing SDEI before
->>> there was firmware available. The review feedback from Christoffer was
->>> that it should include HVC and SMC, their immediates, and shouldn't be
->>> tied to SMC-CC ranges.
->>>
->>> I think this should be a catch-all as Heyi describes to deliver
->>> 'unhandled SMC/HVC' to user-space as hypercall exits. We should
->>> include the immediate in the struct.
->>>
->>> We can allow Qemu to disable the in-kernel PSCI implementation, which
->>> would let it be done in user-space via this catch-all mechanism. (PSCI
->>> in user-space has come up on another thread recently). The in-kernel
->>> PSCI needs to be default-on for backwards compatibility.
->>>
->>> As Mark points out, the piece that's left is the 'arch workaround'
->>> stuff. We always need to handle these in the kernel. I don't think
->>> these should be routed-back, they should be un-obtainable by
->>> user-space.
->> Sure; I meant that those should be handled in the kernel rather than
->> going to host userspace and back.
->>
->> I was suggesting was that userspace would opt into taking ownership of
->> all HVC calls, then explicitly opt-in to the kernel handling specific
->> (sets of) calls.
-> The most logical thing to do would be to have userspace handle all
-> calls, but add an ioctl to forward a call to KVM.  This puts userspace
-> in charge of the SMCCC interface, with KVM handling only those things
-> that userspace can't do for itself, on request.
->
-> If the performance overhead is unacceptable for certain calls, we could
-> have a way to delegate specific function IDs to KVM.  I suspect that
-> will be the exception rather than the rule.
->
->> There are probably issues with that, but I suspect defining "all
->> undandled calls" will be problematic otherwise.
-> Agreed: the set of calls not handled by KVM will mutate over time.
->
-> Cheers
-> ---Dave
->
-> .
->
+--===============4456213219966011470==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="huq684BweRXVnRxX"
+Content-Disposition: inline
 
 
+--huq684BweRXVnRxX
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Sun, Jul 07, 2019 at 12:57:35AM +1000, Aleksa Sarai wrote:
+[...]
+> +/**
+> + * Arguments for how openat2(2) should open the target path. If @extra i=
+s zero,
+> + * then openat2(2) is identical to openat(2).
+> + *
+> + * @flags: O_* flags (unknown flags ignored).
+
+What was the rationale for implementing this semantics?
+Ignoring unknown flags makes potential extension of this new interface
+problematic.  This has bitten us many times already, so ...
+
+> + * @mode: O_CREAT file mode (ignored otherwise).
+> + * @upgrade_mask: restrict how the O_PATH may be re-opened (ignored othe=
+rwise).
+> + * @resolve: RESOLVE_* flags (-EINVAL on unknown flags).
+
+=2E.. could you consider implementing this (-EINVAL on unknown flags) seman=
+tics
+for @flags as well, please?
+
+
+--=20
+ldv
+
+--huq684BweRXVnRxX
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIcBAEBCAAGBQJdMSQFAAoJEAVFT+BVnCUIuaAP/3pgUoQA466F6S8jYN6F/icf
+oiQHExdeO3ruxRdNl1gi7af0RxQCiprfNIoD7KQyWSnyUyUm0Cdd7PzpEKXuumQi
+pN6ZTEO2bQeSs7AjCNpLrTgKcuOo/pZbNN7InAHKLB7k2xKKeBbdaVypgGiAEDjT
+JK+4s+8JcJoSg+d69G428QP2qpoHyIZJ5437gYv5rJbL9BRihwwvWF2OQ4TXrd6I
+YnyxPFRRZnfiN3HNbNlJjtMgt5g0AisLuahpJaDMq0NaXnBOosDm9jBAhVOX0CSB
+LUNByCygXeBKv9VuyrO4KnLXS3ORGfK38SDGqz3kFYy1quNRAGKgOXPnGXfb2xbZ
+bRCqyuxkSUOIfLKA6q9jnqO9RoUeOtLglFUT/5JpixTaoxSFN3Y6GlJFcnw+cVm+
+oWH4A/IoST68FCfbOMff976O36pakuWbsVGVsdv384OEHfWaf7c10P9EQc3fhgF3
+JoeY5ht9R1k8HWNOlCuCeHfTwSyLG3T/TROuZYtz65RdPemuuPSPERr+GzOtO9Fn
++wQmK99JlE3nhoyv5CmtqCmMQWhYZedqjbjs5wIq7tjalerg6TakNMmhzTGz5l8T
+i+3EfyMHhEtwq+2YNhdaPEmjfdBzyI3stxtEkURya0BnCgbYsP2mTIP8UbLGDqsY
+EJZiRtPRFfVoePwqT8Ux
+=zLLc
+-----END PGP SIGNATURE-----
+
+--huq684BweRXVnRxX--
+
+
+--===============4456213219966011470==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4456213219966011470==--
+
