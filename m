@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 038666DBDE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 06:12:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F24E6DBEA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 19 Jul 2019 06:12:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n2dA9OiYBaDihHyQoJB74T7GlHKIA8MwarZ7iDfqblY=; b=qxUPyI9L3lQGSq
-	DvPLg6eayWyZzhy518uDAQESeqLbKFtPtQlVlAMgYkECWqu2MsLNcIS+1cPk+thTB6y5cJp3FLDDE
-	6E0M+Th9B69ErdPZ+D4dlNSi9vugyR6u2oZm1U25D3U41k8sw7H2naQIl9cKLH0/e3XFc52+qqJZG
-	Mci+WLCrJrMdEPyAxUVIhmnJYgdBqyGKApGbIie+4psnpH5ngx8qc7HESuSad6shcSmXMgk8i4AXS
-	UscmKI2KQ9dQOkSqows678AHaQ6UaDR/+DjR6AbhiuQdQSzy1yJbBJB1kTK/smXpn0NcInprg7wxT
-	+s7Sh/ZnxjPP5mimN07A==;
+	List-Owner; bh=GclEzwJY0PXvgd8IGMQVYfvKAOFT/3FTGJY0GoIm9MM=; b=DV8BwMn5ew1eed
+	MDH31v4V4yuwMCl+vDyhzY96axKy5WxAfElRfxPEgJ8WFiRO16LZ8G03fUhOe5Bb65wZgFQo7jhTj
+	SeH8zhIyTurVXXLJ733dZFT46lczhlYurBjfujLO0CG2mEnxxhV364YIzMdQLZJwovy+EdSdCl7cf
+	F7jzYbalVe/HLXa3qNE/YWL7gmU4a+FnbQdygadOqs00hvkN4GZXkJK0C0ZXIQFXJFZKintKX+ChT
+	knXzkRhBePzY4c+Nl5on4emZYV6GC8J8Qvq3Y1qNDT5FBO/iRov/ZLn4kOxB48Lp8vPHjbNfsxjTb
+	wPNtX93qbnxKihjGWeEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoKFY-000774-Bf; Fri, 19 Jul 2019 04:12:04 +0000
+	id 1hoKFs-0007KA-HA; Fri, 19 Jul 2019 04:12:24 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hoKDV-0004r7-5a
- for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 04:10:00 +0000
+ id 1hoKDY-0004tI-2A
+ for linux-arm-kernel@lists.infradead.org; Fri, 19 Jul 2019 04:10:03 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6D12921873;
- Fri, 19 Jul 2019 04:09:54 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4AC07218E0;
+ Fri, 19 Jul 2019 04:09:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563509396;
- bh=B/oiW9BYCaQzF6H+RbIHoETAu+rLy4Q9aLaUhzYk8dc=;
+ s=default; t=1563509399;
+ bh=bwyoA7IAqJ6r4UG32uaXr4RuYIra6u6ryBNwquHppIA=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=WqJxaRF5ibFglZnVzZoKGl18fvAyVFoCGPE6sLZCaYq9KmnhpZGo5+ewXyzfd7qem
- IYu8rgwWgL6fWUXcvn84ILvz/2+Txvk6gyMM2djM3CH/WtY/YEuETl5bHyfPgkYOSA
- uFWT29SVmEEDzkDbZ+8fuJjDbTBXXzN2yOh1c4vY=
+ b=Pq5iHSbF03OgU9yUA9yhRswLOYirOC9ufJ77LIo5CNHSEPG9tvIRZ5TDGzgJBfzAC
+ VUNBlvroDKPMGTYs7+Y+Yf7kVSEbEmmuBuYD7iFkA3yB3Eu8C5ynCfJ9+b6DVxHnz6
+ zwUfwahY7klutub13cp5LGvEYG6dHe9n6AC72Hoo=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 072/101] perf stat: Fix use-after-freed pointer
- detected by the smatch tool
-Date: Fri, 19 Jul 2019 00:07:03 -0400
-Message-Id: <20190719040732.17285-72-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 073/101] perf top: Fix potential NULL pointer
+ dereference detected by the smatch tool
+Date: Fri, 19 Jul 2019 00:07:04 -0400
+Message-Id: <20190719040732.17285-73-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190719040732.17285-1-sashal@kernel.org>
 References: <20190719040732.17285-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_210958_633251_880E0CEC 
-X-CRM114-Status: GOOD (  12.84  )
+X-CRM114-CacheID: sfid-20190718_211000_456521_2C72F1C2 
+X-CRM114-Status: GOOD (  12.79  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -105,17 +105,33 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Leo Yan <leo.yan@linaro.org>
 
-[ Upstream commit c74b05030edb3b52f4208d8415b8c933bc509a29 ]
+[ Upstream commit 111442cfc8abdeaa7ec1407f07ef7b3e5f76654e ]
 
-Based on the following report from Smatch, fix the use-after-freed
-pointer.
+Based on the following report from Smatch, fix the potential NULL
+pointer dereference check.
 
-  tools/perf/builtin-stat.c:1353
-  add_default_attributes() warn: passing freed memory 'str'.
+  tools/perf/builtin-top.c:109
+  perf_top__parse_source() warn: variable dereferenced before check 'he'
+  (see line 103)
 
-The pointer 'str' has been freed but later it is still passed into the
-function parse_events_print_error().  This patch fixes this
-use-after-freed issue.
+  tools/perf/builtin-top.c:233
+  perf_top__show_details() warn: variable dereferenced before check 'he'
+  (see line 228)
+
+  tools/perf/builtin-top.c
+  101 static int perf_top__parse_source(struct perf_top *top, struct hist_entry *he)
+  102 {
+  103         struct perf_evsel *evsel = hists_to_evsel(he->hists);
+                                                        ^^^^
+  104         struct symbol *sym;
+  105         struct annotation *notes;
+  106         struct map *map;
+  107         int err = -1;
+  108
+  109         if (!he || !he->ms.sym)
+  110                 return -1;
+
+This patch moves the values assignment after validating pointer 'he'.
 
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
 Acked-by: Jiri Olsa <jolsa@kernel.org>
@@ -125,12 +141,11 @@ Cc: Alexey Budankov <alexey.budankov@linux.intel.com>
 Cc: Alexios Zavras <alexios.zavras@intel.com>
 Cc: Andi Kleen <ak@linux.intel.com>
 Cc: Changbin Du <changbin.du@intel.com>
-Cc: Davidlohr Bueso <dave@stgolabs.net>
 Cc: David S. Miller <davem@davemloft.net>
+Cc: Davidlohr Bueso <dave@stgolabs.net>
 Cc: Eric Saint-Etienne <eric.saint.etienne@oracle.com>
 Cc: Jin Yao <yao.jin@linux.intel.com>
 Cc: Konstantin Khlebnikov <khlebnikov@yandex-team.ru>
-Cc: linux-arm-kernel@lists.infradead.org
 Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
 Cc: Namhyung Kim <namhyung@kernel.org>
 Cc: Peter Zijlstra <peterz@infradead.org>
@@ -139,27 +154,54 @@ Cc: Song Liu <songliubraving@fb.com>
 Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
 Cc: Thomas Gleixner <tglx@linutronix.de>
 Cc: Thomas Richter <tmricht@linux.ibm.com>
-Link: http://lkml.kernel.org/r/20190702103420.27540-3-leo.yan@linaro.org
+Cc: linux-arm-kernel@lists.infradead.org
+Link: http://lkml.kernel.org/r/20190702103420.27540-4-leo.yan@linaro.org
 Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- tools/perf/builtin-stat.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ tools/perf/builtin-top.c | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
 
-diff --git a/tools/perf/builtin-stat.c b/tools/perf/builtin-stat.c
-index 40720150ccd8..789962565c9c 100644
---- a/tools/perf/builtin-stat.c
-+++ b/tools/perf/builtin-stat.c
-@@ -2497,8 +2497,8 @@ static int add_default_attributes(void)
- 				fprintf(stderr,
- 					"Cannot set up top down events %s: %d\n",
- 					str, err);
--				free(str);
- 				parse_events_print_error(&errinfo, str);
-+				free(str);
- 				return -1;
- 			}
- 		} else {
+diff --git a/tools/perf/builtin-top.c b/tools/perf/builtin-top.c
+index 33eefc33e0ea..d0733251a386 100644
+--- a/tools/perf/builtin-top.c
++++ b/tools/perf/builtin-top.c
+@@ -99,7 +99,7 @@ static void perf_top__resize(struct perf_top *top)
+ 
+ static int perf_top__parse_source(struct perf_top *top, struct hist_entry *he)
+ {
+-	struct perf_evsel *evsel = hists_to_evsel(he->hists);
++	struct perf_evsel *evsel;
+ 	struct symbol *sym;
+ 	struct annotation *notes;
+ 	struct map *map;
+@@ -108,6 +108,8 @@ static int perf_top__parse_source(struct perf_top *top, struct hist_entry *he)
+ 	if (!he || !he->ms.sym)
+ 		return -1;
+ 
++	evsel = hists_to_evsel(he->hists);
++
+ 	sym = he->ms.sym;
+ 	map = he->ms.map;
+ 
+@@ -224,7 +226,7 @@ static void perf_top__record_precise_ip(struct perf_top *top,
+ static void perf_top__show_details(struct perf_top *top)
+ {
+ 	struct hist_entry *he = top->sym_filter_entry;
+-	struct perf_evsel *evsel = hists_to_evsel(he->hists);
++	struct perf_evsel *evsel;
+ 	struct annotation *notes;
+ 	struct symbol *symbol;
+ 	int more;
+@@ -232,6 +234,8 @@ static void perf_top__show_details(struct perf_top *top)
+ 	if (!he)
+ 		return;
+ 
++	evsel = hists_to_evsel(he->hists);
++
+ 	symbol = he->ms.sym;
+ 	notes = symbol__annotation(symbol);
+ 
 -- 
 2.20.1
 
