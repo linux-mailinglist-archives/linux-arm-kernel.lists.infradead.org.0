@@ -2,74 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7987E6ED88
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 20 Jul 2019 05:27:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 236BD6ED93
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 20 Jul 2019 06:07:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=HpARZmBVb2yEE/s8zdQL7zVaVBrtpITu8hZq845FpNc=; b=L2B35G7tkv+iGq
-	oRjjjB+kOZ9wr1jiXDjjKa1U1//YzaZtfkIhbpLPmTiWHYkZvABl3d/y/ofg02jhoshvC661MEVVG
-	jNsEENdsgbHRGmw6juzU4oAyFbHvTiDL1rgXCqu0oJmox0xU9y0pJjT/mGIB4A7RxoPvz9zjyT/Zh
-	ys7k6wh61Co/dR5Omuu6QchY9Ei6RowQWRSzmSgH4psKT5DfySmEzQGihE8bHG+RXgmybZve92c5X
-	qUxxFEUNDyI6jwjGhpj0GNKxL1wmTPjqGMF/qtOZWhXtjWrdHgQ6H7Id2DLU0laob7HYhh3qznZgu
-	bqzOKgnLpgvlJv7P9RVQ==;
+	List-Owner; bh=cao7L8y3Y38TcoGKK5PJnr68QzaUZ4oVcqws+ic9MT0=; b=l6mzBGkzqRXnxO
+	rN/+NqmHkWULxymJDjcEtZnPJtaO7UXBRiNv8twr5luPqjw7MLzD0ACSkURU+mn8a3AU1qYkhgAV/
+	mfAWYCRRcWVpfXQS+tL4EqPXa/HKdzuzTVPWxcX+ETqrxMNoZi5KlrcUUAWp64JMr9MDBpugDUQpG
+	hfV3SsgZU7d2P6PdLD19qz9h7NKZO/IeQ/KhVa9CVjlMp9GiqLaBGunpvgSdX7QPB6KezdaWS66Sh
+	bTBo73/1lwgusdsI6m1iyT44qG2JBWyMUGlSE0lMFLS6b5kZlVNQSLxVWVYWYIfWXDZfWLrRv8ph/
+	zP3G8QtYeAwuYbwbmDLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hog1e-0003Ol-EV; Sat, 20 Jul 2019 03:27:10 +0000
-Received: from conssluserg-01.nifty.com ([210.131.2.80])
+	id 1hoge3-0006JD-IF; Sat, 20 Jul 2019 04:06:51 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hog1Q-0003OU-O5
- for linux-arm-kernel@lists.infradead.org; Sat, 20 Jul 2019 03:26:58 +0000
-Received: from mail-ua1-f49.google.com (mail-ua1-f49.google.com
- [209.85.222.49]) (authenticated)
- by conssluserg-01.nifty.com with ESMTP id x6K3QYR7013801
- for <linux-arm-kernel@lists.infradead.org>; Sat, 20 Jul 2019 12:26:35 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-01.nifty.com x6K3QYR7013801
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1563593195;
- bh=/cy4zkl9MBndlJPf309omN2x5BYB6od3xL14Bqq951k=;
- h=From:Date:Subject:To:Cc:From;
- b=YBL9SX8nGcdiSDqzzqhaCwQW4V/n+XvKYlm8sCuY3fUDN7SPLhzmnRVzsx+SE2Jvf
- eNaza/lW5/OwBI17PmoK/W9nWBdI5rD0xRnCiA80SmEY5HHnBg2i6sttwv9d8Nz4ZM
- LSLSw/f4andPN3Nu8ltIaR4rVSOoLCVtCoMFlQF2hNPMVk+TnA4CgnKNOoIUJLcwtl
- RbfI2kFtP1wwHK/N6MC31iIO3u3tHCSCeLd0hsPWAiU44o6YLn2dqmJ+oZp52Rg0YM
- ZWpFt/AQCsZ3RU0a0uNa+oq0v6pzg9kUYaJlO4jcDeZse1mgR6GLePk5DV6rzd0QwO
- Xw84/ASDn7gzQ==
-X-Nifty-SrcIP: [209.85.222.49]
-Received: by mail-ua1-f49.google.com with SMTP id o2so13305926uae.10
+ id 1hogdk-0006Is-GN
+ for linux-arm-kernel@lists.infradead.org; Sat, 20 Jul 2019 04:06:33 +0000
+Received: by mail-pg1-x541.google.com with SMTP id x15so4937263pgg.8
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 19 Jul 2019 20:26:34 -0700 (PDT)
-X-Gm-Message-State: APjAAAU2o2Js36mkYGf9JkZfshuo5r4FazzaHJI5GuED6iNEW6zitTNo
- h00Vy72w0X9cV0FHGX0FPixBhwQ3JMdwQxcIec4=
-X-Google-Smtp-Source: APXvYqxMWol/Hq29+8CUkgjOAH9mDC4bKgEruVV4pjWDHDa2y3dUX8Vbo6R5vHcaU54H7hy2Je1Ilc698k/gWzOxwd0=
-X-Received: by 2002:ab0:5ea6:: with SMTP id y38mr35301733uag.40.1563593193773; 
- Fri, 19 Jul 2019 20:26:33 -0700 (PDT)
+ Fri, 19 Jul 2019 21:06:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:subject:message-id:mime-version:content-disposition
+ :user-agent; bh=neC3zaA6/SjW//JOmms70Lu5HwOzIZBuLfb866mHmIU=;
+ b=ZSc86vaxfnhWiLJ1Hf8++d35zLhCzVjggsH3Oq/7mh3pJvRMu+bDvh79QMHfwaUzaH
+ rScA1Au0eU759BXhYzcQfH91XYYCXVChYga5OzkxjC9bHApuaBTaPTahU0RjmI66VhjD
+ BTpOHgFbYfR0E/pNPdG0MQBwtRTIGdAQi+OWgLMBtLV1ToqJnVhOLY17O0eqtizEbZyO
+ Sp6sNZfNuBdzIp+JZJ1M3znKjBjdq+2oKMYB7oOaXwpTuMlPvUOByej2EZtW61b7qqKO
+ IqDFtKBSFk7wVOZm4SgiONPbUQqpE5my2syp96Cos3tP8h6r8+MXdachKdkEL8UGnR3E
+ nE4w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:subject:message-id:mime-version
+ :content-disposition:user-agent;
+ bh=neC3zaA6/SjW//JOmms70Lu5HwOzIZBuLfb866mHmIU=;
+ b=s16XQaHHl4y8vj+0j0MYs4DYo1vZY3lto8dL6Dl/S5UfweZlwJYgpMSiDM3psy8FOE
+ 1SNZhEqpfO/vMwYV2VZUOcHmKyTOYRC7/jZ/Zg0oLI/elQM6WjQXjGosr0h9GhfZ/t8I
+ crKUyyW/gaZOuA9jFE7Z4/i7kU93gWa3OZrLFcna/4jRuR9sVou/5hEV0AYIKYmhnDGd
+ lnGpq42JhtnBXDlA3o8kL0dnKNjIIUA1yU7545mUyqwK81tT/DUcNNLLQi7hbYNgve5m
+ drsqUo7eUIg+DDWn6mcQxekCQg7AxcL30waqwayaD7hiKz4D9HBtveWmxX6uEZP/UHT5
+ zOng==
+X-Gm-Message-State: APjAAAWHiExkCRZ/cYY2BozrYrR+ab6WRXqPfQ6wkkw6yuUuMjo1Usi0
+ obqLZW12hKFM5X23jW/bGc8=
+X-Google-Smtp-Source: APXvYqwUYFOL/TcGld7Rp1jjIRi5rUNxYovcaYjqYcnocQC0PeWaqupmaQT1SLQvnrRdS04EKuADCg==
+X-Received: by 2002:a63:d23:: with SMTP id c35mr57533273pgl.376.1563595591261; 
+ Fri, 19 Jul 2019 21:06:31 -0700 (PDT)
+Received: from hari-Inspiron-1545 ([183.83.86.126])
+ by smtp.gmail.com with ESMTPSA id z20sm53985638pfk.72.2019.07.19.21.06.27
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 19 Jul 2019 21:06:30 -0700 (PDT)
+Date: Sat, 20 Jul 2019 09:36:24 +0530
+From: Hariprasad Kelam <hariprasad.kelam@gmail.com>
+To: Thomas Gleixner <tglx@linutronix.de>, Jason Cooper <jason@lakedaemon.net>,
+ Marc Zyngier <marc.zyngier@arm.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
+Subject: [Patch v2] irqchip/stm32: Remove unneeded call to kfree
+Message-ID: <20190720040624.GA10625@hari-Inspiron-1545>
 MIME-Version: 1.0
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
-Date: Sat, 20 Jul 2019 12:25:58 +0900
-X-Gmail-Original-Message-ID: <CAK7LNASyzmYjjBkFxRc06rqf36-en-bvJvrKcg6iiRfjoPCxhQ@mail.gmail.com>
-Message-ID: <CAK7LNASyzmYjjBkFxRc06rqf36-en-bvJvrKcg6iiRfjoPCxhQ@mail.gmail.com>
-Subject: [Question] orphan platform data header
-To: Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+Content-Disposition: inline
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190719_202657_034243_0DC5E871 
-X-CRM114-Status: UNSURE (   6.57  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190719_210632_583367_F4C9196B 
+X-CRM114-Status: GOOD (  10.21  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.80 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (hariprasad.kelam[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,58 +101,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: DTML <devicetree@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, masahiroy@kernel.org,
- Linus Torvalds <torvalds@linux-foundation.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi.
+Memory allocated by devm_ alloc will be freed upon device detachment. So
+we may not require free memory.
 
-I see several platform-data headers
-that are not used in upstream.
+Signed-off-by: Hariprasad Kelam <hariprasad.kelam@gmail.com>
+---
+v2: correct the subject line
 
+ drivers/irqchip/irq-stm32-exti.c | 2 --
+ 1 file changed, 2 deletions(-)
 
-For instance, please look at this driver:
-drivers/leds/leds-netxbig.c
+diff --git a/drivers/irqchip/irq-stm32-exti.c b/drivers/irqchip/irq-stm32-exti.c
+index e00f2fa..46ec0af 100644
+--- a/drivers/irqchip/irq-stm32-exti.c
++++ b/drivers/irqchip/irq-stm32-exti.c
+@@ -779,8 +779,6 @@ static int __init stm32_exti_init(const struct stm32_exti_drv_data *drv_data,
+ 	irq_domain_remove(domain);
+ out_unmap:
+ 	iounmap(host_data->base);
+-	kfree(host_data->chips_data);
+-	kfree(host_data);
+ 	return ret;
+ }
+ 
+-- 
+2.7.4
 
-If I understood it correctly, this driver
-supports both device tree and legacy board-file.
-
-
-I grepped 'netxbig_led_platform_data', but
-I only found the driver and platform_data header.
-No board-file in upstream.
-
-masahiro@grover:~/ref/linux$ git grep netxbig_led_platform_data
-drivers/leds/leds-netxbig.c:                          struct
-netxbig_led_platform_data *pdata,
-drivers/leds/leds-netxbig.c:                                 struct
-netxbig_led_platform_data *pdata)
-drivers/leds/leds-netxbig.c:                      struct
-netxbig_led_platform_data *pdata)
-drivers/leds/leds-netxbig.c:    struct netxbig_led_platform_data
-*pdata = dev_get_platdata(&pdev->dev);
-include/linux/platform_data/leds-kirkwood-netxbig.h:struct
-netxbig_led_platform_data {
-
-
-
-So, what shall we do?
-
-Drop the board-file support? Or, keep it
-in case somebody is still using their board-files
-in downstream?
-
-
-
-
---
-Best Regards
-Masahiro Yamada
 
 _______________________________________________
 linux-arm-kernel mailing list
