@@ -2,83 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5EEC66EE3F
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 20 Jul 2019 09:35:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B2D96EE44
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 20 Jul 2019 09:37:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fZzbqXYHwBjtJutXga6yJ3zqHl7QR3mVhkIVCZHplWA=; b=HWdQ9ckaS40mno
-	kA3dru0en7lMjd4DuYzdhNVMepbV6Ov6pfX0nlpAi4zfCJc43wpC8IHpp6EcuJf8Od8adsGh87llo
-	LdW1FABs4LHxuuLY4+hM5MjgENrkiwUdxxPqTknBax5pIvb3Ckld1rvuxMNfHgzXUgdAM++WFChyv
-	prsyFSu9QuAo59uPPBtZqf3qcwQbU9JVNH0ooSh5i2PaAE9O3rOO2ZhFS1kpI+p06g15LvWERHOee
-	72yFOr+tQf0TtH2r8sUPV6MRlalM9PPBJjMYkK/EUhCgHNpVeDV96b43sZy0060pU5u22Xj2fVzUV
-	uAJ0rFIUpb3jJuCRRqOQ==;
+	List-Owner; bh=+/GoQwy4G97tOvytBJOQWbdmrP3GfVit/ivPHeEQL7w=; b=MoUnYHflUm30sU
+	Et9v8y8slTrAz91p8TpcoZ1SA/DHrKKw1OuZmbPC0nXyOQParkl/9WOpNlzoTyCE5j6zNG5l8YCtb
+	VQedN7klQdIqH7xPoG7//uSD8Oje5w1ESaSNB0I4wIEH1bfA9/xktiac9RjqsOyvC03NTkutikJbb
+	rjgDdNdeKe1Q4OIEuoDqj+tBcNuS4jC05oEgXirgT1icbI+qem10Xd5o11LpQ3YCoaNfmeqkCYRie
+	VWWWeee8mi+o+vUKBlrmL2MowFqVSu4yZ6WgyDA0FmCYf6f6ejfqKzbqlfQAT7veKmLKbJVMPhuLu
+	Z6ExvicdagK6Y0Q6REfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoju0-0001Gj-6S; Sat, 20 Jul 2019 07:35:32 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1hojvU-0001ZW-EY; Sat, 20 Jul 2019 07:37:04 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hojte-0001G4-Sx
- for linux-arm-kernel@lists.infradead.org; Sat, 20 Jul 2019 07:35:12 +0000
-Received: by mail-io1-xd42.google.com with SMTP id j5so59047696ioj.8
+ id 1hojvF-0001Yg-99
+ for linux-arm-kernel@lists.infradead.org; Sat, 20 Jul 2019 07:36:50 +0000
+Received: by mail-lj1-x243.google.com with SMTP id k18so32807897ljc.11
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 20 Jul 2019 00:35:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
+ Sat, 20 Jul 2019 00:36:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=yo7l/PRy7h/Gb824LBKVuDwtwGequhTqIvXIp3adEwg=;
- b=Hwc59WKWLtxrzArZ6J5z8eyuv9j8HpcYCexDbS5qTNlmj/dENQM/OZfD0JZOHjrBcd
- e3gfY6b3SpgN3x87zCd7LrNgTX7gBvdwrDg8cO7a67MqaBUG2pv/cVmZWv8p2hGjXUAY
- nXNf8gCxrjgsJRjgJNlbjQ0pOIa+0zdgPAPuA=
+ :cc; bh=+o2We0O4O1K3O8X45oW49z43JEjChY/ZotlUWlRzMeY=;
+ b=N9T4Hgn2olyla091p0rCbp8MGppeNCcuzLHkOg4et/yXeODxWgkgOpQ5JfaWF6yr7p
+ BgtkGV3pNk0iPL0TBtKXBw2VgN2fvhBN+J3Wt8HaFDdVEDuu7mll40N2fYh6qZCR25+P
+ vpABL19mgPfAIXXoYnNa4vSulALLIIB++7KRUJAkULPvnVI8VDRiL2qQeLJQ/6v3TFV3
+ CkQDeTQ01WqrJx/ZFBebwamcrNSIXMDP92yDnECrA30PthrrbGdFytXOixqFOK+KL9JN
+ 0kMOsWxnidDmU+v5xf6hmq8gV3JP6Rmc1d0+Z+CNlI/FIVZR/dh/s2sHQi2GFeKqEYyB
+ Y/zA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=yo7l/PRy7h/Gb824LBKVuDwtwGequhTqIvXIp3adEwg=;
- b=k0qc3ysQNTZrPnTjk76rDF64r1rML7BlI4jcwBe9CaoGDUtrdgQtzysH9TZen2EYKF
- 3gdpHynZumQ1Fs43hvUItf+G5jZJVEfjZwja/AEMiZ0COTfb+IJSXxL+GF+9X8xiM9nJ
- 1JsBDJy8zKnMsxSvbJOCgu5EW5lkwVwKllYjfwiipi74GCvrs1caz/hOZdkdCeHNE1T3
- Tb8yqRhx7g7qJkfmwQLY7b9LEjp3/Vewq14koaKC6loSUJRuNSVW7/vP3op6+GGUpKqD
- HA0I7XqlFvftBOEFnb4vP4k6IUT2NM9MXXVpRVfJhOVadW0dTz6lwLLPRuVuq/QXc9xv
- T9GQ==
-X-Gm-Message-State: APjAAAWnnmQicBsLJB5ErOcZXv5uNlVRz2Zu6vN23VIbBbLUJCgueodh
- H2qh06G2fXAMuUTUFUavBUSPYK6K0lOmsNof90jqHQ==
-X-Google-Smtp-Source: APXvYqwDavOgrhT4MQJkkvC8k6ZNFapMZUSf4ZAK47DcNazni4xVviIrlaRZatDMKMuGJBCB0akuEaXjv2s8zidOQVM=
-X-Received: by 2002:a02:bb08:: with SMTP id y8mr15097818jan.51.1563608109608; 
- Sat, 20 Jul 2019 00:35:09 -0700 (PDT)
+ bh=+o2We0O4O1K3O8X45oW49z43JEjChY/ZotlUWlRzMeY=;
+ b=PKXLdCxjxXz4hPMryMP5+PMvhqPwWJn2a6Zc7A7QSfsHZm1RYT5iEcezMt10NsiffQ
+ bhWtTcMqAHt+T2M5B5nEPi28nMs01BGopG2ImyP1A2uE0c+3wxNvHF6f3TdSLXAslbWy
+ c4iP7x65JFwfISh7FmayD4mFFaDZbbL/fKZzwMY7+sqA3pCxRR7ZZIPHHlojaDI1UptJ
+ wulTHTl2f9wNY9D1iHQYlCIUHUmETVvh3gHGr2eoh+BUG/DOxXPJDuPipJEyHy02a02B
+ dv8+2Lf0onLEfu9+s0dPKS1wlH8KcxOiacTj932tCu7cqlmHZdPM2awrv0VMABy9drqr
+ ETDA==
+X-Gm-Message-State: APjAAAWFm55fx6B50g5y40twha2CRmR+rD5CfwWLAOFBOFVeiFeK3xwy
+ eL4vZp8lU8Qtn4isUoga6+8/2BFRnranuXKL3vnnpg==
+X-Google-Smtp-Source: APXvYqzVrTCraoTk8bHhcemevK3zYW7sXOXRysGnUpnwuwErcRyoe5XAsks0BR3u0l9gfYUHHH8w+VinvMvmaGr4J9w=
+X-Received: by 2002:a2e:8195:: with SMTP id e21mr28263938ljg.62.1563608206402; 
+ Sat, 20 Jul 2019 00:36:46 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190605064933.6bmskkxzzgn35xz7@flea>
- <CAMty3ZCCP=oCqm5=49BsjwoxdDETgBfU_5g8fQ=bz=iWApV0tw@mail.gmail.com>
- <20190614142406.ybdiqfppo5mc5bgq@flea>
- <CAMty3ZB45cHx3WeXnywBh2_UA_bTmFs6yBTqLWA1BNf4fQtVvQ@mail.gmail.com>
- <20190625144930.5hegt6bkzqzykjid@flea>
- <CAMty3ZCmj0Rz7MMhLqihsvLQi+1CHf0fAoJQ4QN65xB-bwxaJw@mail.gmail.com>
- <20190703114933.u3x4ej3v7ocewvif@flea>
- <CAOf5uw=ZEvMV1hFQE986rNG_ctpReGbjbZzv0m=OzKPdBh57uQ@mail.gmail.com>
- <20190711100100.cty3s6rs3w27low6@flea>
- <CAOf5uw=3fiMuhcj3kDtCaGNTsxHKRrYb79MXZ+yUZtmf0jU10A@mail.gmail.com>
- <20190720065830.zn3txpyduakywcva@flea>
- <CAMty3ZDE1xiNgHVLihH378dY5szzkr14V-fwLZdvPs12tY+G1A@mail.gmail.com>
-In-Reply-To: <CAMty3ZDE1xiNgHVLihH378dY5szzkr14V-fwLZdvPs12tY+G1A@mail.gmail.com>
-From: Jagan Teki <jagan@amarulasolutions.com>
-Date: Sat, 20 Jul 2019 13:04:58 +0530
-Message-ID: <CAMty3ZA0H_rbe2tJVeOmi=1v4dWXY1=0zK-+DoNawzQaHd=4ug@mail.gmail.com>
-Subject: Re: [PATCH v6 11/22] clk: sunxi-ng: a64: Add minimum rate for PLL_MIPI
-To: Maxime Ripard <maxime.ripard@bootlin.com>, 
- Michael Nazzareno Trimarchi <michael@amarulasolutions.com>
+References: <1563564291-9692-1-git-send-email-hongweiz@ami.com>
+ <1563564291-9692-3-git-send-email-hongweiz@ami.com>
+In-Reply-To: <1563564291-9692-3-git-send-email-hongweiz@ami.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Sat, 20 Jul 2019 09:36:34 +0200
+Message-ID: <CACRpkdYrJkROvPaR51gXzOQW_TtCtpbhbARpgwAqoC77rAhF+g@mail.gmail.com>
+Subject: Re: [v5 2/2] gpio: aspeed: Add SGPIO driver
+To: Hongwei Zhang <hongweiz@ami.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190720_003511_078248_736829A0 
-X-CRM114-Status: GOOD (  25.80  )
+X-CRM114-CacheID: sfid-20190720_003649_331717_70474D90 
+X-CRM114-Status: GOOD (  25.77  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -100,159 +91,248 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, David Airlie <airlied@linux.ie>,
- Michael Turquette <mturquette@baylibre.com>,
- linux-sunxi <linux-sunxi@googlegroups.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- linux-clk <linux-clk@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: linux-aspeed@lists.ozlabs.org,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Andrew Jeffery <andrew@aj.id.au>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Joel Stanley <joel@jms.id.au>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Jul 20, 2019 at 12:46 PM Jagan Teki <jagan@amarulasolutions.com> wrote:
->
-> On Sat, Jul 20, 2019 at 12:28 PM Maxime Ripard
-> <maxime.ripard@bootlin.com> wrote:
-> >
-> > On Thu, Jul 11, 2019 at 07:43:16PM +0200, Michael Nazzareno Trimarchi wrote:
-> > > > > tcon-pixel clock is the rate that you want to achive on display side
-> > > > > and if you have 4 lanes 32bit or lanes and different bit number that
-> > > > > you need to have a clock that is able to put outside bits and speed
-> > > > > equal to pixel-clock * bits / lanes. so If you want a pixel-clock of
-> > > > > 40 mhz and you have 32bits and 4 lanes you need to have a clock of
-> > > > > 40 * 32 / 4 in no-burst mode. I think that this is done but most of
-> > > > > the display.
-> > > >
-> > > > So this is what the issue is then?
-> > > >
-> > > > This one does make sense, and you should just change the rate in the
-> > > > call to clk_set_rate in sun4i_tcon0_mode_set_cpu.
-> > > >
-> > > > I'm still wondering why that hasn't been brought up in either the
-> > > > discussion or the commit log before though.
-> > > >
-> > > Something like this?
-> > >
-> > > drivers/gpu/drm/sun4i/sun4i_tcon.c     | 20 +++++++++++---------
-> > >  drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h |  2 --
-> > >  2 files changed, 11 insertions(+), 11 deletions(-)
-> > >
-> > > diff --git a/drivers/gpu/drm/sun4i/sun4i_tcon.c
-> > > b/drivers/gpu/drm/sun4i/sun4i_tcon.c
-> > > index 64c43ee6bd92..42560d5c327c 100644
-> > > --- a/drivers/gpu/drm/sun4i/sun4i_tcon.c
-> > > +++ b/drivers/gpu/drm/sun4i/sun4i_tcon.c
-> > > @@ -263,10 +263,11 @@ static int sun4i_tcon_get_clk_delay(const struct
-> > > drm_display_mode *mode,
-> > >  }
-> > >
-> > >  static void sun4i_tcon0_mode_set_common(struct sun4i_tcon *tcon,
-> > > -                                       const struct drm_display_mode *mode)
-> > > +                                       const struct drm_display_mode *mode,
-> > > +                                       u32 tcon_mul)
-> > >  {
-> > >         /* Configure the dot clock */
-> > > -       clk_set_rate(tcon->dclk, mode->crtc_clock * 1000);
-> > > +       clk_set_rate(tcon->dclk, mode->crtc_clock * tcon_mul * 1000);
-> > >
-> > >         /* Set the resolution */
-> > >         regmap_write(tcon->regs, SUN4I_TCON0_BASIC0_REG,
-> > > @@ -335,12 +336,13 @@ static void sun4i_tcon0_mode_set_cpu(struct
-> > > sun4i_tcon *tcon,
-> > >         u8 bpp = mipi_dsi_pixel_format_to_bpp(device->format);
-> > >         u8 lanes = device->lanes;
-> > >         u32 block_space, start_delay;
-> > > -       u32 tcon_div;
-> > > +       u32 tcon_div, tcon_mul;
-> > >
-> > > -       tcon->dclk_min_div = SUN6I_DSI_TCON_DIV;
-> > > -       tcon->dclk_max_div = SUN6I_DSI_TCON_DIV;
-> > > +       tcon->dclk_min_div = 4;
-> > > +       tcon->dclk_max_div = 127;
-> > >
-> > > -       sun4i_tcon0_mode_set_common(tcon, mode);
-> > > +       tcon_mul = bpp / lanes;
-> > > +       sun4i_tcon0_mode_set_common(tcon, mode, tcon_mul);
-> > >
-> > >         /* Set dithering if needed */
-> > >         sun4i_tcon0_mode_set_dithering(tcon, sun4i_tcon_get_connector(encoder));
-> > > @@ -366,7 +368,7 @@ static void sun4i_tcon0_mode_set_cpu(struct
-> > > sun4i_tcon *tcon,
-> > >          */
-> > >         regmap_read(tcon->regs, SUN4I_TCON0_DCLK_REG, &tcon_div);
-> > >         tcon_div &= GENMASK(6, 0);
-> > > -       block_space = mode->htotal * bpp / (tcon_div * lanes);
-> > > +       block_space = mode->htotal * tcon_div * tcon_mul;
-> > >         block_space -= mode->hdisplay + 40;
-> > >
-> > >         regmap_write(tcon->regs, SUN4I_TCON0_CPU_TRI0_REG,
-> > > @@ -408,7 +410,7 @@ static void sun4i_tcon0_mode_set_lvds(struct
-> > > sun4i_tcon *tcon,
-> > >
-> > >         tcon->dclk_min_div = 7;
-> > >         tcon->dclk_max_div = 7;
-> > > -       sun4i_tcon0_mode_set_common(tcon, mode);
-> > > +       sun4i_tcon0_mode_set_common(tcon, mode, 1);
-> > >
-> > >         /* Set dithering if needed */
-> > >         sun4i_tcon0_mode_set_dithering(tcon, sun4i_tcon_get_connector(encoder));
-> > > @@ -487,7 +489,7 @@ static void sun4i_tcon0_mode_set_rgb(struct
-> > > sun4i_tcon *tcon,
-> > >
-> > >         tcon->dclk_min_div = 6;
-> > >         tcon->dclk_max_div = 127;
-> > > -       sun4i_tcon0_mode_set_common(tcon, mode);
-> > > +       sun4i_tcon0_mode_set_common(tcon, mode, 1);
-> > >
-> > >         /* Set dithering if needed */
-> > >         sun4i_tcon0_mode_set_dithering(tcon, connector);
-> > > diff --git a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h
-> > > b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h
-> > > index 5c3ad5be0690..a07090579f84 100644
-> > > --- a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h
-> > > +++ b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h
-> > > @@ -13,8 +13,6 @@
-> > >  #include <drm/drm_encoder.h>
-> > >  #include <drm/drm_mipi_dsi.h>
-> > >
-> > > -#define SUN6I_DSI_TCON_DIV     4
-> > > -
-> > >  struct sun6i_dsi {
-> > >         struct drm_connector    connector;
-> > >         struct drm_encoder      encoder;
-> >
-> > I had more something like this in mind:
-> > http://code.bulix.org/nlp5a4-803511
->
-> Worth to look at it. was it working on your panel? meanwhile I will check it.
->
-> We have updated with below change [1], seems working on but is
-> actually checking the each divider as before start with 4... till 127.
->
-> This new approach, is start looking the best divider from 4.. based on
-> the idea vs rounded it will ended up best divider like [2]
->
-> https://gist.github.com/openedev/7e2c33248b372d29be9979e06d483673
-> https://gist.github.com/openedev/c72dfffc0ca59e7ec1edcd7ad360cdd1
+Hi Hongwei,
 
-I made quick check on two possibilities.
+thanks for your patch!
 
-1) with Maxime change
-https://gist.github.com/openedev/3b0b3d35ced6d89f5be0831f1cc9d840
-https://gist.github.com/openedev/dd6a9e528cde80ef0508cb54723f505d
+some comments and nitpicking below:
 
-2) with Maxime change along with min 4, max 127 divider values.
-The outcome similar like 1)
+On Fri, Jul 19, 2019 at 9:25 PM Hongwei Zhang <hongweiz@ami.com> wrote:
 
-This look it will depends on divider, need to check further on this page.
+> Add SGPIO driver support for Aspeed AST2500 SoC.
+>
+> Signed-off-by: Hongwei Zhang <hongweiz@ami.com>
 
-Jagan.
+> +// SPDX-License-Identifier: GPL-2.0+
+
+I think the SPDX people prefer GPL-2.0-or-later
+
+> +#include <linux/gpio.h>
+
+Do not include this header in any new code using or
+providing GPIOs.
+
+> +#include <linux/gpio/driver.h>
+
+This should be enough.
+
+> +/*
+> + * Note: The "value" register returns the input value when the GPIO is
+> + *      configured as an input.
+> + *
+> + *      The "rdata" register returns the output value when the GPIO is
+> + *      configured as an output.
+> + */
+> +static const struct aspeed_sgpio_bank aspeed_sgpio_banks[] = {
+> +       {
+> +               .val_regs = 0x0000,
+> +               .rdata_reg = 0x0070,
+> +               .irq_regs = 0x0004,
+> +               .names = { "A", "B", "C", "D" },
+> +       },
+> +       {
+> +               .val_regs = 0x001C,
+> +               .rdata_reg = 0x0074,
+> +               .irq_regs = 0x0020,
+> +               .names = { "E", "F", "G", "H" },
+> +       },
+> +       {
+> +               .val_regs = 0x0038,
+> +               .rdata_reg = 0x0078,
+> +               .irq_regs = 0x003C,
+> +               .names = { "I", "J" },
+> +       },
+> +};
+
+I guess you have been over the reasons why this is one big GPIO
+chip instead of  10 individual gpio_chips?
+
+It is usally better to have the individual chips, because it is easier
+to just cut down the code to handle one instance and not having
+to offset around the different address ranges.
+
+Even if they all have the same clock, the clocks are reference
+counted so it will just be referenced 10 times at most.
+
+If they share a few common registers it is not good to split it
+though. So there may be a compelling argument for keeping them
+all together.
+
+> +/* This will be resolved at compile time */
+
+I don't see why that matters.
+
+> +static inline void __iomem *bank_reg(struct aspeed_sgpio *gpio,
+> +                                    const struct aspeed_sgpio_bank *bank,
+> +                                    const enum aspeed_sgpio_reg reg)
+
+You don't need inline. The compiler will inline it anyway if it
+see the need for it.
+
+The only time we really use inline is in header files, where we
+want to point out that this function will be inlined as there is no
+compiled code in header files.
+
+> +#define GPIO_BANK(x)    ((x) >> 5)
+> +#define GPIO_OFFSET(x)  ((x) & 0x1f)
+> +#define GPIO_BIT(x)     BIT(GPIO_OFFSET(x))
+
+OK seems fairly standard.
+
+> +static int aspeed_sgpio_get(struct gpio_chip *gc, unsigned int offset)
+> +static void aspeed_sgpio_set(struct gpio_chip *gc, unsigned int offset, int val)
+> +static int aspeed_sgpio_dir_in(struct gpio_chip *gc, unsigned int offset)
+
+These are fairly standard.
+
+> +static int aspeed_sgpio_dir_out(struct gpio_chip *gc, unsigned int offset, int val)
+> +{
+> +       struct aspeed_sgpio *gpio = gpiochip_get_data(gc);
+> +       unsigned long flags;
+> +
+> +       spin_lock_irqsave(&gpio->lock, flags);
+> +       gpio->dir_in[GPIO_BANK(offset)] &= ~GPIO_BIT(offset);
+> +       spin_unlock_irqrestore(&gpio->lock, flags);
+> +
+> +       return 0;
+> +}
+
+There is a bug here. You fail to write the "val" to the output
+line, which is the expected semantic of this call.
+
+> +static int aspeed_sgpio_get_direction(struct gpio_chip *gc, unsigned int offset)
+
+These are all very simple MMIO accessors.
+
+If you made one gpio_chip per bank, you could just use gpio-mmio.c
+to control the lines by
+
+select GPIO_GENERIC
+
+        ret = bgpio_init(chip, dev, 4,
+                         base + GPIO_VAL_VALUE ,
+                         NULL,
+                         NULL,
+                         NULL,
+                         NULL,
+                         0);
+
+The MMIO gpio library takes care of shadowing the direction and all.
+It also will implement get/set_multiple() for you for free.
+
+So seriously consider making one gpio_chip per bank.
+
+> +static inline void irqd_to_aspeed_sgpio_data(struct irq_data *d,
+> +static void aspeed_sgpio_irq_ack(struct irq_data *d)
+> +static void aspeed_sgpio_irq_set_mask(struct irq_data *d, bool set)
+> +static void aspeed_sgpio_irq_mask(struct irq_data *d)
+> +static void aspeed_sgpio_irq_unmask(struct irq_data *d)
+> +static int aspeed_sgpio_set_type(struct irq_data *d, unsigned int type)
+> +static void aspeed_sgpio_irq_handler(struct irq_desc *desc)
+> +{
+> +       struct gpio_chip *gc = irq_desc_get_handler_data(desc);
+> +       struct irq_chip *ic = irq_desc_get_chip(desc);
+> +       struct aspeed_sgpio *data = gpiochip_get_data(gc);
+> +       unsigned int i, p, girq;
+> +       unsigned long reg;
+> +
+> +       chained_irq_enter(ic, desc);
+> +
+> +       for (i = 0; i < ARRAY_SIZE(aspeed_sgpio_banks); i++) {
+> +               const struct aspeed_sgpio_bank *bank = &aspeed_sgpio_banks[i];
+> +
+> +               reg = ioread32(bank_reg(data, bank, reg_irq_status));
+> +
+> +               for_each_set_bit(p, &reg, 32) {
+> +                       girq = irq_find_mapping(gc->irq.domain, i * 32 + p);
+> +                       generic_handle_irq(girq);
+> +               }
+> +
+> +       }
+
+This also gets really complex with one driver for all the banks.
+
+> +       /* Disable IRQ and clear Interrupt status registers for all SPGIO Pins. */
+> +       for (i = 0; i < ARRAY_SIZE(aspeed_sgpio_banks); i++) {
+
+(...)
+> +static int __init aspeed_sgpio_probe(struct platform_device *pdev)
+> +{
+> +       struct aspeed_sgpio *gpio;
+> +       u32 nr_gpios, sgpio_freq, sgpio_clk_div;
+> +       int rc;
+> +       unsigned long apb_freq;
+> +
+> +       /* initialize allocated memory with zeros */
+
+No need for this comment, developers know what "kzalloc" means.
+
+> +       rc = of_property_read_u32(pdev->dev.of_node, "bus-frequency", &sgpio_freq);
+> +       if (rc < 0) {
+> +               dev_err(&pdev->dev, "Could not read bus-frequency property\n");
+> +               return -EINVAL;
+> +       }
+> +
+> +       gpio->pclk = devm_clk_get(&pdev->dev, NULL);
+> +       if (IS_ERR(gpio->pclk)) {
+> +               dev_err(&pdev->dev, "devm_clk_get failed\n");
+> +               return PTR_ERR(gpio->pclk);
+> +       }
+> +
+> +       apb_freq = clk_get_rate(gpio->pclk);
+> +
+> +       /*
+> +        * From the datasheet,
+> +        *      SGPIO period = 1/PCLK * 2 * (GPIO254[31:16] + 1)
+> +        *      period = 2 * (GPIO254[31:16] + 1) / PCLK
+> +        *      frequency = 1 / (2 * (GPIO254[31:16] + 1) / PCLK)
+> +        *      frequency = PCLK / (2 * (GPIO254[31:16] + 1))
+> +        *      frequency * 2 * (GPIO254[31:16] + 1) = PCLK
+> +        *      GPIO254[31:16] = PCLK / (frequency * 2) - 1
+> +        */
+> +       if (sgpio_freq == 0)
+> +               return -EINVAL;
+> +
+> +       sgpio_clk_div = (apb_freq / (sgpio_freq * 2)) - 1;
+> +
+> +       if (sgpio_clk_div > (1 << 16) - 1)
+> +               return -EINVAL;
+> +
+> +       iowrite32(FIELD_PREP(ASPEED_SGPIO_CLK_DIV_MASK, sgpio_clk_div) |
+> +                 FIELD_PREP(ASPEED_SGPIO_PINS_MASK, (nr_gpios / 8)) |
+> +                 ASPEED_SGPIO_ENABLE,
+> +                 gpio->base + ASPEED_SGPIO_CTRL);
+
+This is a separate clock driver.
+
+Break this out as a separate clk device that the other GPIOs
+grab.
+
+Put this in drivers/clk/clk-aspeed-gpio.c or wherever appropriate
+with some
+reg = <0xnnnnnn54 4>;
+
+Then let the GPIO driver grab this clock. This makes it possible
+to use a per-gpio-bank split of the GPIO chips.
+
+It looks a bit complicated but this will work so much better because
+the clock code is in the clock subsystem and the GPIO is split up
+and becomes a very small driver since it can use gpio MMIO.
+
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
