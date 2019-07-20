@@ -2,82 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 54CA76EEEB
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 20 Jul 2019 12:08:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F5776EEF3
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 20 Jul 2019 12:12:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:To:From:Subject:Message-ID:In-Reply-To:Date:
-	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=ZcpZzaLZzfNsUIvWyy4mKFKgo0sh4u9LpGCVu27YG+c=; b=K3jnP74GZWYMTC
-	P954KwhDBweSbdCBrYnCIgnq21M1H7ZW+PDoLeij/dZjCBX0KDjy1HI3rZZRTGr3O4iPouU5XghYj
-	NWAPj/QZy/nnEHDqTl77UFEX+qAS3z3LUb4Bj+qO/OfVoKfIgPz6LuE38R2V2nmyZKKWIcUnji0gp
-	kNamHCCER9sGTw4b0C/G6gwGxrgiydxesxPLmyAp7QK5TTlRCNq1+pR70q1gNnWs1NrRowu1v5HZD
-	mCDsDfC7XuqwEkObiA/bl6AVRQJZ1pxT+C0tvC1IOqclU4YscowctgQ4wcD7VGaBSJY/hHmxQvPdQ
-	U7Y/Pwda9Ng+QbF0yWdw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=gBFSTxrwXnP4ICo/wSPKu/Qp0esCiXCbYej0h1xJDs0=; b=n5EQKX2GB7nQNj5AunEgaGvKT
+	8IFbVkzEZVWzj6OayAcAABK6wBfDilhhLXj/Jitouir7GRPJtSkpAGsUxM1cbHOOPZUDvySi+AIgZ
+	/yOgiSACiudnR5NM9I13hDpGo0blpbGJZJaNk97YrnxjpPqCZShzeaC2Xlawyb3fEGX367nYEPA1I
+	VHCSg6O0e/uxQPgu8U8J6ZCh6xEb80PT89iFVSk4S4SfSpJpL6Qed/kcD6KtQ0hd4IsSSGZ8+4Jua
+	UUOdRuN3N2cGay1bwEpnDQOVwSIMuvFhqwW4QT/t7Vq6LWBtI7yqH1/iGTk6+koTavXhWp6RYV/X+
+	JmT5asUuQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1homHr-0003Y2-B8; Sat, 20 Jul 2019 10:08:19 +0000
-Received: from mail-io1-f71.google.com ([209.85.166.71])
+	id 1homMK-0005Uh-Kw; Sat, 20 Jul 2019 10:12:56 +0000
+Received: from relay3-d.mail.gandi.net ([217.70.183.195])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1homHc-0003XF-Ch
- for linux-arm-kernel@lists.infradead.org; Sat, 20 Jul 2019 10:08:05 +0000
-Received: by mail-io1-f71.google.com with SMTP id h4so37540341iol.5
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 20 Jul 2019 03:08:01 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:date:in-reply-to:message-id:subject
- :from:to;
- bh=aIptGodPgqjQ+OCeW9XKeJdzrs6DHyh1FKeEsnaxVbM=;
- b=aBnTillpH1U5XZdpjXqOz+4YkWIJoTwtcB87wDnqW4VLWn2t4wO7SX5i+v4SkcS3jx
- kCi3S6pbwPGQJ9V8bBtg7Vh52SnWCdyDn6Gph/vXHaWJ/z5HlreCQBh5dWx6YE/xtHXQ
- u97k6JIKSsPqIX/coaEloQu/uTLPzzZ6rMUSuXxvIqTD4Xlckc5KsG+RKnaFcvnSZFj0
- 5g00pU8BtKq72ffOZG+rSwYtK6lW6IHPtdWhBhSmw7n3Fm+P6knaF1pZvDl2jqBHcxF7
- cVEllTfEtfYm7lJPqFVQbhnVygeFW4Gk9hiDD0kDkJUyff5t+yWmN6VVZZbCnOXQFfi5
- idCw==
-X-Gm-Message-State: APjAAAV7SWgHLhz7+EEfAsg1siVArnepUemzQmyyTOE92AeQR54w8O8Q
- IDRFowaVUj0TzED/k5b8jh3y/4drMO++nu8oYMbUbTxMhEsm
-X-Google-Smtp-Source: APXvYqxejQK5TJXgPG7zDzFOcVKgb6JtNNiEgaZkAwUZNQxIY+uT88/YtfjAsG3qEv0NnxidVHOC8aWEo8R9Py88FYjmq9+IoaCH
+ id 1homM6-0005Th-Dr
+ for linux-arm-kernel@lists.infradead.org; Sat, 20 Jul 2019 10:12:44 +0000
+X-Originating-IP: 91.163.65.175
+Received: from localhost (91-163-65-175.subs.proxad.net [91.163.65.175])
+ (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id BB38D60003;
+ Sat, 20 Jul 2019 10:12:39 +0000 (UTC)
+Date: Sat, 20 Jul 2019 12:12:39 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Icenowy Zheng <icenowy@aosc.io>
+Subject: Re: [PATCH v4 8/8] ARM: dts: sun8i: s3: add devicetree for Lichee
+ zero plus w/ S3
+Message-ID: <20190720101239.dg2oe3jazzfmtzvw@flea>
+References: <20190713034634.44585-1-icenowy@aosc.io>
+ <20190713034634.44585-9-icenowy@aosc.io>
 MIME-Version: 1.0
-X-Received: by 2002:a6b:f90f:: with SMTP id j15mr48006883iog.43.1563617280803; 
- Sat, 20 Jul 2019 03:08:00 -0700 (PDT)
-Date: Sat, 20 Jul 2019 03:08:00 -0700
-In-Reply-To: <0000000000008dd6bb058e006938@google.com>
-X-Google-Appengine-App-Id: s~syzkaller
-X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <000000000000964b0d058e1a0483@google.com>
-Subject: Re: WARNING in __mmdrop
-From: syzbot <syzbot+e58112d71f77113ddb7b@syzkaller.appspotmail.com>
-To: aarcange@redhat.com, akpm@linux-foundation.org, christian@brauner.io, 
- davem@davemloft.net, ebiederm@xmission.com, elena.reshetova@intel.com, 
- guro@fb.com, hch@infradead.org, james.bottomley@hansenpartnership.com, 
- jasowang@redhat.com, jglisse@redhat.com, keescook@chromium.org, 
- ldv@altlinux.org, linux-arm-kernel@lists.infradead.org, 
- linux-kernel@vger.kernel.org, linux-mm@kvack.org, 
- linux-parisc@vger.kernel.org, luto@amacapital.net, mhocko@suse.com, 
- mingo@kernel.org, mst@redhat.com, namit@vmware.com, peterz@infradead.org, 
- syzkaller-bugs@googlegroups.com, viro@zeniv.linux.org.uk, wad@chromium.org
+In-Reply-To: <20190713034634.44585-9-icenowy@aosc.io>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190720_030804_434526_00509BE8 
-X-CRM114-Status: UNSURE (   3.41  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 3.1 (+++)
+X-CRM114-CacheID: sfid-20190720_031242_784798_31790EE8 
+X-CRM114-Status: GOOD (  19.83  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (3.1 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.71 listed in list.dnswl.org]
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 2.5 SORTED_RECIPS          Recipient list is sorted by address
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.195 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.71 listed in wl.mailspike.net]
+ [217.70.183.195 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,35 +64,164 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"; DelSp="yes"
+Cc: devicetree@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org,
+ linux-gpio@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============7293875382418627761=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-syzbot has bisected this bug to:
 
-commit 7f466032dc9e5a61217f22ea34b2df932786bbfc
-Author: Jason Wang <jasowang@redhat.com>
-Date:   Fri May 24 08:12:18 2019 +0000
+--===============7293875382418627761==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="yaksnqu7g5ezrkwd"
+Content-Disposition: inline
 
-     vhost: access vq metadata through kernel virtual address
 
-bisection log:  https://syzkaller.appspot.com/x/bisect.txt?x=149a8a20600000
-start commit:   6d21a41b Add linux-next specific files for 20190718
-git tree:       linux-next
-final crash:    https://syzkaller.appspot.com/x/report.txt?x=169a8a20600000
-console output: https://syzkaller.appspot.com/x/log.txt?x=129a8a20600000
-kernel config:  https://syzkaller.appspot.com/x/.config?x=3430a151e1452331
-dashboard link: https://syzkaller.appspot.com/bug?extid=e58112d71f77113ddb7b
-syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=10139e68600000
+--yaksnqu7g5ezrkwd
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-Reported-by: syzbot+e58112d71f77113ddb7b@syzkaller.appspotmail.com
-Fixes: 7f466032dc9e ("vhost: access vq metadata through kernel virtual  
-address")
+On Sat, Jul 13, 2019 at 11:46:34AM +0800, Icenowy Zheng wrote:
+> Lichee zero plus is a core board made by Sipeed, which includes on-board
+> TF slot or SMT SD NAND, and optional SPI NOR or eMMC, a UART debug
+> header, a microUSB slot and a gold finger connector for expansion. It
+> can use either Sochip S3 or Allwinner S3L SoC.
+>
+> Add the basic device tree for the core board, w/o optional onboard
+> storage, and with S3 SoC.
+>
+> Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
+> ---
+> No changes in v4.
+>
+> Changes in v3:
+> - Drop common regulator DTSI usage and added vcc3v3 regulator.
+>
+>  arch/arm/boot/dts/Makefile                    |  1 +
+>  .../boot/dts/sun8i-s3-lichee-zero-plus.dts    |  8 ++++
+>  .../dts/sun8i-s3-s3l-lichee-zero-plus.dtsi    | 46 +++++++++++++++++++
+>  3 files changed, 55 insertions(+)
+>  create mode 100644 arch/arm/boot/dts/sun8i-s3-lichee-zero-plus.dts
+>  create mode 100644 arch/arm/boot/dts/sun8i-s3-s3l-lichee-zero-plus.dtsi
+>
+> diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+> index 9159fa2cea90..e320460a952b 100644
+> --- a/arch/arm/boot/dts/Makefile
+> +++ b/arch/arm/boot/dts/Makefile
+> @@ -1114,6 +1114,7 @@ dtb-$(CONFIG_MACH_SUN8I) += \
+>  	sun8i-r16-nintendo-super-nes-classic.dtb \
+>  	sun8i-r16-parrot.dtb \
+>  	sun8i-r40-bananapi-m2-ultra.dtb \
+> +	sun8i-s3-lichee-zero-plus.dtb \
+>  	sun8i-t3-cqa3t-bv3.dtb \
+>  	sun8i-v3s-licheepi-zero.dtb \
+>  	sun8i-v3s-licheepi-zero-dock.dtb \
+> diff --git a/arch/arm/boot/dts/sun8i-s3-lichee-zero-plus.dts b/arch/arm/boot/dts/sun8i-s3-lichee-zero-plus.dts
+> new file mode 100644
+> index 000000000000..7d2f6b145190
+> --- /dev/null
+> +++ b/arch/arm/boot/dts/sun8i-s3-lichee-zero-plus.dts
+> @@ -0,0 +1,8 @@
+> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> +/*
+> + * Copyright (C) 2019 Icenowy Zheng <icenowy@aosc.io>
+> + */
+> +
+> +/dts-v1/;
+> +#include "sun8i-s3.dtsi"
+> +#include "sun8i-s3-s3l-lichee-zero-plus.dtsi"
 
-For information about bisection process see: https://goo.gl/tpsmEJ#bisection
+Why do we need to mention both the S3 and S3l in the name? What are
+the differences between the two, and why do you need to share a DTSI?
+
+> diff --git a/arch/arm/boot/dts/sun8i-s3-s3l-lichee-zero-plus.dtsi b/arch/arm/boot/dts/sun8i-s3-s3l-lichee-zero-plus.dtsi
+> new file mode 100644
+> index 000000000000..2677d319fb29
+> --- /dev/null
+> +++ b/arch/arm/boot/dts/sun8i-s3-s3l-lichee-zero-plus.dtsi
+> @@ -0,0 +1,46 @@
+> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> +/*
+> + * Copyright (C) 2019 Icenowy Zheng <icenowy@aosc.io>
+> + */
+> +
+> +#include <dt-bindings/gpio/gpio.h>
+> +
+> +/ {
+> +	aliases {
+> +		serial0 = &uart0;
+> +	};
+> +
+> +	chosen {
+> +		stdout-path = "serial0:115200n8";
+> +	};
+> +
+> +	reg_vcc3v3: vcc3v3 {
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "vcc3v3";
+> +		regulator-min-microvolt = <3300000>;
+> +		regulator-max-microvolt = <3300000>;
+> +	};
+> +};
+> +
+> +&mmc0 {
+> +	broken-cd;
+> +	bus-width = <4>;
+> +	vmmc-supply = <&reg_vcc3v3>;
+> +	status = "okay";
+> +};
+> +
+> +&uart0 {
+> +	pinctrl-0 = <&uart0_pb_pins>;
+> +	pinctrl-names = "default";
+> +	status = "okay";
+> +};
+> +
+> +&usb_otg {
+> +	dr_mode = "otg";
+> +	status = "okay";
+> +};
+> +
+> +&usbphy {
+> +	usb0_id_det-gpios = <&pio 5 6 GPIO_ACTIVE_HIGH>;
+> +	status = "okay";
+
+How can it do OTG if there's no controlable VBUS?
+
+Maxime
+
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
+--yaksnqu7g5ezrkwd
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXTLpFwAKCRDj7w1vZxhR
+xapNAP9dsiXgIpZkVO/jpxBXiwqOsd98Hw+9A2BukjEQ/nekDAD/auBrd/oUr8MW
+Ebo3HGNtd9Zgkdxi7HdmbdxHN6XzIQs=
+=BhkM
+-----END PGP SIGNATURE-----
+
+--yaksnqu7g5ezrkwd--
+
+
+--===============7293875382418627761==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7293875382418627761==--
+
