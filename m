@@ -2,54 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C90EF6EEF9
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 20 Jul 2019 12:13:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6E686EF3C
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 20 Jul 2019 13:40:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=cZo6b+PJFWlJLMMSRPhY/kgPk65xN+PBDFZXLawly2A=; b=dqDag9OTe47zgrWQHyHkv/dZ2
-	pJf/JIuymJ79rRZo8yOev0NgqrFBPWaMmoK/ZVhYnE6TJB7BTjlXJFhPqvercfdgL8b1libeO4Az2
-	bfqWYJygs/Fef8NesZrywHSdX8eYxJoytbeptjNCx9S17b8nJ8X+/DDBo7Np6uL1wrQyahoymnHxc
-	DH1tcG4xuIKgxdk+Nv6dxWOhGn60E8Tw3dH4pcntYjG7VWXDe4TU8ZcInuR5CtnxR1tyL7OBeOJF6
-	hDvd02KV4tkVZZXaAVTA6uYoK948uXiYN1X2dkfKFvGHdP7Ixqy4vQR0bCwx9XIrEtYNUlBwMyhxL
-	EOVa+tyIQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:From:To:Subject:MIME-Version
+	:References:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=BDnLwBUfgzWsQ9PmVgRb3qD4kBpoCnRoquS2X0Jduqw=; b=aAIzsboXmlhMVK
+	grZMx2Z0kY+5UtkX5bciWFlx2ZlQf7XP7SqqbxXVO3Xgcx5p7wh0ev4KHJ98td6Ztt4GUz05seMHp
+	l7MFiTW4u0HD8Oz50MFjLjsb24uLlOZdSgy0XvQKxfuwbcBOarbJpQ5Grn+9XG8Q0ya2xiWTg+P/m
+	fu/ayA3NILrjsfhiVjutyZ39oIVN0vnSgYlhqSbnhlFm1laOYisd03+tXfqNUSEDdHI0cFEuu4LAn
+	Jb74YWTraB+kXjUPoQf/m3l/WeViX5L0vm3UJYJ873R7I8aCj3UbeMxHmEWcoRNWcsfTUGL0lVe9J
+	sHcMxLSWfA7sSGe0JGqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1homN1-0005kd-Sx; Sat, 20 Jul 2019 10:13:40 +0000
-Received: from relay11.mail.gandi.net ([217.70.178.231])
+	id 1honiN-0007I1-Kk; Sat, 20 Jul 2019 11:39:47 +0000
+Received: from haggis.mythic-beasts.com ([2a00:1098:0:86:1000:0:2:1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1homMo-0005jd-4E
- for linux-arm-kernel@lists.infradead.org; Sat, 20 Jul 2019 10:13:27 +0000
-Received: from localhost (91-163-65-175.subs.proxad.net [91.163.65.175])
- (Authenticated sender: maxime.ripard@bootlin.com)
- by relay11.mail.gandi.net (Postfix) with ESMTPSA id 6C212100008;
- Sat, 20 Jul 2019 10:13:18 +0000 (UTC)
-Date: Sat, 20 Jul 2019 12:13:18 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Icenowy Zheng <icenowy@aosc.io>
-Subject: Re: [PATCH v4 7/8] dt-bindings: arm: sunxi: add binding for Lichee
- Zero Plus core board
-Message-ID: <20190720101318.cwrvv5r42wxx5k4r@flea>
+ id 1honhv-0007HT-JB
+ for linux-arm-kernel@lists.infradead.org; Sat, 20 Jul 2019 11:39:21 +0000
+Received: from [199.195.250.187] (port=44718 helo=hermes.aosc.io)
+ by haggis.mythic-beasts.com with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <icenowy@aosc.io>)
+ id 1honhm-000736-3Z; Sat, 20 Jul 2019 12:39:14 +0100
+Received: from localhost (localhost [127.0.0.1]) (Authenticated sender:
+ icenowy@aosc.io)
+ by hermes.aosc.io (Postfix) with ESMTPSA id E210C6F0CC;
+ Sat, 20 Jul 2019 11:39:00 +0000 (UTC)
+Date: Sat, 20 Jul 2019 19:39:08 +0800
+In-Reply-To: <20190720101318.cwrvv5r42wxx5k4r@flea>
 References: <20190713034634.44585-1-icenowy@aosc.io>
  <20190713034634.44585-8-icenowy@aosc.io>
+ <20190720101318.cwrvv5r42wxx5k4r@flea>
 MIME-Version: 1.0
-In-Reply-To: <20190713034634.44585-8-icenowy@aosc.io>
-User-Agent: NeoMutt/20180716
+Subject: Re: [PATCH v4 7/8] dt-bindings: arm: sunxi: add binding for Lichee
+ Zero Plus core board
+To: linux-arm-kernel@lists.infradead.org,
+ Maxime Ripard <maxime.ripard@bootlin.com>
+From: Icenowy Zheng <icenowy@aosc.io>
+Message-ID: <BDF0C9F6-DD0D-4343-8E24-06A07055004C@aosc.io>
+X-BlackCat-Spam-Score: 14
+X-Spam-Status: No, score=1.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190720_031326_328420_F2904D3F 
-X-CRM114-Status: GOOD (  16.55  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190720_043919_633979_85C82C6A 
+X-CRM114-Status: GOOD (  14.71  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.231 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2a00:1098:0:86:1000:0:2:1 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,89 +73,43 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: devicetree@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
  linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org,
  linux-gpio@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============9083835351441532936=="
+ Rob Herring <robh+dt@kernel.org>, linux-clk@vger.kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============9083835351441532936==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="tbawuqihxzlp3rig"
-Content-Disposition: inline
-
-
---tbawuqihxzlp3rig
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Sat, Jul 13, 2019 at 11:46:33AM +0800, Icenowy Zheng wrote:
-> The Lichee Zero Plus is a core board made by Sipeed, with a microUSB
-> connector on it, TF slot or WSON8 SD chip, optional eMMC or SPI Flash.
-> It has a gold finger connector for expansion, and UART is available from
-> reserved pins w/ 2.54mm pitch. The board can use either SoChip S3 or
-> Allwinner V3L SoCs.
->
-> Add the device tree binding of the basic version of the core board --
-> w/o eMMC or SPI Flash, w/ TF slot or WSON8 SD, and use S3 SoC.
->
-> Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
-> ---
-> No changes since v3.
->
-> Patch introduced in v2.
->
->  Documentation/devicetree/bindings/arm/sunxi.yaml | 5 +++++
->  1 file changed, 5 insertions(+)
->
-> diff --git a/Documentation/devicetree/bindings/arm/sunxi.yaml b/Documentation/devicetree/bindings/arm/sunxi.yaml
-> index 000a00d12d6a..48c126a7a848 100644
-> --- a/Documentation/devicetree/bindings/arm/sunxi.yaml
-> +++ b/Documentation/devicetree/bindings/arm/sunxi.yaml
-> @@ -353,6 +353,11 @@ properties:
->            - const: licheepi,licheepi-zero
->            - const: allwinner,sun8i-v3s
->
-> +      - description: Lichee Zero Plus (with S3, without eMMC/SPI Flash)
-> +        items:
-> +          - const: sipeed,lichee-zero-plus
-> +          - const: allwinner,sun8i-s3
-
-If the S3 is just a rebranded V3, then we should have the v3 compatile
-in that list too.
-
-Maxime
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
---tbawuqihxzlp3rig
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXTLpPgAKCRDj7w1vZxhR
-xT52AQD0kOEpggd3u1F6vzeXOaF1YxkUwch5ZW4r06buXM05zwD/Wz2S9sLdf/gQ
-ZpMu2hf/5JhGlMh16kEANqiMZGngbws=
-=1064
------END PGP SIGNATURE-----
-
---tbawuqihxzlp3rig--
-
-
---===============9083835351441532936==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============9083835351441532936==--
-
+Cgrkuo4gMjAxOeW5tDfmnIgyMOaXpSBHTVQrMDg6MDAg5LiL5Y2INjoxMzoxOCwgTWF4aW1lIFJp
+cGFyZCA8bWF4aW1lLnJpcGFyZEBib290bGluLmNvbT4g5YaZ5YiwOgo+T24gU2F0LCBKdWwgMTMs
+IDIwMTkgYXQgMTE6NDY6MzNBTSArMDgwMCwgSWNlbm93eSBaaGVuZyB3cm90ZToKPj4gVGhlIExp
+Y2hlZSBaZXJvIFBsdXMgaXMgYSBjb3JlIGJvYXJkIG1hZGUgYnkgU2lwZWVkLCB3aXRoIGEgbWlj
+cm9VU0IKPj4gY29ubmVjdG9yIG9uIGl0LCBURiBzbG90IG9yIFdTT044IFNEIGNoaXAsIG9wdGlv
+bmFsIGVNTUMgb3IgU1BJCj5GbGFzaC4KPj4gSXQgaGFzIGEgZ29sZCBmaW5nZXIgY29ubmVjdG9y
+IGZvciBleHBhbnNpb24sIGFuZCBVQVJUIGlzIGF2YWlsYWJsZQo+ZnJvbQo+PiByZXNlcnZlZCBw
+aW5zIHcvIDIuNTRtbSBwaXRjaC4gVGhlIGJvYXJkIGNhbiB1c2UgZWl0aGVyIFNvQ2hpcCBTMyBv
+cgo+PiBBbGx3aW5uZXIgVjNMIFNvQ3MuCj4+Cj4+IEFkZCB0aGUgZGV2aWNlIHRyZWUgYmluZGlu
+ZyBvZiB0aGUgYmFzaWMgdmVyc2lvbiBvZiB0aGUgY29yZSBib2FyZCAtLQo+PiB3L28gZU1NQyBv
+ciBTUEkgRmxhc2gsIHcvIFRGIHNsb3Qgb3IgV1NPTjggU0QsIGFuZCB1c2UgUzMgU29DLgo+Pgo+
+PiBTaWduZWQtb2ZmLWJ5OiBJY2Vub3d5IFpoZW5nIDxpY2Vub3d5QGFvc2MuaW8+Cj4+IC0tLQo+
+PiBObyBjaGFuZ2VzIHNpbmNlIHYzLgo+Pgo+PiBQYXRjaCBpbnRyb2R1Y2VkIGluIHYyLgo+Pgo+
+PiAgRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2FybS9zdW54aS55YW1sIHwgNSAr
+KysrKwo+PiAgMSBmaWxlIGNoYW5nZWQsIDUgaW5zZXJ0aW9ucygrKQo+Pgo+PiBkaWZmIC0tZ2l0
+IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2FybS9zdW54aS55YW1sCj5iL0Rv
+Y3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9hcm0vc3VueGkueWFtbAo+PiBpbmRleCAw
+MDBhMDBkMTJkNmEuLjQ4YzEyNmE3YTg0OCAxMDA2NDQKPj4gLS0tIGEvRG9jdW1lbnRhdGlvbi9k
+ZXZpY2V0cmVlL2JpbmRpbmdzL2FybS9zdW54aS55YW1sCj4+ICsrKyBiL0RvY3VtZW50YXRpb24v
+ZGV2aWNldHJlZS9iaW5kaW5ncy9hcm0vc3VueGkueWFtbAo+PiBAQCAtMzUzLDYgKzM1MywxMSBA
+QCBwcm9wZXJ0aWVzOgo+PiAgICAgICAgICAgIC0gY29uc3Q6IGxpY2hlZXBpLGxpY2hlZXBpLXpl
+cm8KPj4gICAgICAgICAgICAtIGNvbnN0OiBhbGx3aW5uZXIsc3VuOGktdjNzCj4+Cj4+ICsgICAg
+ICAtIGRlc2NyaXB0aW9uOiBMaWNoZWUgWmVybyBQbHVzICh3aXRoIFMzLCB3aXRob3V0IGVNTUMv
+U1BJCj5GbGFzaCkKPj4gKyAgICAgICAgaXRlbXM6Cj4+ICsgICAgICAgICAgLSBjb25zdDogc2lw
+ZWVkLGxpY2hlZS16ZXJvLXBsdXMKPj4gKyAgICAgICAgICAtIGNvbnN0OiBhbGx3aW5uZXIsc3Vu
+OGktczMKPgo+SWYgdGhlIFMzIGlzIGp1c3QgYSByZWJyYW5kZWQgVjMsIHRoZW4gd2Ugc2hvdWxk
+IGhhdmUgdGhlIHYzIGNvbXBhdGlsZQo+aW4gdGhhdCBsaXN0IHRvby4KClMzIGlzIFYzIHdpdGgg
+Y29wYWNrYWdlZCBERFIzIERSQU0uCgpJdCdzIHBpbiBpbmNvbXBhdGlibGUgdy8gVjMuCgo+Cj5N
+YXhpbWUKPgo+LS0KPk1heGltZSBSaXBhcmQsIEJvb3RsaW4KPkVtYmVkZGVkIExpbnV4IGFuZCBL
+ZXJuZWwgZW5naW5lZXJpbmcKPmh0dHBzOi8vYm9vdGxpbi5jb20KCi0tIArkvb/nlKggSy05IE1h
+aWwg5Y+R6YCB6Ieq5oiR55qEQW5kcm9pZOiuvuWkh+OAggoKX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QK
+bGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRl
+YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
