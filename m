@@ -2,63 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E6E686EF3C
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 20 Jul 2019 13:40:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C8ED86EF53
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 20 Jul 2019 14:33:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:From:To:Subject:MIME-Version
-	:References:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BDnLwBUfgzWsQ9PmVgRb3qD4kBpoCnRoquS2X0Jduqw=; b=aAIzsboXmlhMVK
-	grZMx2Z0kY+5UtkX5bciWFlx2ZlQf7XP7SqqbxXVO3Xgcx5p7wh0ev4KHJ98td6Ztt4GUz05seMHp
-	l7MFiTW4u0HD8Oz50MFjLjsb24uLlOZdSgy0XvQKxfuwbcBOarbJpQ5Grn+9XG8Q0ya2xiWTg+P/m
-	fu/ayA3NILrjsfhiVjutyZ39oIVN0vnSgYlhqSbnhlFm1laOYisd03+tXfqNUSEDdHI0cFEuu4LAn
-	Jb74YWTraB+kXjUPoQf/m3l/WeViX5L0vm3UJYJ873R7I8aCj3UbeMxHmEWcoRNWcsfTUGL0lVe9J
-	sHcMxLSWfA7sSGe0JGqA==;
+	List-Owner; bh=3ufPOo34SYcmL3bpgmWJGeXaEb+t/HKUXR5GQUnZcVs=; b=GT8/KFO5NRZMNm
+	96PSUi24VD597uL23SPnwyBflUoT5YP887t53jEV62OchRAWaC4PsbDweLbOsoPQBGxwD/QKzg9zO
+	bxoDYoIs7rSIe7/NVSnMUWPvoGF1kZZiSX4owBqgUpilLgutAK+lebOxc+2LVy6efY1MOV/TVRnhd
+	NbA/hp7UXPDLvPq5bk7E+JKjgcvavTGiv9bJ+AMCPVmKDEt5qfbkhQnUtcqJq3WaVnDJ+/TIHSxkA
+	cShiqQunBkv/Du0/aka3xB1XltVfV0Tb6QJoTEaqCOUf0OITKpYywl2vubqOqVZgpdI/G1Rbk1GDj
+	ogwX8Gcd/OSxcO0sQSzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1honiN-0007I1-Kk; Sat, 20 Jul 2019 11:39:47 +0000
-Received: from haggis.mythic-beasts.com ([2a00:1098:0:86:1000:0:2:1])
+	id 1hooY0-0002zu-Vq; Sat, 20 Jul 2019 12:33:09 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1honhv-0007HT-JB
- for linux-arm-kernel@lists.infradead.org; Sat, 20 Jul 2019 11:39:21 +0000
-Received: from [199.195.250.187] (port=44718 helo=hermes.aosc.io)
- by haggis.mythic-beasts.com with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <icenowy@aosc.io>)
- id 1honhm-000736-3Z; Sat, 20 Jul 2019 12:39:14 +0100
-Received: from localhost (localhost [127.0.0.1]) (Authenticated sender:
- icenowy@aosc.io)
- by hermes.aosc.io (Postfix) with ESMTPSA id E210C6F0CC;
- Sat, 20 Jul 2019 11:39:00 +0000 (UTC)
-Date: Sat, 20 Jul 2019 19:39:08 +0800
-In-Reply-To: <20190720101318.cwrvv5r42wxx5k4r@flea>
-References: <20190713034634.44585-1-icenowy@aosc.io>
- <20190713034634.44585-8-icenowy@aosc.io>
- <20190720101318.cwrvv5r42wxx5k4r@flea>
+ id 1hooXi-0002tS-Dt
+ for linux-arm-kernel@lists.infradead.org; Sat, 20 Jul 2019 12:32:52 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=jkXExdv2OgUgh2v85Up+9hbscBqdBooc8aMcR8qKW8A=; b=uu0kpaZ8Sts16zKoiPDagXPfc
+ 3buPdQLyI8khgjSZlmxZkZJ0Qkfn51HxQiKPFeeR6CoxnSf9MlNqOaHlrmB/t+pSi7uVVaPsjq6Ip
+ GpfJxRpwBWObaMIj8mD4h5XkjKGFbnCQZW24eB0cnZHXAWKHnpJv50tpY3FvNiLWEiW3FNyVdvzKE
+ Q+nvXGqTDGEajX6xecWNM8QqClpVfnH5t3lu6y2fs8IYGz5kJ5LtkWtBwEayfw00xh/ZiB1qDjfdT
+ wlwDRqBa35sskhTd0ssSEzjgpJgjUj8cxaUHnk6qsLioTDc/YH9E4DB8LX/fvoy3F1lGJ2mUmaRad
+ 7yg0dhxRg==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:36768)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1hooVP-00026T-HN; Sat, 20 Jul 2019 13:30:27 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1hooVL-0001BJ-F1; Sat, 20 Jul 2019 13:30:23 +0100
+Date: Sat, 20 Jul 2019 13:30:23 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: "George G. Davis" <george_davis@mentor.com>
+Subject: Re: [PATCH] ARM: Fix null die() string for unhandled data and
+ prefetch abort cases
+Message-ID: <20190720123023.GA1330@shell.armlinux.org.uk>
+References: <1563589976-19004-1-git-send-email-george_davis@mentor.com>
 MIME-Version: 1.0
-Subject: Re: [PATCH v4 7/8] dt-bindings: arm: sunxi: add binding for Lichee
- Zero Plus core board
-To: linux-arm-kernel@lists.infradead.org,
- Maxime Ripard <maxime.ripard@bootlin.com>
-From: Icenowy Zheng <icenowy@aosc.io>
-Message-ID: <BDF0C9F6-DD0D-4343-8E24-06A07055004C@aosc.io>
-X-BlackCat-Spam-Score: 14
-X-Spam-Status: No, score=1.4
+Content-Disposition: inline
+In-Reply-To: <1563589976-19004-1-git-send-email-george_davis@mentor.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190720_043919_633979_85C82C6A 
-X-CRM114-Status: GOOD (  14.71  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190720_053250_472036_3A1038F2 
+X-CRM114-Status: GOOD (  13.66  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a00:1098:0:86:1000:0:2:1 listed in]
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,46 +87,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
- linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org,
- linux-gpio@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, linux-clk@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Florian Fainelli <f.fainelli@gmail.com>,
+ Allison Randal <allison@lohutok.net>, open list <linux-kernel@vger.kernel.org>,
+ "Eric W. Biederman" <ebiederm@xmission.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ "moderated list:ARM PORT" <linux-arm-kernel@lists.infradead.org>,
+ Souptick Joarder <jrdr.linux@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Cgrkuo4gMjAxOeW5tDfmnIgyMOaXpSBHTVQrMDg6MDAg5LiL5Y2INjoxMzoxOCwgTWF4aW1lIFJp
-cGFyZCA8bWF4aW1lLnJpcGFyZEBib290bGluLmNvbT4g5YaZ5YiwOgo+T24gU2F0LCBKdWwgMTMs
-IDIwMTkgYXQgMTE6NDY6MzNBTSArMDgwMCwgSWNlbm93eSBaaGVuZyB3cm90ZToKPj4gVGhlIExp
-Y2hlZSBaZXJvIFBsdXMgaXMgYSBjb3JlIGJvYXJkIG1hZGUgYnkgU2lwZWVkLCB3aXRoIGEgbWlj
-cm9VU0IKPj4gY29ubmVjdG9yIG9uIGl0LCBURiBzbG90IG9yIFdTT044IFNEIGNoaXAsIG9wdGlv
-bmFsIGVNTUMgb3IgU1BJCj5GbGFzaC4KPj4gSXQgaGFzIGEgZ29sZCBmaW5nZXIgY29ubmVjdG9y
-IGZvciBleHBhbnNpb24sIGFuZCBVQVJUIGlzIGF2YWlsYWJsZQo+ZnJvbQo+PiByZXNlcnZlZCBw
-aW5zIHcvIDIuNTRtbSBwaXRjaC4gVGhlIGJvYXJkIGNhbiB1c2UgZWl0aGVyIFNvQ2hpcCBTMyBv
-cgo+PiBBbGx3aW5uZXIgVjNMIFNvQ3MuCj4+Cj4+IEFkZCB0aGUgZGV2aWNlIHRyZWUgYmluZGlu
-ZyBvZiB0aGUgYmFzaWMgdmVyc2lvbiBvZiB0aGUgY29yZSBib2FyZCAtLQo+PiB3L28gZU1NQyBv
-ciBTUEkgRmxhc2gsIHcvIFRGIHNsb3Qgb3IgV1NPTjggU0QsIGFuZCB1c2UgUzMgU29DLgo+Pgo+
-PiBTaWduZWQtb2ZmLWJ5OiBJY2Vub3d5IFpoZW5nIDxpY2Vub3d5QGFvc2MuaW8+Cj4+IC0tLQo+
-PiBObyBjaGFuZ2VzIHNpbmNlIHYzLgo+Pgo+PiBQYXRjaCBpbnRyb2R1Y2VkIGluIHYyLgo+Pgo+
-PiAgRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2FybS9zdW54aS55YW1sIHwgNSAr
-KysrKwo+PiAgMSBmaWxlIGNoYW5nZWQsIDUgaW5zZXJ0aW9ucygrKQo+Pgo+PiBkaWZmIC0tZ2l0
-IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2FybS9zdW54aS55YW1sCj5iL0Rv
-Y3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9hcm0vc3VueGkueWFtbAo+PiBpbmRleCAw
-MDBhMDBkMTJkNmEuLjQ4YzEyNmE3YTg0OCAxMDA2NDQKPj4gLS0tIGEvRG9jdW1lbnRhdGlvbi9k
-ZXZpY2V0cmVlL2JpbmRpbmdzL2FybS9zdW54aS55YW1sCj4+ICsrKyBiL0RvY3VtZW50YXRpb24v
-ZGV2aWNldHJlZS9iaW5kaW5ncy9hcm0vc3VueGkueWFtbAo+PiBAQCAtMzUzLDYgKzM1MywxMSBA
-QCBwcm9wZXJ0aWVzOgo+PiAgICAgICAgICAgIC0gY29uc3Q6IGxpY2hlZXBpLGxpY2hlZXBpLXpl
-cm8KPj4gICAgICAgICAgICAtIGNvbnN0OiBhbGx3aW5uZXIsc3VuOGktdjNzCj4+Cj4+ICsgICAg
-ICAtIGRlc2NyaXB0aW9uOiBMaWNoZWUgWmVybyBQbHVzICh3aXRoIFMzLCB3aXRob3V0IGVNTUMv
-U1BJCj5GbGFzaCkKPj4gKyAgICAgICAgaXRlbXM6Cj4+ICsgICAgICAgICAgLSBjb25zdDogc2lw
-ZWVkLGxpY2hlZS16ZXJvLXBsdXMKPj4gKyAgICAgICAgICAtIGNvbnN0OiBhbGx3aW5uZXIsc3Vu
-OGktczMKPgo+SWYgdGhlIFMzIGlzIGp1c3QgYSByZWJyYW5kZWQgVjMsIHRoZW4gd2Ugc2hvdWxk
-IGhhdmUgdGhlIHYzIGNvbXBhdGlsZQo+aW4gdGhhdCBsaXN0IHRvby4KClMzIGlzIFYzIHdpdGgg
-Y29wYWNrYWdlZCBERFIzIERSQU0uCgpJdCdzIHBpbiBpbmNvbXBhdGlibGUgdy8gVjMuCgo+Cj5N
-YXhpbWUKPgo+LS0KPk1heGltZSBSaXBhcmQsIEJvb3RsaW4KPkVtYmVkZGVkIExpbnV4IGFuZCBL
-ZXJuZWwgZW5naW5lZXJpbmcKPmh0dHBzOi8vYm9vdGxpbi5jb20KCi0tIArkvb/nlKggSy05IE1h
-aWwg5Y+R6YCB6Ieq5oiR55qEQW5kcm9pZOiuvuWkh+OAggoKX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QK
-bGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRl
-YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Fri, Jul 19, 2019 at 10:32:55PM -0400, George G. Davis wrote:
+> When an unhandled data or prefetch abort occurs, the die() string
+> is empty resulting in backtrace messages similar to the following:
+> 
+> 	Internal error: : 1 [#1] PREEMPT SMP ARM
+> 
+> Replace the null string with the name of the abort handler in order
+> to provide more meaningful hints as to the cause of the fault.
+
+NAK.
+
+We already print the cause of the abort earlier in the dump, and we've
+also added a "cut here" marker to help people include all the necessary
+information when reporting a problem.
+
+It's unfortunate that we have the additional colon in the oops dump,
+but repeating the information that we've printed on one of the previous
+two lines is really not necessary.
+
+> 
+> Signed-off-by: George G. Davis <george_davis@mentor.com>
+> ---
+>  arch/arm/mm/fault.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+> 
+> diff --git a/arch/arm/mm/fault.c b/arch/arm/mm/fault.c
+> index 0048eadd0681..dddea0a21220 100644
+> --- a/arch/arm/mm/fault.c
+> +++ b/arch/arm/mm/fault.c
+> @@ -557,7 +557,7 @@ do_DataAbort(unsigned long addr, unsigned int fsr, struct pt_regs *regs)
+>  		inf->name, fsr, addr);
+>  	show_pte(current->mm, addr);
+>  
+> -	arm_notify_die("", regs, inf->sig, inf->code, (void __user *)addr,
+> +	arm_notify_die(inf->name, regs, inf->sig, inf->code, (void __user *)addr,
+>  		       fsr, 0);
+>  }
+>  
+> @@ -585,7 +585,7 @@ do_PrefetchAbort(unsigned long addr, unsigned int ifsr, struct pt_regs *regs)
+>  	pr_alert("Unhandled prefetch abort: %s (0x%03x) at 0x%08lx\n",
+>  		inf->name, ifsr, addr);
+>  
+> -	arm_notify_die("", regs, inf->sig, inf->code, (void __user *)addr,
+> +	arm_notify_die(inf->name, regs, inf->sig, inf->code, (void __user *)addr,
+>  		       ifsr, 0);
+>  }
+>  
+> -- 
+> 2.7.4
+> 
+> 
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
