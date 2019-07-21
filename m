@@ -2,62 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 367066F0BF
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 20 Jul 2019 23:10:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 739356F132
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 21 Jul 2019 03:50:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pre4MvLuB4SStAZ4KsWznKknMpknDLF7eE2osZZzR0s=; b=NIsD5zYfeB48nb
-	q5IqI29qROqxqr6oODOLBw3xHXrTS8DJT0ovGkJxR1diTxDIGs0vusf+YN6wypDeSiD8/O7VIrV7q
-	Fsb9IF6njbzQzr7DTjgGUrDLHNGfzi1wX2VQy0pnbaQx65/fAwT9hztb5YBxDOyslboOJdH35XDOG
-	fCFDea6LeLioQ7Gu0iP6tYDG/QVyp56lPvv9sg/8WPI57FLotd80i9vzofEk//A65d0HYXI1uie/u
-	zaGBxXWQhlRNcqjEi1BkNOpKLLBrArvy2uNkntliYdnrJZRdcWje7gU7YpBPCzWxbfK+RvDKjbLyw
-	+FRw2XYG3vxY4JmPfQlA==;
+	List-Owner; bh=8Wp8A/qZEjpdgZ1gCBY95Nnh9zKSPlzLThEFwvAbwfc=; b=mtL/gVg5y9U0Nm
+	UXvtA6ZGhPSgegZxEcMLPDRosLTO8hPgagLmwNEzjiT6kTjXfjZbMmkQ5d96TMcCTn5lGJtC5ecLH
+	O9zvanD53r/p09JU8/7TRJUdZQ2Xgst7IWEmi+kjWaZU6Lpafjl+byk2HVKXvfU20yK7qKpcmklD0
+	i4CqMGHDfdpqnsVKZtE0YPXf5x8unGrdEZl33c4e4VfpS1crliV4S02KFNGxwzGD0dblpgHborHx6
+	wPsTAbm0Q18gSWHL8iAFRa+nAeRWGBjvniQbcpN8nggKkOjpvueIXQVUgPClZHbHjbEierSUVMYrJ
+	PnXankykxbTHT6UpzsYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1howcX-0003yq-VT; Sat, 20 Jul 2019 21:10:22 +0000
-Received: from honk.sigxcpu.org ([24.134.29.49])
+	id 1hp0zk-0005MG-IC; Sun, 21 Jul 2019 01:50:36 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1howbu-0003x4-8m
- for linux-arm-kernel@lists.infradead.org; Sat, 20 Jul 2019 21:09:44 +0000
-Received: from localhost (localhost [127.0.0.1])
- by honk.sigxcpu.org (Postfix) with ESMTP id 6A16EFB03;
- Sat, 20 Jul 2019 23:09:24 +0200 (CEST)
-X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
-Received: from honk.sigxcpu.org ([127.0.0.1])
- by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id lt3q_07BvhWh; Sat, 20 Jul 2019 23:09:23 +0200 (CEST)
-Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
- id ABB364017E; Sat, 20 Jul 2019 23:09:22 +0200 (CEST)
-Date: Sat, 20 Jul 2019 23:09:22 +0200
-From: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
-To: Robert Chiras <robert.chiras@nxp.com>
-Subject: Re: [EXT] Re: [PATCH 00/10] Improvements and fixes for mxsfb DRM
- driver
-Message-ID: <20190720210922.GA464@bogon.m.sigxcpu.org>
-References: <1561555938-21595-1-git-send-email-robert.chiras@nxp.com>
- <20190711150403.GB23195@bogon.m.sigxcpu.org>
- <1562919331.3209.11.camel@nxp.com>
- <20190716145450.GA609@bogon.m.sigxcpu.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190716145450.GA609@bogon.m.sigxcpu.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1hp0zQ-0005Lo-2y
+ for linux-arm-kernel@lists.infradead.org; Sun, 21 Jul 2019 01:50:18 +0000
+Received: from devnote2 (NE2965lan1.rev.em-net.ne.jp [210.141.244.193])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 05CEC2080D;
+ Sun, 21 Jul 2019 01:50:10 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1563673814;
+ bh=k5gs7LwUaMTBq6Ocu3OG6SSkCiwakvC5iU3GTLJPZhM=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=hcznOUEzR6zbjzfEL1pSpTtB/jiDum5HzoOMKUH0xkn/c9L3RZom4FK4mMOMBQARi
+ iRWZfOANVoUAGKYuzCjrVONX2i2VfAPmpviG188Kpe/PgT9zR07hCamIGymD23pkpU
+ FUG4XomOMLmaWe1KKcRuaJ+jgK8bKr0pei1kkQMM=
+Date: Sun, 21 Jul 2019 10:50:07 +0900
+From: Masami Hiramatsu <mhiramat@kernel.org>
+To: Masami Hiramatsu <mhiramat@kernel.org>
+Subject: Re: [PATCH 3/3] arm64: debug: Remove rcu_read_lock from debug
+ exception
+Message-Id: <20190721105007.0e9ce1ed6ec63ff5d861227f@kernel.org>
+In-Reply-To: <20190720163232.49f80bc0e53afb893e7a82e6@kernel.org>
+References: <156342860634.8565.14804606041960884732.stgit@devnote2>
+ <156342863822.8565.7624877983728871995.stgit@devnote2>
+ <20190718062215.GG14271@linux.ibm.com>
+ <20190718092022.GA3625@blommer>
+ <20190718233133.146065f668da6297e57e52ef@kernel.org>
+ <536ba068-50de-963e-c3a7-0440da56943a@arm.com>
+ <20190720163232.49f80bc0e53afb893e7a82e6@kernel.org>
+X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190720_140942_486871_F51A66BD 
-X-CRM114-Status: GOOD (  29.14  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190720_185016_336631_A2B56D90 
+X-CRM114-Status: GOOD (  21.21  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [24.134.29.49 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,117 +82,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "marex@denx.de" <marex@denx.de>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "airlied@linux.ie" <airlied@linux.ie>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, "stefan@agner.ch" <stefan@agner.ch>,
- "daniel@ffwll.ch" <daniel@ffwll.ch>,
- "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- dl-linux-imx <linux-imx@nxp.com>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mark Rutland <mark.rutland@arm.com>, Dan Rue <dan.rue@linaro.org>,
+ Daniel Diaz <daniel.diaz@linaro.org>, Anders Roxell <anders.roxell@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Naresh Kamboju <naresh.kamboju@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ Matt Hart <matthew.hart@linaro.org>,
+ "Paul E. McKenney" <paulmck@linux.ibm.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Robert,
-On Tue, Jul 16, 2019 at 04:54:50PM +0200, Guido G=FCnther wrote:
-> Hi Robert,
-> On Fri, Jul 12, 2019 at 08:15:32AM +0000, Robert Chiras wrote:
-> > Hi Guido,
-> > =
+On Sat, 20 Jul 2019 16:32:32 +0900
+Masami Hiramatsu <mhiramat@kernel.org> wrote:
 
-> > On Jo, 2019-07-11 at 17:04 +0200, Guido G=FCnther wrote:
-> > > Hi Robert,
-> > > On Wed, Jun 26, 2019 at 04:32:08PM +0300, Robert Chiras wrote:
-> > > > =
+> Hi James,
+> 
+> On Fri, 19 Jul 2019 09:42:05 +0100
+> James Morse <james.morse@arm.com> wrote:
+> 
+> > Hi,
+> > 
+> > On 7/18/19 3:31 PM, Masami Hiramatsu wrote:
+> > > On Thu, 18 Jul 2019 10:20:23 +0100
+> > > Mark Rutland <mark.rutland@arm.com> wrote:
+> > > 
+> > >> On Wed, Jul 17, 2019 at 11:22:15PM -0700, Paul E. McKenney wrote:
+> > >>> On Thu, Jul 18, 2019 at 02:43:58PM +0900, Masami Hiramatsu wrote:
+> > >>>> Remove rcu_read_lock()/rcu_read_unlock() from debug exception
+> > >>>> handlers since the software breakpoint can be hit on idle task.
+> > >>
+> > >> Why precisely do we need to elide these? Are we seeing warnings today?
+> > > 
+> > > Yes, unfortunately, or fortunately. Naresh reported that warns when
+> > > ftracetest ran. I confirmed that happens if I probe on default_idle_call too.
+> > > 
+> > > /sys/kernel/debug/tracing # echo p default_idle_call >> kprobe_events
+> > > /sys/kernel/debug/tracing # echo 1 > events/kprobes/enable
+> > > /sys/kernel/debug/tracing # [  135.122237]
+> > > [  135.125035] =============================
+> > > [  135.125310] WARNING: suspicious RCU usage
+> > 
+> > > [  135.132224] Call trace:
+> > > [  135.132491]  dump_backtrace+0x0/0x140
+> > > [  135.132806]  show_stack+0x24/0x30
+> > > [  135.133133]  dump_stack+0xc4/0x10c
+> > > [  135.133726]  lockdep_rcu_suspicious+0xf8/0x108
+> > > [  135.134171]  call_break_hook+0x170/0x178
+> > > [  135.134486]  brk_handler+0x28/0x68
+> > > [  135.134792]  do_debug_exception+0x90/0x150
+> > > [  135.135051]  el1_dbg+0x18/0x8c
+> > > [  135.135260]  default_idle_call+0x0/0x44
+> > > [  135.135516]  cpu_startup_entry+0x2c/0x30
+> > > [  135.135815]  rest_init+0x1b0/0x280
+> > > [  135.136044]  arch_call_rest_init+0x14/0x1c
+> > > [  135.136305]  start_kernel+0x4d4/0x500
+> > 
+> > >>> The exception entry and exit use irq_enter() and irq_exit(), in this
+> > >>> case, correct?  Otherwise RCU will be ignoring this CPU.
+> > >>
+> > >> This is missing today, which sounds like the underlying bug.
+> > > 
+> > > Agreed. I'm not so familier with how debug exception is handled on arm64,
+> > > would it be a kind of NMI or IRQ?
+> > 
+> > Debug exceptions can interrupt both SError (think: machine check) and 
+> > pseudo-NMI, which both in turn interrupt interrupt-masked code. So they 
+> > are a kind of NMI. But, be careful not to call 'nmi_enter()' twice, see 
+> > do_serror() for how we work around this...
+> 
+> OK. I think we can use rcu_nmi_enter/exit() as same as x86.
 
-> > > > This patch-set improves the use of eLCDIF block on iMX 8 SoCs (like
-> > > > 8MQ, 8MM
-> > > > and 8QXP). Following, are the new features added and fixes from
-> > > > this
-> > > > patch-set:
-> > > > =
+Adding this solves rcu_read_lock() warning issues too.
+So I will just replace [PATCH 3/3] with that.
 
-> > > > 1. Add support for drm_bridge
-> > > > On 8MQ and 8MM, the LCDIF block is not directly connected to a
-> > > > parallel
-> > > > display connector, where an LCD panel can be attached, but instead
-> > > > it is
-> > > > connected to DSI controller. Since this DSI stands between the
-> > > > display
-> > > > controller (eLCDIF) and the physical connector, the DSI can be
-> > > > implemented
-> > > > as a DRM bridge. So, in order to be able to connect the mxsfb
-> > > > driver to
-> > > > the DSI driver, the support for a drm_bridge was needed in mxsfb
-> > > > DRM
-> > > > driver (the actual driver for the eLCDIF block).
-> > > So I wanted to test this but with both my somewhat cleaned up nwl
-> > > driver=B9 and the nwl driver forward ported from the nxp vendor tree
-> > > I'm
-> > > looking at a black screen with current mainline - while my dcss
-> > > forward
-> > > port gives me nice output on mipi dsi. Do you have a tree that uses
-> > > mipi
-> > > dsi on imx8mq where I could look at to check for differences?
-> > Somewhere on the pixel path (between the display controller and the
-> > DSI) there is a block that inverts the polarity. I can't remember
-> > exactly what was the role of this block, but the polarity is inverted
-> > when eLCDIF is used in combination with the DSI.
-> > If you take a look at my DSI driver from NXP releases (I guess you have
-> > them), you will see there is a hack in mode_fixup:
-> > =
+> > > Anyway, it seems that normal irqs are also not calling irq_enter/exit
+> > > except for arch/arm64/kernel/smp.c
+> > drivers/irqchip/irq-gic.c:gic_handle_irq() either calls 
+> > handle_domain_irq() or handle_IPI(). The enter/exit calls live in those 
+> > functions.
+> 
+> Ah, I see.
+> Would you think we need to put rcu_nmi_enter/exit() as similar to x86
+> on do_mem_abort() and do_sp_pc_abort() too?
 
-> > unsigned int *flags =3D &mode->flags;
-> > if (dsi->sync_pol {
-> > 	*flags |=3D DRM_MODE_FLAG_PHSYNC;
-> > 	*flags |=3D DRM_MODE_FLAG_PVSYNC;
-> > 	*flags &=3D ~DRM_MODE_FLAG_NHSYNC;
-> > 	*flags &=3D ~DRM_MODE_FLAG_NVSYNC;
-> > } else {
-> > 	*flags &=3D ~DRM_MODE_FLAG_PHSYNC;
-> > 	*flags &=3D ~DRM_MODE_FLAG_PVSYNC;
-> > 	*flags |=3D DRM_MODE_FLAG_NHSYNC;
-> > 	*flags |=3D DRM_MODE_FLAG_NVSYNC;
-> > }
-> =
+Hmm, it seems that adding rcu_nmi_enter/exit to both function causes
+a failure of init process. At this moment I don't do that.
 
-> Thanks for the suggestion! I'll try that.
->
-> > =
+Thank you,
 
-> > I know it's not clean, but it works for now. You can try this in your
-> > driver and see if it helps.
-> > These days I will also take your nwl-dsi driver and test it, and also
-> > add support for bridge and eLCDIF to see if I can make it work.
-> =
-
-> I have hacky bridge support over here already. Give me some days to
-> clean it up and it might safe you some work.
-
-Your suggestion above (plus some other fixes) worked and
-mxsfb+nwl+mixel-dphy works over here. I'll try to send a v1 of the nwl
-driver out during the week.
-Cheers,
- -- Guido
-
-> Cheers,
->  -- Guido
-> =
-
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> =
-
+-- 
+Masami Hiramatsu <mhiramat@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
