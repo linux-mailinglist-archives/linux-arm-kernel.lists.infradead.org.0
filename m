@@ -2,75 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 739356F132
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 21 Jul 2019 03:50:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2A0B6F13E
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 21 Jul 2019 04:19:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8Wp8A/qZEjpdgZ1gCBY95Nnh9zKSPlzLThEFwvAbwfc=; b=mtL/gVg5y9U0Nm
-	UXvtA6ZGhPSgegZxEcMLPDRosLTO8hPgagLmwNEzjiT6kTjXfjZbMmkQ5d96TMcCTn5lGJtC5ecLH
-	O9zvanD53r/p09JU8/7TRJUdZQ2Xgst7IWEmi+kjWaZU6Lpafjl+byk2HVKXvfU20yK7qKpcmklD0
-	i4CqMGHDfdpqnsVKZtE0YPXf5x8unGrdEZl33c4e4VfpS1crliV4S02KFNGxwzGD0dblpgHborHx6
-	wPsTAbm0Q18gSWHL8iAFRa+nAeRWGBjvniQbcpN8nggKkOjpvueIXQVUgPClZHbHjbEierSUVMYrJ
-	PnXankykxbTHT6UpzsYA==;
+	List-Owner; bh=j5fKdU79D/zqoWKFCegVrvWeDYTShjzsF+z9HXOpUuE=; b=i8KIWTFOe/EF88
+	GZydWKtWfPvYB6wCMWbzg1CCSjkfXhuzzoiXoKwGpQZ6eD18PB+iKqsNeMIMBF/NamX/9dN1gdei8
+	+yk6T0Gbiu+hGXCKQaaMdOfvfqriFZU2N8aYWqnj3E5qmmpMfs3G9EPoRMw8sZ528emi1XXzNPpsw
+	6dQ1Fsk1w++aOwz0v9UO5wFYDofzM+7tCOqIHIuR2IBmSpbnv0xg4t0abj8np3rf8zxuZTZZi7Udz
+	FCEWQ2d+f/kYtS/dcRs0QDiauv2g450J7eZEv8249BXkJ/fTMj9ae+mandIk+vY67FCPhzilFNoLu
+	cHbEOqVBdmy+mbOcpsAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hp0zk-0005MG-IC; Sun, 21 Jul 2019 01:50:36 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hp1RV-0004Nl-Pf; Sun, 21 Jul 2019 02:19:17 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hp0zQ-0005Lo-2y
- for linux-arm-kernel@lists.infradead.org; Sun, 21 Jul 2019 01:50:18 +0000
-Received: from devnote2 (NE2965lan1.rev.em-net.ne.jp [210.141.244.193])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 05CEC2080D;
- Sun, 21 Jul 2019 01:50:10 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563673814;
- bh=k5gs7LwUaMTBq6Ocu3OG6SSkCiwakvC5iU3GTLJPZhM=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=hcznOUEzR6zbjzfEL1pSpTtB/jiDum5HzoOMKUH0xkn/c9L3RZom4FK4mMOMBQARi
- iRWZfOANVoUAGKYuzCjrVONX2i2VfAPmpviG188Kpe/PgT9zR07hCamIGymD23pkpU
- FUG4XomOMLmaWe1KKcRuaJ+jgK8bKr0pei1kkQMM=
-Date: Sun, 21 Jul 2019 10:50:07 +0900
-From: Masami Hiramatsu <mhiramat@kernel.org>
-To: Masami Hiramatsu <mhiramat@kernel.org>
-Subject: Re: [PATCH 3/3] arm64: debug: Remove rcu_read_lock from debug
- exception
-Message-Id: <20190721105007.0e9ce1ed6ec63ff5d861227f@kernel.org>
-In-Reply-To: <20190720163232.49f80bc0e53afb893e7a82e6@kernel.org>
-References: <156342860634.8565.14804606041960884732.stgit@devnote2>
- <156342863822.8565.7624877983728871995.stgit@devnote2>
- <20190718062215.GG14271@linux.ibm.com>
- <20190718092022.GA3625@blommer>
- <20190718233133.146065f668da6297e57e52ef@kernel.org>
- <536ba068-50de-963e-c3a7-0440da56943a@arm.com>
- <20190720163232.49f80bc0e53afb893e7a82e6@kernel.org>
-X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-Mime-Version: 1.0
+ id 1hp1RA-0004N8-L7; Sun, 21 Jul 2019 02:19:00 +0000
+X-UUID: 520049eb2a894ecda1d6117053886b72-20190720
+X-UUID: 520049eb2a894ecda1d6117053886b72-20190720
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <jungo.lin@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 631344406; Sat, 20 Jul 2019 18:18:49 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sat, 20 Jul 2019 19:18:47 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 21 Jul 2019 10:18:33 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Sun, 21 Jul 2019 10:18:33 +0800
+Message-ID: <1563675513.1212.444.camel@mtksdccf07>
+Subject: Re: [RFC,v3 8/9] media: platform: Add Mediatek ISP P1 SCP
+ communication
+From: Jungo Lin <jungo.lin@mediatek.com>
+To: Tomasz Figa <tfiga@chromium.org>
+Date: Sun, 21 Jul 2019 10:18:33 +0800
+In-Reply-To: <20190710095827.GC181405@chromium.org>
+References: <jungo.lin@mediatek.com>
+ <20190611035344.29814-1-jungo.lin@mediatek.com>
+ <20190611035344.29814-9-jungo.lin@mediatek.com>
+ <20190710095827.GC181405@chromium.org>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
+MIME-Version: 1.0
+X-TM-SNTS-SMTP: E1887283C9BD64A87663B184A9A00DDF13C42CEBB7511799C2FE929E8A050AB32000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190720_185016_336631_A2B56D90 
-X-CRM114-Status: GOOD (  21.21  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190720_191856_711851_B35DC256 
+X-CRM114-Status: GOOD (  35.95  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,99 +75,1013 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Dan Rue <dan.rue@linaro.org>,
- Daniel Diaz <daniel.diaz@linaro.org>, Anders Roxell <anders.roxell@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Naresh Kamboju <naresh.kamboju@linaro.org>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- Matt Hart <matthew.hart@linaro.org>,
- "Paul E. McKenney" <paulmck@linux.ibm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, sean.cheng@mediatek.com,
+ frederic.chen@mediatek.com, rynn.wu@mediatek.com, srv_heupstream@mediatek.com,
+ robh@kernel.org, ryan.yu@mediatek.com, frankie.chiu@mediatek.com,
+ hverkuil@xs4all.nl, ddavenport@chromium.org, sj.huang@mediatek.com,
+ linux-mediatek@lists.infradead.org, laurent.pinchart@ideasonboard.com,
+ matthias.bgg@gmail.com, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, 20 Jul 2019 16:32:32 +0900
-Masami Hiramatsu <mhiramat@kernel.org> wrote:
+Hi Tomasz:
 
-> Hi James,
+On Wed, 2019-07-10 at 18:58 +0900, Tomasz Figa wrote:
+> Hi Jungo,
 > 
-> On Fri, 19 Jul 2019 09:42:05 +0100
-> James Morse <james.morse@arm.com> wrote:
+> On Tue, Jun 11, 2019 at 11:53:43AM +0800, Jungo Lin wrote:
+> > This patch adds communication with the co-processor on the SoC
+> > through the SCP driver. It supports bi-directional commands
+> > to exchange data and perform command flow control function.
+> > 
+> > Signed-off-by: Jungo Lin <jungo.lin@mediatek.com>
+> > ---
+> > This patch depends on "Add support for mt8183 SCP"[1].
+> > 
+> > [1] https://patchwork.kernel.org/cover/10972143/
+> > ---
+> >  .../platform/mtk-isp/isp_50/cam/Makefile      |   1 +
+> >  .../platform/mtk-isp/isp_50/cam/mtk_cam-scp.c | 371 ++++++++++++++++++
+> >  .../platform/mtk-isp/isp_50/cam/mtk_cam-scp.h | 207 ++++++++++
+> >  3 files changed, 579 insertions(+)
+> >  create mode 100644 drivers/media/platform/mtk-isp/isp_50/cam/mtk_cam-scp.c
+> >  create mode 100644 drivers/media/platform/mtk-isp/isp_50/cam/mtk_cam-scp.h
+> > 
 > 
-> > Hi,
-> > 
-> > On 7/18/19 3:31 PM, Masami Hiramatsu wrote:
-> > > On Thu, 18 Jul 2019 10:20:23 +0100
-> > > Mark Rutland <mark.rutland@arm.com> wrote:
-> > > 
-> > >> On Wed, Jul 17, 2019 at 11:22:15PM -0700, Paul E. McKenney wrote:
-> > >>> On Thu, Jul 18, 2019 at 02:43:58PM +0900, Masami Hiramatsu wrote:
-> > >>>> Remove rcu_read_lock()/rcu_read_unlock() from debug exception
-> > >>>> handlers since the software breakpoint can be hit on idle task.
-> > >>
-> > >> Why precisely do we need to elide these? Are we seeing warnings today?
-> > > 
-> > > Yes, unfortunately, or fortunately. Naresh reported that warns when
-> > > ftracetest ran. I confirmed that happens if I probe on default_idle_call too.
-> > > 
-> > > /sys/kernel/debug/tracing # echo p default_idle_call >> kprobe_events
-> > > /sys/kernel/debug/tracing # echo 1 > events/kprobes/enable
-> > > /sys/kernel/debug/tracing # [  135.122237]
-> > > [  135.125035] =============================
-> > > [  135.125310] WARNING: suspicious RCU usage
-> > 
-> > > [  135.132224] Call trace:
-> > > [  135.132491]  dump_backtrace+0x0/0x140
-> > > [  135.132806]  show_stack+0x24/0x30
-> > > [  135.133133]  dump_stack+0xc4/0x10c
-> > > [  135.133726]  lockdep_rcu_suspicious+0xf8/0x108
-> > > [  135.134171]  call_break_hook+0x170/0x178
-> > > [  135.134486]  brk_handler+0x28/0x68
-> > > [  135.134792]  do_debug_exception+0x90/0x150
-> > > [  135.135051]  el1_dbg+0x18/0x8c
-> > > [  135.135260]  default_idle_call+0x0/0x44
-> > > [  135.135516]  cpu_startup_entry+0x2c/0x30
-> > > [  135.135815]  rest_init+0x1b0/0x280
-> > > [  135.136044]  arch_call_rest_init+0x14/0x1c
-> > > [  135.136305]  start_kernel+0x4d4/0x500
-> > 
-> > >>> The exception entry and exit use irq_enter() and irq_exit(), in this
-> > >>> case, correct?  Otherwise RCU will be ignoring this CPU.
-> > >>
-> > >> This is missing today, which sounds like the underlying bug.
-> > > 
-> > > Agreed. I'm not so familier with how debug exception is handled on arm64,
-> > > would it be a kind of NMI or IRQ?
-> > 
-> > Debug exceptions can interrupt both SError (think: machine check) and 
-> > pseudo-NMI, which both in turn interrupt interrupt-masked code. So they 
-> > are a kind of NMI. But, be careful not to call 'nmi_enter()' twice, see 
-> > do_serror() for how we work around this...
+> Thanks for the patch! Please see my comments inline.
 > 
-> OK. I think we can use rcu_nmi_enter/exit() as same as x86.
-
-Adding this solves rcu_read_lock() warning issues too.
-So I will just replace [PATCH 3/3] with that.
-
-> > > Anyway, it seems that normal irqs are also not calling irq_enter/exit
-> > > except for arch/arm64/kernel/smp.c
-> > drivers/irqchip/irq-gic.c:gic_handle_irq() either calls 
-> > handle_domain_irq() or handle_IPI(). The enter/exit calls live in those 
-> > functions.
+> [snip]
 > 
-> Ah, I see.
-> Would you think we need to put rcu_nmi_enter/exit() as similar to x86
-> on do_mem_abort() and do_sp_pc_abort() too?
 
-Hmm, it seems that adding rcu_nmi_enter/exit to both function causes
-a failure of init process. At this moment I don't do that.
+Thank you for your comments. Please check my replies inline.
 
-Thank you,
+[snip]
 
--- 
-Masami Hiramatsu <mhiramat@kernel.org>
+> > diff --git a/drivers/media/platform/mtk-isp/isp_50/cam/mtk_cam-scp.c b/drivers/media/platform/mtk-isp/isp_50/cam/mtk_cam-scp.c
+> > new file mode 100644
+> > index 000000000000..04519d0b942f
+> > --- /dev/null
+> > +++ b/drivers/media/platform/mtk-isp/isp_50/cam/mtk_cam-scp.c
+> > @@ -0,0 +1,371 @@
+> > +// SPDX-License-Identifier: GPL-2.0
+> > +//
+> > +// Copyright (c) 2018 MediaTek Inc.
+> > +
+> > +#include <linux/atomic.h>
+> > +#include <linux/kthread.h>
+> > +#include <linux/platform_data/mtk_scp.h>
+> > +#include <linux/pm_runtime.h>
+> > +#include <linux/remoteproc.h>
+> > +#include <linux/sched.h>
+> > +#include <linux/spinlock.h>
+> > +#include <linux/types.h>
+> > +#include <linux/vmalloc.h>
+> > +
+> > +#include "mtk_cam.h"
+> > +
+> > +static void isp_composer_deinit(struct mtk_isp_p1_ctx *isp_ctx)
+> > +{
+> > +	struct mtk_isp_queue_work *ipi_job, *tmp_ipi_job;
+> > +	struct isp_p1_device *p1_dev = p1_ctx_to_dev(isp_ctx);
+> > +
+> > +	atomic_set(&isp_ctx->cmd_queued, 0);
+> > +	atomic_set(&isp_ctx->composer_txlist.queue_cnt, 0);
+> > +	atomic_set(&isp_ctx->composing_frame, 0);
+> > +	atomic_set(&isp_ctx->ipi_occupied, 0);
+> 
+> Is there any point to set them if we are deinitalizing? Moreover,
+> isp_composer_init() would set them once we start again.
+> 
+
+We will remove these variable assignments.
+
+> > +
+> > +	spin_lock(&isp_ctx->composer_txlist.lock);
+> > +	list_for_each_entry_safe(ipi_job, tmp_ipi_job,
+> > +				 &isp_ctx->composer_txlist.queue,
+> > +				 list_entry) {
+> > +		list_del(&ipi_job->list_entry);
+> > +		kfree(ipi_job);
+> > +	}
+> > +	atomic_set(&isp_ctx->composer_txlist.queue_cnt, 0);
+> > +	spin_unlock(&isp_ctx->composer_txlist.lock);
+> > +
+> > +	mutex_lock(&isp_ctx->lock);
+> > +	if (isp_ctx->composer_tx_thread.thread) {
+> > +		kthread_stop(isp_ctx->composer_tx_thread.thread);
+> 
+> Shouldn't the thread be stopped at this point already? If not, wouldn't the
+> atomic_set() at the beginning of this function confuse it?
+> 
+> In any case, this should be greatly simplified after we move to a workqueue,
+> with one work per one task to do, as per other comments.
+> 
+
+We will simplify the IPI sending mechanism and remove these kthread
+handling.
+
+> > +		wake_up_interruptible(&isp_ctx->composer_tx_thread.wq);
+> > +		isp_ctx->composer_tx_thread.thread = NULL;
+> > +	}
+> > +
+> > +	if (isp_ctx->composer_deinit_thread.thread) {
+> > +		wake_up(&isp_ctx->composer_deinit_thread.wq);
+> > +		isp_ctx->composer_deinit_thread.thread = NULL;
+> > +	}
+> > +	mutex_unlock(&isp_ctx->lock);
+> > +
+> > +	pm_runtime_put_sync(&p1_dev->pdev->dev);
+> 
+> No need to use the sync variant.
+> 
+
+We don't get this point. If we will call pm_runtime_get_sync in
+mtk_isp_hw_init function, will we need to call
+pm_runtime_put_sync_autosuspend in mtk_isp_hw_release in next patch?
+As we know, we should call runtime pm functions in pair.
+
+> > +}
+> > +
+> > +/*
+> > + * Two kinds of flow control in isp_composer_tx_work.
+> > + *
+> > + * Case 1: IPI commands flow control. The maximum number of command queues is 3.
+> > + * There are two types of IPI commands (SCP_ISP_CMD/SCP_ISP_FRAME) in P1 driver.
+> > + * It is controlled by ipi_occupied.
+> 
+> ISP_COMPOSING_MAX_NUM is defined to 4, not 3. Is that expected?
+> 
+
+In this version, we use async. scp_ipi_send function call with wait = 0.
+If kernel sends too many P1 IPI commands in short time, P1 task in SCP
+may miss some IPI command due to the IPI command processing time and the
+size of command queue in SCP side. In order to avoid this kind of
+condition, we use ISP_COMPOSING_MAX_NUM to control the sending flow of
+IPI command in kernel side. The ISP_COMPOSING_MAX_NUM is changed to 4
+for Chromium EC OS. We just miss to update the comment here.
+
+In new version, we will change to use sync. scp_ipi_send function call
+with non-zero wait variable. Based on this, we could remove IPI command
+flow control in P1 driver.
+
+> > + * The priority of SCP_ISP_CMD is higher than SCP_ISP_FRAME.
+> 
+> What does it mean and why is it so?
+> 
+
+In the origin design, SCP_ISP_CMD & SCP_ISP_FRAME are sending in the
+same command queue by order. However, if we receive ISP_CMD_DEINIT
+command, we will like to send this command firstly to SCP before
+SCP_ISP_FRAME are queued in the queue. So we need to have one command
+prioritize design here. Btw, in the new design, SCP_ISP_CMD &
+SCP_ISP_FRAME are sent independent and we can remove this. 
+
+> > + *
+> > + * Case 2: Frame buffers flow control. The maximum number of frame buffers is 3.
+> > + * It is controlled by composing_frame.
+> > + * Frame buffer is sent by SCP_ISP_FRAME command.
+> 
+> Case 1 already mentions SCP_ISP_FRAME. What's the difference between that
+> and case 2?
+> 
+
+For case 2, it is related to frame request handling with CQ buffer.
+We send frame request data via SCP_ISP_FRAME to compose CQ buffers in
+SCP. The maximum CQ buffers in SCP are 3. So in kernel side, we can't
+send any SCP_ISP_FRAME command to SCP when the CQ buffers are full in
+SCP until ISP HW has output the new frame with the corresponding CQ
+buffer.
+
+In the new design, this will be controlled by mtk_cam_dev_req_try_queue
+function with MTK_ISP_MAX_RUNNING_JOBS.
+
+void mtk_cam_dev_req_try_queue(struct mtk_cam_dev *cam)
+{
+	struct mtk_cam_dev_request *req, *req_prev;
+	struct list_head enqueue_job_list;
+	int buffer_cnt = atomic_read(&cam->running_job_count);
+	unsigned long flags;
+
+	if (!cam->streaming || buffer_cnt >= MTK_ISP_MAX_RUNNING_JOBS) {
+		dev_dbg(cam->dev, "stream off or buffers are full:%d\n",
+			buffer_cnt);
+		return;
+	}
+
+	INIT_LIST_HEAD(&enqueue_job_list);
+
+	spin_lock(&cam->pending_job_lock);
+	list_for_each_entry_safe(req, req_prev, &cam->pending_job_list, list) {
+		list_del(&req->list);
+		list_add_tail(&req->list, &enqueue_job_list);
+		if (atomic_inc_return(&cam->running_job_count) >=
+			MTK_ISP_MAX_RUNNING_JOBS)
+			break;
+	}
+	spin_unlock(&cam->pending_job_lock);
+
+	list_for_each_entry_safe(req, req_prev, &enqueue_job_list, list) {
+		list_del(&req->list);
+		spin_lock_irqsave(&cam->running_job_lock, flags);
+		list_add_tail(&req->list, &cam->running_job_list);
+		spin_unlock_irqrestore(&cam->running_job_lock, flags);
+
+		mtk_isp_req_enqueue(cam, req);
+	}
+}
+
+> > + */
+> > +static int isp_composer_tx_work(void *data)
+> > +{
+> > +	struct mtk_isp_p1_ctx *isp_ctx = (struct mtk_isp_p1_ctx *)data;
+> > +	struct isp_p1_device *p1_dev = p1_ctx_to_dev(isp_ctx);
+> > +	struct device *dev = &p1_dev->pdev->dev;
+> > +	struct mtk_isp_queue_work *isp_composer_work, *tmp_ipi_job;
+> > +	struct isp_queue *composer_txlist = &isp_ctx->composer_txlist;
+> > +	int ret;
+> > +
+> > +	while (1) {
+> > +		ret = wait_event_interruptible
+> > +			(isp_ctx->composer_tx_thread.wq,
+> > +			 (atomic_read(&composer_txlist->queue_cnt) > 0 &&
+> > +			 atomic_read(&isp_ctx->ipi_occupied)
+> > +				< ISP_COMPOSING_MAX_NUM &&
+> > +			 atomic_read(&isp_ctx->composing_frame)
+> > +				< ISP_FRAME_COMPOSING_MAX_NUM) ||
+> > +			 (atomic_read(&isp_ctx->cmd_queued) > 0 &&
+> > +			 atomic_read(&isp_ctx->ipi_occupied)
+> > +				< ISP_COMPOSING_MAX_NUM) ||
+> > +			 kthread_should_stop());
+> > +
+> > +		if (kthread_should_stop())
+> > +			break;
+> > +
+> > +		spin_lock(&composer_txlist->lock);
+> > +		if (atomic_read(&isp_ctx->cmd_queued) > 0) {
+> > +			list_for_each_entry_safe(isp_composer_work, tmp_ipi_job,
+> > +						 &composer_txlist->queue,
+> > +						 list_entry) {
+> > +				if (isp_composer_work->type == SCP_ISP_CMD) {
+> > +					dev_dbg(dev, "Found a cmd\n");
+> > +					break;
+> > +				}
+> > +			}
+> > +		} else {
+> > +			if (atomic_read(&isp_ctx->composing_frame) >=
+> > +				ISP_FRAME_COMPOSING_MAX_NUM) {
+> > +				spin_unlock(&composer_txlist->lock);
+> > +				continue;
+> > +			}
+> > +			isp_composer_work =
+> > +			    list_first_entry_or_null
+> > +				(&composer_txlist->queue,
+> > +				 struct mtk_isp_queue_work,
+> > +				 list_entry);
+> > +		}
+> 
+> I don't understand why this special handling of CMD vs FRAME is here, so I
+> might be missing something, but would we really lose anything if we just
+> simply removed it and queued everything in order?
+> 
+> Moreover, in V4L2, buffer queue and control operations are serialized wrt
+> each other, so we probably wouldn't even have a chance to hit a case when we
+> need to prioritize a CMD IPI over a FRAME IPI.
+> 
+
+Yes, this implementation is complicated and we will remove
+implementation in next patch. We will simplify current implementation by
+using:
+1. Use sync. scp_ipi_send function call
+2. Use workqueue for SCP_ISP_FRAME sending
+
+> > +
+> > +		list_del(&isp_composer_work->list_entry);
+> > +		atomic_dec(&composer_txlist->queue_cnt);
+> > +		spin_unlock(&composer_txlist->lock);
+> > +
+> > +		if (isp_composer_work->type == SCP_ISP_CMD) {
+> > +			scp_ipi_send
+> > +				(p1_dev->scp_pdev,
+> > +				 SCP_IPI_ISP_CMD,
+> > +				 &isp_composer_work->cmd,
+> > +				 sizeof(isp_composer_work->cmd),
+> > +				 0);
+> > +			atomic_dec(&isp_ctx->cmd_queued);
+> > +			atomic_inc(&isp_ctx->ipi_occupied);
+> > +			dev_dbg(dev,
+> > +				"%s cmd id %d sent, %d ipi buf occupied",
+> > +				__func__,
+> > +				isp_composer_work->cmd.cmd_id,
+> > +				atomic_read(&isp_ctx->ipi_occupied));
+> > +		} else if (isp_composer_work->type == SCP_ISP_FRAME) {
+> > +			scp_ipi_send
+> > +				(p1_dev->scp_pdev,
+> > +				 SCP_IPI_ISP_FRAME,
+> > +				 &isp_composer_work->frameparams,
+> > +				 sizeof(isp_composer_work->frameparams),
+> > +				 0);
+> > +			atomic_inc(&isp_ctx->ipi_occupied);
+> > +			atomic_inc(&isp_ctx->composing_frame);
+> 
+> Why do we need composing frame here, if ipi_occupied already limits us to 3?
+> 
+
+If we send SCP_ISP_FRAME command, we need to increase ipi_occupied with
+1 for IPI command sending command flow and increase composing_frame with
+1 for CQ buffers composing. But this implementation will be removed.
+
+> > +			dev_dbg(dev,
+> > +				"%s frame %d sent, %d ipi, %d CQ bufs occupied",
+> > +				__func__,
+> > +				isp_composer_work->frameparams.frame_seq_no,
+> > +				atomic_read(&isp_ctx->ipi_occupied),
+> > +				atomic_read(&isp_ctx->composing_frame));
+> > +		} else {
+> > +			dev_err(dev,
+> > +				"ignore IPI type: %d!\n",
+> > +				isp_composer_work->type);
+> > +		}
+> > +		kfree(isp_composer_work);
+> > +	}
+> > +	return ret;
+> > +}
+> 
+> The function above is way too complicated than it should be. I'd suggest a
+> model similar to what we ended up in the DIP driver:
+> >  - a freezable workqueue created for ISP composing works,
+> >  - each ISP composing work entry would have a struct work_struct embedded,
+> >  - isp_composer_enqueue() would enqueue the work_struct to the workqueue
+> >    above,
+> >  - the workqueue would keep a queue of works itself, so driver's own list
+> >    wouldn't be needed anymore,
+> >  - similarly, each execution of the work func would operate on its own ISP
+> >    composing work, so things like checking for list emptiness, waiting for
+> >    work to be queued, etc. wouldn't be needed,
+> >  - freezability of the workqueue would ensure nice synchonization with
+> >    system suspend/resume (although one would still need to wait for the
+> >    hardware/firmware to complete).
+> 
+> WDYT?
+> 
+
+yes, we will adopt your suggestion to re-factor current implementation.
+Below is new implementation.
+
+void mtk_isp_req_enqueue(struct mtk_cam_dev *cam,
+			 struct mtk_cam_dev_request *req)
+{
+	struct mtk_isp_p1_device *p1_dev = dev_get_drvdata(cam->dev);
+	int ret;
+
+	/* Accumulated frame sequence number */
+	req->frame_params.frame_seq_no = ++p1_dev->enqueue_frame_seq_no;
+
+	INIT_WORK(&req->frame_work, isp_tx_frame_worker);
+	ret = queue_work(p1_dev->composer_wq, &req->frame_work);
+	if (!ret)
+		dev_dbg(cam->dev, "frame_no:%d queue_work failed\n",
+			req->frame_params.frame_seq_no, ret);
+	else
+		dev_dbg(cam->dev, "Enqueue fd:%s frame_seq_no:%d job cnt:%d\n",
+			req->req.debug_str, req->frame_params.frame_seq_no,
+			atomic_read(&cam->running_job_count));
+}
+
+static void isp_tx_frame_worker(struct work_struct *work)
+{
+	struct mtk_cam_dev_request *req =
+		container_of(work, struct mtk_cam_dev_request, frame_work);
+	struct mtk_cam_dev *cam =
+		container_of(req->req.mdev, struct mtk_cam_dev, media_dev);
+	struct mtk_isp_p1_device *p1_dev = dev_get_drvdata(cam->dev);
+
+	scp_ipi_send(p1_dev->scp_pdev, SCP_IPI_ISP_FRAME, &req->frame_params,
+		     sizeof(req->frame_params), MTK_ISP_IPI_SEND_TIMEOUT);
+}
+
+> > +
+> > +static int isp_composer_deinit_work(void *data)
+> > +{
+> > +	struct mtk_isp_p1_ctx *isp_ctx = (struct mtk_isp_p1_ctx *)data;
+> > +	struct isp_p1_device *p1_dev = p1_ctx_to_dev(data);
+> > +	struct device *dev = &p1_dev->pdev->dev;
+> > +
+> > +	wait_event_interruptible(isp_ctx->composer_deinit_thread.wq,
+> > +				 atomic_read(&isp_ctx->scp_state) == SCP_OFF ||
+> > +				 kthread_should_stop());
+> > +
+> > +	dev_dbg(dev, "%s run deinit", __func__);
+> > +	isp_composer_deinit(isp_ctx);
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static void isp_composer_handler(void *data, unsigned int len, void *priv)
+> > +{
+> > +	struct mtk_isp_p1_ctx *isp_ctx = (struct mtk_isp_p1_ctx *)priv;
+> > +	struct isp_p1_device *p1_dev = p1_ctx_to_dev(isp_ctx);
+> > +	struct device *dev = &p1_dev->pdev->dev;
+> > +	struct mtk_isp_scp_p1_cmd *ipi_msg;
+> > +
+> > +	ipi_msg = (struct mtk_isp_scp_p1_cmd *)data;
+> 
+> Should we check that len == sizeof(*ipi_msg)? (Or at least >=, if data could
+> contain some extra bytes at the end.)
+> 
+
+The len parameter is the actual sending bytes from SCP to kernel.
+In the runtime, it is only 6 bytes for isp_ack_info command
+However, sizeof(*ipi_msg) is large due to struct mtk_isp_scp_p1_cmd is
+union structure.
+
+> > +
+> > +	if (ipi_msg->cmd_id != ISP_CMD_ACK)
+> > +		return;
+> > +
+> > +	if (ipi_msg->ack_info.cmd_id == ISP_CMD_FRAME_ACK) {
+> > +		dev_dbg(dev, "ack frame_num:%d",
+> > +			ipi_msg->ack_info.frame_seq_no);
+> > +		atomic_set(&isp_ctx->composed_frame_id,
+> > +			   ipi_msg->ack_info.frame_seq_no);
+> 
+> I suppose we are expecting here that ipi_msg->ack_info.frame_seq_no would be
+> just isp_ctx->composed_frame_id + 1, right? If not, we probably dropped some
+> frames and we should handle that somehow.
+> 
+
+No, we use isp_ctx->composed_frame_id to save which frame sequence
+number are composed done in SCP. In new design, we will move this from
+isp_ctx to p1_dev.
+
+	if (ipi_msg->ack_info.cmd_id == ISP_CMD_FRAME_ACK) {
+		atomic_set(&p1_dev->composed_frame_seq_no,
+			   ipi_msg->ack_info.frame_seq_no);
+		dev_dbg(p1_dev->dev, "ack frame_num:%d\n",
+			p1_dev->composed_frame_seq_no);
+	}
+
+> > +	} else if (ipi_msg->ack_info.cmd_id == ISP_CMD_DEINIT) {
+> > +		dev_dbg(dev, "ISP_CMD_DEINIT is acked");
+> > +		atomic_set(&isp_ctx->scp_state, SCP_OFF);
+> > +		wake_up_interruptible(&isp_ctx->composer_deinit_thread.wq);
+> > +	}
+> > +
+> > +	atomic_dec_return(&isp_ctx->ipi_occupied);
+> > +	wake_up_interruptible(&isp_ctx->composer_tx_thread.wq);
+> > +}
+> > +
+> > +int isp_composer_init(struct device *dev)
+> > +{
+> > +	struct isp_p1_device *p1_dev = get_p1_device(dev);
+> > +	struct mtk_isp_p1_ctx *isp_ctx = &p1_dev->isp_ctx;
+> > +	int ret;
+> > +
+> > +	ret = scp_ipi_register(p1_dev->scp_pdev,
+> > +			       SCP_IPI_ISP_CMD,
+> > +			       isp_composer_handler,
+> > +			       isp_ctx);
+> > +	if (ret)
+> > +		return ret;
+> > +
+> > +	atomic_set(&isp_ctx->cmd_queued, 0);
+> > +	atomic_set(&isp_ctx->composer_txlist.queue_cnt, 0);
+> > +	atomic_set(&isp_ctx->composing_frame, 0);
+> > +	atomic_set(&isp_ctx->ipi_occupied, 0);
+> > +	atomic_set(&isp_ctx->scp_state, SCP_ON);
+> > +
+> > +	mutex_lock(&isp_ctx->lock);
+> > +	if (!isp_ctx->composer_tx_thread.thread) {
+> > +		init_waitqueue_head(&isp_ctx->composer_tx_thread.wq);
+> > +		INIT_LIST_HEAD(&isp_ctx->composer_txlist.queue);
+> > +		spin_lock_init(&isp_ctx->composer_txlist.lock);
+> > +		isp_ctx->composer_tx_thread.thread =
+> > +			kthread_run(isp_composer_tx_work, isp_ctx,
+> > +				    "isp_composer_tx");
+> > +		if (IS_ERR(isp_ctx->composer_tx_thread.thread)) {
+> > +			dev_err(dev, "unable to start kthread\n");
+> > +			isp_ctx->composer_tx_thread.thread = NULL;
+> > +			goto nomem;
+> 
+> Why nomem?
+> 
+
+It is wrong. Need to correct with
+ERR_PTR(isp_ctx->composer_tx_thread.thread).
+These kthread handling will be removed in next patch.
+
+> > +		}
+> > +	} else {
+> > +		dev_warn(dev, "old tx thread is existed\n");
+> 
+> This shouldn't be possible to happen.
+> 
+
+Yes, it should not be happen. Otherwise, there is a bug.
+
+> > +	}
+> > +
+> > +	if (!isp_ctx->composer_deinit_thread.thread) {
+> > +		init_waitqueue_head(&isp_ctx->composer_deinit_thread.wq);
+> > +		isp_ctx->composer_deinit_thread.thread =
+> > +			kthread_run(isp_composer_deinit_work, isp_ctx,
+> > +				    "isp_composer_deinit_work");
+> 
+> Why do we need to deinit from another kthread?
+> 
+
+This code will be removed in next patch.
+
+> > +		if (IS_ERR(isp_ctx->composer_deinit_thread.thread)) {
+> > +			dev_err(dev, "unable to start kthread\n");
+> > +			isp_ctx->composer_deinit_thread.thread = NULL;
+> > +			goto nomem;
+> > +		}
+> > +	} else {
+> > +		dev_warn(dev, "old rx thread is existed\n");
+> 
+> rx? The code above seems to refer to deinit.
+> 
+
+Got it.
+
+> > +	}
+> > +	mutex_unlock(&isp_ctx->lock);
+> > +
+> > +	return 0;
+> > +
+> > +nomem:
+> > +	mutex_unlock(&isp_ctx->lock);
+> > +
+> > +	return -ENOMEM;
+> 
+> We should return the original error code here.
+> 
+
+Got it.
+
+> > +}
+> > +
+> > +void isp_composer_enqueue(struct device *dev,
+> > +			  void *data,
+> > +			  enum mtk_isp_scp_type type)
+> > +{
+> > +	struct mtk_isp_queue_work *isp_composer_work;
+> > +	struct isp_p1_device *p1_dev = get_p1_device(dev);
+> 
+> Just pass p1_dev to this function instead of dev.
+> 
+
+Fix in next patch.
+
+> > +	struct mtk_isp_p1_ctx *isp_ctx = &p1_dev->isp_ctx;
+> > +
+> > +	isp_composer_work = kzalloc(sizeof(*isp_composer_work), GFP_KERNEL);
+> 
+> For most of the cases, it should be possible to preallocate this, e.g.
+> >  - for FRAME, this could be inside the request struct,
+> >  - for buffer queue it could be inside the buffer struct.
+> 
+> I'd suggest making the caller responsible for allocating if needed.
+> 
+
+Fix in next patch.
+
+> > +	isp_composer_work->type = type;
+> > +
+> > +	switch (type) {
+> > +	case SCP_ISP_CMD:
+> > +		memcpy(&isp_composer_work->cmd, data,
+> > +		       sizeof(isp_composer_work->cmd));
+> > +		dev_dbg(dev, "Enq ipi cmd id:%d\n",
+> > +			isp_composer_work->cmd.cmd_id);
+> > +
+> > +		spin_lock(&isp_ctx->composer_txlist.lock);
+> > +		list_add_tail(&isp_composer_work->list_entry,
+> > +			      &isp_ctx->composer_txlist.queue);
+> > +		atomic_inc(&isp_ctx->composer_txlist.queue_cnt);
+> > +		spin_unlock(&isp_ctx->composer_txlist.lock);
+> > +
+> > +		atomic_inc(&isp_ctx->cmd_queued);
+> > +		wake_up_interruptible(&isp_ctx->composer_tx_thread.wq);
+> > +		break;
+> > +	case SCP_ISP_FRAME:
+> > +		memcpy(&isp_composer_work->frameparams, data,
+> > +		       sizeof(isp_composer_work->frameparams));
+> > +		dev_dbg(dev, "Enq ipi frame_num:%d\n",
+> > +			isp_composer_work->frameparams.frame_seq_no);
+> > +
+> > +		spin_lock(&isp_ctx->composer_txlist.lock);
+> > +		list_add_tail(&isp_composer_work->list_entry,
+> > +			      &isp_ctx->composer_txlist.queue);
+> > +		atomic_inc(&isp_ctx->composer_txlist.queue_cnt);
+> > +		spin_unlock(&isp_ctx->composer_txlist.lock);
+> > +
+> > +		wake_up_interruptible(&isp_ctx->composer_tx_thread.wq);
+> 
+> The code in both cases is almost exactly the same. The only difference is
+> the memcpy destination and size and whether isp_ctx->cmd_queued is
+> incremented or not.
+> 
+> The memcpy will go away if my comment above is addressed and so that would
+> go down to making the cmd_queued increment conditional.
+> 
+
+This function will be removed in next patch.
+We will call scp_ipi_send directly in the caller, such as:
+
+void mtk_isp_hw_config(struct mtk_cam_dev *cam,
+		       struct p1_config_param *config_param)
+{
+	struct mtk_isp_scp_p1_cmd composer_tx_cmd;
+	struct mtk_isp_p1_device *p1_dev = dev_get_drvdata(cam->dev);
+
+	memset(&composer_tx_cmd, 0, sizeof(composer_tx_cmd));
+	composer_tx_cmd.cmd_id = ISP_CMD_CONFIG;
+	memcpy(&composer_tx_cmd.config_param, config_param,
+	       sizeof(*config_param));
+
+	scp_ipi_send(p1_dev->scp_pdev, SCP_IPI_ISP_CMD, &composer_tx_cmd,
+		     sizeof(composer_tx_cmd), MTK_ISP_IPI_SEND_TIMEOUT);
+}
+
+void mtk_isp_stream(struct mtk_cam_dev *cam, int on)
+{
+	struct mtk_isp_scp_p1_cmd composer_tx_cmd;
+	struct mtk_isp_p1_device *p1_dev = dev_get_drvdata(cam->dev);
+
+	memset(&composer_tx_cmd, 0, sizeof(composer_tx_cmd));
+	composer_tx_cmd.cmd_id = ISP_CMD_STREAM;
+	composer_tx_cmd.is_stream_on = on;
+
+	scp_ipi_send(p1_dev->scp_pdev, SCP_IPI_ISP_CMD, &composer_tx_cmd,
+		     sizeof(composer_tx_cmd), MTK_ISP_IPI_SEND_TIMEOUT);
+}
+
+static void isp_composer_hw_deinit(struct mtk_isp_p1_device *p1_dev)
+{
+	struct mtk_isp_scp_p1_cmd composer_tx_cmd;
+
+	memset(&composer_tx_cmd, 0, sizeof(composer_tx_cmd));
+	composer_tx_cmd.cmd_id = ISP_CMD_DEINIT;
+
+	scp_ipi_send(p1_dev->scp_pdev, SCP_IPI_ISP_CMD, &composer_tx_cmd,
+		     sizeof(composer_tx_cmd), MTK_ISP_IPI_SEND_TIMEOUT);
+
+	isp_composer_uninit(p1_dev);
+}
+
+
+> > +		break;
+> > +	default:
+> > +		break;
+> > +	}
+> > +}
+> > +
+> > +void isp_composer_hw_init(struct device *dev)
+> > +{
+> > +	struct mtk_isp_scp_p1_cmd composer_tx_cmd;
+> > +	struct isp_p1_device *p1_dev = get_p1_device(dev);
+> > +	struct mtk_isp_p1_ctx *isp_ctx = &p1_dev->isp_ctx;
+> > +
+> > +	memset(&composer_tx_cmd, 0, sizeof(composer_tx_cmd));
+> > +	composer_tx_cmd.cmd_id = ISP_CMD_INIT;
+> > +	composer_tx_cmd.frameparam.hw_module = isp_ctx->isp_hw_module;
+> > +	composer_tx_cmd.frameparam.cq_addr.iova = isp_ctx->scp_mem_iova;
+> > +	composer_tx_cmd.frameparam.cq_addr.scp_addr = isp_ctx->scp_mem_pa;
+> 
+> Should we also specify the size of the buffer? Otherwise we could end up
+> with some undetectable overruns.
+> 
+
+The size of SCP composer's memory is fixed to 0x200000.
+Is it necessary to specify the size of this buffer?
+
+#define MTK_ISP_COMPOSER_MEM_SIZE 0x200000
+
+ptr = dma_alloc_coherent(p1_dev->cam_dev.smem_dev,
+			MTK_ISP_COMPOSER_MEM_SIZE, &addr, GFP_KERNEL);
+
+> > +	isp_composer_enqueue(dev, &composer_tx_cmd, SCP_ISP_CMD);
+> > +}
+> > +
+> > +void isp_composer_meta_config(struct device *dev,
+> > +			      unsigned int dma)
+> > +{
+> > +	struct mtk_isp_scp_p1_cmd composer_tx_cmd;
+> > +
+> > +	memset(&composer_tx_cmd, 0, sizeof(composer_tx_cmd));
+> > +	composer_tx_cmd.cmd_id = ISP_CMD_CONFIG_META;
+> > +	composer_tx_cmd.cfg_meta_out_param.enabled_meta_dmas = dma;
+> > +	isp_composer_enqueue(dev, &composer_tx_cmd, SCP_ISP_CMD);
+> > +}
+> > +
+> > +void isp_composer_hw_config(struct device *dev,
+> > +			    struct p1_config_param *config_param)
+> > +{
+> > +	struct mtk_isp_scp_p1_cmd composer_tx_cmd;
+> > +
+> > +	memset(&composer_tx_cmd, 0, sizeof(composer_tx_cmd));
+> > +	composer_tx_cmd.cmd_id = ISP_CMD_CONFIG;
+> > +	memcpy(&composer_tx_cmd.config_param, config_param,
+> > +	       sizeof(*config_param));
+> > +	isp_composer_enqueue(dev, &composer_tx_cmd, SCP_ISP_CMD);
+> > +}
+> > +
+> > +void isp_composer_stream(struct device *dev, int on)
+> > +{
+> > +	struct mtk_isp_scp_p1_cmd composer_tx_cmd;
+> > +
+> > +	memset(&composer_tx_cmd, 0, sizeof(composer_tx_cmd));
+> > +	composer_tx_cmd.cmd_id = ISP_CMD_STREAM;
+> > +	composer_tx_cmd.is_stream_on = on;
+> > +	isp_composer_enqueue(dev, &composer_tx_cmd, SCP_ISP_CMD);
+> > +}
+> > +
+> > +void isp_composer_hw_deinit(struct device *dev)
+> > +{
+> > +	struct mtk_isp_scp_p1_cmd composer_tx_cmd;
+> > +	struct isp_p1_device *p1_dev = get_p1_device(dev);
+> > +	struct mtk_isp_p1_ctx *isp_ctx = &p1_dev->isp_ctx;
+> > +	int ret;
+> > +
+> > +	memset(&composer_tx_cmd, 0, sizeof(composer_tx_cmd));
+> > +	composer_tx_cmd.cmd_id = ISP_CMD_DEINIT;
+> > +	isp_composer_enqueue(dev, &composer_tx_cmd, SCP_ISP_CMD);
+> > +
+> > +	/* Wait for ISP_CMD_DEINIT command is handled done */
+> > +	ret = wait_event_timeout(isp_ctx->composer_deinit_thread.wq,
+> > +				 atomic_read(&isp_ctx->scp_state) == SCP_OFF,
+> > +				 msecs_to_jiffies(2000));
+> > +	if (ret)
+> > +		return;
+> > +
+> > +	dev_warn(dev, "Timeout & local de-init\n");
+> > +	isp_composer_deinit(isp_ctx);
+> > +}
+> > diff --git a/drivers/media/platform/mtk-isp/isp_50/cam/mtk_cam-scp.h b/drivers/media/platform/mtk-isp/isp_50/cam/mtk_cam-scp.h
+> > new file mode 100644
+> > index 000000000000..fbd8593e9c2d
+> > --- /dev/null
+> > +++ b/drivers/media/platform/mtk-isp/isp_50/cam/mtk_cam-scp.h
+> > @@ -0,0 +1,207 @@
+> > +/* SPDX-License-Identifier: GPL-2.0 */
+> > +/*
+> > + * Copyright (c) 2018 MediaTek Inc.
+> > + */
+> > +
+> > +#ifndef _MTK_ISP_SCP_H
+> > +#define _MTK_ISP_SCP_H
+> > +
+> > +#include <linux/types.h>
+> > +
+> > +#include "mtk_cam-v4l2-util.h"
+> > +
+> > +/*
+> > + * struct img_size - image size information.
+> > + *
+> > + * @w: image width, the unit is pixel
+> > + * @h: image height, the unit is pixel
+> > + * @xsize: bytes per line based on width.
+> > + * @stride: bytes per line when changing line.
+> > + *          Normally, calculate new STRIDE based on
+> > + *          xsize + HW constrain(page or align).
+> > + *
+> > + */
+> > +struct img_size {
+> > +	__u32 w;
+> > +	__u32 h;
+> > +	__u32 xsize;
+> > +	__u32 stride;
+> > +} __packed;
+> > +
+> > +/*
+> > + * struct img_buffer - buffer address information.
+> > + *
+> > + * @iova: DMA address for external devices.
+> > + * @scp_addr: SCP address for external co-process unit.
+> > + *
+> > + */
+> > +struct img_buffer {
+> > +	__u32 iova;
+> > +	__u32 scp_addr;
+> > +} __packed;
+> > +
+> > +struct p1_img_crop {
+> > +	__u32 left;
+> > +	__u32 top;
+> > +	__u32 width;
+> > +	__u32 height;
+> > +} __packed;
+> > +
+> > +struct p1_img_output {
+> > +	struct img_buffer buffer;
+> > +	struct img_size size;
+> > +	struct p1_img_crop crop;
+> > +	__u8 pixel_byte;
+> > +	__u32 img_fmt;
+> > +} __packed;
+> 
+> Please document.
+> 
+
+Fix in next patch.
+
+> > +
+> > +/*
+> > + * struct cfg_in_param - image input parameters structure.
+> > + *                       Normally, it comes from sensor information.
+> > + *
+> > + * @continuous: indicate the sensor mode.
+> > + *              1: continuous
+> > + *              0: single
+> > + * @subsample: indicate to enables SOF subsample or not.
+> > + * @pixel_mode: describe 1/2/4 pixels per clock cycle.
+> > + * @data_pattern: describe input data pattern.
+> > + * @raw_pixel_id: bayer sequence.
+> > + * @tg_fps: the fps rate of TG (time generator).
+> > + * @img_fmt: the image format of input source.
+> > + * @p1_img_crop: the crop configuration of input source.
+> > + *
+> > + */
+> > +struct cfg_in_param {
+> > +	__u8 continuous;
+> > +	__u8 subsample;
+> > +	__u8 pixel_mode;
+> > +	__u8 data_pattern;
+> > +	__u8 raw_pixel_id;
+> > +	__u16 tg_fps;
+> > +	__u32 img_fmt;
+> > +	struct p1_img_crop crop;
+> > +} __packed;
+> > +
+> > +/*
+> > + * struct cfg_main_out_param - the image output parameters of main stream.
+> > + *
+> > + * @bypass: indicate this device is enabled or disabled or not .
+> 
+> Remove the space before the period.
+> 
+
+Fix in next patch.
+
+> > + * @pure_raw: indicate the image path control.
+> > + *            1: pure raw
+> > + *            0: processing raw
+> > + * @pure_raw_pack: indicate the image is packed or not.
+> > + *                 1: packed mode
+> > + *                 0: unpacked mode
+> > + * @p1_img_output: the output image information.
+> > + *
+> > + */
+> > +struct cfg_main_out_param {
+> > +	/* Bypass main out parameters */
+> > +	__u8 bypass;
+> > +	/* Control HW image raw path */
+> > +	__u8 pure_raw;
+> > +	/* Control HW image pack function */
+> 
+> No need for these inline comments.
+> 
+
+Fix in next patch.
+
+> > +	__u8 pure_raw_pack;
+> > +	struct p1_img_output output;
+> > +} __packed;
+> > +
+> > +/*
+> > + * struct cfg_resize_out_param - the image output parameters of
+> > + *                               packed out stream.
+> > + *
+> > + * @bypass: indicate this device is enabled or disabled or not .
+> 
+> Remove the space before the period.
+> 
+
+Fix in next patch.
+
+> > + * @p1_img_output: the output image information.
+> > + *
+> > + */
+> > +struct cfg_resize_out_param {
+> > +	/* Bypass resize parameters */
+> 
+> No need for this inline comment.
+> 
+
+Fix in next patch.
+
+> > +	__u8 bypass;
+> > +	struct p1_img_output output;
+> > +} __packed;
+> > +
+> > +/*
+> > + * struct cfg_meta_out_param - output meta information.
+> > + *
+> > + * @enabled_meta_dmas: indicate which meta DMAs are enabled.
+> > + *
+> > + */
+> > +struct cfg_meta_out_param {
+> > +	__u32 enabled_meta_dmas;
+> > +} __packed;
+> > +
+> > +struct p1_config_param {
+> > +	/* Sensor/TG info */
+> > +	struct cfg_in_param cfg_in_param;
+> > +	/* IMGO DMA */
+> > +	struct cfg_main_out_param cfg_main_param;
+> > +	/* RRZO DMA */
+> > +	struct cfg_resize_out_param cfg_resize_param;
+> > +	/* 3A DMAs and other. */
+> > +	struct cfg_meta_out_param cfg_meta_param;
+> 
+> Please change the inline comments to a kerneldoc comment at the top.
+> 
+
+Fix in next patch.
+
+> > +} __packed;
+> > +
+> > +struct p1_frame_param {
+> > +	/* frame sequence number */
+> > +	__u32 frame_seq_no;
+> > +	/* SOF index */
+> > +	__u32 sof_idx;
+> > +	/* The memory address of tuning buffer from user space */
+> 
+> Ditto.
+> 
+
+Fix in next patch.
+
+> > +	struct img_buffer dma_buffers[MTK_CAM_P1_TOTAL_NODES];
+> > +} __packed;
+> > +
+> > +struct P1_meta_frame {
+> > +	__u32 enabled_dma;
+> > +	__u32 vb_index;
+> > +	struct img_buffer meta_addr;
+> > +} __packed;
+> > +
+> > +struct isp_init_info {
+> > +	__u8 hw_module;
+> > +	struct img_buffer cq_addr;
+> > +} __packed;
+> > +
+> > +struct isp_ack_info {
+> > +	__u8 cmd_id;
+> > +	__u32 frame_seq_no;
+> > +} __packed;
+> > +
+> > +enum mtk_isp_scp_cmds {
+> > +	ISP_CMD_INIT,
+> > +	ISP_CMD_CONFIG,
+> > +	ISP_CMD_STREAM,
+> > +	ISP_CMD_DEINIT,
+> > +	ISP_CMD_ACK,
+> > +	ISP_CMD_FRAME_ACK,
+> > +	ISP_CMD_CONFIG_META,
+> > +	ISP_CMD_ENQUEUE_META,
+> > +	ISP_CMD_RESERVED,
+> > +};
+> > +
+> > +struct mtk_isp_scp_p1_cmd {
+> > +	__u8 cmd_id;
+> > +	union {
+> > +		struct isp_init_info frameparam;
+> > +		struct p1_config_param config_param;
+> > +		struct cfg_meta_out_param cfg_meta_out_param;
+> > +		struct P1_meta_frame meta_frame;
+> > +		__u8 is_stream_on;
+> > +		struct isp_ack_info ack_info;
+> > +	};
+> > +} __packed;
+> > +
+> > +enum mtk_isp_scp_type {
+> > +	SCP_ISP_CMD = 0,
+> > +	SCP_ISP_FRAME,
+> > +};
+> 
+> Please document all the structs and enum above using kerneldoc.
+> 
+
+Fix in next patch.
+
+> Best regards,
+> Tomasz
+> 
+
+Thank you for your valuable comments.
+
+Best regards,
+
+
+Jungo 
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
