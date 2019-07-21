@@ -2,87 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18B6E6F14D
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 21 Jul 2019 04:43:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12CCB6F165
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 21 Jul 2019 05:46:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=5UIAp0WEqBjsPoqtXxH+OjJHaP9MumNWN16YwedqqcY=; b=pnAUI7svVcbN5fgb74idn/yJx
-	T09K5lIcRsEk0Uy0kFUrnbj0m8F3fQpdYMLxZNQgZ3tO2X8qJPsyYqdaoOUH9ruHwP8RQNm15KYTQ
-	PFX8pqklmezOYOXrc7cIPeXpfFfH+i82PHVMpxxmZBFA4iCOJvedrpbmfzKcgLqGnEOEOvz9IuFz+
-	3Yl/3mYnotAhX8HUWZHA8DjqR3FmN2H8gSW71GlQiu98k/HblRYKJnXhMaFyXxfKlAVO+VhjhT61d
-	fBm/EwK31N3INSQB/0O0PQMdJvhzaHb8qbhhUIt/QTg8OP4GbyyZ4ykYMRaiUHEGetgOlrz7dP0j8
-	ojxC4ZMWg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0Tgr7mxgX9Qa9XQDxsPOaFI472dfrUCWX3PQDhSeU/o=; b=IMwiY2m6f9Uk4i
+	ufqM9zUKOZSfbKFyiyF/74ScSCKh+mfZ2EeUjOe7hGX024WlMqJifAJ/T9dDSXoPM3QctKg3PYXZY
+	cqBLrcXvNrzVbf46irECP/XzZAHDd0VHqHynSWeuVj35o5l5bIy3pfTHOsGHsY/BE/FYriHpWaiHw
+	fQMG7p8+cpCt6HVem7m7dzlGwn5FM1W1rQAdMZa+GrwRHBMMNycyvTqdeQ2X5qBXVhWhvg4mg8OKv
+	wgpNipSjLcidWdQ+eyJMKXSxSN11UMRAY2FVsPOIKxjo5Z0GyLJvxkM++0gXpg5nmIy9vUHHDUyPU
+	fZtAfmOu7IJKpKBFSpUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hp1pL-0003R4-Oq; Sun, 21 Jul 2019 02:43:56 +0000
-Received: from vern.gendns.com ([98.142.107.122])
+	id 1hp2nf-0006Hv-Nl; Sun, 21 Jul 2019 03:46:15 +0000
+Received: from conssluserg-05.nifty.com ([210.131.2.90])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hp1p7-0003NX-F4
- for linux-arm-kernel@lists.infradead.org; Sun, 21 Jul 2019 02:43:42 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=lechnology.com; s=default; h=Content-Transfer-Encoding:Content-Type:
- In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender
- :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=QBCxrWgQQvbzcSHUE+6V5GYiHh8kl0xDb7n2C2WZI1U=; b=evrWp+eTbUOlJMWIwZri5RT/jU
- 5WhW7H5EVxsOoU+e2v3rKQ7Km5/PUUkYGhesGGviICzbRx3A91I3Vzubr/CQlLVm0RXw2IRQz6wAE
- vgWLHpoJzvSy3hVcQEri0fNKnaoyLMzFurmu3Xs4LEhZ6guZv2tBxI/E/fLwHG8fUSnAFzOdfFXfU
- xpD5ZTWPoR5W/HBaDvCVr0hCFbB3KeJQDhgE3GtXRx9THOkDA2szgseW7aZgURr3RemxHOgCi9jsi
- lyA0Tx2lZ9fogw0qJ1pp5SoiDLm8thW7iUj8dxrQh+ozh5AKwYWwmIiN6X72qPEUrRMeMNrkqJoCL
- /uXUpnDw==;
-Received: from 108-198-5-147.lightspeed.okcbok.sbcglobal.net
- ([108.198.5.147]:51266 helo=[192.168.0.134])
- by vern.gendns.com with esmtpsa (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128)
- (Exim 4.92) (envelope-from <david@lechnology.com>)
- id 1hp1oH-001YcK-CZ; Sat, 20 Jul 2019 22:42:49 -0400
-Subject: Re: [PATCH 1/4] ARM: OMAP2+: Drop mmc platform data for am330x and
- am43xx
-To: Tony Lindgren <tony@atomide.com>, linux-omap@vger.kernel.org
-References: <20190326181324.32140-1-tony@atomide.com>
- <20190326181324.32140-2-tony@atomide.com>
-From: David Lechner <david@lechnology.com>
-Message-ID: <0af63198-5a68-2f0d-f14e-2b514580d2d5@lechnology.com>
-Date: Sat, 20 Jul 2019 21:42:49 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ id 1hp2nR-0006HS-QL
+ for linux-arm-kernel@lists.infradead.org; Sun, 21 Jul 2019 03:46:03 +0000
+Received: from mail-vs1-f43.google.com (mail-vs1-f43.google.com
+ [209.85.217.43]) (authenticated)
+ by conssluserg-05.nifty.com with ESMTP id x6L3jTba007895
+ for <linux-arm-kernel@lists.infradead.org>; Sun, 21 Jul 2019 12:45:30 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-05.nifty.com x6L3jTba007895
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1563680730;
+ bh=+i1P1EOzIYuFKSpLhOGGexoKtgfai1r9bg5dNGXa6F0=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=rWZqNizHxDGhLXiH5RLEM1t/LUAvsgmp8EZk2jKss2AVNYPU4fdHNbMwigsoLYMLs
+ UZE0/gzjudBE3rzE/Qh1bAbbpWMWEBhqyxX07k+ibiY0tTJQtkLW5cZ0Drmt9Um1Mi
+ +W1GvIBSh8z6IG/egE0QRACea1V6Ej3N06iCH29ThBUqz+5siQ63qPpIm7qQUdBIly
+ NaJ1C47+JSnH+6eArNrZ3vK40VJWjRfNyGrrP+SfXCyvkbDp8BYoqSrMQAym9DMf8s
+ 3Z5FWGq6CI5Pqv2Zwz+2nXV3vKgrK14OVX41zB8MGi8vl8Jmv28l9R5CefDW9rghK+
+ Fyh6qQNdBFl2g==
+X-Nifty-SrcIP: [209.85.217.43]
+Received: by mail-vs1-f43.google.com with SMTP id m23so24026174vso.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 20 Jul 2019 20:45:30 -0700 (PDT)
+X-Gm-Message-State: APjAAAWvUK9tgjhvPpuwNQmfcmU1UPQ26JkiMg+QnIl7fa80nlrLuhyl
+ CxFTltU1I3KzBLVIkg+NGolGj8Km4VNHkgY7K5Y=
+X-Google-Smtp-Source: APXvYqyXn4LIVIGhGfe4GQcWn8jAhDg5lBZ7sWrCxxc9wSyaVu8Ptfm6hbnzjFDumV0Hyo1hL7V34uRrK01YyrMzJ7Y=
+X-Received: by 2002:a67:8e0a:: with SMTP id q10mr15137391vsd.215.1563680729320; 
+ Sat, 20 Jul 2019 20:45:29 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190326181324.32140-2-tony@atomide.com>
-Content-Language: en-US
-X-AntiAbuse: This header was added to track abuse,
- please include it with any abuse report
-X-AntiAbuse: Primary Hostname - vern.gendns.com
-X-AntiAbuse: Original Domain - lists.infradead.org
-X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
-X-AntiAbuse: Sender Address Domain - lechnology.com
-X-Get-Message-Sender-Via: vern.gendns.com: authenticated_id:
- davidmain+lechnology.com/only user confirmed/virtual account not confirmed
-X-Authenticated-Sender: vern.gendns.com: davidmain@lechnology.com
-X-Source: 
-X-Source-Args: 
-X-Source-Dir: 
+References: <CAK7LNASyzmYjjBkFxRc06rqf36-en-bvJvrKcg6iiRfjoPCxhQ@mail.gmail.com>
+ <CAK8P3a2AeUpmNfFLJSvHT=AJ0kFRT2B=TWDm0HsTwoHt2jQ0gQ@mail.gmail.com>
+In-Reply-To: <CAK8P3a2AeUpmNfFLJSvHT=AJ0kFRT2B=TWDm0HsTwoHt2jQ0gQ@mail.gmail.com>
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
+Date: Sun, 21 Jul 2019 12:44:53 +0900
+X-Gmail-Original-Message-ID: <CAK7LNATPbCjwzVnAigsQ8tQRXjC31uxgPg3jgi7pwp+N1RPgWw@mail.gmail.com>
+Message-ID: <CAK7LNATPbCjwzVnAigsQ8tQRXjC31uxgPg3jgi7pwp+N1RPgWw@mail.gmail.com>
+Subject: Re: [Question] orphan platform data header
+To: Arnd Bergmann <arnd@arndb.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190720_194341_670319_EC0BA189 
-X-CRM114-Status: UNSURE (   6.94  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190720_204602_075536_EDD59629 
+X-CRM114-Status: GOOD (  13.75  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [210.131.2.90 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,24 +83,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ DTML <devicetree@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 3/26/19 1:13 PM, Tony Lindgren wrote:
-> We can now drop legacy platform data one interconnect target module at
-> a time in favor of the device tree based data that has been added earlier.
-> 
-> Signed-off-by: Tony Lindgren <tony@atomide.com>
-> ---
+Hi Arnd,
 
-This breaks wifi on BeagleBone Blue (found via git bisect). In dmesg, I see:
+On Sat, Jul 20, 2019 at 10:55 PM Arnd Bergmann <arnd@arndb.de> wrote:
+>
+> On Sat, Jul 20, 2019 at 5:26 AM Masahiro Yamada
+> <yamada.masahiro@socionext.com> wrote:
+> >
+> > masahiro@grover:~/ref/linux$ git grep netxbig_led_platform_data
+> > drivers/leds/leds-netxbig.c:                          struct
+> > netxbig_led_platform_data *pdata,
+> > drivers/leds/leds-netxbig.c:                                 struct
+> > netxbig_led_platform_data *pdata)
+> > drivers/leds/leds-netxbig.c:                      struct
+> > netxbig_led_platform_data *pdata)
+> > drivers/leds/leds-netxbig.c:    struct netxbig_led_platform_data
+> > *pdata = dev_get_platdata(&pdev->dev);
+> > include/linux/platform_data/leds-kirkwood-netxbig.h:struct
+> > netxbig_led_platform_data {
+> >
+> >
+> >
+> > So, what shall we do?
+> >
+> > Drop the board-file support? Or, keep it
+> > in case somebody is still using their board-files
+> > in downstream?
+>
+> Generally speaking, I'd remove the board file support in another
+> case like this, but it's worth looking at when it was last used and by
+> what.
+>
+> For this file, all boards got converted to DT, and the old setup
+> code removed in commit ebc278f15759 ("ARM: mvebu: remove static
+> LED setup for netxbig boards"), four years ago, so it's a fairly
+> easy decision to make it DT only.
 
-     platform 47810000.mmc: Cannot lookup hwmod 'mmc3'
 
-How can we fix it?
+Thanks.
+
+I see another case, which is difficult
+to make a decision.
+
+For example, drivers/spi/spi-tle62x0.c
+
+This driver supports only board-file, but the board-file
+is not found in upstream.
+
+Unless I am terribly missing something,
+there is no one who passes tle62x0_pdata
+to this driver.
+
+$ git grep tle62x0_pdata
+drivers/spi/spi-tle62x0.c:      struct tle62x0_pdata *pdata;
+include/linux/spi/tle62x0.h:struct tle62x0_pdata {
+
+But, removing board-file support
+makes this driver completely useless...
+
+
+--
+Best Regards
+Masahiro Yamada
 
 _______________________________________________
 linux-arm-kernel mailing list
