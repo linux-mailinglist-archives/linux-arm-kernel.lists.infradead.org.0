@@ -2,78 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62A8E6F25F
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 21 Jul 2019 11:10:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0380B6F279
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 21 Jul 2019 12:03:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8SuTcsmXz6lpyBJqM0B8Q6HSHk4wEWeHF+TSpaWXRwc=; b=JfN49oaDvNbJMs
-	OL42Tj6OXpuY5MQXkUhDEqD/4wykKTJL+GI1953VVEiSFxx04YTOqIbOZYQVn5RB0cutS4XURg0Kv
-	yft1pgDJtY+VYTEZpySZvtC4o2R1QLmZeP/rrWFai0kR3rHgcSLpBR9qf37kwvoLjcYcFN0hOCm/i
-	p16gOY1eazpoNF1RJGekxJ4SJqaU5ggZ5CqtuB5DxOWrwGUvrtJB4PuCrGoUeWux9yY7Eosoxj7kF
-	of+cay/eqRSZpc5Bbq1y1MORgkWLRKL1ui4ESs/GMVDQ66gyItWLGOPxPcgYG2Zxi++izVmIrnCKt
-	0TwEO/MLsRYTYx/tBKYA==;
+	List-Owner; bh=vVc0bJuAZ+ZnCDxK02pBhhkIYTZcUbOBnN5bFk++L4s=; b=i/vnhUXGzAiZqF
+	v4yNjv795SoPAtyWJywANkD3SMpH0KAwoN1V+17AtsY2p9wxsZUv1tYF708mPGTUDbyhhHwRL7pBU
+	OWZsngGIaUeX+EIyd+ZkSn3rBs7v+xl0+gbIV6+VJtfOKbKtDpquA2igeK+8OgiXN2v81ZcnxeV85
+	Xu/gDTCiwo5KuSnXh+V8QUZCKt80v8k0xbQNMqMia0RUrl1798XvJvEmgoXky/c1RSAtfP1jzw1V+
+	FxJhg3XqKzPPGCuwKF6wO0soWuziWqjZXLChBUha98LHH5tflGCO1eNej6EHXJ60cJXWy5dau359i
+	X+AyB61y4fY6RiggLRFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hp7rZ-00013p-8G; Sun, 21 Jul 2019 09:10:37 +0000
-Received: from mail-qk1-f196.google.com ([209.85.222.196])
+	id 1hp8gf-00085M-T1; Sun, 21 Jul 2019 10:03:26 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hp7rC-00012n-Op
- for linux-arm-kernel@lists.infradead.org; Sun, 21 Jul 2019 09:10:17 +0000
-Received: by mail-qk1-f196.google.com with SMTP id r21so26514759qke.2
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 21 Jul 2019 02:10:12 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=PbP2X6NIQ0TsX6f4YAaWzUSD+G4Atkgs9bO3GMLpkFo=;
- b=j43MmzH/4Pi0YjMmLQuRfHDHoY/EiOf8GJH71/l557Oo7T3RIMb97GeZCHap2MGP7k
- 1T/clDt69BfXjQURdpZZgdRxFAca4pSALx9MTZrTMvfMu2UOyRiCXk4gVcOYo5f9nZON
- XABm4QBhny295dqWmGxDIo/II6joNslXKyyi+p7DmIMLNX9rTqVeSg0S4p/c19AgNepY
- bURoIPf28kE7ps0B4ADefwM5jj6ViKQF4u7dnfBDbGqtYkqAZkjidaz/bfz/n5HHwONi
- IBiM7fYaDhchOTJqz9Y0menAIkhA3Qknr+WfdOXf4wxTfhSPtReZ/ugN3DM5BUzk+3wy
- Yo5g==
-X-Gm-Message-State: APjAAAUqSW8C1q4Eqre2LW36hoFzVKZELXjczK0JY1fmNPwCKyArxHxy
- zk1S9jMosXwEAqpsxZ1SGfpNsdWeZMNS5R5Tsmc=
-X-Google-Smtp-Source: APXvYqxjHmilE5N9LuNpTfJRWTexnfcMwdOlI/rw0tJewIMNf4YcI56JyWv6tb+DANtn3aJAz06JD3ezoAiIRcMhEcU=
-X-Received: by 2002:a37:4ac3:: with SMTP id
- x186mr40996804qka.138.1563700211845; 
- Sun, 21 Jul 2019 02:10:11 -0700 (PDT)
+ id 1hp8gK-00084u-Mw
+ for linux-arm-kernel@lists.infradead.org; Sun, 21 Jul 2019 10:03:06 +0000
+Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
+ [10.5.11.13])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 30E3F4E908;
+ Sun, 21 Jul 2019 10:03:03 +0000 (UTC)
+Received: from redhat.com (ovpn-120-23.rdu2.redhat.com [10.10.120.23])
+ by smtp.corp.redhat.com (Postfix) with SMTP id 69DA95F7C0;
+ Sun, 21 Jul 2019 10:02:54 +0000 (UTC)
+Date: Sun, 21 Jul 2019 06:02:52 -0400
+From: "Michael S. Tsirkin" <mst@redhat.com>
+To: syzbot <syzbot+e58112d71f77113ddb7b@syzkaller.appspotmail.com>
+Subject: Re: WARNING in __mmdrop
+Message-ID: <20190721044615-mutt-send-email-mst@kernel.org>
+References: <0000000000008dd6bb058e006938@google.com>
+ <000000000000964b0d058e1a0483@google.com>
 MIME-Version: 1.0
-References: <CAK7LNASyzmYjjBkFxRc06rqf36-en-bvJvrKcg6iiRfjoPCxhQ@mail.gmail.com>
- <CAK8P3a2AeUpmNfFLJSvHT=AJ0kFRT2B=TWDm0HsTwoHt2jQ0gQ@mail.gmail.com>
- <CAK7LNATPbCjwzVnAigsQ8tQRXjC31uxgPg3jgi7pwp+N1RPgWw@mail.gmail.com>
-In-Reply-To: <CAK7LNATPbCjwzVnAigsQ8tQRXjC31uxgPg3jgi7pwp+N1RPgWw@mail.gmail.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Sun, 21 Jul 2019 11:09:55 +0200
-Message-ID: <CAK8P3a3cURmbGZc-6ESLjrF465VLnBroD4QENyfsSsCrNenRrA@mail.gmail.com>
-Subject: Re: [Question] orphan platform data header
-To: Masahiro Yamada <yamada.masahiro@socionext.com>,
- Ben Dooks <ben.dooks@codethink.co.uk>
+Content-Disposition: inline
+In-Reply-To: <000000000000964b0d058e1a0483@google.com>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.38]); Sun, 21 Jul 2019 10:03:03 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190721_021014_999638_1A4F9F79 
-X-CRM114-Status: GOOD (  18.76  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190721_030304_790009_A16B5FC3 
+X-CRM114-Status: GOOD (  15.56  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.196 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.222.196 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,65 +68,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- DTML <devicetree@vger.kernel.org>
+Cc: mhocko@suse.com, peterz@infradead.org, jasowang@redhat.com,
+ ldv@altlinux.org, james.bottomley@hansenpartnership.com, linux-mm@kvack.org,
+ namit@vmware.com, mingo@kernel.org, elena.reshetova@intel.com,
+ aarcange@redhat.com, davem@davemloft.net, hch@infradead.org,
+ christian@brauner.io, keescook@chromium.org, syzkaller-bugs@googlegroups.com,
+ jglisse@redhat.com, viro@zeniv.linux.org.uk,
+ linux-arm-kernel@lists.infradead.org, wad@chromium.org,
+ linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ luto@amacapital.net, ebiederm@xmission.com, akpm@linux-foundation.org,
+ guro@fb.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Jul 21, 2019 at 5:45 AM Masahiro Yamada
-<yamada.masahiro@socionext.com> wrote:
-> On Sat, Jul 20, 2019 at 10:55 PM Arnd Bergmann <arnd@arndb.de> wrote:
-> > On Sat, Jul 20, 2019 at 5:26 AM Masahiro Yamada <yamada.masahiro@socionext.com> wrote:
-> > > So, what shall we do?
-> > >
-> > > Drop the board-file support? Or, keep it
-> > > in case somebody is still using their board-files
-> > > in downstream?
->>
-> > For this file, all boards got converted to DT, and the old setup
-> > code removed in commit ebc278f15759 ("ARM: mvebu: remove static
-> > LED setup for netxbig boards"), four years ago, so it's a fairly
-> > easy decision to make it DT only.
->
-> I see another case, which is difficult
-> to make a decision.
->
-> For example, drivers/spi/spi-tle62x0.c
->
-> This driver supports only board-file, but the board-file
-> is not found in upstream.
->
-> Unless I am terribly missing something,
-> there is no one who passes tle62x0_pdata
-> to this driver.
->
-> $ git grep tle62x0_pdata
-> drivers/spi/spi-tle62x0.c:      struct tle62x0_pdata *pdata;
-> include/linux/spi/tle62x0.h:struct tle62x0_pdata {
->
-> But, removing board-file support
-> makes this driver completely useless...
+On Sat, Jul 20, 2019 at 03:08:00AM -0700, syzbot wrote:
+> syzbot has bisected this bug to:
+> 
+> commit 7f466032dc9e5a61217f22ea34b2df932786bbfc
+> Author: Jason Wang <jasowang@redhat.com>
+> Date:   Fri May 24 08:12:18 2019 +0000
+> 
+>     vhost: access vq metadata through kernel virtual address
+> 
+> bisection log:  https://syzkaller.appspot.com/x/bisect.txt?x=149a8a20600000
+> start commit:   6d21a41b Add linux-next specific files for 20190718
+> git tree:       linux-next
+> final crash:    https://syzkaller.appspot.com/x/report.txt?x=169a8a20600000
+> console output: https://syzkaller.appspot.com/x/log.txt?x=129a8a20600000
+> kernel config:  https://syzkaller.appspot.com/x/.config?x=3430a151e1452331
+> dashboard link: https://syzkaller.appspot.com/bug?extid=e58112d71f77113ddb7b
+> syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=10139e68600000
+> 
+> Reported-by: syzbot+e58112d71f77113ddb7b@syzkaller.appspotmail.com
+> Fixes: 7f466032dc9e ("vhost: access vq metadata through kernel virtual
+> address")
+> 
+> For information about bisection process see: https://goo.gl/tpsmEJ#bisection
 
-Adding Ben Dooks to Cc.
 
-I suspect this driver is completely obsolete and should be removed.
+OK I poked at this for a bit, I see several things that
+we need to fix, though I'm not yet sure it's the reason for
+the failures:
 
-For some reason, it's not an SPI controller driver like all the other
-files in that directory, but implements low-level access to the state
-of a particular SPI device.
 
-However, there should not really be a low-level driver for it that
-just exports the pins to user space. It should either be a gpiolib
-driver to let other drivers talk to the pins, or a high-level driver that
-exposes the intended functionality (watchdog, regulator, ...)
-to those respective subsystems.
+1. mmu_notifier_register shouldn't be called from vhost_vring_set_num_addr
+   That's just a bad hack, in particular I don't think device
+   mutex is taken and so poking at two VQs will corrupt
+   memory.
+   So what to do? How about a per vq notifier?
+   Of course we also have synchronize_rcu
+   in the notifier which is slow and is now going to be called twice.
+   I think call_rcu would be more appropriate here.
+   We then need rcu_barrier on module unload.
+   OTOH if we make pages linear with map then we are good
+   with kfree_rcu which is even nicer.
 
-       Arnd
+2. Doesn't map leak after vhost_map_unprefetch?
+   And why does it poke at contents of the map?
+   No one should use it right?
+
+3. notifier unregister happens last in vhost_dev_cleanup,
+   but register happens first. This looks wrong to me.
+
+4. OK so we use the invalidate count to try and detect that
+   some invalidate is in progress.
+   I am not 100% sure why do we care.
+   Assuming we do, uaddr can change between start and end
+   and then the counter can get negative, or generally
+   out of sync.
+
+So what to do about all this?
+I am inclined to say let's just drop the uaddr optimization
+for now. E.g. kvm invalidates unconditionally.
+3 should be fixed independently.
+
+
+-- 
+MST
 
 _______________________________________________
 linux-arm-kernel mailing list
