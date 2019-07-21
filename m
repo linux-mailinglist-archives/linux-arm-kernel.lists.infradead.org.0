@@ -2,64 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 717826F472
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 21 Jul 2019 19:54:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24E9D6F48C
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 21 Jul 2019 20:08:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TR0rdi9Bg3JZs5PHQfzN9HF8U2tWS86J2pveuBNbvv8=; b=dY5uoewYeoceDE
-	S833hDgdAP/6nkRf8nnOh56Bff74YjH71FPGkqksNv4fxp0rs7hPFhXbvulB4rNRych9sQSsHEtPV
-	i5ZFiQiPSIzvnGMaqmQp/NkXfmgheUtsPGUom5PFI9wtzW9Jxvry5JiZyudDJii5RZJM6xQBfqpR4
-	cUBbM7eeTkEYzlXzQuMjDiJlXbeqY2KhLm/PsqTv5kD0CqLyKSjiEnAKEEbJDwdf8Icb1x/YEndmz
-	GOvunh/x6vyrTUUG9IAkrQtCozKpdjzHV2htnloMIdNh/ekejFJF+uWKwRbUhD4TiHvEBxeOviymM
-	hBJwuIUAmQgRlPTUUVMg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=iRB0DlwDE0uDRoXx/iqlxt9PgEZFPrTuRM4kvdbvdyY=; b=eH5cDFIboRM3fU
+	3njPIkVL08TLHpFakvllccK4yU2rW6OTiSvI3mBH62Xy+73t7qb7Gii36thQnnbwO5CVyOVNi79pd
+	BYouWxGCvZwth0REvViyEVoJu/WzWkgJRoe7m8bl7eWoE4z6lJv+G8RWTlWlx2qENlyU6WkqJ02Of
+	0QN/ejX9PMJMeXJ0XYCXclHsdusxNQeBMY+cJtvx51DzvxihuwjkIFDJKDyMznhzwDjLxQMLdS0xq
+	s31RYSDEVGqZElU9csD+XWzCAQ4sy47S6rec4Uv7ZO4zYNO7mFbKeujdKrM76G+QHnrYUWf/x4ywT
+	7qJ6+AOudbTqSElSIXPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpG28-0006a5-Rq; Sun, 21 Jul 2019 17:54:04 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1hpGGD-0004pN-WD; Sun, 21 Jul 2019 18:08:38 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpG1g-0006Ze-Vl
- for linux-arm-kernel@lists.infradead.org; Sun, 21 Jul 2019 17:53:38 +0000
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 6475685541;
- Sun, 21 Jul 2019 17:53:32 +0000 (UTC)
-Received: from redhat.com (ovpn-120-128.rdu2.redhat.com [10.10.120.128])
- by smtp.corp.redhat.com (Postfix) with SMTP id DABC4600C0;
- Sun, 21 Jul 2019 17:53:24 +0000 (UTC)
-Date: Sun, 21 Jul 2019 13:53:23 -0400
-From: "Michael S. Tsirkin" <mst@redhat.com>
-To: "Paul E. McKenney" <paulmck@linux.ibm.com>
-Subject: Re: RFC: call_rcu_outstanding (was Re: WARNING in __mmdrop)
-Message-ID: <20190721134614-mutt-send-email-mst@kernel.org>
-References: <0000000000008dd6bb058e006938@google.com>
- <000000000000964b0d058e1a0483@google.com>
- <20190721044615-mutt-send-email-mst@kernel.org>
- <20190721081933-mutt-send-email-mst@kernel.org>
- <20190721131725.GR14271@linux.ibm.com>
+ id 1hpGFz-0004oa-UR
+ for linux-arm-kernel@lists.infradead.org; Sun, 21 Jul 2019 18:08:25 +0000
+Received: by mail-pf1-x444.google.com with SMTP id r1so16233575pfq.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 21 Jul 2019 11:08:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:subject:message-id:mime-version:content-disposition
+ :user-agent; bh=FTXdst5R/SQuzieJLsSNsjPa5PEZl3NiZMobkmxYQpo=;
+ b=TTK9qK/8sWitI8E3pN3YavfH2FqVB/+VQYItc84o0fD/vpZ1OeI2c8c0AWWZhLBkfR
+ bEXAb5KG8cL2vk1SsPpFStibPjEpYFWeIEzSlkL4PQCDm3mDXuaZuASgZDpRySce1/uj
+ 8j0v1I+MrFW7tZz0fDRiZDtQLtkKoBwTG2zZV6W2A50fIw7k6caFg64Ut8WzOhK587PD
+ za4dfniHkJZdkWRUilpR+08mlWSsjoijWSqllat/ql6W9CfLJF/DW/9VwROFGk/jfzMf
+ 8LMV2FSt4zR5LXXJIZSE8/u1NbFUmRIXPLXteqUj7BC0iwhNG5mCfH2oXw6U8toPMo5b
+ hRbA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:subject:message-id:mime-version
+ :content-disposition:user-agent;
+ bh=FTXdst5R/SQuzieJLsSNsjPa5PEZl3NiZMobkmxYQpo=;
+ b=rLRcA0C7MkUMBPQ6ztVgDuJJX7+5EvBwTys5SUHYSpAaI8zcMpNO+vBcoj+Ol9GvTB
+ j5w4sIPor6dn4NMduuLIMZykpdt1wCPUmXy1OGvzXNxeHrbzXvfu+kl0HuxsfY1Wagaa
+ 4w5uDZHgdWHl6hVIShZtD6JECMex7FNH8pQKURQangxSlZOCF4YjqwKhLI8o7aw+p07Q
+ ynnihBQ3rjyVlW9Bc9x6jXFpKSnSnPOG2XWn7YbxueTKDIFJQJ12fsiCgsFQHZrW6Rfb
+ G6Od/fKCbQGCv/J+s2exyRPn7I1LkEg4vEPJsDgS/JaFLFi58A1CAsQKFZ+YRXUu1eSj
+ ew7w==
+X-Gm-Message-State: APjAAAW6EfP5P9y+dRR4rIfDqqDv2cWZnQwS4+pMQLzXbFZtmBuJmXxJ
+ wwHUGxyRkTIsrRTD6hyECMM=
+X-Google-Smtp-Source: APXvYqxKToO74HULDPrAR27wvE/2XIeV/0Bn1VO4CaU+4sIBGxvw1p7b9ZQxXZUdfJFA3s0S9POK3g==
+X-Received: by 2002:a17:90a:228b:: with SMTP id
+ s11mr70837355pjc.23.1563732500738; 
+ Sun, 21 Jul 2019 11:08:20 -0700 (PDT)
+Received: from hari-Inspiron-1545 ([183.83.86.126])
+ by smtp.gmail.com with ESMTPSA id m31sm44011625pjb.6.2019.07.21.11.08.17
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Sun, 21 Jul 2019 11:08:20 -0700 (PDT)
+Date: Sun, 21 Jul 2019 23:38:15 +0530
+From: Hariprasad Kelam <hariprasad.kelam@gmail.com>
+To: Jason Cooper <jason@lakedaemon.net>, Andrew Lunn <andrew@lunn.ch>,
+ Gregory Clement <gregory.clement@bootlin.com>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Viresh Kumar <viresh.kumar@linaro.org>,
+ linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] cpufreq: ap806: Add NULL check after kcalloc
+Message-ID: <20190721180815.GA12437@hari-Inspiron-1545>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190721131725.GR14271@linux.ibm.com>
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.28]); Sun, 21 Jul 2019 17:53:32 +0000 (UTC)
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190721_105337_069039_53E7B4B2 
-X-CRM114-Status: GOOD (  32.95  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190721_110823_986572_3CA431C2 
+X-CRM114-Status: UNSURE (   9.76  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (hariprasad.kelam[at]gmail.com)
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,166 +104,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mhocko@suse.com, peterz@infradead.org, jasowang@redhat.com,
- ldv@altlinux.org, james.bottomley@hansenpartnership.com, linux-mm@kvack.org,
- namit@vmware.com, mingo@kernel.org, elena.reshetova@intel.com,
- aarcange@redhat.com, davem@davemloft.net, hch@infradead.org,
- christian@brauner.io, keescook@chromium.org, syzkaller-bugs@googlegroups.com,
- jglisse@redhat.com, viro@zeniv.linux.org.uk,
- linux-arm-kernel@lists.infradead.org, wad@chromium.org,
- linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
- luto@amacapital.net, ebiederm@xmission.com, akpm@linux-foundation.org,
- guro@fb.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Jul 21, 2019 at 06:17:25AM -0700, Paul E. McKenney wrote:
-> On Sun, Jul 21, 2019 at 08:28:05AM -0400, Michael S. Tsirkin wrote:
-> > Hi Paul, others,
-> > 
-> > So it seems that vhost needs to call kfree_rcu from an ioctl. My worry
-> > is what happens if userspace starts cycling through lots of these
-> > ioctls.  Given we actually use rcu as an optimization, we could just
-> > disable the optimization temporarily - but the question would be how to
-> > detect an excessive rate without working too hard :) .
-> > 
-> > I guess we could define as excessive any rate where callback is
-> > outstanding at the time when new structure is allocated.  I have very
-> > little understanding of rcu internals - so I wanted to check that the
-> > following more or less implements this heuristic before I spend time
-> > actually testing it.
-> > 
-> > Could others pls take a look and let me know?
-> 
-> These look good as a way of seeing if there are any outstanding callbacks,
-> but in the case of Tree RCU, call_rcu_outstanding() would almost never
-> return false on a busy system.
+Add NULL check  after kcalloc.
 
+Fix below issue reported by coccicheck
+./drivers/cpufreq/armada-8k-cpufreq.c:138:1-12: alloc with no test,
+possible model on line 151
 
-Hmm, ok. Maybe I could rename this to e.g. call_rcu_busy
-and change the tree one to do rcu_segcblist_n_lazy_cbs > 1000?
+Signed-off-by: Hariprasad Kelam <hariprasad.kelam@gmail.com>
+---
+ drivers/cpufreq/armada-8k-cpufreq.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-> 
-> Here are some alternatives:
-> 
-> o	RCU uses some pieces of Rao Shoaib kfree_rcu() patches.
-> 	The idea is to make kfree_rcu() locally buffer requests into
-> 	batches of (say) 1,000, but processing smaller batches when RCU
-> 	is idle, or when some smallish amout of time has passed with
-> 	no more kfree_rcu() request from that CPU.  RCU than takes in
-> 	the batch using not call_rcu(), but rather queue_rcu_work().
-> 	The resulting batch of kfree() calls would therefore execute in
-> 	workqueue context rather than in softirq context, which should
-> 	be much easier on the system.
-> 
-> 	In theory, this would allow people to use kfree_rcu() without
-> 	worrying quite so much about overload.  It would also not be
-> 	that hard to implement.
-> 
-> o	Subsystems vulnerable to user-induced kfree_rcu() flooding use
-> 	call_rcu() instead of kfree_rcu().  Keep a count of the number
-> 	of things waiting for a grace period, and when this gets too
-> 	large, disable the optimization.  It will then drain down, at
-> 	which point the optimization can be re-enabled.
-> 
-> 	But please note that callbacks are -not- guaranteed to run on
-> 	the CPU that queued them.  So yes, you would need a per-CPU
-> 	counter, but you would need to periodically sum it up to check
-> 	against the global state.  Or keep track of the CPU that
-> 	did the call_rcu() so that you can atomically decrement in
-> 	the callback the same counter that was atomically incremented
-> 	just before the call_rcu().  Or any number of other approaches.
+diff --git a/drivers/cpufreq/armada-8k-cpufreq.c b/drivers/cpufreq/armada-8k-cpufreq.c
+index 988ebc3..39e34f50 100644
+--- a/drivers/cpufreq/armada-8k-cpufreq.c
++++ b/drivers/cpufreq/armada-8k-cpufreq.c
+@@ -136,6 +136,8 @@ static int __init armada_8k_cpufreq_init(void)
+ 
+ 	nb_cpus = num_possible_cpus();
+ 	freq_tables = kcalloc(nb_cpus, sizeof(*freq_tables), GFP_KERNEL);
++	if (!freq_tables)
++		return -ENOMEM;
+ 	cpumask_copy(&cpus, cpu_possible_mask);
+ 
+ 	/*
+-- 
+2.7.4
 
-I'm really looking for something we can do this merge window
-and without adding too much code, and kfree_rcu is intended to
-fix a bug.
-Adding call_rcu and careful accounting is something that I'm not
-happy adding with merge window already open.
-
-> 
-> Also, the overhead is important.  For example, as far as I know,
-> current RCU gracefully handles close(open(...)) in a tight userspace
-> loop.  But there might be trouble due to tight userspace loops around
-> lighter-weight operations.
-> 
-> So an important question is "Just how fast is your ioctl?"  If it takes
-> (say) 100 microseconds to execute, there should be absolutely no problem.
-> On the other hand, if it can execute in 50 nanoseconds, this very likely
-> does need serious attention.
-> 
-> Other thoughts?
-> 
-> 							Thanx, Paul
-
-Hmm the answer to this would be I'm not sure.
-It's setup time stuff we never tested it.
-
-> > Thanks!
-> > 
-> > Signed-off-by: Michael S. Tsirkin <mst@redhat.com>
-> > 
-> > 
-> > diff --git a/kernel/rcu/tiny.c b/kernel/rcu/tiny.c
-> > index 477b4eb44af5..067909521d72 100644
-> > --- a/kernel/rcu/tiny.c
-> > +++ b/kernel/rcu/tiny.c
-> > @@ -125,6 +125,25 @@ void synchronize_rcu(void)
-> >  }
-> >  EXPORT_SYMBOL_GPL(synchronize_rcu);
-> > 
-> > +/*
-> > + * Helpful for rate-limiting kfree_rcu/call_rcu callbacks.
-> > + */
-> > +bool call_rcu_outstanding(void)
-> > +{
-> > +	unsigned long flags;
-> > +	struct rcu_data *rdp;
-> > +	bool outstanding;
-> > +
-> > +	local_irq_save(flags);
-> > +	rdp = this_cpu_ptr(&rcu_data);
-> > +	outstanding = rcu_segcblist_empty(&rdp->cblist);
-> > +	outstanding = rcu_ctrlblk.donetail != rcu_ctrlblk.curtail;
-> > +	local_irq_restore(flags);
-> > +
-> > +	return outstanding;
-> > +}
-> > +EXPORT_SYMBOL_GPL(call_rcu_outstanding);
-> > +
-> >  /*
-> >   * Post an RCU callback to be invoked after the end of an RCU grace
-> >   * period.  But since we have but one CPU, that would be after any
-> > diff --git a/kernel/rcu/tree.c b/kernel/rcu/tree.c
-> > index a14e5fbbea46..d4b9d61e637d 100644
-> > --- a/kernel/rcu/tree.c
-> > +++ b/kernel/rcu/tree.c
-> > @@ -2482,6 +2482,24 @@ static void rcu_leak_callback(struct rcu_head *rhp)
-> >  {
-> >  }
-> > 
-> > +/*
-> > + * Helpful for rate-limiting kfree_rcu/call_rcu callbacks.
-> > + */
-> > +bool call_rcu_outstanding(void)
-> > +{
-> > +	unsigned long flags;
-> > +	struct rcu_data *rdp;
-> > +	bool outstanding;
-> > +
-> > +	local_irq_save(flags);
-> > +	rdp = this_cpu_ptr(&rcu_data);
-> > +	outstanding = rcu_segcblist_empty(&rdp->cblist);
-> > +	local_irq_restore(flags);
-> > +
-> > +	return outstanding;
-> > +}
-> > +EXPORT_SYMBOL_GPL(call_rcu_outstanding);
-> > +
-> >  /*
-> >   * Helper function for call_rcu() and friends.  The cpu argument will
-> >   * normally be -1, indicating "currently running CPU".  It may specify
 
 _______________________________________________
 linux-arm-kernel mailing list
