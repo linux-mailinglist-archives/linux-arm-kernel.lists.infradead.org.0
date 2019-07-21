@@ -2,137 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D7276F34B
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 21 Jul 2019 14:53:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D0516F35E
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 21 Jul 2019 15:19:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:
+	References:Message-ID:Subject:To:From:Date:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WeU0bL7kLPwsVZ5vwRP2IoJr+7lryohgDQTJ4FcnKW4=; b=l0Q5xdkZ2GRM0/
-	Zy7QJo7IHDjZavr/JvGGasNUXhoP2UKFFZdOTioLVshoficC5XRFIK9oGbwxfveFlSr1YJuUuC0UZ
-	Qs8w42hPG5+hfCWzx66jz0ENVbNq0RKJfnf869aAPCCulU5bUplqgq6NweWWMSJEBIrVRYiv2TXZN
-	FwElUR7954ivBjMLU7Hyb3b0xuvwEzN0jLwk616QessGc7i4p/GcMA7eFHmTFZzd/6/ExpIiHrN7z
-	1d6UwKwLzTJxwYKKblDY/xdAkKS54uCHaxDuvv8wvolOd4Cwfp7YMCMYFlYQZHtm8uKtnJuKisYVf
-	wCtN6GxV/hWEMvxTFb5Q==;
+	List-Owner; bh=YUopLSkTIh9M4OGxuuQiMoOCG9+5+tSesdWIZysjU2o=; b=HV+A0L4pUBUYxz
+	ehqpxaB3Ry76T2vQJCzEQVh6o0QVnks0rDpIy42cAKiuR0/odnU/49xKDHXwKW4J7E86gUEj+zbLB
+	eEpctevGAG8qjqid5RZmUZzEwm3+AzgLJZjBecnDOEaPHFJrNy6pIDCbXqDFmjl7v5q1WsHSJqeON
+	kUUjkqj04sLdR+B+dfIx7t0dDA1u1HN+iswwStiKjmvbfQJEs3gFTSkhdm6lAKCtjAeLsTaJbDlB5
+	EX8/eDlhWWNIglpFTi79B/9QcllO4lQ6hEylD+WsQ/2lllszBkuSfISyxq131Qc6+iNfI5hG1Axs2
+	PLfocVNN3QnY887davrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpBL1-0003Wz-8G; Sun, 21 Jul 2019 12:53:15 +0000
-Received: from esa5.hgst.iphmx.com ([216.71.153.144])
+	id 1hpBkA-0002eh-RY; Sun, 21 Jul 2019 13:19:15 +0000
+Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
+ helo=mx0a-001b2d01.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpBKi-0003VZ-Ho; Sun, 21 Jul 2019 12:52:58 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
- t=1563713576; x=1595249576;
- h=from:to:cc:subject:date:message-id:references:
- in-reply-to:content-transfer-encoding:mime-version;
- bh=jr/9iVwfIsb8WMeguz+EcBRhicX7u1nuWFZ7yQfaR3g=;
- b=B/oAZnuO/Nirp5duZ5HwV5bQaSVYwK45dr6y8zdA4/KIXuTcBgvizZ0A
- XjvYejm4nwFYvwbhQQdPXC+K9FXh8TkiE8hDxSXfydeOpNobDeZB++o8U
- XlkBd0ogRbUb9DR5gVmdVcpPtarKyWcOFQfmz4DBOnj+ucJ5CQqgmNM/t
- bi9KJQqgzF2hXtiEAtOmly/WGda7Efe6fjM8gp2MrFvnQ5fLWwk0CdIYM
- dA4Cpd1sGtc5S6G7djLkeSjg5IVESDeteGCzMQ08QB7nteImpl2eN6dT3
- kLx97osmZZF7QU7atoB2jRQNcDz7Rg+yqzwcFFi45Q4iYyLYFlvoF1ju9 A==;
-IronPort-SDR: bRaC+u2BWF7b57H2NfjCi0RC0KYH3n36VG4Rg2Pq0MNzT/+RKPj4mqP2FstqbrN5VLiEspX5Bx
- cdxbwtbgpJUrYYPsljVz2Y0h7xpKRa3Tps9qzcHwg9m1dSMT6M76415F8QznU3kc3AVXOqa1iQ
- yJDwfJRr04mXpOyQUWfOCi9hxJsyTP6S3/i16BtspObzJyTtPh/SUdE2X2SwWt7RAvhrBw+AQR
- a+3dG+xU/+PvxDuL975Hj/1NsIll5GXSEviA8meGIF4Pmfu8dNY9SMWgTPShUkVz6TbnxH4mrH
- Gw8=
-X-IronPort-AV: E=Sophos;i="5.64,290,1559491200"; d="scan'208";a="114700015"
-Received: from mail-sn1nam04lp2057.outbound.protection.outlook.com (HELO
- NAM04-SN1-obe.outbound.protection.outlook.com) ([104.47.44.57])
- by ob1.hgst.iphmx.com with ESMTP; 21 Jul 2019 20:52:49 +0800
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=iDja1mMlaTkvsIPn7PJIZZj3X0bnp5nanPd897A3uHtbComFyFmRYBb+K/dlT5/fTr1F63BI5PVdaMso2Xx6NNXPQWUjKGvy5wFr726hYOb/dGg8/D8p2kWS89hmDTWzuf0MLEco6v+ofOJ7Nsq+UaeC04jhrLNAVoJpzXaNp0CZ5RtAUZaP3qEPvOtHq1Tb1lBMkuPeQrZd7SoAh8M+lpFUQG/nMMyP+TDFwYGo49gEA590DLjhBkfvwexZEOesID5J0KaNlsBdjGdrTpIDhWlJAKWcIUv/44Rn4XPsCGevNziYh4dj0L+RSdzjWABPu2H87XhntN74dnXxzfLIcQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=jr/9iVwfIsb8WMeguz+EcBRhicX7u1nuWFZ7yQfaR3g=;
- b=e41gmSt7FZ1ve1pM16h923WIKQ9ilEkmiY/YYdTzJfYjSRuq6A7Fs6iLFlh3uptiKoS+RWiwqBt+QYGUcthB3FfgIWY7JbZx23KxBplEoTjm4zDApKLazWeC1r12Hu0jNiU7/c1fp1bUKam0Ujsidmbvn30tEeMNJ3M7oSGq7q4KKhghY+OaZ1fMLSH+1pUs27hNb1BQ/6sbceVOq/LNqUmtei8CVBbkrERIVMy1nKGed/VtJrLwR5OdOBy2oaHtDgxNJp6PoVbpCgnFQhqDd7vbBeRQDXC53r+vn8tYxYQz91susDvEyKFSNI5KoQbQeeJkg7vSz0iv1fNT9eubsA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=wdc.com;dmarc=pass action=none header.from=wdc.com;dkim=pass
- header.d=wdc.com;arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=sharedspace.onmicrosoft.com; s=selector2-sharedspace-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=jr/9iVwfIsb8WMeguz+EcBRhicX7u1nuWFZ7yQfaR3g=;
- b=Ds64fUyr+sVWndcP45+iDYV3di3uBdW5vFWERUlZkV8ayzYdA4mN818e28h8R+UGuNlMbGwHkBU3/UZR/6sOnoO4kExTn05m/Uq2jC223a87hmJRlSpTeMuNoHDAkbUtdm3AGxLjxjb7HXqEIekdqRFqDp80mQ9B9RmHwfCUzBs=
-Received: from SN6PR04MB4925.namprd04.prod.outlook.com (52.135.114.82) by
- SN6PR04MB4110.namprd04.prod.outlook.com (52.135.82.159) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2094.16; Sun, 21 Jul 2019 12:52:47 +0000
-Received: from SN6PR04MB4925.namprd04.prod.outlook.com
- ([fe80::a102:1701:9c05:96b3]) by SN6PR04MB4925.namprd04.prod.outlook.com
- ([fe80::a102:1701:9c05:96b3%5]) with mapi id 15.20.2094.011; Sun, 21 Jul 2019
- 12:52:47 +0000
-From: Avri Altman <Avri.Altman@wdc.com>
-To: Stanley Chu <stanley.chu@mediatek.com>, "linux-scsi@vger.kernel.org"
- <linux-scsi@vger.kernel.org>, "martin.petersen@oracle.com"
- <martin.petersen@oracle.com>, "alim.akhtar@samsung.com"
- <alim.akhtar@samsung.com>, "pedrom.sousa@synopsys.com"
- <pedrom.sousa@synopsys.com>
-Subject: RE: [PATCH v1 0/2] scsi: ufs: Fix broken hba->outstanding_tasks
-Thread-Topic: [PATCH v1 0/2] scsi: ufs: Fix broken hba->outstanding_tasks
-Thread-Index: AQHVOGx9NdHB1Jz3wEWNwY1jARxa+abVESuAgAADy1A=
-Date: Sun, 21 Jul 2019 12:52:47 +0000
-Message-ID: <SN6PR04MB4925BD03422B827F76A5F7E5FCC50@SN6PR04MB4925.namprd04.prod.outlook.com>
-References: <1562906656-27154-1-git-send-email-stanley.chu@mediatek.com>
- <SN6PR04MB4925208835D4760249E82DB7FCC50@SN6PR04MB4925.namprd04.prod.outlook.com>
-In-Reply-To: <SN6PR04MB4925208835D4760249E82DB7FCC50@SN6PR04MB4925.namprd04.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=Avri.Altman@wdc.com; 
-x-originating-ip: [212.25.79.133]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 9841e0cd-f76d-4092-a333-08d70dda54ee
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:SN6PR04MB4110; 
-x-ms-traffictypediagnostic: SN6PR04MB4110:
-x-microsoft-antispam-prvs: <SN6PR04MB4110B6E5E8F863C6CD48245BFCC50@SN6PR04MB4110.namprd04.prod.outlook.com>
-wdcipoutbound: EOP-TRUE
-x-ms-oob-tlc-oobclassifiers: OLM:6430;
-x-forefront-prvs: 0105DAA385
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(4636009)(136003)(396003)(346002)(366004)(39860400002)(376002)(199004)(189003)(478600001)(76116006)(66946007)(256004)(25786009)(110136005)(2201001)(54906003)(76176011)(66476007)(66556008)(64756008)(66446008)(476003)(446003)(11346002)(316002)(486006)(6506007)(2501003)(8676002)(186003)(7696005)(7736002)(102836004)(99286004)(305945005)(74316002)(52536014)(26005)(6116002)(6436002)(55016002)(2906002)(81156014)(33656002)(81166006)(6246003)(9686003)(2940100002)(86362001)(66066001)(229853002)(4744005)(5660300002)(71190400001)(71200400001)(8936002)(68736007)(53936002)(4326008)(7416002)(3846002)(14454004);
- DIR:OUT; SFP:1102; SCL:1; SRVR:SN6PR04MB4110;
- H:SN6PR04MB4925.namprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: /8E5USBtaTOhNNdSxYUVpLthBdAeOQHTDAAU58S2IJyP40X2vSQbPvUK6TAatNE/wmdwzt1YCpOKrGgMXeSaj9RfEhOuwtndfKqiotlKOzP9sfVD9FfxyU/pbHi/QI0tJCiY8PNhetVQeYoS7+tdTy2eu3S0pmxzXJiv1+3G21wGqGnMj5bHlP0pRalCRe9xji/VdU/ZOXm5PsREoIUmjPCVKggQfOrqQcfGqHvOsWHNnX9n1vlFcRGFX6rj6DiIpfmVySNGhiF4KUbaxoOqpvVvw4D3xakAe2W2T3CBpyfpXsKplTuEwuBJrzPyzq7iQmzk4Kmzc3dvQFjl41MnBHxrxRGVFd7U0O2fJLz6lrrqDcHwecKUmYzPUkcsBmtcCxd7cjD7chgrIDA5Cu3BY4mzEi5GOl1VF1vSg81i9ZY=
+ id 1hpBjt-0002dk-Cd
+ for linux-arm-kernel@lists.infradead.org; Sun, 21 Jul 2019 13:18:59 +0000
+Received: from pps.filterd (m0098419.ppops.net [127.0.0.1])
+ by mx0b-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x6LDIF5r092645; Sun, 21 Jul 2019 09:18:21 -0400
+Received: from pps.reinject (localhost [127.0.0.1])
+ by mx0b-001b2d01.pphosted.com with ESMTP id 2tvg6x6psa-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Sun, 21 Jul 2019 09:18:21 -0400
+Received: from m0098419.ppops.net (m0098419.ppops.net [127.0.0.1])
+ by pps.reinject (8.16.0.27/8.16.0.27) with SMTP id x6LDIKVc093137;
+ Sun, 21 Jul 2019 09:18:20 -0400
+Received: from ppma01dal.us.ibm.com (83.d6.3fa9.ip4.static.sl-reverse.com
+ [169.63.214.131])
+ by mx0b-001b2d01.pphosted.com with ESMTP id 2tvg6x6pfs-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Sun, 21 Jul 2019 09:18:20 -0400
+Received: from pps.filterd (ppma01dal.us.ibm.com [127.0.0.1])
+ by ppma01dal.us.ibm.com (8.16.0.27/8.16.0.27) with SMTP id x6LDEVKf018818;
+ Sun, 21 Jul 2019 13:17:27 GMT
+Received: from b01cxnp23034.gho.pok.ibm.com (b01cxnp23034.gho.pok.ibm.com
+ [9.57.198.29]) by ppma01dal.us.ibm.com with ESMTP id 2tutk68tdb-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Sun, 21 Jul 2019 13:17:27 +0000
+Received: from b01ledav003.gho.pok.ibm.com (b01ledav003.gho.pok.ibm.com
+ [9.57.199.108])
+ by b01cxnp23034.gho.pok.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ x6LDHQsY32047514
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Sun, 21 Jul 2019 13:17:26 GMT
+Received: from b01ledav003.gho.pok.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 2E7A6B2066;
+ Sun, 21 Jul 2019 13:17:26 +0000 (GMT)
+Received: from b01ledav003.gho.pok.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id D093AB205F;
+ Sun, 21 Jul 2019 13:17:25 +0000 (GMT)
+Received: from paulmck-ThinkPad-W541 (unknown [9.85.189.166])
+ by b01ledav003.gho.pok.ibm.com (Postfix) with ESMTP;
+ Sun, 21 Jul 2019 13:17:25 +0000 (GMT)
+Received: by paulmck-ThinkPad-W541 (Postfix, from userid 1000)
+ id A423316C265B; Sun, 21 Jul 2019 06:17:25 -0700 (PDT)
+Date: Sun, 21 Jul 2019 06:17:25 -0700
+From: "Paul E. McKenney" <paulmck@linux.ibm.com>
+To: "Michael S. Tsirkin" <mst@redhat.com>
+Subject: Re: RFC: call_rcu_outstanding (was Re: WARNING in __mmdrop)
+Message-ID: <20190721131725.GR14271@linux.ibm.com>
+References: <0000000000008dd6bb058e006938@google.com>
+ <000000000000964b0d058e1a0483@google.com>
+ <20190721044615-mutt-send-email-mst@kernel.org>
+ <20190721081933-mutt-send-email-mst@kernel.org>
 MIME-Version: 1.0
-X-OriginatorOrg: wdc.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 9841e0cd-f76d-4092-a333-08d70dda54ee
-X-MS-Exchange-CrossTenant-originalarrivaltime: 21 Jul 2019 12:52:47.4062 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: b61c8803-16f3-4c35-9b17-6f65f441df86
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Avri.Altman@wdc.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR04MB4110
+Content-Disposition: inline
+In-Reply-To: <20190721081933-mutt-send-email-mst@kernel.org>
+User-Agent: Mutt/1.5.21 (2010-09-15)
+X-TM-AS-GCONF: 00
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-07-21_10:, , signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501
+ malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
+ clxscore=1011 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1810050000 definitions=main-1907210161
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190721_055256_712589_B9830BEF 
-X-CRM114-Status: GOOD (  11.50  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190721_061857_557147_BB18DE11 
+X-CRM114-Status: GOOD (  26.26  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.153.144 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.158.5 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -144,33 +108,153 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "marc.w.gonzalez@free.fr" <marc.w.gonzalez@free.fr>,
- "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
- "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
- "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
- "evgreen@chromium.org" <evgreen@chromium.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "beanhuo@micron.com" <beanhuo@micron.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Reply-To: paulmck@linux.ibm.com
+Cc: mhocko@suse.com, peterz@infradead.org, jasowang@redhat.com,
+ ldv@altlinux.org, james.bottomley@hansenpartnership.com, linux-mm@kvack.org,
+ namit@vmware.com, mingo@kernel.org, elena.reshetova@intel.com,
+ aarcange@redhat.com, davem@davemloft.net, hch@infradead.org,
+ christian@brauner.io, keescook@chromium.org, syzkaller-bugs@googlegroups.com,
+ jglisse@redhat.com, viro@zeniv.linux.org.uk,
+ linux-arm-kernel@lists.infradead.org, wad@chromium.org,
+ linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ luto@amacapital.net, ebiederm@xmission.com, akpm@linux-foundation.org,
+ guro@fb.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-PiANCj4gSGksDQo+IA0KPiA+DQo+ID4gQ3VycmVudGx5IGJpdHMgaW4gaGJhLT5vdXRzdGFuZGlu
-Z190YXNrcyBhcmUgY2xlYXJlZCBvbmx5IGFmdGVyIHRoZWlyDQo+ID4gY29ycmVzcG9uZGluZyB0
-YXNrIG1hbmFnZW1lbnQgY29tbWFuZHMgYXJlIHN1Y2Nlc3NmdWxseSBkb25lIGJ5DQo+ID4gX191
-ZnNoY2RfaXNzdWVfdG1fY21kKCkuDQo+ID4NCj4gPiBJZiB0aW1lb3V0IGhhcHBlbnMgaW4gYSB0
-YXNrIG1hbmFnZW1lbnQgY29tbWFuZCwgaXRzIGNvcnJlc3BvbmRpbmcNCj4gPiBiaXQgaW4gaGJh
-LT5vdXRzdGFuZGluZ190YXNrcyB3aWxsIG5vdCBiZSBjbGVhcmVkIHVudGlsIG5leHQgdGFzaw0K
-PiA+IG1hbmFnZW1lbnQgY29tbWFuZCB3aXRoIHRoZSBzYW1lIHRhZyB1c2VkIHN1Y2Nlc3NmdWxs
-eSBmaW5pc2hlcy7igKcNCj4gdWZzaGNkX2NsZWFyX3RtX2NtZCBpcyBhbHNvIGNhbGxlZCBhcyBw
-YXJ0IG9mIHVmc2hjZF9lcnJfaGFuZGxlci4NCj4gRG9lcyB0aGlzIGNoYW5nZSBzb21ldGhpbmcg
-aW4geW91ciBhc3N1bXB0aW9ucz8NCkFuZCBCVFcgdGhlcmUgaXMgYSBzcGVjaWZpYyBfX2NsZWFy
-X2JpdCBpbiBfX3Vmc2hjZF9pc3N1ZV90bV9jbWQoKSBpbiBjYXNlIG9mIGEgVE8uDQoNCj4gDQo+
-IFRoYW5rcywNCj4gQXZyaQ0KPiANCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJu
-ZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Sun, Jul 21, 2019 at 08:28:05AM -0400, Michael S. Tsirkin wrote:
+> Hi Paul, others,
+> 
+> So it seems that vhost needs to call kfree_rcu from an ioctl. My worry
+> is what happens if userspace starts cycling through lots of these
+> ioctls.  Given we actually use rcu as an optimization, we could just
+> disable the optimization temporarily - but the question would be how to
+> detect an excessive rate without working too hard :) .
+> 
+> I guess we could define as excessive any rate where callback is
+> outstanding at the time when new structure is allocated.  I have very
+> little understanding of rcu internals - so I wanted to check that the
+> following more or less implements this heuristic before I spend time
+> actually testing it.
+> 
+> Could others pls take a look and let me know?
+
+These look good as a way of seeing if there are any outstanding callbacks,
+but in the case of Tree RCU, call_rcu_outstanding() would almost never
+return false on a busy system.
+
+Here are some alternatives:
+
+o	RCU uses some pieces of Rao Shoaib kfree_rcu() patches.
+	The idea is to make kfree_rcu() locally buffer requests into
+	batches of (say) 1,000, but processing smaller batches when RCU
+	is idle, or when some smallish amout of time has passed with
+	no more kfree_rcu() request from that CPU.  RCU than takes in
+	the batch using not call_rcu(), but rather queue_rcu_work().
+	The resulting batch of kfree() calls would therefore execute in
+	workqueue context rather than in softirq context, which should
+	be much easier on the system.
+
+	In theory, this would allow people to use kfree_rcu() without
+	worrying quite so much about overload.  It would also not be
+	that hard to implement.
+
+o	Subsystems vulnerable to user-induced kfree_rcu() flooding use
+	call_rcu() instead of kfree_rcu().  Keep a count of the number
+	of things waiting for a grace period, and when this gets too
+	large, disable the optimization.  It will then drain down, at
+	which point the optimization can be re-enabled.
+
+	But please note that callbacks are -not- guaranteed to run on
+	the CPU that queued them.  So yes, you would need a per-CPU
+	counter, but you would need to periodically sum it up to check
+	against the global state.  Or keep track of the CPU that
+	did the call_rcu() so that you can atomically decrement in
+	the callback the same counter that was atomically incremented
+	just before the call_rcu().  Or any number of other approaches.
+
+Also, the overhead is important.  For example, as far as I know,
+current RCU gracefully handles close(open(...)) in a tight userspace
+loop.  But there might be trouble due to tight userspace loops around
+lighter-weight operations.
+
+So an important question is "Just how fast is your ioctl?"  If it takes
+(say) 100 microseconds to execute, there should be absolutely no problem.
+On the other hand, if it can execute in 50 nanoseconds, this very likely
+does need serious attention.
+
+Other thoughts?
+
+							Thanx, Paul
+
+> Thanks!
+> 
+> Signed-off-by: Michael S. Tsirkin <mst@redhat.com>
+> 
+> 
+> diff --git a/kernel/rcu/tiny.c b/kernel/rcu/tiny.c
+> index 477b4eb44af5..067909521d72 100644
+> --- a/kernel/rcu/tiny.c
+> +++ b/kernel/rcu/tiny.c
+> @@ -125,6 +125,25 @@ void synchronize_rcu(void)
+>  }
+>  EXPORT_SYMBOL_GPL(synchronize_rcu);
+> 
+> +/*
+> + * Helpful for rate-limiting kfree_rcu/call_rcu callbacks.
+> + */
+> +bool call_rcu_outstanding(void)
+> +{
+> +	unsigned long flags;
+> +	struct rcu_data *rdp;
+> +	bool outstanding;
+> +
+> +	local_irq_save(flags);
+> +	rdp = this_cpu_ptr(&rcu_data);
+> +	outstanding = rcu_segcblist_empty(&rdp->cblist);
+> +	outstanding = rcu_ctrlblk.donetail != rcu_ctrlblk.curtail;
+> +	local_irq_restore(flags);
+> +
+> +	return outstanding;
+> +}
+> +EXPORT_SYMBOL_GPL(call_rcu_outstanding);
+> +
+>  /*
+>   * Post an RCU callback to be invoked after the end of an RCU grace
+>   * period.  But since we have but one CPU, that would be after any
+> diff --git a/kernel/rcu/tree.c b/kernel/rcu/tree.c
+> index a14e5fbbea46..d4b9d61e637d 100644
+> --- a/kernel/rcu/tree.c
+> +++ b/kernel/rcu/tree.c
+> @@ -2482,6 +2482,24 @@ static void rcu_leak_callback(struct rcu_head *rhp)
+>  {
+>  }
+> 
+> +/*
+> + * Helpful for rate-limiting kfree_rcu/call_rcu callbacks.
+> + */
+> +bool call_rcu_outstanding(void)
+> +{
+> +	unsigned long flags;
+> +	struct rcu_data *rdp;
+> +	bool outstanding;
+> +
+> +	local_irq_save(flags);
+> +	rdp = this_cpu_ptr(&rcu_data);
+> +	outstanding = rcu_segcblist_empty(&rdp->cblist);
+> +	local_irq_restore(flags);
+> +
+> +	return outstanding;
+> +}
+> +EXPORT_SYMBOL_GPL(call_rcu_outstanding);
+> +
+>  /*
+>   * Helper function for call_rcu() and friends.  The cpu argument will
+>   * normally be -1, indicating "currently running CPU".  It may specify
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
