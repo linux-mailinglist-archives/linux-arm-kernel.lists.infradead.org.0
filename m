@@ -2,59 +2,102 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 639696F697
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 01:01:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D06E66F6A8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 01:32:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:
+	References:Message-ID:Subject:To:From:Date:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TT80eMcGC7olCaP/6Ey/EdAJKMSgxWV5f4H2ymlctKQ=; b=a2rSLqVO7EgSK+
-	yBpSQCzJ2Gn28YjB+4v7qBBNt2S73yMzf8mIF7blNw+PK1PE7EWsiNt1LUwasn1fOnn9jw1w5t+oB
-	RGtYtFQobQbUtyCGttwIOmMCy4jcvzSKoOuhgSK2lFI9dou3MvMO9I9kpDved5PpuYxLYzpar8eO+
-	guCcng3dEO3h5xxl3u9Jg+RoJvPSs4PtxVORz4PY37Le93BOEn86H77xAeFnSTGlPd7bDD+TPb2sO
-	fp5ipbh+f5ttOS0a+hDa7wETMZf0SkHc+RvA2469GHGnVc81hWkVYHyf1MCTAvsTIfHLKYWshcBQL
-	WCHYvSBAzniFOxaAf6UA==;
+	List-Owner; bh=tfwUcqcDu+60NR68TAIvgcSJBysz5i6QgZju9IZxQpQ=; b=HZfkxax/qpYD47
+	zkpxaVb4mVkvZICvEs3uAqXET5kJMoOe9p2CSm1/5bw1/aNi2j214KemWldAKrlflDhFoZU00LP2k
+	2kt+WllQBVhZL5qYLgF7du8pdzZwlt7M02jAbqNd3gZ5LSECSVErWxzSPmccKB++DBCqFWMmJ8bN9
+	t4TxEWoQiny58vpWEEGNlDvTv1RlY8L/1NiZeOoX7SeS/JLDmREo5WHD5Ql82fi3Y+YJQb/GVAFaM
+	N0ntafsdI8jO2vLlwc6r6LLvV+GGkcM/GZ8Yod5KMYYA+YcnUTnpUYgSyyr3Cn1ynRJ7kkBaKKKak
+	rHWM4YVumu7CquGgREWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpKpR-0005zV-2k; Sun, 21 Jul 2019 23:01:17 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1hpLJ5-0007Vg-Kd; Sun, 21 Jul 2019 23:31:55 +0000
+Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpKpA-0005yw-P6
- for linux-arm-kernel@lists.infradead.org; Sun, 21 Jul 2019 23:01:02 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 7E59628A24F
-Message-ID: <22d7eca4ad8aa2e73933c4f83c92221ce6e0945a.camel@collabora.com>
-Subject: Re: [PATCH] Enable backlight when trigger is activated
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: Pavel Machek <pavel@ucw.cz>, kernel list <linux-kernel@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- linux-omap@vger.kernel.org, tony@atomide.com, sre@kernel.org, 
- nekit1000@gmail.com, mpartap@gmx.net, merlijn@wizzup.org, 
- jacek.anaszewski@gmail.com, linux-leds@vger.kernel.org,
- b.zolnierkie@samsung.com,  dri-devel@lists.freedesktop.org,
- linux-fbdev@vger.kernel.org
-Date: Sun, 21 Jul 2019 20:00:44 -0300
-In-Reply-To: <20190718190849.GA11409@amd>
-References: <20190718190849.GA11409@amd>
-Organization: Collabora
-User-Agent: Evolution 3.30.5-1.1 
+ id 1hpLIq-0007VA-2h
+ for linux-arm-kernel@lists.infradead.org; Sun, 21 Jul 2019 23:31:41 +0000
+Received: from pps.filterd (m0098410.ppops.net [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x6LNQn4K130606; Sun, 21 Jul 2019 19:31:15 -0400
+Received: from pps.reinject (localhost [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 2tvwrhpeyq-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Sun, 21 Jul 2019 19:31:15 -0400
+Received: from m0098410.ppops.net (m0098410.ppops.net [127.0.0.1])
+ by pps.reinject (8.16.0.27/8.16.0.27) with SMTP id x6LNRNwd131517;
+ Sun, 21 Jul 2019 19:31:14 -0400
+Received: from ppma01wdc.us.ibm.com (fd.55.37a9.ip4.static.sl-reverse.com
+ [169.55.85.253])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 2tvwrhpey6-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Sun, 21 Jul 2019 19:31:14 -0400
+Received: from pps.filterd (ppma01wdc.us.ibm.com [127.0.0.1])
+ by ppma01wdc.us.ibm.com (8.16.0.27/8.16.0.27) with SMTP id x6LNTNeM024749;
+ Sun, 21 Jul 2019 23:31:13 GMT
+Received: from b01cxnp22034.gho.pok.ibm.com (b01cxnp22034.gho.pok.ibm.com
+ [9.57.198.24]) by ppma01wdc.us.ibm.com with ESMTP id 2tutk6b5gr-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Sun, 21 Jul 2019 23:31:13 +0000
+Received: from b01ledav003.gho.pok.ibm.com (b01ledav003.gho.pok.ibm.com
+ [9.57.199.108])
+ by b01cxnp22034.gho.pok.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ x6LNVCoj48365900
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Sun, 21 Jul 2019 23:31:13 GMT
+Received: from b01ledav003.gho.pok.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id E4789B2064;
+ Sun, 21 Jul 2019 23:31:12 +0000 (GMT)
+Received: from b01ledav003.gho.pok.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id A620EB2065;
+ Sun, 21 Jul 2019 23:31:12 +0000 (GMT)
+Received: from paulmck-ThinkPad-W541 (unknown [9.85.189.166])
+ by b01ledav003.gho.pok.ibm.com (Postfix) with ESMTP;
+ Sun, 21 Jul 2019 23:31:12 +0000 (GMT)
+Received: by paulmck-ThinkPad-W541 (Postfix, from userid 1000)
+ id 26BCD16C3838; Sun, 21 Jul 2019 16:31:13 -0700 (PDT)
+Date: Sun, 21 Jul 2019 16:31:13 -0700
+From: "Paul E. McKenney" <paulmck@linux.ibm.com>
+To: Matthew Wilcox <willy@infradead.org>
+Subject: Re: RFC: call_rcu_outstanding (was Re: WARNING in __mmdrop)
+Message-ID: <20190721233113.GV14271@linux.ibm.com>
+References: <0000000000008dd6bb058e006938@google.com>
+ <000000000000964b0d058e1a0483@google.com>
+ <20190721044615-mutt-send-email-mst@kernel.org>
+ <20190721081933-mutt-send-email-mst@kernel.org>
+ <20190721131725.GR14271@linux.ibm.com>
+ <20190721210837.GC363@bombadil.infradead.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190721210837.GC363@bombadil.infradead.org>
+User-Agent: Mutt/1.5.21 (2010-09-15)
+X-TM-AS-GCONF: 00
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-07-21_17:, , signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501
+ malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
+ clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ mlxlogscore=916 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1810050000 definitions=main-1907210275
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190721_160100_948831_2FDB9A50 
-X-CRM114-Status: GOOD (  10.66  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190721_163140_132672_F047E048 
+X-CRM114-Status: GOOD (  17.00  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.156.1 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,47 +109,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Reply-To: paulmck@linux.ibm.com
+Cc: mhocko@suse.com, "Michael S. Tsirkin" <mst@redhat.com>,
+ peterz@infradead.org, jasowang@redhat.com, ldv@altlinux.org,
+ james.bottomley@hansenpartnership.com, linux-mm@kvack.org, namit@vmware.com,
+ mingo@kernel.org, elena.reshetova@intel.com, aarcange@redhat.com,
+ davem@davemloft.net, hch@infradead.org, linux-arm-kernel@lists.infradead.org,
+ keescook@chromium.org, syzkaller-bugs@googlegroups.com, jglisse@redhat.com,
+ viro@zeniv.linux.org.uk, christian@brauner.io, wad@chromium.org,
+ linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ luto@amacapital.net, ebiederm@xmission.com, akpm@linux-foundation.org,
+ guro@fb.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Pavel,
-
-The commit log is lacking the proper "leds: triggers: ".
-
-Also...
-
-On Thu, 2019-07-18 at 21:08 +0200, Pavel Machek wrote:
-> Configuring backlight trigger from dts results in backlight off during
-> boot. Machine looks dead upon boot, which is not good.
+On Sun, Jul 21, 2019 at 02:08:37PM -0700, Matthew Wilcox wrote:
+> On Sun, Jul 21, 2019 at 06:17:25AM -0700, Paul E. McKenney wrote:
+> > Also, the overhead is important.  For example, as far as I know,
+> > current RCU gracefully handles close(open(...)) in a tight userspace
+> > loop.  But there might be trouble due to tight userspace loops around
+> > lighter-weight operations.
 > 
-> Fix that by enabling LED on trigger activation.
-> 
-> Signed-off-by: Pavel Machek <pavel@ucw.cz>
-> 
-> diff --git a/drivers/leds/trigger/ledtrig-backlight.c b/drivers/leds/trigger/ledtrig-backlight.c
-> index 487577d..6e6bc78 100644
-> --- a/drivers/leds/trigger/ledtrig-backlight.c
-> +++ b/drivers/leds/trigger/ledtrig-backlight.c
-> @@ -114,6 +114,8 @@ static int bl_trig_activate(struct led_classdev *led)
->  	n->old_status = UNBLANK;
->  	n->notifier.notifier_call = fb_notifier_callback;
->  
-> +	led_set_brightness(led, LED_ON);
-> +
+> I thought you believed that RCU was antifragile, in that it would scale
+> better as it was used more heavily?
 
-This looks fishy.
+You are referring to this?  https://paulmck.livejournal.com/47933.html
 
-Maybe you should use a default-state = "keep" instead? (and you'll have
-to support it in the LED driver).
+If so, the last few paragraphs might be worth re-reading.   ;-)
 
-That'll give you proper "don't touch the LED if it was turned on" behavior,
-which is what you seem to want.
+And in this case, the heuristics RCU uses to decide when to schedule
+invocation of the callbacks needs some help.  One component of that help
+is a time-based limit to the number of consecutive callback invocations
+(see my crude prototype and Eric Dumazet's more polished patch).  Another
+component is an overload warning.
 
-Regards,
-Eze
+Why would an overload warning be needed if RCU's callback-invocation
+scheduling heurisitics were upgraded?  Because someone could boot a
+100-CPU system with the rcu_nocbs=0-99, bind all of the resulting
+rcuo kthreads to (say) CPU 0, and then run a callback-heavy workload
+on all of the CPUs.  Given the constraints, CPU 0 cannot keep up.
 
+So warnings are required as well.
+
+> Would it make sense to have call_rcu() check to see if there are many
+> outstanding requests on this CPU and if so process them before returning?
+> That would ensure that frequent callers usually ended up doing their
+> own processing.
+
+Unfortunately, no.  Here is a code fragment illustrating why:
+
+	void my_cb(struct rcu_head *rhp)
+	{
+		unsigned long flags;
+
+		spin_lock_irqsave(&my_lock, flags);
+		handle_cb(rhp);
+		spin_unlock_irqrestore(&my_lock, flags);
+	}
+
+	. . .
+
+	spin_lock_irqsave(&my_lock, flags);
+	p = look_something_up();
+	remove_that_something(p);
+	call_rcu(p, my_cb);
+	spin_unlock_irqrestore(&my_lock, flags);
+
+Invoking the extra callbacks directly from call_rcu() would thus result
+in self-deadlock.  Documentation/RCU/UP.txt contains a few more examples
+along these lines.
 
 _______________________________________________
 linux-arm-kernel mailing list
