@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C61566F8BA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 07:09:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C8DB6F8BC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 07:10:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HWGJFORFHJdRK2XQYPeEl85LksTGunTFWzDj2x0RHP4=; b=BSpT1sp6RCq5pF
-	gRLu/2kXj3yMbWAEGLgmdc6HxGrPSCWBC6r/NAFu4vyVn8Iws8zf3Ywwpa7LrTsLnbvlar4Us3XQT
-	pDHTzuF70LBDctLTdXze9wOkSNdMobphS83TIFiAoUvgTfi9vDHU5+15M7grIbRdg6owaPn63a+w1
-	e0A4rxif8H9YPcIGfAvT6LSV1JyFXLwE4+f5Bd7HIrDqlgENTqZ5zKw8KC56GILT2ycYZSveQHrKH
-	UFEoVaLz03HrTqHtY2cQTO63CBA5YzZvg9oWJOC4tXMRylIQ9EKGNEYwrrDmV6V6EYleuRcXMStXP
-	ETeubH+FnlafmJuQB+rg==;
+	List-Owner; bh=Db1oDhO1wHu1ZTJAhaTVhkhgCCksP0GlehSVGuUXh9I=; b=cLh4c8KvkEGHp9
+	L+9mDB4PDu4ahBXL+xp6ysJxHVG9SGwIVdHjL676iZGfs9ZUZo24wWRIxqOqxtHLH5xn9/mo91upw
+	rfauvnCyLRNUtSVYBwBjtaiz7dj3ZDdnx8i54ZGJIbErIRQ9JB+Dd8751IIf2h3wioRg3c3CLls1A
+	56qspf8cDnK4PwXutf5Yn+a1C2VrRvrexHCmiNGs0oP0pYDUWnrjQPMac3Iozc7K6gvXUd+zwnTyo
+	fTOtOQ65owH0PbqL2bv8fgYVGZwTo+y6Nm/qufo34VEJb+j7QPGbssw/CYf6utjG5/RSbdEnA6Pzu
+	LZMSwWyRBI/lCKxs91TQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpQZr-0003fK-DJ; Mon, 22 Jul 2019 05:09:35 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1hpQaF-0003wQ-No; Mon, 22 Jul 2019 05:09:59 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpQZ4-0003ML-Uu
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 05:08:48 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x6M58ipL004333;
- Mon, 22 Jul 2019 00:08:44 -0500
+ id 1hpQZ6-0003Mz-N2
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 05:08:50 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x6M58khR030950;
+ Mon, 22 Jul 2019 00:08:46 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1563772124;
- bh=NXMck+gWL+ZhFNIIzS8+Yu5xfh+I2+Hms8p5U9ZMGTg=;
+ s=ti-com-17Q1; t=1563772127;
+ bh=O6OT/ThaOtdEY1GwL80MDtLkFYHPq2abrr5BNLTj0yU=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=u2enEBDBf/47PD+0jAPm7PcqLky2zlQoi9NUeaHYbISEwc2sbMobfZPJxgxBl2SsA
- BkB/4mf5mPnY1QGUxUP/aJ4ltsnY1MSaiNVNSnfBSp/NxXrAG78m13LzZJMJFziacJ
- 8ASA9DiXVCAUCsD0HjEuNV100BbGSdZHy7ZxIDkM=
-Received: from DLEE101.ent.ti.com (dlee101.ent.ti.com [157.170.170.31])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x6M58ibS010969
+ b=EKuHeTOblh2kelUDvji+yXyX3RjmKlbnZarrYhPvEjxBd4brSbRcxUDFvF2QnG/Es
+ p5dplq7iQh58qLsN1TOj7aPQ9UI1i2CKhsha93m1glUPV6d0Is/pRc4Bnezeu87Kfz
+ A8F26Wd7PrsfcYWfXaLM51yYVK95oPcrXge3xAAA=
+Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x6M58kQm062502
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 22 Jul 2019 00:08:44 -0500
-Received: from DLEE112.ent.ti.com (157.170.170.23) by DLEE101.ent.ti.com
- (157.170.170.31) with Microsoft SMTP Server (version=TLS1_2,
+ Mon, 22 Jul 2019 00:08:46 -0500
+Received: from DLEE105.ent.ti.com (157.170.170.35) by DLEE100.ent.ti.com
+ (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Mon, 22
- Jul 2019 00:08:43 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE112.ent.ti.com
- (157.170.170.23) with Microsoft SMTP Server (version=TLS1_2,
+ Jul 2019 00:08:46 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE105.ent.ti.com
+ (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Mon, 22 Jul 2019 00:08:43 -0500
+ Frontend Transport; Mon, 22 Jul 2019 00:08:46 -0500
 Received: from uda0131933.india.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x6M58bwM039856;
- Mon, 22 Jul 2019 00:08:41 -0500
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x6M58bwN039856;
+ Mon, 22 Jul 2019 00:08:44 -0500
 From: Lokesh Vutla <lokeshvutla@ti.com>
 To: Nishanth Menon <nm@ti.com>, Tero Kristo <t-kristo@ti.com>, Santosh
  Shilimkar <ssantosh@kernel.org>, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v4 1/5] firmware: ti_sci: Allow for device shared and
- exclusive requests
-Date: Mon, 22 Jul 2019 10:37:53 +0530
-Message-ID: <20190722050757.29893-2-lokeshvutla@ti.com>
+Subject: [PATCH v4 2/5] dt-bindings: ti_sci_pm_domains: Add support for
+ exclusive and shared access
+Date: Mon, 22 Jul 2019 10:37:54 +0530
+Message-ID: <20190722050757.29893-3-lokeshvutla@ti.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190722050757.29893-1-lokeshvutla@ti.com>
 References: <20190722050757.29893-1-lokeshvutla@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190721_220847_077449_507CCEAD 
-X-CRM114-Status: GOOD (  16.22  )
+X-CRM114-CacheID: sfid-20190721_220848_837037_192A2F55 
+X-CRM114-Status: GOOD (  15.49  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -101,117 +101,72 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Sysfw provides an option for requesting exclusive access for a
-device using the flags MSG_FLAG_DEVICE_EXCLUSIVE. If this flag is
-not used, the device is meant to be shared across hosts. Once a device
-is requested from a host with this flag set, any request to this
-device from a different host will be nacked by sysfw. Current tisci
-driver enables this flag for every device requests. But this may not
-be true for all the devices. So provide a separate commands in driver
-for exclusive and shared device requests.
+TISCI protocol supports for enabling the device either with exclusive
+permissions for the requesting host or with sharing across the hosts.
+There are certain devices which are exclusive to Linux context and
+there are certain devices that are shared across different host contexts.
+So add support for getting this information from DT by increasing
+the power-domain cells to 2.
 
+Acked-by: Tero Kristo <t-kristo@ti.com>
+Acked-by: Rob Herring <robh@kernel.org>
 Signed-off-by: Lokesh Vutla <lokeshvutla@ti.com>
 ---
- drivers/firmware/ti_sci.c              | 45 ++++++++++++++++++++++++--
- include/linux/soc/ti/ti_sci_protocol.h |  3 ++
- 2 files changed, 46 insertions(+), 2 deletions(-)
+ .../devicetree/bindings/soc/ti/sci-pm-domain.txt      | 11 +++++++++--
+ MAINTAINERS                                           |  1 +
+ include/dt-bindings/soc/ti,sci_pm_domain.h            |  9 +++++++++
+ 3 files changed, 19 insertions(+), 2 deletions(-)
+ create mode 100644 include/dt-bindings/soc/ti,sci_pm_domain.h
 
-diff --git a/drivers/firmware/ti_sci.c b/drivers/firmware/ti_sci.c
-index cdee0b45943d..4126be9e3216 100644
---- a/drivers/firmware/ti_sci.c
-+++ b/drivers/firmware/ti_sci.c
-@@ -635,6 +635,7 @@ static int ti_sci_get_device_state(const struct ti_sci_handle *handle,
+diff --git a/Documentation/devicetree/bindings/soc/ti/sci-pm-domain.txt b/Documentation/devicetree/bindings/soc/ti/sci-pm-domain.txt
+index f7b00a7c0f68..f541d1f776a2 100644
+--- a/Documentation/devicetree/bindings/soc/ti/sci-pm-domain.txt
++++ b/Documentation/devicetree/bindings/soc/ti/sci-pm-domain.txt
+@@ -19,8 +19,15 @@ child of the pmmc node.
+ Required Properties:
+ --------------------
+ - compatible: should be "ti,sci-pm-domain"
+-- #power-domain-cells: Must be 1 so that an id can be provided in each
+-		       device node.
++- #power-domain-cells: Can be one of the following:
++			1: Containing the device id of each node
++			2: First entry should be device id
++			   Second entry should be one of the floowing:
++			   TI_SCI_PD_EXCLUSIVE: To allow device to be
++						exclusively controlled by
++						the requesting hosts.
++			   TI_SCI_PD_SHARED: To allow device to be shared
++					     by multiple hosts.
  
- /**
-  * ti_sci_cmd_get_device() - command to request for device managed by TISCI
-+ *			     that can be shared with other hosts.
-  * @handle:	Pointer to TISCI handle as retrieved by *ti_sci_get_handle
-  * @id:		Device Identifier
-  *
-@@ -642,11 +643,29 @@ static int ti_sci_get_device_state(const struct ti_sci_handle *handle,
-  * usage count by balancing get_device with put_device. No refcounting is
-  * managed by driver for that purpose.
-  *
-- * NOTE: The request is for exclusive access for the processor.
-- *
-  * Return: 0 if all went fine, else return appropriate error.
-  */
- static int ti_sci_cmd_get_device(const struct ti_sci_handle *handle, u32 id)
-+{
-+	return ti_sci_set_device_state(handle, id, 0,
-+				       MSG_DEVICE_SW_STATE_ON);
-+}
+ Example (K2G):
+ -------------
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 783569e3c4b4..ceb06e7ba6d1 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -15853,6 +15853,7 @@ F:	drivers/firmware/ti_sci*
+ F:	include/linux/soc/ti/ti_sci_protocol.h
+ F:	Documentation/devicetree/bindings/soc/ti/sci-pm-domain.txt
+ F:	drivers/soc/ti/ti_sci_pm_domains.c
++F:	include/dt-bindings/soc/ti,sci_pm_domain.h
+ F:	Documentation/devicetree/bindings/reset/ti,sci-reset.txt
+ F:	Documentation/devicetree/bindings/clock/ti,sci-clk.txt
+ F:	drivers/clk/keystone/sci-clk.c
+diff --git a/include/dt-bindings/soc/ti,sci_pm_domain.h b/include/dt-bindings/soc/ti,sci_pm_domain.h
+new file mode 100644
+index 000000000000..8f2a7360b65e
+--- /dev/null
++++ b/include/dt-bindings/soc/ti,sci_pm_domain.h
+@@ -0,0 +1,9 @@
++/* SPDX-License-Identifier: GPL-2.0 */
 +
-+/**
-+ * ti_sci_cmd_get_device_exclusive() - command to request for device managed by
-+ *				       TISCI that is exclusively owned by the
-+ *				       requesting host.
-+ * @handle:	Pointer to TISCI handle as retrieved by *ti_sci_get_handle
-+ * @id:		Device Identifier
-+ *
-+ * Request for the device - NOTE: the client MUST maintain integrity of
-+ * usage count by balancing get_device with put_device. No refcounting is
-+ * managed by driver for that purpose.
-+ *
-+ * Return: 0 if all went fine, else return appropriate error.
-+ */
-+static int ti_sci_cmd_get_device_exclusive(const struct ti_sci_handle *handle,
-+					   u32 id)
- {
- 	return ti_sci_set_device_state(handle, id,
- 				       MSG_FLAG_DEVICE_EXCLUSIVE,
-@@ -665,6 +684,26 @@ static int ti_sci_cmd_get_device(const struct ti_sci_handle *handle, u32 id)
-  * Return: 0 if all went fine, else return appropriate error.
-  */
- static int ti_sci_cmd_idle_device(const struct ti_sci_handle *handle, u32 id)
-+{
-+	return ti_sci_set_device_state(handle, id, 0,
-+				       MSG_DEVICE_SW_STATE_RETENTION);
-+}
++#ifndef __DT_BINDINGS_TI_SCI_PM_DOMAIN_H
++#define __DT_BINDINGS_TI_SCI_PM_DOMAIN_H
 +
-+/**
-+ * ti_sci_cmd_idle_device_exclusive() - Command to idle a device managed by
-+ *					TISCI that is exclusively owned by
-+ *					requesting host.
-+ * @handle:	Pointer to TISCI handle as retrieved by *ti_sci_get_handle
-+ * @id:		Device Identifier
-+ *
-+ * Request for the device - NOTE: the client MUST maintain integrity of
-+ * usage count by balancing get_device with put_device. No refcounting is
-+ * managed by driver for that purpose.
-+ *
-+ * Return: 0 if all went fine, else return appropriate error.
-+ */
-+static int ti_sci_cmd_idle_device_exclusive(const struct ti_sci_handle *handle,
-+					    u32 id)
- {
- 	return ti_sci_set_device_state(handle, id,
- 				       MSG_FLAG_DEVICE_EXCLUSIVE,
-@@ -2894,7 +2933,9 @@ static void ti_sci_setup_ops(struct ti_sci_info *info)
- 	core_ops->reboot_device = ti_sci_cmd_core_reboot;
- 
- 	dops->get_device = ti_sci_cmd_get_device;
-+	dops->get_device_exclusive = ti_sci_cmd_get_device_exclusive;
- 	dops->idle_device = ti_sci_cmd_idle_device;
-+	dops->idle_device_exclusive = ti_sci_cmd_idle_device_exclusive;
- 	dops->put_device = ti_sci_cmd_put_device;
- 
- 	dops->is_valid = ti_sci_cmd_dev_is_valid;
-diff --git a/include/linux/soc/ti/ti_sci_protocol.h b/include/linux/soc/ti/ti_sci_protocol.h
-index 6c610e188a44..9531ec823298 100644
---- a/include/linux/soc/ti/ti_sci_protocol.h
-+++ b/include/linux/soc/ti/ti_sci_protocol.h
-@@ -97,7 +97,10 @@ struct ti_sci_core_ops {
-  */
- struct ti_sci_dev_ops {
- 	int (*get_device)(const struct ti_sci_handle *handle, u32 id);
-+	int (*get_device_exclusive)(const struct ti_sci_handle *handle, u32 id);
- 	int (*idle_device)(const struct ti_sci_handle *handle, u32 id);
-+	int (*idle_device_exclusive)(const struct ti_sci_handle *handle,
-+				     u32 id);
- 	int (*put_device)(const struct ti_sci_handle *handle, u32 id);
- 	int (*is_valid)(const struct ti_sci_handle *handle, u32 id);
- 	int (*get_context_loss_count)(const struct ti_sci_handle *handle,
++#define TI_SCI_PD_EXCLUSIVE	1
++#define TI_SCI_PD_SHARED	0
++
++#endif /* __DT_BINDINGS_TI_SCI_PM_DOMAIN_H */
 -- 
 2.21.0
 
