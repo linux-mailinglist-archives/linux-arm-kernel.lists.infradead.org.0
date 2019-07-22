@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 286217050D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 18:07:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C86807050B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 18:07:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=WsUxkJH/H23+zo8c8e2jphnB+bSVnD8z4agskLl3WZM=; b=mb4shq64/6R5wM
-	kuX2ibEVfRtawJwuluzGuejfgV86NcKMxov3aF3WsVQsH79ciy19b4uJCi+9cCwgS63p7hVjiiEh9
-	xAk1X+8US+JKV6gG9iAGtQkPgF8G8pmdfjoal5G5cDfn4psK2HpZe726oCYs2Aa9vSfzvEs7W1y80
-	e7nujB4j+EuhOvIGjSNmjHyO8D4BCcEnVx1bu4NHvTs1t3mJuWX+P+OBvPgVpNSxNkJYaddFU3Cm+
-	aFn9JW8LR8CfmUvUNX/tLuXGh2FmOsCyxGp0MgG2tqTb6FrF5FphzpiRfqJDEFi4emMPywg1OL728
-	LcynQyrdSLvZBpcm+3dw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mUTJIIbbu63XAk5V+lD3GrrwLy1knUISfGXfU0DSPjc=; b=d5t6PAbAJ+QK0/
+	2g3iKOsjn8mST2c+CGauXLB60ffG7lRNo8fASxIVKbDl+qPiPkZaPk2No5NGUFoKNGKbd1E65OvAn
+	Sq9VXRzv81xENWx9KLgfzAV2T7fNYfmK90/eyy9hJ2YVNWcqhB78VY40YZ19TMMBbLyxwM4JOHDux
+	SrMRmLABauaVx8Azh1ULJPvZRe93jA4bpOMRWFggYReaxUMlR7+4JO74G0xPpq2aGYh+mi0NyXYtI
+	RTXBK30NQjrgiO8ll+jQtYjQfsgOl4M7RSO0lO4U2LUEe1scCd6/xIm4fCNldhGFJsPpdGraK2adh
+	X88qrDH56+6bi7lsuQbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpaqo-0001P1-4H; Mon, 22 Jul 2019 16:07:46 +0000
+	id 1hpaqB-0000vQ-Dw; Mon, 22 Jul 2019 16:07:07 +0000
 Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpapW-0000hs-K6
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 16:06:28 +0000
+ id 1hpapV-0000hp-Mi
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 16:06:27 +0000
 Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x6MG65hm016172; Mon, 22 Jul 2019 18:06:05 +0200
+ x6MG65b1016173; Mon, 22 Jul 2019 18:06:05 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : subject :
- date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=tUyFF2dLFUND6HSCHRKN4a+J8+L0QNOSCuz5edjnQdI=;
- b=pVx177ZLmPbDmrPaz6AKQXlRGdiOL2ctfNMtl4BiexOt4zilvs7BIDxCJ9Je/mc5xavj
- YVcLd1nqYnoce0RRHqe4bwpGRxaQ30NyAg9OFc0Nk+GJuDYmREeeH3amg70dt/5zK1R8
- p6trXidCt/SvztRTcJUI/nq6reKG2KUcMIyepuX5jO85rOaG/4EdaDYQ6VYzo1XgVwkG
- PGRyU0QnYt1s0d56InkKqqHXUuOS0xKUBL74Fb0gI5xaNm0X746TGeXN9ItMycjjKq+8
- rM4tVMBhw+PK/MCGYq7g2lsDOZmZ8t2zQLnhoDsGUPbipQ4xBE5NlQLoK4Slx4HvspAv 1A== 
+ date : message-id : in-reply-to : references : mime-version :
+ content-type; s=STMicroelectronics;
+ bh=sRoYw+gjO4V6WYQIFcpRmA6lrUT15ghe8XN5XQ6WRiw=;
+ b=ENmhN0C6R269ohYvCIwqgaPJaskoRN8XZL4LQkM79yJFsTwQpADo53fEnn+29fWz3J1g
+ oKUilDC980iSXubGcBcUWfiWTPHWZ8DZ7d8LPJKY4/BxPv5X3YmzvHg6OMwtW4WGJT/f
+ GTKVt/PU0FJwwZA3f75q4/1ZN49iErJ3kxI5gHkZp0tzqCYmeWFVp8qRDXwJUbOje/6D
+ czNkGuUOPtKyvcgzlGfWp/REkArNZsbY4R+bBwB3Uw2LStsvsxK1uj2RnNzC9yUPHmnS
+ DZeebg5mmVTLxHEv6wUaDSvBm583PwId0Iq4vhI2ugIyBQNgobrl3ErxIz6Hnbx3nexg MQ== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2ture1chdq-1
+ by mx07-00178001.pphosted.com with ESMTP id 2ture1chdr-1
  (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
  Mon, 22 Jul 2019 18:06:05 +0200
 Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 2982631;
- Mon, 22 Jul 2019 16:06:02 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas23.st.com [10.75.90.46])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id C274452BB;
- Mon, 22 Jul 2019 16:06:02 +0000 (GMT)
-Received: from SAFEX1HUBCAS21.st.com (10.75.90.45) by SAFEX1HUBCAS23.st.com
- (10.75.90.46) with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 22 Jul
- 2019 18:06:02 +0200
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id EDCE134;
+ Mon, 22 Jul 2019 16:06:03 +0000 (GMT)
+Received: from Webmail-eu.st.com (Safex1hubcas22.st.com [10.75.90.92])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id BD08A52BD;
+ Mon, 22 Jul 2019 16:06:03 +0000 (GMT)
+Received: from SAFEX1HUBCAS21.st.com (10.75.90.45) by Safex1hubcas22.st.com
+ (10.75.90.92) with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 22 Jul
+ 2019 18:06:03 +0200
 Received: from localhost (10.201.23.16) by Webmail-ga.st.com (10.75.90.48)
- with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 22 Jul 2019 18:06:02
+ with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 22 Jul 2019 18:06:03
  +0200
 From: Olivier Moysan <olivier.moysan@st.com>
 To: <a.hajda@samsung.com>, <narmstrong@baylibre.com>,
@@ -61,17 +62,20 @@ To: <a.hajda@samsung.com>, <narmstrong@baylibre.com>,
  <linux-stm32@st-md-mailman.stormreply.com>, <olivier.moysan@st.com>,
  <jsarha@ti.com>, <robh+dt@kernel.org>, <mark.rutland@arm.com>,
  <devicetree@vger.kernel.org>
-Subject: [PATCH v2 0/3] drm/bridge: sii902x: fix audio mclk management
-Date: Mon, 22 Jul 2019 18:05:57 +0200
-Message-ID: <1563811560-29589-1-git-send-email-olivier.moysan@st.com>
+Subject: [PATCH v2 1/3] drm/bridge: sii902x: fix missing reference to mclk
+ clock
+Date: Mon, 22 Jul 2019 18:05:58 +0200
+Message-ID: <1563811560-29589-2-git-send-email-olivier.moysan@st.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1563811560-29589-1-git-send-email-olivier.moysan@st.com>
+References: <1563811560-29589-1-git-send-email-olivier.moysan@st.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.201.23.16]
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
  definitions=2019-07-22_12:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_090626_960264_7F49AE8B 
-X-CRM114-Status: GOOD (  10.26  )
+X-CRM114-CacheID: sfid-20190722_090626_033213_419BC509 
+X-CRM114-Status: GOOD (  11.76  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -104,22 +108,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fix audio master clock use for Silab sii902x HDMI transceiver.
-Make audio master clock optional, as this clock is not mandatory.
+Add devm_clk_get call to retrieve reference to master clock.
 
-Changes in v2:
-- Rely on clk framework to manage undefined mclk case.
-- Use devm_clk_get_optional instead of devm_clk_get.
+Fixes: ff5781634c41 ("drm/bridge: sii902x: Implement HDMI audio support")
 
-Olivier Moysan (3):
-  drm/bridge: sii902x: fix missing reference to mclk clock
-  dt-bindings: display: sii902x: Change audio mclk binding
-  drm/bridge: sii902x: make audio mclk optional
+Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
+Reviewed-by: Jyri Sarha <jsarha@ti.com>
+Acked-by: Andrzej Hajda <a.hajda@samsung.com
+---
+ drivers/gpu/drm/bridge/sii902x.c | 1 +
+ 1 file changed, 1 insertion(+)
 
- .../devicetree/bindings/display/bridge/sii902x.txt     |  5 ++---
- drivers/gpu/drm/bridge/sii902x.c                       | 18 ++++++++++--------
- 2 files changed, 12 insertions(+), 11 deletions(-)
-
+diff --git a/drivers/gpu/drm/bridge/sii902x.c b/drivers/gpu/drm/bridge/sii902x.c
+index c2f97e5997a1..962931c20efe 100644
+--- a/drivers/gpu/drm/bridge/sii902x.c
++++ b/drivers/gpu/drm/bridge/sii902x.c
+@@ -751,6 +751,7 @@ static int sii902x_audio_codec_init(struct sii902x *sii902x,
+ 		sii902x->audio.i2s_fifo_sequence[i] |= audio_fifo_id[i] |
+ 			i2s_lane_id[lanes[i]] |	SII902X_TPI_I2S_FIFO_ENABLE;
+ 
++	sii902x->audio.mclk = devm_clk_get(dev, "mclk");
+ 	if (IS_ERR(sii902x->audio.mclk)) {
+ 		dev_err(dev, "%s: No clock (audio mclk) found: %ld\n",
+ 			__func__, PTR_ERR(sii902x->audio.mclk));
 -- 
 2.7.4
 
