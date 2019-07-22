@@ -2,109 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 69FFA704B2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 17:56:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12CA4704CF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 18:01:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:In-Reply-To:
-	MIME-Version:References:Subject:To:From:Date:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Wk035RTzHJtx5bGaJNL45tWr8Ae59DI4ms3DhtXm6uA=; b=IJUuvrvtOTvKGy
-	nwI+mho8mxVm51ljSpavbD/5L1H5bIDKr79XBtpn5NVSN2nUs9ASgRC3eG40+/t1TA7TqOxy86bjN
-	BfczaFju778vBEA+WHIpFlikHZYEcuX2VBVcHv4Jkei34ZoyTMWlZI7T5NT30siy6QyTPJUFoTbPY
-	lPio13svnkhy/YdCr4oDzQCFx2lKI5kxhTBiPS39yrRRNk9HZL6lHUbvEd1ZerObP3k9vnj8OkXah
-	KgmLS8gMkKqi+Pf6OPY9uyQgoL588Jv+gNDm2kDPVOLt52WZtXfGNdShg/RupfBbztR85IVETpL4t
-	+evzRq5wy/haNHrhFOCA==;
+	List-Owner; bh=Z0UFT5DmI4G2BYung+nmLCecbsM8Faq88d4eEl3/+zw=; b=sv4mNhZPtejSjW
+	y8HAhs+fiWVuFOD2Z0UFROr9grXZifSOm3KfTYutXixwLpOWnhvTp+KrczbGVIeG7jSoQ3FoiLbTQ
+	e/u+Q7TrNBIiiB85qYb77lsgDkgPtdwsr8UkP5Mv8IFeCJrpLw00La9Jw6w9m+t6p3hqoZN7aqbHY
+	MHQ5EGUmTXx+xeOkdaunHRQX6vfPsdIBYXGht30SmDXr75CTHB3ug7eIVL2BsYH9kzix1P4arTlWc
+	8os3E4sYe5HyUQ1nBVrc1Bl06GLgrYDiVkmneYFpzJeSTaGZso28v5PLwN23kDnEiE0Fsi23DwIMX
+	qPn7W21UzPevuaSrbE4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpafo-0004Uu-3g; Mon, 22 Jul 2019 15:56:24 +0000
-Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
- helo=mx0a-001b2d01.pphosted.com)
+	id 1hpakP-0006bi-KK; Mon, 22 Jul 2019 16:01:09 +0000
+Received: from hillosipuli.retiisi.org.uk ([2a01:4f9:c010:4572::81:2])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpafA-0004UL-4N
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 15:55:45 +0000
-Received: from pps.filterd (m0098421.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x6MFq05Z108524
- for <linux-arm-kernel@lists.infradead.org>; Mon, 22 Jul 2019 11:55:43 -0400
-Received: from e16.ny.us.ibm.com (e16.ny.us.ibm.com [129.33.205.206])
- by mx0a-001b2d01.pphosted.com with ESMTP id 2twfa5tu99-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Mon, 22 Jul 2019 11:55:42 -0400
-Received: from localhost
- by e16.ny.us.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <linux-arm-kernel@lists.infradead.org> from <paulmck@linux.vnet.ibm.com>; 
- Mon, 22 Jul 2019 16:55:42 +0100
-Received: from b01cxnp22035.gho.pok.ibm.com (9.57.198.25)
- by e16.ny.us.ibm.com (146.89.104.203) with IBM ESMTP SMTP Gateway: Authorized
- Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Mon, 22 Jul 2019 16:55:33 +0100
-Received: from b01ledav003.gho.pok.ibm.com (b01ledav003.gho.pok.ibm.com
- [9.57.199.108])
- by b01cxnp22035.gho.pok.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- x6MFtWhQ53412302
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 22 Jul 2019 15:55:32 GMT
-Received: from b01ledav003.gho.pok.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id D3095B206A;
- Mon, 22 Jul 2019 15:55:32 +0000 (GMT)
-Received: from b01ledav003.gho.pok.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 9353EB2068;
- Mon, 22 Jul 2019 15:55:32 +0000 (GMT)
-Received: from paulmck-ThinkPad-W541 (unknown [9.85.189.166])
- by b01ledav003.gho.pok.ibm.com (Postfix) with ESMTP;
- Mon, 22 Jul 2019 15:55:32 +0000 (GMT)
-Received: by paulmck-ThinkPad-W541 (Postfix, from userid 1000)
- id 1D5F416C29D7; Mon, 22 Jul 2019 08:55:34 -0700 (PDT)
-Date: Mon, 22 Jul 2019 08:55:34 -0700
-From: "Paul E. McKenney" <paulmck@linux.ibm.com>
-To: "Michael S. Tsirkin" <mst@redhat.com>
-Subject: Re: RFC: call_rcu_outstanding (was Re: WARNING in __mmdrop)
-References: <0000000000008dd6bb058e006938@google.com>
- <000000000000964b0d058e1a0483@google.com>
- <20190721044615-mutt-send-email-mst@kernel.org>
- <20190721081933-mutt-send-email-mst@kernel.org>
- <20190721131725.GR14271@linux.ibm.com>
- <20190721210837.GC363@bombadil.infradead.org>
- <20190721233113.GV14271@linux.ibm.com>
- <20190722151439.GA247639@google.com>
- <20190722114612-mutt-send-email-mst@kernel.org>
+ id 1hpajh-00055v-Ed
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 16:00:28 +0000
+Received: from valkosipuli.localdomain (valkosipuli.retiisi.org.uk
+ [IPv6:2a01:4f9:c010:4572::80:2])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by hillosipuli.retiisi.org.uk (Postfix) with ESMTPS id 2E862634C87;
+ Mon, 22 Jul 2019 18:58:15 +0300 (EEST)
+Received: from sailus by valkosipuli.localdomain with local (Exim 4.92)
+ (envelope-from <sakari.ailus@retiisi.org.uk>)
+ id 1hpaha-0000Qa-Eg; Mon, 22 Jul 2019 18:58:14 +0300
+Date: Mon, 22 Jul 2019 18:58:14 +0300
+From: Sakari Ailus <sakari.ailus@iki.fi>
+To: Nishka Dasgupta <nishkadg.linux@gmail.com>
+Subject: Re: [PATCH v2] staging: media: sunxi: Add bool cast to value
+Message-ID: <20190722155814.GC1263@valkosipuli.retiisi.org.uk>
+References: <20190722060651.6538-1-nishkadg.linux@gmail.com>
+ <20190722111225.GA2695@azazel.net>
+ <20190722122438.GA1908@aptenodytes>
+ <45555499-57f3-a315-6f84-f878c3aa0130@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190722114612-mutt-send-email-mst@kernel.org>
-User-Agent: Mutt/1.5.21 (2010-09-15)
-X-TM-AS-GCONF: 00
-x-cbid: 19072215-0072-0000-0000-0000044BEC7B
-X-IBM-SpamModules-Scores: 
-X-IBM-SpamModules-Versions: BY=3.00011475; HX=3.00000242; KW=3.00000007;
- PH=3.00000004; SC=3.00000287; SDB=6.01235879; UDB=6.00651337; IPR=6.01017229; 
- MB=3.00027839; MTD=3.00000008; XFM=3.00000015; UTC=2019-07-22 15:55:40
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 19072215-0073-0000-0000-00004CBC4749
-Message-Id: <20190722155534.GG14271@linux.ibm.com>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-07-22_12:, , signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501
- malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1810050000 definitions=main-1907220176
+In-Reply-To: <45555499-57f3-a315-6f84-f878c3aa0130@gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_085544_295395_9C16821F 
-X-CRM114-Status: GOOD (  25.93  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190722_090026_473073_0327FC11 
+X-CRM114-Status: GOOD (  32.31  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.158.5 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -116,62 +69,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Reply-To: paulmck@linux.ibm.com
-Cc: mhocko@suse.com, peterz@infradead.org, jasowang@redhat.com,
- ldv@altlinux.org, james.bottomley@hansenpartnership.com, linux-mm@kvack.org,
- namit@vmware.com, Joel Fernandes <joel@joelfernandes.org>, mingo@kernel.org,
- elena.reshetova@intel.com, aarcange@redhat.com, davem@davemloft.net,
- Matthew Wilcox <willy@infradead.org>, hch@infradead.org,
- linux-arm-kernel@lists.infradead.org, keescook@chromium.org,
- syzkaller-bugs@googlegroups.com, jglisse@redhat.com, viro@zeniv.linux.org.uk,
- christian@brauner.io, wad@chromium.org, linux-parisc@vger.kernel.org,
- linux-kernel@vger.kernel.org, luto@amacapital.net, ebiederm@xmission.com,
- akpm@linux-foundation.org, guro@fb.com
+Cc: devel@driverdev.osuosl.org, Jeremy Sowden <jeremy@azazel.net>,
+ maxime.ripard@bootlin.com, gregkh@linuxfoundation.org,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>, wens@csie.org,
+ mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jul 22, 2019 at 11:47:24AM -0400, Michael S. Tsirkin wrote:
-> On Mon, Jul 22, 2019 at 11:14:39AM -0400, Joel Fernandes wrote:
-> > [snip]
-> > > > Would it make sense to have call_rcu() check to see if there are many
-> > > > outstanding requests on this CPU and if so process them before returning?
-> > > > That would ensure that frequent callers usually ended up doing their
-> > > > own processing.
+On Mon, Jul 22, 2019 at 07:14:08PM +0530, Nishka Dasgupta wrote:
+> On 22/07/19 5:54 PM, Paul Kocialkowski wrote:
+> > Hi,
 > > 
-> > Other than what Paul already mentioned about deadlocks, I am not sure if this
-> > would even work for all cases since call_rcu() has to wait for a grace
-> > period.
+> > On Mon 22 Jul 19, 12:12, Jeremy Sowden wrote:
+> > > On 2019-07-22, at 11:36:51 +0530, Nishka Dasgupta wrote:
+> > > > Typecast as bool the return value of cedrus_find_format in
+> > > > cedrus_check_format as the return value of cedrus_check_format is
+> > > > always treated like a boolean value.
+> > > > 
+> > > > Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
+> > > > ---
+> > > > Changes in v2:
+> > > > - Add !! to the returned pointer to ensure that the return value is
+> > > >    always either true or false, and never a non-zero value other than
+> > > >    true.
+> > > > 
+> > > >   drivers/staging/media/sunxi/cedrus/cedrus_video.c | 2 +-
+> > > >   1 file changed, 1 insertion(+), 1 deletion(-)
+> > > > 
+> > > > diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_video.c b/drivers/staging/media/sunxi/cedrus/cedrus_video.c
+> > > > index e2b530b1a956..b731745f21f8 100644
+> > > > --- a/drivers/staging/media/sunxi/cedrus/cedrus_video.c
+> > > > +++ b/drivers/staging/media/sunxi/cedrus/cedrus_video.c
+> > > > @@ -86,7 +86,7 @@ static struct cedrus_format *cedrus_find_format(u32 pixelformat, u32 directions,
+> > > >   static bool cedrus_check_format(u32 pixelformat, u32 directions,
+> > > >   				unsigned int capabilities)
+> > > >   {
+> > > > -	return cedrus_find_format(pixelformat, directions, capabilities);
+> > > > +	return !!(bool)cedrus_find_format(pixelformat, directions, capabilities);
+> > > >   }
+> > > 
+> > > I think the original was fine.  The return value of cedrus_find_format
+> > > will be automatically converted to bool before being returned from
+> > > cedrus_check_format since that is the return-type of the function, and
+> > > the result of converting any non-zero value to bool is 1.
 > > 
-> > So, if the number of outstanding requests are higher than a certain amount,
-> > then you *still* have to wait for some RCU configurations for the grace
-> > period duration and cannot just execute the callback in-line. Did I miss
-> > something?
+> > Okay I was a bit unsure about that and wanted to play it on the safe side
+> > without really looking it up, but that gave me the occasion to verify.
 > > 
-> > Can waiting in-line for a grace period duration be tolerated in the vhost case?
+> >  From what I could find (from my GNU system's /usr/include/unistring/stdbool.h):
 > > 
-> > thanks,
+> >     Limitations of this substitute, when used in a C89 environment:
 > > 
-> >  - Joel
+> >         - In C99, casts and automatic conversions to '_Bool' or 'bool' are
+> >           performed in such a way that every nonzero value gets converted
+> >           to 'true', and zero gets converted to 'false'.  This doesn't work
+> >           with this substitute.  With this substitute, only the values 0 and 1
+> >           give the expected result when converted to _Bool' or 'bool'.
+> > 
+> > So since the kernel is built for C89 (unless I'm mistaken), I don't think the
+> > compiler provides any guarantee about bool values being converted to 1 when
+> > they are non-zero. As a result, I think it's best to be careful.
+> > 
+> > However, I'm not sure I really see what cocinelle was unhappy about. You
+> > mentionned single-line functions, but I don't see how that can be a problem.
 > 
-> No, but it has many other ways to recover (try again later, drop a
-> packet, use a slower copy to/from user).
+> It's not a problem per se. I'm just working on a cleanup project for which I
+> went through all of staging replacing single-line functions with what they
+> were calling. In some cases that makes it easier to figure out what a
+> particular function call does, since the called function actually does
+> something itself instead of just calling a different function?
+> This function was also flagged as one such potentially-removable function by
+> Coccinelle; but in order to do the same replacement that I'd done in other
+> staging drivers, I thought I would do something about the type mismatch
+> first, especially since find_format doesn't appear to be used anywhere else.
+> However, now I won't remove check_format and replace it with find_format as
+> I'd originally planned, since you've said that isn't necessary here. That
+> leaves the return type issue.
+> 
+> 
+> > So in the end, I think we should keep the !! and drop the (bool) cast if there's
+> > no particular warning about it.
+> 
+> Should I send a version 3 that does this?
 
-True enough!  And your idea of taking recovery action based on the number
-of callbacks seems like a good one while we are getting RCU's callback
-scheduling improved.
+bool was introduced in C99. Converting a non-zero value to boolean will
+yield true as a result. Please keep the code as-is; it's much easier to
+read that way.
 
-By the way, was this a real problem that you could make happen on real
-hardware?  If not, I would suggest just letting RCU get improved over
-the next couple of releases.
+-- 
+Kind regards,
 
-If it is something that you actually made happen, please let me know
-what (if anything) you need from me for your callback-counting EBUSY
-scheme.
-
-							Thanx, Paul
-
+Sakari Ailus
 
 _______________________________________________
 linux-arm-kernel mailing list
