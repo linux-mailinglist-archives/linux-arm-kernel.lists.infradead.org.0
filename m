@@ -2,58 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CCAB86FDE7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 12:34:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 284356FDE9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 12:35:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2kH0MGh6faBfKIDhIf4V8deKLKUYjTdhZQ9fcIUSfsg=; b=kV3zr9CgtF8d4j
-	AmQHp72huYBb2EPFswr8jJytjCX/rNJwCL1bamCbGY/ujrcBML7/Na6EKAkCAMfx0IXgbwnyHKI7H
-	sFNJgHcA8XZ15F+Do4txt3mVrMp7s1OG0pPCn27KfUrfAHCxKCs8gyJ8sTNjBHWxfNxZSK6/mobrM
-	SfR5YUZ1q3YlJmTLUtDHl1avxwMc9frAKLRMmr8q1KSt/p7Qq0TKITD+PsGq2J1TQy4H9Qy77I+KD
-	hNEVGbsDern3nc5+QwZRSjWTuzet080uMggcJmI7NRMCyORT7rSE2rPyBDG023NfngCPKLx3YJhkh
-	1+fjRzV6dI5LwopXIm9Q==;
+	List-Owner; bh=tVSCgfqejoB1/R+YSmeasX8bGbqiuoF13V53ZdxtOAg=; b=B8KZT+YhAmkvPt
+	mlNW5PnewgbHWZHMKUMTGTkVqgnYXcodqH5nBgsr8aJ5oLD9Kn47YwTqJjsmgpIZZk1VhgwPyBjx3
+	8OyiaMBXTajlfuNotXzwdGcnbWoFB2RATNw2KsodhI6p+AokIEB5Kakbyd3jLPAwUmlsrGHXpFLph
+	Lsd5Y5IJ8fj8hil8rb1F06FWpIRY6y1he7BAPSEpDuTMOCQaHzfnl9qDbScjmPg79p4HYVn5+4Swn
+	rle7tnO5L20zS/fzAvrJCTAaq3846yu6vFZ6HSqEoXmVc3zO6zVE/YXyYetB6+ebtIKJbpM4lZvU2
+	ZAZc5nwUKRGWxwPICNWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpVeK-0003r3-B9; Mon, 22 Jul 2019 10:34:32 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hpVda-00039n-R1
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 10:33:48 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 926C11596;
- Mon, 22 Jul 2019 03:33:45 -0700 (PDT)
-Received: from filthy-habits.cambridge.arm.com
- (filthy-habits.cambridge.arm.com [10.1.197.61])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 236233F71A;
- Mon, 22 Jul 2019 03:33:44 -0700 (PDT)
-From: Marc Zyngier <marc.zyngier@arm.com>
-To: Thomas Gleixner <tglx@linutronix.de>, John Stultz <john.stultz@linaro.org>,
- Pavel Tatashin <pasha.tatashin@soleen.com>, Petr Mladek <pmladek@suse.com>,
- Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
- Steven Rostedt <rostedt@goodmis.org>, Will Deacon <will.deacon@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH 3/3] arm64: Allow early time stamping
-Date: Mon, 22 Jul 2019 11:33:30 +0100
-Message-Id: <20190722103330.255312-4-marc.zyngier@arm.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190722103330.255312-1-marc.zyngier@arm.com>
-References: <20190722103330.255312-1-marc.zyngier@arm.com>
+	id 1hpVf0-0004NX-Hu; Mon, 22 Jul 2019 10:35:14 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hpVe1-0003lU-Sl
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 10:34:15 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5C88521951;
+ Mon, 22 Jul 2019 10:34:12 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1563791653;
+ bh=NsDNrbhT/hm+U+9wQoPPKjQ2nDJs4yWtIpHBBt0vwig=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=BMinma3QPkj4ah/iHgpoN3kEkyN3gDr07mz1s2W49D2ZegcdcPScDcMHEs7zpR20V
+ uhBkFHrBKUWPOQMpXm53OJjbjAN7jbeNx/F+NTTA5+evaxqgl0RVlQZdZJR28T2An5
+ rXdPxccSyt/gZo/nZXq7eVEClpppS9mjTvsRjhKU=
+Date: Mon, 22 Jul 2019 11:34:09 +0100
+From: Will Deacon <will@kernel.org>
+To: James Morse <james.morse@arm.com>
+Subject: Re: [PATCH] arm64: entry: SP Alignment Fault doesn't write to FAR_EL1
+Message-ID: <20190722103408.6ayjqvbmbymr44nl@willie-the-truck>
+References: <20190717165602.114502-1-james.morse@arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190717165602.114502-1-james.morse@arm.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_033347_026806_9AC93047 
-X-CRM114-Status: GOOD (  12.77  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190722_033413_982182_D1E9064C 
+X-CRM114-Status: GOOD (  20.19  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,120 +76,112 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In order to provide early timestamping on arm64 systems, we provide
-a timestamp_clock() function that is available as early as possible.
-This function simply returns the current counter value scales in
-nanoseconds, and 0-based.
+Hi James,
 
-In order to deal with the idiosyncrasies of some broken platforms,
-we condition this on the frequency being set in the CNTFRQ_EL0
-register, and revert back to using local_clock() as soon as it starts
-returning non-zero values.
+On Wed, Jul 17, 2019 at 05:56:02PM +0100, James Morse wrote:
+> Comparing the arm-arm's  pseudocode for AArch64.PCAlignmentFault() with
+> AArch64.SPAlignmentFault() shows that SP faults don't copy the faulty-SP
+> to FAR_EL1, but this is where we read from, and the address we provide
+> to user-space with the BUS_ADRALN signal.
+> 
+> This value will be UNKNOWN due to the previous ERET to user-space.
+> If the last value is preserved, on systems with KASLR or KPTI this will
+> be the user-space link-register left in FAR_EL1 by tramp_exit().
+> 
+> Fix this to retrieve the original sp_el0 value, and pass this to
+> do_sp_pc_fault().
+> 
+> Fixes: 60ffc30d5652 ("arm64: Exception handling")
+> Signed-off-by: James Morse <james.morse@arm.com>
+> ---
+>  arch/arm64/kernel/entry.S | 25 ++++++++++++++++++++-----
+>  1 file changed, 20 insertions(+), 5 deletions(-)
+> 
+> diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
+> index 165da78815c5..023e533c537e 100644
+> --- a/arch/arm64/kernel/entry.S
+> +++ b/arch/arm64/kernel/entry.S
+> @@ -743,9 +743,9 @@ el0_sync:
+>  	ccmp	x24, #ESR_ELx_EC_WFx, #4, ne
+>  	b.eq	el0_sys
+>  	cmp	x24, #ESR_ELx_EC_SP_ALIGN	// stack alignment exception
+> -	b.eq	el0_sp_pc
+> +	b.eq	el0_sp
+>  	cmp	x24, #ESR_ELx_EC_PC_ALIGN	// pc alignment exception
+> -	b.eq	el0_sp_pc
+> +	b.eq	el0_pc
+>  	cmp	x24, #ESR_ELx_EC_UNKNOWN	// unknown exception in EL0
+>  	b.eq	el0_undef
+>  	cmp	x24, #ESR_ELx_EC_BREAKPT_LOW	// debug exception in EL0
+> @@ -769,7 +769,7 @@ el0_sync_compat:
+>  	cmp	x24, #ESR_ELx_EC_FP_EXC32	// FP/ASIMD exception
+>  	b.eq	el0_fpsimd_exc
+>  	cmp	x24, #ESR_ELx_EC_PC_ALIGN	// pc alignment exception
+> -	b.eq	el0_sp_pc
+> +	b.eq	el0_pc
+>  	cmp	x24, #ESR_ELx_EC_UNKNOWN	// unknown exception in EL0
+>  	b.eq	el0_undef
+>  	cmp	x24, #ESR_ELx_EC_CP15_32	// CP15 MRC/MCR trap
+> @@ -869,9 +869,24 @@ el0_fpsimd_exc:
+>  	mov	x1, sp
+>  	bl	do_fpsimd_exc
+>  	b	ret_to_user
+> -el0_sp_pc:
+> +el0_sp:
+>  	/*
+> -	 * Stack or PC alignment exception handling
+> +	 * Stack alignment exception handling
+> +	 */
+> +	gic_prio_kentry_setup tmp=x0
+> +	enable_da_f
+> +#ifdef CONFIG_TRACE_IRQFLAGS
+> +	bl	trace_hardirqs_off
+> +#endif
+> +	ct_user_exit
+> +	ldr	x0, [sp, #S_SP]
+> +	mov	x1, x25
+> +	mov	x2, sp
+> +	bl	do_sp_pc_abort
+> +	b	ret_to_user
+> +el0_pc:
+> +	/*
+> +	 * PC alignment exception handling
 
-Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
----
- arch/arm64/Kconfig        |  3 +++
- arch/arm64/kernel/setup.c | 44 +++++++++++++++++++++++++++++++++++++++
- 2 files changed, 47 insertions(+)
+Given that this really isn't a fast path, I think it's preferable to avoid
+duplicating the entry code and instead just have something like:
 
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 3adcec05b1f6..ac3882ddc1c2 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -911,6 +911,9 @@ config ARCH_WANT_HUGE_PMD_SHARE
- config ARCH_HAS_CACHE_LINE_SIZE
- 	def_bool y
- 
-+config ARCH_HAS_TIMESTAMP_CLOCK
-+	def_bool y
-+
- config ARCH_ENABLE_SPLIT_PMD_PTLOCK
- 	def_bool y if PGTABLE_LEVELS > 2
- 
-diff --git a/arch/arm64/kernel/setup.c b/arch/arm64/kernel/setup.c
-index 9c4bad7d7131..cf21e3df7165 100644
---- a/arch/arm64/kernel/setup.c
-+++ b/arch/arm64/kernel/setup.c
-@@ -15,6 +15,7 @@
- #include <linux/initrd.h>
- #include <linux/console.h>
- #include <linux/cache.h>
-+#include <linux/clocksource.h>
- #include <linux/screen_info.h>
- #include <linux/init.h>
- #include <linux/kexec.h>
-@@ -28,10 +29,12 @@
- #include <linux/of_fdt.h>
- #include <linux/efi.h>
- #include <linux/psci.h>
-+#include <linux/sched/clock.h>
- #include <linux/sched/task.h>
- #include <linux/mm.h>
- 
- #include <asm/acpi.h>
-+#include <asm/arch_timer.h>
- #include <asm/fixmap.h>
- #include <asm/cpu.h>
- #include <asm/cputype.h>
-@@ -269,8 +272,49 @@ arch_initcall(reserve_memblock_reserved_regions);
- 
- u64 __cpu_logical_map[NR_CPUS] = { [0 ... NR_CPUS-1] = INVALID_HWID };
- 
-+static u64 notrace ts_counter_read_cc(const struct cyclecounter *cc)
-+{
-+	return __arch_counter_get_cntvct();
-+}
-+
-+static struct cyclecounter ts_cc __ro_after_init = {
-+	.read	= ts_counter_read_cc,
-+	.mask	= CLOCKSOURCE_MASK(56),
-+};
-+
-+static struct timecounter ts_tc;
-+
-+static bool ts_cc_valid __ro_after_init = false;
-+
-+static __init void timestamp_clock_init(void)
-+{
-+	u64 frq = arch_timer_get_cntfrq();
-+
-+	if (!frq)
-+		return;
-+
-+	clocks_calc_mult_shift(&ts_cc.mult, &ts_cc.shift,
-+			       frq, NSEC_PER_SEC, 3600);
-+	/* timestamp starts at 0 (local_clock is a good enough approximation) */
-+	timecounter_init(&ts_tc, &ts_cc, local_clock());
-+	ts_cc_valid = true;
-+	pr_info("Using timestamp clock @%lluMHz\n", frq / 1000 / 1000);
-+}
-+
-+u64 timestamp_clock(void)
-+{
-+	u64 ns = local_clock();
-+
-+	if (likely(ns || !ts_cc_valid))
-+		return ns;
-+
-+	return timecounter_read(&ts_tc);
-+}
-+
- void __init setup_arch(char **cmdline_p)
- {
-+	timestamp_clock_init();
-+
- 	init_mm.start_code = (unsigned long) _text;
- 	init_mm.end_code   = (unsigned long) _etext;
- 	init_mm.end_data   = (unsigned long) _edata;
--- 
-2.20.1
+@@ -858,11 +858,15 @@ el0_fpsimd_exc:
+ 	mov	x1, sp
+ 	bl	do_fpsimd_exc
+ 	b	ret_to_user
++el0_sp:
++	ldr	x26, [sp, #S_SP]
++	b	el0_sp_pc
++el0_pc:
++	mrs	x26, far_el1
+ el0_sp_pc:
+ 	/*
+ 	 * Stack or PC alignment exception handling
+ 	 */
+-	mrs	x26, far_el1
+ 	gic_prio_kentry_setup tmp=x0
+ 	enable_da_f
+ #ifdef CONFIG_TRACE_IRQFLAGS
 
+I also think we should do the same thing for the EL1 case, even though
+the address is currently ignored by the C handler.
+
+What do you reckon?
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
