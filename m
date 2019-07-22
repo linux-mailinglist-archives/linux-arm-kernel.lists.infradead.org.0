@@ -2,62 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B5FB70B67
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 23:31:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 64FA370B6F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 23:32:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:From:To:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1rFKFhSXiVtUtiTYbcBx3u7WiX8D0R5UGTrbrVIV9UY=; b=F/zRIOVlAHxMk6
-	P8OHrV1eLakVExYTwoZM1SdYfnqelWrhYPUPjWekbTvPBt4S2ICgwMTT/U7wCIWQuoOG+O8sMAgF8
-	jDyS5yan5krYhQ8YuFeyzd6G5k9PCgKC/airGgQQKn9qnktHX8OIttZ+W09tnK4PbzEaApDZuVo0e
-	PiRkV8gSGFCvmhOx8iLNolgvKmP1VJqpCjzXYGiVsxMcuobNqSoBIe11BKn9MSW9VV0NlKDPK+Um3
-	H8YOXE7JT+WuN4VTjlWCAR3gsedufN1M3tH03Eyt91Eoz9TrmmEyxTu6w0/70swJta60nwSV8DR4r
-	jr/e/wPArmQ6LuXmgCyw==;
+	List-Owner; bh=bsV2Xa4oCpUBUM+7Bzx64ZjYfn3nG+RcW7g8XDWs2cI=; b=dhzQyqWilTC2aV
+	xZ5cNm6YwTS6ZctaHil2Uhllf32GOMGFhtuSyNPU2AtMjqhaI0awxJtiBmSjtpcyDGPbWH4mZxh2L
+	GRkGKL+n0U1T7shdNfYhQWm1pXrfPEed9e3sHoesvBPGFONoSSjiJPwx5tq1Vg28op7v5nlNncJ/I
+	pjFjg9mWcIi51B1NhMhq9ktI9WflD1/8bE3gwbVxkoq2hQ2KVqfVU10Dpd109DFozlDrDfLvufdxw
+	w6e81BGUWDROcse2r34bhK6C9rXJ5sxWDWbQ7jbVkHk0XMlUvEIwIAjVAXFYjqqsqaFlg7eXbRCdS
+	mT9NCvaBn3XF8Rg8vOKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpfu1-0004k4-Fp; Mon, 22 Jul 2019 21:31:25 +0000
+	id 1hpfuv-000568-Sh; Mon, 22 Jul 2019 21:32:21 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpfte-0004iZ-44
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 21:31:03 +0000
+ id 1hpfuW-00055Q-TT
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 21:31:58 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id ADF8821900;
- Mon, 22 Jul 2019 21:31:01 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8829E21900;
+ Mon, 22 Jul 2019 21:31:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563831061;
- bh=xJwOs8eh6wnbncGoeTw21vj4R8KhLdFsORfmYU7Lf3I=;
+ s=default; t=1563831116;
+ bh=6+/sxagahL+li6jU6ojcB6SqYd6K9O6P+akg/i4q2+0=;
  h=In-Reply-To:References:Subject:To:Cc:From:Date:From;
- b=kpTa1yt4tICwzZeizjpF+rNU5ZHlEd3hIlkvTx1ZNFktON55CgJqXfZNpayZordNk
- 0f0ThtuDVcxi9Q1qoh6BQ/PakL8QUg2aHzgwfmgP1Fe9jvEYYyOFf4RImt37Rh5/fJ
- XRrUy30G71WYl4dtSBHyIQuswTqvNUcSuskK3NbU=
+ b=BfaltBBaR63zw809ajWmqfGQDl/yVbLLDWguStR5cYjWJ/GgzUzhXBEZgQklIYe5v
+ fyrtKZIvR7r6glea1WEmEK1XwPkZnPsKrbq4rytKZgyDLKVhQTIYVDHistTPyuxI9U
+ ycHtK1Mcc4LGRHW4fgBSqIZvVxVQHjs3kGuHabuM=
 MIME-Version: 1.0
-In-Reply-To: <20190705045612.27665-5-Anson.Huang@nxp.com>
-References: <20190705045612.27665-1-Anson.Huang@nxp.com>
- <20190705045612.27665-5-Anson.Huang@nxp.com>
-Subject: Re: [PATCH 5/6] clk: imx8mq: Remove CLK_IS_CRITICAL flag for
- IMX8MQ_CLK_TMU_ROOT
-To: Anson.Huang@nxp.com, abel.vesa@nxp.com, agx@sigxcpu.org,
- andrew.smirnov@gmail.com, angus@akkea.ca, ccaione@baylibre.com,
- daniel.lezcano@linaro.org, devicetree@vger.kernel.org, edubezval@gmail.com,
- festevam@gmail.com, kernel@pengutronix.de, l.stach@pengutronix.de,
- leonard.crestez@nxp.com, linux-arm-kernel@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-pm@vger.kernel.org, mark.rutland@arm.com, mturquette@baylibre.com,
- robh+dt@kernel.org, rui.zhang@intel.com, s.hauer@pengutronix.de,
- shawnguo@kernel.org
+In-Reply-To: <af07c26e-cef3-f0ff-48ff-68f99ccf4de9@microchip.com>
+References: <20190625091002.27567-1-codrin.ciubotariu@microchip.com>
+ <af07c26e-cef3-f0ff-48ff-68f99ccf4de9@microchip.com>
+Subject: Re: [RESEND][PATCH] clk: at91: generated: Truncate divisor to
+ GENERATED_MAX_DIV + 1
+To: Codrin.Ciubotariu@microchip.com, Ludovic.Desroches@microchip.com,
+ Nicolas.Ferre@microchip.com, alexandre.belloni@bootlin.com
 From: Stephen Boyd <sboyd@kernel.org>
 User-Agent: alot/0.8.1
-Date: Mon, 22 Jul 2019 14:31:00 -0700
-Message-Id: <20190722213101.ADF8821900@mail.kernel.org>
+Date: Mon, 22 Jul 2019 14:31:55 -0700
+Message-Id: <20190722213156.8829E21900@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_143102_186730_69565310 
-X-CRM114-Status: UNSURE (   6.37  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190722_143156_965805_914354CF 
+X-CRM114-Status: GOOD (  13.02  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,23 +78,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
+Cc: linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Anson.Huang@nxp.com (2019-07-04 21:56:11)
-> From: Anson Huang <Anson.Huang@nxp.com>
+Quoting Nicolas.Ferre@microchip.com (2019-07-03 08:05:24)
+> On 25/06/2019 at 11:10, Codrin Ciubotariu wrote:
+> > In clk_generated_determine_rate(), if the divisor is greater than
+> > GENERATED_MAX_DIV + 1, then the wrong best_rate will be returned.
+> > If clk_generated_set_rate() will be called later with this wrong
+> > rate, it will return -EINVAL, so the generated clock won't change
+> > its value. Do no let the divisor be greater than GENERATED_MAX_DIV + 1.
+> > 
+> > Fixes: 8c7aa6328947 ("clk: at91: clk-generated: remove useless divisor loop")
+> > Signed-off-by: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
+> > Acked-by: Nicolas Ferre <nicolas.ferre@microchip.com>
+> > Acked-by: Ludovic Desroches <ludovic.desroches@microchip.com>
+> > ---
+> > 
+> > - The email-server was converting my patches to base64, so I resend it
+> >    using another server;
+> > - Added acked-bys from Nicolas and Ludovic;
 > 
-> IMX8MQ_CLK_TMU_ROOT is ONLY used for thermal module, the driver
-> should manage this clock, so no need to have CLK_IS_CRITICAL flag
-> set.
+> Stephen,
 > 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> ---
+> I don't see this patch in linux-next and we're already late in the 
+> development cycle: aka ping...
+> 
 
-Acked-by: Stephen Boyd <sboyd@kernel.org>
+Sorry. I dropped this one. Will pick it up into fixes.
+
 
 
 _______________________________________________
