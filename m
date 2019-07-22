@@ -2,90 +2,142 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76454701D1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 15:58:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B4F0701DA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 16:05:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
-	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tqTQQZB77zGo9NqvDhGJpuYF5XRPSphV+3bfl/1szvY=; b=UFCUWHz95ISa4O
-	ojP0Wes8ban46bPphSwS3tSAIes7S4VauCaeVnH2kTpZqqPp8mtTD52xp6JsSqfgl6pazKo/RIL53
-	PiM8lPgj7fRowXguX5c/UGU/CkzbueNw4CxNwIXP88vMGFQIjrl5N0dmqVJHcyPQUeZ81SwunvQhz
-	Ub7VbucxOs77RX6DSfUAJ8gmdbY8wDXTXlnvJwLCsHOyirWb7qGrJbnoqzSgFokQZvY31bqsdy0zB
-	EUz17o6VgHZakH4xvcYjLOcZ2VylzzBcaqIuzozjvcWgiNjXQvRBuIjXrB1gwHacNlsILUgUtJwZu
-	wKme5zTpGQm1m8tZvnTw==;
+	List-Owner; bh=pGFdZibXQ1GKXgOPFGHip2nZkOA794Qt/uch1HmaDrk=; b=STk4qfIsreY0sz
+	WLqOJDMM4Al5XIxeIl297PTI9KMNw84cXclC55r7IZR/0njrwqWJ6ZM7lORbAwN+9mqftpS32rfLm
+	5DqRghwRbOMz6Au/muibjMNIL5923o88Nh/EV2N53WlxdO1cjpDIVqxz2vdkjOQv6bxAVHAt1gy+c
+	S4WcqUasUm1l473ime1JwaxT0ZAWY8qNcG8SLETsWg39+n02xsNFWs5rYL30P1pAcqRkg89MFAab2
+	rik1yXWWXtgKDecBxQz17OiBmbxEWsqOwGxsYHpx2I6KvDaaUo7KXhOpu/B+9Y34ZFzqkJETGvhTQ
+	GsadIHGTxzHqoq1jrxkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpYpN-0002vh-Jm; Mon, 22 Jul 2019 13:58:09 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1hpYwI-0004mY-2Q; Mon, 22 Jul 2019 14:05:18 +0000
+Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpYp8-0002p0-Bn
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 13:57:55 +0000
-Received: by mail-lj1-x241.google.com with SMTP id d24so37683511ljg.8
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 22 Jul 2019 06:57:51 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:references:date:in-reply-to:message-id
- :user-agent:mime-version:content-transfer-encoding;
- bh=fCMx7KLosHFbgae9ScFTq6i/Za6Qpfm7uxFK3ITffxE=;
- b=QIhR8VcusTi+BJlFo+wD9KS67mSsIdcxqflU9AibXMwuObgWmyT9LQgtD9YTz0H+ww
- CVu91GkksnAIubo9dXZV+0MF4nx7musgl8XN2zFaOsvvKcIm6MC0TXaH95bjgk8zChPs
- tiFNIFsmLVoQbTrJVvdX4A2/Hv/XjWwEjFZdB0504tVXs1wFgSjO9xlKPss875xqPXDt
- 0EhKwPe+QyUItamvkIiNrKLAwfoWlMOTy1Ebs/UkDwTEKxRRo6rzGBKGyIZP94+2K+Qt
- JrWM+zSu0Bd39KLJF73zV0dd9mEVvT0seHxIXAV8lMzyRylep5F7SzREBOGdENqiiZR5
- SF9w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:references:date:in-reply-to
- :message-id:user-agent:mime-version:content-transfer-encoding;
- bh=fCMx7KLosHFbgae9ScFTq6i/Za6Qpfm7uxFK3ITffxE=;
- b=ROCPXLG/8TbEFjFA/xkHkt4GNoKjQc+6vJdrfF6slTxZNwvEJNlUuUXJMv38DreQWD
- AbHy8RPu0B65ZXa+7iy7s0nZXvzW9Ccq8WEEzrWugFSeH0FSjL6Gan5YxSTZlPGtn4GW
- 8ayydI3J8RmK/oYfiWLj65Un+dN4iYtNnPUzLqr1yXADjbQcCAHZWFe3SXMOuH1SbWTl
- 8gAejuF2BwYza3i9bn0UYMlxvTN/CyJfE80hgw7G6LAw/D3OLbqw59PNpsRS4coosDfL
- DVMff+8jSao3D//0FxRW+4PvJTxDZluzLHYuKBDwwevaPG3vkvxHwVXHUnELbEMQK7ig
- 3LLg==
-X-Gm-Message-State: APjAAAXpHpmS3b1h62j9MSxr2qSA+AI0CU3T0osHnuqUSMpv8LKoUHkp
- PUSK6jrhZV1V4/RYMsvEXIc=
-X-Google-Smtp-Source: APXvYqwBK8uvo+DJD4GxsoVOHdnu74BtLYrwR6BCeehLVZyL99tko++CmwogdOypaNDHh0YtOmUSWQ==
-X-Received: by 2002:a2e:9685:: with SMTP id q5mr22202686lji.227.1563803870732; 
- Mon, 22 Jul 2019 06:57:50 -0700 (PDT)
-Received: from osv.localdomain ([89.175.180.246])
- by smtp.gmail.com with ESMTPSA id t25sm6029513lfg.7.2019.07.22.06.57.49
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 22 Jul 2019 06:57:50 -0700 (PDT)
-From: Sergey Organov <sorganov@gmail.com>
-To: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-Subject: Re: [PATCH v5 1/3] serial: imx: set_termios(): do not enable autoRTS
- if RTS is unset
-References: <20190614072801.3187-1-s.hauer@pengutronix.de>
- <1563787330-1394-1-git-send-email-sorganov@gmail.com>
- <1563787330-1394-2-git-send-email-sorganov@gmail.com>
- <20190722095405.qdc77cb2qrgltzrx@pengutronix.de>
-Date: Mon, 22 Jul 2019 16:57:49 +0300
-In-Reply-To: <20190722095405.qdc77cb2qrgltzrx@pengutronix.de> ("Uwe
- \=\?utf-8\?Q\?Kleine-K\=C3\=B6nig\=22's\?\= message of "Mon,
- 22 Jul 2019 11:54:05 +0200")
-Message-ID: <877e8a5fz6.fsf@osv.gnss.ru>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/24.4 (gnu/linux)
+ id 1hpYvv-0004mA-Sh
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 14:04:57 +0000
+Received: from mailhost.synopsys.com (badc-mailhost1.synopsys.com
+ [10.192.0.17])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 997B6C0A8A;
+ Mon, 22 Jul 2019 14:04:53 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1563804294; bh=6SshQAV11Iu3QdhIPa1HwhiRSC4UC02at29tT2+52jg=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To:From;
+ b=Sv110pmicouavIAZUjJIaVeQoWWC5ASgoFwBTw2oUjFrKGs7D9UdiI6FSBxFNebMN
+ PeBvMWnaRvldMHoeBae3ouuiRy0G+KMAYpdkyvUHJVCKsmQ/x4ohOoa9mh+Q/MNnUG
+ jJHb7hbzQkL7s5Hajf427QSns+ph2MCDNfcUCz4WPmXoL1453ewZLQlkkAsf8kK+hw
+ 3Za609X32+JSNxvXaCW29LJq2VVy/iXgh6zfLQ6SoG/lCHaCRRTHRv9ETctTOh1P5u
+ 5rsSPH31XZNxwBceb9aybznT7lLOu+adtFa9xDCvxYSGcQ3fRpXUkutHnvMM3O6wZz
+ 8Ba9SMPAsn23A==
+Received: from US01WEHTC3.internal.synopsys.com
+ (us01wehtc3.internal.synopsys.com [10.15.84.232])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id D55A8A0091;
+ Mon, 22 Jul 2019 14:04:51 +0000 (UTC)
+Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
+ US01WEHTC3.internal.synopsys.com (10.15.84.232) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Mon, 22 Jul 2019 07:04:51 -0700
+Received: from NAM02-CY1-obe.outbound.protection.outlook.com (10.13.134.195)
+ by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
+ 14.3.408.0; Mon, 22 Jul 2019 07:04:51 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=HqoFRBNrhuz4pQB7doi5z0bg3N5Pv3WTwVOFkRX6uDVUar90/Fv3KbwpbftJwJ57B8sSQJ14AmVe+OVPjBboY/tIMREZYLVm2XMRUURD0TdVPJNSsPKsEMK06A8okDuCdeO88GjyzfJIEykw/U2cndmqdmn0G2w0QxCJQm9E1JjWVCdOIQMu3FGJvk0VQOXpRe2z/z/JRYpcsfvtTWLubgeF0wMqd61uCsg/FVo0rHB08zM8cify+MpXRzfv9LwOvO8a6YX2xE5JaqPPvkRIiX26pV5L08B/PgWVjQkUE69F4rUs58gqH3553Am6q2VpMSP2AO5cqpV8GktzU4KjVw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=6SshQAV11Iu3QdhIPa1HwhiRSC4UC02at29tT2+52jg=;
+ b=DcPkRPpVN1+VwONl99fqV0gnTvSg2lZEe2PngsymtHM9cn1KOfSEvBjqI7Ets3ewqR011nR9rh1erGw+4tMW1UnYpUJr4r2ZFkep5aEMT5lLgkjlMbCITFUhhTYBh+QJ5NMLCeH5DK7447Tvl1sKQF9LooKIPcAo5N7UQS1fyF00LcnOxFUVVlEgu94Gr0gd6YXBQ/HTey7G0OKuHaz2amqgAEux5zwWxIDs2AHeC+rApQrB8qz2lgwfM2UB3od/ibVhVCFR2g06GTBltWlYYNKytGnjSm0CQh0HBRDnZQaHGYQmbJrfzo7HV3lR89UOuFyBbNz+DPk8ZKf1PhVdDw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
+ smtp.mailfrom=synopsys.com;dmarc=pass action=none
+ header.from=synopsys.com;dkim=pass header.d=synopsys.com;arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=synopsys.onmicrosoft.com; s=selector1-synopsys-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=6SshQAV11Iu3QdhIPa1HwhiRSC4UC02at29tT2+52jg=;
+ b=DBhK9U55ri+atPPNYzVks2a7h5SKfJQ0XTc2H4izCW4BoTLo46FsVnGs51yC5Et4YL2+gswgurl+XTuXbqYIw1C2srv1uy6v1SDLNqGynSpLzQejzEOZWo5O1S6GsCKC8QnXqACitn/epuMyk96Bc3JMKriX4n8yoqFcuLP2f2A=
+Received: from BN8PR12MB3266.namprd12.prod.outlook.com (20.179.66.159) by
+ BN8PR12MB3122.namprd12.prod.outlook.com (20.178.210.74) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2094.17; Mon, 22 Jul 2019 14:04:49 +0000
+Received: from BN8PR12MB3266.namprd12.prod.outlook.com
+ ([fe80::61ef:5598:59e0:fc9d]) by BN8PR12MB3266.namprd12.prod.outlook.com
+ ([fe80::61ef:5598:59e0:fc9d%5]) with mapi id 15.20.2094.013; Mon, 22 Jul 2019
+ 14:04:49 +0000
+From: Jose Abreu <Jose.Abreu@synopsys.com>
+To: Jon Hunter <jonathanh@nvidia.com>,
+ Jose Abreu <Jose.Abreu@synopsys.com>, Lars Persson <lists@bofh.nu>,
+ Ilias Apalodimas <ilias.apalodimas@linaro.org>
+Subject: RE: [PATCH net-next 3/3] net: stmmac: Introducing support for Page
+ Pool
+Thread-Topic: [PATCH net-next 3/3] net: stmmac: Introducing support for Page
+ Pool
+Thread-Index: AQHVMYtq2Zx4WVoG/U2kL8GCK0bP/abPQEOAgADTx+CABnZ9AIAADuYAgAAFQOCAAAnIAIAABLTA
+Date: Mon, 22 Jul 2019 14:04:49 +0000
+Message-ID: <BN8PR12MB3266664ECA192E02C06061EED3C40@BN8PR12MB3266.namprd12.prod.outlook.com>
+References: <cover.1562149883.git.joabreu@synopsys.com>
+ <1b254bb7fc6044c5e6e2fdd9e00088d1d13a808b.1562149883.git.joabreu@synopsys.com>
+ <29dcc161-f7c8-026e-c3cc-5adb04df128c@nvidia.com>
+ <BN8PR12MB32661E919A8DEBC7095BAA12D3C80@BN8PR12MB3266.namprd12.prod.outlook.com>
+ <20190722101830.GA24948@apalos>
+ <CADnJP=thexf2sWcVVOLWw14rpteEj0RrfDdY8ER90MpbNN4-oA@mail.gmail.com>
+ <BN8PR12MB326661846D53AAEE315A7434D3C40@BN8PR12MB3266.namprd12.prod.outlook.com>
+ <11557fe0-0cba-cb49-0fb6-ad24792d4a53@nvidia.com>
+In-Reply-To: <11557fe0-0cba-cb49-0fb6-ad24792d4a53@nvidia.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=joabreu@synopsys.com; 
+x-originating-ip: [83.174.63.141]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 45ba71a6-c102-4321-d9f1-08d70ead8f77
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(5600148)(711020)(4605104)(1401327)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
+ SRVR:BN8PR12MB3122; 
+x-ms-traffictypediagnostic: BN8PR12MB3122:
+x-microsoft-antispam-prvs: <BN8PR12MB3122E8CFBA7CA98D07B89891D3C40@BN8PR12MB3122.namprd12.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6108;
+x-forefront-prvs: 01068D0A20
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(346002)(366004)(136003)(396003)(376002)(39860400002)(199004)(189003)(54906003)(8676002)(8936002)(81166006)(81156014)(110136005)(6436002)(99286004)(256004)(14444005)(5024004)(316002)(71200400001)(71190400001)(76176011)(53936002)(7696005)(33656002)(55016002)(478600001)(7416002)(25786009)(9686003)(66066001)(102836004)(14454004)(53546011)(11346002)(5660300002)(446003)(2906002)(66556008)(66446008)(76116006)(186003)(26005)(229853002)(68736007)(6506007)(66946007)(64756008)(66476007)(7736002)(6116002)(4326008)(52536014)(74316002)(305945005)(486006)(3846002)(476003)(6246003)(86362001);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:BN8PR12MB3122;
+ H:BN8PR12MB3266.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: synopsys.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: 1BM5mmwA7lkdSNah+01UdI+N/idZv7In5dAzEuosJ4fw1qua7O7m+GQxqX22dnkDhJUGxOapH78MvMCE7cWmI5M36zhmFaxAsuQS0/weM3+ocJZ6zWoy6/vMveYPZ6DZJpyexgmI3EiUJPV/afcKEkyPJ0XxOP1S4kjaBDr5wmMDHP4rLu8zhZf8pY9Cz55rvxivzQF7OQ7tUYWjwRyitVm/6layEyyCa4lKz2jZLfAwPz8sb44UwQZFdAIhNli77cjSSOFjX1xCeXdM3BQgu4prPudmxLtsDG7U4ZzZJ65gLD16wp0jL1pIEMCIjRMvH0/2S1qRGQzudj2xgP/HiPTHfsb9m+fshoj6vwTmrASpvI/3+GFdhEtXP0aB1grMk4jRq8l3OSFQIMsBe26FSbyUGuaw8el00D8v+ef6R/k=
 MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: 45ba71a6-c102-4321-d9f1-08d70ead8f77
+X-MS-Exchange-CrossTenant-originalarrivaltime: 22 Jul 2019 14:04:49.3882 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: joabreu@synopsys.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN8PR12MB3122
+X-OriginatorOrg: synopsys.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_065754_406982_4607EB54 
-X-CRM114-Status: GOOD (  13.49  )
+X-CRM114-CacheID: sfid-20190722_070455_961114_D519D4A7 
+X-CRM114-Status: GOOD (  18.12  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (sorganov[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -104,36 +156,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-serial@vger.kernel.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Joao Pinto <Joao.Pinto@synopsys.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>, Chen-Yu Tsai <wens@csie.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-tegra <linux-tegra@vger.kernel.org>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ "David S . Miller" <davem@davemloft.net>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-VXdlIEtsZWluZS1Lw7ZuaWcgPHUua2xlaW5lLWtvZW5pZ0BwZW5ndXRyb25peC5kZT4gd3JpdGVz
-OgoKPiBPbiBNb24sIEp1bCAyMiwgMjAxOSBhdCAxMjoyMjowOFBNICswMzAwLCBTZXJnZXkgT3Jn
-YW5vdiB3cm90ZToKPj4gRG9uJ3QgbGV0IHJlY2VpdmVyIGhhcmR3YXJlIGF1dG9tYXRpY2FsbHkg
-Y29udHJvbCBSVFMgb3V0cHV0IGlmIGl0Cj4+IHdhcyByZXF1ZXN0ZWQgdG8gYmUgaW5hY3RpdmUu
-Cj4+IAo+PiBUbyBlbnN1cmUgdGhpcywgc2V0X3Rlcm1pb3MoKSBzaG91bGRuJ3Qgc2V0IFVDUjJf
-Q1RTQyBiaXQgaWYgVUNSMl9DVFMKPj4gKD1USU9DTV9SVFMpIGlzIGNsZWFyZWQuIEFkZGVkIGNv
-cnJlc3BvbmRpbmcgY2hlY2sgaW4gaW14X3VhcnRfcnRzX2F1dG8oKQo+PiB0byBmaXggdGhpcy4K
-Pj4gCj4+IFJldmlld2VkLWJ5OiBVd2UgS2xlaW5lLUvDtm5pZyA8dS5rbGVpbmUta29lbmlnQHBl
-bmd1dHJvbml4LmRlPgo+Cj4gSSB0aGluayBpdCdzIGEgYml0IGJvbGQgdG8gYWRkIGEgcmV2aWV3
-LXRhZyBmb3IgbWUgaGVyZS4gVGhlIGJlc3QgcmVhc29uCj4gZm9yIHRoYXQgdGhhdCBJJ20gYXdh
-cmUgb2YgaXMgdGhhdCBJIHdyb3RlIGZvciB2NDogIltJXWYgeW91IHVwZGF0ZSB0aGUKPiBjb21t
-aXQgbG9nIGFzIGFncmVlZCBhbHJlYWR5IGJlZm9yZSBhbmQgZXZlbiBhZGQgYSBjb21tZW50IGlu
-Cj4gaW14X3VhcnRfcnRzX2F1dG8gYWxvbmcgdGhlIGxpbmVzIG9mIC4uLiB5b3UgY2FuIGhhdmUg
-bXkgQWNrLiIgd2hpY2ggSU1PCj4gaXNuJ3QgZ29vZCBlbm91Z2ggdG8ganVzdGlmeSBhICJSZXZp
-ZXdlZC1ieSIuIEkgd291bGRuJ3QgZXZlbiBhZGQgYW4KPiBBY2tlZC1ieTogd2l0aG91dCB0aGUg
-b3RoZXIgcGVyc29uIGJlaW5nIGFibGUgdG8gYWN0dWFsbHkgc2VlIHRoZQo+IGNoYW5nZWQgcGF0
-Y2ggKGJ1dCB0aGlzIG1pZ2h0IGJlIGFyZ3VhYmxlKS4KCkknbGwgZG8gd2hhdGV2ZXIgeW91IHNh
-eS4gU2hvdWxkIEkgcmVtb3ZlIHRoZSBSZXZpZXdlZC1ieTogeW91LCBvciBpcyBpdApPSyB0byBs
-ZWF2ZSBpdCBpbiwgdG8gYXZvaWQgcmUtaXRlcmF0aW5nIGFnYWluPwoKQmVzdCBSZWdhcmRzLAoK
-LS0gU2VyZ2V5CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-XwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmlu
-ZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
-aW51eC1hcm0ta2VybmVsCg==
+From: Jon Hunter <jonathanh@nvidia.com>
+Date: Jul/22/2019, 13:05:38 (UTC+00:00)
+
+> 
+> On 22/07/2019 12:39, Jose Abreu wrote:
+> > From: Lars Persson <lists@bofh.nu>
+> > Date: Jul/22/2019, 12:11:50 (UTC+00:00)
+> > 
+> >> On Mon, Jul 22, 2019 at 12:18 PM Ilias Apalodimas
+> >> <ilias.apalodimas@linaro.org> wrote:
+> >>>
+> >>> On Thu, Jul 18, 2019 at 07:48:04AM +0000, Jose Abreu wrote:
+> >>>> From: Jon Hunter <jonathanh@nvidia.com>
+> >>>> Date: Jul/17/2019, 19:58:53 (UTC+00:00)
+> >>>>
+> >>>>> Let me know if you have any thoughts.
+> >>>>
+> >>>> Can you try attached patch ?
+> >>>>
+> >>>
+> >>> The log says  someone calls panic() right?
+> >>> Can we trye and figure were that happens during the stmmac init phase?
+> >>>
+> >>
+> >> The reason for the panic is hidden in this one line of the kernel logs:
+> >> Kernel panic - not syncing: Attempted to kill init! exitcode=0x0000000b
+> >>
+> >> The init process is killed by SIGSEGV (signal 11 = 0xb).
+> >>
+> >> I would suggest you look for data corruption bugs in the RX path. If
+> >> the code is fetched from the NFS mount then a corrupt RX buffer can
+> >> trigger a crash in userspace.
+> >>
+> >> /Lars
+> > 
+> > 
+> > Jon, I'm not familiar with ARM. Are the buffer addresses being allocated 
+> > in a coherent region ? Can you try attached patch which adds full memory 
+> > barrier before the sync ?
+> 
+> TBH I am not sure about the buffer addresses either. The attached patch
+> did not help. Same problem persists.
+
+OK. I'm just guessing now at this stage but can you disable SMP ?
+
+We have to narrow down if this is coherency issue but you said that 
+booting without NFS and then mounting manually the share works ... So, 
+can you share logs with same debug prints in this condition in order to 
+compare ?
+
+---
+Thanks,
+Jose Miguel Abreu
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
