@@ -2,57 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA82770368
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 17:16:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7ADB770369
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 17:17:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
-	Subject:References:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	In-Reply-To:List-Owner; bh=mvF6M8uUjVbHqcSaCCVEopJekBC5ROu+f4bVTUXnvKI=; b=Cd
-	SEVVX8kDDEvVT135dknI0U6IfesTpsKvXnGxtKclvIhNV09DR4ko3HRpR58QTGtQ/IhNcwzrf8uNQ
-	i4TPuD9KTRBcNYLl+kU74jhFU38a28CRy+ifRErtofbuvmx1B+lm8aVODSvpQVSD9zCxYOhvMHHAO
-	yQBOs4yGdyXiHEDtaX6v/0EpqbLPD0xomOONyPeSlcYuw0KimoLmR/XPPJlfyB5lfo3ltipNsP67G
-	wikzJtYWKWgxfjhvcA4fbswbnnUTB7LfIhnYgMiX5d3EIf/pI5ufrxhXzUR0EtEs6SrL1Cbv23aVQ
-	+vBmRXjz5zmm0gNhspZ5tp90GgsftJpQ==;
+	List-Owner; bh=MIx4BAnD5iaCl2nJkKuHuss/aFcimseU8ZJt0FWYS6Q=; b=rYp+8Afo+L90si
+	/IKGPwUMp+MvSAvBwRUZP8hSDLxP5awB9RwM3L9Qv45i/90LGpQhnFRALod8gUFY83NpsHug/wK05
+	lh7b+Q8StPx97VvGNp10+UV4kEiQdab95Wsk26/TzEOSWQlhRkrQoSuUWJOljSdlwSJ7K0LVOMYuZ
+	Rc0a/HVuOdOUP63Fzu9IU9r//wVhrOL28t5qYiHyaSv/IhouG8YbaJH1SNMbM2BB4DzqOA01W7eAA
+	aSze/M+im+gCF7jkkqGI8bhEnBQNLbamO84xzI5rpuJV3twTukSBy/SvUDtCndKqAlrUKhcZmZS43
+	iYRBvBip0NEoxP3SX+0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpa3J-0007Ev-Te; Mon, 22 Jul 2019 15:16:38 +0000
-Received: from verein.lst.de ([213.95.11.211])
+	id 1hpa3e-0007UZ-Bk; Mon, 22 Jul 2019 15:16:58 +0000
+Received: from mail-pf1-x434.google.com ([2607:f8b0:4864:20::434])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpZz0-00048a-9V
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 15:12:12 +0000
-Received: by verein.lst.de (Postfix, from userid 2005)
- id 9595968B20; Mon, 22 Jul 2019 17:12:08 +0200 (CEST)
-From: Torsten Duwe <duwe@lst.de>
-To: Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
- Andrzej Hajda <a.hajda@samsung.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Icenowy Zheng <icenowy@aosc.io>, Sean Paul <seanpaul@chromium.org>,
- Vasily Khoruzhick <anarsoul@gmail.com>, Harald Geyer <harald@ccbib.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Thomas Gleixner <tglx@linutronix.de>
-References: <<20190722150414.9F97668B20@verein.lst.de>>
-Subject: [PATCH v3 7/7] arm64: dts: allwinner: a64: enable ANX6345 bridge on
- Teres-I
-Message-Id: <20190722151208.9595968B20@verein.lst.de>
-Date: Mon, 22 Jul 2019 17:12:08 +0200 (CEST)
+ id 1hpa1T-0005U4-Sd
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 15:14:59 +0000
+Received: by mail-pf1-x434.google.com with SMTP id u14so17541110pfn.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 22 Jul 2019 08:14:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=joelfernandes.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=i8M6AK4de9Ik8pIGK7ZSAo/fkLcx89Rz2FU4ueU7AtI=;
+ b=XQ0f5nx8fa3pklvdGG2u9IOZZJTUyDUTYVVk+sNJ3SCJPR77BhV8NbHcipLbVy1xvT
+ Slg0Se3QHTC0ZyO53T8oEMnYmpMj/IpwJ3J26/3ycCvlPIjGxwvchFbXcMJqk0o/mpqq
+ 1Yt0CuEo1ILTMuVgHTe5nTzixjn08mjGXwYpQ=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=i8M6AK4de9Ik8pIGK7ZSAo/fkLcx89Rz2FU4ueU7AtI=;
+ b=DCdTkKBFXsAbThbIBjlguZIGB3tKc0+PZ7SiJbo+cdt8xZVk9/g0tOYUXkN7MT2GiO
+ TrYn9pTbbyEqHQ6jq9hUPaeVWF5DOSWC/ATQ3DkhjnIFmw9cp5AFzi1pG5JCJV5nw1Ck
+ WpnL8GWQliQmiMef476ITFPc5uKYftFgpv+Bz8h9rkU5HhfignWS9n3vhiUq19MxiDVM
+ ioF7BeTjeOgpL/VIpFWkiWHzVjd1SKUQK9iHq5HgHSVxk+K85H+qB8vnqXu5HsnzjcYD
+ 8FXBVWnb6QaJvPrMfjZDEGkEbAIE0vAQTVW8LbieTjEdknHLCKeO93e6mY6Ogjq+7B/t
+ xXQQ==
+X-Gm-Message-State: APjAAAVQJvtwNlLJpK9RkmexW2djqKARrZ0QnXQd4zcWk0KHeCYLG3Gl
+ OfHlsol8YXtVvBpevLKM9BM=
+X-Google-Smtp-Source: APXvYqydSiyMRzj6QXFVzUWNzUL0LUUvnGotJgLD9n9VUjcgfggnl8W+/75TLlsXhUbwOLV6q6l9PQ==
+X-Received: by 2002:a63:1310:: with SMTP id i16mr71092692pgl.187.1563808481910; 
+ Mon, 22 Jul 2019 08:14:41 -0700 (PDT)
+Received: from localhost ([2620:15c:6:12:9c46:e0da:efbf:69cc])
+ by smtp.gmail.com with ESMTPSA id h1sm51944925pfg.55.2019.07.22.08.14.40
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Mon, 22 Jul 2019 08:14:40 -0700 (PDT)
+Date: Mon, 22 Jul 2019 11:14:39 -0400
+From: Joel Fernandes <joel@joelfernandes.org>
+To: "Paul E. McKenney" <paulmck@linux.ibm.com>
+Subject: Re: RFC: call_rcu_outstanding (was Re: WARNING in __mmdrop)
+Message-ID: <20190722151439.GA247639@google.com>
+References: <0000000000008dd6bb058e006938@google.com>
+ <000000000000964b0d058e1a0483@google.com>
+ <20190721044615-mutt-send-email-mst@kernel.org>
+ <20190721081933-mutt-send-email-mst@kernel.org>
+ <20190721131725.GR14271@linux.ibm.com>
+ <20190721210837.GC363@bombadil.infradead.org>
+ <20190721233113.GV14271@linux.ibm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190721233113.GV14271@linux.ibm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_081210_701260_FD007019 
-X-CRM114-Status: GOOD (  11.48  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190722_081445_729927_34977AFC 
+X-CRM114-Status: UNSURE (   8.07  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [213.95.11.211 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:434 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,95 +102,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org
-MIME-Version: 1.0
+Cc: mhocko@suse.com, "Michael S. Tsirkin" <mst@redhat.com>,
+ peterz@infradead.org, jasowang@redhat.com, ldv@altlinux.org,
+ james.bottomley@hansenpartnership.com, linux-mm@kvack.org, namit@vmware.com,
+ mingo@kernel.org, elena.reshetova@intel.com, aarcange@redhat.com,
+ davem@davemloft.net, Matthew Wilcox <willy@infradead.org>, hch@infradead.org,
+ linux-arm-kernel@lists.infradead.org, keescook@chromium.org,
+ syzkaller-bugs@googlegroups.com, jglisse@redhat.com, viro@zeniv.linux.org.uk,
+ christian@brauner.io, wad@chromium.org, linux-parisc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, luto@amacapital.net, ebiederm@xmission.com,
+ akpm@linux-foundation.org, guro@fb.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Teres-I has an anx6345 bridge connected to the RGB666 LCD output, and
-the I2C controlling signals are connected to I2C0 bus.
+[snip]
+> > Would it make sense to have call_rcu() check to see if there are many
+> > outstanding requests on this CPU and if so process them before returning?
+> > That would ensure that frequent callers usually ended up doing their
+> > own processing.
 
-Enable it in the device tree, and the display engine, video mixer
-and tcon0 as well.
+Other than what Paul already mentioned about deadlocks, I am not sure if this
+would even work for all cases since call_rcu() has to wait for a grace
+period.
 
-Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
-Signed-off-by: Torsten Duwe <duwe@suse.de>
----
- .../boot/dts/allwinner/sun50i-a64-teres-i.dts      | 45 ++++++++++++++++++++--
- 1 file changed, 41 insertions(+), 4 deletions(-)
+So, if the number of outstanding requests are higher than a certain amount,
+then you *still* have to wait for some RCU configurations for the grace
+period duration and cannot just execute the callback in-line. Did I miss
+something?
 
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts
-@@ -100,18 +100,41 @@
- 	status = "okay";
- };
- 
-+&de {
-+	status = "okay";
-+};
-+
- &ehci1 {
- 	status = "okay";
- };
- 
- 
--/* The ANX6345 eDP-bridge is on i2c0. There is no linux (mainline)
-- * driver for this chip at the moment, the bootloader initializes it.
-- * However it can be accessed with the i2c-dev driver from user space.
-- */
- &i2c0 {
- 	clock-frequency = <100000>;
- 	status = "okay";
-+
-+	anx6345: anx6345@38 {
-+		compatible = "analogix,anx6345";
-+		reg = <0x38>;
-+		reset-gpios = <&pio 3 24 GPIO_ACTIVE_LOW>; /* PD24 */
-+		dvdd25-supply = <&reg_dldo2>;
-+		dvdd12-supply = <&reg_dldo3>;
-+
-+		ports {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+
-+			port@0 {
-+				anx6345_in: endpoint {
-+					remote-endpoint = <&tcon0_out_anx6345>;
-+				};
-+			};
-+		};
-+	};
-+};
-+
-+&mixer0 {
-+	status = "okay";
- };
- 
- &mmc0 {
-@@ -319,6 +342,20 @@
- 	status = "okay";
- };
- 
-+&tcon0 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&lcd_rgb666_pins>;
-+
-+	status = "okay";
-+};
-+
-+&tcon0_out {
-+	tcon0_out_anx6345: endpoint@0 {
-+		reg = <0>;
-+		remote-endpoint = <&anx6345_in>;
-+	};
-+};
-+
- &uart0 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&uart0_pb_pins>;
+Can waiting in-line for a grace period duration be tolerated in the vhost case?
+
+thanks,
+
+ - Joel
+
 
 _______________________________________________
 linux-arm-kernel mailing list
