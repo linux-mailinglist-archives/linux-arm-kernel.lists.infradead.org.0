@@ -2,69 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 45CB67057E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 18:33:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6D32870580
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 18:33:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YCoVRfFsLNgq2xkpnHQEZDrQgUWM6sYOLf61e+e5oKc=; b=Yv4kx9ND4vdG9e
-	uuD87njp25B9x5jyEQ3Nyx+G7hCeodq7DTlWfsK3an0u/ItP9z2unDp2berfHyVi/3JZkmTVMefbB
-	pcEaYDkiIXyN2fOYV2rd4CiYOjkzSG9gUsTEyiMcT+N3eNmAUo/P2F7gk2ZmxHO41ZitPz2eSn0Cx
-	3OyY+DOc6HQgV3Kao1PbFW9ZwjCpemc05ryWpDeBzXoa0XEijt97vAjvB/ju4ju8oh7xHemDJHGvo
-	O7OxVp11QXHDMpgh6wuKL5UanbNeZDPso1yPqXSctU2wPKsgYKxXfWFszakXNRyhOkP7GkODPWb99
-	/QYVC9pvfSDJRoNKbSvw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=JuHzw/QLV6RCDIY8BlKby/rlusj5lYcCUFL6E8bNm3s=; b=JO8gBHPoDdnKkIGp3TN40OrIU
+	gfJ4U4cgCYylceDBwWSlV6Qj5AcemQm6mqF8iw7hFIhmgORCVYOyO+tTIzWeqXaVIWAW2Ki8MAZww
+	EwNOuoqHo5lVpFVc7CivWJx6LUxyR44OKkDsFMlg2MEdmyNgpBEKEJEOrG4y/x7uQjU11s8qs00xd
+	LU805kFMXqWsQPWlE2ZJQz7UhqAsrd3CUKz5N9dPTq94b+BIpe3ug6VqcLss+V95pWywkjZklfRBR
+	s789q0h1Kpmn5cXuTYFQ23iJzDJnmX75Bqqq+ymBozaYX2qvdc3Qk7rHAhbPgXQDDbqvULx24zxWW
+	Ryc6VeaXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpbFR-0004Dp-CX; Mon, 22 Jul 2019 16:33:13 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1hpbFy-0004Qv-NH; Mon, 22 Jul 2019 16:33:46 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpbEk-0004BD-Ab
+ id 1hpbEj-0004B6-Jf
  for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 16:32:33 +0000
-Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
- [10.5.11.14])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id E527460FE9; Mon, 22 Jul 2019 16:32:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1563813148;
+ bh=FvrMJHRCOLmmPwFfYQKdgXN+b/dK0PJw2qs6twTLHzc=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=Kwd7+jRbtl41CdptBBt16swkCDlOLa8Qd+W4KPs6uO9joBjCYbxFBm9+Pj5M/75qa
+ ye/fziuAkXn4jO+qFPYO5oytJFHHpQLj31CUp1OHBkgfxOTX20V65GjT1T01a8qjyR
+ 1L2dPcjhdKAIaIfKECjAHK2sRBxj52o1tPTDX+6k=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
+ version=3.4.0
+Received: from [10.204.78.89]
+ (blr-c-bdr-fw-01_globalnat_allzones-outside.qualcomm.com [103.229.19.19])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 474C430821A0;
- Mon, 22 Jul 2019 16:32:29 +0000 (UTC)
-Received: from redhat.com (ovpn-124-54.rdu2.redhat.com [10.10.124.54])
- by smtp.corp.redhat.com (Postfix) with SMTP id DE2DB5D9D3;
- Mon, 22 Jul 2019 16:32:18 +0000 (UTC)
-Date: Mon, 22 Jul 2019 12:32:17 -0400
-From: "Michael S. Tsirkin" <mst@redhat.com>
-To: "Paul E. McKenney" <paulmck@linux.ibm.com>
-Subject: Re: RFC: call_rcu_outstanding (was Re: WARNING in __mmdrop)
-Message-ID: <20190722123016-mutt-send-email-mst@kernel.org>
-References: <20190721044615-mutt-send-email-mst@kernel.org>
- <20190721081933-mutt-send-email-mst@kernel.org>
- <20190721131725.GR14271@linux.ibm.com>
- <20190721210837.GC363@bombadil.infradead.org>
- <20190721233113.GV14271@linux.ibm.com>
- <20190722151439.GA247639@google.com>
- <20190722114612-mutt-send-email-mst@kernel.org>
- <20190722155534.GG14271@linux.ibm.com>
- <20190722120011-mutt-send-email-mst@kernel.org>
- <20190722162551.GK14271@linux.ibm.com>
+ (Authenticated sender: neeraju@smtp.codeaurora.org)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id B569A60E59;
+ Mon, 22 Jul 2019 16:32:26 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1563813148;
+ bh=FvrMJHRCOLmmPwFfYQKdgXN+b/dK0PJw2qs6twTLHzc=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=Kwd7+jRbtl41CdptBBt16swkCDlOLa8Qd+W4KPs6uO9joBjCYbxFBm9+Pj5M/75qa
+ ye/fziuAkXn4jO+qFPYO5oytJFHHpQLj31CUp1OHBkgfxOTX20V65GjT1T01a8qjyR
+ 1L2dPcjhdKAIaIfKECjAHK2sRBxj52o1tPTDX+6k=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org B569A60E59
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ spf=none smtp.mailfrom=neeraju@codeaurora.org
+Subject: Re: [PATCH v2] arm64: Force SSBS on context switch
+To: Will Deacon <will@kernel.org>
+References: <20190722135309.43186-1-marc.zyngier@arm.com>
+ <8c89dbc4-50ba-6802-e582-d4fe54426261@codeaurora.org>
+ <20190722160429.wasox4nfl6t5jrew@willie-the-truck>
+From: Neeraj Upadhyay <neeraju@codeaurora.org>
+Message-ID: <10931ace-f5fb-43cc-77cb-a27f1f3704fe@codeaurora.org>
+Date: Mon, 22 Jul 2019 22:02:24 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.4.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190722162551.GK14271@linux.ibm.com>
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.47]); Mon, 22 Jul 2019 16:32:29 +0000 (UTC)
+In-Reply-To: <20190722160429.wasox4nfl6t5jrew@willie-the-truck>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_093230_554821_E66EB3E9 
-X-CRM114-Status: GOOD (  23.77  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190722_093229_803591_D10755CB 
+X-CRM114-Status: GOOD (  14.12  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.145.29.96 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,91 +100,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mhocko@suse.com, peterz@infradead.org, jasowang@redhat.com,
- ldv@altlinux.org, james.bottomley@hansenpartnership.com, linux-mm@kvack.org,
- namit@vmware.com, Joel Fernandes <joel@joelfernandes.org>, mingo@kernel.org,
- elena.reshetova@intel.com, aarcange@redhat.com, davem@davemloft.net,
- Matthew Wilcox <willy@infradead.org>, hch@infradead.org,
- linux-arm-kernel@lists.infradead.org, keescook@chromium.org,
- syzkaller-bugs@googlegroups.com, jglisse@redhat.com, viro@zeniv.linux.org.uk,
- christian@brauner.io, wad@chromium.org, linux-parisc@vger.kernel.org,
- linux-kernel@vger.kernel.org, luto@amacapital.net, ebiederm@xmission.com,
- akpm@linux-foundation.org, guro@fb.com
-Content-Type: text/plain; charset="us-ascii"
+Cc: Marc Zyngier <marc.zyngier@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Mark Rutland <mark.rutland@arm.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Anshuman Khandual <anshuman.khandual@arm.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jul 22, 2019 at 09:25:51AM -0700, Paul E. McKenney wrote:
-> On Mon, Jul 22, 2019 at 12:13:40PM -0400, Michael S. Tsirkin wrote:
-> > On Mon, Jul 22, 2019 at 08:55:34AM -0700, Paul E. McKenney wrote:
-> > > On Mon, Jul 22, 2019 at 11:47:24AM -0400, Michael S. Tsirkin wrote:
-> > > > On Mon, Jul 22, 2019 at 11:14:39AM -0400, Joel Fernandes wrote:
-> > > > > [snip]
-> > > > > > > Would it make sense to have call_rcu() check to see if there are many
-> > > > > > > outstanding requests on this CPU and if so process them before returning?
-> > > > > > > That would ensure that frequent callers usually ended up doing their
-> > > > > > > own processing.
-> > > > > 
-> > > > > Other than what Paul already mentioned about deadlocks, I am not sure if this
-> > > > > would even work for all cases since call_rcu() has to wait for a grace
-> > > > > period.
-> > > > > 
-> > > > > So, if the number of outstanding requests are higher than a certain amount,
-> > > > > then you *still* have to wait for some RCU configurations for the grace
-> > > > > period duration and cannot just execute the callback in-line. Did I miss
-> > > > > something?
-> > > > > 
-> > > > > Can waiting in-line for a grace period duration be tolerated in the vhost case?
-> > > > > 
-> > > > > thanks,
-> > > > > 
-> > > > >  - Joel
-> > > > 
-> > > > No, but it has many other ways to recover (try again later, drop a
-> > > > packet, use a slower copy to/from user).
-> > > 
-> > > True enough!  And your idea of taking recovery action based on the number
-> > > of callbacks seems like a good one while we are getting RCU's callback
-> > > scheduling improved.
-> > > 
-> > > By the way, was this a real problem that you could make happen on real
-> > > hardware?
-> > 
-> > >  If not, I would suggest just letting RCU get improved over
-> > > the next couple of releases.
-> > 
-> > So basically use kfree_rcu but add a comment saying e.g. "WARNING:
-> > in the future callers of kfree_rcu might need to check that
-> > not too many callbacks get queued. In that case, we can
-> > disable the optimization, or recover in some other way.
-> > Watch this space."
-> 
-> That sounds fair.
-> 
-> > > If it is something that you actually made happen, please let me know
-> > > what (if anything) you need from me for your callback-counting EBUSY
-> > > scheme.
-> > > 
-> > > 							Thanx, Paul
-> > 
-> > If you mean kfree_rcu causing OOM then no, it's all theoretical.
-> > If you mean synchronize_rcu stalling to the point where guest will OOPs,
-> > then yes, that's not too hard to trigger.
-> 
-> Is synchronize_rcu() being stalled by the userspace loop that is invoking
-> your ioctl that does kfree_rcu()?  Or instead by the resulting callback
-> invocation?
-> 
-> 							Thanx, Paul
+Hi,
 
-Sorry, let me clarify.  We currently have synchronize_rcu in a userspace
-loop. I have a patch replacing that with kfree_rcu.  This isn't the
-first time synchronize_rcu is stalling a VM for a long while so I didn't
-investigate further.
+On 7/22/19 9:34 PM, Will Deacon wrote:
+> On Mon, Jul 22, 2019 at 08:28:15PM +0530, Neeraj Upadhyay wrote:
+>> On 7/22/19 7:23 PM, Marc Zyngier wrote:
+>>> +static void ssbs_thread_switch(struct task_struct *next)
+>>> +{
+>>> +	if (likely(!(next->flags & PF_KTHREAD)) &&
+>>> +	    arm64_get_ssbd_state() != ARM64_SSBD_FORCE_ENABLE &&
+>>> +	    !test_tsk_thread_flag(next, TIF_SSBD)) {
+>>> +		struct pt_regs *regs = task_pt_regs(next);
+>>> +
+>>> +		if (compat_user_mode(regs))
+>>> +			set_compat_ssbs_bit(regs);
+>>> +		else if (user_mode(regs))
+>>> +			set_ssbs_bit(regs);
+>>> +	}
+>>> +}
+>>> +
+>>>    /*
+>>>     * We store our current task in sp_el0, which is clobbered by userspace. Keep a
+>>>     * shadow copy so that we can restore this upon entry from userspace.
+>>> @@ -471,6 +485,7 @@ __notrace_funcgraph struct task_struct *__switch_to(struct task_struct *prev,
+>>>    	entry_task_switch(next);
+>>>    	uao_thread_switch(next);
+>>>    	ptrauth_thread_switch(next);
+>>> +	ssbs_thread_switch(next);
+>>>    	/*
+>>>    	 * Complete any pending TLB or cache maintenance on this CPU in case
+>> Looks good to me.
+> I inverted the logic in ssbs_thread_switch() so I could add some comments.
+> Please double check:
+>
+> https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git/commit/?h=for-next/fixes&id=cbdf8a189a66001c36007bf0f5c975d0376c5c3a
+>
+> Will
+
+Looks good
+
+
+Thanks
+
+Neeraj
 
 -- 
-MST
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a
+member of the Code Aurora Forum, hosted by The Linux Foundation
+
 
 _______________________________________________
 linux-arm-kernel mailing list
