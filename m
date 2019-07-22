@@ -2,79 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A11670A2B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 21:54:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2F5970A2C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 21:54:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ekOolP6EsX7ouWPg/0weHrDGng9DZSC6f2+B89x4CCc=; b=ix8SBpj1SJhX5B
-	1fVpVgXBdoPkF9E9nvVaC27pLCyFklkHgBpMZvaXw5wlW7jr00ry9ub0TgGevQYm4faaRkhfrNE95
-	nfgaDpwhL5wtxCfw3DLJKkfqBqcpHgszU51i54/qtJSb9nE5Cf24vL3Xboqy0FcsPksUIKAqyqZui
-	7S+E1rxCX7bFMY6zNslo0oYl0t/FW5F6W2bZLwk1G9WuVeLIItn4DIYWd0KkJbwXWrIL3pW1jz9La
-	SdGVETIzREAKPVPqGitBk8XqjIDqs8x+Rg2xJ9ur0LxcV9bGT9kwU0VwCvNhZb/s6PnfqBOHDkKf6
-	b95arNx0p/6i7SVXuT0g==;
+	List-Owner; bh=NMXO8f4ZIXU3jpmzgDf0+Hbt+8hp9t99E+6iaW5IpvY=; b=iH0in3jaeGwjGQ
+	jFKVrNo8lxi7iM00n43gWhjfRbb5aiLD6Bqaj4TpUC7u3q+coR7fthDPlZdtzPt6aNDqrcIN/1tFF
+	EDg3DqZqJaFp337BmVxl1rFZtsnZtJojzFXrQyh5dKgo0Kc5JQMk5Ww2Por9yawq9+cj7kEjFBctY
+	o5rLACDKjwC3M8luOMoipfjLnmy7Yw3eBVoJYN5oydN4i3Z+v07KVcZcz/g9cbEBf6eDn7bzSDMZh
+	I45VySnJekBhgF/ikLi+cVfopEXzmzxauPO0eXsHZQDd5g/L481TVrLyq+ts4vbebjEoNy9SBENlA
+	T3k3c/i9WfhagxXzdy3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpeO2-0004O9-Ph; Mon, 22 Jul 2019 19:54:19 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1hpeOQ-0004cS-42; Mon, 22 Jul 2019 19:54:42 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpeN8-00047K-Su
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 19:53:24 +0000
-Received: by mail-wm1-x341.google.com with SMTP id v19so36474209wmj.5
+ id 1hpeNA-000484-59
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 19:53:26 +0000
+Received: by mail-wm1-x344.google.com with SMTP id s3so36341013wms.2
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 22 Jul 2019 12:53:20 -0700 (PDT)
+ Mon, 22 Jul 2019 12:53:23 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=6o0P2aAvSBeZTbjnVSOrNVsoOphy6FmgNYN1/PGj4ik=;
- b=RYJlh3p8fH+hfwgDEY+vxzFwtIPT13Vk+vYhoVp2cx4akbniuYF/sHg06H2km4eg42
- hq2jLVNwm0Q78N5rzgbt1rhHqc+YMm0aiX6pDaHypW1QkGAGK51gvoPrR9OxdFFlqEbH
- qrZUe5RmXEkabw+4WwiJzZ+T+oxYxRaLFCX7bE2eAnr7H0Ksz6ujHjFm3wzMBw0Plt4P
- y+IpyCpKKtj5hz/YF/6vohKDWY7emzFLpfqDemLIcsxumFMnBf5dALIG5tfoCWe41K4c
- xCIm3Sy3hIYGRsyxuQie/W8ZjdpRq8AlzkowsgZoi1qrf76v7L7irr8yWYK0L7Vxid90
- EpYA==
+ bh=LSlpALgO5S3R0TyDNNvgRiZnKC8+OxLqhsNNnaICjPw=;
+ b=cFBQsyJHHatx3JSkJdhvrebXeVJ31a0VKFML6K3ScUwBUFuvBQ6L6CZbdJ2/GdtU2N
+ vk4kUD4CMe45B+UAU5a7Gap5p2YnMl5BbFPB12440cHBuThu0mPoBlwJ2/ja+rayW6A5
+ Z6jrzHt29FOd/FTRMTJuRYUn/GJMl6wf3Vl4TCGeoVStK8Tx9pthnP3b+9bAF5lAKWrg
+ NvBzRlqP6pg/z2eZiPaQ3a9mby89HjX/sqnaedi5+odKcKymV4JWEJ7qbpRK9Cb4+0sV
+ yJwcZzj3F807D9V9DkKi4/MLXbUWXm/mWvk87Pg+L6ue0SPJC0XB97/xXdX5uOhwyAHM
+ ShSw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=6o0P2aAvSBeZTbjnVSOrNVsoOphy6FmgNYN1/PGj4ik=;
- b=a2QYmJotFYDimh/8gge5C84FO3+9U1kFEVSw7MUW8ZscBnheQMwGnlS6GgeVAcCBe2
- 2sV1zPYRXL+rm954ZWEpDRECK6EhJHAPHZ/6OQcBTGrAuiIAOay9f9cuv7RKiTmeiAFf
- tNRcWqhR8/MysfqehdevoXS09FpAqt6inBm8lnOPI5YO8iwD4xZLyJkZdJ3m2PbSXSc+
- kGt5EuDdkItcsWJHWdR5yFy6PZUH+P6UqOm3zOTFvQe+B5v5YmXIcslaTZh65XNifiku
- cEh1C4fZhU0+MzDT7d0SGsSWKLBxR2ATVntnIec5TFHUqULl/dbVW5soM2xgUxg3tXpa
- 9pLw==
-X-Gm-Message-State: APjAAAVvNwvmulDhAP0+CIIUQ7QKbVIsxpuUkFKtoWf/t337knOcilZ0
- v5AcyP0fO0GkK3obhB6jk8M=
-X-Google-Smtp-Source: APXvYqxAcn/w0rck6qGmO9csw5Ep2yDM/kQvtSot8bn2yHnCKiH0cCssbRkIhRUVc9mWwBVceVrXFQ==
-X-Received: by 2002:a7b:c748:: with SMTP id w8mr61730407wmk.36.1563825199664; 
- Mon, 22 Jul 2019 12:53:19 -0700 (PDT)
+ bh=LSlpALgO5S3R0TyDNNvgRiZnKC8+OxLqhsNNnaICjPw=;
+ b=DaF47j9lhY9Rt3bw+dd0QpV53hLfT+NFg9hPTbyi2AKjNTu7bvrXS2q3KsnzpNTFWY
+ AM3OfmcYs9MNLebMPdI93qptAqtxg29C0OrObicwAT5SA63LIVrtSQ1PdywG+iST6W1J
+ +mj4bwDcuK+xfnw0n6iQPmAHn81BguLw2SVzFwDHUkVHsJgS/JgFAUfHXWn3eDqLktlQ
+ l6BuPBhWmkQULX4oYLwSET55CZZez21rY8TKFUArfH6VaT453c320jHfthXKepgQSGe8
+ AZGaD/hP/0tkgfWShzz30leR/tl6uQ6iqd9Zu/osPlpiA+SzlqlislZ9+LRZvVSKTgGm
+ 5MVQ==
+X-Gm-Message-State: APjAAAX86HyNVQcOhyMXLVOiF7lG76EvjOTXd2sRwX+7YCC5LabHaJqm
+ I/KPpAJplH6dKzQj/Vpzz9k=
+X-Google-Smtp-Source: APXvYqz85kfxUOA8R7vP4BPYFKPdWETr5bWy98ysJmybNus/vONpVvl7FJFmHS4slzONzL2fYE0sUg==
+X-Received: by 2002:a7b:c947:: with SMTP id i7mr67082094wml.77.1563825202676; 
+ Mon, 22 Jul 2019 12:53:22 -0700 (PDT)
 Received: from localhost.localdomain (nat-113.starnet.cz. [178.255.168.113])
- by smtp.googlemail.com with ESMTPSA id c65sm37382975wma.44.2019.07.22.12.53.18
+ by smtp.googlemail.com with ESMTPSA id c65sm37382975wma.44.2019.07.22.12.53.21
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 22 Jul 2019 12:53:19 -0700 (PDT)
+ Mon, 22 Jul 2019 12:53:22 -0700 (PDT)
 From: Evgeny Kolesnikov <evgenyz@gmail.com>
 To: 
-Subject: [PATCH 1/5] power: reset: Add UART-based MCU poweroff DT bindings
-Date: Mon, 22 Jul 2019 21:53:01 +0200
-Message-Id: <cda16032dc5679a557230cbdb63702b105782b3b.1563822216.git.evgenyz@gmail.com>
+Subject: [PATCH 2/5] power: reset: Add UART-based MCU restart DT bindings
+Date: Mon, 22 Jul 2019 21:53:02 +0200
+Message-Id: <98b32aebe39a7b6b3ace1c2ef6f51428e8284946.1563822216.git.evgenyz@gmail.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <cover.1563822216.git.evgenyz@gmail.com>
 References: <cover.1563822216.git.evgenyz@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_125323_065241_8C8E2875 
-X-CRM114-Status: GOOD (  14.19  )
+X-CRM114-CacheID: sfid-20190722_125324_390917_FD8ABB38 
+X-CRM114-Status: GOOD (  13.93  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -110,28 +110,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This adds device tree bindings of the poweroff driver
+This adds device tree bindings of the restart driver
 for power managing micro controller units that are connected
 to a board via the UART interface.
 
 Signed-off-by: Evgeny Kolesnikov <evgenyz@gmail.com>
 ---
- .../bindings/power/reset/uart-poweroff.txt    | 38 +++++++++++++++++++
- 1 file changed, 38 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/power/reset/uart-poweroff.txt
+ .../bindings/power/reset/uart-restart.txt     | 39 +++++++++++++++++++
+ 1 file changed, 39 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/power/reset/uart-restart.txt
 
-diff --git a/Documentation/devicetree/bindings/power/reset/uart-poweroff.txt b/Documentation/devicetree/bindings/power/reset/uart-poweroff.txt
+diff --git a/Documentation/devicetree/bindings/power/reset/uart-restart.txt b/Documentation/devicetree/bindings/power/reset/uart-restart.txt
 new file mode 100644
-index 000000000000..86d036271b51
+index 000000000000..bf831d9bdff8
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/power/reset/uart-poweroff.txt
-@@ -0,0 +1,38 @@
-+* UART-based PM MCU power off driver
++++ b/Documentation/devicetree/bindings/power/reset/uart-restart.txt
+@@ -0,0 +1,39 @@
++* UART-based PM MCU restart driver
 +
 +Some devices have a microcontroller controlling the main power
 +supply. This microcontroller is connected to UART of the SoC.
-+Sending a sequence of characters tells the MCU to turn
-+the power off.
++Sending a sequence of characters tells the MCU to reset the SoC
++and/or MCU itself.
 +
 +The length of the sequence, baud rate and the timeout to process
 +the command may vary from device to device.
@@ -140,7 +140,7 @@ index 000000000000..86d036271b51
 +(Kirkwood and Orion5x SoCs) and Synology NAS devices.
 +
 +Required properties:
-+- compatible: Should be "uart-poweroff"
++- compatible: Should be "uart-restart"
 +- reg: Address and length of the register set for UART
 +- clocks: The tclk clock
 +- cmd: Array of bytes, the command to send to the MCU
@@ -152,16 +152,17 @@ index 000000000000..86d036271b51
 +- timeout: A timeout to wait for the MCU to process the command [ms],
 +           default value is 1000
 +- override: Boolean flag that indicates if the driver should
-+            prioritize itself over any existing power off driver,
++            prioritize itself over any existing restart driver,
 +            default behaviour is not to interfere
 +
 +Example:
-+	poweroff@12100 {
-+		compatible = "uart-poweroff";
++	restart@12100 {
++		compatible = "uart-restart";
 +		reg = <0x12100 0x100>;
 +		clocks = <&coreclk 0>;
 +		baud = <19200>;
-+		cmd = [fa 03 03 01 00 00 fb];
++		cmd = [fa 03 03 02 00 00 fb];
++		override;
 +		status = "okay";
 +	};
 -- 
