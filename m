@@ -2,75 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 55CDF700F6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 15:24:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6BA3470100
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 15:26:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=5QtZldl5qkyxy5waBblno4JFC1gWPFEgoUwQJzTKmig=; b=TlMUPwMT+/HHZRC3P7GYDcAD+
-	FUa6Kl4FmOfNRQikLdzNuCF5cg/Cq3rakP7dZuinAgDciuzkE6/D/4sK3UzNE9yMX0JKKkS8aIkEL
-	WCBWNLNvgzM1NiE/YfpVdsfvsf5yJQjIxEX6/63mhcxhlm+vd26BE+QiOAVEZHUx0XxYBkDRvlBAh
-	Z6P0h43MG6/QcSwaixxc1PBFOXybcAq/NbvZu7XFRURFhT9SCd6r8koPnNNAXdCvVf4NT0u/je/nt
-	hXIIptUU8s1sjhnnu3anIGpy7cyqAn8mYKi+h22BwRe5WNAkW12KNL6Hx/Z7L1wOy/WxbrSEz2xSX
-	ZKOggA/SA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DJmQ2YrmzwQifFW4PRKIYTZIPFN2X4EDr7/wLzczqAw=; b=t2NmYEvEoPR51S
+	ZovYvjU4ZtquRyN436+zfYJqIkLIP/LtvFrr/Y7BzKLua5KMDvQbJCj8Xzn4VHrnvA6Y9+LSQGaj2
+	Rt21urN1SMWg5tw2Q+Lw7MtHn1r1yON55jfSfvcHXlFhkqNex/dx58spRPvdl7EBZIdUg6Ku9l0cu
+	keBtPgfttqR4WO7+0cMuTGu3aUKqyMdcrsskrEDrq4exH9ZBoLmonBICKYuc5qsC4wwUBpyvRkuKz
+	tGn4RA9CwnXdCwGzfFxW/xFB2EVpcYkgF7cxDRX+hqDlksr5ef8vczCOZr2ib+/i7/nTR/Ag5ACZJ
+	NKlDnffc0pQ3WQODf9fg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpYIx-0000nH-D0; Mon, 22 Jul 2019 13:24:39 +0000
-Received: from kadath.azazel.net ([2001:8b0:135f:bcd1:e2cb:4eff:fedf:e608])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpYDq-0005h9-Mc
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 13:19:24 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=azazel.net; 
- s=20190108;
- h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=BJZaPv+ZzOIR8B7tw6DrhELBhHNpgCujcs9EdlLvffI=; b=HCEqoqhwpCNV9mX4vPh3vjc+aa
- o0AmZ8zyOinCSarqcysgs9v+lhMgPR6RX8NrzyDcKekfw6OHHA/cW6IkoaBuJfj8jCrSaPAuM1jvS
- nmdiEG9FGEMXKMVSTRclxkKl5xVy7qXnofRqccb/QJgrAGmiBw1TwYLNHSVzucbDPWckjj9M47Dy+
- erPO4HnEnZg2g+/ucJinCyGpDZSm30IXzn8XVZmNCfhfJey0UcwT8iNNsEsvQixeXnWODNC5jr4zf
- dDN9Adf9fQeJycJ9CIFFLyC+DGrBQ4l7LwCuucpeFQa8T4E4ejR0DGJyHjRM8gcQhWzodJLnAzO4Q
- q+nplM8A==;
-Received: from pnakotus.dreamlands ([192.168.96.5] helo=azazel.net)
- by kadath.azazel.net with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.92) (envelope-from <jeremy@azazel.net>)
- id 1hpYDe-0007Bw-TS; Mon, 22 Jul 2019 14:19:10 +0100
-Date: Mon, 22 Jul 2019 14:19:11 +0100
-From: Jeremy Sowden <jeremy@azazel.net>
-To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-Subject: Re: [PATCH v2] staging: media: sunxi: Add bool cast to value
-Message-ID: <20190722131910.GC2695@azazel.net>
-References: <20190722060651.6538-1-nishkadg.linux@gmail.com>
- <20190722111225.GA2695@azazel.net>
- <20190722122438.GA1908@aptenodytes>
+	id 1hpYKi-0002Nb-UJ; Mon, 22 Jul 2019 13:26:29 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hpYKR-0002Ml-AQ
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 13:26:14 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C7F63344;
+ Mon, 22 Jul 2019 06:26:10 -0700 (PDT)
+Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 36EC83F71A; Mon, 22 Jul 2019 06:26:09 -0700 (PDT)
+Subject: Re: [PATCH 1/3] printk: Allow architecture-specific timestamping
+ function
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+References: <20190722103330.255312-1-marc.zyngier@arm.com>
+ <20190722103330.255312-2-marc.zyngier@arm.com>
+ <20190722112543.5quvqgerpyvfgbxq@pathway.suse.cz>
+ <493e2c0b-9536-ce6d-b59e-d169693085da@arm.com>
+ <20190722130311.GD1330@shell.armlinux.org.uk>
+From: Marc Zyngier <marc.zyngier@arm.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
+ 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
+ Z46HaNmN2hZS/oJ69c1DI5Rcww==
+Organization: ARM Ltd
+Message-ID: <f1633896-55ef-e1e0-649d-19adec260b39@arm.com>
+Date: Mon, 22 Jul 2019 14:26:07 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-In-Reply-To: <20190722122438.GA1908@aptenodytes>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-SA-Exim-Connect-IP: 192.168.96.5
-X-SA-Exim-Mail-From: jeremy@azazel.net
-X-SA-Exim-Scanned: No (on kadath.azazel.net); SAEximRunCond expanded to false
+In-Reply-To: <20190722130311.GD1330@shell.armlinux.org.uk>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_061922_892312_98B505C9 
-X-CRM114-Status: GOOD (  30.67  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190722_062611_451433_F77ECD73 
+X-CRM114-Status: GOOD (  22.08  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,153 +111,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, maxime.ripard@bootlin.com,
- gregkh@linuxfoundation.org, wens@csie.org,
- Nishka Dasgupta <nishkadg.linux@gmail.com>, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============6604526433980559048=="
+Cc: Mark Rutland <mark.rutland@arm.com>, Petr Mladek <pmladek@suse.com>,
+ Pavel Tatashin <pasha.tatashin@soleen.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, Steven Rostedt <rostedt@goodmis.org>,
+ Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
+ John Stultz <john.stultz@linaro.org>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 22/07/2019 14:03, Russell King - ARM Linux admin wrote:
+> On Mon, Jul 22, 2019 at 01:47:57PM +0100, Marc Zyngier wrote:
+>> On 22/07/2019 12:25, Petr Mladek wrote:
+>>> On Mon 2019-07-22 11:33:28, Marc Zyngier wrote:
+>>>> printk currently relies on local_clock to time-stamp the kernel
+>>>> messages. In order to allow the timestamping (and only that)
+>>>> to be overridden by architecture-specific code, let's declare
+>>>> a new timestamp_clock() function, which gets used by the printk
+>>>> code. Architectures willing to make use of this facility will
+>>>> have to define CONFIG_ARCH_HAS_TIMESTAMP_CLOCK.
+>>>>
+>>>> The default is of course to return local_clock(), so that the
+>>>> existing behaviour stays unchanged.
+>>>>
+>>>> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
+>>>> ---
+>>>>  include/linux/sched/clock.h | 13 +++++++++++++
+>>>>  kernel/printk/printk.c      |  4 ++--
+>>>>  2 files changed, 15 insertions(+), 2 deletions(-)
+>>>>
+>>>> diff --git a/include/linux/sched/clock.h b/include/linux/sched/clock.h
+>>>> index 867d588314e0..3cf4b2a8ce18 100644
+>>>> --- a/include/linux/sched/clock.h
+>>>> +++ b/include/linux/sched/clock.h
+>>>> @@ -98,4 +98,17 @@ static inline void enable_sched_clock_irqtime(void) {}
+>>>>  static inline void disable_sched_clock_irqtime(void) {}
+>>>>  #endif
+>>>>  
+>>>> +#ifdef CONFIG_ARCH_HAS_TIMESTAMP_CLOCK
+>>>> +/* Special need architectures can provide their timestamping function */
+>>>
+>>> The commit message and the above comment should be more specific
+>>> about what are the special needs.
+>>>
+>>> It must be clear how and why the clock differs from the other
+>>> clocks, especially from lock_clock().
+>>
+>> Fair enough. How about something along the lines of:
+>>
+>> "An architecture can override the timestamp clock (which defaults to
+>> local_clock) if local_clock is not significant early enough (sched_clock
+>> being available too late)."
+> 
+> We have:
+> 1) the standard clocksource
+> 2) the sched_clock, which is _supposed_ to be initialised early
+> 3) persistent_clock
+> 
+> Do we really need another clock?
+> 
+> Why not initialise sched_clock() early (as in, before sched_init(),
+> which is where the first sched_clock() read occurs) ?
 
---===============6604526433980559048==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="KDt/GgjP6HVcx58l"
-Content-Disposition: inline
+Because, as you hint at below, that's not generally possible if you need
+to identify the system early enough to discover that you need to apply
+an erratum workaround. If you init sched_clock() before you know what
+you're running on, you may end-up with a clock that can jump in either
+direction.
 
+And while the first call to sched_clock happens pretty late, the
+timestamping code uses it pretty early, via the local_clock() indirection.
 
---KDt/GgjP6HVcx58l
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+> 
+> We've already been around the argument that sched_clock() apparently
+> can't be initialised early enough (which is the argument I had in reply
+> to the sched_clock() situation on ARM32) then how does inventing
+> timestamp_clock() solve this problem?
 
-On 2019-07-22, at 14:24:38 +0200, Paul Kocialkowski wrote:
-> On Mon 22 Jul 19, 12:12, Jeremy Sowden wrote:
-> > On 2019-07-22, at 11:36:51 +0530, Nishka Dasgupta wrote:
-> > > Typecast as bool the return value of cedrus_find_format in
-> > > cedrus_check_format as the return value of cedrus_check_format is
-> > > always treated like a boolean value.
-> > >
-> > > Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
-> > > ---
-> > > Changes in v2:
-> > > - Add !! to the returned pointer to ensure that the return value
-> > >   is always either true or false, and never a non-zero value other
-> > >   than true.
-> > >
-> > >  drivers/staging/media/sunxi/cedrus/cedrus_video.c | 2 +-
-> > >  1 file changed, 1 insertion(+), 1 deletion(-)
-> > >
-> > > diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_video.c b/drivers/staging/media/sunxi/cedrus/cedrus_video.c
-> > > index e2b530b1a956..b731745f21f8 100644
-> > > --- a/drivers/staging/media/sunxi/cedrus/cedrus_video.c
-> > > +++ b/drivers/staging/media/sunxi/cedrus/cedrus_video.c
-> > > @@ -86,7 +86,7 @@ static struct cedrus_format *cedrus_find_format(u32 pixelformat, u32 directions,
-> > >  static bool cedrus_check_format(u32 pixelformat, u32 directions,
-> > >  				unsigned int capabilities)
-> > >  {
-> > > -	return cedrus_find_format(pixelformat, directions, capabilities);
-> > > +	return !!(bool)cedrus_find_format(pixelformat, directions, capabilities);
-> > >  }
-> >
-> > I think the original was fine.  The return value of
-> > cedrus_find_format will be automatically converted to bool before
-> > being returned from cedrus_check_format since that is the
-> > return-type of the function, and the result of converting any
-> > non-zero value to bool is 1.
->
-> Okay I was a bit unsure about that and wanted to play it on the safe
-> side without really looking it up, but that gave me the occasion to
-> verify.
->
-> From what I could find (from my GNU system's
-> /usr/include/unistring/stdbool.h):
->
->    Limitations of this substitute, when used in a C89 environment:
->
->        - In C99, casts and automatic conversions to '_Bool' or 'bool'
->          are performed in such a way that every nonzero value gets
->          converted to 'true', and zero gets converted to 'false'.
->          This doesn't work with this substitute.  With this
->          substitute, only the values 0 and 1 give the expected result
->          when converted to _Bool' or 'bool'.
->
-> So since the kernel is built for C89 (unless I'm mistaken), I don't
-> think the compiler provides any guarantee about bool values being
-> converted to 1 when they are non-zero.
+It allows the kernel message to be timestamped with a potentially
+unreliable clock without breaking the promise that sched_clock() will
+not go backward or otherwise behave erratically.
 
-Ick.  I checked the C99 standard and assumed that GCC would use the same
-semantics.  I've just tested with "gcc-8 -std=gnu89" and it appears to
-do the right thing:
+> Wouldn't timestamp_clock() also suffer from the very same "we can't
+> initialise it early enough" issue, and it'll just be setup along side
+> clocksources, just like sched_clock() has become?
 
-  [azazel@ulthar:/space/azazel/tmp] $ cat test.c
-  #include <stdbool.h>
-  #include <stdio.h>
+At least on arm64, the architected counter is always available, and
+doesn't require any setup (at least none by the time the kernel is booted).
 
-  int
-  main (void)
-    {
-    char *p = "test";
-    bool b = p;
+> I fail to see what adding yet another architecture specific clock
+> implementation buys, apart from yet more complexity.
+> 
 
-    fprintf (stderr, "%p, %d\n", (void *) p, b);
+It buys us early timestamping without forcing us to deal with an
+unreliable. The additional complexity looks pretty minimal to me, and no
+other architecture is forced to use it.
 
-    return 0;
-    }
-  [azazel@ulthar:/space/azazel/tmp] $ gcc-8 -O2 -std=gnu89 -Wall -Wextra
-  test.c -o test
-  [azazel@ulthar:/space/azazel/tmp] $ ./test
-  0x55d984e0e004, 1
-
-> As a result, I think it's best to be careful.
-
-Fair enough.
-
-> However, I'm not sure I really see what cocinelle was unhappy about.
-> You mentionned single-line functions, but I don't see how that can be
-> a problem.
->
-> So in the end, I think we should keep the !! and drop the (bool) cast
-> if there's no particular warning about it.
->
-> What do you think?
-
-Seems sensible.
-
-J.
-
---KDt/GgjP6HVcx58l
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEZ8d+2N/NBLDbUxIF0Z7UzfnX9sMFAl01t8oACgkQ0Z7UzfnX
-9sM6EBAAkkQYvSH24qMbABICcjH8XzSNpn+DAmj5ODDs0l9jFd+hNMLROg3zffgx
-nS8+BuuBmBbI0Ds5XOWj9fbRcCB0J1FxmjotL3msjVORITaHs/IiEllgiZw0ab0v
-Skbzu3XG6dcCRtKiHBR9iGRLuuZfubS9+19qAmKrMARtl07mtMGyvEwkJbRybgk1
-EAmGKwKx6aY8XHnd10IXXV5JpYxi+MEja98yrIEwrAmFcfvPZtF2JVbU3liekq8r
-NJ8eGDpchmICX3oqi7zjewPbu5zG7zOw/pAg5lciF/nGU6Y9r+sNBcbA+dFkIPfa
-Zd8tfvHn//bHn9yUTLpQOW1bm6QgIP7//dSFHzYV0C+6N2esOR6L1xpTh7+uH1sT
-lc0MsZ3qrdk50uCBNXSMgb5eYzUUW18FneKf7uBBlXDXOU1PF3LpCExukftddEGZ
-lCZXTvtCSKpduxc8hNZ83F0eySr+mZ/5/lv7Tm5gD6irapyLxLfYFfcWkVp2Jqoq
-X0IqbyPV+UKL8i4yUz6S1qje5cZs4OUlCnAX6r/65syBAlYt4R5pj0DFiw5avicd
-MMGrj39m5EKetc+7g0aVs8C60hmYfx0qXQkwrw4lz8ca68mEgDJcYYHlfTx8lU5x
-yOL1dsoVDw18MAB9T6pBg/OYIzKsBSj9Nl60M+u5qo+QuIooh9Q=
-=NPHQ
------END PGP SIGNATURE-----
-
---KDt/GgjP6HVcx58l--
-
-
---===============6604526433980559048==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+	M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6604526433980559048==--
-
