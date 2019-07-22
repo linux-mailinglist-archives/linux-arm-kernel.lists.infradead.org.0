@@ -2,88 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2990B701AA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 15:49:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 480B6701C1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 15:53:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5sfKG2uLKZ9Yb2rpw2vttCzT1Nu8Gc7jmIoz7TDP2HE=; b=XxO6WxDmP9i+S3
-	o1pGPvgPV/aH6K6eJEtRA7b9BTaxd63XTtpwlvJHjv8td3jHkmKKs4xx5iCk+P2BmmChDBdEUaRYC
-	Liz40I+ehN7/Xe5HVVmW/x77B6o2p74faJjCqHiYy0yW9W5LH8tOocok9UtoB+fU02+WZG+tNNs4X
-	DZ0zxQOAtIbBhdzOO/d4eWm3ObjbVGsOm9/AMx3hoWvQY9TV5pmB0eONnBB12FvIfvcaAPdrb1U3/
-	7V07d4YzNKZuufUTkyNPLYsl+OsiWH6DKjSVOz1SS5JzU9UQW2914c1iyNY3VVsk/O10d23jBDqlX
-	I0UIaFmH5ZfhJLhACz1Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=rze5OiX2C+mxpI7D0tN0bQU0jBqgFqkQThsr5Xbz/yY=; b=Q5g3t2ZQCPi8l4
+	a6DRqBBrVR47y0zfR0rm54044jMx2xOubnFqQvGdQ/I7Z/z4vnOIobtOVZlYxghpaC8ljdulwNKah
+	gTe8G1DJSQhlGHG3NAkXWLD/hUohWjgLPb7OZZfTSl1rBzbmDoOszCPUfIxAx/TS47pQzgUPsBX+a
+	itM0As67F46qYmnTnt7/7v1SQYeRB52L0V+wp/myU17Wsze0Iu2puLVqyKcEQHSpFEDDQd7m57zMx
+	1S5dCJQ0jfZ2NSqaTeYLbNgY6F5/9f/erj2a3vE4CtB2Iz7vbXCsDh4LC5S4FiAVq0PKwpr6Zn/Po
+	5jOy6UqWnF5IMCtnKeFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpYgf-0005i3-SS; Mon, 22 Jul 2019 13:49:09 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1hpYky-0000Je-Ja; Mon, 22 Jul 2019 13:53:36 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpYcU-0001YG-6a
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 13:44:53 +0000
-Received: by mail-wm1-x344.google.com with SMTP id 207so35256026wma.1
+ id 1hpYkh-0000IT-6u
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 13:53:22 +0000
+Received: by mail-wr1-x441.google.com with SMTP id f9so39483436wre.12
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 22 Jul 2019 06:44:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=jWheGXALa3QU6XJ4okjj1TMSdfEv0wcU+XMDpAi/P/4=;
- b=rVd3UGYLpnpiE7d7YNlI3ET5cbhQAhoqJOLIqM567rXb8R0JuSNY+GZ12K9dSNKFZ4
- dl5s5Jx5CpB5SVRzWyOMoTxhRuQ486dDy+IOe5n7GRP60Z/QxdFNnFTZq+X2qWesd+tQ
- 68xC09YKoAIjDOa30G0pN5Wdl1aYP05UC/xJr1YOuir73Ug3MH+21e4Wuc8zXvn+LPoN
- MPGKQJSOoUPFhnonqd1vSWZtmNxpr0QdnqfZT/PRoV9YpazFmIObAyyTcj1GgdAHJdQM
- gmp068N6OqASdUbiM9rb03eyh0yElND1TFAVSEnQXvniCrOLzl+Y0bTbvr7Jjx6wbIoz
- HI6w==
+ Mon, 22 Jul 2019 06:53:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=4A+1IXOg0AUN44xOjU2IRxHAI7jKAe/Dsm+NufqoDwo=;
+ b=h5xyyPGSNmBklwByUO/gVRTUPrqta7oP6slCL4V466Dk09LzZfaKpE38pxS8G5slhy
+ kCEcqJytkJuTpeJ0ZkCmKFqCNrbEfC0lUXLQOENIXbxc4dFY4fY6/OIOFSzG/uq8Fa4v
+ cVik26Hf7EfFjIME2gwYiHyFu/Ime6pzaPmIvGIuziJy56HmOJs6GrwoylHcUJ0SJiP+
+ N4Zfu55ZuSuimc7A33dUu6HxUibxWLmeA1uTeG0hn89lx1ChoDQ/jvmIItGHJVSZKik4
+ N3+eMf1E31OR4eP4wCFFWfiNFLlHmEP5mrxCgkR2Zr+NUHrxM7UvU9ht1gVrcWcerZak
+ 4A1w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=jWheGXALa3QU6XJ4okjj1TMSdfEv0wcU+XMDpAi/P/4=;
- b=PT5W+nh6OqKZsNwZw7GVzVm66dZ74yLBxuxXf6LB4vsqXRSS4t63i5R93we+qIsVC6
- AahaIkH6jM8U293C/ijhEgfuc3QpeVzmFAOLT1fFXjUXz0MJxE0m3+Vb/fNdTfDB0YmD
- NEBru3UQjG0csyBcjbuSfAbpt9qDRH5VT1mlrVW+XaEUscSUB/8rKwJTAkMhnPJdgX8p
- EweDHn/TV21JhZn/nPTUZR3W9DyAOVQ8RILmXEZKjrmC4aqk8PXALdoKM2ltPXqjxJ+A
- V7rfMO2+n0hG6FGPUwl7xPPXw4hUdv6KCRsPmLfBnXMwKuXqX09g/cQ0R39u6jSCgyU+
- BRKQ==
-X-Gm-Message-State: APjAAAVheM7f9YSMc2tN2Y0XxFqJFfFQaTrRHhSxGDVaLj9eSbPRjQ5R
- WUJA//kj7/k3G+qYSfvD+iM=
-X-Google-Smtp-Source: APXvYqxCpsWqQ4zm4VmmUJy0WYCbbplgVH9qEJJDDHs04LIzglwRSQkeaNmUKXyrghagMF9BDt0qtA==
-X-Received: by 2002:a1c:b604:: with SMTP id g4mr65271331wmf.111.1563803088790; 
- Mon, 22 Jul 2019 06:44:48 -0700 (PDT)
-Received: from localhost.localdomain
- (amontpellier-652-1-281-69.w109-210.abo.wanadoo.fr. [109.210.96.69])
- by smtp.gmail.com with ESMTPSA id p6sm40652484wrq.97.2019.07.22.06.44.47
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=4A+1IXOg0AUN44xOjU2IRxHAI7jKAe/Dsm+NufqoDwo=;
+ b=mhFEGd+K1ioPhk9wwu9G6rolqTeEhvTWnIbkS5UyT/rb7emrK4gvAbaXea6n1htUef
+ dqwf0kGPOlp5FBIrU/N9BbY6y9Pz8b2qZuyRh6KH0nFFGL4eaGU2K5TxEk+yTCbnVUk7
+ YLFg8TvKmqNEvDEBQHh5p9LADwOuLbiQNXdBIGA8vRYUerIaNb2nZ+c/JyrRMBhZphOi
+ S9pINyT2L1nG153eiDXkJblyUkUgx9wYXhG0hUcxwTZlvOsjl47/SvJKu5aAHpqLfYbz
+ Q++BKtLJIjWTmpYMFuUdhUsRqXhEld1AoFqzRi+XBfJ5n0SWVaWcMXBc/EFaziQKrJtl
+ 5scA==
+X-Gm-Message-State: APjAAAVNosu1FVxhm3iUr7u4jw5ZirIma2gsLKmw/d1zHSrSTJlD/1hz
+ nbS/r4iHtRrjksspRieQ2vqugg==
+X-Google-Smtp-Source: APXvYqywPiYMC6nufG0pkn9341YSKK0eKjFT1pvuf89bXzyjMLOex2BVhSg8UoynoCTGmuXI4lFN6w==
+X-Received: by 2002:a5d:6650:: with SMTP id f16mr77388789wrw.89.1563803597410; 
+ Mon, 22 Jul 2019 06:53:17 -0700 (PDT)
+Received: from lophozonia.localdomain
+ (cpc92304-cmbg19-2-0-cust820.5-4.cable.virginm.net. [82.24.199.53])
+ by smtp.gmail.com with ESMTPSA id s10sm29821771wrt.49.2019.07.22.06.53.16
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 22 Jul 2019 06:44:48 -0700 (PDT)
-From: Bartosz Golaszewski <brgl@bgdev.pl>
-To: Sekhar Nori <nsekhar@ti.com>, Kevin Hilman <khilman@kernel.org>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- David Lechner <david@lechnology.com>,
- Linus Walleij <linus.walleij@linaro.org>
-Subject: [PATCH v2 9/9] fbdev: da8xx: use resource management for dma
-Date: Mon, 22 Jul 2019 15:44:23 +0200
-Message-Id: <20190722134423.26555-10-brgl@bgdev.pl>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190722134423.26555-1-brgl@bgdev.pl>
-References: <20190722134423.26555-1-brgl@bgdev.pl>
+ Mon, 22 Jul 2019 06:53:16 -0700 (PDT)
+From: Jean-Philippe Brucker <jean-philippe@linaro.org>
+To: iommu@lists.linux-foundation.org, linux-arm-kernel@lists.infradead.org,
+ virtualization@lists.linux-foundation.org
+Subject: [PATCH] MAINTAINERS: Update my email address
+Date: Mon, 22 Jul 2019 14:44:40 +0100
+Message-Id: <20190722134438.31003-1-jean-philippe@linaro.org>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_064450_486860_43BA7685 
-X-CRM114-Status: GOOD (  12.74  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190722_065319_263409_E3871A29 
+X-CRM114-Status: UNSURE (   9.89  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -97,106 +97,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- linux-fbdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: virtio-dev@lists.oasis-open.org, lorenzo.pieralisi@arm.com, mst@redhat.com,
+ linux-pci@vger.kernel.org, joro@8bytes.org, maz@kernel.org, will@kernel.org,
+ kvmarm@lists.cs.columbia.edu
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+Update MAINTAINERS and .mailmap with my @linaro.org address, since I
+don't have access to my @arm.com address anymore.
 
-Use managed variants of dma alloc functions in the da8xx fbdev driver.
-
-Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
-Acked-by: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
+Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
 ---
- drivers/video/fbdev/da8xx-fb.c | 32 ++++++++++----------------------
- 1 file changed, 10 insertions(+), 22 deletions(-)
+ .mailmap    | 1 +
+ MAINTAINERS | 2 +-
+ 2 files changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/video/fbdev/da8xx-fb.c b/drivers/video/fbdev/da8xx-fb.c
-index d14ea6f91371..2d3dcc52fcf3 100644
---- a/drivers/video/fbdev/da8xx-fb.c
-+++ b/drivers/video/fbdev/da8xx-fb.c
-@@ -1087,10 +1087,6 @@ static int fb_remove(struct platform_device *dev)
+diff --git a/.mailmap b/.mailmap
+index 0fef932de3db..8ce554b9c9f1 100644
+--- a/.mailmap
++++ b/.mailmap
+@@ -98,6 +98,7 @@ Jason Gunthorpe <jgg@ziepe.ca> <jgunthorpe@obsidianresearch.com>
+ Javi Merino <javi.merino@kernel.org> <javi.merino@arm.com>
+ <javier@osg.samsung.com> <javier.martinez@collabora.co.uk>
+ Jean Tourrilhes <jt@hpl.hp.com>
++<jean-philippe@linaro.org> <jean-philippe.brucker@arm.com>
+ Jeff Garzik <jgarzik@pretzel.yyz.us>
+ Jeff Layton <jlayton@kernel.org> <jlayton@redhat.com>
+ Jeff Layton <jlayton@kernel.org> <jlayton@poochiereds.net>
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 783569e3c4b4..bded78c84701 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -17123,7 +17123,7 @@ F:	drivers/virtio/virtio_input.c
+ F:	include/uapi/linux/virtio_input.h
  
- 	unregister_framebuffer(info);
- 	fb_dealloc_cmap(&info->cmap);
--	dma_free_coherent(par->dev, PALETTE_SIZE, par->v_palette_base,
--			  par->p_palette_base);
--	dma_free_coherent(par->dev, par->vram_size, par->vram_virt,
--			  par->vram_phys);
- 	pm_runtime_put_sync(&dev->dev);
- 	pm_runtime_disable(&dev->dev);
- 	framebuffer_release(info);
-@@ -1427,10 +1423,10 @@ static int fb_probe(struct platform_device *device)
- 	par->vram_size = roundup(par->vram_size/8, ulcm);
- 	par->vram_size = par->vram_size * LCD_NUM_BUFFERS;
- 
--	par->vram_virt = dma_alloc_coherent(par->dev,
--					    par->vram_size,
--					    &par->vram_phys,
--					    GFP_KERNEL | GFP_DMA);
-+	par->vram_virt = dmam_alloc_coherent(par->dev,
-+					     par->vram_size,
-+					     &par->vram_phys,
-+					     GFP_KERNEL | GFP_DMA);
- 	if (!par->vram_virt) {
- 		dev_err(&device->dev,
- 			"GLCD: kmalloc for frame buffer failed\n");
-@@ -1448,20 +1444,20 @@ static int fb_probe(struct platform_device *device)
- 		da8xx_fb_fix.line_length - 1;
- 
- 	/* allocate palette buffer */
--	par->v_palette_base = dma_alloc_coherent(par->dev, PALETTE_SIZE,
--						 &par->p_palette_base,
--						 GFP_KERNEL | GFP_DMA);
-+	par->v_palette_base = dmam_alloc_coherent(par->dev, PALETTE_SIZE,
-+						  &par->p_palette_base,
-+						  GFP_KERNEL | GFP_DMA);
- 	if (!par->v_palette_base) {
- 		dev_err(&device->dev,
- 			"GLCD: kmalloc for palette buffer failed\n");
- 		ret = -EINVAL;
--		goto err_release_fb_mem;
-+		goto err_release_fb;
- 	}
- 
- 	par->irq = platform_get_irq(device, 0);
- 	if (par->irq < 0) {
- 		ret = -ENOENT;
--		goto err_release_pl_mem;
-+		goto err_release_fb;
- 	}
- 
- 	da8xx_fb_var.grayscale =
-@@ -1479,7 +1475,7 @@ static int fb_probe(struct platform_device *device)
- 
- 	ret = fb_alloc_cmap(&da8xx_fb_info->cmap, PALETTE_SIZE, 0);
- 	if (ret)
--		goto err_release_pl_mem;
-+		goto err_release_fb;
- 	da8xx_fb_info->cmap.len = par->palette_sz;
- 
- 	/* initialize var_screeninfo */
-@@ -1533,14 +1529,6 @@ static int fb_probe(struct platform_device *device)
- err_dealloc_cmap:
- 	fb_dealloc_cmap(&da8xx_fb_info->cmap);
- 
--err_release_pl_mem:
--	dma_free_coherent(par->dev, PALETTE_SIZE, par->v_palette_base,
--			  par->p_palette_base);
--
--err_release_fb_mem:
--	dma_free_coherent(par->dev, par->vram_size, par->vram_virt,
--		          par->vram_phys);
--
- err_release_fb:
- 	framebuffer_release(da8xx_fb_info);
- 
+ VIRTIO IOMMU DRIVER
+-M:	Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
++M:	Jean-Philippe Brucker <jean-philippe@linaro.org>
+ L:	virtualization@lists.linux-foundation.org
+ S:	Maintained
+ F:	drivers/iommu/virtio-iommu.c
 -- 
-2.21.0
+2.22.0
 
 
 _______________________________________________
