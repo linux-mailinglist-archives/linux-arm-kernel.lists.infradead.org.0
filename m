@@ -2,53 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0E2A70B7D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 23:33:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC99E70B88
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 23:35:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:From:To:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IN60vWue+1NFsmGyhFTk2yiz9cix24lpEdKMtup+U1A=; b=pUvUUb2ahFHM18
-	JaWVTsg+slFqdeHuOj07x8VQG+EqadJ80ZJTeYjcVpg8bLaErFgMqGLp8MMLhn6rm6NOmvMZZZUzO
-	tqZ6jkolq7vsK/Cf5udnY6L64qh4Nw4l6w11izPmbB1sdL5qZUVwZu5LLo9KL2yu38agxgvyN2D+e
-	g9OGBFm0lmJ+FaiQDmBu4a+156U6uzQ7CLBNxT7e5KMo+UHkxUmhrLqcsI52Bio5zVIDFXeU13aZm
-	70XWqyDzc3oHN/2ichbO5iaMyzTWXW0inHL8TUkMNvWmI+Azdjh9lAYjht3LS1o1PmezvttN38OlF
-	ZqNvMPvEU+/pZdGXRKew==;
+	List-Owner; bh=V8KFd0N4tcq/f014lZg3Hdj46JxX9b5V6QTYEpq4HEc=; b=M3JfEsp4PbUsOW
+	/zfd5DjyinW4iVDFoptkbOMdiOG8cSsIn4ZkJ4d9lLx40lUGWMkeWXy8JwrlrxmC0k/lF30PDjaxq
+	H+MuLNM5J9ngwLo5zu3znlJZU6LtGxrvw9O28NlDM0AfT3G8ztDw1l2TFVuJHgwzdcsQQuxtrBATA
+	Za4Z6Mco4CKeJwmQH1wHtYAu3TzgMUtToIf6ohZIma0n8ZpikDUNX+uZ9isdiASwtUkTMC2TFZ52F
+	+GJJj8DEpbsrfSMYSRQabwcilLjCxqHsCPro6BtnwfVQ7jY5wO4bEQpdYNiukwSZbLAkFB7zlScML
+	1Sytr8NzjWUa7f3XM/GA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpfwC-0005gq-SL; Mon, 22 Jul 2019 21:33:40 +0000
+	id 1hpfyA-0007Pw-Uz; Mon, 22 Jul 2019 21:35:43 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpfvv-0005gV-Th; Mon, 22 Jul 2019 21:33:25 +0000
+ id 1hpfxn-0007PI-UX; Mon, 22 Jul 2019 21:35:21 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 874B121900;
- Mon, 22 Jul 2019 21:33:23 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 910D321900;
+ Mon, 22 Jul 2019 21:35:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563831203;
- bh=LRjTFf0P+1cadmeWrN32PXo23OKVXtFRMmj+KLXh4PU=;
+ s=default; t=1563831319;
+ bh=DvqIagaTKeWXpuKwat8d9RWOAli9dQa8fn58FFzhj2I=;
  h=In-Reply-To:References:Subject:To:Cc:From:Date:From;
- b=Et+11J5o7dtf0jIwThtwUHyzBvrvzsgbckUvSpM1TivPdOHG3Py9lLgsL5BCiVzLH
- g5uHZKRpqKKBAB1L6J5wDwqciKXeX76imwWZCx4TVRhMsPKnDQxu5mZANuE7Lfxt7k
- +HbfBWavPbbOg/gZmWKFtWATaQFHuk5JI8+AtwXk=
+ b=GAGVTPyolP5awe7fywjEGXSa+BDWuSSTnWBWAsVtU+GauWTmbacpuxNHMdreyY0QN
+ EzQzfqEkaMrycQ3qhWZuX9MbqqicKiRXSufriuxCYMpk8r1iiXujFYdWxPoyQ9eL4f
+ 9wYmo7SCdgmoiQUleXveC1Ek57aXrsPWQ/3sK3bs=
 MIME-Version: 1.0
-In-Reply-To: <1561706554-27770-1-git-send-email-weiyi.lu@mediatek.com>
-References: <1561706554-27770-1-git-send-email-weiyi.lu@mediatek.com>
-Subject: Re: [PATCH v3] clk: mediatek: mt8183: Register 13MHz clock earlier
- for clocksource
-To: Matthias Brugger <matthias.bgg@gmail.com>,
- Nicolas Boichat <drinkcat@chromium.org>, Weiyi Lu <weiyi.lu@mediatek.com>
+In-Reply-To: <20190627222220.89175-1-nhuck@google.com>
+References: <20190627222220.89175-1-nhuck@google.com>
+Subject: Re: [PATCH] clk: rockchip: Fix -Wunused-const-variable
+To: Nathan Huckleberry <nhuck@google.com>, andy.yan@rock-chips.com,
+ heiko@sntech.de, mturquette@baylibre.com, zhangqing@rock-chips.com
 From: Stephen Boyd <sboyd@kernel.org>
 User-Agent: alot/0.8.1
-Date: Mon, 22 Jul 2019 14:33:22 -0700
-Message-Id: <20190722213323.874B121900@mail.kernel.org>
+Date: Mon, 22 Jul 2019 14:35:18 -0700
+Message-Id: <20190722213519.910D321900@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_143323_970598_24F06E5C 
-X-CRM114-Status: UNSURE (   6.67  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190722_143520_456602_2FD8AD4B 
+X-CRM114-Status: GOOD (  10.18  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,27 +75,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dehui Sun <dehui.sun@mediatek.com>, James Liao <jamesjj.liao@mediatek.com>,
- Weiyi Lu <weiyi.lu@mediatek.com>, srv_heupstream@mediatek.com,
- linux-kernel@vger.kernel.org, stable@vger.kernel.org,
- Fan Chen <fan.chen@mediatek.com>, linux-mediatek@lists.infradead.org,
+Cc: clang-built-linux@googlegroups.com, linux-kernel@vger.kernel.org,
+ Nathan Huckleberry <nhuck@google.com>, linux-rockchip@lists.infradead.org,
  linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Weiyi Lu (2019-06-28 00:22:34)
-> The 13MHz clock should be registered before clocksource driver is
-> initialized. Use CLK_OF_DECLARE_DRIVER() to guarantee.
+Quoting Nathan Huckleberry (2019-06-27 15:22:20)
+> Clang produces the following warning
 > 
-> Fixes: acddfc2c261b ("clk: mediatek: Add MT8183 clock support")
-> Cc: <stable@vger.kernel.org>
-> Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
+> drivers/clk/rockchip/clk-rv1108.c:125:7: warning: unused variable
+> 'mux_pll_src_3plls_p' [-Wunused-const-variable]
+> PNAME(mux_pll_src_3plls_p)      = { "apll", "gpll", "dpll" };
+> 
+> Looks like this variable was never used. Deleting it to remove the
+> warning.
+> 
+> Cc: clang-built-linux@googlegroups.com
+> Link: https://github.com/ClangBuiltLinux/linux/issues/524
+> Signed-off-by: Nathan Huckleberry <nhuck@google.com>
 > ---
+>  drivers/clk/rockchip/clk-rv1108.c | 1 -
+>  1 file changed, 1 deletion(-)
 
-Applied to clk-fixes
+Heiko, can you pick this up? Looks like v5.4 material.
 
+> 
+> diff --git a/drivers/clk/rockchip/clk-rv1108.c b/drivers/clk/rockchip/clk-rv1108.c
+> index 96cc6af5632c..5947d3192866 100644
+> --- a/drivers/clk/rockchip/clk-rv1108.c
+> +++ b/drivers/clk/rockchip/clk-rv1108.c
+> @@ -122,7 +122,6 @@ PNAME(mux_usb480m_pre_p)    = { "usbphy", "xin24m" };
+>  PNAME(mux_hdmiphy_phy_p)       = { "hdmiphy", "xin24m" };
+>  PNAME(mux_dclk_hdmiphy_pre_p)  = { "dclk_hdmiphy_src_gpll", "dclk_hdmiphy_src_dpll" };
+>  PNAME(mux_pll_src_4plls_p)     = { "dpll", "gpll", "hdmiphy", "usb480m" };
+> -PNAME(mux_pll_src_3plls_p)     = { "apll", "gpll", "dpll" };
+>  PNAME(mux_pll_src_2plls_p)     = { "dpll", "gpll" };
+>  PNAME(mux_pll_src_apll_gpll_p) = { "apll", "gpll" };
+>  PNAME(mux_aclk_peri_src_p)     = { "aclk_peri_src_gpll", "aclk_peri_src_dpll" };
 
 _______________________________________________
 linux-arm-kernel mailing list
