@@ -2,53 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD89E6F7D1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 05:16:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 80EA06F7E1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 05:20:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5ovc2yymGhKcWV1okkZO1M8uZtfrorhgQy4YHS3/RsQ=; b=AVYmcBgoXfI/n4
-	TiCZzipwgPSM8Gu72/rcPYIMQ6ZppYr0dqXD8vnX6DavKB7YpGS4n3qaNf26932SFneyzWmaLHiqb
-	9LR0OpDSQnl6d91+sr7Jcqyp+TYJxqay5hqOSxIDWKbFsSTCCg4BI5iFoSksT2274tqdoa/w89bBL
-	r5KEBbX7UBc1WbphKX/CpXLWXAPieTz9bQ6KFNYhmkpaurZn80xdie28nLc6VQKHfasSO51D8/sIs
-	Pb76WOLBbT9oHS/XLUewuyr76Pv3Oavfdn9exZAa1TJ9HHbUkBPtzFEOtq1/FC31TFtPlW6f2k0N0
-	I8RQafu4x7W2zTotkVhQ==;
+	List-Owner; bh=vMSIsFp0zIaRC5rdDV8jFx3l6zEAMXb/JH/iitkMR0A=; b=Zjr7iPMDI4yEYn
+	sfuUPLcX/FZPbFhD7/OymOKbJaoUf+R2LcgjxtMxrswvOYdYrHRypNXbsHlfKYbN5STk5VQkfdpL3
+	xzA4TRE7gucyCVxdla6zJIRHUDkbzdC1W1vEO5wXAb4xsfB0iylj15wKvSnY0N9eAAOB5KtwwQqMD
+	RIU9BPKUSuP+ICl/2F0nofwwinOBraK2SYngRBI7SZ4KDCloE/9CAWRLSKkGmOmPb0Wr6iOaNlb+9
+	MHyqz3avST8N8d/ddLfyF4ShpyuzWSArCXCIZ1SlqjBjFzd246t5WXoewQsXegnaEgPfUvjldRstk
+	MxVnDHIY41KVV1kGrrYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpOny-0001VH-Uu; Mon, 22 Jul 2019 03:16:03 +0000
+	id 1hpOrs-0001xg-0B; Mon, 22 Jul 2019 03:20:04 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpOnl-0001Uv-E6
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 03:15:50 +0000
+ id 1hpOra-0001xM-3X
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 03:19:47 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6FB2D21953;
- Mon, 22 Jul 2019 03:15:41 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id DD48421926;
+ Mon, 22 Jul 2019 03:19:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563765349;
- bh=iHwdsrxcX1l8+hROd7iGKbMdgW9v39P58MFq4E2tEIE=;
+ s=default; t=1563765585;
+ bh=o9ug2UGWvRNfm5yi/YzSxu10Y1TaJv2KLaYjJ/mfy0Y=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=qniQws2tjKUSYdRtQdiJFVk6z4kPGNwz+PnxJBcBT2/cETkKr7R74TNXLMg6/sADP
- D8+YqxAcK5x4aCtPbP1gPzKU3fmYv41MYgvZC5fJuYtB/esprxGLD1GO0fmgA0Y/Lp
- +ygQa5xyNV9KIX2L9v3fZIl38Hv1qzVvjXzk63EI=
-Date: Mon, 22 Jul 2019 11:15:18 +0800
+ b=QgUn3Rj4Aed2n2RovpV4pioNUoW2LcC3GtRy+3THrGzonOpPTFoYCy02l7V5upYjT
+ atHVlacFtwY7jCkSzTBDM4UY73DNKHTkqhxA+s6CBDulL6HsPLWJqH6w3i81D94jKv
+ Vg2NwDzTz3Lub6sWRazgE01R03KHX6XW+KMCbV6Y=
+Date: Mon, 22 Jul 2019 11:19:16 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Anson.Huang@nxp.com
-Subject: Re: [PATCH V5 3/5] arm64: dts: imx8mm: Add system counter node
-Message-ID: <20190722031517.GT3738@dragon>
-References: <20190710063056.35689-1-Anson.Huang@nxp.com>
- <20190710063056.35689-3-Anson.Huang@nxp.com>
+To: Anson Huang <anson.huang@nxp.com>
+Subject: Re: [PATCH 1/4] arm64: Enable TIMER_IMX_SYS_CTR for ARCH_MXC platforms
+Message-ID: <20190722031914.GU3738@dragon>
+References: <20190621070720.12395-1-Anson.Huang@nxp.com>
+ <20190624022200.GN3800@dragon> <20190624022713.GO3800@dragon>
+ <DB3PR0402MB39162662C69B45BDB948D002F5E00@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <20190722020026.GQ3738@dragon>
+ <AM6PR0402MB39113A76EE8A63F9C9F589C1F5C40@AM6PR0402MB3911.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190710063056.35689-3-Anson.Huang@nxp.com>
+In-Reply-To: <AM6PR0402MB39113A76EE8A63F9C9F589C1F5C40@AM6PR0402MB3911.eurprd04.prod.outlook.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190721_201549_493982_70C7B573 
-X-CRM114-Status: GOOD (  14.07  )
+X-CRM114-CacheID: sfid-20190721_201946_183266_6D36CDFB 
+X-CRM114-Status: GOOD (  22.04  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,63 +80,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, ping.bai@nxp.com, ccaione@baylibre.com,
- catalin.marinas@arm.com, agx@sigxcpu.org, angus@akkea.ca,
- leonard.crestez@nxp.com, festevam@gmail.com, abel.vesa@nxp.com,
- andrew.smirnov@gmail.com, will@kernel.org, daniel.lezcano@linaro.org,
- linux-imx@nxp.com, devicetree@vger.kernel.org, s.hauer@pengutronix.de,
- robh+dt@kernel.org, tglx@linutronix.de, daniel.baluta@nxp.com,
- linux-arm-kernel@lists.infradead.org, aisheng.dong@nxp.com,
- linux-kernel@vger.kernel.org, kernel@pengutronix.de, l.stach@pengutronix.de
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ Aisheng Dong <aisheng.dong@nxp.com>, Peng Fan <peng.fan@nxp.com>,
+ Jacky Bai <ping.bai@nxp.com>, "will@kernel.org" <will@kernel.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "sboyd@kernel.org" <sboyd@kernel.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Daniel Baluta <daniel.baluta@nxp.com>,
+ "mturquette@baylibre.com" <mturquette@baylibre.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Abel Vesa <abel.vesa@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 10, 2019 at 02:30:54PM +0800, Anson.Huang@nxp.com wrote:
-> From: Anson Huang <Anson.Huang@nxp.com>
+On Mon, Jul 22, 2019 at 02:15:10AM +0000, Anson Huang wrote:
+> Hi, Shawn
 > 
-> Add i.MX8MM system counter node to enable timer-imx-sysctr
-> broadcast timer driver.
+> > On Mon, Jun 24, 2019 at 02:35:10AM +0000, Anson Huang wrote:
+> > > Hi, Shawn
+> > >
+> > > > -----Original Message-----
+> > > > From: Shawn Guo <shawnguo@kernel.org>
+> > > > Sent: Monday, June 24, 2019 10:27 AM
+> > > > To: Anson Huang <anson.huang@nxp.com>
+> > > > Cc: mark.rutland@arm.com; Aisheng Dong <aisheng.dong@nxp.com>;
+> > Peng
+> > > > Fan <peng.fan@nxp.com>; festevam@gmail.com; Jacky Bai
+> > > > <ping.bai@nxp.com>; devicetree@vger.kernel.org; sboyd@kernel.org;
+> > > > catalin.marinas@arm.com; s.hauer@pengutronix.de; linux-
+> > > > kernel@vger.kernel.org; Daniel Baluta <daniel.baluta@nxp.com>;
+> > > > linux- clk@vger.kernel.org; robh+dt@kernel.org; dl-linux-imx <linux-
+> > > > imx@nxp.com>; kernel@pengutronix.de; Leonard Crestez
+> > > > <leonard.crestez@nxp.com>; will@kernel.org; mturquette@baylibre.com;
+> > > > linux-arm-kernel@lists.infradead.org; Abel Vesa <abel.vesa@nxp.com>
+> > > > Subject: Re: [PATCH 1/4] arm64: Enable TIMER_IMX_SYS_CTR for
+> > > > ARCH_MXC platforms
+> > > >
+> > > > On Mon, Jun 24, 2019 at 10:22:01AM +0800, Shawn Guo wrote:
+> > > > > On Fri, Jun 21, 2019 at 03:07:17PM +0800, Anson.Huang@nxp.com
+> > wrote:
+> > > > > > From: Anson Huang <Anson.Huang@nxp.com>
+> > > > > >
+> > > > > > ARCH_MXC platforms needs system counter as broadcast timer to
+> > > > > > support cpuidle, enable it by default.
+> > > > > >
+> > > > > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> > > > > > ---
+> > > > > >  arch/arm64/Kconfig.platforms | 1 +
+> > > > > >  1 file changed, 1 insertion(+)
+> > > > > >
+> > > > > > diff --git a/arch/arm64/Kconfig.platforms
+> > > > > > b/arch/arm64/Kconfig.platforms index 4778c77..f5e623f 100644
+> > > > > > --- a/arch/arm64/Kconfig.platforms
+> > > > > > +++ b/arch/arm64/Kconfig.platforms
+> > > > > > @@ -173,6 +173,7 @@ config ARCH_MXC
+> > > > > >  	select PM
+> > > > > >  	select PM_GENERIC_DOMAINS
+> > > > > >  	select SOC_BUS
+> > > > > > +	select TIMER_IMX_SYS_CTR
+> > > > >
+> > > > > Where is that driver?
+> > > >
+> > > > Okay, just found it in the mailbox.  They seem to be sent in the wrong
+> > order.
+> > > > Really, you should send this series only after the driver lands on mainline.
+> > >
+> > > OK, just noticed that mainline does NOT have it, since I did it based on next
+> > tree.
+> > > I will resend the patch series after the system counter driver landing on
+> > mainline.
+> > 
+> > I just picked the series up, so no need to resend.
 > 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> Something changed for this series, the system counter clock related implementation
+> are changed after some comments from maintainer, so I think you should picked up
+> below patch series instead, and drop this series,
+> 
+> https://patchwork.kernel.org/patch/11037953/
 
-Do I need to wait for patch #1 landing before I apply #3 ~ #5, or can
-they be applied independently (no breaking on anything)?
+Okay, dropped clk and dts patches.  arch/arm64/Kconfig.platforms one is kept.
 
 Shawn
-
-> ---
-> Changes since V4:
-> 	- update the clock info using fixed clock node;
-> 	- correct the reg range;
-> 	- update the interrupt number as the system counter driver ONLY uses 1 irq now.
-> ---
->  arch/arm64/boot/dts/freescale/imx8mm.dtsi | 8 ++++++++
->  1 file changed, 8 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-> index b5637f8..8cf7f34 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-> @@ -560,6 +560,14 @@
->  				#pwm-cells = <2>;
->  				status = "disabled";
->  			};
-> +
-> +			system_counter: timer@306a0000 {
-> +				compatible = "nxp,sysctr-timer";
-> +				reg = <0x306a0000 0x20000>;
-> +				interrupts = <GIC_SPI 47 IRQ_TYPE_LEVEL_HIGH>;
-> +				clocks = <&osc_24m>;
-> +				clock-names = "per";
-> +			};
->  		};
->  
->  		aips3: bus@30800000 {
-> -- 
-> 2.7.4
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
