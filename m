@@ -2,92 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 12581705AA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 18:46:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 409FC705AD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 18:47:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EsiTQZrOtxmDRNcFFNnrabc2Vyfa8WUe7SvHS4gOX2A=; b=CWL1yvW7OV8srL
-	UJvpMjjrm8Qy1dCwXX19RF9rI2dUof1JZoMkH643i79EkDh1Nl/Z5SfK1wf5Z1y8LlTx/eCMICAZy
-	b6RJjE46sdNflyrfNnjZl32/qfUscVsTeROgaUz0zNdVfJIOL7T49Coiwz5ug8g2UHsYxO84zjAbY
-	CnG8WcmXUdFvwNACeKutAug1wxcBAt8x8/OeLUT89ZVNCa6iZ1MvXJzVZRTIh+MDffLVo2BcKCxd+
-	d5TbaAnUtuqPmDNoAYQiKBzRl6mapkCWah4oupf4EyfvhNCTwGVWgP4DaJtq75PqoQs6irMQkq9/L
-	zxp8Q/2kUST5V95+i5Ng==;
+	List-Owner; bh=TJLi+J+HqPss4nt7nL1xH4wEbyOQhVtT0/cEPxjVLCY=; b=emTr484FwXAx2U
+	UPWmjBcBY3hZGoYIdk/ztUjsnWYp8NBDOE5CB4FxVYdRGryuj2isfulbOcG++68kjkDQRhphrMUq7
+	CQmxmYwdO5rTvB1tBQM8E15VIQQy6ma9FaGXE2vucJRtHY4uzLIOjVTl7Drro3KlFtrscY9c3cjLb
+	1C6DtoRaVZB3Q10kfzDmlhj9hVn1rIXJtfvpoTKTrryvoDs3So4x6WFgjr23U66GxHg5I2aZ6LN/e
+	nJ6bbs8JLMb6NYDoDrvwtsLeOzy51duU5fhsU+T+uI2FT3HJJrJV01p49MtCD/flO/SvjcCKjKY6J
+	9ommdVpXM0l6hZKAH7Mw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpbSL-00032c-JZ; Mon, 22 Jul 2019 16:46:33 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1hpbTI-0003JY-6T; Mon, 22 Jul 2019 16:47:32 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpbRx-00031l-Hg
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 16:46:10 +0000
-Received: by mail-pg1-x543.google.com with SMTP id u17so17927330pgi.6
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 22 Jul 2019 09:46:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=F8BugWPvgcU2u1kFFZKMyP/IOkg4/qodeykECt+PCWA=;
- b=VX6SSuVoSHuo5NAioif+DJtSSs1RJl179j5hlo4DTfAYF66Jgcx0vpiJB8eR+9HEL8
- +f/45Mc4lQN3jKnZezfzKg+yOPAVpcviTazcgmREFQYvaP41eWd/rYtiTmOP5jut4IGW
- UsbCxeU7Nx57xcR3YkKPrTzMk7AWS/2VcXYuY=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=F8BugWPvgcU2u1kFFZKMyP/IOkg4/qodeykECt+PCWA=;
- b=sLNODjIWpLl5EIEaSQc6inVJ+rE8FOx57zGCOok+txtsxuog268g2Mi2SKQD8vklVi
- HDEAs+JP7guIWhZ0ewC6owraF+6YG9kCUtopfGs41k/2c4iFyhenR47fQ6+A5JEupo0T
- BYO/h2m7gNF4Zc1GeE3C2W5TeAahbKGmTBespiU3BROAHtHe1wsnfKlgIB1B/qqxoUR5
- ipzTcMb9FaUM+v85ULr+hYFMLjARcSJNTrWKqWKbun+XUkfwWlsXGJnwXomCbQ3nnMEs
- UxLMPzTK4Gcft0JeClF+eQK//5/J6GxN/AN771o9N+JNATJbhKzUTXV5VwlqMcVOIu4V
- FXnw==
-X-Gm-Message-State: APjAAAWjkHyshwjdV0eoz9e7A5hgQXpze0DRzFo2S1VbSLJsQ94y1aru
- f9EomVc0VwTbKjZNZeRhvwMj2Q==
-X-Google-Smtp-Source: APXvYqzl1okfrN5zPZDspTEQta/i5+YABh20qrSg3GL1AN5406TswuRoR6v+V+I5B+11TbFoYh/o0Q==
-X-Received: by 2002:a17:90a:ff17:: with SMTP id
- ce23mr77676431pjb.47.1563813968675; 
- Mon, 22 Jul 2019 09:46:08 -0700 (PDT)
-Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id 4sm48411440pfc.92.2019.07.22.09.46.07
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 22 Jul 2019 09:46:07 -0700 (PDT)
-Date: Mon, 22 Jul 2019 09:46:06 -0700
-From: Kees Cook <keescook@chromium.org>
-To: Andrey Konovalov <andreyknvl@google.com>
-Subject: Re: [PATCH v18 07/15] fs/namespace: untag user pointers in
- copy_mount_options
-Message-ID: <201907220944.5821C92518@keescook>
-References: <cover.1561386715.git.andreyknvl@google.com>
- <41e0a911e4e4d533486a1468114e6878e21f9f84.1561386715.git.andreyknvl@google.com>
- <20190624175009.GM29120@arrakis.emea.arm.com>
- <CAAeHK+x2TL057Fr0K7FZBTYgeEPVU3cC6scEeiSYk-Jkb3xgfg@mail.gmail.com>
+ id 1hpbSv-0003Is-HI
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 16:47:11 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1hpbSs-00076J-Ai; Mon, 22 Jul 2019 18:47:06 +0200
+Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1hpbSr-00006j-O8; Mon, 22 Jul 2019 18:47:05 +0200
+Date: Mon, 22 Jul 2019 18:47:05 +0200
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Sergey Organov <sorganov@gmail.com>
+Subject: Re: [PATCH v4 1/3] serial: imx: set_termios(): do not enable autoRTS
+ if RTS is unset
+Message-ID: <20190722164705.4b752hrtnhpfzpk2@pengutronix.de>
+References: <20190719091143.uhjxeibtolgswq2l@pengutronix.de>
+ <87h87idxq2.fsf@osv.gnss.ru>
+ <20190719143151.gx43ndn2oy35h247@pengutronix.de>
+ <87woge9hvz.fsf@osv.gnss.ru>
+ <20190719201949.ldqlcwjhcmt7wwhg@pengutronix.de>
+ <87ftmy8qgu.fsf@osv.gnss.ru>
+ <20190722075107.cc3tvf6gmxhaeh5m@pengutronix.de>
+ <87lfwq77el.fsf@osv.gnss.ru>
+ <20190722094614.o5tqgmn3wql2apdz@pengutronix.de>
+ <87ef2i5g4r.fsf@osv.gnss.ru>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAAeHK+x2TL057Fr0K7FZBTYgeEPVU3cC6scEeiSYk-Jkb3xgfg@mail.gmail.com>
+In-Reply-To: <87ef2i5g4r.fsf@osv.gnss.ru>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_094609_589063_442EABF7 
-X-CRM114-Status: GOOD (  26.00  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190722_094709_644285_E04650CF 
+X-CRM114-Status: GOOD (  30.35  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,94 +77,172 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org,
- Linux Memory Management List <linux-mm@kvack.org>,
- Khalid Aziz <khalid.aziz@oracle.com>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
- Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
- Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
- Kevin Brodsky <kevin.brodsky@arm.com>,
- Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Al Viro <viro@zeniv.linux.org.uk>, Yishai Hadas <yishaih@mellanox.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Kostya Serebryany <kcc@google.com>,
+Cc: linux-serial@vger.kernel.org,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Felix Kuehling <Felix.Kuehling@amd.com>, LKML <linux-kernel@vger.kernel.org>,
- Jens Wiklander <jens.wiklander@linaro.org>,
- Eric Biederman <ebiederm@xmission.com>, Lee Smith <Lee.Smith@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
- Robin Murphy <robin.murphy@arm.com>,
- Christian Koenig <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ Sascha Hauer <s.hauer@pengutronix.de>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-+Eric Biederman too, who might be able to Ack this...
+On Mon, Jul 22, 2019 at 04:54:28PM +0300, Sergey Organov wrote:
+> Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de> writes:
+> =
 
-On Mon, Jul 15, 2019 at 06:00:04PM +0200, Andrey Konovalov wrote:
-> On Mon, Jun 24, 2019 at 7:50 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
-> >
-> > On Mon, Jun 24, 2019 at 04:32:52PM +0200, Andrey Konovalov wrote:
-> > > This patch is a part of a series that extends kernel ABI to allow to pass
-> > > tagged user pointers (with the top byte set to something else other than
-> > > 0x00) as syscall arguments.
-> > >
-> > > In copy_mount_options a user address is being subtracted from TASK_SIZE.
-> > > If the address is lower than TASK_SIZE, the size is calculated to not
-> > > allow the exact_copy_from_user() call to cross TASK_SIZE boundary.
-> > > However if the address is tagged, then the size will be calculated
-> > > incorrectly.
-> > >
-> > > Untag the address before subtracting.
-> > >
-> > > Reviewed-by: Khalid Aziz <khalid.aziz@oracle.com>
-> > > Reviewed-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
-> > > Reviewed-by: Kees Cook <keescook@chromium.org>
-> > > Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
-> > > Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
-> > > ---
-> > >  fs/namespace.c | 2 +-
-> > >  1 file changed, 1 insertion(+), 1 deletion(-)
-> > >
-> > > diff --git a/fs/namespace.c b/fs/namespace.c
-> > > index 7660c2749c96..ec78f7223917 100644
-> > > --- a/fs/namespace.c
-> > > +++ b/fs/namespace.c
-> > > @@ -2994,7 +2994,7 @@ void *copy_mount_options(const void __user * data)
-> > >        * the remainder of the page.
-> > >        */
-> > >       /* copy_from_user cannot cross TASK_SIZE ! */
-> > > -     size = TASK_SIZE - (unsigned long)data;
-> > > +     size = TASK_SIZE - (unsigned long)untagged_addr(data);
-> > >       if (size > PAGE_SIZE)
-> > >               size = PAGE_SIZE;
-> >
-> > I think this patch needs an ack from Al Viro (cc'ed).
-> >
-> > --
-> > Catalin
-> 
-> Hi Al,
-> 
-> Could you take a look and give your acked-by?
-> 
-> Thanks!
+> > On Mon, Jul 22, 2019 at 12:20:02PM +0300, Sergey Organov wrote:
+> >> Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de> writes:
+> >> =
 
--- 
-Kees Cook
+> >> > On Mon, Jul 22, 2019 at 10:42:57AM +0300, Sergey Organov wrote:
+> >> >> Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de> writes:
+> >> >> =
+
+> >> >> > On Fri, Jul 19, 2019 at 06:13:52PM +0300, Sergey Organov wrote:
+> >> >> >> Hello Uwe,
+> >> >> >> =
+
+> >> >> >> Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de> writes:
+> >> >> >> > Hello Sergey,
+> >> >> >> >
+> >> >> >> > On Fri, Jul 19, 2019 at 03:18:13PM +0300, Sergey Organov wrote:
+> >> >> >> >> Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de> writes:
+> >> >> >> >> > On Fri, Jul 19, 2019 at 11:47:52AM +0300, Sergey Organov wr=
+ote:
+> >> >> >> >> >> diff --git a/drivers/tty/serial/imx.c b/drivers/tty/serial=
+/imx.c
+> >> >> >> >> >> index 57d6e6b..95d7984 100644
+> >> >> >> >> >> --- a/drivers/tty/serial/imx.c
+> >> >> >> >> >> +++ b/drivers/tty/serial/imx.c
+> >> >> >> >> >> @@ -405,7 +405,8 @@ static void imx_uart_rts_inactive(stru=
+ct imx_port *sport, u32 *ucr2)
+> >> >> >> >> >>  /* called with port.lock taken and irqs caller dependent =
+*/
+> >> >> >> >> >>  static void imx_uart_rts_auto(struct imx_port *sport, u32=
+ *ucr2)
+> >> >> >> >> >>  {
+> >> >> >> >> >> -	*ucr2 |=3D UCR2_CTSC;
+> >> >> >> >> >> +	if (*ucr2 & UCR2_CTS)
+> >> >> >> >> >> +		*ucr2 |=3D UCR2_CTSC;
+> >> >> >> >> >
+> >> >> >> >> > I think this patch is wrong or the commit log is insufficie=
+nt.
+> >> >> >> >> > imx_uart_rts_auto() has only a single caller and there ucr2=
+ & UCR2_CTS is
+> >> >> >> >> > never true. And CTSC isn't restored anywhere, is it?
+> >> >> >> >> =
+
+> >> >> >> >> This is rebase to 'tty-next' branch, and you need to look at =
+it in that
+> >> >> >> >> context. There, ucr2 & UCR2_CTS does already make sense, due =
+to previous
+> >> >> >> >> fix that is already there.
+> >> >> >> >
+> >> >> >> > I looked at 57d6e6b which is the file you patched. And there
+> >> >> >> > imx_uart_rts_auto is only ever called with *ucr2 not having UC=
+R2_CTS.
+> >> >> >> >
+> >> >> >> > If you still think I'm wrong, please improve the commit log
+> >> >> >> > accordingly.
+> >> >> >> =
+
+> >> >> >> I still think you are wrong, but I don't know how to improve com=
+mit log.
+> >> >> >> =
+
+> >> >> >> To check it once again, I just did:
+> >> >> >> =
+
+> >> >> >> $ git show 57d6e6b > imx.c
+> >> >> >> =
+
+> >> >> >> There, in imx_uart_set_termios(), I see:
+> >> >> >> =
+
+> >> >> >> 1569:	old_ucr2 =3D imx_uart_readl(sport, UCR2);
+> >> >> >> 1570:	ucr2 =3D old_ucr2 & (UCR2_TXEN | UCR2_RXEN | UCR2_ATEN | U=
+CR2_CTS);
+> >> >> >> =
+
+> >> >> >> Here, current UCR2 value is read into 'old_ucr2' and then its /c=
+urrent/
+> >> >> >> UCR2_CTS bit is copied into 'ucr2' (along with 3 other bits).
+> >> >> >> =
+
+> >> >> >> Then, later in the same function:
+> >> >> >> =
+
+> >> >> >> 1591:		imx_uart_rts_auto(sport, &ucr2);
+> >> >> >> =
+
+> >> >> >> is called that can check /current/ state of UCR2_CTS bit in '*uc=
+r2'.
+> >> >> >> =
+
+> >> >> >> That's what the patch does, checks this bit.
+> >> >> >> =
+
+> >> >> >> Sorry, I fail to see how you came to conclusion that "*ucr2 not =
+having
+> >> >> >> UCR2_CTS". Do we maybe still read different versions of the file?
+> >> >> >
+> >> >> > No, it's just that I failed to see that UCR2_CTS is in the set of=
+ bits
+> >> >> > that are retained even when looking twice :-|
+> >> >> =
+
+> >> >> Ah, that one... How familiar :-)
+> >> >
+> >> > I thought again a bit over the weekend about this. I wonder if it's
+> >> > correct to keep RTS active while going through .set_termios. Shouldn=
+'t
+> >> > it maybe always be inactive to prevent the other side sending data w=
+hile
+> >> > we are changing the baud rate?
+> >> =
+
+> >> I don't think it's a good idea to change RTS state over .set_terimios,
+> >> as it doesn't in fact solve anything (notice that the other end should
+> >> also change baud rate accordingly), and changes visible state (even if
+> >> temporarily) that it was not asked to change, that could in turn lead =
+to
+> >> utter surprises.
+> >
+> > It should for sure not be done in imx-uart specific code. But I think
+> > that deasserting RTS before calling .set_termios (iff rtscts is enabled)
+> > is a sane thing to do for generic code. I don't want to motivate the
+> > other side to send data while I reconfigure my receiver. Yes, this is a
+> > visible change, but IMHO a good one.
+> >
+> >> Correct changing of baud rates, bits, etc., could only be implemented =
+at
+> >> communication protocol level (read: application level), and there are
+> >> all the tools in the kernel to do it right, provided driver does not do
+> >> what it was not asked to do.
+> >
+> > Hmm, deasserting RTS while not being ready helps here. Otherwise the
+> > communication partner that sends first after both agreed to change the
+> > baud rate might start doing that before the receiver on the other end is
+> > done. When RTS is deasserted this race window is at least smaller.
+> =
+
+> In general, it's a wrong idea to do in the kernel what could be done as
+> efficiently at application level.
+
+I agree a bit here. If the resulting behaviour when relying on userspace
+might be wrong, the kernel should be free to fix (or smooth) it. (Even a
+WARN_ON_ONCE would be fine in my eyes.) But I don't care enough to
+discuss this further. The behaviour with the patch under discussion is
+better than before, so let's settle it with that.
+
+Best regards
+Uwe
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
 
 _______________________________________________
 linux-arm-kernel mailing list
