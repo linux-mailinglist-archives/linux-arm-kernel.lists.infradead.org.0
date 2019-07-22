@@ -2,55 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 994E56FAAB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 09:49:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5887E6FAAE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 09:49:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OooeCChSNvf+LIjyNbqaavNcIjoBYKIX1oj7cnn0EnA=; b=N2Wo274e1l37bL
-	AG8J/ZwhhKXfmC1rS/LVYzfa+7P40Hw6BaYUfJZXvh1Z3Ak9tmpyTF0obCR3QHTWDfOOoffBESxMn
-	jTRd6lvUkhKKeRc/R2B0UEn3wrE3BupR3Cv7bT4W/RQLGIsPLqWtg7wCI5w0iXcVnI9QtceVPtNTo
-	sw34xpo0tCxodV0VwmtVG0wM7IRVgDe7kFLQwTmDtEVwsAd/fCuRrxihiiR/szWVV3iIHaOT9X0Yf
-	7hlkgzxUU6EkapLLTICr5M/Sodp7tBBBHS7XOg2uAlUxOY6M7qdLr48yqx1tPop84yuKTRgTQW+AC
-	UIQZpuw4kVEqAm95L5Gg==;
+	List-Owner; bh=M5tWcUT/ZAvFIBVsXTFpgVDaYlVq3NGOx580EavPyA8=; b=G8pe/QuUFKQk0R
+	VdIGw5ZTJAObxjQmn42Q0MpSYHflAN6clKM0bJ4nROxsSIWkb5BSWFkJ1W80Tst5S3ewuYeFkEqPh
+	8NgZA6yx0Cmo+zrc22c6habIQH4UdrhDK9ObtJhXxaCV/AZWgdiKp0+S3dWxHEIs54osazhnOcrsz
+	gHC/HBh1/ZIKERhFdg6Yl5/f6Z0EuSZqnEB6DTrDE4Jgpz492rFhePv7qGUcqdgz8UCZujRJhP5ot
+	2RiNC7skvc1GzggffkuAy1/lG93Y093aviqiIO2JxAXf5mn91dH0kksjX/U17vnm4vVTVlH0GNqCK
+	XNYHZbChIgcwo97txeMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpT4B-0000GR-Tk; Mon, 22 Jul 2019 07:49:03 +0000
+	id 1hpT4a-0000ZR-Sz; Mon, 22 Jul 2019 07:49:28 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpT3p-0000CJ-UC
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 07:48:43 +0000
+ id 1hpT40-0000Kx-MO
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 07:48:54 +0000
 Received: from localhost.localdomain (NE2965lan1.rev.em-net.ne.jp
  [210.141.244.193])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3AC992199C;
- Mon, 22 Jul 2019 07:48:39 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 37CEA2199C;
+ Mon, 22 Jul 2019 07:48:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563781721;
- bh=H5CHHV0UF6FlAaSn8LBWqoHakOj3NGUjwAazp2QNsg0=;
+ s=default; t=1563781732;
+ bh=d2K631q1iz4c8zbaSDa5ag8ChRtWqT8DbZvzcJhGp9Y=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=xCerKnIQda79YHizJQQ3sqd4KdulwPP+ezU/7K0K22tjp+BxN4/X/WtJfhZVMVIgS
- rKjwbndl43anxmk5ZZcm3Y4OV1exJ/F8iP3kEvWAdWKACHILMCBzCdVvrwYNiQw7XM
- Rj2E51xE+Jv1hOADVQNIexarnOIrBeJV3ZoYEN1g=
+ b=w81PoW6MwyECbd2TTy5PRj1Ackc3EGzTbwwzyZ4/qk5SvwfWbiAnsaPPjJrmXgY1u
+ jhbfidnmkbwNquWIPG6/GTz7+fjsxSOVmWZ+3F4k92Ou80g5P3DL+UdSvMgCYqYtLc
+ 1OlgcNAAxqm5a5q8K5U6Wn2+W0xjC4x0HpsBDDoo=
 From: Masami Hiramatsu <mhiramat@kernel.org>
 To: Catalin Marinas <catalin.marinas@arm.com>,
  Will Deacon <will.deacon@arm.com>
-Subject: [PATCH v2 1/4] arm64: kprobes: Recover pstate.D in single-step
- exception handler
-Date: Mon, 22 Jul 2019 16:48:36 +0900
-Message-Id: <156378171555.12011.2511666394591527888.stgit@devnote2>
+Subject: [PATCH v2 2/4] arm64: unwind: Prohibit probing on return_address()
+Date: Mon, 22 Jul 2019 16:48:48 +0900
+Message-Id: <156378172702.12011.1144595747474511323.stgit@devnote2>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <156378170297.12011.17385386326930403235.stgit@devnote2>
 References: <156378170297.12011.17385386326930403235.stgit@devnote2>
 User-Agent: StGit/0.17.1-dirty
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_004842_143738_22EDCD7F 
-X-CRM114-Status: GOOD (  15.99  )
+X-CRM114-CacheID: sfid-20190722_004852_826913_F0969AA1 
+X-CRM114-Status: GOOD (  12.56  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -89,119 +88,71 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On arm64, if a nested kprobes hit, it can crash the kernel with below
-error message.
-
-[  152.118921] Unexpected kernel single-step exception at EL1
-
-This is because commit 7419333fa15e ("arm64: kprobe: Always clear
-pstate.D in breakpoint exception handler") unmask pstate.D for
-doing single step but does not recover it after single step in
-the nested kprobes. That is correct *unless* any nested kprobes
-(single-stepping) runs inside other kprobes user handler.
-
-When the 1st kprobe hits, do_debug_exception() will be called. At this
-point, debug exception (= pstate.D) must be masked (=1). When the 2nd
- (nested) kprobe is hit before single-step of the first kprobe, it
-unmask debug exception (pstate.D = 0) and return.
-Then, when the 1st kprobe setting up single-step, it saves current
-DAIF, mask DAIF, enable single-step, and restore DAIF.
-However, since "D" flag in DAIF is cleared by the 2nd kprobe, the
-single-step exception happens soon after restoring DAIF.
-
-To solve this issue, this stores all DAIF bits and restore it
-after single stepping.
+Prohibit probing on return_address() and subroutines which
+is called from return_address(), since the it is invoked from
+trace_hardirqs_off() which is also kprobe blacklisted.
 
 Reported-by: Naresh Kamboju <naresh.kamboju@linaro.org>
-Fixes: commit 7419333fa15e ("arm64: kprobe: Always clear pstate.D in breakpoint exception handler")
 Signed-off-by: Masami Hiramatsu <mhiramat@kernel.org>
 ---
-  Changes in v2:
-   - Save and restore all DAIF flags.
-   - Operate pstate directly and remove spsr_set_debug_flag().
----
- arch/arm64/kernel/probes/kprobes.c |   41 ++++++------------------------------
- 1 file changed, 7 insertions(+), 34 deletions(-)
+ arch/arm64/kernel/return_address.c |    4 +++-
+ arch/arm64/kernel/stacktrace.c     |    3 +++
+ 2 files changed, 6 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/kernel/probes/kprobes.c b/arch/arm64/kernel/probes/kprobes.c
-index bd5dfffca272..348e02b799a2 100644
---- a/arch/arm64/kernel/probes/kprobes.c
-+++ b/arch/arm64/kernel/probes/kprobes.c
-@@ -29,6 +29,8 @@
+diff --git a/arch/arm64/kernel/return_address.c b/arch/arm64/kernel/return_address.c
+index b21cba90f82d..7f8a143268b0 100644
+--- a/arch/arm64/kernel/return_address.c
++++ b/arch/arm64/kernel/return_address.c
+@@ -8,6 +8,7 @@
  
- #include "decode-insn.h"
+ #include <linux/export.h>
+ #include <linux/ftrace.h>
++#include <linux/kprobes.h>
  
-+#define PSR_DAIF_MASK	(PSR_D_BIT | PSR_A_BIT | PSR_I_BIT | PSR_F_BIT)
-+
- DEFINE_PER_CPU(struct kprobe *, current_kprobe) = NULL;
- DEFINE_PER_CPU(struct kprobe_ctlblk, kprobe_ctlblk);
+ #include <asm/stack_pointer.h>
+ #include <asm/stacktrace.h>
+@@ -17,7 +18,7 @@ struct return_address_data {
+ 	void *addr;
+ };
  
-@@ -167,33 +169,6 @@ static void __kprobes set_current_kprobe(struct kprobe *p)
- 	__this_cpu_write(current_kprobe, p);
- }
- 
--/*
-- * When PSTATE.D is set (masked), then software step exceptions can not be
-- * generated.
-- * SPSR's D bit shows the value of PSTATE.D immediately before the
-- * exception was taken. PSTATE.D is set while entering into any exception
-- * mode, however software clears it for any normal (none-debug-exception)
-- * mode in the exception entry. Therefore, when we are entering into kprobe
-- * breakpoint handler from any normal mode then SPSR.D bit is already
-- * cleared, however it is set when we are entering from any debug exception
-- * mode.
-- * Since we always need to generate single step exception after a kprobe
-- * breakpoint exception therefore we need to clear it unconditionally, when
-- * we become sure that the current breakpoint exception is for kprobe.
-- */
--static void __kprobes
--spsr_set_debug_flag(struct pt_regs *regs, int mask)
--{
--	unsigned long spsr = regs->pstate;
--
--	if (mask)
--		spsr |= PSR_D_BIT;
--	else
--		spsr &= ~PSR_D_BIT;
--
--	regs->pstate = spsr;
--}
--
- /*
-  * Interrupts need to be disabled before single-step mode is set, and not
-  * reenabled until after single-step mode ends.
-@@ -205,17 +180,17 @@ spsr_set_debug_flag(struct pt_regs *regs, int mask)
- static void __kprobes kprobes_save_local_irqflag(struct kprobe_ctlblk *kcb,
- 						struct pt_regs *regs)
+-static int save_return_addr(struct stackframe *frame, void *d)
++static nokprobe_inline int save_return_addr(struct stackframe *frame, void *d)
  {
--	kcb->saved_irqflag = regs->pstate;
-+	kcb->saved_irqflag = regs->pstate & PSR_DAIF_MASK;
- 	regs->pstate |= PSR_I_BIT;
-+	/* Unmask PSTATE.D for enabling software step exceptions. */
-+	regs->pstate &= ~PSR_D_BIT;
+ 	struct return_address_data *data = d;
+ 
+@@ -52,3 +53,4 @@ void *return_address(unsigned int level)
+ 		return NULL;
  }
+ EXPORT_SYMBOL_GPL(return_address);
++NOKPROBE_SYMBOL(return_address);
+diff --git a/arch/arm64/kernel/stacktrace.c b/arch/arm64/kernel/stacktrace.c
+index 62d395151abe..cd7dab54d17b 100644
+--- a/arch/arm64/kernel/stacktrace.c
++++ b/arch/arm64/kernel/stacktrace.c
+@@ -7,6 +7,7 @@
+ #include <linux/kernel.h>
+ #include <linux/export.h>
+ #include <linux/ftrace.h>
++#include <linux/kprobes.h>
+ #include <linux/sched.h>
+ #include <linux/sched/debug.h>
+ #include <linux/sched/task_stack.h>
+@@ -73,6 +74,7 @@ int notrace unwind_frame(struct task_struct *tsk, struct stackframe *frame)
  
- static void __kprobes kprobes_restore_local_irqflag(struct kprobe_ctlblk *kcb,
- 						struct pt_regs *regs)
- {
--	if (kcb->saved_irqflag & PSR_I_BIT)
--		regs->pstate |= PSR_I_BIT;
--	else
--		regs->pstate &= ~PSR_I_BIT;
-+	regs->pstate &= ~PSR_DAIF_MASK;
-+	regs->pstate |= kcb->saved_irqflag;
+ 	return 0;
  }
++NOKPROBE_SYMBOL(unwind_frame);
  
- static void __kprobes
-@@ -252,8 +227,6 @@ static void __kprobes setup_singlestep(struct kprobe *p,
+ void notrace walk_stackframe(struct task_struct *tsk, struct stackframe *frame,
+ 		     int (*fn)(struct stackframe *, void *), void *data)
+@@ -87,6 +89,7 @@ void notrace walk_stackframe(struct task_struct *tsk, struct stackframe *frame,
+ 			break;
+ 	}
+ }
++NOKPROBE_SYMBOL(walk_stackframe);
  
- 		set_ss_context(kcb, slot);	/* mark pending ss */
- 
--		spsr_set_debug_flag(regs, 0);
--
- 		/* IRQs and single stepping do not mix well. */
- 		kprobes_save_local_irqflag(kcb, regs);
- 		kernel_enable_single_step(regs);
+ #ifdef CONFIG_STACKTRACE
+ struct stack_trace_data {
 
 
 _______________________________________________
