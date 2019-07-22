@@ -2,57 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 21FFC6FDD2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 12:31:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CB946FDD3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 12:31:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:Reply-To:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Message-Id:Date:Subject:To:From:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=xIz3P0EDDfx6vuNNECgkkDIuJA0NA8h9GhDbFSSTE90=; b=e6G
-	5Ky5XdvfkSqWE7CHwYTIUyNgxE1D4rrEh5r9MZzu24zn57oNpWRTSwybRKhU3BhPWvJDKwku+PfYs
-	O2O2pQ2SJaKoZmNItusyrMKdsNFsySoAnGcGRaW+AFCwjb9AITVY7SGTkfR62ZpO392OGg+oIU37A
-	6MqYq0wM7zBYYHNALCHKcif5Eghs2pxbLaV4YYbz2iKVIXPJMgP7W/imBQzFe75X9ISoioQn3aIrZ
-	AcH/Rzx2WG/r6ZfNRJVTojTKmcBXz3PP042AM7PnoY1OIGRXJw5HXD3mBJJHf8l/dwwY0ZBn6TwCi
-	gjfS2+7bdIRpT/xb8FyeVsO07HRVbGA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xbvtuJYTV7SOIS3DeDFfCxzhwVNv23UsVkYyw+V9P0Y=; b=Qevacp3xRuSeXk
+	2zsUeXn7ckg5J8U+rRibYnsbHjDVUvQMnHdh4Y9X4xh82pgqI3f00THTSPgFE4rutNF3FWLcmNqGR
+	Fbc6xNrfuc26mWuskqmYJ+++oD7Vc+dZ6Em69AF+bSoKg4IHBW+UDgDspSp3ZHcK7i6q0/1oZviDC
+	3/6yWnShOVZ1tYZfHgQ7zDtuaiEBJ483vVzVKUvqq3/1SVJLtpupAhnj+YclO1p9X5DWKCxxhMH25
+	/iJjHILlmDbdEcVxmfYpAyNL4OKKvOA85rl8GqBgc3vB0Izl2TleSk51JPJMNbnT/PY0CIr4Yfgwd
+	6gklpqYeiH/cdwanduLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpVaz-0001oZ-Fn; Mon, 22 Jul 2019 10:31:05 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpVap-0001o4-Pr
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 10:30:57 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 6BBAE2001D1;
- Mon, 22 Jul 2019 12:30:52 +0200 (CEST)
-Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
- [134.27.226.22])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 5EDFD20023F;
- Mon, 22 Jul 2019 12:30:52 +0200 (CEST)
-Received: from fsr-ub1464-137.ea.freescale.net
- (fsr-ub1464-137.ea.freescale.net [10.171.82.114])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 1E07A205DB;
- Mon, 22 Jul 2019 12:30:52 +0200 (CEST)
-From: Ioana Ciornei <ioana.ciornei@nxp.com>
-To: shawnguo@kernel.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3] arm64: dts: add the console node for DPAA2 platforms
-Date: Mon, 22 Jul 2019 13:30:43 +0300
-Message-Id: <1563791443-26372-1-git-send-email-ioana.ciornei@nxp.com>
-X-Mailer: git-send-email 1.9.1
-X-Virus-Scanned: ClamAV using ClamSMTP
+	id 1hpVbQ-00023D-EH; Mon, 22 Jul 2019 10:31:32 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hpVbG-00022d-G2
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 10:31:24 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0A65D28;
+ Mon, 22 Jul 2019 03:31:20 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ C4F303F71A; Mon, 22 Jul 2019 03:31:18 -0700 (PDT)
+Date: Mon, 22 Jul 2019 11:31:16 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Dave Martin <Dave.Martin@arm.com>
+Subject: Re: [PATCH v2 2/3] arm64/sve: Factor out FPSIMD to SVE state
+ conversion
+Message-ID: <20190722103116.GA60625@arrakis.emea.arm.com>
+References: <1560355234-25516-1-git-send-email-Dave.Martin@arm.com>
+ <1560355234-25516-3-git-send-email-Dave.Martin@arm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1560355234-25516-3-git-send-email-Dave.Martin@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_033055_983816_5DDEAE11 
-X-CRM114-Status: UNSURE (   7.26  )
+X-CRM114-CacheID: sfid-20190722_033122_572624_69CE2820 
+X-CRM114-Status: UNSURE (   9.44  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -66,82 +63,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Reply-To: ioana.ciornei@nxp.com
-Cc: Ioana Ciornei <ioana.ciornei@nxp.com>, leoyang.li@nxp.com
-MIME-Version: 1.0
+Cc: Peter Maydell <peter.maydell@linaro.org>, gdb@sourceware.org,
+ Will Deacon <will.deacon@arm.com>, Zhang Lei <zhang.lei@jp.fujitsu.com>,
+ Julien Grall <julien.grall@arm.com>, Alan Hayward <alan.hayward@arm.com>,
+ Alex =?iso-8859-1?Q?Benn=E9e?= <alex.bennee@linaro.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the console device tree node for the following
-DPAA2 based platforms: LS1088A, LS2080A, LS2088A and LX2160A.
+On Wed, Jun 12, 2019 at 05:00:33PM +0100, Dave P Martin wrote:
+> Currently we convert from FPSIMD to SVE register state in memory in
+> two places.
+> 
+> To ease future maintenance, let's consolidate this in one place.
+> 
+> Signed-off-by: Dave Martin <Dave.Martin@arm.com>
 
-Signed-off-by: Ioana Ciornei <ioana.ciornei@nxp.com>
----
-Changes in v3:
- - sort the node by unit address
+Now that we are at 5.3-rc1 and Will is queuing fixes, he can take this
+patch as well (I didn't queue it for the merging window because of a
+dependency on the first patch).
 
-Changes in v2:
- - use a generic node name
- - remove leading zeros and 0x from the unit-address
-
- arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi | 5 +++++
- arch/arm64/boot/dts/freescale/fsl-ls208xa.dtsi | 5 +++++
- arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi | 5 +++++
- 3 files changed, 15 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
-index dacd8cf03a7f..20f5ebd74200 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
-@@ -609,6 +609,11 @@
- 				     <GIC_SPI 209 IRQ_TYPE_LEVEL_HIGH>;
- 		};
- 
-+		console@8340020 {
-+			compatible = "fsl,dpaa2-console";
-+			reg = <0x00000000 0x08340020 0 0x2>;
-+		};
-+
- 		ptp-timer@8b95000 {
- 			compatible = "fsl,dpaa2-ptp";
- 			reg = <0x0 0x8b95000 0x0 0x100>;
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls208xa.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls208xa.dtsi
-index 3ace91945b72..64101c9962ce 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls208xa.dtsi
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls208xa.dtsi
-@@ -321,6 +321,11 @@
- 			};
- 		};
- 
-+		console@8340020 {
-+			compatible = "fsl,dpaa2-console";
-+			reg = <0x00000000 0x08340020 0 0x2>;
-+		};
-+
- 		ptp-timer@8b95000 {
- 			compatible = "fsl,dpaa2-ptp";
- 			reg = <0x0 0x8b95000 0x0 0x100>;
-diff --git a/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi b/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
-index e6fdba39453c..4720a8e7304c 100644
---- a/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
-+++ b/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
-@@ -848,6 +848,11 @@
- 			dma-coherent;
- 		};
- 
-+		console@8340020 {
-+			compatible = "fsl,dpaa2-console";
-+			reg = <0x00000000 0x08340020 0 0x2>;
-+		};
-+
- 		ptp-timer@8b95000 {
- 			compatible = "fsl,dpaa2-ptp";
- 			reg = <0x0 0x8b95000 0x0 0x100>;
--- 
-1.9.1
-
+Acked-by: Catalin Marinas <catalin.marinas@arm.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
