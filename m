@@ -2,69 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 567A0706B8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 19:23:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 66C01706BA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 19:24:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=GRlU4yeKVE6hA97zigF6HxzCTHXc0IoS60blb9b7yh4=; b=I+9
-	JFvo/h57OOOKx8T582V94/yp4TufPGemhXgGs9lAGN6E4uqc3IQy62L+99OmMr9gm+y+gexSdx/qD
-	ydVetuJngb1kb8CnG5CKf6RaiBxZXboZgt0OGg5LnbfoHEM3IMMkxp6186SjzD99t/SiKOxy3uGHG
-	wvpPQ/IkaXqkor+3yk49Ns4CN0+0lYE+/i1cIwo39O4L1RgJZHFuXzF8CTO87EyZGuKtl+EQWjAG+
-	MwtIi7CgxObwwL03XWmmmyqK4NdfP3lSKZRkvAN+dE01lxlL+AJxJZuhyQ/9LcZvBW73da6pSP6Gi
-	m+yCbAzosN+ZLnzrEFbiCTAxdg5mGAg==;
+	References:List-Owner; bh=0VMYdizuhmpZ171//rdEzJOKY/syLR/7j0C/kd/wUps=; b=MH7
+	iXkqg3hvNTqqw9hMpRQLCZ4vy+LBiJkP3V/uF8j6tQ0VhsLU3TA3820/hH0yds2JwCEzb/gCpppTA
+	U7qIXjiJ4DrcMJt1VT6xBVNdLkDaVV8tkBQSCzasoL9BhuGIMjWLhNHGtiglFCNpcuKSG17rAtAmt
+	wKe3JuzXdUKbzMLpQLAQL/Ceo/9uvYh10Lk140PiJ1MnW7qtaaGZWSSUg/TTfV5NIf+P6IEDhKGKL
+	+yKGRInvjylSbo+1CQYoVEa6XlqzDXuWOePGbX1GiTokY+d5s1/LnlQQUPcITJCuv/7wnRt4ee5Hs
+	C/CapP8lmtcFoydt1CoxCkNaJRMTYjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpc2B-00015L-VZ; Mon, 22 Jul 2019 17:23:36 +0000
+	id 1hpc2Y-0001Ki-KB; Mon, 22 Jul 2019 17:23:58 +0000
 Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpc1e-0000zj-EX
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 17:23:03 +0000
-Received: by mail-pl1-x641.google.com with SMTP id az7so19454508plb.5
+ id 1hpc1y-0001BR-7J
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 17:23:23 +0000
+Received: by mail-pl1-x641.google.com with SMTP id m9so19385776pls.8
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 22 Jul 2019 10:23:02 -0700 (PDT)
+ Mon, 22 Jul 2019 10:23:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id;
- bh=ZslVBL5Mz0HAfC+qBA5LaRiPngbPOV8Dc92uhilmqCM=;
- b=d8LF67x78l0sp6WDJIB8JzLbflFtuRLMrlbk1uNxoU9nPiTpGIgyAAi4EyDKddo8Lc
- q8wLkXejXjdlxrBJWmoP8MlzMhOzNNiwGFPA100TibuXQgiqU9Kohs4NV0leuIEha09Q
- PoPcqHiEghRpCMScXHW0hEKGVPt7SKnS5yPcX9birgxL5smRB2PIWLD2agzMab+S4HRO
- 1Q9lAMvcsLNkxwIp7/aFYhCIMJf3TFBlZOiWHXVa94mT4OhsIBnIbe4VLGDYlCFAZgF9
- i7l/SN6aaJaYgjTknIkDkjAvzmyqQKimxjSAV5Y0nBoaH5dXOUgjIVHD/k0rLqSuLecK
- QAHA==
+ bh=XQwtQTHjRb9vj1GeJWjUkZGMSIPHT5Z7N19ylCEpmq8=;
+ b=nqtiOPPidG8GPpmdLwIzumCQceypKN2K3Yi/ZUy1MGZQirzwyGfMAjkIt0S4BA6NDx
+ JwQG601+F++gn9HS9RDI4PbApsFZiCPRe+jfjiOsYxquoPyCwzgid+sQp4+pakB/BrkK
+ Kqxc6Kc9YZ7t57qFqR4QSKuhIL5ki+G2E8blRSMtjXyC3cA3fPvXDP4ULI91JdLyFceh
+ IUsMFbuECQVKTS603JtDkgtOKBwZKi0Ib0m8v98DehIEmqAUUnmw/GQn5SoZ1mI4zdVU
+ b94NXw9j6oZmH4g0YSPw7h0WbslIRqsZHLmpEuBYyfE3x5VbU5e6JAfHp+M+YohxS02U
+ cKRQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=ZslVBL5Mz0HAfC+qBA5LaRiPngbPOV8Dc92uhilmqCM=;
- b=Kt6wTDJln5I7tuRmlAy77YpVK6sqyCmnG6nZvllftX+1CTwtwH0bSqxCmaPu9mvRHm
- 6do+/FxxA8rYr+wdo4lHs2M5tt7gtLlFTrhi2MTMc79HAZPXZs6DDgXma1EdUX8osaiL
- cDE3C+eMrRmMhrD2Vd9Cyx+Y2daGvBlnXz5BMYA5y+IZjw2KvR2OQ5rBMIdMio/PP9dB
- by4Dd3DrWjUhmv2k6Zgp27jtVa05q/rSsGDyf5Rgv9cTSu6D1H1u+0PQ4lF0/FAnL+Z0
- XsYTz3sZJUfuj2hq00lPEGEeLX8GniuGC5aBmrOZMMo1OpodTe6C2NLZvMYQjAqgAlFW
- 08Qw==
-X-Gm-Message-State: APjAAAWzOO5DjMrE14sjtPa3Db17/cMKABaXZMnv0BvNrm1+FyDXCPdY
- f5wtxNq82Z2LajV+nKEGB3Y=
-X-Google-Smtp-Source: APXvYqzjEpkVGeir2fkcTas5pOeWNGXshv6wZ/PHE8TfIFsE5r4i2xyUk0D5OLsEvhlzRU6g9BRULw==
-X-Received: by 2002:a17:902:e306:: with SMTP id
- cg6mr76378459plb.263.1563816181685; 
- Mon, 22 Jul 2019 10:23:01 -0700 (PDT)
+ bh=XQwtQTHjRb9vj1GeJWjUkZGMSIPHT5Z7N19ylCEpmq8=;
+ b=NIY54bQsIuXHY7nRYWjpISTmBRLKU11Tmq2ZMv7I6uvy1Ly90LwwiQN62hbWNjNqVM
+ gaJ/RpphjMFo8aA/WwIfHMVCn3T5mxWJdkrb8Pk0dzCzuhjlE8FWwCGrtknzlZUpfRlj
+ YnwBc81BtFYg7BdI9svOrLugPoFTOfBOsjTSmzAhf4uG7NNVE58llHpQ8ncwfxPyomwK
+ y3KZ+HUvRtybcxy9W3O/kpJN8pu7bNSUy+jo3tYYoSy7KjnvYyELWKDEKvKAhLlpO2JU
+ TK05If5EmQJMJuuOt+9Y8ASjxZoMitF9KiC4od/ogmMYcyEygq3R3sUXujH/ndOmRisz
+ vy7g==
+X-Gm-Message-State: APjAAAVNTKDFkwgeFzhlfDoVokTdfrVBS30IJShm5M1nmBuW4xrDzeUG
+ H/bYwtp4KNiSZBo6C/rLeHs=
+X-Google-Smtp-Source: APXvYqwBSa3U9CvXEgatiD97EyWYBlgP1RQEatz9tgqfQ/wuebsz1uwEcQxmpz7CfJ679Yfpx6/ikQ==
+X-Received: by 2002:a17:902:29a7:: with SMTP id
+ h36mr78323906plb.158.1563816201808; 
+ Mon, 22 Jul 2019 10:23:21 -0700 (PDT)
 Received: from localhost.localdomain (KD118155013174.ppp-bb.dion.ne.jp.
  [118.155.13.174])
- by smtp.gmail.com with ESMTPSA id o95sm35001252pjb.4.2019.07.22.10.22.59
+ by smtp.gmail.com with ESMTPSA id b26sm44319796pfo.129.2019.07.22.10.23.19
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Mon, 22 Jul 2019 10:23:01 -0700 (PDT)
+ Mon, 22 Jul 2019 10:23:21 -0700 (PDT)
 From: Yoshihiro Kaneko <ykaneko0929@gmail.com>
 To: linux-renesas-soc@vger.kernel.org
-Subject: [PATCH] arm64: dts: renesas: r8a7795-salvator-x: sort nodes
-Date: Tue, 23 Jul 2019 02:22:52 +0900
-Message-Id: <1563816172-17864-1-git-send-email-ykaneko0929@gmail.com>
+Subject: [PATCH] arm64: dts: renesas: r8a7795-salvator-xs: sort nodes
+Date: Tue, 23 Jul 2019 02:23:08 +0900
+Message-Id: <1563816188-17922-1-git-send-email-ykaneko0929@gmail.com>
 X-Mailer: git-send-email 1.9.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_102302_583354_4499B78D 
-X-CRM114-Status: GOOD (  13.96  )
+X-CRM114-CacheID: sfid-20190722_102322_291400_A12C84FF 
+X-CRM114-Status: GOOD (  14.91  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
@@ -121,17 +121,22 @@ Signed-off-by: Yoshihiro Kaneko <ykaneko0929@gmail.com>
 
 This patch is based on the devel branch of Simon Horman's renesas tree.
 
- arch/arm64/boot/dts/renesas/r8a7795-salvator-x.dts | 28 ++++++++++++----------
- 1 file changed, 15 insertions(+), 13 deletions(-)
+ .../arm64/boot/dts/renesas/r8a7795-salvator-xs.dts | 82 +++++++++++-----------
+ 1 file changed, 41 insertions(+), 41 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/renesas/r8a7795-salvator-x.dts b/arch/arm64/boot/dts/renesas/r8a7795-salvator-x.dts
-index d2d48b3..cf151f3 100644
---- a/arch/arm64/boot/dts/renesas/r8a7795-salvator-x.dts
-+++ b/arch/arm64/boot/dts/renesas/r8a7795-salvator-x.dts
-@@ -52,12 +52,6 @@
+diff --git a/arch/arm64/boot/dts/renesas/r8a7795-salvator-xs.dts b/arch/arm64/boot/dts/renesas/r8a7795-salvator-xs.dts
+index 42101fc..36667c8 100644
+--- a/arch/arm64/boot/dts/renesas/r8a7795-salvator-xs.dts
++++ b/arch/arm64/boot/dts/renesas/r8a7795-salvator-xs.dts
+@@ -57,17 +57,6 @@
  	status = "okay";
  };
  
+-&hsusb3 {
+-	dr_mode = "otg";
+-	status = "okay";
+-};
+-
 -&sound_card {
 -	dais = <&rsnd_port0	/* ak4613 */
 -		&rsnd_port1	/* HDMI0  */
@@ -141,37 +146,94 @@ index d2d48b3..cf151f3 100644
  &hdmi0 {
  	status = "okay";
  
-@@ -108,6 +102,14 @@
+@@ -114,6 +103,11 @@
+ 	remote-endpoint = <&rcar_dw_hdmi1_out>;
+ };
+ 
++&hsusb3 {
++	dr_mode = "otg";
++	status = "okay";
++};
++
+ &ohci2 {
+ 	status = "okay";
+ };
+@@ -123,36 +117,6 @@
  	status = "okay";
  };
  
-+
-+&pfc {
-+	usb2_pins: usb2 {
-+		groups = "usb2";
-+		function = "usb2";
-+	};
-+};
-+
- &rcar_sound {
- 	ports {
- 		/* rsnd_port0 is on salvator-common */
-@@ -138,17 +140,17 @@
- 	};
- };
- 
--&pfc {
--	usb2_pins: usb2 {
--		groups = "usb2";
--		function = "usb2";
+-&rcar_sound {
+-	ports {
+-		/* rsnd_port0 is on salvator-common */
+-		rsnd_port1: port@1 {
+-			reg = <1>;
+-			rsnd_endpoint1: endpoint {
+-				remote-endpoint = <&dw_hdmi0_snd_in>;
+-
+-				dai-format = "i2s";
+-				bitclock-master = <&rsnd_endpoint1>;
+-				frame-master = <&rsnd_endpoint1>;
+-
+-				playback = <&ssi2>;
+-			};
+-		};
+-		rsnd_port2: port@2 {
+-			reg = <2>;
+-			rsnd_endpoint2: endpoint {
+-				remote-endpoint = <&dw_hdmi1_snd_in>;
+-
+-				dai-format = "i2s";
+-				bitclock-master = <&rsnd_endpoint2>;
+-				frame-master = <&rsnd_endpoint2>;
+-
+-				playback = <&ssi3>;
+-			};
+-		};
 -	};
 -};
 -
+ &pca9654 {
+ 	pcie_sata_switch {
+ 		gpio-hog;
+@@ -186,11 +150,47 @@
+ 	};
+ };
+ 
++&rcar_sound {
++	ports {
++		/* rsnd_port0 is on salvator-common */
++		rsnd_port1: port@1 {
++			reg = <1>;
++			rsnd_endpoint1: endpoint {
++				remote-endpoint = <&dw_hdmi0_snd_in>;
++
++				dai-format = "i2s";
++				bitclock-master = <&rsnd_endpoint1>;
++				frame-master = <&rsnd_endpoint1>;
++
++				playback = <&ssi2>;
++			};
++		};
++		rsnd_port2: port@2 {
++			reg = <2>;
++			rsnd_endpoint2: endpoint {
++				remote-endpoint = <&dw_hdmi1_snd_in>;
++
++				dai-format = "i2s";
++				bitclock-master = <&rsnd_endpoint2>;
++				frame-master = <&rsnd_endpoint2>;
++
++				playback = <&ssi3>;
++			};
++		};
++	};
++};
++
+ /* SW12-7 must be set 'Off' (MD12 set to 1) which is not the default! */
  &sata {
  	status = "okay";
  };
  
-+
 +&sound_card {
 +	dais = <&rsnd_port0	/* ak4613 */
 +		&rsnd_port1	/* HDMI0  */
