@@ -2,91 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5AF91709AD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 21:26:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC7AB709BD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 21:30:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ccEWAOowIu4EPSgoNgMRIxzFWODkc0P4t0j/crg8F8Q=; b=N8KoyD2svOyU9g
-	ZA+bDL8x74AzL3FD+r5oLYaLKg0WrXHbmH6h7TXjkVT+ff1YGvGYP0S0BCYDRS23+FMd7YDWJSQYN
-	jGLdC++coLG9Rmx7mBZM3KkOD17gV5QzArKA/w5xHBqUBDE7BSOgHXJtkSxPMLM7XU90uNjHEvNco
-	A15K5JiV58PGdBBYgsPJIotiQfFZG9IUGBVvSYST36pF8gMT9Jsjl37BnV3HJYqHn+7Vg+h40qrci
-	j2EUP5GH4QiyGBdyofP2+GoVoj3fTlJg6zIjBjrK59wud1pys1EtIU7E6NE1o7gjCuiO+nscD80QQ
-	jFkWCT2ADYnP+orARoAQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=foZH90uF8ViAKXgBpAjRJtmtMpESVVSmUk2LrwhUoto=; b=JwE3G39NfunsfLWPOyf23C83y
+	GoySj2wCCQG8oCGrbKuRqQl8f/BJ3zIjXYukzrZ1UWz5LHT+Exktb+2Wy5M4tmHzzhhA6jXJjllAc
+	znZi67DiNtjHyGD+VrEkw+DcJ8DnsSqJQlJaomUMHA1ebufouJTK8OVZKUV8jmCbLqOJKWUq05LKZ
+	akVLwWiTQuGER7G3idGchMZOC89Ttn1ZPH0XSPXq4O1cgXphP69a670TbgqHgiK0RdnaOgCMsbGuv
+	X1j9pbA5RZQyTg4sG4z2XGOF/txhQeij2ns47T+vqOUGtICL05UhP9pYfewsFBi6XBcPqJMs7cbJM
+	y41lP2QJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpdwj-0002X2-2K; Mon, 22 Jul 2019 19:26:05 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+	id 1hpe1N-0003R1-V7; Mon, 22 Jul 2019 19:30:54 +0000
+Received: from relay6-d.mail.gandi.net ([217.70.183.198])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpdw1-0002T9-15
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 19:25:22 +0000
-Received: by mail-io1-xd41.google.com with SMTP id k20so76460454ios.10
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 22 Jul 2019 12:25:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sifive.com; s=google;
- h=date:from:to:cc:subject:in-reply-to:message-id:references
- :user-agent:mime-version;
- bh=rf8ryiSI7gM7VW/mCBLHJLZdnlhJlIXGezmFbO+mcVw=;
- b=Xb5UwnBHkO/b7wAi1N5yXMS813VTh/5G24EzGuW5yJgQJgkjhUeKrTPSDkIp1KfUd6
- Iv3pWmtQA4mpIFFovuwl6FoaHQR+QSADg5v7gsjVpmHM4SI31heH50S/PkRTLaYA9lce
- +01E1ByorK9WOcBiaZz1FUtb3mjsV1xoqE6F7D9Yu4CWdB1e4XcdnZ0wBUR1TvQCcGr3
- ckF18v2qRvhL6FFsnkyEXeWtWu9RH4YwxumHUnoMed1uigXSdgTxN3sMKYU/ijspqfyX
- VfcYR7l9OaMGtYoRIf9WRepYgUU+N0FLHXUuyZvPMCKyhk68ZrFYinGWON2Tbg1EenkL
- KhVA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:in-reply-to:message-id
- :references:user-agent:mime-version;
- bh=rf8ryiSI7gM7VW/mCBLHJLZdnlhJlIXGezmFbO+mcVw=;
- b=nvZzG/NLNh6Gr83PI5LYTSSp3kiAtJIDgYo5OleRM7Rw5gbnTNG5aEfZ8qhIanf9Sw
- bcjx1HZII+3xi4QXLasvhNhHurxf7vLdey9XIceO/86JVBOd7XY7ZAqbRUGJTsGEugEi
- ehPU7VAbQE2IgJZabxaalJpbAWax8xXx7dpMCfNmvlFy/CrE+fss4kmCuvaq3WOPB7dk
- E1kwgZi/1VrN47FgPMfRELzwTy3l7GA/4djPKreuYs0odhnh4JUlYpb6OeuU/0VWEfhy
- 8WW8liW4YHH60Ixz8+EDFe7GwigHa2kpdQZxXpf5VDw7qtNJI72DhhY2XBu0DeVbnhYc
- f0Wg==
-X-Gm-Message-State: APjAAAX01BTQFKHqfWuIOP6L9TRZMr7oL5wkBygIVGvsLMXsu6yTf/NG
- 6AX1rEDLLImoyNDN4+tf8jty7w==
-X-Google-Smtp-Source: APXvYqwYUcpO+JDt/loIDZQbYbOA1X6JHoiG+W3zU6bs1mBiztsz8Q1eqm+2GIS51glKmkkHqpFvIQ==
-X-Received: by 2002:a02:cd83:: with SMTP id l3mr39191324jap.66.1563823519409; 
- Mon, 22 Jul 2019 12:25:19 -0700 (PDT)
-Received: from localhost (67-0-62-24.albq.qwest.net. [67.0.62.24])
- by smtp.gmail.com with ESMTPSA id n2sm41584533ioa.27.2019.07.22.12.25.18
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 22 Jul 2019 12:25:18 -0700 (PDT)
-Date: Mon, 22 Jul 2019 12:25:17 -0700 (PDT)
-From: Paul Walmsley <paul.walmsley@sifive.com>
-X-X-Sender: paulw@viisi.sifive.com
-To: Atish Patra <atish.patra@wdc.com>
-Subject: Re: [PATCH v8 0/7] Unify CPU topology across ARM & RISC-V 
-In-Reply-To: <alpine.DEB.2.21.9999.1907121012050.2267@viisi.sifive.com>
-Message-ID: <alpine.DEB.2.21.9999.1907221224170.23563@viisi.sifive.com>
-References: <20190627195302.28300-1-atish.patra@wdc.com>
- <alpine.DEB.2.21.9999.1907121012050.2267@viisi.sifive.com>
-User-Agent: Alpine 2.21.9999 (DEB 301 2018-08-15)
+ id 1hpe0H-0003O7-FB
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 19:29:51 +0000
+X-Originating-IP: 90.89.68.76
+Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
+ (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id DA05DC0008;
+ Mon, 22 Jul 2019 19:29:36 +0000 (UTC)
+Date: Mon, 22 Jul 2019 21:29:34 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Icenowy Zheng <icenowy@aosc.io>
+Subject: Re: [PATCH v4 7/8] dt-bindings: arm: sunxi: add binding for Lichee
+ Zero Plus core board
+Message-ID: <20190722192934.3jaf3r4rnyeslqyw@flea>
+References: <20190713034634.44585-1-icenowy@aosc.io>
+ <20190713034634.44585-8-icenowy@aosc.io>
+ <20190720101318.cwrvv5r42wxx5k4r@flea>
+ <BDF0C9F6-DD0D-4343-8E24-06A07055004C@aosc.io>
 MIME-Version: 1.0
+In-Reply-To: <BDF0C9F6-DD0D-4343-8E24-06A07055004C@aosc.io>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_122521_076871_F69E01D9 
-X-CRM114-Status: GOOD (  13.73  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190722_122945_749848_D1C04924 
+X-CRM114-Status: GOOD (  18.06  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.198 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.198 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,49 +66,112 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "Rafael J. Wysocki" <rafael@kernel.org>,
- "Peter Zijlstra \(Intel\)" <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>, Palmer Dabbelt <palmer@sifive.com>,
- Will Deacon <will.deacon@arm.com>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- linux-riscv@lists.infradead.org, Will Deacon <will@kernel.org>,
- Ingo Molnar <mingo@kernel.org>, Anup Patel <anup@brainfault.org>,
- Russell King <linux@armlinux.org.uk>,
- Morten Rasmussen <morten.rasmussen@arm.com>, devicetree@vger.kernel.org,
- Albert Ou <aou@eecs.berkeley.edu>, Johan Hovold <johan@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Jeremy Linton <jeremy.linton@arm.com>, Otto Sabart <ottosabart@seberm.com>,
- Sudeep Holla <sudeep.holla@arm.com>, "David S. Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
+ linux-sunxi@googlegroups.com, Rob Herring <robh+dt@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============0110520950706065442=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 12 Jul 2019, Paul Walmsley wrote:
 
-> On Thu, 27 Jun 2019, Atish Patra wrote:
-> 
-> > The cpu-map DT entry in ARM can describe the CPU topology in much better
-> > way compared to other existing approaches. RISC-V can easily adopt this
-> > binding to represent its own CPU topology. Thus, both cpu-map DT
-> > binding and topology parsing code can be moved to a common location so
-> > that RISC-V or any other architecture can leverage that.
-> > different config for the architectures that do not support them.
+--===============0110520950706065442==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="vn42k7mlndfzfvev"
+Content-Disposition: inline
+
+
+--vn42k7mlndfzfvev
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Sat, Jul 20, 2019 at 07:39:08PM +0800, Icenowy Zheng wrote:
 >
-> Once v5.3-rc1 is released, let's plan to get these patches rebased and 
-> reposted and into linux-next as soon as possible.
+>
+> =E4=BA=8E 2019=E5=B9=B47=E6=9C=8820=E6=97=A5 GMT+08:00 =E4=B8=8B=E5=8D=88=
+6:13:18, Maxime Ripard <maxime.ripard@bootlin.com> =E5=86=99=E5=88=B0:
+> >On Sat, Jul 13, 2019 at 11:46:33AM +0800, Icenowy Zheng wrote:
+> >> The Lichee Zero Plus is a core board made by Sipeed, with a microUSB
+> >> connector on it, TF slot or WSON8 SD chip, optional eMMC or SPI
+> >Flash.
+> >> It has a gold finger connector for expansion, and UART is available
+> >from
+> >> reserved pins w/ 2.54mm pitch. The board can use either SoChip S3 or
+> >> Allwinner V3L SoCs.
+> >>
+> >> Add the device tree binding of the basic version of the core board --
+> >> w/o eMMC or SPI Flash, w/ TF slot or WSON8 SD, and use S3 SoC.
+> >>
+> >> Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
+> >> ---
+> >> No changes since v3.
+> >>
+> >> Patch introduced in v2.
+> >>
+> >>  Documentation/devicetree/bindings/arm/sunxi.yaml | 5 +++++
+> >>  1 file changed, 5 insertions(+)
+> >>
+> >> diff --git a/Documentation/devicetree/bindings/arm/sunxi.yaml
+> >b/Documentation/devicetree/bindings/arm/sunxi.yaml
+> >> index 000a00d12d6a..48c126a7a848 100644
+> >> --- a/Documentation/devicetree/bindings/arm/sunxi.yaml
+> >> +++ b/Documentation/devicetree/bindings/arm/sunxi.yaml
+> >> @@ -353,6 +353,11 @@ properties:
+> >>            - const: licheepi,licheepi-zero
+> >>            - const: allwinner,sun8i-v3s
+> >>
+> >> +      - description: Lichee Zero Plus (with S3, without eMMC/SPI
+> >Flash)
+> >> +        items:
+> >> +          - const: sipeed,lichee-zero-plus
+> >> +          - const: allwinner,sun8i-s3
+> >
+> >If the S3 is just a rebranded V3, then we should have the v3 compatile
+> >in that list too.
+>
+> S3 is V3 with copackaged DDR3 DRAM.
+>
+> It's pin incompatible w/ V3.
 
-These CPU topology patches are now queued for v5.4-rc1.  They should enter 
-linux-next shortly.
+Does it matter though?
+
+If the only thing that changes is the package, we're not manipulating
+that, and any software that deals with the v3 can deal with the
+s3. Which is what the compatible is about.
+
+Maxime
+
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
+--vn42k7mlndfzfvev
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXTYOngAKCRDj7w1vZxhR
+xd77AP9kxx/qXPETcP3fumpzmXSQrjjY9A81+Czl0ZPvauA4VQEA2qZwJBFD+6ml
+86ahAeLa2qt1k3eZZlcXhgNVqkXxygs=
+=9EZ6
+-----END PGP SIGNATURE-----
+
+--vn42k7mlndfzfvev--
 
 
-- Paul
+--===============0110520950706065442==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0110520950706065442==--
+
