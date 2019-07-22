@@ -2,80 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1791A7092A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 21:01:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9CE5870935
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 21:01:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4b0bu/A0QHe1RmvAT0rggkUb7J45UOI+WoADRXYxMO0=; b=QJu3Wb94WkUp3s
-	eszVXNmpyKXQGkmPFGKMeJYNn0Xu5/9yZ/ioLKSoorK3rYFa/Nq6gSt+6aVGzYWSRefT+zWQwUM87
-	2KF5IfIBZ/a5NL9IwlqjEojEmMvhRRl9c57iFPE+wLlfG6WV0sOy3h4EGNTBEEgQX8IMBssITtQPX
-	ZRH4PYNXZfDy7ZiSKuazq1+X+mp8gnAks8c1MfVnIkvs0C9iLnsnH2pTRK2TNG4kB4DSX6+W6k4Px
-	P17i108NjsE2R3VZQIcZDR7eIYebSZvMyC7E1MpU3xy5K73u2ZXAINunj1riLxz7rYwwoAdfG0Xig
-	gRjx6QSejPprnSGE6R/A==;
+	List-Owner; bh=5uFWVsCK4UInUOV8eJzShcO+CdPiIEeXn4MPNBTqkKw=; b=llw2wE5erQcf7j
+	Cu/BTSiWP1wxPY5F11M48cmHQau0s8HcJ8ElN8FR/y0uKsoMM3UG/7ysUBGSFlGBVJqHSBP+DVpBd
+	xHspTv5pixvApWiG+bCA3VBmzvyctskTVJD/7FfYiVBRy524x7i88PSR3l84/yVqFujcpa5Q6Yc+A
+	QcSwey8eyqTjHwq2WWkmsXK7vJayr6xWl33XsnpimgsqWWtQu4dYK7mVvaVmuABhoyuo+ELmeW9UY
+	FJcYZjz1iWHktz1ONw6cM5N+zebHP9QULz6L/I2b7WJRmdBmKizTm1rV+aVtZNYCako/r8o/PTx7j
+	DFpIcyjdRL7WZR/5fg7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpdZ1-0008KH-CK; Mon, 22 Jul 2019 19:01:35 +0000
-Received: from mail-pf1-x433.google.com ([2607:f8b0:4864:20::433])
+	id 1hpdZL-00009T-TU; Mon, 22 Jul 2019 19:01:56 +0000
+Received: from mail-pl1-x62f.google.com ([2607:f8b0:4864:20::62f])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpdXQ-0006IM-Hj
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 18:59:58 +0000
-Received: by mail-pf1-x433.google.com with SMTP id u14so17832559pfn.2
+ id 1hpdXT-0006L0-FZ
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 19:00:00 +0000
+Received: by mail-pl1-x62f.google.com with SMTP id az7so19551870plb.5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 22 Jul 2019 11:59:56 -0700 (PDT)
+ Mon, 22 Jul 2019 11:59:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=RTpdlQyeL6bUmfZxFwZVri3i7nbPBO/dWR0GM1UFauc=;
- b=Uie7vKzMH8rhSaqDU+aMcGpqyxjCAEwwYHOs8Zz8U3B2wZObu/hBnRQpJYvhmIGgDw
- IHk/K6jpfG6wXsMB1qUT1sh/ChhrsYn3LxIcUCmrK6vZRbrVceM3II59gJ3kh+MlrX2x
- 1DuHiX4OOmXS/GL5pG5qPgTuSdp7IAnFiZQTc6QW4YS1+Bjmh9K4aQZf6t0rqhuNHfuw
- QTYoUNyzdiW3NvWNC+WPdBiUeQGJU4eWLZBmKDyTCJLNj8TNHpSgKm/m3oO5L/BOzi6X
- OiJd4btOFqQz+abdaTlUTE83JA2iCBDkjFgg1DkkEOhNW/Odd8tjV65+H+egp+j8fJWA
- 9F3A==
+ bh=zz5vAjKnwObHWdgiR69vnrMUFdCw0YpjqKvOUe5J6MQ=;
+ b=d6MMjgcgq7A5Ok7sC1mvq8Y7Wf/C/AbAtJI0wx9bGY4LJJDTTd0vQVHuitO2plMEyq
+ s651WhX3usFjBAenymrYvEPR3lbhKenTx0jmJU6miKE7/atUIiKfrBoNG2ef4g9tLLVE
+ LheTn+WTo/fecBYSmVujWJvETdofqQuuS9X6FH2EzkWgzBV5HCJ7zylD6lSW8IO5VgUr
+ nha9fg8eP8GlVrc3Fw6sjREvttunn9yPpGeTarp9+jV48N58mLUDgtUXRvotX5TGYvOS
+ vSXYtNoIDim5DoM834ci3JXYBNtu0sOWTuYlom0yBD34s/1T3PNVEIu+63qEV0ddOA+j
+ Khew==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=RTpdlQyeL6bUmfZxFwZVri3i7nbPBO/dWR0GM1UFauc=;
- b=otFpObWFk4pUfypQwMNgtISDJAfXed/dQvXyZFGac6GNZmHtkbkSHhgj4FDwN29QKP
- 2j1dBCA01+k6DO+XWyVj3Qqu9zK78HJX8YngLSqZA+uu0dChHDMk3WP7iBCFV1J7sbYi
- IibbgC1F9A7DyUHjLGSCaaEYO6huPuQIab/yylipVuEOQGWhFitpfbDmeNXR4P0ETOjO
- MBljiF6iE/VYkZEin3uIEeWabZEYUq36u2/cPK6f/K+jmg9HbGwgXIqmwK0LMQIt7NMw
- 3Z62EZGkwqLLHVHVTQL1xJhHvcGCByq4Nqqu2XzBgqCtgbBZ6emMJa/DoodL9IDJquV2
- X4eQ==
-X-Gm-Message-State: APjAAAXCrIciw9ZfDWVElRDLJHKvi1oisAPZM3r7xfAEozg38PERbWiR
- RSLyp0FkJCqahx19Pta9ReI=
-X-Google-Smtp-Source: APXvYqztAcyiJIByeuZ9Vv/e8q5WaFPy7KjT+3hxXXN1zGRIHD3y1yeHD3EkCpYt7gjV3RCQsz+iPQ==
-X-Received: by 2002:a63:c750:: with SMTP id v16mr56466432pgg.320.1563821995654; 
- Mon, 22 Jul 2019 11:59:55 -0700 (PDT)
+ bh=zz5vAjKnwObHWdgiR69vnrMUFdCw0YpjqKvOUe5J6MQ=;
+ b=HHUUUFtbY/Lu9IgPJ6Ttc9vQqV9jgs8Cvt4EXkiSBugOiB0smDDXHs5KqGRTCoC2yS
+ Tdz8U/c9SGHneBNQE65w5D4mg0XQTtDm9hIlQoykQ4M54zsyTz5gkhhO4xX3dywa/S5D
+ nXKuWwsJN8W5qvudq5H33xJ0hsbEmOcLgpJEhb6kCMjegE/ld5lIuuRZf8nER86wp3hD
+ 2wLzx3rjHRancV7sbzIhEebvo62ncCQPShl0xnmH7M9RH8wMi+acvLm7/q4fuVV56kam
+ lEivMqAzWFwHNmsflIGbavlUJ5LspgT1kEvGUGHcaOWYCh0/780G1C6oOLeygw3paqDp
+ hvNg==
+X-Gm-Message-State: APjAAAWlVchR0Nn5w3jWr3kJVT7t1/0ojPlqLk684pJBdeWxV3aMyFpf
+ 0Jc+LgaJrk3cyIEPN9Pe/ik=
+X-Google-Smtp-Source: APXvYqzWw+Rq9/ABGsPQPWP/BkeiCKWfr3/1wKZdxsrMxEEqcLGp5JqqrkgZS13L+ODsPeeJYwBo9w==
+X-Received: by 2002:a17:902:2865:: with SMTP id
+ e92mr37369159plb.264.1563821998707; 
+ Mon, 22 Jul 2019 11:59:58 -0700 (PDT)
 Received: from localhost.localdomain ([103.51.73.174])
- by smtp.gmail.com with ESMTPSA id h1sm30777675pgv.93.2019.07.22.11.59.52
+ by smtp.gmail.com with ESMTPSA id h1sm30777675pgv.93.2019.07.22.11.59.55
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 22 Jul 2019 11:59:55 -0700 (PDT)
+ Mon, 22 Jul 2019 11:59:58 -0700 (PDT)
 From: Anand Moon <linux.amoon@gmail.com>
 To: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-samsung-soc@vger.kernel.org
-Subject: [RFC/RFT 3/5] phy: exynos5-usbdrd: UTMI tune signal
-Date: Tue, 23 Jul 2019 00:29:36 +0530
-Message-Id: <20190722185938.9043-4-linux.amoon@gmail.com>
+Subject: [RFC/RFT 4/5] phy: exynos5-usbdrd: PIPE3 tune signal
+Date: Tue, 23 Jul 2019 00:29:37 +0530
+Message-Id: <20190722185938.9043-5-linux.amoon@gmail.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190722185938.9043-1-linux.amoon@gmail.com>
 References: <20190722185938.9043-1-linux.amoon@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_115956_643363_09A3BED6 
-X-CRM114-Status: GOOD (  12.71  )
+X-CRM114-CacheID: sfid-20190722_115959_565908_0779F930 
+X-CRM114-Status: GOOD (  12.25  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:433 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:62f listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -107,80 +108,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Tune USB2.0 (UTMI+) TX signal for high speed data transfer.
+Tune USB3.0 (PIPE3) PHY TX signal for high and supper
+speed data transfer.
 
 Signed-off-by: Anand Moon <linux.amoon@gmail.com>
 ---
- drivers/phy/samsung/phy-exynos5-usbdrd.c | 42 +++++++++++++++++++++---
- 1 file changed, 37 insertions(+), 5 deletions(-)
+ drivers/phy/samsung/phy-exynos5-usbdrd.c | 18 +++++++++++++-----
+ 1 file changed, 13 insertions(+), 5 deletions(-)
 
 diff --git a/drivers/phy/samsung/phy-exynos5-usbdrd.c b/drivers/phy/samsung/phy-exynos5-usbdrd.c
-index 135114d51bc1..54a513ca15e4 100644
+index 54a513ca15e4..4f16c4f82ae5 100644
 --- a/drivers/phy/samsung/phy-exynos5-usbdrd.c
 +++ b/drivers/phy/samsung/phy-exynos5-usbdrd.c
-@@ -33,6 +33,8 @@
- #define EXYNOS5_FSEL_24MHZ		0x5
- #define EXYNOS5_FSEL_50MHZ		0x7
- 
-+#define __set(v, a, b)  (((v) << (b)) & GENMASK(a, b))
-+
- /* EXYNOS5: USB 3.0 DRD PHY registers */
- #define EXYNOS5_DRD_LINKSYSTEM			0x04
- 
-@@ -108,8 +110,17 @@
- #define EXYNOS5_DRD_PHYPARAM0			0x1c
- 
- #define PHYPARAM0_REF_USE_PAD			BIT(31)
--#define PHYPARAM0_REF_LOSLEVEL_MASK		(0x1f << 26)
--#define PHYPARAM0_REF_LOSLEVEL			(0x9 << 26)
-+#define PHYPARAM0_REF_LOSLEVEL(x)		__set(x, 30, 26)
-+#define PHYPARAM0_TXVREFTUNE(x)			__set(x, 25, 22)
-+#define PHYPARAM0_TXISETUNE(x)			__set(x, 21, 20)
-+#define PHYPARAM0_TXRESTUNE(x)			__set(x, 19, 18)
-+#define PHYPARAM0_TXPREEMPPULSETUNE		BIT(17)
-+#define PHYPARAM0_TXPREEMPAMPTUNE(x)		__set(x, 16, 15)
-+#define PHYPARAM0_TXHSXVTUNE(x)			__set(x, 14, 13)
-+#define PHYPARAM0_TXFSLSTUNE(x)			__set(x, 12, 9)
-+#define PHYPARAM0_SQRXTUNE(x)			__set(x, 8, 6)
-+#define PHYPARAM0_OTGTUNE(x)			__set(x, 5, 3)
-+#define PHYPARAM0_COMPDISTUNE(x)		__set(x, 2, 0)
+@@ -124,8 +124,10 @@
  
  #define EXYNOS5_DRD_PHYPARAM1			0x20
  
-@@ -365,9 +376,30 @@ static void exynos5_usbdrd_utmi_init(struct exynos5_usbdrd_phy *phy_drd)
+-#define PHYPARAM1_PCS_TXDEEMPH_MASK		(0x1f << 0)
+-#define PHYPARAM1_PCS_TXDEEMPH			(0x1c)
++#define PHYPARAM1_TX0_TERM_OFFSET(x)		__set(x, 30, 26)
++#define PHYPARAM1_TX_SWING_FULL(x)		__set(x, 18, 12)
++#define PHYPRAAM1_PCS_TX_DEEMPH_6DB(x)		__set(x, 11, 6)
++#define PHYPRAAM1_PCS_TX_DEEMPH_3P5DB(x)	__set(x, 5, 0)
+ 
+ #define EXYNOS5_DRD_PHYTERM			0x24
+ 
+@@ -360,10 +362,16 @@ static void exynos5_usbdrd_pipe3_init(struct exynos5_usbdrd_phy *phy_drd)
+ {
  	u32 reg;
  
- 	reg = readl(phy_drd->reg_phy + EXYNOS5_DRD_PHYPARAM0);
--	/* Set Loss-of-Signal Detector sensitivity */
--	reg &= ~PHYPARAM0_REF_LOSLEVEL_MASK;
--	reg |=	PHYPARAM0_REF_LOSLEVEL;
-+		/* Set Loss-of-Signal Detector sensitivity */
-+	reg |= (PHYPARAM0_REF_USE_PAD |
-+		/* Sets the sensitivity level for the Loss-of-Signal detector */
-+		PHYPARAM0_REF_LOSLEVEL(0x9) |
-+		/* Adjusts the high-speed DC level voltage */
-+		PHYPARAM0_TXVREFTUNE(0x3) |
-+		/* Adjust the rise/fal timie of the high-speed waveform */
-+		PHYPARAM0_TXISETUNE(0x1) |
-+		/* Adjusts the driver source impedance */
-+		PHYPARAM0_TXRESTUNE(0x1) |
-+		/* HS Transmitter Pre-Emphasis Duration Control */
-+		PHYPARAM0_TXPREEMPPULSETUNE |
-+		/* HS Transmitter Pre-Emphasis Current Control */
-+		PHYPARAM0_TXPREEMPAMPTUNE(0x0) |
-+		/* Transmitter High-Speed Crossover Adjustment */
-+		PHYPARAM0_TXHSXVTUNE(0x3) |
-+		/* FS/LS Source Impedance Adjustment */
-+		PHYPARAM0_TXFSLSTUNE(0x3) |
-+		/* Squelch Threshold Adjustment */
-+		PHYPARAM0_SQRXTUNE(0x3) |
-+		/* VBUS Valid Threshold Adjustment */
-+		PHYPARAM0_OTGTUNE(0x6) |
-+		/* Disconnect Threshold Adjustment */
-+		PHYPARAM0_COMPDISTUNE(0x6));
- 	writel(reg, phy_drd->reg_phy + EXYNOS5_DRD_PHYPARAM0);
+-	reg = readl(phy_drd->reg_phy + EXYNOS5_DRD_PHYPARAM1);
+ 	/* Set Tx De-Emphasis level */
+-	reg &= ~PHYPARAM1_PCS_TXDEEMPH_MASK;
+-	reg |=	PHYPARAM1_PCS_TXDEEMPH;
++	reg = readl(phy_drd->reg_phy + EXYNOS5_DRD_PHYPARAM1);
++		/* Transmitter Termination Offset */
++	reg |=  PHYPARAM1_TX0_TERM_OFFSET(0x5) |
++		/* Tx Amplitude (Full Swing mode) */
++		PHYPARAM1_TX_SWING_FULL(0x3F) |
++		/* Tx De-Emphasis at 6 dB */
++		PHYPRAAM1_PCS_TX_DEEMPH_6DB(0x20) |
++		/* Tx De-Emphasis at 3.5 dB */
++		PHYPRAAM1_PCS_TX_DEEMPH_3P5DB(0x15);
+ 	writel(reg, phy_drd->reg_phy + EXYNOS5_DRD_PHYPARAM1);
  
- 	reg = readl(phy_drd->reg_phy + EXYNOS5_DRD_PHYPARAM1);
+ 	reg = readl(phy_drd->reg_phy + EXYNOS5_DRD_PHYTEST);
 -- 
 2.22.0
 
