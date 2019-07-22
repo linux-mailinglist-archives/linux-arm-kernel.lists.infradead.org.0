@@ -2,66 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EDDA46F8D5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 07:24:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 87BD56F901
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 07:44:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=SkXEzfhKdaG7qWFQdj1WV+5Ro5VTt2hfFBwAyCHAa4U=; b=mqzluoCvS+riWDGChYX8UOBRr
-	3g7wurZP3A81VyVI75abWY3/drU+68sGK+z+WtO+OraFknuXjGjaV0g5wxTRxLgWDCU/sL7X/gV/9
-	SWo751lw4JFtf9MBcws+YzeYsscmuT/fCb8kHiO+ALOfhAoXllHiBt9FsVn6nU8ySu7YfggJ/kPIb
-	mOlxfSCOiY2gNJ7ZYG602mT/N/wWclmGVAAKVaOCkz+SHK5HcGp05nV9RwhWUJxxT09qkLTTTqG/y
-	7zxFvXkdv9JvLCBeSkMZU0db2DMtzoOUqG9BBbXwlOmFVfQM1vcmgDibqFZztdg/HmUVQRxFPsQVH
-	MHxQzuCWA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yN/6uN851CRGXvXkB0AhcaYSXlqMuRrxzHibAnCUMCM=; b=iD0RH5ihUHUdhr
+	aF8HbxN1dR4muAfM1hlrL7JhqnDA6tSTZ/4oJ61SzTnLZA0mZsFGOP00X3vPrYIh+NtiKMirvjMUd
+	klsQ+wq5/v7bkcKTsgoqUTi76rbydlwpk9QGrKmO6Hh2tfJ/k/TuWaACQnnGjmD4tDnZjo3FNMZ0V
+	GzFP3kkKWqO5NdCpcbvIy5ZKFgPWcQsiKeK84Q4ufGpw6jyhqr3ylr51CqmO3qN3EwomeeJQYdXJb
+	xyhvOgxuh45gHsXj0dHyM69PvJp3GMegvNOZVitZDBo4jrFWq+q8oe6rPcWzuC0QKUGQpsLK0WbTb
+	ppUc5BytESBNiv/EF0tw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpQog-0001FF-0A; Mon, 22 Jul 2019 05:24:54 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1hpR7B-0000NR-F0; Mon, 22 Jul 2019 05:44:01 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpQoR-0001Eu-I8
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 05:24:41 +0000
-Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
- [10.5.11.22])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 145078535C;
- Mon, 22 Jul 2019 05:24:39 +0000 (UTC)
-Received: from [10.72.12.30] (ovpn-12-30.pek2.redhat.com [10.72.12.30])
- by smtp.corp.redhat.com (Postfix) with ESMTP id C6EBC1001DE1;
- Mon, 22 Jul 2019 05:24:28 +0000 (UTC)
-Subject: Re: WARNING in __mmdrop
-To: "Michael S. Tsirkin" <mst@redhat.com>,
- syzbot <syzbot+e58112d71f77113ddb7b@syzkaller.appspotmail.com>
-References: <0000000000008dd6bb058e006938@google.com>
- <000000000000964b0d058e1a0483@google.com>
- <20190721044615-mutt-send-email-mst@kernel.org>
- <20190721081447-mutt-send-email-mst@kernel.org>
-From: Jason Wang <jasowang@redhat.com>
-Message-ID: <85dd00e2-37a6-72b7-5d5a-8bf46a3526cf@redhat.com>
-Date: Mon, 22 Jul 2019 13:24:24 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1hpR6x-0000Mt-LP
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 05:43:49 +0000
+Received: by mail-pg1-x543.google.com with SMTP id f5so8281400pgu.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 21 Jul 2019 22:43:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=RCQRh8f7Am9Pu3Zrt8ca1tiYCAmgZh8iO4K+Ia+HeDY=;
+ b=R6TtVKr6FzRXGzpuk4JA7iix7Rqg/Vj3Jml5vRJxELGIZUOhzNNDE+ORehUvK5+iLl
+ 34dKdx5dh9Ut0OilqkR3jl7qf3z7nuSnyrxQ8X2g2ylzFyyNI4ARLewsc9mz0zxcRZQM
+ FTDztbAtB5f93ji0gTdc2ocUGsq7LyRPCPmvutWPqOMLAk10C9bb2DEfH7e6ues1cx7A
+ zDuafqss/khT0E8w7sdPyVOIhJjuI+SmronKkfeqQcxZVefr3Uqhk0RE67MOLgJelL1X
+ fa3xSvPr/Ax34q1v2Ns7ZtFNrwZbgdS8LWKdoOy07EMDUdiRuPJWE7SPLKUTucmknMOV
+ ZIEQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=RCQRh8f7Am9Pu3Zrt8ca1tiYCAmgZh8iO4K+Ia+HeDY=;
+ b=QXMisk+6stGCjiohlpnPlp+s/niTJQLKVaEFC2cu9xdutaPjyrdh+TWhjBkxxM8O5h
+ YqrzJi2xxll+QW+1jmWMHBKy5NeV2nV+uX5MQnUsF6+aOWxLmgCUzu/QWkaH/DYxwXs4
+ YyRce5syKUnTbjTiR2RewY3/P8AzmbdilWbJ/zxFqEIkTu5csNz+nGTuFODvQ78TsWl7
+ xvYYOU/7/SWzo7Qn1+TQPvonWU3JAc1UP9Mf05CowUEPeOvott9eOQBCUXFP/lng/J8D
+ zA2UCs406JopSPjmb+RTa11RzHS4MkFNWHKTCQAXtOS6MQqiIUZkzgz0X59cfnOdsL5N
+ XBrQ==
+X-Gm-Message-State: APjAAAWAXSatKaxV5Rd/+OS/VCyEgcLxcxd23bYPXrGSLgtXjco2r/dQ
+ 5DevQIRc9qjmtfIY4od0IXIbe5Nntyk=
+X-Google-Smtp-Source: APXvYqwGj+0Wjj4RUowbz6W/lmlIStZnbmKiIZOWeUKE5oUz5EPZK0z/QTRB0FLK7EZANdtJypPPLw==
+X-Received: by 2002:a17:90a:fa07:: with SMTP id
+ cm7mr73019980pjb.138.1563774226648; 
+ Sun, 21 Jul 2019 22:43:46 -0700 (PDT)
+Received: from localhost ([122.172.28.117])
+ by smtp.gmail.com with ESMTPSA id i3sm40833413pfo.138.2019.07.21.22.43.45
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Sun, 21 Jul 2019 22:43:46 -0700 (PDT)
+Date: Mon, 22 Jul 2019 11:13:44 +0530
+From: Viresh Kumar <viresh.kumar@linaro.org>
+To: Hariprasad Kelam <hariprasad.kelam@gmail.com>
+Subject: Re: [PATCH] cpufreq: ap806: Add NULL check after kcalloc
+Message-ID: <20190722054344.w3vxrxaozd2tuajd@vireshk-i7>
+References: <20190721180815.GA12437@hari-Inspiron-1545>
 MIME-Version: 1.0
-In-Reply-To: <20190721081447-mutt-send-email-mst@kernel.org>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.25]); Mon, 22 Jul 2019 05:24:39 +0000 (UTC)
+Content-Disposition: inline
+In-Reply-To: <20190721180815.GA12437@hari-Inspiron-1545>
+User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190721_222439_639622_B5174EF2 
-X-CRM114-Status: GOOD (  21.71  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190721_224347_709640_4632A790 
+X-CRM114-Status: GOOD (  13.65  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,78 +98,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mhocko@suse.com, peterz@infradead.org, ldv@altlinux.org,
- james.bottomley@hansenpartnership.com, linux-mm@kvack.org, namit@vmware.com,
- mingo@kernel.org, elena.reshetova@intel.com, aarcange@redhat.com,
- davem@davemloft.net, hch@infradead.org, christian@brauner.io,
- keescook@chromium.org, syzkaller-bugs@googlegroups.com, jglisse@redhat.com,
- viro@zeniv.linux.org.uk, linux-arm-kernel@lists.infradead.org,
- wad@chromium.org, linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
- luto@amacapital.net, ebiederm@xmission.com, akpm@linux-foundation.org,
- guro@fb.com
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Andrew Lunn <andrew@lunn.ch>, Jason Cooper <jason@lakedaemon.net>,
+ linux-pm@vger.kernel.org, Gregory Clement <gregory.clement@bootlin.com>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Ck9uIDIwMTkvNy8yMSDkuIvljYg4OjE4LCBNaWNoYWVsIFMuIFRzaXJraW4gd3JvdGU6Cj4gT24g
-U3VuLCBKdWwgMjEsIDIwMTkgYXQgMDY6MDI6NTJBTSAtMDQwMCwgTWljaGFlbCBTLiBUc2lya2lu
-IHdyb3RlOgo+PiBPbiBTYXQsIEp1bCAyMCwgMjAxOSBhdCAwMzowODowMEFNIC0wNzAwLCBzeXpi
-b3Qgd3JvdGU6Cj4+PiBzeXpib3QgaGFzIGJpc2VjdGVkIHRoaXMgYnVnIHRvOgo+Pj4KPj4+IGNv
-bW1pdCA3ZjQ2NjAzMmRjOWU1YTYxMjE3ZjIyZWEzNGIyZGY5MzI3ODZiYmZjCj4+PiBBdXRob3I6
-IEphc29uIFdhbmc8amFzb3dhbmdAcmVkaGF0LmNvbT4KPj4+IERhdGU6ICAgRnJpIE1heSAyNCAw
-ODoxMjoxOCAyMDE5ICswMDAwCj4+Pgo+Pj4gICAgICB2aG9zdDogYWNjZXNzIHZxIG1ldGFkYXRh
-IHRocm91Z2gga2VybmVsIHZpcnR1YWwgYWRkcmVzcwo+Pj4KPj4+IGJpc2VjdGlvbiBsb2c6aHR0
-cHM6Ly9zeXprYWxsZXIuYXBwc3BvdC5jb20veC9iaXNlY3QudHh0P3g9MTQ5YThhMjA2MDAwMDAK
-Pj4+IHN0YXJ0IGNvbW1pdDogICA2ZDIxYTQxYiBBZGQgbGludXgtbmV4dCBzcGVjaWZpYyBmaWxl
-cyBmb3IgMjAxOTA3MTgKPj4+IGdpdCB0cmVlOiAgICAgICBsaW51eC1uZXh0Cj4+PiBmaW5hbCBj
-cmFzaDpodHRwczovL3N5emthbGxlci5hcHBzcG90LmNvbS94L3JlcG9ydC50eHQ/eD0xNjlhOGEy
-MDYwMDAwMAo+Pj4gY29uc29sZSBvdXRwdXQ6aHR0cHM6Ly9zeXprYWxsZXIuYXBwc3BvdC5jb20v
-eC9sb2cudHh0P3g9MTI5YThhMjA2MDAwMDAKPj4+IGtlcm5lbCBjb25maWc6aHR0cHM6Ly9zeXpr
-YWxsZXIuYXBwc3BvdC5jb20veC8uY29uZmlnP3g9MzQzMGExNTFlMTQ1MjMzMQo+Pj4gZGFzaGJv
-YXJkIGxpbms6aHR0cHM6Ly9zeXprYWxsZXIuYXBwc3BvdC5jb20vYnVnP2V4dGlkPWU1ODExMmQ3
-MWY3NzExM2RkYjdiCj4+PiBzeXogcmVwcm86aHR0cHM6Ly9zeXprYWxsZXIuYXBwc3BvdC5jb20v
-eC9yZXByby5zeXo/eD0xMDEzOWU2ODYwMDAwMAo+Pj4KPj4+IFJlcG9ydGVkLWJ5OnN5emJvdCtl
-NTgxMTJkNzFmNzcxMTNkZGI3YkBzeXprYWxsZXIuYXBwc3BvdG1haWwuY29tCj4+PiBGaXhlczog
-N2Y0NjYwMzJkYzllICgidmhvc3Q6IGFjY2VzcyB2cSBtZXRhZGF0YSB0aHJvdWdoIGtlcm5lbCB2
-aXJ0dWFsCj4+PiBhZGRyZXNzIikKPj4+Cj4+PiBGb3IgaW5mb3JtYXRpb24gYWJvdXQgYmlzZWN0
-aW9uIHByb2Nlc3Mgc2VlOmh0dHBzOi8vZ29vLmdsL3Rwc21FSiNiaXNlY3Rpb24KPj4gT0sgSSBw
-b2tlZCBhdCB0aGlzIGZvciBhIGJpdCwgSSBzZWUgc2V2ZXJhbCB0aGluZ3MgdGhhdAo+PiB3ZSBu
-ZWVkIHRvIGZpeCwgdGhvdWdoIEknbSBub3QgeWV0IHN1cmUgaXQncyB0aGUgcmVhc29uIGZvcgo+
-PiB0aGUgZmFpbHVyZXM6Cj4+Cj4+Cj4+IDEuIG1tdV9ub3RpZmllcl9yZWdpc3RlciBzaG91bGRu
-J3QgYmUgY2FsbGVkIGZyb20gdmhvc3RfdnJpbmdfc2V0X251bV9hZGRyCj4+ICAgICBUaGF0J3Mg
-anVzdCBhIGJhZCBoYWNrLCBpbiBwYXJ0aWN1bGFyIEkgZG9uJ3QgdGhpbmsgZGV2aWNlCj4+ICAg
-ICBtdXRleCBpcyB0YWtlbiBhbmQgc28gcG9raW5nIGF0IHR3byBWUXMgd2lsbCBjb3JydXB0Cj4+
-ICAgICBtZW1vcnkuCj4+ICAgICBTbyB3aGF0IHRvIGRvPyBIb3cgYWJvdXQgYSBwZXIgdnEgbm90
-aWZpZXI/Cj4+ICAgICBPZiBjb3Vyc2Ugd2UgYWxzbyBoYXZlIHN5bmNocm9uaXplX3JjdQo+PiAg
-ICAgaW4gdGhlIG5vdGlmaWVyIHdoaWNoIGlzIHNsb3cgYW5kIGlzIG5vdyBnb2luZyB0byBiZSBj
-YWxsZWQgdHdpY2UuCj4+ICAgICBJIHRoaW5rIGNhbGxfcmN1IHdvdWxkIGJlIG1vcmUgYXBwcm9w
-cmlhdGUgaGVyZS4KPj4gICAgIFdlIHRoZW4gbmVlZCByY3VfYmFycmllciBvbiBtb2R1bGUgdW5s
-b2FkLgo+PiAgICAgT1RPSCBpZiB3ZSBtYWtlIHBhZ2VzIGxpbmVhciB3aXRoIG1hcCB0aGVuIHdl
-IGFyZSBnb29kCj4+ICAgICB3aXRoIGtmcmVlX3JjdSB3aGljaCBpcyBldmVuIG5pY2VyLgo+Pgo+
-PiAyLiBEb2Vzbid0IG1hcCBsZWFrIGFmdGVyIHZob3N0X21hcF91bnByZWZldGNoPwo+PiAgICAg
-QW5kIHdoeSBkb2VzIGl0IHBva2UgYXQgY29udGVudHMgb2YgdGhlIG1hcD8KPj4gICAgIE5vIG9u
-ZSBzaG91bGQgdXNlIGl0IHJpZ2h0Pwo+Pgo+PiAzLiBub3RpZmllciB1bnJlZ2lzdGVyIGhhcHBl
-bnMgbGFzdCBpbiB2aG9zdF9kZXZfY2xlYW51cCwKPj4gICAgIGJ1dCByZWdpc3RlciBoYXBwZW5z
-IGZpcnN0LiBUaGlzIGxvb2tzIHdyb25nIHRvIG1lLgo+Pgo+PiA0LiBPSyBzbyB3ZSB1c2UgdGhl
-IGludmFsaWRhdGUgY291bnQgdG8gdHJ5IGFuZCBkZXRlY3QgdGhhdAo+PiAgICAgc29tZSBpbnZh
-bGlkYXRlIGlzIGluIHByb2dyZXNzLgo+PiAgICAgSSBhbSBub3QgMTAwJSBzdXJlIHdoeSBkbyB3
-ZSBjYXJlLgo+PiAgICAgQXNzdW1pbmcgd2UgZG8sIHVhZGRyIGNhbiBjaGFuZ2UgYmV0d2VlbiBz
-dGFydCBhbmQgZW5kCj4+ICAgICBhbmQgdGhlbiB0aGUgY291bnRlciBjYW4gZ2V0IG5lZ2F0aXZl
-LCBvciBnZW5lcmFsbHkKPj4gICAgIG91dCBvZiBzeW5jLgo+Pgo+PiBTbyB3aGF0IHRvIGRvIGFi
-b3V0IGFsbCB0aGlzPwo+PiBJIGFtIGluY2xpbmVkIHRvIHNheSBsZXQncyBqdXN0IGRyb3AgdGhl
-IHVhZGRyIG9wdGltaXphdGlvbgo+PiBmb3Igbm93LiBFLmcuIGt2bSBpbnZhbGlkYXRlcyB1bmNv
-bmRpdGlvbmFsbHkuCj4+IDMgc2hvdWxkIGJlIGZpeGVkIGluZGVwZW5kZW50bHkuCj4gQWJvdmUg
-aW1wbGVtZW50cyB0aGlzIGJ1dCBpcyBvbmx5IGJ1aWxkLXRlc3RlZC4KPiBKYXNvbiwgcGxzIHRh
-a2UgYSBsb29rLiBJZiB5b3UgbGlrZSB0aGUgYXBwcm9hY2ggZmVlbAo+IGZyZWUgdG8gdGFrZSBp
-dCBmcm9tIGhlcmUuCj4KPiBPbmUgdGhpbmcgdGhlIGJlbG93IGRvZXMgbm90IGhhdmUgaXMgYW55
-IGtpbmQgb2YgcmF0ZS1saW1pdGluZy4KPiBHaXZlbiBpdCdzIHNvIGVhc3kgdG8gcmVzdGFydCBJ
-J20gdGhpbmtpbmcgaXQgbWFrZXMgc2Vuc2UKPiB0byBhZGQgYSBnZW5lcmljIGluZnJhc3RydWN0
-dXJlIGZvciB0aGlzLgo+IENhbiBiZSBhIHNlcGFyYXRlIHBhdGNoIEkgZ3Vlc3MuCgoKSSBkb24n
-dCBnZXQgd2h5IG11c3QgdXNlIGtmcmVlX3JjdSgpIGluc3RlYWQgb2Ygc3luY2hyb25pemVfcmN1
-KCkgaGVyZS4KCgo+Cj4gU2lnbmVkLW9mZi1ieTogTWljaGFlbCBTLiBUc2lya2luPG1zdEByZWRo
-YXQuY29tPgoKCkxldCBtZSB0cnkgdG8gZmlndXJlIG91dCB0aGUgcm9vdCBjYXVzZSB0aGVuIGRl
-Y2lkZSB3aGV0aGVyIG9yIG5vdCB0byBnbyAKZm9yIHRoaXMgd2F5LgoKVGhhbmtzCgoKCl9fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJu
-ZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
-Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On 21-07-19, 23:38, Hariprasad Kelam wrote:
+> Add NULL check  after kcalloc.
+> 
+> Fix below issue reported by coccicheck
+> ./drivers/cpufreq/armada-8k-cpufreq.c:138:1-12: alloc with no test,
+> possible model on line 151
+> 
+> Signed-off-by: Hariprasad Kelam <hariprasad.kelam@gmail.com>
+> ---
+>  drivers/cpufreq/armada-8k-cpufreq.c | 2 ++
+>  1 file changed, 2 insertions(+)
+> 
+> diff --git a/drivers/cpufreq/armada-8k-cpufreq.c b/drivers/cpufreq/armada-8k-cpufreq.c
+> index 988ebc3..39e34f50 100644
+> --- a/drivers/cpufreq/armada-8k-cpufreq.c
+> +++ b/drivers/cpufreq/armada-8k-cpufreq.c
+> @@ -136,6 +136,8 @@ static int __init armada_8k_cpufreq_init(void)
+>  
+>  	nb_cpus = num_possible_cpus();
+>  	freq_tables = kcalloc(nb_cpus, sizeof(*freq_tables), GFP_KERNEL);
+> +	if (!freq_tables)
+> +		return -ENOMEM;
+>  	cpumask_copy(&cpus, cpu_possible_mask);
+>  
+>  	/*
+
+Applied. Thanks.
+
+-- 
+viresh
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
