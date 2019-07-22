@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 49DDA6F929
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 07:57:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D487D6F936
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 07:58:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,29 +11,29 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=PSruEzDnDzPzKUccGCQMNuV5hXNTqNsVZ9Wnv1dl/qE=; b=U1RM6gsR8R16ml3Py/1LnZrOyV
-	eMLLuAj6uH9TIDaew99HfsncV+zIwz4wEfaC218MXc0Uydd0TskgAPtyGydsnwSCS2CkYcwSNevYT
-	dgcWhdA4nLcdJTVSUQFtHICxaP9Ttfh+xP21aHtdGNEdJdDRWaNMfFHvnOGaClnxKq+srGOVrDgE3
-	uUo+VEFeKx+6kpe9WZ3xL8fR3tkVBNUg7/Kqu074izTQNTHOQ5Go7CH2s7jUsCq6h4R/vmiKqLfs4
-	xGmmY6eRopAWIi3+7UaUrZMaNqcHmsodwaxlDYmFiGZNqFVsDWjNOeI50tClQTHBaC6/5l0D97EQG
-	07Yg4fAQ==;
+	bh=6rNGQ/MbAVnRQih+HFF0VP+ONsMVBctm2bEpyfAAsDk=; b=dPcWQIWq7JuXBBiVus4Gz7S806
+	eFYhR6WfLMX2xyyM5lOVtb1pDuoP9bK+q2uV0XnJzsUJvuhCiQvPl9gCTXu2GVpQC67GFxfdTWy2V
+	EZtYhdRJSi68itJFuTkq1nfU3zGE1fqf7uc+uqrzjmLYZRsbfE5tT2Dv3wf+g79cN1G8mtiIxi8LE
+	k8g67utHZZ2YzfCEsj/jm463l7vJlzJfGs4+umQ8I2ioVT31eWhFrwuwiLOwcwyfjxR4NJW3j+nf+
+	V2D6UdoIOSe+soctllHYpsxu8Yn07wFMZFCr8zqciregwqI/SRvBZCrzPcVqG2q5Q6CscmIAzbTJf
+	bC55vOUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpRJl-0005qj-7j; Mon, 22 Jul 2019 05:57:01 +0000
+	id 1hpRL5-00075s-75; Mon, 22 Jul 2019 05:58:23 +0000
 Received: from mout.gmx.net ([212.227.17.20])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpRIi-0005G3-9m; Mon, 22 Jul 2019 05:55:58 +0000
+ id 1hpRIk-0005HP-Av; Mon, 22 Jul 2019 05:55:59 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1563774935;
- bh=QSYvua6cFBBgHcG13EjnKxqnh2n/IRF+zYxZbCTi1YM=;
+ s=badeba3b8450; t=1563774936;
+ bh=dzdr53EkDfSZtFiMzw7a6OARSi94GiDFaqLyZtNfIl4=;
  h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=OFZ7iXgOrXm+fm0HqfkHaTwKPyQmfRGaas2f7x5QNYuF8Ezqo+zlZFgNnTEeAuZ5m
- DkatNLGVUO/TWiymdyiXwEmEMALRubzvELTvKHarx0DMNJUCubn0D5DqxbA2Odr83l
- +EgjLO0pzvsx0HOEBaCRpjmir8ZWZa5G8Zd7EYGw=
+ b=Zoy6CrDzGb0Z257hg8xs0g4en5VEPmyESBYKfH+Cj+CsdxJYV1SqQsXjLJa0wxSaS
+ KWIIcthQ96sN/IK/kUtssbyxRPfANK2ZQxlGtSK3QTuJOM5gRO89c/WF4mP5VcMOG0
+ ootWrmBjktFZLjczcpg/AJTA78QFdckNAQ9k4fZM=
 X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
 Received: from localhost.localdomain ([37.4.249.98]) by mail.gmx.com (mrgmx102
- [212.227.17.168]) with ESMTPSA (Nemesis) id 0Mb31L-1i9Qr608PT-00Kklu; Mon, 22
- Jul 2019 07:55:35 +0200
+ [212.227.17.168]) with ESMTPSA (Nemesis) id 0MFz0E-1hbjeY0XRe-00Eqxb; Mon, 22
+ Jul 2019 07:55:36 +0200
 From: Stefan Wahren <wahrenst@gmx.net>
 To: Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
  Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
@@ -44,38 +44,37 @@ To: Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
  Michael Turquette <mturquette@baylibre.com>,
  Stephen Boyd <sboyd@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
  Adrian Hunter <adrian.hunter@intel.com>
-Subject: [PATCH 01/18] ARM: bcm283x: Reduce register ranges for UART,
- SPI and I2C
-Date: Mon, 22 Jul 2019 07:54:32 +0200
-Message-Id: <1563774880-8061-2-git-send-email-wahrenst@gmx.net>
+Subject: [PATCH 02/18] ARM: bcm2835: DMA can only address 1GB
+Date: Mon, 22 Jul 2019 07:54:33 +0200
+Message-Id: <1563774880-8061-3-git-send-email-wahrenst@gmx.net>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1563774880-8061-1-git-send-email-wahrenst@gmx.net>
 References: <1563774880-8061-1-git-send-email-wahrenst@gmx.net>
-X-Provags-ID: V03:K1:tBeg4e+PRnl9rhRHHJIkca6IIEKDr2SDF7z8y6MNYTuSjVA/knb
- usgo3t6iV7x8lOIxnZ7j6rH9vvkQBBcpfLffwvUxYVycAJiML//sV6K0/6P7gh2mXfXS06c
- qfbDA2NiInjIkpm4z6XPnOSq7rTYOVmyFmZA8nxY/aB1xlS/MKDzA1HMRNw3UD4+lB3h8oq
- NBYi4DmOejYZhNJVjgHvA==
+X-Provags-ID: V03:K1:3KYnU+KY93ySQbXoN6a7vr1jZuSLg8oR5n1EsXsNkt36rd20DMS
+ VBwjTacicgyaL4favnKV7k4PUTLCz84tq75/L+aTV3VtqhtKZBCLf/tqnwY7FPBwUWhLzBa
+ 6eSsLC+RleLIhpzKaVqw1B/UE7GF8EVGriMPREiCsX69eLwypHAnQpaiIJsA6YsG44K3Yv+
+ Pm4jcJw9o3l0kKerr3tqA==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:2ATciYaqYyA=:EVrpHXvoNnbFWY+imnXVTk
- J4iXTc9ih4iKjlhbix48xG0/Ld61JMJnTO3aIOyLuwlTr+Q4ZAPck5xtaivuPDDMdG8Fx83af
- I7F6hwQavYO5o1Vs0/gaMtJ/R0Pox35t/OGq7TTFEQZTQC4iEyj/m/zwGJW+4UCQULC44wdkc
- U2hxIdtAinz0nwS3fdoEPRTS74v5NrJsHHzS5HNxuiIPQfwKVBwQvYlE49DA9E7PjgbunniSj
- gvdMZj63FPH+2gVjDfQL4FrjyMm/A9Bv5jJrmV2y1sfwb3haJYNlALN0hwu16EOr4r2FG9M2W
- ce2r4KcN370Q3+FO2mZluQwa9V/p0JAN4SXCkH5sf/d4EpEbXeSBETmvdpiwR7DKGRdlgVVl7
- HkJkW4VsAEZIL/SeX+noy5u412a7ZGizJsokxc4wdq6cNW2c6GBjHY/h/POwHbWvBuR4ibN5d
- XX9eGLEj8C35oimb2/wgbEcN231iyyb888R4FxQiY44B3mIzS6fnA+NWe58AdKeY/d96itpIx
- H6TjGcuMYn/ijhThLsZDvCU/J7hrWgw+Bw9IZLBhTBNZuTeLSFL4QqqnQ9L0YpWsIpZuFVwwe
- fHiDMqlSqWHvyaK3F5DbONfZis5Z1UNK8MUrOV6YSOI86CcbMkSZ5bmQ1L5Wf/1rjvT9jtC0N
- 7GAnyEkFqOuixRWhYa0QrlqgCSeKB0QGZG7Ru5fAO6YAgOkXFF7wJUFZEzL6qbtclcXQBBAec
- nXd3SKSjFqysGLrmzSXLre8BQIROtIEXinSwdg/RL9tN2Gy0LdH0cwQ+xfkHfoCFWquwIF89w
- GoM3l2MVzF5cNkR+YDrbHV0TkcJC9AO7bbWbPT5iCwvJ/myOUSZppFr+HgoVsXIhI86oqaIDl
- IgukA7nkwH2FH7xTrSrSe69aaLLN+BcjN3CHGjrnW0K73SQCBlk0otssjZZcaJCOGYqE06vbh
- 3+5xzMmkqi+Hhg7qQNP087J0u119KNtiEXxT7Z24jBr6sivX6QUcExmvHMP14KfVMBR4n/2/b
- sjBRAbmpPv4lIEuK2TDQGaR57wzOkuX5c2CJDGSst5kGXF/gAU5tKIptAxE7Ip9CCTVQs61S2
- y+2kdLlBAbfcjg=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:P4wBPLw9+NM=:GFs+lWv7RZDpBlDQGOMwSf
+ Hl30jJQScoNLQ6Ir/S88NdNWLIdXPDdkwQdv9dc2oFCKRJmet6i6ksHMc2S9dRbKniQF4bI1t
+ yVcUfXwKZsNXTjPUMhEvj2eIoXUIO7IPRnOjuHflFhmRtiot04fdXW/9MzD9T3Cjnu8w/QyFf
+ AvTNO8F4JVS8y46dtCYJGZGpAZno1kWv/Fz/9mfCioH3XvkxSKvhz2L0/CsMyVWcFTRyPwvBz
+ 1BFLG3YLUX6P8DiJHjMy66AyWSOjANq/ojzkF4LVdLGUNKxAOnGZn0941kYtkyF2V0bkIW0J3
+ aSUpU79SbqN3KLczP7ceacUt5ZsmDH6WGWhHKvP4cM5HRgdRT5fn4gBtEbyq2wyK1uLi/EOyp
+ 7NC5ijRHALHKZwKR5Wq5Ao5+AK5CTPlkKeR7+JEEkCrwTrWxTnOW+VhY8jUNAtdlkZ3yZSuhK
+ X1t8ZjrXVybxl907t1/GkBb5EjkC6Sj62kkPfx9nKq8Ra2TVAZo+0ww4XHNVFvDfWxxSW2j9z
+ L9nbbMBrpN6WslJAtCf2aBX0ii4sT1629K5qbP6nfPbjKOJqW5pJdHGIGUpivkRfOmE/ft6Se
+ EDZQDNGNBznpsIfat5aNE9EZi4J4ivGs4fspOf51lWBwLFLkCA0f+P5Qn1ZtFhR+sZNc8K80x
+ CHmpq1jnxNDs/RzXga1OoqM5lb/Urn845rccq1D1WY6o9EiuywVa9nCTZUES8ETXkW45F3tCQ
+ ZyKndUdnPXu254beD7lyVSBkQeO6DodhR1nbtmSR4d8HMbrsIHfN3pnD7uYRgu92Zwm5r2xnD
+ HL3CLpqeHJtyH6v4gA67BErm9t/zhGg25IxsH03iT6l0/xUWwUE0LGtM3vPj03vLATI1naGrh
+ pdNOcDPXgI6MtJ8brbApn61dNqNjluyy+Jlr8ICZEoGa2biKBS5Wp2jaElaPBdp2Jy6Pk9mKh
+ ueBYlJnX7YwYwmAoFTQvDIgcn077DIejGFeTJzhYQrZfsO7TSDhgR2ayen/ofMuyd5fNc4Fln
+ Htbmm6rfIHFIr8ZjvOuFoaVvgKXKT76vD1M667L6/zkcHHhTZwbOUm0l/h+h59zuJzF8ThEzN
+ LOSgChzoqBan3c=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190721_225556_637632_69B4D091 
-X-CRM114-Status: GOOD (  11.52  )
+X-CRM114-CacheID: sfid-20190721_225558_695836_DFF8E131 
+X-CRM114-Status: GOOD (  11.94  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -105,55 +104,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-mmc@vger.kernel.org, linux-gpio@vger.kernel.org,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, Stefan Wahren <wahrenst@gmx.net>
+Cc: Phil Elwell <phil@raspberrypi.org>, linux-mmc@vger.kernel.org,
+ linux-gpio@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Stefan Wahren <wahrenst@gmx.net>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The assigned register ranges for UART, SPI and I2C were too wasteful.
-In order to avoid overlapping with the new functions on BCM2711
-reduce the ranges.
+From: Phil Elwell <phil@raspberrypi.org>
 
+The legacy peripherals on BCM2711 & BCM2835 can only address the
+first gigabyte of RAM, so ensure that DMA allocations are restricted to
+that region.
+
+Signed-off-by: Phil Elwell <phil@raspberrypi.org>
 Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
 ---
- arch/arm/boot/dts/bcm283x.dtsi | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ arch/arm/mach-bcm/board_bcm2835.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm/boot/dts/bcm283x.dtsi b/arch/arm/boot/dts/bcm283x.dtsi
-index 4b21ddb..2d191fc 100644
---- a/arch/arm/boot/dts/bcm283x.dtsi
-+++ b/arch/arm/boot/dts/bcm283x.dtsi
-@@ -397,7 +397,7 @@
+diff --git a/arch/arm/mach-bcm/board_bcm2835.c b/arch/arm/mach-bcm/board_bcm2835.c
+index bfc556f..d2b31a9 100644
+--- a/arch/arm/mach-bcm/board_bcm2835.c
++++ b/arch/arm/mach-bcm/board_bcm2835.c
+@@ -24,6 +24,7 @@ static const char * const bcm2835_compat[] = {
+ };
 
- 		uart0: serial@7e201000 {
- 			compatible = "brcm,bcm2835-pl011", "arm,pl011", "arm,primecell";
--			reg = <0x7e201000 0x1000>;
-+			reg = <0x7e201000 0x200>;
- 			interrupts = <2 25>;
- 			clocks = <&clocks BCM2835_CLOCK_UART>,
- 				 <&clocks BCM2835_CLOCK_VPU>;
-@@ -428,7 +428,7 @@
-
- 		spi: spi@7e204000 {
- 			compatible = "brcm,bcm2835-spi";
--			reg = <0x7e204000 0x1000>;
-+			reg = <0x7e204000 0x200>;
- 			interrupts = <2 22>;
- 			clocks = <&clocks BCM2835_CLOCK_VPU>;
- 			dmas = <&dma 6>, <&dma 7>;
-@@ -440,7 +440,7 @@
-
- 		i2c0: i2c@7e205000 {
- 			compatible = "brcm,bcm2835-i2c";
--			reg = <0x7e205000 0x1000>;
-+			reg = <0x7e205000 0x200>;
- 			interrupts = <2 21>;
- 			clocks = <&clocks BCM2835_CLOCK_VPU>;
- 			#address-cells = <1>;
+ DT_MACHINE_START(BCM2835, "BCM2835")
++	.dma_zone_size	= SZ_1G,
+ 	.dt_compat = bcm2835_compat,
+ 	.smp = smp_ops(bcm2836_smp_ops),
+ MACHINE_END
 --
 2.7.4
 
