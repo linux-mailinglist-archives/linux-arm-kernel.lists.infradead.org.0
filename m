@@ -2,80 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 112D770691
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 19:13:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB099706B2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 19:23:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Xl/INaqZ7L3SN4I++bx9hlNgBr4J95V8Qgv1ta7G0I0=; b=qm9MHzWHavRaX0
-	sbYw/eSVi8Zf0jNJZ0t5ipXlIy70FgB/exVfeAAQ9wgbdRTrigISl1I0mcL1q6yGowCD9lFpe/KTN
-	j3Dd87k68z37MNZXuaELrTi3z8Ow0HijVlyHIu8Ex5IRotvzVBoKa4F1gOcbB2UdSaIOdjMUw76si
-	Ou634g4yXquiY+E6o8o8v42KNuiK2PF9/si6O9CcRWzr1vSaSZHXlxIW43opv/0BXCWyo2URB6oNy
-	pfqya1slr6QJOFefSz/Y/yue713+2IozfFBkAGH2bWgawfqyxErql8HQ3JFLRgDmvfpKwkM2u61Rt
-	5PKUnmEUzFlUedWHAB+A==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=U/JSR0te7Z11LwRA6SGJgxJMW3wmjaT0lXLJ6yboUyE=; b=Ohe
+	8FFvuTcTg0eP6il/24CzxqXfjU04D6oChLFx/kiIQUBdO2ZwvCSW8qz1ayl1hjbgRnyyOETjiquV1
+	HMEFPfjSKKM5Sg9PxXeeLGXiMl2dBiKEpnAQ9VRBN74q7PB1T4zdTTLbP5a0tV18GtsSx6lXsk91E
+	qpUSjNqLDFe1KrF/GiMvsLDa4zoY3YlK8MgYeFMS6N6cY2HgaZQG+FhA88EiklIHaAnE+weasHrQp
+	hsOgfnjUcblqMs3/nL3M8afSpx+lTIbxowVJgOefnoSmOgb420doDwtGbffRXu9I7lY046f2cTtqY
+	ZRD5pNUY+rh5iSXqTNPiRC+4rN2+tzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpbsg-0006FH-CV; Mon, 22 Jul 2019 17:13:46 +0000
-Received: from mail-io1-f66.google.com ([209.85.166.66])
+	id 1hpc1l-0000u1-Bc; Mon, 22 Jul 2019 17:23:09 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpbsJ-0006EA-0e; Mon, 22 Jul 2019 17:13:30 +0000
-Received: by mail-io1-f66.google.com with SMTP id o9so75664366iom.3;
- Mon, 22 Jul 2019 10:13:22 -0700 (PDT)
+ id 1hpc1K-0000th-Bl
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 17:22:43 +0000
+Received: by mail-pg1-x543.google.com with SMTP id t132so17965764pgb.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 22 Jul 2019 10:22:41 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=3876AKAsZGX63Axh00T2Gm59IDW3banJe4ryUn84tiA=;
+ b=NQFtRY9MZNMNPg6S5CgEKrvuQRExfM4wbSegsLo2rdM9cKgEOrERmb4fwAvvjfo1IN
+ vF8E/7Yvn6YapYEtC5gmooBWVSptCPLYzLG2FO3VEb2iaxu6CUWamED9YY1QhFdtoP3U
+ uHKb8Njc3t3gUwLQ+cFi/qz/7Nk4oxsfyI321vuEr0qznCQfDwE+IoI0RHwJRwaXc6ex
+ VOf5j/mqW8oyF4l9k/DYG3Z7JT7lvjJ8oKXV1sPntAwuPm1f1v+qXL0eYADfBRpQLwjG
+ hzE0g6Nws1GnjNS5QftuvdRD2JM1DVRblP18YqAHnb56nDWT4TM7S4o3ix2BzzhWix1R
+ 66Cg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=L1CKsuR2Aj6lAs8InXlYaMJ2CXlS4I/JR7pcZ0ogj/k=;
- b=lNcbe/RImdi9WP9RDG4gucYY8KVsebL/I2iKkGiAidHOqQuIpeAWFFZv0QKRTOfPD6
- vTLjuc5PJ1nLoUzYgmKzE0J8FKR9MnttCdeuejcAaNmztPXFfOOi9+YEiEA3YhQD0ffZ
- pSYCH+ecxWIEel2T0WgBXzXuoY0vVXSH5Ox8FzXZKhLC1OeHI9JnQVfYek91RDHBD89+
- vWaYqvW6wCLK3w1zZ0ZTh5TxZCAC2uxMgF2C+kpVzxigMgPzgdoENvnDJxBf9lUawMTu
- nnOUQIdUg5UT6eWRoiPb0P2ipSVwHqf1haTiXXFIzbbFIjlGpKNl+rKOdybkXBCufu6G
- Ms9g==
-X-Gm-Message-State: APjAAAUmRGeN5GaV3rknvEszPom/nz85RhE4k01n/VMJl9pJQvJTUQGK
- JGZbkKekg0DeiUoK4ofFZw==
-X-Google-Smtp-Source: APXvYqy72Ozo+5lEKdgPd0TnUyVwMIgJagxKRXz4L0gqBlISYHh886+zOO3SwVbKeK4f70AEfGNBcQ==
-X-Received: by 2002:a6b:7b01:: with SMTP id l1mr62468845iop.60.1563815601759; 
- Mon, 22 Jul 2019 10:13:21 -0700 (PDT)
-Received: from localhost ([64.188.179.254])
- by smtp.gmail.com with ESMTPSA id n17sm32851341iog.63.2019.07.22.10.13.21
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 22 Jul 2019 10:13:21 -0700 (PDT)
-Date: Mon, 22 Jul 2019 11:13:20 -0600
-From: Rob Herring <robh@kernel.org>
-To: Neal Liu <neal.liu@mediatek.com>
-Subject: Re: [PATCH v4 2/3] dt-bindings: rng: add bindings for MediaTek ARMv8
- SoCs
-Message-ID: <20190722171320.GA9806@bogus>
-References: <1561361052-13072-1-git-send-email-neal.liu@mediatek.com>
- <1561361052-13072-3-git-send-email-neal.liu@mediatek.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1561361052-13072-3-git-send-email-neal.liu@mediatek.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=3876AKAsZGX63Axh00T2Gm59IDW3banJe4ryUn84tiA=;
+ b=WrY+LqK1UKWgrZlwatpidSkZHZ3pRpwNoRUoK8HZImIhFIz3GKb59bLaDK1dExFcI8
+ /6MM1eTZGKM0Drja2lJRz1CNaVlkQGP+KKZCnr591pE0tTrw7eRIAM2WMScdWW/KZpfB
+ ZZ/opuniATj9ejtMfbxy+AkZ2g/GaL5LBYDhXxP9mLPdW9j+KC0bLinG69V+UH9KUNCK
+ owR3j4AYdpeuI74UK6TibWF4dXHXNuxnuN/LvB4SpvWw6fufq7Fw4l+qdtshhpn5f+X/
+ MWJPhSuup82LYF2YaapH/Ob14Qiz/BXfI2m49Eh6wLGJ+8Ayt+HBl0ZZs4DQ8kMC/Im6
+ bKKQ==
+X-Gm-Message-State: APjAAAWcmObOkbUk8hOobwxefQROQWi2j+XZch40x+ZyYmQkxVFDhwIS
+ SLsB9ESeQNF/vetZ4BVhDqqTDlkT
+X-Google-Smtp-Source: APXvYqzvENzFTEG6YT3zLFXjaovEUj0OUeVKwVnsTlCJkv/e4F1BwCfx3+YyUzcZEWDXi/MDZLTtWQ==
+X-Received: by 2002:aa7:90c9:: with SMTP id k9mr1253443pfk.171.1563816161294; 
+ Mon, 22 Jul 2019 10:22:41 -0700 (PDT)
+Received: from localhost.localdomain (KD118155013174.ppp-bb.dion.ne.jp.
+ [118.155.13.174])
+ by smtp.gmail.com with ESMTPSA id w16sm48195445pfj.85.2019.07.22.10.22.39
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Mon, 22 Jul 2019 10:22:40 -0700 (PDT)
+From: Yoshihiro Kaneko <ykaneko0929@gmail.com>
+To: linux-renesas-soc@vger.kernel.org
+Subject: [PATCH] arm64: dts: renesas: r8a7795-es1-salvator-x: sort nodes
+Date: Tue, 23 Jul 2019 02:22:21 +0900
+Message-Id: <1563816141-17805-1-git-send-email-ykaneko0929@gmail.com>
+X-Mailer: git-send-email 1.9.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_101328_275943_00E7079E 
-X-CRM114-Status: GOOD (  14.61  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190722_102242_408776_025EB587 
+X-CRM114-Status: GOOD (  13.84  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.66 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
+ provider (ykaneko0929[at]gmail.com)
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ in digit (ykaneko0929[at]gmail.com)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,53 +96,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Herbert Xu <herbert@gondor.apana.org.au>, wsd_upstream@mediatek.com,
- Sean Wang <sean.wang@kernel.org>, linux-kernel@vger.kernel.org,
- Crystal Guo <Crystal.Guo@mediatek.com>, linux-crypto@vger.kernel.org,
- Matt Mackall <mpm@selenic.com>, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: Magnus Damm <magnus.damm@gmail.com>, Simon Horman <horms@verge.net.au>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 24, 2019 at 03:24:11PM +0800, Neal Liu wrote:
-> Document the binding used by the MediaTek ARMv8 SoCs random
-> number generator with TrustZone enabled.
-> 
-> Signed-off-by: Neal Liu <neal.liu@mediatek.com>
-> ---
->  .../devicetree/bindings/rng/mtk-sec-rng.txt        |   10 ++++++++++
->  1 file changed, 10 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/rng/mtk-sec-rng.txt
-> 
-> diff --git a/Documentation/devicetree/bindings/rng/mtk-sec-rng.txt b/Documentation/devicetree/bindings/rng/mtk-sec-rng.txt
-> new file mode 100644
-> index 0000000..c04ce15
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/rng/mtk-sec-rng.txt
-> @@ -0,0 +1,10 @@
-> +MediaTek random number generator with TrustZone enabled
-> +
-> +Required properties:
-> +- compatible : Should be "mediatek,mtk-sec-rng"
+Sort nodes.
 
-What's the interface to access this? 
+If node address is present
+   * Sort by node address, grouping all nodes with the same compat string
+     and sorting the group alphabetically.
+Else
+   * Sort alphabetically
 
-A node with a 'compatible' and nothing else is a sign of something that 
-a parent device should instantiate and doesn't need to be in DT. IOW, 
-what do complete bindings for firmware functions look like?
+This should not have any run-time effect.
 
-> +
-> +Example:
-> +
-> +hwrng: hwrng {
-> +	compatible = "mediatek,mtk-sec-rng";
-> +}
-> -- 
-> 1.7.9.5
-> 
+Signed-off-by: Yoshihiro Kaneko <ykaneko0929@gmail.com>
+---
+
+This patch is based on the devel branch of Simon Horman's renesas tree.
+
+ .../boot/dts/renesas/r8a7795-es1-salvator-x.dts    | 26 +++++++++++-----------
+ 1 file changed, 13 insertions(+), 13 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/renesas/r8a7795-es1-salvator-x.dts b/arch/arm64/boot/dts/renesas/r8a7795-es1-salvator-x.dts
+index c1a56ea..c729686 100644
+--- a/arch/arm64/boot/dts/renesas/r8a7795-es1-salvator-x.dts
++++ b/arch/arm64/boot/dts/renesas/r8a7795-es1-salvator-x.dts
+@@ -52,12 +52,6 @@
+ 	status = "okay";
+ };
+ 
+-&sound_card {
+-	dais = <&rsnd_port0	/* ak4613 */
+-		&rsnd_port1	/* HDMI0  */
+-		&rsnd_port2>;	/* HDMI1  */
+-};
+-
+ &hdmi0 {
+ 	status = "okay";
+ 
+@@ -108,6 +102,13 @@
+ 	status = "okay";
+ };
+ 
++&pfc {
++	usb2_pins: usb2 {
++		groups = "usb2";
++		function = "usb2";
++	};
++};
++
+ &rcar_sound {
+ 	ports {
+ 		/* rsnd_port0 is on salvator-common */
+@@ -138,17 +139,16 @@
+ 	};
+ };
+ 
+-&pfc {
+-	usb2_pins: usb2 {
+-		groups = "usb2";
+-		function = "usb2";
+-	};
+-};
+-
+ &sata {
+ 	status = "okay";
+ };
+ 
++&sound_card {
++	dais = <&rsnd_port0	/* ak4613 */
++		&rsnd_port1	/* HDMI0  */
++		&rsnd_port2>;	/* HDMI1  */
++};
++
+ &usb2_phy2 {
+ 	pinctrl-0 = <&usb2_pins>;
+ 	pinctrl-names = "default";
+-- 
+1.9.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
