@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F5986FAA5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 09:47:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DFF516FAA8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 09:48:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jw3GXCP5R7GqA3wA6mCM8cY99iExJVDoDcB7BdAITmU=; b=QO0bT1lp0cImx7
-	r8y1I13aBuobMnusixoJW3wVkvpOit1jlJdAaKx4OPouWPslaozQxkCHznzhOb1zCSg9j6MJ3rJ5o
-	uKJPFGL9nTazYxjMMTD7ebGGovYncKFOMTkNwAbhzB9M8PmbH1W/HZsrdbMrXiS7SQ0IqrI60SqMG
-	JbBga+mAFUSlIBQT6b3sRtrNKyLLsDmYE0prXxkCuJVhd1nt+sttY5/+K0pxp7QKoWb7Pgsfr54xt
-	C8QI57mUWMOYn0lv5vlO6X+ah9gwureIT6ZuW0/RL3DFy0M4nDYUr9EKV7qfOqo0RYqQz3RrCcn0s
-	AQKdD6picjBLdb7tXqiQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=XraNed675hnoKorqj2JjkGCGOT7YHdqGuCNSYEpVt/U=; b=L80UFg8H/ndqdI
+	9+kJI+lxjzJSMpVPYgSS6wjNHsq269wD+ESM0oolGctFbCn/S5aToOXe6N4H8dXnPRdNdLNs9ynTp
+	9UTLQS8Q/6gK8HIO3eAvCze8WYiAXm+hloOgtjirgmYztoZmgruTYHyh5a43tQyJEmNLjvOPtRgMR
+	tdfNi+r3c6XLljILudS3pwmWq0eCM3sDyozWMxyATs610+S/hIeImO6Hn+S0BhvT7eiOKpLMHr48a
+	EweUXr4Gbbuf5D7bGSm/7/jrhluXAO8VWZCnmmgQ5XFi+mS8o8qGQ8UHoqyKRS2bOTHEl4h2BqUvz
+	FqjPTQiW2MMee9l2m2Dg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpT2i-0008Es-SK; Mon, 22 Jul 2019 07:47:32 +0000
+	id 1hpT3s-0008Vt-FO; Mon, 22 Jul 2019 07:48:44 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpT2U-0008EY-9S
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 07:47:19 +0000
-Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ id 1hpT3e-0008VT-IL
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 07:48:31 +0000
+Received: from localhost.localdomain (NE2965lan1.rev.em-net.ne.jp
+ [210.141.244.193])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 36766206DD;
- Mon, 22 Jul 2019 07:47:13 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B96182199C;
+ Mon, 22 Jul 2019 07:48:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563781637;
- bh=vEMJsRu+hSQRQqRPW0cmugNwU1SYjS9MxSsBCPTWbnI=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=xotim+n+wM0Hu89/V2xWYrX8FUQG201U2Q81aMxSaDsHlXDAQjS61nF+13n6fgG9C
- vTc4UudTpeZEyo7FgRZoOvzI3JdwUB7KuveEJj6kKWRN7cUaGJ6oVUjjmUZENigSDc
- bj31bj8Ili5ODSDRuZnGlw5Vv65YEDW9FXrzD3Cc=
-Date: Mon, 22 Jul 2019 15:46:49 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Fancy Fang <chen.fang@nxp.com>
-Subject: Re: [PATCH 1/2] clk: imx8mm: rename lcdif pixel clock
-Message-ID: <20190722074648.GF3738@dragon>
-References: <20190709071942.18109-1-chen.fang@nxp.com>
+ s=default; t=1563781710;
+ bh=fCm+twhupd0sfoMKl3+oPJY6FX4/EFcymfZefTFmLO8=;
+ h=From:To:Cc:Subject:Date:From;
+ b=F8zFyZIrS/zpZQrHnC9mXaN0J0K7HeaiyybgnJ9mwyxw3fFiCElwLVA8qUy2OEfe+
+ OzJ+k34UT+jduVM2DYe4wVtgUGWd03QtNcjydt4XV7KxaZFh3kF2LOK6k2XcgI7cRj
+ 37ibeZlJlREutUvtOi0ttksrQWxTXenUeUZysu+4=
+From: Masami Hiramatsu <mhiramat@kernel.org>
+To: Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will.deacon@arm.com>
+Subject: [PATCH v2 0/4] arm64: kprobes: Fix some bugs in arm64 kprobes 
+Date: Mon, 22 Jul 2019 16:48:24 +0900
+Message-Id: <156378170297.12011.17385386326930403235.stgit@devnote2>
+X-Mailer: git-send-email 2.20.1
+User-Agent: StGit/0.17.1-dirty
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190709071942.18109-1-chen.fang@nxp.com>
-User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_004718_361676_F4CCF595 
-X-CRM114-Status: GOOD (  16.42  )
+X-CRM114-CacheID: sfid-20190722_004830_629839_DA8912FE 
+X-CRM114-Status: GOOD (  10.35  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,81 +76,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jacky Bai <ping.bai@nxp.com>, "sboyd@kernel.org" <sboyd@kernel.org>,
- "mturquette@baylibre.com" <mturquette@baylibre.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Dan Rue <dan.rue@linaro.org>, Daniel Diaz <daniel.diaz@linaro.org>,
+ Anders Roxell <anders.roxell@linaro.org>,
+ Naresh Kamboju <naresh.kamboju@linaro.org>, linux-kernel@vger.kernel.org,
+ Matt Hart <matthew.hart@linaro.org>, linux-arm-kernel@lists.infradead.org,
+ mhiramat@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jul 09, 2019 at 07:17:56AM +0000, Fancy Fang wrote:
-> Rename 'lcdif' pixel clock related names to 'disp' names, since:
-> 
-> First, the lcdif pixel clock is not supplied to LCDIF controller
-> directly, but to some LPCG clock in display mix. So rename it to
-> 'disp' pixel clock is more accurate.
-> 
-> Second, in the imx8mn CCM specification which is designed after
-> imx8mm, this same pixel root clock name has been modified from
-> 'LCDIF_PIXEL_CLK_ROOT' to 'DISPLAY_PIXEL_CLK_ROOT'.
+Hi,
 
-We should simply name the clock after i.MX8MM reference manual.  What is
-the clock name in there?
+Here are the v2 patches which fixes kprobe bugs on arm64.
 
-Shawn
+Naresh reported that recently ftracetest crashes kernel, and I found
+there are 3 different bugs around the crash. In v1 thread, we found
+one another bug of RCU and debug exception.
 
-> 
-> Signed-off-by: Fancy Fang <chen.fang@nxp.com>
-> ---
->  drivers/clk/imx/clk-imx8mm.c             | 4 ++--
->  include/dt-bindings/clock/imx8mm-clock.h | 2 +-
->  2 files changed, 3 insertions(+), 3 deletions(-)
-> 
-> diff --git a/drivers/clk/imx/clk-imx8mm.c b/drivers/clk/imx/clk-imx8mm.c
-> index 6b8e75df994d..42f1227a4952 100644
-> --- a/drivers/clk/imx/clk-imx8mm.c
-> +++ b/drivers/clk/imx/clk-imx8mm.c
-> @@ -210,7 +210,7 @@ static const char *imx8mm_pcie1_aux_sels[] = {"osc_24m", "sys_pll2_200m", "sys_p
->  static const char *imx8mm_dc_pixel_sels[] = {"osc_24m", "video_pll1_out", "audio_pll2_out", "audio_pll1_out",
->  					     "sys_pll1_800m", "sys_pll2_1000m", "sys_pll3_out", "clk_ext4", };
->  
-> -static const char *imx8mm_lcdif_pixel_sels[] = {"osc_24m", "video_pll1_out", "audio_pll2_out", "audio_pll1_out",
-> +static const char *imx8mm_disp_pixel_sels[] = {"osc_24m", "video_pll1_out", "audio_pll2_out", "audio_pll1_out",
->  						"sys_pll1_800m", "sys_pll2_1000m", "sys_pll3_out", "clk_ext4", };
->  
->  static const char *imx8mm_sai1_sels[] = {"osc_24m", "audio_pll1_out", "audio_pll2_out", "video_pll1_out",
-> @@ -535,7 +535,7 @@ static int __init imx8mm_clocks_init(struct device_node *ccm_node)
->  	clks[IMX8MM_CLK_PCIE1_PHY] = imx8m_clk_composite("pcie1_phy", imx8mm_pcie1_phy_sels, base + 0xa380);
->  	clks[IMX8MM_CLK_PCIE1_AUX] = imx8m_clk_composite("pcie1_aux", imx8mm_pcie1_aux_sels, base + 0xa400);
->  	clks[IMX8MM_CLK_DC_PIXEL] = imx8m_clk_composite("dc_pixel", imx8mm_dc_pixel_sels, base + 0xa480);
-> -	clks[IMX8MM_CLK_LCDIF_PIXEL] = imx8m_clk_composite("lcdif_pixel", imx8mm_lcdif_pixel_sels, base + 0xa500);
-> +	clks[IMX8MM_CLK_DISP_PIXEL] = imx8m_clk_composite("disp_pixel", imx8mm_disp_pixel_sels, base + 0xa500);
->  	clks[IMX8MM_CLK_SAI1] = imx8m_clk_composite("sai1", imx8mm_sai1_sels, base + 0xa580);
->  	clks[IMX8MM_CLK_SAI2] = imx8m_clk_composite("sai2", imx8mm_sai2_sels, base + 0xa600);
->  	clks[IMX8MM_CLK_SAI3] = imx8m_clk_composite("sai3", imx8mm_sai3_sels, base + 0xa680);
-> diff --git a/include/dt-bindings/clock/imx8mm-clock.h b/include/dt-bindings/clock/imx8mm-clock.h
-> index 07e6c686f3ef..91ef77efebd9 100644
-> --- a/include/dt-bindings/clock/imx8mm-clock.h
-> +++ b/include/dt-bindings/clock/imx8mm-clock.h
-> @@ -119,7 +119,7 @@
->  #define IMX8MM_CLK_PCIE1_PHY			104
->  #define IMX8MM_CLK_PCIE1_AUX			105
->  #define IMX8MM_CLK_DC_PIXEL			106
-> -#define IMX8MM_CLK_LCDIF_PIXEL			107
-> +#define IMX8MM_CLK_DISP_PIXEL			107
->  #define IMX8MM_CLK_SAI1				108
->  #define IMX8MM_CLK_SAI2				109
->  #define IMX8MM_CLK_SAI3				110
-> -- 
-> 2.17.1
-> 
+- Kprobes on arm64 doesn't recover pstate.D mask after single stepping.
+  This causes a real kernel crash if a kprobe is unexpectedly nested.
+- Some symbols which are called from blacklisted function, are not
+  blacklisted.
+- Debug exception is not visible to RCU, thus rcu_read_lock() cause
+  a warning inside it.
+- Debug exception handlers on arm64 is using rcu_read_lock(), but
+  that is not needed because interrupts are disabled.
+
+This series includes fixes for above bugs.
+
+Thank you,
+
+---
+
+Masami Hiramatsu (4):
+      arm64: kprobes: Recover pstate.D in single-step exception handler
+      arm64: unwind: Prohibit probing on return_address()
+      arm64: Make debug exception handlers visible from RCU
+      arm64: Remove unneeded rcu_read_lock from debug handlers
+
+
+ arch/arm64/kernel/debug-monitors.c |   14 +++++++-----
+ arch/arm64/kernel/probes/kprobes.c |   41 ++++++------------------------------
+ arch/arm64/kernel/return_address.c |    4 +++-
+ arch/arm64/kernel/stacktrace.c     |    3 +++
+ arch/arm64/mm/fault.c              |   40 +++++++++++++++++++++++++++++++++++
+ 5 files changed, 61 insertions(+), 41 deletions(-)
+
+--
+Masami Hiramatsu (Linaro) <mhiramat@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
