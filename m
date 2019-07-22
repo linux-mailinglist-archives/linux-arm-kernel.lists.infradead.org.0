@@ -2,84 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B07736FCCC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 11:50:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0718E6FCE6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 11:51:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=kHnjoP6MQmL1FNAJ8dTysoG6BjZay4lIbb18xIfIKGI=; b=l0D
-	kkiLj1aScf6QuGOkLIx9hCGx6SN7Nk4h1r9lJ30wDPjb/afZFMQUjltbQNLkopnvmBikIDYbW0CF6
-	4FhV9FHxyspwEAq2kHRwz9YX2MVJ/SdREo+oGbxlcsvYoqrMhZq5eruPwWIqvCDfH9WOSVvjWLebN
-	rVH7M9cu1A+OoBQOcicjarLw9L6CRImGUvq+zuGyPGgSwD/1C+Z7MrtaHUjWPQpzvyouGI8kN38bU
-	1vMHlMaozjUiwEFysx98VH1jfrRrte4eYUe6ChuJHWdX+i+nz3/CTGjzSKTZyCc3p5u2M3QfH4JTb
-	j+y6KwImYax1xXsAO3IfUQYCioiXfNw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=K2HVXC9mPL7b1Pzo2u44Lo0lMSvgtgr9gKYIFDGNINc=; b=tem6kOX0YJFdbf
+	E3dyB5rUkTVJtzvy0rCPFMdOq9rnOvp4PtHZcn7rA8KmPlVfw0okKDKvI1av7AUGTKZyb2BbyuvaS
+	TXY4IhjVu9DPSXeF/zg2PLb8CoGRcX/u03JLpGdF//7kY21CSQp++/dQHzZ1iAWSBPFrV1totSZ2a
+	yp299QEGcSfc8+RhR7kb5tqXQ1pvt2S72k6i8RFrlLNU+vg+h3PzjowpN4yJdrFgl6GRO8r6Kpd4Y
+	/hnz8F2LZfCJVIQnBMAmhx6vLPJo/7zLADDUu0WS+e92Nee/DK2tnQeAGdfPiOwZxDkhh+4AB6wnf
+	Pf/iMLVPD6MUU0m28vjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpUxk-0005Lu-NA; Mon, 22 Jul 2019 09:50:32 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1hpUyR-0005k5-10; Mon, 22 Jul 2019 09:51:15 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpUxP-0005KS-Ln
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 09:50:14 +0000
-Received: by mail-wm1-x341.google.com with SMTP id v19so34655051wmj.5
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 22 Jul 2019 02:50:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id;
- bh=hKm+JnXWXXuV7trgotmUC1XIGpONOP5h0963i0bTdew=;
- b=DQBpWeMP76gef9u3FmEa4dVGE14vsxX+islaXCYSJHE59o5WAkX/DAJD5D0geYOcQp
- b6XKChn1XSh9H0gbrRQoRda34L3dtq/v2rzOR9E8bR3UMHNplGrm1wgHAdMGbAe9R6XY
- RRbtXcchA/IWHlZl9DvZtl53WdBy1hrLW4nvaM0M2Hg46jaXxJtUmZPtpl1ilkmMqGbc
- YLkBdH2ZcPZ9zCXSbZ8mVVFT1aR0eSvw+5BySRo6qEoCYklmynWjtHkL7iL76RrQPJrC
- EfyeQ3DP+LMCy5qEF/Mplq225nFwuMm0c8mfNcvrjPPrY+SI5mOSqvEtx19W2RwWoH3M
- 6Ezg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=hKm+JnXWXXuV7trgotmUC1XIGpONOP5h0963i0bTdew=;
- b=kygELw83/mkixs84Xt8c+o3rulGO+oqGOi3udByV8MwoYp4dU6nA7ux4d8wiwOExLQ
- bKqxACBrH9rcPl9MUpqAl6PkN6RsNJ4blhQ6OMNeVoAhaouvEI/hWNyTK70rGOmcabCm
- C4lmJCtY5drqenhSRMLJbdO/htJ0V/OD73R9G/I+GAERaTZM47Q02X6ZbVcAywSnfIr+
- ZvaSi0LwGRYnbyCTDozeMnpm+f3jzEPrGLWxWzBnOlISRSw1Wr1sft2ElZIcIQKCEbhQ
- Vfm6TPsOtcvgGoGTP88s+is0enZBqosotTwByOSq3fER1zf8WxX7fOh1kduCj/QoF7BF
- eXKw==
-X-Gm-Message-State: APjAAAW6OtZROOEU2fe5HjG/DKzbKf8V8ePWz3VhiAu9Yw3zgnEH3ks2
- 2l1xaMzTutEV+hT6cZd++S8U+A==
-X-Google-Smtp-Source: APXvYqzZejCbxUUJoz+ci6zOgcDamgzn4M220kLVWYRh0TK31P/EYFTXN3mvUgfwK4TH9R/YQalm9Q==
-X-Received: by 2002:a1c:a5c2:: with SMTP id
- o185mr61734341wme.172.1563789009588; 
- Mon, 22 Jul 2019 02:50:09 -0700 (PDT)
-Received: from pop-os.baylibre.local
- (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.googlemail.com with ESMTPSA id i12sm40494917wrx.61.2019.07.22.02.50.08
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 22 Jul 2019 02:50:08 -0700 (PDT)
-From: Alexandre Mergnat <amergnat@baylibre.com>
-To: jbrunet@baylibre.com
-Subject: [PATCH] clk: meson: axg-audio: migrate to the new parent description
- method
-Date: Mon, 22 Jul 2019 11:49:54 +0200
-Message-Id: <20190722094954.14040-1-amergnat@baylibre.com>
-X-Mailer: git-send-email 2.17.1
+ id 1hpUy5-0005gs-Q2; Mon, 22 Jul 2019 09:50:55 +0000
+X-UUID: b4e55aa18221420e8b43f6fde219ad0d-20190722
+X-UUID: b4e55aa18221420e8b43f6fde219ad0d-20190722
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <neal.liu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1759627634; Mon, 22 Jul 2019 01:50:46 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 22 Jul 2019 02:50:44 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 22 Jul 2019 17:50:43 +0800
+Received: from [172.21.77.33] (172.21.77.33) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 22 Jul 2019 17:50:42 +0800
+Message-ID: <1563789042.14676.3.camel@mtkswgap22>
+Subject: Re: [PATCH v4 0/3] MediaTek Security random number generator support
+From: Neal Liu <neal.liu@mediatek.com>
+To: Matt Mackall <mpm@selenic.com>, Rob Herring <robh+dt@kernel.org>, "Herbert
+ Xu" <herbert@gondor.apana.org.au>, Mark Rutland <mark.rutland@arm.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Sean Wang <sean.wang@kernel.org>
+Date: Mon, 22 Jul 2019 17:50:42 +0800
+In-Reply-To: <1561361052-13072-1-git-send-email-neal.liu@mediatek.com>
+References: <1561361052-13072-1-git-send-email-neal.liu@mediatek.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
+MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_025011_756460_92C374B4 
-X-CRM114-Status: GOOD (  14.54  )
+X-CRM114-CacheID: sfid-20190722_025053_846608_5EA64A0D 
+X-CRM114-Status: GOOD (  12.09  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,533 +72,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: narmstrong@baylibre.com, sboyd@kernel.org, khilman@baylibre.com,
- Alexandre Mergnat <amergnat@baylibre.com>, linux-kernel@vger.kernel.org,
- baylibre-upstreaming@groups.io, linux-amlogic@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ wsd_upstream <wsd_upstream@mediatek.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Crystal Guo =?UTF-8?Q?=28=E9=83=AD=E6=99=B6=29?= <Crystal.Guo@mediatek.com>,
+ "linux-crypto@vger.kernel.org" <linux-crypto@vger.kernel.org>,
+ Neal Liu <neal.liu@mediatek.com>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This clock controller use the string comparison method to describe parent
-relation between the clocks, which is not optimized. A recent patch [0]
-allows parents to be specified without string names or with device-tree
-clock name by using a new assignment structure.
+Dear Matthias, Rob, Mark,
+	Just gentle ping.
+	Thanks
 
-Migrate to the new way by using .parent_hws where possible (when parent
-clocks are localy declared in the controller) and use .parent_data
-otherwise.
 
-Remove clk input helper and all bypass clocks (declared in probe function)
-which are no longer used since we are able to use device-tree clock name
-directly.
+On Mon, 2019-06-24 at 15:24 +0800, Neal Liu wrote:
+> These patch series introduce a generic rng driver for Trustzone
+> based kernel driver which would like to communicate with ATF
+> SIP services.
+> 
+> Patch #1 initials SMC fid table for Mediatek SIP interfaces and
+> adds HWRNG related SMC call.
+> 
+> Patch #2..3 adds mtk-sec-rng kernel driver for Trustzone based SoCs.
+> For MediaTek SoCs on ARMv8 with TrustZone enabled, peripherals like
+> entropy sources is not accessible from normal world (linux) and
+> rather accessible from secure world (ATF/TEE) only. This driver aims
+> to provide a generic interface to ATF rng service.
+> 
+> 
+> changes since v1:
+> - rename mt67xx-rng to mtk-sec-rng since all MediaTek ARMv8 SoCs
+> can reuse this driver.
+> - refine coding style and unnecessary check.
+> 
+> changes since v2:
+> - remove unused comments.
+> - remove redundant variable.
+> 
+> changes since v3:
+> - add dt-bindings for MediaTek rng with TrustZone enabled
+> - revise HWRNG SMC call fid
+> 
+> 
+> Neal Liu (3):
+>   soc: mediatek: add SMC fid table for SIP interface
+>   dt-bindings: rng: add bindings for MediaTek ARMv8 SoCs
+>   hwrng: add mtk-sec-rng driver
+> 
+>  .../devicetree/bindings/rng/mtk-sec-rng.txt   | 10 ++
+>  drivers/char/hw_random/Kconfig                | 16 +++
+>  drivers/char/hw_random/Makefile               |  1 +
+>  drivers/char/hw_random/mtk-sec-rng.c          | 97 +++++++++++++++++++
+>  include/linux/soc/mediatek/mtk_sip_svc.h      | 33 +++++++
+>  5 files changed, 157 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/rng/mtk-sec-rng.txt
+>  create mode 100644 drivers/char/hw_random/mtk-sec-rng.c
+>  create mode 100644 include/linux/soc/mediatek/mtk_sip_svc.h
+> 
 
-[0] commit fc0c209c147f ("clk: Allow parents to be specified without string names")
-
-Signed-off-by: Alexandre Mergnat <amergnat@baylibre.com>
----
- drivers/clk/meson/Kconfig     |   1 -
- drivers/clk/meson/axg-audio.c | 253 ++++++++++++++++------------------
- 2 files changed, 116 insertions(+), 138 deletions(-)
-
-diff --git a/drivers/clk/meson/Kconfig b/drivers/clk/meson/Kconfig
-index a6b20e123e0c..ee0b84b6b329 100644
---- a/drivers/clk/meson/Kconfig
-+++ b/drivers/clk/meson/Kconfig
-@@ -86,7 +86,6 @@ config COMMON_CLK_AXG
- config COMMON_CLK_AXG_AUDIO
- 	tristate "Meson AXG Audio Clock Controller Driver"
- 	depends on ARCH_MESON
--	select COMMON_CLK_MESON_INPUT
- 	select COMMON_CLK_MESON_REGMAP
- 	select COMMON_CLK_MESON_PHASE
- 	select COMMON_CLK_MESON_SCLK_DIV
-diff --git a/drivers/clk/meson/axg-audio.c b/drivers/clk/meson/axg-audio.c
-index 8028ff6f6610..4253a466eae8 100644
---- a/drivers/clk/meson/axg-audio.c
-+++ b/drivers/clk/meson/axg-audio.c
-@@ -15,7 +15,6 @@
- #include <linux/slab.h>
- 
- #include "axg-audio.h"
--#include "clk-input.h"
- #include "clk-regmap.h"
- #include "clk-phase.h"
- #include "sclk-div.h"
-@@ -24,7 +23,7 @@
- #define AUD_SLV_SCLK_COUNT	10
- #define AUD_SLV_LRCLK_COUNT	10
- 
--#define AUD_GATE(_name, _reg, _bit, _pname, _iflags)			\
-+#define AUD_GATE(_name, _reg, _bit, _phws, _iflags)			\
- struct clk_regmap aud_##_name = {					\
- 	.data = &(struct clk_regmap_gate_data){				\
- 		.offset = (_reg),					\
-@@ -33,13 +32,13 @@ struct clk_regmap aud_##_name = {					\
- 	.hw.init = &(struct clk_init_data) {				\
- 		.name = "aud_"#_name,					\
- 		.ops = &clk_regmap_gate_ops,				\
--		.parent_names = (const char *[]){ _pname },		\
-+		.parent_hws = (const struct clk_hw *[]) { &_phws.hw }, \
- 		.num_parents = 1,					\
- 		.flags = CLK_DUTY_CYCLE_PARENT | (_iflags),		\
- 	},								\
- }
- 
--#define AUD_MUX(_name, _reg, _mask, _shift, _dflags, _pnames, _iflags)	\
-+#define AUD_MUX(_name, _reg, _mask, _shift, _dflags, _pdata, _iflags)	\
- struct clk_regmap aud_##_name = {					\
- 	.data = &(struct clk_regmap_mux_data){				\
- 		.offset = (_reg),					\
-@@ -50,13 +49,13 @@ struct clk_regmap aud_##_name = {					\
- 	.hw.init = &(struct clk_init_data){				\
- 		.name = "aud_"#_name,					\
- 		.ops = &clk_regmap_mux_ops,				\
--		.parent_names = (_pnames),				\
--		.num_parents = ARRAY_SIZE(_pnames),			\
-+		.parent_data = _pdata,					\
-+		.num_parents = ARRAY_SIZE(_pdata),			\
- 		.flags = CLK_DUTY_CYCLE_PARENT | (_iflags),		\
- 	},								\
- }
- 
--#define AUD_DIV(_name, _reg, _shift, _width, _dflags, _pname, _iflags)	\
-+#define AUD_DIV(_name, _reg, _shift, _width, _dflags, _phws, _iflags)	\
- struct clk_regmap aud_##_name = {					\
- 	.data = &(struct clk_regmap_div_data){				\
- 		.offset = (_reg),					\
-@@ -67,15 +66,27 @@ struct clk_regmap aud_##_name = {					\
- 	.hw.init = &(struct clk_init_data){				\
- 		.name = "aud_"#_name,					\
- 		.ops = &clk_regmap_divider_ops,				\
--		.parent_names = (const char *[]) { _pname },		\
-+		.parent_hws = (const struct clk_hw *[]) { &_phws.hw }, \
- 		.num_parents = 1,					\
- 		.flags = (_iflags),					\
- 	},								\
- }
- 
- #define AUD_PCLK_GATE(_name, _bit)				\
--	AUD_GATE(_name, AUDIO_CLK_GATE_EN, _bit, "audio_pclk", 0)
--
-+struct clk_regmap aud_##_name = {					\
-+	.data = &(struct clk_regmap_gate_data){				\
-+		.offset = (AUDIO_CLK_GATE_EN),				\
-+		.bit_idx = (_bit),					\
-+	},								\
-+	.hw.init = &(struct clk_init_data) {				\
-+		.name = "aud_"#_name,					\
-+		.ops = &clk_regmap_gate_ops,				\
-+		.parent_data = &(const struct clk_parent_data) {	\
-+			.fw_name = "pclk",				\
-+		},							\
-+		.num_parents = 1,					\
-+	},								\
-+}
- /* Audio peripheral clocks */
- static AUD_PCLK_GATE(ddr_arb,	   0);
- static AUD_PCLK_GATE(pdm,	   1);
-@@ -100,14 +111,20 @@ static AUD_PCLK_GATE(power_detect, 19);
- static AUD_PCLK_GATE(spdifout_b,   21);
- 
- /* Audio Master Clocks */
--static const char * const mst_mux_parent_names[] = {
--	"aud_mst_in0", "aud_mst_in1", "aud_mst_in2", "aud_mst_in3",
--	"aud_mst_in4", "aud_mst_in5", "aud_mst_in6", "aud_mst_in7",
-+static const struct clk_parent_data mst_mux_parent_data[] = {
-+	{ .fw_name = "mst_in0", },
-+	{ .fw_name = "mst_in1", },
-+	{ .fw_name = "mst_in2", },
-+	{ .fw_name = "mst_in3", },
-+	{ .fw_name = "mst_in4", },
-+	{ .fw_name = "mst_in5", },
-+	{ .fw_name = "mst_in6", },
-+	{ .fw_name = "mst_in7", },
- };
- 
- #define AUD_MST_MUX(_name, _reg, _flag)				\
- 	AUD_MUX(_name##_sel, _reg, 0x7, 24, _flag,		\
--		mst_mux_parent_names, CLK_SET_RATE_PARENT)
-+		mst_mux_parent_data, CLK_SET_RATE_PARENT)
- 
- #define AUD_MST_MCLK_MUX(_name, _reg)				\
- 	AUD_MST_MUX(_name, _reg, CLK_MUX_ROUND_CLOSEST)
-@@ -129,7 +146,7 @@ static AUD_MST_MCLK_MUX(spdifout_b_clk, AUDIO_CLK_SPDIFOUT_B_CTRL);
- 
- #define AUD_MST_DIV(_name, _reg, _flag)				\
- 	AUD_DIV(_name##_div, _reg, 0, 16, _flag,		\
--		    "aud_"#_name"_sel", CLK_SET_RATE_PARENT)	\
-+		    aud_##_name##_sel, CLK_SET_RATE_PARENT)	\
- 
- #define AUD_MST_MCLK_DIV(_name, _reg)				\
- 	AUD_MST_DIV(_name, _reg, CLK_DIVIDER_ROUND_CLOSEST)
-@@ -150,7 +167,7 @@ static AUD_MST_SYS_DIV(pdm_sysclk,    AUDIO_CLK_PDMIN_CTRL1);
- static AUD_MST_MCLK_DIV(spdifout_b_clk, AUDIO_CLK_SPDIFOUT_B_CTRL);
- 
- #define AUD_MST_MCLK_GATE(_name, _reg)				\
--	AUD_GATE(_name, _reg, 31,  "aud_"#_name"_div",	\
-+	AUD_GATE(_name, _reg, 31,  aud_##_name##_div,		\
- 		 CLK_SET_RATE_PARENT)
- 
- static AUD_MST_MCLK_GATE(mst_a_mclk,   AUDIO_MCLK_A_CTRL);
-@@ -168,7 +185,7 @@ static AUD_MST_MCLK_GATE(spdifout_b_clk, AUDIO_CLK_SPDIFOUT_B_CTRL);
- /* Sample Clocks */
- #define AUD_MST_SCLK_PRE_EN(_name, _reg)			\
- 	AUD_GATE(mst_##_name##_sclk_pre_en, _reg, 31,		\
--		 "aud_mst_"#_name"_mclk", 0)
-+		 aud_mst_##_name##_mclk, 0)
- 
- static AUD_MST_SCLK_PRE_EN(a, AUDIO_MST_A_SCLK_CTRL0);
- static AUD_MST_SCLK_PRE_EN(b, AUDIO_MST_B_SCLK_CTRL0);
-@@ -178,7 +195,7 @@ static AUD_MST_SCLK_PRE_EN(e, AUDIO_MST_E_SCLK_CTRL0);
- static AUD_MST_SCLK_PRE_EN(f, AUDIO_MST_F_SCLK_CTRL0);
- 
- #define AUD_SCLK_DIV(_name, _reg, _div_shift, _div_width,		\
--			 _hi_shift, _hi_width, _pname, _iflags)		\
-+			 _hi_shift, _hi_width, _phws, _iflags)		\
- struct clk_regmap aud_##_name = {					\
- 	.data = &(struct meson_sclk_div_data) {				\
- 		.div = {						\
-@@ -195,7 +212,7 @@ struct clk_regmap aud_##_name = {					\
- 	.hw.init = &(struct clk_init_data) {				\
- 		.name = "aud_"#_name,					\
- 		.ops = &meson_sclk_div_ops,				\
--		.parent_names = (const char *[]) { _pname },		\
-+		.parent_hws = (const struct clk_hw *[]) { &_phws.hw }, \
- 		.num_parents = 1,					\
- 		.flags = (_iflags),					\
- 	},								\
-@@ -203,7 +220,7 @@ struct clk_regmap aud_##_name = {					\
- 
- #define AUD_MST_SCLK_DIV(_name, _reg)					\
- 	AUD_SCLK_DIV(mst_##_name##_sclk_div, _reg, 20, 10, 0, 0,	\
--		     "aud_mst_"#_name"_sclk_pre_en",			\
-+		     aud_mst_##_name##_sclk_pre_en,			\
- 		     CLK_SET_RATE_PARENT)
- 
- static AUD_MST_SCLK_DIV(a, AUDIO_MST_A_SCLK_CTRL0);
-@@ -214,8 +231,8 @@ static AUD_MST_SCLK_DIV(e, AUDIO_MST_E_SCLK_CTRL0);
- static AUD_MST_SCLK_DIV(f, AUDIO_MST_F_SCLK_CTRL0);
- 
- #define AUD_MST_SCLK_POST_EN(_name, _reg)				\
--	AUD_GATE(mst_##_name##_sclk_post_en, _reg, 30,		\
--		 "aud_mst_"#_name"_sclk_div", CLK_SET_RATE_PARENT)
-+	AUD_GATE(mst_##_name##_sclk_post_en, _reg, 30,			\
-+		 aud_mst_##_name##_sclk_div, CLK_SET_RATE_PARENT)
- 
- static AUD_MST_SCLK_POST_EN(a, AUDIO_MST_A_SCLK_CTRL0);
- static AUD_MST_SCLK_POST_EN(b, AUDIO_MST_B_SCLK_CTRL0);
-@@ -225,7 +242,7 @@ static AUD_MST_SCLK_POST_EN(e, AUDIO_MST_E_SCLK_CTRL0);
- static AUD_MST_SCLK_POST_EN(f, AUDIO_MST_F_SCLK_CTRL0);
- 
- #define AUD_TRIPHASE(_name, _reg, _width, _shift0, _shift1, _shift2, \
--			 _pname, _iflags)				\
-+			 _phws, _iflags)				\
- struct clk_regmap aud_##_name = {					\
- 	.data = &(struct meson_clk_triphase_data) {			\
- 		.ph0 = {						\
-@@ -247,7 +264,7 @@ struct clk_regmap aud_##_name = {					\
- 	.hw.init = &(struct clk_init_data) {				\
- 		.name = "aud_"#_name,					\
- 		.ops = &meson_clk_triphase_ops,				\
--		.parent_names = (const char *[]) { _pname },		\
-+		.parent_hws = (const struct clk_hw *[]) { &_phws.hw }, \
- 		.num_parents = 1,					\
- 		.flags = CLK_DUTY_CYCLE_PARENT | (_iflags),		\
- 	},								\
-@@ -255,7 +272,7 @@ struct clk_regmap aud_##_name = {					\
- 
- #define AUD_MST_SCLK(_name, _reg)					\
- 	AUD_TRIPHASE(mst_##_name##_sclk, _reg, 1, 0, 2, 4,		\
--		     "aud_mst_"#_name"_sclk_post_en", CLK_SET_RATE_PARENT)
-+		     aud_mst_##_name##_sclk_post_en, CLK_SET_RATE_PARENT)
- 
- static AUD_MST_SCLK(a, AUDIO_MST_A_SCLK_CTRL1);
- static AUD_MST_SCLK(b, AUDIO_MST_B_SCLK_CTRL1);
-@@ -266,7 +283,7 @@ static AUD_MST_SCLK(f, AUDIO_MST_F_SCLK_CTRL1);
- 
- #define AUD_MST_LRCLK_DIV(_name, _reg)					\
- 	AUD_SCLK_DIV(mst_##_name##_lrclk_div, _reg, 0, 10, 10, 10,	\
--		     "aud_mst_"#_name"_sclk_post_en", 0)		\
-+		     aud_mst_##_name##_sclk_post_en, 0)			\
- 
- static AUD_MST_LRCLK_DIV(a, AUDIO_MST_A_SCLK_CTRL0);
- static AUD_MST_LRCLK_DIV(b, AUDIO_MST_B_SCLK_CTRL0);
-@@ -277,7 +294,7 @@ static AUD_MST_LRCLK_DIV(f, AUDIO_MST_F_SCLK_CTRL0);
- 
- #define AUD_MST_LRCLK(_name, _reg)					\
- 	AUD_TRIPHASE(mst_##_name##_lrclk, _reg, 1, 1, 3, 5,		\
--		     "aud_mst_"#_name"_lrclk_div", CLK_SET_RATE_PARENT)
-+		     aud_mst_##_name##_lrclk_div, CLK_SET_RATE_PARENT)
- 
- static AUD_MST_LRCLK(a, AUDIO_MST_A_SCLK_CTRL1);
- static AUD_MST_LRCLK(b, AUDIO_MST_B_SCLK_CTRL1);
-@@ -286,19 +303,29 @@ static AUD_MST_LRCLK(d, AUDIO_MST_D_SCLK_CTRL1);
- static AUD_MST_LRCLK(e, AUDIO_MST_E_SCLK_CTRL1);
- static AUD_MST_LRCLK(f, AUDIO_MST_F_SCLK_CTRL1);
- 
--static const char * const tdm_sclk_parent_names[] = {
--	"aud_mst_a_sclk", "aud_mst_b_sclk", "aud_mst_c_sclk",
--	"aud_mst_d_sclk", "aud_mst_e_sclk", "aud_mst_f_sclk",
--	"aud_slv_sclk0", "aud_slv_sclk1", "aud_slv_sclk2",
--	"aud_slv_sclk3", "aud_slv_sclk4", "aud_slv_sclk5",
--	"aud_slv_sclk6", "aud_slv_sclk7", "aud_slv_sclk8",
--	"aud_slv_sclk9"
-+static const struct clk_parent_data tdm_sclk_parent_data[] = {
-+	{ .hw = &aud_mst_a_sclk.hw, },
-+	{ .hw = &aud_mst_b_sclk.hw, },
-+	{ .hw = &aud_mst_c_sclk.hw, },
-+	{ .hw = &aud_mst_d_sclk.hw, },
-+	{ .hw = &aud_mst_e_sclk.hw, },
-+	{ .hw = &aud_mst_f_sclk.hw, },
-+	{ .fw_name = "slv_sclk0", },
-+	{ .fw_name = "slv_sclk1", },
-+	{ .fw_name = "slv_sclk2", },
-+	{ .fw_name = "slv_sclk3", },
-+	{ .fw_name = "slv_sclk4", },
-+	{ .fw_name = "slv_sclk5", },
-+	{ .fw_name = "slv_sclk6", },
-+	{ .fw_name = "slv_sclk7", },
-+	{ .fw_name = "slv_sclk8", },
-+	{ .fw_name = "slv_sclk9", },
- };
- 
- #define AUD_TDM_SCLK_MUX(_name, _reg)				\
- 	AUD_MUX(tdm##_name##_sclk_sel, _reg, 0xf, 24,		\
- 		    CLK_MUX_ROUND_CLOSEST,			\
--		    tdm_sclk_parent_names, 0)
-+		    tdm_sclk_parent_data, 0)
- 
- static AUD_TDM_SCLK_MUX(in_a,  AUDIO_CLK_TDMIN_A_CTRL);
- static AUD_TDM_SCLK_MUX(in_b,  AUDIO_CLK_TDMIN_B_CTRL);
-@@ -310,7 +337,7 @@ static AUD_TDM_SCLK_MUX(out_c, AUDIO_CLK_TDMOUT_C_CTRL);
- 
- #define AUD_TDM_SCLK_PRE_EN(_name, _reg)				\
- 	AUD_GATE(tdm##_name##_sclk_pre_en, _reg, 31,			\
--		 "aud_tdm"#_name"_sclk_sel", CLK_SET_RATE_PARENT)
-+		 aud_tdm##_name##_sclk_sel, CLK_SET_RATE_PARENT)
- 
- static AUD_TDM_SCLK_PRE_EN(in_a,  AUDIO_CLK_TDMIN_A_CTRL);
- static AUD_TDM_SCLK_PRE_EN(in_b,  AUDIO_CLK_TDMIN_B_CTRL);
-@@ -322,7 +349,7 @@ static AUD_TDM_SCLK_PRE_EN(out_c, AUDIO_CLK_TDMOUT_C_CTRL);
- 
- #define AUD_TDM_SCLK_POST_EN(_name, _reg)				\
- 	AUD_GATE(tdm##_name##_sclk_post_en, _reg, 30,			\
--		 "aud_tdm"#_name"_sclk_pre_en", CLK_SET_RATE_PARENT)
-+		 aud_tdm##_name##_sclk_pre_en, CLK_SET_RATE_PARENT)
- 
- static AUD_TDM_SCLK_POST_EN(in_a,  AUDIO_CLK_TDMIN_A_CTRL);
- static AUD_TDM_SCLK_POST_EN(in_b,  AUDIO_CLK_TDMIN_B_CTRL);
-@@ -344,8 +371,9 @@ static AUD_TDM_SCLK_POST_EN(out_c, AUDIO_CLK_TDMOUT_C_CTRL);
- 	.hw.init = &(struct clk_init_data) {				\
- 		.name = "aud_tdm"#_name"_sclk",				\
- 		.ops = &meson_clk_phase_ops,				\
--		.parent_names = (const char *[])			\
--		{ "aud_tdm"#_name"_sclk_post_en" },			\
-+		.parent_hws = (const struct clk_hw *[]) {		\
-+			&aud_tdm##_name##_sclk_post_en.hw		\
-+		},							\
- 		.num_parents = 1,					\
- 		.flags = CLK_DUTY_CYCLE_PARENT | CLK_SET_RATE_PARENT,	\
- 	},								\
-@@ -359,19 +387,29 @@ static AUD_TDM_SCLK(out_a, AUDIO_CLK_TDMOUT_A_CTRL);
- static AUD_TDM_SCLK(out_b, AUDIO_CLK_TDMOUT_B_CTRL);
- static AUD_TDM_SCLK(out_c, AUDIO_CLK_TDMOUT_C_CTRL);
- 
--static const char * const tdm_lrclk_parent_names[] = {
--	"aud_mst_a_lrclk", "aud_mst_b_lrclk", "aud_mst_c_lrclk",
--	"aud_mst_d_lrclk", "aud_mst_e_lrclk", "aud_mst_f_lrclk",
--	"aud_slv_lrclk0", "aud_slv_lrclk1", "aud_slv_lrclk2",
--	"aud_slv_lrclk3", "aud_slv_lrclk4", "aud_slv_lrclk5",
--	"aud_slv_lrclk6", "aud_slv_lrclk7", "aud_slv_lrclk8",
--	"aud_slv_lrclk9"
-+static const struct clk_parent_data tdm_lrclk_parent_data[] = {
-+	{ .hw = &aud_mst_a_lrclk.hw, },
-+	{ .hw = &aud_mst_b_lrclk.hw, },
-+	{ .hw = &aud_mst_c_lrclk.hw, },
-+	{ .hw = &aud_mst_d_lrclk.hw, },
-+	{ .hw = &aud_mst_e_lrclk.hw, },
-+	{ .hw = &aud_mst_f_lrclk.hw, },
-+	{ .fw_name = "slv_lrclk0", },
-+	{ .fw_name = "slv_lrclk1", },
-+	{ .fw_name = "slv_lrclk2", },
-+	{ .fw_name = "slv_lrclk3", },
-+	{ .fw_name = "slv_lrclk4", },
-+	{ .fw_name = "slv_lrclk5", },
-+	{ .fw_name = "slv_lrclk6", },
-+	{ .fw_name = "slv_lrclk7", },
-+	{ .fw_name = "slv_lrclk8", },
-+	{ .fw_name = "slv_lrclk9", },
- };
- 
- #define AUD_TDM_LRLCK(_name, _reg)		       \
- 	AUD_MUX(tdm##_name##_lrclk, _reg, 0xf, 20,     \
- 		CLK_MUX_ROUND_CLOSEST,		       \
--		tdm_lrclk_parent_names, 0)
-+		tdm_lrclk_parent_data, 0)
- 
- static AUD_TDM_LRLCK(in_a,  AUDIO_CLK_TDMIN_A_CTRL);
- static AUD_TDM_LRLCK(in_b,  AUDIO_CLK_TDMIN_B_CTRL);
-@@ -386,39 +424,51 @@ static AUD_TDM_LRLCK(out_c, AUDIO_CLK_TDMOUT_C_CTRL);
- 	AUD_MUX(tdm_##_name, _reg, 0x7, _shift, 0, _parents,	\
- 		CLK_SET_RATE_NO_REPARENT)
- 
--static const char * const mclk_pad_ctrl_parent_names[] = {
--	"aud_mst_a_mclk", "aud_mst_b_mclk", "aud_mst_c_mclk",
--	"aud_mst_d_mclk", "aud_mst_e_mclk", "aud_mst_f_mclk",
-+static const struct clk_parent_data mclk_pad_ctrl_parent_data[] = {
-+	{ .hw = &aud_mst_a_mclk.hw },
-+	{ .hw = &aud_mst_b_mclk.hw },
-+	{ .hw = &aud_mst_c_mclk.hw },
-+	{ .hw = &aud_mst_d_mclk.hw },
-+	{ .hw = &aud_mst_e_mclk.hw },
-+	{ .hw = &aud_mst_f_mclk.hw },
- };
- 
- static AUD_TDM_PAD_CTRL(mclk_pad_0, AUDIO_MST_PAD_CTRL0, 0,
--			mclk_pad_ctrl_parent_names);
-+			mclk_pad_ctrl_parent_data);
- static AUD_TDM_PAD_CTRL(mclk_pad_1, AUDIO_MST_PAD_CTRL0, 4,
--			mclk_pad_ctrl_parent_names);
--
--static const char * const lrclk_pad_ctrl_parent_names[] = {
--	"aud_mst_a_lrclk", "aud_mst_b_lrclk", "aud_mst_c_lrclk",
--	"aud_mst_d_lrclk", "aud_mst_e_lrclk", "aud_mst_f_lrclk",
-+			mclk_pad_ctrl_parent_data);
-+
-+static const struct clk_parent_data lrclk_pad_ctrl_parent_data[] = {
-+	{ .hw = &aud_mst_a_lrclk.hw },
-+	{ .hw = &aud_mst_b_lrclk.hw },
-+	{ .hw = &aud_mst_c_lrclk.hw },
-+	{ .hw = &aud_mst_d_lrclk.hw },
-+	{ .hw = &aud_mst_e_lrclk.hw },
-+	{ .hw = &aud_mst_f_lrclk.hw },
- };
- 
- static AUD_TDM_PAD_CTRL(lrclk_pad_0, AUDIO_MST_PAD_CTRL1, 16,
--			lrclk_pad_ctrl_parent_names);
-+			lrclk_pad_ctrl_parent_data);
- static AUD_TDM_PAD_CTRL(lrclk_pad_1, AUDIO_MST_PAD_CTRL1, 20,
--			lrclk_pad_ctrl_parent_names);
-+			lrclk_pad_ctrl_parent_data);
- static AUD_TDM_PAD_CTRL(lrclk_pad_2, AUDIO_MST_PAD_CTRL1, 24,
--			lrclk_pad_ctrl_parent_names);
--
--static const char * const sclk_pad_ctrl_parent_names[] = {
--	"aud_mst_a_sclk", "aud_mst_b_sclk", "aud_mst_c_sclk",
--	"aud_mst_d_sclk", "aud_mst_e_sclk", "aud_mst_f_sclk",
-+			lrclk_pad_ctrl_parent_data);
-+
-+static const struct clk_parent_data sclk_pad_ctrl_parent_data[] = {
-+	{ .hw = &aud_mst_a_sclk.hw },
-+	{ .hw = &aud_mst_b_sclk.hw },
-+	{ .hw = &aud_mst_c_sclk.hw },
-+	{ .hw = &aud_mst_d_sclk.hw },
-+	{ .hw = &aud_mst_e_sclk.hw },
-+	{ .hw = &aud_mst_f_sclk.hw },
- };
- 
- static AUD_TDM_PAD_CTRL(sclk_pad_0, AUDIO_MST_PAD_CTRL1, 0,
--			sclk_pad_ctrl_parent_names);
-+			sclk_pad_ctrl_parent_data);
- static AUD_TDM_PAD_CTRL(sclk_pad_1, AUDIO_MST_PAD_CTRL1, 4,
--			sclk_pad_ctrl_parent_names);
-+			sclk_pad_ctrl_parent_data);
- static AUD_TDM_PAD_CTRL(sclk_pad_2, AUDIO_MST_PAD_CTRL1, 8,
--			sclk_pad_ctrl_parent_names);
-+			sclk_pad_ctrl_parent_data);
- 
- /*
-  * Array of all clocks provided by this provider
-@@ -868,54 +918,6 @@ static int devm_clk_get_enable(struct device *dev, char *id)
- 	return 0;
- }
- 
--static int axg_register_clk_hw_input(struct device *dev,
--				     const char *name)
--{
--	char *clk_name;
--	struct clk_hw *hw;
--	int err = 0;
--
--	clk_name = kasprintf(GFP_KERNEL, "aud_%s", name);
--	if (!clk_name)
--		return -ENOMEM;
--
--	hw = meson_clk_hw_register_input(dev, name, clk_name, 0);
--	if (IS_ERR(hw)) {
--		/* It is ok if an input clock is missing */
--		if (PTR_ERR(hw) == -ENOENT) {
--			dev_dbg(dev, "%s not provided", name);
--		} else {
--			err = PTR_ERR(hw);
--			if (err != -EPROBE_DEFER)
--				dev_err(dev, "failed to get %s clock", name);
--		}
--	}
--
--	kfree(clk_name);
--	return err;
--}
--
--static int axg_register_clk_hw_inputs(struct device *dev,
--				      const char *basename,
--				      unsigned int count)
--{
--	char *name;
--	int i, ret;
--
--	for (i = 0; i < count; i++) {
--		name = kasprintf(GFP_KERNEL, "%s%d", basename, i);
--		if (!name)
--			return -ENOMEM;
--
--		ret = axg_register_clk_hw_input(dev, name);
--		kfree(name);
--		if (ret)
--			return ret;
--	}
--
--	return 0;
--}
--
- static const struct regmap_config axg_audio_regmap_cfg = {
- 	.reg_bits	= 32,
- 	.val_bits	= 32,
-@@ -963,29 +965,6 @@ static int axg_audio_clkc_probe(struct platform_device *pdev)
- 		return ret;
- 	}
- 
--	/* Register the peripheral input clock */
--	hw = meson_clk_hw_register_input(dev, "pclk", "audio_pclk", 0);
--	if (IS_ERR(hw))
--		return PTR_ERR(hw);
--
--	/* Register optional input master clocks */
--	ret = axg_register_clk_hw_inputs(dev, "mst_in",
--					 AUD_MST_IN_COUNT);
--	if (ret)
--		return ret;
--
--	/* Register optional input slave sclks */
--	ret = axg_register_clk_hw_inputs(dev, "slv_sclk",
--					 AUD_SLV_SCLK_COUNT);
--	if (ret)
--		return ret;
--
--	/* Register optional input slave lrclks */
--	ret = axg_register_clk_hw_inputs(dev, "slv_lrclk",
--					 AUD_SLV_LRCLK_COUNT);
--	if (ret)
--		return ret;
--
- 	/* Populate regmap for the regmap backed clocks */
- 	for (i = 0; i < ARRAY_SIZE(aud_clk_regmaps); i++)
- 		aud_clk_regmaps[i]->map = map;
--- 
-2.17.1
 
 
 _______________________________________________
