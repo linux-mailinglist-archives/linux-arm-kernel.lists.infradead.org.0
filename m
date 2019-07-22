@@ -2,58 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 543186FF42
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 14:08:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA2F66FF45
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 14:09:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:
+	References:Message-ID:Subject:To:From:Date:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w/Zbp5UAc5A+fiMHU8aQHIXMR1IPiNI4dz+of+6o7so=; b=KFSv6lGSpB/xmW
-	jPFMerN0cx0RtUKxnzpltDKZz9by2iBPIosxK5D4+QtCHPD50p5mmoYsMMh9OkDjJxHHR8FLVwimU
-	a4hZy/B+6142c+asiVALEUoudDJQNPYk5zyFLqEHeTybBwUTkGbkorYC4bnRsx0gHlsBfQp+SkUQv
-	xMH3Kd6Zy8PZs20nj1+lO7g69rNDzN9zzPhVpBWtuX1lpZOCv0yAsJh9sV3x9oXV5y9WwyGrSQgmJ
-	GMfS/xE5he1u1Y5sDGr4Xg8dPQZrfkI1PBp4EqSVvCW+0Pim+l0sBGtNOtaRRkMakN6KIvT5zJjAS
-	HxYfLl7UUjteSsjGy+/A==;
+	List-Owner; bh=lxk7epdUQhEXIWq668uIU/C3hdgUo6LuNc5qEXp7i2g=; b=Gt30TSmXWQToQp
+	hHzY8lrNz8Rc7JAOfAcPPeZ1zBLxD2L06pZcD8kCA+4xOCcmNBoF5e0hXmcrJfQX2v9XJfCaNKC4A
+	6ONvE+U8om72QEpGkqckpUGTf8JWReuyRySudEIXOAmwSOQkUX6ZhFon5nQsenfhL8o1HwIgCUAjQ
+	5NwdIDV/1ZruZGTOrZgDrEvESREB5Rg05j8TW3A976YUPkSRvcfFa79a7Y7+dJ4ELbUHB0ceIhQSa
+	JffTlj2P7pULowd6fFHCsNoHFhS2wYZBwhnFaf8Vev/pwQuWoTX+v3UJdwrl/o6qyJuJswry05CcS
+	RQpVIStQJ2B2s4UsiywQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpX7S-00086G-VO; Mon, 22 Jul 2019 12:08:43 +0000
-Received: from relay3-d.mail.gandi.net ([217.70.183.195])
+	id 1hpX8E-0008Kt-98; Mon, 22 Jul 2019 12:09:30 +0000
+Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
+ helo=mx0a-001b2d01.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpX6i-0007lQ-Ax
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 12:07:58 +0000
-X-Originating-IP: 86.250.200.211
-Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
- [86.250.200.211]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id 1068F60005;
- Mon, 22 Jul 2019 12:07:46 +0000 (UTC)
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Ulf Hansson <ulf.hansson@linaro.org>, Mark Rutland <mark.rutland@arm.com>,
- Rob Herring <robh+dt@kernel.org>, Frank Rowand <frowand.list@gmail.com>,
- Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <maxime.ripard@bootlin.com>
-Subject: [PATCH 2/2] dt-bindings: mmc: sunxi: Add H5 compatibles
-Date: Mon, 22 Jul 2019 14:07:40 +0200
-Message-Id: <20190722120740.8966-2-maxime.ripard@bootlin.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190722120740.8966-1-maxime.ripard@bootlin.com>
-References: <20190722120740.8966-1-maxime.ripard@bootlin.com>
+ id 1hpX6p-0007sg-RA
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 12:08:05 +0000
+Received: from pps.filterd (m0098416.ppops.net [127.0.0.1])
+ by mx0b-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x6MC6fB3068161; Mon, 22 Jul 2019 08:07:59 -0400
+Received: from ppma04dal.us.ibm.com (7a.29.35a9.ip4.static.sl-reverse.com
+ [169.53.41.122])
+ by mx0b-001b2d01.pphosted.com with ESMTP id 2tw9qu8u7q-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Mon, 22 Jul 2019 08:07:59 -0400
+Received: from pps.filterd (ppma04dal.us.ibm.com [127.0.0.1])
+ by ppma04dal.us.ibm.com (8.16.0.27/8.16.0.27) with SMTP id x6MC4jnC006189;
+ Mon, 22 Jul 2019 12:07:57 GMT
+Received: from b01cxnp22033.gho.pok.ibm.com (b01cxnp22033.gho.pok.ibm.com
+ [9.57.198.23]) by ppma04dal.us.ibm.com with ESMTP id 2tutk6puhx-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Mon, 22 Jul 2019 12:07:57 +0000
+Received: from b01ledav003.gho.pok.ibm.com (b01ledav003.gho.pok.ibm.com
+ [9.57.199.108])
+ by b01cxnp22033.gho.pok.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ x6MC7vws41484688
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 22 Jul 2019 12:07:57 GMT
+Received: from b01ledav003.gho.pok.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id E2032B2066;
+ Mon, 22 Jul 2019 12:07:56 +0000 (GMT)
+Received: from b01ledav003.gho.pok.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id C0831B2065;
+ Mon, 22 Jul 2019 12:07:56 +0000 (GMT)
+Received: from paulmck-ThinkPad-W541 (unknown [9.85.189.166])
+ by b01ledav003.gho.pok.ibm.com (Postfix) with ESMTP;
+ Mon, 22 Jul 2019 12:07:56 +0000 (GMT)
+Received: by paulmck-ThinkPad-W541 (Postfix, from userid 1000)
+ id 125E516C0D7D; Mon, 22 Jul 2019 05:07:58 -0700 (PDT)
+Date: Mon, 22 Jul 2019 05:07:58 -0700
+From: "Paul E. McKenney" <paulmck@linux.ibm.com>
+To: Masami Hiramatsu <mhiramat@kernel.org>
+Subject: Re: [PATCH v2 4/4] arm64: Remove unneeded rcu_read_lock from debug
+ handlers
+Message-ID: <20190722120758.GB14271@linux.ibm.com>
+References: <156378170297.12011.17385386326930403235.stgit@devnote2>
+ <156378175027.12011.5591853683946780785.stgit@devnote2>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <156378175027.12011.5591853683946780785.stgit@devnote2>
+User-Agent: Mutt/1.5.21 (2010-09-15)
+X-TM-AS-GCONF: 00
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-07-22_09:, , signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501
+ malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
+ clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1810050000 definitions=main-1907220144
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_050756_704605_A54907AB 
-X-CRM114-Status: UNSURE (   8.48  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190722_050804_265941_9CCD3341 
+X-CRM114-Status: GOOD (  20.94  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.195 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.195 listed in wl.mailspike.net]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ low trust [148.163.158.5 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,40 +100,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-mmc@vger.kernel.org,
+Reply-To: paulmck@linux.ibm.com
+Cc: Dan Rue <dan.rue@linaro.org>, Daniel Diaz <daniel.diaz@linaro.org>,
+ Anders Roxell <anders.roxell@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Naresh Kamboju <naresh.kamboju@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, Matt Hart <matthew.hart@linaro.org>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The conversion to the YAML binding left out two compatibles. Add them.
+On Mon, Jul 22, 2019 at 04:49:11PM +0900, Masami Hiramatsu wrote:
+> Remove rcu_read_lock()/rcu_read_unlock() from debug exception
+> handlers since we are sure those are not preemptible and
+> interrupts are off.
+> 
+> Signed-off-by: Masami Hiramatsu <mhiramat@kernel.org>
+> Cc: Paul E. McKenney <paulmck@linux.ibm.com>
 
-Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
----
- .../devicetree/bindings/mmc/allwinner,sun4i-a10-mmc.yaml    | 6 ++++++
- 1 file changed, 6 insertions(+)
+From an RCU viewpoint:
 
-diff --git a/Documentation/devicetree/bindings/mmc/allwinner,sun4i-a10-mmc.yaml b/Documentation/devicetree/bindings/mmc/allwinner,sun4i-a10-mmc.yaml
-index 06329115dc6a..d2d4308596b8 100644
---- a/Documentation/devicetree/bindings/mmc/allwinner,sun4i-a10-mmc.yaml
-+++ b/Documentation/devicetree/bindings/mmc/allwinner,sun4i-a10-mmc.yaml
-@@ -35,6 +35,12 @@ properties:
-       - items:
-           - const: allwinner,sun8i-r40-mmc
-           - const: allwinner,sun50i-a64-mmc
-+      - items:
-+          - const: allwinner,sun50i-h5-emmc
-+          - const: allwinner,sun50i-a64-emmc
-+      - items:
-+          - const: allwinner,sun50i-h5-mmc
-+          - const: allwinner,sun50i-a64-mmc
-       - items:
-           - const: allwinner,sun50i-h6-emmc
-           - const: allwinner,sun50i-a64-emmc
--- 
-2.21.0
+Acked-by: Paul E. McKenney <paulmck@linux.ibm.com>
 
+> ---
+>  arch/arm64/kernel/debug-monitors.c |   14 ++++++++------
+>  1 file changed, 8 insertions(+), 6 deletions(-)
+> 
+> diff --git a/arch/arm64/kernel/debug-monitors.c b/arch/arm64/kernel/debug-monitors.c
+> index f8719bd30850..48222a4760c2 100644
+> --- a/arch/arm64/kernel/debug-monitors.c
+> +++ b/arch/arm64/kernel/debug-monitors.c
+> @@ -207,16 +207,16 @@ static int call_step_hook(struct pt_regs *regs, unsigned int esr)
+>  
+>  	list = user_mode(regs) ? &user_step_hook : &kernel_step_hook;
+>  
+> -	rcu_read_lock();
+> -
+> +	/*
+> +	 * Since single-step exception disables interrupt, this function is
+> +	 * entirely not preemptible, and we can use rcu list safely here.
+> +	 */
+>  	list_for_each_entry_rcu(hook, list, node)	{
+>  		retval = hook->fn(regs, esr);
+>  		if (retval == DBG_HOOK_HANDLED)
+>  			break;
+>  	}
+>  
+> -	rcu_read_unlock();
+> -
+>  	return retval;
+>  }
+>  NOKPROBE_SYMBOL(call_step_hook);
+> @@ -305,14 +305,16 @@ static int call_break_hook(struct pt_regs *regs, unsigned int esr)
+>  
+>  	list = user_mode(regs) ? &user_break_hook : &kernel_break_hook;
+>  
+> -	rcu_read_lock();
+> +	/*
+> +	 * Since brk exception disables interrupt, this function is
+> +	 * entirely not preemptible, and we can use rcu list safely here.
+> +	 */
+>  	list_for_each_entry_rcu(hook, list, node) {
+>  		unsigned int comment = esr & ESR_ELx_BRK64_ISS_COMMENT_MASK;
+>  
+>  		if ((comment & ~hook->mask) == hook->imm)
+>  			fn = hook->fn;
+>  	}
+> -	rcu_read_unlock();
+>  
+>  	return fn ? fn(regs, esr) : DBG_HOOK_ERROR;
+>  }
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
