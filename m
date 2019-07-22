@@ -2,72 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1BD5F70ACF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 22:38:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4BD9470ADF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 22:53:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aaDVw38nY6W3PbXmFJQCZgBpv7h27M/UCKte6wseydU=; b=e7umI3EtM0VXy/
-	zqBTvoe6rs/k/iut+037TudTuGTeYSNdHrUPxIY1p8yvYjizG5sTzzdHEPFTRp4BfhLpupF9AfA+n
-	jbJqY7k+Ey8Vuql72DYuXHnDlwzfC/21U4l9YOlNbwOPCHzXPYjjMP9Nx7Z0QhmnSkQP/nVhIMfIR
-	5qkTC8rWloARPSRBX2dyIXdwoEcB4x0rYBixwwHMkNi6c6MOAj0sciG4tc+PY87Y0FwTHovLOYFZQ
-	vfZ2kLYrrvnXCmnunFqL2ERHX9dcRo9z8CC7JRr1Oxo47GHrMTrIY26//VIRbcmaaf/O51YrRE2nm
-	Wz5ITEPnHtkm+Z2Pz5Bw==;
+	List-Owner; bh=7qgsn5JLQWngu/7eh2JH3QFB4P9wvKG6KDotGQiIMLI=; b=cgQt6vi6HSqdAO
+	ltYhHx/rbhJTg0pdc4ho2DXafCNQu8QOxbqRrMGwlqEksRrngjWxve5sqT3z+1RHNk8sRC7W8TZte
+	/9jADqiNt/qyHAzvTm00XRL3gzQ9alu1FV+ViQu8uR/nsAWDoIUZQ8lzGuJcG8vEWjB0/fS31O2Vd
+	QepPdk5jp8SuOslO8QhTKiH+JcKu6tIRzn+HTcXfeHu2j+NtXQ90UxgM++wZvbDjJoLtPI1RaNvPx
+	yMEB8r+ST+jss2GFiImKU8tJMsHF6w+fg+jBuex9ZGfitdJN9PyCPozfZUGqB9c9pw7Us5OsobmjY
+	epEzK9AHPIlvwVCikqbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpf4U-0000C2-GS; Mon, 22 Jul 2019 20:38:10 +0000
-Received: from atlmailgw2.ami.com ([63.147.10.42])
+	id 1hpfJH-00061r-5h; Mon, 22 Jul 2019 20:53:27 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpf4E-0000BU-F5
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 20:37:56 +0000
-X-AuditID: ac10606f-d27ff70000003324-a9-5d361e9f8f3d
-Received: from atlms1.us.megatrends.com (atlms1.us.megatrends.com
- [172.16.96.144])
- (using TLS with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
- (Client did not present a certificate)
- by atlmailgw2.ami.com (Symantec Messaging Gateway) with SMTP id
- 54.A2.13092.F9E163D5; Mon, 22 Jul 2019 16:37:51 -0400 (EDT)
-Received: from hongweiz-Ubuntu-AMI.us.megatrends.com (172.16.98.93) by
- atlms1.us.megatrends.com (172.16.96.144) with Microsoft SMTP Server (TLS) id
- 14.3.408.0; Mon, 22 Jul 2019 16:37:50 -0400
-From: Hongwei Zhang <hongweiz@ami.com>
-To: Linus Walleij <linus.walleij@linaro.org>, Andrew Jeffery
- <andrew@aj.id.au>, linux-gpio <linux-gpio@vger.kernel.org>, Joel Stanley
- <joel@jms.id.au>
-Subject: [v5 2/2] gpio: aspeed: Add SGPIO driver
-Date: Mon, 22 Jul 2019 16:36:55 -0400
-Message-ID: <1563827815-15092-1-git-send-email-hongweiz@ami.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1563564291-9692-3-git-send-email-hongweiz@ami.com>
-References: <1563564291-9692-3-git-send-email-hongweiz@ami.com>
+ id 1hpfIn-00060d-I5
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 20:52:59 +0000
+Received: by mail-ed1-x544.google.com with SMTP id i11so41809473edq.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 22 Jul 2019 13:52:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=GMLjbC9YjRUgCF5zGAKD15kt9b4CY1BkByLwAzTGVzU=;
+ b=Jp9cBTPwU29wiqBjXqSNe2Ds3OiKv8dsKfL3Phe5kkNX25x/T28nL3L+8191B3JCPR
+ hy1sk5Bxfh+AwS4A7EkGg9n2/EpBnGq/Umc8w5i0nBFGgOChJCBXdAgT/IxxQINxsWOo
+ plgQv2oNd2yzIlQknQ/QTj+tJFoAuGi+nAOxlaG98kAZ00jU8FmzG2/c5vxKUdYfa7XF
+ zOLDTdNEojTG2AlB5NYAoHBnggaUwMVmoO5LIpBj0VdKrk26EHUsn111w7w3FV4VRH0Y
+ 7Q/I2d5ouTAaUsap3LyQVTZFqEeJQLtzpSaExYDAMv6GqQH2CWvp4jl3HCrV3CqRbpdD
+ DfhQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=GMLjbC9YjRUgCF5zGAKD15kt9b4CY1BkByLwAzTGVzU=;
+ b=iFVekSncUpNqufyZaAE/ptRb1B92lHZ9TTodHPwgxOTp6UzB4Zdm2E3ioIDUnFZdw0
+ 7qWtaQA1/MuSfGE5aGOgZNM7cmcuqKAI8cRQ138I0lkX9Rv0pFtNOOpYaBU4cM4SN6cd
+ QJ96zk6Fb30xX1dQ5ylDlmrXIs5S/klTIQnL6KNqDzRhDJjHkm9zepdbQ+iWJg+ofPJC
+ 1CLfB3OZy9P3wuZa3trbdpo6FotycjNhneRS6PEKWYo66IT8T3MvWd4dqTjQWiffG3Zu
+ P7xjnSJrAO7jCp3/ri64FPmGKG0qEzKHGDxIdJyLKFOrS+fUitmIKzeUSiHDnDPHgMyQ
+ 4iOg==
+X-Gm-Message-State: APjAAAVd3SUKKz68SqVYUYpERZKMqBj+jKF4BMG7lPs4U1yYdDh0+lcd
+ dJI/Of4ueZNyoYlQEh8PxDjUICTIg6WH0DHmb8A=
+X-Google-Smtp-Source: APXvYqxA8mp6pHUExIYVYg514P87IzaOJ2cRvoDp4dYaIO6GxWQ4MfK0zzMrz18CXiYpnSXjzFce1A5e9xB8fqm2emw=
+X-Received: by 2002:a05:6402:14c4:: with SMTP id
+ f4mr61443251edx.170.1563828773560; 
+ Mon, 22 Jul 2019 13:52:53 -0700 (PDT)
 MIME-Version: 1.0
-X-Originating-IP: [172.16.98.93]
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrDLMWRmVeSWpSXmKPExsWyRiBhgu58ObNYgymTFCx2Xeaw+DL3FIvF
- 7/N/mS2m/FnOZLHp8TVWi+bV55gtNs//w2hxedccNgcOj6vtu9g93t9oZfe4+PEYs8eda3vY
- PDYvqfc4P2Mho8fnTXIB7FFcNimpOZllqUX6dglcGQ8+bGIp6POqWLrwLlMDY4dJFyMnh4SA
- icSWg9eZuxi5OIQEdjFJPPr/irGLkQPIOcwo8U4QpIZNQE1i7+Y5TCA1IgKzGCXu3trDBuIw
- C7xnlOieNpURpEpYwEBi1Y3F7CA2i4CqxK/Xz1hAbF4BB4m9J3+wQ2yTk7h5rpMZxOYEiv/q
- aWECsYUE7CWe79rLBFEvKHFy5hOwXmYBCYmDL14wQ9TIStw69JgJYo6CxPO+xywTGIHOQWiZ
- haRlASPTKkahxJKc3MTMnPRyI73E3Ey95PzcTYyQEM/fwfjxo/khRiYOxkOMEhzMSiK8eQam
- sUK8KYmVValF+fFFpTmpxYcYpTlYlMR5V635FiMkkJ5YkpqdmlqQWgSTZeLglGpgrKz+5R+/
- IVbA6tT7nqyJqXW1/3S0lHgy9fbad15fODk97P5z1YfN+3xamhfvDvSxu3L5QpPSiYoy7YSY
- tUeap/zTyv+8LT76vvOjZ0dCPzzKPBJz8lPJpo23apIT/OesObC20vtuhb3X9i3qKrs+qbB5
- yZUV3IjfsncqT8ARcVGZP7Wy77wWK7EUZyQaajEXFScCANEZGdVfAgAA
+References: <20190722103330.255312-1-marc.zyngier@arm.com>
+In-Reply-To: <20190722103330.255312-1-marc.zyngier@arm.com>
+From: Pavel Tatashin <pasha.tatashin@soleen.com>
+Date: Mon, 22 Jul 2019 13:52:42 -0700
+Message-ID: <CA+CK2bAFgDcc6ySCz7zzyeN0wg5WTcxFrKYQ6y5sz7grw-BfAw@mail.gmail.com>
+Subject: Re: [PATCH 0/3] arm64: Allow early timestamping of kernel log
+To: Marc Zyngier <marc.zyngier@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_133754_578134_537475BD 
-X-CRM114-Status: GOOD (  37.15  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190722_135258_028431_AB0D5B3A 
+X-CRM114-Status: GOOD (  18.26  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [63.147.10.42 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,259 +91,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- linux-aspeed <linux-aspeed@lists.ozlabs.org>, Hongwei Zhang <hongweiz@ami.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Petr Mladek <pmladek@suse.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
+ Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
+ John Stultz <john.stultz@linaro.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Linus,
+On Mon, Jul 22, 2019 at 3:33 AM Marc Zyngier <marc.zyngier@arm.com> wrote:
+>
+> So far, we've let the arm64 kernel start its meaningful time stamping
+> of the kernel log pretty late, which is caused by sched_clock() being
+> initialised rather late compared to other architectures.
+>
+> Pavel Tatashin proposed[1] to move the initialisation of sched_clock
+> much earlier, which I had objections to. The reason for initialising
+> sched_clock late is that a number of systems have broken counters, and
+> we need to apply all kind of terrifying workarounds to avoid time
+> going backward on the affected platforms. Being able to identify the
+> right workaround comes pretty late in the kernel boot, and providing
+> an unreliable sched_clock, even for a short period of time, isn't an
+> appealing prospect.
+>
+> To address this, I'm proposing that we allow an architecture to chose
+> to (1) divorce time stamping and sched_clock during the early phase of
+> booting, and (2) inherit the time stamping clock as the new epoch the
+> first time a sched_sched clock gets registered.
 
-Thanks for your reviewing, please find my inline comment on why we group the 
-("A", "B", "C", "D") etc. together at below. We will address other concerns 
-separately.
---Hongwei
+Could we have a stable clock config for arm64: if it is known that
+this Linux build is going to run on non-broken firmware, and with a
+known stable cntvct_el0 register it can be optionally configured to
+use that stable sched_clock instead of generic clock that arm64 is
+using? This way, the early printk are going to be available on those
+systems without adding a different method for printk's only. It would
+also mean that other users of early sched_clock() such as ftrace could
+benefit from it.
 
-> From:	Linus Walleij <linus.walleij@linaro.org>
-> Sent:	Saturday, July 20, 2019 3:37 AM
-> To:	Hongwei Zhang
-> Cc:	Andrew Jeffery; open list:GPIO SUBSYSTEM; Joel Stanley; linux-aspeed@lists.ozlabs.org; Bartosz 
-> Golaszewski; linux-kernel@vger.kernel.org; Linux ARM
-> Subject:	Re: [v5 2/2] gpio: aspeed: Add SGPIO driver
-> 
-> Hi Hongwei,
-> 
-> thanks for your patch!
-> 
-> some comments and nitpicking below:
-> 
-> On Fri, Jul 19, 2019 at 9:25 PM Hongwei Zhang <hongweiz@ami.com> wrote:
-> 
-> > Add SGPIO driver support for Aspeed AST2500 SoC.
-> >
-> > Signed-off-by: Hongwei Zhang <hongweiz@ami.com>
-> 
-> > +// SPDX-License-Identifier: GPL-2.0+
-> 
-> I think the SPDX people prefer GPL-2.0-or-later
-> 
-> > +#include <linux/gpio.h>
-> 
-> Do not include this header in any new code using or providing GPIOs.
-> 
-> > +#include <linux/gpio/driver.h>
-> 
-> This should be enough.
-> 
-> > +/*
-> > + * Note: The "value" register returns the input value when the GPIO is
-> > + *      configured as an input.
-> > + *
-> > + *      The "rdata" register returns the output value when the GPIO is
-> > + *      configured as an output.
-> > + */
-> > +static const struct aspeed_sgpio_bank aspeed_sgpio_banks[] = {
-> > +       {
-> > +               .val_regs = 0x0000,
-> > +               .rdata_reg = 0x0070,
-> > +               .irq_regs = 0x0004,
-> > +               .names = { "A", "B", "C", "D" },
-> > +       },
-> > +       {
-> > +               .val_regs = 0x001C,
-> > +               .rdata_reg = 0x0074,
-> > +               .irq_regs = 0x0020,
-> > +               .names = { "E", "F", "G", "H" },
-> > +       },
-> > +       {
-> > +               .val_regs = 0x0038,
-> > +               .rdata_reg = 0x0078,
-> > +               .irq_regs = 0x003C,
-> > +               .names = { "I", "J" },
-> > +       },
-> > +};
-> 
-> I guess you have been over the reasons why this is one big GPIO chip instead of  10 individual gpio_chips?
-> 
-> It is usally better to have the individual chips, because it is easier to just cut down the code to handle 
-> one instance and not having to offset around the different address ranges.
-> 
-> Even if they all have the same clock, the clocks are reference counted so it will just be referenced 10 
-> times at most.
-> 
-> If they share a few common registers it is not good to split it though. So there may be a compelling 
-> argument for keeping them all together.
-> 
-
-As you suspected it correctly, AST2500 utilizes all the 32 bits of the registers 
-(data value, interrupt, etc...), such that using 8-bit bands
-[7:0]/[15:8]/23:16]/[31:24] of GPIO_200H for SGPIO_A/B/C/D . 
-so registering 10 gpiochip drivers separately will make code more 
-complicated, for example gpio_200 register (data_value reg) has to be 
-shared by 4 gpiochip instances, and the same is true for gpio204 (interrupt reg), 
-and other more registers.
-So we would prefer to keeping current implementation.
-
-> > +/* This will be resolved at compile time */
-> 
-> I don't see why that matters.
-> 
-> > +static inline void __iomem *bank_reg(struct aspeed_sgpio *gpio,
-> > +                                    const struct aspeed_sgpio_bank *bank,
-> > +                                    const enum aspeed_sgpio_reg reg)
-> 
-> You don't need inline. The compiler will inline it anyway if it see the need for it.
-> 
-> The only time we really use inline is in header files, where we want to point out that this function will be 
-> inlined as there is no compiled code in header files.
-> 
-> > +#define GPIO_BANK(x)    ((x) >> 5)
-> > +#define GPIO_OFFSET(x)  ((x) & 0x1f)
-> > +#define GPIO_BIT(x)     BIT(GPIO_OFFSET(x))
-> 
-> OK seems fairly standard.
-> 
-> > +static int aspeed_sgpio_get(struct gpio_chip *gc, unsigned int 
-> > +offset) static void aspeed_sgpio_set(struct gpio_chip *gc, unsigned 
-> > +int offset, int val) static int aspeed_sgpio_dir_in(struct gpio_chip 
-> > +*gc, unsigned int offset)
-> 
-> These are fairly standard.
-> 
-> > +static int aspeed_sgpio_dir_out(struct gpio_chip *gc, unsigned int 
-> > +offset, int val) {
-> > +       struct aspeed_sgpio *gpio = gpiochip_get_data(gc);
-> > +       unsigned long flags;
-> > +
-> > +       spin_lock_irqsave(&gpio->lock, flags);
-> > +       gpio->dir_in[GPIO_BANK(offset)] &= ~GPIO_BIT(offset);
-> > +       spin_unlock_irqrestore(&gpio->lock, flags);
-> > +
-> > +       return 0;
-> > +}
-> 
-> There is a bug here. You fail to write the "val" to the output line, which is the expected semantic of this 
-> call.
-> 
-> > +static int aspeed_sgpio_get_direction(struct gpio_chip *gc, unsigned 
-> > +int offset)
-> 
-> These are all very simple MMIO accessors.
-> 
-> If you made one gpio_chip per bank, you could just use gpio-mmio.c to control the lines by
-> 
-> select GPIO_GENERIC
-> 
->         ret = bgpio_init(chip, dev, 4,
->                          base + GPIO_VAL_VALUE ,
->                          NULL,
->                          NULL,
->                          NULL,
->                          NULL,
->                          0);
-> 
-> The MMIO gpio library takes care of shadowing the direction and all.
-> It also will implement get/set_multiple() for you for free.
-> 
-> So seriously consider making one gpio_chip per bank.
-> 
-> > +static inline void irqd_to_aspeed_sgpio_data(struct irq_data *d, 
-> > +static void aspeed_sgpio_irq_ack(struct irq_data *d) static void 
-> > +aspeed_sgpio_irq_set_mask(struct irq_data *d, bool set) static void 
-> > +aspeed_sgpio_irq_mask(struct irq_data *d) static void 
-> > +aspeed_sgpio_irq_unmask(struct irq_data *d) static int 
-> > +aspeed_sgpio_set_type(struct irq_data *d, unsigned int type) static 
-> > +void aspeed_sgpio_irq_handler(struct irq_desc *desc) {
-> > +       struct gpio_chip *gc = irq_desc_get_handler_data(desc);
-> > +       struct irq_chip *ic = irq_desc_get_chip(desc);
-> > +       struct aspeed_sgpio *data = gpiochip_get_data(gc);
-> > +       unsigned int i, p, girq;
-> > +       unsigned long reg;
-> > +
-> > +       chained_irq_enter(ic, desc);
-> > +
-> > +       for (i = 0; i < ARRAY_SIZE(aspeed_sgpio_banks); i++) {
-> > +               const struct aspeed_sgpio_bank *bank = 
-> > + &aspeed_sgpio_banks[i];
-> > +
-> > +               reg = ioread32(bank_reg(data, bank, reg_irq_status));
-> > +
-> > +               for_each_set_bit(p, &reg, 32) {
-> > +                       girq = irq_find_mapping(gc->irq.domain, i * 32 + p);
-> > +                       generic_handle_irq(girq);
-> > +               }
-> > +
-> > +       }
-> 
-> This also gets really complex with one driver for all the banks.
-> 
-> > +       /* Disable IRQ and clear Interrupt status registers for all SPGIO Pins. */
-> > +       for (i = 0; i < ARRAY_SIZE(aspeed_sgpio_banks); i++) {
-> 
-> (...)
-> > +static int __init aspeed_sgpio_probe(struct platform_device *pdev) {
-> > +       struct aspeed_sgpio *gpio;
-> > +       u32 nr_gpios, sgpio_freq, sgpio_clk_div;
-> > +       int rc;
-> > +       unsigned long apb_freq;
-> > +
-> > +       /* initialize allocated memory with zeros */
-> 
-> No need for this comment, developers know what "kzalloc" means.
-> 
-> > +       rc = of_property_read_u32(pdev->dev.of_node, "bus-frequency", &sgpio_freq);
-> > +       if (rc < 0) {
-> > +               dev_err(&pdev->dev, "Could not read bus-frequency property\n");
-> > +               return -EINVAL;
-> > +       }
-> > +
-> > +       gpio->pclk = devm_clk_get(&pdev->dev, NULL);
-> > +       if (IS_ERR(gpio->pclk)) {
-> > +               dev_err(&pdev->dev, "devm_clk_get failed\n");
-> > +               return PTR_ERR(gpio->pclk);
-> > +       }
-> > +
-> > +       apb_freq = clk_get_rate(gpio->pclk);
-> > +
-> > +       /*
-> > +        * From the datasheet,
-> > +        *      SGPIO period = 1/PCLK * 2 * (GPIO254[31:16] + 1)
-> > +        *      period = 2 * (GPIO254[31:16] + 1) / PCLK
-> > +        *      frequency = 1 / (2 * (GPIO254[31:16] + 1) / PCLK)
-> > +        *      frequency = PCLK / (2 * (GPIO254[31:16] + 1))
-> > +        *      frequency * 2 * (GPIO254[31:16] + 1) = PCLK
-> > +        *      GPIO254[31:16] = PCLK / (frequency * 2) - 1
-> > +        */
-> > +       if (sgpio_freq == 0)
-> > +               return -EINVAL;
-> > +
-> > +       sgpio_clk_div = (apb_freq / (sgpio_freq * 2)) - 1;
-> > +
-> > +       if (sgpio_clk_div > (1 << 16) - 1)
-> > +               return -EINVAL;
-> > +
-> > +       iowrite32(FIELD_PREP(ASPEED_SGPIO_CLK_DIV_MASK, sgpio_clk_div) |
-> > +                 FIELD_PREP(ASPEED_SGPIO_PINS_MASK, (nr_gpios / 8)) |
-> > +                 ASPEED_SGPIO_ENABLE,
-> > +                 gpio->base + ASPEED_SGPIO_CTRL);
-> 
-> This is a separate clock driver.
-> 
-> Break this out as a separate clk device that the other GPIOs grab.
-> 
-> Put this in drivers/clk/clk-aspeed-gpio.c or wherever appropriate with some reg = <0xnnnnnn54 4>;
-> 
-> Then let the GPIO driver grab this clock. This makes it possible to use a per-gpio-bank split of the GPIO 
-> chips.
-> 
-> It looks a bit complicated but this will work so much better because the clock code is in the clock 
-> subsystem and the GPIO is split up and becomes a very small driver since it can use gpio MMIO.
-> 
-> Yours,
-> Linus Walleij
+>
+> (1) would allow arm64 to provide a time stamping clock, however
+> unreliable it might be, while (2) would allow sched_clock to provide
+> time stamps that are continuous with the time-stamping clock.
+>
+> The last patch in the series adds the necessary logic to arm64,
+> allowing the (potentially unreliable) time stamping of early kernel
+> messages.
+>
+> Tested on a bunch of arm64 systems, both bare-metal and in VMs. Boot
+> tested on a x86 guest.
+>
+> [1] https://lore.kernel.org/patchwork/patch/1015110/
+>
+> Marc Zyngier (3):
+>   printk: Allow architecture-specific timestamping function
+>   sched/clock: Allow sched_clock to inherit timestamp_clock epoch
+>   arm64: Allow early time stamping
+>
+>  arch/arm64/Kconfig          |  3 +++
+>  arch/arm64/kernel/setup.c   | 44 +++++++++++++++++++++++++++++++++++++
+>  include/linux/sched/clock.h | 13 +++++++++++
+>  kernel/printk/printk.c      |  4 ++--
+>  kernel/time/sched_clock.c   | 10 +++++++++
+>  5 files changed, 72 insertions(+), 2 deletions(-)
+>
+> --
+> 2.20.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
