@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D0856FD44
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 11:57:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 93CFA6FD4C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 11:58:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=8KDoLuJMmf3PUrN9yxOteU5JmV8KR083nu2pKvO9Zzg=; b=txLASK3yNu3MJqUjSXzbKnnA4R
-	uaL+JsYAa8l2JpAGOwuHhl/BgYT7x/mTm2HYa5njVlCCCCzeHbdLUbFgFRofJRE5q5I2hOR9zN7ci
-	AxhFhtdUgAJNDF0LMO1ujYiTlI/Kk4i+nOQX96cBkS3BfAxXGaDneataGYAzjDOCCL4PB1RUmTYON
-	e/IUJldla4M/y4LYCcOrqWcCICRDzZL1gbWBL9cOg5rME8B8k+qUff6GfW29yfbZKMjhlt+DNnuqb
-	vb6Dy8ncS45uVIeHyWvHE4HpOaumLVaS1uKpXkoOWS3tBm1S6aqB/yV9KgIt4u3O8qn/sOpZKvEOt
-	a2OkrIaw==;
+	bh=wybu07t1P4+phywgBMQkd3DKWwKPbfkfiUI6CkHOUl4=; b=ASuN6SwE6Y7MCgj5Ik3U2ooNNH
+	cJi3QNCOlzsy8npo6lEiK2vT7fTTz1S+7x+uvcGMTmT7LrAk/jryUC6qMO2dpMkuCtwffWf8hW3Lc
+	8VkwvYkWH4Kp1I//refDeXh435H6DOQqgrQLWueakMnxRnCVyvFFlHI4jk4jAKkPCw7+2PRYol2PH
+	FL9wmZINC4flg7o+eWexO13gZW2eWta7VgbcloWQxkPzg8DHlldAZuiFc/K+6L5X2zNyNuWTXukKS
+	jKNKYSQTDsaPJ/PIxJ0eLoGYYFdtPXQBzoYcz5h8LK9Vmyj1pUF/pQ+NV1gO4/+9XLDsmrbwtdx3L
+	9QSedG6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpV4s-0002jh-E0; Mon, 22 Jul 2019 09:57:54 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1hpV5m-0003L2-3i; Mon, 22 Jul 2019 09:58:50 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpV1g-00088w-9w
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 09:54:51 +0000
-Received: by mail-wr1-x442.google.com with SMTP id n9so38791940wru.0
+ id 1hpV1h-00089b-8S
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 09:54:53 +0000
+Received: by mail-wr1-x443.google.com with SMTP id p17so38676737wrf.11
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 22 Jul 2019 02:54:36 -0700 (PDT)
+ Mon, 22 Jul 2019 02:54:37 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=mMLWTpRyQOIhO2zBKiwG8296jQFE+BtYZV6zzvxEPl0=;
- b=Old0UmrEQpghjmdsyoDyvj4lfyDsHwZ/YHTJrSS71Rkp6llbPDMWpt6vUyKbPuLD/C
- Al3qUkgJ03TKuwBnLhuB4WEBymQJkvEQjc19V4WryIHJPTcnLoOWr+iynxfl3RPN84eM
- FkLZB3Pv/fGcwGHayM7YO59CZzZni//t8YowaFybhuIkmerAlbWaCULTdMK3532TAAeC
- K2TlU+g+6Tu673Ux91bWkOcZwGE64tRbXJt9cgW8p7TMwFa9I5jOEmW/Qq+5/rDqCVCR
- J58Mgwsq3V9DKWYMcRwPc1020hRhiH6r+0hoZ2tnwkiNcJRCEa9YdlDm/ZaVtLGmVxz6
- m28Q==
+ bh=BuoDlpPb1vre+s0M4n7UQuzVeVmwTbnqlEv8lDT4UWI=;
+ b=tKsjU5byCoZ5Sa+GP1Va7H9RQlqX/jqqS/q2WCk4JH/Cah1N2dHDB/kGpm4ruyddOv
+ /u6dzzGOGiOZalKUIfiBGWJUx7fUruazlVJJetd3nBhKlMbSRS8pTCHrIUr8UmzYdpP9
+ XchSEBbNVnFJV2uy46sIazeoKX6j+daD4DPGyMhHqCzgMJ0kaNJjuWOA8P+b0ImnJaEA
+ XL2DbM2wuoAgFUEifMONziWGqE4jYLjCaYk0F0Ahnx7dI4tA8inuRs89OExzu4ctRTE3
+ T3YGEoD/5/4oK1aMSx5dgwPWDdqPq1uhypMS1P/TgB2uPoVHV7opKMN4LUdF1z9ZuD4A
+ 15qw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=mMLWTpRyQOIhO2zBKiwG8296jQFE+BtYZV6zzvxEPl0=;
- b=XIbiG5h5i7UyVEsl50GisiAX7YBYnz29+Nu+VLp0bh/h8C6H1krlhr3tayYIneVX/N
- zHrSOEjqMn1OuTJAu/vDm5HowRVeRKu2yBP401On7px4eW+cEiktjI9Zj6OjHHXQqDtc
- HaFJnQ92+IAnAOWwaXJ/kb/2+gbt7QgLPpBjPRrzohk3NcJUmm4XRwWB8zecfkETWXJk
- ug6UXnaXAJ4tiByMmf9xAZySfkHSZNnReirkWbErvmv2n+qGBoSn2kJ00qAFwCJpOChp
- Au6YfoCumAi+Cj85sb73SzW4Avoe81oRvB9gUKrmwNGPjWvxlp49x1zoie+m9jughNnS
- X6Cw==
-X-Gm-Message-State: APjAAAWb0B8GbF2WH9XBKaL9TT1deGvgYjlYZI+voswDH6akI4Ux4hMi
- VLG6+1p+HLtLfFoD39cnM1uB5Q==
-X-Google-Smtp-Source: APXvYqzv5RI2+LQsoPPLCF7HYqwq+tI19+tyzHYBuoo7bAJ+ZihsVffuyiLWlbK83w2LDeFMa6Ndyg==
-X-Received: by 2002:adf:e6c5:: with SMTP id y5mr77160892wrm.235.1563789275176; 
- Mon, 22 Jul 2019 02:54:35 -0700 (PDT)
+ bh=BuoDlpPb1vre+s0M4n7UQuzVeVmwTbnqlEv8lDT4UWI=;
+ b=Uqa3AWlax/CVPmSQDdTf6uUjhTpOPxgrDaPXR66xNF4r6FQjedlhikFo1pY2GhlO8a
+ 367KQBiZILP1eLoCp6FContzEnmy5TP+gUyaBcksbW8wmffSJB7QHk9AeuOdy0epUOhX
+ lbmJeeqA8JIpXZ/CUWmFiz+b2iRt811oy2mRgosPeHn7KcLazEutJB6dEI4axdKh6hKU
+ lANEZ6it4BfIobQ/qFureMI6YMiisw1mCTJ9mfSz9xSw3wyftejwkEzUoygN4b7MrW23
+ VcrO0L44JOEm5x9wPgRe473zvSNXOKtKaWr/piXh27X/U4lC6baJPekwe3mvN9cLuP0g
+ 2Nzg==
+X-Gm-Message-State: APjAAAXGPgamu6CyTXi95MJYTFzyBPlq2FB1nUz3BqhkZ+nVPyDQUVx+
+ T7A7ostcviJsbq9pkxQJVo3RBQ==
+X-Google-Smtp-Source: APXvYqzEI8Yc89xIk5KnT0N0hiwsBpvaUVjuHPZEKB+qhbA7krIHnkZEIerewidwdBrfvIOKyMR26g==
+X-Received: by 2002:adf:9486:: with SMTP id 6mr42268769wrr.242.1563789276066; 
+ Mon, 22 Jul 2019 02:54:36 -0700 (PDT)
 Received: from pop-os.baylibre.local
  (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.googlemail.com with ESMTPSA id 91sm83158469wrp.3.2019.07.22.02.54.34
+ by smtp.googlemail.com with ESMTPSA id 91sm83158469wrp.3.2019.07.22.02.54.35
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 22 Jul 2019 02:54:34 -0700 (PDT)
+ Mon, 22 Jul 2019 02:54:35 -0700 (PDT)
 From: Alexandre Mergnat <amergnat@baylibre.com>
 To: jbrunet@baylibre.com
-Subject: [PATCH 7/8] clk: meson: remove ee input bypass clocks
-Date: Mon, 22 Jul 2019 11:54:24 +0200
-Message-Id: <20190722095425.14193-8-amergnat@baylibre.com>
+Subject: [PATCH 8/8] clk: meson: remove clk input helper
+Date: Mon, 22 Jul 2019 11:54:25 +0200
+Message-Id: <20190722095425.14193-9-amergnat@baylibre.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190722095425.14193-1-amergnat@baylibre.com>
 References: <20190722095425.14193-1-amergnat@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_025436_705264_59EF4A40 
-X-CRM114-Status: GOOD (  13.41  )
+X-CRM114-CacheID: sfid-20190722_025437_847609_6B3BB049 
+X-CRM114-Status: GOOD (  12.49  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -103,82 +103,124 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-During probe, bypass clocks (i.e. ee-in-xtal) are made from device-tree
-inputs to provide input clocks which can be access through global name.
-The cons of this method are the duplicated clocks, means more string
-comparison.
-
-Specify parent directly with device-tree clock name.
-
-Remove the bypass clock registration from the ee probe function.
+The clk input function which allows clock controllers to register a bypass
+clock from a clock producer is no longer needed anymore since meson clock
+controllers have migrated to a new parent allocation method.
 
 Signed-off-by: Alexandre Mergnat <amergnat@baylibre.com>
 ---
- drivers/clk/meson/Kconfig       |  1 -
- drivers/clk/meson/meson-eeclk.c | 10 ----------
- drivers/clk/meson/meson-eeclk.h |  2 --
- 3 files changed, 13 deletions(-)
+ drivers/clk/meson/Kconfig     |  3 ---
+ drivers/clk/meson/Makefile    |  1 -
+ drivers/clk/meson/clk-input.c | 49 -----------------------------------
+ drivers/clk/meson/clk-input.h | 19 --------------
+ 4 files changed, 72 deletions(-)
+ delete mode 100644 drivers/clk/meson/clk-input.c
+ delete mode 100644 drivers/clk/meson/clk-input.h
 
 diff --git a/drivers/clk/meson/Kconfig b/drivers/clk/meson/Kconfig
-index 178ee72ba4bc..72a37572501f 100644
+index 72a37572501f..500be0b0d473 100644
 --- a/drivers/clk/meson/Kconfig
 +++ b/drivers/clk/meson/Kconfig
-@@ -38,7 +38,6 @@ config COMMON_CLK_MESON_AO_CLKC
- config COMMON_CLK_MESON_EE_CLKC
+@@ -1,7 +1,4 @@
+ # SPDX-License-Identifier: GPL-2.0-only
+-config COMMON_CLK_MESON_INPUT
+-	tristate
+-
+ config COMMON_CLK_MESON_REGMAP
  	tristate
- 	select COMMON_CLK_MESON_REGMAP
--	select COMMON_CLK_MESON_INPUT
- 
- config COMMON_CLK_MESON8B
- 	bool
-diff --git a/drivers/clk/meson/meson-eeclk.c b/drivers/clk/meson/meson-eeclk.c
-index 6ba2094be257..a7cb1e7aedc4 100644
---- a/drivers/clk/meson/meson-eeclk.c
-+++ b/drivers/clk/meson/meson-eeclk.c
-@@ -10,7 +10,6 @@
- #include <linux/mfd/syscon.h>
- #include <linux/regmap.h>
- 
+ 	select REGMAP
+diff --git a/drivers/clk/meson/Makefile b/drivers/clk/meson/Makefile
+index bc35a4efd6b7..f09d83dc3d60 100644
+--- a/drivers/clk/meson/Makefile
++++ b/drivers/clk/meson/Makefile
+@@ -4,7 +4,6 @@
+ obj-$(CONFIG_COMMON_CLK_MESON_AO_CLKC) += meson-aoclk.o
+ obj-$(CONFIG_COMMON_CLK_MESON_DUALDIV) += clk-dualdiv.o
+ obj-$(CONFIG_COMMON_CLK_MESON_EE_CLKC) += meson-eeclk.o
+-obj-$(CONFIG_COMMON_CLK_MESON_INPUT) += clk-input.o
+ obj-$(CONFIG_COMMON_CLK_MESON_MPLL) += clk-mpll.o
+ obj-$(CONFIG_COMMON_CLK_MESON_PHASE) += clk-phase.o
+ obj-$(CONFIG_COMMON_CLK_MESON_PLL) += clk-pll.o
+diff --git a/drivers/clk/meson/clk-input.c b/drivers/clk/meson/clk-input.c
+deleted file mode 100644
+index 086226e9dba6..000000000000
+--- a/drivers/clk/meson/clk-input.c
++++ /dev/null
+@@ -1,49 +0,0 @@
+-// SPDX-License-Identifier: (GPL-2.0 OR MIT)
+-/*
+- * Copyright (c) 2018 BayLibre, SAS.
+- * Author: Jerome Brunet <jbrunet@baylibre.com>
+- */
+-
+-#include <linux/clk.h>
+-#include <linux/clk-provider.h>
+-#include <linux/device.h>
+-#include <linux/module.h>
 -#include "clk-input.h"
- #include "clk-regmap.h"
- #include "meson-eeclk.h"
- 
-@@ -18,7 +17,6 @@ int meson_eeclkc_probe(struct platform_device *pdev)
- {
- 	const struct meson_eeclkc_data *data;
- 	struct device *dev = &pdev->dev;
--	struct clk_hw *input;
- 	struct regmap *map;
- 	int ret, i;
- 
-@@ -37,14 +35,6 @@ int meson_eeclkc_probe(struct platform_device *pdev)
- 	if (data->init_count)
- 		regmap_multi_reg_write(map, data->init_regs, data->init_count);
- 
--	input = meson_clk_hw_register_input(dev, "xtal", IN_PREFIX "xtal", 0);
--	if (IS_ERR(input)) {
--		ret = PTR_ERR(input);
--		if (ret != -EPROBE_DEFER)
--			dev_err(dev, "failed to get input clock");
--		return ret;
--	}
 -
- 	/* Populate regmap for the regmap backed clocks */
- 	for (i = 0; i < data->regmap_clk_num; i++)
- 		data->regmap_clks[i]->map = map;
-diff --git a/drivers/clk/meson/meson-eeclk.h b/drivers/clk/meson/meson-eeclk.h
-index 9ab5d6fa7ccb..77316207bde1 100644
---- a/drivers/clk/meson/meson-eeclk.h
-+++ b/drivers/clk/meson/meson-eeclk.h
-@@ -10,8 +10,6 @@
- #include <linux/clk-provider.h>
- #include "clk-regmap.h"
- 
--#define IN_PREFIX "ee-in-"
+-static const struct clk_ops meson_clk_no_ops = {};
 -
- struct platform_device;
- 
- struct meson_eeclkc_data {
+-struct clk_hw *meson_clk_hw_register_input(struct device *dev,
+-					   const char *of_name,
+-					   const char *clk_name,
+-					   unsigned long flags)
+-{
+-	struct clk *parent_clk = devm_clk_get(dev, of_name);
+-	struct clk_init_data init;
+-	const char *parent_name;
+-	struct clk_hw *hw;
+-	int ret;
+-
+-	if (IS_ERR(parent_clk))
+-		return (struct clk_hw *)parent_clk;
+-
+-	hw = devm_kzalloc(dev, sizeof(*hw), GFP_KERNEL);
+-	if (!hw)
+-		return ERR_PTR(-ENOMEM);
+-
+-	parent_name = __clk_get_name(parent_clk);
+-	init.name = clk_name;
+-	init.ops = &meson_clk_no_ops;
+-	init.flags = flags;
+-	init.parent_names = &parent_name;
+-	init.num_parents = 1;
+-	hw->init = &init;
+-
+-	ret = devm_clk_hw_register(dev, hw);
+-
+-	return ret ? ERR_PTR(ret) : hw;
+-}
+-EXPORT_SYMBOL_GPL(meson_clk_hw_register_input);
+-
+-MODULE_DESCRIPTION("Amlogic clock input helper");
+-MODULE_AUTHOR("Jerome Brunet <jbrunet@baylibre.com>");
+-MODULE_LICENSE("GPL v2");
+diff --git a/drivers/clk/meson/clk-input.h b/drivers/clk/meson/clk-input.h
+deleted file mode 100644
+index 4a541b9685a6..000000000000
+--- a/drivers/clk/meson/clk-input.h
++++ /dev/null
+@@ -1,19 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0 */
+-/*
+- * Copyright (c) 2019 BayLibre, SAS.
+- * Author: Jerome Brunet <jbrunet@baylibre.com>
+- */
+-
+-#ifndef __MESON_CLK_INPUT_H
+-#define __MESON_CLK_INPUT_H
+-
+-#include <linux/clk-provider.h>
+-
+-struct device;
+-
+-struct clk_hw *meson_clk_hw_register_input(struct device *dev,
+-					   const char *of_name,
+-					   const char *clk_name,
+-					   unsigned long flags);
+-
+-#endif /* __MESON_CLK_INPUT_H */
 -- 
 2.17.1
 
