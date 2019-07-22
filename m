@@ -2,122 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E17F70BEF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 23:47:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC97570C0D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 23:52:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oKWQVyhT5jnpZz7fMajg5Vf+j/veTqXunkiamywLHl0=; b=Iag3Wt0z6m7qs5
-	VPXeif1x9JBkw9K9iVxHg1c3WQ3RFbclKyaVHQKU0M+UCyxl8RiD2DNk20y4jxeyeXDJhuBl2PE3H
-	wWjswEdlx2Mtj9FVzzu/ZjGAq+NuyjdNomOzVK/fERrhcsn8DqgwXmmRRVO1NPTO4py4ySGLj0JQV
-	L2KUUlMnEzqg3hKdxR16/09iKKmxtyF/3XXFTFTgBxJieoW9WrofM3vefO6+jIxbydg+9YYINdHe7
-	23T3GmAtFVA+apCgbIx4MKDQsLoYdy1zjK6nQInc9/ETu3+AMnsyiEm00SjbnGKBtfj65R9q8mbhF
-	HV5sH4ppVeFJJarmlsQg==;
+	List-Owner; bh=r5Gm+R6yAj7CVoBg3YJKp4bz6fmIRhy8iDErcLddWhQ=; b=FNLEAW50+m+a4B
+	8M0P7Wb1oufhM5YuLxbWV9XAVNwsKU+jULnGZqkuU5gYPxsEs8h7/ouIcxZdPqMpxjGtx0MdxxIB/
+	xnMqNksP3oeLOmH0Pl877TYconC3SmSX3eUivpY5w5Oyxnw49aWS1Uk2WKlRm/FVq3hXpLO/TEbIV
+	FCqe9DZSUz6IOcrp1mWPeSwdedarJUSQCNsEuXXpfHpfcpg0O6yDjQLNbSR5Ebc3L8pV8NmPBKwnb
+	yt7EpPtzHyul5EK3v+xK/PKBYEb+H914YMwfIm8is5oD1Jhjf6VasjBLkOlCqK9MK4Jcquy6DQhU1
+	OBXX+WzYzvXl8l2nRtxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpg9t-0003QQ-By; Mon, 22 Jul 2019 21:47:49 +0000
-Received: from mail-co1nam05on0725.outbound.protection.outlook.com
- ([2a01:111:f400:fe50::725]
- helo=NAM05-CO1-obe.outbound.protection.outlook.com)
+	id 1hpgEg-0005To-QN; Mon, 22 Jul 2019 21:52:47 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpg9d-0003Px-TT
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 21:47:35 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=andbjAkycuIAq+jVLf3aCclsAbk7WVwQjCcVaiuDP/HsEoiKx0/Bbq/iaRHONuJrDk2Q5v4OvcdIdY+mAl3AmR87tcVv4ASvck876xSTgmR9TD1GRFvH+HCWK3ZT7/gFaZW69AFvp7yBmzEpUiQoYYDz2x71OQ4eDvRKdOQbfI8vIAO6qOFjTAp/2V+BRG/neYsMAW9R7/Dirrdxq05cn5TrDqk+l95S5UGG/9a+UVs3MkcHGHuf5om0rw/wAOPc9KVbH8wAJjK4p4ozXESvK5eXk/cGe1ar+nXVlUijdAeIE9dLXYqjX6r5dfL8cElP9cZDOyElIWgXTRGjYxLvHw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=fqBjQrpDj0OJH8VKBImffIK2WtKZNDhu+QZ0zckAMDA=;
- b=foOq2wsemfDZqvZZzniKrRIqCPqvCdm32SbWGVsIMhXGboYkR072Z4ziK5AVEmah8GA65fw8LpzM++KCGJPxhuGg38QOMG/RkipcK5jDXDgcRRt6t1ndsl0lWKkeRIADcv3P/7vbE4Sbyy3+iFbnrRhk9oeWgCrJQgHD4Cy8rT6b3boCQXFNw1x+feo/iJhsyofnvJR4RkP9hgR3bYwzz0Z6Zr/5+Dd5AJgQGy0Q2nLqiMLEU7FMrf7JbEUToKrI+4wnnpxAVJpr+iJxqGhfSAKLZZq+nI+6S3MxiN3KOVfkaeouwZfk4NyE7SZs1+njrKp0TSXT7HJ8pcHHCyBGng==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=wavecomp.com;dmarc=pass action=none
- header.from=mips.com;dkim=pass header.d=mips.com;arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wavecomp.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=fqBjQrpDj0OJH8VKBImffIK2WtKZNDhu+QZ0zckAMDA=;
- b=n1JrOcpanq9drJqqKfsJSMbu6RdUsaoMd/1M+WqSd56uURdmU9Wn8YGyZwTE5Hkc9zC/743UenmspllAeUFeXzINpmXYCF49ZAxVQdl7+HLCB2MKYP55jZA2LAXXfXiRne9LPlDL8zJ4EaNt/JmLf0UHOIR3EDSYNn9FZYpGd4M=
-Received: from MWHPR2201MB1277.namprd22.prod.outlook.com (10.172.60.12) by
- MWHPR2201MB1760.namprd22.prod.outlook.com (10.164.206.163) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2094.14; Mon, 22 Jul 2019 21:47:25 +0000
-Received: from MWHPR2201MB1277.namprd22.prod.outlook.com
- ([fe80::49d3:37f8:217:c83]) by MWHPR2201MB1277.namprd22.prod.outlook.com
- ([fe80::49d3:37f8:217:c83%6]) with mapi id 15.20.2094.017; Mon, 22 Jul 2019
- 21:47:25 +0000
-From: Paul Burton <paul.burton@mips.com>
-To: Steven Price <steven.price@arm.com>
-Subject: Re: [PATCH v9 04/21] mips: mm: Add p?d_leaf() definitions
-Thread-Topic: [PATCH v9 04/21] mips: mm: Add p?d_leaf() definitions
-Thread-Index: AQHVQKQWHhmeZU4KlE2qPPJZI7g5vqbXLM0A
-Date: Mon, 22 Jul 2019 21:47:24 +0000
-Message-ID: <20190722214722.wdlj6a3der3r2oro@pburton-laptop>
-References: <20190722154210.42799-1-steven.price@arm.com>
- <20190722154210.42799-5-steven.price@arm.com>
-In-Reply-To: <20190722154210.42799-5-steven.price@arm.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: BYAPR05CA0001.namprd05.prod.outlook.com
- (2603:10b6:a03:c0::14) To MWHPR2201MB1277.namprd22.prod.outlook.com
- (2603:10b6:301:18::12)
-user-agent: NeoMutt/20180716
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=pburton@wavecomp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [12.94.197.246]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 924f2cf9-abad-44f0-9daa-08d70eee2e91
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(5600148)(711020)(4605104)(1401327)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
- SRVR:MWHPR2201MB1760; 
-x-ms-traffictypediagnostic: MWHPR2201MB1760:
-x-microsoft-antispam-prvs: <MWHPR2201MB1760DD96341A807B6A561F8EC1C40@MWHPR2201MB1760.namprd22.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4303;
-x-forefront-prvs: 01068D0A20
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(7916004)(366004)(136003)(376002)(396003)(346002)(39850400004)(199004)(189003)(256004)(81166006)(81156014)(186003)(478600001)(11346002)(44832011)(64756008)(102836004)(486006)(8936002)(42882007)(68736007)(25786009)(6116002)(66556008)(66476007)(66946007)(3846002)(66446008)(1076003)(446003)(71190400001)(476003)(386003)(99286004)(71200400001)(6486002)(6506007)(7736002)(229853002)(316002)(305945005)(9686003)(54906003)(58126008)(6436002)(53936002)(76176011)(6246003)(7416002)(6512007)(8676002)(2906002)(6916009)(26005)(5660300002)(66066001)(52116002)(33716001)(14454004)(4326008);
- DIR:OUT; SFP:1102; SCL:1; SRVR:MWHPR2201MB1760;
- H:MWHPR2201MB1277.namprd22.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: wavecomp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: lFHgvB4Ko+ICPs6Xu+lunbkR+AMez0bOGRh1cLmdoO8sc9nERXWg3+T4OLnNTogn9Hb5iNM8qFzfNT2ZleyE+pK/9sfYemk17y8dyG4HBZLR8KvtPfDOjFnBCmQhskRe1RwFdlUOVbyGMmOEqZoGThuHHDIQK0HUMdT4SYgSlOi9L980gYJ/xWC+aBDnGMaCtuIFb5IxNMtG9aR6ZxdjhJBOcruSrTOh+X18vzQsQYenaqiLmkFREPD1q2u/poq+cmSawqF4AevyqyZjy9zjCzrrkCwFlqYTYsIjyrRURug1PFxH9GeCZoJIRtFJVyFFsVyLHpeTkzIjI/Pw8W3oaWjwxQXedOKId/lQiHul+yhi1mV6yf0CaqGecJgUzz5cic9D7OG7YVdiPzZ5pWsUnciIRv0N2xkbImU4nPk7L0U=
-Content-ID: <DF7AB4FF039DED40B7A6B5AE3E6E451D@namprd22.prod.outlook.com>
+ id 1hpgEQ-0005Sy-V9
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 21:52:32 +0000
+Received: by mail-io1-xd43.google.com with SMTP id k8so77450393iot.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 22 Jul 2019 14:52:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=M4B5MWHaBM5L6mAB44C8VC587AuJcqw9v3suudathig=;
+ b=mV4yN9XbiPm46rZRFWHIwRnJLaAHpFcZQXjZTtYF+lvWkpqAE8M0TSjnqF7x9XW2/A
+ wJ5yzv+XKjZLlUo+WTNIs2iqS8X0STj8twa3zEjI9a8G2KOBbGN0BkP/IRtZmdHoJKu2
+ KI2kXbrAtzBfyIjLpL/W0Sft1zOYuf7ZqdFt8=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=M4B5MWHaBM5L6mAB44C8VC587AuJcqw9v3suudathig=;
+ b=ai9+UMp8+eSfm2LSNhuPxyGsVuCWWRRs5kdCJwqjOOcVSRlHPuFDS0vngRQaxI7LJV
+ PrxIrToIhvzQ/KR0ZkgTtfr+xIFIu0UHgjlZPCWBZ5bVUL/z3U4wsXVLYxWmWHF4Ln01
+ GYGip1fmn8t89fbabEU4VnIeTEWXlav9vGAd14K0ECajZttSFX6mtlo6gS+DJj3KxaNo
+ PHA4vU0AMcHnqFUB4PWEEUKbyvcUkU+cI6loDdn3tA631RZpSqBKkONXeKbyao2ozTBu
+ pYPFxtvPcxVNYv4NUPLGiljieZlOQATlVsr53Um386W1wb9mW7/Gel/ZTOqpZbyrpQm2
+ SzHg==
+X-Gm-Message-State: APjAAAXdVmKtBrrP3MXiBb48Chv0c1Rs9SdYO4XMeaTELAtI+dBOan0F
+ T5zVcCj9tV56RSKU+iXCHjddqIhbJb8=
+X-Google-Smtp-Source: APXvYqzykjByORREur0WvTcyYSC8H96qGhGcjUkyoAob76pRr/UjPvIB12GZCWd8skzqEssY46XM+A==
+X-Received: by 2002:a6b:ee12:: with SMTP id i18mr7255641ioh.172.1563832349739; 
+ Mon, 22 Jul 2019 14:52:29 -0700 (PDT)
+Received: from mail-io1-f51.google.com (mail-io1-f51.google.com.
+ [209.85.166.51])
+ by smtp.gmail.com with ESMTPSA id y5sm43458660ioc.86.2019.07.22.14.52.28
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Mon, 22 Jul 2019 14:52:28 -0700 (PDT)
+Received: by mail-io1-f51.google.com with SMTP id h6so77363465iom.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 22 Jul 2019 14:52:28 -0700 (PDT)
+X-Received: by 2002:a02:ac03:: with SMTP id a3mr77628446jao.132.1563832348559; 
+ Mon, 22 Jul 2019 14:52:28 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: mips.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 924f2cf9-abad-44f0-9daa-08d70eee2e91
-X-MS-Exchange-CrossTenant-originalarrivaltime: 22 Jul 2019 21:47:24.8429 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 463607d3-1db3-40a0-8a29-970c56230104
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: pburton@wavecomp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR2201MB1760
+References: <20190507234857.81414-1-dianders@chromium.org>
+ <79ca5499-6b7d-fe55-2030-283f5cfb1d27@rock-chips.com>
+ <82480aa5-ab2e-11c5-8dd5-c395f72fc6e7@ti.com>
+ <CAD=FV=Us1WyEqYDqVSuA+QPCDU7ceMEwwaWKtLz9ZNBFD0E7NQ@mail.gmail.com>
+In-Reply-To: <CAD=FV=Us1WyEqYDqVSuA+QPCDU7ceMEwwaWKtLz9ZNBFD0E7NQ@mail.gmail.com>
+From: Doug Anderson <dianders@chromium.org>
+Date: Mon, 22 Jul 2019 14:52:16 -0700
+X-Gmail-Original-Message-ID: <CAD=FV=XgawwLf6BQ-ruY5e36VyA3jM4Vf5gpFPfC8nLQwxwW_w@mail.gmail.com>
+Message-ID: <CAD=FV=XgawwLf6BQ-ruY5e36VyA3jM4Vf5gpFPfC8nLQwxwW_w@mail.gmail.com>
+Subject: Re: [PATCH] phy: rockchip-dp: Avoid power leak by leaving the PHY
+ power on
+To: Kishon Vijay Abraham I <kishon@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_144733_956883_F61BB0DF 
-X-CRM114-Status: GOOD (  19.39  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190722_145231_028327_A8E37464 
+X-CRM114-Status: GOOD (  30.83  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe50:0:0:0:725 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -129,89 +104,130 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>,
- "linux-mips@vger.kernel.org" <linux-mips@vger.kernel.org>,
- "linux-mm@kvack.org" <linux-mm@kvack.org>, "H. Peter Anvin" <hpa@zytor.com>,
- Will Deacon <will@kernel.org>, "Liang, 
- Kan" <kan.liang@linux.intel.com>, "x86@kernel.org" <x86@kernel.org>,
- Ingo Molnar <mingo@redhat.com>, James Hogan <jhogan@kernel.org>,
- Arnd Bergmann <arnd@arndb.de>,
- =?iso-8859-1?Q?J=E9r=F4me_Glisse?= <jglisse@redhat.com>,
- Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Ralf Baechle <ralf@linux-mips.org>, James Morse <james.morse@arm.com>,
- Andrew Morton <akpm@linux-foundation.org>
+Cc: Elaine Zhang <zhangqing@rock-chips.com>, Lin Huang <hl@rock-chips.com>,
+ Derek Basehore <dbasehore@chromium.org>, LKML <linux-kernel@vger.kernel.org>,
+ Huang Jiachai <hjc@rock-chips.com>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ "nickey.yang \(nickey.yang@rock-chips.com\)" <nickey.yang@rock-chips.com>,
+ Matthias Kaehlcke <mka@chromium.org>, Ryan Case <ryandcase@chromium.org>,
+ wzz <wzz@rock-chips.com>, Guenter Roeck <groeck@chromium.org>,
+ Caesar Wang <wxt@rock-chips.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Heiko Stuebner <heiko@sntech.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Steven,
+Kishon,
 
-On Mon, Jul 22, 2019 at 04:41:53PM +0100, Steven Price wrote:
-> walk_page_range() is going to be allowed to walk page tables other than
-> those of user space. For this it needs to know when it has reached a
-> 'leaf' entry in the page tables. This information is provided by the
-> p?d_leaf() functions/macros.
-> 
-> For mips, we only support large pages on 64 bit.
+On Mon, Jun 3, 2019 at 8:22 AM Doug Anderson <dianders@chromium.org> wrote:
+>
+> Kishon,
+>
+> On Mon, Jun 3, 2019 at 4:22 AM Kishon Vijay Abraham I <kishon@ti.com> wrote:
+> >
+> > Hi,
+> >
+> > On 20/05/19 1:34 PM, Caesar Wang wrote:
+> > > Hi Doug,
+> > >
+> > > For now,  nobody of rockchip is responsible for this driver.
+> > > Cc: Nickey, Zain, Hjc
+> > >
+> > >
+> > > On 5/8/19 7:48 AM, Douglas Anderson wrote:
+> > >> While testing a newer kernel on rk3288-based Chromebooks I found that
+> > >> the power draw in suspend was higher on newer kernels compared to the
+> > >> downstream Chrome OS 3.14 kernel.  Specifically the power of an
+> > >> rk3288-veyron-jerry board that I tested (as measured by the smart
+> > >> battery) was ~16 mA on Chrome OS 3.14 and ~21 mA on a newer kernel.
+> > >>
+> > >> I tracked the regression down to the fact that the "DP PHY" driver
+> > >> didn't exist in our downstream 3.14.  We relied on the eDP driver to
+> > >> turn on the clock and relied on the fact that the power for the PHY
+> > >> was default turned on.
+> > >>
+> > >> Specifically the thing that caused the power regression was turning
+> > >> the eDP PHY _off_.  Presumably there is some sort of power leak in the
+> > >> system and when we turn the PHY off something is leaching power from
+> > >> something else and causing excessive power draw.
+> > >>
+> > >> Doing a search through device trees shows that this PHY is only ever
+> > >> used on rk3288.  Presumably this power leak is present on all
+> > >> rk3288-SoCs running upstream Linux so let's just whack the driver to
+> > >> make sure we never turn off power.  We'll still leave the parts that
+> > >> turn _on_ the power and grab the clock, though.
+> > >>
+> > >> NOTES:
+> > >> A) If someone can identify what this power leak is and fix it in some
+> > >>     other way we can revert this patch.
+> > >> B) If someone can show that their particular board doesn't have this
+> > >>     power leak (maybe they have rails hooked up differently?) we can
+> > >>     perhaps add a device tree property indicating that for some boards
+> > >>     it's OK to turn this rail off.  I don't want to add this property
+> > >>     until I know of a board that needs it.
+> > >>
+> > >> Fixes: fd968973de95 ("phy: Add driver for rockchip Display Port PHY")
+> > >> Signed-off-by: Douglas Anderson <dianders@chromium.org>
+> > >
+> > >
+> > > Reviewed-by: Caesar Wang <wxt@rock-chips.com>
+> > >
+> > >> ---
+> > >> As far as I know Yakir (the original author) is no longer at Rockchip.
+> > >> I've added a few other Rockchip people and hopefully one of them can
+> > >> help direct even if they're not directly responsible.
+> > >>
+> > >>   drivers/phy/rockchip/phy-rockchip-dp.c | 11 +++++++----
+> > >>   1 file changed, 7 insertions(+), 4 deletions(-)
+> > >>
+> > >> diff --git a/drivers/phy/rockchip/phy-rockchip-dp.c
+> > >> b/drivers/phy/rockchip/phy-rockchip-dp.c
+> > >> index 8b267a746576..10bbcd69d6f5 100644
+> > >> --- a/drivers/phy/rockchip/phy-rockchip-dp.c
+> > >> +++ b/drivers/phy/rockchip/phy-rockchip-dp.c
+> > >> @@ -35,7 +35,7 @@ struct rockchip_dp_phy {
+> > >>   static int rockchip_set_phy_state(struct phy *phy, bool enable)
+> > >>   {
+> > >>       struct rockchip_dp_phy *dp = phy_get_drvdata(phy);
+> > >> -    int ret;
+> > >> +    int ret = 0;
+> > >>         if (enable) {
+> > >>           ret = regmap_write(dp->grf, GRF_SOC_CON12,
+> > >> @@ -50,9 +50,12 @@ static int rockchip_set_phy_state(struct phy *phy, bool
+> > >> enable)
+> > >>       } else {
+> > >>           clk_disable_unprepare(dp->phy_24m);
+> > >>   -        ret = regmap_write(dp->grf, GRF_SOC_CON12,
+> > >> -                   GRF_EDP_PHY_SIDDQ_HIWORD_MASK |
+> > >> -                   GRF_EDP_PHY_SIDDQ_OFF);
+> > >> +        /*
+> > >> +         * Intentionally don't turn SIDDQ off when disabling
+> > >> +         * the PHY.  There is a power leak on rk3288 and
+> > >> +         * suspend power _increases_ by 5 mA if you turn this
+> > >> +         * off.
+> > >> +         */
+> >
+> > Can someone in Rockchip try to find the root-cause of the issue? Keeping the
+> > PHY off shouldn't increase power draw.
+>
+> It sounded like Caesar already answered this, though?  Basically things
+> aren't hooked up in a way that this line can be turned safely turned
+> off in rk3288 with the current state of the world.  Chris says that
+> there's an ordering problem where we've got to turn off PD_VIO
+> _before_ we turn off SIDDQ.  ...but PD_VIO is a power domain that
+> contains much more than just eDP.  So if we truly wanted to try to
+> solve this we'd need to come up with a way to make sure PD_VIO got all
+> the way off and then turn this off only afterwards.
+>
+> ...and right now on rk3288 it looks like we never actually turn off
+> PD_VIO while the system is running.
 
-That ceases to be true with commit 35476311e529 ("MIPS: Add partial
-32-bit huge page support") in mips-next, so I think it may be best to
-move the definition to asm/pgtable.h so that both 32b & 64b kernels can
-pick it up.
+Is now a good time to land this patch since 5.3-rc1 is out?  Do you
+need me to re-send?  Hopefully your concerns are all addressed?
 
-Thanks,
-    Paul
-
-> For 64 bit if _PAGE_HUGE is defined we can simply look for it. When not
-> defined we can be confident that there are no leaf pages in existence
-> and fall back on the generic implementation (added in a later patch)
-> which returns 0.
-> 
-> CC: Ralf Baechle <ralf@linux-mips.org>
-> CC: Paul Burton <paul.burton@mips.com>
-> CC: James Hogan <jhogan@kernel.org>
-> CC: linux-mips@vger.kernel.org
-> Signed-off-by: Steven Price <steven.price@arm.com>
-> ---
->  arch/mips/include/asm/pgtable-64.h | 8 ++++++++
->  1 file changed, 8 insertions(+)
-> 
-> diff --git a/arch/mips/include/asm/pgtable-64.h b/arch/mips/include/asm/pgtable-64.h
-> index 93a9dce31f25..2bdbf8652b5f 100644
-> --- a/arch/mips/include/asm/pgtable-64.h
-> +++ b/arch/mips/include/asm/pgtable-64.h
-> @@ -273,6 +273,10 @@ static inline int pmd_present(pmd_t pmd)
->  	return pmd_val(pmd) != (unsigned long) invalid_pte_table;
->  }
->  
-> +#ifdef _PAGE_HUGE
-> +#define pmd_leaf(pmd)	((pmd_val(pmd) & _PAGE_HUGE) != 0)
-> +#endif
-> +
->  static inline void pmd_clear(pmd_t *pmdp)
->  {
->  	pmd_val(*pmdp) = ((unsigned long) invalid_pte_table);
-> @@ -297,6 +301,10 @@ static inline int pud_present(pud_t pud)
->  	return pud_val(pud) != (unsigned long) invalid_pmd_table;
->  }
->  
-> +#ifdef _PAGE_HUGE
-> +#define pud_leaf(pud)	((pud_val(pud) & _PAGE_HUGE) != 0)
-> +#endif
-> +
->  static inline void pud_clear(pud_t *pudp)
->  {
->  	pud_val(*pudp) = ((unsigned long) invalid_pmd_table);
-> -- 
-> 2.20.1
-> 
+-Doug
 
 _______________________________________________
 linux-arm-kernel mailing list
