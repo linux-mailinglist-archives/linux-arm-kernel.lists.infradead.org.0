@@ -2,75 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB099706B2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 19:23:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 567A0706B8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 19:23:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=U/JSR0te7Z11LwRA6SGJgxJMW3wmjaT0lXLJ6yboUyE=; b=Ohe
-	8FFvuTcTg0eP6il/24CzxqXfjU04D6oChLFx/kiIQUBdO2ZwvCSW8qz1ayl1hjbgRnyyOETjiquV1
-	HMEFPfjSKKM5Sg9PxXeeLGXiMl2dBiKEpnAQ9VRBN74q7PB1T4zdTTLbP5a0tV18GtsSx6lXsk91E
-	qpUSjNqLDFe1KrF/GiMvsLDa4zoY3YlK8MgYeFMS6N6cY2HgaZQG+FhA88EiklIHaAnE+weasHrQp
-	hsOgfnjUcblqMs3/nL3M8afSpx+lTIbxowVJgOefnoSmOgb420doDwtGbffRXu9I7lY046f2cTtqY
-	ZRD5pNUY+rh5iSXqTNPiRC+4rN2+tzA==;
+	References:List-Owner; bh=GRlU4yeKVE6hA97zigF6HxzCTHXc0IoS60blb9b7yh4=; b=I+9
+	JFvo/h57OOOKx8T582V94/yp4TufPGemhXgGs9lAGN6E4uqc3IQy62L+99OmMr9gm+y+gexSdx/qD
+	ydVetuJngb1kb8CnG5CKf6RaiBxZXboZgt0OGg5LnbfoHEM3IMMkxp6186SjzD99t/SiKOxy3uGHG
+	wvpPQ/IkaXqkor+3yk49Ns4CN0+0lYE+/i1cIwo39O4L1RgJZHFuXzF8CTO87EyZGuKtl+EQWjAG+
+	MwtIi7CgxObwwL03XWmmmyqK4NdfP3lSKZRkvAN+dE01lxlL+AJxJZuhyQ/9LcZvBW73da6pSP6Gi
+	m+yCbAzosN+ZLnzrEFbiCTAxdg5mGAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpc1l-0000u1-Bc; Mon, 22 Jul 2019 17:23:09 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1hpc2B-00015L-VZ; Mon, 22 Jul 2019 17:23:36 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpc1K-0000th-Bl
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 17:22:43 +0000
-Received: by mail-pg1-x543.google.com with SMTP id t132so17965764pgb.9
+ id 1hpc1e-0000zj-EX
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 17:23:03 +0000
+Received: by mail-pl1-x641.google.com with SMTP id az7so19454508plb.5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 22 Jul 2019 10:22:41 -0700 (PDT)
+ Mon, 22 Jul 2019 10:23:02 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id;
- bh=3876AKAsZGX63Axh00T2Gm59IDW3banJe4ryUn84tiA=;
- b=NQFtRY9MZNMNPg6S5CgEKrvuQRExfM4wbSegsLo2rdM9cKgEOrERmb4fwAvvjfo1IN
- vF8E/7Yvn6YapYEtC5gmooBWVSptCPLYzLG2FO3VEb2iaxu6CUWamED9YY1QhFdtoP3U
- uHKb8Njc3t3gUwLQ+cFi/qz/7Nk4oxsfyI321vuEr0qznCQfDwE+IoI0RHwJRwaXc6ex
- VOf5j/mqW8oyF4l9k/DYG3Z7JT7lvjJ8oKXV1sPntAwuPm1f1v+qXL0eYADfBRpQLwjG
- hzE0g6Nws1GnjNS5QftuvdRD2JM1DVRblP18YqAHnb56nDWT4TM7S4o3ix2BzzhWix1R
- 66Cg==
+ bh=ZslVBL5Mz0HAfC+qBA5LaRiPngbPOV8Dc92uhilmqCM=;
+ b=d8LF67x78l0sp6WDJIB8JzLbflFtuRLMrlbk1uNxoU9nPiTpGIgyAAi4EyDKddo8Lc
+ q8wLkXejXjdlxrBJWmoP8MlzMhOzNNiwGFPA100TibuXQgiqU9Kohs4NV0leuIEha09Q
+ PoPcqHiEghRpCMScXHW0hEKGVPt7SKnS5yPcX9birgxL5smRB2PIWLD2agzMab+S4HRO
+ 1Q9lAMvcsLNkxwIp7/aFYhCIMJf3TFBlZOiWHXVa94mT4OhsIBnIbe4VLGDYlCFAZgF9
+ i7l/SN6aaJaYgjTknIkDkjAvzmyqQKimxjSAV5Y0nBoaH5dXOUgjIVHD/k0rLqSuLecK
+ QAHA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=3876AKAsZGX63Axh00T2Gm59IDW3banJe4ryUn84tiA=;
- b=WrY+LqK1UKWgrZlwatpidSkZHZ3pRpwNoRUoK8HZImIhFIz3GKb59bLaDK1dExFcI8
- /6MM1eTZGKM0Drja2lJRz1CNaVlkQGP+KKZCnr591pE0tTrw7eRIAM2WMScdWW/KZpfB
- ZZ/opuniATj9ejtMfbxy+AkZ2g/GaL5LBYDhXxP9mLPdW9j+KC0bLinG69V+UH9KUNCK
- owR3j4AYdpeuI74UK6TibWF4dXHXNuxnuN/LvB4SpvWw6fufq7Fw4l+qdtshhpn5f+X/
- MWJPhSuup82LYF2YaapH/Ob14Qiz/BXfI2m49Eh6wLGJ+8Ayt+HBl0ZZs4DQ8kMC/Im6
- bKKQ==
-X-Gm-Message-State: APjAAAWcmObOkbUk8hOobwxefQROQWi2j+XZch40x+ZyYmQkxVFDhwIS
- SLsB9ESeQNF/vetZ4BVhDqqTDlkT
-X-Google-Smtp-Source: APXvYqzvENzFTEG6YT3zLFXjaovEUj0OUeVKwVnsTlCJkv/e4F1BwCfx3+YyUzcZEWDXi/MDZLTtWQ==
-X-Received: by 2002:aa7:90c9:: with SMTP id k9mr1253443pfk.171.1563816161294; 
- Mon, 22 Jul 2019 10:22:41 -0700 (PDT)
+ bh=ZslVBL5Mz0HAfC+qBA5LaRiPngbPOV8Dc92uhilmqCM=;
+ b=Kt6wTDJln5I7tuRmlAy77YpVK6sqyCmnG6nZvllftX+1CTwtwH0bSqxCmaPu9mvRHm
+ 6do+/FxxA8rYr+wdo4lHs2M5tt7gtLlFTrhi2MTMc79HAZPXZs6DDgXma1EdUX8osaiL
+ cDE3C+eMrRmMhrD2Vd9Cyx+Y2daGvBlnXz5BMYA5y+IZjw2KvR2OQ5rBMIdMio/PP9dB
+ by4Dd3DrWjUhmv2k6Zgp27jtVa05q/rSsGDyf5Rgv9cTSu6D1H1u+0PQ4lF0/FAnL+Z0
+ XsYTz3sZJUfuj2hq00lPEGEeLX8GniuGC5aBmrOZMMo1OpodTe6C2NLZvMYQjAqgAlFW
+ 08Qw==
+X-Gm-Message-State: APjAAAWzOO5DjMrE14sjtPa3Db17/cMKABaXZMnv0BvNrm1+FyDXCPdY
+ f5wtxNq82Z2LajV+nKEGB3Y=
+X-Google-Smtp-Source: APXvYqzjEpkVGeir2fkcTas5pOeWNGXshv6wZ/PHE8TfIFsE5r4i2xyUk0D5OLsEvhlzRU6g9BRULw==
+X-Received: by 2002:a17:902:e306:: with SMTP id
+ cg6mr76378459plb.263.1563816181685; 
+ Mon, 22 Jul 2019 10:23:01 -0700 (PDT)
 Received: from localhost.localdomain (KD118155013174.ppp-bb.dion.ne.jp.
  [118.155.13.174])
- by smtp.gmail.com with ESMTPSA id w16sm48195445pfj.85.2019.07.22.10.22.39
+ by smtp.gmail.com with ESMTPSA id o95sm35001252pjb.4.2019.07.22.10.22.59
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Mon, 22 Jul 2019 10:22:40 -0700 (PDT)
+ Mon, 22 Jul 2019 10:23:01 -0700 (PDT)
 From: Yoshihiro Kaneko <ykaneko0929@gmail.com>
 To: linux-renesas-soc@vger.kernel.org
-Subject: [PATCH] arm64: dts: renesas: r8a7795-es1-salvator-x: sort nodes
-Date: Tue, 23 Jul 2019 02:22:21 +0900
-Message-Id: <1563816141-17805-1-git-send-email-ykaneko0929@gmail.com>
+Subject: [PATCH] arm64: dts: renesas: r8a7795-salvator-x: sort nodes
+Date: Tue, 23 Jul 2019 02:22:52 +0900
+Message-Id: <1563816172-17864-1-git-send-email-ykaneko0929@gmail.com>
 X-Mailer: git-send-email 1.9.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_102242_408776_025EB587 
-X-CRM114-Status: GOOD (  13.84  )
+X-CRM114-CacheID: sfid-20190722_102302_583354_4499B78D 
+X-CRM114-Status: GOOD (  13.96  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -120,13 +121,13 @@ Signed-off-by: Yoshihiro Kaneko <ykaneko0929@gmail.com>
 
 This patch is based on the devel branch of Simon Horman's renesas tree.
 
- .../boot/dts/renesas/r8a7795-es1-salvator-x.dts    | 26 +++++++++++-----------
- 1 file changed, 13 insertions(+), 13 deletions(-)
+ arch/arm64/boot/dts/renesas/r8a7795-salvator-x.dts | 28 ++++++++++++----------
+ 1 file changed, 15 insertions(+), 13 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/renesas/r8a7795-es1-salvator-x.dts b/arch/arm64/boot/dts/renesas/r8a7795-es1-salvator-x.dts
-index c1a56ea..c729686 100644
---- a/arch/arm64/boot/dts/renesas/r8a7795-es1-salvator-x.dts
-+++ b/arch/arm64/boot/dts/renesas/r8a7795-es1-salvator-x.dts
+diff --git a/arch/arm64/boot/dts/renesas/r8a7795-salvator-x.dts b/arch/arm64/boot/dts/renesas/r8a7795-salvator-x.dts
+index d2d48b3..cf151f3 100644
+--- a/arch/arm64/boot/dts/renesas/r8a7795-salvator-x.dts
++++ b/arch/arm64/boot/dts/renesas/r8a7795-salvator-x.dts
 @@ -52,12 +52,6 @@
  	status = "okay";
  };
@@ -140,10 +141,11 @@ index c1a56ea..c729686 100644
  &hdmi0 {
  	status = "okay";
  
-@@ -108,6 +102,13 @@
+@@ -108,6 +102,14 @@
  	status = "okay";
  };
  
++
 +&pfc {
 +	usb2_pins: usb2 {
 +		groups = "usb2";
@@ -154,7 +156,7 @@ index c1a56ea..c729686 100644
  &rcar_sound {
  	ports {
  		/* rsnd_port0 is on salvator-common */
-@@ -138,17 +139,16 @@
+@@ -138,17 +140,17 @@
  	};
  };
  
@@ -169,6 +171,7 @@ index c1a56ea..c729686 100644
  	status = "okay";
  };
  
++
 +&sound_card {
 +	dais = <&rsnd_port0	/* ak4613 */
 +		&rsnd_port1	/* HDMI0  */
