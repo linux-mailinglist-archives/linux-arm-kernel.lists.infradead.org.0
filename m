@@ -2,104 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6BA3470100
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 15:26:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D040A70132
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 15:37:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DJmQ2YrmzwQifFW4PRKIYTZIPFN2X4EDr7/wLzczqAw=; b=t2NmYEvEoPR51S
-	ZovYvjU4ZtquRyN436+zfYJqIkLIP/LtvFrr/Y7BzKLua5KMDvQbJCj8Xzn4VHrnvA6Y9+LSQGaj2
-	Rt21urN1SMWg5tw2Q+Lw7MtHn1r1yON55jfSfvcHXlFhkqNex/dx58spRPvdl7EBZIdUg6Ku9l0cu
-	keBtPgfttqR4WO7+0cMuTGu3aUKqyMdcrsskrEDrq4exH9ZBoLmonBICKYuc5qsC4wwUBpyvRkuKz
-	tGn4RA9CwnXdCwGzfFxW/xFB2EVpcYkgF7cxDRX+hqDlksr5ef8vczCOZr2ib+/i7/nTR/Ag5ACZJ
-	NKlDnffc0pQ3WQODf9fg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=J6nFw5yABBMxebfiFRvJwoBKsrEK9SNQsc4TyJ2aoh0=; b=bDC
+	ZF9IFNB663St/oPkQFB+668Xze/rPnSQFtx+d18jANiN9CH60lUgFXxwdqS1LHqlGvbQkJevYKZl/
+	uffj2Gv4wsiu+cmDdRinMFxmbTJdX0Sf+tZPG4bZ8b4WFPwPOyCLpCN1DvM2561+0XIP8fCKo+sOR
+	5+cbHdzg/8uaIf5lnayZfjrhKOD6EEjDqCR8AYKVXSK5NUyCmDHI3xqK8lWfFyy6uFi2ob2zg83W7
+	R95SkpHljwNS5/XyAcP/5x+upDqLhehZs1B5gWAWJJQ5YNo94ugpR/Jecc+opHeirvgjdARl0d6XU
+	9CcF6PTMEf+1WIAS4uurYnnzzpucY0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpYKi-0002Nb-UJ; Mon, 22 Jul 2019 13:26:29 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hpYKR-0002Ml-AQ
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 13:26:14 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C7F63344;
- Mon, 22 Jul 2019 06:26:10 -0700 (PDT)
-Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 36EC83F71A; Mon, 22 Jul 2019 06:26:09 -0700 (PDT)
-Subject: Re: [PATCH 1/3] printk: Allow architecture-specific timestamping
- function
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-References: <20190722103330.255312-1-marc.zyngier@arm.com>
- <20190722103330.255312-2-marc.zyngier@arm.com>
- <20190722112543.5quvqgerpyvfgbxq@pathway.suse.cz>
- <493e2c0b-9536-ce6d-b59e-d169693085da@arm.com>
- <20190722130311.GD1330@shell.armlinux.org.uk>
-From: Marc Zyngier <marc.zyngier@arm.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
- mQINBE6Jf0UBEADLCxpix34Ch3kQKA9SNlVQroj9aHAEzzl0+V8jrvT9a9GkK+FjBOIQz4KE
- g+3p+lqgJH4NfwPm9H5I5e3wa+Scz9wAqWLTT772Rqb6hf6kx0kKd0P2jGv79qXSmwru28vJ
- t9NNsmIhEYwS5eTfCbsZZDCnR31J6qxozsDHpCGLHlYym/VbC199Uq/pN5gH+5JHZyhyZiNW
- ozUCjMqC4eNW42nYVKZQfbj/k4W9xFfudFaFEhAf/Vb1r6F05eBP1uopuzNkAN7vqS8XcgQH
- qXI357YC4ToCbmqLue4HK9+2mtf7MTdHZYGZ939OfTlOGuxFW+bhtPQzsHiW7eNe0ew0+LaL
- 3wdNzT5abPBscqXWVGsZWCAzBmrZato+Pd2bSCDPLInZV0j+rjt7MWiSxEAEowue3IcZA++7
- ifTDIscQdpeKT8hcL+9eHLgoSDH62SlubO/y8bB1hV8JjLW/jQpLnae0oz25h39ij4ijcp8N
- t5slf5DNRi1NLz5+iaaLg4gaM3ywVK2VEKdBTg+JTg3dfrb3DH7ctTQquyKun9IVY8AsxMc6
- lxl4HxrpLX7HgF10685GG5fFla7R1RUnW5svgQhz6YVU33yJjk5lIIrrxKI/wLlhn066mtu1
- DoD9TEAjwOmpa6ofV6rHeBPehUwMZEsLqlKfLsl0PpsJwov8TQARAQABtCNNYXJjIFp5bmdp
- ZXIgPG1hcmMuenluZ2llckBhcm0uY29tPokCTwQTAQIAOQIbAwYLCQgHAwIGFQgCCQoLBBYC
- AwECHgECF4AWIQSf1RxT4LVjGP2VnD0j0NC60T16QwUCXR3BUgAKCRAj0NC60T16Qyd/D/9s
- x0puxd3lI+jdLMEY8sTsNxw/+CZfyKaHtysasZlloLK7ftYhRUc63mMW2mrvgB1GEnXYIdj3
- g6Qo4csoDuN+9EBmejh7SglM/h0evOtrY2V5QmZA/e/Pqfj0P3N/Eb5BiB3R4ptLtvKCTsqr
- 3womxCRqQY3IrMn1s2qfpmeNLUIfCUtgh8opzPtFuFJWVBzbzvhPEApZzMe9Vs1O2P8BQaay
- QXpbzHaKruthoLICRzS/3UCe0N/mBZQRKHrqhPwvjZdO0KMqjSsPqfukOJ8bl5jZxYk+G/3T
- 66Z4JUpZ7RkcrX7CvBfZqRo19WyWFfjGz79iVMJNIEkJvJBANbTSiWUC6IkP+zT/zWYzZPXx
- XRlrKWSBBqJrWQKZBwKOLsL62oQG7ARvpCG9rZ6hd5CLQtPI9dasgTwOIA1OW2mWzi20jDjD
- cGC9ifJiyWL8L/bgwyL3F/G0R1gxAfnRUknyzqfpLy5cSgwKCYrXOrRqgHoB+12HA/XQUG+k
- vKW8bbdVk5XZPc5ghdFIlza/pb1946SrIg1AsjaEMZqunh0G7oQhOWHKOd6fH0qg8NssMqQl
- jLfFiOlgEV2mnaz6XXQe/viXPwa4NCmdXqxeBDpJmrNMtbEbq+QUbgcwwle4Xx2/07ICkyZH
- +7RvbmZ/dM9cpzMAU53sLxSIVQT5lj23WLkCDQROiX9FARAAz/al0tgJaZ/eu0iI/xaPk3DK
- NIvr9SsKFe2hf3CVjxriHcRfoTfriycglUwtvKvhvB2Y8pQuWfLtP9Hx3H+YI5a78PO2tU1C
- JdY5Momd3/aJBuUFP5blbx6n+dLDepQhyQrAp2mVC3NIp4T48n4YxL4Og0MORytWNSeygISv
- Rordw7qDmEsa7wgFsLUIlhKmmV5VVv+wAOdYXdJ9S8n+XgrxSTgHj5f3QqkDtT0yG8NMLLmY
- kZpOwWoMumeqn/KppPY/uTIwbYTD56q1UirDDB5kDRL626qm63nF00ByyPY+6BXH22XD8smj
- f2eHw2szECG/lpD4knYjxROIctdC+gLRhz+Nlf8lEHmvjHgiErfgy/lOIf+AV9lvDF3bztjW
- M5oP2WGeR7VJfkxcXt4JPdyDIH6GBK7jbD7bFiXf6vMiFCrFeFo/bfa39veKUk7TRlnX13go
- gIZxqR6IvpkG0PxOu2RGJ7Aje/SjytQFa2NwNGCDe1bH89wm9mfDW3BuZF1o2+y+eVqkPZj0
- mzfChEsiNIAY6KPDMVdInILYdTUAC5H26jj9CR4itBUcjE/tMll0n2wYRZ14Y/PM+UosfAhf
- YfN9t2096M9JebksnTbqp20keDMEBvc3KBkboEfoQLU08NDo7ncReitdLW2xICCnlkNIUQGS
- WlFVPcTQ2sMAEQEAAYkCHwQYAQIACQUCTol/RQIbDAAKCRAj0NC60T16QwsFD/9T4y30O0Wn
- MwIgcU8T2c2WwKbvmPbaU2LDqZebHdxQDemX65EZCv/NALmKdA22MVSbAaQeqsDD5KYbmCyC
- czilJ1i+tpZoJY5kJALHWWloI6Uyi2s1zAwlMktAZzgGMnI55Ifn0dAOK0p8oy7/KNGHNPwJ
- eHKzpHSRgysQ3S1t7VwU4mTFJtXQaBFMMXg8rItP5GdygrFB7yUbG6TnrXhpGkFBrQs9p+SK
- vCqRS3Gw+dquQ9QR+QGWciEBHwuSad5gu7QC9taN8kJQfup+nJL8VGtAKgGr1AgRx/a/V/QA
- ikDbt/0oIS/kxlIdcYJ01xuMrDXf1jFhmGZdocUoNJkgLb1iFAl5daV8MQOrqciG+6tnLeZK
- HY4xCBoigV7E8KwEE5yUfxBS0yRreNb+pjKtX6pSr1Z/dIo+td/sHfEHffaMUIRNvJlBeqaj
- BX7ZveskVFafmErkH7HC+7ErIaqoM4aOh/Z0qXbMEjFsWA5yVXvCoJWSHFImL9Bo6PbMGpI0
- 9eBrkNa1fd6RGcktrX6KNfGZ2POECmKGLTyDC8/kb180YpDJERN48S0QBa3Rvt06ozNgFgZF
- Wvu5Li5PpY/t/M7AAkLiVTtlhZnJWyEJrQi9O2nXTzlG1PeqGH2ahuRxn7txA5j5PHZEZdL1
- Z46HaNmN2hZS/oJ69c1DI5Rcww==
-Organization: ARM Ltd
-Message-ID: <f1633896-55ef-e1e0-649d-19adec260b39@arm.com>
-Date: Mon, 22 Jul 2019 14:26:07 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
-MIME-Version: 1.0
-In-Reply-To: <20190722130311.GD1330@shell.armlinux.org.uk>
-Content-Language: en-US
+	id 1hpYV7-00061o-Vg; Mon, 22 Jul 2019 13:37:14 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hpYUr-00061D-R3
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 13:36:59 +0000
+Received: by mail-qk1-x741.google.com with SMTP id d15so28569561qkl.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 22 Jul 2019 06:36:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=nW+0o4HDcVTAkoaZmJpF4nK9I/Q9L/ZCdZUGuRKZljE=;
+ b=QF0siUgKty4QyDoopOeIBOAUHe01dKM4PH5IsgfNWCAWf1o7TBGAWBdcH6zVWFcYMr
+ TnFPP89+rg+4WvNboIqtKJ9C3vRpXhArR9X4omZz0BA9TYAD78dFAYcvlbfOIzXU5MEB
+ byULjQz15lpWrGPvnO700iV//zI/lqGY/WOtUqQDdi8l48vKvmgP5uhPeIVeBC9BrDLA
+ BKqffYIDqf5RP1XY+DdUnrjlJB2aJxWJ2kCbYHahnW2VYOPpU3zD3sA0/eaPa2X2L2Uh
+ JnEFSICQ5StaQNV/x3cGRqVmRvrDIYVj1dYetSqJ2isZdm13uWohOU3BSF8048SEN06I
+ s8RA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=nW+0o4HDcVTAkoaZmJpF4nK9I/Q9L/ZCdZUGuRKZljE=;
+ b=S+mQeA1/d5qEhi+feBqKp2VdsmeEAE/c65OPYtjHQfpRF8H5BxzG3jcHqVbRVjQGXA
+ bp5LI4OkenMQUMKffGHuo6GwQCH+A8QClxRbR0PTEXXQisB824rUl+JvOFq9lfiSil1H
+ J4/TQa/fD9DLZv4rMtHI+nokOvcFNs+y7ayIqqRR2QsWqd/ZuUUY0QsHFEn3yIV0i6P6
+ v0jt4eLSC+fLVUsU2N+gbOF7x5FpM1g3j8m+3poroKo4HOQ9DFl2CwWaQLZYorWgPRyX
+ 2B4OoPz7O/Su3P5sPBiTVnT513yQF8Au7PyxsEA5sK6Ot2ik9HI5JtZAxnKoabrx7onG
+ ZXCg==
+X-Gm-Message-State: APjAAAXoeOrdXemGbLoiCkSGlIyYv79kPhpS2V9DI86muoUnHAT4Ncd1
+ as93brRgdSziRdjjLSmtGBI=
+X-Google-Smtp-Source: APXvYqyGLDu0qQQ1XaR3oureOLC2rer/BTdrBbsv4bQGpDRyxNhcrUH5PaFokZd2NEhUduaeygv3Tg==
+X-Received: by 2002:a37:aa06:: with SMTP id t6mr46606872qke.226.1563802616190; 
+ Mon, 22 Jul 2019 06:36:56 -0700 (PDT)
+Received: from localhost.localdomain ([2804:14c:482:3c8:56cb:1049:60d2:137b])
+ by smtp.gmail.com with ESMTPSA id
+ x1sm16894599qkj.22.2019.07.22.06.36.53
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 22 Jul 2019 06:36:55 -0700 (PDT)
+From: Fabio Estevam <festevam@gmail.com>
+To: shawnguo@kernel.org
+Subject: [PATCH 1/2] ARM: dts: imx6qdl-wandboard: Add OV5645 camera support
+Date: Mon, 22 Jul 2019 10:36:50 -0300
+Message-Id: <20190722133651.14729-1-festevam@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_062611_451433_F77ECD73 
-X-CRM114-Status: GOOD (  22.08  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190722_063657_903632_C46D3047 
+X-CRM114-Status: GOOD (  14.07  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (festevam[at]gmail.com)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -111,108 +94,160 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Petr Mladek <pmladek@suse.com>,
- Pavel Tatashin <pasha.tatashin@soleen.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, Steven Rostedt <rostedt@goodmis.org>,
- Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
- John Stultz <john.stultz@linaro.org>, Thomas Gleixner <tglx@linutronix.de>,
+Cc: Fabio Estevam <festevam@gmail.com>, ezequiel@collabora.com,
  linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 22/07/2019 14:03, Russell King - ARM Linux admin wrote:
-> On Mon, Jul 22, 2019 at 01:47:57PM +0100, Marc Zyngier wrote:
->> On 22/07/2019 12:25, Petr Mladek wrote:
->>> On Mon 2019-07-22 11:33:28, Marc Zyngier wrote:
->>>> printk currently relies on local_clock to time-stamp the kernel
->>>> messages. In order to allow the timestamping (and only that)
->>>> to be overridden by architecture-specific code, let's declare
->>>> a new timestamp_clock() function, which gets used by the printk
->>>> code. Architectures willing to make use of this facility will
->>>> have to define CONFIG_ARCH_HAS_TIMESTAMP_CLOCK.
->>>>
->>>> The default is of course to return local_clock(), so that the
->>>> existing behaviour stays unchanged.
->>>>
->>>> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
->>>> ---
->>>>  include/linux/sched/clock.h | 13 +++++++++++++
->>>>  kernel/printk/printk.c      |  4 ++--
->>>>  2 files changed, 15 insertions(+), 2 deletions(-)
->>>>
->>>> diff --git a/include/linux/sched/clock.h b/include/linux/sched/clock.h
->>>> index 867d588314e0..3cf4b2a8ce18 100644
->>>> --- a/include/linux/sched/clock.h
->>>> +++ b/include/linux/sched/clock.h
->>>> @@ -98,4 +98,17 @@ static inline void enable_sched_clock_irqtime(void) {}
->>>>  static inline void disable_sched_clock_irqtime(void) {}
->>>>  #endif
->>>>  
->>>> +#ifdef CONFIG_ARCH_HAS_TIMESTAMP_CLOCK
->>>> +/* Special need architectures can provide their timestamping function */
->>>
->>> The commit message and the above comment should be more specific
->>> about what are the special needs.
->>>
->>> It must be clear how and why the clock differs from the other
->>> clocks, especially from lock_clock().
->>
->> Fair enough. How about something along the lines of:
->>
->> "An architecture can override the timestamp clock (which defaults to
->> local_clock) if local_clock is not significant early enough (sched_clock
->> being available too late)."
-> 
-> We have:
-> 1) the standard clocksource
-> 2) the sched_clock, which is _supposed_ to be initialised early
-> 3) persistent_clock
-> 
-> Do we really need another clock?
-> 
-> Why not initialise sched_clock() early (as in, before sched_init(),
-> which is where the first sched_clock() read occurs) ?
+From: Ezequiel Garcia <ezequiel@collabora.com>
 
-Because, as you hint at below, that's not generally possible if you need
-to identify the system early enough to discover that you need to apply
-an erratum workaround. If you init sched_clock() before you know what
-you're running on, you may end-up with a clock that can jump in either
-direction.
+imx6qdl-wandboard can be connected to a OV5645 camera via
+MIPI CSI port. Add support for it.
 
-And while the first call to sched_clock happens pretty late, the
-timestamping code uses it pretty early, via the local_clock() indirection.
+PAD_GPIO_6 has been originally used for the Ethernet FEC
+ERR006687 workaround, but it needs to be used to provide the
+camera sensor clock, so adjust it accordingly.
 
-> 
-> We've already been around the argument that sched_clock() apparently
-> can't be initialised early enough (which is the argument I had in reply
-> to the sched_clock() situation on ARM32) then how does inventing
-> timestamp_clock() solve this problem?
+Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
+Signed-off-by: Fabio Estevam <festevam@gmail.com>
+---
+ arch/arm/boot/dts/imx6qdl-wandboard.dtsi | 73 ++++++++++++++++++++++--
+ arch/arm64/boot/dts/freescale/Makefile   |  1 +
+ 2 files changed, 70 insertions(+), 4 deletions(-)
 
-It allows the kernel message to be timestamped with a potentially
-unreliable clock without breaking the promise that sched_clock() will
-not go backward or otherwise behave erratically.
-
-> Wouldn't timestamp_clock() also suffer from the very same "we can't
-> initialise it early enough" issue, and it'll just be setup along side
-> clocksources, just like sched_clock() has become?
-
-At least on arm64, the architected counter is always available, and
-doesn't require any setup (at least none by the time the kernel is booted).
-
-> I fail to see what adding yet another architecture specific clock
-> implementation buys, apart from yet more complexity.
-> 
-
-It buys us early timestamping without forcing us to deal with an
-unreliable. The additional complexity looks pretty minimal to me, and no
-other architecture is forced to use it.
-
-	M.
+diff --git a/arch/arm/boot/dts/imx6qdl-wandboard.dtsi b/arch/arm/boot/dts/imx6qdl-wandboard.dtsi
+index 50d9a989e06a..2cfb4112a467 100644
+--- a/arch/arm/boot/dts/imx6qdl-wandboard.dtsi
++++ b/arch/arm/boot/dts/imx6qdl-wandboard.dtsi
+@@ -33,6 +33,30 @@
+ 		spdif-out;
+ 	};
+ 
++	reg_1p5v: regulator-1p5v {
++		compatible = "regulator-fixed";
++		regulator-name = "1P5V";
++		regulator-min-microvolt = <1500000>;
++		regulator-max-microvolt = <1500000>;
++		regulator-always-on;
++	};
++
++	reg_1p8v: regulator-1p8v {
++		compatible = "regulator-fixed";
++		regulator-name = "1P8V";
++		regulator-min-microvolt = <1800000>;
++		regulator-max-microvolt = <1800000>;
++		regulator-always-on;
++	};
++
++	reg_2p8v: regulator-2p8v {
++		compatible = "regulator-fixed";
++		regulator-name = "2P8V";
++		regulator-min-microvolt = <2800000>;
++		regulator-max-microvolt = <2800000>;
++		regulator-always-on;
++	};
++
+ 	reg_2p5v: regulator-2p5v {
+ 		compatible = "regulator-fixed";
+ 		regulator-name = "2P5V";
+@@ -94,6 +118,29 @@
+ 		VDDIO-supply = <&reg_3p3v>;
+ 		lrclk-strength = <3>;
+ 	};
++
++	camera@3c {
++		compatible = "ovti,ov5645";
++		pinctrl-names = "default";
++		pinctrl-0 = <&pinctrl_ov5645>;
++		reg = <0x3c>;
++		clocks = <&clks IMX6QDL_CLK_CKO2>;
++		clock-names = "xclk";
++		clock-frequency = <24000000>;
++		vdddo-supply = <&reg_1p8v>;
++		vdda-supply = <&reg_2p8v>;
++		vddd-supply = <&reg_1p5v>;
++		enable-gpios = <&gpio1 6 GPIO_ACTIVE_HIGH>;
++		reset-gpios = <&gpio4 14 GPIO_ACTIVE_LOW>;
++
++		port {
++			ov5645_to_mipi_csi2: endpoint {
++				remote-endpoint = <&mipi_csi2_in>;
++				clock-lanes = <0>;
++				data-lanes = <1 2>;
++			};
++		};
++	};
+ };
+ 
+ &iomuxc {
+@@ -128,7 +175,6 @@
+ 				MX6QDL_PAD_RGMII_RD3__RGMII_RD3		0x1b030
+ 				MX6QDL_PAD_RGMII_RX_CTL__RGMII_RX_CTL	0x1b030
+ 				MX6QDL_PAD_GPIO_16__ENET_REF_CLK	0x4001b0a8
+-				MX6QDL_PAD_GPIO_6__ENET_IRQ		0x000b1
+ 			>;
+ 		};
+ 
+@@ -152,6 +198,14 @@
+ 			>;
+ 		};
+ 
++		pinctrl_ov5645: ov5645grp {
++			fsl,pins = <
++				MX6QDL_PAD_GPIO_3__CCM_CLKO2		0x000b0
++				MX6QDL_PAD_GPIO_6__GPIO1_IO06		0x1b0b0
++				MX6QDL_PAD_KEY_COL4__GPIO4_IO14		0x1b0b0
++			>;
++		};
++
+ 		pinctrl_spdif: spdifgrp {
+ 			fsl,pins = <
+ 				MX6QDL_PAD_ENET_RXD0__SPDIF_OUT		0x1b0b0
+@@ -226,12 +280,23 @@
+ 	pinctrl-0 = <&pinctrl_enet>;
+ 	phy-mode = "rgmii-id";
+ 	phy-reset-gpios = <&gpio3 29 GPIO_ACTIVE_LOW>;
+-	interrupts-extended = <&gpio1 6 IRQ_TYPE_LEVEL_HIGH>,
+-			      <&intc 0 119 IRQ_TYPE_LEVEL_HIGH>;
+-	fsl,err006687-workaround-present;
+ 	status = "okay";
+ };
+ 
++&mipi_csi {
++	status = "okay";
++
++	port@0 {
++		reg = <0>;
++
++		mipi_csi2_in: endpoint {
++			remote-endpoint = <&ov5645_to_mipi_csi2>;
++			clock-lanes = <0>;
++			data-lanes = <1 2>;
++		};
++	};
++};
++
+ &spdif {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_spdif>;
+diff --git a/arch/arm64/boot/dts/freescale/Makefile b/arch/arm64/boot/dts/freescale/Makefile
+index c043aca66572..99627a499a73 100644
+--- a/arch/arm64/boot/dts/freescale/Makefile
++++ b/arch/arm64/boot/dts/freescale/Makefile
+@@ -23,6 +23,7 @@ dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-lx2160a-rdb.dtb
+ dtb-$(CONFIG_ARCH_MXC) += imx8mm-evk.dtb
+ dtb-$(CONFIG_ARCH_MXC) += imx8mq-evk.dtb
+ dtb-$(CONFIG_ARCH_MXC) += imx8mq-librem5-devkit.dtb
++dtb-$(CONFIG_ARCH_MXC) += imx8mq-pico-pi.dtb
+ dtb-$(CONFIG_ARCH_MXC) += imx8mq-zii-ultra-rmb3.dtb
+ dtb-$(CONFIG_ARCH_MXC) += imx8mq-zii-ultra-zest.dtb
+ dtb-$(CONFIG_ARCH_MXC) += imx8qxp-mek.dtb
 -- 
-Jazz is not dead. It just smells funny...
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
