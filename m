@@ -2,157 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F1E56FCB8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 11:48:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B07736FCCC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 11:50:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VO05tbCVJjK3jYgQwekrHwpppLRyqJPSFXFDsVZ92b8=; b=GkscxQ8Hlnjs3a
-	VWsmc1ituPEsPUubbyflYJFFG79Y2op724qvtq93dEiGneefYUmRQD2xLKNFiG8j56X9bzrq1fFCV
-	x/rTArUK0Mwb0ZOIQIgmIJIbO7O0a5za8jlSigy46EX5tvzA9EleWitJY9VMMslyHp63STclKu/n0
-	BjhGLhnZokfOi9ab/y3lyPHIXWipkdxYWpTdmLmFlcZfOI1P6rFJcVpBMapARwdEri5DagT5gRTdf
-	OBAzVRx+NW+3t8ADpODbPNBndJnAxCz80rswhzchNCYO5kzm4OwblOikIDRivGLFgcCE36betwCq4
-	hsDI2fDZzq3I2vnBwC+w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=kHnjoP6MQmL1FNAJ8dTysoG6BjZay4lIbb18xIfIKGI=; b=l0D
+	kkiLj1aScf6QuGOkLIx9hCGx6SN7Nk4h1r9lJ30wDPjb/afZFMQUjltbQNLkopnvmBikIDYbW0CF6
+	4FhV9FHxyspwEAq2kHRwz9YX2MVJ/SdREo+oGbxlcsvYoqrMhZq5eruPwWIqvCDfH9WOSVvjWLebN
+	rVH7M9cu1A+OoBQOcicjarLw9L6CRImGUvq+zuGyPGgSwD/1C+Z7MrtaHUjWPQpzvyouGI8kN38bU
+	1vMHlMaozjUiwEFysx98VH1jfrRrte4eYUe6ChuJHWdX+i+nz3/CTGjzSKTZyCc3p5u2M3QfH4JTb
+	j+y6KwImYax1xXsAO3IfUQYCioiXfNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpUvT-0003fn-AH; Mon, 22 Jul 2019 09:48:11 +0000
-Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
- helo=smtprelay-out1.synopsys.com)
+	id 1hpUxk-0005Lu-NA; Mon, 22 Jul 2019 09:50:32 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpUv9-0003f4-NI
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 09:47:53 +0000
-Received: from mailhost.synopsys.com (dc2-mailhost2.synopsys.com
- [10.12.135.162])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 959CFC0C17;
- Mon, 22 Jul 2019 09:47:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1563788870; bh=hq6gJ+K6N4pn/7PhWA2I1CQUMqIfpkRR26n8J4BBq9Q=;
- h=From:To:CC:Subject:Date:References:In-Reply-To:From;
- b=hzU4UymHml3WqCGbSv5OB1Mw5Oqy6as082mZzZgWYGGDOb78+1jVcLatFVZL6OI13
- gf9L1qgphzvHby/Ppc60G5zmMJBBRY7h/U4o60T+9tKVdFjeeEcaVThMPC5WKQemEG
- SG93M6hwdNbaM0c/LsvdZGmNQiBByOdVcj+FpaLy21H49kqMbfFDjS5iTAY3UmZjka
- GhJ9f89EX6AHALz++I/XGd88WMOkubYuHxYablpnF1ojV31GybtBI8wcYa8EEAUlYu
- bOem/fCvQqYZ1v6i53EVJiTgqcPvjP7z1eQ3Ug/16Jny1PlVQFthjPY1JoDxh0dpR4
- g33lNfry5iUPg==
-Received: from US01WEHTC2.internal.synopsys.com
- (us01wehtc2.internal.synopsys.com [10.12.239.237])
- (using TLSv1.2 with cipher AES128-SHA256 (128/128 bits))
- (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id CF355A00A3;
- Mon, 22 Jul 2019 09:47:47 +0000 (UTC)
-Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
- US01WEHTC2.internal.synopsys.com (10.12.239.237) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Mon, 22 Jul 2019 02:47:47 -0700
-Received: from NAM01-SN1-obe.outbound.protection.outlook.com (10.13.134.195)
- by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
- 14.3.408.0; Mon, 22 Jul 2019 02:47:47 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=D+VybMxTBN+wF1jz6PKye6JOWuva8BcAfDz7vCYbTyJJG5qmRLkEx47jbXr3NbpgfjdNmVuRHLEpOFizQNuFzVHwWtplNNbxuczfaOgUntUGziu1U6MFPeEkZ63AuvHAypeWt7u4MiFqHJ/G/LXZpjFwLpg8Kx8HRr+RwgbB5yVbuxpYb7kDYISpgK2UBr/GYKOv8vf58RNFi3YDmFV7ZKy6+hOkq7rj0g8ennjGWaSr5UkFbGchwrpNojaDUzzTF9y51VJuK7uzg3NDy/sr6I0PP7FSlt08hAzf8yS3Fca2ocA11nqmXT1ThRCGWNITzqe33oipy5qvj2xrI2Qe+Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=hq6gJ+K6N4pn/7PhWA2I1CQUMqIfpkRR26n8J4BBq9Q=;
- b=ObTB4Lg96VzVijeoLDIn0ZBTxhWWiwkYv7QVDIrWwME2G5RzhrcwG66cCuBonOn8Yg4JeuiLNuzNR++uenwaNdENAHmaDpHBKM5+d6bBG33LI9QTcEBjoTNyoS9258FY+uYoroNW43PHGwGFrjJNZPTjzEpsUhbh+G7LrAYaM1qOZs1QqocHqjdHS84oZMNsqYH8YlQKLwFQBOXI2tEqOISIyzjnOqcXAOHp1tYCO4C+Dq/rEQaqqM78IivIMOZo4L6dJdCvQ7jDvj/OHtcT9TBdaEfXAFWx10O9j11Mz6NzYzY6Nu7L+5CnjK6y1vpQ4bLb4qaHLKvS6G1lh/tttA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=synopsys.com;dmarc=pass action=none
- header.from=synopsys.com;dkim=pass header.d=synopsys.com;arc=none
+ id 1hpUxP-0005KS-Ln
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 09:50:14 +0000
+Received: by mail-wm1-x341.google.com with SMTP id v19so34655051wmj.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 22 Jul 2019 02:50:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=synopsys.onmicrosoft.com; s=selector1-synopsys-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=hq6gJ+K6N4pn/7PhWA2I1CQUMqIfpkRR26n8J4BBq9Q=;
- b=BqBMuba0cBxTtgru6iq8CBud3JfYzIxKZ+Uf946xpsxcwx1nGFFtw6+wBAheSBTKK1RvWfXfr/pLftCsVO2ZWj9yRWXQ4UdGWUY7C+FWpb+m8F8VYR4cgbiN1J0D1qSY2fXNe2Hi2D5BXwBMUve/VnxemcOHmTHnnoc2MGvnA0Q=
-Received: from BN8PR12MB3266.namprd12.prod.outlook.com (20.179.66.159) by
- BN8PR12MB3476.namprd12.prod.outlook.com (20.178.212.17) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2073.14; Mon, 22 Jul 2019 09:47:46 +0000
-Received: from BN8PR12MB3266.namprd12.prod.outlook.com
- ([fe80::61ef:5598:59e0:fc9d]) by BN8PR12MB3266.namprd12.prod.outlook.com
- ([fe80::61ef:5598:59e0:fc9d%5]) with mapi id 15.20.2094.013; Mon, 22 Jul 2019
- 09:47:44 +0000
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-To: Jon Hunter <jonathanh@nvidia.com>, Jose Abreu <Jose.Abreu@synopsys.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>, 
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Subject: RE: [PATCH net-next 3/3] net: stmmac: Introducing support for Page
- Pool
-Thread-Topic: [PATCH net-next 3/3] net: stmmac: Introducing support for Page
- Pool
-Thread-Index: AQHVMYtq2Zx4WVoG/U2kL8GCK0bP/abPQEOAgADTx+CAABvLAIABeX5ggAAOFICAAAG4AIAAAXQAgAAaB/CAACO4AIAAAIsAgAAR0ACABE5q0IAAJe0AgAAA9wA=
-Date: Mon, 22 Jul 2019 09:47:44 +0000
-Message-ID: <BN8PR12MB3266362102CCB6B4DDE4BEA0D3C40@BN8PR12MB3266.namprd12.prod.outlook.com>
-References: <cover.1562149883.git.joabreu@synopsys.com>
- <1b254bb7fc6044c5e6e2fdd9e00088d1d13a808b.1562149883.git.joabreu@synopsys.com>
- <29dcc161-f7c8-026e-c3cc-5adb04df128c@nvidia.com>
- <BN8PR12MB32661E919A8DEBC7095BAA12D3C80@BN8PR12MB3266.namprd12.prod.outlook.com>
- <6a6bac84-1d29-2740-1636-d3adb26b6bcc@nvidia.com>
- <BN8PR12MB3266960A104A7CDBB4E59192D3CB0@BN8PR12MB3266.namprd12.prod.outlook.com>
- <bc9ab3c5-b1b9-26d4-7b73-01474328eafa@nvidia.com>
- <BN8PR12MB3266989D15E017A789E14282D3CB0@BN8PR12MB3266.namprd12.prod.outlook.com>
- <4db855e4-1d59-d30b-154c-e7a2aa1c9047@nvidia.com>
- <BN8PR12MB3266FD9CF18691EDEF05A4B8D3CB0@BN8PR12MB3266.namprd12.prod.outlook.com>
- <64e37224-6661-ddb0-4394-83a16e1ccb61@nvidia.com>
- <BN8PR12MB3266E1FAC5B7874EFA69DD7BD3CB0@BN8PR12MB3266.namprd12.prod.outlook.com>
- <25512348-5b98-aeb7-a6fb-f90376e66a84@nvidia.com>
- <BN8PR12MB32665C1A106D3DCBF89CEA54D3C40@BN8PR12MB3266.namprd12.prod.outlook.com>
- <49efad87-2f74-5804-af4c-33730f865c41@nvidia.com>
-In-Reply-To: <49efad87-2f74-5804-af4c-33730f865c41@nvidia.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=joabreu@synopsys.com; 
-x-originating-ip: [83.174.63.141]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 7e9aa974-9723-4a8d-3f35-08d70e89a576
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:BN8PR12MB3476; 
-x-ms-traffictypediagnostic: BN8PR12MB3476:
-x-microsoft-antispam-prvs: <BN8PR12MB34765947837CC7AAD9A305CBD3C40@BN8PR12MB3476.namprd12.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8882;
-x-forefront-prvs: 01068D0A20
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(346002)(366004)(376002)(39860400002)(136003)(396003)(52314003)(199004)(189003)(5660300002)(3846002)(7416002)(2906002)(54906003)(478600001)(74316002)(66446008)(7736002)(305945005)(81156014)(2501003)(66946007)(110136005)(64756008)(66476007)(229853002)(6116002)(52536014)(5024004)(81166006)(8676002)(68736007)(316002)(8936002)(76116006)(6506007)(446003)(55016002)(256004)(26005)(6436002)(53936002)(76176011)(476003)(66556008)(2201001)(4326008)(71200400001)(102836004)(186003)(7696005)(86362001)(53546011)(66066001)(71190400001)(25786009)(33656002)(11346002)(6246003)(14444005)(9686003)(99286004)(486006)(14454004);
- DIR:OUT; SFP:1102; SCL:1; SRVR:BN8PR12MB3476;
- H:BN8PR12MB3266.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: synopsys.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: obzIGZdfAOdYS3pYXkcFl2DGm3bMttg7JDCY+aqQspFZNBBbzjgdTTODsiHU4Vakh51KTvhh679NLqttwrPvz59mWuLfGWutrkBfOnuq3hatU6sUyJ/xmBnP8lMYYZhBIxfWPL7kzLFDRMKeqV0WuBwjO/5wJvIXo+QgKRXG59CiwaDfHKCBc5otpWpju/ByWmubcgancfSIfM2dz4jfYIBY6UPObbnXKqCa9sN489op3f3OFp0M/j5YrjbqcFqJUzEPmzIuwfXAMis8bqejleXB3VGttGKYtgTVNJFGsFlWdNEYLpHjqNFhChoeeNWuxGVrMD/odP3hX8FzfSQQC37tXBqc10vKoW+up1ORYv70WWiDf3wLl9j5UEgOd1H6iW1o95zeN8ymuLEGIqtmxOXQR65B5pmDScvxqAhxYmM=
-MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7e9aa974-9723-4a8d-3f35-08d70e89a576
-X-MS-Exchange-CrossTenant-originalarrivaltime: 22 Jul 2019 09:47:44.4533 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: joabreu@synopsys.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN8PR12MB3476
-X-OriginatorOrg: synopsys.com
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id;
+ bh=hKm+JnXWXXuV7trgotmUC1XIGpONOP5h0963i0bTdew=;
+ b=DQBpWeMP76gef9u3FmEa4dVGE14vsxX+islaXCYSJHE59o5WAkX/DAJD5D0geYOcQp
+ b6XKChn1XSh9H0gbrRQoRda34L3dtq/v2rzOR9E8bR3UMHNplGrm1wgHAdMGbAe9R6XY
+ RRbtXcchA/IWHlZl9DvZtl53WdBy1hrLW4nvaM0M2Hg46jaXxJtUmZPtpl1ilkmMqGbc
+ YLkBdH2ZcPZ9zCXSbZ8mVVFT1aR0eSvw+5BySRo6qEoCYklmynWjtHkL7iL76RrQPJrC
+ EfyeQ3DP+LMCy5qEF/Mplq225nFwuMm0c8mfNcvrjPPrY+SI5mOSqvEtx19W2RwWoH3M
+ 6Ezg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=hKm+JnXWXXuV7trgotmUC1XIGpONOP5h0963i0bTdew=;
+ b=kygELw83/mkixs84Xt8c+o3rulGO+oqGOi3udByV8MwoYp4dU6nA7ux4d8wiwOExLQ
+ bKqxACBrH9rcPl9MUpqAl6PkN6RsNJ4blhQ6OMNeVoAhaouvEI/hWNyTK70rGOmcabCm
+ C4lmJCtY5drqenhSRMLJbdO/htJ0V/OD73R9G/I+GAERaTZM47Q02X6ZbVcAywSnfIr+
+ ZvaSi0LwGRYnbyCTDozeMnpm+f3jzEPrGLWxWzBnOlISRSw1Wr1sft2ElZIcIQKCEbhQ
+ Vfm6TPsOtcvgGoGTP88s+is0enZBqosotTwByOSq3fER1zf8WxX7fOh1kduCj/QoF7BF
+ eXKw==
+X-Gm-Message-State: APjAAAW6OtZROOEU2fe5HjG/DKzbKf8V8ePWz3VhiAu9Yw3zgnEH3ks2
+ 2l1xaMzTutEV+hT6cZd++S8U+A==
+X-Google-Smtp-Source: APXvYqzZejCbxUUJoz+ci6zOgcDamgzn4M220kLVWYRh0TK31P/EYFTXN3mvUgfwK4TH9R/YQalm9Q==
+X-Received: by 2002:a1c:a5c2:: with SMTP id
+ o185mr61734341wme.172.1563789009588; 
+ Mon, 22 Jul 2019 02:50:09 -0700 (PDT)
+Received: from pop-os.baylibre.local
+ (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
+ by smtp.googlemail.com with ESMTPSA id i12sm40494917wrx.61.2019.07.22.02.50.08
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 22 Jul 2019 02:50:08 -0700 (PDT)
+From: Alexandre Mergnat <amergnat@baylibre.com>
+To: jbrunet@baylibre.com
+Subject: [PATCH] clk: meson: axg-audio: migrate to the new parent description
+ method
+Date: Mon, 22 Jul 2019 11:49:54 +0200
+Message-Id: <20190722094954.14040-1-amergnat@baylibre.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_024751_774254_C3C81123 
-X-CRM114-Status: GOOD (  17.07  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190722_025011_756460_92C374B4 
+X-CRM114-Status: GOOD (  14.54  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -166,64 +91,535 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Joao Pinto <Joao.Pinto@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-tegra <linux-tegra@vger.kernel.org>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S . Miller" <davem@davemloft.net>
+Cc: narmstrong@baylibre.com, sboyd@kernel.org, khilman@baylibre.com,
+ Alexandre Mergnat <amergnat@baylibre.com>, linux-kernel@vger.kernel.org,
+ baylibre-upstreaming@groups.io, linux-amlogic@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jon Hunter <jonathanh@nvidia.com>
-Date: Jul/22/2019, 10:37:18 (UTC+00:00)
+This clock controller use the string comparison method to describe parent
+relation between the clocks, which is not optimized. A recent patch [0]
+allows parents to be specified without string names or with device-tree
+clock name by using a new assignment structure.
 
-> 
-> On 22/07/2019 08:23, Jose Abreu wrote:
-> > From: Jon Hunter <jonathanh@nvidia.com>
-> > Date: Jul/19/2019, 14:35:52 (UTC+00:00)
-> > 
-> >>
-> >> On 19/07/2019 13:32, Jose Abreu wrote:
-> >>> From: Jon Hunter <jonathanh@nvidia.com>
-> >>> Date: Jul/19/2019, 13:30:10 (UTC+00:00)
-> >>>
-> >>>> I booted the board without using NFS and then started used dhclient to
-> >>>> bring up the network interface and it appears to be working fine. I can
-> >>>> even mount the NFS share fine. So it does appear to be particular to
-> >>>> using NFS to mount the rootfs.
-> >>>
-> >>> Damn. Can you send me your .config ?
-> >>
-> >> Yes no problem. Attached.
-> > 
-> > Can you compile your image without modules (i.e. all built-in) and let 
-> > me know if the error still happens ?
-> 
-> I simply removed the /lib/modules directory from the NFS share and
-> verified that I still see the same issue. So it is not loading the
-> modules that is a problem.
+Migrate to the new way by using .parent_hws where possible (when parent
+clocks are localy declared in the controller) and use .parent_data
+otherwise.
 
-Well, I meant that loading modules can be an issue but that's not the 
-way to verify that.
+Remove clk input helper and all bypass clocks (declared in probe function)
+which are no longer used since we are able to use device-tree clock name
+directly.
 
-You need to have all modules built-in so that it proves that no module 
-will try to be loaded.
+[0] commit fc0c209c147f ("clk: Allow parents to be specified without string names")
 
-Anyway, this is probably not the cause as you wouldn't even be able to 
-compile kernel if you need a symbol from a module with stmmac built-in. 
-Kconfig would complain about that.
-
-The other cause could be data corruption in the RX path. Are you able to 
-send me packet dump by running wireshark either in the transmitter side 
-(i.e. NFS server), or using some kind of switch ?
-
+Signed-off-by: Alexandre Mergnat <amergnat@baylibre.com>
 ---
-Thanks,
-Jose Miguel Abreu
+ drivers/clk/meson/Kconfig     |   1 -
+ drivers/clk/meson/axg-audio.c | 253 ++++++++++++++++------------------
+ 2 files changed, 116 insertions(+), 138 deletions(-)
+
+diff --git a/drivers/clk/meson/Kconfig b/drivers/clk/meson/Kconfig
+index a6b20e123e0c..ee0b84b6b329 100644
+--- a/drivers/clk/meson/Kconfig
++++ b/drivers/clk/meson/Kconfig
+@@ -86,7 +86,6 @@ config COMMON_CLK_AXG
+ config COMMON_CLK_AXG_AUDIO
+ 	tristate "Meson AXG Audio Clock Controller Driver"
+ 	depends on ARCH_MESON
+-	select COMMON_CLK_MESON_INPUT
+ 	select COMMON_CLK_MESON_REGMAP
+ 	select COMMON_CLK_MESON_PHASE
+ 	select COMMON_CLK_MESON_SCLK_DIV
+diff --git a/drivers/clk/meson/axg-audio.c b/drivers/clk/meson/axg-audio.c
+index 8028ff6f6610..4253a466eae8 100644
+--- a/drivers/clk/meson/axg-audio.c
++++ b/drivers/clk/meson/axg-audio.c
+@@ -15,7 +15,6 @@
+ #include <linux/slab.h>
+ 
+ #include "axg-audio.h"
+-#include "clk-input.h"
+ #include "clk-regmap.h"
+ #include "clk-phase.h"
+ #include "sclk-div.h"
+@@ -24,7 +23,7 @@
+ #define AUD_SLV_SCLK_COUNT	10
+ #define AUD_SLV_LRCLK_COUNT	10
+ 
+-#define AUD_GATE(_name, _reg, _bit, _pname, _iflags)			\
++#define AUD_GATE(_name, _reg, _bit, _phws, _iflags)			\
+ struct clk_regmap aud_##_name = {					\
+ 	.data = &(struct clk_regmap_gate_data){				\
+ 		.offset = (_reg),					\
+@@ -33,13 +32,13 @@ struct clk_regmap aud_##_name = {					\
+ 	.hw.init = &(struct clk_init_data) {				\
+ 		.name = "aud_"#_name,					\
+ 		.ops = &clk_regmap_gate_ops,				\
+-		.parent_names = (const char *[]){ _pname },		\
++		.parent_hws = (const struct clk_hw *[]) { &_phws.hw }, \
+ 		.num_parents = 1,					\
+ 		.flags = CLK_DUTY_CYCLE_PARENT | (_iflags),		\
+ 	},								\
+ }
+ 
+-#define AUD_MUX(_name, _reg, _mask, _shift, _dflags, _pnames, _iflags)	\
++#define AUD_MUX(_name, _reg, _mask, _shift, _dflags, _pdata, _iflags)	\
+ struct clk_regmap aud_##_name = {					\
+ 	.data = &(struct clk_regmap_mux_data){				\
+ 		.offset = (_reg),					\
+@@ -50,13 +49,13 @@ struct clk_regmap aud_##_name = {					\
+ 	.hw.init = &(struct clk_init_data){				\
+ 		.name = "aud_"#_name,					\
+ 		.ops = &clk_regmap_mux_ops,				\
+-		.parent_names = (_pnames),				\
+-		.num_parents = ARRAY_SIZE(_pnames),			\
++		.parent_data = _pdata,					\
++		.num_parents = ARRAY_SIZE(_pdata),			\
+ 		.flags = CLK_DUTY_CYCLE_PARENT | (_iflags),		\
+ 	},								\
+ }
+ 
+-#define AUD_DIV(_name, _reg, _shift, _width, _dflags, _pname, _iflags)	\
++#define AUD_DIV(_name, _reg, _shift, _width, _dflags, _phws, _iflags)	\
+ struct clk_regmap aud_##_name = {					\
+ 	.data = &(struct clk_regmap_div_data){				\
+ 		.offset = (_reg),					\
+@@ -67,15 +66,27 @@ struct clk_regmap aud_##_name = {					\
+ 	.hw.init = &(struct clk_init_data){				\
+ 		.name = "aud_"#_name,					\
+ 		.ops = &clk_regmap_divider_ops,				\
+-		.parent_names = (const char *[]) { _pname },		\
++		.parent_hws = (const struct clk_hw *[]) { &_phws.hw }, \
+ 		.num_parents = 1,					\
+ 		.flags = (_iflags),					\
+ 	},								\
+ }
+ 
+ #define AUD_PCLK_GATE(_name, _bit)				\
+-	AUD_GATE(_name, AUDIO_CLK_GATE_EN, _bit, "audio_pclk", 0)
+-
++struct clk_regmap aud_##_name = {					\
++	.data = &(struct clk_regmap_gate_data){				\
++		.offset = (AUDIO_CLK_GATE_EN),				\
++		.bit_idx = (_bit),					\
++	},								\
++	.hw.init = &(struct clk_init_data) {				\
++		.name = "aud_"#_name,					\
++		.ops = &clk_regmap_gate_ops,				\
++		.parent_data = &(const struct clk_parent_data) {	\
++			.fw_name = "pclk",				\
++		},							\
++		.num_parents = 1,					\
++	},								\
++}
+ /* Audio peripheral clocks */
+ static AUD_PCLK_GATE(ddr_arb,	   0);
+ static AUD_PCLK_GATE(pdm,	   1);
+@@ -100,14 +111,20 @@ static AUD_PCLK_GATE(power_detect, 19);
+ static AUD_PCLK_GATE(spdifout_b,   21);
+ 
+ /* Audio Master Clocks */
+-static const char * const mst_mux_parent_names[] = {
+-	"aud_mst_in0", "aud_mst_in1", "aud_mst_in2", "aud_mst_in3",
+-	"aud_mst_in4", "aud_mst_in5", "aud_mst_in6", "aud_mst_in7",
++static const struct clk_parent_data mst_mux_parent_data[] = {
++	{ .fw_name = "mst_in0", },
++	{ .fw_name = "mst_in1", },
++	{ .fw_name = "mst_in2", },
++	{ .fw_name = "mst_in3", },
++	{ .fw_name = "mst_in4", },
++	{ .fw_name = "mst_in5", },
++	{ .fw_name = "mst_in6", },
++	{ .fw_name = "mst_in7", },
+ };
+ 
+ #define AUD_MST_MUX(_name, _reg, _flag)				\
+ 	AUD_MUX(_name##_sel, _reg, 0x7, 24, _flag,		\
+-		mst_mux_parent_names, CLK_SET_RATE_PARENT)
++		mst_mux_parent_data, CLK_SET_RATE_PARENT)
+ 
+ #define AUD_MST_MCLK_MUX(_name, _reg)				\
+ 	AUD_MST_MUX(_name, _reg, CLK_MUX_ROUND_CLOSEST)
+@@ -129,7 +146,7 @@ static AUD_MST_MCLK_MUX(spdifout_b_clk, AUDIO_CLK_SPDIFOUT_B_CTRL);
+ 
+ #define AUD_MST_DIV(_name, _reg, _flag)				\
+ 	AUD_DIV(_name##_div, _reg, 0, 16, _flag,		\
+-		    "aud_"#_name"_sel", CLK_SET_RATE_PARENT)	\
++		    aud_##_name##_sel, CLK_SET_RATE_PARENT)	\
+ 
+ #define AUD_MST_MCLK_DIV(_name, _reg)				\
+ 	AUD_MST_DIV(_name, _reg, CLK_DIVIDER_ROUND_CLOSEST)
+@@ -150,7 +167,7 @@ static AUD_MST_SYS_DIV(pdm_sysclk,    AUDIO_CLK_PDMIN_CTRL1);
+ static AUD_MST_MCLK_DIV(spdifout_b_clk, AUDIO_CLK_SPDIFOUT_B_CTRL);
+ 
+ #define AUD_MST_MCLK_GATE(_name, _reg)				\
+-	AUD_GATE(_name, _reg, 31,  "aud_"#_name"_div",	\
++	AUD_GATE(_name, _reg, 31,  aud_##_name##_div,		\
+ 		 CLK_SET_RATE_PARENT)
+ 
+ static AUD_MST_MCLK_GATE(mst_a_mclk,   AUDIO_MCLK_A_CTRL);
+@@ -168,7 +185,7 @@ static AUD_MST_MCLK_GATE(spdifout_b_clk, AUDIO_CLK_SPDIFOUT_B_CTRL);
+ /* Sample Clocks */
+ #define AUD_MST_SCLK_PRE_EN(_name, _reg)			\
+ 	AUD_GATE(mst_##_name##_sclk_pre_en, _reg, 31,		\
+-		 "aud_mst_"#_name"_mclk", 0)
++		 aud_mst_##_name##_mclk, 0)
+ 
+ static AUD_MST_SCLK_PRE_EN(a, AUDIO_MST_A_SCLK_CTRL0);
+ static AUD_MST_SCLK_PRE_EN(b, AUDIO_MST_B_SCLK_CTRL0);
+@@ -178,7 +195,7 @@ static AUD_MST_SCLK_PRE_EN(e, AUDIO_MST_E_SCLK_CTRL0);
+ static AUD_MST_SCLK_PRE_EN(f, AUDIO_MST_F_SCLK_CTRL0);
+ 
+ #define AUD_SCLK_DIV(_name, _reg, _div_shift, _div_width,		\
+-			 _hi_shift, _hi_width, _pname, _iflags)		\
++			 _hi_shift, _hi_width, _phws, _iflags)		\
+ struct clk_regmap aud_##_name = {					\
+ 	.data = &(struct meson_sclk_div_data) {				\
+ 		.div = {						\
+@@ -195,7 +212,7 @@ struct clk_regmap aud_##_name = {					\
+ 	.hw.init = &(struct clk_init_data) {				\
+ 		.name = "aud_"#_name,					\
+ 		.ops = &meson_sclk_div_ops,				\
+-		.parent_names = (const char *[]) { _pname },		\
++		.parent_hws = (const struct clk_hw *[]) { &_phws.hw }, \
+ 		.num_parents = 1,					\
+ 		.flags = (_iflags),					\
+ 	},								\
+@@ -203,7 +220,7 @@ struct clk_regmap aud_##_name = {					\
+ 
+ #define AUD_MST_SCLK_DIV(_name, _reg)					\
+ 	AUD_SCLK_DIV(mst_##_name##_sclk_div, _reg, 20, 10, 0, 0,	\
+-		     "aud_mst_"#_name"_sclk_pre_en",			\
++		     aud_mst_##_name##_sclk_pre_en,			\
+ 		     CLK_SET_RATE_PARENT)
+ 
+ static AUD_MST_SCLK_DIV(a, AUDIO_MST_A_SCLK_CTRL0);
+@@ -214,8 +231,8 @@ static AUD_MST_SCLK_DIV(e, AUDIO_MST_E_SCLK_CTRL0);
+ static AUD_MST_SCLK_DIV(f, AUDIO_MST_F_SCLK_CTRL0);
+ 
+ #define AUD_MST_SCLK_POST_EN(_name, _reg)				\
+-	AUD_GATE(mst_##_name##_sclk_post_en, _reg, 30,		\
+-		 "aud_mst_"#_name"_sclk_div", CLK_SET_RATE_PARENT)
++	AUD_GATE(mst_##_name##_sclk_post_en, _reg, 30,			\
++		 aud_mst_##_name##_sclk_div, CLK_SET_RATE_PARENT)
+ 
+ static AUD_MST_SCLK_POST_EN(a, AUDIO_MST_A_SCLK_CTRL0);
+ static AUD_MST_SCLK_POST_EN(b, AUDIO_MST_B_SCLK_CTRL0);
+@@ -225,7 +242,7 @@ static AUD_MST_SCLK_POST_EN(e, AUDIO_MST_E_SCLK_CTRL0);
+ static AUD_MST_SCLK_POST_EN(f, AUDIO_MST_F_SCLK_CTRL0);
+ 
+ #define AUD_TRIPHASE(_name, _reg, _width, _shift0, _shift1, _shift2, \
+-			 _pname, _iflags)				\
++			 _phws, _iflags)				\
+ struct clk_regmap aud_##_name = {					\
+ 	.data = &(struct meson_clk_triphase_data) {			\
+ 		.ph0 = {						\
+@@ -247,7 +264,7 @@ struct clk_regmap aud_##_name = {					\
+ 	.hw.init = &(struct clk_init_data) {				\
+ 		.name = "aud_"#_name,					\
+ 		.ops = &meson_clk_triphase_ops,				\
+-		.parent_names = (const char *[]) { _pname },		\
++		.parent_hws = (const struct clk_hw *[]) { &_phws.hw }, \
+ 		.num_parents = 1,					\
+ 		.flags = CLK_DUTY_CYCLE_PARENT | (_iflags),		\
+ 	},								\
+@@ -255,7 +272,7 @@ struct clk_regmap aud_##_name = {					\
+ 
+ #define AUD_MST_SCLK(_name, _reg)					\
+ 	AUD_TRIPHASE(mst_##_name##_sclk, _reg, 1, 0, 2, 4,		\
+-		     "aud_mst_"#_name"_sclk_post_en", CLK_SET_RATE_PARENT)
++		     aud_mst_##_name##_sclk_post_en, CLK_SET_RATE_PARENT)
+ 
+ static AUD_MST_SCLK(a, AUDIO_MST_A_SCLK_CTRL1);
+ static AUD_MST_SCLK(b, AUDIO_MST_B_SCLK_CTRL1);
+@@ -266,7 +283,7 @@ static AUD_MST_SCLK(f, AUDIO_MST_F_SCLK_CTRL1);
+ 
+ #define AUD_MST_LRCLK_DIV(_name, _reg)					\
+ 	AUD_SCLK_DIV(mst_##_name##_lrclk_div, _reg, 0, 10, 10, 10,	\
+-		     "aud_mst_"#_name"_sclk_post_en", 0)		\
++		     aud_mst_##_name##_sclk_post_en, 0)			\
+ 
+ static AUD_MST_LRCLK_DIV(a, AUDIO_MST_A_SCLK_CTRL0);
+ static AUD_MST_LRCLK_DIV(b, AUDIO_MST_B_SCLK_CTRL0);
+@@ -277,7 +294,7 @@ static AUD_MST_LRCLK_DIV(f, AUDIO_MST_F_SCLK_CTRL0);
+ 
+ #define AUD_MST_LRCLK(_name, _reg)					\
+ 	AUD_TRIPHASE(mst_##_name##_lrclk, _reg, 1, 1, 3, 5,		\
+-		     "aud_mst_"#_name"_lrclk_div", CLK_SET_RATE_PARENT)
++		     aud_mst_##_name##_lrclk_div, CLK_SET_RATE_PARENT)
+ 
+ static AUD_MST_LRCLK(a, AUDIO_MST_A_SCLK_CTRL1);
+ static AUD_MST_LRCLK(b, AUDIO_MST_B_SCLK_CTRL1);
+@@ -286,19 +303,29 @@ static AUD_MST_LRCLK(d, AUDIO_MST_D_SCLK_CTRL1);
+ static AUD_MST_LRCLK(e, AUDIO_MST_E_SCLK_CTRL1);
+ static AUD_MST_LRCLK(f, AUDIO_MST_F_SCLK_CTRL1);
+ 
+-static const char * const tdm_sclk_parent_names[] = {
+-	"aud_mst_a_sclk", "aud_mst_b_sclk", "aud_mst_c_sclk",
+-	"aud_mst_d_sclk", "aud_mst_e_sclk", "aud_mst_f_sclk",
+-	"aud_slv_sclk0", "aud_slv_sclk1", "aud_slv_sclk2",
+-	"aud_slv_sclk3", "aud_slv_sclk4", "aud_slv_sclk5",
+-	"aud_slv_sclk6", "aud_slv_sclk7", "aud_slv_sclk8",
+-	"aud_slv_sclk9"
++static const struct clk_parent_data tdm_sclk_parent_data[] = {
++	{ .hw = &aud_mst_a_sclk.hw, },
++	{ .hw = &aud_mst_b_sclk.hw, },
++	{ .hw = &aud_mst_c_sclk.hw, },
++	{ .hw = &aud_mst_d_sclk.hw, },
++	{ .hw = &aud_mst_e_sclk.hw, },
++	{ .hw = &aud_mst_f_sclk.hw, },
++	{ .fw_name = "slv_sclk0", },
++	{ .fw_name = "slv_sclk1", },
++	{ .fw_name = "slv_sclk2", },
++	{ .fw_name = "slv_sclk3", },
++	{ .fw_name = "slv_sclk4", },
++	{ .fw_name = "slv_sclk5", },
++	{ .fw_name = "slv_sclk6", },
++	{ .fw_name = "slv_sclk7", },
++	{ .fw_name = "slv_sclk8", },
++	{ .fw_name = "slv_sclk9", },
+ };
+ 
+ #define AUD_TDM_SCLK_MUX(_name, _reg)				\
+ 	AUD_MUX(tdm##_name##_sclk_sel, _reg, 0xf, 24,		\
+ 		    CLK_MUX_ROUND_CLOSEST,			\
+-		    tdm_sclk_parent_names, 0)
++		    tdm_sclk_parent_data, 0)
+ 
+ static AUD_TDM_SCLK_MUX(in_a,  AUDIO_CLK_TDMIN_A_CTRL);
+ static AUD_TDM_SCLK_MUX(in_b,  AUDIO_CLK_TDMIN_B_CTRL);
+@@ -310,7 +337,7 @@ static AUD_TDM_SCLK_MUX(out_c, AUDIO_CLK_TDMOUT_C_CTRL);
+ 
+ #define AUD_TDM_SCLK_PRE_EN(_name, _reg)				\
+ 	AUD_GATE(tdm##_name##_sclk_pre_en, _reg, 31,			\
+-		 "aud_tdm"#_name"_sclk_sel", CLK_SET_RATE_PARENT)
++		 aud_tdm##_name##_sclk_sel, CLK_SET_RATE_PARENT)
+ 
+ static AUD_TDM_SCLK_PRE_EN(in_a,  AUDIO_CLK_TDMIN_A_CTRL);
+ static AUD_TDM_SCLK_PRE_EN(in_b,  AUDIO_CLK_TDMIN_B_CTRL);
+@@ -322,7 +349,7 @@ static AUD_TDM_SCLK_PRE_EN(out_c, AUDIO_CLK_TDMOUT_C_CTRL);
+ 
+ #define AUD_TDM_SCLK_POST_EN(_name, _reg)				\
+ 	AUD_GATE(tdm##_name##_sclk_post_en, _reg, 30,			\
+-		 "aud_tdm"#_name"_sclk_pre_en", CLK_SET_RATE_PARENT)
++		 aud_tdm##_name##_sclk_pre_en, CLK_SET_RATE_PARENT)
+ 
+ static AUD_TDM_SCLK_POST_EN(in_a,  AUDIO_CLK_TDMIN_A_CTRL);
+ static AUD_TDM_SCLK_POST_EN(in_b,  AUDIO_CLK_TDMIN_B_CTRL);
+@@ -344,8 +371,9 @@ static AUD_TDM_SCLK_POST_EN(out_c, AUDIO_CLK_TDMOUT_C_CTRL);
+ 	.hw.init = &(struct clk_init_data) {				\
+ 		.name = "aud_tdm"#_name"_sclk",				\
+ 		.ops = &meson_clk_phase_ops,				\
+-		.parent_names = (const char *[])			\
+-		{ "aud_tdm"#_name"_sclk_post_en" },			\
++		.parent_hws = (const struct clk_hw *[]) {		\
++			&aud_tdm##_name##_sclk_post_en.hw		\
++		},							\
+ 		.num_parents = 1,					\
+ 		.flags = CLK_DUTY_CYCLE_PARENT | CLK_SET_RATE_PARENT,	\
+ 	},								\
+@@ -359,19 +387,29 @@ static AUD_TDM_SCLK(out_a, AUDIO_CLK_TDMOUT_A_CTRL);
+ static AUD_TDM_SCLK(out_b, AUDIO_CLK_TDMOUT_B_CTRL);
+ static AUD_TDM_SCLK(out_c, AUDIO_CLK_TDMOUT_C_CTRL);
+ 
+-static const char * const tdm_lrclk_parent_names[] = {
+-	"aud_mst_a_lrclk", "aud_mst_b_lrclk", "aud_mst_c_lrclk",
+-	"aud_mst_d_lrclk", "aud_mst_e_lrclk", "aud_mst_f_lrclk",
+-	"aud_slv_lrclk0", "aud_slv_lrclk1", "aud_slv_lrclk2",
+-	"aud_slv_lrclk3", "aud_slv_lrclk4", "aud_slv_lrclk5",
+-	"aud_slv_lrclk6", "aud_slv_lrclk7", "aud_slv_lrclk8",
+-	"aud_slv_lrclk9"
++static const struct clk_parent_data tdm_lrclk_parent_data[] = {
++	{ .hw = &aud_mst_a_lrclk.hw, },
++	{ .hw = &aud_mst_b_lrclk.hw, },
++	{ .hw = &aud_mst_c_lrclk.hw, },
++	{ .hw = &aud_mst_d_lrclk.hw, },
++	{ .hw = &aud_mst_e_lrclk.hw, },
++	{ .hw = &aud_mst_f_lrclk.hw, },
++	{ .fw_name = "slv_lrclk0", },
++	{ .fw_name = "slv_lrclk1", },
++	{ .fw_name = "slv_lrclk2", },
++	{ .fw_name = "slv_lrclk3", },
++	{ .fw_name = "slv_lrclk4", },
++	{ .fw_name = "slv_lrclk5", },
++	{ .fw_name = "slv_lrclk6", },
++	{ .fw_name = "slv_lrclk7", },
++	{ .fw_name = "slv_lrclk8", },
++	{ .fw_name = "slv_lrclk9", },
+ };
+ 
+ #define AUD_TDM_LRLCK(_name, _reg)		       \
+ 	AUD_MUX(tdm##_name##_lrclk, _reg, 0xf, 20,     \
+ 		CLK_MUX_ROUND_CLOSEST,		       \
+-		tdm_lrclk_parent_names, 0)
++		tdm_lrclk_parent_data, 0)
+ 
+ static AUD_TDM_LRLCK(in_a,  AUDIO_CLK_TDMIN_A_CTRL);
+ static AUD_TDM_LRLCK(in_b,  AUDIO_CLK_TDMIN_B_CTRL);
+@@ -386,39 +424,51 @@ static AUD_TDM_LRLCK(out_c, AUDIO_CLK_TDMOUT_C_CTRL);
+ 	AUD_MUX(tdm_##_name, _reg, 0x7, _shift, 0, _parents,	\
+ 		CLK_SET_RATE_NO_REPARENT)
+ 
+-static const char * const mclk_pad_ctrl_parent_names[] = {
+-	"aud_mst_a_mclk", "aud_mst_b_mclk", "aud_mst_c_mclk",
+-	"aud_mst_d_mclk", "aud_mst_e_mclk", "aud_mst_f_mclk",
++static const struct clk_parent_data mclk_pad_ctrl_parent_data[] = {
++	{ .hw = &aud_mst_a_mclk.hw },
++	{ .hw = &aud_mst_b_mclk.hw },
++	{ .hw = &aud_mst_c_mclk.hw },
++	{ .hw = &aud_mst_d_mclk.hw },
++	{ .hw = &aud_mst_e_mclk.hw },
++	{ .hw = &aud_mst_f_mclk.hw },
+ };
+ 
+ static AUD_TDM_PAD_CTRL(mclk_pad_0, AUDIO_MST_PAD_CTRL0, 0,
+-			mclk_pad_ctrl_parent_names);
++			mclk_pad_ctrl_parent_data);
+ static AUD_TDM_PAD_CTRL(mclk_pad_1, AUDIO_MST_PAD_CTRL0, 4,
+-			mclk_pad_ctrl_parent_names);
+-
+-static const char * const lrclk_pad_ctrl_parent_names[] = {
+-	"aud_mst_a_lrclk", "aud_mst_b_lrclk", "aud_mst_c_lrclk",
+-	"aud_mst_d_lrclk", "aud_mst_e_lrclk", "aud_mst_f_lrclk",
++			mclk_pad_ctrl_parent_data);
++
++static const struct clk_parent_data lrclk_pad_ctrl_parent_data[] = {
++	{ .hw = &aud_mst_a_lrclk.hw },
++	{ .hw = &aud_mst_b_lrclk.hw },
++	{ .hw = &aud_mst_c_lrclk.hw },
++	{ .hw = &aud_mst_d_lrclk.hw },
++	{ .hw = &aud_mst_e_lrclk.hw },
++	{ .hw = &aud_mst_f_lrclk.hw },
+ };
+ 
+ static AUD_TDM_PAD_CTRL(lrclk_pad_0, AUDIO_MST_PAD_CTRL1, 16,
+-			lrclk_pad_ctrl_parent_names);
++			lrclk_pad_ctrl_parent_data);
+ static AUD_TDM_PAD_CTRL(lrclk_pad_1, AUDIO_MST_PAD_CTRL1, 20,
+-			lrclk_pad_ctrl_parent_names);
++			lrclk_pad_ctrl_parent_data);
+ static AUD_TDM_PAD_CTRL(lrclk_pad_2, AUDIO_MST_PAD_CTRL1, 24,
+-			lrclk_pad_ctrl_parent_names);
+-
+-static const char * const sclk_pad_ctrl_parent_names[] = {
+-	"aud_mst_a_sclk", "aud_mst_b_sclk", "aud_mst_c_sclk",
+-	"aud_mst_d_sclk", "aud_mst_e_sclk", "aud_mst_f_sclk",
++			lrclk_pad_ctrl_parent_data);
++
++static const struct clk_parent_data sclk_pad_ctrl_parent_data[] = {
++	{ .hw = &aud_mst_a_sclk.hw },
++	{ .hw = &aud_mst_b_sclk.hw },
++	{ .hw = &aud_mst_c_sclk.hw },
++	{ .hw = &aud_mst_d_sclk.hw },
++	{ .hw = &aud_mst_e_sclk.hw },
++	{ .hw = &aud_mst_f_sclk.hw },
+ };
+ 
+ static AUD_TDM_PAD_CTRL(sclk_pad_0, AUDIO_MST_PAD_CTRL1, 0,
+-			sclk_pad_ctrl_parent_names);
++			sclk_pad_ctrl_parent_data);
+ static AUD_TDM_PAD_CTRL(sclk_pad_1, AUDIO_MST_PAD_CTRL1, 4,
+-			sclk_pad_ctrl_parent_names);
++			sclk_pad_ctrl_parent_data);
+ static AUD_TDM_PAD_CTRL(sclk_pad_2, AUDIO_MST_PAD_CTRL1, 8,
+-			sclk_pad_ctrl_parent_names);
++			sclk_pad_ctrl_parent_data);
+ 
+ /*
+  * Array of all clocks provided by this provider
+@@ -868,54 +918,6 @@ static int devm_clk_get_enable(struct device *dev, char *id)
+ 	return 0;
+ }
+ 
+-static int axg_register_clk_hw_input(struct device *dev,
+-				     const char *name)
+-{
+-	char *clk_name;
+-	struct clk_hw *hw;
+-	int err = 0;
+-
+-	clk_name = kasprintf(GFP_KERNEL, "aud_%s", name);
+-	if (!clk_name)
+-		return -ENOMEM;
+-
+-	hw = meson_clk_hw_register_input(dev, name, clk_name, 0);
+-	if (IS_ERR(hw)) {
+-		/* It is ok if an input clock is missing */
+-		if (PTR_ERR(hw) == -ENOENT) {
+-			dev_dbg(dev, "%s not provided", name);
+-		} else {
+-			err = PTR_ERR(hw);
+-			if (err != -EPROBE_DEFER)
+-				dev_err(dev, "failed to get %s clock", name);
+-		}
+-	}
+-
+-	kfree(clk_name);
+-	return err;
+-}
+-
+-static int axg_register_clk_hw_inputs(struct device *dev,
+-				      const char *basename,
+-				      unsigned int count)
+-{
+-	char *name;
+-	int i, ret;
+-
+-	for (i = 0; i < count; i++) {
+-		name = kasprintf(GFP_KERNEL, "%s%d", basename, i);
+-		if (!name)
+-			return -ENOMEM;
+-
+-		ret = axg_register_clk_hw_input(dev, name);
+-		kfree(name);
+-		if (ret)
+-			return ret;
+-	}
+-
+-	return 0;
+-}
+-
+ static const struct regmap_config axg_audio_regmap_cfg = {
+ 	.reg_bits	= 32,
+ 	.val_bits	= 32,
+@@ -963,29 +965,6 @@ static int axg_audio_clkc_probe(struct platform_device *pdev)
+ 		return ret;
+ 	}
+ 
+-	/* Register the peripheral input clock */
+-	hw = meson_clk_hw_register_input(dev, "pclk", "audio_pclk", 0);
+-	if (IS_ERR(hw))
+-		return PTR_ERR(hw);
+-
+-	/* Register optional input master clocks */
+-	ret = axg_register_clk_hw_inputs(dev, "mst_in",
+-					 AUD_MST_IN_COUNT);
+-	if (ret)
+-		return ret;
+-
+-	/* Register optional input slave sclks */
+-	ret = axg_register_clk_hw_inputs(dev, "slv_sclk",
+-					 AUD_SLV_SCLK_COUNT);
+-	if (ret)
+-		return ret;
+-
+-	/* Register optional input slave lrclks */
+-	ret = axg_register_clk_hw_inputs(dev, "slv_lrclk",
+-					 AUD_SLV_LRCLK_COUNT);
+-	if (ret)
+-		return ret;
+-
+ 	/* Populate regmap for the regmap backed clocks */
+ 	for (i = 0; i < ARRAY_SIZE(aud_clk_regmaps); i++)
+ 		aud_clk_regmaps[i]->map = map;
+-- 
+2.17.1
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
