@@ -2,83 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B15AF700E5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 15:21:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2111700DC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 15:19:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7/YqG2t9SU+Xm3W0df9XXcFLyZH7ky81TPbk7phGTzo=; b=pMi+/s8OZNOcLE
-	RqFDVIrQZHymth6gwkL8F7EX6Fm9wLL5UD3UeiLVEmwtPTRW0pCiOts2xzUatlZkboGZserLKHEkD
-	LR3mcAUpmQB7uZHrNCF1OEm8384J76RUdOGHtYWIbW7cYuyRIFVzeJFvRSl5nBgXmjjdvx/yrnxBT
-	53uodTwE7xP3mfDq5tTYy7Ky955cUhnIqShrGMIDA5ymmzNB7KAZNQD3rx3B96LVDwmfkOJ2UXd3g
-	AZoGm5IUJj73SRoVId37ufjhrcFVTxRlZJaT+XYnotjLh27g/yvI+GZCAlr3UU5VtA/24z6qbOY8z
-	NU+5wbFbFolYKP7GAJMQ==;
+	List-Owner; bh=tvIE3J7UYFJqTnke2sMchKbXrTwtIpsAUkqlCawrkTc=; b=ioKdj8aY3itp5p
+	cddRScv4GbzAGcvQZutM54tpYP5FDcb3DkXYharSPKUT5KNRycJ0a+hC5IcChp2NkQLHEkgfIvD72
+	sRdxCtGwAnRPdbyGjFvpv2vezFczOgtqqAc4rhAbgtK9dEzFba9JMieb/6YXShm/NIG3qETNNeCOr
+	T1rRiE2jlTQ4lMy8OdPTjCeebx7wckaS2CualrT9cpgnDhS/I+ge5yc78KRpt/TNxSMkVchzDkkRP
+	zSZNeKmMZz6pg4j0Q+lhc4DmsYeXp6Leo1vIeZDDOiSUDElzLdjojoipJGNPOuqjgZzbH/unctSH0
+	khR3rkccBsglwpuG8vFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpYFV-0007al-Uj; Mon, 22 Jul 2019 13:21:06 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1hpYDp-0005TS-Bu; Mon, 22 Jul 2019 13:19:21 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpYCV-0004jY-9c
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 13:18:01 +0000
-Received: by mail-wm1-x342.google.com with SMTP id a15so35134907wmj.5
+ id 1hpYCU-0004lY-5z
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 13:18:00 +0000
+Received: by mail-wr1-x442.google.com with SMTP id n4so39456866wrs.3
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 22 Jul 2019 06:17:57 -0700 (PDT)
+ Mon, 22 Jul 2019 06:17:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=7QzkaTCV3I7NgoLWSlqzvltTcK62DUmr4R57ORffNTM=;
- b=mkotl6aKmS6IdISEAzL4effKL/yQ4f6Bflxe7dR33J3CkOqOXN/0ikxRpbq4KKx9W3
- /1mj4oIHUAzy52gQp4Zp+PzmgW0uZAS3wgBOZ2iL/HdgMOborcG8TouHXo166FX8K2OM
- yudmdMwNeMOfKrbPArt0B8WcxGvdTeEvBf/pqCjAviSWPCZiAMPFXOlX3QUF8hVeDpjL
- RzTgxAlNRTBum3vlSnwA7WzklbPJKUW5/o9yzmFBF1ZfmwK4suB0IU95C9bohcv5vzZx
- /KUPAaYzUzjWVaE6N5wDF5fzFlwCbnLW2o0ySguPGm3TnMu66TsKZrS5TdNwjS30RiBU
- 584g==
+ bh=i1AJwx99L7FOyjXOzW3yVuzHOgblADWD2c7KtmC/N3c=;
+ b=pIoC9oM2SJ5bTQ+eRC7d6ReZipWlFuv8mhyOuLWGmoiM8hihjKDbcYzk6hANScrgJN
+ rW05dvNGO4vHZr4dMUEDVyGjjjkB2g5tV8ivnNDEywzlkYWYyP/3Vlq6BTNwMjUcC6DY
+ stoKLsBEJ9Kpf12vzhujsvcYIhPxHMZfEuKIPQBcLMVeL32Lml1EKxjHmsp6ic+ayM0X
+ R6xwxui+6Mp9JKkkz1/pKDBpveHOE12dVpW70c1oXe+UbW+C4k8HFEDPISpAj+uiGS1i
+ BpS1re/U9WlWq6XGrylr1Xep7OvA/lahP+EhtkjgH1pAZ3T4a+2opzxxmr/W+wrv/oCB
+ QmXw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=7QzkaTCV3I7NgoLWSlqzvltTcK62DUmr4R57ORffNTM=;
- b=ESZQdDwMsgoS2CU466ewG7ay+4r9LhStQXXB7+luVOOWvmc02dVcj12oAdCos6zpuV
- Ybtpc6o/L6BwOkeHHzYHZwBbK5nXSgknDDvflmfCVDi9iqWJuHz0YHxiEWZMBC3YdAhK
- 5gJI8OaMia5zQ+50B0nBY2aKgBJr7iYdPY6ZXfVSruzkR/bWtNoM4N7i15fXroR4wPhD
- 9H4VaZT4eDWiTa9qUHnbLwZFi0EorGSQmOHLQ7ZGesqJ7mxu2Q0pU9aw2UXAREH5OMgO
- nMrNnC0uHQIhhde4otzRTZ2onAlBcue2Hm3KomBH+32nQg0Drp5clk1Ej1+k1UwkzsHI
- zXBw==
-X-Gm-Message-State: APjAAAV/2vsEjbCjd6EHQBVUHMW0P0j9ntOHrbk5R+o3KFCtSbuJXP8I
- qIE0f4LZMKJeaqViNVCp1Po=
-X-Google-Smtp-Source: APXvYqxw087DX8W4z4K8oPGRqejCwotCKfuU4fP4ThXxJdSTKyrurerZBfN0BApuTQqtr0i1pjtIRg==
-X-Received: by 2002:a7b:c247:: with SMTP id b7mr66573345wmj.13.1563801475995; 
- Mon, 22 Jul 2019 06:17:55 -0700 (PDT)
+ bh=i1AJwx99L7FOyjXOzW3yVuzHOgblADWD2c7KtmC/N3c=;
+ b=V6EyRRlZAWXh0edFlx2OYAuJqkjCbbLpJVAX4L7djXbTBrJs9004Hwg5kESxMopLo+
+ oiLpKr1BeX1WS0M3+u16xWyRHdCCggJ6k6P2DMt3vp5sT9AlhvNu2Ehr9Q9mWqdLWXjs
+ uCCU5BwLIuU5SGyUKGr5feM5diZS2nsSweN3d5aIpgbTjxPyuy78Z8XdxOLpbZn80gZn
+ AO0V/dKTtiuPhcg4SJixmY0ykMy5/iafm4uim8bH58pR+tr909GKAq0Lszt8W/NFNPnd
+ ltBPlQM5F31aV6M0V7DACQLT4QuGcTJlQYB9y33eVCV3XQg0Rv6rJwDpphRtmcFccce6
+ zZYA==
+X-Gm-Message-State: APjAAAUeaTURy5jFNZg4qHTqH3dVTgz/Ei83ZlaI0wvaDBhY/UCvyYM0
+ +HsD9Z7TLGcxC4+egOPI7A8=
+X-Google-Smtp-Source: APXvYqz3On9bPHv79/RsBc+0dwicwKP6apaQW2ZmacAnsdUnKzLS+lJLsX2BS/W4UpcSrcRApRCn9g==
+X-Received: by 2002:a5d:4e4d:: with SMTP id r13mr25919456wrt.295.1563801477023; 
+ Mon, 22 Jul 2019 06:17:57 -0700 (PDT)
 Received: from localhost.localdomain
  (amontpellier-652-1-281-69.w109-210.abo.wanadoo.fr. [109.210.96.69])
- by smtp.gmail.com with ESMTPSA id z6sm34156657wrw.2.2019.07.22.06.17.55
+ by smtp.gmail.com with ESMTPSA id z6sm34156657wrw.2.2019.07.22.06.17.56
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 22 Jul 2019 06:17:55 -0700 (PDT)
+ Mon, 22 Jul 2019 06:17:56 -0700 (PDT)
 From: Bartosz Golaszewski <brgl@bgdev.pl>
 To: Sekhar Nori <nsekhar@ti.com>,
 	Kevin Hilman <khilman@kernel.org>
-Subject: [RESEND PATCH 04/10] ARM: davinci: da830: switch to using the
- clocksource driver
-Date: Mon, 22 Jul 2019 15:17:42 +0200
-Message-Id: <20190722131748.30319-5-brgl@bgdev.pl>
+Subject: [RESEND PATCH 05/10] ARM: davinci: move timer definitions to davinci.h
+Date: Mon, 22 Jul 2019 15:17:43 +0200
+Message-Id: <20190722131748.30319-6-brgl@bgdev.pl>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190722131748.30319-1-brgl@bgdev.pl>
 References: <20190722131748.30319-1-brgl@bgdev.pl>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_061759_632127_3689FF55 
-X-CRM114-Status: GOOD (  14.09  )
+X-CRM114-CacheID: sfid-20190722_061758_482899_879E2307 
+X-CRM114-Status: GOOD (  11.04  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -106,97 +105,46 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 
-We now have a proper clocksource driver for davinci. Switch the da830
-platform to using it.
+Boards from the dm* family rely on register offset definitions from
+arch/arm/mach-davinci/include/mach/time.h. We'll be removing this file
+soon, so move the required defines to davinci.h where the rest of such
+constants live.
 
 Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 Reviewed-by: David Lechner <david@lechnology.com>
 ---
- arch/arm/mach-davinci/da830.c | 41 ++++++++++++-----------------------
- 1 file changed, 14 insertions(+), 27 deletions(-)
+ arch/arm/mach-davinci/davinci.h           | 3 +++
+ arch/arm/mach-davinci/include/mach/time.h | 2 --
+ 2 files changed, 3 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm/mach-davinci/da830.c b/arch/arm/mach-davinci/da830.c
-index 220e99438ae0..018ab4b549f1 100644
---- a/arch/arm/mach-davinci/da830.c
-+++ b/arch/arm/mach-davinci/da830.c
-@@ -21,7 +21,8 @@
- #include <mach/common.h>
- #include <mach/cputype.h>
- #include <mach/da8xx.h>
--#include <mach/time.h>
+diff --git a/arch/arm/mach-davinci/davinci.h b/arch/arm/mach-davinci/davinci.h
+index 56c1835c42e5..208d7a4d3597 100644
+--- a/arch/arm/mach-davinci/davinci.h
++++ b/arch/arm/mach-davinci/davinci.h
+@@ -60,6 +60,9 @@ void davinci_map_sysmod(void);
+ #define DAVINCI_GPIO_BASE 0x01C67000
+ int davinci_gpio_register(struct resource *res, int size, void *pdata);
+ 
++#define DAVINCI_TIMER0_BASE		(IO_PHYS + 0x21400)
++#define DAVINCI_WDOG_BASE		(IO_PHYS + 0x21C00)
 +
-+#include <clocksource/timer-davinci.h>
+ /* DM355 base addresses */
+ #define DM355_ASYNC_EMIF_CONTROL_BASE	0x01e10000
+ #define DM355_ASYNC_EMIF_DATA_CE0_BASE	0x02000000
+diff --git a/arch/arm/mach-davinci/include/mach/time.h b/arch/arm/mach-davinci/include/mach/time.h
+index 1c971d8d8ba8..ba913736990f 100644
+--- a/arch/arm/mach-davinci/include/mach/time.h
++++ b/arch/arm/mach-davinci/include/mach/time.h
+@@ -11,9 +11,7 @@
+ #ifndef __ARCH_ARM_MACH_DAVINCI_TIME_H
+ #define __ARCH_ARM_MACH_DAVINCI_TIME_H
  
- #include "irqs.h"
- #include "mux.h"
-@@ -676,32 +677,17 @@ int __init da830_register_gpio(void)
- 	return da8xx_register_gpio(&da830_gpio_platform_data);
- }
+-#define DAVINCI_TIMER0_BASE		(IO_PHYS + 0x21400)
+ #define DAVINCI_TIMER1_BASE		(IO_PHYS + 0x21800)
+-#define DAVINCI_WDOG_BASE		(IO_PHYS + 0x21C00)
  
--static struct davinci_timer_instance da830_timer_instance[2] = {
--	{
--		.base		= DA8XX_TIMER64P0_BASE,
--		.bottom_irq	= DAVINCI_INTC_IRQ(IRQ_DA8XX_TINT12_0),
--		.top_irq	= DAVINCI_INTC_IRQ(IRQ_DA8XX_TINT34_0),
--		.cmp_off	= DA830_CMP12_0,
--		.cmp_irq	= DAVINCI_INTC_IRQ(IRQ_DA830_T12CMPINT0_0),
--	},
--	{
--		.base		= DA8XX_TIMER64P1_BASE,
--		.bottom_irq	= DAVINCI_INTC_IRQ(IRQ_DA8XX_TINT12_1),
--		.top_irq	= DAVINCI_INTC_IRQ(IRQ_DA8XX_TINT34_1),
--		.cmp_off	= DA830_CMP12_0,
--		.cmp_irq	= DAVINCI_INTC_IRQ(IRQ_DA830_T12CMPINT0_1),
--	},
--};
--
- /*
-- * T0_BOT: Timer 0, bottom		: Used for clock_event & clocksource
-- * T0_TOP: Timer 0, top			: Used by DSP
-- * T1_BOT, T1_TOP: Timer 1, bottom & top: Used for watchdog timer
-+ * Bottom half of timer0 is used both for clock even and clocksource.
-+ * Top half is used by DSP.
-  */
--static struct davinci_timer_info da830_timer_info = {
--	.timers		= da830_timer_instance,
--	.clockevent_id	= T0_BOT,
--	.clocksource_id	= T0_BOT,
-+static const struct davinci_timer_cfg da830_timer_cfg = {
-+	.reg = DEFINE_RES_IO(DA8XX_TIMER64P0_BASE, SZ_4K),
-+	.irq = {
-+		DEFINE_RES_IRQ(DAVINCI_INTC_IRQ(IRQ_DA830_T12CMPINT0_0)),
-+		DEFINE_RES_IRQ(DAVINCI_INTC_IRQ(IRQ_DA8XX_TINT12_0)),
-+	},
-+	.cmp_off = DA830_CMP12_0,
- };
- 
- static const struct davinci_soc_info davinci_soc_info_da830 = {
-@@ -713,7 +699,6 @@ static const struct davinci_soc_info davinci_soc_info_da830 = {
- 	.pinmux_base		= DA8XX_SYSCFG0_BASE + 0x120,
- 	.pinmux_pins		= da830_pins,
- 	.pinmux_pins_num	= ARRAY_SIZE(da830_pins),
--	.timer_info		= &da830_timer_info,
- 	.emac_pdata		= &da8xx_emac_pdata,
- };
- 
-@@ -743,6 +728,7 @@ void __init da830_init_time(void)
- {
- 	void __iomem *pll;
- 	struct clk *clk;
-+	int rv;
- 
- 	clk_register_fixed_rate(NULL, "ref_clk", NULL, 0, DA830_REF_FREQ);
- 
-@@ -756,7 +742,8 @@ void __init da830_init_time(void)
- 		return;
- 	}
- 
--	davinci_timer_init(clk);
-+	rv = davinci_timer_register(clk, &da830_timer_cfg);
-+	WARN(rv, "Unable to register the timer: %d\n", rv);
- }
- 
- static struct resource da830_psc0_resources[] = {
+ enum {
+ 	T0_BOT,
 -- 
 2.21.0
 
