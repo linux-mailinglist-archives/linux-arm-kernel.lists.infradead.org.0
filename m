@@ -2,84 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1917770136
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 15:37:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD8F270149
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 15:42:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=rrakCXRf1h8OrC89u4X/tMvd86Tn5Xf4061AIgX4xfc=; b=qsrCo6HhPCpVABL5eyPAn1hr3o
-	KiCzyLwPRRCwM46Ar9EnlAbYstwZM65nFXzxcWJMvqUWAp2K2498qGO9z80nuscbVomY3ydQWmFtX
-	fWtckuwYvBSX3EOPJn9l6+UeX/n+3kJ6hwlRO7YI8y3VJSMLpDbR7vghqfgLfB/W+STPOMTeQpxLu
-	tWQ+M7yF8WWbaKHCobuNexZO/1yKTiiMKryK/4TOIjQJpU1FgUZp+IqUuOZMfp05mgklhNOjHJObN
-	fRAO55kCRo1l7OcvQbZ0EhFrPDZRehOCHI8MkO9nJTmY7c0jFFxiGuIrjpvOfjkaAzvZjPF44zm/D
-	4X3Ov25g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qG8SeiL83Sk2+depG3pgWLedo1XTjJiFELyFQwMF3Rk=; b=UjVWgRy+VmNGtE
+	Pcj5pVcsPrbP5bTa8gyjQMvINmgqB2NcWgs7a547gPtGyZGSC6exYd5IzvJvdFGNOXyoJOoNVq4Hd
+	VPXF8rcJmXCRJFynWhai/wV1GZN5IN7FrHTPDLW8fTgJTbg6lpTYPfVCoBFFUL9XjNPI6MpbW6jYB
+	79VNdFNrNlZNqV8Rbc1vit/44G16j43PkGQ5COXpxK8k4FTmCW+JVunyKeEtKOZrAr3yxEfjeq3qs
+	h5zcGlvoatjBgHXRmqL4JEJAavbZv/ZxbiQAXcbyzQZTK17xgDGuRIr1LvSkYYhYAW1ftFzSy6a3+
+	AvrcvSdgr2iaReO5rfyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpYVZ-0006H7-HW; Mon, 22 Jul 2019 13:37:41 +0000
-Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
+	id 1hpYZx-00083V-6K; Mon, 22 Jul 2019 13:42:13 +0000
+Received: from mail-qk1-x731.google.com ([2607:f8b0:4864:20::731])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpYUt-00061T-W0
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 13:37:01 +0000
-Received: by mail-qt1-x843.google.com with SMTP id d23so38532645qto.2
+ id 1hpYZf-0007zu-Uu
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 13:41:57 +0000
+Received: by mail-qk1-x731.google.com with SMTP id a27so28610171qkk.5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 22 Jul 2019 06:36:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=Q+okFPa+KepAW1uFFHJfBTWak1oZB4zdUtgkmjL2a1I=;
- b=tlAk08vv5Dkb2Lit96r8JBFdpLo9Yo9lzWbPRZJ0jSH5gJ+bAmJjiyzOJbcgf78p39
- qyCLsC9oontGcaDxO7tb/+mleA2GyjinMKj0AXo5HHSs6lVn+tDRgGwc8kEuf1tAki61
- FLg/mdqOZfa8bSaib5S73eUeJtoYVIB8fqS0FWndOg8UdtjLh0RiJ8Gu/T6OpH+bY6mW
- DbQa+VILBqOEcIrB1G+6toDTHSToB47uiUr42+9iHJvDYaIDFJofhWTwjrV+THbJ7EVk
- omvYLwgKBnb1/pRNj3aBHH+q0jOirKbuP9W3J1LbYf+xPp6s0BnxLougxPpXbS7urPnj
- cPGw==
+ Mon, 22 Jul 2019 06:41:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ziepe.ca; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=r7jurWEbcB87wkHM6FBIF/d6ZCsIeD3qrag1BaWvzr0=;
+ b=ctSiEsOEiyiwu0n3CEQABL3/Tosruh5w/+6uzF92xLW34JmyfhThCGBMfVUaYt9dcx
+ eW2R16GiG0XcoxTfHQmNNe2NbtDmD4V4zDlbn3sIafmR+axGp5w7q8jG/t+N5A5vd1+2
+ T8limk/5bxxJguypRZGjOMgCVjJ3UuJ440SlT4VBiuew99yPu+wjBAGDyiX6h7A0CwOA
+ dwL0M70N/ZKBJ7e/9dDovVWnU15MNgA7ZpwwgLu6rerH2A7rFP/VNIWBW0CDFkWJkGIk
+ 02tVH4RCMUcpMeH+V7LrZ4lwFpUMFWob0uRUx2w20StfeAVPWAbvrasBs/AM3w8QAsz1
+ Qvkg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=Q+okFPa+KepAW1uFFHJfBTWak1oZB4zdUtgkmjL2a1I=;
- b=o6krsP35wFjqh8Xsv+2ElHXDWaFjWxBIg27FTA+a/8omHUqSrxEjKSj6OIsrUAyonN
- /mbShtst+V4IglOnmcAfFxr4nH7YOXGCV8v56iut8JRSBU+11p/c5vqf8u5cO2f3H8RU
- xGThmZfCMdQrpGLI3kGxtkl4LU9ZGw4IFQemQUCGcaD9qreNMOG+/r3JzZhlvbAtd+KF
- Fm9TaPaduSftv+KiZe0N4P/Wy3uCg531muXMlfEQ4bpQyCLK4r0qXESuoJqfcZ9Zw1+E
- P7tORVkRVbqdD1SC+Lhp7qhnmmYGXeNhNqah4E4KbpHsXcTDKnpgWDW8QxjeHvqTmzOs
- 0IAQ==
-X-Gm-Message-State: APjAAAXAKT2eIAfNpkdMCQXsoPIoDybbZIgmiyElapWIYLZSCnHKLkxV
- cob+G3jjFh5jumPw7Fzwp2M=
-X-Google-Smtp-Source: APXvYqyM+ziAjRc+8RWe0ERdQo2UsBP3pG3YR1H0Mpn047W+bPd1tvoGRCbPhAFXVPIlGl1GFEvcBg==
-X-Received: by 2002:ac8:3a63:: with SMTP id w90mr13727419qte.371.1563802618765; 
- Mon, 22 Jul 2019 06:36:58 -0700 (PDT)
-Received: from localhost.localdomain ([2804:14c:482:3c8:56cb:1049:60d2:137b])
- by smtp.gmail.com with ESMTPSA id
- x1sm16894599qkj.22.2019.07.22.06.36.56
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 22 Jul 2019 06:36:58 -0700 (PDT)
-From: Fabio Estevam <festevam@gmail.com>
-To: shawnguo@kernel.org
-Subject: [PATCH 2/2] ARM: imx_v6_v7_defconfig: Select the OV5645 camera driver
-Date: Mon, 22 Jul 2019 10:36:51 -0300
-Message-Id: <20190722133651.14729-2-festevam@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190722133651.14729-1-festevam@gmail.com>
-References: <20190722133651.14729-1-festevam@gmail.com>
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=r7jurWEbcB87wkHM6FBIF/d6ZCsIeD3qrag1BaWvzr0=;
+ b=TWWNYi/Y3/Iaqhen+qP61NHeXH9tbTMV8yeTnPC1kh+LdRM0FJ8mcYuWDLt7SOswmR
+ OhdcZZwrvPE//M0XTuueD0rZrs3h3Q+5PaBBchAt84P3KYByE9bKtUTfloL8AJ/5MKgT
+ j/IG718KUjPfl6ouCzpdvciHK6hxE0GU5zMI0clyTXD5ks88gh2BEhWdtvc4KpGv0/S7
+ d58Zgb5rIlvxvrpiOpXknJlpPVM0WWs4FDfrRfvjhudtcTun8Zn+LOIPbBqLYbp9GkpB
+ 9rKqxYV9whMiAdX/GC41LkvTaGjdkKgNf3K7LVXWBH5LaR1L2MDQE9rGcGxTUZdAyFqe
+ RHMg==
+X-Gm-Message-State: APjAAAW3HJDIWmVadSBagj4xwu+P7Vng0rxkssv1P5D2hYEoB20gIZBx
+ zL6Qj9LCmO2M4gfdA9JYZagDwg==
+X-Google-Smtp-Source: APXvYqxGgJ5n0Ggl2+5KtjzE7HLyY29aRN+3J2KTmJj1bDyPcTuyXmhCmMkJ3yMp7O1QI/DGhNTc3w==
+X-Received: by 2002:a37:a6d8:: with SMTP id
+ p207mr42748278qke.387.1563802913858; 
+ Mon, 22 Jul 2019 06:41:53 -0700 (PDT)
+Received: from ziepe.ca
+ (hlfxns017vw-156-34-55-100.dhcp-dynamic.fibreop.ns.bellaliant.net.
+ [156.34.55.100])
+ by smtp.gmail.com with ESMTPSA id x8sm17451291qkl.27.2019.07.22.06.41.52
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 22 Jul 2019 06:41:52 -0700 (PDT)
+Received: from jgg by mlx.ziepe.ca with local (Exim 4.90_1)
+ (envelope-from <jgg@ziepe.ca>)
+ id 1hpYZc-0003Vr-7E; Mon, 22 Jul 2019 10:41:52 -0300
+Date: Mon, 22 Jul 2019 10:41:52 -0300
+From: Jason Gunthorpe <jgg@ziepe.ca>
+To: "Paul E. McKenney" <paulmck@linux.ibm.com>
+Subject: Re: RFC: call_rcu_outstanding (was Re: WARNING in __mmdrop)
+Message-ID: <20190722134152.GA13013@ziepe.ca>
+References: <0000000000008dd6bb058e006938@google.com>
+ <000000000000964b0d058e1a0483@google.com>
+ <20190721044615-mutt-send-email-mst@kernel.org>
+ <20190721081933-mutt-send-email-mst@kernel.org>
+ <20190721131725.GR14271@linux.ibm.com>
+ <20190721210837.GC363@bombadil.infradead.org>
+ <20190721233113.GV14271@linux.ibm.com>
+ <20190722035042-mutt-send-email-mst@kernel.org>
+ <20190722115149.GY14271@linux.ibm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190722115149.GY14271@linux.ibm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_063700_027405_B909EE65 
-X-CRM114-Status: GOOD (  11.18  )
+X-CRM114-CacheID: sfid-20190722_064156_133320_7C1FBBEE 
+X-CRM114-Status: GOOD (  12.11  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:731 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -98,39 +111,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fabio Estevam <festevam@gmail.com>, ezequiel@collabora.com,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: mhocko@suse.com, "Michael S. Tsirkin" <mst@redhat.com>,
+ peterz@infradead.org, jasowang@redhat.com, ldv@altlinux.org,
+ james.bottomley@hansenpartnership.com, linux-mm@kvack.org, namit@vmware.com,
+ mingo@kernel.org, elena.reshetova@intel.com, aarcange@redhat.com,
+ davem@davemloft.net, Matthew Wilcox <willy@infradead.org>, hch@infradead.org,
+ linux-arm-kernel@lists.infradead.org, keescook@chromium.org,
+ syzkaller-bugs@googlegroups.com, jglisse@redhat.com, viro@zeniv.linux.org.uk,
+ christian@brauner.io, wad@chromium.org, linux-parisc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, luto@amacapital.net, ebiederm@xmission.com,
+ akpm@linux-foundation.org, guro@fb.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-OV5645 camera sensor can be used on several i.MX boards, such as
-imx6qdl-wandboard, imx7d-pico, imx6ul-pico, etc.
+On Mon, Jul 22, 2019 at 04:51:49AM -0700, Paul E. McKenney wrote:
 
-Select the OV5645 driver by default.
+> > > > Would it make sense to have call_rcu() check to see if there are many
+> > > > outstanding requests on this CPU and if so process them before returning?
+> > > > That would ensure that frequent callers usually ended up doing their
+> > > > own processing.
+> > > 
+> > > Unfortunately, no.  Here is a code fragment illustrating why:
 
-Signed-off-by: Fabio Estevam <festevam@gmail.com>
----
- arch/arm/configs/imx_v6_v7_defconfig | 1 +
- 1 file changed, 1 insertion(+)
+That is only true in the general case though, kfree_rcu() doesn't have
+this problem since we know what the callback is doing. In general a
+caller of kfree_rcu() should not need to hold any locks while calling
+it.
 
-diff --git a/arch/arm/configs/imx_v6_v7_defconfig b/arch/arm/configs/imx_v6_v7_defconfig
-index a53b29251ed4..bd2e2f5d1c3a 100644
---- a/arch/arm/configs/imx_v6_v7_defconfig
-+++ b/arch/arm/configs/imx_v6_v7_defconfig
-@@ -272,6 +272,7 @@ CONFIG_VIDEO_IMX_PXP=y
- CONFIG_VIDEO_ADV7180=m
- CONFIG_VIDEO_OV2680=m
- CONFIG_VIDEO_OV5640=m
-+CONFIG_VIDEO_OV5645=m
- CONFIG_IMX_IPUV3_CORE=y
- CONFIG_DRM=y
- CONFIG_DRM_PANEL_LVDS=y
--- 
-2.17.1
+We could apply the same idea more generally and have some
+'call_immediate_or_rcu()' which has restrictions on the caller's
+context.
 
+I think if we have some kind of problem here it would be better to
+handle it inside the core code and only require that callers use the
+correct RCU API.
+
+I can think of many places where kfree_rcu() is being used under user
+control..
+
+Jason
 
 _______________________________________________
 linux-arm-kernel mailing list
