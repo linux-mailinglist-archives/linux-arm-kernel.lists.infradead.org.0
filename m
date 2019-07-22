@@ -2,34 +2,34 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9BBEC6FDE4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 12:34:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CCAB86FDE7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 12:34:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9OV3xeTJIza/o/QnElCaSu5XFiHY4IDPE2lzUW+USYk=; b=H8QCCkn0s+b5Nl
-	9WokjVnI/H38juoPHwp/YdD1FZn7YxdAryL/hqwv3ZScNz8rt7qb1xDOLkjIhzCp00agS1wCVQ8kX
-	f/aGCDRvg3q/b2BLVpm3KU/rfG2pFK/t0R7kiSkm+r8Ywd8Y5aqYpRt36+IEf9o4awHRQr41czePB
-	abwrqn+G8amcacylb7tW8M8xO2UDvUeTv19z1+QuOSCM+xqisxkyGNWRl5sxK/7ecCV8xu5tdaWCl
-	NEq8EypDjiHKOsTt/KjpzYl+OV40FuMbzFkRodQwHPmppo19qHiWf5poWg3ej2QkCc7tfuf1KIRgG
-	DTONXONLlLGqcyrUD8yA==;
+	List-Owner; bh=2kH0MGh6faBfKIDhIf4V8deKLKUYjTdhZQ9fcIUSfsg=; b=kV3zr9CgtF8d4j
+	AmQHp72huYBb2EPFswr8jJytjCX/rNJwCL1bamCbGY/ujrcBML7/Na6EKAkCAMfx0IXgbwnyHKI7H
+	sFNJgHcA8XZ15F+Do4txt3mVrMp7s1OG0pPCn27KfUrfAHCxKCs8gyJ8sTNjBHWxfNxZSK6/mobrM
+	SfR5YUZ1q3YlJmTLUtDHl1avxwMc9frAKLRMmr8q1KSt/p7Qq0TKITD+PsGq2J1TQy4H9Qy77I+KD
+	hNEVGbsDern3nc5+QwZRSjWTuzet080uMggcJmI7NRMCyORT7rSE2rPyBDG023NfngCPKLx3YJhkh
+	1+fjRzV6dI5LwopXIm9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpVe6-0003Wc-4k; Mon, 22 Jul 2019 10:34:18 +0000
+	id 1hpVeK-0003r3-B9; Mon, 22 Jul 2019 10:34:32 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hpVdY-00038K-PI
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 10:33:46 +0000
+ id 1hpVda-00039n-R1
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 10:33:48 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E27DD1576;
- Mon, 22 Jul 2019 03:33:43 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 926C11596;
+ Mon, 22 Jul 2019 03:33:45 -0700 (PDT)
 Received: from filthy-habits.cambridge.arm.com
  (filthy-habits.cambridge.arm.com [10.1.197.61])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7347E3F71A;
- Mon, 22 Jul 2019 03:33:42 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 236233F71A;
+ Mon, 22 Jul 2019 03:33:44 -0700 (PDT)
 From: Marc Zyngier <marc.zyngier@arm.com>
 To: Thomas Gleixner <tglx@linutronix.de>, John Stultz <john.stultz@linaro.org>,
  Pavel Tatashin <pasha.tatashin@soleen.com>, Petr Mladek <pmladek@suse.com>,
@@ -37,17 +37,16 @@ To: Thomas Gleixner <tglx@linutronix.de>, John Stultz <john.stultz@linaro.org>,
  Steven Rostedt <rostedt@goodmis.org>, Will Deacon <will.deacon@arm.com>,
  Catalin Marinas <catalin.marinas@arm.com>,
  Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH 2/3] sched/clock: Allow sched_clock to inherit timestamp_clock
- epoch
-Date: Mon, 22 Jul 2019 11:33:29 +0100
-Message-Id: <20190722103330.255312-3-marc.zyngier@arm.com>
+Subject: [PATCH 3/3] arm64: Allow early time stamping
+Date: Mon, 22 Jul 2019 11:33:30 +0100
+Message-Id: <20190722103330.255312-4-marc.zyngier@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190722103330.255312-1-marc.zyngier@arm.com>
 References: <20190722103330.255312-1-marc.zyngier@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_033344_863178_F85529F1 
-X-CRM114-Status: GOOD (  13.80  )
+X-CRM114-CacheID: sfid-20190722_033347_026806_9AC93047 
+X-CRM114-Status: GOOD (  12.77  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -72,42 +71,111 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that we can let an architecture override the timestamping
-function, it becomes desirable to ensure that, should the
-architecture code switch its timestamping code to sched_clock
-once it has been registered, the sched_clock inherits the
-timestamp value as its new epoch.
+In order to provide early timestamping on arm64 systems, we provide
+a timestamp_clock() function that is available as early as possible.
+This function simply returns the current counter value scales in
+nanoseconds, and 0-based.
 
-This ensures that the time stamps are continuous and that there
-is no jitter other than that introduced by the lack of quality
-of the timestamping clock.
+In order to deal with the idiosyncrasies of some broken platforms,
+we condition this on the frequency being set in the CNTFRQ_EL0
+register, and revert back to using local_clock() as soon as it starts
+returning non-zero values.
 
 Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
 ---
- kernel/time/sched_clock.c | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+ arch/arm64/Kconfig        |  3 +++
+ arch/arm64/kernel/setup.c | 44 +++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 47 insertions(+)
 
-diff --git a/kernel/time/sched_clock.c b/kernel/time/sched_clock.c
-index 142b07619918..ee1bd449ec81 100644
---- a/kernel/time/sched_clock.c
-+++ b/kernel/time/sched_clock.c
-@@ -192,6 +192,16 @@ sched_clock_register(u64 (*read)(void), int bits, unsigned long rate)
- 	new_epoch = read();
- 	cyc = cd.actual_read_sched_clock();
- 	ns = rd.epoch_ns + cyc_to_ns((cyc - rd.epoch_cyc) & rd.sched_clock_mask, rd.mult, rd.shift);
-+
-+	/*
-+	 * If the architecture has a timestamp clock, and this is the
-+	 * first time we register a new sched_clock, use the timestamp
-+	 * clock as the epoch.
-+	 */
-+	if (IS_ENABLED(CONFIG_ARCH_HAS_TIMESTAMP_CLOCK) &&
-+	    unlikely(cd.actual_read_sched_clock == jiffy_sched_clock_read))
-+		ns = timestamp_clock();
-+
- 	cd.actual_read_sched_clock = read;
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index 3adcec05b1f6..ac3882ddc1c2 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -911,6 +911,9 @@ config ARCH_WANT_HUGE_PMD_SHARE
+ config ARCH_HAS_CACHE_LINE_SIZE
+ 	def_bool y
  
- 	rd.read_sched_clock	= read;
++config ARCH_HAS_TIMESTAMP_CLOCK
++	def_bool y
++
+ config ARCH_ENABLE_SPLIT_PMD_PTLOCK
+ 	def_bool y if PGTABLE_LEVELS > 2
+ 
+diff --git a/arch/arm64/kernel/setup.c b/arch/arm64/kernel/setup.c
+index 9c4bad7d7131..cf21e3df7165 100644
+--- a/arch/arm64/kernel/setup.c
++++ b/arch/arm64/kernel/setup.c
+@@ -15,6 +15,7 @@
+ #include <linux/initrd.h>
+ #include <linux/console.h>
+ #include <linux/cache.h>
++#include <linux/clocksource.h>
+ #include <linux/screen_info.h>
+ #include <linux/init.h>
+ #include <linux/kexec.h>
+@@ -28,10 +29,12 @@
+ #include <linux/of_fdt.h>
+ #include <linux/efi.h>
+ #include <linux/psci.h>
++#include <linux/sched/clock.h>
+ #include <linux/sched/task.h>
+ #include <linux/mm.h>
+ 
+ #include <asm/acpi.h>
++#include <asm/arch_timer.h>
+ #include <asm/fixmap.h>
+ #include <asm/cpu.h>
+ #include <asm/cputype.h>
+@@ -269,8 +272,49 @@ arch_initcall(reserve_memblock_reserved_regions);
+ 
+ u64 __cpu_logical_map[NR_CPUS] = { [0 ... NR_CPUS-1] = INVALID_HWID };
+ 
++static u64 notrace ts_counter_read_cc(const struct cyclecounter *cc)
++{
++	return __arch_counter_get_cntvct();
++}
++
++static struct cyclecounter ts_cc __ro_after_init = {
++	.read	= ts_counter_read_cc,
++	.mask	= CLOCKSOURCE_MASK(56),
++};
++
++static struct timecounter ts_tc;
++
++static bool ts_cc_valid __ro_after_init = false;
++
++static __init void timestamp_clock_init(void)
++{
++	u64 frq = arch_timer_get_cntfrq();
++
++	if (!frq)
++		return;
++
++	clocks_calc_mult_shift(&ts_cc.mult, &ts_cc.shift,
++			       frq, NSEC_PER_SEC, 3600);
++	/* timestamp starts at 0 (local_clock is a good enough approximation) */
++	timecounter_init(&ts_tc, &ts_cc, local_clock());
++	ts_cc_valid = true;
++	pr_info("Using timestamp clock @%lluMHz\n", frq / 1000 / 1000);
++}
++
++u64 timestamp_clock(void)
++{
++	u64 ns = local_clock();
++
++	if (likely(ns || !ts_cc_valid))
++		return ns;
++
++	return timecounter_read(&ts_tc);
++}
++
+ void __init setup_arch(char **cmdline_p)
+ {
++	timestamp_clock_init();
++
+ 	init_mm.start_code = (unsigned long) _text;
+ 	init_mm.end_code   = (unsigned long) _etext;
+ 	init_mm.end_data   = (unsigned long) _edata;
 -- 
 2.20.1
 
