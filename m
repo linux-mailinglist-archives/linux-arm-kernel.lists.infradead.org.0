@@ -2,53 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E03D7048C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 17:52:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B5567049A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 17:52:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aHcr4wzAknklMyL4SVlH2JiMAlur3sx6F4/c0Q8uNcg=; b=mt5u9knzaRJabr
-	+KvrPFe1HaJoxiO1m/ym792KA5hV08nLhJSyCyr0vMfihTAYYqfiiK//PpD/EFK2lbQxlqNWaXn31
-	k1LOXNiXqO021HyCJDRitfACtEOiNq4OS7y2/+oGa567L+QqE1flYlACjlOa9gb2/LxjsVR5PWIRm
-	EBrGiM/kgdABC987f7W5s5d5wnk4zRgcrYwVctDTBSbTEF/rieO8nNBEzaQQCnQ0VKBdzjXqUGh30
-	nJlNVIVh1HwVE4WqUJ4mZ4mQIvFLUBnfP8VtdG9gQVqeQf8piCfnd7KEVK6gflGttB6p0IwiNEwAd
-	kbNGOHkIArahFNCDZdOg==;
+	List-Owner; bh=JdvVdSOzH4zKxlANNKfR9Huga3Ygw27VsJ5sCURPgZs=; b=h16bTS9S3Bv8Os
+	0oDcc1sVetId9aJV2a5O78bQCfV4FWCLys8PtTmsnJ09NDbI3pZ3N2XZPNTqyW0R8+LHa25fqS5AU
+	lbMBs/O5KfbRySdCP0lHiT9T4SjS3R8zpkMZVfFv3c2eekxdluRFR1d2A0umcfjqWHTMsbFvX1KcM
+	4r11XyG8b1J0zt9Y2s9jSvtfTy8FCCFf9/v4iuOGp0jhWstH36dzevA/QqshhVp6bcMizO45sUMBr
+	SvAUfFnISV6vyO+XE4kLz7FUjBs+qrBFVweT0RBTSOn7uv+gl9lyYrq33esCnv9lV4I5TO+UVCt5y
+	4ySkHCDnz1XQV1l8WXvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpabZ-0001cp-4a; Mon, 22 Jul 2019 15:52:01 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hpaTE-0002Mf-Qs
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 15:43:27 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 880E715A2;
- Mon, 22 Jul 2019 08:43:24 -0700 (PDT)
-Received: from e112269-lin.arm.com (e112269-lin.cambridge.arm.com
- [10.1.196.133])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F34383F694;
- Mon, 22 Jul 2019 08:43:21 -0700 (PDT)
-From: Steven Price <steven.price@arm.com>
-To: linux-mm@kvack.org
-Subject: [PATCH v9 21/21] arm64: mm: Convert mm/dump.c to use walk_page_range()
-Date: Mon, 22 Jul 2019 16:42:10 +0100
-Message-Id: <20190722154210.42799-22-steven.price@arm.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190722154210.42799-1-steven.price@arm.com>
-References: <20190722154210.42799-1-steven.price@arm.com>
+	id 1hpac9-00025u-LS; Mon, 22 Jul 2019 15:52:37 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hpaXI-0006JO-UH
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 15:47:38 +0000
+Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
+ [10.5.11.13])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 0CE75C058CBD;
+ Mon, 22 Jul 2019 15:47:35 +0000 (UTC)
+Received: from redhat.com (ovpn-124-54.rdu2.redhat.com [10.10.124.54])
+ by smtp.corp.redhat.com (Postfix) with SMTP id C428460603;
+ Mon, 22 Jul 2019 15:47:25 +0000 (UTC)
+Date: Mon, 22 Jul 2019 11:47:24 -0400
+From: "Michael S. Tsirkin" <mst@redhat.com>
+To: Joel Fernandes <joel@joelfernandes.org>
+Subject: Re: RFC: call_rcu_outstanding (was Re: WARNING in __mmdrop)
+Message-ID: <20190722114612-mutt-send-email-mst@kernel.org>
+References: <0000000000008dd6bb058e006938@google.com>
+ <000000000000964b0d058e1a0483@google.com>
+ <20190721044615-mutt-send-email-mst@kernel.org>
+ <20190721081933-mutt-send-email-mst@kernel.org>
+ <20190721131725.GR14271@linux.ibm.com>
+ <20190721210837.GC363@bombadil.infradead.org>
+ <20190721233113.GV14271@linux.ibm.com>
+ <20190722151439.GA247639@google.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190722151439.GA247639@google.com>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.32]); Mon, 22 Jul 2019 15:47:35 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_084325_225393_D3063834 
-X-CRM114-Status: GOOD (  23.06  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190722_084737_045159_B8C8D0BF 
+X-CRM114-Status: GOOD (  14.06  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,337 +74,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, x86@kernel.org,
- Arnd Bergmann <arnd@arndb.de>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>, linux-kernel@vger.kernel.org,
- Steven Price <steven.price@arm.com>,
- =?UTF-8?q?J=C3=A9r=C3=B4me=20Glisse?= <jglisse@redhat.com>,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- Andy Lutomirski <luto@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
- James Morse <james.morse@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
- Will Deacon <will@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
- linux-arm-kernel@lists.infradead.org, "Liang, Kan" <kan.liang@linux.intel.com>
+Cc: mhocko@suse.com, peterz@infradead.org, jasowang@redhat.com,
+ ldv@altlinux.org, james.bottomley@hansenpartnership.com, linux-mm@kvack.org,
+ namit@vmware.com, "Paul E. McKenney" <paulmck@linux.ibm.com>, mingo@kernel.org,
+ elena.reshetova@intel.com, aarcange@redhat.com, davem@davemloft.net,
+ Matthew Wilcox <willy@infradead.org>, hch@infradead.org,
+ linux-arm-kernel@lists.infradead.org, keescook@chromium.org,
+ syzkaller-bugs@googlegroups.com, jglisse@redhat.com, viro@zeniv.linux.org.uk,
+ christian@brauner.io, wad@chromium.org, linux-parisc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, luto@amacapital.net, ebiederm@xmission.com,
+ akpm@linux-foundation.org, guro@fb.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now walk_page_range() can walk kernel page tables, we can switch the
-arm64 ptdump code over to using it, simplifying the code.
+On Mon, Jul 22, 2019 at 11:14:39AM -0400, Joel Fernandes wrote:
+> [snip]
+> > > Would it make sense to have call_rcu() check to see if there are many
+> > > outstanding requests on this CPU and if so process them before returning?
+> > > That would ensure that frequent callers usually ended up doing their
+> > > own processing.
+> 
+> Other than what Paul already mentioned about deadlocks, I am not sure if this
+> would even work for all cases since call_rcu() has to wait for a grace
+> period.
+> 
+> So, if the number of outstanding requests are higher than a certain amount,
+> then you *still* have to wait for some RCU configurations for the grace
+> period duration and cannot just execute the callback in-line. Did I miss
+> something?
+> 
+> Can waiting in-line for a grace period duration be tolerated in the vhost case?
+> 
+> thanks,
+> 
+>  - Joel
 
-Signed-off-by: Steven Price <steven.price@arm.com>
----
- arch/arm64/Kconfig                 |   1 +
- arch/arm64/Kconfig.debug           |  19 +----
- arch/arm64/include/asm/ptdump.h    |   8 +-
- arch/arm64/mm/Makefile             |   4 +-
- arch/arm64/mm/dump.c               | 117 ++++++++++-------------------
- arch/arm64/mm/ptdump_debugfs.c     |   2 +-
- drivers/firmware/efi/arm-runtime.c |   2 +-
- 7 files changed, 48 insertions(+), 105 deletions(-)
+No, but it has many other ways to recover (try again later, drop a
+packet, use a slower copy to/from user).
 
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 3adcec05b1f6..5a32c87f37c6 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -105,6 +105,7 @@ config ARM64
- 	select GENERIC_IRQ_SHOW
- 	select GENERIC_IRQ_SHOW_LEVEL
- 	select GENERIC_PCI_IOMAP
-+	select GENERIC_PTDUMP
- 	select GENERIC_SCHED_CLOCK
- 	select GENERIC_SMP_IDLE_THREAD
- 	select GENERIC_STRNCPY_FROM_USER
-diff --git a/arch/arm64/Kconfig.debug b/arch/arm64/Kconfig.debug
-index cf09010d825f..1c906d932d6b 100644
---- a/arch/arm64/Kconfig.debug
-+++ b/arch/arm64/Kconfig.debug
-@@ -1,22 +1,5 @@
- # SPDX-License-Identifier: GPL-2.0-only
- 
--config ARM64_PTDUMP_CORE
--	def_bool n
--
--config ARM64_PTDUMP_DEBUGFS
--	bool "Export kernel pagetable layout to userspace via debugfs"
--	depends on DEBUG_KERNEL
--	select ARM64_PTDUMP_CORE
--	select DEBUG_FS
--        help
--	  Say Y here if you want to show the kernel pagetable layout in a
--	  debugfs file. This information is only useful for kernel developers
--	  who are working in architecture specific areas of the kernel.
--	  It is probably not a good idea to enable this feature in a production
--	  kernel.
--
--	  If in doubt, say N.
--
- config PID_IN_CONTEXTIDR
- 	bool "Write the current PID to the CONTEXTIDR register"
- 	help
-@@ -42,7 +25,7 @@ config ARM64_RANDOMIZE_TEXT_OFFSET
- 
- config DEBUG_WX
- 	bool "Warn on W+X mappings at boot"
--	select ARM64_PTDUMP_CORE
-+	select PTDUMP_CORE
- 	---help---
- 	  Generate a warning if any W+X mappings are found at boot.
- 
-diff --git a/arch/arm64/include/asm/ptdump.h b/arch/arm64/include/asm/ptdump.h
-index 0b8e7269ec82..38187f74e089 100644
---- a/arch/arm64/include/asm/ptdump.h
-+++ b/arch/arm64/include/asm/ptdump.h
-@@ -5,7 +5,7 @@
- #ifndef __ASM_PTDUMP_H
- #define __ASM_PTDUMP_H
- 
--#ifdef CONFIG_ARM64_PTDUMP_CORE
-+#ifdef CONFIG_PTDUMP_CORE
- 
- #include <linux/mm_types.h>
- #include <linux/seq_file.h>
-@@ -21,15 +21,15 @@ struct ptdump_info {
- 	unsigned long			base_addr;
- };
- 
--void ptdump_walk_pgd(struct seq_file *s, struct ptdump_info *info);
--#ifdef CONFIG_ARM64_PTDUMP_DEBUGFS
-+void ptdump_walk(struct seq_file *s, struct ptdump_info *info);
-+#ifdef CONFIG_PTDUMP_DEBUGFS
- void ptdump_debugfs_register(struct ptdump_info *info, const char *name);
- #else
- static inline void ptdump_debugfs_register(struct ptdump_info *info,
- 					   const char *name) { }
- #endif
- void ptdump_check_wx(void);
--#endif /* CONFIG_ARM64_PTDUMP_CORE */
-+#endif /* CONFIG_PTDUMP_CORE */
- 
- #ifdef CONFIG_DEBUG_WX
- #define debug_checkwx()	ptdump_check_wx()
-diff --git a/arch/arm64/mm/Makefile b/arch/arm64/mm/Makefile
-index 849c1df3d214..d91030f0ffee 100644
---- a/arch/arm64/mm/Makefile
-+++ b/arch/arm64/mm/Makefile
-@@ -4,8 +4,8 @@ obj-y				:= dma-mapping.o extable.o fault.o init.o \
- 				   ioremap.o mmap.o pgd.o mmu.o \
- 				   context.o proc.o pageattr.o
- obj-$(CONFIG_HUGETLB_PAGE)	+= hugetlbpage.o
--obj-$(CONFIG_ARM64_PTDUMP_CORE)	+= dump.o
--obj-$(CONFIG_ARM64_PTDUMP_DEBUGFS)	+= ptdump_debugfs.o
-+obj-$(CONFIG_PTDUMP_CORE)	+= dump.o
-+obj-$(CONFIG_PTDUMP_DEBUGFS)	+= ptdump_debugfs.o
- obj-$(CONFIG_NUMA)		+= numa.o
- obj-$(CONFIG_DEBUG_VIRTUAL)	+= physaddr.o
- KASAN_SANITIZE_physaddr.o	+= n
-diff --git a/arch/arm64/mm/dump.c b/arch/arm64/mm/dump.c
-index 82b3a7fdb4a6..5cc71ad567b4 100644
---- a/arch/arm64/mm/dump.c
-+++ b/arch/arm64/mm/dump.c
-@@ -15,6 +15,7 @@
- #include <linux/io.h>
- #include <linux/init.h>
- #include <linux/mm.h>
-+#include <linux/ptdump.h>
- #include <linux/sched.h>
- #include <linux/seq_file.h>
- 
-@@ -65,10 +66,11 @@ static const struct addr_marker address_markers[] = {
-  * dumps out a description of the range.
-  */
- struct pg_state {
-+	struct ptdump_state ptdump;
- 	struct seq_file *seq;
- 	const struct addr_marker *marker;
- 	unsigned long start_address;
--	unsigned level;
-+	int level;
- 	u64 current_prot;
- 	bool check_wx;
- 	unsigned long wx_pages;
-@@ -168,6 +170,10 @@ static struct pg_level pg_level[] = {
- 		.name	= "PGD",
- 		.bits	= pte_bits,
- 		.num	= ARRAY_SIZE(pte_bits),
-+	}, { /* p4d */
-+		.name	= "P4D",
-+		.bits	= pte_bits,
-+		.num	= ARRAY_SIZE(pte_bits),
- 	}, { /* pud */
- 		.name	= (CONFIG_PGTABLE_LEVELS > 3) ? "PUD" : "PGD",
- 		.bits	= pte_bits,
-@@ -230,11 +236,15 @@ static void note_prot_wx(struct pg_state *st, unsigned long addr)
- 	st->wx_pages += (addr - st->start_address) / PAGE_SIZE;
- }
- 
--static void note_page(struct pg_state *st, unsigned long addr, unsigned level,
--				u64 val)
-+static void note_page(struct ptdump_state *pt_st, unsigned long addr, int level,
-+				unsigned long val)
- {
-+	struct pg_state *st = container_of(pt_st, struct pg_state, ptdump);
- 	static const char units[] = "KMGTPE";
--	u64 prot = val & pg_level[level].mask;
-+	u64 prot = 0;
-+
-+	if (level >= 0)
-+		prot = val & pg_level[level].mask;
- 
- 	if (!st->level) {
- 		st->level = level;
-@@ -282,85 +292,27 @@ static void note_page(struct pg_state *st, unsigned long addr, unsigned level,
- 
- }
- 
--static void walk_pte(struct pg_state *st, pmd_t *pmdp, unsigned long start,
--		     unsigned long end)
--{
--	unsigned long addr = start;
--	pte_t *ptep = pte_offset_kernel(pmdp, start);
--
--	do {
--		note_page(st, addr, 4, READ_ONCE(pte_val(*ptep)));
--	} while (ptep++, addr += PAGE_SIZE, addr != end);
--}
--
--static void walk_pmd(struct pg_state *st, pud_t *pudp, unsigned long start,
--		     unsigned long end)
--{
--	unsigned long next, addr = start;
--	pmd_t *pmdp = pmd_offset(pudp, start);
--
--	do {
--		pmd_t pmd = READ_ONCE(*pmdp);
--		next = pmd_addr_end(addr, end);
--
--		if (pmd_none(pmd) || pmd_sect(pmd)) {
--			note_page(st, addr, 3, pmd_val(pmd));
--		} else {
--			BUG_ON(pmd_bad(pmd));
--			walk_pte(st, pmdp, addr, next);
--		}
--	} while (pmdp++, addr = next, addr != end);
--}
--
--static void walk_pud(struct pg_state *st, pgd_t *pgdp, unsigned long start,
--		     unsigned long end)
-+void ptdump_walk(struct seq_file *s, struct ptdump_info *info)
- {
--	unsigned long next, addr = start;
--	pud_t *pudp = pud_offset(pgdp, start);
--
--	do {
--		pud_t pud = READ_ONCE(*pudp);
--		next = pud_addr_end(addr, end);
--
--		if (pud_none(pud) || pud_sect(pud)) {
--			note_page(st, addr, 2, pud_val(pud));
--		} else {
--			BUG_ON(pud_bad(pud));
--			walk_pmd(st, pudp, addr, next);
--		}
--	} while (pudp++, addr = next, addr != end);
--}
-+	unsigned long end = ~0UL;
-+	struct pg_state st;
- 
--static void walk_pgd(struct pg_state *st, struct mm_struct *mm,
--		     unsigned long start)
--{
--	unsigned long end = (start < TASK_SIZE_64) ? TASK_SIZE_64 : 0;
--	unsigned long next, addr = start;
--	pgd_t *pgdp = pgd_offset(mm, start);
--
--	do {
--		pgd_t pgd = READ_ONCE(*pgdp);
--		next = pgd_addr_end(addr, end);
--
--		if (pgd_none(pgd)) {
--			note_page(st, addr, 1, pgd_val(pgd));
--		} else {
--			BUG_ON(pgd_bad(pgd));
--			walk_pud(st, pgdp, addr, next);
--		}
--	} while (pgdp++, addr = next, addr != end);
--}
-+	if (info->base_addr < TASK_SIZE_64)
-+		end = TASK_SIZE_64;
- 
--void ptdump_walk_pgd(struct seq_file *m, struct ptdump_info *info)
--{
--	struct pg_state st = {
--		.seq = m,
-+	st = (struct pg_state){
-+		.seq = s,
- 		.marker = info->markers,
-+		.ptdump = {
-+			.note_page = note_page,
-+			.range = (struct ptdump_range[]){
-+				{info->base_addr, end},
-+				{0, 0}
-+			}
-+		}
- 	};
- 
--	walk_pgd(&st, info->mm, info->base_addr);
--
--	note_page(&st, 0, 0, 0);
-+	ptdump_walk_pgd(&st.ptdump, info->mm);
- }
- 
- static void ptdump_initialize(void)
-@@ -388,10 +340,17 @@ void ptdump_check_wx(void)
- 			{ -1, NULL},
- 		},
- 		.check_wx = true,
-+		.ptdump = {
-+			.note_page = note_page,
-+			.range = (struct ptdump_range[]) {
-+				{VA_START, ~0UL},
-+				{0, 0}
-+			}
-+		}
- 	};
- 
--	walk_pgd(&st, &init_mm, VA_START);
--	note_page(&st, 0, 0, 0);
-+	ptdump_walk_pgd(&st.ptdump, &init_mm);
-+
- 	if (st.wx_pages || st.uxn_pages)
- 		pr_warn("Checked W+X mappings: FAILED, %lu W+X pages found, %lu non-UXN pages found\n",
- 			st.wx_pages, st.uxn_pages);
-diff --git a/arch/arm64/mm/ptdump_debugfs.c b/arch/arm64/mm/ptdump_debugfs.c
-index 064163f25592..1f2eae3e988b 100644
---- a/arch/arm64/mm/ptdump_debugfs.c
-+++ b/arch/arm64/mm/ptdump_debugfs.c
-@@ -7,7 +7,7 @@
- static int ptdump_show(struct seq_file *m, void *v)
- {
- 	struct ptdump_info *info = m->private;
--	ptdump_walk_pgd(m, info);
-+	ptdump_walk(m, info);
- 	return 0;
- }
- DEFINE_SHOW_ATTRIBUTE(ptdump);
-diff --git a/drivers/firmware/efi/arm-runtime.c b/drivers/firmware/efi/arm-runtime.c
-index e2ac5fa5531b..1283685f9c20 100644
---- a/drivers/firmware/efi/arm-runtime.c
-+++ b/drivers/firmware/efi/arm-runtime.c
-@@ -27,7 +27,7 @@
- 
- extern u64 efi_system_table;
- 
--#ifdef CONFIG_ARM64_PTDUMP_DEBUGFS
-+#if defined(CONFIG_PTDUMP_DEBUGFS) && defined(CONFIG_ARM64)
- #include <asm/ptdump.h>
- 
- static struct ptdump_info efi_ptdump_info = {
 -- 
-2.20.1
-
+MST
 
 _______________________________________________
 linux-arm-kernel mailing list
