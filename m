@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 44E22709DD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 21:41:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 150B3709E7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 21:41:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=EflpDxWXct6HLw3sfYFjbOwH8q/kZ4Nb0/ks5QUW5Qc=; b=OzZ1xThw05LFim
-	zJf5dUlV5TNEmJRm82bRCXzCd+9MfyAzfzXASy21PHeY7dj7DdOGLAHj3JtkAH1y7EiZ9MeJk6U/F
-	1M9vEtpuUotlSWhrUGwmOqH04cw8wgTcVEy3y5RtrxPnIwZ6flBGkCYnssOu/+U2OkccAgj/K/+xK
-	jRumbfMsa4Bqe5Ta5mmT84E2rAfywTverXvM+6kTBnkfStXGIgvIz4wRgEyMT/y+l6JAgrYzjWhNi
-	mG/F9UrCzJFM1FTaRzWD15/k/uKhKCG/4aviqqPcx3I6sS1xvznlbcufCFhB+O7RbtRI9VbPeCKoR
-	IOEVY4fH9aWtR152Opug==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kSs3fwpBORCzH+ZiTyFQDLOM125N79J5X3DRpFbCubc=; b=ZLe0P7DDxep3Dd
+	mMxcRHhbWIt/dtvZHDnONVENxqMD1nZuen383ImOqn9y+UVoTtrfEFkp263qu8sPrIOwtZXetatfc
+	hhYf2AMRkF7xUouW84180eS5pYbAYVmBOp1x6fEATgcRsOe3RkoDQCeP/MW42KDwknKfvc9CqXKtZ
+	xcaqnmYz0gD5xSfRK3jaovQtcC2uDvxPZ316I6wrRZjoKx0cZnCy2dE+W9Ty1sLyvSXO+LG0dsuCr
+	Uc7+7GaYiu7JhTcpkH+u4MIPBJNwI+gIZcYLDyA/bkopgceK09EbU0s7RgPUWaTDkEfO4rTpcI/qq
+	W57EBTAnIfeMvUXdYT5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpeBT-0008Ik-Rd; Mon, 22 Jul 2019 19:41:19 +0000
-Received: from mx0b-00082601.pphosted.com ([67.231.153.30]
- helo=mx0a-00082601.pphosted.com)
+	id 1hpeBv-0008Uz-GI; Mon, 22 Jul 2019 19:41:47 +0000
+Received: from mx0b-00082601.pphosted.com ([67.231.153.30])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpeAw-0008Hn-Mu
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 19:40:48 +0000
-Received: from pps.filterd (m0001303.ppops.net [127.0.0.1])
- by m0001303.ppops.net (8.16.0.27/8.16.0.27) with SMTP id x6MJQam3020882
- for <linux-arm-kernel@lists.infradead.org>; Mon, 22 Jul 2019 12:40:43 -0700
+ id 1hpeAx-0008IG-SB
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 19:40:49 +0000
+Received: from pps.filterd (m0109331.ppops.net [127.0.0.1])
+ by mx0a-00082601.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x6MJbbgA025449
+ for <linux-arm-kernel@lists.infradead.org>; Mon, 22 Jul 2019 12:40:47 -0700
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fb.com;
  h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=facebook;
- bh=1NSQ3GlOcXUrCSgPzKEGZL0QZp3rRab0Nvo0ylv224U=;
- b=cnxkTAyKXPanJ1kocii4LVRNOMIzUdTow+eMCFk0zfzzK2r4h9xbCQPiWRZUFTOEQUfh
- IIKgd14hr1aIDsOEVjyRWV4aikmSuYGFCo41ePL1oRfdFl8j0LSVJQJfV3B5DXeiEICH
- bsEH2hNaR2XTcVv/FEKfS03P2Sm/R5lQK5A= 
+ : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=facebook; bh=zEF2pJ7/cS00eTij98oSpd+N8SWWrMXB+27aiyhjuSg=;
+ b=rBEH7ODfIxtKlP4GNU1DnvAXnd838SbnmnRQ5oXuTuoX+HE0bZI7TtZ8vZuNsvujpj8N
+ eq9tsdDrFGARNjOi+KSb9l+MiJ7Je69+t2z8S96lQ9CAms2nXhQNQeaxCBawHw2wERvP
+ ybA185IW7jF8tuMPgKGr9Y7XfAxuu/kRJMg= 
 Received: from mail.thefacebook.com (mailout.thefacebook.com [199.201.64.23])
- by m0001303.ppops.net with ESMTP id 2twjyn03yn-9
+ by mx0a-00082601.pphosted.com with ESMTP id 2twey7h6mb-12
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Mon, 22 Jul 2019 12:40:43 -0700
+ for <linux-arm-kernel@lists.infradead.org>; Mon, 22 Jul 2019 12:40:46 -0700
 Received: from mx-out.facebook.com (2620:10d:c081:10::13) by
- mail.thefacebook.com (2620:10d:c081:35::128) with Microsoft SMTP Server
+ mail.thefacebook.com (2620:10d:c081:35::127) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA) id 15.1.1713.5;
  Mon, 22 Jul 2019 12:40:41 -0700
 Received: by devvm4117.prn2.facebook.com (Postfix, from userid 167582)
- id 653DE1150EA86; Mon, 22 Jul 2019 12:25:23 -0700 (PDT)
+ id 395F41150EA8F; Mon, 22 Jul 2019 12:25:25 -0700 (PDT)
 Smtp-Origin-Hostprefix: devvm
 From: Vijay Khemka <vijaykhemka@fb.com>
 Smtp-Origin-Hostname: devvm4117.prn2.facebook.com
@@ -54,10 +54,12 @@ To: Jean Delvare <jdelvare@suse.com>, Guenter Roeck <linux@roeck-us.net>, Rob
  <linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
  <linux-aspeed@lists.ozlabs.org>
 Smtp-Origin-Cluster: prn2c23
-Subject: [PATCH 1/2] ARM: dts: aspeed: tiogapass: Add VR devices
-Date: Mon, 22 Jul 2019 12:24:47 -0700
-Message-ID: <20190722192451.1947348-1-vijaykhemka@fb.com>
+Subject: [PATCH] dt-bindings: hwmon: Add binding for pxe1610
+Date: Mon, 22 Jul 2019 12:24:48 -0700
+Message-ID: <20190722192451.1947348-2-vijaykhemka@fb.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190722192451.1947348-1-vijaykhemka@fb.com>
+References: <20190722192451.1947348-1-vijaykhemka@fb.com>
 X-FB-Internal: Safe
 MIME-Version: 1.0
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
@@ -66,12 +68,12 @@ X-Proofpoint-Spam-Details: rule=fb_default_notspam policy=fb_default score=0
  priorityscore=1501
  malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
  clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=960 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1810050000 definitions=main-1907220213
+ mlxlogscore=710 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1810050000 definitions=main-1907220215
 X-FB-Internal: deliver
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_124047_018218_06709911 
-X-CRM114-Status: GOOD (  12.32  )
+X-CRM114-CacheID: sfid-20190722_124048_029838_DC279A84 
+X-CRM114-Status: GOOD (  14.72  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -107,61 +109,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Addes Voltage regulators Infineon pxe1610 devices to Facebook
-tiogapass platform.
+Added new DT binding document for Infineon PXE1610 devices.
 
 Signed-off-by: Vijay Khemka <vijaykhemka@fb.com>
 ---
- .../dts/aspeed-bmc-facebook-tiogapass.dts     | 36 +++++++++++++++++++
- 1 file changed, 36 insertions(+)
+ .../devicetree/bindings/hwmon/pxe1610.txt         | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/hwmon/pxe1610.txt
 
-diff --git a/arch/arm/boot/dts/aspeed-bmc-facebook-tiogapass.dts b/arch/arm/boot/dts/aspeed-bmc-facebook-tiogapass.dts
-index c4521eda787c..b7783833a58c 100644
---- a/arch/arm/boot/dts/aspeed-bmc-facebook-tiogapass.dts
-+++ b/arch/arm/boot/dts/aspeed-bmc-facebook-tiogapass.dts
-@@ -144,6 +144,42 @@
- &i2c5 {
- 	status = "okay";
- 	// CPU Voltage regulators
-+	vr@48 {
-+		compatible = "infineon,pxe1610";
-+		reg = <0x48>;
-+	};
-+	vr@4a {
-+		compatible = "infineon,pxe1610";
-+		reg = <0x4a>;
-+	};
-+	vr@50 {
-+		compatible = "infineon,pxe1610";
-+		reg = <0x50>;
-+	};
-+	vr@52 {
-+		compatible = "infineon,pxe1610";
-+		reg = <0x52>;
-+	};
-+	vr@58 {
-+		compatible = "infineon,pxe1610";
-+		reg = <0x58>;
-+	};
-+	vr@5a {
-+		compatible = "infineon,pxe1610";
-+		reg = <0x5a>;
-+	};
-+	vr@68 {
-+		compatible = "infineon,pxe1610";
-+		reg = <0x68>;
-+	};
-+	vr@70 {
-+		compatible = "infineon,pxe1610";
-+		reg = <0x70>;
-+	};
-+	vr@72 {
-+		compatible = "infineon,pxe1610";
-+		reg = <0x72>;
-+	};
- };
- 
- &i2c6 {
+diff --git a/Documentation/devicetree/bindings/hwmon/pxe1610.txt b/Documentation/devicetree/bindings/hwmon/pxe1610.txt
+new file mode 100644
+index 000000000000..635daf4955db
+--- /dev/null
++++ b/Documentation/devicetree/bindings/hwmon/pxe1610.txt
+@@ -0,0 +1,15 @@
++pxe1610 properties
++
++Required properties:
++- compatible: Must be one of the following:
++	- "infineon,pxe1610" for pxe1610
++	- "infineon,pxe1110" for pxe1610
++	- "infineon,pxm1310" for pxm1310
++- reg: I2C address
++
++Example:
++
++vr@48 {
++	compatible = "infineon,pxe1610";
++	reg = <0x48>;
++};
 -- 
 2.17.1
 
