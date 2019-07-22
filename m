@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6D92703F1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 17:38:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E760F703F9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 17:39:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t8JNTaA1JBm/FGU5g0oHZeQbW2dKbKM398Z5cOvtUS0=; b=QWnPjUpKpTX23c
-	4kychKXIxKMVH0T9eLi9Let6+t+ZcnrnUejc6plX5LJkTLRnpq8UgT1y72VtIUZIavyNRFNYJXaue
-	PPvdZXsfoN7EyyN0KmtGnkqvB/WSPBDwf4+bJ65xmcHc75MRgJqTVmNxS+cTNxYXNn6q3peKq94TD
-	7edFGJ5igV+y2R6Q4h0uc6C6mm4UrOhTuQ1Boi8Jr5ZROGEK+2PJW9QBIWNGcxnHkRIUMGA7Uk67l
-	LH0mx8nxkBvluBmsgFNTi6auVrDfDhfKzb8SlsfSm2mYf2/iL+KG/bWT4uho6yMgtadR6GbPQ4q/P
-	+/WM0NYyAFgS6/B6EGqA==;
+	List-Owner; bh=c7TeLhu3aJRidoHid+Oe9BJFnftQrMvu6gIH66c5I6k=; b=L2UTLMNJR8oJs1
+	jFTzI9eujF5qgCNUNhJo2rCYZvUJ6yJ+/cqgVH8VDh6R5sSZvoDT/zKCt0oW43PKwlvCivbszQosm
+	oUKBVwN0Ksc1fgvuSBkBVWyqdafmXF11bTNrN16l6a/n74Xn6Onp0nLTqT7IWr0FN1zKYX9xqxS3v
+	cNDVQbjFjc4wLMgWqEa0rvdgNPfIBrrmJluwVa957Hl4MQtX4/c97sQFHZLOJqY53Em4ylitT8J5t
+	13mKZcLjCYv2qN6EeyIUMen9zYA1gXjt9lZz1cNmJQCmpCv5KsWd17J+A3lQZxNqmqsXStlR093xB
+	QH6E+QLHZT/F8rn9MAUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpaOY-0006lt-Jt; Mon, 22 Jul 2019 15:38:35 +0000
+	id 1hpaPO-0007G3-Dy; Mon, 22 Jul 2019 15:39:26 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hpaNv-0006jk-53
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 15:37:56 +0000
+ id 1hpaNv-0006k8-Fu
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 15:37:57 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 42F2C1509;
- Mon, 22 Jul 2019 08:37:53 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E87AC1596;
+ Mon, 22 Jul 2019 08:37:54 -0700 (PDT)
 Received: from e121166-lin.cambridge.arm.com (unknown [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C7EC53F694;
- Mon, 22 Jul 2019 08:37:51 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 798643F694;
+ Mon, 22 Jul 2019 08:37:53 -0700 (PDT)
 From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 To: linux-pm@vger.kernel.org
-Subject: [PATCH 1/6] ARM: cpuidle: Remove useless header include
-Date: Mon, 22 Jul 2019 16:37:40 +0100
-Message-Id: <20190722153745.32446-2-lorenzo.pieralisi@arm.com>
+Subject: [PATCH 2/6] ARM: cpuidle: Remove overzealous error logging
+Date: Mon, 22 Jul 2019 16:37:41 +0100
+Message-Id: <20190722153745.32446-3-lorenzo.pieralisi@arm.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190722153745.32446-1-lorenzo.pieralisi@arm.com>
 References: <20190722153745.32446-1-lorenzo.pieralisi@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_083755_254287_C1AB15EA 
-X-CRM114-Status: GOOD (  10.04  )
+X-CRM114-CacheID: sfid-20190722_083755_578749_B1F56134 
+X-CRM114-Status: GOOD (  14.07  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,9 +71,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The generic ARM CPUidle driver includes <linux/topology.h> by mistake.
-
-Remove the topology header include.
+CPUidle back-end operations are not implemented in some platforms
+but this should not be considered an error serious enough to be
+logged. Check the arm_cpuidle_init() return value to detect whether
+the failure must be reported or not in the kernel log and do
+not log it if the platform does not support CPUidle operations.
 
 Signed-off-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 Cc: Ulf Hansson <ulf.hansson@linaro.org>
@@ -81,21 +83,34 @@ Cc: Sudeep Holla <sudeep.holla@arm.com>
 Cc: Daniel Lezcano <daniel.lezcano@linaro.org>
 Cc: "Rafael J. Wysocki" <rjw@rjwysocki.net>
 ---
- drivers/cpuidle/cpuidle-arm.c | 1 -
- 1 file changed, 1 deletion(-)
+ drivers/cpuidle/cpuidle-arm.c | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/cpuidle/cpuidle-arm.c b/drivers/cpuidle/cpuidle-arm.c
-index 5bcd82c35dcf..dc33b3d2954f 100644
+index dc33b3d2954f..9e5156d39627 100644
 --- a/drivers/cpuidle/cpuidle-arm.c
 +++ b/drivers/cpuidle/cpuidle-arm.c
-@@ -15,7 +15,6 @@
- #include <linux/module.h>
- #include <linux/of.h>
- #include <linux/slab.h>
--#include <linux/topology.h>
+@@ -105,11 +105,17 @@ static int __init arm_idle_init_cpu(int cpu)
+ 	ret = arm_cpuidle_init(cpu);
  
- #include <asm/cpuidle.h>
- 
+ 	/*
+-	 * Allow the initialization to continue for other CPUs, if the reported
+-	 * failure is a HW misconfiguration/breakage (-ENXIO).
++	 * Allow the initialization to continue for other CPUs, if the
++	 * reported failure is a HW misconfiguration/breakage (-ENXIO).
++	 *
++	 * Some platforms do not support idle operations
++	 * (arm_cpuidle_init() returning -EOPNOTSUPP), we should
++	 * not flag this case as an error, it is a valid
++	 * configuration.
+ 	 */
+ 	if (ret) {
+-		pr_err("CPU %d failed to init idle CPU ops\n", cpu);
++		if (ret != -EOPNOTSUPP)
++			pr_err("CPU %d failed to init idle CPU ops\n", cpu);
+ 		ret = ret == -ENXIO ? 0 : ret;
+ 		goto out_kfree_drv;
+ 	}
 -- 
 2.21.0
 
