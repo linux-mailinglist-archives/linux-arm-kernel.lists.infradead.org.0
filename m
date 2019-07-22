@@ -2,54 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5BA7270B78
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 23:32:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0E2A70B7D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 23:33:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:From:To:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AqHchz+omqe4xSWZPH6QI82DvUMiPbFCYH0M9UQyjF4=; b=q251YQglnfrYW5
-	S5aOAHrjnLkk7VNtWcaWS1QoR96U6uoLWMfGAUClZUcE/aQNPKko9tsB5fwxtIQxeSsuax/FEr+gB
-	rP/QyZx4XB4I9ZY8EJricbt00Typvcj+qowoAfYrwTblgKpvXvZGgE7aMqpnfaeveqsYY+omeJ1mj
-	iTP6Rlu+kTX+puhMdhXCYwIdDmPYAxifY46JoDPUAbE2dP3Bd4tJ3JFmrgRN2zzIi1d/mCwTjKk5A
-	C6hSgJxtCL99PEnWimZRzKGFvIaHFb/rAZM3UlDsqQXYEhpLspxU0Waji4cAbDTxwi3ggJm9VyI4r
-	n1xqYxVup2V2dIoXvdYA==;
+	List-Owner; bh=IN60vWue+1NFsmGyhFTk2yiz9cix24lpEdKMtup+U1A=; b=pUvUUb2ahFHM18
+	JaWVTsg+slFqdeHuOj07x8VQG+EqadJ80ZJTeYjcVpg8bLaErFgMqGLp8MMLhn6rm6NOmvMZZZUzO
+	tqZ6jkolq7vsK/Cf5udnY6L64qh4Nw4l6w11izPmbB1sdL5qZUVwZu5LLo9KL2yu38agxgvyN2D+e
+	g9OGBFm0lmJ+FaiQDmBu4a+156U6uzQ7CLBNxT7e5KMo+UHkxUmhrLqcsI52Bio5zVIDFXeU13aZm
+	70XWqyDzc3oHN/2ichbO5iaMyzTWXW0inHL8TUkMNvWmI+Azdjh9lAYjht3LS1o1PmezvttN38OlF
+	ZqNvMPvEU+/pZdGXRKew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpfvK-0005JX-B8; Mon, 22 Jul 2019 21:32:46 +0000
+	id 1hpfwC-0005gq-SL; Mon, 22 Jul 2019 21:33:40 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpfuq-0005En-1r
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 21:32:17 +0000
+ id 1hpfvv-0005gV-Th; Mon, 22 Jul 2019 21:33:25 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9B79B21900;
- Mon, 22 Jul 2019 21:32:15 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 874B121900;
+ Mon, 22 Jul 2019 21:33:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563831135;
- bh=4ePKRVOjuk0pdWmx57Jr5AQcVG8sUyMlkiLelXx84UU=;
+ s=default; t=1563831203;
+ bh=LRjTFf0P+1cadmeWrN32PXo23OKVXtFRMmj+KLXh4PU=;
  h=In-Reply-To:References:Subject:To:Cc:From:Date:From;
- b=Qry+PWBd926llkTs47Y1tV3OpEOjUw9u7ySLBx4LyW+s/RNEWYd+7XCZcWVbnzgvd
- pRua+Q7cWTp1cp6QJala2Xc5wxa4kurCzy4CCoSK5R4f4nMkd/i0MfbyLiJTYulo0x
- kikV7uMfILBA+IHveio5Z7NYYXW7seS4wCy+tHGw=
+ b=Et+11J5o7dtf0jIwThtwUHyzBvrvzsgbckUvSpM1TivPdOHG3Py9lLgsL5BCiVzLH
+ g5uHZKRpqKKBAB1L6J5wDwqciKXeX76imwWZCx4TVRhMsPKnDQxu5mZANuE7Lfxt7k
+ +HbfBWavPbbOg/gZmWKFtWATaQFHuk5JI8+AtwXk=
 MIME-Version: 1.0
-In-Reply-To: <20190625091002.27567-1-codrin.ciubotariu@microchip.com>
-References: <20190625091002.27567-1-codrin.ciubotariu@microchip.com>
-Subject: Re: [RESEND][PATCH] clk: at91: generated: Truncate divisor to
- GENERATED_MAX_DIV + 1
-To: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>,
- alexandre.belloni@bootlin.com, ludovic.desroches@microchip.com,
- nicolas.ferre@microchip.com
+In-Reply-To: <1561706554-27770-1-git-send-email-weiyi.lu@mediatek.com>
+References: <1561706554-27770-1-git-send-email-weiyi.lu@mediatek.com>
+Subject: Re: [PATCH v3] clk: mediatek: mt8183: Register 13MHz clock earlier
+ for clocksource
+To: Matthias Brugger <matthias.bgg@gmail.com>,
+ Nicolas Boichat <drinkcat@chromium.org>, Weiyi Lu <weiyi.lu@mediatek.com>
 From: Stephen Boyd <sboyd@kernel.org>
 User-Agent: alot/0.8.1
-Date: Mon, 22 Jul 2019 14:32:14 -0700
-Message-Id: <20190722213215.9B79B21900@mail.kernel.org>
+Date: Mon, 22 Jul 2019 14:33:22 -0700
+Message-Id: <20190722213323.874B121900@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_143216_362398_80084385 
-X-CRM114-Status: UNSURE (   7.38  )
+X-CRM114-CacheID: sfid-20190722_143323_970598_24F06E5C 
+X-CRM114-Status: UNSURE (   6.67  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -79,25 +77,23 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
+Cc: Dehui Sun <dehui.sun@mediatek.com>, James Liao <jamesjj.liao@mediatek.com>,
+ Weiyi Lu <weiyi.lu@mediatek.com>, srv_heupstream@mediatek.com,
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org,
+ Fan Chen <fan.chen@mediatek.com>, linux-mediatek@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Codrin Ciubotariu (2019-06-25 02:10:02)
-> In clk_generated_determine_rate(), if the divisor is greater than
-> GENERATED_MAX_DIV + 1, then the wrong best_rate will be returned.
-> If clk_generated_set_rate() will be called later with this wrong
-> rate, it will return -EINVAL, so the generated clock won't change
-> its value. Do no let the divisor be greater than GENERATED_MAX_DIV + 1.
+Quoting Weiyi Lu (2019-06-28 00:22:34)
+> The 13MHz clock should be registered before clocksource driver is
+> initialized. Use CLK_OF_DECLARE_DRIVER() to guarantee.
 > 
-> Fixes: 8c7aa6328947 ("clk: at91: clk-generated: remove useless divisor loop")
-> Signed-off-by: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
-> Acked-by: Nicolas Ferre <nicolas.ferre@microchip.com>
-> Acked-by: Ludovic Desroches <ludovic.desroches@microchip.com>
+> Fixes: acddfc2c261b ("clk: mediatek: Add MT8183 clock support")
+> Cc: <stable@vger.kernel.org>
+> Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
 > ---
 
 Applied to clk-fixes
