@@ -2,84 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C9DBE6FE8D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 13:12:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3DD636FE91
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 13:13:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eE7If//lcU74DU/8nP8GwFkPZi6AaRXrnm1P6rzpyiM=; b=SUo5HCRuCe6QIx
-	K+pMelUgaTlKRY+5TJVHydCcU38Ea9axRouoKuX9CdbErBNn3upUwna9s+TlaCUwC68Z3Lbfl4bOU
-	cAZkj7vler0ONaj7QZJ90DXooNWunrcACzgAJyB9yP06/zRlxgc/iWWMymUQ1BzLHDlPuJVHJ3EMB
-	z72rRqx13F3MUJ6n6iPHY1iOcqi5PzqZz06vG1f87YBX4xHAPjiwcVg2i+/c7HfpkWNJFnVjHv6As
-	/ZqCMaXsfXOCGs5WDDPYbp4I6denrxa7GxRR14HZjeR/XBEJ7HyrXvmxoHxmivIZ4UZhvmG6aAiXz
-	D2M/0kl9RLqOvN8THo6A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=xdQxz3sjAarYz0aUlpciIIAdONqhcOTMHE7FoxF60hM=; b=IGQtyYhqertZaJNIw95TwdBpm
+	wNwnf/XxYHFyt5juy60/E1c+H6d88Jx5MzAP8xGTLNrPYe+lu6yaLFQENOqCT4NpRbTprM4G+a/q9
+	k79zhL6Mdx/ukYOyCnzgzR8iVPUcqOnmlimILBislhboPkTw4DwRaJ4zBl4nOFFlcmdHwmkt0RY7d
+	iZ3mNzuoYJVK6yOZaum52anYFYjMARBZ+qesEhNIw4acixfCagHqvsOszt7Egunv7bm7HaM4dx0Dj
+	Sud1ZFeFcFwf61DN8Au9wkrwzSjbD31QRMsxPEM+TaskX6nERQ8eSsTS3CdXEQ+b7lnQgUPVm6G4I
+	xoTAqr/qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpWEo-0003hZ-Qy; Mon, 22 Jul 2019 11:12:14 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1hpWFc-00047q-Or; Mon, 22 Jul 2019 11:13:04 +0000
+Received: from kadath.azazel.net ([2001:8b0:135f:bcd1:e2cb:4eff:fedf:e608])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpWEe-0003gr-Gy
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 11:12:06 +0000
-Received: by mail-wm1-x341.google.com with SMTP id v15so34752548wml.0
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 22 Jul 2019 04:12:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=bofh-nu.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ugRN07ELNBGju0FZXfeTINwMh3Eu6S1IN6qjdKCIFBE=;
- b=gFpS54Ax3j5KsNqU6isZdGlE+UrqmTn1H7kDrcDfPtz5MDBUHiilO+ZhfhdUYaCeeU
- rnEF6ZKsuR9+Iv9LsEGoAaEVzSJuQ9SY3MRzFskJQjMVNJtpIQo5TVJC2A470Fnv5WKA
- Kkwh4Qvq5M8KWeAHKby9Ab4DdLCxK9kvQlmG+LVcXjze03oJ9l16KEKk7AfepwwSlUmB
- 4PCxmpKH72WnymNl5ig50UJfK/N7j5HIxINywTZieue+9SYmx5xcD735gsjHwAFt1cX0
- 5yC2/bv/9IG7OT2uIPZuVOkzW+kwc0AoBZclZ7h01TmKpUOxv2kH86Bx5WGN7FOca3nn
- oKVw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ugRN07ELNBGju0FZXfeTINwMh3Eu6S1IN6qjdKCIFBE=;
- b=LMwAt/ws4xDz/3NGfunFoe3r8BlMi1kB/Bdh/hAMd/BC6rL8cENnEP71/C9Ao/0a0l
- zEqXeYetpOH42bodTav/98NdO5ASNM6uTM57ziKjoG1109QGTvJCeCkYLD1nB1gtiFVh
- chwn91r95dz0MEiOf8wSzDknmw1pdOs6YGZSiw55RpH5K2wIdGqecxSh6fuGmphNWRSx
- waddwQe+pMHYGXUoEmTaPfmp+9xN3jb7AHx8oyfYrtaVqbPObes/i4nAS0mlhheQb7jJ
- L5CA3Tf4MT44msQUiUHe3IM00mtNOkRkkXU1pzUE5ZhtsxWlFyVSr7o8Omk6BNU2BgDJ
- WqfQ==
-X-Gm-Message-State: APjAAAXlfq8y2DTXcN6J+ijcoLK17htr9VXjzkKhA9wghghFZzi1in+N
- 6kBPojdNMraxFN9TU7szZRCvP3aQLdmHHEAQANE=
-X-Google-Smtp-Source: APXvYqyMOVi1QeBfQY7y3XFV+dCnJfmPmLUDhkHjFCy6dBRz6GZNepCI13S7cLN1oIlGT7gkQSUn4ppFimfg0qTYAS4=
-X-Received: by 2002:a05:600c:24a:: with SMTP id
- 10mr64703351wmj.7.1563793921410; 
- Mon, 22 Jul 2019 04:12:01 -0700 (PDT)
+ id 1hpWFS-00046m-4H
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 11:12:56 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=azazel.net; 
+ s=20190108;
+ h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=nRKtjKqcBWW7M2EO6E9825yGNowX3ZQvNK7zSogKi4g=; b=qA5XpTBPSDi+DHEzVIOqvpqNzP
+ 5bJhYO3axaOUNw4sQFexNJkkynKD8MrWTHgD9LWWjm918agoCb2A690zthGFa9il5uDt7LJQyw6Ek
+ lsF/wOt6htqWiYRTImWVxbllR/XM9d3rIXkb2Ct/mmfZwpHzCyiE0THJpzEgtvLyptzKcAPTBxNAu
+ DpTYpZBqqTm0QvMN+6Jd4CluE9Kwq1aHkVDXKpUCbUcAHJZwMYywTBzlkdR8yxjaACuqEsz13I6hd
+ Bte5RAVWO0fLhjWy2dzTpWRhx/9cLhcA2LcVulMnRadZMnwOUGojI7DzFgbflWhWeTZqnfU1i4/LF
+ 8Je+kcuA==;
+Received: from pnakotus.dreamlands ([192.168.96.5] helo=azazel.net)
+ by kadath.azazel.net with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.92) (envelope-from <jeremy@azazel.net>)
+ id 1hpWF1-0004e2-S8; Mon, 22 Jul 2019 12:12:27 +0100
+Date: Mon, 22 Jul 2019 12:12:25 +0100
+From: Jeremy Sowden <jeremy@azazel.net>
+To: Nishka Dasgupta <nishkadg.linux@gmail.com>
+Subject: Re: [PATCH v2] staging: media: sunxi: Add bool cast to value
+Message-ID: <20190722111225.GA2695@azazel.net>
+References: <20190722060651.6538-1-nishkadg.linux@gmail.com>
 MIME-Version: 1.0
-References: <cover.1562149883.git.joabreu@synopsys.com>
- <1b254bb7fc6044c5e6e2fdd9e00088d1d13a808b.1562149883.git.joabreu@synopsys.com>
- <29dcc161-f7c8-026e-c3cc-5adb04df128c@nvidia.com>
- <BN8PR12MB32661E919A8DEBC7095BAA12D3C80@BN8PR12MB3266.namprd12.prod.outlook.com>
- <20190722101830.GA24948@apalos>
-In-Reply-To: <20190722101830.GA24948@apalos>
-From: Lars Persson <lists@bofh.nu>
-Date: Mon, 22 Jul 2019 13:11:50 +0200
-Message-ID: <CADnJP=thexf2sWcVVOLWw14rpteEj0RrfDdY8ER90MpbNN4-oA@mail.gmail.com>
-Subject: Re: [PATCH net-next 3/3] net: stmmac: Introducing support for Page
- Pool
-To: Ilias Apalodimas <ilias.apalodimas@linaro.org>
+In-Reply-To: <20190722060651.6538-1-nishkadg.linux@gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-SA-Exim-Connect-IP: 192.168.96.5
+X-SA-Exim-Mail-From: jeremy@azazel.net
+X-SA-Exim-Scanned: No (on kadath.azazel.net); SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_041204_591306_339058FE 
-X-CRM114-Status: GOOD (  12.70  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190722_041254_172673_11061269 
+X-CRM114-Status: GOOD (  16.27  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -93,52 +80,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- "David S . Miller" <davem@davemloft.net>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Jon Hunter <jonathanh@nvidia.com>, Chen-Yu Tsai <wens@csie.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-tegra <linux-tegra@vger.kernel.org>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devel@driverdev.osuosl.org, maxime.ripard@bootlin.com,
+ gregkh@linuxfoundation.org, paul.kocialkowski@bootlin.com, wens@csie.org,
+ mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============6448073634789475099=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jul 22, 2019 at 12:18 PM Ilias Apalodimas
-<ilias.apalodimas@linaro.org> wrote:
+
+--===============6448073634789475099==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="9jxsPFA5p3P2qPhR"
+Content-Disposition: inline
+
+
+--9jxsPFA5p3P2qPhR
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On 2019-07-22, at 11:36:51 +0530, Nishka Dasgupta wrote:
+> Typecast as bool the return value of cedrus_find_format in
+> cedrus_check_format as the return value of cedrus_check_format is
+> always treated like a boolean value.
 >
-> On Thu, Jul 18, 2019 at 07:48:04AM +0000, Jose Abreu wrote:
-> > From: Jon Hunter <jonathanh@nvidia.com>
-> > Date: Jul/17/2019, 19:58:53 (UTC+00:00)
-> >
-> > > Let me know if you have any thoughts.
-> >
-> > Can you try attached patch ?
-> >
+> Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
+> ---
+> Changes in v2:
+> - Add !! to the returned pointer to ensure that the return value is
+>   always either true or false, and never a non-zero value other than
+>   true.
 >
-> The log says  someone calls panic() right?
-> Can we trye and figure were that happens during the stmmac init phase?
+>  drivers/staging/media/sunxi/cedrus/cedrus_video.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 >
+> diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_video.c b/drivers/staging/media/sunxi/cedrus/cedrus_video.c
+> index e2b530b1a956..b731745f21f8 100644
+> --- a/drivers/staging/media/sunxi/cedrus/cedrus_video.c
+> +++ b/drivers/staging/media/sunxi/cedrus/cedrus_video.c
+> @@ -86,7 +86,7 @@ static struct cedrus_format *cedrus_find_format(u32 pixelformat, u32 directions,
+>  static bool cedrus_check_format(u32 pixelformat, u32 directions,
+>  				unsigned int capabilities)
+>  {
+> -	return cedrus_find_format(pixelformat, directions, capabilities);
+> +	return !!(bool)cedrus_find_format(pixelformat, directions, capabilities);
+>  }
 
-The reason for the panic is hidden in this one line of the kernel logs:
-Kernel panic - not syncing: Attempted to kill init! exitcode=0x0000000b
+I think the original was fine.  The return value of cedrus_find_format
+will be automatically converted to bool before being returned from
+cedrus_check_format since that is the return-type of the function, and
+the result of converting any non-zero value to bool is 1.
 
-The init process is killed by SIGSEGV (signal 11 = 0xb).
+>  static void cedrus_prepare_format(struct v4l2_pix_format *pix_fmt)
+> --
+> 2.19.1
 
-I would suggest you look for data corruption bugs in the RX path. If
-the code is fetched from the NFS mount then a corrupt RX buffer can
-trigger a crash in userspace.
+--9jxsPFA5p3P2qPhR
+Content-Type: application/pgp-signature; name="signature.asc"
 
-/Lars
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEZ8d+2N/NBLDbUxIF0Z7UzfnX9sMFAl01mg0ACgkQ0Z7UzfnX
+9sNP7Q/8CiUixCeseW+FrbQE9zhblAGy6HdO5TApJGzM51La4NCeZEYwl2v6oRvB
+uG6/+E+AjN4nHphI35buzhR2aJm1IGdU+qVpObRG8llcmUCWVHSfyCzpsnCdXX80
+klN9+74CM8nZg//4675DsDiAq28h/ygBzr2c+C8G4zV/ycgYW9Q7zUdbSaaRmtUA
+gW+vsE4dkKxX4CFgLOeg8dqBIHW9gT+hS2aZPQSp40ZEKKQYAsbAk3XyifLoim5E
+sC9DIVJMnj+szfH/C5Pf/GBRhdzLw7Ysf33czJqWZU64CWsMZvxF/ypZXQ/Ynt9r
+r+GSZdwV0LIrIkGkOeQ2PISAaZKJvZ4iwW663OOtye7n3C7XnxYtt0PsLlrT5oef
+3GCd+whORdefuJDQX0QwzKS8ix1HhW0zi/6sskBkoCpy8RH70s0IsB30uURs6UvF
+kNLhBz08Vx/x/AbkwPD988n4raS3IcgD/jPGYjTI1sagif68AUQTn2wMJ29yx9y+
+o7Qo68DqgzGviMvO24ygig3K4jABgELuX2v2F3W2KRYMtedLD5nIn4A1Bsh7PjQo
+8AO295O64b4Z8RHb68MwwiObmIZj70Aq6LP9cfrOARA+8nxRQU8XEzsdB57URHnA
+ebzSt/4+OEbLWFtF9V71L2a6GWRbqw/dEydAxENGaof0UbdiDM0=
+=frdo
+-----END PGP SIGNATURE-----
+
+--9jxsPFA5p3P2qPhR--
+
+
+--===============6448073634789475099==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6448073634789475099==--
+
