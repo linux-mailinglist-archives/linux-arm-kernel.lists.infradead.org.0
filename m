@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A764370678
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 19:09:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3499D70679
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 19:10:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,46 +11,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=ee2iZJSx6hBMwQrwjiD5FadMMY/warejptsruUnG+Sk=; b=FVvG7gb8s1IDfthJdt8QB9vfSz
-	PnR/GEQxA+c2tZSYJs5rxyl8awFSSSuxCS7GRC12mKWoQ0OwS318W2NEc9IvOr2cHC7Ch9OqUZ/1g
-	gwME0/ePxmb5758qVr1uGpQf5507noM1qs8sJj5aNUPeBXHE9zk9MI1FYIvwrO1rKnngUUC+WPktX
-	7zwiDIBSuZbOxc9csTzmgg85SunxTyt6cwVmPuzUz/yEmy7qDVWyU01vPR8cTH6HLES2ZWdDv25Rp
-	wilD8OexNR3EWocGxDQb3k/V4unaRGpaagSD5wwdwzaFvHS30sykxPXFCKC41NF7Co/dM6M59sXQu
-	NaAiRDtA==;
+	bh=HfDNOUSubQ8ho5Tv4PuBtriNqy96DkVzWFIiRKBSy7M=; b=QKnkItkWxlnUrtIYmfFYt9oyTR
+	BkIPTFyPr1Ql2Ac5xa/0R0MM+XHjE3FK/SbxPQoB+SNG+kz4Y6iGg+RbSoZVz9LY6/KhxgoSNrffV
+	UkFdZwh/O4vIdFkjJS5gAxoG/qZwvspOafJwPLuIbkIuMy1MvISU6THEtTCcC4t7qrJ9kcMCwwV+s
+	Cd3eRrNtWd+lFd2CJnc/cH5Bq9cOAHFN6M23GeO/zV7WzUw4u/7z9S3EgxQNeL8yFJ5gwb63sg4JM
+	U0zryuO88C40b8TM9wvr+WRH+LuAv9AisMsET1H5w7gVwQlaX5W5YrJgNygFjRA89C8V6OiU0KQUd
+	JAnzG5Mw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpbog-0003AL-28; Mon, 22 Jul 2019 17:09:38 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1hpbp1-0003P5-5F; Mon, 22 Jul 2019 17:09:59 +0000
+Received: from mout.gmx.net ([212.227.17.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpbnc-0002dX-Dt
- for linux-arm-kernel@bombadil.infradead.org; Mon, 22 Jul 2019 17:08:32 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:References:
- In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:MIME-Version:
- Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=8sdkT4OAPenNxPhRZpPZN+HiHNk8KYoVvmXdGGlXZts=; b=nvD6/jqZ1mcFo26N2fBhmKTcdp
- 7lFyZaektw0Qn12/rzUfFkrCl9OKBlf8/hhUHHmFo/B/N+9diAhjwj+7N8HmJKuvnmeJM1cwvAZ3G
- kVGVdEO6mHrlJpFZc177vhH5wQ2KztHd1SfmQZSbZwgin/j4S9A77fn35zpEh2IFYXCTVoyM9dURO
- pR1hCZjJRAl9dSUIlLoojAoGRWG7wUTbbsOvE03L9veaGv4PmjBOM9XVzT0AEiyWrJj/8u7t4l4Gh
- ZsYm49btU2+bigMMMilbDOT8nrU5VJcw97FduiwdEvsdUap88Yq7zS1KA2H+W8uxi0uZhXUM7BdOZ
- SqczcrfA==;
-Received: from mout.gmx.net ([212.227.17.22])
- by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpbnh-0000Gt-H4
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 17:08:39 +0000
+ id 1hpbnb-0002cd-HL
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 17:08:33 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1563815284;
- bh=6nS7Lf6FNdVUYXGMd00gzIso1Z3I8h5vATfhDbo1HWw=;
+ s=badeba3b8450; t=1563815286;
+ bh=4VYJOdem6Xvc5GKoj1MdJCoWa0bgBVw0372KSDnlJ88=;
  h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=CwL8GCHtNFhZegQ5GJpGixfEKuZAW3OvKeo6E8p1XLU49IO/VtcHztedrkMhfhcG/
- wSWePnRucp/is/KGyfMub4XAW7F93RWzU+CwSLAMi4UPHcihzYKxdwP6YwzIzGO0pd
- hIZHZvczmZ8AwMOvkP9ZMBlh9P4C8l3myls8HC0A=
+ b=dT5CNo+XipWN1OV+kWC/xTbmr171UUPd4rLxqIlHPRHOeZ9VXfTHywbuB1/iAQ9qX
+ 9gWc0zg9HsA2Ja5eJ50itsGVP4ArATzz7IkW1QcQdpgbEqIWJsIfvnyNjQPGB89rFG
+ 8SgJ3sNBmsPXGw4XskSmBgSu1Q26eLuRbIRgQVxs=
 X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
 Received: from localhost.localdomain ([37.4.249.131]) by mail.gmx.com
  (mrgmx103 [212.227.17.168]) with ESMTPSA (Nemesis) id
- 0MSdRI-1hxCTY1BPo-00RWdx; Mon, 22 Jul 2019 19:08:04 +0200
+ 0LjZn2-1iQrQE1P8y-00bf57; Mon, 22 Jul 2019 19:08:06 +0200
 From: Stefan Wahren <wahrenst@gmx.net>
 To: Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
  Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
@@ -61,55 +45,55 @@ To: Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
  Michael Turquette <mturquette@baylibre.com>,
  Stephen Boyd <sboyd@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
  Adrian Hunter <adrian.hunter@intel.com>
-Subject: [PATCH 15/18] ARM: bcm2835: Add bcm2711 compatible string
-Date: Mon, 22 Jul 2019 19:07:34 +0200
-Message-Id: <1563815257-2648-3-git-send-email-wahrenst@gmx.net>
+Subject: [PATCH 18/18] MAINTAINERS: Add BCM2711 to BCM2835 ARCH
+Date: Mon, 22 Jul 2019 19:07:37 +0200
+Message-Id: <1563815257-2648-6-git-send-email-wahrenst@gmx.net>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1563815257-2648-1-git-send-email-wahrenst@gmx.net>
 References: <1563815257-2648-1-git-send-email-wahrenst@gmx.net>
-X-Provags-ID: V03:K1:Ozi+ow31HYFixm+4tvpLjYLuEY8a4Oa9cmfUylPS1EPl7hgn+hu
- b/GDHJJiJIvw67knfV5u6EemfRwXcCus7QkJ/+doBkq1EH0ErKqEItVtvRu0wSP5wE6MyJN
- RtnKax7+8pku7MuqFTOU3FH4yQwcnYUzscDM5w2yyFFcka2Yr2sVvVD0WYmvx6sMCpcsRCX
- miPEpEqAyUCkLZ8K8Dz1Q==
+X-Provags-ID: V03:K1:fbWcM/cwfxzKEcCXiGWjElKaqnnMSGp6SBPLjHXtY6V0WTR4A57
+ Yy5eUXpIK+3iJ9vTCeUK1ByJG90AOX+sHjh2tLSNbaBXJQ3fmWVetFgcx2moLcsZacRrU+R
+ 42bEaYNipWRmmNbvfu2HKjqzeoLD5id2nGJ2zUpu3qNGi6FNPdSivtbmmdvhmffBXSTUCY3
+ gTkhUHipdSygxEPTeOUYA==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:8gfPkhoX25A=:wSjmZWPeWuCf/BgF5Ueu/h
- gwIst7D0FoUnVfKeiJgl4xzL+WE5aLGhk0armELJB1K1NMR9tla/hP8MCu7Yuz4QmpygAw/ud
- B8ZnAEf/pDv8peBME+XreO6t4IWQ7PkJkWnnJMrOfSPfDqykk1tv7/7VjfagqvzmfUxlCjotU
- kVJbDhkvRUDSF4OM8LE81vsdv5Rybzx+Wu2+ubAP0l2FjBvIWkWoRv9IAMPGgMy0qhIkGHCAg
- oEPyaT7C19sW0PPstUnqRJvLinZbY2o/bbZEjR5LFDnRefyYajSD5Z7yedBrqr19qSyKEgYZJ
- lF5edJmbMRDIEAhtSewjwhi0RCRtYGVYNj+TBNB8zzmcXnCOYes+aI6IJtAuacupM4iRE+2cD
- +D91aSEZ7vTUUM6dRE5OHfj+rKDMm57IwTRkNySWzko+pBy2vYFvTZ5cT2g+kYkYTFrfwropc
- egaal02UXqU9xrH31HXixDwtsSO5SQ8OyN+Kgu5VxRqmMmpXOLNRC9t6/h3Saa6Dxl5vzBWFV
- sJJCKcDKLzZDR9e1nGH0IOFK0ABtESI1TzKutKHL0KWTGBlIxBI3X0tP/QzoOoJ00zdoJ3AHo
- dGACzjLnfhNQ0bqMv/pDJRpFy1OgyLJtcly/xT0yrw+SKGCqarw/SIAMlUsdO79v/ktDBlE5B
- AgWKeJEP02QbhzPZ8IsONhMkWw2vwbGCYXAtw7B3g8g2gT2JTbLuDosgEf//dmf/ZeXH0WLKl
- GFdYVyB9EjSLRyaMtiVd0IDsEDpJD2V1ZGDat6x6gI8gErcmhXjEo1yz+Ut0tKFN7VlsNFQ6B
- kaA+K2whJYcv1H2MiX7zNtA4AdwDRTBx0QvJOfnf12/ucS2yX+GR0XVLXc0c5RJiAiWVsKkGY
- E08e3Tr6rlI/T4iDafFsd7ey1sLd9JwIq+mpL6OdmSzEqfgq5GhBNYzVBhbMpJGinovfdZZFK
- 4/j9umBEY243or8RCOY9iiGb4P+VWbxppV1mrMwzekVPA3mlk8Zv9ilcyWJdHqqNSpRqc7twM
- Rco/Jz3vCE3c/yoGNf0PMwzgJpGLB8Z8P1Xj/5qXzi5c/T8T1mTzRjTPFjgA1P8fgdTT94GDs
- jJFBthqHiXNC+U=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:D/ohtluw/Ec=:4Ocp42Dy8WgDSuv8+nxqrY
+ cMaOdkkrsSp7k4iYVGxoZLgvdMfFsoPupdiPCfJMSnuooEN7b5V3AN9Y69oauLJNdSRCuwHiz
+ uQ5xt/ZhYybLSverOoxLk4/2NvtTZ3Fm1dd+Q+0u5J2ys/c+lZP249co127e/Atw7u9j0xQ6z
+ qYcVnSIOBjmiTipP+qz8H5xxGTygxsgtbXm2ZWh02VSawaJSe0K1+Z1l4ICFpuBsJnrg2tNMu
+ q+TV88gBr2X37mIfcxKA+BYEg+7eYahu2KftSG2I/Bj6vmVJxJS3t/8xcVLEIU/fPF8YKssyZ
+ 15Cd2n+QnJj+eZeJN6wzX7PH3llr/ER725gGRSnrIv1j6BXiuLeuFo/S0c/A+WgfCQCd/TZba
+ PfQT7CtlJOf3AFk6fdBOLHVG1UQD4AQGCJtchz4lGPAztJSFgrJriD+H1hEM2+ELUal+NLk+4
+ XkKXe4NdCVE2MTAa39G/qyUyTwVP4ePtgKlClSultFtaJmz6Bee4LdAbIXcrx4/+bCh0znqfe
+ zsCExpbogOAP4PnKQTqj2D5t9MZWjOyiDc8c/nbYZqN/cjgb22fulQyTfdvx8g0Mm+MXhNO/k
+ 6JArpHNiJcje/Z9Z/604Ca9f29CZ2h6CplnTGbNDYneOyx8JxWyXcXesRJK3q+Bk1B8LagyRZ
+ +bTQMBSjxq41Ci6/wssSjCKSgOBJWmP3YegZCaBJ9AvKXFXkP5qr4D8Hu33BS9T25CmLkgu7/
+ IG4ocusXeusw4WVxjOvivKEhnS1zZIe1N2+8HfZvAjlWUSKWT1XZdzd285RqQH6yd9OZ02j8R
+ F7EdsHoxfdM3jA1wO7n20c9nz5fr3b9i63GkfVhOGmAIBqU2X8CuxVGFqLvRFjFQhbiB26DJN
+ f6pRAxVPmPRoWuHh4pr4dAdpOxDPhjGw2bnv2lO9Qk+H2ef4SB+uH8T/9oHyhyMPyfn//1Tfx
+ t4P2TXEQn0+EO8zaQSFY+Kzb9fdLe8qOhzPnAp9Ip8lOGKvjtVNNXdoAf4/qmiDKCMPffJOPj
+ cfjpTcgFAAb50PcWVE8U6oylj6t/pXYTJG/Fxk1nvwYxUIO12nQgHsk6REbY1ZkP8S55EycIQ
+ AJKEemX9d3gTn8=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_180837_646711_554708EC 
-X-CRM114-Status: GOOD (  13.05  )
+X-CRM114-CacheID: sfid-20190722_100831_980447_CC8B8502 
+X-CRM114-Status: GOOD (  12.87  )
 X-Spam-Score: -0.9 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (-0.9 points, 5.0 required)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.22 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ low trust [212.227.17.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (wahrenst[at]gmx.net)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -130,25 +114,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This adds support for the new BCM2711 SoC found on the Raspberry Pi 4.
+Clarify that BCM2711 belongs to the BCM2835 ARCH.
 
 Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
 ---
- arch/arm/mach-bcm/board_bcm2835.c | 1 +
- 1 file changed, 1 insertion(+)
+ MAINTAINERS | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm/mach-bcm/board_bcm2835.c b/arch/arm/mach-bcm/board_bcm2835.c
-index d2b31a9..c09cf25 100644
---- a/arch/arm/mach-bcm/board_bcm2835.c
-+++ b/arch/arm/mach-bcm/board_bcm2835.c
-@@ -17,6 +17,7 @@ static const char * const bcm2835_compat[] = {
- 	"brcm,bcm2835",
- #endif
- #ifdef CONFIG_ARCH_MULTI_V7
-+	"brcm,bcm2711",
- 	"brcm,bcm2836",
- 	"brcm,bcm2837",
- #endif
+diff --git a/MAINTAINERS b/MAINTAINERS
+index c6fa7e8..ef75b7b 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -3137,7 +3137,7 @@ N:	bcm216*
+ N:	kona
+ F:	arch/arm/mach-bcm/
+
+-BROADCOM BCM2835 ARM ARCHITECTURE
++BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE
+ M:	Eric Anholt <eric@anholt.net>
+ M:	Stefan Wahren <wahrenst@gmx.net>
+ L:	bcm-kernel-feedback-list@broadcom.com
+@@ -3145,6 +3145,7 @@ L:	linux-rpi-kernel@lists.infradead.org (moderated for non-subscribers)
+ L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+ T:	git git://github.com/anholt/linux
+ S:	Maintained
++N:	bcm2711
+ N:	bcm2835
+ F:	drivers/staging/vc04_services
+
 --
 2.7.4
 
