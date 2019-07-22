@@ -2,71 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 630186FA0D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 09:12:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24BB46FA1B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 09:14:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=cjFHT0sxCpyZwvYJpFHW/kRLsWYEaagRo+PPvtM/2DU=; b=ceG4HjnT7Gp970
-	C3VPDzNjZSE6AKNPn8aeKz37AaWt2JlbHN7YN5kB3Tc4FFXLmV4e/qxd3Q3J0jo5OWaJX4dzBt4hj
-	B+CWDXoUUvuR3fh5Nlul67aTqZvhhLNdrrI9H4Hi9AhR5zELkKJWf9pVJU6arEeYuHGwy50WNc6x8
-	mBTRwMYjvLDDUCNITVl7gNeLNQwDmhtVGpek3cQAyPCAjwia/V6IdXw5H9wHeMUaLOpramnscLEio
-	bJiy9wBG6CzUu/sAaG1kI9a097P40yaNT65IzcQmtn/A4krAorop3S3OovYyWxOPWUizKB/fWuVAL
-	DHxUCYl6/OcYVckGEFHw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Erny45D7vGUzNQtxXIGPio8QIR09Q25LS3UVRhwOLS8=; b=EodfFmyjBv4BJ4
+	gDCfQm74P28wi9BBRoQCp0W6WOKwxJnK9+wGyVblkdO7OjPFoiWjkbkV3h/cqgL+MahzZrUFNyZpJ
+	DIGHhFi/f2RRFRByfgPBmZmJzUVW8BmGRbr521NBuu9eGTSdT+Vki7Q0jTdplQym94veIe7qqHkd/
+	VjIioQe27Y1sR8YS8eIWjiEYfh9lobCKAfc3qkCQUwNc+zZL5yQ/mTNOdflHo6myNC6z0NypHTy7q
+	jtZpxbBgX710Y+rGORSw8DEuA5KB8UkCyuJ0useFIVzfQh1cdkqCmT+4ldf13urWFkZDiKolvOHef
+	AZzrr9DKv09l2xhskiyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpSUJ-00037R-Ry; Mon, 22 Jul 2019 07:12:00 +0000
+	id 1hpSWv-0003TX-DL; Mon, 22 Jul 2019 07:14:41 +0000
 Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpSU3-00036l-Sd
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 07:11:45 +0000
-Received: by mail-pf1-x442.google.com with SMTP id r1so16919979pfq.12
+ id 1hpSWh-0003T2-1X
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 07:14:28 +0000
+Received: by mail-pf1-x442.google.com with SMTP id t16so16911128pfe.11
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 22 Jul 2019 00:11:42 -0700 (PDT)
+ Mon, 22 Jul 2019 00:14:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=e1pJmXf06oFMwCzMyXmo4V3Hcs9L90I0Lgp7Zs+lizs=;
- b=iAh0Z3QDrCqnhE6s5INTogxHKD1RMM0Afq5gQ9G5TTIv+84InCYsEJwIsWDmMzciYL
- kF+ABGPCiz7nv6hIoX8J8Nmk2Ia2Pmn47cXlHbRFq4lon6dXVUeqycjg29Y1cV2zs7Ot
- RjhwlEu0RliMS34cgKQSSQJTCZNet7811kRlvigJITVWiaii2cRdvxMqF3cx2axLKWx8
- XF/EDjGBzXO0TaAucl3/mhya7x+4yNTW0HgmTGRfH9cHY3VPPTI49syz9CI1bbZ509m0
- Zx4Hmg5zt4+boXTsyw14Nlq2iT+xb1E52Cju9XpqVQRUnK9aBiesTv8j6Ga+lU+6qYdY
- uS3w==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=rKKwPKQ9nSH1uCbjpYY0QdQfAXfR9yy6okm4F8X7Kfk=;
+ b=PP0eSpGL9fJvYulXJ4voZq4Jh7vxlXxo8EL8ugM+R/prryBtWxNwVsTCyjZLqnSAgQ
+ /yyZ7O8UA5ScPZgjwDejQ/Yi0WSW6DkAl9fJLgeDXEBOCV0skgYrmsI0WmduD2xClwVw
+ krvoRSVZXy975cfdfS7S7STa/dD6nk4tUg0QSqA0ejwJ+mSVTARL+BwLWadmie6HaUKR
+ I7kBAxl70FYkvuwxVHT69BbMGtRgFiAFoVB2uNnGZkcA7yB5Li8kobWOj2HD9Plb5uT0
+ TKHUCDqEvI1WNiBAwiGTrO5mMhKs7bYFdb/f0Vjq3ytn16P6AVk4+Ox7fruON+gvujrZ
+ h8nA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=e1pJmXf06oFMwCzMyXmo4V3Hcs9L90I0Lgp7Zs+lizs=;
- b=B+vW1rsH46Sifx/SXC7hV4Fb8CewcovBj573PBjkfWxiSJ/D6mWTMh7fagBZqWtEqO
- ScYGRRoIVcdTEw7YQcsV+fYZe8+rLB2vpgB17nJr35SvJS5tUvlrNcf7uRg+k3HNTIRQ
- PdoFq0EDCKwy+eFALqSixKWrVoD/SqQ6wtcxnryNMjrlAxLmhKksRU2PHvJGgp1/EH5Z
- cD5y0H8xfUfnzZhDL4sYW11bkIKwnwHTIT8X4Ci85XlHiBXHQkdgEFVGp6mC2hMILfCL
- FvAEcCeGKbsYm5jyvA0yGpQp18v/7BEBwEj2Ii5EQTtqePcaEe0mzc8ETPPeMXMWShCK
- XrNg==
-X-Gm-Message-State: APjAAAVJrVyr1/XuXiJ5niVx5yUqqB061vKYeP4/F01FI5C/+gVy6Qn2
- 5XmVNzNdxZ93Dxy0BH0lV7x5hb/z
-X-Google-Smtp-Source: APXvYqw90pms2WbCzTCZEmaN/6pRv51JhveW4MUeNKwghaamFFptL7ODl0b6Urb5d753rcgiiBSEZQ==
-X-Received: by 2002:a65:6546:: with SMTP id a6mr15364250pgw.220.1563779502459; 
- Mon, 22 Jul 2019 00:11:42 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=rKKwPKQ9nSH1uCbjpYY0QdQfAXfR9yy6okm4F8X7Kfk=;
+ b=Lb1PD1KQ8w9UzfWqI7tYN5eMi6RaNnLzUQo+hgpgY8dF+HH2TzaFoVzgXOUO2jIcUV
+ b+6v6xj+wGYSYwtIMtNBuzeXttsXULl+iTrFW1NE5LiN6asXt6m/5k76zK78CLDcQwB+
+ BqG+7MFsvm3cEg+2ldDS8Rn6paZykMAqCzyXkYLQ0CT4SwUZ7OTswlnDg6E8p5xYz7H+
+ NPvsln/bHMlFIikr7gNBj+zp3nfXbYNDOuKFhQv8OuK3HkyxgnUjErNG6WLi7epKH8eb
+ TRa7fJ+ZvzYNIFXfE95fQHwWmTSZm6CP95pEwebkouFOuTwufo+eN34zQz2hwKWLl//q
+ aGLw==
+X-Gm-Message-State: APjAAAWRKPxnsM7LVcTTHwjsKIMXFhmMKzyLCOct5Sqt1JyS9E7Ep2YI
+ r031D1GxF9jFtXjD9CQRLLw=
+X-Google-Smtp-Source: APXvYqxR6M9vTipkk84zlF3VH62Hs3fFypm9ayC0zj9LFqagpkrYFOqMSV+EYgBVLAjN5A6aykTdBQ==
+X-Received: by 2002:a63:5d45:: with SMTP id o5mr70953105pgm.40.1563779666597; 
+ Mon, 22 Jul 2019 00:14:26 -0700 (PDT)
 Received: from ubt.spreadtrum.com ([117.18.48.82])
- by smtp.gmail.com with ESMTPSA id q69sm53738861pjb.0.2019.07.22.00.11.40
+ by smtp.gmail.com with ESMTPSA id 195sm61983642pfu.75.2019.07.22.00.14.23
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 22 Jul 2019 00:11:41 -0700 (PDT)
+ Mon, 22 Jul 2019 00:14:25 -0700 (PDT)
 From: Chunyan Zhang <zhang.lyra@gmail.com>
 To: Russell King <linux@armlinux.org.uk>, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
 Subject: [PATCH] ARM: check stmfd instruction using right shift
-Date: Mon, 22 Jul 2019 15:11:22 +0800
-Message-Id: <20190722071122.22434-1-zhang.lyra@gmail.com>
+Date: Mon, 22 Jul 2019 15:14:19 +0800
+Message-Id: <20190722071419.22535-1-zhang.lyra@gmail.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190722071122.22434-1-zhang.lyra@gmail.com>
+References: <20190722071122.22434-1-zhang.lyra@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_001143_949584_3DA1954F 
-X-CRM114-Status: GOOD (  11.38  )
+X-CRM114-CacheID: sfid-20190722_001427_089467_FDE1F589 
+X-CRM114-Status: GOOD (  11.90  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -111,6 +113,7 @@ In the commit ef41b5c92498 ("ARM: make kernel oops easier to read"),
 +               .word   0xe92d0000 >> 11        @ stmfd sp!, {}
 then the shift need to change to 11.
 
+Fixes: ef41b5c92498 ("ARM: make kernel oops easier to read")
 Signed-off-by: Lvqiang Huang <Lvqiang.Huang@unisoc.com>
 Signed-off-by: Chunyan Zhang <zhang.lyra@gmail.com>
 ---
