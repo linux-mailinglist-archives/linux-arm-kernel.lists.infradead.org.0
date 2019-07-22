@@ -2,103 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 212A76FE25
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 12:54:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C992D6FE26
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 12:55:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zzxQvzeXaigaKt498Ws5liY/iLv/6+A2hOeqlKH6gd0=; b=KynbRM94D4s27L
-	xTEyRvGKZUHJ3txjC+qPyKB+C7XK3W4TIUxpk3ACJWYEqrG4+hUwuPwgu8TalqVsFCzxoualu2r4u
-	1M0os3dRgkir+Po5/5ZFqc/eL9Go1bsGXeRyfHL6nUU4Clbc2YeXQk05RpnWst9/xoPPW7txwV0xf
-	J2gUPR6Z+kMMxbDFba12Mehag0iNAADeA3jPgTo+n4ZjkuYrZUH4YmscSR4Ardwd8J83q0/pNcoaG
-	lI38y9b6L3IeyCNMDUpdINP+/S33oRvWOy7xOu7QZCoBgeLqZqrS+U8CSlRtb1eOZ1UDFHbnKukjq
-	gU5fJ7tyMEzMwuhrFPKA==;
+	List-Owner; bh=vsG7qs0ob27dETd1IBU7hYL0NjGG3KSoUfrnAMd3IVs=; b=nU8mTBDfIctz8R
+	Ctrd3MIcX8R1VJFuSU2sv15vdcp7IxJe0oixgRsMnHkW/YrkyJ/aMWvVo07Uwoovt1uYJarm98AHi
+	LI9OMPiyrxm1u7f4yybpTIeI1YOFcclx6MyhCfu1sR+FWZdWKPg2JJ1Ym5r9zznU12f7xULiITqrU
+	GUG2r4+93UHRWS1qn9Su2G48t2fY9N8u5rQxL8G2/60VscLh/dWFg1Ll62YVLrsLU2WfeyGNyBSx6
+	T9/8v8ucLbLk4nQqNOXeIB7El8ZxySEWD+eAYdnpFS7yovmkrjawMgXuGqnJ1RczarHQSwqtae7t8
+	4IDZ7zE1BVZgioFJ9Hdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpVxw-00056E-E6; Mon, 22 Jul 2019 10:54:48 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hpVxe-00052z-GN
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 10:54:32 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5324928;
- Mon, 22 Jul 2019 03:54:29 -0700 (PDT)
-Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- C1D5C3F71A; Mon, 22 Jul 2019 03:54:27 -0700 (PDT)
-Subject: Re: [PATCH v2 4/9] KVM: arm/arm64: vgic-its: Invalidate MSI-LPI
- translation cache on specific commands
-To: Auger Eric <eric.auger@redhat.com>, linux-arm-kernel@lists.infradead.org, 
- kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org
-References: <20190611170336.121706-1-marc.zyngier@arm.com>
- <20190611170336.121706-5-marc.zyngier@arm.com>
- <9ff329a3-44f2-1de3-b6cc-58ed38a63665@redhat.com>
-From: Marc Zyngier <marc.zyngier@arm.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
- 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
- Z46HaNmN2hZS/oJ69c1DI5Rcww==
-Organization: ARM Ltd
-Message-ID: <1a78d52c-7a31-8981-230b-abe85d11b8ec@arm.com>
-Date: Mon, 22 Jul 2019 11:54:25 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+	id 1hpVy9-0005LV-RQ; Mon, 22 Jul 2019 10:55:01 +0000
+Received: from ns.iliad.fr ([212.27.33.1])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hpVxv-0005EP-54
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 10:54:49 +0000
+Received: from ns.iliad.fr (localhost [127.0.0.1])
+ by ns.iliad.fr (Postfix) with ESMTP id 88EBE20720;
+ Mon, 22 Jul 2019 12:54:41 +0200 (CEST)
+Received: from [192.168.108.49] (freebox.vlq16.iliad.fr [213.36.7.13])
+ by ns.iliad.fr (Postfix) with ESMTP id 7551A2005B;
+ Mon, 22 Jul 2019 12:54:41 +0200 (CEST)
+Subject: Re: [RFC v2] DT-based tuner/demod init
+From: Marc Gonzalez <marc.w.gonzalez@free.fr>
+To: linux-media <linux-media@vger.kernel.org>, I2C
+ <linux-i2c@vger.kernel.org>, Linux ARM <linux-arm-kernel@lists.infradead.org>
+References: <6d38f9b1-a8cd-803d-b330-f92f7bcf08ca@free.fr>
+Message-ID: <7c7f05bc-26e6-7671-a5e2-265775744096@free.fr>
+Date: Mon, 22 Jul 2019 12:54:40 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <9ff329a3-44f2-1de3-b6cc-58ed38a63665@redhat.com>
+In-Reply-To: <6d38f9b1-a8cd-803d-b330-f92f7bcf08ca@free.fr>
 Content-Language: en-US
+X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
+ Mon Jul 22 12:54:41 2019 +0200 (CEST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_035430_640008_46739E86 
-X-CRM114-Status: GOOD (  18.03  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190722_035447_511289_E40D2D52 
+X-CRM114-Status: GOOD (  17.99  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [212.27.33.1 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (marc.w.gonzalez[at]free.fr)
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,90 +68,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>, "Raslan,
- KarimAllah" <karahmed@amazon.de>, Julien Thierry <julien.thierry@arm.com>,
- Christoffer Dall <christoffer.dall@arm.com>, James Morse <james.morse@arm.com>,
- Zenghui Yu <yuzenghui@huawei.com>, "Saidi, Ali" <alisaidi@amazon.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: DT <devicetree@vger.kernel.org>, Peter Korsgaard <peter@korsgaard.com>,
+ Jeffrey Hugo <jeffrey.l.hugo@gmail.com>, Wolfram Sang <wsa@the-dreams.de>,
+ Linus Walleij <linus.walleij@linaro.org>, Brad Love <brad@nextdimension.cc>,
+ =?UTF-8?Q?Jonathan_Neusch=c3=a4fer?= <j.neuschaefer@gmx.net>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Antti Palosaari <crope@iki.fi>,
+ Peter Rosin <peda@axentia.se>, Simon Horman <horms+renesas@verge.net.au>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Olli Salonen <olli.salonen@iki.fi>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Eric,
-
-On 01/07/2019 13:38, Auger Eric wrote:
-> Hi Marc,
-> 
-> On 6/11/19 7:03 PM, Marc Zyngier wrote:
->> The LPI translation cache needs to be discarded when an ITS command
->> may affect the translation of an LPI (DISCARD and MAPD with V=0) or
->> the routing of an LPI to a redistributor with disabled LPIs (MOVI,
->> MOVALL).
->>
->> We decide to perform a full invalidation of the cache, irrespective
->> of the LPI that is affected. Commands are supposed to be rare enough
->> that it doesn't matter.
->>
->> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
->> ---
->>  virt/kvm/arm/vgic/vgic-its.c | 8 ++++++++
->>  1 file changed, 8 insertions(+)
->>
->> diff --git a/virt/kvm/arm/vgic/vgic-its.c b/virt/kvm/arm/vgic/vgic-its.c
->> index 9b6b66204b97..5254bb762e1b 100644
->> --- a/virt/kvm/arm/vgic/vgic-its.c
->> +++ b/virt/kvm/arm/vgic/vgic-its.c
->> @@ -733,6 +733,8 @@ static int vgic_its_cmd_handle_discard(struct kvm *kvm, struct vgic_its *its,
->>  		 * don't bother here since we clear the ITTE anyway and the
->>  		 * pending state is a property of the ITTE struct.
->>  		 */
->> +		vgic_its_invalidate_cache(kvm);
->> +
->>  		its_free_ite(kvm, ite);
->>  		return 0;
->>  	}
->> @@ -768,6 +770,8 @@ static int vgic_its_cmd_handle_movi(struct kvm *kvm, struct vgic_its *its,
->>  	ite->collection = collection;
->>  	vcpu = kvm_get_vcpu(kvm, collection->target_addr);
->>  
->> +	vgic_its_invalidate_cache(kvm);
->> +
->>  	return update_affinity(ite->irq, vcpu);
->>  }
->>  
->> @@ -996,6 +1000,8 @@ static void vgic_its_free_device(struct kvm *kvm, struct its_device *device)
->>  	list_for_each_entry_safe(ite, temp, &device->itt_head, ite_list)
->>  		its_free_ite(kvm, ite);
->>  
->> +	vgic_its_invalidate_cache(kvm);
->> +
->>  	list_del(&device->dev_list);
->>  	kfree(device);
->>  }
->> @@ -1249,6 +1255,8 @@ static int vgic_its_cmd_handle_movall(struct kvm *kvm, struct vgic_its *its,
->>  		vgic_put_irq(kvm, irq);
->>  	}
->>  
->> +	vgic_its_invalidate_cache(kvm);
-> All the commands are executed with the its_lock held. Now we don't take
-> it anymore on the fast cache injection path. Don't we have a window
-> where the move has been applied at table level and the cache is not yet
-> invalidated? Same question for vgic_its_free_device().
-
-There is definitely a race, but that race is invisible from the guest's
-perspective. The guest can only assume that the command has taken effect
-once a SYNC command has been executed, and it cannot observe that the
-SYNC command has been executed before we have invalidated the cache.
-
-Does this answer your question?
-
-Thanks,
-
-	M.
--- 
-Jazz is not dead. It just smells funny...
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMTEvMDcvMjAxOSAxODoyMSwgTWFyYyBHb256YWxleiB3cm90ZToKCj4gVGhpcyBpcyBhIGZv
+bGxvdy11cCBSRkMgdG8gbXkgZmlyc3QgcmVxdWVzdCBmb3IgY29tbWVudHM6Cj4gIltSRkNdIFNX
+IGNvbm5lY3Rpb24gYmV0d2VlbiBEVkIgVHJhbnNwb3J0IFN0cmVhbSBkZW11eGVyIGFuZCBJMkMt
+YmFzZWQgZnJvbnRlbmQiCj4gaHR0cHM6Ly93d3cuc3Bpbmljcy5uZXQvbGlzdHMvYXJtLWtlcm5l
+bC9tc2c3Mzk5NzIuaHRtbAo+IAo+IEJhY2tncm91bmQ6IG15IFNvQyBwcm92aWRlcyBhICJUcmFu
+c3BvcnQgU3RyZWFtIEludGVyZmFjZSIgb24tY2hpcAo+IChmb3Igd2hpY2ggSSB3cm90ZSBhIHNt
+YWxsIGRyaXZlciwgdHNpZi5jKSBhcyB3ZWxsIGFzIGEgdHVuZXIvZGVtb2QgY29tYm8KPiAoc2ky
+MTQxL3NpMjE2OCkgb24gdGhlIGJvYXJkLgo+IAo+IE15IG9yaWdpbmFsIGdvYWwgd2FzOiBiZWlu
+ZyBhYmxlIHRvIGxpbmsgdGhlIHR1bmVyL2RlbW9kIGZyb20gdGhlIGRldmljZSB0cmVlLAo+IGlu
+c3RlYWQgb2YgaGFyZC1jb2RpbmcgdGhlbSBpbiB0aGUgVFNJRiBkcml2ZXIuCj4gCj4gKFBsZWFz
+ZSBzZWUgdGhlIHJlc3VsdGluZyBjb2RlIGF0IHRoZSBlbmQgb2YgdGhpcyBtZXNzYWdlKQoKQmVs
+b3cgaXMgYW4gYW5hbHlzaXMgb2YgdGhlIHByb3Bvc2VkIGRyaXZlciwgYWZ0ZXIgYSBmZXcgZXhj
+aGFuZ2VzIHdpdGggTWF1cm8Kb24gSVJDLgoKCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvbWVkaWEv
+cGxhdGZvcm0vdHNpZi5jIGIvZHJpdmVycy9tZWRpYS9wbGF0Zm9ybS90c2lmLmMKPiBuZXcgZmls
+ZSBtb2RlIDEwMDY0NAo+IGluZGV4IDAwMDAwMDAwMDAwMC4uYjEzNmYzMzRlOWM2Cj4gLS0tIC9k
+ZXYvbnVsbAo+ICsrKyBiL2RyaXZlcnMvbWVkaWEvcGxhdGZvcm0vdHNpZi5jCj4gQEAgLTAsMCAr
+MSwxODUgQEAKPiArI2luY2x1ZGUgPGxpbnV4L2Nsay5oPgo+ICsjaW5jbHVkZSA8bGludXgvaW50
+ZXJydXB0Lmg+Cj4gKyNpbmNsdWRlIDxsaW51eC9wbGF0Zm9ybV9kZXZpY2UuaD4KPiArI2luY2x1
+ZGUgPG1lZGlhL2R2Yl9mcm9udGVuZC5oPgo+ICsjaW5jbHVkZSA8bWVkaWEvZHZiX2RlbXV4Lmg+
+Cj4gKyNpbmNsdWRlIDxtZWRpYS9kbXhkZXYuaD4KPiArCj4gKy8qIFRTSUYgcmVnaXN0ZXIgb2Zm
+c2V0cyAqLwo+ICsjZGVmaW5lIFRTSUZfU1RTX0NUTAkweDAJLyogc3RhdHVzIGFuZCBjb250cm9s
+ICovCj4gKyNkZWZpbmUgVFNJRl9EQVRBX1BPUlQJMHgxMDAKPiArCj4gKy8qIFRTSUZfU1RTX0NU
+TCBiaXRzICovCj4gKyNkZWZpbmUgRU5BQkxFX0lSUQlCSVQoMjgpCj4gKyNkZWZpbmUgVFNJRl9T
+VE9QCUJJVCgzKQo+ICsjZGVmaW5lIFRTSUZfU1RBUlQJQklUKDApCj4gKwo+ICtzdHJ1Y3QgdHNp
+ZiB7Cj4gKwl2b2lkIF9faW9tZW0gKmJhc2U7Cj4gKwlzdHJ1Y3QgY2xrICpjbGs7Cj4gKwlpbnQg
+cmVmX2NvdW50OyAvKioqIFRPRE86IHVzZSBhdG9taWNfdCA/Pz8gb3IgcmVmY291bnRfdCA/Pz8g
+b3Iga3JlZiA/Pz8gKioqLwo+ICsJdTMyIGJ1Zls0OF07Cj4gKwlzdHJ1Y3QgZHZiX2Zyb250ZW5k
+ICpmZTsKPiArCS8qKiogRE8gSSBORUVEIEFMTCA0ICoqKi8KPiArCS8vc3RydWN0IGRteF9mcm9u
+dGVuZCBkbXhfZnJvbnRlbmQ7Cj4gKwlzdHJ1Y3QgZHZiX2FkYXB0ZXIgZHZiX2FkYXB0ZXI7Cj4g
+KwlzdHJ1Y3QgZHZiX2RlbXV4IGR2Yl9kZW11eDsKPiArCXN0cnVjdCBkbXhkZXYgZG14ZGV2Owo+
+ICt9Owo+ICsKPiArc3RhdGljIGludCBzdGFydF90c2lmKHN0cnVjdCBkdmJfZGVtdXhfZmVlZCAq
+ZmVlZCkKPiArewo+ICsJc3RydWN0IHRzaWYgKnRzaWYgPSBmZWVkLT5kZW11eC0+cHJpdjsKPiAr
+CXByaW50aygiJXM6IGZlZWQgUElEPSV1XG4iLCBfX2Z1bmNfXywgZmVlZC0+cGlkKTsKPiArCj4g
+KwlpZiAodHNpZi0+cmVmX2NvdW50KysgPT0gMCkgewo+ICsJCXUzMiB2YWwgPSBUU0lGX1NUQVJU
+IHwgRU5BQkxFX0lSUSB8IEJJVCgyOSk7Cj4gKwkJd3JpdGVsX3JlbGF4ZWQodmFsLCB0c2lmLT5i
+YXNlICsgVFNJRl9TVFNfQ1RMKTsKPiArCX0KPiArCj4gKwlyZXR1cm4gMDsKPiArfQo+ICsKPiAr
+c3RhdGljIGludCBzdG9wX3RzaWYoc3RydWN0IGR2Yl9kZW11eF9mZWVkICpmZWVkKQo+ICt7Cj4g
+KwlzdHJ1Y3QgdHNpZiAqdHNpZiA9IGZlZWQtPmRlbXV4LT5wcml2Owo+ICsJcHJpbnRrKCIlczog
+ZmVlZCBQSUQ9JXVcbiIsIF9fZnVuY19fLCBmZWVkLT5waWQpOwo+ICsKPiArCWlmICgtLXRzaWYt
+PnJlZl9jb3VudCA9PSAwKSB7Cj4gKwkJd3JpdGVsX3JlbGF4ZWQoVFNJRl9TVE9QLCB0c2lmLT5i
+YXNlICsgVFNJRl9TVFNfQ1RMKTsKPiArCX0KPiArCj4gKwlyZXR1cm4gMDsKPiArfQo+ICsKPiAr
+c3RhdGljIGlycXJldHVybl90IHRzaWZfaXNyKGludCBpcnEsIHZvaWQgKmFyZykKPiArewo+ICsJ
+aW50IGk7Cj4gKwl1MzIgc3RhdHVzOwo+ICsJc3RydWN0IHRzaWYgKnRzaWYgPSBhcmc7Cj4gKwo+
+ICsJc3RhdHVzID0gcmVhZGxfcmVsYXhlZCh0c2lmLT5iYXNlICsgVFNJRl9TVFNfQ1RMKTsKPiAr
+CXdyaXRlbF9yZWxheGVkKHN0YXR1cywgdHNpZi0+YmFzZSArIFRTSUZfU1RTX0NUTCk7Cj4gKwo+
+ICsJZm9yIChpID0gMDsgaSA8IDQ4OyArK2kpCj4gKwkJdHNpZi0+YnVmW2ldID0gcmVhZGxfcmVs
+YXhlZCh0c2lmLT5iYXNlICsgVFNJRl9EQVRBX1BPUlQpOwo+ICsKPiArCWR2Yl9kbXhfc3dmaWx0
+ZXJfcGFja2V0cygmdHNpZi0+ZHZiX2RlbXV4LCAodm9pZCAqKXRzaWYtPmJ1ZiwgMSk7Cj4gKwo+
+ICsJcmV0dXJuIElSUV9IQU5ETEVEOwo+ICt9CgpXaGF0IG1heSBub3QgYmUgYXBwYXJlbnQgaGVy
+ZSBpcyB0aGF0IChpbiB0aGlzIG1vZGUpIHRoZSBIVyBnZW5lcmF0ZXMKb25lIGludGVycnVwdCBm
+b3IgKmV2ZXJ5KiAqc2luZ2xlKiBUUyBwYWNrZXQgKGkuZS4gMTUwNCBiaXRzKS4gQW5kIGl0CmNh
+biBidWZmZXIgb25seSBhIHNpbmdsZSBwYWNrZXQuIFByZXR0eSBoYXJkIHJlYWwtdGltZSBjb25z
+dHJhaW50cy4uLgoKU2luY2UgSSdtIGRlYWxpbmcgd2l0aCAyNSBNYnBzIHN0cmVhbXMgKEZyZW5j
+aCBEVkItVDIgbXVsdGlwbGV4KQoyNSoxMGU2IC8gMTUwNCA9IDE2NjAwIHBhY2tldHMgcGVyIHNl
+Y29uZCAtLSBpLmUuIDYwIMK1cyBiZXR3ZWVuIElSUXMKCkV2ZW4gYWZ0ZXI6CgoxKSBtb3Zpbmcg
+dGhlIElTUiB0byBpdHMgb3duIGRlZGljYXRlZCBjb3JlLAoyKSBtb3ZpbmcgZHZiX2RteF9zd2Zp
+bHRlcl9wYWNrZXRzKCkgdG8gYSB3b3JrX3F1ZXVlLAozKSByZW1vdmluZyBpbnRlcnJ1cHQgbWFz
+a2luZyBmcm9tIERWQiBmdW5jdGlvbnMsCjQpIHVzaW5nIGxhcmdlIFNXIGJ1ZmZlcnMgKDEwMjQg
+VFMgcGFja2V0cykKCkkgc3RpbGwgZHJvcCBhIGZldyBwYWNrZXRzIGhlcmUgYW5kIHRoZXJlICh+
+MSBwZXIgbWludXRlKS4KCkNvbmNsdXNpb246IGl0IHNlZW1zIHRoaXMgSFcgbW9kZSBjYW5ub3Qg
+d29yayByZWxpYWJseSBvbiB0aGUgdHlwZXMKb2Ygc3RyZWFtcyBJJ20gaW50ZXJlc3RlZCBpbi4g
+VGh1cywgdGhlcmUncyBubyBwb2ludCBpbiBzdXBwb3J0aW5nIGl0CmluIHRoZSBmaW5hbCBkcml2
+ZXIuIEkgbmVlZCB0byB0ZXN0ICJhZHZhbmNlZCIgbW9kZS4KClJlZ2FyZHMuCgpfX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
+aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
+c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
