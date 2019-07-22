@@ -2,63 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D041C70319
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 17:06:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C431F7031E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 17:07:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cNtFYxnDQiTdV907MXjpI0H6oPXyXgMxPDIKtauV2pM=; b=qa/shGgyCFLVWK
-	yUWQis3x+svuYQYU+v+iDN8MUJpl65uo/dcw5UjydN5SQ8ywzVdU5UUiLr6prG7ztRMHq1CLG9m/p
-	VIZpHKoZXxVb7cOrJNUo0Jxhz474XaRl+VV2es/7XjyI12FYEr2JLvxMvLcIolCi9uAaT+vAI3OVM
-	Q/3Hnd8idwze5JmMGZKyB9iHUqUaNp3y64vsWAumLlZ7hS+pBb/GydICqPil9Iny28sRBGsCDqkZp
-	/T8KWE1rSU14Lnwkc8doz6SiIMkeBsEW6Il/2Zxfbq9eqR0Zwnu8zJZnhuqK6kGxosvcD5ZxdimJM
-	pgSH9442iMQmhmLkWaUw==;
+	List-Owner; bh=7a5zgJRc6TAZGMNZrbG12LPMyLGFfGikCoh/OW+nQHQ=; b=nr1jL/PjSYs605
+	BQoWqhjgSnrq6iJ48ZIfbfQQ//nP5nbe2gdwrgbILsp1+CHL236QLXlrBM5ewZDHFc03dpkMaLW9k
+	vjIBOuVBVS2Utsr6Wmy9HTkgB1pY92GVbTeVXm8CpWayBIRvsmTW2Eualb09OPzmDP+5RX320Oqtj
+	un3FJrco4JFA5oGL32lQpounNUnKHZroMyQ8b8yZaSOj3U8X5U0yt2643gCC3G/wuRc10ShQqa46a
+	Tify09DiY5JwThI53O7m+7fVo1GOY36Gxxk+Z3M5fzzLF/IgIJ6/M7Qc6Xiupuo++SEJFgAe5+Fqv
+	oJo7LgtkhYH8coSdCAdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpZta-0000hO-3s; Mon, 22 Jul 2019 15:06:34 +0000
+	id 1hpZul-00011w-8R; Mon, 22 Jul 2019 15:07:47 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpZtF-0000fh-B4
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 15:06:14 +0000
-Received: from mail-qk1-f177.google.com (mail-qk1-f177.google.com
- [209.85.222.177])
+ id 1hpZuW-0000xf-9H
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 15:07:33 +0000
+Received: from mail-qk1-f172.google.com (mail-qk1-f172.google.com
+ [209.85.222.172])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A220A21951
+ by mail.kernel.org (Postfix) with ESMTPSA id D3A1D21E70
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 22 Jul 2019 15:06:12 +0000 (UTC)
+ Mon, 22 Jul 2019 15:07:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563807972;
- bh=DslRK1L9TpwyVf4cAbzBfJh4gOSkPvgl9sgTHHuWCY0=;
+ s=default; t=1563808052;
+ bh=7qg0yAA920X4Ncr5Zds38mIfFS/XufCTetqYjm+mbd8=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=YsNPT2ub03cAe+/t4Hkw/FwffWy3FObHJyVkPNaRYSXCpzM+lLsJKaiUP6uqqbX9x
- z2d4+LmE4kqVOObCQZ4m5wtwx++3a8gTP/voOYwb7zHSFUYgtLYfQq3upY8aMQXq25
- fReaMSiPeWRZzmCAXZAZedttI+wQUnsGKwONPQXw=
-Received: by mail-qk1-f177.google.com with SMTP id 201so28823355qkm.9
+ b=VAhmbGpJXwgxbarsYi7Wxh0Mc10X06eDLsf4tRxwTHbu7xK1gkfD+EH8FAO0jH/IE
+ 03dKUw1TgUmfOdcxE2y/VCcIwfDOyetU1JdfMu5qHvPr9mHGcJkd2N2Dtz8GnqabYE
+ C4U9Fnn8ct2FafMKWy9Ugi0Zu/+bbv1Mb2+2/JeY=
+Received: by mail-qk1-f172.google.com with SMTP id w190so28832884qkc.6
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 22 Jul 2019 08:06:12 -0700 (PDT)
-X-Gm-Message-State: APjAAAXPklXNEex8WuX1jt+mvBUdrahtTKBAriM5StuvwbvYuMnxtu/Z
- aDFHf5h1T/MK0jNHHp0d+Zm71pLD1m3xClRKIg==
-X-Google-Smtp-Source: APXvYqymxs9AMSxKQ96kOmELJ2aKFezuLIxE38h9p+u2+IOUx4rgMIGin70TUmK0CUxwNQLOMx02aaXq7pAWqZx7voE=
+ Mon, 22 Jul 2019 08:07:31 -0700 (PDT)
+X-Gm-Message-State: APjAAAX8+qgjNXXSzOBitr0Zz49qr7UnUkMu+39AR6PrnvR7/wA9+KU/
+ IzFdvAEVwUbjtGVwUDDgtGZM5dWPV5GLlJWDUA==
+X-Google-Smtp-Source: APXvYqxwDqBafuv6UWbijjtznEpJUMlbiMB5DrW8ppb1oqirRkl8qD14ob6fueOHwQC+fNSyv4X5b2xgFyZ2BIF2RWc=
 X-Received: by 2002:a37:a48e:: with SMTP id
- n136mr48165993qke.223.1563807971861; 
- Mon, 22 Jul 2019 08:06:11 -0700 (PDT)
+ n136mr48170070qke.223.1563808051061; 
+ Mon, 22 Jul 2019 08:07:31 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190722081229.22422-1-maxime.ripard@bootlin.com>
-In-Reply-To: <20190722081229.22422-1-maxime.ripard@bootlin.com>
+ <20190722081229.22422-2-maxime.ripard@bootlin.com>
+In-Reply-To: <20190722081229.22422-2-maxime.ripard@bootlin.com>
 From: Rob Herring <robh+dt@kernel.org>
-Date: Mon, 22 Jul 2019 09:05:59 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqJyDS0eaQeUWRx3OGJfQ7+QDRwEC=fTM1MzZOOEO0h3SQ@mail.gmail.com>
-Message-ID: <CAL_JsqJyDS0eaQeUWRx3OGJfQ7+QDRwEC=fTM1MzZOOEO0h3SQ@mail.gmail.com>
-Subject: Re: [PATCH 01/11] dt-bindings: timer: Convert Allwinner A10 Timer to
- a schema
+Date: Mon, 22 Jul 2019 09:07:19 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqLBAsQKvAiwXrPdWv_fsGsocZKFO+Vhctumqtbq1TnZfA@mail.gmail.com>
+Message-ID: <CAL_JsqLBAsQKvAiwXrPdWv_fsGsocZKFO+Vhctumqtbq1TnZfA@mail.gmail.com>
+Subject: Re: [PATCH 02/11] dt-bindings: timer: Add missing compatibles
 To: Maxime Ripard <maxime.ripard@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_080613_410817_ABA632C5 
-X-CRM114-Status: GOOD (  14.29  )
+X-CRM114-CacheID: sfid-20190722_080732_347239_7A9FB28B 
+X-CRM114-Status: GOOD (  12.06  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -99,22 +99,13 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Mon, Jul 22, 2019 at 2:12 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
 >
-> The older Allwinner SoCs have a Timer supported in Linux, with a matching
-> Device Tree binding.
->
-> While the original binding only mentions one interrupt, the timer actually
-> has 6 of them.
->
-> Now that we have the DT validation in place, let's convert the device tree
-> bindings for that controller over to a YAML schemas.
+> Newer Allwinner SoCs have different number of interrupts, let's add
+> different compatibles for all of them to deal with this properly.
 >
 > Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
 > ---
->  .../timer/allwinner,sun4i-a10-timer.yaml      | 76 +++++++++++++++++++
->  .../bindings/timer/allwinner,sun4i-timer.txt  | 19 -----
->  2 files changed, 76 insertions(+), 19 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/timer/allwinner,sun4i-a10-timer.yaml
->  delete mode 100644 Documentation/devicetree/bindings/timer/allwinner,sun4i-timer.txt
+>  .../timer/allwinner,sun4i-a10-timer.yaml      | 26 +++++++++++++++++++
+>  1 file changed, 26 insertions(+)
 
 Reviewed-by: Rob Herring <robh@kernel.org>
 
