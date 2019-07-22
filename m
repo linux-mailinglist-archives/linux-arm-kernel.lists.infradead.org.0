@@ -2,83 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23C2D700EB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 15:21:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 82731700EE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 15:22:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sP+suA0o3I5Q2A4v5nZ0MnkytQdyI/PjP8DPuyj8qu8=; b=K2aJeT8GiR0EWG
-	8mLDzk0/+2cJWS4s9d1hjOSgUw5PApzZdXQIK4iWbAv/05Q96J4Z9HEESe3V49tk8828rJGvfw3Vm
-	UmWjPW5PecRx8FuoKLiQogp1OG3MlMIbZkWdLPD3lM43T5/JrtSVBavFx+CBcH+WRxZTBmTZFk3vS
-	Hf4UGvgVcf2Ur6bk8hIEc/QP5AbwQUDPqGD7iZuIDNsQ7G8slaBlASshGAoJbEzj5B07WZAJxy8FU
-	EkPHZbfXyj67V/FHUCiaVMtXDoHy0vgbeFXaGI4qXVr4RZrBDkF1JqgtXSvRgRVZJ2LTpqE/+flQB
-	Itf0v7zdrquviUlfEqTA==;
+	List-Owner; bh=s+zLgAG3opmkg+lxhlklrv7jlTqQDISmoLStCHFbAik=; b=Po87ZG1AFI/DDy
+	Z5aRIbSfxA/tzQDEC7Zb9c4EGQcF017u6KZphUcENKYKaju1F1iEpPBAK97SOeP+7PnKvQRilS5/U
+	NuEoDNAQpsMZVMX/yAMET0vwCY/4aYIaMvva45ELfH1N42XQWC4mGw4xSSCkNkz4cuAU2Ca9T+haf
+	I75kR8sN28jNZ+xTcqWcDpASueeimxsyRw63FvNkmUsJeq+bFdi/m7rtmCdQa0s5bMf7YzmEv06TZ
+	km3bISWax6kk08BEWmOtJ8zYfgyz+UOBeQrD3evzwZNw5TJIy21uPFP1E5x06dXmsbTtIrvlK2/4p
+	Wum1LwsgsCyanUYPhAfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpYG6-0007qB-HI; Mon, 22 Jul 2019 13:21:42 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1hpYGa-00084d-SK; Mon, 22 Jul 2019 13:22:12 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpYCW-0004nX-1q
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 13:18:01 +0000
-Received: by mail-wr1-x442.google.com with SMTP id r1so39383952wrl.7
+ id 1hpYCX-0004oa-1T
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 13:18:02 +0000
+Received: by mail-wr1-x443.google.com with SMTP id c2so36193235wrm.8
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 22 Jul 2019 06:17:59 -0700 (PDT)
+ Mon, 22 Jul 2019 06:18:00 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=19fYL7Z8mI6tfJg545F0VQ6RS/+NjmhdJgfi1UhO5UU=;
- b=DsDrdUquw3YNnBzyEWqWdI+Cnfy6Fuvtlxefcq7vLIqQu9bYaNFyXVPtdG0VhmtOt1
- jPjkrCH4S9jJwJIUfomAlL35Jg+buseKoulSgicwy7YtYH0aLc5gMNd5buv6y7ufo5fP
- /jM319NAu7NqGRg5qnv+LPCISXZ2vCD8SP5JNc/Gszn3x2SI0qBV2aQ4LdoM6GpHnybs
- Iy8jYLrMqWUDEOQ5miMz5tfL1PBoX9GCwLOozl9sqv7rRhgBS0BueM0N+t4lR0YqqXlo
- mbkfrhlSdzEW47X2cvAz20UX0YtCRcafjiQmVcUbseybZ7AU02C+j/4igUBBI/Gbmens
- HP7g==
+ bh=550rdQvPEpXRICt57j9lxMM5hxSHkZtM5UQc6a6drbE=;
+ b=GSo6+MOVPcgHTb7xbyvoyhWlDXlsu4/zI6ivXXcgl85lYOIGmZx2/jvT8mhZUACRiT
+ h3ZZfHoiSds/60N6vj96oXVCSZ0TOeBDEU2W78+W2lJUrIdeAfjKaGWhYKxlHciGYV03
+ gG1in5QvaGNEypqRhOBeWWr6Wbqy1bmZmm/x7BsW6PM68SeKiX4mnhADT+mmFwdxroE4
+ YsLaJJIleuAv+2C+jrQsg/Ymg8xobbI/i//FGAHpYX5re5/+4QjO9vYzT0c7L4RBaigH
+ RUks7rJF6oRgx68nqVpOmg2+EoBFQFfIPsWj4tqtbKLjCXG2mOKSjJy7VTIijAxazQDJ
+ /uIg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=19fYL7Z8mI6tfJg545F0VQ6RS/+NjmhdJgfi1UhO5UU=;
- b=dsQOGnIRQJxd6/jGE55L2ZjRbo2ntItsOCR0U8zk+qut3aKfZ/qidkUlvywVtd95K7
- 4MPi0HdSBwE0eFDnW0Yku7wi04gpfZtwEcUG2ZCVZ92i6hio+waJZbmGmKYJkeRPOxzM
- xc1whVHemVBox6C/gpt3ji8pmjU0rbrDJXOyThkL4G1nUn4PI/57m02oxvRByO2CP6C8
- w+Wbynp9r13WQgB/NqLdrWo+lCcgAUtl6KspOTJuGFfHObrH/7cO4/inM+hHlD6HGDNN
- EdiECeA5wHPd3j7OlkR8t9PvHDbAprweCbAXsXYvGSYCSbZ5ce3jpR9PcyOfzowi11Jc
- q4GQ==
-X-Gm-Message-State: APjAAAUKNrXJYrrggxvHgDZMzF9AG6+2z0MZMqjo/0LNrpdEFP2SqzqW
- IcCRVJ906HplmrXNu/uhN8VvR+SE
-X-Google-Smtp-Source: APXvYqx03dcJEB7dW7BRLPq2VnDhGkGWV+spKrTYqsXZx5pmb7YimlWrjM6/E+UJDvKDOeIoVr/LYA==
-X-Received: by 2002:adf:f348:: with SMTP id e8mr77592071wrp.76.1563801478939; 
- Mon, 22 Jul 2019 06:17:58 -0700 (PDT)
+ bh=550rdQvPEpXRICt57j9lxMM5hxSHkZtM5UQc6a6drbE=;
+ b=kbd5o4U/E3xmJLU+kCbg8ILJFfDpgQCuu/yqMw5yt1BxHuF5EG4ULJqEliqwZhfbGM
+ xGo6YIduvBPqZnCnkGEuxJEpMtOvcjN2NoyUEss9XAP3CGoyJF3YvfE3/xT7NHkMK7LQ
+ DaL1zJgZ5fAF3nhpBTm2Bo2OeTXN+Uol3+83Ay5pMJr9DLD3nL+vcAiVHjsdhyFitE1+
+ jZ98qKtdbPmG26JMrbcdbSdujW9hnmNTVNAkwGRgIIWE+HeN1n74GrS5bQqo1yxVfLle
+ w0hylZiKPikYYUwkFbeonjtrmVtFaHoqtS1K75EUsqt/dvHEP2V/Lf73wnkySOW6B4xt
+ NGgQ==
+X-Gm-Message-State: APjAAAW+1S1UWavCyDBgYtuzj1p2uqLvcd8kfjFGIUPM9y8xzu9mf9qF
+ wQFMBkpk+UrOE9tsnAglFVdFou0g
+X-Google-Smtp-Source: APXvYqzXZRF64uLK/Lk8tIovJHppdfZWIS3sBB241bHdwb7Mo3MMlQp00WuciSsyOrKeoxESAqltuA==
+X-Received: by 2002:adf:cd04:: with SMTP id w4mr24072931wrm.230.1563801479923; 
+ Mon, 22 Jul 2019 06:17:59 -0700 (PDT)
 Received: from localhost.localdomain
  (amontpellier-652-1-281-69.w109-210.abo.wanadoo.fr. [109.210.96.69])
  by smtp.gmail.com with ESMTPSA id z6sm34156657wrw.2.2019.07.22.06.17.58
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 22 Jul 2019 06:17:58 -0700 (PDT)
+ Mon, 22 Jul 2019 06:17:59 -0700 (PDT)
 From: Bartosz Golaszewski <brgl@bgdev.pl>
 To: Sekhar Nori <nsekhar@ti.com>,
 	Kevin Hilman <khilman@kernel.org>
-Subject: [RESEND PATCH 07/10] ARM: davinci: dm365: switch to using the
+Subject: [RESEND PATCH 08/10] ARM: davinci: dm644x: switch to using the
  clocksource driver
-Date: Mon, 22 Jul 2019 15:17:45 +0200
-Message-Id: <20190722131748.30319-8-brgl@bgdev.pl>
+Date: Mon, 22 Jul 2019 15:17:46 +0200
+Message-Id: <20190722131748.30319-9-brgl@bgdev.pl>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190722131748.30319-1-brgl@bgdev.pl>
 References: <20190722131748.30319-1-brgl@bgdev.pl>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_061800_566242_562C8074 
-X-CRM114-Status: GOOD (  13.41  )
+X-CRM114-CacheID: sfid-20190722_061801_236917_B3731F26 
+X-CRM114-Status: GOOD (  13.72  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -106,20 +106,20 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 
-We now have a proper clocksource driver for davinci. Switch the dm365
+We now have a proper clocksource driver for davinci. Switch the dm644x
 platform to using it.
 
 Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 Reviewed-by: David Lechner <david@lechnology.com>
 ---
- arch/arm/mach-davinci/dm365.c | 22 +++++++++++++++-------
- 1 file changed, 15 insertions(+), 7 deletions(-)
+ arch/arm/mach-davinci/dm644x.c | 24 +++++++++++++-----------
+ 1 file changed, 13 insertions(+), 11 deletions(-)
 
-diff --git a/arch/arm/mach-davinci/dm365.c b/arch/arm/mach-davinci/dm365.c
-index 8062412be70f..2299ca445c0e 100644
---- a/arch/arm/mach-davinci/dm365.c
-+++ b/arch/arm/mach-davinci/dm365.c
-@@ -35,7 +35,8 @@
+diff --git a/arch/arm/mach-davinci/dm644x.c b/arch/arm/mach-davinci/dm644x.c
+index 7a6b5a48cae5..24988939ae46 100644
+--- a/arch/arm/mach-davinci/dm644x.c
++++ b/arch/arm/mach-davinci/dm644x.c
+@@ -27,7 +27,8 @@
  #include <mach/cputype.h>
  #include <mach/mux.h>
  #include <mach/serial.h>
@@ -129,19 +129,22 @@ index 8062412be70f..2299ca445c0e 100644
  
  #include "asp.h"
  #include "davinci.h"
-@@ -660,10 +661,16 @@ static struct davinci_id dm365_ids[] = {
- 	},
+@@ -561,15 +562,15 @@ static struct davinci_id dm644x_ids[] = {
  };
  
--static struct davinci_timer_info dm365_timer_info = {
+ /*
+- * T0_BOT: Timer 0, bottom:  clockevent source for hrtimers
+- * T0_TOP: Timer 0, top   :  clocksource for generic timekeeping
+- * T1_BOT: Timer 1, bottom:  (used by DSP in TI DSPLink code)
+- * T1_TOP: Timer 1, top   :  <unused>
++ * Bottom half of timer0 is used for clockevent, top half is used for
++ * clocksource.
+  */
+-static struct davinci_timer_info dm644x_timer_info = {
 -	.timers		= davinci_timer_instance,
 -	.clockevent_id	= T0_BOT,
 -	.clocksource_id	= T0_TOP,
-+/*
-+ * Bottom half of timer0 is used for clockevent, top half is used for
-+ * clocksource.
-+ */
-+static const struct davinci_timer_cfg dm365_timer_cfg = {
++static const struct davinci_timer_cfg dm644x_timer_cfg = {
 +	.reg = DEFINE_RES_IO(DAVINCI_TIMER0_BASE, SZ_4K),
 +	.irq = {
 +		DEFINE_RES_IRQ(DAVINCI_INTC_IRQ(IRQ_TINT0_TINT12)),
@@ -149,33 +152,33 @@ index 8062412be70f..2299ca445c0e 100644
 +	},
  };
  
- #define DM365_UART1_BASE	(IO_PHYS + 0x106000)
-@@ -723,7 +730,6 @@ static const struct davinci_soc_info davinci_soc_info_dm365 = {
+ static struct plat_serial8250_port dm644x_serial0_platform_data[] = {
+@@ -647,7 +648,6 @@ static const struct davinci_soc_info davinci_soc_info_dm644x = {
  	.pinmux_base		= DAVINCI_SYSTEM_MODULE_BASE,
- 	.pinmux_pins		= dm365_pins,
- 	.pinmux_pins_num	= ARRAY_SIZE(dm365_pins),
--	.timer_info		= &dm365_timer_info,
- 	.emac_pdata		= &dm365_emac_pdata,
- 	.sram_dma		= 0x00010000,
- 	.sram_len		= SZ_32K,
-@@ -771,6 +777,7 @@ void __init dm365_init_time(void)
+ 	.pinmux_pins		= dm644x_pins,
+ 	.pinmux_pins_num	= ARRAY_SIZE(dm644x_pins),
+-	.timer_info		= &dm644x_timer_info,
+ 	.emac_pdata		= &dm644x_emac_pdata,
+ 	.sram_dma		= 0x00008000,
+ 	.sram_len		= SZ_16K,
+@@ -669,6 +669,7 @@ void __init dm644x_init_time(void)
  {
- 	void __iomem *pll1, *pll2, *psc;
+ 	void __iomem *pll1, *psc;
  	struct clk *clk;
 +	int rv;
  
- 	clk_register_fixed_rate(NULL, "ref_clk", NULL, 0, DM365_REF_FREQ);
+ 	clk_register_fixed_rate(NULL, "ref_clk", NULL, 0, DM644X_REF_FREQ);
  
-@@ -789,7 +796,8 @@ void __init dm365_init_time(void)
+@@ -684,7 +685,8 @@ void __init dm644x_init_time(void)
  		return;
  	}
  
 -	davinci_timer_init(clk);
-+	rv = davinci_timer_register(clk, &dm365_timer_cfg);
++	rv = davinci_timer_register(clk, &dm644x_timer_cfg);
 +	WARN(rv, "Unable to register the timer: %d\n", rv);
  }
  
- void __init dm365_register_clocks(void)
+ static struct resource dm644x_pll2_resources[] = {
 -- 
 2.21.0
 
