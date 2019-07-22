@@ -2,155 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 628156FD51
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 11:59:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E56E86FD55
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 12:00:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Type:In-Reply-To:References:Message-ID:Date:Subject:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=wBvKgaznm1sJf1SlfaCFfE6x9D+YSXl+i8g/IFlMXwQ=; b=iU4tzcKrc4jvMX+zb0nicCn8A
-	2t/MYDUNqvAXnDdplWK1tY2w8hBYHuQ+NkWxybSzBZGfxA2KzKKqKQPF1zy4EIFp4myy5yjnENMlm
-	5idQD0fyCopSP7YcyAKCme0oedBcNqxLPeZXev0fET7ZLNuCQ8AbzBvIdz14/yYsGgEbzqG1plN3G
-	y6E1hcDiN4OZTreswcQO7kaLrzK2mtoGQZm8I6zu8jo3Df5krSMOzwNi5nvNgCnm/59cc6+F5ISfg
-	j2ARPMxLACLiWKVPiVsTD5Sthu7lH9wOThJV9pusqwHOigh25TAZth6ZvIujDuKh+VVFBYEihT9YL
-	OsF3ZsVnw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=k3Pa4gfdArJwolMY2krA8e/whDbHzs8lBqurAaZc+uM=; b=Hz8WyLTFG09kDB
+	vwIc1ovqlaQXZHuKNqTD8w6lttl99Pt3sy771Ocz8ryrU9WmT9TuwKgqBbc2wNN6op0V/KrFOsP8i
+	J/ugk01e0Tr3YpK11E9of/3P0fDcjFdCL57W7IKFT3FO9EWy+6YUKtpelHtirzwMQgyrG3m2P4Are
+	7OnrKbajRtwff9XpW6AySzkrd9sKk1EaVXOUphGr7e7EyqjOkKeGjTjixwnl4tC4jwQa3UT2x++Ws
+	SZpERABiCV4TSYiGvUP04z/FbJGsR7r2iZrm7snEIJhJSN3JXg68ubliYtjDwkgjHR1TQuDrig71Y
+	APVHrVaUAejYHPgzNCzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpV6c-00047f-P7; Mon, 22 Jul 2019 09:59:42 +0000
-Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
- helo=smtprelay-out1.synopsys.com)
+	id 1hpV6x-0004PA-Q2; Mon, 22 Jul 2019 10:00:03 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpV4P-0002hd-Ik
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 09:57:28 +0000
-Received: from mailhost.synopsys.com (dc2-mailhost2.synopsys.com
- [10.12.135.162])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id E4CD2C015C;
- Mon, 22 Jul 2019 09:57:23 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1563789444; bh=+DBafzhXUF2nDVEfszHL5lxmgLmeaxFsgR8vljHH96E=;
- h=From:To:CC:Subject:Date:References:In-Reply-To:From;
- b=ChzHFh9ryCfHk+5M/32RdrZp+qwjRXrjOsPgnyXrtix5rCa+VJirwB5duyyaVK29Z
- NrXic925Fyf4AwjY1LSSddGe1BDVnNajiWhN5x+xgI2ICVXfrUnI8nV/sn1oxiL4EA
- lW7BkwcuRnaiePd/CsSMkUGtqipDarMuGqxRNTx94VXSRgcVgMmSs3p76e3C8D3eKV
- k6YxtJZ6cOsawsCkB5uO8gKVuL0pTGqPbizgZlYLGGtgmTJWD6TUj8b+9sGexzWL2+
- mDLoAQw8SnaCUbFpTGIlvyTm9ZwFnucu08xv5L1vIb0vpjouXeDnK0Mw9K2GpM+M9r
- 6yRBeMwSf7oSg==
-Received: from US01WEHTC2.internal.synopsys.com
- (us01wehtc2.internal.synopsys.com [10.12.239.237])
- (using TLSv1.2 with cipher AES128-SHA256 (128/128 bits))
- (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id CB96AA009B;
- Mon, 22 Jul 2019 09:57:23 +0000 (UTC)
-Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
- US01WEHTC2.internal.synopsys.com (10.12.239.237) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Mon, 22 Jul 2019 02:57:23 -0700
-Received: from NAM04-CO1-obe.outbound.protection.outlook.com (10.13.134.195)
- by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
- 14.3.408.0; Mon, 22 Jul 2019 02:57:23 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=N7werbFcK1xBa9U1+W+9ZDDkU9quuaRhVHbXLNkGzHAv5e7denPWDMzEPUbVwdweHE2sFxDeyYtmqbjpsj8ZikGsNYE06z73gAu5g9JE+dmsG4Qj5GRKXx4SDV95NAb2m618amKCJ0dky7IHZazJ4h1znnNA+mED1oUnuzarOEHqssyfcRLzKKdT/8tLsKwDtv0+EWrSNqb4Dx7h2E52/Ke43xMrgW+9DlODLkrV7j8zCG2kt2M17dPl4kogGyq6l9GmAmlv1XugCLN/+5ppKlNPHHOtu0N/tWcDb0CTDK+Em7MXLvmaz5H1N3Qb02fVpzLYic+jyNamcQWSTUV30w==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=wsdFV7UU7JfcJmjwkQsra8yUI8itg88Ug7Vp9Y0v3ZQ=;
- b=IFsjPQIg35tbKWZBsanNUNFgNWmgt0LjSOS8y1ofM+I8w+JVNya+f2lEzDFOvuLMFy6reqN3N9VuqsieQ1sJCu/Zf/OiyIPq9QBwpxIr3ZD8ZnusdQJzdmu2azTCyvECdQFrXdIs6VpXoYjjkYP2u1Wq7PEZ4kcfEA+fhTpexngjDNXZPn1AYBu8w121KnxqYgU/chdZ15mBRFChLSsbYB0vTRQ8bp1uR42GRk8K5Fl5urnXdYV5xw3E7OkFPrh3ySAQvk0EpEHKZ/8d4tjnqNU8YdE0X9+vv6LdDNJJOzjH6vPXFttYf4qyw9OYBZSF9xwjkysgw8YOS51ldaFSvA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=synopsys.com;dmarc=pass action=none
- header.from=synopsys.com;dkim=pass header.d=synopsys.com;arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=synopsys.onmicrosoft.com; s=selector1-synopsys-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=wsdFV7UU7JfcJmjwkQsra8yUI8itg88Ug7Vp9Y0v3ZQ=;
- b=GFtn3wFtIUblPiUGH6wq3nvoJtPSKayqx1ZZxXAOyR+4ccPOoT+/whDDY9PSgRn9iPidbuV//jX/7HtW3yVWPli8rtY50Ncq4cos7JoBtITvcvCpOq6P84//ppVL7aG/GUBc69vee9iHf+9b1s76yNeqxEmwXqhZYnkveYi8kn4=
-Received: from BN8PR12MB3266.namprd12.prod.outlook.com (20.179.66.159) by
- BN8PR12MB3281.namprd12.prod.outlook.com (20.179.67.150) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2094.16; Mon, 22 Jul 2019 09:57:22 +0000
-Received: from BN8PR12MB3266.namprd12.prod.outlook.com
- ([fe80::61ef:5598:59e0:fc9d]) by BN8PR12MB3266.namprd12.prod.outlook.com
- ([fe80::61ef:5598:59e0:fc9d%5]) with mapi id 15.20.2094.013; Mon, 22 Jul 2019
- 09:57:22 +0000
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-To: Jon Hunter <jonathanh@nvidia.com>, Jose Abreu <Jose.Abreu@synopsys.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>, 
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Subject: RE: [PATCH net-next 3/3] net: stmmac: Introducing support for Page
- Pool
-Thread-Topic: [PATCH net-next 3/3] net: stmmac: Introducing support for Page
- Pool
-Thread-Index: AQHVMYtq2Zx4WVoG/U2kL8GCK0bP/abPQEOAgADTx+CAABvLAIABeX5ggAAOFICAAAG4AIAAAXQAgAAaB/CAACO4AIAAAIsAgAAR0ACABE5q0IAAJe0AgAAA9wCAAANscA==
-Date: Mon, 22 Jul 2019 09:57:21 +0000
-Message-ID: <BN8PR12MB326667E86622C3ABD5CDE642D3C40@BN8PR12MB3266.namprd12.prod.outlook.com>
-References: <cover.1562149883.git.joabreu@synopsys.com>
- <1b254bb7fc6044c5e6e2fdd9e00088d1d13a808b.1562149883.git.joabreu@synopsys.com>
- <29dcc161-f7c8-026e-c3cc-5adb04df128c@nvidia.com>
- <BN8PR12MB32661E919A8DEBC7095BAA12D3C80@BN8PR12MB3266.namprd12.prod.outlook.com>
- <6a6bac84-1d29-2740-1636-d3adb26b6bcc@nvidia.com>
- <BN8PR12MB3266960A104A7CDBB4E59192D3CB0@BN8PR12MB3266.namprd12.prod.outlook.com>
- <bc9ab3c5-b1b9-26d4-7b73-01474328eafa@nvidia.com>
- <BN8PR12MB3266989D15E017A789E14282D3CB0@BN8PR12MB3266.namprd12.prod.outlook.com>
- <4db855e4-1d59-d30b-154c-e7a2aa1c9047@nvidia.com>
- <BN8PR12MB3266FD9CF18691EDEF05A4B8D3CB0@BN8PR12MB3266.namprd12.prod.outlook.com>
- <64e37224-6661-ddb0-4394-83a16e1ccb61@nvidia.com>
- <BN8PR12MB3266E1FAC5B7874EFA69DD7BD3CB0@BN8PR12MB3266.namprd12.prod.outlook.com>
- <25512348-5b98-aeb7-a6fb-f90376e66a84@nvidia.com>
- <BN8PR12MB32665C1A106D3DCBF89CEA54D3C40@BN8PR12MB3266.namprd12.prod.outlook.com>
- <49efad87-2f74-5804-af4c-33730f865c41@nvidia.com>
- <BN8PR12MB3266362102CCB6B4DDE4BEA0D3C40@BN8PR12MB3266.namprd12.prod.outlook.com>
-In-Reply-To: <BN8PR12MB3266362102CCB6B4DDE4BEA0D3C40@BN8PR12MB3266.namprd12.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: yes
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=joabreu@synopsys.com; 
-x-originating-ip: [83.174.63.141]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 57dc0178-e373-401c-6d0c-08d70e8afdaf
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(49563074)(7193020);
- SRVR:BN8PR12MB3281; 
-x-ms-traffictypediagnostic: BN8PR12MB3281:
-x-microsoft-antispam-prvs: <BN8PR12MB3281BA904642480755A553A6D3C40@BN8PR12MB3281.namprd12.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 01068D0A20
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(376002)(346002)(366004)(396003)(136003)(39860400002)(52314003)(199004)(189003)(4326008)(33656002)(99936001)(71200400001)(71190400001)(476003)(186003)(74316002)(66616009)(66476007)(66556008)(66946007)(76116006)(6436002)(5024004)(14444005)(256004)(2201001)(110136005)(64756008)(66446008)(66066001)(316002)(102836004)(25786009)(229853002)(8676002)(2501003)(53546011)(6506007)(478600001)(54906003)(52536014)(486006)(7416002)(26005)(99286004)(5660300002)(305945005)(14454004)(81166006)(7696005)(86362001)(55016002)(2906002)(81156014)(6116002)(3846002)(76176011)(9686003)(2940100002)(8936002)(6246003)(446003)(53936002)(11346002)(7736002)(68736007);
- DIR:OUT; SFP:1102; SCL:1; SRVR:BN8PR12MB3281;
- H:BN8PR12MB3266.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: synopsys.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: uG8XL+YeNAiOfeXn+SQ083MJ17eYjY1fFs8QnsAjFNKFlvYkAHVVjU8LxC+Rdus+7jddikJfUe1JQFl7I+Aqy3LXWI4Sh8Aila5IvLVdXHJ9gD9x+YSsNjiaYhf3LGhyvO3QixAYM4LpP3mhgJtuFadulxesPaLk1HN5RhOiQTYQz1JbTjOpHnMbD9bztzVkE25SutslT42jy1neHwGdExwnS5uUse8PcgI4EV9Hpdq1OlxDN98SWxUOIfeixkhcUP5sVHt7frFU5fw34vKoXtNz1NSQqL0qsibFy6qnjRDImB0SwXzHvRVax8HHcYLJyYcC3xsSphi7VQiOZ4qZRhjUcFOPMGvIgTJooY0iaw7riJD6o//ZwA4fiZI7LVd67DzeGEsnPDfoHNxDa3PXL5RUnqLFhu1KdHKvJmAd3vE=
-Content-Type: multipart/mixed;
- boundary="_002_BN8PR12MB326667E86622C3ABD5CDE642D3C40BN8PR12MB3266namp_"
+ id 1hpV4f-0002nd-3T
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 09:57:43 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:
+ Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=tQ5m2UDprMKRY1x5W1rLDOU7BxPXCW4165TN6Wpecgo=; b=y2wQkrRA2llYBYaZorJdtoIjx
+ 1CL1Rhi65cP4suUWxgsOYCXi1eYBjtZlzCfgo66KcUD3esWUWDtPpNwuaM2v8iXHDc9aGojY/QW0v
+ GvExlpFk/KUCXK0N65J0Ng1+KBfSrOfnBjjEnSJXDPg2aOvFyoRZ0UKEwrmF5dkaEmyJcyUtodaOL
+ 3GQqlkJs4w7tG+1THttsFJK3gx6mcpvmUBOBqTRsN2TqPatX6nQWcLMkNW3Z8dtDuSHVJ8T9PRpDf
+ /zraglUiBSuFDgvxYUbM6BA+oEyE994UuZ9r0g+5oWGJIagcDPg9EsR9x9EqbNeTKo2sos8YxcRhB
+ LfZmBQQ8A==;
+Received: from shell.armlinux.org.uk
+ ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:44302)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1hpV4O-0004pn-CG; Mon, 22 Jul 2019 10:57:24 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1hpV4L-0002rc-GW; Mon, 22 Jul 2019 10:57:21 +0100
+Date: Mon, 22 Jul 2019 10:57:21 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+Subject: Re: [PATCH v4 1/3] serial: imx: set_termios(): do not enable autoRTS
+ if RTS is unset
+Message-ID: <20190722095721.GB1330@shell.armlinux.org.uk>
+References: <20190614072801.3187-1-s.hauer@pengutronix.de>
+ <1563526074-20399-1-git-send-email-sorganov@gmail.com>
+ <1563526074-20399-2-git-send-email-sorganov@gmail.com>
+ <20190719091143.uhjxeibtolgswq2l@pengutronix.de>
+ <87h87idxq2.fsf@osv.gnss.ru>
+ <20190719143151.gx43ndn2oy35h247@pengutronix.de>
+ <87woge9hvz.fsf@osv.gnss.ru>
+ <20190719201949.ldqlcwjhcmt7wwhg@pengutronix.de>
+ <87ftmy8qgu.fsf@osv.gnss.ru>
+ <20190722075107.cc3tvf6gmxhaeh5m@pengutronix.de>
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 57dc0178-e373-401c-6d0c-08d70e8afdaf
-X-MS-Exchange-CrossTenant-originalarrivaltime: 22 Jul 2019 09:57:21.9573 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: joabreu@synopsys.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN8PR12MB3281
-X-OriginatorOrg: synopsys.com
+Content-Disposition: inline
+In-Reply-To: <20190722075107.cc3tvf6gmxhaeh5m@pengutronix.de>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_025725_671980_0AE2829C 
-X-CRM114-Status: GOOD (  27.27  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190722_025741_336044_122B7812 
+X-CRM114-Status: GOOD (  24.85  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -169,104 +96,139 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Joao Pinto <Joao.Pinto@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-tegra <linux-tegra@vger.kernel.org>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S . Miller" <davem@davemloft.net>
+Cc: linux-serial@vger.kernel.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Sergey Organov <sorganov@gmail.com>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---_002_BN8PR12MB326667E86622C3ABD5CDE642D3C40BN8PR12MB3266namp_
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+On Mon, Jul 22, 2019 at 09:51:07AM +0200, Uwe Kleine-K=F6nig wrote:
+> On Mon, Jul 22, 2019 at 10:42:57AM +0300, Sergey Organov wrote:
+> > Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de> writes:
+> > =
 
-RnJvbTogSm9zZSBBYnJldSA8am9hYnJldUBzeW5vcHN5cy5jb20+DQpEYXRlOiBKdWwvMjIvMjAx
-OSwgMTA6NDc6NDQgKFVUQyswMDowMCkNCg0KPiBGcm9tOiBKb24gSHVudGVyIDxqb25hdGhhbmhA
-bnZpZGlhLmNvbT4NCj4gRGF0ZTogSnVsLzIyLzIwMTksIDEwOjM3OjE4IChVVEMrMDA6MDApDQo+
-IA0KPiA+IA0KPiA+IE9uIDIyLzA3LzIwMTkgMDg6MjMsIEpvc2UgQWJyZXUgd3JvdGU6DQo+ID4g
-PiBGcm9tOiBKb24gSHVudGVyIDxqb25hdGhhbmhAbnZpZGlhLmNvbT4NCj4gPiA+IERhdGU6IEp1
-bC8xOS8yMDE5LCAxNDozNTo1MiAoVVRDKzAwOjAwKQ0KPiA+ID4gDQo+ID4gPj4NCj4gPiA+PiBP
-biAxOS8wNy8yMDE5IDEzOjMyLCBKb3NlIEFicmV1IHdyb3RlOg0KPiA+ID4+PiBGcm9tOiBKb24g
-SHVudGVyIDxqb25hdGhhbmhAbnZpZGlhLmNvbT4NCj4gPiA+Pj4gRGF0ZTogSnVsLzE5LzIwMTks
-IDEzOjMwOjEwIChVVEMrMDA6MDApDQo+ID4gPj4+DQo+ID4gPj4+PiBJIGJvb3RlZCB0aGUgYm9h
-cmQgd2l0aG91dCB1c2luZyBORlMgYW5kIHRoZW4gc3RhcnRlZCB1c2VkIGRoY2xpZW50IHRvDQo+
-ID4gPj4+PiBicmluZyB1cCB0aGUgbmV0d29yayBpbnRlcmZhY2UgYW5kIGl0IGFwcGVhcnMgdG8g
-YmUgd29ya2luZyBmaW5lLiBJIGNhbg0KPiA+ID4+Pj4gZXZlbiBtb3VudCB0aGUgTkZTIHNoYXJl
-IGZpbmUuIFNvIGl0IGRvZXMgYXBwZWFyIHRvIGJlIHBhcnRpY3VsYXIgdG8NCj4gPiA+Pj4+IHVz
-aW5nIE5GUyB0byBtb3VudCB0aGUgcm9vdGZzLg0KPiA+ID4+Pg0KPiA+ID4+PiBEYW1uLiBDYW4g
-eW91IHNlbmQgbWUgeW91ciAuY29uZmlnID8NCj4gPiA+Pg0KPiA+ID4+IFllcyBubyBwcm9ibGVt
-LiBBdHRhY2hlZC4NCj4gPiA+IA0KPiA+ID4gQ2FuIHlvdSBjb21waWxlIHlvdXIgaW1hZ2Ugd2l0
-aG91dCBtb2R1bGVzIChpLmUuIGFsbCBidWlsdC1pbikgYW5kIGxldCANCj4gPiA+IG1lIGtub3cg
-aWYgdGhlIGVycm9yIHN0aWxsIGhhcHBlbnMgPw0KPiA+IA0KPiA+IEkgc2ltcGx5IHJlbW92ZWQg
-dGhlIC9saWIvbW9kdWxlcyBkaXJlY3RvcnkgZnJvbSB0aGUgTkZTIHNoYXJlIGFuZA0KPiA+IHZl
-cmlmaWVkIHRoYXQgSSBzdGlsbCBzZWUgdGhlIHNhbWUgaXNzdWUuIFNvIGl0IGlzIG5vdCBsb2Fk
-aW5nIHRoZQ0KPiA+IG1vZHVsZXMgdGhhdCBpcyBhIHByb2JsZW0uDQo+IA0KPiBXZWxsLCBJIG1l
-YW50IHRoYXQgbG9hZGluZyBtb2R1bGVzIGNhbiBiZSBhbiBpc3N1ZSBidXQgdGhhdCdzIG5vdCB0
-aGUgDQo+IHdheSB0byB2ZXJpZnkgdGhhdC4NCj4gDQo+IFlvdSBuZWVkIHRvIGhhdmUgYWxsIG1v
-ZHVsZXMgYnVpbHQtaW4gc28gdGhhdCBpdCBwcm92ZXMgdGhhdCBubyBtb2R1bGUgDQo+IHdpbGwg
-dHJ5IHRvIGJlIGxvYWRlZC4NCj4gDQo+IEFueXdheSwgdGhpcyBpcyBwcm9iYWJseSBub3QgdGhl
-IGNhdXNlIGFzIHlvdSB3b3VsZG4ndCBldmVuIGJlIGFibGUgdG8gDQo+IGNvbXBpbGUga2VybmVs
-IGlmIHlvdSBuZWVkIGEgc3ltYm9sIGZyb20gYSBtb2R1bGUgd2l0aCBzdG1tYWMgYnVpbHQtaW4u
-IA0KPiBLY29uZmlnIHdvdWxkIGNvbXBsYWluIGFib3V0IHRoYXQuDQo+IA0KPiBUaGUgb3RoZXIg
-Y2F1c2UgY291bGQgYmUgZGF0YSBjb3JydXB0aW9uIGluIHRoZSBSWCBwYXRoLiBBcmUgeW91IGFi
-bGUgdG8gDQo+IHNlbmQgbWUgcGFja2V0IGR1bXAgYnkgcnVubmluZyB3aXJlc2hhcmsgZWl0aGVy
-IGluIHRoZSB0cmFuc21pdHRlciBzaWRlIA0KPiAoaS5lLiBORlMgc2VydmVyKSwgb3IgdXNpbmcg
-c29tZSBraW5kIG9mIHN3aXRjaCA/DQo+IA0KPiAtLS0NCj4gVGhhbmtzLA0KPiBKb3NlIE1pZ3Vl
-bCBBYnJldQ0KDQpBbHNvLCBwbGVhc2UgYWRkIGF0dGFjaGVkIHBhdGNoLiBZb3UnbGwgZ2V0IGEg
-Y29tcGlsZXIgd2FybmluZywganVzdCANCmRpc3JlZ2FyZCBpdC4NCg0KLS0tDQpUaGFua3MsDQpK
-b3NlIE1pZ3VlbCBBYnJldQ0K
+> > > On Fri, Jul 19, 2019 at 06:13:52PM +0300, Sergey Organov wrote:
+> > >> Hello Uwe,
+> > >> =
 
---_002_BN8PR12MB326667E86622C3ABD5CDE642D3C40BN8PR12MB3266namp_
-Content-Type: application/octet-stream;
-	name="0001-net-stmmac-Debug-print.patch"
-Content-Description: 0001-net-stmmac-Debug-print.patch
-Content-Disposition: attachment;
-	filename="0001-net-stmmac-Debug-print.patch"; size=1514;
-	creation-date="Mon, 22 Jul 2019 09:54:36 GMT";
-	modification-date="Mon, 22 Jul 2019 09:56:27 GMT"
-Content-Transfer-Encoding: base64
+> > >> Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de> writes:
+> > >> > Hello Sergey,
+> > >> >
+> > >> > On Fri, Jul 19, 2019 at 03:18:13PM +0300, Sergey Organov wrote:
+> > >> >> Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de> writes:
+> > >> >> > On Fri, Jul 19, 2019 at 11:47:52AM +0300, Sergey Organov wrote:
+> > >> >> >> diff --git a/drivers/tty/serial/imx.c b/drivers/tty/serial/imx=
+.c
+> > >> >> >> index 57d6e6b..95d7984 100644
+> > >> >> >> --- a/drivers/tty/serial/imx.c
+> > >> >> >> +++ b/drivers/tty/serial/imx.c
+> > >> >> >> @@ -405,7 +405,8 @@ static void imx_uart_rts_inactive(struct i=
+mx_port *sport, u32 *ucr2)
+> > >> >> >>  /* called with port.lock taken and irqs caller dependent */
+> > >> >> >>  static void imx_uart_rts_auto(struct imx_port *sport, u32 *uc=
+r2)
+> > >> >> >>  {
+> > >> >> >> -	*ucr2 |=3D UCR2_CTSC;
+> > >> >> >> +	if (*ucr2 & UCR2_CTS)
+> > >> >> >> +		*ucr2 |=3D UCR2_CTSC;
+> > >> >> >
+> > >> >> > I think this patch is wrong or the commit log is insufficient.
+> > >> >> > imx_uart_rts_auto() has only a single caller and there ucr2 & U=
+CR2_CTS is
+> > >> >> > never true. And CTSC isn't restored anywhere, is it?
+> > >> >> =
 
-RnJvbSBiNzhiZTRmMTllNTdiNmE0ZDVmNjdiZGExYzUyYzkwZjZjZDkwMWFiIE1vbiBTZXAgMTcg
-MDA6MDA6MDAgMjAwMQpNZXNzYWdlLUlkOiA8Yjc4YmU0ZjE5ZTU3YjZhNGQ1ZjY3YmRhMWM1MmM5
-MGY2Y2Q5MDFhYi4xNTYzNzg5Mzg3LmdpdC5qb2FicmV1QHN5bm9wc3lzLmNvbT4KRnJvbTogSm9z
-ZSBBYnJldSA8am9hYnJldUBzeW5vcHN5cy5jb20+CkRhdGU6IE1vbiwgMjIgSnVsIDIwMTkgMTE6
-NTI6MjggKzAyMDAKU3ViamVjdDogW1BBVENIIG5ldF0gbmV0OiBzdG1tYWM6IERlYnVnIHByaW50
-CgpTaWduZWQtb2ZmLWJ5OiBKb3NlIEFicmV1IDxqb2FicmV1QHN5bm9wc3lzLmNvbT4KCi0tLQpD
-YzogR2l1c2VwcGUgQ2F2YWxsYXJvIDxwZXBwZS5jYXZhbGxhcm9Ac3QuY29tPgpDYzogQWxleGFu
-ZHJlIFRvcmd1ZSA8YWxleGFuZHJlLnRvcmd1ZUBzdC5jb20+CkNjOiBKb3NlIEFicmV1IDxqb2Fi
-cmV1QHN5bm9wc3lzLmNvbT4KQ2M6ICJEYXZpZCBTLiBNaWxsZXIiIDxkYXZlbUBkYXZlbWxvZnQu
-bmV0PgpDYzogTWF4aW1lIENvcXVlbGluIDxtY29xdWVsaW4uc3RtMzJAZ21haWwuY29tPgpDYzog
-bmV0ZGV2QHZnZXIua2VybmVsLm9yZwpDYzogbGludXgtc3RtMzJAc3QtbWQtbWFpbG1hbi5zdG9y
-bXJlcGx5LmNvbQpDYzogbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCkNjOiBs
-aW51eC1rZXJuZWxAdmdlci5rZXJuZWwub3JnCi0tLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvc3Rt
-aWNyby9zdG1tYWMvc3RtbWFjX21haW4uYyB8IDQgKysrKwogMSBmaWxlIGNoYW5nZWQsIDQgaW5z
-ZXJ0aW9ucygrKQoKZGlmZiAtLWdpdCBhL2RyaXZlcnMvbmV0L2V0aGVybmV0L3N0bWljcm8vc3Rt
-bWFjL3N0bW1hY19tYWluLmMgYi9kcml2ZXJzL25ldC9ldGhlcm5ldC9zdG1pY3JvL3N0bW1hYy9z
-dG1tYWNfbWFpbi5jCmluZGV4IDBhYzc5ZjNlMmNlZS4uN2E2OTIwMDk4ZGQwIDEwMDY0NAotLS0g
-YS9kcml2ZXJzL25ldC9ldGhlcm5ldC9zdG1pY3JvL3N0bW1hYy9zdG1tYWNfbWFpbi5jCisrKyBi
-L2RyaXZlcnMvbmV0L2V0aGVybmV0L3N0bWljcm8vc3RtbWFjL3N0bW1hY19tYWluLmMKQEAgLTM0
-MzMsNiArMzQzMywxMCBAQCBzdGF0aWMgaW50IHN0bW1hY19yeChzdHJ1Y3Qgc3RtbWFjX3ByaXYg
-KnByaXYsIGludCBsaW1pdCwgdTMyIHF1ZXVlKQogCQkJZG1hX3N5bmNfc2luZ2xlX2Zvcl9kZXZp
-Y2UocHJpdi0+ZGV2aWNlLCBidWYtPmFkZHIsCiAJCQkJCQkgICBmcmFtZV9sZW4sIERNQV9GUk9N
-X0RFVklDRSk7CiAKKwkJCXByX2luZm8oIiVzOiBwYWRkcj0weCVsbHgsIHZhZGRyPTB4JWxseCwg
-bGVuPSVkIiwgX19mdW5jX18sCisJCQkJCWJ1Zi0+YWRkciwgcGFnZV9hZGRyZXNzKGJ1Zi0+cGFn
-ZSksCisJCQkJCWZyYW1lX2xlbik7CisKIAkJCWlmIChuZXRpZl9tc2dfcGt0ZGF0YShwcml2KSkg
-ewogCQkJCW5ldGRldl9kYmcocHJpdi0+ZGV2LCAiZnJhbWUgcmVjZWl2ZWQgKCVkYnl0ZXMpIiwK
-IAkJCQkJICAgZnJhbWVfbGVuKTsKLS0gCjIuNy40Cgo=
+> > >> >> This is rebase to 'tty-next' branch, and you need to look at it i=
+n that
+> > >> >> context. There, ucr2 & UCR2_CTS does already make sense, due to p=
+revious
+> > >> >> fix that is already there.
+> > >> >
+> > >> > I looked at 57d6e6b which is the file you patched. And there
+> > >> > imx_uart_rts_auto is only ever called with *ucr2 not having UCR2_C=
+TS.
+> > >> >
+> > >> > If you still think I'm wrong, please improve the commit log
+> > >> > accordingly.
+> > >> =
 
---_002_BN8PR12MB326667E86622C3ABD5CDE642D3C40BN8PR12MB3266namp_
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> > >> I still think you are wrong, but I don't know how to improve commit =
+log.
+> > >> =
+
+> > >> To check it once again, I just did:
+> > >> =
+
+> > >> $ git show 57d6e6b > imx.c
+> > >> =
+
+> > >> There, in imx_uart_set_termios(), I see:
+> > >> =
+
+> > >> 1569:	old_ucr2 =3D imx_uart_readl(sport, UCR2);
+> > >> 1570:	ucr2 =3D old_ucr2 & (UCR2_TXEN | UCR2_RXEN | UCR2_ATEN | UCR2_=
+CTS);
+> > >> =
+
+> > >> Here, current UCR2 value is read into 'old_ucr2' and then its /curre=
+nt/
+> > >> UCR2_CTS bit is copied into 'ucr2' (along with 3 other bits).
+> > >> =
+
+> > >> Then, later in the same function:
+> > >> =
+
+> > >> 1591:		imx_uart_rts_auto(sport, &ucr2);
+> > >> =
+
+> > >> is called that can check /current/ state of UCR2_CTS bit in '*ucr2'.
+> > >> =
+
+> > >> That's what the patch does, checks this bit.
+> > >> =
+
+> > >> Sorry, I fail to see how you came to conclusion that "*ucr2 not havi=
+ng
+> > >> UCR2_CTS". Do we maybe still read different versions of the file?
+> > >
+> > > No, it's just that I failed to see that UCR2_CTS is in the set of bits
+> > > that are retained even when looking twice :-|
+> > =
+
+> > Ah, that one... How familiar :-)
+> =
+
+> I thought again a bit over the weekend about this. I wonder if it's
+> correct to keep RTS active while going through .set_termios. Shouldn't
+> it maybe always be inactive to prevent the other side sending data while
+> we are changing the baud rate?
+
+Only if CRTSCTS is enabled, and then there are a lot of serial drivers
+to fix.
+
+However, RTS is not guaranteed to stop the remote end sending characters
+as soon as it is deasserted - 16550 relies on software noticing that
+CTS has changed, and even then it may have a FIFO full of characters
+already queued to be sent that will still be sent.
+
+So, disabling RTS just before changing the baud doesn't give any
+guarantees that a character won't be in the process of being received
+while we're changing the baud rate, which means disabling it doesn't
+actually gain us anything.
+
+-- =
+
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps =
+up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---_002_BN8PR12MB326667E86622C3ABD5CDE642D3C40BN8PR12MB3266namp_--
-
