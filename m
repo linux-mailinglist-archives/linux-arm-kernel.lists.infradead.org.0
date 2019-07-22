@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0D896FF7C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 14:23:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7DDF66FF7B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 14:23:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=7McOaZ79vqriS53ADcf7iScESRuXNHbzcwXE+QB/dk4=; b=BFP
-	0qB2ivWJdjsnQ5Wqxk7PKnBqZEHcUUtCfc6WXlfXIZ72wgUw2PRKNSHJm3QMPVSnIc9Fzge19fZlv
-	2m4FYB5mi+Aa+FgwHsD8psWBn+/oKhBJK3F7OFJnOXy/AcUR5h6+OLy7bp9uGoZTv8CoikuzFHdnu
-	hdZlKXyZFCIVk9IYVdvYkTnUfyLY3G/fFr60knWladJzDrSzoDJ+f7cwsfanrrIJ5VlL4iP/EuHkg
-	ZFG/8EGY6z4lwvD1OHfYYqt7SM0A8wvFiEPgALlLzvlNWJAOXLra0aHntVcKeF2NCkYFvuM0xb+gA
-	tpTDmLiDznFAJpeO/ve2gJYfACzPaDA==;
+	References:List-Owner; bh=zOAXHZF7Tv7XcfTACU1J97s7cFHqtXw6YA/rRc5Y03E=; b=n/V
+	uU1n3OFUKmeTzTUZ5nKaKNhMl/6vZjTVlFwoBq0wDvspEqZIGZKSRiKF7HkkFiLfl7s971PjydPuN
+	gwqwDdjc/YuZftuYvRRkCLQdRPHBvOPhYeBTzd9fk0GIwvHDkGSwNyE0FR9mecZGLBlLjY4+KCBSl
+	MdL8pgbaED7ts6EB5HCTHkx51yPvQhXxIlNqRXoa7h4dP2zdd0rpCUMHA6+NmPcvn3icGihw5qRg8
+	2uKHz7QX2Gmfyb1jGa0rcIoVpWuIZTXANqR57JLVcP7BdAzD/t09Z29ikVj1KFCtdmRcZUiMhghcF
+	vcZAfEyapwWhu+I9Ul/I/qpv0/k7bQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpXLq-000639-3V; Mon, 22 Jul 2019 12:23:34 +0000
+	id 1hpXLI-0005mt-Fm; Mon, 22 Jul 2019 12:23:00 +0000
 Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpXKa-0005kx-7l
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 12:22:17 +0000
+ id 1hpXKa-0005kz-8A; Mon, 22 Jul 2019 12:22:17 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=kFFhP1m/SJsYy3wFd8EeoLTWfc7nLb+MzjoAq1XU1bM=; b=uz9pO8Z/7NtG
- lu1qjUtfzRiNE343/nvMj2YiSSy6zYZ9lGxUygPB/XEgYeQ1W+jNARZiQ9L1/O4s7zYu7tvvKgZuR
- Jz2sa/epXyN7tE90GSdB8tSB/cQOZarY/Xc84VAiYBmSK/Rx9es3E/ivT+9LuXUal6XTd5jDLmQi4
- bNoXg=;
-Received: from ypsilon.sirena.org.uk ([2001:470:1f1d:6b5::7])
+ List-Archive; bh=+TMbBa7jX8uUjOd/fKTs9EqZROGbLGEuI+x5vkFsDS0=; b=V/2VuKZT47Kh
+ O+jYSXtZR1BrviwdbYuBXd1mQF0VUZH2JP3Z+jT3CZ6gMFbVN8syi62KcsbfETBfGrGFr2jUGdzO6
+ kvds68WwxTjwoWLNdiVLThez58ITzVgDJjsxY+OsiRtFpXmV4bbYy8bK5vliEAd2jcPd/tvavX1e3
+ ipIcE=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.org.uk>)
- id 1hpXKT-0007d4-2y; Mon, 22 Jul 2019 12:22:09 +0000
+ id 1hpXKU-0007dq-JT; Mon, 22 Jul 2019 12:22:10 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 514A1274046A; Mon, 22 Jul 2019 13:22:08 +0100 (BST)
+ id 1A0462740463; Mon, 22 Jul 2019 13:22:10 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
-To: Hariprasad Kelam <hariprasad.kelam@gmail.com>
-Subject: Applied "sound: soc: bcm: cygnus-pcm: Unneeded variable: "ret"." to
- the asoc tree
-In-Reply-To: <20190709184236.GA7873@hari-Inspiron-1545>
+To: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Subject: Applied "SoC: rockchip: rockchip_max98090: Enable MICBIAS for headset
+ keypress detection" to the asoc tree
+In-Reply-To: <20190719173929.24065-1-enric.balletbo@collabora.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20190722122208.514A1274046A@ypsilon.sirena.org.uk>
-Date: Mon, 22 Jul 2019 13:22:08 +0100 (BST)
+Message-Id: <20190722122210.1A0462740463@ypsilon.sirena.org.uk>
+Date: Mon, 22 Jul 2019 13:22:10 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_052216_298919_68E725B0 
-X-CRM114-Status: GOOD (  15.50  )
+X-CRM114-CacheID: sfid-20190722_052216_296610_74DC8D79 
+X-CRM114-Status: GOOD (  16.76  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -77,11 +77,12 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, Scott Branden <sbranden@broadcom.com>,
- Ray Jui <rjui@broadcom.com>, Takashi Iwai <tiwai@suse.com>,
- linux-kernel@vger.kernel.org, Liam Girdwood <lgirdwood@gmail.com>,
- Mark Brown <broonie@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- Jaroslav Kysela <perex@perex.cz>, linux-arm-kernel@lists.infradead.org
+Cc: alsa-devel@alsa-project.org, Heiko Stuebner <heiko@sntech.de>,
+ Liam Girdwood <lgirdwood@gmail.com>, linux-kernel@vger.kernel.org,
+ Takashi Iwai <tiwai@suse.com>, dianders@chromium.org,
+ Jaroslav Kysela <perex@perex.cz>, linux-rockchip@lists.infradead.org,
+ Mark Brown <broonie@kernel.org>, Collabora Kernel ML <kernel@collabora.com>,
+ linux-arm-kernel@lists.infradead.org, cychiang@chromium.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -90,11 +91,11 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   sound: soc: bcm: cygnus-pcm: Unneeded variable: "ret".
+   SoC: rockchip: rockchip_max98090: Enable MICBIAS for headset keypress detection
 
 has been applied to the asoc tree at
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.4
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.3
 
 All being well this means that it will be integrated into the linux-next
 tree (usually sometime in the next 24 hours) and sent to Linus during
@@ -115,66 +116,92 @@ to this mail.
 Thanks,
 Mark
 
-From a08c1037c2c04bd0ba691c109e3af51817707fe0 Mon Sep 17 00:00:00 2001
-From: Hariprasad Kelam <hariprasad.kelam@gmail.com>
-Date: Wed, 10 Jul 2019 00:12:37 +0530
-Subject: [PATCH] sound: soc: bcm: cygnus-pcm: Unneeded variable: "ret".
+From f86621cd6c6f54edfdd62da347b2bbb8d7fddc8d Mon Sep 17 00:00:00 2001
+From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Date: Fri, 19 Jul 2019 19:39:29 +0200
+Subject: [PATCH] SoC: rockchip: rockchip_max98090: Enable MICBIAS for headset
+ keypress detection
 
-This patch fixes below issues reported by coccicheck
+The TS3A227E says that the headset keypress detection needs the MICBIAS
+power in order to report the key events to ensure proper operation
+The headset keypress detection needs the MICBIAS power in order to report
+the key events all the time as long as MIC is present. So MICBIAS pin
+is forced on when a MICROPHONE is detected.
 
-sound/soc/bcm/cygnus-pcm.c:642:5-8: Unneeded variable: "ret". Return "0"
-on line 650
-sound/soc/bcm/cygnus-pcm.c:671:5-8: Unneeded variable: "ret". Return "0"
-on line 696
+On Veyron Minnie I observed that if the MICBIAS power is not present and
+the key press detection is activated (just because it is enabled when you
+insert a headset), it randomly reports a keypress on insert.
+E.g. (KEY_PLAYPAUSE)
 
-We cannot change return type of these functions as they are callback
-functions of snd_pcm_ops
+ Event: (SW_HEADPHONE_INSERT), value 1
+ Event: (SW_MICROPHONE_INSERT), value 1
+ Event: -------------- SYN_REPORT ------------
+ Event: (KEY_PLAYPAUSE), value 1
 
-Signed-off-by: Hariprasad Kelam <hariprasad.kelam@gmail.com>
-Link: https://lore.kernel.org/r/20190709184236.GA7873@hari-Inspiron-1545
+Userspace thinks that KEY_PLAYPAUSE is pressed and produces the annoying
+effect that the media player starts a play/pause loop.
+
+Note that, although most of the time the key reported is the one
+associated with BTN_0, not always this is true. On my tests I also saw
+different keys reported
+
+Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Link: https://lore.kernel.org/r/20190719173929.24065-1-enric.balletbo@collabora.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- sound/soc/bcm/cygnus-pcm.c | 6 ++----
- 1 file changed, 2 insertions(+), 4 deletions(-)
+ sound/soc/rockchip/rockchip_max98090.c | 32 ++++++++++++++++++++++++++
+ 1 file changed, 32 insertions(+)
 
-diff --git a/sound/soc/bcm/cygnus-pcm.c b/sound/soc/bcm/cygnus-pcm.c
-index 123ecf5479d7..8966b02844dc 100644
---- a/sound/soc/bcm/cygnus-pcm.c
-+++ b/sound/soc/bcm/cygnus-pcm.c
-@@ -639,7 +639,6 @@ static int cygnus_pcm_hw_params(struct snd_pcm_substream *substream,
- 	struct snd_soc_pcm_runtime *rtd = substream->private_data;
- 	struct snd_pcm_runtime *runtime = substream->runtime;
- 	struct cygnus_aio_port *aio;
--	int ret = 0;
+diff --git a/sound/soc/rockchip/rockchip_max98090.c b/sound/soc/rockchip/rockchip_max98090.c
+index c5fc24675a33..782e534d4c0d 100644
+--- a/sound/soc/rockchip/rockchip_max98090.c
++++ b/sound/soc/rockchip/rockchip_max98090.c
+@@ -61,6 +61,37 @@ static const struct snd_kcontrol_new rk_mc_controls[] = {
+ 	SOC_DAPM_PIN_SWITCH("Speaker"),
+ };
  
- 	aio = cygnus_dai_get_dma_data(substream);
- 	dev_dbg(rtd->cpu_dai->dev, "%s  port %d\n", __func__, aio->portnum);
-@@ -647,7 +646,7 @@ static int cygnus_pcm_hw_params(struct snd_pcm_substream *substream,
- 	snd_pcm_set_runtime_buffer(substream, &substream->dma_buffer);
- 	runtime->dma_bytes = params_buffer_bytes(params);
- 
--	return ret;
++static int rk_jack_event(struct notifier_block *nb, unsigned long event,
++			 void *data)
++{
++	struct snd_soc_jack *jack = (struct snd_soc_jack *)data;
++	struct snd_soc_dapm_context *dapm = &jack->card->dapm;
++
++	if (event & SND_JACK_MICROPHONE)
++		snd_soc_dapm_force_enable_pin(dapm, "MICBIAS");
++	else
++		snd_soc_dapm_disable_pin(dapm, "MICBIAS");
++
++	snd_soc_dapm_sync(dapm);
++
 +	return 0;
- }
- 
- static int cygnus_pcm_hw_free(struct snd_pcm_substream *substream)
-@@ -668,7 +667,6 @@ static int cygnus_pcm_prepare(struct snd_pcm_substream *substream)
- 	struct snd_pcm_runtime *runtime = substream->runtime;
- 	struct cygnus_aio_port *aio;
- 	unsigned long bufsize, periodsize;
--	int ret = 0;
- 	bool is_play;
- 	u32 start;
- 	struct ringbuf_regs *p_rbuf = NULL;
-@@ -693,7 +691,7 @@ static int cygnus_pcm_prepare(struct snd_pcm_substream *substream)
- 	ringbuf_set_initial(aio->cygaud->audio, p_rbuf, is_play, start,
- 				periodsize, bufsize);
- 
--	return ret;
++}
++
++static struct notifier_block rk_jack_nb = {
++	.notifier_call = rk_jack_event,
++};
++
++static int rk_init(struct snd_soc_pcm_runtime *runtime)
++{
++	/*
++	 * The jack has already been created in the rk_98090_headset_init()
++	 * function.
++	 */
++	snd_soc_jack_notifier_register(&headset_jack, &rk_jack_nb);
++
 +	return 0;
- }
- 
- static snd_pcm_uframes_t cygnus_pcm_pointer(struct snd_pcm_substream *substream)
++}
++
+ static int rk_aif1_hw_params(struct snd_pcm_substream *substream,
+ 			     struct snd_pcm_hw_params *params)
+ {
+@@ -119,6 +150,7 @@ SND_SOC_DAILINK_DEFS(hifi,
+ static struct snd_soc_dai_link rk_dailink = {
+ 	.name = "max98090",
+ 	.stream_name = "Audio",
++	.init = rk_init,
+ 	.ops = &rk_aif1_ops,
+ 	/* set max98090 as slave */
+ 	.dai_fmt = SND_SOC_DAIFMT_I2S | SND_SOC_DAIFMT_NB_NF |
 -- 
 2.20.1
 
