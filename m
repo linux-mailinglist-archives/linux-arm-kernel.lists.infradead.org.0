@@ -2,154 +2,141 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 39DA26FA49
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 09:24:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 416186FA45
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 09:23:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X8ITOuVyXssbObxNWguNVNp0s3o5AyNJhl4nZe4WFkE=; b=GKghQZ9Wp7/mIX
-	c3hRNR8P/vOm8pSXLQwn3+UKup3fn9gRJht4ywZdTTq0GWaGyr5r5XIrqYD3M848tvMg8u7wATgLo
-	5ULT6/F5fqAg3gol/1wSkSWZT1yHTg2HTg8TLYyg0tdnJrl4U84iLt+wce3KPLJITK+xrBupR3E2Z
-	4GqZcRlQdcMaK8/4Jokd6fbrv3kyZlyMVcEArX4eDXteifW6drX+vNSdEnCuSQztoTeSCHab9V9a3
-	pWRzMa7g1I73LRG0EwZJG8WLZ5DrZMidO+5wO7iSPRFeAXxwoAj+tQrfgPYI4ZIknbzM0iVuPYFDj
-	/C9ZdZUY+WRqXVki8/gg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2r7ygCIXBXDWm34wM46RwS04PzjdVu+4gDb721HgyOI=; b=X5wW0kpNiQdUAa
+	FczWmznZ0kdsbxkLDXgrvdsv2VzBFHin4EvlHQ259+nIwIkKLFzHTV9FcghJevRD604w1gK4ycFyZ
+	Pi+tWahelW/zsEtsdOHzoKqGwHOjfP0tky45q0HzxehMBGJunszpBv/iNQGJgJBO7+IMQgAkXK0tZ
+	Dl/Fgreh7CBEWhMNp5HNIvJzSmwiQY294EqsNgcfmXCMC58Q0Moo1Vj7mH8/tS5xo6J1gIt9o6NwU
+	tgzuZco23qd2s9ltIzFNhO39Dt2hBINwk4VOwKeNOtP2lqQfjcIXjPiyGWLvCMGRzSNN0jvrxl3IV
+	pZEoccXQ67wK97ryLR5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpSgB-0007si-6k; Mon, 22 Jul 2019 07:24:15 +0000
-Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
- helo=smtprelay-out1.synopsys.com)
+	id 1hpSfr-0007eZ-4g; Mon, 22 Jul 2019 07:23:55 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpSfU-0007cc-3o
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 07:23:33 +0000
-Received: from mailhost.synopsys.com (dc8-mailhost2.synopsys.com
- [10.13.135.210])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 9A2C3C015E;
- Mon, 22 Jul 2019 07:23:22 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1563780208; bh=ZDI13eRLks5BhdqdBMUPilHlm2dHvKCGDWuFYoI5+kI=;
- h=From:To:CC:Subject:Date:References:In-Reply-To:From;
- b=WdEYAW8yFCqa52V5gkcGraoqvr0HYJy59fUAOVxX6fesqtHac3EPUB6VCQ29Fo/8z
- hQNkCzgxPo67bYW5AEMZ+bqPJJvq/B1s56sw8XUALA1t14zBSlNlMURIcr0hQkwe4J
- rvXy46jlLuy4sDvgEKURVlkCAZU2iiZPfjDjz7YpSvhrnp4FwVnMB5PJx5GkPoVDh7
- 8k4dGbMmk9LKPZxH6zQytfKHsaX3RWWi4BCuX3up6u9IDDh4TgqquhDG03d0vpT//V
- XnzYWlppwK99Ay29xbQRMRzG2MP6cV6i4bQcpYYfkWx2l1eNJ0eUo6XouHn7p1F7xt
- LYm2+JGpSsEoA==
-Received: from us01wehtc1.internal.synopsys.com
- (us01wehtc1-vip.internal.synopsys.com [10.12.239.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
- (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id D733CA00CE;
- Mon, 22 Jul 2019 07:23:20 +0000 (UTC)
-Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
- us01wehtc1.internal.synopsys.com (10.12.239.235) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Mon, 22 Jul 2019 00:23:11 -0700
-Received: from NAM01-BY2-obe.outbound.protection.outlook.com (10.13.134.195)
- by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
- 14.3.408.0; Mon, 22 Jul 2019 00:23:10 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=YqOYpwj8Qj5fwp8U4Qi2rKs/z2Z2m4wZedefMLt1fcA8sXPacM2fc9ZdubrkVv3k3vzYb+FGvOG6a/RgnHcthXYYbPIMo3mCNQKdjGpfj/tfk1ivpbw9tDGDNx8hIbvTmZn/70WLVD0eUIZSp+K/3UYyhgTTV0o1p13p937JeSNE86LVTmam1bztT7BHOkMCRJIBu666Jtmmt/b1OPjGWxWWvYRrxUlGPv7JsBEBKkVVoVJvSRQHdwDQJFHhyqWbB75TudhclzIPRVQxO/fpdPAw5NssLHFEH9TXYwF0iZYR90Q8u/3sZZvpuneaRcW7lZs3wfL+DmFjpa8bn2KK0Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ZDI13eRLks5BhdqdBMUPilHlm2dHvKCGDWuFYoI5+kI=;
- b=TuueUv5EpHoCYhpdiyOEl4ZTAAbRlJ8XYjUwhw89epDWHTu5JJJe/TNuP2p/ToNIHfS/ZWp1L+268KOy7Xq3tRN6pXkblgo7DM5KEfsZfAIwuhbKv93MDkHTy7H+fbs3+GJrkvm1ariJlaqw9BUXLrBRhVqDD5RmHbKcvZrvnEe8r9Yzi+Ia9kwFUXxhjfL5UfdB5PV6+iCUNbH+IgJjrBMIVO6kHzF0adcmqgrWgeCmUJz7wXVkKzWwVRwNzwSPFR7FY4l0/RouEJte1Qwj40wDV9zY+e41gAtoQNkoJIW7P4pSIj3XVYd7tZ/lfjYp4RuFY2rdefHzcU0TbQKl4Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=synopsys.com;dmarc=pass action=none
- header.from=synopsys.com;dkim=pass header.d=synopsys.com;arc=none
+ id 1hpSfH-0007Us-7a
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 07:23:22 +0000
+Received: by mail-wm1-x342.google.com with SMTP id s15so12826541wmj.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 22 Jul 2019 00:23:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=synopsys.onmicrosoft.com; s=selector1-synopsys-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ZDI13eRLks5BhdqdBMUPilHlm2dHvKCGDWuFYoI5+kI=;
- b=uw6JUkIurOIkbZRUMX03yDqilJalguCOhTAi4paXUCOZ2eUUGc2rrlNLJpquEZhRzgpT3rgIz5NzZbzMAUAFll7DG+q64wUJeeyYIWx+BHaIZOVKvEy5bE2ALNJdYNMaMwm/SXQIJrg4g5xKTG38cAOlL232SzTlo0Rn2ACV2ng=
-Received: from BN8PR12MB3266.namprd12.prod.outlook.com (20.179.66.159) by
- BN8PR12MB3347.namprd12.prod.outlook.com (20.178.210.224) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2094.16; Mon, 22 Jul 2019 07:23:09 +0000
-Received: from BN8PR12MB3266.namprd12.prod.outlook.com
- ([fe80::61ef:5598:59e0:fc9d]) by BN8PR12MB3266.namprd12.prod.outlook.com
- ([fe80::61ef:5598:59e0:fc9d%5]) with mapi id 15.20.2094.013; Mon, 22 Jul 2019
- 07:23:09 +0000
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-To: Jon Hunter <jonathanh@nvidia.com>, Jose Abreu <Jose.Abreu@synopsys.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>, 
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Subject: RE: [PATCH net-next 3/3] net: stmmac: Introducing support for Page
- Pool
-Thread-Topic: [PATCH net-next 3/3] net: stmmac: Introducing support for Page
- Pool
-Thread-Index: AQHVMYtq2Zx4WVoG/U2kL8GCK0bP/abPQEOAgADTx+CAABvLAIABeX5ggAAOFICAAAG4AIAAAXQAgAAaB/CAACO4AIAAAIsAgAAR0ACABE5q0A==
-Date: Mon, 22 Jul 2019 07:23:08 +0000
-Message-ID: <BN8PR12MB32665C1A106D3DCBF89CEA54D3C40@BN8PR12MB3266.namprd12.prod.outlook.com>
-References: <cover.1562149883.git.joabreu@synopsys.com>
- <1b254bb7fc6044c5e6e2fdd9e00088d1d13a808b.1562149883.git.joabreu@synopsys.com>
- <29dcc161-f7c8-026e-c3cc-5adb04df128c@nvidia.com>
- <BN8PR12MB32661E919A8DEBC7095BAA12D3C80@BN8PR12MB3266.namprd12.prod.outlook.com>
- <6a6bac84-1d29-2740-1636-d3adb26b6bcc@nvidia.com>
- <BN8PR12MB3266960A104A7CDBB4E59192D3CB0@BN8PR12MB3266.namprd12.prod.outlook.com>
- <bc9ab3c5-b1b9-26d4-7b73-01474328eafa@nvidia.com>
- <BN8PR12MB3266989D15E017A789E14282D3CB0@BN8PR12MB3266.namprd12.prod.outlook.com>
- <4db855e4-1d59-d30b-154c-e7a2aa1c9047@nvidia.com>
- <BN8PR12MB3266FD9CF18691EDEF05A4B8D3CB0@BN8PR12MB3266.namprd12.prod.outlook.com>
- <64e37224-6661-ddb0-4394-83a16e1ccb61@nvidia.com>
- <BN8PR12MB3266E1FAC5B7874EFA69DD7BD3CB0@BN8PR12MB3266.namprd12.prod.outlook.com>
- <25512348-5b98-aeb7-a6fb-f90376e66a84@nvidia.com>
-In-Reply-To: <25512348-5b98-aeb7-a6fb-f90376e66a84@nvidia.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=joabreu@synopsys.com; 
-x-originating-ip: [83.174.63.141]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 1fa84088-1c66-47b8-72f4-08d70e757288
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:BN8PR12MB3347; 
-x-ms-traffictypediagnostic: BN8PR12MB3347:
-x-microsoft-antispam-prvs: <BN8PR12MB3347C98045C2B45C76C3A2ABD3C40@BN8PR12MB3347.namprd12.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6790;
-x-forefront-prvs: 01068D0A20
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(39850400004)(396003)(366004)(136003)(346002)(376002)(189003)(199004)(6506007)(53546011)(102836004)(186003)(305945005)(7736002)(99286004)(4744005)(25786009)(74316002)(2501003)(53936002)(33656002)(7696005)(8676002)(71200400001)(71190400001)(478600001)(2201001)(26005)(6246003)(229853002)(55016002)(76176011)(4326008)(9686003)(446003)(256004)(52536014)(66066001)(8936002)(14454004)(2906002)(66476007)(66556008)(64756008)(66446008)(6436002)(476003)(86362001)(11346002)(81166006)(81156014)(316002)(486006)(5660300002)(7416002)(3846002)(76116006)(66946007)(68736007)(6116002)(5024004)(54906003)(110136005);
- DIR:OUT; SFP:1102; SCL:1; SRVR:BN8PR12MB3347;
- H:BN8PR12MB3266.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: synopsys.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: pPzcdhVJokCMzQdj+1o8nrxr2bJ19r3LngJf+/CfUHdU9D69r4Iqv70CZcTUAU4HCryIJuSDOX3q2V4KDbMIq5obhU5c94cRGZOmfH+a4YSr4fjexYBcM9aJDCP3170aLhnuSQ8ai8E6soDNKlHXINdrF1Jp/6fXekNOV9txwlFhTmgz47DhIkVL7oTDTo8ink/PVQbQxwtE1IlDXNGAlwU3YMz1CzIGMaPIWFMsR/+fiXM8xgP68tDSlTyOv3E9+T87M+st14hzojuywfd3+4qT+QfHxV3OD++qRQDNGk259Z/XGFzUwJF5um7OCTwW4st+prctGLmyp6bwSpHPsgVyl/DdG0a0dZftKZlvFbTiGp3d6HVj1diltFUiWRpnlXa9O0ZsWIZTtOavH5e8RByu5rjNUyRvkX2DxCBmCho=
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:openpgp:autocrypt:organization
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=LD9GCw1eG9QEzwE6oFNEQIzVZACLaoYqLB+k/zbJCdM=;
+ b=F74SsFtcbnsipPjtAFo3nZeUH6oXlGCJDRP0xnmIpynir4g/z65Znh/Rxdd2tc3lki
+ wx0RAIVfTJIsG7ZTIfRtu2bdYa+BCBHz3OVhl8COPy1j3OnmhfseibhuazJJnFwc4sMn
+ PLrUS0kTR6HsNoSyBW3EEOG4Pfl0FhLObowRIh1kbW+zfjWnouJe1brgMeHF/LWG+Ncr
+ NHoZ233iLFrxLCi//oLTNEjrGvo+2+wva77zg9rRZjTwCqO2VULUGR53ys5IKvj31ey9
+ mdRsjJpQ8bQsS7Sc80nE9tMeweKFjVNI19QKv9GeLPDowm9rs3BZRoBwRngv6pEh3p4t
+ 2g5w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ :organization:message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=LD9GCw1eG9QEzwE6oFNEQIzVZACLaoYqLB+k/zbJCdM=;
+ b=ExjdGkF9/V2kouVGG7bpp6DkiWMX97UjTECg6dLSgU8JX77t6zj/0BMxB/IdpQ2qIA
+ oll0WassUA/yj7UFrRyFW322++pnoswtPTKjQZuaU0nkl7DYm0jaxlciGObXpgQw9PRX
+ g+ViHmMCYow280V4n3dmwjYixoW4Q6CUeMmSd8bHY4e89N1w7kWqBCEv2Qim0+YHwFLl
+ T3k9AB/ZcHQmkxRjF6xCfHzWsho2XCUK2wyerURgZ6klhM1TuHe0KRlHRDRGQtZ5IUiW
+ HUJwxr9AiN65rWnY2OqI8MiP1rmzFM6hDo7K0csg2BZfJZ9xEKUuf9AaxnIzRVzXLPWV
+ +t4A==
+X-Gm-Message-State: APjAAAUUlmuT7ZiSA09OixJ90QcI0xtoazxTzGaJ7w2iGxODiR7RHC2n
+ VHqpVX1dUmxD9P3DMoOl11a8dNsEq+M=
+X-Google-Smtp-Source: APXvYqzfS7FtcRA+07esTVYwytBlm7aKVdZY4D+n+4hAm1mqPLE6MFCdAZwiJjT7e6DFVVuG48UgJg==
+X-Received: by 2002:a1c:7f57:: with SMTP id a84mr60819167wmd.3.1563780197608; 
+ Mon, 22 Jul 2019 00:23:17 -0700 (PDT)
+Received: from [192.168.1.62] (176-150-251-154.abo.bbox.fr. [176.150.251.154])
+ by smtp.gmail.com with ESMTPSA id
+ s10sm50309877wmf.8.2019.07.22.00.23.16
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 22 Jul 2019 00:23:17 -0700 (PDT)
+Subject: Re: [PATCH 06/12] mmc: meson-mx-sdio: Fix misuse of GENMASK macro
+To: Joe Perches <joe@perches.com>, Andrew Morton <akpm@linux-foundation.org>, 
+ Kevin Hilman <khilman@baylibre.com>
+References: <cover.1562734889.git.joe@perches.com>
+ <94dcbeb13b08a67ae9f404aa590c1c1459bc5287.1562734889.git.joe@perches.com>
+From: Neil Armstrong <narmstrong@baylibre.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
+ 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
+ ZaTUOEkgIor5losDrePdPgE=
+Organization: Baylibre
+Message-ID: <abf1a3b1-d221-6ad5-bdd1-98d7d1eefe83@baylibre.com>
+Date: Mon, 22 Jul 2019 09:23:16 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1fa84088-1c66-47b8-72f4-08d70e757288
-X-MS-Exchange-CrossTenant-originalarrivaltime: 22 Jul 2019 07:23:09.0282 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: joabreu@synopsys.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN8PR12MB3347
-X-OriginatorOrg: synopsys.com
+In-Reply-To: <94dcbeb13b08a67ae9f404aa590c1c1459bc5287.1562734889.git.joe@perches.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_002332_285736_BE99C50A 
-X-CRM114-Status: GOOD (  13.83  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190722_002319_646880_16A65B24 
+X-CRM114-Status: GOOD (  15.54  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -164,41 +151,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Joao Pinto <Joao.Pinto@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-tegra <linux-tegra@vger.kernel.org>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S . Miller" <davem@davemloft.net>
+Cc: linux-amlogic@lists.infradead.org, Ulf Hansson <ulf.hansson@linaro.org>,
+ linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jon Hunter <jonathanh@nvidia.com>
-Date: Jul/19/2019, 14:35:52 (UTC+00:00)
-
+On 10/07/2019 07:04, Joe Perches wrote:
+> Arguments are supposed to be ordered high then low.
 > 
-> On 19/07/2019 13:32, Jose Abreu wrote:
-> > From: Jon Hunter <jonathanh@nvidia.com>
-> > Date: Jul/19/2019, 13:30:10 (UTC+00:00)
-> > 
-> >> I booted the board without using NFS and then started used dhclient to
-> >> bring up the network interface and it appears to be working fine. I can
-> >> even mount the NFS share fine. So it does appear to be particular to
-> >> using NFS to mount the rootfs.
-> > 
-> > Damn. Can you send me your .config ?
+> Signed-off-by: Joe Perches <joe@perches.com>
+> ---
+>  drivers/mmc/host/meson-mx-sdio.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> Yes no problem. Attached.
+> diff --git a/drivers/mmc/host/meson-mx-sdio.c b/drivers/mmc/host/meson-mx-sdio.c
+> index 2d736e416775..ba9a63db73da 100644
+> --- a/drivers/mmc/host/meson-mx-sdio.c
+> +++ b/drivers/mmc/host/meson-mx-sdio.c
+> @@ -73,7 +73,7 @@
+>  	#define MESON_MX_SDIO_IRQC_IF_CONFIG_MASK		GENMASK(7, 6)
+>  	#define MESON_MX_SDIO_IRQC_FORCE_DATA_CLK		BIT(8)
+>  	#define MESON_MX_SDIO_IRQC_FORCE_DATA_CMD		BIT(9)
+> -	#define MESON_MX_SDIO_IRQC_FORCE_DATA_DAT_MASK		GENMASK(10, 13)
+> +	#define MESON_MX_SDIO_IRQC_FORCE_DATA_DAT_MASK		GENMASK(13, 10)
+>  	#define MESON_MX_SDIO_IRQC_SOFT_RESET			BIT(15)
+>  	#define MESON_MX_SDIO_IRQC_FORCE_HALT			BIT(30)
+>  	#define MESON_MX_SDIO_IRQC_HALT_HOLE			BIT(31)
+> 
 
-Can you compile your image without modules (i.e. all built-in) and let 
-me know if the error still happens ?
+Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
 
----
-Thanks,
-Jose Miguel Abreu
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
