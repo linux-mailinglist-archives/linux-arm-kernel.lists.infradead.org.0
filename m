@@ -2,72 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A97786FAB1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 09:50:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4CB006FAB7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 22 Jul 2019 09:50:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vGxMFniFzZn1v/5OWwFak55jDQfHWDaPSnYqYpjRrBw=; b=qYxdoWYK6b1qJQ
-	/VReL7HlOw6fCNu7MWDlWHLgRHxmOybZMrPsnpCgxQsTlyZvjGE+9gbWfo30oHdfE0N/2MP4bb+WU
-	3cZ74ue69rxuX3lUI074//VSuf+wgzsNvI+4zUDmEVertFyZoJpcunkj2PeSaqL48rDcP/0Wq/szN
-	VLfollsTWitnvv3wUA8YcEWuWGnPTcAXzOCXPPf4mzGUhDqnpFEhRRbarPytLqCKGSLRz6b13nZIF
-	LIzfCPcFyL7m3/z1qIX8GqD/ptjR8qsLqv36JYKX3rg/ouXsM7UZeNegYGDe0cwIyUEfBH7uDt8JB
-	oDnwihI2+JeYckUqpmaA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Sx83ltD/z/JC6Ia150U9GfGCVV+7OYtxRTAm86Z3tls=; b=MMDWbiwSjnx8zUPN56R2vIcKe
+	PjgHWF1q63nq/6r6s0q2vy76EypH+7UP2t6ROMhvDZNgj7b7PA3xGx0dKJRXrTCMXjBUVe0xuOIGW
+	qZ28eH7OJOjgiybgHX00HXGhExgPqKvYS0J1kGM2jKCjcnebjfaXGrDa2Gl0oReUm+QHEn25RAQRs
+	nWaxRR8YucTn8xdDngOdvOw0Fs4Fk+A4dMFj8GXPnta5f0FAnO75mwDkD3Yf8QTRyouRK6Z2SQeMb
+	kXG/jOlQrQ+ZnAd/zhA/yp7K67o91GPbNamGfUQPbfHnPqSk9LCNFrMKzAdSW+Cll8jAsBS4x98G0
+	KF+nAXSsg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpT5F-0001E6-2A; Mon, 22 Jul 2019 07:50:09 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hpT5x-0002kA-Sk; Mon, 22 Jul 2019 07:50:54 +0000
+Received: from atrey.karlin.mff.cuni.cz ([195.113.26.193])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpT4P-0000fX-0G
- for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 07:49:19 +0000
-Received: from localhost.localdomain (NE2965lan1.rev.em-net.ne.jp
- [210.141.244.193])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E8AC12229C;
- Mon, 22 Jul 2019 07:49:13 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563781756;
- bh=Gr05QR1hL7O+2tzL84PlqgJUM44tyb63rrhJfu4GtP0=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=kEV7DJS52TP6EVFczUmwAz/ukrBdOqPydQi6XOdGzphoTVb3yaak3oCzZCV77IfJj
- evHq82f+uz1VL5mxSm8qATXcNsScSVxwkn+ZxMlEtycjmBOFt+dO0mgYBp4IwApTmH
- M1kKJ7/EOw8MMzNE4yEv4lihH/pwKzlZFz58dNWk=
-From: Masami Hiramatsu <mhiramat@kernel.org>
-To: Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>
-Subject: [PATCH v2 4/4] arm64: Remove unneeded rcu_read_lock from debug
- handlers
-Date: Mon, 22 Jul 2019 16:49:11 +0900
-Message-Id: <156378175027.12011.5591853683946780785.stgit@devnote2>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <156378170297.12011.17385386326930403235.stgit@devnote2>
-References: <156378170297.12011.17385386326930403235.stgit@devnote2>
-User-Agent: StGit/0.17.1-dirty
+ id 1hpT5i-0002jO-DR
+ for linux-arm-kernel@lists.infradead.org; Mon, 22 Jul 2019 07:50:40 +0000
+Received: by atrey.karlin.mff.cuni.cz (Postfix, from userid 512)
+ id 803AE80317; Mon, 22 Jul 2019 09:50:21 +0200 (CEST)
+Date: Mon, 22 Jul 2019 09:50:32 +0200
+From: Pavel Machek <pavel@ucw.cz>
+To: Ezequiel Garcia <ezequiel@collabora.com>
+Subject: Re: [PATCH] Enable backlight when trigger is activated
+Message-ID: <20190722075032.GA27524@amd>
+References: <20190718190849.GA11409@amd>
+ <22d7eca4ad8aa2e73933c4f83c92221ce6e0945a.camel@collabora.com>
 MIME-Version: 1.0
+In-Reply-To: <22d7eca4ad8aa2e73933c4f83c92221ce6e0945a.camel@collabora.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_004917_267411_28A6F499 
-X-CRM114-Status: GOOD (  11.47  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190722_005038_600780_407F781B 
+X-CRM114-Status: GOOD (  15.76  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.113.26.193 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,74 +58,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dan Rue <dan.rue@linaro.org>, Daniel Diaz <daniel.diaz@linaro.org>,
- Anders Roxell <anders.roxell@linaro.org>,
- Naresh Kamboju <naresh.kamboju@linaro.org>, linux-kernel@vger.kernel.org,
- Matt Hart <matthew.hart@linaro.org>,
- "Paul E . McKenney" <paulmck@linux.ibm.com>,
- linux-arm-kernel@lists.infradead.org, mhiramat@kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-fbdev@vger.kernel.org, mpartap@gmx.net, b.zolnierkie@samsung.com,
+ tony@atomide.com, merlijn@wizzup.org,
+ kernel list <linux-kernel@vger.kernel.org>, dri-devel@lists.freedesktop.org,
+ sre@kernel.org, nekit1000@gmail.com, jacek.anaszewski@gmail.com,
+ linux-leds@vger.kernel.org, linux-omap@vger.kernel.org,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============7186670613113277840=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Remove rcu_read_lock()/rcu_read_unlock() from debug exception
-handlers since we are sure those are not preemptible and
-interrupts are off.
 
-Signed-off-by: Masami Hiramatsu <mhiramat@kernel.org>
-Cc: Paul E. McKenney <paulmck@linux.ibm.com>
----
- arch/arm64/kernel/debug-monitors.c |   14 ++++++++------
- 1 file changed, 8 insertions(+), 6 deletions(-)
+--===============7186670613113277840==
+Content-Type: multipart/signed; micalg=pgp-sha1;
+	protocol="application/pgp-signature"; boundary="ZPt4rx8FFjLCG7dd"
+Content-Disposition: inline
 
-diff --git a/arch/arm64/kernel/debug-monitors.c b/arch/arm64/kernel/debug-monitors.c
-index f8719bd30850..48222a4760c2 100644
---- a/arch/arm64/kernel/debug-monitors.c
-+++ b/arch/arm64/kernel/debug-monitors.c
-@@ -207,16 +207,16 @@ static int call_step_hook(struct pt_regs *regs, unsigned int esr)
- 
- 	list = user_mode(regs) ? &user_step_hook : &kernel_step_hook;
- 
--	rcu_read_lock();
--
-+	/*
-+	 * Since single-step exception disables interrupt, this function is
-+	 * entirely not preemptible, and we can use rcu list safely here.
-+	 */
- 	list_for_each_entry_rcu(hook, list, node)	{
- 		retval = hook->fn(regs, esr);
- 		if (retval == DBG_HOOK_HANDLED)
- 			break;
- 	}
- 
--	rcu_read_unlock();
--
- 	return retval;
- }
- NOKPROBE_SYMBOL(call_step_hook);
-@@ -305,14 +305,16 @@ static int call_break_hook(struct pt_regs *regs, unsigned int esr)
- 
- 	list = user_mode(regs) ? &user_break_hook : &kernel_break_hook;
- 
--	rcu_read_lock();
-+	/*
-+	 * Since brk exception disables interrupt, this function is
-+	 * entirely not preemptible, and we can use rcu list safely here.
-+	 */
- 	list_for_each_entry_rcu(hook, list, node) {
- 		unsigned int comment = esr & ESR_ELx_BRK64_ISS_COMMENT_MASK;
- 
- 		if ((comment & ~hook->mask) == hook->imm)
- 			fn = hook->fn;
- 	}
--	rcu_read_unlock();
- 
- 	return fn ? fn(regs, esr) : DBG_HOOK_ERROR;
- }
 
+--ZPt4rx8FFjLCG7dd
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hi!
+
+> > Configuring backlight trigger from dts results in backlight off during
+> > boot. Machine looks dead upon boot, which is not good.
+> >=20
+> > Fix that by enabling LED on trigger activation.
+
+> > +++ b/drivers/leds/trigger/ledtrig-backlight.c
+> > @@ -114,6 +114,8 @@ static int bl_trig_activate(struct led_classdev *le=
+d)
+> >  	n->old_status =3D UNBLANK;
+> >  	n->notifier.notifier_call =3D fb_notifier_callback;
+> > =20
+> > +	led_set_brightness(led, LED_ON);
+> > +
+>=20
+> This looks fishy.
+>=20
+> Maybe you should use a default-state =3D "keep" instead? (and you'll have
+> to support it in the LED driver).
+>=20
+> That'll give you proper "don't touch the LED if it was turned on" behavio=
+r,
+> which is what you seem to want.
+
+Actually no, that's not what I want. LED should go on if the display
+is active, as soon as trigger is activated.
+
+Unfortunately, I have see no good way to tell if the display is
+active (and display is usually active when trigger is activated).
+
+Thanks,
+									Pavel
+--=20
+(english) http://www.livejournal.com/~pavelmachek
+(cesky, pictures) http://atrey.karlin.mff.cuni.cz/~pavel/picture/horses/blo=
+g.html
+
+--ZPt4rx8FFjLCG7dd
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: Digital signature
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iEYEARECAAYFAl01asgACgkQMOfwapXb+vK9lgCbBcUNDD1pNFmswZowkerycBcz
+v80AoK7Dv7JR0+GNLhozQBGFuNFWTOIt
+=oVmU
+-----END PGP SIGNATURE-----
+
+--ZPt4rx8FFjLCG7dd--
+
+
+--===============7186670613113277840==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7186670613113277840==--
+
