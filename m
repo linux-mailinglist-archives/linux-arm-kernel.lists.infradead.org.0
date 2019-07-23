@@ -2,90 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D569871EB7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 20:07:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A196C71EBF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 20:10:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=xjDGRska8WxVU1T2PJ5iir4hBptrO+4BVNRh5tFeJPI=; b=Ar0
-	G3k7sGiHQPz75VhqQfl3u0UNcQ12cME+o7UJP36D7Bugb/B0iLbxkFLLCPwJEVaelCRH+jDj8EWv6
-	AbKyEGRsiOb6/bhEtS2+pHDpFIUBb00ey+qVyR67lbNBFjr1tVXyCLHw/gnTScwTb5HZC+aeU5YLG
-	x10kh729ryJrRSd60mg8VW1X8Qye8Z0xnYBEUqPrCCjV2K2tUOpPOcswojUoaHWCHl5Heqau7d7no
-	idy8JQN16w1gu9srMuKv5ffYT/HFlnKAPu7dTlIg7uRuFpBM49U1X5kDtNNKA0kGgKEaASZUEanqE
-	V2kdS1uRJRjB4PlozbAR9/x2CkTK+0Q==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1oo1fEdGgKO2ebLg7GuXxU1WFDSGPFxDrnqrZzcKVTY=; b=Ydvniu9236pCcL
+	THbRbPLC/tyJg2p8gYqK0ugPtkdLYASLOYJdjWy0Sgg+mdYuBLLGAXHUloV88KAyE1zCUnzzRAx8Z
+	GN58YTH+EoJ2vk7dWhIm86aUgWm7sFOStb6DJ2EGuUlA3hGDgv5U/cPWtAb65KIloFCnxSBqODvTq
+	ygiJh6Otkk7Yfnzg0sIK5knvWqwHoYkBoleU7Wain8UA7gcpJI4QJtRQNavu9s9u6vYw1DS3r8tp7
+	3wNliRIA6GSuKseV2kA3xVe5o0iXAhtK8pe3B4XdXgVTjS23Lc1EPN1nTnU1zc25x7nm2j/ITrRiV
+	XEzrt+YaYkiNvq3Zp/1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpzCE-0006Ep-0T; Tue, 23 Jul 2019 18:07:30 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1hpzEy-0000N7-1A; Tue, 23 Jul 2019 18:10:20 +0000
+Received: from asavdk4.altibox.net ([109.247.116.15])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpz95-00029W-Us
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 18:04:17 +0000
-Received: by mail-pl1-x641.google.com with SMTP id b7so20939756pls.6
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 23 Jul 2019 11:04:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=W22Qq2bPY3qrM64kZukyezJ6opmW1nSg9IDH0KHGjYY=;
- b=ieN7ALrGo+qukTiJ/0EDWZHC53LrpEzPtPUHgnrXVw3cSaF4EVZii6FL0TMaWI2CPH
- Tfyra7HyWVwGECnEgcZm5dDio8qphNQRWa6OWYl7Wp7oyaDNYCivmh4fo8HP0D0PdAo+
- koemJFrRft8VH2Drz9dTjoXrZ8Rzqz6/5DjS7q+v0D0y5JHJbySlAoZ9LJlVOAvDjxeO
- afuE7lVNL+pygmGm3Pk92/4WvKBZHs9tFgHu/OMfZKYjAxeuF8EwEL9CrjQqOljsQL0K
- j/Ac/UVShhLcTIO5bq70LWzctW2wLgAa8IDwLekvWsCHsO7VdjVhKFr4pxEwf6w0f5k4
- uTVg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=W22Qq2bPY3qrM64kZukyezJ6opmW1nSg9IDH0KHGjYY=;
- b=hU0kobKVBQgcEQKAvF9ELqWa13gcIcR0mSz41ARBVBJaHWQAUjGsD5Ys0OeWUWmK5Z
- A22TYDBQqcEnZvRkX0NJNjyanNVW/VppRS6mgDO/T4t54XTeVkNGHv9VjJ8bMxqWWhQm
- +6J2GYPKYrnyB5XgbH8mDN3ruheB3BXUumNM5W7pTe6YDEs751znweaPgbsVRVuPLjdP
- nw9c6xvV32NFbIal79JXmItVuAjGnk8gYb0XPnkIT1QgJweHa4kAFBSiKe781ofVrC7O
- YU4+qZYUIFJuUHOwB2H6fXAOlZRUXk2aPWK8Dlox5mi69n9Ae55X4m/DjQrd9sbUbpIM
- NihA==
-X-Gm-Message-State: APjAAAVQm9+RzxAYFlfoDkiKd4sD1JD6I5lGFY2zXSpg+k0xLJXS4oZu
- sxvTXeL/Ojl3/fksFjr4XO6Kvxcc
-X-Google-Smtp-Source: APXvYqxFJUFqh/Uy3EEHrNPHKWBcFAHt3Ygo6+oWiO3WjUv0GOJiHS5n1FH6HYyPPOXHnu81GdhUdA==
-X-Received: by 2002:a17:902:7887:: with SMTP id
- q7mr82839519pll.129.1563905055358; 
- Tue, 23 Jul 2019 11:04:15 -0700 (PDT)
-Received: from localhost.localdomain (KD118155013174.ppp-bb.dion.ne.jp.
- [118.155.13.174])
- by smtp.gmail.com with ESMTPSA id cx22sm36324333pjb.25.2019.07.23.11.04.13
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Tue, 23 Jul 2019 11:04:14 -0700 (PDT)
-From: Yoshihiro Kaneko <ykaneko0929@gmail.com>
-To: linux-renesas-soc@vger.kernel.org
-Subject: [PATCH] arm64: dts: renesas: ulcb: sort nodes
-Date: Wed, 24 Jul 2019 03:04:06 +0900
-Message-Id: <1563905046-2949-1-git-send-email-ykaneko0929@gmail.com>
-X-Mailer: git-send-email 1.9.1
+ id 1hpzEh-0008Cc-HU
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 18:10:05 +0000
+Received: from ravnborg.org (unknown [158.248.194.18])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by asavdk4.altibox.net (Postfix) with ESMTPS id 85BCA805CF;
+ Tue, 23 Jul 2019 20:10:01 +0200 (CEST)
+Date: Tue, 23 Jul 2019 20:10:00 +0200
+From: Sam Ravnborg <sam@ravnborg.org>
+To: Linus Walleij <linus.walleij@linaro.org>
+Subject: Re: [PATCH 0/3] RFT: PL111 DRM conversion of nspire
+Message-ID: <20190723181000.GA24663@ravnborg.org>
+References: <20190723133755.22677-1-linus.walleij@linaro.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190723133755.22677-1-linus.walleij@linaro.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CMAE-Score: 0
+X-CMAE-Analysis: v=2.3 cv=VcLZwmh9 c=1 sm=1 tr=0
+ a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
+ a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=7gkXJVJtAAAA:8
+ a=MYpsXI3zmkKylij2SYoA:9 a=CjuIK1q_8ugA:10 a=E9Po1WZjFZOl8hwRPBS3:22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_110416_015396_9E098ABA 
-X-CRM114-Status: GOOD (  14.49  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190723_111003_764686_38B339CF 
+X-CRM114-Status: GOOD (  11.07  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (ykaneko0929[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (ykaneko0929[at]gmail.com)
+ no trust [109.247.116.15 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,61 +66,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Magnus Damm <magnus.damm@gmail.com>, Simon Horman <horms@verge.net.au>,
- Geert Uytterhoeven <geert@linux-m68k.org>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Fabian Vogt <fabian@ritter-vogt.de>, Daniel Tang <dt.tangr@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, dri-devel@lists.freedesktop.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Sort nodes.
+Hi Linus.
 
-If node address is present
-   * Sort by node address, grouping all nodes with the same compat string
-     and sorting the group alphabetically.
-Else
-   * Sort alphabetically
+On Tue, Jul 23, 2019 at 03:37:52PM +0200, Linus Walleij wrote:
+> So this is a cold-coded attempt to move the TI nspire over to
+> using DRM. It is more or less the last user of the old fbdev
+> driver so it is a noble cause and interesting usecase.
 
-This should not have any run-time effect.
+Do we need to support arm,pl11x,tft-r0g0b0-pads before
+we can obsolete fbdev stuff?
+Just checked and cannot see it in use today.
 
-Signed-off-by: Yoshihiro Kaneko <ykaneko0929@gmail.com>
----
+Looked through the patches.
+1 and 3 are:
+Acked-by: Sam Ravnborg <sam@ravnborg.org>
 
-This patch is based on the devel branch of Simon Horman's renesas tree.
+As in - the patches looked fine to me - but I do not know the code in detail.
+But obviously need some testing feedback before they are applied.
 
- arch/arm64/boot/dts/renesas/ulcb.dtsi | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
+Posted some comments on patch 2.
 
-diff --git a/arch/arm64/boot/dts/renesas/ulcb.dtsi b/arch/arm64/boot/dts/renesas/ulcb.dtsi
-index 7e498b4..3ef8917 100644
---- a/arch/arm64/boot/dts/renesas/ulcb.dtsi
-+++ b/arch/arm64/boot/dts/renesas/ulcb.dtsi
-@@ -428,6 +428,11 @@
- 	};
- };
- 
-+&rwdt {
-+	timeout-sec = <60>;
-+	status = "okay";
-+};
-+
- &scif2 {
- 	pinctrl-0 = <&scif2_pins>;
- 	pinctrl-names = "default";
-@@ -478,8 +483,3 @@
- 
- 	status = "okay";
- };
--
--&rwdt {
--	timeout-sec = <60>;
--	status = "okay";
--};
--- 
-1.9.1
-
+	Sam
 
 _______________________________________________
 linux-arm-kernel mailing list
