@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C2FC72248
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 00:21:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 75F8972249
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 00:21:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p5E/zx7nC+FL7cWBEkL+ykecyVLGTdKNqefBPtwbxY4=; b=st/7wG1ZBFbHhL
-	CEmGp/NLCdeAr9JRb5Kfeh6giYYtEGpxp1aZs0b2QxD+haXAGzGPr6g+ZsTn4lhqgPbyBR+PZFZ6n
-	x0+unX1noEqkxy29PIf5KcpiFu7VKYOOWYPY5j61OKlHJsxxiOTFExLBiT/fGngx+K85sAAv11ZSg
-	bAeh5+UAq9IaxkDfcny7CuvHxHgmxlVaivLQlnB3GcP7BDOlur4Njxn0ysMFpYDBP7TPVExFKFsBU
-	V/IdVTKDIohLpdlgNCzV9Y98fu1xDN/bPTfReQ58e7t6AeUxpcrUVOzN2gJ+2M3bKZGz0eGbBktJS
-	PaSZZ/jxeEUbOVzP7j1g==;
+	List-Owner; bh=asxXz6jZMPDAnktle1+f66RD0GEVLfFv97YNq7KEiDU=; b=jYsFSop25F2kzA
+	X3hIME2+xSqqNf+wBj6BjTbuNnA3TVhn+OLqmutM36etwC21SanyposW0rhz8VukU4qBdA4V0lcAr
+	ZcR/1D2EuL1liGOBjDp9g5/uFSHHO7hI7bOStiL32Pn2JyoCLf5ZIGYFfaQmxP+BBSnn1xDZfDxwz
+	hm9C3D7ouC+rr7+MlOlD6wCX1Hk7Ya0ViTwqpzz6BcvQ1cZz92UfDZ90ArhZIqP6IMwq70qp2Kvdp
+	9eSsg0vcmmpNfV/XhC+r8Go5yBN7iHMS+AIHWipDw7LAO++EPeV59Zb6UvyD0igNs6UWfTIafrvpi
+	6eOOFuclXgJYITRjN4Kg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hq39s-0000RC-FH; Tue, 23 Jul 2019 22:21:20 +0000
+	id 1hq3AD-0000hT-OC; Tue, 23 Jul 2019 22:21:41 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hq37z-0006GK-Ex
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 22:19:25 +0000
+ id 1hq380-0006Dp-F8
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 22:19:26 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2993D1688;
- Tue, 23 Jul 2019 15:19:22 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B1579168F;
+ Tue, 23 Jul 2019 15:19:23 -0700 (PDT)
 Received: from dawn-kernel.cambridge.arm.com (unknown [10.1.197.116])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 923613F694;
- Tue, 23 Jul 2019 15:19:20 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 5CB553F694;
+ Tue, 23 Jul 2019 15:19:22 -0700 (PDT)
 From: Suzuki K Poulose <suzuki.poulose@arm.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v3 6/7] drivers: Add generic helper to match any device
-Date: Tue, 23 Jul 2019 23:18:37 +0100
-Message-Id: <20190723221838.12024-7-suzuki.poulose@arm.com>
+Subject: [PATCH v3 7/7] platform: Add platform_find_device_by_driver() helper
+Date: Tue, 23 Jul 2019 23:18:38 +0100
+Message-Id: <20190723221838.12024-8-suzuki.poulose@arm.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190723221838.12024-1-suzuki.poulose@arm.com>
 References: <20190723221838.12024-1-suzuki.poulose@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_151923_729161_ADAA8825 
-X-CRM114-Status: GOOD (  12.16  )
+X-CRM114-CacheID: sfid-20190723_151924_729548_9EB033B9 
+X-CRM114-Status: GOOD (  14.32  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -59,198 +59,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
- Shyam Sundar S K <shyam-sundar.s-k@amd.com>,
- "Martin K. Petersen" <martin.petersen@oracle.com>,
+Cc: =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
  Suzuki K Poulose <suzuki.poulose@arm.com>, gregkh@linuxfoundation.org,
- "James E.J. Bottomley" <jejb@linux.ibm.com>, rafael@kernel.org,
- Elie Morisse <syniurge@gmail.com>, Bjorn Helgaas <bhelgaas@google.com>,
- Nehal Shah <nehal-bakulchandra.shah@amd.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ rafael@kernel.org, Seung-Woo Kim <sw0312.kim@samsung.com>,
+ Sandy Huang <hjc@rock-chips.com>, Inki Dae <inki.dae@samsung.com>,
+ Eric Anholt <eric@anholt.net>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a generic helper to match any/all devices. Using this
-introduce new wrappers {bus/driver/class}_find_next_device().
-
-Cc: Bjorn Helgaas <bhelgaas@google.com>
-Cc: Elie Morisse <syniurge@gmail.com>
-Cc: "James E.J. Bottomley" <jejb@linux.ibm.com>
-Cc: "Martin K. Petersen" <martin.petersen@oracle.com>
-Cc: Nehal Shah <nehal-bakulchandra.shah@amd.com>
-Cc: "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>
-Cc: Shyam Sundar S K <shyam-sundar.s-k@amd.com>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
----
- drivers/base/core.c                  |  6 ++++++
- drivers/i2c/busses/i2c-amd-mp2-pci.c |  8 +-------
- drivers/pci/probe.c                  |  7 +------
- drivers/s390/cio/ccwgroup.c          |  8 +-------
- drivers/scsi/scsi_proc.c             |  9 ++-------
- include/linux/device.h               | 17 +++++++++++++++++
- 6 files changed, 28 insertions(+), 27 deletions(-)
-
-diff --git a/drivers/base/core.c b/drivers/base/core.c
-index 57d71bc2c559..e22e29b3dc97 100644
---- a/drivers/base/core.c
-+++ b/drivers/base/core.c
-@@ -3379,3 +3379,9 @@ int device_match_acpi_dev(struct device *dev, const void *adev)
- 	return ACPI_COMPANION(dev) == adev;
- }
- EXPORT_SYMBOL(device_match_acpi_dev);
-+
-+int device_match_any(struct device *dev, const void *unused)
-+{
-+	return 1;
-+}
-+EXPORT_SYMBOL_GPL(device_match_any);
-diff --git a/drivers/i2c/busses/i2c-amd-mp2-pci.c b/drivers/i2c/busses/i2c-amd-mp2-pci.c
-index c7fe3b44a860..5e4800d72e00 100644
---- a/drivers/i2c/busses/i2c-amd-mp2-pci.c
-+++ b/drivers/i2c/busses/i2c-amd-mp2-pci.c
-@@ -457,18 +457,12 @@ static struct pci_driver amd_mp2_pci_driver = {
- };
- module_pci_driver(amd_mp2_pci_driver);
- 
--static int amd_mp2_device_match(struct device *dev, const void *data)
--{
--	return 1;
--}
--
- struct amd_mp2_dev *amd_mp2_find_device(void)
- {
- 	struct device *dev;
- 	struct pci_dev *pci_dev;
- 
--	dev = driver_find_device(&amd_mp2_pci_driver.driver, NULL, NULL,
--				 amd_mp2_device_match);
-+	dev = driver_find_next_device(&amd_mp2_pci_driver.driver, NULL);
- 	if (!dev)
- 		return NULL;
- 
-diff --git a/drivers/pci/probe.c b/drivers/pci/probe.c
-index a3c7338fad86..dbeeb385fb9f 100644
---- a/drivers/pci/probe.c
-+++ b/drivers/pci/probe.c
-@@ -64,11 +64,6 @@ static struct resource *get_pci_domain_busn_res(int domain_nr)
- 	return &r->res;
- }
- 
--static int find_anything(struct device *dev, const void *data)
--{
--	return 1;
--}
--
- /*
-  * Some device drivers need know if PCI is initiated.
-  * Basically, we think PCI is not initiated when there
-@@ -79,7 +74,7 @@ int no_pci_devices(void)
- 	struct device *dev;
- 	int no_devices;
- 
--	dev = bus_find_device(&pci_bus_type, NULL, NULL, find_anything);
-+	dev = bus_find_next_device(&pci_bus_type, NULL);
- 	no_devices = (dev == NULL);
- 	put_device(dev);
- 	return no_devices;
-diff --git a/drivers/s390/cio/ccwgroup.c b/drivers/s390/cio/ccwgroup.c
-index d843e362c167..0005ec9285aa 100644
---- a/drivers/s390/cio/ccwgroup.c
-+++ b/drivers/s390/cio/ccwgroup.c
-@@ -581,11 +581,6 @@ int ccwgroup_driver_register(struct ccwgroup_driver *cdriver)
- }
- EXPORT_SYMBOL(ccwgroup_driver_register);
- 
--static int __ccwgroup_match_all(struct device *dev, const void *data)
--{
--	return 1;
--}
--
- /**
-  * ccwgroup_driver_unregister() - deregister a ccw group driver
-  * @cdriver: driver to be deregistered
-@@ -597,8 +592,7 @@ void ccwgroup_driver_unregister(struct ccwgroup_driver *cdriver)
- 	struct device *dev;
- 
- 	/* We don't want ccwgroup devices to live longer than their driver. */
--	while ((dev = driver_find_device(&cdriver->driver, NULL, NULL,
--					 __ccwgroup_match_all))) {
-+	while ((dev = driver_find_next_device(&cdriver->driver, NULL))) {
- 		struct ccwgroup_device *gdev = to_ccwgroupdev(dev);
- 
- 		ccwgroup_ungroup(gdev);
-diff --git a/drivers/scsi/scsi_proc.c b/drivers/scsi/scsi_proc.c
-index c074631086a4..5b313226f11c 100644
---- a/drivers/scsi/scsi_proc.c
-+++ b/drivers/scsi/scsi_proc.c
-@@ -372,15 +372,10 @@ static ssize_t proc_scsi_write(struct file *file, const char __user *buf,
- 	return err;
- }
- 
--static int always_match(struct device *dev, const void *data)
--{
--	return 1;
--}
--
- static inline struct device *next_scsi_device(struct device *start)
- {
--	struct device *next = bus_find_device(&scsi_bus_type, start, NULL,
--					      always_match);
-+	struct device *next = bus_find_next_device(&scsi_bus_type, start);
-+
- 	put_device(start);
- 	return next;
- }
-diff --git a/include/linux/device.h b/include/linux/device.h
-index 7514ef3d3f1a..8ae3f4b47293 100644
---- a/include/linux/device.h
-+++ b/include/linux/device.h
-@@ -169,6 +169,7 @@ int device_match_of_node(struct device *dev, const void *np);
- int device_match_fwnode(struct device *dev, const void *fwnode);
- int device_match_devt(struct device *dev, const void *pdevt);
- int device_match_acpi_dev(struct device *dev, const void *adev);
-+int device_match_any(struct device *dev, const void *unused);
- 
- int bus_for_each_dev(struct bus_type *bus, struct device *start, void *data,
- 		     int (*fn)(struct device *dev, void *data));
-@@ -225,6 +226,16 @@ static inline struct device *bus_find_device_by_devt(struct bus_type *bus,
- 	return bus_find_device(bus, NULL, &devt, device_match_devt);
- }
- 
-+/**
-+ * bus_find_next_device - Find the next device after a given device in a
-+ * given bus.
-+ */
-+static inline struct device *
-+bus_find_next_device(struct bus_type *bus,struct device *cur)
-+{
-+	return bus_find_device(bus, cur, NULL, device_match_any);
-+}
-+
- #ifdef CONFIG_ACPI
- struct acpi_device;
- 
-@@ -465,6 +476,12 @@ static inline struct device *driver_find_device_by_devt(struct device_driver *dr
- 	return driver_find_device(drv, NULL, &devt, device_match_devt);
- }
- 
-+static inline struct device *driver_find_next_device(struct device_driver *drv,
-+						     struct device *start)
-+{
-+	return driver_find_device(drv, start, NULL, device_match_any);
-+}
-+
- #ifdef CONFIG_ACPI
- /**
-  * driver_find_device_by_acpi_dev : device iterator for locating a particular
--- 
-2.21.0
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+UHJvdmlkZSBhIGhlbHBlciB0byBsb29rdXAgcGxhdGZvcm0gZGV2aWNlcyBieSBtYXRjaGluZyBk
+ZXZpY2UKZHJpdmVyIGluIG9yZGVyIHRvIGF2b2lkIGRyaXZlcnMgdHJ5aW5nIHRvIHVzZSBwbGF0
+Zm9ybSBidXMKaW50ZXJuYWxzLgoKQ2M6IEVyaWMgQW5ob2x0IDxlcmljQGFuaG9sdC5uZXQ+CkNj
+OiBHcmVnIEtyb2FoLUhhcnRtYW4gPGdyZWdraEBsaW51eGZvdW5kYXRpb24ub3JnPgpDYzogIkhl
+aWtvIFN0w7xibmVyIiA8aGVpa29Ac250ZWNoLmRlPgpDYzogSW5raSBEYWUgPGlua2kuZGFlQHNh
+bXN1bmcuY29tPgpDYzogIlJhZmFlbCBKLiBXeXNvY2tpIiA8cmFmYWVsQGtlcm5lbC5vcmc+CkNj
+OiBTYW5keSBIdWFuZyA8aGpjQHJvY2stY2hpcHMuY29tPgpDYzogU2V1bmctV29vIEtpbSA8c3cw
+MzEyLmtpbUBzYW1zdW5nLmNvbT4KVGVzdGVkLWJ5OiBIZWlrbyBTdHVlYm5lciA8aGVpa29Ac250
+ZWNoLmRlPgpTaWduZWQtb2ZmLWJ5OiBTdXp1a2kgSyBQb3Vsb3NlIDxzdXp1a2kucG91bG9zZUBh
+cm0uY29tPgotLS0KIGRyaXZlcnMvYmFzZS9wbGF0Zm9ybS5jICAgICAgICAgICAgICAgICAgICAg
+fCAxNCArKysrKysrKysrKysrKwogZHJpdmVycy9ncHUvZHJtL2V4eW5vcy9leHlub3NfZHJtX2Ry
+di5jICAgICB8ICA5ICsrKy0tLS0tLQogZHJpdmVycy9ncHUvZHJtL21jZGUvbWNkZV9kcnYuYyAg
+ICAgICAgICAgICB8ICAzICstLQogZHJpdmVycy9ncHUvZHJtL3JvY2tjaGlwL3JvY2tjaGlwX2Ry
+bV9kcnYuYyB8ICAzICstLQogZHJpdmVycy9ncHUvZHJtL3ZjNC92YzRfZHJ2LmMgICAgICAgICAg
+ICAgICB8ICAzICstLQogaW5jbHVkZS9saW51eC9wbGF0Zm9ybV9kZXZpY2UuaCAgICAgICAgICAg
+ICB8ICAzICsrKwogNiBmaWxlcyBjaGFuZ2VkLCAyMyBpbnNlcnRpb25zKCspLCAxMiBkZWxldGlv
+bnMoLSkKCmRpZmYgLS1naXQgYS9kcml2ZXJzL2Jhc2UvcGxhdGZvcm0uYyBiL2RyaXZlcnMvYmFz
+ZS9wbGF0Zm9ybS5jCmluZGV4IDUwNmEwMTc1YTVhNy4uYTE3NGNlNWVhMTdjIDEwMDY0NAotLS0g
+YS9kcml2ZXJzL2Jhc2UvcGxhdGZvcm0uYworKysgYi9kcml2ZXJzL2Jhc2UvcGxhdGZvcm0uYwpA
+QCAtMTE5Nyw2ICsxMTk3LDIwIEBAIHN0cnVjdCBidXNfdHlwZSBwbGF0Zm9ybV9idXNfdHlwZSA9
+IHsKIH07CiBFWFBPUlRfU1lNQk9MX0dQTChwbGF0Zm9ybV9idXNfdHlwZSk7CiAKKy8qKgorICog
+cGxhdGZvcm1fZmluZF9kZXZpY2VfYnlfZHJpdmVyIC0gRmluZCBhIHBsYXRmb3JtIGRldmljZSB3
+aXRoIGEgZ2l2ZW4KKyAqIGRyaXZlci4KKyAqIEBzdGFydDogVGhlIGRldmljZSB0byBzdGFydCB0
+aGUgc2VhcmNoIGZyb20uCisgKiBAZHJ2OiBUaGUgZGV2aWNlIGRyaXZlciB0byBsb29rIGZvci4K
+KyAqLworc3RydWN0IGRldmljZSAqcGxhdGZvcm1fZmluZF9kZXZpY2VfYnlfZHJpdmVyKHN0cnVj
+dCBkZXZpY2UgKnN0YXJ0LAorCQkJCQkgICAgICBjb25zdCBzdHJ1Y3QgZGV2aWNlX2RyaXZlciAq
+ZHJ2KQoreworCXJldHVybiBidXNfZmluZF9kZXZpY2UoJnBsYXRmb3JtX2J1c190eXBlLCBzdGFy
+dCwgZHJ2LAorCQkJICAgICAgICh2b2lkICopcGxhdGZvcm1fbWF0Y2gpOworfQorRVhQT1JUX1NZ
+TUJPTF9HUEwocGxhdGZvcm1fZmluZF9kZXZpY2VfYnlfZHJpdmVyKTsKKwogaW50IF9faW5pdCBw
+bGF0Zm9ybV9idXNfaW5pdCh2b2lkKQogewogCWludCBlcnJvcjsKZGlmZiAtLWdpdCBhL2RyaXZl
+cnMvZ3B1L2RybS9leHlub3MvZXh5bm9zX2RybV9kcnYuYyBiL2RyaXZlcnMvZ3B1L2RybS9leHlu
+b3MvZXh5bm9zX2RybV9kcnYuYwppbmRleCA1OGJhZjQ5ZDk5MjYuLmJhZGFiOTRiZTJkNiAxMDA2
+NDQKLS0tIGEvZHJpdmVycy9ncHUvZHJtL2V4eW5vcy9leHlub3NfZHJtX2Rydi5jCisrKyBiL2Ry
+aXZlcnMvZ3B1L2RybS9leHlub3MvZXh5bm9zX2RybV9kcnYuYwpAQCAtMjQyLDkgKzI0Miw3IEBA
+IHN0YXRpYyBzdHJ1Y3QgY29tcG9uZW50X21hdGNoICpleHlub3NfZHJtX21hdGNoX2FkZChzdHJ1
+Y3QgZGV2aWNlICpkZXYpCiAJCWlmICghaW5mby0+ZHJpdmVyIHx8ICEoaW5mby0+ZmxhZ3MgJiBE
+Uk1fQ09NUE9ORU5UX0RSSVZFUikpCiAJCQljb250aW51ZTsKIAotCQl3aGlsZSAoKGQgPSBidXNf
+ZmluZF9kZXZpY2UoJnBsYXRmb3JtX2J1c190eXBlLCBwLAotCQkJCQkgICAgJmluZm8tPmRyaXZl
+ci0+ZHJpdmVyLAotCQkJCQkgICAgKHZvaWQgKilwbGF0Zm9ybV9idXNfdHlwZS5tYXRjaCkpKSB7
+CisJCXdoaWxlICgoZCA9IHBsYXRmb3JtX2ZpbmRfZGV2aWNlX2J5X2RyaXZlcihwLCAmaW5mby0+
+ZHJpdmVyLT5kcml2ZXIpKSkgewogCQkJcHV0X2RldmljZShwKTsKIAogCQkJaWYgKCEoaW5mby0+
+ZmxhZ3MgJiBEUk1fRklNQ19ERVZJQ0UpIHx8CkBAIC00MTIsOSArNDEwLDggQEAgc3RhdGljIHZv
+aWQgZXh5bm9zX2RybV91bnJlZ2lzdGVyX2RldmljZXModm9pZCkKIAkJaWYgKCFpbmZvLT5kcml2
+ZXIgfHwgIShpbmZvLT5mbGFncyAmIERSTV9WSVJUVUFMX0RFVklDRSkpCiAJCQljb250aW51ZTsK
+IAotCQl3aGlsZSAoKGRldiA9IGJ1c19maW5kX2RldmljZSgmcGxhdGZvcm1fYnVzX3R5cGUsIE5V
+TEwsCi0JCQkJCSAgICAmaW5mby0+ZHJpdmVyLT5kcml2ZXIsCi0JCQkJCSAgICAodm9pZCAqKXBs
+YXRmb3JtX2J1c190eXBlLm1hdGNoKSkpIHsKKwkJd2hpbGUgKChkZXYgPSBwbGF0Zm9ybV9maW5k
+X2RldmljZV9ieV9kcml2ZXIoTlVMTCwKKwkJCQkJCSZpbmZvLT5kcml2ZXItPmRyaXZlcikpKSB7
+CiAJCQlwdXRfZGV2aWNlKGRldik7CiAJCQlwbGF0Zm9ybV9kZXZpY2VfdW5yZWdpc3Rlcih0b19w
+bGF0Zm9ybV9kZXZpY2UoZGV2KSk7CiAJCX0KZGlmZiAtLWdpdCBhL2RyaXZlcnMvZ3B1L2RybS9t
+Y2RlL21jZGVfZHJ2LmMgYi9kcml2ZXJzL2dwdS9kcm0vbWNkZS9tY2RlX2Rydi5jCmluZGV4IGJh
+ZjYzZmI2ODUwYS4uYzA3YWJmOWUyMDFjIDEwMDY0NAotLS0gYS9kcml2ZXJzL2dwdS9kcm0vbWNk
+ZS9tY2RlX2Rydi5jCisrKyBiL2RyaXZlcnMvZ3B1L2RybS9tY2RlL21jZGVfZHJ2LmMKQEAgLTQ3
+Nyw4ICs0NzcsNyBAQCBzdGF0aWMgaW50IG1jZGVfcHJvYmUoc3RydWN0IHBsYXRmb3JtX2Rldmlj
+ZSAqcGRldikKIAkJc3RydWN0IGRldmljZV9kcml2ZXIgKmRydiA9ICZtY2RlX2NvbXBvbmVudF9k
+cml2ZXJzW2ldLT5kcml2ZXI7CiAJCXN0cnVjdCBkZXZpY2UgKnAgPSBOVUxMLCAqZDsKIAotCQl3
+aGlsZSAoKGQgPSBidXNfZmluZF9kZXZpY2UoJnBsYXRmb3JtX2J1c190eXBlLCBwLCBkcnYsCi0J
+CQkJCSAgICAodm9pZCAqKXBsYXRmb3JtX2J1c190eXBlLm1hdGNoKSkpIHsKKwkJd2hpbGUgKChk
+ID0gcGxhdGZvcm1fZmluZF9kZXZpY2VfYnlfZHJpdmVyKHAsIGRydikpKSB7CiAJCQlwdXRfZGV2
+aWNlKHApOwogCQkJY29tcG9uZW50X21hdGNoX2FkZChkZXYsICZtYXRjaCwgbWNkZV9jb21wYXJl
+X2RldiwgZCk7CiAJCQlwID0gZDsKZGlmZiAtLWdpdCBhL2RyaXZlcnMvZ3B1L2RybS9yb2NrY2hp
+cC9yb2NrY2hpcF9kcm1fZHJ2LmMgYi9kcml2ZXJzL2dwdS9kcm0vcm9ja2NoaXAvcm9ja2NoaXBf
+ZHJtX2Rydi5jCmluZGV4IDUzZDJjNWJkNjFkYy4uMzhkYzI2Mzc2OTYxIDEwMDY0NAotLS0gYS9k
+cml2ZXJzL2dwdS9kcm0vcm9ja2NoaXAvcm9ja2NoaXBfZHJtX2Rydi5jCisrKyBiL2RyaXZlcnMv
+Z3B1L2RybS9yb2NrY2hpcC9yb2NrY2hpcF9kcm1fZHJ2LmMKQEAgLTMzMCw4ICszMzAsNyBAQCBz
+dGF0aWMgc3RydWN0IGNvbXBvbmVudF9tYXRjaCAqcm9ja2NoaXBfZHJtX21hdGNoX2FkZChzdHJ1
+Y3QgZGV2aWNlICpkZXYpCiAJCXN0cnVjdCBkZXZpY2UgKnAgPSBOVUxMLCAqZDsKIAogCQlkbyB7
+Ci0JCQlkID0gYnVzX2ZpbmRfZGV2aWNlKCZwbGF0Zm9ybV9idXNfdHlwZSwgcCwgJmRydi0+ZHJp
+dmVyLAotCQkJCQkgICAgKHZvaWQgKilwbGF0Zm9ybV9idXNfdHlwZS5tYXRjaCk7CisJCQlkID0g
+cGxhdGZvcm1fZmluZF9kZXZpY2VfYnlfZHJpdmVyKHAsICZkcnYtPmRyaXZlcik7CiAJCQlwdXRf
+ZGV2aWNlKHApOwogCQkJcCA9IGQ7CiAKZGlmZiAtLWdpdCBhL2RyaXZlcnMvZ3B1L2RybS92YzQv
+dmM0X2Rydi5jIGIvZHJpdmVycy9ncHUvZHJtL3ZjNC92YzRfZHJ2LmMKaW5kZXggYmYxMTkzMGU0
+MGUxLi4xNTUxYzgyNTNiZWMgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvZ3B1L2RybS92YzQvdmM0X2Ry
+di5jCisrKyBiL2RyaXZlcnMvZ3B1L2RybS92YzQvdmM0X2Rydi5jCkBAIC0yMzcsOCArMjM3LDcg
+QEAgc3RhdGljIHZvaWQgdmM0X21hdGNoX2FkZF9kcml2ZXJzKHN0cnVjdCBkZXZpY2UgKmRldiwK
+IAkJc3RydWN0IGRldmljZV9kcml2ZXIgKmRydiA9ICZkcml2ZXJzW2ldLT5kcml2ZXI7CiAJCXN0
+cnVjdCBkZXZpY2UgKnAgPSBOVUxMLCAqZDsKIAotCQl3aGlsZSAoKGQgPSBidXNfZmluZF9kZXZp
+Y2UoJnBsYXRmb3JtX2J1c190eXBlLCBwLCBkcnYsCi0JCQkJCSAgICAodm9pZCAqKXBsYXRmb3Jt
+X2J1c190eXBlLm1hdGNoKSkpIHsKKwkJd2hpbGUgKChkID0gcGxhdGZvcm1fZmluZF9kZXZpY2Vf
+YnlfZHJpdmVyKHAsIGRydikpKSB7CiAJCQlwdXRfZGV2aWNlKHApOwogCQkJY29tcG9uZW50X21h
+dGNoX2FkZChkZXYsIG1hdGNoLCBjb21wYXJlX2RldiwgZCk7CiAJCQlwID0gZDsKZGlmZiAtLWdp
+dCBhL2luY2x1ZGUvbGludXgvcGxhdGZvcm1fZGV2aWNlLmggYi9pbmNsdWRlL2xpbnV4L3BsYXRm
+b3JtX2RldmljZS5oCmluZGV4IDliYzM2YjU4OTgyNy4uMzdlMTVhOTM1YTQyIDEwMDY0NAotLS0g
+YS9pbmNsdWRlL2xpbnV4L3BsYXRmb3JtX2RldmljZS5oCisrKyBiL2luY2x1ZGUvbGludXgvcGxh
+dGZvcm1fZGV2aWNlLmgKQEAgLTUxLDYgKzUxLDkgQEAgZXh0ZXJuIHN0cnVjdCBkZXZpY2UgcGxh
+dGZvcm1fYnVzOwogZXh0ZXJuIHZvaWQgYXJjaF9zZXR1cF9wZGV2X2FyY2hkYXRhKHN0cnVjdCBw
+bGF0Zm9ybV9kZXZpY2UgKik7CiBleHRlcm4gc3RydWN0IHJlc291cmNlICpwbGF0Zm9ybV9nZXRf
+cmVzb3VyY2Uoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqLAogCQkJCQkgICAgICB1bnNpZ25lZCBp
+bnQsIHVuc2lnbmVkIGludCk7CitleHRlcm4gc3RydWN0IGRldmljZSAqCitwbGF0Zm9ybV9maW5k
+X2RldmljZV9ieV9kcml2ZXIoc3RydWN0IGRldmljZSAqc3RhcnQsCisJCQkgICAgICAgY29uc3Qg
+c3RydWN0IGRldmljZV9kcml2ZXIgKmRydik7CiBleHRlcm4gdm9pZCBfX2lvbWVtICoKIGRldm1f
+cGxhdGZvcm1faW9yZW1hcF9yZXNvdXJjZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2LAog
+CQkJICAgICAgIHVuc2lnbmVkIGludCBpbmRleCk7Ci0tIAoyLjIxLjAKCgpfX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxp
+bmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
