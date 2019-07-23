@@ -2,56 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1EAAA71410
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 10:36:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6AB7C71422
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 10:41:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BekBmDvjd9v+V5llXo9KBqRuZQygYQY/XK30E78VFOY=; b=SKD4TriZsXYQoJ
-	TfNOlAB8aQ65zPh1zmYU2mE7vDfzVnrY6Th7cyZerB0xE4dypTjU/sohq3ByW+n0fH33JHZLMysM8
-	3KBnglLeGlPK0P7xr5kUJ1nyxvsNxDFqIoTqx5ffFj5UBRiyYrNzXvEciKtfYYSDBrEPij2ieoYjS
-	kSLcuAmmR/8VYZ47vevGLwqJdIRYHz6jREoKzht/+UI8o7+d2EUFtdqTOhKJxYLZmgVUWRd2owQVh
-	XdpqK/99DX0wYc/5ZuEzdnNIEQswlkYVzZHe1D7YWiv56Z05K5QNVRBBEzOAP8+dB/fXelXeZj2kW
-	4UPtiFsols5kI+Edmjfg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=zvKkS34wHpsdbdYqXFK+Cbye6fw4bP0UunitqE43fs4=; b=Ekr
+	HF3IqLHizuLWZMxKy5zVm1ihyuuSMyjmqw/IpRa6dWhjDUjgp/JH1IXjiQdhf1ORlZIz73SXewdIE
+	wUJ58LCgPb6WT/o1i9DGhkHdZvJt5Wu5vUBxi9a6hXz8ioMgH3bsOeJBkRPhH0zxo8G+qVQW+BGOd
+	UEmHBMT3Ke8Svb7yH7wgFXJfSr8QdUAI+TMjwedCyXaV0lk23YgfHKBRDxB33MUfhOW7DJ/GeCJHX
+	aVFWshsA+HLC0hRGsvE98DlinZuqbf7SyBflpPyLWDDMk9naWwvrElE4n8kaetY89LbpTKvQJBktb
+	aThfYLqM5BgEiEMAbhTWRe9ITgbhorA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpqHT-0004h2-Rr; Tue, 23 Jul 2019 08:36:20 +0000
-Received: from relay7-d.mail.gandi.net ([217.70.183.200])
+	id 1hpqMR-0006LQ-3U; Tue, 23 Jul 2019 08:41:27 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpqHA-0004gM-Ho
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 08:36:06 +0000
-X-Originating-IP: 86.250.200.211
-Received: from xps13 (lfbn-1-17395-211.w86-250.abo.wanadoo.fr [86.250.200.211])
- (Authenticated sender: miquel.raynal@bootlin.com)
- by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 861C020010;
- Tue, 23 Jul 2019 08:35:49 +0000 (UTC)
-Date: Tue, 23 Jul 2019 10:35:48 +0200
-From: Miquel Raynal <miquel.raynal@bootlin.com>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v2 14/19] dt-bindings: pci: add PHY properties to Armada
- 7K/8K controller bindings
-Message-ID: <20190723103548.59d1a652@xps13>
-In-Reply-To: <20190722175225.GA13801@bogus>
-References: <20190627095104.22529-1-miquel.raynal@bootlin.com>
- <20190627122505.25774-1-miquel.raynal@bootlin.com>
- <20190627122505.25774-2-miquel.raynal@bootlin.com>
- <20190722175225.GA13801@bogus>
-Organization: Bootlin
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-MIME-Version: 1.0
+ id 1hpqMB-0006Jm-ED
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 08:41:13 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 9F1AD1A02DF;
+ Tue, 23 Jul 2019 10:41:08 +0200 (CEST)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
+ [134.27.226.22])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 920E31A02D1;
+ Tue, 23 Jul 2019 10:41:08 +0200 (CEST)
+Received: from fsr-ub1864-103.ea.freescale.net
+ (fsr-ub1864-103.ea.freescale.net [10.171.82.17])
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id AA798205DD;
+ Tue, 23 Jul 2019 10:41:07 +0200 (CEST)
+From: Daniel Baluta <daniel.baluta@nxp.com>
+To: m.felsch@pengutronix.de,
+	shawnguo@kernel.org
+Subject: [PATCH v2 0/5] Add DSP node for i.MX8QXP board to be used by DSP SOF
+ driver
+Date: Tue, 23 Jul 2019 11:40:59 +0300
+Message-Id: <20190723084104.12639-1-daniel.baluta@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_013604_400882_4DA79B0E 
-X-CRM114-Status: GOOD (  14.53  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190723_014111_620328_FF14C3D5 
+X-CRM114-Status: UNSURE (   8.03  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.200 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -65,42 +67,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Jason Cooper <jason@lakedaemon.net>,
- devicetree@vger.kernel.org, Antoine Tenart <antoine.tenart@bootlin.com>,
- Grzegorz Jaszczyk <jaz@semihalf.com>,
- Gregory Clement <gregory.clement@bootlin.com>,
- Russell King <linux@armlinux.org.uk>, Kishon Vijay Abraham I <kishon@ti.com>,
- Nadav Haklai <nadavh@marvell.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- linux-arm-kernel@lists.infradead.org,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: mark.rutland@arm.com, aisheng.dong@nxp.com, peng.fan@nxp.com,
+ anson.huang@nxp.com, devicetree@vger.kernel.org,
+ Daniel Baluta <daniel.baluta@nxp.com>, shengjiu.wang@nxp.com,
+ linux-kernel@vger.kernel.org, paul.olaru@nxp.com, robh+dt@kernel.org,
+ linux-imx@nxp.com, kernel@pengutronix.de, leonard.crestez@nxp.com,
+ festevam@gmail.com, linux-arm-kernel@lists.infradead.org,
+ sound-open-firmware@alsa-project.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgUm9iLAoKUm9iIEhlcnJpbmcgPHJvYmhAa2VybmVsLm9yZz4gd3JvdGUgb24gTW9uLCAyMiBK
-dWwgMjAxOSAxMTo1MjoyNSAtMDYwMDoKCj4gT24gVGh1LCBKdW4gMjcsIDIwMTkgYXQgMDI6MjU6
-MDBQTSArMDIwMCwgTWlxdWVsIFJheW5hbCB3cm90ZToKPiA+IEFybWFkYSBDUDExMCBQQ0llIGNv
-bnRyb2xsZXIgY2FuIGhhdmUgYSBQSFkgKGZvciBjb25maWd1cmluZyBTRVJERVMKPiA+IGxhbmVz
-KS4gRGVzY3JpYmUgdGhlc2UgdHdvIHByb3BlcnRpZXMgaW4gdGhlIGJpbmRpbmdzLgo+ID4gCj4g
-PiBTaWduZWQtb2ZmLWJ5OiBNaXF1ZWwgUmF5bmFsIDxtaXF1ZWwucmF5bmFsQGJvb3RsaW4uY29t
-Pgo+ID4gLS0tCj4gPiAgRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BjaS9wY2kt
-YXJtYWRhOGsudHh0IHwgNCArKysrCj4gPiAgMSBmaWxlIGNoYW5nZWQsIDQgaW5zZXJ0aW9ucygr
-KQo+ID4gCj4gPiBkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdz
-L3BjaS9wY2ktYXJtYWRhOGsudHh0IGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdz
-L3BjaS9wY2ktYXJtYWRhOGsudHh0Cj4gPiBpbmRleCA5ZTNmYzE1ZTFhZjguLmEzNzNhODA1MjRk
-YiAxMDA2NDQKPiA+IC0tLSBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9wY2kv
-cGNpLWFybWFkYThrLnR4dAo+ID4gKysrIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRp
-bmdzL3BjaS9wY2ktYXJtYWRhOGsudHh0Cj4gPiBAQCAtMTcsNiArMTcsMTAgQEAgUmVxdWlyZWQg
-cHJvcGVydGllczoKPiA+ICAgICBuYW1lIG11c3QgYmUgImNvcmUiIGZvciB0aGUgZmlyc3QgY2xv
-Y2sgYW5kICJyZWciIGZvciB0aGUgc2Vjb25kCj4gPiAgICAgb25lCj4gPiAgCj4gPiArT3B0aW9u
-YWwgcHJvcGVydGllczoKPiA+ICstIHBoeXM6IHBoYW5kbGUgdG8gdGhlIFBIWSBub2RlIChnZW5l
-cmljIFBIWSBiaW5kaW5ncykuCj4gPiArLSBwaHktbmFtZXM6IG5hbWVzIG9mIHRoZSBQSFlzLiAg
-Cj4gCj4gSG93IG1hbnk/IElmIG9ubHkgMSwgeW91IGRvbid0IHJlYWxseSBuZWVkIHBoeS1uYW1l
-cy4KCkkgdGhvdWdodCBpdCB3YXMgcHJlZmVycmVkIHRvIGFsd2F5cyBhZGQgcGh5LW5hbWVzLCBi
-dXQgb2ssIEknbGwgZHJvcAp0aGUgcHJvcGVydHkuCgpUaGFua3MsCk1pcXXDqGwKCl9fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwg
-bWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8v
-bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+i.MX8QXP boards feature an Hifi4 DSP from Tensilica.
+
+This patch series aims on adding the DT node describing the DSP,
+but it also contains the Linux SOF DSP driver that will use the DT node
+for easier review.
+
+Note that we switched to the new yaml format for bindings documentation.
+
+The DSP will run SOF Firmware [1]. Patches 1,2,3 are adding support
+for Linux DSP driver are already sent for review to SOF folks [2]
+
+[1] https://github.com/thesofproject/sof
+[2] https://github.com/thesofproject/linux/pull/1048/commits
+
+Changes since v1:
+	- removed 'clk: imx8: Add DSP related clocks' as it was already
+	  applied by Shawn
+	- add patches adding support for Linux DSP driver to make things
+	  clear for review
+	- add maxItems property for PM in DT bindings doc
+
+Daniel Baluta (5):
+  ASoC: SOF: imx: Add i.MX8 HW support
+  ASoC: SOF: topology: Add dummy support for i.MX8 DAIs
+  ASoC: SOF: Add DT DSP device support
+  arm64: dts: imx8qxp: Add DSP DT node
+  dt-bindings: dsp: fsl: Add DSP core binding support
+
+ .../devicetree/bindings/dsp/fsl,dsp.yaml      |  87 ++++
+ arch/arm64/boot/dts/freescale/imx8qxp-mek.dts |   4 +
+ arch/arm64/boot/dts/freescale/imx8qxp.dtsi    |  32 ++
+ include/sound/sof/dai.h                       |   2 +
+ include/uapi/sound/sof/tokens.h               |   8 +
+ sound/soc/sof/Kconfig                         |  10 +
+ sound/soc/sof/Makefile                        |   4 +
+ sound/soc/sof/imx/Kconfig                     |  21 +
+ sound/soc/sof/imx/Makefile                    |   7 +
+ sound/soc/sof/imx/imx8.c                      | 464 ++++++++++++++++++
+ sound/soc/sof/sof-dt-dev.c                    | 159 ++++++
+ sound/soc/sof/topology.c                      |  30 ++
+ 12 files changed, 828 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/dsp/fsl,dsp.yaml
+ create mode 100644 sound/soc/sof/imx/Kconfig
+ create mode 100644 sound/soc/sof/imx/Makefile
+ create mode 100644 sound/soc/sof/imx/imx8.c
+ create mode 100644 sound/soc/sof/sof-dt-dev.c
+
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
