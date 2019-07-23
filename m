@@ -2,101 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 70A3671C0C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 17:46:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 676B771C0D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 17:46:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Y4d85/DshuVyWTLLykJIFJ+VtzXiyYUtO8FyPD4EuAY=; b=KgDg/4+F1zOXgndq6KpvSDQDYI
-	b8gadAOAsgCDRwATVQXrRjCyj/oMl9IdlGaO5wul18MM6+sDwgsYcAGV/BWja43mmla2KWy0krDMW
-	DhyYKEzaeO3NoTMSZrWWXOtyMmdkz4E2b5m0jba+YYMWeLolCjtRRQHRzRxCDAiDKZIDmfIlnHNZ6
-	DGChmGlVKfFbk7kdsf3wf9Tlr8gOXXfuTTa79AudvvS4jKzWHH3SSQAeDqs62g2ZloY4SSHwmXfxS
-	GWwb821o4+n6ADGvsXyCMpoD4K/Eg1KFLYpbW6q7bmlovYpydi5+x8TJJMkF/P3eapq7ZX9P+ndyf
-	IP1eMu9Q==;
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=e5yJP4jAiqAlDnOQNthb4cYzNWIir62D7HJMnuJeLxo=; b=ebEn3SloKgVbMl
+	8/FvHOgUtfrOhA8A8ijWD5qvEYv8WKx/k2fFmlP9bIPxyQ0vuHJJoV8RpUZ5ltCvPRgdtFlOQjlUi
+	xBhAajJgCIm1yTeNe2t3vDcbEPIoBF0y+K5bpzDQOuufBKIv8ubufJSCYwFeqCyzz1gWJ7dWVfe7X
+	9kj3QYsQaEiOm49LzRSXoeONig3FZ12adLmOVDBQfO2LaBAvNxGQw9WiyUVwpoYnPFCfnwunSksVv
+	fJBO5VzbGXLRillhkjn07NYvUb5FZiEsOUjTjnb/sl1DddRP2xJEiq9JhO8BQOVCEi3jSVCHzlcxP
+	fPZx3T4Bxw0r5mwbBcTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpwzA-0004FF-AM; Tue, 23 Jul 2019 15:45:52 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpwyd-000495-RY
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 15:45:22 +0000
-Received: from [10.84.150.87] (unknown [167.220.149.87])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1F973218D3;
- Tue, 23 Jul 2019 15:45:18 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563896718;
- bh=sP0aqu0Qk8102QyJi+gE1hEHYCS6moC40PKb8ZZL1Ek=;
- h=Subject:To:References:From:Date:In-Reply-To:From;
- b=GqtKJjkGjk3+9SGzgE+NELdGNUe59PahyiAvgLvlltAR6jWd0KJH1jHgwXLmHw+xx
- /mMFgXhYcLkL8m5hcEGzTUQdzVdKGSghxq3NANdND2qYMhzaTwiFQSWS/pJs0gxL9z
- mb137ii9FbJdTswftEVHGcR2FDb35ibt6hPpM4w0=
-Subject: Re: [PATCH] dma: qcom: hidma_mgmt: Add of_node_put() before goto
-To: Robin Murphy <robin.murphy@arm.com>,
- Nishka Dasgupta <nishkadg.linux@gmail.com>, agross@kernel.org,
- vkoul@kernel.org, dan.j.williams@intel.com,
- linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
- dmaengine@vger.kernel.org
-References: <20190723103543.7888-1-nishkadg.linux@gmail.com>
- <b5b76ef6-c5f3-bab0-e981-cd47c7264959@arm.com>
-From: Sinan Kaya <okaya@kernel.org>
+	id 1hpwzs-0004ph-3A; Tue, 23 Jul 2019 15:46:36 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hpwzK-0004mE-Ui
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 15:46:05 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 997E528;
+ Tue, 23 Jul 2019 08:45:57 -0700 (PDT)
+Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ CABB33F71A; Tue, 23 Jul 2019 08:45:53 -0700 (PDT)
+Subject: Re: [PATCH v2 8/9] KVM: arm/arm64: vgic-its: Check the LPI
+ translation cache on MSI injection
+To: Auger Eric <eric.auger@redhat.com>, linux-arm-kernel@lists.infradead.org, 
+ kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org
+References: <20190611170336.121706-1-marc.zyngier@arm.com>
+ <20190611170336.121706-9-marc.zyngier@arm.com>
+ <485d9990-a6ad-2be0-e829-a0290d7d6a6f@redhat.com>
+From: Marc Zyngier <marc.zyngier@arm.com>
 Openpgp: preference=signencrypt
-Autocrypt: addr=okaya@kernel.org; keydata=
- mQENBFrnOrUBCADGOL0kF21B6ogpOkuYvz6bUjO7NU99PKhXx1MfK/AzK+SFgxJF7dMluoF6
- uT47bU7zb7HqACH6itTgSSiJeSoq86jYoq5s4JOyaj0/18Hf3/YBah7AOuwk6LtV3EftQIhw
- 9vXqCnBwP/nID6PQ685zl3vH68yzF6FVNwbDagxUz/gMiQh7scHvVCjiqkJ+qu/36JgtTYYw
- 8lGWRcto6gr0eTF8Wd8f81wspmUHGsFdN/xPsZPKMw6/on9oOj3AidcR3P9EdLY4qQyjvcNC
- V9cL9b5I/Ud9ghPwW4QkM7uhYqQDyh3SwgEFudc+/RsDuxjVlg9CFnGhS0nPXR89SaQZABEB
- AAG0HVNpbmFuIEtheWEgPG9rYXlhQGtlcm5lbC5vcmc+iQFOBBMBCAA4FiEEYdOlMSE+a7/c
- ckrQvGF4I+4LAFcFAlztcAoCGwMFCwkIBwIGFQoJCAsCBBYCAwECHgECF4AACgkQvGF4I+4L
- AFfidAf/VKHInxep0Z96iYkIq42432HTZUrxNzG9IWk4HN7c3vTJKv2W+b9pgvBF1SmkyQSy
- 8SJ3Zd98CO6FOHA1FigFyZahVsme+T0GsS3/OF1kjrtMktoREr8t0rK0yKpCTYVdlkHadxmR
- Qs5xLzW1RqKlrNigKHI2yhgpMwrpzS+67F1biT41227sqFzW9urEl/jqGJXaB6GV+SRKSHN+
- ubWXgE1NkmfAMeyJPKojNT7ReL6eh3BNB/Xh1vQJew+AE50EP7o36UXghoUktnx6cTkge0ZS
- qgxuhN33cCOU36pWQhPqVSlLTZQJVxuCmlaHbYWvye7bBOhmiuNKhOzb3FcgT7kBDQRa5zq1
- AQgAyRq/7JZKOyB8wRx6fHE0nb31P75kCnL3oE+smKW/sOcIQDV3C7mZKLf472MWB1xdr4Tm
- eXeL/wT0QHapLn5M5wWghC80YvjjdolHnlq9QlYVtvl1ocAC28y43tKJfklhHiwMNDJfdZbw
- 9lQ2h+7nccFWASNUu9cqZOABLvJcgLnfdDpnSzOye09VVlKr3NHgRyRZa7me/oFJCxrJlKAl
- 2hllRLt0yV08o7i14+qmvxI2EKLX9zJfJ2rGWLTVe3EJBnCsQPDzAUVYSnTtqELu2AGzvDiM
- gatRaosnzhvvEK+kCuXuCuZlRWP7pWSHqFFuYq596RRG5hNGLbmVFZrCxQARAQABiQEfBBgB
- CAAJBQJa5zq1AhsMAAoJELxheCPuCwBX2UYH/2kkMC4mImvoClrmcMsNGijcZHdDlz8NFfCI
- gSb3NHkarnA7uAg8KJuaHUwBMk3kBhv2BGPLcmAknzBIehbZ284W7u3DT9o1Y5g+LDyx8RIi
- e7pnMcC+bE2IJExCVf2p3PB1tDBBdLEYJoyFz/XpdDjZ8aVls/pIyrq+mqo5LuuhWfZzPPec
- 9EiM2eXpJw+Rz+vKjSt1YIhg46YbdZrDM2FGrt9ve3YaM5H0lzJgq/JQPKFdbd5MB0X37Qc+
- 2m/A9u9SFnOovA42DgXUyC2cSbIJdPWOK9PnzfXqF3sX9Aol2eLUmQuLpThJtq5EHu6FzJ7Y
- L+s0nPaNMKwv/Xhhm6Y=
-Message-ID: <ecaf00a7-dbb2-679b-3670-b9d6619bf97c@kernel.org>
-Date: Tue, 23 Jul 2019 11:45:16 -0400
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
+ 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
+ Z46HaNmN2hZS/oJ69c1DI5Rcww==
+Organization: ARM Ltd
+Message-ID: <3e3bf6bc-d1ab-ec77-e94c-d5defd133c5b@arm.com>
+Date: Tue, 23 Jul 2019 16:45:51 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-In-Reply-To: <b5b76ef6-c5f3-bab0-e981-cd47c7264959@arm.com>
+In-Reply-To: <485d9990-a6ad-2be0-e829-a0290d7d6a6f@redhat.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_084520_138892_4B3CE412 
-X-CRM114-Status: GOOD (  12.60  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190723_084603_253275_B41030CC 
+X-CRM114-Status: GOOD (  16.97  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -108,29 +110,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>, "Raslan,
+ KarimAllah" <karahmed@amazon.de>, Julien Thierry <julien.thierry@arm.com>,
+ Christoffer Dall <christoffer.dall@arm.com>, James Morse <james.morse@arm.com>,
+ Zenghui Yu <yuzenghui@huawei.com>, "Saidi, Ali" <alisaidi@amazon.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gNy8yMy8yMDE5IDg6MDIgQU0sIFJvYmluIE11cnBoeSB3cm90ZToKPiBXaHkgbm90IGp1c3Qg
-YWRkIGl0IG9uY2UgYXQgdGhlICJvdXQiIGxhYmVsIGl0c2VsZj8gKENvbnNpZGVyIHRoZQo+IGNv
-bmRpdGlvbnMgZm9yIHRoZSBsb29wIHRlcm1pbmF0aW5nIG5hdHVyYWxseSkKPiAKCisxCgo+Pgo+
-PiBTaWduZWQtb2ZmLWJ5OiBOaXNoa2EgRGFzZ3VwdGEgPG5pc2hrYWRnLmxpbnV4QGdtYWlsLmNv
-bT4KPj4gLS0tCj4+IMKgIGRyaXZlcnMvZG1hL3Fjb20vaGlkbWFfbWdtdC5jIHwgMTMgKysrKysr
-KysrKy0tLQo+PiDCoCAxIGZpbGUgY2hhbmdlZCwgMTAgaW5zZXJ0aW9ucygrKSwgMyBkZWxldGlv
-bnMoLSkKPj4KPj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvZG1hL3Fjb20vaGlkbWFfbWdtdC5jCj4+
-IGIvZHJpdmVycy9kbWEvcWNvbS9oaWRtYV9tZ210LmMKPj4gaW5kZXggMzAyMmQ2NmU3YTMzLi4y
-MDlhZGM2Y2VhYmUgMTAwNjQ0Cj4+IC0tLSBhL2RyaXZlcnMvZG1hL3Fjb20vaGlkbWFfbWdtdC5j
-Cj4+ICsrKyBiL2RyaXZlcnMvZG1hL3Fjb20vaGlkbWFfbWdtdC5jCj4+IEBAIC0zNjIsMTYgKzM2
-MiwyMiBAQCBzdGF0aWMgaW50IF9faW5pdAo+PiBoaWRtYV9tZ210X29mX3BvcHVsYXRlX2NoYW5u
-ZWxzKHN0cnVjdCBkZXZpY2Vfbm9kZSAqbnApCj4+IMKgwqDCoMKgwqDCoMKgwqDCoCBzdHJ1Y3Qg
-cGxhdGZvcm1fZGV2aWNlICpuZXdfcGRldjsKPj4gwqAgwqDCoMKgwqDCoMKgwqDCoMKgIHJldCA9
-IG9mX2FkZHJlc3NfdG9fcmVzb3VyY2UoY2hpbGQsIDAsICZyZXNbMF0pOwo+PiAtwqDCoMKgwqDC
-oMKgwqAgaWYgKCFyZXQpCj4+ICvCoMKgwqDCoMKgwqDCoCBpZiAoIXJldCkgewo+PiArwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoCBvZl9ub2RlX3B1dChjaGlsZCk7CgpUaGUgc3BhY2luZyBvbiB0aGlz
-IGFsc28gbG9va3Mgd2VpcmQuCgo+PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBnb3RvIG91
-dDsKPj4gK8KgwqDCoMKgwqDCoMKgIH0gCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJt
-LWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
-aWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Hi Eric,
+
+On 23/07/2019 16:10, Auger Eric wrote:
+> Hi Marc,
+> 
+> On 6/11/19 7:03 PM, Marc Zyngier wrote:
+>> When performing an MSI injection, let's first check if the translation
+>> is already in the cache. If so, let's inject it quickly without
+>> going through the whole translation process.
+>>
+>> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
+>> ---
+>>  virt/kvm/arm/vgic/vgic-its.c | 36 ++++++++++++++++++++++++++++++++++++
+>>  virt/kvm/arm/vgic/vgic.h     |  1 +
+>>  2 files changed, 37 insertions(+)
+>>
+>> diff --git a/virt/kvm/arm/vgic/vgic-its.c b/virt/kvm/arm/vgic/vgic-its.c
+>> index 62932458476a..83d80ec33473 100644
+>> --- a/virt/kvm/arm/vgic/vgic-its.c
+>> +++ b/virt/kvm/arm/vgic/vgic-its.c
+>> @@ -577,6 +577,20 @@ static struct vgic_irq *__vgic_its_check_cache(struct vgic_dist *dist,
+>>  	return irq;
+>>  }
+>>  
+>> +static struct vgic_irq *vgic_its_check_cache(struct kvm *kvm, phys_addr_t db,
+>> +					     u32 devid, u32 eventid)
+>> +{
+>> +	struct vgic_dist *dist = &kvm->arch.vgic;
+>> +	struct vgic_irq *irq;
+>> +	unsigned long flags;
+>> +
+>> +	raw_spin_lock_irqsave(&dist->lpi_list_lock, flags);
+>> +	irq = __vgic_its_check_cache(dist, db, devid, eventid);
+>> +	raw_spin_unlock_irqrestore(&dist->lpi_list_lock, flags);
+>> +
+>> +	return irq;
+>> +}
+>> +
+>>  static void vgic_its_cache_translation(struct kvm *kvm, struct vgic_its *its,
+>>  				       u32 devid, u32 eventid,
+>>  				       struct vgic_irq *irq)
+>> @@ -736,6 +750,25 @@ static int vgic_its_trigger_msi(struct kvm *kvm, struct vgic_its *its,
+>>  	return 0;
+>>  }
+>>  
+>> +int vgic_its_inject_cached_translation(struct kvm *kvm, struct kvm_msi *msi)
+>> +{
+>> +	struct vgic_irq *irq;
+>> +	unsigned long flags;
+>> +	phys_addr_t db;
+>> +
+>> +	db = (u64)msi->address_hi << 32 | msi->address_lo;
+>> +	irq = vgic_its_check_cache(kvm, db, msi->devid, msi->data);
+> 
+> I think we miss a check of its->enabled. This is currently done in
+> vgic_its_resolve_lpi() but now likely to be bypassed.
+
+But why would a translation be cached if the ITS is disabled? It should
+never haver been there the first place (vgic_its_resolve_lpi does check
+for the ITS being enabled, as you pointed out).
+
+Which makes me think that we miss an invalidate on an ITS being disabled:
+
+diff --git a/virt/kvm/arm/vgic/vgic-its.c b/virt/kvm/arm/vgic/vgic-its.c
+index 2633b0e88981..5f2ad74ad834 100644
+--- a/virt/kvm/arm/vgic/vgic-its.c
++++ b/virt/kvm/arm/vgic/vgic-its.c
+@@ -1719,6 +1719,8 @@ static void vgic_mmio_write_its_ctlr(struct kvm *kvm, struct vgic_its *its,
+ 		goto out;
+ 
+ 	its->enabled = !!(val & GITS_CTLR_ENABLE);
++	if (!its->enabled)
++		vgic_its_invalidate_cache(kvm);
+ 
+ 	/*
+ 	 * Try to process any pending commands. This function bails out early
+
+
+What do you think?
+
+	M.
+-- 
+Jazz is not dead. It just smells funny...
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
