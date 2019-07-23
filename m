@@ -2,86 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 59FC17139D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 10:11:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C944C7139F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 10:11:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=viowrILZR3/YNNWs7eceISEJ6meCZmtV7WpgG2cIUK4=; b=ftOwKq1dqTi6V6
-	uUlPJbSjqs/aCjaJ1u3tj3YyG8DyOp/Rbf9UhvGxvx2eDY8HQ3IYwNjbSorKnsuWJePRLIM7g+jfS
-	YEnkzze8Q19v/mudrY29+stCdYCwW/bAIcQSVFawxUnDg4/6u44NAdAR12d5XIg4stS9RiwMZyHzY
-	LXza7tKlSr+LmINXoY96ducsZwq+tzT3dCGOKsPoGdQBzUytRPuAyABtZQX8i0TrTwrLLiN2Qw3Y2
-	fqpQHuT3jM1aQeTQuSL6LHiRFWAlOirQ2CNoqlv9e6QyWzluzedLfiiHEPUslfSY9/OnAGNW6aLuE
-	U0wt9BXMcTL8eA+AuYmQ==;
+	List-Owner; bh=iFB/1+I8wQLe5dsf83+g1DXJPMRg4YCOeAdxIGXwKUw=; b=ADtr5bCS2oKmd4
+	F2jCGh11/ItWXZSXn8zXgxpHSTWW1ryKW3T3CjQPfthJm2lTEn9hZC3nVVcPNhY9W+regDVh7REVi
+	962pwcLilRJ+FkMxPFwgUgu5fgDgVFJmAKiO1OW6JBZOTOyMdnva4T7nShe3TeFwSQ5JghZAF/JfH
+	ud/Y3/bnifRY/WDZw6xvZtqNArYmy1AAnHnoLQW/2UNYdGu4KIiDbWe3euUZELJkWCu5Eo5qWm0Vr
+	ofAc6PVWEoP+kGgY0sjIKDUEx6NoD1q1oj9PrVQTW2mYeo2PXcIjStcJmcy5U2ydDY34K+zpd1ph7
+	Drpqd5xrpbR+n5Nso+cg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hppt6-0007Ya-BT; Tue, 23 Jul 2019 08:11:08 +0000
-Received: from mail-wm1-f68.google.com ([209.85.128.68])
+	id 1hppta-0007lP-AP; Tue, 23 Jul 2019 08:11:38 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hppsc-0007Xy-C8
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 08:10:40 +0000
-Received: by mail-wm1-f68.google.com with SMTP id x15so37552591wmj.3
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 23 Jul 2019 01:10:37 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to;
- bh=6iDuqxmKcASOOFXh75MkQ8KIrlMWj9tNOgqU0O447i0=;
- b=LQ5DIHdLnB5n/Pu064fiiExUe19LqxZl7YsIYV9iVwBOfOVMaWwYX21LUOpvmHs5/t
- P1qfJ4JLMS4/xuPcsrBgE7JRA+1YbLZXf1YwKrDZY90n5UHPia/ivqwiVzx83mciZkuZ
- PFkfAjhMf+B/E7QOlmcwXtpsft6hyOEgywT93/KwnK3OrYIJ6irqKZI5hCkM4HSGJIw8
- 4twN3AS0FGviSB5b2ikxfRnDm9ZKk4ubnKqZFp/F+fFUpRpvbbFtNZ8LmkniZqwPz5UW
- zJAiVTcQkdEBD4Ejk7lpTNOet8EPOCqfhawYZW6kaY1fgbiyMB5H8Y2NR+vZXk4tpdAh
- BRkQ==
-X-Gm-Message-State: APjAAAXH2GeF0ghFsmXLaB8ZbzMj6Lsdos6vr8/kvUZ3qf0KxnUZlKxu
- Q7m31JuDkNvQdQzLEBNKBrwvrg==
-X-Google-Smtp-Source: APXvYqxscCG5zV7WA3DgTwEOV7g+JI81JPQ3KtiJr3uwJoC6TgABoTfwOxAcc4Y8uQvIaAafGVRR6A==
-X-Received: by 2002:a1c:a1c5:: with SMTP id
- k188mr67874643wme.102.1563869436805; 
- Tue, 23 Jul 2019 01:10:36 -0700 (PDT)
-Received: from redhat.com ([185.120.125.30])
- by smtp.gmail.com with ESMTPSA id y12sm36236469wrm.79.2019.07.23.01.10.33
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 23 Jul 2019 01:10:36 -0700 (PDT)
-Date: Tue, 23 Jul 2019 04:10:31 -0400
-From: "Michael S. Tsirkin" <mst@redhat.com>
-To: Jason Wang <jasowang@redhat.com>
-Subject: Re: WARNING in __mmdrop
-Message-ID: <20190723035725-mutt-send-email-mst@kernel.org>
-References: <000000000000964b0d058e1a0483@google.com>
- <20190721044615-mutt-send-email-mst@kernel.org>
- <20190721081447-mutt-send-email-mst@kernel.org>
- <85dd00e2-37a6-72b7-5d5a-8bf46a3526cf@redhat.com>
- <20190722040230-mutt-send-email-mst@kernel.org>
- <4bd2ff78-6871-55f2-44dc-0982ffef3337@redhat.com>
- <20190723010019-mutt-send-email-mst@kernel.org>
- <b4696f2e-678a-bdb2-4b7c-fb4ce040ec2a@redhat.com>
- <20190723032024-mutt-send-email-mst@kernel.org>
- <1d14de4d-0133-1614-9f64-3ded381de04e@redhat.com>
+ id 1hppt8-0007iH-4z
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 08:11:13 +0000
+Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6FAF7223A1;
+ Tue, 23 Jul 2019 08:11:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1563869469;
+ bh=XypaNXay2tTTbtNscbMIAumjIpd8jWSti5cXmrhr/Ro=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=KAVwBz2/Cftj1c+ZRjzOwwPdamj4JFzkst4ciNpDxVvbiWmkrbdKMQ6ZTiVP0Gfhh
+ ZnWo/ESrKUtJ0Bat68W3UxVVPDR2W2kDTq3noGuhs5FgGj/5w+SaN+Lrf03BWCyAnY
+ IYLoDmw4V2rwKc6LRvlzkeZcTbe9hkMH8WHjaO1M=
+Date: Tue, 23 Jul 2019 16:10:38 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Subject: Re: [PATCH v2 3/3] arm64: dts: freescale: Add support for i.MX8QXP
+ AI_ML board
+Message-ID: <20190723081035.GP15632@dragon>
+References: <20190719070926.29114-1-manivannan.sadhasivam@linaro.org>
+ <20190719070926.29114-4-manivannan.sadhasivam@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1d14de4d-0133-1614-9f64-3ded381de04e@redhat.com>
+In-Reply-To: <20190719070926.29114-4-manivannan.sadhasivam@linaro.org>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_011038_619931_29401DD0 
-X-CRM114-Status: GOOD (  22.90  )
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20190723_011111_136522_2372E06B 
+X-CRM114-Status: GOOD (  19.18  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [185.120.125.30 listed in dnsbl.sorbs.net]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.128.68 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.128.68 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,74 +78,316 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mhocko@suse.com, peterz@infradead.org, ldv@altlinux.org,
- james.bottomley@hansenpartnership.com, linux-mm@kvack.org, namit@vmware.com,
- mingo@kernel.org, elena.reshetova@intel.com, keescook@chromium.org,
- aarcange@redhat.com, davem@davemloft.net, hch@infradead.org,
- christian@brauner.io,
- syzbot <syzbot+e58112d71f77113ddb7b@syzkaller.appspotmail.com>,
- syzkaller-bugs@googlegroups.com, jglisse@redhat.com, viro@zeniv.linux.org.uk,
- linux-arm-kernel@lists.infradead.org, wad@chromium.org,
- linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
- luto@amacapital.net, ebiederm@xmission.com, akpm@linux-foundation.org,
- guro@fb.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, kinjan.patel@einfochips.com,
+ s.hauer@pengutronix.de, linux-kernel@vger.kernel.org,
+ Darshak.Patel@einfochips.com, robh+dt@kernel.org, linux-imx@nxp.com,
+ kernel@pengutronix.de, festevam@gmail.com,
+ linux-arm-kernel@lists.infradead.org, prajose.john@einfochips.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVHVlLCBKdWwgMjMsIDIwMTkgYXQgMDM6NTM6MDZQTSArMDgwMCwgSmFzb24gV2FuZyB3cm90
-ZToKPiAKPiBPbiAyMDE5LzcvMjMg5LiL5Y2IMzoyMywgTWljaGFlbCBTLiBUc2lya2luIHdyb3Rl
-Ogo+ID4gPiA+IFJlYWxseSBsZXQncyBqdXN0IHVzZSBrZnJlZV9yY3UuIEl0J3Mgd2F5IGNsZWFu
-ZXI6IGZpcmUgYW5kIGZvcmdldC4KPiA+ID4gTG9va3Mgbm90LCB5b3UgbmVlZCByYXRlIGxpbWl0
-IHRoZSBmaXJlIGFzIHlvdSd2ZSBmaWd1cmVkIG91dD8KPiA+IFNlZSB0aGUgZGlzY3Vzc2lvbiB0
-aGF0IGZvbGxvd2VkLiBCYXNpY2FsbHkgbm8sIGl0J3MgZ29vZCBlbm91Z2gKPiA+IGFscmVhZHkg
-YW5kIGlzIG9ubHkgZ29pbmcgdG8gYmUgYmV0dGVyLgo+ID4gCj4gPiA+IEFuZCBpbiBmYWN0LAo+
-ID4gPiB0aGUgc3luY2hyb25pemF0aW9uIGlzIG5vdCBldmVuIG5lZWRlZCwgZG9lcyBpdCBoZWxw
-IGlmIEkgbGVhdmUgYSBjb21tZW50IHRvCj4gPiA+IGV4cGxhaW4/Cj4gPiBMZXQncyB0cnkgdG8g
-ZmlndXJlIGl0IG91dCBpbiB0aGUgbWFpbCBmaXJzdC4gSSdtIHByZXR0eSBzdXJlIHRoZQo+ID4g
-Y3VycmVudCBsb2dpYyBpcyB3cm9uZy4KPiAKPiAKPiBIZXJlIGlzIHdoYXQgdGhlIGNvZGUgd2hh
-dCB0byBhY2hpZXZlOgo+IAo+IC0gVGhlIG1hcCB3YXMgcHJvdGVjdGVkIGJ5IFJDVQo+IAo+IC0g
-V3JpdGVycyBhcmU6IE1NVSBub3RpZmllciBpbnZhbGlkYXRpb24gY2FsbGJhY2tzLCBmaWxlIG9w
-ZXJhdGlvbnMgKGlvY3Rscwo+IGV0YyksIG1ldGFfcHJlZmV0Y2ggKGRhdGFwYXRoKQo+IAo+IC0g
-UmVhZGVycyBhcmU6IG1lbW9yeSBhY2Nlc3Nvcgo+IAo+IFdyaXRlciBhcmUgc3luY2hyb25pemVk
-IHRocm91Z2ggbW11X2xvY2suIFJDVSBpcyB1c2VkIHRvIHN5bmNocm9uaXplZAo+IGJldHdlZW4g
-d3JpdGVycyBhbmQgcmVhZGVycy4KPiAKPiBUaGUgc3luY2hyb25pemVfcmN1KCkgaW4gdmhvc3Rf
-cmVzZXRfdnFfbWFwcygpIHdhcyB1c2VkIHRvIHN5bmNocm9uaXplZCBpdAo+IHdpdGggcmVhZGVy
-cyAobWVtb3J5IGFjY2Vzc29ycykgaW4gdGhlIHBhdGggb2YgZmlsZSBvcGVyYXRpb25zLiBCdXQg
-aW4gdGhpcwo+IGNhc2UsIHZxLT5tdXRleCB3YXMgYWxyZWFkeSBoZWxkLCB0aGlzIG1lYW5zIGl0
-IGhhcyBiZWVuIHNlcmlhbGl6ZWQgd2l0aAo+IG1lbW9yeSBhY2Nlc3Nvci4gVGhhdCdzIHdoeSBJ
-IHRoaW5rIGl0IGNvdWxkIGJlIHJlbW92ZWQgc2FmZWx5Lgo+IAo+IEFueXRoaW5nIEkgbWlzcyBo
-ZXJlPwo+IAoKU28gaW52YWxpZGF0ZSBjYWxsYmFja3MgbmVlZCB0byByZXNldCB0aGUgbWFwLCBh
-bmQgdGhleSBkbwpub3QgaGF2ZSB2cSBtdXRleC4gSG93IGNhbiB0aGV5IGRvIHRoaXMgYW5kIGZy
-ZWUKdGhlIG1hcCBzYWZlbHk/IFRoZXkgbmVlZCBzeW5jaHJvbml6ZV9yY3Ugb3Iga2ZyZWVfcmN1
-IHJpZ2h0PwoKQW5kIEkgd29ycnkgc29tZXdoYXQgdGhhdCBzeW5jaHJvbml6ZV9yY3UgaW4gYW4g
-TU1VIG5vdGlmaWVyCmlzIGEgcHJvYmxlbSwgTU1VIG5vdGlmaWVycyBhcmUgc3VwcG9zZWQgdG8g
-YmUgcXVpY2s6CnRoZXkgYXJlIG9uIGEgcmVhZCBzaWRlIGNyaXRpY2FsIHNlY3Rpb24gb2YgU1JD
-VS4KCklmIHdlIGNvdWxkIGdldCByaWQgb2YgUkNVIHRoYXQgd291bGQgYmUgZXZlbiBiZXR0ZXIu
-CgpCdXQgbm93IEkgd29uZGVyOgoJaW52YWxpZGF0ZV9zdGFydCBoYXMgdG8gbWFyayBwYWdlIGFz
-IGRpcnR5CgkodGhpcyBpcyB3aGF0IG15IHBhdGNoIGFkZGVkLCBjdXJyZW50IGNvZGUgbWlzc2Vz
-IHRoaXMpLgoKCWF0IHRoYXQgcG9pbnQga2VybmVsIGNhbiBjb21lIGFuZCBtYWtlIHRoZSBwYWdl
-IGNsZWFuIGFnYWluLgoKCUF0IHRoYXQgcG9pbnQgVlEgaGFuZGxlcnMgY2FuIGtlZXAgYSBjb3B5
-IG9mIHRoZSBtYXAKCWFuZCBjaGFuZ2UgdGhlIHBhZ2UgYWdhaW4uCgoKQXQgdGhpcyBwb2ludCBJ
-IGRvbid0IHVuZGVyc3RhbmQgaG93IHdlIGNhbiBtYXJrIHBhZ2UgZGlydHkKc2FmZWx5LgoKPiA+
-IAo+ID4gPiA+ID4gQnR3LCBmb3Iga3ZtIGlvY3RsIGl0IHN0aWxsIHVzZXMgc3luY2hyb25pemVf
-cmN1KCkgaW4ga3ZtX3ZjcHVfaW9jdGwoKSwKPiA+ID4gPiA+IChqdXN0IGEgbGl0dGxlIGJpdCBt
-b3JlIGhhcmQgdG8gdHJpZ2dlcik6Cj4gPiA+ID4gQUZBSUsgdGhlc2UgbmV2ZXIgcnVuIGluIHJl
-c3BvbnNlIHRvIGd1ZXN0IGV2ZW50cy4KPiA+ID4gPiBTbyB0aGV5IGNhbiB0YWtlIHZlcnkgbG9u
-ZyBhbmQgZ3Vlc3RzIHN0aWxsIHdvbid0IGNyYXNoLgo+ID4gPiBXaGF0IGlmIGd1ZXN0IG1hbmFn
-ZXMgdG8gZXNjYXBlIHRvIHFlbXU/Cj4gPiA+IAo+ID4gPiBUaGFua3MKPiA+IFRoZW4gaXQncyBn
-b2luZyB0byBiZSBzbG93LiBXaHkgZG8gd2UgY2FyZT8KPiA+IFdoYXQgd2UgZG8gbm90IHdhbnQg
-aXMgc3luY2hyb25pemVfcmN1IHRoYXQgZ3Vlc3QgaXMgYmxvY2tlZCBvbi4KPiA+IAo+IAo+IE9r
-LCB0aGlzIGxvb2tzIGxpa2UgdGhhdCBJIGhhdmUgc29tZSBtaXN1bmRlcnN0YW5kaW5nIGhlcmUg
-b2YgdGhlIHJlYXNvbiB3aHkKPiBzeW5jaHJvbml6ZV9yY3UoKSBpcyBub3QgcHJlZmVyYWJsZSBp
-biB0aGUgcGF0aCBvZiBpb2N0bC4gQnV0IGluIGt2bSBjYXNlLAo+IGlmIHJjdV9leHBlZGl0ZWQg
-aXMgc2V0LCBpdCBjYW4gdHJpZ2dlcnMgSVBJcyBBRkFJSy4KPiAKPiBUaGFua3MKPgoKWWVzLCBl
-eHBlZGl0ZWQgaXMgbm90IGdvb2QgZm9yIHNvbWV0aGluZyBndWVzdCBjYW4gdHJpZ2dlci4KTGV0
-J3MganVzdCB1c2Uga2ZyZWVfcmN1IGlmIHdlIGNhbi4gUGF1bCBzYWlkIGV2ZW4gdGhvdWdoCmRv
-Y3VtZW50YXRpb24gc3RpbGwgc2F5cyBpdCBuZWVkcyB0byBiZSByYXRlLWxpbWl0ZWQsIHRoYXQK
-cGFydCBpcyBiYXNpY2FsbHkgc3RhbGUgYW5kIHdpbGwgZ2V0IHVwZGF0ZWQuCgotLSAKTVNUIAoK
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJt
-LWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3Jn
-Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtl
-cm5lbAo=
+On Fri, Jul 19, 2019 at 12:39:26PM +0530, Manivannan Sadhasivam wrote:
+> Add support for i.MX8QXP AI_ML board from Einfochips. This board is one
+> of the Consumer Edition boards of the 96Boards family based on i.MX8QXP
+> SoC from NXP/Freescale.
+> 
+> The initial support includes following peripherals which are tested and
+> known to be working:
+> 
+> 1. Debug serial via UART2
+> 2. uSD
+> 3. WiFi
+> 4. Ethernet
+> 
+> More information about this board can be found in Arrow website:
+> https://www.arrow.com/en/products/imx8-ai-ml/arrow-development-tools
+> 
+> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
+> ---
+>  arch/arm64/boot/dts/freescale/Makefile        |   1 +
+>  .../boot/dts/freescale/imx8qxp-ai_ml.dts      | 249 ++++++++++++++++++
+>  2 files changed, 250 insertions(+)
+>  create mode 100644 arch/arm64/boot/dts/freescale/imx8qxp-ai_ml.dts
+> 
+> diff --git a/arch/arm64/boot/dts/freescale/Makefile b/arch/arm64/boot/dts/freescale/Makefile
+> index 0bd122f60549..bd8460549d1a 100644
+> --- a/arch/arm64/boot/dts/freescale/Makefile
+> +++ b/arch/arm64/boot/dts/freescale/Makefile
+> @@ -24,4 +24,5 @@ dtb-$(CONFIG_ARCH_MXC) += imx8mm-evk.dtb
+>  dtb-$(CONFIG_ARCH_MXC) += imx8mq-evk.dtb
+>  dtb-$(CONFIG_ARCH_MXC) += imx8mq-zii-ultra-rmb3.dtb
+>  dtb-$(CONFIG_ARCH_MXC) += imx8mq-zii-ultra-zest.dtb
+> +dtb-$(CONFIG_ARCH_MXC) += imx8qxp-ai_ml.dtb
+>  dtb-$(CONFIG_ARCH_MXC) += imx8qxp-mek.dtb
+> diff --git a/arch/arm64/boot/dts/freescale/imx8qxp-ai_ml.dts b/arch/arm64/boot/dts/freescale/imx8qxp-ai_ml.dts
+> new file mode 100644
+> index 000000000000..3dc8757d9c42
+> --- /dev/null
+> +++ b/arch/arm64/boot/dts/freescale/imx8qxp-ai_ml.dts
+> @@ -0,0 +1,249 @@
+> +// SPDX-License-Identifier: GPL-2.0+
+> +/*
+> + * Copyright 2018 Einfochips
+> + * Copyright 2019 Linaro Ltd.
+> + */
+> +
+> +/dts-v1/;
+> +
+> +#include "imx8qxp.dtsi"
+> +
+> +/ {
+> +	model = "Einfochips i.MX8QXP AI_ML";
+> +	compatible = "einfochips,imx8qxp-ai_ml", "fsl,imx8qxp";
+> +
+> +	aliases {
+> +		serial1 = &adma_lpuart1;
+> +		serial2 = &adma_lpuart2;
+> +		serial3 = &adma_lpuart3;
+> +	};
+> +
+> +	chosen {
+> +		stdout-path = &adma_lpuart2;
+> +	};
+> +
+> +	memory@80000000 {
+> +		device_type = "memory";
+> +		reg = <0x00000000 0x80000000 0 0x80000000>;
+> +	};
+> +
+> +	leds {
+> +		compatible = "gpio-leds";
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&pinctrl_leds>;
+> +
+> +		user_led1 {
+> +			label = "green:user1";
+> +			gpios = <&lsio_gpio4 16 GPIO_ACTIVE_HIGH>;
+> +			linux,default-trigger = "heartbeat";
+> +		};
+> +
+> +		user_led2 {
+> +			label = "green:user2";
+> +			gpios = <&lsio_gpio0 6 GPIO_ACTIVE_HIGH>;
+> +			linux,default-trigger = "none";
+> +		};
+> +
+> +		user_led3 {
+> +			label = "green:user3";
+> +			gpios = <&lsio_gpio0 7 GPIO_ACTIVE_HIGH>;
+> +			linux,default-trigger = "mmc1";
+> +			default-state = "off";
+> +		};
+> +
+> +		user_led4 {
+> +			label = "green:user4";
+> +			gpios = <&lsio_gpio4 21 GPIO_ACTIVE_HIGH>;
+> +			panic-indicator;
+> +			linux,default-trigger = "none";
+> +		};
+> +
+> +		wlan_active_led {
+> +			label = "yellow:wlan";
+> +			gpios = <&lsio_gpio4 17 GPIO_ACTIVE_HIGH>;
+> +			linux,default-trigger = "phy0tx";
+> +			default-state = "off";
+> +		};
+> +
+> +		bt_active_led {
+
+We prefer to use hyphen over underscore in node names.  I fixed them up
+and applied the series.
+
+Shawn
+
+> +			label = "blue:bt";
+> +			gpios = <&lsio_gpio4 18 GPIO_ACTIVE_HIGH>;
+> +			linux,default-trigger = "hci0-power";
+> +			default-state = "off";
+> +		};
+> +	};
+> +
+> +	sdio_pwrseq: sdio-pwrseq {
+> +		compatible = "mmc-pwrseq-simple";
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&pinctrl_wifi_reg_on>;
+> +		reset-gpios = <&lsio_gpio3 24 GPIO_ACTIVE_LOW>;
+> +	};
+> +};
+> +
+> +/* BT */
+> +&adma_lpuart0 {
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_lpuart0>;
+> +	uart-has-rtscts;
+> +	status = "okay";
+> +};
+> +
+> +/* LS-UART0 */
+> +&adma_lpuart1 {
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_lpuart1>;
+> +	status = "okay";
+> +};
+> +
+> +/* Debug */
+> +&adma_lpuart2 {
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_lpuart2>;
+> +	status = "okay";
+> +};
+> +
+> +/* PCI-E UART */
+> +&adma_lpuart3 {
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_lpuart3>;
+> +	status = "okay";
+> +};
+> +
+> +&fec1 {
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_fec1>;
+> +	phy-mode = "rgmii-id";
+> +	phy-handle = <&ethphy0>;
+> +	fsl,magic-packet;
+> +	status = "okay";
+> +
+> +	mdio {
+> +		#address-cells = <1>;
+> +		#size-cells = <0>;
+> +
+> +		ethphy0: ethernet-phy@0 {
+> +			compatible = "ethernet-phy-ieee802.3-c22";
+> +			reg = <0>;
+> +		};
+> +	};
+> +};
+> +
+> +/* WiFi */
+> +&usdhc1 {
+> +	#address-cells = <1>;
+> +	#size-cells = <0>;
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_usdhc1>;
+> +	bus-width = <4>;
+> +	no-sd;
+> +	non-removable;
+> +	mmc-pwrseq = <&sdio_pwrseq>;
+> +	status = "okay";
+> +
+> +	brcmf: wifi@1 {
+> +		reg = <1>;
+> +		compatible = "brcm,bcm4329-fmac";
+> +	};
+> +};
+> +
+> +/* SD */
+> +&usdhc2 {
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_usdhc2>;
+> +	bus-width = <4>;
+> +	cd-gpios = <&lsio_gpio4 22 GPIO_ACTIVE_LOW>;
+> +	status = "okay";
+> +};
+> +
+> +&iomuxc {
+> +	pinctrl_fec1: fec1grp {
+> +		fsl,pins = <
+> +			IMX8QXP_ENET0_MDC_CONN_ENET0_MDC			0x06000020
+> +			IMX8QXP_ENET0_MDIO_CONN_ENET0_MDIO			0x06000020
+> +			IMX8QXP_ENET0_RGMII_TX_CTL_CONN_ENET0_RGMII_TX_CTL	0x06000020
+> +			IMX8QXP_ENET0_RGMII_TXC_CONN_ENET0_RGMII_TXC		0x06000020
+> +			IMX8QXP_ENET0_RGMII_TXD0_CONN_ENET0_RGMII_TXD0		0x06000020
+> +			IMX8QXP_ENET0_RGMII_TXD1_CONN_ENET0_RGMII_TXD1		0x06000020
+> +			IMX8QXP_ENET0_RGMII_TXD2_CONN_ENET0_RGMII_TXD2		0x06000020
+> +			IMX8QXP_ENET0_RGMII_TXD3_CONN_ENET0_RGMII_TXD3		0x06000020
+> +			IMX8QXP_ENET0_RGMII_RXC_CONN_ENET0_RGMII_RXC		0x06000020
+> +			IMX8QXP_ENET0_RGMII_RX_CTL_CONN_ENET0_RGMII_RX_CTL	0x06000020
+> +			IMX8QXP_ENET0_RGMII_RXD0_CONN_ENET0_RGMII_RXD0		0x06000020
+> +			IMX8QXP_ENET0_RGMII_RXD1_CONN_ENET0_RGMII_RXD1		0x06000020
+> +			IMX8QXP_ENET0_RGMII_RXD2_CONN_ENET0_RGMII_RXD2		0x06000020
+> +			IMX8QXP_ENET0_RGMII_RXD3_CONN_ENET0_RGMII_RXD3		0x06000020
+> +		>;
+> +	};
+> +
+> +	pinctrl_leds: ledsgrp{
+> +		fsl,pins = <
+> +			IMX8QXP_ESAI0_TX2_RX3_LSIO_GPIO0_IO06			0x00000021
+> +			IMX8QXP_ESAI0_TX3_RX2_LSIO_GPIO0_IO07			0x00000021
+> +			IMX8QXP_EMMC0_DATA7_LSIO_GPIO4_IO16			0x00000021
+> +			IMX8QXP_USDHC1_WP_LSIO_GPIO4_IO21			0x00000021
+> +			IMX8QXP_EMMC0_STROBE_LSIO_GPIO4_IO17			0x00000021
+> +			IMX8QXP_EMMC0_RESET_B_LSIO_GPIO4_IO18			0x00000021
+> +		>;
+> +	};
+> +
+> +	pinctrl_lpuart0: lpuart0grp {
+> +		fsl,pins = <
+> +			IMX8QXP_UART0_RX_ADMA_UART0_RX				0X06000020
+> +			IMX8QXP_UART0_TX_ADMA_UART0_TX				0X06000020
+> +			IMX8QXP_FLEXCAN0_TX_ADMA_UART0_CTS_B 			0x06000020
+> +			IMX8QXP_FLEXCAN0_RX_ADMA_UART0_RTS_B			0x06000020
+> +		>;
+> +	};
+> +
+> +	pinctrl_lpuart1: lpuart1grp {
+> +		fsl,pins = <
+> +			IMX8QXP_UART1_RX_ADMA_UART1_RX				0X06000020
+> +			IMX8QXP_UART1_TX_ADMA_UART1_TX				0X06000020
+> +		>;
+> +	};
+> +
+> +	pinctrl_lpuart2: lpuart2grp {
+> +		fsl,pins = <
+> +			IMX8QXP_UART2_RX_ADMA_UART2_RX				0X06000020
+> +			IMX8QXP_UART2_TX_ADMA_UART2_TX				0X06000020
+> +		>;
+> +	};
+> +
+> +	pinctrl_lpuart3: lpuart3grp {
+> +		fsl,pins = <
+> +			IMX8QXP_FLEXCAN2_RX_ADMA_UART3_RX			0X06000020
+> +			IMX8QXP_FLEXCAN2_TX_ADMA_UART3_TX			0X06000020
+> +		>;
+> +	};
+> +
+> +	pinctrl_usdhc1: usdhc1grp {
+> +		fsl,pins = <
+> +			IMX8QXP_EMMC0_CLK_CONN_EMMC0_CLK			0x06000041
+> +			IMX8QXP_EMMC0_CMD_CONN_EMMC0_CMD			0x00000021
+> +			IMX8QXP_EMMC0_DATA0_CONN_EMMC0_DATA0			0x00000021
+> +			IMX8QXP_EMMC0_DATA1_CONN_EMMC0_DATA1			0x00000021
+> +			IMX8QXP_EMMC0_DATA2_CONN_EMMC0_DATA2			0x00000021
+> +			IMX8QXP_EMMC0_DATA3_CONN_EMMC0_DATA3			0x00000021
+> +		>;
+> +	};
+> +
+> +	pinctrl_usdhc2: usdhc2grp {
+> +		fsl,pins = <
+> +			IMX8QXP_USDHC1_CLK_CONN_USDHC1_CLK			0x06000041
+> +			IMX8QXP_USDHC1_CMD_CONN_USDHC1_CMD			0x00000021
+> +			IMX8QXP_USDHC1_DATA0_CONN_USDHC1_DATA0			0x00000021
+> +			IMX8QXP_USDHC1_DATA1_CONN_USDHC1_DATA1			0x00000021
+> +			IMX8QXP_USDHC1_DATA2_CONN_USDHC1_DATA2			0x00000021
+> +			IMX8QXP_USDHC1_DATA3_CONN_USDHC1_DATA3			0x00000021
+> +			IMX8QXP_USDHC1_VSELECT_CONN_USDHC1_VSELECT		0x00000021
+> +			IMX8QXP_USDHC1_CD_B_LSIO_GPIO4_IO22			0x00000021
+> +		>;
+> +	};
+> +
+> +	pinctrl_wifi_reg_on: wifiregongrp {
+> +		fsl,pins = <
+> +			IMX8QXP_QSPI0B_SS1_B_LSIO_GPIO3_IO24			0x00000021
+> +		>;
+> +	};
+> +};
+> -- 
+> 2.17.1
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
