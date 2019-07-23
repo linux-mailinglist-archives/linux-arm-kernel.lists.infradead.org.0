@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B16671387
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 10:00:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 152B77138C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 10:03:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4TdNjusThrdmT7gmQotAv7T+gWo9RGvbqF47L0syjTU=; b=g+YTE2uQ+Kpfkb
-	wclxKns8H6JR2pbrbNE/ddGkIMUTT/0+6hzn9ij8CA8oyCb2vV3rH45Khq1ozKrjEcXNlk6b4z/yF
-	BFHEg0OdfCISwTYtWNdE4UhQlsKW9QXxnO8BSxgWL00LMgRVSQCJUXjfKcp2EkZyI+te2fxsZZUCK
-	SmiH38E6PucJ11n/bEhh+++biWXmpFsL7C2zpD4Hfs+CTBX548ovHdkhkRcx69sivXfjgmI0rktJv
-	F/892jnQ+krZWFk2FKA7nVfYLBWEhq+NNJYp3CWQ2SYT8e2/QPeD0ZXKXZuRYVzW+bCKwUiB00FhI
-	DubnhDN5rLjPcL9+tG6A==;
+	List-Owner; bh=Dj+F8F3ABRt1NPJ/a6uVd1cKhRTL6ZW24Ou7CNC5mlw=; b=MZOB9xjMXjlOyw
+	KptQ2w2CQ/l4mjgLFlr3RJ5apFjrZzib6KrpAcJF94lRUqJOC+gxoFFkHMarHPpdFzI0W/YxpkMPI
+	9b7GjGgS60vu5shcBvTOLJf0BSe9lmClyJqjZEKqp3uEfqweiI+3MKTj8DsgIRM1ukd6Zse4Gi4Du
+	ucOlrawkBT2rQKC40VcY7nh48E3Rhs6ICXb2Tu+ouIPwRYJbgRBoo6o7i/0a/41TDxYxx5rkoYJxD
+	d7EFb2v4/dBtQpj529x4mdDvdaW0DUGE3nPqHniU1MgpoS/akJvEpVl1XZRecdZW4jtui27S7H8AR
+	GT2g2mBXbNkc4oyUX9tQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hppig-0003Bg-Ux; Tue, 23 Jul 2019 08:00:23 +0000
+	id 1hppld-00040y-Mi; Tue, 23 Jul 2019 08:03:25 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hppiS-0002vn-HV
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 08:00:09 +0000
+ id 1hpplN-0003wg-QV
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 08:03:10 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 927C82239F;
- Tue, 23 Jul 2019 07:59:59 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id C503D2070B;
+ Tue, 23 Jul 2019 08:03:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563868808;
- bh=E5hVssuZ6CZ0pvbWaiPrRrdaj4qYQ6lYexAw+U+Hh3Q=;
+ s=default; t=1563868989;
+ bh=NzZJIzqSuCySKVu8QSAWnsLQ14sMCDdVbIeGxQTQNRA=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=GMM8HxVuSR3M8pB/0rGd6k6eRPUBVkSqyXXiy61KPH3sCjw8KUaUaIswX9dwgho/t
- KVfifc7d6BIWadcvqeZLLmgxBcAEqezt1eZmUQAsAGaWulswknuy+7UMslfAzKwf20
- gGl7Yit5O5oEPN/nrG9RfHCyU2hxnlGw2crJ6f5Q=
-Date: Tue, 23 Jul 2019 15:59:34 +0800
+ b=Mi3vYfKaXr5oRK/kshsr8aZ5LrMQ/AeIld8NL4LT9AuE1yJKJDDB179X7XCXTTokE
+ XjUDMTO2L6Ng9NXLwtYvBjMXK4hApAtF433+cEZov/Wn8FGHWxkrBoUEEeTVWpuIpP
+ 3c94I8tQNLPOKKEsoXfHcmIxnJ1NqJIOhxUNqAzM=
+Date: Tue, 23 Jul 2019 16:02:35 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Daniel Baluta <daniel.baluta@nxp.com>
-Subject: Re: [PATCH 1/3] clk: imx8: Add DSP related clocks
-Message-ID: <20190723075933.GN15632@dragon>
-References: <20190718151346.3523-1-daniel.baluta@nxp.com>
- <20190718151346.3523-2-daniel.baluta@nxp.com>
+To: Marco Felsch <m.felsch@pengutronix.de>
+Subject: Re: [PATCH v2] arm: dts: imx6qdl: add gpio expander pca9535
+Message-ID: <20190723080234.GO15632@dragon>
+References: <20190719104615.5329-1-gilles.doffe@savoirfairelinux.com>
+ <20190722075341.e4ve45rneusiogtk@pengutronix.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190718151346.3523-2-daniel.baluta@nxp.com>
+In-Reply-To: <20190722075341.e4ve45rneusiogtk@pengutronix.de>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_010008_607258_47A44CD5 
-X-CRM114-Status: UNSURE (   6.92  )
+X-CRM114-CacheID: sfid-20190723_010309_882303_1D51366B 
+X-CRM114-Status: UNSURE (   8.03  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -78,30 +78,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, aisheng.dong@nxp.com, peng.fan@nxp.com,
- anson.huang@nxp.com, devicetree@vger.kernel.org, s.hauer@pengutronix.de,
- Frank.Li@nxp.com, linux-kernel@vger.kernel.org, paul.olaru@nxp.com,
- robh+dt@kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
- leonard.crestez@nxp.com, festevam@gmail.com, shengjiu.wang@nxp.com,
- linux-arm-kernel@lists.infradead.org, sound-open-firmware@alsa-project.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ Gilles DOFFE <gilles.doffe@savoirfairelinux.com>, s.hauer@pengutronix.de,
+ rennes@savoirfairelinux.com, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ linux-imx@nxp.com, kernel@pengutronix.de, jerome.oufella@savoirfairelinux.com,
+ festevam@gmail.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jul 18, 2019 at 06:13:44PM +0300, Daniel Baluta wrote:
-> i.MX8QXP contains Hifi4 DSP. There are four clocks
-> associated with DSP:
->   * dsp_lpcg_core_clk
->   * dsp_lpcg_ipg_clk
->   * dsp_lpcg_adb_aclk
->   * ocram_lpcg_ipg_clk
+On Mon, Jul 22, 2019 at 09:53:41AM +0200, Marco Felsch wrote:
+> Hi Gilles,
 > 
-> Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
-> Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
+> can you adapt the patch title, I assumed that the base dtsi is adding a
+> gpio-expander which makes no sense.
 
-I already picked this one up, so you do not need to include it in the
-series any more.
+More specifically, the prefix should be something like:
+
+  'ARM: dts: imx6qdl-rex: ...'
 
 Shawn
 
