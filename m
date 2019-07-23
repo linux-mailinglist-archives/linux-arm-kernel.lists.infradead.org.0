@@ -2,53 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3234271EDB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 20:13:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE38271EE1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 20:16:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7kBo0VmIajbeRAR/btGp7v9HFohMLLbdPqaowSCOXu4=; b=WQtxKeZguQYbjv
-	AD1NauOy5FPCMGfZx5qhUb+5VzYJJpihGwxh/LpuUjyrgDx+mw5QmqrDZYroUz0ZIhEsFzFsaUPXS
-	y7wfJxb67omwKFIsuc4uFBSEBMWgWd/BKqyE6AH2ppGggaSS+kZ9LI+2ogYWa1MdfS+v7mGWTgpA0
-	wG/8sGxpE8BeX17eT77MmsvvHEPcrmba6GsRAowrGtT6GUWel3K5PR0KjZF4Iti7MNxeyf9C4WuC/
-	LI2hvCyN8vFQbgQjq+8mDhL2UtO+aAKloCyCI8qj8fxCAAAKuZn0fFbBPCnl78m221EmrAja1ClJP
-	WSOZ58clf22K0y+TlgSg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mDqgUAdZNO9UMq3cQYhd2j/6nA+Zut0rmFNfqBi4Fmw=; b=scg0E/+VieM9ye
+	w3zoDwbHwfwhBiST4597KFz8bb2lzfbz+Y/U2T8i9YutXMMSKeA17TNJRByLYrWPZ1NppZ1ElB8cP
+	Na1TXuENtoetPyL125fjRrWEW6ODWHUt3tLQAszz1eSC/gXutr8hUfnBuRJtQsLWqmefnNAUT0upC
+	P4+ILO1iUr/f19d2JLrEq1LKWLPZvJtebmgJz4Fj+Oa5ucRAim33kmXl7bSVJJocLlMWKBqL8HS/+
+	vS2Vg8dC/Bhbb5SzeZE5AN9pIlCeQGCCVGxDGYurDBXadTyOK23x1amvX3rRITAR52syrL10YSTrF
+	V7FPvEWfuxuQegmzP3ig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpzIM-0001mh-3n; Tue, 23 Jul 2019 18:13:50 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hpzI5-0001m4-T5; Tue, 23 Jul 2019 18:13:35 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7953F337;
- Tue, 23 Jul 2019 11:13:32 -0700 (PDT)
-Received: from why (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B22763F71A;
- Tue, 23 Jul 2019 11:13:29 -0700 (PDT)
-Date: Tue, 23 Jul 2019 19:13:26 +0100
-From: Marc Zyngier <marc.zyngier@arm.com>
-To: Stefan Wahren <wahrenst@gmx.net>
-Subject: Re: [PATCH RFC 18/18] ARM: dts: Add minimal Raspberry Pi 4 support
-Message-ID: <20190723191326.3afdff83@why>
-In-Reply-To: <1563398164-2679-5-git-send-email-wahrenst@gmx.net>
-References: <1563398164-2679-1-git-send-email-wahrenst@gmx.net>
- <1563398164-2679-5-git-send-email-wahrenst@gmx.net>
-Organization: ARM Ltd
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+	id 1hpzKx-0003KB-Vb; Tue, 23 Jul 2019 18:16:32 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hpzKl-0003JW-I2
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 18:16:20 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x6NIGGou059594;
+ Tue, 23 Jul 2019 13:16:16 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1563905776;
+ bh=KQPkYhTuJfhyS8PfO8QYjfDY+4JKdUSmCoRj+O/+9ag=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=NlcOtrYY77ZUl0NocV0eWonHVSyGHb/YHl1135OyC/OY7ULW9OY2TRkxn7liAEDOb
+ 07SxjV+Knmk8m6lvYfwWe6TP/UkCiZayuEz2XXJU+qU6q0iJttYTBeP76s6o5fv0/I
+ XG76G/rJprda4Xn39B1JhY+vIXJ37jzYQdXZ0BAk=
+Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x6NIGGa5062230
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Tue, 23 Jul 2019 13:16:16 -0500
+Received: from DLEE104.ent.ti.com (157.170.170.34) by DLEE100.ent.ti.com
+ (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 23
+ Jul 2019 13:16:15 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE104.ent.ti.com
+ (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Tue, 23 Jul 2019 13:16:15 -0500
+Received: from [128.247.58.153] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x6NIGFZZ100648;
+ Tue, 23 Jul 2019 13:16:15 -0500
+Subject: Re: [PATCH 1/8] ARM: OMAP2+: Fix missing SYSC_HAS_RESET_STATUS for
+ dra7 epwmss
+To: Tony Lindgren <tony@atomide.com>, <linux-omap@vger.kernel.org>
+References: <20190723112811.44381-1-tony@atomide.com>
+ <20190723112811.44381-2-tony@atomide.com>
+From: Suman Anna <s-anna@ti.com>
+Message-ID: <212f2172-8612-86b6-83d7-0c70baaaf046@ti.com>
+Date: Tue, 23 Jul 2019 13:16:15 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
+In-Reply-To: <20190723112811.44381-2-tony@atomide.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_111334_031643_EC2C154F 
-X-CRM114-Status: GOOD (  25.05  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190723_111619_693674_1FC7AFA2 
+X-CRM114-Status: GOOD (  16.53  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,140 +93,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
- Florian Fainelli <f.fainelli@gmail.com>, linux-arm-kernel@lists.infradead.org,
- Scott Branden <sbranden@broadcom.com>, Stephen Boyd <sboyd@kernel.org>,
- Ray Jui <rjui@broadcom.com>, Linus Walleij <linus.walleij@linaro.org>,
- Adrian Hunter <adrian.hunter@intel.com>, Eric Anholt <eric@anholt.net>,
- Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- Mark Brown <broonie@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-rpi-kernel@lists.infradead.org
+Cc: Nishanth Menon <nm@ti.com>, Tero Kristo <t-kristo@ti.com>,
+ Dave Gerlach <d-gerlach@ti.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Peter Ujfalusi <peter.ujfalusi@ti.com>, Faiz Abbas <faiz_abbas@ti.com>,
+ Keerthy <j-keerthy@ti.com>, linux-arm-kernel@lists.infradead.org,
+ Roger Quadros <rogerq@ti.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 17 Jul 2019 23:16:04 +0200
-Stefan Wahren <wahrenst@gmx.net> wrote:
+On 7/23/19 6:28 AM, Tony Lindgren wrote:
+> TRM says PWMSS_SYSCONFIG bit for SOFTRESET changes to zero when
+> reset is completed. Let's configure it as otherwise we get warnings
+> on boot when we check the data against dts provided data. Eventually
+> the legacy platform data will be just dropped, but let's fix the
+> warning first.
+> 
+> Signed-off-by: Tony Lindgren <tony@atomide.com>
 
-> This adds minimal support for the new Raspberry Pi 4 without the
-> fancy stuff like GENET, PCIe, XHCI, 40 bit DMA and V3D. The RPi 4 is available
-> in 3 different variants (1, 2 and 4 GB RAM), so leave the memory size to zero
-> and let the bootloader take care of it.
-> 
-> Other differences to the Raspberry Pi 3:
-> - additional GIC 400 Interrupt controller
-> - new thermal IP and HWRNG
-> - additional MMC interface (emmc2)
-> - additional UART, I2C, SPI and PWM interfaces
-> 
-> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
+Reviewed-by: Suman Anna <s-anna@ti.com>
+
+regards
+Suman
+
 > ---
->  arch/arm/boot/dts/Makefile            |   1 +
->  arch/arm/boot/dts/bcm2838-rpi-4-b.dts | 120 +++++++
->  arch/arm/boot/dts/bcm2838.dtsi        | 657 ++++++++++++++++++++++++++++++++++
->  arch/arm/boot/dts/bcm283x.dtsi        |   2 +-
->  4 files changed, 779 insertions(+), 1 deletion(-)
->  create mode 100644 arch/arm/boot/dts/bcm2838-rpi-4-b.dts
->  create mode 100644 arch/arm/boot/dts/bcm2838.dtsi
+>  arch/arm/mach-omap2/omap_hwmod_7xx_data.c | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm/mach-omap2/omap_hwmod_7xx_data.c b/arch/arm/mach-omap2/omap_hwmod_7xx_data.c
+> --- a/arch/arm/mach-omap2/omap_hwmod_7xx_data.c
+> +++ b/arch/arm/mach-omap2/omap_hwmod_7xx_data.c
+> @@ -379,7 +379,8 @@ static struct omap_hwmod dra7xx_dcan2_hwmod = {
+>  static struct omap_hwmod_class_sysconfig dra7xx_epwmss_sysc = {
+>  	.rev_offs	= 0x0,
+>  	.sysc_offs	= 0x4,
+> -	.sysc_flags	= SYSC_HAS_SIDLEMODE | SYSC_HAS_SOFTRESET,
+> +	.sysc_flags	= SYSC_HAS_SIDLEMODE | SYSC_HAS_SOFTRESET |
+> +			  SYSC_HAS_RESET_STATUS,
+>  	.idlemodes	= (SIDLE_FORCE | SIDLE_NO | SIDLE_SMART),
+>  	.sysc_fields	= &omap_hwmod_sysc_type2,
+>  };
 > 
 
-[...]
-
-> diff --git a/arch/arm/boot/dts/bcm2838.dtsi b/arch/arm/boot/dts/bcm2838.dtsi
-> new file mode 100644
-> index 0000000..e004d70
-> --- /dev/null
-> +++ b/arch/arm/boot/dts/bcm2838.dtsi
-> @@ -0,0 +1,657 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +#include "bcm283x.dtsi"
-> +
-> +#include <dt-bindings/interrupt-controller/arm-gic.h>
-> +#include <dt-bindings/soc/bcm2835-pm.h>
-> +
-> +/ {
-> +	compatible = "brcm,bcm2838";
-> +
-> +	#address-cells = <2>;
-> +	#size-cells = <1>;
-> +
-> +	interrupt-parent = <&gicv2>;
-> +
-> +	soc {
-> +		ranges = <0x7e000000  0x0 0xfe000000  0x01800000>,
-> +			 <0x7c000000  0x0 0xfc000000  0x02000000>,
-> +			 <0x40000000  0x0 0xff800000  0x00800000>;
-> +		/* Emulate a contiguous 30-bit address range for DMA */
-> +		dma-ranges = <0xc0000000  0x0 0x00000000  0x3c000000>;
-> +
-> +		local_intc: local_intc@40000000 {
-> +			compatible = "brcm,bcm2836-l1-intc";
-> +			reg = <0x40000000 0x100>;
-> +		};
-> +
-> +		gicv2: gic400@40041000 {
-> +			interrupt-controller;
-> +			#interrupt-cells = <3>;
-> +			compatible = "arm,gic-400";
-> +			reg =	<0x40041000 0x1000>,
-> +				<0x40042000 0x2000>,
-> +				<0x40044000 0x2000>,
-> +				<0x40046000 0x2000>;
-
-Missing maintenance interrupt (usually on PPI9).
-
-> +		};
-
-[...]
-
-> +	arm-pmu {
-> +		/*
-> +		 * N.B. the A72 PMU support only exists in arch/arm64, hence
-> +		 * the fallback to the A53 version.
-> +		 */
-> +		compatible = "arm,cortex-a72-pmu", "arm,cortex-a53-pmu";
-
-You're thus guaranteed to count the wrong events... And you could at
-least have "arm,armv8-pmuv3".
-
-> +		interrupts = <GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>,
-> +			<GIC_SPI 17 IRQ_TYPE_LEVEL_HIGH>,
-> +			<GIC_SPI 18 IRQ_TYPE_LEVEL_HIGH>,
-> +			<GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>;
-
-You're missing the interrupt-affinity property.
-
-> +	};
-> +
-> +	timer {
-> +		compatible = "arm,armv7-timer";
-> +		interrupts = <GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(4) |
-> +					  IRQ_TYPE_LEVEL_LOW)>,
-> +			     <GIC_PPI 14 (GIC_CPU_MASK_SIMPLE(4) |
-> +					  IRQ_TYPE_LEVEL_LOW)>,
-> +			     <GIC_PPI 11 (GIC_CPU_MASK_SIMPLE(4) |
-> +					  IRQ_TYPE_LEVEL_LOW)>,
-> +			     <GIC_PPI 10 (GIC_CPU_MASK_SIMPLE(4) |
-> +					  IRQ_TYPE_LEVEL_LOW)>;
-> +		arm,cpu-registers-not-fw-configured;
-
-Really? :-(
-
-> +		always-on;
-
-I'm pretty sure that's not the case. This indicates that you can power
-the CPU off, bring it back on, and yet have your timer alive and
-kicking. The only case this actually exists is for VMs. I can see it
-being cargo-culted from previous RPi revisions, but that doesn't make
-it true.
-
-Thanks,
-
-	M.
--- 
-Without deviation from the norm, progress is not possible.
 
 _______________________________________________
 linux-arm-kernel mailing list
