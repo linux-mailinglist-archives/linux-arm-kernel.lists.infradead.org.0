@@ -2,58 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 208F571BE1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 17:38:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 70A3671C0C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 17:46:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XP1ERGmHWuKEWz9YXeyvCwbA+lk5KXoMbPvNzymsVKc=; b=DnamolQDUjDWIA
-	Ub/x/U4Q3fxXZY+aKKzv4lluQ6m/rhsNoVEGmQbvEY5ETY4CnaI7qvZay+vDqFJ1VWB3C0g71aLc7
-	Ijr/BmHmwBXKWhQq9FNZUvXANGsy4Qiz6oK97FDMwD7yEeJ5Siw+Ed+fc/skvkL+XgdVlTDEcSGoO
-	O9tWMag4c0j2L/CgiTb9VEPJK8ihXAPv0wM7p30hHawYYgi1uSiAomcOzG+tYXHdv92CUy41aR0oI
-	lXRaS6JyhypXDtGZ26WCedkMhXeJoD3bZYPHpDDARIWoKo8ak3YjmFTA9AvxXlI0LH/gUrmCVmfNM
-	2gU+wjk5guUnCPchkNTw==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=Y4d85/DshuVyWTLLykJIFJ+VtzXiyYUtO8FyPD4EuAY=; b=KgDg/4+F1zOXgndq6KpvSDQDYI
+	b8gadAOAsgCDRwATVQXrRjCyj/oMl9IdlGaO5wul18MM6+sDwgsYcAGV/BWja43mmla2KWy0krDMW
+	DhyYKEzaeO3NoTMSZrWWXOtyMmdkz4E2b5m0jba+YYMWeLolCjtRRQHRzRxCDAiDKZIDmfIlnHNZ6
+	DGChmGlVKfFbk7kdsf3wf9Tlr8gOXXfuTTa79AudvvS4jKzWHH3SSQAeDqs62g2ZloY4SSHwmXfxS
+	GWwb821o4+n6ADGvsXyCMpoD4K/Eg1KFLYpbW6q7bmlovYpydi5+x8TJJMkF/P3eapq7ZX9P+ndyf
+	IP1eMu9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpwsG-0006vQ-Si; Tue, 23 Jul 2019 15:38:44 +0000
+	id 1hpwzA-0004FF-AM; Tue, 23 Jul 2019 15:45:52 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpws3-0006v4-BQ
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 15:38:32 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2FC15217D4;
- Tue, 23 Jul 2019 15:38:27 +0000 (UTC)
+ id 1hpwyd-000495-RY
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 15:45:22 +0000
+Received: from [10.84.150.87] (unknown [167.220.149.87])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1F973218D3;
+ Tue, 23 Jul 2019 15:45:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563896310;
- bh=6BjcRpGUXnApNQz7lAjtezIG7TvYHSpnsTToA6ldcuw=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=iW3wa0oYpaL//UuyWsMLm+i+ND0M4tiRPisfgZng7jScBCMId0zVJa49Mdc8nwHLu
- hpaqz0kgnbWK8ct6/KTj2+eF9ntu+s0xnTiUavTb6xKJKLg+QXKysth4nuK7evoo8o
- d2fcuUXNNxoXFbVMXP4iuPbe3D77Nir5iUNw/TAw=
-Date: Tue, 23 Jul 2019 16:38:23 +0100
-From: Will Deacon <will@kernel.org>
-To: Rob Clark <robdclark@gmail.com>
-Subject: Re: [PATCH v2] iommu: add support for drivers that manage iommu
- explicitly
-Message-ID: <20190723153822.gm4ossn43nvqbyak@willie-the-truck>
-References: <20190702202631.32148-2-robdclark@gmail.com>
- <20190710182844.25032-1-robdclark@gmail.com>
- <20190722142833.GB12009@8bytes.org>
- <CAF6AEGvJc2RK3GkpcXiVKsuTX81D3oahnu=qWJ9LFst1eT3tMg@mail.gmail.com>
- <20190722154803.GG12009@8bytes.org>
- <CAF6AEGvWf3ZOrbyyWjORuOVEPOcPr+JSEO78aYjhL-GVhDZnTg@mail.gmail.com>
+ s=default; t=1563896718;
+ bh=sP0aqu0Qk8102QyJi+gE1hEHYCS6moC40PKb8ZZL1Ek=;
+ h=Subject:To:References:From:Date:In-Reply-To:From;
+ b=GqtKJjkGjk3+9SGzgE+NELdGNUe59PahyiAvgLvlltAR6jWd0KJH1jHgwXLmHw+xx
+ /mMFgXhYcLkL8m5hcEGzTUQdzVdKGSghxq3NANdND2qYMhzaTwiFQSWS/pJs0gxL9z
+ mb137ii9FbJdTswftEVHGcR2FDb35ibt6hPpM4w0=
+Subject: Re: [PATCH] dma: qcom: hidma_mgmt: Add of_node_put() before goto
+To: Robin Murphy <robin.murphy@arm.com>,
+ Nishka Dasgupta <nishkadg.linux@gmail.com>, agross@kernel.org,
+ vkoul@kernel.org, dan.j.williams@intel.com,
+ linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
+ dmaengine@vger.kernel.org
+References: <20190723103543.7888-1-nishkadg.linux@gmail.com>
+ <b5b76ef6-c5f3-bab0-e981-cd47c7264959@arm.com>
+From: Sinan Kaya <okaya@kernel.org>
+Openpgp: preference=signencrypt
+Autocrypt: addr=okaya@kernel.org; keydata=
+ mQENBFrnOrUBCADGOL0kF21B6ogpOkuYvz6bUjO7NU99PKhXx1MfK/AzK+SFgxJF7dMluoF6
+ uT47bU7zb7HqACH6itTgSSiJeSoq86jYoq5s4JOyaj0/18Hf3/YBah7AOuwk6LtV3EftQIhw
+ 9vXqCnBwP/nID6PQ685zl3vH68yzF6FVNwbDagxUz/gMiQh7scHvVCjiqkJ+qu/36JgtTYYw
+ 8lGWRcto6gr0eTF8Wd8f81wspmUHGsFdN/xPsZPKMw6/on9oOj3AidcR3P9EdLY4qQyjvcNC
+ V9cL9b5I/Ud9ghPwW4QkM7uhYqQDyh3SwgEFudc+/RsDuxjVlg9CFnGhS0nPXR89SaQZABEB
+ AAG0HVNpbmFuIEtheWEgPG9rYXlhQGtlcm5lbC5vcmc+iQFOBBMBCAA4FiEEYdOlMSE+a7/c
+ ckrQvGF4I+4LAFcFAlztcAoCGwMFCwkIBwIGFQoJCAsCBBYCAwECHgECF4AACgkQvGF4I+4L
+ AFfidAf/VKHInxep0Z96iYkIq42432HTZUrxNzG9IWk4HN7c3vTJKv2W+b9pgvBF1SmkyQSy
+ 8SJ3Zd98CO6FOHA1FigFyZahVsme+T0GsS3/OF1kjrtMktoREr8t0rK0yKpCTYVdlkHadxmR
+ Qs5xLzW1RqKlrNigKHI2yhgpMwrpzS+67F1biT41227sqFzW9urEl/jqGJXaB6GV+SRKSHN+
+ ubWXgE1NkmfAMeyJPKojNT7ReL6eh3BNB/Xh1vQJew+AE50EP7o36UXghoUktnx6cTkge0ZS
+ qgxuhN33cCOU36pWQhPqVSlLTZQJVxuCmlaHbYWvye7bBOhmiuNKhOzb3FcgT7kBDQRa5zq1
+ AQgAyRq/7JZKOyB8wRx6fHE0nb31P75kCnL3oE+smKW/sOcIQDV3C7mZKLf472MWB1xdr4Tm
+ eXeL/wT0QHapLn5M5wWghC80YvjjdolHnlq9QlYVtvl1ocAC28y43tKJfklhHiwMNDJfdZbw
+ 9lQ2h+7nccFWASNUu9cqZOABLvJcgLnfdDpnSzOye09VVlKr3NHgRyRZa7me/oFJCxrJlKAl
+ 2hllRLt0yV08o7i14+qmvxI2EKLX9zJfJ2rGWLTVe3EJBnCsQPDzAUVYSnTtqELu2AGzvDiM
+ gatRaosnzhvvEK+kCuXuCuZlRWP7pWSHqFFuYq596RRG5hNGLbmVFZrCxQARAQABiQEfBBgB
+ CAAJBQJa5zq1AhsMAAoJELxheCPuCwBX2UYH/2kkMC4mImvoClrmcMsNGijcZHdDlz8NFfCI
+ gSb3NHkarnA7uAg8KJuaHUwBMk3kBhv2BGPLcmAknzBIehbZ284W7u3DT9o1Y5g+LDyx8RIi
+ e7pnMcC+bE2IJExCVf2p3PB1tDBBdLEYJoyFz/XpdDjZ8aVls/pIyrq+mqo5LuuhWfZzPPec
+ 9EiM2eXpJw+Rz+vKjSt1YIhg46YbdZrDM2FGrt9ve3YaM5H0lzJgq/JQPKFdbd5MB0X37Qc+
+ 2m/A9u9SFnOovA42DgXUyC2cSbIJdPWOK9PnzfXqF3sX9Aol2eLUmQuLpThJtq5EHu6FzJ7Y
+ L+s0nPaNMKwv/Xhhm6Y=
+Message-ID: <ecaf00a7-dbb2-679b-3670-b9d6619bf97c@kernel.org>
+Date: Tue, 23 Jul 2019 11:45:16 -0400
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAF6AEGvWf3ZOrbyyWjORuOVEPOcPr+JSEO78aYjhL-GVhDZnTg@mail.gmail.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <b5b76ef6-c5f3-bab0-e981-cd47c7264959@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_083831_412836_0AB249B4 
-X-CRM114-Status: GOOD (  19.47  )
+X-CRM114-CacheID: sfid-20190723_084520_138892_4B3CE412 
+X-CRM114-Status: GOOD (  12.60  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -82,62 +108,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Clark <robdclark@chromium.org>, aarch64-laptops@lists.linaro.org,
- Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>, Joerg Roedel <joro@8bytes.org>,
- "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Andy Shevchenko <andy.shevchenko@gmail.com>,
- Sudeep Holla <sudeep.holla@arm.com>,
- "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
- Joerg Roedel <joro@8bytes.org>, " <iommu@lists.linux-foundation.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Joe Perches <joe@perches.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Robin Murphy <robin.murphy@arm.com>, Bartosz Golaszewski <brgl@bgdev.pl>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jul 22, 2019 at 09:23:48AM -0700, Rob Clark wrote:
-> On Mon, Jul 22, 2019 at 8:48 AM Joerg Roedel <joro@8bytes.org> wrote:
-> >
-> > On Mon, Jul 22, 2019 at 08:41:34AM -0700, Rob Clark wrote:
-> > > It is set by the driver:
-> > >
-> > > https://patchwork.freedesktop.org/patch/315291/
-> > >
-> > > (This doesn't really belong in devicetree, since it isn't a
-> > > description of the hardware, so the driver is really the only place to
-> > > set this.. which is fine because it is about a detail of how the
-> > > driver works.)
-> >
-> > It is more a detail about how the firmware works. IIUC the problem is
-> > that the firmware initializes the context mappings for the GPU and the
-> > OS doesn't know anything about that and just overwrites them, causing
-> > the firmware GPU driver to fail badly.
-> >
-> > So I think it is the task of the firmware to tell the OS not to touch
-> > the devices mappings until the OS device driver takes over. On x86 there
-> > is something similar with the RMRR/unity-map tables from the firmware.
-> >
-> 
-> Bjorn had a patchset[1] to inherit the config from firmware/bootloader
-> when arm-smmu is probed which handles that part of the problem.  My
-> patch is intended to be used on top of his patchset.  This seems to me
-> like the best solution, if we don't have control over the firmware.
-
-Hmm, but the feedback from Robin on the thread you cite was that this should
-be generalised to look more like RMRR, so there seems to be a clear message
-here.
-
-Will
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gNy8yMy8yMDE5IDg6MDIgQU0sIFJvYmluIE11cnBoeSB3cm90ZToKPiBXaHkgbm90IGp1c3Qg
+YWRkIGl0IG9uY2UgYXQgdGhlICJvdXQiIGxhYmVsIGl0c2VsZj8gKENvbnNpZGVyIHRoZQo+IGNv
+bmRpdGlvbnMgZm9yIHRoZSBsb29wIHRlcm1pbmF0aW5nIG5hdHVyYWxseSkKPiAKCisxCgo+Pgo+
+PiBTaWduZWQtb2ZmLWJ5OiBOaXNoa2EgRGFzZ3VwdGEgPG5pc2hrYWRnLmxpbnV4QGdtYWlsLmNv
+bT4KPj4gLS0tCj4+IMKgIGRyaXZlcnMvZG1hL3Fjb20vaGlkbWFfbWdtdC5jIHwgMTMgKysrKysr
+KysrKy0tLQo+PiDCoCAxIGZpbGUgY2hhbmdlZCwgMTAgaW5zZXJ0aW9ucygrKSwgMyBkZWxldGlv
+bnMoLSkKPj4KPj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvZG1hL3Fjb20vaGlkbWFfbWdtdC5jCj4+
+IGIvZHJpdmVycy9kbWEvcWNvbS9oaWRtYV9tZ210LmMKPj4gaW5kZXggMzAyMmQ2NmU3YTMzLi4y
+MDlhZGM2Y2VhYmUgMTAwNjQ0Cj4+IC0tLSBhL2RyaXZlcnMvZG1hL3Fjb20vaGlkbWFfbWdtdC5j
+Cj4+ICsrKyBiL2RyaXZlcnMvZG1hL3Fjb20vaGlkbWFfbWdtdC5jCj4+IEBAIC0zNjIsMTYgKzM2
+MiwyMiBAQCBzdGF0aWMgaW50IF9faW5pdAo+PiBoaWRtYV9tZ210X29mX3BvcHVsYXRlX2NoYW5u
+ZWxzKHN0cnVjdCBkZXZpY2Vfbm9kZSAqbnApCj4+IMKgwqDCoMKgwqDCoMKgwqDCoCBzdHJ1Y3Qg
+cGxhdGZvcm1fZGV2aWNlICpuZXdfcGRldjsKPj4gwqAgwqDCoMKgwqDCoMKgwqDCoMKgIHJldCA9
+IG9mX2FkZHJlc3NfdG9fcmVzb3VyY2UoY2hpbGQsIDAsICZyZXNbMF0pOwo+PiAtwqDCoMKgwqDC
+oMKgwqAgaWYgKCFyZXQpCj4+ICvCoMKgwqDCoMKgwqDCoCBpZiAoIXJldCkgewo+PiArwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoCBvZl9ub2RlX3B1dChjaGlsZCk7CgpUaGUgc3BhY2luZyBvbiB0aGlz
+IGFsc28gbG9va3Mgd2VpcmQuCgo+PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBnb3RvIG91
+dDsKPj4gK8KgwqDCoMKgwqDCoMKgIH0gCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJt
+LWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
+aWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
