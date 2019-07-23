@@ -2,70 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 67C5E71890
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 14:48:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A442A718A8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 14:51:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LEL/EnNuv7C6pw+FRVCqSvlw64r3FxNdo7sc7mGhKjY=; b=JMdB7DW0Ei0MVk
-	40RfluQnk+6Ym1+5ICU2+VTpuDOqB1UN9g8yl/fMQy2ASDfiJBrXfm7vsgdICgfRz6y8Tjc8uFIi6
-	zKg+4NlhiS7f2oo6GYRBA7Zmxi5FcsbL4ndkQ5pz8CcZu9w/8a4zfCeeXVbBj+OSgWaV260DeH72H
-	9cokzDtW9ICa5ptwzMIhRE1CjehdVOIfeqwnkC3qg5zc6vfBUwgsl9td8gYAffWx6GsiLIlpkN0OH
-	ACB3r/Lq8zT2Uw16f05vqC+lDWPmtZVs1bbxyoqDCmVulZaAgdQ3kiF4P3pDBLAiWohGT6seT5n8o
-	kLqpTjhXaKjid6jOACIA==;
+	List-Owner; bh=9phhs4qxCm0tsv3tVZnq+rbm8iW+LfzFnf7aw6vUDwA=; b=H5pfY5k1Qz8STE
+	EGCAFLyZky6pBpNeiO+vnh9fqzfLQv9wUf5uDTgdIRjldJ1moIXaZB/lJlIIbSJ0NA6djkQYiZ7Co
+	FCuKrMXUiTXDp6BXT2cKPThcwQRHk9ZOFGt+lNYY//jBW5Nx9m3jdTktfxJ5s2DcH6bbI4VIg1Vub
+	G8PBEjTTBmaDcUXZoEnPkaWCb+x6u9Z8DuT8OHBO1e1Vo6Tety+5Rx+d7ROoMdNgdFBqKjYcE93+H
+	WZ2ep8QRuYSdwOKUGY6MZEuRiguxobUt+bSI16gAVJLdymzn+odQzDxUoXdBOM4lDlR+/ZhjYiZxO
+	7WpNpKW2i0WaeP3Hwv5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpuDS-0007bu-Tf; Tue, 23 Jul 2019 12:48:27 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1hpuGH-0001O4-1b; Tue, 23 Jul 2019 12:51:21 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpuCx-0007Zi-D1
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 12:47:57 +0000
-Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
- [10.5.11.23])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 0FA4881F12;
- Tue, 23 Jul 2019 12:47:55 +0000 (UTC)
-Received: from [10.36.117.239] (ovpn-117-239.ams2.redhat.com [10.36.117.239])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 3D4A419C58;
- Tue, 23 Jul 2019 12:47:49 +0000 (UTC)
-Subject: Re: [PATCH v2 4/9] KVM: arm/arm64: vgic-its: Invalidate MSI-LPI
- translation cache on specific commands
-To: Marc Zyngier <marc.zyngier@arm.com>,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- kvm@vger.kernel.org
-References: <20190611170336.121706-1-marc.zyngier@arm.com>
- <20190611170336.121706-5-marc.zyngier@arm.com>
- <9ff329a3-44f2-1de3-b6cc-58ed38a63665@redhat.com>
- <1a78d52c-7a31-8981-230b-abe85d11b8ec@arm.com>
- <8b5e029c-a08f-b86b-7021-5d68ec05d3bd@redhat.com>
- <ffb327bf-b05c-b7ca-d509-2a98dea37fdf@arm.com>
-From: Auger Eric <eric.auger@redhat.com>
-Message-ID: <166921d3-39c4-d13c-bdee-dd404d468e7e@redhat.com>
-Date: Tue, 23 Jul 2019 14:47:47 +0200
+ id 1hpuG4-0001Mw-K3
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 12:51:10 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x6NCon3h006938;
+ Tue, 23 Jul 2019 07:50:49 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1563886249;
+ bh=52qhupjxn+B9564HmbrwKDqCkUUSaUEP+bThbTNl/c0=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=UZjZjBDCXQuig05ZYJEjPWaewnRPvtT3Brk3gwsAVHFCFV3inMgDhXKM2d9g537G1
+ DFvHo603gc3fRcBRH9iEEaJ2AeGyV18Ss+VKwkp0ADfjDUR0BA7zi3o/ephrxrU7tP
+ 9vlavdAdchooy/tIjKH0d5GiVg6XkbuOYgPD1unU=
+Received: from DLEE113.ent.ti.com (dlee113.ent.ti.com [157.170.170.24])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x6NConV4066007
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Tue, 23 Jul 2019 07:50:49 -0500
+Received: from DLEE105.ent.ti.com (157.170.170.35) by DLEE113.ent.ti.com
+ (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 23
+ Jul 2019 07:50:49 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE105.ent.ti.com
+ (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Tue, 23 Jul 2019 07:50:49 -0500
+Received: from [172.24.190.117] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x6NCokSH027318;
+ Tue, 23 Jul 2019 07:50:47 -0500
+Subject: Re: [PATCH 4/9] irqchip/gic-v3: Add ESPI range support
+To: Marc Zyngier <maz@kernel.org>, Thomas Gleixner <tglx@linutronix.de>, Jason
+ Cooper <jason@lakedaemon.net>, Julien Thierry
+ <julien.thierry.kdev@gmail.com>, Rob Herring <robh+dt@kernel.org>
+References: <20190723104437.154403-1-maz@kernel.org>
+ <20190723104437.154403-5-maz@kernel.org>
+From: Lokesh Vutla <lokeshvutla@ti.com>
+Message-ID: <a54dfa07-2f3b-def7-fec4-b6dab2bcd84c@ti.com>
+Date: Tue, 23 Jul 2019 18:20:05 +0530
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.4.0
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <ffb327bf-b05c-b7ca-d509-2a98dea37fdf@arm.com>
+In-Reply-To: <20190723104437.154403-5-maz@kernel.org>
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.25]); Tue, 23 Jul 2019 12:47:55 +0000 (UTC)
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_054755_725824_7EF78427 
-X-CRM114-Status: GOOD (  22.50  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190723_055108_784567_B3CCEB27 
+X-CRM114-Status: GOOD (  21.13  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,123 +94,141 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>, "Raslan,
- KarimAllah" <karahmed@amazon.de>, Julien Thierry <julien.thierry@arm.com>,
- Christoffer Dall <christoffer.dall@arm.com>, James Morse <james.morse@arm.com>,
- Zenghui Yu <yuzenghui@huawei.com>, "Saidi, Ali" <alisaidi@amazon.com>
+Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
 
-On 7/23/19 2:43 PM, Marc Zyngier wrote:
-> On 23/07/2019 13:25, Auger Eric wrote:
->> Hi Marc,
->>
->> On 7/22/19 12:54 PM, Marc Zyngier wrote:
->>> Hi Eric,
->>>
->>> On 01/07/2019 13:38, Auger Eric wrote:
->>>> Hi Marc,
->>>>
->>>> On 6/11/19 7:03 PM, Marc Zyngier wrote:
->>>>> The LPI translation cache needs to be discarded when an ITS command
->>>>> may affect the translation of an LPI (DISCARD and MAPD with V=0) or
->>>>> the routing of an LPI to a redistributor with disabled LPIs (MOVI,
->>>>> MOVALL).
->>>>>
->>>>> We decide to perform a full invalidation of the cache, irrespective
->>>>> of the LPI that is affected. Commands are supposed to be rare enough
->>>>> that it doesn't matter.
->>>>>
->>>>> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
->>>>> ---
->>>>>  virt/kvm/arm/vgic/vgic-its.c | 8 ++++++++
->>>>>  1 file changed, 8 insertions(+)
->>>>>
->>>>> diff --git a/virt/kvm/arm/vgic/vgic-its.c b/virt/kvm/arm/vgic/vgic-its.c
->>>>> index 9b6b66204b97..5254bb762e1b 100644
->>>>> --- a/virt/kvm/arm/vgic/vgic-its.c
->>>>> +++ b/virt/kvm/arm/vgic/vgic-its.c
->>>>> @@ -733,6 +733,8 @@ static int vgic_its_cmd_handle_discard(struct kvm *kvm, struct vgic_its *its,
->>>>>  		 * don't bother here since we clear the ITTE anyway and the
->>>>>  		 * pending state is a property of the ITTE struct.
->>>>>  		 */
->>>>> +		vgic_its_invalidate_cache(kvm);
->>>>> +
->>>>>  		its_free_ite(kvm, ite);
->>>>>  		return 0;
->>>>>  	}
->>>>> @@ -768,6 +770,8 @@ static int vgic_its_cmd_handle_movi(struct kvm *kvm, struct vgic_its *its,
->>>>>  	ite->collection = collection;
->>>>>  	vcpu = kvm_get_vcpu(kvm, collection->target_addr);
->>>>>  
->>>>> +	vgic_its_invalidate_cache(kvm);
->>>>> +
->>>>>  	return update_affinity(ite->irq, vcpu);
->>>>>  }
->>>>>  
->>>>> @@ -996,6 +1000,8 @@ static void vgic_its_free_device(struct kvm *kvm, struct its_device *device)
->>>>>  	list_for_each_entry_safe(ite, temp, &device->itt_head, ite_list)
->>>>>  		its_free_ite(kvm, ite);
->>>>>  
->>>>> +	vgic_its_invalidate_cache(kvm);
->>>>> +
->>>>>  	list_del(&device->dev_list);
->>>>>  	kfree(device);
->>>>>  }
->>>>> @@ -1249,6 +1255,8 @@ static int vgic_its_cmd_handle_movall(struct kvm *kvm, struct vgic_its *its,
->>>>>  		vgic_put_irq(kvm, irq);
->>>>>  	}
->>>>>  
->>>>> +	vgic_its_invalidate_cache(kvm);
->>>> All the commands are executed with the its_lock held. Now we don't take
->>>> it anymore on the fast cache injection path. Don't we have a window
->>>> where the move has been applied at table level and the cache is not yet
->>>> invalidated? Same question for vgic_its_free_device().
->>>
->>> There is definitely a race, but that race is invisible from the guest's
->>> perspective. The guest can only assume that the command has taken effect
->>> once a SYNC command has been executed, and it cannot observe that the
->>> SYNC command has been executed before we have invalidated the cache.
->>>
->>> Does this answer your question?
->>
->> OK make sense. Thank you for the clarification
->>
->> Another question, don't we need to invalidate the cache on  MAPC V=0 as
->> well? Removing the mapping of the collection results in interrupts
->> belonging to that collection being ignored. If we don't flush the
->> pending bit will be set?
+
+On 23/07/19 4:14 PM, Marc Zyngier wrote:
+> Add the required support for the ESPI range, which behave exactly like
+> the SPIs of old, only with new funky INTIDs.
 > 
-> Yup, that's a good point. I think i had that at some point, and ended up 
-> dropping it, probably missing the point that the interrupt would be made 
-> pending.
+> Signed-off-by: Marc Zyngier <maz@kernel.org>
+> ---
+>  drivers/irqchip/irq-gic-v3.c       | 85 ++++++++++++++++++++++++------
+>  include/linux/irqchip/arm-gic-v3.h | 17 +++++-
+>  2 files changed, 85 insertions(+), 17 deletions(-)
 > 
-> I'll add this:
-> 
-> @@ -1218,6 +1218,7 @@ static int vgic_its_cmd_handle_mapc(struct kvm *kvm, struct vgic_its *its,
+> diff --git a/drivers/irqchip/irq-gic-v3.c b/drivers/irqchip/irq-gic-v3.c
+> index 2371e0a70215..d328a8de533f 100644
+> --- a/drivers/irqchip/irq-gic-v3.c
+> +++ b/drivers/irqchip/irq-gic-v3.c
+> @@ -51,13 +51,16 @@ struct gic_chip_data {
+>  	u32			nr_redist_regions;
+>  	u64			flags;
+>  	bool			has_rss;
+> -	unsigned int		irq_nr;
+>  	struct partition_desc	*ppi_descs[16];
+>  };
 >  
->  	if (!valid) {
->  		vgic_its_free_collection(its, coll_id);
-> +		vgic_its_invalidate_cache(kvm);
->  	} else {
->  		collection = find_collection(its, coll_id);
+>  static struct gic_chip_data gic_data __read_mostly;
+>  static DEFINE_STATIC_KEY_TRUE(supports_deactivate_key);
 >  
-Yep, with that change feel free to add my R-b
+> +#define GIC_ID_NR	(1U << GICD_TYPER_ID_BITS(gic_data.rdists.gicd_typer))
+> +#define GIC_LINE_NR	GICD_TYPER_SPIS(gic_data.rdists.gicd_typer)
+> +#define GIC_ESPI_NR	GICD_TYPER_ESPIS(gic_data.rdists.gicd_typer)
+> +
+>  /*
+>   * The behaviours of RPR and PMR registers differ depending on the value of
+>   * SCR_EL3.FIQ, and the behaviour of non-secure priority registers of the
+> @@ -100,6 +103,7 @@ static DEFINE_PER_CPU(bool, has_rss);
+>  enum gic_intid_range {
+>  	PPI_RANGE,
+>  	SPI_RANGE,
+> +	ESPI_RANGE,
+>  	LPI_RANGE,
+>  	__INVALID_RANGE__
+>  };
+> @@ -111,6 +115,8 @@ static enum gic_intid_range __get_intid_range(irq_hw_number_t hwirq)
+>  		return PPI_RANGE;
+>  	case 32 ... 1019:
+>  		return SPI_RANGE;
+> +	case ESPI_BASE_INTID ... 8191:
 
-Reviewed-by: Eric Auger <eric.auger@redhat.com>
+as per dt documentation, shouldn't the range be
+	case ESPI_BASE_INTID ... 5119:
 
-Thanks
+> +		return ESPI_RANGE;
+>  	case 8192 ... GENMASK(23, 0):
+>  		return LPI_RANGE;
+>  	default:
+> @@ -141,6 +147,7 @@ static inline void __iomem *gic_dist_base(struct irq_data *d)
+>  		return gic_data_rdist_sgi_base();
+>  
+>  	case SPI_RANGE:
+> +	case ESPI_RANGE:
+>  		/* SPI -> dist_base */
+>  		return gic_data.dist_base;
+>  
+> @@ -234,6 +241,31 @@ static u32 convert_offset_index(struct irq_data *d, u32 offset, u32 *index)
+>  	case SPI_RANGE:
+>  		*index = d->hwirq;
+>  		return offset;
+> +	case ESPI_RANGE:
+> +		*index = d->hwirq - ESPI_BASE_INTID;
+> +		switch (offset) {
+> +		case GICD_ISENABLER:
+> +			return GICD_ISENABLERnE;
+> +		case GICD_ICENABLER:
+> +			return GICD_ICENABLERnE;
+> +		case GICD_ISPENDR:
+> +			return GICD_ISPENDRnE;
+> +		case GICD_ICPENDR:
+> +			return GICD_ICPENDRnE;
+> +		case GICD_ISACTIVER:
+> +			return GICD_ISACTIVERnE;
+> +		case GICD_ICACTIVER:
+> +			return GICD_ICACTIVERnE;
+> +		case GICD_IPRIORITYR:
+> +			return GICD_IPRIORITYRnE;
+> +		case GICD_ICFGR:
+> +			return GICD_ICFGRnE;
+> +		case GICD_IROUTER:
+> +			return GICD_IROUTERnE;
+> +		default:
+> +			break;
+> +		}
+> +		break;
+>  	default:
+>  		break;
+>  	}
+> @@ -316,7 +348,7 @@ static int gic_irq_set_irqchip_state(struct irq_data *d,
+>  {
+>  	u32 reg;
+>  
+> -	if (d->hwirq >= gic_data.irq_nr) /* PPI/SPI only */
+> +	if (d->hwirq >= 8192) /* PPI/SPI only */
+>  		return -EINVAL;
+>  
+>  	switch (which) {
+> @@ -343,7 +375,7 @@ static int gic_irq_set_irqchip_state(struct irq_data *d,
+>  static int gic_irq_get_irqchip_state(struct irq_data *d,
+>  				     enum irqchip_irq_state which, bool *val)
+>  {
+> -	if (d->hwirq >= gic_data.irq_nr) /* PPI/SPI only */
+> +	if (d->hwirq >= 8192) /* PPI/SPI only */
+>  		return -EINVAL;
+>  
+>  	switch (which) {
+> @@ -567,7 +599,12 @@ static asmlinkage void __exception_irq_entry gic_handle_irq(struct pt_regs *regs
+>  		gic_arch_enable_irqs();
+>  	}
+>  
+> -	if (likely(irqnr > 15 && irqnr < 1020) || irqnr >= 8192) {
+> +	/* Check for special IDs first */
+> +	if ((irqnr >= 1020 && irqnr <= 1023))
+> +		return;
 
-Eric
-> 
-> Thanks,
-> 
-> 	M.
-> 
+May be I am missing something here, what is special about these 4 interrupts? or
+you meant to check for reserved range here?
+
+Thanks and regards,
+Lokesh
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
