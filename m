@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 759A271338
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 09:47:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BDC847133F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 09:49:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M658ylwwfV2CMkaxAAV590TqhXuwCmUdFyPCOwgD1BQ=; b=S/32LSJn2CT9hs
-	kbm8QzE6M2/RwyACqskcR3ybaNi/yaPr1lUM5nqWy+2XzKfSWkwqE7dBsvY2aoeYzAhNwDR7AJCCV
-	j5hBSRoTDVOUDe5/6UENuqnqJyWIYLtbi77gxAvncmSkg5RqtFcxvqVjpdp2jpZup+Oa5GNwWFh5y
-	LuhW4+g/dZAlJ/Fp7HHhy9PafG7q9QIOeHVs1B5zPZT28NxWddjh7S2ia/OYoyJlIO7g7A1ns1WNJ
-	7ePGpLHsTc7xVDxuVJfBZevcq15Qs+A+3yjZYQKM8DrX/E+c3y3icOvpZG2TKGN2X/kO1nUDnaSUD
-	+1oQq+HPSAsi8EpX9X8A==;
+	List-Owner; bh=dMHq4uE5U4tlqjmQ/ZyrRLRpbffmVytwr5QSYgQmrJQ=; b=rkpFKDGIToOe74
+	bw/h//O4Ivp6rcqrcck9RM2HnS5U3pSJXdAU/8D/jj1duLFz8UZdYFsUJfbRS6fa8cMlvqy7MYZQC
+	VlbTCqPVazTFZOKNh0mS3goHGJgqUcZ7otY/455n+EcP1+PFrptZXIDYSFx4ahP6QcleJypnMv5Cb
+	616P+6AR/m1AAq+Hcf2HC7qjhlVP6TUUlJBSkeW71TMHiDlg5kTvK9ANR9umNt+0xGgC8igi2PmMo
+	MbYeG7JAqWm5Md+IYzKz8hji5qIZucGSU6XD+AiWr+QsMWaBN3GnjvclLLYU3HbqFebNgafkS7KNx
+	/prBQ19L7f/mebbHxlpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hppW4-000499-SW; Tue, 23 Jul 2019 07:47:20 +0000
+	id 1hppXc-0004he-Bx; Tue, 23 Jul 2019 07:48:56 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hppVp-00048Q-OS
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 07:47:06 +0000
+ id 1hppXL-0004hM-VA
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 07:48:41 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1E9DC218BE;
- Tue, 23 Jul 2019 07:47:00 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8A53121BF6;
+ Tue, 23 Jul 2019 07:48:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563868025;
- bh=9oyXOwjjQfRkmBnzkflTCxxZW8XXgu2VWsi9uaQNOBc=;
+ s=default; t=1563868119;
+ bh=fYJy18b12uxUluNQs7guTNUxA+SS983H3pUEsD9H7sU=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=OL0cl/KK/IF0BukMfF9W8GDqFOcwP+U2iDVnpFrL+cnMacDlMA24O2us7o/i2JhLz
- obZ8e/Zbzva0hVmJCzlON4oRwPlgMgfZ2iEQVskivmwkHpvSQwEiV51CJZx+jRVNCx
- xPcjkwN0BCswql6r5iEZY+BucpWKHEi9kJaznj2w=
-Date: Tue, 23 Jul 2019 15:46:33 +0800
+ b=boo8pI2VDHOEXyE2zPUQwA3I29Op4qSdrGhTSd8FcilguUgWzouQWkXvVZTWMGK30
+ O6BFRjc734To0scyhd+3M1FbFr6VyNdCSAjUanRAtUF4KItTPllN+o46js1oYlqMUI
+ 2oOsZqLp+vb1Qd31QEKb41wd4zYfxAx7fvkaRAVg=
+Date: Tue, 23 Jul 2019 15:48:10 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Daniel Baluta <daniel.baluta@gmail.com>
-Subject: Re: [PATCH] firmware: imx: Add DSP IPC protocol interface
-Message-ID: <20190723074633.GJ15632@dragon>
-References: <20190718081943.10272-1-daniel.baluta@nxp.com>
- <CAEnQRZDwBBR5qQT9NQX7c6kyrjp2Mw_so=QgkARw-gUgj3VeEA@mail.gmail.com>
+To: Anson.Huang@nxp.com
+Subject: Re: [PATCH 1/4] ARM: dts: imx6sx: move GIC to right location in DT
+Message-ID: <20190723074809.GK15632@dragon>
+References: <20190718091508.3248-1-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAEnQRZDwBBR5qQT9NQX7c6kyrjp2Mw_so=QgkARw-gUgj3VeEA@mail.gmail.com>
+In-Reply-To: <20190718091508.3248-1-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_004705_814375_5B0681F8 
-X-CRM114-Status: UNSURE (   7.88  )
+X-CRM114-CacheID: sfid-20190723_004840_023210_4BE8F11F 
+X-CRM114-Status: UNSURE (   8.25  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -78,26 +77,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Ulf Hansson <ulf.hansson@linaro.org>,
- Anson Huang <anson.huang@nxp.com>, Daniel Baluta <daniel.baluta@nxp.com>,
- "S.j. Wang" <shengjiu.wang@nxp.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Oleksij Rempel <o.rempel@pengutronix.de>, dl-linux-imx <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, s.hauer@pengutronix.de,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, Linux-imx@nxp.com,
+ kernel@pengutronix.de, festevam@gmail.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jul 23, 2019 at 10:44:09AM +0300, Daniel Baluta wrote:
-> Just realized that for this patch I forgot to add [PATCH v3]. Shawn,
-> should I resend?
+On Thu, Jul 18, 2019 at 05:15:05PM +0800, Anson.Huang@nxp.com wrote:
+> From: Anson Huang <Anson.Huang@nxp.com>
+> 
+> GIC is inside of SoC from architecture perspective, it should
+> be located inside of soc node in DT.
+> 
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
-No need.
-
-Shawn
+Applied all, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
