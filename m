@@ -2,141 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A0F59713B0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 10:15:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 79BC4713B1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 10:16:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/Sl9uU2CLFeTVdnXzGJxKO/F1J6Nq3p5Yy0qETPiQGk=; b=Jlg/qCt+PdNZx0
-	AdtKURU9iu/BxfVhpdRkyRfeBaYIiKVdUyzCF/ouvvL11UAWJmBlMFETUiuNuhAhTtsyPO5FXeCG4
-	Xl22vTJjrnRvOFmBXvlbNX5tYAIKkfzyySMdX7KLgYvCuvxdKrGfJXkZNBBdKv+3Pje+B0WW8uaQU
-	coGoY8DiGbo06OgHQRKCan/UDjn0218/q6qTTfIUzHYwfz44x+Dv4gReRl2wMIUZxQOtUSWB6tzJ2
-	pPKdf4dyVePurzV2+ihk6UWoccO44OoOj+vDlDnCypdGAAdcTWBN6sXE3zY2Zr/o1iA31orNetD+D
-	7kiaCyehmU5wP7hge+Vw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Gn8Kf50q77Wi3weShQ8clajkk47pWHjHR1Z02bFgDNU=; b=cZtWkljmV8qzfH
+	HV9jmYuRuh6guPKe3c0DRNvPpC2YiPrPW4AOoF1Y2tboY2f88X3Fmc4nVO2Qh1qJwrBZpRqmVj0dU
+	ZsgXzRxL7svbgdJKC1rWgH2RUE3zTjqpyV2k3qn0P663EoUteYSqDeUlHVx3jK/NI1K69uAcGQZ0p
+	tg0Be73IDcyIzIcA7aa9J5qJ8VKtLaV9K5Oxx7YAYr4UD/v+Bm2gO8q5dT0GBiCMnDDBWgDuyTAkz
+	9L43sOekXrLzHlgSUFVUynJxGG0Fxd6HSf2ww0EifqV/WntlHdKwMq3qVEoXQrfTFG0PwkoONGZ6o
+	vaLuIQCQJRZxWOchyRiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hppxQ-0001St-Va; Tue, 23 Jul 2019 08:15:36 +0000
-Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
- helo=smtprelay-out1.synopsys.com)
+	id 1hppxy-0001jC-QA; Tue, 23 Jul 2019 08:16:11 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hppx3-0001S9-C5
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 08:15:14 +0000
-Received: from mailhost.synopsys.com (dc8-mailhost1.synopsys.com
- [10.13.135.209])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id BBBE0C0BBC;
- Tue, 23 Jul 2019 08:15:10 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1563869711; bh=RDHnLuXK1uZ9ij6RJMMQzzssqrjmVIDUreklGqjmkak=;
- h=From:To:CC:Subject:Date:References:In-Reply-To:From;
- b=H7gp1jYxeMNAuolDDUDe/cAqXRl083HLI/uO9QkWZ1YBetc1S0OWlg7JENXlq1B3k
- hUliqgfoSQPiUfusnfw9LVjJZc6dQfhEbiHAWjDQ9o4X23NHm2196GxD9s8zzIvehB
- rpgoEmHkxz7KXhsCfFxnSyRFavWaS261MDaUsg2V1qFI30jCTau0Wx3O78nkxbonup
- GUb1v4jIl0k/0Ovh27E2MZrRRMBFau+P2Tt0vod54jmhsxIkvuEJCvy06po4makvtI
- hIBbz9azvJ+pSk2l62ukMNXE3bRUD0FXOK2QdYzKHu5COnDfP7ffn9uIO5p01ybf4s
- TLkpcRBMNQpBQ==
-Received: from US01WXQAHTC1.internal.synopsys.com
- (us01wxqahtc1.internal.synopsys.com [10.12.238.230])
- (using TLSv1.2 with cipher AES128-SHA256 (128/128 bits))
- (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id C4A2BA007B;
- Tue, 23 Jul 2019 08:15:08 +0000 (UTC)
-Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
- US01WXQAHTC1.internal.synopsys.com (10.12.238.230) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Tue, 23 Jul 2019 01:14:59 -0700
-Received: from NAM01-SN1-obe.outbound.protection.outlook.com (10.13.134.195)
- by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
- 14.3.408.0; Tue, 23 Jul 2019 01:14:58 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=BlqoTYY6k6REzOmvvt5qUJpFN/HEGYnF5REoCXQcU+dwseHi0xrxUxN64T6qkN5HW/TGlt+1E4KljNj0ND5DPFgjii6C3ZZ9Dn0inzTf7XtlbYPOouqEy0BSU+IAI6+FjGe/ZPTkN/Cnm/OlvuJURjKYNjXMQw+PzLTFC9G6JFqpuNMgj4BvkjJQTc6y6s2M4VFPBqvPrq58VH9addYs+poo+CQTzxrO9BsAob6b+R6H/7Ba4ufvq1JzDNBNpZXwuB1ICV+JP3RjlinZY54DhigS6CDqYeujBVoP8lZoWj51VvhUjQLR+OPJJEqS+S+fpL+sqNtuPuhSXgZQRmf/wg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=RDHnLuXK1uZ9ij6RJMMQzzssqrjmVIDUreklGqjmkak=;
- b=h16cKi2RAR2DIsfuOPdEJxMvSz8ThaJ4vn/HdmkX0/lTBsmWaedcd9VmRV5p060ZMDkQoX6c/N6eXdzxsIbY46DB+foqR9wahKQrH/2yreeXPHuUfxecWhIRWyAeVbmdDJAqwTc9mWvxlmnEKMyXVmpK8r7ZBpu0JpTXNduR1GvQmwH5YHkmoCwr20sEjbqquV/WuM57ti6z5ke4HuAy8b3nL9eG4ptS0N+U5IgYrNTWOT73wsYVpqr9y3ouVnKqa9Qbj1M6ISsHW+HGBsKv6R/sRXAKbwmPpzcFhKp+SMZd1te4J8T9Qi3fGnYsIQd1drtEtD0NdFVrm0KlHlqfgQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=synopsys.com;dmarc=pass action=none
- header.from=synopsys.com;dkim=pass header.d=synopsys.com;arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=synopsys.onmicrosoft.com; s=selector1-synopsys-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=RDHnLuXK1uZ9ij6RJMMQzzssqrjmVIDUreklGqjmkak=;
- b=ZsA4OxfPW5kdvzDm/VDlhRa2Z4DfPJAqwFqMV5c0Fhz2GsMqQk0F3CdWo0hiiChDCbudIjt77k7FGfA42OgnXFzRekQILAWXykjdd3qK7LGowm8O3DlAmMEK7mz1Flm++KbzsK+z59xZreecFHQuBuuESEXlJGlBMs5RGWoPzqM=
-Received: from BYAPR12MB3269.namprd12.prod.outlook.com (20.179.93.146) by
- BYAPR12MB3014.namprd12.prod.outlook.com (20.178.53.139) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2094.17; Tue, 23 Jul 2019 08:14:52 +0000
-Received: from BYAPR12MB3269.namprd12.prod.outlook.com
- ([fe80::f5b8:ac6e:ea68:cb1c]) by BYAPR12MB3269.namprd12.prod.outlook.com
- ([fe80::f5b8:ac6e:ea68:cb1c%4]) with mapi id 15.20.2094.013; Tue, 23 Jul 2019
- 08:14:52 +0000
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-To: Jon Hunter <jonathanh@nvidia.com>,
- Jose Abreu <Jose.Abreu@synopsys.com>, Lars Persson <lists@bofh.nu>,
- Ilias Apalodimas <ilias.apalodimas@linaro.org>
-Subject: RE: [PATCH net-next 3/3] net: stmmac: Introducing support for Page
- Pool
-Thread-Topic: [PATCH net-next 3/3] net: stmmac: Introducing support for Page
- Pool
-Thread-Index: AQHVMYtq2Zx4WVoG/U2kL8GCK0bP/abPQEOAgADTx+CABnZ9AIAADuYAgAAFQOCAAAnIAIAABLTAgAFMy7A=
-Date: Tue, 23 Jul 2019 08:14:52 +0000
-Message-ID: <BYAPR12MB3269A725AFDDA21E92946558D3C70@BYAPR12MB3269.namprd12.prod.outlook.com>
-References: <cover.1562149883.git.joabreu@synopsys.com>
- <1b254bb7fc6044c5e6e2fdd9e00088d1d13a808b.1562149883.git.joabreu@synopsys.com>
- <29dcc161-f7c8-026e-c3cc-5adb04df128c@nvidia.com>
- <BN8PR12MB32661E919A8DEBC7095BAA12D3C80@BN8PR12MB3266.namprd12.prod.outlook.com>
- <20190722101830.GA24948@apalos>
- <CADnJP=thexf2sWcVVOLWw14rpteEj0RrfDdY8ER90MpbNN4-oA@mail.gmail.com>
- <BN8PR12MB326661846D53AAEE315A7434D3C40@BN8PR12MB3266.namprd12.prod.outlook.com>
- <11557fe0-0cba-cb49-0fb6-ad24792d4a53@nvidia.com>
- <BN8PR12MB3266664ECA192E02C06061EED3C40@BN8PR12MB3266.namprd12.prod.outlook.com>
-In-Reply-To: <BN8PR12MB3266664ECA192E02C06061EED3C40@BN8PR12MB3266.namprd12.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=joabreu@synopsys.com; 
-x-originating-ip: [83.174.63.141]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: f9e27c6c-9962-4a2c-93b5-08d70f45d691
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:BYAPR12MB3014; 
-x-ms-traffictypediagnostic: BYAPR12MB3014:
-x-microsoft-antispam-prvs: <BYAPR12MB30147B7D4E97832A7A4DB5BDD3C70@BYAPR12MB3014.namprd12.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6108;
-x-forefront-prvs: 0107098B6C
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(376002)(346002)(396003)(366004)(39860400002)(136003)(199004)(189003)(76176011)(8676002)(4326008)(110136005)(71190400001)(71200400001)(7736002)(8936002)(476003)(81166006)(53546011)(316002)(81156014)(7416002)(305945005)(33656002)(99286004)(486006)(11346002)(446003)(2906002)(7696005)(74316002)(102836004)(54906003)(186003)(26005)(6116002)(6506007)(68736007)(5024004)(3846002)(256004)(14444005)(14454004)(55016002)(478600001)(6436002)(6246003)(86362001)(5660300002)(66476007)(66946007)(64756008)(66446008)(229853002)(25786009)(66556008)(52536014)(9686003)(76116006)(53936002)(66066001);
- DIR:OUT; SFP:1102; SCL:1; SRVR:BYAPR12MB3014;
- H:BYAPR12MB3269.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: synopsys.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: Ym365IrBkU9nTZ2ea/lZmJNwRX94TnWjJMXe0KWgMvwP6kdMuzxscxaMv02w20yDk7DfholtOT4KNHlr8pIVM5DnUsTqMwlj5LX4n5HwU3tRvj/rl5PAXzW8rPyr0bWdpCX9JUXgrwnux+NRVfZD3QQYFB0v0WeHNdGOsdnq8NQL4PWlyziV/ZgVUogmH0c9i8VAN2qhI07xCNRsnPByAXcUMOARW30xfwbckiTxJ+aGjajqHgMRwPL1Hyvd+At7XFo6tEdDzOzLmpYrh7uiOhtyZ0Bs3W86CUHwnuLbHGY3zFbWNvc+GSgYLMeZ2D/mTqeDYoh++28hkxCwhEU/lZeAliKjXRG8xoHUXSIFf50vRLL7F3rOoaUXVL6GnYeO+uvOcPCtZb7ozMbLoytNUJnly4Td/7wGlg5bEVpZzdE=
+ id 1hppxN-0001cF-Gr
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 08:15:35 +0000
+Received: by mail-lj1-x244.google.com with SMTP id h10so40181816ljg.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 23 Jul 2019 01:15:33 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=1swu0Kt63oIGION7DNQ5eoKClvR6dgku90pmZMMqN6U=;
+ b=mI1L9HbC5H6Rqbe7AmtP4KV3SZjrN7KGCUtR/PuwWyYMnNu4Pnv7ZAgVuMqBM3b6rF
+ jkgHxfpwxrwoO34N3li4S5zJkyPxclugFRd+OzI5AiFhy8n3g1/Bge/b4GpGkcUwedX0
+ 7Fd1JtzJSveTS0AXKZGWVBYt+1/3/gSi9nfMeJvhxZcs2Yd4Y7H01+Fwlpi1dO89jI3q
+ NitRLnWHDonvj64V+cDtuVQLmBh31m+SxD6fC4qG5rN93ef6a1yq0u8uuLJwK8QeusJn
+ 7n3J0n3c+UUS1M8SwW9j2PU2DnWnPIZ9/yPoflkScaVi+8li572mLiTzbmHD5GTbSlFT
+ lTbQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=1swu0Kt63oIGION7DNQ5eoKClvR6dgku90pmZMMqN6U=;
+ b=SXey81calLfL8cU3cFW2uK67iq9qW/2UJQGtAF4DSqQEnJpCAJh6gsZnsWyrbTLja2
+ jAXqYFdLN4V51u2362h11IgijZD8vRvk9kJ98DFbnO1DAKV3PskEjSC5HlAwxJKJWuXG
+ 0KNj2Um+qffS5Y2UJ6eZGvaz2NE5nKi6aY9BerNVx7dRgeAtPJ4dF+zICBistur/T/Ki
+ Eb0XhBiIb7Yh+FkOUvM9i8XDW8xB2s0k0nY6sLkYeCLx1h/MVPPch3ZKQACzVpIhQ0+A
+ JIhrmxA3LaYliqkO3v/8BpUAhPgXdbAROwRkYZUXekVwus0rEV+DSoeGDwSFyerwqmXZ
+ fBjg==
+X-Gm-Message-State: APjAAAVDd9qUeTxKvY0jISU2veS5YNAQpp99FQSOOvI37WhS2VxYUTpM
+ lepplhn+uZX4MJMnS8ll58y7Sw==
+X-Google-Smtp-Source: APXvYqyR9V56KX7wEY6cLLs/BmuqCWbN/wNCMgEEMEJQBqyrwteCXj+GD0prRGuz0YBCaP4rq8tRYg==
+X-Received: by 2002:a2e:8007:: with SMTP id j7mr39048781ljg.191.1563869731854; 
+ Tue, 23 Jul 2019 01:15:31 -0700 (PDT)
+Received: from genomnajs.ideon.se ([85.235.10.227])
+ by smtp.gmail.com with ESMTPSA id v12sm7881772ljk.22.2019.07.23.01.15.30
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 23 Jul 2019 01:15:30 -0700 (PDT)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: arm@kernel.org,
+	soc@kernel.org
+Subject: [PATCH 1/2] ARM: defconfig: u8500: Refresh defconfig
+Date: Tue, 23 Jul 2019 10:15:22 +0200
+Message-Id: <20190723081523.13079-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: f9e27c6c-9962-4a2c-93b5-08d70f45d691
-X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Jul 2019 08:14:52.1040 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: joabreu@synopsys.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR12MB3014
-X-OriginatorOrg: synopsys.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_011513_495480_B2618A70 
-X-CRM114-Status: GOOD (  21.71  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190723_011533_581110_EA86298B 
+X-CRM114-Status: UNSURE (   9.26  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -146,6 +85,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -157,84 +97,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Joao Pinto <Joao.Pinto@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>, Chen-Yu Tsai <wens@csie.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-tegra <linux-tegra@vger.kernel.org>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S . Miller" <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Linus Walleij <linus.walleij@linaro.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jose Abreu <joabreu@synopsys.com>
-Date: Jul/22/2019, 15:04:49 (UTC+00:00)
+This refreshes the outdated U8500 defconfig: some options
+moved around, PS/2 mouse is no longer default on, crypto
+options moved around etc.
 
-> From: Jon Hunter <jonathanh@nvidia.com>
-> Date: Jul/22/2019, 13:05:38 (UTC+00:00)
-> 
-> > 
-> > On 22/07/2019 12:39, Jose Abreu wrote:
-> > > From: Lars Persson <lists@bofh.nu>
-> > > Date: Jul/22/2019, 12:11:50 (UTC+00:00)
-> > > 
-> > >> On Mon, Jul 22, 2019 at 12:18 PM Ilias Apalodimas
-> > >> <ilias.apalodimas@linaro.org> wrote:
-> > >>>
-> > >>> On Thu, Jul 18, 2019 at 07:48:04AM +0000, Jose Abreu wrote:
-> > >>>> From: Jon Hunter <jonathanh@nvidia.com>
-> > >>>> Date: Jul/17/2019, 19:58:53 (UTC+00:00)
-> > >>>>
-> > >>>>> Let me know if you have any thoughts.
-> > >>>>
-> > >>>> Can you try attached patch ?
-> > >>>>
-> > >>>
-> > >>> The log says  someone calls panic() right?
-> > >>> Can we trye and figure were that happens during the stmmac init phase?
-> > >>>
-> > >>
-> > >> The reason for the panic is hidden in this one line of the kernel logs:
-> > >> Kernel panic - not syncing: Attempted to kill init! exitcode=0x0000000b
-> > >>
-> > >> The init process is killed by SIGSEGV (signal 11 = 0xb).
-> > >>
-> > >> I would suggest you look for data corruption bugs in the RX path. If
-> > >> the code is fetched from the NFS mount then a corrupt RX buffer can
-> > >> trigger a crash in userspace.
-> > >>
-> > >> /Lars
-> > > 
-> > > 
-> > > Jon, I'm not familiar with ARM. Are the buffer addresses being allocated 
-> > > in a coherent region ? Can you try attached patch which adds full memory 
-> > > barrier before the sync ?
-> > 
-> > TBH I am not sure about the buffer addresses either. The attached patch
-> > did not help. Same problem persists.
-> 
-> OK. I'm just guessing now at this stage but can you disable SMP ?
-> 
-> We have to narrow down if this is coherency issue but you said that 
-> booting without NFS and then mounting manually the share works ... So, 
-> can you share logs with same debug prints in this condition in order to 
-> compare ?
-
-Jon, I have one ARM based board and I can't face your issue but I 
-noticed that my buffer addresses are being mapped using SWIOTLB. Can you 
-disable IOMMU support on your setup and let me know if the problem 
-persists ?
-
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 ---
-Thanks,
-Jose Miguel Abreu
+ARM SoC folks: please apply this directly for v5.3
+---
+ arch/arm/configs/u8500_defconfig | 22 ++++++++--------------
+ 1 file changed, 8 insertions(+), 14 deletions(-)
+
+diff --git a/arch/arm/configs/u8500_defconfig b/arch/arm/configs/u8500_defconfig
+index e6b98b6eb88d..215bd3cd6e34 100644
+--- a/arch/arm/configs/u8500_defconfig
++++ b/arch/arm/configs/u8500_defconfig
+@@ -4,17 +4,9 @@ CONFIG_NO_HZ_IDLE=y
+ CONFIG_HIGH_RES_TIMERS=y
+ CONFIG_BLK_DEV_INITRD=y
+ CONFIG_KALLSYMS_ALL=y
+-CONFIG_MODULES=y
+-CONFIG_MODULE_UNLOAD=y
+-# CONFIG_BLK_DEV_BSG is not set
+-CONFIG_PARTITION_ADVANCED=y
+ CONFIG_ARCH_U8500=y
+-CONFIG_MACH_HREFV60=y
+-CONFIG_MACH_SNOWBALL=y
+ CONFIG_SMP=y
+ CONFIG_NR_CPUS=2
+-CONFIG_PREEMPT=y
+-CONFIG_AEABI=y
+ CONFIG_HIGHMEM=y
+ CONFIG_ARM_APPENDED_DTB=y
+ CONFIG_ARM_ATAG_DTB_COMPAT=y
+@@ -25,6 +17,10 @@ CONFIG_CPU_IDLE=y
+ CONFIG_ARM_U8500_CPUIDLE=y
+ CONFIG_VFP=y
+ CONFIG_NEON=y
++CONFIG_MODULES=y
++CONFIG_MODULE_UNLOAD=y
++# CONFIG_BLK_DEV_BSG is not set
++CONFIG_PARTITION_ADVANCED=y
+ CONFIG_NET=y
+ CONFIG_PACKET=y
+ CONFIG_UNIX=y
+@@ -47,7 +43,6 @@ CONFIG_SMSC911X=y
+ CONFIG_SMSC_PHY=y
+ CONFIG_CW1200=y
+ CONFIG_CW1200_WLAN_SDIO=y
+-# CONFIG_INPUT_MOUSEDEV_PSAUX is not set
+ CONFIG_INPUT_EVDEV=y
+ # CONFIG_KEYBOARD_ATKBD is not set
+ CONFIG_KEYBOARD_GPIO=y
+@@ -126,20 +121,19 @@ CONFIG_NFS_FS=y
+ CONFIG_ROOT_NFS=y
+ CONFIG_NLS_CODEPAGE_437=y
+ CONFIG_NLS_ISO8859_1=y
++CONFIG_CRYPTO_DEV_UX500=y
++CONFIG_CRYPTO_DEV_UX500_CRYP=y
++CONFIG_CRYPTO_DEV_UX500_HASH=y
++CONFIG_CRYPTO_DEV_UX500_DEBUG=y
+ CONFIG_PRINTK_TIME=y
+ CONFIG_DEBUG_INFO=y
+ CONFIG_DEBUG_FS=y
+ CONFIG_MAGIC_SYSRQ=y
+ CONFIG_DEBUG_KERNEL=y
+ # CONFIG_SCHED_DEBUG is not set
+-# CONFIG_DEBUG_PREEMPT is not set
+ # CONFIG_FTRACE is not set
+ CONFIG_DEBUG_USER=y
+ CONFIG_CORESIGHT=y
+ CONFIG_CORESIGHT_SINK_TPIU=y
+ CONFIG_CORESIGHT_SINK_ETBV10=y
+ CONFIG_CORESIGHT_SOURCE_ETM3X=y
+-CONFIG_CRYPTO_DEV_UX500=y
+-CONFIG_CRYPTO_DEV_UX500_CRYP=y
+-CONFIG_CRYPTO_DEV_UX500_HASH=y
+-CONFIG_CRYPTO_DEV_UX500_DEBUG=y
+-- 
+2.21.0
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
