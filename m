@@ -2,88 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C34E714AE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 11:09:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F36D714B0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 11:09:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qgJNWzaIWyCcFHPaAJBHvFyPW68W2bK0sMZ/Mo1kOWo=; b=Y3m0ORCnX7i3q/
-	/JusDUWa4gcVMA0TN89OIGypSxtmOia2OB9poA1PPuhJItL5HBqHyTBRPsp46MjcO4Rvok0FrqHlu
-	xtELrliZ5heT37pXfGEFPpuChnLrF7PH9EuidxbeENJj1fiNpVUj5qdcL9hahv0wMtGODZgkH2u4j
-	b99wlOd+8FCvK9m1QNE1iBXKPglgCynr/+Uevasu3BvaPvYzqGwxtcLEEZU1pnrwJezxTQr2To/eD
-	6DF3XHOeEMaRerhNuhYvO3mITUbnY5Zx3my2pbSXZAgLxftkOwp/Pfuy9iLEMCwD4p2UbmRi2mhDB
-	abQUKdeJdwJEhuLoFqRg==;
+	List-Owner; bh=HcCbcSsc5yVOUftBdVRHA3nuy9avx5xc0JxU4eLhoIs=; b=D6xLM/C9LTt4gK
+	KFGcbapwfUm33XQoPuL+wRLRBjUfIuuhJU6imgkdsgb9/po4KU4CBtJl/zDc2Wl7Bfb0JMq90mw5J
+	xMNGGzwZ8j6jngkAopipKGkY7Hpa6wBaqu620DiWQv7pmBShwI9VEbfoK5OmN8JSi0iw3ZBLX8I7i
+	rjJ2UUXQivmgzfYAL1z5IpxommZt6nN/SRp3j3y90wHs94gnYBYy1+0R64Iw+CYWjNvRowdUtvbsT
+	WDzBFW2B/Fu3+7umekyFiHXYAQytLSBURlZB7yY/bW1yw3Ge1hAKgbqftish6CceNjSdHOr6/5Aaw
+	qwewK5+VH9JDhfPMdTlw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpqnf-0005ex-Nc; Tue, 23 Jul 2019 09:09:35 +0000
-Received: from mail-ed1-f68.google.com ([209.85.208.68])
+	id 1hpqo1-0005sa-2R; Tue, 23 Jul 2019 09:09:57 +0000
+Received: from asavdk3.altibox.net ([109.247.116.14])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpqn4-0005QD-KK
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 09:08:59 +0000
-Received: by mail-ed1-f68.google.com with SMTP id i11so43122705edq.0
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 23 Jul 2019 02:08:57 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=okyQ1wr7aMfjoTNpZ13nzePI9CwwhxoYY9up/i4FxFI=;
- b=agUfIKRtfwWWyhrEuE4cYDCdbD5s8j+ESyc3FmpTNY9J69sB9GbCn4S5Ggz/+N2K+2
- qAd7jwtJ4PUsRTYFkB8OqnA8iPSyh0jY4KTR/TamdvujiExkCBo1p/2rF/EObt5ZjrRr
- wBSxUJSzwdbcPrs9UwU9gm0tPuH8Kg7tFi/en20hAuMPZIhUyHYjb0I1UneM+ZSNIosH
- l5Ks8EUxE/9ZbcqIcjTIm2gtLU7oBPdIwHkGMw4lom0oKHO10Ka9/oS2QlVz/s2QpiOa
- vFYBfG/SabYq9fcRNBw6ehwT1rZQ/bMhgueG7177+rQ+Ma4ejj0aWTzy3+QgEIq3U/62
- Wd4A==
-X-Gm-Message-State: APjAAAWlH+TeiJYOLwA3EF1H9yaa4BHglrLJfWEXtYIO26IpFT8aEf8c
- EXHOzVr22xEoDYERCpxCssx4bkMb4Uc=
-X-Google-Smtp-Source: APXvYqx2Bo2wovtbzDJndJHTaZL8YMQhpZatF82a6ORXYGNqS/kgG//wAqjqpPx0uPyHBXC8YEvwBg==
-X-Received: by 2002:a05:6402:129a:: with SMTP id
- w26mr64194969edv.167.1563872936459; 
- Tue, 23 Jul 2019 02:08:56 -0700 (PDT)
-Received: from mail-wr1-f51.google.com (mail-wr1-f51.google.com.
- [209.85.221.51])
- by smtp.gmail.com with ESMTPSA id r13sm11589137eds.35.2019.07.23.02.08.56
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Tue, 23 Jul 2019 02:08:56 -0700 (PDT)
-Received: by mail-wr1-f51.google.com with SMTP id g17so42317864wrr.5
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 23 Jul 2019 02:08:56 -0700 (PDT)
-X-Received: by 2002:adf:eb0f:: with SMTP id s15mr4098727wrn.324.1563872935987; 
- Tue, 23 Jul 2019 02:08:55 -0700 (PDT)
+ id 1hpqnG-0005Xr-E4; Tue, 23 Jul 2019 09:09:12 +0000
+Received: from ravnborg.org (unknown [158.248.194.18])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by asavdk3.altibox.net (Postfix) with ESMTPS id C8327200B4;
+ Tue, 23 Jul 2019 11:09:05 +0200 (CEST)
+Date: Tue, 23 Jul 2019 11:09:04 +0200
+From: Sam Ravnborg <sam@ravnborg.org>
+To: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+Subject: Re: [PATCH v4 17/23] drm/ast: Provide ddc symlink in connector sysfs
+ directory
+Message-ID: <20190723090904.GC787@ravnborg.org>
+References: <cover.1562843413.git.andrzej.p@collabora.com>
+ <d3651bd2fd8ba69b8380304bca4c629a8c1da4e9.1562843413.git.andrzej.p@collabora.com>
 MIME-Version: 1.0
-References: <20190723084407.4703-1-maxime.ripard@bootlin.com>
- <20190723084407.4703-2-maxime.ripard@bootlin.com>
-In-Reply-To: <20190723084407.4703-2-maxime.ripard@bootlin.com>
-From: Chen-Yu Tsai <wens@csie.org>
-Date: Tue, 23 Jul 2019 17:08:43 +0800
-X-Gmail-Original-Message-ID: <CAGb2v66+QUEbo9pAbG8b4cmfr2yh1xBhmwK-gadaZAs_mcV74A@mail.gmail.com>
-Message-ID: <CAGb2v66+QUEbo9pAbG8b4cmfr2yh1xBhmwK-gadaZAs_mcV74A@mail.gmail.com>
-Subject: Re: [PATCH 2/2] ARM: dts: sunxi: Fix the HDMI PHY name
-To: Maxime Ripard <maxime.ripard@bootlin.com>
+Content-Disposition: inline
+In-Reply-To: <d3651bd2fd8ba69b8380304bca4c629a8c1da4e9.1562843413.git.andrzej.p@collabora.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CMAE-Score: 0
+X-CMAE-Analysis: v=2.3 cv=dqr19Wo4 c=1 sm=1 tr=0
+ a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
+ a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=QX4gbG5DAAAA:8
+ a=akpas9ZDeQi6sww-pK0A:9 a=CjuIK1q_8ugA:10 a=AbAUZ8qAyYyZVLSsDulk:22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_020858_669367_8AF0F91B 
-X-CRM114-Status: GOOD (  12.73  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190723_020911_027449_E8C97EDE 
+X-CRM114-Status: GOOD (  15.43  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.68 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (wens213[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wens213[at]gmail.com)
+ no trust [109.247.116.14 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,23 +67,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Neil Armstrong <narmstrong@baylibre.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, Liviu Dudau <liviu.dudau@arm.com>,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Shawn Guo <shawnguo@kernel.org>, kernel@collabora.com,
+ linux-samsung-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Sean Paul <sean@poorly.run>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Jonathan Hunter <jonathanh@nvidia.com>, David Airlie <airlied@linux.ie>,
+ Chen-Yu Tsai <wens@csie.org>, Kukjin Kim <kgene@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>, Dave Airlie <airlied@redhat.com>,
+ Thomas Zimmermann <tzimmermann@suse.de>, Jonas Karlman <jonas@kwiboo.se>,
+ linux-arm-msm@vger.kernel.org, intel-gfx@lists.freedesktop.org,
+ Jyri Sarha <jsarha@ti.com>, Alexios Zavras <alexios.zavras@intel.com>,
+ Mamta Shukla <mamtashukla555@gmail.com>, linux-mediatek@lists.infradead.org,
+ Rodrigo Vivi <rodrigo.vivi@intel.com>, linux-tegra@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, Vincent Abriou <vincent.abriou@st.com>,
+ linux-arm-kernel@lists.infradead.org, Jernej Skrabec <jernej.skrabec@siol.net>,
+ amd-gfx@lists.freedesktop.org, Tomi Valkeinen <tomi.valkeinen@ti.com>,
+ Enrico Weigelt <info@metux.net>, Seung-Woo Kim <sw0312.kim@samsung.com>,
+ Douglas Anderson <dianders@chromium.org>, Todor Tomov <todor.tomov@linaro.org>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Huang Rui <ray.huang@amd.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Alex Deucher <alexander.deucher@amd.com>, freedreno@lists.freedesktop.org,
+ Christian =?iso-8859-1?Q?K=F6nig?= <christian.koenig@amd.com>,
+ Gerd Hoffmann <kraxel@redhat.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jul 23, 2019 at 4:44 PM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
->
-> Even though the binding mentions that the PHY name must be "phy", it turns
-> out that all our DTs had "hdmi-phy" instead.
->
-> The code doesn't care about the phy-names property, so we can just change
-> our DTs to match the binding, without any side effect.
->
-> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+Hi Andrzej.
 
-Acked-by: Chen-Yu Tsai <wens@csie.org>
+On Thu, Jul 11, 2019 at 01:26:44PM +0200, Andrzej Pietrasiewicz wrote:
+> Use the ddc pointer provided by the generic connector.
+> 
+> Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+> ---
+>  drivers/gpu/drm/ast/ast_mode.c | 9 +++++----
+>  1 file changed, 5 insertions(+), 4 deletions(-)
+> 
+> diff --git a/drivers/gpu/drm/ast/ast_mode.c b/drivers/gpu/drm/ast/ast_mode.c
+> index ffccbef962a4..1ca9bc4aa3bb 100644
+> --- a/drivers/gpu/drm/ast/ast_mode.c
+> +++ b/drivers/gpu/drm/ast/ast_mode.c
+> @@ -890,6 +890,11 @@ static int ast_connector_init(struct drm_device *dev)
+>  		return -ENOMEM;
+>  
+>  	connector = &ast_connector->base;
+> +	ast_connector->i2c = ast_i2c_create(dev);
+> +	if (!ast_connector->i2c)
+> +		DRM_ERROR("failed to add ddc bus for connector\n");
+> +
+> +	connector->ddc = &ast_connector->i2c->adapter;
+>  	drm_connector_init(dev, connector, &ast_connector_funcs, DRM_MODE_CONNECTOR_VGA);
+>  
+>  	drm_connector_helper_add(connector, &ast_connector_helper_funcs);
+Again, assigning before drm_connector_init().
+I did not audit the remaining patches - you got the idea.
+
+	Sam
 
 _______________________________________________
 linux-arm-kernel mailing list
