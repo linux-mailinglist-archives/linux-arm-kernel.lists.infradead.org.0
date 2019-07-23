@@ -2,80 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4683B71EAF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 20:06:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2AE7571EB3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 20:07:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t9uT6KQ+0aGXrjXb/aBiMy1dnK7EakzNd3rvcEDzfBQ=; b=V/CyP3uR2dJesj
-	JFKxKW6bF1kZ9OqpGnECgIJoZf22dtJC0FO/56k4LTmyQFT9UVr/LOmgpYNHJXUeadDF3Cn3b12r3
-	nVqqjAjqm+LCMMf+Br3Wh6I3mgdz5i5SOoAbrq+Sl0VLHaengzU4+EWWyCWq4m79kSigIztQWzaEZ
-	X2nCKXRzLmgqM8fAccygN1dOCkBbkiEleUyGdkXalpApL/QYRcas9ukaGpsbNPaNr+ezttB/1hVpG
-	TCdZ0xkzJfpYXUcg8hFNGmfSvpTrcFLfzI+BsZ4TceU1rpYRbGc0pM1HiBA7peRD8zo6k23oYXol0
-	euA2sE8MZXcPqnWGQfsw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=kPs/lKNuHc6GXjvvx+mTAwuTCYO/bqfr6ITzTb1OhXU=; b=c1i
+	REprB5pkoErY6Kr09yi1g4ddgyylEO7sS9EHvoKz0v3qE1NdQVU24FfFY074QZ2SUazwpkhNiUypB
+	S+hA3QqB/6Oft7R8VfifOAfu5HH/sDm/0KlIF37d//yC/CEBRNrYWNueSU4NmdSnIYL4ZeeKz3hNU
+	rTvbSyHOI3LFp9S9RadYeKKmkfjKJxWT6uv1nQtRcQnGvGHj/1xLk0GPAC18mP9nVFLWzykX/zvgb
+	yRs2OgUz9VlUp6boQAQFUL6tEPXngjNZPMHlv8NxbWwKw646cXQHSY4uTwtMPNnIsLKYj9RmXUu8L
+	tG83Jhrm3ppuVxFrLrb3m1HTbmkKJrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpzBK-00056I-7C; Tue, 23 Jul 2019 18:06:34 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1hpzBp-0005Ow-Eq; Tue, 23 Jul 2019 18:07:05 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpz8a-0001el-Tc
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 18:03:48 +0000
-Received: by mail-pf1-x442.google.com with SMTP id y15so19531034pfn.5
+ id 1hpz8d-0001j7-2S
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 18:03:49 +0000
+Received: by mail-pl1-x644.google.com with SMTP id y8so20908948plr.12
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 23 Jul 2019 11:03:41 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=E6c9CCBNMZ2lQ+/8AnAUhg74ExtRXFQ4vuH8M/GdFM0=;
- b=YpTQlGUfdrVkXjjXRsthaj+W3t0ME/4bfucpT+B/xEaOwEPMub/zvJ+oBeerABEDHM
- EfsiSy1c4Sa9YKE3xVsQrn1X0Wg2AlY9jjIhHsHyBJoXT055qB/ZCkRBnJjzHv56Ujap
- 1ITRfJH92eHaOpjz4UJmq/UzUqu8I+PsO3Xl6InTjNj2fRNHOTJ+MOMQCu9ZD7o6dyTI
- 4oy8d2zi4Kz22dn7Ir3A6dgOHCieAl2kldai+KvQzl7DuGOgZN4Tfo3OlCRObEDoN4Hx
- vcC33qMj7vz6Y0Ll8kxWeY0c1wxaWoUpHuevL1NacGc4IqJT/2m6s5BjX/8Hj00m8HuA
- LzQQ==
+ Tue, 23 Jul 2019 11:03:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=1TIOqRhmss/ILQ6dGAsRS8I/11uneux/Ft/KPtslfz8=;
+ b=f8dCI0zhMHEiSPY68o35pzenvfQ4+eFDAAeztNaIKAjxUT6m+g0rg7aUtW4mVRjL/i
+ tQf+INL0+wqUOztKJnEIti5HzkDVD/ZkFSWhNONSFaX0BBxq+WlUO5QAGK0CLgzOsDSX
+ K3as7ykZpv5UKhPM2s5LPtUA/6xnl7rUoZNku0s8cbaO5CNdjti0w5cT9Qs08rB2ir5I
+ 683t6whwZT/JemGszEs49iRfFgkZAdtLhpYsA8mhZxGEt9a3+0fei8dW9U1t1MDIfpIk
+ kviMom8TLtxmxRpAZ1jKztJQKvW1VtIbrLuMaT13+LcR7bJxTDBm11cbpOW78xsEHRa1
+ K1Hw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=E6c9CCBNMZ2lQ+/8AnAUhg74ExtRXFQ4vuH8M/GdFM0=;
- b=VTyQ3JHdLAT4vhnE2mQSDxtrnYNi1tK9e4UhEam4kZofhQchwBo/4/5SrlqOfgIhA4
- IGkZNO/n+eb8kbzLv0okDNUt8+X02J3ik31KA84CYhbDkcAQZtajo3bhOWRvPUC1eqna
- dpJ6SUPPGmyCn0Vuc2i3cPCuboLI4rMq+J1pIRkt6rmNlJj4/tu5vWKhCPzCgm2MabZj
- DmqLmxSLei+CzvF1ICW5r95XQJn5hnMX3o8deRNTf9wNC8wFREUgSnTeU1ce4TVjt8M5
- 0DeTTKRbZMMmmAqvFxNukSs2YK1yKm+t+FRPl8I2bezDM+b70D0gDFAJKnH7EKQxuPaV
- tY3Q==
-X-Gm-Message-State: APjAAAWGOIv1tGkv9Kj05aXBwf9HKKQ9VD6E3Py9fAPMTknoPpLNhlNn
- vN5K7XyeCuyZGKSkzXC/1NRrkVZxldWkX6vYPkNLwQ==
-X-Google-Smtp-Source: APXvYqyOYwVKCxcBz6S0D4wjZkxWzhHFaxb8lFwW+OYcWMv0gtEMKeOJsv/kUp+i9zcPiweOieZkD1goVOU01ylyYas=
-X-Received: by 2002:aa7:97bb:: with SMTP id d27mr6956158pfq.93.1563905020457; 
- Tue, 23 Jul 2019 11:03:40 -0700 (PDT)
-MIME-Version: 1.0
-References: <cover.1563904656.git.andreyknvl@google.com>
-In-Reply-To: <cover.1563904656.git.andreyknvl@google.com>
-From: Andrey Konovalov <andreyknvl@google.com>
-Date: Tue, 23 Jul 2019 20:03:29 +0200
-Message-ID: <CAAeHK+yc0D_nd7nTRsY4=qcSx+eQR0VLut3uXMf4NEiE-VpeCw@mail.gmail.com>
-Subject: Re: [PATCH v19 00/15] arm64: untag user pointers passed to the kernel
-To: Andrew Morton <akpm@linux-foundation.org>,
- Catalin Marinas <catalin.marinas@arm.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=1TIOqRhmss/ILQ6dGAsRS8I/11uneux/Ft/KPtslfz8=;
+ b=K8eLztWCJeXFMXc3/5KFEyCVXx4L1JzaFzJAwkdGIDc2gVkMgvErQ2mLTof/A7Jlwp
+ Bl5HZdE7iDGKcBrPbxi+zTV3W7p4R5SEhnve7EnoYFWBRcL+xaLgiYm6zvAJ+JRJrw9Q
+ wPVREI9jjHdhfDVHrJE3k39jP1Pweq9jVcjY/UtLmvXKg5OvVJR+aYET/WG54iGd0KEY
+ WhGNdMiaHzWAhOmYm6kt9t2NgtttbDHFQ/N5swKe0Y34D7rwsfQd64oSMqTJpG7Mw+cB
+ LIwOGIKluUEU55IyNLsMRwdCbVqyhtbZdR1X6TRTgM7YFpdLKi2mZwHeDPYmCi61ZuRY
+ 6YOA==
+X-Gm-Message-State: APjAAAX3uqd43Rxpx72yIYxqrnIBgHHqe0euI8nhE8xhD2qvv7jWaRjN
+ a+VlmdMXkq0kYiXSi6IQRwk=
+X-Google-Smtp-Source: APXvYqwkNMk/D1dT8XUrS0aDZ7DSLZPr9tlvafvfKtUG3xc4qiopu2JFr4HthixHv2hp5VO8Y1IsuA==
+X-Received: by 2002:a17:902:9f8e:: with SMTP id
+ g14mr35835075plq.67.1563905025772; 
+ Tue, 23 Jul 2019 11:03:45 -0700 (PDT)
+Received: from localhost.localdomain (KD118155013174.ppp-bb.dion.ne.jp.
+ [118.155.13.174])
+ by smtp.gmail.com with ESMTPSA id v138sm50594318pfc.15.2019.07.23.11.03.43
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Tue, 23 Jul 2019 11:03:45 -0700 (PDT)
+From: Yoshihiro Kaneko <ykaneko0929@gmail.com>
+To: linux-renesas-soc@vger.kernel.org
+Subject: [PATCH] arm64: dts: renesas: ulcb-kf: sort nodes
+Date: Wed, 24 Jul 2019 03:03:35 +0900
+Message-Id: <1563905015-2911-1-git-send-email-ykaneko0929@gmail.com>
+X-Mailer: git-send-email 1.9.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_110345_074566_70555F75 
-X-CRM114-Status: GOOD (  36.14  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190723_110347_283499_233BC365 
+X-CRM114-Status: GOOD (  15.11  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (ykaneko0929[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (ykaneko0929[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -84,8 +86,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,371 +97,208 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org, Kostya Serebryany <kcc@google.com>,
- Khalid Aziz <khalid.aziz@oracle.com>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- Felix Kuehling <Felix.Kuehling@amd.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Dave Martin <Dave.Martin@arm.com>, Evgeniy Stepanov <eugenis@google.com>,
- linux-media@vger.kernel.org, Kevin Brodsky <kevin.brodsky@arm.com>,
- Kees Cook <keescook@chromium.org>, Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Dmitry Vyukov <dvyukov@google.com>,
- Linux Memory Management List <linux-mm@kvack.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yishai Hadas <yishaih@mellanox.com>, LKML <linux-kernel@vger.kernel.org>,
- Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>, enh <enh@google.com>,
- Robin Murphy <robin.murphy@arm.com>,
- Christian Koenig <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: Magnus Damm <magnus.damm@gmail.com>, Simon Horman <horms@verge.net.au>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jul 23, 2019 at 7:59 PM Andrey Konovalov <andreyknvl@google.com> wrote:
->
-> === Overview
->
-> arm64 has a feature called Top Byte Ignore, which allows to embed pointer
-> tags into the top byte of each pointer. Userspace programs (such as
-> HWASan, a memory debugging tool [1]) might use this feature and pass
-> tagged user pointers to the kernel through syscalls or other interfaces.
->
-> Right now the kernel is already able to handle user faults with tagged
-> pointers, due to these patches:
->
-> 1. 81cddd65 ("arm64: traps: fix userspace cache maintenance emulation on a
->              tagged pointer")
-> 2. 7dcd9dd8 ("arm64: hw_breakpoint: fix watchpoint matching for tagged
->               pointers")
-> 3. 276e9327 ("arm64: entry: improve data abort handling of tagged
->               pointers")
->
-> This patchset extends tagged pointer support to syscall arguments.
->
-> As per the proposed ABI change [3], tagged pointers are only allowed to be
-> passed to syscalls when they point to memory ranges obtained by anonymous
-> mmap() or sbrk() (see the patchset [3] for more details).
->
-> For non-memory syscalls this is done by untaging user pointers when the
-> kernel performs pointer checking to find out whether the pointer comes
-> from userspace (most notably in access_ok). The untagging is done only
-> when the pointer is being checked, the tag is preserved as the pointer
-> makes its way through the kernel and stays tagged when the kernel
-> dereferences the pointer when perfoming user memory accesses.
->
-> The mmap and mremap (only new_addr) syscalls do not currently accept
-> tagged addresses. Architectures may interpret the tag as a background
-> colour for the corresponding vma.
->
-> Other memory syscalls (mprotect, etc.) don't do user memory accesses but
-> rather deal with memory ranges, and untagged pointers are better suited to
-> describe memory ranges internally. Thus for memory syscalls we untag
-> pointers completely when they enter the kernel.
->
-> === Other approaches
->
-> One of the alternative approaches to untagging that was considered is to
-> completely strip the pointer tag as the pointer enters the kernel with
-> some kind of a syscall wrapper, but that won't work with the countless
-> number of different ioctl calls. With this approach we would need a custom
-> wrapper for each ioctl variation, which doesn't seem practical.
->
-> An alternative approach to untagging pointers in memory syscalls prologues
-> is to inspead allow tagged pointers to be passed to find_vma() (and other
-> vma related functions) and untag them there. Unfortunately, a lot of
-> find_vma() callers then compare or subtract the returned vma start and end
-> fields against the pointer that was being searched. Thus this approach
-> would still require changing all find_vma() callers.
->
-> === Testing
->
-> The following testing approaches has been taken to find potential issues
-> with user pointer untagging:
->
-> 1. Static testing (with sparse [2] and separately with a custom static
->    analyzer based on Clang) to track casts of __user pointers to integer
->    types to find places where untagging needs to be done.
->
-> 2. Static testing with grep to find parts of the kernel that call
->    find_vma() (and other similar functions) or directly compare against
->    vm_start/vm_end fields of vma.
->
-> 3. Static testing with grep to find parts of the kernel that compare
->    user pointers with TASK_SIZE or other similar consts and macros.
->
-> 4. Dynamic testing: adding BUG_ON(has_tag(addr)) to find_vma() and running
->    a modified syzkaller version that passes tagged pointers to the kernel.
->
-> Based on the results of the testing the requried patches have been added
-> to the patchset.
->
-> === Notes
->
-> This patchset is meant to be merged together with "arm64 relaxed ABI" [3].
->
-> This patchset is a prerequisite for ARM's memory tagging hardware feature
-> support [4].
->
-> This patchset has been merged into the Pixel 2 & 3 kernel trees and is
-> now being used to enable testing of Pixel phones with HWASan.
->
-> Thanks!
->
-> [1] http://clang.llvm.org/docs/HardwareAssistedAddressSanitizerDesign.html
->
-> [2] https://github.com/lucvoo/sparse-dev/commit/5f960cb10f56ec2017c128ef9d16060e0145f292
->
-> [3] https://lkml.org/lkml/2019/6/12/745
->
-> [4] https://community.arm.com/processors/b/blog/posts/arm-a-profile-architecture-2018-developments-armv85a
+Sort nodes.
 
-Hi Andrew and Catalin,
+If node address is present
+   * Sort by node address, grouping all nodes with the same compat string
+     and sorting the group alphabetically.
+Else
+   * Sort alphabetically
 
-Do you think this is ready to be merged?
+This should not have any run-time effect.
 
-Should this go through the mm or the arm tree?
+Signed-off-by: Yoshihiro Kaneko <ykaneko0929@gmail.com>
+---
 
-Thanks!
+This patch is based on the devel branch of Simon Horman's renesas tree.
 
+ arch/arm64/boot/dts/renesas/ulcb-kf.dtsi | 118 +++++++++++++++----------------
+ 1 file changed, 59 insertions(+), 59 deletions(-)
 
->
-> === History
->
-> Changes in v19:
-> - Rebased onto 7b5cf701 (5.3-rc1+).
->
-> Changes in v18:
-> - Reverted the selftest back to not using the LD_PRELOAD approach.
-> - Added prctl(PR_SET_TAGGED_ADDR_CTRL) call to the selftest.
-> - Reworded the patch descriptions to make them less oriented on arm64
->   only.
-> - Catalin's patch: "I added a Kconfig option and dropped the prctl args
->   zero check. There is some minor clean-up as well".
->
-> Changes in v17:
-> - The "uaccess: add noop untagged_addr definition" patch is dropped, as it
->   was merged into upstream named as "uaccess: add noop untagged_addr
->   definition".
-> - Merged "mm, arm64: untag user pointers in do_pages_move" into
->   "mm, arm64: untag user pointers passed to memory syscalls".
-> - Added "arm64: Introduce prctl() options to control the tagged user
->   addresses ABI" patch from Catalin.
-> - Add tags_lib.so to tools/testing/selftests/arm64/.gitignore.
-> - Added a comment clarifying untagged in mremap.
-> - Moved untagging back into mlx4_get_umem_mr() for the IB patch.
->
-> Changes in v16:
-> - Moved untagging for memory syscalls from arm64 wrappers back to generic
->   code.
-> - Dropped untagging for the following memory syscalls: brk, mmap, munmap;
->   mremap (only dropped for new_address); mmap_pgoff (not used on arm64);
->   remap_file_pages (deprecated); shmat, shmdt (work on shared memory).
-> - Changed kselftest to LD_PRELOAD a shared library that overrides malloc
->   to return tagged pointers.
-> - Rebased onto 5.2-rc3.
->
-> Changes in v15:
-> - Removed unnecessary untagging from radeon_ttm_tt_set_userptr().
-> - Removed unnecessary untagging from amdgpu_ttm_tt_set_userptr().
-> - Moved untagging to validate_range() in userfaultfd code.
-> - Moved untagging to ib_uverbs_(re)reg_mr() from mlx4_get_umem_mr().
-> - Rebased onto 5.1.
->
-> Changes in v14:
-> - Moved untagging for most memory syscalls to an arm64 specific
->   implementation, instead of doing that in the common code.
-> - Dropped "net, arm64: untag user pointers in tcp_zerocopy_receive", since
->   the provided user pointers don't come from an anonymous map and thus are
->   not covered by this ABI relaxation.
-> - Dropped "kernel, arm64: untag user pointers in prctl_set_mm*".
-> - Moved untagging from __check_mem_type() to tee_shm_register().
-> - Updated untagging for the amdgpu and radeon drivers to cover the MMU
->   notifier, as suggested by Felix.
-> - Since this ABI relaxation doesn't actually allow tagged instruction
->   pointers, dropped the following patches:
-> - Dropped "tracing, arm64: untag user pointers in seq_print_user_ip".
-> - Dropped "uprobes, arm64: untag user pointers in find_active_uprobe".
-> - Dropped "bpf, arm64: untag user pointers in stack_map_get_build_id_offset".
-> - Rebased onto 5.1-rc7 (37624b58).
->
-> Changes in v13:
-> - Simplified untagging in tcp_zerocopy_receive().
-> - Looked at find_vma() callers in drivers/, which allowed to identify a
->   few other places where untagging is needed.
-> - Added patch "mm, arm64: untag user pointers in get_vaddr_frames".
-> - Added patch "drm/amdgpu, arm64: untag user pointers in
->   amdgpu_ttm_tt_get_user_pages".
-> - Added patch "drm/radeon, arm64: untag user pointers in
->   radeon_ttm_tt_pin_userptr".
-> - Added patch "IB/mlx4, arm64: untag user pointers in mlx4_get_umem_mr".
-> - Added patch "media/v4l2-core, arm64: untag user pointers in
->   videobuf_dma_contig_user_get".
-> - Added patch "tee/optee, arm64: untag user pointers in check_mem_type".
-> - Added patch "vfio/type1, arm64: untag user pointers".
->
-> Changes in v12:
-> - Changed untagging in tcp_zerocopy_receive() to also untag zc->address.
-> - Fixed untagging in prctl_set_mm* to only untag pointers for vma lookups
->   and validity checks, but leave them as is for actual user space accesses.
-> - Updated the link to the v2 of the "arm64 relaxed ABI" patchset [3].
-> - Dropped the documentation patch, as the "arm64 relaxed ABI" patchset [3]
->   handles that.
->
-> Changes in v11:
-> - Added "uprobes, arm64: untag user pointers in find_active_uprobe" patch.
-> - Added "bpf, arm64: untag user pointers in stack_map_get_build_id_offset"
->   patch.
-> - Fixed "tracing, arm64: untag user pointers in seq_print_user_ip" to
->   correctly perform subtration with a tagged addr.
-> - Moved untagged_addr() from SYSCALL_DEFINE3(mprotect) and
->   SYSCALL_DEFINE4(pkey_mprotect) to do_mprotect_pkey().
-> - Moved untagged_addr() definition for other arches from
->   include/linux/memory.h to include/linux/mm.h.
-> - Changed untagging in strn*_user() to perform userspace accesses through
->   tagged pointers.
-> - Updated the documentation to mention that passing tagged pointers to
->   memory syscalls is allowed.
-> - Updated the test to use malloc'ed memory instead of stack memory.
->
-> Changes in v10:
-> - Added "mm, arm64: untag user pointers passed to memory syscalls" back.
-> - New patch "fs, arm64: untag user pointers in fs/userfaultfd.c".
-> - New patch "net, arm64: untag user pointers in tcp_zerocopy_receive".
-> - New patch "kernel, arm64: untag user pointers in prctl_set_mm*".
-> - New patch "tracing, arm64: untag user pointers in seq_print_user_ip".
->
-> Changes in v9:
-> - Rebased onto 4.20-rc6.
-> - Used u64 instead of __u64 in type casts in the untagged_addr macro for
->   arm64.
-> - Added braces around (addr) in the untagged_addr macro for other arches.
->
-> Changes in v8:
-> - Rebased onto 65102238 (4.20-rc1).
-> - Added a note to the cover letter on why syscall wrappers/shims that untag
->   user pointers won't work.
-> - Added a note to the cover letter that this patchset has been merged into
->   the Pixel 2 kernel tree.
-> - Documentation fixes, in particular added a list of syscalls that don't
->   support tagged user pointers.
->
-> Changes in v7:
-> - Rebased onto 17b57b18 (4.19-rc6).
-> - Dropped the "arm64: untag user address in __do_user_fault" patch, since
->   the existing patches already handle user faults properly.
-> - Dropped the "usb, arm64: untag user addresses in devio" patch, since the
->   passed pointer must come from a vma and therefore be untagged.
-> - Dropped the "arm64: annotate user pointers casts detected by sparse"
->   patch (see the discussion to the replies of the v6 of this patchset).
-> - Added more context to the cover letter.
-> - Updated Documentation/arm64/tagged-pointers.txt.
->
-> Changes in v6:
-> - Added annotations for user pointer casts found by sparse.
-> - Rebased onto 050cdc6c (4.19-rc1+).
->
-> Changes in v5:
-> - Added 3 new patches that add untagging to places found with static
->   analysis.
-> - Rebased onto 44c929e1 (4.18-rc8).
->
-> Changes in v4:
-> - Added a selftest for checking that passing tagged pointers to the
->   kernel succeeds.
-> - Rebased onto 81e97f013 (4.18-rc1+).
->
-> Changes in v3:
-> - Rebased onto e5c51f30 (4.17-rc6+).
-> - Added linux-arch@ to the list of recipients.
->
-> Changes in v2:
-> - Rebased onto 2d618bdf (4.17-rc3+).
-> - Removed excessive untagging in gup.c.
-> - Removed untagging pointers returned from __uaccess_mask_ptr.
->
-> Changes in v1:
-> - Rebased onto 4.17-rc1.
->
-> Changes in RFC v2:
-> - Added "#ifndef untagged_addr..." fallback in linux/uaccess.h instead of
->   defining it for each arch individually.
-> - Updated Documentation/arm64/tagged-pointers.txt.
-> - Dropped "mm, arm64: untag user addresses in memory syscalls".
-> - Rebased onto 3eb2ce82 (4.16-rc7).
->
-> Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
->
-> Andrey Konovalov (14):
->   arm64: untag user pointers in access_ok and __uaccess_mask_ptr
->   lib: untag user pointers in strn*_user
->   mm: untag user pointers passed to memory syscalls
->   mm: untag user pointers in mm/gup.c
->   mm: untag user pointers in get_vaddr_frames
->   fs/namespace: untag user pointers in copy_mount_options
->   userfaultfd: untag user pointers
->   drm/amdgpu: untag user pointers
->   drm/radeon: untag user pointers in radeon_gem_userptr_ioctl
->   IB/mlx4: untag user pointers in mlx4_get_umem_mr
->   media/v4l2-core: untag user pointers in videobuf_dma_contig_user_get
->   tee/shm: untag user pointers in tee_shm_register
->   vfio/type1: untag user pointers in vaddr_get_pfn
->   selftests, arm64: add a selftest for passing tagged pointers to kernel
->
-> Catalin Marinas (1):
->   arm64: Introduce prctl() options to control the tagged user addresses
->     ABI
->
->  arch/arm64/Kconfig                            |  9 +++
->  arch/arm64/include/asm/processor.h            |  8 ++
->  arch/arm64/include/asm/thread_info.h          |  1 +
->  arch/arm64/include/asm/uaccess.h              | 12 ++-
->  arch/arm64/kernel/process.c                   | 73 +++++++++++++++++++
->  .../gpu/drm/amd/amdgpu/amdgpu_amdkfd_gpuvm.c  |  2 +-
->  drivers/gpu/drm/amd/amdgpu/amdgpu_gem.c       |  2 +
->  drivers/gpu/drm/radeon/radeon_gem.c           |  2 +
->  drivers/infiniband/hw/mlx4/mr.c               |  7 +-
->  drivers/media/v4l2-core/videobuf-dma-contig.c |  9 ++-
->  drivers/tee/tee_shm.c                         |  1 +
->  drivers/vfio/vfio_iommu_type1.c               |  2 +
->  fs/namespace.c                                |  2 +-
->  fs/userfaultfd.c                              | 22 +++---
->  include/uapi/linux/prctl.h                    |  5 ++
->  kernel/sys.c                                  | 12 +++
->  lib/strncpy_from_user.c                       |  3 +-
->  lib/strnlen_user.c                            |  3 +-
->  mm/frame_vector.c                             |  2 +
->  mm/gup.c                                      |  4 +
->  mm/madvise.c                                  |  2 +
->  mm/mempolicy.c                                |  3 +
->  mm/migrate.c                                  |  2 +-
->  mm/mincore.c                                  |  2 +
->  mm/mlock.c                                    |  4 +
->  mm/mprotect.c                                 |  2 +
->  mm/mremap.c                                   |  7 ++
->  mm/msync.c                                    |  2 +
->  tools/testing/selftests/arm64/.gitignore      |  1 +
->  tools/testing/selftests/arm64/Makefile        | 11 +++
->  .../testing/selftests/arm64/run_tags_test.sh  | 12 +++
->  tools/testing/selftests/arm64/tags_test.c     | 29 ++++++++
->  32 files changed, 233 insertions(+), 25 deletions(-)
->  create mode 100644 tools/testing/selftests/arm64/.gitignore
->  create mode 100644 tools/testing/selftests/arm64/Makefile
->  create mode 100755 tools/testing/selftests/arm64/run_tags_test.sh
->  create mode 100644 tools/testing/selftests/arm64/tags_test.c
->
-> --
-> 2.22.0.709.g102302147b-goog
->
+diff --git a/arch/arm64/boot/dts/renesas/ulcb-kf.dtsi b/arch/arm64/boot/dts/renesas/ulcb-kf.dtsi
+index 27851a7..5ac22a8 100644
+--- a/arch/arm64/boot/dts/renesas/ulcb-kf.dtsi
++++ b/arch/arm64/boot/dts/renesas/ulcb-kf.dtsi
+@@ -100,13 +100,6 @@
+ 			line-name = "Audio_Out_OFF";
+ 		};
+ 
+-		sd-wifi-mux {
+-			gpio-hog;
+-			gpios = <5 GPIO_ACTIVE_HIGH>;
+-			output-low;	/* Connect WL1837 */
+-			line-name = "SD WiFi mux";
+-		};
+-
+ 		hub_pwen {
+ 			gpio-hog;
+ 			gpios = <6 GPIO_ACTIVE_HIGH>;
+@@ -121,6 +114,13 @@
+ 			line-name = "HUB rst";
+ 		};
+ 
++		otg_extlpn {
++			gpio-hog;
++			gpios = <9 GPIO_ACTIVE_HIGH>;
++			output-high;
++			line-name = "OTG EXTLPn";
++		};
++
+ 		otg_offvbusn {
+ 			gpio-hog;
+ 			gpios = <8 GPIO_ACTIVE_HIGH>;
+@@ -128,11 +128,11 @@
+ 			line-name = "OTG OFFVBUSn";
+ 		};
+ 
+-		otg_extlpn {
++		sd-wifi-mux {
+ 			gpio-hog;
+-			gpios = <9 GPIO_ACTIVE_HIGH>;
+-			output-high;
+-			line-name = "OTG EXTLPn";
++			gpios = <5 GPIO_ACTIVE_HIGH>;
++			output-low;	/* Connect WL1837 */
++			line-name = "SD WiFi mux";
+ 		};
+ 
+ 		snd_rst {
+@@ -279,14 +279,50 @@
+ 		power-source = <3300>;
+ 	};
+ 
++	sound_pcm_pins: sound-pcm {
++		groups = "ssi349_ctrl", "ssi3_data", "ssi4_data";
++		function = "ssi";
++	};
++
+ 	usb0_pins: usb0 {
+ 		groups = "usb0";
+ 		function = "usb0";
+ 	};
++};
+ 
+-	sound_pcm_pins: sound-pcm {
+-		groups = "ssi349_ctrl", "ssi3_data", "ssi4_data";
+-		function = "ssi";
++&rcar_sound {
++	pinctrl-0 = <&sound_pins
++		     &sound_clk_pins
++		     &sound_pcm_pins>;
++
++	ports {
++		/* rsnd_port0/1 are on salvator-common */
++		rsnd_port2: port@2 {
++			reg = <2>;
++			rsnd_for_pcm3168a_play: endpoint {
++				remote-endpoint = <&pcm3168a_endpoint_p>;
++
++				dai-format = "i2s";
++				bitclock-master = <&rsnd_for_pcm3168a_play>;
++				frame-master = <&rsnd_for_pcm3168a_play>;
++				dai-tdm-slot-num = <8>;
++
++				playback = <&ssi3>;
++			};
++		};
++		rsnd_port3: port@3 {
++			reg = <3>;
++			rsnd_for_pcm3168a_capture: endpoint {
++				remote-endpoint = <&pcm3168a_endpoint_c>;
++
++				dai-format = "i2s";
++				bitclock-master = <&rsnd_for_pcm3168a_capture>;
++				frame-master = <&rsnd_for_pcm3168a_capture>;
++				dai-tdm-slot-num = <6>;
++
++				capture  = <&ssi4>;
++			};
++		};
+ 	};
+ };
+ 
+@@ -322,17 +358,6 @@
+ 	};
+ };
+ 
+-&usb2_phy0 {
+-	pinctrl-0 = <&usb0_pins>;
+-	pinctrl-names = "default";
+-
+-	status = "okay";
+-};
+-
+-&xhci0 {
+-	status = "okay";
+-};
+-
+ &sound_card {
+ 	dais = <&rsnd_port0	/* ak4613 */
+ 		&rsnd_port1	/* HDMI0  */
+@@ -341,42 +366,17 @@
+ 		>;
+ };
+ 
+-&rcar_sound {
+-	pinctrl-0 = <&sound_pins
+-		     &sound_clk_pins
+-		     &sound_pcm_pins>;
+-
+-	ports {
+-		/* rsnd_port0/1 are on salvator-common */
+-		rsnd_port2: port@2 {
+-			reg = <2>;
+-			rsnd_for_pcm3168a_play: endpoint {
+-				remote-endpoint = <&pcm3168a_endpoint_p>;
+-
+-				dai-format = "i2s";
+-				bitclock-master = <&rsnd_for_pcm3168a_play>;
+-				frame-master = <&rsnd_for_pcm3168a_play>;
+-				dai-tdm-slot-num = <8>;
+-
+-				playback = <&ssi3>;
+-			};
+-		};
+-		rsnd_port3: port@3 {
+-			reg = <3>;
+-			rsnd_for_pcm3168a_capture: endpoint {
+-				remote-endpoint = <&pcm3168a_endpoint_c>;
++&ssi4 {
++	shared-pin;
++};
+ 
+-				dai-format = "i2s";
+-				bitclock-master = <&rsnd_for_pcm3168a_capture>;
+-				frame-master = <&rsnd_for_pcm3168a_capture>;
+-				dai-tdm-slot-num = <6>;
++&usb2_phy0 {
++	pinctrl-0 = <&usb0_pins>;
++	pinctrl-names = "default";
+ 
+-				capture  = <&ssi4>;
+-			};
+-		};
+-	};
++	status = "okay";
+ };
+ 
+-&ssi4 {
+-	shared-pin;
++&xhci0 {
++	status = "okay";
+ };
+-- 
+1.9.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
