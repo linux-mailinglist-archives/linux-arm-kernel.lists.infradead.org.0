@@ -2,101 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BCB1D71A59
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 16:28:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2370471A68
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 16:30:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w8pwDiZCGfSkKVMY056HYj3FVY6QjHa7Avf1oT7xIB4=; b=G+oNnW1u6xo7EC
-	A+8pHC6pAhaF1IizQw5dPhZELHVaN690mm2/MIn5XyTx9VzL4wvibb17LIrJrYgLHli9ijCRLmKza
-	DCTcmZCrDC4sNxSz2GNlZqKkDgJw7RokzPS5tIl6Z7z0/22qdW9tufqD9x+G71kKMlahjujoZ9dYO
-	y80u7+HAuEhhSBVsCV/JUiTCaLv79Tkz3LTdBWub/y35PSSd4FZqplW01zObWz1MNwzyf9/2J47eM
-	OFmR5jc0ahEGAdR3pWULHxbs+LyJbgVZJs5RRdhTnjW7tUF6hVcwuqn0H7QdsdFDwjpFEUnj4Tlcq
-	4AQXfJM0OZgQdMm7ZCrQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=arksachfwagVj8WB7nJS19gstQ/tXe9SUofIMihRLHQ=; b=a7NrqqbYLylNonA4DvtvQMkLg
+	rC8Cj7tBvq88yE3/nWTpZtLedQvszlhGtxisId2FHWf047xU5l6QmtKNGM7k98ASkIWHKH1G/6O2k
+	0ozI82J+XwakCo035w7hbQMMS1jiT3Kxuq8GA6ZesdJTWQXfD+DaQ1HtZ8Ji2NfSgyyW1XKF+1mH4
+	pGB6XvU3P385l5WLKh5LblcrG+BFOytVOQgdf0uqmfkGJZGu5J0LRTkk7xhkgAE0Nu+RJFSb4BsOL
+	JMdCk+HPfsmWAXZLp8QKN5yrSgOfGdP+PeqoMb5Rzsfhpa3GVBeBmCqFe5ECglqW+Z2veoG3D1qG6
+	Gr/Ode0TA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpvmF-0001Sf-3A; Tue, 23 Jul 2019 14:28:27 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hpvm3-0001SB-9R
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 14:28:16 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 73B5C28;
- Tue, 23 Jul 2019 07:28:13 -0700 (PDT)
-Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 1B5DF3F71F; Tue, 23 Jul 2019 07:28:13 -0700 (PDT)
-Subject: Re: [BOOTWRAPPER][PATCH] Make GICv3.1 extended ranges available to
- non-secure
-To: Mark Rutland <mark.rutland@arm.com>
-References: <20190723115545.1506-1-marc.zyngier@arm.com>
- <20190723141017.GB5004@lakrids.cambridge.arm.com>
-From: Marc Zyngier <marc.zyngier@arm.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
- 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
- Z46HaNmN2hZS/oJ69c1DI5Rcww==
-Organization: ARM Ltd
-Message-ID: <ad153393-29d9-1c14-b747-9af4adb1859f@arm.com>
-Date: Tue, 23 Jul 2019 15:28:11 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+	id 1hpvoO-0003jy-50; Tue, 23 Jul 2019 14:30:40 +0000
+Received: from hqemgate16.nvidia.com ([216.228.121.65])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hpvnw-0003Ai-CG
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 14:30:18 +0000
+Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
+ hqemgate16.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5d3719f00001>; Tue, 23 Jul 2019 07:30:08 -0700
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate101.nvidia.com (PGP Universal service);
+ Tue, 23 Jul 2019 07:30:10 -0700
+X-PGP-Universal: processed;
+ by hqpgpgate101.nvidia.com on Tue, 23 Jul 2019 07:30:10 -0700
+Received: from [10.25.74.243] (10.124.1.5) by HQMAIL107.nvidia.com
+ (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 23 Jul
+ 2019 14:28:51 +0000
+Subject: RE: [PATCH V13 12/12] PCI: tegra: Add Tegra194 PCIe support
+To: Bjorn Helgaas <helgaas@kernel.org>, Lorenzo Pieralisi
+ <lorenzo.pieralisi@arm.com>
+References: <20190710062212.1745-1-vidyas@nvidia.com>
+ <20190710062212.1745-13-vidyas@nvidia.com>
+ <20190711125433.GB26088@e121166-lin.cambridge.arm.com>
+ <986d0b1a-666a-7b05-a9f3-e761518bdc92@nvidia.com>
+ <20190712160754.GA24285@e121166-lin.cambridge.arm.com>
+ <a5f8689b-1358-dd2d-4f54-7e68a6ab158b@nvidia.com>
+ <20190716112225.GA24335@e121166-lin.cambridge.arm.com>
+ <20190716190013.GB4470@google.com>
+X-Nvconfidentiality: public
+From: Vidya Sagar <vidyas@nvidia.com>
+Message-ID: <9ecdeefe-ed22-47bc-50dc-139dd05029b4@nvidia.com>
+Date: Tue, 23 Jul 2019 19:58:47 +0530
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20190723141017.GB5004@lakrids.cambridge.arm.com>
+In-Reply-To: <20190716190013.GB4470@google.com>
+X-Originating-IP: [10.124.1.5]
+X-ClientProxiedBy: HQMAIL101.nvidia.com (172.20.187.10) To
+ HQMAIL107.nvidia.com (172.20.187.13)
 Content-Language: en-US
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1563892208; bh=y3iFx42LYhbEL+dlk0IO97VXY77VlAHy2wWmhXVOoNw=;
+ h=X-PGP-Universal:Subject:To:CC:References:X-Nvconfidentiality:From:
+ Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
+ X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
+ Content-Transfer-Encoding;
+ b=qlaXao0Hm4EbazMDNs0zsUCfqJhGXMIJzOnKIlOtQgFO+h939gPrIQNWVV6uU7u7G
+ TnYT3vSEXX3oS39rSU8UKYISRNsiObI9sLbr1o4PI5hSqizdo8+/Y9aPqxgl9Dt2U4
+ 92PlAEamCxZjc65BYwmr+QYHIF7d2U/JBtRWW4qZyzDI144Ge2WKXjUKSyJ2j1U2Iy
+ BSjY7aKXpVvjy6rW+J/FvKj06w5t0e0vlfnTqK/A52Tn+zY+ISSC1ZdkpGQHVYjC2O
+ tjejFEjGn7SR9pwt1PHlSufRokL/jeepQqjlU8gu2uZnyUvSwLIN4fdMAyh6eZpavJ
+ ROk5kO4F8UDHg==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_072815_419324_B328AF8E 
-X-CRM114-Status: GOOD (  19.48  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190723_073012_471718_C0ED6E90 
+X-CRM114-Status: GOOD (  33.63  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.65 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -108,92 +100,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Mikko Perttunen <mperttunen@nvidia.com>,
+ Manikanta Maddireddy <mmaddireddy@nvidia.com>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "kishon@ti.com" <kishon@ti.com>, Krishna Thota <kthota@nvidia.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "thierry.reding@gmail.com" <thierry.reding@gmail.com>,
+ "gustavo.pimentel@synopsys.com" <gustavo.pimentel@synopsys.com>,
+ "jingoohan1@gmail.com" <jingoohan1@gmail.com>,
+ "linux-tegra@vger.kernel.org" <linux-tegra@vger.kernel.org>,
+ "digetx@gmail.com" <digetx@gmail.com>, Jonathan Hunter <jonathanh@nvidia.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "sagar.tv@gmail.com" <sagar.tv@gmail.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 23/07/2019 15:10, Mark Rutland wrote:
-> Hi Marc,
-> 
-> On Tue, Jul 23, 2019 at 12:55:45PM +0100, Marc Zyngier wrote:
->> If we have a GICv3.1-capable system, configure the EPPI/ESPI ranges
->> to be accessible from the non-secure world.
->>
->> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
->> ---
->>  gic-v3.c | 14 ++++++++++++--
->>  1 file changed, 12 insertions(+), 2 deletions(-)
->>
->> diff --git a/gic-v3.c b/gic-v3.c
->> index 476f703..4b733ba 100644
->> --- a/gic-v3.c
->> +++ b/gic-v3.c
->> @@ -17,6 +17,8 @@
->>  #define GICD_TYPER			0x4
->>  #define GICD_IGROUP0			0x80
->>  #define GICD_IGRPMOD0			0xd00
->> +#define GICD_IGROUPR0E			0x1000
->> +#define GICD_IGRPMODR0E			0x3400
->>  
->>  #define GICD_CTLR_EnableGrp0		(1 << 0)
->>  #define GICD_CTLR_EnableGrp1ns		(1 << 1)
->> @@ -57,6 +59,7 @@ void gic_secure_init_primary(void)
->>  		 * ChildrenAsleep to be 0.
->>  		 */
->>  		uint32_t waker = raw_readl(gicr_ptr + GICR_WAKER);
->> +		uint32_t regs;
->>  		waker &= ~GICR_WAKER_ProcessorSleep;
->>  		raw_writel(waker, gicr_ptr + GICR_WAKER);
->>  		dsb(st);
->> @@ -72,8 +75,11 @@ void gic_secure_init_primary(void)
->>  		typer = raw_readl(gicr_ptr + GICR_TYPER);
->>  
->>  		gicr_ptr += 0x10000; /* Go to SGI_Base */
->> -		raw_writel(~0x0, gicr_ptr + GICR_IGROUP0);
->> -		raw_writel(0x0, gicr_ptr + GICR_IGRPMOD0);
->> +		regs = 1 + ((typer >> 27) & 0x1f);
-> 
-> IIUC that's GICR_TYPER.PPInum, right?
 
-Indeed.
 
+> -----Original Message-----
+> From: devicetree-owner@vger.kernel.org <devicetree-owner@vger.kernel.org>
+> On Behalf Of Bjorn Helgaas
+> Sent: Wednesday, July 17, 2019 12:30 AM
+> To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+> Cc: Vidya Sagar <vidyas@nvidia.com>; robh+dt@kernel.org;
+> mark.rutland@arm.com; thierry.reding@gmail.com; Jonathan Hunter
+> <jonathanh@nvidia.com>; kishon@ti.com; catalin.marinas@arm.com;
+> will.deacon@arm.com; jingoohan1@gmail.com;
+> gustavo.pimentel@synopsys.com; digetx@gmail.com; Mikko Perttunen
+> <mperttunen@nvidia.com>; linux-pci@vger.kernel.org;
+> devicetree@vger.kernel.org; linux-tegra@vger.kernel.org; linux-
+> kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org; Krishna Thota
+> <kthota@nvidia.com>; Manikanta Maddireddy <mmaddireddy@nvidia.com>;
+> sagar.tv@gmail.com
+> Subject: Re: [PATCH V13 12/12] PCI: tegra: Add Tegra194 PCIe support
 > 
->> +		for (i = 0; i < regs; i++) {
->> +			raw_writel(~0x0, gicr_ptr + GICR_IGROUP0 + i * 4);
->> +			raw_writel(0x0, gicr_ptr + GICR_IGRPMOD0 + i * 4);
->> +		}
->>  
->>  		/* Next redist */
->>  		gicr_ptr += 0x10000;
->> @@ -87,6 +93,10 @@ void gic_secure_init_primary(void)
->>  		raw_writel(~0x0, gicd_base + GICD_IGROUP0 + i * 4);
->>  		raw_writel(0x0, gicd_base + GICD_IGRPMOD0 + i * 4);
->>  	}
->> +	for (i = 0; i < ((typer >> 27) & GICD_TYPER_ITLineNumber); i++) {
+> On Tue, Jul 16, 2019 at 12:22:25PM +0100, Lorenzo Pieralisi wrote:
+> > On Sat, Jul 13, 2019 at 12:34:34PM +0530, Vidya Sagar wrote:
 > 
-> IIUC this is ESPI_range_field, so using the GICD_TYPER_ITLineNumber
-> mnemonic is a bit misleading.
+> > > > > > So if the link is not up we still go ahead and make probe
+> > > > > > succeed. What for ?
+> > > > > We may need root port to be available to support hot-plugging of
+> > > > > endpoint devices, so, we don't fail the probe.
+> > > >
+> > > > We need it or we don't. If you do support hotplugging of endpoint
+> > > > devices point me at the code, otherwise link up failure means
+> > > > failure to probe.
+> > > Currently hotplugging of endpoint is not supported, but it is one of
+> > > the use cases that we may add support for in future.
+> >
+> > You should elaborate on this, I do not understand what you mean,
+> > either the root port(s) supports hotplug or it does not.
+> >
+> > > But, why should we fail probe if link up doesn't happen? As such,
+> > > nothing went wrong in terms of root port initialization right?  I
+> > > checked other DWC based implementations and following are not
+> > > failing the probe pci-dra7xx.c, pcie-armada8k.c, pcie-artpec6.c,
+> > > pcie-histb.c, pcie-kirin.c, pcie-spear13xx.c, pci-exynos.c,
+> > > pci-imx6.c, pci-keystone.c, pci-layerscape.c
+> > >
+> > > Although following do fail the probe if link is not up.
+> > > pcie-qcom.c, pcie-uniphier.c, pci-meson.c
+> > >
+> > > So, to me, it looks more like a choice we can make whether to fail
+> > > the probe or not and in this case we are choosing not to fail.
+> >
+> > I disagree. I had an offline chat with Bjorn and whether link-up
+> > should fail the probe or not depends on whether the root port(s) is
+> > hotplug capable or not and this in turn relies on the root port "Slot
+> > implemented" bit in the PCI Express capabilities register.
 > 
-> Given the verbose regfield names, _SHIFT and _MASK definitions will make
-> this illegible, so could we please add extactors:
+> There might be a little more we can talk about in this regard.  I did bring up the
+> "Slot implemented" bit, but after thinking about it more, I don't really think the
+> host bridge driver should be looking at that.
+> That's a PCIe concept, and it's really *downstream* from the host bridge itself.
+> The host bridge is logically a device on the CPU bus, not the PCI bus.
 > 
-> #define GICR_TYPER_PPInum(r)		(((r) >> 27) & 0x1f)
-> #define GICD_TYPER_ESPI_range(r)	(((r) >> 27) & 0x1f)
+> I'm starting to think that the host bridge driver probe should be disconnected
+> from question of whether the root port links are up.
 > 
-> ... and use those in the for loops?
+> Logically, the host bridge driver connects the CPU bus to a PCI root bus, so it
+> converts CPU-side accesses to PCI config, memory, or I/O port transactions.
+> Given that, the PCI core can enumerate devices on the root bus and downstream
+> buses.
 > 
-> With that, this looks good to me. If you respin, I'm happy to pick this
-> up. :)
+> Devices on the root bus typically include Root Ports, but might also include
+> endpoints, Root Complex Integrated Endpoints, Root Complex Event Collectors,
+> etc.  I think in principle, we would want the host bridge probe to succeed so we
+> can use these devices even if none of the Root Ports have a link.
+> 
+> If a Root Port is present, I think users will expect to see it in the "lspci" output,
+> even if its downstream link is not up.  That will enable things like manually
+> poking the Root Port via "setpci" for debug.  And if it has a connector, the
+> generic pciehp should be able to handle hot-add events without any special help
+> from the host bridge driver.
+> 
+> On ACPI systems there is no concept of the host bridge driver probe failing
+> because of lack of link on a Root Port.  If a Root Port doesn't have an
+> operational link, we still keep the pci_root.c driver, and we'll enumerate the
+> Root Port itself.  So I tend to think DT systems should behave the same way, i.e.,
+> the driver probe should succeed unless it fails to allocate resources or something
+> similar.  I think this is analogous to a NIC or USB adapter driver, where the probe
+> succeeds even if there's no network cable or USB device attached.
+> 
+> Bjorn
+Thanks Bjorn for your valuable inputs. I hope we are good here to not power down host
+even if there are no endpoints detected.
 
-Sure, I'll do that shortly.
-
-Thanks,
-
-	M.
--- 
-Jazz is not dead. It just smells funny...
+- Vidya Sagar
 
 _______________________________________________
 linux-arm-kernel mailing list
