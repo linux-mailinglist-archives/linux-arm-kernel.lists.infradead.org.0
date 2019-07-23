@@ -2,107 +2,155 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F67E718A6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 14:50:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B80E8718B1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 14:52:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ab3FB+l1S76zinzQF0n9+zSEZFG/hpTEMzoJFk0cEFQ=; b=XQZFScbRfn93cl
-	q+MQm3VXM5w2oERsE1ZNpLCyrou8deV9kMLP605GYYEuQyvmI9YryYRgBvW2EBenmZT0g5dpzGnWY
-	apby5ZfT4aMMwcWNj0aiIV+qHyBFkwGdxXl+PKXAz+3/tZTDWPKzcmoHzSJmdulfpp9BQkQfrfbCV
-	o2Pw0Ui/2IWWY3KUrNJJNc71GAFok0MRC9o0BlKCb+n+AQC6J+W/XRTXgOOluqp+qZMLFDCJ8pQfx
-	k8Vl1GLsnAyYsmzJlWJrb0ycEd2TN/7UQmEhG6Jr9mIhRyAsNCwC2+dN1YO48IjQfvwQVnj+3Bn/B
-	7QbdSdCBS4MejyLlVhug==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=H4tqbgEL90Ea2Hlq9Cnt5KmrXZVLaUOdhfcYmjzYzR8=; b=CdoTODUatHp6RY
+	6ZhLDwzORK2C6aElQjTTId+vi6MTGppnF0qgQnMquofOSoJJ6aPMiqsqFU0e1tNO4o706t6rVcPBh
+	2Y3j8BZAIfr6llkUQ3U++nsZZfkYDnmlTf6Di36k5bUNVCORTptphDysdSd30i6IDMd8zx4D8soTN
+	Gn9/YMEWAvCnSEXQ7EkvnM7r7YBwHVeIkRBIzJia+gcGGpWIlLt6425m+hiAn0riJBHNMvnKpAweP
+	uMuWQBwGbutRmTC1qBoCASOQjRTolHBaPtgy3FMSCk35jJ2zJ5/fCIWpjubzo29ugCIPVJ4qoueZL
+	I4JQ07oPIi8OZQvFDgfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpuFr-000199-17; Tue, 23 Jul 2019 12:50:55 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hpuFa-00018X-6j
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 12:50:39 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4AB5D337;
- Tue, 23 Jul 2019 05:50:37 -0700 (PDT)
-Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- B95783F71F; Tue, 23 Jul 2019 05:50:35 -0700 (PDT)
-Subject: Re: [PATCH v2 4/9] KVM: arm/arm64: vgic-its: Invalidate MSI-LPI
- translation cache on specific commands
-To: Auger Eric <eric.auger@redhat.com>, linux-arm-kernel@lists.infradead.org, 
- kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org
-References: <20190611170336.121706-1-marc.zyngier@arm.com>
- <20190611170336.121706-5-marc.zyngier@arm.com>
- <9ff329a3-44f2-1de3-b6cc-58ed38a63665@redhat.com>
- <1a78d52c-7a31-8981-230b-abe85d11b8ec@arm.com>
- <8b5e029c-a08f-b86b-7021-5d68ec05d3bd@redhat.com>
- <ffb327bf-b05c-b7ca-d509-2a98dea37fdf@arm.com>
- <166921d3-39c4-d13c-bdee-dd404d468e7e@redhat.com>
-From: Marc Zyngier <marc.zyngier@arm.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
- 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
- Z46HaNmN2hZS/oJ69c1DI5Rcww==
-Organization: ARM Ltd
-Message-ID: <6190badb-d255-b1f7-0e56-86fa719d83ae@arm.com>
-Date: Tue, 23 Jul 2019 13:50:34 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
-MIME-Version: 1.0
-In-Reply-To: <166921d3-39c4-d13c-bdee-dd404d468e7e@redhat.com>
+	id 1hpuGt-0001eB-3Y; Tue, 23 Jul 2019 12:51:59 +0000
+Received: from smtprelay-out1.synopsys.com ([198.182.61.142])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hpuGZ-0001dM-9b
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 12:51:40 +0000
+Received: from mailhost.synopsys.com (dc2-mailhost1.synopsys.com
+ [10.12.135.161])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 64A50C0C83;
+ Tue, 23 Jul 2019 12:51:37 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1563886298; bh=V87JN9LEseKfBYxM4rdU6g3IhH3kGCYSc1Jjz8Ika9A=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To:From;
+ b=fwjZSuSLZv9BRouH2dNS/AQnLZiRPE4tg+NvbBro22KNX8jxjMbnR7+9nBt5/2Tsb
+ vTcG68wUEd1Bm7nFedOSH00A4YUu7krQ5UF+8uRMVvZew6tD1k8bLHVlTYSZncJK72
+ PDtVbLsPKyhp9Y5uK4O6pg4o46SlHArLqcooN9KMsd/b7PaBN31O7WNFvC/BkaD3Lt
+ 5FgbeujHgjmUCf8xKmPoJSgFbWH1udn6CzvsMUGM+FYKBU5BBglFXL2IWK5IG6sOEx
+ l1Cw97I3dpD6Nh2roNK/jmpQUhFUlD/B60dzqqJf1UsPqPXiyTgM3zjdiQpjEvmxfo
+ U4q/K2eDzN4SQ==
+Received: from us01wehtc1.internal.synopsys.com
+ (us01wehtc1-vip.internal.synopsys.com [10.12.239.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id 6D260A0093;
+ Tue, 23 Jul 2019 12:51:19 +0000 (UTC)
+Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
+ us01wehtc1.internal.synopsys.com (10.12.239.231) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Tue, 23 Jul 2019 05:51:14 -0700
+Received: from NAM03-CO1-obe.outbound.protection.outlook.com (10.13.134.195)
+ by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
+ 14.3.408.0; Tue, 23 Jul 2019 05:51:14 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=GqQmOOcfQN/Zq+GhrXIgArEkixr8v3BHcANdNy1+Tv3cz9Go5QEQV1j4Q/VknSrqA2xgNrOXcsIWND943U8O8kF3/J5FxbEMqrjRnD7pGw4z3oRCEryK+aLhBizArYPIW4/qHSKGjh2n/b5a/8VriHa7OwY5q2oyQf7eVDqruqRx60C9qSe6p91Qf+Op9u0SJy3RSQy8YnDWtANNdAegDMaQizT5zAeMdJbhJC3akDMQ5KjQ+72HSAxkddHJ4uxpoV1Z6vB8b+3K3O0csBWa6zY9ab/gh8gH1f61CxnqyU43PnFSDKAsZ4VhOw1WhuNy+PU4zkVDrLFBaBVPRwSD5g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=V87JN9LEseKfBYxM4rdU6g3IhH3kGCYSc1Jjz8Ika9A=;
+ b=OLhO2ThltD3TZ50+FaGiAV9jj3zyU2N2UNkAdht60reukkfFJzAz15787+iS5gNj/PtJ+jWnvogRt+zU4mizwOqcHfT+9Tvjl9L87wOAT/0XctyLfcTdqjF5h3UKO2nyPKUh963Qgp1iBuj24VJR8idF2uHMX2E+zVKblHzVrlsOYCULiZcScJNxIaTQllvitr5DXVkUca5yO5gUDyBHlXI6S85VAUmGSKqNyg72Qfl8dirHFXicjnIy7y07uPpVo6IDPWrtjJkPt4snXOubuItXHHLY8opyD9Iy1duGcJjaGTK9H2n3X4pVMC6teI9aRdhhzk9PJrEyTrqRfCF8cw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
+ smtp.mailfrom=synopsys.com;dmarc=pass action=none
+ header.from=synopsys.com;dkim=pass header.d=synopsys.com;arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=synopsys.onmicrosoft.com; s=selector1-synopsys-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=V87JN9LEseKfBYxM4rdU6g3IhH3kGCYSc1Jjz8Ika9A=;
+ b=KRh3LQFBrGV4NiXhc4o5k3p4WkPrSy0lqUk252qdI81dg3kaQpUSYOcq+14uK5oe+8Pmmh6PKdyGAvTZEMpOeZWwE4fejeZ2hsbMZzfG25oDezwoOavgxs8Q+vQrs5MEvBoyIUWmzUUhXhds5cICHZUVdpjuA/frrACQD0hZqWw=
+Received: from BYAPR12MB3269.namprd12.prod.outlook.com (20.179.93.146) by
+ BYAPR12MB3221.namprd12.prod.outlook.com (20.179.92.221) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2094.16; Tue, 23 Jul 2019 12:51:13 +0000
+Received: from BYAPR12MB3269.namprd12.prod.outlook.com
+ ([fe80::f5b8:ac6e:ea68:cb1c]) by BYAPR12MB3269.namprd12.prod.outlook.com
+ ([fe80::f5b8:ac6e:ea68:cb1c%4]) with mapi id 15.20.2094.013; Tue, 23 Jul 2019
+ 12:51:13 +0000
+From: Jose Abreu <Jose.Abreu@synopsys.com>
+To: Jon Hunter <jonathanh@nvidia.com>,
+ Jose Abreu <Jose.Abreu@synopsys.com>, Lars Persson <lists@bofh.nu>,
+ Ilias Apalodimas <ilias.apalodimas@linaro.org>
+Subject: RE: [PATCH net-next 3/3] net: stmmac: Introducing support for Page
+ Pool
+Thread-Topic: [PATCH net-next 3/3] net: stmmac: Introducing support for Page
+ Pool
+Thread-Index: AQHVMYtq2Zx4WVoG/U2kL8GCK0bP/abPQEOAgADTx+CABnZ9AIAADuYAgAAFQOCAAAnIAIAABLTAgAFMy7CAAB4gAIAAAO7wgAAJdICAAAG8AIAAFLiAgAANh1A=
+Date: Tue, 23 Jul 2019 12:51:13 +0000
+Message-ID: <BYAPR12MB3269EC45ABAF8F279288B003D3C70@BYAPR12MB3269.namprd12.prod.outlook.com>
+References: <cover.1562149883.git.joabreu@synopsys.com>
+ <1b254bb7fc6044c5e6e2fdd9e00088d1d13a808b.1562149883.git.joabreu@synopsys.com>
+ <29dcc161-f7c8-026e-c3cc-5adb04df128c@nvidia.com>
+ <BN8PR12MB32661E919A8DEBC7095BAA12D3C80@BN8PR12MB3266.namprd12.prod.outlook.com>
+ <20190722101830.GA24948@apalos>
+ <CADnJP=thexf2sWcVVOLWw14rpteEj0RrfDdY8ER90MpbNN4-oA@mail.gmail.com>
+ <BN8PR12MB326661846D53AAEE315A7434D3C40@BN8PR12MB3266.namprd12.prod.outlook.com>
+ <11557fe0-0cba-cb49-0fb6-ad24792d4a53@nvidia.com>
+ <BN8PR12MB3266664ECA192E02C06061EED3C40@BN8PR12MB3266.namprd12.prod.outlook.com>
+ <BYAPR12MB3269A725AFDDA21E92946558D3C70@BYAPR12MB3269.namprd12.prod.outlook.com>
+ <ab14f31f-2045-b1be-d31f-2a81b8527dac@nvidia.com>
+ <BYAPR12MB32692AF2BA127C5DA5B74804D3C70@BYAPR12MB3269.namprd12.prod.outlook.com>
+ <2ad7bf21-1f1f-db0f-2358-4901b7988b7d@nvidia.com>
+ <BYAPR12MB3269D050556BD51030DCDDFCD3C70@BYAPR12MB3269.namprd12.prod.outlook.com>
+ <8093e352-d992-e17f-7168-5afbd9d3fb3f@nvidia.com>
+In-Reply-To: <8093e352-d992-e17f-7168-5afbd9d3fb3f@nvidia.com>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=joabreu@synopsys.com; 
+x-originating-ip: [83.174.63.141]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: d16edd84-76dc-4d67-a171-08d70f6c71a7
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:BYAPR12MB3221; 
+x-ms-traffictypediagnostic: BYAPR12MB3221:
+x-microsoft-antispam-prvs: <BYAPR12MB3221D435F8A804E63A270443D3C70@BYAPR12MB3221.namprd12.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-forefront-prvs: 0107098B6C
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(136003)(39860400002)(366004)(346002)(376002)(396003)(199004)(189003)(186003)(7416002)(6246003)(25786009)(86362001)(26005)(476003)(2906002)(53936002)(76176011)(256004)(446003)(3846002)(6116002)(7696005)(478600001)(11346002)(81166006)(81156014)(102836004)(229853002)(6506007)(14454004)(5660300002)(8936002)(316002)(54906003)(110136005)(9686003)(71190400001)(71200400001)(66066001)(4326008)(99286004)(68736007)(7736002)(66946007)(66476007)(66556008)(76116006)(8676002)(64756008)(66446008)(6436002)(33656002)(55016002)(305945005)(53546011)(52536014)(486006)(74316002);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:BYAPR12MB3221;
+ H:BYAPR12MB3269.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: synopsys.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: LTxK766yTGrE5Dz8nu2inO1XAfdidqNvR6rQEiKtssbUl7OblwlWdNdToR2S/CaVS1OxGLrUeQ/Vgh6pDBuoiJZVVPWdYhCLT9vBXJIGQC21ZqJs8baDq7WmtX99ePhT9eJvP2a5uiYgwZxX6T7URGW4lKlEG0qLbG74sWL5KjV5uK75auIHBmz+w3YCwO4BmBYhrZt26sFrX1PqS9D6rRDq/LmU3klLwvCJF6j+U1PczWaiGpcIa3oAweTIwftUOyi+jiN7RMJ6ioIepPGKo1Gw5zcFHFCYPTnSkis4NST9jIXdnjdZVx+kogMHTqyLQketezvBE1CSlO+7wPSo+dF39hnb50X5s+L3W2N8cZBpAL+fOiTmDM/49LzXqQbp4+OgKahu+T123QEgoMzc4HTktuLnLdudQU3kSLsyvJo=
+MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: d16edd84-76dc-4d67-a171-08d70f6c71a7
+X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Jul 2019 12:51:13.2581 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: joabreu@synopsys.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR12MB3221
+X-OriginatorOrg: synopsys.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_055038_339650_84DEEE99 
-X-CRM114-Status: GOOD (  17.41  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190723_055139_367486_37EF009C 
+X-CRM114-Status: GOOD (  19.47  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -114,122 +162,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>, "Raslan,
- KarimAllah" <karahmed@amazon.de>, Julien Thierry <julien.thierry@arm.com>,
- Christoffer Dall <christoffer.dall@arm.com>, James Morse <james.morse@arm.com>,
- Zenghui Yu <yuzenghui@huawei.com>, "Saidi, Ali" <alisaidi@amazon.com>
+Cc: Joao Pinto <Joao.Pinto@synopsys.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "David S . Miller" <davem@davemloft.net>, Chen-Yu Tsai <wens@csie.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-tegra <linux-tegra@vger.kernel.org>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 23/07/2019 13:47, Auger Eric wrote:
-> Hi Marc,
+From: Jon Hunter <jonathanh@nvidia.com>
+Date: Jul/23/2019, 12:58:55 (UTC+00:00)
+
 > 
-> On 7/23/19 2:43 PM, Marc Zyngier wrote:
->> On 23/07/2019 13:25, Auger Eric wrote:
->>> Hi Marc,
->>>
->>> On 7/22/19 12:54 PM, Marc Zyngier wrote:
->>>> Hi Eric,
->>>>
->>>> On 01/07/2019 13:38, Auger Eric wrote:
->>>>> Hi Marc,
->>>>>
->>>>> On 6/11/19 7:03 PM, Marc Zyngier wrote:
->>>>>> The LPI translation cache needs to be discarded when an ITS command
->>>>>> may affect the translation of an LPI (DISCARD and MAPD with V=0) or
->>>>>> the routing of an LPI to a redistributor with disabled LPIs (MOVI,
->>>>>> MOVALL).
->>>>>>
->>>>>> We decide to perform a full invalidation of the cache, irrespective
->>>>>> of the LPI that is affected. Commands are supposed to be rare enough
->>>>>> that it doesn't matter.
->>>>>>
->>>>>> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
->>>>>> ---
->>>>>>  virt/kvm/arm/vgic/vgic-its.c | 8 ++++++++
->>>>>>  1 file changed, 8 insertions(+)
->>>>>>
->>>>>> diff --git a/virt/kvm/arm/vgic/vgic-its.c b/virt/kvm/arm/vgic/vgic-its.c
->>>>>> index 9b6b66204b97..5254bb762e1b 100644
->>>>>> --- a/virt/kvm/arm/vgic/vgic-its.c
->>>>>> +++ b/virt/kvm/arm/vgic/vgic-its.c
->>>>>> @@ -733,6 +733,8 @@ static int vgic_its_cmd_handle_discard(struct kvm *kvm, struct vgic_its *its,
->>>>>>  		 * don't bother here since we clear the ITTE anyway and the
->>>>>>  		 * pending state is a property of the ITTE struct.
->>>>>>  		 */
->>>>>> +		vgic_its_invalidate_cache(kvm);
->>>>>> +
->>>>>>  		its_free_ite(kvm, ite);
->>>>>>  		return 0;
->>>>>>  	}
->>>>>> @@ -768,6 +770,8 @@ static int vgic_its_cmd_handle_movi(struct kvm *kvm, struct vgic_its *its,
->>>>>>  	ite->collection = collection;
->>>>>>  	vcpu = kvm_get_vcpu(kvm, collection->target_addr);
->>>>>>  
->>>>>> +	vgic_its_invalidate_cache(kvm);
->>>>>> +
->>>>>>  	return update_affinity(ite->irq, vcpu);
->>>>>>  }
->>>>>>  
->>>>>> @@ -996,6 +1000,8 @@ static void vgic_its_free_device(struct kvm *kvm, struct its_device *device)
->>>>>>  	list_for_each_entry_safe(ite, temp, &device->itt_head, ite_list)
->>>>>>  		its_free_ite(kvm, ite);
->>>>>>  
->>>>>> +	vgic_its_invalidate_cache(kvm);
->>>>>> +
->>>>>>  	list_del(&device->dev_list);
->>>>>>  	kfree(device);
->>>>>>  }
->>>>>> @@ -1249,6 +1255,8 @@ static int vgic_its_cmd_handle_movall(struct kvm *kvm, struct vgic_its *its,
->>>>>>  		vgic_put_irq(kvm, irq);
->>>>>>  	}
->>>>>>  
->>>>>> +	vgic_its_invalidate_cache(kvm);
->>>>> All the commands are executed with the its_lock held. Now we don't take
->>>>> it anymore on the fast cache injection path. Don't we have a window
->>>>> where the move has been applied at table level and the cache is not yet
->>>>> invalidated? Same question for vgic_its_free_device().
->>>>
->>>> There is definitely a race, but that race is invisible from the guest's
->>>> perspective. The guest can only assume that the command has taken effect
->>>> once a SYNC command has been executed, and it cannot observe that the
->>>> SYNC command has been executed before we have invalidated the cache.
->>>>
->>>> Does this answer your question?
->>>
->>> OK make sense. Thank you for the clarification
->>>
->>> Another question, don't we need to invalidate the cache on  MAPC V=0 as
->>> well? Removing the mapping of the collection results in interrupts
->>> belonging to that collection being ignored. If we don't flush the
->>> pending bit will be set?
->>
->> Yup, that's a good point. I think i had that at some point, and ended up 
->> dropping it, probably missing the point that the interrupt would be made 
->> pending.
->>
->> I'll add this:
->>
->> @@ -1218,6 +1218,7 @@ static int vgic_its_cmd_handle_mapc(struct kvm *kvm, struct vgic_its *its,
->>  
->>  	if (!valid) {
->>  		vgic_its_free_collection(its, coll_id);
->> +		vgic_its_invalidate_cache(kvm);
->>  	} else {
->>  		collection = find_collection(its, coll_id);
->>  
-> Yep, with that change feel free to add my R-b
+> On 23/07/2019 11:49, Jose Abreu wrote:
+> > From: Jon Hunter <jonathanh@nvidia.com>
+> > Date: Jul/23/2019, 11:38:33 (UTC+00:00)
+> > 
+> >>
+> >> On 23/07/2019 11:07, Jose Abreu wrote:
+> >>> From: Jon Hunter <jonathanh@nvidia.com>
+> >>> Date: Jul/23/2019, 11:01:24 (UTC+00:00)
+> >>>
+> >>>> This appears to be a winner and by disabling the SMMU for the ethernet
+> >>>> controller and reverting commit 954a03be033c7cef80ddc232e7cbdb17df735663
+> >>>> this worked! So yes appears to be related to the SMMU being enabled. We
+> >>>> had to enable the SMMU for ethernet recently due to commit
+> >>>> 954a03be033c7cef80ddc232e7cbdb17df735663.
+> >>>
+> >>> Finally :)
+> >>>
+> >>> However, from "git show 954a03be033c7cef80ddc232e7cbdb17df735663":
+> >>>
+> >>> +         There are few reasons to allow unmatched stream bypass, and
+> >>> +         even fewer good ones.  If saying YES here breaks your board
+> >>> +         you should work on fixing your board.
+> >>>
+> >>> So, how can we fix this ? Is your ethernet DT node marked as 
+> >>> "dma-coherent;" ?
+> >>
+> >> TBH I have no idea. I can't say I fully understand your change or how it
+> >> is breaking things for us.
+> >>
+> >> Currently, the Tegra DT binding does not have 'dma-coherent' set. I see
+> >> this is optional, but I am not sure how you determine whether or not
+> >> this should be set.
+> > 
+> > From my understanding it means that your device / IP DMA accesses are coherent regarding the CPU point of view. I think it will be the case if GMAC is not behind any kind of IOMMU in the HW arch.
 > 
-> Reviewed-by: Eric Auger <eric.auger@redhat.com>
+> I understand what coherency is, I just don't know how you tell if this
+> implementation of the ethernet controller is coherent or not.
 
-Thanks!
+Do you have any detailed diagram of your HW ? Such as blocks / IPs 
+connection, address space wiring , ...
 
-	M.
--- 
-Jazz is not dead. It just smells funny...
-
+---
+Thanks,
+Jose Miguel Abreu
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
