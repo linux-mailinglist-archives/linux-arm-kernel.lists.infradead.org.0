@@ -2,81 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B8686718DA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 15:01:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A2B6718E0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 15:04:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1/7Y7ZHVPPuxjpKA0SzHYgEVKVb2nSTwjP1vCp7DorU=; b=oeRlMtXuhT5rZU
-	MTNIskz7qTm9KARCaOpxXMN3uiVTU1Q1qDNK/RU2700dKsvZanYqLPW3X3PlDHT8GJUlcFUwp/D9y
-	S7Iop2LDMaV0JoRxfwZd3jh/8icWoo6VTAUImM7ARgFG5GkW8oCMI2m5DmIpbn+iDc1eaUeEiXnIB
-	Pv6Z+JNLW7QoA6EA5uoITYX7lzA55KHoJ55hqTN5PNJ/vh5d3+YUPsDoB4R59Azy4e02Urg45dbsd
-	FT9kPhUuFdZZgmT1+ymd+7H7FR5BxLAPz+ARL8vNiOuIgyHWSPEVlQYBnVeEhLoHXAfGg8rgi33t5
-	QzBfH2qIWRt0Z7dvDw4A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=czJJzrFt9wQKDwJuF0DeH9XaK3OLUOIIkoXXeVMTjPs=; b=mlrEAIXZ5GlBbB
+	Kef79+mxOLhJC8O1zvXKI5v+iZCC5Bqj70n/vx1plQu0ca48JmWRnByHLjcyjB0W0qFv/uLTobUi1
+	4XKlNGOchctEhwEIKQs+GvFI2GhSNA4JcBDpxAS331on1IqnxQuikRKDCUKcoNNwRuoHuLXBPpLDX
+	QPN/b/de652xnoGS5v/axP8WT09RWnaT8+lYmmIMGFhfgQi50wZUgSUoLzWFP4+VH4PBv2EIy8YLg
+	dwo9DGSJwI4P4244rqTNuT98rYmggGouloRNzkWo2DB8lTIVp2J+0Dnld/6+uZqTr/+ZHX8k7wfUa
+	gQcsSZEq31zfzK+W3PEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpuQG-0005pi-PD; Tue, 23 Jul 2019 13:01:40 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpuQ1-0005pL-6t
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 13:01:26 +0000
-Received: from mail-lf1-f48.google.com (mail-lf1-f48.google.com
- [209.85.167.48])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 91B0A21921
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 23 Jul 2019 13:01:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563886884;
- bh=CbmDLMjMi+Nd5R6Pl1B66vsTFwAu0X8Od5ob6t3Otuw=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=kJ666ehfoUBAoI2YSx+SVUOL2NzcWGe+pasJx61NM0E2XfSz5lGrmUerxSGuy6lXL
- YHaLk0zDxiYnhzlDZ4vDTkSbddvYgI1I/A6hwhecveTCjW7DbHEDWDsSNunSb/rgj7
- 2Fhuuj2LpNazuUXoan0XpsuOKxvCQ8EoLnBZDIso=
-Received: by mail-lf1-f48.google.com with SMTP id 62so24414486lfa.8
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 23 Jul 2019 06:01:24 -0700 (PDT)
-X-Gm-Message-State: APjAAAVUQQXHudW+VcHaJDRA4ObqDFpBzxoeWG5bFVCGln4h1LVWzRyX
- q3cW/enUvC/5Lmdd40wNckmD5xtOej2pdbNEAUE=
-X-Google-Smtp-Source: APXvYqzsrG6nB7kU6t/8CnaY5zo3+o2W69whzh4IdxhPied3z2PagTqPDK+dlEb0CHK06r8rm64qmI6oQ9U81EJSSZ8=
-X-Received: by 2002:ac2:514b:: with SMTP id q11mr9488330lfd.33.1563886882779; 
- Tue, 23 Jul 2019 06:01:22 -0700 (PDT)
+	id 1hpuSr-0006Bp-CP; Tue, 23 Jul 2019 13:04:21 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hpuSf-0006BP-Op
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 13:04:11 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E14B5337;
+ Tue, 23 Jul 2019 06:04:08 -0700 (PDT)
+Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ D2D013F71F; Tue, 23 Jul 2019 06:04:07 -0700 (PDT)
+Subject: Re: [PATCH 4/9] irqchip/gic-v3: Add ESPI range support
+To: Lokesh Vutla <lokeshvutla@ti.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Jason Cooper <jason@lakedaemon.net>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>
+References: <20190723104437.154403-1-maz@kernel.org>
+ <20190723104437.154403-5-maz@kernel.org>
+ <a54dfa07-2f3b-def7-fec4-b6dab2bcd84c@ti.com>
+From: Marc Zyngier <maz@kernel.org>
+Organization: Approximate
+Message-ID: <de12cbf0-22ec-83d0-a034-9872f302101b@kernel.org>
+Date: Tue, 23 Jul 2019 14:04:06 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-References: <CGME20190718143128eucas1p2677ae16d229dddcd9a0db8084f0da5cf@eucas1p2.samsung.com>
- <20190718143044.25066-1-s.nawrocki@samsung.com>
- <20190718143044.25066-3-s.nawrocki@samsung.com>
-In-Reply-To: <20190718143044.25066-3-s.nawrocki@samsung.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Date: Tue, 23 Jul 2019 15:01:11 +0200
-X-Gmail-Original-Message-ID: <CAJKOXPfLPjmjgX01UAyu_=7etUO1G7osMQDmyHVBNxF2Sdh=yA@mail.gmail.com>
-Message-ID: <CAJKOXPfLPjmjgX01UAyu_=7etUO1G7osMQDmyHVBNxF2Sdh=yA@mail.gmail.com>
-Subject: Re: [PATCH v2 2/9] soc: samsung: Convert exynos-chipid driver to use
- the regmap API
-To: Sylwester Nawrocki <s.nawrocki@samsung.com>
+In-Reply-To: <a54dfa07-2f3b-def7-fec4-b6dab2bcd84c@ti.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_060125_280946_DB3600A4 
-X-CRM114-Status: GOOD (  22.01  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190723_060409_898327_E67FF96F 
+X-CRM114-Status: GOOD (  17.80  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,128 +67,154 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
- linux-pm@vger.kernel.org, pankaj.dubey@samsung.com,
- =?UTF-8?B?QmFydMWCb21pZWogxbtvxYJuaWVya2lld2ljeg==?=
- <b.zolnierkie@samsung.com>, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- kgene@kernel.org, vireshk@kernel.org, linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 18 Jul 2019 at 16:31, Sylwester Nawrocki <s.nawrocki@samsung.com> wrote:
->
-> Convert the driver to use regmap API in order to allow other
-> drivers, like ASV, to access the CHIPID registers.
->
-> This patch adds definition of selected CHIPID register offsets
-> and register bit fields for Exynos5422 SoC.
->
-> Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
-> ---
-> Changes since v1 (RFC):
->  - new patch
-> ---
->  drivers/soc/samsung/exynos-chipid.c       | 33 ++++++----------
->  include/linux/soc/samsung/exynos-chipid.h | 48 +++++++++++++++++++++++
->  2 files changed, 61 insertions(+), 20 deletions(-)
->  create mode 100644 include/linux/soc/samsung/exynos-chipid.h
->
-> diff --git a/drivers/soc/samsung/exynos-chipid.c b/drivers/soc/samsung/exynos-chipid.c
-> index 78b123ee60c0..594b00488013 100644
-> --- a/drivers/soc/samsung/exynos-chipid.c
-> +++ b/drivers/soc/samsung/exynos-chipid.c
-> @@ -9,18 +9,16 @@
->   */
->
->  #include <linux/io.h>
-> +#include <linux/mfd/syscon.h>
->  #include <linux/of.h>
->  #include <linux/of_address.h>
->  #include <linux/of_platform.h>
->  #include <linux/platform_device.h>
-> +#include <linux/regmap.h>
->  #include <linux/slab.h>
-> +#include <linux/soc/samsung/exynos-chipid.h>
->  #include <linux/sys_soc.h>
->
-> -#define EXYNOS_SUBREV_MASK     (0xF << 4)
-> -#define EXYNOS_MAINREV_MASK    (0xF << 0)
-> -#define EXYNOS_REV_MASK                (EXYNOS_SUBREV_MASK | EXYNOS_MAINREV_MASK)
-> -#define EXYNOS_MASK            0xFFFFF000
-> -
->  static const struct exynos_soc_id {
->         const char *name;
->         unsigned int id;
-> @@ -53,29 +51,24 @@ static const char * __init product_id_to_soc_id(unsigned int product_id)
->  int __init exynos_chipid_early_init(void)
->  {
->         struct soc_device_attribute *soc_dev_attr;
-> -       void __iomem *exynos_chipid_base;
->         struct soc_device *soc_dev;
->         struct device_node *root;
-> -       struct device_node *np;
-> +       struct regmap *regmap;
->         u32 product_id;
->         u32 revision;
-> +       int ret;
->
-> -       /* look up for chipid node */
-> -       np = of_find_compatible_node(NULL, NULL, "samsung,exynos4210-chipid");
-> -       if (!np)
-> -               return -ENODEV;
-> -
-> -       exynos_chipid_base = of_iomap(np, 0);
-> -       of_node_put(np);
-> -
-> -       if (!exynos_chipid_base) {
-> -               pr_err("Failed to map SoC chipid\n");
-> -               return -ENXIO;
-> +       regmap = syscon_regmap_lookup_by_compatible("samsung,exynos4210-chipid");
-> +       if (IS_ERR(regmap)) {
-> +               pr_err("%s: failed to get regmap\n", __func__);
+On 23/07/2019 13:50, Lokesh Vutla wrote:
+> 
+> 
+> On 23/07/19 4:14 PM, Marc Zyngier wrote:
+>> Add the required support for the ESPI range, which behave exactly like
+>> the SPIs of old, only with new funky INTIDs.
+>>
+>> Signed-off-by: Marc Zyngier <maz@kernel.org>
+>> ---
+>>  drivers/irqchip/irq-gic-v3.c       | 85 ++++++++++++++++++++++++------
+>>  include/linux/irqchip/arm-gic-v3.h | 17 +++++-
+>>  2 files changed, 85 insertions(+), 17 deletions(-)
+>>
+>> diff --git a/drivers/irqchip/irq-gic-v3.c b/drivers/irqchip/irq-gic-v3.c
+>> index 2371e0a70215..d328a8de533f 100644
+>> --- a/drivers/irqchip/irq-gic-v3.c
+>> +++ b/drivers/irqchip/irq-gic-v3.c
+>> @@ -51,13 +51,16 @@ struct gic_chip_data {
+>>  	u32			nr_redist_regions;
+>>  	u64			flags;
+>>  	bool			has_rss;
+>> -	unsigned int		irq_nr;
+>>  	struct partition_desc	*ppi_descs[16];
+>>  };
+>>  
+>>  static struct gic_chip_data gic_data __read_mostly;
+>>  static DEFINE_STATIC_KEY_TRUE(supports_deactivate_key);
+>>  
+>> +#define GIC_ID_NR	(1U << GICD_TYPER_ID_BITS(gic_data.rdists.gicd_typer))
+>> +#define GIC_LINE_NR	GICD_TYPER_SPIS(gic_data.rdists.gicd_typer)
+>> +#define GIC_ESPI_NR	GICD_TYPER_ESPIS(gic_data.rdists.gicd_typer)
+>> +
+>>  /*
+>>   * The behaviours of RPR and PMR registers differ depending on the value of
+>>   * SCR_EL3.FIQ, and the behaviour of non-secure priority registers of the
+>> @@ -100,6 +103,7 @@ static DEFINE_PER_CPU(bool, has_rss);
+>>  enum gic_intid_range {
+>>  	PPI_RANGE,
+>>  	SPI_RANGE,
+>> +	ESPI_RANGE,
+>>  	LPI_RANGE,
+>>  	__INVALID_RANGE__
+>>  };
+>> @@ -111,6 +115,8 @@ static enum gic_intid_range __get_intid_range(irq_hw_number_t hwirq)
+>>  		return PPI_RANGE;
+>>  	case 32 ... 1019:
+>>  		return SPI_RANGE;
+>> +	case ESPI_BASE_INTID ... 8191:
+> 
+> as per dt documentation, shouldn't the range be
+> 	case ESPI_BASE_INTID ... 5119:
 
-Other places do not use __func__ prefix so make it consistent. Add it
-in patch #1?
+Yes, you're right. Although I strongly suspect that someone will bump
+this limit up again at some point (there is enough space in the new
+register space for 4k interrupts -- madness).
 
-> +               return PTR_ERR(regmap);
->         }
->
-> -       product_id = readl_relaxed(exynos_chipid_base);
-> +       ret = regmap_read(regmap, EXYNOS_CHIPID_REG_PRO_ID, &product_id);
-> +       if (ret < 0)
-> +               return ret;
-> +
->         revision = product_id & EXYNOS_REV_MASK;
-> -       iounmap(exynos_chipid_base);
->
->         soc_dev_attr = kzalloc(sizeof(*soc_dev_attr), GFP_KERNEL);
->         if (!soc_dev_attr)
-> diff --git a/include/linux/soc/samsung/exynos-chipid.h b/include/linux/soc/samsung/exynos-chipid.h
-> new file mode 100644
-> index 000000000000..25359d70d617
-> --- /dev/null
-> +++ b/include/linux/soc/samsung/exynos-chipid.h
-> @@ -0,0 +1,48 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +/*
-> + * Copyright (c) 2018 Samsung Electronics Co., Ltd.
-> + *           http://www.samsung.com/
-> + *
-> + * Exynos - CHIPID support
-> + */
-> +
-> +#define EXYNOS_CHIPID_REG_PRO_ID       0x00
-> + #define EXYNOS_SUBREV_MASK            (0xf << 4)
+> 
+>> +		return ESPI_RANGE;
+>>  	case 8192 ... GENMASK(23, 0):
+>>  		return LPI_RANGE;
+>>  	default:
+>> @@ -141,6 +147,7 @@ static inline void __iomem *gic_dist_base(struct irq_data *d)
+>>  		return gic_data_rdist_sgi_base();
+>>  
+>>  	case SPI_RANGE:
+>> +	case ESPI_RANGE:
+>>  		/* SPI -> dist_base */
+>>  		return gic_data.dist_base;
+>>  
+>> @@ -234,6 +241,31 @@ static u32 convert_offset_index(struct irq_data *d, u32 offset, u32 *index)
+>>  	case SPI_RANGE:
+>>  		*index = d->hwirq;
+>>  		return offset;
+>> +	case ESPI_RANGE:
+>> +		*index = d->hwirq - ESPI_BASE_INTID;
+>> +		switch (offset) {
+>> +		case GICD_ISENABLER:
+>> +			return GICD_ISENABLERnE;
+>> +		case GICD_ICENABLER:
+>> +			return GICD_ICENABLERnE;
+>> +		case GICD_ISPENDR:
+>> +			return GICD_ISPENDRnE;
+>> +		case GICD_ICPENDR:
+>> +			return GICD_ICPENDRnE;
+>> +		case GICD_ISACTIVER:
+>> +			return GICD_ISACTIVERnE;
+>> +		case GICD_ICACTIVER:
+>> +			return GICD_ICACTIVERnE;
+>> +		case GICD_IPRIORITYR:
+>> +			return GICD_IPRIORITYRnE;
+>> +		case GICD_ICFGR:
+>> +			return GICD_ICFGRnE;
+>> +		case GICD_IROUTER:
+>> +			return GICD_IROUTERnE;
+>> +		default:
+>> +			break;
+>> +		}
+>> +		break;
+>>  	default:
+>>  		break;
+>>  	}
+>> @@ -316,7 +348,7 @@ static int gic_irq_set_irqchip_state(struct irq_data *d,
+>>  {
+>>  	u32 reg;
+>>  
+>> -	if (d->hwirq >= gic_data.irq_nr) /* PPI/SPI only */
+>> +	if (d->hwirq >= 8192) /* PPI/SPI only */
+>>  		return -EINVAL;
+>>  
+>>  	switch (which) {
+>> @@ -343,7 +375,7 @@ static int gic_irq_set_irqchip_state(struct irq_data *d,
+>>  static int gic_irq_get_irqchip_state(struct irq_data *d,
+>>  				     enum irqchip_irq_state which, bool *val)
+>>  {
+>> -	if (d->hwirq >= gic_data.irq_nr) /* PPI/SPI only */
+>> +	if (d->hwirq >= 8192) /* PPI/SPI only */
+>>  		return -EINVAL;
+>>  
+>>  	switch (which) {
+>> @@ -567,7 +599,12 @@ static asmlinkage void __exception_irq_entry gic_handle_irq(struct pt_regs *regs
+>>  		gic_arch_enable_irqs();
+>>  	}
+>>  
+>> -	if (likely(irqnr > 15 && irqnr < 1020) || irqnr >= 8192) {
+>> +	/* Check for special IDs first */
+>> +	if ((irqnr >= 1020 && irqnr <= 1023))
+>> +		return;
+> 
+> May be I am missing something here, what is special about these 4 interrupts? or
+> you meant to check for reserved range here?
 
-" #define" is unusual syntax. I think not used anywhere else. Stick to
-regular one.
+What's so special about the special INTID range is that these are not
+interrupts at all. That's how the GIC signals that *something else* is
+happening (see 2.2.1 "Special INTIDs" in the architecture spec). In
+practice, and as long as you run Linux in non-secure mode, only 1023 can
+happen.
 
-Best regards,
-Krzysztof
+Thanks,
+
+	M.
+-- 
+Jazz is not dead, it just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
