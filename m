@@ -2,70 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85179717B6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 14:07:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 25DC6717C1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 14:08:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LZXwdaNPFS/S7tSoxATiOuiHSHAdUh3y8xzDbg2iB8Y=; b=ZwA9wYSymhUPzG
-	3/SzDPKSYB+eVbJLHL8Oagd5K5cfVzlZS0tWE1hB19/LtZIlrYN9J20UJfP+eAmhCNBuM9n/4sU87
-	K6KEUSQVEn7i4KBpoFaA3dt8gF8zBU32Cd2MLtEWJoPYSudrQAZmiMxL26VaiVdlOGLsdlJMdEFbf
-	CydmcZd4tlhjUJtmqhvp9gjY+2XzmG5wQyncmUiWU7kLwvQfZejHGhc6dKfX+NfrTiZvlYlKARFL2
-	Igz7pXQhyoA3/Gk2Frzuyr9s4DSuduqpvycqMNMLlEVCNvyLvMxkZAwTzBkcFqscgM2c3LfZAf6Xm
-	rlcq82+xmGSKWI+NX5NA==;
+	List-Owner; bh=0YghJtaNP9r5EwjaD5rCpFZTfrn+b6R6PgVlHzYpaGc=; b=L02gCV+ECtw3/w
+	vtkce8pGWwckpETNCeS42pbglXpAqd3qnQ6ZnuH1Lmgk2o1yrH3HfpBepofnDaIp/8TXj8VeRdrxD
+	HxJKoSRCnq37IWQX2vd3pE6PJlV8jrGKoMjUy1EW4RqeEsLY7gwO+nn2wDrVnzPW2SR9cvbdunRqx
+	5eIQFk6D132lyxGniUkTreEyDU59SeBbM5vFGDwT9GteL+Z9Xr3qOA7fmhXrku6XYnRoGBd4htzD4
+	ah8WaUhGgfHyBf5D9BDsqfANcUovHDlmEkPnMVwC8Nst/VJlH6TG3xR8CrWaXZPJmswghef+WqGLo
+	WuGanTtSNEzA1qMt5Qow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hptZP-0003yy-NL; Tue, 23 Jul 2019 12:07:03 +0000
+	id 1hptb0-0004JD-H5; Tue, 23 Jul 2019 12:08:42 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hptZ8-0003yC-Ru
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 12:06:48 +0000
-Received: from mail-lf1-f54.google.com (mail-lf1-f54.google.com
- [209.85.167.54])
+ id 1hptam-0004Ib-Fm
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 12:08:29 +0000
+Received: from mail-lf1-f53.google.com (mail-lf1-f53.google.com
+ [209.85.167.53])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A3A62223A2
+ by mail.kernel.org (Postfix) with ESMTPSA id D5B9D223B9
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 23 Jul 2019 12:06:45 +0000 (UTC)
+ Tue, 23 Jul 2019 12:08:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563883606;
- bh=DKrbsHStPDRY+4kxJ4/+/qAdj1UDVR+qwitPFb6G9XQ=;
+ s=default; t=1563883708;
+ bh=nvBvzlCDrlw2nSkRwm+jqQZNCkb/0yrq0/hoIvGnykI=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=ts2zKnryAHCcWuV+jQCtZ1fXUaMYtk/rse8t/JdjssvTDla0eLrQ7l7Fy7A91meAb
- 4dq5/+DeF78UIQcOHR3q6qljcYC+4rwJc2IGbOzlxegYgRIX8xVXiAozEtcohEjzSQ
- NgbJODdAIYTnBIHU6w/0RraMEYcpUUjG5MLfKfAY=
-Received: by mail-lf1-f54.google.com with SMTP id q26so29198695lfc.3
+ b=aw9YjpykC6CX2ocx7SES+UzwAHiNG+Ib9CZMBVPyP9nlsZbhnpBNtUhZEcT9KVGLH
+ NzQklg+qHhvhOmQ5lthnaX0c2YJgxon1P0NX6okYPwtGPgTOSSLylAGYVQpCHkA3vD
+ BB6l0JfAHHCHA06bXJiSGX8wxB+5+WuAN8fnslyo=
+Received: by mail-lf1-f53.google.com with SMTP id u10so29141689lfm.12
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 23 Jul 2019 05:06:45 -0700 (PDT)
-X-Gm-Message-State: APjAAAXdrKGBqgh+rAVL8MnSrQhaqMkBIk/av82lxT6tsMSRufXbneMC
- zWfdJvmUt+Q0A70EUI/tAHqX2ML7/F9od5yi5cY=
-X-Google-Smtp-Source: APXvYqw0eaw2TRxK/9H3Y8sqHS2pEMb0cITDxk01/sRGaTfe105d+yhQepbEgz1kqWQFScY4g8NDo+cJjofy04prss4=
-X-Received: by 2002:a19:f007:: with SMTP id p7mr34881578lfc.24.1563883603819; 
- Tue, 23 Jul 2019 05:06:43 -0700 (PDT)
+ Tue, 23 Jul 2019 05:08:27 -0700 (PDT)
+X-Gm-Message-State: APjAAAUWaLZM7L/j1kMc5ioG56G6PfM64k1Pq4b0GzsQGvP6Jay/6sUn
+ JVmy5GEEhxTkvSKEUDGs8k593UUFZ78XvYoSsto=
+X-Google-Smtp-Source: APXvYqw13qDeDRLye0Xy8u0GjyA8nlXejZvwnJiEBw7A7WJmtQt6RJeCPKPpMebsqdZgD8QGynWSPGSgTW6n8UtRsn8=
+X-Received: by 2002:a19:f007:: with SMTP id p7mr34885531lfc.24.1563883705950; 
+ Tue, 23 Jul 2019 05:08:25 -0700 (PDT)
 MIME-Version: 1.0
-References: <CGME20190715124504eucas1p1afe0da2c6ac3a8b45d85017a77ba9edf@eucas1p1.samsung.com>
+References: <CGME20190715124456eucas1p2acf15d00e3fa7b77fe3a2b10ce1ab74f@eucas1p2.samsung.com>
  <20190715124417.4787-1-l.luba@partner.samsung.com>
- <20190715124417.4787-38-l.luba@partner.samsung.com>
- <CAJKOXPfrGgAczQ-=1aE453RpJ9BN10ZDmFcrEMPkNyF6GcGtNA@mail.gmail.com>
- <2fe2e840-f4b2-773b-7d92-4ffb8502d4e6@partner.samsung.com>
- <CAJKOXPd3gm7no-0TnPmgFg+X3FgdiM6ov5rtzFSM6hKEdEzRCg@mail.gmail.com>
- <518c26ca-4254-056c-d6d0-ae1b4b63709c@partner.samsung.com>
- <CAJKOXPfDX06s7eMctbnPabxho2EaWcTM4xAGKCd_+O6jCCDcRQ@mail.gmail.com>
- <7ad899c5-347d-546e-a2e9-d96f0203210c@partner.samsung.com>
-In-Reply-To: <7ad899c5-347d-546e-a2e9-d96f0203210c@partner.samsung.com>
+ <20190715124417.4787-28-l.luba@partner.samsung.com>
+ <CAJKOXPfFZL8q9hM1vPsLq+Qxe-gMz4c8j0jgFKfdf5qs68MTmA@mail.gmail.com>
+ <15310bd0-0fd4-8d62-82a9-7a9df6a8ced3@partner.samsung.com>
+In-Reply-To: <15310bd0-0fd4-8d62-82a9-7a9df6a8ced3@partner.samsung.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
-Date: Tue, 23 Jul 2019 14:06:32 +0200
-X-Gmail-Original-Message-ID: <CAJKOXPdC7U64dqFJzJNJJXPQ8_K_SXUOVrNGjOQqcDyNsmskwA@mail.gmail.com>
-Message-ID: <CAJKOXPdC7U64dqFJzJNJJXPQ8_K_SXUOVrNGjOQqcDyNsmskwA@mail.gmail.com>
-Subject: Re: [PATCH v1 37/50] ARM: dts: exynos: change parent and rate of
- bus_fsys in Exynos5422
+Date: Tue, 23 Jul 2019 14:08:14 +0200
+X-Gmail-Original-Message-ID: <CAJKOXPdoun-2ankrcNzC70tXZi40iONxM3yPstdaiGBMPDjyRQ@mail.gmail.com>
+Message-ID: <CAJKOXPdoun-2ankrcNzC70tXZi40iONxM3yPstdaiGBMPDjyRQ@mail.gmail.com>
+Subject: Re: [PATCH v1 27/50] ARM: dts: exynos: align bus_wcore OPPs in
+ Exynos5420
 To: Lukasz Luba <l.luba@partner.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_050647_123229_326B5B75 
-X-CRM114-Status: GOOD (  18.75  )
+X-CRM114-CacheID: sfid-20190723_050828_563859_BA38706E 
+X-CRM114-Status: GOOD (  18.42  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -109,49 +105,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 17 Jul 2019 at 14:56, Lukasz Luba <l.luba@partner.samsung.com> wrote:
+On Wed, 17 Jul 2019 at 18:58, Lukasz Luba <l.luba@partner.samsung.com> wrote:
 >
+> Hi Krzysztof,
 >
-> On 7/17/19 1:11 PM, Krzysztof Kozlowski wrote:
-> > On Wed, 17 Jul 2019 at 13:06, Lukasz Luba <l.luba@partner.samsung.com> wrote:
+> On 7/17/19 12:15 PM, Krzysztof Kozlowski wrote:
+> > On Mon, 15 Jul 2019 at 14:44, Lukasz Luba <l.luba@partner.samsung.com> wrote:
 > >>
-> >>
-> >>
-> >> On 7/17/19 12:45 PM, Krzysztof Kozlowski wrote:
-> >>> On Wed, 17 Jul 2019 at 12:39, Lukasz Luba <l.luba@partner.samsung.com> wrote:
-> >>>>>>
-> >>>>>>     &bus_fsys {
-> >>>>>>            devfreq = <&bus_wcore>;
-> >>>>>> +       assigned-clocks = <&clock CLK_MOUT_ACLK200_FSYS>,
-> >>>>>> +                         <&clock CLK_DOUT_ACLK200_FSYS>,
-> >>>>>> +                         <&clock CLK_FOUT_DPLL>;
-> >>>>>> +       assigned-clock-parents = <&clock CLK_MOUT_SCLK_DPLL>;
-> >>>>>> +       assigned-clock-rates = <0>, <240000000>,<1200000000>;
-> >>>>>
-> >>>>> Here and in all other patches:
-> >>>>> I am not entirely sure that this should be here. It looks like
-> >>>>> property of the SoC. Do we expect that buses will be configured to
-> >>>>> different clock rates between different boards?
-> This is the board file for Exynos5420/5422/5800 which enables buses.
-> Thus, I have change them here. Patch 49/50 adds these buses to
-> Exynos5800 (Peach Pi). In Exynos5420 there is no clock tree for
-> bus_isp266. The parents for different devices could be also different.
-> It is because i.e. in 5420 there is 2 bit in the WCORE 1st mux while in
-> 5422 there is 3 bits (6 parents possible).
-> That's why I have picked exynos5422-odroid-core.dtsi to reference
-> the bus devices and pinned them into proper parent and changed rate.
-> When you check patch 49/50 for 5800 not all the parents are the same.
->
-> (1) I could create a dedicated files like: exynos5422-bus.dtsi,
-> exynos5420-bus.dtsi, exynos5800-bus.dtsi which would include some
-> base file with the basic &bus_X and set the right parent, rate.
-> Then these files would be included into proper board file like:
-> exynos5800-peach-pi.dts.
-> Is this something that you would like to see?
+> >> This is the most important bus in the Exynos5x SoC. The whole communication
+> >> inside SoC does through that bus (apart from direct requests from CCI to
+> >> DRAM controller). It is also modeled as a master bus in devfreq framework.
+> >> It is also the only one OPP table throughout other buses which has voltage
+> >> values. The devfreq software controls the speed of that bus and other
+> >> buses. The other buses follows the rate of the master. There is only one
+> >> regulator. The old lowest OPP had pair 925mV, 84MHz which is enough for
+> >
+> > s/lowest/slowest/
+> please see below
+> >
+> >> this frequency. However, due to the fact that the other buses follows the
+> >> WCORE bus by taking the OPP from their table with the same id, e.g. opp02,
+> >> the children frequency should be stable with the set voltage.
+> >> It could cause random faults very hard to debug.
+> >> Thus, the patch removes the lowest OPP to make other buses' lowest OPPs
+> >
+> > s/lowest/slowest/
+> Actually, I have double checked that, because we always used this
+> terminology: low OPP, high OPP, lower OPPs, higher OPPs. I can change
+> it here for you, but I think this is not something that people are used
+> to. Please check EAS pdf documentation or this file:
+> https://www.kernel.org/doc/Documentation/scheduler/sched-energy.txt
+> i.e. "running at a lower OPP" or "high OPPs", "lowest OPPs".
 
-I see now. Are there any differences in all these properties between
-Peach Pi and Odroids? Both of them are using exynos5800.dtsi so that
-could be a place for all clock assignments.
+Hmm, indeed, you're right. Don't change it then.
 
 Best regards,
 Krzysztof
