@@ -2,56 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A71B471DC9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 19:34:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB9CC71DEA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 19:41:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=mqkLQmhMSpK6K5bgFSMRR6pIQ391W8Aff+GLmaH/Gfs=; b=Yfi+oqdm2u/nsjax/UXSwp5vE
-	iPeYe+83mRtNOXWkNobREb1PdhuYlcE6vCwVxTnTa3IP9ChdihbHiYYrjEJ3OOuJeXeXHiSyf8LZP
-	JzkTg3AypZpJnUUfa3j9b9veGLMZ7woIY6GTdWxLKX5vt19pDWCVQwYJoI5YqvID7+u0qv622YDEI
-	RBeH5o2+ZR8pvmkLodCVfzvPCgSIqgyn51Mbhz+pyhHBo09GT7aGkJeGWw1eJmGYj9m1+vFJ7cgng
-	3pXhEr+3BKOz183q0qXvqCgCY4INttLsfRJdXjw6gmaBLZah9rW9iZx9cRLWrKa3pKk4dLQx/y84q
-	8ViP1P+/g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dLMSFVxzwZ6QzSov1FOxPViUeNpJrDQQTS3vrC4KiTI=; b=uRxir9Fe+SHP5U
+	0DsgPwW76dFgQIQ5xyS43TXKQiw+s6b5eL1zvk62KMU6MXYcKyZR+VbP8bNErlgdpbE7OLJSoiHgv
+	y+D0yMCcsZIJkvLp3YUSH916aKRfgKbalHQ0cer8d4/lzo55dRGm2yX32Z4/Os6HSveZuZtOpZQa5
+	oSzfk+bdMMAVlxPbFKudcO2GajNZrX+v54x5yIg7sAl7Q79fafL4h6qP5D6WTIuIwqhQcn2ZJHJXt
+	LsyBcKqy7mjM0leR+GCfo+mYTYM6oXaVqKy6eHQM9tzGLSOnZNJPl7awXoEyov7efOSabDzFy6rex
+	8CGhIqgCwhaBGPhScuYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpyft-00039w-1A; Tue, 23 Jul 2019 17:34:05 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1hpymx-0006IO-Ly; Tue, 23 Jul 2019 17:41:23 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpyfb-000397-G4; Tue, 23 Jul 2019 17:33:49 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 70E97AC8F;
- Tue, 23 Jul 2019 17:33:45 +0000 (UTC)
-Message-ID: <5f9b11f54c66fd0487837f7e58af3adf7f86635f.camel@suse.de>
-Subject: Re: [PATCH 00/18] ARM: Add minimal Raspberry Pi 4 support
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Stefan Wahren <wahrenst@gmx.net>, Christoph Hellwig <hch@lst.de>
-Date: Tue, 23 Jul 2019 19:33:43 +0200
-In-Reply-To: <b15509d6-bc2e-3d06-0eea-943e6e456d62@gmx.net>
-References: <1563774880-8061-1-git-send-email-wahrenst@gmx.net>
- <96113adb5fcab9c2f4bb5fa82b84ff5f9c07fd07.camel@suse.de>
- <bc650090-db86-ccac-01dc-23f08ad7b19b@gmx.net>
- <20190723093442.GA27239@lst.de>
- <04c5eaa03f3a124dbbce6186e11e19acc4539cc8.camel@suse.de>
- <b15509d6-bc2e-3d06-0eea-943e6e456d62@gmx.net>
-User-Agent: Evolution 3.32.3 
+ id 1hpymk-0006I1-DD
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 17:41:11 +0000
+Received: by mail-ed1-x542.google.com with SMTP id i11so44746265edq.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 23 Jul 2019 10:41:08 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=nogcB6tU7ggTUc1+z4/fMorc4784ohsjEsA0VkxE4cQ=;
+ b=WEgbUlOwKq7FDIuwTpjXkL4hd+FxqB9iuHFupSLPSi3UKeNHLWZaKkOW15zx5J2/ZZ
+ iq8eueW8GsDMgV/SbuUXl849uTeoFKSwBk97/PL1K/GdP6IyScS7KKhmTtjPG885+diA
+ cRUhcWbQIOTDvi+ETBdb+Wqw2Qr4IRYtifiZNbdb+omqbkcvelRLhYOPCx/6rm/PP0pV
+ P+9LzpxJAoz7157KwdoGgBOShLoYyKMiSjWxLv9D/XFnc9iFg6nX+umbM8UXpX5no5ET
+ JVjO2MbiOlIMGOzoTAoU0AVnUrhsIVWYyNovjrnEKyh1nIO5ieSGxSZldsbMVW1fftUE
+ 9PQg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=nogcB6tU7ggTUc1+z4/fMorc4784ohsjEsA0VkxE4cQ=;
+ b=M5QkNUJHncKuq7tQ49+wWWrX/nykH5jJzqOoo8mJEUTQo+Z04wk44HBGBjiFCRped6
+ W9fmpVWRc8MYpGoc0jAPBHKNC5HwiOV0hXB9Ir2NYJY6blZXJUZiAUozCfUwfoCAolL+
+ 0lPft+yYdqdFZUaSjLdEtk/29jAHDhtpXvd+ziFlDVosUWq4UfSvUFyGcLbPB8pQaI04
+ xVm4GZbInsQgmm/w+W1rVGdj2jSB66v66hK3k5BcxQBcFU3/VHaZ+uA1rIoSDjRLMmcZ
+ 66HIA9QbW2MWGLCttKCV+rw8T7XF3Sf6njb3LOQNDKjbqjoyj+R7lPwBoCRPDCf2bATQ
+ NzlQ==
+X-Gm-Message-State: APjAAAV4uDH8pfPJE8sHcaBGCOkvrM8RlfSFdprhYSey4whVgVBuZmjA
+ OQiSTnOnRatkk0jq/7qpuHD7Lk8dLHkhiHl3D+g=
+X-Google-Smtp-Source: APXvYqzemPNRUI4Dv8rCDS7Y3Atwe1foT+6Dyv7m4pV5WgS2/fMuH1KImSCRDazCl+5WCpEBG93Sr1jOHq4wKAJmBc8=
+X-Received: by 2002:a17:906:f85:: with SMTP id
+ q5mr60032126ejj.192.1563903667438; 
+ Tue, 23 Jul 2019 10:41:07 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190702202631.32148-2-robdclark@gmail.com>
+ <20190710182844.25032-1-robdclark@gmail.com>
+ <20190722142833.GB12009@8bytes.org>
+ <CAF6AEGvJc2RK3GkpcXiVKsuTX81D3oahnu=qWJ9LFst1eT3tMg@mail.gmail.com>
+ <20190722154803.GG12009@8bytes.org>
+ <CAF6AEGvWf3ZOrbyyWjORuOVEPOcPr+JSEO78aYjhL-GVhDZnTg@mail.gmail.com>
+ <20190723153822.gm4ossn43nvqbyak@willie-the-truck>
+In-Reply-To: <20190723153822.gm4ossn43nvqbyak@willie-the-truck>
+From: Rob Clark <robdclark@gmail.com>
+Date: Tue, 23 Jul 2019 10:40:55 -0700
+Message-ID: <CAF6AEGtL6gqtbmtksf7zCSGrFOEj0ynq-2nwvizLLiS0FTwHpg@mail.gmail.com>
+Subject: Re: [PATCH v2] iommu: add support for drivers that manage iommu
+ explicitly
+To: Will Deacon <will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_103347_833714_99A9589C 
-X-CRM114-Status: GOOD (  38.79  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190723_104110_451725_1A32951A 
+X-CRM114-Status: GOOD (  22.41  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robdclark[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,245 +100,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
- Florian Fainelli <f.fainelli@gmail.com>, Scott Branden <sbranden@broadcom.com>,
- Matthias Brugger <mbrugger@suse.com>, Stephen Boyd <sboyd@kernel.org>,
- Ray Jui <rjui@broadcom.com>, Linus Walleij <linus.walleij@linaro.org>,
- linux-mmc@vger.kernel.org, Adrian Hunter <adrian.hunter@intel.com>,
- Eric Anholt <eric@anholt.net>, Rob Herring <robh+dt@kernel.org>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- linux-gpio@vger.kernel.org, Michael Turquette <mturquette@baylibre.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============5679658693088133144=="
+Cc: Rob Clark <robdclark@chromium.org>, aarch64-laptops@lists.linaro.org,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>, Joerg Roedel <joro@8bytes.org>,
+ "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Andy Shevchenko <andy.shevchenko@gmail.com>,
+ Sudeep Holla <sudeep.holla@arm.com>,
+ "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
+ Joerg Roedel <joro@8bytes.org>, " <iommu@lists.linux-foundation.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Joe Perches <joe@perches.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Robin Murphy <robin.murphy@arm.com>, Bartosz Golaszewski <brgl@bgdev.pl>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, Jul 23, 2019 at 8:38 AM Will Deacon <will@kernel.org> wrote:
+>
+> On Mon, Jul 22, 2019 at 09:23:48AM -0700, Rob Clark wrote:
+> > On Mon, Jul 22, 2019 at 8:48 AM Joerg Roedel <joro@8bytes.org> wrote:
+> > >
+> > > On Mon, Jul 22, 2019 at 08:41:34AM -0700, Rob Clark wrote:
+> > > > It is set by the driver:
+> > > >
+> > > > https://patchwork.freedesktop.org/patch/315291/
+> > > >
+> > > > (This doesn't really belong in devicetree, since it isn't a
+> > > > description of the hardware, so the driver is really the only place to
+> > > > set this.. which is fine because it is about a detail of how the
+> > > > driver works.)
+> > >
+> > > It is more a detail about how the firmware works. IIUC the problem is
+> > > that the firmware initializes the context mappings for the GPU and the
+> > > OS doesn't know anything about that and just overwrites them, causing
+> > > the firmware GPU driver to fail badly.
+> > >
+> > > So I think it is the task of the firmware to tell the OS not to touch
+> > > the devices mappings until the OS device driver takes over. On x86 there
+> > > is something similar with the RMRR/unity-map tables from the firmware.
+> > >
+> >
+> > Bjorn had a patchset[1] to inherit the config from firmware/bootloader
+> > when arm-smmu is probed which handles that part of the problem.  My
+> > patch is intended to be used on top of his patchset.  This seems to me
+> > like the best solution, if we don't have control over the firmware.
+>
+> Hmm, but the feedback from Robin on the thread you cite was that this should
+> be generalised to look more like RMRR, so there seems to be a clear message
+> here.
+>
 
---===============5679658693088133144==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-Cs8KT2iJYDGL89Fz+Mxk"
+Perhaps it is a lack of creativity, or lack of familiarity w/ iommu vs
+virtualization, but I'm not quite seeing how RMRR would help.. in
+particular when dealing with both DT and ACPI cases.  So I kinda
+prefer, when possible, if arm-smmu can figure out what is going on by
+looking at the hw state at boot (since that approach would work
+equally well for DT and ACPI).
 
+I *think* (but need to confirm if Bjorn hasn't already) that the
+memory for the pagetables that firmware/bootloader sets up is already
+removed from the memory map efi passes to kernel, so we don't need to
+worry about kernel stomping in-use pagetables.
 
---=-Cs8KT2iJYDGL89Fz+Mxk
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-On Tue, 2019-07-23 at 18:26 +0200, Stefan Wahren wrote:
-> Hi Nicolas,
->=20
-> thanks for your work, but i'm a little bit sceptical about these
-> changes. So here some thoughts.
->=20
-> Am 23.07.19 um 15:32 schrieb Nicolas Saenz Julienne:
-> > On Tue, 2019-07-23 at 11:34 +0200, Christoph Hellwig wrote:
-> > > On Mon, Jul 22, 2019 at 08:10:17PM +0200, Stefan Wahren wrote:
-> > > > i rebased this series also and got this only on the RPi 4.
-> > > >=20
-> > > > After reverting the following:
-> > > >=20
-> > > > 79a986721de dma-mapping: remove dma_max_pfn
-> > > > 7559d612dff0 mmc: core: let the dma map ops handle bouncing
-> > > >=20
-> > > > This crash disappear, but wifi seems to be still broken.
-> > > >=20
-> > > > Would be nice, if you can investigate further.
-> > > That means dma addressing on this system doesn't just work for some
-> > > memory, and the mmc bounce buffering was papering over that just for
-> > > mmc.  Do you have highmem on this system?
-> > >=20
-> > > You might want to try this series, which has been submitted upstream:
-> > >=20
-> > >=20
-http://git.infradead.org/users/hch/misc.git/shortlog/refs/heads/arm-swiotlb
-> > Hi Christoph,
-> > I tried your series on top of Stefan's, it has no effect. I guess it's =
-no
-> > surprise as with mult_v7_defconfig, you get SWIOTLB=3Dn & LPAE=3Dn.
-> >=20
-> > FYI DMA addressing constraints for RPi4 are the following: devices can =
-only
-> > access the first GB of ram even though the board might have up to 4GB o=
-f
-> > ram.
-> > The DMA addresses are aliased with a 0xc0000000 offset. So 0x00000000 p=
-hys
-> > is
-> > aliased to 0xc0000000 in DMA. This is the same as for an RFC you commen=
-ted
-> > last
-> > week trying to fix similar issues for arm64.
-> >=20
-> > You state in "arm: use swiotlb for bounce buffer on LPAE configs" that =
-"The
-> > DMA
-> > API requires that 32-bit DMA masks are always supported". If I understa=
-nd it
-> > correctly this device breaks that assumption. Which implies we need a b=
-ounce
-> > buffer system in place for any straming DMA user.
-> >=20
-> > It seems we're unable to use dma-direct/swiotlb, so I enabled arm's
-> > dmabounce
-> > on all devices hooked into RPi's limited interconnect, which fixes this
-> > issue.
-> Does it fix the wifi issue too?
-
-Well it works as long as I revert this: 901bb98918 ("nl80211: require and
-validate vendor command policy"). Which has nothing to do with DMA anyways.
-
-Was this the issue you where seeing?
-
-[    4.969679] WARNING: CPU: 2 PID: 21 at net/wireless/core.c:868 wiphy_reg=
-ister+0x8e8/0xbdc [cfg80211]
-[...]
-[    4.969974] ieee80211 phy0: brcmf_cfg80211_attach: Could not register wi=
-phy device (-22)
-
-> > Any thoughts on this?
-> >=20
-> > diff --git a/arch/arm/mach-bcm/Kconfig b/arch/arm/mach-bcm/Kconfig
-> > index 5e5f1fabc3d4..3db8deed83a6 100644
-> > --- a/arch/arm/mach-bcm/Kconfig
-> > +++ b/arch/arm/mach-bcm/Kconfig
-> > @@ -168,6 +168,7 @@ config ARCH_BCM2835
-> >         select PINCTRL
-> >         select PINCTRL_BCM2835
-> >         select MFD_CORE
-> > +       select DMABOUNCE
-> >         help
-> >           This enables support for the Broadcom BCM2835 and BCM2836 SoC=
-s.
-> >           This SoC is used in the Raspberry Pi and Roku 2 devices.
-> > diff --git a/arch/arm/mach-bcm/board_bcm2835.c b/arch/arm/mach-
-> > bcm/board_bcm2835.c
-> > index c09cf25596af..be788849c4bb 100644
-> > --- a/arch/arm/mach-bcm/board_bcm2835.c
-> > +++ b/arch/arm/mach-bcm/board_bcm2835.c
-> > @@ -3,6 +3,8 @@
-> >   * Copyright (C) 2010 Broadcom
-> >   */
-> >=20
-> > +#include <linux/device.h>
-> > +#include <linux/dma-mapping.h>
-> >  #include <linux/init.h>
-> >  #include <linux/irqchip.h>
-> >  #include <linux/of_address.h>
-> > @@ -24,8 +26,37 @@ static const char * const bcm2835_compat[] =3D {
-> >         NULL
-> >  };
-> >=20
-> > +static int bcm2835_needs_bounce(struct device *dev, dma_addr_t dma_add=
-r,
-> > size_t size)
-> > +{
-> > +       /*
-> > +        * The accepted dma addresses are [0xc0000000, 0xffffffff] whic=
-h map
-> > to
-> > +        * ram's [0x00000000, 0x3fffffff].
-> > +        */
-> > +       return dma_addr < 3ULL * SZ_1G;
-> > +}
-> > +
-> > +/*
-> > + * Setup DMA mask to 1GB on devices hanging from soc interconnect
-> > + */
-> > +static int bcm2835_platform_notify(struct device *dev)
-> > +{
-> > +       if (dev->parent && !strcmp("soc", dev_name(dev->parent))) {
-> > +               dev->dma_mask =3D &dev->coherent_dma_mask;
-> > +               dev->coherent_dma_mask =3D DMA_BIT_MASK(30); /* 1GB */
-> Shouldn't this come from the device tree?
-
-Yes, actually I could use the 'dma-ranges' parsing code I suggested on the
-arm64 RFC. The same goes with 'dma_zone_size =3D SZ_1G', it ideally should =
-be
-calculated based on the device-tree.
-
-The way I see it I'm not sure it's worth the effort, in arm64 we have no ch=
-oice
-as there are no board files. But here we seem to be the only ones with this
-specific DMA addressing constraint, so fixing it in arm/common doesn't seem
-like it's going to benefit anyone else. Let's see how the arm arch maintain=
-ers
-react though.
-
-There is one catch though. I missed it earlier as I was excited to see the
-board boot, but some devices are failing to set their DMA masks:
-
-[    1.989576] dwc2 fe980000.usb: can't set coherent DMA mask: -5
-
-It seems that other users of dmabounce also implement their own
-dma_supported(). I have to look into it.
-
-> > +               dmabounce_register_dev(dev, 2048, 4096,
-> > bcm2835_needs_bounce);
-> > +       }
-> > +
-> > +       return 0;
-> > +}
-> > +
-> > +void __init bcm2835_init_early(void)
-> > +{
-> > +       platform_notify =3D bcm2835_platform_notify;
-> > +}
-> > +
-> >  DT_MACHINE_START(BCM2835, "BCM2835")
-> >         .dma_zone_size  =3D SZ_1G,
-> >         .dt_compat =3D bcm2835_compat,
-> >         .smp =3D smp_ops(bcm2836_smp_ops),
-> > +       .init_early =3D bcm2835_init_early,
->=20
-> The sum of all these changes make me think, that we should start a new
-> board for BCM2711 instead of extending BCM2835.
->=20
-
-I agree, I did it locally but merged it into the current board file to make=
- the
-patch smaller.
-
-> Best regards
-> Stefan Wahren
->=20
-> >  MACHINE_END
-> >=20
-> >  Regards,
-> >  Nicolas
-> >=20
-
-
---=-Cs8KT2iJYDGL89Fz+Mxk
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl03RPcACgkQlfZmHno8
-x/6TsQgAiRtH8ll8Nfzu6CsfDqqL5Kv2oxcVc5gEytt111MCiGPlRk0nZhl7rmwT
-Ms+Qja29Ko53mWMZY5UQKg6WuZCHEHCIW0VW3rHIgwwQ3f55UyfgNg1jBcWWrxyC
-JKRPV3bBiMqy753EmTp1sq0YUsgbK5I/RLCM89xZYh2Uokk2N3Ye0jXo9qUnmCdM
-v7X8WYRUweiUWwL7syrjo3cZUXzlYT7tAz7wv+QESZ00WhxkU5hbhQs0abE92OKJ
-2N/WV6cv+fgPPP1HMKCmI99/hz7kffD3o7DX1Ro0bje62y5DT2uAd2RpPL+Tr8M5
-4f6Va9HevBWVV3KQ+MhOAL2Ts1LKvg==
-=QgMC
------END PGP SIGNATURE-----
-
---=-Cs8KT2iJYDGL89Fz+Mxk--
-
-
-
---===============5679658693088133144==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+BR,
+-R
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5679658693088133144==--
-
-
