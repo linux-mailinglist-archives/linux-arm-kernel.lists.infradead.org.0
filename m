@@ -2,85 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 46A8671F5B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 20:31:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D28571F72
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 20:40:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mRWmN9ckUJyYky8ySFRzW/lizXWDl+KshLa4LMqFo0I=; b=IE3yJB/oQkOLXu
-	gLgQMfrOL3aqp4U7QWxnMQ6piXAkMBNkHLD9RUBkzwHwCxTj/GzLYPF+GYFKy9tV/ElM4w9/yJA6g
-	XowSVUlF76F9EkQtyeL4JJy/5ldrhX0bh5B+k82Ip7Tgn1wVaJ/DA3iZbjTtSWN4OjazoExvrIdRK
-	x/It41NF+K+UHj04+El4NgDdR61jk3UhTtp3QA0H5PDQx59nKRO4R3WO5npoCSYQkIRuFNNWbBazl
-	qZJ1pjI9oA+h459K5ImK7lXNeN4bCPyhmR5hSl9epBQsywZ/Yo54AqgEGnPmUEcaeXxezaRWYMJw7
-	x7itZaewTtduu/mmQEug==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HETqkbZ0m60axZw+b3MdNkPx3b6xli4+S9MV1oeeLzI=; b=B4gB8Z3CyRvINs
+	Uc4gqO2MmxvohPdO+XWJOm3N824ybDc2it2efPdAmdUf2nxKDT3Qd20qpzt41M12UaMV/kSn99JbL
+	Um0U7mG0XtzlDiAoBRnCSn9sEFQfj763ec7v+FIBKpt/ghV2Y+a0tAbFWgfg9St08WwE3u3GPTIUn
+	9mlJsq95270m7WmPBsaYEehtrUZ4ZNA1xepK5q2ELnfWO0X5FWBcilRK3eB/WG9+MAYwDauFwvGzp
+	qDpUdWfPtl+cr0HYkwvo7vSrmVKjHZFmDKpVxaohgMdm8VXCAknP7SCv7Bw1QbxZrP9hXHfuKjuJp
+	5kxPnsPoln32i9jmCvPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpzZp-0000is-Lv; Tue, 23 Jul 2019 18:31:53 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1hpzht-0003nF-Hs; Tue, 23 Jul 2019 18:40:13 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpzZb-0000iE-7f
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 18:31:40 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x6NIVaCT063191;
- Tue, 23 Jul 2019 13:31:36 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1563906696;
- bh=9cv0+/SVJMPPDN0ZhXDWZYsyy291EnVoJwpIzV02j8M=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=SeHacVK8t8RCkv+qAMQXCHTb6PB5lzmPbPg+KdmGrP+jyoTeiqZD0/n1ltfNLbthV
- x7QfW3TGGjmgaa/0bqdDHOHZUzwJjtHyA63cjRBgwevKfkv/g92Dr4/MBFo7eGzDD4
- 7oiKUwn7vFUJfLYTwAlaNeX2eS2s+o4s4RbIb+VY=
-Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x6NIVaKB079235
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 23 Jul 2019 13:31:36 -0500
-Received: from DFLE109.ent.ti.com (10.64.6.30) by DFLE103.ent.ti.com
- (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 23
- Jul 2019 13:31:36 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE109.ent.ti.com
- (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Tue, 23 Jul 2019 13:31:36 -0500
-Received: from [128.247.58.153] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x6NIVZ6q129119;
- Tue, 23 Jul 2019 13:31:36 -0500
-Subject: Re: [PATCH 3/8] bus: ti-sysc: Fix handling of forced idle
-To: Tony Lindgren <tony@atomide.com>, <linux-omap@vger.kernel.org>
-References: <20190723112811.44381-1-tony@atomide.com>
- <20190723112811.44381-4-tony@atomide.com>
-From: Suman Anna <s-anna@ti.com>
-Message-ID: <4336e7ef-3857-e42f-e67c-94809acc59b8@ti.com>
-Date: Tue, 23 Jul 2019 13:31:35 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hpzhb-0003n9-Uq
+ for linux-arm-kernel@bombadil.infradead.org; Tue, 23 Jul 2019 18:39:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Transfer-Encoding:
+ Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+ Sender:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=HpIzSY7FNS/Bol5rU73DnS2Fg84In4Ref47Yz81YBaI=; b=INmiezAIJYOaVJok+y1RRpluz+
+ 88HSDTmeEifsJVY3evFKWLROuHFBUbtj1mYOA4MaBbftl0O15y5l2++9VFpN43nofPUa0K/WCBRze
+ GOINERRZWihpfihcXtNno9k7ezi/iAh2ANanzj7ui2JjAg6Mt5xg2VNF5mtsXAbXbOwjcVsdTqjuK
+ 5RZU8oDJQJzaMuZCFa0oRkoNSJjTiYcn1TVuQOcyT79+U4Cqef0wPqIj2x6meOg5H06OVnvsyU+bc
+ lsxsoASeELJdixvU8hHuZL/z1LLPlLsFwIslfSLOFzIG14QSXik8o+Mv53olpsidLYscQKwuFCr9l
+ A0dlYaNQ==;
+Received: from relay3-d.mail.gandi.net ([217.70.183.195])
+ by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hpzhh-0006Wg-3O
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 18:40:03 +0000
+X-Originating-IP: 90.65.161.137
+Received: from localhost (lfbn-1-1545-137.w90-65.abo.wanadoo.fr
+ [90.65.161.137])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id B922C60008;
+ Tue, 23 Jul 2019 18:39:15 +0000 (UTC)
+Date: Tue, 23 Jul 2019 20:39:15 +0200
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: mirq-linux@rere.qmqm.pl
+Subject: Re: [PATCH 1/5] ASoC: atmel: enable SSC_PCM_DMA in Kconfig
+Message-ID: <20190723183915.GJ24911@piout.net>
+References: <cover.1563819483.git.mirq-linux@rere.qmqm.pl>
+ <ee65cc7b889b2a8d1139d1d25977842c956d1cf4.1563819483.git.mirq-linux@rere.qmqm.pl>
+ <1f3a4256-58de-27a4-8095-54fc6baa6d89@microchip.com>
+ <20190723164312.GA4772@qmqm.qmqm.pl>
 MIME-Version: 1.0
-In-Reply-To: <20190723112811.44381-4-tony@atomide.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <20190723164312.GA4772@qmqm.qmqm.pl>
+User-Agent: Mutt/1.12.0 (2019-05-25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_113139_360999_52C7D977 
-X-CRM114-Status: GOOD (  16.58  )
-X-Spam-Score: -2.5 (--)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+X-CRM114-CacheID: sfid-20190723_194001_186899_67067DE5 
+X-CRM114-Status: GOOD (  23.50  )
+X-Spam-Score: -0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-0.7 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.195 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.195 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,54 +83,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, Tero Kristo <t-kristo@ti.com>,
- Dave Gerlach <d-gerlach@ti.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Peter Ujfalusi <peter.ujfalusi@ti.com>, Faiz Abbas <faiz_abbas@ti.com>,
- Keerthy <j-keerthy@ti.com>, linux-arm-kernel@lists.infradead.org,
- Roger Quadros <rogerq@ti.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: alsa-devel@alsa-project.org, lgirdwood@gmail.com, tiwai@suse.com,
+ perex@perex.cz, Ludovic.Desroches@microchip.com, broonie@kernel.org,
+ Codrin.Ciubotariu@microchip.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 7/23/19 6:28 AM, Tony Lindgren wrote:
-> For some devices we can get the following warning on boot:
-> 
-> ti-sysc 48485200.target-module: sysc_disable_module: invalid midlemode
-> 
-> Fix this by treating SYSC_IDLE_FORCE like we do for the other bits
-> for idlemodes mask.
-> 
-> Fixes: d59b60564cbf ("bus: ti-sysc: Add generic enable/disable functions")
-> Cc: Roger Quadros <rogerq@ti.com>
-> Signed-off-by: Tony Lindgren <tony@atomide.com>
-
-Reviewed-by: Suman Anna <s-anna@ti.com>
-
-regards
-Suman
-
-> ---
->  drivers/bus/ti-sysc.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/bus/ti-sysc.c b/drivers/bus/ti-sysc.c
-> --- a/drivers/bus/ti-sysc.c
-> +++ b/drivers/bus/ti-sysc.c
-> @@ -949,7 +949,7 @@ static int sysc_best_idle_mode(u32 idlemodes, u32 *best_mode)
->  		*best_mode = SYSC_IDLE_SMART_WKUP;
->  	else if (idlemodes & BIT(SYSC_IDLE_SMART))
->  		*best_mode = SYSC_IDLE_SMART;
-> -	else if (idlemodes & SYSC_IDLE_FORCE)
-> +	else if (idlemodes & BIT(SYSC_IDLE_FORCE))
->  		*best_mode = SYSC_IDLE_FORCE;
->  	else
->  		return -EINVAL;
-> 
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjMvMDcvMjAxOSAxODo0MzoxMiswMjAwLCBtaXJxLWxpbnV4QHJlcmUucW1xbS5wbCB3cm90
+ZToKPiBPbiBUdWUsIEp1bCAyMywgMjAxOSBhdCAwMTozNjozN1BNICswMDAwLCBDb2RyaW4uQ2l1
+Ym90YXJpdUBtaWNyb2NoaXAuY29tIHdyb3RlOgo+ID4gT24gMjIuMDcuMjAxOSAyMToyNywgTWlj
+aGHFgiBNaXJvc8WCYXcgd3JvdGU6Cj4gPiA+IEFsbG93IFNTQyB0byBiZSB1c2VkIG9uIHBsYXRm
+b3JtcyBkZXNjcmliZWQgdXNpbmcgYXVkaW8tZ3JhcGgtY2FyZAo+ID4gPiBpbiBEZXZpY2UgVHJl
+ZS4KPiA+ID4gCj4gPiA+IFNpZ25lZC1vZmYtYnk6IE1pY2hhxYIgTWlyb3PFgmF3IDxtaXJxLWxp
+bnV4QHJlcmUucW1xbS5wbD4KPiA+ID4gLS0tCj4gPiA+ICAgc291bmQvc29jL2F0bWVsL0tjb25m
+aWcgfCAyICstCj4gPiA+ICAgMSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9uKCspLCAxIGRlbGV0
+aW9uKC0pCj4gPiA+IAo+ID4gPiBkaWZmIC0tZ2l0IGEvc291bmQvc29jL2F0bWVsL0tjb25maWcg
+Yi9zb3VuZC9zb2MvYXRtZWwvS2NvbmZpZwo+ID4gPiBpbmRleCAwNmMxZDVjZTY0MmMuLjllZjlk
+MjViYjUxNyAxMDA2NDQKPiA+ID4gLS0tIGEvc291bmQvc29jL2F0bWVsL0tjb25maWcKPiA+ID4g
+KysrIGIvc291bmQvc29jL2F0bWVsL0tjb25maWcKPiA+ID4gQEAgLTI1LDcgKzI1LDcgQEAgY29u
+ZmlnIFNORF9BVE1FTF9TT0NfRE1BCj4gPiA+ICAgCWRlZmF1bHQgeSBpZiBTTkRfQVRNRUxfU09D
+X1NTQ19ETUE9eSB8fCAoU05EX0FUTUVMX1NPQ19TU0NfRE1BPW0gJiYgU05EX0FUTUVMX1NPQ19T
+U0M9eSkKPiA+ID4gICAKPiA+ID4gICBjb25maWcgU05EX0FUTUVMX1NPQ19TU0NfRE1BCj4gPiA+
+IC0JdHJpc3RhdGUKPiA+ID4gKwl0cmlzdGF0ZSAiU29DIFBDTSBEQUkgc3VwcG9ydCBmb3IgQVQ5
+MSBTU0MgY29udHJvbGxlciB1c2luZyBETUEiCj4gPiAKPiA+IENvdWxkIHlvdSBwbGVhc2UgbWFr
+ZSBzb21ldGhpbmcgc2ltaWxhciBmb3IgU05EX0FUTUVMX1NPQ19TU0NfUERDPyBBbHNvLCAKPiA+
+IEkgdGhpbmsgdGhhdCBpdCBzaG91bGQgc2VsZWN0IEFUTUVMX1NTQywgdG8gYmUgYWJsZSB0byB1
+c2UgCj4gPiBzaW1wbGUvZ3JhcGgtY2FyZCB3aXRoIFNTQy4KPiAKPiBIbW0uIFRoZSBLY29uZmln
+IGRlcGVuZGVuY2llcyBzZWVtcyBvdmVybHkgY29tcGxpY2F0ZWQsIGRvIHlvdSBtaW5kIGlmIEkK
+PiBnZXQgcmlkIG9mIG1vc3Qgb2YgdGhlIGVudHJpZXMgaW4gdGhlIHByb2Nlc3M/Cj4gCgpVbmZv
+cnR1bmF0ZWx5LCBpdCBpcyBqdXN0IGNvbXBsaWNhdGVkIGVub3VnaC4gVGhpcyBpcyBkb25lIHRv
+IHN1cHBvcnQKYWxsIHRoZSBwb3NzaWJsZSBjb25maWd1cmF0aW9ucy4gUmVtb3ZpbmcgdGhlbSB3
+aWxsIGxlYWQgdG8gbGlua2luZwplcnJvcnMuCgpBZnRlciBoYXZpbmcgdGhhdCBkaXNjdXNzaW9u
+IGJhY2sgaW4gTWFyY2gsIEkgaGFkIGEgdmVyeSBxdWljayBsb29rIGFuZApkaWRuJ3Qgc2VuZCBh
+IHBhdGNoIGJlY2F1c2UgSSBzdGlsbCBoYWQgbGlua2luZyBpc3N1ZXMuIEl0IGlzIG5vdAppbXBv
+c3NpYmxlIGJ1dCBpdCByZXF1aXJlZCBtb3JlIHRpbWUgdGhhbiBJIGhhZC4KCi0tIApBbGV4YW5k
+cmUgQmVsbG9uaSwgQm9vdGxpbgpFbWJlZGRlZCBMaW51eCBhbmQgS2VybmVsIGVuZ2luZWVyaW5n
+Cmh0dHBzOi8vYm9vdGxpbi5jb20KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJu
+ZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
+L2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
