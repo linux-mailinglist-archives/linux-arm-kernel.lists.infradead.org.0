@@ -2,79 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7958871E26
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 19:57:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C593571E39
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 19:59:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
-	To:From:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=vdqwjcRzvSukHcDpYc0p3Bvnq6I7Ond1/ThZXiWWYBA=; b=ZBxR8mE5EYZOnM5E7lEskbKum
-	ftdUHhKPLWiLvz+gDLfhTfDrUsJE28E7a2G2vjCNDVxPPZ/fdSeLEqMCI6i/GlI9igwC4jvLhWKAL
-	C0ogGEAPHDnaH5SAab5zeDN/gKHiazpmPzIUnl8rLZrO0AX7x/jOrzeiVe2U8cSdKJ6eASV/sN3Fi
-	1yQhWFe9DziY3b4V5ZlQIRFhwYadgZAjlztPMly49maQ9eelWCBMncWvemsJ7kza2r+aNCuptSnX/
-	Azek2TyDbwV1q/3FDW9q87YHu6XJp2ycaayIBZB9uU6tPOsgZMz7nQXeElSrat8FELVY0fqotvzvd
-	p/S8noahg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Mime-Version:Message-Id
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=T/1tkIHDOdmomZou6/SSkOu3+FDWDX12vSURRg/E86E=; b=Iqq3BUPok2y7CF
+	qaIBP2qRKm/Iuu+0DXBeqbJ1rya8qIGENGMD1buBB0h1ZF5kSR7nHVYq7VckSxWlKkSqz9Z0C3PzU
+	hS5tEJTOHcV2vWSOwFgSd3HFyOTBlfhAZM8QxiqEU5okEuF7ZZyTz7N8BgUWyHjc6aTOOXAEB1LqC
+	VkeOVkiB5nqsQ88PBWf4wpBuvSczsqtdcoDd3JgyLgDLxW8SwegPaWQ6am3ZO22Hr082LXC//zSBu
+	laKn22he0EgKeV6nNAvZNNfpZ56MFsolCQHMtVSKRB7BpjAPhdIOJmccngJwNziCKaHe8fh23td9m
+	JWd68oo0A8wgZlSpW53w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpz26-0004Fm-3r; Tue, 23 Jul 2019 17:57:02 +0000
-Received: from mo6-p00-ob.smtp.rzone.de ([2a01:238:20a:202:5300::6])
+	id 1hpz4Z-0005Ih-Ej; Tue, 23 Jul 2019 17:59:35 +0000
+Received: from mail-vk1-xa4a.google.com ([2607:f8b0:4864:20::a4a])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpz1t-0004FH-C1
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 17:56:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1563904607;
- s=strato-dkim-0002; d=hartkopp.net;
- h=In-Reply-To:Date:Message-ID:References:Cc:To:From:Subject:
- X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=PTWrdxhPj0kIsyoQjCNq5xxYxKXb7ARmi8hGFxRpWcY=;
- b=tKZXBic8KPodRh4hKSULZyaqqHbYUq5iDonn0A98KPas9UxYEYu+2rkb5yAT+NLqTj
- +3H+3fVdL6C7JHTP2L7iHcRNxyCa5ZYqm31voeC+w0824kpvuEBpwkHDVY5BCvM7YeE7
- xWbpphxwxcL33qzxJfO23lC6dr2FQAnHatWutpia6FT3xh3nLHPuPAUQLGwyMqfnQOt8
- c1MRHkNWU09Xzf8f77YPydCsZ3GqysLRDoN6Ta5HF7Hn507lVPY9JH2LM8im0CnAhQvF
- 4jaVcS/j9AsrUgyhom+8tIO9WhPYNdjQbXs3WaBDEfttAiX/BokRrYnm5a6ks0gXqTqS
- yD7w==
-X-RZG-AUTH: ":P2MHfkW8eP4Mre39l357AZT/I7AY/7nT2yrDxb8mjG14FZxedJy6qgO1o3PMaViOoLMJV8h6liA="
-X-RZG-CLASS-ID: mo00
-Received: from [192.168.1.200] by smtp.strato.de (RZmta 44.24 DYNA|AUTH)
- with ESMTPSA id k05d3bv6NHukf3Q
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve secp521r1 with
- 521 ECDH bits, eq. 15360 bits RSA))
- (Client did not present a certificate);
- Tue, 23 Jul 2019 19:56:46 +0200 (CEST)
-Subject: Re: TS-219 RTC issue with Debian Buster
-From: Oliver Hartkopp <socketcan@hartkopp.net>
-To: Andrew Lunn <andrew@lunn.ch>
-References: <99a8e2cc-61a2-3b43-0d72-6f001cffe572@hartkopp.net>
- <20190723161212.GA8095@lunn.ch>
- <8d771e5c-9df4-779c-5814-c8b62c309f82@hartkopp.net>
-Message-ID: <6ab1b4e0-3211-7cd4-306d-4b0077ed5e8e@hartkopp.net>
-Date: Tue, 23 Jul 2019 19:56:46 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <8d771e5c-9df4-779c-5814-c8b62c309f82@hartkopp.net>
-Content-Language: en-US
+ id 1hpz48-0005B7-Db
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 17:59:10 +0000
+Received: by mail-vk1-xa4a.google.com with SMTP id l7so43569vkm.21
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 23 Jul 2019 10:59:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=date:message-id:mime-version:subject:from:to:cc;
+ bh=lfK9PM0iV5015ssJsOLZ75ytHguHzFWZ5l8GKq/s9nM=;
+ b=gIhYgpLvYM8o2KSJRf0YwXAVpkgjoQoThy0HxmludelyQCLjm/rGVSvnbgRzXJr8rk
+ N6XtPW6cRSqSSKHsQzpdLAgcRvfxywBBmMYHY53hQ59/3TvCtodXMUuNr3kRDn3ng4Hs
+ C9BJGR7anugJtiZIzE0R4BGLfoM+wh/fhoxHmMV/hLTqNemnVDXlXp/8iUO4iShSPjhh
+ U6GGrUsXDmv4xRIxZ9qveFsQFu2JLpzwlZP+o4icwqsYORDobmAXm0GA60FFFk55RnBA
+ Ic33wBwpclZUiJKwDMmP8xYatoQm0//62OrW8s7AgiMzNdLAGSNKnAWOzqpU1gCOm+/b
+ qenw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:message-id:mime-version:subject:from:to:cc;
+ bh=lfK9PM0iV5015ssJsOLZ75ytHguHzFWZ5l8GKq/s9nM=;
+ b=TcGKfOLxYup/6kVqxY+jrKadsZTk+EJOvPeKmN0n/higL+rzcuq7Gsq7kvrE8k2xwZ
+ vMPp9e0aqgY79G6OisBI83+fgySmUtaeSsNW6sisaMTkYiG7bTWhmt0bEfg3ffOLOXQV
+ QrKbmGLHpR/qMJMlW7Wd261fxLyIRKPrE/iebRf4dCDt+GprPZ99dkRZr+sujcB2HuHX
+ DY+SNV0EuoqdBETBNIivaUYQnODFHf5jeSL6hl7ufpqA0jwQTw4c75l5DJEdMBEI9PuA
+ ws7qhrsyhdUs94qaFVsHrV0o73CbLpVFTgnqzIcSM87kMU6M7bUFpOu3Bk8KYSyAcbSs
+ FehA==
+X-Gm-Message-State: APjAAAWVWyguXjDoPiyFzaCGQw8/d96qH6ST2cr6P9QsR68xynGJUPKw
+ d+E3GviWHWPVNHxuKP5ZDLaFHvY+gtGeky1fahy+59GItr0d1fafqb9Ejc8ZwfjA/3AotxEau5Z
+ i2GAozEsyTtEhIEsTNXppSUS/3G8nBBsKWZk7gzHgQebUuSxnOJYp9gftFPrH+n+IdOOCTTtxmq
+ IH5YYhdmSlxJgsMSM=
+X-Google-Smtp-Source: APXvYqx44n2YStIzN7NuQPeuSz18+mXOfADDN+N4juRQa2rUox8ntqpSq1g7X9IGauGCI+ZpTov23IwQacPu4RVg
+X-Received: by 2002:ab0:751a:: with SMTP id m26mr38816428uap.11.1563904745676; 
+ Tue, 23 Jul 2019 10:59:05 -0700 (PDT)
+Date: Tue, 23 Jul 2019 19:58:37 +0200
+Message-Id: <cover.1563904656.git.andreyknvl@google.com>
+Mime-Version: 1.0
+X-Mailer: git-send-email 2.22.0.709.g102302147b-goog
+Subject: [PATCH v19 00/15] arm64: untag user pointers passed to the kernel
+From: Andrey Konovalov <andreyknvl@google.com>
+To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org, 
+ linux-kernel@vger.kernel.org, amd-gfx@lists.freedesktop.org, 
+ dri-devel@lists.freedesktop.org, linux-rdma@vger.kernel.org, 
+ linux-media@vger.kernel.org, kvm@vger.kernel.org, 
+ linux-kselftest@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_105650_006983_484AC876 
-X-CRM114-Status: GOOD (  21.82  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190723_105908_496833_66066F4F 
+X-CRM114-Status: GOOD (  23.83  )
+X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a01:238:20a:202:5300:0:0:6 listed in]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:a4a listed in]
  [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ valid -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,117 +96,358 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tbm@cyrius.com, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Mark Rutland <mark.rutland@arm.com>, Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Kostya Serebryany <kcc@google.com>, Khalid Aziz <khalid.aziz@oracle.com>,
+ Felix Kuehling <Felix.Kuehling@amd.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
+ Dave Martin <Dave.Martin@arm.com>, Evgeniy Stepanov <eugenis@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Dmitry Vyukov <dvyukov@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yishai Hadas <yishaih@mellanox.com>,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SSBqdXN0IGZvdW5kIGFuIG9sZGVyIGxvZyBib290aW5nIGEgTGludXggNC45IHdoZXJlIGl0IHdh
-cyBvazoKCkphbiAgNiAyMDo1NzowMyBzYW0ga2VybmVsOiBbICAgIDAuMDAwMDAwXSBCb290aW5n
-IExpbnV4IG9uIHBoeXNpY2FsIENQVSAweDAKSmFuICA2IDIwOjU3OjAzIHNhbSBrZXJuZWw6IFsg
-ICAgMC4wMDAwMDBdIExpbnV4IHZlcnNpb24gNC45LjAtNC1tYXJ2ZWxsIAooZGViaWFuLWtlcm5l
-bEBsaXN0cy5kZWJpYW4ub3JnKSAoZ2NjIHZlcnNpb24gNi4zLjAgMjAxNzA1MTYgKERlYmlhbiAK
-Ni4zLjAtMTgpICkgIzEgRGViaWFuIDQuOS41MS0xICgyMDE3LTA5LTI4KQpKYW4gIDYgMjA6NTc6
-MDMgc2FtIGtlcm5lbDogWyAgICAwLjAwMDAwMF0gQ1BVOiBGZXJvY2VvbiA4OEZSMTMxIApbNTYy
-NTEzMTFdIHJldmlzaW9uIDEgKEFSTXY1VEUpLCBjcj0wMDA1Mzk3ZgpKYW4gIDYgMjA6NTc6MDMg
-c2FtIGtlcm5lbDogWyAgICAwLjAwMDAwMF0gQ1BVOiBWSVZUIGRhdGEgY2FjaGUsIFZJVlQgCmlu
-c3RydWN0aW9uIGNhY2hlCkphbiAgNiAyMDo1NzowMyBzYW0ga2VybmVsOiBbICAgIDAuMDAwMDAw
-XSBPRjogZmR0Ok1hY2hpbmUgbW9kZWw6IFFOQVAgClRTMjE5IGZhbWlseQoKKC4uKQoKSmFuICA2
-IDIwOjU3OjAzIHNhbSBrZXJuZWw6IFsgICAgMS4wNTIxNzVdIG1vdXNlZGV2OiBQUy8yIG1vdXNl
-IGRldmljZSAKY29tbW9uIGZvciBhbGwgbWljZQpKYW4gIDYgMjA6NTc6MDMgc2FtIGtlcm5lbDog
-WyAgICAyLjA5MDY1NF0gcnRjLW12IGYxMDEwMzAwLnJ0YzogaW50ZXJuYWwgClJUQyBub3QgdGlj
-a2luZwpKYW4gIDYgMjA6NTc6MDMgc2FtIGtlcm5lbDogWyAgICAyLjA5NjIxOV0gaTJjIC9kZXYg
-ZW50cmllcyBkcml2ZXIKSmFuICA2IDIwOjU3OjAzIHNhbSBrZXJuZWw6IFsgICAgMi4xMDE4NTld
-IHJ0Yy1zMzUzOTBhIDAtMDAzMDogcnRjIGNvcmU6IApyZWdpc3RlcmVkIHJ0Yy1zMzUzOTBhIGFz
-IHJ0YzAKSmFuICA2IDIwOjU3OjAzIHNhbSBrZXJuZWw6IFsgICAgMi4xMDkyOTZdIGxlZHRyaWct
-Y3B1OiByZWdpc3RlcmVkIHRvIAppbmRpY2F0ZSBhY3Rpdml0eSBvbiBDUFVzCkphbiAgNiAyMDo1
-NzowMyBzYW0ga2VybmVsOiBbICAgIDIuMTE1NjQwXSBORVQ6IFJlZ2lzdGVyZWQgcHJvdG9jb2wg
-CmZhbWlseSAxNwpKYW4gIDYgMjA6NTc6MDMgc2FtIGtlcm5lbDogWyAgICAyLjEyMDUzNl0gcmVn
-aXN0ZXJlZCB0YXNrc3RhdHMgdmVyc2lvbiAxCkphbiAgNiAyMDo1NzowMyBzYW0ga2VybmVsOiBb
-ICAgIDIuMTI0Njk1XSB6c3dhcDogbG9hZGVkIHVzaW5nIHBvb2wgbHpvL3pidWQKSmFuICA2IDIw
-OjU3OjAzIHNhbSBrZXJuZWw6IFsgICAgMi4xMjk4NTJdIHJhbmRvbTogZmFzdCBpbml0IGRvbmUK
-SmFuICA2IDIwOjU3OjAzIHNhbSBrZXJuZWw6IFsgICAgMi4xMzM0NDFdIHJ0Yy1zMzUzOTBhIDAt
-MDAzMDogc2V0dGluZyAKc3lzdGVtIGNsb2NrIHRvIDIwMTgtMDEtMDYgMTk6NTY6NTMgVVRDICgx
-NTE1MjY4NjEzKQpKYW4gIDYgMjA6NTc6MDMgc2FtIGtlcm5lbDogWyAgICAyLjE0MzAzOV0gRnJl
-ZWluZyB1bnVzZWQga2VybmVsIG1lbW9yeTogCjI5NksKCkp1c3Qgd29uZGVyaW5nIHdoZXRoZXIg
-dGhpcyBhIGtlcm5lbCBwcm9ibGVtIG9yIGEgc3lzdGVtZCB0aGluZy4KCkF0IGxlYXN0IHRoZSBy
-dGMtczM1MzkwYSBtb2R1bGUgaXMgbG9hZGVkIGJlZm9yZSBpcyBpcyBhY2Nlc3NlZC4KClJlZ2Fy
-ZHMsCk9saXZlcgoKPiBIaSBBbmRyZXcsCj4gCj4gT24gMjMuMDcuMTkgMTg6MTIsIEFuZHJldyBM
-dW5uIHdyb3RlOgo+PiBPbiBUdWUsIEp1bCAyMywgMjAxOSBhdCAwNTozMDo0OFBNICswMjAwLCBP
-bGl2ZXIgSGFydGtvcHAgd3JvdGU6Cj4gCj4+PiBJIHVwZ3JhZGVkIG15IFRTLTIxOSB0byBEZWJp
-YW4gQnVzdGVyIHdpdGggS2VybmVsIDQuMTkuMC01LW1hcnZlbGwuCj4+Cj4+IEhpIE9saXZlcgo+
-Pgo+PiBEaWQgdGhlIHNhbWUgdGVzdCB3b3JrIHdpdGggb2xkZXIgRGViaWFucz8KPj4KPiAKPiBJ
-J20gbm90IHJlYWxseSBzdXJlIHdoZW4gaXQgaGFwcGVuZWQsIGFzIEkgd2FzIHVzaW5nIHRoZSAn
-dGVzdGluZycgCj4gcmVsZWFzZSB3aGljaCBub3cgbGVhZCB0byBCdXN0ZXIuIEkgaGF2ZSBubyBj
-bGVhciBwb2ludCB3aGVyZSB0byBsb29rLiAKPiBKdXN0IGRldGVjdGVkIHNvbWUgYm9vdCBkZWxh
-eSBhbmQgbG9va2VkIGludG8gdGhlIHN5c2N0bCBsb2cgd2ljaCBtb3ZlZCAKPiB0aGUgY2xvY2sg
-Zm9yd2FyZCBiYXNlZCBvbiBmYWN0LCB0aGF0IHRoZSBpbnN0YWxsZWQgYmluYXJpZXMgd2hlcmUg
-Cj4geW91bmdlciB0aGFuIHRoZSBzeXN0ZW0gY2xvY2suICUtKAo+IAo+Pj4gSSB3b25kZXIgd2hl
-dGhlciB0aGUgcHJvYmxlbSBjb21lcyBmcm9tIGEgbWlzc2luZyBpbnRlcnJ1cHQgYXNzaWdubWVu
-dAo+Pj4KPj4+IHJ0YzogcnRjQDEwMzAwIHsKPj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-IGNvbXBhdGlibGUgPSAibWFydmVsbCxraXJrd29vZC1ydGMiLCAibWFydmVsbCxvcmlvbi1ydGMi
-Owo+Pj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcmVnID0gPDB4MTAzMDAgMHgyMD47Cj4+
-PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBpbnRlcnJ1cHRzID0gPDUzPjvCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgIDwtIEhFUkUhPyEKPj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGNs
-b2NrcyA9IDwmZ2F0ZV9jbGsgNz47Cj4+PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAg
-fTsKPj4+Cj4+PiAuLi4gSSBmb3VuZCBpbiBsaW51eC9hcmNoL2FybS9ib290L2R0cy9raXJrd29v
-ZC02MjgyLmR0c2kgPyE/Cj4+Pgo+Pj4gSW4gL3Byb2MvaW50ZXJydXB0cyB0aGVyZSdzIG5vIHJ0
-YyBhc3NpZ25lZCB0byBhbiBpbnRlcnJ1cHQgNTMuCj4+Cj4+IFRoZXJlIGlzIGNvZGUgaW4gdGhl
-IGRyaXZlciB0byByZXF1ZXN0IHRoaXMgaW50ZXJydXB0LiBEbyB5b3Ugc2VlIGFuCj4+IGVycm9y
-IG1lc3NhZ2UgbGlrZToKPj4KPj4gaW50ZXJydXB0IG5vdCBhdmFpbGFibGUuCj4+Cj4gCj4gTm8u
-Cj4gCj4+PiBBY2Nlc3NpbmcgdGhlIHJ0YyB2YWx1ZXMgKHRpbWUvZGF0ZSkgdmlhIC9zeXMvY2xh
-c3MvcnRjL3J0YzAgZW50cmllcyAKPj4+IHdvcmtzCj4+PiB3ZWxsIGFuZCBzZXR0aW5nIHRoZSBk
-YXRlL3RpbWUgdmlhICJod2Nsb2NrIC0tc3lzdG9oYyIgZG9lcyBpdHMgam9iIAo+Pj4gdG9vLiBT
-bwo+Pj4gSTJDIGFuZCB0aGUgcnRjX3MzNTM5MGEgZHJpdmVyIHNlZW0gdG8gd29yayBzbyBmYXIu
-Cj4+Cj4+IE5vdyBpJ20gY29uZnVzZWQuIEkgZG9uJ3Qgc2VlIGFueSBtZW50aW9uIG9mIHMzNTM5
-MGEgZm9yIGFueSBUUwo+PiBkZXZpY2VzLiBTb21lIGtpcmt3b29kIG1hY2hpbmVzIGRvIG1ha2Ug
-dXNlIG9mIGFuIGV4dGVybmFsIFJUQywgbm90Cj4+IHRoZSBidWlsdCBpbi4gQnV0IG5vdCB0aGlz
-IG1hY2hpbmUsIGFzIGZhciBhcyBpIGtub3cuCj4gCj4gSSBzbmlwcGVkIHNvbWUgZG1lc2cgbG9n
-IHBvaW50aW5nIHRvIHRoZSBtYWNoaW5lICYgY2xvY2svcnRjOgo+IAo+IFvCoMKgwqAgMC4wMDAw
-MDBdIEJvb3RpbmcgTGludXggb24gcGh5c2ljYWwgQ1BVIDB4MAo+IFvCoMKgwqAgMC4wMDAwMDBd
-IExpbnV4IHZlcnNpb24gNC4xOS4wLTUtbWFydmVsbCAKPiAoZGViaWFuLWtlcm5lbEBsaXN0cy5k
-ZWJpYW4ub3JnKSAoZ2NjIHZlcnNpb24gOC4zLjAgKERlYmlhbiA4LjMuMC03KSkgIzEgCj4gRGVi
-aWFuIDQuMTkuMzctNSAoMjAxOS0wNi0xOSkKPiBbwqDCoMKgIDAuMDAwMDAwXSBDUFU6IEZlcm9j
-ZW9uIDg4RlIxMzEgWzU2MjUxMzExXSByZXZpc2lvbiAxIChBUk12NVRFKSwgCj4gY3I9MDAwNTM5
-N2YKPiBbwqDCoMKgIDAuMDAwMDAwXSBDUFU6IFZJVlQgZGF0YSBjYWNoZSwgVklWVCBpbnN0cnVj
-dGlvbiBjYWNoZQo+IFvCoMKgwqAgMC4wMDAwMDBdIE9GOiBmZHQ6IE1hY2hpbmUgbW9kZWw6IFFO
-QVAgVFMyMTkgZmFtaWx5Cj4gCj4gKC4uKQo+IAo+IFvCoMKgwqAgMC4wMDAwMDBdIGNsb2Nrc291
-cmNlOiBvcmlvbl9jbG9ja3NvdXJjZTogbWFzazogMHhmZmZmZmZmZiAKPiBtYXhfY3ljbGVzOiAw
-eGZmZmZmZmZmLCBtYXhfaWRsZV9uczogOTU1NjMwMjIzMyBucwo+IFvCoMKgwqAgMC4wMDAwMDZd
-IHNjaGVkX2Nsb2NrOiAzMiBiaXRzIGF0IDIwME1IeiwgcmVzb2x1dGlvbiA1bnMsIHdyYXBzIAo+
-IGV2ZXJ5IDEwNzM3NDE4MjM3bnMKPiBbwqDCoMKgIDAuMDAwMDMwXSBTd2l0Y2hpbmcgdG8gdGlt
-ZXItYmFzZWQgZGVsYXkgbG9vcCwgcmVzb2x1dGlvbiA1bnMKPiBbwqDCoMKgIDAuMDAwMDk5XSBD
-YWxpYnJhdGluZyBkZWxheSBsb29wIChza2lwcGVkKSwgdmFsdWUgY2FsY3VsYXRlZCB1c2luZyAK
-PiB0aW1lciBmcmVxdWVuY3kuLiA0MDAuMDAgQm9nb01JUFMgKGxwaj04MDAwMDApCj4gW8KgwqDC
-oCAwLjAwMDExN10gcGlkX21heDogZGVmYXVsdDogMzI3NjggbWluaW11bTogMzAxCj4gW8KgwqDC
-oCAwLjAwMDMyOV0gU2VjdXJpdHkgRnJhbWV3b3JrIGluaXRpYWxpemVkCj4gW8KgwqDCoCAwLjAw
-MDM0NF0gWWFtYTogZGlzYWJsZWQgYnkgZGVmYXVsdDsgZW5hYmxlIHdpdGggc3lzY3RsIGtlcm5l
-bC55YW1hLioKPiBbwqDCoMKgIDAuMDAwNDI3XSBBcHBBcm1vcjogQXBwQXJtb3IgaW5pdGlhbGl6
-ZWQKPiBbwqDCoMKgIDAuMDAwNTI4XSBNb3VudC1jYWNoZSBoYXNoIHRhYmxlIGVudHJpZXM6IDEw
-MjQgKG9yZGVyOiAwLCA0MDk2IGJ5dGVzKQo+IFvCoMKgwqAgMC4wMDA1NDRdIE1vdW50cG9pbnQt
-Y2FjaGUgaGFzaCB0YWJsZSBlbnRyaWVzOiAxMDI0IChvcmRlcjogMCwgNDA5NiAKPiBieXRlcykK
-PiBbwqDCoMKgIDAuMDAxMjg4XSBDUFU6IFRlc3Rpbmcgd3JpdGUgYnVmZmVyIGNvaGVyZW5jeTog
-b2sKPiBbwqDCoMKgIDAuMDAyMDI3XSBTZXR0aW5nIHVwIHN0YXRpYyBpZGVudGl0eSBtYXAgZm9y
-IDB4ODIwMCAtIDB4ODIzYwo+IFvCoMKgwqAgMC4wMDIyMDddIG12ZWJ1LXNvYy1pZDogTVZFQlUg
-U29DIElEPTB4NjI4MiwgUmV2PTB4MAo+IFvCoMKgwqAgMC4wMDM1MzZdIGRldnRtcGZzOiBpbml0
-aWFsaXplZAo+IFvCoMKgwqAgMC4wMDYyNjFdIFZGUCBzdXBwb3J0IHYwLjM6IG5vdCBwcmVzZW50
-Cj4gW8KgwqDCoCAwLjAwNjM3OF0gY2xvY2tzb3VyY2U6IGppZmZpZXM6IG1hc2s6IDB4ZmZmZmZm
-ZmYgbWF4X2N5Y2xlczogCj4gMHhmZmZmZmZmZiwgbWF4X2lkbGVfbnM6IDc2NDUwNDE3ODUxMDAw
-MDAgbnMKPiAKPiAoLi4pCj4gCj4gW8KgwqDCoCAxLjE5ODAyNl0gaGN0b3N5czogdW5hYmxlIHRv
-IG9wZW4gcnRjIGRldmljZSAocnRjMCkKPiBbwqDCoMKgIDEuMjA1MzI0XSBGcmVlaW5nIHVudXNl
-ZCBrZXJuZWwgbWVtb3J5OiAzMTJLCj4gW8KgwqDCoCAxLjIwOTgwNF0gVGhpcyBhcmNoaXRlY3R1
-cmUgZG9lcyBub3QgaGF2ZSBrZXJuZWwgbWVtb3J5IHByb3RlY3Rpb24uCj4gW8KgwqDCoCAxLjIx
-NjI3Nl0gUnVuIC9pbml0IGFzIGluaXQgcHJvY2Vzcwo+IFvCoMKgwqAgMS4yOTk1MzZdIHJhbmRv
-bTogZmFzdCBpbml0IGRvbmUKPiBbwqDCoMKgIDEuNTgxNzQxXSBydGMtczM1MzkwYSAwLTAwMzA6
-IHJ0YyBjb3JlOiByZWdpc3RlcmVkIHJ0Yy1zMzUzOTBhIGFzIHJ0YzAKPiAKPiAoLi4pCj4gCj4g
-W8KgwqAgMTEuMzk1NTY1XSBydGMtbXYgZjEwMTAzMDAucnRjOiBpbnRlcm5hbCBSVEMgbm90IHRp
-Y2tpbmcKPiAKPiBJIGdvdCB0aGUgaW5mb3JtYXRpb24gZnJvbSBNYXJ0aW4gTWljaGxtYXlyJ3Mg
-UXVhcCBEZWJpYW4gcGFnZXM6Cj4gaHR0cDovL3d3dy5jeXJpdXMuY29tL2RlYmlhbi9raXJrd29v
-ZC9xbmFwL3RzLTIxOS9zdGF0dXMvCj4gaHR0cDovL3d3dy5jeXJpdXMuY29tL2RlYmlhbi9raXJr
-d29vZC9xbmFwL3RzLTExOS9zdGF0dXMvCj4gCj4gUlRDOiBTdXBwb3J0ZWQgaW4gdGhlIGtlcm5l
-bCBieSB0aGUgcnRjLXMzNTM5MGEgbW9kdWxlCj4gCj4gVGhhbmtzIGZvciB5b3VyIGhlbHAhCj4g
-Cj4gQmVzdCwKPiBPbGl2ZXIKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
-bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+=== Overview
+
+arm64 has a feature called Top Byte Ignore, which allows to embed pointer
+tags into the top byte of each pointer. Userspace programs (such as
+HWASan, a memory debugging tool [1]) might use this feature and pass
+tagged user pointers to the kernel through syscalls or other interfaces.
+
+Right now the kernel is already able to handle user faults with tagged
+pointers, due to these patches:
+
+1. 81cddd65 ("arm64: traps: fix userspace cache maintenance emulation on a
+             tagged pointer")
+2. 7dcd9dd8 ("arm64: hw_breakpoint: fix watchpoint matching for tagged
+	      pointers")
+3. 276e9327 ("arm64: entry: improve data abort handling of tagged
+	      pointers")
+
+This patchset extends tagged pointer support to syscall arguments.
+
+As per the proposed ABI change [3], tagged pointers are only allowed to be
+passed to syscalls when they point to memory ranges obtained by anonymous
+mmap() or sbrk() (see the patchset [3] for more details).
+
+For non-memory syscalls this is done by untaging user pointers when the
+kernel performs pointer checking to find out whether the pointer comes
+from userspace (most notably in access_ok). The untagging is done only
+when the pointer is being checked, the tag is preserved as the pointer
+makes its way through the kernel and stays tagged when the kernel
+dereferences the pointer when perfoming user memory accesses.
+
+The mmap and mremap (only new_addr) syscalls do not currently accept
+tagged addresses. Architectures may interpret the tag as a background
+colour for the corresponding vma.
+
+Other memory syscalls (mprotect, etc.) don't do user memory accesses but
+rather deal with memory ranges, and untagged pointers are better suited to
+describe memory ranges internally. Thus for memory syscalls we untag
+pointers completely when they enter the kernel.
+
+=== Other approaches
+
+One of the alternative approaches to untagging that was considered is to
+completely strip the pointer tag as the pointer enters the kernel with
+some kind of a syscall wrapper, but that won't work with the countless
+number of different ioctl calls. With this approach we would need a custom
+wrapper for each ioctl variation, which doesn't seem practical.
+
+An alternative approach to untagging pointers in memory syscalls prologues
+is to inspead allow tagged pointers to be passed to find_vma() (and other
+vma related functions) and untag them there. Unfortunately, a lot of
+find_vma() callers then compare or subtract the returned vma start and end
+fields against the pointer that was being searched. Thus this approach
+would still require changing all find_vma() callers.
+
+=== Testing
+
+The following testing approaches has been taken to find potential issues
+with user pointer untagging:
+
+1. Static testing (with sparse [2] and separately with a custom static
+   analyzer based on Clang) to track casts of __user pointers to integer
+   types to find places where untagging needs to be done.
+
+2. Static testing with grep to find parts of the kernel that call
+   find_vma() (and other similar functions) or directly compare against
+   vm_start/vm_end fields of vma.
+
+3. Static testing with grep to find parts of the kernel that compare
+   user pointers with TASK_SIZE or other similar consts and macros.
+
+4. Dynamic testing: adding BUG_ON(has_tag(addr)) to find_vma() and running
+   a modified syzkaller version that passes tagged pointers to the kernel.
+
+Based on the results of the testing the requried patches have been added
+to the patchset.
+
+=== Notes
+
+This patchset is meant to be merged together with "arm64 relaxed ABI" [3].
+
+This patchset is a prerequisite for ARM's memory tagging hardware feature
+support [4].
+
+This patchset has been merged into the Pixel 2 & 3 kernel trees and is
+now being used to enable testing of Pixel phones with HWASan.
+
+Thanks!
+
+[1] http://clang.llvm.org/docs/HardwareAssistedAddressSanitizerDesign.html
+
+[2] https://github.com/lucvoo/sparse-dev/commit/5f960cb10f56ec2017c128ef9d16060e0145f292
+
+[3] https://lkml.org/lkml/2019/6/12/745
+
+[4] https://community.arm.com/processors/b/blog/posts/arm-a-profile-architecture-2018-developments-armv85a
+
+=== History
+
+Changes in v19:
+- Rebased onto 7b5cf701 (5.3-rc1+).
+
+Changes in v18:
+- Reverted the selftest back to not using the LD_PRELOAD approach.
+- Added prctl(PR_SET_TAGGED_ADDR_CTRL) call to the selftest.
+- Reworded the patch descriptions to make them less oriented on arm64
+  only.
+- Catalin's patch: "I added a Kconfig option and dropped the prctl args
+  zero check. There is some minor clean-up as well".
+
+Changes in v17:
+- The "uaccess: add noop untagged_addr definition" patch is dropped, as it
+  was merged into upstream named as "uaccess: add noop untagged_addr
+  definition".
+- Merged "mm, arm64: untag user pointers in do_pages_move" into
+  "mm, arm64: untag user pointers passed to memory syscalls".
+- Added "arm64: Introduce prctl() options to control the tagged user
+  addresses ABI" patch from Catalin.
+- Add tags_lib.so to tools/testing/selftests/arm64/.gitignore.
+- Added a comment clarifying untagged in mremap.
+- Moved untagging back into mlx4_get_umem_mr() for the IB patch.
+
+Changes in v16:
+- Moved untagging for memory syscalls from arm64 wrappers back to generic
+  code.
+- Dropped untagging for the following memory syscalls: brk, mmap, munmap;
+  mremap (only dropped for new_address); mmap_pgoff (not used on arm64);
+  remap_file_pages (deprecated); shmat, shmdt (work on shared memory).
+- Changed kselftest to LD_PRELOAD a shared library that overrides malloc
+  to return tagged pointers.
+- Rebased onto 5.2-rc3.
+
+Changes in v15:
+- Removed unnecessary untagging from radeon_ttm_tt_set_userptr().
+- Removed unnecessary untagging from amdgpu_ttm_tt_set_userptr().
+- Moved untagging to validate_range() in userfaultfd code.
+- Moved untagging to ib_uverbs_(re)reg_mr() from mlx4_get_umem_mr().
+- Rebased onto 5.1.
+
+Changes in v14:
+- Moved untagging for most memory syscalls to an arm64 specific
+  implementation, instead of doing that in the common code.
+- Dropped "net, arm64: untag user pointers in tcp_zerocopy_receive", since
+  the provided user pointers don't come from an anonymous map and thus are
+  not covered by this ABI relaxation.
+- Dropped "kernel, arm64: untag user pointers in prctl_set_mm*".
+- Moved untagging from __check_mem_type() to tee_shm_register().
+- Updated untagging for the amdgpu and radeon drivers to cover the MMU
+  notifier, as suggested by Felix.
+- Since this ABI relaxation doesn't actually allow tagged instruction
+  pointers, dropped the following patches:
+- Dropped "tracing, arm64: untag user pointers in seq_print_user_ip".
+- Dropped "uprobes, arm64: untag user pointers in find_active_uprobe".
+- Dropped "bpf, arm64: untag user pointers in stack_map_get_build_id_offset".
+- Rebased onto 5.1-rc7 (37624b58).
+
+Changes in v13:
+- Simplified untagging in tcp_zerocopy_receive().
+- Looked at find_vma() callers in drivers/, which allowed to identify a
+  few other places where untagging is needed.
+- Added patch "mm, arm64: untag user pointers in get_vaddr_frames".
+- Added patch "drm/amdgpu, arm64: untag user pointers in
+  amdgpu_ttm_tt_get_user_pages".
+- Added patch "drm/radeon, arm64: untag user pointers in
+  radeon_ttm_tt_pin_userptr".
+- Added patch "IB/mlx4, arm64: untag user pointers in mlx4_get_umem_mr".
+- Added patch "media/v4l2-core, arm64: untag user pointers in
+  videobuf_dma_contig_user_get".
+- Added patch "tee/optee, arm64: untag user pointers in check_mem_type".
+- Added patch "vfio/type1, arm64: untag user pointers".
+
+Changes in v12:
+- Changed untagging in tcp_zerocopy_receive() to also untag zc->address.
+- Fixed untagging in prctl_set_mm* to only untag pointers for vma lookups
+  and validity checks, but leave them as is for actual user space accesses.
+- Updated the link to the v2 of the "arm64 relaxed ABI" patchset [3].
+- Dropped the documentation patch, as the "arm64 relaxed ABI" patchset [3]
+  handles that.
+
+Changes in v11:
+- Added "uprobes, arm64: untag user pointers in find_active_uprobe" patch.
+- Added "bpf, arm64: untag user pointers in stack_map_get_build_id_offset"
+  patch.
+- Fixed "tracing, arm64: untag user pointers in seq_print_user_ip" to
+  correctly perform subtration with a tagged addr.
+- Moved untagged_addr() from SYSCALL_DEFINE3(mprotect) and
+  SYSCALL_DEFINE4(pkey_mprotect) to do_mprotect_pkey().
+- Moved untagged_addr() definition for other arches from
+  include/linux/memory.h to include/linux/mm.h.
+- Changed untagging in strn*_user() to perform userspace accesses through
+  tagged pointers.
+- Updated the documentation to mention that passing tagged pointers to
+  memory syscalls is allowed.
+- Updated the test to use malloc'ed memory instead of stack memory.
+
+Changes in v10:
+- Added "mm, arm64: untag user pointers passed to memory syscalls" back.
+- New patch "fs, arm64: untag user pointers in fs/userfaultfd.c".
+- New patch "net, arm64: untag user pointers in tcp_zerocopy_receive".
+- New patch "kernel, arm64: untag user pointers in prctl_set_mm*".
+- New patch "tracing, arm64: untag user pointers in seq_print_user_ip".
+
+Changes in v9:
+- Rebased onto 4.20-rc6.
+- Used u64 instead of __u64 in type casts in the untagged_addr macro for
+  arm64.
+- Added braces around (addr) in the untagged_addr macro for other arches.
+
+Changes in v8:
+- Rebased onto 65102238 (4.20-rc1).
+- Added a note to the cover letter on why syscall wrappers/shims that untag
+  user pointers won't work.
+- Added a note to the cover letter that this patchset has been merged into
+  the Pixel 2 kernel tree.
+- Documentation fixes, in particular added a list of syscalls that don't
+  support tagged user pointers.
+
+Changes in v7:
+- Rebased onto 17b57b18 (4.19-rc6).
+- Dropped the "arm64: untag user address in __do_user_fault" patch, since
+  the existing patches already handle user faults properly.
+- Dropped the "usb, arm64: untag user addresses in devio" patch, since the
+  passed pointer must come from a vma and therefore be untagged.
+- Dropped the "arm64: annotate user pointers casts detected by sparse"
+  patch (see the discussion to the replies of the v6 of this patchset).
+- Added more context to the cover letter.
+- Updated Documentation/arm64/tagged-pointers.txt.
+
+Changes in v6:
+- Added annotations for user pointer casts found by sparse.
+- Rebased onto 050cdc6c (4.19-rc1+).
+
+Changes in v5:
+- Added 3 new patches that add untagging to places found with static
+  analysis.
+- Rebased onto 44c929e1 (4.18-rc8).
+
+Changes in v4:
+- Added a selftest for checking that passing tagged pointers to the
+  kernel succeeds.
+- Rebased onto 81e97f013 (4.18-rc1+).
+
+Changes in v3:
+- Rebased onto e5c51f30 (4.17-rc6+).
+- Added linux-arch@ to the list of recipients.
+
+Changes in v2:
+- Rebased onto 2d618bdf (4.17-rc3+).
+- Removed excessive untagging in gup.c.
+- Removed untagging pointers returned from __uaccess_mask_ptr.
+
+Changes in v1:
+- Rebased onto 4.17-rc1.
+
+Changes in RFC v2:
+- Added "#ifndef untagged_addr..." fallback in linux/uaccess.h instead of
+  defining it for each arch individually.
+- Updated Documentation/arm64/tagged-pointers.txt.
+- Dropped "mm, arm64: untag user addresses in memory syscalls".
+- Rebased onto 3eb2ce82 (4.16-rc7).
+
+Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
+
+Andrey Konovalov (14):
+  arm64: untag user pointers in access_ok and __uaccess_mask_ptr
+  lib: untag user pointers in strn*_user
+  mm: untag user pointers passed to memory syscalls
+  mm: untag user pointers in mm/gup.c
+  mm: untag user pointers in get_vaddr_frames
+  fs/namespace: untag user pointers in copy_mount_options
+  userfaultfd: untag user pointers
+  drm/amdgpu: untag user pointers
+  drm/radeon: untag user pointers in radeon_gem_userptr_ioctl
+  IB/mlx4: untag user pointers in mlx4_get_umem_mr
+  media/v4l2-core: untag user pointers in videobuf_dma_contig_user_get
+  tee/shm: untag user pointers in tee_shm_register
+  vfio/type1: untag user pointers in vaddr_get_pfn
+  selftests, arm64: add a selftest for passing tagged pointers to kernel
+
+Catalin Marinas (1):
+  arm64: Introduce prctl() options to control the tagged user addresses
+    ABI
+
+ arch/arm64/Kconfig                            |  9 +++
+ arch/arm64/include/asm/processor.h            |  8 ++
+ arch/arm64/include/asm/thread_info.h          |  1 +
+ arch/arm64/include/asm/uaccess.h              | 12 ++-
+ arch/arm64/kernel/process.c                   | 73 +++++++++++++++++++
+ .../gpu/drm/amd/amdgpu/amdgpu_amdkfd_gpuvm.c  |  2 +-
+ drivers/gpu/drm/amd/amdgpu/amdgpu_gem.c       |  2 +
+ drivers/gpu/drm/radeon/radeon_gem.c           |  2 +
+ drivers/infiniband/hw/mlx4/mr.c               |  7 +-
+ drivers/media/v4l2-core/videobuf-dma-contig.c |  9 ++-
+ drivers/tee/tee_shm.c                         |  1 +
+ drivers/vfio/vfio_iommu_type1.c               |  2 +
+ fs/namespace.c                                |  2 +-
+ fs/userfaultfd.c                              | 22 +++---
+ include/uapi/linux/prctl.h                    |  5 ++
+ kernel/sys.c                                  | 12 +++
+ lib/strncpy_from_user.c                       |  3 +-
+ lib/strnlen_user.c                            |  3 +-
+ mm/frame_vector.c                             |  2 +
+ mm/gup.c                                      |  4 +
+ mm/madvise.c                                  |  2 +
+ mm/mempolicy.c                                |  3 +
+ mm/migrate.c                                  |  2 +-
+ mm/mincore.c                                  |  2 +
+ mm/mlock.c                                    |  4 +
+ mm/mprotect.c                                 |  2 +
+ mm/mremap.c                                   |  7 ++
+ mm/msync.c                                    |  2 +
+ tools/testing/selftests/arm64/.gitignore      |  1 +
+ tools/testing/selftests/arm64/Makefile        | 11 +++
+ .../testing/selftests/arm64/run_tags_test.sh  | 12 +++
+ tools/testing/selftests/arm64/tags_test.c     | 29 ++++++++
+ 32 files changed, 233 insertions(+), 25 deletions(-)
+ create mode 100644 tools/testing/selftests/arm64/.gitignore
+ create mode 100644 tools/testing/selftests/arm64/Makefile
+ create mode 100755 tools/testing/selftests/arm64/run_tags_test.sh
+ create mode 100644 tools/testing/selftests/arm64/tags_test.c
+
+-- 
+2.22.0.709.g102302147b-goog
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
