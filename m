@@ -2,73 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F39B271F50
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 20:31:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46A8671F5B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 20:31:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
-	To:From:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=x3EQ0uvZPZGcNFhWPSdW1sZ2YCz7jr9fY3cUzWlhf7Q=; b=aIzbK9sTeXz6EHInFIxh93IVn
-	GDxEzKAAq+2QO7LMi5FJHrCE1YpJFiIiZsAjC66LbjeIuIVOYC0lPvoO9rfn0eriuFkUSOzwPaB7t
-	RbI7q+umFWlTdhu0y1Au0LUdDf4WVM2hv3s629HcQIOJnQKw7fSKjyolq+xTro+PdhUsN6Cd10ET2
-	h3darNCm07/rwJEAvEtGIEFCJ3rEUrECY2i5E7jIh9BZSys4/NWwuQ7xlTD72uA0crG9DflPVQY6p
-	uQzQfTP5eOq3L6CNO+FDM+I+yVIYfpfkQoIJ7NuV1v83venQZWfP5cJe6/WSBZTfu1UwFSI2CPY4j
-	NbhYYvn9g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mRWmN9ckUJyYky8ySFRzW/lizXWDl+KshLa4LMqFo0I=; b=IE3yJB/oQkOLXu
+	gLgQMfrOL3aqp4U7QWxnMQ6piXAkMBNkHLD9RUBkzwHwCxTj/GzLYPF+GYFKy9tV/ElM4w9/yJA6g
+	XowSVUlF76F9EkQtyeL4JJy/5ldrhX0bh5B+k82Ip7Tgn1wVaJ/DA3iZbjTtSWN4OjazoExvrIdRK
+	x/It41NF+K+UHj04+El4NgDdR61jk3UhTtp3QA0H5PDQx59nKRO4R3WO5npoCSYQkIRuFNNWbBazl
+	qZJ1pjI9oA+h459K5ImK7lXNeN4bCPyhmR5hSl9epBQsywZ/Yo54AqgEGnPmUEcaeXxezaRWYMJw7
+	x7itZaewTtduu/mmQEug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpzZ0-0008T4-15; Tue, 23 Jul 2019 18:31:02 +0000
-Received: from mo6-p01-ob.smtp.rzone.de ([2a01:238:20a:202:5301::11])
+	id 1hpzZp-0000is-Lv; Tue, 23 Jul 2019 18:31:53 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpzYn-0008JM-Cx
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 18:30:52 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1563906646;
- s=strato-dkim-0002; d=hartkopp.net;
- h=In-Reply-To:Date:Message-ID:References:Cc:To:From:Subject:
- X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=YW8nfvktRC5sD0dcrnSXnVx80QVEWkyZDbUb/+xw/tA=;
- b=lJlU/5oEuvZPxy/LSZ6O4O99RvnVhf72q5hfUhBWGoz074W07Y+ONd5932sKxa/4FM
- M+qmJGoxWTvjH8aE3kYelwVzvrWSQErDBQf6meBh7h6140hnrCsJpk3v6vp083T1olzN
- TpEi6z9wnRJF7BmSMxhdQqfEgMHlk6ilKco/8wAoajAJc816uNf7g+ZaeZUcOdWtIzVK
- Jtp7/rj8p9NGzAtmIlXgJpkuBMPGdylM3mhq51HoRFuaoxbMG/IZsOBDUzo2XMWqb0Sz
- UbL4XgT+yCjWdxVyHjOwvfOVYQWvEw26lnpLTZ+Vm279klFOOx3QjiliPegNbi+Q+H6I
- AExA==
-X-RZG-AUTH: ":P2MHfkW8eP4Mre39l357AZT/I7AY/7nT2yrDxb8mjG14FZxedJy6qgO1o3PMaViOoLMJV8h6liA="
-X-RZG-CLASS-ID: mo00
-Received: from [192.168.1.200] by smtp.strato.de (RZmta 44.24 DYNA|AUTH)
- with ESMTPSA id k05d3bv6NIUkf5S
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve secp521r1 with
- 521 ECDH bits, eq. 15360 bits RSA))
- (Client did not present a certificate);
- Tue, 23 Jul 2019 20:30:46 +0200 (CEST)
-Subject: Re: TS-219 RTC issue with Debian Buster
-From: Oliver Hartkopp <socketcan@hartkopp.net>
-To: Andrew Lunn <andrew@lunn.ch>
-References: <99a8e2cc-61a2-3b43-0d72-6f001cffe572@hartkopp.net>
- <20190723161212.GA8095@lunn.ch>
- <8d771e5c-9df4-779c-5814-c8b62c309f82@hartkopp.net>
- <6ab1b4e0-3211-7cd4-306d-4b0077ed5e8e@hartkopp.net>
-Message-ID: <5180dbff-1c84-a0ec-6268-b438831a0a44@hartkopp.net>
-Date: Tue, 23 Jul 2019 20:30:45 +0200
+ id 1hpzZb-0000iE-7f
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 18:31:40 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x6NIVaCT063191;
+ Tue, 23 Jul 2019 13:31:36 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1563906696;
+ bh=9cv0+/SVJMPPDN0ZhXDWZYsyy291EnVoJwpIzV02j8M=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=SeHacVK8t8RCkv+qAMQXCHTb6PB5lzmPbPg+KdmGrP+jyoTeiqZD0/n1ltfNLbthV
+ x7QfW3TGGjmgaa/0bqdDHOHZUzwJjtHyA63cjRBgwevKfkv/g92Dr4/MBFo7eGzDD4
+ 7oiKUwn7vFUJfLYTwAlaNeX2eS2s+o4s4RbIb+VY=
+Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x6NIVaKB079235
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Tue, 23 Jul 2019 13:31:36 -0500
+Received: from DFLE109.ent.ti.com (10.64.6.30) by DFLE103.ent.ti.com
+ (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 23
+ Jul 2019 13:31:36 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE109.ent.ti.com
+ (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Tue, 23 Jul 2019 13:31:36 -0500
+Received: from [128.247.58.153] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x6NIVZ6q129119;
+ Tue, 23 Jul 2019 13:31:36 -0500
+Subject: Re: [PATCH 3/8] bus: ti-sysc: Fix handling of forced idle
+To: Tony Lindgren <tony@atomide.com>, <linux-omap@vger.kernel.org>
+References: <20190723112811.44381-1-tony@atomide.com>
+ <20190723112811.44381-4-tony@atomide.com>
+From: Suman Anna <s-anna@ti.com>
+Message-ID: <4336e7ef-3857-e42f-e67c-94809acc59b8@ti.com>
+Date: Tue, 23 Jul 2019 13:31:35 -0500
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <6ab1b4e0-3211-7cd4-306d-4b0077ed5e8e@hartkopp.net>
+In-Reply-To: <20190723112811.44381-4-tony@atomide.com>
 Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_113050_042631_8C2B7E11 
-X-CRM114-Status: GOOD (  23.29  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190723_113139_360999_52C7D977 
+X-CRM114-Status: GOOD (  16.58  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a01:238:20a:202:5301:0:0:11 listed in]
- [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.248 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -76,6 +80,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,141 +92,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tbm@cyrius.com, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Nishanth Menon <nm@ti.com>, Tero Kristo <t-kristo@ti.com>,
+ Dave Gerlach <d-gerlach@ti.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Peter Ujfalusi <peter.ujfalusi@ti.com>, Faiz Abbas <faiz_abbas@ti.com>,
+ Keerthy <j-keerthy@ti.com>, linux-arm-kernel@lists.infradead.org,
+ Roger Quadros <rogerq@ti.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-U29ycnkgZm9yIGFuc3dlcmluZyBteXNlbGYgYWdhaW4gLi4KCkFmdGVyIGluc3RhbGxpbmcgdGhl
-IDQuOS4wLTQtbWFydmVsbCBrZXJuZWwgKGZyb20gb2xkIHN0YWJsZSBTdHJldGNoKSBvbiAKbXkg
-RGViaWFuIEJ1c3RlciBzeXN0ZW0gaXQgd29ya3MgbGlrZSBiZWZvcmU6CgpbICAgIDEuMTAxMjE0
-XSBtb3VzZWRldjogUFMvMiBtb3VzZSBkZXZpY2UgY29tbW9uIGZvciBhbGwgbWljZQpbICAgIDIu
-MTIzMDIxXSBydGMtbXYgZjEwMTAzMDAucnRjOiBpbnRlcm5hbCBSVEMgbm90IHRpY2tpbmcKWyAg
-ICAyLjEyODU5Ml0gaTJjIC9kZXYgZW50cmllcyBkcml2ZXIKWyAgICAyLjEzMzkzM10gcmFuZG9t
-OiBmYXN0IGluaXQgZG9uZQpbICAgIDIuMTM3NzQ2XSBydGMtczM1MzkwYSAwLTAwMzA6IHJ0YyBj
-b3JlOiByZWdpc3RlcmVkIHJ0Yy1zMzUzOTBhIGFzIHJ0YzAKWyAgICAyLjE0NTE4Nl0gbGVkdHJp
-Zy1jcHU6IHJlZ2lzdGVyZWQgdG8gaW5kaWNhdGUgYWN0aXZpdHkgb24gQ1BVcwpbICAgIDIuMTUx
-NTE4XSBORVQ6IFJlZ2lzdGVyZWQgcHJvdG9jb2wgZmFtaWx5IDE3ClsgICAgMi4xNTYzOThdIHJl
-Z2lzdGVyZWQgdGFza3N0YXRzIHZlcnNpb24gMQpbICAgIDIuMTYwNTYxXSB6c3dhcDogbG9hZGVk
-IHVzaW5nIHBvb2wgbHpvL3pidWQKWyAgICAyLjE2NTkxM10gcnRjLXMzNTM5MGEgMC0wMDMwOiBz
-ZXR0aW5nIHN5c3RlbSBjbG9jayB0byAyMDE5LTA3LTIzIAoxODoxNjoxOCBVVEMgKDE1NjM5MDU3
-NzgpClsgICAgMi4xNzU1MTRdIEZyZWVpbmcgdW51c2VkIGtlcm5lbCBtZW1vcnk6IDI5NksKClNv
-IHRoZSBzeXN0ZW0gdGltZSBpcyBzZXQgY29ycmVjdGx5IEJVVCBJIHdvbmRlciBXSE8gaXMgc2V0
-dGluZyB0aGUgCmNsb2NrIGhlcmUuIFNlZW1zIHRvIGJlIGRvbmUgaW5zaWRlIHRoZSBrZXJuZWw/
-IT8KCiMgaHdjbG9jayAtLXNob3cKaHdjbG9jazogc2VsZWN0KCkgdG8gL2Rldi9ydGMwIHRvIHdh
-aXQgZm9yIGNsb2NrIHRpY2sgdGltZWQgb3V0CgppcyBzdGlsbCBub3Qgd29ya2luZy4gTWF5YmUg
-aXQgbmV2ZXIgd29ya2VkIGJ1dCB3aXRoIExpbnV4IDQuMTkgdGhlIApwcm9ibGVtIHNob3dzIHVw
-IC4uLgoKCgpPbiAyMy4wNy4xOSAxOTo1NiwgT2xpdmVyIEhhcnRrb3BwIHdyb3RlOgo+IEkganVz
-dCBmb3VuZCBhbiBvbGRlciBsb2cgYm9vdGluZyBhIExpbnV4IDQuOSB3aGVyZSBpdCB3YXMgb2s6
-Cj4gCj4gSmFuwqAgNiAyMDo1NzowMyBzYW0ga2VybmVsOiBbwqDCoMKgIDAuMDAwMDAwXSBCb290
-aW5nIExpbnV4IG9uIHBoeXNpY2FsIENQVSAKPiAweDAKPiBKYW7CoCA2IDIwOjU3OjAzIHNhbSBr
-ZXJuZWw6IFvCoMKgwqAgMC4wMDAwMDBdIExpbnV4IHZlcnNpb24gNC45LjAtNC1tYXJ2ZWxsIAo+
-IChkZWJpYW4ta2VybmVsQGxpc3RzLmRlYmlhbi5vcmcpIChnY2MgdmVyc2lvbiA2LjMuMCAyMDE3
-MDUxNiAoRGViaWFuIAo+IDYuMy4wLTE4KSApICMxIERlYmlhbiA0LjkuNTEtMSAoMjAxNy0wOS0y
-OCkKPiBKYW7CoCA2IDIwOjU3OjAzIHNhbSBrZXJuZWw6IFvCoMKgwqAgMC4wMDAwMDBdIENQVTog
-RmVyb2Nlb24gODhGUjEzMSAKPiBbNTYyNTEzMTFdIHJldmlzaW9uIDEgKEFSTXY1VEUpLCBjcj0w
-MDA1Mzk3Zgo+IEphbsKgIDYgMjA6NTc6MDMgc2FtIGtlcm5lbDogW8KgwqDCoCAwLjAwMDAwMF0g
-Q1BVOiBWSVZUIGRhdGEgY2FjaGUsIFZJVlQgCj4gaW5zdHJ1Y3Rpb24gY2FjaGUKPiBKYW7CoCA2
-IDIwOjU3OjAzIHNhbSBrZXJuZWw6IFvCoMKgwqAgMC4wMDAwMDBdIE9GOiBmZHQ6TWFjaGluZSBt
-b2RlbDogUU5BUCAKPiBUUzIxOSBmYW1pbHkKPiAKPiAoLi4pCj4gCj4gSmFuwqAgNiAyMDo1Nzow
-MyBzYW0ga2VybmVsOiBbwqDCoMKgIDEuMDUyMTc1XSBtb3VzZWRldjogUFMvMiBtb3VzZSBkZXZp
-Y2UgCj4gY29tbW9uIGZvciBhbGwgbWljZQo+IEphbsKgIDYgMjA6NTc6MDMgc2FtIGtlcm5lbDog
-W8KgwqDCoCAyLjA5MDY1NF0gcnRjLW12IGYxMDEwMzAwLnJ0YzogaW50ZXJuYWwgCj4gUlRDIG5v
-dCB0aWNraW5nCj4gSmFuwqAgNiAyMDo1NzowMyBzYW0ga2VybmVsOiBbwqDCoMKgIDIuMDk2MjE5
-XSBpMmMgL2RldiBlbnRyaWVzIGRyaXZlcgo+IEphbsKgIDYgMjA6NTc6MDMgc2FtIGtlcm5lbDog
-W8KgwqDCoCAyLjEwMTg1OV0gcnRjLXMzNTM5MGEgMC0wMDMwOiBydGMgY29yZTogCj4gcmVnaXN0
-ZXJlZCBydGMtczM1MzkwYSBhcyBydGMwCj4gSmFuwqAgNiAyMDo1NzowMyBzYW0ga2VybmVsOiBb
-wqDCoMKgIDIuMTA5Mjk2XSBsZWR0cmlnLWNwdTogcmVnaXN0ZXJlZCB0byAKPiBpbmRpY2F0ZSBh
-Y3Rpdml0eSBvbiBDUFVzCj4gSmFuwqAgNiAyMDo1NzowMyBzYW0ga2VybmVsOiBbwqDCoMKgIDIu
-MTE1NjQwXSBORVQ6IFJlZ2lzdGVyZWQgcHJvdG9jb2wgCj4gZmFtaWx5IDE3Cj4gSmFuwqAgNiAy
-MDo1NzowMyBzYW0ga2VybmVsOiBbwqDCoMKgIDIuMTIwNTM2XSByZWdpc3RlcmVkIHRhc2tzdGF0
-cyB2ZXJzaW9uIDEKPiBKYW7CoCA2IDIwOjU3OjAzIHNhbSBrZXJuZWw6IFvCoMKgwqAgMi4xMjQ2
-OTVdIHpzd2FwOiBsb2FkZWQgdXNpbmcgcG9vbCAKPiBsem8vemJ1ZAo+IEphbsKgIDYgMjA6NTc6
-MDMgc2FtIGtlcm5lbDogW8KgwqDCoCAyLjEyOTg1Ml0gcmFuZG9tOiBmYXN0IGluaXQgZG9uZQo+
-IEphbsKgIDYgMjA6NTc6MDMgc2FtIGtlcm5lbDogW8KgwqDCoCAyLjEzMzQ0MV0gcnRjLXMzNTM5
-MGEgMC0wMDMwOiBzZXR0aW5nIAo+IHN5c3RlbSBjbG9jayB0byAyMDE4LTAxLTA2IDE5OjU2OjUz
-IFVUQyAoMTUxNTI2ODYxMykKPiBKYW7CoCA2IDIwOjU3OjAzIHNhbSBrZXJuZWw6IFvCoMKgwqAg
-Mi4xNDMwMzldIEZyZWVpbmcgdW51c2VkIGtlcm5lbCBtZW1vcnk6IAo+IDI5NksKPiAKPiBKdXN0
-IHdvbmRlcmluZyB3aGV0aGVyIHRoaXMgYSBrZXJuZWwgcHJvYmxlbSBvciBhIHN5c3RlbWQgdGhp
-bmcuCj4gCj4gQXQgbGVhc3QgdGhlIHJ0Yy1zMzUzOTBhIG1vZHVsZSBpcyBsb2FkZWQgYmVmb3Jl
-IGlzIGlzIGFjY2Vzc2VkLgo+IAo+IFJlZ2FyZHMsCj4gT2xpdmVyCj4gCj4+IEhpIEFuZHJldywK
-Pj4KPj4gT24gMjMuMDcuMTkgMTg6MTIsIEFuZHJldyBMdW5uIHdyb3RlOgo+Pj4gT24gVHVlLCBK
-dWwgMjMsIDIwMTkgYXQgMDU6MzA6NDhQTSArMDIwMCwgT2xpdmVyIEhhcnRrb3BwIHdyb3RlOgo+
-Pgo+Pj4+IEkgdXBncmFkZWQgbXkgVFMtMjE5IHRvIERlYmlhbiBCdXN0ZXIgd2l0aCBLZXJuZWwg
-NC4xOS4wLTUtbWFydmVsbC4KPj4+Cj4+PiBIaSBPbGl2ZXIKPj4+Cj4+PiBEaWQgdGhlIHNhbWUg
-dGVzdCB3b3JrIHdpdGggb2xkZXIgRGViaWFucz8KPj4+Cj4+Cj4+IEknbSBub3QgcmVhbGx5IHN1
-cmUgd2hlbiBpdCBoYXBwZW5lZCwgYXMgSSB3YXMgdXNpbmcgdGhlICd0ZXN0aW5nJyAKPj4gcmVs
-ZWFzZSB3aGljaCBub3cgbGVhZCB0byBCdXN0ZXIuIEkgaGF2ZSBubyBjbGVhciBwb2ludCB3aGVy
-ZSB0byBsb29rLiAKPj4gSnVzdCBkZXRlY3RlZCBzb21lIGJvb3QgZGVsYXkgYW5kIGxvb2tlZCBp
-bnRvIHRoZSBzeXNjdGwgbG9nIHdpY2ggCj4+IG1vdmVkIHRoZSBjbG9jayBmb3J3YXJkIGJhc2Vk
-IG9uIGZhY3QsIHRoYXQgdGhlIGluc3RhbGxlZCBiaW5hcmllcyAKPj4gd2hlcmUgeW91bmdlciB0
-aGFuIHRoZSBzeXN0ZW0gY2xvY2suICUtKAo+Pgo+Pj4+IEkgd29uZGVyIHdoZXRoZXIgdGhlIHBy
-b2JsZW0gY29tZXMgZnJvbSBhIG1pc3NpbmcgaW50ZXJydXB0IGFzc2lnbm1lbnQKPj4+Pgo+Pj4+
-IHJ0YzogcnRjQDEwMzAwIHsKPj4+PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBjb21wYXRp
-YmxlID0gIm1hcnZlbGwsa2lya3dvb2QtcnRjIiwgIm1hcnZlbGwsb3Jpb24tcnRjIjsKPj4+PiDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCByZWcgPSA8MHgxMDMwMCAweDIwPjsKPj4+PiDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBpbnRlcnJ1cHRzID0gPDUzPjvCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgIDwtIEhFUkUhPyEKPj4+PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBjbG9ja3Mg
-PSA8JmdhdGVfY2xrIDc+Owo+Pj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB9Owo+
-Pj4+Cj4+Pj4gLi4uIEkgZm91bmQgaW4gbGludXgvYXJjaC9hcm0vYm9vdC9kdHMva2lya3dvb2Qt
-NjI4Mi5kdHNpID8hPwo+Pj4+Cj4+Pj4gSW4gL3Byb2MvaW50ZXJydXB0cyB0aGVyZSdzIG5vIHJ0
-YyBhc3NpZ25lZCB0byBhbiBpbnRlcnJ1cHQgNTMuCj4+Pgo+Pj4gVGhlcmUgaXMgY29kZSBpbiB0
-aGUgZHJpdmVyIHRvIHJlcXVlc3QgdGhpcyBpbnRlcnJ1cHQuIERvIHlvdSBzZWUgYW4KPj4+IGVy
-cm9yIG1lc3NhZ2UgbGlrZToKPj4+Cj4+PiBpbnRlcnJ1cHQgbm90IGF2YWlsYWJsZS4KPj4+Cj4+
-Cj4+IE5vLgo+Pgo+Pj4+IEFjY2Vzc2luZyB0aGUgcnRjIHZhbHVlcyAodGltZS9kYXRlKSB2aWEg
-L3N5cy9jbGFzcy9ydGMvcnRjMCBlbnRyaWVzIAo+Pj4+IHdvcmtzCj4+Pj4gd2VsbCBhbmQgc2V0
-dGluZyB0aGUgZGF0ZS90aW1lIHZpYSAiaHdjbG9jayAtLXN5c3RvaGMiIGRvZXMgaXRzIGpvYiAK
-Pj4+PiB0b28uIFNvCj4+Pj4gSTJDIGFuZCB0aGUgcnRjX3MzNTM5MGEgZHJpdmVyIHNlZW0gdG8g
-d29yayBzbyBmYXIuCj4+Pgo+Pj4gTm93IGknbSBjb25mdXNlZC4gSSBkb24ndCBzZWUgYW55IG1l
-bnRpb24gb2YgczM1MzkwYSBmb3IgYW55IFRTCj4+PiBkZXZpY2VzLiBTb21lIGtpcmt3b29kIG1h
-Y2hpbmVzIGRvIG1ha2UgdXNlIG9mIGFuIGV4dGVybmFsIFJUQywgbm90Cj4+PiB0aGUgYnVpbHQg
-aW4uIEJ1dCBub3QgdGhpcyBtYWNoaW5lLCBhcyBmYXIgYXMgaSBrbm93Lgo+Pgo+PiBJIHNuaXBw
-ZWQgc29tZSBkbWVzZyBsb2cgcG9pbnRpbmcgdG8gdGhlIG1hY2hpbmUgJiBjbG9jay9ydGM6Cj4+
-Cj4+IFvCoMKgwqAgMC4wMDAwMDBdIEJvb3RpbmcgTGludXggb24gcGh5c2ljYWwgQ1BVIDB4MAo+
-PiBbwqDCoMKgIDAuMDAwMDAwXSBMaW51eCB2ZXJzaW9uIDQuMTkuMC01LW1hcnZlbGwgCj4+IChk
-ZWJpYW4ta2VybmVsQGxpc3RzLmRlYmlhbi5vcmcpIChnY2MgdmVyc2lvbiA4LjMuMCAoRGViaWFu
-IDguMy4wLTcpKSAKPj4gIzEgRGViaWFuIDQuMTkuMzctNSAoMjAxOS0wNi0xOSkKPj4gW8KgwqDC
-oCAwLjAwMDAwMF0gQ1BVOiBGZXJvY2VvbiA4OEZSMTMxIFs1NjI1MTMxMV0gcmV2aXNpb24gMSAo
-QVJNdjVURSksIAo+PiBjcj0wMDA1Mzk3Zgo+PiBbwqDCoMKgIDAuMDAwMDAwXSBDUFU6IFZJVlQg
-ZGF0YSBjYWNoZSwgVklWVCBpbnN0cnVjdGlvbiBjYWNoZQo+PiBbwqDCoMKgIDAuMDAwMDAwXSBP
-RjogZmR0OiBNYWNoaW5lIG1vZGVsOiBRTkFQIFRTMjE5IGZhbWlseQo+Pgo+PiAoLi4pCj4+Cj4+
-IFvCoMKgwqAgMC4wMDAwMDBdIGNsb2Nrc291cmNlOiBvcmlvbl9jbG9ja3NvdXJjZTogbWFzazog
-MHhmZmZmZmZmZiAKPj4gbWF4X2N5Y2xlczogMHhmZmZmZmZmZiwgbWF4X2lkbGVfbnM6IDk1NTYz
-MDIyMzMgbnMKPj4gW8KgwqDCoCAwLjAwMDAwNl0gc2NoZWRfY2xvY2s6IDMyIGJpdHMgYXQgMjAw
-TUh6LCByZXNvbHV0aW9uIDVucywgd3JhcHMgCj4+IGV2ZXJ5IDEwNzM3NDE4MjM3bnMKPj4gW8Kg
-wqDCoCAwLjAwMDAzMF0gU3dpdGNoaW5nIHRvIHRpbWVyLWJhc2VkIGRlbGF5IGxvb3AsIHJlc29s
-dXRpb24gNW5zCj4+IFvCoMKgwqAgMC4wMDAwOTldIENhbGlicmF0aW5nIGRlbGF5IGxvb3AgKHNr
-aXBwZWQpLCB2YWx1ZSBjYWxjdWxhdGVkIAo+PiB1c2luZyB0aW1lciBmcmVxdWVuY3kuLiA0MDAu
-MDAgQm9nb01JUFMgKGxwaj04MDAwMDApCj4+IFvCoMKgwqAgMC4wMDAxMTddIHBpZF9tYXg6IGRl
-ZmF1bHQ6IDMyNzY4IG1pbmltdW06IDMwMQo+PiBbwqDCoMKgIDAuMDAwMzI5XSBTZWN1cml0eSBG
-cmFtZXdvcmsgaW5pdGlhbGl6ZWQKPj4gW8KgwqDCoCAwLjAwMDM0NF0gWWFtYTogZGlzYWJsZWQg
-YnkgZGVmYXVsdDsgZW5hYmxlIHdpdGggc3lzY3RsIAo+PiBrZXJuZWwueWFtYS4qCj4+IFvCoMKg
-wqAgMC4wMDA0MjddIEFwcEFybW9yOiBBcHBBcm1vciBpbml0aWFsaXplZAo+PiBbwqDCoMKgIDAu
-MDAwNTI4XSBNb3VudC1jYWNoZSBoYXNoIHRhYmxlIGVudHJpZXM6IDEwMjQgKG9yZGVyOiAwLCA0
-MDk2IAo+PiBieXRlcykKPj4gW8KgwqDCoCAwLjAwMDU0NF0gTW91bnRwb2ludC1jYWNoZSBoYXNo
-IHRhYmxlIGVudHJpZXM6IDEwMjQgKG9yZGVyOiAwLCAKPj4gNDA5NiBieXRlcykKPj4gW8KgwqDC
-oCAwLjAwMTI4OF0gQ1BVOiBUZXN0aW5nIHdyaXRlIGJ1ZmZlciBjb2hlcmVuY3k6IG9rCj4+IFvC
-oMKgwqAgMC4wMDIwMjddIFNldHRpbmcgdXAgc3RhdGljIGlkZW50aXR5IG1hcCBmb3IgMHg4MjAw
-IC0gMHg4MjNjCj4+IFvCoMKgwqAgMC4wMDIyMDddIG12ZWJ1LXNvYy1pZDogTVZFQlUgU29DIElE
-PTB4NjI4MiwgUmV2PTB4MAo+PiBbwqDCoMKgIDAuMDAzNTM2XSBkZXZ0bXBmczogaW5pdGlhbGl6
-ZWQKPj4gW8KgwqDCoCAwLjAwNjI2MV0gVkZQIHN1cHBvcnQgdjAuMzogbm90IHByZXNlbnQKPj4g
-W8KgwqDCoCAwLjAwNjM3OF0gY2xvY2tzb3VyY2U6IGppZmZpZXM6IG1hc2s6IDB4ZmZmZmZmZmYg
-bWF4X2N5Y2xlczogCj4+IDB4ZmZmZmZmZmYsIG1heF9pZGxlX25zOiA3NjQ1MDQxNzg1MTAwMDAw
-IG5zCj4+Cj4+ICguLikKPj4KPj4gW8KgwqDCoCAxLjE5ODAyNl0gaGN0b3N5czogdW5hYmxlIHRv
-IG9wZW4gcnRjIGRldmljZSAocnRjMCkKPj4gW8KgwqDCoCAxLjIwNTMyNF0gRnJlZWluZyB1bnVz
-ZWQga2VybmVsIG1lbW9yeTogMzEySwo+PiBbwqDCoMKgIDEuMjA5ODA0XSBUaGlzIGFyY2hpdGVj
-dHVyZSBkb2VzIG5vdCBoYXZlIGtlcm5lbCBtZW1vcnkgcHJvdGVjdGlvbi4KPj4gW8KgwqDCoCAx
-LjIxNjI3Nl0gUnVuIC9pbml0IGFzIGluaXQgcHJvY2Vzcwo+PiBbwqDCoMKgIDEuMjk5NTM2XSBy
-YW5kb206IGZhc3QgaW5pdCBkb25lCj4+IFvCoMKgwqAgMS41ODE3NDFdIHJ0Yy1zMzUzOTBhIDAt
-MDAzMDogcnRjIGNvcmU6IHJlZ2lzdGVyZWQgcnRjLXMzNTM5MGEgYXMgCj4+IHJ0YzAKPj4KPj4g
-KC4uKQo+Pgo+PiBbwqDCoCAxMS4zOTU1NjVdIHJ0Yy1tdiBmMTAxMDMwMC5ydGM6IGludGVybmFs
-IFJUQyBub3QgdGlja2luZwo+Pgo+PiBJIGdvdCB0aGUgaW5mb3JtYXRpb24gZnJvbSBNYXJ0aW4g
-TWljaGxtYXlyJ3MgUXVhcCBEZWJpYW4gcGFnZXM6Cj4+IGh0dHA6Ly93d3cuY3lyaXVzLmNvbS9k
-ZWJpYW4va2lya3dvb2QvcW5hcC90cy0yMTkvc3RhdHVzLwo+PiBodHRwOi8vd3d3LmN5cml1cy5j
-b20vZGViaWFuL2tpcmt3b29kL3FuYXAvdHMtMTE5L3N0YXR1cy8KPj4KPj4gUlRDOiBTdXBwb3J0
-ZWQgaW4gdGhlIGtlcm5lbCBieSB0aGUgcnRjLXMzNTM5MGEgbW9kdWxlCj4+Cj4+IFRoYW5rcyBm
-b3IgeW91ciBoZWxwIQo+Pgo+PiBCZXN0LAo+PiBPbGl2ZXIKCl9fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0
-CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFk
-ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On 7/23/19 6:28 AM, Tony Lindgren wrote:
+> For some devices we can get the following warning on boot:
+> 
+> ti-sysc 48485200.target-module: sysc_disable_module: invalid midlemode
+> 
+> Fix this by treating SYSC_IDLE_FORCE like we do for the other bits
+> for idlemodes mask.
+> 
+> Fixes: d59b60564cbf ("bus: ti-sysc: Add generic enable/disable functions")
+> Cc: Roger Quadros <rogerq@ti.com>
+> Signed-off-by: Tony Lindgren <tony@atomide.com>
+
+Reviewed-by: Suman Anna <s-anna@ti.com>
+
+regards
+Suman
+
+> ---
+>  drivers/bus/ti-sysc.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/bus/ti-sysc.c b/drivers/bus/ti-sysc.c
+> --- a/drivers/bus/ti-sysc.c
+> +++ b/drivers/bus/ti-sysc.c
+> @@ -949,7 +949,7 @@ static int sysc_best_idle_mode(u32 idlemodes, u32 *best_mode)
+>  		*best_mode = SYSC_IDLE_SMART_WKUP;
+>  	else if (idlemodes & BIT(SYSC_IDLE_SMART))
+>  		*best_mode = SYSC_IDLE_SMART;
+> -	else if (idlemodes & SYSC_IDLE_FORCE)
+> +	else if (idlemodes & BIT(SYSC_IDLE_FORCE))
+>  		*best_mode = SYSC_IDLE_FORCE;
+>  	else
+>  		return -EINVAL;
+> 
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
