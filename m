@@ -2,77 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A9D1721E3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 23:59:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC44F721F9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 00:06:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AjzxU00c+eekfQyqUduTQO73Jjg3CoMr1paYwDjLP4o=; b=FRvmniiLGr+mse
-	9eM3bkLulHQ8I30dJHVAk4LiMwSIPnK5NuMOhEtbDp90sAsNChn0TwcSLXY09sqay7EfZI08pV7n9
-	7re9uSF5zRftFHyT8cxkr8nqzLCm7hJ5FnIGx9K35Ow09kaQc5IcKsq9EWldhD5uE9otG1NS7w6Rm
-	JA7U//Gg5+SpKvkzlBo2Q2qVckeuPHs8HC8blQNVJtkzkeb8pq1mYrAq7bO1vi4SZOXueHo2KnNpl
-	wHPmycAK3QVo3VKHzJs1Vp/mrfJXJPc3izfDy1QTIipjudbFtLAPyQJcFPLTf4j3urU7Wr0G3mbWy
-	M+QBFrHkNT8iOf4p+P6w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AQcfxvOE95vVTk++fIOmDB+u9GnpbrlBs6ntoOj3VKY=; b=TY+7OWo53BWPzD
+	Iy2UVomfTK99N12Zrl55zto/dadx+IZp1XDOWbGkhQyPfhbFkf5xQWLjwxGW9s0vGxtnaSR9kihr/
+	DK75T8khhvGX4nOSUB0+tASKL/go0evxgCYyE+nFKUKI7Y2qdg5lV2ImUGwMuPHPPg4NpLUE8RCvb
+	saRRc8ohYGY3IUFeEzaub5XvzrSTLETpaaiBFzM0RhN+0logX9qEp69kMmDeU2+hPWpIbbaqAdvT6
+	MKzJCtHtG0sJ0q+HRXvdcy/5LMABoofR768CWAqbhVOwrxKHP/MJQVUZsjNgslaDdhS2fRUYAivhq
+	AbToOqMTMq6TZnUZrUew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hq2oF-0003Nh-If; Tue, 23 Jul 2019 21:58:59 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1hq2vt-00081I-J6; Tue, 23 Jul 2019 22:06:53 +0000
+Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hq2o1-0003Lr-Kd
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 21:58:47 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x6NLweTl036312;
- Tue, 23 Jul 2019 16:58:40 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1563919120;
- bh=ILKhKI41EkFj4wPxs81h4zDtCcBF0AQzAXW0JOqC9K0=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=Dk6jIp5+ZXbAUqHopDnnzLjWF8ef7bRO3D1TFj5xiKqSBuZ8aFkYJZZSYbV/0k3QZ
- w2YcU5RB6ytxVT7uAyQ9xMRLOz8EmjGTuo/oZ8ofOqUY1QzGO5rClW+N8cazVo4ygY
- dwDXwdvi3TbO8+xh0u8rZrVl6b74pRjj0EVf/UTE=
-Received: from DLEE102.ent.ti.com (dlee102.ent.ti.com [157.170.170.32])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x6NLwejB005955
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 23 Jul 2019 16:58:40 -0500
-Received: from DLEE105.ent.ti.com (157.170.170.35) by DLEE102.ent.ti.com
- (157.170.170.32) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 23
- Jul 2019 16:58:39 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE105.ent.ti.com
- (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Tue, 23 Jul 2019 16:58:40 -0500
-Received: from [128.247.58.153] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x6NLwdj7128934;
- Tue, 23 Jul 2019 16:58:39 -0500
-Subject: Re: [PATCH 6/8] ARM: dts: Fix flags for gpio7
-To: Tony Lindgren <tony@atomide.com>, <linux-omap@vger.kernel.org>
-References: <20190723112811.44381-1-tony@atomide.com>
- <20190723112811.44381-7-tony@atomide.com>
-From: Suman Anna <s-anna@ti.com>
-Message-ID: <7b09274a-eed2-a7ef-e1ae-b95f1d0b8666@ti.com>
-Date: Tue, 23 Jul 2019 16:58:39 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hq2vd-0007zX-7F
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 22:06:38 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+ s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=E/LUBzLCJzpcb95mBekwKy8gZoYu7sAEuAiBQdoSSiA=; b=UDfC2FY/7QnEVtXmemf42irTpU
+ wU+REj/7meBbBTKOigPdM0rK6mIj3oswO4Bdc7VYYvfx5qdrK5OpFJyfuxReqODGFI0trlm5EdvGr
+ m42/sfxUKYVUo1HAOnCi5EjUPA9+2Ww25yW4X+SG4wGN1XWbm/QhPu4BR/KHE+CwXnPM=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.89)
+ (envelope-from <andrew@lunn.ch>)
+ id 1hq2vU-0003aB-QJ; Wed, 24 Jul 2019 00:06:28 +0200
+Date: Wed, 24 Jul 2019 00:06:28 +0200
+From: Andrew Lunn <andrew@lunn.ch>
+To: Evgeny Kolesnikov <evgenyz@gmail.com>
+Subject: Re: [PATCH 0/5] Add support for WD MyCloud EX2 Ultra (+ versatile
+ UART-based restart/poweroff drivers)
+Message-ID: <20190723220628.GA13517@lunn.ch>
+References: <cover.1563822216.git.evgenyz@gmail.com>
+ <20190723015631.GI8972@lunn.ch>
+ <c2ffe662-6975-351b-87b8-af760984ef4d@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20190723112811.44381-7-tony@atomide.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <c2ffe662-6975-351b-87b8-af760984ef4d@gmail.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_145845_767438_3A4A739E 
-X-CRM114-Status: GOOD (  17.65  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190723_150637_415185_7284718F 
+X-CRM114-Status: GOOD (  19.73  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [185.16.172.187 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -80,7 +67,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,81 +78,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, Tero Kristo <t-kristo@ti.com>,
- Dave Gerlach <d-gerlach@ti.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Peter Ujfalusi <peter.ujfalusi@ti.com>, Faiz Abbas <faiz_abbas@ti.com>,
- Keerthy <j-keerthy@ti.com>, linux-arm-kernel@lists.infradead.org,
- Roger Quadros <rogerq@ti.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Jason Cooper <jason@lakedaemon.net>, linux-pm@vger.kernel.org,
+ Gregory Clement <gregory.clement@bootlin.com>, linux-kernel@vger.kernel.org,
+ Sebastian Reichel <sre@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Tony,
-
-On 7/23/19 6:28 AM, Tony Lindgren wrote:
-> The ti,no-idle-on-init and ti,no-reset-on-init flags need to be at
-> the interconnect target module level for the modules that have it
-> defined. Otherwise we get the following warnings:
+On Tue, Jul 23, 2019 at 07:48:49PM +0200, Evgeny Kolesnikov wrote:
+> On 23/07/2019 03:56, Andrew Lunn wrote:
+> >On Mon, Jul 22, 2019 at 09:53:00PM +0200, Evgeny Kolesnikov wrote:
+> >>
+> >>The difference between uart-poweroff and qnap-poweroff is small, but important:
+> >>uart-poweroff is able to send to an MCU a command of arbitrary length, and the command
+> >>itself is defined in a DTS file for a specific device/board, thus making this driver
+> >>applicable to wider range of devices.
+> >
+> >There is a lot of replicated code here, and in the original
+> >qnap-poweroff.c driver. Please consolidate it by extending the current
+> >driver. It should be easy to add a new compatible string, and turn
+> >power_off_cfg.cmd into an array.
 > 
-> dts flag should be at module level for ti,no-idle-on-init
-> dts flag should be at module level for ti,no-reset-on-init
+> Hi, Andrew.
 > 
-> Signed-off-by: Tony Lindgren <tony@atomide.com>
-
-There's a similar one within the am335x-icev2.dts file for gpio0
-that can also use this fix.
-
-Reviewed-by: Suman Anna <s-anna@ti.com>
-
-regards
-Suman
-
-> ---
->  arch/arm/boot/dts/am57xx-beagle-x15-common.dtsi | 2 +-
->  arch/arm/boot/dts/dra7-evm.dts                  | 2 +-
->  arch/arm/boot/dts/dra7-l4.dtsi                  | 2 +-
->  3 files changed, 3 insertions(+), 3 deletions(-)
+> I've considered extending qnap driver, but I have some doubts about this
+> approach.
 > 
-> diff --git a/arch/arm/boot/dts/am57xx-beagle-x15-common.dtsi b/arch/arm/boot/dts/am57xx-beagle-x15-common.dtsi
-> --- a/arch/arm/boot/dts/am57xx-beagle-x15-common.dtsi
-> +++ b/arch/arm/boot/dts/am57xx-beagle-x15-common.dtsi
-> @@ -379,7 +379,7 @@
->  	};
->  };
->  
-> -&gpio7 {
-> +&gpio7_target {
->  	ti,no-reset-on-init;
->  	ti,no-idle-on-init;
->  };
-> diff --git a/arch/arm/boot/dts/dra7-evm.dts b/arch/arm/boot/dts/dra7-evm.dts
-> --- a/arch/arm/boot/dts/dra7-evm.dts
-> +++ b/arch/arm/boot/dts/dra7-evm.dts
-> @@ -498,7 +498,7 @@
->  	phy-supply = <&ldousb_reg>;
->  };
->  
-> -&gpio7 {
-> +&gpio7_target {
->  	ti,no-reset-on-init;
->  	ti,no-idle-on-init;
->  };
-> diff --git a/arch/arm/boot/dts/dra7-l4.dtsi b/arch/arm/boot/dts/dra7-l4.dtsi
-> --- a/arch/arm/boot/dts/dra7-l4.dtsi
-> +++ b/arch/arm/boot/dts/dra7-l4.dtsi
-> @@ -1261,7 +1261,7 @@
->  			};
->  		};
->  
-> -		target-module@51000 {			/* 0x48051000, ap 45 2e.0 */
-> +		gpio7_target: target-module@51000 {		/* 0x48051000, ap 45 2e.0 */
->  			compatible = "ti,sysc-omap2", "ti,sysc";
->  			ti,hwmods = "gpio7";
->  			reg = <0x51000 0x4>,
-> 
+> First of all there is only a poweroff counterpart. As there is no
+> qnap-restart driver, what should I do with uart-restart? Is it OK to have
+> xxx-restart-poweroff driver (never saw anything like that)?
 
+Hi Evgeny
+
+There are a few options. You can refactor all the code into a library
+and small drivers which wrap around the library. Or you can make the
+driver handle both, using the compatible string to determine which it
+should do.
+ 
+> While I can add cmd as a parameter to qnap driver (having it converted
+> into an array) it should be optional as original qnap relies on two
+> hardcoded values for its devices.
+
+That is not what i meant. You can make the current code more generic
+by changing the single byte in power_off_cfg to an array. DT should
+describe the hardware, not bytes you poke into registers. So it is
+perfectly valid to have the bytes hard coded in the driver.
+
+	  Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
