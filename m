@@ -2,83 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D68971B04
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 17:03:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F15271B5A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 17:18:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZGUWzV541/ZxsWL9c0+p5/CmVs78zHFoTeV0N9VgSi0=; b=PEC/onSt7wMIhB
-	+YI6kThwbplgb00IvaJBrz5QSsYbvp5JA91hKyUuHm3eMfbxbx9bWgXtnOYIQAAjkwewkbAhoAukj
-	SHT1dkfwOuo+Xskwj9I0NRMqRbtO5bqYAHYevfVVggbzFYNJPVsRWEzV35o4TFJYdXHPGU/rufm9G
-	NjszAwPH33BvjEK6Z8TxGIylfT3yjVOfr46d84M/lBPoY639hMBEcM5m20VpZa+PAr5iLrCAcaCwo
-	iTk2ZshqyfPI3su6SPyrGbiVNFCF39i8MOndrZYilZQIv5Z5K5zP7xyIhAJCo3Vl2efZbJLjFYRRY
-	E0shiYdG0fKi5c3VOmZA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=y86jyvo5ChkyRNLo+rkdm/aziffPu5M/6NE4ng0gjME=; b=C0axbO5VnaAdfPsxEUzfxfiav
+	iGg/IteNNV7GS1F+gurPfTHdCbFxfuKl76RPMxsUfUBcRIEm9feVXVaSuc4riTqUNmXQB3pPrKD68
+	iIGIhSsBsq/7se3WHo8XSZ9j/o5mi8vfM6sZRur0NCe7qNQ81k/VIUPsig14LEHHzmBwM0xAiLwBU
+	zDrZU0rbdY6GEVRA+FbHVq+fZdfqK8pJtnt1ecVM3ZHaukwL3JrnDf/5hGIhp+m7uCHqWbkewKWnq
+	plTH+N/Kb2qiflLHSjlONVtl8QwClhu9S/ABXUMSH5BZUOd/UrQEE/NuMalIrGI3siQd+67F+K4JI
+	xcGSMnguQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpwJj-0000aj-US; Tue, 23 Jul 2019 15:03:03 +0000
-Received: from mail-qk1-f196.google.com ([209.85.222.196])
+	id 1hpwYR-00035b-Mu; Tue, 23 Jul 2019 15:18:15 +0000
+Received: from mga06.intel.com ([134.134.136.31])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpwJT-0000Za-N5
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 15:02:49 +0000
-Received: by mail-qk1-f196.google.com with SMTP id r21so31404385qke.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 23 Jul 2019 08:02:47 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to;
- bh=R5M2K4AjBjzXbSZ/zP6imFgwCWLsiDqliCyMwtU6WVA=;
- b=e63AOmb6HSfRZxKZw9xDcwzAbAjChufhqedOiDgPNognJ5wEhrwwg3nQdaVWNZi3E0
- O+IAqs0HqSdGqYmFUd3/bfHUXOPCBsGZrYDJltaIfOKkV17pQQ/tFgopiIOmGdlxmclu
- M/5lmkb6WlIgTZjifNVD+NbmJeczUxAgP3YVMFpmEqKbJDC/clr1NPkqLtd7JlkCObvY
- 9EPXn1KenqYUlt6mKjv8k8iXPA1JRgTuSrMXxnZuDo16JxGDFNmOkm10nMSL3P2I6Kdr
- DOLtmudOfbRA7bXAwjFPIdM5T6n9CW1phaam+GSxDin/Fmvr5OXL5Vv6x0mvEb/d1u6I
- zgTA==
-X-Gm-Message-State: APjAAAVrt5V/EBBHniJNTT+yFiDgsKd60SBnsxcVyEWLN9TcqS60c7Tn
- J845d4Q9gYFSRRz79lcJY0xpRA==
-X-Google-Smtp-Source: APXvYqxzk6SWsTdinjKSsA/de1iMdf+1ZzQW/oUQt2F/o3dsQk8ga4tD5zxAx4DzheYaNy643xaKrA==
-X-Received: by 2002:ae9:e20c:: with SMTP id c12mr49989037qkc.210.1563894166621; 
- Tue, 23 Jul 2019 08:02:46 -0700 (PDT)
-Received: from redhat.com (bzq-79-181-91-42.red.bezeqint.net. [79.181.91.42])
- by smtp.gmail.com with ESMTPSA id
- s25sm18898787qkm.130.2019.07.23.08.02.39
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 23 Jul 2019 08:02:45 -0700 (PDT)
-Date: Tue, 23 Jul 2019 11:02:37 -0400
-From: "Michael S. Tsirkin" <mst@redhat.com>
-To: Jason Wang <jasowang@redhat.com>
-Subject: Re: WARNING in __mmdrop
-Message-ID: <20190723110219-mutt-send-email-mst@kernel.org>
-References: <20190721044615-mutt-send-email-mst@kernel.org>
- <75c43998-3a1c-676f-99ff-3d04663c3fcc@redhat.com>
- <20190722035657-mutt-send-email-mst@kernel.org>
- <cfcd330d-5f4a-835a-69f7-c342d5d0d52d@redhat.com>
- <20190723010156-mutt-send-email-mst@kernel.org>
- <124be1a2-1c53-8e65-0f06-ee2294710822@redhat.com>
- <20190723032800-mutt-send-email-mst@kernel.org>
- <e2e01a05-63d8-4388-2bcd-b2be3c865486@redhat.com>
- <20190723062221-mutt-send-email-mst@kernel.org>
- <9baa4214-67fd-7ad2-cbad-aadf90bbfc20@redhat.com>
+ id 1hpwYC-00034Z-Oy
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 15:18:02 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga004.jf.intel.com ([10.7.209.38])
+ by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 23 Jul 2019 08:17:59 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.64,299,1559545200"; d="scan'208";a="321031581"
+Received: from linux.intel.com ([10.54.29.200])
+ by orsmga004.jf.intel.com with ESMTP; 23 Jul 2019 08:17:59 -0700
+Received: from xiliu-mobl1.amr.corp.intel.com (unknown [10.252.200.163])
+ by linux.intel.com (Postfix) with ESMTP id EFAEE580144;
+ Tue, 23 Jul 2019 08:17:57 -0700 (PDT)
+Subject: Re: [Sound-open-firmware] [PATCH v2 1/5] ASoC: SOF: imx: Add i.MX8 HW
+ support
+To: Daniel Baluta <daniel.baluta@nxp.com>, m.felsch@pengutronix.de,
+ shawnguo@kernel.org
+References: <20190723084104.12639-1-daniel.baluta@nxp.com>
+ <20190723084104.12639-2-daniel.baluta@nxp.com>
+From: Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>
+Message-ID: <a5d44d96-4d50-ee46-a6bf-3ce108b1994a@linux.intel.com>
+Date: Tue, 23 Jul 2019 10:01:22 -0500
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:60.0)
+ Gecko/20100101 Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <9baa4214-67fd-7ad2-cbad-aadf90bbfc20@redhat.com>
+In-Reply-To: <20190723084104.12639-2-daniel.baluta@nxp.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_080248_189688_24BB59E7 
-X-CRM114-Status: GOOD (  19.03  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190723_081800_870018_43345F0B 
+X-CRM114-Status: GOOD (  26.09  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.196 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.222.196 listed in wl.mailspike.net]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.31 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -91,65 +72,482 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mhocko@suse.com, peterz@infradead.org, ldv@altlinux.org,
- james.bottomley@hansenpartnership.com, linux-mm@kvack.org, namit@vmware.com,
- mingo@kernel.org, elena.reshetova@intel.com, keescook@chromium.org,
- aarcange@redhat.com, davem@davemloft.net, hch@infradead.org,
- christian@brauner.io,
- syzbot <syzbot+e58112d71f77113ddb7b@syzkaller.appspotmail.com>,
- syzkaller-bugs@googlegroups.com, jglisse@redhat.com, viro@zeniv.linux.org.uk,
- linux-arm-kernel@lists.infradead.org, wad@chromium.org,
- linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
- luto@amacapital.net, ebiederm@xmission.com, akpm@linux-foundation.org,
- guro@fb.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: mark.rutland@arm.com, aisheng.dong@nxp.com, peng.fan@nxp.com,
+ anson.huang@nxp.com, devicetree@vger.kernel.org, shengjiu.wang@nxp.com,
+ linux-kernel@vger.kernel.org, paul.olaru@nxp.com, robh+dt@kernel.org,
+ linux-imx@nxp.com, kernel@pengutronix.de, leonard.crestez@nxp.com,
+ festevam@gmail.com, linux-arm-kernel@lists.infradead.org,
+ sound-open-firmware@alsa-project.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVHVlLCBKdWwgMjMsIDIwMTkgYXQgMDk6MzQ6MjlQTSArMDgwMCwgSmFzb24gV2FuZyB3cm90
-ZToKPiAKPiBPbiAyMDE5LzcvMjMg5LiL5Y2INjoyNywgTWljaGFlbCBTLiBUc2lya2luIHdyb3Rl
-Ogo+ID4gPiBZZXMsIHNpbmNlIHRoZXJlIGNvdWxkIGJlIG11bHRpcGxlIGNvLWN1cnJlbnQgaW52
-YWxpZGF0aW9uIHJlcXVlc3RzLiBXZSBuZWVkCj4gPiA+IGNvdW50IHRoZW0gdG8gbWFrZSBzdXJl
-IHdlIGRvbid0IHBpbiB3cm9uZyBwYWdlcy4KPiA+ID4gCj4gPiA+IAo+ID4gPiA+IEkgYWxzbyB3
-b25kZXIgYWJvdXQgb3JkZXJpbmcuIGt2bSBoYXMgdGhpczoKPiA+ID4gPiAgICAgICAgICAvKgo+
-ID4gPiA+ICAgICAgICAgICAgKiBVc2VkIHRvIGNoZWNrIGZvciBpbnZhbGlkYXRpb25zIGluIHBy
-b2dyZXNzLCBvZiB0aGUgcGZuIHRoYXQgaXMKPiA+ID4gPiAgICAgICAgICAgICogcmV0dXJuZWQg
-YnkgcGZuX3RvX3Bmbl9wcm90IGJlbG93Lgo+ID4gPiA+ICAgICAgICAgICAgKi8KPiA+ID4gPiAg
-ICAgICAgICAgbW11X3NlcSA9IGt2bS0+bW11X25vdGlmaWVyX3NlcTsKPiA+ID4gPiAgICAgICAg
-ICAgLyoKPiA+ID4gPiAgICAgICAgICAgICogRW5zdXJlIHRoZSByZWFkIG9mIG1tdV9ub3RpZmll
-cl9zZXEgaXNuJ3QgcmVvcmRlcmVkIHdpdGggUFRFIHJlYWRzIGluCj4gPiA+ID4gICAgICAgICAg
-ICAqIGdmbl90b19wZm5fcHJvdCgpICh3aGljaCBjYWxscyBnZXRfdXNlcl9wYWdlcygpKSwgc28g
-dGhhdCB3ZSBkb24ndAo+ID4gPiA+ICAgICAgICAgICAgKiByaXNrIHRoZSBwYWdlIHdlIGdldCBh
-IHJlZmVyZW5jZSB0byBnZXR0aW5nIHVubWFwcGVkIGJlZm9yZSB3ZSBoYXZlIGEKPiA+ID4gPiAg
-ICAgICAgICAgICogY2hhbmNlIHRvIGdyYWIgdGhlIG1tdV9sb2NrIHdpdGhvdXQgbW11X25vdGlm
-aWVyX3JldHJ5KCkgbm90aWNpbmcuCj4gPiA+ID4gICAgICAgICAgICAqCj4gPiA+ID4gICAgICAg
-ICAgICAqIFRoaXMgc21wX3JtYigpIHBhaXJzIHdpdGggdGhlIGVmZmVjdGl2ZSBzbXBfd21iKCkg
-b2YgdGhlIGNvbWJpbmF0aW9uCj4gPiA+ID4gICAgICAgICAgICAqIG9mIHRoZSBwdGVfdW5tYXBf
-dW5sb2NrKCkgYWZ0ZXIgdGhlIFBURSBpcyB6YXBwZWQsIGFuZCB0aGUKPiA+ID4gPiAgICAgICAg
-ICAgICogc3Bpbl9sb2NrKCkgaW4ga3ZtX21tdV9ub3RpZmllcl9pbnZhbGlkYXRlXzxwYWdlfHJh
-bmdlX2VuZD4oKSBiZWZvcmUKPiA+ID4gPiAgICAgICAgICAgICogbW11X25vdGlmaWVyX3NlcSBp
-cyBpbmNyZW1lbnRlZC4KPiA+ID4gPiAgICAgICAgICAgICovCj4gPiA+ID4gICAgICAgICAgIHNt
-cF9ybWIoKTsKPiA+ID4gPiAKPiA+ID4gPiBkb2VzIHRoaXMgYXBwbHkgdG8gdXM/IENhbid0IHdl
-IHVzZSBhIHNlcWxvY2sgaW5zdGVhZCBzbyB3ZSBkbwo+ID4gPiA+IG5vdCBuZWVkIHRvIHdvcnJ5
-Pwo+ID4gPiBJJ20gbm90IGZhbWlsaWFyIHdpdGgga3ZtIE1NVSBpbnRlcm5hbHMsIGJ1dCB3ZSBk
-byBldmVyeXRoaW5nIHVuZGVyIG9mCj4gPiA+IG1tdV9sb2NrLgo+ID4gPiAKPiA+ID4gVGhhbmtz
-Cj4gPiBJIGRvbid0IHRoaW5rIHRoaXMgaGVscHMgYXQgYWxsLgo+ID4gCj4gPiBUaGVyZSdzIG5v
-IGxvY2sgYmV0d2VlbiBjaGVja2luZyB0aGUgaW52YWxpZGF0ZSBjb3VudGVyIGFuZAo+ID4gZ2V0
-IHVzZXIgcGFnZXMgZmFzdCB3aXRoaW4gdmhvc3RfbWFwX3ByZWZldGNoLiBTbyBpdCdzIHBvc3Np
-YmxlCj4gPiB0aGF0IGdldCB1c2VyIHBhZ2VzIGZhc3QgcmVhZHMgUFRFcyBzcGVjdWxhdGl2ZWx5
-IGJlZm9yZQo+ID4gaW52YWxpZGF0ZSBpcyByZWFkLgo+ID4gCj4gPiAtLSAKPiAKPiAKPiBJbiB2
-aG9zdF9tYXBfcHJlZmV0Y2goKSB3ZSBkbzoKPiAKPiDCoMKgwqDCoMKgwqDCoCBzcGluX2xvY2so
-JnZxLT5tbXVfbG9jayk7Cj4gCj4gwqAgwqAgwqAgwqAgLi4uCj4gCj4gwqDCoMKgwqDCoMKgwqAg
-ZXJyID0gLUVGQVVMVDsKPiDCoMKgwqDCoMKgwqDCoCBpZiAodnEtPmludmFsaWRhdGVfY291bnQp
-Cj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGdvdG8gZXJyOwo+IAo+IMKgwqDCoMKg
-wqDCoMKgIC4uLgo+IAo+IMKgwqDCoMKgwqDCoMKgIG5waW5uZWQgPSBfX2dldF91c2VyX3BhZ2Vz
-X2Zhc3QodWFkZHItPnVhZGRyLCBucGFnZXMsCj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHVhZGRy
-LT53cml0ZSwgcGFnZXMpOwo+IAo+IMKgwqDCoMKgwqDCoMKgIC4uLgo+IAo+IMKgwqDCoCDCoMKg
-wqAgc3Bpbl91bmxvY2soJnZxLT5tbXVfbG9jayk7Cj4gCj4gSXMgdGhpcyBub3Qgc3VmZmljaWVu
-dD8KPiAKPiBUaGFua3MKClNvIHdoYXQgb3JkZXJzIF9fZ2V0X3VzZXJfcGFnZXNfZmFzdCB3cnQg
-aW52YWxpZGF0ZV9jb3VudCByZWFkPwoKLS0gCk1TVAoKX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGlu
-dXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
-b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+
+> diff --git a/sound/soc/sof/imx/Makefile b/sound/soc/sof/imx/Makefile
+> new file mode 100644
+> index 000000000000..c69237971da5
+> --- /dev/null
+> +++ b/sound/soc/sof/imx/Makefile
+> @@ -0,0 +1,7 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-3-Clause)
+> +
+> +ccflags-y += -DDEBUG
+
+this should be removed or in a separate patch.
+
+
+> +struct imx8_priv {
+> +	struct device *dev;
+> +	struct snd_sof_dev *sdev;
+> +	struct imx_dsp_ipc *dsp_ipc;
+> +	struct imx_sc_ipc *sc_ipc;
+
+maybe a comment to explain what 'sc' stands for?
+
+> +};
+> +
+> +static void imx8_get_windows(struct snd_sof_dev *sdev)
+> +{
+> +	struct sof_ipc_window_elem *elem;
+> +	u32 outbox_offset = 0;
+> +	u32 stream_offset = 0;
+> +	u32 inbox_offset = 0;
+> +	u32 outbox_size = 0;
+> +	u32 stream_size = 0;
+> +	u32 inbox_size = 0;
+> +	int i;
+> +
+> +	if (!sdev->info_window) {
+> +		dev_err(sdev->dev, "error: have no window info\n");
+> +		return;
+> +	}
+> +
+> +	for (i = 0; i < sdev->info_window->num_windows; i++) {
+> +		elem = &sdev->info_window->window[i];
+> +
+> +		switch (elem->type) {
+> +		case SOF_IPC_REGION_UPBOX:
+> +			inbox_offset = elem->offset + MBOX_OFFSET;
+> +			inbox_size = elem->size;
+> +			snd_sof_debugfs_io_item(sdev,
+> +						sdev->bar[SOF_FW_BLK_TYPE_SRAM]
+> +						+ inbox_offset,
+> +						elem->size, "inbox",
+> +						SOF_DEBUGFS_ACCESS_D0_ONLY);
+> +			break;
+> +		case SOF_IPC_REGION_DOWNBOX:
+> +			outbox_offset = elem->offset + MBOX_OFFSET;
+> +			outbox_size = elem->size;
+> +			snd_sof_debugfs_io_item(sdev,
+> +						sdev->bar[SOF_FW_BLK_TYPE_SRAM]
+> +						+ outbox_offset,
+> +						elem->size, "outbox",
+> +						SOF_DEBUGFS_ACCESS_D0_ONLY);
+> +			break;
+> +		case SOF_IPC_REGION_TRACE:
+> +			snd_sof_debugfs_io_item(sdev,
+> +						sdev->bar[SOF_FW_BLK_TYPE_SRAM]
+> +						+ elem->offset + MBOX_OFFSET,
+> +						elem->size, "etrace",
+> +						SOF_DEBUGFS_ACCESS_D0_ONLY);
+> +			break;
+> +		case SOF_IPC_REGION_DEBUG:
+> +			snd_sof_debugfs_io_item(sdev,
+> +						sdev->bar[SOF_FW_BLK_TYPE_SRAM]
+> +						+ elem->offset + MBOX_OFFSET,
+> +						elem->size, "debug",
+> +						SOF_DEBUGFS_ACCESS_D0_ONLY);
+> +			break;
+> +		case SOF_IPC_REGION_STREAM:
+> +			stream_offset = elem->offset + MBOX_OFFSET;
+> +			stream_size = elem->size;
+> +			snd_sof_debugfs_io_item(sdev,
+> +						sdev->bar[SOF_FW_BLK_TYPE_SRAM]
+> +						+ stream_offset,
+> +						elem->size, "stream",
+> +						SOF_DEBUGFS_ACCESS_D0_ONLY);
+> +			break;
+> +		case SOF_IPC_REGION_REGS:
+> +			snd_sof_debugfs_io_item(sdev,
+> +						sdev->bar[SOF_FW_BLK_TYPE_SRAM]
+> +						+ elem->offset + MBOX_OFFSET,
+> +						elem->size, "regs",
+> +						SOF_DEBUGFS_ACCESS_D0_ONLY);
+> +			break;
+> +		case SOF_IPC_REGION_EXCEPTION:
+> +			sdev->dsp_oops_offset = elem->offset + MBOX_OFFSET;
+> +			snd_sof_debugfs_io_item(sdev,
+> +						sdev->bar[SOF_FW_BLK_TYPE_SRAM]
+> +						+ elem->offset + MBOX_OFFSET,
+> +						elem->size, "exception",
+> +						SOF_DEBUGFS_ACCESS_D0_ONLY);
+> +			break;
+> +		default:
+> +			dev_err(sdev->dev, "error: get illegal window info\n");
+> +			return;
+> +		}
+> +	}
+> +
+> +	if (outbox_size == 0 || inbox_size == 0) {
+> +		dev_err(sdev->dev, "error: get illegal mailbox window\n");
+> +		return;
+> +	}
+> +
+> +	snd_sof_dsp_mailbox_init(sdev, inbox_offset, inbox_size,
+> +				 outbox_offset, outbox_size);
+> +	sdev->stream_box.offset = stream_offset;
+> +	sdev->stream_box.size = stream_size;
+> +
+> +	dev_dbg(sdev->dev, " mailbox upstream 0x%x - size 0x%x\n",
+> +		inbox_offset, inbox_size);
+> +	dev_dbg(sdev->dev, " mailbox downstream 0x%x - size 0x%x\n",
+> +		outbox_offset, outbox_size);
+> +	dev_dbg(sdev->dev, " stream region 0x%x - size 0x%x\n",
+> +		stream_offset, stream_size);
+> +}
+
+This looks 100% similar to Baytrail?
+
+> +
+> +/*
+> + * IPC Firmware ready.
+> + */
+> +static int imx8_fw_ready(struct snd_sof_dev *sdev, u32 msg_id)
+> +{
+> +	struct sof_ipc_fw_ready *fw_ready = &sdev->fw_ready;
+> +	u32 offset;
+> +	int ret;
+> +
+> +	/* mailbox must be on 4k boundary */
+> +	offset = MBOX_OFFSET;
+> +
+> +	dev_dbg(sdev->dev, "ipc: DSP is ready 0x%8.8x offset 0x%x\n",
+> +		msg_id, offset);
+> +
+> +	 /* no need to re-check version/ABI for subsequent boots */
+> +	if (!sdev->first_boot)
+> +		return 0;
+> +
+> +	/* copy data from the DSP FW ready offset */
+> +	sof_block_read(sdev, sdev->mailbox_bar, offset, fw_ready,
+> +		       sizeof(*fw_ready));
+> +	snd_sof_dsp_mailbox_init(sdev, fw_ready->dspbox_offset,
+> +				 fw_ready->dspbox_size,
+> +				 fw_ready->hostbox_offset,
+> +				 fw_ready->hostbox_size);
+> +
+> +	/* make sure ABI version is compatible */
+> +	ret = snd_sof_ipc_valid(sdev);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	/* now check for extended data */
+> +	snd_sof_fw_parse_ext_data(sdev, SOF_FW_BLK_TYPE_SRAM, MBOX_OFFSET +
+> +				  sizeof(struct sof_ipc_fw_ready));
+> +
+> +	imx8_get_windows(sdev);
+> +
+> +	return 0;
+> +}
+
+That code looks nearly similar to the baytrail one except for the last 
+line, we should look into factoring this.
+
+> +
+> +static void imx8_get_reply(struct snd_sof_dev *sdev)
+> +{
+> +	struct snd_sof_ipc_msg *msg = sdev->msg;
+> +	struct sof_ipc_reply reply;
+> +	unsigned long flags;
+> +	int ret = 0;
+> +
+> +	if (!msg) {
+> +		dev_warn(sdev->dev, "unexpected ipc interrupt\n");
+> +		return;
+> +	}
+> +
+> +	/* get reply */
+> +	sof_mailbox_read(sdev, sdev->host_box.offset, &reply, sizeof(reply));
+> +
+> +	spin_lock_irqsave(&sdev->ipc_lock, flags);
+> +
+> +	if (reply.error < 0) {
+> +		memcpy(msg->reply_data, &reply, sizeof(reply));
+> +		ret = reply.error;
+> +	} else {
+> +		/* reply has correct size? */
+> +		if (reply.hdr.size != msg->reply_size) {
+> +			dev_err(sdev->dev, "error: reply expected %zu got %u bytes\n",
+> +				msg->reply_size, reply.hdr.size);
+> +			ret = -EINVAL;
+> +		}
+> +
+> +		/* read the message */
+> +		if (msg->reply_size > 0)
+> +			sof_mailbox_read(sdev, sdev->host_box.offset,
+> +					 msg->reply_data, msg->reply_size);
+> +	}
+> +
+> +	msg->reply_error = ret;
+> +
+> +	spin_unlock_irqrestore(&sdev->ipc_lock, flags);
+
+I don't see a spin_lock/unlock for the get_reply in the Intel code, is 
+this necessary?
+
+> +}
+> +
+> +void imx_dsp_handle_reply(struct imx_dsp_ipc *ipc)
+> +{
+> +	struct imx8_priv *priv = imx_dsp_get_data(ipc);
+> +
+> +	imx8_get_reply(priv->sdev);
+> +	snd_sof_ipc_reply(priv->sdev, 0);
+> +}
+> +
+> +void imx_dsp_handle_request(struct imx_dsp_ipc *ipc)
+> +{
+> +	struct imx8_priv *priv = imx_dsp_get_data(ipc);
+> +
+> +	snd_sof_ipc_msgs_rx(priv->sdev);
+> +}
+> +
+> +struct imx_dsp_ops dsp_ops = {
+> +	.handle_reply		= imx_dsp_handle_reply,
+> +	.handle_request		= imx_dsp_handle_request,
+> +};
+> +
+> +static int imx8_send_msg(struct snd_sof_dev *sdev, struct snd_sof_ipc_msg *msg)
+> +{
+> +	struct imx8_priv *priv = (struct imx8_priv *)sdev->private;
+> +
+> +	sof_mailbox_write(sdev, sdev->host_box.offset, msg->msg_data,
+> +			  msg->msg_size);
+> +	imx_dsp_ring_doorbell(priv->dsp_ipc, 0);
+> +
+> +	return 0;
+> +}
+> +
+> +/*
+> + * DSP control.
+> + */
+> +static int imx8_run(struct snd_sof_dev *sdev)
+> +{
+> +	int ret;
+> +	struct imx8_priv *dsp_priv = (struct imx8_priv *)sdev->private;
+> +
+> +	ret = imx_sc_misc_set_control(dsp_priv->sc_ipc, IMX_SC_R_DSP,
+> +				      IMX_SC_C_OFS_SEL, 1);
+> +	if (ret < 0) {
+> +		dev_err(sdev->dev, "Error system address offset source select\n");
+> +		return ret;
+> +	}
+> +
+> +	ret = imx_sc_misc_set_control(dsp_priv->sc_ipc, IMX_SC_R_DSP,
+> +				      IMX_SC_C_OFS_AUDIO, 0x80);
+> +	if (ret < 0) {
+> +		dev_err(sdev->dev, "Error system address offset of AUDIO\n");
+> +		return ret;
+> +	}
+> +
+> +	ret = imx_sc_misc_set_control(dsp_priv->sc_ipc, IMX_SC_R_DSP,
+> +				      IMX_SC_C_OFS_PERIPH, 0x5A);
+> +	if (ret < 0) {
+> +		dev_err(sdev->dev, "Error system address offset of PERIPH %d\n",
+> +			ret);
+> +		return ret;
+> +	}
+> +
+> +	ret = imx_sc_misc_set_control(dsp_priv->sc_ipc, IMX_SC_R_DSP,
+> +				      IMX_SC_C_OFS_IRQ, 0x51);
+> +	if (ret < 0) {
+> +		dev_err(sdev->dev, "Error system address offset of IRQ\n");
+> +		return ret;
+> +	}
+> +
+> +	imx_sc_pm_cpu_start(dsp_priv->sc_ipc, IMX_SC_R_DSP, true,
+> +			    RESET_VECTOR_VADDR);
+> +
+> +	return 0;
+> +}
+> +
+> +static int imx8_probe(struct snd_sof_dev *sdev)
+> +{
+> +	struct imx8_priv *priv;
+> +	int i;
+> +	struct platform_device *pdev =
+> +		container_of(sdev->dev, struct platform_device, dev);
+> +	struct platform_device *ipc_dev;
+> +	struct resource *mmio;
+> +	int num_domains = 0;
+> +	u32 base, size;
+> +	int ret = 0;
+> +	struct device_node *np = pdev->dev.of_node;
+> +	struct device_node *res_node;
+> +	struct resource res;
+
+nit-pick: can we reorder so that we have all counters last and a nice 
+xmas-tree shape.
+
+> +
+> +	priv = devm_kzalloc(&pdev->dev, sizeof(*priv), GFP_KERNEL);
+> +	if (!priv)
+> +		return -ENOMEM;
+> +
+> +	sdev->private = priv;
+> +	priv->dev = sdev->dev;
+> +	priv->sdev = sdev;
+> +
+> +	ret = imx_scu_get_handle(&priv->sc_ipc);
+> +	if (ret) {
+> +		dev_err(sdev->dev, "Cannot obtain SCU handle (err = %d)\n",
+> +			ret);
+> +		return ret;
+> +	}
+> +
+> +	ipc_dev = platform_device_register_data(sdev->dev, "imx-dsp",
+> +						PLATFORM_DEVID_NONE,
+> +						pdev, sizeof(*pdev));
+> +	if (IS_ERR(ipc_dev)) {
+> +		dev_err(sdev->dev, "Failed to register platform device\n");
+> +		return PTR_ERR(ipc_dev);
+> +	}
+> +
+> +	priv->dsp_ipc = dev_get_drvdata(&ipc_dev->dev);
+> +	if (!priv->dsp_ipc)
+> +		return -EPROBE_DEFER;
+> +
+> +	imx_dsp_set_data(priv->dsp_ipc, priv);
+> +	priv->dsp_ipc->ops = &dsp_ops;
+> +
+> +	num_domains = of_count_phandle_with_args(np, "power-domains",
+> +						 "#power-domain-cells");
+> +	for (i = 0; i < num_domains; i++) {
+> +		struct device *pd_dev;
+> +		struct device_link *link;
+> +
+> +		pd_dev = dev_pm_domain_attach_by_id(&pdev->dev, i);
+> +		if (IS_ERR(pd_dev))
+> +			return PTR_ERR(pd_dev);
+> +
+> +		link = device_link_add(&pdev->dev, pd_dev,
+> +				       DL_FLAG_STATELESS |
+> +				       DL_FLAG_PM_RUNTIME |
+> +				       DL_FLAG_RPM_ACTIVE);
+> +		if (IS_ERR(link))
+> +			return PTR_ERR(link);
+
+Question: is the error flow final? Wondering if we release all the 
+resources/memory/devices on errors?
+
+Also are all the resources device-managed, I don't see a remove()?
+
+> +	}
+> +
+> +	/* DSP base */
+> +	mmio = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> +	if (mmio) {
+> +		base = mmio->start;
+> +		size = resource_size(mmio);
+> +	} else {
+> +		dev_err(sdev->dev, "error: failed to get DSP base at idx 0\n");
+> +		return -EINVAL;
+> +	}
+> +
+> +	sdev->bar[SOF_FW_BLK_TYPE_IRAM] = devm_ioremap(sdev->dev, base, size);
+> +	if (!sdev->bar[SOF_FW_BLK_TYPE_IRAM]) {
+> +		dev_err(sdev->dev, "failed to ioremap base 0x%x size 0x%x\n",
+> +			base, size);
+> +		return -ENODEV;
+> +	}
+> +	sdev->mmio_bar = SOF_FW_BLK_TYPE_IRAM;
+> +
+> +	res_node = of_parse_phandle(np, "memory-region", 0);
+> +	if (!res_node) {
+> +		dev_err(&pdev->dev, "failed to get memory region node\n");
+> +		return -ENODEV;
+> +	}
+> +	if (of_address_to_resource(res_node, 0, &res)) {
+> +		dev_err(&pdev->dev, "failed to get reserved region address\n");
+> +		return -EINVAL;
+> +	}
+> +
+> +	sdev->bar[SOF_FW_BLK_TYPE_SRAM] = devm_ioremap_wc(sdev->dev, res.start,
+> +							  res.end - res.start +
+> +							  1);
+> +	if (!sdev->bar[SOF_FW_BLK_TYPE_SRAM]) {
+> +		dev_err(sdev->dev, "failed to ioremap mem 0x%x size 0x%x\n",
+> +			base, size);
+> +		return -ENODEV;
+> +	}
+> +	sdev->mailbox_bar = SOF_FW_BLK_TYPE_SRAM;
+> +
+> +	return ret;
+> +}
+> +
+> +/* on i.MX8 there is 1 to 1 match between type and BAR idx */
+> +int imx8_get_bar_index(struct snd_sof_dev *sdev, u32 type)
+> +{
+> +	return type;
+> +}
+> +
+> +void imx8_ipc_msg_data(struct snd_sof_dev *sdev,
+> +		       struct snd_pcm_substream *substream,
+> +		       void *p, size_t sz)
+> +{
+> +	sof_mailbox_read(sdev, sdev->dsp_box.offset, p, sz);
+> +}
+> +
+> +int imx8_ipc_pcm_params(struct snd_sof_dev *sdev,
+> +			struct snd_pcm_substream *substream,
+> +			const struct sof_ipc_pcm_params_reply *reply)
+> +{
+> +	return 0;
+> +}
+> +
+> +static struct snd_soc_dai_driver imx8_dai[] = {
+> +{
+> +	.name = "esai-port",
+> +},
+> +};
+> +
+> +/* i.MX8  ops */
+> +struct snd_sof_dsp_ops sof_imx8_ops = {
+> +	/* device init */
+> +	.probe		= imx8_probe,
+> +
+> +	/* DSP core boot */
+> +	.run		= imx8_run,
+> +
+> +	/* Block IO */
+> +	.block_read	= sof_block_read,
+> +	.block_write	= sof_block_write,
+> +
+> +	/* ipc */
+> +	.send_msg	= imx8_send_msg,
+> +	.fw_ready	= imx8_fw_ready,
+> +
+> +	.ipc_msg_data = imx8_ipc_msg_data,
+> +	.ipc_pcm_params = imx8_ipc_pcm_params,
+> +
+> +	/* module loading */
+> +	.load_module	= snd_sof_parse_module_memcpy,
+> +	.get_bar_index	= imx8_get_bar_index,
+> +	/* firmware loading */
+> +	.load_firmware	= snd_sof_load_firmware_memcpy,
+> +
+> +	/* DAI drivers */
+> +	.drv = imx8_dai,
+> +	.num_drv = 1, /* we have only 1 ESAI interface on i.MX8 */
+> +};
+> +EXPORT_SYMBOL(sof_imx8_ops);
+> +
+> +MODULE_LICENSE("Dual BSD/GPL");
+> 
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
