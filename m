@@ -2,52 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75F8972249
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 00:21:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9BAAB7224A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 00:22:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=asxXz6jZMPDAnktle1+f66RD0GEVLfFv97YNq7KEiDU=; b=jYsFSop25F2kzA
-	X3hIME2+xSqqNf+wBj6BjTbuNnA3TVhn+OLqmutM36etwC21SanyposW0rhz8VukU4qBdA4V0lcAr
-	ZcR/1D2EuL1liGOBjDp9g5/uFSHHO7hI7bOStiL32Pn2JyoCLf5ZIGYFfaQmxP+BBSnn1xDZfDxwz
-	hm9C3D7ouC+rr7+MlOlD6wCX1Hk7Ya0ViTwqpzz6BcvQ1cZz92UfDZ90ArhZIqP6IMwq70qp2Kvdp
-	9eSsg0vcmmpNfV/XhC+r8Go5yBN7iHMS+AIHWipDw7LAO++EPeV59Zb6UvyD0igNs6UWfTIafrvpi
-	6eOOFuclXgJYITRjN4Kg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=xoWTQC5116rrj0LIeWFK+n0e546OR9Sn1wok6q76fTU=; b=D/N
+	gIukyMybA9w8xkkj2jIz1cqdHCnQL/YQCjb5fyCskgnH8GPHshSfMdNZ2vCipZqPvPvkmQOxNnOWj
+	SKa245WfiyL9b/a5lumUi44IUZ0oKwor9juhhOLzIXmLCEEaHBchFsSRU1WEpilYekYENMAi5AWy5
+	ybDUpXMho/uGiz8Q2vKe0R3OBCE6PTfff2pHTKqMs8q20wLjGz1qUmgJjbkZFC2li8KNyOBR6RfWh
+	+wlWba8dDbYe6nOA1eIfYYI1e6TmLtSI9XdqBd/wcXoBYT4vLEJ/QJqqCXL5upVkGlmkNCSXFFqye
+	Tm+8JCbZv0OT9qVPPwm5UJB0xdhhFOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hq3AD-0000hT-OC; Tue, 23 Jul 2019 22:21:41 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hq380-0006Dp-F8
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 22:19:26 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B1579168F;
- Tue, 23 Jul 2019 15:19:23 -0700 (PDT)
-Received: from dawn-kernel.cambridge.arm.com (unknown [10.1.197.116])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 5CB553F694;
- Tue, 23 Jul 2019 15:19:22 -0700 (PDT)
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH v3 7/7] platform: Add platform_find_device_by_driver() helper
-Date: Tue, 23 Jul 2019 23:18:38 +0100
-Message-Id: <20190723221838.12024-8-suzuki.poulose@arm.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190723221838.12024-1-suzuki.poulose@arm.com>
-References: <20190723221838.12024-1-suzuki.poulose@arm.com>
-MIME-Version: 1.0
+	id 1hq3Aj-000196-Vq; Tue, 23 Jul 2019 22:22:14 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hq38i-00077Z-2n; Tue, 23 Jul 2019 22:20:09 +0000
+Received: by mail-io1-xd42.google.com with SMTP id j5so81112289ioj.8;
+ Tue, 23 Jul 2019 15:20:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=pl9nO+hunkGocGh4P+3+7RACb7n3AOCHKdRk3PRyj78=;
+ b=jClr9tGO0M2uPdTqgL+wilDjNYPCY1lHULxJyU4k5vGRMTiCplHDR9talFGARjm7fM
+ WaQzedbOLIChWY2xd0aavGY1YIl0rc4yFY1QjuAdhFpLnHbnquNpQhnyWdCtpD/yh0wj
+ mic0mlosfXm6fh2jHggFADTo3xWjod0o0w9F7sh+It2QAgSNWfwcfcRKhDg4DFqN94+h
+ ji0X4ENlzZZuWoW70qUl9zRrs75DGINQ0bLoXjHq010Tx1Ahq71E4+ryf93RiyEK95rp
+ YvkGkm2a3vss0Nk42AMTYFrs7VsYkuxBS7APMVVSARpeApcEDLQ/NmTZMcXqTLfb6OxH
+ OCfA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=pl9nO+hunkGocGh4P+3+7RACb7n3AOCHKdRk3PRyj78=;
+ b=skWzpJXuWPi01o6kWh6BVdEIQoZfxtrS/yvA1xpnOjbd2oZD3H8n7W8NoRpVJxyXHN
+ wHO6oWL1z+9kjBqikBeb3nvYiYWeakUlw4UMKkVKTGenfXsOWaz0bRFxY7ReySkwcf0F
+ cUaZ9KGGk2IqQ+1/7ZXVTJj1CLBbluAHB3VRT0G31HCfqOntRM5n7Ux93LPnhd1CeilQ
+ lMI1yFm9x6PXWRQ5TUw9uPgWZ76SC/vt41g4ZWSk7BSydix58QCoIswZMWiHY/FRA4Is
+ Aqbimy/RUPzNFx8wxwVITqNjmFf/sJzoupJowTTK5F8fB396s8rnl10SwsK3xAqncafm
+ fjmA==
+X-Gm-Message-State: APjAAAXN/e83SV9Tnzn0vTDbQ6ipy6IUQ7De9ivxEoc1Hy5bnO3CyDD5
+ faF9M1hlL7r2atCow8D5pKw=
+X-Google-Smtp-Source: APXvYqzWffs9myy9EKo6r23AJN8vEydCexjw2y+Jif/lnPMEBM5O8yaoI59b8eVQgRLAxQMFdQQJNQ==
+X-Received: by 2002:a5e:c241:: with SMTP id w1mr68853307iop.58.1563920405893; 
+ Tue, 23 Jul 2019 15:20:05 -0700 (PDT)
+Received: from cs-dulles.cs.umn.edu (cs-dulles.cs.umn.edu. [128.101.35.54])
+ by smtp.googlemail.com with ESMTPSA id x22sm33378952iob.84.2019.07.23.15.20.04
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 23 Jul 2019 15:20:05 -0700 (PDT)
+From: Navid Emamdoost <navid.emamdoost@gmail.com>
+To: 
+Subject: [PATCH] mt76_init_sband_2g: null check the allocation
+Date: Tue, 23 Jul 2019 17:19:54 -0500
+Message-Id: <20190723221954.9233-1-navid.emamdoost@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_151924_729548_9EB033B9 
-X-CRM114-Status: GOOD (  14.32  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190723_152008_160553_F1FC5716 
+X-CRM114-Status: UNSURE (   8.28  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (navid.emamdoost[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,109 +92,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, gregkh@linuxfoundation.org,
- rafael@kernel.org, Seung-Woo Kim <sw0312.kim@samsung.com>,
- Sandy Huang <hjc@rock-chips.com>, Inki Dae <inki.dae@samsung.com>,
- Eric Anholt <eric@anholt.net>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: secalert@redhat.com, Jakub Kicinski <kubakici@wp.pl>,
+ linux-wireless@vger.kernel.org, kjlu@umn.edu, linux-kernel@vger.kernel.org,
+ emamd001@umn.edu, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, smccaman@umn.edu,
+ Matthias Brugger <matthias.bgg@gmail.com>, netdev@vger.kernel.org,
+ "David S. Miller" <davem@davemloft.net>, Kalle Valo <kvalo@codeaurora.org>,
+ Navid Emamdoost <navid.emamdoost@gmail.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-UHJvdmlkZSBhIGhlbHBlciB0byBsb29rdXAgcGxhdGZvcm0gZGV2aWNlcyBieSBtYXRjaGluZyBk
-ZXZpY2UKZHJpdmVyIGluIG9yZGVyIHRvIGF2b2lkIGRyaXZlcnMgdHJ5aW5nIHRvIHVzZSBwbGF0
-Zm9ybSBidXMKaW50ZXJuYWxzLgoKQ2M6IEVyaWMgQW5ob2x0IDxlcmljQGFuaG9sdC5uZXQ+CkNj
-OiBHcmVnIEtyb2FoLUhhcnRtYW4gPGdyZWdraEBsaW51eGZvdW5kYXRpb24ub3JnPgpDYzogIkhl
-aWtvIFN0w7xibmVyIiA8aGVpa29Ac250ZWNoLmRlPgpDYzogSW5raSBEYWUgPGlua2kuZGFlQHNh
-bXN1bmcuY29tPgpDYzogIlJhZmFlbCBKLiBXeXNvY2tpIiA8cmFmYWVsQGtlcm5lbC5vcmc+CkNj
-OiBTYW5keSBIdWFuZyA8aGpjQHJvY2stY2hpcHMuY29tPgpDYzogU2V1bmctV29vIEtpbSA8c3cw
-MzEyLmtpbUBzYW1zdW5nLmNvbT4KVGVzdGVkLWJ5OiBIZWlrbyBTdHVlYm5lciA8aGVpa29Ac250
-ZWNoLmRlPgpTaWduZWQtb2ZmLWJ5OiBTdXp1a2kgSyBQb3Vsb3NlIDxzdXp1a2kucG91bG9zZUBh
-cm0uY29tPgotLS0KIGRyaXZlcnMvYmFzZS9wbGF0Zm9ybS5jICAgICAgICAgICAgICAgICAgICAg
-fCAxNCArKysrKysrKysrKysrKwogZHJpdmVycy9ncHUvZHJtL2V4eW5vcy9leHlub3NfZHJtX2Ry
-di5jICAgICB8ICA5ICsrKy0tLS0tLQogZHJpdmVycy9ncHUvZHJtL21jZGUvbWNkZV9kcnYuYyAg
-ICAgICAgICAgICB8ICAzICstLQogZHJpdmVycy9ncHUvZHJtL3JvY2tjaGlwL3JvY2tjaGlwX2Ry
-bV9kcnYuYyB8ICAzICstLQogZHJpdmVycy9ncHUvZHJtL3ZjNC92YzRfZHJ2LmMgICAgICAgICAg
-ICAgICB8ICAzICstLQogaW5jbHVkZS9saW51eC9wbGF0Zm9ybV9kZXZpY2UuaCAgICAgICAgICAg
-ICB8ICAzICsrKwogNiBmaWxlcyBjaGFuZ2VkLCAyMyBpbnNlcnRpb25zKCspLCAxMiBkZWxldGlv
-bnMoLSkKCmRpZmYgLS1naXQgYS9kcml2ZXJzL2Jhc2UvcGxhdGZvcm0uYyBiL2RyaXZlcnMvYmFz
-ZS9wbGF0Zm9ybS5jCmluZGV4IDUwNmEwMTc1YTVhNy4uYTE3NGNlNWVhMTdjIDEwMDY0NAotLS0g
-YS9kcml2ZXJzL2Jhc2UvcGxhdGZvcm0uYworKysgYi9kcml2ZXJzL2Jhc2UvcGxhdGZvcm0uYwpA
-QCAtMTE5Nyw2ICsxMTk3LDIwIEBAIHN0cnVjdCBidXNfdHlwZSBwbGF0Zm9ybV9idXNfdHlwZSA9
-IHsKIH07CiBFWFBPUlRfU1lNQk9MX0dQTChwbGF0Zm9ybV9idXNfdHlwZSk7CiAKKy8qKgorICog
-cGxhdGZvcm1fZmluZF9kZXZpY2VfYnlfZHJpdmVyIC0gRmluZCBhIHBsYXRmb3JtIGRldmljZSB3
-aXRoIGEgZ2l2ZW4KKyAqIGRyaXZlci4KKyAqIEBzdGFydDogVGhlIGRldmljZSB0byBzdGFydCB0
-aGUgc2VhcmNoIGZyb20uCisgKiBAZHJ2OiBUaGUgZGV2aWNlIGRyaXZlciB0byBsb29rIGZvci4K
-KyAqLworc3RydWN0IGRldmljZSAqcGxhdGZvcm1fZmluZF9kZXZpY2VfYnlfZHJpdmVyKHN0cnVj
-dCBkZXZpY2UgKnN0YXJ0LAorCQkJCQkgICAgICBjb25zdCBzdHJ1Y3QgZGV2aWNlX2RyaXZlciAq
-ZHJ2KQoreworCXJldHVybiBidXNfZmluZF9kZXZpY2UoJnBsYXRmb3JtX2J1c190eXBlLCBzdGFy
-dCwgZHJ2LAorCQkJICAgICAgICh2b2lkICopcGxhdGZvcm1fbWF0Y2gpOworfQorRVhQT1JUX1NZ
-TUJPTF9HUEwocGxhdGZvcm1fZmluZF9kZXZpY2VfYnlfZHJpdmVyKTsKKwogaW50IF9faW5pdCBw
-bGF0Zm9ybV9idXNfaW5pdCh2b2lkKQogewogCWludCBlcnJvcjsKZGlmZiAtLWdpdCBhL2RyaXZl
-cnMvZ3B1L2RybS9leHlub3MvZXh5bm9zX2RybV9kcnYuYyBiL2RyaXZlcnMvZ3B1L2RybS9leHlu
-b3MvZXh5bm9zX2RybV9kcnYuYwppbmRleCA1OGJhZjQ5ZDk5MjYuLmJhZGFiOTRiZTJkNiAxMDA2
-NDQKLS0tIGEvZHJpdmVycy9ncHUvZHJtL2V4eW5vcy9leHlub3NfZHJtX2Rydi5jCisrKyBiL2Ry
-aXZlcnMvZ3B1L2RybS9leHlub3MvZXh5bm9zX2RybV9kcnYuYwpAQCAtMjQyLDkgKzI0Miw3IEBA
-IHN0YXRpYyBzdHJ1Y3QgY29tcG9uZW50X21hdGNoICpleHlub3NfZHJtX21hdGNoX2FkZChzdHJ1
-Y3QgZGV2aWNlICpkZXYpCiAJCWlmICghaW5mby0+ZHJpdmVyIHx8ICEoaW5mby0+ZmxhZ3MgJiBE
-Uk1fQ09NUE9ORU5UX0RSSVZFUikpCiAJCQljb250aW51ZTsKIAotCQl3aGlsZSAoKGQgPSBidXNf
-ZmluZF9kZXZpY2UoJnBsYXRmb3JtX2J1c190eXBlLCBwLAotCQkJCQkgICAgJmluZm8tPmRyaXZl
-ci0+ZHJpdmVyLAotCQkJCQkgICAgKHZvaWQgKilwbGF0Zm9ybV9idXNfdHlwZS5tYXRjaCkpKSB7
-CisJCXdoaWxlICgoZCA9IHBsYXRmb3JtX2ZpbmRfZGV2aWNlX2J5X2RyaXZlcihwLCAmaW5mby0+
-ZHJpdmVyLT5kcml2ZXIpKSkgewogCQkJcHV0X2RldmljZShwKTsKIAogCQkJaWYgKCEoaW5mby0+
-ZmxhZ3MgJiBEUk1fRklNQ19ERVZJQ0UpIHx8CkBAIC00MTIsOSArNDEwLDggQEAgc3RhdGljIHZv
-aWQgZXh5bm9zX2RybV91bnJlZ2lzdGVyX2RldmljZXModm9pZCkKIAkJaWYgKCFpbmZvLT5kcml2
-ZXIgfHwgIShpbmZvLT5mbGFncyAmIERSTV9WSVJUVUFMX0RFVklDRSkpCiAJCQljb250aW51ZTsK
-IAotCQl3aGlsZSAoKGRldiA9IGJ1c19maW5kX2RldmljZSgmcGxhdGZvcm1fYnVzX3R5cGUsIE5V
-TEwsCi0JCQkJCSAgICAmaW5mby0+ZHJpdmVyLT5kcml2ZXIsCi0JCQkJCSAgICAodm9pZCAqKXBs
-YXRmb3JtX2J1c190eXBlLm1hdGNoKSkpIHsKKwkJd2hpbGUgKChkZXYgPSBwbGF0Zm9ybV9maW5k
-X2RldmljZV9ieV9kcml2ZXIoTlVMTCwKKwkJCQkJCSZpbmZvLT5kcml2ZXItPmRyaXZlcikpKSB7
-CiAJCQlwdXRfZGV2aWNlKGRldik7CiAJCQlwbGF0Zm9ybV9kZXZpY2VfdW5yZWdpc3Rlcih0b19w
-bGF0Zm9ybV9kZXZpY2UoZGV2KSk7CiAJCX0KZGlmZiAtLWdpdCBhL2RyaXZlcnMvZ3B1L2RybS9t
-Y2RlL21jZGVfZHJ2LmMgYi9kcml2ZXJzL2dwdS9kcm0vbWNkZS9tY2RlX2Rydi5jCmluZGV4IGJh
-ZjYzZmI2ODUwYS4uYzA3YWJmOWUyMDFjIDEwMDY0NAotLS0gYS9kcml2ZXJzL2dwdS9kcm0vbWNk
-ZS9tY2RlX2Rydi5jCisrKyBiL2RyaXZlcnMvZ3B1L2RybS9tY2RlL21jZGVfZHJ2LmMKQEAgLTQ3
-Nyw4ICs0NzcsNyBAQCBzdGF0aWMgaW50IG1jZGVfcHJvYmUoc3RydWN0IHBsYXRmb3JtX2Rldmlj
-ZSAqcGRldikKIAkJc3RydWN0IGRldmljZV9kcml2ZXIgKmRydiA9ICZtY2RlX2NvbXBvbmVudF9k
-cml2ZXJzW2ldLT5kcml2ZXI7CiAJCXN0cnVjdCBkZXZpY2UgKnAgPSBOVUxMLCAqZDsKIAotCQl3
-aGlsZSAoKGQgPSBidXNfZmluZF9kZXZpY2UoJnBsYXRmb3JtX2J1c190eXBlLCBwLCBkcnYsCi0J
-CQkJCSAgICAodm9pZCAqKXBsYXRmb3JtX2J1c190eXBlLm1hdGNoKSkpIHsKKwkJd2hpbGUgKChk
-ID0gcGxhdGZvcm1fZmluZF9kZXZpY2VfYnlfZHJpdmVyKHAsIGRydikpKSB7CiAJCQlwdXRfZGV2
-aWNlKHApOwogCQkJY29tcG9uZW50X21hdGNoX2FkZChkZXYsICZtYXRjaCwgbWNkZV9jb21wYXJl
-X2RldiwgZCk7CiAJCQlwID0gZDsKZGlmZiAtLWdpdCBhL2RyaXZlcnMvZ3B1L2RybS9yb2NrY2hp
-cC9yb2NrY2hpcF9kcm1fZHJ2LmMgYi9kcml2ZXJzL2dwdS9kcm0vcm9ja2NoaXAvcm9ja2NoaXBf
-ZHJtX2Rydi5jCmluZGV4IDUzZDJjNWJkNjFkYy4uMzhkYzI2Mzc2OTYxIDEwMDY0NAotLS0gYS9k
-cml2ZXJzL2dwdS9kcm0vcm9ja2NoaXAvcm9ja2NoaXBfZHJtX2Rydi5jCisrKyBiL2RyaXZlcnMv
-Z3B1L2RybS9yb2NrY2hpcC9yb2NrY2hpcF9kcm1fZHJ2LmMKQEAgLTMzMCw4ICszMzAsNyBAQCBz
-dGF0aWMgc3RydWN0IGNvbXBvbmVudF9tYXRjaCAqcm9ja2NoaXBfZHJtX21hdGNoX2FkZChzdHJ1
-Y3QgZGV2aWNlICpkZXYpCiAJCXN0cnVjdCBkZXZpY2UgKnAgPSBOVUxMLCAqZDsKIAogCQlkbyB7
-Ci0JCQlkID0gYnVzX2ZpbmRfZGV2aWNlKCZwbGF0Zm9ybV9idXNfdHlwZSwgcCwgJmRydi0+ZHJp
-dmVyLAotCQkJCQkgICAgKHZvaWQgKilwbGF0Zm9ybV9idXNfdHlwZS5tYXRjaCk7CisJCQlkID0g
-cGxhdGZvcm1fZmluZF9kZXZpY2VfYnlfZHJpdmVyKHAsICZkcnYtPmRyaXZlcik7CiAJCQlwdXRf
-ZGV2aWNlKHApOwogCQkJcCA9IGQ7CiAKZGlmZiAtLWdpdCBhL2RyaXZlcnMvZ3B1L2RybS92YzQv
-dmM0X2Rydi5jIGIvZHJpdmVycy9ncHUvZHJtL3ZjNC92YzRfZHJ2LmMKaW5kZXggYmYxMTkzMGU0
-MGUxLi4xNTUxYzgyNTNiZWMgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvZ3B1L2RybS92YzQvdmM0X2Ry
-di5jCisrKyBiL2RyaXZlcnMvZ3B1L2RybS92YzQvdmM0X2Rydi5jCkBAIC0yMzcsOCArMjM3LDcg
-QEAgc3RhdGljIHZvaWQgdmM0X21hdGNoX2FkZF9kcml2ZXJzKHN0cnVjdCBkZXZpY2UgKmRldiwK
-IAkJc3RydWN0IGRldmljZV9kcml2ZXIgKmRydiA9ICZkcml2ZXJzW2ldLT5kcml2ZXI7CiAJCXN0
-cnVjdCBkZXZpY2UgKnAgPSBOVUxMLCAqZDsKIAotCQl3aGlsZSAoKGQgPSBidXNfZmluZF9kZXZp
-Y2UoJnBsYXRmb3JtX2J1c190eXBlLCBwLCBkcnYsCi0JCQkJCSAgICAodm9pZCAqKXBsYXRmb3Jt
-X2J1c190eXBlLm1hdGNoKSkpIHsKKwkJd2hpbGUgKChkID0gcGxhdGZvcm1fZmluZF9kZXZpY2Vf
-YnlfZHJpdmVyKHAsIGRydikpKSB7CiAJCQlwdXRfZGV2aWNlKHApOwogCQkJY29tcG9uZW50X21h
-dGNoX2FkZChkZXYsIG1hdGNoLCBjb21wYXJlX2RldiwgZCk7CiAJCQlwID0gZDsKZGlmZiAtLWdp
-dCBhL2luY2x1ZGUvbGludXgvcGxhdGZvcm1fZGV2aWNlLmggYi9pbmNsdWRlL2xpbnV4L3BsYXRm
-b3JtX2RldmljZS5oCmluZGV4IDliYzM2YjU4OTgyNy4uMzdlMTVhOTM1YTQyIDEwMDY0NAotLS0g
-YS9pbmNsdWRlL2xpbnV4L3BsYXRmb3JtX2RldmljZS5oCisrKyBiL2luY2x1ZGUvbGludXgvcGxh
-dGZvcm1fZGV2aWNlLmgKQEAgLTUxLDYgKzUxLDkgQEAgZXh0ZXJuIHN0cnVjdCBkZXZpY2UgcGxh
-dGZvcm1fYnVzOwogZXh0ZXJuIHZvaWQgYXJjaF9zZXR1cF9wZGV2X2FyY2hkYXRhKHN0cnVjdCBw
-bGF0Zm9ybV9kZXZpY2UgKik7CiBleHRlcm4gc3RydWN0IHJlc291cmNlICpwbGF0Zm9ybV9nZXRf
-cmVzb3VyY2Uoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqLAogCQkJCQkgICAgICB1bnNpZ25lZCBp
-bnQsIHVuc2lnbmVkIGludCk7CitleHRlcm4gc3RydWN0IGRldmljZSAqCitwbGF0Zm9ybV9maW5k
-X2RldmljZV9ieV9kcml2ZXIoc3RydWN0IGRldmljZSAqc3RhcnQsCisJCQkgICAgICAgY29uc3Qg
-c3RydWN0IGRldmljZV9kcml2ZXIgKmRydik7CiBleHRlcm4gdm9pZCBfX2lvbWVtICoKIGRldm1f
-cGxhdGZvcm1faW9yZW1hcF9yZXNvdXJjZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2LAog
-CQkJICAgICAgIHVuc2lnbmVkIGludCBpbmRleCk7Ci0tIAoyLjIxLjAKCgpfX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxp
-bmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
-LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+devm_kzalloc may fail and return NULL. So the null check is needed.
+
+Signed-off-by: Navid Emamdoost <navid.emamdoost@gmail.com>
+---
+ drivers/net/wireless/mediatek/mt7601u/init.c | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/drivers/net/wireless/mediatek/mt7601u/init.c b/drivers/net/wireless/mediatek/mt7601u/init.c
+index 9bfac9f1d47f..cada48800928 100644
+--- a/drivers/net/wireless/mediatek/mt7601u/init.c
++++ b/drivers/net/wireless/mediatek/mt7601u/init.c
+@@ -557,6 +557,9 @@ mt76_init_sband_2g(struct mt7601u_dev *dev)
+ {
+ 	dev->sband_2g = devm_kzalloc(dev->dev, sizeof(*dev->sband_2g),
+ 				     GFP_KERNEL);
++	if (!dev->sband_2g)
++		return -ENOMEM;
++
+ 	dev->hw->wiphy->bands[NL80211_BAND_2GHZ] = dev->sband_2g;
+ 
+ 	WARN_ON(dev->ee->reg.start - 1 + dev->ee->reg.num >
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
