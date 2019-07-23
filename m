@@ -2,90 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E845A71BB3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 17:33:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 208F571BE1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 17:38:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rtItqR3WQTGus0S3YZcEqrDuaT/E0wJ6FGrOy8+vF9o=; b=t+p40fc5c+uOb6
-	EAJbBrTbbMhbG55QDjP2qGk7YyCd0E9WfTrT08Y4mQfIrqJqjETpDt25/C/RiFz1D2AC7UeYhcpVD
-	ErJWXDyZJYeWwbSMh+h5CMU4MFQGeOfZtvWb2mMy1ZtdWADYaEyTsWNiMFrAMHOmdYGIc4VaYtnwr
-	Ex9vV/9P6JFBbC/bq38lNdJoBgJPGIX0Ehr4akwWiV3ToM9c0zWV+LdhghmHLCi27zJv340J43WLO
-	1v5sUy2G9HgfPr5N6+A1ZV5+QkmlFMwG00/LyZVkyD528OMUATjHeoPOx+mmns8WArrXBiZACwCMP
-	GuLShw/9yI+T9z0VgFvQ==;
+	List-Owner; bh=XP1ERGmHWuKEWz9YXeyvCwbA+lk5KXoMbPvNzymsVKc=; b=DnamolQDUjDWIA
+	Ub/x/U4Q3fxXZY+aKKzv4lluQ6m/rhsNoVEGmQbvEY5ETY4CnaI7qvZay+vDqFJ1VWB3C0g71aLc7
+	Ijr/BmHmwBXKWhQq9FNZUvXANGsy4Qiz6oK97FDMwD7yEeJ5Siw+Ed+fc/skvkL+XgdVlTDEcSGoO
+	O9tWMag4c0j2L/CgiTb9VEPJK8ihXAPv0wM7p30hHawYYgi1uSiAomcOzG+tYXHdv92CUy41aR0oI
+	lXRaS6JyhypXDtGZ26WCedkMhXeJoD3bZYPHpDDARIWoKo8ak3YjmFTA9AvxXlI0LH/gUrmCVmfNM
+	2gU+wjk5guUnCPchkNTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpwnN-0004Yd-PN; Tue, 23 Jul 2019 15:33:41 +0000
-Received: from mail1.bemta24.messagelabs.com ([67.219.250.5])
+	id 1hpwsG-0006vQ-Si; Tue, 23 Jul 2019 15:38:44 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpwmg-00049X-BC
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 15:33:00 +0000
-Received: from [67.219.250.101] (using TLSv1.2 with cipher
- DHE-RSA-AES256-GCM-SHA384 (256 bits))
- by server-5.bemta.az-a.us-west-2.aws.symcld.net id 9B/55-14470-8A8273D5;
- Tue, 23 Jul 2019 15:32:56 +0000
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFvrMIsWRWlGSWpSXmKPExsXi5LtOQHeFhnm
- swasnOhYPr/pbrJq6k8Vi0+NrrBZdv1YyW1zeNYfN4u/2TSwWL7aIW7QdO8bqwOGxc9Zddo9N
- qzrZPO5c28PmsXlJvcfGdzuYPPr/Gnh83iQXwB7FmpmXlF+RwJrxeuI05oJ1QhXLbv9ga2D8y
- tfFyMkhJLCaUWLTnswuRi4gew2jxJf3exghHKDE29kv2UCq2ARMJK7M2MncxcjBISIgL3HiiT
- dImFngCaNE32p7EFtYIFBi6uP9TCAlLAKqEvvvRoKEeQU8Jf6famYEsSUE5CRunusEm8Ip4CW
- x4VwJxAmeEjc+nmSDKBeUODnzCQvEdAmJgy9eMEPUqEm0zZkA1ioBdMDf3rIJjAKzkHTMQtKx
- gJFpFaN5UlFmekZJbmJmjq6hgYGuoaGRrqGxga6lqV5ilW6iXmmxbnlqcYmukV5iebFecWVuc
- k6KXl5qySZGYFykFDTF72A8O+uN3iFGSQ4mJVHeV5/MYoX4kvJTKjMSizPii0pzUosPMcpwcC
- hJ8Hapm8cKCRalpqdWpGXmAGMUJi3BwaMkwrtNDSjNW1yQmFucmQ6ROsWoKCXOWwKSEABJZJT
- mwbXB0sIlRlkpYV5GBgYGIZ6C1KLczBJU+VeM4hyMSsK87CDbeTLzSuCmvwJazAS0eK+KGcji
- kkSElFQDU9+S9aELds1s/lIeJLgnzG5Kl2v008mxxXvfuebIRnw9+8rPY/OZz4senFLM28rEN
- Wnt9xbbL4civCz5Vrblbppp/u/W1qL0c7K/qu6mTqj6e2lSl9nl8K8Mzx7d/uzBrzot0sH6ju
- Q/h4oH3NxGM6QNmzd0nb2nvebG/ukJonPkRE127DC/uf+q++Tpk9T6Js2smjYn5t7HgzWan79
- UTVcJvfO1vmz2o+TzyWqRHGaHGQ/VxpzoPjBDSEh18rEt9hZ/9D2eTeoR7JNfLdojERWnGH6m
- Q72bVXT/t8yrUbP7XZU7D0pJ7XOrjBCuCD5WX9B1bg7H3/tsC21zDL4cf77+3aEn5ls2lvxPO
- l054YkSS3FGoqEWc1FxIgBkC3GWhgMAAA==
-X-Env-Sender: Jose.DiazdeGrenu@digi.com
-X-Msg-Ref: server-30.tower-325.messagelabs.com!1563895975!30184!1
-X-Originating-IP: [66.77.174.16]
-X-SYMC-ESS-Client-Auth: outbound-route-from=pass
-X-StarScan-Received: 
-X-StarScan-Version: 9.43.9; banners=-,-,-
-X-VirusChecked: Checked
-Received: (qmail 21640 invoked from network); 23 Jul 2019 15:32:56 -0000
-Received: from owa.digi.com (HELO MCL-VMS-XCH01.digi.com) (66.77.174.16)
- by server-30.tower-325.messagelabs.com with ECDHE-RSA-AES256-SHA384 encrypted
- SMTP; 23 Jul 2019 15:32:56 -0000
-Received: from MTK-SMS-XCH04.digi.com (10.10.8.198) by MCL-VMS-XCH01.digi.com
- (10.5.8.49) with Microsoft SMTP Server (TLS) id 14.3.468.0;
- Tue, 23 Jul 2019 10:32:55 -0500
-Received: from DOR-SMS-XCH01.digi.com (10.49.8.99) by MTK-SMS-XCH04.digi.com
- (10.10.8.198) with Microsoft SMTP Server (TLS) id 14.3.468.0; Tue, 23 Jul
- 2019 10:32:54 -0500
-Received: from localhost.localdomain (10.101.2.92) by dor-sms-xch01.digi.com
- (10.49.8.99) with Microsoft SMTP Server (TLS) id 14.3.468.0; Tue, 23 Jul 2019
- 17:32:52 +0200
-From: Jose Diaz de Grenu <Jose.DiazdeGrenu@digi.com>
-To: <Jose.DiazdeGrenu@digi.com>
-Subject: [PATCH 2/2] nvmem: imx-ocotp: allow reads with arbitrary size and
- offset
-Date: Tue, 23 Jul 2019 17:32:43 +0200
-Message-ID: <1563895963-19526-3-git-send-email-Jose.DiazdeGrenu@digi.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1563895963-19526-1-git-send-email-Jose.DiazdeGrenu@digi.com>
-References: <1563895963-19526-1-git-send-email-Jose.DiazdeGrenu@digi.com>
+ id 1hpws3-0006v4-BQ
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 15:38:32 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2FC15217D4;
+ Tue, 23 Jul 2019 15:38:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1563896310;
+ bh=6BjcRpGUXnApNQz7lAjtezIG7TvYHSpnsTToA6ldcuw=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=iW3wa0oYpaL//UuyWsMLm+i+ND0M4tiRPisfgZng7jScBCMId0zVJa49Mdc8nwHLu
+ hpaqz0kgnbWK8ct6/KTj2+eF9ntu+s0xnTiUavTb6xKJKLg+QXKysth4nuK7evoo8o
+ d2fcuUXNNxoXFbVMXP4iuPbe3D77Nir5iUNw/TAw=
+Date: Tue, 23 Jul 2019 16:38:23 +0100
+From: Will Deacon <will@kernel.org>
+To: Rob Clark <robdclark@gmail.com>
+Subject: Re: [PATCH v2] iommu: add support for drivers that manage iommu
+ explicitly
+Message-ID: <20190723153822.gm4ossn43nvqbyak@willie-the-truck>
+References: <20190702202631.32148-2-robdclark@gmail.com>
+ <20190710182844.25032-1-robdclark@gmail.com>
+ <20190722142833.GB12009@8bytes.org>
+ <CAF6AEGvJc2RK3GkpcXiVKsuTX81D3oahnu=qWJ9LFst1eT3tMg@mail.gmail.com>
+ <20190722154803.GG12009@8bytes.org>
+ <CAF6AEGvWf3ZOrbyyWjORuOVEPOcPr+JSEO78aYjhL-GVhDZnTg@mail.gmail.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.101.2.92]
+Content-Disposition: inline
+In-Reply-To: <CAF6AEGvWf3ZOrbyyWjORuOVEPOcPr+JSEO78aYjhL-GVhDZnTg@mail.gmail.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_083258_494343_86B11154 
-X-CRM114-Status: GOOD (  12.79  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190723_083831_412836_0AB249B4 
+X-CRM114-Status: GOOD (  19.47  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [67.219.250.5 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,89 +82,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: festevam@gmail.com, s.hauer@pengutronix.de, linux-kernel@vger.kernel.org,
- srinivas.kandagatla@linaro.org, linux-imx@nxp.com, kernel@pengutronix.de,
- shawnguo@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Rob Clark <robdclark@chromium.org>, aarch64-laptops@lists.linaro.org,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>, Joerg Roedel <joro@8bytes.org>,
+ "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Andy Shevchenko <andy.shevchenko@gmail.com>,
+ Sudeep Holla <sudeep.holla@arm.com>,
+ "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
+ Joerg Roedel <joro@8bytes.org>, " <iommu@lists.linux-foundation.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Joe Perches <joe@perches.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Robin Murphy <robin.murphy@arm.com>, Bartosz Golaszewski <brgl@bgdev.pl>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently the driver only allows to read 32 aligned 32-bit chunks. This
-is inconvenient when defining nvmem-cells, as they are rarely a multiple
-of 32 bits in size, and that makes the nvmem-consumer hardcode offsets and
-masks to extract the real value.
+On Mon, Jul 22, 2019 at 09:23:48AM -0700, Rob Clark wrote:
+> On Mon, Jul 22, 2019 at 8:48 AM Joerg Roedel <joro@8bytes.org> wrote:
+> >
+> > On Mon, Jul 22, 2019 at 08:41:34AM -0700, Rob Clark wrote:
+> > > It is set by the driver:
+> > >
+> > > https://patchwork.freedesktop.org/patch/315291/
+> > >
+> > > (This doesn't really belong in devicetree, since it isn't a
+> > > description of the hardware, so the driver is really the only place to
+> > > set this.. which is fine because it is about a detail of how the
+> > > driver works.)
+> >
+> > It is more a detail about how the firmware works. IIUC the problem is
+> > that the firmware initializes the context mappings for the GPU and the
+> > OS doesn't know anything about that and just overwrites them, causing
+> > the firmware GPU driver to fail badly.
+> >
+> > So I think it is the task of the firmware to tell the OS not to touch
+> > the devices mappings until the OS device driver takes over. On x86 there
+> > is something similar with the RMRR/unity-map tables from the firmware.
+> >
+> 
+> Bjorn had a patchset[1] to inherit the config from firmware/bootloader
+> when arm-smmu is probed which handles that part of the problem.  My
+> patch is intended to be used on top of his patchset.  This seems to me
+> like the best solution, if we don't have control over the firmware.
 
-Remove the limitation but keep reading in 32-bit chunks from the hardware
-to ensure there is no change in the behaviour.
+Hmm, but the feedback from Robin on the thread you cite was that this should
+be generalised to look more like RMRR, so there seems to be a clear message
+here.
 
-Signed-off-by: Jose Diaz de Grenu <Jose.DiazdeGrenu@digi.com>
----
- drivers/nvmem/imx-ocotp.c | 27 ++++++++++++---------------
- 1 file changed, 12 insertions(+), 15 deletions(-)
-
-diff --git a/drivers/nvmem/imx-ocotp.c b/drivers/nvmem/imx-ocotp.c
-index dc86d863563a..9590eeab85d8 100644
---- a/drivers/nvmem/imx-ocotp.c
-+++ b/drivers/nvmem/imx-ocotp.c
-@@ -121,16 +121,8 @@ static int imx_ocotp_read(void *context, unsigned int offset,
- 			  void *val, size_t bytes)
- {
- 	struct ocotp_priv *priv = context;
--	unsigned int count;
--	u32 *buf = val;
-+	u8 *buf = val;
- 	int i, ret;
--	u32 index;
--
--	index = offset >> 2;
--	count = bytes >> 2;
--
--	if (count > (priv->params->nregs - index))
--		count = priv->params->nregs - index;
- 
- 	mutex_lock(&ocotp_mutex);
- 
-@@ -147,9 +139,9 @@ static int imx_ocotp_read(void *context, unsigned int offset,
- 		goto read_end;
- 	}
- 
--	for (i = index; i < (index + count); i++) {
--		*buf++ = readl(priv->base + IMX_OCOTP_OFFSET_B0W0 +
--			       i * IMX_OCOTP_OFFSET_PER_WORD);
-+	for (i = offset; i < (bytes + offset); i++) {
-+		u32 word_val = readl(priv->base + IMX_OCOTP_OFFSET_B0W0 +
-+				     (i >> 2) * IMX_OCOTP_OFFSET_PER_WORD);
- 
- 		/* 47.3.1.2
- 		 * For "read locked" registers 0xBADABADA will be returned and
-@@ -157,9 +149,14 @@ static int imx_ocotp_read(void *context, unsigned int offset,
- 		 * software before any new write, read or reload access can be
- 		 * issued
- 		 */
--		if (*(buf - 1) == IMX_OCOTP_READ_LOCKED_VAL)
-+		if (word_val == IMX_OCOTP_READ_LOCKED_VAL)
- 			imx_ocotp_clr_err_if_set(priv->base);
-+
-+		word_val >>= (i % 4) * 8;
-+
-+		*buf++ = (u8) (word_val & 0xFF);
- 	}
-+
- 	ret = 0;
- 
- read_end:
-@@ -415,8 +412,8 @@ static int imx_ocotp_write(void *context, unsigned int offset, void *val,
- static struct nvmem_config imx_ocotp_nvmem_config = {
- 	.name = "imx-ocotp",
- 	.read_only = false,
--	.word_size = 4,
--	.stride = 4,
-+	.word_size = 1,
-+	.stride = 1,
- 	.reg_read = imx_ocotp_read,
- 	.reg_write = imx_ocotp_write,
- };
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
