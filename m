@@ -2,41 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8FDB671704
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 13:29:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CBE38716F8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 13:28:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=OXpE0I4wDsbG6tVAl52z1R3NOMhU+rwi490aRQlJU8o=; b=h2JElDaY90IrQa
-	GWfXf7aFKH1UtsBle9qPLbqYXALIGYE1Wb3VgjL8e6aPpQS7FvT8qT0DKLOdVXefHE6609Rxhr7cr
-	ae/9S91lnC/xI3T7gBXdYnPIB+YZdkKODTNQoKG8kNtbAMPTHtAvB79RPUFL/6UPjYyoJmpdIgnbC
-	IWS2ghpR4IhSNORHRkrN+YjkQFD4lZVoRsKPKw544/6bf/k64VR6SoVTXagiVTFxak0w58QocMZ8t
-	at1Kxjz74k7jgrOFdKQQYVcdIwBCOgefrgScXr5VTKyvqPzccy7LL85x2CSfYRKYUCEz5Dr+OgMVf
-	v7yK3e2OQTzv30oLtnDA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LfofG1mdqBx9m9ILSfn101ghl/njryEESPmmaJ+oBVs=; b=uqgmS7dNdGNfon
+	URbV5caS0lcJEnE6FkOa62yRDQo8JIviZX8NiH41R7E6/V58z4bfn8qrNvhBM/2AS8FP7JHUGU5o1
+	fG0YuklMWOD7jBww9GUMmFhk4stkVGB0VTcy09pSJOLEQSbhyxNYdP0VsW1lb0F9uQ3Lcjb635Mel
+	vW6z3XZoggnfkvhbC51aSZSZLJqEZ3LbXZNiDb4A4QOFjH4cd26i74+eWeBED6rXmurGMqXLzeMRg
+	AJpzhtZyidFhzr7+O0CPvjIWEOUdtQss7wGfNQo1GqMB7fAilg2KJETkLb/H440GO6JcLOPbNTuyF
+	4RNYk5BTs6cp+hU+Dfbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpsye-0001Om-NH; Tue, 23 Jul 2019 11:29:04 +0000
+	id 1hpsyI-0000mS-9O; Tue, 23 Jul 2019 11:28:42 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hpsxy-0000kv-Fq
+ id 1hpsxy-0000kw-Fr
  for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 11:28:23 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 5C77A808C;
- Tue, 23 Jul 2019 11:28:44 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id 12B0C81A0;
+ Tue, 23 Jul 2019 11:28:45 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: linux-omap@vger.kernel.org
-Subject: [PATCH 0/8] ti-sysc related warning fixes for v5.3-rc cycle
-Date: Tue, 23 Jul 2019 04:28:03 -0700
-Message-Id: <20190723112811.44381-1-tony@atomide.com>
+Subject: [PATCH 1/8] ARM: OMAP2+: Fix missing SYSC_HAS_RESET_STATUS for dra7
+ epwmss
+Date: Tue, 23 Jul 2019 04:28:04 -0700
+Message-Id: <20190723112811.44381-2-tony@atomide.com>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190723112811.44381-1-tony@atomide.com>
+References: <20190723112811.44381-1-tony@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_042822_571824_856A9397 
-X-CRM114-Status: UNSURE (   8.15  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190723_042822_572183_C1F06015 
+X-CRM114-Status: GOOD (  10.29  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -68,40 +70,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi all,
+TRM says PWMSS_SYSCONFIG bit for SOFTRESET changes to zero when
+reset is completed. Let's configure it as otherwise we get warnings
+on boot when we check the data against dts provided data. Eventually
+the legacy platform data will be just dropped, but let's fix the
+warning first.
 
-I noticed that with recent ti-sysc driver changes some new warnings
-have crept in. Mostly they are caused by having different configuration
-in the dts compared to the legacy platform data. Let's fix these first
-before we continue dropping the legacy platform data.
+Signed-off-by: Tony Lindgren <tony@atomide.com>
+---
+ arch/arm/mach-omap2/omap_hwmod_7xx_data.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-I also noticed we need two fixes for the ti-sysc driver while looking
-at the warnings.
-
-Regards,
-
-Tony
-
-Tony Lindgren (8):
-  ARM: OMAP2+: Fix missing SYSC_HAS_RESET_STATUS for dra7 epwmss
-  ARM: OMAP2+: Remove unconfigured midlemode for am3 lcdc
-  bus: ti-sysc: Fix handling of forced idle
-  bus: ti-sysc: Fix using configured sysc mask value
-  ARM: dts: Drop bogus ahclkr clocks for dra7 mcasp 3 to 8
-  ARM: dts: Fix flags for gpio7
-  ARM: dts: Fix incorrect dcan register mapping for am3, am4 and dra7
-  ARM: dts: Fix lcdc sysc flags for am3
-
- arch/arm/boot/dts/am33xx-l4.dtsi              |  6 +++-
- arch/arm/boot/dts/am437x-l4.dtsi              |  4 +++
- .../boot/dts/am57xx-beagle-x15-common.dtsi    |  2 +-
- arch/arm/boot/dts/dra7-evm.dts                |  2 +-
- arch/arm/boot/dts/dra7-l4.dtsi                | 31 ++++++++-----------
- arch/arm/mach-omap2/omap_hwmod_33xx_data.c    |  2 +-
- arch/arm/mach-omap2/omap_hwmod_7xx_data.c     |  3 +-
- drivers/bus/ti-sysc.c                         | 10 +++---
- 8 files changed, 31 insertions(+), 29 deletions(-)
-
+diff --git a/arch/arm/mach-omap2/omap_hwmod_7xx_data.c b/arch/arm/mach-omap2/omap_hwmod_7xx_data.c
+--- a/arch/arm/mach-omap2/omap_hwmod_7xx_data.c
++++ b/arch/arm/mach-omap2/omap_hwmod_7xx_data.c
+@@ -379,7 +379,8 @@ static struct omap_hwmod dra7xx_dcan2_hwmod = {
+ static struct omap_hwmod_class_sysconfig dra7xx_epwmss_sysc = {
+ 	.rev_offs	= 0x0,
+ 	.sysc_offs	= 0x4,
+-	.sysc_flags	= SYSC_HAS_SIDLEMODE | SYSC_HAS_SOFTRESET,
++	.sysc_flags	= SYSC_HAS_SIDLEMODE | SYSC_HAS_SOFTRESET |
++			  SYSC_HAS_RESET_STATUS,
+ 	.idlemodes	= (SIDLE_FORCE | SIDLE_NO | SIDLE_SMART),
+ 	.sysc_fields	= &omap_hwmod_sysc_type2,
+ };
 -- 
 2.21.0
 
