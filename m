@@ -2,55 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E216D71C6D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 18:04:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7360071C96
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 18:12:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DsngU0V4vK7K/CpUkeS016+0xm8cEKIRyU+LPTBUOe0=; b=ay/UzH2xLbBIoX
-	qcwcB3RaBTb/iulbFDpgOKS/4RGX6fsUM2W/YrSVEI0m37wicsdCZjf4EiTxn7fWPblFqtwxhsQzN
-	es0fCqNkJkLzHOj/boNlMDYZqrtYCfhbrEwS/p6ZVF5i7XlhUSgNAx4mtpB4plYnIEOWB0meBbrTt
-	AOzPWBMUwaFjHVYe9ZFcd2A7qDYOTOm3LHwZdlwcK+mGRq1CVMi0dxaFjhGCXmieD/NvxGHsZpxf7
-	WfJcARYDgD/lu9fUribtKrp6zQzZNwDnjJgh6njDZepIvTJ8RoC9VHgPbFZx8z36dMLSGaevGrpwW
-	LrClslOD+qpYQMKOOIYw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CLBcCZ8umMaHKVrAzfkwEaU64mrQqvu7cc4dEorbM0c=; b=Ac4J5i34k9v1oV
+	4J9kVPw7fMrJIDCCoErtp/fAZHbZi3TYTCf0OxlS13vFNdut3uW1VyC2eKnw6QpOaasgcMKOz42lH
+	n5pd40c/vXJCvlt4AJd3s1xucB1vq4uf77IPb3G0iqVnIwMzbdJwMunUqtMG9oZL+3xtAlbffXRkB
+	KgOtgcs8Qy+Kp7ricwhlZ1NMdcCxs1q8wMuQqxPjuuFBwWen5tMpdnutxWZLWbXpp1M4Viq/fXSzg
+	rX7lKGhcsyK8OIZ8lYB9ncecl5QikkoP8/+CIR+Nf/VEo/AWl/7TJNXXpj9veoRJoghHJ5KXPzT0b
+	tls8mCbNPM1yCN+YL5sQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpxHV-00048L-3i; Tue, 23 Jul 2019 16:04:49 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hpxHD-00047q-Vy
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 16:04:33 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9540328;
- Tue, 23 Jul 2019 09:04:31 -0700 (PDT)
-Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5DE083F71A;
- Tue, 23 Jul 2019 09:04:26 -0700 (PDT)
-Subject: Re: [PATCH v2 2/4] arm64: unwind: Prohibit probing on return_address()
-To: Masami Hiramatsu <mhiramat@kernel.org>
-References: <156378170297.12011.17385386326930403235.stgit@devnote2>
- <156378172702.12011.1144595747474511323.stgit@devnote2>
-From: James Morse <james.morse@arm.com>
-Message-ID: <038c4b88-e7ef-aaab-0a79-5d7371719aa5@arm.com>
-Date: Tue, 23 Jul 2019 17:04:21 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+	id 1hpxOy-0007Tv-2e; Tue, 23 Jul 2019 16:12:32 +0000
+Received: from vps0.lunn.ch ([185.16.172.187])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hpxOi-0007TP-Eo
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 16:12:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+ s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=SFvQ5u4FZKcYENDt824YzA7WxOELPQK+cgWZ4VxPqUo=; b=d195U1tdUFoJSZau+1l1XGRRix
+ 0/szGeGwpmjbP7o/UkQWI/bCxyHCVsSWSDH1tz2LeiRroUBU1zundZ31uTTC2pmjsdhb/BAo/5R7A
+ HWwFQs8Ph5Q86Lv1s5q71nBOtLX37n2KFJu7xl/17Faspj9z/kbpcC4VJtdoYsmuyMLg=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.89)
+ (envelope-from <andrew@lunn.ch>)
+ id 1hpxOe-0002Be-Oc; Tue, 23 Jul 2019 18:12:12 +0200
+Date: Tue, 23 Jul 2019 18:12:12 +0200
+From: Andrew Lunn <andrew@lunn.ch>
+To: Oliver Hartkopp <socketcan@hartkopp.net>
+Subject: Re: TS-219 RTC issue with Debian Buster
+Message-ID: <20190723161212.GA8095@lunn.ch>
+References: <99a8e2cc-61a2-3b43-0d72-6f001cffe572@hartkopp.net>
 MIME-Version: 1.0
-In-Reply-To: <156378172702.12011.1144595747474511323.stgit@devnote2>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <99a8e2cc-61a2-3b43-0d72-6f001cffe572@hartkopp.net>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_090432_069269_E36753CE 
-X-CRM114-Status: GOOD (  15.69  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190723_091216_648869_2FFA41D8 
+X-CRM114-Status: GOOD (  12.25  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [185.16.172.187 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,67 +75,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dan Rue <dan.rue@linaro.org>, Daniel Diaz <daniel.diaz@linaro.org>,
- Anders Roxell <anders.roxell@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Naresh Kamboju <naresh.kamboju@linaro.org>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, Matt Hart <matthew.hart@linaro.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: tbm@cyrius.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On Tue, Jul 23, 2019 at 05:30:48PM +0200, Oliver Hartkopp wrote:
+> Hi all,
+> 
+> I upgraded my TS-219 to Debian Buster with Kernel 4.19.0-5-marvell.
 
-On 22/07/2019 08:48, Masami Hiramatsu wrote:
-> Prohibit probing on return_address() and subroutines which
-> is called from return_address(), since the it is invoked from
-> trace_hardirqs_off() which is also kprobe blacklisted.
+Hi Oliver
 
-(Nits: "which are called" and "since it is")
+Did the same test work with older Debians?
 
+> I wonder whether the problem comes from a missing interrupt assignment
+> 
+> rtc: rtc@10300 {
+>              compatible = "marvell,kirkwood-rtc", "marvell,orion-rtc";
+>              reg = <0x10300 0x20>;
+>              interrupts = <53>;            <- HERE!?!
+>              clocks = <&gate_clk 7>;
+>                };
+> 
+> ... I found in linux/arch/arm/boot/dts/kirkwood-6282.dtsi ?!?
+> 
+> In /proc/interrupts there's no rtc assigned to an interrupt 53.
 
-> diff --git a/arch/arm64/kernel/return_address.c b/arch/arm64/kernel/return_address.c
-> index b21cba90f82d..7f8a143268b0 100644
-> --- a/arch/arm64/kernel/return_address.c
-> +++ b/arch/arm64/kernel/return_address.c
-> @@ -8,6 +8,7 @@
->  
->  #include <linux/export.h>
->  #include <linux/ftrace.h>
-> +#include <linux/kprobes.h>
->  
->  #include <asm/stack_pointer.h>
->  #include <asm/stacktrace.h>
-> @@ -17,7 +18,7 @@ struct return_address_data {
->  	void *addr;
->  };
->  
-> -static int save_return_addr(struct stackframe *frame, void *d)
-> +static nokprobe_inline int save_return_addr(struct stackframe *frame, void *d)
+There is code in the driver to request this interrupt. Do you see an
+error message like:
 
-This nokprobe_inline ends up as __always_inline if kprobes is enabled.
-What do we expect the compiler to do with this? save_return_addr is passed as a
-function-pointer to walk_stackframe()... I don't see how the compiler can inline it!
+interrupt not available.
 
-This would be needed for on_accessible_stack().
-Should we cover ftrace_graph_get_ret_stack()?, or is that already in hand?
+> Accessing the rtc values (time/date) via /sys/class/rtc/rtc0 entries works
+> well and setting the date/time via "hwclock --systohc" does its job too. So
+> I2C and the rtc_s35390a driver seem to work so far.
 
+Now i'm confused. I don't see any mention of s35390a for any TS
+devices. Some kirkwood machines do make use of an external RTC, not
+the built in. But not this machine, as far as i know.
 
->  {
->  	struct return_address_data *data = d;
->  
-> @@ -52,3 +53,4 @@ void *return_address(unsigned int level)
->  		return NULL;
->  }
->  EXPORT_SYMBOL_GPL(return_address);
-> +NOKPROBE_SYMBOL(return_address);
-
-
-Thanks,
-
-James
+	Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
