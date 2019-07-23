@@ -2,63 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C34070F2A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 04:32:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 53E2670F39
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 04:43:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ze2PNEEUrhZ2C8+bgHs3EAkmBHyzEmSrmVCaya0D0/c=; b=ErpZdi0yySQYyp
-	Xwu1/0Q+2MGIZyes1zwYyY6YKfkNWrF6P9+EwoSsMvdr6WHqfflgh03r0YjBMUe6dvvznt4Iky05m
-	kow+Bv6EfHeVow0rFcFIMIQ00TAv4oTxAqG9ZrORrpjmAeeqljjxRJozXNYW/Yw68eij+RWFVSm+3
-	7qR/0n6nFRRB+/qCC+fR5zfAIDa8+vfa3mqBZpR1CWj1an6okqchWKy3+P+vYYVf5zgytRTuRpNLF
-	XaCFOXdk4ro9A/FsZCzfodeAX1oOltIApwRXZeFiV1TgmNjmu99sOhFQmomrh9fAL9TVpZvbto4+v
-	VzOmenP9za4zODp2y64g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=g31v9FbE9w5M67KPhJiOmTDuWkL7lX6WRFQutv6SF2k=; b=u71YrndmMeeWsM
+	uTEoLqBALGppchsg2IdMq26HhACM5wmHlVQu+sbArYr29JY3YtILtv5d9tEws/RUXO2fG53eRPiGW
+	SHfSGeMn8dJ+PmE4Z5TnSH+mJT+eATd2X+RadVO04SNcA3djim8RG7ZTjGg8shr5fjdv6MgP23GPc
+	AYJOkJO0JleZ929EbYKUV/uyNqkJ3LIvcy55X6y1CfbJzO09D2j+9sUON8m61CaFebHp8RER1D+yR
+	OeAJ71W7xgARS579VzfvWsA/tbOEa6N2oKElKqCqs5BR64uWl57GRE8KcabPMTU7n30S0UWxxJnQt
+	zt6pczEQBqYxHwHVdP/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpkbP-0006Fe-4M; Tue, 23 Jul 2019 02:32:31 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hpkm6-0001pi-6m; Tue, 23 Jul 2019 02:43:34 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpkb1-0006ER-8g; Tue, 23 Jul 2019 02:32:08 +0000
-X-UUID: 5a39e9d200f449e78e7cb91012e70f36-20190722
-X-UUID: 5a39e9d200f449e78e7cb91012e70f36-20190722
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 367777316; Mon, 22 Jul 2019 18:31:52 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 22 Jul 2019 19:31:51 -0700
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 23 Jul 2019 10:31:49 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 23 Jul 2019 10:31:49 +0800
-Message-ID: <1563849109.27558.14.camel@mtksdaap41>
-Subject: Re: [PATCH v2 00/12] Clean up "mediatek,larb" after adding device_link
-From: CK Hu <ck.hu@mediatek.com>
-To: Yong Wu <yong.wu@mediatek.com>
-Date: Tue, 23 Jul 2019 10:31:49 +0800
-In-Reply-To: <1560171313-28299-1-git-send-email-yong.wu@mediatek.com>
-References: <1560171313-28299-1-git-send-email-yong.wu@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1hpklb-0001o6-Kv
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 02:43:05 +0000
+Received: from DGGEMS413-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 35986DA5A63EAACD6368;
+ Tue, 23 Jul 2019 10:42:57 +0800 (CST)
+Received: from [127.0.0.1] (10.177.223.23) by DGGEMS413-HUB.china.huawei.com
+ (10.3.19.213) with Microsoft SMTP Server id 14.3.439.0; Tue, 23 Jul 2019
+ 10:42:55 +0800
+Subject: Re: [PATCH 0/3] arm64: Allow early timestamping of kernel log
+To: Marc Zyngier <marc.zyngier@arm.com>, Thomas Gleixner <tglx@linutronix.de>, 
+ John Stultz <john.stultz@linaro.org>, Pavel Tatashin
+ <pasha.tatashin@soleen.com>, Petr Mladek <pmladek@suse.com>, "Sergey
+ Senozhatsky" <sergey.senozhatsky@gmail.com>, Steven Rostedt
+ <rostedt@goodmis.org>, Will Deacon <will.deacon@arm.com>, Catalin Marinas
+ <catalin.marinas@arm.com>, Mark Rutland <mark.rutland@arm.com>
+References: <20190722103330.255312-1-marc.zyngier@arm.com>
+From: Hanjun Guo <guohanjun@huawei.com>
+Message-ID: <83634882-a528-a05d-f38c-cd0f58d1e6ee@huawei.com>
+Date: Tue, 23 Jul 2019 10:42:15 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101
+ Thunderbird/52.5.0
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <20190722103330.255312-1-marc.zyngier@arm.com>
+Content-Language: en-US
+X-Originating-IP: [10.177.223.23]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_193207_331669_4F028699 
-X-CRM114-Status: GOOD (  18.65  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190722_194303_890417_00B563C7 
+X-CRM114-Status: GOOD (  14.82  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.190 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,139 +70,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: youlin.pei@mediatek.com, devicetree@vger.kernel.org,
- Nicolas Boichat <drinkcat@chromium.org>, srv_heupstream@mediatek.com,
- Joerg Roedel <joro@8bytes.org>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, Evan Green <evgreen@chromium.org>, Tomasz
- Figa <tfiga@google.com>, iommu@lists.linux-foundation.org,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>, yingjoe.chen@mediatek.com,
- anan.sun@mediatek.com, Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Yong:
+On 2019/7/22 18:33, Marc Zyngier wrote:
+> So far, we've let the arm64 kernel start its meaningful time stamping
+> of the kernel log pretty late, which is caused by sched_clock() being
+> initialised rather late compared to other architectures.
+> 
+> Pavel Tatashin proposed[1] to move the initialisation of sched_clock
+> much earlier, which I had objections to. The reason for initialising
+> sched_clock late is that a number of systems have broken counters, and
+> we need to apply all kind of terrifying workarounds to avoid time
+> going backward on the affected platforms. Being able to identify the
+> right workaround comes pretty late in the kernel boot, and providing
+> an unreliable sched_clock, even for a short period of time, isn't an
+> appealing prospect.
+> 
+> To address this, I'm proposing that we allow an architecture to chose
+> to (1) divorce time stamping and sched_clock during the early phase of
+> booting, and (2) inherit the time stamping clock as the new epoch the
+> first time a sched_sched clock gets registered.
+> 
+> (1) would allow arm64 to provide a time stamping clock, however
+> unreliable it might be, while (2) would allow sched_clock to provide
+> time stamps that are continuous with the time-stamping clock.
+> 
+> The last patch in the series adds the necessary logic to arm64,
+> allowing the (potentially unreliable) time stamping of early kernel
+> messages.
+> 
+> Tested on a bunch of arm64 systems, both bare-metal and in VMs. Boot
+> tested on a x86 guest.
 
-I've added log  in mtk_smi_clk_enable() and mtk_smi_clk_disable(), and I
-boot MT8183 with display, the log is
+This makes the boot log more useful and I can debug some time consuming
+issue easier before the arch timer initialization, tested on my ARM64
+server, I can see the timestamping from the start [1],
 
-[    4.020340] mtk-smi-common 14019000.smi: mtk_smi_clk_enable()
-[    4.331371] mtk-smi-common 14019000.smi: mtk_smi_clk_disable()
-[    4.429578] mtk-smi-common 14019000.smi: mtk_smi_clk_enable()
-[    4.719743] mtk-smi-common 14019000.smi: mtk_smi_clk_disable()
-[    5.084770] mtk-smi-common 14019000.smi: mtk_smi_clk_enable()
-[    5.904310] mtk-smi-common 14019000.smi: mtk_smi_clk_disable()
+Tested-by: Hanjun Guo <guohanjun@huawei.com>
 
-From the log, the clock is finally turned off, but the display works
-normally. This is because scpsys has turn the clock on,
+Thanks
+Hanjun
 
-		scpsys: syscon@10006000 {
-			compatible = "mediatek,mt8183-scpsys", "syscon";
-			#power-domain-cells = <1>;
-			reg = <0 0x10006000 0 0x1000>;
-			clocks = <&topckgen CLK_TOP_MUX_AUD_INTBUS>,
-				 <&mmsys CLK_MM_SMI_COMMON>,
-				 <&mmsys CLK_MM_GALS_COMM0>,
-				 <&mmsys CLK_MM_GALS_COMM1>,
-			clock-names = "audio","mm-0",
-				      "mm-1", "mm-2";
-		}
-
-I'm worried that for MT8173, scpsys would not turn on subsys clock, this
-series would let display work abnormally, so I think smi common should
-not depend on scpsys to turn on the clock.
-
-You could simply remove the clock parameter in scpsys device node, and
-you would see the display works abnormally.
-
-Regards,
-CK
-
-
-On Mon, 2019-06-10 at 20:55 +0800, Yong Wu wrote:
-> MediaTek IOMMU block diagram always like below:
-> 
->         M4U
->          |
->     smi-common
->          |
->   -------------
->   |         |  ...
->   |         |
-> larb1     larb2
->   |         |
-> vdec       venc
-> 
-> All the consumer connect with smi-larb, then connect with smi-common.
-> 
-> MediaTek IOMMU don't have its power-domain. When the consumer works,
-> it should enable the smi-larb's power which also need enable the smi-common's
-> power firstly.
-> 
-> Thus, Firstly, use the device link connect the consumer and the
-> smi-larbs. then add device link between the smi-larb and smi-common.
-> 
-> After adding the device_link, then "mediatek,larb" property can be removed.
-> the iommu consumer don't need call the mtk_smi_larb_get/put to enable
-> the power and clock of smi-larb and smi-common.
-> 
-> This patchset depends on "MT8183 IOMMU SUPPORT"[1].
-> 
-> [1] https://lists.linuxfoundation.org/pipermail/iommu/2019-June/036552.html
-> 
-> Change notes:
-> v2:
->    1) rebase on v5.2-rc1.
->    2) Move adding device_link between the consumer and smi-larb into
-> iommu_add_device from Robin.
->    3) add DL_FLAG_AUTOREMOVE_CONSUMER even though the smi is built-in from Evan.
->    4) Remove the shutdown callback in iommu.   
-> 
-> v1: https://lists.linuxfoundation.org/pipermail/iommu/2019-January/032387.html
-> 
-> Yong Wu (12):
->   dt-binding: mediatek: Get rid of mediatek,larb for multimedia HW
->   iommu/mediatek: Add probe_defer for smi-larb
->   iommu/mediatek: Add device_link between the consumer and the larb
->     devices
->   memory: mtk-smi: Add device-link between smi-larb and smi-common
->   media: mtk-jpeg: Get rid of mtk_smi_larb_get/put
->   media: mtk-mdp: Get rid of mtk_smi_larb_get/put
->   media: mtk-vcodec: Get rid of mtk_smi_larb_get/put
->   drm/mediatek: Get rid of mtk_smi_larb_get/put
->   memory: mtk-smi: Get rid of mtk_smi_larb_get/put
->   iommu/mediatek: Use builtin_platform_driver
->   arm: dts: mediatek: Get rid of mediatek,larb for MM nodes
->   arm64: dts: mediatek: Get rid of mediatek,larb for MM nodes
-> 
->  .../bindings/display/mediatek/mediatek,disp.txt    |  9 -----
->  .../bindings/media/mediatek-jpeg-decoder.txt       |  4 --
->  .../devicetree/bindings/media/mediatek-mdp.txt     |  8 ----
->  .../devicetree/bindings/media/mediatek-vcodec.txt  |  4 --
->  arch/arm/boot/dts/mt2701.dtsi                      |  1 -
->  arch/arm/boot/dts/mt7623.dtsi                      |  1 -
->  arch/arm64/boot/dts/mediatek/mt8173.dtsi           | 15 -------
->  drivers/gpu/drm/mediatek/mtk_drm_crtc.c            | 11 -----
->  drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c        | 26 ------------
->  drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h        |  1 -
->  drivers/iommu/mtk_iommu.c                          | 45 +++++++--------------
->  drivers/iommu/mtk_iommu_v1.c                       | 39 +++++++-----------
->  drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c    | 22 ----------
->  drivers/media/platform/mtk-jpeg/mtk_jpeg_core.h    |  2 -
->  drivers/media/platform/mtk-mdp/mtk_mdp_comp.c      | 38 -----------------
->  drivers/media/platform/mtk-mdp/mtk_mdp_comp.h      |  2 -
->  drivers/media/platform/mtk-mdp/mtk_mdp_core.c      |  1 -
->  .../media/platform/mtk-vcodec/mtk_vcodec_dec_pm.c  | 21 ----------
->  drivers/media/platform/mtk-vcodec/mtk_vcodec_drv.h |  3 --
->  drivers/media/platform/mtk-vcodec/mtk_vcodec_enc.c |  1 -
->  .../media/platform/mtk-vcodec/mtk_vcodec_enc_pm.c  | 47 ----------------------
->  drivers/memory/mtk-smi.c                           | 31 ++++----------
->  include/soc/mediatek/smi.h                         | 20 ---------
->  23 files changed, 36 insertions(+), 316 deletions(-)
-> 
+[1]:
+[    0.000000] Booting Linux on physical CPU 0x0000080000 [0x481fd010]
+[    0.000000] Linux version 5.2.0+ (root@localhost.localdomain) (gcc version 9.0.1 20190312 (Red Hat 9.0.1-0.10) (GCC)) #45 SMP Tue Jul 23 09:17:48 CST 2019
+[    0.000000] Using timestamp clock @100MHz
+[    0.000074] efi: Getting EFI parameters from FDT:
+[    0.000082] efi: EFI v2.70 by EDK II
+[    0.000083] efi:  ACPI 2.0=0x3a300000  SMBIOS 3.0=0x39f80000  MEMATTR=0x30996018  MEMRESERVE=0x30997e18
+[    0.000122] crashkernel reserved: 0x000000000ba00000 - 0x000000002ba00000 (512 MB)
+[    0.000126] cma: Failed to reserve 512 MiB
+[    0.185111] ACPI: Early table checksum verification disabled
+[    0.185115] ACPI: RSDP 0x000000003A300000 000024 (v02 HISI  )
+[    0.185120] ACPI: XSDT 0x000000003A270000 00009C (v01 HISI   HIP08    00000000      01000013)
+[    0.185127] ACPI: FACP 0x0000000039B10000 000114 (v06 HISI   HIP08    00000000 HISI 20151124)
+[    0.185134] ACPI: DSDT 0x0000000039AB0000 0084E4 (v02 HISI   HIP08    00000000 INTL 20181213)
+[    0.185139] ACPI: PCCT 0x0000000039FB0000 00008A (v01 HISI   HIP08    00000000 HISI 20151124)
+[    0.185143] ACPI: SSDT 0x0000000039F90000 01021A (v02 HISI   HIP07    00000000 INTL 20181213)
+[    0.185147] ACPI: BERT 0x0000000039F50000 000030 (v01 HISI   HIP08    00000000 HISI 20151124)
+[    0.185150] ACPI: HEST 0x0000000039F30000 000308 (v01 HISI   HIP08    00000000 HISI 20151124)
+[    0.185154] ACPI: ERST 0x0000000039EF0000 000230 (v01 HISI   HIP08    00000000 HISI 20151124)
+[    0.185158] ACPI: EINJ 0x0000000039EE0000 000170 (v01 HISI   HIP08    00000000 HISI 20151124)
+[    0.185162] ACPI: SLIT 0x0000000039B30000 00003C (v01 HISI   HIP08    00000000 HISI 20151124)
+[    0.185166] ACPI: GTDT 0x0000000039B00000 00007C (v02 HISI   HIP08    00000000 HISI 20151124)
+[    0.185169] ACPI: MCFG 0x0000000039AF0000 00003C (v01 HISI   HIP08    00000000 HISI 20151124)
+[    0.185173] ACPI: SPCR 0x0000000039AE0000 000050 (v02 HISI   HIP08    00000000 HISI 20151124)
+[    0.185177] ACPI: SRAT 0x0000000039AD0000 0007D0 (v03 HISI   HIP08    00000000 HISI 20151124)
+[    0.185181] ACPI: APIC 0x0000000039AC0000 001E6C (v04 HISI   HIP08    00000000 HISI 20151124)
+[    0.185185] ACPI: IORT 0x0000000039AA0000 001310 (v00 HISI   HIP08    00000000 INTL 20181213)
+[    0.185189] ACPI: PPTT 0x0000000030970000 0031B0 (v01 HISI   HIP08    00000000 HISI 20151124)
+[    0.185196] ACPI: SPCR: console: pl011,mmio32,0x94080000,115200
+[    0.185208] ACPI: SRAT: Node 0 PXM 0 [mem 0x2080000000-0x2fffffffff]
+[    0.185210] ACPI: SRAT: Node 1 PXM 1 [mem 0x3000000000-0x3fffffffff]
+[    0.185212] ACPI: SRAT: Node 0 PXM 0 [mem 0x00000000-0x7fffffff]
+[    0.185213] ACPI: SRAT: Node 2 PXM 2 [mem 0x202000000000-0x202fffffffff]
+[    0.185215] ACPI: SRAT: Node 3 PXM 3 [mem 0x203000000000-0x203fffffffff]
+[    0.185221] NUMA: NODE_DATA [mem 0x2fffffe3c0-0x2fffffffff]
+[    0.185224] NUMA: NODE_DATA [mem 0x3fffffe3c0-0x3fffffffff]
+[    0.185226] NUMA: NODE_DATA [mem 0x202fffffe3c0-0x202fffffffff]
+[    0.185229] NUMA: NODE_DATA [mem 0x203ffdfde3c0-0x203ffdfdffff]
 
 
 
