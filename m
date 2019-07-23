@@ -2,153 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B5C57168F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 12:50:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC47A716A8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 12:57:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/XG4xAsT0NgGqPYCpdvvrr6RKsMC1l1OFBRDnX8X1Es=; b=OXnjF0xBCWNRzy
-	V+wddFCmWU6jqv0Wk88SFv5TuRW+A7JvPf79vZkcRhtOXSBT4YdNv/mv9okpcuizLx74UgvFyjJ6H
-	MPBIcWPlrDTaJZdtf9+fAxXLRgfM9fR1Clhib3Wh9SBcIkAa28N+dtNF9rNLvvjxsaWfGgYt8+aQR
-	DKM861PiE0l8XkCJ4xlAZCRde20JmBnf0VUE8PkfhuH4AQPa/uMzv+fE9adqcbWByMkR5QEgpGXtm
-	PJZA+vk0aIWX6n9ja6PdZ/qTrOszx6hO0fO844xmouLDeCxFxtjLw9ledkC04TKwIXWz24LIEUeld
-	GvLFarNfE5YSmyzlrZrw==;
+	List-Owner; bh=MmLMPZXwjw2Mxpz6SxSLM1fP42rFV90Cm7AYeuD6Vlc=; b=na0vujoE2+4KZS
+	f/X5xNQ2QtrpNP01KFAFUqOuXtPEYV2wTqo6sRv3cKYt+j9ceGqQMiqWWHpx4hCd8PCXHglWyVPFh
+	+N2NJAUeB92TwitFiHYNQ0OSvy5EL4/lyEWYv0hLTxNJsMrTRJEyG31VC/XqL6RxQIrM8Q5zpJf4C
+	eJVPGPW9ZuU7c8J5CteH2T491PUHkCBZXXzavl8Tk/nLoyigGMJeR6Swrr7NTBiTkdjNPf+vUyjRL
+	O4ZmKaXNK3jkgJxhJXj6pHVcdTUtb3wfQwnE8edWHoS3/P2VnvHx41/ournAg+Fow+Q2hR2QGIy6C
+	lPJXB0iXaxYkdxa1ce+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpsNN-0003T1-Ud; Tue, 23 Jul 2019 10:50:34 +0000
-Received: from smtprelay-out1.synopsys.com ([198.182.47.102])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpsN3-0003SH-SR
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 10:50:15 +0000
-Received: from mailhost.synopsys.com (dc2-mailhost2.synopsys.com
- [10.12.135.162])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 19AA1C0141;
- Tue, 23 Jul 2019 10:50:13 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1563879013; bh=3mkM3M0f40d6a+V7LkMD7dR21gv8wo41VcJOsox36Z0=;
- h=From:To:CC:Subject:Date:References:In-Reply-To:From;
- b=ja3PUCfnxXGvkrt6yAsuM3K1flFn80vNc07wEkjPMVsfCuErbH5LvraC1SQpWJQmM
- 7zGB+w1GB/GEt8MW2HOuGwwAJbx947pr4IYhOr7LjVTaKXQG5YKfmRNTTWAEqFsnU3
- SnyMFjY9aucwGU9uT0ahCGWUFuANMoznwLUy+hS+yHpio5O70xfDEK06frFklAwnk3
- tmifih5zyKiHeDjeYtL+LKqtDRLRHuCNyWFB6ZaeQTzIM0+JEzLfPI0j2r7sIiOW+O
- yPxpxH1brQGQiONvbFIj31EO190pIBxo6UUYk8TaWCpx1hR+4mfvM6Vppz998pMnYn
- 9oHvTQcM2v1FQ==
-Received: from US01WXQAHTC1.internal.synopsys.com
- (us01wxqahtc1.internal.synopsys.com [10.12.238.230])
- (using TLSv1.2 with cipher AES128-SHA256 (128/128 bits))
- (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id 6574DA0093;
- Tue, 23 Jul 2019 10:49:55 +0000 (UTC)
-Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
- US01WXQAHTC1.internal.synopsys.com (10.12.238.230) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Tue, 23 Jul 2019 03:49:52 -0700
-Received: from NAM01-SN1-obe.outbound.protection.outlook.com (10.13.134.195)
- by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
- 14.3.408.0; Tue, 23 Jul 2019 03:49:51 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=keQKubvtCkA4oQwi1bxVHZ5/2/0FHBBLeJVRxaot9wfgJantzQOvk948/voQJNk2njzdPBQezacPWp+w8ORxGpSFOg4tlNEWgaBokvkDfnC6tD7PKh15S4MbzTOei5a6H2uCtOxcVXz99Q/fhpkknFTSrnwYRjUzsOSdMytK08cUyKvfY0FBHwEMaoDE2BnLOeICai6V8Ee2gPb9cZYk46U5ecAA4Gj0MCBBejb5nX7BKspTjPRoaHfbcSGf7Iq28A/L/CByhE537rA3lRq0pjbgOPghQJ4FjSSU/8ocgCE/v9tzVlLyESusq7LNsgmCrSlsIPCt7sZFud3KnA5scg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=3mkM3M0f40d6a+V7LkMD7dR21gv8wo41VcJOsox36Z0=;
- b=YAmro6jMRczVsLv3JnOr5HaR/c75+ugvuv0TOo1WLj2JtDJViWMCRxypqCuQ9gtiFM4roJc3ddsXHRf4Wl79f36iSuWpnMNTBw/BseQpBGT/2XvAgl9SfymNs6aU7XFhqDMtykUThcFrXahEJVw8uebhNAJ44j2CVA+kxXOC6yOVmoxwLb/IXfcbbidelRP4VGCR9F9m5ZOWm9tBy+xN02MIf0e5eWeCbfbDb1Zd9FyWXIvwQMEbQQgfAflBGbklyhYkJZTxt+Zxybm0JI7/QlGWEQexmDPKusz+KCUbAARsGIZOzEkB3vLE9J9+03eXJ09q7jQCL/ICtu2WkInKBg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=synopsys.com;dmarc=pass action=none
- header.from=synopsys.com;dkim=pass header.d=synopsys.com;arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=synopsys.onmicrosoft.com; s=selector1-synopsys-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=3mkM3M0f40d6a+V7LkMD7dR21gv8wo41VcJOsox36Z0=;
- b=qdb5JCSo7peH4NGoAbSsMmz3iosxOEq229OtgOUzNtdDkaOJoOLJfxtCvCRWI/gHBdcEtchToqHjbvG3svExMItrL/0eOEjHk1lM4WYI6O3Okij1X2ccMJDvywBMDTeVXa1IbrG1Vq7c09I1/suMUUYiC32PhbiwMVW5rzQsivU=
-Received: from BYAPR12MB3269.namprd12.prod.outlook.com (20.179.93.146) by
- BYAPR12MB2695.namprd12.prod.outlook.com (20.176.255.224) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2094.14; Tue, 23 Jul 2019 10:49:50 +0000
-Received: from BYAPR12MB3269.namprd12.prod.outlook.com
- ([fe80::f5b8:ac6e:ea68:cb1c]) by BYAPR12MB3269.namprd12.prod.outlook.com
- ([fe80::f5b8:ac6e:ea68:cb1c%4]) with mapi id 15.20.2094.013; Tue, 23 Jul 2019
- 10:49:50 +0000
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-To: Jon Hunter <jonathanh@nvidia.com>,
- Jose Abreu <Jose.Abreu@synopsys.com>, Lars Persson <lists@bofh.nu>,
- Ilias Apalodimas <ilias.apalodimas@linaro.org>
-Subject: RE: [PATCH net-next 3/3] net: stmmac: Introducing support for Page
- Pool
-Thread-Topic: [PATCH net-next 3/3] net: stmmac: Introducing support for Page
- Pool
-Thread-Index: AQHVMYtq2Zx4WVoG/U2kL8GCK0bP/abPQEOAgADTx+CABnZ9AIAADuYAgAAFQOCAAAnIAIAABLTAgAFMy7CAAB4gAIAAAO7wgAAJdICAAAG8AA==
-Date: Tue, 23 Jul 2019 10:49:49 +0000
-Message-ID: <BYAPR12MB3269D050556BD51030DCDDFCD3C70@BYAPR12MB3269.namprd12.prod.outlook.com>
-References: <cover.1562149883.git.joabreu@synopsys.com>
- <1b254bb7fc6044c5e6e2fdd9e00088d1d13a808b.1562149883.git.joabreu@synopsys.com>
- <29dcc161-f7c8-026e-c3cc-5adb04df128c@nvidia.com>
- <BN8PR12MB32661E919A8DEBC7095BAA12D3C80@BN8PR12MB3266.namprd12.prod.outlook.com>
- <20190722101830.GA24948@apalos>
- <CADnJP=thexf2sWcVVOLWw14rpteEj0RrfDdY8ER90MpbNN4-oA@mail.gmail.com>
- <BN8PR12MB326661846D53AAEE315A7434D3C40@BN8PR12MB3266.namprd12.prod.outlook.com>
- <11557fe0-0cba-cb49-0fb6-ad24792d4a53@nvidia.com>
- <BN8PR12MB3266664ECA192E02C06061EED3C40@BN8PR12MB3266.namprd12.prod.outlook.com>
- <BYAPR12MB3269A725AFDDA21E92946558D3C70@BYAPR12MB3269.namprd12.prod.outlook.com>
- <ab14f31f-2045-b1be-d31f-2a81b8527dac@nvidia.com>
- <BYAPR12MB32692AF2BA127C5DA5B74804D3C70@BYAPR12MB3269.namprd12.prod.outlook.com>
- <2ad7bf21-1f1f-db0f-2358-4901b7988b7d@nvidia.com>
-In-Reply-To: <2ad7bf21-1f1f-db0f-2358-4901b7988b7d@nvidia.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=joabreu@synopsys.com; 
-x-originating-ip: [83.174.63.141]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 558eb7de-5c07-404a-b392-08d70f5b7c73
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:BYAPR12MB2695; 
-x-ms-traffictypediagnostic: BYAPR12MB2695:
-x-microsoft-antispam-prvs: <BYAPR12MB2695FA4E9E874926B15A35C2D3C70@BYAPR12MB2695.namprd12.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 0107098B6C
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(136003)(39860400002)(366004)(396003)(376002)(346002)(189003)(199004)(71190400001)(7416002)(33656002)(256004)(305945005)(7696005)(71200400001)(74316002)(102836004)(7736002)(6506007)(316002)(186003)(99286004)(486006)(26005)(54906003)(68736007)(4326008)(8676002)(11346002)(14454004)(446003)(53546011)(25786009)(476003)(76176011)(110136005)(8936002)(6116002)(81166006)(66946007)(6246003)(64756008)(3846002)(81156014)(66556008)(76116006)(5660300002)(66446008)(66476007)(52536014)(66066001)(229853002)(55016002)(9686003)(6436002)(86362001)(53936002)(478600001)(2906002);
- DIR:OUT; SFP:1102; SCL:1; SRVR:BYAPR12MB2695;
- H:BYAPR12MB3269.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: synopsys.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: LOwEuxdiQ1uOAsthaaEN+J44Tt7A/gEQ+I2nyD+8jvkvLebEq3ZmgEfT+//FE4JRMtAqmvR0n0xg88YTuiC5P/h9h5SBiecKb22NUaUPGgj3CeOq873m7zKBy47bRZoeQjVmjcB41OQcSbwgbwzDsGpXcxM61jCObkfWLVTwZ0dUMrX0LemFfx0tj5wao0orZkyC9mD8Ow9xJ+pl2QVDLJVvXZ7PKQSJNdoc0amy/u4YWu2+GIIciVoFEF1/y030ct7MHVWbrRl/B2XNB7ugmpvUxmIx99ag2SAR9O+I3WGfdqcGFZFLqNT/rhC6zW9xRp0aM7e6Harhw68avNSNuM1gShmsMf3VXg31JWOw22Ms4sxwg50AkKfP+9iVFEjCiCSVG7BF5Eyqwr2K39NX+vF0sDXecmdl5K7of9d6b24=
+	id 1hpsTd-0005Qo-N1; Tue, 23 Jul 2019 10:57:01 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hpsTP-0005QQ-LL
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 10:56:49 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 64A5D337;
+ Tue, 23 Jul 2019 03:56:46 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E61D53F71A;
+ Tue, 23 Jul 2019 03:56:43 -0700 (PDT)
+Date: Tue, 23 Jul 2019 11:56:36 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH V6 RESEND 0/3] arm64/mm: Enable memory hot remove
+Message-ID: <20190723105636.GA5004@lakrids.cambridge.arm.com>
+References: <1563171470-3117-1-git-send-email-anshuman.khandual@arm.com>
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 558eb7de-5c07-404a-b392-08d70f5b7c73
-X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Jul 2019 10:49:49.9693 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: joabreu@synopsys.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR12MB2695
-X-OriginatorOrg: synopsys.com
+Content-Disposition: inline
+In-Reply-To: <1563171470-3117-1-git-send-email-anshuman.khandual@arm.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_035013_989614_1F3AA1F4 
-X-CRM114-Status: GOOD (  19.47  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190723_035647_790376_B4F28F46 
+X-CRM114-Status: GOOD (  21.50  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -160,63 +61,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Joao Pinto <Joao.Pinto@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "David S . Miller" <davem@davemloft.net>, Chen-Yu Tsai <wens@csie.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-tegra <linux-tegra@vger.kernel.org>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: mhocko@suse.com, mgorman@techsingularity.net, david@redhat.com,
+ catalin.marinas@arm.com, steve.capper@arm.com, will.deacon@arm.com,
+ linux-kernel@vger.kernel.org, linux-mm@kvack.org, logang@deltatee.com,
+ arunks@codeaurora.org, cai@lca.pw, ard.biesheuvel@arm.com,
+ cpandya@codeaurora.org, james.morse@arm.com, akpm@linux-foundation.org,
+ ira.weiny@intel.com, dan.j.williams@intel.com,
+ linux-arm-kernel@lists.infradead.org, osalvador@suse.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jon Hunter <jonathanh@nvidia.com>
-Date: Jul/23/2019, 11:38:33 (UTC+00:00)
+Hi Anshuman,
 
+On Mon, Jul 15, 2019 at 11:47:47AM +0530, Anshuman Khandual wrote:
+> This series enables memory hot remove on arm64 after fixing a memblock
+> removal ordering problem in generic try_remove_memory() and a possible
+> arm64 platform specific kernel page table race condition. This series
+> is based on linux-next (next-20190712).
 > 
-> On 23/07/2019 11:07, Jose Abreu wrote:
-> > From: Jon Hunter <jonathanh@nvidia.com>
-> > Date: Jul/23/2019, 11:01:24 (UTC+00:00)
-> > 
-> >> This appears to be a winner and by disabling the SMMU for the ethernet
-> >> controller and reverting commit 954a03be033c7cef80ddc232e7cbdb17df735663
-> >> this worked! So yes appears to be related to the SMMU being enabled. We
-> >> had to enable the SMMU for ethernet recently due to commit
-> >> 954a03be033c7cef80ddc232e7cbdb17df735663.
-> > 
-> > Finally :)
-> > 
-> > However, from "git show 954a03be033c7cef80ddc232e7cbdb17df735663":
-> > 
-> > +         There are few reasons to allow unmatched stream bypass, and
-> > +         even fewer good ones.  If saying YES here breaks your board
-> > +         you should work on fixing your board.
-> > 
-> > So, how can we fix this ? Is your ethernet DT node marked as 
-> > "dma-coherent;" ?
+> Concurrent vmalloc() and hot-remove conflict:
 > 
-> TBH I have no idea. I can't say I fully understand your change or how it
-> is breaking things for us.
+> As pointed out earlier on the v5 thread [2] there can be potential conflict
+> between concurrent vmalloc() and memory hot-remove operation. This can be
+> solved or at least avoided with some possible methods. The problem here is
+> caused by inadequate locking in vmalloc() which protects installation of a
+> page table page but not the walk or the leaf entry modification.
 > 
-> Currently, the Tegra DT binding does not have 'dma-coherent' set. I see
-> this is optional, but I am not sure how you determine whether or not
-> this should be set.
+> Option 1: Making locking in vmalloc() adequate
+> 
+> Current locking scheme protects installation of page table pages but not the
+> page table walk or leaf entry creation which can conflict with hot-remove.
+> This scheme is sufficient for now as vmalloc() works on mutually exclusive
+> ranges which can proceed concurrently only if their shared page table pages
+> can be created while inside the lock. It achieves performance improvement
+> which will be compromised if entire vmalloc() operation (even if with some
+> optimization) has to be completed under a lock.
+> 
+> Option 2: Making sure hot-remove does not happen during vmalloc()
+> 
+> Take mem_hotplug_lock in read mode through [get|put]_online_mems() constructs
+> for the entire duration of vmalloc(). It protects from concurrent memory hot
+> remove operation and does not add any significant overhead to other concurrent
+> vmalloc() threads. It solves the problem in right way unless we do not want to
+> extend the usage of mem_hotplug_lock in generic MM.
+> 
+> Option 3: Memory hot-remove does not free (conflicting) page table pages
+> 
+> Don't not free page table pages (if any) for vmemmap mappings after unmapping
+> it's virtual range. The only downside here is that some page table pages might
+> remain empty and unused until next memory hot-add operation of the same memory
+> range.
+> 
+> Option 4: Dont let vmalloc and vmemmap share intermediate page table pages
+> 
+> The conflict does not arise if vmalloc and vmemap range do not share kernel
+> page table pages to start with. If such placement can be ensured in platform
+> kernel virtual address layout, this problem can be successfully avoided.
+> 
+> There are two generic solutions (Option 1 and 2) and two platform specific
+> solutions (Options 2 and 3). This series has decided to go with (Option 3)
+> which requires minimum changes while self-contained inside the functionality.
 
-From my understanding it means that your device / IP DMA accesses are coherent regarding the CPU point of view. I think it will be the case if GMAC is not behind any kind of IOMMU in the HW arch.
+... while also leaking memory, right?
 
-I don't know about this SMMU but the source does have some special 
-conditions when device is dma-coherent.
+In my view, option 2 or 4 would have been preferable. Were there
+specific technical reasons to not go down either of those routes? I'm
+not sure that minimizing changes is the right rout given that this same
+problem presumably applies to other architectures, which will need to be
+fixed.
 
----
+Do we know why we aren't seeing issues on other architectures? e.g. is
+the issue possible but rare (and hence not reported), or masked by
+something else (e.g. the layout of the kernel VA space)?
+
+I'd like to solve the underyling issue before we start adding new
+functionality.
+
+> Testing:
+> 
+> Memory hot remove has been tested on arm64 for 4K, 16K, 64K page config
+> options with all possible CONFIG_ARM64_VA_BITS and CONFIG_PGTABLE_LEVELS
+> combinations. Its only build tested on non-arm64 platforms.
+
+Could you please share how you've tested this?
+
+Having instructions so that I could reproduce this locally would be very
+helpful.
+
 Thanks,
-Jose Miguel Abreu
+Mark.
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
