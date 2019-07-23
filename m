@@ -2,77 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BFA0671CD2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 18:23:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC32F71CE5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 18:28:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=6GROgYbT28UbyzLy88kZ6sUi7401mEUJAgkYtNnqoeA=; b=DSjZYoJ+IPlEwWAbZLWw4VjsN
-	2OIhKvsXoOYM4nUc66aNqJDicoGNQxgAbs2bpT0o6LfOliZCo9pXiz4dgVkE+bSTB0lSFojse7cII
-	vMltg/F1JpVniwJmJ/PAoUGGCtHrxon9pTy0/rpXgS14t90ddasHBoCR3kgKGkeh/CMn1CKcgpPds
-	T6AyobXJnswF4ih3fqA8HP1F82IMZPTGSc2IUSvTJHtaKSPTbCKTqjzYUaAtPdKbTYTZvwj3BTAMB
-	Sa4TM4dGzt5fqs4cwYMD2/uovgOa8tEiyBV+pDpbM+QE4HlXyZfKLjiyq3ad3/MBBcRsm55bkJ2UO
-	JHlq44zDQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xuvW3d6y6PwlfVxB4kFgdSlqzyRz3GDe0iwDCZpiTnk=; b=p6JeuXC5FTHkGk
+	Sej+u5La5LdP9fbF0zGUCrRZE3vUQ2qTxUPq8MB3xbBfsJmWVQuMHS7auDU02bdNQiCwP2Ulu2let
+	6/Xm4V//i194RrsL4A+SszOnlaX2zdlAd75ipJjI3zG+6iLCZ6ljD9e0+Xoi0LH3BJpJMJvxZp9tH
+	BCy/rlbVutHakLmGxMlezbI6iyZwB6DV/mdvBsv24SbwLojktfjDmLEJXBOjdgAOPrwIFN8h8yH+0
+	tzLu2QXg4DdQuNTpxpT3x2rTAsrTJB3vbSMijFwgmx1mC6ibtdDqiDxxhyhUwg1CB6bk9ugAhACPB
+	XyH01Q7GmLP9G/HvIj5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpxZz-00046S-3C; Tue, 23 Jul 2019 16:23:55 +0000
-Received: from vern.gendns.com ([98.142.107.122])
+	id 1hpxdu-0005sn-Mn; Tue, 23 Jul 2019 16:27:58 +0000
+Received: from mout.gmx.net ([212.227.15.15])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpxZb-0003wM-DY
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 16:23:34 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=lechnology.com; s=default; h=Content-Transfer-Encoding:Content-Type:
- In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender
- :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Qo/hPuXqdzw0fbAvUNBNIamCR5J5EyfzbtOH0y97n24=; b=MBHk0SJ9C7C5kyImuTBsuVgjbq
- bD38Fwx6ZyNXFF2TaNmky7AMXNf/ZeC/gdfdhWVGu2g+q6xr8n80XxhZCGFn+hbbkknC0iQrybZ39
- l3qSRHkdee9emKlPqq+M8ilHS7vGR4WhvymMMullBD3JicY6Fme43V8niLwbYH/+1hzHSvhkcFzUa
- o4JuGr+pmW5QNEHRFZboHUmvm73+nH8KkNFfZYbsHZbo60ru5A36+Mr8f680w2godN7c2XtOVIAwp
- l5ccNlKLVivTR7gupC/Drd2WqUbMkXZfbIewH/YoF1+17tWMJXAi+eVxn1z4hB5Vg+iDzX2U/vwYi
- KsxH2xzQ==;
-Received: from 108-198-5-147.lightspeed.okcbok.sbcglobal.net
- ([108.198.5.147]:52402 helo=[192.168.0.134])
- by vern.gendns.com with esmtpsa (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128)
- (Exim 4.92) (envelope-from <david@lechnology.com>)
- id 1hpxYq-00ACvU-41; Tue, 23 Jul 2019 12:22:44 -0400
-Subject: Re: [1/3] RFT: drm/pl111: Support grayscale
-To: dri-devel@lists.freedesktop.org
-References: <20190723133755.22677-2-linus.walleij@linaro.org>
-From: David Lechner <david@lechnology.com>
-Message-ID: <1c988006-af6a-934c-5661-853cd9842c83@lechnology.com>
-Date: Tue, 23 Jul 2019 11:22:43 -0500
+ id 1hpxdQ-0005nt-QQ; Tue, 23 Jul 2019 16:27:31 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1563899218;
+ bh=Jen1EfzJ5rD4kdnZYnMjlIRsEBK+m0h595mJTNXA7VY=;
+ h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
+ b=iFPNBrwzU8CzUOKAinL9TqZlmT5EQIee8Q4F+v/NswopYMG65TpV/Dym09qmGEXh1
+ V9Wk1aUzu0Wvehp133mrLp8mqgLumuFF7JjE4hW3uwGxN+JHmXQjayV/AP7rj3jeeA
+ 9fXwo+CR/+YjA7eSMOAU3UXDgHIbVtKNQS1RMrwc=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [192.168.1.162] ([37.4.249.104]) by mail.gmx.com (mrgmx002
+ [212.227.17.190]) with ESMTPSA (Nemesis) id 0Lu8Ri-1iWThs0Pxu-011P3P; Tue, 23
+ Jul 2019 18:26:58 +0200
+Subject: Re: [PATCH 00/18] ARM: Add minimal Raspberry Pi 4 support
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Christoph Hellwig <hch@lst.de>
+References: <1563774880-8061-1-git-send-email-wahrenst@gmx.net>
+ <96113adb5fcab9c2f4bb5fa82b84ff5f9c07fd07.camel@suse.de>
+ <bc650090-db86-ccac-01dc-23f08ad7b19b@gmx.net>
+ <20190723093442.GA27239@lst.de>
+ <04c5eaa03f3a124dbbce6186e11e19acc4539cc8.camel@suse.de>
+From: Stefan Wahren <wahrenst@gmx.net>
+Message-ID: <b15509d6-bc2e-3d06-0eea-943e6e456d62@gmx.net>
+Date: Tue, 23 Jul 2019 18:26:54 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20190723133755.22677-2-linus.walleij@linaro.org>
+In-Reply-To: <04c5eaa03f3a124dbbce6186e11e19acc4539cc8.camel@suse.de>
 Content-Language: en-US
-X-AntiAbuse: This header was added to track abuse,
- please include it with any abuse report
-X-AntiAbuse: Primary Hostname - vern.gendns.com
-X-AntiAbuse: Original Domain - lists.infradead.org
-X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
-X-AntiAbuse: Sender Address Domain - lechnology.com
-X-Get-Message-Sender-Via: vern.gendns.com: authenticated_id:
- davidmain+lechnology.com/only user confirmed/virtual account not confirmed
-X-Authenticated-Sender: vern.gendns.com: davidmain@lechnology.com
-X-Source: 
-X-Source-Args: 
-X-Source-Dir: 
+X-Provags-ID: V03:K1:ga3dtaBpsoyr0+h9XvBeJG8BAk2kvt2J+MNGiw6OSrykFvQYKyV
+ nXgjBXu7qRTvTFIoAdbE1zXKBTgu0Ylm1QxGVqCXkwPCQiGF9AteozbGLJqs/D/7skUZQrw
+ ASyPPE5mPgA8PjgmIvb39SCrOR9DDg1FjHViNLmckfVo83LyGRoaKkEH6zVBWmg8vO6pSza
+ SK/+ZnBsCxslcB0RIwHDg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:Dl/doOPU4TI=:otjVYY22uEbr6Tu5mbY2PU
+ /YaLgPF1NkLRJM9rDHyt0Mj++TZ701WkxcDTbrXYc1Y4QDKy3+N3nQyhmB5ocZGd7Mi+bwcZE
+ ihljxfbZQpyyy/w6vdjnQmrrLXho/BqgWE1W9pF3nnrV49uJtQo5CAMhZNo7Efa1bJvpCSWgU
+ xrBd2oMdxvMDpU0eqkDb2UwoUM7osG34QWBuehxYiqvVYVcYtfZ/sf4ghgnSceJ6F/1HBp3o1
+ lRUr8DwbEH9UxHyl+hW+3QyUr7l9KP4CB67cLH1x283R98cHUasWKY8OmH/Z/taA91SHzGwgt
+ kPhTfrUasAyaJqGSDfM4WY1jU8zUUtUaMaAV3MAzIH2X7p9Y34yVt0wFMmbH8pPzdtrgO9hAg
+ YUdPR6B+ZfUYfDQIHx7C3tNED+6JCbmjovf9/Eb1i6Wrd/Hpe6Br+NZwYgGmhSuLmTP4KqCEM
+ hkO1SkbBZx2atdqcve5h6CcqI+nEOrW3T19Av4EGS1Xnh1J9PWgT3aGhktxonWvEnyw5hDjPs
+ EPT1vMNHmHGo4YdTcNM3ytqO7q8vYI7nk6CnvnCqMo1xfqOUw6DVhI35ULyQJ6c+8pp5Gp5ro
+ YXm3vj+smh89FGz5iqLn6K2rUd4xiUa1lJ03vCPGBBhoiE+V1a1tNrel2kGvLrVGGiSGrLwXz
+ 88n2VdLROe9gzS3CDjnutNx6cIySAaLk+O2OODtRhy9am2nsf3aOxYnZDZJPr004rUZmfc33M
+ GIGuE8xrDQUAyyj3+OIOFE7hsQvzFOXf9f7eubjnxygGr48nuaNP4MNt4ZoB72VY8Q5oJpbHu
+ 8A+c/8GR86E5zf02EdKaV4oAIz7OFI1iQdT6vsc4lS8KJictNZBC5WaFj1P1RM8gh60H89Vcb
+ 6g1wxDOkj+MeiPlwQr/QYF16mZTmiT9Y5PYETGSGKft4/+Nx5G5dF6ge+T/AhXO1TTB8fncLx
+ 1cyPrEX7i3+duf3BKABiABubgv0TP7MP3EdBooCtR5tFMR1xZ9CComHsa1B7Gu2JGhYUQvC6/
+ 2PGcOeWgU9XRPSiDT3ahS1+PcFKkmNLFb1Ge/LDsdWyAQHI0LJoM2rVNDgINzhUtHeJkxHT8g
+ fGY5p98Va+Z4TE=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_092331_674464_EF0E0B31 
-X-CRM114-Status: GOOD (  10.90  )
+X-CRM114-CacheID: sfid-20190723_092729_238145_46B5D585 
+X-CRM114-Status: GOOD (  29.25  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.15.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wahrenst[at]gmx.net)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -91,33 +103,140 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fabian Vogt <fabian@ritter-vogt.de>, Daniel Tang <dt.tangr@gmail.com>,
- Linus Walleij <linus.walleij@linaro.org>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
+ Florian Fainelli <f.fainelli@gmail.com>, Scott Branden <sbranden@broadcom.com>,
+ Matthias Brugger <mbrugger@suse.com>, Stephen Boyd <sboyd@kernel.org>,
+ Ray Jui <rjui@broadcom.com>, Linus Walleij <linus.walleij@linaro.org>,
+ linux-mmc@vger.kernel.org, Adrian Hunter <adrian.hunter@intel.com>,
+ Eric Anholt <eric@anholt.net>, Rob Herring <robh+dt@kernel.org>,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ linux-gpio@vger.kernel.org, Michael Turquette <mturquette@baylibre.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 7/23/19 8:37 AM, Linus Walleij wrote:
-> Migrating the TI nspire calculators to use the PL111 driver for
-> framebuffer requires grayscale support for the elder panel
-> which uses 8bit grayscale only.
-> 
-> DRM does not support 8bit grayscale framebuffers in memory,
-> but by defining the bus format to be MEDIA_BUS_FMT_Y8_1X8 we
-> can get the hardware to turn on a grayscaling feature and
-> convert the RGB framebuffer to grayscale for us.
-> 
+Hi Nicolas,
 
+thanks for your work, but i'm a little bit sceptical about these
+changes. So here some thoughts.
 
-What would it take to add proper grayscale framebuffer
-support to DRM? I've been using the RGB to gray conversion
-method for a while now with st7586 and it is OK but is
-creates extra work if you want things to actually look
-"good" instead of "OK" because you have to add code to
-userspace programs to craft images in a certain way so
-that they come out on the other side looking as intended
-on the actual display.
+Am 23.07.19 um 15:32 schrieb Nicolas Saenz Julienne:
+> On Tue, 2019-07-23 at 11:34 +0200, Christoph Hellwig wrote:
+>> On Mon, Jul 22, 2019 at 08:10:17PM +0200, Stefan Wahren wrote:
+>>> i rebased this series also and got this only on the RPi 4.
+>>>
+>>> After reverting the following:
+>>>
+>>> 79a986721de dma-mapping: remove dma_max_pfn
+>>> 7559d612dff0 mmc: core: let the dma map ops handle bouncing
+>>>
+>>> This crash disappear, but wifi seems to be still broken.
+>>>
+>>> Would be nice, if you can investigate further.
+>> That means dma addressing on this system doesn't just work for some
+>> memory, and the mmc bounce buffering was papering over that just for
+>> mmc.  Do you have highmem on this system?
+>>
+>> You might want to try this series, which has been submitted upstream:
+>>
+>> http://git.infradead.org/users/hch/misc.git/shortlog/refs/heads/arm-swiotlb
+> Hi Christoph,
+> I tried your series on top of Stefan's, it has no effect. I guess it's no
+> surprise as with mult_v7_defconfig, you get SWIOTLB=n & LPAE=n.
+>
+> FYI DMA addressing constraints for RPi4 are the following: devices can only
+> access the first GB of ram even though the board might have up to 4GB of ram.
+> The DMA addresses are aliased with a 0xc0000000 offset. So 0x00000000 phys is
+> aliased to 0xc0000000 in DMA. This is the same as for an RFC you commented last
+> week trying to fix similar issues for arm64.
+>
+> You state in "arm: use swiotlb for bounce buffer on LPAE configs" that "The DMA
+> API requires that 32-bit DMA masks are always supported". If I understand it
+> correctly this device breaks that assumption. Which implies we need a bounce
+> buffer system in place for any straming DMA user.
+>
+> It seems we're unable to use dma-direct/swiotlb, so I enabled arm's dmabounce
+> on all devices hooked into RPi's limited interconnect, which fixes this issue.
+Does it fix the wifi issue too?
+> Any thoughts on this?
+>
+> diff --git a/arch/arm/mach-bcm/Kconfig b/arch/arm/mach-bcm/Kconfig
+> index 5e5f1fabc3d4..3db8deed83a6 100644
+> --- a/arch/arm/mach-bcm/Kconfig
+> +++ b/arch/arm/mach-bcm/Kconfig
+> @@ -168,6 +168,7 @@ config ARCH_BCM2835
+>         select PINCTRL
+>         select PINCTRL_BCM2835
+>         select MFD_CORE
+> +       select DMABOUNCE
+>         help
+>           This enables support for the Broadcom BCM2835 and BCM2836 SoCs.
+>           This SoC is used in the Raspberry Pi and Roku 2 devices.
+> diff --git a/arch/arm/mach-bcm/board_bcm2835.c b/arch/arm/mach-bcm/board_bcm2835.c
+> index c09cf25596af..be788849c4bb 100644
+> --- a/arch/arm/mach-bcm/board_bcm2835.c
+> +++ b/arch/arm/mach-bcm/board_bcm2835.c
+> @@ -3,6 +3,8 @@
+>   * Copyright (C) 2010 Broadcom
+>   */
+>
+> +#include <linux/device.h>
+> +#include <linux/dma-mapping.h>
+>  #include <linux/init.h>
+>  #include <linux/irqchip.h>
+>  #include <linux/of_address.h>
+> @@ -24,8 +26,37 @@ static const char * const bcm2835_compat[] = {
+>         NULL
+>  };
+>
+> +static int bcm2835_needs_bounce(struct device *dev, dma_addr_t dma_addr, size_t size)
+> +{
+> +       /*
+> +        * The accepted dma addresses are [0xc0000000, 0xffffffff] which map to
+> +        * ram's [0x00000000, 0x3fffffff].
+> +        */
+> +       return dma_addr < 3ULL * SZ_1G;
+> +}
+> +
+> +/*
+> + * Setup DMA mask to 1GB on devices hanging from soc interconnect
+> + */
+> +static int bcm2835_platform_notify(struct device *dev)
+> +{
+> +       if (dev->parent && !strcmp("soc", dev_name(dev->parent))) {
+> +               dev->dma_mask = &dev->coherent_dma_mask;
+> +               dev->coherent_dma_mask = DMA_BIT_MASK(30); /* 1GB */
+Shouldn't this come from the device tree?
+> +               dmabounce_register_dev(dev, 2048, 4096, bcm2835_needs_bounce);
+> +       }
+> +
+> +       return 0;
+> +}
+> +
+> +void __init bcm2835_init_early(void)
+> +{
+> +       platform_notify = bcm2835_platform_notify;
+> +}
+> +
+>  DT_MACHINE_START(BCM2835, "BCM2835")
+>         .dma_zone_size  = SZ_1G,
+>         .dt_compat = bcm2835_compat,
+>         .smp = smp_ops(bcm2836_smp_ops),
+> +       .init_early = bcm2835_init_early,
+
+The sum of all these changes make me think, that we should start a new
+board for BCM2711 instead of extending BCM2835.
+
+Best regards
+Stefan Wahren
+
+>  MACHINE_END
+>
+>  Regards,
+>  Nicolas
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
