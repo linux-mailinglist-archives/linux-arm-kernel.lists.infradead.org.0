@@ -2,76 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4C5871B9E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 17:31:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 277E071BAE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 17:33:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:To:Subject:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=4zhSQqb7G1+U49cYe1ZW++P7MNYuCbwL1BHV1Nz9RgE=; b=gIymwbh0F7/h9zVYfuqlGxW3Pe
-	9givk/jLJZWfpaFyEy0AzC8U+jV84VGvDuQLi6XFsTyiFbLIbMV2dLE/IkRfdNJvD90Gefeab6KvP
-	pnUEY2mAVwYCYMywSm8IuJ7FSQMlv+uVxJnSu0JqaRCtNlTqNr682pYU4j+aapstPuapmR2LmEzeL
-	fLrw56eextulynAVzgixUAPdtars++uLdfDOxrCmgwZQGJY0LXf/YJ/ipRzYu4RJL5tqjgwIzt/Nw
-	BNq82ZECehti8AX8XXMqvYa61c6RMhICtJPZdu58DlBi/Rw9099LCFFuJZTC89wO4yYiGt9vPMMil
-	TfezVgPA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=V5+fl3JCHEQWdeqrpnZn3avNCSZYh76wwTh89cDtc0M=; b=FSOTQi/3yDpq1s
+	G54Q9IN2yZSJmyLui6SwdXBHUffe+JnZiIY+cEoN4/xjG7u8vhMsk3a8eCZ8ilLH5pTHBU2pKUuZ3
+	9DF2qtpf8cAA/xngcm5hUmwx5zaQUAa0ZaPASv86uT6sSY6NV0k23Paw3A+1RhBavOPOa3AmzpD6h
+	rT2LOiDDuhISpCTf6vdKSOHxgV2+Ni2w/djD2+w5qVhCzioz0NTncZmevxJfNMFRvcPXqYakPuPKE
+	uM8I6vX+CQrOJyhbr8HG8GOVlifzeFW5Wt+i+QT/2tNhXIALaSXQj+Vs5sEggH0S/p7xL1sqOVxGH
+	XQZ84PnnxwaTi2by9QlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpwkz-0003X2-1X; Tue, 23 Jul 2019 15:31:13 +0000
-Received: from mo6-p00-ob.smtp.rzone.de ([2a01:238:20a:202:5300::2])
+	id 1hpwmr-00049Y-FU; Tue, 23 Jul 2019 15:33:09 +0000
+Received: from mail1.bemta24.messagelabs.com ([67.219.250.208])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpwkm-0003Vb-2Z
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 15:31:02 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1563895854;
- s=strato-dkim-0002; d=hartkopp.net;
- h=Date:Message-ID:Cc:To:Subject:From:X-RZG-CLASS-ID:X-RZG-AUTH:From:
- Subject:Sender;
- bh=qQNr0oFlACEsV4zsbYv/dWXHzKziEa3txE79NQ1nr3k=;
- b=o6LP96zR4tjGoEryGg3DtTb7wTlJEdtO/Mv725ZjD9DgOkZOJsR1W7eE47U0KvuZSk
- jcarBMa2GkezJN6wY6+jTTzpG/ohdgEcqSjfQWUSLeGJd2dBVrzy4sCmNXMsN4cRAWuN
- Xi/QtBn3lNj3s78Iu2LSMHmP7d/V8u5VNFPBuTt2u94ExvrZIRm4E+WBTfH8wleNDRlN
- rbdEytvXY4eMbcrndu5knrWuRY7L7d0e94blNgM/BqmqjHUWVmfasKBCg0PTFA9hjt7t
- 8BSqH8erfJxqvj90d3AqWfP6cDpEdXiD7X4qQgd4uyXpvNWhcyyTSEI0pTYTjMCWFVxL
- 1VWA==
-X-RZG-AUTH: ":P2MHfkW8eP4Mre39l357AZT/I7AY/7nT2yrDxb8mjG14FZxedJy6qgO1o3PMaViOoLMJV8h6liA="
-X-RZG-CLASS-ID: mo00
-Received: from [192.168.1.200] by smtp.strato.de (RZmta 44.24 DYNA|AUTH)
- with ESMTPSA id k05d3bv6NFUrekR
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve secp521r1 with
- 521 ECDH bits, eq. 15360 bits RSA))
- (Client did not present a certificate);
- Tue, 23 Jul 2019 17:30:53 +0200 (CEST)
-From: Oliver Hartkopp <socketcan@hartkopp.net>
-Subject: TS-219 RTC issue with Debian Buster
-To: linux-arm-kernel@lists.infradead.org
-Message-ID: <99a8e2cc-61a2-3b43-0d72-6f001cffe572@hartkopp.net>
-Date: Tue, 23 Jul 2019 17:30:48 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1hpwmd-00048Z-G7
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 15:32:56 +0000
+Received: from [67.219.251.53] (using TLSv1.2 with cipher
+ DHE-RSA-AES256-GCM-SHA384 (256 bits))
+ by server-1.bemta.az-c.us-west-2.aws.symcld.net id B9/6F-15262-3A8273D5;
+ Tue, 23 Jul 2019 15:32:51 +0000
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrHIsWRWlGSWpSXmKPExsXi5LtOQHexhnm
+ sQeMeJYuHV/0tVk3dyWKx6fE1VouuXyuZLS7vmsNm8Xf7JhaLF1vELdqOHWN14PDYOesuu8em
+ VZ1sHneu7WHz2Lyk3mPjux1MHv1/DTw+b5ILYI9izcxLyq9IYM24cK6RpeAUb8WOPb9ZGxinc
+ ncxcnEICaxmlPj7ZS5rFyMnkLOGUeLOVSO4xI/eGewgCTYBE4krM3YydzFycIgIyEuceOINEm
+ YWeMIo0bfaHsQWFgiUuL3+Blg5i4CqxOFXV5lAbF4BT4nu2w1gcQkBOYmb5zqZIeKCEidnPmG
+ BmCMhcfDFC2aIG9Qk2uZMAFslAbTqb2/ZBEa+WUg6ZiHpWMDItIrRIqkoMz2jJDcxM0fX0MBA
+ 19DQSNfQ2FzXyMRQL7FKN1mvtFi3PLW4RNdIL7G8WK+4Mjc5J0UvL7VkEyMw2FMKOj/uYGya9
+ UbvEKMkB5OSKO+rT2axQnxJ+SmVGYnFGfFFpTmpxYcYZTg4lCR4u9TNY4UEi1LTUyvSMnOAkQ
+ eTluDgURLh3aYGlOYtLkjMLc5Mh0idYlSUEuctAUkIgCQySvPg2mDRfolRVkqYl5GBgUGIpyC
+ 1KDezBFX+FaM4B6OSMC87yHaezLwSuOmvgBYzAS3eq2IGsrgkESEl1cDkWu9pl+T6/sTnbdc+
+ LA1M/rvuIacX1x9D4S/5t89pB35qNnSyusD72MtkUuLFtle5grv/zAjKWPWoOjhnjTDTh0eSy
+ 5jNrhyM1/9WzRripGzSVdhv7K1tN3Wz1p0fui+07q+c1sfife1okGDz3OQXB/xWF+Yw7V/79E
+ 10Dd+RVO+sbnEr1+u73+q5/dX6r1EaY2ZeZqmi6Rp/PJthpaTMjZMOwV/uTNpw6VX7luv/PJN
+ Zzy158fLPTik247B/RfMFln9kPWj2oiYt/9yl8pX+7f1+xRXaf9aVyHE379YTS3rlPW1x3orF
+ T6/ddE6/5LR0Qfy+lX3Hr0t1JpWV/H7wLU3sRNVfU9+UzfWr57xWYinOSDTUYi4qTgQAQxHm9
+ HEDAAA=
+X-Env-Sender: Jose.DiazdeGrenu@digi.com
+X-Msg-Ref: server-33.tower-365.messagelabs.com!1563895970!28760!1
+X-Originating-IP: [66.77.174.16]
+X-SYMC-ESS-Client-Auth: outbound-route-from=pass
+X-StarScan-Received: 
+X-StarScan-Version: 9.43.9; banners=-,-,-
+X-VirusChecked: Checked
+Received: (qmail 13652 invoked from network); 23 Jul 2019 15:32:51 -0000
+Received: from owa.digi.com (HELO MCL-VMS-XCH01.digi.com) (66.77.174.16)
+ by server-33.tower-365.messagelabs.com with ECDHE-RSA-AES256-SHA384 encrypted
+ SMTP; 23 Jul 2019 15:32:51 -0000
+Received: from MTK-SMS-XCH02.digi.com (10.10.8.196) by MCL-VMS-XCH01.digi.com
+ (10.5.8.49) with Microsoft SMTP Server (TLS) id 14.3.468.0;
+ Tue, 23 Jul 2019 10:32:50 -0500
+Received: from DOR-SMS-XCH01.digi.com (10.49.8.99) by MTK-SMS-XCH02.digi.com
+ (10.10.8.196) with Microsoft SMTP Server (TLS) id 14.3.468.0; Tue, 23 Jul
+ 2019 10:32:49 -0500
+Received: from localhost.localdomain (10.101.2.92) by dor-sms-xch01.digi.com
+ (10.49.8.99) with Microsoft SMTP Server (TLS) id 14.3.468.0; Tue, 23 Jul 2019
+ 17:32:47 +0200
+From: Jose Diaz de Grenu <Jose.DiazdeGrenu@digi.com>
+To: <Jose.DiazdeGrenu@digi.com>
+Subject: [PATCH 0/2] nvmem: imx-ocotp: allow reads with arbitrary size and
+ offset
+Date: Tue, 23 Jul 2019 17:32:41 +0200
+Message-ID: <1563895963-19526-1-git-send-email-Jose.DiazdeGrenu@digi.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-Content-Language: en-US
+X-Originating-IP: [10.101.2.92]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_083100_713968_C759204C 
-X-CRM114-Status: UNSURE (   9.53  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190723_083255_589970_4719CDFB 
+X-CRM114-Status: GOOD (  10.59  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a01:238:20a:202:5300:0:0:2 listed in]
- [list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [67.219.250.208 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,73 +95,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, tbm@cyrius.com
+Cc: festevam@gmail.com, s.hauer@pengutronix.de, linux-kernel@vger.kernel.org,
+ srinivas.kandagatla@linaro.org, linux-imx@nxp.com, kernel@pengutronix.de,
+ shawnguo@kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi all,
+Currently the imx-ocotp driver does only allow reading complete OTP words
+correcty aligned.
 
-I upgraded my TS-219 to Debian Buster with Kernel 4.19.0-5-marvell.
+Usually OTP memory is limited, so the fields are stored using as few bits as
+possible. This means that a given value rarely uses 32 bits and happens to be
+aligned.
 
-They use dtbs/4.19.0-5-marvell/./kirkwood-ts219-6282.dtb
+Even though the NVMEM API offers a way to define offset and size of each cell
+(at bit level) this is not currently usable iwth the imx-ocotp driver, which
+forces consumers to read complete words and then hardcode the necessary
+shifting and masking in the driver code. 
 
-Unfortunately the RTC doesn't seem to work.
+As an example take the nvmem consumer imx_thermal.c, which reads nvmem cells
+as uint32_t words:
 
-root@xxxxx:~# hwclock -v --test
-hwclock from util-linux 2.33.1
-System Time: 1563296223.425648
-Trying to open: /dev/rtc0
-Using the rtc interface to the clock.
-Last drift adjustment done at 1563291472 seconds after 1969
-Last calibration done at 1563291472 seconds after 1969
-Hardware clock is on UTC time
-Assuming hardware clock is kept in UTC time.
-Waiting for clock tick...
-hwclock: select() to /dev/rtc0 to wait for clock tick timed out
-...synchronization failed
-Test mode: nothing was changed.
+	ret = nvmem_cell_read_u32(&pdev->dev, "calib", &val);
+	if (ret)
+		return ret;
 
-With strace the clock tick problem looks like this:
+	ret = imx_init_calib(pdev, val);
+	if (ret)
+		return ret;
 
-write(1, "Waiting for clock tick...\n", 26Waiting for clock tick...
-) = 26
-ioctl(4, RTC_UIE_ON)                    = 0
-_newselect(5, [4], NULL, NULL, {tv_sec=10, tv_usec=0}) = 0 (Timeout)
-write(2, "hwclock: ", 9hwclock: )                = 9
-write(2, "select() to /dev/rtc0 to wait fo"..., 54select() to /dev/rtc0 
-to wait for clock tick timed out) = 54
-write(2, "\n", 1)                       = 1
-ioctl(4, PHN_NOT_OH or RTC_UIE_OFF)     = 0
+	ret = nvmem_cell_read_u32(&pdev->dev, "temp_grade", &val);
+	if (ret)
+		return ret;
+	imx_init_temp_grade(pdev, val);
+	
+but needs to later adjust the values in code:
 
+	// Inside imx_init_calib()
+	data->c1 = (ocotp_ana1 >> 9) & 0x1ff;
 
-It looks the same with
+	// Inside imx_init_temp_grade()
+	switch ((ocotp_mem0 >> 6) & 0x3) {
+	
+This patch adjusts the driver so that reads can be requested using any size
+and offset. Then, for example the nvmem cell "calib" could use the 'bits'
+property to specify size and offset in bits, removing the need to mask and
+shift in the driver code.
 
-# hwclock --hctosys
-hwclock: select() to /dev/rtc0 to wait for clock tick timed out
+This is specially useful when several drivers use the same nvmem cell and when
+the specific size and offset of a OTP value depends on a hardware version.
 
-I wonder whether the problem comes from a missing interrupt assignment
+Jose Diaz de Grenu (2):
+  nvmem: imx-ocotp: use constant for write restriction
+  nvmem: imx-ocotp: allow reads with arbitrary size and offset
 
-rtc: rtc@10300 {
-              compatible = "marvell,kirkwood-rtc", "marvell,orion-rtc";
-              reg = <0x10300 0x20>;
-              interrupts = <53>;            <- HERE!?!
-              clocks = <&gate_clk 7>;
-                };
+ drivers/nvmem/imx-ocotp.c | 34 ++++++++++++++++------------------
+ 1 file changed, 16 insertions(+), 18 deletions(-)
 
-... I found in linux/arch/arm/boot/dts/kirkwood-6282.dtsi ?!?
-
-In /proc/interrupts there's no rtc assigned to an interrupt 53.
-
-Accessing the rtc values (time/date) via /sys/class/rtc/rtc0 entries 
-works well and setting the date/time via "hwclock --systohc" does its 
-job too. So I2C and the rtc_s35390a driver seem to work so far.
-
-Any ideas why hwclock fails to work properly?
-
-Best regards,
-Oliver
 
 _______________________________________________
 linux-arm-kernel mailing list
