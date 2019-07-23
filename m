@@ -2,55 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AEEB371491
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 11:06:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A1D00714A2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 11:08:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=DILl7WQ2mprOnaqcmIKeZ/sKi2hdnUsM7rHOWYpXURM=; b=eYIcYKEHZyGrdzIWvGapFbMze
-	rCalqIAk0/zIC2A1tRP2pwrmDUJAJfE/bB+P/tPGLBaQfXBpS6Kw4bFS+zEd/yB+b+5WkQGkw+vGg
-	ZlrMEI1HHYWavWpgEf376bZnxe4wEC0HG8O+hbeZRZDC/l0rYcmrQ9fsVepnztfDq0AShPiWnBxyi
-	vHy3d0IQHIDrKoij6Ud28rczvcILo9gbY+iv6cyi/m4EBt7mR8SgHJjehonYtclPEOERdmeXo95VU
-	8PqsmSzGnD3GreTe8Zt5NdXuduKO021qAzcRZFrpOxLNuTevnh8mPKxbr0yb7zh6gc7z0wKNzZLI6
-	Qmcu5IENA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9pqbkG61pRPgSY8xJeRou99Lh6a7teNlUMQb+hllQ8g=; b=OC9mR25ixXtRvB
+	4FK/Rz0GtRDL4QjmalfJph8Y/JAy2X4u44dqp0tO7E+Uxh8Bcgcj1CI5Z1DEyHAhMEIYPTRmAzXmK
+	qQL0buCi5JdYLoRHJSG4aIcMGNBn7iEYEmLoB2HT2dW0qY7dZC5Eq3XwixY18UouVN3SHDQjbHtc6
+	0C9nWpm4etZR4r033y6ncwQHMGiNytP5oNR6Jt6zPHYPOeQHYbaOcwYgjKGtGs+yzAZ3/1lJcyhj4
+	A6hHCCDSOY9KKR5KnknUWqr7N0ysWvyvRiUbSvtJTtjLTJRkoU0PFRP8iL+gl/LPUcfw0oA0MXfZu
+	2osfN23hy7fBAYR47MqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpqkb-0001YU-TX; Tue, 23 Jul 2019 09:06:25 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hpqjv-0001Xx-1n
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 09:05:44 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9ADA9344;
- Tue, 23 Jul 2019 02:05:39 -0700 (PDT)
-Received: from dawn-kernel.cambridge.arm.com (unknown [10.1.197.116])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8220D3F71F;
- Tue, 23 Jul 2019 02:05:38 -0700 (PDT)
-Subject: Re: [PATCH] coresight: etm4x: lazily allocate memory for save_state
-To: mathieu.poirier@linaro.org, andrew.murray@arm.com
-References: <20190711160114.634-6-andrew.murray@arm.com>
- <20190712150056.15775-1-andrew.murray@arm.com>
- <CANLsYkyE2erOeSM69XTVL-oizFj6WhXLcSKGT2qnFr0ArNskzA@mail.gmail.com>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <88f1e83b-8f16-a5bf-d68e-b840a4302f90@arm.com>
-Date: Tue, 23 Jul 2019 10:05:37 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1hpqmR-0004aZ-4u; Tue, 23 Jul 2019 09:08:19 +0000
+Received: from asavdk3.altibox.net ([109.247.116.14])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hpqm6-0004OT-AG; Tue, 23 Jul 2019 09:07:59 +0000
+Received: from ravnborg.org (unknown [158.248.194.18])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by asavdk3.altibox.net (Postfix) with ESMTPS id 89772200AE;
+ Tue, 23 Jul 2019 11:07:53 +0200 (CEST)
+Date: Tue, 23 Jul 2019 11:07:52 +0200
+From: Sam Ravnborg <sam@ravnborg.org>
+To: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+Subject: Re: [PATCH v4 16/23] drm/mgag200: Provide ddc symlink in connector
+ sysfs directory
+Message-ID: <20190723090752.GB787@ravnborg.org>
+References: <cover.1562843413.git.andrzej.p@collabora.com>
+ <d32a6b1f0a3b79f1fbc8d0894080908526f6e61e.1562843413.git.andrzej.p@collabora.com>
 MIME-Version: 1.0
-In-Reply-To: <CANLsYkyE2erOeSM69XTVL-oizFj6WhXLcSKGT2qnFr0ArNskzA@mail.gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <d32a6b1f0a3b79f1fbc8d0894080908526f6e61e.1562843413.git.andrzej.p@collabora.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CMAE-Score: 0
+X-CMAE-Analysis: v=2.3 cv=dqr19Wo4 c=1 sm=1 tr=0
+ a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
+ a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=QX4gbG5DAAAA:8
+ a=akpas9ZDeQi6sww-pK0A:9 a=CjuIK1q_8ugA:10 a=AbAUZ8qAyYyZVLSsDulk:22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_020543_180432_13988D16 
-X-CRM114-Status: GOOD (  20.08  )
+X-CRM114-CacheID: sfid-20190723_020758_530178_F3394C2F 
+X-CRM114-Status: GOOD (  14.52  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [109.247.116.14 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -63,108 +67,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexander.shishkin@linux.intel.com, coresight@lists.linaro.org,
- leo.yan@linaro.org, Sudeep.Holla@arm.com, linux-arm-kernel@lists.infradead.org,
- mike.leach@linaro.org
+Cc: Neil Armstrong <narmstrong@baylibre.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, dri-devel@lists.freedesktop.org,
+ linux-kernel@vger.kernel.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, kernel@collabora.com,
+ linux-samsung-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Sean Paul <sean@poorly.run>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Jonathan Hunter <jonathanh@nvidia.com>, David Airlie <airlied@linux.ie>,
+ Chen-Yu Tsai <wens@csie.org>, Kukjin Kim <kgene@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>, Dave Airlie <airlied@redhat.com>,
+ Thomas Zimmermann <tzimmermann@suse.de>, Jonas Karlman <jonas@kwiboo.se>,
+ linux-arm-msm@vger.kernel.org, intel-gfx@lists.freedesktop.org,
+ Jyri Sarha <jsarha@ti.com>, Alexios Zavras <alexios.zavras@intel.com>,
+ Mamta Shukla <mamtashukla555@gmail.com>, linux-mediatek@lists.infradead.org,
+ Rodrigo Vivi <rodrigo.vivi@intel.com>, linux-tegra@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, Vincent Abriou <vincent.abriou@st.com>,
+ linux-arm-kernel@lists.infradead.org, amd-gfx@lists.freedesktop.org,
+ Tomi Valkeinen <tomi.valkeinen@ti.com>, Shawn Guo <shawnguo@kernel.org>,
+ Seung-Woo Kim <sw0312.kim@samsung.com>,
+ Douglas Anderson <dianders@chromium.org>, Todor Tomov <todor.tomov@linaro.org>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Huang Rui <ray.huang@amd.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Alex Deucher <alexander.deucher@amd.com>, freedreno@lists.freedesktop.org,
+ Christian =?iso-8859-1?Q?K=F6nig?= <christian.koenig@amd.com>,
+ Gerd Hoffmann <kraxel@redhat.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Andrzej.
 
+On Thu, Jul 11, 2019 at 01:26:43PM +0200, Andrzej Pietrasiewicz wrote:
+> Use the ddc pointer provided by the generic connector.
+> 
+> Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+> ---
+>  drivers/gpu/drm/mgag200/mgag200_mode.c | 9 +++++----
+>  1 file changed, 5 insertions(+), 4 deletions(-)
+> 
+> diff --git a/drivers/gpu/drm/mgag200/mgag200_mode.c b/drivers/gpu/drm/mgag200/mgag200_mode.c
+> index a25054015e8c..8fb9444b2142 100644
+> --- a/drivers/gpu/drm/mgag200/mgag200_mode.c
+> +++ b/drivers/gpu/drm/mgag200/mgag200_mode.c
+> @@ -1703,6 +1703,11 @@ static struct drm_connector *mga_vga_init(struct drm_device *dev)
+>  		return NULL;
+>  
+>  	connector = &mga_connector->base;
+> +	mga_connector->i2c = mgag200_i2c_create(dev);
+> +	if (!mga_connector->i2c)
+> +		DRM_ERROR("failed to add ddc bus\n");
+> +
+> +	connector->ddc = &mga_connector->i2c->adapter;
+>  
+>  	drm_connector_init(dev, connector,
+>  			   &mga_vga_connector_funcs, DRM_MODE_CONNECTOR_VGA);
+Like on other patch, assigning connector->ddc before
+drm_connector_init() looks wrong.
 
-On 22/07/2019 21:32, Mathieu Poirier wrote:
-> Hi Andrew,
-> 
-> Sorry for the late reply - you patch got lost under the pile.
-> 
-> On Fri, 12 Jul 2019 at 09:01, Andrew Murray <andrew.murray@arm.com> wrote:
->>
->> I had intended to lazily allocate memory for the save_state structure when
->> it is first used. Following is a patch that I will squash into "[PATCH v3 5/6]
->> coresight: etm4x: save/restore state across CPU low power states" on my
->> next respin. I thought I'd share it here to get some feedback along with
->> the rest of v3.
->>
->> Thanks,
->>
->> Andrew Murray
->>
->> ---
->>   drivers/hwtracing/coresight/coresight-etm4x.c | 14 +++++++++++---
->>   drivers/hwtracing/coresight/coresight-etm4x.h |  2 +-
->>   2 files changed, 12 insertions(+), 4 deletions(-)
->>
->> diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
->> index b0bd8158bf13..cd02372194bc 100644
->> --- a/drivers/hwtracing/coresight/coresight-etm4x.c
->> +++ b/drivers/hwtracing/coresight/coresight-etm4x.c
->> @@ -1112,6 +1112,13 @@ static int etm4_cpu_save(struct etmv4_drvdata *drvdata)
->>          struct etmv4_save_state *state;
->>          struct device *etm_dev = &drvdata->csdev->dev;
->>
->> +       if (!drvdata->save_state) {
->> +               drvdata->save_state = devm_kmalloc(etm_dev,
->> +                               sizeof(struct etmv4_save_state), GFP_KERNEL);
-> 
-> GFP_KERNEL may sleep and will not work in the context where
-> etm4_cpu_save() is called.
-
-Thats right and it is not worth making this GFP_ATOMIC either. We could simply
-decide this at probe time or when the save_restore is modified dynamically via
-callbacks.
-
-Suzuki
-
-> 
-> Thanks,
-> Mathieu
-> 
->> +               if (!drvdata->save_state)
->> +                       return -ENOMEM;
->> +       }
->> +
->>          /*
->>           * As recommended by 3.4.1 ("The procedure when powering down the PE")
->>           * of ARM IHI 0064D
->> @@ -1134,7 +1141,7 @@ static int etm4_cpu_save(struct etmv4_drvdata *drvdata)
->>                  goto out;
->>          }
->>
->> -       state = &drvdata->save_state;
->> +       state = drvdata->save_state;
->>
->>          state->trcprgctlr = readl(drvdata->base + TRCPRGCTLR);
->>          state->trcprocselr = readl(drvdata->base + TRCPROCSELR);
->> @@ -1234,9 +1241,10 @@ static int etm4_cpu_save(struct etmv4_drvdata *drvdata)
->>   static void etm4_cpu_restore(struct etmv4_drvdata *drvdata)
->>   {
->>          int i;
->> -       struct etmv4_save_state *state;
->> +       struct etmv4_save_state *state = drvdata->save_state;
->>
->> -       state = &drvdata->save_state;
->> +       if (WARN_ON_ONCE(!state))
->> +               return;
->>
->>          CS_UNLOCK(drvdata->base);
->>
->> diff --git a/drivers/hwtracing/coresight/coresight-etm4x.h b/drivers/hwtracing/coresight/coresight-etm4x.h
->> index c31634c64f87..a70cafbbb8cf 100644
->> --- a/drivers/hwtracing/coresight/coresight-etm4x.h
->> +++ b/drivers/hwtracing/coresight/coresight-etm4x.h
->> @@ -441,7 +441,7 @@ struct etmv4_drvdata {
->>          bool                            atbtrig;
->>          bool                            lpoverride;
->>          struct etmv4_config             config;
->> -       struct etmv4_save_state         save_state;
->> +       struct etmv4_save_state         *save_state;
->>          bool                            state_needs_restore;
->>   };
->>
->> --
->> 2.21.0
->>
+	Sam
 
 _______________________________________________
 linux-arm-kernel mailing list
