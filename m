@@ -2,60 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 04B5E713F5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 10:27:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D4CFE71403
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 10:30:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gKhxErojG+IllXey3qdeo4iYpSi8wJUKNHV6XAncFGo=; b=FjGAqZu7zcPMac
-	07ptgnAJxHL6zHU4kbbHxYDQUyb/VRdLEAEQLe1jtFmji94QL7plrkKcx6eXYTCnex8v08ITT2tnd
-	8tpjjE0h0NZnzDReohJJTcMDTx0OU50/Wri9agqEgYbzCyR0MEwjnwuGmJ9xQMdhgqwyjpRx4rpOK
-	Q2gsxH1eksCDgLFguqAKV32l8KGanaNb9ELIqVbYiGuT0MdU/sB1EFRZyLlgoaZJAj6oMcKG9sxQq
-	ly5s0byNE+08s7+bH8St7c934nYI8hCLZ3zYlyzIDNVGuGCm/0YfRyLTGuJMnQVfW1K3O2HSVHLki
-	w4rNJKFwi8LButuwobVw==;
+	List-Owner; bh=jUPcjnLlhF4M7Xk4giauWKuIa2HVk3c4mB2h1x6EMJQ=; b=eK5QlFjLqpqHV7
+	5QBYbFK48fsvmnpqoMzt2IXznMjSQvWGacCj8kEjcqADLThoPjh1jGUYoHu8gr0V2Kslq0m6VkkHA
+	CVpf6JAFjHZn//RU3GBJvQM/uUKsL6v2AUIRS+cf6i7fZCgulWI/n3kE3lrbmK8bgKwDgA0cx8UFv
+	U43n4ejfcjh7cpi1XnCr2rSXYONtxWU3k6u8eNI7IeDq/kZYDeXwLoXlPcm5RyQ56JRFs3tkGlqz+
+	w8e6eA+yB+NdS+mk0UhuCDL59dg1ms1ZWEXLYpO8yesk5J2f8ioFJ4pqHR0Q/pFTCIGHnDdjfaOCr
+	xKnCIgl1pKpVUsEGA0Xw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpq8y-00009h-Ed; Tue, 23 Jul 2019 08:27:32 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hpqBs-00026V-Pr; Tue, 23 Jul 2019 08:30:32 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpq8i-00008W-Nw
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 08:27:17 +0000
-Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 17A9621BF6;
- Tue, 23 Jul 2019 08:27:14 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563870436;
- bh=SnqOIbK+0rIhgQ2hnfks3pxqj4Sta5RlGjVJ91yq/Mc=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=RV1zQGx1yAJtbhwK+SsK9ysJpcTBzo+KRFapT1sPbS4zVFebBSrYEU8MzxTK/IBRA
- h34tBrG/pjU115ZB48hzGHCZoo1YwhXywm6R6pVrUZTUtEyAKk76y90AH/Y2b5nM7P
- C23cAMaDwCzFdye3dxB/fLJHYLbhb+y9X0Uyzc+w=
-Date: Tue, 23 Jul 2019 16:26:49 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Ioana Ciornei <ioana.ciornei@nxp.com>
-Subject: Re: [PATCH v3] arm64: dts: add the console node for DPAA2 platforms
-Message-ID: <20190723082648.GT15632@dragon>
-References: <1563791443-26372-1-git-send-email-ioana.ciornei@nxp.com>
+ id 1hpqBc-00025U-NH
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 08:30:17 +0000
+Received: by mail-lf1-x142.google.com with SMTP id x3so28803931lfc.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 23 Jul 2019 01:30:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=syBlnIr3lotOltOc/vZkYQKICHGTlfmAJxr6rc/TPFI=;
+ b=IDHd3BlllDzmuMywX3W/Mwaxf9SUAC1ITQAYxVe3EdpVLn9P7ox/KvicZW0H2rn0VZ
+ XYMuUIDtUmUgSakwnZqRD1wQNi33jFkVfQ++7gqN+S1bYzcoiZEpYsIYDg+s8PtPW9+K
+ MSur3qtEyMptDyPfThqGYsTkPwZI82uma6RJmI3Z3uNyWTSnvQnDub5P482J9AI4exHZ
+ MibyDiZFASkBdczzlG82BC7XX9iF5uOdeBkbJ8eNZKBp1/DlcJfWf8owTiKuBkS9Gdhk
+ 9wVcvG5Pfqbu1AVShyl1gXG5TMkTM9JLUFH0Wfp9eDgJ8oepkWepG/LEbP9vk/XxLltc
+ Gs+w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=syBlnIr3lotOltOc/vZkYQKICHGTlfmAJxr6rc/TPFI=;
+ b=MHQN2lUoiM77IIuttvtwVTdosOp7TL/jpRtXHAdsb/IzaSIrsaT+PWxVZ7n6HMmAJs
+ +LeVV1pVSUkdZaaDTaEImQWD3yBPb5qfrFfPhh/ydZq5Lj9Bx0kJ+LDXe5VF3wTrECCs
+ +XfvhuWPTn0+53mAdWv6lvBB0VGPJhKzVHW5MIe/dd95L7io1u5e6YFHto9IfMJbYpZN
+ +soGLXUhrp8B9BJtnf07lgjZ7SncuvmH6B8QtI4mBhrZV9O9hYq/SbdJ+Y5FCgrfMsSc
+ PBqCChnpuGjn9v0RahUmL07py/reb7jJJz2JJQKAwJbnILbYytDS1/q8ULi+n2Gn7Slo
+ qXlQ==
+X-Gm-Message-State: APjAAAXepiZspBZuMnHST0qksUeC/jpjBaTqcZgYOa7S2QvUmsu3yNVL
+ LpMteszuCbExYTVT079RPRn9Yi+fc9lqOoqqK0JK4w==
+X-Google-Smtp-Source: APXvYqwWGxao/28Kz2zbNijiOv5Hz8uDmZYEJmaa8ZR+sLnSu5xitdAQqA8b5w1+jLpRJZce7gmX18s/KwwTbJI3EQI=
+X-Received: by 2002:ac2:4891:: with SMTP id x17mr35514625lfc.60.1563870614049; 
+ Tue, 23 Jul 2019 01:30:14 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1563791443-26372-1-git-send-email-ioana.ciornei@nxp.com>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+References: <20190722172623.4166-1-wsa+renesas@sang-engineering.com>
+ <20190722172623.4166-4-wsa+renesas@sang-engineering.com>
+In-Reply-To: <20190722172623.4166-4-wsa+renesas@sang-engineering.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Tue, 23 Jul 2019 10:30:02 +0200
+Message-ID: <CACRpkdb4CtiiYbSwHEcC4godbRBA3DmABCHpx5_OKUCfxgcUSg@mail.gmail.com>
+Subject: Re: [PATCH 03/14] mfd: ab3100-core: convert to i2c_new_dummy_device
+To: Wolfram Sang <wsa+renesas@sang-engineering.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_012716_793883_C91D3670 
-X-CRM114-Status: UNSURE (   7.85  )
+X-CRM114-CacheID: sfid-20190723_013016_763165_F2DD8052 
+X-CRM114-Status: UNSURE (   6.97  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -65,7 +81,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,20 +92,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- leoyang.li@nxp.com
+Cc: Lee Jones <lee.jones@linaro.org>, linux-i2c <linux-i2c@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jul 22, 2019 at 01:30:43PM +0300, Ioana Ciornei wrote:
-> Add the console device tree node for the following
-> DPAA2 based platforms: LS1088A, LS2080A, LS2088A and LX2160A.
-> 
-> Signed-off-by: Ioana Ciornei <ioana.ciornei@nxp.com>
+On Mon, Jul 22, 2019 at 7:26 PM Wolfram Sang
+<wsa+renesas@sang-engineering.com> wrote:
 
-Applied, thanks.
+> Move from i2c_new_dummy() to i2c_new_dummy_device(), so we now get an
+> ERRPTR which we use in error handling.
+>
+> Signed-off-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
+
+Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
