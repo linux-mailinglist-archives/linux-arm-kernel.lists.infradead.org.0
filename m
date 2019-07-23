@@ -2,73 +2,116 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 15D48713DE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 10:23:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F888713E1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 10:23:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XisAgeUxceIw250/8Sxyw7vVdfyEW0lWsWyGtiqvtuY=; b=cQZKBurxzQSSL2
-	x0UST3ojOYA1WQvnHhZJEJnnjXVP1s81t6siUtm+udkMI8KuntTkhp4DmmgnPHopkeF5G8FHMwEGE
-	+pC3JjKCAj8jdDZQz1MOgmUBChWV2jwR/CeSXt/wYbVNqu3LdFFwJW/oxNL7Fd3Ohytxx+/F5efQl
-	vNyOojuXLRUysIcRYEGZZg+p/uG+aLzykc6FaYQahVt0NHwdmerCtiRnOxfafAQLN4YWlefiqR12G
-	8fILblb8lteCHfne/UP7ibnNGjp3xUnwlBKyhUkZiNb0uXcnDI0YPzIhB+ZdwGY0vRIrOaIe/MW6f
-	vAHhD+RgsHgpuao3u83A==;
+	List-Owner; bh=t36PLIOnt2AyQVv5h/HvQgRBRwTpoer0nFgxHIE7LC8=; b=jwEDljATtVntP6
+	4GmvrFo6OhbgcbUgX1BgtqXtW0MzexjOKLneIXz8AyvurnI5heqCUBCeZO9dxWKfN3Gvw1d6GQnuo
+	EvZ75XJa0J9bwnHrzleyPqIJFVOLOHr1MxkDKpQsfAIhZ/nq7/HLVliTjzO8dwpPXzyYBV2BC4kJG
+	xDlBSlZFaZw2s8l3QV6tpVCIEwdCRTrf0cwVL0gDaBNUpMMS+cbV+JarZE14xduYC6Nf9b+52NzMe
+	8CWN/CLkWNLc6KMOTWia0GClV2l0RsZ8aOhGPEL39qGa2khCtYJQO2v2622KebFJXBqx4A6p+sBvf
+	gjHoV+edgBkJbPgDgbYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpq4S-0005sg-0T; Tue, 23 Jul 2019 08:22:52 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hpq5J-0006Cw-HE; Tue, 23 Jul 2019 08:23:45 +0000
+Received: from mail-eopbgr760054.outbound.protection.outlook.com
+ ([40.107.76.54] helo=NAM02-CY1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpq3t-0005k5-HI; Tue, 23 Jul 2019 08:22:19 +0000
-X-UUID: 2d057d16b2384f3692dc4cefbf269236-20190723
-X-UUID: 2d057d16b2384f3692dc4cefbf269236-20190723
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <jungo.lin@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1732491803; Tue, 23 Jul 2019 00:22:06 -0800
-Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 23 Jul 2019 01:22:05 -0700
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 23 Jul 2019 16:21:57 +0800
-Received: from [172.21.84.99] (172.21.84.99) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 23 Jul 2019 16:21:57 +0800
-Message-ID: <1563870117.1212.455.camel@mtksdccf07>
-Subject: Re: [RFC, v3 9/9] media: platform: Add Mediatek ISP P1 shared
- memory device
-From: Jungo Lin <jungo.lin@mediatek.com>
-To: Tomasz Figa <tfiga@chromium.org>
-Date: Tue, 23 Jul 2019 16:21:57 +0800
-In-Reply-To: <CAAFQd5AaNFpMGCVJREY85n8UetEwd99TOka8-ECoLzMbMkos_g@mail.gmail.com>
-References: <jungo.lin@mediatek.com>
- <20190611035344.29814-1-jungo.lin@mediatek.com>
- <20190611035344.29814-10-jungo.lin@mediatek.com>
- <20190701072532.GB137710@chromium.org>
- <1562297618.1212.46.camel@mtksdccf07>
- <CAAFQd5BaTQ-Q7gsE0X+d4_81OZq9WHaCYkmALt7_4A1JFo=_8g@mail.gmail.com>
- <1562313579.1212.73.camel@mtksdccf07>
- <CAAFQd5AaNFpMGCVJREY85n8UetEwd99TOka8-ECoLzMbMkos_g@mail.gmail.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1hpq53-0006C3-Jc; Tue, 23 Jul 2019 08:23:31 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=FKxMxGK3ziLTEZsCjNtYxzEUmEzzed/s7ETcI/9mCaG+U8NvMbB78/4tWxf1F+goHkzXjSEZUwFt65Yq9+05VtKSnY6a1N+x2xY2fCDQaPVzSZ5g8nu/tDblmMDycE6JvQYvfmg3sq7/xyoLJEJm5TXwgbWRrJBRRBm+2xyuWddj8Q33S5cWWjjq9p2qSNrd+IodaoVVZaCDHgV8qJIogp122Cmp+Ao+RFnpzm7WX48t5skdh+XEVri7Vw0YibF9wideInM1YMJNcoWtiie3zosfcCooga5vfh/tDJiIvpQR+8kAXJt7CKAUnMumX6IHVLrlh6QyPxFy//GifkdZdg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=YPX6JcgOBidVMQHV2VmehgH5dRVwd521AxNmx5EhSus=;
+ b=L9ZEe+bdAOQogNW7aRkmBJAhVN6ZzzpO4nZdpEW5jx1zHkGx3NSEzcPoOz7Itebrom/bFBaWY3aYn+8f5x57HvV8tDTA07bQb8COf9Qxxkn0KXX8FPuFZ/AMgtmb3kR5v4fXljWWWx7AmxiP5DK5ThZJshnw4GBHXbLlpongNh2ZBB9Hzd0cuWZcLrakf3jtCkLs2GukwZAibM5cNCivl6PkHd2FaGhYPRIvF+SwDmxCQIt6fI/OLwuW/jgXqCV/OTu0bq3YHdiQULHCJfWZGpSDBEWqq0vtOZ3ZmOGgUH7vQShXufJ8dbph6y094Tgdq89iSsRTyX4GQ+KY1ZQaMg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
+ smtp.mailfrom=xilinx.com;dmarc=pass action=none
+ header.from=xilinx.com;dkim=pass header.d=xilinx.com;arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector1-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=YPX6JcgOBidVMQHV2VmehgH5dRVwd521AxNmx5EhSus=;
+ b=T5VeRDGa+2KYg+0SlgfvPtITiBpDddgtaQ98PacxW35+kPIM3zJrGbv/gxmnYseFWfw0dSXdh1lyjGS6twa/c3mcgT2MC+V3ww6K8up32xp5fH1qdOc+MZNG3F4SLHUE7OWCsj+2oyTZYTK1SzaW9XalEt76Z0r2UP2NGjJMu7c=
+Received: from MN2PR02MB6029.namprd02.prod.outlook.com (10.255.7.10) by
+ MN2PR02MB6399.namprd02.prod.outlook.com (52.132.175.208) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2094.15; Tue, 23 Jul 2019 08:23:26 +0000
+Received: from MN2PR02MB6029.namprd02.prod.outlook.com
+ ([fe80::e880:6205:6aac:21a3]) by MN2PR02MB6029.namprd02.prod.outlook.com
+ ([fe80::e880:6205:6aac:21a3%7]) with mapi id 15.20.2094.017; Tue, 23 Jul 2019
+ 08:23:26 +0000
+From: Manish Narani <MNARANI@xilinx.com>
+To: Rob Herring <robh@kernel.org>, "ulf.hansson@linaro.org"
+ <ulf.hansson@linaro.org>
+Subject: RE: [PATCH v2 01/11] dt-bindings: mmc: arasan: Update documentation
+ for SD Card Clock
+Thread-Topic: [PATCH v2 01/11] dt-bindings: mmc: arasan: Update documentation
+ for SD Card Clock
+Thread-Index: AQHVL84QKtDrcydqmkObCTy1mFTFVabXUFgAgAB7vdA=
+Date: Tue, 23 Jul 2019 08:23:25 +0000
+Message-ID: <MN2PR02MB602907616249FF19C1A737D8C1C70@MN2PR02MB6029.namprd02.prod.outlook.com>
+References: <1561958991-21935-1-git-send-email-manish.narani@xilinx.com>
+ <1561958991-21935-2-git-send-email-manish.narani@xilinx.com>
+ <20190722215404.GA28292@bogus>
+In-Reply-To: <20190722215404.GA28292@bogus>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=MNARANI@xilinx.com; 
+x-originating-ip: [149.199.50.133]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 9b81b681-6c0e-4204-0aac-08d70f4708c3
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:MN2PR02MB6399; 
+x-ms-traffictypediagnostic: MN2PR02MB6399:
+x-ms-exchange-purlcount: 1
+x-microsoft-antispam-prvs: <MN2PR02MB63990D20E3F604676B97052EC1C70@MN2PR02MB6399.namprd02.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7691;
+x-forefront-prvs: 0107098B6C
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(366004)(396003)(376002)(39860400002)(136003)(346002)(13464003)(199004)(189003)(9686003)(110136005)(99286004)(54906003)(316002)(33656002)(55016002)(478600001)(6306002)(2501003)(4326008)(5660300002)(6116002)(6246003)(3846002)(52536014)(15650500001)(66066001)(7416002)(53936002)(486006)(2906002)(305945005)(68736007)(71190400001)(66556008)(14444005)(25786009)(256004)(71200400001)(102836004)(53546011)(76176011)(86362001)(14454004)(6506007)(229853002)(26005)(7696005)(11346002)(81166006)(81156014)(186003)(8676002)(446003)(7736002)(74316002)(66946007)(66476007)(64756008)(66446008)(6436002)(8936002)(476003)(76116006);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:MN2PR02MB6399;
+ H:MN2PR02MB6029.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: xilinx.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: 5hNUdacevXvJyNj59HWRjwZmfixe5W4Nl1FQQhafMnfnHE7YMP54ghIqi7neXYPjXrIqY41xKwVamSZslWCQSOjRGj3eEarQwHUWZbLfvZXQIqevUB8qbgq92z4HtCHhxC7M9a6RT/3LUN2j7etfPjI8BuRjOHvC7Qz3nFN5xL2h5rmHay/bkCBsVS7aNs59lsRFO7qyrilIuv/1PN9hYQNAdeZZJwd9p8/NlbeTtj3iuKb9ns9LUUiMEbMLvBIeZ7lfDL7cZqHESpuME3DMgdKyz89N2dV25S+jmFCu7YMDSUEuhPH12ojbFyz7lfpi3VNcjqmvaf2iJRW+ItFog9fttv8ONQt5bcONoWwh52bqiuKUhEz6ZZyWyvbaQOW6NkJhKMVKodUF9CUMjnPP2bcHzmxrWADgbkn8f7GIc6o=
 MIME-Version: 1.0
-X-MTK: N
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9b81b681-6c0e-4204-0aac-08d70f4708c3
+X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Jul 2019 08:23:25.7260 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: mnarani@xilinx.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR02MB6399
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_012217_624354_B8805383 
-X-CRM114-Status: GOOD (  22.47  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190723_012329_644195_315ED825 
+X-CRM114-Status: GOOD (  21.80  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ no trust [40.107.76.54 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,196 +123,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Sean Cheng =?UTF-8?Q?=28=E9=84=AD=E6=98=87=E5=BC=98=29?=
- <sean.cheng@mediatek.com>,
- Frederic Chen =?UTF-8?Q?=28=E9=99=B3=E4=BF=8A=E5=85=83=29?=
- <frederic.chen@mediatek.com>,
- Rynn Wu =?UTF-8?Q?=28=E5=90=B3=E8=82=B2=E6=81=A9=29?= <rynn.wu@mediatek.com>,
- srv_heupstream <srv_heupstream@mediatek.com>, Rob Herring <robh@kernel.org>,
- Ryan Yu =?UTF-8?Q?=28=E4=BD=99=E5=AD=9F=E4=BF=AE=29?= <ryan.yu@mediatek.com>,
- Frankie Chiu =?UTF-8?Q?=28=E9=82=B1=E6=96=87=E5=87=B1=29?=
- <frankie.chiu@mediatek.com>, Hans Verkuil <hverkuil@xs4all.nl>,
- ddavenport@chromium.org, Sj Huang <sj.huang@mediatek.com>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>, Matthias
- Brugger <matthias.bgg@gmail.com>, Mauro Carvalho Chehab <mchehab@kernel.org>,
- "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>, Joerg
- Roedel <joro@8bytes.org>," <linux-arm-kernel@lists.infradead.org>, Linux
- Media Mailing List <linux-media@vger.kernel.org>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "kernel@esmil.dk" <kernel@esmil.dk>, "heiko@sntech.de" <heiko@sntech.de>,
+ "scott.branden@broadcom.com" <scott.branden@broadcom.com>,
+ "olof@lixom.net" <olof@lixom.net>,
+ "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
+ "ayaka@soulik.info" <ayaka@soulik.info>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ "adrian.hunter@intel.com" <adrian.hunter@intel.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ Jolly Shah <JOLLYS@xilinx.com>, Rajan Vaja <RAJANV@xilinx.com>,
+ "tony.xie@rock-chips.com" <tony.xie@rock-chips.com>,
+ Michal Simek <michals@xilinx.com>, "mdf@kernel.org" <mdf@kernel.org>,
+ Nava kishore Manne <navam@xilinx.com>,
+ "philipp.tomsich@theobroma-systems.com"
+ <philipp.tomsich@theobroma-systems.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "christoph.muellner@theobroma-systems.com"
+ <christoph.muellner@theobroma-systems.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Tomasz:
+Hi Rob,
 
-On Tue, 2019-07-23 at 16:20 +0900, Tomasz Figa wrote:
-> Hi Jungo,
+Thanks a lot for the review!
+
+
+> -----Original Message-----
+> From: Rob Herring <robh@kernel.org>
+> Sent: Tuesday, July 23, 2019 3:24 AM
+> To: Manish Narani <MNARANI@xilinx.com>
+> Cc: ulf.hansson@linaro.org; mark.rutland@arm.com; heiko@sntech.de; Michal
+> Simek <michals@xilinx.com>; adrian.hunter@intel.com;
+> christoph.muellner@theobroma-systems.com; philipp.tomsich@theobroma-
+> systems.com; viresh.kumar@linaro.org; scott.branden@broadcom.com;
+> ayaka@soulik.info; kernel@esmil.dk; tony.xie@rock-chips.com; Rajan Vaja
+> <RAJANV@xilinx.com>; Jolly Shah <JOLLYS@xilinx.com>; Nava kishore Manne
+> <navam@xilinx.com>; mdf@kernel.org; olof@lixom.net; linux-
+> mmc@vger.kernel.org; devicetree@vger.kernel.org; linux-
+> kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org; linux-
+> rockchip@lists.infradead.org
+> Subject: Re: [PATCH v2 01/11] dt-bindings: mmc: arasan: Update
+> documentation for SD Card Clock
 > 
-> On Fri, Jul 5, 2019 at 4:59 PM Jungo Lin <jungo.lin@mediatek.com> wrote:
-> >
-> > Hi Tomasz:
-> >
-> > On Fri, 2019-07-05 at 13:22 +0900, Tomasz Figa wrote:
-> > > Hi Jungo,
-> > >
-> > > On Fri, Jul 5, 2019 at 12:33 PM Jungo Lin <jungo.lin@mediatek.com> wrote:
-> > > >
-> > > > Hi Tomasz,
-> >
-> > [snip]
-> >
-> > > > After applying your suggestion in SCP device driver, we could remove
-> > > > mtk_cam-smem.h/c. Currently, we use dma_alloc_coherent with SCP device
-> > > > to get SCP address. We could touch the buffer with this SCP address in
-> > > > SCP processor.
-> > > >
-> > > > After that, we use dma_map_page_attrs with P1 device which supports
-> > > > IOMMU domain to get IOVA address. For this address, we will assign
-> > > > it to our ISP HW device to proceed.
-> > > >
-> > > > Below is the snippet for ISP P1 compose buffer initialization.
-> > > >
-> > > >         ptr = dma_alloc_coherent(p1_dev->cam_dev.smem_dev,
-> > > >                                  MAX_COMPOSER_SIZE, &addr, GFP_KERNEL);
-> > > >         if (!ptr) {
-> > > >                 dev_err(dev, "failed to allocate compose memory\n");
-> > > >                 return -ENOMEM;
-> > > >         }
-> > > >         isp_ctx->scp_mem_pa = addr;
-> > >
-> > > addr contains a DMA address, not a physical address. Could we call it
-> > > scp_mem_dma instead?
-> > >
-> > > >         dev_dbg(dev, "scp addr:%pad\n", &addr);
-> > > >
-> > > >         /* get iova address */
-> > > >         addr = dma_map_page_attrs(dev, phys_to_page(addr), 0,
-> > >
-> > > addr is a DMA address, so phys_to_page() can't be called on it. The
-> > > simplest thing here would be to use dma_map_single() with ptr as the
-> > > CPU address expected.
-> > >
-> >
-> > We have changed to use ma_map_single() with ptr, but encounter IOMMU
-> > error. From the debug log of iommu_dma_map_page[3], we got
-> > 0x0000000054800000 instead of expected address: 0x0000000050800000[2].
-> > There is a address offset(0x4000000). If we change to use
-> > dma_map_page_attrs with phys_to_page(addr), the address is correct as we
-> > expected[2]. Do you have any suggestion on this issue? Do we miss
-> > something?
+> On Mon, Jul 01, 2019 at 10:59:41AM +0530, Manish Narani wrote:
+> > The clock handling is to be updated in the Arasan SDHCI. As the
+> > 'devm_clk_register' is deprecated in the clock framework, this needs to
+> > specify one more clock named 'clk_sdcard' to get the clock in the driver
+> > via 'devm_clk_get()'. This clock represents the clock from controller to
+> > the card.
 > 
-> Sorry for the late reply. Could you show me the code changes you made
-> to use dma_map_single()? It would sound like the virtual address
-> passed to dma_map_single() isn't correct.
+> Please explain why in terms of the binding, not some driver calls.
+Okay.
+
 > 
-> Best regards,
-> Tomasz
 > 
-
-
-Please check the below code snippet in today's testing.
-
-	p1_dev->cam_dev.smem_dev = &p1_dev->scp_pdev->dev;
-	ptr = dma_alloc_coherent(p1_dev->cam_dev.smem_dev,
-				 MTK_ISP_COMPOSER_MEM_SIZE, &addr, GFP_KERNEL);
-	if (!ptr) {
-		dev_err(dev, "failed to allocate compose memory\n");
-		return -ENOMEM;
-	}
-	p1_dev->composer_scp_addr = addr;
-	p1_dev->composer_virt_addr = ptr;
-	dev_info(dev, "scp addr:%pad va:%pK\n", &addr, ptr);
-
-	/* get iova address */
-	addr = dma_map_single(dev, ptr, MTK_ISP_COMPOSER_MEM_SIZE,
-DMA_BIDIRECTIONAL);
-	if (dma_mapping_error(dev, addr)) {
-		dma_free_coherent(p1_dev->cam_dev.smem_dev,
-				  MTK_ISP_COMPOSER_MEM_SIZE,
-				  ptr, p1_dev->composer_scp_addr);
-		dev_err(dev, "Failed to map scp iova\n");
-		ret = -ENOMEM;
-		goto fail_free_mem;
-	}
-	p1_dev->composer_iova = addr;
-	dev_info(dev, "scp iova addr:%pad\n", &addr);
-
-Moreover, below is extracted log[2].
-
-We guess the virtual address which is returned by dma_alloc_coherent
-function is not valid kernel logical address. It is actually returned by
-memremap() in dma_init_coherent_memory(). Moreover, dma_map_single()
-will call virt_to_page() function. For virt_to_page function, it
-requires a logical address[1].
-
-[1]https://www.oreilly.com/library/view/linux-device-drivers/0596005903/ch15.html
-
-[2]
-  322 [    1.238269] mtk-cam-p1 1a006000.camisp: scp
-addr:0x0000000052000000 va:00000000a3adc471
-  323 [    1.239582] mtk-cam-p1 1a006000.camisp: scp iova
-addr:0x00000000fde00000
- 7716 [    1.238963] mtk-cam-p1 1a006000.camisp: scp
-addr:0x0000000052000000 va:0000000042ec580f
- 7717 [    1.240276] mtk-cam-p1 1a006000.camisp: scp iova
-addr:0x00000000fde00000
-15088 [    1.239309] mtk-cam-p1 1a006000.camisp: scp
-addr:0x0000000052000000 va:000000005e5b3462
-15089 [    1.240626] mtk-cam-p1 1a006000.camisp: scp iova
-addr:0x00000000fde00000
-
-Best regards,
-
-Jungo
-
+> > Signed-off-by: Manish Narani <manish.narani@xilinx.com>
+> > ---
+> >  Documentation/devicetree/bindings/mmc/arasan,sdhci.txt | 15 ++++++++++-
+> ----
+> >  1 file changed, 10 insertions(+), 5 deletions(-)
 > >
-> > [1]
-> > [    1.344786] __dma_alloc_from_coherent: 0x800000 PAGE_SHIFT:12
-> > device_base:0x0000000050000000 dma:0x0000000050800000
-> > virt_base:ffffff8014000000 va:ffffff8014800000
+> > diff --git a/Documentation/devicetree/bindings/mmc/arasan,sdhci.txt
+> b/Documentation/devicetree/bindings/mmc/arasan,sdhci.txt
+> > index 1edbb04..15c6397 100644
+> > --- a/Documentation/devicetree/bindings/mmc/arasan,sdhci.txt
+> > +++ b/Documentation/devicetree/bindings/mmc/arasan,sdhci.txt
+> > @@ -23,6 +23,10 @@ Required Properties:
+> >    - reg: From mmc bindings: Register location and length.
+> >    - clocks: From clock bindings: Handles to clock inputs.
+> >    - clock-names: From clock bindings: Tuple including "clk_xin" and "clk_ahb"
+> > +		 Apart from these two there is one more optional clock which
+> > +		 is "clk_sdcard". This clock represents output clock from
+> > +		 controller and card. This must be specified when #clock-cells
+> > +		 is specified.
+> >    - interrupts: Interrupt specifier
 > >
-> > [    1.346890] mtk-cam 1a000000.camisp: scp addr:0x0000000050800000
-> > va:ffffff8014800000
-> >
-> > [    1.347864] iommu_dma_map_page:0x0000000054800000 offset:0
-> > [    1.348562] mtk-cam 1a000000.camisp: iova addr:0x00000000fde00000
-> >
-> > [2]
-> > [    1.346738] __dma_alloc_from_coherent: 0x800000 PAGE_SHIFT:12
-> > device_base:0x0000000050000000 dma:0x0000000050800000
-> > virt_base:ffffff8014000000 va:ffffff8014800000
-> > [    1.348841] mtk-cam 1a000000.camisp: scp addr:0x0000000050800000
-> > va:ffffff8014800000
-> > [    1.349816] iommu_dma_map_page:0x0000000050800000 offset:0
-> > [    1.350514] mtk-cam 1a000000.camisp: iova addr:0x00000000fde00000
-> >
-> >
-> > [3]
-> > dma_addr_t iommu_dma_map_page(struct device *dev, struct page *page,
-> >                 unsigned long offset, size_t size, int prot)
-> > {
-> >         phys_addr_t phys = page_to_phys(page);
-> >         pr_err("iommu_dma_map_page:%pa offset:%lu\n", &phys, offset);
-> >
-> >         return __iommu_dma_map(dev, page_to_phys(page) + offset, size, prot,
-> >                         iommu_get_dma_domain(dev));
-> > }
-> >
-> > [snip]
-> >
-> > Best regards,
-> >
-> > Jungo
-> >
+> >  Required Properties for "arasan,sdhci-5.1":
+> > @@ -36,9 +40,10 @@ Optional Properties:
+> >    - clock-output-names: If specified, this will be the name of the card clock
+> >      which will be exposed by this device.  Required if #clock-cells is
+> >      specified.
+> > -  - #clock-cells: If specified this should be the value <0>.  With this property
+> > -    in place we will export a clock representing the Card Clock.  This clock
+> > -    is expected to be consumed by our PHY.  You must also specify
+> > +  - #clock-cells: If specified this should be the value <0>. With this
+> > +    property in place we will export one clock representing the Card
+> > +    Clock. This clock is expected to be consumed by our PHY. You must also
+> > +    specify
 > 
-> _______________________________________________
-> Linux-mediatek mailing list
-> Linux-mediatek@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-mediatek
+> specify what?
+I think this line was already there, I missed to correct it, Will update in v3.
 
+> 
+> The 3rd clock input I assume? This statement means any existing users
+> with 2 clock inputs and #clock-cells are in error now. Is that correct?
+Yes, this is correct. So far there was only one vendor using '#clock-cells'  which is Rockchip. I have sent DT patch (02/11) for that also.
+Here this is needed as earlier implementation isn't correct as suggested by Uffe. (https://lkml.org/lkml/2019/6/20/486) .
 
+Thanks,
+Manish
 
 _______________________________________________
 linux-arm-kernel mailing list
