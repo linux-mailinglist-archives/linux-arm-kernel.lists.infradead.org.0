@@ -2,100 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7700271959
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 15:35:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D665171954
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 15:34:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=heZpIg4esyTnBOj39pnDoA+jr5POKPbKr+O9kwOnBoI=; b=G4E4NA5LQP4Aaw
-	BuitRm5K/zXGq4PlsPY8ZhOddb6jvsIrJPsSNnESyfiCUD79pQcLuN9vlqvfID/0AfgIMcr23Nt1P
-	dusdwHTBDBRb/yoyRMPp2C1JVWdjVQWgKawSk2TsiMsBlsQPkgawPMtfCt6QbhWXmwJJza5lMEHna
-	Qs6QMM3fqAQ1yTV/UFK7HpwwRFrZ3hZb5EeNm/FPtTDuWWf7VZNMoJcGFol85jyAA+tW8DTBVuVfH
-	4NFPwByLGqQennAcpkbkDR6QuLI8shAP6KZdS0NWnSp3Lyx4IXReQwkMK4C1qQ4bdxnJiSpgSUTMJ
-	gtV15Wa22sPxwLirca+g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=YPeOuZSnyry43jc9qGoDhrZV6OCxOsfeHOIA38uhYdU=; b=Foz4+3iqmZLW1ouVn6fowZJko
+	8Zxg/hv0Jk0cboK7Q4+3q1Kwu7mXKBNFE5bh1oljrmR3fQK3dYyjK/zjiGbHau3MMMW6sBGQHNUxL
+	wEALlMqdzC7lbgKqXZmdRWNIHDDlTU4xJ3VSxvnuJURi6kSmiHk8/17Do1M5lXf85xAyJgSpPrqPV
+	GUf75OSPgag4Er9Gcg55vj+wMw880TzDFFfQWiKrhU89mzBH6y+WnQRvgcZ82I579MMt+Rbvf+1xM
+	JuYJLi7XQYfkQCTu7CT7SSybfGMqeGmtVR5pm/NvtNHqVDLtR9eNGRGSOpgvB9BLNUaSv1nKtxcPZ
+	ZZJqkuwxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpux3-0003I8-4r; Tue, 23 Jul 2019 13:35:33 +0000
-Received: from hqemgate16.nvidia.com ([216.228.121.65])
+	id 1hpuwO-0001qE-Cx; Tue, 23 Jul 2019 13:34:52 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpuwg-00038E-6f
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 13:35:11 +0000
-Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
- hqemgate16.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5d370d0a0001>; Tue, 23 Jul 2019 06:35:06 -0700
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate101.nvidia.com (PGP Universal service);
- Tue, 23 Jul 2019 06:35:09 -0700
-X-PGP-Universal: processed;
- by hqpgpgate101.nvidia.com on Tue, 23 Jul 2019 06:35:09 -0700
-Received: from [10.21.132.148] (10.124.1.5) by HQMAIL107.nvidia.com
- (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 23 Jul
- 2019 13:34:23 +0000
-Subject: Re: [PATCH net-next 3/3] net: stmmac: Introducing support for Page
- Pool
-To: Jose Abreu <Jose.Abreu@synopsys.com>, Lars Persson <lists@bofh.nu>, "Ilias
- Apalodimas" <ilias.apalodimas@linaro.org>
-References: <cover.1562149883.git.joabreu@synopsys.com>
- <29dcc161-f7c8-026e-c3cc-5adb04df128c@nvidia.com>
- <BN8PR12MB32661E919A8DEBC7095BAA12D3C80@BN8PR12MB3266.namprd12.prod.outlook.com>
- <20190722101830.GA24948@apalos>
- <CADnJP=thexf2sWcVVOLWw14rpteEj0RrfDdY8ER90MpbNN4-oA@mail.gmail.com>
- <BN8PR12MB326661846D53AAEE315A7434D3C40@BN8PR12MB3266.namprd12.prod.outlook.com>
- <11557fe0-0cba-cb49-0fb6-ad24792d4a53@nvidia.com>
- <BN8PR12MB3266664ECA192E02C06061EED3C40@BN8PR12MB3266.namprd12.prod.outlook.com>
- <BYAPR12MB3269A725AFDDA21E92946558D3C70@BYAPR12MB3269.namprd12.prod.outlook.com>
- <ab14f31f-2045-b1be-d31f-2a81b8527dac@nvidia.com>
- <BYAPR12MB32692AF2BA127C5DA5B74804D3C70@BYAPR12MB3269.namprd12.prod.outlook.com>
- <2ad7bf21-1f1f-db0f-2358-4901b7988b7d@nvidia.com>
- <BYAPR12MB3269D050556BD51030DCDDFCD3C70@BYAPR12MB3269.namprd12.prod.outlook.com>
- <8093e352-d992-e17f-7168-5afbd9d3fb3f@nvidia.com>
- <BYAPR12MB3269EC45ABAF8F279288B003D3C70@BYAPR12MB3269.namprd12.prod.outlook.com>
-From: Jon Hunter <jonathanh@nvidia.com>
-Message-ID: <f3525260-c43f-c983-0b5b-34a83bd53283@nvidia.com>
-Date: Tue, 23 Jul 2019 14:34:21 +0100
+ id 1hpuwA-0001pp-Kj
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 13:34:39 +0000
+Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
+ [10.5.11.22])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id E9D3785365;
+ Tue, 23 Jul 2019 13:34:37 +0000 (UTC)
+Received: from [10.72.12.26] (ovpn-12-26.pek2.redhat.com [10.72.12.26])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 4DB5A1001B29;
+ Tue, 23 Jul 2019 13:34:24 +0000 (UTC)
+Subject: Re: WARNING in __mmdrop
+To: "Michael S. Tsirkin" <mst@redhat.com>
+References: <0000000000008dd6bb058e006938@google.com>
+ <000000000000964b0d058e1a0483@google.com>
+ <20190721044615-mutt-send-email-mst@kernel.org>
+ <75c43998-3a1c-676f-99ff-3d04663c3fcc@redhat.com>
+ <20190722035657-mutt-send-email-mst@kernel.org>
+ <cfcd330d-5f4a-835a-69f7-c342d5d0d52d@redhat.com>
+ <20190723010156-mutt-send-email-mst@kernel.org>
+ <124be1a2-1c53-8e65-0f06-ee2294710822@redhat.com>
+ <20190723032800-mutt-send-email-mst@kernel.org>
+ <e2e01a05-63d8-4388-2bcd-b2be3c865486@redhat.com>
+ <20190723062221-mutt-send-email-mst@kernel.org>
+From: Jason Wang <jasowang@redhat.com>
+Message-ID: <9baa4214-67fd-7ad2-cbad-aadf90bbfc20@redhat.com>
+Date: Tue, 23 Jul 2019 21:34:29 +0800
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <BYAPR12MB3269EC45ABAF8F279288B003D3C70@BYAPR12MB3269.namprd12.prod.outlook.com>
-X-Originating-IP: [10.124.1.5]
-X-ClientProxiedBy: HQMAIL105.nvidia.com (172.20.187.12) To
- HQMAIL107.nvidia.com (172.20.187.13)
+In-Reply-To: <20190723062221-mutt-send-email-mst@kernel.org>
 Content-Language: en-US
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1563888906; bh=7VGjRoH75ovO9tIALq3z4+jcrGznO3YZAKnO1R6So9M=;
- h=X-PGP-Universal:Subject:To:CC:References:From:Message-ID:Date:
- User-Agent:MIME-Version:In-Reply-To:X-Originating-IP:
- X-ClientProxiedBy:Content-Type:Content-Language:
- Content-Transfer-Encoding;
- b=AMuTTrK149cSqktaiZ4bEIPKimlBVpQ4fVOi13I6VxYM4K0Cutj0Sk5zDx47aQUjO
- uXn6mFEB7yRrK2dNZcrNtX/dqmF6A1fDsKy+3HQ9uAo8lylyysvAvYDhpF1MttzJBF
- ABZkEknLIseNf+x/OhKgrHXPEIGJ6Zzpfm5pBXtbA0VHWIL2WXBme8bepGHzwY3jy4
- /qYdriH76TTHPiRM4jygGqUWSTXI7V83RwaehzDNPo3gfL5u8aiSlV6o8/0xCf8NBj
- dmZ3lZ4D/+zrCPFUSEhWeBXT03vU1IveZ7nBZQEbEKZrz69pcvHYNXXrcqh8yAw/cX
- R1R2GdOrCnEHg==
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.25]); Tue, 23 Jul 2019 13:34:38 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_063510_301519_3D461F13 
-X-CRM114-Status: GOOD (  15.18  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190723_063438_713611_545F870C 
+X-CRM114-Status: GOOD (  15.54  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.65 listed in list.dnswl.org]
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,81 +79,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Joao Pinto <Joao.Pinto@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "David S . Miller" <davem@davemloft.net>, Chen-Yu Tsai <wens@csie.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-tegra <linux-tegra@vger.kernel.org>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mhocko@suse.com, peterz@infradead.org, ldv@altlinux.org,
+ james.bottomley@hansenpartnership.com, linux-mm@kvack.org, namit@vmware.com,
+ mingo@kernel.org, elena.reshetova@intel.com, keescook@chromium.org,
+ aarcange@redhat.com, davem@davemloft.net, hch@infradead.org,
+ christian@brauner.io,
+ syzbot <syzbot+e58112d71f77113ddb7b@syzkaller.appspotmail.com>,
+ syzkaller-bugs@googlegroups.com, jglisse@redhat.com, viro@zeniv.linux.org.uk,
+ linux-arm-kernel@lists.infradead.org, wad@chromium.org,
+ linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ luto@amacapital.net, ebiederm@xmission.com, akpm@linux-foundation.org,
+ guro@fb.com
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-On 23/07/2019 13:51, Jose Abreu wrote:
-> From: Jon Hunter <jonathanh@nvidia.com>
-> Date: Jul/23/2019, 12:58:55 (UTC+00:00)
-> 
->>
->> On 23/07/2019 11:49, Jose Abreu wrote:
->>> From: Jon Hunter <jonathanh@nvidia.com>
->>> Date: Jul/23/2019, 11:38:33 (UTC+00:00)
->>>
->>>>
->>>> On 23/07/2019 11:07, Jose Abreu wrote:
->>>>> From: Jon Hunter <jonathanh@nvidia.com>
->>>>> Date: Jul/23/2019, 11:01:24 (UTC+00:00)
->>>>>
->>>>>> This appears to be a winner and by disabling the SMMU for the ethernet
->>>>>> controller and reverting commit 954a03be033c7cef80ddc232e7cbdb17df735663
->>>>>> this worked! So yes appears to be related to the SMMU being enabled. We
->>>>>> had to enable the SMMU for ethernet recently due to commit
->>>>>> 954a03be033c7cef80ddc232e7cbdb17df735663.
->>>>>
->>>>> Finally :)
->>>>>
->>>>> However, from "git show 954a03be033c7cef80ddc232e7cbdb17df735663":
->>>>>
->>>>> +         There are few reasons to allow unmatched stream bypass, and
->>>>> +         even fewer good ones.  If saying YES here breaks your board
->>>>> +         you should work on fixing your board.
->>>>>
->>>>> So, how can we fix this ? Is your ethernet DT node marked as 
->>>>> "dma-coherent;" ?
->>>>
->>>> TBH I have no idea. I can't say I fully understand your change or how it
->>>> is breaking things for us.
->>>>
->>>> Currently, the Tegra DT binding does not have 'dma-coherent' set. I see
->>>> this is optional, but I am not sure how you determine whether or not
->>>> this should be set.
->>>
->>> From my understanding it means that your device / IP DMA accesses are coherent regarding the CPU point of view. I think it will be the case if GMAC is not behind any kind of IOMMU in the HW arch.
->>
->> I understand what coherency is, I just don't know how you tell if this
->> implementation of the ethernet controller is coherent or not.
-> 
-> Do you have any detailed diagram of your HW ? Such as blocks / IPs 
-> connection, address space wiring , ...
-
-Yes, this can be found in the Tegra X2 Technical Reference Manual [0].
-Unfortunately, you need to create an account to download it.
-
-Jon
-
-[0] https://developer.nvidia.com/embedded/dlc/parker-series-trm
-
--- 
-nvpublic
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Ck9uIDIwMTkvNy8yMyDkuIvljYg2OjI3LCBNaWNoYWVsIFMuIFRzaXJraW4gd3JvdGU6Cj4+IFll
+cywgc2luY2UgdGhlcmUgY291bGQgYmUgbXVsdGlwbGUgY28tY3VycmVudCBpbnZhbGlkYXRpb24g
+cmVxdWVzdHMuIFdlIG5lZWQKPj4gY291bnQgdGhlbSB0byBtYWtlIHN1cmUgd2UgZG9uJ3QgcGlu
+IHdyb25nIHBhZ2VzLgo+Pgo+Pgo+Pj4gSSBhbHNvIHdvbmRlciBhYm91dCBvcmRlcmluZy4ga3Zt
+IGhhcyB0aGlzOgo+Pj4gICAgICAgICAgLyoKPj4+ICAgICAgICAgICAgKiBVc2VkIHRvIGNoZWNr
+IGZvciBpbnZhbGlkYXRpb25zIGluIHByb2dyZXNzLCBvZiB0aGUgcGZuIHRoYXQgaXMKPj4+ICAg
+ICAgICAgICAgKiByZXR1cm5lZCBieSBwZm5fdG9fcGZuX3Byb3QgYmVsb3cuCj4+PiAgICAgICAg
+ICAgICovCj4+PiAgICAgICAgICAgbW11X3NlcSA9IGt2bS0+bW11X25vdGlmaWVyX3NlcTsKPj4+
+ICAgICAgICAgICAvKgo+Pj4gICAgICAgICAgICAqIEVuc3VyZSB0aGUgcmVhZCBvZiBtbXVfbm90
+aWZpZXJfc2VxIGlzbid0IHJlb3JkZXJlZCB3aXRoIFBURSByZWFkcyBpbgo+Pj4gICAgICAgICAg
+ICAqIGdmbl90b19wZm5fcHJvdCgpICh3aGljaCBjYWxscyBnZXRfdXNlcl9wYWdlcygpKSwgc28g
+dGhhdCB3ZSBkb24ndAo+Pj4gICAgICAgICAgICAqIHJpc2sgdGhlIHBhZ2Ugd2UgZ2V0IGEgcmVm
+ZXJlbmNlIHRvIGdldHRpbmcgdW5tYXBwZWQgYmVmb3JlIHdlIGhhdmUgYQo+Pj4gICAgICAgICAg
+ICAqIGNoYW5jZSB0byBncmFiIHRoZSBtbXVfbG9jayB3aXRob3V0IG1tdV9ub3RpZmllcl9yZXRy
+eSgpIG5vdGljaW5nLgo+Pj4gICAgICAgICAgICAqCj4+PiAgICAgICAgICAgICogVGhpcyBzbXBf
+cm1iKCkgcGFpcnMgd2l0aCB0aGUgZWZmZWN0aXZlIHNtcF93bWIoKSBvZiB0aGUgY29tYmluYXRp
+b24KPj4+ICAgICAgICAgICAgKiBvZiB0aGUgcHRlX3VubWFwX3VubG9jaygpIGFmdGVyIHRoZSBQ
+VEUgaXMgemFwcGVkLCBhbmQgdGhlCj4+PiAgICAgICAgICAgICogc3Bpbl9sb2NrKCkgaW4ga3Zt
+X21tdV9ub3RpZmllcl9pbnZhbGlkYXRlXzxwYWdlfHJhbmdlX2VuZD4oKSBiZWZvcmUKPj4+ICAg
+ICAgICAgICAgKiBtbXVfbm90aWZpZXJfc2VxIGlzIGluY3JlbWVudGVkLgo+Pj4gICAgICAgICAg
+ICAqLwo+Pj4gICAgICAgICAgIHNtcF9ybWIoKTsKPj4+Cj4+PiBkb2VzIHRoaXMgYXBwbHkgdG8g
+dXM/IENhbid0IHdlIHVzZSBhIHNlcWxvY2sgaW5zdGVhZCBzbyB3ZSBkbwo+Pj4gbm90IG5lZWQg
+dG8gd29ycnk/Cj4+IEknbSBub3QgZmFtaWxpYXIgd2l0aCBrdm0gTU1VIGludGVybmFscywgYnV0
+IHdlIGRvIGV2ZXJ5dGhpbmcgdW5kZXIgb2YKPj4gbW11X2xvY2suCj4+Cj4+IFRoYW5rcwo+IEkg
+ZG9uJ3QgdGhpbmsgdGhpcyBoZWxwcyBhdCBhbGwuCj4KPiBUaGVyZSdzIG5vIGxvY2sgYmV0d2Vl
+biBjaGVja2luZyB0aGUgaW52YWxpZGF0ZSBjb3VudGVyIGFuZAo+IGdldCB1c2VyIHBhZ2VzIGZh
+c3Qgd2l0aGluIHZob3N0X21hcF9wcmVmZXRjaC4gU28gaXQncyBwb3NzaWJsZQo+IHRoYXQgZ2V0
+IHVzZXIgcGFnZXMgZmFzdCByZWFkcyBQVEVzIHNwZWN1bGF0aXZlbHkgYmVmb3JlCj4gaW52YWxp
+ZGF0ZSBpcyByZWFkLgo+Cj4gLS0gCgoKSW4gdmhvc3RfbWFwX3ByZWZldGNoKCkgd2UgZG86Cgog
+wqDCoMKgwqDCoMKgwqAgc3Bpbl9sb2NrKCZ2cS0+bW11X2xvY2spOwoKIMKgIMKgIMKgIMKgIC4u
+LgoKIMKgwqDCoMKgwqDCoMKgIGVyciA9IC1FRkFVTFQ7CiDCoMKgwqDCoMKgwqDCoCBpZiAodnEt
+PmludmFsaWRhdGVfY291bnQpCiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgZ290byBl
+cnI7CgogwqDCoMKgwqDCoMKgwqAgLi4uCgogwqDCoMKgwqDCoMKgwqAgbnBpbm5lZCA9IF9fZ2V0
+X3VzZXJfcGFnZXNfZmFzdCh1YWRkci0+dWFkZHIsIG5wYWdlcywKIMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoCB1YWRkci0+d3JpdGUsIHBhZ2VzKTsKCiDCoMKgwqDCoMKgwqDCoCAuLi4KCiDCoMKgwqAg
+wqDCoMKgIHNwaW5fdW5sb2NrKCZ2cS0+bW11X2xvY2spOwoKSXMgdGhpcyBub3Qgc3VmZmljaWVu
+dD8KClRoYW5rcwoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMu
+aW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
+L2xpbnV4LWFybS1rZXJuZWwK
