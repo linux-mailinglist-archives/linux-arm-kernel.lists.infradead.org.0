@@ -2,80 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CDF5710C5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 07:03:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8EDF87113C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 07:35:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S6JMTDVYn8CSK4jgI0N0HK1JJr1N6/enxh2OmGruoOo=; b=g/z6QV/uVVqtc/
-	Ck4VxowOl/oopCgIi76z5wjRKno9QmNbmJLnzPVNhILZdUz55D/jTh4iAe64ofMlxsSMJQyWqxk0B
-	k+T+uTflLExEZRDqVNxuW45vuZmXD9YVYMwUzNT9FdadtR9rDnUwrWdfYc5PyeAh0KtPrMs2FGVFH
-	3jZB8EIlEGFGBqowtaT1iGu0MIKJXNIl6iipoTYxaI7RuyAz7ZheQ9A6gFbq5W0eXBtBtI/u9oS61
-	evRvI1dHITvA7mDbJYaMNNljdfYVC3eb3deTbCTCWG8c/Cnb+UemXMdtqwaAefh8wqMrgYGLfLovE
-	VQjDkEHaxTSo7MXdSqzA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=2mCiRLdNtkDWMrhRiWdVj9/Q2XcS9b3Ip+hrbju1+ZM=; b=miFCAS8J4BNVXZ
+	/xVa+qzQz9NBhsp/ySdVJV0rT/829dhCsUiWn0X3F96JM72gGhB8ACgLgnKNNwm38maFRYaLyOnA1
+	rggYM6Bqg3rf+hw8dbqqCSH6q5TB89QWvSf36elz/IsRYPE5glxHyKHXy46YF+ATPlT7yftVC4OTS
+	r1zKMd9VskMNJ2Bzzl2gsUD0tIX+enGZTugX3jU9+ZSuwyYMjuTP336zmsQeBRFxYUrn+3tlpUvKJ
+	yQ7vSd3Q8p9PU1D5COKiDv/8I2unAYThLKNM9gJJc7b98ptP7FSr1e5mdVYUqxA5S4O4/Pq51En/i
+	mLko355opsIXJ3QFmCCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpmxI-0001Aw-QN; Tue, 23 Jul 2019 05:03:16 +0000
-Received: from mail-wr1-f68.google.com ([209.85.221.68])
+	id 1hpnS9-0003g0-QM; Tue, 23 Jul 2019 05:35:10 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpmwo-00019A-CQ
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 05:02:50 +0000
-Received: by mail-wr1-f68.google.com with SMTP id x1so26616578wrr.9
+ id 1hpnRf-0003ey-05
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 05:34:40 +0000
+Received: by mail-pl1-x642.google.com with SMTP id m9so20049895pls.8
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 22 Jul 2019 22:02:45 -0700 (PDT)
+ Mon, 22 Jul 2019 22:34:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=RjH/NM5oVv7H9uBQXA0g2+9MGVMLUo5V2j2Ab6tkFdQ=;
+ b=e1kJc7Imcps/BQqLY9JmYE7KcH1qEhz6vGEQ+C0CKAzI/MjVacKJotEbbRy0agAQOz
+ 4nEtxt1HkMl/8nWwPwR66ZLEWyBveI3poPvukJtoGULPge/MvVnQV+k3KLC1TWG8xZfe
+ /b4J5AI4dM5RoSybeX1bjyIM2fCjBF8/ZKa5k=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to;
- bh=JYPoJkQN+XK2UvnSjwNQRenJIQ2ixkhyrsqP4Uhz9H8=;
- b=bk6hvIBObeUcTB9CtIEimfCRpQ6eLzNgYsDYBY3xKAXhcF6Uql0ZBhiVnn4mvOt5zI
- L/SzVjA+3FpLaY/qMhmPIxKX1YgfE9ygyI3veipjWMoz6fUFqo5lZkltBZ3XJ+JxycmS
- k97a+YU8JDPpUzpie2qgyMe18gYxweD82kNdUWm6BCiiNtTsbb2tme4mDqOSI9+q2VGK
- FnOt6qUiSz1b7FYkiLBQ+nnc9bk4/xFUu0qUYklczxdbMOMgyKShRjVosrSR8ZN4AhbY
- q0fc5sxnJBJu6aNXUP3TkA98IXxoZBtLZwQZeN7cUhZ0EwaOpmwrXTF4/c9AamVWEPl5
- hz+Q==
-X-Gm-Message-State: APjAAAUyma19K6Kmfhz8D6WAdR4JozJoxzTNTPyiTVD91YBq2U2TXJmx
- m1VvG9p/cKLD7QrVD7m4ZoTanw==
-X-Google-Smtp-Source: APXvYqyEMTuVBH8zniGTqgl57BX2DcyhG+Wl2kks7XclSYkMvxpBTbWB4yptqSSR2n2cmwFVsaFFzw==
-X-Received: by 2002:a5d:67cd:: with SMTP id n13mr4657765wrw.138.1563858164654; 
- Mon, 22 Jul 2019 22:02:44 -0700 (PDT)
-Received: from redhat.com (bzq-79-181-91-42.red.bezeqint.net. [79.181.91.42])
- by smtp.gmail.com with ESMTPSA id
- j10sm70533109wrd.26.2019.07.22.22.02.41
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=RjH/NM5oVv7H9uBQXA0g2+9MGVMLUo5V2j2Ab6tkFdQ=;
+ b=eMiYUeSmr3O9mcROMvkQs3o9Tow9O7hasmBIsr9yRQoq3qQBmALKxRK6e55QRu9wSy
+ +zQpQrNZnUqa9DslcshayEw6ur+sUTF7eqCNPn/fCD/FOd6X0mBwiorYPo817zSIkdrg
+ UxFQT/Mwk/1835fP509g3QE3GOH1klxUodL8JhObSJktZ6kyhEtesrBwSFYIZozmh5iu
+ cU5RKunaJ3LnffQHJ2MqvSnyNno8X+BSK0mR7tRuYlxyznTvOwqASrKm8n9XklHYutc1
+ +1c3FseaqBq3DOACAR8h+bEGlIwCRhcRpg5dOK/URcgaO9fWOngc2sAAplpDsgkdhI6H
+ Zg5Q==
+X-Gm-Message-State: APjAAAXsOedg2h2Vw3BxH+jEzQzbYcFvlKUHHS36b+cQQwE1OIIaE7c0
+ rZPaB9c7VeNMYDEibfR2J43F4w==
+X-Google-Smtp-Source: APXvYqxYnjCQS0yig4uPvUOAHO/NOMq/4OMIXXTGrOWktJAfQ6s+A2dzqTm04IEgzj2OO9MW8RnltA==
+X-Received: by 2002:a17:902:e011:: with SMTP id
+ ca17mr80393568plb.328.1563860078113; 
+ Mon, 22 Jul 2019 22:34:38 -0700 (PDT)
+Received: from acourbot.tok.corp.google.com
+ ([2401:fa00:4:4:9712:8cf1:d0f:7d33])
+ by smtp.gmail.com with ESMTPSA id a3sm44030666pfi.63.2019.07.22.22.34.35
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 22 Jul 2019 22:02:43 -0700 (PDT)
-Date: Tue, 23 Jul 2019 01:02:39 -0400
-From: "Michael S. Tsirkin" <mst@redhat.com>
-To: Jason Wang <jasowang@redhat.com>
-Subject: Re: WARNING in __mmdrop
-Message-ID: <20190723010156-mutt-send-email-mst@kernel.org>
-References: <0000000000008dd6bb058e006938@google.com>
- <000000000000964b0d058e1a0483@google.com>
- <20190721044615-mutt-send-email-mst@kernel.org>
- <75c43998-3a1c-676f-99ff-3d04663c3fcc@redhat.com>
- <20190722035657-mutt-send-email-mst@kernel.org>
- <cfcd330d-5f4a-835a-69f7-c342d5d0d52d@redhat.com>
+ Mon, 22 Jul 2019 22:34:37 -0700 (PDT)
+From: Alexandre Courbot <acourbot@chromium.org>
+To: CK Hu <ck.hu@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>,
+ Tomasz Figa <tfiga@chromium.org>, David Airlie <airlied@linux.ie>,
+ Daniel Vetter <daniel@ffwll.ch>, Matthias Brugger <matthias.bgg@gmail.com>
+Subject: [PATCH] drm/mediatek: make imported PRIME buffers contiguous
+Date: Tue, 23 Jul 2019 14:34:21 +0900
+Message-Id: <20190723053421.179679-1-acourbot@chromium.org>
+X-Mailer: git-send-email 2.22.0.657.g960e92d24f-goog
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <cfcd330d-5f4a-835a-69f7-c342d5d0d52d@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_220246_537225_DC6A5851 
-X-CRM114-Status: GOOD (  19.73  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190722_223439_069710_150709BF 
+X-CRM114-Status: GOOD (  17.36  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.221.68 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.221.68 listed in wl.mailspike.net]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,71 +96,145 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mhocko@suse.com, peterz@infradead.org, ldv@altlinux.org,
- james.bottomley@hansenpartnership.com, linux-mm@kvack.org, namit@vmware.com,
- mingo@kernel.org, elena.reshetova@intel.com, keescook@chromium.org,
- aarcange@redhat.com, davem@davemloft.net, hch@infradead.org,
- christian@brauner.io,
- syzbot <syzbot+e58112d71f77113ddb7b@syzkaller.appspotmail.com>,
- syzkaller-bugs@googlegroups.com, jglisse@redhat.com, viro@zeniv.linux.org.uk,
- linux-arm-kernel@lists.infradead.org, wad@chromium.org,
- linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
- luto@amacapital.net, ebiederm@xmission.com, akpm@linux-foundation.org,
- guro@fb.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Alexandre Courbot <acourbot@chromium.org>,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVHVlLCBKdWwgMjMsIDIwMTkgYXQgMTE6NTU6MjhBTSArMDgwMCwgSmFzb24gV2FuZyB3cm90
-ZToKPiAKPiBPbiAyMDE5LzcvMjIg5LiL5Y2INDowMiwgTWljaGFlbCBTLiBUc2lya2luIHdyb3Rl
-Ogo+ID4gT24gTW9uLCBKdWwgMjIsIDIwMTkgYXQgMDE6MjE6NTlQTSArMDgwMCwgSmFzb24gV2Fu
-ZyB3cm90ZToKPiA+ID4gT24gMjAxOS83LzIxIOS4i+WNiDY6MDIsIE1pY2hhZWwgUy4gVHNpcmtp
-biB3cm90ZToKPiA+ID4gPiBPbiBTYXQsIEp1bCAyMCwgMjAxOSBhdCAwMzowODowMEFNIC0wNzAw
-LCBzeXpib3Qgd3JvdGU6Cj4gPiA+ID4gPiBzeXpib3QgaGFzIGJpc2VjdGVkIHRoaXMgYnVnIHRv
-Ogo+ID4gPiA+ID4gCj4gPiA+ID4gPiBjb21taXQgN2Y0NjYwMzJkYzllNWE2MTIxN2YyMmVhMzRi
-MmRmOTMyNzg2YmJmYwo+ID4gPiA+ID4gQXV0aG9yOiBKYXNvbiBXYW5nIDxqYXNvd2FuZ0ByZWRo
-YXQuY29tPgo+ID4gPiA+ID4gRGF0ZTogICBGcmkgTWF5IDI0IDA4OjEyOjE4IDIwMTkgKzAwMDAK
-PiA+ID4gPiA+IAo+ID4gPiA+ID4gICAgICAgdmhvc3Q6IGFjY2VzcyB2cSBtZXRhZGF0YSB0aHJv
-dWdoIGtlcm5lbCB2aXJ0dWFsIGFkZHJlc3MKPiA+ID4gPiA+IAo+ID4gPiA+ID4gYmlzZWN0aW9u
-IGxvZzogIGh0dHBzOi8vc3l6a2FsbGVyLmFwcHNwb3QuY29tL3gvYmlzZWN0LnR4dD94PTE0OWE4
-YTIwNjAwMDAwCj4gPiA+ID4gPiBzdGFydCBjb21taXQ6ICAgNmQyMWE0MWIgQWRkIGxpbnV4LW5l
-eHQgc3BlY2lmaWMgZmlsZXMgZm9yIDIwMTkwNzE4Cj4gPiA+ID4gPiBnaXQgdHJlZTogICAgICAg
-bGludXgtbmV4dAo+ID4gPiA+ID4gZmluYWwgY3Jhc2g6ICAgIGh0dHBzOi8vc3l6a2FsbGVyLmFw
-cHNwb3QuY29tL3gvcmVwb3J0LnR4dD94PTE2OWE4YTIwNjAwMDAwCj4gPiA+ID4gPiBjb25zb2xl
-IG91dHB1dDogaHR0cHM6Ly9zeXprYWxsZXIuYXBwc3BvdC5jb20veC9sb2cudHh0P3g9MTI5YThh
-MjA2MDAwMDAKPiA+ID4gPiA+IGtlcm5lbCBjb25maWc6ICBodHRwczovL3N5emthbGxlci5hcHBz
-cG90LmNvbS94Ly5jb25maWc/eD0zNDMwYTE1MWUxNDUyMzMxCj4gPiA+ID4gPiBkYXNoYm9hcmQg
-bGluazogaHR0cHM6Ly9zeXprYWxsZXIuYXBwc3BvdC5jb20vYnVnP2V4dGlkPWU1ODExMmQ3MWY3
-NzExM2RkYjdiCj4gPiA+ID4gPiBzeXogcmVwcm86ICAgICAgaHR0cHM6Ly9zeXprYWxsZXIuYXBw
-c3BvdC5jb20veC9yZXByby5zeXo/eD0xMDEzOWU2ODYwMDAwMAo+ID4gPiA+ID4gCj4gPiA+ID4g
-PiBSZXBvcnRlZC1ieTogc3l6Ym90K2U1ODExMmQ3MWY3NzExM2RkYjdiQHN5emthbGxlci5hcHBz
-cG90bWFpbC5jb20KPiA+ID4gPiA+IEZpeGVzOiA3ZjQ2NjAzMmRjOWUgKCJ2aG9zdDogYWNjZXNz
-IHZxIG1ldGFkYXRhIHRocm91Z2gga2VybmVsIHZpcnR1YWwKPiA+ID4gPiA+IGFkZHJlc3MiKQo+
-ID4gPiA+ID4gCj4gPiA+ID4gPiBGb3IgaW5mb3JtYXRpb24gYWJvdXQgYmlzZWN0aW9uIHByb2Nl
-c3Mgc2VlOiBodHRwczovL2dvby5nbC90cHNtRUojYmlzZWN0aW9uCj4gPiA+ID4gT0sgSSBwb2tl
-ZCBhdCB0aGlzIGZvciBhIGJpdCwgSSBzZWUgc2V2ZXJhbCB0aGluZ3MgdGhhdAo+ID4gPiA+IHdl
-IG5lZWQgdG8gZml4LCB0aG91Z2ggSSdtIG5vdCB5ZXQgc3VyZSBpdCdzIHRoZSByZWFzb24gZm9y
-Cj4gPiA+ID4gdGhlIGZhaWx1cmVzOgo+ID4gPiA+IAo+ID4gPiA+IAo+ID4gPiA+IDEuIG1tdV9u
-b3RpZmllcl9yZWdpc3RlciBzaG91bGRuJ3QgYmUgY2FsbGVkIGZyb20gdmhvc3RfdnJpbmdfc2V0
-X251bV9hZGRyCj4gPiA+ID4gICAgICBUaGF0J3MganVzdCBhIGJhZCBoYWNrLAo+ID4gPiAKPiA+
-ID4gVGhpcyBpcyB1c2VkIHRvIGF2b2lkIGhvbGRpbmcgbG9jayB3aGVuIGNoZWNraW5nIHdoZXRo
-ZXIgdGhlIGFkZHJlc3NlcyBhcmUKPiA+ID4gb3ZlcmxhcHBlZC4gT3RoZXJ3aXNlIHdlIG5lZWQg
-dG8gdGFrZSBzcGlubG9jayBmb3IgZWFjaCBpbnZhbGlkYXRpb24gcmVxdWVzdAo+ID4gPiBldmVu
-IGlmIGl0IHdhcyB0aGUgdmEgcmFuZ2UgdGhhdCBpcyBub3QgaW50ZXJlc3RlZCBmb3IgdXMuIFRo
-aXMgd2lsbCBiZSB2ZXJ5Cj4gPiA+IHNsb3cgZS5nIGR1cmluZyBndWVzdCBib290Lgo+ID4gS1ZN
-IHNlZW1zIHRvIGRvIGV4YWN0bHkgdGhhdC4KPiA+IEkgdHJpZWQgYW5kIGd1ZXN0IGRvZXMgbm90
-IHNlZW0gdG8gYm9vdCBhbnkgc2xvd2VyLgo+ID4gRG8geW91IG9ic2VydmUgYW55IHNsb3dkb3du
-Pwo+IAo+IAo+IFllcyBJIGRvLgo+IAo+IAo+ID4gCj4gPiBOb3cgSSB0b29rIGEgaGFyZCBsb29r
-IGF0IHRoZSB1YWRkciBoYWNrZXJ5IGl0IHJlYWxseSBtYWtlcwo+ID4gbWUgbmVydmlvdXMuIFNv
-IEkgdGhpbmsgZm9yIHRoaXMgcmVsZWFzZSB3ZSB3YW50IHNvbWV0aGluZwo+ID4gc2FmZSwgYW5k
-IG9wdGltaXphdGlvbnMgb24gdG9wLiBBcyBhbiBhbHRlcm5hdGl2ZSByZXZlcnQgdGhlCj4gPiBv
-cHRpbWl6YXRpb24gYW5kIHRyeSBhZ2FpbiBmb3IgbmV4dCBtZXJnZSB3aW5kb3cuCj4gCj4gCj4g
-V2lsbCBwb3N0IGEgc2VyaWVzIG9mIGZpeGVzLCBsZXQgbWUga25vdyBpZiB5b3UncmUgb2sgd2l0
-aCB0aGF0Lgo+IAo+IFRoYW5rcwoKSSdkIHByZWZlciB5b3UgdG8gdGFrZSBhIGhhcmQgbG9vayBh
-dCB0aGUgcGF0Y2ggSSBwb3N0ZWQKd2hpY2ggbWFrZXMgY29kZSBjbGVhbmVyLCBhbmQgYWQgb3B0
-aW1pemF0aW9ucyBvbiB0b3AuCkJ1dCBvdGhlciB3YXlzIGNvdWxkIGJlIG9rIHRvby4KCj4gCj4g
-PiAKPiA+IAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
-bGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZy
-YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
-dXgtYXJtLWtlcm5lbAo=
+This driver requires imported PRIME buffers to appear contiguously in
+its IO address space. Make sure this is the case by setting the maximum
+DMA segment size to a better value than the default 64K on the DMA
+device, and use said DMA device when importing PRIME buffers.
+
+Signed-off-by: Alexandre Courbot <acourbot@chromium.org>
+---
+ drivers/gpu/drm/mediatek/mtk_drm_drv.c | 47 ++++++++++++++++++++++++--
+ drivers/gpu/drm/mediatek/mtk_drm_drv.h |  2 ++
+ 2 files changed, 46 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+index 95fdbd0fbcac..4ad4770fab13 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+@@ -213,6 +213,7 @@ static int mtk_drm_kms_init(struct drm_device *drm)
+ 	struct mtk_drm_private *private = drm->dev_private;
+ 	struct platform_device *pdev;
+ 	struct device_node *np;
++	struct device *dma_dev;
+ 	int ret;
+ 
+ 	if (!iommu_present(&platform_bus_type))
+@@ -275,7 +276,27 @@ static int mtk_drm_kms_init(struct drm_device *drm)
+ 		goto err_component_unbind;
+ 	}
+ 
+-	private->dma_dev = &pdev->dev;
++	dma_dev = &pdev->dev;
++	private->dma_dev = dma_dev;
++
++	/*
++	 * Configure the DMA segment size to make sure we get contiguous IOVA
++	 * when importing PRIME buffers.
++	 */
++	if (!dma_dev->dma_parms) {
++		private->dma_parms_allocated = true;
++		dma_dev->dma_parms =
++			devm_kzalloc(drm->dev, sizeof(*dma_dev->dma_parms),
++				     GFP_KERNEL);
++	}
++	if (!dma_dev->dma_parms)
++		goto err_component_unbind;
++
++	ret = dma_set_max_seg_size(dma_dev, (unsigned int)DMA_BIT_MASK(32));
++	if (ret) {
++		dev_err(dma_dev, "Failed to set DMA segment size\n");
++		goto err_unset_dma_parms;
++	}
+ 
+ 	/*
+ 	 * We don't use the drm_irq_install() helpers provided by the DRM
+@@ -285,13 +306,16 @@ static int mtk_drm_kms_init(struct drm_device *drm)
+ 	drm->irq_enabled = true;
+ 	ret = drm_vblank_init(drm, MAX_CRTC);
+ 	if (ret < 0)
+-		goto err_component_unbind;
++		goto err_unset_dma_parms;
+ 
+ 	drm_kms_helper_poll_init(drm);
+ 	drm_mode_config_reset(drm);
+ 
+ 	return 0;
+ 
++err_unset_dma_parms:
++	if (private->dma_parms_allocated)
++		dma_dev->dma_parms = NULL;
+ err_component_unbind:
+ 	component_unbind_all(drm->dev, drm);
+ err_config_cleanup:
+@@ -302,9 +326,14 @@ static int mtk_drm_kms_init(struct drm_device *drm)
+ 
+ static void mtk_drm_kms_deinit(struct drm_device *drm)
+ {
++	struct mtk_drm_private *private = drm->dev_private;
++
+ 	drm_kms_helper_poll_fini(drm);
+ 	drm_atomic_helper_shutdown(drm);
+ 
++	if (private->dma_parms_allocated)
++		private->dma_dev->dma_parms = NULL;
++
+ 	component_unbind_all(drm->dev, drm);
+ 	drm_mode_config_cleanup(drm);
+ }
+@@ -320,6 +349,18 @@ static const struct file_operations mtk_drm_fops = {
+ 	.compat_ioctl = drm_compat_ioctl,
+ };
+ 
++/*
++ * We need to override this because the device used to import the memory is
++ * not dev->dev, as drm_gem_prime_import() expects.
++ */
++struct drm_gem_object *mtk_drm_gem_prime_import(struct drm_device *dev,
++						struct dma_buf *dma_buf)
++{
++	struct mtk_drm_private *private = dev->dev_private;
++
++	return drm_gem_prime_import_dev(dev, dma_buf, private->dma_dev);
++}
++
+ static struct drm_driver mtk_drm_driver = {
+ 	.driver_features = DRIVER_MODESET | DRIVER_GEM | DRIVER_PRIME |
+ 			   DRIVER_ATOMIC,
+@@ -331,7 +372,7 @@ static struct drm_driver mtk_drm_driver = {
+ 	.prime_handle_to_fd = drm_gem_prime_handle_to_fd,
+ 	.prime_fd_to_handle = drm_gem_prime_fd_to_handle,
+ 	.gem_prime_export = drm_gem_prime_export,
+-	.gem_prime_import = drm_gem_prime_import,
++	.gem_prime_import = mtk_drm_gem_prime_import,
+ 	.gem_prime_get_sg_table = mtk_gem_prime_get_sg_table,
+ 	.gem_prime_import_sg_table = mtk_gem_prime_import_sg_table,
+ 	.gem_prime_mmap = mtk_drm_gem_mmap_buf,
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.h b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
+index 598ff3e70446..e03fea12ff59 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_drv.h
++++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
+@@ -51,6 +51,8 @@ struct mtk_drm_private {
+ 	} commit;
+ 
+ 	struct drm_atomic_state *suspend_state;
++
++	bool dma_parms_allocated;
+ };
+ 
+ extern struct platform_driver mtk_ddp_driver;
+-- 
+2.22.0.657.g960e92d24f-goog
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
