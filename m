@@ -2,62 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76AC9713F0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 10:26:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 04B5E713F5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 10:27:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
-	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=irWzJQDdq+H/GTZOCNhvpWoe6NNxA9fCdTXkRB3M00Y=; b=dRUuwDWDj3j0u9YuMNA9KJyP5
-	X8lGRjGgfyjIN0rGGkqBFO2GMImvaK3Rh8navtHnOuLl/qOnO51uhm8GB+Q4qmRBkFEjBN/lQOILw
-	Lr3nQ/Xt4NmzlX4tN8UoZOmgeOi/AE/meugLf/9Umkya4IV8JItL8RaAl4Va/0BsNxnMOOPGhPfjP
-	zTxehDmBjawhH5r8jGKATmPjf9qPu+F5B4tHdmnb2aZat5KeBjswulrDxKakWaJvcZkGr82wyCYSI
-	/D4OGPqboNN8+nl5lPpRq7cONM7c1gnSwoOHBB/P27kgGqAouaTFogn1Lq77B9eCjcfbvxRAWLh83
-	ny7w94idg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gKhxErojG+IllXey3qdeo4iYpSi8wJUKNHV6XAncFGo=; b=FjGAqZu7zcPMac
+	07ptgnAJxHL6zHU4kbbHxYDQUyb/VRdLEAEQLe1jtFmji94QL7plrkKcx6eXYTCnex8v08ITT2tnd
+	8tpjjE0h0NZnzDReohJJTcMDTx0OU50/Wri9agqEgYbzCyR0MEwjnwuGmJ9xQMdhgqwyjpRx4rpOK
+	Q2gsxH1eksCDgLFguqAKV32l8KGanaNb9ELIqVbYiGuT0MdU/sB1EFRZyLlgoaZJAj6oMcKG9sxQq
+	ly5s0byNE+08s7+bH8St7c934nYI8hCLZ3zYlyzIDNVGuGCm/0YfRyLTGuJMnQVfW1K3O2HSVHLki
+	w4rNJKFwi8LButuwobVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpq80-0008GV-5v; Tue, 23 Jul 2019 08:26:32 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
+	id 1hpq8y-00009h-Ed; Tue, 23 Jul 2019 08:27:32 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpq7e-0008Cn-Cu
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 08:26:12 +0000
-Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
- (envelope-from <maz@kernel.org>)
- id 1hpq7Z-0006kD-Aa; Tue, 23 Jul 2019 10:26:05 +0200
-To: Julien Thierry <julien.thierry@arm.com>
-Subject: Re: [PATCH v2] KVM: arm/arm64: Introduce =?UTF-8?Q?kvm=5Fpmu=5Fvc?=
- =?UTF-8?Q?pu=5Finit=28=29=20to=20setup=20PMU=20counter=20idx?=
-X-PHP-Originating-Script: 0:main.inc
+ id 1hpq8i-00008W-Nw
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 08:27:17 +0000
+Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 17A9621BF6;
+ Tue, 23 Jul 2019 08:27:14 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1563870436;
+ bh=SnqOIbK+0rIhgQ2hnfks3pxqj4Sta5RlGjVJ91yq/Mc=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=RV1zQGx1yAJtbhwK+SsK9ysJpcTBzo+KRFapT1sPbS4zVFebBSrYEU8MzxTK/IBRA
+ h34tBrG/pjU115ZB48hzGHCZoo1YwhXywm6R6pVrUZTUtEyAKk76y90AH/Y2b5nM7P
+ C23cAMaDwCzFdye3dxB/fLJHYLbhb+y9X0Uyzc+w=
+Date: Tue, 23 Jul 2019 16:26:49 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Ioana Ciornei <ioana.ciornei@nxp.com>
+Subject: Re: [PATCH v3] arm64: dts: add the console node for DPAA2 platforms
+Message-ID: <20190723082648.GT15632@dragon>
+References: <1563791443-26372-1-git-send-email-ioana.ciornei@nxp.com>
 MIME-Version: 1.0
-Date: Tue, 23 Jul 2019 09:26:04 +0100
-From: Marc Zyngier <maz@kernel.org>
-In-Reply-To: <f3f6f9a9-9735-e253-7b5b-3ccf97619a16@arm.com>
-References: <1563437710-30756-1-git-send-email-yuzenghui@huawei.com>
- <f3f6f9a9-9735-e253-7b5b-3ccf97619a16@arm.com>
-Message-ID: <d5c0d757232935c6446aeaca9afe4416@www.loen.fr>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/0.7.2
-X-SA-Exim-Connect-IP: <locally generated>
-X-SA-Exim-Rcpt-To: julien.thierry@arm.com, yuzenghui@huawei.com,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
- james.morse@arm.com, suzuki.poulose@arm.com, julien.thierry.kdev@gmail.com,
- linux-kernel@vger.kernel.org, wanghaibin.wang@huawei.com,
- andrew.murray@arm.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
+Content-Disposition: inline
+In-Reply-To: <1563791443-26372-1-git-send-email-ioana.ciornei@nxp.com>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_012610_635806_6E08B712 
-X-CRM114-Status: GOOD (  10.27  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190723_012716_793883_C91D3670 
+X-CRM114-Status: UNSURE (   7.85  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,64 +77,20 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: suzuki.poulose@arm.com, linux-kernel@vger.kernel.org, james.morse@arm.com,
- linux-arm-kernel@lists.infradead.org, andrew.murray@arm.com,
- Zenghui Yu <yuzenghui@huawei.com>, wanghaibin.wang@huawei.com,
- kvmarm@lists.cs.columbia.edu, julien.thierry.kdev@gmail.com
+Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ leoyang.li@nxp.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-07-23 09:17, Julien Thierry wrote:
-> Hi Zenghui,
->
-> On 18/07/2019 09:15, Zenghui Yu wrote:
->> We use "pmc->idx" and the "chained" bitmap to determine if the pmc 
->> is
->> chained, in kvm_pmu_pmc_is_chained().  But idx might be 
->> uninitialized
->> (and random) when we doing this decision, through a 
->> KVM_ARM_VCPU_INIT
->> ioctl -> kvm_pmu_vcpu_reset(). And the test_bit() against this 
->> random
->> idx will potentially hit a KASAN BUG [1].
->>
->> In general, idx is the static property of a PMU counter that is not
->> expected to be modified across resets, as suggested by Julien.  It
->> looks more reasonable if we can setup the PMU counter idx for a vcpu
->> in its creation time. Introduce a new function - kvm_pmu_vcpu_init()
->> for this basic setup. Oh, and the KASAN BUG will get fixed this way.
->>
->> [1] https://www.spinics.net/lists/kvm-arm/msg36700.html
->>
->> Fixes: 80f393a23be6 ("KVM: arm/arm64: Support chained PMU counters")
->> Suggested-by: Andrew Murray <andrew.murray@arm.com>
->> Suggested-by: Julien Thierry <julien.thierry@arm.com>
->> Cc: Marc Zyngier <maz@kernel.org>
->> Signed-off-by: Zenghui Yu <yuzenghui@huawei.com>
->> ---
->>
->> Changes since v1:
->>  - Introduce kvm_pmu_vcpu_init() in vcpu's creation time, move the
->>    assignment of pmc->idx into it.
->>  - Thus change the subject. The old one is "KVM: arm/arm64: Assign
->>    pmc->idx before kvm_pmu_stop_counter()".
->>
->> Julien, I haven't collected your Acked-by into this version. If 
->> you're
->> still happy with the change, please Ack again. Thanks!
->>
->
-> Thanks for making the change. This looks good to me:
->
-> Acked-by: Julien Thierry <julien.thierry@arm.com>
+On Mon, Jul 22, 2019 at 01:30:43PM +0300, Ioana Ciornei wrote:
+> Add the console device tree node for the following
+> DPAA2 based platforms: LS1088A, LS2080A, LS2088A and LX2160A.
+> 
+> Signed-off-by: Ioana Ciornei <ioana.ciornei@nxp.com>
 
-Applied, thanks both.
-
-         M.
--- 
-Jazz is not dead. It just smells funny...
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
