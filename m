@@ -2,67 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E226A7104F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 06:07:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 61D8771056
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 06:11:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oTGXwVEn7z2wYQ5zkwX5zsA6i3SmcyzSKVCbj8zpbnE=; b=o3XgJe3RgzbjlO
-	GxyOJwNDyik1MO2jrYQhTRLA66zO7Tdr1FAoxsAIy7+YG6BEJsy7BUvrP4bA1TpjGVrePmQ75Kk/r
-	+AkVj8r1m40AZs0zGYGc/unrnAasG0fsB7Asi/CAFjtonLdvvFad0kIO+9K8zoUIeKLUV+vztWQ0F
-	FWc3HBUtYD1Ve3W4mi6UZmToJsJGW7kvYsON+WxFJpdGkxOa+B0CjM1l4etPTiJcLTkr0T6tSyQJj
-	Ha5AWlVooU4+g/RGDSbr7rmbzOUxVztOVoNjOA/MVUYoTABAtrCxCJQ+W9URJ07CQya7qacI+UWSu
-	8fIm5YY00VbNe2z+lu0A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=08v1o2x5XsgnGsvH06qNl6liYeM0yARm0vlCHMH6wjg=; b=rzuxd/3a4NoEoufSPiXLM76dI
+	22Q5j6TgNlTU5eSnbDdIUiW56VWF0XFHG2ZLxNo7UteG6CChuiPVgMjdoIGJdyIt7k1mXSDuKVVwC
+	3qKbCQvfzRmUii/VuVHfJ98mafJg5ivzXfEyWvsIjBTM8wUPoLeN7mStiFfsalAFsc6TWVnimyEcV
+	Z9CBKnRkiTVuym7Cp/ULWwUooWOHEC7JcwWP4pDsIJqQpv4Lm9fYoQXQtgqEmpOJ7tIKitfDuylZ2
+	R49mXqBq9xaeJ35+/moK0tP8dXq0usbe7xPSytp4Qbd4TJCWD+NRzOVRWmql+CYfdrNWth+8JdRvZ
+	sPgncRJZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpm58-0000HK-11; Tue, 23 Jul 2019 04:07:18 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hpm8t-0001w3-8u; Tue, 23 Jul 2019 04:11:11 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpm4E-0000G0-O2; Tue, 23 Jul 2019 04:06:24 +0000
-X-UUID: 5d7892d86ce44441a6dd6cea46074e8f-20190722
-X-UUID: 5d7892d86ce44441a6dd6cea46074e8f-20190722
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
- (envelope-from <weiyi.lu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 257153172; Mon, 22 Jul 2019 20:06:15 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 22 Jul 2019 21:06:13 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 23 Jul 2019 12:06:11 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 23 Jul 2019 12:06:12 +0800
-Message-ID: <1563854772.6751.11.camel@mtksdaap41>
-Subject: Re: [PATCH v6 14/14] arm64: dts: Add power controller device node
- of MT8183
-From: Weiyi Lu <weiyi.lu@mediatek.com>
-To: CK Hu <ck.hu@mediatek.com>
-Date: Tue, 23 Jul 2019 12:06:12 +0800
-In-Reply-To: <1563241851.796.7.camel@mtksdaap41>
-References: <1560998286-9189-1-git-send-email-weiyi.lu@mediatek.com>
- <1560998286-9189-15-git-send-email-weiyi.lu@mediatek.com>
- <1561971461.12937.8.camel@mtksdaap41> <1563178045.17756.5.camel@mtksdaap41>
- <1563181637.6212.1.camel@mtksdaap41> <1563241851.796.7.camel@mtksdaap41>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1hpm8b-0001vL-FL
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 04:10:55 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x6N4AcQZ084842;
+ Mon, 22 Jul 2019 23:10:38 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1563855038;
+ bh=XVQwkygam6XUYEnTe8AJ648CRlJe+ilV+FEAKjn2rNk=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=i2oKgZIxxAGqvixuh0zwlHSsthhL4f5ATxJn75fKFU5poGsHBBOBlUB4Uf5XnzPKg
+ 382ORi84YpgwMEpXRvUfkXu2QTZys2UrfnGJKw66QTRz4ABgTo1daN4PNEVVfwVcod
+ ehmrKWZ9j3qflQyzW+Z65JrzTX25le7sfZqMxyOg=
+Received: from DLEE102.ent.ti.com (dlee102.ent.ti.com [157.170.170.32])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x6N4Ac2U090509
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Mon, 22 Jul 2019 23:10:38 -0500
+Received: from DLEE113.ent.ti.com (157.170.170.24) by DLEE102.ent.ti.com
+ (157.170.170.32) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Mon, 22
+ Jul 2019 23:10:37 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE113.ent.ti.com
+ (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Mon, 22 Jul 2019 23:10:37 -0500
+Received: from [172.24.191.45] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x6N4AYpB052900;
+ Mon, 22 Jul 2019 23:10:35 -0500
+Subject: Re: [RESEND PATCH 01/10] dt-bindings: crypto: k3: Add sa2ul bindings
+ documentation
+To: Rob Herring <robh@kernel.org>, Peter Ujfalusi <peter.ujfalusi@ti.com>
+References: <20190628042745.28455-1-j-keerthy@ti.com>
+ <20190628042745.28455-2-j-keerthy@ti.com> <20190722182945.GA24685@bogus>
+From: Keerthy <j-keerthy@ti.com>
+Message-ID: <b8712fe4-4590-fdda-8a24-bf0f135ad567@ti.com>
+Date: Tue, 23 Jul 2019 09:41:11 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <20190722182945.GA24685@bogus>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_210622_819558_E49013CC 
-X-CRM114-Status: GOOD (  35.09  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190722_211053_647905_ADAFD7D5 
+X-CRM114-Status: GOOD (  18.87  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,280 +93,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Nicolas Boichat <drinkcat@chromium.org>,
- srv_heupstream@mediatek.com, James Liao <jamesjj.liao@mediatek.com>,
- linux-kernel@vger.kernel.org, Fan Chen <fan.chen@mediatek.com>,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>, Yong Wu <yong.wu@mediatek.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: nm@ti.com, devicetree@vger.kernel.org, herbert@gondor.apana.org.au,
+ linux-kernel@vger.kernel.org, t-kristo@ti.com, linux-crypto@vger.kernel.org,
+ davem@davemloft.net, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 2019-07-16 at 09:50 +0800, CK Hu wrote:
-> Hi, Weiyi:
-> 
-> On Mon, 2019-07-15 at 17:07 +0800, Weiyi Lu wrote:
-> > On Mon, 2019-07-15 at 16:07 +0800, CK Hu wrote:
-> > > Hi, Weiyi:
-> > > 
-> > > On Mon, 2019-07-01 at 16:57 +0800, CK Hu wrote:
-> > > > Hi, Weiyi:
-> > > > 
-> > > > On Thu, 2019-06-20 at 10:38 +0800, Weiyi Lu wrote:
-> > > > > Add power controller node and smi-common node for MT8183
-> > > > > In scpsys node, it contains clocks and regmapping of
-> > > > > infracfg and smi-common for bus protection.
-> > > > > 
-> > > > > Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
-> > > > > ---
-> > > > >  arch/arm64/boot/dts/mediatek/mt8183.dtsi | 62 ++++++++++++++++++++++++++++++++
-> > > > >  1 file changed, 62 insertions(+)
-> > > > > 
-> > > > > diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> > > > > index 08274bf..75c4881 100644
-> > > > > --- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> > > > > +++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> > > > > @@ -8,6 +8,7 @@
-> > > > >  #include <dt-bindings/clock/mt8183-clk.h>
-> > > > >  #include <dt-bindings/interrupt-controller/arm-gic.h>
-> > > > >  #include <dt-bindings/interrupt-controller/irq.h>
-> > > > > +#include <dt-bindings/power/mt8183-power.h>
-> > > > >  
-> > > > >  / {
-> > > > >  	compatible = "mediatek,mt8183";
-> > > > > @@ -196,6 +197,62 @@
-> > > > >  			#clock-cells = <1>;
-> > > > >  		};
-> > > > >  
-> > > > > +		scpsys: syscon@10006000 {
-> > > > > +			compatible = "mediatek,mt8183-scpsys", "syscon";
-> > > > > +			#power-domain-cells = <1>;
-> > > > > +			reg = <0 0x10006000 0 0x1000>;
-> > > > > +			clocks = <&topckgen CLK_TOP_MUX_AUD_INTBUS>,
-> > > > > +				 <&infracfg CLK_INFRA_AUDIO>,
-> > > > > +				 <&infracfg CLK_INFRA_AUDIO_26M_BCLK>,
-> > > > > +				 <&topckgen CLK_TOP_MUX_MFG>,
-> > > > > +				 <&topckgen CLK_TOP_MUX_MM>,
-> > > > > +				 <&topckgen CLK_TOP_MUX_CAM>,
-> > > > > +				 <&topckgen CLK_TOP_MUX_IMG>,
-> > > > > +				 <&topckgen CLK_TOP_MUX_IPU_IF>,
-> > > > > +				 <&topckgen CLK_TOP_MUX_DSP>,
-> > > > > +				 <&topckgen CLK_TOP_MUX_DSP1>,
-> > > > > +				 <&topckgen CLK_TOP_MUX_DSP2>,
-> > > > > +				 <&mmsys CLK_MM_SMI_COMMON>,
-> > > > > +				 <&mmsys CLK_MM_SMI_LARB0>,
-> > > > > +				 <&mmsys CLK_MM_SMI_LARB1>,
-> > > > > +				 <&mmsys CLK_MM_GALS_COMM0>,
-> > > > > +				 <&mmsys CLK_MM_GALS_COMM1>,
-> > > > > +				 <&mmsys CLK_MM_GALS_CCU2MM>,
-> > > > > +				 <&mmsys CLK_MM_GALS_IPU12MM>,
-> > > > > +				 <&mmsys CLK_MM_GALS_IMG2MM>,
-> > > > > +				 <&mmsys CLK_MM_GALS_CAM2MM>,
-> > > > > +				 <&mmsys CLK_MM_GALS_IPU2MM>,
-> > > 
-> > > I've removed all mmsys clock in scpsys node and display still works, so
-> > > I think these subsys clock could be removed from scpsys node. It's
-> > > reasonable that subsys clock is controlled by subsys device or the
-> > > device use it. In MT2712 [1], the scpsys does not control subsys clock
-> > > and it works, so I think you should remove subsys clock in scpsys device
-> > > node.
-> > > 
-> > > [1]
-> > > https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/arch/arm64/boot/dts/mediatek/mt2712e.dtsi?h=v5.2
-> > > 
-> > > Regards,
-> > > CK
-> > > 
-> > 
-> > Hello CK,
-> > 
-> > Sorry, I can't agree with you at all.
-> > I thought you just created an environment where the MM (DISP) power
-> > domain could not be turned on and off properly.
-> > If you delete those mmsys clocks listed, bus protection will not work.
-> > These clocks are used for bus protection that I mentioned in patch [2].
-> > I guess you are now trying to solve the problem that mmsys blocks are
-> > used for probing two drivers. One for the display and another for the
-> > clock. Right?
-> > In the previous test you mentioned, you have affected the registration
-> > of mmsys clock first. This is why you saw the boot failure. I think boot
-> > failure is the real problem I should avoid if mmsys clock cannot probe.
-> > 
-> > [2] https://patchwork.kernel.org/patch/11005747/
-> > 
-> 
-> OK, I'll try another way to fix the probe problem, but I still have
-> question about bus protection. I'm not sure how bus protection works,
-> but I think that what mtk_scpsys_ext_clear_bus_protection() do could be
-> moved in mtk_smi_clk_enable(). How do you think?
-> 
-> Regards,
-> CK
-> 
-
-I think we need to consider the disable case as well.
-And SMI may not be the only DISP power domain user. As far as I know and
-being requested, bus protection should only be set when DISP power
-domain is going to be turned OFF, and vise versa.
-But if SMI will turn ON before all the other multimedia drivers and be
-the last one to turn OFF DISP power domain, it might be worth trying.
-
-> > > 
-> > > > 
-> > > > Up to now, MT8183 mmsys has the same resource with another device node:
-> > > > 
-> > > > 		mmsys: syscon@14000000 {
-> > > > 			compatible = "mediatek,mt8183-mmsys", "syscon";
-> > > > 			reg = <0 0x14000000 0 0x1000>;
-> > > > 			#clock-cells = <1>;
-> > > > 		};
-> > > > 
-> > > > 		display_components: dispsys@14000000 {
-> > > > 			compatible = "mediatek,mt8183-display";
-> > > > 			reg = <0 0x14000000 0 0x1000>;
-> > > > 			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
-> > > > 		};
-> > > > 
-> > > > I think this two node should be merge into one node, so I've try to
-> > > > merge them:
-> > > > 
-> > > > 		mmsys: syscon@14000000 {
-> > > > 			compatible = "mediatek,mt8183-mmsys", "syscon";
-> > > > 			reg = <0 0x14000000 0 0x1000>;
-> > > > 			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
-> > > > 			#clock-cells = <1>;
-> > > > 		};
-> > > > 
-> > > > But I got a kernel panic when boot,
-> > > > 
-> > > > [    3.458523] Unable to handle kernel paging request at virtual address
-> > > > fffffffffffffdfb
-> > > > [    3.466999] Mem abort info:
-> > > > [    3.470116]   ESR = 0x96000005
-> > > > [    3.473268]   Exception class = DABT (current EL), IL = 32 bits
-> > > > [    3.479375]   SET = 0, FnV = 0
-> > > > [    3.482530]   EA = 0, S1PTW = 0
-> > > > [    3.485785] Data abort info:
-> > > > [    3.488831]   ISV = 0, ISS = 0x00000005
-> > > > [    3.493067]   CM = 0, WnR = 0
-> > > > [    3.496229] swapper pgtable: 4k pages, 39-bit VAs, pgdp =
-> > > > 000000004f8fa26d
-> > > > [    3.503214] [fffffffffffffdfb] pgd=0000000000000000,
-> > > > pud=0000000000000000
-> > > > [    3.510408] Internal error: Oops: 96000005 [#1] PREEMPT SMP
-> > > > [    3.515974] Modules linked in:
-> > > > [    3.519023] Process kworker/0:3 (pid: 106, stack limit =
-> > > > 0x00000000281d0651)
-> > > > [    3.526066] CPU: 0 PID: 106 Comm: kworker/0:3 Tainted: G        W
-> > > > 4.19.43 #208
-> > > > [    3.533974] Hardware name: MediaTek kukui rev1 board (DT)
-> > > > [    3.539374] Workqueue: events deferred_probe_work_func
-> > > > [    3.544507] pstate: 20000005 (nzCv daif -PAN -UAO)
-> > > > [    3.549294] pc : clk_prepare+0x18/0x40
-> > > > [    3.553038] lr : scpsys_clk_enable+0x40/0xb4
-> > > > [    3.557299] sp : ffffff800855b9e0
-> > > > [    3.560606] x29: ffffff800855b9f0 x28: ffffff93e1e5f594
-> > > > [    3.565911] x27: 000000000000000f x26: ffffff93e1e5e9b8
-> > > > [    3.571217] x25: 000000003b9aca00 x24: ffffff800858530c
-> > > > [    3.576522] x23: ffffffffffffffff x22: fffffffffffffdfb
-> > > > [    3.581827] x21: 000000000000000a x20: ffffffccb89aafc8
-> > > > [    3.587132] x19: fffffffffffffdfb x18: 00005a5c77082016
-> > > > [    3.592438] x17: 0000000000000400 x16: 0000000000000001
-> > > > [    3.597743] x15: 0000000000000009 x14: ffffff93e271c908
-> > > > [    3.603048] x13: 0000000000000b22 x12: 0000000000000008
-> > > > [    3.608353] x11: 0000000001d063de x10: 0000000000000008
-> > > > [    3.613659] x9 : 00000000ffffffed x8 : 0000000000000000
-> > > > [    3.618964] x7 : 736d6c2dff7224fe x6 : 0000008000000000
-> > > > [    3.624269] x5 : 0000000000000000 x4 : 0000000080000000
-> > > > [    3.629575] x3 : 002f6d6e74000000 x2 : 0000000000000000
-> > > > [    3.634880] x1 : 000000000000000a x0 : fffffffffffffdfb
-> > > > [    3.640185] Call trace:
-> > > > [    3.642625]  clk_prepare+0x18/0x40
-> > > > [    3.646019]  scpsys_clk_enable+0x40/0xb4
-> > > > [    3.649935]  scpsys_power_on+0x13c/0x304
-> > > > [    3.653850]  scpsys_probe+0xe0/0x5fc
-> > > > [    3.657419]  platform_drv_probe+0x80/0xb0
-> > > > [    3.661420]  really_probe+0x114/0x28c
-> > > > [    3.665075]  driver_probe_device+0x64/0xfc
-> > > > [    3.669164]  __device_attach_driver+0xb8/0xd0
-> > > > [    3.673513]  bus_for_each_drv+0x88/0xd0
-> > > > [    3.677341]  __device_attach+0xac/0x130
-> > > > [    3.681169]  device_initial_probe+0x20/0x2c
-> > > > [    3.685344]  bus_probe_device+0x34/0x90
-> > > > [    3.689172]  deferred_probe_work_func+0x74/0xac
-> > > > [    3.693698]  process_one_work+0x210/0x420
-> > > > [    3.697700]  worker_thread+0x278/0x3e4
-> > > > [    3.701443]  kthread+0x11c/0x12c
-> > > > [    3.704665]  ret_from_fork+0x10/0x18
-> > > > 
-> > > > I'm not really understand what happen, but scpsys and mmsys point to
-> > > > each other in MT8183. Why these two node point to each other in MT8183?
-> > > > If this is really hardware limitation, we need to solve this in driver.
-> > > > If this is not a hardware limitation, I would like to re-organize device
-> > > > tree to prevent this problem.
-> > > > 
-> > > > Regards,
-> > > > CK
-> > > > 
-> > > > 
-> > > > > +				 <&imgsys CLK_IMG_LARB5>,
-> > > > > +				 <&imgsys CLK_IMG_LARB2>,
-> > > > > +				 <&camsys CLK_CAM_LARB6>,
-> > > > > +				 <&camsys CLK_CAM_LARB3>,
-> > > > > +				 <&camsys CLK_CAM_SENINF>,
-> > > > > +				 <&camsys CLK_CAM_CAMSV0>,
-> > > > > +				 <&camsys CLK_CAM_CAMSV1>,
-> > > > > +				 <&camsys CLK_CAM_CAMSV2>,
-> > > > > +				 <&camsys CLK_CAM_CCU>,
-> > > > > +				 <&ipu_conn CLK_IPU_CONN_IPU>,
-> > > > > +				 <&ipu_conn CLK_IPU_CONN_AHB>,
-> > > > > +				 <&ipu_conn CLK_IPU_CONN_AXI>,
-> > > > > +				 <&ipu_conn CLK_IPU_CONN_ISP>,
-> > > > > +				 <&ipu_conn CLK_IPU_CONN_CAM_ADL>,
-> > > > > +				 <&ipu_conn CLK_IPU_CONN_IMG_ADL>;
-> > > > > +			clock-names = "audio", "audio1", "audio2",
-> > > > > +				      "mfg", "mm", "cam",
-> > > > > +				      "isp", "vpu", "vpu1",
-> > > > > +				      "vpu2", "vpu3", "mm-0",
-> > > > > +				      "mm-1", "mm-2", "mm-3",
-> > > > > +				      "mm-4", "mm-5", "mm-6",
-> > > > > +				      "mm-7", "mm-8", "mm-9",
-> > > > > +				      "isp-0", "isp-1", "cam-0",
-> > > > > +				      "cam-1", "cam-2", "cam-3",
-> > > > > +				      "cam-4", "cam-5", "cam-6",
-> > > > > +				      "vpu-0", "vpu-1", "vpu-2",
-> > > > > +				      "vpu-3", "vpu-4", "vpu-5";
-> > > > > +			infracfg = <&infracfg>;
-> > > > > +			smi_comm = <&smi_common>;
-> > > > > +		};
-> > > > > +
-> > > > >  		apmixedsys: syscon@1000c000 {
-> > > > >  			compatible = "mediatek,mt8183-apmixedsys", "syscon";
-> > > > >  			reg = <0 0x1000c000 0 0x1000>;
-> > > > > @@ -260,6 +317,11 @@
-> > > > >  			#clock-cells = <1>;
-> > > > >  		};
-> > > > >  
-> > > > > +		smi_common: smi@14019000 {
-> > > > > +			compatible = "mediatek,mt8183-smi-common", "syscon";
-> > > > > +			reg = <0 0x14019000 0 0x1000>;
-> > > > > +		};
-> > > > > +
-> > > > >  		imgsys: syscon@15020000 {
-> > > > >  			compatible = "mediatek,mt8183-imgsys", "syscon";
-> > > > >  			reg = <0 0x15020000 0 0x1000>;
-> > > > 
-> > > 
-> > > 
-> > 
-> > 
-> 
-> 
-
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpPbiAyMi8wNy8xOSAxMTo1OSBQTSwgUm9iIEhlcnJpbmcgd3JvdGU6Cj4gT24gRnJpLCBKdW4g
+MjgsIDIwMTkgYXQgMDk6NTc6MzZBTSArMDUzMCwgS2VlcnRoeSB3cm90ZToKPj4gVGhlIHNlcmll
+cyBhZGRzIENyeXB0byBoYXJkd2FyZSBhY2NlbGVyYXRvciBzdXBwb3J0IGZvciBTQTJVTC4KPj4g
+U0EyVUwgc3RhbmRzIGZvciBzZWN1cml0eSBhY2NlbGVyYXRvciB1bHRyYSBsaXRlLgo+Pgo+PiBU
+aGUgU2VjdXJpdHkgQWNjZWxlcmF0b3IgKFNBMl9VTCkgc3Vic3lzdGVtIHByb3ZpZGVzIGhhcmR3
+YXJlCj4+IGNyeXB0b2dyYXBoaWMgYWNjZWxlcmF0aW9uIGZvciB0aGUgZm9sbG93aW5nIHVzZSBj
+YXNlczoKPj4g4oCiIEVuY3J5cHRpb24gYW5kIGF1dGhlbnRpY2F0aW9uIGZvciBzZWN1cmUgYm9v
+dAo+PiDigKIgRW5jcnlwdGlvbiBhbmQgYXV0aGVudGljYXRpb24gb2YgY29udGVudCBpbiBhcHBs
+aWNhdGlvbnMKPj4gICAgcmVxdWlyaW5nIERSTSAoZGlnaXRhbCByaWdodHMgbWFuYWdlbWVudCkg
+YW5kCj4+ICAgIGNvbnRlbnQvYXNzZXQgcHJvdGVjdGlvbgo+PiBUaGUgZGV2aWNlIGluY2x1ZGVz
+IG9uZSBpbnN0YW50aWF0aW9uIG9mIFNBMl9VTCBuYW1lZCBTQTJfVUwwCj4+Cj4+IFNBMlVMIG5l
+ZWRzIG9uIHR4IGNoYW5uZWwgYW5kIGEgcGFpciBvZiByeCBkbWEgY2hhbm5lbHMuCj4+Cj4+IFNp
+Z25lZC1vZmYtYnk6IEtlZXJ0aHkgPGota2VlcnRoeUB0aS5jb20+Cj4+IC0tLQo+PiAgIC4uLi9k
+ZXZpY2V0cmVlL2JpbmRpbmdzL2NyeXB0by9zYTJ1bC50eHQgICAgICB8IDQ3ICsrKysrKysrKysr
+KysrKysrKysKPj4gICAxIGZpbGUgY2hhbmdlZCwgNDcgaW5zZXJ0aW9ucygrKQo+PiAgIGNyZWF0
+ZSBtb2RlIDEwMDY0NCBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvY3J5cHRvL3Nh
+MnVsLnR4dAo+Pgo+PiBkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRp
+bmdzL2NyeXB0by9zYTJ1bC50eHQgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mv
+Y3J5cHRvL3NhMnVsLnR4dAo+PiBuZXcgZmlsZSBtb2RlIDEwMDY0NAo+PiBpbmRleCAwMDAwMDAw
+MDAwMDAuLjgxY2MwMzk2NzNiNAo+PiAtLS0gL2Rldi9udWxsCj4+ICsrKyBiL0RvY3VtZW50YXRp
+b24vZGV2aWNldHJlZS9iaW5kaW5ncy9jcnlwdG8vc2EydWwudHh0Cj4+IEBAIC0wLDAgKzEsNDcg
+QEAKPj4gK0szIFNvQyBTQTJVTCBjcnlwdG8gbW9kdWxlCj4+ICsKPj4gK1JlcXVpcmVkIHByb3Bl
+cnRpZXM6Cj4+ICsKPj4gKy0gY29tcGF0aWJsZSA6IFNob3VsZCBiZToKPj4gKyAgLSAidGksc2Ey
+dWwtY3J5cHRvIgo+IAo+IE5lZWRzIHRvIGJlIFNvQyBzcGVjaWZpYy4KCm9rYXkKCj4gCj4+ICst
+IHJlZyA6IE9mZnNldCBhbmQgbGVuZ3RoIG9mIHRoZSByZWdpc3RlciBzZXQgZm9yIHRoZSBtb2R1
+bGUKPj4gKwo+PiArLSBkbWFzOiBETUEgc3BlY2lmaWVycyBmb3IgdHggYW5kIHJ4IGRtYS4gc2Ey
+dWwgbmVlZHMgb25lIHR4IGNoYW5uZWwKPj4gKwlhbmQgMiByeCBjaGFubmVscy4gRmlyc3Qgcngg
+Y2hhbm5lbCBmb3IgPCAyNTYgYnl0ZXMgYW5kCj4+ICsJdGhlIG90aGVyIG9uZSBmb3IgPj0yNTYg
+Ynl0ZXMuIFNlZSB0aGUgRE1BIGNsaWVudCBiaW5kaW5nLAo+PiArICAgICAgICBEb2N1bWVudGF0
+aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZG1hL2RtYS50eHQKPj4gKy0gZG1hLW5hbWVzOiBETUEg
+cmVxdWVzdCBuYW1lcyBoYXMgdG8gaGF2ZSBvbmUgdHggYW5kIDIgcnggbmFtZXMKPj4gKwljb3Jy
+ZXNwb25kaW5nIHRvIGRtYXMgYWJpdmUuCj4+ICstIHRpLHBzaWwtY29uZmlnKiAtIFVETUEgUFNJ
+TCBuYXRpdmUgUGVyaXBoZXJhbCB1c2luZyBwYWNrZXQgbW9kZS4KPj4gKwlTQTJVTCBtdXN0IGhh
+dmUgRVBJQihFeHRlbmRlZCBwcm90b2NhbCBpbmZvcm1hdGlvbiBibG9jaykKPj4gKwlhbmQgUFNE
+QVRBKHByb3RvY29sIHNwZWNpZmljIGRhdGEpIHByb3BlcnRpZXMuCj4gCj4gSWYgdGksbmVlZHMt
+ZXBpYiBpcyByZXF1aXJlZCwgdGhlbiB3aHkgZG8geW91IG5lZWQgdG8gc3BlY2lmeSBpdCBpbiBE
+VD8KPiBJbiBhbnkgY2FzZSwgdGhpcyBhbGwgc2VlbXMgbGlrZSBjaGFubmVsIGNvbmZpZyBpbmZv
+IHRoYXQgc2hvdWxkIGJlIHBhcnQKPiBvZiB0aGUgI2RtYS1jZWxscy4KCnRpLG5lZWRzLWVwaWIg
+aXMgdGhlIHVkbWEgY2xpZW50KEhlcmUgc2EydWwpIGNvbnZleWluZyB0aGUgdWRtYSBsYXllci4K
+Tm90IGV2ZXJ5IHVkbWEgY2xpZW50IG5lZWRzIGVwaWIuCgpQZXRlciwKCkFueSB0aG91Z2h0cyBv
+biB0aGUgYWJvdmU/CgotIEtlZXJ0aHkKCj4gCj4gQWxzbywgZG9uJ3QgdXNlIHZlbmRvciBwcmVm
+aXhlcyBvbiBub2RlIG5hbWVzLgoKT2theQoKPiAKPj4gKwo+PiArRXhhbXBsZSBBTTY1NCBTQTJV
+TDoKPj4gK2NyeXB0bzogY3J5cHRvQDRFMDAwMDAgewo+PiArCWNvbXBhdGlibGUgPSAidGksc2Ey
+dWwtY3J5cHRvIjsKPj4gKwlyZWcgPSA8MHgwIDB4NEUwMDAwMCAweDAgMHgxMjAwPjsKPj4gKwl0
+aSxwc2lsLWJhc2UgPSA8MHg0MDAwPjsKPj4gKwo+PiArCWRtYXMgPSA8Jm1haW5fdWRtYXAgJmNy
+eXB0byAwIFVETUFfRElSX1RYPiwKPj4gKwkJPCZtYWluX3VkbWFwICZjcnlwdG8gMCBVRE1BX0RJ
+Ul9SWD4sCj4+ICsJCTwmbWFpbl91ZG1hcCAmY3J5cHRvIDEgVURNQV9ESVJfUlg+Owo+PiArCWRt
+YS1uYW1lcyA9ICJ0eCIsICJyeDEiLCAicngyIjsKPj4gKwo+PiArCXRpLHBzaWwtY29uZmlnMCB7
+Cj4+ICsJCWxpbnV4LHVkbWEtbW9kZSA9IDxVRE1BX1BLVF9NT0RFPjsKPj4gKwkJdGksbmVlZHMt
+ZXBpYjsKPj4gKwkJdGkscHNkLXNpemUgPSA8NjQ+Owo+PiArCX07Cj4+ICsKPj4gKwl0aSxwc2ls
+LWNvbmZpZzEgewo+PiArCQlsaW51eCx1ZG1hLW1vZGUgPSA8VURNQV9QS1RfTU9ERT47Cj4+ICsJ
+CXRpLG5lZWRzLWVwaWI7Cj4+ICsJCXRpLHBzZC1zaXplID0gPDY0PjsKPj4gKwl9Owo+PiArCj4+
+ICsJdGkscHNpbC1jb25maWcyIHsKPj4gKwkJbGludXgsdWRtYS1tb2RlID0gPFVETUFfUEtUX01P
+REU+Owo+PiArCQl0aSxuZWVkcy1lcGliOwo+PiArCQl0aSxwc2Qtc2l6ZSA9IDw2ND47Cj4+ICsJ
+fTsKPj4gK307Cj4+IC0tIAo+PiAyLjE3LjEKPj4KCl9fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4
+LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9y
+Zy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
