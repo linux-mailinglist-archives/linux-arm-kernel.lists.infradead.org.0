@@ -2,42 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A149771707
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 13:29:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D347B7170F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 13:29:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hnM2ahvK9zZICaKwvlG/zmTydEa9c7qAuMkP6fLzfN4=; b=LCDuKBW7d64AK2
-	K0meEEfe/BVH2hOs1dlAPZ5Ww4Uy6tcsSDtAC98wpEGryxbGO6qOr4P4Y4xhF7jjpy1XzkUp8h/l1
-	xBxLp3OuqYQqCfcDliRSA9Dp56YlGDbws4STztDOn+/HfyFZt/Mhd396lL3KMqX0bBcuhEQ0r9lHX
-	R7VFbEHjm+CtTJHgvdxeJYwGlNu+qOpezdn2h9EwY+IZ95SgJH7ORsE7p59QQNYONWQ+0dZgkVeJc
-	nyRSD8MSlhhmmmeQZvGhepWIKeM+y1I2/86fSdL4Q0GWYQ3sHYPimvXxtxxCZqWJkbIuNyV+DLJEB
-	6Ukk/4VtAsdfogBuSckg==;
+	List-Owner; bh=chzNJezF/+g7CU6CICjddtO7mLL0IpbX3XinHMhnSkg=; b=J8rfxmcZ8eepjd
+	YgjqBjnK6NhrhReGPfQ/IhBlMSSCqze1u9doWk8HwBfNhYHA0GyKiWeVhz7p823TvcACNMdsWf4Gj
+	AUd/jXQvyhHp9p0SSmRXs2vRRI4OU8sZ0K67TUvHhGwsqbTflm7CsnoGB5OGjfx3nK98Mu80Vewib
+	gJlnBfPOop9KzurXVa9LsO0kYlGXAgDq998lNXuO+/i/Cytnr8ar72k/z3cKg/AQ431rEgFh72QW7
+	MEQkC0cKjJMY2rFdwbauidh8iSwm03Emyj+QHJ+B2i9A1LlcsTw+0G3T1uukdf4nMYckibpClcEzy
+	x8aSa904WUOKxrhxiWyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpsyz-0001mA-Sr; Tue, 23 Jul 2019 11:29:25 +0000
+	id 1hpszJ-00026N-4E; Tue, 23 Jul 2019 11:29:45 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hpsxz-0000ll-8A
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 11:28:25 +0000
+ id 1hpsy1-0000mM-5P
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 11:28:26 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id DD61C81BC;
- Tue, 23 Jul 2019 11:28:47 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id B6C4881E7;
+ Tue, 23 Jul 2019 11:28:49 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: linux-omap@vger.kernel.org
-Subject: [PATCH 2/8] ARM: OMAP2+: Remove unconfigured midlemode for am3 lcdc
-Date: Tue, 23 Jul 2019 04:28:05 -0700
-Message-Id: <20190723112811.44381-3-tony@atomide.com>
+Subject: [PATCH 3/8] bus: ti-sysc: Fix handling of forced idle
+Date: Tue, 23 Jul 2019 04:28:06 -0700
+Message-Id: <20190723112811.44381-4-tony@atomide.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190723112811.44381-1-tony@atomide.com>
 References: <20190723112811.44381-1-tony@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_042823_326408_E20DD0E3 
-X-CRM114-Status: GOOD (  10.81  )
+X-CRM114-CacheID: sfid-20190723_042825_270107_40A8A45B 
+X-CRM114-Status: UNSURE (   9.80  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -69,31 +70,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We currently get a warning for lcdc because of a difference
-with dts provided configuration compared to the legacy platform
-data. This is because lcdc has SYSC_HAS_MIDLEMODE configured in
-the platform data without configuring the modes.
+For some devices we can get the following warning on boot:
 
-Let's fix the warning by removing SYSC_HAS_MIDLEMODE. Note that
-the am335x TRM lists SYSC_HAS_MIDLEMODE, but it is unused.
+ti-sysc 48485200.target-module: sysc_disable_module: invalid midlemode
 
+Fix this by treating SYSC_IDLE_FORCE like we do for the other bits
+for idlemodes mask.
+
+Fixes: d59b60564cbf ("bus: ti-sysc: Add generic enable/disable functions")
+Cc: Roger Quadros <rogerq@ti.com>
 Signed-off-by: Tony Lindgren <tony@atomide.com>
 ---
- arch/arm/mach-omap2/omap_hwmod_33xx_data.c | 2 +-
+ drivers/bus/ti-sysc.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm/mach-omap2/omap_hwmod_33xx_data.c b/arch/arm/mach-omap2/omap_hwmod_33xx_data.c
---- a/arch/arm/mach-omap2/omap_hwmod_33xx_data.c
-+++ b/arch/arm/mach-omap2/omap_hwmod_33xx_data.c
-@@ -231,7 +231,7 @@ static struct omap_hwmod am33xx_control_hwmod = {
- static struct omap_hwmod_class_sysconfig lcdc_sysc = {
- 	.rev_offs	= 0x0,
- 	.sysc_offs	= 0x54,
--	.sysc_flags	= (SYSC_HAS_SIDLEMODE | SYSC_HAS_MIDLEMODE),
-+	.sysc_flags	= SYSC_HAS_SIDLEMODE,
- 	.idlemodes	= (SIDLE_FORCE | SIDLE_NO | SIDLE_SMART),
- 	.sysc_fields	= &omap_hwmod_sysc_type2,
- };
+diff --git a/drivers/bus/ti-sysc.c b/drivers/bus/ti-sysc.c
+--- a/drivers/bus/ti-sysc.c
++++ b/drivers/bus/ti-sysc.c
+@@ -949,7 +949,7 @@ static int sysc_best_idle_mode(u32 idlemodes, u32 *best_mode)
+ 		*best_mode = SYSC_IDLE_SMART_WKUP;
+ 	else if (idlemodes & BIT(SYSC_IDLE_SMART))
+ 		*best_mode = SYSC_IDLE_SMART;
+-	else if (idlemodes & SYSC_IDLE_FORCE)
++	else if (idlemodes & BIT(SYSC_IDLE_FORCE))
+ 		*best_mode = SYSC_IDLE_FORCE;
+ 	else
+ 		return -EINVAL;
 -- 
 2.21.0
 
