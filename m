@@ -2,42 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D87A7171C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 13:30:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E14D07171D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 23 Jul 2019 13:30:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bqEr3VnDoZD9phjt8GecjxeOLwvvqINKJ70wPvC/qPI=; b=hWTVW3QiH6f/A9
-	GPHuKM2OLdAGw293rEgPO169a7K4+ynQnr4LkQEvaGLT3UXauHBat+caoUfk8w7Hyn/bXSmzhqy5B
-	UKE9kNnRuWcvw+7qPdfk3sf4ZS+S4L3Gym6SkkY3FPyhC99u3fXOZAluZtYz/HgQQsprpNrYCwvka
-	AYge9lbsEb42UKVRup9d9xgPG+xAgYgJAp3+J+4EFoVxpNO1/8dkTVfaGJbjXAuNjy94KB5EaUGSm
-	qeBxB8yESOOvGueyfwgDtZBac7+WD1uWaBw37OO0PjgZYGkF57Gnr7QNU7IEyYd7OHZ79ulWv0zFr
-	aCdSWMv4U3fAfRpPPiFQ==;
+	List-Owner; bh=pcw2wwsq1ZYFS9+kqjv7yc7LM56Ep9ijhqSKCWNW7ZQ=; b=mvh1NUpUMS2w6y
+	S1MkJGC8cJsZhk0UbB+3Sg0cbfgwmdALIxm2N9JFudkSW9Ps9kpDQI1hdrj1kdGc1GTtRuaAvBfhB
+	HDwVAhrQdm2aVbNcKQ8gjT+uFdywnsLMLcbc+GSz7x0xmROhdY8h+aZyns2vX6mg9hDNUGTCD8J6M
+	atq/OntruVP1Me7B9a5fvQjuPZpUCgYubs26FPa/ql5wOBqxhTW6RMoT3fZ7aY8NLHRwdzArJJ5BC
+	a00kIiytOlD1llIb/hqCoggNr4n3evhf4saLrh7u4KAXFMPDhHX17k4cDQDFWYZ5yjbJlkyGHvz+z
+	wizIip6NwXKjAeiBDS2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpt03-0003GO-Bw; Tue, 23 Jul 2019 11:30:31 +0000
+	id 1hpt0Q-0004Sm-PI; Tue, 23 Jul 2019 11:30:54 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hpsy5-0000pc-9T
- for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 11:28:30 +0000
+ id 1hpsy7-0000tu-S4
+ for linux-arm-kernel@lists.infradead.org; Tue, 23 Jul 2019 11:28:33 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 5078B81A0;
- Tue, 23 Jul 2019 11:28:53 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id 774ED808C;
+ Tue, 23 Jul 2019 11:28:55 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: linux-omap@vger.kernel.org
-Subject: [PATCH 5/8] ARM: dts: Drop bogus ahclkr clocks for dra7 mcasp 3 to 8
-Date: Tue, 23 Jul 2019 04:28:08 -0700
-Message-Id: <20190723112811.44381-6-tony@atomide.com>
+Subject: [PATCH 6/8] ARM: dts: Fix flags for gpio7
+Date: Tue, 23 Jul 2019 04:28:09 -0700
+Message-Id: <20190723112811.44381-7-tony@atomide.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190723112811.44381-1-tony@atomide.com>
 References: <20190723112811.44381-1-tony@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_042829_497927_07DE7651 
-X-CRM114-Status: UNSURE (   8.30  )
+X-CRM114-CacheID: sfid-20190723_042832_112666_D811E274 
+X-CRM114-Status: UNSURE (   9.51  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -70,80 +70,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The ahclkr clkctrl clock bit 28 only exists for mcasp 1 and 2 on dra7.
-Otherwise we get the following warning on beagle-x15:
+The ti,no-idle-on-init and ti,no-reset-on-init flags need to be at
+the interconnect target module level for the modules that have it
+defined. Otherwise we get the following warnings:
 
-ti-sysc 48468000.target-module: could not add child clock ahclkr: -19
+dts flag should be at module level for ti,no-idle-on-init
+dts flag should be at module level for ti,no-reset-on-init
 
-Fixes: 5241ccbf2819 ("ARM: dts: Add missing ranges for dra7 mcasp l3 ports")
 Signed-off-by: Tony Lindgren <tony@atomide.com>
 ---
- arch/arm/boot/dts/dra7-l4.dtsi | 25 ++++++++++---------------
- 1 file changed, 10 insertions(+), 15 deletions(-)
+ arch/arm/boot/dts/am57xx-beagle-x15-common.dtsi | 2 +-
+ arch/arm/boot/dts/dra7-evm.dts                  | 2 +-
+ arch/arm/boot/dts/dra7-l4.dtsi                  | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
 
+diff --git a/arch/arm/boot/dts/am57xx-beagle-x15-common.dtsi b/arch/arm/boot/dts/am57xx-beagle-x15-common.dtsi
+--- a/arch/arm/boot/dts/am57xx-beagle-x15-common.dtsi
++++ b/arch/arm/boot/dts/am57xx-beagle-x15-common.dtsi
+@@ -379,7 +379,7 @@
+ 	};
+ };
+ 
+-&gpio7 {
++&gpio7_target {
+ 	ti,no-reset-on-init;
+ 	ti,no-idle-on-init;
+ };
+diff --git a/arch/arm/boot/dts/dra7-evm.dts b/arch/arm/boot/dts/dra7-evm.dts
+--- a/arch/arm/boot/dts/dra7-evm.dts
++++ b/arch/arm/boot/dts/dra7-evm.dts
+@@ -498,7 +498,7 @@
+ 	phy-supply = <&ldousb_reg>;
+ };
+ 
+-&gpio7 {
++&gpio7_target {
+ 	ti,no-reset-on-init;
+ 	ti,no-idle-on-init;
+ };
 diff --git a/arch/arm/boot/dts/dra7-l4.dtsi b/arch/arm/boot/dts/dra7-l4.dtsi
 --- a/arch/arm/boot/dts/dra7-l4.dtsi
 +++ b/arch/arm/boot/dts/dra7-l4.dtsi
-@@ -2818,9 +2818,8 @@
- 					<SYSC_IDLE_SMART>;
- 			/* Domains (P, C): l4per_pwrdm, l4per2_clkdm */
- 			clocks = <&l4per2_clkctrl DRA7_L4PER2_MCASP3_CLKCTRL 0>,
--				 <&l4per2_clkctrl DRA7_L4PER2_MCASP3_CLKCTRL 24>,
--				 <&l4per2_clkctrl DRA7_L4PER2_MCASP3_CLKCTRL 28>;
--			clock-names = "fck", "ahclkx", "ahclkr";
-+				 <&l4per2_clkctrl DRA7_L4PER2_MCASP3_CLKCTRL 24>;
-+			clock-names = "fck", "ahclkx";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges = <0x0 0x68000 0x2000>,
-@@ -2854,9 +2853,8 @@
- 					<SYSC_IDLE_SMART>;
- 			/* Domains (P, C): l4per_pwrdm, l4per2_clkdm */
- 			clocks = <&l4per2_clkctrl DRA7_L4PER2_MCASP4_CLKCTRL 0>,
--				 <&l4per2_clkctrl DRA7_L4PER2_MCASP4_CLKCTRL 24>,
--				 <&l4per2_clkctrl DRA7_L4PER2_MCASP4_CLKCTRL 28>;
--			clock-names = "fck", "ahclkx", "ahclkr";
-+				 <&l4per2_clkctrl DRA7_L4PER2_MCASP4_CLKCTRL 24>;
-+			clock-names = "fck", "ahclkx";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges = <0x0 0x6c000 0x2000>,
-@@ -2890,9 +2888,8 @@
- 					<SYSC_IDLE_SMART>;
- 			/* Domains (P, C): l4per_pwrdm, l4per2_clkdm */
- 			clocks = <&l4per2_clkctrl DRA7_L4PER2_MCASP5_CLKCTRL 0>,
--				 <&l4per2_clkctrl DRA7_L4PER2_MCASP5_CLKCTRL 24>,
--				 <&l4per2_clkctrl DRA7_L4PER2_MCASP5_CLKCTRL 28>;
--			clock-names = "fck", "ahclkx", "ahclkr";
-+				 <&l4per2_clkctrl DRA7_L4PER2_MCASP5_CLKCTRL 24>;
-+			clock-names = "fck", "ahclkx";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges = <0x0 0x70000 0x2000>,
-@@ -2926,9 +2923,8 @@
- 					<SYSC_IDLE_SMART>;
- 			/* Domains (P, C): l4per_pwrdm, l4per2_clkdm */
- 			clocks = <&l4per2_clkctrl DRA7_L4PER2_MCASP6_CLKCTRL 0>,
--				 <&l4per2_clkctrl DRA7_L4PER2_MCASP6_CLKCTRL 24>,
--				 <&l4per2_clkctrl DRA7_L4PER2_MCASP6_CLKCTRL 28>;
--			clock-names = "fck", "ahclkx", "ahclkr";
-+				 <&l4per2_clkctrl DRA7_L4PER2_MCASP6_CLKCTRL 24>;
-+			clock-names = "fck", "ahclkx";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges = <0x0 0x74000 0x2000>,
-@@ -2962,9 +2958,8 @@
- 					<SYSC_IDLE_SMART>;
- 			/* Domains (P, C): l4per_pwrdm, l4per2_clkdm */
- 			clocks = <&l4per2_clkctrl DRA7_L4PER2_MCASP7_CLKCTRL 0>,
--				 <&l4per2_clkctrl DRA7_L4PER2_MCASP7_CLKCTRL 24>,
--				 <&l4per2_clkctrl DRA7_L4PER2_MCASP7_CLKCTRL 28>;
--			clock-names = "fck", "ahclkx", "ahclkr";
-+				 <&l4per2_clkctrl DRA7_L4PER2_MCASP7_CLKCTRL 24>;
-+			clock-names = "fck", "ahclkx";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges = <0x0 0x78000 0x2000>,
+@@ -1261,7 +1261,7 @@
+ 			};
+ 		};
+ 
+-		target-module@51000 {			/* 0x48051000, ap 45 2e.0 */
++		gpio7_target: target-module@51000 {		/* 0x48051000, ap 45 2e.0 */
+ 			compatible = "ti,sysc-omap2", "ti,sysc";
+ 			ti,hwmods = "gpio7";
+ 			reg = <0x51000 0x4>,
 -- 
 2.21.0
 
