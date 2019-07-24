@@ -2,57 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED6F97319A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 16:28:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C6501731D4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 16:38:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=dgrG6o9QwTmPPcARUFtaN0Sy7a+Wrqqm5io2HYhKTwQ=; b=d5+W1Yg0Je4SAadcdL5A78NWs
-	Fkv+iAojRRyFcvRyRSjc7A/Dqe5/taFBksJ6XcMwLYYiFl4F219A5SEfYRgjAWm5/CPGzxfY/CLpp
-	V3U/469uUpKS9WI4YsyMuOWxe9EHkNKyknNh0TlQemA/VIEtiEzVFEXRK3BQm9iwJj0S2kCTkqScJ
-	7k0vAtqgJOgTcf+GbM6EsFtY3R/AnHSWwUPESUsae9jn6zTx6byA3K7ZDSGGP1Cru6RgJwgCUPbND
-	QlY+fouoitJ8HQ81i9dlpCC1OH7fmpPRx5vicDis5/bN0TprtljvnKEUQVS+dXKMtWWayKTvtr2av
-	vkRX6pH1Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0Zk0UBlnwbiQ3+RL3Cl6/YIMl2fic6VkJvemPtOET9Q=; b=eonxCahfZHCCCs
+	8UH6HNJfRlMgET5E3VzCz7lhlTbCMnaPgBLDbvifFVkR2QCDG6js78kAFroYHSWs35ARwTv2Kle2w
+	8oP1I5Uk0N2PQq44d2rgEUElhDlyOqS03m50p3X+VelK/TGXThfVkdKWMTKLPay3svsO+6WegreA0
+	R4cBoIdiWJV/1r6zk57JPxKX/l+X0B+bOj4hFUKPOSZIpCQ/tPv0cGZTok2mkoWL7zZQLXs188AsV
+	gR7rRL2JQyjvxSSGVFnS5egCVP+WrCAGTwM2br1RnhlxkEPfXHjr2Fr7x1OwXASL3Z4YGDqQho2yE
+	HOlct2n1s6aUOHbVlc0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqIFW-00032f-2Y; Wed, 24 Jul 2019 14:28:10 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1hqIPK-0006PS-Be; Wed, 24 Jul 2019 14:38:18 +0000
+Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqIFM-00031k-AD
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 14:28:01 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 1A8E9AE44;
- Wed, 24 Jul 2019 14:27:57 +0000 (UTC)
-Message-ID: <3a2f952e090d972b33f62592b12399f9ef3b0513.camel@suse.de>
-Subject: Re: [RFC 3/4] dma-direct: add dma_direct_min_mask
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Christoph Hellwig <hch@lst.de>, Catalin Marinas <catalin.marinas@arm.com>
-Date: Wed, 24 Jul 2019 16:27:55 +0200
-In-Reply-To: <20190724135657.GA9075@lst.de>
-References: <20190717153135.15507-1-nsaenzjulienne@suse.de>
- <20190717153135.15507-4-nsaenzjulienne@suse.de>
- <20190718091526.GA25321@lst.de>
- <13dd1a4f33fcf814545f0d93f18429e853de9eaf.camel@suse.de>
- <58753252bd7964e3b9e9558b633bd325c4a898a1.camel@suse.de>
- <20190724135124.GA44864@arrakis.emea.arm.com>
- <20190724135657.GA9075@lst.de>
-User-Agent: Evolution 3.32.3 
+ id 1hqIP9-0006Ob-CH
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 14:38:08 +0000
+Received: from pd9ef1cb8.dip0.t-ipconnect.de ([217.239.28.184] helo=nanos)
+ by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
+ (Exim 4.80) (envelope-from <tglx@linutronix.de>)
+ id 1hqIOx-0002MW-0J; Wed, 24 Jul 2019 16:37:55 +0200
+Date: Wed, 24 Jul 2019 16:37:53 +0200 (CEST)
+From: Thomas Gleixner <tglx@linutronix.de>
+To: Steven Price <steven.price@arm.com>
+Subject: Re: [PATCH v9 00/21] Generic page walk and ptdump
+In-Reply-To: <fd898367-b44e-9328-bdab-7a3de0db6bda@arm.com>
+Message-ID: <alpine.DEB.2.21.1907241620140.1791@nanos.tec.linutronix.de>
+References: <20190722154210.42799-1-steven.price@arm.com>
+ <20190723101639.GD8085@lakrids.cambridge.arm.com>
+ <e108b8a6-deca-e69c-b338-52a98b14be86@arm.com>
+ <alpine.DEB.2.21.1907241541570.1791@nanos.tec.linutronix.de>
+ <fd898367-b44e-9328-bdab-7a3de0db6bda@arm.com>
+User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
 MIME-Version: 1.0
+X-Linutronix-Spam-Score: -1.0
+X-Linutronix-Spam-Level: -
+X-Linutronix-Spam-Status: No , -1.0 points, 5.0 required, ALL_TRUSTED=-1,
+ SHORTCIRCUIT=-0.0001
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_072800_501017_3280BB45 
-X-CRM114-Status: GOOD (  14.36  )
+X-CRM114-CacheID: sfid-20190724_073807_567262_9C5F1BDE 
+X-CRM114-Status: GOOD (  24.73  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ medium trust [2a0a:51c0:0:12e:550:0:0:1 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -65,82 +68,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: stefan.wahren@i2se.com, Jisheng.Zhang@synaptics.com, f.fainelli@gmail.com,
- will@kernel.org, phil@raspberrypi.org, linux-kernel@vger.kernel.org,
- iommu@lists.linux-foundation.org, mbrugger@suse.com,
- Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
-Content-Type: multipart/mixed; boundary="===============4259442342038769723=="
+Cc: Mark Rutland <mark.rutland@arm.com>, x86@kernel.org,
+ Arnd Bergmann <arnd@arndb.de>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>, linux-kernel@vger.kernel.org,
+ linux-mm@kvack.org, =?ISO-8859-15?Q?J=E9r=F4me_Glisse?= <jglisse@redhat.com>,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ Andy Lutomirski <luto@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ James Morse <james.morse@arm.com>, Andrew Morton <akpm@linux-foundation.org>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org, "Liang,
+ Kan" <kan.liang@linux.intel.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed, 24 Jul 2019, Steven Price wrote:
+> On 24/07/2019 14:57, Thomas Gleixner wrote:
+> > From your 14/N changelog:
+> > 
+> >> This keeps the output shorter and will help with a future change
+> > 
+> > I don't care about shorter at all. It's debug information.
+> 
+> Sorry, the "shorter" part was because Dave Hansen originally said[1]:
+> > I think I'd actually be OK with the holes just not showing up.  I
+> > actually find it kinda hard to read sometimes with the holes in there.
+> > I'd be curious what others think though.
 
---===============4259442342038769723==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-m+/FyWNmUHFI+YRB/Gte"
+I missed that otherwise I'd have disagreed right away.
 
+> > I really do not understand why you think that WE no longer care about the
+> > level (and the size) of the holes. I assume that WE is pluralis majestatis
+> > and not meant to reflect the opinion of you and everyone else.
+> 
+> Again, I apologise - that was sloppy wording in the commit message. By
+> "we" I meant the code not any particular person.
 
---=-m+/FyWNmUHFI+YRB/Gte
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+Nothing to apologize. Common mistake of trying to impersonate code. That
+always reads wrong :)
 
-On Wed, 2019-07-24 at 15:56 +0200, Christoph Hellwig wrote:
-> On Wed, Jul 24, 2019 at 02:51:24PM +0100, Catalin Marinas wrote:
-> > I think it may be better if we have both ZONE_DMA and ZONE_DMA32 on
-> > arm64. ZONE_DMA would be based on the smallest dma-ranges as described
-> > in the DT while DMA32 covers the first naturally aligned 4GB of RAM
-> > (unchanged). When a smaller ZONE_DMA is not needed, it could be expande=
-d
-> > to cover what would normally be ZONE_DMA32 (or could we have ZONE_DMA a=
-s
-> > 0-bytes? I don't think GFP_DMA can still allocate memory in this case).
-> >=20
-> > We'd probably have to define ARCH_ZONE_DMA_BITS for arm64 to something
-> > smaller than 32-bit but sufficient to cover the known platforms like
-> > RPi4 (the current 24 is too small, so maybe 30). AFAICT,
-> > __dma_direct_optimal_gfp_mask() figures out whether GFP_DMA or GFP_DMA3=
-2
-> > should be passed.
->=20
-> ARCH_ZONE_DMA_BITS should probably become a variable.  That way we can
-> just initialize it to the default 24 bits in kernel/dma/direct.c and
-> allow architectures to override it in their early boot code.
+> > I have no idea whether you ever had to do serious work with PT dump, but I
+> > surely have at various occasions including the PTI mess and I definitely
+> > found the size and the level information from holes very useful.
+> 
+> On arm64 we don't have those lines, but equally it's possible they might
+> be useful in the future. So this might be something to add.
+> 
+> As I said in a previous email[3] I was dropping the lines from the
+> output assuming nobody had any objections. Since you find these lines
+> useful, I'll see about reworking the change to retain the lines.
 
-Thanks both for your feedback. I'll start preparing a proper series.
+That would be great and as I saw in the other mail, Mark wants to have them
+as well :)
 
+That reminds me, that I had a patch when dealing with L1TF which printed
+the PFNs so I could verify that the mitigations do what they are supposed
+to do, but that patch got obviously lost somewhere down the road.
 
---=-m+/FyWNmUHFI+YRB/Gte
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
+Thanks,
 
------BEGIN PGP SIGNATURE-----
+	tglx
 
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl04ausACgkQlfZmHno8
-x/5nVAf/bB5PkXsWGRSrKIKToRRuuBU3F3Qkczzlf22bZ/BWtFMeSNlTL1Fz2BXY
-fntHM/mLq5eBmbhnOMljQi4PSaNXX09olyWxJl4W6kJuDNyoAQ4+ncqWubT9Sevw
-Kz7S8rqShYPxZT5vdNUHg/11Clx5lB1FkgmErz+Gc5qUunLClW66KuhTy6pls4vt
-Odp5uE2S6j/YXpM1osSK7Ty3psAoyJ8QEGSlDiFFi4Zx69ycqmiKitmWYaAHCLu5
-9a/KvFdyeE8UrF5sALymEDQr/G3V+G3AUtbI+xqsmTacUpCJYMhMJr2xtb3sWb5L
-+UzW6OpVwWRETgf1XlNpbiIHOrAKKA==
-=Tmgu
------END PGP SIGNATURE-----
-
---=-m+/FyWNmUHFI+YRB/Gte--
-
-
-
---===============4259442342038769723==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4259442342038769723==--
-
-
