@@ -2,115 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2230073D9B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 22:18:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A13B273DBE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 22:19:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0VqQHJo87jg/6jw95C1lMRuq4dd6OVop5+BQk4EMzps=; b=hT/FidjnEdGyT/
-	xQuT3MgeEeFQnpY+mYQKNJs2Bk8r1Dh3zmTt/ru6YnNKIyecPfqPMZl70+QxPfJKiQTTahlTIeS+r
-	FiV9HWZvaMQIpGu0R2vrJpEvpDMFcMhKpIBH49jUhaw6oGi5Uast6Tdyrv9JppUKcRifSzd/GIuI/
-	1dNJ5gRyVGzzljo8hZmVXRCjU/ERq2AsEgnAJdLib1jK4e32WOaJdfHMYVl4dSxIVbHnww5R0taZh
-	k89VEUeQ2cLtvK/V9iLHpkY56E46438n2lZKEmSa7ZeB571CgN4eNA66PcTq2z7zY7IqOcZeaX6p9
-	UQ53uF55XWfFb/fs3ZMg==;
+	List-Owner; bh=ggWU8bogdATpng/JpykWrfJ9zaKzlKj+e70pSq+V5L0=; b=CJDPeULIlYoL5j
+	q5EHaP1fiSJdHJhupRX5EUXtKp4MbiC5tfN3FJ9rNOamXutowljcM54elKzCH6EZY8lhTpDsTJ7Xl
+	ZZQN2wPc+10/mpxmayTaHBPsSxCPO2AY6ZbuMdqvfuXBNvneqK/I9HXLYRDLFZ1K63rBKusjW2AzU
+	c7tKx8YQzYj65vWdn4M7gBNyogSHtSfKLLPLqz+LvXs3j4bCTfw/gg36EI8FAoXSheIMqGgDHGyZw
+	+FJH4oQDlzswZURBZNufsi5m/H552mCmoP+0+wm+MTQAqTjLd87uP5UKVFyGirg619fLD91s4akWP
+	LJV6RuPnxCkmS13IDAAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqNif-0001QE-GA; Wed, 24 Jul 2019 20:18:37 +0000
-Received: from mail-eopbgr820099.outbound.protection.outlook.com
- ([40.107.82.99] helo=NAM01-SN1-obe.outbound.protection.outlook.com)
+	id 1hqNjd-00021a-Nd; Wed, 24 Jul 2019 20:19:37 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqNiT-0001Pg-1L; Wed, 24 Jul 2019 20:18:26 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=dEcxRKaSO2AoIYxNQlEQnkYJF2+19aVRVaTXx8Qw3axYRl/nLGeZfzFMjj1ZYJBmKKaWddySOzvyiciZ/6hJK4xKjxL0dZVinXzwh14S0G1RWOwE4RjVBfpnyl7luLPgd0tYIDXgik518b6P/yG//lB8JPFTMuZsLjFr/uRSobpQL/xyWrti1LDLtZahRvcbXUm8hDvg48/FVdsowPpi77B8GyqOxiolZJupjMAo1i2AaC5dcTTuH8NDbYNHQw+46k+LrdhM4oNZznypB0KV3fOijfVMMH5fO2ZELTUsLPk6N1lwsj5zr7xRCvLx/tRrmL6cQvosIRMOWGuQhFLSjw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=0O8bf3MkktXRPasPPM0aZ8FRhXf2oYT66ZTm5ExM6I0=;
- b=GjhLEl/3aCpE5yBEUbXtH7RFh0N9vPDeyFB+jonv13OOm4aWyqfkCo1pN1W3C6mjbmpPhJ+i/bR6jawkwlTKLSUpYHZ3prIaAap+t4x/tu+UjMcG8KmwX8eeZJvIeLP2nLc4DmcqLZdwAF0RPMUwaoGSCMK6aOJIMa0L3t6Qm7Vc/xR/9akg/PsTeGxNQDj4qUbr8IfEtKw6qEJcbL77erp/nvlgvklh+KMXKF8GD7MfGSE/oPuKlWTBq92AqpSHpXXkVbGg6ImH/zuJ08zTtjz3WWBB4f6b0biPbpFqm1Drzbby17IeZsahVMhLS75esyNZu+e9MXgeCNFhjDUY7Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=wavecomp.com;dmarc=pass action=none
- header.from=mips.com;dkim=pass header.d=mips.com;arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wavecomp.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=0O8bf3MkktXRPasPPM0aZ8FRhXf2oYT66ZTm5ExM6I0=;
- b=rw9cYvw81npIghzHa7jJTgc1qKS8CzgD6T/igdouSV7aKAtnCQJLFdVX/2PpIJOQdRopyH3dpan9mgJOq0s8DcBq3tDVKzZFLg2PkOmiC7UIUPAl27C/gDUf/lQ/qbYDUchMN505PEuBt6ls8gbnJffVAYz3kD3VYMJDx5h89vk=
-Received: from MWHPR2201MB1277.namprd22.prod.outlook.com (10.172.60.12) by
- MWHPR2201MB1136.namprd22.prod.outlook.com (10.174.171.38) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2094.16; Wed, 24 Jul 2019 20:18:21 +0000
-Received: from MWHPR2201MB1277.namprd22.prod.outlook.com
- ([fe80::49d3:37f8:217:c83]) by MWHPR2201MB1277.namprd22.prod.outlook.com
- ([fe80::49d3:37f8:217:c83%6]) with mapi id 15.20.2094.017; Wed, 24 Jul 2019
- 20:18:21 +0000
-From: Paul Burton <paul.burton@mips.com>
-To: Alexandre Ghiti <alex@ghiti.fr>
-Subject: Re: [EXTERNAL][PATCH REBASE v4 00/14] Provide generic top-down mmap
- layout functions
-Thread-Topic: [EXTERNAL][PATCH REBASE v4 00/14] Provide generic top-down mmap
- layout functions
-Thread-Index: AQHVQeTmQ3VcX06rl0WqkHC9YJERUabaNhSA
-Date: Wed, 24 Jul 2019 20:18:20 +0000
-Message-ID: <20190724201819.6bhvyugquhfrldfa@pburton-laptop>
-References: <20190724055850.6232-1-alex@ghiti.fr>
-In-Reply-To: <20190724055850.6232-1-alex@ghiti.fr>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: BYAPR03CA0001.namprd03.prod.outlook.com
- (2603:10b6:a02:a8::14) To MWHPR2201MB1277.namprd22.prod.outlook.com
- (2603:10b6:301:18::12)
-user-agent: NeoMutt/20180716
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=pburton@wavecomp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [12.94.197.246]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: cf1a8fed-1258-4da6-cc22-08d710741252
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:MWHPR2201MB1136; 
-x-ms-traffictypediagnostic: MWHPR2201MB1136:
-x-microsoft-antispam-prvs: <MWHPR2201MB1136D73898811083245B6C6CC1C60@MWHPR2201MB1136.namprd22.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7691;
-x-forefront-prvs: 0108A997B2
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(7916004)(366004)(199004)(189003)(33716001)(6246003)(76176011)(498600001)(256004)(52116002)(66066001)(66946007)(5660300002)(64756008)(66476007)(66556008)(3846002)(66446008)(8676002)(1076003)(4744005)(6116002)(68736007)(4326008)(386003)(6506007)(6916009)(71190400001)(71200400001)(305945005)(102836004)(26005)(6436002)(81156014)(7736002)(2906002)(9686003)(6512007)(229853002)(7416002)(42882007)(58126008)(54906003)(8936002)(53936002)(99286004)(446003)(11346002)(14454004)(44832011)(25786009)(6486002)(186003)(476003)(486006)(81166006)(41533002);
- DIR:OUT; SFP:1102; SCL:1; SRVR:MWHPR2201MB1136;
- H:MWHPR2201MB1277.namprd22.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: wavecomp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: WBLpAxl0Uei/df2NBs1wSm/pUK/0/nZcFDTE1JL7co+n5YffPuoFkkubkl2DnVpFgsg/ShI7v/j6PI9el+OoSH8IU2+aUbrLiI01ePp1Fs53VLA9mtAmRRnZp8+vW42I5fKA1+Ac4MpqTLk6mmK9Jd13L1B872iZfJJW9mQXvPI5y04CDfIUnuvE9/v0W3wCHzAOltlSpJz8W5kShY5DuIFTr4FUed7TIDpYIkdTvdn3S3/wOi3lpaeO6iok/SUjHQNbYc9UG0fA0qngBZ40kdwQlkJHU84J7Dn18x9xrG9/OFSLu8YGXF68xqleN7IbrKMBUD4/6098KibtOs92PqSWKhSVzMJ5H3yXfDTPAgCb0NlEhASAuZMyMmFxm3cz2OVVn3LhXIa/pNmaiSDsVCwK3zx1cFnTDUNs0Q7hteM=
-Content-ID: <FB1BB9830032BE468CCBFB9649F40069@namprd22.prod.outlook.com>
+ id 1hqNj5-0001oA-4P
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 20:19:04 +0000
+Received: by mail-wm1-x342.google.com with SMTP id h19so34220861wme.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 24 Jul 2019 13:19:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=uCyHvJVkRZumARLm11LdjYU2wgRDrjk7Xpd2Pm/4CUM=;
+ b=MMFhBM5Pt5Bu3rS3QrPnpjTF3l1IJpk1QmQmjGaPFr5PvBQwNLRpzX+5/gr6aNSdCZ
+ vvEAbsdi+zHpVh40gCBAf96lB7k/+P16YkMaax7BCa3VCjo20+sJY/pvmfXxP7jDAlzc
+ AWhRW16LHsMMAlx9kYR+te6xxCZz9DYQkUb9cIX+Eig3VWNu65JSMjOmny0yf4uDVhLR
+ DU2YrYMoOP8itf1qPvplk8lYCeENSprEH141M2gm8iDVRP/7Xr9nbG+sdjrPUHqfrU+6
+ 3k8U622iHi2XDVcsN54oFxmrEi6aL45ohjJEk/gDD0CN++uyO007eaD6Cs6hCiJ9dklQ
+ 2oNg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=uCyHvJVkRZumARLm11LdjYU2wgRDrjk7Xpd2Pm/4CUM=;
+ b=inML1hN522mIZjg4kspGzue/XbJc8Bbz6NQ+P40qNeKGFmbva+wAbwJM6Xv2GmyYew
+ 5r1FsP6m/z9jDqZFybEd2DZFnPFZp85G/ZJ9ltbpxH8zYdaoeHrvnjHDSb9qWsKhcvlW
+ KVA1H/Hu1ImV+HRvU1tStLMMyaEiluzqNJe13SOw9KRiO4AhEGOg6HQ88073JlnHNPG+
+ /0WudX7b0BKgVNyn7sFF5jrerljZHoudhJzucpFyzDeE16Tf0NtO1V4Ia7B83teh4Urf
+ fG4D0mCr2BVXMjIRHdD/3pnS7/TTYLzF9KwTJIDF6LvEMyyVfXYWkG1Hl15JdmLOPi3f
+ C8KQ==
+X-Gm-Message-State: APjAAAUzFYO/LCboJaEGh/S1+dazRpJxx15W67bvF9JFrdfrLaEaYPdE
+ 3WQgPcjxMeZPTS1KzvckgqpJz+K2+C6FzWCNcUYiiw==
+X-Google-Smtp-Source: APXvYqzne6wuqU7LConXTs0S6lFIYeqa69IIJz0V4W6ONH7N7hOznm+a/z9PghQX0bLW04gOZC7ziRyCGieZewzto2s=
+X-Received: by 2002:a1c:d10c:: with SMTP id i12mr75821649wmg.152.1563999540296; 
+ Wed, 24 Jul 2019 13:19:00 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: mips.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: cf1a8fed-1258-4da6-cc22-08d710741252
-X-MS-Exchange-CrossTenant-originalarrivaltime: 24 Jul 2019 20:18:20.8213 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 463607d3-1db3-40a0-8a29-970c56230104
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: pburton@wavecomp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR2201MB1136
+References: <3b922aa4-c6d4-e4a4-766d-f324ff77f7b5@linux.com>
+ <40f8b7d8-fafa-ad99-34fb-9c63e34917e2@redhat.com>
+In-Reply-To: <40f8b7d8-fafa-ad99-34fb-9c63e34917e2@redhat.com>
+From: John Stultz <john.stultz@linaro.org>
+Date: Wed, 24 Jul 2019 13:18:47 -0700
+Message-ID: <CALAqxLU199ATrMFa2ARmHOZ3K6ZnOuDLSAqNrTfwOWJaYiW7Yg@mail.gmail.com>
+Subject: Re: Limits for ION Memory Allocator
+To: Laura Abbott <labbott@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_131825_146671_017E838E 
-X-CRM114-Status: GOOD (  10.46  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190724_131903_175312_8D4CE5D9 
+X-CRM114-Status: GOOD (  22.22  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.82.99 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -127,45 +91,134 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Albert Ou <aou@eecs.berkeley.edu>, Kees Cook <keescook@chromium.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Palmer Dabbelt <palmer@sifive.com>,
- Will Deacon <will.deacon@arm.com>, Russell King <linux@armlinux.org.uk>,
- Ralf Baechle <ralf@linux-mips.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-mm@kvack.org" <linux-mm@kvack.org>,
- Luis Chamberlain <mcgrof@kernel.org>,
- "linux-riscv@lists.infradead.org" <linux-riscv@lists.infradead.org>,
- Alexander Viro <viro@zeniv.linux.org.uk>, James Hogan <jhogan@kernel.org>,
- "linux-fsdevel@vger.kernel.org" <linux-fsdevel@vger.kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>,
- "linux-mips@vger.kernel.org" <linux-mips@vger.kernel.org>,
- Christoph Hellwig <hch@lst.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: dri-devel <dri-devel@lists.freedesktop.org>, Linux-MM <linux-mm@kvack.org>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Joel Fernandes <joel@joelfernandes.org>,
+ Daniel Vetter <daniel.vetter@intel.com>,
+ Sumit Semwal <sumit.semwal@linaro.org>,
+ driverdevel <devel@driverdev.osuosl.org>,
+ Christian Brauner <christian@brauner.io>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>, alex.popov@linux.com,
+ Alistair Delva <adelva@google.com>, Todd Kjos <tkjos@android.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ "moderated list:DMA BUFFER SHARING FRAMEWORK" <linaro-mm-sig@lists.linaro.org>,
+ Riley Andrews <riandrews@android.com>, syzkaller <syzkaller@googlegroups.com>,
+ Martijn Coenen <maco@android.com>, Dmitry Vyukov <dvyukov@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ LKML <linux-kernel@vger.kernel.org>,
+ =?UTF-8?B?QXJ2ZSBIasO4bm5ldsOlZw==?= <arve@android.com>,
+ Mark Brown <broonie@kernel.org>, Hridya Valsaraju <hridya@google.com>,
+ Brian Starkey <brian.starkey@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Alexandre,
+On Wed, Jul 24, 2019 at 12:36 PM Laura Abbott <labbott@redhat.com> wrote:
+>
+> On 7/17/19 12:31 PM, Alexander Popov wrote:
+> > Hello!
+> >
+> > The syzkaller [1] has a trouble with fuzzing the Linux kernel with ION Memory
+> > Allocator.
+> >
+> > Syzkaller uses several methods [2] to limit memory consumption of the userspace
+> > processes calling the syscalls for testing the kernel:
+> >   - setrlimit(),
+> >   - cgroups,
+> >   - various sysctl.
+> > But these methods don't work for ION Memory Allocator, so any userspace process
+> > that has access to /dev/ion can bring the system to the out-of-memory state.
+> >
+> > An example of a program doing that:
+> >
+> >
+> > #include <sys/types.h>
+> > #include <sys/stat.h>
+> > #include <fcntl.h>
+> > #include <stdio.h>
+> > #include <linux/types.h>
+> > #include <sys/ioctl.h>
+> >
+> > #define ION_IOC_MAGIC         'I'
+> > #define ION_IOC_ALLOC         _IOWR(ION_IOC_MAGIC, 0, \
+> >                                     struct ion_allocation_data)
+> >
+> > struct ion_allocation_data {
+> >       __u64 len;
+> >       __u32 heap_id_mask;
+> >       __u32 flags;
+> >       __u32 fd;
+> >       __u32 unused;
+> > };
+> >
+> > int main(void)
+> > {
+> >       unsigned long i = 0;
+> >       int fd = -1;
+> >       struct ion_allocation_data data = {
+> >               .len = 0x13f65d8c,
+> >               .heap_id_mask = 1,
+> >               .flags = 0,
+> >               .fd = -1,
+> >               .unused = 0
+> >       };
+> >
+> >       fd = open("/dev/ion", 0);
+> >       if (fd == -1) {
+> >               perror("[-] open /dev/ion");
+> >               return 1;
+> >       }
+> >
+> >       while (1) {
+> >               printf("iter %lu\n", i);
+> >               ioctl(fd, ION_IOC_ALLOC, &data);
+> >               i++;
+> >       }
+> >
+> >       return 0;
+> > }
+> >
+> >
+> > I looked through the code of ion_alloc() and didn't find any limit checks.
+> > Is it currently possible to limit ION kernel allocations for some process?
+> >
+> > If not, is it a right idea to do that?
+> > Thanks!
+> >
+>
+> Yes, I do think that's the right approach. We're working on moving Ion
+> out of staging and this is something I mentioned to John Stultz. I don't
+> think we've thought too hard about how to do the actual limiting so
+> suggestions are welcome.
 
-On Wed, Jul 24, 2019 at 01:58:36AM -0400, Alexandre Ghiti wrote:
-> Hi Andrew,
-> 
-> This is simply a rebase on top of next-20190719, where I added various
-> Acked/Reviewed-by from Kees and Catalin and a note on commit 08/14 suggested
-> by Kees regarding the removal of STACK_RND_MASK that is safe doing.
-> 
-> I would have appreciated a feedback from a mips maintainer but failed to get
-> it: can you consider this series for inclusion anyway ? Mips parts have been
-> reviewed-by Kees.
+In part the dmabuf heaps allow for separate heap devices, so we can
+have finer grained permissions to the specific heaps.  But that
+doesn't provide any controls on how much memory one process could
+allocate using the device if it has permission.
 
-Whilst skimming email on vacation I hadn't spotted how extensive the
-changes in v4 were after acking v3... In any case, for patches 11-13:
+I suspect the same issue is present with any of the dmabuf exporters
+(gpu/display drivers, etc), so this is less of an ION/dmabuf heap
+issue and more of a dmabuf core accounting issue.
 
-    Acked-by: Paul Burton <paul.burton@mips.com>
+Another practical complication is that with Android these days, I
+believe the gralloc code lives in the HIDL-ized
+android.hardware.graphics.allocator@2.0-service HAL, which does the
+buffer allocations on behalf of requests sent over the binder IPC
+interface. So with all dma-buf allocations effectively going through
+that single process, I'm not sure we would want to put per-process
+limits on the allocator.  Instead, I suspect we'd want the memory
+covered by the dmabuf to be accounted against processes that have the
+dmabuf fd still open?
 
-Thanks,
-    Paul
+I know Android has some logic with their memtrack HAL to I believe try
+to do accounting of gpu memory against various processes, but I've not
+looked at that in detail recently.
+
+Todd/Joel: Any input here?
+
+thanks
+-john
 
 _______________________________________________
 linux-arm-kernel mailing list
