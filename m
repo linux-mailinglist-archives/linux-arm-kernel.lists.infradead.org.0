@@ -2,54 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 762C372D51
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 13:20:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0375E72D52
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 13:21:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IM+tNjnZkOfVxK//LQJCjowOHxCALgttJybkW88rcic=; b=VIgU0XtKLAFtS5
-	cTvLR5QZgS/obMxSkxNggGXRfi1xn4ZSZ51rjD6gh8PbZDWk5tMYtfe4mPJXiHKUgBa5Z1TLn0Wbl
-	NhP7m2EQDCdxp1n7V0+KGvlrHNhGXUfaw9zJYCwmAigjIZmfKnD/24y8gV0S54nKuBAcPjedpiu15
-	Js4x+lFwHXlc2CK7ElPZ5luV89Fcr0C+jYYi2T+dDu2m6XNiE8BMmzxVBZ8OIwFwRfKMGfBKb6PCH
-	uuSavBAADdhA7TMgrNoj0QtJ2PX3RbOrJvItNGP8u5swx+hzoh19gJQiPQNtaBMjKkPXonXOSIIH/
-	aV8qaZOdNKUJ6G/gBuhA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=trL+IO3rAzdiN6+gvx4ujAoYBVoCzxT9dnjHxmhkmwI=; b=mIQ94WI9q6mqQ1
+	7kFXl9W+OgkOUVOBf/fgV9w1+L3ZAiIZ27qkLisi3mhsN7DBeKF4Axhy78YWjSyxOoqjf8P/f5lrP
+	rOkflPU7QPshZeqjd3uArWmESRL670hSRUCvrWAXL81mjy4e31PvV8Xx+9/HgBx1L90pyocqlagQl
+	KR3djrs0hhfrMZMqoS6tS0g6kWdBU42QhNvT8EBOc3VjVNEemFKR5v9GXo7j0YVLCwSO5RX92VMH2
+	xctqbxZPAufOLZuDK9jXhfcW/IulC1hOH0LNdx2UguMeBQzviwmCqOt8JdB7Y0VJLRl2rcmUBkmJx
+	/FkJiPH+/ZOOlRbjeyUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqFKE-0005QP-GB; Wed, 24 Jul 2019 11:20:50 +0000
-Received: from kirsty.vergenet.net ([202.4.237.240])
+	id 1hqFKT-0005ZB-0S; Wed, 24 Jul 2019 11:21:05 +0000
+Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hqFK3-0005Pm-Sb
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 11:20:41 +0000
-Received: from penelope.horms.nl (ip4dab7138.direct-adsl.nl [77.171.113.56])
- by kirsty.vergenet.net (Postfix) with ESMTPA id 38C5425B7BE;
- Wed, 24 Jul 2019 21:20:38 +1000 (AEST)
-Received: by penelope.horms.nl (Postfix, from userid 7100)
- id 20582E2209B; Wed, 24 Jul 2019 13:20:36 +0200 (CEST)
-Date: Wed, 24 Jul 2019 13:20:36 +0200
-From: Simon Horman <horms@verge.net.au>
-To: Yoshihiro Kaneko <ykaneko0929@gmail.com>
-Subject: Re: [PATCH] arm64: dts: renesas: r8a7795: sort nodes
-Message-ID: <20190724112035.wdns4s7q7ttapxld@verge.net.au>
-References: <1563461006-19658-1-git-send-email-ykaneko0929@gmail.com>
+ id 1hqFKB-0005Ud-EB
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 11:20:48 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7FBB8337;
+ Wed, 24 Jul 2019 04:20:46 -0700 (PDT)
+Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ DA6C13F71A; Wed, 24 Jul 2019 04:20:45 -0700 (PDT)
+Subject: Re: [PATCH 2/3] KVM: arm/arm64: vgic-its: Do not execute invalidate
+ MSI-LPI translation cache on movi command
+To: Xiangyou Xie <xiexiangyou@huawei.com>
+References: <20190724090437.49952-1-xiexiangyou@huawei.com>
+ <20190724090437.49952-3-xiexiangyou@huawei.com>
+From: Marc Zyngier <marc.zyngier@arm.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
+ 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
+ Z46HaNmN2hZS/oJ69c1DI5Rcww==
+Organization: ARM Ltd
+Message-ID: <cb0aad13-6928-820a-1592-b3345c87f9c8@arm.com>
+Date: Wed, 24 Jul 2019 12:20:43 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1563461006-19658-1-git-send-email-ykaneko0929@gmail.com>
-Organisation: Horms Solutions BV
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <20190724090437.49952-3-xiexiangyou@huawei.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_042040_074352_44230DCE 
-X-CRM114-Status: UNSURE (   9.04  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190724_042047_620112_5805D584 
+X-CRM114-Status: GOOD (  13.13  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [202.4.237.240 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -63,36 +108,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-renesas-soc@vger.kernel.org, Magnus Damm <magnus.damm@gmail.com>,
- Geert Uytterhoeven <geert@linux-m68k.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
+ kvm@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jul 18, 2019 at 11:43:26PM +0900, Yoshihiro Kaneko wrote:
-> Sort nodes.
-> 
-> If node address is present
->    * Sort by node address, grouping all nodes with the same compat string
->      and sorting the group alphabetically.
-> Else
->    * Sort alphabetically
-> 
-> This should not have any run-time effect.
-> 
-> Signed-off-by: Yoshihiro Kaneko <ykaneko0929@gmail.com>
-> ---
-> 
-> This patch is based on the devel branch of Simon Horman's renesas tree.
+On 24/07/2019 10:04, Xiangyou Xie wrote:
+> It is not necessary to invalidate the lpi translation cache when the
+> virtual machine executes the movi instruction to adjust the affinity of
+> the interrupt. Irqbalance will adjust the interrupt affinity in a short
+> period of time to achieve the purpose of interrupting load balancing,
+> but this does not affect the contents of the lpi translation cache.
 
-Going forwards patches should be based on the master branch
-of Geert Uytterhoeven's renesas-devel tree.
+What does irqbalance have to do with it? We're dealing with the GIC
+architecture here, not with userspace.
 
-This patch apply to apply cleanly there.
+If the guest issues a MOVI command to a RD where GICR_CTLR.EnableLPI is
+0, and that we use an existing cached translation, we are going to make
+the interrupt pending for that RD. This is direct violation of the
+architecture, which says:
 
-Reviewed-by: Simon Horman <horms+renesas@verge.net.au>
+"LPI support is disabled. Any doorbell interrupt generated as a result
+of a write to a virtual LPI register must be discarded, and any ITS
+translation requests or commands involving LPIs in this Redistributor
+are ignored."
+
+So the interrupt cannot be made pending. No IFs, no BUTs. If you really
+want to optimize it, check that the target RD is actually enabled and
+only invalidate in this particular case.
+
+Your guest would have to have a rate of MOVI that is comparable to that
+of the interrupts for it to show on any radar though...
+
+Thanks,
+
+	M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
