@@ -2,59 +2,133 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 49EBE72C24
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 12:10:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B16B72C38
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 12:16:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=slmRc9ShBfPbejyNHFa7/1DOfJ9OtqcNlqZaARfCokg=; b=meRI6Nao24xQtNJwOoMyW2qwC
-	+f13peaQIoMwUneDIAo1/ZXPsST4FhrSzeo4UT5QB8l37tASn1GfeRWcyGm1PYs1E2mCjvxUdGpof
-	d7fb+rq1FWRRLfDymrjshvhjkQ/UFXfU1aQjMaamzhgsRMtC9a2eJGBLytH+2RcATnmuQAu9VhWuA
-	ub3PzSsMTVSAG64oMkTO9LIG/9qHaXItGcvElpV0nGWwKkwbojHKvvaBSAsb8srMOJxEEHqdcfIPI
-	q7qC5ethZRaR2jaCmPesUoaeS5BReb9jSI6TTiscrFz8+fVwjBLDzlO11jptTGu2KdQcs3UI0rQaV
-	iKuCMMqqA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=G6pCSNdubdEPUzhhYAc6mfXMCeqx45DPMj5h2kg4tKI=; b=Uag1/JNWEkNUry
+	+7dQoA8nMixp7qd9obaoE/RsvWVufdoosAhpXOW9JVVyZd2bZlW+pRhlRdXDMebVKiLXxlYrQKoMx
+	7vRIbjr1OufYY2xjBgsvRrtDz5e3U5IjmAHaw4TR2uSX+bGJU8oqbGpL9Fz2wZTZ/ZggGru/bEBH3
+	tuDHEIoA4Ez1b9U/N07+GvYANU1U53xPPIFMJ26lnBZc6m4KdZayf/pdXPfMYfK/zjg7GVEeq0qsJ
+	n0iI9fs5tjmRIEvHWynfvPdqVs9tKEkPdkPU2ob2HhsEempFIakktvrGpFYtzAHhy5mHw6gSA/Ak7
+	x9evCuIozxNooyhQKqHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqEEK-00074r-Vv; Wed, 24 Jul 2019 10:10:41 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hqEE5-00074L-5E
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 10:10:26 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8B657337;
- Wed, 24 Jul 2019 03:10:24 -0700 (PDT)
-Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 862743F71F;
- Wed, 24 Jul 2019 03:10:23 -0700 (PDT)
-Subject: Re: [PATCH] dma: qcom: hidma_mgmt: Add of_node_put() before goto
-To: Nishka Dasgupta <nishkadg.linux@gmail.com>, okaya@kernel.org,
- agross@kernel.org, vkoul@kernel.org, dan.j.williams@intel.com,
- linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
- dmaengine@vger.kernel.org
-References: <20190723103543.7888-1-nishkadg.linux@gmail.com>
- <b5b76ef6-c5f3-bab0-e981-cd47c7264959@arm.com>
- <6ef666c3-a155-130d-24bc-8c04b3485d44@gmail.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <9d5a995d-74b6-742a-f5c2-ac9227f7cae0@arm.com>
-Date: Wed, 24 Jul 2019 11:10:22 +0100
+	id 1hqEJa-0003uH-CO; Wed, 24 Jul 2019 10:16:06 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hqEJL-0003tZ-HJ
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 10:15:53 +0000
+Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
+ by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20190724101549euoutp024596ecc56f06f2639de80f4619831f19~0UGFEgO8C1082110821euoutp02T
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 24 Jul 2019 10:15:49 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
+ 20190724101549euoutp024596ecc56f06f2639de80f4619831f19~0UGFEgO8C1082110821euoutp02T
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1563963349;
+ bh=VgfVrkM7RnbML6MfPA1/+fseqSPr/HcYgdilfOy6ZNA=;
+ h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
+ b=Pacv9sO3Olp0BDQaJt3zgErH8x2mtnLmChkXQnWF+H+OPhfVL7HhJyiEoll8LAAIk
+ iSl51RSDCV9pamQI0+1pvM+PXyq/2K0oFE+GBX7JNvZw7iD3NggkOFLQE5L3QchYp3
+ 3aw6C7Rn6iSV2yK+9we5+R9zKALkB/j+O/8m6xms=
+Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTP id
+ 20190724101548eucas1p2461aaec56a443c46b4992b2f9bf1b30a~0UGEX79oN1335213352eucas1p2J;
+ Wed, 24 Jul 2019 10:15:48 +0000 (GMT)
+Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
+ eusmges2new.samsung.com (EUCPMTA) with SMTP id 09.F9.04377.4DF283D5; Wed, 24
+ Jul 2019 11:15:48 +0100 (BST)
+Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20190724101547eucas1p240814a5a29b21a6d59665ee76fbf4d28~0UGDsMoVk0872508725eucas1p2S;
+ Wed, 24 Jul 2019 10:15:47 +0000 (GMT)
+Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
+ eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20190724101547eusmtrp11216b5c524db02077f03620ce50883ec~0UGDeAdtz0333803338eusmtrp1r;
+ Wed, 24 Jul 2019 10:15:47 +0000 (GMT)
+X-AuditID: cbfec7f4-5632c9c000001119-c0-5d382fd4e45c
+Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
+ eusmgms2.samsung.com (EUCPMTA) with SMTP id 96.30.04140.3DF283D5; Wed, 24
+ Jul 2019 11:15:47 +0100 (BST)
+Received: from [106.120.51.20] (unknown [106.120.51.20]) by
+ eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
+ 20190724101546eusmtip15fe00697368d391e9d2a79e54f65ec75~0UGCuwJAq1498014980eusmtip1P;
+ Wed, 24 Jul 2019 10:15:46 +0000 (GMT)
+Subject: Re: [PATCH v4 3/5] drivers: devfreq: events: extend events by type
+ of counted data
+To: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-pm@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, cw00.choi@samsung.com
+From: Lukasz Luba <l.luba@partner.samsung.com>
+Message-ID: <37af143f-a585-a28a-a36f-2ed25c5b6d3b@partner.samsung.com>
+Date: Wed, 24 Jul 2019 12:15:45 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ Thunderbird/60.7.1
 MIME-Version: 1.0
-In-Reply-To: <6ef666c3-a155-130d-24bc-8c04b3485d44@gmail.com>
-Content-Language: en-GB
+In-Reply-To: <20190605091236.24263-4-l.luba@partner.samsung.com>
+Content-Language: en-US
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrNKsWRmVeSWpSXmKPExsWy7djP87pX9C1iDb5MEbLYOGM9q8X1L89Z
+ LeYfOcdq0f/4NbPF+fMb2C3ONr1ht9j0+BqrxeVdc9gsPvceYbSYcX4fk8XaI3fZLZZev8hk
+ cbtxBZtF694j7BaH37SzWnw78YjRQcBjzbw1jB47Z91l99i0qpPNY/OSeo++LasYPT5vkgtg
+ i+KySUnNySxLLdK3S+DK+HflJWPBXM2K5dNWsTUw3pbvYuTkkBAwkXj88z97FyMXh5DACkaJ
+ LTe6oZwvjBKHHpxlhHA+M0osbtjGDNNy8M4uJojEckaJH+uboareMko0L+kEynBwCAvESrSt
+ NgOJiwjsYpQ4/WM1M4jDDDLq5INrrCBFbAJ6EjtWFYJM5RVwk9g/dTobiM0ioCrxfPUeFhBb
+ VCBC4vKWXYwQNYISJ2c+AYtzCjhInG38C2YzC4hL3HoynwnClpfY/nYO2C4JgUYOiZWXLrBC
+ nO0i8e/8dKgXhCVeHd/CDmHLSJye3MMCYRdLNPQuZISwayQe98+FqrGWOHz8ItjNzAKaEut3
+ 6UOEHSUW9D9iAQlLCPBJ3HgrCHECn8SkbSCbQMK8Eh1tQhDVGhJbei4wQdhiEsvXTGOfwKg0
+ C8ljs5A8MwvJM7MQ9i5gZFnFKJ5aWpybnlpslJdarlecmFtcmpeul5yfu4kRmORO/zv+ZQfj
+ rj9JhxgFOBiVeHgrmMxjhVgTy4orcw8xSnAwK4nwBjaYxQrxpiRWVqUW5ccXleakFh9ilOZg
+ URLnrWZ4EC0kkJ5YkpqdmlqQWgSTZeLglGpgzFIplbuTceo4b/MElqyg1IjaTIn+97yTnVyf
+ rSpNfa4sGhXDX8X+3F68U6rmxnpJ45tTPrXvWmxqLXx3pbwaR/7N09Xdk7ONT+7QCpHukInT
+ V7Oacv135BzuNxp1/ROi64LCf0ltEDHTK1yQInpU7+3jxzv6Wy4/O9lyKHj58iDH423i+nFK
+ LMUZiYZazEXFiQDgX1TcbgMAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFvrAIsWRmVeSWpSXmKPExsVy+t/xu7qX9S1iDU5slbXYOGM9q8X1L89Z
+ LeYfOcdq0f/4NbPF+fMb2C3ONr1ht9j0+BqrxeVdc9gsPvceYbSYcX4fk8XaI3fZLZZev8hk
+ cbtxBZtF694j7BaH37SzWnw78YjRQcBjzbw1jB47Z91l99i0qpPNY/OSeo++LasYPT5vkgtg
+ i9KzKcovLUlVyMgvLrFVija0MNIztLTQMzKx1DM0No+1MjJV0rezSUnNySxLLdK3S9DL+Hfl
+ JWPBXM2K5dNWsTUw3pbvYuTkkBAwkTh4ZxdTFyMXh5DAUkaJ2/f3MUIkxCQm7dvODmELS/y5
+ 1sUGUfSaUeL+7anMIAlhgViJpkuXWUESIgK7GCW2/24BG8Us8JlRYvqay8wQLScZJT6uPglU
+ xsHBJqAnsWNVIUg3r4CbxP6p09lAbBYBVYnnq/ewgNiiAhESfW2z2SBqBCVOznwCFucUcJA4
+ 2/gXzGYWMJOYt/khM4QtLnHryXwmCFteYvvbOcwTGIVmIWmfhaRlFpKWWUhaFjCyrGIUSS0t
+ zk3PLTbSK07MLS7NS9dLzs/dxAiM7W3Hfm7Zwdj1LvgQowAHoxIPbwWTeawQa2JZcWXuIUYJ
+ DmYlEd7ABrNYId6UxMqq1KL8+KLSnNTiQ4ymQM9NZJYSTc4Hpp28knhDU0NzC0tDc2NzYzML
+ JXHeDoGDMUIC6YklqdmpqQWpRTB9TBycUg2MZUYNH3umHPvVkyIq/trEY0O2jMcJ/04NpRmr
+ GCrnXucX2JGTI8NabfZtSlaMv83p/EXH3G44iaW/vK0f2/637+CxHaIMT9tnzpANPCv2JdpO
+ 6Z+hzb/td9M3t9pMeNEzZ5/YGWfGksBIafPNZirXa6XkTh5a6RS9TnfFLbFaM9UbZQ7/+N2V
+ WIozEg21mIuKEwG+51A1AwMAAA==
+X-CMS-MailID: 20190724101547eucas1p240814a5a29b21a6d59665ee76fbf4d28
+X-Msg-Generator: CA
+X-RootMTR: 20190605091303eucas1p27177d349e0f2bd37bf582dbd7266321a
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20190605091303eucas1p27177d349e0f2bd37bf582dbd7266321a
+References: <20190605091236.24263-1-l.luba@partner.samsung.com>
+ <CGME20190605091303eucas1p27177d349e0f2bd37bf582dbd7266321a@eucas1p2.samsung.com>
+ <20190605091236.24263-4-l.luba@partner.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_031025_287382_BFB57C24 
-X-CRM114-Status: GOOD (  21.76  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190724_031551_778798_34B9F02C 
+X-CRM114-Status: GOOD (  27.86  )
+X-Spam-Score: -5.1 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.12 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,73 +140,162 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: mark.rutland@arm.com, willy.mh.wolff.ml@gmail.com, kgene@kernel.org,
+ b.zolnierkie@samsung.com, krzk@kernel.org, kyungmin.park@samsung.com,
+ robh+dt@kernel.org, myungjoo.ham@samsung.com, s.nawrocki@samsung.com,
+ m.szyprowski@samsung.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjQvMDcvMjAxOSAwOTowNSwgTmlzaGthIERhc2d1cHRhIHdyb3RlOgo+IE9uIDIzLzA3LzE5
-IDU6MzIgUE0sIFJvYmluIE11cnBoeSB3cm90ZToKPj4gT24gMjMvMDcvMjAxOSAxMTozNSwgTmlz
-aGthIERhc2d1cHRhIHdyb3RlOgo+Pj4gRWFjaCBpdGVyYXRpb24gb2YgZm9yX2VhY2hfYXZhaWxh
-YmxlX2NoaWxkX29mX25vZGUgcHV0cyB0aGUgcHJldmlvdXMKPj4+IG5vZGUsIGJ1dCBpbiB0aGUg
-Y2FzZSBvZiBhIGdvdG8gZnJvbSB0aGUgbWlkZGxlIG9mIHRoZSBsb29wLCB0aGVyZSBpcwo+Pj4g
-bm8gcHV0LCB0aHVzIGNhdXNpbmcgYSBtZW1vcnkgbGVhay4gQWRkIGFuIG9mX25vZGVfcHV0IGJl
-Zm9yZSB0aGUKPj4+IGdvdG8gaW4gNCBwbGFjZXMuCj4+Cj4+IFdoeSBub3QganVzdCBhZGQgaXQg
-b25jZSBhdCB0aGUgIm91dCIgbGFiZWwgaXRzZWxmPyAoQ29uc2lkZXIgdGhlIAo+PiBjb25kaXRp
-b25zIGZvciB0aGUgbG9vcCB0ZXJtaW5hdGluZyBuYXR1cmFsbHkpCj4gCj4gSWYgdGhlIGxvb3Ag
-dGVybWluYXRlcyBuYXR1cmFsbHkgdGhlbiwgYXMgZmFyIGFzIEkgdW5kZXJzdGFuZCwgY2hpbGQg
-Cj4gd2lsbCBiZSBwdXQgYnkgdGhlIGxvb3AgaXRzZWxmOyB0aGVuIGFuIGV4dHJhIG9mX25vZGVf
-cHV0KCkgdW5kZXIgdGhlIAo+IG91dCBsYWJlbCB3b3VsZCBwdXQgdGhlIGNoaWxkIG5vZGUgZXZl
-biB0aG91Z2ggaXQgaGFzIGFscmVhZHkgYmVlbiBwdXQuIAo+IElmIEknbSB1bmRlcnN0YW5kaW5n
-IHRoaXMgY29ycmVjdGx5IChhbmQgSSBtaWdodCBub3QgYmUpIGlzIGl0IG9rYXkgdG8gCj4gZGVj
-cmVtZW50IHJlZmNvdW50IG1vcmUgdGltZXMgdGhhdCBpdCBpcyBpbmNyZW1lbnRlZD8KCkFoLCBi
-dXQgaXMgaXQgcmVhbGx5IHRoZSBzYW1lIHRoaW5nIGJlaW5nIHB1dCBib3RoIHRpbWVzPyBUaGUg
-bG9vcCAKKml0ZXJhdG9yKiB3aWxsIGluZGVlZCBkcm9wIGl0cyByZWZlcmVuY2Ugb24gdGhlIGxh
-c3QgdmFsaWQgY2hpbGQgbm9kZSwgCmJ1dCB3aGF0J3MgdGhlIGFjdHVhbCB0ZXJtaW5hdGlvbiBj
-b25kaXRpb24sIGFuZCB0aHVzIHRoZSBzdGF0ZSAKYWZ0ZXJ3YXJkcz8gOykKClJvYmluLgoKPj4g
-QW5kIGlmIHlvdSdyZSBjbGVhbmluZyB1cCB0aGUgcmVmY291bnRpbmcgaGVyZSBhbnl3YXkgdGhl
-biBJJ2QgYWxzbyAKPj4gbm90ZSB0aGF0IHRoZSByZWZlcmVuY2UgaGVsZCBieSB0aGUgbG9vcCBp
-dGVyYXRvciBtYWtlcyB0aGUgZXh0cmEgCj4+IGdldC9wdXQgaW5zaWRlIHRoYXQgbG9vcCBlbnRp
-cmVseSByZWR1bmRhbnQuIEl0J3MgYWx3YXlzIHdvcnRoIHRha2luZyAKPj4gYSBsb29rIGF0IHRo
-ZSB3aWRlciBjb250ZXh0IHJhdGhlciB0aGFuIGp1c3QgYmxpbmRseSBmb2N1c2luZyBvbiB3aGF0
-IAo+PiBhIGdpdmVuIHNjcmlwdCBwaWNrcyB1cCAtIGl0J3MgZmFpcmx5IHJhcmUgdGhhdCBhIHBp
-ZWNlIG9mIGNvZGUgaGFzIAo+PiBvbmUgb2J2aW91cyBpc3N1ZSBidXQgaXMgb3RoZXJ3aXNlIHBl
-cmZlY3QuCj4gCj4gVGhhbmvCoCB5b3UgZm9yIHBvaW50aW5nIHRoaXMgb3V0OyBJJ3ZlIGFkZGVk
-IGl0IGluIHYyLgo+IAo+IFRoYW5raW5nIHlvdSwKPiBOaXNoa2EKPj4gUm9iaW4uCj4+Cj4+PiBJ
-c3N1ZSBmb3VuZCB3aXRoIENvY2NpbmVsbGUuCj4+Pgo+Pj4gU2lnbmVkLW9mZi1ieTogTmlzaGth
-IERhc2d1cHRhIDxuaXNoa2FkZy5saW51eEBnbWFpbC5jb20+Cj4+PiAtLS0KPj4+IMKgIGRyaXZl
-cnMvZG1hL3Fjb20vaGlkbWFfbWdtdC5jIHwgMTMgKysrKysrKysrKy0tLQo+Pj4gwqAgMSBmaWxl
-IGNoYW5nZWQsIDEwIGluc2VydGlvbnMoKyksIDMgZGVsZXRpb25zKC0pCj4+Pgo+Pj4gZGlmZiAt
-LWdpdCBhL2RyaXZlcnMvZG1hL3Fjb20vaGlkbWFfbWdtdC5jIAo+Pj4gYi9kcml2ZXJzL2RtYS9x
-Y29tL2hpZG1hX21nbXQuYwo+Pj4gaW5kZXggMzAyMmQ2NmU3YTMzLi4yMDlhZGM2Y2VhYmUgMTAw
-NjQ0Cj4+PiAtLS0gYS9kcml2ZXJzL2RtYS9xY29tL2hpZG1hX21nbXQuYwo+Pj4gKysrIGIvZHJp
-dmVycy9kbWEvcWNvbS9oaWRtYV9tZ210LmMKPj4+IEBAIC0zNjIsMTYgKzM2MiwyMiBAQCBzdGF0
-aWMgaW50IF9faW5pdCAKPj4+IGhpZG1hX21nbXRfb2ZfcG9wdWxhdGVfY2hhbm5lbHMoc3RydWN0
-IGRldmljZV9ub2RlICpucCkKPj4+IMKgwqDCoMKgwqDCoMKgwqDCoCBzdHJ1Y3QgcGxhdGZvcm1f
-ZGV2aWNlICpuZXdfcGRldjsKPj4+IMKgwqDCoMKgwqDCoMKgwqDCoCByZXQgPSBvZl9hZGRyZXNz
-X3RvX3Jlc291cmNlKGNoaWxkLCAwLCAmcmVzWzBdKTsKPj4+IC3CoMKgwqDCoMKgwqDCoCBpZiAo
-IXJldCkKPj4+ICvCoMKgwqDCoMKgwqDCoCBpZiAoIXJldCkgewo+Pj4gK8KgwqDCoMKgwqDCoMKg
-wqDCoMKgwqAgb2Zfbm9kZV9wdXQoY2hpbGQpOwo+Pj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqAgZ290byBvdXQ7Cj4+PiArwqDCoMKgwqDCoMKgwqAgfQo+Pj4gwqDCoMKgwqDCoMKgwqDCoMKg
-IHJldCA9IG9mX2FkZHJlc3NfdG9fcmVzb3VyY2UoY2hpbGQsIDEsICZyZXNbMV0pOwo+Pj4gLcKg
-wqDCoMKgwqDCoMKgIGlmICghcmV0KQo+Pj4gK8KgwqDCoMKgwqDCoMKgIGlmICghcmV0KSB7Cj4+
-PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBvZl9ub2RlX3B1dChjaGlsZCk7Cj4+PiDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoCBnb3RvIG91dDsKPj4+ICvCoMKgwqDCoMKgwqDCoCB9Cj4+PiDC
-oMKgwqDCoMKgwqDCoMKgwqAgcmV0ID0gb2ZfaXJxX3RvX3Jlc291cmNlKGNoaWxkLCAwLCAmcmVz
-WzJdKTsKPj4+IC3CoMKgwqDCoMKgwqDCoCBpZiAocmV0IDw9IDApCj4+PiArwqDCoMKgwqDCoMKg
-wqAgaWYgKHJldCA8PSAwKSB7Cj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBvZl9ub2RlX3B1
-dChjaGlsZCk7Cj4+PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBnb3RvIG91dDsKPj4+ICvC
-oMKgwqDCoMKgwqDCoCB9Cj4+PiDCoMKgwqDCoMKgwqDCoMKgwqAgbWVtc2V0KCZwZGV2aW5mbywg
-MCwgc2l6ZW9mKHBkZXZpbmZvKSk7Cj4+PiDCoMKgwqDCoMKgwqDCoMKgwqAgcGRldmluZm8uZndu
-b2RlID0gJmNoaWxkLT5md25vZGU7Cj4+PiBAQCAtMzg2LDYgKzM5Miw3IEBAIHN0YXRpYyBpbnQg
-X19pbml0IAo+Pj4gaGlkbWFfbWdtdF9vZl9wb3B1bGF0ZV9jaGFubmVscyhzdHJ1Y3QgZGV2aWNl
-X25vZGUgKm5wKQo+Pj4gwqDCoMKgwqDCoMKgwqDCoMKgIG5ld19wZGV2ID0gcGxhdGZvcm1fZGV2
-aWNlX3JlZ2lzdGVyX2Z1bGwoJnBkZXZpbmZvKTsKPj4+IMKgwqDCoMKgwqDCoMKgwqDCoCBpZiAo
-SVNfRVJSKG5ld19wZGV2KSkgewo+Pj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcmV0ID0g
-UFRSX0VSUihuZXdfcGRldik7Cj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBvZl9ub2RlX3B1
-dChjaGlsZCk7Cj4+PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBnb3RvIG91dDsKPj4+IMKg
-wqDCoMKgwqDCoMKgwqDCoCB9Cj4+PiDCoMKgwqDCoMKgwqDCoMKgwqAgb2Zfbm9kZV9nZXQoY2hp
-bGQpOwo+Pj4KPiAKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMu
-aW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L2xpbnV4LWFybS1rZXJuZWwK
+Hi Chanwoo,
+
+Could you have a look a this patch, please?
+This patch has been rewritten accorifing to your suggestion.
+Krzysztof tried to apply 5/5 DT patch on his current branch,
+but it is missing earlier stuff.
+The other patches have needed ACKs so could go through devfreq tree
+probably, but this one left.
+
+Regards,
+Lukasz
+
+On 6/5/19 11:12 AM, Lukasz Luba wrote:
+> This patch adds posibility to choose what type of data should be counted
+> by the PPMU counter. Now the type comes from DT where the event has been
+> defined. When there is no 'event-data-type' the default value is used,
+> which is 'read+write data in bytes'.
+> It is needed when you want to know not only read+write data bytes but
+> i.e. only write data in byte, or number of read requests, etc.
+> 
+> Signed-off-by: Lukasz Luba <l.luba@partner.samsung.com>
+> ---
+>   drivers/devfreq/event/exynos-ppmu.c | 60 ++++++++++++++++++++---------
+>   include/linux/devfreq-event.h       |  6 +++
+>   2 files changed, 47 insertions(+), 19 deletions(-)
+> 
+> diff --git a/drivers/devfreq/event/exynos-ppmu.c b/drivers/devfreq/event/exynos-ppmu.c
+> index 17f3c86a6f00..12f637320e9e 100644
+> --- a/drivers/devfreq/event/exynos-ppmu.c
+> +++ b/drivers/devfreq/event/exynos-ppmu.c
+> @@ -161,9 +161,9 @@ static int exynos_ppmu_set_event(struct devfreq_event_dev *edev)
+>   	if (ret < 0)
+>   		return ret;
+>   
+> -	/* Set the event of Read/Write data count  */
+> +	/* Set the event of proper data type monitoring */
+>   	ret = regmap_write(info->regmap, PPMU_BEVTxSEL(id),
+> -				PPMU_RO_DATA_CNT | PPMU_WO_DATA_CNT);
+> +			   edev->desc->data_type);
+>   	if (ret < 0)
+>   		return ret;
+>   
+> @@ -375,23 +375,11 @@ static int exynos_ppmu_v2_set_event(struct devfreq_event_dev *edev)
+>   	if (ret < 0)
+>   		return ret;
+>   
+> -	/* Set the event of Read/Write data count  */
+> -	switch (id) {
+> -	case PPMU_PMNCNT0:
+> -	case PPMU_PMNCNT1:
+> -	case PPMU_PMNCNT2:
+> -		ret = regmap_write(info->regmap, PPMU_V2_CH_EVx_TYPE(id),
+> -				PPMU_V2_RO_DATA_CNT | PPMU_V2_WO_DATA_CNT);
+> -		if (ret < 0)
+> -			return ret;
+> -		break;
+> -	case PPMU_PMNCNT3:
+> -		ret = regmap_write(info->regmap, PPMU_V2_CH_EVx_TYPE(id),
+> -				PPMU_V2_EVT3_RW_DATA_CNT);
+> -		if (ret < 0)
+> -			return ret;
+> -		break;
+> -	}
+> +	/* Set the event of proper data type monitoring */
+> +	ret = regmap_write(info->regmap, PPMU_V2_CH_EVx_TYPE(id),
+> +			   edev->desc->data_type);
+> +	if (ret < 0)
+> +		return ret;
+>   
+>   	/* Reset cycle counter/performance counter and enable PPMU */
+>   	ret = regmap_read(info->regmap, PPMU_V2_PMNC, &pmnc);
+> @@ -507,6 +495,7 @@ static int of_get_devfreq_events(struct device_node *np,
+>   	struct device_node *events_np, *node;
+>   	int i, j, count;
+>   	const struct of_device_id *of_id;
+> +	int ret;
+>   
+>   	events_np = of_get_child_by_name(np, "events");
+>   	if (!events_np) {
+> @@ -556,6 +545,39 @@ static int of_get_devfreq_events(struct device_node *np,
+>   		desc[j].driver_data = info;
+>   
+>   		of_property_read_string(node, "event-name", &desc[j].name);
+> +		ret = of_property_read_u32(node, "event-data-type",
+> +					   &desc[j].data_type);
+> +		if (ret) {
+> +			/* Set the event of proper data type counting.
+> +			 * Check if the data type has been defined in DT,
+> +			 * use default if not.
+> +			 */
+> +			if (info->ppmu_type == EXYNOS_TYPE_PPMU_V2) {
+> +				struct devfreq_event_dev edev;
+> +				int id;
+> +				/* Not all registers take the same value for
+> +				 * read+write data count.
+> +				 */
+> +				edev.desc = &desc[j];
+> +				id = exynos_ppmu_find_ppmu_id(&edev);
+> +
+> +				switch (id) {
+> +				case PPMU_PMNCNT0:
+> +				case PPMU_PMNCNT1:
+> +				case PPMU_PMNCNT2:
+> +					desc[j].data_type = PPMU_V2_RO_DATA_CNT
+> +						| PPMU_V2_WO_DATA_CNT;
+> +					break;
+> +				case PPMU_PMNCNT3:
+> +					desc[j].data_type =
+> +						PPMU_V2_EVT3_RW_DATA_CNT;
+> +					break;
+> +				}
+> +			} else {
+> +				desc[j].data_type = PPMU_RO_DATA_CNT |
+> +					PPMU_WO_DATA_CNT;
+> +			}
+> +		}
+>   
+>   		j++;
+>   	}
+> diff --git a/include/linux/devfreq-event.h b/include/linux/devfreq-event.h
+> index 4db00b02ca3f..cc160b1274c0 100644
+> --- a/include/linux/devfreq-event.h
+> +++ b/include/linux/devfreq-event.h
+> @@ -81,14 +81,20 @@ struct devfreq_event_ops {
+>    * struct devfreq_event_desc - the descriptor of devfreq-event device
+>    *
+>    * @name	: the name of devfreq-event device.
+> + * @data_type	: the data type which is going to be counted in the register.
+>    * @driver_data	: the private data for devfreq-event driver.
+>    * @ops		: the operation to control devfreq-event device.
+>    *
+>    * Each devfreq-event device is described with a this structure.
+>    * This structure contains the various data for devfreq-event device.
+> + * The data_type describes what is going to be counted in the register.
+> + * It might choose to count e.g. read requests, write data in bytes, etc.
+> + * The full supported list of types is present in specyfic header in:
+> + * include/dt-bindings/pmu/.
+>    */
+>   struct devfreq_event_desc {
+>   	const char *name;
+> +	u32 data_type;
+>   	void *driver_data;
+>   
+>   	const struct devfreq_event_ops *ops;
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
