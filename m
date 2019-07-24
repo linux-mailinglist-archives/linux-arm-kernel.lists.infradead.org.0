@@ -2,93 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EFEF97341D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 18:40:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9036873435
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 18:49:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=XGByZjBLjM4kFC/SIrjk5UxaeNhPFX5Q3sQz8LhnuEA=; b=jqMW6X1l7d9l47QIYtQX+0phG
-	V6b3Liq6qx8Jnfy3QlvYl4elOEEzuaN0UvV56vJhxWYevO/RwpBMBNWC1WRwTvbEJTqyCRXH2RHbm
-	VcdKR80WiYRxONd9XNwqlDah1AJJw7YUq/C9yreolvCYg1ZzI3dPEzmocNXT39r/E5tPoPT0UPkA7
-	3LUyxHoGP/wcEgbjW/BwIl3VIBiKp8TNJ8jcJoU8Ay18cyukraLtirqXOjPwzda9W2hxP1DjVwaE7
-	KOdRhkxGx/bpy2IraioU0P7McvB8lfO+gjnAB3NooTKZ4l2EnoIjRDuWrUDfnP9MbgmgPrP6/hc4b
-	PQR2veJiw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oJQTWoWN5kjt9GxaADoK0LKiHl7IathYFbfseHKEgV8=; b=W1/2a7zmhy9ZT9
+	juC0HdjmTKmVsbxlyhzt4v+ObxBJ1QvEDxqlN29D5rMNkwTO5sjTJnvBsaFWUtu5p60APO3WQ+Y9X
+	0LkKZVxNV2G60bCCopLTfVJbspBNq6GvPAJvKBW2M8PGj3xX1thYjOW79YFAsyscnQMPaYj8u23Hw
+	vh1nSimrIB4fSF7n9IpGjF4/ZAvD4Fo4KG1qfaINTU9FSn5feJgkAIio5MdMFX1n1ce4dQhQe6Efg
+	E4pSpONrdlyU2K4i2bSfs5zfYeQdlQxCifMIhmA2/0ULjGTNIWDa5we7qMvSSs7CzfDE1l8Wi1bYz
+	Lv/wGQVppQVg318ng9rQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqKJz-0001wJ-Vi; Wed, 24 Jul 2019 16:40:55 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1hqKSf-00046G-Gg; Wed, 24 Jul 2019 16:49:53 +0000
+Received: from mail-io1-f65.google.com ([209.85.166.65])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqKJk-0001vf-En
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 16:40:43 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x6OGbU5Y003589; Wed, 24 Jul 2019 18:40:34 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : references
- : from : message-id : date : mime-version : in-reply-to : content-type :
- content-transfer-encoding; s=STMicroelectronics;
- bh=Gu8PL+HPgCs9mmUoJ3vhnljVENbzJVpSz1qAO84aocw=;
- b=JAsZuyU3tjo6HSeBGSxRmEhD7qoTjF+evI+JBGMBu9r3sxJs6ep4hXIYfFolF7+p4goG
- B+gM6Tsdm/GlTegxus7N9bpX94fI5JBvOnIkaqlvcylFBHeSIWrIxwgUg+uoQKsCIih3
- EbnrC1IdesihaOFkTJyJeC+018uaJRUjYYB6TaqXzvkNzy8EU0HVRTEqmErvDzQUq/Wr
- 0HgtY9riCzrr6gOicQNZroYF6c+nCp/XqClpqra3FOuz+j/g5iZs0596NGz4rPtc0vne
- SWT4wWoHSN4vAEK9Dw1iooBqOATr/67xRRMzEY4LQUImbfiLQyOf7M0zzThPzSaVpu9A dw== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2tx607xgbp-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Wed, 24 Jul 2019 18:40:34 +0200
-Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 71EBF31;
- Wed, 24 Jul 2019 16:40:33 +0000 (GMT)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 55A73521B;
- Wed, 24 Jul 2019 16:40:33 +0000 (GMT)
-Received: from lmecxl0912.lme.st.com (10.75.127.48) by SFHDAG3NODE2.st.com
- (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Wed, 24 Jul
- 2019 18:40:32 +0200
-Subject: Re: [PATCH] ARM: dts: stm32: add audio codec support on
- stm32mp157a-dk1 board
-To: Olivier Moysan <olivier.moysan@st.com>,
- <linux-stm32@st-md-mailman.stormreply.com>, <robh@kernel.org>,
- <mark.rutland@arm.com>, <devicetree@vger.kernel.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-References: <1562327580-19647-1-git-send-email-olivier.moysan@st.com>
-From: Alexandre Torgue <alexandre.torgue@st.com>
-Message-ID: <27476214-07fe-886b-1cab-20902837f29c@st.com>
-Date: Wed, 24 Jul 2019 18:40:32 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1hqKSS-00044v-KG; Wed, 24 Jul 2019 16:49:42 +0000
+Received: by mail-io1-f65.google.com with SMTP id j5so86864028ioj.8;
+ Wed, 24 Jul 2019 09:49:40 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=lzLxr/ZHFALs7HXjKuWkfuLA5VhCZtI1OXBLZOHTWp8=;
+ b=rjABduqSIw1wv1zNtJvjLe4VE0pRe4TZl4pmim/hgxM5N68DsU+hhXAjzHlDkdQ7Am
+ nlac+OpvPRnqldw27gMwX/lgbI0hD979ueJP8cRxi2fWZ9BON2kExevld4/QmouXDy61
+ 5hN1qj3wZ3s4ggwtkUkyqGyHuZ4nWho5E0oNumsI3BCEj59Q52syqYTjYbM6d5+cBX5D
+ e8eimCVruEgPULkFy8uqX6R6h4OVPk3n1ObZxF0VzUIZ5+r2oVkEe8sEZbW8XS2EFa8q
+ XSBlRU4Xia9Ny8b7WnDo1lZh/7mSfM3n4/xTsWQ0NTGSm/BJEN6ITRIuNLX/VqzcdPmF
+ 6nlA==
+X-Gm-Message-State: APjAAAWGf8eS01P+vmMBFsG/8mM/QZySj3Oant8peHLfntBxkQYkptCp
+ aZ+kLdco+sh5NC/+MadeWw==
+X-Google-Smtp-Source: APXvYqycVXE/3Diq36JRVdilGAeFPoocp/x5uykh8vdo3CPw1BlwOUJzQuvKMNLrDaaaN0Mc+FiZ+Q==
+X-Received: by 2002:a5e:c70c:: with SMTP id f12mr1401889iop.293.1563986979919; 
+ Wed, 24 Jul 2019 09:49:39 -0700 (PDT)
+Received: from localhost ([64.188.179.254])
+ by smtp.gmail.com with ESMTPSA id j23sm37899229ioo.6.2019.07.24.09.49.38
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Wed, 24 Jul 2019 09:49:39 -0700 (PDT)
+Date: Wed, 24 Jul 2019 10:49:38 -0600
+From: Rob Herring <robh@kernel.org>
+To: frederic.chen@mediatek.com
+Subject: Re: [RFC PATCH V2 1/6] dt-bindings: mt8183: Added DIP dt-bindings
+Message-ID: <20190724164938.GA25542@bogus>
+References: <20190708110500.7242-1-frederic.chen@mediatek.com>
+ <20190708110500.7242-2-frederic.chen@mediatek.com>
 MIME-Version: 1.0
-In-Reply-To: <1562327580-19647-1-git-send-email-olivier.moysan@st.com>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.48]
-X-ClientProxiedBy: SFHDAG6NODE1.st.com (10.75.127.16) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-07-24_06:, , signatures=0
+Content-Disposition: inline
+In-Reply-To: <20190708110500.7242-2-frederic.chen@mediatek.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_094040_798615_064F0DEF 
-X-CRM114-Status: GOOD (  18.98  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190724_094940_661075_824C7A90 
+X-CRM114-Status: GOOD (  10.79  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.65 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,91 +86,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: laurent.pinchart+renesas@ideasonboard.com, Rynn.Wu@mediatek.com,
+ Allan.Yang@mediatek.com, suleiman@chromium.org, Jerry-ch.Chen@mediatek.com,
+ jungo.lin@mediatek.com, hans.verkuil@cisco.com, frederic.chen@mediatek.com,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ holmes.chiou@mediatek.com, shik@chromium.org, yuzhao@chromium.org,
+ linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, Sean.Cheng@mediatek.com,
+ srv_heupstream@mediatek.com, sj.huang@mediatek.com, tfiga@chromium.org,
+ christie.yu@mediatek.com, zwisler@chromium.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Olivier
-
-On 7/5/19 1:53 PM, Olivier Moysan wrote:
-> Add support of Cirrus cs42l51 audio codec on stm32mp157a-dk1 board.
-> Configuration overview:
-> - SAI2A is the CPU interface used for the codec audio playback
-> - SAI2B is the CPU interface used for the codec audio record
-> - SAI2A is configured as a clock provider for the audio codec
-> - SAI2A&B are configured as slave of the audio codec
-> - SAI2A&B share the same interface of the audio codec
+On Mon, 8 Jul 2019 19:04:55 +0800, <frederic.chen@mediatek.com> wrote:
+> From: Frederic Chen <frederic.chen@mediatek.com>
 > 
-> Note:
-> In master mode, cs42l51 audio codec provides a bitclock
-> at 64 x FS, regardless of data width. This means that
-> slot width is always 32 bits.
-> Set slot width to 32 bits and slot number to 2
-> in SAI2A&B endpoint nodes, to match this constraint.
-> dai-tdm-slot-num and dai-tdm-slot-width properties are used here,
-> assuming that i2s is a special case of tdm, where slot number is 2.
+> This patch adds DT binding documentation for the Digital Image
+> Processing (DIP) unit of camera ISP system on Mediatek's SoCs.
 > 
-> Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
+> It depends on the SCP and MDP 3 patch as following:
+> 
+> 1. dt-bindings: Add a binding for Mediatek SCP
+>    https://patchwork.kernel.org/patch/11027247/
+> 2. dt-binding: mt8183: Add Mediatek MDP3 dt-bindings
+>    https://patchwork.kernel.org/patch/10945603/
+> 
+> Signed-off-by: Frederic Chen <frederic.chen@mediatek.com>
 > ---
->   arch/arm/boot/dts/stm32mp157a-dk1.dts | 89 +++++++++++++++++++++++++++++++++++
->   1 file changed, 89 insertions(+)
+>  .../bindings/media/mediatek,mt8183-dip.txt    | 40 +++++++++++++++++++
+>  1 file changed, 40 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/media/mediatek,mt8183-dip.txt
 > 
 
-...
-
->   
-> +&sai2 {
-> +	clocks = <&rcc SAI2>, <&rcc PLL3_Q>, <&rcc PLL3_R>;
-> +	clock-names = "pclk", "x8k", "x11k";
-> +	pinctrl-names = "default", "sleep";
-> +	pinctrl-0 = <&sai2a_pins_a>, <&sai2b_pins_b>;
-> +	pinctrl-1 = <&sai2a_sleep_pins_a>, <&sai2b_sleep_pins_b>;
-> +	status = "okay";
-> +
-> +	sai2a: audio-controller@4400b004 {
-> +		#clock-cells = <0>;
-> +		dma-names = "tx";
-> +		clocks = <&rcc SAI2_K>;
-> +		clock-names = "sai_ck";
-> +		status = "okay";
-> +
-> +		sai2a_port: port {
-> +			sai2a_endpoint: endpoint {
-> +				remote-endpoint = <&cs42l51_tx_endpoint>;
-> +				format = "i2s";
-> +				mclk-fs = <256>;
-> +				dai-tdm-slot-num = <2>;
-> +				dai-tdm-slot-width = <32>;
-> +			};
-> +		};
-> +	};
-> +
-You could use label to overload sai2a and sai2b. no ?
-
-> +	sai2b: audio-controller@4400b024 {
-> +		dma-names = "rx";
-> +		st,sync = <&sai2a 2>;
-> +		clocks = <&rcc SAI2_K>, <&sai2a>;
-> +		clock-names = "sai_ck", "MCLK";
-> +		status = "okay";
-> +
-> +		sai2b_port: port {
-> +			sai2b_endpoint: endpoint {
-> +				remote-endpoint = <&cs42l51_rx_endpoint>;
-> +				format = "i2s";
-> +				mclk-fs = <256>;
-> +				dai-tdm-slot-num = <2>;
-> +				dai-tdm-slot-width = <32>;
-> +			};
-> +		};
-> +	};
-> +};
-> +
->   &sdmmc1 {
->   	pinctrl-names = "default", "opendrain", "sleep";
->   	pinctrl-0 = <&sdmmc1_b4_pins_a>;
-> 
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
