@@ -2,50 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37F0073041
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 15:51:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8764D73047
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 15:53:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bBeF5MRhmWhlOU8csOdyncV9jOP6HQ8e8Oyt4B7PiX0=; b=K+mhR2sMbgC4VV
-	20eUNcJR50xObCxuT6FnOlnytqL7v6P413kXodijZd0mJyDzmk0jWJ2vgFDWVO8cILN7wEVd5R91O
-	RkIYstgUzVNK99ZdJdOKYFDq6CiDoSiv1NrB6e63DFDYuX8E8fnberKyFOxGbyqnfJLBJud71yPrA
-	C0EetMM4SWXhDQupiepCXoyUIcFluSFxjaHI4lSN43rb10mV6V+l6qajwNWiKagOEVaKgze2KDAyg
-	fWiXc2BqOXe/JobAglMEByyPpuH2wBa97ubjubbfDYLzd+sSvwLiFFJ4X/z2PqDWybk0s/gjaEVlm
-	jUqb+tnTUXO/VjU6nUdw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OLtDduFMOMS/PN6SkoaYDz7pkvG2HxGTaQP2GSxBTwM=; b=Y6ffbw2dSwrY3F
+	82NNxb80uo8FyXi7R1krYMn67/gdMv5PWlDexdBbPfKusktBfzT5ihd3zvmAYda1KPrOSBMTZD6Er
+	tj3yRMC4mYbL7xhOEELvsffmK9GcN4kUwlixe6sXNByd0TcxYxuS/U//y6PE2A8eK1MFtLfjILGs/
+	dlauj8eKEhEuYwZe1lHGkXoZHdbQNy73wYY8+8EMw8iI0n75XA9DNLHk8/0RRSF+TGiZWuX7YnA9d
+	TplUUZ+l76ar8Z26Qk5KC134Gd9yEqTzL+QCcyI1erzbiV15AZqvxQ1IdGST/0g4xI+QgR4D8CDUQ
+	YQfYrPafpYBBy310uYHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqHgC-000103-Lk; Wed, 24 Jul 2019 13:51:40 +0000
+	id 1hqHhn-0001VT-0l; Wed, 24 Jul 2019 13:53:19 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hqHg2-0000z3-BM
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 13:51:31 +0000
+ id 1hqHhd-0001Rc-Ht
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 13:53:10 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 21F7B28;
- Wed, 24 Jul 2019 06:51:28 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 7116C3F71A; Wed, 24 Jul 2019 06:51:26 -0700 (PDT)
-Date: Wed, 24 Jul 2019 14:51:24 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: Re: [RFC 3/4] dma-direct: add dma_direct_min_mask
-Message-ID: <20190724135124.GA44864@arrakis.emea.arm.com>
-References: <20190717153135.15507-1-nsaenzjulienne@suse.de>
- <20190717153135.15507-4-nsaenzjulienne@suse.de>
- <20190718091526.GA25321@lst.de>
- <13dd1a4f33fcf814545f0d93f18429e853de9eaf.camel@suse.de>
- <58753252bd7964e3b9e9558b633bd325c4a898a1.camel@suse.de>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6F72D28;
+ Wed, 24 Jul 2019 06:53:08 -0700 (PDT)
+Received: from [10.1.196.133] (e112269-lin.cambridge.arm.com [10.1.196.133])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 996793F71A;
+ Wed, 24 Jul 2019 06:53:05 -0700 (PDT)
+Subject: Re: [PATCH v9 11/21] mm: pagewalk: Add p4d_entry() and pgd_entry()
+To: Mark Rutland <mark.rutland@arm.com>
+References: <20190722154210.42799-1-steven.price@arm.com>
+ <20190722154210.42799-12-steven.price@arm.com>
+ <20190723101432.GC8085@lakrids.cambridge.arm.com>
+From: Steven Price <steven.price@arm.com>
+Message-ID: <60ee20ef-62a3-5df1-6e24-24973b69be70@arm.com>
+Date: Wed, 24 Jul 2019 14:53:04 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <58753252bd7964e3b9e9558b633bd325c4a898a1.camel@suse.de>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190723101432.GC8085@lakrids.cambridge.arm.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_065130_476583_841DF1D3 
-X-CRM114-Status: GOOD (  24.53  )
+X-CRM114-CacheID: sfid-20190724_065309_684917_385E9F9E 
+X-CRM114-Status: GOOD (  19.87  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -64,77 +63,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: stefan.wahren@i2se.com, f.fainelli@gmail.com,
- Robin Murphy <robin.murphy@arm.com>, phil@raspberrypi.org,
- iommu@lists.linux-foundation.org, linux-kernel@vger.kernel.org,
- Jisheng.Zhang@synaptics.com, mbrugger@suse.com, will@kernel.org,
- Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: Dave Hansen <dave.hansen@linux.intel.com>, Arnd Bergmann <arnd@arndb.de>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
+ linux-kernel@vger.kernel.org, linux-mm@kvack.org,
+ =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ Andy Lutomirski <luto@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ James Morse <james.morse@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Will Deacon <will@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
+ linux-arm-kernel@lists.infradead.org, "Liang, Kan" <kan.liang@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jul 19, 2019 at 03:08:52PM +0200, Nicolas Saenz Julienne wrote:
-> On Thu, 2019-07-18 at 13:18 +0200, Nicolas Saenz Julienne wrote:
-> > On Thu, 2019-07-18 at 11:15 +0200, Christoph Hellwig wrote:
-> > > On Wed, Jul 17, 2019 at 05:31:34PM +0200, Nicolas Saenz Julienne wrote:
-> > > > Historically devices with ZONE_DMA32 have been assumed to be able to
-> > > > address at least the lower 4GB of ram for DMA. This is still the defualt
-> > > > behavior yet the Raspberry Pi 4 is limited to the first GB of memory.
-> > > > This has been observed to trigger failures in dma_direct_supported() as
-> > > > the 'min_mask' isn't properly set.
-> > > > 
-> > > > We create 'dma_direct_min_mask' in order for the arch init code to be
-> > > > able to fine-tune dma direct's 'min_dma' mask.
-> > > 
-> > > Normally we use ZONE_DMA for that case.
-> > 
-> > Fair enough, I didn't think of that possibility.
-> > 
-> > So would the arm64 maintainers be happy with something like this:
-> > 
-> > - ZONE_DMA: Follows standard definition, 16MB in size. ARCH_ZONE_DMA_BITS is
-> > 	    left as is.
-> > - ZONE_DMA32: Will honor the most constraining 'dma-ranges'. Which so far for
-> > 	      most devices is 4G, except for RPi4.
-> > - ZONE_NORMAL: The rest of the memory.
+On 23/07/2019 11:14, Mark Rutland wrote:
+> On Mon, Jul 22, 2019 at 04:42:00PM +0100, Steven Price wrote:
+>> pgd_entry() and pud_entry() were removed by commit 0b1fbfe50006c410
+>> ("mm/pagewalk: remove pgd_entry() and pud_entry()") because there were
+>> no users. We're about to add users so reintroduce them, along with
+>> p4d_entry() as we now have 5 levels of tables.
+>>
+>> Note that commit a00cc7d9dd93d66a ("mm, x86: add support for
+>> PUD-sized transparent hugepages") already re-added pud_entry() but with
+>> different semantics to the other callbacks. Since there have never
+>> been upstream users of this, revert the semantics back to match the
+>> other callbacks. This means pud_entry() is called for all entries, not
+>> just transparent huge pages.
+>>
+>> Signed-off-by: Steven Price <steven.price@arm.com>
+>> ---
+>>  include/linux/mm.h | 15 +++++++++------
+>>  mm/pagewalk.c      | 27 ++++++++++++++++-----------
+>>  2 files changed, 25 insertions(+), 17 deletions(-)
+>>
+>> diff --git a/include/linux/mm.h b/include/linux/mm.h
+>> index 0334ca97c584..b22799129128 100644
+>> --- a/include/linux/mm.h
+>> +++ b/include/linux/mm.h
+>> @@ -1432,15 +1432,14 @@ void unmap_vmas(struct mmu_gather *tlb, struct vm_area_struct *start_vma,
+>>  
+>>  /**
+>>   * mm_walk - callbacks for walk_page_range
+>> - * @pud_entry: if set, called for each non-empty PUD (2nd-level) entry
+>> - *	       this handler should only handle pud_trans_huge() puds.
+>> - *	       the pmd_entry or pte_entry callbacks will be used for
+>> - *	       regular PUDs.
+>> - * @pmd_entry: if set, called for each non-empty PMD (3rd-level) entry
+>> + * @pgd_entry: if set, called for each non-empty PGD (top-level) entry
+>> + * @p4d_entry: if set, called for each non-empty P4D entry
+>> + * @pud_entry: if set, called for each non-empty PUD entry
+>> + * @pmd_entry: if set, called for each non-empty PMD entry
 > 
-> Never mind this suggestion, I don't think it makes any sense. If anything arm64
-> seems to fit the ZONE_DMA usage pattern of arm and powerpc: where ZONE_DMA's
-> size is decided based on ram size and/or board configuration. It was actually
-> set-up like this until Christoph's ad67f5a6545f7 ("arm64: replace ZONE_DMA with
-> ZONE_DMA32").
+> How are these expected to work with folding?
 > 
-> So the easy solution would be to simply revert that commit. On one hand I feel
-> it would be a step backwards as most 64 bit architectures have been moving to
-> use ZONE_DMA32. On the other, current ZONE_DMA32 usage seems to be heavily
-> rooted on having a 32 bit DMA mask*, which will no longer be the case on arm64
-> if we want to support the RPi 4.
+> For example, on arm64 with 64K pages and 42-bit VA, you can have 2-level
+> tables where the PGD is P4D, PUD, and PMD. IIUC we'd invoke the
+> callbacks for each of those levels where we found an entry in the pgd.
 > 
-> So the way I see it and lacking a better solution, the argument is stronger on
-> moving back arm64 to using ZONE_DMA. Any comments/opinions?
+> Either the callee handle that, or we should inhibit the callbacks when
+> levels are folded, and I think that needs to be explcitly stated either
+> way.
+> 
+> IIRC on x86 the p4d folding is dynamic depending on whether the HW
+> supports 5-level page tables. Maybe that implies the callee has to
+> handle that.
 
-As it was suggested in this or the previous thread, I'm not keen on
-limiting ZONE_DMA32 to the smalles RPi4 can cover, as the naming
-implies this zone should cover 32-bit devices that can deal with a full
-32-bit mask.
+Yes, my assumption is that it has to be up to the callee to handle that
+because folding can be dynamic. I believe this also was how these
+callbacks work before they were removed. However I'll add a comment
+explaining that here as it's probably non-obvious.
 
-I think it may be better if we have both ZONE_DMA and ZONE_DMA32 on
-arm64. ZONE_DMA would be based on the smallest dma-ranges as described
-in the DT while DMA32 covers the first naturally aligned 4GB of RAM
-(unchanged). When a smaller ZONE_DMA is not needed, it could be expanded
-to cover what would normally be ZONE_DMA32 (or could we have ZONE_DMA as
-0-bytes? I don't think GFP_DMA can still allocate memory in this case).
-
-We'd probably have to define ARCH_ZONE_DMA_BITS for arm64 to something
-smaller than 32-bit but sufficient to cover the known platforms like
-RPi4 (the current 24 is too small, so maybe 30). AFAICT,
-__dma_direct_optimal_gfp_mask() figures out whether GFP_DMA or GFP_DMA32
-should be passed.
-
--- 
-Catalin
+Steve
 
 _______________________________________________
 linux-arm-kernel mailing list
