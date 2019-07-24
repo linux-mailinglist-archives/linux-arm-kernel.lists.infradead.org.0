@@ -2,62 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DAFFD72D27
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 13:13:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A1BD772D36
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 13:15:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QcVn6SBRAQxmN7vlMo+k+FEHM1dIkQC/25FDtD6HJXA=; b=elLYedxg5UboWd
-	Dq6OywUyKiyw+GBwPgkMRq04N6tHvPtACWuCdz1XkcQA9mJu7JWQpQ/2FuUQNQvgUcVOg0XTfv9tp
-	ivvNQ9qaOGr09NJCAYOs31PcJxiuD6Z5DNlcXNH4Y++tt5s5w4zBFbayv0NzPCwDduPD6Gxd5To7y
-	NsB+IrlXqekFs1E6N3hLgZCg4n4A5N3IIOib2IP/JXlhXlzFCZTBEGOzIKwew+HWhqljti0KNRzSR
-	a+TbA8uETzOsABxogSCs1OqO3mUp989u07PDoIuuY5bfHyqBbPMbjty10i0YymaCWZvWRDS9yZsMZ
-	5ub7cqtnrZBQkZqAp80g==;
+	List-Owner; bh=QmCwKYkrYRKkT49PD7ZswN85zW517tu4cYzs2LIPX9g=; b=Xwo+COOA+DwNxC
+	ad9OxZHrjCWn1cVRizIv5hUWXiLB7PPe7nQnwmXsExHmUJGukiGYmiTLtrbHb/5MsBc10EogHQzR4
+	CDYPayXkLKF6QX+oM47A+2SaLMWmTmLuz692O2Vw+bhpdvL4QzFrIbZoQLmm008EfHCsY9anhXWap
+	xf5y7Hv8Wilc3rQxmUcAw8jCP3Mq9n7Ssbdt6vmcZW9DK0dqOmTt/dfGLokoRYSg8OthLb0mOzRJN
+	PQuJdgcBIDi/+Qq3PAD95vFW9OEGjLpdhfDUALAfa4BwGurIK+OBTnQmsiXqFo/X8r5qd+wcbRtup
+	R4VlIpTEh/kQtzAGqsKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqFDO-0001k6-51; Wed, 24 Jul 2019 11:13:46 +0000
+	id 1hqFEY-00026g-O1; Wed, 24 Jul 2019 11:14:58 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqFDD-0001jK-2u
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 11:13:36 +0000
-Received: from mail-lf1-f42.google.com (mail-lf1-f42.google.com
- [209.85.167.42])
+ id 1hqFEO-00025g-Oz
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 11:14:49 +0000
+Received: from mail-lf1-f49.google.com (mail-lf1-f49.google.com
+ [209.85.167.49])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 74E15229F4
+ by mail.kernel.org (Postfix) with ESMTPSA id 2B2BB22ADB
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 24 Jul 2019 11:13:34 +0000 (UTC)
+ Wed, 24 Jul 2019 11:14:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563966814;
- bh=5/y1hhDYq8XOZKIhQOx1PKrERYltNYVDKnL3158aB6M=;
+ s=default; t=1563966888;
+ bh=QGWMl/ZXIY3EBLMtFI0LO4scm1QA+Ep6PNsO6TEPOnw=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=o63dKY7gmPoLMlPwWmTjsaF0E6vvrfbRChrcIfn1uENGMU4qIVFHms765aBdgaQoN
- Ek64RM9AUVkKpj1sLpM7xJktKOfK63n46leGLUb2uG2q+mXl4LONpPlesGFf+eu9Dp
- u85dtwUxPiOiwToAk+we+sdyVkh81jiD17xSiaRo=
-Received: by mail-lf1-f42.google.com with SMTP id x3so31763600lfc.0
+ b=qy2fqq3YJ0ckBc2x1bZmZCBCWFVM1L0iOXOd72aaiaV+I8MGIrh0AMROvbtDUEaGj
+ VWn+C8ssNCFc0dLEI807dKPj/qrq36JLcbYScchmTXd861JWHW0Uhf7mvW/GFD3Wmy
+ YrEkhvsApgpPuuE3PTOqvglCvrKM6v60+rwaVXAA=
+Received: by mail-lf1-f49.google.com with SMTP id b17so31694274lff.7
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 24 Jul 2019 04:13:34 -0700 (PDT)
-X-Gm-Message-State: APjAAAW4IdkUIZRcYr1YdQmLmDLbkvcSmTKViJDf4Hqv07BQKMflJM2s
- YcgLodG0ivKYCYX/QFeGIPchW/rPC7Y/RYOtieM=
-X-Google-Smtp-Source: APXvYqwESEIOvcf70daSpwIqf11GEHlkm1uvDfKQSkJrORyYpKpAECse1JBT3/KtsMH1xOMwAc/+BWP0Hnw8jR6wBh8=
-X-Received: by 2002:a19:48c5:: with SMTP id v188mr37332583lfa.69.1563966812710; 
- Wed, 24 Jul 2019 04:13:32 -0700 (PDT)
+ Wed, 24 Jul 2019 04:14:48 -0700 (PDT)
+X-Gm-Message-State: APjAAAUOxLJCCTJJzHV3U95zJ8iON5uSkLmPjXGZfX7ro2zP95mDrvgz
+ JR6cywbAC+ejSB1vceVli1l/VzE86NDIu+Bcxpo=
+X-Google-Smtp-Source: APXvYqyUmQ9tuUPElU/IV/IsqbXN/eGafRTyiXc6riwgNXXXlmd4X+4ShRqwKBSQLVxJZZxnCtrTPH9bFUEIeuhSYs4=
+X-Received: by 2002:a19:f007:: with SMTP id p7mr37946935lfc.24.1563966886458; 
+ Wed, 24 Jul 2019 04:14:46 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190722185938.9043-1-linux.amoon@gmail.com>
- <20190722185938.9043-5-linux.amoon@gmail.com>
-In-Reply-To: <20190722185938.9043-5-linux.amoon@gmail.com>
+ <20190722185938.9043-6-linux.amoon@gmail.com>
+In-Reply-To: <20190722185938.9043-6-linux.amoon@gmail.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
-Date: Wed, 24 Jul 2019 13:13:21 +0200
-X-Gmail-Original-Message-ID: <CAJKOXPeiKP-MfaO4LpQ=iXZn14gM3vwR8U18yLGfhHt6pjvvCA@mail.gmail.com>
-Message-ID: <CAJKOXPeiKP-MfaO4LpQ=iXZn14gM3vwR8U18yLGfhHt6pjvvCA@mail.gmail.com>
-Subject: Re: [RFC/RFT 4/5] phy: exynos5-usbdrd: PIPE3 tune signal
+Date: Wed, 24 Jul 2019 13:14:35 +0200
+X-Gmail-Original-Message-ID: <CAJKOXPeRjg3tz-o+_cZ=Xy_ALOL06nODeKbthdrvpQqgYpXhOQ@mail.gmail.com>
+Message-ID: <CAJKOXPeRjg3tz-o+_cZ=Xy_ALOL06nODeKbthdrvpQqgYpXhOQ@mail.gmail.com>
+Subject: Re: [RFC/RFT 5/5] phy: exynos5-usbdrd: drop duplicate setting PIPE3
+ tune signal
 To: Anand Moon <linux.amoon@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_041335_163371_0DCD7765 
-X-CRM114-Status: GOOD (  15.45  )
+X-CRM114-CacheID: sfid-20190724_041448_834712_54027E62 
+X-CRM114-Status: UNSURE (   8.71  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -95,62 +97,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 22 Jul 2019 at 20:59, Anand Moon <linux.amoon@gmail.com> wrote:
+On Mon, 22 Jul 2019 at 21:00, Anand Moon <linux.amoon@gmail.com> wrote:
 >
-> Tune USB3.0 (PIPE3) PHY TX signal for high and supper
-> speed data transfer.
->
-> Signed-off-by: Anand Moon <linux.amoon@gmail.com>
-> ---
->  drivers/phy/samsung/phy-exynos5-usbdrd.c | 18 +++++++++++++-----
->  1 file changed, 13 insertions(+), 5 deletions(-)
->
-> diff --git a/drivers/phy/samsung/phy-exynos5-usbdrd.c b/drivers/phy/samsung/phy-exynos5-usbdrd.c
-> index 54a513ca15e4..4f16c4f82ae5 100644
-> --- a/drivers/phy/samsung/phy-exynos5-usbdrd.c
-> +++ b/drivers/phy/samsung/phy-exynos5-usbdrd.c
-> @@ -124,8 +124,10 @@
->
->  #define EXYNOS5_DRD_PHYPARAM1                  0x20
->
-> -#define PHYPARAM1_PCS_TXDEEMPH_MASK            (0x1f << 0)
-> -#define PHYPARAM1_PCS_TXDEEMPH                 (0x1c)
-> +#define PHYPARAM1_TX0_TERM_OFFSET(x)           __set(x, 30, 26)
-> +#define PHYPARAM1_TX_SWING_FULL(x)             __set(x, 18, 12)
-> +#define PHYPRAAM1_PCS_TX_DEEMPH_6DB(x)         __set(x, 11, 6)
-> +#define PHYPRAAM1_PCS_TX_DEEMPH_3P5DB(x)       __set(x, 5, 0)
->
->  #define EXYNOS5_DRD_PHYTERM                    0x24
->
-> @@ -360,10 +362,16 @@ static void exynos5_usbdrd_pipe3_init(struct exynos5_usbdrd_phy *phy_drd)
->  {
->         u32 reg;
->
-> -       reg = readl(phy_drd->reg_phy + EXYNOS5_DRD_PHYPARAM1);
->         /* Set Tx De-Emphasis level */
-> -       reg &= ~PHYPARAM1_PCS_TXDEEMPH_MASK;
-> -       reg |=  PHYPARAM1_PCS_TXDEEMPH;
-> +       reg = readl(phy_drd->reg_phy + EXYNOS5_DRD_PHYPARAM1);
-> +               /* Transmitter Termination Offset */
-> +       reg |=  PHYPARAM1_TX0_TERM_OFFSET(0x5) |
-> +               /* Tx Amplitude (Full Swing mode) */
-> +               PHYPARAM1_TX_SWING_FULL(0x3F) |
-> +               /* Tx De-Emphasis at 6 dB */
-> +               PHYPRAAM1_PCS_TX_DEEMPH_6DB(0x20) |
-> +               /* Tx De-Emphasis at 3.5 dB */
-> +               PHYPRAAM1_PCS_TX_DEEMPH_3P5DB(0x15);
+> Drop duplicate configuration setting of PIPE tune signal.
 
-How did you get the value? Why you are changing existing values to default ones?
+There is no duplicate set. This is either completely wrong or put in
+wrong order of entire patchset...
 
 Best regards,
 Krzysztof
-
->         writel(reg, phy_drd->reg_phy + EXYNOS5_DRD_PHYPARAM1);
->
->         reg = readl(phy_drd->reg_phy + EXYNOS5_DRD_PHYTEST);
-> --
-> 2.22.0
->
 
 _______________________________________________
 linux-arm-kernel mailing list
