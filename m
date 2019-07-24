@@ -2,64 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C2FC72791
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 07:51:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4FBB17278E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 07:50:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4rCX3PdMTRlzREYl1e8z++MXreTg8a1GRh2iCOwlDsA=; b=XwrE4HEPvpUma6
-	Q4FYZDWYL9EMPg+MLiAgIivBgySgYD1kWuVLfgV5fU2ITQP6OOdZjmE2xXlhgMR57ZDJYXKk+A4u+
-	nLz+e537TvxMIOGjMut6qHRjukKInocDB2SPzUnd182gPChALGZQ229y7hciJ6HdQKHjqB//As6CS
-	u4I0KwlGFnJ9O+/tDfVaBwvA4b8fM/OUguCQsxRX4vZKOpr9EdgY0aawJtRe1h+KR8AWUVZsW6I2M
-	+9DYhr0wQnBKU7VI3BK3L0jWhVPdtBmz7vtrNm6dwfZ+omkssAHCrQe+S7zwWhILuvEbGQDbpy+lt
-	D0W2DUo6J++VRdOqHB3Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=5b0I8Gmz8R/dlZsrhiK733h5F5n8EMtAFxVZaZoDO5I=; b=m4Hg5yMaSnuTrokSXQ5GMQEE4
+	1DwGSlYRY+5zBPbt9dCtYOCtIs6or+9mtdLPu0yT/mqaAML9PX3WoneAIerawOvZC3Hg6cJScczhL
+	+JEppBL23gBtkEqp2hbGETXtEogveA8mkU7IkDWXF0CZMD4/CLtMQyK4H5H5DKONiY5/vVSVEwpRx
+	XbvqRtxw+nc/Z+mAAro75uIjQMEXd9rMldM/xOtwsBhq3RJI6XmRpjIH/XKaFTNowzs7F0cSdGSYj
+	zwG2NxeXs8SnKwiwVxVInA4MITcSLZDE/DNiEz8eskFVlk2qdpjbD8ucludQrZPZkz04D0U0zP6Zv
+	aKYTEn1SQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqAB1-0006KP-7M; Wed, 24 Jul 2019 05:50:59 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hqAAZ-000639-Gl; Wed, 24 Jul 2019 05:50:31 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqAAZ-0006Gv-7o; Wed, 24 Jul 2019 05:50:32 +0000
-X-UUID: 6ac57a6b11fa4d4d8f0c19ac1470ba0a-20190723
-X-UUID: 6ac57a6b11fa4d4d8f0c19ac1470ba0a-20190723
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <stanley.chu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 583997347; Tue, 23 Jul 2019 21:50:30 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 23 Jul 2019 22:50:28 -0700
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 24 Jul 2019 13:50:27 +0800
-Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Wed, 24 Jul 2019 13:50:27 +0800
-From: Stanley Chu <stanley.chu@mediatek.com>
-To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
- <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <pedrom.sousa@synopsys.com>
-Subject: [PATCH v2 3/3] scsi: ufs: fix broken hba->outstanding_tasks
-Date: Wed, 24 Jul 2019 13:50:18 +0800
-Message-ID: <1563947418-16394-4-git-send-email-stanley.chu@mediatek.com>
-X-Mailer: git-send-email 1.7.9.5
-In-Reply-To: <1563947418-16394-1-git-send-email-stanley.chu@mediatek.com>
-References: <1563947418-16394-1-git-send-email-stanley.chu@mediatek.com>
+ id 1hqA9w-0004ab-BN
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 05:49:54 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x6O5nmT0056452;
+ Wed, 24 Jul 2019 00:49:48 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1563947388;
+ bh=RYvjllr1MbBnFqdxeJVEJPyJo8N8D3fjWqMgHX3/a70=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=ANsJayOXjU9T6zfjwbV79COTPIaGWu62G+kPNspPZ7F8Z3s5rafzy8qgjA4wNr5z8
+ jGNw6iVPi9DChYFrviB8zY9cOdXI4bRNFpk49qhW6yJgcMZO197ENF5qFxh395ADtM
+ 4u8nisFq8n+mzlPQrIg2Y3JtIgsEf+8w2vWTSKVA=
+Received: from DFLE100.ent.ti.com (dfle100.ent.ti.com [10.64.6.21])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x6O5nmKP099923
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 24 Jul 2019 00:49:48 -0500
+Received: from DFLE103.ent.ti.com (10.64.6.24) by DFLE100.ent.ti.com
+ (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Wed, 24
+ Jul 2019 00:49:47 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE103.ent.ti.com
+ (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Wed, 24 Jul 2019 00:49:47 -0500
+Received: from [172.24.191.45] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x6O5nheF016972;
+ Wed, 24 Jul 2019 00:49:44 -0500
+Subject: Re: [PATCH 2/8] ARM: OMAP2+: Remove unconfigured midlemode for am3
+ lcdc
+To: Suman Anna <s-anna@ti.com>, Tony Lindgren <tony@atomide.com>,
+ <linux-omap@vger.kernel.org>, Jyri Sarha <jsarha@ti.com>
+References: <20190723112811.44381-1-tony@atomide.com>
+ <20190723112811.44381-3-tony@atomide.com>
+ <bcc130a5-f7e0-e182-9f4b-5a48fc3d6e17@ti.com>
+From: Keerthy <j-keerthy@ti.com>
+Message-ID: <52328e14-58b2-2ea1-8b0a-33548a1c6a7a@ti.com>
+Date: Wed, 24 Jul 2019 11:20:20 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <bcc130a5-f7e0-e182-9f4b-5a48fc3d6e17@ti.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_225031_447622_062C995F 
-X-CRM114-Status: GOOD (  12.98  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190723_224952_523675_C563542F 
+X-CRM114-Status: GOOD (  22.38  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,75 +95,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: marc.w.gonzalez@free.fr, andy.teng@mediatek.com, chun-hung.wu@mediatek.com,
- kuohong.wang@mediatek.com, evgreen@chromium.org,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- matthias.bgg@gmail.com, Stanley Chu <stanley.chu@mediatek.com>,
- linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
-Content-Type: text/plain; charset="us-ascii"
+Cc: Nishanth Menon <nm@ti.com>, Tero Kristo <t-kristo@ti.com>,
+ Dave Gerlach <d-gerlach@ti.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Peter Ujfalusi <peter.ujfalusi@ti.com>, Faiz Abbas <faiz_abbas@ti.com>,
+ linux-arm-kernel@lists.infradead.org, Roger Quadros <rogerq@ti.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently bits in hba->outstanding_tasks are cleared only after their
-corresponding task management commands are successfully done by
-__ufshcd_issue_tm_cmd().
 
-If timeout happens in a task management command, its corresponding
-bit in hba->outstanding_tasks will not be cleared until next task
-management command with the same tag used successfully finishes.
 
-This is wrong and can lead to some issues, like power issue.
-For example, ufshcd_release() and ufshcd_gate_work() will do nothing
-if hba->outstanding_tasks is not zero even if both UFS host and devices
-are actually idle.
+On 24/07/19 12:33 AM, Suman Anna wrote:
+> + Jyri
+> 
+> On 7/23/19 6:28 AM, Tony Lindgren wrote:
+>> We currently get a warning for lcdc because of a difference
+>> with dts provided configuration compared to the legacy platform
+>> data. This is because lcdc has SYSC_HAS_MIDLEMODE configured in
+>> the platform data without configuring the modes.
+> 
+> Hi Tony,
+> While I understand that you are trying to match the DT data with the
+> existing legacy data, do you know if there was a reason why this was
+> omitted in the first place? Should we be really adding the MSTANDBY_
+> flags and fix up the DTS node accordingly? I tried looking through the
+> git log, and the initial commit itself didn't add the MSTANDBY_ flags
+> but used the SYSC_HAS_MIDLEMODE.
+> 
+> Jyri,
+> Do you know the history?
 
-Referring to error handling flow of hba->outstanding_reqs, all timed-out
-bits will be cleared by
-ufshcd_reset_and_restore() => ufshcd_transfer_req_compl()
-after reset is done. Therefore similar handling for hba->outstanding_tasks
-could be applied, for example, by
-ufshcd_reset_and_restore() => ufshcd_tmc_handler().
+Tony/Suman,
 
-Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
----
- drivers/scsi/ufs/ufshcd.c | 16 +++++++++++++++-
- 1 file changed, 15 insertions(+), 1 deletion(-)
+This patch breaks DS0 on am3.
 
-diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-index 114c15ed75f7..3cb942ef64e2 100644
---- a/drivers/scsi/ufs/ufshcd.c
-+++ b/drivers/scsi/ufs/ufshcd.c
-@@ -5535,11 +5535,25 @@ static void ufshcd_tm_cmd_compl(struct ufs_hba *hba, int tag)
-  */
- static void ufshcd_tmc_handler(struct ufs_hba *hba)
- {
--	u32 tm_doorbell;
-+	u32 tm_doorbell, tag;
- 
- 	tm_doorbell = ufshcd_readl(hba, REG_UTP_TASK_REQ_DOOR_BELL);
- 	hba->tm_condition = tm_doorbell ^ hba->outstanding_tasks;
-+
-+	/*
-+	 * resource of timed-out tasks shall be cleaned.
-+	 * No effect for normal tasks.
-+	 */
-+	for_each_set_bit(tag, &hba->tm_condition, hba->nutmrs)
-+		ufshcd_tm_cmd_compl(hba, tag);
-+
- 	wake_up(&hba->tm_wq);
-+
-+	/*
-+	 * If a timed-out task is cleaned done above,
-+	 * free tag is available now for waiters.
-+	 */
-+	wake_up(&hba->tm_tag_wq);
- }
- 
- /**
--- 
-2.18.0
+- Keerthy
 
+> 
+> regards
+> Suman
+> 
+>>
+>> Let's fix the warning by removing SYSC_HAS_MIDLEMODE. Note that
+>> the am335x TRM lists SYSC_HAS_MIDLEMODE, but it is unused.
+> 
+> 
+> 
+>>
+>> Signed-off-by: Tony Lindgren <tony@atomide.com>
+>> ---
+>>   arch/arm/mach-omap2/omap_hwmod_33xx_data.c | 2 +-
+>>   1 file changed, 1 insertion(+), 1 deletion(-)
+>>
+>> diff --git a/arch/arm/mach-omap2/omap_hwmod_33xx_data.c b/arch/arm/mach-omap2/omap_hwmod_33xx_data.c
+>> --- a/arch/arm/mach-omap2/omap_hwmod_33xx_data.c
+>> +++ b/arch/arm/mach-omap2/omap_hwmod_33xx_data.c
+>> @@ -231,7 +231,7 @@ static struct omap_hwmod am33xx_control_hwmod = {
+>>   static struct omap_hwmod_class_sysconfig lcdc_sysc = {
+>>   	.rev_offs	= 0x0,
+>>   	.sysc_offs	= 0x54,
+>> -	.sysc_flags	= (SYSC_HAS_SIDLEMODE | SYSC_HAS_MIDLEMODE),
+>> +	.sysc_flags	= SYSC_HAS_SIDLEMODE,
+>>   	.idlemodes	= (SIDLE_FORCE | SIDLE_NO | SIDLE_SMART),
+>>   	.sysc_fields	= &omap_hwmod_sysc_type2,
+>>   };
+>>
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
