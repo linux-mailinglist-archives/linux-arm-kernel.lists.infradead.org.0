@@ -2,52 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 19D0974188
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 00:38:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF7F774192
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 00:39:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Dblfp1WSBb2dRk/BQ9xWFjFXEJqlRtxN1QYUFF7afu8=; b=JfxmQVFPPupoaO
-	nekXkaPgRCAiFqh+tq/JL3wBJoDEch7AkQO7JuAZ3YNrftwU9FdgFVhw4FFO9yOosQOpMR2y+BaAy
-	P/zMnyvYMU+EXYGMJxgxqFHmsadOWEJ3c+V36IYW8LJJ/m7gJAaxRHcLbNX/QYxsNtLkVmaWFgSQ4
-	N55dQk0bqCpU74k5SFSt1loLV1UgTWy0jBE0J+Cx2WGq9pxgSJwdp7XQxBQR3E1HqUrZGS2cmEhON
-	TH3x5E+++8MKvCpSrz2mkUABl0696q6waJsI0MJjBfCg2xWZJDj2lm6nlzfWI/NeAj0tjk0ZC+l8x
-	/JHgb4ipAmwoIF4VPJEQ==;
+	List-Owner; bh=C/DQavGO9BeHHY/QonrhDrw3c1z1fIleVceyTBoR3Ps=; b=uV2f3QoXRGPaWx
+	kVvno2BBSaF6AyjivWbT9MbztUv+xyBnHGqeNmuE/QgOvx9HOGwXXaK9rcIIQdYkMW3MBzvadNYW0
+	UKFvx1XpAHpA7Mfu3fFmFg8HMObNI7U0E14SQgY5n7xsbGY5yeZ+HoSaD89ZdzeD07AWbzt/aafin
+	yxBG15LcojIj4uT+m5QiN8xlsKAQM6RBVu45FcRVOVDsbSSoOYq8Ukw8aSGzizKnaoiRDQbY/Xzbc
+	Rf+9xD9regAf1tGvsKssmlWqXS621aNFlqDmP6f8UjYjl0wbGotI9bPl9SEeKe6UlM8LtQpcoRczI
+	kTqImT7sanMclVMQacPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqPu2-0006S2-UT; Wed, 24 Jul 2019 22:38:31 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1hqPud-0006oR-8S; Wed, 24 Jul 2019 22:39:07 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqPtl-0006RL-6m; Wed, 24 Jul 2019 22:38:14 +0000
-Received: from d57e23da.static.ziggozakelijk.nl ([213.126.35.218]
- helo=phil.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1hqPte-0005Vm-0y; Thu, 25 Jul 2019 00:38:06 +0200
-From: Heiko Stuebner <heiko@sntech.de>
+ id 1hqPty-0006Zh-9F
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 22:38:29 +0000
+Received: by mail-pg1-x544.google.com with SMTP id t132so21910528pgb.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 24 Jul 2019 15:38:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=9Dc2qcjKZtC43VFkg+AkTg9oc60SQQXWdODT+iWj4Ig=;
+ b=h7bxbA9onAD2dz2ar/lKtvI8U78LMFyUb0g0d+U6xZe0yA3oMMFnKOzblILDCft4YP
+ RH3briYvP964xAXtME0s1rYg4P4VePZNvghmMiscYvXfL7PC8dwSHgZcNgfSwpbjRM4D
+ rwM5CprkVXN1T0IA4M1iMetyWKchd7E6etbTM=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=9Dc2qcjKZtC43VFkg+AkTg9oc60SQQXWdODT+iWj4Ig=;
+ b=NfHMJLHwYYs/C5KuKNZTciMPyQGE+p3OOeZrNAPcfybHWqojakO+pj2i4cvIHKXQGF
+ I9vsKcevqr5lb/sFEq8xmirz8JbVOj6g+zrmdTpjxHzZkJKcJv2A5Vjr9aA+VjdZs9aH
+ AMEU+pvspH734HWwZvGukj54cI2zm+Ygyfy8v0jbXeq/tSW30e/QLuzWPW/Gyp+7TJuF
+ X9FU2gYt8XZ3vRppxTELwy21s7PYRcYBa+/oiYzPcd47OZ59KatdgVkNzQXU4c1EmEGh
+ QTFzV6ZGGyg3dtX+BdurObcQa3woqdvbW2xa2oK9bfAUvCeub5MiAsuVtE2Ni7lsALg/
+ fgqg==
+X-Gm-Message-State: APjAAAWN0MY77xBvnHR74syn5WhQuZYKA8eLLIRYBY47sErSEk+PiABq
+ rTFA+d9wCMfJ2ANq21ah+U22Ag==
+X-Google-Smtp-Source: APXvYqwROjs9pfNddDIyH0kjsUo4epMtSE+vqw102VBAtHJmpqhjw64Rmq9Jc/LIZW5Qf9E/JdehJQ==
+X-Received: by 2002:a62:874d:: with SMTP id i74mr13211045pfe.94.1564007905394; 
+ Wed, 24 Jul 2019 15:38:25 -0700 (PDT)
+Received: from localhost ([2620:15c:202:1:75a:3f6e:21d:9374])
+ by smtp.gmail.com with ESMTPSA id p7sm51433378pfp.131.2019.07.24.15.38.24
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 24 Jul 2019 15:38:24 -0700 (PDT)
+Date: Wed, 24 Jul 2019 15:38:23 -0700
+From: Matthias Kaehlcke <mka@chromium.org>
 To: Doug Anderson <dianders@chromium.org>
 Subject: Re: [PATCH v2 2/2] ARM: dts: rockchip: consolidate veyron panel and
  backlight settings
-Date: Thu, 25 Jul 2019 00:38:05 +0200
-Message-ID: <1769449.YPoKHCOSj6@phil>
-In-Reply-To: <CAD=FV=Wj4Fei6t-STjY_FJkDKQYys5PcVquBJcdRE3wUN=y3Yg@mail.gmail.com>
+Message-ID: <20190724223823.GC250418@google.com>
 References: <20190711223455.12210-1-mka@chromium.org>
  <20190711223455.12210-2-mka@chromium.org>
  <CAD=FV=Wj4Fei6t-STjY_FJkDKQYys5PcVquBJcdRE3wUN=y3Yg@mail.gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAD=FV=Wj4Fei6t-STjY_FJkDKQYys5PcVquBJcdRE3wUN=y3Yg@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_153813_401619_201F89C4 
-X-CRM114-Status: GOOD (  16.78  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190724_153826_376584_B4C03426 
+X-CRM114-Status: GOOD (  17.00  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,16 +99,16 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>,
+ Heiko Stuebner <heiko@sntech.de>,
  "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Matthias Kaehlcke <mka@chromium.org>,
+ Rob Herring <robh+dt@kernel.org>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am Mittwoch, 24. Juli 2019, 23:46:30 CEST schrieb Doug Anderson:
+On Wed, Jul 24, 2019 at 02:46:30PM -0700, Doug Anderson wrote:
 > Hi,
 > 
 > On Thu, Jul 11, 2019 at 3:35 PM Matthias Kaehlcke <mka@chromium.org> wrote:
@@ -125,8 +164,9 @@ Am Mittwoch, 24. Juli 2019, 23:46:30 CEST schrieb Doug Anderson:
 > power-supply = <&backlight_regulator>;
 > 
 > ...from minnie.
-> 
-> 
+
+good catch, thanks!
+
 > > diff --git a/arch/arm/boot/dts/rk3288-veyron-pinky.dts b/arch/arm/boot/dts/rk3288-veyron-pinky.dts
 > > index 9b6f4d9b03b6..06af58e37a4b 100644
 > > --- a/arch/arm/boot/dts/rk3288-veyron-pinky.dts
@@ -154,8 +194,9 @@ Am Mittwoch, 24. Juli 2019, 23:46:30 CEST schrieb Doug Anderson:
 > > +       power-supply= <&vcc33_lcd>;
 > 
 > Might as well put a space before the "="?
-> 
-> 
+
+will do
+
 > >  &pinctrl {
 > > +       /delete-node/ lcd;
 > > +
@@ -170,22 +211,17 @@ Am Mittwoch, 24. Juli 2019, 23:46:30 CEST schrieb Doug Anderson:
 > case I think things are cleaner after your patch but I won't say it's
 > 100% clear cut.
 
-going this way with the delete-nodes looks good to me :-) ... pinky is
-the "odd" one in that, so I think it can carry the burden ... especially
-as you said, this really only affects me and my boardfarm at all ;-) .
+I agree that some repetition can be preferrable over /delete-node/
+statements. In this case repetition is above my personal threshold,
+especially since I'm about to add another device with eDP display and
+would have to repeat the mostly redundant config yet another time.
 
+If Heiko prefer's the repetition so be it :)
 
-Heiko
-
-> 
 > Other than nits I have double-checked this patch, so feel free to add
 > my Reviewed-by after nits are fixed.
-> 
-> -Doug
-> 
 
-
-
+Thanks for the review!
 
 
 _______________________________________________
