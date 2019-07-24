@@ -2,147 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0FD497287D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 08:49:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B50C0728AC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 08:55:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oF1o6um/Q/d7fH2RbeIwMPH8Z+l1NJY0tI3VMRdZ0E8=; b=iszf2i0WM8SEm8
-	2XmvxrYAGa+tJSJARWuTq0psGRm9+wU2NiSwmfByKe3t4Cfg0FpDX1nDBR2QOeltKBTKvM61ivDT9
-	aUHh0Glap5bPgjR1YtAnS3ulkbcMAyKJtMPbu7t9CJtPRdapS3bZwkwDgSMTapS2i3/hcK2rWPO7n
-	l5XAskMK+QLAyH+IjD5v/jrN9fvg2RxvlOm3pquswW4tkD9Gf/pv09Vv6o6reyxQDy8ByfMn3xz/4
-	vtJCeFnQId0n3qXzEphHlE866c45+x9wT//4P/Jeqry240pzZGi8e4qnHZVcnDAoBvD3Q2d1BBhDj
-	yN5FO7tETBT3OLsWWugQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GomahYGFzR9nSLgehyE3CWxBghxx4DOYT7rhSIeXdDA=; b=Gm/aWy2mlOWafX
+	x5XdjoqFt0Ik/ybQ0AXkkSGSG6WQIAKMEsLVZXycAlYD7pKLYIjRfignUN6TcN2bY7uH5N2fAS/wA
+	2dzbhhN20Coeqnvwy0VZdJQRiQKfxL1A642d6y1upuuUGmfYLlFJzCfTmebEo6Xc4Co05uVRhDePO
+	Svr8IJHibXnh7VFRolI7X16lJ2qQC2XToQY8puoiWmM8YamZnuGPqAWqWgKeQV8DX/2bprvu5Xdiz
+	6M7AEV/cM8vbBQtOKgnbUUu88YerdMtGCT7IgoGuZPWAfNa71YCc+RkzvroSxKYhcANrZpnrbv4BE
+	MPQGRETFxcHpV+cXTF0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqB5a-0002IE-L0; Wed, 24 Jul 2019 06:49:26 +0000
+	id 1hqBBG-0004qD-CQ; Wed, 24 Jul 2019 06:55:18 +0000
 Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqB5F-0002HH-69
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 06:49:07 +0000
-Received: by mail-wr1-x442.google.com with SMTP id n4so45688398wrs.3
+ id 1hqBAw-0004gK-UI
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 06:55:00 +0000
+Received: by mail-wr1-x442.google.com with SMTP id y4so45655527wrm.2
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 23 Jul 2019 23:49:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:openpgp:autocrypt:organization
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=rVBZFDEe6GlwoB61u8GoPEgkc+ywoIeVzBMII2nQSVg=;
- b=BUOqIo/xN9pAYyQd9luaZ8F6vihcN9vgU7dLJ85uWoTV9TBl+g0jD7uakEoxVgeAqy
- 668/J4GuDA1VCKxGoW/YtSDhn2nApeaWFKqPijRsaqqE9gzB4Lhp8lUZe8IfASYQRVwp
- 7wQBGj7MmORGywMOEmmt+SYKfV/DZ/HeOgz3s7wiUGmGa/Zy3XHSvIH3IpFrNIzlvPKp
- VnSt/88t/YsU9aN2E4dQP87zzgYnmuQVx1R4GwFLIgHHehQ+nPQMMgXsACjLs3n4j/fX
- icbuodNZVEP80uXd36I97CTBiOTDue9D2EG4QgjaXfD5uuCvEzOCypQ95uNB4qx1V0+8
- FIZw==
+ Tue, 23 Jul 2019 23:54:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=4iMeNTsCiERl+P34fUTSUNSQriOGJih/vVFrylD6BeI=;
+ b=fk2lwvozpFZQhIBd+22aYQwHfP0ddOk3rDZTodt7W2XLtZcbasVjL/eSI1ru8ghIJ1
+ GBpn13Gqf1w/c8bkgJ56GrQTR6gsyDziHRCHP3cDUkQxBsbU3Bd9ZrBMg0owv0xRfUuE
+ siiEsoXj/Awey9XsUzEvzn5SVEnOWDqWakDX78f/0Y/cEbdpl1znF7iWF/6N4ZZwrWNw
+ hUvSFih3el+1CSVnGqKAH3Oi8byJ13eUDAsH9tdsAFyzuM5C0k2ZqDi+Ygl90+ZXvcsN
+ Q2SAOY2o8O7+rgSWrXr/piH57mFLzvfggjE69vullExS7m4AdTjorSQ8a8iraFI7P6JH
+ h5qw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :organization:message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=rVBZFDEe6GlwoB61u8GoPEgkc+ywoIeVzBMII2nQSVg=;
- b=FLHzX9KeuMLaLYw4+zQ+3hrdvzo4++j7ePU6W+imDDO7FKH+BX995KHqaEM3YUpbMo
- tXRpMBijtrX9n7v24eh38Icae9uLEYeio9gRH6VhwzFk83QAcl2pbPJ9OpV/vA06tkc7
- eiF+7oKVsa+mwVXdnLdw9gQ4aeCnPkskdyIy5QeA9WUcmWKXEMzVqv3wFYq+Haq14EOz
- Pm/DedsuNdO6cYh4nfutHcgk6QCA7NdAJmvMcriZMsrUUsDWRvH5tPkE0U92wQn1OAYH
- jSobojlEbs4N9a8BERrCSzbdKbFFAGBtUX2hFp3xpsnUjHrNb0+0VVB5u0VilYx0QSyw
- TVXA==
-X-Gm-Message-State: APjAAAVRGZ9g3qQHKkvXet/KsI7fqkt2rGqL6MI5ahzvaqM93OgMtooy
- Y60F7eRSRjjgpQuLS3VcwITI1bPnx4A=
-X-Google-Smtp-Source: APXvYqyb8y6xZQDAepGq+kAcakKbyUotanWH8No0Jcn34mStLscqEaHiOpGjBd6o+jDCz36RHMTQ7w==
-X-Received: by 2002:a05:6000:100f:: with SMTP id
- a15mr64905486wrx.325.1563950943127; 
- Tue, 23 Jul 2019 23:49:03 -0700 (PDT)
-Received: from [192.168.1.62] (176-150-251-154.abo.bbox.fr. [176.150.251.154])
- by smtp.gmail.com with ESMTPSA id
- j9sm50350060wrn.81.2019.07.23.23.49.02
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 23 Jul 2019 23:49:02 -0700 (PDT)
-Subject: Re: [PATCH] arm64: dts: meson: odroid-n2: keep SD card regulator
- always on
-To: Anand Moon <linux.amoon@gmail.com>
-References: <20190719192954.26481-1-xruppen@gmail.com>
- <eadcf7ef-4aad-fa4f-3b1b-a5238f394b1e@baylibre.com>
- <CANAwSgTbvQO5qum1K3q8+J=WO4yLjadnZSZYf_AAhbf+CJm92Q@mail.gmail.com>
-From: Neil Armstrong <narmstrong@baylibre.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
- 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
- ZaTUOEkgIor5losDrePdPgE=
-Organization: Baylibre
-Message-ID: <cdb986e9-e905-8001-630a-cf3e3f8c5369@baylibre.com>
-Date: Wed, 24 Jul 2019 08:49:01 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=4iMeNTsCiERl+P34fUTSUNSQriOGJih/vVFrylD6BeI=;
+ b=irXvdX63GPSbuniegQMcxB18tjmmoX1cudvBkJ5EH6U6cRuCM160R70Er4LHcdc3ut
+ miDBgx15M9NO2o5Sr6kUAoFT9UXJuLjyJ4VCWtIPjPRQ2/LijuYjStUzy428gYczrAXe
+ SIwv86o+MpBtVg7HvbHRk/80CiobmlIZwl5VS4SGm4TWNC2JmX9PrUmMpuWAT14mZif5
+ 2f77j+1E8DJn3N3sBBwXruDH+bAWLVU8ip3THdGwcwsYdtf1MpMie0lupH4ITrranDXn
+ Td/rKDR7OQV4jDQifE8BE4Uew89WGY+IZF7VFwHm9UH9XQ5MFKYyf69rkKkJFxFnLTRO
+ DDkA==
+X-Gm-Message-State: APjAAAVvT23Hhfxsw8UQRgKGs7X2YRfXnFLUvrB0UACQkvbmDw8baoBI
+ bDlk4M5phJliB4+FsLlvYsAZ3wTZnsanmeF0c/o=
+X-Google-Smtp-Source: APXvYqz4dhIt0idgKDMG+M+RinhFLThRORdt4BwIA6AYlWqxPwozbP8EWmcdiQMBzoZgaLOPnkooAPJC9t9UvPC06jc=
+X-Received: by 2002:adf:c70e:: with SMTP id k14mr88734339wrg.201.1563951297367; 
+ Tue, 23 Jul 2019 23:54:57 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <CANAwSgTbvQO5qum1K3q8+J=WO4yLjadnZSZYf_AAhbf+CJm92Q@mail.gmail.com>
-Content-Language: en-US
+References: <20190723084104.12639-1-daniel.baluta@nxp.com>
+ <20190723084104.12639-2-daniel.baluta@nxp.com>
+ <a5d44d96-4d50-ee46-a6bf-3ce108b1994a@linux.intel.com>
+In-Reply-To: <a5d44d96-4d50-ee46-a6bf-3ce108b1994a@linux.intel.com>
+From: Daniel Baluta <daniel.baluta@gmail.com>
+Date: Wed, 24 Jul 2019 09:54:46 +0300
+Message-ID: <CAEnQRZCuB2QKzz-08K0z+x+p0qCpqR_wDc=q2GChvJiw4E9hBA@mail.gmail.com>
+Subject: Re: [Sound-open-firmware] [PATCH v2 1/5] ASoC: SOF: imx: Add i.MX8 HW
+ support
+To: Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_234905_275189_907746A5 
-X-CRM114-Status: GOOD (  23.72  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20190723_235459_011185_87648046 
+X-CRM114-Status: GOOD (  23.23  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
- 0.1 URIBL_SBL_A Contains URL's A record listed in the Spamhaus SBL
- blocklist [URIs: pastebin.com]
- 0.6 URIBL_SBL Contains an URL's NS IP listed in the Spamhaus SBL
- blocklist [URIs: pastebin.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (daniel.baluta[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -157,112 +95,413 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>,
- Linux Kernel <linux-kernel@vger.kernel.org>, Xavier Ruppen <xruppen@gmail.com>,
- linux-amlogic@lists.infradead.org,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Aisheng Dong <aisheng.dong@nxp.com>,
+ Peng Fan <peng.fan@nxp.com>, Fabio Estevam <festevam@gmail.com>,
+ Anson Huang <anson.huang@nxp.com>,
+ Devicetree List <devicetree@vger.kernel.org>,
+ Daniel Baluta <daniel.baluta@nxp.com>, "S.j. Wang" <shengjiu.wang@nxp.com>,
+ Marco Felsch <m.felsch@pengutronix.de>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Paul Olaru <paul.olaru@nxp.com>, Rob Herring <robh+dt@kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ sound-open-firmware@alsa-project.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Anand,
+On Tue, Jul 23, 2019 at 6:18 PM Pierre-Louis Bossart
+<pierre-louis.bossart@linux.intel.com> wrote:
+>
+>
+> > diff --git a/sound/soc/sof/imx/Makefile b/sound/soc/sof/imx/Makefile
+> > new file mode 100644
+> > index 000000000000..c69237971da5
+> > --- /dev/null
+> > +++ b/sound/soc/sof/imx/Makefile
+> > @@ -0,0 +1,7 @@
+> > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-3-Clause)
+> > +
+> > +ccflags-y += -DDEBUG
+>
+> this should be removed or in a separate patch.
 
-On 24/07/2019 07:30, Anand Moon wrote:
-> Hi All,
-> 
-> On Mon, 22 Jul 2019 at 12:51, Neil Armstrong <narmstrong@baylibre.com> wrote:
->>
->> On 19/07/2019 21:29, Xavier Ruppen wrote:
->>> When powering off the Odroid N2, the tflash_vdd regulator is
->>> automatically turned off by the kernel. This is a problem
->>> when issuing the "reboot" command while using an SD card.
->>> The boot ROM does not power this regulator back on, blocking
->>> the reboot process at the boot ROM stage, preventing the
->>> SD card from being detected.
->>>
->>> Adding the "regulator-always-on" property fixes the problem.
->>>
->>> Signed-off-by: Xavier Ruppen <xruppen@gmail.com>
->>> ---
->>>
->>> Here is what the boot ROM output looks like without this patch:
->>>
->>>     [root@alarm ~]# reboot
->>>     [...]
->>>     [   24.275860] shutdown[1]: All loop devices detached.
->>>     [   24.278864] shutdown[1]: Detaching DM devices.
->>>     [   24.287105] kvm: exiting hardware virtualization
->>>     [   24.318776] reboot: Restarting system
->>>     bl31 reboot reason: 0xd
->>>     bl31 reboot reason: 0x0
->>>     system cmd  1.
->>>     G12B:BL:6e7c85:7898ac;FEAT:E0F83180:2000;POC:F;RCY:0;
->>>     EMMC:800;NAND:81;SD?:0;SD:400;USB:8;LOOP:1;EMMC:800;
->>>     NAND:81;SD?:0;SD:400;USB:8;LOOP:2;EMMC:800;NAND:81;
->>>     SD?:0;SD:400;USB:8;LOOP:3; [...]
->>>
->>> Other people can be seen having this problem on the odroid
->>> forum [1].
->>>
->>> The cause of the problem was found by Martin Blumenstingl
->>> on #linux-amlogic. We may want to add his Suggested-by tag
->>> if he agrees.
->>>
->>> [1] https://forum.odroid.com/viewtopic.php?f=176&t=33993
->>>
->>>  arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts | 1 +
->>>  1 file changed, 1 insertion(+)
->>>
->>> diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts b/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
->>> index 81780ffcc7f0..4e916e1f71f7 100644
->>> --- a/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
->>> +++ b/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
->>> @@ -53,6 +53,7 @@
->>>
->>>               gpio = <&gpio_ao GPIOAO_8 GPIO_ACTIVE_HIGH>;
->>>               enable-active-high;
->>> +             regulator-always-on;
->>>       };
->>>
->>>       tf_io: gpio-regulator-tf_io {
->>>
->>
->> Surely solves the situation, thanks !
->>
->> please add a comment on top of "regulator-always-on" to explain why we always enable it,
->> note we should always enable it in case of watchdog reboot or other uncontrolled reset,
->> this regulator must never be disabled.
->>
->> Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
->>
->> Thanks,
->> Neil
->>
-> 
-> I am afraid this did not fix the issue I was also facing with
-> Archlinux on Odroid N2 using mainline u-boot.
+All right.
 
-Seems to be a separate issue, could we start a separate thread with all your
-setup (branch, git SHAa, configs, board setup, ...) for this ?
+>
+>
+> > +struct imx8_priv {
+> > +     struct device *dev;
+> > +     struct snd_sof_dev *sdev;
+> > +     struct imx_dsp_ipc *dsp_ipc;
+> > +     struct imx_sc_ipc *sc_ipc;
+>
+> maybe a comment to explain what 'sc' stands for?
 
-Thanks,
-Neil
+Sure.
+>
+> > +};
+> > +
+> > +static void imx8_get_windows(struct snd_sof_dev *sdev)
+> > +{
+> > +     struct sof_ipc_window_elem *elem;
+> > +     u32 outbox_offset = 0;
+> > +     u32 stream_offset = 0;
+> > +     u32 inbox_offset = 0;
+> > +     u32 outbox_size = 0;
+> > +     u32 stream_size = 0;
+> > +     u32 inbox_size = 0;
+> > +     int i;
+> > +
+> > +     if (!sdev->info_window) {
+> > +             dev_err(sdev->dev, "error: have no window info\n");
+> > +             return;
+> > +     }
+> > +
+> > +     for (i = 0; i < sdev->info_window->num_windows; i++) {
+> > +             elem = &sdev->info_window->window[i];
+> > +
+> > +             switch (elem->type) {
+> > +             case SOF_IPC_REGION_UPBOX:
+> > +                     inbox_offset = elem->offset + MBOX_OFFSET;
+> > +                     inbox_size = elem->size;
+> > +                     snd_sof_debugfs_io_item(sdev,
+> > +                                             sdev->bar[SOF_FW_BLK_TYPE_SRAM]
+> > +                                             + inbox_offset,
+> > +                                             elem->size, "inbox",
+> > +                                             SOF_DEBUGFS_ACCESS_D0_ONLY);
+> > +                     break;
+> > +             case SOF_IPC_REGION_DOWNBOX:
+> > +                     outbox_offset = elem->offset + MBOX_OFFSET;
+> > +                     outbox_size = elem->size;
+> > +                     snd_sof_debugfs_io_item(sdev,
+> > +                                             sdev->bar[SOF_FW_BLK_TYPE_SRAM]
+> > +                                             + outbox_offset,
+> > +                                             elem->size, "outbox",
+> > +                                             SOF_DEBUGFS_ACCESS_D0_ONLY);
+> > +                     break;
+> > +             case SOF_IPC_REGION_TRACE:
+> > +                     snd_sof_debugfs_io_item(sdev,
+> > +                                             sdev->bar[SOF_FW_BLK_TYPE_SRAM]
+> > +                                             + elem->offset + MBOX_OFFSET,
+> > +                                             elem->size, "etrace",
+> > +                                             SOF_DEBUGFS_ACCESS_D0_ONLY);
+> > +                     break;
+> > +             case SOF_IPC_REGION_DEBUG:
+> > +                     snd_sof_debugfs_io_item(sdev,
+> > +                                             sdev->bar[SOF_FW_BLK_TYPE_SRAM]
+> > +                                             + elem->offset + MBOX_OFFSET,
+> > +                                             elem->size, "debug",
+> > +                                             SOF_DEBUGFS_ACCESS_D0_ONLY);
+> > +                     break;
+> > +             case SOF_IPC_REGION_STREAM:
+> > +                     stream_offset = elem->offset + MBOX_OFFSET;
+> > +                     stream_size = elem->size;
+> > +                     snd_sof_debugfs_io_item(sdev,
+> > +                                             sdev->bar[SOF_FW_BLK_TYPE_SRAM]
+> > +                                             + stream_offset,
+> > +                                             elem->size, "stream",
+> > +                                             SOF_DEBUGFS_ACCESS_D0_ONLY);
+> > +                     break;
+> > +             case SOF_IPC_REGION_REGS:
+> > +                     snd_sof_debugfs_io_item(sdev,
+> > +                                             sdev->bar[SOF_FW_BLK_TYPE_SRAM]
+> > +                                             + elem->offset + MBOX_OFFSET,
+> > +                                             elem->size, "regs",
+> > +                                             SOF_DEBUGFS_ACCESS_D0_ONLY);
+> > +                     break;
+> > +             case SOF_IPC_REGION_EXCEPTION:
+> > +                     sdev->dsp_oops_offset = elem->offset + MBOX_OFFSET;
+> > +                     snd_sof_debugfs_io_item(sdev,
+> > +                                             sdev->bar[SOF_FW_BLK_TYPE_SRAM]
+> > +                                             + elem->offset + MBOX_OFFSET,
+> > +                                             elem->size, "exception",
+> > +                                             SOF_DEBUGFS_ACCESS_D0_ONLY);
+> > +                     break;
+> > +             default:
+> > +                     dev_err(sdev->dev, "error: get illegal window info\n");
+> > +                     return;
+> > +             }
+> > +     }
+> > +
+> > +     if (outbox_size == 0 || inbox_size == 0) {
+> > +             dev_err(sdev->dev, "error: get illegal mailbox window\n");
+> > +             return;
+> > +     }
+> > +
+> > +     snd_sof_dsp_mailbox_init(sdev, inbox_offset, inbox_size,
+> > +                              outbox_offset, outbox_size);
+> > +     sdev->stream_box.offset = stream_offset;
+> > +     sdev->stream_box.size = stream_size;
+> > +
+> > +     dev_dbg(sdev->dev, " mailbox upstream 0x%x - size 0x%x\n",
+> > +             inbox_offset, inbox_size);
+> > +     dev_dbg(sdev->dev, " mailbox downstream 0x%x - size 0x%x\n",
+> > +             outbox_offset, outbox_size);
+> > +     dev_dbg(sdev->dev, " stream region 0x%x - size 0x%x\n",
+> > +             stream_offset, stream_size);
+> > +}
+>
+> This looks 100% similar to Baytrail?
 
-> Here is the log of at my end using latest mainline u-boot with Neil's patches.
-> 
-> [0] https://pastebin.com/HNmeY5uF
-> 
-> Well this issue also persist with eMMC not getting detected after reboot
-> If I try to change the dts to fix the sdcard.
-> 
-> I am checking this should we enable regulator-boot-on option but still no luck.
-> 
-> Best Regards
-> -Anand
-> 
+Yes!
+>
+> > +
+> > +/*
+> > + * IPC Firmware ready.
+> > + */
+> > +static int imx8_fw_ready(struct snd_sof_dev *sdev, u32 msg_id)
+> > +{
+> > +     struct sof_ipc_fw_ready *fw_ready = &sdev->fw_ready;
+> > +     u32 offset;
+> > +     int ret;
+> > +
+> > +     /* mailbox must be on 4k boundary */
+> > +     offset = MBOX_OFFSET;
+> > +
+> > +     dev_dbg(sdev->dev, "ipc: DSP is ready 0x%8.8x offset 0x%x\n",
+> > +             msg_id, offset);
+> > +
+> > +      /* no need to re-check version/ABI for subsequent boots */
+> > +     if (!sdev->first_boot)
+> > +             return 0;
+> > +
+> > +     /* copy data from the DSP FW ready offset */
+> > +     sof_block_read(sdev, sdev->mailbox_bar, offset, fw_ready,
+> > +                    sizeof(*fw_ready));
+> > +     snd_sof_dsp_mailbox_init(sdev, fw_ready->dspbox_offset,
+> > +                              fw_ready->dspbox_size,
+> > +                              fw_ready->hostbox_offset,
+> > +                              fw_ready->hostbox_size);
+> > +
+> > +     /* make sure ABI version is compatible */
+> > +     ret = snd_sof_ipc_valid(sdev);
+> > +     if (ret < 0)
+> > +             return ret;
+> > +
+> > +     /* now check for extended data */
+> > +     snd_sof_fw_parse_ext_data(sdev, SOF_FW_BLK_TYPE_SRAM, MBOX_OFFSET +
+> > +                               sizeof(struct sof_ipc_fw_ready));
+> > +
+> > +     imx8_get_windows(sdev);
+> > +
+> > +     return 0;
+> > +}
+>
+> That code looks nearly similar to the baytrail one except for the last
+> line, we should look into factoring this.
 
+Yes, I got most of my inspiration from intel code.
+
+>
+> > +
+> > +static void imx8_get_reply(struct snd_sof_dev *sdev)
+> > +{
+> > +     struct snd_sof_ipc_msg *msg = sdev->msg;
+> > +     struct sof_ipc_reply reply;
+> > +     unsigned long flags;
+> > +     int ret = 0;
+> > +
+> > +     if (!msg) {
+> > +             dev_warn(sdev->dev, "unexpected ipc interrupt\n");
+> > +             return;
+> > +     }
+> > +
+> > +     /* get reply */
+> > +     sof_mailbox_read(sdev, sdev->host_box.offset, &reply, sizeof(reply));
+> > +
+> > +     spin_lock_irqsave(&sdev->ipc_lock, flags);
+> > +
+> > +     if (reply.error < 0) {
+> > +             memcpy(msg->reply_data, &reply, sizeof(reply));
+> > +             ret = reply.error;
+> > +     } else {
+> > +             /* reply has correct size? */
+> > +             if (reply.hdr.size != msg->reply_size) {
+> > +                     dev_err(sdev->dev, "error: reply expected %zu got %u bytes\n",
+> > +                             msg->reply_size, reply.hdr.size);
+> > +                     ret = -EINVAL;
+> > +             }
+> > +
+> > +             /* read the message */
+> > +             if (msg->reply_size > 0)
+> > +                     sof_mailbox_read(sdev, sdev->host_box.offset,
+> > +                                      msg->reply_data, msg->reply_size);
+> > +     }
+> > +
+> > +     msg->reply_error = ret;
+> > +
+> > +     spin_unlock_irqrestore(&sdev->ipc_lock, flags);
+>
+> I don't see a spin_lock/unlock for the get_reply in the Intel code, is
+> this necessary?
+
+Hmm, you are right. I think I've used an older version of the intel code
+where there a lock.
+
+>
+> > +}
+> > +
+> > +void imx_dsp_handle_reply(struct imx_dsp_ipc *ipc)
+> > +{
+> > +     struct imx8_priv *priv = imx_dsp_get_data(ipc);
+> > +
+> > +     imx8_get_reply(priv->sdev);
+> > +     snd_sof_ipc_reply(priv->sdev, 0);
+> > +}
+> > +
+> > +void imx_dsp_handle_request(struct imx_dsp_ipc *ipc)
+> > +{
+> > +     struct imx8_priv *priv = imx_dsp_get_data(ipc);
+> > +
+> > +     snd_sof_ipc_msgs_rx(priv->sdev);
+> > +}
+> > +
+> > +struct imx_dsp_ops dsp_ops = {
+> > +     .handle_reply           = imx_dsp_handle_reply,
+> > +     .handle_request         = imx_dsp_handle_request,
+> > +};
+> > +
+> > +static int imx8_send_msg(struct snd_sof_dev *sdev, struct snd_sof_ipc_msg *msg)
+> > +{
+> > +     struct imx8_priv *priv = (struct imx8_priv *)sdev->private;
+> > +
+> > +     sof_mailbox_write(sdev, sdev->host_box.offset, msg->msg_data,
+> > +                       msg->msg_size);
+> > +     imx_dsp_ring_doorbell(priv->dsp_ipc, 0);
+> > +
+> > +     return 0;
+> > +}
+> > +
+> > +/*
+> > + * DSP control.
+> > + */
+> > +static int imx8_run(struct snd_sof_dev *sdev)
+> > +{
+> > +     int ret;
+> > +     struct imx8_priv *dsp_priv = (struct imx8_priv *)sdev->private;
+> > +
+> > +     ret = imx_sc_misc_set_control(dsp_priv->sc_ipc, IMX_SC_R_DSP,
+> > +                                   IMX_SC_C_OFS_SEL, 1);
+> > +     if (ret < 0) {
+> > +             dev_err(sdev->dev, "Error system address offset source select\n");
+> > +             return ret;
+> > +     }
+> > +
+> > +     ret = imx_sc_misc_set_control(dsp_priv->sc_ipc, IMX_SC_R_DSP,
+> > +                                   IMX_SC_C_OFS_AUDIO, 0x80);
+> > +     if (ret < 0) {
+> > +             dev_err(sdev->dev, "Error system address offset of AUDIO\n");
+> > +             return ret;
+> > +     }
+> > +
+> > +     ret = imx_sc_misc_set_control(dsp_priv->sc_ipc, IMX_SC_R_DSP,
+> > +                                   IMX_SC_C_OFS_PERIPH, 0x5A);
+> > +     if (ret < 0) {
+> > +             dev_err(sdev->dev, "Error system address offset of PERIPH %d\n",
+> > +                     ret);
+> > +             return ret;
+> > +     }
+> > +
+> > +     ret = imx_sc_misc_set_control(dsp_priv->sc_ipc, IMX_SC_R_DSP,
+> > +                                   IMX_SC_C_OFS_IRQ, 0x51);
+> > +     if (ret < 0) {
+> > +             dev_err(sdev->dev, "Error system address offset of IRQ\n");
+> > +             return ret;
+> > +     }
+> > +
+> > +     imx_sc_pm_cpu_start(dsp_priv->sc_ipc, IMX_SC_R_DSP, true,
+> > +                         RESET_VECTOR_VADDR);
+> > +
+> > +     return 0;
+> > +}
+> > +
+> > +static int imx8_probe(struct snd_sof_dev *sdev)
+> > +{
+> > +     struct imx8_priv *priv;
+> > +     int i;
+> > +     struct platform_device *pdev =
+> > +             container_of(sdev->dev, struct platform_device, dev);
+> > +     struct platform_device *ipc_dev;
+> > +     struct resource *mmio;
+> > +     int num_domains = 0;
+> > +     u32 base, size;
+> > +     int ret = 0;
+> > +     struct device_node *np = pdev->dev.of_node;
+> > +     struct device_node *res_node;
+> > +     struct resource res;
+>
+> nit-pick: can we reorder so that we have all counters last and a nice
+> xmas-tree shape.
+Ack.
+
+>
+> > +
+> > +     priv = devm_kzalloc(&pdev->dev, sizeof(*priv), GFP_KERNEL);
+> > +     if (!priv)
+> > +             return -ENOMEM;
+> > +
+> > +     sdev->private = priv;
+> > +     priv->dev = sdev->dev;
+> > +     priv->sdev = sdev;
+> > +
+> > +     ret = imx_scu_get_handle(&priv->sc_ipc);
+> > +     if (ret) {
+> > +             dev_err(sdev->dev, "Cannot obtain SCU handle (err = %d)\n",
+> > +                     ret);
+> > +             return ret;
+> > +     }
+> > +
+> > +     ipc_dev = platform_device_register_data(sdev->dev, "imx-dsp",
+> > +                                             PLATFORM_DEVID_NONE,
+> > +                                             pdev, sizeof(*pdev));
+> > +     if (IS_ERR(ipc_dev)) {
+> > +             dev_err(sdev->dev, "Failed to register platform device\n");
+> > +             return PTR_ERR(ipc_dev);
+> > +     }
+> > +
+> > +     priv->dsp_ipc = dev_get_drvdata(&ipc_dev->dev);
+> > +     if (!priv->dsp_ipc)
+> > +             return -EPROBE_DEFER;
+> > +
+> > +     imx_dsp_set_data(priv->dsp_ipc, priv);
+> > +     priv->dsp_ipc->ops = &dsp_ops;
+> > +
+> > +     num_domains = of_count_phandle_with_args(np, "power-domains",
+> > +                                              "#power-domain-cells");
+> > +     for (i = 0; i < num_domains; i++) {
+> > +             struct device *pd_dev;
+> > +             struct device_link *link;
+> > +
+> > +             pd_dev = dev_pm_domain_attach_by_id(&pdev->dev, i);
+> > +             if (IS_ERR(pd_dev))
+> > +                     return PTR_ERR(pd_dev);
+> > +
+> > +             link = device_link_add(&pdev->dev, pd_dev,
+> > +                                    DL_FLAG_STATELESS |
+> > +                                    DL_FLAG_PM_RUNTIME |
+> > +                                    DL_FLAG_RPM_ACTIVE);
+> > +             if (IS_ERR(link))
+> > +                     return PTR_ERR(link);
+>
+> Question: is the error flow final? Wondering if we release all the
+> resources/memory/devices on errors?
+
+Will check again. It seemed no need for resource freeing.
+
+>
+> Also are all the resources device-managed, I don't see a remove()?
+Good catch for pm stuff. We mostly didn't care about remove because
+drivers are always Y in our distribution.
+
+Thanks Pierre for review, I will let some time for others to have a look and
+send a new version.
+
+thanks,
+Daniel.
 
 _______________________________________________
 linux-arm-kernel mailing list
