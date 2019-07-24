@@ -2,80 +2,120 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28B5673D65
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 22:16:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2230073D9B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 22:18:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PBkMQcDtN791y0SpscsmZwjFSUNpdKi/FFuHiiDd9/s=; b=a0ciAxyViUcCKV
-	qp7RC+c58Pm1uyKICrV35j0P0iDMbjzsFFbMMDczlrjefSYHx0MXjR1zqIkF/aF/X3Hfw+G86wlXx
-	OFDK8e4zvR5jEJIffQ5JCt9ai/zDDsgY2JxHvrH7zP5Zjth/zLgqbmVHhlyLp7PSkKiX21AW7tHIc
-	W0BIIYob7dmiTYnqJbwl8Kyi5u2dFQeD9rIyYtvH9TY94tY6rd7GgbvMww01TtOurXwgaKEP36ciF
-	DEU8dWWdxiqPVVF05+b6iAqiE3p0C42gSS9JxYJQef3rw5Et0iadjlDifUFwQoBJC4ndNrTiH9bGM
-	iyw94j3V54jdlr9SBOdA==;
+	List-Owner; bh=0VqQHJo87jg/6jw95C1lMRuq4dd6OVop5+BQk4EMzps=; b=hT/FidjnEdGyT/
+	xQuT3MgeEeFQnpY+mYQKNJs2Bk8r1Dh3zmTt/ru6YnNKIyecPfqPMZl70+QxPfJKiQTTahlTIeS+r
+	FiV9HWZvaMQIpGu0R2vrJpEvpDMFcMhKpIBH49jUhaw6oGi5Uast6Tdyrv9JppUKcRifSzd/GIuI/
+	1dNJ5gRyVGzzljo8hZmVXRCjU/ERq2AsEgnAJdLib1jK4e32WOaJdfHMYVl4dSxIVbHnww5R0taZh
+	k89VEUeQ2cLtvK/V9iLHpkY56E46438n2lZKEmSa7ZeB571CgN4eNA66PcTq2z7zY7IqOcZeaX6p9
+	UQ53uF55XWfFb/fs3ZMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqNh2-0000ze-3O; Wed, 24 Jul 2019 20:16:56 +0000
-Received: from mail-io1-f65.google.com ([209.85.166.65])
+	id 1hqNif-0001QE-GA; Wed, 24 Jul 2019 20:18:37 +0000
+Received: from mail-eopbgr820099.outbound.protection.outlook.com
+ ([40.107.82.99] helo=NAM01-SN1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqNgk-0000yw-6J; Wed, 24 Jul 2019 20:16:39 +0000
-Received: by mail-io1-f65.google.com with SMTP id h6so5772957iom.7;
- Wed, 24 Jul 2019 13:16:37 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=SleUqq6V31kzUwMjIX1qfrELhcVA/KVuaspMZ04YgL4=;
- b=Bvytiyf83ALb+k4TSL4OWX4+mMABdLnctFvffTmrf3OpcTciYjPwm/LBUWI9WpkBHe
- OzmmQmyXVSqTz47kxFFvZoQ3P4dC5L99wW7gP3x+4+bh7LgjwKKmd25/8gVIBp1+tjcb
- zuN/8ev6/qfMJoxgSuLiLoEj/4oKrQXkuejt/0Amp5SB/1jlusu2sxZAlrv7Te1NCxb5
- Ld5rRHUpkQ67zzXnXLmwYlD/FMGBm8uJLaZuVzbnTW+eSweXm+/Q0m5bmtX/+gos3rQY
- 5s3N28uavVnuOPuKYsh2r5A4o9miHVekxy310f1H52klhGqwVHGVX6Gw6mYGei0LTL2B
- kQlw==
-X-Gm-Message-State: APjAAAUcgq839uGNh1e6Lf9zWgBs3rOt9GI9utWjcEe/DDpLSmjGDQRu
- mpcz9WKErP7Z8T1iPehDxg==
-X-Google-Smtp-Source: APXvYqwqmUodaynFku7YClU/Ql2xFlbvkHEw7X/q17Yh5pYFol9maQFHH3YaP1av1prEvMzfEF8uMA==
-X-Received: by 2002:a6b:6f06:: with SMTP id k6mr2226288ioc.32.1563999397076;
- Wed, 24 Jul 2019 13:16:37 -0700 (PDT)
-Received: from localhost ([64.188.179.254])
- by smtp.gmail.com with ESMTPSA id i23sm33894203ioj.24.2019.07.24.13.16.36
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 24 Jul 2019 13:16:36 -0700 (PDT)
-Date: Wed, 24 Jul 2019 14:16:35 -0600
-From: Rob Herring <robh@kernel.org>
-To: yongqiang.niu@mediatek.com
-Subject: Re: [PATCH v4, 05/33] dt-bindings: mediatek: add RDMA1 description
- for mt8183 display
-Message-ID: <20190724201635.GA18345@bogus>
-References: <1562625253-29254-1-git-send-email-yongqiang.niu@mediatek.com>
- <1562625253-29254-6-git-send-email-yongqiang.niu@mediatek.com>
+ id 1hqNiT-0001Pg-1L; Wed, 24 Jul 2019 20:18:26 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=dEcxRKaSO2AoIYxNQlEQnkYJF2+19aVRVaTXx8Qw3axYRl/nLGeZfzFMjj1ZYJBmKKaWddySOzvyiciZ/6hJK4xKjxL0dZVinXzwh14S0G1RWOwE4RjVBfpnyl7luLPgd0tYIDXgik518b6P/yG//lB8JPFTMuZsLjFr/uRSobpQL/xyWrti1LDLtZahRvcbXUm8hDvg48/FVdsowPpi77B8GyqOxiolZJupjMAo1i2AaC5dcTTuH8NDbYNHQw+46k+LrdhM4oNZznypB0KV3fOijfVMMH5fO2ZELTUsLPk6N1lwsj5zr7xRCvLx/tRrmL6cQvosIRMOWGuQhFLSjw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=0O8bf3MkktXRPasPPM0aZ8FRhXf2oYT66ZTm5ExM6I0=;
+ b=GjhLEl/3aCpE5yBEUbXtH7RFh0N9vPDeyFB+jonv13OOm4aWyqfkCo1pN1W3C6mjbmpPhJ+i/bR6jawkwlTKLSUpYHZ3prIaAap+t4x/tu+UjMcG8KmwX8eeZJvIeLP2nLc4DmcqLZdwAF0RPMUwaoGSCMK6aOJIMa0L3t6Qm7Vc/xR/9akg/PsTeGxNQDj4qUbr8IfEtKw6qEJcbL77erp/nvlgvklh+KMXKF8GD7MfGSE/oPuKlWTBq92AqpSHpXXkVbGg6ImH/zuJ08zTtjz3WWBB4f6b0biPbpFqm1Drzbby17IeZsahVMhLS75esyNZu+e9MXgeCNFhjDUY7Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
+ smtp.mailfrom=wavecomp.com;dmarc=pass action=none
+ header.from=mips.com;dkim=pass header.d=mips.com;arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wavecomp.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=0O8bf3MkktXRPasPPM0aZ8FRhXf2oYT66ZTm5ExM6I0=;
+ b=rw9cYvw81npIghzHa7jJTgc1qKS8CzgD6T/igdouSV7aKAtnCQJLFdVX/2PpIJOQdRopyH3dpan9mgJOq0s8DcBq3tDVKzZFLg2PkOmiC7UIUPAl27C/gDUf/lQ/qbYDUchMN505PEuBt6ls8gbnJffVAYz3kD3VYMJDx5h89vk=
+Received: from MWHPR2201MB1277.namprd22.prod.outlook.com (10.172.60.12) by
+ MWHPR2201MB1136.namprd22.prod.outlook.com (10.174.171.38) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2094.16; Wed, 24 Jul 2019 20:18:21 +0000
+Received: from MWHPR2201MB1277.namprd22.prod.outlook.com
+ ([fe80::49d3:37f8:217:c83]) by MWHPR2201MB1277.namprd22.prod.outlook.com
+ ([fe80::49d3:37f8:217:c83%6]) with mapi id 15.20.2094.017; Wed, 24 Jul 2019
+ 20:18:21 +0000
+From: Paul Burton <paul.burton@mips.com>
+To: Alexandre Ghiti <alex@ghiti.fr>
+Subject: Re: [EXTERNAL][PATCH REBASE v4 00/14] Provide generic top-down mmap
+ layout functions
+Thread-Topic: [EXTERNAL][PATCH REBASE v4 00/14] Provide generic top-down mmap
+ layout functions
+Thread-Index: AQHVQeTmQ3VcX06rl0WqkHC9YJERUabaNhSA
+Date: Wed, 24 Jul 2019 20:18:20 +0000
+Message-ID: <20190724201819.6bhvyugquhfrldfa@pburton-laptop>
+References: <20190724055850.6232-1-alex@ghiti.fr>
+In-Reply-To: <20190724055850.6232-1-alex@ghiti.fr>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: BYAPR03CA0001.namprd03.prod.outlook.com
+ (2603:10b6:a02:a8::14) To MWHPR2201MB1277.namprd22.prod.outlook.com
+ (2603:10b6:301:18::12)
+user-agent: NeoMutt/20180716
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=pburton@wavecomp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [12.94.197.246]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: cf1a8fed-1258-4da6-cc22-08d710741252
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:MWHPR2201MB1136; 
+x-ms-traffictypediagnostic: MWHPR2201MB1136:
+x-microsoft-antispam-prvs: <MWHPR2201MB1136D73898811083245B6C6CC1C60@MWHPR2201MB1136.namprd22.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7691;
+x-forefront-prvs: 0108A997B2
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(7916004)(366004)(199004)(189003)(33716001)(6246003)(76176011)(498600001)(256004)(52116002)(66066001)(66946007)(5660300002)(64756008)(66476007)(66556008)(3846002)(66446008)(8676002)(1076003)(4744005)(6116002)(68736007)(4326008)(386003)(6506007)(6916009)(71190400001)(71200400001)(305945005)(102836004)(26005)(6436002)(81156014)(7736002)(2906002)(9686003)(6512007)(229853002)(7416002)(42882007)(58126008)(54906003)(8936002)(53936002)(99286004)(446003)(11346002)(14454004)(44832011)(25786009)(6486002)(186003)(476003)(486006)(81166006)(41533002);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:MWHPR2201MB1136;
+ H:MWHPR2201MB1277.namprd22.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: wavecomp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: WBLpAxl0Uei/df2NBs1wSm/pUK/0/nZcFDTE1JL7co+n5YffPuoFkkubkl2DnVpFgsg/ShI7v/j6PI9el+OoSH8IU2+aUbrLiI01ePp1Fs53VLA9mtAmRRnZp8+vW42I5fKA1+Ac4MpqTLk6mmK9Jd13L1B872iZfJJW9mQXvPI5y04CDfIUnuvE9/v0W3wCHzAOltlSpJz8W5kShY5DuIFTr4FUed7TIDpYIkdTvdn3S3/wOi3lpaeO6iok/SUjHQNbYc9UG0fA0qngBZ40kdwQlkJHU84J7Dn18x9xrG9/OFSLu8YGXF68xqleN7IbrKMBUD4/6098KibtOs92PqSWKhSVzMJ5H3yXfDTPAgCb0NlEhASAuZMyMmFxm3cz2OVVn3LhXIa/pNmaiSDsVCwK3zx1cFnTDUNs0Q7hteM=
+Content-ID: <FB1BB9830032BE468CCBFB9649F40069@namprd22.prod.outlook.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1562625253-29254-6-git-send-email-yongqiang.niu@mediatek.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-OriginatorOrg: mips.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: cf1a8fed-1258-4da6-cc22-08d710741252
+X-MS-Exchange-CrossTenant-originalarrivaltime: 24 Jul 2019 20:18:20.8213 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 463607d3-1db3-40a0-8a29-970c56230104
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: pburton@wavecomp.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR2201MB1136
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_131638_241135_42297B48 
-X-CRM114-Status: GOOD (  14.13  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190724_131825_146671_017E838E 
+X-CRM114-Status: GOOD (  10.46  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.65 listed in list.dnswl.org]
+ no trust [40.107.82.99 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,46 +127,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
- Daniel Vetter <daniel@ffwll.ch>, CK Hu <ck.hu@mediatek.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Albert Ou <aou@eecs.berkeley.edu>, Kees Cook <keescook@chromium.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Palmer Dabbelt <palmer@sifive.com>,
+ Will Deacon <will.deacon@arm.com>, Russell King <linux@armlinux.org.uk>,
+ Ralf Baechle <ralf@linux-mips.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-mm@kvack.org" <linux-mm@kvack.org>,
+ Luis Chamberlain <mcgrof@kernel.org>,
+ "linux-riscv@lists.infradead.org" <linux-riscv@lists.infradead.org>,
+ Alexander Viro <viro@zeniv.linux.org.uk>, James Hogan <jhogan@kernel.org>,
+ "linux-fsdevel@vger.kernel.org" <linux-fsdevel@vger.kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ "linux-mips@vger.kernel.org" <linux-mips@vger.kernel.org>,
+ Christoph Hellwig <hch@lst.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jul 09, 2019 at 06:33:45AM +0800, yongqiang.niu@mediatek.com wrote:
-> From: Yongqiang Niu <yongqiang.niu@mediatek.com>
-> 
-> This patch add RDMA1 description for mt8183 display
-> 
-> Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
-> ---
->  Documentation/devicetree/bindings/display/mediatek/mediatek,disp.txt | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,disp.txt b/Documentation/devicetree/bindings/display/mediatek/mediatek,disp.txt
-> index afd3c90..bb9274a 100644
-> --- a/Documentation/devicetree/bindings/display/mediatek/mediatek,disp.txt
-> +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,disp.txt
-> @@ -30,6 +30,7 @@ Required properties (all function blocks):
->  	"mediatek,<chip>-disp-ovl"   		- overlay (4 layers, blending, csc)
->  	"mediatek,<chip>-disp-ovl-2l"           - overlay (2 layers, blending, csc)
->  	"mediatek,<chip>-disp-rdma"  		- read DMA / line buffer
-> +	"mediatek,<chip>-disp-rdma1"            - function is same with RDMA, fifo size is different
+Hi Alexandre,
 
-This can't be determined by which chip it is? IOW, a chip may have both 
-rdma and rdma1?
-
->  	"mediatek,<chip>-disp-wdma"  		- write DMA
->  	"mediatek,<chip>-disp-ccorr"            - color correction
->  	"mediatek,<chip>-disp-color" 		- color processor
-> -- 
-> 1.8.1.1.dirty
+On Wed, Jul 24, 2019 at 01:58:36AM -0400, Alexandre Ghiti wrote:
+> Hi Andrew,
 > 
+> This is simply a rebase on top of next-20190719, where I added various
+> Acked/Reviewed-by from Kees and Catalin and a note on commit 08/14 suggested
+> by Kees regarding the removal of STACK_RND_MASK that is safe doing.
+> 
+> I would have appreciated a feedback from a mips maintainer but failed to get
+> it: can you consider this series for inclusion anyway ? Mips parts have been
+> reviewed-by Kees.
+
+Whilst skimming email on vacation I hadn't spotted how extensive the
+changes in v4 were after acking v3... In any case, for patches 11-13:
+
+    Acked-by: Paul Burton <paul.burton@mips.com>
+
+Thanks,
+    Paul
 
 _______________________________________________
 linux-arm-kernel mailing list
