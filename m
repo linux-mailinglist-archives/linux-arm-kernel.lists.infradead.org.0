@@ -2,61 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0E1F73EFC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 22:29:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D15DD73F94
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 22:33:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LzBqBPQ3LxQ/kQteJZ4iMvAxi6HE6kY0QK2+GPmW17I=; b=LLMRm+K17VtW+B
-	fU+aXLe2TEvFruTF19ZrC15/zu1/08DaVCMaItfKbINZuXoaIzikGIAoNWg7bX5bf+pMoFR1rbAci
-	PPFNXpocsZqJWb39ylZstHMe8qxwwl4Dje/60WQ1OiznxuA+t+mXULpEwV+fEFrbpNCOIO0Hm/kVj
-	1i/zrAPvCgUGv/weN9hkYS9BuWWLPC0ZXfMoCuIxKKBhkrWFE0av4PGz2dKh9eH9qzhCJMKQWvBny
-	QmBSoIwr/sTjQm/9g2oGPJtjHkp9+UmnQHVqbhAPZNXqCBqhoCB8mR45WXKAFOPK0x4PO8ur4kjkS
-	94rVU3RJtzYqRPgu24Lg==;
+	List-Owner; bh=93eV7KYH7cmGFgOTgkEWrtoEg2qUv0PA+dF/O3o63Xg=; b=fYeq7ilQ4OD9tU
+	FFe6V3bAahxY0PWqstm5HEr5xhOFpAIk1s1RqGW/Hksbmt+hFflgCNMvmgriV8H12iVwZyaj1AqFt
+	+PchX3QqYaEStr+U0Qr8GN/tTjPQqR/ZkCtE0q34vHz6Hkb8weNQKLZEXbHYekYZpPHLn2dligUv3
+	KQ6KkVcqjVFKNLXl9zl3EEph3PB3J75XquOUnoYzzDDDi4+sXEn0SAvfxs22xI2MjpMZaH0bLGoZA
+	BLIXJHFEO293FDZurNnbcAOCg2ON+opno9WNqSpdD5+VAF04H9fJKfU/EnENXjdTj0fxcwtAl6GMC
+	1uopJaw2jjuQIvhLG47Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqNsh-00016a-Oj; Wed, 24 Jul 2019 20:28:59 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1hqNxS-0007zw-UE; Wed, 24 Jul 2019 20:33:54 +0000
+Received: from mail-io1-f68.google.com ([209.85.166.68])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqNsU-0000mN-NJ
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 20:28:48 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 748EF200469;
- Wed, 24 Jul 2019 22:28:43 +0200 (CEST)
-Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
- [134.27.226.22])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 66A55200414;
- Wed, 24 Jul 2019 22:28:43 +0200 (CEST)
-Received: from fsr-ub1664-175.ea.freescale.net
- (fsr-ub1664-175.ea.freescale.net [10.171.82.40])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 49864205D8;
- Wed, 24 Jul 2019 22:28:43 +0200 (CEST)
-Date: Wed, 24 Jul 2019 23:28:43 +0300
-From: Abel Vesa <abel.vesa@nxp.com>
-To: Leonard Crestez <leonard.crestez@nxp.com>
-Subject: Re: [PATCH] arm64: dts: imx8mm: Fix boot hang at clk init
-Message-ID: <20190724202843.o66jwjnid32vyx62@fsr-ub1664-175>
-References: <62d9c73aafcdc171edcd9e03fa81f451a42d5227.1563995813.git.leonard.crestez@nxp.com>
+ id 1hqNxD-0007yz-Qh
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 20:33:41 +0000
+Received: by mail-io1-f68.google.com with SMTP id s7so92305457iob.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 24 Jul 2019 13:33:39 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=hWxG43uUzUPGcDAeTJWX9/ElhRTOT4ivffhul3s+rgA=;
+ b=YCh1gQYYEIoY78SpcF0lb+Zm5cvY3E5ChboyUSuckrR8eWbNPlpmQSye0B2WE5JB8z
+ rH1DEGRiI+0XliJXlwzPNQI70yqZS5fTskCatrTaf+Iqzgt/LIZZHiwDt3m737of4f9h
+ dlhsw5ERFVppW+Q6lxcczhGKWiPoLfnGNd5otkgKDwPhkwUu8krxHxN02K7FZxVB2ZuS
+ yecTVOkgvdZ3gOmlG13OjFfvsWrSAP1Y4e17M+B0QytiXbNGQ0gkdAYIi2ISDep1Q+Ls
+ vl+UgLzoF8KQo/JGNfQgSXsPzXQr+ydHGPvPaRJdZRSPtxSaE67dQDLey6WnFXgNFjkd
+ cDig==
+X-Gm-Message-State: APjAAAUi0sF3ReWxmFLT+aVKvNeXbE12jPWw1+4V/D7RSkNTfOiBxTXJ
+ T7mZN7PkfoNSP984aTZEsQ==
+X-Google-Smtp-Source: APXvYqy956/3Br9VEhD6l1nrDo5N42Sw/FVSNlfk7v1cZXU6Bmsg2phvVL23Wpj7HoceLR69D9he5A==
+X-Received: by 2002:a02:c7c7:: with SMTP id s7mr27166379jao.37.1564000418767; 
+ Wed, 24 Jul 2019 13:33:38 -0700 (PDT)
+Received: from localhost ([64.188.179.254])
+ by smtp.gmail.com with ESMTPSA id c17sm35498762ioo.82.2019.07.24.13.33.37
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Wed, 24 Jul 2019 13:33:38 -0700 (PDT)
+Date: Wed, 24 Jul 2019 14:33:37 -0600
+From: Rob Herring <robh@kernel.org>
+To: Gregory CLEMENT <gregory.clement@bootlin.com>
+Subject: Re: [PATCH v7 1/6] dt-bindings: ap806: add the cluster clock node in
+ the syscon file
+Message-ID: <20190724203337.GA20268@bogus>
+References: <20190710134346.30239-1-gregory.clement@bootlin.com>
+ <20190710134346.30239-2-gregory.clement@bootlin.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <62d9c73aafcdc171edcd9e03fa81f451a42d5227.1563995813.git.leonard.crestez@nxp.com>
-User-Agent: NeoMutt/20180622
-X-Virus-Scanned: ClamAV using ClamSMTP
+In-Reply-To: <20190710134346.30239-2-gregory.clement@bootlin.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_132846_903747_7A147C0A 
-X-CRM114-Status: GOOD (  11.06  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190724_133339_866835_54A00F87 
+X-CRM114-Status: GOOD (  10.59  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.68 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.68 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,59 +91,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dong Aisheng <aisheng.dong@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
- Stephen Boyd <sboyd@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>, linux-imx@nxp.com,
- kernel@pengutronix.de, Fabio Estevam <fabio.estevam@nxp.com>,
- Daniel Baluta <daniel.baluta@nxp.com>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Jason Cooper <jason@lakedaemon.net>,
+ Andrew Lunn <andrew@lunn.ch>, Stephen Boyd <sboyd@kernel.org>,
+ Mike Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>,
+ Antoine Tenart <antoine.tenart@bootlin.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ =?iso-8859-1?Q?Miqu=E8l?= Raynal <miquel.raynal@bootlin.com>,
+ linux-clk@vger.kernel.org, Gregory CLEMENT <gregory.clement@bootlin.com>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 19-07-24 22:17:15, Leonard Crestez wrote:
-> The assigned-clock-rates property is incorrect (shorter than
-> assigned-clocks) and boot hangs becuause incorrect rates are assigned.
+On Wed, 10 Jul 2019 15:43:41 +0200, Gregory CLEMENT wrote:
+> Document the device tree binding for the cluster clock controllers found
+> in the Armada 7K/8K SoCs.
 > 
-> Fix by inserting another <0>
-> 
-> Fixes: df1703896a17 ("arm64: dts: imx8mm: Init rates and parents configs for clocks")
-> 
-> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+> Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
 > ---
-> Found in next-20190724 because that's when df1703896a17 was included.
-> Perhaps this should be squashed?
+>  .../arm/marvell/ap806-system-controller.txt   | 31 +++++++++++++++++--
+>  1 file changed, 29 insertions(+), 2 deletions(-)
 > 
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-> index c9a7c0054c5c..8737f833cf9c 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-> @@ -461,10 +461,11 @@
->  						<&clk IMX8MM_SYS_PLL3>,
->  						<&clk IMX8MM_VIDEO_PLL1>;
->  				assigned-clock-parents = <&clk IMX8MM_SYS_PLL3_OUT>,
->  							 <&clk IMX8MM_SYS_PLL1_800M>;
->  				assigned-clock-rates = <0>,
-> +							<0>,
 
-In our tree we have this in the clock provider:
-
-	clk_set_rate(clks[IMX8MM_CLK_AUDIO_AHB], 400000000);
-	clk_set_rate(clks[IMX8MM_CLK_IPG_AUDIO_ROOT], 400000000);
-
-
-So I guess instead of the newly added <0> you'll have to put <400000000>
-which would be the rate for IMX8MM_CLK_IPG_AUDIO_ROOT.
-
->  							<400000000>,
->  							<750000000>,
->  							<594000000>;
->  			};
->  
-> -- 
-> 2.17.1
-> 
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
