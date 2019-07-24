@@ -2,55 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E55C973005
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 15:36:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F38F73016
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 15:40:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XXhrGuTZHtzL5RWLudCQzdvwhxokTy0PGI8f+A0aqMw=; b=X1asnEQuqeCWDE
-	MtAzRN2n8p24cHwdftv+D/s1d8/TXdAKxh3zgy2BcNCcVrmsDliCiHsHeARu8q71cGYWFbTFSoMAX
-	tvWG2SQl/lcxdQbIWuzDDYkGQYyF44rEFWqo/XNkeFuqW+7Ei1c364S2vO1/kYIBnhUj0JPdznOAi
-	PJFUNsZGTQB4LVKh37MRd+cVhSfoNcChIi72J1+VeFK1LQIHt5fHmVHKlJK2mliz43OI6D/UUXwgW
-	u7LyDiLmAQEPkIgpyB04atu454FRcId7/KmSq0aE7rr+HfEAKyupvBo1Vrls9AGv8nt8Ummc7tqPQ
-	TgsJ3W1meKbdq32t0u9Q==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/DYzT0UtG6Ohc60azMy4tUR72+wuGU2y7Jq+cRqPtdI=; b=S2EncZUhtP34h4
+	GEgscfy9Fkao0s6Pr4QHMpb4hEMRSeWv7G92NvMCyKbmFMvnZkzFzkJWkbFqyN+NuBaFFCGY2L9dS
+	0Mq/JAInxg0JLRq281IHfv991X9mKTi6B+vXvU/Z4CtO6jqQz0m5zMrnpLwOc2eUVoxucHt8j4mr9
+	MlzZr47kBNBNZSdqeKVu+MdCCHfG8FbvpBFuR68BO0xOCi/GNMmYuHOXKtO0C0d4sd6rf1+VROktc
+	oxlTuU8O+dY2zSbrcG82ggh/YEN9+VvAOORtrMdZYba75FFbU/VGwaTVX2a7CT6wOT04Hd7n5Nb9P
+	kvNWVb+cuqMXQnjzCq/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqHRS-0001df-VM; Wed, 24 Jul 2019 13:36:27 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hqHQp-0000gV-06
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 13:35:49 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C816B337;
- Wed, 24 Jul 2019 06:35:45 -0700 (PDT)
-Received: from [10.1.196.133] (e112269-lin.cambridge.arm.com [10.1.196.133])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1EAC53F71A;
- Wed, 24 Jul 2019 06:35:43 -0700 (PDT)
-Subject: Re: [PATCH v9 00/21] Generic page walk and ptdump
-To: Anshuman Khandual <anshuman.khandual@arm.com>, linux-mm@kvack.org
-References: <20190722154210.42799-1-steven.price@arm.com>
- <835a0f2e-328d-7f7f-e52a-b754137789f9@arm.com>
-From: Steven Price <steven.price@arm.com>
-Message-ID: <c9d2042f-c731-4705-4148-b38deccf7963@arm.com>
-Date: Wed, 24 Jul 2019 14:35:41 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1hqHVK-0003x3-8C; Wed, 24 Jul 2019 13:40:26 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hqHV7-0003rd-NS
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 13:40:15 +0000
+Received: from mail-qt1-f179.google.com (mail-qt1-f179.google.com
+ [209.85.160.179])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id CDDB622AED
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 24 Jul 2019 13:40:12 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1563975612;
+ bh=bhFiWmjAtAurAZfHqqApK5Lonkxgn8fire9Ml19llMA=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=CHap5r7dpNOxuCl6EvTqQ05n4KT/zogXFk2iFmrGi/sJ97PCi/c3T8RKQMarkAdcE
+ 2LXGc53Yg2DBDAZRbw0Ozej+4wt3Pc+QO0ArUObG8C4b15cECjDy0LP5QwA106kK+n
+ fkXz5fZn4uCQM1SQQsIZ8KwrAluv4shYRwzRs3XA=
+Received: by mail-qt1-f179.google.com with SMTP id d23so45520114qto.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 24 Jul 2019 06:40:12 -0700 (PDT)
+X-Gm-Message-State: APjAAAWEACCMI0cm3O4zNu+uBM5CVMWCwpB7bMK40xylVPnyB4BGbPgu
+ 5yg80oIcVIz57ldUWKYRjXDAmfuElo1Vc2aYZQ==
+X-Google-Smtp-Source: APXvYqz8sLIH6MUVejBtheayK4y6FI9z7gtA6QpNEl7sUb8Pwb3fG+kRlf3uBz6GM3u3CxWrCbXWR7M2XCCDu0l0MGk=
+X-Received: by 2002:ac8:36b9:: with SMTP id a54mr58656327qtc.300.1563975612019; 
+ Wed, 24 Jul 2019 06:40:12 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <835a0f2e-328d-7f7f-e52a-b754137789f9@arm.com>
-Content-Language: en-GB
+References: <20190724081313.12934-1-andrew@aj.id.au>
+ <20190724081313.12934-4-andrew@aj.id.au>
+In-Reply-To: <20190724081313.12934-4-andrew@aj.id.au>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Wed, 24 Jul 2019 07:40:00 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqLEb3QSLAhm9BsFa+A_Jmgr4gDtV2nUCKkgwwQaMLBk9g@mail.gmail.com>
+Message-ID: <CAL_JsqLEb3QSLAhm9BsFa+A_Jmgr4gDtV2nUCKkgwwQaMLBk9g@mail.gmail.com>
+Subject: Re: [PATCH 3/3] dt-bindings: aspeed: Remove mention of deprecated
+ compatibles
+To: Andrew Jeffery <andrew@aj.id.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_063547_318875_D3263960 
-X-CRM114-Status: GOOD (  29.35  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190724_064013_803201_3E1C54DD 
+X-CRM114-Status: GOOD (  11.63  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,146 +87,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>, Arnd Bergmann <arnd@arndb.de>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
- linux-kernel@vger.kernel.org,
- =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- Andy Lutomirski <luto@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
- James Morse <james.morse@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
- Will Deacon <will@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
- linux-arm-kernel@lists.infradead.org, "Liang, Kan" <kan.liang@linux.intel.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-aspeed@lists.ozlabs.org, Linus Walleij <linus.walleij@linaro.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Joel Stanley <joel@jms.id.au>, Lee Jones <lee.jones@linaro.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 23/07/2019 07:39, Anshuman Khandual wrote:
-> Hello Steven,
-> 
-> On 07/22/2019 09:11 PM, Steven Price wrote:
->> This is a slight reworking and extension of my previous patch set
->> (Convert x86 & arm64 to use generic page walk), but I've continued the
->> version numbering as most of the changes are the same. In particular
->> this series ends with a generic PTDUMP implemention for arm64 and x86.
->>
->> Many architectures current have a debugfs file for dumping the kernel
->> page tables. Currently each architecture has to implement custom
->> functions for this because the details of walking the page tables used
->> by the kernel are different between architectures.
->>
->> This series extends the capabilities of walk_page_range() so that it can
->> deal with the page tables of the kernel (which have no VMAs and can
->> contain larger huge pages than exist for user space). A generic PTDUMP
->> implementation is the implemented making use of the new functionality of
->> walk_page_range() and finally arm64 and x86 are switch to using it,
->> removing the custom table walkers.
-> 
-> Could other architectures just enable this new generic PTDUMP feature if
-> required without much problem ?
+On Wed, Jul 24, 2019 at 2:13 AM Andrew Jeffery <andrew@aj.id.au> wrote:
+>
+> Guide readers away from using the aspeed,g[45].* compatible patterns.
+>
+> Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
+> ---
+>  Documentation/devicetree/bindings/mfd/aspeed-scu.txt         | 2 --
+>  Documentation/devicetree/bindings/misc/aspeed-p2a-ctrl.txt   | 2 --
+>  .../devicetree/bindings/pinctrl/aspeed,ast2400-pinctrl.yaml  | 5 +----
+>  .../devicetree/bindings/pinctrl/aspeed,ast2500-pinctrl.yaml  | 4 +---
+>  4 files changed, 2 insertions(+), 11 deletions(-)
 
-The generic PTDUMP is implemented as a library - so the architectures
-would have to provide the call into ptdump_walk_pgd() and provide the
-necessary callback note_page() which formats the lines in the output.
-
-Hopefully the implementation is generic enough that it should be
-flexible enough to work for most architectures.
-
-arm, powerpc and s390 are the obvious architectures to convert next as
-they already have note_page() functions which shouldn't be too difficult
-to convert to match the callback prototype.
-
->>
->> To enable a generic page table walker to walk the unusual mappings of
->> the kernel we need to implement a set of functions which let us know
->> when the walker has reached the leaf entry. After a suggestion from Will
->> Deacon I've chosen the name p?d_leaf() as this (hopefully) describes
->> the purpose (and is a new name so has no historic baggage). Some
->> architectures have p?d_large macros but this is easily confused with
->> "large pages".
-> 
-> I have not been following the previous version of the series closely, hence
-> might be missing something here. But p?d_large() which identifies large
-> mappings on a given level can only signify a leaf entry. Large pages on the
-> table exist only as leaf entries. So what is the problem for it being used
-> directly instead. Is there any possibility in the kernel mapping when these
-> large pages are not leaf entries ?
-
-There isn't any problem as such with using p?d_large macros. However the
-name "large" has caused confusion in the past. In particular there are
-two types of "large" page:
-
-1. leaf entries at high levels than normal ('sections' on Arm, for 4K
-pages this gives you 2MB and 1GB pages).
-
-2. sets of contiguous entries that can share a TLB entry (the
-'Contiguous bit' on Arm - which for 4K pages gives you 16 entries = 64
-KB 'pages').
-
-In many cases both give the same effect (reduce pressure on TLBs and
-requires contiguous and aligned physical addresses). But for this case
-we only care about the 'leaf' case (because the contiguous bit makes no
-difference to walking the page tables).
-
-As far as I'm aware p?d_large() currently implements the first and
-p?d_(trans_)huge() implements either 1 or 2 depending on the architecture.
-
-Will[1] suggested the same p?d_leaf() and this also avoids stepping on
-the existing usage of p?d_large() which isn't always available on every
-architecture.
-
-[1]
-https://lore.kernel.org/linux-mm/20190701101510.qup3nd6vm6cbdgjv@willie-the-truck/
-
->>
->> Mostly this is a clean up and there should be very little functional
->> change. The exceptions are:
->>
->> * x86 PTDUMP debugfs output no longer display pages which aren't
->>   present (patch 14).
-> 
-> Hmm, kernel mappings pages which are not present! which ones are those ?
-> Just curious.
-
-x86 currently outputs a line for every range, including those which are
-unpopulated. Patch 14 removes those lines from the output, only showing
-the populated ranges. This was discussed[2] previously.
-
-[2]
-https://lore.kernel.org/lkml/26df02dd-c54e-ea91-bdd1-0a4aad3a30ac@arm.com/
-
->>
->> * arm64 has the ability to efficiently process KASAN pages (which
->>   previously only x86 implemented). This means that the combination of
->>   KASAN and DEBUG_WX is now useable.
->>
->> Also available as a git tree:
->> git://linux-arm.org/linux-sp.git walk_page_range/v9
->>
->> Changes since v8:
->> https://lore.kernel.org/lkml/20190403141627.11664-1-steven.price@arm.com/
->>  * Rename from p?d_large() to p?d_leaf()
-> 
-> As mentioned before wondering if this is actually required or it is even a
-> good idea to introduce something like this which expands page table helper
-> semantics scope further in generic MM.
-> 
->>  * Dropped patches migrating arm64/x86 custom walkers to
->>    walk_page_range() in favour of adding a generic PTDUMP implementation
->>    and migrating arm64/x86 to that instead.
->>  * Rebased to v5.3-rc1
-> 
-> Creating a generic PTDUMP implementation is definitely a better idea.
-
-Yes, that was always where I was heading. But I initially thought it
-would be easier to get the generic walking code in, followed by
-implementing generic PTDUMP. But it turns out the generic PTDUMP is
-actually the easy bit :)
-
-Steve
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
