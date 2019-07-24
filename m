@@ -2,87 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5F9AA7294C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 09:51:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F5B67295D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 10:00:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=ihE9VaOG4BSTErI1voKGO3kufYx2+XIymeuvo9jUUrI=; b=CpoGCWMRBY753O4HGR+348TkRI
-	/I1RC5uoY/tX42ERMmdpzbZ8u47X5kOu2Qe+gpvrAqTc4UjO4UGGvBAesvouPRawHGUrNGOUajLW/
-	Js/TJcsdXBwCvOZr8DW9xyTwXQhBLezpg6O3Vcw3Ku6V+/jI74RcsI9ib9gPcrTG7bbvo7RLplbzt
-	M0834LOcM5L83OdqCIMNTsyJVlOVqd8cS1R0jetVSpt7uPDdMsa/Nb6BVSGIdKwVK331rey+X0rTE
-	5kiQjKu+HtCjnb7Pve0qtgEQDo+0/PiSF6rvo96S/NtKVUpu7PidKpxrLRHGmEdvQXkAtCruahLN+
-	wID0QrsQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=1THtam7ITejmSqqkkqfDrIJ344IeNp/2Y1VI26iepw0=; b=lvr
+	OR3genEADpfzWq1fRCYIiI2/Co6o19jHgUTKMlU3BtjJAKYw3dOwo0EvIT0FOi9I/wtYLzAVeCkWF
+	mAw8vQKZJ6ZnrMpqYLbJCvL5/50ZYnEnRV/l2wOTQ6bvHaY+zc936j6HdnsYOME8WMgGA4oC3M2xt
+	gzCG3LF4/NshU7r6f3QceWNfmn/3vM6w1R38Ox58Ki1HBXpyTPXK1j/M7ZAscdkFiktYRMdGG2Gh2
+	YqSb7h9OQkM9Ne5tg3XMzLDnVNsmMx8uee3WnRAUAqw5fSGVsh9Lr/UuLqyau8tm6A0rFREfoBOW2
+	WCky7D1UckehsGlJYTieoy5T/K1+H5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqC3I-0002jE-5N; Wed, 24 Jul 2019 07:51:08 +0000
-Received: from mickerik.phytec.de ([195.145.39.210])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hqC1t-0001GQ-8W
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 07:49:42 +0000
-DKIM-Signature: v=1; a=rsa-sha256; d=phytec.de; s=a1; c=relaxed/simple;
- q=dns/txt; i=@phytec.de; t=1563954574; x=1566546574;
- h=From:Sender:Reply-To:Subject:Date:Message-Id:To:Cc:MIME-Version:Content-Type:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=EqQWA7dLtCGI8kCRV8d94HFWhGW2KPLYNClP0pwmpPY=;
- b=Mugaxw5xkyEXDda8a7GPEveEXMpOl9ZZFt5S3xlVD7BNp/r5iQ4CUE11WGvWknp3
- lVzR8ATHvYRpZYPir8Kc6se1LO/falAaulCn9cMri5dtW2KcAWCDkGeM6QU2N6iE
- vjkiiU7+iv+pOu7UncgHqfPDADoiCto/Tz6tqjdqnAk=;
-X-AuditID: c39127d2-193ff70000001aee-b5-5d380d8dab5e
-Received: from idefix.phytec.de (idefix.phytec.de [172.16.0.10])
- by mickerik.phytec.de (PHYTEC Mail Gateway) with SMTP id 1D.CA.06894.D8D083D5;
- Wed, 24 Jul 2019 09:49:33 +0200 (CEST)
-Received: from augenblix2.phytec.de ([172.16.21.122])
- by idefix.phytec.de (IBM Domino Release 9.0.1FP7)
- with ESMTP id 2019072409493350-408985 ;
- Wed, 24 Jul 2019 09:49:33 +0200 
-From: Stefan Riedmueller <s.riedmueller@phytec.de>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 2/2] dt-bindings: arm: fsl: Add PHYTEC i.MX6 devicetree
- bindings
-Date: Wed, 24 Jul 2019 09:49:33 +0200
-Message-Id: <1563954573-370205-2-git-send-email-s.riedmueller@phytec.de>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1563954573-370205-1-git-send-email-s.riedmueller@phytec.de>
-References: <1563954573-370205-1-git-send-email-s.riedmueller@phytec.de>
-X-MIMETrack: Itemize by SMTP Server on Idefix/Phytec(Release 9.0.1FP7|August
- 17, 2016) at 24.07.2019 09:49:33,
- Serialize by Router on Idefix/Phytec(Release 9.0.1FP7|August  17, 2016) at
- 24.07.2019 09:49:33, Serialize complete at 24.07.2019 09:49:33
-X-TNEFEvaluated: 1
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrHLMWRmVeSWpSXmKPExsWyRoCBS7eX1yLW4P11a4vmDluL+UfOsVo8
- vOpvsenxNVaLrl8rmS0u75rDZnG3pZPVYun1i0wWrXuPsFv83b6JxeLFFnEHbo8189Yweuyc
- dZfdY9OqTjaPO9f2sHlsXlLvsfHdDiaP/r8GHp83yQVwRHHZpKTmZJalFunbJXBlPDrpWjBb
- rOLc92aWBsY9/F2MnBwSAiYSRw5vYO1i5OIQEtjBKDGl4wwjhHORUaL9XxMzSBWbgJHEgmmN
- TCC2iICGxJSux+wgRcwCU5klGv8sZQVJCAsESKz9tJEdxGYRUJU4vOAVI4jNK+AhcezwVkaI
- dXISN891gg3lFPCUWLpvMRuILQRUs/jYZyaQoRICjUwS7R9Ps0M0CEmcXnyWeQIj3wJGhlWM
- QrmZydmpRZnZegUZlSWpyXopqZsYgWF6eKL6pR2MfXM8DjEycTAeYpTgYFYS4Q1sMIsV4k1J
- rKxKLcqPLyrNSS0+xCjNwaIkzruBtyRMSCA9sSQ1OzW1ILUIJsvEwSnVwFg/64NylO1Oxhsl
- kpcc1+lIum7v/3VvzfIPxnFXMu86Wqa8P1nO6FHevHH3xLSq129yK75fOlRQ1TbD7Kftl6yF
- PFvO6Plcc53y/8i/Mw3pdSK5P2quzty4yL284ON9dubGqZeWGrw8uG69+HWlexarXD8q/1/8
- 2+NYT8q5bdn3PT/tPrJr/74CJZbijERDLeai4kQAGH3RWkECAAA=
+	id 1hqCBs-0004oV-Cw; Wed, 24 Jul 2019 08:00:00 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hqCBd-0004oE-Fz
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 07:59:46 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 13FCA1A0240;
+ Wed, 24 Jul 2019 09:59:44 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id C7C801A031A;
+ Wed, 24 Jul 2019 09:59:38 +0200 (CEST)
+Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 17F27402F6;
+ Wed, 24 Jul 2019 15:59:32 +0800 (SGT)
+From: Anson.Huang@nxp.com
+To: mturquette@baylibre.com, sboyd@kernel.org, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] clk: imx8mn: Keep uart clocks on for early console
+Date: Wed, 24 Jul 2019 15:50:17 +0800
+Message-Id: <20190724075017.11003-1-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.9.5
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_004941_575212_7261F382 
-X-CRM114-Status: UNSURE (   9.47  )
+X-CRM114-CacheID: sfid-20190724_005945_676660_6FB5A6AC 
+X-CRM114-Status: UNSURE (   8.15  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.2 (/)
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [195.145.39.210 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,69 +67,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Stefan Riedmueller <s.riedmueller@phytec.de>,
- Andrew Smirnov <andrew.smirnov@gmail.com>, Fabio Estevam <festevam@gmail.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, linux-imx@nxp.com,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- Shawn Guo <shawnguo@kernel.org>
+Cc: Linux-imx@nxp.com
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add devicetree bindings for i.MX6 based phyCORE-i.MX6, phyBOARD-Mira and
-phyFLEX-i.MX6.
+From: Anson Huang <Anson.Huang@nxp.com>
 
-Signed-off-by: Stefan Riedmueller <s.riedmueller@phytec.de>
+Call imx_register_uart_clocks() API to keep uart clocks enabled
+when earlyprintk or earlycon is active.
+
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
- Documentation/devicetree/bindings/arm/fsl.yaml | 17 +++++++++++++++++
- 1 file changed, 17 insertions(+)
+ drivers/clk/imx/clk-imx8mn.c | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
-index 40f007859092..00a037cf5c86 100644
---- a/Documentation/devicetree/bindings/arm/fsl.yaml
-+++ b/Documentation/devicetree/bindings/arm/fsl.yaml
-@@ -112,6 +112,13 @@ properties:
-               - fsl,imx6q-sabreauto
-               - fsl,imx6q-sabrelite
-               - fsl,imx6q-sabresd
-+              - phytec,imx6qdl-pcm058     # PHYTEC phyCORE-i.MX6
-+              - phytec,imx6q-pbab01       # PHYTEC phyFLEX carrier board
-+              - phytec,imx6q-pbab01-nand  # PHYTEC phyFLEX eval Kit
-+              - phytec,imx6q-pbac06       # PHYTEC phyBOARD-Mira with i.MX6 Quad
-+              - phytec,imx6q-pbac06-emmc  # PHYTEC phyBOARD-Mira eMMC RDK
-+              - phytec,imx6q-pbac06-nand  # PHYTEC phyBOARD-Mira NAND RDK
-+              - phytec,imx6q-pfla02       # PHYTEC phyFLEX-i.MX6 Quad
-               - technologic,imx6q-ts4900
-               - technologic,imx6q-ts7970
-           - const: fsl,imx6q
-@@ -121,6 +128,9 @@ properties:
-           - enum:
-               - fsl,imx6qp-sabreauto      # i.MX6 Quad Plus SABRE Automotive Board
-               - fsl,imx6qp-sabresd        # i.MX6 Quad Plus SABRE Smart Device Board
-+              - phytec,imx6qdl-pcm058     # PHYTEC phyCORE-i.MX6
-+              - phytec,imx6qp-pbac06      # PHYTEC phyBOARD-Mira with i.MX6 QuadPlus
-+              - phytec,imx6qp-pbac06-nand # PHYTEC phyBOARD-Mira NAND RDK
-           - const: fsl,imx6qp
+diff --git a/drivers/clk/imx/clk-imx8mn.c b/drivers/clk/imx/clk-imx8mn.c
+index 07481a5..ecd1062 100644
+--- a/drivers/clk/imx/clk-imx8mn.c
++++ b/drivers/clk/imx/clk-imx8mn.c
+@@ -355,6 +355,14 @@ static const char * const imx8mn_clko2_sels[] = {"osc_24m", "sys_pll2_200m", "sy
+ static struct clk *clks[IMX8MN_CLK_END];
+ static struct clk_onecell_data clk_data;
  
-       - description: i.MX6DL based Boards
-@@ -131,6 +141,13 @@ properties:
-               - emtrion,emcon-mx6-avari   # emCON-MX6S or emCON-MX6DL SoM on Avari Base
-               - fsl,imx6dl-sabreauto      # i.MX6 DualLite/Solo SABRE Automotive Board
-               - fsl,imx6dl-sabresd        # i.MX6 DualLite SABRE Smart Device Board
-+              - phytec,imx6qdl-pcm058     # PHYTEC phyCORE-i.MX6
-+              - phytec,imx6dl-pbab01      # PHYTEC phyFLEX carrier board
-+              - phytec,imx6dl-pbab01-nand # PHYTEC phyFLEX eval Kit
-+              - phytec,imx6dl-pbac06      # PHYTEC phyBOARD-Mira with i.MX6 DL
-+              - phytec,imx6dl-pbac06-emmc # PHYTEC phyBOARD-Mira eMMC RDK
-+              - phytec,imx6dl-pbac06-nand # PHYTEC phyBOARD-Mira NAND RDK
-+              - phytec,imx6dl-pfla02      # PHYTEC phyFLEX-i.MX6 DL
-               - technologic,imx6dl-ts4900
-               - technologic,imx6dl-ts7970
-               - ysoft,imx6dl-yapp4-draco  # i.MX6 DualLite Y Soft IOTA Draco board
++static struct clk ** const uart_clks[] = {
++	&clks[IMX8MN_CLK_UART1_ROOT],
++	&clks[IMX8MN_CLK_UART2_ROOT],
++	&clks[IMX8MN_CLK_UART3_ROOT],
++	&clks[IMX8MN_CLK_UART4_ROOT],
++	NULL
++};
++
+ static int imx8mn_clocks_probe(struct platform_device *pdev)
+ {
+ 	struct device *dev = &pdev->dev;
+@@ -612,6 +620,8 @@ static int imx8mn_clocks_probe(struct platform_device *pdev)
+ 		goto unregister_clks;
+ 	}
+ 
++	imx_register_uart_clocks(uart_clks);
++
+ 	return 0;
+ 
+ unregister_clks:
 -- 
 2.7.4
 
