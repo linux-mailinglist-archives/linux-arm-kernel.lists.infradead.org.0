@@ -2,56 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A7FDC72800
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 08:10:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F3B572805
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 08:11:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Xw1dutfIuzAFRQRO3HAq18EUtOtfK2zMYZCRKsaiLEs=; b=fD3shEKXnNhN5p
-	9MXVvVKDQjhSjCxRhJ7fwysglOefYaGamU9X4hB/wdMV3WzGtX8+AB5BLkPqwRQS6cr7QkTrSQSH4
-	Eq3vOUDQoo9eM65lzDWTqaVctC3mBb7KfhQM9ZLIsrrodhjchmmktd+yC2+/VXfzzfkJSdBBdO1OW
-	EWUvT3sZ8HZmo1LnmWv/vSuh6u+pHCEb7VG84o+RztHXWdKY1pPvTJ45shW/FUrISCUKS9VaAsoLV
-	kvp/iWmmK6V/kwcupv8v1WXD9xqayzPAwGw/JftoXeRmoeyUgWIq5sue1nqGjKv8IYkbjinmJJ2Ud
-	YfGdPE6GRm/jLkWachEw==;
+	List-Owner; bh=bJGhOGh9b7KyY8B7UePaqKangs6sOT7NaPT+baiFED0=; b=g8M8bPcexZtQOb
+	4i1MuDZmie1uMAWHOieuxHuOXhCvGmX2StuQztnECaHGv89Mt52sumCsNdjFbyqx1mDIoipJ7eK6/
+	QsixDvvWFWFZFP7OqggSJ+g+Puhnn/iediKEEAtt+OAnCXm75dgQJuInXJQ7TeGFQT8B6fX3dM8bN
+	9mKnX3QoETk/1ctJTjV+7Iyz4V5ZQHUT4oddhGs6UaDpZ+Cp+haMZhBySsRuXOKxgR6mWoJT8cH1i
+	W3gqMsVcP6vwYSbXyigLBfsXLEb5eeew+GxO23d48DlIbxzh6C4Y0naQ/iK8pgn0Mkny78UzDjoGi
+	pE6vDv2nyxbcZmnxIt+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqATh-0002qE-5A; Wed, 24 Jul 2019 06:10:17 +0000
+	id 1hqAUm-0004Sp-I1; Wed, 24 Jul 2019 06:11:24 +0000
 Received: from relay3-d.mail.gandi.net ([217.70.183.195])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqATO-0002pi-CY; Wed, 24 Jul 2019 06:09:59 +0000
+ id 1hqAUR-0004RC-DD; Wed, 24 Jul 2019 06:11:04 +0000
 X-Originating-IP: 79.86.19.127
 Received: from alex.numericable.fr (127.19.86.79.rev.sfr.net [79.86.19.127])
  (Authenticated sender: alex@ghiti.fr)
- by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id 226A060008;
- Wed, 24 Jul 2019 06:09:52 +0000 (UTC)
+ by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id 1BAEE60002;
+ Wed, 24 Jul 2019 06:10:56 +0000 (UTC)
 From: Alexandre Ghiti <alex@ghiti.fr>
 To: Andrew Morton <akpm@linux-foundation.org>
-Subject: [PATCH REBASE v4 10/14] mips: Use STACK_TOP when computing mmap base
- address
-Date: Wed, 24 Jul 2019 01:58:46 -0400
-Message-Id: <20190724055850.6232-11-alex@ghiti.fr>
+Subject: [PATCH REBASE v4 11/14] mips: Adjust brk randomization offset to fit
+ generic version
+Date: Wed, 24 Jul 2019 01:58:47 -0400
+Message-Id: <20190724055850.6232-12-alex@ghiti.fr>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190724055850.6232-1-alex@ghiti.fr>
 References: <20190724055850.6232-1-alex@ghiti.fr>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_230958_581047_AAEC7ECE 
-X-CRM114-Status: UNSURE (   9.52  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190723_231103_633807_F22E6BD7 
+X-CRM114-Status: GOOD (  10.15  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.195 listed in wl.mailspike.net]
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
  low trust [217.70.183.195 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.195 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,38 +77,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-mmap base address must be computed wrt stack top address, using TASK_SIZE
-is wrong since STACK_TOP and TASK_SIZE are not equivalent.
+This commit simply bumps up to 32MB and 1GB the random offset
+of brk, compared to 8MB and 256MB, for 32bit and 64bit respectively.
 
+Suggested-by: Kees Cook <keescook@chromium.org>
 Signed-off-by: Alexandre Ghiti <alex@ghiti.fr>
-Acked-by: Kees Cook <keescook@chromium.org>
-Acked-by: Paul Burton <paul.burton@mips.com>
+Reviewed-by: Kees Cook <keescook@chromium.org>
 ---
- arch/mips/mm/mmap.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ arch/mips/mm/mmap.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
 
 diff --git a/arch/mips/mm/mmap.c b/arch/mips/mm/mmap.c
-index f5c778113384..a7e84b2e71d7 100644
+index a7e84b2e71d7..faa5aa615389 100644
 --- a/arch/mips/mm/mmap.c
 +++ b/arch/mips/mm/mmap.c
-@@ -22,7 +22,7 @@ EXPORT_SYMBOL(shm_align_mask);
+@@ -16,6 +16,7 @@
+ #include <linux/random.h>
+ #include <linux/sched/signal.h>
+ #include <linux/sched/mm.h>
++#include <linux/sizes.h>
  
- /* gap between mmap and stack */
- #define MIN_GAP		(128*1024*1024UL)
--#define MAX_GAP		((TASK_SIZE)/6*5)
-+#define MAX_GAP		((STACK_TOP)/6*5)
- #define STACK_RND_MASK	(0x7ff >> (PAGE_SHIFT - 12))
+ unsigned long shm_align_mask = PAGE_SIZE - 1;	/* Sane caches */
+ EXPORT_SYMBOL(shm_align_mask);
+@@ -189,11 +190,11 @@ static inline unsigned long brk_rnd(void)
+ 	unsigned long rnd = get_random_long();
  
- static int mmap_is_legacy(struct rlimit *rlim_stack)
-@@ -54,7 +54,7 @@ static unsigned long mmap_base(unsigned long rnd, struct rlimit *rlim_stack)
- 	else if (gap > MAX_GAP)
- 		gap = MAX_GAP;
+ 	rnd = rnd << PAGE_SHIFT;
+-	/* 8MB for 32bit, 256MB for 64bit */
++	/* 32MB for 32bit, 1GB for 64bit */
+ 	if (TASK_IS_32BIT_ADDR)
+-		rnd = rnd & 0x7ffffful;
++		rnd = rnd & SZ_32M;
+ 	else
+-		rnd = rnd & 0xffffffful;
++		rnd = rnd & SZ_1G;
  
--	return PAGE_ALIGN(TASK_SIZE - gap - rnd);
-+	return PAGE_ALIGN(STACK_TOP - gap - rnd);
+ 	return rnd;
  }
- 
- #define COLOUR_ALIGN(addr, pgoff)				\
 -- 
 2.20.1
 
