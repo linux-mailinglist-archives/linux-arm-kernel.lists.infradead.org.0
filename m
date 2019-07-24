@@ -2,72 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4AB0A72454
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 04:17:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C31B724F6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 04:54:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=bl09SUpQAXI3lgCOcoWmWvYbUAJeGwRn5Az73fVGWLE=; b=qw18n/4krZDBUWwn/l2oD8lTb
-	IEsjjrHgJKKW05XaVlpVZYP3Nol1sPg0YQDix4ZRLHeHtl8mPn/T7RSoQRNnzgNQV9j4Pun33VIcf
-	fZC25YoRDKHDTdjFq2tRIex5vQPxiqFGDolrqCRtOpB3ngV+6yx+G9lqc3+xFPZ2j2QS1XlexWu1f
-	wNI+Ysa1V7GkUxt+pNnx49AR2/widYBWb95Ca6t6AzOXAV4Wccbh5xCRxLSgbCQMG3Vnzl+sql9qC
-	W1fDJasqVDrhpaHqpmTlyAUnD9yYFGlQW+wSwy/SA2ZjPocw4PAPeA98nQKXAdYnuhgPMCANgk1SM
-	e2QY6OEAQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=w18Uw7pl63FXMfCtlWhq3PukSax25xNz4omqgUTzBwI=; b=eNcqh8U1fAPWF8
+	5UtUXTNqxOY/DfNXMBVng0Wz/9/uRcz2XIuHIvh3xIs7ITt8v1mK9wH/d+Xvn88eX+lw9J9LGrPNS
+	FCB3XYJknxWfzWKXHwisKhC7zBEMfaY08xqg39T2cIXRLPoWw2HPQ0hottDtdyY4rLPoexJwTNpg5
+	ZFzVTP8c1iD/iJT1s1tBCHZuhWPIoj/2vwU2Q2g9qNz7zSnDFqHJREta6TY+1beSSozRxeH3LTVSU
+	GVp3LjCaeS/L7BG/ijmhihkxDA+qmW90+QxbMuhvh9rs55HkgL55Di7k4iJcqH0WZ3Vo7TZ53z+20
+	rf//TQ9tnxj6eQphu6+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hq6qc-0004FK-FD; Wed, 24 Jul 2019 02:17:42 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1hq7Pk-0006w6-Co; Wed, 24 Jul 2019 02:54:00 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hq6qP-0004Ev-H7
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 02:17:30 +0000
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ id 1hq7PY-0006vc-3z; Wed, 24 Jul 2019 02:53:49 +0000
+Received: from mail-wm1-f49.google.com (mail-wm1-f49.google.com
+ [209.85.128.49])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id A97D381DF1;
- Wed, 24 Jul 2019 02:17:28 +0000 (UTC)
-Received: from [10.72.12.167] (ovpn-12-167.pek2.redhat.com [10.72.12.167])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 2233F60497;
- Wed, 24 Jul 2019 02:17:16 +0000 (UTC)
-Subject: Re: WARNING in __mmdrop
-To: "Michael S. Tsirkin" <mst@redhat.com>
-References: <20190721044615-mutt-send-email-mst@kernel.org>
- <75c43998-3a1c-676f-99ff-3d04663c3fcc@redhat.com>
- <20190722035657-mutt-send-email-mst@kernel.org>
- <cfcd330d-5f4a-835a-69f7-c342d5d0d52d@redhat.com>
- <20190723010156-mutt-send-email-mst@kernel.org>
- <124be1a2-1c53-8e65-0f06-ee2294710822@redhat.com>
- <20190723032800-mutt-send-email-mst@kernel.org>
- <e2e01a05-63d8-4388-2bcd-b2be3c865486@redhat.com>
- <20190723062221-mutt-send-email-mst@kernel.org>
- <9baa4214-67fd-7ad2-cbad-aadf90bbfc20@redhat.com>
- <20190723110219-mutt-send-email-mst@kernel.org>
-From: Jason Wang <jasowang@redhat.com>
-Message-ID: <e0c91b89-d1e8-9831-00fe-23fe92d79fa2@redhat.com>
-Date: Wed, 24 Jul 2019 10:17:14 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ by mail.kernel.org (Postfix) with ESMTPSA id 3FA91229F8;
+ Wed, 24 Jul 2019 02:53:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1563936827;
+ bh=/eJIid7pHg2u87lfEZB7JLLdiageDyZI7a4jhYllPA4=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=mE0ol1r6xQxmM4KId7HU/YyvRDhfGitOXSxV1oohodJm+uHZ4qx1LPNtYO2TnPBI1
+ wrAjkLyfd7k22vOgoH4eZISLcCjOsZAefAzvB80l+mWh8Ouzo856CO4d41lTGkmlwv
+ u15Ih+xr2Bw9mjvx1j/5JX2XPXBdSlwf+8XHikMw=
+Received: by mail-wm1-f49.google.com with SMTP id 207so40304608wma.1;
+ Tue, 23 Jul 2019 19:53:47 -0700 (PDT)
+X-Gm-Message-State: APjAAAWG0wz9ypSEJ8rYi6OITBRNnac2PwgJghVNlYAkgUOEtMk8Q4uW
+ tFklkn4xM1TvR58erXjOXtW3qxP36Rtcwze8X40=
+X-Google-Smtp-Source: APXvYqynaaGMjkPNv9pW5abbJfyDg1ecKqbJFKDfLoHhtmYxgrfmeHyipcFOJoAjZOxgwuOorRC7uZzh64YDmebAqT4=
+X-Received: by 2002:a7b:c051:: with SMTP id u17mr69823321wmc.25.1563936825710; 
+ Tue, 23 Jul 2019 19:53:45 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190723110219-mutt-send-email-mst@kernel.org>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.25]); Wed, 24 Jul 2019 02:17:29 +0000 (UTC)
+References: <1563774880-8061-1-git-send-email-wahrenst@gmx.net>
+ <96113adb5fcab9c2f4bb5fa82b84ff5f9c07fd07.camel@suse.de>
+ <bc650090-db86-ccac-01dc-23f08ad7b19b@gmx.net>
+ <20190723093442.GA27239@lst.de>
+ <04c5eaa03f3a124dbbce6186e11e19acc4539cc8.camel@suse.de>
+ <b15509d6-bc2e-3d06-0eea-943e6e456d62@gmx.net>
+ <5f9b11f54c66fd0487837f7e58af3adf7f86635f.camel@suse.de>
+In-Reply-To: <5f9b11f54c66fd0487837f7e58af3adf7f86635f.camel@suse.de>
+From: Chen-Yu Tsai <wens@kernel.org>
+Date: Wed, 24 Jul 2019 10:53:32 +0800
+X-Gmail-Original-Message-ID: <CAGb2v66-o23CW5iH9Bn1aELymPSiKrA43eJd2q6EZ7iubcogaw@mail.gmail.com>
+Message-ID: <CAGb2v66-o23CW5iH9Bn1aELymPSiKrA43eJd2q6EZ7iubcogaw@mail.gmail.com>
+Subject: Re: [PATCH 00/18] ARM: Add minimal Raspberry Pi 4 support
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_191729_607512_63E2C642 
-X-CRM114-Status: GOOD (  14.95  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190723_195348_195217_265F4A33 
+X-CRM114-Status: GOOD (  28.95  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,71 +88,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mhocko@suse.com, peterz@infradead.org, ldv@altlinux.org,
- james.bottomley@hansenpartnership.com, linux-mm@kvack.org, namit@vmware.com,
- mingo@kernel.org, elena.reshetova@intel.com, keescook@chromium.org,
- aarcange@redhat.com, davem@davemloft.net, hch@infradead.org,
- christian@brauner.io,
- syzbot <syzbot+e58112d71f77113ddb7b@syzkaller.appspotmail.com>,
- syzkaller-bugs@googlegroups.com, jglisse@redhat.com, viro@zeniv.linux.org.uk,
- linux-arm-kernel@lists.infradead.org, wad@chromium.org,
- linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
- luto@amacapital.net, ebiederm@xmission.com, akpm@linux-foundation.org,
- guro@fb.com
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
+ Florian Fainelli <f.fainelli@gmail.com>, Scott Branden <sbranden@broadcom.com>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Stephen Boyd <sboyd@kernel.org>, Ray Jui <rjui@broadcom.com>,
+ Linus Walleij <linus.walleij@linaro.org>, linux-mmc@vger.kernel.org,
+ Adrian Hunter <adrian.hunter@intel.com>, Rob Herring <robh+dt@kernel.org>,
+ Eric Anholt <eric@anholt.net>, Matthias Brugger <mbrugger@suse.com>,
+ "open list:BROADCOM BCM281XX..." <bcm-kernel-feedback-list@broadcom.com>,
+ Stefan Wahren <wahrenst@gmx.net>, Michael Turquette <mturquette@baylibre.com>,
+ Christoph Hellwig <hch@lst.de>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ "moderated list:BROADCOM BCM2835..." <linux-rpi-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Ck9uIDIwMTkvNy8yMyDkuIvljYgxMTowMiwgTWljaGFlbCBTLiBUc2lya2luIHdyb3RlOgo+IE9u
-IFR1ZSwgSnVsIDIzLCAyMDE5IGF0IDA5OjM0OjI5UE0gKzA4MDAsIEphc29uIFdhbmcgd3JvdGU6
-Cj4+IE9uIDIwMTkvNy8yMyDkuIvljYg2OjI3LCBNaWNoYWVsIFMuIFRzaXJraW4gd3JvdGU6Cj4+
-Pj4gWWVzLCBzaW5jZSB0aGVyZSBjb3VsZCBiZSBtdWx0aXBsZSBjby1jdXJyZW50IGludmFsaWRh
-dGlvbiByZXF1ZXN0cy4gV2UgbmVlZAo+Pj4+IGNvdW50IHRoZW0gdG8gbWFrZSBzdXJlIHdlIGRv
-bid0IHBpbiB3cm9uZyBwYWdlcy4KPj4+Pgo+Pj4+Cj4+Pj4+IEkgYWxzbyB3b25kZXIgYWJvdXQg
-b3JkZXJpbmcuIGt2bSBoYXMgdGhpczoKPj4+Pj4gICAgICAgICAgIC8qCj4+Pj4+ICAgICAgICAg
-ICAgICogVXNlZCB0byBjaGVjayBmb3IgaW52YWxpZGF0aW9ucyBpbiBwcm9ncmVzcywgb2YgdGhl
-IHBmbiB0aGF0IGlzCj4+Pj4+ICAgICAgICAgICAgICogcmV0dXJuZWQgYnkgcGZuX3RvX3Bmbl9w
-cm90IGJlbG93Lgo+Pj4+PiAgICAgICAgICAgICAqLwo+Pj4+PiAgICAgICAgICAgIG1tdV9zZXEg
-PSBrdm0tPm1tdV9ub3RpZmllcl9zZXE7Cj4+Pj4+ICAgICAgICAgICAgLyoKPj4+Pj4gICAgICAg
-ICAgICAgKiBFbnN1cmUgdGhlIHJlYWQgb2YgbW11X25vdGlmaWVyX3NlcSBpc24ndCByZW9yZGVy
-ZWQgd2l0aCBQVEUgcmVhZHMgaW4KPj4+Pj4gICAgICAgICAgICAgKiBnZm5fdG9fcGZuX3Byb3Qo
-KSAod2hpY2ggY2FsbHMgZ2V0X3VzZXJfcGFnZXMoKSksIHNvIHRoYXQgd2UgZG9uJ3QKPj4+Pj4g
-ICAgICAgICAgICAgKiByaXNrIHRoZSBwYWdlIHdlIGdldCBhIHJlZmVyZW5jZSB0byBnZXR0aW5n
-IHVubWFwcGVkIGJlZm9yZSB3ZSBoYXZlIGEKPj4+Pj4gICAgICAgICAgICAgKiBjaGFuY2UgdG8g
-Z3JhYiB0aGUgbW11X2xvY2sgd2l0aG91dCBtbXVfbm90aWZpZXJfcmV0cnkoKSBub3RpY2luZy4K
-Pj4+Pj4gICAgICAgICAgICAgKgo+Pj4+PiAgICAgICAgICAgICAqIFRoaXMgc21wX3JtYigpIHBh
-aXJzIHdpdGggdGhlIGVmZmVjdGl2ZSBzbXBfd21iKCkgb2YgdGhlIGNvbWJpbmF0aW9uCj4+Pj4+
-ICAgICAgICAgICAgICogb2YgdGhlIHB0ZV91bm1hcF91bmxvY2soKSBhZnRlciB0aGUgUFRFIGlz
-IHphcHBlZCwgYW5kIHRoZQo+Pj4+PiAgICAgICAgICAgICAqIHNwaW5fbG9jaygpIGluIGt2bV9t
-bXVfbm90aWZpZXJfaW52YWxpZGF0ZV88cGFnZXxyYW5nZV9lbmQ+KCkgYmVmb3JlCj4+Pj4+ICAg
-ICAgICAgICAgICogbW11X25vdGlmaWVyX3NlcSBpcyBpbmNyZW1lbnRlZC4KPj4+Pj4gICAgICAg
-ICAgICAgKi8KPj4+Pj4gICAgICAgICAgICBzbXBfcm1iKCk7Cj4+Pj4+Cj4+Pj4+IGRvZXMgdGhp
-cyBhcHBseSB0byB1cz8gQ2FuJ3Qgd2UgdXNlIGEgc2VxbG9jayBpbnN0ZWFkIHNvIHdlIGRvCj4+
-Pj4+IG5vdCBuZWVkIHRvIHdvcnJ5Pwo+Pj4+IEknbSBub3QgZmFtaWxpYXIgd2l0aCBrdm0gTU1V
-IGludGVybmFscywgYnV0IHdlIGRvIGV2ZXJ5dGhpbmcgdW5kZXIgb2YKPj4+PiBtbXVfbG9jay4K
-Pj4+Pgo+Pj4+IFRoYW5rcwo+Pj4gSSBkb24ndCB0aGluayB0aGlzIGhlbHBzIGF0IGFsbC4KPj4+
-Cj4+PiBUaGVyZSdzIG5vIGxvY2sgYmV0d2VlbiBjaGVja2luZyB0aGUgaW52YWxpZGF0ZSBjb3Vu
-dGVyIGFuZAo+Pj4gZ2V0IHVzZXIgcGFnZXMgZmFzdCB3aXRoaW4gdmhvc3RfbWFwX3ByZWZldGNo
-LiBTbyBpdCdzIHBvc3NpYmxlCj4+PiB0aGF0IGdldCB1c2VyIHBhZ2VzIGZhc3QgcmVhZHMgUFRF
-cyBzcGVjdWxhdGl2ZWx5IGJlZm9yZQo+Pj4gaW52YWxpZGF0ZSBpcyByZWFkLgo+Pj4KPj4+IC0t
-IAo+Pgo+PiBJbiB2aG9zdF9tYXBfcHJlZmV0Y2goKSB3ZSBkbzoKPj4KPj4gIMKgwqDCoMKgwqDC
-oMKgIHNwaW5fbG9jaygmdnEtPm1tdV9sb2NrKTsKPj4KPj4gIMKgIMKgIMKgIMKgIC4uLgo+Pgo+
-PiAgwqDCoMKgwqDCoMKgwqAgZXJyID0gLUVGQVVMVDsKPj4gIMKgwqDCoMKgwqDCoMKgIGlmICh2
-cS0+aW52YWxpZGF0ZV9jb3VudCkKPj4gIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBn
-b3RvIGVycjsKPj4KPj4gIMKgwqDCoMKgwqDCoMKgIC4uLgo+Pgo+PiAgwqDCoMKgwqDCoMKgwqAg
-bnBpbm5lZCA9IF9fZ2V0X3VzZXJfcGFnZXNfZmFzdCh1YWRkci0+dWFkZHIsIG5wYWdlcywKPj4g
-IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB1YWRkci0+d3JpdGUsIHBhZ2VzKTsKPj4KPj4gIMKgwqDC
-oMKgwqDCoMKgIC4uLgo+Pgo+PiAgwqDCoMKgIMKgwqDCoCBzcGluX3VubG9jaygmdnEtPm1tdV9s
-b2NrKTsKPj4KPj4gSXMgdGhpcyBub3Qgc3VmZmljaWVudD8KPj4KPj4gVGhhbmtzCj4gU28gd2hh
-dCBvcmRlcnMgX19nZXRfdXNlcl9wYWdlc19mYXN0IHdydCBpbnZhbGlkYXRlX2NvdW50IHJlYWQ/
-CgoKU28gaW4gaW52YWxpZGF0ZV9lbmQoKSBjYWxsYmFjayB3ZSBoYXZlOgoKc3Bpbl9sb2NrKCZ2
-cS0+bW11X2xvY2spOwotLXZxLT5pbnZhbGlkYXRlX2NvdW50OwogwqDCoMKgwqDCoMKgwqAgc3Bp
-bl91bmxvY2soJnZxLT5tbXVfbG9jayk7CgoKU28gZXZlbiBQVEUgaXMgcmVhZCBzcGVjdWxhdGl2
-ZWx5IGJlZm9yZSByZWFkaW5nIGludmFsaWRhdGVfY291bnQgKG9ubHkgCmluIHRoZSBjYXNlIG9m
-IGludmFsaWRhdGVfY291bnQgaXMgemVybykuIFRoZSBzcGlubG9jayBoYXMgZ3VhcmFudGVlZCAK
-dGhhdCB3ZSB3b24ndCByZWFkIGFueSBzdGFsZSBQVEVzLgoKVGhhbmtzCgoKPgoKX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBt
-YWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9s
-aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Wed, Jul 24, 2019 at 1:33 AM Nicolas Saenz Julienne
+<nsaenzjulienne@suse.de> wrote:
+>
+> On Tue, 2019-07-23 at 18:26 +0200, Stefan Wahren wrote:
+> > Hi Nicolas,
+> >
+> > thanks for your work, but i'm a little bit sceptical about these
+> > changes. So here some thoughts.
+> >
+> > Am 23.07.19 um 15:32 schrieb Nicolas Saenz Julienne:
+> > > On Tue, 2019-07-23 at 11:34 +0200, Christoph Hellwig wrote:
+> > > > On Mon, Jul 22, 2019 at 08:10:17PM +0200, Stefan Wahren wrote:
+> > > > > i rebased this series also and got this only on the RPi 4.
+> > > > >
+> > > > > After reverting the following:
+> > > > >
+> > > > > 79a986721de dma-mapping: remove dma_max_pfn
+> > > > > 7559d612dff0 mmc: core: let the dma map ops handle bouncing
+> > > > >
+> > > > > This crash disappear, but wifi seems to be still broken.
+> > > > >
+> > > > > Would be nice, if you can investigate further.
+> > > > That means dma addressing on this system doesn't just work for some
+> > > > memory, and the mmc bounce buffering was papering over that just for
+> > > > mmc.  Do you have highmem on this system?
+> > > >
+> > > > You might want to try this series, which has been submitted upstream:
+> > > >
+> > > >
+> http://git.infradead.org/users/hch/misc.git/shortlog/refs/heads/arm-swiotlb
+> > > Hi Christoph,
+> > > I tried your series on top of Stefan's, it has no effect. I guess it's no
+> > > surprise as with mult_v7_defconfig, you get SWIOTLB=n & LPAE=n.
+> > >
+> > > FYI DMA addressing constraints for RPi4 are the following: devices can only
+> > > access the first GB of ram even though the board might have up to 4GB of
+> > > ram.
+> > > The DMA addresses are aliased with a 0xc0000000 offset. So 0x00000000 phys
+> > > is
+> > > aliased to 0xc0000000 in DMA. This is the same as for an RFC you commented
+> > > last
+> > > week trying to fix similar issues for arm64.
+> > >
+> > > You state in "arm: use swiotlb for bounce buffer on LPAE configs" that "The
+> > > DMA
+> > > API requires that 32-bit DMA masks are always supported". If I understand it
+> > > correctly this device breaks that assumption. Which implies we need a bounce
+> > > buffer system in place for any straming DMA user.
+> > >
+> > > It seems we're unable to use dma-direct/swiotlb, so I enabled arm's
+> > > dmabounce
+> > > on all devices hooked into RPi's limited interconnect, which fixes this
+> > > issue.
+> > Does it fix the wifi issue too?
+>
+> Well it works as long as I revert this: 901bb98918 ("nl80211: require and
+> validate vendor command policy"). Which has nothing to do with DMA anyways.
+>
+> Was this the issue you where seeing?
+>
+> [    4.969679] WARNING: CPU: 2 PID: 21 at net/wireless/core.c:868 wiphy_register+0x8e8/0xbdc [cfg80211]
+> [...]
+> [    4.969974] ieee80211 phy0: brcmf_cfg80211_attach: Could not register wiphy device (-22)
+
+We're seeing this on different platforms (allwinner / rockchip / amlogic)
+with Broadcom WiFi chips. So it's unlikely to be related with anything in
+this series.
+
+I believe a fix for this has already been queued up:
+
+https://git.kernel.org/pub/scm/linux/kernel/git/jberg/mac80211.git/commit/?id=91046d6364afde646734c7ead1f649d253c386e9
+
+ChenYu
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
