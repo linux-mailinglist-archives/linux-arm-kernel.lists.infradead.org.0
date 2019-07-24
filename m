@@ -2,83 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AF31C72AE7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 10:59:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 389D372AF0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 11:00:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uHYQ+ZL/J37oKyPMSVG/PC4t4I1WMNVHrAH0Ra8l/6U=; b=WmOgeNEvY0H9Yc
-	Ip1Dvk+gfwAh54PbhcLk4+AaJpKTguyBZGAsW7PzK2kfkiDSeoXoODKki7/oZ+xLBLNtphrppU/RA
-	TYqCKYiSBPWrkI+t+dVzJxPF6QTy7BLT6rdMOYajuaaK0XChmq6FluCUEQPt+/7uZ0eNUQgY6HWHz
-	4Pxp/yCe2pUSG/Eqa4t5quBUW8pX0DyRSCnQiNGVE949HudSD7oR74Ve1JiTtdQWVnoVHbTQZVk99
-	YT/4BK30bbLAyi+fLRqabYxr4ueDCOBgHY7hlT0JGahvKE/uC8nxLabUkVlbXbL74Bx1Uwor3CNAJ
-	Lh6/ZhcLa5wesYlO8CMw==;
+	List-Owner; bh=2OrcUJJFVZVOFpT1iM9wjvvXU6wXnvl2VI+UI7AyxWw=; b=s2rVkngX6BUnQO
+	nJAwt+ZinfEEHclsWKMcZ2ierUWMHuc/c7eIAKL+71foPEMwialB96khsgN4GNS5gub9ni9Scs6mW
+	hm7kpDE9TuJ3p7HNT9OnDLLLzWsXsHaGk/aKr/06bKygXXIn4dcW+5sWLPR6q6mSbONNOSfZe0Y1o
+	EOB8NOqT20b26jetP5MFt3xxeqOyQkCi6X/0lpPSCbSUu32Y5l5ggwmjmWpqWCwJDqW5/6uf16wkg
+	3stZF6BdsniSvjRdlFQY8HJ1BEL24nT/0I7vgyuooAM2azeG7y1ZgLyMt7br2AmR7BiHWx0TgIKX5
+	W5zkJRU735FfO3khZ3kw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqD7S-0000Is-57; Wed, 24 Jul 2019 08:59:30 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1hqD8Y-00029r-1V; Wed, 24 Jul 2019 09:00:38 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqD7B-0000Hg-12
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 08:59:14 +0000
-Received: by mail-wr1-x444.google.com with SMTP id x4so46016139wrt.6
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 24 Jul 2019 01:59:12 -0700 (PDT)
+ id 1hqD8A-00027s-If; Wed, 24 Jul 2019 09:00:16 +0000
+Received: by mail-io1-xd41.google.com with SMTP id o9so88037417iom.3;
+ Wed, 24 Jul 2019 02:00:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=uLD0FIohOIaMjbj7E0OOl2DyS6RV1bLULju5D5/jTY0=;
- b=lpjg1MqhUsOo7tkaEJrwfY2Sbjfd+C+NxcHvLoN+uP+ea1X5D/LzA8U9UqfIOf+jtp
- HP37lrCo8XZL9ygrn8K2ciiMXnWIdLfPTCvPTXysPyIzQak6nDvRBsRE5MXh317hrMDp
- 7HE5zV5/sw1DszulN9iEs9PO51bVTkmTqzJ1Kv1mUKVnjvSCGP2PzruV5Z2QRaC0Y5yE
- gg0ArZ1AmS/yBrz8Yd4t5IH8FE4s5dQQY5AmJkR0mkYc+7LsCI3n50WdVLdpmaoGNPkj
- 7cOk1aBDmK3pohX8ukFNVvHeH3iXs4Iho0dBAesi+OE9/Xe8k1W9RUwyOXknVD6Gz6Mu
- GlDA==
+ :cc; bh=Sm/JL+hP+mCoNP+dMciXgNOdiOkppRY7NGRE3pt521E=;
+ b=eR8u7qKKHElGFqz/S6XlFGERvnoHQyXbSrTscLhR4cXF5w67QuhmRrX3UBFX+2PzYp
+ zue+YvNmVD2e4pHn5m1z278tfusrxNx27FkFVZjnNv4+xPDIqrczT82QqP4+AJ0tp4t4
+ wrk962dTC+xYxkgBh4emaRtesxwwsWWarrwPzp+5uP+Zm7wzbX+ZlQMBGU9ujuw6fUGg
+ LOKnbLSgSx72h5Y1eoMoJkoamvlLadgaYwaW/UMU/K2pI/+5Rb5D/h0aTjScFVDT/KMA
+ oJ1xPeNK/mv6TVaOHTBjrgrd8O6d0fK6U3FJcPi5z8XkRvsVu8bkh28mIH0agUks5NFG
+ e6Bg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=uLD0FIohOIaMjbj7E0OOl2DyS6RV1bLULju5D5/jTY0=;
- b=afW6jComqixDZfhzjr8wnScTgQV8lLfr1Jz8+w/HoajMQfsxUX6e52kzL8q592GwmS
- 7c1l4ClnbjR1a4llfK6u3s4ssQ6sjhczagx0cL5uo/NXHIDHAYmmtJ2PXSWDhDu/k5xo
- bu5vNaQONxev53DgkVPTfo4oHanxA/75amDhV8toKvvGDYiT758Ak3Zev2xc3UPPJ21G
- umWC0jV5CZCP5k2XcSqW/vJ+DqKE4AMJMxIxU4kBFJRp45j7OSB3PotwV9FG2CEthdh/
- jxCXSWSP9jFR+2y8eH43xJqsl4DLalgra+r+Vv2wUsg9h79zaXmG/nO/pd6t0WOCRYfH
- U/uA==
-X-Gm-Message-State: APjAAAUUIPrFKroFKcaCC8sE6wGGw6GOA/Eus14PWkVSrhdX6phfq16N
- Y+mJgwpg2cGB2+n+CsQOcGXj6SIxJMYOR0OoaX0=
-X-Google-Smtp-Source: APXvYqzDa65ZZuqbBz0Y9LKy5ttZgCPxfD6HONFDo1ej5tX89DOctwjYr4B8EOdL7v6XaKJGVXfdSB6Urjocukqv+IY=
-X-Received: by 2002:a05:6000:14b:: with SMTP id
- r11mr12742240wrx.196.1563958750049; 
- Wed, 24 Jul 2019 01:59:10 -0700 (PDT)
+ bh=Sm/JL+hP+mCoNP+dMciXgNOdiOkppRY7NGRE3pt521E=;
+ b=E0O6d+y4hm3d4q+5Tp70JnBpZlc7oMpf1DLfVcqw+umP8/5uUaimZCepU7HBYLllNR
+ NzAKxHiEI0BUANPolO3HlE7hyl8AhlsvFw1KWZjRcisNkKbTtGlV6yUb33MtfihSxxhM
+ Le3tfHNIJo1XG4CXw9zXNW5QtFybEJUjTYDr8dPiT0hQjOz2BG781WJynQJHItEoHcxx
+ v3SYXrP28KU9X7g5byA/QfFtoA3tf3zFo4vD7mJRZn9hZybbTfasHQo+nzHCSR3k5F+e
+ 2S8UIDY7f46eJvENvsOMIapVnP8TQJdz3VrA8DuQYMqkFMU4qnAHL2wQwfEqtauhkubH
+ Gmow==
+X-Gm-Message-State: APjAAAXaf2UqSWmbeg8qxIZHmaTTMN9m/0t3yJGEZgOBJ+uRUfprm7Hb
+ OG1F8QzFZwhSl02mIUiEG7Y0z6+cjJpAz73pG7Y=
+X-Google-Smtp-Source: APXvYqxYMsXuU0YWjK636od6j6zGxjRLMjCkycvx2+POeKyX+OTzKJCK8ADuJ1tC1FER+CWj81OCoIiFMT/gTgh51pU=
+X-Received: by 2002:a5e:9b05:: with SMTP id j5mr12610997iok.75.1563958812549; 
+ Wed, 24 Jul 2019 02:00:12 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190723084104.12639-1-daniel.baluta@nxp.com>
- <20190723084104.12639-2-daniel.baluta@nxp.com>
- <a5d44d96-4d50-ee46-a6bf-3ce108b1994a@linux.intel.com>
- <CAEnQRZCuB2QKzz-08K0z+x+p0qCpqR_wDc=q2GChvJiw4E9hBA@mail.gmail.com>
- <1563957164.2311.28.camel@pengutronix.de>
-In-Reply-To: <1563957164.2311.28.camel@pengutronix.de>
-From: Daniel Baluta <daniel.baluta@gmail.com>
-Date: Wed, 24 Jul 2019 11:58:58 +0300
-Message-ID: <CAEnQRZAEsPFp36hD7XiWihTe2KQOJV6Eq9C8hjn0Z1kiUZjzyQ@mail.gmail.com>
-Subject: Re: [Sound-open-firmware] [PATCH v2 1/5] ASoC: SOF: imx: Add i.MX8 HW
- support
-To: Lucas Stach <l.stach@pengutronix.de>
+References: <20190719192954.26481-1-xruppen@gmail.com>
+ <eadcf7ef-4aad-fa4f-3b1b-a5238f394b1e@baylibre.com>
+ <CANAwSgTbvQO5qum1K3q8+J=WO4yLjadnZSZYf_AAhbf+CJm92Q@mail.gmail.com>
+ <cdb986e9-e905-8001-630a-cf3e3f8c5369@baylibre.com>
+In-Reply-To: <cdb986e9-e905-8001-630a-cf3e3f8c5369@baylibre.com>
+From: Anand Moon <linux.amoon@gmail.com>
+Date: Wed, 24 Jul 2019 14:30:01 +0530
+Message-ID: <CANAwSgSwDQdT60N87GrOWNDP0_ZvKnYsKg5QPVP0jJvQ8rKzpg@mail.gmail.com>
+Subject: Re: [PATCH] arm64: dts: meson: odroid-n2: keep SD card regulator
+ always on
+To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_015913_068681_BDE129C4 
-X-CRM114-Status: GOOD (  11.36  )
+X-CRM114-CacheID: sfid-20190724_020014_647372_649A3A04 
+X-CRM114-Status: GOOD (  22.05  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (daniel.baluta[at]gmail.com)
+ provider (linux.amoon[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -98,42 +94,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Aisheng Dong <aisheng.dong@nxp.com>,
- Peng Fan <peng.fan@nxp.com>, sound-open-firmware@alsa-project.org,
- Anson Huang <anson.huang@nxp.com>,
- Devicetree List <devicetree@vger.kernel.org>,
- Daniel Baluta <daniel.baluta@nxp.com>, "S.j. Wang" <shengjiu.wang@nxp.com>,
- Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>,
- Marco Felsch <m.felsch@pengutronix.de>, Paul Olaru <paul.olaru@nxp.com>,
- Rob Herring <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>, Leonard Crestez <leonard.crestez@nxp.com>,
- Fabio Estevam <festevam@gmail.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>,
+ Linux Kernel <linux-kernel@vger.kernel.org>, Xavier Ruppen <xruppen@gmail.com>,
+ linux-amlogic@lists.infradead.org,
  linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 24, 2019 at 11:32 AM Lucas Stach <l.stach@pengutronix.de> wrote:
->
-> Hi Daniel,
->
-> Am Mittwoch, den 24.07.2019, 09:54 +0300 schrieb Daniel Baluta:
-> > On Tue, Jul 23, 2019 at 6:18 PM Pierre-Louis Bossart
-> [...]
-> >
-> > > Also are all the resources device-managed, I don't see a remove()?
-> >
-> > Good catch for pm stuff. We mostly didn't care about remove because
-> > drivers are always Y in our distribution.
->
-> Linux drivers need to be hotplug aware, even if they are not built as a
-> module. You can test things by manually unbinding the driver from the
-> device via sysfs.
+Hi Neil,
 
-Agree. Will take this into consideration when sending next version!
+On Wed, 24 Jul 2019 at 12:19, Neil Armstrong <narmstrong@baylibre.com> wrote:
+>
+> Hi Anand,
+>
+> On 24/07/2019 07:30, Anand Moon wrote:
+> > Hi All,
+> >
+> > On Mon, 22 Jul 2019 at 12:51, Neil Armstrong <narmstrong@baylibre.com> wrote:
+> >>
+> >> On 19/07/2019 21:29, Xavier Ruppen wrote:
+> >>> When powering off the Odroid N2, the tflash_vdd regulator is
+> >>> automatically turned off by the kernel. This is a problem
+> >>> when issuing the "reboot" command while using an SD card.
+> >>> The boot ROM does not power this regulator back on, blocking
+> >>> the reboot process at the boot ROM stage, preventing the
+> >>> SD card from being detected.
+> >>>
+> >>> Adding the "regulator-always-on" property fixes the problem.
+> >>>
+> >>> Signed-off-by: Xavier Ruppen <xruppen@gmail.com>
+> >>> ---
+> >>>
+> >>> Here is what the boot ROM output looks like without this patch:
+> >>>
+> >>>     [root@alarm ~]# reboot
+> >>>     [...]
+> >>>     [   24.275860] shutdown[1]: All loop devices detached.
+> >>>     [   24.278864] shutdown[1]: Detaching DM devices.
+> >>>     [   24.287105] kvm: exiting hardware virtualization
+> >>>     [   24.318776] reboot: Restarting system
+> >>>     bl31 reboot reason: 0xd
+> >>>     bl31 reboot reason: 0x0
+> >>>     system cmd  1.
+> >>>     G12B:BL:6e7c85:7898ac;FEAT:E0F83180:2000;POC:F;RCY:0;
+> >>>     EMMC:800;NAND:81;SD?:0;SD:400;USB:8;LOOP:1;EMMC:800;
+> >>>     NAND:81;SD?:0;SD:400;USB:8;LOOP:2;EMMC:800;NAND:81;
+> >>>     SD?:0;SD:400;USB:8;LOOP:3; [...]
+> >>>
+> >>> Other people can be seen having this problem on the odroid
+> >>> forum [1].
+> >>>
+> >>> The cause of the problem was found by Martin Blumenstingl
+> >>> on #linux-amlogic. We may want to add his Suggested-by tag
+> >>> if he agrees.
+> >>>
+> >>> [1] https://forum.odroid.com/viewtopic.php?f=176&t=33993
+> >>>
+> >>>  arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts | 1 +
+> >>>  1 file changed, 1 insertion(+)
+> >>>
+> >>> diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts b/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
+> >>> index 81780ffcc7f0..4e916e1f71f7 100644
+> >>> --- a/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
+> >>> +++ b/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
+> >>> @@ -53,6 +53,7 @@
+> >>>
+> >>>               gpio = <&gpio_ao GPIOAO_8 GPIO_ACTIVE_HIGH>;
+> >>>               enable-active-high;
+> >>> +             regulator-always-on;
+> >>>       };
+> >>>
+> >>>       tf_io: gpio-regulator-tf_io {
+> >>>
+> >>
+> >> Surely solves the situation, thanks !
+> >>
+> >> please add a comment on top of "regulator-always-on" to explain why we always enable it,
+> >> note we should always enable it in case of watchdog reboot or other uncontrolled reset,
+> >> this regulator must never be disabled.
+> >>
+> >> Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
+> >>
+> >> Thanks,
+> >> Neil
+> >>
+> >
+> > I am afraid this did not fix the issue I was also facing with
+> > Archlinux on Odroid N2 using mainline u-boot.
+>
+> Seems to be a separate issue, could we start a separate thread with all your
+> setup (branch, git SHAa, configs, board setup, ...) for this ?
+>
+> Thanks,
+> Neil
+>
+
+Ok sorry for the noise.
+
+Best Regards
+-Anand
 
 _______________________________________________
 linux-arm-kernel mailing list
