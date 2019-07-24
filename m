@@ -2,83 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E8129733FC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 18:34:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 045B573403
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 18:37:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zUhf1OHSDURHuAUw9R/44KJUcAEehbuP+j7JrrbR4kk=; b=QVJsLS566ejsnd
-	0JCZiDB0bZTDsqw/zYTWZkRa3yB/OYdq4NsR5aRIjAYmM5AYzDFphgsOUb3hoNTBoDDsLPUVjM6Ug
-	VA//7k6OaDmCVKE9rkbv3Kz7B8Yc3+kSCbsWhtkRZQmN1Mavk7SwKC+kXmfNzb9JcJUakXQcmNOKe
-	7iSjey9wE/Db8BAym19m+/DnoiFr+Z1NWWTlxdDA8TtPSg1vTZNIcIUQa1d1Nl70frewcljf1Lw1h
-	9x4QdJ6Kjz4dAaJOwg7gM3Yc5WsIxRFqqd5iQjIoxwn27uuF/1jusrH1ldyTNAkfIaXsXMgAUNb+1
-	u9UEai5k77B84EfaE1Rg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/3I3SYNN5rJk3GshTNunikaSiVIPH1skd9HCHHHbcus=; b=svP7MKoXwReGhZ
+	o27RrY1E8X+K/bq+GdOuhFkVar59SOsqk6/J3XFi9Lv+HmvtAnzkESdobvsKrCzG58ffv9PpPg4P3
+	2y5cV+YesujvwhF+5l8dimfg9gFV5n6VAt4s3t2yl9xzkfF/QzBsF+ovzkzAUlpPyFmDQv9yEtLnT
+	cglqSY/3P6q3oIAu0kpwVzGiibNMoD9erXakdEVdJMWZZkFaqMEBw5x1QoNu4BPiQ0DhGV8HR0Od+
+	VGc6Ge/gZyoEoK0h5GgFhhBsJPIy29L8LAQk4q+dRzNBrtGITtEJ2aiP75kDTQrFbk9tJQR19QyAj
+	2L2wHDDWa8p6Nn6ZHAcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqKDr-00065y-Om; Wed, 24 Jul 2019 16:34:35 +0000
-Received: from mail-io1-f65.google.com ([209.85.166.65])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqKDd-00062j-KC
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 16:34:23 +0000
-Received: by mail-io1-f65.google.com with SMTP id q22so90901012iog.4
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 24 Jul 2019 09:34:21 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=/PlH4vZ2Uin7/bl42iN+WjnHNv+woMCrYa8NnQ7gWTo=;
- b=e4jVeQkD3grdxghc6HmkSZYBYlGY9iejMu0K+g4GrdVnoHIlbHDPpPbbaQE1Oeahtp
- r5aL8h5ZPD0D7mL74j2hfJ2jpKN3HDXfPjVmKxq5eQmFlaafNDiP1oaaS0wheyPC4O/f
- Xy6S5M9FLIPOZ2jtjxefEoeuZ2Sm9moBspTbwsCbt4oJkJZXYU2cWz3div9rSvYBrH4v
- tKchP7WbBPVX6Q42obLxS8txc5QbRcvhB3X5VYy7Av7aOvUufxGOM7IosvBBO9vqa17q
- BrbYsEtV++4eoXrykj9oxdRuFgJleVMKe88VmGfhPdlEEMDH3YPlxxhOA/BcqKbr+w21
- u9Cw==
-X-Gm-Message-State: APjAAAVPBpfCyepmCEg2qZ5N1BSRg/TZnADkXOOHLtg4kkLrp2U9lwsm
- PLUVb3+LN3/PXmhkxHeqUMtdF+Q=
-X-Google-Smtp-Source: APXvYqzjl58aQwxUq65IuKOZ/HpEXrjN4r3zsKMfMya48Uu06RIYqPgzl9UQEH9sk+bryVsjmlT/zg==
-X-Received: by 2002:a02:29ce:: with SMTP id
- p197mr24690823jap.139.1563986060805; 
- Wed, 24 Jul 2019 09:34:20 -0700 (PDT)
-Received: from localhost ([64.188.179.254])
- by smtp.gmail.com with ESMTPSA id l2sm33217795ioh.20.2019.07.24.09.34.19
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 24 Jul 2019 09:34:19 -0700 (PDT)
-Date: Wed, 24 Jul 2019 10:34:19 -0600
-From: Rob Herring <robh@kernel.org>
-To: Suman Anna <s-anna@ti.com>
-Subject: Re: [PATCH 1/6] dt-bindings: irqchip: Add PRUSS interrupt controller
- bindings
-Message-ID: <20190724163419.GA29254@bogus>
-References: <20190708035243.12170-1-s-anna@ti.com>
- <20190708035243.12170-2-s-anna@ti.com>
+	id 1hqKGC-0007iN-5k; Wed, 24 Jul 2019 16:37:00 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hqKG2-0007hY-P4
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 16:36:52 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3690E28;
+ Wed, 24 Jul 2019 09:36:49 -0700 (PDT)
+Received: from [10.1.196.133] (e112269-lin.cambridge.arm.com [10.1.196.133])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C337C3F71F;
+ Wed, 24 Jul 2019 09:36:46 -0700 (PDT)
+Subject: Re: [PATCH v9 19/21] mm: Add generic ptdump
+To: Mark Rutland <mark.rutland@arm.com>
+References: <20190722154210.42799-1-steven.price@arm.com>
+ <20190722154210.42799-20-steven.price@arm.com>
+ <20190723095747.GB8085@lakrids.cambridge.arm.com>
+From: Steven Price <steven.price@arm.com>
+Message-ID: <ee707646-0196-63bb-45cc-6b949ae9530e@arm.com>
+Date: Wed, 24 Jul 2019 17:36:45 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190708035243.12170-2-s-anna@ti.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190723095747.GB8085@lakrids.cambridge.arm.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_093421_672330_CBDE960F 
-X-CRM114-Status: GOOD (  14.69  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190724_093650_862978_FD1EB859 
+X-CRM114-Status: GOOD (  19.42  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.65 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,53 +63,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: David Lechner <david@lechnology.com>,
- Grygorii Strashko <grygorii.strashko@ti.com>,
- Jason Cooper <jason@lakedaemon.net>, devicetree@vger.kernel.org,
- Marc Zyngier <marc.zyngier@arm.com>, Sekhar Nori <nsekhar@ti.com>,
- linux-kernel@vger.kernel.org, "Andrew F. Davis" <afd@ti.com>,
- Tony Lindgren <tony@atomide.com>, Murali Karicheri <m-karicheri2@ti.com>,
- linux-arm-kernel@lists.infradead.org, Thomas Gleixner <tglx@linutronix.de>,
- linux-omap@vger.kernel.org, Lokesh Vutla <lokeshvutla@ti.com>,
- Roger Quadros <rogerq@ti.com>
+Cc: Dave Hansen <dave.hansen@linux.intel.com>, Arnd Bergmann <arnd@arndb.de>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
+ linux-kernel@vger.kernel.org, linux-mm@kvack.org,
+ =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ Andy Lutomirski <luto@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ James Morse <james.morse@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Will Deacon <will@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
+ linux-arm-kernel@lists.infradead.org, "Liang, Kan" <kan.liang@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, 7 Jul 2019 22:52:38 -0500, Suman Anna wrote:
-> The Programmable Real-Time Unit Subsystem (PRUSS) contains an interrupt
-> controller (INTC) that can handle various system input events and post
-> interrupts back to the device-level initiators. The INTC can support
-> upto 64 input events on most SoCs with individual control configuration
-> and hardware prioritization. These events are mapped onto 10 interrupt
-> lines through two levels of many-to-one mapping support. Different
-> interrupt lines are routed to the individual PRU cores or to the
-> host CPU or to other PRUSS instances.
+On 23/07/2019 10:57, Mark Rutland wrote:
+> On Mon, Jul 22, 2019 at 04:42:08PM +0100, Steven Price wrote:
+>> Add a generic version of page table dumping that architectures can
+>> opt-in to
+>>
+>> Signed-off-by: Steven Price <steven.price@arm.com>
 > 
-> The K3 AM65x and J721E SoCs have the next generation of the PRU-ICSS IP,
-> commonly called ICSSG. The ICSSG interrupt controller on K3 SoCs provide
-> a higher number of host interrupts (20 vs 10) and can handle an increased
-> number of input events (160 vs 64) from various SoC interrupt sources.
+> [...]
 > 
-> Add the bindings document for these interrupt controllers on all the
-> applicable SoCs. It covers the OMAP architecture SoCs - AM33xx, AM437x
-> and AM57xx; the Keystone 2 architecture based 66AK2G SoC; the Davinci
-> architecture based OMAPL138 SoCs, and the K3 architecture based AM65x
-> and J721E SoCs.
+>> +#ifdef CONFIG_KASAN
+>> +/*
+>> + * This is an optimization for KASAN=y case. Since all kasan page tables
+>> + * eventually point to the kasan_early_shadow_page we could call note_page()
+>> + * right away without walking through lower level page tables. This saves
+>> + * us dozens of seconds (minutes for 5-level config) while checking for
+>> + * W+X mapping or reading kernel_page_tables debugfs file.
+>> + */
+>> +static inline bool kasan_page_table(struct ptdump_state *st, void *pt,
+>> +				    unsigned long addr)
+>> +{
+>> +	if (__pa(pt) == __pa(kasan_early_shadow_pmd) ||
+>> +#ifdef CONFIG_X86
+>> +	    (pgtable_l5_enabled() &&
+>> +			__pa(pt) == __pa(kasan_early_shadow_p4d)) ||
+>> +#endif
+>> +	    __pa(pt) == __pa(kasan_early_shadow_pud)) {
+>> +		st->note_page(st, addr, 5, pte_val(kasan_early_shadow_pte[0]));
+>> +		return true;
+>> +	}
+>> +	return false;
 > 
-> Signed-off-by: Suman Anna <s-anna@ti.com>
-> Signed-off-by: Andrew F. Davis <afd@ti.com>
-> Signed-off-by: Roger Quadros <rogerq@ti.com>
-> ---
-> Prior version: https://patchwork.kernel.org/patch/10795771/
+> Having you tried this with CONFIG_DEBUG_VIRTUAL?
 > 
->  .../interrupt-controller/ti,pruss-intc.txt    | 92 +++++++++++++++++++
->  1 file changed, 92 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/interrupt-controller/ti,pruss-intc.txt
-> 
+> The kasan_early_shadow_pmd is a kernel object rather than a linear map
+> object, so you should use __pa_symbol for that.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Thanks for pointing that out - it is indeed broken on arm64. This was
+moved from x86 where CONFIG_DEBUG_VIRTUAL doesn't seem to pick this up.
+There is actually a problem here that 'pt' might not be in the linear
+map (so __pa(pt) barfs on arm64 as well as kasan_early_shadow_p?d).
+
+It looks like having the comparisons of the form "pt ==
+lm_alias(kasan_early_shadow_p?d)" is probably best.
+
+> It's a bit horrid to have to test multiple levels in one function; can't
+> we check the relevant level inline in each of the test_p?d funcs?
+> 
+> They're optional anyway, so they only need to be defined for
+> CONFIG_KASAN.
+
+Good point - removing the test_p?d callbacks when !CONFIG_KASAN
+simplifies the code.
+
+Thanks,
+
+Steve
 
 _______________________________________________
 linux-arm-kernel mailing list
