@@ -2,94 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C24572DCC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 13:39:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 23B0472DEE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 13:43:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rb5qxP5WAjsPELteHnUfU1Youi85fpk+cpOrlOPxqlM=; b=cN/3lfDwVEiWee
-	pWNhm/gY0GK8JEwSfqz/4/1KuONfPU3NSLB90qfNc6Xzxv00LVPSFdQKmd2A7RF6aJXESGZNaBkA4
-	8kaS/lFCmZgfEDl5F9KRnEx1d7ZlfjwbaUvfy+dxqlbot03Dn48yQa8G9pVskMB6fEw17Civk5hxZ
-	dRx1F4R2GJSebbr6D4T0vaKa656gVQlDF1IAfaZMbwdpHKxNHiYePGyUVv7GihEbCm+dF9EIuutAA
-	YpVbYQhSYytL4yIZGkqScDCdqLpwbgBjGW1zvTo63El2GRNMj9Ob7YG50atImRwi0RxzFJQpXFuiD
-	HyHomOOjzqnYXquxn9Sg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=1zTuRk98pGQfq0rN6DHvhcLBsQxcuGO8GVESQi8Xk/8=; b=HjvlG12niCP+Z2
+	cwea4bRFLlXbgyx7VaCusfSQvwuFoPaGZNcCIaAdSfrvZJkNdUB0SAYw9TNIHl9pmtX6KfSAow+l8
+	1fv85WAfdvZzdVIQhTl6nm8vrV+73I6UK29T05kDN1B/tcWv45GnHZiXrTE+byXp7EYoyJcLz3jF3
+	MmpXVk/gA3PVpPtolOSr9FtYcn+OzXhAGJUSZA733wy939DuflfhkP/JUHJYbkhaQdvxvwPN3sFWb
+	uj/FoshHAi9pHykoMALY0p6pyywXlqvlSBbVP0VnCWS2Y8oUV3SxdoXQXuiHdMVco/jY2O61qUP/j
+	id6q9/hJ17N3Trl9ghTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqFcc-0003dI-GJ; Wed, 24 Jul 2019 11:39:50 +0000
+	id 1hqFgJ-0005LV-7G; Wed, 24 Jul 2019 11:43:39 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hqFcU-0003YP-14
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 11:39:43 +0000
+ id 1hqFg7-0005Ka-TE
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 11:43:29 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4F13E337;
- Wed, 24 Jul 2019 04:39:41 -0700 (PDT)
-Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 9585C3F71A; Wed, 24 Jul 2019 04:39:40 -0700 (PDT)
-Subject: Re: [PATCH 3/3] KVM: arm/arm64: vgic: introduce vgic_cpu pending
- status and lowest_priority
-To: Xiangyou Xie <xiexiangyou@huawei.com>
-References: <20190724090437.49952-1-xiexiangyou@huawei.com>
- <20190724090437.49952-4-xiexiangyou@huawei.com>
-From: Marc Zyngier <marc.zyngier@arm.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
- 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
- Z46HaNmN2hZS/oJ69c1DI5Rcww==
-Organization: ARM Ltd
-Message-ID: <c43d7331-a30b-5c0f-47ce-a5d9a1840a63@arm.com>
-Date: Wed, 24 Jul 2019 12:39:38 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5F3F9337;
+ Wed, 24 Jul 2019 04:43:27 -0700 (PDT)
+Received: from dawn-kernel.cambridge.arm.com (unknown [10.1.197.116])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id A257D3F71A;
+ Wed, 24 Jul 2019 04:43:26 -0700 (PDT)
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH 0/5] coresight: tmc error handling and misc fixes
+Date: Wed, 24 Jul 2019 12:43:07 +0100
+Message-Id: <20190724114312.1024-1-suzuki.poulose@arm.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-In-Reply-To: <20190724090437.49952-4-xiexiangyou@huawei.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_043942_164605_F26A11CC 
-X-CRM114-Status: GOOD (  23.29  )
+X-CRM114-CacheID: sfid-20190724_044327_989476_FFFC8566 
+X-CRM114-Status: GOOD (  10.78  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -108,154 +57,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
- kvm@vger.kernel.org
+Cc: coresight@lists.linaro.org, mathieu.poirier@linaro.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 24/07/2019 10:04, Xiangyou Xie wrote:
-> During the halt polling process, vgic_cpu->ap_list_lock is frequently
-> obtained andreleased, (kvm_vcpu_check_block->kvm_arch_vcpu_runnable->
-> kvm_vgic_vcpu_pending_irq).This action affects the performance of virq
-> interrupt injection, because vgic_queue_irq_unlock also attempts to get
-> vgic_cpu->ap_list_lock and add irq to vgic_cpu ap_list.
+This series is a collection of fixes and cleanups I gathered from trying
+to get coresight up on a new platform.
 
-Numbers. Give me numbers. Please.
+The TMC-ETR reports MemErr in the status register if there was an error
+in in the AXI transaction. So far we have ignored it and assumed that we
+are running on perfect platforms. Let us add the support for handling
+the MemErr reports and discard the buffer in such case. Also verify that
+the ETR can do non-secure transactions on the platform at probe time,
+in order to avoid presenting the user with a non-useable ETR.
 
-> 
-> The irq pending state and the minimum priority introduced by the patch,
-> kvm_vgic_vcpu_pending_irq do not need to traverse vgic_cpu ap_list, only
-> the check pending state and priority.
-> 
-> Signed-off-by: Xiangyou Xie <xiexiangyou@huawei.com>
-> ---
->  include/kvm/arm_vgic.h   |  5 +++++
->  virt/kvm/arm/vgic/vgic.c | 40 ++++++++++++++++++++++------------------
->  2 files changed, 27 insertions(+), 18 deletions(-)
-> 
-> diff --git a/include/kvm/arm_vgic.h b/include/kvm/arm_vgic.h
-> index ce372a0..636db29 100644
-> --- a/include/kvm/arm_vgic.h
-> +++ b/include/kvm/arm_vgic.h
-> @@ -337,6 +337,11 @@ struct vgic_cpu {
->  
->  	/* Cache guest interrupt ID bits */
->  	u32 num_id_bits;
-> +
-> +	/* Minimum of priority in all irqs */
-> +	u8 lowest_priority;
+Suzuki K Poulose (5):
+  coresight: Fix DEBUG_LOCKS_WARN_ON for uninitialized attribute
+  coresight: funnel: Convert pr_warn to dev_warn for obsolete bindings
+  coresight: etr_buf: Consolidate refcount initialization
+  coresight: tmc-etr: Handle memory errors
+  coresight: tmc-etr: Check if non-secure access is enabled
 
-In all IRQs? That are in every possible state?
+ .../hwtracing/coresight/coresight-etm-perf.c  |  1 +
+ .../hwtracing/coresight/coresight-funnel.c    |  2 +-
+ .../hwtracing/coresight/coresight-tmc-etr.c   | 26 +++++++++++--------
+ drivers/hwtracing/coresight/coresight-tmc.c   | 12 +++++++++
+ drivers/hwtracing/coresight/coresight-tmc.h   |  4 +++
+ 5 files changed, 33 insertions(+), 12 deletions(-)
 
-> +	/* Irq pending flag */
-> +	bool pending;
-
-What does pending mean here? Strictly pending? or covering the other
-states of an interrupt (Active, Active+Pending)?
-
->  };
->  
->  extern struct static_key_false vgic_v2_cpuif_trap;
-> diff --git a/virt/kvm/arm/vgic/vgic.c b/virt/kvm/arm/vgic/vgic.c
-> index deb8471..767dfe0 100644
-> --- a/virt/kvm/arm/vgic/vgic.c
-> +++ b/virt/kvm/arm/vgic/vgic.c
-> @@ -398,6 +398,12 @@ bool vgic_queue_irq_unlock(struct kvm *kvm, struct vgic_irq *irq,
->  	 * now in the ap_list.
->  	 */
->  	vgic_get_irq_kref(irq);
-> +
-> +	if (!irq->active) {
-
-Why not active? What if the interrupt is Active+Pending? What is the
-rational for this? This applies to the whole of this patch.
-
-> +		vcpu->arch.vgic_cpu.pending = true;
-> +		if (vcpu->arch.vgic_cpu.lowest_priority > irq->priority)
-> +			vcpu->arch.vgic_cpu.lowest_priority = irq->priority;
-> +	}
->  	list_add_tail(&irq->ap_list, &vcpu->arch.vgic_cpu.ap_list_head);
->  	irq->vcpu = vcpu;
->  
-> @@ -618,6 +624,9 @@ static void vgic_prune_ap_list(struct kvm_vcpu *vcpu)
->  retry:
->  	raw_spin_lock(&vgic_cpu->ap_list_lock);
->  
-> +	vgic_cpu->lowest_priority = U8_MAX;
-> +	vgic_cpu->pending = false;
-> +
->  	list_for_each_entry_safe(irq, tmp, &vgic_cpu->ap_list_head, ap_list) {
->  		struct kvm_vcpu *target_vcpu, *vcpuA, *vcpuB;
->  		bool target_vcpu_needs_kick = false;
-> @@ -649,6 +658,11 @@ static void vgic_prune_ap_list(struct kvm_vcpu *vcpu)
->  		}
->  
->  		if (target_vcpu == vcpu) {
-> +			if (!irq->active) {
-> +				vgic_cpu->pending = true;
-> +				if (vgic_cpu->lowest_priority > irq->priority)
-> +					vgic_cpu->lowest_priority = irq->priority;
-> +			}
->  			/* We're on the right CPU */
->  			raw_spin_unlock(&irq->irq_lock);
->  			continue;
-> @@ -690,6 +704,11 @@ static void vgic_prune_ap_list(struct kvm_vcpu *vcpu)
->  
->  			list_del(&irq->ap_list);
->  			irq->vcpu = target_vcpu;
-> +			if (!irq->active) {
-> +				new_cpu->pending = true;
-> +				if (new_cpu->lowest_priority > irq->priority)
-> +					new_cpu->lowest_priority = irq->priority;
-> +			}
->  			list_add_tail(&irq->ap_list, &new_cpu->ap_list_head);
->  			target_vcpu_needs_kick = true;
->  		}
-> @@ -930,9 +949,6 @@ void kvm_vgic_put(struct kvm_vcpu *vcpu)
->  int kvm_vgic_vcpu_pending_irq(struct kvm_vcpu *vcpu)
->  {
->  	struct vgic_cpu *vgic_cpu = &vcpu->arch.vgic_cpu;
-> -	struct vgic_irq *irq;
-> -	bool pending = false;
-> -	unsigned long flags;
->  	struct vgic_vmcr vmcr;
->  
->  	if (!vcpu->kvm->arch.vgic.enabled)
-> @@ -943,22 +959,10 @@ int kvm_vgic_vcpu_pending_irq(struct kvm_vcpu *vcpu)
->  
->  	vgic_get_vmcr(vcpu, &vmcr);
->  
-> -	raw_spin_lock_irqsave(&vgic_cpu->ap_list_lock, flags);
-> -
-> -	list_for_each_entry(irq, &vgic_cpu->ap_list_head, ap_list) {
-> -		raw_spin_lock(&irq->irq_lock);
-> -		pending = irq_is_pending(irq) && irq->enabled &&
-> -			  !irq->active &&
-> -			  irq->priority < vmcr.pmr;
-> -		raw_spin_unlock(&irq->irq_lock);
-> -
-> -		if (pending)
-> -			break;
-> -	}
-> -
-> -	raw_spin_unlock_irqrestore(&vgic_cpu->ap_list_lock, flags);
-> +	if (vgic_cpu->pending && vgic_cpu->lowest_priority < vmcr.pmr)
-> +		return true;
-
-And here we go. You've dropped the lock, and yet are evaluating two
-unrelated fields that could be changed by a parallel injection or the
-vcpu entering/exiting the guest.
-
-I'm sure you get better performance. I'm also pretty sure this is
-completely unsafe.
-
-Thanks,
-
-	M.
 -- 
-Jazz is not dead. It just smells funny...
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
