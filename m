@@ -2,71 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EDC7A734A1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 19:10:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6070F734AF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 19:11:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GyA+nhEPF2aQq8RRD4k6F5NXtdGSK9lavHfhrDSsBaE=; b=ci1sT1kX128iI1
-	F1N9IXFHZcLLvnwpyoJjfErbSSBrOMeeC0rwQmDKhjvKYm1e3Wb4gCa48QFKQSW+hXotwg7hInDGq
-	yO6O6HzrfAeAzsbel7tJJRWKx7Q0nYHhCVUy5LULyKaGBhGIimJ/Gcn1c4ZwHQmZwQBHaYgcFVPDZ
-	8bR5+SnHPjEjPt+QIqA3yNWrGsSVhOexvzpE8iLQD6kJ5lLIVxGadBi7n/Qb82cVpNDTDwr50wTz9
-	Q6+06jU/IsbSdXz1iq9Mdc5UGlWp/X69ak0wRhhRLuAqrIKKjFFV6SCOD4sY+NTZSNQzG7imm1RbI
-	fkmYPP5k6hLZL2FKIdrA==;
+	List-Owner; bh=PAh11TfjEAeuA5nL1F+jjlGm4cLKTCrPE5C8vDzgtKg=; b=iZa63oZ3GVXkMC
+	mQWPxISbbxWFW0hA9zpJstzVM0zG0VAbkxvvJniaoggC/aLLMxtnwJTRIa9Tq3jfFdQJVl3XZnh4w
+	h7D9uVYDDQkhswincld4q4MDD2ciRqWKivlfPvIIdhhQcnhIBFmzwOI3d+9+z9vvxHFCE2AORDKTY
+	MM3sbxNIGSLubCe4JTuPkWbJ7SpJNBblwEoqv5eNYviqZMFVBLWevlCaRWaVjan0kaF/HLZhHXTtJ
+	QU5Ehaq0vINintVZWIIzzLFwoNCWEPL+r6k8lO+2uaRjPFpwdHWXTCamUifKw6uqPXN74wHR078mk
+	hhb9B7eCxOSrHt4baTkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqKmP-0003eU-CS; Wed, 24 Jul 2019 17:10:17 +0000
-Received: from smtprelay0094.hostedemail.com ([216.40.44.94]
- helo=smtprelay.hostedemail.com)
+	id 1hqKnm-0005CA-Ds; Wed, 24 Jul 2019 17:11:42 +0000
+Received: from mail-pl1-f194.google.com ([209.85.214.194])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqKm4-0003da-57
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 17:09:57 +0000
-Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
- [216.40.38.60])
- by smtprelay06.hostedemail.com (Postfix) with ESMTP id 96310182251B2;
- Wed, 24 Jul 2019 17:09:47 +0000 (UTC)
-X-Session-Marker: 6A6F6540706572636865732E636F6D
-X-Spam-Summary: 2, 0, 0, , d41d8cd98f00b204, joe@perches.com,
- :::::::::::::::::::,
- RULES_HIT:41:355:379:599:800:960:973:988:989:1260:1277:1311:1313:1314:1345:1359:1437:1515:1516:1518:1534:1540:1593:1594:1711:1714:1730:1747:1777:1792:2198:2199:2393:2559:2562:2828:3138:3139:3140:3141:3142:3350:3622:3867:4321:5007:6642:10004:10400:10848:11026:11232:11473:11657:11658:11914:12043:12048:12297:12438:12555:12740:12760:12895:12986:13069:13311:13357:13439:14096:14097:14181:14659:14721:21080:21451:21627:30054:30091,
- 0,
- RBL:23.242.196.136:@perches.com:.lbl8.mailshell.net-62.14.0.180 64.201.201.201,
- CacheIP:none, Bayesian:0.5, 0.5, 0.5, Netcheck:none, DomainCache:0,
- MSF:not bulk, SPF:fn, MSBL:0, DNSBL:neutral, Custom_rules:0:0:0, LFtime:26,
- LUA_SUMMARY:none
-X-HE-Tag: stop29_1b0e5232f4617
-X-Filterd-Recvd-Size: 2157
-Received: from XPS-9350.home (cpe-23-242-196-136.socal.res.rr.com
- [23.242.196.136]) (Authenticated sender: joe@perches.com)
- by omf16.hostedemail.com (Postfix) with ESMTPA;
- Wed, 24 Jul 2019 17:09:45 +0000 (UTC)
-Message-ID: <be536d37a3b58557cdacd33943915d397bcb5037.camel@perches.com>
-Subject: Re: [PATCH 11/12] staging: media: cedrus: Fix misuse of GENMASK macro
-From: Joe Perches <joe@perches.com>
-To: Andrew Morton <akpm@linux-foundation.org>, Maxime Ripard
- <maxime.ripard@bootlin.com>, Paul Kocialkowski
- <paul.kocialkowski@bootlin.com>,  Chen-Yu Tsai <wens@csie.org>
-Date: Wed, 24 Jul 2019 10:09:44 -0700
-In-Reply-To: <cd543a5f26b031a0bbd3baa55e1f15813f59f107.1562734889.git.joe@perches.com>
-References: <cover.1562734889.git.joe@perches.com>
- <cd543a5f26b031a0bbd3baa55e1f15813f59f107.1562734889.git.joe@perches.com>
-User-Agent: Evolution 3.30.5-0ubuntu0.18.10.1 
+ id 1hqKnX-0005BP-LV; Wed, 24 Jul 2019 17:11:28 +0000
+Received: by mail-pl1-f194.google.com with SMTP id k8so22261419plt.3;
+ Wed, 24 Jul 2019 10:11:26 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=ITF8T/T4IRmGXwtRff4SYZQW9zAOexuz5C2yXEWqdiw=;
+ b=FPWb9H92BtSELvERavsb0wcIkW0GN7R34s+zep29X/w6uQCSQnF57FoMemDaZdj83n
+ ciTlay1Id9ssbJcROQOlQHD2AWlhbRVteOcc2Ns7y1HHQKF8B9qQNl5hhx8J9SO3HI03
+ SXXjPZ0hQJqAkFsGYHlSW3Am107w89seAZaxbyR+0WX8L91lkP5EKOlvfO3R5OMScV2D
+ Kz6MqQ+4tFMeETLS+7QxIl71m8ZTdnaA4d2peYtqBWr9M3ZXPDnWkJu0oAyvC3bXUU/7
+ KoDE3paLADdtoVWma12+IfHYeRw6pRe23KAtdinbx+v1G2/hb78CQm4hPba7llKgJm/Y
+ sQ7A==
+X-Gm-Message-State: APjAAAXhpUNwukcUQbW6VLjI4+WUeUujf1+vaVcqqClzyGPoe38wl6hn
+ W5FHIVnI0bqeFFkTEnjAfLLwyKb0
+X-Google-Smtp-Source: APXvYqwoAqWJaD8G9kpqywHtKCy/l+Vyxr3KKHtKTaJVbqukgpdEilFdeN9cgx3TW9bJG3WUBlH/LA==
+X-Received: by 2002:a17:902:7488:: with SMTP id
+ h8mr12079513pll.168.1563988285727; 
+ Wed, 24 Jul 2019 10:11:25 -0700 (PDT)
+Received: from 42.do-not-panic.com (42.do-not-panic.com. [157.230.128.187])
+ by smtp.gmail.com with ESMTPSA id h16sm51887353pfo.34.2019.07.24.10.11.24
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Wed, 24 Jul 2019 10:11:24 -0700 (PDT)
+Received: by 42.do-not-panic.com (Postfix, from userid 1000)
+ id BEECC402A1; Wed, 24 Jul 2019 17:11:23 +0000 (UTC)
+Date: Wed, 24 Jul 2019 17:11:23 +0000
+From: Luis Chamberlain <mcgrof@kernel.org>
+To: Alexandre Ghiti <alex@ghiti.fr>
+Subject: Re: [PATCH REBASE v4 05/14] arm64, mm: Make randomization selected
+ by generic topdown mmap layout
+Message-ID: <20190724171123.GV19023@42.do-not-panic.com>
+References: <20190724055850.6232-1-alex@ghiti.fr>
+ <20190724055850.6232-6-alex@ghiti.fr>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190724055850.6232-6-alex@ghiti.fr>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_100956_270324_94079D8B 
-X-CRM114-Status: GOOD (  11.15  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190724_101127_708520_6202E948 
+X-CRM114-Status: GOOD (  12.49  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.40.44.94 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [209.85.214.194 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (mcgrof[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.214.194 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,38 +91,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-kernel@vger.kernel.org, Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Albert Ou <aou@eecs.berkeley.edu>, Kees Cook <keescook@chromium.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Palmer Dabbelt <palmer@sifive.com>,
+ Will Deacon <will.deacon@arm.com>, Russell King <linux@armlinux.org.uk>,
+ Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
+ linux-mm@kvack.org, Paul Burton <paul.burton@mips.com>,
+ linux-riscv@lists.infradead.org, Alexander Viro <viro@zeniv.linux.org.uk>,
+ James Hogan <jhogan@kernel.org>, linux-fsdevel@vger.kernel.org,
+ Andrew Morton <akpm@linux-foundation.org>, linux-mips@vger.kernel.org,
+ Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 2019-07-09 at 22:04 -0700, Joe Perches wrote:
-> Arguments are supposed to be ordered high then low.
-> 
-> Signed-off-by: Joe Perches <joe@perches.com>
-> ---
->  drivers/staging/media/sunxi/cedrus/cedrus_regs.h | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_regs.h b/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
-> index 3e9931416e45..ddd29788d685 100644
-> --- a/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
-> +++ b/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
-> @@ -110,7 +110,7 @@
->  #define VE_DEC_MPEG_MBADDR			(VE_ENGINE_DEC_MPEG + 0x10)
+On Wed, Jul 24, 2019 at 01:58:41AM -0400, Alexandre Ghiti wrote:
+> diff --git a/mm/util.c b/mm/util.c
+> index 0781e5575cb3..16f1e56e2996 100644
+> --- a/mm/util.c
+> +++ b/mm/util.c
+> @@ -321,7 +321,15 @@ unsigned long randomize_stack_top(unsigned long stack_top)
+>  }
 >  
->  #define VE_DEC_MPEG_MBADDR_X(w)			(((w) << 8) & GENMASK(15, 8))
-> -#define VE_DEC_MPEG_MBADDR_Y(h)			(((h) << 0) & GENMASK(0, 7))
-> +#define VE_DEC_MPEG_MBADDR_Y(h)			(((h) << 0) & GENMASK(7, 0))
+>  #ifdef CONFIG_ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT
+> -#ifdef CONFIG_ARCH_HAS_ELF_RANDOMIZE
+> +unsigned long arch_randomize_brk(struct mm_struct *mm)
+> +{
+> +	/* Is the current task 32bit ? */
+> +	if (!IS_ENABLED(CONFIG_64BIT) || is_compat_task())
+> +		return randomize_page(mm->brk, SZ_32M);
+> +
+> +	return randomize_page(mm->brk, SZ_1G);
+> +}
+> +
+>  unsigned long arch_mmap_rnd(void)
+>  {
+>  	unsigned long rnd;
+> @@ -335,7 +343,6 @@ unsigned long arch_mmap_rnd(void)
 >  
->  #define VE_DEC_MPEG_CTRL			(VE_ENGINE_DEC_MPEG + 0x14)
+>  	return rnd << PAGE_SHIFT;
+>  }
 
-Greg?  ping?
- 
+So arch_randomize_brk is no longer ifdef'd around
+CONFIG_ARCH_HAS_ELF_RANDOMIZE either and yet the header
+still has it. Is that intentional?
 
+  Luis
 
 _______________________________________________
 linux-arm-kernel mailing list
