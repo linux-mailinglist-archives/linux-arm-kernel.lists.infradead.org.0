@@ -2,65 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E897672C89
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 12:47:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D356E72C9A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 12:51:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iXbQEhMcjW080d904wPsjraWMkbKoBA1DPTVNE/aGDY=; b=DMWJ1I7SWC1Kib
-	UZ+Miliw+GNGoNclo8Nh6mI8MZI/7d/+MbO6sjKOgda6sY53u5ch3pTjO1YCSZndIL73tco0taud8
-	yeHevs1YTWJpXwTElt+OvcjjDPZZizLG2qoQwMlt6TDvvVNF0+p70Y2Zxs2yUe7dlH/vBrEo273g3
-	yfCTVXX68vTiYQfEP7sfoRFadLAaKG6j0wwulP+1tyO/JOUNvTe9YR59PmvBBlowBrk423uFNto3U
-	R7Pk4XtQkyrFQszo/MUAd08xpdblxb5epGuEpN2iosFIUSNvC8eNUtR5ggAZZLIaGpNgpqDVHxhqc
-	O6WJdb7E/d+EO6DNzr0Q==;
+	List-Owner; bh=r59CztI8XYDPusZ/OB3llfpgNilksWHG66Lev8bd1mM=; b=vA2HJej0B9CCw9
+	JaFqDI2OPaNFkMphcgRq/+gxebKR/XRwwmkne8Kj5UCEQrXbpZo4DvuSCzMHaXJrLVpayV7XAur95
+	Pzi4AzdU1Jv3QbxFmVY4vpTL/X3hDf3L7BHmy5SjrPveQO0WjUq5+7/X21iMBfbRkB5SRIGU0h7Cf
+	wfuD37+2/q8VqPMTYvYGhNhRpu2rwj818L/R33USeAG+R5mTbGGULil9kE7L1bnREwKCtlXTBL3OI
+	/6D2AFMjO/9RfWhP2gZ1sPFF/WP+b4CBhnVeyTEhBf7ngEsJa/XmVo3AlkLKoXv0ybC83QMrzSM47
+	CsTZ774vGKuqm/daZTrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqEoA-00070t-Mr; Wed, 24 Jul 2019 10:47:42 +0000
+	id 1hqEru-0000HS-R9; Wed, 24 Jul 2019 10:51:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqEo0-000705-AL
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 10:47:34 +0000
-Received: from mail-lf1-f41.google.com (mail-lf1-f41.google.com
- [209.85.167.41])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6A6A3229F3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 24 Jul 2019 10:47:29 +0000 (UTC)
+ id 1hqErj-0000H9-L0
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 10:51:25 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2C0B4229ED;
+ Wed, 24 Jul 2019 10:51:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563965249;
- bh=XqKYmTUOX1jzb8jQJM2UMIUVBoEiIefjBqEXYZC6+Q8=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=OoGNIGo9n4Dw84KdQMXHr14YIuwr2v8gYyq0EpRSCa9WKf+y7ws5X9/vH4LRw6p+8
- SFkjNiyvQVYGlIeX6ckPa0c4raZaFSEN47cp/ldLMzJbn7Up0Ewl89osIHve4t2YQ+
- BVe0+JzQteGkevspNOcHU9wHbFz3urZEyVZ27h2M=
-Received: by mail-lf1-f41.google.com with SMTP id s19so31627680lfb.9
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 24 Jul 2019 03:47:29 -0700 (PDT)
-X-Gm-Message-State: APjAAAX5dMgOFUmLoNC/GhXsPsr5hr9PwUWexieitEZOUn/bcQVQHn0C
- xyCXJ4YxEMpiL9VXWuOlcLyP2S3S5pDS4/CPPrw=
-X-Google-Smtp-Source: APXvYqy9K5E4hGCz/s/b0MY68jWI8cr4JC7OTnKDyAKC2ApiptG9TrpIaoDaLUgFlFXSddwxu9vPHeV69/haNP5yOT0=
-X-Received: by 2002:a19:4f4a:: with SMTP id a10mr37712878lfk.30.1563965247598; 
- Wed, 24 Jul 2019 03:47:27 -0700 (PDT)
+ s=default; t=1563965483;
+ bh=WM+fscYo1bqfJi2bJEoVhI4xfS6Xuq0YCL9CJeqsjeQ=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=E8/sdrxglJ6P9i4L4AFnheuK8F34oHAqeZAxjE9/ywra0lH0UJDFt76V5Q7zAhyoo
+ THDmcRxl8fvPWETShgPgdpQBEgTqCQp9QoKNRCKIFRGHpA+Ytg1CkfChHBZ2djurj6
+ ysGCImQlwMiYq/0GEyg2CuJIgv6DtX5PaV3JAtIo=
+Date: Wed, 24 Jul 2019 11:51:17 +0100
+From: Will Deacon <will@kernel.org>
+To: Rob Clark <robdclark@gmail.com>
+Subject: Re: [PATCH v2] iommu: add support for drivers that manage iommu
+ explicitly
+Message-ID: <20190724105116.fwhnbfuglbbojjzu@willie-the-truck>
+References: <20190702202631.32148-2-robdclark@gmail.com>
+ <20190710182844.25032-1-robdclark@gmail.com>
+ <20190722142833.GB12009@8bytes.org>
+ <CAF6AEGvJc2RK3GkpcXiVKsuTX81D3oahnu=qWJ9LFst1eT3tMg@mail.gmail.com>
+ <20190722154803.GG12009@8bytes.org>
+ <CAF6AEGvWf3ZOrbyyWjORuOVEPOcPr+JSEO78aYjhL-GVhDZnTg@mail.gmail.com>
+ <20190723153822.gm4ossn43nvqbyak@willie-the-truck>
+ <CAF6AEGtL6gqtbmtksf7zCSGrFOEj0ynq-2nwvizLLiS0FTwHpg@mail.gmail.com>
 MIME-Version: 1.0
-References: <CGME20190718143127eucas1p13b1e2c98d270140a87f09562ef46c9a3@eucas1p1.samsung.com>
- <20190718143044.25066-1-s.nawrocki@samsung.com>
- <20190718143044.25066-2-s.nawrocki@samsung.com>
- <CAJKOXPfLBif-=09B9jZ3qN1kWdTAcrBQZGvZ+A-MUifXK4si9Q@mail.gmail.com>
- <1117f432-8adf-fbe9-f4af-f8acb755326e@samsung.com>
-In-Reply-To: <1117f432-8adf-fbe9-f4af-f8acb755326e@samsung.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Date: Wed, 24 Jul 2019 12:47:16 +0200
-X-Gmail-Original-Message-ID: <CAJKOXPf2dsnaV4cRT3JxvY=uFEH1hr8SempEHUXq5GiLwmwEzA@mail.gmail.com>
-Message-ID: <CAJKOXPf2dsnaV4cRT3JxvY=uFEH1hr8SempEHUXq5GiLwmwEzA@mail.gmail.com>
-Subject: Re: [PATCH v2 1/9] soc: samsung: Add exynos chipid driver support
-To: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
+Content-Disposition: inline
+In-Reply-To: <CAF6AEGtL6gqtbmtksf7zCSGrFOEj0ynq-2nwvizLLiS0FTwHpg@mail.gmail.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_034732_392571_D57EE095 
-X-CRM114-Status: GOOD (  28.13  )
+X-CRM114-CacheID: sfid-20190724_035123_723725_2F007025 
+X-CRM114-Status: GOOD (  29.25  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -89,205 +84,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
- linux-pm@vger.kernel.org, pankaj.dubey@samsung.com,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, kgene@kernel.org,
- Sylwester Nawrocki <s.nawrocki@samsung.com>, vireshk@kernel.org,
- linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: Rob Clark <robdclark@chromium.org>, aarch64-laptops@lists.linaro.org,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>, Joerg Roedel <joro@8bytes.org>,
+ "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Andy Shevchenko <andy.shevchenko@gmail.com>,
+ Sudeep Holla <sudeep.holla@arm.com>,
+ "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
+ Joerg Roedel <joro@8bytes.org>, " <iommu@lists.linux-foundation.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Joe Perches <joe@perches.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Robin Murphy <robin.murphy@arm.com>, Bartosz Golaszewski <brgl@bgdev.pl>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 23 Jul 2019 at 16:10, Bartlomiej Zolnierkiewicz
-<b.zolnierkie@samsung.com> wrote:
->
->
-> Hi Krzysztof,
->
-> On 7/23/19 2:57 PM, Krzysztof Kozlowski wrote:
-> > On Thu, 18 Jul 2019 at 16:31, Sylwester Nawrocki <s.nawrocki@samsung.com> wrote:
-> >>
-> >> From: Pankaj Dubey <pankaj.dubey@samsung.com>
-> >>
-> >> Exynos SoCs have Chipid, for identification of product IDs and SoC
-> >> revisions. This patch intends to provide initialization code for all
-> >> these functionalities, at the same time it provides some sysfs entries
-> >> for accessing these information to user-space.
-> >>
-> >> This driver uses existing binding for exynos-chipid.
-> >>
-> >> Changes by Bartlomiej:
-> >> - fixed return values on errors
-> >> - removed bogus kfree_const()
-> >> - added missing Exynos4210 EVT0 id
-> >> - converted code to use EXYNOS_MASK define
-> >> - fixed np use after of_node_put()
-> >> - fixed too early use of dev_info()
-> >> - made driver fail for unknown SoC-s
-> >> - added SPDX tag
-> >> - updated Copyrights
-> >>
-> >> Signed-off-by: Pankaj Dubey <pankaj.dubey@samsung.com>
-> >> [m.szyprowski: for suggestion and code snippet of product_id_to_soc_id]
-> >> Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
-> >> Signed-off-by: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
-> >> [s.nawrocki: updated copyright date]
-> >> Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
-> >> ---
-> >>  drivers/soc/samsung/Kconfig         |   5 ++
-> >>  drivers/soc/samsung/Makefile        |   2 +
-> >>  drivers/soc/samsung/exynos-chipid.c | 111 ++++++++++++++++++++++++++++
-> >>  3 files changed, 118 insertions(+)
-> >>  create mode 100644 drivers/soc/samsung/exynos-chipid.c
-> >>
-> >> diff --git a/drivers/soc/samsung/Kconfig b/drivers/soc/samsung/Kconfig
-> >> index 2186285fda92..2905f5262197 100644
-> >> --- a/drivers/soc/samsung/Kconfig
-> >> +++ b/drivers/soc/samsung/Kconfig
-> >> @@ -7,6 +7,11 @@ menuconfig SOC_SAMSUNG
-> >>
-> >>  if SOC_SAMSUNG
-> >>
-> >> +config EXYNOS_CHIPID
-> >> +       bool "Exynos Chipid controller driver" if COMPILE_TEST
-> >> +       depends on ARCH_EXYNOS || COMPILE_TEST
-> >> +       select SOC_BUS
-> >> +
-> >>  config EXYNOS_PMU
-> >>         bool "Exynos PMU controller driver" if COMPILE_TEST
-> >>         depends on ARCH_EXYNOS || ((ARM || ARM64) && COMPILE_TEST)
-> >> diff --git a/drivers/soc/samsung/Makefile b/drivers/soc/samsung/Makefile
-> >> index 29f294baac6e..3b6a8797416c 100644
-> >> --- a/drivers/soc/samsung/Makefile
-> >> +++ b/drivers/soc/samsung/Makefile
-> >> @@ -1,4 +1,6 @@
-> >>  # SPDX-License-Identifier: GPL-2.0
-> >> +
-> >> +obj-$(CONFIG_EXYNOS_CHIPID)    += exynos-chipid.o
-> >>  obj-$(CONFIG_EXYNOS_PMU)       += exynos-pmu.o
-> >>
-> >>  obj-$(CONFIG_EXYNOS_PMU_ARM_DRIVERS)   += exynos3250-pmu.o exynos4-pmu.o \
-> >> diff --git a/drivers/soc/samsung/exynos-chipid.c b/drivers/soc/samsung/exynos-chipid.c
-> >> new file mode 100644
-> >> index 000000000000..78b123ee60c0
-> >> --- /dev/null
-> >> +++ b/drivers/soc/samsung/exynos-chipid.c
-> >> @@ -0,0 +1,111 @@
-> >> +// SPDX-License-Identifier: GPL-2.0
-> >> +/*
-> >> + * Copyright (c) 2019 Samsung Electronics Co., Ltd.
-> >> + *           http://www.samsung.com/
-> >> + *
-> >> + * EXYNOS - CHIP ID support
-> >> + * Author: Pankaj Dubey <pankaj.dubey@samsung.com>
-> >> + * Author: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
-> >> + */
-> >> +
-> >> +#include <linux/io.h>
-> >> +#include <linux/of.h>
-> >> +#include <linux/of_address.h>
-> >> +#include <linux/of_platform.h>
-> >> +#include <linux/platform_device.h>
+On Tue, Jul 23, 2019 at 10:40:55AM -0700, Rob Clark wrote:
+> On Tue, Jul 23, 2019 at 8:38 AM Will Deacon <will@kernel.org> wrote:
 > >
-> > Any changes here from my previous comments?
+> > On Mon, Jul 22, 2019 at 09:23:48AM -0700, Rob Clark wrote:
+> > > On Mon, Jul 22, 2019 at 8:48 AM Joerg Roedel <joro@8bytes.org> wrote:
+> > > >
+> > > > On Mon, Jul 22, 2019 at 08:41:34AM -0700, Rob Clark wrote:
+> > > > > It is set by the driver:
+> > > > >
+> > > > > https://patchwork.freedesktop.org/patch/315291/
+> > > > >
+> > > > > (This doesn't really belong in devicetree, since it isn't a
+> > > > > description of the hardware, so the driver is really the only place to
+> > > > > set this.. which is fine because it is about a detail of how the
+> > > > > driver works.)
+> > > >
+> > > > It is more a detail about how the firmware works. IIUC the problem is
+> > > > that the firmware initializes the context mappings for the GPU and the
+> > > > OS doesn't know anything about that and just overwrites them, causing
+> > > > the firmware GPU driver to fail badly.
+> > > >
+> > > > So I think it is the task of the firmware to tell the OS not to touch
+> > > > the devices mappings until the OS device driver takes over. On x86 there
+> > > > is something similar with the RMRR/unity-map tables from the firmware.
+> > > >
+> > >
+> > > Bjorn had a patchset[1] to inherit the config from firmware/bootloader
+> > > when arm-smmu is probed which handles that part of the problem.  My
+> > > patch is intended to be used on top of his patchset.  This seems to me
+> > > like the best solution, if we don't have control over the firmware.
 > >
-> > I have also one more new thought later.
+> > Hmm, but the feedback from Robin on the thread you cite was that this should
+> > be generalised to look more like RMRR, so there seems to be a clear message
+> > here.
 > >
-> >> +#include <linux/slab.h>
-> >> +#include <linux/sys_soc.h>
-> >> +
-> >> +#define EXYNOS_SUBREV_MASK     (0xF << 4)
-> >> +#define EXYNOS_MAINREV_MASK    (0xF << 0)
-> >> +#define EXYNOS_REV_MASK                (EXYNOS_SUBREV_MASK | EXYNOS_MAINREV_MASK)
-> >> +#define EXYNOS_MASK            0xFFFFF000
-> >> +
-> >> +static const struct exynos_soc_id {
-> >> +       const char *name;
-> >> +       unsigned int id;
-> >> +} soc_ids[] = {
-> >> +       { "EXYNOS3250", 0xE3472000 },
-> >> +       { "EXYNOS4210", 0x43200000 },   /* EVT0 revision */
-> >> +       { "EXYNOS4210", 0x43210000 },
-> >> +       { "EXYNOS4212", 0x43220000 },
-> >> +       { "EXYNOS4412", 0xE4412000 },
-> >> +       { "EXYNOS5250", 0x43520000 },
-> >> +       { "EXYNOS5260", 0xE5260000 },
-> >> +       { "EXYNOS5410", 0xE5410000 },
-> >> +       { "EXYNOS5420", 0xE5420000 },
-> >> +       { "EXYNOS5440", 0xE5440000 },
-> >> +       { "EXYNOS5800", 0xE5422000 },
-> >> +       { "EXYNOS7420", 0xE7420000 },
-> >> +       { "EXYNOS5433", 0xE5433000 },
-> >> +};
-> >> +
-> >> +static const char * __init product_id_to_soc_id(unsigned int product_id)
-> >> +{
-> >> +       int i;
-> >> +
-> >> +       for (i = 0; i < ARRAY_SIZE(soc_ids); i++)
-> >> +               if ((product_id & EXYNOS_MASK) == soc_ids[i].id)
-> >> +                       return soc_ids[i].name;
-> >> +       return NULL;
-> >> +}
-> >> +
-> >> +int __init exynos_chipid_early_init(void)
-> >> +{
-> >> +       struct soc_device_attribute *soc_dev_attr;
-> >> +       void __iomem *exynos_chipid_base;
-> >> +       struct soc_device *soc_dev;
-> >> +       struct device_node *root;
-> >> +       struct device_node *np;
-> >> +       u32 product_id;
-> >> +       u32 revision;
-> >> +
-> >> +       /* look up for chipid node */
-> >> +       np = of_find_compatible_node(NULL, NULL, "samsung,exynos4210-chipid");
-> >> +       if (!np)
-> >> +               return -ENODEV;
-> >> +
-> >> +       exynos_chipid_base = of_iomap(np, 0);
-> >> +       of_node_put(np);
-> >> +
-> >> +       if (!exynos_chipid_base) {
-> >> +               pr_err("Failed to map SoC chipid\n");
-> >> +               return -ENXIO;
-> >> +       }
-> >> +
-> >> +       product_id = readl_relaxed(exynos_chipid_base);
-> >> +       revision = product_id & EXYNOS_REV_MASK;
-> >> +       iounmap(exynos_chipid_base);
-> >> +
-> >> +       soc_dev_attr = kzalloc(sizeof(*soc_dev_attr), GFP_KERNEL);
-> >> +       if (!soc_dev_attr)
-> >> +               return -ENOMEM;
-> >> +
-> >> +       soc_dev_attr->family = "Samsung Exynos";
-> >> +
-> >> +       root = of_find_node_by_path("/");
-> >> +       of_property_read_string(root, "model", &soc_dev_attr->machine);
-> >> +       of_node_put(root);
-> >> +
-> >> +       soc_dev_attr->revision = kasprintf(GFP_KERNEL, "%x", revision);
-> >> +       soc_dev_attr->soc_id = product_id_to_soc_id(product_id);
-> >> +       if (!soc_dev_attr->soc_id) {
-> >> +               pr_err("Unknown SoC\n");
-> >
-> > In case of running old kernel on unknown SoC (new revision of existing
-> > one or older design not longer supported like 4415), the device will
-> > not bind. This was added by Bartlomiej. Why? I imagine that soc driver
-> > could be still matched and just report "Unknown". I am not sure if
-> > this changes anything, though.
->
-> I was thinking that we shouldn't be pretending that we know how to
-> handle unsupported SoCs, i.e. that we know how to correctly read its
-> product_id and revision.
+> 
+> Perhaps it is a lack of creativity, or lack of familiarity w/ iommu vs
+> virtualization, but I'm not quite seeing how RMRR would help.. in
+> particular when dealing with both DT and ACPI cases.
 
-Reasonable, thanks for explanation.
-Best regards,
-Krzysztof
+Well, I suppose we'd have something for DT and something for ACPI and we'd
+try to make them look similar enough that we don't need lots of divergent
+code in the kernel. The RMRR-like description would describe that, for a
+particular device, a specific virt:phys mapping needs to exist in the
+small window between initialising the SMMU and re-initialising the device
+(GPU).
+
+I would prefer this to be framebuffer-specific, since we're already in
+flagrant violation of the arm64 boot requirements wrt ongoing DMA and making
+this too general could lead to all sorts of brain damage. That would
+probably also allow us to limit the flexibility, by mandating things like
+alignment and memory attributes.
+
+Having said that, I just realised I'm still a bit confused about the
+problem: why does the bootloader require SMMU translation for the GPU at
+all? If we could limit this whole thing to be identity-mapped/bypassed,
+then all we need is a per-device flag in the firmware to indicate that the
+SMMU should be initialised to allow passthrough for transactions originating
+from that device.
+
+> So I kinda prefer, when possible, if arm-smmu can figure out what is going
+> on by looking at the hw state at boot (since that approach would work
+> equally well for DT and ACPI).
+
+That's not going to fly.
+
+Forcing Linux to infer the state of the system by effectively parsing the
+hardware configuration directly is fragile, error-prone and may not even be
+possible in the general case. Worse, if this goes wrong, the symptoms are
+very likely to be undiagnosable memory corruption, which is pretty awful in
+my opinion.
+
+Not only would you need separate parsing code for every IOMMU out there,
+but you'd also need to make Linux aware of device aspects that it otherwise
+doesn't care about, just in case the firmware decided to use them.
+Furthermore, running an older kernel on newer hardware (which may have some
+extensions), could cause the parsing to silently ignore parts of the device
+that indicate memory regions which are in use. On top of that, there made be
+device-global state that we are unable to reconfigure and that affect
+devices other than the ones in question.
+
+So no, I'm very much against this approach and the solution absolutely needs
+to come in the form of a more abstract description from firmware.
+
+> I *think* (but need to confirm if Bjorn hasn't already) that the
+> memory for the pagetables that firmware/bootloader sets up is already
+> removed from the memory map efi passes to kernel, so we don't need to
+> worry about kernel stomping in-use pagetables.
+
+It's precisely this sort of fragility that makes me nervous about this whole
+approach.
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
