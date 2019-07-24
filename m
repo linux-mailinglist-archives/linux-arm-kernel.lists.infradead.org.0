@@ -2,64 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B580D73DB3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 22:19:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B57673DED
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 22:21:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UossLIWnl9ztS9QTaAe9EBy1E9XfbDlDkK4NFl0tfgk=; b=SZrnN+p6/rGBo3
-	5gpI3rg8JpMpCSqnG3970HrCe1+cuSSC0MY4s3Qz/wvMtKVKokCWa11WtO1LLJ85UkLk3pR7fAAsQ
-	uL6l9Q4g9jW7kvUOkX/Y4QwSqZfRxy7jeW7FvGBEUmVSvzV6w1bKmrGHebRziFK6xipWuwWEDkC6P
-	AHg5ZTd8+DAVBeOiQRjETgXclXbQTxUAY2fiPFO3v96VAVt6JhDI+Itv6hjFu7wG/ahgoc+KzFNY5
-	2f7Y5AG30Za/AIOMBpbYN77tQYfJBQ7hVWZyxteimn18CjmFpXdhWcu2bQ4OUJTSR1XjKFIhc0t4o
-	eoggrDh188pi327SyE+w==;
+	List-Owner; bh=AVRskv+qBA4m7pnYJ6OGTWs3vNAkgiue2C52V2rVSAw=; b=mTER2eI7+Y12qF
+	TPqhwq1LG4NRYyGtlbW+88Z/pmWMdrA0KE5JaLe2MS0Rtj0HF4Ehz1dCgf4LHZy/zqAyudGzi/kyc
+	ntmBeEmx3+Tm2JRGLoPc9kYVCLeK8h3W83YHzhI9e0D+OwI9bBJZGcc1QjZvKJUEm01z2V8pJhYAw
+	6PrXwweULBojRWcbsraV6hTe96VQyNb0Dhl2vLTHZ+bLGFtlXHDWgWuUCHPAbCmzwfr/DsEqGT100
+	WX7BgIfHgzIW180PpQNp0R/Zp/GiYUVMCSxqIn4cxeE1b58eyT0JuRtL5d3zRYPVeFfqDDzYOIly7
+	ZluSz56VU80kE+HgzpNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqNjN-0001oY-CE; Wed, 24 Jul 2019 20:19:21 +0000
+	id 1hqNlX-0003m9-C3; Wed, 24 Jul 2019 20:21:35 +0000
 Received: from mail-io1-f66.google.com ([209.85.166.66])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqNj3-0001nr-5n
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 20:19:02 +0000
-Received: by mail-io1-f66.google.com with SMTP id k20so92306804ios.10
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 24 Jul 2019 13:19:00 -0700 (PDT)
+ id 1hqNlJ-0003lb-9p; Wed, 24 Jul 2019 20:21:22 +0000
+Received: by mail-io1-f66.google.com with SMTP id k20so92320159ios.10;
+ Wed, 24 Jul 2019 13:21:21 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=ApQotHQxWJr5zyqbEl1C9NpdXsHo5uhr1/je6Huq+bI=;
- b=mSQQSUFWlE5AVd0s5VOEhO0HpgvhJrvWD7y7lxgAYLB7sLwqg7E7dheWagUVpf1Y1U
- UBqai3F3kvMHaWs6vrna4+92PhMTDCVjYftnbJ/SDqfU0P18jfF4Gh9iFy0bt7bWybqS
- yWQGPgUPf89xldlsZulo8GKSh1K8Ef5Kked7geoao8jhm1tL3LQ/mfpj/yePQJ+vBTwI
- 2/9ofOP4AzK86JGNs3OPIaka0hcwOPhTNrS4evIL1UBDtk7kj0m1WNe/OwqWejF2MiJK
- Km49J1IfaLmolfBAmGN3XzBeLiJBQLEGJdZepxxoR8Xs5XLMrkEc/lPAnChVSZ2AOgTT
- QJCA==
-X-Gm-Message-State: APjAAAW1QeQb5OreEYLDWGNSdjU6F+ROP1G/aCy6G0XNP8wmRT4Do4jP
- txLZUb6sJsgRLOnbAL/4xA==
-X-Google-Smtp-Source: APXvYqxZ9dmUz3ZXKBjOYJnBYyOwokAXvh0AFf4QNJLoM+DksevICYOosUh4VFPZzV82gw2GdpbfrA==
-X-Received: by 2002:a6b:fb02:: with SMTP id h2mr53385887iog.289.1563999540221; 
- Wed, 24 Jul 2019 13:19:00 -0700 (PDT)
+ bh=RJ9nHyNd7LCl6+mSB0G4S2X04kojrU0TsARgzmq3agw=;
+ b=T4wyi7c8R/Bzq/TwZu4LQOAObp8rXxpSoHfIqS+kQfjcHQVgE4PpHrwCSOiwD1YoVn
+ a8FEju98fGD1rQ5BHbLzeTEuMJ7soHxDEaSx1vFglUwqcksDQDZKJGSkXLfjArMh0Nnt
+ 6lWPUBcpuD9gccpulJqUAxaHT4nYAK3GVOy7+KapPO2DR41ZvbomznNqdXAbm5JGMoLX
+ +EDpt02FySjMUi3PtOFY/+VelLF6YWmIUpKKVAwSf6oBRLAL8EfzTsug2UiUuJ0VUaZf
+ nXek6tQ4ch21p9VkBylCtQviMgN32NhrWgtoNZ3R8fcWhKOrmKUstqjY9oFgTBgu+SLT
+ ChCQ==
+X-Gm-Message-State: APjAAAUqdlb/tWx6JhawJx1qLDyCHq1FMrcj85vYoMun8HAyLBTzB2cS
+ /wjiw5b9bIbeh0NewyKwwA==
+X-Google-Smtp-Source: APXvYqwprV5ylAQXl6gUtT7NZHmcnqBWl3IgOcCq5QcBmtI4uojyhvDVa9K+DeOobOHPeGdMYTW9+Q==
+X-Received: by 2002:a5e:8a46:: with SMTP id o6mr45348991iom.36.1563999680305; 
+ Wed, 24 Jul 2019 13:21:20 -0700 (PDT)
 Received: from localhost ([64.188.179.254])
- by smtp.gmail.com with ESMTPSA id r5sm43517794iom.42.2019.07.24.13.18.59
+ by smtp.gmail.com with ESMTPSA id r24sm34281026ioc.76.2019.07.24.13.21.19
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 24 Jul 2019 13:18:59 -0700 (PDT)
-Date: Wed, 24 Jul 2019 14:18:58 -0600
+ Wed, 24 Jul 2019 13:21:19 -0700 (PDT)
+Date: Wed, 24 Jul 2019 14:21:19 -0600
 From: Rob Herring <robh@kernel.org>
-To: Anson.Huang@nxp.com
-Subject: Re: [PATCH V2 1/4] dt-bindings: opp: Support multiple opp-suspend
- properties
-Message-ID: <20190724201858.GA25048@bogus>
-References: <20190709080015.43442-1-Anson.Huang@nxp.com>
+To: Qii Wang <qii.wang@mediatek.com>
+Subject: Re: [PATCH v3 1/2] dt-bindings: i3c: Document MediaTek I3C master
+ bindings
+Message-ID: <20190724202119.GA26566@bogus>
+References: <1562677762-24067-1-git-send-email-qii.wang@mediatek.com>
+ <1562677762-24067-2-git-send-email-qii.wang@mediatek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190709080015.43442-1-Anson.Huang@nxp.com>
+In-Reply-To: <1562677762-24067-2-git-send-email-qii.wang@mediatek.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_131901_213955_14315F08 
-X-CRM114-Status: GOOD (  10.03  )
+X-CRM114-CacheID: sfid-20190724_132121_344835_EC3037CB 
+X-CRM114-Status: GOOD (  15.15  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
@@ -88,35 +87,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: nm@ti.com, mark.rutland@arm.com, ping.bai@nxp.com, ccaione@baylibre.com,
- agx@sigxcpu.org, angus@akkea.ca, leonard.crestez@nxp.com, festevam@gmail.com,
- abel.vesa@nxp.com, andrew.smirnov@gmail.com, vireshk@kernel.org,
- Linux-imx@nxp.com, devicetree@vger.kernel.org, kernel@pengutronix.de,
- linux-pm@vger.kernel.org, s.hauer@pengutronix.de, robh+dt@kernel.org,
- daniel.baluta@nxp.com, linux-arm-kernel@lists.infradead.org, sboyd@kernel.org,
- linux-kernel@vger.kernel.org, p.zabel@pengutronix.de, shawnguo@kernel.org,
- l.stach@pengutronix.de
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ srv_heupstream@mediatek.com, bbrezillon@kernel.org, leilk.liu@mediatek.com,
+ linux-kernel@vger.kernel.org, liguo.zhang@mediatek.com,
+ linux-mediatek@lists.infradead.org, xinping.qian@mediatek.com,
+ matthias.bgg@gmail.com, linux-i3c@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue,  9 Jul 2019 16:00:12 +0800, Anson.Huang@nxp.com wrote:
-> From: Anson Huang <Anson.Huang@nxp.com>
+On Tue, Jul 09, 2019 at 09:09:21PM +0800, Qii Wang wrote:
+> Document MediaTek I3C master DT bindings.
 > 
-> Update opp-suspend property's description to support multiple
-> opp-suspend properties defined in DT, the OPP with highest opp-hz
-> and with opp-suspend property present will be used as suspend opp.
-> 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> Signed-off-by: Qii Wang <qii.wang@mediatek.com>
 > ---
-> New patch.
-> ---
->  Documentation/devicetree/bindings/opp/opp.txt | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
+>  .../devicetree/bindings/i3c/mtk,i3c-master.txt     |   48 ++++++++++++++++++++
+>  1 file changed, 48 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/i3c/mtk,i3c-master.txt
 > 
+> diff --git a/Documentation/devicetree/bindings/i3c/mtk,i3c-master.txt b/Documentation/devicetree/bindings/i3c/mtk,i3c-master.txt
+> new file mode 100644
+> index 0000000..d32eda6
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/i3c/mtk,i3c-master.txt
+> @@ -0,0 +1,48 @@
+> +Bindings for MediaTek I3C master block
+> +=====================================
+> +
+> +Required properties:
+> +--------------------
+> +- compatible: shall be "mediatek,i3c-master"
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Needs to be SoC specific.
+
+> +- reg: physical base address of the controller and apdma base, length of
+> +  memory mapped region.
+> +- reg-names: shall be "main" for master controller and "dma" for apdma.
+> +- interrupts: the interrupt line connected to this I3C master.
+> +- clocks: shall reference the i3c and apdma clocks.
+> +- clock-names: shall include "main" and "dma".
+> +
+> +Mandatory properties defined by the generic binding (see
+> +Documentation/devicetree/bindings/i3c/i3c.txt for more details):
+> +
+> +- #address-cells: shall be set to 3
+> +- #size-cells: shall be set to 0
+> +
+> +Optional properties defined by the generic binding (see
+> +Documentation/devicetree/bindings/i3c/i3c.txt for more details):
+> +
+> +- i2c-scl-hz
+> +- i3c-scl-hz
+> +
+> +I3C device connected on the bus follow the generic description (see
+> +Documentation/devicetree/bindings/i3c/i3c.txt for more details).
+> +
+> +Example:
+> +
+> +	i3c0: i3c@1100d000 {
+> +		compatible = "mediatek,i3c-master";
+> +		reg = <0x1100d000 0x1000>,
+> +		      <0x11000300 0x80>;
+> +		reg-names = "main", "dma";
+> +		interrupts = <GIC_SPI 44 IRQ_TYPE_LEVEL_LOW>;
+> +		clocks = <&infracfg CLK_INFRA_I3C0>,
+> +			 <&infracfg CLK_INFRA_AP_DMA>;
+> +		clock-names = "main", "dma";
+> +		#address-cells = <3>;
+> +		#size-cells = <0>;
+> +		i2c-scl-hz = <100000>;
+> +
+> +		nunchuk: nunchuk@52 {
+> +			compatible = "nintendo,nunchuk";
+> +			reg = <0x52 0x0 0x10>;
+> +		};
+> +	};
+> -- 
+> 1.7.9.5
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
