@@ -2,74 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 696F073507
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 19:17:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2AE7273511
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 19:18:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b+a1Cqrnz/l+8h+CvSPh01KWuWr19QIxnOD9Qb6axkU=; b=XIIcHOqWkkm5Lp
-	rcUWrmgjsHwAA2bcI/jcgEh5WrSKx/GUJaRYMd51dFqJrQemwP6giSY4xTIZwX26lsfqGy/AbHsj5
-	ZCFNP/N5PEz4qqixXwgQvMIl/tQF2G3s4Ou58TEZK6xc0YaJHpmpAXQH/pyj/GCcGCwlu/y/5fVaW
-	4ieKt1j0oYWViti29OpZfeDgJuUMGC0U/zDrYcSbZxAFK1QiwtE/FYWODXyWeiO0mfW9LUgXv3lB5
-	MsvCzncIQNvpEzvs9ZZ+tomIdaW0qZ7nHOH1F8TEalO4d8Lk8X5yjDOiwsOqYITOwZ6DuF2UJNQg8
-	e2PlBVyY2EKMFolUVm5g==;
+	List-Owner; bh=oo9XlR70icXamz9a5av0Xd/mXONcS411RrdZ/WxHGrk=; b=Y26V3EagTCwh25
+	ykZht8jjLU+FuptUV0VKsHxv1p8cQova9h0oHWXFVisf8u0YJuHeax7iqcp+GKcd0GjQ8kx5E7pto
+	1HyG0e09G+P8PEKXW5AqpeiEYJMiKg2gqEDT0QjgZ42V3dS5AgFOYfHmotLuV/dEIOVTiGgHy7FWk
+	Y3VBBPsp66K01KjNtrWKyFnDQsYDiq2Bgojnl0g8cJTqxRcvvDHiR4Fm+dnkkXrLDSoGU7B8pFCq8
+	go9ZOZvPLCcp2IOgWhXexslXr87fY22YskdoMcVcteL0nt55v0R68Xqh2gkKU7DvMbft26hTyLi+j
+	qTgtNEvXVe0goiTUCKlA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqKtM-00030t-Ff; Wed, 24 Jul 2019 17:17:28 +0000
-Received: from mx3.wp.pl ([212.77.101.9])
+	id 1hqKuO-0005N9-Dq; Wed, 24 Jul 2019 17:18:32 +0000
+Received: from mail-pf1-f196.google.com ([209.85.210.196])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqKsg-0002IL-JW
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 17:16:49 +0000
-Received: (wp-smtpd smtp.wp.pl 30481 invoked from network);
- 24 Jul 2019 19:16:43 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wp.pl; s=1024a;
- t=1563988604; bh=z41DzGtUFzaWWcpQAVjI+8rAtK/VXbLYrGHn+dMjo3I=;
- h=From:To:Cc:Subject;
- b=YeeC3awkT/FVcvjk+fURFqdyv0r3NGECJaqSruBjt2MEMxHyXyddFZaA64nkaxrka
- 0lLpbm0O7VZrCjgigBSnZ19v6fCSXRbOMwIZThg3hxH5pulTydVwW1xI4EtrctTXRp
- wUor382uyQhCqpSoEE8V8sOX195Tb9e+kJQh7ApQ=
-Received: from 014.152-60-66-biz-static.surewest.net (HELO
- cakuba.netronome.com) (kubakici@wp.pl@[66.60.152.14])
- (envelope-sender <kubakici@wp.pl>)
- by smtp.wp.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
- for <navid.emamdoost@gmail.com>; 24 Jul 2019 19:16:43 +0200
-Date: Wed, 24 Jul 2019 10:16:36 -0700
-From: Jakub Kicinski <kubakici@wp.pl>
-To: Navid Emamdoost <navid.emamdoost@gmail.com>
-Subject: Re: [PATCH] mt7601u: null check the allocation
-Message-ID: <20190724101636.4699c30a@cakuba.netronome.com>
-In-Reply-To: <20190724141736.29994-1-navid.emamdoost@gmail.com>
-References: <87d0i00z4t.fsf@kamboji.qca.qualcomm.com>
- <20190724141736.29994-1-navid.emamdoost@gmail.com>
+ id 1hqKsm-0002Uz-Du; Wed, 24 Jul 2019 17:16:55 +0000
+Received: by mail-pf1-f196.google.com with SMTP id u14so21291752pfn.2;
+ Wed, 24 Jul 2019 10:16:51 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=156P/sv9kl3W4lzShHBiZ6Cb3GP3B3vD0ubCKwHKThU=;
+ b=VJTzeZ8jTKPVuWkMvogUfWOBC9IhP3FXTw5tOdVgTdsRm4KgjuoMu4Jn/kSTILHxT7
+ OLnbaUdDsfUryNMVUAeICsym44pZRlnmxJT0XPEWLK/ajVI4VMNfZtJkKHBrOjLuM5i/
+ v5PtcGa44JwGI13lmKZFXGYSvlYHjgsdvLUNXK69+7v3VqEWuq+z+UjmhQM1kpSoXQlo
+ 8FEUZa1dTzFaPC+Mvw/HHeNh0cB6MGOI/9ApM395eVG7nSHz5ToQuFKQsPf/FRhwbwp/
+ fwx36yU5+a7xT/Kpms8Zhumurlurxwq4ViuoCJ3Ppo2TxZgD/DZzLzCA5L44nqPegz2d
+ q80g==
+X-Gm-Message-State: APjAAAVRLlkQq9m6y6WhVKpKaUEMKMnbzv29orI68cWmVR6bev9lTazx
+ guHtqt9rVFUQtrYpQzaab6V5IhzA
+X-Google-Smtp-Source: APXvYqwTVGKd3fvTa9LEjWhqIcTFIJiIjYs9TLAcnxEPWXeforQowmcaSvI2CRLGqprBSYmGXcozlQ==
+X-Received: by 2002:a17:90a:8a91:: with SMTP id
+ x17mr89006769pjn.95.1563988610289; 
+ Wed, 24 Jul 2019 10:16:50 -0700 (PDT)
+Received: from 42.do-not-panic.com (42.do-not-panic.com. [157.230.128.187])
+ by smtp.gmail.com with ESMTPSA id n140sm49450927pfd.132.2019.07.24.10.16.49
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Wed, 24 Jul 2019 10:16:49 -0700 (PDT)
+Received: by 42.do-not-panic.com (Postfix, from userid 1000)
+ id ADB7B402A1; Wed, 24 Jul 2019 17:16:48 +0000 (UTC)
+Date: Wed, 24 Jul 2019 17:16:48 +0000
+From: Luis Chamberlain <mcgrof@kernel.org>
+To: Alexandre Ghiti <alex@ghiti.fr>
+Subject: Re: [PATCH REBASE v4 12/14] mips: Replace arch specific way to
+ determine 32bit task with generic version
+Message-ID: <20190724171648.GW19023@42.do-not-panic.com>
+References: <20190724055850.6232-1-alex@ghiti.fr>
+ <20190724055850.6232-13-alex@ghiti.fr>
 MIME-Version: 1.0
-X-WP-MailID: fe13a5d9e194338bda75b16965620f67
-X-WP-AV: skaner antywirusowy Poczty Wirtualnej Polski
-X-WP-SPAM: NO 000000A [QTPk]                               
+Content-Disposition: inline
+In-Reply-To: <20190724055850.6232-13-alex@ghiti.fr>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_101647_159537_290F41EC 
-X-CRM114-Status: UNSURE (   4.32  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190724_101652_621308_90B577AE 
+X-CRM114-Status: GOOD (  17.12  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.77.101.9 listed in list.dnswl.org]
+ no trust [209.85.210.196 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.196 listed in wl.mailspike.net]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (kubakici[at]wp.pl)
+ provider (mcgrof[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,25 +91,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: secalert@redhat.com, linux-wireless@vger.kernel.org, kjlu@umn.edu,
- linux-kernel@vger.kernel.org, emamd001@umn.edu,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- smccaman@umn.edu, Matthias Brugger <matthias.bgg@gmail.com>,
- netdev@vger.kernel.org, "David S. Miller" <davem@davemloft.net>,
- kvalo@codeaurora.org
+Cc: Albert Ou <aou@eecs.berkeley.edu>, Kees Cook <keescook@chromium.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Palmer Dabbelt <palmer@sifive.com>,
+ Will Deacon <will.deacon@arm.com>, Russell King <linux@armlinux.org.uk>,
+ Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
+ linux-mm@kvack.org, Paul Burton <paul.burton@mips.com>,
+ linux-riscv@lists.infradead.org, Alexander Viro <viro@zeniv.linux.org.uk>,
+ James Hogan <jhogan@kernel.org>, linux-fsdevel@vger.kernel.org,
+ Andrew Morton <akpm@linux-foundation.org>, linux-mips@vger.kernel.org,
+ Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 24 Jul 2019 09:17:36 -0500, Navid Emamdoost wrote:
-> devm_kzalloc may fail and return NULL. So the null check is needed.
+On Wed, Jul 24, 2019 at 01:58:48AM -0400, Alexandre Ghiti wrote:
+> Mips uses TASK_IS_32BIT_ADDR to determine if a task is 32bit, but
+> this define is mips specific and other arches do not have it: instead,
+> use !IS_ENABLED(CONFIG_64BIT) || is_compat_task() condition.
 > 
-> Signed-off-by: Navid Emamdoost <navid.emamdoost@gmail.com>
+> Signed-off-by: Alexandre Ghiti <alex@ghiti.fr>
+> Reviewed-by: Kees Cook <keescook@chromium.org>
+> ---
+>  arch/mips/mm/mmap.c | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/mips/mm/mmap.c b/arch/mips/mm/mmap.c
+> index faa5aa615389..d4eafbb82789 100644
+> --- a/arch/mips/mm/mmap.c
+> +++ b/arch/mips/mm/mmap.c
+> @@ -17,6 +17,7 @@
+>  #include <linux/sched/signal.h>
+>  #include <linux/sched/mm.h>
+>  #include <linux/sizes.h>
+> +#include <linux/compat.h>
+>  
+>  unsigned long shm_align_mask = PAGE_SIZE - 1;	/* Sane caches */
+>  EXPORT_SYMBOL(shm_align_mask);
+> @@ -191,7 +192,7 @@ static inline unsigned long brk_rnd(void)
+>  
+>  	rnd = rnd << PAGE_SHIFT;
+>  	/* 32MB for 32bit, 1GB for 64bit */
+> -	if (TASK_IS_32BIT_ADDR)
+> +	if (!IS_ENABLED(CONFIG_64BIT) || is_compat_task())
+>  		rnd = rnd & SZ_32M;
+>  	else
+>  		rnd = rnd & SZ_1G;
+> -- 
 
-Ah, I replied to the wrong one..
+Since there are at least two users why not just create an inline for
+this which describes what we are looking for and remove the comments?
 
-Acked-by: Jakub Kicinski <kubakici@wp.pl>
+  Luis
 
 _______________________________________________
 linux-arm-kernel mailing list
