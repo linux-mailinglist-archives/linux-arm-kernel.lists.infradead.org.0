@@ -2,65 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DBCB77272C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 07:08:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03B5672757
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 07:31:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O6gNRZoZCa5LNhKhISNK2REuHfxSGi12mhSNVbBg+do=; b=F+9i5VanlbZw0L
-	P41wU88+xcJlPTUc5YtaLs3CHPRx6Njbq6HCvKDTtZLdOkfT3ftN86kMGjjLMgddyX6WNkKCgmc/u
-	NmXAeK+8OSgPOneCvzC6Dg3IL4+RBvgDCn9wSVunV5CXHDf8BetfOJcjlRC0e4FCX3MDDGbUuWoZS
-	pzSPFU00/P4QIEEqDR3kRn+vka73NzNiEuvqA6tp0r1/CTUUT6sJNcfdIZF2ECh34tEbDc8ZKqNdZ
-	cewtXdlaHqO7etB0yqAZVjy2ct6TNYCZ9FsCKAdeGM7Sh++Z9JIwT1D1/9kF+dv3PGttmI843TTgz
-	IZH4uvXCcN+FWsyT1KMA==;
+	List-Owner; bh=EwSkrrEhNvupUaGfI39NeosA40rBddGPixO/SL7aZKU=; b=si63DqMCsdBckT
+	XmYmgC+YkmrkK59hH5POWpE4+Fy5REGGNAf6tdLGKYroYIL1gjUyKI/C8JBPpysnBSp5+/ZVettpU
+	rysvMgym2cZkbof0iNeAK3FNHP7AaXuduSJBm1Nbz0mBCd1Cf04F17o1JQ1jhDDHm1hVjhKq5iMMa
+	KVWxrytL8kGuBCwE4jMor9GdTsl+n03EPraR8miytzG7lfCuL1wl6KWmG5cxc6mGw2DIhRl47UFst
+	CuBUTJn6/jlZGYk2y9496kN3v1F84g/j89qPBk+1IVSppoDhRl7ddQxh/WPSJuiHD5y5QUJkvmST/
+	x8EDSkG+TLLH3w2GZemw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hq9WH-0003zO-2M; Wed, 24 Jul 2019 05:08:53 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hq9rf-00067k-Jb; Wed, 24 Jul 2019 05:30:59 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hq9W0-0003xu-2K; Wed, 24 Jul 2019 05:08:37 +0000
-X-UUID: 6faa80a21ce74b979748b4210eb36ecb-20190723
-X-UUID: 6faa80a21ce74b979748b4210eb36ecb-20190723
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
- (envelope-from <stanley.chu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1045683785; Tue, 23 Jul 2019 21:08:27 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 23 Jul 2019 22:08:26 -0700
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 24 Jul 2019 13:08:24 +0800
-Received: from [172.21.77.33] (172.21.77.33) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 24 Jul 2019 13:08:25 +0800
-Message-ID: <1563944904.7235.8.camel@mtkswgap22>
-Subject: RE: [PATCH v1 0/2] scsi: ufs: Fix broken hba->outstanding_tasks
-From: Stanley Chu <stanley.chu@mediatek.com>
-To: Avri Altman <Avri.Altman@wdc.com>
-Date: Wed, 24 Jul 2019 13:08:24 +0800
-In-Reply-To: <SN6PR04MB49256F66F259185F3876CCABFCC40@SN6PR04MB4925.namprd04.prod.outlook.com>
-References: <1562906656-27154-1-git-send-email-stanley.chu@mediatek.com>
- <SN6PR04MB4925208835D4760249E82DB7FCC50@SN6PR04MB4925.namprd04.prod.outlook.com>
- <SN6PR04MB49256F66F259185F3876CCABFCC40@SN6PR04MB4925.namprd04.prod.outlook.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1hq9rJ-00065s-Iu; Wed, 24 Jul 2019 05:30:39 +0000
+Received: by mail-io1-xd41.google.com with SMTP id f4so86949272ioh.6;
+ Tue, 23 Jul 2019 22:30:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=7kubOS61ez6ZomGEn8kQ+ad+KQnTEWtQ4GxGH5GmoMk=;
+ b=cdIyqFjVDDrRF63bqALekSTT5OjyL7XIsnWLFVmj1XgcCDUuppfwlcsMYgTi+8cUNe
+ 2AFeG45rNURQesHoh8zmhMEgz9+efNw+DU+XEiHzLPB/ASUJ/UyPMQfU/ve61X1O1T5M
+ QzAwooVVgpUOqW4WDAVtM+NJyaxn3dIkF7Y0O5RdEcbBoM9lEM31hlOVkgzxN28XB3kN
+ iVN90fEsT3jf4sCkpaXPfzhIHN76xYi1eXK3NLnX/101IolJqjh93cSz3iA87f6yFX+v
+ J13WKHWALKhQronpNU/aCyKIhzbUurA5zh0ktb4Y/WuyMvZe8uoFYKhg28UVQxTiYxdb
+ ngpg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=7kubOS61ez6ZomGEn8kQ+ad+KQnTEWtQ4GxGH5GmoMk=;
+ b=hNV69p2OzTs4FSlXWQZWUMxFGXhjpdXzesaUD04WI4RLnJcqT8vK9FzA0R+EAZWg45
+ tRdtzREF5NI398Klj0mcwAD8WkJal9XDL1PrEyFblz8zf/fJZAREag6AvrjSbhQajleM
+ sdHR6ODCiAudSGPsOcmL10ig/3M5rMIRkQpo+7ZsJhJsfKjt9eLwKpbEfZztjEo9MFqv
+ tvwamTex6XPecSBMyZQbxATi+56KDtnVldqziFdGCsg/FZbHESIQ/pMP+0C7KRHJ87Mc
+ AlatStEfsIKxCwWMz/K7nbtomFa/jPNsbEcK4jLq1cHpZivqNUf/i2VAtVLFrRHRLFOk
+ xDmQ==
+X-Gm-Message-State: APjAAAWK5TCkDWPhsFhQdeY4CcWle/UOWnrKYxMMsUuxZFFj22UREEC8
+ V0Sly28RX9JsUNdz9KvxzYbuA/tvtwyiOZQ+By4=
+X-Google-Smtp-Source: APXvYqzOM9+wcNZhy/7rxqS/I3B8uoFqXE/bGQHHKdVI/O7zXCpXs+r5B5GEYEWmWdZl52xHHfvY7lLlJ3P4XXjQYrE=
+X-Received: by 2002:a5d:9f4a:: with SMTP id u10mr47611856iot.243.1563946236324; 
+ Tue, 23 Jul 2019 22:30:36 -0700 (PDT)
 MIME-Version: 1.0
-X-MTK: N
+References: <20190719192954.26481-1-xruppen@gmail.com>
+ <eadcf7ef-4aad-fa4f-3b1b-a5238f394b1e@baylibre.com>
+In-Reply-To: <eadcf7ef-4aad-fa4f-3b1b-a5238f394b1e@baylibre.com>
+From: Anand Moon <linux.amoon@gmail.com>
+Date: Wed, 24 Jul 2019 11:00:26 +0530
+Message-ID: <CANAwSgTbvQO5qum1K3q8+J=WO4yLjadnZSZYf_AAhbf+CJm92Q@mail.gmail.com>
+Subject: Re: [PATCH] arm64: dts: meson: odroid-n2: keep SD card regulator
+ always on
+To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_220836_115431_3FD1ABF9 
-X-CRM114-Status: GOOD (  17.27  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190723_223037_625479_094C9EB5 
+X-CRM114-Status: GOOD (  23.98  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.1 URIBL_SBL_A Contains URL's A record listed in the Spamhaus SBL
+ blocklist [URIs: pastebin.com]
+ 0.6 URIBL_SBL Contains an URL's NS IP listed in the Spamhaus SBL
+ blocklist [URIs: pastebin.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (linux.amoon[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ [list.dnswl.org]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,77 +96,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
- "martin.petersen@oracle.com" <martin.petersen@oracle.com>,
- "marc.w.gonzalez@free.fr" <marc.w.gonzalez@free.fr>,
- "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
- "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
- "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
- "evgreen@chromium.org" <evgreen@chromium.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
- "alim.akhtar@samsung.com" <alim.akhtar@samsung.com>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "pedrom.sousa@synopsys.com" <pedrom.sousa@synopsys.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "beanhuo@micron.com" <beanhuo@micron.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>,
+ Linux Kernel <linux-kernel@vger.kernel.org>, Xavier Ruppen <xruppen@gmail.com>,
+ linux-amlogic@lists.infradead.org,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgQXZyaSwKCk9uIE1vbiwgMjAxOS0wNy0yMiBhdCAwNjoxMCArMDAwMCwgQXZyaSBBbHRtYW4g
-d3JvdGU6Cj4gPiAKPiA+ID4KPiA+ID4gSGksCj4gPiA+Cj4gPiA+ID4KPiA+ID4gPiBDdXJyZW50
-bHkgYml0cyBpbiBoYmEtPm91dHN0YW5kaW5nX3Rhc2tzIGFyZSBjbGVhcmVkIG9ubHkgYWZ0ZXIg
-dGhlaXIKPiA+ID4gPiBjb3JyZXNwb25kaW5nIHRhc2sgbWFuYWdlbWVudCBjb21tYW5kcyBhcmUg
-c3VjY2Vzc2Z1bGx5IGRvbmUgYnkKPiA+ID4gPiBfX3Vmc2hjZF9pc3N1ZV90bV9jbWQoKS4KPiA+
-ID4gPgo+ID4gPiA+IElmIHRpbWVvdXQgaGFwcGVucyBpbiBhIHRhc2sgbWFuYWdlbWVudCBjb21t
-YW5kLCBpdHMgY29ycmVzcG9uZGluZwo+ID4gPiA+IGJpdCBpbiBoYmEtPm91dHN0YW5kaW5nX3Rh
-c2tzIHdpbGwgbm90IGJlIGNsZWFyZWQgdW50aWwgbmV4dCB0YXNrCj4gPiA+ID4gbWFuYWdlbWVu
-dCBjb21tYW5kIHdpdGggdGhlIHNhbWUgdGFnIHVzZWQgc3VjY2Vzc2Z1bGx5IGZpbmlzaGVzLuKA
-pwo+ID4gPiB1ZnNoY2RfY2xlYXJfdG1fY21kIGlzIGFsc28gY2FsbGVkIGFzIHBhcnQgb2YgdWZz
-aGNkX2Vycl9oYW5kbGVyLgo+ID4gPiBEb2VzIHRoaXMgY2hhbmdlIHNvbWV0aGluZyBpbiB5b3Vy
-IGFzc3VtcHRpb25zPwo+ID4gQW5kIEJUVyB0aGVyZSBpcyBhIHNwZWNpZmljIF9fY2xlYXJfYml0
-IGluIF9fdWZzaGNkX2lzc3VlX3RtX2NtZCgpIGluIGNhc2UKPiA+IG9mIGEgVE8uCj4gCj4gR2F2
-ZSBpdCBhbm90aGVyIGxvb2sgLSAKPiBJZiBpbmRlZWQgdGhpcyBiaXQgaXNuJ3QgY2xlYXJlZCBh
-cyBwYXJ0IG9mIHRoZSBlcnJvciBmbG93IHRoYXQgdGhlIHRpbWVvdXQgdHJpZ2dlcnMsCj4gSSB0
-aGluayB5b3Ugc2hvdWxkIHJlbGF0ZSB0byB1ZnNoY2RfY2xlYXJfdG1fY21kIHNwZWNpZmljYWxs
-eSBpbiB5b3VyIGNvbW1pdCBsb2cgLSAKPiBCZWNhdXNlIHRoaXMgaXMgdGhlIG9idmlvdXMgcGxh
-Y2Ugd2hlcmUgdGhlIGJpdCBjbGVhbnVwIHNob3VsZCB0YWtlIHBsYWNlLgo+IAo+IEFsc28gdGhl
-IGZpeCBzaG91bGQgYmUgbXVjaCBtb3JlIGludHVpdGl2ZSBJTU8gLSAKPiBUb2RheSB3ZSBkbyBf
-X2NsZWFyX2JpdCgpIG9uIHN1Y2Nlc3MsIHVmc2hjZF9jbGVhcl90bV9jbWQoKSBvbiBlcnJvciwK
-PiBBbmQgYWxzbyB1ZnNoY2RfcHV0X3RtX3Nsb3QoKSBlaXRoZXIgd2F5Pwo+IAo+IE1heWJlIHlv
-dSBjYW4gY2hvb3NlIGEgc2luZ2xlIHBsYWNlIHRvIGNsZWFyIGl0LCB3aXRob3V0IGFueSBhZGRp
-dGlvbmFsIGNvZGU/Cgp1ZnNoY2RfY2xlYXJfdG1fY21kKCkgaXMgc2ltaWxhciB0byB1ZnNoY2Rf
-Y2xlYXJfY21kKCkgd2hpY2ggdHJpZXMgdG8Kd3JpdGUgdGltZWQtb3V0IGJpdCBpbiAiY2xlYXIg
-cmVnaXN0ZXIiLiBUaGV5IGRvIG5vdCBjbGVhbiBiaXRzIGluIGJvdGgKb3V0c3RhbmRpbmcgbWFz
-a3MuCgpBbm90aGVyIHJlYXNvbiB0byBub3QgdG8gZG8gb3V0c3RhbmRpbmcgYml0cyBjbGVhbnVw
-IGluCnVmc2hjZF9jbGVhcl90bV9jbWQoKSBpczogaWYgaG9zdCBpcyB1bmFibGUgdG8gY2xlYXIg
-VE0gY29tbWFuZCBieQpzZXR0aW5nICJjbGVhciByZWdpc3RlciIsIHRoZSBUTSBjb21tYW5kIG1h
-eSBiZSBzdGlsbCAib3V0c3RhbmRpbmciIGluCnRoZSBkZXZpY2UuIEluIHRoaXMgY2FzZSwgaXQg
-bWF5IGJlIGJldHRlciB0byBkbyBjbGVhbnVwIGFmdGVyIHJlc2V0IGlzCmRvbmUuIENsZWFudXAg
-aW5jbHVkZXMgYml0cyBpbiBoYmEtPm91dHN0YW5kaW5nX3Rhc2tzIGFuZApoYmEtPnRtX3Nsb3Rz
-X2luX3VzZSB3aGljaCBpcyBwb3NzaWJseSBjbGVhbmVkIHRvbyBlYXJseSBieQp1ZnNoY2RfcHV0
-X3RtX3Nsb3QoKSBpZiBjb21tYW5kIGlzIHRpbWVkLW91dCBub3cuCgpSZWZlcnJpbmcgdG8gZXJy
-b3IgaGFuZGxpbmcgZmxvdyBvZiBoYmEtPm91dHN0YW5kaW5nX3JlcXMsIGFsbCB0aW1lZC1vdXQK
-Yml0cyB3aWxsIGJlIGNsZWFuZWQgYnkgdWZzaGNkX3Jlc2V0X2FuZF9yZXN0b3JlKCkgPT4KdWZz
-aGNkX3RyYW5zZmVyX3JlcV9jb21wbCgpIGFmdGVyIHJlc2V0IGlzIGRvbmUuIFNpbWlsYXIgaGFu
-ZGxpbmcgZm9yCmhiYS0+b3V0c3RhbmRpbmdfdGFza3MgY291bGQgYmUgYXBwbGllZCwgaS5lLiwg
-ZG8gY2xlYW51cCBieQp1ZnNoY2RfcmVzZXRfYW5kX3Jlc3RvcmUoKSA9PiB1ZnNoY2RfdG1jX2hh
-bmRsZXIoKS4KClRoZSBuZXh0IHRoaW5nIGlzIHdoYXQgeW91IHN1Z2dlc3RlZDogSG93IHRvIG1h
-a2UgdGhlIGZpeCBtb3JlCmludHVpdGl2ZS4gUGF0Y2hzZXQgdjIgd2lsbCBiZSB1cGxvYWRlZCBm
-b3IgcmV2aWV3OiBJdCB0cmllcyB0bwoicmUtZmFjdG9yIiBjbGVhbnVwIGpvYnMgZmlyc3QsIGFu
-ZCB0aGVuIGFkZCBmaXhlZCBmbG93IHRvIG1ha2UgdGhlCndob2xlIHBhdGNoIG1vcmUgcmVhZGFi
-bGUuCgpPbmUgbW9yZSB0aGluZywgYWJvdmUgZGVzY3JpcHRpb24gYW5kIGZsb3cgaXMgZG9uZSB0
-aHJvdWdoIFVGU0hDRCBTQ1NJCmVycm9yIGhhbmRsaW5nIHJvdXRpbmVzIHJlZ2lzdGVyZWQgd2l0
-aCBTQ1NJIE1pZGxheWVyLiBGb3IgVE0gY29tbWFuZAp0aW1lb3V0IGhhcHBlbmluZyBpbiBic2cg
-cGF0aCB3aXRob3V0IGVycm9yIGhhbmRsaW5nIHRyaWdnZXJlZCBieSBTQ1NJCmxheWVyLCB3ZSBt
-YXkgbmVlZCB0byBjb25zaWRlciB0byBoYW5kbGUgdGhvc2UgdGFza3MgaW4gZnV0dXJlIHBhdGNo
-ZXMuCgo+IAo+IFRoYW5rcywKPiBBdnJpCgpUaGFua3MsClN0YW5sZXkKCj4gX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KPiBMaW51eC1tZWRpYXRlayBtYWls
-aW5nIGxpc3QKPiBMaW51eC1tZWRpYXRla0BsaXN0cy5pbmZyYWRlYWQub3JnCj4gaHR0cDovL2xp
-c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1tZWRpYXRlawoKCgpfX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2Vy
-bmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
-cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVs
-Cg==
+Hi All,
+
+On Mon, 22 Jul 2019 at 12:51, Neil Armstrong <narmstrong@baylibre.com> wrote:
+>
+> On 19/07/2019 21:29, Xavier Ruppen wrote:
+> > When powering off the Odroid N2, the tflash_vdd regulator is
+> > automatically turned off by the kernel. This is a problem
+> > when issuing the "reboot" command while using an SD card.
+> > The boot ROM does not power this regulator back on, blocking
+> > the reboot process at the boot ROM stage, preventing the
+> > SD card from being detected.
+> >
+> > Adding the "regulator-always-on" property fixes the problem.
+> >
+> > Signed-off-by: Xavier Ruppen <xruppen@gmail.com>
+> > ---
+> >
+> > Here is what the boot ROM output looks like without this patch:
+> >
+> >     [root@alarm ~]# reboot
+> >     [...]
+> >     [   24.275860] shutdown[1]: All loop devices detached.
+> >     [   24.278864] shutdown[1]: Detaching DM devices.
+> >     [   24.287105] kvm: exiting hardware virtualization
+> >     [   24.318776] reboot: Restarting system
+> >     bl31 reboot reason: 0xd
+> >     bl31 reboot reason: 0x0
+> >     system cmd  1.
+> >     G12B:BL:6e7c85:7898ac;FEAT:E0F83180:2000;POC:F;RCY:0;
+> >     EMMC:800;NAND:81;SD?:0;SD:400;USB:8;LOOP:1;EMMC:800;
+> >     NAND:81;SD?:0;SD:400;USB:8;LOOP:2;EMMC:800;NAND:81;
+> >     SD?:0;SD:400;USB:8;LOOP:3; [...]
+> >
+> > Other people can be seen having this problem on the odroid
+> > forum [1].
+> >
+> > The cause of the problem was found by Martin Blumenstingl
+> > on #linux-amlogic. We may want to add his Suggested-by tag
+> > if he agrees.
+> >
+> > [1] https://forum.odroid.com/viewtopic.php?f=176&t=33993
+> >
+> >  arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts | 1 +
+> >  1 file changed, 1 insertion(+)
+> >
+> > diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts b/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
+> > index 81780ffcc7f0..4e916e1f71f7 100644
+> > --- a/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
+> > +++ b/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
+> > @@ -53,6 +53,7 @@
+> >
+> >               gpio = <&gpio_ao GPIOAO_8 GPIO_ACTIVE_HIGH>;
+> >               enable-active-high;
+> > +             regulator-always-on;
+> >       };
+> >
+> >       tf_io: gpio-regulator-tf_io {
+> >
+>
+> Surely solves the situation, thanks !
+>
+> please add a comment on top of "regulator-always-on" to explain why we always enable it,
+> note we should always enable it in case of watchdog reboot or other uncontrolled reset,
+> this regulator must never be disabled.
+>
+> Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
+>
+> Thanks,
+> Neil
+>
+
+I am afraid this did not fix the issue I was also facing with
+Archlinux on Odroid N2 using mainline u-boot.
+Here is the log of at my end using latest mainline u-boot with Neil's patches.
+
+[0] https://pastebin.com/HNmeY5uF
+
+Well this issue also persist with eMMC not getting detected after reboot
+If I try to change the dts to fix the sdcard.
+
+I am checking this should we enable regulator-boot-on option but still no luck.
+
+Best Regards
+-Anand
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
