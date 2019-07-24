@@ -2,70 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 048E67370F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 20:56:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A5A4573741
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 21:04:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f1ECUbsaXemiDR74Ie0PZIxBGVzJYjJo4NohHOT0KEY=; b=uOYMP6IfBYJtz2
-	7zfer9rSYivkIb4G0R9dAq39KpxnGnnq8Q0uUvNbN/Ab4uqq6vHS3TMk75FwehYvFVzGy891GxsCI
-	N1y5oArWw79T2ZAeaJ8tJJ6gcT8QQu+Kzn2ABTxJ/YOfZQnvkI7G1YYNtHoz0TnWx2mCCN7cuh2wM
-	oysxGMEW0EPxmiVQX1JTLSevp++nsGz4mxV0CIYP5j2QsY8K4IoZRgNzm7UpTmHi1THcXLFyO9aio
-	IVtL8xdknewnVuWpK4V5GFqB/nuUc8jSItFUBoKlNJ7Gwjp61CZv6rIUS7JE8MyhZpXFIaj/Vtej1
-	99W2+0Yuu7J+g+xB8Wxw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=U1EZXsgKK21ZEqtd/mKz0t14J0M27Rm8n7mI7cV5hTY=; b=rdxW27/HQaGF1x
+	rrt9gp07vhBVFOBS2dS7NitDpSZ0rNKMNaUmgGIJPrFf1A5xDZmy6A2VAL08IVFBK+X158AhjLlOy
+	fyQck2PPgvclcbOCJPpFDu5JRiWfTpGOPHlWKCT85Phkv3tlH2dcty3f7wTYM2fZRJnEIlZ3568xM
+	QymUm3KSu/BUTyETsPzOEpPQ5LTyoosGn9TJumDvIJZv4aMArdKDPOnKhtZKACFlTEiTKnonFUbo2
+	MJt87mQ45MipI/jmG09DIzx8Kxoldkq51A3SyVz0QomWgWyjmPNX3TgNKx+lmgsqQcE4ddtw+RDVV
+	GFOylXby0oRJuBSQFIhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqMQu-0008Tp-Ic; Wed, 24 Jul 2019 18:56:13 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hqMZ5-0002Vl-6W; Wed, 24 Jul 2019 19:04:39 +0000
+Received: from mout.gmx.net ([212.227.15.15])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqMQh-0008TH-0E
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 18:56:00 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2806821841;
- Wed, 24 Jul 2019 18:55:58 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563994558;
- bh=GgYLktbjTBkYgCVChbyiHJpTl/bxCXYku5nBzDfyRt8=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=P46Ee79rSFjOLHYBUUJBdY4ZA61cUWKAhuv3XpnLO9i4YCjbOQ3H3RZV/FBWMPv3Z
- PewBY6bD3voCVZiedzT/hCGgmVklm6wnH77NkjKB/Xa4hr7CKeR/W9D4pH/b0ViGkr
- LdvvfGcrfM1LToBhB1GlwpfaW8eJ4YupAZ/UGk6Q=
-Date: Wed, 24 Jul 2019 20:55:56 +0200
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Joe Perches <joe@perches.com>
-Subject: Re: [PATCH 11/12] staging: media: cedrus: Fix misuse of GENMASK macro
-Message-ID: <20190724185556.GA5486@kroah.com>
-References: <cover.1562734889.git.joe@perches.com>
- <cd543a5f26b031a0bbd3baa55e1f15813f59f107.1562734889.git.joe@perches.com>
- <be536d37a3b58557cdacd33943915d397bcb5037.camel@perches.com>
- <20190724183522.GA30299@kroah.com>
- <90a8807311ba434a63c9ab6331396d7094492323.camel@perches.com>
+ id 1hqMYr-0002VC-VI; Wed, 24 Jul 2019 19:04:27 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1563995042;
+ bh=/+BJFLMw1gy0bJytpKpP4qcMSdfYHGU7T1BXoGK0m3M=;
+ h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
+ b=Lo8fyopGVmSLadmsOHcOGmlDOXH96oWHpxm5SuURdmePi8rq16ApYqo6F9La6Vn6I
+ Sb9ItIYDwUsfe22xk+RmloS5tRy5K6cwbIKoofOvtsTlJI1WcQ2oQxhKMuIB6BiPaB
+ ADPDHtDcWFPcx0GfMMpezt9YR1GRCQnO+VYKmhZY=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [192.168.1.162] ([37.4.249.139]) by mail.gmx.com (mrgmx002
+ [212.227.17.190]) with ESMTPSA (Nemesis) id 0MDhba-1hcadw2qIY-00H82L; Wed, 24
+ Jul 2019 21:04:02 +0200
+Subject: Re: [PATCH RFC 18/18] ARM: dts: Add minimal Raspberry Pi 4 support
+To: Vladimir Murzin <vladimir.murzin@arm.com>,
+ Marc Zyngier <marc.zyngier@arm.com>
+References: <1563398164-2679-1-git-send-email-wahrenst@gmx.net>
+ <1563398164-2679-5-git-send-email-wahrenst@gmx.net>
+ <20190723191326.3afdff83@why> <34b2b928-c078-8898-842b-908a90593932@arm.com>
+ <27de7618-57a7-5069-1c22-b45e93999b8c@arm.com>
+ <b5d5e7e5-34dd-e1df-ace0-269bbc12ec05@arm.com>
+From: Stefan Wahren <wahrenst@gmx.net>
+Message-ID: <f92475c2-76d5-08ce-49dc-c833587934fd@gmx.net>
+Date: Wed, 24 Jul 2019 21:04:00 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <90a8807311ba434a63c9ab6331396d7094492323.camel@perches.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <b5d5e7e5-34dd-e1df-ace0-269bbc12ec05@arm.com>
+Content-Language: en-US
+X-Provags-ID: V03:K1:3DGuCghn8gsmiEQGDxnYeBArcOz3BprqMVsdCtBsNxe8jqTpdkW
+ KRQ8F8e+61qGaRrV3wvrfVuJyanXGxIg+tbOU+cmn5HAKoQTwL3xZkr8lktFnQyi9EMp+mj
+ vKeGeuCdg44+4C5703SQzXIdE4mfqaDWTxefoL1SA1o+q5XdLPsHj3rh8X8w1arM2XxpdC3
+ JvhoRXhroiP/pFUMp0v9A==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:EHaKMdd+6zs=:m9p3YA+BB3MxdO88rkb3VL
+ /hvHoEdHYQneVkS2Smc1sCZ/Y4RZAmERSFaY/wgSCtz7S3M/3zKNpJrmdWFMvjt7fe92OUb5o
+ NxSFH1PBOUcxVM7+pfDh3Ifx9GJjBLeudZoq6S3mTXxTNwXqQXkQl88cOz9RplPw8z/UhWBpm
+ JL2OVmuSXbN4OmSl0TGbQoOgjWlyKiYkL5FifnOhxzsOOQpKv/s62qsaT4BT1FemRj6pbfImR
+ VdbT1WpBSwLPxuyhMhpsbOHDF40WuigoyWicmxDK5l2ef7M4HMiwRDOKCnan6mNaNgr7XkgEG
+ E5WhINmUxEZZCNd1IFZaHevE6mYrzwo8GO6GyyjHNCfpxQlLhu47tAjF8DLnlW7o0zEtg+I4H
+ D9rklOtY2MtGbzOvRLZ6rnFNUd4nQW6WbILgFiO6FgbinWl8HsCAk1fnb1xdsgkzeDEI0Y1vo
+ 7hDbaG9YJPOh4J+VNtEOex8hy7P05Ixyu9PLwUAd94jAlX07N5b0/vR5KAs9ktXlzajzzaP0q
+ GXSEabtw6aWfH8I4KdiYwkljYiUYM3xLpI01gd60u8yqTSAq5oh16wfRVPtbytZU9DYaTcr+s
+ nNpGiY8rJXi2SPkFJEw2WDR9/VEgd9vwwuUJlDxuXk45NWX4UmGVfuqK6IDm+ZfsXIPutJMx1
+ wkfAaGdRmWMcSeBzM+n78SX1BxG5NoZ/oFWihngdWhDzhq0Hxb11a1Mm91gC9ah7l2mFqwqYo
+ Iz8y4joP+EZTCXKYniB7oa++6I/pQTZwctF7fQiEvxo8nNBrt9rr2bn1KFBUYduGM4bR/8A/d
+ 7DjcH6nFqV2zHgHONxN/hLJKNdYtSC61gjshUIeApgUsR6otwnQUSy2LO3rISF+hK8kI9KtmM
+ hlYH9bHOeMTaWb5r7fGQv1l+9EONyiYTFz7KOfwanm42xuJVXS2RAAHfT3EhEndNKC4z13BMw
+ O0DguLTLWr2IcU1LhvEDI3JWVKd4e3EwwOlIUYZ8C598kHtelW7/3UUF4lEuqzUaRSB02bchU
+ Dmp7QNAr2hDarcPMxN3wAmt7bmNJfrakhY0bEV9yy9tbpuZgmMpdcFmOLXEuUvDVjzEB65oHr
+ 74sj0cfjuKOUno=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_115559_062576_D25F57FE 
-X-CRM114-Status: GOOD (  16.54  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190724_120426_299787_6DD74462 
+X-CRM114-Status: GOOD (  17.07  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.15.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wahrenst[at]gmx.net)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,61 +103,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, Maxime Ripard <maxime.ripard@bootlin.com>,
- linux-kernel@vger.kernel.org,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- Chen-Yu Tsai <wens@csie.org>, Andrew Morton <akpm@linux-foundation.org>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
+ Florian Fainelli <f.fainelli@gmail.com>, Scott Branden <sbranden@broadcom.com>,
+ Stephen Boyd <sboyd@kernel.org>, Ray Jui <rjui@broadcom.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Adrian Hunter <adrian.hunter@intel.com>, Eric Anholt <eric@anholt.net>,
+ Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
+ Mark Brown <broonie@kernel.org>, linux-rpi-kernel@lists.infradead.org,
+ Michael Turquette <mturquette@baylibre.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 24, 2019 at 11:39:03AM -0700, Joe Perches wrote:
-> On Wed, 2019-07-24 at 20:35 +0200, Greg Kroah-Hartman wrote:
-> > On Wed, Jul 24, 2019 at 10:09:44AM -0700, Joe Perches wrote:
-> > > On Tue, 2019-07-09 at 22:04 -0700, Joe Perches wrote:
-> > > > Arguments are supposed to be ordered high then low.
-> > > > 
-> > > > Signed-off-by: Joe Perches <joe@perches.com>
-> > > > ---
-> > > >  drivers/staging/media/sunxi/cedrus/cedrus_regs.h | 2 +-
-> > > >  1 file changed, 1 insertion(+), 1 deletion(-)
-> > > > 
-> > > > diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_regs.h b/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
-> > > > index 3e9931416e45..ddd29788d685 100644
-> > > > --- a/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
-> > > > +++ b/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
-> > > > @@ -110,7 +110,7 @@
-> > > >  #define VE_DEC_MPEG_MBADDR			(VE_ENGINE_DEC_MPEG + 0x10)
-> > > >  
-> > > >  #define VE_DEC_MPEG_MBADDR_X(w)			(((w) << 8) & GENMASK(15, 8))
-> > > > -#define VE_DEC_MPEG_MBADDR_Y(h)			(((h) << 0) & GENMASK(0, 7))
-> > > > +#define VE_DEC_MPEG_MBADDR_Y(h)			(((h) << 0) & GENMASK(7, 0))
-> > > >  
-> > > >  #define VE_DEC_MPEG_CTRL			(VE_ENGINE_DEC_MPEG + 0x14)
-> > > 
-> > > Greg?  ping?
-> > >  
-> > > 
-> > 
-> > I am not the maintainer of drivers/staging/media, that is Mauro.
-> 
-> Maybe you want:
-> ---
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index f7dc5bad396a..2fb95ad6ebef 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -15312,6 +15312,7 @@ T:	git git://git.kernel.org/pub/scm/linux/kernel/git/gregkh/staging.git
->  L:	devel@driverdev.osuosl.org
->  S:	Supported
->  F:	drivers/staging/
-> +X:	drivers/staging/media/
->  
+Hi Vladimir,
 
-Not really, it's nice to see the patches flow by :)
+Am 24.07.19 um 14:36 schrieb Vladimir Murzin:
+> Hi Marc,
+>
+> On 7/24/19 11:41 AM, Marc Zyngier wrote:
+>> Hi Vladimir,
+>>
+>> On 24/07/2019 10:51, Vladimir Murzin wrote:
+>>> On 7/23/19 7:13 PM, Marc Zyngier wrote:
+>>>>> +	arm-pmu {
+>>>>> +		/*
+>>>>> +		 * N.B. the A72 PMU support only exists in arch/arm64, hence
+>>>>> +		 * the fallback to the A53 version.
+>>>>> +		 */
+>>>>> +		compatible = "arm,cortex-a72-pmu", "arm,cortex-a53-pmu";
+>>>> You're thus guaranteed to count the wrong events... And you could at
+>>>> least have "arm,armv8-pmuv3".
+>>>>
+>>> Isn't "arm,armv8-pmuv3" still "only exists in arch/arm64" (along with "arm,cortex-a53-pmu")?
+>> Absolutely. And yet this is describing the HW, not the shortcomings of
+>> the kernel. I want to be able to take the same DT and run it on the
+>> 64bit kernel.
+>>
+> Agreed. I was confused by comment block which describes software side of things rather than hardware.
+>
+> @Stefan, can you, please, update compatible per Marc suggestion, i.e
+>
+> compatible = "arm,cortex-a72-pmu", "arm,armv8-pmuv3";
+>
+> and remove that comment block?
+
+yes, i will do in the next version of the series. I also got some
+feedback about the rest of Marc's comments.
+
+Btw you are commenting on a older version of this series, but the
+mentioned parts are not affected.
+
+Stefan
+
 
 _______________________________________________
 linux-arm-kernel mailing list
