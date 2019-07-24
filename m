@@ -2,58 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 08F7472A7C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 10:51:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E9DD972ACF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 10:57:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=LkgstG/o4RRpFNa/m6PgOVpTWBYL2sog8zg3m0SYXdg=; b=QirnziEwRixRHi1rnn+JpiabR
-	UPqMnvOfVLhWlfAo+egNxAXlYAl123co3JZj//bQrKYikQFb1ay7bRQfgmbFN4p3GOZAI5fLn+4K0
-	3p6ufE8fxTqJGcWLZjsMhNlCTPhRd303uGxmNdJjJ29o6g2NdnYrQPLwv4Na18CVePhKT/XWkt6hV
-	kNuwCgBQqGqQzf22raaSiMyqBvDG04VK78FT7b7SfpU+3/r+nnZV1OupyDljuUBQPb0tMzCc9BFGu
-	rL8OtNMEMfpUHniIi356NAW9IMmndGqAG9xg6uMn862tLKbXgrwenqzyPXuAXSBCojUkQBeNwxDp1
-	kn9C32N0g==;
+	 bh=7q7kfJxArozCd0zgzvUCbAIp4CTFZBoOYipqD7l4NIo=; b=uE3ckQEkrPPtJHFsY0o021x/L
+	LgoI45T5T8UFC2ScOXOAxOqD5Z5Vy5EHizcKqynZPHWNCSlImt8vQWsYBGujQD+CyVmnbqPcSJzTR
+	MzfvW60fHYMpIX/PD1Lc4nvFiK5aSr1/TPgTrq24VKnxTfSGJ5qVmuDMweObdHl0ynXrpUDz9Sf+e
+	QwDFle/JIuFb4TolU2M+cwINtn3/mxLAfUhtmDB2MilOU8pXhQ3eOZlhozXfQKax/eZeeutR2N8Ue
+	Qf3YQgXbHDZBVQwVYZcmCLIUSrEfTq5B5o6nAKiOEmEOGvIRJ/f9zm98itm4Piw0+I193r7XmgjXp
+	nd9dt1p1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqCzi-0000qO-8Y; Wed, 24 Jul 2019 08:51:30 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1hqD5Q-00068e-4R; Wed, 24 Jul 2019 08:57:24 +0000
+Received: from relay3-d.mail.gandi.net ([217.70.183.195])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqCzO-0000pV-7N; Wed, 24 Jul 2019 08:51:12 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id 7B36728C14E
-Subject: Re: [PATCH v4 14/23] drm/tilcdc: Provide ddc symlink in connector
- sysfs directory
-To: Thomas Zimmermann <tzimmermann@suse.de>, Sam Ravnborg <sam@ravnborg.org>
-References: <cover.1562843413.git.andrzej.p@collabora.com>
- <d1d415022c598fb7acd033f0f322dd67250adaa9.1562843413.git.andrzej.p@collabora.com>
- <20190723090532.GA787@ravnborg.org>
- <3ad60be5-49cf-4017-4b74-53a2d6272deb@collabora.com>
- <acfd895d-ab59-0190-e25c-1827bd8d214b@suse.de>
-From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-Message-ID: <f051455a-3559-8f8e-cc76-1a6388b102b5@collabora.com>
-Date: Wed, 24 Jul 2019 10:51:01 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1hqD1F-00026W-FW
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 08:53:07 +0000
+X-Originating-IP: 86.250.200.211
+Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
+ [86.250.200.211]) (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id 3181760012;
+ Wed, 24 Jul 2019 08:52:54 +0000 (UTC)
+Date: Wed, 24 Jul 2019 10:52:54 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: "Zengtao (B)" <prime.zeng@hisilicon.com>
+Subject: Re: [PATCH] phy: Change the configuration interface param to void*
+ to make it more general
+Message-ID: <20190724085254.2amajixbxllgfluq@flea>
+References: <1562868255-31467-1-git-send-email-prime.zeng@hisilicon.com>
+ <20190711112039.leuvelpm7opeoaxq@flea>
+ <678F3D1BB717D949B966B68EAEB446ED2FF5B22D@DGGEMM506-MBX.china.huawei.com>
+ <20190717163753.ti6swjfhm7fczcn4@flea>
+ <678F3D1BB717D949B966B68EAEB446ED2FF5D942@DGGEMM506-MBX.china.huawei.com>
 MIME-Version: 1.0
-In-Reply-To: <acfd895d-ab59-0190-e25c-1827bd8d214b@suse.de>
-Content-Language: en-US
+In-Reply-To: <678F3D1BB717D949B966B68EAEB446ED2FF5D942@DGGEMM506-MBX.china.huawei.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_015110_398375_B5CCCDAA 
-X-CRM114-Status: GOOD (  13.40  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190724_015305_949897_5851C688 
+X-CRM114-Status: GOOD (  21.17  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.195 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.195 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,50 +67,153 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org, Matthias Brugger <matthias.bgg@gmail.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Shawn Guo <shawnguo@kernel.org>, kernel@collabora.com,
- linux-samsung-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Sean Paul <sean@poorly.run>, Krzysztof Kozlowski <krzk@kernel.org>,
- Jonathan Hunter <jonathanh@nvidia.com>, David Airlie <airlied@linux.ie>,
- Chen-Yu Tsai <wens@csie.org>, Kukjin Kim <kgene@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>, Dave Airlie <airlied@redhat.com>,
- Jonas Karlman <jonas@kwiboo.se>, linux-arm-msm@vger.kernel.org,
- intel-gfx@lists.freedesktop.org, Jyri Sarha <jsarha@ti.com>,
- Alexios Zavras <alexios.zavras@intel.com>,
- Mamta Shukla <mamtashukla555@gmail.com>, linux-mediatek@lists.infradead.org,
- Rodrigo Vivi <rodrigo.vivi@intel.com>, linux-tegra@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>, Vincent Abriou <vincent.abriou@st.com>,
- linux-arm-kernel@lists.infradead.org, Jernej Skrabec <jernej.skrabec@siol.net>,
- amd-gfx@lists.freedesktop.org, Tomi Valkeinen <tomi.valkeinen@ti.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Seung-Woo Kim <sw0312.kim@samsung.com>,
- Douglas Anderson <dianders@chromium.org>, Todor Tomov <todor.tomov@linaro.org>,
- Kyungmin Park <kyungmin.park@samsung.com>, Huang Rui <ray.huang@amd.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Alex Deucher <alexander.deucher@amd.com>, freedreno@lists.freedesktop.org,
- =?UTF-8?Q?Christian_K=c3=b6nig?= <christian.koenig@amd.com>,
- Gerd Hoffmann <kraxel@redhat.com>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "kishon@ti.com" <kishon@ti.com>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ Chen-Yu Tsai <wens@csie.org>, Sakari Ailus <sakari.ailus@linux.intel.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============1898326315319173620=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgVGhvbWFzLAoKVyBkbml1IDI0LjA3LjIwMTkgb8KgMTA6MDEsIFRob21hcyBaaW1tZXJtYW5u
-IHBpc3plOgo+IEhpCj4gCgoKPiAKPiBJIHRoaW5rIHRoaXMgZWNob2VzIG15IGNvbmNlcm4gYWJv
-dXQgdGhlIGltcGxpY2l0IG9yZGVyIG9mIG9wZXJhdGlvbi4gSXQKPiBzZWVtcyB0b28gZWFzeSB0
-byBnZXQgdGhpcyB3cm9uZy4gSWYgeW91IGRvbid0IHdhbnQgdG8gYWRkIGFuIGFkZGl0aW9uYWwK
-PiBpbnRlcmZhY2UgZm9yIHNldHRpbmcgdGhlIGRkYyBmaWVsZCwgd2h5IG5vdCBhZGQgYSBkZWRp
-Y2F0ZWQgaW5pdGlhbGl6ZXIKPiBmdW5jdGlvbiB0aGF0IHNldHMgdGhlIGRkYyBmaWVsZD8gU29t
-ZXRoaW5nIGxpa2UgdGhpcy4KPiAKPiBpbnQgZHJtX2Nvbm5lY3Rvcl9pbml0X3dpdGhfZGRjKGNv
-bm5lY3RvciwgZnVuY3MsIC4uLiwgZGRjKQo+IHsKPiAJcmV0ID0gZHJtX2Nvbm5lY3Rvcl9pbml0
-KGNvbm5lY3RvciwgZnVuY3MsIC4uLik7Cj4gCWlmIChyZXQpCj4gCQlyZXR1cm4gcmV0Owo+IAo+
-IAlpZiAoIWRkYykKPiAJCXJldHVybiAwOwo+IAo+IAljb25uZWN0b3ItPmRkYyA9IGRkYzsKPiAJ
-Lyogc2V0IHVwIHN5c2ZzICovCj4gCj4gCXJldHVybiAwOwo+IH0KPiAKClRydWUuIEkgd2lsbCBz
-ZW5kIGEgdjUgc29vbi4KClRoYW5rcywKCkFuZHJ6ZWoKCl9fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0Cmxp
-bnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFk
-Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+
+--===============1898326315319173620==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="zhoe2rfuq6ldgivi"
+Content-Disposition: inline
+
+
+--zhoe2rfuq6ldgivi
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+Hi,
+
+On Sat, Jul 20, 2019 at 03:03:20AM +0000, Zengtao (B) wrote:
+> >-----Original Message-----
+> >From: Maxime Ripard [mailto:maxime.ripard@bootlin.com]
+> >Sent: Thursday, July 18, 2019 12:38 AM
+> >To: Zengtao (B) <prime.zeng@hisilicon.com>
+> >Cc: kishon@ti.com; Chen-Yu Tsai <wens@csie.org>; Paul Kocialkowski
+> ><paul.kocialkowski@bootlin.com>; Sakari Ailus <sakari.ailus@linux.intel.com>;
+> >linux-kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org
+> >Subject: Re: [PATCH] phy: Change the configuration interface param to void*
+> >to make it more general
+> >
+> >Hi,
+> >
+> >On Wed, Jul 17, 2019 at 06:36:09AM +0000, Zengtao (B) wrote:
+> >> Hi Maxime:
+> >>
+> >> Thanks for your reply.
+> >>
+> >> >-----Original Message-----
+> >> >From: Maxime Ripard [mailto:maxime.ripard@bootlin.com]
+> >> >Sent: Thursday, July 11, 2019 7:21 PM
+> >> >To: Zengtao (B) <prime.zeng@hisilicon.com>
+> >> >Cc: kishon@ti.com; Chen-Yu Tsai <wens@csie.org>; Paul Kocialkowski
+> >> ><paul.kocialkowski@bootlin.com>; Sakari Ailus
+> >> ><sakari.ailus@linux.intel.com>; linux-kernel@vger.kernel.org;
+> >> >linux-arm-kernel@lists.infradead.org
+> >> >Subject: Re: [PATCH] phy: Change the configuration interface param to
+> >> >void* to make it more general
+> >> >
+> >> >* PGP Signed by an unknown key
+> >> >
+> >> >On Fri, Jul 12, 2019 at 02:04:08AM +0800, Zeng Tao wrote:
+> >> >> The phy framework now allows runtime configurations, but only
+> >> >> limited to mipi now, and it's not reasonable to introduce user
+> >> >> specified configurations into the union phy_configure_opts
+> >> >> structure. An simple way is to replace with a void *.
+> >> >
+> >> >I'm not sure why it's unreasonable?
+> >> >
+> >>
+> >> The phy.h will need to include vendor specific phy headers
+> >
+> >I'm not sure this is an issue.
+> >
+> >> and the union phy_configure_opts will become more complex.
+> >
+> >And this was the plan all along.
+> >
+> >> I don't think this is a good solution to include all vendor specific
+> >> phy configs into a single union structure.
+> >
+> >The thing is, as Sakari have stated, this interface was meant as a generic way
+> >to negotiate a configuration between a PHY consumer and a PHY provider (ie,
+> >whatever sends data to the phy and the phy itself).
+> >
+> >If you remove the explicit type check, then you need to have prior knowledge
+> >(and agreement) on both sides, which breaks the initial intent.
+>
+> I get your point, so if we follow your design, it will look this:
+>
+> union phy_configure_opts {
+> 	struct xxxx1_phy phy1_opts;
+> 	struct xxxx1_phy phy2_opts;
+> 	struct xxxx1_phy phy3_opts;
+> 	.....
+> }
+>
+> And the general phy framework needn't to know about the type but
+> just pass through, the caller and the phy driver definitely need to
+> know what they are doing.
+
+I'm not quite sure what you mean here. The configuration only applies
+to the current PHY mode. So the phy consumer will have changed the
+mode, and the PHY will have accepted it.
+
+That change is also doable from the framework.
+
+Then, which part of the union is being used is easy to figure out for
+both parties, since they agree on it already.
+
+> So I suggest a more general type void *, otherwise the general phy
+> will need to see a lot of details which is not that general.
+
+Except that this effectively becomes a black box that the framework
+has no control and / or knowledge about.
+
+Which means that it cannot do any kind of checks on it anymore, and
+again, that the consumer and driver need to have prior knowledge of
+what is being passed, without any way to check whether it's actually
+what needs to be passed.
+
+To some extent, the union also allows that, but it's just less
+explicit and in general worse, to just pass void* here.
+
+Maxime
+
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
+--zhoe2rfuq6ldgivi
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXTgcZgAKCRDj7w1vZxhR
+xbVJAQC2WbhGtzvCUsqlgubaKt5tOZDSw/86LuIRNUn0C631dQD9GWfS8I5V23G8
+OJ5HZ5/L3OnvQJfGu3rgI+p9a7tHdgU=
+=jk2+
+-----END PGP SIGNATURE-----
+
+--zhoe2rfuq6ldgivi--
+
+
+--===============1898326315319173620==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1898326315319173620==--
+
