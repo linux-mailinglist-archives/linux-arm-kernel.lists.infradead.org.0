@@ -2,81 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D68A0739BC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 21:43:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3BB7F73B04
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 21:56:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qhEdhDfRj64G2uQIYekQXtQaF4XCoSo6muXRw1EFSqQ=; b=k6opqZJsALJqNj
-	xoGBge7kxc+Q4lhPzbXDqBHmPCf0Mm6DEJkCAbr3cj/jMfZV2K9Xfcy9GltXNf3qTG4Q5xfPit+Hx
-	I+4zjKZ/toOkBasKuOZlxRRp2WeU4QFgowwKAPYoW131SQI6WcX5n/nlidjYCQwagwLALleI8NiM0
-	TVX/M//y7AjL4jvjzNYl709u+1SYYM2IZCS50l5+lAT9kMR1c62YHczPIPu+l8FYehVetQsBA8d8W
-	k+1nzzU1ken0XQ88Funjs2kCFB70R1KPGBYlIKbdU6On5Mz2reOEvryP4nJvHXvacYkI2V8qyA9d7
-	S1qFPr/xuKCLr/hwPTyA==;
+	List-Owner; bh=kNBZQ1wMHXFHepawwLHH7jAWvHgpthyTK4PSAaEYtL4=; b=CE/0RkSyRIiw/x
+	n6qtJXaeLZCjEplt6ccHe0Bpw5vx6opo175FQV2Ze4PZB9Mf7TPkyBx+YEK+dfqC/2lqzeMC3/o8V
+	YXT3126TrYIfzlFWZtbGuHnyPKm2HRGln52GDDyIbYt56qJ1WmLz//dh1MYeD+A+Es17qbILwEyZX
+	ms/8Ez8kYMYHvRh8DmcrAAk5Y/WHAkZ5eQgBJOqlyxQuFDWIitNOyV11GdXGXQ/etcQlGXpoYz84L
+	Cdjyd+uRkTuNAZ88yR2biYcSaCLNJ8e/NZZmnTVUtaAVmrP1NyJ5BS93+y4krbLJRh9Oh7Kx0ETxm
+	FqEfiEAp88tvP3kUs7Cw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqNAe-0005xM-CW; Wed, 24 Jul 2019 19:43:28 +0000
-Received: from mail-wr1-f66.google.com ([209.85.221.66])
+	id 1hqNNO-0003rH-E6; Wed, 24 Jul 2019 19:56:38 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqNAT-0005wk-69
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 19:43:18 +0000
-Received: by mail-wr1-f66.google.com with SMTP id f9so48171986wre.12
+ id 1hqNNA-0003ok-AE
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 19:56:25 +0000
+Received: by mail-io1-xd42.google.com with SMTP id g20so92183459ioc.12
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 24 Jul 2019 12:43:16 -0700 (PDT)
+ Wed, 24 Jul 2019 12:56:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=XZt1VFBsfyDW8nwLopR3h8XPP4tphNg4YLYc8AkW2ho=;
+ b=NEeZ+uUa6lhQAWD9vkktfpJZVl4pMOSxYJSXNt2bByMieaXwfzGB10mfQ6B2Li1wNw
+ T4ZeKK3COOk1QFOqYMlmOLF4sOFI7nhmu+ImME1jtsxAS6J4BoCFBhU62jYMBtSqHVp7
+ P2xLgUNJJoxlvGHXSm6CvOipxxbi6Jik9Btus=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=dslj9P+lW7e6qJrlTP3vfXS2Cf51Y/kndAh16hKfgsw=;
- b=PIunvEl5i8pitrptK06glmyybUp61SYx2LLDR/4bO3gx18Y5IJyYzyGzcEDSzkpnIu
- HEneEVlls4qYAucZjLJtC8kNjl5ClTjtiZSb0l+PIQYk8r8fnAN9wvwFFThxIVbYpBK4
- qfbpfW5gzZBVmJZCJi+bMrqBCtIPAaHAoQdYmz124++z3ZKYxgOZB6qxtERi/zLjvvbU
- GnJXV4w1YYIalEMZrzzBbYKLZferg7mTj2Bpu/Lf/B6whdIdY+B8lo64ul8+lECTugTM
- IZS2kJ6XWf+Tde5NG9/XrIjMMuEi612hiM+qOc0vtYFQCjo9pwyVmtiCByD+89uCCGzx
- +NWQ==
-X-Gm-Message-State: APjAAAVgxMYj+y0yDDBVO+MQIYr98075lCifNdKezQ0PkZqkaTvYk+lK
- ZgwSkK1BagDNFkxfoJ7sExc=
-X-Google-Smtp-Source: APXvYqyt/nYi/kv5oSj5A+zQK7NJl5V1Y8FdvyGTPvRoDLXBM1S6Qy2pjonLUX7NnFUtT/p0XDyMQw==
-X-Received: by 2002:a05:6000:1203:: with SMTP id
- e3mr13281982wrx.300.1563997395606; 
- Wed, 24 Jul 2019 12:43:15 -0700 (PDT)
-Received: from kozik-lap ([194.230.155.239])
- by smtp.googlemail.com with ESMTPSA id q10sm50126245wrf.32.2019.07.24.12.43.14
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 24 Jul 2019 12:43:15 -0700 (PDT)
-Date: Wed, 24 Jul 2019 21:43:13 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Guillaume GARDET <guillaume.gardet@free.fr>
-Subject: Re: [PATCH] arm: dts: exynos: Add GPU/Mali T604 node to exynos5250
-Message-ID: <20190724194313.GA1898@kozik-lap>
-References: <20190724072008.6272-1-guillaume.gardet@free.fr>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=XZt1VFBsfyDW8nwLopR3h8XPP4tphNg4YLYc8AkW2ho=;
+ b=WCPRCFDHO0ka8aVYczAGCSk2uADmd++rwZnBfliMO6RpU24/KDznkssJ4q6WBqIX43
+ XTBMKJmoAoegcwv6eRsafocFGMgYbU5WSuPMQkHQMx7q2MFICd099EMtzj0E8Uia3QN/
+ I8+K9WHNat3XYIwqstiubFHdNEisM7tXJsz950rxhY8xs3sJT79ybd9FjEABgWJyz5Uz
+ imT63ZdrcN32BbnuqRHZ99ePk498iW03KCzEJIm6LYSRsnahJrkI1K9fXSvGt5s2BN8E
+ 8RpERabQ43uOSE8mqeSVdbJXHQ+5XGOoE6HHetbdlZO3rozs2LV89FFTQ3JfSiqYTAfi
+ CAqw==
+X-Gm-Message-State: APjAAAXq+YnAymDVRClNE+IqdyC5P69wa2nbDC592jfhnYgcTUK6wNwS
+ REcy+hTgVhi/JGHzgnuDET93bkZ0/Yw=
+X-Google-Smtp-Source: APXvYqxorr3q3m08NdxrSHEu0t7S8R+BcdU2AXU86Ocx5wlySUROqCPeIVwzt1nHnkBGEWP8nieKRw==
+X-Received: by 2002:a02:c492:: with SMTP id t18mr87430987jam.67.1563998181756; 
+ Wed, 24 Jul 2019 12:56:21 -0700 (PDT)
+Received: from mail-io1-f44.google.com (mail-io1-f44.google.com.
+ [209.85.166.44])
+ by smtp.gmail.com with ESMTPSA id y20sm38024101ion.77.2019.07.24.12.56.20
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Wed, 24 Jul 2019 12:56:21 -0700 (PDT)
+Received: by mail-io1-f44.google.com with SMTP id k20so92168488ios.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 24 Jul 2019 12:56:20 -0700 (PDT)
+X-Received: by 2002:a02:c6a9:: with SMTP id o9mr30860288jan.90.1563998180575; 
+ Wed, 24 Jul 2019 12:56:20 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190724072008.6272-1-guillaume.gardet@free.fr>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <20190723225258.93058-1-mka@chromium.org>
+In-Reply-To: <20190723225258.93058-1-mka@chromium.org>
+From: Doug Anderson <dianders@chromium.org>
+Date: Wed, 24 Jul 2019 12:56:08 -0700
+X-Gmail-Original-Message-ID: <CAD=FV=Wk2meLxa6AszjFs=Mfp_wML_7OMsn81FLA5tcdEx=1kg@mail.gmail.com>
+Message-ID: <CAD=FV=Wk2meLxa6AszjFs=Mfp_wML_7OMsn81FLA5tcdEx=1kg@mail.gmail.com>
+Subject: Re: [PATCH] ARM: dts: rockchip: Limit WiFi TX power on
+ rk3288-veyron-jerry
+To: Matthias Kaehlcke <mka@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_124317_230959_7F916B28 
-X-CRM114-Status: GOOD (  17.05  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190724_125624_364840_9FCFA041 
+X-CRM114-Status: GOOD (  17.38  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.221.66 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.221.66 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ [list.dnswl.org]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,9 +101,11 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, Kukjin Kim <kgene@kernel.org>,
- linux-arm-kernel@lists.infradead.org,
- Guillaume GARDET <guillaume.gardet@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Heiko Stuebner <heiko@sntech.de>, LKML <linux-kernel@vger.kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -98,71 +113,48 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi,
 
-Thanks for the patch.
-
-On Wed, Jul 24, 2019 at 09:20:08AM +0200, Guillaume GARDET wrote:
-> From: Guillaume GARDET <guillaume.gardet@arm.com>
-> 
-> Add nodes for GPU (Mali T604) to Exynos5250, disabled by default.
-
-Why disabled? If tested I would expect it to be enabled at least on
-tested platforms.
-
-> Tested with kmscube on Chromebook snow.
-> 
-> Signed-off-by: Guillaume GARDET <guillaume.gardet@arm.com>
-> 
-> Cc: Kukjin Kim <kgene@kernel.org>
-> Cc: Krzysztof Kozlowski <krzk@kernel.org>
-> Cc: linux-arm-kernel@lists.infradead.org
-> 
+On Tue, Jul 23, 2019 at 3:53 PM Matthias Kaehlcke <mka@chromium.org> wrote:
+>
+> The downstream Chrome OS 3.14 kernel for jerry limits WiFi TX power
+> through calibration data in the device tree [1]. Add a DT node for
+> the WiFi chip and use the downstream calibration data.
+>
+> Not all calibration data entries have the length specified in the
+> binding (Documentation/devicetree/bindings/net/wireless/marvell-8xxx.txt),
+> however this is the data used by the downstream ('official') kernel
+> and the binding mentions that "the length can vary between hw
+> versions".
+>
+> [1] https://crrev.com/c/271237
+>
+> Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
 > ---
->  arch/arm/boot/dts/exynos5250.dtsi | 47 +++++++++++++++++++++++++++++++
->  1 file changed, 47 insertions(+)
-> 
-> diff --git a/arch/arm/boot/dts/exynos5250.dtsi b/arch/arm/boot/dts/exynos5250.dtsi
-> index d5e0392b409e..5ce4b2853cf2 100644
-> --- a/arch/arm/boot/dts/exynos5250.dtsi
-> +++ b/arch/arm/boot/dts/exynos5250.dtsi
-> @@ -1097,6 +1097,53 @@
->  		 */
->  		clock-frequency = <24000000>;
->  	};
-> +
-> +	mali: gpu@0x11800000 {
+>  arch/arm/boot/dts/rk3288-veyron-jerry.dts | 147 ++++++++++++++++++++++
+>  1 file changed, 147 insertions(+)
 
-1. Put the node under /soc (as recently pointed out by Marek Szyprowski)
-in an address-sorted mode... if possible (nodes are mixed so find some
-reasonable place based on address_.
-2. Fix errors from:
-make dtbs W=1
+I agree that this matches what's downstream and seems right.
 
-> +		compatible = "samsung,exynos5250-mali", "arm,mali-t604";
+As you pointed out the bindings are a bit on the sketchy side,
+claiming a certain length in one place but then saying that the length
+depends on the HW version in another place.  I'll also point out that
+the bindings are inconsistent about the name that should be used.
+AKA:
 
-You also need to update the bindings.
+marvell,caldata-txpwrlimit-2g
+ -vs-
+marvell,caldata_00_txpwrlimit_2g_cfg_set
 
-> +		reg = <0x11800000 0x5000>;
-> +		interrupts = <GIC_SPI 118 IRQ_TYPE_LEVEL_HIGH>,
-> +		             <GIC_SPI 119 IRQ_TYPE_LEVEL_HIGH>,
+...but I think the answer is that it doesn't matter at all from a
+practical point of view.  The code seems to just find everything that
+starts with "marvell,caldata" and send the binary blindly to the WiFi
+card.  Presumably there is enough of a header in the opaque binary
+data that the card can make sense of what it's being sent.
 
-Please run checkpatch and fix the errors.
 
-> +			     <GIC_SPI 117 IRQ_TYPE_LEVEL_HIGH>;
-> +		interrupt-names = "job", "mmu", "gpu";
-> +		clocks = <&clock CLK_G3D>;
-> +		clock-names = "g3d";
-> +		operating-points-v2 = <&gpu_opp_table>;
-> +		power-domains = <&pd_g3d>;
-> +		status = "disabled";
-> +	};
-> +
-> +	gpu_opp_table: gpu-opp-table {
+So it seems like this is the best we can do given the current state of
+the world.
 
-GPU opp table as subnode of Mali node.
-
-Best regards,
-Krzysztof
-
+Reviewed-by: Douglas Anderson <dianders@chromium.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
