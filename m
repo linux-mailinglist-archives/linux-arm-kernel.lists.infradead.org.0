@@ -2,70 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29E6474061
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 22:46:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B3A3E74067
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 22:48:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n+V4nFEcemS+ZvUR+GMCy2XUe1fK/se/VJgBtme5beM=; b=L8fEeLNOQsCqXv
-	PzGVogy7kdb3xpqhoOftq6ZmFt9MQpcbLrmVNV1T4LDTm3Rl8X0MDywaL8OIDyM+VTkSOMgHXA2Jn
-	VaAQYUa8362hnqpXd+IWSMRE5eIyeEbmLljSrHs+sEcoM8RK+hkpW3zNWjJsxGgqsZfZr3ep7koPK
-	LPwad0ioYMvG3eMDMmcx6WOBAv5c5RPN5sVAPHYYvkHIqdb79OkQYmltOJTHkkmkE00fOp18rtZrH
-	E1NSVeSKxROXWTQDYY/BW+J7IjL9Q5dLtnl958VPK2NsIAqS6ahC5UGIXjP4N1//rZDQ761DMpZ+u
-	Fp8exVV5XGhTsO1RdTcA==;
+	List-Owner; bh=KJWp6gIEEsmkTe4IG2bHMGQKtR00OB59QGczb1rmicY=; b=d+1qhXOxZWjWUp
+	VJ78MiVkALzF79jMVpw2qUwbyM1cikRFVwMJ9btRa/sMoAiMuMQayemS6HYtecmLsEDocUrzyfCgS
+	/Nvy1qTpIilC/jVmQV8oHSVRSMAPvTnqrb3xKpTJRHDxMvHuU2QDAl2WUyhT/Q5n0PI+FQDh1ZHu6
+	70zu/Et0myqCIyrOayG/2DBBlaac/hEckkmB5G8zFV7u0iC2y3WCxmm6KuAQ/EDCEnyKyHvSp+vb1
+	4tKsOxqp1WZxdDWqxnZZHHP0jYnllwpoz60uZS8MmAN9AQFJcRJ+1jtkukgDxuc6GUuNY+WE0sGq3
+	F8zGrnMNo5L7Fsy8dP0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqO9m-0005bx-Fc; Wed, 24 Jul 2019 20:46:38 +0000
-Received: from mail-io1-f68.google.com ([209.85.166.68])
+	id 1hqOBh-0006JW-3Y; Wed, 24 Jul 2019 20:48:37 +0000
+Received: from mail-io1-f65.google.com ([209.85.166.65])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqO9X-0005ah-2W; Wed, 24 Jul 2019 20:46:24 +0000
-Received: by mail-io1-f68.google.com with SMTP id j6so17347696ioa.5;
- Wed, 24 Jul 2019 13:46:23 -0700 (PDT)
+ id 1hqOBU-0006J2-L0
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 20:48:25 +0000
+Received: by mail-io1-f65.google.com with SMTP id s7so92389726iob.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 24 Jul 2019 13:48:24 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=i/sPIhXsS6XIgPtbsRxAmrculmKk8MrSIf4t2TOmssc=;
- b=eypRdAQ8ANGKVoJcyv9xGDeVT28ybb9VdVmTPL5327WH3mTAJ/MeH8SnwMHtH3tcdD
- 1fbJ59puRpBVH+TtTvPhqUV1QA50/Hjw/g2eQjTi9oagZ87JRLsd2BN2wXP1Ri60qEXu
- BWNyQXOs9o5sigHpwv1hCE3XfqZNafPy8Aq/G1EeBbQX7mYADSVVJzvpm1VmHSASBxjD
- 3Vcul/HYOezmN0CsHp2fFQ5nqsQpz7qpIVwICHm1ZWCqIPt1oAIzoIegT0P/7NYXE1Iu
- hnJwmfhkO3sFBpmg4yZuDB1q8uz0i+8pNUDDWcMmff/MaABCY1Iv+skEery94fQisbE9
- FBpg==
-X-Gm-Message-State: APjAAAUDC1Lk7xx3ZMspvhEZlJrYt21YD5cZrauvoGAdm9KA2lFZfcPE
- scikaeG54uczD3pyYXIURXZdRug=
-X-Google-Smtp-Source: APXvYqw9E2+Xf5qC0L6WngTKBG5qk+vwpnwnE3u6JWu5EifnJzjQKu0ViuEr6sIw7lDkl19v0HzYpQ==
-X-Received: by 2002:a02:b90e:: with SMTP id v14mr49286701jan.122.1564001182328; 
- Wed, 24 Jul 2019 13:46:22 -0700 (PDT)
+ bh=IHAe9r8SwKR0SOE7feOFdveA8IT0SDk7uX1IR0X6Pa8=;
+ b=aJNf52AiiGTX9qbpEOpRyuvJseUzgtvcFy8/klYibGZGe31mgmtOXynpCE1J4N6llO
+ a151UGupuKjXvY/Z6cEi9FEwX32BflhS1eoOpVvXka9D12BIzJx/kv2ZePNfrlgzZ8BJ
+ aVhW9+VeNPpEY8+x0UbyKyxj8AKjux4OMjhCPe5wRKQt+Z8JNEOccLDz7qq6AEDpjj2w
+ lZv3pst3WZgf1Z9WhCD4MgdiLvOiGnzBUyJH+nZxAVteBjxVX409qxxyWYy/YkOsH8Pi
+ v8k1m7NDK+LufzUF3aIO2u/P8s6pcOWmrlVr6Gr/WmwPYvDWnC4Pg0QFVlJTgSoEkT24
+ 45UQ==
+X-Gm-Message-State: APjAAAUgagNeF8+vFkkNpd5Y4E7HUR70lxquwq/wDa/ulrh6Cu4dgU6+
+ KxLCmDllML+QnDSpSh41Qg==
+X-Google-Smtp-Source: APXvYqyaS0TYvzjTPZIPuZme/uFk9QJ9Ap7J20wOVd2CKLqEYYi1duV0VS989NHcY60O65J0oEWMoQ==
+X-Received: by 2002:a6b:5a17:: with SMTP id o23mr73100927iob.41.1564001303913; 
+ Wed, 24 Jul 2019 13:48:23 -0700 (PDT)
 Received: from localhost ([64.188.179.254])
- by smtp.gmail.com with ESMTPSA id x13sm35133832ioj.18.2019.07.24.13.46.21
+ by smtp.gmail.com with ESMTPSA id y5sm49459573ioc.86.2019.07.24.13.48.23
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 24 Jul 2019 13:46:21 -0700 (PDT)
-Date: Wed, 24 Jul 2019 14:46:21 -0600
+ Wed, 24 Jul 2019 13:48:23 -0700 (PDT)
+Date: Wed, 24 Jul 2019 14:48:22 -0600
 From: Rob Herring <robh@kernel.org>
-To: Macpaul Lin <macpaul.lin@mediatek.com>
-Subject: Re: [PATCH v6 4/8] clk: mediatek: add mt6765 clock IDs
-Message-ID: <20190724204621.GA13063@bogus>
-References: <1562924653-10056-1-git-send-email-macpaul.lin@mediatek.com>
- <1562924653-10056-5-git-send-email-macpaul.lin@mediatek.com>
+To: Sven Van Asbroeck <thesven73@gmail.com>
+Subject: Re: [PATCH 2/2] dt-bindings: bus: imx-weim: document optional burst
+ clock mode
+Message-ID: <20190724204822.GA17166@bogus>
+References: <20190712204316.16783-1-TheSven73@gmail.com>
+ <20190712204316.16783-2-TheSven73@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1562924653-10056-5-git-send-email-macpaul.lin@mediatek.com>
+In-Reply-To: <20190712204316.16783-2-TheSven73@gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_134623_117612_46B904DE 
-X-CRM114-Status: UNSURE (   8.14  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190724_134824_691203_6441A351 
+X-CRM114-Status: GOOD (  10.21  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.68 listed in list.dnswl.org]
+ no trust [209.85.166.65 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
@@ -74,8 +76,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.68 listed in wl.mailspike.net]
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -89,31 +89,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, CC Hwang <cc.hwang@mediatek.com>,
- wsd_upstream@mediatek.com, Sean Wang <sean.wang@mediatek.com>,
- Loda Chou <loda.chou@mediatek.com>, linux-kernel@vger.kernel.org,
- linux-mediatek@lists.infradead.org, Macpaul Lin <macpaul.lin@mediatek.com>,
- linux-serial@vger.kernel.org, Matthias Brugger <matthias.bgg@gmail.com>,
- Mars Cheng <mars.cheng@mediatek.com>, Owen Chen <owen.chen@mediatek.com>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel@vger.kernel.org, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 12 Jul 2019 17:43:40 +0800, Macpaul Lin wrote:
-> From: Mars Cheng <mars.cheng@mediatek.com>
+On Fri, 12 Jul 2019 16:43:16 -0400, Sven Van Asbroeck wrote:
+> An optional devicetree property was added to the imx-weim driver,
+> which if present instructs it to operate in burst clock mode.
+> Update the dt-bindings to reflect this.
 > 
-> Add MT6765 clock dt-bindings, include topckgen, apmixedsys,
-> infracfg, mcucfg and subsystem clocks.
-> 
-> Signed-off-by: Mars Cheng <mars.cheng@mediatek.com>
-> Signed-off-by: Owen Chen <owen.chen@mediatek.com>
-> Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
+> Signed-off-by: Sven Van Asbroeck <TheSven73@gmail.com>
 > ---
->  include/dt-bindings/clock/mt6765-clk.h | 313 +++++++++++++++++++++++++
->  1 file changed, 313 insertions(+)
->  create mode 100644 include/dt-bindings/clock/mt6765-clk.h
+>  Documentation/devicetree/bindings/bus/imx-weim.txt | 4 ++++
+>  1 file changed, 4 insertions(+)
 > 
 
 Reviewed-by: Rob Herring <robh@kernel.org>
