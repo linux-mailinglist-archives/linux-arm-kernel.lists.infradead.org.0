@@ -2,84 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6070F734AF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 19:11:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 06DE5734C1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 19:12:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PAh11TfjEAeuA5nL1F+jjlGm4cLKTCrPE5C8vDzgtKg=; b=iZa63oZ3GVXkMC
-	mQWPxISbbxWFW0hA9zpJstzVM0zG0VAbkxvvJniaoggC/aLLMxtnwJTRIa9Tq3jfFdQJVl3XZnh4w
-	h7D9uVYDDQkhswincld4q4MDD2ciRqWKivlfPvIIdhhQcnhIBFmzwOI3d+9+z9vvxHFCE2AORDKTY
-	MM3sbxNIGSLubCe4JTuPkWbJ7SpJNBblwEoqv5eNYviqZMFVBLWevlCaRWaVjan0kaF/HLZhHXTtJ
-	QU5Ehaq0vINintVZWIIzzLFwoNCWEPL+r6k8lO+2uaRjPFpwdHWXTCamUifKw6uqPXN74wHR078mk
-	hhb9B7eCxOSrHt4baTkQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UpQskcdaw83ONtg63jl55z6fRIJpdCdXiCoQLB/ylFo=; b=aDGAVAQelXAaWR
+	4KL4vtAw2AvI2+S97pbnWypUsyEmj3ptn6Nm0Lb2dBeoq8wmKmNBJKtef1e8SlENmKYwMrXLphuvH
+	1eCVqHrNEF1k3ZvkhAPcuvSK/P6ib4MTcvhr6oDCL2nm6pEhZlJ5IBvJ/Aza7KqtPY2EE13rULK7u
+	dRyHJaPZN0q/YJkO26m4hhEHmhzkjXgBJYMnXJfR77vFBKZ2GjXRfIKfCcAt/JgyFwyhw8n0AOaBs
+	lPuoesaWaAyrPUSyy1oJ0Ywp1iSspzCpYVzmlgvBD7wePqXhhRExIJ/QHLr4AkikrNJd8kng0vNH2
+	1eIKLVsmE9vVQDx2dQ4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqKnm-0005CA-Ds; Wed, 24 Jul 2019 17:11:42 +0000
-Received: from mail-pl1-f194.google.com ([209.85.214.194])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqKnX-0005BP-LV; Wed, 24 Jul 2019 17:11:28 +0000
-Received: by mail-pl1-f194.google.com with SMTP id k8so22261419plt.3;
- Wed, 24 Jul 2019 10:11:26 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=ITF8T/T4IRmGXwtRff4SYZQW9zAOexuz5C2yXEWqdiw=;
- b=FPWb9H92BtSELvERavsb0wcIkW0GN7R34s+zep29X/w6uQCSQnF57FoMemDaZdj83n
- ciTlay1Id9ssbJcROQOlQHD2AWlhbRVteOcc2Ns7y1HHQKF8B9qQNl5hhx8J9SO3HI03
- SXXjPZ0hQJqAkFsGYHlSW3Am107w89seAZaxbyR+0WX8L91lkP5EKOlvfO3R5OMScV2D
- Kz6MqQ+4tFMeETLS+7QxIl71m8ZTdnaA4d2peYtqBWr9M3ZXPDnWkJu0oAyvC3bXUU/7
- KoDE3paLADdtoVWma12+IfHYeRw6pRe23KAtdinbx+v1G2/hb78CQm4hPba7llKgJm/Y
- sQ7A==
-X-Gm-Message-State: APjAAAXhpUNwukcUQbW6VLjI4+WUeUujf1+vaVcqqClzyGPoe38wl6hn
- W5FHIVnI0bqeFFkTEnjAfLLwyKb0
-X-Google-Smtp-Source: APXvYqwoAqWJaD8G9kpqywHtKCy/l+Vyxr3KKHtKTaJVbqukgpdEilFdeN9cgx3TW9bJG3WUBlH/LA==
-X-Received: by 2002:a17:902:7488:: with SMTP id
- h8mr12079513pll.168.1563988285727; 
- Wed, 24 Jul 2019 10:11:25 -0700 (PDT)
-Received: from 42.do-not-panic.com (42.do-not-panic.com. [157.230.128.187])
- by smtp.gmail.com with ESMTPSA id h16sm51887353pfo.34.2019.07.24.10.11.24
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 24 Jul 2019 10:11:24 -0700 (PDT)
-Received: by 42.do-not-panic.com (Postfix, from userid 1000)
- id BEECC402A1; Wed, 24 Jul 2019 17:11:23 +0000 (UTC)
-Date: Wed, 24 Jul 2019 17:11:23 +0000
-From: Luis Chamberlain <mcgrof@kernel.org>
-To: Alexandre Ghiti <alex@ghiti.fr>
-Subject: Re: [PATCH REBASE v4 05/14] arm64, mm: Make randomization selected
- by generic topdown mmap layout
-Message-ID: <20190724171123.GV19023@42.do-not-panic.com>
-References: <20190724055850.6232-1-alex@ghiti.fr>
- <20190724055850.6232-6-alex@ghiti.fr>
+	id 1hqKop-0005ad-2O; Wed, 24 Jul 2019 17:12:47 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hqKoW-0005ZN-Vn
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 17:12:30 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0E49528;
+ Wed, 24 Jul 2019 10:12:26 -0700 (PDT)
+Received: from [10.1.196.72] (e119884-lin.cambridge.arm.com [10.1.196.72])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3CE253F71F;
+ Wed, 24 Jul 2019 10:12:21 -0700 (PDT)
+Subject: Re: [PATCH v19 00/15] arm64: untag user pointers passed to the kernel
+To: Will Deacon <will.deacon@arm.com>, Andrey Konovalov <andreyknvl@google.com>
+References: <cover.1563904656.git.andreyknvl@google.com>
+ <CAAeHK+yc0D_nd7nTRsY4=qcSx+eQR0VLut3uXMf4NEiE-VpeCw@mail.gmail.com>
+ <20190724140212.qzvbcx5j2gi5lcoj@willie-the-truck>
+ <CAAeHK+xXzdQHpVXL7f1T2Ef2P7GwFmDMSaBH4VG8fT3=c_OnjQ@mail.gmail.com>
+ <20190724142059.GC21234@fuggles.cambridge.arm.com>
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Message-ID: <f27f4e55-fcd6-9ae7-d9ca-cac2aea5fe70@arm.com>
+Date: Wed, 24 Jul 2019 18:12:20 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190724055850.6232-6-alex@ghiti.fr>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190724142059.GC21234@fuggles.cambridge.arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_101127_708520_6202E948 
-X-CRM114-Status: GOOD (  12.49  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20190724_101229_111829_8BAAB868 
+X-CRM114-Status: GOOD (  19.76  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.214.194 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (mcgrof[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.214.194 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,52 +65,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Albert Ou <aou@eecs.berkeley.edu>, Kees Cook <keescook@chromium.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Palmer Dabbelt <palmer@sifive.com>,
- Will Deacon <will.deacon@arm.com>, Russell King <linux@armlinux.org.uk>,
- Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
- linux-mm@kvack.org, Paul Burton <paul.burton@mips.com>,
- linux-riscv@lists.infradead.org, Alexander Viro <viro@zeniv.linux.org.uk>,
- James Hogan <jhogan@kernel.org>, linux-fsdevel@vger.kernel.org,
- Andrew Morton <akpm@linux-foundation.org>, linux-mips@vger.kernel.org,
- Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, dri-devel@lists.freedesktop.org,
+ Kostya Serebryany <kcc@google.com>, Khalid Aziz <khalid.aziz@oracle.com>,
+ Lee Smith <Lee.Smith@arm.com>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ Will Deacon <will@kernel.org>, Jacob Bramley <Jacob.Bramley@arm.com>,
+ Leon Romanovsky <leon@kernel.org>, linux-rdma@vger.kernel.org,
+ amd-gfx@lists.freedesktop.org, Christoph Hellwig <hch@infradead.org>,
+ Jason Gunthorpe <jgg@ziepe.ca>, Dmitry Vyukov <dvyukov@google.com>,
+ Dave Martin <Dave.Martin@arm.com>, Evgeniy Stepanov <eugenis@google.com>,
+ linux-media@vger.kernel.org, Kees Cook <keescook@chromium.org>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Linux Memory Management List <linux-mm@kvack.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>, LKML <linux-kernel@vger.kernel.org>,
+ Jens Wiklander <jens.wiklander@linaro.org>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>, Yishai Hadas <yishaih@mellanox.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 24, 2019 at 01:58:41AM -0400, Alexandre Ghiti wrote:
-> diff --git a/mm/util.c b/mm/util.c
-> index 0781e5575cb3..16f1e56e2996 100644
-> --- a/mm/util.c
-> +++ b/mm/util.c
-> @@ -321,7 +321,15 @@ unsigned long randomize_stack_top(unsigned long stack_top)
->  }
->  
->  #ifdef CONFIG_ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT
-> -#ifdef CONFIG_ARCH_HAS_ELF_RANDOMIZE
-> +unsigned long arch_randomize_brk(struct mm_struct *mm)
-> +{
-> +	/* Is the current task 32bit ? */
-> +	if (!IS_ENABLED(CONFIG_64BIT) || is_compat_task())
-> +		return randomize_page(mm->brk, SZ_32M);
-> +
-> +	return randomize_page(mm->brk, SZ_1G);
-> +}
-> +
->  unsigned long arch_mmap_rnd(void)
->  {
->  	unsigned long rnd;
-> @@ -335,7 +343,6 @@ unsigned long arch_mmap_rnd(void)
->  
->  	return rnd << PAGE_SHIFT;
->  }
+Hi Will and Andrey,
 
-So arch_randomize_brk is no longer ifdef'd around
-CONFIG_ARCH_HAS_ELF_RANDOMIZE either and yet the header
-still has it. Is that intentional?
+On 24/07/2019 15:20, Will Deacon wrote:
+> On Wed, Jul 24, 2019 at 04:16:49PM +0200, Andrey Konovalov wrote:
+>> On Wed, Jul 24, 2019 at 4:02 PM Will Deacon <will@kernel.org> wrote:
+>>> On Tue, Jul 23, 2019 at 08:03:29PM +0200, Andrey Konovalov wrote:
+>>>> On Tue, Jul 23, 2019 at 7:59 PM Andrey Konovalov <andreyknvl@google.com> wrote:
+>>>>>
+>>>>> === Overview
+>>>>>
+>>>>> arm64 has a feature called Top Byte Ignore, which allows to embed pointer
+>>>>> tags into the top byte of each pointer. Userspace programs (such as
+>>>>> HWASan, a memory debugging tool [1]) might use this feature and pass
+>>>>> tagged user pointers to the kernel through syscalls or other interfaces.
+>>>>>
+>>>>> Right now the kernel is already able to handle user faults with tagged
+>>>>> pointers, due to these patches:
+>>>>>
+>>>>> 1. 81cddd65 ("arm64: traps: fix userspace cache maintenance emulation on a
+>>>>>              tagged pointer")
+>>>>> 2. 7dcd9dd8 ("arm64: hw_breakpoint: fix watchpoint matching for tagged
+>>>>>               pointers")
+>>>>> 3. 276e9327 ("arm64: entry: improve data abort handling of tagged
+>>>>>               pointers")
+>>>>>
+>>>>> This patchset extends tagged pointer support to syscall arguments.
+>>>
+>>> [...]
+>>>
+>>>> Do you think this is ready to be merged?
+>>>>
+>>>> Should this go through the mm or the arm tree?
+>>>
+>>> I would certainly prefer to take at least the arm64 bits via the arm64 tree
+>>> (i.e. patches 1, 2 and 15). We also need a Documentation patch describing
+>>> the new ABI.
+>>
+>> Sounds good! Should I post those patches together with the
+>> Documentation patches from Vincenzo as a separate patchset?
+> 
+> Yes, please (although as you say below, we need a new version of those
+> patches from Vincenzo to address the feedback on v5). The other thing I
+> should say is that I'd be happy to queue the other patches in the series
+> too, but some of them are missing acks from the relevant maintainers (e.g.
+> the mm/ and fs/ changes).
+> 
 
-  Luis
+I am actively working on the document and will share v6 with the requested
+changes in the next few days.
+
+> Will
+> 
+
+-- 
+Regards,
+Vincenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
