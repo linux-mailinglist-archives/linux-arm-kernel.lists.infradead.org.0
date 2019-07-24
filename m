@@ -2,65 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F1D7E73E14
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 22:22:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77C3073E37
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 22:23:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3d63iwtuP1648GmC9tyuE/VKLwoYqKk7keIQDeg8cZ4=; b=gM+6Vhdz4aIIta
-	ShJaKyhZoj50Usy4wfBMcT2m+SfxjBrTA/kaDpH/Gg1y7SmopDdKnMVxI4T8dCGtvDd8hBnLgqw+V
-	8+qqbBub5TIAvljw5TZTfSfH5yFLW1bjIcO/eSw7SGv8jykQ4ADeI5ULaJWZNfnXScNgdHFvqD9f0
-	p46t7r8XYb+nuHpoxUdLbxBQrIIigkwBu3FwK4Q84AWwmrhrGm4Z+7jskxPocvmC3ot+7T9Cv9QXz
-	FAxxfHC5z5cxgxX1aISD1HPutitUTAdcKm5ZPAeTb1YRB9cFEe/UUutkbgaE9OqaMygRwT0rfaiRQ
-	Ne3qHpFgEAVIn1+On34w==;
+	List-Owner; bh=PAdM5Serbm4907nIZct7XTPKvVkhpzs9xylw9LanAxc=; b=cwMIJAkwyc4af4
+	RJ2S+XETajcSNEBZMrAjy1Uscz6tAeI1yUKP7OQN0hMpcD+ONDTxYBZuIdlkO2e2O+Oa6+igO9EBJ
+	m5K3P5OD8E50TEcI/nHJfeQgmFK26hYyW2o1R3iAAtu2Zhsw7ziWXoXq1Fiw6gXo/ZKo7XzuW50+k
+	bwAANnvXGITnZeKarEBG4AtvojLbI/m53pZb16mdIRMxGtRF9MdoRj3Glnil2Ronnwgym/Qheguy7
+	1GpVZ7rp7T0p96h3SIZSjodKr9/Sdu0t0aeV0TJC6L9veWm16toQ8/Ahj/7rYlU3jGy0HILPAQNHj
+	UxWyESUVBiRqDNsVdJ8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqNmN-00049A-8l; Wed, 24 Jul 2019 20:22:27 +0000
+	id 1hqNn7-0004cG-W6; Wed, 24 Jul 2019 20:23:13 +0000
 Received: from mail-io1-f65.google.com ([209.85.166.65])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqNm7-00048U-5V
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 20:22:12 +0000
-Received: by mail-io1-f65.google.com with SMTP id g20so92339923ioc.12
+ id 1hqNmr-0004bv-Ki
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 20:22:58 +0000
+Received: by mail-io1-f65.google.com with SMTP id j6so17212062ioa.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 24 Jul 2019 13:22:11 -0700 (PDT)
+ Wed, 24 Jul 2019 13:22:57 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=/30AS3nqkWWu+3IMVyX4v9nQ/uVi14wrBVbKbNIwDH0=;
- b=YeceZYgczkW7DqXw2A2/FYYGRhMcSqYyu/zVERW0NUcg1mX5GGFU6Tjt5DIOU38mRY
- KCBe3/cGB+f0CyagYsucDEmCC2BrQJTvUERPWZZH/rAMuMB9tVUCPcdEU2jMu8I9y9aS
- E+W8dIqyWQRkeGhQoL7W3j6X5pLtmO4EpdfOpT/y0rSSEU9Gc1s4LjREEDwgB1rTUObv
- HZeLO0xatiJAiCGCm4ppDrzR947Pw2BNbIu/UTqfJjEhloqYP/cKRIViigkazCX2jR7a
- fHt9B6iqFJ77SumkZQxSupa8fr09ZeozS/XzBcY1+t6GttKMsfwLOHn2c6oxXcOEfdlC
- MKlw==
-X-Gm-Message-State: APjAAAUp4bDA0bBqAZWYXxtEwoH34Wa7l3tU8oT8dqnH3Ls7XBik4cAN
- XICpO14smuHqw0KrHh/Y8g==
-X-Google-Smtp-Source: APXvYqw8/yMFLvKjW7NMwY+ZvPnqeFIopuxH5djPlnJEGbRQVjM6/Fd6l3umrAZVnmBM4ywFQ0VJmA==
-X-Received: by 2002:a02:b395:: with SMTP id p21mr88532316jan.31.1563999730430; 
- Wed, 24 Jul 2019 13:22:10 -0700 (PDT)
+ bh=uDWllbWAHHQJMizorbNWUIyq7E6utwVtniA+GguMM1I=;
+ b=HZNiqn0hK7ZfYl60AEbq8Pa6T3dgIVUJ8m8vSsN3Q+FPta7dVIjsoJipM+8suv8neh
+ fFTAOk7GT7CWBnoOqPjTWltNtmYxgxL5o9oTeatx0Kw1zUaHzL0SnEQ7PwvFHZl1nhFx
+ NOJah+zcHq0PL4w4epqru5R8CXh1tpcRZhIP5l60KeoCBrvcfmIO3Z2Pxbe917zFM42x
+ 6EFIGD0s+WiAfmsAuXyDNa2GJDnit9VRHmSrkG/k9Bqernq6S7KHKzQyZi7VVyDBbg/I
+ dNwZYcxaGqTnSFmJAps4jOInD0OPIs0eNju9p3BRYkUCldSaS3cDUwRmOOkDTmJRF00w
+ S6Tw==
+X-Gm-Message-State: APjAAAUTB0EPssigvaUM96e3BQWV//k11jpMUlbU1LfSNoQX1E/KZN+T
+ qifql1M85oMoS/kktOfdug==
+X-Google-Smtp-Source: APXvYqyQ9siwx0xN6aEL1lklrUj+Z5DeRx/7MB4ml1qvejrwmjU2V5SRYjuEr3YtGaU4tpxw1zPF8g==
+X-Received: by 2002:a6b:c98c:: with SMTP id
+ z134mr39825656iof.276.1563999776985; 
+ Wed, 24 Jul 2019 13:22:56 -0700 (PDT)
 Received: from localhost ([64.188.179.254])
- by smtp.gmail.com with ESMTPSA id x22sm33617648ioh.87.2019.07.24.13.22.09
+ by smtp.gmail.com with ESMTPSA id l14sm42995882iob.1.2019.07.24.13.22.56
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 24 Jul 2019 13:22:09 -0700 (PDT)
-Date: Wed, 24 Jul 2019 14:22:09 -0600
+ Wed, 24 Jul 2019 13:22:56 -0700 (PDT)
+Date: Wed, 24 Jul 2019 14:22:55 -0600
 From: Rob Herring <robh@kernel.org>
 To: Eugen.Hristev@microchip.com
-Subject: Re: [PATCH v3 1/9] dt-bindings: i2c: at91: add new compatible
-Message-ID: <20190724202209.GA31102@bogus>
+Subject: Re: [PATCH v3 2/9] dt-bindings: i2c: add bindings for i2c analog and
+ digital filter
+Message-ID: <20190724202255.GA32633@bogus>
 References: <1562678049-17581-1-git-send-email-eugen.hristev@microchip.com>
- <1562678049-17581-2-git-send-email-eugen.hristev@microchip.com>
+ <1562678049-17581-3-git-send-email-eugen.hristev@microchip.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1562678049-17581-2-git-send-email-eugen.hristev@microchip.com>
+In-Reply-To: <1562678049-17581-3-git-send-email-eugen.hristev@microchip.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_132211_204164_52727DC4 
-X-CRM114-Status: UNSURE (   9.58  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190724_132257_676672_429D9D13 
+X-CRM114-Status: GOOD (  10.66  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
@@ -99,15 +100,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 9 Jul 2019 13:19:29 +0000, <Eugen.Hristev@microchip.com> wrote:
+On Tue, 9 Jul 2019 13:19:33 +0000, <Eugen.Hristev@microchip.com> wrote:
 > From: Eugen Hristev <eugen.hristev@microchip.com>
 > 
-> Add compatible for new Microchip SoC, sam9x60
+> Some i2c controllers have a built-in digital or analog filter.
+> This is specifically required depending on the hardware PCB/board.
+> Some controllers also allow specifying the maximum width of the
+> spikes that can be filtered. The width length can be specified in nanoseconds.
 > 
 > Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
 > ---
->  Documentation/devicetree/bindings/i2c/i2c-at91.txt | 3 ++-
->  1 file changed, 2 insertions(+), 1 deletion(-)
+>  Documentation/devicetree/bindings/i2c/i2c.txt | 11 +++++++++++
+>  1 file changed, 11 insertions(+)
 > 
 
 Reviewed-by: Rob Herring <robh@kernel.org>
