@@ -2,66 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0DE9872ACA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 10:56:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 08F7472A7C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 10:51:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ehgzx5NltQfYiBWSDsUx13hCgZVt5suFVzbr3qk0cbA=; b=X5dMu055QDcppt
-	Slf1bGzLLbEtilr6rIWwXrOj4wZS1m9vgkHqaAO9pP6k/4ixjGgPtzaEEbccqQQOJtsd/Z3RBOVFf
-	2E55Z+hLA97/VsFwpX31Nz2jw2SUjjDH1Ma9Ncv0iINHSuIyI8hwh2YC8Sj+o3Dv2mIoZ9L7MpDYL
-	d9eSYSQh0l/JOyUMAyYZGRUoipIeln+O6DsioERxYHvYz+ekjoQ5cRBo9fLy+3D+HFxnvorwYqQ0h
-	6/MmM+9VON7kQe8Cm7Tek5qz6uCX0qPeQq0Ya2UotuHx5BjjRVZdhWVXqE48J5VzpD2nc++5R1zd/
-	rt07XNUqcEihwPlN7EZw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=LkgstG/o4RRpFNa/m6PgOVpTWBYL2sog8zg3m0SYXdg=; b=QirnziEwRixRHi1rnn+JpiabR
+	UPqMnvOfVLhWlfAo+egNxAXlYAl123co3JZj//bQrKYikQFb1ay7bRQfgmbFN4p3GOZAI5fLn+4K0
+	3p6ufE8fxTqJGcWLZjsMhNlCTPhRd303uGxmNdJjJ29o6g2NdnYrQPLwv4Na18CVePhKT/XWkt6hV
+	kNuwCgBQqGqQzf22raaSiMyqBvDG04VK78FT7b7SfpU+3/r+nnZV1OupyDljuUBQPb0tMzCc9BFGu
+	rL8OtNMEMfpUHniIi356NAW9IMmndGqAG9xg6uMn862tLKbXgrwenqzyPXuAXSBCojUkQBeNwxDp1
+	kn9C32N0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqD4i-0005cE-99; Wed, 24 Jul 2019 08:56:40 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hqCzi-0000qO-8Y; Wed, 24 Jul 2019 08:51:30 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqD0Y-0001a3-NS; Wed, 24 Jul 2019 08:52:25 +0000
-X-UUID: d431b9dd29744085a3e7028236e75658-20190724
-X-UUID: d431b9dd29744085a3e7028236e75658-20190724
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <chunfeng.yun@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 664043079; Wed, 24 Jul 2019 00:51:35 -0800
-Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 24 Jul 2019 01:51:34 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- MTKMBS31DR.mediatek.inc (172.27.6.102) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 24 Jul 2019 16:51:29 +0800
-Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 24 Jul 2019 16:51:28 +0800
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: Rob Herring <robh+dt@kernel.org>, Greg Kroah-Hartman
- <gregkh@linuxfoundation.org>, Biju Das <biju.das@bp.renesas.com>
-Subject: [PATCH v8 11/11] usb: mtu3: register a USB Role Switch for dual role
- mode
-Date: Wed, 24 Jul 2019 16:50:45 +0800
-Message-ID: <1563958245-6321-12-git-send-email-chunfeng.yun@mediatek.com>
-X-Mailer: git-send-email 1.8.1.1.dirty
-In-Reply-To: <1563958245-6321-1-git-send-email-chunfeng.yun@mediatek.com>
-References: <1563958245-6321-1-git-send-email-chunfeng.yun@mediatek.com>
+ id 1hqCzO-0000pV-7N; Wed, 24 Jul 2019 08:51:12 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: andrzej.p) with ESMTPSA id 7B36728C14E
+Subject: Re: [PATCH v4 14/23] drm/tilcdc: Provide ddc symlink in connector
+ sysfs directory
+To: Thomas Zimmermann <tzimmermann@suse.de>, Sam Ravnborg <sam@ravnborg.org>
+References: <cover.1562843413.git.andrzej.p@collabora.com>
+ <d1d415022c598fb7acd033f0f322dd67250adaa9.1562843413.git.andrzej.p@collabora.com>
+ <20190723090532.GA787@ravnborg.org>
+ <3ad60be5-49cf-4017-4b74-53a2d6272deb@collabora.com>
+ <acfd895d-ab59-0190-e25c-1827bd8d214b@suse.de>
+From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+Message-ID: <f051455a-3559-8f8e-cc76-1a6388b102b5@collabora.com>
+Date: Wed, 24 Jul 2019 10:51:01 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 1F53A5A23995726FFBC3CE4329B0E5656694D76469A37BB177A9CB51B3996A2D2000:8
-X-MTK: N
+In-Reply-To: <acfd895d-ab59-0190-e25c-1827bd8d214b@suse.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_015222_789540_EF99D08B 
-X-CRM114-Status: GOOD (  17.12  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190724_015110_398375_B5CCCDAA 
+X-CRM114-Status: GOOD (  13.40  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
  lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -75,230 +65,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Hans de Goede <hdegoede@redhat.com>,
- Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- Badhri Jagan Sridharan <badhri@google.com>,
- Linus Walleij <linus.walleij@linaro.org>, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, Matthias Brugger <matthias.bgg@gmail.com>, Andy
- Shevchenko <andy.shevchenko@gmail.com>, linux-mediatek@lists.infradead.org,
- Min Guo <min.guo@mediatek.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>, Adam
- Thomson <Adam.Thomson.Opensource@diasemi.com>,
- linux-arm-kernel@lists.infradead.org, Li Jun <jun.li@nxp.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Neil Armstrong <narmstrong@baylibre.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, dri-devel@lists.freedesktop.org,
+ linux-kernel@vger.kernel.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Shawn Guo <shawnguo@kernel.org>, kernel@collabora.com,
+ linux-samsung-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Sean Paul <sean@poorly.run>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Jonathan Hunter <jonathanh@nvidia.com>, David Airlie <airlied@linux.ie>,
+ Chen-Yu Tsai <wens@csie.org>, Kukjin Kim <kgene@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>, Dave Airlie <airlied@redhat.com>,
+ Jonas Karlman <jonas@kwiboo.se>, linux-arm-msm@vger.kernel.org,
+ intel-gfx@lists.freedesktop.org, Jyri Sarha <jsarha@ti.com>,
+ Alexios Zavras <alexios.zavras@intel.com>,
+ Mamta Shukla <mamtashukla555@gmail.com>, linux-mediatek@lists.infradead.org,
+ Rodrigo Vivi <rodrigo.vivi@intel.com>, linux-tegra@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, Vincent Abriou <vincent.abriou@st.com>,
+ linux-arm-kernel@lists.infradead.org, Jernej Skrabec <jernej.skrabec@siol.net>,
+ amd-gfx@lists.freedesktop.org, Tomi Valkeinen <tomi.valkeinen@ti.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Seung-Woo Kim <sw0312.kim@samsung.com>,
+ Douglas Anderson <dianders@chromium.org>, Todor Tomov <todor.tomov@linaro.org>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Huang Rui <ray.huang@amd.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Alex Deucher <alexander.deucher@amd.com>, freedreno@lists.freedesktop.org,
+ =?UTF-8?Q?Christian_K=c3=b6nig?= <christian.koenig@amd.com>,
+ Gerd Hoffmann <kraxel@redhat.com>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Because extcon is not allowed for new bindings, and the
-dual role switch is supported by USB Role Switch,
-especially for Type-C drivers, so register a USB Role
-Switch to support the new way
-
-Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
----
-v8 no changes
-v7 no changes
-v6 no changes
-v5 no changes
-
-v4 changes:
-  1. assign fwnode member of usb_role_switch struct suggested by Heikki
-
-v3 changes:
-  1. select USB_ROLE_SWITCH in Kconfig suggested by Heikki
-  2. rename ssusb_mode_manual_switch() to ssusb_mode_switch()
-
-v2 no changes
----
- drivers/usb/mtu3/Kconfig        |  1 +
- drivers/usb/mtu3/mtu3.h         |  5 ++++
- drivers/usb/mtu3/mtu3_debugfs.c |  4 +--
- drivers/usb/mtu3/mtu3_dr.c      | 48 ++++++++++++++++++++++++++++++++-
- drivers/usb/mtu3/mtu3_dr.h      |  6 ++---
- drivers/usb/mtu3/mtu3_plat.c    |  3 ++-
- 6 files changed, 60 insertions(+), 7 deletions(-)
-
-diff --git a/drivers/usb/mtu3/Kconfig b/drivers/usb/mtu3/Kconfig
-index 928c2cd6fc00..bf98fd36341d 100644
---- a/drivers/usb/mtu3/Kconfig
-+++ b/drivers/usb/mtu3/Kconfig
-@@ -44,6 +44,7 @@ config USB_MTU3_DUAL_ROLE
- 	bool "Dual Role mode"
- 	depends on ((USB=y || USB=USB_MTU3) && (USB_GADGET=y || USB_GADGET=USB_MTU3))
- 	depends on (EXTCON=y || EXTCON=USB_MTU3)
-+	select USB_ROLE_SWITCH
- 	help
- 	  This is the default mode of working of MTU3 controller where
- 	  both host and gadget features are enabled.
-diff --git a/drivers/usb/mtu3/mtu3.h b/drivers/usb/mtu3/mtu3.h
-index 76ecf12fdf62..6087be236a35 100644
---- a/drivers/usb/mtu3/mtu3.h
-+++ b/drivers/usb/mtu3/mtu3.h
-@@ -199,6 +199,9 @@ struct mtu3_gpd_ring {
- * @id_nb : notifier for iddig(idpin) detection
- * @id_work : work of iddig detection notifier
- * @id_event : event of iddig detecion notifier
-+* @role_sw : use USB Role Switch to support dual-role switch, can't use
-+*		extcon at the same time, and extcon is deprecated.
-+* @role_sw_used : true when the USB Role Switch is used.
- * @is_u3_drd: whether port0 supports usb3.0 dual-role device or not
- * @manual_drd_enabled: it's true when supports dual-role device by debugfs
- *		to switch host/device modes depending on user input.
-@@ -212,6 +215,8 @@ struct otg_switch_mtk {
- 	struct notifier_block id_nb;
- 	struct work_struct id_work;
- 	unsigned long id_event;
-+	struct usb_role_switch *role_sw;
-+	bool role_sw_used;
- 	bool is_u3_drd;
- 	bool manual_drd_enabled;
- };
-diff --git a/drivers/usb/mtu3/mtu3_debugfs.c b/drivers/usb/mtu3/mtu3_debugfs.c
-index 62c57ddc554e..c96e5dab0a48 100644
---- a/drivers/usb/mtu3/mtu3_debugfs.c
-+++ b/drivers/usb/mtu3/mtu3_debugfs.c
-@@ -453,9 +453,9 @@ static ssize_t ssusb_mode_write(struct file *file, const char __user *ubuf,
- 		return -EFAULT;
- 
- 	if (!strncmp(buf, "host", 4) && !ssusb->is_host) {
--		ssusb_mode_manual_switch(ssusb, 1);
-+		ssusb_mode_switch(ssusb, 1);
- 	} else if (!strncmp(buf, "device", 6) && ssusb->is_host) {
--		ssusb_mode_manual_switch(ssusb, 0);
-+		ssusb_mode_switch(ssusb, 0);
- 	} else {
- 		dev_err(ssusb->dev, "wrong or duplicated setting\n");
- 		return -EINVAL;
-diff --git a/drivers/usb/mtu3/mtu3_dr.c b/drivers/usb/mtu3/mtu3_dr.c
-index 5fcb71af875a..08e18448e8b8 100644
---- a/drivers/usb/mtu3/mtu3_dr.c
-+++ b/drivers/usb/mtu3/mtu3_dr.c
-@@ -7,6 +7,8 @@
-  * Author: Chunfeng Yun <chunfeng.yun@mediatek.com>
-  */
- 
-+#include <linux/usb/role.h>
-+
- #include "mtu3.h"
- #include "mtu3_dr.h"
- #include "mtu3_debug.h"
-@@ -280,7 +282,7 @@ static int ssusb_extcon_register(struct otg_switch_mtk *otg_sx)
-  * This is useful in special cases, such as uses TYPE-A receptacle but also
-  * wants to support dual-role mode.
-  */
--void ssusb_mode_manual_switch(struct ssusb_mtk *ssusb, int to_host)
-+void ssusb_mode_switch(struct ssusb_mtk *ssusb, int to_host)
- {
- 	struct otg_switch_mtk *otg_sx = &ssusb->otg_switch;
- 
-@@ -318,6 +320,47 @@ void ssusb_set_force_mode(struct ssusb_mtk *ssusb,
- 	mtu3_writel(ssusb->ippc_base, SSUSB_U2_CTRL(0), value);
- }
- 
-+static int ssusb_role_sw_set(struct device *dev, enum usb_role role)
-+{
-+	struct ssusb_mtk *ssusb = dev_get_drvdata(dev);
-+	bool to_host = false;
-+
-+	if (role == USB_ROLE_HOST)
-+		to_host = true;
-+
-+	if (to_host ^ ssusb->is_host)
-+		ssusb_mode_switch(ssusb, to_host);
-+
-+	return 0;
-+}
-+
-+static enum usb_role ssusb_role_sw_get(struct device *dev)
-+{
-+	struct ssusb_mtk *ssusb = dev_get_drvdata(dev);
-+	enum usb_role role;
-+
-+	role = ssusb->is_host ? USB_ROLE_HOST : USB_ROLE_DEVICE;
-+
-+	return role;
-+}
-+
-+static int ssusb_role_sw_register(struct otg_switch_mtk *otg_sx)
-+{
-+	struct usb_role_switch_desc role_sx_desc = { 0 };
-+	struct ssusb_mtk *ssusb =
-+		container_of(otg_sx, struct ssusb_mtk, otg_switch);
-+
-+	if (!otg_sx->role_sw_used)
-+		return 0;
-+
-+	role_sx_desc.set = ssusb_role_sw_set;
-+	role_sx_desc.get = ssusb_role_sw_get;
-+	role_sx_desc.fwnode = dev_fwnode(ssusb->dev);
-+	otg_sx->role_sw = usb_role_switch_register(ssusb->dev, &role_sx_desc);
-+
-+	return PTR_ERR_OR_ZERO(otg_sx->role_sw);
-+}
-+
- int ssusb_otg_switch_init(struct ssusb_mtk *ssusb)
- {
- 	struct otg_switch_mtk *otg_sx = &ssusb->otg_switch;
-@@ -328,6 +371,8 @@ int ssusb_otg_switch_init(struct ssusb_mtk *ssusb)
- 
- 	if (otg_sx->manual_drd_enabled)
- 		ssusb_dr_debugfs_init(ssusb);
-+	else if (otg_sx->role_sw_used)
-+		ret = ssusb_role_sw_register(otg_sx);
- 	else
- 		ret = ssusb_extcon_register(otg_sx);
- 
-@@ -340,4 +385,5 @@ void ssusb_otg_switch_exit(struct ssusb_mtk *ssusb)
- 
- 	cancel_work_sync(&otg_sx->id_work);
- 	cancel_work_sync(&otg_sx->vbus_work);
-+	usb_role_switch_unregister(otg_sx->role_sw);
- }
-diff --git a/drivers/usb/mtu3/mtu3_dr.h b/drivers/usb/mtu3/mtu3_dr.h
-index ba6fe357ce29..5e58c4dbd54a 100644
---- a/drivers/usb/mtu3/mtu3_dr.h
-+++ b/drivers/usb/mtu3/mtu3_dr.h
-@@ -71,7 +71,7 @@ static inline void ssusb_gadget_exit(struct ssusb_mtk *ssusb)
- #if IS_ENABLED(CONFIG_USB_MTU3_DUAL_ROLE)
- int ssusb_otg_switch_init(struct ssusb_mtk *ssusb);
- void ssusb_otg_switch_exit(struct ssusb_mtk *ssusb);
--void ssusb_mode_manual_switch(struct ssusb_mtk *ssusb, int to_host);
-+void ssusb_mode_switch(struct ssusb_mtk *ssusb, int to_host);
- int ssusb_set_vbus(struct otg_switch_mtk *otg_sx, int is_on);
- void ssusb_set_force_mode(struct ssusb_mtk *ssusb,
- 			  enum mtu3_dr_force_mode mode);
-@@ -86,8 +86,8 @@ static inline int ssusb_otg_switch_init(struct ssusb_mtk *ssusb)
- static inline void ssusb_otg_switch_exit(struct ssusb_mtk *ssusb)
- {}
- 
--static inline void
--ssusb_mode_manual_switch(struct ssusb_mtk *ssusb, int to_host) {}
-+static inline void ssusb_mode_switch(struct ssusb_mtk *ssusb, int to_host)
-+{}
- 
- static inline int ssusb_set_vbus(struct otg_switch_mtk *otg_sx, int is_on)
- {
-diff --git a/drivers/usb/mtu3/mtu3_plat.c b/drivers/usb/mtu3/mtu3_plat.c
-index fd0f6c5dfbc1..9c256ea3cdf5 100644
---- a/drivers/usb/mtu3/mtu3_plat.c
-+++ b/drivers/usb/mtu3/mtu3_plat.c
-@@ -299,8 +299,9 @@ static int get_ssusb_rscs(struct platform_device *pdev, struct ssusb_mtk *ssusb)
- 	otg_sx->is_u3_drd = of_property_read_bool(node, "mediatek,usb3-drd");
- 	otg_sx->manual_drd_enabled =
- 		of_property_read_bool(node, "enable-manual-drd");
-+	otg_sx->role_sw_used = of_property_read_bool(node, "usb-role-switch");
- 
--	if (of_property_read_bool(node, "extcon")) {
-+	if (!otg_sx->role_sw_used && of_property_read_bool(node, "extcon")) {
- 		otg_sx->edev = extcon_get_edev_by_phandle(ssusb->dev, 0);
- 		if (IS_ERR(otg_sx->edev)) {
- 			dev_err(ssusb->dev, "couldn't get extcon device\n");
--- 
-2.21.0
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgVGhvbWFzLAoKVyBkbml1IDI0LjA3LjIwMTkgb8KgMTA6MDEsIFRob21hcyBaaW1tZXJtYW5u
+IHBpc3plOgo+IEhpCj4gCgoKPiAKPiBJIHRoaW5rIHRoaXMgZWNob2VzIG15IGNvbmNlcm4gYWJv
+dXQgdGhlIGltcGxpY2l0IG9yZGVyIG9mIG9wZXJhdGlvbi4gSXQKPiBzZWVtcyB0b28gZWFzeSB0
+byBnZXQgdGhpcyB3cm9uZy4gSWYgeW91IGRvbid0IHdhbnQgdG8gYWRkIGFuIGFkZGl0aW9uYWwK
+PiBpbnRlcmZhY2UgZm9yIHNldHRpbmcgdGhlIGRkYyBmaWVsZCwgd2h5IG5vdCBhZGQgYSBkZWRp
+Y2F0ZWQgaW5pdGlhbGl6ZXIKPiBmdW5jdGlvbiB0aGF0IHNldHMgdGhlIGRkYyBmaWVsZD8gU29t
+ZXRoaW5nIGxpa2UgdGhpcy4KPiAKPiBpbnQgZHJtX2Nvbm5lY3Rvcl9pbml0X3dpdGhfZGRjKGNv
+bm5lY3RvciwgZnVuY3MsIC4uLiwgZGRjKQo+IHsKPiAJcmV0ID0gZHJtX2Nvbm5lY3Rvcl9pbml0
+KGNvbm5lY3RvciwgZnVuY3MsIC4uLik7Cj4gCWlmIChyZXQpCj4gCQlyZXR1cm4gcmV0Owo+IAo+
+IAlpZiAoIWRkYykKPiAJCXJldHVybiAwOwo+IAo+IAljb25uZWN0b3ItPmRkYyA9IGRkYzsKPiAJ
+Lyogc2V0IHVwIHN5c2ZzICovCj4gCj4gCXJldHVybiAwOwo+IH0KPiAKClRydWUuIEkgd2lsbCBz
+ZW5kIGEgdjUgc29vbi4KClRoYW5rcywKCkFuZHJ6ZWoKCl9fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0Cmxp
+bnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFk
+Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
