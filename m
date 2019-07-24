@@ -2,72 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D15DD73F94
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 22:33:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE5D473FB8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 22:35:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=93eV7KYH7cmGFgOTgkEWrtoEg2qUv0PA+dF/O3o63Xg=; b=fYeq7ilQ4OD9tU
-	FFe6V3bAahxY0PWqstm5HEr5xhOFpAIk1s1RqGW/Hksbmt+hFflgCNMvmgriV8H12iVwZyaj1AqFt
-	+PchX3QqYaEStr+U0Qr8GN/tTjPQqR/ZkCtE0q34vHz6Hkb8weNQKLZEXbHYekYZpPHLn2dligUv3
-	KQ6KkVcqjVFKNLXl9zl3EEph3PB3J75XquOUnoYzzDDDi4+sXEn0SAvfxs22xI2MjpMZaH0bLGoZA
-	BLIXJHFEO293FDZurNnbcAOCg2ON+opno9WNqSpdD5+VAF04H9fJKfU/EnENXjdTj0fxcwtAl6GMC
-	1uopJaw2jjuQIvhLG47Q==;
+	List-Owner; bh=jKTiJXTSKDzWfVhEp86UNBVxObukDC1cifPB8psq/e0=; b=IKhuaiMymiMTHp
+	J4bkXVa4P211hIt8sUXLPtCTnsuOebMYX7mqZza3AHnPSdRBa5pbJGiWfU93sOJwBQecMStV/HmvY
+	LKT18MQpHvt7EjaNFi0YDDtV9STgfDynGw27/gohKYyYK6bfZQk2TjBsNMVAK414ouuh0qG/i/hiD
+	U2ft7BQhHV6MNvSpXg4LHF4/oeSwWFBE0O2b3UYBwdk/4n0ACCK3gHOwmCe84/cn0Cmq8gOzJCZAz
+	wYk6ST/4lQo9LeUMmtXLs4xjoHjc7/tbxhWKC3JZaogQrcDL4Xm5we4hHVGb2jCYIkF6E383D5NVe
+	14Iplpl1+/8AdpShIzXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqNxS-0007zw-UE; Wed, 24 Jul 2019 20:33:54 +0000
-Received: from mail-io1-f68.google.com ([209.85.166.68])
+	id 1hqNyV-0008Nu-Ij; Wed, 24 Jul 2019 20:34:59 +0000
+Received: from mail-io1-f66.google.com ([209.85.166.66])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqNxD-0007yz-Qh
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 20:33:41 +0000
-Received: by mail-io1-f68.google.com with SMTP id s7so92305457iob.11
+ id 1hqNyF-0008Na-ME
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 20:34:44 +0000
+Received: by mail-io1-f66.google.com with SMTP id j6so17280985ioa.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 24 Jul 2019 13:33:39 -0700 (PDT)
+ Wed, 24 Jul 2019 13:34:43 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=hWxG43uUzUPGcDAeTJWX9/ElhRTOT4ivffhul3s+rgA=;
- b=YCh1gQYYEIoY78SpcF0lb+Zm5cvY3E5ChboyUSuckrR8eWbNPlpmQSye0B2WE5JB8z
- rH1DEGRiI+0XliJXlwzPNQI70yqZS5fTskCatrTaf+Iqzgt/LIZZHiwDt3m737of4f9h
- dlhsw5ERFVppW+Q6lxcczhGKWiPoLfnGNd5otkgKDwPhkwUu8krxHxN02K7FZxVB2ZuS
- yecTVOkgvdZ3gOmlG13OjFfvsWrSAP1Y4e17M+B0QytiXbNGQ0gkdAYIi2ISDep1Q+Ls
- vl+UgLzoF8KQo/JGNfQgSXsPzXQr+ydHGPvPaRJdZRSPtxSaE67dQDLey6WnFXgNFjkd
- cDig==
-X-Gm-Message-State: APjAAAUi0sF3ReWxmFLT+aVKvNeXbE12jPWw1+4V/D7RSkNTfOiBxTXJ
- T7mZN7PkfoNSP984aTZEsQ==
-X-Google-Smtp-Source: APXvYqy956/3Br9VEhD6l1nrDo5N42Sw/FVSNlfk7v1cZXU6Bmsg2phvVL23Wpj7HoceLR69D9he5A==
-X-Received: by 2002:a02:c7c7:: with SMTP id s7mr27166379jao.37.1564000418767; 
- Wed, 24 Jul 2019 13:33:38 -0700 (PDT)
+ bh=uHLqz6FDkSCI8LzqIEBRdrQs7zeUsE0ZRMiorxW3eeM=;
+ b=eLURiI17HdoSthpWtSgXrLb5L1cDb6tK+theufn868yrfeMANmYkFfYc3NOPlc6SKG
+ wr/EAkLJAFZDTzJib1CCXbE+CLjhJgM6mQoT2TmLw9+YTO5NOeozDKBo+eRepqxXunr8
+ VaAdHOY7BFDhyCdVLWfnHTI3ZbLrrlNzL+gSxJ5T8mGWRVuD/3xngL39d+tvv7gZSb+t
+ Spgb8cUSYMUx76hTo4/h3hkPyhthVm6uV9wK09I1lUqevpkOangEaFvFuIRK3ALPNGi0
+ 25u9/9ZAqNfG89SGViVuGfElRXxtbT+fbfssZesMSpppbXwIhrAkKtDIO9ZOqOenKLDd
+ 7i1Q==
+X-Gm-Message-State: APjAAAUeW5kIKusUuYyOde/iRQmpy1oAW0WgE+vcdHo1tivbUrdNmoiB
+ FMGildKTztQHZHZN6xw0/A==
+X-Google-Smtp-Source: APXvYqyiTSzmcos+LtyMuQu0VL4DAqAkhvqzWm1usV7kqdE4UV43i+gHAw7kW1rK2LIWDuuVMITEbA==
+X-Received: by 2002:a5d:9749:: with SMTP id c9mr13123190ioo.258.1564000482978; 
+ Wed, 24 Jul 2019 13:34:42 -0700 (PDT)
 Received: from localhost ([64.188.179.254])
- by smtp.gmail.com with ESMTPSA id c17sm35498762ioo.82.2019.07.24.13.33.37
+ by smtp.gmail.com with ESMTPSA id c14sm37067202ioa.22.2019.07.24.13.34.42
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 24 Jul 2019 13:33:38 -0700 (PDT)
-Date: Wed, 24 Jul 2019 14:33:37 -0600
+ Wed, 24 Jul 2019 13:34:42 -0700 (PDT)
+Date: Wed, 24 Jul 2019 14:34:41 -0600
 From: Rob Herring <robh@kernel.org>
-To: Gregory CLEMENT <gregory.clement@bootlin.com>
-Subject: Re: [PATCH v7 1/6] dt-bindings: ap806: add the cluster clock node in
- the syscon file
-Message-ID: <20190724203337.GA20268@bogus>
-References: <20190710134346.30239-1-gregory.clement@bootlin.com>
- <20190710134346.30239-2-gregory.clement@bootlin.com>
+To: Anson.Huang@nxp.com
+Subject: Re: [PATCH 1/2] dt-bindings: imx-ocotp: Add i.MX8MN compatible
+Message-ID: <20190724203441.GA22721@bogus>
+References: <20190711023714.16000-1-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190710134346.30239-2-gregory.clement@bootlin.com>
+In-Reply-To: <20190711023714.16000-1-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_133339_866835_54A00F87 
-X-CRM114-Status: GOOD (  10.59  )
+X-CRM114-CacheID: sfid-20190724_133443_722414_EF23A721 
+X-CRM114-Status: GOOD (  10.88  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.68 listed in list.dnswl.org]
+ no trust [209.85.166.66 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
@@ -76,8 +74,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.68 listed in wl.mailspike.net]
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -91,29 +87,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Jason Cooper <jason@lakedaemon.net>,
- Andrew Lunn <andrew@lunn.ch>, Stephen Boyd <sboyd@kernel.org>,
- Mike Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Antoine Tenart <antoine.tenart@bootlin.com>,
- linux-arm-kernel@lists.infradead.org,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- =?iso-8859-1?Q?Miqu=E8l?= Raynal <miquel.raynal@bootlin.com>,
- linux-clk@vger.kernel.org, Gregory CLEMENT <gregory.clement@bootlin.com>,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, festevam@gmail.com,
+ s.hauer@pengutronix.de, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ srinivas.kandagatla@linaro.org, Linux-imx@nxp.com, kernel@pengutronix.de,
+ shawnguo@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 10 Jul 2019 15:43:41 +0200, Gregory CLEMENT wrote:
-> Document the device tree binding for the cluster clock controllers found
-> in the Armada 7K/8K SoCs.
+On Thu, 11 Jul 2019 10:37:13 +0800, Anson.Huang@nxp.com wrote:
+> From: Anson Huang <Anson.Huang@nxp.com>
 > 
-> Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
+> Add compatible for i.MX8MN and add i.MX8MM/i.MX8MN to the description.
+> 
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 > ---
->  .../arm/marvell/ap806-system-controller.txt   | 31 +++++++++++++++++--
->  1 file changed, 29 insertions(+), 2 deletions(-)
+>  Documentation/devicetree/bindings/nvmem/imx-ocotp.txt | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
 > 
 
 Reviewed-by: Rob Herring <robh@kernel.org>
