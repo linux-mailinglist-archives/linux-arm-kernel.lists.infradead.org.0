@@ -2,61 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DDFCE72A1D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 10:30:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E04DB72A27
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 10:33:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dsimvXLXCgxz67KCHg29MjDMJsrVSfn8+Ka0gM1sngs=; b=TqqagVzCNwwDcA
-	1E9sUrQo04R7rVUnKEa/wJ3MgjZnun5cil/9Te0h+yRk/Rs1dF6Sk3VKhGSnQOm1hu4Y0c5h70yo6
-	RWaWzX2MA3ZgQA1RiYoo2A2h2YwAnOQhMZEQ+ERszaPVNX/hBFknjUK75UadOarBnOeQVYS8pRbGH
-	mTjreeG+iO1vyzdGgHNUJfIrZtCqL6ybD/zJPip7pTdkvXIBn8zXuhiw1rgQRmc56SokIhZ2pCn78
-	pXK5MLhiznQ1LszxkQ3FY4FHghrtYb7eZ4U1EuibzGkKZF6oYqYaoIyzS85l6zE4rprQVPVn106kc
-	IsJXdhzPsznso/D1acvg==;
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YPW9YMj8P/ZOabZkYPBuA/JWlaIB3jpMtXAxr3IbnE8=; b=cUwPSzZfdjhfst
+	WJMcCDSkR7xuj5jZ7vemPYDg0i+YQS2HFA8vin4mwKRzgGyrgDOvpw7cZVhWypHbEJlCRgkI4seuq
+	gFwPAhlSUZyFpDO1fjh2Syj6/q5Kl+a6JHr+CZnhWvBElLELr/+NI8QOhfo2nAdmQ6oLAr7/iuwZY
+	Q0UqEOlL52p0UQXIFfki2Fg1f9g/+ELid5DVP3l0BT/abFxgy1I1ElF0oduwQLHrTTfzLMBUPFnO6
+	33dtDIJWTY2/EOCjRbLocteHQotbl0ThAIOd56v4Cs79jC75sTM703Q1RPtRL30zxkMkESwqYFHaU
+	9DXNK9zg2f97BVKuFJ0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqCf1-0001oD-5f; Wed, 24 Jul 2019 08:30:07 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1hqCi0-0003j8-VK; Wed, 24 Jul 2019 08:33:12 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqCej-0001mc-Dy
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 08:29:51 +0000
-Received: from DGGEMS409-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 58B05B3F612EF878FD0E;
- Wed, 24 Jul 2019 16:29:35 +0800 (CST)
-Received: from [127.0.0.1] (10.177.223.23) by DGGEMS409-HUB.china.huawei.com
- (10.3.19.209) with Microsoft SMTP Server id 14.3.439.0; Wed, 24 Jul 2019
- 16:29:32 +0800
-Subject: Re: [PATCH v12 1/2] mm: page_alloc: introduce
- memblock_next_valid_pfn() (again) for arm64
-To: Mike Rapoport <rppt@linux.ibm.com>
-References: <1563861073-47071-1-git-send-email-guohanjun@huawei.com>
- <1563861073-47071-2-git-send-email-guohanjun@huawei.com>
- <20190723083027.GB4896@rapoport-lnx>
-From: Hanjun Guo <guohanjun@huawei.com>
-Message-ID: <e4668d2a-23d9-c089-c713-a4a0495e8c9e@huawei.com>
-Date: Wed, 24 Jul 2019 16:29:11 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101
- Thunderbird/52.5.0
-MIME-Version: 1.0
-In-Reply-To: <20190723083027.GB4896@rapoport-lnx>
-Content-Language: en-US
-X-Originating-IP: [10.177.223.23]
-X-CFilter-Loop: Reflected
+ id 1hqChn-0003fA-85
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 08:33:00 +0000
+Received: from kresse.hi.pengutronix.de ([2001:67c:670:100:1d::2a])
+ by metis.ext.pengutronix.de with esmtp (Exim 4.92)
+ (envelope-from <l.stach@pengutronix.de>)
+ id 1hqChZ-0001Cp-C2; Wed, 24 Jul 2019 10:32:45 +0200
+Message-ID: <1563957164.2311.28.camel@pengutronix.de>
+Subject: Re: [Sound-open-firmware] [PATCH v2 1/5] ASoC: SOF: imx: Add i.MX8
+ HW support
+From: Lucas Stach <l.stach@pengutronix.de>
+To: Daniel Baluta <daniel.baluta@gmail.com>, Pierre-Louis Bossart
+ <pierre-louis.bossart@linux.intel.com>
+Date: Wed, 24 Jul 2019 10:32:44 +0200
+In-Reply-To: <CAEnQRZCuB2QKzz-08K0z+x+p0qCpqR_wDc=q2GChvJiw4E9hBA@mail.gmail.com>
+References: <20190723084104.12639-1-daniel.baluta@nxp.com>
+ <20190723084104.12639-2-daniel.baluta@nxp.com>
+ <a5d44d96-4d50-ee46-a6bf-3ce108b1994a@linux.intel.com>
+ <CAEnQRZCuB2QKzz-08K0z+x+p0qCpqR_wDc=q2GChvJiw4E9hBA@mail.gmail.com>
+X-Mailer: Evolution 3.22.6-1+deb9u2 
+Mime-Version: 1.0
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::2a
+X-SA-Exim-Mail-From: l.stach@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_012949_674142_D4049E8F 
-X-CRM114-Status: GOOD (  25.19  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190724_013259_287269_B49DBB05 
+X-CRM114-Status: UNSURE (   8.90  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,186 +68,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- linux-mm@kvack.org, Jia
- He <hejianet@gmail.com>, Andrew Morton <akpm@linux-foundation.org>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Aisheng Dong <aisheng.dong@nxp.com>,
+ Peng Fan <peng.fan@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ Devicetree List <devicetree@vger.kernel.org>,
+ Daniel Baluta <daniel.baluta@nxp.com>, "S.j.
+ Wang" <shengjiu.wang@nxp.com>, Marco Felsch <m.felsch@pengutronix.de>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Paul Olaru <paul.olaru@nxp.com>, Rob Herring <robh+dt@kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>, Leonard Crestez <leonard.crestez@nxp.com>,
+ Fabio Estevam <festevam@gmail.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ sound-open-firmware@alsa-project.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019/7/23 16:30, Mike Rapoport wrote:
-> On Tue, Jul 23, 2019 at 01:51:12PM +0800, Hanjun Guo wrote:
->> From: Jia He <hejianet@gmail.com>
->>
->> Commit b92df1de5d28 ("mm: page_alloc: skip over regions of invalid pfns
->> where possible") optimized the loop in memmap_init_zone(). But it causes
->> possible panic on x86 due to specific memory mapping on x86_64 which will
->> skip valid pfns as well, so Daniel Vacek reverted it later.
->>
->> But as suggested by Daniel Vacek, it is fine to using memblock to skip
->> gaps and finding next valid frame with CONFIG_HAVE_ARCH_PFN_VALID.
->>
->> Daniel said:
->> "On arm and arm64, memblock is used by default. But generic version of
->> pfn_valid() is based on mem sections and memblock_next_valid_pfn() does
->> not always return the next valid one but skips more resulting in some
->> valid frames to be skipped (as if they were invalid). And that's why
->> kernel was eventually crashing on some !arm machines."
+Hi Daniel,
+
+Am Mittwoch, den 24.07.2019, 09:54 +0300 schrieb Daniel Baluta:
+> On Tue, Jul 23, 2019 at 6:18 PM Pierre-Louis Bossart
+[...]
 > 
-> I think that the crash on x86 was not related to CONFIG_HAVE_ARCH_PFN_VALID
-> but rather to the x86 way to setup memblock.  Some of the x86 reserved
-> memory areas were never added to memblock.memory, which makes memblock's
-> view of the physical memory incomplete and that's why
-> memblock_next_valid_pfn() could skip valid PFNs on x86.
-
-Thank you for kindly clarify, I will update the patch with your comments
-in next version.
-
+> > Also are all the resources device-managed, I don't see a remove()?
 > 
->> Introduce a new config option CONFIG_HAVE_MEMBLOCK_PFN_VALID and only
->> selected for arm64, using the new config option to guard the
->> memblock_next_valid_pfn().
->  
-> As far as I can tell, the memblock_next_valid_pfn() should work on most
-> architectures and not only on ARM. For sure there is should be no
-> dependency between CONFIG_HAVE_ARCH_PFN_VALID and memblock_next_valid_pfn().
-> 
-> I believe that the configuration option to guard memblock_next_valid_pfn()
-> should be opt-out and that only x86 will require it.
+> Good catch for pm stuff. We mostly didn't care about remove because
+> drivers are always Y in our distribution.
 
-So how about introduce a configuration option, say, CONFIG_HAVE_ARCH_PFN_INVALID,
-selected by x86 and keep it default unselected for all other architecture?
+Linux drivers need to be hotplug aware, even if they are not built as a
+module. You can test things by manually unbinding the driver from the
+device via sysfs.
 
-> 
->> This was tested on a HiSilicon Kunpeng920 based ARM64 server, the speedup
->> is pretty impressive for bootmem_init() at boot:
->>
->> with 384G memory,
->> before: 13310ms
->> after:  1415ms
->>
->> with 1T memory,
->> before: 20s
->> after:  2s
->>
->> Suggested-by: Daniel Vacek <neelx@redhat.com>
->> Signed-off-by: Jia He <hejianet@gmail.com>
->> Signed-off-by: Hanjun Guo <guohanjun@huawei.com>
->> ---
->>  arch/arm64/Kconfig     |  1 +
->>  include/linux/mmzone.h |  9 +++++++++
->>  mm/Kconfig             |  3 +++
->>  mm/memblock.c          | 31 +++++++++++++++++++++++++++++++
->>  mm/page_alloc.c        |  4 +++-
->>  5 files changed, 47 insertions(+), 1 deletion(-)
->>
->> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
->> index 697ea0510729..058eb26579be 100644
->> --- a/arch/arm64/Kconfig
->> +++ b/arch/arm64/Kconfig
->> @@ -893,6 +893,7 @@ config ARCH_FLATMEM_ENABLE
->>  
->>  config HAVE_ARCH_PFN_VALID
->>  	def_bool y
->> +	select HAVE_MEMBLOCK_PFN_VALID
->>
->>  config HW_PERF_EVENTS
->>  	def_bool y
->> diff --git a/include/linux/mmzone.h b/include/linux/mmzone.h
->> index 70394cabaf4e..24cb6bdb1759 100644
->> --- a/include/linux/mmzone.h
->> +++ b/include/linux/mmzone.h
->> @@ -1325,6 +1325,10 @@ static inline int pfn_present(unsigned long pfn)
->>  #endif
->>  
->>  #define early_pfn_valid(pfn)	pfn_valid(pfn)
->> +#ifdef CONFIG_HAVE_MEMBLOCK_PFN_VALID
->> +extern unsigned long memblock_next_valid_pfn(unsigned long pfn);
->> +#define next_valid_pfn(pfn)	memblock_next_valid_pfn(pfn)
-> 
-> Please make it 'static inline' and move out of '#ifdef CONFIG_SPARSEMEM'
-
-Will do.
-
-> 
->> +#endif
->>  void sparse_init(void);
->>  #else
->>  #define sparse_init()	do {} while (0)
->> @@ -1347,6 +1351,11 @@ struct mminit_pfnnid_cache {
->>  #define early_pfn_valid(pfn)	(1)
->>  #endif
->>  
->> +/* fallback to default definitions */
->> +#ifndef next_valid_pfn
->> +#define next_valid_pfn(pfn)	(pfn + 1)
-> 
-> static inline as well.
-
-OK.
-
-> 
->> +#endif
->> +
->>  void memory_present(int nid, unsigned long start, unsigned long end);
->>  
->>  /*
->> diff --git a/mm/Kconfig b/mm/Kconfig
->> index f0c76ba47695..c578374b6413 100644
->> --- a/mm/Kconfig
->> +++ b/mm/Kconfig
->> @@ -132,6 +132,9 @@ config HAVE_MEMBLOCK_NODE_MAP
->>  config HAVE_MEMBLOCK_PHYS_MAP
->>  	bool
->>  
->> +config HAVE_MEMBLOCK_PFN_VALID
->> +	bool
->> +
->>  config HAVE_GENERIC_GUP
->>  	bool
->>  
->> diff --git a/mm/memblock.c b/mm/memblock.c
->> index 7d4f61ae666a..d57ba51bb9cd 100644
->> --- a/mm/memblock.c
->> +++ b/mm/memblock.c
->> @@ -1251,6 +1251,37 @@ int __init_memblock memblock_set_node(phys_addr_t base, phys_addr_t size,
->>  	return 0;
->>  }
->>  #endif /* CONFIG_HAVE_MEMBLOCK_NODE_MAP */
->> +
->> +#ifdef CONFIG_HAVE_MEMBLOCK_PFN_VALID
->> +unsigned long __init_memblock memblock_next_valid_pfn(unsigned long pfn)
->> +{
->> +	struct memblock_type *type = &memblock.memory;
->> +	unsigned int right = type->cnt;
->> +	unsigned int mid, left = 0;
->> +	phys_addr_t addr = PFN_PHYS(++pfn);
->> +
->> +	do {
->> +		mid = (right + left) / 2;
->> +
->> +		if (addr < type->regions[mid].base)
->> +			right = mid;
->> +		else if (addr >= (type->regions[mid].base +
->> +				  type->regions[mid].size))
->> +			left = mid + 1;
->> +		else {
->> +			/* addr is within the region, so pfn is valid */
->> +			return pfn;
->> +		}
->> +	} while (left < right);
->> +
-> 
-> We have memblock_search() for this.
-
-I will update my patch as you suggested.
-
-Thanks
-Hanjun
-
+Regards,
+Lucas
 
 _______________________________________________
 linux-arm-kernel mailing list
