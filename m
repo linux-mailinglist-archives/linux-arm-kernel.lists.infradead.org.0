@@ -2,86 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E5B572EE8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 14:33:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50FD972EF1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 14:36:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kotfdyHyMm89oQsqkhMPOcuWxg0HAwxCwwPdP8NFsA0=; b=SlLQ410yRx2qPB
-	xHgOA70Dzh0TAyxsoeplg2KSvzd2mwy2He6wo42JXnrS3cfVfDep9xSsN969CaimcEdZdOfNFUzgx
-	RgL6sGZVJ05V6YOM6MZP562MAeMm5mSEM6c8JCyNu06RbDOxeKZ2WeVtz70pFGgWmmJPwFiP9p/hz
-	0bHc3tcle0s+8ut2BwO/kCLrudGaCFThXkkRoeP/k8nffnaeoqNGkuOWNixAmVfuec5VztYlR66NF
-	0aJBsiILzB1FPxRJifPz/j2aqi5u3N2SYHlx/qfvXwGo9PIzcqNFWbaSIFFHXZ4RTNEOQFG4TLdBP
-	TMchqbUEybQI2upISVkA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0dmM+4l5aD2qteNeFe26Fkt4chtMk5VI5+iXaP1KBT4=; b=V4NmHdAfeZkbEh
+	Ku2iUjZNxgSMdaVA7JhvM+3+Wv/EEr419ALbTgR9hqiKZ82FbrZMsVMQIMcGFrR318nuGdK7mL52e
+	IL0deRmDKMUAokwr1AkbxD5xrLxHpypHjy1qb8iXd1Ng9Yjtpm3s5xMEg6zPDrmftSBltsq+8uANV
+	D+UQY9GnuMGKJZjf8GB7B9/H/6Sx4z73P+eKSdm0jcUiKgZYisPmdfD/2xEmCV/UtGZtS/D0H81Hq
+	JcbEntLVrpcR7V8g3J+Ty43mbFlKsZy9N4HB7ZvMRM2ZmPRJFk61jAQDlSNMyxjFXD5QeSWtn3Heg
+	9Tm9VoB3/tqbOi4au0yg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqGSW-0008T5-OZ; Wed, 24 Jul 2019 12:33:28 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqGSN-0008So-Mm
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 12:33:20 +0000
-Received: by mail-lf1-x142.google.com with SMTP id v85so31801607lfa.6
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 24 Jul 2019 05:33:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=X7kS5ybLEu9f+0d0ORBluh1Iea1DKw9wPyo+P2zv7nU=;
- b=U5LKoKOHcjVoVpEjsIlvqHSGVMxp0l/IvE/3HS3WSSzG3rIaHsjERsN3xAJcKhHiBZ
- agNocCeScCzkjLkEcV78/wF5qEJzanfry+P55q13YsSD847Y3zlhgxel7MnYXK8SvMbu
- pf3sNFjzjsMDtE6d0kG9CYq355vNcgo3eQe79fOO5BfouaKJG1rW9gXpL8kFAig0HIJb
- a0uydKJdkyi0zb6SUEu4g1yMmXyOWwvCTBkNJbjS20bzRwVKwrsFKiIkTardEcWeDPvF
- mkQh/cqUw0FVWtaXX7SQII1T1D86RDgy6qiHH8/NDLevmFyCz33+z9d4P/nJpFYbCHPx
- Br0A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=X7kS5ybLEu9f+0d0ORBluh1Iea1DKw9wPyo+P2zv7nU=;
- b=Gumewf9lnegKwWA7Hw3pQOq701DZ0x42HotE/CBcaM9rIAjyyEsCyeh7br4WDP0QK6
- y+7AkfYNmrBrL7p+lFHlVdFyqV/iRV/ktQZUOwnVfmRQncflFomOx8vQThOM5vFRDZdJ
- 5YOFoBzqqXPzdDaXyDQ3rZjrNuISYJjZm4qPAlIML0ZQUB+DlrEBXbUh77WDG+q6BcPH
- GkYLZVPO/j3JzDM4r17vnz7OSLuyzn75bYO1j2khCloupBhB3Ayo8SYVG3GfL9gFHf9y
- UspoyMBy2wFfjnIy2wmo28Gk/bD4G0/HoJ9DXzQCNFP0HW8cnf6C3GAI7Sary9EDr8ht
- qhig==
-X-Gm-Message-State: APjAAAVK+jy9zZIpxeMIFKl9ZYRIk7ogF9gJobjl01n4+qDobHUbzqQ4
- LQO63X12uhG+N9DzCsZELMsKbGIw2nRePr9oXqPLbQ==
-X-Google-Smtp-Source: APXvYqxF9+lZImdaWVw2qDAanbZBmG/zxRqdtKg/JeSUyBHG5btyFc/m0EUT/jR3A7N9H66HWGbnKaViaV05x6HnPu0=
-X-Received: by 2002:a19:7616:: with SMTP id c22mr39077348lff.115.1563971598026; 
- Wed, 24 Jul 2019 05:33:18 -0700 (PDT)
+	id 1hqGVS-0001l4-Kh; Wed, 24 Jul 2019 12:36:30 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hqGVD-0001kD-Fd; Wed, 24 Jul 2019 12:36:17 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7162428;
+ Wed, 24 Jul 2019 05:36:14 -0700 (PDT)
+Received: from [10.1.27.173] (unknown [10.1.27.173])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E48793F71A;
+ Wed, 24 Jul 2019 05:36:11 -0700 (PDT)
+Subject: Re: [PATCH RFC 18/18] ARM: dts: Add minimal Raspberry Pi 4 support
+To: Marc Zyngier <marc.zyngier@arm.com>, Stefan Wahren <wahrenst@gmx.net>
+References: <1563398164-2679-1-git-send-email-wahrenst@gmx.net>
+ <1563398164-2679-5-git-send-email-wahrenst@gmx.net>
+ <20190723191326.3afdff83@why> <34b2b928-c078-8898-842b-908a90593932@arm.com>
+ <27de7618-57a7-5069-1c22-b45e93999b8c@arm.com>
+From: Vladimir Murzin <vladimir.murzin@arm.com>
+Message-ID: <b5d5e7e5-34dd-e1df-ace0-269bbc12ec05@arm.com>
+Date: Wed, 24 Jul 2019 13:36:10 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-References: <20190723133755.22677-1-linus.walleij@linaro.org>
- <20190723133755.22677-2-linus.walleij@linaro.org>
- <1709073.y2qmsckc0Q@linux-e202.suse.de>
-In-Reply-To: <1709073.y2qmsckc0Q@linux-e202.suse.de>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Wed, 24 Jul 2019 14:33:06 +0200
-Message-ID: <CACRpkdYAgLJ9asftN5EafeN5EVEyH_xHVdwjbecZqvgz-JJ98A@mail.gmail.com>
-Subject: Re: [PATCH 1/3] RFT: drm/pl111: Support grayscale
-To: Fabian Vogt <fabian@ritter-vogt.de>
+In-Reply-To: <27de7618-57a7-5069-1c22-b45e93999b8c@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_053319_749301_062A87EB 
-X-CRM114-Status: UNSURE (   9.46  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190724_053616_190338_18BC70F2 
+X-CRM114-Status: GOOD (  20.81  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,34 +63,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Daniel Tang <dt.tangr@gmail.com>,
- "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
+ Florian Fainelli <f.fainelli@gmail.com>, Scott Branden <sbranden@broadcom.com>,
+ Stephen Boyd <sboyd@kernel.org>, Ray Jui <rjui@broadcom.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Adrian Hunter <adrian.hunter@intel.com>, Eric Anholt <eric@anholt.net>,
+ Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
+ Mark Brown <broonie@kernel.org>, linux-rpi-kernel@lists.infradead.org,
+ Michael Turquette <mturquette@baylibre.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jul 23, 2019 at 5:19 PM Fabian Vogt <fabian@ritter-vogt.de> wrote:
+Hi Marc,
 
-> I gave the series a try (virtual CX and TP so far, will do on a real CX later):
-> OOPS with a nullptr deref during probe.
-> This diff which just moves some lines around fixes that and the LCD appears to
-> work properly.
+On 7/24/19 11:41 AM, Marc Zyngier wrote:
+> Hi Vladimir,
+> 
+> On 24/07/2019 10:51, Vladimir Murzin wrote:
+>> On 7/23/19 7:13 PM, Marc Zyngier wrote:
+>>>> +	arm-pmu {
+>>>> +		/*
+>>>> +		 * N.B. the A72 PMU support only exists in arch/arm64, hence
+>>>> +		 * the fallback to the A53 version.
+>>>> +		 */
+>>>> +		compatible = "arm,cortex-a72-pmu", "arm,cortex-a53-pmu";
+>>> You're thus guaranteed to count the wrong events... And you could at
+>>> least have "arm,armv8-pmuv3".
+>>>
+>>
+>> Isn't "arm,armv8-pmuv3" still "only exists in arch/arm64" (along with "arm,cortex-a53-pmu")?
+> 
+> Absolutely. And yet this is describing the HW, not the shortcomings of
+> the kernel. I want to be able to take the same DT and run it on the
+> 64bit kernel.
+> 
 
-OK I folded this into my patch, thanks!
+Agreed. I was confused by comment block which describes software side of things rather than hardware.
 
-> Once I verified the 24bit depth and clock speed config on HW as well, I can
-> give you my Tested-by, or would you prefer that I resubmit your series with the
-> fix below?
+@Stefan, can you, please, update compatible per Marc suggestion, i.e
 
-It's fine if you test it just with your patch as-is, I didn't change anything
-else.
+compatible = "arm,cortex-a72-pmu", "arm,armv8-pmuv3";
 
-I would be amazed if it "just works" now.
+and remove that comment block?
 
-Yours,
-Linus Walleij
+>> P.S.
+>> Yes, I remember you posted some related patches in a past yet they never hit mainline :(
+> 
+> Will wanted me to repaint the whole of the 32bit perf code. I may end-up
+> doing that in the future if I get some idle time (but don't hold your
+> breath).
+> 
+
+:)
+
+Thanks
+Vladimir
+
+> 	M.
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
