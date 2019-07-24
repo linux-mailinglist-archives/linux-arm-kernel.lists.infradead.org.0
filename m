@@ -2,53 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 385E472F19
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 14:40:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B69772F18
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 14:40:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Cy0Ze9Utnxj6QsHk3rduCIpCDdyoDwm5zrO0C9gpeXQ=; b=cxHSK2FjPcWNrwIeOs67k3sM2
-	T9UPkce88+gC8YT+JruyWlKHZkh8MVXqzSJu1ufMeIpfYbTLEIRJmCJUyshIJ0XUNAo8/9vvQ6aFt
-	VKTPO4xvwtw6xkiF2TcYYVGjHMLwC3Hsj9/dtQfT8Nw/dW5/Xo492YfL+6UCWT2yBSSMTHpwqNIBP
-	nppNXb9t5kNlrAGA6EAjEq0CYO2zD8qQvhkDezgY4kUWnEerEOFa0Z3loDSqL3A0ETqAm1vsNdRJ2
-	JFqiEgwWtA/lYT7u+8rVYA0H/Gjq9z3tMcdKIkBq8OKyLW3a1V/HuiDl3JkGwZKhMW5fwGs/7Idr2
-	xoJfYG6Cw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bk6wao0sbAoi+3gJtf9js6hp3Y//OfwM+uiZgQkERq8=; b=gT33cChpuA+lGP
+	e5fDnDJOBzaofPY3NvcKczlae2E9fSlAhukFgbHaJW8Zb4YwJs0pBUldehwLef9SeKK+jVc8OOMHV
+	Ujho+o5Pb8uQ9mdmSFWIR2JTzkbjRFs3usdQYEZMPt4fL7Lh43i3VeO7GnZ1a7SU5HLDwZWOwSUyP
+	E+Ipkwi/rNnXPblQJpfuJwey/mZBEmDibBNVVMYBfe0OoW+nQOy4GrMXGCal2iEAyHNJi0nc+AXST
+	zaWikIA8db61b8GsfMGBFfrb3RdAAhiDKBPURd9XyoIMMY4erzwPGNB6Wi+raE6f4qBicmAOwCG/V
+	4xFBcGdlkL4wTZtRO73A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqGZK-0004uI-3g; Wed, 24 Jul 2019 12:40:30 +0000
-Received: from relay6-d.mail.gandi.net ([217.70.183.198])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqGYC-0002mH-2C
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 12:39:22 +0000
-X-Originating-IP: 86.250.200.211
-Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
- [86.250.200.211]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id 44B87C000F;
- Wed, 24 Jul 2019 12:39:11 +0000 (UTC)
-Date: Wed, 24 Jul 2019 14:39:10 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Sakari Ailus <sakari.ailus@linux.intel.com>
-Subject: Re: [PATCH v6 0/5] media: Allwinner A10 CSI support
-Message-ID: <20190724123910.lr6lipnlr7o5dxar@flea>
-References: <cover.34bcd988943a26671681eaf849aacab51fab1cfe.1562847292.git-series.maxime.ripard@bootlin.com>
+	id 1hqGZ7-0003PI-KJ; Wed, 24 Jul 2019 12:40:17 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hqGY9-0002m6-Vr
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 12:39:19 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3FA53337;
+ Wed, 24 Jul 2019 05:39:17 -0700 (PDT)
+Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 4C34F3F71A; Wed, 24 Jul 2019 05:39:16 -0700 (PDT)
+Subject: Re: [PATCH 43/59] KVM: arm64: nv: Trap and emulate AT instructions
+ from virtual EL2
+To: Tomasz Nowicki <tn@semihalf.com>, linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org
+References: <20190621093843.220980-1-marc.zyngier@arm.com>
+ <20190621093843.220980-44-marc.zyngier@arm.com>
+ <0411c636-adbd-98d0-5191-2b073daaf68e@semihalf.com>
+From: Marc Zyngier <marc.zyngier@arm.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
+ 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
+ Z46HaNmN2hZS/oJ69c1DI5Rcww==
+Organization: ARM Ltd
+Message-ID: <327dfc0e-e7c9-0d18-2615-1db5b05121f4@arm.com>
+Date: Wed, 24 Jul 2019 13:39:14 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-In-Reply-To: <cover.34bcd988943a26671681eaf849aacab51fab1cfe.1562847292.git-series.maxime.ripard@bootlin.com>
-User-Agent: NeoMutt/20180716
+In-Reply-To: <0411c636-adbd-98d0-5191-2b073daaf68e@semihalf.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_053920_493626_12AD2706 
-X-CRM114-Status: GOOD (  17.35  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190724_053918_136399_C11E1911 
+X-CRM114-Status: GOOD (  18.83  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.198 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.198 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -62,278 +110,126 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Hans Verkuil <hans.verkuil@cisco.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Frank Rowand <frowand.list@gmail.com>, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============4163107848661988906=="
+Cc: Andre Przywara <andre.przywara@arm.com>, Dave Martin <Dave.Martin@arm.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 24/07/2019 11:25, Tomasz Nowicki wrote:
+> On 21.06.2019 11:38, Marc Zyngier wrote:
+>> From: Jintack Lim <jintack.lim@linaro.org>
+>>
+>> When supporting nested virtualization a guest hypervisor executing AT
+>> instructions must be trapped and emulated by the host hypervisor,
+>> because untrapped AT instructions operating on S1E1 will use the wrong
+>> translation regieme (the one used to emulate virtual EL2 in EL1 instead
+>> of virtual EL1) and AT instructions operating on S12 will not work from
+>> EL1.
+>>
+>> This patch does several things.
+>>
+>> 1. List and define all AT system instructions to emulate and document
+>> the emulation design.
+>>
+>> 2. Implement AT instruction handling logic in EL2. This will be used to
+>> emulate AT instructions executed in the virtual EL2.
+>>
+>> AT instruction emulation works by loading the proper processor
+>> context, which depends on the trapped instruction and the virtual
+>> HCR_EL2, to the EL1 virtual memory control registers and executing AT
+>> instructions. Note that ctxt->hw_sys_regs is expected to have the
+>> proper processor context before calling the handling
+>> function(__kvm_at_insn) implemented in this patch.
+>>
+>> 4. Emulate AT S1E[01] instructions by issuing the same instructions in
+>> EL2. We set the physical EL1 registers, NV and NV1 bits as described in
+>> the AT instruction emulation overview.
+>>
+>> 5. Emulate AT A12E[01] instructions in two steps: First, do the stage-1
+>> translation by reusing the existing AT emulation functions.  Second, do
+>> the stage-2 translation by walking the guest hypervisor's stage-2 page
+>> table in software. Record the translation result to PAR_EL1.
+>>
+>> 6. Emulate AT S1E2 instructions by issuing the corresponding S1E1
+>> instructions in EL2. We set the physical EL1 registers and the HCR_EL2
+>> register as described in the AT instruction emulation overview.
+>>
+>> 7. Forward system instruction traps to the virtual EL2 if the corresponding
+>> virtual AT bit is set in the virtual HCR_EL2.
+>>
+>>    [ Much logic above has been reworked by Marc Zyngier ]
+>>
+>> Signed-off-by: Jintack Lim <jintack.lim@linaro.org>
+>> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
+>> Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
+>> ---
+>>   arch/arm64/include/asm/kvm_arm.h |   2 +
+>>   arch/arm64/include/asm/kvm_asm.h |   2 +
+>>   arch/arm64/include/asm/sysreg.h  |  17 +++
+>>   arch/arm64/kvm/hyp/Makefile      |   1 +
+>>   arch/arm64/kvm/hyp/at.c          | 217 +++++++++++++++++++++++++++++++
+>>   arch/arm64/kvm/hyp/switch.c      |  13 +-
+>>   arch/arm64/kvm/sys_regs.c        | 202 +++++++++++++++++++++++++++-
+>>   7 files changed, 450 insertions(+), 4 deletions(-)
+>>   create mode 100644 arch/arm64/kvm/hyp/at.c
+>>
+> 
+> [...]
+> 
+>> +
+>> +void __kvm_at_s1e01(struct kvm_vcpu *vcpu, u32 op, u64 vaddr)
+>> +{
+>> +	struct kvm_cpu_context *ctxt = &vcpu->arch.ctxt;
+>> +	struct mmu_config config;
+>> +	struct kvm_s2_mmu *mmu;
+>> +
+>> +	/*
+>> +	 * We can only get here when trapping from vEL2, so we're
+>> +	 * translating a guest guest VA.
+>> +	 *
+>> +	 * FIXME: Obtaining the S2 MMU for a a guest guest is horribly
+>> +	 * racy, and we may not find it.
+>> +	 */
+>> +	spin_lock(&vcpu->kvm->mmu_lock);
+>> +
+>> +	mmu = lookup_s2_mmu(vcpu->kvm,
+>> +			    vcpu_read_sys_reg(vcpu, VTTBR_EL2),
+>> +			    vcpu_read_sys_reg(vcpu, HCR_EL2));
+>> +
+>> +	if (WARN_ON(!mmu))
+>> +		goto out;
+>> +
+>> +	/* We've trapped, so everything is live on the CPU. */
+>> +	__mmu_config_save(&config);
+>> +
+>> +	write_sysreg_el1(ctxt->sys_regs[TTBR0_EL1],	SYS_TTBR0);
+>> +	write_sysreg_el1(ctxt->sys_regs[TTBR1_EL1],	SYS_TTBR1);
+>> +	write_sysreg_el1(ctxt->sys_regs[TCR_EL1],	SYS_TCR);
+>> +	write_sysreg_el1(ctxt->sys_regs[SCTLR_EL1],	SYS_SCTLR);
+>> +	write_sysreg(kvm_get_vttbr(mmu),		vttbr_el2);
+>> +	/* FIXME: write S2 MMU VTCR_EL2 */
+>> +	write_sysreg(config.hcr & ~HCR_TGE,		hcr_el2);
+> 
+> All below AT S1E* operations may initiate stage-1 PTW. And stage-1 table 
+> walk addresses are themselves subject to stage-2 translation.
+> 
+> So should we enable stage-2 translation here by setting HCR_VM bit?
 
---===============4163107848661988906==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="7galzcqmm5r5acql"
-Content-Disposition: inline
+Hopefully that's already the case, otherwise nothing works. Have you
+verified that it is actually clear at this stage?
 
+It's a bit of a moot point as we need a full S1 PTW in SW anyway (so
+most of that code will eventually be removed), but at least this should
+be fixed if it needs to.
 
---7galzcqmm5r5acql
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Thanks,
 
-Hi,
-
-On Thu, Jul 11, 2019 at 02:15:02PM +0200, Maxime Ripard wrote:
-> Hi,
->
-> Here is a series introducing the support for the A10 (and SoCs of the same
-> generation) CMOS Sensor Interface (called CSI, not to be confused with
-> MIPI-CSI, which isn't support by that IP).
->
-> That interface is pretty straightforward, but the driver has a few issues
-> that I wanted to bring up:
->
->   * The only board I've been testing this with has an ov5640 sensor
->     attached, which doesn't work with the upstream driver. Copying the
->     Allwinner init sequence works though, and this is how it has been
->     tested. Testing with a second sensor would allow to see if it's an
->     issue on the CSI side or the sensor side.
->   * We don't have support for the ISP at the moment, but this can be added
->     eventually.
->
-> Here is the v4l2-compliance output (commit f61132e81d79 of v4l-utils), and
-> after running media-ctl -d /dev/media1 -v --set-v4l2 "'ov5640 1-0021':0
-> [fmt:YUYV8_2X8/640x4 80 field:none]"
->
-> Compliance test for device /dev/video1:
->
-> Driver Info:
-> 	Driver name      : sun4i_csi
-> 	Card type        : sun4i-csi
-> 	Bus info         : platform:1c09000.csi
-> 	Driver version   : 5.2.0
-> 	Capabilities     : 0x84201000
-> 		Video Capture Multiplanar
-> 		Streaming
-> 		Extended Pix Format
-> 		Device Capabilities
-> 	Device Caps      : 0x04201000
-> 		Video Capture Multiplanar
-> 		Streaming
-> 		Extended Pix Format
-> Media Driver Info:
-> 	Driver name      : sun4i-csi
-> 	Model            : Allwinner Video Capture Device
-> 	Serial           :
-> 	Bus info         :
-> 	Media version    : 5.2.0
-> 	Hardware revision: 0x00000000 (0)
-> 	Driver version   : 5.2.0
-> Interface Info:
-> 	ID               : 0x03000008
-> 	Type             : V4L Video
-> Entity Info:
-> 	ID               : 0x00000006 (6)
-> 	Name             : sun4i_csi
-> 	Function         : V4L2 I/O
-> 	Pad 0x01000007   : 0: Sink, Must Connect
-> 	  Link 0x0200000a: from remote pad 0x1000005 of entity 'sun4i-csi-0': Data, Enabled, Immutable
->
-> Required ioctls:
-> 	test MC information (see 'Media Driver Info' above): OK
-> 	test VIDIOC_QUERYCAP: OK
->
-> Allow for multiple opens:
-> 	test second /dev/video1 open: OK
-> 	test VIDIOC_QUERYCAP: OK
-> 	test VIDIOC_G/S_PRIORITY: OK
-> 	test for unlimited opens: OK
->
-> Debug ioctls:
-> 	test VIDIOC_DBG_G/S_REGISTER: OK (Not Supported)
-> 	test VIDIOC_LOG_STATUS: OK (Not Supported)
->
-> Input ioctls:
-> 	test VIDIOC_G/S_TUNER/ENUM_FREQ_BANDS: OK (Not Supported)
-> 	test VIDIOC_G/S_FREQUENCY: OK (Not Supported)
-> 	test VIDIOC_S_HW_FREQ_SEEK: OK (Not Supported)
-> 	test VIDIOC_ENUMAUDIO: OK (Not Supported)
-> 	test VIDIOC_G/S/ENUMINPUT: OK
-> 	test VIDIOC_G/S_AUDIO: OK (Not Supported)
-> 	Inputs: 1 Audio Inputs: 0 Tuners: 0
->
-> Output ioctls:
-> 	test VIDIOC_G/S_MODULATOR: OK (Not Supported)
-> 	test VIDIOC_G/S_FREQUENCY: OK (Not Supported)
-> 	test VIDIOC_ENUMAUDOUT: OK (Not Supported)
-> 	test VIDIOC_G/S/ENUMOUTPUT: OK (Not Supported)
-> 	test VIDIOC_G/S_AUDOUT: OK (Not Supported)
-> 	Outputs: 0 Audio Outputs: 0 Modulators: 0
->
-> Input/Output configuration ioctls:
-> 	test VIDIOC_ENUM/G/S/QUERY_STD: OK (Not Supported)
-> 	test VIDIOC_ENUM/G/S/QUERY_DV_TIMINGS: OK (Not Supported)
-> 	test VIDIOC_DV_TIMINGS_CAP: OK (Not Supported)
-> 	test VIDIOC_G/S_EDID: OK (Not Supported)
->
-> Control ioctls (Input 0):
-> 	test VIDIOC_QUERY_EXT_CTRL/QUERYMENU: OK (Not Supported)
-> 	test VIDIOC_QUERYCTRL: OK (Not Supported)
-> 	test VIDIOC_G/S_CTRL: OK (Not Supported)
-> 	test VIDIOC_G/S/TRY_EXT_CTRLS: OK (Not Supported)
-> 	test VIDIOC_(UN)SUBSCRIBE_EVENT/DQEVENT: OK (Not Supported)
-> 	test VIDIOC_G/S_JPEGCOMP: OK (Not Supported)
-> 	Standard Controls: 0 Private Controls: 0
->
-> Format ioctls (Input 0):
-> 	test VIDIOC_ENUM_FMT/FRAMESIZES/FRAMEINTERVALS: OK
-> 	test VIDIOC_G/S_PARM: OK (Not Supported)
-> 	test VIDIOC_G_FBUF: OK (Not Supported)
-> 	test VIDIOC_G_FMT: OK
-> 	test VIDIOC_TRY_FMT: OK
-> 	test VIDIOC_S_FMT: OK
-> 	test VIDIOC_G_SLICED_VBI_CAP: OK (Not Supported)
-> 	test Cropping: OK (Not Supported)
-> 	test Composing: OK (Not Supported)
-> 	test Scaling: OK
->
-> Codec ioctls (Input 0):
-> 	test VIDIOC_(TRY_)ENCODER_CMD: OK (Not Supported)
-> 	test VIDIOC_G_ENC_INDEX: OK (Not Supported)
-> 	test VIDIOC_(TRY_)DECODER_CMD: OK (Not Supported)
->
-> Buffer ioctls (Input 0):
-> 	test VIDIOC_REQBUFS/CREATE_BUFS/QUERYBUF: OK
-> 	test VIDIOC_EXPBUF: OK
->
-> Test input 0:
->
-> Streaming ioctls:
-> 	test read/write: OK (Not Supported)
-> 	test blocking wait: OK
-> 	test MMAP: OK
-> 	test USERPTR: OK (Not Supported)
-> 	test DMABUF: OK (Not Supported)
->
-> Total: 49, Succeeded: 49, Failed: 0, Warnings: 0
-
-As requested by Sakari, here is the media-ctl -p output, both at boot,
-and after the link setup.
-
-# media-ctl -p -d /dev/media1
-Media controller API version 5.2.0
-
-Media device information
-------------------------
-driver          sun4i-csi
-model           Allwinner Video Capture Device
-serial
-bus info
-hw revision     0x0
-driver version  5.2.0
-
-Device topology
-- entity 1: ov5640 1-0021 (1 pad, 1 link)
-            type V4L2 subdev subtype Sensor flags 0
-            device node name /dev/v4l-subdev0
-	pad0: Source
-		[fmt:UYVY8_2X8/640x480@1/30 field:none colorspace:srgb xfer:srgb ycbcr:601 quantization:full-range]
-		-> "sun4i-csi-0":0 [ENABLED,IMMUTABLE]
-
-- entity 3: sun4i-csi-0 (2 pads, 2 links)
-            type V4L2 subdev subtype Unknown flags 0
-            device node name /dev/v4l-subdev1
-	pad0: Sink
-		<- "ov5640 1-0021":0 [ENABLED,IMMUTABLE]
-	pad1: Source
-		[fmt:unknown/0x0]
-		-> "sun4i_csi":0 [ENABLED,IMMUTABLE]
-
-- entity 6: sun4i_csi (1 pad, 1 link)
-            type Node subtype V4L flags 0
-            device node name /dev/video1
-	pad0: Sink
-		<- "sun4i-csi-0":1 [ENABLED,IMMUTABLE]
-
-# media-ctl -d /dev/media1 -v --set-v4l2 "'ov5640 1-0021':0 [fmt:YUYV8_2X8/640x4
-80 field:none]"
-Opening media device /dev/media1
-Enumerating entities
-Found 3 entities
-Enumerating pads and links
-Setting up format YUYV8_2X8 640x480 on pad ov5640 1-0021/0
-Format set: YUYV8_2X8 640x480
-Setting up format YUYV8_2X8 640x480 on pad sun4i-csi-0/0
-Format set: YUYV8_2X8 640x480
-# media-ctl -p -d /dev/media1
-Media controller API version 5.2.0
-
-Media device information
-------------------------
-driver          sun4i-csi
-model           Allwinner Video Capture Device
-serial
-bus info
-hw revision     0x0
-driver version  5.2.0
-
-Device topology
-- entity 1: ov5640 1-0021 (1 pad, 1 link)
-            type V4L2 subdev subtype Sensor flags 0
-            device node name /dev/v4l-subdev0
-	pad0: Source
-		[fmt:YUYV8_2X8/640x480@1/30 field:none colorspace:srgb xfer:srgb ycbcr:601 quantization:full-range]
-		-> "sun4i-csi-0":0 [ENABLED,IMMUTABLE]
-
-- entity 3: sun4i-csi-0 (2 pads, 2 links)
-            type V4L2 subdev subtype Unknown flags 0
-            device node name /dev/v4l-subdev1
-	pad0: Sink
-		<- "ov5640 1-0021":0 [ENABLED,IMMUTABLE]
-	pad1: Source
-		[fmt:YUYV8_2X8/640x480]
-		-> "sun4i_csi":0 [ENABLED,IMMUTABLE]
-
-- entity 6: sun4i_csi (1 pad, 1 link)
-            type Node subtype V4L flags 0
-            device node name /dev/video1
-	pad0: Sink
-		<- "sun4i-csi-0":1 [ENABLED,IMMUTABLE]
-
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
---7galzcqmm5r5acql
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXThRaQAKCRDj7w1vZxhR
-xfneAQCqVblAWBiXZyLmtv/VgoYllTAICjSZPmzuQRvh0vTbbwEA/YglnsR5zwUA
-IZkVR/YSQVPFbJ88ZyRSSMmNmAHo2wo=
-=YNV2
------END PGP SIGNATURE-----
-
---7galzcqmm5r5acql--
-
-
---===============4163107848661988906==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+	M. (who really needs to get on top of these review comments)
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4163107848661988906==--
-
