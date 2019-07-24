@@ -2,86 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C586F740C8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 23:20:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 101AA74105
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 23:47:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/ISE/YnkF75Z4TMlF1coV2xusMndWKZGBnnLsVN70zQ=; b=ZkYpDeFbloAXFi
-	ZzQ9cdhCHiSuE3aPKE2t1Ner1mJ/GJaOeuQWY3v6vivz50SW99hVZFtbyZnQJpSHE7MzUad7HYMSy
-	hVsKbWxs+2yjU2uOFETngcXNcjiVZVuIp0980IT2dO1cEU2u5uNbCa2zgikC6sP2q4A/uAe6Du2uM
-	IvVRIGe9yjklanbxHYxOXihovO/VB2VdAw3L4ONnSW7xZBfbQJofgSOGyDeBB4yaXgBBIPJKGxFuf
-	MlC1K2dLntJUQS7kQbZG/+lUpl32xtrL4D0n6kgKe64v5zYePxEoQKclJHO797zO43LgRr7KzRyZC
-	Gf0FxEky+2REQC+iLCNA==;
+	List-Owner; bh=QA2QkUb4DTwS4BstC05wOARWKut77l0ol7S6t8pVjlc=; b=KYD+joStc6noJx
+	qrzb6Xbe81sKCfP9hBm81aV7y6P4pwRYiyqi6nRrWAP344TJNg1bWSPd77XanMbDv3KdtvxMx2wDD
+	M3TJbJkMSwVcjDMcj6rK3F+dPZBCviXn4c07XKKJLvQGv2Y+IEcNr6bEmkK62N6KUIEkJh0dOqtYe
+	2AI851afHFgIlBWP8/HUUWSBYFiLtVaM82he4Hul6ZJzSm+1jCYq8rOJTACKEAYVX8TncV7xrjJO2
+	Uzkg5JMwy/Oh2+AwdESpeL1t9y35ctKnV+WDK82+NAv3UnM5BQIcWEQsVbuQKrInJnGlmDvxT0i5m
+	RndCPIKDbM/v3uGYNUZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqOgU-0004EB-AU; Wed, 24 Jul 2019 21:20:26 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1hqP6R-0000EG-IU; Wed, 24 Jul 2019 21:47:15 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqOft-0004DP-Pm
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 21:19:51 +0000
-Received: by mail-io1-xd44.google.com with SMTP id e20so62303647iob.9
+ id 1hqP5y-0000DA-1k
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 21:46:47 +0000
+Received: by mail-io1-xd43.google.com with SMTP id m24so92874561ioo.2
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 24 Jul 2019 14:19:49 -0700 (PDT)
+ Wed, 24 Jul 2019 14:46:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=U42kawvbKkJEpel5zVan/ikF9rLZvUvs8OMQwcRg1UQ=;
- b=Hj+vv5UDzb40nMOp/TYlwPPAC+V4UscPzE4W3bfNlI7Qb97uhVRuGULd4B00296MSj
- EjBIE+XYJXv2DiYixI2xTEUG2Ph2XZ7Ubm85jxcyt/IVI4nCKYZpit8TBHwruNP9ATlo
- bQ8Up4xTuUPB8AJubgG7inQlixBfoprr1mWVM=
+ :cc; bh=eOzpntW4jYuzCuRORz9nWSGQo3322zBOXDNxUCNWQVo=;
+ b=N49uHsHU+zcaMFDqNV4M15/FPHDeWl0BFf+uvUz6Ah/f9VZ3iGgGU7udezJpszRZrl
+ OuaZ+b0F8RqK82CQm9avLSxoSp0LcZU237Tk1WiIDqICFMob+o2PoxWNVNtFnmSMARna
+ DzJTZ6PwcljRvItJBPksdvEKkg7zDpVhXGLzQ=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=U42kawvbKkJEpel5zVan/ikF9rLZvUvs8OMQwcRg1UQ=;
- b=osL2AmiEuXsieED/Se2NlM62TEcW5Ntyv82cUACU40gPtOOSGhG1D5Qr77ynUJ6zrz
- oRR9YVnIwvZPwD+cBpR8HmrKYQXXrr0o3atKd9jGRkJco0dKnKfIXpbXMdYA4+rC1Xq5
- 7G3DXI5R9nu8E2MgmUZF0IDojwYo0LNDhdeXWOnSkhY8QpOd7XaMdY0918tZfinVAcRh
- Y5zhWZASGenuTihuwCbVWxa4v5LTuDb5dTN3/3c9S9cDqV9KWbU136vPpAfPQ9+5rnhk
- P6zNBIC3jp3FVmCf2dxp6wYsHMLbOkKqTjnngnVt7Vj37G8NIiWQgus/eRjz49vvncUd
- LD4g==
-X-Gm-Message-State: APjAAAWwWLip9c/r8Q+ccFT/kWHZoHsO40bIV0jE9UMAPEcE7sGLhuEP
- TDUagnBgPJkRnE7XjOKXENfmvub2ZCQ=
-X-Google-Smtp-Source: APXvYqzky9fWXybywwR/gB/Vrs07KZbBxpMFCkmFRHLUgwzIUZBnx0CW6eAKjDU24gObOxytFxUs9Q==
-X-Received: by 2002:a5d:80cd:: with SMTP id h13mr37705798ior.259.1564003188736; 
- Wed, 24 Jul 2019 14:19:48 -0700 (PDT)
-Received: from mail-io1-f43.google.com (mail-io1-f43.google.com.
- [209.85.166.43])
- by smtp.gmail.com with ESMTPSA id t19sm49227738iog.41.2019.07.24.14.19.47
+ bh=eOzpntW4jYuzCuRORz9nWSGQo3322zBOXDNxUCNWQVo=;
+ b=g1UQEiKL8Mt9kqssXZrfdLHhqnEtvJuEdkq6w3iP1lfrcwWmDZ65uWazLqX0lWcZnG
+ Qzh2L0keggHChVxlVMgTfeW06exEXuUlokfljrPrtMMAeKEtq19kOOLxOw890jUiq6yv
+ n5wf4tgL4aWNbG3J/OY2gs6JQBgs6+02uxBQj1PjYX4uSIz/Z1s4c+joeRO1OYITENGG
+ ecLuomW+O5M5s/ABSA1cR5O8mfF3HhWwM9FjvKd0XEL0Vw2JMikUttq0dac81QrKoMcX
+ LunU2HFY+ac26AqFkrYUEiJdqLEK7lp0RQhWyGgBE/5ypskM8hc1yp1u6gnl6ZHdDrUB
+ SMMA==
+X-Gm-Message-State: APjAAAVLDwZHdPKYoLH2vIafxj8pkqp/pOj24Qz4Ozi2GQqU6z8wBfP3
+ kJVdVLSkRgulFLaZkeWWwMiqedVpHTc=
+X-Google-Smtp-Source: APXvYqz0GZ5l6B1bcWnZuLBZKua2d8U6LeONp/V67ETZimLs8RQ9yJlOMrQYvrFEatttuFwYKPgwzw==
+X-Received: by 2002:a5e:d51a:: with SMTP id e26mr72106534iom.71.1564004804594; 
+ Wed, 24 Jul 2019 14:46:44 -0700 (PDT)
+Received: from mail-io1-f54.google.com (mail-io1-f54.google.com.
+ [209.85.166.54])
+ by smtp.gmail.com with ESMTPSA id y18sm46599038iob.64.2019.07.24.14.46.44
  for <linux-arm-kernel@lists.infradead.org>
  (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Wed, 24 Jul 2019 14:19:48 -0700 (PDT)
-Received: by mail-io1-f43.google.com with SMTP id g20so92668231ioc.12
+ Wed, 24 Jul 2019 14:46:44 -0700 (PDT)
+Received: by mail-io1-f54.google.com with SMTP id e20so62436644iob.9
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 24 Jul 2019 14:19:47 -0700 (PDT)
-X-Received: by 2002:a5e:c241:: with SMTP id w1mr73854059iop.58.1564003187386; 
- Wed, 24 Jul 2019 14:19:47 -0700 (PDT)
+ Wed, 24 Jul 2019 14:46:44 -0700 (PDT)
+X-Received: by 2002:a6b:5103:: with SMTP id f3mr74359598iob.142.1564004803178; 
+ Wed, 24 Jul 2019 14:46:43 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190711223455.12210-1-mka@chromium.org>
-In-Reply-To: <20190711223455.12210-1-mka@chromium.org>
+ <20190711223455.12210-2-mka@chromium.org>
+In-Reply-To: <20190711223455.12210-2-mka@chromium.org>
 From: Doug Anderson <dianders@chromium.org>
-Date: Wed, 24 Jul 2019 14:19:35 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=U5Z4QqyjzJpERwhvJFPATS+khVWBCStnaJKZR0hHBWNQ@mail.gmail.com>
-Message-ID: <CAD=FV=U5Z4QqyjzJpERwhvJFPATS+khVWBCStnaJKZR0hHBWNQ@mail.gmail.com>
-Subject: Re: [PATCH v2 1/2] ARM: dts: rockchip: move rk3288-veryon display
- settings into a separate file
+Date: Wed, 24 Jul 2019 14:46:30 -0700
+X-Gmail-Original-Message-ID: <CAD=FV=Wj4Fei6t-STjY_FJkDKQYys5PcVquBJcdRE3wUN=y3Yg@mail.gmail.com>
+Message-ID: <CAD=FV=Wj4Fei6t-STjY_FJkDKQYys5PcVquBJcdRE3wUN=y3Yg@mail.gmail.com>
+Subject: Re: [PATCH v2 2/2] ARM: dts: rockchip: consolidate veyron panel and
+ backlight settings
 To: Matthias Kaehlcke <mka@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_141949_884574_388696F5 
-X-CRM114-Status: GOOD (  12.74  )
+X-CRM114-CacheID: sfid-20190724_144646_122402_7DD032FC 
+X-CRM114-Status: GOOD (  13.86  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ [list.dnswl.org]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -115,32 +116,104 @@ Hi,
 
 On Thu, Jul 11, 2019 at 3:35 PM Matthias Kaehlcke <mka@chromium.org> wrote:
 >
-> diff --git a/arch/arm/boot/dts/rk3288-veyron-edp.dtsi b/arch/arm/boot/dts/rk3288-veyron-edp.dtsi
-> new file mode 100644
-> index 000000000000..5d812e9e78aa
-> --- /dev/null
-> +++ b/arch/arm/boot/dts/rk3288-veyron-edp.dtsi
-> @@ -0,0 +1,124 @@
-> +// SPDX-License-Identifier: GPL-2.0
+> diff --git a/arch/arm/boot/dts/rk3288-veyron-minnie.dts b/arch/arm/boot/dts/rk3288-veyron-minnie.dts
+> index 4cc7d3659484..2b0801a539c9 100644
+> --- a/arch/arm/boot/dts/rk3288-veyron-minnie.dts
+> +++ b/arch/arm/boot/dts/rk3288-veyron-minnie.dts
+> @@ -15,40 +15,6 @@
+>                      "google,veyron-minnie-rev0", "google,veyron-minnie",
+>                      "google,veyron", "rockchip,rk3288";
+>
+> -       backlight_regulator: backlight-regulator {
+> -               compatible = "regulator-fixed";
+> -               enable-active-high;
+> -               gpio = <&gpio2 RK_PB4 GPIO_ACTIVE_HIGH>;
+> -               pinctrl-names = "default";
+> -               pinctrl-0 = <&bl_pwr_en>;
+> -               regulator-name = "backlight_regulator";
+> -               vin-supply = <&vcc33_sys>;
+> -               startup-delay-us = <15000>;
+> -       };
+> -
+> -       panel_regulator: panel-regulator {
+> -               compatible = "regulator-fixed";
+> -               enable-active-high;
+> -               gpio = <&gpio7 RK_PB6 GPIO_ACTIVE_HIGH>;
+> -               pinctrl-names = "default";
+> -               pinctrl-0 = <&lcd_enable_h>;
+> -               regulator-name = "panel_regulator";
+> -               startup-delay-us = <100000>;
+> -               vin-supply = <&vcc33_sys>;
+> -       };
+> -
+> -       vcc18_lcd: vcc18-lcd {
+> -               compatible = "regulator-fixed";
+> -               enable-active-high;
+> -               gpio = <&gpio2 RK_PB5 GPIO_ACTIVE_HIGH>;
+> -               pinctrl-names = "default";
+> -               pinctrl-0 = <&avdd_1v8_disp_en>;
+> -               regulator-name = "vcc18_lcd";
+> -               regulator-always-on;
+> -               regulator-boot-on;
+> -               vin-supply = <&vcc18_wl>;
+> -       };
+> -
+>         volume_buttons: volume-buttons {
+>                 compatible = "gpio-keys";
+>                 pinctrl-names = "default";
 
-Please allow MIT license:
+You forgot to remove the line:
 
-// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+power-supply = <&backlight_regulator>;
+
+...from minnie.
 
 
-> +&pinctrl {
-> +       backlight {
-> +               bl_en: bl-en {
-> +                       rockchip,pins = <7 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>;
-> +               };
-> +       };
+> diff --git a/arch/arm/boot/dts/rk3288-veyron-pinky.dts b/arch/arm/boot/dts/rk3288-veyron-pinky.dts
+> index 9b6f4d9b03b6..06af58e37a4b 100644
+> --- a/arch/arm/boot/dts/rk3288-veyron-pinky.dts
+> +++ b/arch/arm/boot/dts/rk3288-veyron-pinky.dts
+> @@ -14,7 +14,14 @@
+>         compatible = "google,veyron-pinky-rev2", "google,veyron-pinky",
+>                      "google,veyron", "rockchip,rk3288";
+>
+> +       /delete-node/backlight-regulator;
+> +       /delete-node/panel-regulator;
+>         /delete-node/emmc-pwrseq;
+> +       /delete-node/vcc18-lcd;
 > +};
+> +
+> +&backlight {
+> +       /delete-property/power-supply;
+>  };
+>
+>  &emmc {
+> @@ -52,7 +59,17 @@
+>         i2c-scl-rising-time-ns = <300>;
+>  };
+>
+> +&panel {
+> +       power-supply= <&vcc33_lcd>;
 
-nit: convention on Rockchip device tree files is that all pinctrl
-stuff is at the bottom.  Downstream I think I added comments about
-this but those didn't make it upstream.
+Might as well put a space before the "="?
 
-Also: why did you move "bl_en" here but not "edp_hpd"?
+
+>  &pinctrl {
+> +       /delete-node/ lcd;
+> +
+> +       backlight {
+> +               /delete-node/ bl_pwr_en;
+> +       };
+
+I general as the defender of "pinky", I'll let Heiko confirm he's OK
+with the color of this bikeshed.  Sometimes a bit of repetition is
+preferred over a bunch of confusing /delete-node/ statements since
+those tend to make things harder to reason about in general.  In this
+case I think things are cleaner after your patch but I won't say it's
+100% clear cut.
+
+Other than nits I have double-checked this patch, so feel free to add
+my Reviewed-by after nits are fixed.
 
 -Doug
 
