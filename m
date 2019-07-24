@@ -2,61 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4BC1D72C80
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 12:45:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E897672C89
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 12:47:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KKnashTfTVYHLqvfVgkJVnhOU+vTdXBCiwWuAU32VVE=; b=RQbM4Zo6ciVToT
-	QZKq4Vxl4wxyPlu1TT8KWik0toAEY27UlcqqiqIXbMxyBEGifezCnvvDt6Mfy09mhRZn2D0Oyg5rx
-	BaLVjN37NjEVil/tZAjIlPeBIuLygF1o0vZ2uNu48/MhcTF0xdaOdT7OTftZXL6TNcMrK++vTpAPg
-	CgXE2O74KzYwn9YfRobCaTYWZXjSemM+puO9jFHIpJFRXa0kV6yx7LBMK2tTRgR59X3UsIsgvzzTb
-	ENwoCdATRsmnXzZgx/DHHBj/FCtUfEDLw31ffOR9bX6r7ZyptknSPecIwhupbfr0fSBHw+HNcFzy1
-	xrrVHYuOis9OkGRwDbYw==;
+	List-Owner; bh=iXbQEhMcjW080d904wPsjraWMkbKoBA1DPTVNE/aGDY=; b=DMWJ1I7SWC1Kib
+	UZ+Miliw+GNGoNclo8Nh6mI8MZI/7d/+MbO6sjKOgda6sY53u5ch3pTjO1YCSZndIL73tco0taud8
+	yeHevs1YTWJpXwTElt+OvcjjDPZZizLG2qoQwMlt6TDvvVNF0+p70Y2Zxs2yUe7dlH/vBrEo273g3
+	yfCTVXX68vTiYQfEP7sfoRFadLAaKG6j0wwulP+1tyO/JOUNvTe9YR59PmvBBlowBrk423uFNto3U
+	R7Pk4XtQkyrFQszo/MUAd08xpdblxb5epGuEpN2iosFIUSNvC8eNUtR5ggAZZLIaGpNgpqDVHxhqc
+	O6WJdb7E/d+EO6DNzr0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqEmE-0006fR-W9; Wed, 24 Jul 2019 10:45:43 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hqEm3-0006eN-W0
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 10:45:33 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 63678337;
- Wed, 24 Jul 2019 03:45:28 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CCB8D3F71F;
- Wed, 24 Jul 2019 03:45:26 -0700 (PDT)
-Date: Wed, 24 Jul 2019 11:45:19 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Masami Hiramatsu <mhiramat@kernel.org>
-Subject: Re: [PATCH 3/3] arm64: debug: Remove rcu_read_lock from debug
- exception
-Message-ID: <20190724104518.GA2624@lakrids.cambridge.arm.com>
-References: <156342860634.8565.14804606041960884732.stgit@devnote2>
- <156342863822.8565.7624877983728871995.stgit@devnote2>
- <20190718062215.GG14271@linux.ibm.com>
- <20190718092022.GA3625@blommer>
- <20190718233133.146065f668da6297e57e52ef@kernel.org>
- <20190719095958.GA19605@lakrids.cambridge.arm.com>
- <20190720165458.7333b65244312843c2ca6857@kernel.org>
+	id 1hqEoA-00070t-Mr; Wed, 24 Jul 2019 10:47:42 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hqEo0-000705-AL
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 10:47:34 +0000
+Received: from mail-lf1-f41.google.com (mail-lf1-f41.google.com
+ [209.85.167.41])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6A6A3229F3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 24 Jul 2019 10:47:29 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1563965249;
+ bh=XqKYmTUOX1jzb8jQJM2UMIUVBoEiIefjBqEXYZC6+Q8=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=OoGNIGo9n4Dw84KdQMXHr14YIuwr2v8gYyq0EpRSCa9WKf+y7ws5X9/vH4LRw6p+8
+ SFkjNiyvQVYGlIeX6ckPa0c4raZaFSEN47cp/ldLMzJbn7Up0Ewl89osIHve4t2YQ+
+ BVe0+JzQteGkevspNOcHU9wHbFz3urZEyVZ27h2M=
+Received: by mail-lf1-f41.google.com with SMTP id s19so31627680lfb.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 24 Jul 2019 03:47:29 -0700 (PDT)
+X-Gm-Message-State: APjAAAX5dMgOFUmLoNC/GhXsPsr5hr9PwUWexieitEZOUn/bcQVQHn0C
+ xyCXJ4YxEMpiL9VXWuOlcLyP2S3S5pDS4/CPPrw=
+X-Google-Smtp-Source: APXvYqy9K5E4hGCz/s/b0MY68jWI8cr4JC7OTnKDyAKC2ApiptG9TrpIaoDaLUgFlFXSddwxu9vPHeV69/haNP5yOT0=
+X-Received: by 2002:a19:4f4a:: with SMTP id a10mr37712878lfk.30.1563965247598; 
+ Wed, 24 Jul 2019 03:47:27 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190720165458.7333b65244312843c2ca6857@kernel.org>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+References: <CGME20190718143127eucas1p13b1e2c98d270140a87f09562ef46c9a3@eucas1p1.samsung.com>
+ <20190718143044.25066-1-s.nawrocki@samsung.com>
+ <20190718143044.25066-2-s.nawrocki@samsung.com>
+ <CAJKOXPfLBif-=09B9jZ3qN1kWdTAcrBQZGvZ+A-MUifXK4si9Q@mail.gmail.com>
+ <1117f432-8adf-fbe9-f4af-f8acb755326e@samsung.com>
+In-Reply-To: <1117f432-8adf-fbe9-f4af-f8acb755326e@samsung.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Date: Wed, 24 Jul 2019 12:47:16 +0200
+X-Gmail-Original-Message-ID: <CAJKOXPf2dsnaV4cRT3JxvY=uFEH1hr8SempEHUXq5GiLwmwEzA@mail.gmail.com>
+Message-ID: <CAJKOXPf2dsnaV4cRT3JxvY=uFEH1hr8SempEHUXq5GiLwmwEzA@mail.gmail.com>
+Subject: Re: [PATCH v2 1/9] soc: samsung: Add exynos chipid driver support
+To: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_034532_120988_3EDACE5E 
-X-CRM114-Status: GOOD (  21.32  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190724_034732_392571_D57EE095 
+X-CRM114-Status: GOOD (  28.13  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,100 +89,205 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dan Rue <dan.rue@linaro.org>, Daniel Diaz <daniel.diaz@linaro.org>,
- Anders Roxell <anders.roxell@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Naresh Kamboju <naresh.kamboju@linaro.org>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- Matt Hart <matthew.hart@linaro.org>,
- "Paul E. McKenney" <paulmck@linux.ibm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ linux-pm@vger.kernel.org, pankaj.dubey@samsung.com,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, kgene@kernel.org,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>, vireshk@kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Jul 20, 2019 at 04:54:58PM +0900, Masami Hiramatsu wrote:
-> Hi Mark,
-> 
-> On Fri, 19 Jul 2019 10:59:59 +0100
-> Mark Rutland <mark.rutland@arm.com> wrote:
-> 
-> > On Thu, Jul 18, 2019 at 11:31:33PM +0900, Masami Hiramatsu wrote:
-> > > On Thu, 18 Jul 2019 10:20:23 +0100
-> > > Mark Rutland <mark.rutland@arm.com> wrote:
-> > > 
-> > > > On Wed, Jul 17, 2019 at 11:22:15PM -0700, Paul E. McKenney wrote:
-> > > > > On Thu, Jul 18, 2019 at 02:43:58PM +0900, Masami Hiramatsu wrote:
-> > > > > > Remove rcu_read_lock()/rcu_read_unlock() from debug exception
-> > > > > > handlers since the software breakpoint can be hit on idle task.
-> > > > 
-> > > > Why precisely do we need to elide these? Are we seeing warnings today?
-> > > 
-> > > Yes, unfortunately, or fortunately. Naresh reported that warns when
-> > > ftracetest ran. I confirmed that happens if I probe on default_idle_call too.
-> > > 
-> > > /sys/kernel/debug/tracing # echo p default_idle_call >> kprobe_events 
-> > > /sys/kernel/debug/tracing # echo 1 > events/kprobes/enable 
-> > > /sys/kernel/debug/tracing # [  135.122237] 
-> > > [  135.125035] =============================
-> > > [  135.125310] WARNING: suspicious RCU usage
-> > > [  135.125581] 5.2.0-08445-g9187c508bdc7 #20 Not tainted
-> > > [  135.125904] -----------------------------
-> > > [  135.126205] include/linux/rcupdate.h:594 rcu_read_lock() used illegally while idle!
-> > > [  135.126839] 
-> > > [  135.126839] other info that might help us debug this:
-> > > [  135.126839] 
-> > > [  135.127410] 
-> > > [  135.127410] RCU used illegally from idle CPU!
-> > > [  135.127410] rcu_scheduler_active = 2, debug_locks = 1
-> > > [  135.128114] RCU used illegally from extended quiescent state!
-> > > [  135.128555] 1 lock held by swapper/0/0:
-> > > [  135.128944]  #0: (____ptrval____) (rcu_read_lock){....}, at: call_break_hook+0x0/0x178
-> > > [  135.130499] 
-> > > [  135.130499] stack backtrace:
-> > > [  135.131192] CPU: 0 PID: 0 Comm: swapper/0 Not tainted 5.2.0-08445-g9187c508bdc7 #20
-> > > [  135.131841] Hardware name: linux,dummy-virt (DT)
-> > > [  135.132224] Call trace:
-> > > [  135.132491]  dump_backtrace+0x0/0x140
-> > > [  135.132806]  show_stack+0x24/0x30
-> > > [  135.133133]  dump_stack+0xc4/0x10c
-> > > [  135.133726]  lockdep_rcu_suspicious+0xf8/0x108
-> > > [  135.134171]  call_break_hook+0x170/0x178
-> > > [  135.134486]  brk_handler+0x28/0x68
-> > > [  135.134792]  do_debug_exception+0x90/0x150
-> > > [  135.135051]  el1_dbg+0x18/0x8c
-> > > [  135.135260]  default_idle_call+0x0/0x44
-> > > [  135.135516]  cpu_startup_entry+0x2c/0x30
-> > > [  135.135815]  rest_init+0x1b0/0x280
-> > > [  135.136044]  arch_call_rest_init+0x14/0x1c
-> > > [  135.136305]  start_kernel+0x4d4/0x500
-> > > [  135.136597] 
-> > > 
-> > > > > The exception entry and exit use irq_enter() and irq_exit(), in this
-> > > > > case, correct?  Otherwise RCU will be ignoring this CPU.
-> > > > 
-> > > > This is missing today, which sounds like the underlying bug.
-> > > 
-> > > Agreed. I'm not so familier with how debug exception is handled on arm64,
-> > > would it be a kind of NMI or IRQ?
-> > 
-> > They're more like faults, in that they're synchronous exceptions.
-> > 
-> > Given that, I think using irq_enter() / irq_exit() would be surprising
-> > here, but perhaps they're misnamed.
-> > 
-> > What do other architectures do here? Having a kprobe on the critical
-> > path to idle doesn't sound specific to arm64, but perhaps it is (and we
-> > should rule it out).
-> 
-> On x86, it uses rcu_nmi_enter/exit() for kernel mode. For user mode,
-> we don't need to care since it must not be an idle task.
+On Tue, 23 Jul 2019 at 16:10, Bartlomiej Zolnierkiewicz
+<b.zolnierkie@samsung.com> wrote:
+>
+>
+> Hi Krzysztof,
+>
+> On 7/23/19 2:57 PM, Krzysztof Kozlowski wrote:
+> > On Thu, 18 Jul 2019 at 16:31, Sylwester Nawrocki <s.nawrocki@samsung.com> wrote:
+> >>
+> >> From: Pankaj Dubey <pankaj.dubey@samsung.com>
+> >>
+> >> Exynos SoCs have Chipid, for identification of product IDs and SoC
+> >> revisions. This patch intends to provide initialization code for all
+> >> these functionalities, at the same time it provides some sysfs entries
+> >> for accessing these information to user-space.
+> >>
+> >> This driver uses existing binding for exynos-chipid.
+> >>
+> >> Changes by Bartlomiej:
+> >> - fixed return values on errors
+> >> - removed bogus kfree_const()
+> >> - added missing Exynos4210 EVT0 id
+> >> - converted code to use EXYNOS_MASK define
+> >> - fixed np use after of_node_put()
+> >> - fixed too early use of dev_info()
+> >> - made driver fail for unknown SoC-s
+> >> - added SPDX tag
+> >> - updated Copyrights
+> >>
+> >> Signed-off-by: Pankaj Dubey <pankaj.dubey@samsung.com>
+> >> [m.szyprowski: for suggestion and code snippet of product_id_to_soc_id]
+> >> Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
+> >> Signed-off-by: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
+> >> [s.nawrocki: updated copyright date]
+> >> Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
+> >> ---
+> >>  drivers/soc/samsung/Kconfig         |   5 ++
+> >>  drivers/soc/samsung/Makefile        |   2 +
+> >>  drivers/soc/samsung/exynos-chipid.c | 111 ++++++++++++++++++++++++++++
+> >>  3 files changed, 118 insertions(+)
+> >>  create mode 100644 drivers/soc/samsung/exynos-chipid.c
+> >>
+> >> diff --git a/drivers/soc/samsung/Kconfig b/drivers/soc/samsung/Kconfig
+> >> index 2186285fda92..2905f5262197 100644
+> >> --- a/drivers/soc/samsung/Kconfig
+> >> +++ b/drivers/soc/samsung/Kconfig
+> >> @@ -7,6 +7,11 @@ menuconfig SOC_SAMSUNG
+> >>
+> >>  if SOC_SAMSUNG
+> >>
+> >> +config EXYNOS_CHIPID
+> >> +       bool "Exynos Chipid controller driver" if COMPILE_TEST
+> >> +       depends on ARCH_EXYNOS || COMPILE_TEST
+> >> +       select SOC_BUS
+> >> +
+> >>  config EXYNOS_PMU
+> >>         bool "Exynos PMU controller driver" if COMPILE_TEST
+> >>         depends on ARCH_EXYNOS || ((ARM || ARM64) && COMPILE_TEST)
+> >> diff --git a/drivers/soc/samsung/Makefile b/drivers/soc/samsung/Makefile
+> >> index 29f294baac6e..3b6a8797416c 100644
+> >> --- a/drivers/soc/samsung/Makefile
+> >> +++ b/drivers/soc/samsung/Makefile
+> >> @@ -1,4 +1,6 @@
+> >>  # SPDX-License-Identifier: GPL-2.0
+> >> +
+> >> +obj-$(CONFIG_EXYNOS_CHIPID)    += exynos-chipid.o
+> >>  obj-$(CONFIG_EXYNOS_PMU)       += exynos-pmu.o
+> >>
+> >>  obj-$(CONFIG_EXYNOS_PMU_ARM_DRIVERS)   += exynos3250-pmu.o exynos4-pmu.o \
+> >> diff --git a/drivers/soc/samsung/exynos-chipid.c b/drivers/soc/samsung/exynos-chipid.c
+> >> new file mode 100644
+> >> index 000000000000..78b123ee60c0
+> >> --- /dev/null
+> >> +++ b/drivers/soc/samsung/exynos-chipid.c
+> >> @@ -0,0 +1,111 @@
+> >> +// SPDX-License-Identifier: GPL-2.0
+> >> +/*
+> >> + * Copyright (c) 2019 Samsung Electronics Co., Ltd.
+> >> + *           http://www.samsung.com/
+> >> + *
+> >> + * EXYNOS - CHIP ID support
+> >> + * Author: Pankaj Dubey <pankaj.dubey@samsung.com>
+> >> + * Author: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
+> >> + */
+> >> +
+> >> +#include <linux/io.h>
+> >> +#include <linux/of.h>
+> >> +#include <linux/of_address.h>
+> >> +#include <linux/of_platform.h>
+> >> +#include <linux/platform_device.h>
+> >
+> > Any changes here from my previous comments?
+> >
+> > I have also one more new thought later.
+> >
+> >> +#include <linux/slab.h>
+> >> +#include <linux/sys_soc.h>
+> >> +
+> >> +#define EXYNOS_SUBREV_MASK     (0xF << 4)
+> >> +#define EXYNOS_MAINREV_MASK    (0xF << 0)
+> >> +#define EXYNOS_REV_MASK                (EXYNOS_SUBREV_MASK | EXYNOS_MAINREV_MASK)
+> >> +#define EXYNOS_MASK            0xFFFFF000
+> >> +
+> >> +static const struct exynos_soc_id {
+> >> +       const char *name;
+> >> +       unsigned int id;
+> >> +} soc_ids[] = {
+> >> +       { "EXYNOS3250", 0xE3472000 },
+> >> +       { "EXYNOS4210", 0x43200000 },   /* EVT0 revision */
+> >> +       { "EXYNOS4210", 0x43210000 },
+> >> +       { "EXYNOS4212", 0x43220000 },
+> >> +       { "EXYNOS4412", 0xE4412000 },
+> >> +       { "EXYNOS5250", 0x43520000 },
+> >> +       { "EXYNOS5260", 0xE5260000 },
+> >> +       { "EXYNOS5410", 0xE5410000 },
+> >> +       { "EXYNOS5420", 0xE5420000 },
+> >> +       { "EXYNOS5440", 0xE5440000 },
+> >> +       { "EXYNOS5800", 0xE5422000 },
+> >> +       { "EXYNOS7420", 0xE7420000 },
+> >> +       { "EXYNOS5433", 0xE5433000 },
+> >> +};
+> >> +
+> >> +static const char * __init product_id_to_soc_id(unsigned int product_id)
+> >> +{
+> >> +       int i;
+> >> +
+> >> +       for (i = 0; i < ARRAY_SIZE(soc_ids); i++)
+> >> +               if ((product_id & EXYNOS_MASK) == soc_ids[i].id)
+> >> +                       return soc_ids[i].name;
+> >> +       return NULL;
+> >> +}
+> >> +
+> >> +int __init exynos_chipid_early_init(void)
+> >> +{
+> >> +       struct soc_device_attribute *soc_dev_attr;
+> >> +       void __iomem *exynos_chipid_base;
+> >> +       struct soc_device *soc_dev;
+> >> +       struct device_node *root;
+> >> +       struct device_node *np;
+> >> +       u32 product_id;
+> >> +       u32 revision;
+> >> +
+> >> +       /* look up for chipid node */
+> >> +       np = of_find_compatible_node(NULL, NULL, "samsung,exynos4210-chipid");
+> >> +       if (!np)
+> >> +               return -ENODEV;
+> >> +
+> >> +       exynos_chipid_base = of_iomap(np, 0);
+> >> +       of_node_put(np);
+> >> +
+> >> +       if (!exynos_chipid_base) {
+> >> +               pr_err("Failed to map SoC chipid\n");
+> >> +               return -ENXIO;
+> >> +       }
+> >> +
+> >> +       product_id = readl_relaxed(exynos_chipid_base);
+> >> +       revision = product_id & EXYNOS_REV_MASK;
+> >> +       iounmap(exynos_chipid_base);
+> >> +
+> >> +       soc_dev_attr = kzalloc(sizeof(*soc_dev_attr), GFP_KERNEL);
+> >> +       if (!soc_dev_attr)
+> >> +               return -ENOMEM;
+> >> +
+> >> +       soc_dev_attr->family = "Samsung Exynos";
+> >> +
+> >> +       root = of_find_node_by_path("/");
+> >> +       of_property_read_string(root, "model", &soc_dev_attr->machine);
+> >> +       of_node_put(root);
+> >> +
+> >> +       soc_dev_attr->revision = kasprintf(GFP_KERNEL, "%x", revision);
+> >> +       soc_dev_attr->soc_id = product_id_to_soc_id(product_id);
+> >> +       if (!soc_dev_attr->soc_id) {
+> >> +               pr_err("Unknown SoC\n");
+> >
+> > In case of running old kernel on unknown SoC (new revision of existing
+> > one or older design not longer supported like 4415), the device will
+> > not bind. This was added by Bartlomiej. Why? I imagine that soc driver
+> > could be still matched and just report "Unknown". I am not sure if
+> > this changes anything, though.
+>
+> I was thinking that we shouldn't be pretending that we know how to
+> handle unsupported SoCs, i.e. that we know how to correctly read its
+> product_id and revision.
 
-Ok. IIUC, doing the same for arm64 would make sense.
-
-Thanks,
-Mark.
+Reasonable, thanks for explanation.
+Best regards,
+Krzysztof
 
 _______________________________________________
 linux-arm-kernel mailing list
