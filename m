@@ -2,82 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B3A3E74067
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 22:48:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 23F0874094
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 23:05:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KJWp6gIEEsmkTe4IG2bHMGQKtR00OB59QGczb1rmicY=; b=d+1qhXOxZWjWUp
-	VJ78MiVkALzF79jMVpw2qUwbyM1cikRFVwMJ9btRa/sMoAiMuMQayemS6HYtecmLsEDocUrzyfCgS
-	/Nvy1qTpIilC/jVmQV8oHSVRSMAPvTnqrb3xKpTJRHDxMvHuU2QDAl2WUyhT/Q5n0PI+FQDh1ZHu6
-	70zu/Et0myqCIyrOayG/2DBBlaac/hEckkmB5G8zFV7u0iC2y3WCxmm6KuAQ/EDCEnyKyHvSp+vb1
-	4tKsOxqp1WZxdDWqxnZZHHP0jYnllwpoz60uZS8MmAN9AQFJcRJ+1jtkukgDxuc6GUuNY+WE0sGq3
-	F8zGrnMNo5L7Fsy8dP0A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=AxwEQoOPF7bU8vcB/YQEh0jLlGxh6AuSz8gVeNoQRUY=; b=s9BUjIlk/7g7h0rixmyf1+L6G
+	tYkIkW2XPn4+9auGF5JvmyS+TDijfCMXhtwhYzDBectKyQtNSM+YIbnPPuS0DprvltPWCPciLbYvt
+	FWcJF22VSnTIboaCGG1uUwU2vyyOTWFmQraToOm9LnTgfOZrxiQFwdNAq8XAG5/R5eeO7yOD+6zAd
+	wOO/cWlPDUHo2q61JP6NCv+0CaDEM+g2APNiNmiZt7NgaKDw+8Ujt766CCZPk0J8iLQi3GlSaz0Ow
+	mIyx9vuL64dyzQlw6mWblySGjdHAhHRp4ve6CW9amupxwEyCTJOACN8Ss9NNJhubvRQy6PmTAmcQm
+	HNW4DqXIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqOBh-0006JW-3Y; Wed, 24 Jul 2019 20:48:37 +0000
-Received: from mail-io1-f65.google.com ([209.85.166.65])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqOBU-0006J2-L0
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 20:48:25 +0000
-Received: by mail-io1-f65.google.com with SMTP id s7so92389726iob.11
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 24 Jul 2019 13:48:24 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=IHAe9r8SwKR0SOE7feOFdveA8IT0SDk7uX1IR0X6Pa8=;
- b=aJNf52AiiGTX9qbpEOpRyuvJseUzgtvcFy8/klYibGZGe31mgmtOXynpCE1J4N6llO
- a151UGupuKjXvY/Z6cEi9FEwX32BflhS1eoOpVvXka9D12BIzJx/kv2ZePNfrlgzZ8BJ
- aVhW9+VeNPpEY8+x0UbyKyxj8AKjux4OMjhCPe5wRKQt+Z8JNEOccLDz7qq6AEDpjj2w
- lZv3pst3WZgf1Z9WhCD4MgdiLvOiGnzBUyJH+nZxAVteBjxVX409qxxyWYy/YkOsH8Pi
- v8k1m7NDK+LufzUF3aIO2u/P8s6pcOWmrlVr6Gr/WmwPYvDWnC4Pg0QFVlJTgSoEkT24
- 45UQ==
-X-Gm-Message-State: APjAAAUgagNeF8+vFkkNpd5Y4E7HUR70lxquwq/wDa/ulrh6Cu4dgU6+
- KxLCmDllML+QnDSpSh41Qg==
-X-Google-Smtp-Source: APXvYqyaS0TYvzjTPZIPuZme/uFk9QJ9Ap7J20wOVd2CKLqEYYi1duV0VS989NHcY60O65J0oEWMoQ==
-X-Received: by 2002:a6b:5a17:: with SMTP id o23mr73100927iob.41.1564001303913; 
- Wed, 24 Jul 2019 13:48:23 -0700 (PDT)
-Received: from localhost ([64.188.179.254])
- by smtp.gmail.com with ESMTPSA id y5sm49459573ioc.86.2019.07.24.13.48.23
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 24 Jul 2019 13:48:23 -0700 (PDT)
-Date: Wed, 24 Jul 2019 14:48:22 -0600
-From: Rob Herring <robh@kernel.org>
-To: Sven Van Asbroeck <thesven73@gmail.com>
-Subject: Re: [PATCH 2/2] dt-bindings: bus: imx-weim: document optional burst
- clock mode
-Message-ID: <20190724204822.GA17166@bogus>
-References: <20190712204316.16783-1-TheSven73@gmail.com>
- <20190712204316.16783-2-TheSven73@gmail.com>
+	id 1hqORW-0003Uk-OI; Wed, 24 Jul 2019 21:04:58 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hqORK-0003U0-M1
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 21:04:48 +0000
+Received: from localhost (p54B334B5.dip0.t-ipconnect.de [84.179.52.181])
+ by pokefinder.org (Postfix) with ESMTPSA id 13DF14A1209;
+ Wed, 24 Jul 2019 23:04:42 +0200 (CEST)
+Date: Wed, 24 Jul 2019 23:04:41 +0200
+From: Wolfram Sang <wsa@the-dreams.de>
+To: Simon Horman <horms@verge.net.au>
+Subject: Re: [PATCH/RFC repost] arm64: dts: renesas: ebisu, draak: Limit
+ EtherAVB to 100Mbps
+Message-ID: <20190724210441.GA1559@kunai>
+References: <20190717125739.21450-1-horms+renesas@verge.net.au>
+ <20190717132607.GA1458@kunai>
+ <20190724105203.thykr2staw22gdj3@verge.net.au>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190712204316.16783-2-TheSven73@gmail.com>
+In-Reply-To: <20190724105203.thykr2staw22gdj3@verge.net.au>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_134824_691203_6441A351 
-X-CRM114-Status: GOOD (  10.21  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190724_140446_864328_CB54F319 
+X-CRM114-Status: UNSURE (   7.69  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.65 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
+ no trust [88.99.104.3 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,31 +62,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
- Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel@vger.kernel.org, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-renesas-soc@vger.kernel.org, Andrew Lunn <andrew@lunn.ch>,
+ Magnus Damm <magnus.damm@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ Geert Uytterhoeven <geert+renesas@glider.be>
+Content-Type: multipart/mixed; boundary="===============4252155188213384223=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 12 Jul 2019 16:43:16 -0400, Sven Van Asbroeck wrote:
-> An optional devicetree property was added to the imx-weim driver,
-> which if present instructs it to operate in burst clock mode.
-> Update the dt-bindings to reflect this.
-> 
-> Signed-off-by: Sven Van Asbroeck <TheSven73@gmail.com>
-> ---
->  Documentation/devicetree/bindings/bus/imx-weim.txt | 4 ++++
->  1 file changed, 4 insertions(+)
-> 
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+--===============4252155188213384223==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="vtzGhvizbBRQ85DL"
+Content-Disposition: inline
+
+
+--vtzGhvizbBRQ85DL
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+
+> > What about adding a short comment explaining the situation?
+>=20
+> Do you mean in the DT itself?
+
+Yes, so we don't forget why it is there. Or do you think this is not
+needed? I'd think it is useful but won't insist.
+
+
+--vtzGhvizbBRQ85DL
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl04x+UACgkQFA3kzBSg
+KbZXxhAAnTXukP1XYbvqYoGHXWNhsw+WJyaM0aOfz5mmCSfBRan7+YIQ2i7Qq8DH
+xbwk2l3Qt2o+TEI4+LMvZ5sI81l2HNaZQi5Zsicf7c/xhHecwuiIvVhqoF2W5k2N
+FcmIVCLvrgNlMaRSgFNcYG5vicRPJeLnWNBstw95ltKs3/8M636qYl8qDDIHh6Vp
+S87NniVc2wX7Yu77ybU+lsBwDzoLtpq0H2ajxKqnxDg5suix5+I7IqYZkRuHTlO8
+jaO1353cXCBzd/m8xrDNmO92NWyxuOEC71Yv+qkcUgJn5xEN7DaSxMY4wTYoTZ5W
+XxfuzyBZCNkNGeMlLnWcb7CRzY6gc99YyywWKnzRHA7dAI0tdtuEZlA1EZtWOlhd
+TZ6x0sUAqkACQarS0yBE3Tlu3cDRltegOg1pGfXmJWGiaI/UnPIXobMtc6/IW1Sn
+44zR6O2/J8x3Covg/827XH/n++7pZb98hXyDO808d5UQ0iDn+1/E93hj+kh1kze2
+CdLxay9NeeDhULpdUw+ClkSDVITS6uggDhX2WNOnhotsyg2G88qdTwaTE2KD9t7u
+cAqwuwF7IhjTnzVTp47U0DvL3YCIvEJ+4cr9kn64k8NUk36z9CLwJCd1Zmr1hjYp
+qYDslGwTMSmnknS+sGBoUnFAPCRRbZ/7vANxv4328sXVYOP3NcA=
+=o6hC
+-----END PGP SIGNATURE-----
+
+--vtzGhvizbBRQ85DL--
+
+
+--===============4252155188213384223==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4252155188213384223==--
+
