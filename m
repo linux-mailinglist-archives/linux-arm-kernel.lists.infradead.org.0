@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C26F733E4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 18:28:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CBD09733E5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 18:28:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=gccYSrzXY+3bibH0ObuSRu7VKq8ADFfwt2zXITaZFCk=; b=qVsZr1z0QkrEK9EG3x2P+hvzSl
-	/ejBq2qCW9cXZj8LPeyZHxLidfUmoW7pbj147KeCrVzw8mt1K+Vy95g51An1rSw7TPX6We6fo2N8t
-	u3Kh8DiEposmq49tvnCPjnZSK2oKR4cPpPg/LjIWZXLpgfyCzDIm9nNVfKKEntVx++0fNI+4RPssO
-	70ENKOY0KCTA2Td0Fa5l4oAXhuBQb19SHNFGP/xL7XXMh2863gfrUBkTTaLl1x2S3etitiPgZ7fQH
-	jvvzfBqXOye+SEGKvvBIndlFJUDnGoV96cDDQYAtfiUsHybVs+50ggvYw11F5DKrpZnfGVJsbRROw
-	vyNARi7Q==;
+	bh=DTgaZdf4GyMmlmEo7KtVwXqPa0yYiOkIzXS0LmA942g=; b=kpDZxQP80fjIkwVqbcGV85Hbf1
+	TZLu2HynNimcO1d8uti7ZqIOjiNLDt5SSwjZG/OZO+78hh8EdlK7jMLgz1g6mEbgF9b8Z1yrTMGza
+	b06f50GSHFLsxf52mkquwOOwArt5D6ZVuxe19Qq20C4F0854mFJ9QKSjEKgAo5On6oQR/2c3c2zdS
+	BCcfnW++r+WsRQN/1fBjeGgAUu61NhoROayhl6MFxcOnI8htzPl99E9NHqIBrKNQrF+AIYVR1UgI6
+	NXqZ8e9xprKr1GhgD65Vye8mcsRpauPIj29ueh9IVc7sLQEk2FENCZiQ/vDPxtlhAZx3UvnsfO25s
+	LVOhvP5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqK7x-0002RD-Sd; Wed, 24 Jul 2019 16:28:29 +0000
+	id 1hqK89-0002fH-Df; Wed, 24 Jul 2019 16:28:41 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hqK5Z-000065-Er
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 16:26:03 +0000
+ id 1hqK5b-0000Gi-9v
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 16:26:04 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3762B15A2;
- Wed, 24 Jul 2019 09:26:01 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BF86428;
+ Wed, 24 Jul 2019 09:26:02 -0700 (PDT)
 Received: from e108454-lin.cambridge.arm.com (e108454-lin.cambridge.arm.com
  [10.1.196.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D79053F71F;
- Wed, 24 Jul 2019 09:25:59 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6BF8C3F71F;
+ Wed, 24 Jul 2019 09:26:01 -0700 (PDT)
 From: Julien Grall <julien.grall@arm.com>
 To: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  kvmarm@lists.cs.columbia.edu
-Subject: [PATCH v3 09/15] arm64/mm: Split the function
- check_and_switch_context in 3 parts
-Date: Wed, 24 Jul 2019 17:25:28 +0100
-Message-Id: <20190724162534.7390-10-julien.grall@arm.com>
+Subject: [PATCH v3 10/15] arm64/mm: Introduce a callback to flush the local
+ context
+Date: Wed, 24 Jul 2019 17:25:29 +0100
+Message-Id: <20190724162534.7390-11-julien.grall@arm.com>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20190724162534.7390-1-julien.grall@arm.com>
 References: <20190724162534.7390-1-julien.grall@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_092601_603230_AFFBFCE9 
-X-CRM114-Status: GOOD (  16.80  )
+X-CRM114-CacheID: sfid-20190724_092603_440198_E9C72781 
+X-CRM114-Status: GOOD (  12.81  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,119 +71,72 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The function check_and_switch_context is used to:
-    1) Check whether the ASID is still valid
-    2) Generate a new one if it is not valid
-    3) Switch the context
-
-While the latter is specific to the MM subsystem, the rest could be part
-of the generic ASID allocator.
-
-After this patch, the function is now split in 3 parts which corresponds
-to the use of the functions:
-    1) asid_check_context: Check if the ASID is still valid
-    2) asid_new_context: Generate a new ASID for the context
-    3) check_and_switch_context: Call 1) and 2) and switch the context
-
-1) and 2) have not been merged in a single function because we want to
-avoid to add a branch in when the ASID is still valid. This will matter
-when the code will be moved in separate file later on as 1) will reside
-in the header as a static inline function.
+Flushing the local context will vary depending on the actual user of the ASID
+allocator. Introduce a new callback to flush the local context and move
+the call to flush local TLB in it.
 
 Signed-off-by: Julien Grall <julien.grall@arm.com>
-
 ---
-
-    Will wants to avoid to add a branch when the ASID is still valid. So
-    1) and 2) are in separates function. The former will move to a new
-    header and make static inline.
----
- arch/arm64/mm/context.c | 51 +++++++++++++++++++++++++++++++++++++------------
- 1 file changed, 39 insertions(+), 12 deletions(-)
+ arch/arm64/mm/context.c | 16 +++++++++++++---
+ 1 file changed, 13 insertions(+), 3 deletions(-)
 
 diff --git a/arch/arm64/mm/context.c b/arch/arm64/mm/context.c
-index 27e328fffdb1..5e8b381ab67f 100644
+index 5e8b381ab67f..ac10893b403c 100644
 --- a/arch/arm64/mm/context.c
 +++ b/arch/arm64/mm/context.c
-@@ -193,16 +193,21 @@ static u64 new_context(struct asid_info *info, atomic64_t *pasid)
- 	return idx2asid(info, asid) | generation;
- }
+@@ -28,6 +28,8 @@ static struct asid_info
+ 	cpumask_t		flush_pending;
+ 	/* Number of ASID allocated by context (shift value) */
+ 	unsigned int		ctxt_shift;
++	/* Callback to locally flush the context. */
++	void			(*flush_cpu_ctxt_cb)(void);
+ } asid_info;
  
--void check_and_switch_context(struct mm_struct *mm, unsigned int cpu)
-+static void asid_new_context(struct asid_info *info, atomic64_t *pasid,
-+			     unsigned int cpu);
-+
-+/*
-+ * Check the ASID is still valid for the context. If not generate a new ASID.
-+ *
-+ * @pasid: Pointer to the current ASID batch
-+ * @cpu: current CPU ID. Must have been acquired throught get_cpu()
-+ */
-+static void asid_check_context(struct asid_info *info,
-+			       atomic64_t *pasid, unsigned int cpu)
- {
--	unsigned long flags;
- 	u64 asid, old_active_asid;
--	struct asid_info *info = &asid_info;
- 
--	if (system_supports_cnp())
--		cpu_set_reserved_ttbr0();
--
--	asid = atomic64_read(&mm->context.id);
-+	asid = atomic64_read(pasid);
- 
- 	/*
- 	 * The memory ordering here is subtle.
-@@ -223,14 +228,30 @@ void check_and_switch_context(struct mm_struct *mm, unsigned int cpu)
- 	    !((asid ^ atomic64_read(&info->generation)) >> info->bits) &&
- 	    atomic64_cmpxchg_relaxed(&active_asid(info, cpu),
- 				     old_active_asid, asid))
--		goto switch_mm_fastpath;
-+		return;
-+
-+	asid_new_context(info, pasid, cpu);
-+}
-+
-+/*
-+ * Generate a new ASID for the context.
-+ *
-+ * @pasid: Pointer to the current ASID batch allocated. It will be updated
-+ * with the new ASID batch.
-+ * @cpu: current CPU ID. Must have been acquired through get_cpu()
-+ */
-+static void asid_new_context(struct asid_info *info, atomic64_t *pasid,
-+			     unsigned int cpu)
-+{
-+	unsigned long flags;
-+	u64 asid;
- 
- 	raw_spin_lock_irqsave(&info->lock, flags);
- 	/* Check that our ASID belongs to the current generation. */
--	asid = atomic64_read(&mm->context.id);
-+	asid = atomic64_read(pasid);
- 	if ((asid ^ atomic64_read(&info->generation)) >> info->bits) {
--		asid = new_context(info, &mm->context.id);
--		atomic64_set(&mm->context.id, asid);
-+		asid = new_context(info, pasid);
-+		atomic64_set(pasid, asid);
+ #define active_asid(info, cpu)	*per_cpu_ptr((info)->active, cpu)
+@@ -255,7 +257,7 @@ static void asid_new_context(struct asid_info *info, atomic64_t *pasid,
  	}
  
  	if (cpumask_test_and_clear_cpu(cpu, &info->flush_pending))
-@@ -238,8 +259,14 @@ void check_and_switch_context(struct mm_struct *mm, unsigned int cpu)
+-		local_flush_tlb_all();
++		info->flush_cpu_ctxt_cb();
  
  	atomic64_set(&active_asid(info, cpu), asid);
  	raw_spin_unlock_irqrestore(&info->lock, flags);
+@@ -287,6 +289,11 @@ asmlinkage void post_ttbr_update_workaround(void)
+ 			CONFIG_CAVIUM_ERRATUM_27456));
+ }
+ 
++static void asid_flush_cpu_ctxt(void)
++{
++	local_flush_tlb_all();
 +}
 +
-+void check_and_switch_context(struct mm_struct *mm, unsigned int cpu)
-+{
-+	if (system_supports_cnp())
-+		cpu_set_reserved_ttbr0();
+ /*
+  * Initialize the ASID allocator
+  *
+@@ -297,10 +304,12 @@ asmlinkage void post_ttbr_update_workaround(void)
+  * 2.
+  */
+ static int asid_allocator_init(struct asid_info *info,
+-			       u32 bits, unsigned int asid_per_ctxt)
++			       u32 bits, unsigned int asid_per_ctxt,
++			       void (*flush_cpu_ctxt_cb)(void))
+ {
+ 	info->bits = bits;
+ 	info->ctxt_shift = ilog2(asid_per_ctxt);
++	info->flush_cpu_ctxt_cb = flush_cpu_ctxt_cb;
+ 	/*
+ 	 * Expect allocation after rollover to fail if we don't have at least
+ 	 * one more ASID than CPUs. ASID #0 is always reserved.
+@@ -321,7 +330,8 @@ static int asids_init(void)
+ {
+ 	u32 bits = get_cpu_asid_bits();
  
--switch_mm_fastpath:
-+	asid_check_context(&asid_info, &mm->context.id, cpu);
- 
- 	arm64_apply_bp_hardening();
+-	if (asid_allocator_init(&asid_info, bits, ASID_PER_CONTEXT))
++	if (asid_allocator_init(&asid_info, bits, ASID_PER_CONTEXT,
++				 asid_flush_cpu_ctxt))
+ 		panic("Unable to initialize ASID allocator for %lu ASIDs\n",
+ 		      1UL << bits);
  
 -- 
 2.11.0
