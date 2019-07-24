@@ -2,59 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 869D7737A1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 21:17:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6CBF873854
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 21:28:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=HtyYnSvk0vkzTJrjPq+RPBepZIlHE4jppzG98zjhZeo=; b=Tha
-	NI+aTbATSYacaShRqcgQRRbHnUbiz30swh8iLMAeP60O5krUtDno+3nu2hLa3IYjQABdiHNqkTpLz
-	uKPomrULP5BXpL5nY+qAzDHR95eZ+5QzTNoI9VGK2GaL354px/03Mds9ehyb0Jh2Moe6FZ2xXi/I5
-	4nolmQ7J8JilRTBwWs6YpgAfw4BDNFYWIZ+fKbf/pdwc4RpjTJ/a9LcYTzIi9t6pQ2KpRfjgVyVDx
-	GdxJ9ZoKiBVt6dCOXAPcJtYhB1ez7kQEPklucYehyRorJu1a1kzSbZCdo8sldSrAnynsVgnuxpFyD
-	rnCiKUMUPNKTt9EPE8vZDwebB78+m7A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3OpIcDqhp5JJEqvnxAxO41vczzZwJLVJhF5dGrL8F30=; b=sbMeFPZOqsO09Z
+	2rbCWyg4fza++HYj3BYdlQB7YUiohle+3dNjIJ2O+LFJVdCGae9Mih7UZWBOfdyWtpYClI3if2sTa
+	Nass6ICTHH0pAvjNGLy8fKEoVkzPWXYh+XZ74qNq1wDSsNpezywREMuIw65tdL4AUWJPjspIi738O
+	96TuK4bo47vCjnBkD2XtdcwnVmCEmRWLM1/klRbmjn0vYPY/XxLHk851ra3UMYWBsPaEcEn2vcWNu
+	ueOvOs3lN8RHL0ktwZy1yxUVguXPoQ6WEmcidzkkLoeduo7z14RzCh+iJEuxl21Y783rz4wgOAktq
+	S0r9qcE/JDjy1AXQ8YyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqMlc-0000Rq-Q3; Wed, 24 Jul 2019 19:17:36 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1hqMw8-0008AO-Sg; Wed, 24 Jul 2019 19:28:29 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqMlQ-0000Qu-6g
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 19:17:25 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 7BC431A00DC;
- Wed, 24 Jul 2019 21:17:18 +0200 (CEST)
-Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
- [134.27.226.22])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 6FB0E1A0067;
- Wed, 24 Jul 2019 21:17:18 +0200 (CEST)
-Received: from fsr-ub1864-112.ea.freescale.net
- (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id D943C205D8;
- Wed, 24 Jul 2019 21:17:17 +0200 (CEST)
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Shawn Guo <shawnguo@kernel.org>, Daniel Baluta <daniel.baluta@nxp.com>,
- Abel Vesa <abel.vesa@nxp.com>
-Subject: [PATCH] arm64: dts: imx8mm: Fix boot hang at clk init
-Date: Wed, 24 Jul 2019 22:17:15 +0300
-Message-Id: <62d9c73aafcdc171edcd9e03fa81f451a42d5227.1563995813.git.leonard.crestez@nxp.com>
-X-Mailer: git-send-email 2.17.1
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1hqMvu-00089i-Nt
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 19:28:16 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id F3C1F218EA;
+ Wed, 24 Jul 2019 19:28:13 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1563996494;
+ bh=ZSl1scnxr/Ellro7+dGi0kPGRZ6BnpwAw0+kHm4KKkU=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=fVDBkkmxtqzlEhy+7WQtWRToQDEgkYkMJ/wmvxE6oQBJfJSHyw2LzFhQLJcf+3JFT
+ cPAbahQAJS1dFygr8tJbmRTwTXMGu1zeJDGXxSf5Tfut8kLa8xwrGFxC56d9M2fm4e
+ UwQFZAxrxARSyNAcpPXEMPuXif1IjkgezfPlsZ4Q=
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH 5.2 079/413] perf cs-etm: Properly set the value of old and
+ head in snapshot mode
+Date: Wed, 24 Jul 2019 21:16:10 +0200
+Message-Id: <20190724191740.754985059@linuxfoundation.org>
+X-Mailer: git-send-email 2.22.0
+In-Reply-To: <20190724191735.096702571@linuxfoundation.org>
+References: <20190724191735.096702571@linuxfoundation.org>
+User-Agent: quilt/0.66
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_121724_380678_8BC2589E 
-X-CRM114-Status: UNSURE (   4.29  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190724_122814_808514_617E2BCE 
+X-CRM114-Status: GOOD (  22.46  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,47 +74,220 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dong Aisheng <aisheng.dong@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- linux-imx@nxp.com, kernel@pengutronix.de,
- Fabio Estevam <fabio.estevam@nxp.com>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Sasha Levin <sashal@kernel.org>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki Poulouse <suzuki.poulose@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, stable@vger.kernel.org,
+ Arnaldo Carvalho de Melo <acme@redhat.com>,
+ Peter Zijlstra <peterz@infradead.org>, Leo Yan <leo.yan@linaro.org>,
+ Jiri Olsa <jolsa@redhat.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The assigned-clock-rates property is incorrect (shorter than
-assigned-clocks) and boot hangs becuause incorrect rates are assigned.
+[ Upstream commit e45c48a9a4d20ebc7b639a62c3ef8f4b08007027 ]
 
-Fix by inserting another <0>
+This patch adds the necessary intelligence to properly compute the value
+of 'old' and 'head' when operating in snapshot mode.  That way we can
+get the latest information in the AUX buffer and be compatible with the
+generic AUX ring buffer mechanic.
 
-Fixes: df1703896a17 ("arm64: dts: imx8mm: Init rates and parents configs for clocks")
+Tester notes:
 
-Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+> Leo, have you had the chance to test/review this one? Suzuki?
+
+Sure.  I applied this patch on the perf/core branch (with latest
+commit 3e4fbf36c1e3 'perf augmented_raw_syscalls: Move reading
+filename to the loop') and passed testing with below steps:
+
+  # perf record -e cs_etm/@tmc_etr0/ -S -m,64 --per-thread ./sort &
+  [1] 19097
+  Bubble sorting array of 30000 elements
+
+  # kill -USR2 19097
+  # kill -USR2 19097
+  # kill -USR2 19097
+  [ perf record: Woken up 4 times to write data ]
+  [ perf record: Captured and wrote 0.753 MB perf.data ]
+
+Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+Tested-by: Leo Yan <leo.yan@linaro.org>
+Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
+Cc: Jiri Olsa <jolsa@redhat.com>
+Cc: Peter Zijlstra <peterz@infradead.org>
+Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
+Cc: linux-arm-kernel@lists.infradead.org
+Link: http://lkml.kernel.org/r/20190605161633.12245-1-mathieu.poirier@linaro.org
+Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
-Found in next-20190724 because that's when df1703896a17 was included.
-Perhaps this should be squashed?
+ tools/perf/arch/arm/util/cs-etm.c | 127 +++++++++++++++++++++++++++++-
+ 1 file changed, 123 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-index c9a7c0054c5c..8737f833cf9c 100644
---- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-@@ -461,10 +461,11 @@
- 						<&clk IMX8MM_SYS_PLL3>,
- 						<&clk IMX8MM_VIDEO_PLL1>;
- 				assigned-clock-parents = <&clk IMX8MM_SYS_PLL3_OUT>,
- 							 <&clk IMX8MM_SYS_PLL1_800M>;
- 				assigned-clock-rates = <0>,
-+							<0>,
- 							<400000000>,
- 							<750000000>,
- 							<594000000>;
- 			};
+diff --git a/tools/perf/arch/arm/util/cs-etm.c b/tools/perf/arch/arm/util/cs-etm.c
+index 911426721170..0a278bbcaba6 100644
+--- a/tools/perf/arch/arm/util/cs-etm.c
++++ b/tools/perf/arch/arm/util/cs-etm.c
+@@ -31,6 +31,8 @@ struct cs_etm_recording {
+ 	struct auxtrace_record	itr;
+ 	struct perf_pmu		*cs_etm_pmu;
+ 	struct perf_evlist	*evlist;
++	int			wrapped_cnt;
++	bool			*wrapped;
+ 	bool			snapshot_mode;
+ 	size_t			snapshot_size;
+ };
+@@ -536,16 +538,131 @@ static int cs_etm_info_fill(struct auxtrace_record *itr,
+ 	return 0;
+ }
+ 
+-static int cs_etm_find_snapshot(struct auxtrace_record *itr __maybe_unused,
++static int cs_etm_alloc_wrapped_array(struct cs_etm_recording *ptr, int idx)
++{
++	bool *wrapped;
++	int cnt = ptr->wrapped_cnt;
++
++	/* Make @ptr->wrapped as big as @idx */
++	while (cnt <= idx)
++		cnt++;
++
++	/*
++	 * Free'ed in cs_etm_recording_free().  Using realloc() to avoid
++	 * cross compilation problems where the host's system supports
++	 * reallocarray() but not the target.
++	 */
++	wrapped = realloc(ptr->wrapped, cnt * sizeof(bool));
++	if (!wrapped)
++		return -ENOMEM;
++
++	wrapped[cnt - 1] = false;
++	ptr->wrapped_cnt = cnt;
++	ptr->wrapped = wrapped;
++
++	return 0;
++}
++
++static bool cs_etm_buffer_has_wrapped(unsigned char *buffer,
++				      size_t buffer_size, u64 head)
++{
++	u64 i, watermark;
++	u64 *buf = (u64 *)buffer;
++	size_t buf_size = buffer_size;
++
++	/*
++	 * We want to look the very last 512 byte (chosen arbitrarily) in
++	 * the ring buffer.
++	 */
++	watermark = buf_size - 512;
++
++	/*
++	 * @head is continuously increasing - if its value is equal or greater
++	 * than the size of the ring buffer, it has wrapped around.
++	 */
++	if (head >= buffer_size)
++		return true;
++
++	/*
++	 * The value of @head is somewhere within the size of the ring buffer.
++	 * This can be that there hasn't been enough data to fill the ring
++	 * buffer yet or the trace time was so long that @head has numerically
++	 * wrapped around.  To find we need to check if we have data at the very
++	 * end of the ring buffer.  We can reliably do this because mmap'ed
++	 * pages are zeroed out and there is a fresh mapping with every new
++	 * session.
++	 */
++
++	/* @head is less than 512 byte from the end of the ring buffer */
++	if (head > watermark)
++		watermark = head;
++
++	/*
++	 * Speed things up by using 64 bit transactions (see "u64 *buf" above)
++	 */
++	watermark >>= 3;
++	buf_size >>= 3;
++
++	/*
++	 * If we find trace data at the end of the ring buffer, @head has
++	 * been there and has numerically wrapped around at least once.
++	 */
++	for (i = watermark; i < buf_size; i++)
++		if (buf[i])
++			return true;
++
++	return false;
++}
++
++static int cs_etm_find_snapshot(struct auxtrace_record *itr,
+ 				int idx, struct auxtrace_mmap *mm,
+-				unsigned char *data __maybe_unused,
++				unsigned char *data,
+ 				u64 *head, u64 *old)
+ {
++	int err;
++	bool wrapped;
++	struct cs_etm_recording *ptr =
++			container_of(itr, struct cs_etm_recording, itr);
++
++	/*
++	 * Allocate memory to keep track of wrapping if this is the first
++	 * time we deal with this *mm.
++	 */
++	if (idx >= ptr->wrapped_cnt) {
++		err = cs_etm_alloc_wrapped_array(ptr, idx);
++		if (err)
++			return err;
++	}
++
++	/*
++	 * Check to see if *head has wrapped around.  If it hasn't only the
++	 * amount of data between *head and *old is snapshot'ed to avoid
++	 * bloating the perf.data file with zeros.  But as soon as *head has
++	 * wrapped around the entire size of the AUX ring buffer it taken.
++	 */
++	wrapped = ptr->wrapped[idx];
++	if (!wrapped && cs_etm_buffer_has_wrapped(data, mm->len, *head)) {
++		wrapped = true;
++		ptr->wrapped[idx] = true;
++	}
++
+ 	pr_debug3("%s: mmap index %d old head %zu new head %zu size %zu\n",
+ 		  __func__, idx, (size_t)*old, (size_t)*head, mm->len);
+ 
+-	*old = *head;
+-	*head += mm->len;
++	/* No wrap has occurred, we can just use *head and *old. */
++	if (!wrapped)
++		return 0;
++
++	/*
++	 * *head has wrapped around - adjust *head and *old to pickup the
++	 * entire content of the AUX buffer.
++	 */
++	if (*head >= mm->len) {
++		*old = *head - mm->len;
++	} else {
++		*head += mm->len;
++		*old = *head - mm->len;
++	}
+ 
+ 	return 0;
+ }
+@@ -586,6 +703,8 @@ static void cs_etm_recording_free(struct auxtrace_record *itr)
+ {
+ 	struct cs_etm_recording *ptr =
+ 			container_of(itr, struct cs_etm_recording, itr);
++
++	zfree(&ptr->wrapped);
+ 	free(ptr);
+ }
  
 -- 
-2.17.1
+2.20.1
+
+
 
 
 _______________________________________________
