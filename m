@@ -2,146 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 68D8372C06
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 12:04:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EED1A72C16
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 12:09:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ndMi+M1AEtgUdABs1LJC4zFzJVLrcUvA7rth+tcqfbs=; b=aYgArwLCrK9RMZ
-	T0calH6DUEVDiwhg9KGUIt1TOZp6oiQiOtGpm8SfCQ7rURFjrJe9KfLaAi5/oXVf1d6GLpFNukZo0
-	uvsrP4Y6QV9rBzcrq1PpQu+A9t3/7cnBGWyQJ+UD5jfAAdtaTlbtX4dJIqSGajyHPUI+Bf22iOAHg
-	B6T9vAm4phbzCziX+NonJ6kYkV8OL0ajSfGJ8L1uOAsDzKni9xA5yhIElfOh9hHCGrnCds/7/t3tP
-	d/Nd4q7RmP0XB8oL6b3fg7H9/rIYc7n5rF84vdRxj6JPt0DHrK1SaEhDh6IWmaYPHDfm8uYu/nT4K
-	RPKbq1Eq59ehW3DDR3Ag==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=B9AAhm6T+Ub0RPq3ogRhL1yeXlVqoVnWOrT1N2Ey2QI=; b=Q4n30nx+Nd8hNOQbnv0Va+5hA
+	Be3rDuGOxNCer7tuwO+5ip1NLRffaA2Krgh5wChk24K55gWELrer8nZuvistV9kLhvGgIX5rJX9Us
+	gaYbaoxCndECLjADJxBj1ugI+FvBbVmjLQheDmUztsWg232rFizGsZFhYvrZIEr7J+eKi59kLcNVD
+	ZdKXjdkGhupkbVA5BYJXtPLFcpoASF6SOJzem+IiUZvaHPPM1qXhdapDtFiE+dR1EU/xpynuY1ERM
+	TYMYkorRPkQWpbH0GjsMJSuEhh5DJxlaMJ4KnF/03Q1xnP/pd3NrnyOA4XFu3w9i+3jrVU/mzyBeI
+	Xy4N417aw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqE8X-0003FE-9l; Wed, 24 Jul 2019 10:04:41 +0000
-Received: from smtprelay-out1.synopsys.com ([198.182.61.142])
+	id 1hqECg-0005Dh-9P; Wed, 24 Jul 2019 10:08:58 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqE8A-0003EM-Iz
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 10:04:20 +0000
-Received: from mailhost.synopsys.com (dc8-mailhost1.synopsys.com
- [10.13.135.209])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ id 1hqECB-0005Cu-DC
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 10:08:29 +0000
+Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
+ [10.5.11.23])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 235A0C0BB2;
- Wed, 24 Jul 2019 10:04:17 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1563962658; bh=aP3K0n56iD2GV2tMKqRDC9jDRRcIFwnGZY13HJrLpg0=;
- h=From:To:CC:Subject:Date:References:In-Reply-To:From;
- b=I+IX9dGszn2NEfy6ojNUoQcyKVn4Nj9DHuhUAygKM2IfDTlF5s8GRC0/Y4pdjFODQ
- +4sjqkCmlS1lnCTM19SD+1NYnQwDydeH5J2NBwLy775hQiPbJ9aOTo45Hb4jAw7Dnw
- ubDh7JFMCkaStcroLvBcJcDNq1NtGnPWCOSGmAPjyQxFk3OHuOuW14FEzxDJauocPV
- l3DtD1MpoYJJKkfV7vlxlnabRzs0AyNRwfLGK9tzRXXFc0GpyLDsLNofXTMFXQrI97
- UnOSqBD1eZF0IXadpOdZvRoBf5rb2ZpuTGmj9BnIdxX9OmkTntAdd1SB12YNF3zcRN
- kBlxqPInoJjYA==
-Received: from US01WXQAHTC1.internal.synopsys.com
- (us01wxqahtc1.internal.synopsys.com [10.12.238.230])
- (using TLSv1.2 with cipher AES128-SHA256 (128/128 bits))
- (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id 66FDCA006B;
- Wed, 24 Jul 2019 10:04:14 +0000 (UTC)
-Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
- US01WXQAHTC1.internal.synopsys.com (10.12.238.230) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Wed, 24 Jul 2019 03:04:10 -0700
-Received: from NAM02-CY1-obe.outbound.protection.outlook.com (10.13.134.195)
- by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
- 14.3.408.0; Wed, 24 Jul 2019 03:04:10 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=KCPQ/8sf/1oyS7DUkhmS7F8DQ/WTdWVAV1h+j+13nzeibOQjHt2XaEQSDTONFbSYCyuE2wfL+SV5vGO0j4/9Xrf2ECwfWIhalBfYMravZ9xjsZchZM1AzFmTqhZ04x4A0Si0zfTc9hDNFf6k9/QrlVTvDJJdrcfsymZC+RaztaFwYY10Cpo0M3yHUBXR3plo8dVsNLFLF6B1RBOv4GCmytpfe3dT10pOXdDEKJRZ+sPYXQWh5xoINGhPak93m96A0LC4RdlHOL/HSfxMV9i3d7I2s2QhlIY0NBUxN6pcarFG28N/o/7poIEzXN3o6pwkX2oY1FbS4TwX1EYtjCrp4Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=h6p8o2QeT7yDcrfLoA3KDOGJicYtqtsnGWtqbb/I9TM=;
- b=LmduNuAJ5AWso6mc0tWoHvIz6tA/I/aH/ezqrEKLoaJrC8ZYr17kXrnna/fBJcj6/O4idUL2cr4DskK4LK77Y4la4bAj+1HzxBA3+PB+4DiyPljKXNX7QW1HtGErxrhg3DyS+INpxCWkSsO7SZKzWG359Hfm9CqOdKBeHEipvX/ouP5k0yjUMdCWhu6dyT84/nd58BTKT0cdZW9ZxfsHl0jiMDLkkyIqOEwwhl7LvnQqUlq8U8OqF+mOfJoK7KIIfWB0iN1SXrK7Pv7Dq4SN7cjZGEPK5a5dRCPv3tlQUHGLhres7uFCmS+yznPWsZiD59WlQQAJzenUF+TjYZ6cSg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=synopsys.com;dmarc=pass action=none
- header.from=synopsys.com;dkim=pass header.d=synopsys.com;arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=synopsys.onmicrosoft.com; s=selector1-synopsys-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=h6p8o2QeT7yDcrfLoA3KDOGJicYtqtsnGWtqbb/I9TM=;
- b=ScGzKo97ust2yC5YOynzTuZdAGeh8+u+NRngOMntOcQoAuxCpTMx2JlxAT/Mpd4qMWImvLTQNHCoqNlwdwPBv4d1IG6erftvzsjEbnnH/pXGjzi+Y9oi1zrnbsLSbftqs6vD4vitJuZXkYiEhc+pAAbhJ78/4/9LWd2Gq5G+t1w=
-Received: from BYAPR12MB3269.namprd12.prod.outlook.com (20.179.93.146) by
- BYAPR12MB2645.namprd12.prod.outlook.com (20.176.255.210) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2094.16; Wed, 24 Jul 2019 10:04:08 +0000
-Received: from BYAPR12MB3269.namprd12.prod.outlook.com
- ([fe80::f5b8:ac6e:ea68:cb1c]) by BYAPR12MB3269.namprd12.prod.outlook.com
- ([fe80::f5b8:ac6e:ea68:cb1c%4]) with mapi id 15.20.2094.013; Wed, 24 Jul 2019
- 10:04:07 +0000
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-To: Ilias Apalodimas <ilias.apalodimas@linaro.org>,
- Jose Abreu <Jose.Abreu@synopsys.com>
-Subject: RE: [PATCH net-next 3/3] net: stmmac: Introducing support for Page
- Pool
-Thread-Topic: [PATCH net-next 3/3] net: stmmac: Introducing support for Page
- Pool
-Thread-Index: AQHVMYtq2Zx4WVoG/U2kL8GCK0bP/abPQEOAgADTx+CABnZ9AIAADuYAgAAFQOCAAAnIAIAABLTAgAFMy7CAAB4gAIAAAO7wgAAG6gCAABvPAIAAcGAAgADrmoCAAA0XIIAAA1AAgAAAhFA=
-Date: Wed, 24 Jul 2019 10:04:07 +0000
-Message-ID: <BYAPR12MB3269C5766F553438ECFF2C9BD3C60@BYAPR12MB3269.namprd12.prod.outlook.com>
-References: <BYAPR12MB32692AF2BA127C5DA5B74804D3C70@BYAPR12MB3269.namprd12.prod.outlook.com>
- <6c769226-bdd9-6fe0-b96b-5a0d800fed24@arm.com>
- <8756d681-e167-fe4a-c6f0-47ae2dcbb100@nvidia.com>
- <20190723.115112.1824255524103179323.davem@davemloft.net>
- <20190724085427.GA10736@apalos>
- <BYAPR12MB3269AA9955844E317B62A239D3C60@BYAPR12MB3269.namprd12.prod.outlook.com>
- <20190724095310.GA12991@apalos>
-In-Reply-To: <20190724095310.GA12991@apalos>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=joabreu@synopsys.com; 
-x-originating-ip: [83.174.63.141]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: a1f1d3e2-1896-419d-aa05-08d7101e4474
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:BYAPR12MB2645; 
-x-ms-traffictypediagnostic: BYAPR12MB2645:
-x-microsoft-antispam-prvs: <BYAPR12MB26459B116217C0BF431AEA88D3C60@BYAPR12MB2645.namprd12.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 0108A997B2
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(136003)(376002)(396003)(346002)(39860400002)(366004)(199004)(189003)(20864003)(9686003)(7736002)(8676002)(14454004)(19627235002)(14444005)(81166006)(53936002)(71190400001)(81156014)(8936002)(229853002)(7416002)(71200400001)(99286004)(33656002)(256004)(74316002)(5660300002)(4326008)(305945005)(486006)(6506007)(6246003)(68736007)(66066001)(316002)(102836004)(7696005)(76116006)(66946007)(66476007)(66556008)(64756008)(6436002)(478600001)(476003)(76176011)(446003)(11346002)(186003)(2906002)(26005)(54906003)(25786009)(3846002)(6116002)(66446008)(86362001)(110136005)(6636002)(52536014)(55016002);
- DIR:OUT; SFP:1102; SCL:1; SRVR:BYAPR12MB2645;
- H:BYAPR12MB3269.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: synopsys.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: OZqbdMxTlt7QJYLKK6EZGH0CUqWGDLdRs/JKF0m5N+sCiOYcg8LDz/+hCiZ15pFYU2h/ZnyjoXuZahYMIZ3G2lgS/GqwtsxYAWW2O9v/2KYVOT6Kq4YstGXRzbBm0QQ4Om1H7kOYe9dc0U0LCPRPat62okJgd3h41mAGa5ib+cAPPuY4WTsPJ2NHQybOCQ8E8AaA7pRuiMo7B6iB68eValYx5V7rL0WW3R2BTuUyuqAb8NXUTLtWaW7zhbqm9RdscOTwfzPUiIhghP6YA1na9nTxlGigOjixrOiEstQN73yf1j68qBIvb7JnIpnQp6JZyhEPHBHj6vHZLAv11Xag21MoWOahNVSmPJzpj/iCDEJvLu2FwQGGZKblEuPyMirm6gVdzp0Nkz/URUC7LfT+G1lXonV0R5bwiO6gF2GRB0w=
+ by mx1.redhat.com (Postfix) with ESMTPS id 15AD230ADC87;
+ Wed, 24 Jul 2019 10:08:26 +0000 (UTC)
+Received: from [10.72.12.18] (ovpn-12-18.pek2.redhat.com [10.72.12.18])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 7395F19C70;
+ Wed, 24 Jul 2019 10:08:10 +0000 (UTC)
+Subject: Re: WARNING in __mmdrop
+To: "Michael S. Tsirkin" <mst@redhat.com>
+References: <20190722035657-mutt-send-email-mst@kernel.org>
+ <cfcd330d-5f4a-835a-69f7-c342d5d0d52d@redhat.com>
+ <20190723010156-mutt-send-email-mst@kernel.org>
+ <124be1a2-1c53-8e65-0f06-ee2294710822@redhat.com>
+ <20190723032800-mutt-send-email-mst@kernel.org>
+ <e2e01a05-63d8-4388-2bcd-b2be3c865486@redhat.com>
+ <20190723062221-mutt-send-email-mst@kernel.org>
+ <9baa4214-67fd-7ad2-cbad-aadf90bbfc20@redhat.com>
+ <20190723110219-mutt-send-email-mst@kernel.org>
+ <e0c91b89-d1e8-9831-00fe-23fe92d79fa2@redhat.com>
+ <20190724040238-mutt-send-email-mst@kernel.org>
+From: Jason Wang <jasowang@redhat.com>
+Message-ID: <3dfa2269-60ba-7dd8-99af-5aef8552bd98@redhat.com>
+Date: Wed, 24 Jul 2019 18:08:05 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: a1f1d3e2-1896-419d-aa05-08d7101e4474
-X-MS-Exchange-CrossTenant-originalarrivaltime: 24 Jul 2019 10:04:07.8864 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: joabreu@synopsys.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR12MB2645
-X-OriginatorOrg: synopsys.com
+In-Reply-To: <20190724040238-mutt-send-email-mst@kernel.org>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.47]); Wed, 24 Jul 2019 10:08:26 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_030418_639788_E86DF2E7 
-X-CRM114-Status: GOOD (  17.70  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190724_030827_545123_DAE15C41 
+X-CRM114-Status: GOOD (  21.55  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -153,150 +79,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "Joao.Pinto@synopsys.com" <Joao.Pinto@synopsys.com>,
- "alexandre.torgue@st.com" <alexandre.torgue@st.com>,
- "maxime.ripard@bootlin.com" <maxime.ripard@bootlin.com>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "jonathanh@nvidia.com" <jonathanh@nvidia.com>, "wens@csie.org" <wens@csie.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
- "linux-tegra@vger.kernel.org" <linux-tegra@vger.kernel.org>,
- "peppe.cavallaro@st.com" <peppe.cavallaro@st.com>,
- "robin.murphy@arm.com" <robin.murphy@arm.com>,
- David Miller <davem@davemloft.net>, "lists@bofh.nu" <lists@bofh.nu>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mhocko@suse.com, peterz@infradead.org, ldv@altlinux.org,
+ james.bottomley@hansenpartnership.com, linux-mm@kvack.org, namit@vmware.com,
+ mingo@kernel.org, elena.reshetova@intel.com, keescook@chromium.org,
+ aarcange@redhat.com, davem@davemloft.net, hch@infradead.org,
+ christian@brauner.io,
+ syzbot <syzbot+e58112d71f77113ddb7b@syzkaller.appspotmail.com>,
+ syzkaller-bugs@googlegroups.com, jglisse@redhat.com, viro@zeniv.linux.org.uk,
+ linux-arm-kernel@lists.infradead.org, wad@chromium.org,
+ linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ luto@amacapital.net, ebiederm@xmission.com, akpm@linux-foundation.org,
+ guro@fb.com
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Ilias Apalodimas <ilias.apalodimas@linaro.org>
-Date: Jul/24/2019, 10:53:10 (UTC+00:00)
-
-> Jose, 
-> > From: Ilias Apalodimas <ilias.apalodimas@linaro.org>
-> > Date: Jul/24/2019, 09:54:27 (UTC+00:00)
-> > 
-> > > Hi David, 
-> > > 
-> > > > From: Jon Hunter <jonathanh@nvidia.com>
-> > > > Date: Tue, 23 Jul 2019 13:09:00 +0100
-> > > > 
-> > > > > Setting "iommu.passthrough=1" works for me. However, I am not sure where
-> > > > > to go from here, so any ideas you have would be great.
-> > > > 
-> > > > Then definitely we are accessing outside of a valid IOMMU mapping due
-> > > > to the page pool support changes.
-> > > 
-> > > Yes. On the netsec driver i did test with and without SMMU to make sure i am not
-> > > breaking anything.
-> > > Since we map the whole page on the API i think some offset on the driver causes
-> > > that. In any case i'll have another look on page_pool to make sure we are not
-> > > missing anything. 
-> > 
-> > Ilias, can it be due to this:
-> > 
-> > stmmac_main.c:
-> > 	pp_params.order = DIV_ROUND_UP(priv->dma_buf_sz, PAGE_SIZE);
-> > 
-> > page_pool.c:
-> > 	dma = dma_map_page_attrs(pool->p.dev, page, 0,
-> > 				 (PAGE_SIZE << pool->p.order),
-> > 				 pool->p.dma_dir, DMA_ATTR_SKIP_CPU_SYNC);
-> > 
-> > "order", will be at least 1 and then mapping the page can cause overlap 
-> > ?
-> 
-> well the API is calling the map with the correct page, page offset (0) and size
-> right? I don't see any overlapping here. Aren't we mapping what we allocate?
-> 
-> Why do you need higher order pages? Jumbo frames? Can we do a quick test with
-> the order being 0?
-
-Yes, it's for Jumbo frames that can be as large as 16k.
-
-From Jon logs it can be seen that buffers are 8k but frames are 1500 max 
-so it is using order = 1.
-
-Jon, I was able to replicate (at some level) your setup:
-
-# dmesg | grep -i arm-smmu
-[    1.337322] arm-smmu 70040000.iommu: probing hardware 
-configuration...
-[    1.337330] arm-smmu 70040000.iommu: SMMUv2 with:
-[    1.337338] arm-smmu 70040000.iommu:         stage 1 translation
-[    1.337346] arm-smmu 70040000.iommu:         stage 2 translation
-[    1.337354] arm-smmu 70040000.iommu:         nested translation
-[    1.337363] arm-smmu 70040000.iommu:         stream matching with 128 
-register groups
-[    1.337374] arm-smmu 70040000.iommu:         1 context banks (0 
-stage-2 only)
-[    1.337383] arm-smmu 70040000.iommu:         Supported page sizes: 
-0x61311000
-[    1.337393] arm-smmu 70040000.iommu:         Stage-1: 48-bit VA -> 
-48-bit IPA
-[    1.337402] arm-smmu 70040000.iommu:         Stage-2: 48-bit IPA -> 
-48-bit PA
-
-# dmesg | grep -i stmmac
-[    1.344106] stmmaceth 70000000.ethernet: Adding to iommu group 0
-[    1.344233] stmmaceth 70000000.ethernet: no reset control found
-[    1.348276] stmmaceth 70000000.ethernet: User ID: 0x10, Synopsys ID: 
-0x51
-[    1.348285] stmmaceth 70000000.ethernet:     DWMAC4/5
-[    1.348293] stmmaceth 70000000.ethernet: DMA HW capability register 
-supported
-[    1.348302] stmmaceth 70000000.ethernet: RX Checksum Offload Engine 
-supported
-[    1.348311] stmmaceth 70000000.ethernet: TX Checksum insertion 
-supported
-[    1.348320] stmmaceth 70000000.ethernet: TSO supported
-[    1.348328] stmmaceth 70000000.ethernet: Enable RX Mitigation via HW 
-Watchdog Timer
-[    1.348337] stmmaceth 70000000.ethernet: TSO feature enabled
-[    1.348409] libphy: stmmac: probed
-[ 4159.140990] stmmaceth 70000000.ethernet eth0: PHY [stmmac-0:01] 
-driver [Generic PHY]
-[ 4159.141005] stmmaceth 70000000.ethernet eth0: phy: setting supported 
-00,00000000,000062ff advertising 00,00000000,000062ff
-[ 4159.142359] stmmaceth 70000000.ethernet eth0: No Safety Features 
-support found
-[ 4159.142369] stmmaceth 70000000.ethernet eth0: IEEE 1588-2008 Advanced 
-Timestamp supported
-[ 4159.142429] stmmaceth 70000000.ethernet eth0: registered PTP clock
-[ 4159.142439] stmmaceth 70000000.ethernet eth0: configuring for 
-phy/gmii link mode
-[ 4159.142452] stmmaceth 70000000.ethernet eth0: phylink_mac_config: 
-mode=phy/gmii/Unknown/Unknown adv=00,00000000,000062ff pause=10 link=0 
-an=1
-[ 4159.142466] stmmaceth 70000000.ethernet eth0: phy link up 
-gmii/1Gbps/Full
-[ 4159.142475] stmmaceth 70000000.ethernet eth0: phylink_mac_config: 
-mode=phy/gmii/1Gbps/Full adv=00,00000000,00000000 pause=0f link=1 an=0
-[ 4159.142481] stmmaceth 70000000.ethernet eth0: Link is Up - 1Gbps/Full 
-- flow control rx/tx
-
-The only missing point is the NFS boot that I can't replicate with this 
-setup. But I did some sanity checks:
-
-Remote Enpoint:
-# dd if=/dev/urandom of=output.dat bs=128M count=1
-# nc -c 192.168.0.2 1234 < output.dat
-# md5sum output.dat 
-fde9e0818281836e4fc0edfede2b8762  output.dat
-
-DUT:
-# nc -l -c -p 1234 > output.dat
-# md5sum output.dat 
-fde9e0818281836e4fc0edfede2b8762  output.dat
-
----
-Thanks,
-Jose Miguel Abreu
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Ck9uIDIwMTkvNy8yNCDkuIvljYg0OjA1LCBNaWNoYWVsIFMuIFRzaXJraW4gd3JvdGU6Cj4gT24g
+V2VkLCBKdWwgMjQsIDIwMTkgYXQgMTA6MTc6MTRBTSArMDgwMCwgSmFzb24gV2FuZyB3cm90ZToK
+Pj4gT24gMjAxOS83LzIzIOS4i+WNiDExOjAyLCBNaWNoYWVsIFMuIFRzaXJraW4gd3JvdGU6Cj4+
+PiBPbiBUdWUsIEp1bCAyMywgMjAxOSBhdCAwOTozNDoyOVBNICswODAwLCBKYXNvbiBXYW5nIHdy
+b3RlOgo+Pj4+IE9uIDIwMTkvNy8yMyDkuIvljYg2OjI3LCBNaWNoYWVsIFMuIFRzaXJraW4gd3Jv
+dGU6Cj4+Pj4+PiBZZXMsIHNpbmNlIHRoZXJlIGNvdWxkIGJlIG11bHRpcGxlIGNvLWN1cnJlbnQg
+aW52YWxpZGF0aW9uIHJlcXVlc3RzLiBXZSBuZWVkCj4+Pj4+PiBjb3VudCB0aGVtIHRvIG1ha2Ug
+c3VyZSB3ZSBkb24ndCBwaW4gd3JvbmcgcGFnZXMuCj4+Pj4+Pgo+Pj4+Pj4KPj4+Pj4+PiBJIGFs
+c28gd29uZGVyIGFib3V0IG9yZGVyaW5nLiBrdm0gaGFzIHRoaXM6Cj4+Pj4+Pj4gICAgICAgICAg
+ICAvKgo+Pj4+Pj4+ICAgICAgICAgICAgICAqIFVzZWQgdG8gY2hlY2sgZm9yIGludmFsaWRhdGlv
+bnMgaW4gcHJvZ3Jlc3MsIG9mIHRoZSBwZm4gdGhhdCBpcwo+Pj4+Pj4+ICAgICAgICAgICAgICAq
+IHJldHVybmVkIGJ5IHBmbl90b19wZm5fcHJvdCBiZWxvdy4KPj4+Pj4+PiAgICAgICAgICAgICAg
+Ki8KPj4+Pj4+PiAgICAgICAgICAgICBtbXVfc2VxID0ga3ZtLT5tbXVfbm90aWZpZXJfc2VxOwo+
+Pj4+Pj4+ICAgICAgICAgICAgIC8qCj4+Pj4+Pj4gICAgICAgICAgICAgICogRW5zdXJlIHRoZSBy
+ZWFkIG9mIG1tdV9ub3RpZmllcl9zZXEgaXNuJ3QgcmVvcmRlcmVkIHdpdGggUFRFIHJlYWRzIGlu
+Cj4+Pj4+Pj4gICAgICAgICAgICAgICogZ2ZuX3RvX3Bmbl9wcm90KCkgKHdoaWNoIGNhbGxzIGdl
+dF91c2VyX3BhZ2VzKCkpLCBzbyB0aGF0IHdlIGRvbid0Cj4+Pj4+Pj4gICAgICAgICAgICAgICog
+cmlzayB0aGUgcGFnZSB3ZSBnZXQgYSByZWZlcmVuY2UgdG8gZ2V0dGluZyB1bm1hcHBlZCBiZWZv
+cmUgd2UgaGF2ZSBhCj4+Pj4+Pj4gICAgICAgICAgICAgICogY2hhbmNlIHRvIGdyYWIgdGhlIG1t
+dV9sb2NrIHdpdGhvdXQgbW11X25vdGlmaWVyX3JldHJ5KCkgbm90aWNpbmcuCj4+Pj4+Pj4gICAg
+ICAgICAgICAgICoKPj4+Pj4+PiAgICAgICAgICAgICAgKiBUaGlzIHNtcF9ybWIoKSBwYWlycyB3
+aXRoIHRoZSBlZmZlY3RpdmUgc21wX3dtYigpIG9mIHRoZSBjb21iaW5hdGlvbgo+Pj4+Pj4+ICAg
+ICAgICAgICAgICAqIG9mIHRoZSBwdGVfdW5tYXBfdW5sb2NrKCkgYWZ0ZXIgdGhlIFBURSBpcyB6
+YXBwZWQsIGFuZCB0aGUKPj4+Pj4+PiAgICAgICAgICAgICAgKiBzcGluX2xvY2soKSBpbiBrdm1f
+bW11X25vdGlmaWVyX2ludmFsaWRhdGVfPHBhZ2V8cmFuZ2VfZW5kPigpIGJlZm9yZQo+Pj4+Pj4+
+ICAgICAgICAgICAgICAqIG1tdV9ub3RpZmllcl9zZXEgaXMgaW5jcmVtZW50ZWQuCj4+Pj4+Pj4g
+ICAgICAgICAgICAgICovCj4+Pj4+Pj4gICAgICAgICAgICAgc21wX3JtYigpOwo+Pj4+Pj4+Cj4+
+Pj4+Pj4gZG9lcyB0aGlzIGFwcGx5IHRvIHVzPyBDYW4ndCB3ZSB1c2UgYSBzZXFsb2NrIGluc3Rl
+YWQgc28gd2UgZG8KPj4+Pj4+PiBub3QgbmVlZCB0byB3b3JyeT8KPj4+Pj4+IEknbSBub3QgZmFt
+aWxpYXIgd2l0aCBrdm0gTU1VIGludGVybmFscywgYnV0IHdlIGRvIGV2ZXJ5dGhpbmcgdW5kZXIg
+b2YKPj4+Pj4+IG1tdV9sb2NrLgo+Pj4+Pj4KPj4+Pj4+IFRoYW5rcwo+Pj4+PiBJIGRvbid0IHRo
+aW5rIHRoaXMgaGVscHMgYXQgYWxsLgo+Pj4+Pgo+Pj4+PiBUaGVyZSdzIG5vIGxvY2sgYmV0d2Vl
+biBjaGVja2luZyB0aGUgaW52YWxpZGF0ZSBjb3VudGVyIGFuZAo+Pj4+PiBnZXQgdXNlciBwYWdl
+cyBmYXN0IHdpdGhpbiB2aG9zdF9tYXBfcHJlZmV0Y2guIFNvIGl0J3MgcG9zc2libGUKPj4+Pj4g
+dGhhdCBnZXQgdXNlciBwYWdlcyBmYXN0IHJlYWRzIFBURXMgc3BlY3VsYXRpdmVseSBiZWZvcmUK
+Pj4+Pj4gaW52YWxpZGF0ZSBpcyByZWFkLgo+Pj4+Pgo+Pj4+PiAtLSAKPj4+PiBJbiB2aG9zdF9t
+YXBfcHJlZmV0Y2goKSB3ZSBkbzoKPj4+Pgo+Pj4+ICAgwqDCoMKgwqDCoMKgwqAgc3Bpbl9sb2Nr
+KCZ2cS0+bW11X2xvY2spOwo+Pj4+Cj4+Pj4gICDCoCDCoCDCoCDCoCAuLi4KPj4+Pgo+Pj4+ICAg
+wqDCoMKgwqDCoMKgwqAgZXJyID0gLUVGQVVMVDsKPj4+PiAgIMKgwqDCoMKgwqDCoMKgIGlmICh2
+cS0+aW52YWxpZGF0ZV9jb3VudCkKPj4+PiAgIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oCBnb3RvIGVycjsKPj4+Pgo+Pj4+ICAgwqDCoMKgwqDCoMKgwqAgLi4uCj4+Pj4KPj4+PiAgIMKg
+wqDCoMKgwqDCoMKgIG5waW5uZWQgPSBfX2dldF91c2VyX3BhZ2VzX2Zhc3QodWFkZHItPnVhZGRy
+LCBucGFnZXMsCj4+Pj4gICDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgdWFkZHItPndyaXRlLCBwYWdl
+cyk7Cj4+Pj4KPj4+PiAgIMKgwqDCoMKgwqDCoMKgIC4uLgo+Pj4+Cj4+Pj4gICDCoMKgwqAgwqDC
+oMKgIHNwaW5fdW5sb2NrKCZ2cS0+bW11X2xvY2spOwo+Pj4+Cj4+Pj4gSXMgdGhpcyBub3Qgc3Vm
+ZmljaWVudD8KPj4+Pgo+Pj4+IFRoYW5rcwo+Pj4gU28gd2hhdCBvcmRlcnMgX19nZXRfdXNlcl9w
+YWdlc19mYXN0IHdydCBpbnZhbGlkYXRlX2NvdW50IHJlYWQ/Cj4+Cj4+IFNvIGluIGludmFsaWRh
+dGVfZW5kKCkgY2FsbGJhY2sgd2UgaGF2ZToKPj4KPj4gc3Bpbl9sb2NrKCZ2cS0+bW11X2xvY2sp
+Owo+PiAtLXZxLT5pbnZhbGlkYXRlX2NvdW50Owo+PiAgwqDCoMKgwqDCoMKgwqAgc3Bpbl91bmxv
+Y2soJnZxLT5tbXVfbG9jayk7Cj4+Cj4+Cj4+IFNvIGV2ZW4gUFRFIGlzIHJlYWQgc3BlY3VsYXRp
+dmVseSBiZWZvcmUgcmVhZGluZyBpbnZhbGlkYXRlX2NvdW50IChvbmx5IGluCj4+IHRoZSBjYXNl
+IG9mIGludmFsaWRhdGVfY291bnQgaXMgemVybykuIFRoZSBzcGlubG9jayBoYXMgZ3VhcmFudGVl
+ZCB0aGF0IHdlCj4+IHdvbid0IHJlYWQgYW55IHN0YWxlIFBURXMuCj4+Cj4+IFRoYW5rcwo+IEkn
+bSBzb3JyeSBJIGp1c3QgZG8gbm90IGdldCB0aGUgYXJndW1lbnQuCj4gSWYgeW91IHdhbnQgdG8g
+b3JkZXIgdHdvIHJlYWRzIHlvdSBuZWVkIGFuIHNtcF9ybWIKPiBvciBzdHJvbmdlciBiZXR3ZWVu
+IHRoZW0gZXhlY3V0ZWQgb24gdGhlIHNhbWUgQ1BVLgo+Cj4gRXhlY3V0aW5nIGFueSBraW5kIG9m
+IGJhcnJpZXIgb24gYW5vdGhlciBDUFUKPiB3aWxsIGhhdmUgbm8gb3JkZXJpbmcgZWZmZWN0IG9u
+IHRoZSAxc3Qgb25lLgo+Cj4KPiBTbyBpZiBDUFUxIHJ1bnMgdGhlIHByZWZldGNoLCBhbmQgQ1BV
+MiBydW5zIGludmFsaWRhdGUKPiBjYWxsYmFjaywgcmVhZCBvZiBpbnZhbGlkYXRlIGNvdW50ZXIg
+b24gQ1BVMSBjYW4gYnlwYXNzCj4gcmVhZCBvZiBQVEUgb24gQ1BVMSB1bmxlc3MgdGhlcmUncyBh
+IGJhcnJpZXIKPiBpbiBiZXR3ZWVuLCBhbmQgbm90aGluZyBDUFUyIGRvZXMgY2FuIGFmZmVjdCB0
+aGF0IG91dGNvbWUuCj4KPgo+IFdoYXQgZGlkIEkgbWlzcz8KCgpJdCBkb2Vzbid0IGhhcm0gaWYg
+UFRFIGlzIHJlYWQgYmVmb3JlIGludmFsaWRhdGVfY291bnQsIHRoaXMgaXMgYmVjYXVzZToKCjEp
+IFRoaXMgc3BlY3VsYXRpb24gaXMgc2VyaWFsaXplZCB3aXRoIGludmFsaWRhdGVfcmFuZ2VfZW5k
+KCkgYmVjYXVzZSBvZiAKdGhlIHNwaW5sb2NrCgoyKSBUaGlzIHNwZWN1bGF0aW9uIGNhbiBvbmx5
+IG1ha2UgZWZmZWN0IHdoZW4gd2UgcmVhZCBpbnZhbGlkYXRlX2NvdW50IAphcyB6ZXJvLgoKMykg
+VGhpcyBtZWFucyB0aGUgc3BlY3VsYXRpb24gaXMgZG9uZSBhZnRlciB0aGUgbGFzdCAKaW52YWxp
+ZGF0ZV9yYW5nZV9lbmQoKSBhbmQgYmVjYXVzZSBvZiB0aGUgc3BpbmxvY2ssIHdoZW4gd2UgZW50
+ZXIgdGhlIApjcml0aWNhbCBzZWN0aW9uIG9mIHNwaW5sb2NrIGluIHByZWZldGNoLCB3ZSBjYW4g
+bm90IHNlZSBhbnkgc3RhbGUgUFRFIAp0aGF0IHdhcyB1bm1hcHBlZCBiZWZvcmUuCgpBbSBJIHdy
+b25nPwoKVGhhbmtzCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0
+cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
+Zm8vbGludXgtYXJtLWtlcm5lbAo=
