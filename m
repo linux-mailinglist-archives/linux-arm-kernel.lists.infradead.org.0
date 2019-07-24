@@ -2,70 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C51B87291B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 09:39:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C6A3572923
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 09:42:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q/+kWNt9xi0i7f4zvglB5jOnRHvyqmZ4lX5NkbAf4lE=; b=ALi3+XfL2n8z+Z
-	Mc6Hw/IvFvUZ60rTpnTN93/AXDeQbWd661lHmDpMhHp9FpV11vyC97P2kBDgl1VARPSnP5LzDmwoY
-	8AMXTWGzVd7pWyEgZb9+eiAo7luJ7372KMIsSV78NpRXeDStWvx67mUAOTIDtQpt4l0nlOdmI1FLH
-	N0XuZ8zA6kmXZacymTmQi8lSdOoGDmQqa70F38AFIWlzJneguSOQwDlN4JgXebnIKtSarBFI4jd/b
-	5cnemXphpkYZvcZ4gFAyHeALBM2jXe2u/+IRtN9yw3Bv1ZGWS8+8PMDtiKmnRVMGLbUF7bqIWZ7XK
-	yN+QfLZ/Yeyg3MvhKQGQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Ha8hJPW0siWTji6zpo389kChK/4TFdayy5Z2VEtcpGQ=; b=ZkcA4y7nGAbcHE
+	Rfed0Xv6dWx9aZuj3jp8DIjTQaA1YhoYOGRHyMxz0ly32YxwHRobToB0DdQp6ySsUiToQZYIsuQ/0
+	1iV5az7zgxwmWIQC2J3FkZbDJtVu2AJGDrqtPeJ7YYGSNoaPvZ2H8kV0miVOQa/yeXFcn2KQLoX0g
+	MHP6vc20fgxJYwEKtfih61KKcm1/n+KxPxlNEwAcwikZuywcLNF4IQAzKzuVS+YctGE65ViiiSMO5
+	5z8EXaB0Idiu5lBpnsCUhJr7Ii2VegeZM7DHuPcn0oUg7vqkvyB/7O8BZJaJDiifxylOAEIQq7bxU
+	dm3QCUiDcFeebSRxdQcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqBs8-0004ul-89; Wed, 24 Jul 2019 07:39:36 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hqBua-0006ca-4S; Wed, 24 Jul 2019 07:42:08 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqBru-0004tw-RV
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 07:39:24 +0000
-Received: from devnote2 (NE2965lan1.rev.em-net.ne.jp [210.141.244.193])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1hqBuM-0006c8-Fs
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 07:41:55 +0000
+Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
+ [10.5.11.13])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A905E2190F;
- Wed, 24 Jul 2019 07:39:17 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563953959;
- bh=3OKqgzs2jnudJmaJ1fcYoQAJqJWDM8bUh9bJQ45NSkI=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=hA5wQJB8VlSNHaopfRrW7e8DmkAvgmuY5km09VFj+Yq3nKbkU5r4vaq9IyLnNcTim
- YnSznD43WXE5G8u+azjQMxtazOvFUZud+1Wtv9MKYQ7rIfGTkgRVoqsctKPR55XHyj
- wPF1nikOuCz6xxX345efpmjyHjkYjNnQBEJciH/g=
-Date: Wed, 24 Jul 2019 16:39:14 +0900
-From: Masami Hiramatsu <mhiramat@kernel.org>
-To: James Morse <james.morse@arm.com>
-Subject: Re: [PATCH v2 2/4] arm64: unwind: Prohibit probing on return_address()
-Message-Id: <20190724163914.c4a9cea2b5b9df3116e5e694@kernel.org>
-In-Reply-To: <038c4b88-e7ef-aaab-0a79-5d7371719aa5@arm.com>
-References: <156378170297.12011.17385386326930403235.stgit@devnote2>
- <156378172702.12011.1144595747474511323.stgit@devnote2>
- <038c4b88-e7ef-aaab-0a79-5d7371719aa5@arm.com>
-X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-Mime-Version: 1.0
+ by mx1.redhat.com (Postfix) with ESMTPS id 8D6A430B8DE4;
+ Wed, 24 Jul 2019 07:41:53 +0000 (UTC)
+Received: from [10.36.116.102] (ovpn-116-102.ams2.redhat.com [10.36.116.102])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id EE5E160603;
+ Wed, 24 Jul 2019 07:41:50 +0000 (UTC)
+Subject: Re: [PATCH v2 8/9] KVM: arm/arm64: vgic-its: Check the LPI
+ translation cache on MSI injection
+To: Marc Zyngier <marc.zyngier@arm.com>,
+ linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
+ kvm@vger.kernel.org
+References: <20190611170336.121706-1-marc.zyngier@arm.com>
+ <20190611170336.121706-9-marc.zyngier@arm.com>
+ <485d9990-a6ad-2be0-e829-a0290d7d6a6f@redhat.com>
+ <3e3bf6bc-d1ab-ec77-e94c-d5defd133c5b@arm.com>
+From: Auger Eric <eric.auger@redhat.com>
+Message-ID: <1642a2fb-153b-070c-465d-fca27b76e3a0@redhat.com>
+Date: Wed, 24 Jul 2019 09:41:48 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.4.0
+MIME-Version: 1.0
+In-Reply-To: <3e3bf6bc-d1ab-ec77-e94c-d5defd133c5b@arm.com>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.47]); Wed, 24 Jul 2019 07:41:53 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_003922_910625_9DDA986F 
-X-CRM114-Status: GOOD (  18.04  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190724_004154_575991_363FF083 
+X-CRM114-Status: GOOD (  23.65  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,85 +75,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dan Rue <dan.rue@linaro.org>, Daniel Diaz <daniel.diaz@linaro.org>,
- Anders Roxell <anders.roxell@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Naresh Kamboju <naresh.kamboju@linaro.org>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, Matt Hart <matthew.hart@linaro.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Julien Thierry <julien.thierry@arm.com>, "Raslan,
+ KarimAllah" <karahmed@amazon.de>, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Christoffer Dall <christoffer.dall@arm.com>, James Morse <james.morse@arm.com>,
+ Zenghui Yu <yuzenghui@huawei.com>, "Saidi, Ali" <alisaidi@amazon.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 23 Jul 2019 17:04:21 +0100
-James Morse <james.morse@arm.com> wrote:
+Hi Marc,
 
-> Hi,
+On 7/23/19 5:45 PM, Marc Zyngier wrote:
+> Hi Eric,
 > 
-> On 22/07/2019 08:48, Masami Hiramatsu wrote:
-> > Prohibit probing on return_address() and subroutines which
-> > is called from return_address(), since the it is invoked from
-> > trace_hardirqs_off() which is also kprobe blacklisted.
+> On 23/07/2019 16:10, Auger Eric wrote:
+>> Hi Marc,
+>>
+>> On 6/11/19 7:03 PM, Marc Zyngier wrote:
+>>> When performing an MSI injection, let's first check if the translation
+>>> is already in the cache. If so, let's inject it quickly without
+>>> going through the whole translation process.
+>>>
+>>> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
+>>> ---
+>>>  virt/kvm/arm/vgic/vgic-its.c | 36 ++++++++++++++++++++++++++++++++++++
+>>>  virt/kvm/arm/vgic/vgic.h     |  1 +
+>>>  2 files changed, 37 insertions(+)
+>>>
+>>> diff --git a/virt/kvm/arm/vgic/vgic-its.c b/virt/kvm/arm/vgic/vgic-its.c
+>>> index 62932458476a..83d80ec33473 100644
+>>> --- a/virt/kvm/arm/vgic/vgic-its.c
+>>> +++ b/virt/kvm/arm/vgic/vgic-its.c
+>>> @@ -577,6 +577,20 @@ static struct vgic_irq *__vgic_its_check_cache(struct vgic_dist *dist,
+>>>  	return irq;
+>>>  }
+>>>  
+>>> +static struct vgic_irq *vgic_its_check_cache(struct kvm *kvm, phys_addr_t db,
+>>> +					     u32 devid, u32 eventid)
+>>> +{
+>>> +	struct vgic_dist *dist = &kvm->arch.vgic;
+>>> +	struct vgic_irq *irq;
+>>> +	unsigned long flags;
+>>> +
+>>> +	raw_spin_lock_irqsave(&dist->lpi_list_lock, flags);
+>>> +	irq = __vgic_its_check_cache(dist, db, devid, eventid);
+>>> +	raw_spin_unlock_irqrestore(&dist->lpi_list_lock, flags);
+>>> +
+>>> +	return irq;
+>>> +}
+>>> +
+>>>  static void vgic_its_cache_translation(struct kvm *kvm, struct vgic_its *its,
+>>>  				       u32 devid, u32 eventid,
+>>>  				       struct vgic_irq *irq)
+>>> @@ -736,6 +750,25 @@ static int vgic_its_trigger_msi(struct kvm *kvm, struct vgic_its *its,
+>>>  	return 0;
+>>>  }
+>>>  
+>>> +int vgic_its_inject_cached_translation(struct kvm *kvm, struct kvm_msi *msi)
+>>> +{
+>>> +	struct vgic_irq *irq;
+>>> +	unsigned long flags;
+>>> +	phys_addr_t db;
+>>> +
+>>> +	db = (u64)msi->address_hi << 32 | msi->address_lo;
+>>> +	irq = vgic_its_check_cache(kvm, db, msi->devid, msi->data);
+>>
+>> I think we miss a check of its->enabled. This is currently done in
+>> vgic_its_resolve_lpi() but now likely to be bypassed.
 > 
-> (Nits: "which are called" and "since it is")
-
-Thanks!
-
+> But why would a translation be cached if the ITS is disabled? It should
+> never haver been there the first place (vgic_its_resolve_lpi does check
+> for the ITS being enabled, as you pointed out).
+> 
+> Which makes me think that we miss an invalidate on an ITS being disabled:
+> 
+> diff --git a/virt/kvm/arm/vgic/vgic-its.c b/virt/kvm/arm/vgic/vgic-its.c
+> index 2633b0e88981..5f2ad74ad834 100644
+> --- a/virt/kvm/arm/vgic/vgic-its.c
+> +++ b/virt/kvm/arm/vgic/vgic-its.c
+> @@ -1719,6 +1719,8 @@ static void vgic_mmio_write_its_ctlr(struct kvm *kvm, struct vgic_its *its,
+>  		goto out;
+>  
+>  	its->enabled = !!(val & GITS_CTLR_ENABLE);
+> +	if (!its->enabled)
+> +		vgic_its_invalidate_cache(kvm);
+>  
+>  	/*
+>  	 * Try to process any pending commands. This function bails out early
 > 
 > 
-> > diff --git a/arch/arm64/kernel/return_address.c b/arch/arm64/kernel/return_address.c
-> > index b21cba90f82d..7f8a143268b0 100644
-> > --- a/arch/arm64/kernel/return_address.c
-> > +++ b/arch/arm64/kernel/return_address.c
-> > @@ -8,6 +8,7 @@
-> >  
-> >  #include <linux/export.h>
-> >  #include <linux/ftrace.h>
-> > +#include <linux/kprobes.h>
-> >  
-> >  #include <asm/stack_pointer.h>
-> >  #include <asm/stacktrace.h>
-> > @@ -17,7 +18,7 @@ struct return_address_data {
-> >  	void *addr;
-> >  };
-> >  
-> > -static int save_return_addr(struct stackframe *frame, void *d)
-> > +static nokprobe_inline int save_return_addr(struct stackframe *frame, void *d)
+> What do you think?
+
+Yes I agree this is the right way to fix it.
+
+Thanks
+
+Eric
 > 
-> This nokprobe_inline ends up as __always_inline if kprobes is enabled.
-> What do we expect the compiler to do with this? save_return_addr is passed as a
-> function-pointer to walk_stackframe()... I don't see how the compiler can inline it!
-
-Oops, that's my mistake. Then it should be NOKPROBE_SYMBOL.
-
+> 	M.
 > 
-> This would be needed for on_accessible_stack().
-> Should we cover ftrace_graph_get_ret_stack()?, or is that already in hand?
-
-No, that is OK. It just covers that the functions which are involved in
-the kprobe execution path. ftrace_graph_ret_stack() is out of the debug
-exception handler.
-
-Thank you,
-
-> >  {
-> >  	struct return_address_data *data = d;
-> >  
-> > @@ -52,3 +53,4 @@ void *return_address(unsigned int level)
-> >  		return NULL;
-> >  }
-> >  EXPORT_SYMBOL_GPL(return_address);
-> > +NOKPROBE_SYMBOL(return_address);
-> 
-> 
-> Thanks,
-> 
-> James
-
-
--- 
-Masami Hiramatsu <mhiramat@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
