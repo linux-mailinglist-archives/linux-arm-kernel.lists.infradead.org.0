@@ -2,50 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 14775727C6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 08:05:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7BB61727D5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 08:05:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kGJfb36Al4ZaTJqSq7ma0eqiiQAD3fifFKszPTrDoi0=; b=B8OkSBz1/v0hKO
-	j3UHGvADMPS4qFPRyB2AY7qRrwiOBpS3lXvDyNC2WFE3nCZe3uEwLTOcbZ+U47sLrFPsWqEeDFfof
-	dHd8nM7tqrFZ3gxbYqgUmaaGCvNlzyM5Wc4Oq48bDtnK77zCcZ6YT/+1znZYU4b2AztVyFw8exYf5
-	yLqmnW5W/NlGN0AYBn8cf3uMVwciicUTMXLX36fMqBp6fGcX3xtYzGDp+6oXpnZKltBkC7bfG9Em0
-	KbbRKt0ASXv4ShbmktUP6A1+zkbhcood48bjs7p98gJL+k3rMycbpVdcckJfsc0dW4BL4fBCaDX7U
-	Lfz4+2VilYoop+4SlTxw==;
+	List-Owner; bh=emlOVcRIjAylxBWI3EKLWOQbZ9XN1X5EWhtcKKw5HBA=; b=uVeezozKBpp9Zc
+	uG2bUQQQpaPxWjC3j69jt0IoDfTDlU1CsCfV7A7Y5+D0tlalp90Rz32lKwA1PJZkC//Ju8MXyTH96
+	4576xtJ/CkKN1V3MSy1A5BvMdoTaLAUB53RFKB1uT1yxV+iM7fdRVPOYJwIjAi7ddoWRmwsvY1pxD
+	Aw+JDxjjl1pzziSBsZJWsn/dKJrKxnWYkedQwQCot9HW2F6lggh2iM/Rb/RTuUt7toC2pfAIs/OW0
+	OLiQyUcwcabQufTCT8/ehM1LIQDqrPyeTr2Rv6ZLxLFROLojJQU4vxxZjysp3zSvp7EOL+K23fYav
+	+OdD5pBqBUvZ6dNEpLzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqAOb-0005oo-Bm; Wed, 24 Jul 2019 06:05:01 +0000
-Received: from relay12.mail.gandi.net ([217.70.178.232])
+	id 1hqAPS-0007f3-LR; Wed, 24 Jul 2019 06:05:54 +0000
+Received: from relay7-d.mail.gandi.net ([217.70.183.200])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqAOM-0005oA-0G; Wed, 24 Jul 2019 06:04:47 +0000
+ id 1hqAPD-0007dw-16; Wed, 24 Jul 2019 06:05:40 +0000
+X-Originating-IP: 79.86.19.127
 Received: from alex.numericable.fr (127.19.86.79.rev.sfr.net [79.86.19.127])
  (Authenticated sender: alex@ghiti.fr)
- by relay12.mail.gandi.net (Postfix) with ESMTPSA id B5FF6200008;
- Wed, 24 Jul 2019 06:04:26 +0000 (UTC)
+ by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 7E8472000C;
+ Wed, 24 Jul 2019 06:05:32 +0000 (UTC)
 From: Alexandre Ghiti <alex@ghiti.fr>
 To: Andrew Morton <akpm@linux-foundation.org>
-Subject: [PATCH REBASE v4 05/14] arm64,
- mm: Make randomization selected by generic topdown mmap layout
-Date: Wed, 24 Jul 2019 01:58:41 -0400
-Message-Id: <20190724055850.6232-6-alex@ghiti.fr>
+Subject: [PATCH REBASE v4 06/14] arm: Properly account for stack randomization
+ and stack guard gap
+Date: Wed, 24 Jul 2019 01:58:42 -0400
+Message-Id: <20190724055850.6232-7-alex@ghiti.fr>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190724055850.6232-1-alex@ghiti.fr>
 References: <20190724055850.6232-1-alex@ghiti.fr>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_230446_356814_45032AF3 
-X-CRM114-Status: GOOD (  11.36  )
+X-CRM114-CacheID: sfid-20190723_230539_226595_FDF9A8D3 
+X-CRM114-Status: GOOD (  10.72  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.232 listed in list.dnswl.org]
+ low trust [217.70.183.200 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -74,96 +75,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This commits selects ARCH_HAS_ELF_RANDOMIZE when an arch uses the generic
-topdown mmap layout functions so that this security feature is on by
-default.
-Note that this commit also removes the possibility for arm64 to have elf
-randomization and no MMU: without MMU, the security added by randomization
-is worth nothing.
+This commit takes care of stack randomization and stack guard gap when
+computing mmap base address and checks if the task asked for randomization.
+This fixes the problem uncovered and not fixed for arm here:
+https://lkml.kernel.org/r/20170622200033.25714-1-riel@redhat.com
 
 Signed-off-by: Alexandre Ghiti <alex@ghiti.fr>
-Acked-by: Catalin Marinas <catalin.marinas@arm.com>
 Acked-by: Kees Cook <keescook@chromium.org>
-Reviewed-by: Christoph Hellwig <hch@lst.de>
 ---
- arch/Kconfig                |  1 +
- arch/arm64/Kconfig          |  1 -
- arch/arm64/kernel/process.c |  8 --------
- mm/util.c                   | 11 +++++++++--
- 4 files changed, 10 insertions(+), 11 deletions(-)
+ arch/arm/mm/mmap.c | 14 ++++++++++++--
+ 1 file changed, 12 insertions(+), 2 deletions(-)
 
-diff --git a/arch/Kconfig b/arch/Kconfig
-index a0bb6fa4d381..d4c1f0551dfe 100644
---- a/arch/Kconfig
-+++ b/arch/Kconfig
-@@ -705,6 +705,7 @@ config HAVE_ARCH_COMPAT_MMAP_BASES
- config ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT
- 	bool
- 	depends on MMU
-+	select ARCH_HAS_ELF_RANDOMIZE
+diff --git a/arch/arm/mm/mmap.c b/arch/arm/mm/mmap.c
+index f866870db749..bff3d00bda5b 100644
+--- a/arch/arm/mm/mmap.c
++++ b/arch/arm/mm/mmap.c
+@@ -18,8 +18,9 @@
+ 	 (((pgoff)<<PAGE_SHIFT) & (SHMLBA-1)))
  
- config HAVE_COPY_THREAD_TLS
- 	bool
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 14a194e63458..399f595ef852 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -16,7 +16,6 @@ config ARM64
- 	select ARCH_HAS_DMA_MMAP_PGPROT
- 	select ARCH_HAS_DMA_PREP_COHERENT
- 	select ARCH_HAS_ACPI_TABLE_UPGRADE if ACPI
--	select ARCH_HAS_ELF_RANDOMIZE
- 	select ARCH_HAS_FAST_MULTIPLIER
- 	select ARCH_HAS_FORTIFY_SOURCE
- 	select ARCH_HAS_GCOV_PROFILE_ALL
-diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
-index 6a869d9f304f..3f59d0d1632e 100644
---- a/arch/arm64/kernel/process.c
-+++ b/arch/arm64/kernel/process.c
-@@ -524,14 +524,6 @@ unsigned long arch_align_stack(unsigned long sp)
- 	return sp & ~0xf;
- }
- 
--unsigned long arch_randomize_brk(struct mm_struct *mm)
--{
--	if (is_compat_task())
--		return randomize_page(mm->brk, SZ_32M);
--	else
--		return randomize_page(mm->brk, SZ_1G);
--}
--
- /*
-  * Called from setup_new_exec() after (COMPAT_)SET_PERSONALITY.
-  */
-diff --git a/mm/util.c b/mm/util.c
-index 0781e5575cb3..16f1e56e2996 100644
---- a/mm/util.c
-+++ b/mm/util.c
-@@ -321,7 +321,15 @@ unsigned long randomize_stack_top(unsigned long stack_top)
- }
- 
- #ifdef CONFIG_ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT
--#ifdef CONFIG_ARCH_HAS_ELF_RANDOMIZE
-+unsigned long arch_randomize_brk(struct mm_struct *mm)
-+{
-+	/* Is the current task 32bit ? */
-+	if (!IS_ENABLED(CONFIG_64BIT) || is_compat_task())
-+		return randomize_page(mm->brk, SZ_32M);
-+
-+	return randomize_page(mm->brk, SZ_1G);
-+}
-+
- unsigned long arch_mmap_rnd(void)
- {
- 	unsigned long rnd;
-@@ -335,7 +343,6 @@ unsigned long arch_mmap_rnd(void)
- 
- 	return rnd << PAGE_SHIFT;
- }
--#endif /* CONFIG_ARCH_HAS_ELF_RANDOMIZE */
+ /* gap between mmap and stack */
+-#define MIN_GAP (128*1024*1024UL)
+-#define MAX_GAP ((TASK_SIZE)/6*5)
++#define MIN_GAP		(128*1024*1024UL)
++#define MAX_GAP		((TASK_SIZE)/6*5)
++#define STACK_RND_MASK	(0x7ff >> (PAGE_SHIFT - 12))
  
  static int mmap_is_legacy(struct rlimit *rlim_stack)
  {
+@@ -35,6 +36,15 @@ static int mmap_is_legacy(struct rlimit *rlim_stack)
+ static unsigned long mmap_base(unsigned long rnd, struct rlimit *rlim_stack)
+ {
+ 	unsigned long gap = rlim_stack->rlim_cur;
++	unsigned long pad = stack_guard_gap;
++
++	/* Account for stack randomization if necessary */
++	if (current->flags & PF_RANDOMIZE)
++		pad += (STACK_RND_MASK << PAGE_SHIFT);
++
++	/* Values close to RLIM_INFINITY can overflow. */
++	if (gap + pad > gap)
++		gap += pad;
+ 
+ 	if (gap < MIN_GAP)
+ 		gap = MIN_GAP;
 -- 
 2.20.1
 
