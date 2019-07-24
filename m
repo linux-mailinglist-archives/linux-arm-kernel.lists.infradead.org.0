@@ -2,133 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B16B72C38
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 12:16:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2941D72C3C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 12:17:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=G6pCSNdubdEPUzhhYAc6mfXMCeqx45DPMj5h2kg4tKI=; b=Uag1/JNWEkNUry
-	+7dQoA8nMixp7qd9obaoE/RsvWVufdoosAhpXOW9JVVyZd2bZlW+pRhlRdXDMebVKiLXxlYrQKoMx
-	7vRIbjr1OufYY2xjBgsvRrtDz5e3U5IjmAHaw4TR2uSX+bGJU8oqbGpL9Fz2wZTZ/ZggGru/bEBH3
-	tuDHEIoA4Ez1b9U/N07+GvYANU1U53xPPIFMJ26lnBZc6m4KdZayf/pdXPfMYfK/zjg7GVEeq0qsJ
-	n0iI9fs5tjmRIEvHWynfvPdqVs9tKEkPdkPU2ob2HhsEempFIakktvrGpFYtzAHhy5mHw6gSA/Ak7
-	x9evCuIozxNooyhQKqHA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=3aXeVYnFqICnWXw2BRIqrs6YfdMGYSPtKyZQv15DDJc=; b=DqCrHcM3VsCsazzGiNw93cEV+
+	8ASE+I/stfCUMdNkBey9bsWnfp7dGtRUzrhJWGkL6Ot81Yko9cmkmHS0XuBNerXbVGv7Wxz9QAFXi
+	BodBp/ypiC/D0YhypjuFTAmNgifd349KIaofAIjFKt6G9Q9+7yhrRnVEUgGLw1bP39zGigfMqfoim
+	iDHAOjP2IbZiNnA8MvoZeydOZQ6vhQ8WTDunGlPgrwgaQbDdu5b3oZSe5lUgUAF+3VRy4MVcULH9G
+	1DLDOwmqrzPqm2L8hphaBJ/OzY+3ECyDgXRIcb5l3TCfnK+woUSU/wM6JkqI/vkUe8L3cHQllcZ9f
+	IBFwXQKow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqEJa-0003uH-CO; Wed, 24 Jul 2019 10:16:06 +0000
-Received: from mailout2.w1.samsung.com ([210.118.77.12])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqEJL-0003tZ-HJ
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 10:15:53 +0000
-Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
- by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
- 20190724101549euoutp024596ecc56f06f2639de80f4619831f19~0UGFEgO8C1082110821euoutp02T
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 24 Jul 2019 10:15:49 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
- 20190724101549euoutp024596ecc56f06f2639de80f4619831f19~0UGFEgO8C1082110821euoutp02T
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1563963349;
- bh=VgfVrkM7RnbML6MfPA1/+fseqSPr/HcYgdilfOy6ZNA=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=Pacv9sO3Olp0BDQaJt3zgErH8x2mtnLmChkXQnWF+H+OPhfVL7HhJyiEoll8LAAIk
- iSl51RSDCV9pamQI0+1pvM+PXyq/2K0oFE+GBX7JNvZw7iD3NggkOFLQE5L3QchYp3
- 3aw6C7Rn6iSV2yK+9we5+R9zKALkB/j+O/8m6xms=
-Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTP id
- 20190724101548eucas1p2461aaec56a443c46b4992b2f9bf1b30a~0UGEX79oN1335213352eucas1p2J;
- Wed, 24 Jul 2019 10:15:48 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges2new.samsung.com (EUCPMTA) with SMTP id 09.F9.04377.4DF283D5; Wed, 24
- Jul 2019 11:15:48 +0100 (BST)
-Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
- 20190724101547eucas1p240814a5a29b21a6d59665ee76fbf4d28~0UGDsMoVk0872508725eucas1p2S;
- Wed, 24 Jul 2019 10:15:47 +0000 (GMT)
-Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
- eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20190724101547eusmtrp11216b5c524db02077f03620ce50883ec~0UGDeAdtz0333803338eusmtrp1r;
- Wed, 24 Jul 2019 10:15:47 +0000 (GMT)
-X-AuditID: cbfec7f4-5632c9c000001119-c0-5d382fd4e45c
-Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
- eusmgms2.samsung.com (EUCPMTA) with SMTP id 96.30.04140.3DF283D5; Wed, 24
- Jul 2019 11:15:47 +0100 (BST)
-Received: from [106.120.51.20] (unknown [106.120.51.20]) by
- eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20190724101546eusmtip15fe00697368d391e9d2a79e54f65ec75~0UGCuwJAq1498014980eusmtip1P;
- Wed, 24 Jul 2019 10:15:46 +0000 (GMT)
-Subject: Re: [PATCH v4 3/5] drivers: devfreq: events: extend events by type
- of counted data
-To: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-pm@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, cw00.choi@samsung.com
-From: Lukasz Luba <l.luba@partner.samsung.com>
-Message-ID: <37af143f-a585-a28a-a36f-2ed25c5b6d3b@partner.samsung.com>
-Date: Wed, 24 Jul 2019 12:15:45 +0200
+	id 1hqEKk-0004Cx-Gy; Wed, 24 Jul 2019 10:17:18 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hqEKS-0004Bv-V9
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 10:17:06 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 096B4337;
+ Wed, 24 Jul 2019 03:17:00 -0700 (PDT)
+Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1F5C73F71F;
+ Wed, 24 Jul 2019 03:16:58 -0700 (PDT)
+Subject: Re: [PATCH v3 3/7] drivers: Introduce device lookup variants by fwnode
+To: Suzuki K Poulose <suzuki.poulose@arm.com>, linux-kernel@vger.kernel.org
+References: <20190723221838.12024-1-suzuki.poulose@arm.com>
+ <20190723221838.12024-4-suzuki.poulose@arm.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <8ca8c30d-a31a-024a-70b6-d58b394020bf@arm.com>
+Date: Wed, 24 Jul 2019 11:16:57 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.1
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20190605091236.24263-4-l.luba@partner.samsung.com>
-Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrNKsWRmVeSWpSXmKPExsWy7djP87pX9C1iDb5MEbLYOGM9q8X1L89Z
- LeYfOcdq0f/4NbPF+fMb2C3ONr1ht9j0+BqrxeVdc9gsPvceYbSYcX4fk8XaI3fZLZZev8hk
- cbtxBZtF694j7BaH37SzWnw78YjRQcBjzbw1jB47Z91l99i0qpPNY/OSeo++LasYPT5vkgtg
- i+KySUnNySxLLdK3S+DK+HflJWPBXM2K5dNWsTUw3pbvYuTkkBAwkXj88z97FyMXh5DACkaJ
- LTe6oZwvjBKHHpxlhHA+M0osbtjGDNNy8M4uJojEckaJH+uboareMko0L+kEynBwCAvESrSt
- NgOJiwjsYpQ4/WM1M4jDDDLq5INrrCBFbAJ6EjtWFYJM5RVwk9g/dTobiM0ioCrxfPUeFhBb
- VCBC4vKWXYwQNYISJ2c+AYtzCjhInG38C2YzC4hL3HoynwnClpfY/nYO2C4JgUYOiZWXLrBC
- nO0i8e/8dKgXhCVeHd/CDmHLSJye3MMCYRdLNPQuZISwayQe98+FqrGWOHz8ItjNzAKaEut3
- 6UOEHSUW9D9iAQlLCPBJ3HgrCHECn8SkbSCbQMK8Eh1tQhDVGhJbei4wQdhiEsvXTGOfwKg0
- C8ljs5A8MwvJM7MQ9i5gZFnFKJ5aWpybnlpslJdarlecmFtcmpeul5yfu4kRmORO/zv+ZQfj
- rj9JhxgFOBiVeHgrmMxjhVgTy4orcw8xSnAwK4nwBjaYxQrxpiRWVqUW5ccXleakFh9ilOZg
- URLnrWZ4EC0kkJ5YkpqdmlqQWgSTZeLglGpgzFIplbuTceo4b/MElqyg1IjaTIn+97yTnVyf
- rSpNfa4sGhXDX8X+3F68U6rmxnpJ45tTPrXvWmxqLXx3pbwaR/7N09Xdk7ONT+7QCpHukInT
- V7Oacv135BzuNxp1/ROi64LCf0ltEDHTK1yQInpU7+3jxzv6Wy4/O9lyKHj58iDH423i+nFK
- LMUZiYZazEXFiQDgX1TcbgMAAA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFvrAIsWRmVeSWpSXmKPExsVy+t/xu7qX9S1iDU5slbXYOGM9q8X1L89Z
- LeYfOcdq0f/4NbPF+fMb2C3ONr1ht9j0+BqrxeVdc9gsPvceYbSYcX4fk8XaI3fZLZZev8hk
- cbtxBZtF694j7BaH37SzWnw78YjRQcBjzbw1jB47Z91l99i0qpPNY/OSeo++LasYPT5vkgtg
- i9KzKcovLUlVyMgvLrFVija0MNIztLTQMzKx1DM0No+1MjJV0rezSUnNySxLLdK3S9DL+Hfl
- JWPBXM2K5dNWsTUw3pbvYuTkkBAwkTh4ZxdTFyMXh5DAUkaJ2/f3MUIkxCQm7dvODmELS/y5
- 1sUGUfSaUeL+7anMIAlhgViJpkuXWUESIgK7GCW2/24BG8Us8JlRYvqay8wQLScZJT6uPglU
- xsHBJqAnsWNVIUg3r4CbxP6p09lAbBYBVYnnq/ewgNiiAhESfW2z2SBqBCVOznwCFucUcJA4
- 2/gXzGYWMJOYt/khM4QtLnHryXwmCFteYvvbOcwTGIVmIWmfhaRlFpKWWUhaFjCyrGIUSS0t
- zk3PLTbSK07MLS7NS9dLzs/dxAiM7W3Hfm7Zwdj1LvgQowAHoxIPbwWTeawQa2JZcWXuIUYJ
- DmYlEd7ABrNYId6UxMqq1KL8+KLSnNTiQ4ymQM9NZJYSTc4Hpp28knhDU0NzC0tDc2NzYzML
- JXHeDoGDMUIC6YklqdmpqQWpRTB9TBycUg2MZUYNH3umHPvVkyIq/trEY0O2jMcJ/04NpRmr
- GCrnXucX2JGTI8NabfZtSlaMv83p/EXH3G44iaW/vK0f2/637+CxHaIMT9tnzpANPCv2JdpO
- 6Z+hzb/td9M3t9pMeNEzZ5/YGWfGksBIafPNZirXa6XkTh5a6RS9TnfFLbFaM9UbZQ7/+N2V
- WIozEg21mIuKEwG+51A1AwMAAA==
-X-CMS-MailID: 20190724101547eucas1p240814a5a29b21a6d59665ee76fbf4d28
-X-Msg-Generator: CA
-X-RootMTR: 20190605091303eucas1p27177d349e0f2bd37bf582dbd7266321a
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20190605091303eucas1p27177d349e0f2bd37bf582dbd7266321a
-References: <20190605091236.24263-1-l.luba@partner.samsung.com>
- <CGME20190605091303eucas1p27177d349e0f2bd37bf582dbd7266321a@eucas1p2.samsung.com>
- <20190605091236.24263-4-l.luba@partner.samsung.com>
+In-Reply-To: <20190723221838.12024-4-suzuki.poulose@arm.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_031551_778798_34B9F02C 
-X-CRM114-Status: GOOD (  27.86  )
-X-Spam-Score: -5.1 (-----)
+X-CRM114-CacheID: sfid-20190724_031704_406911_B36F78E2 
+X-CRM114-Status: GOOD (  28.48  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.12 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -140,159 +62,377 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, willy.mh.wolff.ml@gmail.com, kgene@kernel.org,
- b.zolnierkie@samsung.com, krzk@kernel.org, kyungmin.park@samsung.com,
- robh+dt@kernel.org, myungjoo.ham@samsung.com, s.nawrocki@samsung.com,
- m.szyprowski@samsung.com
-Content-Type: text/plain; charset="us-ascii"
+Cc: Ulf Hansson <ulf.hansson@linaro.org>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>, rafael@kernel.org,
+ gregkh@linuxfoundation.org, Joerg Roedel <joro@8bytes.org>,
+ linux-usb@vger.kernel.org, Will Deacon <will.deacon@arm.com>,
+ Jason Gunthorpe <jgg@ziepe.ca>, Doug Ledford <dledford@redhat.com>,
+ Joe Perches <joe@perches.com>, "David S. Miller" <davem@davemloft.net>,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Chanwoo,
-
-Could you have a look a this patch, please?
-This patch has been rewritten accorifing to your suggestion.
-Krzysztof tried to apply 5/5 DT patch on his current branch,
-but it is missing earlier stuff.
-The other patches have needed ACKs so could go through devfreq tree
-probably, but this one left.
-
-Regards,
-Lukasz
-
-On 6/5/19 11:12 AM, Lukasz Luba wrote:
-> This patch adds posibility to choose what type of data should be counted
-> by the PPMU counter. Now the type comes from DT where the event has been
-> defined. When there is no 'event-data-type' the default value is used,
-> which is 'read+write data in bytes'.
-> It is needed when you want to know not only read+write data bytes but
-> i.e. only write data in byte, or number of read requests, etc.
+On 23/07/2019 23:18, Suzuki K Poulose wrote:
+> Add a helper to match the firmware node handle of a device and provide
+> wrappers for {bus/class/driver}_find_device() APIs to avoid proliferation
+> of duplicate custom match functions.
 > 
-> Signed-off-by: Lukasz Luba <l.luba@partner.samsung.com>
+> Cc: "David S. Miller" <davem@davemloft.net>
+> Cc: Doug Ledford <dledford@redhat.com>
+> Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+> Cc: Heikki Krogerus <heikki.krogerus@linux.intel.com>
+> Cc: Jason Gunthorpe <jgg@ziepe.ca>
+> Cc: linux-usb@vger.kernel.org
+> Cc: "Rafael J. Wysocki" <rafael@kernel.org>
+> Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+> Cc: Ulf Hansson <ulf.hansson@linaro.org>
+> Cc: Joe Perches <joe@perches.com>
+> Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
+> Cc: Will Deacon <will.deacon@arm.com>
+> Cc: Robin Murphy <robin.murphy@arm.com>
+> Cc: Joerg Roedel <joro@8bytes.org>
+> Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 > ---
->   drivers/devfreq/event/exynos-ppmu.c | 60 ++++++++++++++++++++---------
->   include/linux/devfreq-event.h       |  6 +++
->   2 files changed, 47 insertions(+), 19 deletions(-)
+>   drivers/base/core.c                           |  6 +++
+>   drivers/base/devcon.c                         |  8 +---
+>   .../hwtracing/coresight/coresight-platform.c  | 11 +-----
+>   drivers/hwtracing/coresight/coresight-priv.h  |  2 -
+>   drivers/hwtracing/coresight/coresight.c       |  4 +-
+>   drivers/infiniband/hw/hns/hns_roce_hw_v1.c    |  8 +---
+>   drivers/iommu/arm-smmu-v3.c                   |  9 +----
+>   drivers/iommu/arm-smmu.c                      |  9 +----
+
+For the Arm SMMU drivers,
+
+Acked-by: Robin Murphy <robin.murphy@arm.com>
+
+>   .../ethernet/hisilicon/hns/hns_dsaf_misc.c    |  8 +---
+>   drivers/usb/roles/class.c                     |  8 +---
+>   drivers/usb/typec/class.c                     |  8 +---
+>   include/linux/device.h                        | 39 +++++++++++++++++++
+>   12 files changed, 57 insertions(+), 63 deletions(-)
 > 
-> diff --git a/drivers/devfreq/event/exynos-ppmu.c b/drivers/devfreq/event/exynos-ppmu.c
-> index 17f3c86a6f00..12f637320e9e 100644
-> --- a/drivers/devfreq/event/exynos-ppmu.c
-> +++ b/drivers/devfreq/event/exynos-ppmu.c
-> @@ -161,9 +161,9 @@ static int exynos_ppmu_set_event(struct devfreq_event_dev *edev)
->   	if (ret < 0)
->   		return ret;
->   
-> -	/* Set the event of Read/Write data count  */
-> +	/* Set the event of proper data type monitoring */
->   	ret = regmap_write(info->regmap, PPMU_BEVTxSEL(id),
-> -				PPMU_RO_DATA_CNT | PPMU_WO_DATA_CNT);
-> +			   edev->desc->data_type);
->   	if (ret < 0)
->   		return ret;
->   
-> @@ -375,23 +375,11 @@ static int exynos_ppmu_v2_set_event(struct devfreq_event_dev *edev)
->   	if (ret < 0)
->   		return ret;
->   
-> -	/* Set the event of Read/Write data count  */
-> -	switch (id) {
-> -	case PPMU_PMNCNT0:
-> -	case PPMU_PMNCNT1:
-> -	case PPMU_PMNCNT2:
-> -		ret = regmap_write(info->regmap, PPMU_V2_CH_EVx_TYPE(id),
-> -				PPMU_V2_RO_DATA_CNT | PPMU_V2_WO_DATA_CNT);
-> -		if (ret < 0)
-> -			return ret;
-> -		break;
-> -	case PPMU_PMNCNT3:
-> -		ret = regmap_write(info->regmap, PPMU_V2_CH_EVx_TYPE(id),
-> -				PPMU_V2_EVT3_RW_DATA_CNT);
-> -		if (ret < 0)
-> -			return ret;
-> -		break;
-> -	}
-> +	/* Set the event of proper data type monitoring */
-> +	ret = regmap_write(info->regmap, PPMU_V2_CH_EVx_TYPE(id),
-> +			   edev->desc->data_type);
-> +	if (ret < 0)
-> +		return ret;
->   
->   	/* Reset cycle counter/performance counter and enable PPMU */
->   	ret = regmap_read(info->regmap, PPMU_V2_PMNC, &pmnc);
-> @@ -507,6 +495,7 @@ static int of_get_devfreq_events(struct device_node *np,
->   	struct device_node *events_np, *node;
->   	int i, j, count;
->   	const struct of_device_id *of_id;
-> +	int ret;
->   
->   	events_np = of_get_child_by_name(np, "events");
->   	if (!events_np) {
-> @@ -556,6 +545,39 @@ static int of_get_devfreq_events(struct device_node *np,
->   		desc[j].driver_data = info;
->   
->   		of_property_read_string(node, "event-name", &desc[j].name);
-> +		ret = of_property_read_u32(node, "event-data-type",
-> +					   &desc[j].data_type);
-> +		if (ret) {
-> +			/* Set the event of proper data type counting.
-> +			 * Check if the data type has been defined in DT,
-> +			 * use default if not.
-> +			 */
-> +			if (info->ppmu_type == EXYNOS_TYPE_PPMU_V2) {
-> +				struct devfreq_event_dev edev;
-> +				int id;
-> +				/* Not all registers take the same value for
-> +				 * read+write data count.
-> +				 */
-> +				edev.desc = &desc[j];
-> +				id = exynos_ppmu_find_ppmu_id(&edev);
+> diff --git a/drivers/base/core.c b/drivers/base/core.c
+> index fb83647d685a..e8f81a667545 100644
+> --- a/drivers/base/core.c
+> +++ b/drivers/base/core.c
+> @@ -3368,3 +3368,9 @@ int device_match_of_node(struct device *dev, const void *np)
+>   	return dev->of_node == np;
+>   }
+>   EXPORT_SYMBOL_GPL(device_match_of_node);
 > +
-> +				switch (id) {
-> +				case PPMU_PMNCNT0:
-> +				case PPMU_PMNCNT1:
-> +				case PPMU_PMNCNT2:
-> +					desc[j].data_type = PPMU_V2_RO_DATA_CNT
-> +						| PPMU_V2_WO_DATA_CNT;
-> +					break;
-> +				case PPMU_PMNCNT3:
-> +					desc[j].data_type =
-> +						PPMU_V2_EVT3_RW_DATA_CNT;
-> +					break;
-> +				}
-> +			} else {
-> +				desc[j].data_type = PPMU_RO_DATA_CNT |
-> +					PPMU_WO_DATA_CNT;
-> +			}
-> +		}
+> +int device_match_fwnode(struct device *dev, const void *fwnode)
+> +{
+> +	return dev_fwnode(dev) == fwnode;
+> +}
+> +EXPORT_SYMBOL_GPL(device_match_fwnode);
+> diff --git a/drivers/base/devcon.c b/drivers/base/devcon.c
+> index 09f28479b243..1d488dc5dd0c 100644
+> --- a/drivers/base/devcon.c
+> +++ b/drivers/base/devcon.c
+> @@ -133,19 +133,13 @@ static struct bus_type *generic_match_buses[] = {
+>   	NULL,
+>   };
 >   
->   		j++;
+> -static int device_fwnode_match(struct device *dev, const void *fwnode)
+> -{
+> -	return dev_fwnode(dev) == fwnode;
+> -}
+> -
+>   static void *device_connection_fwnode_match(struct device_connection *con)
+>   {
+>   	struct bus_type *bus;
+>   	struct device *dev;
+>   
+>   	for (bus = generic_match_buses[0]; bus; bus++) {
+> -		dev = bus_find_device(bus, NULL, (void *)con->fwnode,
+> -				      device_fwnode_match);
+> +		dev = bus_find_device_by_fwnode(bus, con->fwnode);
+>   		if (dev && !strncmp(dev_name(dev), con->id, strlen(con->id)))
+>   			return dev;
+>   
+> diff --git a/drivers/hwtracing/coresight/coresight-platform.c b/drivers/hwtracing/coresight/coresight-platform.c
+> index dad7d96c5943..3c5bee429105 100644
+> --- a/drivers/hwtracing/coresight/coresight-platform.c
+> +++ b/drivers/hwtracing/coresight/coresight-platform.c
+> @@ -37,11 +37,6 @@ static int coresight_alloc_conns(struct device *dev,
+>   	return 0;
+>   }
+>   
+> -int coresight_device_fwnode_match(struct device *dev, const void *fwnode)
+> -{
+> -	return dev_fwnode(dev) == fwnode;
+> -}
+> -
+>   static struct device *
+>   coresight_find_device_by_fwnode(struct fwnode_handle *fwnode)
+>   {
+> @@ -51,8 +46,7 @@ coresight_find_device_by_fwnode(struct fwnode_handle *fwnode)
+>   	 * If we have a non-configurable replicator, it will be found on the
+>   	 * platform bus.
+>   	 */
+> -	dev = bus_find_device(&platform_bus_type, NULL,
+> -			      fwnode, coresight_device_fwnode_match);
+> +	dev = bus_find_device_by_fwnode(&platform_bus_type, fwnode);
+>   	if (dev)
+>   		return dev;
+>   
+> @@ -60,8 +54,7 @@ coresight_find_device_by_fwnode(struct fwnode_handle *fwnode)
+>   	 * We have a configurable component - circle through the AMBA bus
+>   	 * looking for the device that matches the endpoint node.
+>   	 */
+> -	return bus_find_device(&amba_bustype, NULL,
+> -			       fwnode, coresight_device_fwnode_match);
+> +	return bus_find_device_by_fwnode(&amba_bustype, fwnode);
+>   }
+>   
+>   #ifdef CONFIG_OF
+> diff --git a/drivers/hwtracing/coresight/coresight-priv.h b/drivers/hwtracing/coresight/coresight-priv.h
+> index 7d401790dd7e..61d7f9ff054d 100644
+> --- a/drivers/hwtracing/coresight/coresight-priv.h
+> +++ b/drivers/hwtracing/coresight/coresight-priv.h
+> @@ -202,6 +202,4 @@ static inline void *coresight_get_uci_data(const struct amba_id *id)
+>   
+>   void coresight_release_platform_data(struct coresight_platform_data *pdata);
+>   
+> -int coresight_device_fwnode_match(struct device *dev, const void *fwnode);
+> -
+>   #endif
+> diff --git a/drivers/hwtracing/coresight/coresight.c b/drivers/hwtracing/coresight/coresight.c
+> index 55db77f6410b..6453c67a4d01 100644
+> --- a/drivers/hwtracing/coresight/coresight.c
+> +++ b/drivers/hwtracing/coresight/coresight.c
+> @@ -1046,9 +1046,7 @@ static void coresight_fixup_device_conns(struct coresight_device *csdev)
+>   		struct coresight_connection *conn = &csdev->pdata->conns[i];
+>   		struct device *dev = NULL;
+>   
+> -		dev = bus_find_device(&coresight_bustype, NULL,
+> -				      (void *)conn->child_fwnode,
+> -				      coresight_device_fwnode_match);
+> +		dev = bus_find_device_by_fwnode(&coresight_bustype, conn->child_fwnode);
+>   		if (dev) {
+>   			conn->child_dev = to_coresight_device(dev);
+>   			/* and put reference from 'bus_find_device()' */
+> diff --git a/drivers/infiniband/hw/hns/hns_roce_hw_v1.c b/drivers/infiniband/hw/hns/hns_roce_hw_v1.c
+> index 81e6dedb1e02..fa05e943038a 100644
+> --- a/drivers/infiniband/hw/hns/hns_roce_hw_v1.c
+> +++ b/drivers/infiniband/hw/hns/hns_roce_hw_v1.c
+> @@ -4499,19 +4499,13 @@ static const struct acpi_device_id hns_roce_acpi_match[] = {
+>   };
+>   MODULE_DEVICE_TABLE(acpi, hns_roce_acpi_match);
+>   
+> -static int hns_roce_node_match(struct device *dev, const void *fwnode)
+> -{
+> -	return dev->fwnode == fwnode;
+> -}
+> -
+>   static struct
+>   platform_device *hns_roce_find_pdev(struct fwnode_handle *fwnode)
+>   {
+>   	struct device *dev;
+>   
+>   	/* get the 'device' corresponding to the matching 'fwnode' */
+> -	dev = bus_find_device(&platform_bus_type, NULL,
+> -			      fwnode, hns_roce_node_match);
+> +	dev = bus_find_device_by_fwnode(&platform_bus_type, fwnode);
+>   	/* get the platform device */
+>   	return dev ? to_platform_device(dev) : NULL;
+>   }
+> diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+> index a9a9fabd3968..6f0e13fa5e1a 100644
+> --- a/drivers/iommu/arm-smmu-v3.c
+> +++ b/drivers/iommu/arm-smmu-v3.c
+> @@ -2034,16 +2034,11 @@ arm_smmu_iova_to_phys(struct iommu_domain *domain, dma_addr_t iova)
+>   
+>   static struct platform_driver arm_smmu_driver;
+>   
+> -static int arm_smmu_match_node(struct device *dev, const void *data)
+> -{
+> -	return dev->fwnode == data;
+> -}
+> -
+>   static
+>   struct arm_smmu_device *arm_smmu_get_by_fwnode(struct fwnode_handle *fwnode)
+>   {
+> -	struct device *dev = driver_find_device(&arm_smmu_driver.driver, NULL,
+> -						fwnode, arm_smmu_match_node);
+> +	struct device *dev = driver_find_device_by_fwnode(&arm_smmu_driver.driver,
+> +							  fwnode);
+>   	put_device(dev);
+>   	return dev ? dev_get_drvdata(dev) : NULL;
+>   }
+> diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
+> index 64977c131ee6..aa06498f291d 100644
+> --- a/drivers/iommu/arm-smmu.c
+> +++ b/drivers/iommu/arm-smmu.c
+> @@ -1426,16 +1426,11 @@ static bool arm_smmu_capable(enum iommu_cap cap)
 >   	}
-> diff --git a/include/linux/devfreq-event.h b/include/linux/devfreq-event.h
-> index 4db00b02ca3f..cc160b1274c0 100644
-> --- a/include/linux/devfreq-event.h
-> +++ b/include/linux/devfreq-event.h
-> @@ -81,14 +81,20 @@ struct devfreq_event_ops {
->    * struct devfreq_event_desc - the descriptor of devfreq-event device
->    *
->    * @name	: the name of devfreq-event device.
-> + * @data_type	: the data type which is going to be counted in the register.
->    * @driver_data	: the private data for devfreq-event driver.
->    * @ops		: the operation to control devfreq-event device.
->    *
->    * Each devfreq-event device is described with a this structure.
->    * This structure contains the various data for devfreq-event device.
-> + * The data_type describes what is going to be counted in the register.
-> + * It might choose to count e.g. read requests, write data in bytes, etc.
-> + * The full supported list of types is present in specyfic header in:
-> + * include/dt-bindings/pmu/.
->    */
->   struct devfreq_event_desc {
->   	const char *name;
-> +	u32 data_type;
->   	void *driver_data;
+>   }
 >   
->   	const struct devfreq_event_ops *ops;
+> -static int arm_smmu_match_node(struct device *dev, const void *data)
+> -{
+> -	return dev->fwnode == data;
+> -}
+> -
+>   static
+>   struct arm_smmu_device *arm_smmu_get_by_fwnode(struct fwnode_handle *fwnode)
+>   {
+> -	struct device *dev = driver_find_device(&arm_smmu_driver.driver, NULL,
+> -						fwnode, arm_smmu_match_node);
+> +	struct device *dev = driver_find_device_by_fwnode(&arm_smmu_driver.driver,
+> +							  fwnode);
+>   	put_device(dev);
+>   	return dev ? dev_get_drvdata(dev) : NULL;
+>   }
+> diff --git a/drivers/net/ethernet/hisilicon/hns/hns_dsaf_misc.c b/drivers/net/ethernet/hisilicon/hns/hns_dsaf_misc.c
+> index bb6586d0e5af..ed3829ae4ef1 100644
+> --- a/drivers/net/ethernet/hisilicon/hns/hns_dsaf_misc.c
+> +++ b/drivers/net/ethernet/hisilicon/hns/hns_dsaf_misc.c
+> @@ -754,17 +754,11 @@ struct dsaf_misc_op *hns_misc_op_get(struct dsaf_device *dsaf_dev)
+>   	return (void *)misc_op;
+>   }
+>   
+> -static int hns_dsaf_dev_match(struct device *dev, const void *fwnode)
+> -{
+> -	return dev->fwnode == fwnode;
+> -}
+> -
+>   struct
+>   platform_device *hns_dsaf_find_platform_device(struct fwnode_handle *fwnode)
+>   {
+>   	struct device *dev;
+>   
+> -	dev = bus_find_device(&platform_bus_type, NULL,
+> -			      fwnode, hns_dsaf_dev_match);
+> +	dev = bus_find_device_by_fwnode(&platform_bus_type, fwnode);
+>   	return dev ? to_platform_device(dev) : NULL;
+>   }
+> diff --git a/drivers/usb/roles/class.c b/drivers/usb/roles/class.c
+> index c8efe60e2465..0526efbc4922 100644
+> --- a/drivers/usb/roles/class.c
+> +++ b/drivers/usb/roles/class.c
+> @@ -85,11 +85,6 @@ enum usb_role usb_role_switch_get_role(struct usb_role_switch *sw)
+>   }
+>   EXPORT_SYMBOL_GPL(usb_role_switch_get_role);
+>   
+> -static int switch_fwnode_match(struct device *dev, const void *fwnode)
+> -{
+> -	return dev_fwnode(dev) == fwnode;
+> -}
+> -
+>   static void *usb_role_switch_match(struct device_connection *con, int ep,
+>   				   void *data)
+>   {
+> @@ -99,8 +94,7 @@ static void *usb_role_switch_match(struct device_connection *con, int ep,
+>   		if (con->id && !fwnode_property_present(con->fwnode, con->id))
+>   			return NULL;
+>   
+> -		dev = class_find_device(role_class, NULL, con->fwnode,
+> -					switch_fwnode_match);
+> +		dev = class_find_device_by_fwnode(role_class, con->fwnode);
+>   	} else {
+>   		dev = class_find_device_by_name(role_class, con->endpoint[ep]);
+>   	}
+> diff --git a/drivers/usb/typec/class.c b/drivers/usb/typec/class.c
+> index 9b0d15b487e5..94a3eda62add 100644
+> --- a/drivers/usb/typec/class.c
+> +++ b/drivers/usb/typec/class.c
+> @@ -205,11 +205,6 @@ static void typec_altmode_put_partner(struct altmode *altmode)
+>   	put_device(&adev->dev);
+>   }
+>   
+> -static int typec_port_fwnode_match(struct device *dev, const void *fwnode)
+> -{
+> -	return dev_fwnode(dev) == fwnode;
+> -}
+> -
+>   static void *typec_port_match(struct device_connection *con, int ep, void *data)
+>   {
+>   	struct device *dev;
+> @@ -219,8 +214,7 @@ static void *typec_port_match(struct device_connection *con, int ep, void *data)
+>   	 * we need to return ERR_PTR(-PROBE_DEFER) when there is no device.
+>   	 */
+>   	if (con->fwnode)
+> -		return class_find_device(typec_class, NULL, con->fwnode,
+> -					 typec_port_fwnode_match);
+> +		return class_find_device_by_fwnode(typec_class, con->fwnode);
+>   
+>   	dev = class_find_device_by_name(typec_class, con->endpoint[ep]);
+>   
+> diff --git a/include/linux/device.h b/include/linux/device.h
+> index 29d8d7ad41e6..7133fc1c285d 100644
+> --- a/include/linux/device.h
+> +++ b/include/linux/device.h
+> @@ -166,6 +166,7 @@ void subsys_dev_iter_exit(struct subsys_dev_iter *iter);
+>   
+>   int device_match_name(struct device *dev, const void *name);
+>   int device_match_of_node(struct device *dev, const void *np);
+> +int device_match_fwnode(struct device *dev, const void *fwnode);
+>   
+>   int bus_for_each_dev(struct bus_type *bus, struct device *start, void *data,
+>   		     int (*fn)(struct device *dev, void *data));
+> @@ -198,6 +199,18 @@ bus_find_device_by_of_node(struct bus_type *bus, const struct device_node *np)
+>   	return bus_find_device(bus, NULL, np, device_match_of_node);
+>   }
+>   
+> +/**
+> + * bus_find_device_by_fwnode : device iterator for locating a particular device
+> + * matching the fwnode.
+> + * @bus: bus type
+> + * @fwnode: fwnode of the device to match.
+> + */
+> +static inline struct device *
+> +bus_find_device_by_fwnode(struct bus_type *bus, const struct fwnode_handle *fwnode)
+> +{
+> +	return bus_find_device(bus, NULL, fwnode, device_match_fwnode);
+> +}
+> +
+>   struct device *subsys_find_device_by_id(struct bus_type *bus, unsigned int id,
+>   					struct device *hint);
+>   int bus_for_each_drv(struct bus_type *bus, struct device_driver *start,
+> @@ -391,6 +404,19 @@ driver_find_device_by_of_node(struct device_driver *drv,
+>   	return driver_find_device(drv, NULL, np, device_match_of_node);
+>   }
+>   
+> +/**
+> + * driver_find_device_by_fwnode- device iterator for locating a particular device
+> + * by fwnode pointer.
+> + * @driver: the driver we're iterating
+> + * @fwnode: fwnode pointer to match.
+> + */
+> +static inline struct device *
+> +driver_find_device_by_fwnode(struct device_driver *drv,
+> +			     const struct fwnode_handle *fwnode)
+> +{
+> +	return driver_find_device(drv, NULL, fwnode, device_match_fwnode);
+> +}
+> +
+>   void driver_deferred_probe_add(struct device *dev);
+>   int driver_deferred_probe_check_state(struct device *dev);
+>   int driver_deferred_probe_check_state_continue(struct device *dev);
+> @@ -544,6 +570,19 @@ class_find_device_by_of_node(struct class *class, const struct device_node *np)
+>   	return class_find_device(class, NULL, np, device_match_of_node);
+>   }
+>   
+> +/**
+> + * class_find_device_by_fwnode : device iterator for locating a particular device
+> + * matching the fwnode.
+> + * @class: class type
+> + * @fwnode: fwnode of the device to match.
+> + */
+> +static inline struct device *
+> +class_find_device_by_fwnode(struct class *class,
+> +			    const struct fwnode_handle *fwnode)
+> +{
+> +	return class_find_device(class, NULL, fwnode, device_match_fwnode);
+> +}
+> +
+>   struct class_attribute {
+>   	struct attribute attr;
+>   	ssize_t (*show)(struct class *class, struct class_attribute *attr,
 > 
 
 _______________________________________________
