@@ -2,84 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3161A73130
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 16:09:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A9157312D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 16:09:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8LxaFSeW81WZ+ndNUtRFZna3WvywHruJEN/79Q3zwBw=; b=ADQ357ngv/qvdQ
-	G7QnPN5//+q36q9Em0pcXyp6sm6eCSGFG8MUefDSFNb5p2TauQI8ZPYoZh14NIyCvS3DD5ohw9VNe
-	iMNRgRnsWB/iGlQhEdFNQKzvBMHwV2uxVQ2akCy9HAB3NcrsPwl7OKadKAIUb4SPh8n9vz7HynH3L
-	Xm6V8LnUruvGEyrBAQ6T7J+cBvRzyswv9U52p+eeENWvqyrj/p10k5vZuo3AUGenUb8fIFTxDJIfS
-	VK6QNvIS4mODpVmu4CL5q90/RQIIPYpiiGvoptGJW8/DsC88JBPkvHEd2sjIMlvF8OVQg28qGwuvT
-	knaIjzwuc5BTO7KpEktQ==;
+	List-Owner; bh=mwKftJEcWU85rfKAm8A8vwZCMwBlCnHWp9QCHquXZEI=; b=ehUK8HMUmhf1OG
+	GD2SuymUZgjnEUn1PQNReAsmIXm3Uezx1NkyWpr9IaKRWxs9HUvpW6fjKmmOw20NpE73AF8ubkvkB
+	DEHqJRb8zFK8Z45gAUMEMYPu3K9itP8lprMoHhmTYRJBvwR2d/IrLeFx7owFJhRAwO5CZrfKeKF2C
+	iwJWuRXDATpHSV49Tam+SzpNzGi+LASYxLFssLrtqogQTxGM2Y7aNuzXA6Ti0OYTYCtyjTHHYCeA2
+	Ub3vQOsqwt4tjWo5oww0sGWakV5MfZpH6MbtPB62p/RR/wr4nHm1SY57afN9nrkb5D1JnaZpCiwHY
+	xQZ38SX9ueGxtK6XRIIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqHxm-00038J-Oe; Wed, 24 Jul 2019 14:09:50 +0000
-Received: from mail-ua1-x941.google.com ([2607:f8b0:4864:20::941])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqHxE-0002ij-Kx
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 14:09:18 +0000
-Received: by mail-ua1-x941.google.com with SMTP id o19so18497037uap.13
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 24 Jul 2019 07:09:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=hdowrW6eyNVzCqnH+sg3YSjrdgr1LJmVf+XLhM5jeyg=;
- b=pwEwK7MPcChPu9C2pgvwXHbNp4lYkdiz64ftQlzrwykiOBpvbyyikwX0ULt30tK0pk
- cO9CV5Fd0M3pj1ubA8+2aQc0+X9d5H0EWedskNUZAb8wxxM3YuZtCvalUTwesVaQAtWJ
- 3IlDQXCcBxDARDS7oPGjqX8Yyc6hQ/gmukMIh2FXdt2wnOCDhZYiXNmF6Hzv0s0UBjB1
- jgglhUJ5t5UWaEfhHbG1hkFtPiaQjRYPttLecdm9UNAkrEZzib1JS4EsHjnAV4AH2OTU
- jkbxbYVJ1RtcfuVKg3papWe5ahI+0bRsF7r9ostG+lOGen5hzJ11B7dX5Ue27sHZBUEl
- 1a9g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=hdowrW6eyNVzCqnH+sg3YSjrdgr1LJmVf+XLhM5jeyg=;
- b=DcK5PcXRyO/v9KS7A5zChxy/nwu9TAlqAD0IntkA2EtD3vJz01sen+WHFSi7Z7XH5r
- nlG/7lM9g7Aj4gj8It44zybgcLKTc8BYSBYQKVuv9ff+o9zzgBnxCmAoRJwnxMD2BXf0
- GltO9blRxjGld7QYX1hjN8Nns4O9bT/i/dSU7u2X5EG67FnQxumG3SfWF5DCUUiqNMsP
- En42CLywOG1PBt84tUzKFFNrVYgoaxW5T75RDMKXeSMti5ofOq046IvJseqzw1ksLrtV
- HtFGvJE9AWtN9qy6LLrvjLnYqkGwQaW+2XmlATfmwf+oBsUMdK0byRzk98jyyHRosRaN
- rPVQ==
-X-Gm-Message-State: APjAAAUUCdrdq8qZhiTvaTonTmWgoI2yYrYqUiYcuhnfMnS4MI8ll6+m
- i5MilgjKRmvdDEmUjigo0omlqfZRpuP6p+El0k9sPw==
-X-Google-Smtp-Source: APXvYqwjP39LUP2n3wdv5p52VBWs/GbHFu/JeG/78KmrgvExwdDggNiwDfpKMMkZfKek8Eg0guVJMJcDtZtti1/q8U0=
-X-Received: by 2002:a9f:31a2:: with SMTP id v31mr51915486uad.15.1563977355332; 
- Wed, 24 Jul 2019 07:09:15 -0700 (PDT)
+	id 1hqHxZ-0002tE-VS; Wed, 24 Jul 2019 14:09:37 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hqHxC-0002hY-7h
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 14:09:15 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4428D28;
+ Wed, 24 Jul 2019 07:09:13 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CB3973F71A;
+ Wed, 24 Jul 2019 07:09:10 -0700 (PDT)
+Date: Wed, 24 Jul 2019 15:09:08 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Steven Price <steven.price@arm.com>
+Subject: Re: [PATCH v9 11/21] mm: pagewalk: Add p4d_entry() and pgd_entry()
+Message-ID: <20190724140908.GE2624@lakrids.cambridge.arm.com>
+References: <20190722154210.42799-1-steven.price@arm.com>
+ <20190722154210.42799-12-steven.price@arm.com>
+ <20190723101432.GC8085@lakrids.cambridge.arm.com>
+ <60ee20ef-62a3-5df1-6e24-24973b69be70@arm.com>
 MIME-Version: 1.0
-References: <1563776607-8368-1-git-send-email-wahrenst@gmx.net>
-In-Reply-To: <1563776607-8368-1-git-send-email-wahrenst@gmx.net>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Wed, 24 Jul 2019 16:08:38 +0200
-Message-ID: <CAPDyKFoJgiSQOYTiNHidr99tDe1QmuASfj0sJ=H7Ot1tb9mcBg@mail.gmail.com>
-Subject: Re: [PATCH 10/18] mmc: sdhci-iproc: Add support for emmc2 of the
- BCM2711
-To: Stefan Wahren <wahrenst@gmx.net>
+Content-Disposition: inline
+In-Reply-To: <60ee20ef-62a3-5df1-6e24-24973b69be70@arm.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_070916_752886_F9D1A42A 
-X-CRM114-Status: GOOD (  18.15  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190724_070914_365688_1FD26E99 
+X-CRM114-Status: GOOD (  21.56  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:941 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,68 +64,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Matthias Brugger <mbrugger@suse.com>,
- Scott Branden <sbranden@broadcom.com>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, Ray Jui <rjui@broadcom.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Adrian Hunter <adrian.hunter@intel.com>, Rob Herring <robh+dt@kernel.org>,
- Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
- BCM Kernel Feedback <bcm-kernel-feedback-list@broadcom.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Michael Turquette <mturquette@baylibre.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-rpi-kernel@lists.infradead.org
+Cc: Dave Hansen <dave.hansen@linux.intel.com>, Arnd Bergmann <arnd@arndb.de>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
+ linux-kernel@vger.kernel.org, linux-mm@kvack.org,
+ =?utf-8?B?SsOpcsO0bWU=?= Glisse <jglisse@redhat.com>,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ Andy Lutomirski <luto@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ James Morse <james.morse@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Will Deacon <will@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
+ linux-arm-kernel@lists.infradead.org, "Liang, Kan" <kan.liang@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 22 Jul 2019 at 08:24, Stefan Wahren <wahrenst@gmx.net> wrote:
->
-> The additional emmc2 interface of the BCM2711 is an improved version
-> of the old emmc controller, which is able to provide DDR50 mode on the
-> Raspberry Pi 4. Except 32 bit only register access no other quirks are
-> known yet.
->
-> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
+On Wed, Jul 24, 2019 at 02:53:04PM +0100, Steven Price wrote:
+> On 23/07/2019 11:14, Mark Rutland wrote:
+> > On Mon, Jul 22, 2019 at 04:42:00PM +0100, Steven Price wrote:
+> >> pgd_entry() and pud_entry() were removed by commit 0b1fbfe50006c410
+> >> ("mm/pagewalk: remove pgd_entry() and pud_entry()") because there were
+> >> no users. We're about to add users so reintroduce them, along with
+> >> p4d_entry() as we now have 5 levels of tables.
+> >>
+> >> Note that commit a00cc7d9dd93d66a ("mm, x86: add support for
+> >> PUD-sized transparent hugepages") already re-added pud_entry() but with
+> >> different semantics to the other callbacks. Since there have never
+> >> been upstream users of this, revert the semantics back to match the
+> >> other callbacks. This means pud_entry() is called for all entries, not
+> >> just transparent huge pages.
+> >>
+> >> Signed-off-by: Steven Price <steven.price@arm.com>
+> >> ---
+> >>  include/linux/mm.h | 15 +++++++++------
+> >>  mm/pagewalk.c      | 27 ++++++++++++++++-----------
+> >>  2 files changed, 25 insertions(+), 17 deletions(-)
+> >>
+> >> diff --git a/include/linux/mm.h b/include/linux/mm.h
+> >> index 0334ca97c584..b22799129128 100644
+> >> --- a/include/linux/mm.h
+> >> +++ b/include/linux/mm.h
+> >> @@ -1432,15 +1432,14 @@ void unmap_vmas(struct mmu_gather *tlb, struct vm_area_struct *start_vma,
+> >>  
+> >>  /**
+> >>   * mm_walk - callbacks for walk_page_range
+> >> - * @pud_entry: if set, called for each non-empty PUD (2nd-level) entry
+> >> - *	       this handler should only handle pud_trans_huge() puds.
+> >> - *	       the pmd_entry or pte_entry callbacks will be used for
+> >> - *	       regular PUDs.
+> >> - * @pmd_entry: if set, called for each non-empty PMD (3rd-level) entry
+> >> + * @pgd_entry: if set, called for each non-empty PGD (top-level) entry
+> >> + * @p4d_entry: if set, called for each non-empty P4D entry
+> >> + * @pud_entry: if set, called for each non-empty PUD entry
+> >> + * @pmd_entry: if set, called for each non-empty PMD entry
+> > 
+> > How are these expected to work with folding?
+> > 
+> > For example, on arm64 with 64K pages and 42-bit VA, you can have 2-level
+> > tables where the PGD is P4D, PUD, and PMD. IIUC we'd invoke the
+> > callbacks for each of those levels where we found an entry in the pgd.
+> > 
+> > Either the callee handle that, or we should inhibit the callbacks when
+> > levels are folded, and I think that needs to be explcitly stated either
+> > way.
+> > 
+> > IIRC on x86 the p4d folding is dynamic depending on whether the HW
+> > supports 5-level page tables. Maybe that implies the callee has to
+> > handle that.
+> 
+> Yes, my assumption is that it has to be up to the callee to handle that
+> because folding can be dynamic. I believe this also was how these
+> callbacks work before they were removed. However I'll add a comment
+> explaining that here as it's probably non-obvious.
 
-Applied for next, thanks!
+That sounds good to me.
 
-Kind regards
-Uffe
-
-
-> ---
->  drivers/mmc/host/sdhci-iproc.c | 9 +++++++++
->  1 file changed, 9 insertions(+)
->
-> diff --git a/drivers/mmc/host/sdhci-iproc.c b/drivers/mmc/host/sdhci-iproc.c
-> index 2feb4ef..2b9cdcd 100644
-> --- a/drivers/mmc/host/sdhci-iproc.c
-> +++ b/drivers/mmc/host/sdhci-iproc.c
-> @@ -261,8 +261,17 @@ static const struct sdhci_iproc_data bcm2835_data = {
->         .mmc_caps = 0x00000000,
->  };
->
-> +static const struct sdhci_pltfm_data sdhci_bcm2711_pltfm_data = {
-> +       .ops = &sdhci_iproc_32only_ops,
-> +};
-> +
-> +static const struct sdhci_iproc_data bcm2711_data = {
-> +       .pdata = &sdhci_bcm2711_pltfm_data,
-> +};
-> +
->  static const struct of_device_id sdhci_iproc_of_match[] = {
->         { .compatible = "brcm,bcm2835-sdhci", .data = &bcm2835_data },
-> +       { .compatible = "brcm,bcm2711-emmc2", .data = &bcm2711_data },
->         { .compatible = "brcm,sdhci-iproc-cygnus", .data = &iproc_cygnus_data},
->         { .compatible = "brcm,sdhci-iproc", .data = &iproc_data },
->         { }
-> --
-> 2.7.4
->
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
