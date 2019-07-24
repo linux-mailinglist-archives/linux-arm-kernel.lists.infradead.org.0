@@ -2,131 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D4C572FA1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 15:11:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3AD7873002
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 15:36:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j/lzP/z6uMo9jkzwvn5o49fMhcRGwyy5JFCLOet+9KI=; b=n/rX7pKIWhF5bb
-	Iy4hUrxUYInGYfcWKvphdSdlfiFprTLFNKNNt9PTPSmBispTv7pFIexdd1jQz3as1ccm0QtfBzMlu
-	w1IUzoJ1neFagXnd3kPbO8+Tq/WAtD8Jh9dp2O7HwuKVGf3AYRNK++Cn7mmjVrIIw4h4z38CSo9ai
-	mg9TK3vGA6+7MT7wUtAlMQ3B7mlvL+Gyuuoqdta5JeLnMfc7XsSPqpD0gu0xYin/9kCsINW28SbVR
-	SCj231GSDfA4LsW96tJo1aslVCMth3fcR6kXXstV77mDRnCv+ONBldSV02GdE527IbmpfSynjwaYn
-	kXluSnRwBaBafLeZrFcQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DLVFg0I/tHj7ImfJeHhzcLzIegAgPLBjo/8wrf+6UvU=; b=WgaIVZHOZZ2UJf
+	cGA93/jrZAeLe6RfVQJDnbDJC2xBWl9ZddqF+Lqq2bDoACW3ohIgl+FLz6hRFBpppQd61dzAb7OGO
+	XcxL/EhYGUlDiWSmiWqWTfV0EnZPRyDN7AbFHecrCpbsPtu2xX++RXJJS5P3cZfQV4huFUsSG+YSb
+	3Xreg1Wv4C6nFcQw7tDda02w3Zf70SIPRMk4jupTYxG/4VsHIKPCb7HdOz/K2Q2W9I5/1EXben5NI
+	0djSd7zMs/iiun7fbNQ6stLDTwOQXogyevJPWgIRgF3e5eqjfx1p2cIeenL5OGfx85pMezCLfHxp2
+	J48bePEm3w2h1K3U1/Fg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqH2o-0008Mu-Kn; Wed, 24 Jul 2019 13:10:58 +0000
-Received: from mailout1.w1.samsung.com ([210.118.77.11])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqH2e-0008MM-Tk
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 13:10:50 +0000
-Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
- by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
- 20190724131046euoutp015d0092742696358e389beb14e6103ea1~0We1r2yTz2933429334euoutp01f
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 24 Jul 2019 13:10:46 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
- 20190724131046euoutp015d0092742696358e389beb14e6103ea1~0We1r2yTz2933429334euoutp01f
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1563973846;
- bh=PEOtSSoRhkQX8OsDsJURuU47w80rGtTf9ArwdLYI4tU=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=SUs1ZQpuRE5Qpbx+phY5nqCwlbxvR9SWO4auga5TIHpsMQrTzDkxnG4zTCib03AnT
- 9so3z0O4IkfCA1ie+LFRddus3r7l2a8QY51HQtgpMTPkZAZIfpo0sczCrrBs2+hc3/
- 638PGo7cqdVVxzBKq784kd16V/NzzVtfecBJ6wQU=
-Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTP id
- 20190724131046eucas1p1e5135c654b515f7044eeb7597e0ae41a~0We1ECbTY2976329763eucas1p1L;
- Wed, 24 Jul 2019 13:10:46 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges3new.samsung.com (EUCPMTA) with SMTP id 37.D8.04325.5D8583D5; Wed, 24
- Jul 2019 14:10:45 +0100 (BST)
-Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
- 20190724131045eucas1p162379c36506e8b94147baa865f0409f7~0We0SfRBJ2476524765eucas1p1m;
- Wed, 24 Jul 2019 13:10:45 +0000 (GMT)
-Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
- eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20190724131045eusmtrp2d7e8381dfed5e5e61bd40cf0f0003339~0We0EUqBM0076200762eusmtrp2Q;
- Wed, 24 Jul 2019 13:10:45 +0000 (GMT)
-X-AuditID: cbfec7f5-b8fff700000010e5-31-5d3858d53e1b
-Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
- eusmgms2.samsung.com (EUCPMTA) with SMTP id 31.45.04140.4D8583D5; Wed, 24
- Jul 2019 14:10:45 +0100 (BST)
-Received: from [106.120.50.63] (unknown [106.120.50.63]) by
- eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20190724131040eusmtip1c8fbf50afad8f6dde8c1ad38a074adcf~0WewOCuXU1901719017eusmtip1c;
- Wed, 24 Jul 2019 13:10:40 +0000 (GMT)
-Subject: Re: [PATCH v2 0/9] Exynos Adaptive Supply Voltage support
-To: Viresh Kumar <viresh.kumar@linaro.org>, Sylwester Nawrocki
- <s.nawrocki@samsung.com>
-From: Marek Szyprowski <m.szyprowski@samsung.com>
-Message-ID: <5ef302a4-5bbf-483d-dfdf-cf76f6f69cee@samsung.com>
-Date: Wed, 24 Jul 2019 15:10:39 +0200
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
+	id 1hqHRB-0001AT-PQ; Wed, 24 Jul 2019 13:36:09 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hqHQh-0000bQ-QX
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 13:35:41 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E512F28;
+ Wed, 24 Jul 2019 06:35:37 -0700 (PDT)
+Received: from [10.1.196.133] (e112269-lin.cambridge.arm.com [10.1.196.133])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7FA4B3F71A;
+ Wed, 24 Jul 2019 06:35:35 -0700 (PDT)
+Subject: Re: [PATCH v9 00/21] Generic page walk and ptdump
+To: Mark Rutland <mark.rutland@arm.com>
+References: <20190722154210.42799-1-steven.price@arm.com>
+ <20190723101639.GD8085@lakrids.cambridge.arm.com>
+From: Steven Price <steven.price@arm.com>
+Message-ID: <e108b8a6-deca-e69c-b338-52a98b14be86@arm.com>
+Date: Wed, 24 Jul 2019 14:35:34 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20190723020450.z2pqwetkn2tfhacq@vireshk-i7>
-Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrOKsWRmVeSWpSXmKPExsWy7djP87pXIyxiDZ59MLPYOGM9q8X8I+dY
- Lfofv2a2OH9+A7vFpsfXWC0u75rDZvG59wijxYzz+5gsFm39wm7RuvcIu8XhN+2sFhu/elhs
- fnCMzYHXY9OqTjaPO9f2sHlsXlLv0bdlFaPH501yAaxRXDYpqTmZZalF+nYJXBmta6IKJvBU
- TDuzgLGB8RJnFyMnh4SAicTv2d9Zuxi5OIQEVjBKHL+4kQnC+cIocalxNjOE85lRovfQYzaY
- lu87T0ElljNKrG88DdX/llHi64e/YFXCAk4Se35/BbNFBCIlnk6AmMsssIxJ4vaEjWAJNgFD
- ia63XWA2r4CdxKpH/WA2i4CqxNKJc1lBbFGBGImdb3qYIWoEJU7OfMICYnMKWEosfX2dEcRm
- FpCX2P52DjOELS5x68l8sGUSArfYJTZc+gKU4AByXCTu77KCeEFY4tXxLewQtozE/50w9c2M
- Eg/PrWWHcHoYJS43zWCEqLKWOHz8IivIIGYBTYn1u/Qhwo4SfVeOMEHM55O48VYQ4gY+iUnb
- pkOt5ZXoaBOCqFaTmHV8HdzagxcuMU9gVJqF5LNZSL6ZheSbWQh7FzCyrGIUTy0tzk1PLTbO
- Sy3XK07MLS7NS9dLzs/dxAhMXqf/Hf+6g3Hfn6RDjAIcjEo8vBVM5rFCrIllxZW5hxglOJiV
- RHgDG8xihXhTEiurUovy44tKc1KLDzFKc7AoifNWMzyIFhJITyxJzU5NLUgtgskycXBKNTCa
- By7ezWPl6j4vS1tC/J9EY5Pg4exN934q6+kKqLj3/ExZI7zEMdTm2tqfyts3tdinSF37fqri
- v0zp1/VH7rZ8W87w7kq0Q2qwsu/LJj7TSD/jWTdNVx/U9xW1kuDXFtIv2ji1v+tx5Fw1XRMR
- niXPU2zY3ub+Patd9DmEq4hz1rawHuvYu0osxRmJhlrMRcWJAOcDRbxaAwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrBIsWRmVeSWpSXmKPExsVy+t/xu7pXIyxiDV4uYrTYOGM9q8X8I+dY
- Lfofv2a2OH9+A7vFpsfXWC0u75rDZvG59wijxYzz+5gsFm39wm7RuvcIu8XhN+2sFhu/elhs
- fnCMzYHXY9OqTjaPO9f2sHlsXlLv0bdlFaPH501yAaxRejZF+aUlqQoZ+cUltkrRhhZGeoaW
- FnpGJpZ6hsbmsVZGpkr6djYpqTmZZalF+nYJehmta6IKJvBUTDuzgLGB8RJnFyMnh4SAicT3
- naeYQWwhgaWMEodPZUDEZSROTmtghbCFJf5c62LrYuQCqnnNKDHtz3QmkISwgJPEnt9f2UBs
- EYFIiYmtC5lBipgFljFJNLSfZoGYuo9R4tjyNBCbTcBQouttF1gDr4CdxKpH/WA2i4CqxNKJ
- c8G2iQrESOw7s50dokZQ4uTMJ2BzOAUsJZa+vs4IYjMLmEnM2/yQGcKWl9j+dg6ULS5x68l8
- pgmMQrOQtM9C0jILScssJC0LGFlWMYqklhbnpucWG+kVJ+YWl+al6yXn525iBMbqtmM/t+xg
- 7HoXfIhRgINRiYe3gsk8Vog1say4MvcQowQHs5IIb2CDWawQb0piZVVqUX58UWlOavEhRlOg
- 5yYyS4km5wPTSF5JvKGpobmFpaG5sbmxmYWSOG+HwMEYIYH0xJLU7NTUgtQimD4mDk6pBsat
- BpObGdb8eNJ9TFIk3e1X9luVtLSYO/Hfn5gHz1o2dy5nQTbHA//GV8xaq/eGsF/doTVFYGnZ
- mrkmtsem1kxsWnAyoFfmec/a849zGFfPPiD1rXt9PtPkvjtX/36u+/tVL/iq0pLH38+8Wni8
- M9/SKmjeubJ5tu4MD+YvEnyR6Zil1rSUbfNMJZbijERDLeai4kQA1LqK2+sCAAA=
-X-CMS-MailID: 20190724131045eucas1p162379c36506e8b94147baa865f0409f7
-X-Msg-Generator: CA
-X-RootMTR: 20190718143117eucas1p1e534b9075d10fbbbe427c66192205eb1
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20190718143117eucas1p1e534b9075d10fbbbe427c66192205eb1
-References: <CGME20190718143117eucas1p1e534b9075d10fbbbe427c66192205eb1@eucas1p1.samsung.com>
- <20190718143044.25066-1-s.nawrocki@samsung.com>
- <20190723020450.z2pqwetkn2tfhacq@vireshk-i7>
+In-Reply-To: <20190723101639.GD8085@lakrids.cambridge.arm.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_061049_162502_424EDE9A 
-X-CRM114-Status: GOOD (  12.93  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190724_063539_948714_F2982F18 
+X-CRM114-Status: GOOD (  19.27  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.11 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -138,51 +62,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- linux-pm@vger.kernel.org, pankaj.dubey@samsung.com, b.zolnierkie@samsung.com,
- linux-kernel@vger.kernel.org, krzk@kernel.org, robh+dt@kernel.org,
- kgene@kernel.org, vireshk@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Dave Hansen <dave.hansen@linux.intel.com>, Arnd Bergmann <arnd@arndb.de>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
+ linux-kernel@vger.kernel.org, linux-mm@kvack.org,
+ =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ Andy Lutomirski <luto@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ James Morse <james.morse@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Will Deacon <will@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
+ linux-arm-kernel@lists.infradead.org, "Liang, Kan" <kan.liang@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Viresh,
-
-On 2019-07-23 04:04, Viresh Kumar wrote:
-> On 18-07-19, 16:30, Sylwester Nawrocki wrote:
->> This is second iteration of patch series adding ASV (Adaptive Supply
->> Voltage) support for Exynos SoCs. The first one can be found at:
->> https://lore.kernel.org/lkml/20190404171735.12815-1-s.nawrocki@samsung.com
+On 23/07/2019 11:16, Mark Rutland wrote:
+> On Mon, Jul 22, 2019 at 04:41:49PM +0100, Steven Price wrote:
+>> This is a slight reworking and extension of my previous patch set
+>> (Convert x86 & arm64 to use generic page walk), but I've continued the
+>> version numbering as most of the changes are the same. In particular
+>> this series ends with a generic PTDUMP implemention for arm64 and x86.
 >>
->> The main changes comparing to the first (RFC) version are:
->>   - moving ASV data tables from DT to the driver,
->>   - converting the chipid and the ASV drivers to use regmap,
->>   - converting the ASV driver to proper platform driver.
+>> Many architectures current have a debugfs file for dumping the kernel
+>> page tables. Currently each architecture has to implement custom
+>> functions for this because the details of walking the page tables used
+>> by the kernel are different between architectures.
 >>
->> I tried the opp-supported-hw bitmask approach as in the Qualcomm CPUFreq
->> DT bindings but it resulted in too many OPPs and DT nodes, around 200
->> per CPU cluster. So the ASV OPP tables are now in the ASV driver, as in
->> downstream kernels.
-> Hmm. Can you explain why do you have so many OPPs? How many
-> frequencies do you actually support per cluster and what all varies
-> per frequency based on hw ? How many hw version do u have ?
+>> This series extends the capabilities of walk_page_range() so that it can
+>> deal with the page tables of the kernel (which have no VMAs and can
+>> contain larger huge pages than exist for user space). A generic PTDUMP
+>> implementation is the implemented making use of the new functionality of
+>> walk_page_range() and finally arm64 and x86 are switch to using it,
+>> removing the custom table walkers.
+>>
+>> To enable a generic page table walker to walk the unusual mappings of
+>> the kernel we need to implement a set of functions which let us know
+>> when the walker has reached the leaf entry. After a suggestion from Will
+>> Deacon I've chosen the name p?d_leaf() as this (hopefully) describes
+>> the purpose (and is a new name so has no historic baggage). Some
+>> architectures have p?d_large macros but this is easily confused with
+>> "large pages".
+>>
+>> Mostly this is a clean up and there should be very little functional
+>> change. The exceptions are:
+>>
+>> * x86 PTDUMP debugfs output no longer display pages which aren't
+>>   present (patch 14).
+>>
+>> * arm64 has the ability to efficiently process KASAN pages (which
+>>   previously only x86 implemented). This means that the combination of
+>>   KASAN and DEBUG_WX is now useable.
+> 
+> Are there any visible changes to the arm64 output?
 
-For big cores there are 20 frequencies (2100MHz .. 200MHz). Each SoC 
-might belong to one of the 3 production 'sets' and each set contains 14 
-so called 'asv groups', which assign the certain voltage values for each 
-of those 20 frequencies (the lower asv group means lower voltage needed 
-for given frequency).
+arm64 output shouldn't change. I've confirmed that "efi_page_tables" is
+identical on a Juno before/after the change. "kernel_page_tables"
+obviously will vary depending on the exact layout of memory, but the
+format isn't changed.
 
-> I am asking as the OPP core can be improved to support your case if
-> possible. But I need to understand the problem first.
+x86 output does change due to patch 14. In this case the change is
+removing the lines from the output of the form...
 
+> 0xffffffff84800000-0xffffffffa0000000         440M                               pmd
 
-Best regards
--- 
-Marek Szyprowski, PhD
-Samsung R&D Institute Poland
+...which are unpopulated areas of the memory map. Populated lines which
+have attributes are unchanged.
 
+Steve
 
 _______________________________________________
 linux-arm-kernel mailing list
