@@ -2,148 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D490E72DB4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 13:35:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C24572DCC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 13:39:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ytpIIEd1ckX/O1LbBLnauSnuuadWhHcnp0+YEsX1lwE=; b=R4YwyKad4kqzkl
-	knhw7RxtUo2dFvXIBOk/QybL3L00+7keVXAwKk6jaCPVNb+MEALP/IQPVAThtucUyv+gZM4RS1o+D
-	/2o037C61jv1Mi5T4JU569SWcSVTwdREpjM4HkplkzrleO3R0z4uPIW9zvyefwGTUNGgMlSQbAi1s
-	9anNFvSTN05f0na1Kk7k4XjDHEqxuCc1AWvfUklGHH1HXYjNgv3ha4HHGbxJN+YZuOXHgjceDAUn0
-	XspahbdyMPX9YaWMNvBLJCLIjtwbsw+oj5uRuDPsV/DbUijZqaGc2vkYEsu7UfVOB6yMc9P2azZR1
-	ErGDUCUs0EemvLRlPYPw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rb5qxP5WAjsPELteHnUfU1Youi85fpk+cpOrlOPxqlM=; b=cN/3lfDwVEiWee
+	pWNhm/gY0GK8JEwSfqz/4/1KuONfPU3NSLB90qfNc6Xzxv00LVPSFdQKmd2A7RF6aJXESGZNaBkA4
+	8kaS/lFCmZgfEDl5F9KRnEx1d7ZlfjwbaUvfy+dxqlbot03Dn48yQa8G9pVskMB6fEw17Civk5hxZ
+	dRx1F4R2GJSebbr6D4T0vaKa656gVQlDF1IAfaZMbwdpHKxNHiYePGyUVv7GihEbCm+dF9EIuutAA
+	YpVbYQhSYytL4yIZGkqScDCdqLpwbgBjGW1zvTo63El2GRNMj9Ob7YG50atImRwi0RxzFJQpXFuiD
+	HyHomOOjzqnYXquxn9Sg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqFXr-0001Zl-Bi; Wed, 24 Jul 2019 11:34:55 +0000
-Received: from smtprelay-out1.synopsys.com ([198.182.47.102])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqFXi-0001Z8-1m
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 11:34:47 +0000
-Received: from mailhost.synopsys.com (badc-mailhost2.synopsys.com
- [10.192.0.18])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 3DEB4C0C24;
- Wed, 24 Jul 2019 11:34:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1563968084; bh=W2MXqvrO6iDlCAN/UEJX0xsEcjKjgQxZC+iRMsZ/Kn4=;
- h=From:To:CC:Subject:Date:References:In-Reply-To:From;
- b=SF8ym/OrMgZJYRMlB1VkWmAefOgeL0gsWMlgnbpJBqjWjow0hMnstTwBJoT6DkKqc
- d0q74abRzAAbBgD5fnuikqEHROE8m6gA6NXeRCdSEZO1A8SflWRxAmnFTm+hwzOXBH
- GlfZ6NWmF2xpbkoacHxxkMH0mdzN6UfZVHMvtt//sleKY74eVuh/Fb/1ouzB3cljxz
- l6WHsvwF3hBZyrugFymp00ad7PtiE7me1i/Fdxrt0KoFAl6eh3kcbBk4vxzTcGFSMx
- fDfhEYPvW3GAuwyR6WDVDceL4tlYISybdVCh3DY/I6Vnr7RxoibFp5XA5JNn1O/9QN
- PIzmDXqRPMWzg==
-Received: from US01WEHTC3.internal.synopsys.com
- (us01wehtc3.internal.synopsys.com [10.15.84.232])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
- (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id CE79DA006B;
- Wed, 24 Jul 2019 11:34:33 +0000 (UTC)
-Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
- US01WEHTC3.internal.synopsys.com (10.15.84.232) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Wed, 24 Jul 2019 04:34:28 -0700
-Received: from NAM05-BY2-obe.outbound.protection.outlook.com (10.13.134.195)
- by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
- 14.3.408.0; Wed, 24 Jul 2019 04:34:28 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=D/p/HXeKnn0WDMdXN8x+jseBImFXcqgl4zzH0ENtyZ/aWQdcWwDMjIzJ/N0tW/eNAWoc7Wx6RxJXP3fA5FaReXUQ326R9TcJ8Z1XAoAcEyltcPDoeNGoiGrfw77Y3sdGiM/L0wUEXdCP2m1DBf3NTsg/qkkCRzLG2hEEYxHK+5Zq+vW1QoGUgCvu3YQGEy4/3qooKKvt0+HWhMK/ramj+xrFKCJP2bDsQp7mi27I98o+z3wdenae/LZwG9nMTqa+QzbugBZHPwQ6F2CIMxbsUBiuMP11IrLqalEIZ6hthbeWE7Xu5pZqCYcjgPRwuEie6/0f1XRwrz2UxPVigWNaAg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=W2MXqvrO6iDlCAN/UEJX0xsEcjKjgQxZC+iRMsZ/Kn4=;
- b=d3coYi05x80GUcgUjWfjOwRxQ0L1GLCuK1tLcBXcgWaF8XYROdTKUgZBC0/jDPs6rkRIDnWL3U44CDU8asi80jclJtroSaG1VDmo1m4Hv0AIN3SylVFSLq9CMiAFySD37FYaLF1KCIueNZ+SpRHXVqZwI8OZO1srHM5G9FKSpZoI8V8Gq3n0LH9o0Q+k9yJI9WJ75rt9t3jH0k6ftt6QxR3G9yB8cYA6uUlzlMMBzWjBN77NrTHhS/eLa+R3Dvtp1cmBRSzf7zaIc+C9bKH/Jyj0Ws1SIAghZmomjsplPVI/s9LkhHFP2FEfvQUZWCmSU2/eduOPamXTCFDvXojHYA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=synopsys.com;dmarc=pass action=none
- header.from=synopsys.com;dkim=pass header.d=synopsys.com;arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=synopsys.onmicrosoft.com; s=selector1-synopsys-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=W2MXqvrO6iDlCAN/UEJX0xsEcjKjgQxZC+iRMsZ/Kn4=;
- b=YazhVwslzDD7+fDgd9gV+aaIBhY91B4izveFsVqUSIJg/ubjdw/tGtD5qhgqL6EmHpW4l5K08MerNWI0obUYa3LvOdWzl7pl8DwFVHeDKxyudAbvVxo8+eA61SXqsyW8g2oi4SQFp5FyUFJ5qWmpXlx5gfofydeFBQWgF6sNW8c=
-Received: from BYAPR12MB3269.namprd12.prod.outlook.com (20.179.93.146) by
- BYAPR12MB2981.namprd12.prod.outlook.com (20.178.53.18) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2094.16; Wed, 24 Jul 2019 11:34:26 +0000
-Received: from BYAPR12MB3269.namprd12.prod.outlook.com
- ([fe80::f5b8:ac6e:ea68:cb1c]) by BYAPR12MB3269.namprd12.prod.outlook.com
- ([fe80::f5b8:ac6e:ea68:cb1c%4]) with mapi id 15.20.2094.013; Wed, 24 Jul 2019
- 11:34:26 +0000
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-To: Jon Hunter <jonathanh@nvidia.com>, Jose Abreu <Jose.Abreu@synopsys.com>,
- Ilias Apalodimas <ilias.apalodimas@linaro.org>
-Subject: RE: [PATCH net-next 3/3] net: stmmac: Introducing support for Page
- Pool
-Thread-Topic: [PATCH net-next 3/3] net: stmmac: Introducing support for Page
- Pool
-Thread-Index: AQHVMYtq2Zx4WVoG/U2kL8GCK0bP/abPQEOAgADTx+CABnZ9AIAADuYAgAAFQOCAAAnIAIAABLTAgAFMy7CAAB4gAIAAAO7wgAAG6gCAABvPAIAAcGAAgADrmoCAAA0XIIAAA1AAgAAAhFCAABUsgIAABPNg
-Date: Wed, 24 Jul 2019 11:34:26 +0000
-Message-ID: <BYAPR12MB32696F0A2BFDF69F31C4311CD3C60@BYAPR12MB3269.namprd12.prod.outlook.com>
-References: <BYAPR12MB32692AF2BA127C5DA5B74804D3C70@BYAPR12MB3269.namprd12.prod.outlook.com>
- <6c769226-bdd9-6fe0-b96b-5a0d800fed24@arm.com>
- <8756d681-e167-fe4a-c6f0-47ae2dcbb100@nvidia.com>
- <20190723.115112.1824255524103179323.davem@davemloft.net>
- <20190724085427.GA10736@apalos>
- <BYAPR12MB3269AA9955844E317B62A239D3C60@BYAPR12MB3269.namprd12.prod.outlook.com>
- <20190724095310.GA12991@apalos>
- <BYAPR12MB3269C5766F553438ECFF2C9BD3C60@BYAPR12MB3269.namprd12.prod.outlook.com>
- <33de62bf-2f8a-bf00-9260-418b12bed24c@nvidia.com>
-In-Reply-To: <33de62bf-2f8a-bf00-9260-418b12bed24c@nvidia.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=joabreu@synopsys.com; 
-x-originating-ip: [83.174.63.141]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: ac25b55d-2661-4e17-666a-08d7102ae208
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(5600148)(711020)(4605104)(1401327)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
- SRVR:BYAPR12MB2981; 
-x-ms-traffictypediagnostic: BYAPR12MB2981:
-x-microsoft-antispam-prvs: <BYAPR12MB298134CEB1F689F0A70EEF97D3C60@BYAPR12MB2981.namprd12.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 0108A997B2
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(376002)(136003)(396003)(346002)(366004)(39860400002)(189003)(199004)(20864003)(66946007)(76116006)(81166006)(66556008)(81156014)(8676002)(52536014)(5660300002)(14454004)(66446008)(4326008)(64756008)(3846002)(53936002)(9686003)(68736007)(8936002)(55016002)(6246003)(71190400001)(66476007)(186003)(229853002)(2906002)(478600001)(476003)(305945005)(71200400001)(7736002)(110136005)(316002)(54906003)(74316002)(102836004)(19627235002)(256004)(86362001)(6436002)(53546011)(66066001)(6116002)(11346002)(486006)(25786009)(33656002)(99286004)(6506007)(76176011)(7696005)(26005)(446003)(7416002);
- DIR:OUT; SFP:1102; SCL:1; SRVR:BYAPR12MB2981;
- H:BYAPR12MB3269.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: synopsys.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: KmsRYGvimlHNzDBlH1Axage4DPz/EjcfncS/o397fyLDR39CYCp0fizzHxf+wmdauKFUdsBOf0bFDnFlF4FM8nCriCXGZUTrZHLyB0bdHpeYFLuBaRInalJNsYS/02yxrw8JveCmTlRJeg6GAHaVRx9tbJm5hDSLWXA1lzlmmmI1nnFHX1rNI5OnWkGQzNUkkpKKxXkqyOqzPHAEYOSTDvLaCsV0CldboptDdbD24FvYDrQaahA4nJBBfvDvEBEF9vL9tfbtifaZS7vdHe2wKneMRXHqL/DDRp7eaiD9KBP/h7iGP5RFePbYjflJDYIpgm811xhaR/Qk3ZF3MhjtX9ilgAv2LxLaM8OfRCplcoV1V7+uED1oVC1XlFHVR3IJVhDB7VLtYpQ4Wh83VwEFhXoAOIK8HSN05uM+wK2w72A=
+	id 1hqFcc-0003dI-GJ; Wed, 24 Jul 2019 11:39:50 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hqFcU-0003YP-14
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 11:39:43 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4F13E337;
+ Wed, 24 Jul 2019 04:39:41 -0700 (PDT)
+Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 9585C3F71A; Wed, 24 Jul 2019 04:39:40 -0700 (PDT)
+Subject: Re: [PATCH 3/3] KVM: arm/arm64: vgic: introduce vgic_cpu pending
+ status and lowest_priority
+To: Xiangyou Xie <xiexiangyou@huawei.com>
+References: <20190724090437.49952-1-xiexiangyou@huawei.com>
+ <20190724090437.49952-4-xiexiangyou@huawei.com>
+From: Marc Zyngier <marc.zyngier@arm.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
+ 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
+ Z46HaNmN2hZS/oJ69c1DI5Rcww==
+Organization: ARM Ltd
+Message-ID: <c43d7331-a30b-5c0f-47ce-a5d9a1840a63@arm.com>
+Date: Wed, 24 Jul 2019 12:39:38 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: ac25b55d-2661-4e17-666a-08d7102ae208
-X-MS-Exchange-CrossTenant-originalarrivaltime: 24 Jul 2019 11:34:26.2457 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: joabreu@synopsys.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR12MB2981
-X-OriginatorOrg: synopsys.com
+In-Reply-To: <20190724090437.49952-4-xiexiangyou@huawei.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_043446_109091_22F6E73D 
-X-CRM114-Status: GOOD (  17.99  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190724_043942_164605_F26A11CC 
+X-CRM114-Status: GOOD (  23.29  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -155,127 +108,155 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "Joao.Pinto@synopsys.com" <Joao.Pinto@synopsys.com>,
- "alexandre.torgue@st.com" <alexandre.torgue@st.com>,
- "maxime.ripard@bootlin.com" <maxime.ripard@bootlin.com>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>, "wens@csie.org" <wens@csie.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
- "linux-tegra@vger.kernel.org" <linux-tegra@vger.kernel.org>,
- "peppe.cavallaro@st.com" <peppe.cavallaro@st.com>,
- "robin.murphy@arm.com" <robin.murphy@arm.com>,
- David Miller <davem@davemloft.net>, "lists@bofh.nu" <lists@bofh.nu>
+Cc: kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
+ kvm@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jon Hunter <jonathanh@nvidia.com>
-Date: Jul/24/2019, 12:10:47 (UTC+00:00)
+On 24/07/2019 10:04, Xiangyou Xie wrote:
+> During the halt polling process, vgic_cpu->ap_list_lock is frequently
+> obtained andreleased, (kvm_vcpu_check_block->kvm_arch_vcpu_runnable->
+> kvm_vgic_vcpu_pending_irq).This action affects the performance of virq
+> interrupt injection, because vgic_queue_irq_unlock also attempts to get
+> vgic_cpu->ap_list_lock and add irq to vgic_cpu ap_list.
+
+Numbers. Give me numbers. Please.
 
 > 
-> On 24/07/2019 11:04, Jose Abreu wrote:
+> The irq pending state and the minimum priority introduced by the patch,
+> kvm_vgic_vcpu_pending_irq do not need to traverse vgic_cpu ap_list, only
+> the check pending state and priority.
 > 
-> ...
+> Signed-off-by: Xiangyou Xie <xiexiangyou@huawei.com>
+> ---
+>  include/kvm/arm_vgic.h   |  5 +++++
+>  virt/kvm/arm/vgic/vgic.c | 40 ++++++++++++++++++++++------------------
+>  2 files changed, 27 insertions(+), 18 deletions(-)
 > 
-> > Jon, I was able to replicate (at some level) your setup:
-> > 
-> > # dmesg | grep -i arm-smmu
-> > [    1.337322] arm-smmu 70040000.iommu: probing hardware 
-> > configuration...
-> > [    1.337330] arm-smmu 70040000.iommu: SMMUv2 with:
-> > [    1.337338] arm-smmu 70040000.iommu:         stage 1 translation
-> > [    1.337346] arm-smmu 70040000.iommu:         stage 2 translation
-> > [    1.337354] arm-smmu 70040000.iommu:         nested translation
-> > [    1.337363] arm-smmu 70040000.iommu:         stream matching with 128 
-> > register groups
-> > [    1.337374] arm-smmu 70040000.iommu:         1 context banks (0 
-> > stage-2 only)
-> > [    1.337383] arm-smmu 70040000.iommu:         Supported page sizes: 
-> > 0x61311000
-> > [    1.337393] arm-smmu 70040000.iommu:         Stage-1: 48-bit VA -> 
-> > 48-bit IPA
-> > [    1.337402] arm-smmu 70040000.iommu:         Stage-2: 48-bit IPA -> 
-> > 48-bit PA
-> > 
-> > # dmesg | grep -i stmmac
-> > [    1.344106] stmmaceth 70000000.ethernet: Adding to iommu group 0
-> > [    1.344233] stmmaceth 70000000.ethernet: no reset control found
-> > [    1.348276] stmmaceth 70000000.ethernet: User ID: 0x10, Synopsys ID: 
-> > 0x51
-> > [    1.348285] stmmaceth 70000000.ethernet:     DWMAC4/5
-> > [    1.348293] stmmaceth 70000000.ethernet: DMA HW capability register 
-> > supported
-> > [    1.348302] stmmaceth 70000000.ethernet: RX Checksum Offload Engine 
-> > supported
-> > [    1.348311] stmmaceth 70000000.ethernet: TX Checksum insertion 
-> > supported
-> > [    1.348320] stmmaceth 70000000.ethernet: TSO supported
-> > [    1.348328] stmmaceth 70000000.ethernet: Enable RX Mitigation via HW 
-> > Watchdog Timer
-> > [    1.348337] stmmaceth 70000000.ethernet: TSO feature enabled
-> > [    1.348409] libphy: stmmac: probed
-> > [ 4159.140990] stmmaceth 70000000.ethernet eth0: PHY [stmmac-0:01] 
-> > driver [Generic PHY]
-> > [ 4159.141005] stmmaceth 70000000.ethernet eth0: phy: setting supported 
-> > 00,00000000,000062ff advertising 00,00000000,000062ff
-> > [ 4159.142359] stmmaceth 70000000.ethernet eth0: No Safety Features 
-> > support found
-> > [ 4159.142369] stmmaceth 70000000.ethernet eth0: IEEE 1588-2008 Advanced 
-> > Timestamp supported
-> > [ 4159.142429] stmmaceth 70000000.ethernet eth0: registered PTP clock
-> > [ 4159.142439] stmmaceth 70000000.ethernet eth0: configuring for 
-> > phy/gmii link mode
-> > [ 4159.142452] stmmaceth 70000000.ethernet eth0: phylink_mac_config: 
-> > mode=phy/gmii/Unknown/Unknown adv=00,00000000,000062ff pause=10 link=0 
-> > an=1
-> > [ 4159.142466] stmmaceth 70000000.ethernet eth0: phy link up 
-> > gmii/1Gbps/Full
-> > [ 4159.142475] stmmaceth 70000000.ethernet eth0: phylink_mac_config: 
-> > mode=phy/gmii/1Gbps/Full adv=00,00000000,00000000 pause=0f link=1 an=0
-> > [ 4159.142481] stmmaceth 70000000.ethernet eth0: Link is Up - 1Gbps/Full 
-> > - flow control rx/tx
-> > 
-> > The only missing point is the NFS boot that I can't replicate with this 
-> > setup. But I did some sanity checks:
-> > 
-> > Remote Enpoint:
-> > # dd if=/dev/urandom of=output.dat bs=128M count=1
-> > # nc -c 192.168.0.2 1234 < output.dat
-> > # md5sum output.dat 
-> > fde9e0818281836e4fc0edfede2b8762  output.dat
-> > 
-> > DUT:
-> > # nc -l -c -p 1234 > output.dat
-> > # md5sum output.dat 
-> > fde9e0818281836e4fc0edfede2b8762  output.dat
-> 
-> On my setup, if I do not use NFS to mount the rootfs, but then manually
-> mount the NFS share after booting, I do not see any problems reading or
-> writing to files on the share. So I am not sure if it is some sort of
-> race that is occurring when mounting the NFS share on boot. It is 100%
-> reproducible when using NFS for the root file-system.
+> diff --git a/include/kvm/arm_vgic.h b/include/kvm/arm_vgic.h
+> index ce372a0..636db29 100644
+> --- a/include/kvm/arm_vgic.h
+> +++ b/include/kvm/arm_vgic.h
+> @@ -337,6 +337,11 @@ struct vgic_cpu {
+>  
+>  	/* Cache guest interrupt ID bits */
+>  	u32 num_id_bits;
+> +
+> +	/* Minimum of priority in all irqs */
+> +	u8 lowest_priority;
 
-I don't understand how can there be corruption then unless the IP AXI 
-parameters are misconfigured which can lead to sporadic undefined 
-behavior.
+In all IRQs? That are in every possible state?
 
-These prints from your logs:
-[   14.579392] Run /init as init process
-/init: line 58: chmod: command not found
-[ 10:22:46 ] L4T-INITRD Build DATE: Mon Jul 22 10:22:46 UTC 2019
-[ 10:22:46 ] Root device found: nfs
-[ 10:22:46 ] Ethernet interfaces: eth0
-[ 10:22:46 ] IP Address: 10.21.140.41
+> +	/* Irq pending flag */
+> +	bool pending;
 
-Where are they coming from ? Do you have any extra init script ?
+What does pending mean here? Strictly pending? or covering the other
+states of an interrupt (Active, Active+Pending)?
 
----
+>  };
+>  
+>  extern struct static_key_false vgic_v2_cpuif_trap;
+> diff --git a/virt/kvm/arm/vgic/vgic.c b/virt/kvm/arm/vgic/vgic.c
+> index deb8471..767dfe0 100644
+> --- a/virt/kvm/arm/vgic/vgic.c
+> +++ b/virt/kvm/arm/vgic/vgic.c
+> @@ -398,6 +398,12 @@ bool vgic_queue_irq_unlock(struct kvm *kvm, struct vgic_irq *irq,
+>  	 * now in the ap_list.
+>  	 */
+>  	vgic_get_irq_kref(irq);
+> +
+> +	if (!irq->active) {
+
+Why not active? What if the interrupt is Active+Pending? What is the
+rational for this? This applies to the whole of this patch.
+
+> +		vcpu->arch.vgic_cpu.pending = true;
+> +		if (vcpu->arch.vgic_cpu.lowest_priority > irq->priority)
+> +			vcpu->arch.vgic_cpu.lowest_priority = irq->priority;
+> +	}
+>  	list_add_tail(&irq->ap_list, &vcpu->arch.vgic_cpu.ap_list_head);
+>  	irq->vcpu = vcpu;
+>  
+> @@ -618,6 +624,9 @@ static void vgic_prune_ap_list(struct kvm_vcpu *vcpu)
+>  retry:
+>  	raw_spin_lock(&vgic_cpu->ap_list_lock);
+>  
+> +	vgic_cpu->lowest_priority = U8_MAX;
+> +	vgic_cpu->pending = false;
+> +
+>  	list_for_each_entry_safe(irq, tmp, &vgic_cpu->ap_list_head, ap_list) {
+>  		struct kvm_vcpu *target_vcpu, *vcpuA, *vcpuB;
+>  		bool target_vcpu_needs_kick = false;
+> @@ -649,6 +658,11 @@ static void vgic_prune_ap_list(struct kvm_vcpu *vcpu)
+>  		}
+>  
+>  		if (target_vcpu == vcpu) {
+> +			if (!irq->active) {
+> +				vgic_cpu->pending = true;
+> +				if (vgic_cpu->lowest_priority > irq->priority)
+> +					vgic_cpu->lowest_priority = irq->priority;
+> +			}
+>  			/* We're on the right CPU */
+>  			raw_spin_unlock(&irq->irq_lock);
+>  			continue;
+> @@ -690,6 +704,11 @@ static void vgic_prune_ap_list(struct kvm_vcpu *vcpu)
+>  
+>  			list_del(&irq->ap_list);
+>  			irq->vcpu = target_vcpu;
+> +			if (!irq->active) {
+> +				new_cpu->pending = true;
+> +				if (new_cpu->lowest_priority > irq->priority)
+> +					new_cpu->lowest_priority = irq->priority;
+> +			}
+>  			list_add_tail(&irq->ap_list, &new_cpu->ap_list_head);
+>  			target_vcpu_needs_kick = true;
+>  		}
+> @@ -930,9 +949,6 @@ void kvm_vgic_put(struct kvm_vcpu *vcpu)
+>  int kvm_vgic_vcpu_pending_irq(struct kvm_vcpu *vcpu)
+>  {
+>  	struct vgic_cpu *vgic_cpu = &vcpu->arch.vgic_cpu;
+> -	struct vgic_irq *irq;
+> -	bool pending = false;
+> -	unsigned long flags;
+>  	struct vgic_vmcr vmcr;
+>  
+>  	if (!vcpu->kvm->arch.vgic.enabled)
+> @@ -943,22 +959,10 @@ int kvm_vgic_vcpu_pending_irq(struct kvm_vcpu *vcpu)
+>  
+>  	vgic_get_vmcr(vcpu, &vmcr);
+>  
+> -	raw_spin_lock_irqsave(&vgic_cpu->ap_list_lock, flags);
+> -
+> -	list_for_each_entry(irq, &vgic_cpu->ap_list_head, ap_list) {
+> -		raw_spin_lock(&irq->irq_lock);
+> -		pending = irq_is_pending(irq) && irq->enabled &&
+> -			  !irq->active &&
+> -			  irq->priority < vmcr.pmr;
+> -		raw_spin_unlock(&irq->irq_lock);
+> -
+> -		if (pending)
+> -			break;
+> -	}
+> -
+> -	raw_spin_unlock_irqrestore(&vgic_cpu->ap_list_lock, flags);
+> +	if (vgic_cpu->pending && vgic_cpu->lowest_priority < vmcr.pmr)
+> +		return true;
+
+And here we go. You've dropped the lock, and yet are evaluating two
+unrelated fields that could be changed by a parallel injection or the
+vcpu entering/exiting the guest.
+
+I'm sure you get better performance. I'm also pretty sure this is
+completely unsafe.
+
 Thanks,
-Jose Miguel Abreu
+
+	M.
+-- 
+Jazz is not dead. It just smells funny...
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
