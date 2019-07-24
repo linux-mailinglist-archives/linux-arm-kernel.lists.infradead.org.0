@@ -2,58 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E386372AB5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 10:54:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D87B72AC5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 10:55:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ngbyjMs4m+Vztd3kp4EH3Tb7H3OFpk+YCizLcxZD21U=; b=mEVzGkOZy6urSX
-	pzqXVd9M84o4p7QixpLTRm9Nah/Ej0cYBK6+MQu4WBILTTz/kQeMyA3osoPYH6eHAqHXq8sctIA6w
-	iZvUxu1bpc64jq7e12dAxO0uzVa6xNKek2BLneaZPzZ8NzZNPZxL0dw8wvfXTkqhcifmvzNF5fElD
-	LG0XIvIdBD4HsE7ikYymYkaKy/MrQMV7hDWgyNx6uSrOVMFnKfFt4aFY4NKWikKx3yOY9kUTlcnoi
-	AaXde1l8VZhHbpmRjNSQaNteHYoWmF3vcS7Y+dyUZd47ZHf8KJk+tjh05THN5GJ8Wzuvp7kNvbowT
-	x0VRgti4QDzRQQ/gY8iA==;
+	List-Owner; bh=ROqZ18MPIHNtb3xmKOEEd9jmpSYuQGM7rGd/qUUFn6A=; b=jt5IhLbJAeg/Kb
+	7f0XFFUqchGJ+2oH1gYz12HKQYPJU4GXYCUQwDnNsSpIAwOHhp993y4iRPdgQvkcuOJEb9XOGDVbz
+	MpHI+KFWV6EdrMWSJXIMxt606QKKDNicKVawnZupTzARb/ndrTPXEq1efV5rsNIaWiDi3sR8qPs3Q
+	fUFfk+s1XQdYrum/JbzLP+gfcweDrwOfmFF7ExxwtMnNtcqFZOuda1VZJshxcLrV5loZDKSIhrtqY
+	NBlvURzRIVtXOZ4gM62D7DHn2mQWBgcWhB0K129rARdJ+CKnYwRbzQKOFTwbb3oRNc7ciiZTh2Q67
+	uxyysUXC7pUoUnqN2y+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqD2E-0002ZO-Dy; Wed, 24 Jul 2019 08:54:06 +0000
+	id 1hqD3j-0004Zd-J8; Wed, 24 Jul 2019 08:55:39 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqD0S-0001a3-7n; Wed, 24 Jul 2019 08:52:18 +0000
-X-UUID: f8264e2f59014993975cdfefdfff19b5-20190724
-X-UUID: f8264e2f59014993975cdfefdfff19b5-20190724
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ id 1hqD0V-0001ZH-BW; Wed, 24 Jul 2019 08:52:21 +0000
+X-UUID: 7880199a9b28442983595b22402f5309-20190724
+X-UUID: 7880199a9b28442983595b22402f5309-20190724
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
  (envelope-from <chunfeng.yun@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1991704331; Wed, 24 Jul 2019 00:51:19 -0800
-Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 24 Jul 2019 01:51:18 -0700
+ with ESMTP id 1952440539; Wed, 24 Jul 2019 00:51:21 -0800
+Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 24 Jul 2019 01:51:20 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- MTKMBS31N2.mediatek.inc (172.27.4.87) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 24 Jul 2019 16:51:15 +0800
+ MTKMBS31N1.mediatek.inc (172.27.4.69) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 24 Jul 2019 16:51:16 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 24 Jul 2019 16:51:14 +0800
+ Transport; Wed, 24 Jul 2019 16:51:15 +0800
 From: Chunfeng Yun <chunfeng.yun@mediatek.com>
 To: Rob Herring <robh+dt@kernel.org>, Greg Kroah-Hartman
  <gregkh@linuxfoundation.org>, Biju Das <biju.das@bp.renesas.com>
-Subject: [PATCH v8 02/11] dt-bindings: connector: add optional properties for
- Type-B
-Date: Wed, 24 Jul 2019 16:50:36 +0800
-Message-ID: <1563958245-6321-3-git-send-email-chunfeng.yun@mediatek.com>
+Subject: [PATCH v8 03/11] dt-bindings: usb: add binding for USB GPIO based
+ connection detection driver
+Date: Wed, 24 Jul 2019 16:50:37 +0800
+Message-ID: <1563958245-6321-4-git-send-email-chunfeng.yun@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
 In-Reply-To: <1563958245-6321-1-git-send-email-chunfeng.yun@mediatek.com>
 References: <1563958245-6321-1-git-send-email-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 49BA739C71D4B491DA16AA6A3B421D72B8F1C17FE0A76065204D28E4720188252000:8
+X-TM-SNTS-SMTP: B8D7C8A7E71F62FDC33C9FE45F9E8556A02821FA90E42A101A80551B65B521DC2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_015216_391394_6C844605 
-X-CRM114-Status: UNSURE (   9.68  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190724_015219_458161_5477B947 
+X-CRM114-Status: GOOD (  13.30  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -91,56 +90,80 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add id-gpios, vbus-gpios, vbus-supply and pinctrl properties for
-usb-b-connector
+It's used to support dual role switch via GPIO when use Type-B
+receptacle, typically the USB ID pin is connected to an input
+GPIO, and also used to enable/disable device when the USB Vbus
+pin is connected to an input GPIO.
 
 Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-Reviewed-by: Rob Herring <robh@kernel.org>
 ---
-v8 no changes
-v7 no changes
-v6 no changes
+v8 changes:
+ 1. rename the title
+ 2. change the compatible as "linux,usb-conn-gpio" instead of
+    "linux,typeb-conn-gpio"
+
+v7 changes:
+ 1. add description for device only mode
+
+v6 changes:
+ 1. remove status and port nodes in example
+ 2. make vbus-supply as optional property
 
 v5 changes:
- 1. add reviewed by Rob
+ 1. treat type-B connector as child device of USB controller's, but not
+    as a separate virtual device, suggested by Rob
+ 2. put connector's port node under connector node, suggested by Rob
 
 v4 no changes
 
 v3 changes:
- 1. add GPIO direction, and use fixed-regulator for GPIO controlled
-    VBUS regulator suggested by Rob;
+ 1. treat type-B connector as a virtual device, but not child device of
+    USB controller's
 
 v2 changes:
- 1. describe more clear for vbus-gpios and vbus-supply suggested by Hans
+  1. new patch to make binding clear suggested by Hans
 ---
- .../bindings/connector/usb-connector.txt           | 14 ++++++++++++++
- 1 file changed, 14 insertions(+)
+ .../devicetree/bindings/usb/usb-conn-gpio.txt | 31 +++++++++++++++++++
+ 1 file changed, 31 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/usb/usb-conn-gpio.txt
 
-diff --git a/Documentation/devicetree/bindings/connector/usb-connector.txt b/Documentation/devicetree/bindings/connector/usb-connector.txt
-index cef556d4e5ee..d357987181ee 100644
---- a/Documentation/devicetree/bindings/connector/usb-connector.txt
-+++ b/Documentation/devicetree/bindings/connector/usb-connector.txt
-@@ -17,6 +17,20 @@ Optional properties:
- - self-powered: Set this property if the usb device that has its own power
-   source.
- 
-+Optional properties for usb-b-connector:
-+- id-gpios: an input gpio for USB ID pin.
-+- vbus-gpios: an input gpio for USB VBUS pin, used to detect presence of
-+  VBUS 5V.
-+  see gpio/gpio.txt.
-+- vbus-supply: a phandle to the regulator for USB VBUS if needed when host
-+  mode or dual role mode is supported.
-+  Particularly, if use an output GPIO to control a VBUS regulator, should
-+  model it as a regulator.
-+  see regulator/fixed-regulator.yaml
-+- pinctrl-names : a pinctrl state named "default" is optional
-+- pinctrl-0 : pin control group
-+  see pinctrl/pinctrl-bindings.txt
+diff --git a/Documentation/devicetree/bindings/usb/usb-conn-gpio.txt b/Documentation/devicetree/bindings/usb/usb-conn-gpio.txt
+new file mode 100644
+index 000000000000..d4d107fedc22
+--- /dev/null
++++ b/Documentation/devicetree/bindings/usb/usb-conn-gpio.txt
+@@ -0,0 +1,31 @@
++USB GPIO Based Connection Detection
 +
- Optional properties for usb-c-connector:
- - power-role: should be one of "source", "sink" or "dual"(DRP) if typec
-   connector has power support.
++This is typically used to switch dual role mode from the USB ID pin connected
++to an input GPIO, and also used to enable/disable device mode from the USB
++Vbus pin connected to an input GPIO.
++
++Required properties:
++- compatible : should include "linux,usb-conn-gpio" and "usb-b-connector".
++- id-gpios, vbus-gpios : input gpios, either one of them must be present,
++	and both can be present as well.
++	see connector/usb-connector.txt
++
++Optional properties:
++- vbus-supply : can be present if needed when supports dual role mode.
++	see connector/usb-connector.txt
++
++- Sub-nodes:
++	- port : can be present.
++		see graph.txt
++
++Example:
++
++&mtu3 {
++	connector {
++		compatible = "linux,usb-conn-gpio", "usb-b-connector";
++		label = "micro-USB";
++		type = "micro";
++		id-gpios = <&pio 12 GPIO_ACTIVE_HIGH>;
++		vbus-supply = <&usb_p0_vbus>;
++	};
++};
 -- 
 2.21.0
 
