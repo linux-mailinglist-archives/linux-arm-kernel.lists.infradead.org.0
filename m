@@ -2,89 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D6677316F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 16:18:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 648C173179
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 16:19:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=xoWTQC5116rrj0LIeWFK+n0e546OR9Sn1wok6q76fTU=; b=nMpkw9/xmD+/bhyNkvuG82NhtF
-	+kAxI2sM5tcOSavHmAJ3BtaN04li8+mhcZ5D5ASrd+clhhRtjWs+wUkl3rKuv/3tQ8arOn8D57ze6
-	s/RtNco6qMjhiGKTar84UFtAh+Z3UnywrmDZFvYQDS6J1a665gdWP0SQ+Uezj1mgD8iELhPi9fktT
-	O31poxSi+tdvoidKvQYvCdL42jlpL/BO1/yjzIgTNm9cQy43gVqOUHS1Jw1pC26kCogfydoSSQWM2
-	aLJQnxz5UWGtr8hQlfpZFuPyWncfQukyWSCIztVefBS1sHHaAWG9NAEc/KEYdqcjv60sP+Sx+bDJR
-	p0rHclJA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xF0wyvl5sFYU3rHijJSq3Wsy+umLPyP6NqMhPGN7CQM=; b=J8gAXUygoNsc04
+	IS3Anb7OkXroDHp3hz7d4VNYpaKRvjQIPY6ptiakPCltaKtUy6bBJp8IuCmSDtWqsgsIond1TIumT
+	8YTD3MNIb87gJ6v3B1RXSLXjxRpMjmV94t8OE++ljLjKEh1u+TLtXtn0PGIT5fs+Cp/xKBgrlNW1n
+	t4u5ycjzZcWoBSKnOqFGx+DrqwOYKH/sDtic7qC2SiMrhS8/iNb6W/6RSAwVAsTeaPUUrnp91Xkng
+	IvqI0zbGVStbZeiYYmi7DYxF8QGIJcBts2vKEcizw0cXJZv4f4WZj+rPia16XbVGk/PXq54/+4SFh
+	dpW+SgUZJgscNJrtXmVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqI5l-0006og-1i; Wed, 24 Jul 2019 14:18:05 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqI5c-0006oJ-1Z; Wed, 24 Jul 2019 14:17:57 +0000
-Received: by mail-io1-xd42.google.com with SMTP id h6so3365645iom.7;
- Wed, 24 Jul 2019 07:17:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=pl9nO+hunkGocGh4P+3+7RACb7n3AOCHKdRk3PRyj78=;
- b=d+XNfrK6cC2Wn6gvabfhUWgJIeVpcGO/Uu6+pC4RCQJKyw8+NBSwGR+cTC1MJoLo9U
- 4Bvz3/JgJ93WJZHfxWtpb2r4Os/qZFoXxSYw3p6B+r0VnCJ5SjW7ijFZh9F9rIxVWChe
- 1YId1MFsU/1UthPqnat5tRtc6PS+q3PhlR2GoZC8hu/oMgMA8+5rwLD9B9YLZHqe1zrk
- KEZfQasCdQdlIbaNNOXHSkTc3gPNsVq5Kc1MDosgLPKRBrKNBcHAEUwZIHHh/7gkQNg1
- Ap20T3173w8lr1Au0OGiB7k0bVRE+A91zvqCi0Pm3+tsgrshgEtOcxHtklEsIWDwxsaV
- BSuQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=pl9nO+hunkGocGh4P+3+7RACb7n3AOCHKdRk3PRyj78=;
- b=EoK46mry/kQtBLWA8YweL9d7UttemctMJUZsN+Mvy8hUJY/1Omg7hoBgqzCQJmNqsA
- CJUMEAjYfQOuN8Yi4TU7zPn2Oja7cepBFwxGjFrRmjDhRB1CltX6x0TBfFXlS28O2wM2
- Q+LVqp6O5Gxq4UstebGaZA0bMlneEjmCAmOf/skDG7QAF1G3DUA1SY85zRwxWz/bgO2a
- VarBeLzHUjPmYIpETm/J8zBpqhC0BN5acmhoO5VhmUPSvyu8cyXbseI1Y3slQT65podM
- /5cTjM9lrHPovAAerwgNHTQ320y67kr0hxPiKvT/RNzn0SP3YG9LALKAXguLLTPgNCC+
- YIHA==
-X-Gm-Message-State: APjAAAVHhoJ6soSa7766KLyqVlLhoizHY5pcR4ogqzXi9pjiVXDlgD+2
- kqShvttCXYBWvBaMqw+lh5E=
-X-Google-Smtp-Source: APXvYqz9OF+x2WTGlu/HH4W5NyZIEwxfrCRlfhLTUcbrr1zQuVHHj1E9ruPCRHw4aSTh73+cpex+cg==
-X-Received: by 2002:a02:6016:: with SMTP id i22mr60556184jac.56.1563977874678; 
- Wed, 24 Jul 2019 07:17:54 -0700 (PDT)
-Received: from cs-dulles.cs.umn.edu (cs-dulles.cs.umn.edu. [128.101.35.54])
- by smtp.googlemail.com with ESMTPSA id p25sm37377171iol.48.2019.07.24.07.17.53
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 24 Jul 2019 07:17:53 -0700 (PDT)
-From: Navid Emamdoost <navid.emamdoost@gmail.com>
-To: kvalo@codeaurora.org
-Subject: [PATCH] mt7601u: null check the allocation
-Date: Wed, 24 Jul 2019 09:17:36 -0500
-Message-Id: <20190724141736.29994-1-navid.emamdoost@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <87d0i00z4t.fsf@kamboji.qca.qualcomm.com>
-References: <87d0i00z4t.fsf@kamboji.qca.qualcomm.com>
+	id 1hqI6c-0007DO-RT; Wed, 24 Jul 2019 14:18:58 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hqI6S-0007D1-PA
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 14:18:50 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0319428;
+ Wed, 24 Jul 2019 07:18:48 -0700 (PDT)
+Received: from [10.1.196.133] (e112269-lin.cambridge.arm.com [10.1.196.133])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 55C7A3F71A;
+ Wed, 24 Jul 2019 07:18:45 -0700 (PDT)
+Subject: Re: [PATCH v9 00/21] Generic page walk and ptdump
+To: Thomas Gleixner <tglx@linutronix.de>
+References: <20190722154210.42799-1-steven.price@arm.com>
+ <20190723101639.GD8085@lakrids.cambridge.arm.com>
+ <e108b8a6-deca-e69c-b338-52a98b14be86@arm.com>
+ <alpine.DEB.2.21.1907241541570.1791@nanos.tec.linutronix.de>
+From: Steven Price <steven.price@arm.com>
+Message-ID: <fd898367-b44e-9328-bdab-7a3de0db6bda@arm.com>
+Date: Wed, 24 Jul 2019 15:18:43 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
+MIME-Version: 1.0
+In-Reply-To: <alpine.DEB.2.21.1907241541570.1791@nanos.tec.linutronix.de>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_071756_083693_107F716E 
-X-CRM114-Status: UNSURE (   9.33  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190724_071848_901724_DF5C4C8B 
+X-CRM114-Status: GOOD (  24.90  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (navid.emamdoost[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,42 +64,137 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: secalert@redhat.com, Jakub Kicinski <kubakici@wp.pl>,
- linux-wireless@vger.kernel.org, kjlu@umn.edu, linux-kernel@vger.kernel.org,
- emamd001@umn.edu, linux-mediatek@lists.infradead.org, smccaman@umn.edu,
- Matthias Brugger <matthias.bgg@gmail.com>, netdev@vger.kernel.org,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
- Navid Emamdoost <navid.emamdoost@gmail.com>
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, x86@kernel.org,
+ Arnd Bergmann <arnd@arndb.de>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>, linux-kernel@vger.kernel.org,
+ linux-mm@kvack.org, =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ Andy Lutomirski <luto@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ James Morse <james.morse@arm.com>, Andrew Morton <akpm@linux-foundation.org>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org, "Liang,
+ Kan" <kan.liang@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-devm_kzalloc may fail and return NULL. So the null check is needed.
+On 24/07/2019 14:57, Thomas Gleixner wrote:
+> On Wed, 24 Jul 2019, Steven Price wrote:
+>> On 23/07/2019 11:16, Mark Rutland wrote:
+>>> Are there any visible changes to the arm64 output?
+>>
+>> arm64 output shouldn't change. I've confirmed that "efi_page_tables" is
+>> identical on a Juno before/after the change. "kernel_page_tables"
+>> obviously will vary depending on the exact layout of memory, but the
+>> format isn't changed.
+>>
+>> x86 output does change due to patch 14. In this case the change is
+>> removing the lines from the output of the form...
+>>
+>>> 0xffffffff84800000-0xffffffffa0000000         440M                               pmd
+>>
+>> ...which are unpopulated areas of the memory map. Populated lines which
+>> have attributes are unchanged.
+> 
+> Having the hole size and the level in the dump is a very conveniant thing.
+> 
+> Right now we have:
+> 
+> 0xffffffffc0427000-0xffffffffc042b000          16K     ro                     NX pte
+> 0xffffffffc042b000-0xffffffffc042e000          12K     RW                     NX pte
+> 0xffffffffc042e000-0xffffffffc042f000           4K                               pte
+> 0xffffffffc042f000-0xffffffffc0430000           4K     ro                     x  pte
+> 0xffffffffc0430000-0xffffffffc0431000           4K     ro                     NX pte
+> 0xffffffffc0431000-0xffffffffc0433000           8K     RW                     NX pte
+> 0xffffffffc0433000-0xffffffffc0434000           4K                               pte
+> 0xffffffffc0434000-0xffffffffc0436000           8K     ro                     x  pte
+> 0xffffffffc0436000-0xffffffffc0438000           8K     ro                     NX pte
+> 0xffffffffc0438000-0xffffffffc043a000           8K     RW                     NX pte
+> 0xffffffffc043a000-0xffffffffc043f000          20K                               pte
+> 0xffffffffc043f000-0xffffffffc0444000          20K     ro                     x  pte
+> 0xffffffffc0444000-0xffffffffc0447000          12K     ro                     NX pte
+> 0xffffffffc0447000-0xffffffffc0449000           8K     RW                     NX pte
+> 0xffffffffc0449000-0xffffffffc044f000          24K                               pte
+> 0xffffffffc044f000-0xffffffffc0450000           4K     ro                     x  pte
+> 0xffffffffc0450000-0xffffffffc0451000           4K     ro                     NX pte
+> 0xffffffffc0451000-0xffffffffc0453000           8K     RW                     NX pte
+> 0xffffffffc0453000-0xffffffffc0458000          20K                               pte
+> 0xffffffffc0458000-0xffffffffc0459000           4K     ro                     x  pte
+> 0xffffffffc0459000-0xffffffffc045b000           8K     ro                     NX pte
+> 
+> with your change this becomes:
+> 
+> 0xffffffffc0427000-0xffffffffc042b000          16K     ro                     NX pte
+> 0xffffffffc042b000-0xffffffffc042e000          12K     RW                     NX pte
+> 0xffffffffc042f000-0xffffffffc0430000           4K     ro                     x  pte
+> 0xffffffffc0430000-0xffffffffc0431000           4K     ro                     NX pte
+> 0xffffffffc0431000-0xffffffffc0433000           8K     RW                     NX pte
+> 0xffffffffc0434000-0xffffffffc0436000           8K     ro                     x  pte
+> 0xffffffffc0436000-0xffffffffc0438000           8K     ro                     NX pte
+> 0xffffffffc0438000-0xffffffffc043a000           8K     RW                     NX pte
+> 0xffffffffc043f000-0xffffffffc0444000          20K     ro                     x  pte
+> 0xffffffffc0444000-0xffffffffc0447000          12K     ro                     NX pte
+> 0xffffffffc0447000-0xffffffffc0449000           8K     RW                     NX pte
+> 0xffffffffc044f000-0xffffffffc0450000           4K     ro                     x  pte
+> 0xffffffffc0450000-0xffffffffc0451000           4K     ro                     NX pte
+> 0xffffffffc0451000-0xffffffffc0453000           8K     RW                     NX pte
+> 0xffffffffc0458000-0xffffffffc0459000           4K     ro                     x  pte
+> 0xffffffffc0459000-0xffffffffc045b000           8K     ro                     NX pte
+> 
+> which is 5 lines less, but a pain to figure out the size of the holes. And
+> it becomes even more painful when the holes go across different mapping
+> levels.
+> 
+> From your 14/N changelog:
+> 
+>> This keeps the output shorter and will help with a future change
+> 
+> I don't care about shorter at all. It's debug information.
 
-Signed-off-by: Navid Emamdoost <navid.emamdoost@gmail.com>
----
- drivers/net/wireless/mediatek/mt7601u/init.c | 3 +++
- 1 file changed, 3 insertions(+)
+Sorry, the "shorter" part was because Dave Hansen originally said[1]:
+> I think I'd actually be OK with the holes just not showing up.  I
+> actually find it kinda hard to read sometimes with the holes in there.
+> I'd be curious what others think though.
 
-diff --git a/drivers/net/wireless/mediatek/mt7601u/init.c b/drivers/net/wireless/mediatek/mt7601u/init.c
-index 9bfac9f1d47f..cada48800928 100644
---- a/drivers/net/wireless/mediatek/mt7601u/init.c
-+++ b/drivers/net/wireless/mediatek/mt7601u/init.c
-@@ -557,6 +557,9 @@ mt76_init_sband_2g(struct mt7601u_dev *dev)
- {
- 	dev->sband_2g = devm_kzalloc(dev->dev, sizeof(*dev->sband_2g),
- 				     GFP_KERNEL);
-+	if (!dev->sband_2g)
-+		return -ENOMEM;
-+
- 	dev->hw->wiphy->bands[NL80211_BAND_2GHZ] = dev->sband_2g;
- 
- 	WARN_ON(dev->ee->reg.start - 1 + dev->ee->reg.num >
--- 
-2.17.1
+[1]
+https://lore.kernel.org/lkml/5f354bf5-4ac8-d0e2-048c-0857c91a21e6@intel.com/
 
+And I'd abbreviated "holes not showing up" as "shorter" in the commit
+message - not the best wording I agree.
+
+>> switching to using the generic page walk code as we no longer care about
+>> the 'level' that the page table holes are at.
+> 
+> I really do not understand why you think that WE no longer care about the
+> level (and the size) of the holes. I assume that WE is pluralis majestatis
+> and not meant to reflect the opinion of you and everyone else.
+
+Again, I apologise - that was sloppy wording in the commit message. By
+"we" I meant the code not any particular person. In my original patch[2]
+the only use of the 'depth' argument to pte_hole was to report the level
+for these debug lines. Removing those lines simplified the code and at
+the time nobody raised any objections.
+
+[2]
+https://lore.kernel.org/lkml/20190227170608.27963-28-steven.price@arm.com/
+
+> I have no idea whether you ever had to do serious work with PT dump, but I
+> surely have at various occasions including the PTI mess and I definitely
+> found the size and the level information from holes very useful.
+
+On arm64 we don't have those lines, but equally it's possible they might
+be useful in the future. So this might be something to add.
+
+As I said in a previous email[3] I was dropping the lines from the
+output assuming nobody had any objections. Since you find these lines
+useful, I'll see about reworking the change to retain the lines.
+
+Steve
+
+[3]
+https://lore.kernel.org/lkml/26df02dd-c54e-ea91-bdd1-0a4aad3a30ac@arm.com/
 
 _______________________________________________
 linux-arm-kernel mailing list
