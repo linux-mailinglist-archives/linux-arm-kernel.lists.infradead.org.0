@@ -2,91 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5DEF37303C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 15:50:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 37F0073041
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 15:51:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=phmDdJKRt0MRq7LLAKLHHRkClKZa+rAcBZUniSj7+a4=; b=DdXpRBn7fDRYIL
-	HEUu0ecgvFx5utTvbN7ET6p/kVgqko85QQPvjC8gANQ4omZ7eGTeFm+kiGKFEuHLRHGUxJkFiQLdw
-	4c9EPZpMBOpaP3I0WQKmOwra+QFPtN5LjswJA6r4N3DktiNLBS+zCIF6YZT8LTxL5zR8lGU+GQM7Z
-	j5ck7xn55nvZawLVUohBURn8dBqhZdqNuIZ/B9MU3TNoqWJxyIkuuJ6TLnwPZrp8kzsMFsy9iPIh5
-	EIRgaotOBRlgDyt8qjNZ7kL4HrjVA4+JHeenm+GAC+AB+mWHdaCu+QFsAB+ylugntKeoIhsqirYOB
-	bHYxP/2+92Z8cyZF9Rdg==;
+	List-Owner; bh=bBeF5MRhmWhlOU8csOdyncV9jOP6HQ8e8Oyt4B7PiX0=; b=K+mhR2sMbgC4VV
+	20eUNcJR50xObCxuT6FnOlnytqL7v6P413kXodijZd0mJyDzmk0jWJ2vgFDWVO8cILN7wEVd5R91O
+	RkIYstgUzVNK99ZdJdOKYFDq6CiDoSiv1NrB6e63DFDYuX8E8fnberKyFOxGbyqnfJLBJud71yPrA
+	C0EetMM4SWXhDQupiepCXoyUIcFluSFxjaHI4lSN43rb10mV6V+l6qajwNWiKagOEVaKgze2KDAyg
+	fWiXc2BqOXe/JobAglMEByyPpuH2wBa97ubjubbfDYLzd+sSvwLiFFJ4X/z2PqDWybk0s/gjaEVlm
+	jUqb+tnTUXO/VjU6nUdw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqHf5-0000Wz-CA; Wed, 24 Jul 2019 13:50:31 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqHel-0000Nl-FF
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 13:50:12 +0000
-Received: by mail-lj1-x241.google.com with SMTP id d24so44562865ljg.8
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 24 Jul 2019 06:50:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=HfPoVJsXGaQ7CrPxMNDhvPdtz+hWWRNJKhx9Zt29Rpw=;
- b=xqkD4l6pQ59S18/2N97O4kkMzx8lUYEVdwU8E6DDQAjlTZbekJZ45iJxLjCYV8wPkB
- oFJQsyDhyr6TG++7ko7t24C9YqC3QX9lKck0pa/+JScHKTtpj4LcIL3PETrNI5ddzNlk
- u1mQnmHFwPDUlRYXj7KdrfopRx9UxPCntJoAvVDv/uh6ypWag6UdbPiImhI7sobYGym+
- U+MKkK4amr4J6NZVmbdtsGZAhLutz6UmI8Fb4AzAGWARs9BtHpFUi7e9x+79OlJXVXix
- s3MQIcG3uGvEFJHlOky9cSIJlp8+gcYiUnfJ1PuqP/4unyq6tTLNLy9e74hqCfGz8ivH
- RquA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=HfPoVJsXGaQ7CrPxMNDhvPdtz+hWWRNJKhx9Zt29Rpw=;
- b=czYlOE5X77jRqvofLR4ZXIGPajK971XyxXRx/zuA6V5g0ZdmtPvIZFuqa0EsEppLne
- xG49mhlHIsmBxga98XZ0b5m/32JkLqaTYTucjFdcJf5Yl+BPqWWFkmbPRLg7buv/LMvx
- /B9W5tJrOAnOgQbRbz4cR7YpdWbs3Xh61GL2pCnxjJ/HvDorZfOgV+5w/uANnUjQ0Hmk
- LaUWWyMnYkjYPwtNXsOG6L7FUv3ZMM8Nd1BCJ1bJjebv0DGlSn4PRGb4XqEwrvIzVhSa
- 4u0TayMRem0RhnrXRljT+nmnN/v8vvJcLrzEKUEWZTjiWok7OwIepn5pS2jYQffbS24F
- Xp4A==
-X-Gm-Message-State: APjAAAVMTN/ltsCN1uetA1+8pGv5vBFVYtNlgJDUUTzo44APzjPA2RNH
- PMZHXgXbeoS3bRmjrDMnDM8tzg==
-X-Google-Smtp-Source: APXvYqyjk/0IsjFe1aAfxByZ5nzwaHZIWvF4GQjqOS05zabNCqCg+h3+FahVUnfnxWqiOJs3cm8nWw==
-X-Received: by 2002:a2e:7315:: with SMTP id o21mr35196730ljc.3.1563976209824; 
- Wed, 24 Jul 2019 06:50:09 -0700 (PDT)
-Received: from genomnajs.ideon.se ([85.235.10.227])
- by smtp.gmail.com with ESMTPSA id v4sm8586483lji.103.2019.07.24.06.50.08
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 24 Jul 2019 06:50:08 -0700 (PDT)
-From: Linus Walleij <linus.walleij@linaro.org>
-To: dri-devel@lists.freedesktop.org,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>, Sean Paul <sean@poorly.run>
-Subject: [PATCH 2/2] drm/pl111: Drop special pads config check
-Date: Wed, 24 Jul 2019 15:49:59 +0200
-Message-Id: <20190724134959.2365-2-linus.walleij@linaro.org>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190724134959.2365-1-linus.walleij@linaro.org>
-References: <20190724134959.2365-1-linus.walleij@linaro.org>
+	id 1hqHgC-000103-Lk; Wed, 24 Jul 2019 13:51:40 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hqHg2-0000z3-BM
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 13:51:31 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 21F7B28;
+ Wed, 24 Jul 2019 06:51:28 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 7116C3F71A; Wed, 24 Jul 2019 06:51:26 -0700 (PDT)
+Date: Wed, 24 Jul 2019 14:51:24 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Subject: Re: [RFC 3/4] dma-direct: add dma_direct_min_mask
+Message-ID: <20190724135124.GA44864@arrakis.emea.arm.com>
+References: <20190717153135.15507-1-nsaenzjulienne@suse.de>
+ <20190717153135.15507-4-nsaenzjulienne@suse.de>
+ <20190718091526.GA25321@lst.de>
+ <13dd1a4f33fcf814545f0d93f18429e853de9eaf.camel@suse.de>
+ <58753252bd7964e3b9e9558b633bd325c4a898a1.camel@suse.de>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <58753252bd7964e3b9e9558b633bd325c4a898a1.camel@suse.de>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_065011_512304_5CCC956B 
-X-CRM114-Status: GOOD (  10.50  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190724_065130_476583_841DF1D3 
+X-CRM114-Status: GOOD (  24.53  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,61 +64,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Liviu Dudau <Liviu.Dudau@arm.com>, Linus Walleij <linus.walleij@linaro.org>,
- Sam Ravnborg <sam@ravnborg.org>, Pawel Moll <pawel.moll@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: stefan.wahren@i2se.com, f.fainelli@gmail.com,
+ Robin Murphy <robin.murphy@arm.com>, phil@raspberrypi.org,
+ iommu@lists.linux-foundation.org, linux-kernel@vger.kernel.org,
+ Jisheng.Zhang@synaptics.com, mbrugger@suse.com, will@kernel.org,
+ Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This drops the check of the surplus "pads" configuration
-from the device tree that is completely unused in the DRM
-driver.
+On Fri, Jul 19, 2019 at 03:08:52PM +0200, Nicolas Saenz Julienne wrote:
+> On Thu, 2019-07-18 at 13:18 +0200, Nicolas Saenz Julienne wrote:
+> > On Thu, 2019-07-18 at 11:15 +0200, Christoph Hellwig wrote:
+> > > On Wed, Jul 17, 2019 at 05:31:34PM +0200, Nicolas Saenz Julienne wrote:
+> > > > Historically devices with ZONE_DMA32 have been assumed to be able to
+> > > > address at least the lower 4GB of ram for DMA. This is still the defualt
+> > > > behavior yet the Raspberry Pi 4 is limited to the first GB of memory.
+> > > > This has been observed to trigger failures in dma_direct_supported() as
+> > > > the 'min_mask' isn't properly set.
+> > > > 
+> > > > We create 'dma_direct_min_mask' in order for the arch init code to be
+> > > > able to fine-tune dma direct's 'min_dma' mask.
+> > > 
+> > > Normally we use ZONE_DMA for that case.
+> > 
+> > Fair enough, I didn't think of that possibility.
+> > 
+> > So would the arm64 maintainers be happy with something like this:
+> > 
+> > - ZONE_DMA: Follows standard definition, 16MB in size. ARCH_ZONE_DMA_BITS is
+> > 	    left as is.
+> > - ZONE_DMA32: Will honor the most constraining 'dma-ranges'. Which so far for
+> > 	      most devices is 4G, except for RPi4.
+> > - ZONE_NORMAL: The rest of the memory.
+> 
+> Never mind this suggestion, I don't think it makes any sense. If anything arm64
+> seems to fit the ZONE_DMA usage pattern of arm and powerpc: where ZONE_DMA's
+> size is decided based on ram size and/or board configuration. It was actually
+> set-up like this until Christoph's ad67f5a6545f7 ("arm64: replace ZONE_DMA with
+> ZONE_DMA32").
+> 
+> So the easy solution would be to simply revert that commit. On one hand I feel
+> it would be a step backwards as most 64 bit architectures have been moving to
+> use ZONE_DMA32. On the other, current ZONE_DMA32 usage seems to be heavily
+> rooted on having a 32 bit DMA mask*, which will no longer be the case on arm64
+> if we want to support the RPi 4.
+> 
+> So the way I see it and lacking a better solution, the argument is stronger on
+> moving back arm64 to using ZONE_DMA. Any comments/opinions?
 
-This was only used to work around limitations in the earlier
-fbdev driver.
+As it was suggested in this or the previous thread, I'm not keen on
+limiting ZONE_DMA32 to the smalles RPi4 can cover, as the naming
+implies this zone should cover 32-bit devices that can deal with a full
+32-bit mask.
 
-Cc: Sam Ravnborg <sam@ravnborg.org>
-Cc: Pawel Moll <pawel.moll@arm.com>
-Cc: Liviu Dudau <Liviu.Dudau@arm.com>
-Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
----
- drivers/gpu/drm/pl111/pl111_display.c | 16 ----------------
- 1 file changed, 16 deletions(-)
+I think it may be better if we have both ZONE_DMA and ZONE_DMA32 on
+arm64. ZONE_DMA would be based on the smallest dma-ranges as described
+in the DT while DMA32 covers the first naturally aligned 4GB of RAM
+(unchanged). When a smaller ZONE_DMA is not needed, it could be expanded
+to cover what would normally be ZONE_DMA32 (or could we have ZONE_DMA as
+0-bytes? I don't think GFP_DMA can still allocate memory in this case).
 
-diff --git a/drivers/gpu/drm/pl111/pl111_display.c b/drivers/gpu/drm/pl111/pl111_display.c
-index e42fb6353623..8595a676b084 100644
---- a/drivers/gpu/drm/pl111/pl111_display.c
-+++ b/drivers/gpu/drm/pl111/pl111_display.c
-@@ -572,24 +572,8 @@ int pl111_display_init(struct drm_device *drm)
- {
- 	struct pl111_drm_dev_private *priv = drm->dev_private;
- 	struct device *dev = drm->dev;
--	struct device_node *endpoint;
--	u32 tft_r0b0g0[3];
- 	int ret;
- 
--	endpoint = of_graph_get_next_endpoint(dev->of_node, NULL);
--	if (!endpoint)
--		return -ENODEV;
--
--	if (of_property_read_u32_array(endpoint,
--				       "arm,pl11x,tft-r0g0b0-pads",
--				       tft_r0b0g0,
--				       ARRAY_SIZE(tft_r0b0g0)) != 0) {
--		dev_err(dev, "arm,pl11x,tft-r0g0b0-pads should be 3 ints\n");
--		of_node_put(endpoint);
--		return -ENOENT;
--	}
--	of_node_put(endpoint);
--
- 	ret = pl111_init_clock_divider(drm);
- 	if (ret)
- 		return ret;
+We'd probably have to define ARCH_ZONE_DMA_BITS for arm64 to something
+smaller than 32-bit but sufficient to cover the known platforms like
+RPi4 (the current 24 is too small, so maybe 30). AFAICT,
+__dma_direct_optimal_gfp_mask() figures out whether GFP_DMA or GFP_DMA32
+should be passed.
+
 -- 
-2.21.0
-
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
