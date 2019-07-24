@@ -2,53 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A80473523
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 19:20:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C6687354C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 19:24:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4n0dmgGkclwPZv0CgyUdhe4fqzHAwHXBgvb5oHtMysE=; b=sMuHDO4uQbAvkK
-	G35RwzPdvArwcWumcyZEhtp21NEQzR6QgHfoOiEx4xdgCiL55lbZugYFuu8yV0WWrq4Umi68vyC6H
-	RyThmVHndOodWw3pt1EOfuaWxDHJM925ELYZYNrEuwao426uHU6QtJLTr/7u59PfiW4OqTWfxAjb4
-	eMpKbn/iIcPpLA/nEZdpuCEUAQ//IAEljhNdKriiZHMXlRf/B2MUVcFDBKjx6DLSmcWPiJgGGVN6C
-	EMyDWGoa5lmxaJZ+sXafGXjzX0z/qIuQGsisGFRTNLVBNU2ac7EV/DH/pnVfVaOzzCnQQGOAsFAR0
-	573k74S6eG4akqa5qVkQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=31eLdOrdY2Kkeg3GZ8BqAfRys4WIEpb+H6ArSkLKpD0=; b=Wpu5lJgj2ES7Cv/g3D81+newR
+	89IyjwQSuirpzz5KxjNWsZNAiN/nI7MQFhuDgy1vNTbuQV8SOmZ3oyledpxQhoNDSOvBVB9pbfCoJ
+	gwB5plpALWgEjZHPYEDwlQIo/QE3TJhRJgR0cTaQjOProT0GYh+sFCZLwGbog6HJqm45nZTkVdjTl
+	76KLW/5lcqip2+3MMfc+gxetEjfOSWU9kZg/2bAVfPtZ7OxPHMFNFkh39WBJChiqDx+znFavakmd5
+	RQjOIj4vJqb6o7nChbVZ2vycfpbXJdbOCGnuCs0jaeehwunMgFbRv7YmNEFNWeu4t7tq2FSIvYzw8
+	URaaYzGfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqKwF-0001Jt-6B; Wed, 24 Jul 2019 17:20:27 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1hqKzq-0002eE-JZ; Wed, 24 Jul 2019 17:24:11 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqKu7-0005Tf-OK
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 17:18:21 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: dafna) with ESMTPSA id B14FE28B60A
-From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-To: dafna.hirschfeld@collabora.com
-Subject: [PATCH 1/2] dt-bindings: arm: imx: add imx8mq nitrogen support
-Date: Wed, 24 Jul 2019 19:17:47 +0200
-Message-Id: <20190724171747.26076-2-dafna.hirschfeld@collabora.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190724171747.26076-1-dafna.hirschfeld@collabora.com>
-References: <20190724171747.26076-1-dafna.hirschfeld@collabora.com>
+ id 1hqKza-0002dn-HI
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 17:23:55 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 1E42DAE2E;
+ Wed, 24 Jul 2019 17:23:53 +0000 (UTC)
+Message-ID: <a447eae1bb46fe753f7a62fb8932e680b79b1635.camel@suse.de>
+Subject: Re: [PATCH 2/2] arm: use swiotlb for bounce buffer on LPAE configs
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Christoph Hellwig <hch@lst.de>, Russell King - ARM Linux admin
+ <linux@armlinux.org.uk>
+Date: Wed, 24 Jul 2019 19:23:50 +0200
+In-Reply-To: <20190709142011.24984-3-hch@lst.de>
+References: <20190709142011.24984-1-hch@lst.de>
+ <20190709142011.24984-3-hch@lst.de>
+User-Agent: Evolution 3.32.3 
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_101815_976258_D7293260 
-X-CRM114-Status: UNSURE (   7.67  )
+X-CRM114-CacheID: sfid-20190724_102354_720602_D0385E4C 
+X-CRM114-Status: UNSURE (   9.66  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,48 +62,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, ezequiel@collabora.com,
- s.hauer@pengutronix.de, linux-kernel@vger.kernel.org,
- Gary Bisson <gary.bisson@boundarydevices.com>, robh+dt@kernel.org,
- kernel@pengutronix.de, kernel@collabora.com, shawnguo@kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Vignesh Raghavendra <vigneshr@ti.com>,
+ Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>, linux-kernel@vger.kernel.org,
+ iommu@lists.linux-foundation.org, linux-arm-kernel@lists.infradead.org,
+ Roger Quadros <rogerq@ti.com>
+Content-Type: multipart/mixed; boundary="===============6875614517555032617=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-i.MX 8Quad is a quad (4x) Cortex-A53 processor with powerful
-graphic and multimedia features.
-This patch adds Nitrogen8M board support.
 
-Signed-off-by: Gary Bisson <gary.bisson@boundarydevices.com>
-Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
----
- Documentation/devicetree/bindings/arm/fsl.yaml | 6 ++++++
- 1 file changed, 6 insertions(+)
+--===============6875614517555032617==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-whG6SPAwfjFfvDK3372+"
 
-diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
-index 7294ac36f4c0..728c41ef83bb 100644
---- a/Documentation/devicetree/bindings/arm/fsl.yaml
-+++ b/Documentation/devicetree/bindings/arm/fsl.yaml
-@@ -227,6 +227,12 @@ properties:
-               - fsl,imx8qxp-mek           # i.MX8QXP MEK Board
-           - const: fsl,imx8qxp
- 
-+      - description: i.MX8MQ based Boards
-+        items:
-+          - enum:
-+              - boundary,imx8mq-nitrogen8m           # i.MX8MQ NITROGEN Board
-+          - const: fsl,imx8mq
-+
-       - description:
-           Freescale Vybrid Platform Device Tree Bindings
- 
--- 
-2.11.0
 
+--=-whG6SPAwfjFfvDK3372+
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+On Tue, 2019-07-09 at 07:20 -0700, Christoph Hellwig wrote:
+> The DMA API requires that 32-bit DMA masks are always supported, but on
+> arm LPAE configs they do not currently work when memory is present
+> above 4GB.  Wire up the swiotlb code like for all other architectures
+> to provide the bounce buffering in that case.
+>=20
+> Fixes: 21e07dba9fb11 ("scsi: reduce use of block bounce buffers").
+> Reported-by: Roger Quadros <rogerq@ti.com>
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> ---
+
+Hi Chistoph,
+Out of curiosity, what is the reason stopping us from using dma-direct/swio=
+tlb
+instead of arm_dma_ops altogether?
+
+Regards,
+Nicolas
+
+
+--=-whG6SPAwfjFfvDK3372+
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl04lCcACgkQlfZmHno8
+x/5jKAgAszLIqjIi52NyfR8TyZ+bPsWKIAQKAn5HBQa6grZi+PtHDVbHAxKTikMQ
+PgjbRl5aI7uPsbYFuq8R6jr+2mQLXI7gvgHn2x22hh+3+cC+mYWJoORNg7v5VrI9
+c2Q4FaZcHLxPLNjPNLsJJHyrM8wLiZ9bMbpKpQ8Fs0UoJmD9fefIDXRIHYQTakeZ
+ooLgoUnyEje4u1jCI8dbJrDXRxzVwF7CYlY6V5+PG+7GrdP6sqYeNDk1+PAtzUtf
+EIRenYS6MAHo3skOiC+Egr/DeYEsk72iZzIZpWKm7k0HGX9kSc6+eWXt6lPwyiqq
+22EzPtQpZAz/Jim+FmDtgz/5II5T+g==
+=3iIi
+-----END PGP SIGNATURE-----
+
+--=-whG6SPAwfjFfvDK3372+--
+
+
+
+--===============6875614517555032617==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6875614517555032617==--
+
+
