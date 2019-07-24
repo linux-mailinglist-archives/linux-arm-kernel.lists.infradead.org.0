@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1EAD729AB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 10:14:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60E5C729AE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 10:14:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q/e8RByES2n8ObQeFVlomC9sMHeaN1o1t9DGjI2ppsk=; b=LazxlgyNPg8nEC
-	tOwSmRbVzU9p5ksNMiNT5OvWDweSaetr5Uo4hoox2xh603buRT0zcCwGVO35Qzg5HBxQ4kT77YwEm
-	egYGLNDaMNeFEPtBlwFfSOB3TOK0UzopDInM6M9S9s8QtU3RG/TTuwXIbTdgRRpY1eeaU/5Q3li/l
-	tCkW38liBAYBbnbPf0wOlul7MWio0E4RAFYe4k6TLReqaHU8SyqA8w2D89rTlHvjuZvg65gdqk1ZN
-	+SclqnIc48SRtl1Q1qYE9eK/Cc8yFYigUhHK+X6PbrnF1lLs7CTWs2pPxMdjbFcMIqR7/LVr0YLUA
-	oLPqU4RrvLc7ASTFhrSQ==;
+	List-Owner; bh=YqL3Wg2xHwvGG6h69nNZX7gbB9wgUALPM28N3sA+zxQ=; b=pewPCXQHG2A5ZJ
+	IwsjthoyhifHiXn9zvZKjyYlsqHCDhHZ04dDjtc09WRrV/Slf8AMLnmmFHF43ULlH+pdSivykcY+S
+	RCAm48Wz8bBYXMxDJdUeBg3RhJF/Krh7k8sb6BZ+ZP8Z6ZFxI0Qj44fGGyaLJ2IUKzqLcn+8B+9Wx
+	8jguxprbPNp3G7cnTVNqAYEP/UmVo8S6OTvbVfinjFAw6ia694xtIzSVN7BylWXxTd5oXvzES6c+T
+	2Ppptu+zGOhR28ODup/lFVcpM5uVaR4aMk/4o++LGAZn0L0i3tbUVRnGFF7udPMI/XJLge5qR54mV
+	ZE1BkesHKXuBbtONi6FQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqCPr-0003fi-4w; Wed, 24 Jul 2019 08:14:27 +0000
+	id 1hqCQB-0003uU-M8; Wed, 24 Jul 2019 08:14:48 +0000
 Received: from new3-smtp.messagingengine.com ([66.111.4.229])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqCOk-00038j-Op
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 08:13:20 +0000
+ id 1hqCOo-0003Ac-Vv
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 08:13:24 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 2E09B15EF;
- Wed, 24 Jul 2019 04:13:18 -0400 (EDT)
+ by mailnew.nyi.internal (Postfix) with ESMTP id 26E371315;
+ Wed, 24 Jul 2019 04:13:22 -0400 (EDT)
 Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Wed, 24 Jul 2019 04:13:18 -0400
+ by compute4.internal (MEProxy); Wed, 24 Jul 2019 04:13:22 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=from
  :to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm3; bh=cmUXGTItnE6GV
- H81XcleXlJaOd7fWAre1oKtPY17jkw=; b=LQOKtAL12oayKyiU9odpP/ruor5Ku
- 9tWk/BuisxAvi3hDQJbt4kxr3+lFgj2mXvBmqCYM51U//mjyK0oBpjh8RCKutr+Z
- sJbJwX8cIBSrf10rbAAD3KU+11C0Bs3Xmy8yEAxlaAg250oYSXru1G53F8O5oNmk
- MLCXivPSxHvcrCLEDEztAPB5h+IL75OSAwOSZiExw28VXqWTSh1+3aA1g3Tt+7UQ
- H29G6K27sn27oCvQRryX07uK51X7nXHAAcqA1IrJhE/d2oyNau9XSSjp8vGnF2UW
- IhpXucVPJbHg3c8Vy3K95VgGeagOzNYaOEAFXjrHtiTRL7tWOVq2kN5bg==
+ :mime-version:content-transfer-encoding; s=fm3; bh=DN2+Lj8I7jFnN
+ IMUgDd2QFBVg48TKo12C1rBwKfbzK4=; b=Q82/EoOGrisOx1VaTEyTN4D24J9MV
+ tjZq/hIz1OnnTwifcqwuT1bz23TkKgZTy9kFDunatTy4ydSsPzGQ25ZQPBoAqxXH
+ 1xMxI6DCz/cXJlB98BHs6G5X/UN8ml4VR8lk8q5GoZTZdbpzUNJW2U/O3/YNQe1P
+ A++Y6wym4Uj2+IZP8/eGyidNZHcPjLrjgA6PSdc8OgdQkJKJ8gkOOBUma7IRxziA
+ S12PuTJr5JzIJ8zilGvJJNf214XrAvFJ5iZZV+ukc48ykw9iXJcx6aEJ1PlT+sbL
+ qabn/ioVgIMze6JIGvwP1k/KyzqKBsYtDU37J4nuXCHdObWeFGTRCyjjQ==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm3; bh=cmUXGTItnE6GVH81XcleXlJaOd7fWAre1oKtPY17jkw=; b=fmfvulHL
- WotHA6oU1mJHho9UkAy9Sem1KQOVeiLhiLkyhPkmIX1r+tMJFMB01nlLPAAClaSD
- RfMKk0WnGrvnUs0FTMAnx6KH4/VePL61O9jstIc+XyABo2imV6DXiSEqp3TuSVmF
- lrNlNKd/IBDf3NWA2Y2qP0M4iOqdlBxjZ4PQltRQhdASCAoauEIEOEDJZgDRSCkU
- l4HwPVleln5BhFL0EoxYqsZaTlaIWT7Ftl9TkSIiignw3OZsLUAaSDqgX7O5DUoA
- jRwkpYtTfzWQcLB1B5XToJUngbvEfm3VVZeBAuFZEDoNq/Ck3OtQ0EukXDc5Z92z
- JBTeethB7ejBTA==
-X-ME-Sender: <xms:HRM4XTXbAB4Lmk_53B4dx2rmWKv_-BtyPL1QI8v-S1Ne3O5L7OGaOw>
+ fm3; bh=DN2+Lj8I7jFnNIMUgDd2QFBVg48TKo12C1rBwKfbzK4=; b=nET6tHWd
+ JJ96qY49c4Za0UAt5MieK0yfLHxga23nXgtOjq2zcHTfeWUy2g2iXisRNa56DtVT
+ QRaccRzIveH3Rm9NgMSQO8f/dlhsoN2KhlDcg5pfQouSbDAxwvDuGNptP1I7v2X2
+ H9EQIU4S6R/m7P8nxW58k9sgx6Se7GkRr2L0LM9XHrfXspvujomH4qEd22/wtvko
+ bUo5saJ+DSm1ZSuqZFvYaq0OJKGbh6vfzl1P6hj1xJDN2A1BDvt0zQBGyzACtXLh
+ KLaUFiO+lT//88ql8SU1HcvK2dsFXS1kElJru/anvTVvbHSsVqYF49HU+HJ8aHeC
+ elVDEa7+FKUveg==
+X-ME-Sender: <xms:IRM4XfRui1gp9DZ0fTXg2AcK9atTVynS1ByzllgFP4tl756yashxUg>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrjeelgdduvdelucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucenucfjughrpefhvffufffkofgjfhgggfestdekre
@@ -56,27 +56,26 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrjeelgdduvdelucetufdoteggod
  jhdrihgurdgruheqnecukfhppedvtddvrdekuddrudekrdeftdenucfrrghrrghmpehmrg
  hilhhfrhhomheprghnughrvgifsegrjhdrihgurdgruhenucevlhhushhtvghrufhiiigv
  pedu
-X-ME-Proxy: <xmx:HhM4XYUdkDQmoMg7fGDln2zdKHfqTxwVQAXQVOJRfe7oeHRlDGgPbA>
- <xmx:HhM4Xe_ZnzCmDpchc-JgPRayDZt9ejhnSZe6tD-sQHgpJrqNo6vpiA>
- <xmx:HhM4XW_flE-Wmajk1lWC6j2CPbneL9msbkY_oVRxtx9ED66OnQrtBQ>
- <xmx:HhM4XVmVC8RYKGjQ87xjIJOr4FHZHQZl1knln3uZP2ZtS1AzI8VuIg>
+X-ME-Proxy: <xmx:IRM4XZUom8hNEXdsDaO_Pl0qrubtZCQ2uD4ROZrk6eMgH_u9rXu2dg>
+ <xmx:IRM4XcnhiaevzQ-p6Kt2uYSDafesBSnp2jzbrADrBn-8OvY7Cr7xhQ>
+ <xmx:IRM4XX8dtMO-jIft6q_Qjsu2EmlWsbmS0SfdooGG5djvIEtWYP6b6A>
+ <xmx:IhM4XYLdsVgbWmJdVA2xzX5CefS3r9d7WaciF8TjGNXSdHWzTFavUg>
 Received: from mistburn.au.ibm.com (bh02i525f01.au.ibm.com [202.81.18.30])
- by mail.messagingengine.com (Postfix) with ESMTPA id 7A65980059;
- Wed, 24 Jul 2019 04:13:14 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 6A32680059;
+ Wed, 24 Jul 2019 04:13:18 -0400 (EDT)
 From: Andrew Jeffery <andrew@aj.id.au>
 To: linux-aspeed@lists.ozlabs.org
-Subject: [PATCH 2/3] pinctrl: aspeed: Document existence of deprecated
+Subject: [PATCH 3/3] dt-bindings: aspeed: Remove mention of deprecated
  compatibles
-Date: Wed, 24 Jul 2019 17:43:12 +0930
-Message-Id: <20190724081313.12934-3-andrew@aj.id.au>
+Date: Wed, 24 Jul 2019 17:43:13 +0930
+Message-Id: <20190724081313.12934-4-andrew@aj.id.au>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190724081313.12934-1-andrew@aj.id.au>
 References: <20190724081313.12934-1-andrew@aj.id.au>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_011319_033394_064B5583 
-X-CRM114-Status: UNSURE (   9.05  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190724_011323_392144_1092E6B7 
+X-CRM114-Status: GOOD (  10.27  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -113,45 +112,81 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Otherwise they look odd in the face of not being listed in the bindings
-documents.
+Guide readers away from using the aspeed,g[45].* compatible patterns.
 
 Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
 ---
- drivers/pinctrl/aspeed/pinctrl-aspeed-g4.c | 4 ++++
- drivers/pinctrl/aspeed/pinctrl-aspeed-g5.c | 4 ++++
- 2 files changed, 8 insertions(+)
+ Documentation/devicetree/bindings/mfd/aspeed-scu.txt         | 2 --
+ Documentation/devicetree/bindings/misc/aspeed-p2a-ctrl.txt   | 2 --
+ .../devicetree/bindings/pinctrl/aspeed,ast2400-pinctrl.yaml  | 5 +----
+ .../devicetree/bindings/pinctrl/aspeed,ast2500-pinctrl.yaml  | 4 +---
+ 4 files changed, 2 insertions(+), 11 deletions(-)
 
-diff --git a/drivers/pinctrl/aspeed/pinctrl-aspeed-g4.c b/drivers/pinctrl/aspeed/pinctrl-aspeed-g4.c
-index 384396cbb22d..0e087fe759d2 100644
---- a/drivers/pinctrl/aspeed/pinctrl-aspeed-g4.c
-+++ b/drivers/pinctrl/aspeed/pinctrl-aspeed-g4.c
-@@ -2531,6 +2531,10 @@ static int aspeed_g4_pinctrl_probe(struct platform_device *pdev)
+diff --git a/Documentation/devicetree/bindings/mfd/aspeed-scu.txt b/Documentation/devicetree/bindings/mfd/aspeed-scu.txt
+index ce8cf0ec6279..4d92c0bb6687 100644
+--- a/Documentation/devicetree/bindings/mfd/aspeed-scu.txt
++++ b/Documentation/devicetree/bindings/mfd/aspeed-scu.txt
+@@ -4,9 +4,7 @@ configuring elements such as clocks, pinmux, and reset.
+ Required properties:
+ - compatible:	One of:
+ 		"aspeed,ast2400-scu", "syscon", "simple-mfd"
+-		"aspeed,g4-scu", "syscon", "simple-mfd"
+ 		"aspeed,ast2500-scu", "syscon", "simple-mfd"
+-		"aspeed,g5-scu", "syscon", "simple-mfd"
  
- static const struct of_device_id aspeed_g4_pinctrl_of_match[] = {
- 	{ .compatible = "aspeed,ast2400-pinctrl", },
-+	/*
-+	 * The aspeed,g4-pinctrl compatible has been removed the from the
-+	 * bindings, but keep the match in case of old devicetrees.
-+	 */
- 	{ .compatible = "aspeed,g4-pinctrl", },
- 	{ },
- };
-diff --git a/drivers/pinctrl/aspeed/pinctrl-aspeed-g5.c b/drivers/pinctrl/aspeed/pinctrl-aspeed-g5.c
-index 053101f795a2..49255802735b 100644
---- a/drivers/pinctrl/aspeed/pinctrl-aspeed-g5.c
-+++ b/drivers/pinctrl/aspeed/pinctrl-aspeed-g5.c
-@@ -2676,6 +2676,10 @@ static int aspeed_g5_pinctrl_probe(struct platform_device *pdev)
+ - reg:		contains the offset and length of the SCU memory region
+ - #clock-cells: should be set to <1> - the system controller is also a
+diff --git a/Documentation/devicetree/bindings/misc/aspeed-p2a-ctrl.txt b/Documentation/devicetree/bindings/misc/aspeed-p2a-ctrl.txt
+index 854bd67ffec6..0e1fa5bc6a30 100644
+--- a/Documentation/devicetree/bindings/misc/aspeed-p2a-ctrl.txt
++++ b/Documentation/devicetree/bindings/misc/aspeed-p2a-ctrl.txt
+@@ -26,9 +26,7 @@ property:
  
- static const struct of_device_id aspeed_g5_pinctrl_of_match[] = {
- 	{ .compatible = "aspeed,ast2500-pinctrl", },
-+	/*
-+	 * The aspeed,g5-pinctrl compatible has been removed the from the
-+	 * bindings, but keep the match in case of old devicetrees.
-+	 */
- 	{ .compatible = "aspeed,g5-pinctrl", },
- 	{ },
- };
+ - compatible : Should be one of the following:
+ 		"aspeed,ast2400-scu", "syscon", "simple-mfd"
+-		"aspeed,g4-scu", "syscon", "simple-mfd"
+ 		"aspeed,ast2500-scu", "syscon", "simple-mfd"
+-		"aspeed,g5-scu", "syscon", "simple-mfd"
+ 
+ Example
+ ===================
+diff --git a/Documentation/devicetree/bindings/pinctrl/aspeed,ast2400-pinctrl.yaml b/Documentation/devicetree/bindings/pinctrl/aspeed,ast2400-pinctrl.yaml
+index 125599a2dc5e..9368e4b6d4d0 100644
+--- a/Documentation/devicetree/bindings/pinctrl/aspeed,ast2400-pinctrl.yaml
++++ b/Documentation/devicetree/bindings/pinctrl/aspeed,ast2400-pinctrl.yaml
+@@ -15,16 +15,13 @@ description: |+
+ 
+   - compatible:     Should be one of the following:
+                     "aspeed,ast2400-scu", "syscon", "simple-mfd"
+-                    "aspeed,g4-scu", "syscon", "simple-mfd"
+ 
+   Refer to the the bindings described in
+   Documentation/devicetree/bindings/mfd/syscon.txt
+ 
+ properties:
+   compatible:
+-    enum:
+-      - aspeed,ast2400-pinctrl
+-      - aspeed,g4-pinctrl
++    const: aspeed,ast2400-pinctrl
+ 
+ patternProperties:
+   '^.*$':
+diff --git a/Documentation/devicetree/bindings/pinctrl/aspeed,ast2500-pinctrl.yaml b/Documentation/devicetree/bindings/pinctrl/aspeed,ast2500-pinctrl.yaml
+index 3e6d85318577..939fb755a6db 100644
+--- a/Documentation/devicetree/bindings/pinctrl/aspeed,ast2500-pinctrl.yaml
++++ b/Documentation/devicetree/bindings/pinctrl/aspeed,ast2500-pinctrl.yaml
+@@ -22,9 +22,7 @@ description: |+
+ 
+ properties:
+   compatible:
+-    enum:
+-      - aspeed,ast2500-pinctrl
+-      - aspeed,g5-pinctrl
++    const: aspeed,ast2500-pinctrl
+   aspeed,external-nodes:
+     minItems: 2
+     maxItems: 2
 -- 
 2.20.1
 
