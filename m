@@ -2,75 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 48503734D8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 19:16:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 40EA2734EE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 19:16:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ULA3k0JJkrjRLzILI3RfxsQJ/+FxOCWPA7ge3MsZI1k=; b=I40fqBS5O52NVNybscN1WaQA3
-	jN1MzeJ+NBKsliESQyjXAqnTmHCbuoR8LvAkbNROCs8xoZsAV+aJam2ZDHZsRuLWlcacRCavOSvda
-	JDWdWheP/gs0eWoRvlyXUZIq3bKryHqM3Y3jsUJH5wfYjMMAjZJhiP109u0Tcou0KvZslcwli16y4
-	+Z6jpgOevlZNWcgVouP/D7eVLIsAYQ+PJSLFSJ5NZ/LC0wOVFbJbwpTJpHsUDPbfbIEmaqSX3tNKM
-	fRmHmbwW5Tg626ch5lbqsFz29MNqwzB2wgRPQYQVSP6RoRPl4AqInCmgX2WJK7HC/qydGCK5mJLhQ
-	pvAeHjaEQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jS8v1uuwvOPDCofOywPzPv71xi8ym+qrVR42ghAShgY=; b=TusSNNIv6YhZcC
+	CkRkXbiyadBFkpt0tidYh3qtpmjMadMXz0BxRgKCXorYXTHAoKorN0n73mE9YUa9UwRPoePZZAJJB
+	ZLQzZlIY7e6RsUNNvcplf8+R8zGhfyTO3Xry16lWFflJQheMgcGx0hoMI5qbcmETt1II9sEaFDXUr
+	LTyEh7vx/UkXmbtxETxsMGXsvqVFOu1i80Y3iSWReFkP7x4/T+8YxpTwVv25eg9HPLAYYb/nfPWHM
+	edjIzfSF8R5ZSKW41RbTmqhzdyBCAeGqLP1bQpAVJbpKSnB30YtYu0b/gevQrBz7TsbmJhiipvU27
+	1JijBo4RTCJ0QRFy5lBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqKsJ-0000r8-8D; Wed, 24 Jul 2019 17:16:23 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+	id 1hqKsp-0001tO-0S; Wed, 24 Jul 2019 17:16:55 +0000
+Received: from smtprelay0250.hostedemail.com ([216.40.44.250]
+ helo=smtprelay.hostedemail.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqKrd-0008V0-MB; Wed, 24 Jul 2019 17:15:43 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=TzXHUjTTbk+BjMuhY4cV38Izc9snjobAy92tPxSUUT0=; b=cHWXouJRm4GoOyPvpPbZGdTjl
- 9R0ZT7lK8MTVtd4e2G5wSsu1nUoRhhjZRvV6pOQE6QqVps9lQ7TsntaRLhEZ2SJjRFZ6FoKjTtBm2
- 21H3l1izCI0TL5r9H5Y3Xv7TsAPPV0E5KFRPrs8CviXbJynzMLyFXHKIwgpU4dcUTVnlE=;
-Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
- ([82.37.168.47] helo=ypsilon.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <broonie@sirena.org.uk>)
- id 1hqKrT-0008GF-Lc; Wed, 24 Jul 2019 17:15:31 +0000
-Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id D58182742B5D; Wed, 24 Jul 2019 18:15:30 +0100 (BST)
-Date: Wed, 24 Jul 2019 18:15:30 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Stefan Wahren <wahrenst@gmx.net>
-Subject: Re: [PATCH RFC 15/18] spi: bcm2835: enable shared interrupt support
-Message-ID: <20190724171530.GF4524@sirena.org.uk>
-References: <1563398164-2679-1-git-send-email-wahrenst@gmx.net>
- <1563398164-2679-2-git-send-email-wahrenst@gmx.net>
- <20190718124205.GC5761@sirena.org.uk>
- <b23c7a5a-a432-5af6-a7dc-0a7dfbe57712@gmx.net>
- <fdbdbc92-e6fc-4e88-ea8f-bb0bc3224b90@gmail.com>
- <28dd33bc-c1b5-b976-ad19-ebf681df8647@gmx.net>
+ id 1hqKsP-0001jn-W4
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 17:16:31 +0000
+Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
+ [216.40.38.60])
+ by smtprelay06.hostedemail.com (Postfix) with ESMTP id 034D818224D9C;
+ Wed, 24 Jul 2019 17:16:25 +0000 (UTC)
+X-Session-Marker: 6A6F6540706572636865732E636F6D
+X-Spam-Summary: 2, 0, 0, , d41d8cd98f00b204, joe@perches.com, :::::::::::::::::,
+ RULES_HIT:41:355:379:599:800:960:973:988:989:1260:1277:1311:1313:1314:1345:1359:1437:1515:1516:1518:1534:1540:1593:1594:1711:1714:1730:1747:1777:1792:2198:2199:2393:2559:2562:2828:3138:3139:3140:3141:3142:3350:3622:3867:4321:5007:6642:10004:10400:10848:11026:11232:11473:11657:11658:11914:12043:12296:12297:12438:12555:12740:12760:12895:12986:13069:13311:13357:13439:14096:14097:14181:14659:14721:21080:21451:21627:30054:30091,
+ 0,
+ RBL:23.242.196.136:@perches.com:.lbl8.mailshell.net-62.8.0.180 64.201.201.201,
+ CacheIP:none, Bayesian:0.5, 0.5, 0.5, Netcheck:none, DomainCache:0,
+ MSF:not bulk, SPF:fn, MSBL:0, DNSBL:neutral, Custom_rules:0:0:0, LFtime:28,
+ LUA_SUMMARY:none
+X-HE-Tag: brick72_54e3a62085009
+X-Filterd-Recvd-Size: 1951
+Received: from XPS-9350.home (cpe-23-242-196-136.socal.res.rr.com
+ [23.242.196.136]) (Authenticated sender: joe@perches.com)
+ by omf05.hostedemail.com (Postfix) with ESMTPA;
+ Wed, 24 Jul 2019 17:16:23 +0000 (UTC)
+Message-ID: <2a0c5ef5c7e20b190156908991e4c964a501d80a.camel@perches.com>
+Subject: Re: [PATCH 03/12] drm: aspeed_gfx: Fix misuse of GENMASK macro
+From: Joe Perches <joe@perches.com>
+To: Andrew Morton <akpm@linux-foundation.org>, Joel Stanley
+ <joel@jms.id.au>,  Andrew Jeffery <andrew@aj.id.au>
+Date: Wed, 24 Jul 2019 10:16:22 -0700
+In-Reply-To: <cddd7ad7e9f81dec1e86c106f04229d21fc21920.1562734889.git.joe@perches.com>
+References: <cover.1562734889.git.joe@perches.com>
+ <cddd7ad7e9f81dec1e86c106f04229d21fc21920.1562734889.git.joe@perches.com>
+User-Agent: Evolution 3.30.5-0ubuntu0.18.10.1 
 MIME-Version: 1.0
-In-Reply-To: <28dd33bc-c1b5-b976-ad19-ebf681df8647@gmx.net>
-X-Cookie: Matrimony is the root of all evil.
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_101541_812002_0F925AB7 
-X-CRM114-Status: GOOD (  19.65  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190724_101630_108682_1722BCBC 
+X-CRM114-Status: GOOD (  10.51  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.40.44.250 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,84 +76,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
- Florian Fainelli <f.fainelli@gmail.com>, Scott Branden <sbranden@broadcom.com>,
- Stephen Boyd <sboyd@kernel.org>, Ray Jui <rjui@broadcom.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Adrian Hunter <adrian.hunter@intel.com>, Eric Anholt <eric@anholt.net>,
- Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- linux-arm-kernel@lists.infradead.org, Martin Sperl <kernel@martin.sperl.org>,
- Michael Turquette <mturquette@baylibre.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-rpi-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============8472746012970147352=="
+Cc: linux-aspeed@lists.ozlabs.org, David Airlie <airlied@linux.ie>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ Daniel Vetter <daniel@ffwll.ch>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, 2019-07-09 at 22:04 -0700, Joe Perches wrote:
+> Arguments are supposed to be ordered high then low.
+> 
+> Signed-off-by: Joe Perches <joe@perches.com>
+> ---
+>  drivers/gpu/drm/aspeed/aspeed_gfx.h | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/gpu/drm/aspeed/aspeed_gfx.h b/drivers/gpu/drm/aspeed/aspeed_gfx.h
+> index a10358bb61ec..095ea03e5833 100644
+> --- a/drivers/gpu/drm/aspeed/aspeed_gfx.h
+> +++ b/drivers/gpu/drm/aspeed/aspeed_gfx.h
+> @@ -74,7 +74,7 @@ int aspeed_gfx_create_output(struct drm_device *drm);
+>  /* CTRL2 */
+>  #define CRT_CTRL_DAC_EN			BIT(0)
+>  #define CRT_CTRL_VBLANK_LINE(x)		(((x) << 20) & CRT_CTRL_VBLANK_LINE_MASK)
+> -#define CRT_CTRL_VBLANK_LINE_MASK	GENMASK(20, 31)
+> +#define CRT_CTRL_VBLANK_LINE_MASK	GENMASK(31, 20)
 
---===============8472746012970147352==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="E7i4zwmWs5DOuDSH"
-Content-Disposition: inline
-
-
---E7i4zwmWs5DOuDSH
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Thu, Jul 18, 2019 at 08:21:36PM +0200, Stefan Wahren wrote:
-> Am 18.07.19 um 20:05 schrieb Florian Fainelli:
-> > On 7/18/19 10:53 AM, Stefan Wahren wrote:
-
-> > Martin's patch is more efficient in terms of amount of register
-> > accesses, but I am bit worried (based on the register description) that
-> > the INTR bit is only asserted with the read FIFO crossing a certain
-> > condition and that a TX only transfer may not be captured by that condition.
-
-It looks like the driver sets the bit for TX only transfers so that's
-probably fine but I might be missing something.
-
-> > Maybe we can just check spi_controller::idling to determine if that
-> > specific instance generated an interrupt?
-
-> sorry, i'm not that SPI expert. I suggest to drop this non-essential
-> patch from the series and discuss this separate.
-
-I'm not opposed to the patch, I'm just concerned based on the
-combination of the description and the code that it might not be doing
-what's expected.  If it's mostly just an optimization that provides a
-fast path in the case the interrupt is shared rather than a correctness
-thing then it's fine.  A comment in the commit message or the code about
-this being an optimization would be a good idea though.
-
---E7i4zwmWs5DOuDSH
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl04kjIACgkQJNaLcl1U
-h9CHrwf/aVBtjOP8dRmPIFKgHsLZHydbWQgT3E0vAiM4S6BVugGONHaaZldQL4qO
-1zR5xD3RdbwHznYgLp9KJ3T3aTjaSHJDyAjwf4oyiLPLroMqWX0cyRYikCJWCMZ/
-1eI6QKpRKgcRm0G2N8jOXoqN1GcRTzLIEeQLy2sNbvB1uZAudGYmaO9Nf9TPruR4
-D9hBNK9uN4Sg3HrBt0QO/J9UbuW3f8qRdMuCX4GujmYlzwzlaT5mjnMDI/ASKQ+r
-+lg9OO/jEpj1RFPEA1SB2O7ZWRJfVGEJXDA2t+xG7RUtTlVF3s4hEvi/UJfy0nyJ
-BJdDPDJpcIqFFPUUK0tuqOWBK53y7w==
-=WhZc
------END PGP SIGNATURE-----
-
---E7i4zwmWs5DOuDSH--
+ping?
 
 
---===============8472746012970147352==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8472746012970147352==--
-
