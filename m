@@ -2,65 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0F3572F97
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 15:09:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A414E72F9B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 15:09:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=jWT50G1D7Xn/SX8G/TrPVqqoXvabyUQ2IsrDYzhxD7s=; b=MX2NxBegpA48B+nS3Q/6VbLCw
-	ByRWD/eYge0MFThdIJt4OYzxFyVzqvuzkWK9rEr5i1VB8sGGIWrHDje+GHSKRg3VVPZZqhU7n/RhQ
-	7WCOaU7ZuMVidSzH8Z3cam1JxFIe0wuof8f+n6vfdtFGOnIt+1J0mvKOj3CqM9ZnsxZJnV7PBc1/W
-	rQfVzt81eK85lH7HJN11xyzuVewCgcOprpciLy4bR1lzmPHH3Ic1IGgu9V1CSinPyL9RJqke3o0tt
-	k6emLYMlJAe6+PqYf0Y9DCcMjAhwTa6TmZhNwFIqfzovwuY5huvq9b3BlMXMjnN0T2w/6Hs10FbqQ
-	hyLhc7fqA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qwMAV6Nd2S7KpSJ63cpvHCTuUhfF/83Q4L01tf4eG1M=; b=D9+6rq4TDJEvCi
+	YgVQoKBQFrOPXgyUKshNxotS3RC0eSuxn7/F3+BRQ8eHojZRr4g+RHRg4ezRYBtx3b5oGYcxijZDl
+	a0kJ1StrlyIZGaHnROHN0VwfZLOfnNESu8KmNiA1tIeeKznnWy/D9UtFuYsV04uMsvtQkQtG27xlE
+	09i8BhmIgsFa+6grJeDVPQJ8Eu2mSbsX0DxBVougtS+I3wDDogeqtkfzF5bHg2GCNigbjkfbLZsCy
+	8yRrzGv1SqVjqiDME/H00qfCGRdSHNOeqekHsIBEnUgVVfz4GuQoHU8Z4BjVEUwiMp17yToZXIZvK
+	U9zcgZQXDnB85CS/6VTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqH1P-0006dn-1i; Wed, 24 Jul 2019 13:09:31 +0000
-Received: from balrog.mythic-beasts.com ([2a00:1098:0:82:1000:0:2:1])
+	id 1hqH1n-0006sv-Tz; Wed, 24 Jul 2019 13:09:55 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqH1F-0006cn-C1
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 13:09:23 +0000
-Received: from [199.195.250.187] (port=42707 helo=hermes.aosc.io)
- by balrog.mythic-beasts.com with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <icenowy@aosc.io>)
- id 1hqH14-00012N-5g; Wed, 24 Jul 2019 14:09:14 +0100
-Received: from localhost (localhost [127.0.0.1]) (Authenticated sender:
- icenowy@aosc.io)
- by hermes.aosc.io (Postfix) with ESMTPSA id 9615D6DF8F;
- Wed, 24 Jul 2019 13:09:01 +0000 (UTC)
-MIME-Version: 1.0
-Date: Wed, 24 Jul 2019 21:09:01 +0800
-From: Icenowy Zheng <icenowy@aosc.io>
-To: Maxime Ripard <maxime.ripard@bootlin.com>
-Subject: Re: [PATCH v4 7/8] dt-bindings: arm: sunxi: add binding for Lichee
- Zero Plus core board
-In-Reply-To: <20190722192934.3jaf3r4rnyeslqyw@flea>
-References: <20190713034634.44585-1-icenowy@aosc.io>
- <20190713034634.44585-8-icenowy@aosc.io>
- <20190720101318.cwrvv5r42wxx5k4r@flea>
- <BDF0C9F6-DD0D-4343-8E24-06A07055004C@aosc.io>
- <20190722192934.3jaf3r4rnyeslqyw@flea>
-Message-ID: <7d24576697521f4985617113dbc4cc41@aosc.io>
-X-Sender: icenowy@aosc.io
-X-BlackCat-Spam-Score: 14
-X-Spam-Status: No, score=1.4
+ id 1hqH1c-0006rx-6U
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 13:09:45 +0000
+Received: from devnote2 (NE2965lan1.rev.em-net.ne.jp [210.141.244.193])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0499022ADA;
+ Wed, 24 Jul 2019 13:09:40 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1563973783;
+ bh=HQnELIgl3TdnQCh5BeCoBmx1g3lpU2g4+Ts605esKAE=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=fykQJNjKSpXHIBUGMy9nSLhbwbWK0GooK/ySJc6dPvFbbJmHIkBmDwzsZCHmzuFUS
+ 5q9znIjMc+mOmHsh2LI06Mgoyaze1kjv4tZH2YK8MeNXi89JqFDWoCgK6y/xSD616H
+ +G+Q9qyUHSO2nv7u4Y+Qb2Ad3G5s6U9EZN9tddxI=
+Date: Wed, 24 Jul 2019 22:09:38 +0900
+From: Masami Hiramatsu <mhiramat@kernel.org>
+To: James Morse <james.morse@arm.com>
+Subject: Re: [PATCH v2 1/4] arm64: kprobes: Recover pstate.D in single-step
+ exception handler
+Message-Id: <20190724220938.69cb2c3231c8b49bb1197638@kernel.org>
+In-Reply-To: <9bb27cda-dac9-eaca-f028-e1c82b9f7a3f@arm.com>
+References: <156378170297.12011.17385386326930403235.stgit@devnote2>
+ <156378171555.12011.2511666394591527888.stgit@devnote2>
+ <9bb27cda-dac9-eaca-f028-e1c82b9f7a3f@arm.com>
+X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_060921_411848_F25FCA35 
-X-CRM114-Status: GOOD (  20.04  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190724_060944_273073_14006494 
+X-CRM114-Status: GOOD (  22.69  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a00:1098:0:82:1000:0:2:1 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,59 +78,147 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
- linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
- linux-sunxi@googlegroups.com, Rob Herring <robh+dt@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, linux-clk@vger.kernel.org,
+Cc: Dan Rue <dan.rue@linaro.org>, Daniel Diaz <daniel.diaz@linaro.org>,
+ Anders Roxell <anders.roxell@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Naresh Kamboju <naresh.kamboju@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, Matt Hart <matthew.hart@linaro.org>,
  linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-5ZyoIDIwMTktMDctMjMgMDM6MjnvvIxNYXhpbWUgUmlwYXJkIOWGmemBk++8mgo+IE9uIFNhdCwg
-SnVsIDIwLCAyMDE5IGF0IDA3OjM5OjA4UE0gKzA4MDAsIEljZW5vd3kgWmhlbmcgd3JvdGU6Cj4+
-IAo+PiAKPj4g5LqOIDIwMTnlubQ35pyIMjDml6UgR01UKzA4OjAwIOS4i+WNiDY6MTM6MTgsIE1h
-eGltZSBSaXBhcmQgCj4+IDxtYXhpbWUucmlwYXJkQGJvb3RsaW4uY29tPiDlhpnliLA6Cj4+ID5P
-biBTYXQsIEp1bCAxMywgMjAxOSBhdCAxMTo0NjozM0FNICswODAwLCBJY2Vub3d5IFpoZW5nIHdy
-b3RlOgo+PiA+PiBUaGUgTGljaGVlIFplcm8gUGx1cyBpcyBhIGNvcmUgYm9hcmQgbWFkZSBieSBT
-aXBlZWQsIHdpdGggYSBtaWNyb1VTQgo+PiA+PiBjb25uZWN0b3Igb24gaXQsIFRGIHNsb3Qgb3Ig
-V1NPTjggU0QgY2hpcCwgb3B0aW9uYWwgZU1NQyBvciBTUEkKPj4gPkZsYXNoLgo+PiA+PiBJdCBo
-YXMgYSBnb2xkIGZpbmdlciBjb25uZWN0b3IgZm9yIGV4cGFuc2lvbiwgYW5kIFVBUlQgaXMgYXZh
-aWxhYmxlCj4+ID5mcm9tCj4+ID4+IHJlc2VydmVkIHBpbnMgdy8gMi41NG1tIHBpdGNoLiBUaGUg
-Ym9hcmQgY2FuIHVzZSBlaXRoZXIgU29DaGlwIFMzIG9yCj4+ID4+IEFsbHdpbm5lciBWM0wgU29D
-cy4KPj4gPj4KPj4gPj4gQWRkIHRoZSBkZXZpY2UgdHJlZSBiaW5kaW5nIG9mIHRoZSBiYXNpYyB2
-ZXJzaW9uIG9mIHRoZSBjb3JlIGJvYXJkIC0tCj4+ID4+IHcvbyBlTU1DIG9yIFNQSSBGbGFzaCwg
-dy8gVEYgc2xvdCBvciBXU09OOCBTRCwgYW5kIHVzZSBTMyBTb0MuCj4+ID4+Cj4+ID4+IFNpZ25l
-ZC1vZmYtYnk6IEljZW5vd3kgWmhlbmcgPGljZW5vd3lAYW9zYy5pbz4KPj4gPj4gLS0tCj4+ID4+
-IE5vIGNoYW5nZXMgc2luY2UgdjMuCj4+ID4+Cj4+ID4+IFBhdGNoIGludHJvZHVjZWQgaW4gdjIu
-Cj4+ID4+Cj4+ID4+ICBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvYXJtL3N1bnhp
-LnlhbWwgfCA1ICsrKysrCj4+ID4+ICAxIGZpbGUgY2hhbmdlZCwgNSBpbnNlcnRpb25zKCspCj4+
-ID4+Cj4+ID4+IGRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mv
-YXJtL3N1bnhpLnlhbWwKPj4gPmIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Fy
-bS9zdW54aS55YW1sCj4+ID4+IGluZGV4IDAwMGEwMGQxMmQ2YS4uNDhjMTI2YTdhODQ4IDEwMDY0
-NAo+PiA+PiAtLS0gYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvYXJtL3N1bnhp
-LnlhbWwKPj4gPj4gKysrIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2FybS9z
-dW54aS55YW1sCj4+ID4+IEBAIC0zNTMsNiArMzUzLDExIEBAIHByb3BlcnRpZXM6Cj4+ID4+ICAg
-ICAgICAgICAgLSBjb25zdDogbGljaGVlcGksbGljaGVlcGktemVybwo+PiA+PiAgICAgICAgICAg
-IC0gY29uc3Q6IGFsbHdpbm5lcixzdW44aS12M3MKPj4gPj4KPj4gPj4gKyAgICAgIC0gZGVzY3Jp
-cHRpb246IExpY2hlZSBaZXJvIFBsdXMgKHdpdGggUzMsIHdpdGhvdXQgZU1NQy9TUEkKPj4gPkZs
-YXNoKQo+PiA+PiArICAgICAgICBpdGVtczoKPj4gPj4gKyAgICAgICAgICAtIGNvbnN0OiBzaXBl
-ZWQsbGljaGVlLXplcm8tcGx1cwo+PiA+PiArICAgICAgICAgIC0gY29uc3Q6IGFsbHdpbm5lcixz
-dW44aS1zMwo+PiA+Cj4+ID5JZiB0aGUgUzMgaXMganVzdCBhIHJlYnJhbmRlZCBWMywgdGhlbiB3
-ZSBzaG91bGQgaGF2ZSB0aGUgdjMgY29tcGF0aWxlCj4+ID5pbiB0aGF0IGxpc3QgdG9vLgo+PiAK
-Pj4gUzMgaXMgVjMgd2l0aCBjb3BhY2thZ2VkIEREUjMgRFJBTS4KPj4gCj4+IEl0J3MgcGluIGlu
-Y29tcGF0aWJsZSB3LyBWMy4KPiAKPiBEb2VzIGl0IG1hdHRlciB0aG91Z2g/Cj4gCj4gSWYgdGhl
-IG9ubHkgdGhpbmcgdGhhdCBjaGFuZ2VzIGlzIHRoZSBwYWNrYWdlLCB3ZSdyZSBub3QgbWFuaXB1
-bGF0aW5nCj4gdGhhdCwgYW5kIGFueSBzb2Z0d2FyZSB0aGF0IGRlYWxzIHdpdGggdGhlIHYzIGNh
-biBkZWFsIHdpdGggdGhlCj4gczMuIFdoaWNoIGlzIHdoYXQgdGhlIGNvbXBhdGlibGUgaXMgYWJv
-dXQuCgpPa2F5LiBTaG91bGQgdGhlIFMzIGNvbXBhdGlibGUgYmUga2VwdCBiZWZvZXIgdGhlIFYz
-IG9uZT8KCj4gCj4gTWF4aW1lCj4gCj4gLS0KPiBNYXhpbWUgUmlwYXJkLCBCb290bGluCj4gRW1i
-ZWRkZWQgTGludXggYW5kIEtlcm5lbCBlbmdpbmVlcmluZwo+IGh0dHBzOi8vYm9vdGxpbi5jb20K
-PiAKPiBfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwo+IGxp
-bnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0Cj4gbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZy
-YWRlYWQub3JnCj4gaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
-aW51eC1hcm0ta2VybmVsCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxp
-c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
-aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Tue, 23 Jul 2019 17:03:47 +0100
+James Morse <james.morse@arm.com> wrote:
+
+> Hi!
+> 
+> On 22/07/2019 08:48, Masami Hiramatsu wrote:
+> > On arm64, if a nested kprobes hit, it can crash the kernel with below
+> > error message.
+> > 
+> > [  152.118921] Unexpected kernel single-step exception at EL1
+> > 
+> > This is because commit 7419333fa15e ("arm64: kprobe: Always clear
+> > pstate.D in breakpoint exception handler") unmask pstate.D for
+> > doing single step but does not recover it after single step in
+> > the nested kprobes.
+> 
+> > That is correct *unless* any nested kprobes
+> > (single-stepping) runs inside other kprobes user handler.
+> 
+> (I don't think this is correct, its just usually invisible as PSTATE.D is normally clear)
+
+Ah, right.
+
+> 
+> 
+> > When the 1st kprobe hits, do_debug_exception() will be called. At this
+> > point, debug exception (= pstate.D) must be masked (=1). When the 2nd
+> >  (nested) kprobe is hit before single-step of the first kprobe, it
+> > unmask debug exception (pstate.D = 0) and return.
+> > Then, when the 1st kprobe setting up single-step, it saves current
+> > DAIF, mask DAIF, enable single-step, and restore DAIF.
+> > However, since "D" flag in DAIF is cleared by the 2nd kprobe, the
+> > single-step exception happens soon after restoring DAIF.
+> 
+> This is pretty complicated. Just to check I've understood this properly:
+> Stepping on a kprobe in a kprobe-user's pre_handler will cause the remainder of the
+> handler (the first one) to run with PSTATE.D clear. Once we enable single-step, we start
+> stepping the debug handler, and will never step the original kprobe'd instruction.
+
+Yes, that's correct. I saw the single stepping happens on right after recover
+the saved daif.
+
+> 
+> This is describing the most complicated way that this problem shows up! (I agree its also
+> the worst)
+> 
+> I can get this to show up with just one kprobe. (function/file names here are meaningless):
+> 
+> | static int wibble(struct seq_file *m, void *discard)
+> | {
+> |        unsigned long d, flags;
+> |
+> |        flags = local_daif_save();
+> |
+> |        kprobe_me();
+> |        d = read_sysreg(daif);
+> |        local_daif_restore(flags);
+> |
+> |        seq_printf(m, "%lx\n", d);
+> |
+> |        return 0;
+> | }
+> 
+> plumbed into debugfs, then kicked using the kprobe_example module:
+> | root@adam:/sys/kernel/debug# cat wibble
+> | 3c0
+> 
+> | root@adam:/sys/kernel/debug# insmod ~morse/kprobe_example.ko symbol=kprobe_me
+> | [   69.478098] Planted kprobe at [..]
+> | root@adam:/sys/kernel/debug# cat wibble
+> | [   71.478935] <kprobe_me> pre_handler: p->addr = [..], pc = [..], pstate = 0x600003c5
+> | [   71.488942] <kprobe_me> post_handler: p->addr = [..], pstate = 0x600001c5
+> | 1c0
+> | root@adam:/sys/kernel/debug#
+> 
+> This is problem for any code that had debug masked, not just kprobes.
+
+Agreed.
+
+> 
+> Can we start the commit-message with the simplest description of the problem: kprobes
+> manipulates the interrupted PSTATE for single step, and doesn't restore it.
+
+Thanks for making it clearer :)
+
+> 
+> (trying to understand this bug through kprobe's interaction with itself is hard!)
+> 
+> 
+> > To solve this issue, this stores all DAIF bits and restore it
+> > after single stepping.
+> 
+> 
+> > diff --git a/arch/arm64/kernel/probes/kprobes.c b/arch/arm64/kernel/probes/kprobes.c
+> > index bd5dfffca272..348e02b799a2 100644
+> > --- a/arch/arm64/kernel/probes/kprobes.c
+> > +++ b/arch/arm64/kernel/probes/kprobes.c
+> > @@ -29,6 +29,8 @@
+> >  
+> >  #include "decode-insn.h"
+> >  
+> > +#define PSR_DAIF_MASK	(PSR_D_BIT | PSR_A_BIT | PSR_I_BIT | PSR_F_BIT)
+> 
+> We should probably move this to daifflags.h. Its going to be useful to other series too.
+
+OK.
+
+> 
+> 
+> Patch looks good!
+> Reviewed-by: James Morse <james.morse@arm.com>
+> Tested-by: James Morse <james.morse@arm.com>
+> 
+> (I haven't tried to test the nested kprobes case...)
+
+OK, I'll update and resend it.
+
+Thank you!
+
+> 
+> 
+> Thanks,
+> 
+> James
+
+
+-- 
+Masami Hiramatsu <mhiramat@kernel.org>
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
