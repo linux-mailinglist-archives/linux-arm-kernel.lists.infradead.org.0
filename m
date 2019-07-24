@@ -2,75 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ECC5A729A8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 10:13:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2763C729AA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 10:14:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ed1A9KClpH1GeropxVZf19TZkacqKdKBjJ+NYA1vgzs=; b=pqn0dq3Aqeil00
-	IpfpTklDPDfSWLqCpfePN+klueFudyLlmKnlDD83Gb5V9AeT6z4+1JHn0m8vIbdzKzU/oINj4uyqu
-	T9Rsb66m+iSW04arcmgIPxcTwfu/0IjofgXrEBAnkwZzuc0mYuN0xQGUhUHZhUDyJR0VNrhsWmNoL
-	7p4nCcqw12n48uYnrYc9m7UMtHc/dlbMYouiTklZBgUgaRf0E/Kn66uzp59BUn52r/L/w0eiy3ZhG
-	iw7ikCTgKanAlDfum7OVQBAUbT6JqXmC8t2BaeIrA2C+PMyIrtaFbGfR9674Q6Zt7R1KugCkN1nFo
-	3i2u1Lsom8DEovC5QX4A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ewrZGFDDdH2Ta5Wc/3AqgibqfYCnEOzqkWbyLW1JpQs=; b=VcTs9qyL15m9eN
+	mP/U3bQ7nCg68a6ueZAuyl6XRWtIUTYukCLt1CHsCufFVHerbWYSu1jx7pynXbIJquHldz/xAsO/3
+	znuLeWeYeOHx7zGx80jbHkV7nT6thFKeB34+bzNu27QlQnopghuS46K3dFJTnC3t/xCkeG9s5sztz
+	GrEjmZ/or+mNacZforWWHB8kLvhn1rHzszLPFPmOLNIq0xPSBAWrbck1/QUfkLNn7Sfj+fg7CpIYX
+	jAgcia3DO90TvngxQmCWFLGp6milc0VvfcpV7QS7/1QxdoAiZfvl7fQOncow3HlzNj1TbgOwjeCCe
+	2wobUBfjDZOGQCtcrF4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqCPB-000387-Vy; Wed, 24 Jul 2019 08:13:46 +0000
+	id 1hqCPW-0003ML-UO; Wed, 24 Jul 2019 08:14:07 +0000
 Received: from new3-smtp.messagingengine.com ([66.111.4.229])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqCOf-00037K-Rr
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 08:13:15 +0000
+ id 1hqCOg-00037j-SF
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 08:13:16 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id A211B1BE7;
- Wed, 24 Jul 2019 04:13:12 -0400 (EDT)
+ by mailnew.nyi.internal (Postfix) with ESMTP id 40DBA154B;
+ Wed, 24 Jul 2019 04:13:14 -0400 (EDT)
 Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Wed, 24 Jul 2019 04:13:12 -0400
+ by compute4.internal (MEProxy); Wed, 24 Jul 2019 04:13:14 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=from
- :to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding; s=fm3; bh=Z9cu/jAfTLPXGSW6gAaNx3qAdg
- J+sFyDlgrk5M8Y63Q=; b=k+q7UAhcAM26oYO9hUAagwzL+hrHSR5s1p4h3DUQVf
- U3oIxLHjx4rde1dUZb3afCorQ47ps3UvIeWll38clz3gIQSrUXZLsTcKduGXhJig
- M5TDhditvHG6Wpop8EwwNbYeJOnupyh8HCP8xRxD7xR1W4bdWBlh+HnWy14AWr1a
- ehnYd/38CqNYPW1mhoKfUl+eL3Wu+4+BY5YQgXq+KptsKc2Vi5XE7KfpAnEC7S0n
- 7u12uMdmE7Z+VlUwF/3clczCW9aT8DZDgvBVyEZVgOpT7E1wUXoR3kc0DR6CAO6M
- ChGbhsmZvMPQGfJ5ueLDxtjr9VYqFbbY7H2CC5W3lUoQ==
+ :to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding; s=fm3; bh=Rv20jGbPNsBjz
+ MPKuVs8f/Enkq1CSpk7pUqYsFfVLc0=; b=I4LV+EQVtSheAKaWeKPzvHuWGd5bV
+ pPkemqhoVa1emsmTDsB0nNnOBxNJ1WZJ3Y2zAmvW8V04jZojQD3f7M62g5U0V2T0
+ kJH8yzQyWzKNExKq2wySEJmX1TB8qgJ6bN/IlxNrNuB4b5lhZ5TiGqss9LVNfeKH
+ +nBroxpRlpD14M9eClULT1szZ8BQRZhikzOgCTovsJ7KIctkrPfVIox892lx2KwA
+ gLIRGxqgPvtFKyzR7tKYLT9dN+g8LvBvq8XLwCVwStho6gHLCeKxiZAoESP6WQzs
+ 1BbUvnGoNeEaJbxd94CJDLXvKbWSqCP7qBjllE1YqiDGjFspqnnzJm+ag==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
- :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
- :x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=Z9cu/jAfTLPXGSW6g
- AaNx3qAdgJ+sFyDlgrk5M8Y63Q=; b=GFIe5u//MOSehrg4pLFa6fzeaefHTTHsC
- KcE4DtVvZqDdLSceuqsQt74U+Fx+UA3axFB9xLje/Zb6P1GbPk/I4g4I1j561/1r
- JzAKtd/Ra8UErE38HeG12g3eV73lZy4jnhHUYVIb64bSM0gfwDAUphRHwrYKXtrJ
- qcXBgtxmr8wPK7lxymd27AgKja3OcGk3WvlTLUm+8pw0XePcfUqVQmuW8hVszxgf
- J94UMeUPDWMiSyGdSwbJgC5+VrurGAoy2Dr65wseWzAuvVyQ+1rQWo6KnC3C8iIt
- wWnie7Fzf/Nf5il8bON/iYJWq8WO2hRRaXvbAUjIdQaZKVncbKs5Q==
-X-ME-Sender: <xms:FhM4XdYl6s_v0frgxQfX-eAxBSB57mw8dBAcmK27Bs_7YjhXcUg_pQ>
+ :in-reply-to:message-id:mime-version:references:subject:to
+ :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
+ fm3; bh=Rv20jGbPNsBjzMPKuVs8f/Enkq1CSpk7pUqYsFfVLc0=; b=OfF3r2Og
+ XSyEKBVsSJpUY3RK4ITF6VLSQYr8rzJ8NPzGkC1W4ugmifoAGDdG6Ys70qq72iXi
+ arRAx5aiz6VY/4MNf2uY6OUDvoLvA9mWGgAVBiTwV56ZHxL4BYnajE1KlBcWOwzr
+ SyVdbpPRx4n+aD4dyY3pl5QASYQTg1rJNMiqbivOP1I6CPdayVLEu+xWPG+MavRY
+ UEovJc5b2aH1joW8wywINbqmIi/PkzH5uDEM8XTkoOenxXGYvNLJFjeTtHeIkB6M
+ ywglvkNd6lYjvKgEGtfgc2qbgVI/WCbDeqjhVlsaO9tQSAFrwtSAUW92bXV6IfGk
+ B02hBd7xdiRxzQ==
+X-ME-Sender: <xms:GhM4XWBXR_YVAfHNYj6ryTkEUqFpTYXgEZCti4_aGx7D77DZRW4kWw>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrjeelgdduvdelucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucenucfjughrpefhvffufffkofgggfestdekredtre
- dttdenucfhrhhomheptehnughrvgifucflvghffhgvrhihuceorghnughrvgifsegrjhdr
- ihgurdgruheqnecukfhppedvtddvrdekuddrudekrdeftdenucfrrghrrghmpehmrghilh
- hfrhhomheprghnughrvgifsegrjhdrihgurdgruhenucevlhhushhtvghrufhiiigvpedt
-X-ME-Proxy: <xmx:FhM4XToB9bhuKD6ybOqqYrcDVYdn-dvk50NL61v-LwO7mQPfIfvx3Q>
- <xmx:FhM4XcI2RIvOldexMpK96YaIO-5G9jytay0HYhfJ-Ztm1QwL-a8F_A>
- <xmx:FhM4XWbVBuikG1oH89_lRhBz9FV561KMHpeEQTIfLsvmUBKtopUwqA>
- <xmx:GBM4XVPmw2y04_DCBD8HGgbOG8QP_NcgdJT1ysI4NMLMBin7QWcMMg>
+ uceurghilhhouhhtmecufedttdenucenucfjughrpefhvffufffkofgjfhgggfestdekre
+ dtredttdenucfhrhhomheptehnughrvgifucflvghffhgvrhihuceorghnughrvgifsegr
+ jhdrihgurdgruheqnecukfhppedvtddvrdekuddrudekrdeftdenucfrrghrrghmpehmrg
+ hilhhfrhhomheprghnughrvgifsegrjhdrihgurdgruhenucevlhhushhtvghrufhiiigv
+ pedt
+X-ME-Proxy: <xmx:GhM4XYvGKJB_ZnKQrpUyW32LMhvIenl-HsnfBOYMhiE_2YIr-hcZMw>
+ <xmx:GhM4XQ59KpWS1I5prOVB2EEugFk_VPjfaCPC0OIQGvZONFKQO3i9Ng>
+ <xmx:GhM4XSf5SmweW64-uWMxlNbULxKGUzIpltCqso2d7MnH-FxVnfTHxQ>
+ <xmx:GhM4Xbmt7DDcc8Ta96KX3PR2aTs7CeZXkUQo2VIx9UwS0t8GaDx8OQ>
 Received: from mistburn.au.ibm.com (bh02i525f01.au.ibm.com [202.81.18.30])
- by mail.messagingengine.com (Postfix) with ESMTPA id 97BA080060;
- Wed, 24 Jul 2019 04:13:06 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 8952680059;
+ Wed, 24 Jul 2019 04:13:10 -0400 (EDT)
 From: Andrew Jeffery <andrew@aj.id.au>
 To: linux-aspeed@lists.ozlabs.org
-Subject: [PATCH 0/3] ARM: dts: aspeed: Deprecate g[45]-style compatibles
-Date: Wed, 24 Jul 2019 17:43:10 +0930
-Message-Id: <20190724081313.12934-1-andrew@aj.id.au>
+Subject: [PATCH 1/3] dts: ARM: aspeed: Migrate away from aspeed,
+ g[45].* compatibles
+Date: Wed, 24 Jul 2019 17:43:11 +0930
+Message-Id: <20190724081313.12934-2-andrew@aj.id.au>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190724081313.12934-1-andrew@aj.id.au>
+References: <20190724081313.12934-1-andrew@aj.id.au>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_011314_038280_D67C66E6 
-X-CRM114-Status: UNSURE (   7.03  )
+X-CRM114-CacheID: sfid-20190724_011315_056975_36BA716E 
+X-CRM114-Status: UNSURE (   9.53  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -108,34 +113,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
+Use the SoC-specific compatible strings instead.
 
-Joel and I decided that going forward we're not going to name compatibles along
-the lines of SoC generations, so discourage any further attempts by removing
-the remaining instances.
+Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
+---
+ arch/arm/boot/dts/aspeed-g4.dtsi | 2 +-
+ arch/arm/boot/dts/aspeed-g5.dtsi | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
 
-It's probably best if we push the three patches all through one tree rather
-than fragmenting. Is everyone happy if Joel applies them to the aspeed tree?
-
-Cheers,
-
-Andrew
-
-Andrew Jeffery (3):
-  dts: ARM: aspeed: Migrate away from aspeed,g[45].* compatibles
-  pinctrl: aspeed: Document existence of deprecated compatibles
-  dt-bindings: aspeed: Remove mention of deprecated compatibles
-
- Documentation/devicetree/bindings/mfd/aspeed-scu.txt         | 2 --
- Documentation/devicetree/bindings/misc/aspeed-p2a-ctrl.txt   | 2 --
- .../devicetree/bindings/pinctrl/aspeed,ast2400-pinctrl.yaml  | 5 +----
- .../devicetree/bindings/pinctrl/aspeed,ast2500-pinctrl.yaml  | 4 +---
- arch/arm/boot/dts/aspeed-g4.dtsi                             | 2 +-
- arch/arm/boot/dts/aspeed-g5.dtsi                             | 2 +-
- drivers/pinctrl/aspeed/pinctrl-aspeed-g4.c                   | 4 ++++
- drivers/pinctrl/aspeed/pinctrl-aspeed-g5.c                   | 4 ++++
- 8 files changed, 12 insertions(+), 13 deletions(-)
-
+diff --git a/arch/arm/boot/dts/aspeed-g4.dtsi b/arch/arm/boot/dts/aspeed-g4.dtsi
+index dd4b0b15afcf..7f06dc21dc19 100644
+--- a/arch/arm/boot/dts/aspeed-g4.dtsi
++++ b/arch/arm/boot/dts/aspeed-g4.dtsi
+@@ -162,7 +162,7 @@
+ 				#reset-cells = <1>;
+ 
+ 				pinctrl: pinctrl {
+-					compatible = "aspeed,g4-pinctrl";
++					compatible = "aspeed,ast2400-pinctrl";
+ 				};
+ 
+ 				p2a: p2a-control {
+diff --git a/arch/arm/boot/dts/aspeed-g5.dtsi b/arch/arm/boot/dts/aspeed-g5.dtsi
+index 5b1ca265c2ce..04c97138e18b 100644
+--- a/arch/arm/boot/dts/aspeed-g5.dtsi
++++ b/arch/arm/boot/dts/aspeed-g5.dtsi
+@@ -215,7 +215,7 @@
+ 				#reset-cells = <1>;
+ 
+ 				pinctrl: pinctrl {
+-					compatible = "aspeed,g5-pinctrl";
++					compatible = "aspeed,ast2500-pinctrl";
+ 					aspeed,external-nodes = <&gfx &lhc>;
+ 
+ 				};
 -- 
 2.20.1
 
