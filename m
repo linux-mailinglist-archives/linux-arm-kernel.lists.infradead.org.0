@@ -2,89 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 60E5C729AE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 10:14:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 142FB729B6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 10:16:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YqL3Wg2xHwvGG6h69nNZX7gbB9wgUALPM28N3sA+zxQ=; b=pewPCXQHG2A5ZJ
-	IwsjthoyhifHiXn9zvZKjyYlsqHCDhHZ04dDjtc09WRrV/Slf8AMLnmmFHF43ULlH+pdSivykcY+S
-	RCAm48Wz8bBYXMxDJdUeBg3RhJF/Krh7k8sb6BZ+ZP8Z6ZFxI0Qj44fGGyaLJ2IUKzqLcn+8B+9Wx
-	8jguxprbPNp3G7cnTVNqAYEP/UmVo8S6OTvbVfinjFAw6ia694xtIzSVN7BylWXxTd5oXvzES6c+T
-	2Ppptu+zGOhR28ODup/lFVcpM5uVaR4aMk/4o++LGAZn0L0i3tbUVRnGFF7udPMI/XJLge5qR54mV
-	ZE1BkesHKXuBbtONi6FQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=MmMCC/T++tfbBbXmBv0NJdUAsfUl5OG9YEDKtxVOw/w=; b=CPYeXU10hfdSj0
+	/foeRl+6amrf0NTiRC5E0ceB0pQsrAkRtYeGYzLRBtzkIa+gWULvxGIaPEWq+2/EPFiIxRaPpuAsq
+	ErtLE355DrQtwMJpKqRBjoRg2EU77GmE+ODU+H8slm7sXep7+tzbq0ycVm0P/qgvgUjAfBIoU27bX
+	mlXv/SfD/r7xGHffliaNaIF9iPTKjddQO5OxpP+FGqgjSsz6SAwvb5YLMM8Pj1Sjwyxr2udnU60y6
+	ahjlTR3Fg555AN664LB4VOXKzc4qce/eCE6bU6PweSdCp3rk8b99Log1lReSnov2MTjfvOpn27+ed
+	ZC8z6kX6pnsN4t3R6StQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqCQB-0003uU-M8; Wed, 24 Jul 2019 08:14:48 +0000
-Received: from new3-smtp.messagingengine.com ([66.111.4.229])
+	id 1hqCRx-0005dg-Dt; Wed, 24 Jul 2019 08:16:37 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqCOo-0003Ac-Vv
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 08:13:24 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 26E371315;
- Wed, 24 Jul 2019 04:13:22 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Wed, 24 Jul 2019 04:13:22 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=from
- :to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm3; bh=DN2+Lj8I7jFnN
- IMUgDd2QFBVg48TKo12C1rBwKfbzK4=; b=Q82/EoOGrisOx1VaTEyTN4D24J9MV
- tjZq/hIz1OnnTwifcqwuT1bz23TkKgZTy9kFDunatTy4ydSsPzGQ25ZQPBoAqxXH
- 1xMxI6DCz/cXJlB98BHs6G5X/UN8ml4VR8lk8q5GoZTZdbpzUNJW2U/O3/YNQe1P
- A++Y6wym4Uj2+IZP8/eGyidNZHcPjLrjgA6PSdc8OgdQkJKJ8gkOOBUma7IRxziA
- S12PuTJr5JzIJ8zilGvJJNf214XrAvFJ5iZZV+ukc48ykw9iXJcx6aEJ1PlT+sbL
- qabn/ioVgIMze6JIGvwP1k/KyzqKBsYtDU37J4nuXCHdObWeFGTRCyjjQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-transfer-encoding:date:from
- :in-reply-to:message-id:mime-version:references:subject:to
- :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm3; bh=DN2+Lj8I7jFnNIMUgDd2QFBVg48TKo12C1rBwKfbzK4=; b=nET6tHWd
- JJ96qY49c4Za0UAt5MieK0yfLHxga23nXgtOjq2zcHTfeWUy2g2iXisRNa56DtVT
- QRaccRzIveH3Rm9NgMSQO8f/dlhsoN2KhlDcg5pfQouSbDAxwvDuGNptP1I7v2X2
- H9EQIU4S6R/m7P8nxW58k9sgx6Se7GkRr2L0LM9XHrfXspvujomH4qEd22/wtvko
- bUo5saJ+DSm1ZSuqZFvYaq0OJKGbh6vfzl1P6hj1xJDN2A1BDvt0zQBGyzACtXLh
- KLaUFiO+lT//88ql8SU1HcvK2dsFXS1kElJru/anvTVvbHSsVqYF49HU+HJ8aHeC
- elVDEa7+FKUveg==
-X-ME-Sender: <xms:IRM4XfRui1gp9DZ0fTXg2AcK9atTVynS1ByzllgFP4tl756yashxUg>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrjeelgdduvdelucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucenucfjughrpefhvffufffkofgjfhgggfestdekre
- dtredttdenucfhrhhomheptehnughrvgifucflvghffhgvrhihuceorghnughrvgifsegr
- jhdrihgurdgruheqnecukfhppedvtddvrdekuddrudekrdeftdenucfrrghrrghmpehmrg
- hilhhfrhhomheprghnughrvgifsegrjhdrihgurdgruhenucevlhhushhtvghrufhiiigv
- pedu
-X-ME-Proxy: <xmx:IRM4XZUom8hNEXdsDaO_Pl0qrubtZCQ2uD4ROZrk6eMgH_u9rXu2dg>
- <xmx:IRM4XcnhiaevzQ-p6Kt2uYSDafesBSnp2jzbrADrBn-8OvY7Cr7xhQ>
- <xmx:IRM4XX8dtMO-jIft6q_Qjsu2EmlWsbmS0SfdooGG5djvIEtWYP6b6A>
- <xmx:IhM4XYLdsVgbWmJdVA2xzX5CefS3r9d7WaciF8TjGNXSdHWzTFavUg>
-Received: from mistburn.au.ibm.com (bh02i525f01.au.ibm.com [202.81.18.30])
- by mail.messagingengine.com (Postfix) with ESMTPA id 6A32680059;
- Wed, 24 Jul 2019 04:13:18 -0400 (EDT)
-From: Andrew Jeffery <andrew@aj.id.au>
-To: linux-aspeed@lists.ozlabs.org
-Subject: [PATCH 3/3] dt-bindings: aspeed: Remove mention of deprecated
- compatibles
-Date: Wed, 24 Jul 2019 17:43:13 +0930
-Message-Id: <20190724081313.12934-4-andrew@aj.id.au>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190724081313.12934-1-andrew@aj.id.au>
-References: <20190724081313.12934-1-andrew@aj.id.au>
+ id 1hqCRi-0005d6-6V
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 08:16:23 +0000
+Received: by mail-pg1-x542.google.com with SMTP id i18so20824798pgl.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 24 Jul 2019 01:16:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=UKu4ag1FmHjYtjYW+CMCBAQuhxQ6kM/fKKzKkjZJgHU=;
+ b=pyfIH581kKyg3SluiHcyj8vETKepVhm6oRKb+sUkYTCPMAmOLcSEXjxKZUkMK6wv7h
+ VEgo0GOmiuw1Y/gNziSfr2BWwTPeK4cA4kIu90H8cDAM2iJZEN3ZwFXs/kGdGANWCqs6
+ P5NS3brOcUAituR3pb2WfdP8mcTGmzo6RCuGPWGPfLj0bOR31ebip3mVB9VjmDnSw+SP
+ kNBXigb9vMBmyB2w2eBIGa2Jun0EfIYlty+BDB0rU575xd64OeMz3gp2KivcVbPjfIoy
+ kCwM72V6qg7XJ6os4oE8+DJCQ7mXkSHxIwfULY0XcU0A4bJgUUhto9Gj4532ZB2IdhGV
+ kReg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=UKu4ag1FmHjYtjYW+CMCBAQuhxQ6kM/fKKzKkjZJgHU=;
+ b=IfLCeXIIa+O5oI0PsOI686NOoQ7g2+xCjlnRxGy7i92+9isPpe6Gd1HILd0XtQhaFy
+ VtYvvrGzPPrGpHP47QBMxyK+e7HxuKsqW8nxkTibMUX1QB3p06usfc/y8UPytbsPy5WV
+ BbEVDj7nc7qwyjeD9CEqOCYPiu2nApgG5W/v7ZMvptT4MwZWoPHxbPosqyFuHLMO8Y9z
+ KoNbHJzi0BJ0nl/vFXdne5MR5dkQ+0RBws8jcuH1zG4YCR87tWhz1rd7rPMi9ViYSAnb
+ 2DPbpcSJshJJ2dW7xrN3gPPE8klbNP8LQM0kGQpkVL8ALf6PKnLnyuDZWaqIhQfRHEDY
+ xXVA==
+X-Gm-Message-State: APjAAAXYbhAwE6Pudk9F60sFxmT4+EjmYFKxhk2yFG5evVvLb3B7PRA5
+ 6AKBCNT3EN1tdSiwngZ4Wv0=
+X-Google-Smtp-Source: APXvYqw9RmLNie/aY3kugAEekqK3Xf8pC8MGD13PNtXTwM3QjoBhtleaGBl/jaPHnS94EHz5FqkGyg==
+X-Received: by 2002:a17:90a:9a83:: with SMTP id
+ e3mr84858295pjp.105.1563956181475; 
+ Wed, 24 Jul 2019 01:16:21 -0700 (PDT)
+Received: from localhost.localdomain ([110.227.69.93])
+ by smtp.gmail.com with ESMTPSA id r188sm72204789pfr.16.2019.07.24.01.16.18
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Wed, 24 Jul 2019 01:16:21 -0700 (PDT)
+From: Nishka Dasgupta <nishkadg.linux@gmail.com>
+To: okaya@kernel.org, agross@kernel.org, vkoul@kernel.org,
+ dan.j.williams@intel.com, linux-arm-kernel@lists.infradead.org,
+ linux-arm-msm@vger.kernel.org, dmaengine@vger.kernel.org
+Subject: [PATCH v2] dma: qcom: hidma_mgmt: Add of_node_put() before goto
+Date: Wed, 24 Jul 2019 13:46:09 +0530
+Message-Id: <20190724081609.9724-1-nishkadg.linux@gmail.com>
+X-Mailer: git-send-email 2.19.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_011323_392144_1092E6B7 
-X-CRM114-Status: GOOD (  10.27  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190724_011622_239434_E4222D25 
+X-CRM114-Status: GOOD (  12.82  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.229 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (nishkadg.linux[at]gmail.com)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -103,92 +99,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- Andrew Jeffery <andrew@aj.id.au>, linus.walleij@linaro.org,
- linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org, robh+dt@kernel.org,
- joel@jms.id.au, lee.jones@linaro.org, linux-arm-kernel@lists.infradead.org
+Cc: Nishka Dasgupta <nishkadg.linux@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Guide readers away from using the aspeed,g[45].* compatible patterns.
+Each iteration of for_each_available_child_of_node puts the previous
+node, but in the case of a goto from the middle of the loop, there is
+no put, thus causing a memory leak. 
+Hence add an of_node_put under the label that the gotos point to.
+In order to avoid decrementing an already-decremented refcount, copy the
+original contents of the label (including the return statement) to just
+above the label, so that the code under the label is executed only when
+a goto exit from the loop occurs.
+Additionally, remove an unnecessary get/put pair from the loop, as the
+loop itself already keeps track of refcount.
+Issue found with Coccinelle.
 
-Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
+Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
 ---
- Documentation/devicetree/bindings/mfd/aspeed-scu.txt         | 2 --
- Documentation/devicetree/bindings/misc/aspeed-p2a-ctrl.txt   | 2 --
- .../devicetree/bindings/pinctrl/aspeed,ast2400-pinctrl.yaml  | 5 +----
- .../devicetree/bindings/pinctrl/aspeed,ast2500-pinctrl.yaml  | 4 +---
- 4 files changed, 2 insertions(+), 11 deletions(-)
+Changes in v2:
+- Move the put under the label instead of above each individual goto.
+-Remove the get/put pair.
 
-diff --git a/Documentation/devicetree/bindings/mfd/aspeed-scu.txt b/Documentation/devicetree/bindings/mfd/aspeed-scu.txt
-index ce8cf0ec6279..4d92c0bb6687 100644
---- a/Documentation/devicetree/bindings/mfd/aspeed-scu.txt
-+++ b/Documentation/devicetree/bindings/mfd/aspeed-scu.txt
-@@ -4,9 +4,7 @@ configuring elements such as clocks, pinmux, and reset.
- Required properties:
- - compatible:	One of:
- 		"aspeed,ast2400-scu", "syscon", "simple-mfd"
--		"aspeed,g4-scu", "syscon", "simple-mfd"
- 		"aspeed,ast2500-scu", "syscon", "simple-mfd"
--		"aspeed,g5-scu", "syscon", "simple-mfd"
+ drivers/dma/qcom/hidma_mgmt.c | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/dma/qcom/hidma_mgmt.c b/drivers/dma/qcom/hidma_mgmt.c
+index 3022d66e7a33..43f806c8b51e 100644
+--- a/drivers/dma/qcom/hidma_mgmt.c
++++ b/drivers/dma/qcom/hidma_mgmt.c
+@@ -388,7 +388,6 @@ static int __init hidma_mgmt_of_populate_channels(struct device_node *np)
+ 			ret = PTR_ERR(new_pdev);
+ 			goto out;
+ 		}
+-		of_node_get(child);
+ 		new_pdev->dev.of_node = child;
+ 		of_dma_configure(&new_pdev->dev, child, true);
+ 		/*
+@@ -396,9 +395,14 @@ static int __init hidma_mgmt_of_populate_channels(struct device_node *np)
+ 		 * platforms with or without MSI support.
+ 		 */
+ 		of_msi_configure(&new_pdev->dev, child);
+-		of_node_put(child);
+ 	}
++
++	kfree(res);
++
++	return ret;
++
+ out:
++	of_node_put(child);
+ 	kfree(res);
  
- - reg:		contains the offset and length of the SCU memory region
- - #clock-cells: should be set to <1> - the system controller is also a
-diff --git a/Documentation/devicetree/bindings/misc/aspeed-p2a-ctrl.txt b/Documentation/devicetree/bindings/misc/aspeed-p2a-ctrl.txt
-index 854bd67ffec6..0e1fa5bc6a30 100644
---- a/Documentation/devicetree/bindings/misc/aspeed-p2a-ctrl.txt
-+++ b/Documentation/devicetree/bindings/misc/aspeed-p2a-ctrl.txt
-@@ -26,9 +26,7 @@ property:
- 
- - compatible : Should be one of the following:
- 		"aspeed,ast2400-scu", "syscon", "simple-mfd"
--		"aspeed,g4-scu", "syscon", "simple-mfd"
- 		"aspeed,ast2500-scu", "syscon", "simple-mfd"
--		"aspeed,g5-scu", "syscon", "simple-mfd"
- 
- Example
- ===================
-diff --git a/Documentation/devicetree/bindings/pinctrl/aspeed,ast2400-pinctrl.yaml b/Documentation/devicetree/bindings/pinctrl/aspeed,ast2400-pinctrl.yaml
-index 125599a2dc5e..9368e4b6d4d0 100644
---- a/Documentation/devicetree/bindings/pinctrl/aspeed,ast2400-pinctrl.yaml
-+++ b/Documentation/devicetree/bindings/pinctrl/aspeed,ast2400-pinctrl.yaml
-@@ -15,16 +15,13 @@ description: |+
- 
-   - compatible:     Should be one of the following:
-                     "aspeed,ast2400-scu", "syscon", "simple-mfd"
--                    "aspeed,g4-scu", "syscon", "simple-mfd"
- 
-   Refer to the the bindings described in
-   Documentation/devicetree/bindings/mfd/syscon.txt
- 
- properties:
-   compatible:
--    enum:
--      - aspeed,ast2400-pinctrl
--      - aspeed,g4-pinctrl
-+    const: aspeed,ast2400-pinctrl
- 
- patternProperties:
-   '^.*$':
-diff --git a/Documentation/devicetree/bindings/pinctrl/aspeed,ast2500-pinctrl.yaml b/Documentation/devicetree/bindings/pinctrl/aspeed,ast2500-pinctrl.yaml
-index 3e6d85318577..939fb755a6db 100644
---- a/Documentation/devicetree/bindings/pinctrl/aspeed,ast2500-pinctrl.yaml
-+++ b/Documentation/devicetree/bindings/pinctrl/aspeed,ast2500-pinctrl.yaml
-@@ -22,9 +22,7 @@ description: |+
- 
- properties:
-   compatible:
--    enum:
--      - aspeed,ast2500-pinctrl
--      - aspeed,g5-pinctrl
-+    const: aspeed,ast2500-pinctrl
-   aspeed,external-nodes:
-     minItems: 2
-     maxItems: 2
+ 	return ret;
 -- 
-2.20.1
+2.19.1
 
 
 _______________________________________________
