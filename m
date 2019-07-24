@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 244857312B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 16:09:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3161A73130
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 16:09:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ikyoMGkVmkINif07RZwMHrDlce2TVAysFFpnvdoudHI=; b=H6WipjsYnFypwj
-	0ylQ/l97lpk2c/MXU29DXRWSfqEqA2r/DSo2w31peJ/lA8SDu8wnxa6qz1XPtMWMwRk2Wn5CtmutW
-	vAo5T+hwtPbhpcyVfWL/bHigFCb34c5OYFLRDKLGHhG0qLaMaVAEQrSvMyXpwgwmsV6ZNWO7UkO8w
-	7Hae/XGfBQk+jUn+CncqaH9g0hGvcc8V4xrNHz+WSIgHKW5Mf9dtHRmrBIgP4UaQdYZDPSC7pA8U2
-	19s9cwsoduiSFzqGFZd2a44jmj/KyXuorZbcLVKvOta5akoeh4k2LSTVYvx8XrnHAs7SDRugbHnzw
-	RN/9FwVZzItfuT+wFgZA==;
+	List-Owner; bh=8LxaFSeW81WZ+ndNUtRFZna3WvywHruJEN/79Q3zwBw=; b=ADQ357ngv/qvdQ
+	G7QnPN5//+q36q9Em0pcXyp6sm6eCSGFG8MUefDSFNb5p2TauQI8ZPYoZh14NIyCvS3DD5ohw9VNe
+	iMNRgRnsWB/iGlQhEdFNQKzvBMHwV2uxVQ2akCy9HAB3NcrsPwl7OKadKAIUb4SPh8n9vz7HynH3L
+	Xm6V8LnUruvGEyrBAQ6T7J+cBvRzyswv9U52p+eeENWvqyrj/p10k5vZuo3AUGenUb8fIFTxDJIfS
+	VK6QNvIS4mODpVmu4CL5q90/RQIIPYpiiGvoptGJW8/DsC88JBPkvHEd2sjIMlvF8OVQg28qGwuvT
+	knaIjzwuc5BTO7KpEktQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqHxL-0002i7-4l; Wed, 24 Jul 2019 14:09:23 +0000
-Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
+	id 1hqHxm-00038J-Oe; Wed, 24 Jul 2019 14:09:50 +0000
+Received: from mail-ua1-x941.google.com ([2607:f8b0:4864:20::941])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqHxA-0002gh-Db
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 14:09:13 +0000
-Received: by mail-vs1-xe41.google.com with SMTP id v6so31459566vsq.4
+ id 1hqHxE-0002ij-Kx
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 14:09:18 +0000
+Received: by mail-ua1-x941.google.com with SMTP id o19so18497037uap.13
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 24 Jul 2019 07:09:11 -0700 (PDT)
+ Wed, 24 Jul 2019 07:09:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=vu225xqfPN2/rLvfSwAsEyzbhQbRUYBKagHgr6BRdsY=;
- b=QyZ2HwJpThM1hA/UrkoCrMIzIG1qKdbxY22knQQ6jxvlptPvYfpn/ryUOMMQn8eIhA
- AC3LnHEkrVN5bI1nJ0thtUrgSKSGzTVwtdDypWV/ILV8M+LY27M+POFs7fT1Y1FAux6y
- n5e83tSvhWJURpzxfWwdhmaiSaLuirPtbrz66wDsPj/I6IsUhr4h/Y7oxSjQJ2ZSdOTa
- 8E3tmXjCaipnHIW/zQf/E0FmjEYsP2Zc4TyCHaczJpoZtU4g4m0Llb3u+TSyJ2v43wBF
- 95VsWEolqVKTuSeVcf0xALB10xPazd6MCw22nAWZ01zUiGzuaSu+1dC4iDVTv21g6aft
- lPLg==
+ :cc; bh=hdowrW6eyNVzCqnH+sg3YSjrdgr1LJmVf+XLhM5jeyg=;
+ b=pwEwK7MPcChPu9C2pgvwXHbNp4lYkdiz64ftQlzrwykiOBpvbyyikwX0ULt30tK0pk
+ cO9CV5Fd0M3pj1ubA8+2aQc0+X9d5H0EWedskNUZAb8wxxM3YuZtCvalUTwesVaQAtWJ
+ 3IlDQXCcBxDARDS7oPGjqX8Yyc6hQ/gmukMIh2FXdt2wnOCDhZYiXNmF6Hzv0s0UBjB1
+ jgglhUJ5t5UWaEfhHbG1hkFtPiaQjRYPttLecdm9UNAkrEZzib1JS4EsHjnAV4AH2OTU
+ jkbxbYVJ1RtcfuVKg3papWe5ahI+0bRsF7r9ostG+lOGen5hzJ11B7dX5Ue27sHZBUEl
+ 1a9g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=vu225xqfPN2/rLvfSwAsEyzbhQbRUYBKagHgr6BRdsY=;
- b=ZqKuB9KmeuuJ2gF35XB2T6m2oYDcmT1yup/PU8aNEaK16xHw7p7XaDQPlqMiUHnlrz
- KkFVj4EbRheTC6QpH0wr6yfXP/Jt6HwkLqz+kSor9GASi89umbBK5NcMMp0Rqm/9/PmI
- hh974PePp2JZb3vb22i6u5rNWLT1r9HXa54LGtz3rKi7/lPhcOj8lgOe9ywBqTRggR27
- 1AF/vuc3ejpMmZB5MLcGB5atrhWwmTOoVOjrweX5+OCPKiMkeZDLxEXNRDX/BQm/0Ukq
- DfAo6vE1IFlIyoszrRKH7ygHaQFqu4mYfJ35iLU1val4lvBJIY3tkUgFYxLH/b4Ic9Qk
- 6KDA==
-X-Gm-Message-State: APjAAAVjT7jGoc/snH+iMbr6Lbqp3Ln+MtWFD6gnMaoD+lHJG5chdMEr
- A93NDUXyAMyP78kBfUBuEf/QM/knQsAHDjP4bdp1CA==
-X-Google-Smtp-Source: APXvYqxssmW5IGjzFz7Uo+wZjJeNnk8rwQp/G0i5AYPNWrc/17j2TjRxyzFkW1UAR4ii57bMU5HGHANrJsgPGutsiDg=
-X-Received: by 2002:a67:ee16:: with SMTP id f22mr51771554vsp.191.1563977350961; 
- Wed, 24 Jul 2019 07:09:10 -0700 (PDT)
+ bh=hdowrW6eyNVzCqnH+sg3YSjrdgr1LJmVf+XLhM5jeyg=;
+ b=DcK5PcXRyO/v9KS7A5zChxy/nwu9TAlqAD0IntkA2EtD3vJz01sen+WHFSi7Z7XH5r
+ nlG/7lM9g7Aj4gj8It44zybgcLKTc8BYSBYQKVuv9ff+o9zzgBnxCmAoRJwnxMD2BXf0
+ GltO9blRxjGld7QYX1hjN8Nns4O9bT/i/dSU7u2X5EG67FnQxumG3SfWF5DCUUiqNMsP
+ En42CLywOG1PBt84tUzKFFNrVYgoaxW5T75RDMKXeSMti5ofOq046IvJseqzw1ksLrtV
+ HtFGvJE9AWtN9qy6LLrvjLnYqkGwQaW+2XmlATfmwf+oBsUMdK0byRzk98jyyHRosRaN
+ rPVQ==
+X-Gm-Message-State: APjAAAUUCdrdq8qZhiTvaTonTmWgoI2yYrYqUiYcuhnfMnS4MI8ll6+m
+ i5MilgjKRmvdDEmUjigo0omlqfZRpuP6p+El0k9sPw==
+X-Google-Smtp-Source: APXvYqwjP39LUP2n3wdv5p52VBWs/GbHFu/JeG/78KmrgvExwdDggNiwDfpKMMkZfKek8Eg0guVJMJcDtZtti1/q8U0=
+X-Received: by 2002:a9f:31a2:: with SMTP id v31mr51915486uad.15.1563977355332; 
+ Wed, 24 Jul 2019 07:09:15 -0700 (PDT)
 MIME-Version: 1.0
-References: <1563774880-8061-1-git-send-email-wahrenst@gmx.net>
- <1563774880-8061-10-git-send-email-wahrenst@gmx.net>
-In-Reply-To: <1563774880-8061-10-git-send-email-wahrenst@gmx.net>
+References: <1563776607-8368-1-git-send-email-wahrenst@gmx.net>
+In-Reply-To: <1563776607-8368-1-git-send-email-wahrenst@gmx.net>
 From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Wed, 24 Jul 2019 16:08:34 +0200
-Message-ID: <CAPDyKFqrbwJ9G0Za+U2FCBB=GKpMZdXesQAHZ+8v8T0fCusmiQ@mail.gmail.com>
-Subject: Re: [PATCH 09/18] dt-bindings: sdhci-iproc: Add brcm,bcm2711-emmc2
+Date: Wed, 24 Jul 2019 16:08:38 +0200
+Message-ID: <CAPDyKFoJgiSQOYTiNHidr99tDe1QmuASfj0sJ=H7Ot1tb9mcBg@mail.gmail.com>
+Subject: Re: [PATCH 10/18] mmc: sdhci-iproc: Add support for emmc2 of the
+ BCM2711
 To: Stefan Wahren <wahrenst@gmx.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_070912_458772_3DE4BA6C 
-X-CRM114-Status: GOOD (  18.80  )
+X-CRM114-CacheID: sfid-20190724_070916_752886_F9D1A42A 
+X-CRM114-Status: GOOD (  18.15  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:941 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -109,10 +109,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 22 Jul 2019 at 07:56, Stefan Wahren <wahrenst@gmx.net> wrote:
+On Mon, 22 Jul 2019 at 08:24, Stefan Wahren <wahrenst@gmx.net> wrote:
 >
-> Add a new compatible for the additional emmc2 controller
-> on BCM2711 and clearify usage.
+> The additional emmc2 interface of the BCM2711 is an improved version
+> of the old emmc controller, which is able to provide DDR50 mode on the
+> Raspberry Pi 4. Except 32 bit only register access no other quirks are
+> known yet.
 >
 > Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
 
@@ -123,27 +125,31 @@ Uffe
 
 
 > ---
->  Documentation/devicetree/bindings/mmc/brcm,sdhci-iproc.txt | 4 +++-
->  1 file changed, 3 insertions(+), 1 deletion(-)
+>  drivers/mmc/host/sdhci-iproc.c | 9 +++++++++
+>  1 file changed, 9 insertions(+)
 >
-> diff --git a/Documentation/devicetree/bindings/mmc/brcm,sdhci-iproc.txt b/Documentation/devicetree/bindings/mmc/brcm,sdhci-iproc.txt
-> index fa90d25..09d87cc 100644
-> --- a/Documentation/devicetree/bindings/mmc/brcm,sdhci-iproc.txt
-> +++ b/Documentation/devicetree/bindings/mmc/brcm,sdhci-iproc.txt
-> @@ -6,10 +6,12 @@ by mmc.txt and the properties that represent the IPROC SDHCI controller.
->  Required properties:
->  - compatible : Should be one of the following
->                "brcm,bcm2835-sdhci"
-> +              "brcm,bcm2711-emmc2"
->                "brcm,sdhci-iproc-cygnus"
->                "brcm,sdhci-iproc"
+> diff --git a/drivers/mmc/host/sdhci-iproc.c b/drivers/mmc/host/sdhci-iproc.c
+> index 2feb4ef..2b9cdcd 100644
+> --- a/drivers/mmc/host/sdhci-iproc.c
+> +++ b/drivers/mmc/host/sdhci-iproc.c
+> @@ -261,8 +261,17 @@ static const struct sdhci_iproc_data bcm2835_data = {
+>         .mmc_caps = 0x00000000,
+>  };
 >
-> -Use brcm2835-sdhci for Rasperry PI.
-> +Use brcm2835-sdhci for the eMMC controller on the BCM2835 (Raspberry Pi) and
-> +bcm2711-emmc2 for the additional eMMC2 controller on BCM2711.
->
->  Use sdhci-iproc-cygnus for Broadcom SDHCI Controllers
->  restricted to 32bit host accesses to SDHCI registers.
+> +static const struct sdhci_pltfm_data sdhci_bcm2711_pltfm_data = {
+> +       .ops = &sdhci_iproc_32only_ops,
+> +};
+> +
+> +static const struct sdhci_iproc_data bcm2711_data = {
+> +       .pdata = &sdhci_bcm2711_pltfm_data,
+> +};
+> +
+>  static const struct of_device_id sdhci_iproc_of_match[] = {
+>         { .compatible = "brcm,bcm2835-sdhci", .data = &bcm2835_data },
+> +       { .compatible = "brcm,bcm2711-emmc2", .data = &bcm2711_data },
+>         { .compatible = "brcm,sdhci-iproc-cygnus", .data = &iproc_cygnus_data},
+>         { .compatible = "brcm,sdhci-iproc", .data = &iproc_data },
+>         { }
 > --
 > 2.7.4
 >
