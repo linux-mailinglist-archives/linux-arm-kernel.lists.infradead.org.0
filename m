@@ -2,86 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 82581739CD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 21:43:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D68A0739BC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 21:43:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dKuv3FXndN2m8IudkMQz6BgtyO4OsLO656JvXPB0I3U=; b=ZJkhaBaK9IXLNW
-	2LGwWdFWj6xnL7jQtA5ysxqfghEDwi+9Ke4M2T3hQJmJEltCREX+F+OmsMchvhGdZgi7L9/I+kYzS
-	2A7DkFdkhe3hb5+gYTAyVyucpT6JhgU//IdjpjyHT91pPRX7P0hn0E9jM2pcIjfLgoa6b/OXE5tm/
-	ak3AUMT6mgeWAhEHGj0qdLm2VE+2N1v/LLUU50foN9m7Gx+9qUQz9S4Eh5oIJRZCeNl+mXMEtT1fO
-	n/FlVqxrrU1AYwbAjMkQui8Z496wq65qCU5OwCtqgHVn1+G5ODFmIEZ5uudJgGn7u+MFrVmwe/Teu
-	W3YqT2RoiQT8LEa1W67A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qhEdhDfRj64G2uQIYekQXtQaF4XCoSo6muXRw1EFSqQ=; b=k6opqZJsALJqNj
+	xoGBge7kxc+Q4lhPzbXDqBHmPCf0Mm6DEJkCAbr3cj/jMfZV2K9Xfcy9GltXNf3qTG4Q5xfPit+Hx
+	I+4zjKZ/toOkBasKuOZlxRRp2WeU4QFgowwKAPYoW131SQI6WcX5n/nlidjYCQwagwLALleI8NiM0
+	TVX/M//y7AjL4jvjzNYl709u+1SYYM2IZCS50l5+lAT9kMR1c62YHczPIPu+l8FYehVetQsBA8d8W
+	k+1nzzU1ken0XQ88Funjs2kCFB70R1KPGBYlIKbdU6On5Mz2reOEvryP4nJvHXvacYkI2V8qyA9d7
+	S1qFPr/xuKCLr/hwPTyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqNB5-0006DZ-SD; Wed, 24 Jul 2019 19:43:56 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1hqNAe-0005xM-CW; Wed, 24 Jul 2019 19:43:28 +0000
+Received: from mail-wr1-f66.google.com ([209.85.221.66])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqNAk-0006Bp-8Y
- for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 19:43:35 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x6OJgYP0083356;
- Wed, 24 Jul 2019 14:42:34 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1563997354;
- bh=AJm71xiQOBjSdWSqksSb6orWtMZCBYh0pcNBwqXoWdQ=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=kK94ypqr0C9M7sOcw1gFudGjaHNocKLuwvjvdo3NuKOzadWnHKCH0m5/wmXuq59Qi
- SBk4QiMOx+PAaNg8HjZr/fXwwRu/6ahQMFsWaIeGrhb9aPi9n8yaPkpplOtVdVMdMZ
- JAf3XTh2E9j1Fh6PGEVYqIQuBk7Se1H0btTuyF8U=
-Received: from DLEE115.ent.ti.com (dlee115.ent.ti.com [157.170.170.26])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x6OJgYke104572
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Wed, 24 Jul 2019 14:42:34 -0500
-Received: from DLEE109.ent.ti.com (157.170.170.41) by DLEE115.ent.ti.com
- (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Wed, 24
- Jul 2019 14:42:33 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE109.ent.ti.com
- (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Wed, 24 Jul 2019 14:42:33 -0500
-Received: from [128.247.58.153] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x6OJgXvZ096227;
- Wed, 24 Jul 2019 14:42:33 -0500
-Subject: Re: [PATCH 1/6] dt-bindings: irqchip: Add PRUSS interrupt controller
- bindings
-To: Rob Herring <robh@kernel.org>
-References: <20190708035243.12170-1-s-anna@ti.com>
- <20190708035243.12170-2-s-anna@ti.com> <20190724163419.GA29254@bogus>
-From: Suman Anna <s-anna@ti.com>
-Message-ID: <6871c381-9fc6-f6be-6386-f183fcc5546a@ti.com>
-Date: Wed, 24 Jul 2019 14:42:33 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hqNAT-0005wk-69
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 19:43:18 +0000
+Received: by mail-wr1-f66.google.com with SMTP id f9so48171986wre.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 24 Jul 2019 12:43:16 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=dslj9P+lW7e6qJrlTP3vfXS2Cf51Y/kndAh16hKfgsw=;
+ b=PIunvEl5i8pitrptK06glmyybUp61SYx2LLDR/4bO3gx18Y5IJyYzyGzcEDSzkpnIu
+ HEneEVlls4qYAucZjLJtC8kNjl5ClTjtiZSb0l+PIQYk8r8fnAN9wvwFFThxIVbYpBK4
+ qfbpfW5gzZBVmJZCJi+bMrqBCtIPAaHAoQdYmz124++z3ZKYxgOZB6qxtERi/zLjvvbU
+ GnJXV4w1YYIalEMZrzzBbYKLZferg7mTj2Bpu/Lf/B6whdIdY+B8lo64ul8+lECTugTM
+ IZS2kJ6XWf+Tde5NG9/XrIjMMuEi612hiM+qOc0vtYFQCjo9pwyVmtiCByD+89uCCGzx
+ +NWQ==
+X-Gm-Message-State: APjAAAVgxMYj+y0yDDBVO+MQIYr98075lCifNdKezQ0PkZqkaTvYk+lK
+ ZgwSkK1BagDNFkxfoJ7sExc=
+X-Google-Smtp-Source: APXvYqyt/nYi/kv5oSj5A+zQK7NJl5V1Y8FdvyGTPvRoDLXBM1S6Qy2pjonLUX7NnFUtT/p0XDyMQw==
+X-Received: by 2002:a05:6000:1203:: with SMTP id
+ e3mr13281982wrx.300.1563997395606; 
+ Wed, 24 Jul 2019 12:43:15 -0700 (PDT)
+Received: from kozik-lap ([194.230.155.239])
+ by smtp.googlemail.com with ESMTPSA id q10sm50126245wrf.32.2019.07.24.12.43.14
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 24 Jul 2019 12:43:15 -0700 (PDT)
+Date: Wed, 24 Jul 2019 21:43:13 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Guillaume GARDET <guillaume.gardet@free.fr>
+Subject: Re: [PATCH] arm: dts: exynos: Add GPU/Mali T604 node to exynos5250
+Message-ID: <20190724194313.GA1898@kozik-lap>
+References: <20190724072008.6272-1-guillaume.gardet@free.fr>
 MIME-Version: 1.0
-In-Reply-To: <20190724163419.GA29254@bogus>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <20190724072008.6272-1-guillaume.gardet@free.fr>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_124334_405121_617059AD 
-X-CRM114-Status: GOOD (  15.19  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190724_124317_230959_7F916B28 
+X-CRM114-Status: GOOD (  17.05  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.221.66 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (k.kozlowski.k[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.221.66 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,63 +88,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: David Lechner <david@lechnology.com>,
- Grygorii Strashko <grygorii.strashko@ti.com>,
- Jason Cooper <jason@lakedaemon.net>, devicetree@vger.kernel.org,
- Marc Zyngier <marc.zyngier@arm.com>, Sekhar Nori <nsekhar@ti.com>,
- linux-kernel@vger.kernel.org, "Andrew F. Davis" <afd@ti.com>,
- Tony Lindgren <tony@atomide.com>, Murali Karicheri <m-karicheri2@ti.com>,
- linux-arm-kernel@lists.infradead.org, Thomas Gleixner <tglx@linutronix.de>,
- linux-omap@vger.kernel.org, Lokesh Vutla <lokeshvutla@ti.com>,
- Roger Quadros <rogerq@ti.com>
+Cc: linux-samsung-soc@vger.kernel.org, Kukjin Kim <kgene@kernel.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Guillaume GARDET <guillaume.gardet@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 7/24/19 11:34 AM, Rob Herring wrote:
-> On Sun, 7 Jul 2019 22:52:38 -0500, Suman Anna wrote:
->> The Programmable Real-Time Unit Subsystem (PRUSS) contains an interrupt
->> controller (INTC) that can handle various system input events and post
->> interrupts back to the device-level initiators. The INTC can support
->> upto 64 input events on most SoCs with individual control configuration
->> and hardware prioritization. These events are mapped onto 10 interrupt
->> lines through two levels of many-to-one mapping support. Different
->> interrupt lines are routed to the individual PRU cores or to the
->> host CPU or to other PRUSS instances.
->>
->> The K3 AM65x and J721E SoCs have the next generation of the PRU-ICSS IP,
->> commonly called ICSSG. The ICSSG interrupt controller on K3 SoCs provide
->> a higher number of host interrupts (20 vs 10) and can handle an increased
->> number of input events (160 vs 64) from various SoC interrupt sources.
->>
->> Add the bindings document for these interrupt controllers on all the
->> applicable SoCs. It covers the OMAP architecture SoCs - AM33xx, AM437x
->> and AM57xx; the Keystone 2 architecture based 66AK2G SoC; the Davinci
->> architecture based OMAPL138 SoCs, and the K3 architecture based AM65x
->> and J721E SoCs.
->>
->> Signed-off-by: Suman Anna <s-anna@ti.com>
->> Signed-off-by: Andrew F. Davis <afd@ti.com>
->> Signed-off-by: Roger Quadros <rogerq@ti.com>
->> ---
->> Prior version: https://patchwork.kernel.org/patch/10795771/
->>
->>  .../interrupt-controller/ti,pruss-intc.txt    | 92 +++++++++++++++++++
->>  1 file changed, 92 insertions(+)
->>  create mode 100644 Documentation/devicetree/bindings/interrupt-controller/ti,pruss-intc.txt
->>
+Hi,
+
+Thanks for the patch.
+
+On Wed, Jul 24, 2019 at 09:20:08AM +0200, Guillaume GARDET wrote:
+> From: Guillaume GARDET <guillaume.gardet@arm.com>
 > 
-> Reviewed-by: Rob Herring <robh@kernel.org>
+> Add nodes for GPU (Mali T604) to Exynos5250, disabled by default.
+
+Why disabled? If tested I would expect it to be enabled at least on
+tested platforms.
+
+> Tested with kmscube on Chromebook snow.
 > 
+> Signed-off-by: Guillaume GARDET <guillaume.gardet@arm.com>
+> 
+> Cc: Kukjin Kim <kgene@kernel.org>
+> Cc: Krzysztof Kozlowski <krzk@kernel.org>
+> Cc: linux-arm-kernel@lists.infradead.org
+> 
+> ---
+>  arch/arm/boot/dts/exynos5250.dtsi | 47 +++++++++++++++++++++++++++++++
+>  1 file changed, 47 insertions(+)
+> 
+> diff --git a/arch/arm/boot/dts/exynos5250.dtsi b/arch/arm/boot/dts/exynos5250.dtsi
+> index d5e0392b409e..5ce4b2853cf2 100644
+> --- a/arch/arm/boot/dts/exynos5250.dtsi
+> +++ b/arch/arm/boot/dts/exynos5250.dtsi
+> @@ -1097,6 +1097,53 @@
+>  		 */
+>  		clock-frequency = <24000000>;
+>  	};
+> +
+> +	mali: gpu@0x11800000 {
 
-Thanks Rob. I am going to submit a v2 with some minor reword changes
-based on couple of comments, but no addition or removal of properties.
-Should I be retaining your Reviewed-by for v2?
+1. Put the node under /soc (as recently pointed out by Marek Szyprowski)
+in an address-sorted mode... if possible (nodes are mixed so find some
+reasonable place based on address_.
+2. Fix errors from:
+make dtbs W=1
 
-regards
-Suman
+> +		compatible = "samsung,exynos5250-mali", "arm,mali-t604";
 
+You also need to update the bindings.
+
+> +		reg = <0x11800000 0x5000>;
+> +		interrupts = <GIC_SPI 118 IRQ_TYPE_LEVEL_HIGH>,
+> +		             <GIC_SPI 119 IRQ_TYPE_LEVEL_HIGH>,
+
+Please run checkpatch and fix the errors.
+
+> +			     <GIC_SPI 117 IRQ_TYPE_LEVEL_HIGH>;
+> +		interrupt-names = "job", "mmu", "gpu";
+> +		clocks = <&clock CLK_G3D>;
+> +		clock-names = "g3d";
+> +		operating-points-v2 = <&gpu_opp_table>;
+> +		power-domains = <&pd_g3d>;
+> +		status = "disabled";
+> +	};
+> +
+> +	gpu_opp_table: gpu-opp-table {
+
+GPU opp table as subnode of Mali node.
+
+Best regards,
+Krzysztof
 
 
 _______________________________________________
