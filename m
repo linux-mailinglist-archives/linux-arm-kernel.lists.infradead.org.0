@@ -2,54 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 50FD972EF1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 14:36:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A2F772F02
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 24 Jul 2019 14:39:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0dmM+4l5aD2qteNeFe26Fkt4chtMk5VI5+iXaP1KBT4=; b=V4NmHdAfeZkbEh
-	Ku2iUjZNxgSMdaVA7JhvM+3+Wv/EEr419ALbTgR9hqiKZ82FbrZMsVMQIMcGFrR318nuGdK7mL52e
-	IL0deRmDKMUAokwr1AkbxD5xrLxHpypHjy1qb8iXd1Ng9Yjtpm3s5xMEg6zPDrmftSBltsq+8uANV
-	D+UQY9GnuMGKJZjf8GB7B9/H/6Sx4z73P+eKSdm0jcUiKgZYisPmdfD/2xEmCV/UtGZtS/D0H81Hq
-	JcbEntLVrpcR7V8g3J+Ty43mbFlKsZy9N4HB7ZvMRM2ZmPRJFk61jAQDlSNMyxjFXD5QeSWtn3Heg
-	9Tm9VoB3/tqbOi4au0yg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=6JCnBbN4ortg3VRIgIqXi+DUfNdfNWltzxpJnlMG2Ww=; b=r8S
+	hsi0tWdESMx2t9FvW1MBY3PhRGY5YjlODGWn0/TWOjtXMWq5E1fqo8xalr1VbPdx3fiKb2Ajcs7Vq
+	DGljcowQId2CEoKlGS4elUqB9KmBHsEs8p9ttZwifO1jmOd1Uwz7lkT9cUPV8c00LzUWK+3Vyf3Ze
+	1AncQVS9I64dK5WK0DdW6Qln5pvuI862hlUJDfdsHcLpxN69Zk12fWHwJKZYa5aJLpH1sQl5+y5//
+	rUdSFUMHwP44mbs8llKz0aAbNrdsafNk51jlmQoBk/7dNAHDJc1PAQa4OzvcfAxrGluyfdiT7qTdm
+	gEnpY1Vp+4QXPIAYm/xOE2YSpAHEglg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqGVS-0001l4-Kh; Wed, 24 Jul 2019 12:36:30 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hqGVD-0001kD-Fd; Wed, 24 Jul 2019 12:36:17 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7162428;
- Wed, 24 Jul 2019 05:36:14 -0700 (PDT)
-Received: from [10.1.27.173] (unknown [10.1.27.173])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E48793F71A;
- Wed, 24 Jul 2019 05:36:11 -0700 (PDT)
-Subject: Re: [PATCH RFC 18/18] ARM: dts: Add minimal Raspberry Pi 4 support
-To: Marc Zyngier <marc.zyngier@arm.com>, Stefan Wahren <wahrenst@gmx.net>
-References: <1563398164-2679-1-git-send-email-wahrenst@gmx.net>
- <1563398164-2679-5-git-send-email-wahrenst@gmx.net>
- <20190723191326.3afdff83@why> <34b2b928-c078-8898-842b-908a90593932@arm.com>
- <27de7618-57a7-5069-1c22-b45e93999b8c@arm.com>
-From: Vladimir Murzin <vladimir.murzin@arm.com>
-Message-ID: <b5d5e7e5-34dd-e1df-ace0-269bbc12ec05@arm.com>
-Date: Wed, 24 Jul 2019 13:36:10 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
-MIME-Version: 1.0
-In-Reply-To: <27de7618-57a7-5069-1c22-b45e93999b8c@arm.com>
-Content-Language: en-US
+	id 1hqGXx-0002Rd-FE; Wed, 24 Jul 2019 12:39:05 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hqGXm-0002Ph-VM
+ for linux-arm-kernel@lists.infradead.org; Wed, 24 Jul 2019 12:38:56 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 3BC6D1A01FD;
+ Wed, 24 Jul 2019 14:38:51 +0200 (CEST)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
+ [134.27.226.22])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 2D2CB1A0148;
+ Wed, 24 Jul 2019 14:38:51 +0200 (CEST)
+Received: from fsr-ub1864-112.ea.freescale.net
+ (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id ED221205D8;
+ Wed, 24 Jul 2019 14:38:49 +0200 (CEST)
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: MyungJoo Ham <myungjoo.ham@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Will Deacon <will@kernel.org>,
+ Stephen Boyd <sboyd@kernel.org>
+Subject: [RFCv2 0/3] PM / devfreq: Add imx driver
+Date: Wed, 24 Jul 2019 15:38:43 +0300
+Message-Id: <cover.1563971855.git.leonard.crestez@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_053616_190338_18BC70F2 
-X-CRM114-Status: GOOD (  20.81  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190724_053855_152949_E13C817F 
+X-CRM114-Status: UNSURE (   9.59  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -63,68 +67,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
- Florian Fainelli <f.fainelli@gmail.com>, Scott Branden <sbranden@broadcom.com>,
- Stephen Boyd <sboyd@kernel.org>, Ray Jui <rjui@broadcom.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Adrian Hunter <adrian.hunter@intel.com>, Eric Anholt <eric@anholt.net>,
- Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- Mark Brown <broonie@kernel.org>, linux-rpi-kernel@lists.infradead.org,
- Michael Turquette <mturquette@baylibre.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-arm-kernel@lists.infradead.org
+Cc: Dong Aisheng <aisheng.dong@nxp.com>, Mark Rutland <mark.rutland@arm.com>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Jacky Bai <ping.bai@nxp.com>, Anson Huang <Anson.Huang@nxp.com>,
+ linux-pm@vger.kernel.org, Viresh Kumar <viresh.kumar@linaro.org>,
+ Michael Turquette <mturquette@baylibre.com>, Frank Li <Frank.li@nxp.com>,
+ NXP Linux Team <linux-imx@nxp.com>, linux-kernel@vger.kernel.org,
+ Chanwoo Choi <cw00.choi@samsung.com>, devicetree@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Alexandre Bailon <abailon@baylibre.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>, Georgi Djakov <georgi.djakov@linaro.org>,
+ linux-arm-kernel@lists.infradead.org, Abel Vesa <abel.vesa@nxp.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
+This series attempts to add devfreq support for imx8mm, covering dynamic
+scaling of internal buses and dram.
 
-On 7/24/19 11:41 AM, Marc Zyngier wrote:
-> Hi Vladimir,
-> 
-> On 24/07/2019 10:51, Vladimir Murzin wrote:
->> On 7/23/19 7:13 PM, Marc Zyngier wrote:
->>>> +	arm-pmu {
->>>> +		/*
->>>> +		 * N.B. the A72 PMU support only exists in arch/arm64, hence
->>>> +		 * the fallback to the A53 version.
->>>> +		 */
->>>> +		compatible = "arm,cortex-a72-pmu", "arm,cortex-a53-pmu";
->>> You're thus guaranteed to count the wrong events... And you could at
->>> least have "arm,armv8-pmuv3".
->>>
->>
->> Isn't "arm,armv8-pmuv3" still "only exists in arch/arm64" (along with "arm,cortex-a53-pmu")?
-> 
-> Absolutely. And yet this is describing the HW, not the shortcomings of
-> the kernel. I want to be able to take the same DT and run it on the
-> 64bit kernel.
-> 
+Actual scaling is performed through the clk framework: The NOC and main
+NICs are driven by composite clks and a new 'imx8m-dram' clk is used for
+scaling dram using firmware calls.
 
-Agreed. I was confused by comment block which describes software side of things rather than hardware.
+Frequency target is set via "clk_set_min_rate", this allows an unrelated
+subsystem (for example interconnect) to also request minimum rates as a
+form for proactive scaling.
 
-@Stefan, can you, please, update compatible per Marc suggestion, i.e
+The dram controller (DDRC) has a performance monitoring block attached
+for which a perf driver already exists. Instead of reimplementing that
+as devfreq-events the perf in-kernel API is used.
 
-compatible = "arm,cortex-a72-pmu", "arm,armv8-pmuv3";
+Changes since v2:
+* Solve review comments
+* Add yaml binding doc
+* Add perf event support
+Link to v2: https://patchwork.kernel.org/patch/11021571/
 
-and remove that comment block?
+DRAM frequency switching through clk framework is here:
+* https://patchwork.kernel.org/patch/11049429/
+That part might not be accepted in clk and it might have to be moved to
+devfreq also.
 
->> P.S.
->> Yes, I remember you posted some related patches in a past yet they never hit mainline :(
-> 
-> Will wanted me to repaint the whole of the 32bit perf code. I may end-up
-> doing that in the future if I get some idle time (but don't hold your
-> breath).
-> 
+Leonard Crestez (3):
+  dt-bindings: devfreq: Add initial bindings for i.MX
+  PM / devfreq: Add imx driver
+  PM / devfreq: Add imx perf event support
 
-:)
+ .../devicetree/bindings/devfreq/imx.yaml      |  59 ++++
+ drivers/devfreq/Kconfig                       |  10 +
+ drivers/devfreq/Makefile                      |   1 +
+ drivers/devfreq/imx-devfreq.c                 | 278 ++++++++++++++++++
+ 4 files changed, 348 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/devfreq/imx.yaml
+ create mode 100644 drivers/devfreq/imx-devfreq.c
 
-Thanks
-Vladimir
-
-> 	M.
-> 
+-- 
+2.17.1
 
 
 _______________________________________________
