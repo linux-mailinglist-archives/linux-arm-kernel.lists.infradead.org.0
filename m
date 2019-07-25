@@ -2,71 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C3133742D5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 03:18:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA7C7742DB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 03:24:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uNhktnm52102KI76U6leSA/C8ga+pbrrPb/g9QOSyVQ=; b=a/OC3BlcXX//rF
-	sdFynmEVf/fQy/xRgsrcRLtCdzO3gf3tc/CApwvQeWWOwSK8FoqCynD9ocvG6bEnPJlvV8FwaiIx7
-	mooWX7kRD22B/FQAG//FOCM71pUWk7x1JJkoUwHlQvZgHr3/uLXIcmL5RACZdBbLtriB+0MIyvwBu
-	ZAjjK/JMlPJDHl47UKd6NLlw/2cjUT2Xu2ymotqYSITBTMPhuMf0qE5dek5bM9fPe5yR4nRW96I22
-	sQkQiGmu64YYinXjVTedSI04kQg0jInew8Tng/HV+vpqJ/7aqIdHsu14dkOL4H/gRXeuJNaaUu0Dp
-	EXob9LaXilVQL6YRKBtw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=wVbU1sbfULF8Y9rwmJrBD/ddx9G5BzjEiwYLM6He7Xc=; b=MoxFslr4G4eKS+zeb1Wga8Sxb
+	jQTrIT79IYQ5rZ6wDtxKjz0tFZ4HOt/q7kXFtkzgmPE/SK1urLDIdtyrSSYNUy5RTY4344ZGOss9p
+	43wILOlH17Wvp8QqEzjBZUCjoFLDEMS7bJ+ubV5Ttp6nLzVQKvwjZWJ5y0mDg2xG40s95sPJH6tIg
+	GPTD6f/jmuGfX8tyO+CC+CVS69X2yCnyi/sdy+wqsL6vb0lTo2PEoxTf43NVBsG7+rppzPdpYnu/v
+	ofp+1hqKX5PZs2QBOx6wNMejdmUw7Nf6QvWpOg8KT2EFAdwZaA5kKyC3I4//Dt0+RyZOjW/r7gKr2
+	F3Tu4QrbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqSP1-0005Js-DS; Thu, 25 Jul 2019 01:18:39 +0000
-Received: from smtprelay0084.hostedemail.com ([216.40.44.84]
- helo=smtprelay.hostedemail.com)
+	id 1hqSUz-00071x-Q1; Thu, 25 Jul 2019 01:24:50 +0000
+Received: from esa3.hgst.iphmx.com ([216.71.153.141])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqSOo-0005Is-62
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 01:18:27 +0000
-Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
- [216.40.38.60])
- by smtprelay06.hostedemail.com (Postfix) with ESMTP id 5FF5818026238;
- Thu, 25 Jul 2019 01:18:21 +0000 (UTC)
-X-Session-Marker: 6A6F6540706572636865732E636F6D
-X-Spam-Summary: 2, 0, 0, , d41d8cd98f00b204, joe@perches.com, :::::::::::::::::,
- RULES_HIT:41:355:379:599:800:960:973:988:989:1260:1277:1311:1313:1314:1345:1359:1431:1437:1515:1516:1518:1534:1541:1593:1594:1711:1730:1747:1777:1792:2198:2199:2393:2553:2559:2562:2828:2911:3138:3139:3140:3141:3142:3352:3622:3867:3872:4321:4425:5007:10004:10400:10848:11026:11232:11473:11657:11658:11914:12043:12296:12297:12438:12555:12740:12760:12895:12986:13069:13161:13229:13311:13357:13439:14096:14097:14181:14659:14721:21080:21451:21611:21627:30054:30090:30091,
- 0,
- RBL:23.242.196.136:@perches.com:.lbl8.mailshell.net-62.8.0.180 64.201.201.201,
- CacheIP:none, Bayesian:0.5, 0.5, 0.5, Netcheck:none, DomainCache:0,
- MSF:not bulk, SPF:fn, MSBL:0, DNSBL:neutral, Custom_rules:0:0:0, LFtime:26,
- LUA_SUMMARY:none
-X-HE-Tag: rain11_48b2601630360
-X-Filterd-Recvd-Size: 2496
-Received: from XPS-9350.home (cpe-23-242-196-136.socal.res.rr.com
- [23.242.196.136]) (Authenticated sender: joe@perches.com)
- by omf02.hostedemail.com (Postfix) with ESMTPA;
- Thu, 25 Jul 2019 01:18:19 +0000 (UTC)
-Message-ID: <4e5bc8d61436024a30a8fb6a1516e29e23a75ede.camel@perches.com>
-Subject: Re: [PATCH 03/12] drm: aspeed_gfx: Fix misuse of GENMASK macro
-From: Joe Perches <joe@perches.com>
-To: Andrew Jeffery <andrew@aj.id.au>, Andrew Morton
- <akpm@linux-foundation.org>,  Joel Stanley <joel@jms.id.au>
-Date: Wed, 24 Jul 2019 18:18:18 -0700
-In-Reply-To: <4f6709f8-381f-415c-8569-798b074b66c5@www.fastmail.com>
-References: <cover.1562734889.git.joe@perches.com>
- <cddd7ad7e9f81dec1e86c106f04229d21fc21920.1562734889.git.joe@perches.com>
- <2a0c5ef5c7e20b190156908991e4c964a501d80a.camel@perches.com>
- <4f6709f8-381f-415c-8569-798b074b66c5@www.fastmail.com>
-User-Agent: Evolution 3.30.5-0ubuntu0.18.10.1 
+ id 1hqSUg-00070v-89; Thu, 25 Jul 2019 01:24:31 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
+ t=1564017870; x=1595553870;
+ h=subject:to:cc:references:from:message-id:date:
+ mime-version:in-reply-to:content-transfer-encoding;
+ bh=p+jTfu4cIazD5eixTiPopv5has0130QcUTKO/yKoUes=;
+ b=mEyy7VVhzwtkA9+0C+6hlbHXsG7x3CUnIZy+ZJumyjgAXwtIswN7mJdl
+ jDAgT5XUeVCeTn/9NftaV2LWN8sXgzrrW2LP4kueNyZ4IDI1p4FWgkRPH
+ 2d8yOI6fMyiX+vsfsoJ+cbEGg2H/SiRxFapZ9lUQho54HJK97nbgsTgiy
+ cFmZc/HW8+Cqngwy5xUIH2ZWzsKGBJfDxUJiwujL3srL+vMk2aAC0BSfX
+ laKd5ul9xADThxLtUdw6VUyFvdi0t91Gi+UIElgYa37Z8w9mESDH9ZB6q
+ U2Q6ZGcf8i+E7OPcNEH5cGt47XR3MBCoiIYIbTYlw2rfl0un/MT+wKuMI Q==;
+IronPort-SDR: fqBvd+9hf8yTa+Z2TvDA5JgsLnjtwcKYJZnSS5tYQA914Bl4oCZVoMUkQ3g2UPG89JxhgFo6a2
+ /vF0+zclONdyutf7vVUn/5w0nne2VGa0IH2YqyDfPNmeqgPvVh/mNY03mZVMLlXvYCSZBrjJAv
+ gLmaxWAur9mwF7MZXLAR8glpoQGDFAyGaUm26ttV63kAYLWmjSmYmbIEVb6VnSo3lRWZSCzIWT
+ sOplgskktMhfIE55M+mmcyBKPFFgaIgVbMz9zr4u0AKA/2+q7wfyq7WlKufrjaegVck/TRj8wl
+ IvQ=
+X-IronPort-AV: E=Sophos;i="5.64,304,1559491200"; d="scan'208";a="118681831"
+Received: from h199-255-45-15.hgst.com (HELO uls-op-cesaep02.wdc.com)
+ ([199.255.45.15])
+ by ob1.hgst.iphmx.com with ESMTP; 25 Jul 2019 09:24:26 +0800
+IronPort-SDR: te6sJyns275o4+/eg1wdrIys7xiTSkDK6ChDUOU1WqLp6QzuPv8XtVzgXfB/ha/xamJ6Y23deF
+ 0aOTJ/oXitM9Q+BFF/0DqFnTawaQHE9QPzKBt8PmiNmtQpFE9myu9GdGoFYr6/52sxiNPEd+Pp
+ Q5nq0J4UvCWPHve0kSvpIjpGAVW5RMYs+dJOto/5t0lokzADfI/jRNKH4zek/fb1Ywarcso+cL
+ kDV37ftOGiJYaWsbxToR6jDnyJJUQd6ulKrqIB8bE8qhjkhAKft+CMSvJVr8ChxZt3dPYEaJJO
+ qpujwd0y1o6KjJfDT11UJMZI
+Received: from uls-op-cesaip02.wdc.com ([10.248.3.37])
+ by uls-op-cesaep02.wdc.com with ESMTP; 24 Jul 2019 18:22:37 -0700
+IronPort-SDR: V40xfE9gili+44NnP3tPlPZ2UZfyLw5G2k1ffUp3o9aNa94g6a0EQQzDNiFNIxamCt67BvNlyN
+ ZGvjsXZempGW2czFlejGBR0PiLWWQ4yDXhugkuGPBv9/uk+J7VPYqwZAAbktNZCMUFnKT+3hn3
+ /sfby85RS1py25X+dAL4O6KmG/qeVSPieHigi0K0Y1S1wB2ZAnHQykLenqJL5RQjpChOQpUYrV
+ pes/KNeXeL28/On8K5wifkMeeQnVLcCOOZmbtYE8vB3ccGhofWq+D1uFHJxa1UXS+9DbKpCq5c
+ O0I=
+Received: from r6220.sdcorp.global.sandisk.com (HELO [192.168.1.2])
+ ([10.196.157.143])
+ by uls-op-cesaip02.wdc.com with ESMTP; 24 Jul 2019 18:24:23 -0700
+Subject: Re: [PATCH v8 0/7] Unify CPU topology across ARM & RISC-V
+To: Paul Walmsley <paul.walmsley@sifive.com>
+References: <20190627195302.28300-1-atish.patra@wdc.com>
+ <alpine.DEB.2.21.9999.1907121012050.2267@viisi.sifive.com>
+ <alpine.DEB.2.21.9999.1907221224170.23563@viisi.sifive.com>
+From: Atish Patra <atish.patra@wdc.com>
+Message-ID: <ea88d4f4-eff8-adba-3135-0d480f501d48@wdc.com>
+Date: Wed, 24 Jul 2019 18:24:22 -0700
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
+ Gecko/20100101 Thunderbird/60.8.0
 MIME-Version: 1.0
+In-Reply-To: <alpine.DEB.2.21.9999.1907221224170.23563@viisi.sifive.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_181826_295806_2509C11F 
-X-CRM114-Status: GOOD (  11.58  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190724_182430_411349_5D905E00 
+X-CRM114-Status: GOOD (  13.68  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.40.44.84 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.153.141 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,46 +101,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-aspeed@lists.ozlabs.org, David Airlie <airlied@linux.ie>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Daniel Vetter <daniel@ffwll.ch>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <Mark.Rutland@arm.com>,
+ "Rafael J. Wysocki" <rafael@kernel.org>,
+ "Peter Zijlstra \(Intel\)" <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>, Palmer Dabbelt <palmer@sifive.com>,
+ Will Deacon <will.deacon@arm.com>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ "linux-riscv@lists.infradead.org" <linux-riscv@lists.infradead.org>,
+ Will Deacon <will@kernel.org>, Ingo Molnar <mingo@kernel.org>,
+ Anup Patel <anup@brainfault.org>, Russell King <linux@armlinux.org.uk>,
+ Morten Rasmussen <morten.rasmussen@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Albert Ou <aou@eecs.berkeley.edu>, Johan Hovold <johan@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Jeremy Linton <jeremy.linton@arm.com>, Otto Sabart <ottosabart@seberm.com>,
+ Sudeep Holla <sudeep.holla@arm.com>, "David S. Miller" <davem@davemloft.net>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2019-07-25 at 10:40 +0930, Andrew Jeffery wrote:
+On 7/22/19 12:25 PM, Paul Walmsley wrote:
+> On Fri, 12 Jul 2019, Paul Walmsley wrote:
 > 
-> On Thu, 25 Jul 2019, at 02:46, Joe Perches wrote:
-> > On Tue, 2019-07-09 at 22:04 -0700, Joe Perches wrote:
-> > > Arguments are supposed to be ordered high then low.
-> > > 
-> > > Signed-off-by: Joe Perches <joe@perches.com>
-> > > ---
-> > >  drivers/gpu/drm/aspeed/aspeed_gfx.h | 2 +-
-> > >  1 file changed, 1 insertion(+), 1 deletion(-)
-> > > 
-> > > diff --git a/drivers/gpu/drm/aspeed/aspeed_gfx.h b/drivers/gpu/drm/aspeed/aspeed_gfx.h
-> > > index a10358bb61ec..095ea03e5833 100644
-> > > --- a/drivers/gpu/drm/aspeed/aspeed_gfx.h
-> > > +++ b/drivers/gpu/drm/aspeed/aspeed_gfx.h
-> > > @@ -74,7 +74,7 @@ int aspeed_gfx_create_output(struct drm_device *drm);
-> > >  /* CTRL2 */
-> > >  #define CRT_CTRL_DAC_EN			BIT(0)
-> > >  #define CRT_CTRL_VBLANK_LINE(x)		(((x) << 20) & CRT_CTRL_VBLANK_LINE_MASK)
-> > > -#define CRT_CTRL_VBLANK_LINE_MASK	GENMASK(20, 31)
-> > > +#define CRT_CTRL_VBLANK_LINE_MASK	GENMASK(31, 20)
+>> On Thu, 27 Jun 2019, Atish Patra wrote:
+>>
+>>> The cpu-map DT entry in ARM can describe the CPU topology in much better
+>>> way compared to other existing approaches. RISC-V can easily adopt this
+>>> binding to represent its own CPU topology. Thus, both cpu-map DT
+>>> binding and topology parsing code can be moved to a common location so
+>>> that RISC-V or any other architecture can leverage that.
+>>> different config for the architectures that do not support them.
+>>
+>> Once v5.3-rc1 is released, let's plan to get these patches rebased and
+>> reposted and into linux-next as soon as possible.
 > 
-> Reviewed-by: Andrew Jeffery <andrew@aj.id.au>
+> These CPU topology patches are now queued for v5.4-rc1.  They should enter
+> linux-next shortly.
+> 
+> 
+> - Paul
+> 
 
-This hardly needs a review, it needs to be applied.
-There's a nominal git tree for aspeed here:
+Thanks!!
 
-T:	git git://git.kernel.org/pub/scm/linux/kernel/git/joel/aspeed.git
-
-But who's going to do apply this?
-
-
+-- 
+Regards,
+Atish
 
 _______________________________________________
 linux-arm-kernel mailing list
