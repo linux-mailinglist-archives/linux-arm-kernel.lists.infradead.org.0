@@ -2,85 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A516757EE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 21:32:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CAB475832
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 21:43:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7YwTrJNEABXJVQJ7zGVt5MGLjN9irLD5Fe2c9/ebVyc=; b=UPoR/1GuaskHiP
-	WRJL5KzyzdCMh5g0v54NdMIV+nfcsUTA+6Bxv4c3UHRUVeR3pDRz/+HhGj04kYADdZrD6iFqDmlXD
-	uZHmEhRRM5gB0kbQ+OU6r4vzDIQrQTdUGgfC4hpcs89frFlsR3gv0QbWwBPqMACgwOu4ZF/SdXpfn
-	S9OqJ+dC5nXUb+ikrlujTgxzSgLDgkI8l1isFH+CKM5TZv/xO8czOp2UiLHe+PQFDZaTM5d/XU9pz
-	DAziGMoaQSMe1/9z15iu0c0ISoC2caoKl/MWja6qo/kej1DFXbzw2vvNFbQDJQsUh4vic709KQneb
-	nEGneeOQG/cKBy/tTr+w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=xEO/kqchDKty5fl67snKcHgh5AwctwVYd60wqsijAoI=; b=Gi7
+	DNDNLW2R2yDQ6athoS262ayM2CMAM04kxzg4QTEgDQKG9L+okNE1+tnKsvfbV9MZZ6FEmm+RxtX8/
+	zh6cFCvpqFeRpS6fcP7F+MoGD21tNjIs/35kQpWDgBdEQclliCJ9BOEb6X+62MEFx8OgNg3J5fhga
+	Ge4Y+ehnEqZ89or2wzv+1pPWl97qLPOhvLdt+ywmz9autuxE3v5uxTVyANf6ZunPF/GhLOOrHFlKm
+	rfcNj8iP30t0P7wl82LZCZ0mmsFHcSnjHghvib9w11e/dsPvvfBFlNQ/OlfxJ0tpoNtSVrJKmaduV
+	YbO1YNwRlMztdVeFeGyyaM6bd2ezWVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqjTt-0005L4-N2; Thu, 25 Jul 2019 19:32:49 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1hqjeA-0001VV-SY; Thu, 25 Jul 2019 19:43:26 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqjTb-0005Kb-P4
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 19:32:32 +0000
-Received: by mail-lj1-x242.google.com with SMTP id m23so49029792lje.12
+ id 1hqjds-0001RA-ID
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 19:43:10 +0000
+Received: by mail-wm1-x341.google.com with SMTP id v19so45767599wmj.5
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 25 Jul 2019 12:32:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Kp0EWNt1hJYOLXDTYlF7zykP3Zq2TsBvXEhXEloAP6c=;
- b=C4AxvAwobnSSddWK24zoACbWa2WjxylpFNge6tKlmOW+LLRo+AXD/ZpOa2ItZLWQ0V
- rca8/YgVzcRihbJdusIc8NP6R3JF6C/L5frSIAc/ApkYxB0wzAc/FRwDJCtahPQgb0Hs
- n6AYQKp2AyOCm6dUCMFiWExIrr7KlAr2OSGThds/zl6FzBQwutPcxhg8gmCHra/5nXrQ
- IFypJzMVv81BoUmg/179zDv95k+wq9BmQCIE/v38M6QgpT2vp1mZDuyRiUPuPDsu6wJo
- ThpgtWT10jqE3omLZRtngj0C7o/10Ew8qAXeJP224fMyanvN2BdJ790hY3vFN7KL3lgf
- A13w==
+ Thu, 25 Jul 2019 12:43:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id;
+ bh=HpwqwqbOJStimlLPjV2WsSVvFoS5zR7dipevAmhXn+I=;
+ b=UQg/tDmQSfp9ChPaHt8EGlDQzZ6S/EdbxNg82he/Mzh8kwJ1qDpcDDkFMwLldt0cJc
+ lCF8BYMyw+DpR0ybV0yCoNWYL08yFyuTbTqO6aSQREaMO43xW88KfpTm8GecjxL8rJGw
+ GyauPYbXAUfd+wepxHqkp3tFKGMm0w8zorbYNjo6KTprUZWLwZ/Fo8VRDIu+/lxrhFXM
+ eDgKBYvOFPyY6b3EkW8UL0kebH0JQ+M7KxuybGZKYAD/kf7iDXT6S2sTLL26ra0MIe4W
+ Qa6E4+gr7U08eq2pNnQbGEPANNHi3nhHnEMX5iaonM8eETL+dQ37+c+wg0iR530FfwHU
+ Nk5Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Kp0EWNt1hJYOLXDTYlF7zykP3Zq2TsBvXEhXEloAP6c=;
- b=laS0PnH9UVHpTAFTCkwoBW6HLmwiaV1NhOodDyqjiXlfL0Tv2mAt2JaLK1Mh70Ndvh
- FLpfBuS0QZnJTq2tC25UVdrnCD1OeL5F99P9huNXJNT2ypcUmR97T1dKFJIAin1EErEi
- Hj4jLKvUzj2zC5z7Xvew/JzsS5ocnB0N8hLcgzzMo3B52Px43dkcG3o9ReHaz2RTzki5
- K0NIXTqEI/8oOEXyfQ4k56+/CB+XMTGodfsQrL2oYN78tcO/MyD24kDQzGUzTe9BG7T/
- 6uyaI2Puq4uAD7q7TeglXb5KeXzHquMpT7uK29XhYH999o9EvQFqmLSmeLnsTLsXQjxb
- xavw==
-X-Gm-Message-State: APjAAAUO4pMmzLCFRObXVYrf3PIGJnxevDsdr5GIAjRzdMuXoTSQAJ2J
- pXhb9U96tyiFgIKcXgmYJXG/Zx3ZDGfCJZ2IzZc=
-X-Google-Smtp-Source: APXvYqyDf3rdKYXqiXUlgdRjLq+Vaz3jmCLYtBCYErQSevesbRjPKuJmugaeK1C2zffMG++H1hJFxitGJxEZjTaH6lU=
-X-Received: by 2002:a2e:5dc6:: with SMTP id v67mr47345282lje.240.1564083149838; 
- Thu, 25 Jul 2019 12:32:29 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190712204316.16783-1-TheSven73@gmail.com>
- <CAGngYiVb_-A4Au749GD6SKi=UqKKBm4yxim8YOCbgVjfz7xtvg@mail.gmail.com>
-In-Reply-To: <CAGngYiVb_-A4Au749GD6SKi=UqKKBm4yxim8YOCbgVjfz7xtvg@mail.gmail.com>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Thu, 25 Jul 2019 16:32:31 -0300
-Message-ID: <CAOMZO5CrUZ1C0i8ofuiG8thsPgfxPiY5XOnvUsmnkYYSKJBMNQ@mail.gmail.com>
-Subject: Re: [PATCH 1/2] bus: imx-weim: optionally enable burst clock mode
-To: Sven Van Asbroeck <thesven73@gmail.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=HpwqwqbOJStimlLPjV2WsSVvFoS5zR7dipevAmhXn+I=;
+ b=cyMSpzST9Bdx7IDRG8rbk9DA73phKfuBOgZdzfuZHkAT+GsM8KyFPg1eQ17Jo29ncp
+ okI9lbNgX3iClNErqKe7nk2ioZBoGWozOVRnnRAekWp9RuLYy4x0cyf9jmTsrjPCcD61
+ OMpTI+gKoCLbpwQroLOL0AEBchVPaH3ujgw2BtDKHWaCgqMwizCO8ccYfvjBMjfFNzKe
+ DA9gXTQYRfrkp3UBRjjo9M7ryxEoGawv8SnVipa7gPSeWoAeLu5m/2zd5h2L6hSdX8sC
+ loW6GWuNcdy9eQuGZxeE5pvICFtxUt95AOSjoYOZMGKXxYPGO2ZnSPnTGRHcV61QCZMP
+ VtCw==
+X-Gm-Message-State: APjAAAWYkXUUxlYftJiRTB/Srv/k5/YKUX2K/0q2SZlxvqJomLD8uas8
+ t27Bq1zfKXGpjNb09Y9hh2/fVA==
+X-Google-Smtp-Source: APXvYqxpAh0jfU//NVh88rL1qSwss1rtJWAjuYNhw8soBe0yFJ+ERG4l4cq/Ofn+pyhmxoEsDSGiRA==
+X-Received: by 2002:a1c:cb43:: with SMTP id b64mr82451700wmg.86.1564083786567; 
+ Thu, 25 Jul 2019 12:43:06 -0700 (PDT)
+Received: from localhost.localdomain ([51.15.160.169])
+ by smtp.googlemail.com with ESMTPSA id
+ y16sm103410662wrg.85.2019.07.25.12.43.05
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Thu, 25 Jul 2019 12:43:05 -0700 (PDT)
+From: Corentin Labbe <clabbe@baylibre.com>
+To: davem@davemloft.net, herbert@gondor.apana.org.au, khilman@baylibre.com,
+ mark.rutland@arm.com, robh+dt@kernel.org
+Subject: [PATCH 0/4] crypto: add amlogic crypto offloader driver
+Date: Thu, 25 Jul 2019 19:42:52 +0000
+Message-Id: <1564083776-20540-1-git-send-email-clabbe@baylibre.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_123231_811861_C51EC862 
-X-CRM114-Status: UNSURE (   9.64  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190725_124308_628998_8903132C 
+X-CRM114-Status: GOOD (  10.10  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -94,35 +90,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Kees Cook <keescook@chromium.org>,
- Arnd Bergmann <arnd@arndb.de>, Sascha Hauer <s.hauer@pengutronix.de>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, baylibre-upstreaming@groups.io,
+ linux-kernel@vger.kernel.org, linux-crypto@vger.kernel.org,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Corentin Labbe <clabbe@baylibre.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sven,
+Hello
 
-On Thu, Jul 25, 2019 at 11:30 AM Sven Van Asbroeck <thesven73@gmail.com> wrote:
->
-> On Fri, Jul 12, 2019 at 4:43 PM Sven Van Asbroeck <thesven73@gmail.com> wrote:
-> >
-> > To enable burst clock mode, add the fsl,burst-clk-enable
-> > property to the weim bus's devicetree node.
-> >
->
-> Any feedback on this patch, positive or negative?
+This serie adds support for the crypto offloader present on amlogic GXL
+SoCs.
 
-Looks good to me:
+Tested on meson-gxl-s905x-khadas-vim and meson-gxl-s905x-libretech-cc
 
-Reviewed-by: Fabio Estevam <festevam@gmail.com>
+Regards
+
+Corentin Labbe (4):
+  dt-bindings: crypto: Add DT bindings documentation for amlogic-crypto
+  crypto: amlogic: Add crypto accelerator for amlogic GXL
+  MAINTAINERS: Add myself as maintainer of amlogic crypto
+  ARM64: dts: amlogic: adds crypto hardware node
+
+ .../bindings/crypto/amlogic-gxl-crypto.yaml   |  45 +++
+ MAINTAINERS                                   |   7 +
+ arch/arm64/boot/dts/amlogic/meson-gxl.dtsi    |  11 +
+ drivers/crypto/Kconfig                        |   2 +
+ drivers/crypto/Makefile                       |   1 +
+ drivers/crypto/amlogic/Kconfig                |  24 ++
+ drivers/crypto/amlogic/Makefile               |   2 +
+ drivers/crypto/amlogic/amlogic-cipher.c       | 358 ++++++++++++++++++
+ drivers/crypto/amlogic/amlogic-core.c         | 326 ++++++++++++++++
+ drivers/crypto/amlogic/amlogic.h              | 172 +++++++++
+ 10 files changed, 948 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/crypto/amlogic-gxl-crypto.yaml
+ create mode 100644 drivers/crypto/amlogic/Kconfig
+ create mode 100644 drivers/crypto/amlogic/Makefile
+ create mode 100644 drivers/crypto/amlogic/amlogic-cipher.c
+ create mode 100644 drivers/crypto/amlogic/amlogic-core.c
+ create mode 100644 drivers/crypto/amlogic/amlogic.h
+
+-- 
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
