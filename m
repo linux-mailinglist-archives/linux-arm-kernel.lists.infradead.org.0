@@ -2,33 +2,35 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E6DCE74745
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 08:34:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8586A74758
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 08:34:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=tOpBZP+bXadGRc22DG21YqLQAWNH9RVQfRicnioGDRQ=; b=Vrshq2Fm1NI+PN
-	hgCZc9XgOFmOa4+Khf724N9+D1xtZE2kbtO7B0oarlarEaeGeJLCimTQg6pNnit8+/5GtpnT1ZaPT
-	syyYIAbdwFOvycEu2Fz0ln0nKyX1D1bSb/KRLw/kNTuC3lh5CEiUKTqNjVjbnF13R1LVJ+MkTC4VT
-	vI0jx0Q1YXMoypz7Jtdu1X+L5OWsEhMUPy4hCxhZw0N+9tLxmmLQp/+szNhw4XXLqSu1+eCtv7Wio
-	zk5DE75W62lvorkTCUtDZbVUvv3ma5i12+zV2Lq429sfJi8IrvRZrFqTLccuwn+JLzXpyBuNL1W+G
-	Q7w4RuxZvgFxQSK1Y4XQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CvLgTobxwwzEZEJKWVnoZnRs2HVh918m9bOB3XdMPUM=; b=BKytHhS/NAdmxt
+	kSY+ZpL+vyP+ahZzOSy8K2mpCOU2iBZl3RDUiY2BDeBgXqRGEhdTw5j7kKW3IvatFg+93bxVirB6W
+	0Ail3qN4x+RGGkQOFtK0gmOOdkuXAMKsIazOjznQI9aAvMQbLbNtuQuKXiOvpabqLjsKktaRs7gZK
+	YZ7EOhmOKcroxzXrOjxyMdorhDhYwgKD82OjrhcHH2xbWkzALD6P5txncYxRHDnu7ZdfR3wCnfPDt
+	+2V2JlVtU4NI+qDyJCVJ++vVAa7aKHHMvDmjFCspKViyI5edGpsBEgrHTsBv1S0LnRbr4nv3ceTBk
+	NO1tsGiLXbaL0cxmUWAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqXKZ-0000GH-5M; Thu, 25 Jul 2019 06:34:23 +0000
+	id 1hqXL3-0000VV-3h; Thu, 25 Jul 2019 06:34:53 +0000
 Received: from p57b3f613.dip0.t-ipconnect.de ([87.179.246.19] helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hqXKH-0000FL-DN; Thu, 25 Jul 2019 06:34:05 +0000
+ id 1hqXKJ-0000Fp-Pl; Thu, 25 Jul 2019 06:34:08 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: iommu@lists.linux-foundation.org,
  Marek Szyprowski <m.szyprowski@samsung.com>
-Subject: remove default fallbacks in dma_map_ops
-Date: Thu, 25 Jul 2019 08:33:56 +0200
-Message-Id: <20190725063401.29904-1-hch@lst.de>
+Subject: [PATCH 1/5] m68knommu: add a pgprot_noncached stub
+Date: Thu, 25 Jul 2019 08:33:57 +0200
+Message-Id: <20190725063401.29904-2-hch@lst.de>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190725063401.29904-1-hch@lst.de>
+References: <20190725063401.29904-1-hch@lst.de>
 MIME-Version: 1.0
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -51,19 +53,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi all,
+Provide a pgprot_noncached like all the other nommu ports so that
+common code can rely on it being able to be present.  Note that this is
+generally code that is not actually run on nommu, but at least we can
+avoid nasty ifdefs by having a stub.
 
-we have a few places where the DMA mapping layer has non-trivial default
-actions that are questionable and/or dangerous.
+Signed-off-by: Christoph Hellwig <hch@lst.de>
+---
+ arch/m68k/include/asm/pgtable_no.h | 2 ++
+ 1 file changed, 2 insertions(+)
 
-This series instead wires up the mmap, get_sgtable and get_required_mask
-methods explicitly and cleans up some surrounding areas.  This also means
-we could get rid of the ARCH_NO_COHERENT_DMA_MMAP kconfig option, as we
-now require a mmap method wired up, or in case of non-coherent dma-direct
-the presence of the arch_dma_coherent_to_pfn hook.  The only interesting
-case is that the sound code also checked the ARCH_NO_COHERENT_DMA_MMAP
-symbol in somewhat odd ways, so I'd like to see a review of the sound
-situation before going forward with that patch.
+diff --git a/arch/m68k/include/asm/pgtable_no.h b/arch/m68k/include/asm/pgtable_no.h
+index fc3a96c77bd8..06194c7ba151 100644
+--- a/arch/m68k/include/asm/pgtable_no.h
++++ b/arch/m68k/include/asm/pgtable_no.h
+@@ -29,6 +29,8 @@
+ #define PAGE_READONLY	__pgprot(0)
+ #define PAGE_KERNEL	__pgprot(0)
+ 
++#define pgprot_noncached(prot)   (prot)
++
+ extern void paging_init(void);
+ #define swapper_pg_dir ((pgd_t *) 0)
+ 
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
