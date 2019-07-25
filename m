@@ -2,71 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2524F757D6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 21:27:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A516757EE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 21:32:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pAX9DHjb4eW+IG/aoaCpXITz3hfGdlug4E7ZbbadLIE=; b=UqBKsRm+wutwOF
-	nsYGjQtkAjNwOxosMs/yrKyBrtHMnTzrrme74PsqpQIrRlhXw6D5GeR8icnJkC7YHN3FTgkrWcU4O
-	t4q+Vzcv37t6rOR/IAosslS7X9Px4wNYPhRfVaXc9LTtghom8Bw2L3EEnM33nqK351/F5KkGl3hVI
-	aQfUQXQ+EpOLKroglpdwxdC3uzs4oAXBPGmFiqpbsOfw1JxhGgJlVTNM2MarxMW86eIT4T6FuQSdw
-	ZKgHRQNcFW1LlPEtx97on1ExvYG8LV/TCm7ZX/e8myycIgBNToDinHqirLC9M//oUdvY6mqvnRW9S
-	gXC0d3nv7eeljdzbW9+w==;
+	List-Owner; bh=7YwTrJNEABXJVQJ7zGVt5MGLjN9irLD5Fe2c9/ebVyc=; b=UPoR/1GuaskHiP
+	WRJL5KzyzdCMh5g0v54NdMIV+nfcsUTA+6Bxv4c3UHRUVeR3pDRz/+HhGj04kYADdZrD6iFqDmlXD
+	uZHmEhRRM5gB0kbQ+OU6r4vzDIQrQTdUGgfC4hpcs89frFlsR3gv0QbWwBPqMACgwOu4ZF/SdXpfn
+	S9OqJ+dC5nXUb+ikrlujTgxzSgLDgkI8l1isFH+CKM5TZv/xO8czOp2UiLHe+PQFDZaTM5d/XU9pz
+	DAziGMoaQSMe1/9z15iu0c0ISoC2caoKl/MWja6qo/kej1DFXbzw2vvNFbQDJQsUh4vic709KQneb
+	nEGneeOQG/cKBy/tTr+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqjOM-0002qc-8Z; Thu, 25 Jul 2019 19:27:06 +0000
-Received: from mout.kundenserver.de ([212.227.126.130])
+	id 1hqjTt-0005L4-N2; Thu, 25 Jul 2019 19:32:49 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqjO6-0002q3-QZ
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 19:26:52 +0000
-Received: from linux-e202.suse.de ([46.85.222.234]) by
- mrelayeu.kundenserver.de (mreue011 [212.227.15.167]) with ESMTPSA (Nemesis)
- id 1MK3FW-1i6l8X259S-00LTjb; Thu, 25 Jul 2019 21:26:43 +0200
-From: Fabian Vogt <fabian@ritter-vogt.de>
-To: Linus Walleij <linus.walleij@linaro.org>
-Subject: Re: [PATCH 1/3] RFT: drm/pl111: Support grayscale
-Date: Thu, 25 Jul 2019 21:26:41 +0200
-Message-ID: <12154694.e2V3OH3Rcx@linux-e202.suse.de>
-In-Reply-To: <CACRpkdYAgLJ9asftN5EafeN5EVEyH_xHVdwjbecZqvgz-JJ98A@mail.gmail.com>
-References: <20190723133755.22677-1-linus.walleij@linaro.org>
- <1709073.y2qmsckc0Q@linux-e202.suse.de>
- <CACRpkdYAgLJ9asftN5EafeN5EVEyH_xHVdwjbecZqvgz-JJ98A@mail.gmail.com>
+ id 1hqjTb-0005Kb-P4
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 19:32:32 +0000
+Received: by mail-lj1-x242.google.com with SMTP id m23so49029792lje.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 25 Jul 2019 12:32:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Kp0EWNt1hJYOLXDTYlF7zykP3Zq2TsBvXEhXEloAP6c=;
+ b=C4AxvAwobnSSddWK24zoACbWa2WjxylpFNge6tKlmOW+LLRo+AXD/ZpOa2ItZLWQ0V
+ rca8/YgVzcRihbJdusIc8NP6R3JF6C/L5frSIAc/ApkYxB0wzAc/FRwDJCtahPQgb0Hs
+ n6AYQKp2AyOCm6dUCMFiWExIrr7KlAr2OSGThds/zl6FzBQwutPcxhg8gmCHra/5nXrQ
+ IFypJzMVv81BoUmg/179zDv95k+wq9BmQCIE/v38M6QgpT2vp1mZDuyRiUPuPDsu6wJo
+ ThpgtWT10jqE3omLZRtngj0C7o/10Ew8qAXeJP224fMyanvN2BdJ790hY3vFN7KL3lgf
+ A13w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Kp0EWNt1hJYOLXDTYlF7zykP3Zq2TsBvXEhXEloAP6c=;
+ b=laS0PnH9UVHpTAFTCkwoBW6HLmwiaV1NhOodDyqjiXlfL0Tv2mAt2JaLK1Mh70Ndvh
+ FLpfBuS0QZnJTq2tC25UVdrnCD1OeL5F99P9huNXJNT2ypcUmR97T1dKFJIAin1EErEi
+ Hj4jLKvUzj2zC5z7Xvew/JzsS5ocnB0N8hLcgzzMo3B52Px43dkcG3o9ReHaz2RTzki5
+ K0NIXTqEI/8oOEXyfQ4k56+/CB+XMTGodfsQrL2oYN78tcO/MyD24kDQzGUzTe9BG7T/
+ 6uyaI2Puq4uAD7q7TeglXb5KeXzHquMpT7uK29XhYH999o9EvQFqmLSmeLnsTLsXQjxb
+ xavw==
+X-Gm-Message-State: APjAAAUO4pMmzLCFRObXVYrf3PIGJnxevDsdr5GIAjRzdMuXoTSQAJ2J
+ pXhb9U96tyiFgIKcXgmYJXG/Zx3ZDGfCJZ2IzZc=
+X-Google-Smtp-Source: APXvYqyDf3rdKYXqiXUlgdRjLq+Vaz3jmCLYtBCYErQSevesbRjPKuJmugaeK1C2zffMG++H1hJFxitGJxEZjTaH6lU=
+X-Received: by 2002:a2e:5dc6:: with SMTP id v67mr47345282lje.240.1564083149838; 
+ Thu, 25 Jul 2019 12:32:29 -0700 (PDT)
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:OwjadK/hsEvg+BHwMVvckELquXvXqT2tyKgIoTLKnIscWoIqkP2
- ipBL4z3QCiWuyeEF8/Wgz8GFTsRGUmO1twYAc33gIFnFe8N0fTurmjn7f4lbrDIosy5R8MF
- leQMkIjNrUrNE+hGDbu/Atp+RKN/fx0gDUFTB63xBd6R5Uwz3k171KWQHEm7+7miCSzOFWf
- /UN4FntLamb+rVH7G7tug==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:sqxGA4puMoo=:puBMl99fP7z3udiRCleJ+Y
- HaqOMRMUGZf7VZDoE+vcyPPB5bU0kH0LufHBgAJQFPleGy8gBFipTR2bI28GMkTGHnJg0VVIO
- C0H1rhgTMVv7FDkUnNiQmG459iyWKqmB8ENW9ofu1ILjwCKMCLxYdIm5QOh+cbWHJgVrFIyEy
- 1/ZvqreBGeiRXN76c6wSb0BhkdUF9nhcn6rU3ObAxYErdAAsarYq0wGrohWTnz7EniyimSCvQ
- xd51rPXnw4G/p09nB/IAtjnvhCnbtQI2325xpyV2rP9QTbDm4L+oJKIwEcLx6UUhcVTPHOfUg
- leQw+t7S0wQeK+ix+ZRVwJVtFmxZTSHArX6yl5yZ2anJo3QmZzE3waE4EDrLJZhvgmy0dvNhm
- FoZQFfS/9m/lsVCGYFZyVqFEIPp71EX3YAHhj1ncrOXP5+Aonmwhqi84gptkAATg2pA6BfM2r
- j6SketTXpcqxSKLs9AfxhmuF2xrR8+RTaiJ9DpUZvEpMelbPDwODwamISSoweehl2wUg3sCwD
- mViU/HYipIfA2q3uHSI8Pq5F+qUyou4K95mIIMO6DD0RZBml1kFAZx4hdDpb24wmpT47zCC2D
- tf3LxYDsiVDJrTllfZ2sVzFpBCaE357H0yxAltas5Ef52BL0lEIIGu8QWEY7ln4tzyptT9UkB
- YT0i3UDZZd9X9YKIsZUaNCoP5i1Q1+z76cN1cFW66M0Fs1WkI8C0e2aCMkIGPFO/kcVvMix05
- 25xSIPJoLoxXV47qUB2KvO6JcaINPCU+ZDDEGb1lpUdKWdUg6M4adNu7AiM=
+References: <20190712204316.16783-1-TheSven73@gmail.com>
+ <CAGngYiVb_-A4Au749GD6SKi=UqKKBm4yxim8YOCbgVjfz7xtvg@mail.gmail.com>
+In-Reply-To: <CAGngYiVb_-A4Au749GD6SKi=UqKKBm4yxim8YOCbgVjfz7xtvg@mail.gmail.com>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Thu, 25 Jul 2019 16:32:31 -0300
+Message-ID: <CAOMZO5CrUZ1C0i8ofuiG8thsPgfxPiY5XOnvUsmnkYYSKJBMNQ@mail.gmail.com>
+Subject: Re: [PATCH 1/2] bus: imx-weim: optionally enable burst clock mode
+To: Sven Van Asbroeck <thesven73@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_122651_149820_7EEC9FC5 
-X-CRM114-Status: GOOD (  13.68  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190725_123231_811861_C51EC862 
+X-CRM114-Status: UNSURE (   9.64  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.130 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.130 listed in wl.mailspike.net]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (festevam[at]gmail.com)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,57 +94,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Daniel Tang <dt.tangr@gmail.com>,
- "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, Kees Cook <keescook@chromium.org>,
+ Arnd Bergmann <arnd@arndb.de>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Hi Sven,
 
-Am Mittwoch, 24. Juli 2019, 14:33:06 CEST schrieb Linus Walleij:
-> On Tue, Jul 23, 2019 at 5:19 PM Fabian Vogt <fabian@ritter-vogt.de> wrote:
-> 
-> > I gave the series a try (virtual CX and TP so far, will do on a real CX later):
-> > OOPS with a nullptr deref during probe.
-> > This diff which just moves some lines around fixes that and the LCD appears to
-> > work properly.
-> 
-> OK I folded this into my patch, thanks!
-> 
-> > Once I verified the 24bit depth and clock speed config on HW as well, I can
-> > give you my Tested-by, or would you prefer that I resubmit your series with the
-> > fix below?
-> 
-> It's fine if you test it just with your patch as-is, I didn't change anything
-> else.
-> 
-> I would be amazed if it "just works" now.
+On Thu, Jul 25, 2019 at 11:30 AM Sven Van Asbroeck <thesven73@gmail.com> wrote:
+>
+> On Fri, Jul 12, 2019 at 4:43 PM Sven Van Asbroeck <thesven73@gmail.com> wrote:
+> >
+> > To enable burst clock mode, add the fsl,burst-clk-enable
+> > property to the weim bus's devicetree node.
+> >
+>
+> Any feedback on this patch, positive or negative?
 
-Indeed, you won't be. On a real CX the LCD displays shows content without
-any other changes to the set, but has a ~3Hz pulsating effect scrolling from
-the top to the bottom and the gray text changes color slightly.
+Looks good to me:
 
-Without the patchset applied everything looks perfectly.
-
-I tried setting vrefresh to 20, fb_bpp to 16 and forcing an inverted panel
-clock, but the pulsing didn't change.
-
-Using the emulated CX I compared the contents of the registers and found
-that only the IPC bit (which I tried to set, so that's likely not it) and
-the interrupt registers have a different content.
-
-Any idea?
-
-Thanks,
-Fabian
-
-> Yours,
-> Linus Walleij
-
-
+Reviewed-by: Fabio Estevam <festevam@gmail.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
