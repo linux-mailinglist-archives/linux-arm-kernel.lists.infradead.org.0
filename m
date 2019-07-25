@@ -2,132 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0AAF74914
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 10:26:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0D68C74921
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 10:29:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	References:MIME-Version:Message-ID:In-Reply-To:Date:Subject:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=IBOjLJf6/AuDizVGbeg06jhuGk0kOx9vFOe0YOsQJWc=; b=aM2GAUjGCpqBe/tr16dMZ1ix9
-	70DSeiL7F/SlHO8Myn+r1T9LRSULIqmyRvXTpO7DE9UnXwXI6Uo+YedHjauYaLu4mv/NDftLtQADx
-	yufUrVXeJNX3Eim3WOYawZiaJSTpeV746tV91Ip38pjktZ0hWseciSrPk95jWiG33sQRahgvoDQ99
-	pfl8e/OfUgDxSSjPCG/X35WVZC6HK4h/6634JOfqGt6P1UUVm5scfVcA+/t8pPVqCn50T1AORZ+G6
-	fzq8lCU2nc7jC7IhHY3zHHPUANJVmDFxpb+T+frtYbCx36FOaMV3wdrJjphZaQwgEeeKFpLCuPK2T
-	nCn1uoC3w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=o/AfKef2SVVYjT31u2Pr/RmHhoazelYDRQzvHkGTW5Q=; b=G3PcaQV7cPIOfe
+	hTbIvOkgMTx5y+E28rRWznlchbfLuOAWnUYPsIi3d+xokY9Yq3qRreIPnlZwtECxEfs0jECoLCnJX
+	D41O8WDuzsr89+tinQdGd2Wc5HOtb0VQ768AGkTCdUe+48QNQ1CmS5x3TV+8yTGHJvsqdWEkOwetv
+	+lBEeIybt3J6OQrxRhdkYrgns54msKA+zE5OTh/KhxGHNWHo7++VAVAAQclrBwLsWO4/KELd1K8ll
+	GrA40JXIs14tZbNYP8kG7lRTxZvDVL8F1X6PjU/hLh4UtfyAgkI8c+6M6Bu07vdREcj/wFgwMY8uG
+	eF0nwJWGgqYW1lv0yckg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqZ4v-0000uV-Cy; Thu, 25 Jul 2019 08:26:21 +0000
-Received: from mailout2.w1.samsung.com ([210.118.77.12])
+	id 1hqZ7Z-0001MJ-Uy; Thu, 25 Jul 2019 08:29:06 +0000
+Received: from mail-qt1-f171.google.com ([209.85.160.171])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqZ4h-0000u4-Au
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 08:26:09 +0000
-Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
- by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
- 20190725082604euoutp0298369481026adc27ece657c7cd5fd8e3~0mPi3EqjD2558325583euoutp026;
- Thu, 25 Jul 2019 08:26:04 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
- 20190725082604euoutp0298369481026adc27ece657c7cd5fd8e3~0mPi3EqjD2558325583euoutp026
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1564043164;
- bh=gLlrYGwYAg2QhLg8MnOUjG5G1VY9PY6suInEcRfdv34=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=g+76une2oMCdnfZamXlpJ5U+2ejcyxsxJ5AjJaCx8Rp9YMgCVUQ4zxaaATjlR3rtA
- cl3AswDcEMMPQ46SW+qZ0cw+LrQJZamd1YvXy/f6A2ZaGe0VVTO9YRMuC2WHJiwI41
- t6imSkLV+wzfhrN45Kp14N6570da0aFXe70fIh5s=
-Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTP id
- 20190725082604eucas1p2c4947128af3e9e7521558d942abf491f~0mPiaDKa42775827758eucas1p2A;
- Thu, 25 Jul 2019 08:26:04 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges2new.samsung.com (EUCPMTA) with SMTP id 27.36.04377.B97693D5; Thu, 25
- Jul 2019 09:26:03 +0100 (BST)
-Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
- 20190725082603eucas1p205a74e93ec8ce40a1decf9cefcaa970c~0mPhuTa-l1858618586eucas1p2I;
- Thu, 25 Jul 2019 08:26:03 +0000 (GMT)
-Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
- eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20190725082603eusmtrp1c1935d1b20d18d2010f33f620834ee09~0mPhtaZ1N2022620226eusmtrp1u;
- Thu, 25 Jul 2019 08:26:03 +0000 (GMT)
-X-AuditID: cbfec7f4-113ff70000001119-e9-5d39679b63f3
-Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
- eusmgms2.samsung.com (EUCPMTA) with SMTP id 14.35.04140.B97693D5; Thu, 25
- Jul 2019 09:26:03 +0100 (BST)
-Received: from localhost (unknown [106.120.51.46]) by eusmtip1.samsung.com
- (KnoxPortal) with ESMTPA id
- 20190725082603eusmtip14f6485b9301b1e4daf78576861c67994~0mPhjBqMH2354123541eusmtip1L;
- Thu, 25 Jul 2019 08:26:03 +0000 (GMT)
-From: =?utf-8?Q?=C5=81ukasz_Stelmach?= <l.stelmach@samsung.com>
-To: Chuhong Yuan <hslester96@gmail.com>
-Subject: Re: [PATCH] hwrng: Use device-managed registration API
-Date: Thu, 25 Jul 2019 10:25:53 +0200
-In-Reply-To: <20190725080155.19875-1-hslester96@gmail.com> (Chuhong Yuan's
- message of "Thu, 25 Jul 2019 16:01:55 +0800")
-Message-ID: <87wog6frla.fsf%l.stelmach@samsung.com>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/24.5 (gnu/linux)
+ id 1hqZ7L-0001Ky-0F
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 08:28:52 +0000
+Received: by mail-qt1-f171.google.com with SMTP id r6so44035764qtt.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 25 Jul 2019 01:28:49 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to;
+ bh=W9gVDQuWc00uLJaqP5LZiohnBPPDA5P8er6pMpADl+8=;
+ b=CEFypJzWdDddwLv7/GcuG2tGCQqGJtYfZeWU8POB1S+H0jhiHsANjyp3f9es4XkEFB
+ eZe367y7Y4n8bcnlxa45HUV1QlKANSHRAovExZUeRdH8jblMt45DsjJidv80YS5yhRMl
+ oU9m2s+jgdNrFAzYNP2KRxd+2aQI9+IkepRn+6qISjXFEWZowBpAAFr/y2aONGXyy6qY
+ CYZXWTYqZNHOv/VSBgBve6wA6FZ0Yh60I7O9qBoF56Uslexg2v5m1+f3hqOXQELTZKm5
+ 5qMf3GpX0Z6HJAvS3FTSfwzptXpJfZdP56wk8sa2oyUIE7iO0S4Y8b1g61NFVaVVjkQ6
+ 7faA==
+X-Gm-Message-State: APjAAAWzWoLAKTaxOCh/+hf78Kf7Q6dS6VtQnms/P3NAUNoG8BEycQVo
+ 7Xd+MbP3861Ijtgvovs8046LYw==
+X-Google-Smtp-Source: APXvYqypxxYh1SBYrdx7sBULiRodWoRyZYhZUU0NIqTYlxg9WD9pqSvNPlHTYL+xZ+kptrKYhL64aw==
+X-Received: by 2002:aed:3667:: with SMTP id e94mr55831866qtb.382.1564043329003; 
+ Thu, 25 Jul 2019 01:28:49 -0700 (PDT)
+Received: from redhat.com (bzq-79-181-91-42.red.bezeqint.net. [79.181.91.42])
+ by smtp.gmail.com with ESMTPSA id
+ z21sm19762286qto.48.2019.07.25.01.28.41
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Thu, 25 Jul 2019 01:28:48 -0700 (PDT)
+Date: Thu, 25 Jul 2019 04:28:39 -0400
+From: "Michael S. Tsirkin" <mst@redhat.com>
+To: Jason Wang <jasowang@redhat.com>
+Subject: Re: WARNING in __mmdrop
+Message-ID: <20190725042651-mutt-send-email-mst@kernel.org>
+References: <20190723010019-mutt-send-email-mst@kernel.org>
+ <b4696f2e-678a-bdb2-4b7c-fb4ce040ec2a@redhat.com>
+ <20190723032024-mutt-send-email-mst@kernel.org>
+ <1d14de4d-0133-1614-9f64-3ded381de04e@redhat.com>
+ <20190723035725-mutt-send-email-mst@kernel.org>
+ <3f4178f1-0d71-e032-0f1f-802428ceca59@redhat.com>
+ <20190723051828-mutt-send-email-mst@kernel.org>
+ <caff362a-e208-3468-3688-63e1d093a9d3@redhat.com>
+ <20190725012149-mutt-send-email-mst@kernel.org>
+ <55e8930c-2695-365f-a07b-3ad169654d28@redhat.com>
 MIME-Version: 1.0
-X-Brightmail-Tracker: H4sIAAAAAAAAA01Se0yTVxz19nvSreRS2fitA7N0El9BN9jIJXtJsiU3LlvGsmSBjWDVL4ij
- rbaAAkvomI+J8BVhblDQyDrAIAIBrLZRlEpghJmOKCgiOsfmoOh0gW1VlKz0q4n/nXt+55zf
- I1dktKd5nZhjypMsJkOunlezrv4HvoS67JTMV6p7k8i+v5oE8riqXyD3S/cwZF/1vyrytbOd
- Jwf8saTOO80Q++QMQ3y+DoF0To5y5OaNBypyyVPPkxpfj4rM/7fAkakTVzjSbfPy5KhLRuRU
- VwND6n8aQaS1zymsj6bzD6sQPdJaTH+YtrHU7ZgQqOt8PC2/s5ujnS37eXrucKtAu34sob6a
- BkSvBxoRndy9h6GHPTKi8nQHon8EzjJ0tnPZRzhD/eYWKTenQLKse3ujeuvImTlh+7kPdp0d
- 7WVsSE4tQxEi4NfA577IlSG1qMXHELicU4LymEMwttfNKo9ZBOMNHtUTyz/jtnChGUGz7Az7
- /0Qw9V0/WlTx+B2w9/Wwizgar4BZjzuUy2CZhyMtw6HC0qAo4KgUFjGL4+Fvhz/ER+AiqC29
- FuI1OAnmxi6FWj+HU+CGPMErfBQM1v4e0jPYCLW+O0gZ774I7Te3KfhdkA82cQpeCv6BbkHB
- sTBUXR70ikFcAtVVyYuzAS4PHqA+wCqaN+DCwHDYmwr+a32coo+Eq3ejlLaRUOX6nlFoDXyz
- V6uol0Ob/Uw4RQcV/mPhySiUNi4g5VYVCCbuyVwlesnx1DaOp7ZxBGMZvAraPesUeg00Ncww
- Cn4L2trusUcR14JipHyrMVuyJpqknWutBqM135S9drPZ2ImCf3hoYWDuNPI82uRFWET6ZzXi
- JpKp5QwF1kKjFy0PJv3WcfwXpGNNZpOkj9ak2ZIztZothsIiyWLOsuTnSlYvelFk9TGa4iW/
- fqbF2YY86QtJ2i5ZnlRVYoTOhsoTZi7zGfxDnBi5o8O+69PL3RtSem99K+jVBT238fnHd+Oi
- B1e6M26lksDzX37V8nnecMLJ9A2F3UJs2vz7S8zpzgz7/olTae99oko21mUNeWvLToy87hg8
- TrZ5LmpXsK3jvfaf481xL49XfMjpP36h61FOyWzlM1lZcTpv09ihxig9a91qeHU1Y7Ea/gee
- /5wmywMAAA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA02Se0hTYRjG+XbOdqY1OE2lr9F1GGWX2bam3yrL/jsQUlEQZaJjHabpNtmZ
- kUY5TDFnTbMgm5dS01CnrVmakppLrLAwKJUuXkorzdTCe5p1thH43/M+z+954YWXjwntXBE/
- RmekDTpVnJjnjbcvPuvZnqdRRuzIf+mD0sfKCPQnp41AP1PSMJR+bZqDLpbc46HM76tRnnMY
- Q1kDIxjq6LATyDHQxUV9vXMc9KYhn4dyO5o4aH5mkYuGqrq56IHJyUO3ay0A1dUUYSj/eSdA
- ttYSItSXmv+dA6hC2zmqeNiEU/XWHoKqfbKRuvwjlUs5KjJ4VHOBjaBq7iRTHblFgPo4Wwqo
- gdQ0jCposADKMmwH1JfZRoyacKw9RJ6Q7DHoE4z0+mg9YwwRh0uRTCJVIolsp1IilQdH7JIp
- xIF795yi42LO0IbAvVGS6M7Hk0R8c9jZxq4WzAQs+83Aiw/JnXDqgwk3A2++kCwFcDStmx34
- bCCC5QUaD+MDF7rMPA/zBcCH1+oIV8Aj98Gs1ibcpX3JTXCioZ5wQRg5x4V/21OAK/BhoVlr
- trsgJJXw8pUqt4+TG+Ev63d32YtMgjdT3rsZASmHk+/ecFzaj+V7LT08j78Cvrg56OYxMhZO
- VX7DsgFpXRJZl0RW9gaMDID3GgI99lZYVjSCeXQIrK4ex28DbgXwpRMYrUbLyCSMSssk6DQS
- tV7rAOyH1LbNPXgEzGNHnIDkA/FyQW4/ihByVWeYRK0T+LNrPtsrXwMRrtPraLGv4LApKEIo
- OKVKTKIN+khDQhzNOIGCvfMqJvJT69nf0xkjpQppMFJKg+XB8iAkXim4RLacFJIalZGOpel4
- 2vC/x+F7iUzg6n1Y51e5SjR2rCh897KtfUZ1XORU1N16B97u83XwYGKYpDtrVDbYH5Dy6kbP
- 28Jyo/8tLOP40UsKNKSoKaYH5tUbCueTs0OvjHwaX6wSxwbqGjeXXtdN2tT2Znlh7MKPzOqT
- VQe2CDLSX50+mxm0LeBC69Pp8/G2qDXmdXkzQX1inIlWSbdgBkb1Dz+/ZIdDAwAA
-X-CMS-MailID: 20190725082603eucas1p205a74e93ec8ce40a1decf9cefcaa970c
-X-Msg-Generator: CA
-X-RootMTR: 20190725082603eucas1p205a74e93ec8ce40a1decf9cefcaa970c
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20190725082603eucas1p205a74e93ec8ce40a1decf9cefcaa970c
-References: <20190725080155.19875-1-hslester96@gmail.com>
- <CGME20190725082603eucas1p205a74e93ec8ce40a1decf9cefcaa970c@eucas1p2.samsung.com>
+Content-Disposition: inline
+In-Reply-To: <55e8930c-2695-365f-a07b-3ad169654d28@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_012607_719722_002235C8 
-X-CRM114-Status: GOOD (  20.92  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190725_012851_051897_40DC0B6E 
+X-CRM114-Status: GOOD (  29.26  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.12 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.160.171 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.160.171 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -139,329 +91,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Deepak Saxena <dsaxena@plexity.net>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Herbert Xu <herbert@gondor.apana.org.au>, Arnd Bergmann <arnd@arndb.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Krzysztof Kozlowski <krzk@kernel.org>,
- Patrice Chotard <patrice.chotard@st.com>, linux-samsung-soc@vger.kernel.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Kukjin Kim <kgene@kernel.org>, Paul Mackerras <paulus@samba.org>,
- Michael Ellerman <mpe@ellerman.id.au>, Matt Mackall <mpm@selenic.com>,
- linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
- linux-crypto@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============6410347474508996272=="
+Cc: mhocko@suse.com, peterz@infradead.org, ldv@altlinux.org,
+ james.bottomley@hansenpartnership.com, linux-mm@kvack.org, namit@vmware.com,
+ mingo@kernel.org, elena.reshetova@intel.com, keescook@chromium.org,
+ aarcange@redhat.com, davem@davemloft.net, hch@infradead.org,
+ christian@brauner.io,
+ syzbot <syzbot+e58112d71f77113ddb7b@syzkaller.appspotmail.com>,
+ syzkaller-bugs@googlegroups.com, jglisse@redhat.com, viro@zeniv.linux.org.uk,
+ linux-arm-kernel@lists.infradead.org, wad@chromium.org,
+ linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ luto@amacapital.net, ebiederm@xmission.com, akpm@linux-foundation.org,
+ guro@fb.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============6410347474508996272==
-Content-Type: multipart/signed; boundary="=-=-="; micalg="pgp-sha256";
-	protocol="application/pgp-signature"
-
---=-=-=
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-
-It was <2019-07-25 czw 10:01>, when Chuhong Yuan wrote:
-> Use devm_hwrng_register to simplify the implementation.
-> Manual unregistration and some remove functions can be
-> removed now.
->
-> Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
-> ---
->  drivers/char/hw_random/atmel-rng.c     |  3 +--
->  drivers/char/hw_random/cavium-rng-vf.c | 11 +----------
->  drivers/char/hw_random/exynos-trng.c   |  3 +--
->  drivers/char/hw_random/n2-drv.c        |  4 +---
->  drivers/char/hw_random/nomadik-rng.c   |  3 +--
->  drivers/char/hw_random/omap-rng.c      |  3 +--
->  drivers/char/hw_random/powernv-rng.c   | 10 +---------
->  drivers/char/hw_random/st-rng.c        |  4 +---
->  drivers/char/hw_random/xgene-rng.c     |  4 +---
->  9 files changed, 9 insertions(+), 36 deletions(-)
->
-
-Acked-by: =C5=81ukasz Stelmach <l.stelmach@samsung.com>
-
-> diff --git a/drivers/char/hw_random/atmel-rng.c b/drivers/char/hw_random/=
-atmel-rng.c
-> index 433426242b87..e55705745d5e 100644
-> --- a/drivers/char/hw_random/atmel-rng.c
-> +++ b/drivers/char/hw_random/atmel-rng.c
-> @@ -86,7 +86,7 @@ static int atmel_trng_probe(struct platform_device *pde=
-v)
->  	trng->rng.name =3D pdev->name;
->  	trng->rng.read =3D atmel_trng_read;
->=20=20
-> -	ret =3D hwrng_register(&trng->rng);
-> +	ret =3D devm_hwrng_register(&pdev->dev, &trng->rng);
->  	if (ret)
->  		goto err_register;
->=20=20
-> @@ -103,7 +103,6 @@ static int atmel_trng_remove(struct platform_device *=
-pdev)
->  {
->  	struct atmel_trng *trng =3D platform_get_drvdata(pdev);
->=20=20
-> -	hwrng_unregister(&trng->rng);
->=20=20
->  	atmel_trng_disable(trng);
->  	clk_disable_unprepare(trng->clk);
-> diff --git a/drivers/char/hw_random/cavium-rng-vf.c b/drivers/char/hw_ran=
-dom/cavium-rng-vf.c
-> index 2d1352b67168..3de4a6a443ef 100644
-> --- a/drivers/char/hw_random/cavium-rng-vf.c
-> +++ b/drivers/char/hw_random/cavium-rng-vf.c
-> @@ -67,7 +67,7 @@ static int cavium_rng_probe_vf(struct	pci_dev		*pdev,
->=20=20
->  	pci_set_drvdata(pdev, rng);
->=20=20
-> -	ret =3D hwrng_register(&rng->ops);
-> +	ret =3D devm_hwrng_register(&pdev->dev, &rng->ops);
->  	if (ret) {
->  		dev_err(&pdev->dev, "Error registering device as HWRNG.\n");
->  		return ret;
-> @@ -76,14 +76,6 @@ static int cavium_rng_probe_vf(struct	pci_dev		*pdev,
->  	return 0;
->  }
->=20=20
-> -/* Remove the VF */
-> -static void  cavium_rng_remove_vf(struct pci_dev *pdev)
-> -{
-> -	struct cavium_rng *rng;
-> -
-> -	rng =3D pci_get_drvdata(pdev);
-> -	hwrng_unregister(&rng->ops);
-> -}
->=20=20
->  static const struct pci_device_id cavium_rng_vf_id_table[] =3D {
->  	{ PCI_DEVICE(PCI_VENDOR_ID_CAVIUM, 0xa033), 0, 0, 0},
-> @@ -95,7 +87,6 @@ static struct pci_driver cavium_rng_vf_driver =3D {
->  	.name		=3D "cavium_rng_vf",
->  	.id_table	=3D cavium_rng_vf_id_table,
->  	.probe		=3D cavium_rng_probe_vf,
-> -	.remove		=3D cavium_rng_remove_vf,
->  };
->  module_pci_driver(cavium_rng_vf_driver);
->=20=20
-> diff --git a/drivers/char/hw_random/exynos-trng.c b/drivers/char/hw_rando=
-m/exynos-trng.c
-> index 94235761955c..b4b52ab23b6b 100644
-> --- a/drivers/char/hw_random/exynos-trng.c
-> +++ b/drivers/char/hw_random/exynos-trng.c
-> @@ -153,7 +153,7 @@ static int exynos_trng_probe(struct platform_device *=
-pdev)
->  		goto err_clock;
->  	}
->=20=20
-> -	ret =3D hwrng_register(&trng->rng);
-> +	ret =3D devm_hwrng_register(&pdev->dev, &trng->rng);
->  	if (ret) {
->  		dev_err(&pdev->dev, "Could not register hwrng device.\n");
->  		goto err_register;
-> @@ -179,7 +179,6 @@ static int exynos_trng_remove(struct platform_device =
-*pdev)
->  {
->  	struct exynos_trng_dev *trng =3D  platform_get_drvdata(pdev);
->=20=20
-> -	hwrng_unregister(&trng->rng);
->  	clk_disable_unprepare(trng->clk);
->=20=20
->  	pm_runtime_put_sync(&pdev->dev);
-> diff --git a/drivers/char/hw_random/n2-drv.c b/drivers/char/hw_random/n2-=
-drv.c
-> index d4cab105796f..2d256b3470db 100644
-> --- a/drivers/char/hw_random/n2-drv.c
-> +++ b/drivers/char/hw_random/n2-drv.c
-> @@ -768,7 +768,7 @@ static int n2rng_probe(struct platform_device *op)
->  	np->hwrng.data_read =3D n2rng_data_read;
->  	np->hwrng.priv =3D (unsigned long) np;
->=20=20
-> -	err =3D hwrng_register(&np->hwrng);
-> +	err =3D devm_hwrng_register(&pdev->dev, &np->hwrng);
->  	if (err)
->  		goto out_hvapi_unregister;
->=20=20
-> @@ -793,8 +793,6 @@ static int n2rng_remove(struct platform_device *op)
->=20=20
->  	cancel_delayed_work_sync(&np->work);
->=20=20
-> -	hwrng_unregister(&np->hwrng);
-> -
->  	sun4v_hvapi_unregister(HV_GRP_RNG);
->=20=20
->  	return 0;
-> diff --git a/drivers/char/hw_random/nomadik-rng.c b/drivers/char/hw_rando=
-m/nomadik-rng.c
-> index fc0f6b0cb80d..74ed29f42e4f 100644
-> --- a/drivers/char/hw_random/nomadik-rng.c
-> +++ b/drivers/char/hw_random/nomadik-rng.c
-> @@ -57,7 +57,7 @@ static int nmk_rng_probe(struct amba_device *dev, const=
- struct amba_id *id)
->  	if (!base)
->  		goto out_release;
->  	nmk_rng.priv =3D (unsigned long)base;
-> -	ret =3D hwrng_register(&nmk_rng);
-> +	ret =3D devm_hwrng_register(&dev->dev, &nmk_rng);
->  	if (ret)
->  		goto out_release;
->  	return 0;
-> @@ -71,7 +71,6 @@ static int nmk_rng_probe(struct amba_device *dev, const=
- struct amba_id *id)
->=20=20
->  static int nmk_rng_remove(struct amba_device *dev)
->  {
-> -	hwrng_unregister(&nmk_rng);
->  	amba_release_regions(dev);
->  	clk_disable(rng_clk);
->  	return 0;
-> diff --git a/drivers/char/hw_random/omap-rng.c b/drivers/char/hw_random/o=
-map-rng.c
-> index e9b6ac61fb7f..b27f39688b5e 100644
-> --- a/drivers/char/hw_random/omap-rng.c
-> +++ b/drivers/char/hw_random/omap-rng.c
-> @@ -500,7 +500,7 @@ static int omap_rng_probe(struct platform_device *pde=
-v)
->  	if (ret)
->  		goto err_register;
->=20=20
-> -	ret =3D hwrng_register(&priv->rng);
-> +	ret =3D devm_hwrng_register(&pdev->dev, &priv->rng);
->  	if (ret)
->  		goto err_register;
->=20=20
-> @@ -525,7 +525,6 @@ static int omap_rng_remove(struct platform_device *pd=
-ev)
->  {
->  	struct omap_rng_dev *priv =3D platform_get_drvdata(pdev);
->=20=20
-> -	hwrng_unregister(&priv->rng);
->=20=20
->  	priv->pdata->cleanup(priv);
->=20=20
-> diff --git a/drivers/char/hw_random/powernv-rng.c b/drivers/char/hw_rando=
-m/powernv-rng.c
-> index f2e8272e276a..8da1d7917bdc 100644
-> --- a/drivers/char/hw_random/powernv-rng.c
-> +++ b/drivers/char/hw_random/powernv-rng.c
-> @@ -33,18 +33,11 @@ static struct hwrng powernv_hwrng =3D {
->  	.read =3D powernv_rng_read,
->  };
->=20=20
-> -static int powernv_rng_remove(struct platform_device *pdev)
-> -{
-> -	hwrng_unregister(&powernv_hwrng);
-> -
-> -	return 0;
-> -}
-> -
->  static int powernv_rng_probe(struct platform_device *pdev)
->  {
->  	int rc;
->=20=20
-> -	rc =3D hwrng_register(&powernv_hwrng);
-> +	rc =3D devm_hwrng_register(&pdev->dev, &powernv_hwrng);
->  	if (rc) {
->  		/* We only register one device, ignore any others */
->  		if (rc =3D=3D -EEXIST)
-> @@ -70,7 +63,6 @@ static struct platform_driver powernv_rng_driver =3D {
->  		.of_match_table =3D powernv_rng_match,
->  	},
->  	.probe	=3D powernv_rng_probe,
-> -	.remove =3D powernv_rng_remove,
->  };
->  module_platform_driver(powernv_rng_driver);
->=20=20
-> diff --git a/drivers/char/hw_random/st-rng.c b/drivers/char/hw_random/st-=
-rng.c
-> index bd6a98b3479b..863448360a7d 100644
-> --- a/drivers/char/hw_random/st-rng.c
-> +++ b/drivers/char/hw_random/st-rng.c
-> @@ -102,7 +102,7 @@ static int st_rng_probe(struct platform_device *pdev)
->=20=20
->  	dev_set_drvdata(&pdev->dev, ddata);
->=20=20
-> -	ret =3D hwrng_register(&ddata->ops);
-> +	ret =3D devm_hwrng_register(&pdev->dev, &ddata->ops);
->  	if (ret) {
->  		dev_err(&pdev->dev, "Failed to register HW RNG\n");
->  		clk_disable_unprepare(clk);
-> @@ -118,8 +118,6 @@ static int st_rng_remove(struct platform_device *pdev)
->  {
->  	struct st_rng_data *ddata =3D dev_get_drvdata(&pdev->dev);
->=20=20
-> -	hwrng_unregister(&ddata->ops);
-> -
->  	clk_disable_unprepare(ddata->clk);
->=20=20
->  	return 0;
-> diff --git a/drivers/char/hw_random/xgene-rng.c b/drivers/char/hw_random/=
-xgene-rng.c
-> index 8c6f9f63da5e..7e568db87ae2 100644
-> --- a/drivers/char/hw_random/xgene-rng.c
-> +++ b/drivers/char/hw_random/xgene-rng.c
-> @@ -361,7 +361,7 @@ static int xgene_rng_probe(struct platform_device *pd=
-ev)
->=20=20
->  	xgene_rng_func.priv =3D (unsigned long) ctx;
->=20=20
-> -	rc =3D hwrng_register(&xgene_rng_func);
-> +	rc =3D devm_hwrng_register(&pdev->dev, &xgene_rng_func);
->  	if (rc) {
->  		dev_err(&pdev->dev, "RNG registering failed error %d\n", rc);
->  		if (!IS_ERR(ctx->clk))
-> @@ -375,7 +375,6 @@ static int xgene_rng_probe(struct platform_device *pd=
-ev)
->  			rc);
->  		if (!IS_ERR(ctx->clk))
->  			clk_disable_unprepare(ctx->clk);
-> -		hwrng_unregister(&xgene_rng_func);
->  		return rc;
->  	}
->=20=20
-> @@ -392,7 +391,6 @@ static int xgene_rng_remove(struct platform_device *p=
-dev)
->  		dev_err(&pdev->dev, "RNG init wakeup failed error %d\n", rc);
->  	if (!IS_ERR(ctx->clk))
->  		clk_disable_unprepare(ctx->clk);
-> -	hwrng_unregister(&xgene_rng_func);
->=20=20
->  	return rc;
->  }
-
-=2D-=20
-=C5=81ukasz Stelmach
-Samsung R&D Institute Poland
-Samsung Electronics
-
---=-=-=
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEEXpuyqjq9kGEVr9UQsK4enJilgBAFAl05Z5EACgkQsK4enJil
-gBDC6wf/RWrFrZa1K0vXQRunm4a/T6+9qOAeK+CilFvhwUfFtc1mhpquqEVSbQYG
-Y+r7c5pxZd+JvU5rxPTBelL60GQ1AJd5XKgvKblDiEjXonol8s9Snf2vc6vL0CFp
-FCuSxpnvQ3HTKJ16s71HURJxxqdAM3BVFZxod5XPVctNSqVAMM1QhIy29D2ivg/n
-UP4pBt5nCY0mzfNJ3OHz1ui6q99ZXMcUT6yzXKhUP/UpHXRjS/XUeXMMub8x6Wpl
-SieqaH2+KmufGidxswOQh/aZ3YszzBqsfTOeJTFYQgQbsckAkVVtafoxNk0upNeT
-Qqad3s8ystS/i+gUDKSb9C13UDEgRA==
-=+zqR
------END PGP SIGNATURE-----
---=-=-=--
-
-
---===============6410347474508996272==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6410347474508996272==--
-
+T24gVGh1LCBKdWwgMjUsIDIwMTkgYXQgMDM6NDM6NDFQTSArMDgwMCwgSmFzb24gV2FuZyB3cm90
+ZToKPiAKPiBPbiAyMDE5LzcvMjUg5LiL5Y2IMTo1MiwgTWljaGFlbCBTLiBUc2lya2luIHdyb3Rl
+Ogo+ID4gT24gVHVlLCBKdWwgMjMsIDIwMTkgYXQgMDk6MzE6MzVQTSArMDgwMCwgSmFzb24gV2Fu
+ZyB3cm90ZToKPiA+ID4gT24gMjAxOS83LzIzIOS4i+WNiDU6MjYsIE1pY2hhZWwgUy4gVHNpcmtp
+biB3cm90ZToKPiA+ID4gPiBPbiBUdWUsIEp1bCAyMywgMjAxOSBhdCAwNDo0OTowMVBNICswODAw
+LCBKYXNvbiBXYW5nIHdyb3RlOgo+ID4gPiA+ID4gT24gMjAxOS83LzIzIOS4i+WNiDQ6MTAsIE1p
+Y2hhZWwgUy4gVHNpcmtpbiB3cm90ZToKPiA+ID4gPiA+ID4gT24gVHVlLCBKdWwgMjMsIDIwMTkg
+YXQgMDM6NTM6MDZQTSArMDgwMCwgSmFzb24gV2FuZyB3cm90ZToKPiA+ID4gPiA+ID4gPiBPbiAy
+MDE5LzcvMjMg5LiL5Y2IMzoyMywgTWljaGFlbCBTLiBUc2lya2luIHdyb3RlOgo+ID4gPiA+ID4g
+PiA+ID4gPiA+IFJlYWxseSBsZXQncyBqdXN0IHVzZSBrZnJlZV9yY3UuIEl0J3Mgd2F5IGNsZWFu
+ZXI6IGZpcmUgYW5kIGZvcmdldC4KPiA+ID4gPiA+ID4gPiA+ID4gTG9va3Mgbm90LCB5b3UgbmVl
+ZCByYXRlIGxpbWl0IHRoZSBmaXJlIGFzIHlvdSd2ZSBmaWd1cmVkIG91dD8KPiA+ID4gPiA+ID4g
+PiA+IFNlZSB0aGUgZGlzY3Vzc2lvbiB0aGF0IGZvbGxvd2VkLiBCYXNpY2FsbHkgbm8sIGl0J3Mg
+Z29vZCBlbm91Z2gKPiA+ID4gPiA+ID4gPiA+IGFscmVhZHkgYW5kIGlzIG9ubHkgZ29pbmcgdG8g
+YmUgYmV0dGVyLgo+ID4gPiA+ID4gPiA+ID4gCj4gPiA+ID4gPiA+ID4gPiA+IEFuZCBpbiBmYWN0
+LAo+ID4gPiA+ID4gPiA+ID4gPiB0aGUgc3luY2hyb25pemF0aW9uIGlzIG5vdCBldmVuIG5lZWRl
+ZCwgZG9lcyBpdCBoZWxwIGlmIEkgbGVhdmUgYSBjb21tZW50IHRvCj4gPiA+ID4gPiA+ID4gPiA+
+IGV4cGxhaW4/Cj4gPiA+ID4gPiA+ID4gPiBMZXQncyB0cnkgdG8gZmlndXJlIGl0IG91dCBpbiB0
+aGUgbWFpbCBmaXJzdC4gSSdtIHByZXR0eSBzdXJlIHRoZQo+ID4gPiA+ID4gPiA+ID4gY3VycmVu
+dCBsb2dpYyBpcyB3cm9uZy4KPiA+ID4gPiA+ID4gPiBIZXJlIGlzIHdoYXQgdGhlIGNvZGUgd2hh
+dCB0byBhY2hpZXZlOgo+ID4gPiA+ID4gPiA+IAo+ID4gPiA+ID4gPiA+IC0gVGhlIG1hcCB3YXMg
+cHJvdGVjdGVkIGJ5IFJDVQo+ID4gPiA+ID4gPiA+IAo+ID4gPiA+ID4gPiA+IC0gV3JpdGVycyBh
+cmU6IE1NVSBub3RpZmllciBpbnZhbGlkYXRpb24gY2FsbGJhY2tzLCBmaWxlIG9wZXJhdGlvbnMg
+KGlvY3Rscwo+ID4gPiA+ID4gPiA+IGV0YyksIG1ldGFfcHJlZmV0Y2ggKGRhdGFwYXRoKQo+ID4g
+PiA+ID4gPiA+IAo+ID4gPiA+ID4gPiA+IC0gUmVhZGVycyBhcmU6IG1lbW9yeSBhY2Nlc3Nvcgo+
+ID4gPiA+ID4gPiA+IAo+ID4gPiA+ID4gPiA+IFdyaXRlciBhcmUgc3luY2hyb25pemVkIHRocm91
+Z2ggbW11X2xvY2suIFJDVSBpcyB1c2VkIHRvIHN5bmNocm9uaXplZAo+ID4gPiA+ID4gPiA+IGJl
+dHdlZW4gd3JpdGVycyBhbmQgcmVhZGVycy4KPiA+ID4gPiA+ID4gPiAKPiA+ID4gPiA+ID4gPiBU
+aGUgc3luY2hyb25pemVfcmN1KCkgaW4gdmhvc3RfcmVzZXRfdnFfbWFwcygpIHdhcyB1c2VkIHRv
+IHN5bmNocm9uaXplZCBpdAo+ID4gPiA+ID4gPiA+IHdpdGggcmVhZGVycyAobWVtb3J5IGFjY2Vz
+c29ycykgaW4gdGhlIHBhdGggb2YgZmlsZSBvcGVyYXRpb25zLiBCdXQgaW4gdGhpcwo+ID4gPiA+
+ID4gPiA+IGNhc2UsIHZxLT5tdXRleCB3YXMgYWxyZWFkeSBoZWxkLCB0aGlzIG1lYW5zIGl0IGhh
+cyBiZWVuIHNlcmlhbGl6ZWQgd2l0aAo+ID4gPiA+ID4gPiA+IG1lbW9yeSBhY2Nlc3Nvci4gVGhh
+dCdzIHdoeSBJIHRoaW5rIGl0IGNvdWxkIGJlIHJlbW92ZWQgc2FmZWx5Lgo+ID4gPiA+ID4gPiA+
+IAo+ID4gPiA+ID4gPiA+IEFueXRoaW5nIEkgbWlzcyBoZXJlPwo+ID4gPiA+ID4gPiA+IAo+ID4g
+PiA+ID4gPiBTbyBpbnZhbGlkYXRlIGNhbGxiYWNrcyBuZWVkIHRvIHJlc2V0IHRoZSBtYXAsIGFu
+ZCB0aGV5IGRvCj4gPiA+ID4gPiA+IG5vdCBoYXZlIHZxIG11dGV4LiBIb3cgY2FuIHRoZXkgZG8g
+dGhpcyBhbmQgZnJlZQo+ID4gPiA+ID4gPiB0aGUgbWFwIHNhZmVseT8gVGhleSBuZWVkIHN5bmNo
+cm9uaXplX3JjdSBvciBrZnJlZV9yY3UgcmlnaHQ/Cj4gPiA+ID4gPiBJbnZhbGlkYXRpb24gY2Fs
+bGJhY2tzIG5lZWQgYnV0IGZpbGUgb3BlcmF0aW9ucyAoZS5nIGlvY3RsKSBub3QuCj4gPiA+ID4g
+PiAKPiA+ID4gPiA+IAo+ID4gPiA+ID4gPiBBbmQgSSB3b3JyeSBzb21ld2hhdCB0aGF0IHN5bmNo
+cm9uaXplX3JjdSBpbiBhbiBNTVUgbm90aWZpZXIKPiA+ID4gPiA+ID4gaXMgYSBwcm9ibGVtLCBN
+TVUgbm90aWZpZXJzIGFyZSBzdXBwb3NlZCB0byBiZSBxdWljazoKPiA+ID4gPiA+IExvb2tzIG5v
+dCwgc2luY2UgaXQgY2FuIGFsbG93IHRvIGJlIGJsb2NrZWQgYW5kIGxvdHMgb2YgZHJpdmVyIGRl
+cGVuZHMgb24KPiA+ID4gPiA+IHRoaXMuIChFLmcgbW11X25vdGlmaWVyX3JhbmdlX2Jsb2NrYWJs
+ZSgpKS4KPiA+ID4gPiBSaWdodCwgdGhleSBjYW4gYmxvY2suIFNvIHdoeSBkb24ndCB3ZSB0YWtl
+IGEgVlEgbXV0ZXggYW5kIGJlCj4gPiA+ID4gZG9uZSB3aXRoIGl0IHRoZW4/IE5vIFJDVSB0cmlj
+a3MuCj4gPiA+IAo+ID4gPiBUaGlzIGlzIGhvdyBJIHdhbnQgdG8gZ28gd2l0aCBSRkMgYW5kIFYx
+LiBCdXQgSSBlbmQgdXAgd2l0aCBkZWFkbG9jayBiZXR3ZWVuCj4gPiA+IHZxIGxvY2tzIGFuZCBz
+b21lIE1NIGludGVybmFsIGxvY2tzLiBTbyBJIGRlY2lkZSB0byB1c2UgUkNVIHdoaWNoIGlzIDEw
+MCUKPiA+ID4gdW5kZXIgdGhlIGNvbnRyb2wgb2Ygdmhvc3QuCj4gPiA+IAo+ID4gPiBUaGFua3MK
+PiA+IEFuZCBJIGd1ZXNzIHRoZSBkZWFkbG9jayBpcyBiZWNhdXNlIEdVUCBpcyB0YWtpbmcgbW11
+IGxvY2tzIHdoaWNoIGFyZQo+ID4gdGFrZW4gb24gbW11IG5vdGlmaWVyIHBhdGgsIHJpZ2h0Pwo+
+IAo+IAo+IFllcywgYnV0IGl0J3Mgbm90IHRoZSBvbmx5IGxvY2suIEkgZG9uJ3QgcmVtZW1iZXIg
+dGhlIGRldGFpbHMsIGJ1dCBJIGNhbgo+IGNvbmZpcm0gSSBtZWV0IGlzc3VlcyB3aXRoIG9uZSBv
+ciB0d28gb3RoZXIgbG9ja3MuCj4gCj4gCj4gPiAgICBIb3cgYWJvdXQgd2UgYWRkIGEgc2VxbG9j
+ayBhbmQgdGFrZQo+ID4gdGhhdCBpbiBpbnZhbGlkYXRlIGNhbGxiYWNrcz8gIFdlIGNhbiB0aGVu
+IGRyb3AgdGhlIFZRIGxvY2sgYmVmb3JlIEdVUCwKPiA+IGFuZCB0YWtlIGl0IGFnYWluIGltbWVk
+aWF0ZWx5IGFmdGVyLgo+ID4gCj4gPiBzb21ldGhpbmcgbGlrZQo+ID4gCWlmICghdnFfbWV0YV9t
+YXBwZWQodnEpKSB7Cj4gPiAJCXZxX21ldGFfc2V0dXAoJnVhZGRycyk7Cj4gPiAJCW11dGV4X3Vu
+bG9jayh2cS0+bXV0ZXgpCj4gPiAJCXZxX21ldGFfbWFwKCZ1YWRkcnMpOwo+IAo+IAo+IFRoZSBw
+cm9ibGVtIGlzIHRoZSB2cSBhZGRyZXNzIGNvdWxkIGJlIGNoYW5nZWQgYXQgdGhpcyB0aW1lLgo+
+IAo+IAo+ID4gCQltdXRleF9sb2NrKHZxLT5tdXRleCkKPiA+IAo+ID4gCQkvKiByZWNoZWNrIGJv
+dGggc29jay0+cHJpdmF0ZV9kYXRhIGFuZCBzZXFsb2NrIGNvdW50LiAqLwo+ID4gCQlpZiBjaGFu
+Z2VkIC0gYmFpbCBvdXQKPiA+IAl9Cj4gPiAKPiA+IEFuZCBhbHNvIHJlcXVpcmVzIHRoYXQgVlEg
+dWFkZHJzIGlzIGRlZmluZWQgbGlrZSB0aGlzOgo+ID4gLSB3cml0ZXJzIG11c3QgaGF2ZSBib3Ro
+IHZxIG11dGV4IGFuZCBkZXYgbXV0ZXgKPiA+IC0gcmVhZGVycyBtdXN0IGhhdmUgZWl0aGVyIHZx
+IG11dGV4IG9yIGRldiBtdXRleAo+ID4gCj4gPiAKPiA+IFRoYXQncyBhIGJpZyBjaGFuZ2UgdGhv
+dWdoLiBGb3Igbm93LCBob3cgYWJvdXQgc3dpdGNoaW5nIHRvIGEgcGVyLXZxIFNSQ1U/Cj4gPiBU
+aGF0IGlzIG9ubHkgYSBsaXR0bGUgYml0IG1vcmUgZXhwZW5zaXZlIHRoYW4gUkNVLCBhbmQgd2UK
+PiA+IGNhbiB1c2Ugc3luY2hyb25pemVfc3JjdV9leHBlZGl0ZWQuCj4gPiAKPiAKPiBDb25zaWRl
+ciB3ZSBzd2l0Y2ggdG8gdXNlIGtmcmVlX3JjdSgpLCB3aGF0J3MgdGhlIGFkdmFudGFnZSBvZiBw
+ZXItdnEgU1JDVT8KPiAKPiBUaGFua3MKCgpJIHRob3VnaHQgd2UgZXN0YWJsaXNoZWQgdGhhdCBu
+b3RpZmllcnMgbXVzdCB3YWl0IGZvcgphbGwgcmVhZGVycyB0byBmaW5pc2ggYmVmb3JlIHRoZXkg
+bWFyayBwYWdlIGRpcnR5LCB0bwpwcmV2ZW50IHBhZ2UgZnJvbSBiZWNvbWluZyBkaXJ0eSBhZnRl
+ciBhZGRyZXNzCmhhcyBiZWVuIGludmFsaWRhdGVkLgpSaWdodD8KCl9fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBs
+aXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
+cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
