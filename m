@@ -2,53 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B8F99750FD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 16:25:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE7D77510D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 16:26:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=6gHlt6b3NEmse1cZLvqqSDKElt9CfkoiFjEz1FszwQM=; b=cPuDfcRgR5qPqw
-	8Oz46kq7JqYOfI58535lq4+o2b9KjUAhyV4KchVy30CyX9i++tl6whN22LefOmH0jnrV6cWSvEFeF
-	18eYQV638TAadBPQltZObnFtltDdrekVfNpGgw0lZJLfMAsK3IFLEJeN0KIcOM4LcocpBt0/LW9nA
-	FfFVkgsqDHcqMDlZTgsWWa6VdqxOV2/V41yin3eUNx/e8fq7W1ynz24sXXCVSFI6JPDr8cUwR+24H
-	1aEryStLS1qd6bUFXus1Nj4K+RC59nU9blBDMaoPyiTfbR1sQma5OD7FyQxC3o2m47cUHGg2ERMoz
-	8Rx8B5z0tPYqSM1Rd+7Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Uw4oqi/0DcRL3ID9bjYP+Y+KBNAZheWEx3oR/tS9PVU=; b=tYeqjfuD0LP2FEHh08qEC0XjH
+	ArNrb5IZKYhcAWFs5caCS1aCs8a2UFYuDYTw93hgKmHqgXa45WEO2g60Sio/qD2OkmrlzQoWXvpT/
+	qNqy7ZBH5ZJPjUrqPUfa1DtDCAhpcwhKmFR6DkBcUdbq5IoGmcd67wNcQ3L+b3JY355q5foC8/iVy
+	NvXeHqy9BPaaPEWiAaZCRqoU95YtcjX6/0vs8Aw1tvhiVZwvfuWp6tX9JuJNoVWFTBkj5iXpJm+e9
+	3HCR+N6mUirhHdt9YoVBmx4CRVUIYVfoSYHLdxVj+tqJPRBz76+wo8mMpS1KORvDV8lR0DrqViWBt
+	NJ6//HPGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqegX-0002r5-Ag; Thu, 25 Jul 2019 14:25:33 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
+	id 1hqehM-0004q0-LP; Thu, 25 Jul 2019 14:26:24 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqefj-0002ac-LS
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 14:24:46 +0000
-Received: from DGGEMS414-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id C3ECBCDEFA99158479AC;
- Thu, 25 Jul 2019 22:24:33 +0800 (CST)
-Received: from localhost (10.133.213.239) by DGGEMS414-HUB.china.huawei.com
- (10.3.19.214) with Microsoft SMTP Server id 14.3.439.0; Thu, 25 Jul 2019
- 22:24:23 +0800
-From: YueHaibing <yuehaibing@huawei.com>
-To: <linus.walleij@linaro.org>, <narmstrong@baylibre.com>
-Subject: [PATCH] pinctrl: oxnas: remove set but not used variable 'arg'
-Date: Thu, 25 Jul 2019 22:24:19 +0800
-Message-ID: <20190725142419.29892-1-yuehaibing@huawei.com>
-X-Mailer: git-send-email 2.10.2.windows.1
+ id 1hqegx-0004hZ-QO
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 14:26:01 +0000
+Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
+ [10.5.11.15])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 0E40A335E8;
+ Thu, 25 Jul 2019 14:25:58 +0000 (UTC)
+Received: from [10.72.12.18] (ovpn-12-18.pek2.redhat.com [10.72.12.18])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 910435D71A;
+ Thu, 25 Jul 2019 14:25:48 +0000 (UTC)
+Subject: Re: WARNING in __mmdrop
+To: "Michael S. Tsirkin" <mst@redhat.com>
+References: <20190723032024-mutt-send-email-mst@kernel.org>
+ <1d14de4d-0133-1614-9f64-3ded381de04e@redhat.com>
+ <20190723035725-mutt-send-email-mst@kernel.org>
+ <3f4178f1-0d71-e032-0f1f-802428ceca59@redhat.com>
+ <20190723051828-mutt-send-email-mst@kernel.org>
+ <caff362a-e208-3468-3688-63e1d093a9d3@redhat.com>
+ <20190725012149-mutt-send-email-mst@kernel.org>
+ <55e8930c-2695-365f-a07b-3ad169654d28@redhat.com>
+ <20190725042651-mutt-send-email-mst@kernel.org>
+ <84bb2e31-0606-adff-cf2a-e1878225a847@redhat.com>
+ <20190725092332-mutt-send-email-mst@kernel.org>
+From: Jason Wang <jasowang@redhat.com>
+Message-ID: <11802a8a-ce41-f427-63d5-b6a4cf96bb3f@redhat.com>
+Date: Thu, 25 Jul 2019 22:25:25 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-Originating-IP: [10.133.213.239]
-X-CFilter-Loop: Reflected
+In-Reply-To: <20190725092332-mutt-send-email-mst@kernel.org>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.38]); Thu, 25 Jul 2019 14:25:58 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_072443_972941_8E094B00 
-X-CRM114-Status: UNSURE (   7.82  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190725_072559_997118_4F475BFB 
+X-CRM114-Status: GOOD (  18.87  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -62,72 +79,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-gpio@vger.kernel.org, linux-oxnas@groups.io,
- YueHaibing <yuehaibing@huawei.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mhocko@suse.com, peterz@infradead.org, ldv@altlinux.org,
+ james.bottomley@hansenpartnership.com, linux-mm@kvack.org, namit@vmware.com,
+ mingo@kernel.org, elena.reshetova@intel.com, keescook@chromium.org,
+ aarcange@redhat.com, davem@davemloft.net, hch@infradead.org,
+ christian@brauner.io,
+ syzbot <syzbot+e58112d71f77113ddb7b@syzkaller.appspotmail.com>,
+ syzkaller-bugs@googlegroups.com, jglisse@redhat.com, viro@zeniv.linux.org.uk,
+ linux-arm-kernel@lists.infradead.org, wad@chromium.org,
+ linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ luto@amacapital.net, ebiederm@xmission.com, akpm@linux-foundation.org,
+ guro@fb.com
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fixes gcc '-Wunused-but-set-variable' warning:
-
-drivers/pinctrl/pinctrl-oxnas.c: In function oxnas_ox810se_pinconf_set:
-drivers/pinctrl/pinctrl-oxnas.c:905:6: warning: variable arg set but not used [-Wunused-but-set-variable]
-drivers/pinctrl/pinctrl-oxnas.c: In function oxnas_ox820_pinconf_set:
-drivers/pinctrl/pinctrl-oxnas.c:944:6: warning: variable arg set but not used [-Wunused-but-set-variable]
-
-It is never used since commit 4b0c0c25fa79 ("pinctrl:
-oxnas: Add support for OX820"), so can be removed.
-
-Reported-by: Hulk Robot <hulkci@huawei.com>
-Signed-off-by: YueHaibing <yuehaibing@huawei.com>
----
- drivers/pinctrl/pinctrl-oxnas.c | 4 ----
- 1 file changed, 4 deletions(-)
-
-diff --git a/drivers/pinctrl/pinctrl-oxnas.c b/drivers/pinctrl/pinctrl-oxnas.c
-index b4edbe0..fa81a09 100644
---- a/drivers/pinctrl/pinctrl-oxnas.c
-+++ b/drivers/pinctrl/pinctrl-oxnas.c
-@@ -902,7 +902,6 @@ static int oxnas_ox810se_pinconf_set(struct pinctrl_dev *pctldev,
- 	struct oxnas_pinctrl *pctl = pinctrl_dev_get_drvdata(pctldev);
- 	struct oxnas_gpio_bank *bank = pctl_to_bank(pctl, pin);
- 	unsigned int param;
--	u32 arg;
- 	unsigned int i;
- 	u32 offset = pin - bank->gpio_chip.base;
- 	u32 mask = BIT(offset);
-@@ -912,7 +911,6 @@ static int oxnas_ox810se_pinconf_set(struct pinctrl_dev *pctldev,
- 
- 	for (i = 0; i < num_configs; i++) {
- 		param = pinconf_to_config_param(configs[i]);
--		arg = pinconf_to_config_argument(configs[i]);
- 
- 		switch (param) {
- 		case PIN_CONFIG_BIAS_PULL_UP:
-@@ -941,7 +939,6 @@ static int oxnas_ox820_pinconf_set(struct pinctrl_dev *pctldev,
- 	struct oxnas_gpio_bank *bank = pctl_to_bank(pctl, pin);
- 	unsigned int bank_offset = (bank->id ? PINMUX_820_BANK_OFFSET : 0);
- 	unsigned int param;
--	u32 arg;
- 	unsigned int i;
- 	u32 offset = pin - bank->gpio_chip.base;
- 	u32 mask = BIT(offset);
-@@ -951,7 +948,6 @@ static int oxnas_ox820_pinconf_set(struct pinctrl_dev *pctldev,
- 
- 	for (i = 0; i < num_configs; i++) {
- 		param = pinconf_to_config_param(configs[i]);
--		arg = pinconf_to_config_argument(configs[i]);
- 
- 		switch (param) {
- 		case PIN_CONFIG_BIAS_PULL_UP:
--- 
-2.7.4
-
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Ck9uIDIwMTkvNy8yNSDkuIvljYg5OjI2LCBNaWNoYWVsIFMuIFRzaXJraW4gd3JvdGU6Cj4+IEV4
+YWN0bHksIGFuZCB0aGF0J3MgdGhlIHJlYXNvbiBhY3R1YWxseSBJIHVzZSBzeW5jaHJvbml6ZV9y
+Y3UoKSB0aGVyZS4KPj4KPj4gU28gdGhlIGNvbmNlcm4gaXMgc3RpbGwgdGhlIHBvc3NpYmxlIHN5
+bmNocm9uaXplX2V4cGVkaXRlZCgpPwo+IEkgdGhpbmsgc3luY2hyb25pemVfc3JjdV9leHBlZGl0
+ZWQuCj4KPiBzeW5jaHJvbml6ZV9leHBlZGl0ZWQgc2VuZHMgbG90cyBvZiBJUEkgYW5kIGlzIGJh
+ZCBmb3IgcmVhbHRpbWUgVk1zLgo+Cj4+IENhbiBJIGRvIHRoaXMKPj4gb24gdGhyb3VnaCBhbm90
+aGVyIHNlcmllcyBvbiB0b3Agb2YgdGhlIGluY29taW5nIFYyPwo+Pgo+PiBUaGFua3MKPj4KPiBU
+aGUgcXVlc3Rpb24gaXMgdGhpczogaXMgdGhpcyBzdGlsbCBhIGdhaW4gaWYgd2Ugc3dpdGNoIHRv
+IHRoZQo+IG1vcmUgZXhwZW5zaXZlIHNyY3U/IElmIHllcyB0aGVuIHdlIGNhbiBrZWVwIHRoZSBm
+ZWF0dXJlIG9uLAoKCkkgdGhpbmsgd2Ugb25seSBjYXJlIGFib3V0IHRoZSBjb3N0IG9uIHNyY3Vf
+cmVhZF9sb2NrKCkgd2hpY2ggbG9va3MgCnByZXR0eSB0aW55IGZvcm0gbXkgcG9pbnQgb2Ygdmll
+dy4gV2hpY2ggaXMgYmFzaWNhbGx5IGEgUkVBRF9PTkNFKCkgKyAKV1JJVEVfT05DRSgpLgoKT2Yg
+Y291cnNlIEkgY2FuIGJlbmNobWFyayB0byBzZWUgdGhlIGRpZmZlcmVuY2UuCgoKPiBpZiBub3Qg
+d2UnbGwgcHV0IGl0IG9mZiB1bnRpbCBuZXh0IHJlbGVhc2UgYW5kIHRoaW5rCj4gb2YgYmV0dGVy
+IHNvbHV0aW9ucy4gcmN1LT5zcmN1IGlzIGp1c3QgYSBmaW5kIGFuZCByZXBsYWNlLAo+IGRvbid0
+IHNlZSB3aHkgd2UgbmVlZCB0byBkZWZlciB0aGF0LiBjYW4gYmUgYSBzZXBhcmF0ZSBwYXRjaAo+
+IGZvciBzdXJlLCBidXQgd2UgbmVlZCB0byBrbm93IGhvdyB3ZWxsIGl0IHdvcmtzLgoKCkkgdGhp
+bmsgSSBnZXQgaGVyZSwgbGV0IG1lIHRyeSB0byBkbyB0aGF0IGluIFYyIGFuZCBsZXQncyBzZWUg
+dGhlIG51bWJlcnMuCgpUaGFua3MKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2Vy
+bmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
+bi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
