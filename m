@@ -2,65 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AB1BD759E8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 23:56:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 89279759EF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 23:58:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3HVplJQj+TzgMpIWJptU9OGxU6EBrAh5nXmOXcbcfao=; b=HCIInaK61NSIg1
-	jpeQkLVQWsNYhpFRdWUaLPaWuxTWdRtnupkAYz8A/UavPuK1xLZAIyaBHmDeOMb4P/cIlb72IVA5P
-	pYoqiBdUadoaJYvnxFdzmYEMefOA49bqKtq6rJDhB0BmSPGGhqPz8I6KcgDt9c0pc7GIfWZM7I9DH
-	zxH4H+o+Ts7mzMjVtYN2KC0q2QtrzbibQmqgkFxm9x/GLQQK7Cuwel5rqykbnFH7DA3SmL1A4slb4
-	Dvmt8E1OrDxQbOnhtQsfM48ab9krSEbykcJxfNCLSnzrdg/jDwQ3fDaSrKBybyWcytZ2HbyAqi3qk
-	7aPPxR8EtoqJmbVAksRg==;
+	List-Owner; bh=zUz7hfJatoTWeXukJL2CEiH6Ajbnw71ry+riMjhF7v0=; b=TVF3jz+FPe0Kf+
+	rbjkb2h35wWVWb6jPgxBlmjV13tC1WHpg1OvIY1V5/RO/HHVqvVvawlFvuGVhDccQVdxR8b39VTRW
+	11Pg9fTU7rqxRRZfWnnVKkaP5U8jzw7dVwbXlfI4rBY0FKdw36gCSPS8w10t7Zlo1GCikj+5QYqRe
+	HZ5im8BQGd3ORDfh2+ZYfJURnPZq/VJCQsJWGSOjEoDUmqT/PMLFagKz4g8G8DWz8rK+jxg4GNXCr
+	x5nyCeEdUmlm8boZCBTQFmORzJJ/4UYm3FMa2kgSxY6sRJk7V5apHcVgmwY68VBE0AXcwbNIw4bAI
+	qQiVrcx+FfwSrmtypShQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqlic-00083V-Uf; Thu, 25 Jul 2019 21:56:11 +0000
+	id 1hqllA-0000LH-B4; Thu, 25 Jul 2019 21:58:48 +0000
 Received: from pandora.armlinux.org.uk
  ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqliK-00082j-A5
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 21:55:53 +0000
+ id 1hqlkv-0000KE-O0
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 21:58:35 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
  MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=fzoi6WTT/aaFWW+EuhftGIjPkQCTrBX+tQdM10oXzQs=; b=onQS0xZQENxHyCKqj50vHJgse
- VJTs1WxUKipVOOxrF17e1WtWT2eO9I0521g1Q/wxP2XCIF0Lp2s8fsl0LIn8HMInkmfMIExs94tNr
- IPCIDuPYtKWQcJFT0pSUPHlvA05IvoViM2QLHeEKDW4tDIBV+jn4eDZMgQrjL9iTR4DA4WyYfZDNf
- A/5HlTli48G/GAXowpO5qTNxrRMg0DvqPjieKrU3dYgIrWeDpp6uU3loaHQGfNFta3rxscJdPmjhZ
- KRwRlhmzN2JUYBLFZXVffXFUmYB61SLAwt/2ST9vZUFjtCrECRQHvpATZnm+MqeXjRvLgFhOuiPZA
- uqd3FBcoA==;
+ bh=3G0DbANSEEz3gBLVg4LbmF0CvfiTNd4gqwl2oAi+YHw=; b=sHapK5Dv01/JCHeQu/SjqvySW
+ pH6NXKfPa0ocMNU8dGO4QMKJt+V/hxIZBWxflM6ndEmDYOb+0THMyDtpoiwsq1QwIEczr5gydc+AX
+ ukWeOWFYxCs1H6b9ICoaEjcsxGhK/oWcWJZ2XRa7t1VukD9tmGNPRuMHBe/ljDRZlPMihyMqVlK2D
+ Zix8A5XlQ9FwZM/jPoOI9e2CCXMdN+i0KM+peI6omltOm/LQWwmL8ST1sdCM4dZxZpjZ50MpqviaZ
+ xvkaCb3IbY8GQo0+w56JWRDQeiSn6vs2kO1h0XtKVS+EnAzq8fGF8RKxA0nrZQogQb0j3TfenlS3k
+ s2G1lrXVA==;
 Received: from shell.armlinux.org.uk
- ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:44660)
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:37148)
  by pandora.armlinux.org.uk with esmtpsa
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
  (envelope-from <linux@armlinux.org.uk>)
- id 1hqliC-0002Xi-5p; Thu, 25 Jul 2019 22:55:44 +0100
+ id 1hqlkb-0002Yr-TM; Thu, 25 Jul 2019 22:58:14 +0100
 Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
  (envelope-from <linux@shell.armlinux.org.uk>)
- id 1hqli8-00062p-5X; Thu, 25 Jul 2019 22:55:40 +0100
-Date: Thu, 25 Jul 2019 22:55:40 +0100
+ id 1hqlka-00062y-II; Thu, 25 Jul 2019 22:58:12 +0100
+Date: Thu, 25 Jul 2019 22:58:12 +0100
 From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: "George G. Davis" <george_davis@mentor.com>
-Subject: Re: [PATCH] ARM: Fix null die() string for unhandled data and
- prefetch abort cases
-Message-ID: <20190725215540.GM1330@shell.armlinux.org.uk>
-References: <1563589976-19004-1-git-send-email-george_davis@mentor.com>
- <20190720123023.GA1330@shell.armlinux.org.uk>
- <20190725213754.GA29898@mam-gdavis-lt>
+To: Matthew Wilcox <willy@infradead.org>
+Subject: Re: [RFC] mm/pgtable/debug: Add test validating architecture page
+ table helpers
+Message-ID: <20190725215812.GN1330@shell.armlinux.org.uk>
+References: <1564037723-26676-1-git-send-email-anshuman.khandual@arm.com>
+ <1564037723-26676-2-git-send-email-anshuman.khandual@arm.com>
+ <20190725143920.GW363@bombadil.infradead.org>
+ <20190725213858.GK1330@shell.armlinux.org.uk>
+ <20190725214222.GG30641@bombadil.infradead.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190725213754.GA29898@mam-gdavis-lt>
+In-Reply-To: <20190725214222.GG30641@bombadil.infradead.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_145552_393595_0F429D4E 
-X-CRM114-Status: GOOD (  18.39  )
+X-CRM114-CacheID: sfid-20190725_145833_817408_DFA26565 
+X-CRM114-Status: GOOD (  15.88  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -89,56 +91,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>,
- Allison Randal <allison@lohutok.net>, open list <linux-kernel@vger.kernel.org>,
- "Eric W. Biederman" <ebiederm@xmission.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- "moderated list:ARM PORT" <linux-arm-kernel@lists.infradead.org>,
- Souptick Joarder <jrdr.linux@gmail.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, x86@kernel.org,
+ Kees Cook <keescook@chromium.org>, Sri Krishna chowdary <schowdary@nvidia.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
+ Anshuman Khandual <anshuman.khandual@arm.com>,
+ Dave Hansen <dave.hansen@intel.com>, linux-kernel@vger.kernel.org,
+ Steven Price <Steven.Price@arm.com>, linux-mm@kvack.org,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Mark Brown <Mark.Brown@arm.com>, Andrew Morton <akpm@linux-foundation.org>,
+ Michal Hocko <mhocko@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jul 25, 2019 at 05:37:54PM -0400, George G. Davis wrote:
-> Hello Russell,
-> 
-> Thanks for your prompt reply!
-> 
-> On Sat, Jul 20, 2019 at 01:30:23PM +0100, Russell King - ARM Linux admin wrote:
-> > On Fri, Jul 19, 2019 at 10:32:55PM -0400, George G. Davis wrote:
-> > > When an unhandled data or prefetch abort occurs, the die() string
-> > > is empty resulting in backtrace messages similar to the following:
+On Thu, Jul 25, 2019 at 02:42:22PM -0700, Matthew Wilcox wrote:
+> On Thu, Jul 25, 2019 at 10:38:58PM +0100, Russell King - ARM Linux admin wrote:
+> > On Thu, Jul 25, 2019 at 07:39:21AM -0700, Matthew Wilcox wrote:
+> > > But 'page' isn't necessarily PMD-aligned.  I don't think we can rely on
+> > > architectures doing the right thing if asked to make a PMD for a randomly
+> > > aligned page.
 > > > 
-> > > 	Internal error: : 1 [#1] PREEMPT SMP ARM
-> > > 
-> > > Replace the null string with the name of the abort handler in order
-> > > to provide more meaningful hints as to the cause of the fault.
+> > > How about finding the physical address of something like kernel_init(),
+> > > and using the corresponding pte/pmd/pud/p4d/pgd that encompasses that
+> > > address?  It's also better to pass in the pfn/page rather than using global
+> > > variables to communicate to the test functions.
 > > 
-> > NAK.
-> > 
-> > We already print the cause of the abort earlier in the dump, and we've
-> > also added a "cut here" marker to help people include all the necessary
-> > information when reporting a problem.
+> > There are architectures (32-bit ARM) where the kernel is mapped using
+> > section mappings, and we don't expect the Linux page table walking to
+> > work for section mappings.
 > 
-> For what it's worth, I often receive crash dumps which lack the pr_alert
-> messages and only include the pr_emerg messages which this change would at
-> least provide extra hints, since the "Internal error" as at EMERG level
-> wereas the initial messages are only at ALERT level. It's subtle but for
-> cases where the end user has set loglevel such that they only see EMERG
-> messages, the change is helpful, to me at least.
-> 
-> > It's unfortunate that we have the additional colon in the oops dump,
-> 
-> Agreed, it's rather unfortunate that the string is NULL in these cases.
-> 
-> > but repeating the information that we've printed on one of the previous
-> > two lines is really not necessary.
-> 
-> It depends on the loglevel the user has set. So perhaps it's not such a
-> bad thing to repeat the information?
+> This test doesn't go so far as to insert the PTE/PMD/PUD/... into the
+> page tables.  It merely needs an appropriately aligned PFN to create a
+> PTE/PMD/PUD/... from.
 
-Or maybe we should arrange for consistent usage of the log levels?
+Well, in any case,
+
+c085ac68 t kernel_init
+
+so I'm not sure that would be an improvement.
 
 -- 
 RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
