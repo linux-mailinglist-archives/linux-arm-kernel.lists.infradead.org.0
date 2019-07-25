@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CE8774CEA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 13:21:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 56A3A74CE6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 13:20:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,49 +11,50 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=DxH1vHXZhvBFJF3lqGjIKmHZc6m/GCH9u4IAd5pYvvc=; b=RTDr2QHTlKf/026s6gOTIigFpE
-	iKFuwj9xqoK7ADB50qlOKYww7To8hWl3FQ0P2dHVR4EDQ+7yPd2SZPk4kU5JCp5y3FsRd1IKJ3kbD
-	wrYHf5HuSeSy4tW9xnamCB0XkAu6674Svt7V/twY3h7f14VFrHXbNnEdIzw/jk6LxzCl76QBvNX5/
-	KY4If/E4Ck/wheJQOhXuiPgtIR/F9uHsKLfDIPzRUK+oetVKpobQ8VqAnOpOt2Mi2L23y3WMQMIHt
-	Kf2phiOs6RMvKPGG+eyamjYtqepX6OTWBg6C/CccYAObDBArTNhWokYgb5BO5bJqFwUcRXcXl8EBS
-	CEHrIdgA==;
+	bh=CQn2lQf72Qo1DPgmDV5PTkzrty8FvkObTkWPs2ththc=; b=Cjp4z5kHzwbGAkleFsUS8eQ+7A
+	HaQ+YxLCmWFFtSKFa0cL3HlycHslhoQ9aFEWBCBfO800WjcjrWbGULRgNs7ApOQlP30CawJcUHc3y
+	Khodc5CnV6F+A11cIIdspfpa0x5n/aunm9GpLcQdWMw4/Z2LRofnUX6nSIwdRTCxgZqBRjVswsgfE
+	yK5MrIl8ADj6Pabrhu/jcvDoVm5fD2nIQtk1BdcnvNFpMBdZc0+K0ZF3WYP85DI2lgjYl5l48v9Sg
+	lsF+mWGpS4HS8vt+ErXmSTu5P7o2jqcEiQpWRroznSAKSEqoY6Uca4Wd5Dtnid3qCsQe0D9LcMOVT
+	jX9tVuHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqbo7-0008EO-6z; Thu, 25 Jul 2019 11:21:11 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1hqbnc-0007k2-RJ; Thu, 25 Jul 2019 11:20:40 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqbmV-0005kF-9x
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 11:19:35 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 71E1B2006B3;
+ id 1hqbmV-0005kc-9v
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 11:19:33 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id E5ECB1A06A7;
  Thu, 25 Jul 2019 13:19:29 +0200 (CEST)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 632A22006AD;
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id D89851A0147;
  Thu, 25 Jul 2019 13:19:29 +0200 (CEST)
 Received: from fsr-ub1664-016.ea.freescale.net
  (fsr-ub1664-016.ea.freescale.net [10.171.71.216])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id EFC77205E8;
- Thu, 25 Jul 2019 13:19:28 +0200 (CEST)
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 737F0205E8;
+ Thu, 25 Jul 2019 13:19:29 +0200 (CEST)
 From: Claudiu Manoil <claudiu.manoil@nxp.com>
 To: "David S . Miller" <davem@davemloft.net>
-Subject: [PATCH net-next v2 1/4] enetc: Clean up local mdio bus allocation
-Date: Thu, 25 Jul 2019 14:19:25 +0300
-Message-Id: <1564053568-20522-2-git-send-email-claudiu.manoil@nxp.com>
+Subject: [PATCH net-next v2 2/4] enetc: Add mdio bus driver for the PCIe MDIO
+ endpoint
+Date: Thu, 25 Jul 2019 14:19:26 +0300
+Message-Id: <1564053568-20522-3-git-send-email-claudiu.manoil@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1564053568-20522-1-git-send-email-claudiu.manoil@nxp.com>
 References: <1564053568-20522-1-git-send-email-claudiu.manoil@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_041931_673559_373CE6F3 
-X-CRM114-Status: GOOD (  14.81  )
+X-CRM114-CacheID: sfid-20190725_041931_653322_DBDDB05B 
+X-CRM114-Status: GOOD (  15.45  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -77,252 +78,163 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-What's needed is basically a pointer to the mdio registers.
-This is one way to store it inside bus->priv allocated space,
-without upsetting sparse.
-Reworked accessor design as requested by Andrew Lunn in the
-process.
-Used devm_* variant to further clean up the init error /
-remove paths.
+ENETC ports can manage the MDIO bus via local register
+interface.  However there's also a centralized way
+to manage the MDIO bus, via the MDIO PCIe endpoint
+device integrated by the same root complex that also
+integrates the ENETC ports (eth controllers).
 
-Fixes following sparse warning:
- warning: incorrect type in assignment (different address spaces)
-    expected void *priv
-    got struct enetc_mdio_regs [noderef] <asn:2>*[assigned] regs
+Depending on board design and use case, centralized
+access to MDIO may be better than using local ENETC
+port registers.  For instance, on the LS1028A QDS board
+where MDIO muxing is requiered.  Also, the LS1028A on-chip
+switch doesn't have a local MDIO register interface.
 
-Fixes: ebfcb23d62ab ("enetc: Add ENETC PF level external MDIO support")
-
-CC: Andrew Lunn <andrew@lunn.ch>
+The current patch registers the above PCIe enpoint as a
+separate MDIO bus and provides a driver for it by re-using
+the code used for local MDIO access.  It also allows the
+ENETC port PHYs to be managed by this driver if the local
+"mdio" node is missing from the ENETC port node.
 
 Signed-off-by: Claudiu Manoil <claudiu.manoil@nxp.com>
 ---
-v1 - added this patch
+v1 - fixed mdio bus allocation
+   - requested only BAR0 region, as it's the only one used by the driver
 v2 - reworked accessors as per Andrew Lunn's request
 
- .../net/ethernet/freescale/enetc/enetc_mdio.c | 94 +++++++++----------
- 1 file changed, 46 insertions(+), 48 deletions(-)
+ .../net/ethernet/freescale/enetc/enetc_mdio.c | 98 +++++++++++++++++++
+ .../net/ethernet/freescale/enetc/enetc_pf.c   |  5 +-
+ 2 files changed, 102 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/net/ethernet/freescale/enetc/enetc_mdio.c b/drivers/net/ethernet/freescale/enetc/enetc_mdio.c
-index 77b9cd10ba2b..05094601ece8 100644
+index 05094601ece8..56ad94a3504c 100644
 --- a/drivers/net/ethernet/freescale/enetc/enetc_mdio.c
 +++ b/drivers/net/ethernet/freescale/enetc/enetc_mdio.c
-@@ -8,16 +8,22 @@
- 
- #include "enetc_pf.h"
- 
--struct enetc_mdio_regs {
--	u32	mdio_cfg;	/* MDIO configuration and status */
--	u32	mdio_ctl;	/* MDIO control */
--	u32	mdio_data;	/* MDIO data */
--	u32	mdio_addr;	/* MDIO address */
-+#define	ENETC_MDIO_REG_OFFSET	0x1c00
-+#define	ENETC_MDIO_CFG	0x0	/* MDIO configuration and status */
-+#define	ENETC_MDIO_CTL	0x4	/* MDIO control */
-+#define	ENETC_MDIO_DATA	0x8	/* MDIO data */
-+#define	ENETC_MDIO_ADDR	0xc	/* MDIO address */
-+
-+#define enetc_mdio_rd(hw, off) \
-+	enetc_port_rd(hw, ENETC_##off + ENETC_MDIO_REG_OFFSET)
-+#define enetc_mdio_wr(hw, off, val) \
-+	enetc_port_wr(hw, ENETC_##off + ENETC_MDIO_REG_OFFSET, val)
-+#define enetc_mdio_rd_reg(off)	enetc_mdio_rd(hw, off)
-+
-+struct enetc_mdio_priv {
-+	struct enetc_hw *hw;
- };
- 
--#define bus_to_enetc_regs(bus)	(struct enetc_mdio_regs __iomem *)((bus)->priv)
--
--#define ENETC_MDIO_REG_OFFSET	0x1c00
- #define ENETC_MDC_DIV		258
- 
- #define MDIO_CFG_CLKDIV(x)	((((x) >> 1) & 0xff) << 8)
-@@ -33,18 +39,19 @@ struct enetc_mdio_regs {
- #define MDIO_DATA(x)		((x) & 0xffff)
- 
- #define TIMEOUT	1000
--static int enetc_mdio_wait_complete(struct enetc_mdio_regs __iomem *regs)
-+static int enetc_mdio_wait_complete(struct enetc_hw *hw)
- {
- 	u32 val;
- 
--	return readx_poll_timeout(enetc_rd_reg, &regs->mdio_cfg, val,
-+	return readx_poll_timeout(enetc_mdio_rd_reg, MDIO_CFG, val,
- 				  !(val & MDIO_CFG_BSY), 10, 10 * TIMEOUT);
- }
- 
- static int enetc_mdio_write(struct mii_bus *bus, int phy_id, int regnum,
- 			    u16 value)
- {
--	struct enetc_mdio_regs __iomem *regs = bus_to_enetc_regs(bus);
-+	struct enetc_mdio_priv *mdio_priv = bus->priv;
-+	struct enetc_hw *hw = mdio_priv->hw;
- 	u32 mdio_ctl, mdio_cfg;
- 	u16 dev_addr;
- 	int ret;
-@@ -59,29 +66,29 @@ static int enetc_mdio_write(struct mii_bus *bus, int phy_id, int regnum,
- 		mdio_cfg &= ~MDIO_CFG_ENC45;
- 	}
- 
--	enetc_wr_reg(&regs->mdio_cfg, mdio_cfg);
-+	enetc_mdio_wr(hw, MDIO_CFG, mdio_cfg);
- 
--	ret = enetc_mdio_wait_complete(regs);
-+	ret = enetc_mdio_wait_complete(hw);
- 	if (ret)
- 		return ret;
- 
- 	/* set port and dev addr */
- 	mdio_ctl = MDIO_CTL_PORT_ADDR(phy_id) | MDIO_CTL_DEV_ADDR(dev_addr);
--	enetc_wr_reg(&regs->mdio_ctl, mdio_ctl);
-+	enetc_mdio_wr(hw, MDIO_CTL, mdio_ctl);
- 
- 	/* set the register address */
- 	if (regnum & MII_ADDR_C45) {
--		enetc_wr_reg(&regs->mdio_addr, regnum & 0xffff);
-+		enetc_mdio_wr(hw, MDIO_ADDR, regnum & 0xffff);
- 
--		ret = enetc_mdio_wait_complete(regs);
-+		ret = enetc_mdio_wait_complete(hw);
- 		if (ret)
- 			return ret;
- 	}
- 
- 	/* write the value */
--	enetc_wr_reg(&regs->mdio_data, MDIO_DATA(value));
-+	enetc_mdio_wr(hw, MDIO_DATA, MDIO_DATA(value));
- 
--	ret = enetc_mdio_wait_complete(regs);
-+	ret = enetc_mdio_wait_complete(hw);
- 	if (ret)
- 		return ret;
- 
-@@ -90,7 +97,8 @@ static int enetc_mdio_write(struct mii_bus *bus, int phy_id, int regnum,
- 
- static int enetc_mdio_read(struct mii_bus *bus, int phy_id, int regnum)
- {
--	struct enetc_mdio_regs __iomem *regs = bus_to_enetc_regs(bus);
-+	struct enetc_mdio_priv *mdio_priv = bus->priv;
-+	struct enetc_hw *hw = mdio_priv->hw;
- 	u32 mdio_ctl, mdio_cfg;
- 	u16 dev_addr, value;
- 	int ret;
-@@ -104,41 +112,41 @@ static int enetc_mdio_read(struct mii_bus *bus, int phy_id, int regnum)
- 		mdio_cfg &= ~MDIO_CFG_ENC45;
- 	}
- 
--	enetc_wr_reg(&regs->mdio_cfg, mdio_cfg);
-+	enetc_mdio_wr(hw, MDIO_CFG, mdio_cfg);
- 
--	ret = enetc_mdio_wait_complete(regs);
-+	ret = enetc_mdio_wait_complete(hw);
- 	if (ret)
- 		return ret;
- 
- 	/* set port and device addr */
- 	mdio_ctl = MDIO_CTL_PORT_ADDR(phy_id) | MDIO_CTL_DEV_ADDR(dev_addr);
--	enetc_wr_reg(&regs->mdio_ctl, mdio_ctl);
-+	enetc_mdio_wr(hw, MDIO_CTL, mdio_ctl);
- 
- 	/* set the register address */
- 	if (regnum & MII_ADDR_C45) {
--		enetc_wr_reg(&regs->mdio_addr, regnum & 0xffff);
-+		enetc_mdio_wr(hw, MDIO_ADDR, regnum & 0xffff);
- 
--		ret = enetc_mdio_wait_complete(regs);
-+		ret = enetc_mdio_wait_complete(hw);
- 		if (ret)
- 			return ret;
- 	}
- 
- 	/* initiate the read */
--	enetc_wr_reg(&regs->mdio_ctl, mdio_ctl | MDIO_CTL_READ);
-+	enetc_mdio_wr(hw, MDIO_CTL, mdio_ctl | MDIO_CTL_READ);
- 
--	ret = enetc_mdio_wait_complete(regs);
-+	ret = enetc_mdio_wait_complete(hw);
- 	if (ret)
- 		return ret;
- 
- 	/* return all Fs if nothing was there */
--	if (enetc_rd_reg(&regs->mdio_cfg) & MDIO_CFG_RD_ER) {
-+	if (enetc_mdio_rd(hw, MDIO_CFG) & MDIO_CFG_RD_ER) {
- 		dev_dbg(&bus->dev,
- 			"Error while reading PHY%d reg at %d.%hhu\n",
- 			phy_id, dev_addr, regnum);
- 		return 0xffff;
- 	}
- 
--	value = enetc_rd_reg(&regs->mdio_data) & 0xffff;
-+	value = enetc_mdio_rd(hw, MDIO_DATA) & 0xffff;
- 
- 	return value;
- }
-@@ -146,12 +154,12 @@ static int enetc_mdio_read(struct mii_bus *bus, int phy_id, int regnum)
- int enetc_mdio_probe(struct enetc_pf *pf)
- {
- 	struct device *dev = &pf->si->pdev->dev;
--	struct enetc_mdio_regs __iomem *regs;
-+	struct enetc_mdio_priv *mdio_priv;
- 	struct device_node *np;
- 	struct mii_bus *bus;
--	int ret;
-+	int err;
- 
--	bus = mdiobus_alloc_size(sizeof(regs));
-+	bus = devm_mdiobus_alloc_size(dev, sizeof(*mdio_priv));
- 	if (!bus)
- 		return -ENOMEM;
- 
-@@ -159,41 +167,31 @@ int enetc_mdio_probe(struct enetc_pf *pf)
- 	bus->read = enetc_mdio_read;
- 	bus->write = enetc_mdio_write;
- 	bus->parent = dev;
-+	mdio_priv = bus->priv;
-+	mdio_priv->hw = &pf->si->hw;
- 	snprintf(bus->id, MII_BUS_ID_SIZE, "%s", dev_name(dev));
- 
--	/* store the enetc mdio base address for this bus */
--	regs = pf->si->hw.port + ENETC_MDIO_REG_OFFSET;
--	bus->priv = regs;
--
- 	np = of_get_child_by_name(dev->of_node, "mdio");
- 	if (!np) {
- 		dev_err(dev, "MDIO node missing\n");
--		ret = -EINVAL;
--		goto err_registration;
-+		return -EINVAL;
- 	}
- 
--	ret = of_mdiobus_register(bus, np);
--	if (ret) {
-+	err = of_mdiobus_register(bus, np);
-+	if (err) {
- 		of_node_put(np);
- 		dev_err(dev, "cannot register MDIO bus\n");
--		goto err_registration;
-+		return err;
- 	}
- 
- 	of_node_put(np);
- 	pf->mdio = bus;
- 
- 	return 0;
--
--err_registration:
--	mdiobus_free(bus);
--
--	return ret;
- }
- 
- void enetc_mdio_remove(struct enetc_pf *pf)
- {
--	if (pf->mdio) {
-+	if (pf->mdio)
+@@ -195,3 +195,101 @@ void enetc_mdio_remove(struct enetc_pf *pf)
+ 	if (pf->mdio)
  		mdiobus_unregister(pf->mdio);
--		mdiobus_free(pf->mdio);
--	}
  }
++
++#define ENETC_MDIO_DEV_ID	0xee01
++#define ENETC_MDIO_DEV_NAME	"FSL PCIe IE Central MDIO"
++#define ENETC_MDIO_BUS_NAME	ENETC_MDIO_DEV_NAME " Bus"
++#define ENETC_MDIO_DRV_NAME	ENETC_MDIO_DEV_NAME " driver"
++#define ENETC_MDIO_DRV_ID	"fsl_enetc_mdio"
++
++static int enetc_pci_mdio_probe(struct pci_dev *pdev,
++				const struct pci_device_id *ent)
++{
++	struct enetc_mdio_priv *mdio_priv;
++	struct device *dev = &pdev->dev;
++	struct enetc_hw *hw;
++	struct mii_bus *bus;
++	int err;
++
++	hw = devm_kzalloc(dev, sizeof(*hw), GFP_KERNEL);
++	if (!hw)
++		return -ENOMEM;
++
++	bus = devm_mdiobus_alloc_size(dev, sizeof(*mdio_priv));
++	if (!bus)
++		return -ENOMEM;
++
++	bus->name = ENETC_MDIO_BUS_NAME;
++	bus->read = enetc_mdio_read;
++	bus->write = enetc_mdio_write;
++	bus->parent = dev;
++	mdio_priv = bus->priv;
++	mdio_priv->hw = hw;
++	snprintf(bus->id, MII_BUS_ID_SIZE, "%s", dev_name(dev));
++
++	pcie_flr(pdev);
++	err = pci_enable_device_mem(pdev);
++	if (err) {
++		dev_err(dev, "device enable failed\n");
++		return err;
++	}
++
++	err = pci_request_region(pdev, 0, ENETC_MDIO_DRV_ID);
++	if (err) {
++		dev_err(dev, "pci_request_region failed\n");
++		goto err_pci_mem_reg;
++	}
++
++	hw->port = pci_iomap(pdev, 0, 0);
++	if (!bus->priv) {
++		err = -ENXIO;
++		dev_err(dev, "iomap failed\n");
++		goto err_ioremap;
++	}
++
++	err = of_mdiobus_register(bus, dev->of_node);
++	if (err)
++		goto err_mdiobus_reg;
++
++	pci_set_drvdata(pdev, bus);
++
++	return 0;
++
++err_mdiobus_reg:
++	iounmap(mdio_priv->hw->port);
++err_ioremap:
++	pci_release_mem_regions(pdev);
++err_pci_mem_reg:
++	pci_disable_device(pdev);
++
++	return err;
++}
++
++static void enetc_pci_mdio_remove(struct pci_dev *pdev)
++{
++	struct mii_bus *bus = pci_get_drvdata(pdev);
++	struct enetc_mdio_priv *mdio_priv;
++
++	mdiobus_unregister(bus);
++	mdio_priv = bus->priv;
++	iounmap(mdio_priv->hw->port);
++	pci_release_mem_regions(pdev);
++	pci_disable_device(pdev);
++}
++
++static const struct pci_device_id enetc_pci_mdio_id_table[] = {
++	{ PCI_DEVICE(PCI_VENDOR_ID_FREESCALE, ENETC_MDIO_DEV_ID) },
++	{ 0, } /* End of table. */
++};
++MODULE_DEVICE_TABLE(pci, enetc_mdio_id_table);
++
++static struct pci_driver enetc_pci_mdio_driver = {
++	.name = ENETC_MDIO_DRV_ID,
++	.id_table = enetc_pci_mdio_id_table,
++	.probe = enetc_pci_mdio_probe,
++	.remove = enetc_pci_mdio_remove,
++};
++module_pci_driver(enetc_pci_mdio_driver);
++
++MODULE_DESCRIPTION(ENETC_MDIO_DRV_NAME);
++MODULE_LICENSE("Dual BSD/GPL");
+diff --git a/drivers/net/ethernet/freescale/enetc/enetc_pf.c b/drivers/net/ethernet/freescale/enetc/enetc_pf.c
+index 258b3cb38a6f..7d6513ff8507 100644
+--- a/drivers/net/ethernet/freescale/enetc/enetc_pf.c
++++ b/drivers/net/ethernet/freescale/enetc/enetc_pf.c
+@@ -750,6 +750,7 @@ static int enetc_of_get_phy(struct enetc_ndev_priv *priv)
+ {
+ 	struct enetc_pf *pf = enetc_si_priv(priv->si);
+ 	struct device_node *np = priv->dev->of_node;
++	struct device_node *mdio_np;
+ 	int err;
+ 
+ 	if (!np) {
+@@ -773,7 +774,9 @@ static int enetc_of_get_phy(struct enetc_ndev_priv *priv)
+ 		priv->phy_node = of_node_get(np);
+ 	}
+ 
+-	if (!of_phy_is_fixed_link(np)) {
++	mdio_np = of_get_child_by_name(np, "mdio");
++	if (mdio_np) {
++		of_node_put(mdio_np);
+ 		err = enetc_mdio_probe(pf);
+ 		if (err) {
+ 			of_node_put(priv->phy_node);
 -- 
 2.17.1
 
