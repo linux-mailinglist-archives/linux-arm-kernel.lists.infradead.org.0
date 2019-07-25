@@ -2,81 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E01B74346
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 04:26:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 758C774348
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 04:26:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0PF6jWNxwACmIqsEwreQq3Eak7a/MsvijKZBXPWwREo=; b=nWoBUpYjT2qFYV
-	CG2ubAYA1r/EPAgpx3YROj6z/Rm3SMxuxoZEYuie7vGEPEFRwCC0PavOte3aZ//0foj23jb5MnyeQ
-	jFZUBNqK1vFQDaMTaNkDzcFRuqeI6J9gU2djJhMiwYGNc5AfAEws8VgGQmb3xaGGH0bEa+FKUAmd5
-	oXy+YA++bUkkZxyCZvEGwv8Fi34lfqrS5IQlOl8EzUiSG+fIcOizateQS6iLM5TWXrUiD7Ioo5ovG
-	pfGy7V5K6NEc7tYErDSkgkNGJySmfP2qGtyJgOOpsYAKUlC3NoSh8yC9kjYR9ubu8rWHy8srJVRTO
-	vnB32tlTq1vkwn7tjRYg==;
+	List-Owner; bh=2rKb5Tc2BeRtaHC7R0bbTzv4V5mPFqfM61zC48RklVc=; b=tgJgWXrrwZAbpa
+	4549kgR/+Oe4HtIh8rfNejt3ODKRpFoskrgSNs8AC989D873wdJ6vRzVDEt7C6qpESyoqhobMCdZw
+	F/fmhXPi8tiYMkh8EtGAmGdNWYqYGyJDk+YipE043koDrSUAPlYpVS/6KYr0J4SbtW4R7dGgFj1dK
+	Li0Ct8IIA7q58xi0wclvjrNxMZ3IUh2WCwXqlDFPecPDKkWi4Io1IwT+xsMXgS30LzGEoUOeiB4yN
+	KvjtOxsQrXFp8zMZKN1tjzrhKN/Vp265y746/q2TcOIUGFzgPzz8004CJpb7ajeBQjN2oNVgbsxRb
+	AM4TldjZKkbNWHjX7SMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqTSg-0002Wi-7B; Thu, 25 Jul 2019 02:26:30 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1hqTT5-0002n7-Tn; Thu, 25 Jul 2019 02:26:55 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqTSQ-0002WF-Sb
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 02:26:16 +0000
-Received: by mail-pf1-x441.google.com with SMTP id 19so21890203pfa.4
+ id 1hqTSc-0002ev-Hs
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 02:26:28 +0000
+Received: by mail-pf1-x442.google.com with SMTP id y15so21892623pfn.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 24 Jul 2019 19:26:14 -0700 (PDT)
+ Wed, 24 Jul 2019 19:26:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=rDiLShrDC8kXE/WTfd9b1UXLyI+P3zktjRDiUd/p51s=;
- b=Lyp35NU9rgi/xE9LSFdJz8ucylAhLT0GpyLYrfePckLaatp+bs/dAIBPEUj3OcZBz5
- 4Lx2lPghPYXcg2qAoaSI8p/zmdsv36ZFuYW9KVIXpY5Mjy6qunX58zXV6Vron6HH1fnm
- 9ullmXGJogZxip19X+ahHyzSXz5X/RX5YF78PvSIDXZMb20m3R848GDk8EVXmFfrtg2C
- glLD7B33N9tArYgV4DdYtT2Pb7Xp7C4oBSj3Gn6yOOMC00Cs+FzPmaW8MecDwSOyex7j
- j+VM6enOhfpwoSFpnWzvNd75hAIU04SsgeRto5ZwSSSnbAeJE6Hkqi6ArIsYmXzG6Fo1
- lxiA==
+ bh=lrZNwnZZDnzjES6SEI5e3v0h9KCl3zyfb3LQV1fN1NY=;
+ b=fPPUjV33twSI6jWM3NalnygQKLY88z0AMl5ULNzbzt2vA8vcf6Cwkv2M7PPr8skYJz
+ ek6z2Lq7mXEQAPfhOqEo2GEqExdwTxFcI0S3EPRB9mApFV0JE/dk/PfdGOvtAEQAMF9t
+ O5HUxpAQziE1Pv0GN5B/TK5LsiQZEhU34Qmx5qF1Nd72JdJgv6UjpFVUogCVyoL3127z
+ W67taQ2WJWOIEnWyX/tV970/OeWr6zxgz/OsZ3gksZ3nAdkezpDzq2de1EgElszcS/Sa
+ ACEfZi+qe0hMmn2+7pH1k4wSr8R8DmGsiF30O1M753bzVlQeZTSLFvzQijsmCZcr7nU9
+ eunQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=rDiLShrDC8kXE/WTfd9b1UXLyI+P3zktjRDiUd/p51s=;
- b=fa8rgUyLGDIlc9aMx5BCoee/4o4xcASYcjTeVuQ+iebS2nmjsKOWAQh43vp5AUmkAw
- e1/QDZKiUUDQBwvKrjyqOxGNtNzql9As4bEojvBjgnTsdrH9gtf2QOpRgprt6YJ3DAVk
- 81ZRRA4WDAHt9qZADWek/6SMqAVlDjFJ5fz6kkpiV5WnmV+QE2oy6mFnAKWstmXwzZnu
- +8fDvsmCHQ23Qhj1a9KNbd9Q38rH3LojcQDS9TVfsTuWzt5/z7YpvSJmbx2/tYyxm5nw
- Osuqf/sYW1GN7KvmQ2/KirfWjZtZAZa88X889vGZY850ZZuJvcM5XIPhmOG/QZK4rfT4
- 96aA==
-X-Gm-Message-State: APjAAAWChm4ozBr6qK0LynSyFO34zjOxI+h34XRgz85ry9UcqFbrfgbD
- rVKskFE6zMW4bB4lyBFywniEYA==
-X-Google-Smtp-Source: APXvYqyG5lBxKIdnc+rgbPIFai7y5A3KdoVj2i2HUWnhYnSV0eT+/UbQI3E/MDXyuB7N3zQiw+L5Wg==
-X-Received: by 2002:aa7:93a5:: with SMTP id x5mr14023218pff.87.1564021573878; 
- Wed, 24 Jul 2019 19:26:13 -0700 (PDT)
+ bh=lrZNwnZZDnzjES6SEI5e3v0h9KCl3zyfb3LQV1fN1NY=;
+ b=mMYtZ3QT4AdrgGzo7Xv8Sm3pBqnQ52AjO9IkhJIeM4kGrYGbseEtj+6y5f8bjtymq+
+ xl/lu834tYFghnADjhoM0nfL/0WFAtzY0v8T6cgxzi5NeIM9RHonfkOCnxosWGaMDMNV
+ xKbxZ9bdeS/W+OMgFj6Jft3SP9DDe0euM+qMxJASB4OTmrkDKkjpEhcQ3K+d3wqDIbM1
+ 3yB13B/saVguv5R3zSlojj63+mWvDqSjffF0dLsW0e1mmps+TKBKGbUvt6aOYLXO29i4
+ /SXB+p1vUwdQn04uMgxoe7VC1lavWb7gYxsQKLNRhtoV3a/GBm9ovyILADDnWmXUSnOm
+ vAXg==
+X-Gm-Message-State: APjAAAXTS1EVe5/9hD5lOAju4fkq6OjpVBWKajagiavV0QjMSuGAoLIm
+ sUx3PiivM8kTjgWd9ZR+mkufVg==
+X-Google-Smtp-Source: APXvYqyz15XsrgLrT3lZPRcmtKpwhIzfYvP6grfI4vt4riBNM2PXT1g9+Gyg/b4bALGpFG7nx0soFw==
+X-Received: by 2002:a62:642:: with SMTP id 63mr14374079pfg.257.1564021585985; 
+ Wed, 24 Jul 2019 19:26:25 -0700 (PDT)
 Received: from localhost ([122.172.28.117])
- by smtp.gmail.com with ESMTPSA id 143sm70120417pgc.6.2019.07.24.19.26.12
+ by smtp.gmail.com with ESMTPSA id g4sm61046934pfo.93.2019.07.24.19.26.24
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 24 Jul 2019 19:26:13 -0700 (PDT)
-Date: Thu, 25 Jul 2019 07:56:11 +0530
+ Wed, 24 Jul 2019 19:26:25 -0700 (PDT)
+Date: Thu, 25 Jul 2019 07:56:23 +0530
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: Anson.Huang@nxp.com
-Subject: Re: [PATCH V2 1/4] dt-bindings: opp: Support multiple opp-suspend
- properties
-Message-ID: <20190725022611.f6dirdstu3yndcwy@vireshk-i7>
+Subject: Re: [PATCH V2 2/4] opp: of: Support multiple suspend OPPs defined in
+ DT
+Message-ID: <20190725022623.jzrlsxkppa35kljz@vireshk-i7>
 References: <20190709080015.43442-1-Anson.Huang@nxp.com>
+ <20190709080015.43442-2-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190709080015.43442-1-Anson.Huang@nxp.com>
+In-Reply-To: <20190709080015.43442-2-Anson.Huang@nxp.com>
 User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_192614_933016_63EA1407 
-X-CRM114-Status: GOOD (  10.55  )
+X-CRM114-CacheID: sfid-20190724_192626_690472_ADC80E12 
+X-CRM114-Status: GOOD (  13.70  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -114,16 +115,26 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 On 09-07-19, 16:00, Anson.Huang@nxp.com wrote:
 > From: Anson Huang <Anson.Huang@nxp.com>
 > 
-> Update opp-suspend property's description to support multiple
-> opp-suspend properties defined in DT, the OPP with highest opp-hz
-> and with opp-suspend property present will be used as suspend opp.
+> With property "opp-supported-hw" introduced, the OPP table
+> in DT could be a large OPP table and ONLY a subset of OPPs
+> are available, based on the version of the hardware running
+> on. That introduces restriction of using "opp-suspend"
+> property to define the suspend OPP, as we are NOT sure if the
+> OPP containing "opp-suspend" property is available for the
+> hardware running on, and the of opp core does NOT allow multiple
+> suspend OPPs defined in DT OPP table.
+> 
+> To eliminate this restrition, make of opp core allow multiple
+> suspend OPPs defined in DT, and pick the OPP with highest rate
+> and with "opp-suspend" property present to be suspend OPP, it
+> can speed up the suspend/resume process.
 > 
 > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 > ---
-> New patch.
+> No changes.
 > ---
->  Documentation/devicetree/bindings/opp/opp.txt | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
+>  drivers/opp/of.c | 9 ++++++---
+>  1 file changed, 6 insertions(+), 3 deletions(-)
 
 Applied. Thanks.
 
