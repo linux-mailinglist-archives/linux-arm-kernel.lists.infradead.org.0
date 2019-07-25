@@ -2,45 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F0A974932
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 10:35:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6011374933
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 10:35:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xq7c0XWeziOWw6ISGytaiBxzGm1/aWvm+BOdxyD3iXU=; b=uK8XHn2EKnwPNz
-	h5pv0u7gV+81fRfsm/QCoyXAMTIiW1LI42j6XoHf4efjFCmpu+uDCZRb3mjkv7NiP9U4cckC7b9yx
-	dhEzgJUcs16qs7xQYVgou09uBo+H4zZ21oANIZc/Hgg684bkTkpuA7iCPpnl2QHFnF/y6lkGJp6q+
-	bxN+qvv/p0dXYQAxLi3SHALxfraIcBPCQwDPCPZwAAeLhx2Xn4mbma2z8/EcC9eR2Clt5V7puQPGW
-	gFSiqq4nRZAoR8gcBc1s5wfrhtlpWIovOBUAo/FsLu9JXPu0r/ViGIEVE3/+ibr/cZ72W/GqtSRWP
-	poIKA4MYcglEcxQtLcXg==;
+	List-Owner; bh=5IiBq0LMSWP1qSKqEHHr9VqPiOotW4v9ejw5DCZe8Y4=; b=f2qXovVZmfnZYA
+	/lHEnd31rITLPES8BV4poYWQT1pZ76tpy/tZyi+EftqBDyCH7s2+EvQwAiG0d0IwZ0eD4qP3ZAbIs
+	LvKQlMNVb2wei4EnUefaYpw3gdb0RmLSXe6xwA1Vdv4AVy+LETOCjqJ64qYefm8dQFqDuVFtOJHZa
+	FwIrGF7bHs5Q6T5NlscO4PfGcvHs8z+kNS1cYOXMHKxZRSlzi9TWJxIokyhMyHMftSK7LMW4IEW0Z
+	5i7KCPOmtapt5bGCqgY8KQH9pVgHk3tn2OlYxrOFAmoQR5JnAW5GV+sEqvp7dWuQ940m0yCL8H0Iz
+	592I5v7bDQ4wX74N7q6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqZDa-0003Sb-TS; Thu, 25 Jul 2019 08:35:19 +0000
+	id 1hqZDs-0004ur-NR; Thu, 25 Jul 2019 08:35:36 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hqZDF-0003Ry-QA
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 08:34:59 +0000
+ id 1hqZDH-0003S3-9p
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 08:35:00 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5B0CE344;
- Thu, 25 Jul 2019 01:34:54 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5A1F9152D;
+ Thu, 25 Jul 2019 01:34:57 -0700 (PDT)
 Received: from localhost.localdomain (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 7006F3F694;
- Thu, 25 Jul 2019 01:34:53 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 68BA53F694;
+ Thu, 25 Jul 2019 01:34:56 -0700 (PDT)
 From: Guillaume <guillaume.gardet@arm.com>
 To: linux-samsung-soc@vger.kernel.org
-Subject: [PATCH V2 1/2] arm: dts: exynos: Add GPU/Mali T604 node to exynos5250
-Date: Thu, 25 Jul 2019 10:34:32 +0200
-Message-Id: <20190725083433.6505-1-guillaume.gardet@arm.com>
+Subject: [PATCH V2 2/2] dt-bindings: gpu: mali-midgard: Add samsung exynos5250
+ compatible
+Date: Thu, 25 Jul 2019 10:34:33 +0200
+Message-Id: <20190725083433.6505-2-guillaume.gardet@arm.com>
 X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20190724072008.6272-1-guillaume.gardet@free.fr>
+In-Reply-To: <20190725083433.6505-1-guillaume.gardet@arm.com>
 References: <20190724072008.6272-1-guillaume.gardet@free.fr>
+ <20190725083433.6505-1-guillaume.gardet@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_013457_899405_1DF2659D 
-X-CRM114-Status: GOOD (  10.00  )
+X-CRM114-CacheID: sfid-20190725_013459_388060_A5D300B4 
+X-CRM114-Status: UNSURE (   9.91  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -69,9 +72,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Guillaume GARDET <guillaume.gardet@arm.com>
 
-Add nodes for GPU (Mali T604) to Exynos5250.
-Tested with kmscube and glmark2-es2-drm on Chromebook snow.
-Load tested on arndale board.
+Add "samsung,exynos5250-mali" binding.
 
 Signed-off-by: Guillaume GARDET <guillaume.gardet@arm.com>
 
@@ -79,74 +80,23 @@ Cc: Kukjin Kim <kgene@kernel.org>
 Cc: Krzysztof Kozlowski <krzk@kernel.org>
 Cc: linux-arm-kernel@lists.infradead.org
 ---
-V2 changes: 
-  * move mali node as /soc sub-node
-  * move gpu_opp_table as mali sub-node
-  * minor style updates
-  * test on arndale board
-  * enable by default
-  * add dt bindings, in a separate patch
+V2 changes: new patch for V2 serie
 
- arch/arm/boot/dts/exynos5250.dtsi | 47 +++++++++++++++++++++++++++++++
- 1 file changed, 47 insertions(+)
+ Documentation/devicetree/bindings/gpu/arm,mali-midgard.txt | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm/boot/dts/exynos5250.dtsi b/arch/arm/boot/dts/exynos5250.dtsi
-index d5e0392b409e..f7f34d469bde 100644
---- a/arch/arm/boot/dts/exynos5250.dtsi
-+++ b/arch/arm/boot/dts/exynos5250.dtsi
-@@ -328,6 +328,52 @@
- 			iommus = <&sysmmu_rotator>;
- 		};
- 
-+		mali: gpu@11800000 {
-+			compatible = "samsung,exynos5250-mali", "arm,mali-t604";
-+			reg = <0x11800000 0x5000>;
-+			interrupts = <GIC_SPI 118 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 119 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 117 IRQ_TYPE_LEVEL_HIGH>;
-+			interrupt-names = "job", "mmu", "gpu";
-+			clocks = <&clock CLK_G3D>;
-+			clock-names = "g3d";
-+			operating-points-v2 = <&gpu_opp_table>;
-+			power-domains = <&pd_g3d>;
-+
-+			gpu_opp_table: gpu-opp-table {
-+				compatible = "operating-points-v2";
-+
-+				opp-100000000 {
-+					opp-hz = /bits/ 64 <100000000>;
-+					opp-microvolt = <925000>;
-+				};
-+				opp-160000000 {
-+					opp-hz = /bits/ 64 <160000000>;
-+					opp-microvolt = <925000>;
-+				};
-+				opp-266000000 {
-+					opp-hz = /bits/ 64 <266000000>;
-+					opp-microvolt = <1025000>;
-+				};
-+				opp-350000000 {
-+					opp-hz = /bits/ 64 <350000000>;
-+					opp-microvolt = <1075000>;
-+				};
-+				opp-400000000 {
-+					opp-hz = /bits/ 64 <400000000>;
-+					opp-microvolt = <1125000>;
-+				};
-+				opp-450000000 {
-+					opp-hz = /bits/ 64 <450000000>;
-+					opp-microvolt = <1150000>;
-+				};
-+				opp-533000000 {
-+					opp-hz = /bits/ 64 <533000000>;
-+					opp-microvolt = <1250000>;
-+				};
-+			};
-+		};
-+
- 		tmu: tmu@10060000 {
- 			compatible = "samsung,exynos5250-tmu";
- 			reg = <0x10060000 0x100>;
+diff --git a/Documentation/devicetree/bindings/gpu/arm,mali-midgard.txt b/Documentation/devicetree/bindings/gpu/arm,mali-midgard.txt
+index 9b298edec5b2..bdd1396d9cc3 100644
+--- a/Documentation/devicetree/bindings/gpu/arm,mali-midgard.txt
++++ b/Documentation/devicetree/bindings/gpu/arm,mali-midgard.txt
+@@ -17,6 +17,7 @@ Required properties:
+   * which must be preceded by one of the following vendor specifics:
+     + "allwinner,sun50i-h6-mali"
+     + "amlogic,meson-gxm-mali"
++    + "samsung,exynos5250-mali"
+     + "samsung,exynos5433-mali"
+     + "rockchip,rk3288-mali"
+     + "rockchip,rk3399-mali"
 -- 
 2.22.0
 
