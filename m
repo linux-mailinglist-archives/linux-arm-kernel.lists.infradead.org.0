@@ -2,83 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 64F277433F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 04:24:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E01B74346
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 04:26:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FwVSCDfTdZH8n8pulh1gYnXBuTgb27ZLsj+AR40KEaM=; b=bXSNKZIEZZUAbV
-	j5wemQhYeD8LbnqI4ksON0vQtyy46htC0SQ3+ASxzAv1W8N3cIzyMstCDvhwWG/vYkljfHKN1l/bF
-	32vv4mpRqGLm8b1qofVcHi3XC3Q4Ty1FwnMaUqXF7/bvjQ0j8hW3Tua/Ayd5c4PRh7QaiaPMlyG8E
-	sD87TM1mZPugjPoiLoQiqBTGlQLH/nauZpJ1X957zWgygCBi2fHYPxMILbetQE+tvwkM8ns0cQ4Tv
-	L4bNi6nBA0ZaA26/HNfyUlSD8cirnBq8hY7z6dkJ3UoB9OYDeKC/f1ma2nsJUpluNTLs1CrNrdP3H
-	wRQ1LDNvV/Zvo/tlvcDg==;
+	List-Owner; bh=0PF6jWNxwACmIqsEwreQq3Eak7a/MsvijKZBXPWwREo=; b=nWoBUpYjT2qFYV
+	CG2ubAYA1r/EPAgpx3YROj6z/Rm3SMxuxoZEYuie7vGEPEFRwCC0PavOte3aZ//0foj23jb5MnyeQ
+	jFZUBNqK1vFQDaMTaNkDzcFRuqeI6J9gU2djJhMiwYGNc5AfAEws8VgGQmb3xaGGH0bEa+FKUAmd5
+	oXy+YA++bUkkZxyCZvEGwv8Fi34lfqrS5IQlOl8EzUiSG+fIcOizateQS6iLM5TWXrUiD7Ioo5ovG
+	pfGy7V5K6NEc7tYErDSkgkNGJySmfP2qGtyJgOOpsYAKUlC3NoSh8yC9kjYR9ubu8rWHy8srJVRTO
+	vnB32tlTq1vkwn7tjRYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqTQI-000102-Hs; Thu, 25 Jul 2019 02:24:02 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1hqTSg-0002Wi-7B; Thu, 25 Jul 2019 02:26:30 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqTQ5-0000z7-HG
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 02:23:51 +0000
-Received: by mail-pf1-x442.google.com with SMTP id 19so21887444pfa.4
+ id 1hqTSQ-0002WF-Sb
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 02:26:16 +0000
+Received: by mail-pf1-x441.google.com with SMTP id 19so21890203pfa.4
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 24 Jul 2019 19:23:48 -0700 (PDT)
+ Wed, 24 Jul 2019 19:26:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=f2gYhr2xF9eqfzuK1I6ByZW/6E+IIFIf49moUqSig44=;
- b=UWpYFZCqApaDNfrjdA5KtekES5UJ5GTU1kmcTFDFb2FLfRCDcNFDgvronSImr9dgD9
- 0mFTlZI7X35xO1vEdd3Gki5LIf98gKG5QhKxb/Y4+VDIDhfB1gwWeVXBqiLEyWL2EkgW
- NT11Oz6vHpCvPOjC1YKTKmUoFKun/2NxPqpp1JkpL65nRxlStWUN4lRLXspUzJnsSUs7
- f0W+td0YgaR8ANRf2sKNe+yfU85x4p815cUUDhoDA7GMXy2XLaBS0z1jQB9wcs/VHaCv
- 7pV5B+RTx3CuZ/R9xi/w3tBHDvXglw6aX/anI5anp/fOKcEQncy2ECQwLBNYPNc9rUd9
- Z5QA==
+ bh=rDiLShrDC8kXE/WTfd9b1UXLyI+P3zktjRDiUd/p51s=;
+ b=Lyp35NU9rgi/xE9LSFdJz8ucylAhLT0GpyLYrfePckLaatp+bs/dAIBPEUj3OcZBz5
+ 4Lx2lPghPYXcg2qAoaSI8p/zmdsv36ZFuYW9KVIXpY5Mjy6qunX58zXV6Vron6HH1fnm
+ 9ullmXGJogZxip19X+ahHyzSXz5X/RX5YF78PvSIDXZMb20m3R848GDk8EVXmFfrtg2C
+ glLD7B33N9tArYgV4DdYtT2Pb7Xp7C4oBSj3Gn6yOOMC00Cs+FzPmaW8MecDwSOyex7j
+ j+VM6enOhfpwoSFpnWzvNd75hAIU04SsgeRto5ZwSSSnbAeJE6Hkqi6ArIsYmXzG6Fo1
+ lxiA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=f2gYhr2xF9eqfzuK1I6ByZW/6E+IIFIf49moUqSig44=;
- b=fK/6OY4ShiF7fU+JNlvASVbl+I9mssoiZ+ybn+JYrRk8uS0AMvcgdFOLXVLL4xXXzD
- wexj13H2AQLY69jC6IJflpIIQVr/INEoSdZtn3P3I3IPAP6ob3qzJVrDKTJE2RJJW/h3
- DUTCNBKcqO5jdhHLw3OyphIKFiIZQxIIc1+80/9lrf5VBdI0yLSBLKpa6tZJnVMBbEmZ
- vNCcCM2YDo3lgwHfJt1eVaKVhqFrq3JYjypuGx+DZ/sxpmyE7A16lWGjIYjIqxng5uvZ
- jUQJSkj3bP40VdIqnVNv8iaCgnyU/0rE/sBx8sqIXNuxq1jci8L1cEMGc26YyU+/k7v8
- FgJQ==
-X-Gm-Message-State: APjAAAWepXVhf+PAuJkyFhGbcD/LmU5l7MNrwaAjZwKh5zkYKuhz8Xup
- 6bfr4c2yyeZ3+GqG4cQmrHvUTQ==
-X-Google-Smtp-Source: APXvYqzXNlrdXx1C+X0/1qZx+FxwGsBmRDCWeiwCURuT22GPdQ5YuJbOB5TOiPQUDU7gUhGBG6bBRQ==
-X-Received: by 2002:a62:750c:: with SMTP id q12mr14690753pfc.59.1564021427936; 
- Wed, 24 Jul 2019 19:23:47 -0700 (PDT)
+ bh=rDiLShrDC8kXE/WTfd9b1UXLyI+P3zktjRDiUd/p51s=;
+ b=fa8rgUyLGDIlc9aMx5BCoee/4o4xcASYcjTeVuQ+iebS2nmjsKOWAQh43vp5AUmkAw
+ e1/QDZKiUUDQBwvKrjyqOxGNtNzql9As4bEojvBjgnTsdrH9gtf2QOpRgprt6YJ3DAVk
+ 81ZRRA4WDAHt9qZADWek/6SMqAVlDjFJ5fz6kkpiV5WnmV+QE2oy6mFnAKWstmXwzZnu
+ +8fDvsmCHQ23Qhj1a9KNbd9Q38rH3LojcQDS9TVfsTuWzt5/z7YpvSJmbx2/tYyxm5nw
+ Osuqf/sYW1GN7KvmQ2/KirfWjZtZAZa88X889vGZY850ZZuJvcM5XIPhmOG/QZK4rfT4
+ 96aA==
+X-Gm-Message-State: APjAAAWChm4ozBr6qK0LynSyFO34zjOxI+h34XRgz85ry9UcqFbrfgbD
+ rVKskFE6zMW4bB4lyBFywniEYA==
+X-Google-Smtp-Source: APXvYqyG5lBxKIdnc+rgbPIFai7y5A3KdoVj2i2HUWnhYnSV0eT+/UbQI3E/MDXyuB7N3zQiw+L5Wg==
+X-Received: by 2002:aa7:93a5:: with SMTP id x5mr14023218pff.87.1564021573878; 
+ Wed, 24 Jul 2019 19:26:13 -0700 (PDT)
 Received: from localhost ([122.172.28.117])
- by smtp.gmail.com with ESMTPSA id k25sm37963077pgt.53.2019.07.24.19.23.45
+ by smtp.gmail.com with ESMTPSA id 143sm70120417pgc.6.2019.07.24.19.26.12
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 24 Jul 2019 19:23:46 -0700 (PDT)
-Date: Thu, 25 Jul 2019 07:53:43 +0530
+ Wed, 24 Jul 2019 19:26:13 -0700 (PDT)
+Date: Thu, 25 Jul 2019 07:56:11 +0530
 From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Marek Szyprowski <m.szyprowski@samsung.com>
-Subject: Re: [PATCH v2 0/9] Exynos Adaptive Supply Voltage support
-Message-ID: <20190725022343.p7lqalrh5svxvtu2@vireshk-i7>
-References: <CGME20190718143117eucas1p1e534b9075d10fbbbe427c66192205eb1@eucas1p1.samsung.com>
- <20190718143044.25066-1-s.nawrocki@samsung.com>
- <20190723020450.z2pqwetkn2tfhacq@vireshk-i7>
- <5ef302a4-5bbf-483d-dfdf-cf76f6f69cee@samsung.com>
+To: Anson.Huang@nxp.com
+Subject: Re: [PATCH V2 1/4] dt-bindings: opp: Support multiple opp-suspend
+ properties
+Message-ID: <20190725022611.f6dirdstu3yndcwy@vireshk-i7>
+References: <20190709080015.43442-1-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <5ef302a4-5bbf-483d-dfdf-cf76f6f69cee@samsung.com>
+In-Reply-To: <20190709080015.43442-1-Anson.Huang@nxp.com>
 User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_192349_584744_25C6BC1D 
-X-CRM114-Status: GOOD (  17.56  )
+X-CRM114-CacheID: sfid-20190724_192614_933016_63EA1407 
+X-CRM114-Status: GOOD (  10.55  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -100,53 +98,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- linux-pm@vger.kernel.org, vireshk@kernel.org, b.zolnierkie@samsung.com,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, kgene@kernel.org,
- krzk@kernel.org, Sylwester Nawrocki <s.nawrocki@samsung.com>,
- pankaj.dubey@samsung.com, linux-arm-kernel@lists.infradead.org
+Cc: nm@ti.com, mark.rutland@arm.com, ping.bai@nxp.com, ccaione@baylibre.com,
+ agx@sigxcpu.org, angus@akkea.ca, leonard.crestez@nxp.com, festevam@gmail.com,
+ abel.vesa@nxp.com, andrew.smirnov@gmail.com, vireshk@kernel.org,
+ Linux-imx@nxp.com, devicetree@vger.kernel.org, kernel@pengutronix.de,
+ linux-pm@vger.kernel.org, s.hauer@pengutronix.de, robh+dt@kernel.org,
+ daniel.baluta@nxp.com, linux-arm-kernel@lists.infradead.org, sboyd@kernel.org,
+ linux-kernel@vger.kernel.org, p.zabel@pengutronix.de, shawnguo@kernel.org,
+ l.stach@pengutronix.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 24-07-19, 15:10, Marek Szyprowski wrote:
-> Hi Viresh,
+On 09-07-19, 16:00, Anson.Huang@nxp.com wrote:
+> From: Anson Huang <Anson.Huang@nxp.com>
 > 
-> On 2019-07-23 04:04, Viresh Kumar wrote:
-> > On 18-07-19, 16:30, Sylwester Nawrocki wrote:
-> >> This is second iteration of patch series adding ASV (Adaptive Supply
-> >> Voltage) support for Exynos SoCs. The first one can be found at:
-> >> https://lore.kernel.org/lkml/20190404171735.12815-1-s.nawrocki@samsung.com
-> >>
-> >> The main changes comparing to the first (RFC) version are:
-> >>   - moving ASV data tables from DT to the driver,
-> >>   - converting the chipid and the ASV drivers to use regmap,
-> >>   - converting the ASV driver to proper platform driver.
-> >>
-> >> I tried the opp-supported-hw bitmask approach as in the Qualcomm CPUFreq
-> >> DT bindings but it resulted in too many OPPs and DT nodes, around 200
-> >> per CPU cluster. So the ASV OPP tables are now in the ASV driver, as in
-> >> downstream kernels.
-> > Hmm. Can you explain why do you have so many OPPs? How many
-> > frequencies do you actually support per cluster and what all varies
-> > per frequency based on hw ? How many hw version do u have ?
+> Update opp-suspend property's description to support multiple
+> opp-suspend properties defined in DT, the OPP with highest opp-hz
+> and with opp-suspend property present will be used as suspend opp.
 > 
-> For big cores there are 20 frequencies (2100MHz .. 200MHz). Each SoC 
-> might belong to one of the 3 production 'sets' and each set contains 14 
-> so called 'asv groups', which assign the certain voltage values for each 
-> of those 20 frequencies (the lower asv group means lower voltage needed 
-> for given frequency).
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> ---
+> New patch.
+> ---
+>  Documentation/devicetree/bindings/opp/opp.txt | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
 
-There is another property which might be useful in this case:
-"opp-microvolt-<name>" and then you can use API
-dev_pm_opp_set_prop_name() to choose which voltage value to apply to
-all OPPs.
-
-opp-supported-hw property is more useful for the cases where only a
-subset of frequencies will be supported for different versions of the
-SoC. And what you need is a different voltage value for all
-frequencies based on some h/w version.
+Applied. Thanks.
 
 -- 
 viresh
