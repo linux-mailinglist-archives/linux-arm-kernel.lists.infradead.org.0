@@ -2,49 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB478754D2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 18:58:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B27E97551E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 19:07:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=zXf8v/gb5UotCJScRc0Iux3X4BAUtPZeUIh0H3swOMY=; b=A7Y06gYNInOPAxc6NNOiaRrAY
-	Zb27z00+itZdZJ10ZdfNYf7+ezBtLMDJGBR7AKFen9MQD8J49IfytEHG/r0RJiVDChO79Fd6oXkA9
-	A1Nsdy/bbqT6zUrtNdhyriVfgaiZXQ3GarmLgLIbAY44ogsXt9NzJMR66DSNG9i94RQhmtplqMGN1
-	tEYcZCQavJdjPw19LLXhHCXeKr2hHurGxDFdKk24qagZUZNT7Y4G+v3j2zuOnlrEPZu0xQAEhlPJo
-	fYpkSnsmiRhoPhwYdnOpG76iGNmZ0vvmvvRzDLYkhBEUEltZgbrhLabcYS6IsrcK2IUr2BYzzF0gO
-	/AdUcgq+Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kkFR4IB5CQjsq0YybnCsOvuPq0cUgBYZtUZwZ1BEBfo=; b=QZmbGLwrxwRXYd
+	aYIohIqw3U+Y1SVM1yxKFEfvZHTH4hJvCQsSsxH2FiKEVtCWh3wjfLFm35hgLnHtz33Vzjb4lRavG
+	x9//pwDXoOT+2lhRcIIau/MZgtKUcodV38bQkRsYdGTzDyJRHw7QgY+qBbSw2/uj20ge0orRQvM6p
+	mGYb8U2dT4zXGCWIM8M88ZY/dmp2abXRpXxSZcC/Way9sxmfidnLNSSnpEQepDvzmUH2OVexw+szC
+	clvsNl5krn/s7phNvoLisCagzvg0L/IiY7xvy5cZaciTvh3p/sjn7bDY3LdbIfOPLMdduje1CV770
+	iicWZ5LtwmS9XMpnqHPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqh4r-0004pr-R0; Thu, 25 Jul 2019 16:58:49 +0000
+	id 1hqhDP-0000I5-3N; Thu, 25 Jul 2019 17:07:39 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hqh4b-0004oj-O7
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 16:58:35 +0000
+ id 1hqhDC-0000HG-1T
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 17:07:27 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C98E919BF;
- Thu, 25 Jul 2019 09:58:31 -0700 (PDT)
-Received: from [10.1.194.48] (e123572-lin.cambridge.arm.com [10.1.194.48])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6FF8F3F71A;
- Thu, 25 Jul 2019 09:58:30 -0700 (PDT)
-Subject: Re: [PATCH] arm64: dts: fast models: Increase clcd's
- max-memory-bandwidth
-To: Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
-References: <20190725145040.42182-1-kevin.brodsky@arm.com>
- <042d5c3d-96fe-5466-3869-a0a3a08b964d@arm.com>
-From: Kevin Brodsky <kevin.brodsky@arm.com>
-Message-ID: <1d7929a2-273e-e695-6700-36aacf38f61a@arm.com>
-Date: Thu, 25 Jul 2019 17:58:25 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5C96A174E;
+ Thu, 25 Jul 2019 10:07:25 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 3EFD23F71A; Thu, 25 Jul 2019 10:07:23 -0700 (PDT)
+Date: Thu, 25 Jul 2019 18:07:21 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [RFC] mm/pgtable/debug: Add test validating architecture page
+ table helpers
+Message-ID: <20190725170720.GB11545@arrakis.emea.arm.com>
+References: <1564037723-26676-1-git-send-email-anshuman.khandual@arm.com>
+ <1564037723-26676-2-git-send-email-anshuman.khandual@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <042d5c3d-96fe-5466-3869-a0a3a08b964d@arm.com>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <1564037723-26676-2-git-send-email-anshuman.khandual@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_095833_828569_FE2965E9 
-X-CRM114-Status: GOOD (  16.84  )
+X-CRM114-CacheID: sfid-20190725_100726_136467_9BC93533 
+X-CRM114-Status: UNSURE (   9.28  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -63,59 +63,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Pawel Moll <pawel.moll@arm.com>,
- Ruben Ayrapetyan <ruben.ayrapetyan@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>, Liviu Dudau <liviu.dudau@arm.com>,
- dri-devel@lists.freedesktop.org, Sudeep Holla <sudeep.holla@arm.com>,
- Brian Starkey <brian.starkey@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Sri Krishna chowdary <schowdary@nvidia.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>, x86@kernel.org,
+ Dave Hansen <dave.hansen@intel.com>, linux-kernel@vger.kernel.org,
+ Matthew Wilcox <willy@infradead.org>, Michal Hocko <mhocko@kernel.org>,
+ linux-mm@kvack.org, Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Mark Brown <Mark.Brown@arm.com>, Andrew Morton <akpm@linux-foundation.org>,
+ Steven Price <Steven.Price@arm.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 25/07/2019 16:15, Robin Murphy wrote:
-> Hi Kevin,
+On Thu, Jul 25, 2019 at 12:25:23PM +0530, Anshuman Khandual wrote:
+> +#if !defined(__PAGETABLE_PMD_FOLDED) && !defined(__ARCH_HAS_4LEVEL_HACK)
+> +static void pud_clear_tests(void)
+> +{
+> +	pud_t pud;
+> +
+> +	pud_clear(&pud);
+> +	WARN_ON(!pud_none(pud));
+> +}
 
-Hi Robin,
+For the clear tests, I think you should initialise the local variable to
+something non-zero rather than rely on whatever was on the stack. In
+case it fails, you have a more deterministic behaviour.
 
-> On 25/07/2019 15:50, Kevin Brodsky wrote:
->> It may be desirable on certain platforms, such as Android, to
->> use 32bpp buffers. Since there is no clear bandwidth limit for the
->> CLCD component on the fast model, let's increase
->> max-memory-bandwidth to allow using 32bpp buffers.
-> Given that the property is optional anyway, would it hurt to just remove
-> it? After trying to dig up any relevant internal email history, it's
-> still far from clear how and why it got here in the first place.
-
-Very good point, I hadn't realised it was an optional property. Removing it 
-completely seems to work fine. I'll send a v2 removing it from both fvp-base-revc.dts 
-and rtsm_ve-motherboard.dtsi. Thanks!
-
-Kevin
-
-> Robin.
->
->> Reported-by: Ruben Ayrapetyan <ruben.ayrapetyan@arm.com>
->> Signed-off-by: Kevin Brodsky <kevin.brodsky@arm.com>
->> ---
->>    arch/arm64/boot/dts/arm/fvp-base-revc.dts | 2 +-
->>    1 file changed, 1 insertion(+), 1 deletion(-)
->>
->> diff --git a/arch/arm64/boot/dts/arm/fvp-base-revc.dts b/arch/arm64/boot/dts/arm/fvp-base-revc.dts
->> index 687707020ec1..3aee49ed6d88 100644
->> --- a/arch/arm64/boot/dts/arm/fvp-base-revc.dts
->> +++ b/arch/arm64/boot/dts/arm/fvp-base-revc.dts
->> @@ -269,7 +269,7 @@
->>    		motherboard {
->>    			iofpga@3,00000000 {
->>    				clcd@1f0000 {
->> -					max-memory-bandwidth = <130000000>; /* 16bpp @ 63.5MHz */
->> +					max-memory-bandwidth = <260000000>; /* 32bpp @ 63.5MHz */
->>    				};
->>    			};
->>    		};
->>
-
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
