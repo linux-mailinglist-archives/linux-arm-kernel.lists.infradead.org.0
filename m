@@ -2,87 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D47C74EB9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 15:01:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A351174EB7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 15:01:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wynHndqjXlNz2jv4LqV/6WmXvLnlaDmUhvQnyOUMdQI=; b=UEnLQDWnqrSBzC
-	SdU5tyyGoZnb/QeyztDDc9PLnwAvVYH3z9sawpFexOS9r9ZvaDq9S9zQU00cRgOqw2JnxfRl6bPVC
-	HorCyilQ3F0YZKrqmw+JOQAZu4g9aqyZtGT9cYqZekyw4GfLHdcJ8SocfdJVDd+ag/XJEjaNGDylZ
-	KcIhMD1RduidywT5oKEAt3ZN0AbNjcK3Z41+ig+JVA4O1kpJuZ6CNfZLOoyra0MWWwpaFWnB6KRet
-	pnIlPx4BLef2E8JH6AQU5WZi7xV7mGWxG3WoOowAZcwhMOvCIyHIPj8sWr/S28VRRHPRIa53+KqnQ
-	ichQCofLMN5/rIiYMnAA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=FYoT3vEDeyLkIgltdp0b9mxhBh8LNn23Q1KWBWxjkBo=; b=WhO
+	KkBxWn8CP4ndNhxDPaT+7VLyCuJXIcsWt4hvySWNP/B/vT3MjvIn6E9AGUHMJ3drjfzlXwZkdobxK
+	bCIZ6g0ZkfS+WP30gTpwM/flr9vCXaUA4FPoqAzhmvrWHBXTcXfshw9LKbmvtYP1lQ0OzhN4Rr5Fp
+	usbdu2TbFGZ8GQMZzKT1rOpZ73wS7DwJhzkLCs5bZcsZV4WJqk5jkomwgbRuHpxzSvgReQzk5aDs9
+	zI6nObLT5HC9VKrtqhmoeZ5WKPjuGTu/17Dy06KFQMWOUF1cAPzi5SB1Kb+uOB4PlMxKivFM8/gM3
+	frFoXKlrCYRPMY5vgLIlq9z094LOJyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqdNW-00074Q-0l; Thu, 25 Jul 2019 13:01:50 +0000
-Received: from mail-vk1-xa44.google.com ([2607:f8b0:4864:20::a44])
+	id 1hqdNE-0006re-Ll; Thu, 25 Jul 2019 13:01:32 +0000
+Received: from relay6-d.mail.gandi.net ([217.70.183.198])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqdNE-00070F-RM
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 13:01:34 +0000
-Received: by mail-vk1-xa44.google.com with SMTP id 9so10056610vkw.4
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 25 Jul 2019 06:01:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=B1z3qSqeis7KRp59LvW3GrIz3rWu/CFv+sXSsB3MIv0=;
- b=S7zg9NIJWKApcIDLjPg7XBK9rjPeDYoBWNVm005ZjT5gIbIyVfUK1xk1sLRQw2MM6x
- 0Mdkbzf6ixFn9ev3RGLQI0Euk3fBpj38V9Um9YNXmB8Nig9Gqm7yu3MXe9SGvtsSF/wm
- cBMTtWscvwBj58mpSYQZHP82mWWmXezEv903XajiM4H7GkdESKIQ2TWthd1ygp1tVdlf
- auy3V0rc8NfdYnkaaXDknQrzs7TI038ABRxdFGjrDH+niO5voLKTNLeZJ3SjiHVtixc8
- lxDg71dtEjf+ShJe5QILrIeZjUXh+f9GR/ZH/Tfe/MfFQcGDLs78lnMBTM2MtL7glJNB
- 5yWw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=B1z3qSqeis7KRp59LvW3GrIz3rWu/CFv+sXSsB3MIv0=;
- b=tRBlCR1QpI9X6mvtKZnKaixKaKWm+RHucb0z0o7NC5vwx1WfMzpp+LsZOytK10KHhj
- +elAI8/0SUF+inJXbEHNGJHClc4SNOC7yuGEDSodk1fBSDJmAtxdkBovtKca+wovl7S+
- GnJWo4fc3BUSHE1e0vhq54aWpO1mHSMR2AUxT93zZGJiNfRgxXWAA5IS0qkeTvpcF87Z
- SqrUfCyXmwWXCwMjikLiECs2IKfX55yql+mNQOd26EnN+/jGBG4yUBghDPMjh8ggpPmN
- Ty0Bx7EE6jo+A8tx0RKtx3hZBhX3IkAjb+DS6n5zYu+O+z4K9S2kRIfDYyIoQwStWz1R
- C/jw==
-X-Gm-Message-State: APjAAAVLNNFRe5H1HXWCZ/kR35elSwUnIwDIm0RZNm7sgTurC3aS4U46
- 9etPl7ed1jXWoVGcbu3pZKXC+8r3EjWw1a08mWAxcA==
-X-Google-Smtp-Source: APXvYqzWSaFSn1p/xkKu/nTk8JDTShS1XkRJNDVHcXJf+E/HgRUTiWRJNBpO14sGxRyKRreBRD1/QWYHKp73a7558FA=
-X-Received: by 2002:a1f:f282:: with SMTP id q124mr34325145vkh.4.1564059690186; 
- Thu, 25 Jul 2019 06:01:30 -0700 (PDT)
+ id 1hqdN0-0006qN-Gr
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 13:01:20 +0000
+X-Originating-IP: 86.250.200.211
+Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
+ [86.250.200.211]) (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id 35D59C0009;
+ Thu, 25 Jul 2019 13:01:13 +0000 (UTC)
+Date: Thu, 25 Jul 2019 15:01:12 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: alsa-devel@alsa-project.org
+Subject: Best representation for TDM devices
+Message-ID: <20190725130112.3j2vi4dyngyr6yh3@flea>
 MIME-Version: 1.0
-References: <1561958991-21935-1-git-send-email-manish.narani@xilinx.com>
- <1561958991-21935-2-git-send-email-manish.narani@xilinx.com>
- <20190722215404.GA28292@bogus>
- <MN2PR02MB602907616249FF19C1A737D8C1C70@MN2PR02MB6029.namprd02.prod.outlook.com>
-In-Reply-To: <MN2PR02MB602907616249FF19C1A737D8C1C70@MN2PR02MB6029.namprd02.prod.outlook.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Thu, 25 Jul 2019 15:00:53 +0200
-Message-ID: <CAPDyKFostBKYipTkCsDbggsrux7w8BPqARx7fwRsL1XqEEX2NQ@mail.gmail.com>
-Subject: Re: [PATCH v2 01/11] dt-bindings: mmc: arasan: Update documentation
- for SD Card Clock
-To: Manish Narani <MNARANI@xilinx.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_060133_022051_8521668C 
-X-CRM114-Status: GOOD (  26.49  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190725_060118_713366_178D516F 
+X-CRM114-Status: GOOD (  10.72  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a44 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.198 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.198 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,122 +60,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "kernel@esmil.dk" <kernel@esmil.dk>,
- "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Jolly Shah <JOLLYS@xilinx.com>,
- "tony.xie@rock-chips.com" <tony.xie@rock-chips.com>,
- "philipp.tomsich@theobroma-systems.com"
- <philipp.tomsich@theobroma-systems.com>, "heiko@sntech.de" <heiko@sntech.de>,
- Rob Herring <robh@kernel.org>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- Rajan Vaja <RAJANV@xilinx.com>, Michal Simek <michals@xilinx.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Nava kishore Manne <navam@xilinx.com>,
- "scott.branden@broadcom.com" <scott.branden@broadcom.com>,
- "ayaka@soulik.info" <ayaka@soulik.info>, "mdf@kernel.org" <mdf@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- "adrian.hunter@intel.com" <adrian.hunter@intel.com>,
- "olof@lixom.net" <olof@lixom.net>,
- "christoph.muellner@theobroma-systems.com"
- <christoph.muellner@theobroma-systems.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Takashi Iwai <tiwai@suse.com>, Liam Girdwood <lgirdwood@gmail.com>,
+ Chen-Yu Tsai <wens@csie.org>, Mark Brown <broonie@kernel.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Jaroslav Kysela <perex@perex.cz>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============5392625376563764073=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 23 Jul 2019 at 10:23, Manish Narani <MNARANI@xilinx.com> wrote:
->
-> Hi Rob,
->
-> Thanks a lot for the review!
->
->
-> > -----Original Message-----
-> > From: Rob Herring <robh@kernel.org>
-> > Sent: Tuesday, July 23, 2019 3:24 AM
-> > To: Manish Narani <MNARANI@xilinx.com>
-> > Cc: ulf.hansson@linaro.org; mark.rutland@arm.com; heiko@sntech.de; Michal
-> > Simek <michals@xilinx.com>; adrian.hunter@intel.com;
-> > christoph.muellner@theobroma-systems.com; philipp.tomsich@theobroma-
-> > systems.com; viresh.kumar@linaro.org; scott.branden@broadcom.com;
-> > ayaka@soulik.info; kernel@esmil.dk; tony.xie@rock-chips.com; Rajan Vaja
-> > <RAJANV@xilinx.com>; Jolly Shah <JOLLYS@xilinx.com>; Nava kishore Manne
-> > <navam@xilinx.com>; mdf@kernel.org; olof@lixom.net; linux-
-> > mmc@vger.kernel.org; devicetree@vger.kernel.org; linux-
-> > kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org; linux-
-> > rockchip@lists.infradead.org
-> > Subject: Re: [PATCH v2 01/11] dt-bindings: mmc: arasan: Update
-> > documentation for SD Card Clock
-> >
-> > On Mon, Jul 01, 2019 at 10:59:41AM +0530, Manish Narani wrote:
-> > > The clock handling is to be updated in the Arasan SDHCI. As the
-> > > 'devm_clk_register' is deprecated in the clock framework, this needs to
-> > > specify one more clock named 'clk_sdcard' to get the clock in the driver
-> > > via 'devm_clk_get()'. This clock represents the clock from controller to
-> > > the card.
-> >
-> > Please explain why in terms of the binding, not some driver calls.
-> Okay.
->
-> >
-> >
-> > > Signed-off-by: Manish Narani <manish.narani@xilinx.com>
-> > > ---
-> > >  Documentation/devicetree/bindings/mmc/arasan,sdhci.txt | 15 ++++++++++-
-> > ----
-> > >  1 file changed, 10 insertions(+), 5 deletions(-)
-> > >
-> > > diff --git a/Documentation/devicetree/bindings/mmc/arasan,sdhci.txt
-> > b/Documentation/devicetree/bindings/mmc/arasan,sdhci.txt
-> > > index 1edbb04..15c6397 100644
-> > > --- a/Documentation/devicetree/bindings/mmc/arasan,sdhci.txt
-> > > +++ b/Documentation/devicetree/bindings/mmc/arasan,sdhci.txt
-> > > @@ -23,6 +23,10 @@ Required Properties:
-> > >    - reg: From mmc bindings: Register location and length.
-> > >    - clocks: From clock bindings: Handles to clock inputs.
-> > >    - clock-names: From clock bindings: Tuple including "clk_xin" and "clk_ahb"
-> > > +            Apart from these two there is one more optional clock which
-> > > +            is "clk_sdcard". This clock represents output clock from
-> > > +            controller and card. This must be specified when #clock-cells
-> > > +            is specified.
-> > >    - interrupts: Interrupt specifier
-> > >
-> > >  Required Properties for "arasan,sdhci-5.1":
-> > > @@ -36,9 +40,10 @@ Optional Properties:
-> > >    - clock-output-names: If specified, this will be the name of the card clock
-> > >      which will be exposed by this device.  Required if #clock-cells is
-> > >      specified.
-> > > -  - #clock-cells: If specified this should be the value <0>.  With this property
-> > > -    in place we will export a clock representing the Card Clock.  This clock
-> > > -    is expected to be consumed by our PHY.  You must also specify
-> > > +  - #clock-cells: If specified this should be the value <0>. With this
-> > > +    property in place we will export one clock representing the Card
-> > > +    Clock. This clock is expected to be consumed by our PHY. You must also
-> > > +    specify
-> >
-> > specify what?
-> I think this line was already there, I missed to correct it, Will update in v3.
->
-> >
-> > The 3rd clock input I assume? This statement means any existing users
-> > with 2 clock inputs and #clock-cells are in error now. Is that correct?
-> Yes, this is correct. So far there was only one vendor using '#clock-cells'  which is Rockchip. I have sent DT patch (02/11) for that also.
-> Here this is needed as earlier implementation isn't correct as suggested by Uffe. (https://lkml.org/lkml/2019/6/20/486) .
 
-I am not sure how big of a problem the backwards compatible thingy
-with DT is, in general we must not break it. What do you say Manish?
+--===============5392625376563764073==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="rddslzkshiyxhiyb"
+Content-Disposition: inline
 
-As a workaround, would it be possible to use
-of_clk_get_from_provider() somehow to address the compatibility issue?
-Or maybe there is another clock API that can help.
 
-Kind regards
-Uffe
+--rddslzkshiyxhiyb
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+Hi,
+
+I'm currently working on a device that has two Analog's ADAU7002
+connected to an I2S/TDM Controller (sound/soc/sunxi/sun4i-i2s.c, with
+some modifications), over the slots 1/2 and 3/4.
+
+The capture itself is working fine, however I'm not quite sure about
+the way to expose those streams to the userspace.
+
+Since I have two codecs, I have two links (described through
+simple-card) and thus two subdevices. However, the microphones
+connected are really separate streams, so ideally (I guess?) we should
+have 1 subdevice per microphone.
+
+An alternative would be that we capture the whole 4 channels and use
+dsnoop to demux them, but trying to use the device directly (using
+arecord -D hw:0) results in the ioctl to change the number of channels
+being rejected, I'm assuming because each codec only has 2 channels?
+
+So I'm a bit lost at this point about how I should go and expose
+this. I couldn't really find any similar setup either in the
+kernel. Any preferred way of doing this?
+
+Thanks!
+Maxime
+
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
+--rddslzkshiyxhiyb
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXTmoGAAKCRDj7w1vZxhR
+xTKUAPwPcJzEqkkoUcUYtmz9PUBumusjyVSRBmCPSBM/U/pQ2AD/UQWf6Jlc3JJN
+BX8LFvZSo3fF7enhh05KgQsqvLuhIQo=
+=hz2z
+-----END PGP SIGNATURE-----
+
+--rddslzkshiyxhiyb--
+
+
+--===============5392625376563764073==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5392625376563764073==--
+
