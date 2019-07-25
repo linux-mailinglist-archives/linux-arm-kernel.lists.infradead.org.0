@@ -2,103 +2,132 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C25B67490C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 10:25:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C0AAF74914
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 10:26:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xIFm9+IY50xUCpdfcoKfPayfAQKZU3I1sORpxXuEAKA=; b=fXV9l2wCw2C69S
-	a9eJx33jalTzFd+BwMRWkw3VTj7glY6qgwxq8DO7k3BJOgTCuYl8n7qLWSQETez4KBfQpQXQc7TW6
-	zKBkKd1ey05zl0K/PrLIyfF7u5q4aOe9IMucfD4sW0oCYGG6wvu+SObho6EaiT4aMUFvZj5uTMUa5
-	Pxur7+kwgeZy90NpL0FEm/D90fVBwFRk6Movtnc8Wa7QPfaOSNNsVMYRX+oqtEkiCr2vGqEIgozeP
-	Gfi72BOCU4B5pFpd/wpOPWShJMyt7DpOIBuvSpGAsZGMNI77o1r5f4IKz4ETpDI0Z/u4HJbu8FOoU
-	tI6zPxDRMZX1qNoY6w2g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	References:MIME-Version:Message-ID:In-Reply-To:Date:Subject:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=IBOjLJf6/AuDizVGbeg06jhuGk0kOx9vFOe0YOsQJWc=; b=aM2GAUjGCpqBe/tr16dMZ1ix9
+	70DSeiL7F/SlHO8Myn+r1T9LRSULIqmyRvXTpO7DE9UnXwXI6Uo+YedHjauYaLu4mv/NDftLtQADx
+	yufUrVXeJNX3Eim3WOYawZiaJSTpeV746tV91Ip38pjktZ0hWseciSrPk95jWiG33sQRahgvoDQ99
+	pfl8e/OfUgDxSSjPCG/X35WVZC6HK4h/6634JOfqGt6P1UUVm5scfVcA+/t8pPVqCn50T1AORZ+G6
+	fzq8lCU2nc7jC7IhHY3zHHPUANJVmDFxpb+T+frtYbCx36FOaMV3wdrJjphZaQwgEeeKFpLCuPK2T
+	nCn1uoC3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqZ3l-0007rv-T3; Thu, 25 Jul 2019 08:25:10 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hqZ3Q-0007rO-FH
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 08:24:49 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 39008344;
- Thu, 25 Jul 2019 01:24:47 -0700 (PDT)
-Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 2AF833F694; Thu, 25 Jul 2019 01:24:45 -0700 (PDT)
-Subject: Re: [PATCH v2 9/9] KVM: arm/arm64: vgic-irqfd: Implement
- kvm_arch_set_irq_inatomic
-To: Auger Eric <eric.auger@redhat.com>, linux-arm-kernel@lists.infradead.org, 
- kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org
-References: <20190611170336.121706-1-marc.zyngier@arm.com>
- <20190611170336.121706-10-marc.zyngier@arm.com>
- <a63b08b8-9539-09b4-1060-7c0d2f2eacac@redhat.com>
-From: Marc Zyngier <marc.zyngier@arm.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
- 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
- Z46HaNmN2hZS/oJ69c1DI5Rcww==
-Organization: ARM Ltd
-Message-ID: <24382fce-e165-4e79-1703-d019efcdf6e8@arm.com>
-Date: Thu, 25 Jul 2019 09:24:38 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+	id 1hqZ4v-0000uV-Cy; Thu, 25 Jul 2019 08:26:21 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hqZ4h-0000u4-Au
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 08:26:09 +0000
+Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
+ by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20190725082604euoutp0298369481026adc27ece657c7cd5fd8e3~0mPi3EqjD2558325583euoutp026;
+ Thu, 25 Jul 2019 08:26:04 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
+ 20190725082604euoutp0298369481026adc27ece657c7cd5fd8e3~0mPi3EqjD2558325583euoutp026
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1564043164;
+ bh=gLlrYGwYAg2QhLg8MnOUjG5G1VY9PY6suInEcRfdv34=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=g+76une2oMCdnfZamXlpJ5U+2ejcyxsxJ5AjJaCx8Rp9YMgCVUQ4zxaaATjlR3rtA
+ cl3AswDcEMMPQ46SW+qZ0cw+LrQJZamd1YvXy/f6A2ZaGe0VVTO9YRMuC2WHJiwI41
+ t6imSkLV+wzfhrN45Kp14N6570da0aFXe70fIh5s=
+Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTP id
+ 20190725082604eucas1p2c4947128af3e9e7521558d942abf491f~0mPiaDKa42775827758eucas1p2A;
+ Thu, 25 Jul 2019 08:26:04 +0000 (GMT)
+Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
+ eusmges2new.samsung.com (EUCPMTA) with SMTP id 27.36.04377.B97693D5; Thu, 25
+ Jul 2019 09:26:03 +0100 (BST)
+Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20190725082603eucas1p205a74e93ec8ce40a1decf9cefcaa970c~0mPhuTa-l1858618586eucas1p2I;
+ Thu, 25 Jul 2019 08:26:03 +0000 (GMT)
+Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
+ eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20190725082603eusmtrp1c1935d1b20d18d2010f33f620834ee09~0mPhtaZ1N2022620226eusmtrp1u;
+ Thu, 25 Jul 2019 08:26:03 +0000 (GMT)
+X-AuditID: cbfec7f4-113ff70000001119-e9-5d39679b63f3
+Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
+ eusmgms2.samsung.com (EUCPMTA) with SMTP id 14.35.04140.B97693D5; Thu, 25
+ Jul 2019 09:26:03 +0100 (BST)
+Received: from localhost (unknown [106.120.51.46]) by eusmtip1.samsung.com
+ (KnoxPortal) with ESMTPA id
+ 20190725082603eusmtip14f6485b9301b1e4daf78576861c67994~0mPhjBqMH2354123541eusmtip1L;
+ Thu, 25 Jul 2019 08:26:03 +0000 (GMT)
+From: =?utf-8?Q?=C5=81ukasz_Stelmach?= <l.stelmach@samsung.com>
+To: Chuhong Yuan <hslester96@gmail.com>
+Subject: Re: [PATCH] hwrng: Use device-managed registration API
+Date: Thu, 25 Jul 2019 10:25:53 +0200
+In-Reply-To: <20190725080155.19875-1-hslester96@gmail.com> (Chuhong Yuan's
+ message of "Thu, 25 Jul 2019 16:01:55 +0800")
+Message-ID: <87wog6frla.fsf%l.stelmach@samsung.com>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/24.5 (gnu/linux)
 MIME-Version: 1.0
-In-Reply-To: <a63b08b8-9539-09b4-1060-7c0d2f2eacac@redhat.com>
-Content-Language: en-US
+X-Brightmail-Tracker: H4sIAAAAAAAAA01Se0yTVxz19nvSreRS2fitA7N0El9BN9jIJXtJsiU3LlvGsmSBjWDVL4ij
+ rbaAAkvomI+J8BVhblDQyDrAIAIBrLZRlEpghJmOKCgiOsfmoOh0gW1VlKz0q4n/nXt+55zf
+ I1dktKd5nZhjypMsJkOunlezrv4HvoS67JTMV6p7k8i+v5oE8riqXyD3S/cwZF/1vyrytbOd
+ Jwf8saTOO80Q++QMQ3y+DoF0To5y5OaNBypyyVPPkxpfj4rM/7fAkakTVzjSbfPy5KhLRuRU
+ VwND6n8aQaS1zymsj6bzD6sQPdJaTH+YtrHU7ZgQqOt8PC2/s5ujnS37eXrucKtAu34sob6a
+ BkSvBxoRndy9h6GHPTKi8nQHon8EzjJ0tnPZRzhD/eYWKTenQLKse3ujeuvImTlh+7kPdp0d
+ 7WVsSE4tQxEi4NfA577IlSG1qMXHELicU4LymEMwttfNKo9ZBOMNHtUTyz/jtnChGUGz7Az7
+ /0Qw9V0/WlTx+B2w9/Wwizgar4BZjzuUy2CZhyMtw6HC0qAo4KgUFjGL4+Fvhz/ER+AiqC29
+ FuI1OAnmxi6FWj+HU+CGPMErfBQM1v4e0jPYCLW+O0gZ774I7Te3KfhdkA82cQpeCv6BbkHB
+ sTBUXR70ikFcAtVVyYuzAS4PHqA+wCqaN+DCwHDYmwr+a32coo+Eq3ejlLaRUOX6nlFoDXyz
+ V6uol0Ob/Uw4RQcV/mPhySiUNi4g5VYVCCbuyVwlesnx1DaOp7ZxBGMZvAraPesUeg00Ncww
+ Cn4L2trusUcR14JipHyrMVuyJpqknWutBqM135S9drPZ2ImCf3hoYWDuNPI82uRFWET6ZzXi
+ JpKp5QwF1kKjFy0PJv3WcfwXpGNNZpOkj9ak2ZIztZothsIiyWLOsuTnSlYvelFk9TGa4iW/
+ fqbF2YY86QtJ2i5ZnlRVYoTOhsoTZi7zGfxDnBi5o8O+69PL3RtSem99K+jVBT238fnHd+Oi
+ B1e6M26lksDzX37V8nnecMLJ9A2F3UJs2vz7S8zpzgz7/olTae99oko21mUNeWvLToy87hg8
+ TrZ5LmpXsK3jvfaf481xL49XfMjpP36h61FOyWzlM1lZcTpv09ihxig9a91qeHU1Y7Ea/gee
+ /5wmywMAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA02Se0hTYRjG+XbOdqY1OE2lr9F1GGWX2bam3yrL/jsQUlEQZaJjHabpNtmZ
+ kUY5TDFnTbMgm5dS01CnrVmakppLrLAwKJUuXkorzdTCe5p1thH43/M+z+954YWXjwntXBE/
+ RmekDTpVnJjnjbcvPuvZnqdRRuzIf+mD0sfKCPQnp41AP1PSMJR+bZqDLpbc46HM76tRnnMY
+ Q1kDIxjq6LATyDHQxUV9vXMc9KYhn4dyO5o4aH5mkYuGqrq56IHJyUO3ay0A1dUUYSj/eSdA
+ ttYSItSXmv+dA6hC2zmqeNiEU/XWHoKqfbKRuvwjlUs5KjJ4VHOBjaBq7iRTHblFgPo4Wwqo
+ gdQ0jCposADKMmwH1JfZRoyacKw9RJ6Q7DHoE4z0+mg9YwwRh0uRTCJVIolsp1IilQdH7JIp
+ xIF795yi42LO0IbAvVGS6M7Hk0R8c9jZxq4WzAQs+83Aiw/JnXDqgwk3A2++kCwFcDStmx34
+ bCCC5QUaD+MDF7rMPA/zBcCH1+oIV8Aj98Gs1ibcpX3JTXCioZ5wQRg5x4V/21OAK/BhoVlr
+ trsgJJXw8pUqt4+TG+Ev63d32YtMgjdT3rsZASmHk+/ecFzaj+V7LT08j78Cvrg56OYxMhZO
+ VX7DsgFpXRJZl0RW9gaMDID3GgI99lZYVjSCeXQIrK4ex28DbgXwpRMYrUbLyCSMSssk6DQS
+ tV7rAOyH1LbNPXgEzGNHnIDkA/FyQW4/ihByVWeYRK0T+LNrPtsrXwMRrtPraLGv4LApKEIo
+ OKVKTKIN+khDQhzNOIGCvfMqJvJT69nf0xkjpQppMFJKg+XB8iAkXim4RLacFJIalZGOpel4
+ 2vC/x+F7iUzg6n1Y51e5SjR2rCh897KtfUZ1XORU1N16B97u83XwYGKYpDtrVDbYH5Dy6kbP
+ 28Jyo/8tLOP40UsKNKSoKaYH5tUbCueTs0OvjHwaX6wSxwbqGjeXXtdN2tT2Znlh7MKPzOqT
+ VQe2CDLSX50+mxm0LeBC69Pp8/G2qDXmdXkzQX1inIlWSbdgBkb1Dz+/ZIdDAwAA
+X-CMS-MailID: 20190725082603eucas1p205a74e93ec8ce40a1decf9cefcaa970c
+X-Msg-Generator: CA
+X-RootMTR: 20190725082603eucas1p205a74e93ec8ce40a1decf9cefcaa970c
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20190725082603eucas1p205a74e93ec8ce40a1decf9cefcaa970c
+References: <20190725080155.19875-1-hslester96@gmail.com>
+ <CGME20190725082603eucas1p205a74e93ec8ce40a1decf9cefcaa970c@eucas1p2.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_012448_619053_02D3701D 
-X-CRM114-Status: GOOD (  17.23  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190725_012607_719722_002235C8 
+X-CRM114-Status: GOOD (  20.92  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.12 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,112 +139,329 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>, "Raslan,
- KarimAllah" <karahmed@amazon.de>, Julien Thierry <julien.thierry@arm.com>,
- Christoffer Dall <christoffer.dall@arm.com>, James Morse <james.morse@arm.com>,
- Zenghui Yu <yuzenghui@huawei.com>, "Saidi, Ali" <alisaidi@amazon.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Deepak Saxena <dsaxena@plexity.net>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Herbert Xu <herbert@gondor.apana.org.au>, Arnd Bergmann <arnd@arndb.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Krzysztof Kozlowski <krzk@kernel.org>,
+ Patrice Chotard <patrice.chotard@st.com>, linux-samsung-soc@vger.kernel.org,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Kukjin Kim <kgene@kernel.org>, Paul Mackerras <paulus@samba.org>,
+ Michael Ellerman <mpe@ellerman.id.au>, Matt Mackall <mpm@selenic.com>,
+ linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
+ linux-crypto@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============6410347474508996272=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 23/07/2019 16:14, Auger Eric wrote:
-> Hi Marc,
-> 
-> On 6/11/19 7:03 PM, Marc Zyngier wrote:
->> Now that we have a cache of MSI->LPI translations, it is pretty
->> easy to implement kvm_arch_set_irq_inatomic (this cache can be
->> parsed without sleeping).
->>
->> Hopefully, this will improve some LPI-heavy workloads.
->>
->> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
->> ---
->>  virt/kvm/arm/vgic/vgic-irqfd.c | 36 ++++++++++++++++++++++++++++------
->>  1 file changed, 30 insertions(+), 6 deletions(-)
->>
->> diff --git a/virt/kvm/arm/vgic/vgic-irqfd.c b/virt/kvm/arm/vgic/vgic-irqfd.c
->> index 99e026d2dade..9f203ed8c8f3 100644
->> --- a/virt/kvm/arm/vgic/vgic-irqfd.c
->> +++ b/virt/kvm/arm/vgic/vgic-irqfd.c
->> @@ -77,6 +77,15 @@ int kvm_set_routing_entry(struct kvm *kvm,
->>  	return r;
->>  }
->>  
->> +static void kvm_populate_msi(struct kvm_kernel_irq_routing_entry *e,
->> +			     struct kvm_msi *msi)
->> +{
->> +	msi->address_lo = e->msi.address_lo;
->> +	msi->address_hi = e->msi.address_hi;
->> +	msi->data = e->msi.data;
->> +	msi->flags = e->msi.flags;
->> +	msi->devid = e->msi.devid;
->> +}
->>  /**
->>   * kvm_set_msi: inject the MSI corresponding to the
-> s/:/ -
->>   * MSI routing entry
->> @@ -90,21 +99,36 @@ int kvm_set_msi(struct kvm_kernel_irq_routing_entry *e,
->>  {
->>  	struct kvm_msi msi;
->>  
->> -	msi.address_lo = e->msi.address_lo;
->> -	msi.address_hi = e->msi.address_hi;
->> -	msi.data = e->msi.data;
->> -	msi.flags = e->msi.flags;
->> -	msi.devid = e->msi.devid;
->> -
->>  	if (!vgic_has_its(kvm))
->>  		return -ENODEV;
->>  
->>  	if (!level)
->>  		return -1;
->>  
->> +	kvm_populate_msi(e, &msi);
->>  	return vgic_its_inject_msi(kvm, &msi);
->>  }
->>  
->> +/**
->> + * kvm_arch_set_irq_inatomic: fast-path for irqfd injection
-> s/:/ -
->> + *
->> + * Currently only direct MSI injecton is supported.
-> injection
->> + */
->> +int kvm_arch_set_irq_inatomic(struct kvm_kernel_irq_routing_entry *e,
->> +			      struct kvm *kvm, int irq_source_id, int level,
->> +			      bool line_status)
->> +{
->> +	if (e->type == KVM_IRQ_ROUTING_MSI && vgic_has_its(kvm) && level) {
->> +		struct kvm_msi msi;
->> +
->> +		kvm_populate_msi(e, &msi);
->> +		if (!vgic_its_inject_cached_translation(kvm, &msi))
->> +			return 0;
-> if this fails since its->enabled is false we will re-attempt the
-> injection though the normal injection path but that's not a big deal.
+--===============6410347474508996272==
+Content-Type: multipart/signed; boundary="=-=-="; micalg="pgp-sha256";
+	protocol="application/pgp-signature"
 
-Yeah, I wouldn't worry about that. If there is a screaming device, so be
-it. The guest should know better...
+--=-=-=
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
 
->> +	}
->> +
->> +	return -EWOULDBLOCK;
->> +}
->> +
->>  int kvm_vgic_setup_default_irq_routing(struct kvm *kvm)
->>  {
->>  	struct kvm_irq_routing_entry *entries;
->>
-> Reviewed-by: Eric Auger <eric.auger@redhat.com>
+It was <2019-07-25 czw 10:01>, when Chuhong Yuan wrote:
+> Use devm_hwrng_register to simplify the implementation.
+> Manual unregistration and some remove functions can be
+> removed now.
+>
+> Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
+> ---
+>  drivers/char/hw_random/atmel-rng.c     |  3 +--
+>  drivers/char/hw_random/cavium-rng-vf.c | 11 +----------
+>  drivers/char/hw_random/exynos-trng.c   |  3 +--
+>  drivers/char/hw_random/n2-drv.c        |  4 +---
+>  drivers/char/hw_random/nomadik-rng.c   |  3 +--
+>  drivers/char/hw_random/omap-rng.c      |  3 +--
+>  drivers/char/hw_random/powernv-rng.c   | 10 +---------
+>  drivers/char/hw_random/st-rng.c        |  4 +---
+>  drivers/char/hw_random/xgene-rng.c     |  4 +---
+>  9 files changed, 9 insertions(+), 36 deletions(-)
+>
 
-Thanks Eric.
+Acked-by: =C5=81ukasz Stelmach <l.stelmach@samsung.com>
 
-	M.
--- 
-Jazz is not dead. It just smells funny...
+> diff --git a/drivers/char/hw_random/atmel-rng.c b/drivers/char/hw_random/=
+atmel-rng.c
+> index 433426242b87..e55705745d5e 100644
+> --- a/drivers/char/hw_random/atmel-rng.c
+> +++ b/drivers/char/hw_random/atmel-rng.c
+> @@ -86,7 +86,7 @@ static int atmel_trng_probe(struct platform_device *pde=
+v)
+>  	trng->rng.name =3D pdev->name;
+>  	trng->rng.read =3D atmel_trng_read;
+>=20=20
+> -	ret =3D hwrng_register(&trng->rng);
+> +	ret =3D devm_hwrng_register(&pdev->dev, &trng->rng);
+>  	if (ret)
+>  		goto err_register;
+>=20=20
+> @@ -103,7 +103,6 @@ static int atmel_trng_remove(struct platform_device *=
+pdev)
+>  {
+>  	struct atmel_trng *trng =3D platform_get_drvdata(pdev);
+>=20=20
+> -	hwrng_unregister(&trng->rng);
+>=20=20
+>  	atmel_trng_disable(trng);
+>  	clk_disable_unprepare(trng->clk);
+> diff --git a/drivers/char/hw_random/cavium-rng-vf.c b/drivers/char/hw_ran=
+dom/cavium-rng-vf.c
+> index 2d1352b67168..3de4a6a443ef 100644
+> --- a/drivers/char/hw_random/cavium-rng-vf.c
+> +++ b/drivers/char/hw_random/cavium-rng-vf.c
+> @@ -67,7 +67,7 @@ static int cavium_rng_probe_vf(struct	pci_dev		*pdev,
+>=20=20
+>  	pci_set_drvdata(pdev, rng);
+>=20=20
+> -	ret =3D hwrng_register(&rng->ops);
+> +	ret =3D devm_hwrng_register(&pdev->dev, &rng->ops);
+>  	if (ret) {
+>  		dev_err(&pdev->dev, "Error registering device as HWRNG.\n");
+>  		return ret;
+> @@ -76,14 +76,6 @@ static int cavium_rng_probe_vf(struct	pci_dev		*pdev,
+>  	return 0;
+>  }
+>=20=20
+> -/* Remove the VF */
+> -static void  cavium_rng_remove_vf(struct pci_dev *pdev)
+> -{
+> -	struct cavium_rng *rng;
+> -
+> -	rng =3D pci_get_drvdata(pdev);
+> -	hwrng_unregister(&rng->ops);
+> -}
+>=20=20
+>  static const struct pci_device_id cavium_rng_vf_id_table[] =3D {
+>  	{ PCI_DEVICE(PCI_VENDOR_ID_CAVIUM, 0xa033), 0, 0, 0},
+> @@ -95,7 +87,6 @@ static struct pci_driver cavium_rng_vf_driver =3D {
+>  	.name		=3D "cavium_rng_vf",
+>  	.id_table	=3D cavium_rng_vf_id_table,
+>  	.probe		=3D cavium_rng_probe_vf,
+> -	.remove		=3D cavium_rng_remove_vf,
+>  };
+>  module_pci_driver(cavium_rng_vf_driver);
+>=20=20
+> diff --git a/drivers/char/hw_random/exynos-trng.c b/drivers/char/hw_rando=
+m/exynos-trng.c
+> index 94235761955c..b4b52ab23b6b 100644
+> --- a/drivers/char/hw_random/exynos-trng.c
+> +++ b/drivers/char/hw_random/exynos-trng.c
+> @@ -153,7 +153,7 @@ static int exynos_trng_probe(struct platform_device *=
+pdev)
+>  		goto err_clock;
+>  	}
+>=20=20
+> -	ret =3D hwrng_register(&trng->rng);
+> +	ret =3D devm_hwrng_register(&pdev->dev, &trng->rng);
+>  	if (ret) {
+>  		dev_err(&pdev->dev, "Could not register hwrng device.\n");
+>  		goto err_register;
+> @@ -179,7 +179,6 @@ static int exynos_trng_remove(struct platform_device =
+*pdev)
+>  {
+>  	struct exynos_trng_dev *trng =3D  platform_get_drvdata(pdev);
+>=20=20
+> -	hwrng_unregister(&trng->rng);
+>  	clk_disable_unprepare(trng->clk);
+>=20=20
+>  	pm_runtime_put_sync(&pdev->dev);
+> diff --git a/drivers/char/hw_random/n2-drv.c b/drivers/char/hw_random/n2-=
+drv.c
+> index d4cab105796f..2d256b3470db 100644
+> --- a/drivers/char/hw_random/n2-drv.c
+> +++ b/drivers/char/hw_random/n2-drv.c
+> @@ -768,7 +768,7 @@ static int n2rng_probe(struct platform_device *op)
+>  	np->hwrng.data_read =3D n2rng_data_read;
+>  	np->hwrng.priv =3D (unsigned long) np;
+>=20=20
+> -	err =3D hwrng_register(&np->hwrng);
+> +	err =3D devm_hwrng_register(&pdev->dev, &np->hwrng);
+>  	if (err)
+>  		goto out_hvapi_unregister;
+>=20=20
+> @@ -793,8 +793,6 @@ static int n2rng_remove(struct platform_device *op)
+>=20=20
+>  	cancel_delayed_work_sync(&np->work);
+>=20=20
+> -	hwrng_unregister(&np->hwrng);
+> -
+>  	sun4v_hvapi_unregister(HV_GRP_RNG);
+>=20=20
+>  	return 0;
+> diff --git a/drivers/char/hw_random/nomadik-rng.c b/drivers/char/hw_rando=
+m/nomadik-rng.c
+> index fc0f6b0cb80d..74ed29f42e4f 100644
+> --- a/drivers/char/hw_random/nomadik-rng.c
+> +++ b/drivers/char/hw_random/nomadik-rng.c
+> @@ -57,7 +57,7 @@ static int nmk_rng_probe(struct amba_device *dev, const=
+ struct amba_id *id)
+>  	if (!base)
+>  		goto out_release;
+>  	nmk_rng.priv =3D (unsigned long)base;
+> -	ret =3D hwrng_register(&nmk_rng);
+> +	ret =3D devm_hwrng_register(&dev->dev, &nmk_rng);
+>  	if (ret)
+>  		goto out_release;
+>  	return 0;
+> @@ -71,7 +71,6 @@ static int nmk_rng_probe(struct amba_device *dev, const=
+ struct amba_id *id)
+>=20=20
+>  static int nmk_rng_remove(struct amba_device *dev)
+>  {
+> -	hwrng_unregister(&nmk_rng);
+>  	amba_release_regions(dev);
+>  	clk_disable(rng_clk);
+>  	return 0;
+> diff --git a/drivers/char/hw_random/omap-rng.c b/drivers/char/hw_random/o=
+map-rng.c
+> index e9b6ac61fb7f..b27f39688b5e 100644
+> --- a/drivers/char/hw_random/omap-rng.c
+> +++ b/drivers/char/hw_random/omap-rng.c
+> @@ -500,7 +500,7 @@ static int omap_rng_probe(struct platform_device *pde=
+v)
+>  	if (ret)
+>  		goto err_register;
+>=20=20
+> -	ret =3D hwrng_register(&priv->rng);
+> +	ret =3D devm_hwrng_register(&pdev->dev, &priv->rng);
+>  	if (ret)
+>  		goto err_register;
+>=20=20
+> @@ -525,7 +525,6 @@ static int omap_rng_remove(struct platform_device *pd=
+ev)
+>  {
+>  	struct omap_rng_dev *priv =3D platform_get_drvdata(pdev);
+>=20=20
+> -	hwrng_unregister(&priv->rng);
+>=20=20
+>  	priv->pdata->cleanup(priv);
+>=20=20
+> diff --git a/drivers/char/hw_random/powernv-rng.c b/drivers/char/hw_rando=
+m/powernv-rng.c
+> index f2e8272e276a..8da1d7917bdc 100644
+> --- a/drivers/char/hw_random/powernv-rng.c
+> +++ b/drivers/char/hw_random/powernv-rng.c
+> @@ -33,18 +33,11 @@ static struct hwrng powernv_hwrng =3D {
+>  	.read =3D powernv_rng_read,
+>  };
+>=20=20
+> -static int powernv_rng_remove(struct platform_device *pdev)
+> -{
+> -	hwrng_unregister(&powernv_hwrng);
+> -
+> -	return 0;
+> -}
+> -
+>  static int powernv_rng_probe(struct platform_device *pdev)
+>  {
+>  	int rc;
+>=20=20
+> -	rc =3D hwrng_register(&powernv_hwrng);
+> +	rc =3D devm_hwrng_register(&pdev->dev, &powernv_hwrng);
+>  	if (rc) {
+>  		/* We only register one device, ignore any others */
+>  		if (rc =3D=3D -EEXIST)
+> @@ -70,7 +63,6 @@ static struct platform_driver powernv_rng_driver =3D {
+>  		.of_match_table =3D powernv_rng_match,
+>  	},
+>  	.probe	=3D powernv_rng_probe,
+> -	.remove =3D powernv_rng_remove,
+>  };
+>  module_platform_driver(powernv_rng_driver);
+>=20=20
+> diff --git a/drivers/char/hw_random/st-rng.c b/drivers/char/hw_random/st-=
+rng.c
+> index bd6a98b3479b..863448360a7d 100644
+> --- a/drivers/char/hw_random/st-rng.c
+> +++ b/drivers/char/hw_random/st-rng.c
+> @@ -102,7 +102,7 @@ static int st_rng_probe(struct platform_device *pdev)
+>=20=20
+>  	dev_set_drvdata(&pdev->dev, ddata);
+>=20=20
+> -	ret =3D hwrng_register(&ddata->ops);
+> +	ret =3D devm_hwrng_register(&pdev->dev, &ddata->ops);
+>  	if (ret) {
+>  		dev_err(&pdev->dev, "Failed to register HW RNG\n");
+>  		clk_disable_unprepare(clk);
+> @@ -118,8 +118,6 @@ static int st_rng_remove(struct platform_device *pdev)
+>  {
+>  	struct st_rng_data *ddata =3D dev_get_drvdata(&pdev->dev);
+>=20=20
+> -	hwrng_unregister(&ddata->ops);
+> -
+>  	clk_disable_unprepare(ddata->clk);
+>=20=20
+>  	return 0;
+> diff --git a/drivers/char/hw_random/xgene-rng.c b/drivers/char/hw_random/=
+xgene-rng.c
+> index 8c6f9f63da5e..7e568db87ae2 100644
+> --- a/drivers/char/hw_random/xgene-rng.c
+> +++ b/drivers/char/hw_random/xgene-rng.c
+> @@ -361,7 +361,7 @@ static int xgene_rng_probe(struct platform_device *pd=
+ev)
+>=20=20
+>  	xgene_rng_func.priv =3D (unsigned long) ctx;
+>=20=20
+> -	rc =3D hwrng_register(&xgene_rng_func);
+> +	rc =3D devm_hwrng_register(&pdev->dev, &xgene_rng_func);
+>  	if (rc) {
+>  		dev_err(&pdev->dev, "RNG registering failed error %d\n", rc);
+>  		if (!IS_ERR(ctx->clk))
+> @@ -375,7 +375,6 @@ static int xgene_rng_probe(struct platform_device *pd=
+ev)
+>  			rc);
+>  		if (!IS_ERR(ctx->clk))
+>  			clk_disable_unprepare(ctx->clk);
+> -		hwrng_unregister(&xgene_rng_func);
+>  		return rc;
+>  	}
+>=20=20
+> @@ -392,7 +391,6 @@ static int xgene_rng_remove(struct platform_device *p=
+dev)
+>  		dev_err(&pdev->dev, "RNG init wakeup failed error %d\n", rc);
+>  	if (!IS_ERR(ctx->clk))
+>  		clk_disable_unprepare(ctx->clk);
+> -	hwrng_unregister(&xgene_rng_func);
+>=20=20
+>  	return rc;
+>  }
+
+=2D-=20
+=C5=81ukasz Stelmach
+Samsung R&D Institute Poland
+Samsung Electronics
+
+--=-=-=
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEEXpuyqjq9kGEVr9UQsK4enJilgBAFAl05Z5EACgkQsK4enJil
+gBDC6wf/RWrFrZa1K0vXQRunm4a/T6+9qOAeK+CilFvhwUfFtc1mhpquqEVSbQYG
+Y+r7c5pxZd+JvU5rxPTBelL60GQ1AJd5XKgvKblDiEjXonol8s9Snf2vc6vL0CFp
+FCuSxpnvQ3HTKJ16s71HURJxxqdAM3BVFZxod5XPVctNSqVAMM1QhIy29D2ivg/n
+UP4pBt5nCY0mzfNJ3OHz1ui6q99ZXMcUT6yzXKhUP/UpHXRjS/XUeXMMub8x6Wpl
+SieqaH2+KmufGidxswOQh/aZ3YszzBqsfTOeJTFYQgQbsckAkVVtafoxNk0upNeT
+Qqad3s8ystS/i+gUDKSb9C13UDEgRA==
+=+zqR
+-----END PGP SIGNATURE-----
+--=-=-=--
+
+
+--===============6410347474508996272==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6410347474508996272==--
+
