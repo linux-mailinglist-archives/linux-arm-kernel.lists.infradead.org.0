@@ -2,82 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3F6274D3F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 13:38:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 303F974D4A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 13:39:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ENB3yYUbJ6Jkv9J5tF68twW+HaiwiSOk3MQoKULBlzE=; b=fHZ2oP42D/MQn4
-	CnJ2S8L5tTY1BQbBoroaSa9RvzIFT7AFu8H18ih4CjJ5PdzV6KEtTFnAFPDssGzpv/Mj/DgM6eF2B
-	n3CBKY0Re78f9HOFfoFMJHmPdqOVNN7THUoxjuD8x8i9qKsydY9wBbObMUkoT0a+iknubH+hfVVn5
-	03qiqUbTb3pWFSPWsg1FKyijnBtS1mmVSgoDZnBTa3YGHNCAk1O0DSrLu41DRudk6Kvzp4GUE9vA7
-	TnhaaUERt5BW96UyEIYF9/pfNBnWNrViu/0qa0ecT9dRb/WcbH5QHW6OSX+3MHXybaQvLOx8sL/XD
-	9Nf9Ihr7jTP/2S2qEJPQ==;
+	List-Owner; bh=bFu7/5Wtml9N5HLe7wvqMYkHSgfZwZDUHCwL7ZgUCIs=; b=IYaqR5PCnz4G5C
+	uD7wHQFZvtJEJHE3hH85D3K/rqYNSGTgVeEmRsICb7RoU8SPJTTszTmvTXSX18i6ZHnvrhokpu1Ck
+	EeIHPKw+fX3EcEGHDgFinA5cm6riWAyM7UJLiAw1wslGpgI5p7w1yJJfm7lIUUpHGbTI4ebZ4ENtR
+	uUEPZf60blWVth5jxeolAr0naPwwdI8ecagUaLocc1Eq9arLPinLOQQ9Haxh/RSqbEfLsH850fJH3
+	XooaJibTwf+ZvnVdA0SjTzUkAgrcco6dKx2aSWdkE9bzk3mXzolL6XSrl7q6bituLTm4mpJkdpyQo
+	S0IOU4KKrhQmZ2XnDvrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqc4S-0006JH-5d; Thu, 25 Jul 2019 11:38:04 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1hqc5z-0006gt-FV; Thu, 25 Jul 2019 11:39:39 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqc3o-0005sX-BY
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 11:37:26 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x6PBaufI026881; Thu, 25 Jul 2019 13:37:18 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=STMicroelectronics;
- bh=0LoPloFZXUUGGGL1n9uKyyQ5Gkl+mEACoSGKmDQTbHA=;
- b=KCRExMEFEOcYVwuJ72M4HzPylQybuUALTSkkeh6OznjlPyVSQ+mrC8Sa+Zjzq03yOhv2
- ahHJNqHQxMy2sIA0k/jNq46nblClVcTWNsRyI9kBWwIm4wgjK+OsvXxqrvlePNcL1/wI
- RfXOr7/7wx4zQ8vPoHczGp2iejms5kkLwjTXq9GfIoG+JIC89CfulD9QQQMifkdWJ0gP
- deCx6TTcKrDK527epzVGRtFpY2fJUb7lljX1hFAosAATxYxX7b1R6ENhODR40HjdBZfJ
- M5Ty2eb+mIa5ED5q8IOS94h5lzHnPMPn2XpjgM+p+TtMJt0Ef1yLU8bewJVz+BFr36sp lQ== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2tx60a3nqg-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Thu, 25 Jul 2019 13:37:18 +0200
-Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 9DAF731;
- Thu, 25 Jul 2019 11:37:17 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas23.st.com [10.75.90.46])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 87B252B4F;
- Thu, 25 Jul 2019 11:37:17 +0000 (GMT)
-Received: from SAFEX1HUBCAS22.st.com (10.75.90.93) by SAFEX1HUBCAS23.st.com
- (10.75.90.46) with Microsoft SMTP Server (TLS) id 14.3.439.0; Thu, 25 Jul
- 2019 13:37:17 +0200
-Received: from localhost (10.201.20.5) by Webmail-ga.st.com (10.75.90.48) with
- Microsoft SMTP Server (TLS) id 14.3.439.0;
- Thu, 25 Jul 2019 13:37:17 +0200
-From: Amelie Delaunay <amelie.delaunay@st.com>
-To: Maxime Coquelin <mcoquelin.stm32@gmail.com>, Alexandre Torgue
- <alexandre.torgue@st.com>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
- <mark.rutland@arm.com>
-Subject: [PATCH 2/2] ARM: dts: stm32: change pinctrl definition for joystick
- pins on stm32mp157c-ev1
-Date: Thu, 25 Jul 2019 13:36:47 +0200
-Message-ID: <1564054607-2028-3-git-send-email-amelie.delaunay@st.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1564054607-2028-1-git-send-email-amelie.delaunay@st.com>
-References: <1564054607-2028-1-git-send-email-amelie.delaunay@st.com>
+ id 1hqc5o-0006g2-V2
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 11:39:30 +0000
+Received: by mail-wm1-x342.google.com with SMTP id a15so44675453wmj.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 25 Jul 2019 04:39:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=/KNocy2+ZfOQXTjSVoKpw5gYwyEUDk8UgKcJTP4ngYE=;
+ b=MAEDyrQNT8xSuX9iSr/7BWAuVtiFFg0r91vvdxT2++HHJS9g3J0YPwvOtkJtKUq8Jv
+ 5iKmWqJK52t0LH1sXJk3PO+C21INeHi4V/ZYW7YuPXVIBflnQMtUHe6awRTT5dvD1DaE
+ WpfQIVfVij+bSGThMlicGuVLRiLpF6rqQwZpgSsW3OX9UHyDapWCYIrbuJner3poxc++
+ G0Bn8vzCLpCMRU3GuO3rYDre/AQ/pQH9pBaRn/BU0lkFmSiIGNMktCQBPARjaQkabMe+
+ GuF14I1ZfrdG7ZX9sunB4JjQ9JvX8MVHFeTldfj+sF04kvwCNlmOmMZTYqLm/phbk5K8
+ qnTg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=/KNocy2+ZfOQXTjSVoKpw5gYwyEUDk8UgKcJTP4ngYE=;
+ b=HE1HnZN1BwhKpvRUt4qJNZlQjvIqYCQYmjVwA02i51MdAZtOA88QW2bI1t9waLkhXQ
+ YXPMgCOKMQVyuserHn2GY+H33Ir+YqbpDK3BFugDGZtAQcJRdRB+Alr7ZhSMU/4gP5ua
+ h1I0vWx1fHE1zQZ3JPlBVrU4fMMDMIkk4gf+5DOqj5tuJWXGcb1T9Tl6Z7pVdQKo1q8c
+ yLkkacjmVY6V0dG7X1MOxoh24+dQJj2Mmqj7UTEC9VCB6abxJC37YZArOUtq/qB5bxHe
+ An031nSnQ3JKXnZTW2HmqqjsWHSs6mOzdJXs4n1V/TA93c7uQPcyWH3HwEludz1/gCr5
+ hwkg==
+X-Gm-Message-State: APjAAAV93zA8RLtz0AWWTIDt28US36OKdb+bQXwCmsr57jbS8mW3O1PV
+ Cci3Or03vnfo492ad7fjwyPaAg==
+X-Google-Smtp-Source: APXvYqxKToM60L7WegP6mEG3X3RaqPtSEAUsT9RXfSRetFr+Hk/NVm3V8WF2BD26TvV4TjAbT9vnuA==
+X-Received: by 2002:a7b:c5c2:: with SMTP id n2mr77541522wmk.92.1564054766915; 
+ Thu, 25 Jul 2019 04:39:26 -0700 (PDT)
+Received: from apalos (athedsl-373703.home.otenet.gr. [79.131.11.197])
+ by smtp.gmail.com with ESMTPSA id p6sm53195376wrq.97.2019.07.25.04.39.24
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 25 Jul 2019 04:39:26 -0700 (PDT)
+Date: Thu, 25 Jul 2019 14:39:22 +0300
+From: Ilias Apalodimas <ilias.apalodimas@linaro.org>
+To: Jon Hunter <jonathanh@nvidia.com>
+Subject: Re: [PATCH net-next 3/3] net: stmmac: Introducing support for Page
+ Pool
+Message-ID: <20190725113922.GA1703@apalos>
+References: <20190723.115112.1824255524103179323.davem@davemloft.net>
+ <20190724085427.GA10736@apalos>
+ <BYAPR12MB3269AA9955844E317B62A239D3C60@BYAPR12MB3269.namprd12.prod.outlook.com>
+ <20190724095310.GA12991@apalos>
+ <BYAPR12MB3269C5766F553438ECFF2C9BD3C60@BYAPR12MB3269.namprd12.prod.outlook.com>
+ <33de62bf-2f8a-bf00-9260-418b12bed24c@nvidia.com>
+ <BYAPR12MB32696F0A2BFDF69F31C4311CD3C60@BYAPR12MB3269.namprd12.prod.outlook.com>
+ <a07c3480-af03-a61b-4e9c-d9ceb29ce622@nvidia.com>
+ <BYAPR12MB3269F4E62B64484B08F90998D3C10@BYAPR12MB3269.namprd12.prod.outlook.com>
+ <d2658b7d-1f24-70f7-fafe-b60a0fd7d240@nvidia.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.201.20.5]
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-07-25_04:, , signatures=0
+Content-Disposition: inline
+In-Reply-To: <d2658b7d-1f24-70f7-fafe-b60a0fd7d240@nvidia.com>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_043724_683440_9C4035C0 
-X-CRM114-Status: GOOD (  12.61  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190725_043929_008098_CBEE5272 
+X-CRM114-Status: GOOD (  14.97  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -98,40 +107,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Amelie Delaunay <amelie.delaunay@st.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
+Cc: Jose Abreu <Jose.Abreu@synopsys.com>,
+ "Joao.Pinto@synopsys.com" <Joao.Pinto@synopsys.com>,
+ "alexandre.torgue@st.com" <alexandre.torgue@st.com>,
+ "maxime.ripard@bootlin.com" <maxime.ripard@bootlin.com>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>, "wens@csie.org" <wens@csie.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
+ "linux-tegra@vger.kernel.org" <linux-tegra@vger.kernel.org>,
+ "peppe.cavallaro@st.com" <peppe.cavallaro@st.com>,
+ "robin.murphy@arm.com" <robin.murphy@arm.com>,
+ David Miller <davem@davemloft.net>, "lists@bofh.nu" <lists@bofh.nu>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Alexandre Torgue <alexandre.torgue@st.com>
+Hi Jon, Jose,
+On Thu, Jul 25, 2019 at 10:45:46AM +0100, Jon Hunter wrote:
+> 
+> On 25/07/2019 08:44, Jose Abreu wrote:
+> 
+> ...
+> 
+> > OK. Can you please test what Ilias mentioned ?
+> > 
+> > Basically you can hard-code the order to 0 in 
+> > alloc_dma_rx_desc_resources():
+> > - pp_params.order = DIV_ROUND_UP(priv->dma_buf_sz, PAGE_SIZE);
+> > + pp_params.order = 0;
+> > 
+> > Unless you use a MTU > PAGE_SIZE.
+> 
+> I made the change but unfortunately the issue persists.
 
-Pins used for joystick are all configured as input. "Push-pull" is not
-a valid setting for an input.
+Yea tbh i didn't expect this to fix it, since i think the mappings are fine, but
+it never hurts to verify.
+@Jose: Can we add some debugging prints on the driver?
+Ideally the pages the api allocates (on init), the page that the driver is
+trying to use before the crash and the size of the packet (right from the device
+descriptor). Maybe this will tell us where the erroneous access is
 
-Signed-off-by: Alexandre Torgue <alexandre.torgue@st.com>
-Signed-off-by: Amelie Delaunay <amelie.delaunay@st.com>
----
- arch/arm/boot/dts/stm32mp157c-ev1.dts | 1 -
- 1 file changed, 1 deletion(-)
-
-diff --git a/arch/arm/boot/dts/stm32mp157c-ev1.dts b/arch/arm/boot/dts/stm32mp157c-ev1.dts
-index e4b04dd..7d15f05 100644
---- a/arch/arm/boot/dts/stm32mp157c-ev1.dts
-+++ b/arch/arm/boot/dts/stm32mp157c-ev1.dts
-@@ -220,7 +220,6 @@
- 
- 			joystick_pins: joystick {
- 				pins = "gpio0", "gpio1", "gpio2", "gpio3", "gpio4";
--				drive-push-pull;
- 				bias-pull-down;
- 			};
- 		};
--- 
-2.7.4
-
+Thanks
+/Ilias
 
 _______________________________________________
 linux-arm-kernel mailing list
