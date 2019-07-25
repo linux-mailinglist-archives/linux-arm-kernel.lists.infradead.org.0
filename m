@@ -2,44 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 095237525F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 17:18:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 22EB275264
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 17:18:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
+	Subject:References:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JhpdCCe5RXcPVydCIiaaMXsG8pctP37gcqcnWbnSTkk=; b=BkgH53t40tPbmy
-	FA15RNrc6EV9D96tK9oF2wWNFvr0INGrSH7gW8nCLbEwsoTgNFdww07tj20Jo98uGCrtAwd8TBZ1L
-	AZuPX6HtEdoeqcoxHZr3b8t4ARP809TLwu929Rd+HN0uJXnNQC422xla86aYlBGVcIr/TblMdcYPH
-	NTQr2OITR626MoIuOdUudLzypQrrk2DFNaT3hTGiMjwq3Cp4+uqm/rrGaf8/ZspuzAWVRSP6KQVDk
-	JbJVu1wlk2NQPfSPEdUXF58RTFqbkg/HcuiflVdLDK6AVFiFRMnvNfRRZqPhNxogB3TTywfnvzE2L
-	XI3M70CzkPpDpmtKu6Sg==;
+	In-Reply-To:List-Owner; bh=n0yMLWcrTi1gPc1JaW21GPyoAx4rTX13SzhAyXAIdg4=; b=g1
+	7Gp9qZNA5wIW1DRigdEqIRHWUtKtKkQt66VNIloUJQoTvNeTbGVMhNbvUbPSYWOmj3PrJXRy9zsuR
+	LirCCsuw/ghSBHL0gaVC/lV4JydOAqPOJGAltZAS3jvJk/VIgkska2uq9ErcbaNhnKKnCLloM5bov
+	Y4XeaqD8PVjbp7P88K00hIA+obnXTgS3/GJZMqjplx3WICXkkrIMU+hrwOCVMha6A5DlG8rfnk586
+	JTrpWJZjCy19Dr2NOCXpLdzIn3pyoykOh9W4CRuPE3uzuMVZ6gYco4eAgRjEyTFzPqSzm6gdGuozk
+	rKGcNDtp5gyJKwZ/yilQ5jYU0MXLDtZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqfVK-00056A-I8; Thu, 25 Jul 2019 15:18:02 +0000
+	id 1hqfW6-0005M2-DY; Thu, 25 Jul 2019 15:18:50 +0000
 Received: from verein.lst.de ([213.95.11.211])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqfV7-00055J-0j
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 15:17:50 +0000
+ id 1hqfVp-0005Lb-0v
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 15:18:34 +0000
 Received: by verein.lst.de (Postfix, from userid 2005)
- id 532AC68B02; Thu, 25 Jul 2019 17:17:42 +0200 (CEST)
-Date: Thu, 25 Jul 2019 17:17:42 +0200
+ id DC20968B02; Thu, 25 Jul 2019 17:18:29 +0200 (CEST)
 From: Torsten Duwe <duwe@lst.de>
-To: Vasily Khoruzhick <anarsoul@gmail.com>
-Subject: Re: [PATCH v3 6/7] dt-bindings: Add ANX6345 DP/eDP transmitter binding
-Message-ID: <20190725151742.GA4820@lst.de>
-References: <20190722151202.5506768B20@verein.lst.de>
- <CA+E=qVdu3Hf7ufst-t_CiWkquximGFX8B2RcoQ1x0m++cc8n8Q@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CA+E=qVdu3Hf7ufst-t_CiWkquximGFX8B2RcoQ1x0m++cc8n8Q@mail.gmail.com>
-User-Agent: Mutt/1.5.17 (2007-11-01)
+To: Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
+ Andrzej Hajda <a.hajda@samsung.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Icenowy Zheng <icenowy@aosc.io>, Sean Paul <seanpaul@chromium.org>,
+ Vasily Khoruzhick <anarsoul@gmail.com>, Harald Geyer <harald@ccbib.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Thomas Gleixner <tglx@linutronix.de>
+References: <20190722150414.9F97668B20@verein.lst.de>
+Subject: [PATCH v3 6a/7] dt-bindings: Add ANX6345 DP/eDP transmitter binding
+Message-Id: <20190725151829.DC20968B02@verein.lst.de>
+Date: Thu, 25 Jul 2019 17:18:29 +0200 (CEST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_081749_214838_6B994782 
-X-CRM114-Status: UNSURE (   9.85  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190725_081833_363978_97391264 
+X-CRM114-Status: GOOD (  11.95  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -60,38 +63,125 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Andrzej Hajda <a.hajda@samsung.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, David Airlie <airlied@linux.ie>,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>, Harald Geyer <harald@ccbib.org>,
- Sean Paul <seanpaul@chromium.org>, Thomas Gleixner <tglx@linutronix.de>,
- arm-linux <linux-arm-kernel@lists.infradead.org>,
- Icenowy Zheng <icenowy@aosc.io>
+Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jul 22, 2019 at 11:51:36AM -0700, Vasily Khoruzhick wrote:
-> On Mon, Jul 22, 2019 at 8:12 AM Torsten Duwe <duwe@lst.de> wrote:
-> >
-> > The anx6345 is an ultra-low power DisplayPort/eDP transmitter designed
-> > for portable devices.
-> >
-> > Add a binding document for it.
-> 
-> I believe you'll have to convert it to yaml format.
+The anx6345 is an ultra-low power DisplayPort/eDP transmitter designed
+for portable devices.
 
-Right. Thanks for the reminder.
+Add a binding document for it.
 
-	Torsten
+Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
+Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
+Signed-off-by: Torsten Duwe <duwe@suse.de>
+Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+---
+ .../devicetree/bindings/display/bridge/anx6345.yaml |   90 ++++++++++
+ 1 file changed, 90 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/display/bridge/anx6345.yaml
 
+diff --git a/Documentation/devicetree/bindings/display/bridge/anx6345.yaml b/Documentation/devicetree/bindings/display/bridge/anx6345.yaml
+new file mode 100644
+index 000000000000..0af092d101c5
+--- /dev/null
++++ b/Documentation/devicetree/bindings/display/bridge/anx6345.yaml
+@@ -0,0 +1,90 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/display/bridge/anx6345.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Analogix ANX6345 eDP Transmitter Device Tree Bindings
++
++maintainers:
++  - Torsten Duwe <duwe@lst.de>
++
++description: |
++  The ANX6345 is an ultra-low power Full-HD eDP transmitter designed for
++  portable devices.
++
++properties:
++  compatible:
++    const: analogix,anx6345
++
++  reg:
++    maxItems: 1
++    description: I2C address of the device
++
++  reset-gpios:
++    maxItems: 1
++    description: active low GPIO to use for reset
++
++  dvdd12-supply:
++    maxItems: 1
++    description: Regulator for 1.2V digital core power.
++    $ref: /schemas/types.yaml#/definitions/phandle
++
++  dvdd25-supply:
++    maxItems: 1
++    description: Regulator for 2.5V digital core power.
++    $ref: /schemas/types.yaml#/definitions/phandle
++
++  ports:
++    type: object
++    minItems: 1
++    maxItems: 2
++    description: |
++      Video port 0 for LVTTL input,
++      Video port 1 for eDP output (panel or connector)
++      using the DT bindings defined in
++      Documentation/devicetree/bindings/media/video-interfaces.txt
++
++required:
++  - compatible
++  - reg
++  - reset-gpios
++  - dvdd12-supply
++  - dvdd25-supply
++  - ports
++
++examples:
++ - |
++  anx6345: anx6345@38 {
++      compatible = "analogix,anx6345";
++      reg = <0x38>;
++      reset-gpios = <&pio 3 24 GPIO_ACTIVE_LOW>; /* PD24 */
++      dvdd25-supply = <&reg_dldo2>;
++      dvdd12-supply = <&reg_fldo1>;
++
++      ports {
++          #address-cells = <1>;
++          #size-cells = <0>;
++
++          anx6345_in: port@0 {
++              #address-cells = <1>;
++              #size-cells = <0>;
++              reg = <0>;
++              anx6345_in_tcon0: endpoint@0 {
++                  reg = <0>;
++                  remote-endpoint = <&tcon0_out_anx6345>;
++              };
++          };
++
++          anx6345_out: port@1 {
++              #address-cells = <1>;
++              #size-cells = <0>;
++              reg = <1>;
++
++              anx6345_out_panel: endpoint@0 {
++                  reg = <0>;
++                  remote-endpoint = <&panel_in_edp>;
++              };
++          };
++      };
++  };
 
 _______________________________________________
 linux-arm-kernel mailing list
