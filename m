@@ -2,62 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 78BE2749E1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 11:31:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 207F8749EC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 11:33:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QLvtqFBRdXZwQZrPk4HoFV33sMjwfmOODAmHTPROhMk=; b=XQ7wqWP/hSRyxe
-	zZkcfDazm57ksuq9ZfGduq/jOmPZqgoe2yUnxV8K8KRzw6028BUBpoGTKQlXPVxD+Nlt8VsyC/qOa
-	zE+5tH9F8aj5ihKhTdl/cdMrRsKMccKW2L/ZfSpkn70eNyZKb3jQeqG5DEvL6RQMMsIy7V2YNQZcv
-	euJPdg+ION1qcJ/uknlqyscQOqJLsXND5jsOkkDfpjzduxiyuSyptXOSKJ3JIos2W6Ee3Nc2vHHJu
-	OxHVjQm7ROukSXQlbX/rQh/HsN9NVyEkriPivtc1YuTEMNqgydiMDHeGcHA08sqSeNQHNFnQ7vfOI
-	oi/P5v4ROV72/aG1lMUw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=0yqaYwH8m26Y9ja6Q0lrfff9lIB8OLXSfDSGlbGCTgA=; b=AVcylDJ4pNXTv/cRlcmNHK+ru
+	gE2eimeC48kjCwZdo7ZrGgwbRr95XWGM3n09c4BSOV/btK31wTeHS3NR7D3bi3A+e9I8goSA3ywhF
+	NtPl8BY7A3YQWHXPMTs4ef3+KeHZI1ssHRRkNjlvezbQkU/RUlIMVj4Qc5xWRrljM4WSi7zNKdnwm
+	AEkfw58eLbgQDmLX13P4CNyj+42azI14TB/jkAUcHESdmvyNAMxwOOj6AMByBOy9NHUnZvngporXw
+	mR2AUQIR1aaeplby83D6dREgpNGmx8iT79KyWicejNFMsL8swPzw+90Hx4TqsOpqcm3Vp3pGemSdZ
+	/I31uxvDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqa5U-0006Lq-6v; Thu, 25 Jul 2019 09:31:00 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hqa7r-0006hU-NQ; Thu, 25 Jul 2019 09:33:27 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqa5F-0006LQ-11
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 09:30:46 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 925062238C;
- Thu, 25 Jul 2019 09:30:40 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564047044;
- bh=YLT7mc7uWZHnVWRAOXEA35kXHXVmPx8BUd1T5sThOCg=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Rypn7it8Rf260lh0cGgrtQiQ283OFmqpG1lxyuto4Y7QYQbzn6ruYk8uV6NiK7D/f
- hnNYlr/9QmLq6CPAhKWzSsjmkJC+PNqJTbRH4mEjG8OcRYMPfYeyOTSoxzgJPBd94M
- 9AMwOACsNIfinxPFc3YYJSq3Hk2TY45ShQWw/bTk=
-Date: Thu, 25 Jul 2019 10:30:37 +0100
-From: Will Deacon <will@kernel.org>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH v9 00/21] Generic page walk and ptdump
-Message-ID: <20190725093036.dzn6uulcihhkohm2@willie-the-truck>
-References: <20190722154210.42799-1-steven.price@arm.com>
- <835a0f2e-328d-7f7f-e52a-b754137789f9@arm.com>
- <c9d2042f-c731-4705-4148-b38deccf7963@arm.com>
- <6f59521e-1f3e-6765-9a6f-c8eca4c0c154@arm.com>
+ id 1hqa7d-0006gx-5U
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 09:33:15 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x6P9VIwd019583; Thu, 25 Jul 2019 11:33:07 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=cE2k0AStBme6BOgnRQEzmPC8VrCBHPwS9TD5CuuagCc=;
+ b=VuEvMY/3rmup6cGOlXKpU9tdYVPGEKx9IVi4R84jrF/9OOkE+d+Uvo85LN+PSXJsyv0U
+ mrNic+KW2gM+I+dYKv+EcateT0IBuzT2Cj8/7IhRFFadC5wofNCtmU02dRt8dyQUzCWT
+ h+ihe42NJR4I+ZKrcj7/CZcEee+RO0jzxm7qPZfH4L1/F7kgknaZ05uEYIxVdAlns0pX
+ CSUcHmX3EQ+r25WK7mmoDFTAbRqqzl2pc81LCMOozmJYIvP2N9ozq2DFXpoBo3UYXqKK
+ XmbtnK3l+LCGm1x/7Ci/WUf0iPGVdLTfNNV7KpUcxMobUahTMBEW/1nCutyMsDsFpT1Q ag== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2tx60832he-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Thu, 25 Jul 2019 11:33:07 +0200
+Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 2B70134;
+ Thu, 25 Jul 2019 09:33:06 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id DA22E2816;
+ Thu, 25 Jul 2019 09:33:05 +0000 (GMT)
+Received: from lmecxl0912.lme.st.com (10.75.127.51) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 25 Jul
+ 2019 11:33:05 +0200
+Subject: Re: [PATCH] ARM: dts: stm32: activate dma for qspi on stm32mp157
+To: Ludovic Barre <ludovic.Barre@st.com>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>
+References: <1561637345-31441-1-git-send-email-ludovic.Barre@st.com>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <fe11664c-4419-7ec3-c700-c5992dcb3efe@st.com>
+Date: Thu, 25 Jul 2019 11:33:04 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <6f59521e-1f3e-6765-9a6f-c8eca4c0c154@arm.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <1561637345-31441-1-git-send-email-ludovic.Barre@st.com>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.51]
+X-ClientProxiedBy: SFHDAG2NODE1.st.com (10.75.127.4) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-07-25_04:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_023045_101808_B545E3C8 
-X-CRM114-Status: GOOD (  21.16  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190725_023313_660479_8FED45F6 
+X-CRM114-Status: GOOD (  18.15  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -67,7 +86,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,88 +97,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>, Arnd Bergmann <arnd@arndb.de>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
- linux-kernel@vger.kernel.org, Steven Price <steven.price@arm.com>,
- linux-mm@kvack.org, =?iso-8859-1?B?Suly9G1l?= Glisse <jglisse@redhat.com>,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- Andy Lutomirski <luto@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
- James Morse <james.morse@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
- Andrew Morton <akpm@linux-foundation.org>,
- linux-arm-kernel@lists.infradead.org, "Liang, Kan" <kan.liang@linux.intel.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>, linux-kernel@vger.kernel.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jul 25, 2019 at 02:39:22PM +0530, Anshuman Khandual wrote:
-> On 07/24/2019 07:05 PM, Steven Price wrote:
-> > There isn't any problem as such with using p?d_large macros. However the
-> > name "large" has caused confusion in the past. In particular there are
-> > two types of "large" page:
-> > 
-> > 1. leaf entries at high levels than normal ('sections' on Arm, for 4K
-> > pages this gives you 2MB and 1GB pages).
-> > 
-> > 2. sets of contiguous entries that can share a TLB entry (the
-> > 'Contiguous bit' on Arm - which for 4K pages gives you 16 entries = 64
-> > KB 'pages').
+Hi Ludovic
+
+On 6/27/19 2:09 PM, Ludovic Barre wrote:
+> From: Ludovic Barre <ludovic.barre@st.com>
 > 
-> This is arm64 specific and AFAIK there are no other architectures where there
-> will be any confusion wrt p?d_large() not meaning a single entry.
+> This patch activates dma for qspi on stm32mp157.
 > 
-> As you have noted before if we are printing individual entries with PTE_CONT
-> then they need not be identified as p??d_large(). In which case p?d_large()
-> can just safely point to p?d_sect() identifying regular huge leaf entries.
-
-Steven's stuck in the middle of things here, but I do object to p?d_large()
-because I find it bonkers to have p?d_large() and p?d_huge() mean completely
-different things when they are synonyms in the English language.
-
-Yes, p?d_leaf() matches the terminology used by the Arm architecture, but
-given that most page table structures are arranged as a 'tree', then it's
-not completely unreasonable, in my opinion. If you have a more descriptive
-name, we could use that instead. We could also paint it blue.
-
-> > In many cases both give the same effect (reduce pressure on TLBs and
-> > requires contiguous and aligned physical addresses). But for this case
-> > we only care about the 'leaf' case (because the contiguous bit makes no
-> > difference to walking the page tables).
+> Signed-off-by: Ludovic Barre <ludovic.barre@st.com>
+> ---
+>   arch/arm/boot/dts/stm32mp157c.dtsi | 3 +++
+>   1 file changed, 3 insertions(+)
 > 
-> Right and we can just safely identify section entries with it. What will be
-> the problem with that ? Again this is only arm64 specific.
+> diff --git a/arch/arm/boot/dts/stm32mp157c.dtsi b/arch/arm/boot/dts/stm32mp157c.dtsi
+> index 2afeee6..205ea1d 100644
+> --- a/arch/arm/boot/dts/stm32mp157c.dtsi
+> +++ b/arch/arm/boot/dts/stm32mp157c.dtsi
+> @@ -1074,6 +1074,9 @@
+>   			reg = <0x58003000 0x1000>, <0x70000000 0x10000000>;
+>   			reg-names = "qspi", "qspi_mm";
+>   			interrupts = <GIC_SPI 92 IRQ_TYPE_LEVEL_HIGH>;
+> +			dmas = <&mdma1 22 0x10 0x100002 0x0 0x0>,
+> +			       <&mdma1 22 0x10 0x100008 0x0 0x0>;
+> +			dma-names = "tx", "rx";
+>   			clocks = <&rcc QSPI_K>;
+>   			resets = <&rcc QSPI_R>;
+>   			status = "disabled";
 > 
-> > 
-> > As far as I'm aware p?d_large() currently implements the first and
-> > p?d_(trans_)huge() implements either 1 or 2 depending on the architecture.
-> 
-> AFAIK option 2 exists only on arm6 platform. IIUC generic MM requires two
-> different huge page dentition from platform. HugeTLB identifies large entries
-> at PGD|PUD|PMD after converting it's content into PTE first. So there is no
-> need for direct large page definitions for other levels.
-> 
-> 1. THP		- pmd_trans_huge()
-> 2. HugeTLB	- pte_huge()	   CONFIG_ARCH_WANT_GENERAL_HUGETLB is set
-> 
-> A simple check for p?d_large() on mm/ and include/linux shows that there are
-> no existing usage for these in generic MM. Hence it is available.
 
-Alternatively, it means we have a good opportunity to give it a better name
-before it spreads into the core code.
+Applied on stm32-next.
 
-> IMHO the new addition of p?d_leaf() can be avoided and p?d_large() should be
-> cleaned up (if required) in platforms and used in generic functions.
-
-Again, I disagree and think p?d_large() should be confined to arch code
-if it sticks around at all.
-
-I don't usually care much about naming, but in this case I really find
-the status quo needlessly confusing.
-
-Will
+Thanks.
+Alex
 
 _______________________________________________
 linux-arm-kernel mailing list
