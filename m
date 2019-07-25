@@ -2,110 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9BB867432D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 04:17:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 64F277433F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 04:24:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=90be+/Zp/g/L/gqjCx1OhS4cXhciJUmTvz0CXyh9K5g=; b=pPYF/cmox+6E4o
-	9nvP24pb3DDRJZ1R8VqNzgCQOMuJZxSaYNIo15WobVjqb8BCBl/EMgehi6yauKNnKRYXUh0TbQX93
-	LHxYIGOHv4VIw+5kHDugk4TOqoHG9wYe+daG0UaDHQNJj1kn4USgANgAs1UMrS4rwfAdfWSwYHX82
-	Ftc+yceOVnrSaBr0Jhq1wv3KtF7bN5NFzv5+6lrlyxC741pYZdc1GSt5L1iogpb2d76up/NLTYvSK
-	GXQDfbra5nuB1zf+h+J2LX0t6aIR600C0074QI17VnfaUQjlM462CYqtp3oqAr4xWSfvnLYzHS8hY
-	qxsYRYAIa5VCZ458RRJw==;
+	List-Owner; bh=FwVSCDfTdZH8n8pulh1gYnXBuTgb27ZLsj+AR40KEaM=; b=bXSNKZIEZZUAbV
+	j5wemQhYeD8LbnqI4ksON0vQtyy46htC0SQ3+ASxzAv1W8N3cIzyMstCDvhwWG/vYkljfHKN1l/bF
+	32vv4mpRqGLm8b1qofVcHi3XC3Q4Ty1FwnMaUqXF7/bvjQ0j8hW3Tua/Ayd5c4PRh7QaiaPMlyG8E
+	sD87TM1mZPugjPoiLoQiqBTGlQLH/nauZpJ1X957zWgygCBi2fHYPxMILbetQE+tvwkM8ns0cQ4Tv
+	L4bNi6nBA0ZaA26/HNfyUlSD8cirnBq8hY7z6dkJ3UoB9OYDeKC/f1ma2nsJUpluNTLs1CrNrdP3H
+	wRQ1LDNvV/Zvo/tlvcDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqTK2-0007Mc-Kj; Thu, 25 Jul 2019 02:17:34 +0000
-Received: from mail-eopbgr30060.outbound.protection.outlook.com ([40.107.3.60]
- helo=EUR03-AM5-obe.outbound.protection.outlook.com)
+	id 1hqTQI-000102-Hs; Thu, 25 Jul 2019 02:24:02 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqTJf-0007M4-JY
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 02:17:13 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=EO8Iv2SKeBpJVB6EgrynBzMsGVq9vzc3lXl01spDJ76ItNKoGYJ62K67dYq+buV8ulSP95AiYZWpsmomshryER+0kB4wOj2CT7E3jQwZgbEOW6VopKWqOpFBm2wjSZ2vq4eSv8jwnGxQMjvEuPJecxbq/6aiNte+4gzn6wY4X7P//pn3SAGkLGGrxT8O6vS3H+23WXaBs3J++jyU0ah0yrO4X4YPRD+XHFKubNfoVJiex+TGJjXO7Vbk0hMFcmroBoGzDicWtjRKYN9zDecK5RKpjSHEHs7bOjF8jX542q+OWEgGpPLNWDCtrBkekfj0w1GzwxRElwD2AxvuiWeRPA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=t0mgIKzVyCphgL25EDVWyAurRhll0FtVykQBdQiTs0Q=;
- b=dscdgEf3F2guTArPNvi4759e6/7hNRh0ZF6YYzlX8w3rMuW9dBWt8zHrz7QQbmkBwu7c96/ICj+tc7foipEilEr51aR3y+bQljComsynu3mGy3sO/5UVv+leYd7MqRuZ9B5sKw+VEeHWqyc2rl0MeNmrUfbC/ZJMqOxf6a6VHCptW2TgqS2m4unz/9b8mkhPN/owMiau3F4l91qrbC5c0yuIoJLcF6e4BrwNTM6GjHS7ukFoNWM0RCOsILpXPdD4+yy8ESrMxQ7sQTyzGvyhn2IKZzudcfn6WH/zqYH7Vw4I1PKfOHd++QOHxUc65wqJM4puz73X9e7mMxlv8OAJXA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=nxp.com;dmarc=pass action=none header.from=nxp.com;dkim=pass
- header.d=nxp.com;arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=t0mgIKzVyCphgL25EDVWyAurRhll0FtVykQBdQiTs0Q=;
- b=hXVnN4YPU7L4YB2+pkTo9a4EnfcygtJwTAZ6plQETCVohXs+2e0qU5jm3itaHk6v4b4E2KkNGIFzuBapHfgwL1BdgSoGZ9JyIQQ6mJQL/Ig1zMQeOQSDmY/YkTTk/NHFGqw6WrTI5oK/GqDt4hwoELkuESrYlUOwQ0zTto4LvwQ=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3705.eurprd04.prod.outlook.com (52.134.70.30) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2094.14; Thu, 25 Jul 2019 02:17:08 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::7cdf:bddc:212c:f77e]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::7cdf:bddc:212c:f77e%4]) with mapi id 15.20.2094.017; Thu, 25 Jul 2019
- 02:17:07 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Rob Herring <robh@kernel.org>, Shawn Guo <shawnguo@kernel.org>
-Subject: RE: [PATCH V5 1/5] dt-bindings: imx: Add clock binding doc for i.MX8MN
-Thread-Topic: [PATCH V5 1/5] dt-bindings: imx: Add clock binding doc for
- i.MX8MN
-Thread-Index: AQHVJmMF006ndGW3RkqrRMH2CdLcnabWEvkAgAP8B4CAAMHU4A==
-Date: Thu, 25 Jul 2019 02:17:07 +0000
-Message-ID: <DB3PR0402MB3916A6EF2B9A34FB798120F3F5C10@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <20190619055247.35771-1-Anson.Huang@nxp.com>
- <20190722015043.GP3738@dragon>
- <CAL_JsqKv39XdFABuRvxwiXg6qQpHSuykwgqTwsGw1g+D2wA1+w@mail.gmail.com>
-In-Reply-To: <CAL_JsqKv39XdFABuRvxwiXg6qQpHSuykwgqTwsGw1g+D2wA1+w@mail.gmail.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: e457c78a-ad0c-4eff-6cde-08d710a631a7
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:DB3PR0402MB3705; 
-x-ms-traffictypediagnostic: DB3PR0402MB3705:
-x-ms-exchange-purlcount: 1
-x-microsoft-antispam-prvs: <DB3PR0402MB37054A7FE6B0A73AD53089A4F5C10@DB3PR0402MB3705.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6790;
-x-forefront-prvs: 0109D382B0
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(396003)(366004)(346002)(136003)(376002)(189003)(199004)(229853002)(99286004)(476003)(8676002)(110136005)(446003)(53936002)(11346002)(14454004)(76176011)(478600001)(76116006)(7696005)(305945005)(66476007)(7736002)(66946007)(54906003)(186003)(74316002)(66556008)(64756008)(66446008)(4326008)(53546011)(966005)(102836004)(5660300002)(52536014)(81166006)(81156014)(26005)(86362001)(7416002)(66066001)(25786009)(44832011)(68736007)(4744005)(33656002)(6506007)(486006)(316002)(8936002)(256004)(6306002)(55016002)(2906002)(6436002)(6116002)(9686003)(3846002)(71200400001)(71190400001)(6246003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3705;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: Wy6h3EaLCvHxyT0+rpNeDPu1FlojLXi5O0HOZgkQeo3qSAux3+xFePgA26LIRxsiD703T8w6TEenO8pG9kQXBbMXLL1m+ofzx7kLUFYwPTUTwRSmzlHkEGj09ADpx+aBtehBwvDhJJItrD47d8ttNJ+SkR6c4Y5uj62lih7vQw0D0toXpf7GvLwwjyWn6JYZBclRaTCujgf4aKkc3raf/hdYajJli9pl3e+ZmZWvOAHnC6MsdmWD/DgRa6b1Se7lMnid2ytMM6XFl3rb8+fswbuRhXz+UdJ+YNDGzkGb0DnQVYCNYBCJIm+GOO0keN33aFxdzhL8TWn/rN6PWTfO+emMQIR4ERKLliuCsDjtVqcl6RfZSrvMCukykenZJRTlQJ+6K03MY5dcpymTdMorbV6u+WVD9quDoAjighiQ55E=
+ id 1hqTQ5-0000z7-HG
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 02:23:51 +0000
+Received: by mail-pf1-x442.google.com with SMTP id 19so21887444pfa.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 24 Jul 2019 19:23:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=f2gYhr2xF9eqfzuK1I6ByZW/6E+IIFIf49moUqSig44=;
+ b=UWpYFZCqApaDNfrjdA5KtekES5UJ5GTU1kmcTFDFb2FLfRCDcNFDgvronSImr9dgD9
+ 0mFTlZI7X35xO1vEdd3Gki5LIf98gKG5QhKxb/Y4+VDIDhfB1gwWeVXBqiLEyWL2EkgW
+ NT11Oz6vHpCvPOjC1YKTKmUoFKun/2NxPqpp1JkpL65nRxlStWUN4lRLXspUzJnsSUs7
+ f0W+td0YgaR8ANRf2sKNe+yfU85x4p815cUUDhoDA7GMXy2XLaBS0z1jQB9wcs/VHaCv
+ 7pV5B+RTx3CuZ/R9xi/w3tBHDvXglw6aX/anI5anp/fOKcEQncy2ECQwLBNYPNc9rUd9
+ Z5QA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=f2gYhr2xF9eqfzuK1I6ByZW/6E+IIFIf49moUqSig44=;
+ b=fK/6OY4ShiF7fU+JNlvASVbl+I9mssoiZ+ybn+JYrRk8uS0AMvcgdFOLXVLL4xXXzD
+ wexj13H2AQLY69jC6IJflpIIQVr/INEoSdZtn3P3I3IPAP6ob3qzJVrDKTJE2RJJW/h3
+ DUTCNBKcqO5jdhHLw3OyphIKFiIZQxIIc1+80/9lrf5VBdI0yLSBLKpa6tZJnVMBbEmZ
+ vNCcCM2YDo3lgwHfJt1eVaKVhqFrq3JYjypuGx+DZ/sxpmyE7A16lWGjIYjIqxng5uvZ
+ jUQJSkj3bP40VdIqnVNv8iaCgnyU/0rE/sBx8sqIXNuxq1jci8L1cEMGc26YyU+/k7v8
+ FgJQ==
+X-Gm-Message-State: APjAAAWepXVhf+PAuJkyFhGbcD/LmU5l7MNrwaAjZwKh5zkYKuhz8Xup
+ 6bfr4c2yyeZ3+GqG4cQmrHvUTQ==
+X-Google-Smtp-Source: APXvYqzXNlrdXx1C+X0/1qZx+FxwGsBmRDCWeiwCURuT22GPdQ5YuJbOB5TOiPQUDU7gUhGBG6bBRQ==
+X-Received: by 2002:a62:750c:: with SMTP id q12mr14690753pfc.59.1564021427936; 
+ Wed, 24 Jul 2019 19:23:47 -0700 (PDT)
+Received: from localhost ([122.172.28.117])
+ by smtp.gmail.com with ESMTPSA id k25sm37963077pgt.53.2019.07.24.19.23.45
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 24 Jul 2019 19:23:46 -0700 (PDT)
+Date: Thu, 25 Jul 2019 07:53:43 +0530
+From: Viresh Kumar <viresh.kumar@linaro.org>
+To: Marek Szyprowski <m.szyprowski@samsung.com>
+Subject: Re: [PATCH v2 0/9] Exynos Adaptive Supply Voltage support
+Message-ID: <20190725022343.p7lqalrh5svxvtu2@vireshk-i7>
+References: <CGME20190718143117eucas1p1e534b9075d10fbbbe427c66192205eb1@eucas1p1.samsung.com>
+ <20190718143044.25066-1-s.nawrocki@samsung.com>
+ <20190723020450.z2pqwetkn2tfhacq@vireshk-i7>
+ <5ef302a4-5bbf-483d-dfdf-cf76f6f69cee@samsung.com>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: e457c78a-ad0c-4eff-6cde-08d710a631a7
-X-MS-Exchange-CrossTenant-originalarrivaltime: 25 Jul 2019 02:17:07.6947 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: anson.huang@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3705
+Content-Disposition: inline
+In-Reply-To: <5ef302a4-5bbf-483d-dfdf-cf76f6f69cee@samsung.com>
+User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_191711_731469_63DC4422 
-X-CRM114-Status: GOOD (  15.28  )
+X-CRM114-CacheID: sfid-20190724_192349_584744_25C6BC1D 
+X-CRM114-Status: GOOD (  17.56  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.3.60 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -124,57 +100,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Peng Fan <peng.fan@nxp.com>,
- Jacky Bai <ping.bai@nxp.com>, Maxime Ripard <maxime.ripard@bootlin.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Michael Turquette <mturquette@baylibre.com>, Will Deacon <will.deacon@arm.com>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Leonard Crestez <leonard.crestez@nxp.com>, Fabio Estevam <festevam@gmail.com>,
- linux-clk <linux-clk@vger.kernel.org>, Abel Vesa <abel.vesa@nxp.com>,
- Jagan Teki <jagan@amarulasolutions.com>, dl-linux-imx <linux-imx@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, Olof Johansson <olof@lixom.net>,
- Simon Horman <horms+renesas@verge.net.au>, "moderated
- list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Aisheng Dong <aisheng.dong@nxp.com>,
- Stephen Boyd <sboyd@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Dinh Nguyen <dinguyen@kernel.org>, Sascha Hauer <kernel@pengutronix.de>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Lucas Stach <l.stach@pengutronix.de>
+Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ linux-pm@vger.kernel.org, vireshk@kernel.org, b.zolnierkie@samsung.com,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, kgene@kernel.org,
+ krzk@kernel.org, Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ pankaj.dubey@samsung.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-> On Sun, Jul 21, 2019 at 7:51 PM Shawn Guo <shawnguo@kernel.org> wrote:
-> >
-> > On Wed, Jun 19, 2019 at 01:52:43PM +0800, Anson.Huang@nxp.com wrote:
-> > > From: Anson Huang <Anson.Huang@nxp.com>
-> > >
-> > > Add the clock binding doc for i.MX8MN.
-> > >
-> > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> > > Reviewed-by: Maxime Ripard <maxime.ripard@bootlin.com>
-> >
-> > Applied all, thanks.
+On 24-07-19, 15:10, Marek Szyprowski wrote:
+> Hi Viresh,
 > 
-> This breaks building of 'dt_binding_check'. Looks like there are tabs in the file
-> which doesn't mix with YAML. Please fix.
+> On 2019-07-23 04:04, Viresh Kumar wrote:
+> > On 18-07-19, 16:30, Sylwester Nawrocki wrote:
+> >> This is second iteration of patch series adding ASV (Adaptive Supply
+> >> Voltage) support for Exynos SoCs. The first one can be found at:
+> >> https://lore.kernel.org/lkml/20190404171735.12815-1-s.nawrocki@samsung.com
+> >>
+> >> The main changes comparing to the first (RFC) version are:
+> >>   - moving ASV data tables from DT to the driver,
+> >>   - converting the chipid and the ASV drivers to use regmap,
+> >>   - converting the ASV driver to proper platform driver.
+> >>
+> >> I tried the opp-supported-hw bitmask approach as in the Qualcomm CPUFreq
+> >> DT bindings but it resulted in too many OPPs and DT nodes, around 200
+> >> per CPU cluster. So the ASV OPP tables are now in the ASV driver, as in
+> >> downstream kernels.
+> > Hmm. Can you explain why do you have so many OPPs? How many
+> > frequencies do you actually support per cluster and what all varies
+> > per frequency based on hw ? How many hw version do u have ?
+> 
+> For big cores there are 20 frequencies (2100MHz .. 200MHz). Each SoC 
+> might belong to one of the 3 production 'sets' and each set contains 14 
+> so called 'asv groups', which assign the certain voltage values for each 
+> of those 20 frequencies (the lower asv group means lower voltage needed 
+> for given frequency).
 
-Ah, yes, there is a tab in file and break the YAML format, I have send out a patch to
-fix it, and YAML file check now can pass. Sorry for it.
+There is another property which might be useful in this case:
+"opp-microvolt-<name>" and then you can use API
+dev_pm_opp_set_prop_name() to choose which voltage value to apply to
+all OPPs.
 
-https://patchwork.kernel.org/patch/11057815/
+opp-supported-hw property is more useful for the cases where only a
+subset of frequencies will be supported for different versions of the
+SoC. And what you need is a different voltage value for all
+frequencies based on some h/w version.
 
--       clock-output-names = "osc_32k";
-+        clock-output-names = "osc_32k";
-     };
+-- 
+viresh
 
-Thanks,
-Anson
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
