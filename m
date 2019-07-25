@@ -2,32 +2,33 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8586A74758
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 08:34:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0CD174759
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 08:35:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CvLgTobxwwzEZEJKWVnoZnRs2HVh918m9bOB3XdMPUM=; b=BKytHhS/NAdmxt
-	kSY+ZpL+vyP+ahZzOSy8K2mpCOU2iBZl3RDUiY2BDeBgXqRGEhdTw5j7kKW3IvatFg+93bxVirB6W
-	0Ail3qN4x+RGGkQOFtK0gmOOdkuXAMKsIazOjznQI9aAvMQbLbNtuQuKXiOvpabqLjsKktaRs7gZK
-	YZ7EOhmOKcroxzXrOjxyMdorhDhYwgKD82OjrhcHH2xbWkzALD6P5txncYxRHDnu7ZdfR3wCnfPDt
-	+2V2JlVtU4NI+qDyJCVJ++vVAa7aKHHMvDmjFCspKViyI5edGpsBEgrHTsBv1S0LnRbr4nv3ceTBk
-	NO1tsGiLXbaL0cxmUWAA==;
+	List-Owner; bh=oZ4ZZMV5sznyvEk5Y30X3dTUIyUFSZuihlIWmJZkr8U=; b=YTgTvjssbCh4EQ
+	NiLhWoJTwVXgIwFC7DOvdE2MTbuvzSQb5Ik3XA5XuBFKJACk4pHmLgSg4NztLg+8abfD7bd2fPeOZ
+	fvifHEFrPZC1UYwdGM/wfL/2GAm4UNk66SXDJvDTlw23fkHlpa1jClwsiUgb+KHoXzzs1f/tDwdH7
+	OVyKZbz1aINRLqSgzqPEyROJxUxxiMIGeikCrE9psbKaLGSA4sHvlHMdG7ECNLfyAftzDuByBXIvP
+	7JiQ4Lbq6VPdbP4xu1xuw6dJwAGmbHE4S7SVAUGJltpbblQJvTi1JYImNl5TWbjohgeFDP0gAJpgx
+	d5J1vp9TxkNIodYJqnmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqXL3-0000VV-3h; Thu, 25 Jul 2019 06:34:53 +0000
+	id 1hqXLP-0000mP-1d; Thu, 25 Jul 2019 06:35:15 +0000
 Received: from p57b3f613.dip0.t-ipconnect.de ([87.179.246.19] helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hqXKJ-0000Fp-Pl; Thu, 25 Jul 2019 06:34:08 +0000
+ id 1hqXKM-0000GY-6y; Thu, 25 Jul 2019 06:34:10 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: iommu@lists.linux-foundation.org,
  Marek Szyprowski <m.szyprowski@samsung.com>
-Subject: [PATCH 1/5] m68knommu: add a pgprot_noncached stub
-Date: Thu, 25 Jul 2019 08:33:57 +0200
-Message-Id: <20190725063401.29904-2-hch@lst.de>
+Subject: [PATCH 2/5] dma-mapping: move the dma_get_sgtable API comments from
+ arm to common code
+Date: Thu, 25 Jul 2019 08:33:58 +0200
+Message-Id: <20190725063401.29904-3-hch@lst.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190725063401.29904-1-hch@lst.de>
 References: <20190725063401.29904-1-hch@lst.de>
@@ -53,29 +54,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Provide a pgprot_noncached like all the other nommu ports so that
-common code can rely on it being able to be present.  Note that this is
-generally code that is not actually run on nommu, but at least we can
-avoid nasty ifdefs by having a stub.
+The comments are spot on and should be near the central API, not just
+near a single implementation.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- arch/m68k/include/asm/pgtable_no.h | 2 ++
- 1 file changed, 2 insertions(+)
+ arch/arm/mm/dma-mapping.c | 11 -----------
+ kernel/dma/mapping.c      | 11 +++++++++++
+ 2 files changed, 11 insertions(+), 11 deletions(-)
 
-diff --git a/arch/m68k/include/asm/pgtable_no.h b/arch/m68k/include/asm/pgtable_no.h
-index fc3a96c77bd8..06194c7ba151 100644
---- a/arch/m68k/include/asm/pgtable_no.h
-+++ b/arch/m68k/include/asm/pgtable_no.h
-@@ -29,6 +29,8 @@
- #define PAGE_READONLY	__pgprot(0)
- #define PAGE_KERNEL	__pgprot(0)
+diff --git a/arch/arm/mm/dma-mapping.c b/arch/arm/mm/dma-mapping.c
+index 6774b03aa405..4410af33c5c4 100644
+--- a/arch/arm/mm/dma-mapping.c
++++ b/arch/arm/mm/dma-mapping.c
+@@ -877,17 +877,6 @@ static void arm_coherent_dma_free(struct device *dev, size_t size, void *cpu_add
+ 	__arm_dma_free(dev, size, cpu_addr, handle, attrs, true);
+ }
  
-+#define pgprot_noncached(prot)   (prot)
-+
- extern void paging_init(void);
- #define swapper_pg_dir ((pgd_t *) 0)
+-/*
+- * The whole dma_get_sgtable() idea is fundamentally unsafe - it seems
+- * that the intention is to allow exporting memory allocated via the
+- * coherent DMA APIs through the dma_buf API, which only accepts a
+- * scattertable.  This presents a couple of problems:
+- * 1. Not all memory allocated via the coherent DMA APIs is backed by
+- *    a struct page
+- * 2. Passing coherent DMA memory into the streaming APIs is not allowed
+- *    as we will try to flush the memory through a different alias to that
+- *    actually being used (and the flushes are redundant.)
+- */
+ int arm_dma_get_sgtable(struct device *dev, struct sg_table *sgt,
+ 		 void *cpu_addr, dma_addr_t handle, size_t size,
+ 		 unsigned long attrs)
+diff --git a/kernel/dma/mapping.c b/kernel/dma/mapping.c
+index b945239621d8..4ceb5b9016d8 100644
+--- a/kernel/dma/mapping.c
++++ b/kernel/dma/mapping.c
+@@ -136,6 +136,17 @@ int dma_common_get_sgtable(struct device *dev, struct sg_table *sgt,
+ 	return ret;
+ }
  
++/*
++ * The whole dma_get_sgtable() idea is fundamentally unsafe - it seems
++ * that the intention is to allow exporting memory allocated via the
++ * coherent DMA APIs through the dma_buf API, which only accepts a
++ * scattertable.  This presents a couple of problems:
++ * 1. Not all memory allocated via the coherent DMA APIs is backed by
++ *    a struct page
++ * 2. Passing coherent DMA memory into the streaming APIs is not allowed
++ *    as we will try to flush the memory through a different alias to that
++ *    actually being used (and the flushes are redundant.)
++ */
+ int dma_get_sgtable_attrs(struct device *dev, struct sg_table *sgt,
+ 		void *cpu_addr, dma_addr_t dma_addr, size_t size,
+ 		unsigned long attrs)
 -- 
 2.20.1
 
