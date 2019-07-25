@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F8F27470A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 08:20:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AF9E774710
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 08:21:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mIqDykXI48GrFQukwOLLvpdrQ+T2WX/Cq7jYGxWZauc=; b=TgB6FOCJsrmvTy
-	lnX4HBMXhaP+1MqAg3YHjayu4W9AJuNYzaMR3Ar1zMjyUZ9elvaBxS+GTEPMxcrql7b+cJDeXua7L
-	TqeCfaLfB6gkmFKbduWCtLEfabAAExtMLfUGjv0nSiOEeAgUX4ttAEReITHw9u8kQwwBSLrcEmJk9
-	lNISeMKvalo/2Djgp0C4dakKCRPHI25Jd5RAkETYQPedQnDXtGsGPxZk3b5nF970GODrAmF32FQ14
-	0MVahYXWYZTKWamgyS7N/b55UxQWwCH1eusCy537Q0hYlvVEeVVkRwwNqo1a+WxaP53qAbnEEolM+
-	9LA6clIu9fTsJs+QrbGw==;
+	List-Owner; bh=8Bmi50Uh7xaXCwmKsgRcezY8zBq6MwK6vP4K6GFfrnw=; b=nKRNwGrJvLXOGf
+	ZtlIWy4pikSHlgSJT5+bIh9lssmqO37VDIDnUtfb9Y05Ns2xc3nTKoHyAqrqUYkrQRGbdq6uwLqQB
+	y43jTs1zEh79tLblBfMduu8i4ash3+wSUv+p5Auwx6BVe0ESNMFoYqdGUDe65kADRLmSRixQPJ3CU
+	jabBqLJ6SWebtwabLiEEDIiuXYRAEPs7Mhf/weHK3dmG9ez3yQoBytdpf+UKXKFFwPhJz8bzwCzeF
+	eeFqpOYBWm66bA9TrEXO7YdczOEvcByQi18GikHYR2HV5T74y9/10Ku8g6dyE7k535WcKg+7pFXof
+	sfHB4AQeeqUB+lyROyXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqX7Q-0004GT-5E; Thu, 25 Jul 2019 06:20:48 +0000
+	id 1hqX8W-0004XR-4k; Thu, 25 Jul 2019 06:21:56 +0000
 Received: from kirsty.vergenet.net ([202.4.237.240])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hqX7B-0004G2-9t
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 06:20:34 +0000
+ id 1hqX8G-0004Wy-Ct
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 06:21:41 +0000
 Received: from penelope.horms.nl (ip4dab7138.direct-adsl.nl [77.171.113.56])
- by kirsty.vergenet.net (Postfix) with ESMTPA id 6D75B25AD7E;
- Thu, 25 Jul 2019 16:20:32 +1000 (AEST)
+ by kirsty.vergenet.net (Postfix) with ESMTPA id 5899025AD7E;
+ Thu, 25 Jul 2019 16:21:39 +1000 (AEST)
 Received: by penelope.horms.nl (Postfix, from userid 7100)
- id 76B98E2209B; Thu, 25 Jul 2019 08:20:30 +0200 (CEST)
-Date: Thu, 25 Jul 2019 08:20:30 +0200
+ id 533B1E2209B; Thu, 25 Jul 2019 08:21:37 +0200 (CEST)
+Date: Thu, 25 Jul 2019 08:21:37 +0200
 From: Simon Horman <horms@verge.net.au>
 To: Yoshihiro Kaneko <ykaneko0929@gmail.com>
-Subject: Re: [PATCH] arm64: dts: renesas: r8a7795-salvator-x: sort nodes
-Message-ID: <20190725062029.xyoxs6bqo4xfdz7m@verge.net.au>
-References: <1563816172-17864-1-git-send-email-ykaneko0929@gmail.com>
+Subject: Re: [PATCH] arm64: dts: renesas: r8a7795-salvator-xs: sort nodes
+Message-ID: <20190725062136.i3e3zbzvr62azxbj@verge.net.au>
+References: <1563816188-17922-1-git-send-email-ykaneko0929@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1563816172-17864-1-git-send-email-ykaneko0929@gmail.com>
+In-Reply-To: <1563816188-17922-1-git-send-email-ykaneko0929@gmail.com>
 Organisation: Horms Solutions BV
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_232033_483526_6F74037D 
+X-CRM114-CacheID: sfid-20190724_232140_581126_B9148B94 
 X-CRM114-Status: UNSURE (   8.29  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
@@ -71,7 +71,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jul 23, 2019 at 02:22:52AM +0900, Yoshihiro Kaneko wrote:
+On Tue, Jul 23, 2019 at 02:23:08AM +0900, Yoshihiro Kaneko wrote:
 > Sort nodes.
 > 
 > If node address is present
