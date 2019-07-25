@@ -2,101 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 038CE74A28
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 11:42:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B3BE774A32
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 11:46:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QVmHc7hnCPyCbFcYAREfeS6X2Z82jLBr1VPZUXN2TnQ=; b=VlJVUBDgcQJmaG
-	Y23UC4pCv+vCW0cSTiDcI9gB0ixT7khONurUfhZ83g0gaZXPMqIgRVcmk2hb5u+AUpMZ5c5VW0DBa
-	qLyh9JtX9HCSFFJPjGzLnRMN2DvMShX0FbK0CIV2uAZNALHy0ger2v3JrHGunTrtiSG/OHuUSZqG6
-	8xqtEs7PxucND0EWYxgixe8/72rD0/LviOGXTWvtkGZyVvlCZ9oZxf6mwfMnV6museY63b/9usMLL
-	UrGB1QUhYhsMkov2X+oVkD5i9s68aiU056NC5G8/lJIxf38XYq8qzsTBgMuy1WFoOYBualPw3F9ZX
-	/miZV2m1WvDRm2j4+dog==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AMsJm9sc9WfUT6g1XXEwi+HjkYvNB/s4poQcXk5sgYU=; b=qV1P7ZYxQT50aJ
+	cHVedqQCpwoTvAb3qH2EcP1UNy77Su7n6Q3cDFo0DFfFl6oaTnpyFayde+EsXPWktDA3wC2NGmbwJ
+	9olgBOiT9W7cEoifWQlfzbH77zfF955xgGb7w0c8QWk442ow4ezgV+qY1EyFTnn0vgVEMlsqYVcbh
+	gfdlSOCA58ZJ4x9/Cfnwp0Tb4FTABT0LRrQO9+Pwhi+EUdddUNB2Hz6NdGYBsgrFz12J782EI8C8G
+	GbM/yGINmyHOzkc8P0t/UWB/TelH7KR6KhB3O6+FDHMyiOHuTV9PExcgSGdLCoyWNzTtBlO7J3q0m
+	3EeX9gk/8GYEDoH7/9yg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqaG8-0001es-3M; Thu, 25 Jul 2019 09:42:00 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1hqaKC-0004ui-Nv; Thu, 25 Jul 2019 09:46:13 +0000
+Received: from hqemgate14.nvidia.com ([216.228.121.143])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqaFl-0001eJ-JN
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 09:41:39 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x6P9VIvm019586; Thu, 25 Jul 2019 11:41:31 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : subject :
- date : message-id : references : in-reply-to : content-type : content-id :
- content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=CwGUEJlNPRnLlktsO1S0XN9Odmud6VF8V/BLiayyxtw=;
- b=IlDdyaIPgxFZcZT4SV3Zpu3zeCCA/wutcPzYiKcX6rC5fVRpa6PKCV96Nv5WAB+D7KR1
- cv4DkwhWmFWdcfWQfeUoUd1BUErL9zI/kqfwMum8ymUjGQvKBic4ZlfqEWPm7yanFYka
- 0b9kTZqZQejemXX9jUhHu8Bo8gykHXB+iJl3+N116apvocJ2qR6W/+pCV0ChpEBVvh3M
- wYom/r9r2X8aLfvSDFIUG63wQYTknJRxBZ3lYSqLYv1wTykj2ehjNpEH/ubkDp7FRnjG
- /WYplnpv60WkMcvqIM5jw9oNKL1w/Z3hrQrvgqqutgCY5cBvKhF7gnSX2oSiRe2g+c7T Ng== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2tx60833y7-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Thu, 25 Jul 2019 11:41:31 +0200
-Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id A937C38;
- Thu, 25 Jul 2019 09:41:29 +0000 (GMT)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 496AF2834;
- Thu, 25 Jul 2019 09:41:29 +0000 (GMT)
-Received: from SFHDAG6NODE2.st.com (10.75.127.17) by SFHDAG3NODE2.st.com
- (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 25 Jul
- 2019 11:41:28 +0200
-Received: from SFHDAG6NODE2.st.com ([fe80::a56f:c186:bab7:13d6]) by
- SFHDAG6NODE2.st.com ([fe80::a56f:c186:bab7:13d6%20]) with mapi id
- 15.00.1347.000; Thu, 25 Jul 2019 11:41:28 +0200
-From: Olivier MOYSAN <olivier.moysan@st.com>
-To: Alexandre TORGUE <alexandre.torgue@st.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>, "robh@kernel.org"
- <robh@kernel.org>, "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH] ARM: dts: stm32: add audio codec support on
- stm32mp157a-dk1 board
-Thread-Topic: [PATCH] ARM: dts: stm32: add audio codec support on
- stm32mp157a-dk1 board
-Thread-Index: AQHVQj6Deex2/J9kJEqdPNgaDJMMOqba9CwA
-Date: Thu, 25 Jul 2019 09:41:28 +0000
-Message-ID: <f43b8af7-e2c0-6193-d666-9fa60050e07d@st.com>
-References: <1562327580-19647-1-git-send-email-olivier.moysan@st.com>
- <27476214-07fe-886b-1cab-20902837f29c@st.com>
-In-Reply-To: <27476214-07fe-886b-1cab-20902837f29c@st.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ id 1hqaJs-0004uN-Nk
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 09:45:54 +0000
+Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
+ hqemgate14.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5d397a500000>; Thu, 25 Jul 2019 02:45:52 -0700
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate101.nvidia.com (PGP Universal service);
+ Thu, 25 Jul 2019 02:45:51 -0700
+X-PGP-Universal: processed;
+ by hqpgpgate101.nvidia.com on Thu, 25 Jul 2019 02:45:51 -0700
+Received: from [10.21.132.148] (10.124.1.5) by HQMAIL107.nvidia.com
+ (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Thu, 25 Jul
+ 2019 09:45:48 +0000
+Subject: Re: [PATCH net-next 3/3] net: stmmac: Introducing support for Page
+ Pool
+To: Jose Abreu <Jose.Abreu@synopsys.com>, Ilias Apalodimas
+ <ilias.apalodimas@linaro.org>
+References: <BYAPR12MB32692AF2BA127C5DA5B74804D3C70@BYAPR12MB3269.namprd12.prod.outlook.com>
+ <6c769226-bdd9-6fe0-b96b-5a0d800fed24@arm.com>
+ <8756d681-e167-fe4a-c6f0-47ae2dcbb100@nvidia.com>
+ <20190723.115112.1824255524103179323.davem@davemloft.net>
+ <20190724085427.GA10736@apalos>
+ <BYAPR12MB3269AA9955844E317B62A239D3C60@BYAPR12MB3269.namprd12.prod.outlook.com>
+ <20190724095310.GA12991@apalos>
+ <BYAPR12MB3269C5766F553438ECFF2C9BD3C60@BYAPR12MB3269.namprd12.prod.outlook.com>
+ <33de62bf-2f8a-bf00-9260-418b12bed24c@nvidia.com>
+ <BYAPR12MB32696F0A2BFDF69F31C4311CD3C60@BYAPR12MB3269.namprd12.prod.outlook.com>
+ <a07c3480-af03-a61b-4e9c-d9ceb29ce622@nvidia.com>
+ <BYAPR12MB3269F4E62B64484B08F90998D3C10@BYAPR12MB3269.namprd12.prod.outlook.com>
+From: Jon Hunter <jonathanh@nvidia.com>
+Message-ID: <d2658b7d-1f24-70f7-fafe-b60a0fd7d240@nvidia.com>
+Date: Thu, 25 Jul 2019 10:45:46 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.49]
-Content-ID: <FF0A7C08C4373B42860E80A2452E7D13@st.com>
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-07-25_04:, , signatures=0
+In-Reply-To: <BYAPR12MB3269F4E62B64484B08F90998D3C10@BYAPR12MB3269.namprd12.prod.outlook.com>
+X-Originating-IP: [10.124.1.5]
+X-ClientProxiedBy: HQMAIL101.nvidia.com (172.20.187.10) To
+ HQMAIL107.nvidia.com (172.20.187.13)
+Content-Language: en-US
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1564047952; bh=5isgglopm7SeJ86vy3+jPoE2tjL+r8qlKxtTv2QKBHM=;
+ h=X-PGP-Universal:Subject:To:CC:References:From:Message-ID:Date:
+ User-Agent:MIME-Version:In-Reply-To:X-Originating-IP:
+ X-ClientProxiedBy:Content-Type:Content-Language:
+ Content-Transfer-Encoding;
+ b=UOPEEsvkrrYBFIWOd177XUvGoLoWRcDIklaeRlE6HdJ86bODEuxFdAKOnXSsl7TQj
+ C1BlC2kjEQ0OhI0uEKzvHK9P8cFLhTi9bOecyjyqn+yeZ5oJTX4F0fA21jvxkmoMGW
+ TNukEvfcPf42Mg3iQLiGz6vTTPRGJWuSlRF4vZIshHT3rYR/wZStZWNFVVkYAUtTdd
+ e5axWio9Qs/BMnGYpAWXNM8SBrmW/SE92TcRbIn7zHU7j0fR3D8FXMdI5wfJW2vgh6
+ LWbcupZd1chBOxvamcdQX84cb/usJkiRoWPgbFY/h+z97ZHmL8OzwA12q1uekPsgVZ
+ PMCZNteWQgGFg==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_024137_929060_B370D76A 
-X-CRM114-Status: GOOD (  19.28  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190725_024552_787609_B9D0DB61 
+X-CRM114-Status: GOOD (  11.58  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -104,6 +90,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.143 listed in list.dnswl.org]
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -115,95 +104,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: "Joao.Pinto@synopsys.com" <Joao.Pinto@synopsys.com>,
+ "alexandre.torgue@st.com" <alexandre.torgue@st.com>,
+ "maxime.ripard@bootlin.com" <maxime.ripard@bootlin.com>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>, "wens@csie.org" <wens@csie.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
+ "linux-tegra@vger.kernel.org" <linux-tegra@vger.kernel.org>,
+ "peppe.cavallaro@st.com" <peppe.cavallaro@st.com>,
+ "robin.murphy@arm.com" <robin.murphy@arm.com>,
+ David Miller <davem@davemloft.net>, "lists@bofh.nu" <lists@bofh.nu>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
+On 25/07/2019 08:44, Jose Abreu wrote:
 
-On 7/24/19 6:40 PM, Alexandre Torgue wrote:
-> Hi Olivier
+...
+
+> OK. Can you please test what Ilias mentioned ?
 > 
-> On 7/5/19 1:53 PM, Olivier Moysan wrote:
->> Add support of Cirrus cs42l51 audio codec on stm32mp157a-dk1 board.
->> Configuration overview:
->> - SAI2A is the CPU interface used for the codec audio playback
->> - SAI2B is the CPU interface used for the codec audio record
->> - SAI2A is configured as a clock provider for the audio codec
->> - SAI2A&B are configured as slave of the audio codec
->> - SAI2A&B share the same interface of the audio codec
->>
->> Note:
->> In master mode, cs42l51 audio codec provides a bitclock
->> at 64 x FS, regardless of data width. This means that
->> slot width is always 32 bits.
->> Set slot width to 32 bits and slot number to 2
->> in SAI2A&B endpoint nodes, to match this constraint.
->> dai-tdm-slot-num and dai-tdm-slot-width properties are used here,
->> assuming that i2s is a special case of tdm, where slot number is 2.
->>
->> Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
->> ---
->>    arch/arm/boot/dts/stm32mp157a-dk1.dts | 89 +++++++++++++++++++++++++++++++++++
->>    1 file changed, 89 insertions(+)
->>
+> Basically you can hard-code the order to 0 in 
+> alloc_dma_rx_desc_resources():
+> - pp_params.order = DIV_ROUND_UP(priv->dma_buf_sz, PAGE_SIZE);
+> + pp_params.order = 0;
 > 
-> ...
-> 
->>    
->> +&sai2 {
->> +	clocks = <&rcc SAI2>, <&rcc PLL3_Q>, <&rcc PLL3_R>;
->> +	clock-names = "pclk", "x8k", "x11k";
->> +	pinctrl-names = "default", "sleep";
->> +	pinctrl-0 = <&sai2a_pins_a>, <&sai2b_pins_b>;
->> +	pinctrl-1 = <&sai2a_sleep_pins_a>, <&sai2b_sleep_pins_b>;
->> +	status = "okay";
->> +
->> +	sai2a: audio-controller@4400b004 {
->> +		#clock-cells = <0>;
->> +		dma-names = "tx";
->> +		clocks = <&rcc SAI2_K>;
->> +		clock-names = "sai_ck";
->> +		status = "okay";
->> +
->> +		sai2a_port: port {
->> +			sai2a_endpoint: endpoint {
->> +				remote-endpoint = <&cs42l51_tx_endpoint>;
->> +				format = "i2s";
->> +				mclk-fs = <256>;
->> +				dai-tdm-slot-num = <2>;
->> +				dai-tdm-slot-width = <32>;
->> +			};
->> +		};
->> +	};
->> +
-> You could use label to overload sai2a and sai2b. no ?
-I propose to keep it unchanged for better readability
-> 
->> +	sai2b: audio-controller@4400b024 {
->> +		dma-names = "rx";
->> +		st,sync = <&sai2a 2>;
->> +		clocks = <&rcc SAI2_K>, <&sai2a>;
->> +		clock-names = "sai_ck", "MCLK";
->> +		status = "okay";
->> +
->> +		sai2b_port: port {
->> +			sai2b_endpoint: endpoint {
->> +				remote-endpoint = <&cs42l51_rx_endpoint>;
->> +				format = "i2s";
->> +				mclk-fs = <256>;
->> +				dai-tdm-slot-num = <2>;
->> +				dai-tdm-slot-width = <32>;
->> +			};
->> +		};
->> +	};
->> +};
->> +
->>    &sdmmc1 {
->>    	pinctrl-names = "default", "opendrain", "sleep";
->>    	pinctrl-0 = <&sdmmc1_b4_pins_a>;
->>
+> Unless you use a MTU > PAGE_SIZE.
+
+I made the change but unfortunately the issue persists.
+
+Jon
+
+-- 
+nvpublic
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
