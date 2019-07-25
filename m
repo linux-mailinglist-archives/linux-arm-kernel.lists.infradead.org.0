@@ -2,83 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0337B74EE8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 15:14:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CACB974EE5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 15:14:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oibBeAThVurnv3Vb+8lCe3VlESyaD6NsA6XQdjWtBws=; b=ue3PhqKL21f2qt
-	dxkbopnkVZzT/nUTNJMJs9JaYqsy7uywswn90NiZ9DyCsbnhBNMgTYzR+sD5D/nD1qmR14xY0BcYr
-	95WSuJe/KXrhzG/tbhU5X3TXt/o4l20PUdwnQITdjQ1XaesivTFPkE3gXO8We4mh60TFiRV/t9KTe
-	en1QV2I8nTUIbLpwYMGp2mRG+YM4p2aATMT3CylGHsA/t5ptON3LPKl8IYKpmmhpBv4nBeYSNf9jn
-	hgbzQ1WbfivQq3hpXBe6ZUQWHysvgMCifXpuWz4kYWxo20b3gm0gcyXGQFdAYSCW7GxC/nve51Wfz
-	tXlsUOkdtuqBzBWjX9Vg==;
+	List-Owner; bh=Jh8lkdIZDg6Tu9CXpQUa0bL8M00AbLQjZRiiGQFkCLA=; b=HqM7YdAng9H55i
+	jdTQjXilDW72coRneMJa7WuLv4waZ6gVHEy+W3rsakBkJWsM5oF5mg3VIWHRVh3dsS11MmzZ1sJm0
+	HuCoQR9Xqh3laxYP/Rd+5FDlwGFKxHC67dJpDE386E+mjpL9yluhGgoxlrAXAlNvqgOmvB8nre/VV
+	zn8dZuakwl5+kzKvl57OsDqWNBoXVff4c9eepsCKavrkba2YwV/YN2SvdMGFdzUGi30UlSs2fIsHB
+	v06lPBbPEHveShWCQ2CuRc2bUR0s1MkUHkMKWfaxb/Z8L+aSLt39EaWzXgdCL/z0qypTHzR06CkFb
+	CSdYafM8pe/4BUdlj4cw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqda1-0003hq-Jc; Thu, 25 Jul 2019 13:14:45 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1hqdZH-00039n-QF; Thu, 25 Jul 2019 13:14:00 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqdYR-0002iP-6P
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 13:13:09 +0000
-Received: by mail-wm1-x342.google.com with SMTP id p74so44928463wme.4
+ id 1hqdYQ-0002ig-VG
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 13:13:08 +0000
+Received: by mail-wr1-x441.google.com with SMTP id p13so50712417wru.10
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 25 Jul 2019 06:13:05 -0700 (PDT)
+ Thu, 25 Jul 2019 06:13:06 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=OrxrzHfdR2gckMKegx1yxVHO2Izu+Cmysz1TGZaUt4E=;
- b=QfISO/Ct6slzzGV6lLrDhhZRemPsoiiqhiQTC3XaMtgSBNxZohmAqrUpq1jAFqR+dD
- LCZ1ATz5sYQxONgBqCEHM1/VP+XZQEEJ0LyO1MRdBgSUcSDDheE+Ol+wdV0fLvJ8U+/3
- 6PpNnsAm6dMOefMHtl3Mwvyg2xHuuqeLDgNY/dcBT57jOGgT6JJrafHjBNNwOoZWUBSS
- mSx7HDxx9q6W9FMW2j2zbTSL33IPhCuiNjNfwG8nl14aSurScQzrUHrWgekI66xDoe16
- S6Jnfr09xGbs9+BOC+0nhP4Gbpjbr04cNA9lWG8MGsIGhcX2Qv8rsFtoJETIqp35Qh++
- pZDw==
+ bh=J5s3N85M9ajD/urZFm5P9YAai+R4ucnPihB3UAQSabI=;
+ b=tr1coZsTvMfvRar6herRh/Wc2zp5wCgiRIjYDHYlrYoW2EcVtkoWaSrYBBxU6UmWj+
+ TNqkCYXH4+gdbK+EXPYJpQzisO6k5q9QXm0XuFrL7rLmfs7gSnVx9gnvMHFmcSe5mdup
+ iYBvtVasBieDcGz+jDGrmItNb34TcQh5OoOW9lIFMKORlPixWZCR1YmsCUbFS+LMiR+M
+ 4+qhpOggSQurUfwusBWvK69/ut64/VS2SiFg0yKbCedE7SKxenCCLkJO2JgcAXCuYqco
+ h+BsCgbKYph0buKQnFjztstk2Q15uHzJoxIcFv5UOXJBD1Q21UcZKIciFA2xSgsvMsJs
+ gjwA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=OrxrzHfdR2gckMKegx1yxVHO2Izu+Cmysz1TGZaUt4E=;
- b=tntb/7jJDbflxSJYEdFP2afu1185p4g/daCk/wAMWvodQKL5VAdKZMFxzaNT7RUTiK
- VuCef5HQClEJ1PcVkhHe1m+bTZLRBOefM3uyJVtvEizlF6D4TLDC+rhDIc5c8i0YvFsY
- OFLp2CKY0s+wuIblTpN5CJ5d3Al1RIKtE8caTlt1CZ6y3++8X9MlV+JDg/5raAWW7/hM
- WmLLnA5UpCj4bZKY8oNZoEazS9wcS60Un1Q5V3h1mls4Zc3EX7lzJKDftbXmnhwjZKhY
- 5hKu157YnjhA5G8IwC16Wxtci5zCWGXAf35aB6JHPdI5VmI6VNcLbSPBIBElxR5rrowv
- aNVA==
-X-Gm-Message-State: APjAAAV/ndZfmaHx53V6x6MY4+c3taDcpSN6AniIfTgDZ2Nv/x9RJb2i
- xVZhmfPzmPtw7gZueaM255s=
-X-Google-Smtp-Source: APXvYqxYNPRyCf8Ng0zjZFemZwU2WdjjqfvvmBxyWwh8g64OsosMO2a7JphltDJDTF48NPsMJNvm0A==
-X-Received: by 2002:a7b:cbc6:: with SMTP id n6mr51283395wmi.14.1564060384593; 
- Thu, 25 Jul 2019 06:13:04 -0700 (PDT)
+ bh=J5s3N85M9ajD/urZFm5P9YAai+R4ucnPihB3UAQSabI=;
+ b=FngtnF9lHr86LFz+6CekKGoayOJtisV6YqiVM6T+B98PD3fJg05Nvx6BO6SerELgIh
+ RPoWm/xEfwslKaPANfxiZu4nE6AyBvOlwqfYGxn7DvZ18zhGznQuk4Vq2sZv3RIJy7Tz
+ N765+x6xsOtAhf4GK/U8nbHodiJLO+WXGfIWX7bHZiNdKkbvcnvVdjMKSQmIvDDl0gcJ
+ d1QD4VBkwwYyroS7AXP/JtEJe1x6bBrC/hDF0UW/GLxXmqqs0dK5ZC1Adj9tm3IiEJy6
+ w6+IFAsqmF5CMtdWnbE0AXRvQfIN98szY3MYvCDFsUk+3JuXlNIiqp3umOZFpxVL+DuS
+ Jvwg==
+X-Gm-Message-State: APjAAAW5U7VDauPXwwM5WyilGChNdLrAcB7Wx+Ns8YVIEnfzTSmG4JoW
+ Hu4WxNjcvL4pc9fzX6jFKsk=
+X-Google-Smtp-Source: APXvYqwyJAeQAkUdSaoWLc4JL7+dV4O4TRza3CWK++OFI6pcP8xs52IFKl8D+EOxx5Qh4MPLVJl0sA==
+X-Received: by 2002:a5d:63c9:: with SMTP id c9mr59005945wrw.15.1564060385843; 
+ Thu, 25 Jul 2019 06:13:05 -0700 (PDT)
 Received: from localhost.localdomain ([2a01:cb1d:af:5b00:6d6c:8493:1ab5:dad7])
  by smtp.gmail.com with ESMTPSA id
- z7sm47119735wrh.67.2019.07.25.06.13.03
+ z7sm47119735wrh.67.2019.07.25.06.13.04
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 25 Jul 2019 06:13:04 -0700 (PDT)
+ Thu, 25 Jul 2019 06:13:05 -0700 (PDT)
 From: Bartosz Golaszewski <brgl@bgdev.pl>
 To: Sekhar Nori <nsekhar@ti.com>, Kevin Hilman <khilman@kernel.org>,
  Arnd Bergmann <arnd@arndb.de>, David Lechner <david@lechnology.com>
-Subject: [PATCH v2 2/5] media: davinci-vpbe: remove obsolete includes
-Date: Thu, 25 Jul 2019 15:12:54 +0200
-Message-Id: <20190725131257.6142-3-brgl@bgdev.pl>
+Subject: [PATCH v2 3/5] davinci: fix sleep.S build error on ARMv4
+Date: Thu, 25 Jul 2019 15:12:55 +0200
+Message-Id: <20190725131257.6142-4-brgl@bgdev.pl>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190725131257.6142-1-brgl@bgdev.pl>
 References: <20190725131257.6142-1-brgl@bgdev.pl>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_061307_286409_44A7CB44 
-X-CRM114-Status: UNSURE (   9.97  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190725_061307_077127_C35DF95E 
+X-CRM114-Status: GOOD (  12.29  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -105,63 +104,34 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Arnd Bergmann <arnd@arndb.de>
 
-The driver builds fine without these.
+When building a multiplatform kernel that includes armv4 support,
+the default target CPU does not support the blx instruction,
+which leads to a build failure:
+
+arch/arm/mach-davinci/sleep.S: Assembler messages:
+arch/arm/mach-davinci/sleep.S:56: Error: selected processor does
+not support `blx ip' in ARM mode
+
+Add a .arch statement in the sources to make this file build.
 
 Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 ---
- drivers/media/platform/davinci/vpbe_display.c | 4 ----
- drivers/media/platform/davinci/vpbe_osd.c     | 5 -----
- drivers/media/platform/davinci/vpbe_venc.c    | 5 -----
- 3 files changed, 14 deletions(-)
+ arch/arm/mach-davinci/sleep.S | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/media/platform/davinci/vpbe_display.c b/drivers/media/platform/davinci/vpbe_display.c
-index 000b191c42d8..18f9408013d1 100644
---- a/drivers/media/platform/davinci/vpbe_display.c
-+++ b/drivers/media/platform/davinci/vpbe_display.c
-@@ -19,10 +19,6 @@
+diff --git a/arch/arm/mach-davinci/sleep.S b/arch/arm/mach-davinci/sleep.S
+index 05d03f09ff54..50c180acc680 100644
+--- a/arch/arm/mach-davinci/sleep.S
++++ b/arch/arm/mach-davinci/sleep.S
+@@ -24,6 +24,7 @@
+ #define DEEPSLEEP_SLEEPENABLE_BIT	BIT(31)
  
- #include <asm/pgtable.h>
- 
--#ifdef CONFIG_ARCH_DAVINCI
--#include <mach/cputype.h>
--#endif
--
- #include <media/v4l2-dev.h>
- #include <media/v4l2-common.h>
- #include <media/v4l2-ioctl.h>
-diff --git a/drivers/media/platform/davinci/vpbe_osd.c b/drivers/media/platform/davinci/vpbe_osd.c
-index 491842ef33c5..91b571a0ac2c 100644
---- a/drivers/media/platform/davinci/vpbe_osd.c
-+++ b/drivers/media/platform/davinci/vpbe_osd.c
-@@ -16,11 +16,6 @@
- #include <linux/clk.h>
- #include <linux/slab.h>
- 
--#ifdef CONFIG_ARCH_DAVINCI
--#include <mach/cputype.h>
--#include <mach/hardware.h>
--#endif
--
- #include <media/davinci/vpss.h>
- #include <media/v4l2-device.h>
- #include <media/davinci/vpbe_types.h>
-diff --git a/drivers/media/platform/davinci/vpbe_venc.c b/drivers/media/platform/davinci/vpbe_venc.c
-index 425f91f07165..8caa084e5704 100644
---- a/drivers/media/platform/davinci/vpbe_venc.c
-+++ b/drivers/media/platform/davinci/vpbe_venc.c
-@@ -14,11 +14,6 @@
- #include <linux/videodev2.h>
- #include <linux/slab.h>
- 
--#ifdef CONFIG_ARCH_DAVINCI
--#include <mach/hardware.h>
--#include <mach/mux.h>
--#endif
--
- #include <linux/platform_data/i2c-davinci.h>
- 
- #include <linux/io.h>
+ 	.text
++	.arch   armv5te
+ /*
+  * Move DaVinci into deep sleep state
+  *
 -- 
 2.21.0
 
