@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B702752E4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 17:37:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B08DA752E7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 17:37:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XIgDTricsWfP1Tsif1NDdjIo0C7zGn39rWKhC1mn218=; b=n/zGu7yxqxsWaq
-	pRiBnEKeQdKJErsebXLkr/DhnAcmPXQJXuFeEEyUm1liomJwyxf36RlgUdcK4DuxZ5z6p3QeXkHmo
-	ByigHhbkzWoAe4xkLx8c1lkpooXwKXpUbdW/xlE+xTtGSOf1ZUsCaF2xZjtRoyS87Kb0HXJb7jOzf
-	93HXUEbzEwrTnWcc/TNtxCRrKjlp9J2fpa3Fo7i8xUAKvIbXbAhQLNnS4fA+Kk7wGmsbFl1fYWJFU
-	1Iye5fSYIk7jiTlcsQa2li1KtUTQSvAyY3EJxr17oeW893MbHSIsa93ag2WjpZUfmtspm/3WBs4tZ
-	gDv8/klfJ/SfpI57IURA==;
+	List-Owner; bh=OTsColehrSmSBaRS9+kOsoxDxqfpKVkalgGkdrdoG4s=; b=jkmNfGV/9I7LQK
+	WUuXxW56ThcnX2BBhjYtXQVUVpSO1NS5u/UAar/dewo2oQO5XYlOthScSRe58pWNrwUBWAxsJS585
+	jWs+fgm5L0IqyaVLV6U4f8g1fiOCODW234/nyhvcGVNfN44oV4b2YAk4Ss3p0R7IuPk3zWfZN/Aim
+	BqOLh8QuVaiYa54XoFEBZVC1dx7Cz2C1WrfJTgPHD8E9B7POCS3NS7h91ivEFlhyQ23Na3B+2qqwj
+	fZ52tA1HEwgdEZ70MdzN5cNZ3sVLaLw5+F8V7jRQ5BfQxYIidyaizY/NomzhBLiQ2m5QA03buRbgN
+	pXZ7+1zhxHbBxz8ECfQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqfoM-0005Ti-62; Thu, 25 Jul 2019 15:37:42 +0000
+	id 1hqfoa-0005if-Ro; Thu, 25 Jul 2019 15:37:57 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hqfnD-0004l2-Lm
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 15:36:33 +0000
+ id 1hqfnF-0004nC-Dx
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 15:36:34 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 492BD15AB;
- Thu, 25 Jul 2019 08:36:31 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2EA0E1597;
+ Thu, 25 Jul 2019 08:36:33 -0700 (PDT)
 Received: from filthy-habits.cambridge.arm.com
  (filthy-habits.cambridge.arm.com [10.1.197.61])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 981D63F71A;
- Thu, 25 Jul 2019 08:36:29 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7E7C13F71A;
+ Thu, 25 Jul 2019 08:36:31 -0700 (PDT)
 From: Marc Zyngier <maz@kernel.org>
 To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
  kvm@vger.kernel.org
-Subject: [PATCH v3 03/10] KVM: arm/arm64: vgic-its: Add MSI-LPI translation
- cache invalidation
-Date: Thu, 25 Jul 2019 16:35:36 +0100
-Message-Id: <20190725153543.24386-4-maz@kernel.org>
+Subject: [PATCH v3 04/10] KVM: arm/arm64: vgic-its: Invalidate MSI-LPI
+ translation cache on specific commands
+Date: Thu, 25 Jul 2019 16:35:37 +0100
+Message-Id: <20190725153543.24386-5-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190725153543.24386-1-maz@kernel.org>
 References: <20190725153543.24386-1-maz@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_083631_779038_BE6D6EC5 
-X-CRM114-Status: GOOD (  11.22  )
+X-CRM114-CacheID: sfid-20190725_083633_515056_9FAE13A6 
+X-CRM114-Status: GOOD (  10.44  )
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
@@ -76,62 +76,69 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Marc Zyngier <marc.zyngier@arm.com>
 
-There's a number of cases where we need to invalidate the caching
-of translations, so let's add basic support for that.
+The LPI translation cache needs to be discarded when an ITS command
+may affect the translation of an LPI (DISCARD, MAPC and MAPD with V=0)
+or the routing of an LPI to a redistributor with disabled LPIs (MOVI,
+MOVALL).
+
+We decide to perform a full invalidation of the cache, irrespective
+of the LPI that is affected. Commands are supposed to be rare enough
+that it doesn't matter.
 
 Reviewed-by: Eric Auger <eric.auger@redhat.com>
 Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
 ---
- virt/kvm/arm/vgic/vgic-its.c | 23 +++++++++++++++++++++++
- virt/kvm/arm/vgic/vgic.h     |  1 +
- 2 files changed, 24 insertions(+)
+ virt/kvm/arm/vgic/vgic-its.c | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
 diff --git a/virt/kvm/arm/vgic/vgic-its.c b/virt/kvm/arm/vgic/vgic-its.c
-index 0e5c1519bbe2..cc6b5e49a312 100644
+index cc6b5e49a312..09a179820816 100644
 --- a/virt/kvm/arm/vgic/vgic-its.c
 +++ b/virt/kvm/arm/vgic/vgic-its.c
-@@ -535,6 +535,29 @@ static unsigned long vgic_mmio_read_its_idregs(struct kvm *kvm,
- 	return 0;
+@@ -722,6 +722,8 @@ static int vgic_its_cmd_handle_discard(struct kvm *kvm, struct vgic_its *its,
+ 		 * don't bother here since we clear the ITTE anyway and the
+ 		 * pending state is a property of the ITTE struct.
+ 		 */
++		vgic_its_invalidate_cache(kvm);
++
+ 		its_free_ite(kvm, ite);
+ 		return 0;
+ 	}
+@@ -757,6 +759,8 @@ static int vgic_its_cmd_handle_movi(struct kvm *kvm, struct vgic_its *its,
+ 	ite->collection = collection;
+ 	vcpu = kvm_get_vcpu(kvm, collection->target_addr);
+ 
++	vgic_its_invalidate_cache(kvm);
++
+ 	return update_affinity(ite->irq, vcpu);
  }
  
-+void vgic_its_invalidate_cache(struct kvm *kvm)
-+{
-+	struct vgic_dist *dist = &kvm->arch.vgic;
-+	struct vgic_translation_cache_entry *cte;
-+	unsigned long flags;
-+
-+	raw_spin_lock_irqsave(&dist->lpi_list_lock, flags);
-+
-+	list_for_each_entry(cte, &dist->lpi_translation_cache, entry) {
-+		/*
-+		 * If we hit a NULL entry, there is nothing after this
-+		 * point.
-+		 */
-+		if (!cte->irq)
-+			break;
-+
-+		__vgic_put_lpi_locked(kvm, cte->irq);
-+		cte->irq = NULL;
-+	}
-+
-+	raw_spin_unlock_irqrestore(&dist->lpi_list_lock, flags);
-+}
-+
- int vgic_its_resolve_lpi(struct kvm *kvm, struct vgic_its *its,
- 			 u32 devid, u32 eventid, struct vgic_irq **irq)
- {
-diff --git a/virt/kvm/arm/vgic/vgic.h b/virt/kvm/arm/vgic/vgic.h
-index e523b3a54590..09908b80fb1e 100644
---- a/virt/kvm/arm/vgic/vgic.h
-+++ b/virt/kvm/arm/vgic/vgic.h
-@@ -308,6 +308,7 @@ int vgic_its_resolve_lpi(struct kvm *kvm, struct vgic_its *its,
- struct vgic_its *vgic_msi_to_its(struct kvm *kvm, struct kvm_msi *msi);
- void vgic_lpi_translation_cache_init(struct kvm *kvm);
- void vgic_lpi_translation_cache_destroy(struct kvm *kvm);
-+void vgic_its_invalidate_cache(struct kvm *kvm);
+@@ -985,6 +989,8 @@ static void vgic_its_free_device(struct kvm *kvm, struct its_device *device)
+ 	list_for_each_entry_safe(ite, temp, &device->itt_head, ite_list)
+ 		its_free_ite(kvm, ite);
  
- bool vgic_supports_direct_msis(struct kvm *kvm);
- int vgic_v4_init(struct kvm *kvm);
++	vgic_its_invalidate_cache(kvm);
++
+ 	list_del(&device->dev_list);
+ 	kfree(device);
+ }
+@@ -1090,6 +1096,7 @@ static int vgic_its_cmd_handle_mapc(struct kvm *kvm, struct vgic_its *its,
+ 
+ 	if (!valid) {
+ 		vgic_its_free_collection(its, coll_id);
++		vgic_its_invalidate_cache(kvm);
+ 	} else {
+ 		collection = find_collection(its, coll_id);
+ 
+@@ -1238,6 +1245,8 @@ static int vgic_its_cmd_handle_movall(struct kvm *kvm, struct vgic_its *its,
+ 		vgic_put_irq(kvm, irq);
+ 	}
+ 
++	vgic_its_invalidate_cache(kvm);
++
+ 	kfree(intids);
+ 	return 0;
+ }
 -- 
 2.20.1
 
