@@ -2,66 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A8D3074D4F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 13:40:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D74B374DEA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 14:15:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=llYk9PMiqplWfqibzku4jwp6zQ2msuFkMIp89AWttkE=; b=L7PHFsIQNQ8+Ms
-	/TFxhHhDorW62k+0S9K5CtVAAmrRznccS1/Hon9X9OCkZWNxew9pN2dOl4rJnlL42h01vMlvZoUBx
-	3BE+x4DlWrLCCfuAhTieTBVTaq2vi35j+YaKuXU0q4TlxlixXBkTzOzzYEeFv4U2MbTnLzMVk/e8v
-	UaK8cyaAqyCjs+LaUVtLp4l/izyX2u4h+jTUbwXaWh9AKo218m/HEyaDWYu+Z3n7i7q53sp66dnP4
-	Fg9TbHdO6D/zqClJkyWyTTAESNjjPLeUUL2Gslqi7H8a/ygARExK6lg3yf0AVDySEG3uruho7gG1y
-	RQuOiL/Pb0sn5uKKhNug==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=5frkHqQ3Nv6Lrt7p9ndj4KVI64Y9TrirAKalpNEEA0w=; b=ZZAN+gMC6PzuZ6
+	xfrcjCQrGCkWgNX2mfK220L/TazRAU7dhRtLaUH+7TKkBnVQkcDREDzze5neFSPGE0XCHP0Y2WnxV
+	M/EVNFmALS7caQdUlgOVUhKlMYQn+rNipLdp77T1EaAV6jEB4/Ju/2imQn7NjNgmsDBbY059uz2SR
+	hBnuxBE4JOP0CIUIM43QeGEFgF/GldHLR0/HieAsCp/w6CuDfQyLlKvfAwvU4iYvLYjZ1xfV06+aV
+	DxeBhGWlD8vyH5bw0K+VV1CGmzfTUyW4cncf9BNWB4Mz5TM+g8Vog0sIlD3GB7W2W2U2q6cdLIPua
+	1h7UeMX1Vg5FICtejLFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqc6t-000891-3u; Thu, 25 Jul 2019 11:40:35 +0000
-Received: from lb1-smtp-cloud7.xs4all.net ([194.109.24.24])
+	id 1hqced-0004jd-H0; Thu, 25 Jul 2019 12:15:27 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqc6Z-00088V-Ed
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 11:40:17 +0000
-Received: from [IPv6:2001:420:44c1:2579:64cb:e917:d1ce:4f27]
- ([IPv6:2001:420:44c1:2579:64cb:e917:d1ce:4f27])
- by smtp-cloud7.xs4all.net with ESMTPA
- id qc6RhDzVqLqASqc6UhTNZH; Thu, 25 Jul 2019 13:40:13 +0200
-Subject: Re: [PATCH v3 3/3] media: stm32-dcmi: add support of several
- sub-devices
-To: Hugues Fruchet <hugues.fruchet@st.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Sakari Ailus <sakari.ailus@linux.intel.com>
-References: <1562082779-31165-1-git-send-email-hugues.fruchet@st.com>
- <1562082779-31165-4-git-send-email-hugues.fruchet@st.com>
-From: Hans Verkuil <hverkuil@xs4all.nl>
-Message-ID: <81e1a94d-af25-302c-64a6-3cec096d4144@xs4all.nl>
-Date: Thu, 25 Jul 2019 13:40:07 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.5.1
+ id 1hqceH-0003Kf-Fi
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 12:15:08 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: dafna) with ESMTPSA id 6E42228618D
+From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+To: dafna.hirschfeld@collabora.com
+Subject: [PATCH v2 2/2] arm64: dts: imx: Add i.mx8mq nitrogen8m basic dts
+ support
+Date: Thu, 25 Jul 2019 14:14:51 +0200
+Message-Id: <20190725121452.16607-1-dafna.hirschfeld@collabora.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <1562082779-31165-4-git-send-email-hugues.fruchet@st.com>
-Content-Language: en-US
-X-CMAE-Envelope: MS4wfD6zZs5Xe3b+Cna/lTQDRan8ATsxRHeJ7bRwfRroa/o2dWYrjaFm0sAsGST+vIhhzj6gPB6DoA25iIFlJhW/AFzMkB8B34TMfcYJMjqAzPAwsYuD70eP
- DH3uremVITRXBeZgiNs7Y964Y7R8lrCwZ7SC8TRv80Y6OzUjXhnGlMkKScyXQ+dRIsK7FtmqK+yxiHyzUfLIVWudUgA/x0+lb7WcrC+qAyS7sgTcZUL3JRGy
- bXQJFZc5K6mSbEi6hHYVR61Jp79NPX+UPT3CT5DG1lRY0cL02l7VF8D8w4fxCyWomIcIbz7M6IbxgN0wGIaeAyJmfkjWAPVI8p4wEGIH7FogcMKU6tdMPmUu
- SnhveOX5cRDtwHVoZdRcQy7GreS3OoACS8Dw1h4AyoMktRv3srfYwt7XRHUguhVG2HBG25jFQBGiYSIZz0a4r8G5Hvb4mev1mRYj8mOZLMaXlMjf+rwatAti
- e4YSglYv/OXPV39b6a7nFZVL/a8qf7BvLE4MTiPvWom/pUxrYGOMhwFV6RvlqSdfmNMSPaunYccoyrUdev1EeV9a4zFbsEgQXVCMbrrZC6VbBW/yNZBful1h
- u6NGaXbQWk0F/0qOGY8Td2yL+jzAED6w+YbXMAZgsf6hmm9cEmWW2/HjglgYG2LV9+59P5L0LydUYseeedjZvpse0O5+xOWQ4XSk/s5cdqBL56dkR2evi4jt
- wrSTdGFT+9U=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_044015_657074_7AA6377B 
-X-CRM114-Status: GOOD (  26.72  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190725_051505_812505_9DD9843A 
+X-CRM114-Status: GOOD (  13.10  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [194.109.24.24 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,325 +58,459 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mickael GUENE <mickael.guene@st.com>, linux-kernel@vger.kernel.org,
- Philippe CORNU <philippe.cornu@st.com>, Yannick Fertre <yannick.fertre@st.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, ezequiel@collabora.com,
+ s.hauer@pengutronix.de, linux-kernel@vger.kernel.org,
+ Troy Kisky <troy.kisky@boundarydevices.com>,
+ Gary Bisson <gary.bisson@boundarydevices.com>, robh+dt@kernel.org,
+ kernel@pengutronix.de, kernel@collabora.com, shawnguo@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 7/2/19 5:52 PM, Hugues Fruchet wrote:
-> Add support of several sub-devices within pipeline instead
-> of a single one.
-> This allows to support a CSI-2 camera sensor connected
-> through a CSI-2 to parallel bridge.
-> 
-> Signed-off-by: Hugues Fruchet <hugues.fruchet@st.com>
-> ---
->  drivers/media/platform/stm32/stm32-dcmi.c | 204 +++++++++++++++++++++++++++---
->  1 file changed, 186 insertions(+), 18 deletions(-)
-> 
-> diff --git a/drivers/media/platform/stm32/stm32-dcmi.c b/drivers/media/platform/stm32/stm32-dcmi.c
-> index 6f37617..6921e6b 100644
-> --- a/drivers/media/platform/stm32/stm32-dcmi.c
-> +++ b/drivers/media/platform/stm32/stm32-dcmi.c
-> @@ -172,6 +172,7 @@ struct stm32_dcmi {
->  
->  	struct media_device		mdev;
->  	struct media_pad		vid_cap_pad;
-> +	struct media_pipeline		pipeline;
->  };
->  
->  static inline struct stm32_dcmi *notifier_to_dcmi(struct v4l2_async_notifier *n)
-> @@ -583,6 +584,131 @@ static void dcmi_buf_queue(struct vb2_buffer *vb)
->  	spin_unlock_irq(&dcmi->irqlock);
->  }
->  
-> +static struct media_entity *dcmi_find_source(struct stm32_dcmi *dcmi)
-> +{
-> +	struct media_entity *entity = &dcmi->vdev->entity;
-> +	struct media_pad *pad;
-> +
-> +	/* Walk searching for entity having no sink */
-> +	while (1) {
-> +		pad = &entity->pads[0];
-> +		if (!(pad->flags & MEDIA_PAD_FL_SINK))
-> +			break;
-> +
-> +		pad = media_entity_remote_pad(pad);
-> +		if (!pad || !is_media_entity_v4l2_subdev(pad->entity))
-> +			break;
-> +
-> +		entity = pad->entity;
-> +	}
-> +
-> +	return entity;
-> +}
-> +
-> +static int dcmi_pipeline_s_fmt(struct stm32_dcmi *dcmi,
-> +			       struct v4l2_subdev_pad_config *pad_cfg,
-> +			       struct v4l2_subdev_format *format)
-> +{
-> +	struct media_entity *entity = &dcmi->entity.source->entity;
-> +	struct v4l2_subdev *subdev;
-> +	struct media_pad *sink_pad = NULL;
-> +	struct media_pad *src_pad = NULL;
-> +	struct media_pad *pad = NULL;
-> +	struct v4l2_subdev_format fmt = *format;
-> +	bool found = false;
-> +	int ret;
-> +
-> +	/*
-> +	 * Starting from sensor subdevice, walk within
-> +	 * pipeline and set format on each subdevice
-> +	 */
-> +	while (1) {
-> +		unsigned int i;
-> +
-> +		/* Search if current entity has a source pad */
-> +		for (i = 0; i < entity->num_pads; i++) {
-> +			pad = &entity->pads[i];
-> +			if (pad->flags & MEDIA_PAD_FL_SOURCE) {
-> +				src_pad = pad;
-> +				found = true;
-> +				break;
-> +			}
-> +		}
-> +		if (!found)
-> +			break;
-> +
-> +		subdev = media_entity_to_v4l2_subdev(entity);
-> +
-> +		/* Propagate format on sink pad if any, otherwise source pad */
-> +		if (sink_pad)
-> +			pad = sink_pad;
-> +
-> +		dev_dbg(dcmi->dev, "%s[%d] pad format set to 0x%x %ux%u\n",
-> +			subdev->name, pad->index, format->format.code,
-> +			format->format.width, format->format.height);
-> +
-> +		fmt.pad = pad->index;
-> +		ret = v4l2_subdev_call(subdev, pad, set_fmt, pad_cfg, &fmt);
-> +		if (ret < 0)
-> +			return ret;
-> +
-> +		/* Walk to next entity */
-> +		sink_pad = media_entity_remote_pad(src_pad);
-> +		if (!sink_pad || !is_media_entity_v4l2_subdev(sink_pad->entity))
-> +			break;
-> +
-> +		entity = sink_pad->entity;
-> +	}
-> +	*format = fmt;
-> +
-> +	return 0;
-> +}
-> +
-> +static int dcmi_pipeline_s_stream(struct stm32_dcmi *dcmi, int state)
-> +{
-> +	struct media_entity *entity = &dcmi->vdev->entity;
-> +	struct v4l2_subdev *subdev;
-> +	struct media_pad *pad;
-> +	int ret;
-> +
-> +	/* Start/stop all entities within pipeline */
-> +	while (1) {
-> +		pad = &entity->pads[0];
-> +		if (!(pad->flags & MEDIA_PAD_FL_SINK))
-> +			break;
-> +
-> +		pad = media_entity_remote_pad(pad);
-> +		if (!pad || !is_media_entity_v4l2_subdev(pad->entity))
-> +			break;
-> +
-> +		entity = pad->entity;
-> +		subdev = media_entity_to_v4l2_subdev(entity);
-> +
-> +		ret = v4l2_subdev_call(subdev, video, s_stream, state);
-> +		if (ret < 0 && ret != -ENOIOCTLCMD) {
-> +			dev_err(dcmi->dev, "%s: %s failed to %s streaming (%d)\n",
-> +				__func__, subdev->name,
-> +				state ? "start" : "stop", ret);
-> +			return ret;
-> +		}
-> +
-> +		dev_dbg(dcmi->dev, "%s is %s\n",
-> +			subdev->name, state ? "started" : "stopped");
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static int dcmi_pipeline_start(struct stm32_dcmi *dcmi)
-> +{
-> +	return dcmi_pipeline_s_stream(dcmi, 1);
-> +}
-> +
-> +static void dcmi_pipeline_stop(struct stm32_dcmi *dcmi)
-> +{
-> +	dcmi_pipeline_s_stream(dcmi, 0);
-> +}
-> +
->  static int dcmi_start_streaming(struct vb2_queue *vq, unsigned int count)
->  {
->  	struct stm32_dcmi *dcmi = vb2_get_drv_priv(vq);
-> @@ -597,14 +723,17 @@ static int dcmi_start_streaming(struct vb2_queue *vq, unsigned int count)
->  		goto err_release_buffers;
->  	}
->  
-> -	/* Enable stream on the sub device */
-> -	ret = v4l2_subdev_call(dcmi->entity.source, video, s_stream, 1);
-> -	if (ret && ret != -ENOIOCTLCMD) {
-> -		dev_err(dcmi->dev, "%s: Failed to start streaming, subdev streamon error",
-> -			__func__);
-> +	ret = media_pipeline_start(&dcmi->vdev->entity, &dcmi->pipeline);
-> +	if (ret < 0) {
-> +		dev_err(dcmi->dev, "%s: Failed to start streaming, media pipeline start error (%d)\n",
-> +			__func__, ret);
->  		goto err_pm_put;
->  	}
->  
-> +	ret = dcmi_pipeline_start(dcmi);
-> +	if (ret)
-> +		goto err_media_pipeline_stop;
-> +
->  	spin_lock_irq(&dcmi->irqlock);
->  
->  	/* Set bus width */
-> @@ -676,7 +805,7 @@ static int dcmi_start_streaming(struct vb2_queue *vq, unsigned int count)
->  	if (ret) {
->  		dev_err(dcmi->dev, "%s: Start streaming failed, cannot start capture\n",
->  			__func__);
-> -		goto err_subdev_streamoff;
-> +		goto err_pipeline_stop;
->  	}
->  
->  	/* Enable interruptions */
-> @@ -687,8 +816,11 @@ static int dcmi_start_streaming(struct vb2_queue *vq, unsigned int count)
->  
->  	return 0;
->  
-> -err_subdev_streamoff:
-> -	v4l2_subdev_call(dcmi->entity.source, video, s_stream, 0);
-> +err_pipeline_stop:
-> +	dcmi_pipeline_stop(dcmi);
-> +
-> +err_media_pipeline_stop:
-> +	media_pipeline_stop(&dcmi->vdev->entity);
->  
->  err_pm_put:
->  	pm_runtime_put(dcmi->dev);
-> @@ -713,13 +845,10 @@ static void dcmi_stop_streaming(struct vb2_queue *vq)
->  {
->  	struct stm32_dcmi *dcmi = vb2_get_drv_priv(vq);
->  	struct dcmi_buf *buf, *node;
-> -	int ret;
->  
-> -	/* Disable stream on the sub device */
-> -	ret = v4l2_subdev_call(dcmi->entity.source, video, s_stream, 0);
-> -	if (ret && ret != -ENOIOCTLCMD)
-> -		dev_err(dcmi->dev, "%s: Failed to stop streaming, subdev streamoff error (%d)\n",
-> -			__func__, ret);
-> +	dcmi_pipeline_stop(dcmi);
-> +
-> +	media_pipeline_stop(&dcmi->vdev->entity);
->  
->  	spin_lock_irq(&dcmi->irqlock);
->  
-> @@ -937,8 +1066,7 @@ static int dcmi_set_fmt(struct stm32_dcmi *dcmi, struct v4l2_format *f)
->  	mf->width = sd_framesize.width;
->  	mf->height = sd_framesize.height;
->  
-> -	ret = v4l2_subdev_call(dcmi->entity.source, pad,
-> -			       set_fmt, NULL, &format);
-> +	ret = dcmi_pipeline_s_fmt(dcmi, NULL, &format);
->  	if (ret < 0)
->  		return ret;
->  
-> @@ -1529,7 +1657,20 @@ static int dcmi_graph_notify_complete(struct v4l2_async_notifier *notifier)
->  	struct stm32_dcmi *dcmi = notifier_to_dcmi(notifier);
->  	int ret;
->  
-> +	/*
-> +	 * Now that the graph is complete,
-> +	 * we search for the source subdevice
-> +	 * in order to expose it through V4L2 interface
-> +	 */
-> +	dcmi->entity.source =
-> +		media_entity_to_v4l2_subdev(dcmi_find_source(dcmi));
-> +	if (!dcmi->entity.source) {
-> +		dev_err(dcmi->dev, "Source subdevice not found\n");
-> +		return -ENODEV;
-> +	}
-> +
->  	dcmi->vdev->ctrl_handler = dcmi->entity.source->ctrl_handler;
-> +
->  	ret = dcmi_formats_init(dcmi);
->  	if (ret) {
->  		dev_err(dcmi->dev, "No supported mediabus format found\n");
-> @@ -1574,12 +1715,30 @@ static int dcmi_graph_notify_bound(struct v4l2_async_notifier *notifier,
->  				   struct v4l2_async_subdev *asd)
->  {
->  	struct stm32_dcmi *dcmi = notifier_to_dcmi(notifier);
-> +	unsigned int ret;
-> +	int src_pad;
->  
->  	dev_dbg(dcmi->dev, "Subdev %s bound\n", subdev->name);
->  
-> -	dcmi->entity.source = subdev;
-> +	/*
-> +	 * Link this sub-device to DCMI, it could be
-> +	 * a parallel camera sensor or a bridge
-> +	 */
-> +	src_pad = media_entity_get_fwnode_pad(&subdev->entity,
-> +					      subdev->fwnode,
-> +					      MEDIA_PAD_FL_SOURCE);
-> +
-> +	ret = media_create_pad_link(&subdev->entity, src_pad,
-> +				    &dcmi->vdev->entity, 0,
-> +				    MEDIA_LNK_FL_IMMUTABLE |
-> +				    MEDIA_LNK_FL_ENABLED);
-> +	if (ret)
-> +		dev_err(dcmi->dev, "Failed to create media pad link with subdev %s\n",
-> +			subdev->name);
-> +	else
-> +		dev_dbg(dcmi->dev, "DCMI is now linked to %s\n", subdev->name);
->  
-> -	return 0;
-> +	return ret;
->  }
->  
->  static const struct v4l2_async_notifier_operations dcmi_graph_notify_ops = {
-> @@ -1639,6 +1798,15 @@ static int dcmi_graph_init(struct stm32_dcmi *dcmi)
->  		return ret;
->  	}
->  
-> +	/* Register all the subdev nodes */
-> +	ret = v4l2_device_register_subdev_nodes(&dcmi->v4l2_dev);
+From: Gary Bisson <gary.bisson@boundarydevices.com>
 
-This shouldn't be needed. Only MC-centric drivers (i.e. where the pipeline
-has to be configured by userspace) need to do this.
+Add basic dts support for i.MX8MQ NITROGEN8M.
 
-Otherwise this patch looks good.
+Signed-off-by: Gary Bisson <gary.bisson@boundarydevices.com>
+Signed-off-by: Troy Kisky <troy.kisky@boundarydevices.com>
+[Dafna: porting vendor's code to mainline]
+Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+---
+ arch/arm64/boot/dts/freescale/Makefile        |   1 +
+ .../boot/dts/freescale/imx8mq-nitrogen8m.dts  | 411 ++++++++++++++++++
+ 2 files changed, 412 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/freescale/imx8mq-nitrogen8m.dts
 
-Regards,
-
-	Hans
-
-> +	if (ret) {
-> +		dev_err(dcmi->dev, "Failed to register subdev nodes\n");
-> +		v4l2_async_notifier_unregister(&dcmi->notifier);
-> +		of_node_put(dcmi->entity.remote_node);
-> +		return ret;
-> +	}
-> +
->  	return 0;
->  }
->  
-> 
+diff --git a/arch/arm64/boot/dts/freescale/Makefile b/arch/arm64/boot/dts/freescale/Makefile
+index c043aca66572..54a5c18c5c30 100644
+--- a/arch/arm64/boot/dts/freescale/Makefile
++++ b/arch/arm64/boot/dts/freescale/Makefile
+@@ -26,3 +26,4 @@ dtb-$(CONFIG_ARCH_MXC) += imx8mq-librem5-devkit.dtb
+ dtb-$(CONFIG_ARCH_MXC) += imx8mq-zii-ultra-rmb3.dtb
+ dtb-$(CONFIG_ARCH_MXC) += imx8mq-zii-ultra-zest.dtb
+ dtb-$(CONFIG_ARCH_MXC) += imx8qxp-mek.dtb
++dtb-$(CONFIG_ARCH_MXC) += imx8mq-nitrogen8m.dtb
+diff --git a/arch/arm64/boot/dts/freescale/imx8mq-nitrogen8m.dts b/arch/arm64/boot/dts/freescale/imx8mq-nitrogen8m.dts
+new file mode 100644
+index 000000000000..cfd4915d2916
+--- /dev/null
++++ b/arch/arm64/boot/dts/freescale/imx8mq-nitrogen8m.dts
+@@ -0,0 +1,411 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++/*
++ * Copyright 2018 Boundary Devices
++ */
++
++/dts-v1/;
++
++#include <dt-bindings/input/input.h>
++#include "imx8mq.dtsi"
++
++/ {
++	model = "Boundary Devices i.MX8MQ Nitrogen8M";
++	compatible = "boundary,imx8mq-nitrogen8m", "fsl,imx8mq";
++
++	chosen {
++		stdout-path = "serial0:115200n8";
++	};
++
++	memory@40000000 {
++		device_type = "memory";
++		reg = <0x00000000 0x40000000 0 0x80000000>;
++	};
++
++	gpio-keys {
++		compatible = "gpio-keys";
++		pinctrl-names = "default";
++		pinctrl-0 = <&pinctrl_gpio_keys>;
++
++		power {
++			label = "Power Button";
++			gpios = <&gpio1 7 GPIO_ACTIVE_LOW>;
++			linux,code = <KEY_POWER>;
++			gpio-key,wakeup;
++		};
++	};
++
++	reg_vref_0v9: regulator-vref-0v9 {
++		compatible = "regulator-fixed";
++		regulator-name = "vref-0v9";
++		regulator-min-microvolt = <900000>;
++		regulator-max-microvolt = <900000>;
++	};
++
++	reg_vref_1v8: regulator-vref-1v8 {
++		compatible = "regulator-fixed";
++		regulator-name = "vref-1v8";
++		regulator-min-microvolt = <1800000>;
++		regulator-max-microvolt = <1800000>;
++	};
++
++	reg_vref_2v5: regulator-vref-2v5 {
++		compatible = "regulator-fixed";
++		regulator-name = "vref-2v5";
++		regulator-min-microvolt = <2500000>;
++		regulator-max-microvolt = <2500000>;
++	};
++
++	reg_vref_3v3: regulator-vref-3v3 {
++		compatible = "regulator-fixed";
++		regulator-name = "vref-3v3";
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++	};
++
++	reg_vref_5v: regulator-vref-5v {
++		compatible = "regulator-fixed";
++		regulator-name = "vref-5v";
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++	};
++};
++
++&a53_opp_table {
++		opp-1500000000 {
++			opp-hz = /bits/ 64 <1500000000>;
++			opp-microvolt = <1000000>;
++		};
++
++		opp-1000000000 {
++			opp-hz = /bits/ 64 <1000000000>;
++			opp-microvolt = <900000>;
++		};
++};
++
++&iomuxc {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_hog>;
++	pinctrl_fec1: fec1grp {
++		fsl,pins = <
++			MX8MQ_IOMUXC_ENET_MDC_ENET1_MDC			0x3
++			MX8MQ_IOMUXC_ENET_MDIO_ENET1_MDIO		0x23
++			MX8MQ_IOMUXC_ENET_TX_CTL_ENET1_RGMII_TX_CTL	0x1f
++			MX8MQ_IOMUXC_ENET_TXC_ENET1_RGMII_TXC		0x1f
++			MX8MQ_IOMUXC_ENET_TD0_ENET1_RGMII_TD0		0x1f
++			MX8MQ_IOMUXC_ENET_TD1_ENET1_RGMII_TD1		0x1f
++			MX8MQ_IOMUXC_ENET_TD2_ENET1_RGMII_TD2		0x1f
++			MX8MQ_IOMUXC_ENET_TD3_ENET1_RGMII_TD3		0x1f
++			MX8MQ_IOMUXC_ENET_RX_CTL_ENET1_RGMII_RX_CTL	0x91
++			MX8MQ_IOMUXC_ENET_RXC_ENET1_RGMII_RXC		0x91
++			MX8MQ_IOMUXC_ENET_RD0_ENET1_RGMII_RD0		0x91
++			MX8MQ_IOMUXC_ENET_RD1_ENET1_RGMII_RD1		0x91
++			MX8MQ_IOMUXC_ENET_RD2_ENET1_RGMII_RD2		0x91
++			MX8MQ_IOMUXC_ENET_RD3_ENET1_RGMII_RD3		0x91
++			MX8MQ_IOMUXC_GPIO1_IO09_GPIO1_IO9		0x19
++			MX8MQ_IOMUXC_GPIO1_IO11_GPIO1_IO11		0x59
++		>;
++	};
++
++	pinctrl_gpio_keys: gpio-keysgrp {
++		fsl,pins = <
++			MX8MQ_IOMUXC_GPIO1_IO07_GPIO1_IO7		0x19
++		>;
++	};
++
++	pinctrl_hog: hoggrp {
++		fsl,pins = <
++			/* J17 connector, odd */
++			MX8MQ_IOMUXC_SAI1_RXFS_GPIO4_IO0		0x19	/* Pin 19 */
++			MX8MQ_IOMUXC_SAI1_RXC_GPIO4_IO1			0x19	/* Pin 21 */
++			MX8MQ_IOMUXC_SAI1_RXD1_GPIO4_IO3		0x19	/* Pin 23 */
++			MX8MQ_IOMUXC_SAI1_RXD2_GPIO4_IO4		0x19	/* Pin 25 */
++			MX8MQ_IOMUXC_SAI1_RXD3_GPIO4_IO5		0x19	/* Pin 27 */
++			MX8MQ_IOMUXC_SAI1_RXD4_GPIO4_IO6		0x19	/* Pin 29 */
++			MX8MQ_IOMUXC_SAI1_RXD5_GPIO4_IO7		0x19	/* Pin 31 */
++			MX8MQ_IOMUXC_SAI1_RXD6_GPIO4_IO8		0x19	/* Pin 33 */
++			MX8MQ_IOMUXC_SAI1_RXD7_GPIO4_IO9		0x19	/* Pin 35 */
++			MX8MQ_IOMUXC_SAI1_TXD1_GPIO4_IO13		0x19	/* Pin 39 */
++			MX8MQ_IOMUXC_SAI1_TXD2_GPIO4_IO14		0x19	/* Pin 41 */
++			MX8MQ_IOMUXC_SAI1_TXD3_GPIO4_IO15		0x19	/* Pin 43 */
++			MX8MQ_IOMUXC_SAI1_TXD4_GPIO4_IO16		0x19	/* Pin 45 */
++			MX8MQ_IOMUXC_SAI1_TXD5_GPIO4_IO17		0x19	/* Pin 47 */
++			MX8MQ_IOMUXC_SAI1_TXD6_GPIO4_IO18		0x19	/* Pin 49 */
++			MX8MQ_IOMUXC_SAI1_TXD7_GPIO4_IO19		0x19	/* Pin 51 */
++
++			/* J17 connector, even */
++			MX8MQ_IOMUXC_SAI3_RXFS_GPIO4_IO28		0x19	/* Pin 44 */
++			MX8MQ_IOMUXC_SAI3_RXC_GPIO4_IO29		0x19	/* Pin 48 */
++			MX8MQ_IOMUXC_GPIO1_IO10_GPIO1_IO10		0x19	/* Pin 50 */
++			MX8MQ_IOMUXC_GPIO1_IO03_GPIO1_IO3		0x19	/* Pin 54 */
++			MX8MQ_IOMUXC_GPIO1_IO05_GPIO1_IO5		0x19	/* Pin 56 */
++
++			/* J18 connector, odd */
++			MX8MQ_IOMUXC_NAND_CE3_B_GPIO3_IO4		0x19	/* Pin 41 */
++			MX8MQ_IOMUXC_NAND_CLE_GPIO3_IO5			0x19	/* Pin 43 */
++			MX8MQ_IOMUXC_NAND_READY_B_GPIO3_IO16		0x19	/* Pin 45 */
++			MX8MQ_IOMUXC_NAND_DATA05_GPIO3_IO11		0x19	/* Pin 47 */
++			MX8MQ_IOMUXC_NAND_WP_B_GPIO3_IO18		0x19	/* Pin 49 */
++			MX8MQ_IOMUXC_NAND_DQS_GPIO3_IO14		0x19	/* Pin 53 */
++
++			/* J18 connector, even */
++			MX8MQ_IOMUXC_NAND_ALE_GPIO3_IO0			0x19	/* Pin 32 */
++			MX8MQ_IOMUXC_NAND_CE0_B_GPIO3_IO1		0x19	/* Pin 36 */
++			MX8MQ_IOMUXC_NAND_DATA00_GPIO3_IO6		0x19	/* Pin 38 */
++			MX8MQ_IOMUXC_NAND_DATA01_GPIO3_IO7		0x19	/* Pin 40 */
++			MX8MQ_IOMUXC_NAND_DATA02_GPIO3_IO8		0x19	/* Pin 42 */
++			MX8MQ_IOMUXC_NAND_DATA03_GPIO3_IO9		0x19	/* Pin 44 */
++			MX8MQ_IOMUXC_NAND_DATA04_GPIO3_IO10		0x19	/* Pin 46 */
++
++			/* J13 Pin 2, WL_WAKE */
++			MX8MQ_IOMUXC_SAI5_RXD2_GPIO3_IO23		0xd6
++			/* J13 Pin 4, WL_IRQ, not needed for Silex */
++			MX8MQ_IOMUXC_SAI5_RXD0_GPIO3_IO21		0xd6
++			/* J13 pin 9, unused */
++			MX8MQ_IOMUXC_SD2_CD_B_GPIO2_IO12		0x19
++			/* J13 Pin 41, BT_CLK_REQ */
++			MX8MQ_IOMUXC_SAI5_RXD1_GPIO3_IO22		0xd6
++			/* J13 Pin 42, BT_HOST_WAKE */
++			MX8MQ_IOMUXC_SAI5_MCLK_GPIO3_IO25		0xd6
++
++			/* Clock for both CSI1 and CSI2 */
++			MX8MQ_IOMUXC_GPIO1_IO15_CCMSRCGPCMIX_CLKO2	0x07
++			/* test points */
++			MX8MQ_IOMUXC_GPIO1_IO04_GPIO1_IO4		0xc1	/* TP87 */
++		>;
++	};
++
++	pinctrl_i2c1: i2c1grp {
++		fsl,pins = <
++			MX8MQ_IOMUXC_I2C1_SCL_I2C1_SCL			0x4000007f
++			MX8MQ_IOMUXC_I2C1_SDA_I2C1_SDA			0x4000007f
++		>;
++	};
++
++	pinctrl_i2c1_pca9546: i2c1-pca9546grp {
++		fsl,pins = <
++			MX8MQ_IOMUXC_GPIO1_IO08_GPIO1_IO8		0x49
++		>;
++	};
++
++	pinctrl_i2c1d_rv4162: i2c1d-rv4162grp {
++		fsl,pins = <
++			MX8MQ_IOMUXC_GPIO1_IO06_GPIO1_IO6		0x49
++		>;
++	};
++
++	pinctrl_reg_arm_dram: reg-arm-dram {
++		fsl,pins = <
++			MX8MQ_IOMUXC_SAI5_RXD3_GPIO3_IO24	0x16
++		>;
++	};
++
++	pinctrl_reg_dram_1p1v: reg-dram-1p1v {
++		fsl,pins = <
++			MX8MQ_IOMUXC_SD1_STROBE_GPIO2_IO11	0x16
++		>;
++	};
++
++	pinctrl_reg_soc_gpu_vpu: reg-soc-gpu-vpu {
++		fsl,pins = <
++			MX8MQ_IOMUXC_SD2_WP_GPIO2_IO20		0x16
++		>;
++	};
++
++	pinctrl_uart1: uart1grp {
++		fsl,pins = <
++			MX8MQ_IOMUXC_UART1_RXD_UART1_DCE_RX		0x45
++			MX8MQ_IOMUXC_UART1_TXD_UART1_DCE_TX		0x45
++		>;
++	};
++
++	pinctrl_uart2: uart2grp {
++		fsl,pins = <
++			MX8MQ_IOMUXC_UART2_RXD_UART2_DCE_RX		0x45
++			MX8MQ_IOMUXC_UART2_TXD_UART2_DCE_TX		0x45
++		>;
++	};
++
++	pinctrl_usdhc1: usdhc1grp {
++		fsl,pins = <
++			MX8MQ_IOMUXC_SD1_CLK_USDHC1_CLK			0x83
++			MX8MQ_IOMUXC_SD1_CMD_USDHC1_CMD			0xc3
++			MX8MQ_IOMUXC_SD1_DATA0_USDHC1_DATA0		0xc3
++			MX8MQ_IOMUXC_SD1_DATA1_USDHC1_DATA1		0xc3
++			MX8MQ_IOMUXC_SD1_DATA2_USDHC1_DATA2		0xc3
++			MX8MQ_IOMUXC_SD1_DATA3_USDHC1_DATA3		0xc3
++			MX8MQ_IOMUXC_SD1_DATA4_USDHC1_DATA4		0xc3
++			MX8MQ_IOMUXC_SD1_DATA5_USDHC1_DATA5		0xc3
++			MX8MQ_IOMUXC_SD1_DATA6_USDHC1_DATA6		0xc3
++			MX8MQ_IOMUXC_SD1_DATA7_USDHC1_DATA7		0xc3
++			MX8MQ_IOMUXC_SD1_RESET_B_GPIO2_IO10		0x41
++		>;
++	};
++
++	pinctrl_usdhc1_100mhz: usdhc1grp100mhz {
++		fsl,pins = <
++			MX8MQ_IOMUXC_SD1_CLK_USDHC1_CLK			0x8d
++			MX8MQ_IOMUXC_SD1_CMD_USDHC1_CMD			0xcd
++			MX8MQ_IOMUXC_SD1_DATA0_USDHC1_DATA0		0xcd
++			MX8MQ_IOMUXC_SD1_DATA1_USDHC1_DATA1		0xcd
++			MX8MQ_IOMUXC_SD1_DATA2_USDHC1_DATA2		0xcd
++			MX8MQ_IOMUXC_SD1_DATA3_USDHC1_DATA3		0xcd
++			MX8MQ_IOMUXC_SD1_DATA4_USDHC1_DATA4		0xcd
++			MX8MQ_IOMUXC_SD1_DATA5_USDHC1_DATA5		0xcd
++			MX8MQ_IOMUXC_SD1_DATA6_USDHC1_DATA6		0xcd
++			MX8MQ_IOMUXC_SD1_DATA7_USDHC1_DATA7		0xcd
++		>;
++	};
++
++	pinctrl_usdhc1_200mhz: usdhc1grp200mhz {
++		fsl,pins = <
++			MX8MQ_IOMUXC_SD1_CLK_USDHC1_CLK			0x9f
++			MX8MQ_IOMUXC_SD1_CMD_USDHC1_CMD			0xdf
++			MX8MQ_IOMUXC_SD1_DATA0_USDHC1_DATA0		0xdf
++			MX8MQ_IOMUXC_SD1_DATA1_USDHC1_DATA1		0xdf
++			MX8MQ_IOMUXC_SD1_DATA2_USDHC1_DATA2		0xdf
++			MX8MQ_IOMUXC_SD1_DATA3_USDHC1_DATA3		0xdf
++			MX8MQ_IOMUXC_SD1_DATA4_USDHC1_DATA4		0xdf
++			MX8MQ_IOMUXC_SD1_DATA5_USDHC1_DATA5		0xdf
++			MX8MQ_IOMUXC_SD1_DATA6_USDHC1_DATA6		0xdf
++			MX8MQ_IOMUXC_SD1_DATA7_USDHC1_DATA7		0xdf
++		>;
++	};
++
++	pinctrl_wdog: wdoggrp {
++		fsl,pins = <
++			MX8MQ_IOMUXC_GPIO1_IO02_WDOG1_WDOG_B	0xc6
++		>;
++	};
++};
++
++&fec1 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_fec1>;
++	phy-mode = "rgmii-id";
++	phy-handle = <&ethphy0>;
++	fsl,magic-packet;
++	status = "okay";
++
++	mdio {
++		#address-cells = <1>;
++		#size-cells = <0>;
++
++		ethphy0: ethernet-phy@4 {
++			compatible = "ethernet-phy-ieee802.3-c22";
++			reg = <4>;
++			interrupts-extended = <&gpio1 11 IRQ_TYPE_LEVEL_LOW>;
++		};
++	};
++};
++
++&i2c1 {
++	clock-frequency = <400000>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_i2c1>;
++	status = "okay";
++
++	i2cmux@70 {
++		compatible = "pca9546";
++		pinctrl-names = "default";
++		pinctrl-0 = <&pinctrl_i2c1_pca9546>;
++		reg = <0x70>;
++		reset-gpios = <&gpio1 8 GPIO_ACTIVE_LOW>;
++		#address-cells = <1>;
++		#size-cells = <0>;
++
++		i2c1a: i2c1@0 {
++			reg = <0>;
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg_arm_dram: fan53555@60 {
++				compatible = "fcs,fan53555";
++				pinctrl-names = "default";
++				pinctrl-0 = <&pinctrl_reg_arm_dram>;
++				reg = <0x60>;
++				regulator-min-microvolt =  <900000>;
++				regulator-max-microvolt = <1000000>;
++				regulator-always-on;
++				vsel-gpios = <&gpio3 24 GPIO_ACTIVE_HIGH>;
++			};
++		};
++
++		i2c1b: i2c1@1 {
++			reg = <1>;
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg_dram_1p1v: fan53555@60 {
++				compatible = "fcs,fan53555";
++				pinctrl-names = "default";
++				pinctrl-0 = <&pinctrl_reg_dram_1p1v>;
++				reg = <0x60>;
++				regulator-min-microvolt = <1100000>;
++				regulator-max-microvolt = <1100000>;
++				regulator-always-on;
++				vsel-gpios = <&gpio2 11 GPIO_ACTIVE_HIGH>;
++			};
++		};
++
++		i2c1c: i2c1@2 {
++			reg = <2>;
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg_soc_gpu_vpu: fan53555@60 {
++				compatible = "fcs,fan53555";
++				pinctrl-names = "default";
++				pinctrl-0 = <&pinctrl_reg_soc_gpu_vpu>;
++				reg = <0x60>;
++				regulator-min-microvolt =  <900000>;
++				regulator-max-microvolt = <1000000>;
++				regulator-always-on;
++				vsel-gpios = <&gpio2 20 GPIO_ACTIVE_HIGH>;
++			};
++		};
++
++		i2c1d: i2c1@3 {
++			reg = <3>;
++			#address-cells = <1>;
++			#size-cells = <0>;
++			rtc@68 {
++				compatible = "microcrystal,rv4162";
++				pinctrl-names = "default";
++				pinctrl-0 = <&pinctrl_i2c1d_rv4162>;
++				reg = <0x68>;
++				interrupts-extended = <&gpio1 6 IRQ_TYPE_LEVEL_LOW>;
++				wakeup-source;
++			};
++		};
++	};
++};
++
++&uart1 { /* console */
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_uart1>;
++	assigned-clocks = <&clk IMX8MQ_CLK_UART1>;
++	assigned-clock-parents = <&clk IMX8MQ_CLK_25M>;
++	status = "okay";
++};
++
++&uart2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_uart2>;
++	assigned-clocks = <&clk IMX8MQ_CLK_UART2>;
++	assigned-clock-parents = <&clk IMX8MQ_CLK_25M>;
++	status = "okay";
++};
++
++&usdhc1 {
++	bus-width = <8>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_usdhc1>;
++	non-removable;
++	vqmmc-1-8-v;
++	vmmc-supply = <&reg_vref_1v8>;
++	status = "okay";
++};
++
++&wdog1 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_wdog>;
++	fsl,ext-reset-output;
++	status = "okay";
++};
+-- 
+2.20.1
 
 
 _______________________________________________
