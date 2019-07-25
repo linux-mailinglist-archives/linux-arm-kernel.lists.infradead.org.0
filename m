@@ -2,58 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A3535746E5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 08:10:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 53652746F3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 08:14:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=93GTFD4vPg2iAcDsZZuMU1aF8v32/FKHUzn77kPK3xU=; b=m8S/rhOF7KhN28zSPpV2gjZix
-	3b33OtTub2c0OzTfV0/1tFRx40bR3sEnrSZu/RGQ26BJcU+jeW69AQRexYdYCkd5OhRmkVxYAPDzT
-	HPuFdqVyXacoO/sCR5yBekBQCj23AzWERGv3AIeZ6O0g1s9cJSbav6FYyJuYWlZvBzMD5dYkc+qu2
-	mVinGw4D9j/HO5R7GG3bGETdy0SqI0SrAi45vp4tbNGBTAr/8rQanTlJc5NfFFbCqXM86dnoAdjl3
-	sVrxjR3TbbJPv+Enq56q5M6QWqaPRRnOfq48DZdpI2Y7xezy77uFihmVyKIf14fr5VTbSBZ+N+F+t
-	yqrKgz1rA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ArHQ+5TlYyIBTNNWpcPQtA4Z/p8/Xc50ZF2QJLjNUio=; b=jUQhik73ducqR7
+	zIpTVDaD5TttR82D0Wazc0W4Ynk4/KyzEZJAvZ9pwJvPUtXOGfKOj1mlYQTuYqfVAK5P9pP0hkXyC
+	EmEbeprZvUVrpUq2+o/SLqxDChrUH85neXk2D7r6z3FHZGuedrKMBzIkZXCpA2L+U8ZNASFXpr/Fr
+	1VYqkHHwrFbtNcjDA8onPCTAKKtz4A926S8VVcyAq+J642ToOakW8W5p3h8/jMKbq0hLYnD09rboI
+	tBLBg0eoVQBpXlTKDb658aiQu8Dy1cDnHy4r5E7MnnaBtzhTnzjbaJhPNHZo/RkWScutK0r72w4Ax
+	Rx8EJTd4ImxOjV3kvBpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqWxb-0008Ag-Mh; Thu, 25 Jul 2019 06:10:39 +0000
-Received: from relay3-d.mail.gandi.net ([217.70.183.195])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqWx9-00080x-RX; Thu, 25 Jul 2019 06:10:13 +0000
-X-Originating-IP: 81.250.144.103
-Received: from [10.30.1.20] (lneuilly-657-1-5-103.w81-250.abo.wanadoo.fr
- [81.250.144.103]) (Authenticated sender: alex@ghiti.fr)
- by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id D99C260004;
- Thu, 25 Jul 2019 06:10:06 +0000 (UTC)
-Subject: Re: [PATCH REBASE v4 00/14] Provide generic top-down mmap layout
- functions
-To: Luis Chamberlain <mcgrof@kernel.org>
-References: <20190724055850.6232-1-alex@ghiti.fr>
- <20190724171745.GX19023@42.do-not-panic.com>
-From: Alexandre Ghiti <alex@ghiti.fr>
-Message-ID: <c7a35023-8571-6000-d870-12803314adbf@ghiti.fr>
-Date: Thu, 25 Jul 2019 08:10:06 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hqX0l-0000G6-1s; Thu, 25 Jul 2019 06:13:55 +0000
+Received: from kirsty.vergenet.net ([202.4.237.240])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hqX0W-0000FZ-Kp
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 06:13:41 +0000
+Received: from penelope.horms.nl (ip4dab7138.direct-adsl.nl [77.171.113.56])
+ by kirsty.vergenet.net (Postfix) with ESMTPA id 8B08E25AD7E;
+ Thu, 25 Jul 2019 16:13:39 +1000 (AEST)
+Received: by penelope.horms.nl (Postfix, from userid 7100)
+ id 79019E2209B; Thu, 25 Jul 2019 08:13:37 +0200 (CEST)
+Date: Thu, 25 Jul 2019 08:13:37 +0200
+From: Simon Horman <horms@verge.net.au>
+To: Yoshihiro Kaneko <ykaneko0929@gmail.com>
+Subject: Re: [PATCH] arm64: dts: renesas: r8a7796-salvator-xs: sort nodes
+Message-ID: <20190725061336.bzyupg6w5g4mav6k@verge.net.au>
+References: <1563904961-2835-1-git-send-email-ykaneko0929@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20190724171745.GX19023@42.do-not-panic.com>
-Content-Language: fr
+Content-Disposition: inline
+In-Reply-To: <1563904961-2835-1-git-send-email-ykaneko0929@gmail.com>
+Organisation: Horms Solutions BV
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_231012_094367_2F630078 
-X-CRM114-Status: UNSURE (   8.91  )
+X-CRM114-CacheID: sfid-20190724_231340_834951_78F85DB5 
+X-CRM114-Status: UNSURE (   8.36  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.195 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.195 listed in wl.mailspike.net]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [202.4.237.240 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -66,34 +63,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Albert Ou <aou@eecs.berkeley.edu>, Kees Cook <keescook@chromium.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Palmer Dabbelt <palmer@sifive.com>,
- Will Deacon <will.deacon@arm.com>, Russell King <linux@armlinux.org.uk>,
- Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
- linux-mm@kvack.org, Paul Burton <paul.burton@mips.com>,
- linux-riscv@lists.infradead.org, Alexander Viro <viro@zeniv.linux.org.uk>,
- James Hogan <jhogan@kernel.org>, linux-fsdevel@vger.kernel.org,
- Andrew Morton <akpm@linux-foundation.org>, linux-mips@vger.kernel.org,
- Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org
+Cc: linux-renesas-soc@vger.kernel.org, Magnus Damm <magnus.damm@gmail.com>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 7/24/19 7:17 PM, Luis Chamberlain wrote:
-> Other than the two comments:
->
-> Reviewed-by: Luis Chamberlain <mcgrof@kernel.org>
+On Wed, Jul 24, 2019 at 03:02:41AM +0900, Yoshihiro Kaneko wrote:
+> Sort nodes.
+> 
+> If node address is present
+>    * Sort by node address, grouping all nodes with the same compat string
+>      and sorting the group alphabetically.
+> Else
+>    * Sort alphabetically
+> 
+> This should not have any run-time effect.
+> 
+> Signed-off-by: Yoshihiro Kaneko <ykaneko0929@gmail.com>
 
+Reviewed-by: Simon Horman <horms+renesas@verge.net.au>
 
-Thanks for your time Luis,
-
-Alex
-
-
->
->    Luis
->
 
 _______________________________________________
 linux-arm-kernel mailing list
