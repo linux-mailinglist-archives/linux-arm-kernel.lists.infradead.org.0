@@ -2,95 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76ED0754B1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 18:54:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB478754D2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 18:58:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eqK5HOAtYwF/SdT7k6TLbTJM4JssVDHWvVbqai7pVqM=; b=FPhe0UvOTEycvv
-	hd6/K8L39NufTjTTzP5FzmqHI1thdEQF3UdFzPhtHG04o5n6yeiVlMJXXRGZpUY+GTOSA1/9R7X5z
-	/63vyriz4BhtC1b6qQLSqozI9C/grqQJYCb5KSBey/MrrAsx6uTwFLghjEeH6fb++n/XDiFZ8feD+
-	bTa8Wxq3w8WqtXShzy94B8dQNTjw4ZPnLlj1DgKdtEuO2g9lIbSQxIjL2yqUsW8PDrhVgZmeEa5c6
-	RI0u565vZ2hkDsi/z3ITdg+MV+hnSlBEILOa6t1v4GoYDCmH1RRBZhdLlyyu/gS9Ld7Sn5NzIZECt
-	v9iQfOXL+WU84JgrDiyg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=zXf8v/gb5UotCJScRc0Iux3X4BAUtPZeUIh0H3swOMY=; b=A7Y06gYNInOPAxc6NNOiaRrAY
+	Zb27z00+itZdZJ10ZdfNYf7+ezBtLMDJGBR7AKFen9MQD8J49IfytEHG/r0RJiVDChO79Fd6oXkA9
+	A1Nsdy/bbqT6zUrtNdhyriVfgaiZXQ3GarmLgLIbAY44ogsXt9NzJMR66DSNG9i94RQhmtplqMGN1
+	tEYcZCQavJdjPw19LLXhHCXeKr2hHurGxDFdKk24qagZUZNT7Y4G+v3j2zuOnlrEPZu0xQAEhlPJo
+	fYpkSnsmiRhoPhwYdnOpG76iGNmZ0vvmvvRzDLYkhBEUEltZgbrhLabcYS6IsrcK2IUr2BYzzF0gO
+	/AdUcgq+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqh05-0002sX-7s; Thu, 25 Jul 2019 16:53:53 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqgzp-0002qP-QD
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 16:53:39 +0000
-Received: by mail-io1-xd43.google.com with SMTP id k20so98657361ios.10
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 25 Jul 2019 09:53:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=kolA9oGTMt2kJuYg8zC6oRG5UHIMOnhc3kiBOYsRrZA=;
- b=IPSevJy2liwkLBHgCIP++Od2vm8pxaK7qAFqKLBz212Z655uA/9ROOg+s5IaImVzfs
- mp32U3H4iTgV7TrIOZ+ToG924T9y/qluKpRZOuijot3YOobPniwSFgN0j+k3iBv5Ur+V
- vqSmZD4y6I1UTcz6Rz2aS0nGWj9Ge5ijQbM4c=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=kolA9oGTMt2kJuYg8zC6oRG5UHIMOnhc3kiBOYsRrZA=;
- b=R75Td4l0SXdBWUNOCQYcIC+pIGIrr83DhVBmgF3jWN0FGDeeYF8EnE4jby+DobZMN3
- StnMJ1Rymmb5n+VQonNX6027jrzrCQpwDMzWGI1Kh9aY7bOOwx5NFf+kFIHmmb3Yq0ti
- sDnsQaH3C9CkEvOHuPvt9nEuHAP1JAaeJOe7b6b52AdtrdOMW5G4g+STKA0RZa0DL+Lc
- PdyWkUvkfS0HlYORt+Un7JwoAYRwuHr7NxroFTgeP3wVYWmvHDc8woYE3IanHhCUZk1S
- uQKEaA1/xB2fzVpkHu3vHlVZ45jGFx9qKIqmZ64srdG6R/RR2OOcpwZqoaPf+Z5Op7D1
- 4WfQ==
-X-Gm-Message-State: APjAAAUm36Djqa99oefJlgdmddQ6hO6pWKdRK/vq6uh35ToChf2ThBJ2
- Y1ITUvlMLJlyJM92sAcAcNpNiyIopD0=
-X-Google-Smtp-Source: APXvYqwsed8IHMsU17NwovUhNWZ9MLMVeorBYYhHpTUKxfn/0hZ+dqabtp7Ze/cVsJI24jCULd2klA==
-X-Received: by 2002:a5d:8ad0:: with SMTP id e16mr20275118iot.262.1564073616684; 
- Thu, 25 Jul 2019 09:53:36 -0700 (PDT)
-Received: from mail-io1-f47.google.com (mail-io1-f47.google.com.
- [209.85.166.47])
- by smtp.gmail.com with ESMTPSA id h19sm34349562iol.65.2019.07.25.09.53.35
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Thu, 25 Jul 2019 09:53:36 -0700 (PDT)
-Received: by mail-io1-f47.google.com with SMTP id f4so98726198ioh.6
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 25 Jul 2019 09:53:35 -0700 (PDT)
-X-Received: by 2002:a5e:c241:: with SMTP id w1mr77963588iop.58.1564073615649; 
- Thu, 25 Jul 2019 09:53:35 -0700 (PDT)
+	id 1hqh4r-0004pr-R0; Thu, 25 Jul 2019 16:58:49 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hqh4b-0004oj-O7
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 16:58:35 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C98E919BF;
+ Thu, 25 Jul 2019 09:58:31 -0700 (PDT)
+Received: from [10.1.194.48] (e123572-lin.cambridge.arm.com [10.1.194.48])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6FF8F3F71A;
+ Thu, 25 Jul 2019 09:58:30 -0700 (PDT)
+Subject: Re: [PATCH] arm64: dts: fast models: Increase clcd's
+ max-memory-bandwidth
+To: Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
+References: <20190725145040.42182-1-kevin.brodsky@arm.com>
+ <042d5c3d-96fe-5466-3869-a0a3a08b964d@arm.com>
+From: Kevin Brodsky <kevin.brodsky@arm.com>
+Message-ID: <1d7929a2-273e-e695-6700-36aacf38f61a@arm.com>
+Date: Thu, 25 Jul 2019 17:58:25 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-References: <20190725162642.250709-1-mka@chromium.org>
- <20190725162642.250709-4-mka@chromium.org>
-In-Reply-To: <20190725162642.250709-4-mka@chromium.org>
-From: Doug Anderson <dianders@chromium.org>
-Date: Thu, 25 Jul 2019 09:53:23 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=VZur9gPvUnRtdwieqkjMxx1nOabaRXjMsQ7hZwgNVE5Q@mail.gmail.com>
-Message-ID: <CAD=FV=VZur9gPvUnRtdwieqkjMxx1nOabaRXjMsQ7hZwgNVE5Q@mail.gmail.com>
-Subject: Re: [PATCH v3 3/5] dt-bindings: ARM: dts: rockchip: Add bindings for
- rk3288-veyron-{fievel, tiger}
-To: Matthias Kaehlcke <mka@chromium.org>
+In-Reply-To: <042d5c3d-96fe-5466-3869-a0a3a08b964d@arm.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_095337_847972_6B1BEB41 
-X-CRM114-Status: GOOD (  12.40  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190725_095833_828569_FE2965E9 
+X-CRM114-Status: GOOD (  16.84  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,32 +63,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, LKML <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, Pawel Moll <pawel.moll@arm.com>,
+ Ruben Ayrapetyan <ruben.ayrapetyan@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>, Liviu Dudau <liviu.dudau@arm.com>,
+ dri-devel@lists.freedesktop.org, Sudeep Holla <sudeep.holla@arm.com>,
+ Brian Starkey <brian.starkey@arm.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On 25/07/2019 16:15, Robin Murphy wrote:
+> Hi Kevin,
 
-On Thu, Jul 25, 2019 at 9:27 AM Matthias Kaehlcke <mka@chromium.org> wrote:
->
-> Fievel is a Chromebox and Tiger a Chromebase with a 10" display and
-> touchscreen. Tiger and Fievel are based on the same board.
->
-> Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
-> ---
-> Changes in v3:
-> - patch added to the series
-> ---
->  .../devicetree/bindings/arm/rockchip.yaml     | 30 +++++++++++++++++++
->  1 file changed, 30 insertions(+)
+Hi Robin,
 
-Reviewed-by: Douglas Anderson <dianders@chromium.org>
+> On 25/07/2019 15:50, Kevin Brodsky wrote:
+>> It may be desirable on certain platforms, such as Android, to
+>> use 32bpp buffers. Since there is no clear bandwidth limit for the
+>> CLCD component on the fast model, let's increase
+>> max-memory-bandwidth to allow using 32bpp buffers.
+> Given that the property is optional anyway, would it hurt to just remove
+> it? After trying to dig up any relevant internal email history, it's
+> still far from clear how and why it got here in the first place.
+
+Very good point, I hadn't realised it was an optional property. Removing it 
+completely seems to work fine. I'll send a v2 removing it from both fvp-base-revc.dts 
+and rtsm_ve-motherboard.dtsi. Thanks!
+
+Kevin
+
+> Robin.
+>
+>> Reported-by: Ruben Ayrapetyan <ruben.ayrapetyan@arm.com>
+>> Signed-off-by: Kevin Brodsky <kevin.brodsky@arm.com>
+>> ---
+>>    arch/arm64/boot/dts/arm/fvp-base-revc.dts | 2 +-
+>>    1 file changed, 1 insertion(+), 1 deletion(-)
+>>
+>> diff --git a/arch/arm64/boot/dts/arm/fvp-base-revc.dts b/arch/arm64/boot/dts/arm/fvp-base-revc.dts
+>> index 687707020ec1..3aee49ed6d88 100644
+>> --- a/arch/arm64/boot/dts/arm/fvp-base-revc.dts
+>> +++ b/arch/arm64/boot/dts/arm/fvp-base-revc.dts
+>> @@ -269,7 +269,7 @@
+>>    		motherboard {
+>>    			iofpga@3,00000000 {
+>>    				clcd@1f0000 {
+>> -					max-memory-bandwidth = <130000000>; /* 16bpp @ 63.5MHz */
+>> +					max-memory-bandwidth = <260000000>; /* 32bpp @ 63.5MHz */
+>>    				};
+>>    			};
+>>    		};
+>>
+
 
 _______________________________________________
 linux-arm-kernel mailing list
