@@ -2,83 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6720A751C8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 16:50:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 65F82751C9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 16:50:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Wved60r+gYyxvsecZXZirTMiCaEH+DZiebDzWLLqFWw=; b=AuhELbo1CtMlpr
-	gBeDziwsoXYD3oNPE4ZXxobbyi1ncwOq4UI0Jqm42wVZNFUi3iJ8aQtsczDmlCBfTqTZW1UtZMaf3
-	0ebEPIFl2ckUX1nbG8XYb1Q2gVmrRhXtQsqwdKifIasvzx42zkgIOi3+hipRRhiYQCxY/0u9Cw/4L
-	NxzIRgZP64pPNdmEJ8Fs1Y9tDkg7qrOjMdVpMcqhPvxCwpbviilGU52KCLmjXXuSqhamRRHD/a6IV
-	SSv+QMYE2ruiDdebWa//jEs8ba7O8q+hsJ72Yp7DHovXzom37LqyMzW9c7QjJjDNuRyguDqJuzfsw
-	QjinrSn4soS+v5Lv/rYw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dQRK06PRw4gzNPkX/klbmQu96T5GisqFQmlSOjJGLnc=; b=jM9K7PMVKD27sd
+	Q/bTpud3fRyWPeCZrktuMCue2dxCxHJvgrA9oR/7TDhEr0tJr9uSukVuuDL1KujA7JnJfgPiDAVoB
+	zmXmuUtFDPM60uGZaB8heL9H0gBGbWVB+KsmSwK7CFPPSOsFwwPHC17sA+5o5vUN/hnA3tQ3iPkwm
+	oP6j3zGg+Wae6BtlP8NeTK4Fq+i6kLpFWUntqqkKnIrCjDqUKAE+/h0Y+WQ6ART2p6ZUhC1A/iEgJ
+	mfY6r87MD6uqGtdx8P8W8L6jRWF5G/Ksm8Ia8Cse/503EpGVeXsLlzw7XWPy01VQUHmecuTH7dCqj
+	P4Qzc8W6wRbsWo95pY7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqf4X-0007cK-0Q; Thu, 25 Jul 2019 14:50:21 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1hqf4p-0000b4-T3; Thu, 25 Jul 2019 14:50:39 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqf46-0007aN-By
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 14:49:55 +0000
-Received: by mail-wm1-x343.google.com with SMTP id u25so34650948wmc.4
+ id 1hqf4C-0007cS-FH
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 14:50:02 +0000
+Received: by mail-lj1-x241.google.com with SMTP id k18so48264825ljc.11
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 25 Jul 2019 07:49:54 -0700 (PDT)
+ Thu, 25 Jul 2019 07:49:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=3b3X8WfBqIW5LOW4V5TVp6ae4N5qP2OGB1HYZV9x7QM=;
- b=CYZF+istrGEAPBiAE0ogP75C5buboZkGqyOM5L/9I/3bnu/dHopK+cjGrEHepiV3O1
- dUVGk1Yy7Q9qNheRnqVKn48/a2KXDZytITvRzcqEuMieITUMWSIgvdJRQfn6gLPcgzS0
- 13hYrFFuvaFvCRF+jdMAMNQ4/z8lZ5Yc7n5FRgMzaGaytfwK5AuN5YrwW0PmR+Wtxayj
- j47u0RHnSXMnk6ULmKR1KI1l1WQ94QMefCU+hXR8wr0f67iSfE3AYSCzjwXARHQFacIS
- bHbwD5rxoMiymF86Mg2rubifTzBXk3vUicbHfk81Gg1anQrVWpmTJsYpRtTIWX1NvUi5
- CGnQ==
+ d=cogentembedded-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:organization:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=6wnAGGabQ71U78o4knoiSKA6pj8ghCt55D9V1wo+T0U=;
+ b=B2IYRqLxUH1+yV5JsUcKz1/ZA+iccTO0ufD34R4byQxZe7CXU3NbtHo9tyPuLSiW87
+ /jfTp7pPZqqDJkeWd7NyZU0KqqbvGv12Qr+Nb9kyskTiZuABrjsxV9cKcmjF0e72KdSm
+ MssRnvOCrLO36PJWr1KlgMV24aABKeJpQy0F7bW9yGhdrOwRAVhl/oeVFZ1SMIa1hpVr
+ kvMyCUIgqACnih1DZJmdmeCYCDSKcrIfvcmSb+yusMcEKryJ4A3mSswtgNW/useWALsE
+ owKKVrwkAuaR26qlCtSEa6R2rjFuZUqYzF0Azr5MdIJgXbtKRAwEu2UBb7m5rSvJ9ibc
+ vxQA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
- :message-id:mime-version;
- bh=3b3X8WfBqIW5LOW4V5TVp6ae4N5qP2OGB1HYZV9x7QM=;
- b=gE8+/upzqVN4fM3zoBx1qKyDsaDr2DwXWibafsI7tHfvqWEbwAWu21INOGg/3z5YE7
- +PoeWM/R4Ke9Cx7ggcCFzHYq17Qk90kU/mMzOqDRY5Kq0Uuo22ugsuCU2E9ZVSc+bTpu
- FcO5I2DMmokqjwFF9FtOex3Tle4xWaOwoHNWyl5rrAS0sppqV/0rSG7Sv8W8wDp/MZpP
- BfJQNNtEq6jLVkmcENM/eAcjjNKv8yDg7kjjtn5Yj04++nsQtbkRS5PUteUdGqIUNF4S
- sIHAwpY/BctrxO9XmPK0LKnWuNMOnQ1o9uIzm2Hcn16nbNgQFgcLYPLRPEmc+SPTV6hL
- ZD+w==
-X-Gm-Message-State: APjAAAW0j8rprV953xb2oG10QQuHQVGKOTq9eFxKZ9QHvxTmJqUdM//V
- GJyoTueGoJc6+BYx1zNjpX5MWQ==
-X-Google-Smtp-Source: APXvYqzIwsQJYuxzT5dWpKHmTvybHpnoxkfBrMYfdmTdr8KgCK9iYKnYda5Yubj39ML7jNr8yVrQ1A==
-X-Received: by 2002:a05:600c:da:: with SMTP id
- u26mr77769552wmm.108.1564066193002; 
- Thu, 25 Jul 2019 07:49:53 -0700 (PDT)
-Received: from localhost (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
- [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id c11sm85376061wrq.45.2019.07.25.07.49.52
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 25 Jul 2019 07:49:52 -0700 (PDT)
-From: Jerome Brunet <jbrunet@baylibre.com>
-To: Alexandre Mergnat <amergnat@baylibre.com>
-Subject: Re: [PATCH 3/8] clk: meson: gxbb: migrate to the new parent
- description method
-In-Reply-To: <20190722095425.14193-4-amergnat@baylibre.com>
-References: <20190722095425.14193-1-amergnat@baylibre.com>
- <20190722095425.14193-4-amergnat@baylibre.com>
-Date: Thu, 25 Jul 2019 16:49:51 +0200
-Message-ID: <1j5znqxj74.fsf@starbuckisacylon.baylibre.com>
+ h=x-gm-message-state:subject:to:cc:references:from:organization
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=6wnAGGabQ71U78o4knoiSKA6pj8ghCt55D9V1wo+T0U=;
+ b=QxNUJedmuwujKred/+9kedYBBb+PlIqBfoOC9ho7d/HL+P4V915A4jHHowzYfyQX3a
+ sWKX54GWY0/KecdJELjOTaE/RwVukNPmgCxYcttccqCv7uPFkUga1obAXCXmM9juqS3p
+ PXS+XeHVScxtopkjT19fKxBzUopagLjWNjZb8CWO4Tzq6ktyHtcEh15t0GNlNdHwp6wZ
+ 4jyDAH3dXW0w6/zwjbq9iI9yh5HsjfP6bp45vH+MHYIgvzImmFf0oX4ZP+6NE+o+E0P0
+ 8mO1hNrKx8fhiswbkHNfWo9C5QZoMYTgsWZ/2WI2SJIfiSetTc83uGIlpv0BPFzTusQu
+ zbhg==
+X-Gm-Message-State: APjAAAVw65s7drWwIH/MnTtfqhtX3B7rlDg9Yyu5iVZh7wgOC8aNbBZl
+ Qx28BHhQ9twfEWXSjKUbwLimmA==
+X-Google-Smtp-Source: APXvYqwrCKqf4m+8KV0D4fmENaffy3HRKJJq6mh6Y4FyQ1BPvI6qdmY0bGVRwsAXaiGfVrkPGRJQrw==
+X-Received: by 2002:a2e:a415:: with SMTP id p21mr46282699ljn.111.1564066197927; 
+ Thu, 25 Jul 2019 07:49:57 -0700 (PDT)
+Received: from wasted.cogentembedded.com
+ ([2a00:1fa0:669:e7fc:391:1b4e:d17c:23d6])
+ by smtp.gmail.com with ESMTPSA id z25sm7546587lfi.51.2019.07.25.07.49.56
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 25 Jul 2019 07:49:57 -0700 (PDT)
+Subject: Re: [PATCH net-next v2 3/4] dt-bindings: net: fsl: enetc: Add
+ bindings for the central MDIO PCIe endpoint
+To: Claudiu Manoil <claudiu.manoil@nxp.com>,
+ "David S . Miller" <davem@davemloft.net>
+References: <1564053568-20522-1-git-send-email-claudiu.manoil@nxp.com>
+ <1564053568-20522-4-git-send-email-claudiu.manoil@nxp.com>
+From: Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>
+Organization: Cogent Embedded
+Message-ID: <927717df-1a74-3253-f905-6a2f742fda63@cogentembedded.com>
+Date: Thu, 25 Jul 2019 17:49:54 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.2.1
 MIME-Version: 1.0
+In-Reply-To: <1564053568-20522-4-git-send-email-claudiu.manoil@nxp.com>
+Content-Language: en-MW
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_074954_409948_0A6B0DA9 
-X-CRM114-Status: UNSURE (   9.30  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190725_075000_778820_A56538CF 
+X-CRM114-Status: GOOD (  15.98  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -96,48 +102,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: narmstrong@baylibre.com, sboyd@kernel.org, khilman@baylibre.com,
- Alexandre Mergnat <amergnat@baylibre.com>, linux-kernel@vger.kernel.org,
- baylibre-upstreaming@groups.io, linux-amlogic@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: andrew@lunn.ch, devicetree@vger.kernel.org, netdev@vger.kernel.org,
+ alexandru.marginean@nxp.com, linux-kernel@vger.kernel.org,
+ Li Yang <leoyang.li@nxp.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon 22 Jul 2019 at 11:54, Alexandre Mergnat <amergnat@baylibre.com> wrote:
+Hello!
 
+On 07/25/2019 02:19 PM, Claudiu Manoil wrote:
 
-> @@ -1592,13 +1737,29 @@ static struct clk_regmap gxbb_vid_pll_div = {
->  	.hw.init = &(struct clk_init_data) {
->  		.name = "vid_pll_div",
->  		.ops = &meson_vid_pll_div_ro_ops,
-> -		.parent_names = (const char *[]){ "hdmi_pll" },
-> +		.parent_data = &(const struct clk_parent_data) {
-> +			/*
-> +			 * This clock is declared here for GXL and GXBB SoC, so
-> +			 * we must use string name to set this parent to avoid
-> +			 * pointer issue.
-> +			 */
+> The on-chip PCIe root complex that integrates the ENETC ethernet
+> controllers also integrates a PCIe enpoint for the MDIO controller
+> provinding for cetralized control of the ENETC mdio bus.
 
-I don't really get the issue with this comment.
+   Providing, centralized.
 
-How about:
+> Add bindings for this "central" MDIO Integrated PCIe Endpoit.
+> 
+> Signed-off-by: Claudiu Manoil <claudiu.manoil@nxp.com>
+> ---
+> v1 - none
+> v2 - none
+> 
+>  .../devicetree/bindings/net/fsl-enetc.txt     | 42 +++++++++++++++++--
+>  1 file changed, 39 insertions(+), 3 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/net/fsl-enetc.txt b/Documentation/devicetree/bindings/net/fsl-enetc.txt
+> index 25fc687419db..c090f6df7a39 100644
+> --- a/Documentation/devicetree/bindings/net/fsl-enetc.txt
+> +++ b/Documentation/devicetree/bindings/net/fsl-enetc.txt
+[...]
+> @@ -47,8 +49,42 @@ Example:
+>  		};
+>  	};
+>  
+> -2) The ENETC port is an internal port or has a fixed-link external
+> -connection:
+> +1.2. Using the central MDIO PCIe enpoint device
 
-/*
- * Note:
- * gxl and gxbb have different hdmi_plls (with different struct clk_hw).
- * We fallback to the global naming string mechanism so vid_pll_div picks
- * up the appropriate one.
- */
+   Endpoint. -ETOOMANYTYPOS. :-)
 
-> +			.name = "hdmi_pll",
-> +			.index = -1,
-> +		},
->  		.num_parents = 1,
->  		.flags = CLK_SET_RATE_PARENT | CLK_GET_RATE_NOCACHE,
->  	},
->  };
+[...]
+
+MBR, Sergei
 
 _______________________________________________
 linux-arm-kernel mailing list
