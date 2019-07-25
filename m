@@ -2,86 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8843874EEC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 15:15:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A26EB74EF2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 15:16:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:
-	From:In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cr5bqCrpDYfvcaEPm4uM5tXXkqDgaNLLVKr+lF0jcCY=; b=CdBvlFZvWTF5zB
-	Fubxb8yhgGooO929BzKFJCX3gyuO7jUB2OObKOnefYCb7PrwTB5rFkrZ+ltZYJOQ6TPZ8CrY/iIts
-	JqTppaQuCl5bNpwcwNxEof2eFBVuDhLB/4fEuVs0E1ENirFlx7oYeeg+MFtTibR8Jo2KQW6TLHk2n
-	uAPZchmMe32pM4g96ku8hkQO+c8g7/HvnGwL2RyhBffvBFOHM/ehin0GPn+w4SRIOULgPeT6hYnYe
-	cqNsohfPLvsB5fGxTv/5qvlQiB6hSKpAKHqdce3GEKnp8i1kyj7u5agO0yY0IXdHGoQoIBXM0IoGC
-	aPpg4ljg8HiezBEDg8VA==;
+	List-Owner; bh=kz5u6+Izq/NBZGfkAXe1JVfoeAzpQijYUT5lkpkxpQw=; b=PQPnQzi3HkS1vM
+	PdVDjUi7vpaT0rpi31PMqXfReXNJrWIdcE251CTC6wQaChDq9gm5kb4QLymr8R0iNewZJqxAIwfLy
+	VqJnAXj4WBfIs+Z6B7+kuSA4TtKYxJW1oEWqxtH4vDQIs/rhEGYVQqKqO0GA/PJtYN81JpAUeqk8S
+	nkvvQ7LmnHIsTdOoEuHsA0jK+/FAbkQBUg7zxTmUjev74mU5APScvAYihyrlXqMaYVOCXgLFDjRAv
+	bLwCU2JIkhREDoFThmWA9HHa1wdkI6DrEUhM8e9Dl+dUTpwKwZN9XuPx5pmBtKtkOupxN4h+yo5Mo
+	MExqrAJ0f7fL4m3hiMsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqdai-0005J8-O6; Thu, 25 Jul 2019 13:15:28 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1hqdbX-0005ye-Rf; Thu, 25 Jul 2019 13:16:20 +0000
+Received: from mail-ua1-x941.google.com ([2607:f8b0:4864:20::941])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqdZQ-0003R3-3F
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 13:14:12 +0000
-Received: by mail-lj1-x241.google.com with SMTP id k18so47930047ljc.11
+ id 1hqdak-0005gr-Vg
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 13:15:34 +0000
+Received: by mail-ua1-x941.google.com with SMTP id j8so19810439uan.6
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 25 Jul 2019 06:14:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:reply-to:from:date:message-id
- :subject:to:cc:content-transfer-encoding;
- bh=KgKbQn+sVtaYeJftRwYKqZockp8kTGU+oulqwixLW+w=;
- b=Kf3Z1S3rHqrjO1JoxJdWnKuBq8hN1KQIwgSpoPR00GOKJL3nGmYGed+tcTpj8qr2GB
- +v7HJMt9fxA+2jZBPUgP9hhAnYFR72DdyTp8/ATGS/ewqTcf0ASA7K9KfaJKhMZA4vZd
- 6vDFnnJDlMGVnajKl23G3fJSHXPaANDNf+UlcHmUe46sXRl5tpCzGSSsx6xF1L2sCMkw
- pTKPI0gZ9GkMqW2QIEOv6uyth18zlsjxH3vH+AC/3Vi56ujnMtPqEd1M/9tFpNqVStkl
- prodH09bb738Mr8sstAKfx6tK16+abbu1SV26muDqEUtaUc1ZzAraUZr13LdSnrKtafX
- hyMw==
+ Thu, 25 Jul 2019 06:15:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=FO+uLJoSuAxi+43r+XChAV6bGShjC1QQJr5a1Z10WA4=;
+ b=SAUoMUsSsOPwFEbODyYvbm0qMvAsZOalIvn8b5uw+acudLMMu9vygqpFvYjIJ7v7I9
+ DEfkoFimLuT9tH2qezkGjWP6KTnG6GK5CZNqoSP/6zUJMPIABBvtn9MlIPSI+5ccr3aZ
+ qEWB67oXNmMAOoPhko2gALVxZmmVMN0tygy080v6i5iHSMtnIJqCtp2YJPdrTY7uMGvQ
+ N53GfmIT+PdqasYZGMRI9R/s3QzGqObJm1QjeVCHced1Ly4fbVz8rheZdQzRNvkfxCXK
+ vrenlO6gbMi9+RLGXQSoM57X3UZsFZYpUEMYlTcichzx5w/aRtwqTcCPoTfHPz6iK/6w
+ znzA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:reply-to
- :from:date:message-id:subject:to:cc:content-transfer-encoding;
- bh=KgKbQn+sVtaYeJftRwYKqZockp8kTGU+oulqwixLW+w=;
- b=V4nvH/E0oNGKiCfpcJbUiuHPQnfSrTUFw+xMKF6CWMHPRzF0jNqTiXansvddYmh8NB
- 8xlp5MdeHPVHeT57YpG8/iXGv4QQxDAoY/mpMH3BOIblzPvMrBGgOOBCe27w01rDTy54
- UaAzs3s8RzxYU3IbUdTBXi72RYDLoW79UaI6sdJ/F1yzO7yDsq7oiObuhDjtr0NMjM5I
- JG+x+1LjnRqv5sbtShZU4bWwTUzHlq9pINa9i+qDnfJthOx8JtKjsUnBU6VP9Ang06ZU
- fGwZenRYysvu1ZmdkmjicgLzuEpEqVnVQx8Z8FWBJBLoiXe3E9QQNAb8KK2tr1d48o9p
- wBkw==
-X-Gm-Message-State: APjAAAUWYyO8HfvQacBbsmKjramPToUwNHwzPmZGnmjO5FELVP57h8bM
- DPCCk48MjfqeRocxzcwbLaIQdDtYIC9qhVyJQ9w=
-X-Google-Smtp-Source: APXvYqyTTtkZSLGybeBnj2BYoFqYLkzK/AMLxamssTlKXEad8A8gaXQC1+CN5OL/YGc0pcrVbBBEQ1iENKDqhDFdKKU=
-X-Received: by 2002:a2e:9198:: with SMTP id f24mr46939627ljg.221.1564060446021; 
- Thu, 25 Jul 2019 06:14:06 -0700 (PDT)
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=FO+uLJoSuAxi+43r+XChAV6bGShjC1QQJr5a1Z10WA4=;
+ b=gCDhfnNczRaUKZYDij/3vQpeo+kLDRfS6npqcMQtYoL3kCfIx7k9Ikx7WVELzsAxHF
+ D3fnpNawGkOO+NC/qmdnxt80k/GQZK8wcM7EGYA6b79N4SnF7U4pMU6zXV0AA8L+U/uQ
+ vrhJOk/MoNZUHE3KgC9qT/b5N8dZoZMmvozfNIoRn5IfAG2iYIFxfEhcVVxbQdc6ccmt
+ yH0hBbCgGppxXCgj6Q4slgAUjCJN9bsbD64sE9/w/im1nZdu4WrMeV7REO+dD71bZTc4
+ xs04CYLPlUWJ5YKs+1Bjj3op4qejh4z4z/IxILEeNIxoNFw/HqgvbjjSAIAA8hSD7QNZ
+ 2JWQ==
+X-Gm-Message-State: APjAAAVwuOq2YysTuH9j5G6Zr0Wid/rUue13fbKEJzEPVeOWkfYUUdcq
+ /ZnFAzfFYQknNU53TR4rh1qSHsBSf8tyiJz8SgSKQg==
+X-Google-Smtp-Source: APXvYqzaDFTzSxZuWbXn/auySeCIUcUcxXajq3YH1eaAMunNEBK04WM5xvy21BN7eG0KHX0O/0i+oo6dN036NrOJmUE=
+X-Received: by 2002:ab0:5973:: with SMTP id o48mr45127023uad.19.1564060529602; 
+ Thu, 25 Jul 2019 06:15:29 -0700 (PDT)
 MIME-Version: 1.0
-References: <CGME20190723122027eucas1p24b1d76e3139f7cc52614d7613ff9ba98@eucas1p2.samsung.com>
- <20190723122016.30279-1-a.swigon@partner.samsung.com>
- <20190723122016.30279-9-a.swigon@partner.samsung.com>
-In-Reply-To: <20190723122016.30279-9-a.swigon@partner.samsung.com>
-From: Chanwoo Choi <cwchoi00@gmail.com>
-Date: Thu, 25 Jul 2019 22:13:29 +0900
-Message-ID: <CAGTfZH1_Qk+vNa_AJW_8OA8MJbnZa3yCTLLRs2w23bNTm72gyQ@mail.gmail.com>
-Subject: Re: [RFC PATCH 08/11] arm: dts: exynos: Add parents and
- #interconnect-cells to Exynos4412
-To: =?UTF-8?B?QXJ0dXIgxZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>
+References: <74a6462743e3d73a630d2634880d8866daee333e.1564022625.git.baolin.wang@linaro.org>
+In-Reply-To: <74a6462743e3d73a630d2634880d8866daee333e.1564022625.git.baolin.wang@linaro.org>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Thu, 25 Jul 2019 15:14:53 +0200
+Message-ID: <CAPDyKFoNGZRdY3VVf6G9eNBfCyJbN5SUU2+fK24U-mHDX13oFQ@mail.gmail.com>
+Subject: Re: [PATCH v5] mmc: host: sdhci: Fix the incorrect soft reset
+ operation when runtime resuming
+To: Baolin Wang <baolin.wang@linaro.org>,
+ Adrian Hunter <adrian.hunter@intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_061408_779583_5DA4E281 
-X-CRM114-Status: GOOD (  14.04  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20190725_061531_169042_5CDF18F2 
+X-CRM114-Status: GOOD (  22.73  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:941 listed in]
  [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (cwchoi00[at]gmail.com)
- 0.2 FREEMAIL_REPLYTO_END_DIGIT Reply-To freemail username ends in
- digit (cwchoi00[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (cwchoi00[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -100,102 +92,230 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Reply-To: cwchoi00@gmail.com
-Cc: devicetree <devicetree@vger.kernel.org>,
- linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
- Linux PM list <linux-pm@vger.kernel.org>,
- Seung-Woo Kim <sw0312.kim@samsung.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, inki.dae@samsung.com,
- Chanwoo Choi <cw00.choi@samsung.com>, MyungJoo Ham <myungjoo.ham@samsung.com>,
- Krzysztof Kozlowski <krzk@kernel.org>, georgi.djakov@linaro.org,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Chunyan Zhang <zhang.lyra@gmail.com>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MjAxOeuFhCA37JuUIDI07J28ICjsiJgpIOyYpOyghCA4OjA3LCBBcnR1ciDFmndpZ2/FhCA8YS5z
-d2lnb25AcGFydG5lci5zYW1zdW5nLmNvbT7ri5jsnbQg7J6R7ISxOgo+Cj4gVGhpcyBwYXRjaCBh
-ZGRzIHR3byBmaWVsZHMgdHAgdGhlIEV4eW5vczQ0MTIgRFRTOgo+ICAgLSBwYXJlbnQ6IHRvIGRl
-Y2xhcmUgY29ubmVjdGlvbnMgYmV0d2VlbiBub2RlcyB0aGF0IGFyZSBub3QgaW4gYQo+ICAgICBw
-YXJlbnQtY2hpbGQgcmVsYXRpb24gaW4gZGV2ZnJlcTsKPiAgIC0gI2ludGVyY29ubmVjdC1jZWxs
-czogcmVxdWlyZWQgYnkgdGhlIGludGVyY29ubmVjdCBmcmFtZXdvcmsuCj4KPiBQbGVhc2Ugbm90
-ZSB0aGF0ICNpbnRlcmNvbm5lY3QtY2VsbHMgaXMgYWx3YXlzIHplcm8gYW5kIG5vZGUgSURzIGFy
-ZSBub3QKPiBoYXJkY29kZWQgYW55d2hlcmUuCj4KPiBTaWduZWQtb2ZmLWJ5OiBBcnR1ciDFmndp
-Z2/FhCA8YS5zd2lnb25AcGFydG5lci5zYW1zdW5nLmNvbT4KPiAtLS0KPiAgYXJjaC9hcm0vYm9v
-dC9kdHMvZXh5bm9zNDQxMi1vZHJvaWQtY29tbW9uLmR0c2kgfCAxICsKPiAgYXJjaC9hcm0vYm9v
-dC9kdHMvZXh5bm9zNDQxMi5kdHNpICAgICAgICAgICAgICAgfCA5ICsrKysrKysrKwo+ICAyIGZp
-bGVzIGNoYW5nZWQsIDEwIGluc2VydGlvbnMoKykKPgo+IGRpZmYgLS1naXQgYS9hcmNoL2FybS9i
-b290L2R0cy9leHlub3M0NDEyLW9kcm9pZC1jb21tb24uZHRzaSBiL2FyY2gvYXJtL2Jvb3QvZHRz
-L2V4eW5vczQ0MTItb2Ryb2lkLWNvbW1vbi5kdHNpCj4gaW5kZXggZWE1NWYzNzdkMTdjLi5iZGQ2
-MWFlODYxMDMgMTAwNjQ0Cj4gLS0tIGEvYXJjaC9hcm0vYm9vdC9kdHMvZXh5bm9zNDQxMi1vZHJv
-aWQtY29tbW9uLmR0c2kKPiArKysgYi9hcmNoL2FybS9ib290L2R0cy9leHlub3M0NDEyLW9kcm9p
-ZC1jb21tb24uZHRzaQo+IEBAIC0xMDYsNiArMTA2LDcgQEAKPiAgJmJ1c19sZWZ0YnVzIHsKPiAg
-ICAgICAgIGRldmZyZXEtZXZlbnRzID0gPCZwcG11X2xlZnRidXNfMz4sIDwmcHBtdV9yaWdodGJ1
-c18zPjsKPiAgICAgICAgIHZkZC1zdXBwbHkgPSA8JmJ1Y2szX3JlZz47Cj4gKyAgICAgICBwYXJl
-bnQgPSA8JmJ1c19kbWM+OwoKSXQgaXMgd3JvbmcuICdidXNfbGVmdGJ1cycgaGFzIG5vdCBhbnkg
-aC93IGRlcGVuZGVuY3kgb2YgJ2J1c19kbWMnCmFuZCAnYnVzX2xlZnRidXMnIGlzIG5vdCBjaGls
-ZCBvZiAnYnVzX2RtYycuCgpFdmVuIGl0IHRoZXJlIGFyZSBzb21lIFBNUW9TIHJlcXVpcmVtZW50
-IGJldHdlZW4gdGhlbSwKaXQgaXQgbm90IHByb3BlciB0byB0aWUgYm90aCAnYnVzX2xlZnRidXMn
-IGFuZCAnYnVzX2RtYycuCgo+ICAgICAgICAgc3RhdHVzID0gIm9rYXkiOwo+ICB9Owo+Cj4gZGlm
-ZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL2V4eW5vczQ0MTIuZHRzaSBiL2FyY2gvYXJtL2Jv
-b3QvZHRzL2V4eW5vczQ0MTIuZHRzaQo+IGluZGV4IGQyMGRiMmRmZThlMi4uYTcwYTY3MWFjYWNk
-IDEwMDY0NAo+IC0tLSBhL2FyY2gvYXJtL2Jvb3QvZHRzL2V4eW5vczQ0MTIuZHRzaQo+ICsrKyBi
-L2FyY2gvYXJtL2Jvb3QvZHRzL2V4eW5vczQ0MTIuZHRzaQo+IEBAIC0zOTAsNiArMzkwLDcgQEAK
-PiAgICAgICAgICAgICAgICAgICAgICAgICBjbG9ja3MgPSA8JmNsb2NrIENMS19ESVZfRE1DPjsK
-PiAgICAgICAgICAgICAgICAgICAgICAgICBjbG9jay1uYW1lcyA9ICJidXMiOwo+ICAgICAgICAg
-ICAgICAgICAgICAgICAgIG9wZXJhdGluZy1wb2ludHMtdjIgPSA8JmJ1c19kbWNfb3BwX3RhYmxl
-PjsKPiArICAgICAgICAgICAgICAgICAgICAgICAjaW50ZXJjb25uZWN0LWNlbGxzID0gPDA+Owo+
-ICAgICAgICAgICAgICAgICAgICAgICAgIHN0YXR1cyA9ICJkaXNhYmxlZCI7Cj4gICAgICAgICAg
-ICAgICAgIH07Cj4KPiBAQCAtMzk4LDYgKzM5OSw3IEBACj4gICAgICAgICAgICAgICAgICAgICAg
-ICAgY2xvY2tzID0gPCZjbG9jayBDTEtfRElWX0FDUD47Cj4gICAgICAgICAgICAgICAgICAgICAg
-ICAgY2xvY2stbmFtZXMgPSAiYnVzIjsKPiAgICAgICAgICAgICAgICAgICAgICAgICBvcGVyYXRp
-bmctcG9pbnRzLXYyID0gPCZidXNfYWNwX29wcF90YWJsZT47Cj4gKyAgICAgICAgICAgICAgICAg
-ICAgICAgI2ludGVyY29ubmVjdC1jZWxscyA9IDwwPjsKPiAgICAgICAgICAgICAgICAgICAgICAg
-ICBzdGF0dXMgPSAiZGlzYWJsZWQiOwo+ICAgICAgICAgICAgICAgICB9Owo+Cj4gQEAgLTQwNiw2
-ICs0MDgsNyBAQAo+ICAgICAgICAgICAgICAgICAgICAgICAgIGNsb2NrcyA9IDwmY2xvY2sgQ0xL
-X0RJVl9DMkM+Owo+ICAgICAgICAgICAgICAgICAgICAgICAgIGNsb2NrLW5hbWVzID0gImJ1cyI7
-Cj4gICAgICAgICAgICAgICAgICAgICAgICAgb3BlcmF0aW5nLXBvaW50cy12MiA9IDwmYnVzX2Rt
-Y19vcHBfdGFibGU+Owo+ICsgICAgICAgICAgICAgICAgICAgICAgICNpbnRlcmNvbm5lY3QtY2Vs
-bHMgPSA8MD47Cj4gICAgICAgICAgICAgICAgICAgICAgICAgc3RhdHVzID0gImRpc2FibGVkIjsK
-PiAgICAgICAgICAgICAgICAgfTsKPgo+IEBAIC00NTksNiArNDYyLDcgQEAKPiAgICAgICAgICAg
-ICAgICAgICAgICAgICBjbG9ja3MgPSA8JmNsb2NrIENMS19ESVZfR0RMPjsKPiAgICAgICAgICAg
-ICAgICAgICAgICAgICBjbG9jay1uYW1lcyA9ICJidXMiOwo+ICAgICAgICAgICAgICAgICAgICAg
-ICAgIG9wZXJhdGluZy1wb2ludHMtdjIgPSA8JmJ1c19sZWZ0YnVzX29wcF90YWJsZT47Cj4gKyAg
-ICAgICAgICAgICAgICAgICAgICAgI2ludGVyY29ubmVjdC1jZWxscyA9IDwwPjsKPiAgICAgICAg
-ICAgICAgICAgICAgICAgICBzdGF0dXMgPSAiZGlzYWJsZWQiOwo+ICAgICAgICAgICAgICAgICB9
-Owo+Cj4gQEAgLTQ2Nyw2ICs0NzEsNyBAQAo+ICAgICAgICAgICAgICAgICAgICAgICAgIGNsb2Nr
-cyA9IDwmY2xvY2sgQ0xLX0RJVl9HRFI+Owo+ICAgICAgICAgICAgICAgICAgICAgICAgIGNsb2Nr
-LW5hbWVzID0gImJ1cyI7Cj4gICAgICAgICAgICAgICAgICAgICAgICAgb3BlcmF0aW5nLXBvaW50
-cy12MiA9IDwmYnVzX2xlZnRidXNfb3BwX3RhYmxlPjsKPiArICAgICAgICAgICAgICAgICAgICAg
-ICAjaW50ZXJjb25uZWN0LWNlbGxzID0gPDA+Owo+ICAgICAgICAgICAgICAgICAgICAgICAgIHN0
-YXR1cyA9ICJkaXNhYmxlZCI7Cj4gICAgICAgICAgICAgICAgIH07Cj4KPiBAQCAtNDc1LDYgKzQ4
-MCw3IEBACj4gICAgICAgICAgICAgICAgICAgICAgICAgY2xvY2tzID0gPCZjbG9jayBDTEtfQUNM
-SzE2MD47Cj4gICAgICAgICAgICAgICAgICAgICAgICAgY2xvY2stbmFtZXMgPSAiYnVzIjsKPiAg
-ICAgICAgICAgICAgICAgICAgICAgICBvcGVyYXRpbmctcG9pbnRzLXYyID0gPCZidXNfZGlzcGxh
-eV9vcHBfdGFibGU+Owo+ICsgICAgICAgICAgICAgICAgICAgICAgICNpbnRlcmNvbm5lY3QtY2Vs
-bHMgPSA8MD47Cj4gICAgICAgICAgICAgICAgICAgICAgICAgc3RhdHVzID0gImRpc2FibGVkIjsK
-PiAgICAgICAgICAgICAgICAgfTsKPgo+IEBAIC00ODMsNiArNDg5LDcgQEAKPiAgICAgICAgICAg
-ICAgICAgICAgICAgICBjbG9ja3MgPSA8JmNsb2NrIENMS19BQ0xLMTMzPjsKPiAgICAgICAgICAg
-ICAgICAgICAgICAgICBjbG9jay1uYW1lcyA9ICJidXMiOwo+ICAgICAgICAgICAgICAgICAgICAg
-ICAgIG9wZXJhdGluZy1wb2ludHMtdjIgPSA8JmJ1c19mc3lzX29wcF90YWJsZT47Cj4gKyAgICAg
-ICAgICAgICAgICAgICAgICAgI2ludGVyY29ubmVjdC1jZWxscyA9IDwwPjsKPiAgICAgICAgICAg
-ICAgICAgICAgICAgICBzdGF0dXMgPSAiZGlzYWJsZWQiOwo+ICAgICAgICAgICAgICAgICB9Owo+
-Cj4gQEAgLTQ5MSw2ICs0OTgsNyBAQAo+ICAgICAgICAgICAgICAgICAgICAgICAgIGNsb2NrcyA9
-IDwmY2xvY2sgQ0xLX0FDTEsxMDA+Owo+ICAgICAgICAgICAgICAgICAgICAgICAgIGNsb2NrLW5h
-bWVzID0gImJ1cyI7Cj4gICAgICAgICAgICAgICAgICAgICAgICAgb3BlcmF0aW5nLXBvaW50cy12
-MiA9IDwmYnVzX3Blcmlfb3BwX3RhYmxlPjsKPiArICAgICAgICAgICAgICAgICAgICAgICAjaW50
-ZXJjb25uZWN0LWNlbGxzID0gPDA+Owo+ICAgICAgICAgICAgICAgICAgICAgICAgIHN0YXR1cyA9
-ICJkaXNhYmxlZCI7Cj4gICAgICAgICAgICAgICAgIH07Cj4KPiBAQCAtNDk5LDYgKzUwNyw3IEBA
-Cj4gICAgICAgICAgICAgICAgICAgICAgICAgY2xvY2tzID0gPCZjbG9jayBDTEtfU0NMS19NRkM+
-Owo+ICAgICAgICAgICAgICAgICAgICAgICAgIGNsb2NrLW5hbWVzID0gImJ1cyI7Cj4gICAgICAg
-ICAgICAgICAgICAgICAgICAgb3BlcmF0aW5nLXBvaW50cy12MiA9IDwmYnVzX2xlZnRidXNfb3Bw
-X3RhYmxlPjsKPiArICAgICAgICAgICAgICAgICAgICAgICAjaW50ZXJjb25uZWN0LWNlbGxzID0g
-PDA+Owo+ICAgICAgICAgICAgICAgICAgICAgICAgIHN0YXR1cyA9ICJkaXNhYmxlZCI7Cj4gICAg
-ICAgICAgICAgICAgIH07Cj4KPiAtLQo+IDIuMTcuMQo+CgoKLS0gCkJlc3QgUmVnYXJkcywKQ2hh
-bndvbyBDaG9pCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-XwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmlu
-ZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
-aW51eC1hcm0ta2VybmVsCg==
+- Trimmed cc list
+
+On Thu, 25 Jul 2019 at 05:14, Baolin Wang <baolin.wang@linaro.org> wrote:
+>
+> The SD host controller specification defines 3 types software reset:
+> software reset for data line, software reset for command line and
+> software reset for all. Software reset for all means this reset affects
+> the entire Host controller except for the card detection circuit.
+>
+> In sdhci_runtime_resume_host() function, now we will always do software
+> reset for all, which will cause Spreadtrum host controller work abnormally
+> after resuming. For Spreadtrum platform that will not power down the SD/eMMC
+> card during runtime suspend, we should just do software reset for data
+> and command instead doing reset for all.
+>
+> To fix this issue, this patch introduces a new parameter of
+> sdhci_runtime_resume_host() to let it decide if a 'reset for all' shall
+> be done or not. Meanwhile changes other host drivers to issue a software
+> reset for all to keep the original logic.
+>
+> Signed-off-by: Baolin Wang <baolin.wang@linaro.org>
+
+Applied for next, with a little change (renaming the "soft"
+in-parameter to soft_reset), thanks!
+
+Adrian, if there is anything you want to change, please tell.
+
+BTW, perhaps this should be applied for fixes and tagged for stable?
+Baolin, if so, can point me the commit (or stable tag) the patch
+fixes?
+
+Kind regards
+Uffe
+
+
+
+> ---
+> Changes from v4:
+>  - Update the commit message.
+>  - Add a new parameter to decide if a 'reset for all' shall be done or not.
+>
+> Changes from v3:
+>  - Use ios.power_mode to validate if the card is power down or not.
+>
+> Changes from v2:
+>  - Simplify the sdhci_sprd_reset() by issuing sdhci_reset().
+>
+> Changes from v1:
+>  - Add a specific reset operation instead of changing the core to avoid
+>  affecting other hardware.
+> ---
+>  drivers/mmc/host/sdhci-acpi.c      |    2 +-
+>  drivers/mmc/host/sdhci-esdhc-imx.c |    2 +-
+>  drivers/mmc/host/sdhci-of-at91.c   |    2 +-
+>  drivers/mmc/host/sdhci-pci-core.c  |    4 ++--
+>  drivers/mmc/host/sdhci-pxav3.c     |    2 +-
+>  drivers/mmc/host/sdhci-s3c.c       |    2 +-
+>  drivers/mmc/host/sdhci-sprd.c      |    2 +-
+>  drivers/mmc/host/sdhci-xenon.c     |    2 +-
+>  drivers/mmc/host/sdhci.c           |    4 ++--
+>  drivers/mmc/host/sdhci.h           |    2 +-
+>  10 files changed, 12 insertions(+), 12 deletions(-)
+>
+> diff --git a/drivers/mmc/host/sdhci-acpi.c b/drivers/mmc/host/sdhci-acpi.c
+> index b3a130a..1604f51 100644
+> --- a/drivers/mmc/host/sdhci-acpi.c
+> +++ b/drivers/mmc/host/sdhci-acpi.c
+> @@ -883,7 +883,7 @@ static int sdhci_acpi_runtime_resume(struct device *dev)
+>
+>         sdhci_acpi_byt_setting(&c->pdev->dev);
+>
+> -       return sdhci_runtime_resume_host(c->host);
+> +       return sdhci_runtime_resume_host(c->host, 0);
+>  }
+>
+>  #endif
+> diff --git a/drivers/mmc/host/sdhci-esdhc-imx.c b/drivers/mmc/host/sdhci-esdhc-imx.c
+> index c391510..776a942 100644
+> --- a/drivers/mmc/host/sdhci-esdhc-imx.c
+> +++ b/drivers/mmc/host/sdhci-esdhc-imx.c
+> @@ -1705,7 +1705,7 @@ static int sdhci_esdhc_runtime_resume(struct device *dev)
+>                 esdhc_pltfm_set_clock(host, imx_data->actual_clock);
+>         }
+>
+> -       err = sdhci_runtime_resume_host(host);
+> +       err = sdhci_runtime_resume_host(host, 0);
+>         if (err)
+>                 goto disable_ipg_clk;
+>
+> diff --git a/drivers/mmc/host/sdhci-of-at91.c b/drivers/mmc/host/sdhci-of-at91.c
+> index e377b9b..d4e7e8b 100644
+> --- a/drivers/mmc/host/sdhci-of-at91.c
+> +++ b/drivers/mmc/host/sdhci-of-at91.c
+> @@ -289,7 +289,7 @@ static int sdhci_at91_runtime_resume(struct device *dev)
+>         }
+>
+>  out:
+> -       return sdhci_runtime_resume_host(host);
+> +       return sdhci_runtime_resume_host(host, 0);
+>  }
+>  #endif /* CONFIG_PM */
+>
+> diff --git a/drivers/mmc/host/sdhci-pci-core.c b/drivers/mmc/host/sdhci-pci-core.c
+> index 4041878..7d06e28 100644
+> --- a/drivers/mmc/host/sdhci-pci-core.c
+> +++ b/drivers/mmc/host/sdhci-pci-core.c
+> @@ -167,7 +167,7 @@ static int sdhci_pci_runtime_suspend_host(struct sdhci_pci_chip *chip)
+>
+>  err_pci_runtime_suspend:
+>         while (--i >= 0)
+> -               sdhci_runtime_resume_host(chip->slots[i]->host);
+> +               sdhci_runtime_resume_host(chip->slots[i]->host, 0);
+>         return ret;
+>  }
+>
+> @@ -181,7 +181,7 @@ static int sdhci_pci_runtime_resume_host(struct sdhci_pci_chip *chip)
+>                 if (!slot)
+>                         continue;
+>
+> -               ret = sdhci_runtime_resume_host(slot->host);
+> +               ret = sdhci_runtime_resume_host(slot->host, 0);
+>                 if (ret)
+>                         return ret;
+>         }
+> diff --git a/drivers/mmc/host/sdhci-pxav3.c b/drivers/mmc/host/sdhci-pxav3.c
+> index 3ddecf4..e55037c 100644
+> --- a/drivers/mmc/host/sdhci-pxav3.c
+> +++ b/drivers/mmc/host/sdhci-pxav3.c
+> @@ -554,7 +554,7 @@ static int sdhci_pxav3_runtime_resume(struct device *dev)
+>         if (!IS_ERR(pxa->clk_core))
+>                 clk_prepare_enable(pxa->clk_core);
+>
+> -       return sdhci_runtime_resume_host(host);
+> +       return sdhci_runtime_resume_host(host, 0);
+>  }
+>  #endif
+>
+> diff --git a/drivers/mmc/host/sdhci-s3c.c b/drivers/mmc/host/sdhci-s3c.c
+> index 8e4a8ba..f5753ae 100644
+> --- a/drivers/mmc/host/sdhci-s3c.c
+> +++ b/drivers/mmc/host/sdhci-s3c.c
+> @@ -745,7 +745,7 @@ static int sdhci_s3c_runtime_resume(struct device *dev)
+>         clk_prepare_enable(busclk);
+>         if (ourhost->cur_clk >= 0)
+>                 clk_prepare_enable(ourhost->clk_bus[ourhost->cur_clk]);
+> -       ret = sdhci_runtime_resume_host(host);
+> +       ret = sdhci_runtime_resume_host(host, 0);
+>         return ret;
+>  }
+>  #endif
+> diff --git a/drivers/mmc/host/sdhci-sprd.c b/drivers/mmc/host/sdhci-sprd.c
+> index 603a5d9..83a4767 100644
+> --- a/drivers/mmc/host/sdhci-sprd.c
+> +++ b/drivers/mmc/host/sdhci-sprd.c
+> @@ -696,7 +696,7 @@ static int sdhci_sprd_runtime_resume(struct device *dev)
+>         if (ret)
+>                 goto clk_disable;
+>
+> -       sdhci_runtime_resume_host(host);
+> +       sdhci_runtime_resume_host(host, 1);
+>         return 0;
+>
+>  clk_disable:
+> diff --git a/drivers/mmc/host/sdhci-xenon.c b/drivers/mmc/host/sdhci-xenon.c
+> index 8a18f14..1dea1ba 100644
+> --- a/drivers/mmc/host/sdhci-xenon.c
+> +++ b/drivers/mmc/host/sdhci-xenon.c
+> @@ -638,7 +638,7 @@ static int xenon_runtime_resume(struct device *dev)
+>                 priv->restore_needed = false;
+>         }
+>
+> -       ret = sdhci_runtime_resume_host(host);
+> +       ret = sdhci_runtime_resume_host(host, 0);
+>         if (ret)
+>                 goto out;
+>         return 0;
+> diff --git a/drivers/mmc/host/sdhci.c b/drivers/mmc/host/sdhci.c
+> index 59acf8e..4e9ebc8 100644
+> --- a/drivers/mmc/host/sdhci.c
+> +++ b/drivers/mmc/host/sdhci.c
+> @@ -3320,7 +3320,7 @@ int sdhci_runtime_suspend_host(struct sdhci_host *host)
+>  }
+>  EXPORT_SYMBOL_GPL(sdhci_runtime_suspend_host);
+>
+> -int sdhci_runtime_resume_host(struct sdhci_host *host)
+> +int sdhci_runtime_resume_host(struct sdhci_host *host, int soft)
+>  {
+>         struct mmc_host *mmc = host->mmc;
+>         unsigned long flags;
+> @@ -3331,7 +3331,7 @@ int sdhci_runtime_resume_host(struct sdhci_host *host)
+>                         host->ops->enable_dma(host);
+>         }
+>
+> -       sdhci_init(host, 0);
+> +       sdhci_init(host, soft);
+>
+>         if (mmc->ios.power_mode != MMC_POWER_UNDEFINED &&
+>             mmc->ios.power_mode != MMC_POWER_OFF) {
+> diff --git a/drivers/mmc/host/sdhci.h b/drivers/mmc/host/sdhci.h
+> index 89fd965..f3cd516 100644
+> --- a/drivers/mmc/host/sdhci.h
+> +++ b/drivers/mmc/host/sdhci.h
+> @@ -781,7 +781,7 @@ void sdhci_adma_write_desc(struct sdhci_host *host, void **desc,
+>  int sdhci_suspend_host(struct sdhci_host *host);
+>  int sdhci_resume_host(struct sdhci_host *host);
+>  int sdhci_runtime_suspend_host(struct sdhci_host *host);
+> -int sdhci_runtime_resume_host(struct sdhci_host *host);
+> +int sdhci_runtime_resume_host(struct sdhci_host *host, int soft);
+>  #endif
+>
+>  void sdhci_cqe_enable(struct mmc_host *mmc);
+> --
+> 1.7.9.5
+>
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
