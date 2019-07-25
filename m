@@ -2,72 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5BE7748F1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 10:18:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C092F748FA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 10:21:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sPMEhCBq7kyKq00eA01e8EA5Tz9m3ZfLthXVKbgRJFo=; b=pNWv49uB8w+CT3
-	2YPqUt+3wt/8Si7GOb4R4nyhGSWK1wl4piFjG2a6mGi6ZitCngqZTLSkpdxSEDAHWWtMCLR3IdAEj
-	LXAousCFJ0PxCcs4HM+WzfmE823xMh+25iiCEm3L4jTNyndibgf08eJc3tp/VC8gh9gPswcL+vkoN
-	D8vxR9ik/TbGjESROQBcUD6gWdJqkXh4vAWjE/i4dkAwwKL8ri5n7o1vQmtxga61G5x8+bg0V87cE
-	OF6Wf3SYzYEIMZ0+vz59bj1qQdxkagVKP9LTVjLaym/w0EcJQfSvC3G5zYr71hYR629V8hU605G3n
-	NoHdEpzay4ajMNeKhxvw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=sttUdAu6it13fE+BA4Htvr9x7s1ecO/XIDU1Q5qEXKg=; b=aU5S/VyUGNU8Jk
+	o0aGj2OXfautTHo/RFA3sAfVrNishcWkEmAVzrICQWyNxFn7IQSpfcqF1Aa0XHE/XzWna6koaNlDR
+	TMW1J1QlntXclx4JCXrW1ZQFYQPBeQEEreTvqesvjofOhhvlygT36ceq9yb6PL8C5AoZJA+trpaoP
+	ibuBuOm+BpV9wfYY9/j6GcM+qJxvyw1Cpw3c1cNiUxUwaKpSGE+FGESv8zoq+raYw5dmwwO7eHVPY
+	M8bsipg+HPuWUVK+gVGEiW8thtY8AaAR3990jN3/MLON0Sy0Mro2Kv8GXE9iKehRM2yEu7+PAw/zZ
+	C1jI4cqJP5byUkvjss0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqYwy-0004q3-4Y; Thu, 25 Jul 2019 08:18:08 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hqYzm-0006g2-6R; Thu, 25 Jul 2019 08:21:02 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqYvO-00043m-MO
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 08:16:34 +0000
-Received: from localhost.localdomain (NE2965lan1.rev.em-net.ne.jp
- [210.141.244.193])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id F351820657;
- Thu, 25 Jul 2019 08:16:27 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564042590;
- bh=U5JsQy9M6SP8lvveNoBirJFjzlJL4CpLUxow+e3YRvo=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=bXA7Rl4m1FdAnDljrSpbxyNrTH2z8iih7Q6dNDIACq/JZ2YEq6oyUBvUr6O4tztZK
- 0C++xAFHag/f4QcJPiuQfC4xCDiH0v4SAqAfBopH46lPyCOKPKYs/Q4YwUtX8nD+SE
- p5/l8oVtssyFD3TRWXmyN0IPESb1pyg1C8xqZyeE=
-From: Masami Hiramatsu <mhiramat@kernel.org>
-To: Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>
-Subject: [PATCH v3 4/4] arm64: Remove unneeded rcu_read_lock from debug
- handlers
-Date: Thu, 25 Jul 2019 17:16:25 +0900
-Message-Id: <156404258547.2020.3652813018925680357.stgit@devnote2>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <156404254387.2020.886452004489353899.stgit@devnote2>
-References: <156404254387.2020.886452004489353899.stgit@devnote2>
-User-Agent: StGit/0.17.1-dirty
+ id 1hqYz6-0006On-Rx; Thu, 25 Jul 2019 08:20:22 +0000
+X-UUID: e86d0033c861483795bab84500a6fdc2-20190725
+X-UUID: e86d0033c861483795bab84500a6fdc2-20190725
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <yong.liang@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1812702282; Thu, 25 Jul 2019 00:20:15 -0800
+Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 25 Jul 2019 01:20:14 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 25 Jul 2019 16:20:12 +0800
+Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 25 Jul 2019 16:20:11 +0800
+From: Yong Liang <yong.liang@mediatek.com>
+To: <mturquette@baylibre.com>, <sboyd@kernel.org>, <matthias.bgg@gmail.com>,
+ <robh+dt@kernel.org>, <mark.rutland@arm.com>, <drinkcat@chromium.org>,
+ <weiyi.lu@mediatek.com>, <jamesjj.liao@mediatek.com>, <jasu@njomotys.info>,
+ <owen.chen@mediatek.com>, <chunhui.dai@mediatek.com>, <erin.lo@mediatek.com>, 
+ <eddie.huang@mediatek.com>
+Subject: [PATCH v4,1/2] arm64: dts: mt8183: Add reset-cells in infracfg
+Date: Thu, 25 Jul 2019 16:20:01 +0800
+Message-ID: <20190725082002.17400-1-yong.liang@mediatek.com>
+X-Mailer: git-send-email 2.18.0
 MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_011632_440479_DBA79078 
-X-CRM114-Status: GOOD (  11.75  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190725_012020_906288_6B339FAE 
+X-CRM114-Status: UNSURE (   7.67  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,71 +75,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dan Rue <dan.rue@linaro.org>, Daniel Diaz <daniel.diaz@linaro.org>,
- Anders Roxell <anders.roxell@linaro.org>,
- Naresh Kamboju <naresh.kamboju@linaro.org>, linux-kernel@vger.kernel.org,
- Matt Hart <matthew.hart@linaro.org>,
- "Paul E . McKenney" <paulmck@linux.ibm.com>,
- linux-arm-kernel@lists.infradead.org, mhiramat@kernel.org
+Cc: "yong.liang" <yong.liang@mediatek.com>, linux-mediatek@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Remove rcu_read_lock()/rcu_read_unlock() from debug exception
-handlers since we are sure those are not preemptible and
-interrupts are off.
+From: "yong.liang" <yong.liang@mediatek.com>
 
-Acked-by: Paul E. McKenney <paulmck@linux.ibm.com>
-Signed-off-by: Masami Hiramatsu <mhiramat@kernel.org>
+Include mt8183-reset.h and add reset-cells in infracfg in
+dtsi file.
+
+Signed-off-by: yong.liang <yong.liang@mediatek.com>
 ---
- arch/arm64/kernel/debug-monitors.c |   14 ++++++++------
- 1 file changed, 8 insertions(+), 6 deletions(-)
+ arch/arm64/boot/dts/mediatek/mt8183.dtsi | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/arch/arm64/kernel/debug-monitors.c b/arch/arm64/kernel/debug-monitors.c
-index f8719bd30850..48222a4760c2 100644
---- a/arch/arm64/kernel/debug-monitors.c
-+++ b/arch/arm64/kernel/debug-monitors.c
-@@ -207,16 +207,16 @@ static int call_step_hook(struct pt_regs *regs, unsigned int esr)
+diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
+index 08274bfcebd8..2589e9461c6e 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
+@@ -8,6 +8,7 @@
+ #include <dt-bindings/clock/mt8183-clk.h>
+ #include <dt-bindings/interrupt-controller/arm-gic.h>
+ #include <dt-bindings/interrupt-controller/irq.h>
++#include <dt-bindings/reset-controller/mt8183-resets.h>
  
- 	list = user_mode(regs) ? &user_step_hook : &kernel_step_hook;
+ / {
+ 	compatible = "mediatek,mt8183";
+@@ -194,6 +195,7 @@
+ 			compatible = "mediatek,mt8183-infracfg", "syscon";
+ 			reg = <0 0x10001000 0 0x1000>;
+ 			#clock-cells = <1>;
++			#reset-cells = <1>;
+ 		};
  
--	rcu_read_lock();
--
-+	/*
-+	 * Since single-step exception disables interrupt, this function is
-+	 * entirely not preemptible, and we can use rcu list safely here.
-+	 */
- 	list_for_each_entry_rcu(hook, list, node)	{
- 		retval = hook->fn(regs, esr);
- 		if (retval == DBG_HOOK_HANDLED)
- 			break;
- 	}
- 
--	rcu_read_unlock();
--
- 	return retval;
- }
- NOKPROBE_SYMBOL(call_step_hook);
-@@ -305,14 +305,16 @@ static int call_break_hook(struct pt_regs *regs, unsigned int esr)
- 
- 	list = user_mode(regs) ? &user_break_hook : &kernel_break_hook;
- 
--	rcu_read_lock();
-+	/*
-+	 * Since brk exception disables interrupt, this function is
-+	 * entirely not preemptible, and we can use rcu list safely here.
-+	 */
- 	list_for_each_entry_rcu(hook, list, node) {
- 		unsigned int comment = esr & ESR_ELx_BRK64_ISS_COMMENT_MASK;
- 
- 		if ((comment & ~hook->mask) == hook->imm)
- 			fn = hook->fn;
- 	}
--	rcu_read_unlock();
- 
- 	return fn ? fn(regs, esr) : DBG_HOOK_ERROR;
- }
+ 		apmixedsys: syscon@1000c000 {
+-- 
+2.18.0
 
 
 _______________________________________________
