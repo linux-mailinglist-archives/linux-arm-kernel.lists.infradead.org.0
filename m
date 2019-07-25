@@ -2,82 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E189674EE0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 15:13:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 25DB574EE3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 15:13:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=9y3N1rHuPWdRTnJPCtnZC7jdEVr7s/KDH7HFEqNlhk8=; b=uTT0khxX2N0zZA
-	VGGtNP/K2kDDw2c3Bh5ev+83uwEb5YeZ7hR2XdRAIgWfiIWjIVMz2WxKaQyxO3Wth5xocbFuksJ8+
-	nyZX5S1AJWsuOJ6YALH2Z3FsBEZIzv/mQoLXkJhLjXKAGxpRGEcq52gtmVhrARbcAOp5c2qcQcHqx
-	g5vPpAI6VEj5DiKWriF1y78FdC6ktqDIPuC7BZEecVS30ZgrAPVKjkK9A/uOO70NQs9/BCeuMbPsL
-	u+CcZTZyMTilDvIQoCmCHdDzYEXIioxGaGyMfMNQVC6orc4heJPskDeYRlY1cJg40905JP9zYikA4
-	T7RZV+Uqmg1aFvZ+RglA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=aBTCUf4epWSS8E7vey8HUqIHwNGp1RxeAMs+Ruv8HvM=; b=VPMNIN/amRYN5n
+	8sls9qeq1fgseHMSu+R8FuV+hCWdCNpuNvGC7csfW3yybH9i14NAtTojGdm9WYOrjLBGthzijfUBq
+	N0vr0Cn+Tua12tXjzENB2sbB39w929KhGYHGSExZvgTa7c3jCaT9pmNGgHDod/7N7W3x9bNq4KmWO
+	gqpV8ZhnG+elOtBig/Vx86QLumM/h9gpddE+dlz3LAis/4FOLQbIlaLcAAqBKfzmbyVT/gItDvH7b
+	m7BxkUJlxLvFiZlYkIuHE4An+aFGga6soypUuWcAaGjmrHpAcNkerV7V7fKzhzmovq1sLL64AxE91
+	1JB27ElLfsMjJJXADh8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqdYg-0002jb-SI; Thu, 25 Jul 2019 13:13:22 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1hqdZ0-0002uw-Or; Thu, 25 Jul 2019 13:13:42 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqdYP-0002iH-Ge
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 13:13:06 +0000
-Received: by mail-wm1-x341.google.com with SMTP id a15so44960641wmj.5
+ id 1hqdYQ-0002iO-MO
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 13:13:08 +0000
+Received: by mail-wr1-x441.google.com with SMTP id n9so25663667wrr.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 25 Jul 2019 06:13:03 -0700 (PDT)
+ Thu, 25 Jul 2019 06:13:04 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=UlHPQbgyQYfGZ3NYNuBRx+Lr52kdbe694moegnICIVc=;
- b=NifUXO46j7w7Famst0qSTWA+/NAM63+P3EEYOVDutdfzQG+lK0vxeP1W9KJl2ETjQ7
- JYP0quRtoQLFtAnCn7C6Pc3FPDxtA/BAwt2L8CF4rT2eLsfFPOexvuzSo5aEgUenXEKF
- 0xJD1ZPaQUgYskYoku7SCxlDucpHqt4XuP4VpktEH/xgT+qb9NxNwqJ6vKAo+oM+K7qJ
- p4pv+z98jk9nWshsZwikW5iH3QZiYecYIXm8id5dC6AdA6RFNy94z/9qQA1s7rRTS9S7
- o0jU6sDTrVHcIz8qEpotKPocMOYRC8+R1o2j3d6Xj22b4M+z7IhWR0RELbV6dSxIxFfI
- Ojmg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=X7EMLPA/uXshrhX8tUHlB7rWmq/Bv+vAhoVTbSln7+0=;
+ b=Fv54TOX6FNJ//eMWDstY7AgTcgwfVv92yemrD2sdaPfTVJkl9bvR8YctNNHR7vFO8c
+ 4nlTgnbMX0MR5gO1wxfGjqPeFdLyUBpSZeAb19UdpJXpZDdvR0kPEKDVLjPkhOC5HnAg
+ Tm5O5c8BqOIN68y9LBPn9fjxRpgLMXTVhTPA63MHvZdPIRml+TG0FnhiF+JtXpSjBhaF
+ NmjFUf5xfeDe/0CqyrXSV7nLW8WgeJPH8OGpA/YGRm4/IDHcZc/WUfLm2EAKO4bwL+K6
+ agWZrcuVeaztexlkKJQPKIuFrYKn0Z1+qF5UptZxyjWTe2Ng2S5K0UZwydjUxABAcpY2
+ OWsg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=UlHPQbgyQYfGZ3NYNuBRx+Lr52kdbe694moegnICIVc=;
- b=gCRpsdQAYFQZI/xzFgha7F0a0Qv/IOvoJNOYX3y4W8PWhFuIl8lVJ1CRHABdpS9LTi
- rzaj3ppRMrdkvqk009yh90T41lep1oVwsQhQ8kCOFHJCw+NrTEexqOsa9YKp/SqWJ+os
- iWAYepFoKkZkyvvlrm+dEUnbihQpAZ62rkSiXCeIVMjrElBEcAKwTI+y91ovkC8j0YSl
- mPsy9F3A5khnkv0L1o7uUzTO/Dv3WIH4Fbf/ViwERtnUBYWyzyMnZ/6oUj1xA/Q9I4Bg
- ITsxq2i5a6SChyR7fR6uafGTK9jP1e8/DkZbyhQgLLLSZ3/E+kOfit11pn1VG159L0lS
- sanA==
-X-Gm-Message-State: APjAAAUGm3hm09IgPSxkmf8cCW6C1QcvrkUwccQkXstgeq/PMdEjVMvz
- WrRzOFBOkEQafDHVXIQWCsw=
-X-Google-Smtp-Source: APXvYqwY8Li4ENYOTTDLqaDLIZqrJmGdo/DsVkKI6zl4K5u/ERvtsF3kWAQdjUnv/c82L9w7qWyNag==
-X-Received: by 2002:a05:600c:204c:: with SMTP id
- p12mr79503703wmg.121.1564060382076; 
- Thu, 25 Jul 2019 06:13:02 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=X7EMLPA/uXshrhX8tUHlB7rWmq/Bv+vAhoVTbSln7+0=;
+ b=F+bww56T73gEhIYsMpNbsz+8kUkW/37Akj6j0luuZDqnDbBE0NcHJjyidmpgc7sciG
+ dQg47BQcU8SroRVet9t5cHaYOzjtm/V/J6g2aJDO+xGJ/fWYtM3CWHQkjKkz9O3aqheq
+ n7Wq/VjzqhXZo642xvdWOq8euS32sPtYiC/dz5PuyaUqcsu17rffnv1+L8qMbUS0GmGw
+ n0lM1tYpgI1eBwmMpQbRWulXDS+bIZEffdiYh89K1JMxq3i7OZ+pktUIfzQEPmeY8LZQ
+ 8Q4a7KWjFscNn8D8wKU0NCnuJ7KT4N5cvcNFV27wrpEDZLfvXNUs55TpIhc9mRIHJWMU
+ 2ckg==
+X-Gm-Message-State: APjAAAUszAu3MTa+1Ww4yQmiBtnMd2K7HCrZNxwwlE1csWaTk/Q6BM8b
+ uBG9AZNIIowqr1UNcKYR4yM=
+X-Google-Smtp-Source: APXvYqwhue3g07/6fWFKzYTLHvyOYNdW84QPVWg4Kj7bJgNFcVQJynkcYGxefKduUaJtACggHVm8Xg==
+X-Received: by 2002:adf:ea45:: with SMTP id j5mr19767933wrn.11.1564060383337; 
+ Thu, 25 Jul 2019 06:13:03 -0700 (PDT)
 Received: from localhost.localdomain ([2a01:cb1d:af:5b00:6d6c:8493:1ab5:dad7])
  by smtp.gmail.com with ESMTPSA id
- z7sm47119735wrh.67.2019.07.25.06.13.00
+ z7sm47119735wrh.67.2019.07.25.06.13.02
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 25 Jul 2019 06:13:01 -0700 (PDT)
+ Thu, 25 Jul 2019 06:13:02 -0700 (PDT)
 From: Bartosz Golaszewski <brgl@bgdev.pl>
 To: Sekhar Nori <nsekhar@ti.com>, Kevin Hilman <khilman@kernel.org>,
  Arnd Bergmann <arnd@arndb.de>, David Lechner <david@lechnology.com>
-Subject: [PATCH v2 0/5] ARM: make DaVinci part of the ARM v5 multiplatform
- build
-Date: Thu, 25 Jul 2019 15:12:52 +0200
-Message-Id: <20190725131257.6142-1-brgl@bgdev.pl>
+Subject: [PATCH v2 1/5] staging: media/davinci_vpfe: fix pinmux setup
+ compilation
+Date: Thu, 25 Jul 2019 15:12:53 +0200
+Message-Id: <20190725131257.6142-2-brgl@bgdev.pl>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190725131257.6142-1-brgl@bgdev.pl>
+References: <20190725131257.6142-1-brgl@bgdev.pl>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_061305_590729_AAB0165B 
-X-CRM114-Status: GOOD (  10.91  )
+X-CRM114-CacheID: sfid-20190725_061306_743857_5B0AC15A 
+X-CRM114-Status: GOOD (  13.53  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -102,48 +103,100 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+From: Arnd Bergmann <arnd@arndb.de>
 
-This series makes DaVinci part of the multiplatform build for ARM v5.
+This fixes the following build error in davinci_vpfe.
 
-First three patches fix build errors spotted and fixed by Arnd with v1.
+/git/arm-soc/drivers/staging/media/davinci_vpfe/dm365_isif.c: In function 'vpfe_isif_init':
+/git/arm-soc/drivers/staging/media/davinci_vpfe/dm365_isif.c:2031:2: error: implicit declaration of function 'davinci_cfg_reg'; did you mean 'omap_cfg_reg'? [-Werror=implicit-function-declaration]
+  davinci_cfg_reg(DM365_VIN_CAM_WEN);
+  ^~~~~~~~~~~~~~~
+  omap_cfg_reg
+/git/arm-soc/drivers/staging/media/davinci_vpfe/dm365_isif.c:2031:18: error: 'DM365_VIN_CAM_WEN' undeclared (first use in this function); did you mean 'DM365_ISIF_MAX_CLDC'?
+  davinci_cfg_reg(DM365_VIN_CAM_WEN);
+                  ^~~~~~~~~~~~~~~~~
 
-The fourth patch adds necessary bits and pieces for davinci to support
-multiplatform build and the last one actually adds all davinci boards
-to multi_v5_defconfig.
+Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+---
+ drivers/staging/media/davinci_vpfe/Makefile     | 5 -----
+ drivers/staging/media/davinci_vpfe/dm365_isif.c | 8 +++-----
+ drivers/staging/media/davinci_vpfe/dm365_isif.h | 2 --
+ drivers/staging/media/davinci_vpfe/vpfe.h       | 2 ++
+ 4 files changed, 5 insertions(+), 12 deletions(-)
 
-Tested on da850-lcdk with both multi_v5 as well as davinci_all defconfigs.
-
-v1 -> v2:
-- added patches from Arnd that fix build errors spotted when building
-  random configurations (much appreciated)
-- rebased on top of v5.3-rc1
-
-Arnd Bergmann (3):
-  staging: media/davinci_vpfe: fix pinmux setup compilation
-  media: davinci-vpbe: remove obsolete includes
-  davinci: fix sleep.S build error on ARMv4
-
-Bartosz Golaszewski (2):
-  ARM: davinci: support multiplatform build for ARM v5
-  ARM: multi_v5_defconfig: make DaVinci part of the ARM v5 multiplatform
-    build
-
- arch/arm/Kconfig                              | 21 -------------------
- arch/arm/configs/davinci_all_defconfig        |  5 +++++
- arch/arm/configs/multi_v5_defconfig           | 12 +++++++++++
- arch/arm/mach-davinci/Kconfig                 | 17 +++++++++++----
- arch/arm/mach-davinci/Makefile                |  2 ++
- arch/arm/mach-davinci/sleep.S                 |  1 +
- drivers/media/platform/davinci/vpbe_display.c |  4 ----
- drivers/media/platform/davinci/vpbe_osd.c     |  5 -----
- drivers/media/platform/davinci/vpbe_venc.c    |  5 -----
- drivers/staging/media/davinci_vpfe/Makefile   |  5 -----
- .../staging/media/davinci_vpfe/dm365_isif.c   |  8 +++----
- .../staging/media/davinci_vpfe/dm365_isif.h   |  2 --
- drivers/staging/media/davinci_vpfe/vpfe.h     |  2 ++
- 13 files changed, 38 insertions(+), 51 deletions(-)
-
+diff --git a/drivers/staging/media/davinci_vpfe/Makefile b/drivers/staging/media/davinci_vpfe/Makefile
+index 0ae8c5014f74..3b93e0583940 100644
+--- a/drivers/staging/media/davinci_vpfe/Makefile
++++ b/drivers/staging/media/davinci_vpfe/Makefile
+@@ -4,8 +4,3 @@ obj-$(CONFIG_VIDEO_DM365_VPFE) += davinci-vfpe.o
+ davinci-vfpe-objs := \
+ 	dm365_isif.o dm365_ipipe_hw.o dm365_ipipe.o \
+ 	dm365_resizer.o dm365_ipipeif.o vpfe_mc_capture.o vpfe_video.o
+-
+-# Allow building it with COMPILE_TEST on other archs
+-ifndef CONFIG_ARCH_DAVINCI
+-ccflags-y += -I $(srctree)/arch/arm/mach-davinci/include/
+-endif
+diff --git a/drivers/staging/media/davinci_vpfe/dm365_isif.c b/drivers/staging/media/davinci_vpfe/dm365_isif.c
+index 05a997f7aa5d..5cfd52ea3ba7 100644
+--- a/drivers/staging/media/davinci_vpfe/dm365_isif.c
++++ b/drivers/staging/media/davinci_vpfe/dm365_isif.c
+@@ -17,6 +17,7 @@
+  */
+ 
+ #include <linux/delay.h>
++#include "vpfe.h"
+ #include "dm365_isif.h"
+ #include "vpfe_mc_capture.h"
+ 
+@@ -1983,6 +1984,7 @@ int vpfe_isif_init(struct vpfe_isif_device *isif, struct platform_device *pdev)
+ 	struct v4l2_subdev *sd = &isif->subdev;
+ 	struct media_pad *pads = &isif->pads[0];
+ 	struct media_entity *me = &sd->entity;
++	struct vpfe_config *cfg = pdev->dev.platform_data;
+ 	static resource_size_t res_len;
+ 	struct resource *res;
+ 	void __iomem *addr;
+@@ -2023,11 +2025,7 @@ int vpfe_isif_init(struct vpfe_isif_device *isif, struct platform_device *pdev)
+ 		}
+ 		i++;
+ 	}
+-	davinci_cfg_reg(DM365_VIN_CAM_WEN);
+-	davinci_cfg_reg(DM365_VIN_CAM_VD);
+-	davinci_cfg_reg(DM365_VIN_CAM_HD);
+-	davinci_cfg_reg(DM365_VIN_YIN4_7_EN);
+-	davinci_cfg_reg(DM365_VIN_YIN0_3_EN);
++	cfg->isif_setup_pinmux();
+ 
+ 	/* queue ops */
+ 	isif->video_out.ops = &isif_video_ops;
+diff --git a/drivers/staging/media/davinci_vpfe/dm365_isif.h b/drivers/staging/media/davinci_vpfe/dm365_isif.h
+index 0e1fe472fb2b..82eeba9c24c2 100644
+--- a/drivers/staging/media/davinci_vpfe/dm365_isif.h
++++ b/drivers/staging/media/davinci_vpfe/dm365_isif.h
+@@ -21,8 +21,6 @@
+ 
+ #include <linux/platform_device.h>
+ 
+-#include <mach/mux.h>
+-
+ #include <media/davinci/vpfe_types.h>
+ #include <media/v4l2-ctrls.h>
+ #include <media/v4l2-device.h>
+diff --git a/drivers/staging/media/davinci_vpfe/vpfe.h b/drivers/staging/media/davinci_vpfe/vpfe.h
+index 1f8e011fc162..54ef6720ceeb 100644
+--- a/drivers/staging/media/davinci_vpfe/vpfe.h
++++ b/drivers/staging/media/davinci_vpfe/vpfe.h
+@@ -74,6 +74,8 @@ struct vpfe_config {
+ 	char *card_name;
+ 	/* setup function for the input path */
+ 	int (*setup_input)(enum vpfe_subdev_id id);
++	/* point to dm365_isif_setup_pinmux() */
++	void (*isif_setup_pinmux)(void);
+ 	/* number of clocks */
+ 	int num_clocks;
+ 	/* clocks used for vpfe capture */
 -- 
 2.21.0
 
