@@ -2,69 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1E36C756D5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 20:25:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 29ECD75749
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 20:53:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YvgxPwikN6H2Rqj0EVcTbtad/VO0UlSHp7WzocOfyCg=; b=trMXbneplPJQDl
-	cMFK5C982nGNi+Xc94wqdq2drOMOcUljjI67E7DXc+NUOOn7aphjWiEJGWWoLp4Lw0FkPvTthS+J1
-	/uE1kPXO/RJsk3522WqPh/UhtYZhvL8G1IuWQh1s7xTdT0cXL5o2lSskc2m843LZGw+yUr2Mfp2zb
-	xKFucTULgfjdW78+ifl/HAJB5DekDZU+belWDxqxR4qYOfHWsHaeDdk4/NtIa5OpWuvgaMK+PmnwA
-	fvZ9hbEdDt9ojrORaS/i+eTA7GbdwBS5OHRZSnB+kWh2iIweiTTPrOsL7brui7wocFrUs9dIVhTBl
-	lRxG/tCId7j/w5LMqHYg==;
+	List-Owner; bh=eAj/Hwn0kNTiYFV8dYD4NkR44QnuTiyBUCpeBuHxQ1g=; b=E8vdDlqdjh6JOy
+	hPZx1icTHYtMbb2pazlbcxptgqrIk3xEWuSfN+4yctsxJS9ArddWrF8UPGSE0MSstFUi5CVXPaf2t
+	9SDDKekY5Cx+gKavTh48nYGx5TBi/pP0XiEfptYjGKy2LFbase4nMgjm0VIyzBRFbNKxpqH2DaZCp
+	Dr064H4Tq4sUGogXnlrU5huPLs6/saNjFWpZgAXfLQ29+jjc2A7rP1ziLixpzON6uwqtRbCDVQMGa
+	rna3fAwNVFOMIG93h7Xl8uoPzPZjpK2CAKeey4cetaxcyzd8NW8RpxY59SKrll9slAKJHa4dDOHXK
+	ju1KH1XZDEgfZrDf7sVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqiQC-0005Yl-2E; Thu, 25 Jul 2019 18:24:56 +0000
-Received: from rere.qmqm.pl ([91.227.64.183])
+	id 1hqirb-0004Z3-7i; Thu, 25 Jul 2019 18:53:15 +0000
+Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqiPz-0005Xx-5k
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 18:24:44 +0000
-Received: from remote.user (localhost [127.0.0.1])
- by rere.qmqm.pl (Postfix) with ESMTPSA id 45vgZ428mGzB2;
- Thu, 25 Jul 2019 20:23:08 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=rere.qmqm.pl; s=1;
- t=1564078989; bh=Wl70UkyUa1QvKhLDkVLuyu9SXp2lERXzmYfUoIOpTPs=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=cJOO3zNGNVmaEvljMlngn2KI1M1W+V6qNDrY6leJ6qyr+0WBnC33koMwEL87UtP2T
- Mfx6EK+g+fCpOMbYj8t6hw94F0H2W2UrIVlAUd9mNLUlKUNBZXX2FcA5Y9weYH1Faq
- hM3v2Y4F0iFpyoDLB2Q4e9q6ph3Fn2LrXhLaIr34Y5ZEME5q9SR6McDvIGC5PfEtq6
- AFTf8QRt0y5xVK9LJ/4yLq4H7ujtGwVY99gCJFOwCy9LJIihqF0rKoit3v3x5S3NRE
- pOEEQc4uTF0s53/RMpjv9iifiBxekbDlSChFXMBUwB2O5I9P+J6oojWgyEs+Yku6a5
- y7TVjs/i/tJBw==
-X-Virus-Status: Clean
-X-Virus-Scanned: clamav-milter 0.100.3 at mail
-Date: Thu, 25 Jul 2019 20:24:27 +0200
-From: mirq-linux@rere.qmqm.pl
-To: Codrin.Ciubotariu@microchip.com
-Subject: Re: [PATCH 5/5] ASoC: atmel_ssc_dai: Enable shared FSYNC source in
- frame-slave mode
-Message-ID: <20190725182427.GA16245@qmqm.qmqm.pl>
-References: <cover.1563819483.git.mirq-linux@rere.qmqm.pl>
- <107e0cfd11a31ce1558e941612e183100022930d.1563819483.git.mirq-linux@rere.qmqm.pl>
- <eabb96e7-1567-3ee1-a00e-f241c5f23c1c@microchip.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <eabb96e7-1567-3ee1-a00e-f241c5f23c1c@microchip.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1hqirP-0004YG-0J
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 18:53:04 +0000
+Received: from localhost (unknown [IPv6:2601:601:9f80:35cd::d71])
+ (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ (Authenticated sender: davem-davemloft)
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id D7C4E1439869E;
+ Thu, 25 Jul 2019 11:52:56 -0700 (PDT)
+Date: Thu, 25 Jul 2019 11:52:56 -0700 (PDT)
+Message-Id: <20190725.115256.1232519801887604352.davem@davemloft.net>
+To: navid.emamdoost@gmail.com
+Subject: Re: [PATCH] stmmac_dt_phy: null check the allocation
+From: David Miller <davem@davemloft.net>
+In-Reply-To: <20190723222809.9752-1-navid.emamdoost@gmail.com>
+References: <20190723222809.9752-1-navid.emamdoost@gmail.com>
+X-Mailer: Mew version 6.8 on Emacs 26.1
+Mime-Version: 1.0
+X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
+ (shards.monkeyblade.net [149.20.54.216]);
+ Thu, 25 Jul 2019 11:52:57 -0700 (PDT)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_112443_529690_1ABE9D42 
-X-CRM114-Status: GOOD (  10.31  )
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20190725_115303_045819_9D0C440A 
+X-CRM114-Status: GOOD (  10.28  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,57 +62,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, alexandre.belloni@bootlin.com, tiwai@suse.com,
- lgirdwood@gmail.com, Ludovic.Desroches@microchip.com, broonie@kernel.org,
- perex@perex.cz, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-2"
-Content-Transfer-Encoding: quoted-printable
+Cc: joabreu@synopsys.com, alexandre.torgue@st.com, secalert@redhat.com,
+ netdev@vger.kernel.org, kjlu@umn.edu, linux-kernel@vger.kernel.org,
+ emamd001@umn.edu, mcoquelin.stm32@gmail.com, smccaman@umn.edu,
+ peppe.cavallaro@st.com, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jul 25, 2019 at 03:02:34PM +0000, Codrin.Ciubotariu@microchip.com w=
-rote:
-> On 22.07.2019 21:27, Micha=B3 Miros=B3aw wrote:
-> > SSC driver allows only synchronous TX and RX. In slave mode for BCLK
-> > it uses only one of TK or RK pin, but for LRCLK it configured separate
-> > inputs from TF and RF pins. Allow configuration with common FS signal.
-[...]
-> > @@ -613,10 +607,30 @@ static int atmel_ssc_hw_params(struct snd_pcm_sub=
-stream *substream,
-> >   		return -EINVAL;
-> >   	}
-> >   =
+From: Navid Emamdoost <navid.emamdoost@gmail.com>
+Date: Tue, 23 Jul 2019 17:28:09 -0500
 
-> > -	if (!atmel_ssc_cfs(ssc_p)) {
-> > +	if (atmel_ssc_cfs(ssc_p)) {
-> > +		/*
-> > +		 * SSC provides LRCLK
-> > +		 *
-> > +		 * Both TF and RF are generated, so use them directly.
-> > +		 */
-> > +		rcmr |=3D	  SSC_BF(RCMR_START, fs_edge);
-> > +		tcmr |=3D	  SSC_BF(TCMR_START, fs_edge);
-> > +	} else {
-> >   		fslen =3D fslen_ext =3D 0;
-> >   		rcmr_period =3D tcmr_period =3D 0;
-> >   		fs_osync =3D SSC_FSOS_NONE;
-> > +		if (!ssc->shared_fs_pin) {
-> > +			rcmr |=3D	  SSC_BF(RCMR_START, fs_edge);
-> > +			tcmr |=3D	  SSC_BF(TCMR_START, fs_edge);
-> > +		} else if (ssc->clk_from_rk_pin) {
-> > +			/* assume RF is to be used when RK is used as BCLK input */
-> > +			/* Note: won't work correctly on SAMA5D2 due to errata */
-> > +			rcmr |=3D	  SSC_BF(RCMR_START, fs_edge);
-> > +			tcmr |=3D	  SSC_BF(TCMR_START, SSC_START_RECEIVE);
-> =
+> @@ -342,10 +342,13 @@ static int stmmac_dt_phy(struct plat_stmmacenet_data *plat,
+>  		mdio = true;
+>  	}
+>  
+> -	if (mdio)
+> +	if (mdio) {
+>  		plat->mdio_bus_data =
+>  			devm_kzalloc(dev, sizeof(struct stmmac_mdio_bus_data),
+>  				     GFP_KERNEL);
+> +		if (!plat->mdio_bus_data)
+> +			return -ENOMEM;
 
-> Did you find a platform in which this mode works?
+This leaks a reference to plat->mdio_node() which is acquired in the
+for_each_child_of_node() loop right before the context here.
 
-To be exact: according to the errata, TX is delayed improperly. So if you
-use only RX (SSC side receives) direction, you're fine.
+This is what I really fear about these automated patches, it is quite
+often the case that acquired resources are subtly acquired in nearby
+code and not released by the proposed "fix".
 
-Best Regards,
-Micha=B3=A0Miros=B3aw
+Therefore, either we end up with a regression, or as is the case here
+a reviewer invests more time into double checking your patch than you
+put into writing the patch in the first place.
 
 _______________________________________________
 linux-arm-kernel mailing list
