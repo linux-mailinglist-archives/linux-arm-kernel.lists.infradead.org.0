@@ -2,76 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7BE73746C1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 08:03:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 83F57746DA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 08:09:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/2Nq1HGh0fJjKKNglYhr4ePqzvC1r/x+2OmBGA1aLF4=; b=Re1Fb7C1s2JWm7
-	U8JDBTZqwlbmKbbtYyJY6FuaAt5gw5YKXV6jzryy6EkJyr8ZxnNSZZqRlOIBU2S8+KNwa9ReAy7d3
-	m6V0duwDFcxbyF2xqFlEKUFbvheskLBMXvyonGn4zZ3jV9t2VsQt/HmJysHVbgJSxKn7hQP25N+DJ
-	RYCmRIO2osdgQGgErE9frWoQxs7mMQxY0s/hF+FPc1L32eZRo2dC7KsfGj1XNDFWMewpLm41wuBXv
-	RRMMe0U5FiJ4htVTpEiKWLN8gQU3i32q03eGGarSSohrAVy25nBMTYLRSfD4I81RkObqX5Od3T41p
-	2NWTj01/NGwQR3w5MEKw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=unU9x3zK6Oz2eBFHZdPQ7xurCebRsCGjSSfOUxI1LY8=; b=qxhzaVB4KXAuqB1isxFXXLSU9
+	M1EGRY5QcCvJyIxUmcOoWQ4M8r3F+rmNGaEz+K2C8FLhQ6bD6BNE+OkU7VL/WDQM2EsgGwMqfllKB
+	zPkRPVW+OQQuhAEaCWy/Yy9LQanMeash//UnA4ZMsStIARqLobAnBSunDh3oy8YM1+Alyvp3gPzUO
+	AIbHe8vUXjWh1caP60rGZSi6wMQjw4wBhfxDn2lkEX1tdPh/+0XTgFmRDyVv3koePdZp7KCYz+nDM
+	B61SsRemG5yY883zTOeUFbZtyut6i8WxKET6LTA1xZxFRGYx3lwnm1aMPSPv8UgiAktCg0/A56SMh
+	GvJxBoczA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqWqS-0004jW-Ky; Thu, 25 Jul 2019 06:03:17 +0000
-Received: from mail-qk1-f194.google.com ([209.85.222.194])
+	id 1hqWwf-0006Wm-Ty; Thu, 25 Jul 2019 06:09:42 +0000
+Received: from relay4-d.mail.gandi.net ([217.70.183.196])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqWq4-0004dZ-Tt
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 06:02:56 +0000
-Received: by mail-qk1-f194.google.com with SMTP id w190so35578132qkc.6
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 24 Jul 2019 23:02:52 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=zOvrC4jRrz0ugoagicTAba2I/X1iVC+b4ZZraA+kmso=;
- b=oJ0jfsqwoVYV6ef8LPeMYY2RepMknQnZykLw9yJc8InreFJvajUuBaS/qt1LABMrAs
- bEMbXBYefiIT69mxHETFaj/Bi8PA7lQXekFqOhpWuNIGMEKDN2FVpNzVQq1p2cP1fB3Q
- d5yIxlCL7IjxW9Irl7qQe7L21a8swtHoam+FJ699+OT48ykslcO+g1pfLubfockq1Vtj
- TeZKuL/l04rcbZ532Wru2mHON6L3AGiG+m7C+LRabgB1btqGqrGIRKaHp1f/vU1Rtv6U
- juP5V1rjZUCBDAZiAkI4Cb8OwcndEsuE9ho6tH+Kbk4XJawfUKbQrPOT1T6Zw8bEELsE
- kBgw==
-X-Gm-Message-State: APjAAAVvoEEtBm8T1Q++qsj5s16ZAoW8lsFOsHkJPZgGvZdhlEPOAe84
- 9xFfaX8qOYHhJW9+olWny5zAMw==
-X-Google-Smtp-Source: APXvYqwbxlaMB/Ups0MK5ym5+FoeShoFD8maMViZfmHscXpKdz4RszQUYRwaBR+eewotyh05tZCO4w==
-X-Received: by 2002:a37:aa04:: with SMTP id t4mr57308995qke.359.1564034571775; 
- Wed, 24 Jul 2019 23:02:51 -0700 (PDT)
-Received: from redhat.com (bzq-79-181-91-42.red.bezeqint.net. [79.181.91.42])
- by smtp.gmail.com with ESMTPSA id
- i62sm22519634qke.52.2019.07.24.23.02.44
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 24 Jul 2019 23:02:50 -0700 (PDT)
-Date: Thu, 25 Jul 2019 02:02:41 -0400
-From: "Michael S. Tsirkin" <mst@redhat.com>
-To: Jason Gunthorpe <jgg@ziepe.ca>
-Subject: Re: WARNING in __mmdrop
-Message-ID: <20190725015402-mutt-send-email-mst@kernel.org>
-References: <0000000000008dd6bb058e006938@google.com>
- <000000000000964b0d058e1a0483@google.com>
- <20190721044615-mutt-send-email-mst@kernel.org>
- <20190722141152.GA13711@ziepe.ca>
+ id 1hqWwS-0006UZ-VM; Thu, 25 Jul 2019 06:09:30 +0000
+X-Originating-IP: 81.250.144.103
+Received: from [10.30.1.20] (lneuilly-657-1-5-103.w81-250.abo.wanadoo.fr
+ [81.250.144.103]) (Authenticated sender: alex@ghiti.fr)
+ by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 761F0E0008;
+ Thu, 25 Jul 2019 06:09:11 +0000 (UTC)
+Subject: Re: [PATCH REBASE v4 12/14] mips: Replace arch specific way to
+ determine 32bit task with generic version
+To: Luis Chamberlain <mcgrof@kernel.org>
+References: <20190724055850.6232-1-alex@ghiti.fr>
+ <20190724055850.6232-13-alex@ghiti.fr>
+ <20190724171648.GW19023@42.do-not-panic.com>
+From: Alexandre Ghiti <alex@ghiti.fr>
+Message-ID: <17fa5d60-2417-70cb-36b0-203b30b27624@ghiti.fr>
+Date: Thu, 25 Jul 2019 08:09:11 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190722141152.GA13711@ziepe.ca>
+In-Reply-To: <20190724171648.GW19023@42.do-not-panic.com>
+Content-Language: fr
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_230253_151058_666B1AE0 
-X-CRM114-Status: GOOD (  13.06  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190724_230929_168021_AA46CBB0 
+X-CRM114-Status: GOOD (  16.73  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.194 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.222.194 listed in wl.mailspike.net]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.196 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -84,60 +64,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mhocko@suse.com, peterz@infradead.org, jasowang@redhat.com,
- ldv@altlinux.org, james.bottomley@hansenpartnership.com, linux-mm@kvack.org,
- namit@vmware.com, mingo@kernel.org, elena.reshetova@intel.com,
- keescook@chromium.org, aarcange@redhat.com, davem@davemloft.net,
- hch@infradead.org, christian@brauner.io,
- syzbot <syzbot+e58112d71f77113ddb7b@syzkaller.appspotmail.com>,
- syzkaller-bugs@googlegroups.com, jglisse@redhat.com, viro@zeniv.linux.org.uk,
- linux-arm-kernel@lists.infradead.org, wad@chromium.org,
- linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
- luto@amacapital.net, ebiederm@xmission.com, akpm@linux-foundation.org,
- guro@fb.com
-Content-Type: text/plain; charset="us-ascii"
+Cc: Albert Ou <aou@eecs.berkeley.edu>, Kees Cook <keescook@chromium.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Palmer Dabbelt <palmer@sifive.com>,
+ Will Deacon <will.deacon@arm.com>, Russell King <linux@armlinux.org.uk>,
+ Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
+ linux-mm@kvack.org, Paul Burton <paul.burton@mips.com>,
+ Alexander Viro <viro@zeniv.linux.org.uk>, James Hogan <jhogan@kernel.org>,
+ linux-fsdevel@vger.kernel.org, linux-riscv@lists.infradead.org,
+ linux-mips@vger.kernel.org, Christoph Hellwig <hch@lst.de>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jul 22, 2019 at 11:11:52AM -0300, Jason Gunthorpe wrote:
-> On Sun, Jul 21, 2019 at 06:02:52AM -0400, Michael S. Tsirkin wrote:
-> > On Sat, Jul 20, 2019 at 03:08:00AM -0700, syzbot wrote:
-> > > syzbot has bisected this bug to:
-> > > 
-> > > commit 7f466032dc9e5a61217f22ea34b2df932786bbfc
-> > > Author: Jason Wang <jasowang@redhat.com>
-> > > Date:   Fri May 24 08:12:18 2019 +0000
-> > > 
-> > >     vhost: access vq metadata through kernel virtual address
-> > > 
-> > > bisection log:  https://syzkaller.appspot.com/x/bisect.txt?x=149a8a20600000
-> > > start commit:   6d21a41b Add linux-next specific files for 20190718
-> > > git tree:       linux-next
-> > > final crash:    https://syzkaller.appspot.com/x/report.txt?x=169a8a20600000
-> > > console output: https://syzkaller.appspot.com/x/log.txt?x=129a8a20600000
-> > > kernel config:  https://syzkaller.appspot.com/x/.config?x=3430a151e1452331
-> > > dashboard link: https://syzkaller.appspot.com/bug?extid=e58112d71f77113ddb7b
-> > > syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=10139e68600000
-> > > 
-> > > Reported-by: syzbot+e58112d71f77113ddb7b@syzkaller.appspotmail.com
-> > > Fixes: 7f466032dc9e ("vhost: access vq metadata through kernel virtual
-> > > address")
-> > > 
-> > > For information about bisection process see: https://goo.gl/tpsmEJ#bisection
-> > 
-> > 
-> > OK I poked at this for a bit, I see several things that
-> > we need to fix, though I'm not yet sure it's the reason for
-> > the failures:
-> 
-> This stuff looks quite similar to the hmm_mirror use model and other
-> places in the kernel. I'm still hoping we can share this code a bit more.
+On 7/24/19 7:16 PM, Luis Chamberlain wrote:
+> On Wed, Jul 24, 2019 at 01:58:48AM -0400, Alexandre Ghiti wrote:
+>> Mips uses TASK_IS_32BIT_ADDR to determine if a task is 32bit, but
+>> this define is mips specific and other arches do not have it: instead,
+>> use !IS_ENABLED(CONFIG_64BIT) || is_compat_task() condition.
+>>
+>> Signed-off-by: Alexandre Ghiti <alex@ghiti.fr>
+>> Reviewed-by: Kees Cook <keescook@chromium.org>
+>> ---
+>>   arch/mips/mm/mmap.c | 3 ++-
+>>   1 file changed, 2 insertions(+), 1 deletion(-)
+>>
+>> diff --git a/arch/mips/mm/mmap.c b/arch/mips/mm/mmap.c
+>> index faa5aa615389..d4eafbb82789 100644
+>> --- a/arch/mips/mm/mmap.c
+>> +++ b/arch/mips/mm/mmap.c
+>> @@ -17,6 +17,7 @@
+>>   #include <linux/sched/signal.h>
+>>   #include <linux/sched/mm.h>
+>>   #include <linux/sizes.h>
+>> +#include <linux/compat.h>
+>>   
+>>   unsigned long shm_align_mask = PAGE_SIZE - 1;	/* Sane caches */
+>>   EXPORT_SYMBOL(shm_align_mask);
+>> @@ -191,7 +192,7 @@ static inline unsigned long brk_rnd(void)
+>>   
+>>   	rnd = rnd << PAGE_SHIFT;
+>>   	/* 32MB for 32bit, 1GB for 64bit */
+>> -	if (TASK_IS_32BIT_ADDR)
+>> +	if (!IS_ENABLED(CONFIG_64BIT) || is_compat_task())
+>>   		rnd = rnd & SZ_32M;
+>>   	else
+>>   		rnd = rnd & SZ_1G;
+>> -- 
+> Since there are at least two users why not just create an inline for
+> this which describes what we are looking for and remove the comments?
 
-Right. I think hmm is something we should look at.
 
--- 
-MST
+Actually this is a preparatory patch, this will get merged with the 
+generic version in the next patch.
+
+Alex
+
+
+>
+>    Luis
+>
+> _______________________________________________
+> linux-riscv mailing list
+> linux-riscv@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-riscv
 
 _______________________________________________
 linux-arm-kernel mailing list
