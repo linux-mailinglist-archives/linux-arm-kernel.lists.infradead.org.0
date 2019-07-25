@@ -2,82 +2,136 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA59B75389
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 18:07:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C47CF753D9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 18:24:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QMIZO6NsIN+BoUqxqPDfaV2quO5Sfj04BYZz9tj6XHI=; b=V8QcbGv3mRL9pE
-	kXO7gozVkwWZukRAg/HpiJKEj8RN7HV5To2njBVeIJvCd2vwqgQ2E2dlcJ4B1W/4yNhq0W+ymmrIH
-	sP5eJ9hVmiuvy7ACHfcKy38crSgUMSuZAMYIKi4+bszkl3EBQLDV1cBQDfKIfiOVNg1/BQUJ40Qyt
-	YJAl1bUGOkyd7SEVXcou54k4aj45ogdL8kSYQ2oVJsEpPtrjoRO8QFipoi7uUsqFtrP77v6Q44R9i
-	V94c4dHf+NVAudgru2V9MOWs9yPnsY9UeHbXQeoSoHIkkFnnncS6SOtb1+mpw5SiASLCqqZaIOOkj
-	Fw0hxxaXY3a/ZMsnehsA==;
+	List-Owner; bh=GnnxWZhhgul03bc3NjWc82uOlq/FvSTViyCJH1FAO64=; b=VPXdVXFu+GsIs9
+	jepHpkA9QxMh47IH97YaZdkloH58ABJ/wjlTUAAwjSBx7Qluw5cCqUTJA+5xTeemixsEESwlShSpM
+	ItzHZyodVzV/SBdRKF7ytTqtKQNHw1bRqEFME0qkPCnWXocFmk5Blo2ARTetWsyIQ57tezIRhC2xq
+	Uywkgs5ZzH7Iw5Tt7u09I2+dywu9+UvegSxS0LoBLi4mnq0XHNqLENGdTF9o2WITn1urk8UElm0xc
+	Zxsvrr+eL9CZ/U85dxOYPNL/xjn4Xo4QebeeBfNgtctvVkNzYZTqFjKOs7fbbEQPdYOPbc7frm3Ba
+	2ppucEXIgqEzvvQaTRrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqgGs-0004PU-Gf; Thu, 25 Jul 2019 16:07:10 +0000
-Received: from mail-vk1-xa42.google.com ([2607:f8b0:4864:20::a42])
+	id 1hqgXe-0001Yg-2O; Thu, 25 Jul 2019 16:24:30 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqgGe-0004P2-0g
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 16:06:57 +0000
-Received: by mail-vk1-xa42.google.com with SMTP id s16so10138891vke.7
+ id 1hqgX4-0001X0-Lo
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 16:23:59 +0000
+Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
+ by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20190725162349euoutp020073ef2c399aafa9540efa64c6fb3f2c~0swrAhZn92868328683euoutp02d
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 25 Jul 2019 09:06:54 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=vanguardiasur-com-ar.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=j4i8w9Kr6s0PSmw7woZ7h8pKLb/pNRsFccRAOvuNOpk=;
- b=uzCFtgHlrcbsjdi9+t4cRoMJEPLPUy6CNPcdz+xpdwFEOhQsc9IVpHdNKiQjYpUEK9
- LNAa5fcYBaeGzt1M4KOvDDb1gTH1kXLX+S6+54oxu7dzVVbUvJUtPUVcvuBQ2LyBfHUU
- zXt4Jh+mvxYcnl98CiNNdhmg1jjlXX3ZXSuvZ2cd+RQYR0dgHVu1cvhoBsGQRCAguiGh
- Dwc/v3mECILcLvUAZ9EJPMzeE5dlYbm+MrKP2eQiaZesGCNNVxHeIIJxO+yP+543nnKv
- hn5GO2/w6tlJ9PiY7EK/zmKPVHmVtTLdR2eFn6iDiTdj8eS3PWHuchbCdnbiQrarxagJ
- JGtA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=j4i8w9Kr6s0PSmw7woZ7h8pKLb/pNRsFccRAOvuNOpk=;
- b=jB2imxNkuaoouBjm5ppHogEZsNdh+1Rzst1vH+W/sjDkrB61O/SkEqW98tEUzOIbKS
- 6JJYtvygzwNC6W1+ux9qjAGetKgy1hmehpHiVUvURiYNEnL8tZxjGqmztgE5BirMdab7
- ihJMj3HPxtROiTz5NuoxLO6dXbTy6PqYQ1fK7sQEM3B7mJvqn4ldv1P+Gk3uPUYtmu6v
- 8FP2QEtVcxGCPQOj0gMr3MUjrZBsYn9l3RfGXBDeOOSeUhhsO14jpWy1uaqW8oi0f5bI
- Ctpx4PAzIX502bHAd87/cnEqSP9mC1tAq3ImnD+ryMZCLFoZabtZw8/4F3nVqIMC737r
- OOVQ==
-X-Gm-Message-State: APjAAAXu4DO8QbdO6Zu+FxzQfTT16hU2lr1HX2/EDqf2vxiBkbC7pzxw
- dmrjmygYgLxhMlszD1YbmDqZp04Iuzotd/1hHDo=
-X-Google-Smtp-Source: APXvYqwgwDqpsWNLo+H70+5x1cZL09rHVbL+sr/g+NLtDIYDxR3O/b4ANbpuw1/A6zcLHbGh4mXHxwEJHhs2RFuZ3tU=
-X-Received: by 2002:a1f:b0b:: with SMTP id 11mr34502286vkl.64.1564070813830;
- Thu, 25 Jul 2019 09:06:53 -0700 (PDT)
+ Thu, 25 Jul 2019 16:23:49 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
+ 20190725162349euoutp020073ef2c399aafa9540efa64c6fb3f2c~0swrAhZn92868328683euoutp02d
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1564071829;
+ bh=VcdlZyKrQCdgkYUt20ZBw2/TUXd1x62JJBXr6EHpia8=;
+ h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
+ b=XvNiJPnR4xylIsj9T2NATRQ2lcH0fM8lr9CVTXhzw4VUMrYhSsiO7IbPuueFrHpU5
+ yU0ipTKi81vTWARn2GpTEMpfVE13c1mSWD+N4WZDx10h8htD9dI+9sLMRDHqZtjNrj
+ FkifOq9e/gJ4ync6ko/sksv1UPjhChQlQ5oAAIJg=
+Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTP id
+ 20190725162348eucas1p2d04c89a2846f8586af7949b4a13942de~0swqMOc8H1109611096eucas1p2u;
+ Thu, 25 Jul 2019 16:23:48 +0000 (GMT)
+Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
+ eusmges1new.samsung.com (EUCPMTA) with SMTP id CB.B0.04298.497D93D5; Thu, 25
+ Jul 2019 17:23:48 +0100 (BST)
+Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
+ 20190725162347eucas1p15f983918e07b912c4a00fefd0c2a5d8e~0swpaXOGQ3041930419eucas1p1N;
+ Thu, 25 Jul 2019 16:23:47 +0000 (GMT)
+Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
+ eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
+ 20190725162347eusmtrp29900cce149672f61a0bdef0c8a88c966~0swpMPzBg1648516485eusmtrp2B;
+ Thu, 25 Jul 2019 16:23:47 +0000 (GMT)
+X-AuditID: cbfec7f2-f2dff700000010ca-4a-5d39d7949571
+Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
+ eusmgms1.samsung.com (EUCPMTA) with SMTP id 04.46.04146.397D93D5; Thu, 25
+ Jul 2019 17:23:47 +0100 (BST)
+Received: from [106.120.51.20] (unknown [106.120.51.20]) by
+ eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
+ 20190725162346eusmtip1ad4b284580c6a68ae2f63e50c9027790~0swoSc50i3163931639eusmtip1Z;
+ Thu, 25 Jul 2019 16:23:46 +0000 (GMT)
+Subject: Re: [PATCH v4 3/5] drivers: devfreq: events: extend events by type
+ of counted data
+To: Chanwoo Choi <cw00.choi@samsung.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-pm@vger.kernel.org,
+ linux-samsung-soc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ myungjoo.ham@samsung.com
+From: Lukasz Luba <l.luba@partner.samsung.com>
+Message-ID: <6ad9882f-10c8-3708-1a06-ee712bb1c66d@partner.samsung.com>
+Date: Thu, 25 Jul 2019 18:23:45 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.1
 MIME-Version: 1.0
-References: <20190524040633.16854-1-nicoleotsuka@gmail.com>
- <20190524040633.16854-2-nicoleotsuka@gmail.com>
-In-Reply-To: <20190524040633.16854-2-nicoleotsuka@gmail.com>
-From: Ezequiel Garcia <ezequiel@vanguardiasur.com.ar>
-Date: Thu, 25 Jul 2019 13:06:42 -0300
-Message-ID: <CAAEAJfA+edVLfZzEZe98249Y7NZQFht9185JH21pV10Bq9Wk3w@mail.gmail.com>
-Subject: Re: [PATCH v3 1/2] dma-contiguous: Abstract dma_{alloc,
- free}_contiguous()
-To: Nicolin Chen <nicoleotsuka@gmail.com>
+In-Reply-To: <15375017-2e82-7df8-344c-a9c41d61331c@samsung.com>
+Content-Language: en-US
+X-Brightmail-Tracker: H4sIAAAAAAAAA01SfUxNYRz23nPPR62bt9vl/pav7W6+MoWZvcXCmF0zk41NaJx0VtG9ck9F
+ MepaoUkWI5eUj3aTS0la5aN2Sx8aUeO2SJSWUkJl+aNyTyfTf8/v+T2/93me7eUodQvtxUUY
+ owWTkY/UMa7K4uo/rxZfdPgFL+kdciMPMvJp4hjsoklW1SuapHV8o0hDQwFLXpp7WVLY8Y4m
+ TWXXGDKQWoVIRsMzBblX1cqSHMcbBXmfmMuQpKdVLKnsPUWT37XtaA3W267bkL7U0srqC/PO
+ MPqHt0/ozxXlIf1A4exAZqfrqlAhMiJWMPkG7HUNz347wkT10EfOfL7OJKA6ZQpy4QAvh/vW
+ fFrCapyLYKxek4JcnXgQwdBwJyMPAwjuVA8r/l1YKzJpeWF1XlQUK+ShD4G97SabgjjOEwdD
+ 8t0VEq/BnQjuljeOX1DYgcBm7kKSiME+UJJ3SHpVhTfAyR/9jISVeC587LYgCU/DO6CpqAzJ
+ Gg+ou/JlPLcLXg0D5u/jPIW10PIlSyHjOXDy0VVK8gKcyEFTcRIrx14Pj5+PUjL2hJ6aogl+
+ JoyVZk1UEyEh9QaS8THoSMuc0KyEypo3tJSZwgshv8xXptdCdlq7UqIBu0Nzn4ccwR3Siy9T
+ Mq2C08lqWb0Ais6+njCaDlbbJfY80lkmFbNMKmOZVMby3zcbKfOQVogRDWGCuNQoHPYReYMY
+ Ywzz2XfQUIicP65+tOZXCRpqDLEjzCGdm+q11S9YTfOxYpzBjoCjdBrVoxInpQrl4+IF08E9
+ pphIQbSjGZxSp1UdnfJplxqH8dHCAUGIEkz/tgrOxSsBKWILzP7mW6eGDLVNbcs0tqRA//m6
+ dZqYn2h3+dX4oEOVLr3Lkrqzm895b2mclfBk3sUdiVvdlrQmB9pyRjxSL3uHdH5e2B6/sV67
+ 6OuwNkAZdDx4/3Kv0Nqv6ezmvRdyjHxqzpQX27dtCijwTY7a3t96b2pG5gfU3jUYKJTW7Eyx
+ x+qUYji/1JsyifxfdPWf8m0DAAA=
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFvrAIsWRmVeSWpSXmKPExsVy+t/xu7qTr1vGGnS3iFpsnLGe1eL6l+es
+ FvOPnGO16H/8mtni/PkN7BZnm96wW2x6fI3V4vKuOWwWn3uPMFrMOL+PyWLtkbvsFkuvX2Sy
+ uN24gs2ide8RdovDb9pZLb6deMToIOCxZt4aRo+ds+6ye2xa1cnmsXlJvUffllWMHp83yQWw
+ RenZFOWXlqQqZOQXl9gqRRtaGOkZWlroGZlY6hkam8daGZkq6dvZpKTmZJalFunbJehlLLj6
+ l63gFWtF58N5bA2MJ1m6GDk5JARMJJYfmMvaxcjFISSwlFFi85XfTBAJMYlJ+7azQ9jCEn+u
+ dbFBFL1mlJj+YikzSEJYIFai6dJlsG4RgaeMEmt/NoJVMQtcZ5Q4O3EG1NzdTBJN02YDLeTg
+ YBPQk9ixqhCkm1fATaL5w3s2EJtFQFXi3stZjCC2qECERF/bbDaIGkGJkzOfgN3KKWAv8bnp
+ HVgNs4CZxLzND5khbHGJW0/mM0HY8hLNW2czT2AUmoWkfRaSlllIWmYhaVnAyLKKUSS1tDg3
+ PbfYUK84Mbe4NC9dLzk/dxMjMLa3Hfu5eQfjpY3BhxgFOBiVeHgvLLeMFWJNLCuuzD3EKMHB
+ rCTCu3UHUIg3JbGyKrUoP76oNCe1+BCjKdBzE5mlRJPzgWknryTe0NTQ3MLS0NzY3NjMQkmc
+ t0PgYIyQQHpiSWp2ampBahFMHxMHp1QDY9eTWw+lP0oWdmaYvVpSceM3+y2O6M+LLNbJptz8
+ 4HXJ5oVg+7MzhSHLheIO/OCUtxAtyt/aoyf02slkKzP3Ac+LNZ/irJ5uf7pV+7Fam/6d858M
+ sjbtstzQffKQ3cmHGZOKFzPM2fOz+2/J3ivSN3xrDmbGTDb+5FYUkShluOnc4tNuld83rVJi
+ Kc5INNRiLipOBAC0EGq+AwMAAA==
+X-CMS-MailID: 20190725162347eucas1p15f983918e07b912c4a00fefd0c2a5d8e
+X-Msg-Generator: CA
+X-RootMTR: 20190605091303eucas1p27177d349e0f2bd37bf582dbd7266321a
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20190605091303eucas1p27177d349e0f2bd37bf582dbd7266321a
+References: <20190605091236.24263-1-l.luba@partner.samsung.com>
+ <CGME20190605091303eucas1p27177d349e0f2bd37bf582dbd7266321a@eucas1p2.samsung.com>
+ <20190605091236.24263-4-l.luba@partner.samsung.com>
+ <37af143f-a585-a28a-a36f-2ed25c5b6d3b@partner.samsung.com>
+ <15375017-2e82-7df8-344c-a9c41d61331c@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_090656_136091_BC7AC163 
-X-CRM114-Status: GOOD (  32.71  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190725_092355_639807_BE484F1C 
+X-CRM114-Status: GOOD (  13.78  )
+X-Spam-Score: -5.1 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a42 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.12 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,229 +143,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dafna.hirschfeld@collabora.com, Tony Lindgren <tony@atomide.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- jcmvbkbc@gmail.com, hch@lst.de, Marek Szyprowski <m.szyprowski@samsung.com>,
- sfr@canb.auug.org.au, dann.frazier@canonical.com, joro@8bytes.org,
- Russell King <linux@armlinux.org.uk>, treding@nvidia.com,
- linux-xtensa@linux-xtensa.org, keescook@chromium.org,
- Andrew Morton <akpm@linux-foundation.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>, chris@zankel.net,
- wsa+renesas@sang-engineering.com, robin.murphy@arm.com,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- iommu@lists.linux-foundation.org, iamjoonsoo.kim@lge.com,
- David Woodhouse <dwmw2@infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, willy.mh.wolff.ml@gmail.com, b.zolnierkie@samsung.com,
+ krzk@kernel.org, kyungmin.park@samsung.com, robh+dt@kernel.org,
+ kgene@kernel.org, s.nawrocki@samsung.com, m.szyprowski@samsung.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-I can't find a way to forward-redirect from Gmail, so I'm Ccing Dafna
-who found a regression caused by this commit. Dafna, can you give all
-the details, including the log and how you are reproducing it?
-
-
-On Fri, 24 May 2019 at 01:08, Nicolin Chen <nicoleotsuka@gmail.com> wrote:
->
-> Both dma_alloc_from_contiguous() and dma_release_from_contiguous()
-> are very simply implemented, but requiring callers to pass certain
-> parameters like count and align, and taking a boolean parameter to
-> check __GFP_NOWARN in the allocation flags. So every function call
-> duplicates similar work:
->   /* A piece of example */
->   unsigned long order = get_order(size);
->   size_t count = size >> PAGE_SHIFT;
->   page = dma_alloc_from_contiguous(dev, count, order, gfp & __GFP_NOWARN);
->   [...]
->   dma_release_from_contiguous(dev, page, size >> PAGE_SHIFT);
->
-> Additionally, as CMA can be used only in the context which permits
-> sleeping, most of callers do a gfpflags_allow_blocking() check and
-> a corresponding fallback allocation of normal pages upon any false
-> result:
->   /* A piece of example */
->   if (gfpflags_allow_blocking(flag))
->       page = dma_alloc_from_contiguous();
->   if (!page)
->       page = alloc_pages();
->   [...]
->   if (!dma_release_from_contiguous(dev, page, count))
->       __free_pages(page, get_order(size));
->
-> So this patch simplifies those function calls by abstracting these
-> operations into the two new functions: dma_{alloc,free}_contiguous.
->
-> As some callers of dma_{alloc,release}_from_contiguous() might be
-> complicated, this patch just implements these two new functions to
-> kernel/dma/direct.c only as an initial step.
->
-> Suggested-by: Christoph Hellwig <hch@lst.de>
-> Signed-off-by: Nicolin Chen <nicoleotsuka@gmail.com>
-> ---
-> Changelog
-> v2->v3:
->  * Added missing "static inline" in header file to fix build error.
-> v1->v2:
->  * Added new functions beside the old ones so we can replace callers
->    one by one later.
->  * Applied new functions to dma/direct.c only, because it's the best
->    example caller to apply and should be safe with the new functions.
->
->  include/linux/dma-contiguous.h | 11 ++++++++
->  kernel/dma/contiguous.c        | 48 ++++++++++++++++++++++++++++++++++
->  kernel/dma/direct.c            | 24 +++--------------
->  3 files changed, 63 insertions(+), 20 deletions(-)
->
-> diff --git a/include/linux/dma-contiguous.h b/include/linux/dma-contiguous.h
-> index f247e8aa5e3d..00a370c1c140 100644
-> --- a/include/linux/dma-contiguous.h
-> +++ b/include/linux/dma-contiguous.h
-> @@ -115,6 +115,8 @@ struct page *dma_alloc_from_contiguous(struct device *dev, size_t count,
->                                        unsigned int order, bool no_warn);
->  bool dma_release_from_contiguous(struct device *dev, struct page *pages,
->                                  int count);
-> +struct page *dma_alloc_contiguous(struct device *dev, size_t size, gfp_t gfp);
-> +void dma_free_contiguous(struct device *dev, struct page *page, size_t size);
->
->  #else
->
-> @@ -157,6 +159,15 @@ bool dma_release_from_contiguous(struct device *dev, struct page *pages,
->         return false;
->  }
->
-> +static inline
-> +struct page *dma_alloc_contiguous(struct device *dev, size_t size, gfp_t gfp)
-> +{
-> +       return NULL;
-> +}
-> +
-> +static inline
-> +void dma_free_contiguous(struct device *dev, struct page *page, size_t size) { }
-> +
->  #endif
->
->  #endif
-> diff --git a/kernel/dma/contiguous.c b/kernel/dma/contiguous.c
-> index b2a87905846d..21f39a6cb04f 100644
-> --- a/kernel/dma/contiguous.c
-> +++ b/kernel/dma/contiguous.c
-> @@ -214,6 +214,54 @@ bool dma_release_from_contiguous(struct device *dev, struct page *pages,
->         return cma_release(dev_get_cma_area(dev), pages, count);
->  }
->
-> +/**
-> + * dma_alloc_contiguous() - allocate contiguous pages
-> + * @dev:   Pointer to device for which the allocation is performed.
-> + * @size:  Requested allocation size.
-> + * @gfp:   Allocation flags.
-> + *
-> + * This function allocates contiguous memory buffer for specified device. It
-> + * first tries to use device specific contiguous memory area if available or
-> + * the default global one, then tries a fallback allocation of normal pages.
-> + */
-> +struct page *dma_alloc_contiguous(struct device *dev, size_t size, gfp_t gfp)
-> +{
-> +       int node = dev ? dev_to_node(dev) : NUMA_NO_NODE;
-> +       size_t count = PAGE_ALIGN(size) >> PAGE_SHIFT;
-> +       size_t align = get_order(PAGE_ALIGN(size));
-> +       struct cma *cma = dev_get_cma_area(dev);
-> +       struct page *page = NULL;
-> +
-> +       /* CMA can be used only in the context which permits sleeping */
-> +       if (cma && gfpflags_allow_blocking(gfp)) {
-> +               align = min_t(size_t, align, CONFIG_CMA_ALIGNMENT);
-> +               page = cma_alloc(cma, count, align, gfp & __GFP_NOWARN);
-> +       }
-> +
-> +       /* Fallback allocation of normal pages */
-> +       if (!page)
-> +               page = alloc_pages_node(node, gfp, align);
-> +
-> +       return page;
-> +}
-> +
-> +/**
-> + * dma_free_contiguous() - release allocated pages
-> + * @dev:   Pointer to device for which the pages were allocated.
-> + * @page:  Pointer to the allocated pages.
-> + * @size:  Size of allocated pages.
-> + *
-> + * This function releases memory allocated by dma_alloc_contiguous(). As the
-> + * cma_release returns false when provided pages do not belong to contiguous
-> + * area and true otherwise, this function then does a fallback __free_pages()
-> + * upon a false-return.
-> + */
-> +void dma_free_contiguous(struct device *dev, struct page *page, size_t size)
-> +{
-> +       if (!cma_release(dev_get_cma_area(dev), page, size >> PAGE_SHIFT))
-> +               __free_pages(page, get_order(size));
-> +}
-> +
->  /*
->   * Support for reserved memory regions defined in device tree
->   */
-> diff --git a/kernel/dma/direct.c b/kernel/dma/direct.c
-> index 2c2772e9702a..0816c1e8b05a 100644
-> --- a/kernel/dma/direct.c
-> +++ b/kernel/dma/direct.c
-> @@ -96,8 +96,6 @@ static bool dma_coherent_ok(struct device *dev, phys_addr_t phys, size_t size)
->  struct page *__dma_direct_alloc_pages(struct device *dev, size_t size,
->                 dma_addr_t *dma_handle, gfp_t gfp, unsigned long attrs)
->  {
-> -       unsigned int count = PAGE_ALIGN(size) >> PAGE_SHIFT;
-> -       int page_order = get_order(size);
->         struct page *page = NULL;
->         u64 phys_mask;
->
-> @@ -109,20 +107,9 @@ struct page *__dma_direct_alloc_pages(struct device *dev, size_t size,
->         gfp |= __dma_direct_optimal_gfp_mask(dev, dev->coherent_dma_mask,
->                         &phys_mask);
->  again:
-> -       /* CMA can be used only in the context which permits sleeping */
-> -       if (gfpflags_allow_blocking(gfp)) {
-> -               page = dma_alloc_from_contiguous(dev, count, page_order,
-> -                                                gfp & __GFP_NOWARN);
-> -               if (page && !dma_coherent_ok(dev, page_to_phys(page), size)) {
-> -                       dma_release_from_contiguous(dev, page, count);
-> -                       page = NULL;
-> -               }
-> -       }
-> -       if (!page)
-> -               page = alloc_pages_node(dev_to_node(dev), gfp, page_order);
-> -
-> +       page = dma_alloc_contiguous(dev, size, gfp);
->         if (page && !dma_coherent_ok(dev, page_to_phys(page), size)) {
-> -               __free_pages(page, page_order);
-> +               dma_free_contiguous(dev, page, size);
->                 page = NULL;
->
->                 if (IS_ENABLED(CONFIG_ZONE_DMA32) &&
-> @@ -154,7 +141,7 @@ void *dma_direct_alloc_pages(struct device *dev, size_t size,
->         if (PageHighMem(page)) {
->                 /*
->                  * Depending on the cma= arguments and per-arch setup
-> -                * dma_alloc_from_contiguous could return highmem pages.
-> +                * dma_alloc_contiguous could return highmem pages.
->                  * Without remapping there is no way to return them here,
->                  * so log an error and fail.
->                  */
-> @@ -176,10 +163,7 @@ void *dma_direct_alloc_pages(struct device *dev, size_t size,
->
->  void __dma_direct_free_pages(struct device *dev, size_t size, struct page *page)
->  {
-> -       unsigned int count = PAGE_ALIGN(size) >> PAGE_SHIFT;
-> -
-> -       if (!dma_release_from_contiguous(dev, page, count))
-> -               __free_pages(page, get_order(size));
-> +       dma_free_contiguous(dev, page, size);
->  }
->
->  void dma_direct_free_pages(struct device *dev, size_t size, void *cpu_addr,
-> --
-> 2.17.1
->
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgQ2hhbndvbywKCk9uIDcvMjQvMTkgMTI6MjQgUE0sIENoYW53b28gQ2hvaSB3cm90ZToKPiBI
+aSBMdWthc3osCj4gCj4gT24gMTkuIDcuIDI0LiDsmKTtm4QgNzoxNSwgTHVrYXN6IEx1YmEgd3Jv
+dGU6Cj4+IEhpIENoYW53b28sCj4+Cj4+IENvdWxkIHlvdSBoYXZlIGEgbG9vayBhIHRoaXMgcGF0
+Y2gsIHBsZWFzZT8KPj4gVGhpcyBwYXRjaCBoYXMgYmVlbiByZXdyaXR0ZW4gYWNjb3JpZmluZyB0
+byB5b3VyIHN1Z2dlc3Rpb24uCj4+IEtyenlzenRvZiB0cmllZCB0byBhcHBseSA1LzUgRFQgcGF0
+Y2ggb24gaGlzIGN1cnJlbnQgYnJhbmNoLAo+PiBidXQgaXQgaXMgbWlzc2luZyBlYXJsaWVyIHN0
+dWZmLgo+PiBUaGUgb3RoZXIgcGF0Y2hlcyBoYXZlIG5lZWRlZCBBQ0tzIHNvIGNvdWxkIGdvIHRo
+cm91Z2ggZGV2ZnJlcSB0cmVlCj4+IHByb2JhYmx5LCBidXQgdGhpcyBvbmUgbGVmdC4KPiAKPiBT
+b3JyeSBmb3IgdGhlIGxhdGUgcmVwbHkuIEl0IGxvb2tzIGdvb2QgdG8gbWUuCj4gCj4gQWNrZWQt
+Ynk6IENoYW53b28gQ2hvaSA8Y3cwMC5jaG9pQHNhbXN1bmcuY29tPgpUaGFuayB5b3UgZm9yIHRo
+ZSBBQ0suCgpNeXVuZ0pvbyBjb3VsZCB5b3UgdGFrZSB0aGUgcGF0Y2hlcyAoYXBhcnQgZnJvbSA1
+LzUgd2hpY2ggd2lsbCBiZSBpbgpLcnp5c3p0b2YncyB0cmVlIHByb2JhYmx5KSB0aHJvdWdoIGRl
+dmZyZXEgdHJlZSwgcGxlYXNlPwoKUmVnYXJkcywKTHVrYXN6CgpfX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlz
+dApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJh
+ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
