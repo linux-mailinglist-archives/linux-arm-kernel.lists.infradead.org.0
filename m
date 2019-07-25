@@ -2,97 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 22D2775B45
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 01:35:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72E5B75B65
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 01:41:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bZ7oUaaLsOIIpQ0WN5ejxbD7aOiTWHi/MA83Gj7RuGo=; b=L2MPP0GQRuomlQ
-	5eST0e8s0bFNT04Yjm758bYxFVNvn0AduPPMESI73Bb3esD3BKvs81NVsIXrNI7vkCpQY0chdtWWL
-	xdGKtw8eH5IU2A1JOSdrZ+VdKP0exUbE/2T/oMX/ex0L4QWnXaUJOKsR8+B6NaAalMvkp0Suj4KFE
-	A5MwrGBmn5wU1qn96fLNK6+Ixmytx5zMhr9mryTBkC//qSeTy3qITDKD21PLv/+ccw9LXyGcyIEKT
-	4VQfz0oXckn/3cimss/tAnXmHOz31PYq/Cmrm4op9n1WslUcoxzO10S0LxK4eZC+5aLO+EQQtCqb7
-	PQTlJd0FU4StAyuLXm6Q==;
+	List-Owner; bh=snGIFlXW2qu0haVx6P9ZhqDOH+kIyOEDHy3cHOSrcs8=; b=Y86pi6m6n/l5rt
+	nNRkUp4seRBhVP7ykgz70rthIidRxf+xho0KoA5pLYTe+quK0haB+/HW0ZpxKSjmL1pfJOlO7tD9E
+	eDKykJ83ULXdy6n6okjbTPI5eSkU+bW+bSMxLDmJllvS+Bjmwu9DhW7ekwuYzwaL3dmBYAiRDmliB
+	gQWOSPaQtTRmRYO/LuDzkIjdJmurB0jNYk9TW3lsQhFefUDN88DKiUhmIUlYRom8qUAcIvmqCVgH2
+	sC0TRSO0RZ+pWg+uRE2+qNL4aanPlAV2DkHw8AZdjwNOlrAHFUOrimlzbCIe7opCVMYPG2WKaaZeX
+	e9XbtvSmzamoSEaUz4qA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqnH2-0008I9-BX; Thu, 25 Jul 2019 23:35:48 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1hqnMt-0001pj-8L; Thu, 25 Jul 2019 23:41:51 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqnGj-0008HS-HY
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 23:35:31 +0000
-Received: by mail-io1-xd44.google.com with SMTP id j5so96828247ioj.8
+ id 1hqnMU-0001ne-Lz
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 23:41:28 +0000
+Received: by mail-pf1-x442.google.com with SMTP id f17so19528166pfn.6
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 25 Jul 2019 16:35:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=FkpQNBEJyUYlZ+foMWEjwOOmDuvJ1KqLXtHOKeziXTU=;
- b=P4GXONjnr2ejlxTjuq3SyzpJD9nBSLIDYncSudn+pYgmDEbwzBYfQ+s1k01XDE9c2T
- DWDFqDVeLm7azJLocwwU2rxApr+ds4l+E3vMIYAJrFqMV6T8SG8WKRbRQc0aHo5wFHLv
- B62GJTBtjmJUkYJ0CJ4UU2A+Bndr5O6Fytp6g=
+ Thu, 25 Jul 2019 16:41:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=mfnZxOLDEeVO3qt5r3vvVtE+ErJ1uBMl6JY5u4LfgE8=;
+ b=NYZPG4YGuOK9pb/2O879xjVVXKhk7WAvahsuMxvB98qIUqyPiOnrQfQ7P+Ixq3MPma
+ duSsO5O/64u+E2DWqn5D9KXPJfVirf/E7wKVvcvQiNcVhx+9dgbDE55NwVx+TNdUFPtL
+ HvSNEOHGX3NOIDAQ/pq7NQ+imv/wl1pWJXUdb6QOiYLbj793p9+d5af8/iOesOe5lQzm
+ lS/0RgANQyEPvRMRa4YecacmiEKGzvpM819v62SGJVVAytNGiVNtL8m3osIFWFdWup3d
+ 3xF7zo67ZntoeI8Yaft3hgxhzcj+lGU7e4kaRtzhJehqB+RlDKNfFuNEkMxdc4aEElLS
+ hXRg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=FkpQNBEJyUYlZ+foMWEjwOOmDuvJ1KqLXtHOKeziXTU=;
- b=tvasdjdAG/RFXNmK3vYauBMDaMKnViztHSCyXu1JbuswlJBLJFWX6fueuBYtdjdvgl
- SNrLwnlLpUUlhudOc7sPzGxgHQRqd07pIPI0iOgQITNAVKeJiBSDD4SHhOwAVTVMlLV0
- xwxUX4dRx9WVaV1hZ4gHIgmyV6fRZ+rwBXhQZ4fKT5wLxsrevLCegfIorVrWbv1R1G0T
- 0raRLQl0VX4dNj9WlJMS7TPhWhoVVrM/XYLfMwIWu5zacyhejZHSphzfDd8TaNb7/job
- hWIcgth0CCelcuiYK+f88ZcEe7/qIPfBoWgGDVbbM4OrFcz2Sx6vqcoUtJ66EDVSJMwz
- EXgQ==
-X-Gm-Message-State: APjAAAXVEbiTxObhLtvsT4M+P033IP+t3mQROXSrd3rbpBhg0xFjOpwy
- OyIs8iXrxXTgoSQTiTNLvaAj2NAgJ7Y=
-X-Google-Smtp-Source: APXvYqyRrItFrR4oC6lQbA+LpVmYbq7aOHgkU8hV/UmjJylSM01RKNMOi8oUgPsq6sz1yQwS+symXg==
-X-Received: by 2002:a02:22c6:: with SMTP id o189mr3707560jao.35.1564097728147; 
- Thu, 25 Jul 2019 16:35:28 -0700 (PDT)
-Received: from mail-io1-f44.google.com (mail-io1-f44.google.com.
- [209.85.166.44])
- by smtp.gmail.com with ESMTPSA id e26sm43183105iod.10.2019.07.25.16.35.26
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Thu, 25 Jul 2019 16:35:26 -0700 (PDT)
-Received: by mail-io1-f44.google.com with SMTP id m24so101015017ioo.2
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 25 Jul 2019 16:35:26 -0700 (PDT)
-X-Received: by 2002:a02:c6a9:: with SMTP id o9mr38028054jan.90.1564097725615; 
- Thu, 25 Jul 2019 16:35:25 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=mfnZxOLDEeVO3qt5r3vvVtE+ErJ1uBMl6JY5u4LfgE8=;
+ b=KymopgtIpk2aFK6L5AsquN8bpIIAFSWE6vVzNDwYt1KJiy8vVzdrJUTCCe+bJdci4R
+ YhX6KFZc4+2GXf/BwnxFskti5GAQZOzQIXkVRHwAhwiT17LoqD6/b8fyv8vEGL9pFctw
+ MyJcAcz/BN2i6Ih3nJAPkGFBlRaZujvqg2t0LpXFZ8d9IBof9LwWFo6LzitUoU9F2DzL
+ kMCGBR/04qbypBbk17E1fci2nCk6aY4MIe5IiDw9eXd8ZO0HbOhBMZmcbGyA9auaRdmP
+ d9JKSd3FTmuWzaqsotTZGTtC+JTl4Umd4ZN1xG+Liy326SoQLzM5PQWdK2b8IIYdflJ2
+ T55Q==
+X-Gm-Message-State: APjAAAVloXs6eWjIZzZHzqlkHFvQzNv5uceZITWIv0GUFZqk+C/F90uu
+ /uTZAe5f+VgHgFpdAZaKx5Su7g==
+X-Google-Smtp-Source: APXvYqzhoS3YtUHt0ZnWmTrTLKzKcKwKjxpCWou1XYaUkEeTyPdkWoXNaQqca3bgA+hs4A+tDUQLAw==
+X-Received: by 2002:aa7:8201:: with SMTP id k1mr18609232pfi.97.1564098085191; 
+ Thu, 25 Jul 2019 16:41:25 -0700 (PDT)
+Received: from localhost ([2601:602:9200:a1a5:c1da:f078:8d:a297])
+ by smtp.googlemail.com with ESMTPSA id s11sm49036956pgv.13.2019.07.25.16.41.24
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 25 Jul 2019 16:41:24 -0700 (PDT)
+From: Kevin Hilman <khilman@baylibre.com>
+To: Xavier Ruppen <xruppen@gmail.com>
+Subject: Re: [PATCH] arm64: dts: meson: odroid-n2: keep SD card regulator
+ always on
+In-Reply-To: <20190719192954.26481-1-xruppen@gmail.com>
+References: <20190719192954.26481-1-xruppen@gmail.com>
+Date: Thu, 25 Jul 2019 16:41:20 -0700
+Message-ID: <7htvb9smvz.fsf@baylibre.com>
 MIME-Version: 1.0
-References: <20190620182056.61552-1-dianders@chromium.org>
- <CAD=FV=Wi21Emjg7CpCJfSRiKr_EisR20UO1tbPjAeJzdJNbSVw@mail.gmail.com>
- <CAD=FV=UhNfhVG422=huthFSptoV4FXED=xPtArO2KkyNb1U3Xw@mail.gmail.com>
- <3386344.sHu1S4gNag@phil>
-In-Reply-To: <3386344.sHu1S4gNag@phil>
-From: Doug Anderson <dianders@chromium.org>
-Date: Thu, 25 Jul 2019 16:35:12 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=XNSc+-a6ytx2fsUnh54g64i6FW+6WsHMFqwEMWbBPZ5Q@mail.gmail.com>
-Message-ID: <CAD=FV=XNSc+-a6ytx2fsUnh54g64i6FW+6WsHMFqwEMWbBPZ5Q@mail.gmail.com>
-Subject: Re: [PATCH] Revert "ARM: dts: rockchip: add startup delay to
- rk3288-veyron panel-regulators"
-To: Heiko Stuebner <heiko@sntech.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_163529_609708_84B3E7EF 
-X-CRM114-Status: GOOD (  31.44  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190725_164126_750268_ADA9CB00 
+X-CRM114-Status: GOOD (  12.59  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,108 +92,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- LKML <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Matthias Kaehlcke <mka@chromium.org>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: narmstrong@baylibre.com, martin.blumenstingl@googlemail.com,
+ linux-kernel@vger.kernel.org, Xavier Ruppen <xruppen@gmail.com>,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Xavier Ruppen <xruppen@gmail.com> writes:
 
-On Thu, Jul 25, 2019 at 2:33 PM Heiko Stuebner <heiko@sntech.de> wrote:
+> When powering off the Odroid N2, the tflash_vdd regulator is
+> automatically turned off by the kernel. This is a problem
+> when issuing the "reboot" command while using an SD card.
+> The boot ROM does not power this regulator back on, blocking
+> the reboot process at the boot ROM stage, preventing the
+> SD card from being detected.
 >
-> Am Mittwoch, 3. Juli 2019, 06:54:58 CEST schrieb Doug Anderson:
-> > Hi,
-> >
-> > On Thu, Jun 20, 2019 at 1:31 PM Doug Anderson <dianders@chromium.org> wrote:
-> > >
-> > > Hi,
-> > >
-> > > On Thu, Jun 20, 2019 at 11:21 AM Douglas Anderson <dianders@chromium.org> wrote:
-> > > >
-> > > > This reverts commit 1f45e8c6d0161f044d679f242fe7514e2625af4a.
-> > > >
-> > > > This 100 ms mystery delay is not on downstream kernels and no longer
-> > > > seems needed on upstream kernels either [1].  Presumably something in the
-> > > > meantime has made things better.  A few possibilities for patches that
-> > > > have landed in the meantime that could have made this better are
-> > > > commit 3157694d8c7f ("pwm-backlight: Add support for PWM delays
-> > > > proprieties."), commit 5fb5caee92ba ("pwm-backlight: Enable/disable
-> > > > the PWM before/after LCD enable toggle."), and commit 6d5922dd0d60
-> > > > ("ARM: dts: rockchip: set PWM delay backlight settings for Veyron")
-> > > >
-> > > > Let's revert and get our 100 ms back.
-> > > >
-> > > > [1] https://lkml.kernel.org/r/2226970.BAPq4liE1j@diego
-> > > >
-> > > > Signed-off-by: Douglas Anderson <dianders@chromium.org>
-> > > > ---
-> > > >
-> > > >  arch/arm/boot/dts/rk3288-veyron-jaq.dts    | 1 -
-> > > >  arch/arm/boot/dts/rk3288-veyron-jerry.dts  | 1 -
-> > > >  arch/arm/boot/dts/rk3288-veyron-minnie.dts | 1 -
-> > > >  arch/arm/boot/dts/rk3288-veyron-speedy.dts | 1 -
-> > > >  4 files changed, 4 deletions(-)
-> > >
-> > > Maybe wait before applying.  I've been running reboot tests now with
-> > > this patch applied (among others) and with enough reboots I managed to
-> > > see:
-> > >
-> > > [    5.682418] rockchip-dp ff970000.dp: eDP link training failed (-5)
-> > >
-> > > I'll see if I can confirm that it's this patch and why things are
-> > > different compared to downstream.
-> >
-> > OK, I finally got back to this and confirmed:
-> >
-> > 1. The above error is actually somewhat harmless.  The eDP failure
-> > will be retried automatically despite the scary message.  Specifically
-> > see the loop in analogix_dp_bridge_enable().  I confirmed that after
-> > seeing the error the screen came up just fine (I looked at the screen
-> > in two actual instances but I believe it's pretty much always fine).
-> >
-> > 2. I haven't seen any evidence that the eDP link training happens any
-> > more often with this revert in place.  Specifically, I see the same
-> > message in the logs (at what appears to be the same rate) with or
-> > without this revert.
-> >
-> > 3. Probably the link-training failures here are the same ones we
-> > debugged for PSR for rk3399-gru-kevin that we fixed by making the eDP
-> > PCLK rate exactly 24 MHz.  See <https://crrev.com/c/433393> for
-> > details.  On rk3399-gru-kevin it was super important to resolve the
-> > root cause of these errors because we had PSR (which meant we were
-> > constantly taking to the eDP controller).  On rk3288-veyron devices
-> > with no PSR the retry should be a fine solution and it doesn't seem
-> > like a good idea to fully rejigger our clock plan to fix the root
-> > cause.
-> >
-> >
-> > NOTE: I saw _one_ case on rk3288-veyron-minnie where the screen looked
-> > wonky at bootup and I saw the eDP link training error in the logs.
-> > That's what originally made me cautious.  I haven't been able to
-> > reproduce this, but presumably I just got super unlucky in that one
-> > case.  I've left devices rebooting all day at work and haven't seen
-> > the wonky screen since then.
-> >
-> >
-> > Summary: I think this revert is just fine.
+> Adding the "regulator-always-on" property fixes the problem.
 >
-> it looks like by picking Matthias' cleanups of the veyron displays
-> first I broke this patch. I guess we just need to remove the
->         startup-delay-us = <100000>;
-> from the panel_regulator in the new rk3288-veyron-edp.dtsi ?
+> Signed-off-by: Xavier Ruppen <xruppen@gmail.com>
 
-Oops, I only checked Matthias's change against the current status of
-your for-next tree and forgot about this change.  Yes, the
-startup-delay should be removed there.  Do you want to resolve that
-when applying the patch or would you prefer a resend?
+Thanks for the fix and the detailed background description.
 
--Doug
+Queued as a fix for v5.3.
+
+Note that I also added this to the commit log, for the benefit of anyone
+wanting to backport.
+
+Fixes: c35f6dc5c377 ("arm64: dts: meson: Add minimal support for Odroid-N2")
+
+>
+> Here is what the boot ROM output looks like without this patch:
+>
+>     [root@alarm ~]# reboot 
+>     [...]
+>     [   24.275860] shutdown[1]: All loop devices detached.
+>     [   24.278864] shutdown[1]: Detaching DM devices.
+>     [   24.287105] kvm: exiting hardware virtualization
+>     [   24.318776] reboot: Restarting system
+>     bl31 reboot reason: 0xd
+>     bl31 reboot reason: 0x0
+>     system cmd  1.
+>     G12B:BL:6e7c85:7898ac;FEAT:E0F83180:2000;POC:F;RCY:0;
+>     EMMC:800;NAND:81;SD?:0;SD:400;USB:8;LOOP:1;EMMC:800;
+>     NAND:81;SD?:0;SD:400;USB:8;LOOP:2;EMMC:800;NAND:81;
+>     SD?:0;SD:400;USB:8;LOOP:3; [...]
+>
+> Other people can be seen having this problem on the odroid
+> forum [1].
+>
+> The cause of the problem was found by Martin Blumenstingl
+> on #linux-amlogic. We may want to add his Suggested-by tag
+> if he agrees.
+
+Added.
+
+Thanks!
+
+Kevin
 
 _______________________________________________
 linux-arm-kernel mailing list
