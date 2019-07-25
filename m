@@ -2,63 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61C1A74FB8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 15:39:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E1DC74FEB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 15:44:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IZvMwRsjXC4LypJSvXjWBRzlKmH9uOCwW2girb2Laag=; b=EuMKJxJiuKxflo
-	Pf/vZJUqvAvrzCD3J2uUOUOxq1gHTMfgmaAxW0v9XpQO7kBgF2w7rlUKelOBi5WfbrgLHB0wFkm2h
-	J2USZIVwP/2TonEvL8oOj0v8eqEq8AeS3ky9csZ9OK7NarLQ6V+HH6MTHDwyJCF3iAmFlqZzUfCVr
-	aUlZHDkAbr2yD4twaxwvO6BmUuMyRHJrjRM6nS2T3zW/5KM1iwSwOhUPTYGcfS2JmdwcYl/sA/RZy
-	r6oMJ5MEXGvc09SpiM6nmo5eBXS1V4UYDdj+DBqpEjs/2sSkYytIHlH/0FHx1Su/olewDLN0cDhsn
-	EL2Ski3p9zYWUt6sfbqQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=PdHDD/RWCbnu6jF74DedfuPFwRw/X8yEEXQwcFig7LI=; b=P4k
+	1cxrNIjP+NksX3CoyY8prwJfDUYjxSLNkdfqrQ9dB5qeREw6NNUGNRK/Ml57emiU7/uJRBLp1oFq8
+	WJCwScGng3Kfc5RLQ+F0/tWhaxd9w74aNQabzBudTsKx7RqcPbCvvI/2ZqPEHz1W96RTSlQIRonF9
+	7g4fbulGqXxDz5hYUa3hvXFgJlRxo+blOp7vUbVYCIVXqzZ7Qq39oHpkmwyM2me3eWb72oy6ujl8R
+	aLfmPTKNb8H/YKSVSUCqqQjf6G65X37S4JqKVjez8TJGX+mu3kYo5Du2Y75dOp/oAOmPpjvYpG+9J
+	K0Qez6/UYhPCI/+GmhEdLPut5REDpcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqdxq-0007gt-SN; Thu, 25 Jul 2019 13:39:23 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hqe2j-0001Kh-UF; Thu, 25 Jul 2019 13:44:26 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqdxW-0007gK-UK
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 13:39:04 +0000
-Received: from localhost (unknown [106.200.241.217])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7CAAA2238C;
- Thu, 25 Jul 2019 13:39:00 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564061941;
- bh=GNnRLDXagjW24uJjaZ+NEZpnlhAqk6UFVb6NIhulu8I=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=rXj010Fl0AHCZLs0iIYnzBuO54f2B51sWeruKH8aY5fRC17oXxueIGxOyFSHjUhpC
- tXTU2wyNx3FHOOqAMpCYMO0oX1X9FpRfkzWusLcxCb3v8ckoNxft9V/rpoT9GlsjCz
- bAU7oHic/n3Cgbi9l8Ivc+fTApDA/O7SxAwxD0n8=
-Date: Thu, 25 Jul 2019 19:07:48 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Subject: Re: [PATCH v2 2/2] dmaengine: ti: omap-dma: Improved memcpy polling
- support
-Message-ID: <20190725133748.GX12733@vkoul-mobl.Dlink>
-References: <20190716082459.1222-1-peter.ujfalusi@ti.com>
- <20190716082459.1222-3-peter.ujfalusi@ti.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190716082459.1222-3-peter.ujfalusi@ti.com>
-User-Agent: Mutt/1.11.3 (2019-02-01)
+ id 1hqe2V-0001KP-9F
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 13:44:12 +0000
+Received: by mail-qk1-x741.google.com with SMTP id 201so36405934qkm.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 25 Jul 2019 06:44:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=7vJnzpBpcvcrDJLz4SQKctAKT+udfaD/ozkDXC+TYT0=;
+ b=pVA6ieYR/3S55b2aaehRc/vtm47RV0t8qZT+22Wf574Wt9bpXruLMX1dnHZj+bnpi/
+ CZEDUXo/zLHPZ8C0NA+BdsoWPF8/NvTG30Cnf3DAtwNg6m+ZynlGymStvdlLl2Lw3g9P
+ L27QEA1q9v/gQ36JSI3cDFcTlpgwzMXCJUoHnRk8/RUByrgnL9yJkEUnBQTuoUQw5EK8
+ 0kEgz43sgHzkjd+MneFSHSjD7M36goDXXiB13lvj7hKQDSPtIDh8fY7ANvJtQ5OhLySz
+ wH0Ue/iSs9DjFbR1WAmxveEI4Fr183GDi5noZ/55tv7EIQNIV3BYBXfqFsViWQ4sC2ia
+ fNRw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=7vJnzpBpcvcrDJLz4SQKctAKT+udfaD/ozkDXC+TYT0=;
+ b=noYS7i+R7RyzujSpzSejq6zAzBreElozwn68UDDzK4OZRt6x3VdawVbtk7SnOIsYCU
+ aMEmGzZVr4iSsuqazouM1vw9ya+KbR8+hQMI7EV4beoI60HX5LA30p4NW57SOFE7nCIz
+ Gs2C8QC4Cg99v8dt/f0xFv7Q4oPZ4mVIuL1gpf4IGigc67tE00+WDMbN0HyGTe6nnxc+
+ p4K7YIioFDPAlZ4GKzNV4lYR+3CAE0YKU71qij6e9s7LyjrgxoINNH8yG6aS8T3zn9y+
+ Jrsms3myshWEJvzBT478iE/53LQU3GB1zWRCnbmrIR0ZNHtfNwet95Fp37C+rVxIFKpQ
+ 46QA==
+X-Gm-Message-State: APjAAAVQe9E0yVe4LEk5jPSqIGL6D2TD41Lr3sGPPKvcyC7tm/1gso9k
+ tiL6TUkLgoOxpsY2pyhkFl0=
+X-Google-Smtp-Source: APXvYqwHXFMuUVxS8E9koreW+qeFX3vsdd+y4RFwzLHTFn7FaDrI6ek07z57rO6eM46EKFtht+kwxQ==
+X-Received: by 2002:a37:a9d0:: with SMTP id s199mr59294636qke.32.1564062249711; 
+ Thu, 25 Jul 2019 06:44:09 -0700 (PDT)
+Received: from fabio-Latitude-E5450.nxp.com ([177.221.114.206])
+ by smtp.gmail.com with ESMTPSA id e18sm17527022qkm.49.2019.07.25.06.44.07
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 25 Jul 2019 06:44:08 -0700 (PDT)
+From: Fabio Estevam <festevam@gmail.com>
+To: shawnguo@kernel.org
+Subject: [PATCH] ARM: dts: imx6qdl-nit6xlite: Remove invalid properties
+Date: Thu, 25 Jul 2019 10:44:12 -0300
+Message-Id: <20190725134412.7872-1-festevam@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_063903_011044_4280480E 
-X-CRM114-Status: GOOD (  22.39  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190725_064411_321624_A845EF81 
+X-CRM114-Status: UNSURE (   9.41  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (festevam[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -66,7 +83,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,123 +94,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dmaengine@vger.kernel.org, dan.j.williams@intel.com,
- linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: gary.bisson@boundarydevices.com, Fabio Estevam <festevam@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 16-07-19, 11:24, Peter Ujfalusi wrote:
-> When a DMA client driver does not set the DMA_PREP_INTERRUPT because it
-> does not want to use interrupts for DMA completion or because it can not
-> rely on DMA interrupts due to executing the memcpy when interrupts are
-> disabled it will poll the status of the transfer.
-> 
-> If the interrupts are enabled then the cookie will be set completed in the
-> interrupt handler so only check in HW completion when the polling is really
-> needed.
-> 
-> Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
-> ---
->  drivers/dma/ti/omap-dma.c | 44 +++++++++++++++++++++++++--------------
->  1 file changed, 28 insertions(+), 16 deletions(-)
-> 
-> diff --git a/drivers/dma/ti/omap-dma.c b/drivers/dma/ti/omap-dma.c
-> index 029c0bd550d5..966d8f0323b5 100644
-> --- a/drivers/dma/ti/omap-dma.c
-> +++ b/drivers/dma/ti/omap-dma.c
-> @@ -91,6 +91,7 @@ struct omap_desc {
->  	bool using_ll;
->  	enum dma_transfer_direction dir;
->  	dma_addr_t dev_addr;
-> +	bool polled;
->  
->  	int32_t fi;		/* for OMAP_DMA_SYNC_PACKET / double indexing */
->  	int16_t ei;		/* for double indexing */
-> @@ -815,26 +816,20 @@ static enum dma_status omap_dma_tx_status(struct dma_chan *chan,
->  	struct virt_dma_desc *vd;
->  	enum dma_status ret;
->  	unsigned long flags;
-> +	struct omap_desc *d = NULL;
->  
->  	ret = dma_cookie_status(chan, cookie, txstate);
-> -
-> -	if (!c->paused && c->running) {
-> -		uint32_t ccr = omap_dma_chan_read(c, CCR);
-> -		/*
-> -		 * The channel is no longer active, set the return value
-> -		 * accordingly
-> -		 */
-> -		if (!(ccr & CCR_ENABLE))
-> -			ret = DMA_COMPLETE;
-> -	}
-> -
-> -	if (ret == DMA_COMPLETE || !txstate)
-> +	if (ret == DMA_COMPLETE)
+The "vqmmc-1-8-v" and "ocr-limit" properties are not documented
+anywhere, so just remove them.
 
-why do you want to continue for txstate being null?
-Also it would lead to NULL ptr deref for txstate
+Signed-off-by: Fabio Estevam <festevam@gmail.com>
+---
+ arch/arm/boot/dts/imx6qdl-nit6xlite.dtsi | 2 --
+ 1 file changed, 2 deletions(-)
 
->  		return ret;
->  
->  	spin_lock_irqsave(&c->vc.lock, flags);
-> +	if (c->desc && c->desc->vd.tx.cookie == cookie)
-> +		d = c->desc;
-> +
-> +	if (!txstate)
-> +		goto out;
->  
-> -	if (c->desc && c->desc->vd.tx.cookie == cookie) {
-> -		struct omap_desc *d = c->desc;
-> +	if (d) {
->  		dma_addr_t pos;
->  
->  		if (d->dir == DMA_MEM_TO_DEV)
-> @@ -851,8 +846,22 @@ static enum dma_status omap_dma_tx_status(struct dma_chan *chan,
->  		txstate->residue = 0;
->  	}
->  
-> -	if (ret == DMA_IN_PROGRESS && c->paused)
-> +out:
-> +	if (ret == DMA_IN_PROGRESS && c->paused) {
->  		ret = DMA_PAUSED;
-> +	} else if (d && d->polled && c->running) {
-> +		uint32_t ccr = omap_dma_chan_read(c, CCR);
-> +		/*
-> +		 * The channel is no longer active, set the return value
-> +		 * accordingly and mark it as completed
-> +		 */
-> +		if (!(ccr & CCR_ENABLE)) {
-> +			struct omap_desc *d = c->desc;
-> +			ret = DMA_COMPLETE;
-> +			omap_dma_start_desc(c);
-> +			vchan_cookie_complete(&d->vd);
-> +		}
-> +	}
->  
->  	spin_unlock_irqrestore(&c->vc.lock, flags);
->  
-> @@ -1180,7 +1189,10 @@ static struct dma_async_tx_descriptor *omap_dma_prep_dma_memcpy(
->  	d->ccr = c->ccr;
->  	d->ccr |= CCR_DST_AMODE_POSTINC | CCR_SRC_AMODE_POSTINC;
->  
-> -	d->cicr = CICR_DROP_IE | CICR_FRAME_IE;
-> +	if (tx_flags & DMA_PREP_INTERRUPT)
-> +		d->cicr |= CICR_FRAME_IE;
-> +	else
-> +		d->polled = true;
->  
->  	d->csdp = data_type;
->  
-> -- 
-> Peter
-> 
-> Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
-> Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
-
+diff --git a/arch/arm/boot/dts/imx6qdl-nit6xlite.dtsi b/arch/arm/boot/dts/imx6qdl-nit6xlite.dtsi
+index 7a85116ef1d2..2418cf8f2317 100644
+--- a/arch/arm/boot/dts/imx6qdl-nit6xlite.dtsi
++++ b/arch/arm/boot/dts/imx6qdl-nit6xlite.dtsi
+@@ -556,8 +556,6 @@
+ 	non-removable;
+ 	vmmc-supply = <&reg_3p3v>;
+ 	vqmmc-supply = <&reg_wlan_vmmc>;
+-	vqmmc-1-8-v;
+-	ocr-limit = <0x180>;     /* 1.65v - 2.1v */
+ 	cap-power-off-card;
+ 	keep-power-in-suspend;
+ 	status = "okay";
 -- 
-~Vinod
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
