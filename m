@@ -2,56 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 575027502B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 15:52:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 48B9D7504B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 15:54:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=paykW4CzvCuWLByN5ca79a3xCWvoix3g0qr8MmLUVvw=; b=LncBhlYTyREBhe
-	BLNIGJNcAimGR/b8KIHFsJPT0mRizCLzGrQXuiPsFb0oLUmHwMbgRLlS5gfAmPqfqdCZEy4Rn0eRm
-	k/3OpEcMDQDFZUSSwVBzbj56JlNXYL0+RMi+ANeU6kBFyg2wYm+emnVNSuqucK6Qf/KagIVlq8f8H
-	ju3J2AcO2HV1idKHstVtY/TRFnIYBoUgdzKk2BRdzeeWMFya7QAcbpvNbPdX0OzBpTgCwtAD4c0j5
-	5rN/BNGG731x4I+d1YllHwJ6wSsQNE+OptSpuhYV4oWc39zrnc8VmpxjrlQK9tMrQ9nx5RbnKhvsB
-	EpSoz9hYuGGKzSlGQ8kA==;
+	List-Owner; bh=s0IAmJ4LfFcDiyVzC0ji+D/xSVqWR0oCFA3N/E0EuOo=; b=ai4eKSwLWudHmH
+	GxtBzXc6yAi+v1CpmEGJ091TjFLKiCfhFdoXRzo6yqgEi7pJzpMs8A+5HVpc46p/CyMrtNZCfsyb6
+	6CzN8ApQuvrMbphLd0wLGWjn520ljuK4QTWxmIACCxWn57Ola77UBrqL4W4rT2cIZUk33Sb9MDK/R
+	S6tv/PM5i/y/z0YZHOUNiK+DjoHNsSYRk7B1REeMQ/qfiPfTZiQhTj1TLKBDGFLezrhqh7x0deRxP
+	9Hg2Q1tqcDfnSiAjwVp3LXLi7+F3qCBiqtyFsJAX0atiZKUaPFJBdPKHYYzFb4jvZOvtJkFA7mkDh
+	RweZpb/Raa5+JkMUuJWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqeAS-0007Yb-Oh; Thu, 25 Jul 2019 13:52:24 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hqe9k-00070Z-0t
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 13:51:42 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BDC2928;
- Thu, 25 Jul 2019 06:51:37 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 504813F71F;
- Thu, 25 Jul 2019 06:51:35 -0700 (PDT)
-Date: Thu, 25 Jul 2019 14:51:33 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH V6 RESEND 0/3] arm64/mm: Enable memory hot remove
-Message-ID: <20190725135132.GH14347@lakrids.cambridge.arm.com>
-References: <1563171470-3117-1-git-send-email-anshuman.khandual@arm.com>
- <20190723105636.GA5004@lakrids.cambridge.arm.com>
- <a69ed426-98ff-32ed-82ce-8216dd56daba@arm.com>
+	id 1hqeCr-0000yP-5H; Thu, 25 Jul 2019 13:54:53 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hqeCV-0000w6-TW
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 13:54:34 +0000
+Received: by mail-wr1-x442.google.com with SMTP id n4so50970238wrs.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 25 Jul 2019 06:54:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=kiGD59LaW0LszoAZzmVLJ1Hft59fIaEtybxXjg0U4OU=;
+ b=sQQDJiby1lR9rJnYwpFayBJL1RCmEUHrXJL5ktfkxstXcB1e72/IJ+7W0b7G/ZBDE7
+ l2/Oe7WGAKBlaplOUnR9eKLvijJm+yqgNtv1e2Xt94tpqVPUHg4DEcD9UGsRs0szMquI
+ gd0SnX7mYKDLhjJOaB+OD74kiTzZcmfgGeIajBjxHk8HORwabuVH5qYZ14shV48okQcq
+ oV1q3+hmkLuRmabQQ4N1s3WbE9w1LtffyarQQhGJ98ItiO4babxYtOZPj/d8HElgIXh3
+ +7ifv5dKadFG/B1N65t8KG2r29CwpiyOZg/YA0MfSDcC9TY3HZioK4MipWty6YP9bw5P
+ 6xWg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=kiGD59LaW0LszoAZzmVLJ1Hft59fIaEtybxXjg0U4OU=;
+ b=CVvUAr4S+wPcv0MEX9LQCHRfGsB8KO9I+flU2tcfLG5zxlv5bOl/EBZdfB/5AvlHK7
+ NX0pIPtqqlv+ugCT18x22DN+h8B4YQq2htF2kbFO+r6WfiO161rwA8HNKAaCszy2yntL
+ jb1/QS+elEPK5N8/rjavOJRsQhIZEtPVs1wYlKTuSAznRPVVxgiMTHw32HSrIcB408t7
+ bQJFQpATiP08kjj9ed+pTJw1ljEBn318l/Y2hxgheGRfA8IMxnJKfNh/gWxQ8Adc2uI5
+ ekd/rb2lnEDlQ6HhepnoUczjzqzpy0t03Z7M05ALZa12SpCWXaLith44UU5z4D3e05KQ
+ qFgg==
+X-Gm-Message-State: APjAAAWC3aVNZPIuUcVvLMUAF2oWN1Ja8K7jKZhP1ddiZW9r/Odd3RdF
+ tSwpLtpd8nNUFsmk/KlalTxpvw==
+X-Google-Smtp-Source: APXvYqyi+7SaHwgU0aK/nQJij+0evagD7L54rP/lc55M34rnwnlBR+KX1Ln1iOdMtsPd3Xr0XJt2kw==
+X-Received: by 2002:adf:f3d1:: with SMTP id g17mr64650717wrp.38.1564062869954; 
+ Thu, 25 Jul 2019 06:54:29 -0700 (PDT)
+Received: from dell ([2.27.35.164])
+ by smtp.gmail.com with ESMTPSA id c9sm40786310wml.41.2019.07.25.06.54.08
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 25 Jul 2019 06:54:29 -0700 (PDT)
+Date: Thu, 25 Jul 2019 14:54:02 +0100
+From: Lee Jones <lee.jones@linaro.org>
+To: Suzuki K Poulose <suzuki.poulose@arm.com>
+Subject: Re: [PATCH v3 2/7] drivers: Introduce device lookup variants by
+ of_node
+Message-ID: <20190725135402.GL23883@dell>
+References: <20190723221838.12024-1-suzuki.poulose@arm.com>
+ <20190723221838.12024-3-suzuki.poulose@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <a69ed426-98ff-32ed-82ce-8216dd56daba@arm.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <20190723221838.12024-3-suzuki.poulose@arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_065140_254585_6FA51B57 
-X-CRM114-Status: GOOD (  37.21  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190725_065432_007960_68894C0D 
+X-CRM114-Status: GOOD (  14.38  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.1 URIBL_SBL_A Contains URL's A record listed in the Spamhaus SBL
+ blocklist [URIs: axentia.se]
+ 0.6 URIBL_SBL Contains an URL's NS IP listed in the Spamhaus SBL
+ blocklist [URIs: axentia.se]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,195 +104,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mhocko@suse.com, mgorman@techsingularity.net, david@redhat.com,
- catalin.marinas@arm.com, steve.capper@arm.com, will.deacon@arm.com,
- linux-kernel@vger.kernel.org, linux-mm@kvack.org, logang@deltatee.com,
- arunks@codeaurora.org, cai@lca.pw, ard.biesheuvel@arm.com,
- cpandya@codeaurora.org, james.morse@arm.com, akpm@linux-foundation.org,
- ira.weiny@intel.com, dan.j.williams@intel.com,
- linux-arm-kernel@lists.infradead.org, osalvador@suse.de
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Andrew Lunn <andrew@lunn.ch>, Thor Thayer <thor.thayer@linux.intel.com>,
+ Heiko Stuebner <heiko@sntech.de>, rafael@kernel.org,
+ Maxime Ripard <maxime.ripard@bootlin.com>, linux-fpga@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
+ "David S. Miller" <davem@davemloft.net>,
+ Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
+ linux-i2c@vger.kernel.org, Frank Rowand <frowand.list@gmail.com>,
+ Florian Fainelli <f.fainelli@gmail.com>, linux-rockchip@lists.infradead.org,
+ Wolfram Sang <wsa@the-dreams.de>, David Airlie <airlied@linux.ie>,
+ Jiri Slaby <jslaby@suse.com>, devicetree@vger.kernel.org,
+ Alan Tull <atull@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Rob Herring <robh+dt@kernel.org>, Moritz Fischer <mdf@kernel.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Mathieu Poirier <mathieu.poirier@linaro.org>, gregkh@linuxfoundation.org,
+ Takashi Iwai <tiwai@suse.com>, linux-spi@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
+ Peter Rosin <peda@axentia.se>, Heiner Kallweit <hkallweit1@gmail.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 24, 2019 at 12:28:50PM +0530, Anshuman Khandual wrote:
-> On 07/23/2019 04:26 PM, Mark Rutland wrote:
-> > On Mon, Jul 15, 2019 at 11:47:47AM +0530, Anshuman Khandual wrote:
-> >> This series enables memory hot remove on arm64 after fixing a memblock
-> >> removal ordering problem in generic try_remove_memory() and a possible
-> >> arm64 platform specific kernel page table race condition. This series
-> >> is based on linux-next (next-20190712).
-> >>
-> >> Concurrent vmalloc() and hot-remove conflict:
-> >>
-> >> As pointed out earlier on the v5 thread [2] there can be potential conflict
-> >> between concurrent vmalloc() and memory hot-remove operation. This can be
-> >> solved or at least avoided with some possible methods. The problem here is
-> >> caused by inadequate locking in vmalloc() which protects installation of a
-> >> page table page but not the walk or the leaf entry modification.
-> >>
-> >> Option 1: Making locking in vmalloc() adequate
-> >>
-> >> Current locking scheme protects installation of page table pages but not the
-> >> page table walk or leaf entry creation which can conflict with hot-remove.
-> >> This scheme is sufficient for now as vmalloc() works on mutually exclusive
-> >> ranges which can proceed concurrently only if their shared page table pages
-> >> can be created while inside the lock. It achieves performance improvement
-> >> which will be compromised if entire vmalloc() operation (even if with some
-> >> optimization) has to be completed under a lock.
-> >>
-> >> Option 2: Making sure hot-remove does not happen during vmalloc()
-> >>
-> >> Take mem_hotplug_lock in read mode through [get|put]_online_mems() constructs
-> >> for the entire duration of vmalloc(). It protects from concurrent memory hot
-> >> remove operation and does not add any significant overhead to other concurrent
-> >> vmalloc() threads. It solves the problem in right way unless we do not want to
-> >> extend the usage of mem_hotplug_lock in generic MM.
-> >>
-> >> Option 3: Memory hot-remove does not free (conflicting) page table pages
-> >>
-> >> Don't not free page table pages (if any) for vmemmap mappings after unmapping
-> >> it's virtual range. The only downside here is that some page table pages might
-> >> remain empty and unused until next memory hot-add operation of the same memory
-> >> range.
-> >>
-> >> Option 4: Dont let vmalloc and vmemmap share intermediate page table pages
-> >>
-> >> The conflict does not arise if vmalloc and vmemap range do not share kernel
-> >> page table pages to start with. If such placement can be ensured in platform
-> >> kernel virtual address layout, this problem can be successfully avoided.
-> >>
-> >> There are two generic solutions (Option 1 and 2) and two platform specific
-> >> solutions (Options 2 and 3). This series has decided to go with (Option 3)
-> 
-> s/Option 2 and 3/Option 3 and 4/
-> 
-> >> which requires minimum changes while self-contained inside the functionality.
-> > 
-> > ... while also leaking memory, right?
-> 
-> This is not a memory leak. In the worst case where an empty page table page could
-> have been freed after parts of it's kernel virtual range span's vmemmap mapping has
-> been taken down still remains attached to the higher level page table entry. This
-> empty page table page will be completely reusable during future vmalloc() allocations
-> or vmemmap mapping for newly hot added memory in overlapping memory range. It is just
-> an empty data structure sticking around which could (probably would) be reused later.
-> This problem will not scale and get worse because its part of kernel page table not
-> user process which could get multiplied. Its a small price we are paying to remain
-> safe from a vmalloc() and memory hot remove potential collisions on the kernel page
-> table. IMHO that is fair enough.
-
-I appreciate that we can reuse the memory if we hotplug the same
-phyiscal range.
-
-Regardless, I think it's important to note that this approach leaves
-that memory around. Could you please quantify how much memory this
-would be? i.e. for a 4K 48-bit VA kernel, how many pages would be left
-over for a 1GiB region of memory?
-
-> > In my view, option 2 or 4 would have been preferable. Were there
-> 
-> I would say option 2 is the ideal solution where we make sure that each vmalloc()
-> instance is protected against concurrent memory hot remove through a read side lock
-> via [get|put]_online_mems().
-
-I agree that this would be simple to reason about. However, even taking
-a read lock could significantly change the performance of operations in
-the vmalloc space, so that would need to be quantified. Additionally,
-hotplug operations would stall all vmalloc space operations, which is
-unfortunate.
-
-> Option 4 is very much platform specific and each platform has to make sure that they
-> remain compliant all the time which is not ideal. Its is also an a work around which
-> avoids the problem and does not really fix it.
-
-I understand that you don't like this solution.
-
-I think it should be simple to verify that the layout is safe via
-BUILD_BUG_ON() checking the regions we care about don't overlap, so I
-don't buy that it's all that difficult to ensure going forward if it's
-naturally the case today.
-
-> > specific technical reasons to not go down either of those routes? I'm
-> 
-> Option 2 will require wider agreement as it involves a very critical hot-path vmalloc()
-> which can affect many workloads.
-
-I agree that this would need to be quantified.
-
-> IMHO Option 4 is neither optimal and not does it solve the problem
-> correctly. Like this approach it just avoids it but unlike this
-> touches upon another code area.
-
-I disagree that option 4 wouldn't be correct; it's just avoiding the
-issue at a different level.
-
-> > not sure that minimizing changes is the right rout given that this same
-> > problem presumably applies to other architectures, which will need to be
-> > fixed.
-> 
-> Yes this needs to be fixed but we can get there one step at a time. vmemmap tear
-> down process can start freeing empty page table pages when this gets solved. But
-> why should it prevent entire memory hot remove functionality from being available.
-
-My experience has been that people rarely go back to solve the edge
-cases once the feature they care about has been merged, and we're left
-with more edge cases...
-
-I think we at least need to have a clear idea that we can fix the
-problem before we punt it on as later cleanup. Especially given that
-this seems like it is an existing problem affecting other architectures.
-
-> > Do we know why we aren't seeing issues on other architectures? e.g. is
-> > the issue possible but rare (and hence not reported), or masked by
-> > something else (e.g. the layout of the kernel VA space)?
-> 
-> I would believe so but we can only get more insights from respective architecture folks.
-
-Could you please investigate, e.g. have a look at how this works on x86?
-
-You should be able to figure out if the VA ranges overlap, and I suspect
-that if there is a problem youi can deliberately trigger it within a
-QEMU VM.
-
-> >> Testing:
-> >>
-> >> Memory hot remove has been tested on arm64 for 4K, 16K, 64K page config
-> >> options with all possible CONFIG_ARM64_VA_BITS and CONFIG_PGTABLE_LEVELS
-> >> combinations. Its only build tested on non-arm64 platforms.
-> > 
-> > Could you please share how you've tested this?
-> > 
-> > Having instructions so that I could reproduce this locally would be very
-> > helpful.
-> 
-> Please find the series rebased on v5.3-rc1 along with test patches which
-> enable sysfs interfaces for memory hot add and remove used for testing.
-> 
-> git://linux-arm.org/linux-anshuman.git (memory_hotremove/v6_resend_v5.3-rc1)
-> 
-> Sample Testing Procedure:
-> 
-> echo offline > /sys/devices/system/memory/auto_online_blocks
-> echo 0x680000000 > /sys/devices/system/memory/probe
-> echo online_movable > /sys/devices/system/memory/memory26/state
-> echo 0x680000000 > /sys/devices/system/memory/unprobe
-> 
-> Writing into unprobe trigger offlining first followed by actual memory removal.
-> 
-> NOTE:
-> 
-> This assumes that 0x680000000 is valid memory block starting physical address
-> and memory26 gets created because of the preceding memory hot addition. Please
-> use appropriate values based on your local setup. Let me know how it goes and
-> if I could provide more information.
-
-Thanks for these notes; they're very helpful!
-
-Mark.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVHVlLCAyMyBKdWwgMjAxOSwgU3V6dWtpIEsgUG91bG9zZSB3cm90ZToKCj4gSW50cm9kdWNl
+IHdyYXBwZXJzIGZvciB7YnVzL2RyaXZlci9jbGFzc31fZmluZF9kZXZpY2UoKSB0bwo+IGxvY2F0
+ZSBkZXZpY2VzIGJ5IGl0cyBvZl9ub2RlLgo+IAo+IENjOiBNYWFydGVuIExhbmtob3JzdCA8bWFh
+cnRlbi5sYW5raG9yc3RAbGludXguaW50ZWwuY29tPgo+IENjOiBNYXhpbWUgUmlwYXJkIDxtYXhp
+bWUucmlwYXJkQGJvb3RsaW4uY29tPgo+IENjOiBkcmktZGV2ZWxAbGlzdHMuZnJlZWRlc2t0b3Au
+b3JnCj4gQ2M6IERhdmlkIEFpcmxpZSA8YWlybGllZEBsaW51eC5pZT4KPiBDYzogRGFuaWVsIFZl
+dHRlciA8ZGFuaWVsQGZmd2xsLmNoPgo+IENjOiBkZXZpY2V0cmVlQHZnZXIua2VybmVsLm9yZwo+
+IENjOiBGbG9yaWFuIEZhaW5lbGxpIDxmLmZhaW5lbGxpQGdtYWlsLmNvbT4KPiBDYzogRnJhbmsg
+Um93YW5kIDxmcm93YW5kLmxpc3RAZ21haWwuY29tPgo+IENjOiBIZWlrbyBTdHVlYm5lciA8aGVp
+a29Ac250ZWNoLmRlPgo+IENjOiBMaWFtIEdpcmR3b29kIDxsZ2lyZHdvb2RAZ21haWwuY29tPgo+
+IENjOiBsaW51eC1pMmNAdmdlci5rZXJuZWwub3JnCj4gQ2M6IGxpbnV4LXJvY2tjaGlwQGxpc3Rz
+LmluZnJhZGVhZC5vcmcKPiBDYzogbGludXgtc3BpQHZnZXIua2VybmVsLm9yZwo+IENjOiBNYXRo
+aWV1IFBvaXJpZXIgPG1hdGhpZXUucG9pcmllckBsaW5hcm8ub3JnPgo+IENjOiBSb2IgSGVycmlu
+ZyA8cm9iaCtkdEBrZXJuZWwub3JnPgo+IENjOiBTcmluaXZhcyBLYW5kYWdhdGxhIDxzcmluaXZh
+cy5rYW5kYWdhdGxhQGxpbmFyby5vcmc+Cj4gQ2M6IFRha2FzaGkgSXdhaSA8dGl3YWlAc3VzZS5j
+b20+Cj4gQ2M6IFdvbGZyYW0gU2FuZyA8d3NhQHRoZS1kcmVhbXMuZGU+Cj4gQ2M6IEFsYW4gVHVs
+bCA8YXR1bGxAa2VybmVsLm9yZz4KPiBDYzogTW9yaXR6IEZpc2NoZXIgPG1kZkBrZXJuZWwub3Jn
+Pgo+IENjOiBsaW51eC1mcGdhQHZnZXIua2VybmVsLm9yZwo+IENjOiBQZXRlciBSb3NpbiA8cGVk
+YUBheGVudGlhLnNlPgo+IENjOiBNYXJrIEJyb3duIDxicm9vbmllQGtlcm5lbC5vcmc+Cj4gQ2M6
+IEZsb3JpYW4gRmFpbmVsbGkgPGYuZmFpbmVsbGlAZ21haWwuY29tPgo+IENjOiBIZWluZXIgS2Fs
+bHdlaXQgPGhrYWxsd2VpdDFAZ21haWwuY29tPgo+IENjOiAiRGF2aWQgUy4gTWlsbGVyIiA8ZGF2
+ZW1AZGF2ZW1sb2Z0Lm5ldD4KPiBDYzogQW5kcmV3IEx1bm4gPGFuZHJld0BsdW5uLmNoPgo+IENj
+OiBMaWFtIEdpcmR3b29kIDxsZ2lyZHdvb2RAZ21haWwuY29tPgo+IENjOiBHcmVnIEtyb2FoLUhh
+cnRtYW4gPGdyZWdraEBsaW51eGZvdW5kYXRpb24ub3JnPgo+IENjOiAiUmFmYWVsIEouIFd5c29j
+a2kiIDxyYWZhZWxAa2VybmVsLm9yZz4KPiBDYzogTGVlIEpvbmVzIDxsZWUuam9uZXNAbGluYXJv
+Lm9yZz4KPiBDYzogVGhvciBUaGF5ZXIgPHRob3IudGhheWVyQGxpbnV4LmludGVsLmNvbT4KPiBD
+YzogSmlyaSBTbGFieSA8anNsYWJ5QHN1c2UuY29tPgo+IENjOiBNYXJrIEJyb3duIDxicm9vbmll
+QGtlcm5lbC5vcmc+Cj4gQ2M6IEFuZHJldyBMdW5uIDxhbmRyZXdAbHVubi5jaD4KPiBDYzogUGV0
+ZXIgUm9zaW4gPHBlZGFAYXhlbnRpYS5zZT4KPiBTaWduZWQtb2ZmLWJ5OiBTdXp1a2kgSyBQb3Vs
+b3NlIDxzdXp1a2kucG91bG9zZUBhcm0uY29tPgo+IC0tLQo+ICAtIERyb3BwZWQgdGhlIHJldmll
+d2VkLWJ5IHRhZ3MgZnJvbSBUaG9yLCBNYXJrLCBBbmRyZXcgYW5kIFBldGVyIGFzIHRoZQo+ICAg
+IHBhdGNoZXMgYXJlIG1lcmVnZWQsIHRob3VnaCB0aGVyZSBhcmUgbm8gZnVuY3Rpb25hbCBjaGFu
+Z2VzLgo+IC0tLQo+ICBkcml2ZXJzL2FtYmEvdGVncmEtYWhiLmMgICAgICAgICAgICAgIHwgMTEg
+Ky0tLS0tLS0KPiAgZHJpdmVycy9mcGdhL2ZwZ2EtYnJpZGdlLmMgICAgICAgICAgICB8ICA4ICst
+LS0tLQo+ICBkcml2ZXJzL2ZwZ2EvZnBnYS1tZ3IuYyAgICAgICAgICAgICAgIHwgIDggKy0tLS0t
+Cj4gIGRyaXZlcnMvZ3B1L2RybS9kcm1fbWlwaV9kc2kuYyAgICAgICAgfCAgNyArLS0tLQo+ICBk
+cml2ZXJzL2kyYy9pMmMtY29yZS1vZi5jICAgICAgICAgICAgIHwgIDcgKy0tLS0KPiAgZHJpdmVy
+cy9tZmQvYWx0ZXJhLXN5c21nci5jICAgICAgICAgICB8IDE0ICsrLS0tLS0tLS0KCkZvciBteSBv
+d24gcmVmZXJlbmNlOgogIEFja2VkLWZvci1NRkQtYnk6IExlZSBKb25lcyA8bGVlLmpvbmVzQGxp
+bmFyby5vcmc+CgpXaGF0J3MgdGhlIG1lcmdlIHBsYW4gZm9yIHRoaXMgcGF0Y2g/CgpJcyBhbnlv
+bmUgcHJlcGFyZWQgdG8gY3JlYXRlIGFuIGltbXV0YWJsZSBicmFuY2ggZm9yIHVzIHRvIHB1bGwg
+ZnJvbT8KSSdtIGhhcHB5IHRvIGRvIGl0IGlmIG5vIG9uZSBlbHNlIHN0ZXBzIHVwLgoKPiAgZHJp
+dmVycy9tdXgvY29yZS5jICAgICAgICAgICAgICAgICAgICB8ICA3ICstLS0tCj4gIGRyaXZlcnMv
+bmV0L3BoeS9tZGlvX2J1cy5jICAgICAgICAgICAgfCAgOSArLS0tLS0tCj4gIGRyaXZlcnMvbnZt
+ZW0vY29yZS5jICAgICAgICAgICAgICAgICAgfCAgNyArLS0tLQo+ICBkcml2ZXJzL29mL29mX21k
+aW8uYyAgICAgICAgICAgICAgICAgIHwgIDggKy0tLS0tCj4gIGRyaXZlcnMvb2YvcGxhdGZvcm0u
+YyAgICAgICAgICAgICAgICAgfCAgNyArLS0tLQo+ICBkcml2ZXJzL3JlZ3VsYXRvci9vZl9yZWd1
+bGF0b3IuYyAgICAgIHwgIDcgKy0tLS0KPiAgZHJpdmVycy9zcGkvc3BpLmMgICAgICAgICAgICAg
+ICAgICAgICB8IDIwICsrKy0tLS0tLS0tLS0tLQo+ICBpbmNsdWRlL2xpbnV4L2RldmljZS5oICAg
+ICAgICAgICAgICAgIHwgMzcgKysrKysrKysrKysrKysrKysrKysrKysrKysrCj4gIHNvdW5kL3Nv
+Yy9yb2NrY2hpcC9yazMzOTlfZ3J1X3NvdW5kLmMgfCAgOSArKy0tLS0tCj4gIDE1IGZpbGVzIGNo
+YW5nZWQsIDU2IGluc2VydGlvbnMoKyksIDExMCBkZWxldGlvbnMoLSkKCi0tIApMZWUgSm9uZXMg
+W+adjueQvOaWr10KTGluYXJvIFNlcnZpY2VzIFRlY2huaWNhbCBMZWFkCkxpbmFyby5vcmcg4pSC
+IE9wZW4gc291cmNlIHNvZnR3YXJlIGZvciBBUk0gU29DcwpGb2xsb3cgTGluYXJvOiBGYWNlYm9v
+ayB8IFR3aXR0ZXIgfCBCbG9nCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
+QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
+aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
