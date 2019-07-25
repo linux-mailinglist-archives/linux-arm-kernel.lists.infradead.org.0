@@ -2,85 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA7C7742DB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 03:24:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E7D40742F5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 03:42:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=wVbU1sbfULF8Y9rwmJrBD/ddx9G5BzjEiwYLM6He7Xc=; b=MoxFslr4G4eKS+zeb1Wga8Sxb
-	jQTrIT79IYQ5rZ6wDtxKjz0tFZ4HOt/q7kXFtkzgmPE/SK1urLDIdtyrSSYNUy5RTY4344ZGOss9p
-	43wILOlH17Wvp8QqEzjBZUCjoFLDEMS7bJ+ubV5Ttp6nLzVQKvwjZWJ5y0mDg2xG40s95sPJH6tIg
-	GPTD6f/jmuGfX8tyO+CC+CVS69X2yCnyi/sdy+wqsL6vb0lTo2PEoxTf43NVBsG7+rppzPdpYnu/v
-	ofp+1hqKX5PZs2QBOx6wNMejdmUw7Nf6QvWpOg8KT2EFAdwZaA5kKyC3I4//Dt0+RyZOjW/r7gKr2
-	F3Tu4QrbA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XdzHvY3jGCdBV1P3QNP/k6omTWHahoT0WB70o+YpdHY=; b=UmF/eqEOSth1JP
+	CkakGzk9GTW5ikTCZyPlPgP/qjre8NGYZVj4istxUf2G8yRhr4Xq5EIcAsAme0emyCG2mvWptXA9m
+	/K/8S53JECLIrH1+j4lSjCtzdtygWx3hICd2lGc7CCTlUuwxuQwwUL/5rvBVQtKhaVskkrFDVNWKm
+	exa8GWdR3+YQTcy0CUzyHwkfjvx1fw8ppkA1QlTL/QpvnpCnCDFk2TAHZSkeDdsGvJ+0EB3Q24tmF
+	I9uTB9XfSVi/j1I4njn/I91On0nHjxT2EDxL4kRImX/ErfJXeZvBSDfRg9S5NcDU30qheEGnZ23bf
+	DjPfP5q3poFi577JHjHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqSUz-00071x-Q1; Thu, 25 Jul 2019 01:24:50 +0000
-Received: from esa3.hgst.iphmx.com ([216.71.153.141])
+	id 1hqSm4-0004g3-Lr; Thu, 25 Jul 2019 01:42:28 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqSUg-00070v-89; Thu, 25 Jul 2019 01:24:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
- t=1564017870; x=1595553870;
- h=subject:to:cc:references:from:message-id:date:
- mime-version:in-reply-to:content-transfer-encoding;
- bh=p+jTfu4cIazD5eixTiPopv5has0130QcUTKO/yKoUes=;
- b=mEyy7VVhzwtkA9+0C+6hlbHXsG7x3CUnIZy+ZJumyjgAXwtIswN7mJdl
- jDAgT5XUeVCeTn/9NftaV2LWN8sXgzrrW2LP4kueNyZ4IDI1p4FWgkRPH
- 2d8yOI6fMyiX+vsfsoJ+cbEGg2H/SiRxFapZ9lUQho54HJK97nbgsTgiy
- cFmZc/HW8+Cqngwy5xUIH2ZWzsKGBJfDxUJiwujL3srL+vMk2aAC0BSfX
- laKd5ul9xADThxLtUdw6VUyFvdi0t91Gi+UIElgYa37Z8w9mESDH9ZB6q
- U2Q6ZGcf8i+E7OPcNEH5cGt47XR3MBCoiIYIbTYlw2rfl0un/MT+wKuMI Q==;
-IronPort-SDR: fqBvd+9hf8yTa+Z2TvDA5JgsLnjtwcKYJZnSS5tYQA914Bl4oCZVoMUkQ3g2UPG89JxhgFo6a2
- /vF0+zclONdyutf7vVUn/5w0nne2VGa0IH2YqyDfPNmeqgPvVh/mNY03mZVMLlXvYCSZBrjJAv
- gLmaxWAur9mwF7MZXLAR8glpoQGDFAyGaUm26ttV63kAYLWmjSmYmbIEVb6VnSo3lRWZSCzIWT
- sOplgskktMhfIE55M+mmcyBKPFFgaIgVbMz9zr4u0AKA/2+q7wfyq7WlKufrjaegVck/TRj8wl
- IvQ=
-X-IronPort-AV: E=Sophos;i="5.64,304,1559491200"; d="scan'208";a="118681831"
-Received: from h199-255-45-15.hgst.com (HELO uls-op-cesaep02.wdc.com)
- ([199.255.45.15])
- by ob1.hgst.iphmx.com with ESMTP; 25 Jul 2019 09:24:26 +0800
-IronPort-SDR: te6sJyns275o4+/eg1wdrIys7xiTSkDK6ChDUOU1WqLp6QzuPv8XtVzgXfB/ha/xamJ6Y23deF
- 0aOTJ/oXitM9Q+BFF/0DqFnTawaQHE9QPzKBt8PmiNmtQpFE9myu9GdGoFYr6/52sxiNPEd+Pp
- Q5nq0J4UvCWPHve0kSvpIjpGAVW5RMYs+dJOto/5t0lokzADfI/jRNKH4zek/fb1Ywarcso+cL
- kDV37ftOGiJYaWsbxToR6jDnyJJUQd6ulKrqIB8bE8qhjkhAKft+CMSvJVr8ChxZt3dPYEaJJO
- qpujwd0y1o6KjJfDT11UJMZI
-Received: from uls-op-cesaip02.wdc.com ([10.248.3.37])
- by uls-op-cesaep02.wdc.com with ESMTP; 24 Jul 2019 18:22:37 -0700
-IronPort-SDR: V40xfE9gili+44NnP3tPlPZ2UZfyLw5G2k1ffUp3o9aNa94g6a0EQQzDNiFNIxamCt67BvNlyN
- ZGvjsXZempGW2czFlejGBR0PiLWWQ4yDXhugkuGPBv9/uk+J7VPYqwZAAbktNZCMUFnKT+3hn3
- /sfby85RS1py25X+dAL4O6KmG/qeVSPieHigi0K0Y1S1wB2ZAnHQykLenqJL5RQjpChOQpUYrV
- pes/KNeXeL28/On8K5wifkMeeQnVLcCOOZmbtYE8vB3ccGhofWq+D1uFHJxa1UXS+9DbKpCq5c
- O0I=
-Received: from r6220.sdcorp.global.sandisk.com (HELO [192.168.1.2])
- ([10.196.157.143])
- by uls-op-cesaip02.wdc.com with ESMTP; 24 Jul 2019 18:24:23 -0700
-Subject: Re: [PATCH v8 0/7] Unify CPU topology across ARM & RISC-V
-To: Paul Walmsley <paul.walmsley@sifive.com>
-References: <20190627195302.28300-1-atish.patra@wdc.com>
- <alpine.DEB.2.21.9999.1907121012050.2267@viisi.sifive.com>
- <alpine.DEB.2.21.9999.1907221224170.23563@viisi.sifive.com>
-From: Atish Patra <atish.patra@wdc.com>
-Message-ID: <ea88d4f4-eff8-adba-3135-0d480f501d48@wdc.com>
-Date: Wed, 24 Jul 2019 18:24:22 -0700
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
- Gecko/20100101 Thunderbird/60.8.0
+ id 1hqSlq-0004fc-98
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 01:42:15 +0000
+Received: by mail-pf1-x442.google.com with SMTP id m30so21849389pff.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 24 Jul 2019 18:42:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=LQf41Qf2MyEcGAlnCF9Sv7hDI8pxvRaGA0CXobFrUw4=;
+ b=iRxxgKeR7cr+V++hP1PTKFiQqoGu3lDyaG67Q0HbnfgYus3nbKzY8UIizGiF8seN/s
+ 0dTw+JALQRKOo5V/c79A7FAzTuvukc6HS084DxljNZnDNvQYCEQl+ZAM3LLzrmIFHE0Q
+ aVcrWaCeV/JSeAvEpzfBdPjfFtVje3wxxiMGaZWBT4tX+ncANg2SCZI06EEVlPQKvF1x
+ YJzk590XLIcO2HI+ITddTp0jDw70V4DUthCzlqltJVRifpa1wd7tLS2zBULSKBW/5ex7
+ vIC97zr6Lf8YuFtzgj9B79bTm7wpknpPZ0sokurfH/ebOcGmM5a2k/oqIVU41TrU+plQ
+ pz3A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=LQf41Qf2MyEcGAlnCF9Sv7hDI8pxvRaGA0CXobFrUw4=;
+ b=GWtRtHb9NpfxVkh4hComNN8N97acu/mRKwSNZP0+k0A3s1/0zP/E2WXken6WIQ4WnZ
+ COZJQOcrpHZoqBw1Aajl8JL1EQNU8z9nk/QAwuztFO8rJxfZ7eDzySN6Fbbb5y+N/64O
+ ORxJOYS0s8g+GF4Uq0T2iVU0FAfX60Dz8SCXk3zXWQ6UKabULGo+FsZrBKe1xqGegIvY
+ qLgP3fOe7K5idVR1TerEaZd7nUEL/3vEOLdHRdg0C896iGAAQMdPe8Nt2Puvuk6kY0fr
+ rwXJP6q5I1RBUajSGhCXk6AsrFxJb5Fq/dlnil4TDYr8l/6y3sK7LYYYYnvTsUaowE2z
+ IQNg==
+X-Gm-Message-State: APjAAAXr/JP3OHk7jKbG/7aDaWgpyrOnWYVZH9YgUYglJ+RcJbcLFBKe
+ iLZrpAe1peTB6Gy2g+42Hf4TMQ==
+X-Google-Smtp-Source: APXvYqz7SxCnEnIwWDcY0tdro2KnRSLcWW6rNVOtl8l+IZj11PjrZsuZgMe9kckvrBuNewHBVXBgnA==
+X-Received: by 2002:a63:9318:: with SMTP id b24mr73280689pge.31.1564018933093; 
+ Wed, 24 Jul 2019 18:42:13 -0700 (PDT)
+Received: from leoy-ThinkPad-X240s ([116.232.252.231])
+ by smtp.gmail.com with ESMTPSA id o11sm79923453pfh.114.2019.07.24.18.42.07
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 24 Jul 2019 18:42:12 -0700 (PDT)
+Date: Thu, 25 Jul 2019 09:42:04 +0800
+From: Leo Yan <leo.yan@linaro.org>
+To: Russell King <linux@armlinux.org.uk>, Oleg Nesterov <oleg@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will@kernel.org>, Alexei Starovoitov <ast@kernel.org>,
+ Daniel Borkmann <daniel@iogearbox.net>,
+ Martin KaFai Lau <kafai@fb.com>, Song Liu <songliubraving@fb.com>,
+ Yonghong Song <yhs@fb.com>, Arnd Bergmann <arnd@arndb.de>,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ netdev@vger.kernel.org, bpf@vger.kernel.org,
+ Masami Hiramatsu <mhiramat@kernel.org>, Justin He <Justin.He@arm.com>
+Subject: Re: [PATCH 1/2] arm64: Add support for function error injection
+Message-ID: <20190725014125.GB6764@leoy-ThinkPad-X240s>
+References: <20190716111301.1855-1-leo.yan@linaro.org>
+ <20190716111301.1855-2-leo.yan@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <alpine.DEB.2.21.9999.1907221224170.23563@viisi.sifive.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20190716111301.1855-2-leo.yan@linaro.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_182430_411349_5D905E00 
-X-CRM114-Status: GOOD (  13.68  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190724_184214_384211_4818DC08 
+X-CRM114-Status: GOOD (  23.87  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.153.141 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -101,57 +106,122 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>,
- "Rafael J. Wysocki" <rafael@kernel.org>,
- "Peter Zijlstra \(Intel\)" <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>, Palmer Dabbelt <palmer@sifive.com>,
- Will Deacon <will.deacon@arm.com>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- "linux-riscv@lists.infradead.org" <linux-riscv@lists.infradead.org>,
- Will Deacon <will@kernel.org>, Ingo Molnar <mingo@kernel.org>,
- Anup Patel <anup@brainfault.org>, Russell King <linux@armlinux.org.uk>,
- Morten Rasmussen <morten.rasmussen@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Albert Ou <aou@eecs.berkeley.edu>, Johan Hovold <johan@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Jeremy Linton <jeremy.linton@arm.com>, Otto Sabart <ottosabart@seberm.com>,
- Sudeep Holla <sudeep.holla@arm.com>, "David S. Miller" <davem@davemloft.net>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 7/22/19 12:25 PM, Paul Walmsley wrote:
-> On Fri, 12 Jul 2019, Paul Walmsley wrote:
+On Tue, Jul 16, 2019 at 07:13:00PM +0800, Leo Yan wrote:
+> This patch implement regs_set_return_value() and
+> override_function_with_return() to support function error injection
+> for arm64.
 > 
->> On Thu, 27 Jun 2019, Atish Patra wrote:
->>
->>> The cpu-map DT entry in ARM can describe the CPU topology in much better
->>> way compared to other existing approaches. RISC-V can easily adopt this
->>> binding to represent its own CPU topology. Thus, both cpu-map DT
->>> binding and topology parsing code can be moved to a common location so
->>> that RISC-V or any other architecture can leverage that.
->>> different config for the architectures that do not support them.
->>
->> Once v5.3-rc1 is released, let's plan to get these patches rebased and
->> reposted and into linux-next as soon as possible.
+> In the exception flow, arm64's general register x30 contains the value
+> for the link register; so we can just update pt_regs::pc with it rather
+> than redirecting execution to a dummy function that returns.
 > 
-> These CPU topology patches are now queued for v5.4-rc1.  They should enter
-> linux-next shortly.
+> This patch is heavily inspired by the commit 7cd01b08d35f ("powerpc:
+> Add support for function error injection").
 > 
-> 
-> - Paul
-> 
+> Signed-off-by: Leo Yan <leo.yan@linaro.org>
 
-Thanks!!
+Catalin, Will:  Gentle ping ...
 
--- 
-Regards,
-Atish
+> ---
+>  arch/arm64/Kconfig                       |  1 +
+>  arch/arm64/include/asm/error-injection.h | 13 +++++++++++++
+>  arch/arm64/include/asm/ptrace.h          |  5 +++++
+>  arch/arm64/lib/Makefile                  |  2 ++
+>  arch/arm64/lib/error-inject.c            | 19 +++++++++++++++++++
+>  5 files changed, 40 insertions(+)
+>  create mode 100644 arch/arm64/include/asm/error-injection.h
+>  create mode 100644 arch/arm64/lib/error-inject.c
+> 
+> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+> index 697ea0510729..a6d9e622977d 100644
+> --- a/arch/arm64/Kconfig
+> +++ b/arch/arm64/Kconfig
+> @@ -142,6 +142,7 @@ config ARM64
+>  	select HAVE_EFFICIENT_UNALIGNED_ACCESS
+>  	select HAVE_FTRACE_MCOUNT_RECORD
+>  	select HAVE_FUNCTION_TRACER
+> +	select HAVE_FUNCTION_ERROR_INJECTION
+>  	select HAVE_FUNCTION_GRAPH_TRACER
+>  	select HAVE_GCC_PLUGINS
+>  	select HAVE_HW_BREAKPOINT if PERF_EVENTS
+> diff --git a/arch/arm64/include/asm/error-injection.h b/arch/arm64/include/asm/error-injection.h
+> new file mode 100644
+> index 000000000000..da057e8ed224
+> --- /dev/null
+> +++ b/arch/arm64/include/asm/error-injection.h
+> @@ -0,0 +1,13 @@
+> +/* SPDX-License-Identifier: GPL-2.0+ */
+> +
+> +#ifndef __ASM_ERROR_INJECTION_H_
+> +#define __ASM_ERROR_INJECTION_H_
+> +
+> +#include <linux/compiler.h>
+> +#include <linux/linkage.h>
+> +#include <asm/ptrace.h>
+> +#include <asm-generic/error-injection.h>
+> +
+> +void override_function_with_return(struct pt_regs *regs);
+> +
+> +#endif /* __ASM_ERROR_INJECTION_H_ */
+> diff --git a/arch/arm64/include/asm/ptrace.h b/arch/arm64/include/asm/ptrace.h
+> index dad858b6adc6..3aafbbe218a2 100644
+> --- a/arch/arm64/include/asm/ptrace.h
+> +++ b/arch/arm64/include/asm/ptrace.h
+> @@ -294,6 +294,11 @@ static inline unsigned long regs_return_value(struct pt_regs *regs)
+>  	return regs->regs[0];
+>  }
+>  
+> +static inline void regs_set_return_value(struct pt_regs *regs, unsigned long rc)
+> +{
+> +	regs->regs[0] = rc;
+> +}
+> +
+>  /**
+>   * regs_get_kernel_argument() - get Nth function argument in kernel
+>   * @regs:	pt_regs of that context
+> diff --git a/arch/arm64/lib/Makefile b/arch/arm64/lib/Makefile
+> index 33c2a4abda04..f182ccb0438e 100644
+> --- a/arch/arm64/lib/Makefile
+> +++ b/arch/arm64/lib/Makefile
+> @@ -33,3 +33,5 @@ UBSAN_SANITIZE_atomic_ll_sc.o	:= n
+>  lib-$(CONFIG_ARCH_HAS_UACCESS_FLUSHCACHE) += uaccess_flushcache.o
+>  
+>  obj-$(CONFIG_CRC32) += crc32.o
+> +
+> +obj-$(CONFIG_FUNCTION_ERROR_INJECTION) += error-inject.o
+> diff --git a/arch/arm64/lib/error-inject.c b/arch/arm64/lib/error-inject.c
+> new file mode 100644
+> index 000000000000..35661c2de4b0
+> --- /dev/null
+> +++ b/arch/arm64/lib/error-inject.c
+> @@ -0,0 +1,19 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +
+> +#include <linux/error-injection.h>
+> +#include <linux/kprobes.h>
+> +
+> +void override_function_with_return(struct pt_regs *regs)
+> +{
+> +	/*
+> +	 * 'regs' represents the state on entry of a predefined function in
+> +	 * the kernel/module and which is captured on a kprobe.
+> +	 *
+> +	 * 'regs->regs[30]' contains the the link register for the probed
+> +	 * function and assign it to 'regs->pc', so when kprobe returns
+> +	 * back from exception it will override the end of probed function
+> +	 * and drirectly return to the predefined function's caller.
+> +	 */
+> +	regs->pc = regs->regs[30];
+> +}
+> +NOKPROBE_SYMBOL(override_function_with_return);
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
