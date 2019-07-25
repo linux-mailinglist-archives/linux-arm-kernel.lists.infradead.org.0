@@ -2,55 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ECA2A7540E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 18:30:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 82EAB75430
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 18:38:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JFpVmYIYDlZZ3Pf34uEGg+r7jK94pSKFQrOfqhcjYHc=; b=GP5ULfa0upPoaT
-	G5jUQrZJVIHG9DC9TyVAi3B3FWJ5mnFwy6Hq5QdtRGkvljr3Re/OxsZkv8I7obv7dddfwA9L1a178
-	gfPzCDd4zL8DT5rVKhBJkoha6xq1a0Gv0ifmXOvxU7GUZClFkDLfAe2IW0/SglvR+gAVcmcPt4RS4
-	LENE6u7G9DXsqPo4tV6kCJPBXgvOMSdCPDvS4jV45N+Bu+ZBFJdOX6N49P+W/lzJuFUOyimB57Hzw
-	Y/3+w0Ly33RfSZLay/DVPpIyr/hnB7m91wi21Mhncjauli/X3c0XoYT32CjeKcDTgYkx7PFUdJd27
-	qAlJHwTGS+/HGqveI/nw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Fom1eRsv4ybByzEs4JHaJldvNljmJajKm7PXKAi8SA4=; b=o3mfOvTJawNcFc
+	m1mOEgBXfhJ3H+322CrtaT59+fsfT7ivOT/Rnlxl7KLOlRBFoivi7yXfGuFG3mqJBeudNyW/5uE5l
+	v63/aRY1+Fzd82iD6WVYF50PJc5hGDhzOGWE2/izEut5C6wq5fmjYObyV72icNe4Ny9QuQv/h4h7b
+	mg5rFVuDnCyaLOUXf8eFpNIi2Ka9FfWlOY4bQaXaeuBrncpYSmd005GeWo29Nqor4iF8bOroppFRx
+	tOI1RxLUiPhKo7bPF+DVMdjJmV/PwCGQ5pcPMLoG01gjdzQncFXcicewlTdezwvsswwszIDdOK26J
+	z/SnfbUzuhkPvNmLJL3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqgdA-0005UB-8x; Thu, 25 Jul 2019 16:30:12 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hqgbZ-0004eo-V9
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 16:28:35 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4D9F9174E;
- Thu, 25 Jul 2019 09:28:31 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 158293F71A; Thu, 25 Jul 2019 09:28:29 -0700 (PDT)
-Date: Thu, 25 Jul 2019 17:28:28 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Julien Grall <julien.grall@arm.com>
-Subject: Re: [PATCH v3 09/15] arm64/mm: Split the function
- check_and_switch_context in 3 parts
-Message-ID: <20190725162827.GE4113@arrakis.emea.arm.com>
-References: <20190724162534.7390-1-julien.grall@arm.com>
- <20190724162534.7390-10-julien.grall@arm.com>
+	id 1hqgkw-0000a2-6n; Thu, 25 Jul 2019 16:38:14 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hqgki-0000ZO-9o
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 16:38:01 +0000
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id E6F3B30860DC;
+ Thu, 25 Jul 2019 16:37:56 +0000 (UTC)
+Received: from [10.36.116.102] (ovpn-116-102.ams2.redhat.com [10.36.116.102])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 7004E17B12;
+ Thu, 25 Jul 2019 16:37:53 +0000 (UTC)
+Subject: Re: [PATCH v3 07/10] KVM: arm/arm64: vgic-its: Invalidate MSI-LPI
+ translation cache on vgic teardown
+To: Marc Zyngier <maz@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org
+References: <20190725153543.24386-1-maz@kernel.org>
+ <20190725153543.24386-8-maz@kernel.org>
+From: Auger Eric <eric.auger@redhat.com>
+Message-ID: <7b226f82-5000-58f6-0cdf-d0be1f1ddb84@redhat.com>
+Date: Thu, 25 Jul 2019 18:37:51 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.4.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190724162534.7390-10-julien.grall@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190725153543.24386-8-maz@kernel.org>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.44]); Thu, 25 Jul 2019 16:37:57 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_092834_223821_77F58748 
-X-CRM114-Status: GOOD (  17.61  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190725_093800_371854_F74CD4CA 
+X-CRM114-Status: GOOD (  17.87  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,54 +72,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: julien.thierry@arm.com, marc.zyngier@arm.com, suzuki.poulose@arm.com,
- will.deacon@arm.com, linux-kernel@vger.kernel.org, james.morse@arm.com,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Marc Zyngier <marc.zyngier@arm.com>, Andre Przywara <Andre.Przywara@arm.com>,
+ Christoffer Dall <christoffer.dall@arm.com>, "Raslan,
+ KarimAllah" <karahmed@amazon.de>, James Morse <james.morse@arm.com>, "Saidi,
+ Ali" <alisaidi@amazon.com>, Zenghui Yu <yuzenghui@huawei.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 24, 2019 at 05:25:28PM +0100, Julien Grall wrote:
-> The function check_and_switch_context is used to:
->     1) Check whether the ASID is still valid
->     2) Generate a new one if it is not valid
->     3) Switch the context
+Hi Marc,
+
+On 7/25/19 5:35 PM, Marc Zyngier wrote:
+> From: Marc Zyngier <marc.zyngier@arm.com>
 > 
-> While the latter is specific to the MM subsystem, the rest could be part
-> of the generic ASID allocator.
+> In order to avoid leaking vgic_irq structures on teardown, we need to
+> drop all references to LPIs before deallocating the cache itself.
 > 
-> After this patch, the function is now split in 3 parts which corresponds
-> to the use of the functions:
->     1) asid_check_context: Check if the ASID is still valid
->     2) asid_new_context: Generate a new ASID for the context
->     3) check_and_switch_context: Call 1) and 2) and switch the context
+> This is done by invalidating the cache on vgic teardown.
 > 
-> 1) and 2) have not been merged in a single function because we want to
-> avoid to add a branch in when the ASID is still valid. This will matter
-> when the code will be moved in separate file later on as 1) will reside
-> in the header as a static inline function.
-> 
-> Signed-off-by: Julien Grall <julien.grall@arm.com>
-> 
+> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
+Reviewed-by: Eric Auger <eric.auger@redhat.com>
+
+Eric
 > ---
->     Will wants to avoid to add a branch when the ASID is still valid. So
->     1) and 2) are in separates function. The former will move to a new
->     header and make static inline.
-
-Was this discussion logged somewhere, just to get the context?
-
-I presume by "branch" you meant the function call to
-asid_check_context(). Personally, I don't like the duplication of this
-function in patch 13. This is part of the ASID allocation algorithm and
-I prefer to keep them together (we even had a bug in here with the xchg
-use).
-
-Do you have any numbers to show how non-inlining this function affects
-the performance (hackbench -P would do).
-
--- 
-Catalin
+>  virt/kvm/arm/vgic/vgic-its.c | 2 ++
+>  1 file changed, 2 insertions(+)
+> 
+> diff --git a/virt/kvm/arm/vgic/vgic-its.c b/virt/kvm/arm/vgic/vgic-its.c
+> index 05406bd92ce9..d3e90a9d0a7a 100644
+> --- a/virt/kvm/arm/vgic/vgic-its.c
+> +++ b/virt/kvm/arm/vgic/vgic-its.c
+> @@ -1731,6 +1731,8 @@ void vgic_lpi_translation_cache_destroy(struct kvm *kvm)
+>  	struct vgic_dist *dist = &kvm->arch.vgic;
+>  	struct vgic_translation_cache_entry *cte, *tmp;
+>  
+> +	vgic_its_invalidate_cache(kvm);
+> +
+>  	list_for_each_entry_safe(cte, tmp,
+>  				 &dist->lpi_translation_cache, entry) {
+>  		list_del(&cte->entry);
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
