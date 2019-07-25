@@ -2,66 +2,137 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 50EF274863
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 09:46:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 29CE274882
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 09:55:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=nQot0XFQxxq3yjymhkDO0y9pYw+Ks0hMXKpLegHTfw4=; b=kqE3U97W7ow8jXQ28Lxiz9Ce9
-	myQBfVhdhPK7AUomrkJOgAm19lHvgh3zc9XXYLWDvkfZlg+9XLJTBwEUQHkPTFZj4SiEn4xugMH/d
-	Kl3de0tstgIllWstpFeoVoMH/7zgBM2dxgtN2W+5X/GXX1omeE4mLgDZMIIXelFeMTFMoWnrUR6D7
-	E9GReNwbbiPdLP5bBvet8Qo1m9Z5Db2dPxozaolPnrflDl99dIp5CHggaZO2PZnaogQ9Tua6ag93i
-	yI61uWycZXn78fQG04uq7/m35QQCSq/cIVFdjRiiiL20X3PwBCJCQhCaeQqqrjnVHCLuRqv6tWbMs
-	MNbbn1AYg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SSt/2ubH1bUtk8eHMHQ9XgGKZZfS7Nx0EDFabPn7mzk=; b=aYCZJEK9ZRYD66
+	fpTbsLlLxeYNaVcF3Ruam4f19G9+Sh4MoH1/vkp6oaeoKPpjFWJuUR93A4vyaMCdwMk4l6NqyOBuG
+	VL7AUyADbnRtLQeBYv/eyhjggvTuyNFyNtATF8T/xq6dkPsQ/kUIysvEV3G3u+ooyNRMT1cwFmwDu
+	XRtR1D6wDdi1SKGTa7Yo6U1HNlQYdZ0UAd5yKviesesy0pE56LllSwbR7OpuOutCrJDYnRLLu59cu
+	3kcNxd0C40eZr8p+cV2gXoi89t7a/8NcQeIn+P4km7zKCLnmO3BL3Xf3EYJ/wiP48wN5mz8pN7wTw
+	+BNqy2jFjJ2r6TlfJVOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqYRv-0000as-0q; Thu, 25 Jul 2019 07:46:03 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1hqYao-0002gj-J9; Thu, 25 Jul 2019 07:55:14 +0000
+Received: from esa6.hgst.iphmx.com ([216.71.154.45])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqYRd-0000aE-5p
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 07:45:46 +0000
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 356623084246;
- Thu, 25 Jul 2019 07:45:44 +0000 (UTC)
-Received: from [10.72.12.18] (ovpn-12-18.pek2.redhat.com [10.72.12.18])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 2591B5C6D2;
- Thu, 25 Jul 2019 07:45:16 +0000 (UTC)
-Subject: Re: WARNING in __mmdrop
-To: "Michael S. Tsirkin" <mst@redhat.com>, Jason Gunthorpe <jgg@ziepe.ca>
-References: <0000000000008dd6bb058e006938@google.com>
- <000000000000964b0d058e1a0483@google.com>
- <20190721044615-mutt-send-email-mst@kernel.org>
- <20190722141152.GA13711@ziepe.ca>
- <20190725015402-mutt-send-email-mst@kernel.org>
-From: Jason Wang <jasowang@redhat.com>
-Message-ID: <6389178e-35f2-28a1-4d36-3696bcde6af0@redhat.com>
-Date: Thu, 25 Jul 2019 15:44:54 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <20190725015402-mutt-send-email-mst@kernel.org>
+ id 1hqYaR-0002ee-QF; Thu, 25 Jul 2019 07:54:54 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
+ t=1564041292; x=1595577292;
+ h=from:to:cc:subject:date:message-id:references:
+ in-reply-to:content-transfer-encoding:mime-version;
+ bh=O1+X1GqEOt4tnmwifXCUObiycWFbqYhmImNtrV43v6c=;
+ b=HBlyjsEwmyiG/+WpD6lIRvJYdQ2Y/xPSD6TqqlvIjTiYHJQpGHvhhiG+
+ Q0wVtcDQAViQ5r1ukOVDdUaPayUAMNOWIfmM2goLTBPxUriTZqWavOKVi
+ MbMB7SlfAQKlbQGg1o2UHC4Jw0gLFmjaORFqJ9ohgeYemCz83MQJwHkxf
+ hq14YMaHpHF4LqVoRxr5Ii6n98mpfi739pRD8DdddwHEvLINxPIslabQo
+ HEmNfu9QoCkcgEgjW2v2JSgLI5rBXDi7Q0SBlqdc312ONWflYSCejGaZQ
+ buR5KnFKJP1htDZK8SZrBxqL49orQgwTyNK3P3Vq+5HvNjf2yhdsx1lUD g==;
+IronPort-SDR: +6dDX/Ihm6Gf4iN5ErE6cPB2suXgNxtm3b2JHNqR7075y5xs1GfnzIQm+GcQczss5/yoxdr+wi
+ 38Pa93J+y6mOXv9He8UhlHHUBQxuFlT9ula+G3kpYF7y3GKDYrV0UawRmNB3BCslFUhlKqDTvX
+ HkIWjsOUvwHdkxR4HMndG0uMKFci9uHqC9lPv3YQfDENDsttYNkcQJUsm1fmHNXgn9BWh8pZkk
+ lCCAGaZ6FR6Euk1YLLd77/7hheBvpWcpPsJCjHEQYm6wKjMcL2QgZfi68l8Z8c5lpAG+FLCdZs
+ 9o4=
+X-IronPort-AV: E=Sophos;i="5.64,306,1559491200"; d="scan'208";a="115593855"
+Received: from mail-dm3nam05lp2052.outbound.protection.outlook.com (HELO
+ NAM05-DM3-obe.outbound.protection.outlook.com) ([104.47.49.52])
+ by ob1.hgst.iphmx.com with ESMTP; 25 Jul 2019 15:54:48 +0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=hcQ30nKlkAp0NI8fS13OMott+iGpwaPLuElv3L0hwyffNjIxV1Rckl0ReCOL1ii9J+KcfkrgbVTzCPIxvzYAsR4qtbpcKQNtFei0YwOuFtGXrsPlbCAwhDjxxiPM39Ew4zKbOVvKRWrDOu+haK64qTO642yK95E0NNjR7BPJn+bm/14jG5kmFDhxmb3KDkhkESfGhot74i6545Uzp2G67MYvcGcQFhLBIw/OMnkBDbVDw9ivYRE9+jVCpCgK5+B5yPpMpaiWSVJSaYwhQgUFDstq/YB5D6XPYIY2hFxCTDWslrF19pGlw8+pE/e4sYGhENufWyZgR0mkStaSVzrnPQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=O1+X1GqEOt4tnmwifXCUObiycWFbqYhmImNtrV43v6c=;
+ b=kjOWATrJBBJx/RINDrW1CZ2Q7UuVlGt2vkvZlB/+p6Y+pbqmuvDrSqHAsE2NbmgX/ujk1B5q6SRyYP2ZHKQ05wi0OGzKrPSHUKYDwcIcxFA0US+twbaq+l78tjE59VXUkzKMzqSMk9OUoWquqJ/RAKLxppOu27TGFKJ+a0rNoOlLcqWtb9CWggRMcpZmGuOGFzz/G6xFkFJ0CKYsLpX+CF/CAuNPx8ALYJyFatC4JbDJN2fc2y98MZIASkAyaUT2D6nmV4tBuJOeyeqfcGzJddQaPO4bktnqQVtBmPu4Xh4Udq8j2FAncJ5uE/+sCTh1U/ZS3XhHhiihFGd1+wDaOA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
+ smtp.mailfrom=wdc.com;dmarc=pass action=none header.from=wdc.com;dkim=pass
+ header.d=wdc.com;arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=sharedspace.onmicrosoft.com; s=selector2-sharedspace-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=O1+X1GqEOt4tnmwifXCUObiycWFbqYhmImNtrV43v6c=;
+ b=ToDvaJFArMDQM6C/y4AOeKzG8IAR8f3u2+Mz4BbOCcLFmr1fFFNcWLCLvWMQy93cTain98yDHASp1gFtWbPlRmLSb486/jTTWY7HD9GrhNgoswlP1TSl7lgem5EQEaaIv7OIH3DyDzPYri5clxcE+jtQMFOdRhs8iSv9SN5M64E=
+Received: from MN2PR04MB6991.namprd04.prod.outlook.com (10.186.144.209) by
+ MN2PR04MB6784.namprd04.prod.outlook.com (10.141.117.143) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2094.17; Thu, 25 Jul 2019 07:54:45 +0000
+Received: from MN2PR04MB6991.namprd04.prod.outlook.com
+ ([fe80::5d3b:c35e:a95a:51e2]) by MN2PR04MB6991.namprd04.prod.outlook.com
+ ([fe80::5d3b:c35e:a95a:51e2%3]) with mapi id 15.20.2094.017; Thu, 25 Jul 2019
+ 07:54:44 +0000
+From: Avri Altman <Avri.Altman@wdc.com>
+To: Stanley Chu <stanley.chu@mediatek.com>, "linux-scsi@vger.kernel.org"
+ <linux-scsi@vger.kernel.org>, "martin.petersen@oracle.com"
+ <martin.petersen@oracle.com>, "alim.akhtar@samsung.com"
+ <alim.akhtar@samsung.com>, "pedrom.sousa@synopsys.com"
+ <pedrom.sousa@synopsys.com>
+Subject: RE: [PATCH v2 0/3] scsi: ufs: fix broken hba->outstanding_tasks
+Thread-Topic: [PATCH v2 0/3] scsi: ufs: fix broken hba->outstanding_tasks
+Thread-Index: AQHVQeOzs+GM8YPYOUWWOWn3iohjSqba9vVA
+Date: Thu, 25 Jul 2019 07:54:44 +0000
+Message-ID: <MN2PR04MB69914824302B84E144137869FCC10@MN2PR04MB6991.namprd04.prod.outlook.com>
+References: <1563947418-16394-1-git-send-email-stanley.chu@mediatek.com>
+In-Reply-To: <1563947418-16394-1-git-send-email-stanley.chu@mediatek.com>
+Accept-Language: en-US
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.40]); Thu, 25 Jul 2019 07:45:44 +0000 (UTC)
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=Avri.Altman@wdc.com; 
+x-originating-ip: [212.25.79.133]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 3c9252cf-af9d-4eb7-eda7-08d710d55bc2
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:MN2PR04MB6784; 
+x-ms-traffictypediagnostic: MN2PR04MB6784:
+x-microsoft-antispam-prvs: <MN2PR04MB678406242C41AED51EB83B4FFCC10@MN2PR04MB6784.namprd04.prod.outlook.com>
+wdcipoutbound: EOP-TRUE
+x-ms-oob-tlc-oobclassifiers: OLM:6790;
+x-forefront-prvs: 0109D382B0
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(4636009)(376002)(39860400002)(136003)(396003)(366004)(346002)(199004)(189003)(52536014)(5660300002)(66946007)(66476007)(66446008)(186003)(25786009)(66556008)(102836004)(486006)(76176011)(2201001)(26005)(64756008)(55016002)(6436002)(81156014)(229853002)(76116006)(2906002)(6246003)(4326008)(86362001)(9686003)(8936002)(256004)(53936002)(478600001)(71200400001)(71190400001)(33656002)(68736007)(7416002)(8676002)(6116002)(305945005)(7696005)(316002)(110136005)(14454004)(81166006)(54906003)(446003)(99286004)(7736002)(11346002)(66066001)(476003)(74316002)(3846002)(6506007)(4744005)(2501003);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:MN2PR04MB6784;
+ H:MN2PR04MB6991.namprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: wXz599hOMXPIPaVUPsdSRMnYv6ldxtCajBZzw/2Nj005UI0UGD7sjLlOjD2FuTDFR4LSZ475ETxrdFbZxQxlZwtifXErJOqB2eyKVRj1bF/ygxTcxHq82FX3iNKksA7thpUdgMvxr1CrZw18bllJ/+ErPvFdb8iwwT0KRdTDulSGf7EsvDGylhIfQyRj5HCinpcEbxx1JQCi6onooTovbQSiE9l17IVz2ylzFwSFBNMl33fCnKz9KpQc01kuj6QD80v5TQbl2f1gHQCwJoTqLvA6G6SHu6FXtDoKseE711+XUqPGFVsuMzjraXiuAuY+trZ96xPILLnRYZ3L3S6SIGQvkox5SnOiRnNyaezdTjP5ynZjgZjvPe+6Uiwu/9Xwx/SPnINJEZ5rei2r0mY5BkXcuw3uY3bjwPNTENpshJ0=
+MIME-Version: 1.0
+X-OriginatorOrg: wdc.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3c9252cf-af9d-4eb7-eda7-08d710d55bc2
+X-MS-Exchange-CrossTenant-originalarrivaltime: 25 Jul 2019 07:54:44.8333 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: b61c8803-16f3-4c35-9b17-6f65f441df86
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: Avri.Altman@wdc.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR04MB6784
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_004545_304363_19B9AEB6 
-X-CRM114-Status: GOOD (  15.02  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190725_005451_968699_CEB183E8 
+X-CRM114-Status: UNSURE (   9.74  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.154.45 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,53 +144,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mhocko@suse.com, peterz@infradead.org, ldv@altlinux.org,
- james.bottomley@hansenpartnership.com, linux-mm@kvack.org, namit@vmware.com,
- mingo@kernel.org, elena.reshetova@intel.com, keescook@chromium.org,
- aarcange@redhat.com, davem@davemloft.net, hch@infradead.org,
- christian@brauner.io,
- syzbot <syzbot+e58112d71f77113ddb7b@syzkaller.appspotmail.com>,
- syzkaller-bugs@googlegroups.com, jglisse@redhat.com, viro@zeniv.linux.org.uk,
- linux-arm-kernel@lists.infradead.org, wad@chromium.org,
- linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
- luto@amacapital.net, ebiederm@xmission.com, akpm@linux-foundation.org,
- guro@fb.com
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: "marc.w.gonzalez@free.fr" <marc.w.gonzalez@free.fr>,
+ "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
+ "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
+ "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
+ "evgreen@chromium.org" <evgreen@chromium.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "beanhuo@micron.com" <beanhuo@micron.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Ck9uIDIwMTkvNy8yNSDkuIvljYgyOjAyLCBNaWNoYWVsIFMuIFRzaXJraW4gd3JvdGU6Cj4gT24g
-TW9uLCBKdWwgMjIsIDIwMTkgYXQgMTE6MTE6NTJBTSAtMDMwMCwgSmFzb24gR3VudGhvcnBlIHdy
-b3RlOgo+PiBPbiBTdW4sIEp1bCAyMSwgMjAxOSBhdCAwNjowMjo1MkFNIC0wNDAwLCBNaWNoYWVs
-IFMuIFRzaXJraW4gd3JvdGU6Cj4+PiBPbiBTYXQsIEp1bCAyMCwgMjAxOSBhdCAwMzowODowMEFN
-IC0wNzAwLCBzeXpib3Qgd3JvdGU6Cj4+Pj4gc3l6Ym90IGhhcyBiaXNlY3RlZCB0aGlzIGJ1ZyB0
-bzoKPj4+Pgo+Pj4+IGNvbW1pdCA3ZjQ2NjAzMmRjOWU1YTYxMjE3ZjIyZWEzNGIyZGY5MzI3ODZi
-YmZjCj4+Pj4gQXV0aG9yOiBKYXNvbiBXYW5nIDxqYXNvd2FuZ0ByZWRoYXQuY29tPgo+Pj4+IERh
-dGU6ICAgRnJpIE1heSAyNCAwODoxMjoxOCAyMDE5ICswMDAwCj4+Pj4KPj4+PiAgICAgIHZob3N0
-OiBhY2Nlc3MgdnEgbWV0YWRhdGEgdGhyb3VnaCBrZXJuZWwgdmlydHVhbCBhZGRyZXNzCj4+Pj4K
-Pj4+PiBiaXNlY3Rpb24gbG9nOiAgaHR0cHM6Ly9zeXprYWxsZXIuYXBwc3BvdC5jb20veC9iaXNl
-Y3QudHh0P3g9MTQ5YThhMjA2MDAwMDAKPj4+PiBzdGFydCBjb21taXQ6ICAgNmQyMWE0MWIgQWRk
-IGxpbnV4LW5leHQgc3BlY2lmaWMgZmlsZXMgZm9yIDIwMTkwNzE4Cj4+Pj4gZ2l0IHRyZWU6ICAg
-ICAgIGxpbnV4LW5leHQKPj4+PiBmaW5hbCBjcmFzaDogICAgaHR0cHM6Ly9zeXprYWxsZXIuYXBw
-c3BvdC5jb20veC9yZXBvcnQudHh0P3g9MTY5YThhMjA2MDAwMDAKPj4+PiBjb25zb2xlIG91dHB1
-dDogaHR0cHM6Ly9zeXprYWxsZXIuYXBwc3BvdC5jb20veC9sb2cudHh0P3g9MTI5YThhMjA2MDAw
-MDAKPj4+PiBrZXJuZWwgY29uZmlnOiAgaHR0cHM6Ly9zeXprYWxsZXIuYXBwc3BvdC5jb20veC8u
-Y29uZmlnP3g9MzQzMGExNTFlMTQ1MjMzMQo+Pj4+IGRhc2hib2FyZCBsaW5rOiBodHRwczovL3N5
-emthbGxlci5hcHBzcG90LmNvbS9idWc/ZXh0aWQ9ZTU4MTEyZDcxZjc3MTEzZGRiN2IKPj4+PiBz
-eXogcmVwcm86ICAgICAgaHR0cHM6Ly9zeXprYWxsZXIuYXBwc3BvdC5jb20veC9yZXByby5zeXo/
-eD0xMDEzOWU2ODYwMDAwMAo+Pj4+Cj4+Pj4gUmVwb3J0ZWQtYnk6IHN5emJvdCtlNTgxMTJkNzFm
-NzcxMTNkZGI3YkBzeXprYWxsZXIuYXBwc3BvdG1haWwuY29tCj4+Pj4gRml4ZXM6IDdmNDY2MDMy
-ZGM5ZSAoInZob3N0OiBhY2Nlc3MgdnEgbWV0YWRhdGEgdGhyb3VnaCBrZXJuZWwgdmlydHVhbAo+
-Pj4+IGFkZHJlc3MiKQo+Pj4+Cj4+Pj4gRm9yIGluZm9ybWF0aW9uIGFib3V0IGJpc2VjdGlvbiBw
-cm9jZXNzIHNlZTogaHR0cHM6Ly9nb28uZ2wvdHBzbUVKI2Jpc2VjdGlvbgo+Pj4KPj4+IE9LIEkg
-cG9rZWQgYXQgdGhpcyBmb3IgYSBiaXQsIEkgc2VlIHNldmVyYWwgdGhpbmdzIHRoYXQKPj4+IHdl
-IG5lZWQgdG8gZml4LCB0aG91Z2ggSSdtIG5vdCB5ZXQgc3VyZSBpdCdzIHRoZSByZWFzb24gZm9y
-Cj4+PiB0aGUgZmFpbHVyZXM6Cj4+IFRoaXMgc3R1ZmYgbG9va3MgcXVpdGUgc2ltaWxhciB0byB0
-aGUgaG1tX21pcnJvciB1c2UgbW9kZWwgYW5kIG90aGVyCj4+IHBsYWNlcyBpbiB0aGUga2VybmVs
-LiBJJ20gc3RpbGwgaG9waW5nIHdlIGNhbiBzaGFyZSB0aGlzIGNvZGUgYSBiaXQgbW9yZS4KPiBS
-aWdodC4gSSB0aGluayBobW0gaXMgc29tZXRoaW5nIHdlIHNob3VsZCBsb29rIGF0LgoKCkV4YWN0
-bHkuIEkgcGxhbiB0byBkbyB0aGF0LgoKVGhhbmtzCgoKX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGlu
-dXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
-b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Stanly,
+
+> 
+> Currently bits in hba->outstanding_tasks are cleared only after their
+> corresponding task management commands are successfully done by
+> __ufshcd_issue_tm_cmd().
+> 
+> If timeout happens in a task management command, its corresponding
+> bit in hba->outstanding_tasks will not be cleared until next task
+> management command with the same tag used successfully finishes.
+I'm sorry - I still don't understand why you just can't release the tag either way,
+Just like we do in device management queries tags,
+Instead of adding all this unnecessary code.
+
+I will not object to your series -
+just step down and let other people review you patches.
+
+Thanks,
+Avri
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
