@@ -2,57 +2,139 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E31F74B54
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 12:15:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD60A74B4D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 12:14:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s2cg7JWhN/HXuLNQy3yP3PJ7k4FHhluaCoOaZe7jKKE=; b=kBNu5STHMskA66
-	F3L1nZ9vtbOMm+x4knkn7jIIoi9BZZPfIJCc972iSU/99rIJ2D/wR0jwnrg2RsTXHc+Hs2BcMviSH
-	0cZ/+6jPgs7bmTIKEaGUz1U4YQDajkxJ6M502DoyclnfAggNhMha5DQkj+o76FckELp4TF2gLCV5K
-	Fvpe0snzuUtOu99zGZdMQtk/uvEyCOP2XS+cwJn7wzVxiMaHdEfCk4bWgxZLpKAMuAm4TfRi53QVb
-	o014tBBoNfTP2lDl+4vbZfQydqEzviE9/8Jf9Y203514CQAcJFoA7IBvc+DhdtvAQQADgGuFHDA6O
-	nznJjXaPUoYis2nYImYA==;
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6XW5o+La4Adupa662oa+xkunGiXc4oc320dYmdVsRmU=; b=lck1hoWcaxxX+u
+	jfLY+RxslSs19+mn123mN5zeCtxBGX1AJrWQCgVIthWYSKcgTke5wMRjyWCeq5QHDAkiFmCtEDYXR
+	I0C8DY9g+tb2J4FXdHOJziTzgqthZvVaP7np6PITww6kblgJrpQcAOO7Pqjq+ofvM9XkmxAdEVDSX
+	RmHBXg3Yj2eMCYroreKRKwuhWzT8tVLIrxxQpSUqbw28vLIBE7cN9J2AkOX5d9HZI1ml7HuugQuZH
+	oU2ysc+A5DvT0CIYfxglUO/37O3ls0QsEkeoO+Tk/jbWrGpw10XVbmoAzcvp0/FmrUJwM2OVWSu20
+	+Yrf3/0uN2SitNdefBXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqame-0000bJ-01; Thu, 25 Jul 2019 10:15:36 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hqamT-0000a2-Rg
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 10:15:27 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8904428;
- Thu, 25 Jul 2019 03:15:24 -0700 (PDT)
-Received: from [10.1.196.133] (e112269-lin.cambridge.arm.com [10.1.196.133])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 70CE23F694;
- Thu, 25 Jul 2019 03:15:21 -0700 (PDT)
-Subject: Re: [PATCH v9 00/21] Generic page walk and ptdump
-To: Anshuman Khandual <anshuman.khandual@arm.com>, linux-mm@kvack.org
-References: <20190722154210.42799-1-steven.price@arm.com>
- <835a0f2e-328d-7f7f-e52a-b754137789f9@arm.com>
- <c9d2042f-c731-4705-4148-b38deccf7963@arm.com>
- <6f59521e-1f3e-6765-9a6f-c8eca4c0c154@arm.com>
-From: Steven Price <steven.price@arm.com>
-Message-ID: <98ef7a4b-ee45-678e-4ec0-e982d70d3163@arm.com>
-Date: Thu, 25 Jul 2019 11:15:19 +0100
+	id 1hqalZ-0007MY-G0; Thu, 25 Jul 2019 10:14:29 +0000
+Received: from mailout3.samsung.com ([203.254.224.33])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hqalN-0007M0-TQ
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 10:14:20 +0000
+Received: from epcas1p3.samsung.com (unknown [182.195.41.47])
+ by mailout3.samsung.com (KnoxPortal) with ESMTP id
+ 20190725101414epoutp033c166c0c807e83b60e2313a05877f762~0nt-IcJyg0574905749epoutp03i
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 25 Jul 2019 10:14:14 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com
+ 20190725101414epoutp033c166c0c807e83b60e2313a05877f762~0nt-IcJyg0574905749epoutp03i
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1564049654;
+ bh=b/K1E4DgeswJ0P/gfs2T0F+ifuT4kyaGOmNkK/qyVm0=;
+ h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
+ b=caQWnnPVUqA4cqIGxuADksFFz6c8k1ydITn42Q3NQSMHN9iF8nR1Plglwt1yESEBX
+ +3oygPb1wGc7ICbEir4Zkc4EO5XAnHI/SjNefIQSmor2in19UJoCMWfSWiKVl3f5W6
+ adUOomlm3v1StwEaqOhBAj+Jy/0MSiBnL2JynDQg=
+Received: from epsnrtp3.localdomain (unknown [182.195.42.164]) by
+ epcas1p1.samsung.com (KnoxPortal) with ESMTP id
+ 20190725101413epcas1p14bd87c8e6bd298a2277d452479aafe49~0nt_ZaYl50704007040epcas1p13;
+ Thu, 25 Jul 2019 10:14:13 +0000 (GMT)
+Received: from epsmges1p3.samsung.com (unknown [182.195.40.158]) by
+ epsnrtp3.localdomain (Postfix) with ESMTP id 45vSjv5jdlzMqYkY; Thu, 25 Jul
+ 2019 10:14:11 +0000 (GMT)
+Received: from epcas1p4.samsung.com ( [182.195.41.48]) by
+ epsmges1p3.samsung.com (Symantec Messaging Gateway) with SMTP id
+ 2E.0D.04066.3F0893D5; Thu, 25 Jul 2019 19:14:11 +0900 (KST)
+Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
+ epcas1p4.samsung.com (KnoxPortal) with ESMTPA id
+ 20190725101411epcas1p484582896e8b70d39b3cbe48070e23050~0nt70OhBC1305613056epcas1p4F;
+ Thu, 25 Jul 2019 10:14:11 +0000 (GMT)
+Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
+ epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20190725101411epsmtrp1a75d1ef9d7616813560233dd4d072726~0nt7y9F0x0934709347epsmtrp1O;
+ Thu, 25 Jul 2019 10:14:10 +0000 (GMT)
+X-AuditID: b6c32a37-e27ff70000000fe2-89-5d3980f311bb
+Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
+ epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ 38.6D.03706.2F0893D5; Thu, 25 Jul 2019 19:14:10 +0900 (KST)
+Received: from [10.113.221.102] (unknown [10.113.221.102]) by
+ epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
+ 20190725101410epsmtip2dc3f323fd5b9f7fe9fefa984c5d25861~0nt7eqDy_2527925279epsmtip21;
+ Thu, 25 Jul 2019 10:14:10 +0000 (GMT)
+Subject: Re: [PATCH v3 3/5] devfreq: exynos-bus: convert to use
+ dev_pm_opp_set_rate()
+To: k.konieczny@partner.samsung.com
+From: Chanwoo Choi <cw00.choi@samsung.com>
+Organization: Samsung Electronics
+Message-ID: <beb2455b-7f9e-35df-d524-01f4f51a1c62@samsung.com>
+Date: Thu, 25 Jul 2019 19:17:15 +0900
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <6f59521e-1f3e-6765-9a6f-c8eca4c0c154@arm.com>
-Content-Language: en-GB
+In-Reply-To: <20190719150535.15501-4-k.konieczny@partner.samsung.com>
+Content-Language: en-US
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrIJsWRmVeSWpSXmKPExsWy7bCmge7nBstYg11b9Cw2zljPajH/yDlW
+ i759/xkt+h+/ZrY4f34Du8XZpjfsFpseX2O1uLxrDpvF594jjBYzzu9jslh75C67xdLrF5ks
+ bjeuYLN48+Msk0Xr3iPsFv+ubWSx2PzgGJuDoMeaeWsYPTat6mTz2Lyk3uPguz1MHn1bVjF6
+ HL+xncnj8ya5APaobJuM1MSU1CKF1Lzk/JTMvHRbJe/geOd4UzMDQ11DSwtzJYW8xNxUWyUX
+ nwBdt8wcoA+UFMoSc0qBQgGJxcVK+nY2RfmlJakKGfnFJbZKqQUpOQWWBXrFibnFpXnpesn5
+ uVaGBgZGpkCFCdkZc1tsCqa6V6z5vpepgbHBoouRk0NCwETib9t0xi5GLg4hgR2MEu1rG6Gc
+ T4wSl1s+skM43xglrm+7zgrTsvfIcjaIxF5GiZ13l0NVvQdqOfiNBaRKWCBcon1xJ1iHiICy
+ xOR705lBipgFLrNITHs0CSzBJqAlsf/FDTYQm19AUeLqj8eMIDavgJ3Eozk/2UFsFgFViflX
+ 1jKB2KICERKfHhxmhagRlDg58wnYMk4BV4lDlw8zg9jMAuISt57MZ4Kw5SWat84GWywhcIpd
+ ouXFBGaIH1wker8dZIOwhSVeHd/CDmFLSbzsb4OyqyVWnjzCBtHcwSixZf8FaAAYS+xfOhlo
+ AwfQBk2J9bv0IcKKEjt/z2WEWMwn8e5rDytIiYQAr0RHmxBEibLE5Qd3mSBsSYnF7Z1sExiV
+ ZiF5ZxaSF2YheWEWwrIFjCyrGMVSC4pz01OLDQuMkaN7EyM4eWuZ72DccM7nEKMAB6MSDy9H
+ kkWsEGtiWXFl7iFGCQ5mJRHewAazWCHelMTKqtSi/Pii0pzU4kOMpsDQnsgsJZqcD8wseSXx
+ hqZGxsbGFiaGZqaGhkrivAt/AM0RSE8sSc1OTS1ILYLpY+LglGpgZGvb1SaddeiniHxQlLRY
+ UmhWlKPvOxuRH/O7cpUzxVdzNb/k2r/19inlCwtsfJfMCTVcb5Vx24Zph16L5fZLEXGLruZa
+ qNnkf2xof/eQ+bxA+oZVn+8meoYfmVC8V2S578q1zrEC+WWnb7B/39awd9aH/QySRvkifyQr
+ WHemfFr74ctz7t+zlViKMxINtZiLihMBzaw/2fQDAAA=
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrNIsWRmVeSWpSXmKPExsWy7bCSvO6nBstYg66NxhYbZ6xntZh/5Byr
+ Rd++/4wW/Y9fM1ucP7+B3eJs0xt2i02Pr7FaXN41h83ic+8RRosZ5/cxWaw9cpfdYun1i0wW
+ txtXsFm8+XGWyaJ17xF2i3/XNrJYbH5wjM1B0GPNvDWMHptWdbJ5bF5S73Hw3R4mj74tqxg9
+ jt/YzuTxeZNcAHsUl01Kak5mWWqRvl0CV8bcFpuCqe4Va77vZWpgbLDoYuTkkBAwkdh7ZDlb
+ FyMXh5DAbkaJr+/2sUEkJCWmXTzK3MXIAWQLSxw+XAxR85ZRYunGE0wgNcIC4RLtiztZQWwR
+ AWWJyfemM4MUMQtcZZE4v3EO1NTLjBIf9y1gB6liE9CS2P/iBtgGfgFFias/HjOC2LwCdhKP
+ 5vwEq2ERUJWYf2Ut2AZRgQiJwztmQdUISpyc+YQFxOYUcJU4dPkwM4jNLKAu8WfeJShbXOLW
+ k/lMELa8RPPW2cwTGIVnIWmfhaRlFpKWWUhaFjCyrGKUTC0ozk3PLTYsMMxLLdcrTswtLs1L
+ 10vOz93ECI5iLc0djJeXxB9iFOBgVOLh3RBvESvEmlhWXJl7iFGCg1lJhDewwSxWiDclsbIq
+ tSg/vqg0J7X4EKM0B4uSOO/TvGORQgLpiSWp2ampBalFMFkmDk6pBkbhv+wfPl/hmGW9xypE
+ eZ3E/rYTm+6m6vQ+y1k6t8XCxKJK+Qfr5AoHq0jXdcJv922aV7n4XK1Q8aSvYd1Lbuu/XXAj
+ hrkj5O+6HM2LLh8uZ1qEVH/ZKSCydWfu5a2xS4w8nkanH9p/pv1nKJeOyKz6y668j2dP/XCp
+ Z//1W1aHyu7s66l93bdHiaU4I9FQi7moOBEA48c62N4CAAA=
+X-CMS-MailID: 20190725101411epcas1p484582896e8b70d39b3cbe48070e23050
+X-Msg-Generator: CA
+X-Sendblock-Type: SVC_REQ_APPROVE
+CMS-TYPE: 101P
+DLP-Filter: Pass
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20190719150555eucas1p197adc3c58e45c53137fd70cadbfae60e
+References: <20190719150535.15501-1-k.konieczny@partner.samsung.com>
+ <CGME20190719150555eucas1p197adc3c58e45c53137fd70cadbfae60e@eucas1p1.samsung.com>
+ <20190719150535.15501-4-k.konieczny@partner.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_031525_995126_CBCB7E26 
-X-CRM114-Status: GOOD (  39.75  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190725_031418_350958_949645FB 
+X-CRM114-Status: GOOD (  35.78  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [203.254.224.33 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,185 +146,175 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, x86@kernel.org,
- Arnd Bergmann <arnd@arndb.de>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>, linux-kernel@vger.kernel.org,
- =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- Andy Lutomirski <luto@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
- James Morse <james.morse@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
- Will Deacon <will@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
- linux-arm-kernel@lists.infradead.org, "Liang, Kan" <kan.liang@linux.intel.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, Nishanth Menon <nm@ti.com>,
+ linux-samsung-soc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Stephen Boyd <sboyd@kernel.org>, Viresh Kumar <vireshk@kernel.org>,
+ linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Krzysztof Kozlowski <krzk@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Kukjin Kim <kgene@kernel.org>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>, devicetree@vger.kernel.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 25/07/2019 10:09, Anshuman Khandual wrote:
-> 
-> 
-> On 07/24/2019 07:05 PM, Steven Price wrote:
->> On 23/07/2019 07:39, Anshuman Khandual wrote:
->>> Hello Steven,
->>>
->>> On 07/22/2019 09:11 PM, Steven Price wrote:
->>>> This is a slight reworking and extension of my previous patch set
->>>> (Convert x86 & arm64 to use generic page walk), but I've continued the
->>>> version numbering as most of the changes are the same. In particular
->>>> this series ends with a generic PTDUMP implemention for arm64 and x86.
->>>>
->>>> Many architectures current have a debugfs file for dumping the kernel
->>>> page tables. Currently each architecture has to implement custom
->>>> functions for this because the details of walking the page tables used
->>>> by the kernel are different between architectures.
->>>>
->>>> This series extends the capabilities of walk_page_range() so that it can
->>>> deal with the page tables of the kernel (which have no VMAs and can
->>>> contain larger huge pages than exist for user space). A generic PTDUMP
->>>> implementation is the implemented making use of the new functionality of
->>>> walk_page_range() and finally arm64 and x86 are switch to using it,
->>>> removing the custom table walkers.
->>>
->>> Could other architectures just enable this new generic PTDUMP feature if
->>> required without much problem ?
->>
->> The generic PTDUMP is implemented as a library - so the architectures
->> would have to provide the call into ptdump_walk_pgd() and provide the
->> necessary callback note_page() which formats the lines in the output.
-> 
-> Though I understand that the leaf flag (any given level) details are very much
-> arch specific would there be any possibility for note_page() call back to be
-> unified as well. This is extracted from current PTDUMP output on arm64.
-> 
-> 0xffffffc000000000-0xffffffc000080000  512K PTE  RW NX SHD AF  UXN MEM/NORMAL
-> 
-> The first three columns are generic
-> 
-> 1. Kernel virtual range span
-> 2. Kernel virtual range size
-> 3. Kernel virtual range mapping level
-> 
-> Where as rest of the output are architecture specific page table entry flags.
-> Just wondering if we could print the first three columns in ptdump_walk_pgd()
-> itself before calling arch specific callback to fetch a print buffer for rest
-> of the line bounded with some character limit so that line does not overflow.
-> Its not something which must be done but I guess it's worth giving it a try.
-> This will help consolidate ptdump_walk_pgd() further.
-
-It's not quite as simple as it seems. One of the things note_page() does
-is work out whether a contiguous set of pages are "the same" (i.e.
-should appear as one range). This is ultimately an architecture specific
-decision: we need to look at the flags to do this.
-
-I'm of course happy to be proved wrong if you can see a neat way of
-making this work.
-
->>
->> Hopefully the implementation is generic enough that it should be
->> flexible enough to work for most architectures.
->>
->> arm, powerpc and s390 are the obvious architectures to convert next as
->> they already have note_page() functions which shouldn't be too difficult
->> to convert to match the callback prototype.
-> 
-> Which can be done independently later on, fair enough.
-> 
->>
->>>>
->>>> To enable a generic page table walker to walk the unusual mappings of
->>>> the kernel we need to implement a set of functions which let us know
->>>> when the walker has reached the leaf entry. After a suggestion from Will
->>>> Deacon I've chosen the name p?d_leaf() as this (hopefully) describes
->>>> the purpose (and is a new name so has no historic baggage). Some
->>>> architectures have p?d_large macros but this is easily confused with
->>>> "large pages".
->>>
->>> I have not been following the previous version of the series closely, hence
->>> might be missing something here. But p?d_large() which identifies large
->>> mappings on a given level can only signify a leaf entry. Large pages on the
->>> table exist only as leaf entries. So what is the problem for it being used
->>> directly instead. Is there any possibility in the kernel mapping when these
->>> large pages are not leaf entries ?
->>
->> There isn't any problem as such with using p?d_large macros. However the
->> name "large" has caused confusion in the past. In particular there are
->> two types of "large" page:
->>
->> 1. leaf entries at high levels than normal ('sections' on Arm, for 4K
->> pages this gives you 2MB and 1GB pages).
->>
->> 2. sets of contiguous entries that can share a TLB entry (the
->> 'Contiguous bit' on Arm - which for 4K pages gives you 16 entries = 64
->> KB 'pages').
-> 
-> This is arm64 specific and AFAIK there are no other architectures where there
-> will be any confusion wrt p?d_large() not meaning a single entry.
-
-This isn't arm64 specific (or even Arm specific) - only the examples I
-gave are. There are several architectures with software walks where the
-TLB can be populated with arbitrary sized entries. I have to admit I
-don't fully understand the page table layouts of many of the other
-architectures that Linux supports.
-
-> As you have noted before if we are printing individual entries with PTE_CONT
-> then they need not be identified as p??d_large(). In which case p?d_large()
-> can just safely point to p?d_sect() identifying regular huge leaf entries.
-
-The printing is largely irrelevant here (it's handled by arch code), so
-PTE_CONT isn't a problem. However to walk the page tables we need to
-know precisely "is this the leaf of the tree", we don't really care what
-size page is being mapped, just whether we should continue the walk or not.
-
->>
->> In many cases both give the same effect (reduce pressure on TLBs and
->> requires contiguous and aligned physical addresses). But for this case
->> we only care about the 'leaf' case (because the contiguous bit makes no
->> difference to walking the page tables).
-> 
-> Right and we can just safely identify section entries with it. What will be
-> the problem with that ? Again this is only arm64 specific.
-
-It's not arm64 specific.
-
->>
->> As far as I'm aware p?d_large() currently implements the first and
->> p?d_(trans_)huge() implements either 1 or 2 depending on the architecture.
-> 
-> AFAIK option 2 exists only on arm6 platform. IIUC generic MM requires two
-> different huge page dentition from platform. HugeTLB identifies large entries
-> at PGD|PUD|PMD after converting it's content into PTE first. So there is no
-> need for direct large page definitions for other levels.
-> 
-> 1. THP		- pmd_trans_huge()
-> 2. HugeTLB	- pte_huge()	   CONFIG_ARCH_WANT_GENERAL_HUGETLB is set
-> 
-> A simple check for p?d_large() on mm/ and include/linux shows that there are
-> no existing usage for these in generic MM. Hence it is available.
-
-As Will has already replied - this is probably a good opportunity to
-pick a better name - arch code can then be tidied up to use the new name.
-
-[...]
-> 
-> Currently that is a difference between x86 and arm64 ptdump output. Whether to
-> show the gaps or not could not be achieved by defining a note_page() callback
-> function which does nothing but just return ? But if the single line output is
-> split between generic and callback as I had proposed earlier this will not be
-> possible any more as half the line would have been already printed.
-
-I think the proposal at the moment is for arm64 to match x86 as it seems
-like it would be useful to know at what level the gaps are. But I also
-like giving each arch the flexibility to display what information is
-relevant for that architecture. It's the custom page walkers I'm trying
-to remove as really there isn't much difference between architectures
-there (as lots of generic code has to deal with page tables in one way
-or another).
-
-Steve
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgS2FtaWwsCgpMb29rcyBnb29kIHRvIG1lLiBCdXQsIEkgaGF2ZSBzb21lIGNvbW1lbnQuIFBs
+ZWFzZSBjaGVjayB0aGVtLgoKQWZ0ZXIgdGhpcyBwYXRjaCwgZXh5bm9zX2J1c190YXJnZXQgaXMg
+cGVyZmVjdGx5IHNhbWUgd2l0aApleHlub3NfYnVzX3Bhc3NpdmVfdGFyZ2V0LiBUaGUgZXh5bm9z
+X2J1c19wYXNzaXZlX3RhcmdldCgpIGNvdWxkIGJlIHJlbW92ZWQuCgpPbiAxOS4gNy4gMjAuIOyY
+pOyghCAxMjowNSwgay5rb25pZWN6bnlAcGFydG5lci5zYW1zdW5nLmNvbSB3cm90ZToKPiBSZXVz
+ZSBvcHAgY29yZSBjb2RlIGZvciBzZXR0aW5nIGJ1cyBjbG9jayBhbmQgdm9sdGFnZS4gQXMgYSBz
+aWRlCj4gZWZmZWN0IHRoaXMgYWxsb3cgdXNlYWdlIG9mIGNvdXBsZWQgcmVndWxhdG9ycyBmZWF0
+dXJlIChyZXF1aXJlZAoKcy91c2VhZ2UvdXNhZ2UgPwoKPiBmb3IgYm9hcmRzIHVzaW5nIEV4eW5v
+czU0MjIvNTgwMCBTb0NzKSBiZWNhdXNlIGRldl9wbV9vcHBfc2V0X3JhdGUoKQo+IHVzZXMgcmVn
+dWxhdG9yX3NldF92b2x0YWdlX3RyaXBsZXQoKSBmb3Igc2V0dGluZyByZWd1bGF0b3Igdm9sdGFn
+ZQo+IHdoaWxlIHRoZSBvbGQgY29kZSB1c2VkIHJlZ3VsYXRvcl9zZXRfdm9sdGFnZV90b2woKSB3
+aXRoIGZpeGVkCj4gdG9sZXJhbmNlLiBUaGlzIHBhdGNoIGFsc28gcmVtb3ZlcyBubyBsb25nZXIg
+bmVlZGVkIHBhcnNpbmcgb2YgRFQKPiBwcm9wZXJ0eSAiZXh5bm9zLHZvbHRhZ2UtdG9sZXJhbmNl
+IiAobm8gRXh5bm9zIGRldmZyZXEgRFQgbm9kZSB1c2VzCj4gaXQpLgo+IAo+IFNpZ25lZC1vZmYt
+Ynk6IEthbWlsIEtvbmllY3pueSA8ay5rb25pZWN6bnlAcGFydG5lci5zYW1zdW5nLmNvbT4KPiAt
+LS0KPiAgZHJpdmVycy9kZXZmcmVxL2V4eW5vcy1idXMuYyB8IDE0MyArKysrKysrKystLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLQo+ICAxIGZpbGUgY2hhbmdlZCwgMzcgaW5zZXJ0aW9ucygrKSwg
+MTA2IGRlbGV0aW9ucygtKQo+IAo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL2RldmZyZXEvZXh5bm9z
+LWJ1cy5jIGIvZHJpdmVycy9kZXZmcmVxL2V4eW5vcy1idXMuYwo+IGluZGV4IGYzOTEwNDRhYTM5
+ZC4uYzIxNDdiMDkxMmEwIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvZGV2ZnJlcS9leHlub3MtYnVz
+LmMKPiArKysgYi9kcml2ZXJzL2RldmZyZXEvZXh5bm9zLWJ1cy5jCj4gQEAgLTI1LDcgKzI1LDYg
+QEAKPiAgI2luY2x1ZGUgPGxpbnV4L3NsYWIuaD4KPiAgCj4gICNkZWZpbmUgREVGQVVMVF9TQVRV
+UkFUSU9OX1JBVElPCTQwCj4gLSNkZWZpbmUgREVGQVVMVF9WT0xUQUdFX1RPTEVSQU5DRQkyCj4g
+IAo+ICBzdHJ1Y3QgZXh5bm9zX2J1cyB7Cj4gIAlzdHJ1Y3QgZGV2aWNlICpkZXY7Cj4gQEAgLTM3
+LDkgKzM2LDkgQEAgc3RydWN0IGV4eW5vc19idXMgewo+ICAKPiAgCXVuc2lnbmVkIGxvbmcgY3Vy
+cl9mcmVxOwo+ICAKPiAtCXN0cnVjdCByZWd1bGF0b3IgKnJlZ3VsYXRvcjsKPiArCXN0cnVjdCBv
+cHBfdGFibGUgKm9wcF90YWJsZTsKPiArCj4gIAlzdHJ1Y3QgY2xrICpjbGs7Cj4gLQl1bnNpZ25l
+ZCBpbnQgdm9sdGFnZV90b2xlcmFuY2U7Cj4gIAl1bnNpZ25lZCBpbnQgcmF0aW87Cj4gIH07Cj4g
+IAo+IEBAIC05OSw1NiArOTgsMjMgQEAgc3RhdGljIGludCBleHlub3NfYnVzX3RhcmdldChzdHJ1
+Y3QgZGV2aWNlICpkZXYsIHVuc2lnbmVkIGxvbmcgKmZyZXEsIHUzMiBmbGFncykKPiAgewo+ICAJ
+c3RydWN0IGV4eW5vc19idXMgKmJ1cyA9IGRldl9nZXRfZHJ2ZGF0YShkZXYpOwo+ICAJc3RydWN0
+IGRldl9wbV9vcHAgKm5ld19vcHA7Cj4gLQl1bnNpZ25lZCBsb25nIG9sZF9mcmVxLCBuZXdfZnJl
+cSwgbmV3X3ZvbHQsIHRvbDsKPiAgCWludCByZXQgPSAwOwo+ICAKPiAtCS8qIEdldCBuZXcgb3Bw
+LWJ1cyBpbnN0YW5jZSBhY2NvcmRpbmcgdG8gbmV3IGJ1cyBjbG9jayAqLwo+ICsJLyogR2V0IGNv
+cnJlY3QgZnJlcXVlbmN5IGZvciBidXMuICovCj4gIAluZXdfb3BwID0gZGV2ZnJlcV9yZWNvbW1l
+bmRlZF9vcHAoZGV2LCBmcmVxLCBmbGFncyk7Cj4gIAlpZiAoSVNfRVJSKG5ld19vcHApKSB7Cj4g
+IAkJZGV2X2VycihkZXYsICJmYWlsZWQgdG8gZ2V0IHJlY29tbWVuZGVkIG9wcCBpbnN0YW5jZVxu
+Iik7Cj4gIAkJcmV0dXJuIFBUUl9FUlIobmV3X29wcCk7Cj4gIAl9Cj4gIAo+IC0JbmV3X2ZyZXEg
+PSBkZXZfcG1fb3BwX2dldF9mcmVxKG5ld19vcHApOwo+IC0JbmV3X3ZvbHQgPSBkZXZfcG1fb3Bw
+X2dldF92b2x0YWdlKG5ld19vcHApOwo+ICAJZGV2X3BtX29wcF9wdXQobmV3X29wcCk7Cj4gIAo+
+IC0Jb2xkX2ZyZXEgPSBidXMtPmN1cnJfZnJlcTsKPiAtCj4gLQlpZiAob2xkX2ZyZXEgPT0gbmV3
+X2ZyZXEpCj4gLQkJcmV0dXJuIDA7Cj4gLQl0b2wgPSBuZXdfdm9sdCAqIGJ1cy0+dm9sdGFnZV90
+b2xlcmFuY2UgLyAxMDA7Cj4gLQo+ICAJLyogQ2hhbmdlIHZvbHRhZ2UgYW5kIGZyZXF1ZW5jeSBh
+Y2NvcmRpbmcgdG8gbmV3IE9QUCBsZXZlbCAqLwo+ICAJbXV0ZXhfbG9jaygmYnVzLT5sb2NrKTsK
+PiArCXJldCA9IGRldl9wbV9vcHBfc2V0X3JhdGUoZGV2LCAqZnJlcSk7Cj4gKwlpZiAoIXJldCkK
+PiArCQlidXMtPmN1cnJfZnJlcSA9ICpmcmVxOwo+ICAKPiAtCWlmIChvbGRfZnJlcSA8IG5ld19m
+cmVxKSB7Cj4gLQkJcmV0ID0gcmVndWxhdG9yX3NldF92b2x0YWdlX3RvbChidXMtPnJlZ3VsYXRv
+ciwgbmV3X3ZvbHQsIHRvbCk7Cj4gLQkJaWYgKHJldCA8IDApIHsKPiAtCQkJZGV2X2VycihidXMt
+PmRldiwgImZhaWxlZCB0byBzZXQgdm9sdGFnZVxuIik7Cj4gLQkJCWdvdG8gb3V0Owo+IC0JCX0K
+PiAtCX0KPiAtCj4gLQlyZXQgPSBjbGtfc2V0X3JhdGUoYnVzLT5jbGssIG5ld19mcmVxKTsKPiAt
+CWlmIChyZXQgPCAwKSB7Cj4gLQkJZGV2X2VycihkZXYsICJmYWlsZWQgdG8gY2hhbmdlIGNsb2Nr
+IG9mIGJ1c1xuIik7Cj4gLQkJY2xrX3NldF9yYXRlKGJ1cy0+Y2xrLCBvbGRfZnJlcSk7Cj4gLQkJ
+Z290byBvdXQ7Cj4gLQl9Cj4gLQo+IC0JaWYgKG9sZF9mcmVxID4gbmV3X2ZyZXEpIHsKPiAtCQly
+ZXQgPSByZWd1bGF0b3Jfc2V0X3ZvbHRhZ2VfdG9sKGJ1cy0+cmVndWxhdG9yLCBuZXdfdm9sdCwg
+dG9sKTsKPiAtCQlpZiAocmV0IDwgMCkgewo+IC0JCQlkZXZfZXJyKGJ1cy0+ZGV2LCAiZmFpbGVk
+IHRvIHNldCB2b2x0YWdlXG4iKTsKPiAtCQkJZ290byBvdXQ7Cj4gLQkJfQo+IC0JfQo+IC0JYnVz
+LT5jdXJyX2ZyZXEgPSBuZXdfZnJlcTsKPiAtCj4gLQlkZXZfZGJnKGRldiwgIlNldCB0aGUgZnJl
+cXVlbmN5IG9mIGJ1cyAoJWx1SHogLT4gJWx1SHosICVsdUh6KVxuIiwKPiAtCQkJb2xkX2ZyZXEs
+IG5ld19mcmVxLCBjbGtfZ2V0X3JhdGUoYnVzLT5jbGspKTsKPiAtb3V0Ogo+ICAJbXV0ZXhfdW5s
+b2NrKCZidXMtPmxvY2spOwo+ICAKPiAgCXJldHVybiByZXQ7Cj4gQEAgLTE5NSw4ICsxNjEsOCBA
+QCBzdGF0aWMgdm9pZCBleHlub3NfYnVzX2V4aXQoc3RydWN0IGRldmljZSAqZGV2KQo+ICAJCWRl
+dl93YXJuKGRldiwgImZhaWxlZCB0byBkaXNhYmxlIHRoZSBkZXZmcmVxLWV2ZW50IGRldmljZXNc
+biIpOwo+ICAKPiAgCWNsa19kaXNhYmxlX3VucHJlcGFyZShidXMtPmNsayk7Cj4gLQlpZiAoYnVz
+LT5yZWd1bGF0b3IpCj4gLQkJcmVndWxhdG9yX2Rpc2FibGUoYnVzLT5yZWd1bGF0b3IpOwo+ICsJ
+aWYgKGJ1cy0+b3BwX3RhYmxlKQo+ICsJCWRldl9wbV9vcHBfcHV0X3JlZ3VsYXRvcnMoYnVzLT5v
+cHBfdGFibGUpOwo+ICAKPiAgCWRldl9wbV9vcHBfb2ZfcmVtb3ZlX3RhYmxlKGRldik7Cj4gIH0K
+PiBAQCAtMjA5LDM5ICsxNzUsMjMgQEAgc3RhdGljIGludCBleHlub3NfYnVzX3Bhc3NpdmVfdGFy
+Z2V0KHN0cnVjdCBkZXZpY2UgKmRldiwgdW5zaWduZWQgbG9uZyAqZnJlcSwKPiAgewo+ICAJc3Ry
+dWN0IGV4eW5vc19idXMgKmJ1cyA9IGRldl9nZXRfZHJ2ZGF0YShkZXYpOwo+ICAJc3RydWN0IGRl
+dl9wbV9vcHAgKm5ld19vcHA7Cj4gLQl1bnNpZ25lZCBsb25nIG9sZF9mcmVxLCBuZXdfZnJlcTsK
+PiAtCWludCByZXQgPSAwOwo+ICsJaW50IHJldDsKPiAgCj4gLQkvKiBHZXQgbmV3IG9wcC1idXMg
+aW5zdGFuY2UgYWNjb3JkaW5nIHRvIG5ldyBidXMgY2xvY2sgKi8KPiArCS8qIEdldCBjb3JyZWN0
+IGZyZXF1ZW5jeSBmb3IgYnVzLiAqLwo+ICAJbmV3X29wcCA9IGRldmZyZXFfcmVjb21tZW5kZWRf
+b3BwKGRldiwgZnJlcSwgZmxhZ3MpOwo+ICAJaWYgKElTX0VSUihuZXdfb3BwKSkgewo+ICAJCWRl
+dl9lcnIoZGV2LCAiZmFpbGVkIHRvIGdldCByZWNvbW1lbmRlZCBvcHAgaW5zdGFuY2VcbiIpOwo+
+ICAJCXJldHVybiBQVFJfRVJSKG5ld19vcHApOwo+ICAJfQo+ICAKPiAtCW5ld19mcmVxID0gZGV2
+X3BtX29wcF9nZXRfZnJlcShuZXdfb3BwKTsKPiAgCWRldl9wbV9vcHBfcHV0KG5ld19vcHApOwo+
+ICAKPiAtCW9sZF9mcmVxID0gYnVzLT5jdXJyX2ZyZXE7Cj4gLQo+IC0JaWYgKG9sZF9mcmVxID09
+IG5ld19mcmVxKQo+IC0JCXJldHVybiAwOwo+IC0KPiAgCS8qIENoYW5nZSB0aGUgZnJlcXVlbmN5
+IGFjY29yZGluZyB0byBuZXcgT1BQIGxldmVsICovCj4gIAltdXRleF9sb2NrKCZidXMtPmxvY2sp
+Owo+ICsJcmV0ID0gZGV2X3BtX29wcF9zZXRfcmF0ZShkZXYsICpmcmVxKTsKPiArCWlmICghcmV0
+KQo+ICsJCWJ1cy0+Y3Vycl9mcmVxID0gKmZyZXE7Cj4gIAo+IC0JcmV0ID0gY2xrX3NldF9yYXRl
+KGJ1cy0+Y2xrLCBuZXdfZnJlcSk7Cj4gLQlpZiAocmV0IDwgMCkgewo+IC0JCWRldl9lcnIoZGV2
+LCAiZmFpbGVkIHRvIHNldCB0aGUgY2xvY2sgb2YgYnVzXG4iKTsKPiAtCQlnb3RvIG91dDsKPiAt
+CX0KPiAtCj4gLQkqZnJlcSA9IG5ld19mcmVxOwo+IC0JYnVzLT5jdXJyX2ZyZXEgPSBuZXdfZnJl
+cTsKPiAtCj4gLQlkZXZfZGJnKGRldiwgIlNldCB0aGUgZnJlcXVlbmN5IG9mIGJ1cyAoJWx1SHog
+LT4gJWx1SHosICVsdUh6KVxuIiwKPiAtCQkJb2xkX2ZyZXEsIG5ld19mcmVxLCBjbGtfZ2V0X3Jh
+dGUoYnVzLT5jbGspKTsKPiAtb3V0Ogo+ICAJbXV0ZXhfdW5sb2NrKCZidXMtPmxvY2spOwo+ICAK
+PiAgCXJldHVybiByZXQ7Cj4gQEAgLTI1OSwyMCArMjA5LDkgQEAgc3RhdGljIGludCBleHlub3Nf
+YnVzX3BhcmVudF9wYXJzZV9vZihzdHJ1Y3QgZGV2aWNlX25vZGUgKm5wLAo+ICAJCQkJCXN0cnVj
+dCBleHlub3NfYnVzICpidXMpCj4gIHsKPiAgCXN0cnVjdCBkZXZpY2UgKmRldiA9IGJ1cy0+ZGV2
+Owo+IC0JaW50IGksIHJldCwgY291bnQsIHNpemU7Cj4gLQo+IC0JLyogR2V0IHRoZSByZWd1bGF0
+b3IgdG8gcHJvdmlkZSBlYWNoIGJ1cyB3aXRoIHRoZSBwb3dlciAqLwo+IC0JYnVzLT5yZWd1bGF0
+b3IgPSBkZXZtX3JlZ3VsYXRvcl9nZXQoZGV2LCAidmRkIik7Cj4gLQlpZiAoSVNfRVJSKGJ1cy0+
+cmVndWxhdG9yKSkgewo+IC0JCWRldl9lcnIoZGV2LCAiZmFpbGVkIHRvIGdldCBWREQgcmVndWxh
+dG9yXG4iKTsKPiAtCQlyZXR1cm4gUFRSX0VSUihidXMtPnJlZ3VsYXRvcik7Cj4gLQl9Cj4gLQo+
+IC0JcmV0ID0gcmVndWxhdG9yX2VuYWJsZShidXMtPnJlZ3VsYXRvcik7Cj4gLQlpZiAocmV0IDwg
+MCkgewo+IC0JCWRldl9lcnIoZGV2LCAiZmFpbGVkIHRvIGVuYWJsZSBWREQgcmVndWxhdG9yXG4i
+KTsKPiAtCQlyZXR1cm4gcmV0Owo+IC0JfQo+ICsJc3RydWN0IG9wcF90YWJsZSAqb3BwX3RhYmxl
+Owo+ICsJY29uc3QgY2hhciAqdmRkID0gInZkZCI7Cj4gKwlpbnQgaSwgY291bnQsIHNpemU7Cj4g
+IAo+ICAJLyoKPiAgCSAqIEdldCB0aGUgZGV2ZnJlcS1ldmVudCBkZXZpY2VzIHRvIGdldCB0aGUg
+Y3VycmVudCB1dGlsaXphdGlvbiBvZgo+IEBAIC0yODEsMjYgKzIyMCwyOSBAQCBzdGF0aWMgaW50
+IGV4eW5vc19idXNfcGFyZW50X3BhcnNlX29mKHN0cnVjdCBkZXZpY2Vfbm9kZSAqbnAsCj4gIAlj
+b3VudCA9IGRldmZyZXFfZXZlbnRfZ2V0X2VkZXZfY291bnQoZGV2KTsKPiAgCWlmIChjb3VudCA8
+IDApIHsKPiAgCQlkZXZfZXJyKGRldiwgImZhaWxlZCB0byBnZXQgdGhlIGNvdW50IG9mIGRldmZy
+ZXEtZXZlbnQgZGV2XG4iKTsKPiAtCQlyZXQgPSBjb3VudDsKPiAtCQlnb3RvIGVycl9yZWd1bGF0
+b3I7Cj4gKwkJcmV0dXJuIGNvdW50Owo+ICAJfQo+IC0JYnVzLT5lZGV2X2NvdW50ID0gY291bnQ7
+Cj4gIAo+ICsJYnVzLT5lZGV2X2NvdW50ID0gY291bnQ7Cj4gIAlzaXplID0gc2l6ZW9mKCpidXMt
+PmVkZXYpICogY291bnQ7Cj4gIAlidXMtPmVkZXYgPSBkZXZtX2t6YWxsb2MoZGV2LCBzaXplLCBH
+RlBfS0VSTkVMKTsKPiAtCWlmICghYnVzLT5lZGV2KSB7Cj4gLQkJcmV0ID0gLUVOT01FTTsKPiAt
+CQlnb3RvIGVycl9yZWd1bGF0b3I7Cj4gLQl9Cj4gKwlpZiAoIWJ1cy0+ZWRldikKPiArCQlyZXR1
+cm4gLUVOT01FTTsKPiAgCj4gIAlmb3IgKGkgPSAwOyBpIDwgY291bnQ7IGkrKykgewo+ICAJCWJ1
+cy0+ZWRldltpXSA9IGRldmZyZXFfZXZlbnRfZ2V0X2VkZXZfYnlfcGhhbmRsZShkZXYsIGkpOwo+
+IC0JCWlmIChJU19FUlIoYnVzLT5lZGV2W2ldKSkgewo+IC0JCQlyZXQgPSAtRVBST0JFX0RFRkVS
+Owo+IC0JCQlnb3RvIGVycl9yZWd1bGF0b3I7Cj4gLQkJfQo+ICsJCWlmIChJU19FUlIoYnVzLT5l
+ZGV2W2ldKSkKPiArCQkJcmV0dXJuIC1FUFJPQkVfREVGRVI7Cj4gKwl9Cj4gKwo+ICsJb3BwX3Rh
+YmxlID0gZGV2X3BtX29wcF9zZXRfcmVndWxhdG9ycyhkZXYsICZ2ZGQsIDEpOwo+ICsJaWYgKElT
+X0VSUihvcHBfdGFibGUpKSB7Cj4gKwkJaSA9IFBUUl9FUlIob3BwX3RhYmxlKTsKPiArCQlkZXZf
+ZXJyKGRldiwgImZhaWxlZCB0byBzZXQgcmVndWxhdG9ycyAlZFxuIiwgaSk7Cj4gKwkJcmV0dXJu
+IGk7CgpNYXliZSwgeW91IGp1c3QgdXNlZCB0aGUgJ2knIGRlZmluZWQgdmFyaWFibGUgaW5zdGVh
+ZCBvZiBhZGRpbmcKbmV3IHZhcmlhYmxlLiBCdXQsIEkgdGhpbmsgdGhhdCB5b3UgYmV0dGVyIHRv
+IGFkZCBuZXcgdmFyaWFibGUKbGlrZSAnZXJyJyBmb3IgdGhlIHJlYWRhYmlsaXR5LiBPciwganV0
+IHVzZSB0aGUgJ1BUUl9FUlIob3BwX3RhYmxlKScKZGlyZWN0bHkgd2l0aG91dCBhbnkgYWRkaXRp
+b25hbCB2YXJpYWJsZS4KCj4gIAl9Cj4gIAo+ICsJYnVzLT5vcHBfdGFibGUgPSBvcHBfdGFibGU7
+CgpBZGQgYmxhbmsgbGluZS4gCgo+ICAJLyoKPiAgCSAqIE9wdGlvbmFsbHksIEdldCB0aGUgc2F0
+dXJhdGlvbiByYXRpbyBhY2NvcmRpbmcgdG8gRXh5bm9zIFNvQwo+ICAJICogV2hlbiBtZWFzdXJp
+bmcgdGhlIHV0aWxpemF0aW9uIG9mIGVhY2ggQVhJIGJ1cyB3aXRoIGRldmZyZXEtZXZlbnQKPiBA
+QCAtMzE0LDE2ICsyNTYsNyBAQCBzdGF0aWMgaW50IGV4eW5vc19idXNfcGFyZW50X3BhcnNlX29m
+KHN0cnVjdCBkZXZpY2Vfbm9kZSAqbnAsCj4gIAlpZiAob2ZfcHJvcGVydHlfcmVhZF91MzIobnAs
+ICJleHlub3Msc2F0dXJhdGlvbi1yYXRpbyIsICZidXMtPnJhdGlvKSkKPiAgCQlidXMtPnJhdGlv
+ID0gREVGQVVMVF9TQVRVUkFUSU9OX1JBVElPOwo+ICAKPiAtCWlmIChvZl9wcm9wZXJ0eV9yZWFk
+X3UzMihucCwgImV4eW5vcyx2b2x0YWdlLXRvbGVyYW5jZSIsCj4gLQkJCQkJJmJ1cy0+dm9sdGFn
+ZV90b2xlcmFuY2UpKQo+IC0JCWJ1cy0+dm9sdGFnZV90b2xlcmFuY2UgPSBERUZBVUxUX1ZPTFRB
+R0VfVE9MRVJBTkNFOwo+IC0KPiAgCXJldHVybiAwOwo+IC0KPiAtZXJyX3JlZ3VsYXRvcjoKPiAt
+CXJlZ3VsYXRvcl9kaXNhYmxlKGJ1cy0+cmVndWxhdG9yKTsKPiAtCj4gLQlyZXR1cm4gcmV0Owo+
+ICB9Cj4gIAo+ICBzdGF0aWMgaW50IGV4eW5vc19idXNfcGFyc2Vfb2Yoc3RydWN0IGV4eW5vc19i
+dXMgKmJ1cykKPiBAQCAtNDE0LDEyICszNDcsOCBAQCBzdGF0aWMgaW50IGV4eW5vc19idXNfcHJv
+YmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKPiAgCj4gIAkvKiBQYXJzZSB0aGUgZGV2
+aWNlLXRyZWUgdG8gZ2V0IHRoZSByZXNvdXJjZSBpbmZvcm1hdGlvbiAqLwo+ICAJcmV0ID0gZXh5
+bm9zX2J1c19wYXJzZV9vZihidXMpOwo+IC0JaWYgKHJldCA8IDApIHsKPiAtCQlpZiAoIXBhc3Np
+dmUpCj4gLQkJCXJlZ3VsYXRvcl9kaXNhYmxlKGJ1cy0+cmVndWxhdG9yKTsKPiAtCj4gLQkJcmV0
+dXJuIHJldDsKPiAtCX0KPiArCWlmIChyZXQgPCAwKQo+ICsJCWdvdG8gZXJyX3JlZzsKPiAgCj4g
+IAlpZiAocGFzc2l2ZSkKPiAgCQlnb3RvIHBhc3NpdmU7Cj4gQEAgLTUxMiwxMCArNDQxLDEyIEBA
+IHN0YXRpYyBpbnQgZXh5bm9zX2J1c19wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2
+KQo+ICAKPiAgZXJyOgo+ICAJY2xrX2Rpc2FibGVfdW5wcmVwYXJlKGJ1cy0+Y2xrKTsKPiAtCWlm
+ICghcGFzc2l2ZSkKPiAtCQlyZWd1bGF0b3JfZGlzYWJsZShidXMtPnJlZ3VsYXRvcik7Cj4gLQo+
+ICAJZGV2X3BtX29wcF9vZl9yZW1vdmVfdGFibGUoZGV2KTsKClRoaXMgZnVuY3Rpb24gcmVtb3Zl
+cyB0aGUgJ29wcF90YWJsZScuIEJ1dCwgdGhlIGJlbG93IGNvZGUKdXNlcyB0aGUgJ29wcF90YWJs
+ZScgdmFyaWFibGUgYnkgZGV2X3BtX29wcF9wdXRfcmVndWxhdG9ycygpLgoKVG8gZGlzYWJsZSB0
+aGUgcmVndWxhdG9yLCB5b3UgaGF2ZSB0byBjYWxsIGRldl9wbV9vcHBfb2ZfcmVtb3ZlX3RhYmxl
+KGRldikKYWZ0ZXIgZGV2X3BtX29wcF9wdXRfcmVndWxhdG9ycyhidXMtPm9wcF90YWJsZSkuCgo+
+ICtlcnJfcmVnOgo+ICsJaWYgKGJ1cy0+b3BwX3RhYmxlKSB7Cj4gKwkJZGV2X3BtX29wcF9wdXRf
+cmVndWxhdG9ycyhidXMtPm9wcF90YWJsZSk7Cj4gKwkJYnVzLT5vcHBfdGFibGUgPSBOVUxMOwo+
+ICsJfQo+ICAKPiAgCXJldHVybiByZXQ7Cj4gIH0KPiAKCgotLSAKQmVzdCBSZWdhcmRzLApDaGFu
+d29vIENob2kKU2Ftc3VuZyBFbGVjdHJvbmljcwoKX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgt
+YXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
+L21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
