@@ -2,155 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6996F74EF4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 15:17:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE17C74F10
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 15:20:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xSZy7BfCtlTDZJVFFbO0jIV3EdMuNH/x4MV/gqexTsM=; b=kybmVqHHim6pu1
-	aWx93IWKO2gqQcd/xmjVnYLd7ivSRLzinb3aMVbWakoYm981uqzwnfawhQ+Xii6lFtbeAG2TUS/OW
-	csz/Lu7KpKQlJp+yTVPbu5eZfgehSwv5xDCSKnWhpV9p9Hpp+yOzP9QoKx4qG4CuZnqtZ6i8Joumw
-	ATYnHJ8LAEESuCZ0nZOd6yUjD7N3q3C89eiFgioxnpcexJmt/fn0PAH4r1SVOKU4c2wOFPnKw6Vw0
-	cKcZl9uVPPmgCUFBKGFEFKIHSh98p3KSnR1q5tRJmUwUnKnaoPg2sfaSkv2FPccnUnWzy4nfIHqrI
-	uY8sHNBSNCl6OYRg9z/A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JwXTXLlIZOaSfHunLMk3tRfmxHnWb7Iqz9ik06Z8Yr8=; b=DVelU9HPblvT3v
+	WY3wPxUaUHBdPTytp5IgGOq8qVFxwyncYqpdhpaRzG70dr3cskKh9lnvR4gnr9maeJUbEwiFo6nhO
+	pminpRHzozUOvHCVdlPawwhAQGKZAeLzuKdQ37qg/zA26Nk5nkWUkVwlA7z3WfGVCcmJnIO6PAVhG
+	5+q9Z7LcnAft1eEe/BqHgeS5vrbux/YFSGkMiDIn8quZ96z/awAAVPWUdRECVDomg4iZ2ieL5gJ5P
+	u/+rAlLUUZZ7SbOt3lwb/Zfy7I05E3eucUJ8cEWeqp1MPiIaZ/0ceQqtqO9eyBkTs1IkM0cUzx/iK
+	QVt/slienV1iFJIIW+lA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqdbu-0006GI-5S; Thu, 25 Jul 2019 13:16:42 +0000
-Received: from esa1.microchip.iphmx.com ([68.232.147.91])
+	id 1hqdfO-0007Fm-CP; Thu, 25 Jul 2019 13:20:18 +0000
+Received: from mga02.intel.com ([134.134.136.20])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqdbQ-00062J-PT
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 13:16:23 +0000
-Received-SPF: Pass (esa1.microchip.iphmx.com: domain of
- Codrin.Ciubotariu@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
- envelope-from="Codrin.Ciubotariu@microchip.com";
- x-sender="Codrin.Ciubotariu@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com a:mx1.microchip.iphmx.com
- a:mx2.microchip.iphmx.com include:servers.mcsv.net
- include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa1.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
- envelope-from="Codrin.Ciubotariu@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa1.microchip.iphmx.com;
- spf=Pass smtp.mailfrom=Codrin.Ciubotariu@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: cg16V9m0uJGmtqhTbNxUfybBgUP69b+trKe6w0TSs3arhc+l6XDUApwnVylJq6b0G6P+udimaB
- hZrfY8Ht4WBRG1L5pVINGQmeNvdz9qH7I85A81xqwlfRZQdnKXyHzqNyBZIFGx+xgEMSierXje
- OlMPif8gM4PkWbWDDnf488Ivk8UJFFsQeorW369odPdlyu35Rko1LfmRnT/J8RYuOsG9DqJL+a
- ROxP6hs17A9GTMBv0FBiqkfSvjSK3PoiQNNFwfJOccncxrrOUcqn+0ZV4EOB9w8XKP261HUMzp
- DnQ=
-X-IronPort-AV: E=Sophos;i="5.64,306,1559545200"; d="scan'208";a="44117477"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 25 Jul 2019 06:15:44 -0700
-Received: from chn-vm-ex01.mchp-main.com (10.10.87.71) by
- chn-vm-ex01.mchp-main.com (10.10.87.71) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Thu, 25 Jul 2019 06:15:39 -0700
-Received: from NAM03-BY2-obe.outbound.protection.outlook.com (10.10.215.89) by
- email.microchip.com (10.10.87.71) with Microsoft SMTP Server
- (version=TLS1_2, 
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
- Transport; Thu, 25 Jul 2019 06:15:38 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=jHhS52aj7EU2wD3wUTaSAFBgajrPxiC4trkZqx6npnPs0kwW6pyt98nTvDKpa+UMZWVIcTUQLJpGvIBMlCsll+NFQFXhmdSWnSFPZKw6VKGgyZJajxtScIMxzrcfqpqWDAEJjLdnouZkKZWnL5iyKdw8vnlkDu/DLxiUygPtHq99yC6JMETbaN99DPagFLVWUCCMF5rugi6XYXtmuZL90VnSmG9rmjqzxhBnQ9WjsichECKsx+3VAHVhSLgTIh3p4VotBlwKB31U8bhbZi25kYrKpJkL1I97wjupzMT6Mq0NjkEs8nOOrH2Za7V7F5+5/RLxy/IygI8O8z8gy4ot9g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=HAzCAbOSdmIhV3sQ6dSyHH7UOBgbyE57R6YT81a3biQ=;
- b=WG+M4iSHLPlxZZGpOxeQbrxTc2ugdR6stPTuyT4R4WkWTWhe/Gne6vqJNJFUz133fjrCCH8rWPhneJkPusNsUAJm74bSUYni/Ca5zheLe17xYqgf206VT5KaIm79CpS+oFQ+8tbt7e9roWoM+QjffgrFlvbbrC1T6+u1sNhwhLwI9O7h9zxjxb0Be9FNGfzJW64Wmu4hcDejsvHKIp4mirBlBYtNa40lyuLy6ZTeX9COgj9Pv7yN1F8wRhLX92JKbQmQ0gQ8yt/ojmliluFNCz2lylLZlEK5BNAQJfKbE5pqHVLyzRLXFprreRsLSQUztEnVIT4Za0AIBRlfdVQqxA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=microchip.com;dmarc=pass action=none
- header.from=microchip.com;dkim=pass header.d=microchip.com;arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=microchiptechnology.onmicrosoft.com;
- s=selector1-microchiptechnology-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=HAzCAbOSdmIhV3sQ6dSyHH7UOBgbyE57R6YT81a3biQ=;
- b=UXw1Hh8WNVc3VX1QacxDaomCUVZHOrOW9h4GjDjxMryh7VU5ClWvB1rSSAydAsJo+IU/cRrcnNcIbO9hTUFN2qJ/ZtFRS2Pf/vuQAc0CliAf2/gS5OoOyTndj5VkovQvbxebg82zYo9UXcD4Jh9k/OJ/It6zYVLy4zKEGWEfxm8=
-Received: from BN6PR11MB0051.namprd11.prod.outlook.com (10.161.153.153) by
- BN6PR11MB1729.namprd11.prod.outlook.com (10.175.98.148) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2094.16; Thu, 25 Jul 2019 13:15:36 +0000
-Received: from BN6PR11MB0051.namprd11.prod.outlook.com
- ([fe80::7972:d14b:4c60:adb2]) by BN6PR11MB0051.namprd11.prod.outlook.com
- ([fe80::7972:d14b:4c60:adb2%3]) with mapi id 15.20.2094.013; Thu, 25 Jul 2019
- 13:15:36 +0000
-From: <Codrin.Ciubotariu@microchip.com>
-To: <mirq-linux@rere.qmqm.pl>, <alsa-devel@alsa-project.org>
-Subject: Re: [PATCH 3/5] ASoC: atmel_ssc_dai: implement left-justified data
- mode
-Thread-Topic: [PATCH 3/5] ASoC: atmel_ssc_dai: implement left-justified data
- mode
-Thread-Index: AQHVQLs7+spV2uxe5UKPaglefx2Ya6bbVJcA
-Date: Thu, 25 Jul 2019 13:15:36 +0000
-Message-ID: <1da85885-4b5c-fcfa-a7b7-d8ef8102debe@microchip.com>
-References: <cover.1563819483.git.mirq-linux@rere.qmqm.pl>
- <ca3d0b124cdf6e2d0ec158a7948f08dd8abfd3b7.1563819483.git.mirq-linux@rere.qmqm.pl>
-In-Reply-To: <ca3d0b124cdf6e2d0ec158a7948f08dd8abfd3b7.1563819483.git.mirq-linux@rere.qmqm.pl>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: PR0P264CA0226.FRAP264.PROD.OUTLOOK.COM
- (2603:10a6:100:1e::22) To BN6PR11MB0051.namprd11.prod.outlook.com
- (2603:10b6:405:65::25)
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [94.177.32.154]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 35b437d6-0093-401c-0837-08d711022e29
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:BN6PR11MB1729; 
-x-ms-traffictypediagnostic: BN6PR11MB1729:
-x-microsoft-antispam-prvs: <BN6PR11MB1729BBE7E5C733CF2BEB226FE7C10@BN6PR11MB1729.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:449;
-x-forefront-prvs: 0109D382B0
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(376002)(136003)(396003)(346002)(39860400002)(366004)(199004)(189003)(478600001)(66556008)(66066001)(476003)(2616005)(102836004)(3846002)(66946007)(316002)(52116002)(6486002)(76176011)(6436002)(64756008)(86362001)(110136005)(6506007)(53546011)(66476007)(25786009)(66446008)(11346002)(31696002)(6116002)(26005)(186003)(66574012)(8936002)(99286004)(71200400001)(31686004)(81166006)(305945005)(6246003)(81156014)(14444005)(36756003)(8676002)(6512007)(7736002)(386003)(446003)(53936002)(68736007)(14454004)(54906003)(5660300002)(229853002)(256004)(71190400001)(2501003)(486006)(4326008)(2906002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BN6PR11MB1729;
- H:BN6PR11MB0051.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: microchip.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: biE1kXmWd0xEuTYRJg/4gFTVpMmK89EOcDcMNBwNzDaK6PaaHBexyhDXe6h/Fu4o+VI1OzEz2lwWkRRwMGdIeaCaj+GNK97aPFyxea2qrlQOreOk0SxobEdKJaWa5B4FYIcdaHP3NvrUpEs76CJlNDhmwiii6uHCQ2HSNnSZIC4i4xSrZsEd3qTdUF0Pt6VFp1sSOpornzyIUncGd9obm3ZahET4tgTZ+JP+rjk9VRMsD1UMcCn21jBNXUekNxBcYp2rNpcBIEERhS2ZWj4iSURy0vL1UT+6Eyo0moevT4RQ9oinoc+nEGcc8xMyLOFHipn3YObDl7wd5aXoN6nPgfhxErhY+/zOeecRjDsEj9YnKrIUSb7IqYl0yUj6VIhA+3hinCJZCItSRpSifZz1yDOIc9COdJItU5qEzgWTG5s=
-Content-ID: <E0CC02D8A42C3844AF3645A1BCA91C23@namprd11.prod.outlook.com>
+ id 1hqdf0-0007F8-D2
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 13:19:56 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga001.fm.intel.com ([10.253.24.23])
+ by orsmga101.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 25 Jul 2019 06:19:47 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.64,306,1559545200"; d="scan'208";a="189318286"
+Received: from ahunter-desktop.fi.intel.com (HELO [10.237.72.122])
+ ([10.237.72.122])
+ by fmsmga001.fm.intel.com with ESMTP; 25 Jul 2019 06:19:44 -0700
+Subject: Re: [PATCH v2 2/2] mmc: Add support for the ASPEED SD controller
+To: Andrew Jeffery <andrew@aj.id.au>, linux-mmc@vger.kernel.org
+References: <20190712033214.24713-1-andrew@aj.id.au>
+ <20190712033214.24713-3-andrew@aj.id.au>
+From: Adrian Hunter <adrian.hunter@intel.com>
+Organization: Intel Finland Oy, Registered Address: PL 281, 00181 Helsinki,
+ Business Identity Code: 0357606 - 4, Domiciled in Helsinki
+Message-ID: <d6f7fdf2-07ed-354a-ca29-f3175623679c@intel.com>
+Date: Thu, 25 Jul 2019 16:18:26 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 35b437d6-0093-401c-0837-08d711022e29
-X-MS-Exchange-CrossTenant-originalarrivaltime: 25 Jul 2019 13:15:36.0740 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Codrin.Ciubotariu@microchip.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN6PR11MB1729
+In-Reply-To: <20190712033214.24713-3-andrew@aj.id.au>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_061613_060289_D46B8FE9 
-X-CRM114-Status: GOOD (  11.19  )
+X-CRM114-CacheID: sfid-20190725_061954_486582_E5325BB3 
+X-CRM114-Status: GOOD (  34.25  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.147.91 listed in list.dnswl.org]
+ medium trust [134.134.136.20 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -162,36 +70,454 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, lgirdwood@gmail.com, tiwai@suse.com,
- Ludovic.Desroches@microchip.com, broonie@kernel.org, perex@perex.cz,
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, ulf.hansson@linaro.org,
+ linux-aspeed@lists.ozlabs.org, ryanchen.aspeed@gmail.com,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, joel@jms.id.au,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjIuMDcuMjAxOSAyMToyNywgTWljaGHFgiBNaXJvc8WCYXcgd3JvdGU6DQo+IEV4dGVybmFs
-IEUtTWFpbA0KPiANCj4gDQo+IFNpZ25lZC1vZmYtYnk6IE1pY2hhxYIgTWlyb3PFgmF3IDxtaXJx
-LWxpbnV4QHJlcmUucW1xbS5wbD4NCj4gLS0tDQo+ICAgc291bmQvc29jL2F0bWVsL2F0bWVsX3Nz
-Y19kYWkuYyB8IDEzICsrKysrKysrKysrKysNCj4gICAxIGZpbGUgY2hhbmdlZCwgMTMgaW5zZXJ0
-aW9ucygrKQ0KPiANCj4gZGlmZiAtLWdpdCBhL3NvdW5kL3NvYy9hdG1lbC9hdG1lbF9zc2NfZGFp
-LmMgYi9zb3VuZC9zb2MvYXRtZWwvYXRtZWxfc3NjX2RhaS5jDQo+IGluZGV4IGIyOTkyNDk2ZTUy
-Zi4uMDQ1NDFkN2MzM2ZlIDEwMDY0NA0KPiAtLS0gYS9zb3VuZC9zb2MvYXRtZWwvYXRtZWxfc3Nj
-X2RhaS5jDQo+ICsrKyBiL3NvdW5kL3NvYy9hdG1lbC9hdG1lbF9zc2NfZGFpLmMNCj4gQEAgLTU2
-NCw3ICs1NjQsMjAgQEAgc3RhdGljIGludCBhdG1lbF9zc2NfaHdfcGFyYW1zKHN0cnVjdCBzbmRf
-cGNtX3N1YnN0cmVhbSAqc3Vic3RyZWFtLA0KPiAgIA0KPiAgIAlzd2l0Y2ggKHNzY19wLT5kYWlm
-bXQgJiBTTkRfU09DX0RBSUZNVF9GT1JNQVRfTUFTSykgew0KPiAgIA0KPiArCWNhc2UgU05EX1NP
-Q19EQUlGTVRfTEVGVF9KOg0KPiArCQkvKiBsZWZ0LWp1c3RpZmllZCBmb3JtYXQgKi8NCj4gKwkJ
-ZnNfb3N5bmMgPSBTU0NfRlNPU19QT1NJVElWRTsNCj4gKw0KPiArCQlyY21yID0JICBTU0NfQkYo
-UkNNUl9TVFRETFksIDApDQo+ICsJCQl8IFNTQ19CRihSQ01SX1NUQVJULCBTU0NfU1RBUlRfUklT
-SU5HX1JGKTsNCj4gKw0KPiArCQl0Y21yID0JICBTU0NfQkYoVENNUl9TVFRETFksIDApDQo+ICsJ
-CQl8IFNTQ19CRihUQ01SX1NUQVJULCBTU0NfU1RBUlRfUklTSU5HX1JGKTsNCj4gKw0KPiArCQli
-cmVhazsNCj4gKw0KPiAgIAljYXNlIFNORF9TT0NfREFJRk1UX0kyUzoNCj4gKwkJLyogSTJTIGZv
-cm1hdCA9IGxlZnQtanVzdGlmaWVkIHdpdGggc3RhcnQgYml0IGFuZCBpbnZlcnRlZCBMUkNMSyAq
-Lw0KPiAgIAkJZnNfb3N5bmMgPSBTU0NfRlNPU19ORUdBVElWRTsNCj4gICANCj4gICAJCXJjbXIg
-PQkgIFNTQ19CRihSQ01SX1NUVERMWSwgMSkNCj4gDQoNClJldmlld2VkLWJ5OiBDb2RyaW4gQ2l1
-Ym90YXJpdSA8Y29kcmluLmNpdWJvdGFyaXVAbWljcm9jaGlwLmNvbT4NCg0KVGhhbmtzIGFuZCBi
-ZXN0IHJlZ2FyZHMsDQpDb2RyaW4NCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJu
-ZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On 12/07/19 6:32 AM, Andrew Jeffery wrote:
+> Add a minimal driver for ASPEED's SD controller, which exposes two
+> SDHCIs.
+> 
+> The ASPEED design implements a common register set for the SDHCIs, and
+> moves some of the standard configuration elements out to this common
+> area (e.g. 8-bit mode, and card detect configuration which is not
+> currently supported).
+> 
+> The SD controller has a dedicated hardware interrupt that is shared
+> between the slots. The common register set exposes information on which
+> slot triggered the interrupt; early revisions of the patch introduced an
+> irqchip for the register, but reality is it doesn't behave as an
+> irqchip, and the result fits awkwardly into the irqchip APIs. Instead
+> I've taken the simple approach of using the IRQ as a shared IRQ with
+> some minor performance impact for the second slot.
+> 
+> Ryan was the original author of the patch - I've taken his work and
+> massaged it to drop the irqchip support and rework the devicetree
+> integration. The driver has been smoke tested under qemu against a
+> minimal SD controller model and lightly tested on an ast2500-evb.
+> 
+> Signed-off-by: Ryan Chen <ryanchen.aspeed@gmail.com>
+> Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
+
+Looks fine.  Few minor comments below.
+
+> ---
+> In v2:
+> 
+> * Drop unnecesasry MODULE_DEVICE_TABLE()
+> * Rename sd-controller compatible
+> * Add IBM copyright
+> * Drop unnecesary data assignment in of match table entries
+> * Derive the slot from the SDHCI offset
+> 
+>  drivers/mmc/host/Kconfig           |  12 ++
+>  drivers/mmc/host/Makefile          |   1 +
+>  drivers/mmc/host/sdhci-of-aspeed.c | 326 +++++++++++++++++++++++++++++
+>  3 files changed, 339 insertions(+)
+>  create mode 100644 drivers/mmc/host/sdhci-of-aspeed.c
+> 
+> diff --git a/drivers/mmc/host/Kconfig b/drivers/mmc/host/Kconfig
+> index 931770f17087..2bb5e1264b3d 100644
+> --- a/drivers/mmc/host/Kconfig
+> +++ b/drivers/mmc/host/Kconfig
+> @@ -154,6 +154,18 @@ config MMC_SDHCI_OF_ARASAN
+>  
+>  	  If unsure, say N.
+>  
+> +config MMC_SDHCI_OF_ASPEED
+> +	tristate "SDHCI OF support for the ASPEED SDHCI controller"
+> +	depends on MMC_SDHCI_PLTFM
+> +	depends on OF
+> +	help
+> +	  This selects the ASPEED Secure Digital Host Controller Interface.
+> +
+> +	  If you have a controller with this interface, say Y or M here. You
+> +	  also need to enable an appropriate bus interface.
+> +
+> +	  If unsure, say N.
+> +
+>  config MMC_SDHCI_OF_AT91
+>  	tristate "SDHCI OF support for the Atmel SDMMC controller"
+>  	depends on MMC_SDHCI_PLTFM
+> diff --git a/drivers/mmc/host/Makefile b/drivers/mmc/host/Makefile
+> index 73578718f119..390ee162fe71 100644
+> --- a/drivers/mmc/host/Makefile
+> +++ b/drivers/mmc/host/Makefile
+> @@ -84,6 +84,7 @@ obj-$(CONFIG_MMC_SDHCI_ESDHC_IMX)	+= sdhci-esdhc-imx.o
+>  obj-$(CONFIG_MMC_SDHCI_DOVE)		+= sdhci-dove.o
+>  obj-$(CONFIG_MMC_SDHCI_TEGRA)		+= sdhci-tegra.o
+>  obj-$(CONFIG_MMC_SDHCI_OF_ARASAN)	+= sdhci-of-arasan.o
+> +obj-$(CONFIG_MMC_SDHCI_OF_ASPEED)	+= sdhci-of-aspeed.o
+>  obj-$(CONFIG_MMC_SDHCI_OF_AT91)		+= sdhci-of-at91.o
+>  obj-$(CONFIG_MMC_SDHCI_OF_ESDHC)	+= sdhci-of-esdhc.o
+>  obj-$(CONFIG_MMC_SDHCI_OF_HLWD)		+= sdhci-of-hlwd.o
+> diff --git a/drivers/mmc/host/sdhci-of-aspeed.c b/drivers/mmc/host/sdhci-of-aspeed.c
+> new file mode 100644
+> index 000000000000..9528e43c257d
+> --- /dev/null
+> +++ b/drivers/mmc/host/sdhci-of-aspeed.c
+> @@ -0,0 +1,326 @@
+> +// SPDX-License-Identifier: GPL-2.0-or-later
+> +/* Copyright (C) 2019 ASPEED Technology Inc. */
+> +/* Copyright (C) 2019 IBM Corp. */
+> +
+> +#include <linux/clk.h>
+> +#include <linux/delay.h>
+> +#include <linux/device.h>
+> +#include <linux/io.h>
+> +#include <linux/mmc/host.h>
+> +#include <linux/module.h>
+> +#include <linux/of_address.h>
+> +#include <linux/of.h>
+> +#include <linux/of_platform.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/spinlock.h>
+> +
+> +#include "sdhci-pltfm.h"
+> +
+> +#define ASPEED_SDC_INFO		0x00
+> +#define   ASPEED_SDC_S1MMC8	BIT(25)
+> +#define   ASPEED_SDC_S0MMC8	BIT(24)
+> +
+> +struct aspeed_sdc {
+> +	struct clk *clk;
+> +	struct resource *res;
+> +
+> +	spinlock_t lock;
+> +	void __iomem *regs;
+> +};
+> +
+> +struct aspeed_sdhci {
+> +	struct aspeed_sdc *parent;
+> +	u32 width_mask;
+> +};
+> +
+> +static void aspeed_sdc_bus_width(struct aspeed_sdc *sdc,
+> +				 struct aspeed_sdhci *sdhci, bool bus8)
+
+The function name threw me at first.  I suggest:
+
+static void aspeed_sdhci_set_clr_8_bit_mode(struct aspeed_sdhci *aspeed_sdhci,
+					    bool bus8)
+{
+	struct aspeed_sdc *aspeed_sdc = aspeed_sdhci->parent;
+
+> +{
+> +	u32 info;
+> +
+> +	/* Set/clear 8 bit mode */
+> +	spin_lock(&sdc->lock);
+> +	info = readl(sdc->regs + ASPEED_SDC_INFO);
+> +	if (bus8)
+> +		info |= sdhci->width_mask;
+> +	else
+> +		info &= ~sdhci->width_mask;
+> +	writel(info, sdc->regs + ASPEED_SDC_INFO);
+> +	spin_unlock(&sdc->lock);
+> +}
+> +
+> +static void aspeed_sdhci_set_clock(struct sdhci_host *host, unsigned int clock)
+> +{
+> +	unsigned long timeout;
+> +	int div;
+> +	u16 clk;
+> +
+> +	if (clock == host->clock)
+> +		return;
+> +
+> +	sdhci_writew(host, 0, SDHCI_CLOCK_CONTROL);
+> +
+> +	if (clock == 0)
+> +		goto out;
+> +
+> +	for (div = 1; div < 256; div *= 2) {
+> +		if ((host->max_clk / div) <= clock)
+> +			break;
+> +	}
+> +	div >>= 1;
+> +
+> +	clk = div << SDHCI_DIVIDER_SHIFT;
+
+Could call sdhci_enable_clk() here.
+
+> +	clk |= SDHCI_CLOCK_INT_EN;
+> +	sdhci_writew(host, clk, SDHCI_CLOCK_CONTROL);
+> +
+> +	/* Wait max 20 ms */
+> +	timeout = 20;
+> +	while (!((clk = sdhci_readw(host, SDHCI_CLOCK_CONTROL))
+> +		 & SDHCI_CLOCK_INT_STABLE)) {
+> +		if (timeout == 0) {
+> +			pr_err("%s: Internal clock never stabilised.\n",
+> +			       mmc_hostname(host->mmc));
+> +			return;
+> +		}
+> +		timeout--;
+> +		mdelay(1);
+> +	}
+> +
+> +	clk |= SDHCI_CLOCK_CARD_EN;
+> +	sdhci_writew(host, clk, SDHCI_CLOCK_CONTROL);
+> +
+> +out:
+> +	host->clock = clock;
+> +}
+> +
+> +static void aspeed_sdhci_set_bus_width(struct sdhci_host *host, int width)
+> +{
+> +	struct sdhci_pltfm_host *pltfm_priv;
+> +	struct aspeed_sdhci *aspeed_sdhci;
+> +	struct aspeed_sdc *aspeed_sdc;
+> +	u8 ctrl;
+> +
+> +	pltfm_priv = sdhci_priv(host);
+> +	aspeed_sdhci = sdhci_pltfm_priv(pltfm_priv);
+> +	aspeed_sdc = aspeed_sdhci->parent;
+> +
+> +	/* Set/clear 8-bit mode */
+> +	aspeed_sdc_bus_width(aspeed_sdc, aspeed_sdhci,
+> +			     width == MMC_BUS_WIDTH_8);
+> +
+> +	/* Set/clear 1 or 4 bit mode */
+> +	ctrl = sdhci_readb(host, SDHCI_HOST_CONTROL);
+> +	if (width == MMC_BUS_WIDTH_4)
+> +		ctrl |= SDHCI_CTRL_4BITBUS;
+> +	else
+> +		ctrl &= ~SDHCI_CTRL_4BITBUS;
+> +	sdhci_writeb(host, ctrl, SDHCI_HOST_CONTROL);
+> +}
+> +
+> +static const struct sdhci_ops aspeed_sdhci_ops = {
+> +	.set_clock = aspeed_sdhci_set_clock,
+> +	.get_max_clock = sdhci_pltfm_clk_get_max_clock,
+> +	.set_bus_width = aspeed_sdhci_set_bus_width,
+> +	.get_timeout_clock = sdhci_pltfm_clk_get_max_clock,
+> +	.reset = sdhci_reset,
+> +	.set_uhs_signaling = sdhci_set_uhs_signaling,
+> +};
+> +
+> +static const struct sdhci_pltfm_data aspeed_sdc_pdata = {
+
+Up to you, but this is for the aspeed_sdhci driver, so I would
+have expected it to be called aspeed_sdhci_pdata
+
+> +	.ops = &aspeed_sdhci_ops,
+> +	.quirks = SDHCI_QUIRK_CAP_CLOCK_BASE_BROKEN,
+> +	.quirks2 = SDHCI_QUIRK2_CLOCK_DIV_ZERO_BROKEN,
+
+You don't use sdhci_set_clock() or sdhci_calc_clk(), so it doesn't
+look like SDHCI_QUIRK2_CLOCK_DIV_ZERO_BROKEN is needed.
+
+> +};
+> +
+> +static inline int aspeed_sdhci_calculate_slot(struct aspeed_sdhci *dev,
+> +					      struct resource *res)
+> +{
+> +	resource_size_t delta;
+> +
+> +	if (!res || resource_type(res) != IORESOURCE_MEM)
+> +		return -EINVAL;
+> +
+> +	if (res->start < dev->parent->res->start)
+> +		return -EINVAL;
+> +
+> +	delta = res->start - dev->parent->res->start;
+> +	if (delta & (0x100 - 1))
+> +		return -EINVAL;
+> +
+> +	return (delta / 0x100) - 1;
+> +}
+> +
+> +static int aspeed_sdhci_probe(struct platform_device *pdev)
+> +{
+> +	struct sdhci_pltfm_host *pltfm_host;
+> +	struct aspeed_sdhci *dev;
+> +	struct sdhci_host *host;
+> +	struct resource *res;
+> +	int slot;
+> +	int ret;
+> +
+> +	host = sdhci_pltfm_init(pdev, &aspeed_sdc_pdata, sizeof(*dev));
+> +	if (IS_ERR(host))
+> +		return PTR_ERR(host);
+> +
+> +	pltfm_host = sdhci_priv(host);
+> +	dev = sdhci_pltfm_priv(pltfm_host);
+> +	dev->parent = dev_get_drvdata(pdev->dev.parent);
+> +
+> +	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> +	slot = aspeed_sdhci_calculate_slot(dev, res);
+> +	if (slot < 0)
+> +		return slot;
+> +	dev_info(&pdev->dev, "Configuring for slot %d\n", slot);
+> +	dev->width_mask = !slot ? ASPEED_SDC_S0MMC8 : ASPEED_SDC_S1MMC8;
+
+That implies that you only support 2 slots which begs the question why
+you don't validate slot.
+
+> +
+> +	sdhci_get_of_property(pdev);
+> +
+> +	pltfm_host->clk = devm_clk_get(&pdev->dev, NULL);
+> +	if (IS_ERR(pltfm_host->clk))
+> +		return PTR_ERR(pltfm_host->clk);
+> +
+> +	ret = clk_prepare_enable(pltfm_host->clk);
+> +	if (ret) {
+> +		dev_err(&pdev->dev, "Unable to enable SDIO clock\n");
+> +		goto err_pltfm_free;
+> +	}
+> +
+> +	ret = mmc_of_parse(host->mmc);
+> +	if (ret)
+> +		goto err_sdhci_add;
+> +
+> +	ret = sdhci_add_host(host);
+> +	if (ret)
+> +		goto err_sdhci_add;
+> +
+> +	return 0;
+> +
+> +err_sdhci_add:
+> +	clk_disable_unprepare(pltfm_host->clk);
+> +err_pltfm_free:
+> +	sdhci_pltfm_free(pdev);
+> +	return ret;
+> +}
+> +
+> +static int aspeed_sdhci_remove(struct platform_device *pdev)
+> +{
+> +	struct sdhci_pltfm_host *pltfm_host;
+> +	struct sdhci_host *host;
+> +	int dead;
+> +
+> +	host = platform_get_drvdata(pdev);
+> +	pltfm_host = sdhci_priv(host);
+> +
+> +	dead = readl(host->ioaddr + SDHCI_INT_STATUS) == 0xffffffff;
+
+'dead' only makes sense for PCI. Just set it to zero.
+
+> +
+> +	sdhci_remove_host(host, dead);
+> +
+> +	clk_disable_unprepare(pltfm_host->clk);
+> +
+> +	sdhci_pltfm_free(pdev);
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct of_device_id aspeed_sdhci_of_match[] = {
+> +	{ .compatible = "aspeed,ast2400-sdhci", },
+> +	{ .compatible = "aspeed,ast2500-sdhci", },
+> +	{ }
+> +};
+> +
+> +static struct platform_driver aspeed_sdhci_driver = {
+> +	.driver		= {
+> +		.name	= "sdhci-aspeed",
+> +		.of_match_table = aspeed_sdhci_of_match,
+> +	},
+> +	.probe		= aspeed_sdhci_probe,
+> +	.remove		= aspeed_sdhci_remove,
+> +};
+> +
+> +module_platform_driver(aspeed_sdhci_driver);
+> +
+> +static int aspeed_sdc_probe(struct platform_device *pdev)
+> +
+> +{
+> +	struct device_node *parent, *child;
+> +	struct aspeed_sdc *sdc;
+> +	int ret;
+> +
+> +	sdc = devm_kzalloc(&pdev->dev, sizeof(*sdc), GFP_KERNEL);
+> +	if (!sdc)
+> +		return -ENOMEM;
+> +
+> +	spin_lock_init(&sdc->lock);
+> +
+> +	sdc->clk = devm_clk_get(&pdev->dev, NULL);
+> +	if (IS_ERR(sdc->clk))
+> +		return PTR_ERR(sdc->clk);
+> +
+> +	ret = clk_prepare_enable(sdc->clk);
+> +	if (ret) {
+> +		dev_err(&pdev->dev, "Unable to enable SDCLK\n");
+> +		return ret;
+> +	}
+> +
+> +	sdc->res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> +	sdc->regs = devm_ioremap_resource(&pdev->dev, sdc->res);
+> +	if (IS_ERR(sdc->regs)) {
+> +		ret = PTR_ERR(sdc->regs);
+> +		goto err_clk;
+> +	}
+> +
+> +	dev_set_drvdata(&pdev->dev, sdc);
+> +
+> +	parent = pdev->dev.of_node;
+> +	for_each_available_child_of_node(parent, child) {
+> +		struct platform_device *cpdev;
+> +
+> +		cpdev = of_platform_device_create(child, NULL, &pdev->dev);
+> +		if (IS_ERR(cpdev)) {
+> +			of_node_put(child);
+> +			ret = PTR_ERR(pdev);
+> +			goto err_clk;
+> +		}
+> +	}
+> +
+> +	return 0;
+> +
+> +err_clk:
+> +	clk_disable_unprepare(sdc->clk);
+> +	return ret;
+> +}
+> +
+> +static int aspeed_sdc_remove(struct platform_device *pdev)
+> +{
+> +	struct aspeed_sdc *sdc = dev_get_drvdata(&pdev->dev);
+> +
+> +	clk_disable_unprepare(sdc->clk);
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct of_device_id aspeed_sdc_of_match[] = {
+> +	{ .compatible = "aspeed,ast2400-sd-controller", },
+> +	{ .compatible = "aspeed,ast2500-sd-controller", },
+> +	{ }
+> +};
+> +
+> +MODULE_DEVICE_TABLE(of, aspeed_sdc_of_match);
+> +
+> +static struct platform_driver aspeed_sdc_driver = {
+> +	.driver		= {
+> +		.name	= "sd-controller-aspeed",
+> +		.pm	= &sdhci_pltfm_pmops,
+> +		.of_match_table = aspeed_sdc_of_match,
+> +	},
+> +	.probe		= aspeed_sdc_probe,
+> +	.remove		= aspeed_sdc_remove,
+> +};
+> +
+> +module_platform_driver(aspeed_sdc_driver);
+> +
+> +MODULE_DESCRIPTION("Driver for the ASPEED SD/SDIO/SDHCI Controllers");
+> +MODULE_AUTHOR("Ryan Chen <ryan_chen@aspeedtech.com>");
+> +MODULE_AUTHOR("Andrew Jeffery <andrew@aj.id.au>");
+> +MODULE_LICENSE("GPL v2");
+> 
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
