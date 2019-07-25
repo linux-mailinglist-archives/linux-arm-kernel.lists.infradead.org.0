@@ -2,98 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB1C7742CB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 03:10:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C3133742D5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 25 Jul 2019 03:18:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
-	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j1Outj0nTrZg2goutePSA7d0/cs9lTVKhJZWFoVhBnU=; b=cWc1fGLLFEgswI
-	UU/IaTU3+PFzrninlmalNdiHbRQAApiTJ/xivUvFCMOAfzHZiaaJP+qw8/bIdFpoutC8TzGK3p8fg
-	JCfj6YnOHM+ygzIH2DZUwTqs4ku96b5kWgb8JOBpbpEMCoZckWHu7PuZRICNuFtW2p6LoDs562ddl
-	16foyGS8LAdUKNrfJGJx+obfEox5D7b1jKXEDDk5BaQfVfNV3h7WO6ZL7nRJSrO+B5WgkVXLQoUOO
-	wbV54CUGfbDXQElGmEwupTFpnJ2AlizZsl0TezVMnJXRsNAttQSvyJIwkpiILzK2/xX3o2y+XM7FC
-	A6qiIbRtkMOSn1vFNpGw==;
+	List-Owner; bh=uNhktnm52102KI76U6leSA/C8ga+pbrrPb/g9QOSyVQ=; b=a/OC3BlcXX//rF
+	sdFynmEVf/fQy/xRgsrcRLtCdzO3gf3tc/CApwvQeWWOwSK8FoqCynD9ocvG6bEnPJlvV8FwaiIx7
+	mooWX7kRD22B/FQAG//FOCM71pUWk7x1JJkoUwHlQvZgHr3/uLXIcmL5RACZdBbLtriB+0MIyvwBu
+	ZAjjK/JMlPJDHl47UKd6NLlw/2cjUT2Xu2ymotqYSITBTMPhuMf0qE5dek5bM9fPe5yR4nRW96I22
+	sQkQiGmu64YYinXjVTedSI04kQg0jInew8Tng/HV+vpqJ/7aqIdHsu14dkOL4H/gRXeuJNaaUu0Dp
+	EXob9LaXilVQL6YRKBtw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqSHG-0003Sy-3X; Thu, 25 Jul 2019 01:10:38 +0000
-Received: from out4-smtp.messagingengine.com ([66.111.4.28])
+	id 1hqSP1-0005Js-DS; Thu, 25 Jul 2019 01:18:39 +0000
+Received: from smtprelay0084.hostedemail.com ([216.40.44.84]
+ helo=smtprelay.hostedemail.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqSH1-0003SU-7K
- for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 01:10:24 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id 355FE21FBC;
- Wed, 24 Jul 2019 21:10:21 -0400 (EDT)
-Received: from imap2 ([10.202.2.52])
- by compute4.internal (MEProxy); Wed, 24 Jul 2019 21:10:21 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
- mime-version:message-id:in-reply-to:references:date:from:to:cc
- :subject:content-type; s=fm3; bh=hT6VUAYNVIFczKSf7p2tdTIbi+IZpnd
- 9IggzGcLtHyQ=; b=mVWrDOAS8HG4YyOWzxSU9uDXvpp/q9weSwMs3XphM6+9j4G
- Vn5uC+KFR+gSeezq3K6biFvC0IAw7FpCTooOSKmKNt/wAmOIGai7wXCP6hi9FMwV
- fmH8aADBK+O9iw6eWc5VQG32hdB/1zZ1mvC9tM0UDGIU/zSFZatxi103lvBA9ymE
- mQ+9YepIikdaS3zI4HcrIIgvw7sGA9Tyjcp1xYkFYmPq7OTL3ZbkQAzNJAulfvVs
- 7xhpucFz6WHmVQhLoXGh0yXP3ZLy2+JnWAeVz2KrKsqzaT9sVmyWFyBsHZtlC5zQ
- t7oYf4T4oExHpv6azHLECU+C+VWrVBVxlZbsH0Q==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=hT6VUA
- YNVIFczKSf7p2tdTIbi+IZpnd9IggzGcLtHyQ=; b=YXNOT5yI7R7e/gLkcPvVid
- o6vJv1Zkzo3zG02qo1uU4TnIth2J21EgzmyreA5qLiATdqEjgJ0T6kueXsEqoe/i
- IsvDprSz7d2La5nluRvdMpESMqz0nRTnmVuEhyjza/Rib82IcNVAMn5X8x19oj/P
- kmEh2NvRgsJKNeI4s+KhWon4/qSY01J1jkmC0f9bpuBPjL1JzsJOXasrbB6PwmSw
- WH1WUJ2iTUF1UsI9V01nGwusK5uuutXuyKPK6Ellc1yd5K+2jTgTuLBzt0BSKjk5
- rrdBpjmF1XMShHCsTZFWcTwFKLIw9XPohW2++c7WPq2aMq+jos/o0maU3Yu1/goQ
- ==
-X-ME-Sender: <xms:egE5XeW7kZvQ9egeyjjFPGT_Jz-3NUpb2L8A72zmWRiLgAqmafE_sA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrkedugdefkecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpefofgggkfgjfhffhffvufgtsehttdertderredtnecuhfhrohhmpedftehnughr
- vgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucfrrghrrg
- hmpehmrghilhhfrhhomheprghnughrvgifsegrjhdrihgurdgruhenucevlhhushhtvghr
- ufhiiigvpedt
-X-ME-Proxy: <xmx:egE5XVFmtKPksS0mLeVK3pJ2RvFGODGVseqK6TGANCZgoLCsneqJVQ>
- <xmx:egE5XfXzjZ6F9kA-eLW9_ZC-PHaoeYesnpKn4F1US-NptTJ5WvHDWg>
- <xmx:egE5XYDE54I6zx4Fhs2E7uu7j3gLff9Nwl8ozKKchsPSAewL0xBHjQ>
- <xmx:fQE5XQp0G_y4WUSzGSGO59QkCPaZRpqRwXl2fAfSy9Z7luzJZJ4Wdw>
-Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id 64D16E0129; Wed, 24 Jul 2019 21:10:18 -0400 (EDT)
-X-Mailer: MessagingEngine.com Webmail Interface
-User-Agent: Cyrus-JMAP/3.1.6-736-gdfb8e44-fmstable-20190718v2
-Mime-Version: 1.0
-Message-Id: <4f6709f8-381f-415c-8569-798b074b66c5@www.fastmail.com>
-In-Reply-To: <2a0c5ef5c7e20b190156908991e4c964a501d80a.camel@perches.com>
+ id 1hqSOo-0005Is-62
+ for linux-arm-kernel@lists.infradead.org; Thu, 25 Jul 2019 01:18:27 +0000
+Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
+ [216.40.38.60])
+ by smtprelay06.hostedemail.com (Postfix) with ESMTP id 5FF5818026238;
+ Thu, 25 Jul 2019 01:18:21 +0000 (UTC)
+X-Session-Marker: 6A6F6540706572636865732E636F6D
+X-Spam-Summary: 2, 0, 0, , d41d8cd98f00b204, joe@perches.com, :::::::::::::::::,
+ RULES_HIT:41:355:379:599:800:960:973:988:989:1260:1277:1311:1313:1314:1345:1359:1431:1437:1515:1516:1518:1534:1541:1593:1594:1711:1730:1747:1777:1792:2198:2199:2393:2553:2559:2562:2828:2911:3138:3139:3140:3141:3142:3352:3622:3867:3872:4321:4425:5007:10004:10400:10848:11026:11232:11473:11657:11658:11914:12043:12296:12297:12438:12555:12740:12760:12895:12986:13069:13161:13229:13311:13357:13439:14096:14097:14181:14659:14721:21080:21451:21611:21627:30054:30090:30091,
+ 0,
+ RBL:23.242.196.136:@perches.com:.lbl8.mailshell.net-62.8.0.180 64.201.201.201,
+ CacheIP:none, Bayesian:0.5, 0.5, 0.5, Netcheck:none, DomainCache:0,
+ MSF:not bulk, SPF:fn, MSBL:0, DNSBL:neutral, Custom_rules:0:0:0, LFtime:26,
+ LUA_SUMMARY:none
+X-HE-Tag: rain11_48b2601630360
+X-Filterd-Recvd-Size: 2496
+Received: from XPS-9350.home (cpe-23-242-196-136.socal.res.rr.com
+ [23.242.196.136]) (Authenticated sender: joe@perches.com)
+ by omf02.hostedemail.com (Postfix) with ESMTPA;
+ Thu, 25 Jul 2019 01:18:19 +0000 (UTC)
+Message-ID: <4e5bc8d61436024a30a8fb6a1516e29e23a75ede.camel@perches.com>
+Subject: Re: [PATCH 03/12] drm: aspeed_gfx: Fix misuse of GENMASK macro
+From: Joe Perches <joe@perches.com>
+To: Andrew Jeffery <andrew@aj.id.au>, Andrew Morton
+ <akpm@linux-foundation.org>,  Joel Stanley <joel@jms.id.au>
+Date: Wed, 24 Jul 2019 18:18:18 -0700
+In-Reply-To: <4f6709f8-381f-415c-8569-798b074b66c5@www.fastmail.com>
 References: <cover.1562734889.git.joe@perches.com>
  <cddd7ad7e9f81dec1e86c106f04229d21fc21920.1562734889.git.joe@perches.com>
  <2a0c5ef5c7e20b190156908991e4c964a501d80a.camel@perches.com>
-Date: Thu, 25 Jul 2019 10:40:32 +0930
-From: "Andrew Jeffery" <andrew@aj.id.au>
-To: "Joe Perches" <joe@perches.com>,
- "Andrew Morton" <akpm@linux-foundation.org>, "Joel Stanley" <joel@jms.id.au>
-Subject: Re: [PATCH 03/12] drm: aspeed_gfx: Fix misuse of GENMASK macro
+ <4f6709f8-381f-415c-8569-798b074b66c5@www.fastmail.com>
+User-Agent: Evolution 3.30.5-0ubuntu0.18.10.1 
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_181023_499446_AD41BFFC 
-X-CRM114-Status: GOOD (  10.42  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190724_181826_295806_2509C11F 
+X-CRM114-Status: GOOD (  11.58  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.28 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.40.44.84 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -113,35 +86,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On Thu, 25 Jul 2019, at 02:46, Joe Perches wrote:
-> On Tue, 2019-07-09 at 22:04 -0700, Joe Perches wrote:
-> > Arguments are supposed to be ordered high then low.
-> > 
-> > Signed-off-by: Joe Perches <joe@perches.com>
-> > ---
-> >  drivers/gpu/drm/aspeed/aspeed_gfx.h | 2 +-
-> >  1 file changed, 1 insertion(+), 1 deletion(-)
-> > 
-> > diff --git a/drivers/gpu/drm/aspeed/aspeed_gfx.h b/drivers/gpu/drm/aspeed/aspeed_gfx.h
-> > index a10358bb61ec..095ea03e5833 100644
-> > --- a/drivers/gpu/drm/aspeed/aspeed_gfx.h
-> > +++ b/drivers/gpu/drm/aspeed/aspeed_gfx.h
-> > @@ -74,7 +74,7 @@ int aspeed_gfx_create_output(struct drm_device *drm);
-> >  /* CTRL2 */
-> >  #define CRT_CTRL_DAC_EN			BIT(0)
-> >  #define CRT_CTRL_VBLANK_LINE(x)		(((x) << 20) & CRT_CTRL_VBLANK_LINE_MASK)
-> > -#define CRT_CTRL_VBLANK_LINE_MASK	GENMASK(20, 31)
-> > +#define CRT_CTRL_VBLANK_LINE_MASK	GENMASK(31, 20)
-
-Reviewed-by: Andrew Jeffery <andrew@aj.id.au>
-
+On Thu, 2019-07-25 at 10:40 +0930, Andrew Jeffery wrote:
 > 
-> ping?
+> On Thu, 25 Jul 2019, at 02:46, Joe Perches wrote:
+> > On Tue, 2019-07-09 at 22:04 -0700, Joe Perches wrote:
+> > > Arguments are supposed to be ordered high then low.
+> > > 
+> > > Signed-off-by: Joe Perches <joe@perches.com>
+> > > ---
+> > >  drivers/gpu/drm/aspeed/aspeed_gfx.h | 2 +-
+> > >  1 file changed, 1 insertion(+), 1 deletion(-)
+> > > 
+> > > diff --git a/drivers/gpu/drm/aspeed/aspeed_gfx.h b/drivers/gpu/drm/aspeed/aspeed_gfx.h
+> > > index a10358bb61ec..095ea03e5833 100644
+> > > --- a/drivers/gpu/drm/aspeed/aspeed_gfx.h
+> > > +++ b/drivers/gpu/drm/aspeed/aspeed_gfx.h
+> > > @@ -74,7 +74,7 @@ int aspeed_gfx_create_output(struct drm_device *drm);
+> > >  /* CTRL2 */
+> > >  #define CRT_CTRL_DAC_EN			BIT(0)
+> > >  #define CRT_CTRL_VBLANK_LINE(x)		(((x) << 20) & CRT_CTRL_VBLANK_LINE_MASK)
+> > > -#define CRT_CTRL_VBLANK_LINE_MASK	GENMASK(20, 31)
+> > > +#define CRT_CTRL_VBLANK_LINE_MASK	GENMASK(31, 20)
 > 
-> 
->
+> Reviewed-by: Andrew Jeffery <andrew@aj.id.au>
+
+This hardly needs a review, it needs to be applied.
+There's a nominal git tree for aspeed here:
+
+T:	git git://git.kernel.org/pub/scm/linux/kernel/git/joel/aspeed.git
+
+But who's going to do apply this?
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
