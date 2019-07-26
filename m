@@ -2,57 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3980276570
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 14:13:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D439576567
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 14:12:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=8zgrFxlv6lEwlaLDc8TsIYPfc8nPh/lhrUeewdvY2jc=; b=Lis
-	2Zx0YsO9xcjXdXUHnVChTak8OaVH82jq1iYGZeZaPi/ReIVJJ4z7yK6TVG8NrYQEgCI8oqiv1GfHN
-	ThS3Xvdm7uQBhFw8Ib48eVJYK8mcgNDB8dp6yvmai1yROmC5plb22Wkwsk9evAMtBkgfMAT5VPldU
-	+Xu07k4pb0P9jNPcbuSI1ug7hyuHID7Vcq/bx3Wik0XsuPJACsOcW5Am5vZ7j8nK9AGqjH1zaJkar
-	QAfkd0mhGcS3dS/LSY0pJbZK9oQtY4HjD/YaJNIlJFS2U+IoOEFgQveOLEQ7j8j0NWtCqbmPoiBvN
-	faHsrWCmCOz3a3Psv8mwx7ok78c4rJw==;
+	References:List-Owner; bh=MZW7eNVyAgQ2Icl/qrDimO3jFur/HB11lEP32k28+D0=; b=iLA
+	ZjwbnQYYtUyxlrgGFDiLd8JqEjk7a2/+JfgwnZWsPVCq0etN/kQ8UTUZ9/3AycSZ2ZOO0avbB9Ves
+	BlC2mbLY2tBih/zceBy0IEp5FG71qPiWCyzvZ0Wa3uSqJRE/QTKDlZqTrLYaKCH7kZAxyFE765eSr
+	+hHmiBfTNfMBFjcWEeL0EqGKrjUdFCYeGOONCskDtkuqQ7yi1gmIjXNIpLvmxX1bEiFjYVNMn9E4K
+	daRFnQ6ZPwxyUd6mGsTYWnHna7EC+7yRWU7zZ0zaG4GhQn5vBCUbt3IICPj4xFo+LyNm+xhpUjRnc
+	NXHpaqh7eTis2ufwWfnJU/D2XG4w7MA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqz5m-0006i6-Si; Fri, 26 Jul 2019 12:12:59 +0000
+	id 1hqz5U-0006UE-4B; Fri, 26 Jul 2019 12:12:40 +0000
 Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqz5G-0006U0-0w
- for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 12:12:27 +0000
+ id 1hqz5C-0006TL-Te; Fri, 26 Jul 2019 12:12:24 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=Skzanq6VQpDThygBClqVy35KX/v/j8u+eJd8QBN7EtI=; b=g2nKAPJz/rUe
- NbmXRiSttKEORjAqttEhrCUVXc34mefcepBxwvnjh6wWcsN7X8vS+1ecmVqG+Rv28qHTCYIHXhke/
- MsATFMP1URCY7Fgr0DPcrnEnpxXMw3gvDDFlus+lffwH66/Q9THj39j/tb/BJK1JggIgsy45Gq/KJ
- FJPCg=;
+ List-Archive; bh=ppv6g71055dMnrkMQSdTZpzfu9QPlBAMNF035s+cREw=; b=uWg3gJmM5dtO
+ 6ZeuoYmRrchMwdzcw3uqtCJhzusDByr17UgU9Z9UNcSEI8LVj8RaraP1KVWGcL+cT7qMNqCdWVbuk
+ ktvAxPC3zArscqgRJvUfBp0fPUtTo8wfqcbXawEA0GSQ4nE4rh5nqvDe+l1jypVH0Ju+sZxZ976Vg
+ NVAS0=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.org.uk>)
- id 1hqz58-0001Zm-4O; Fri, 26 Jul 2019 12:12:18 +0000
+ id 1hqz58-0001Zr-U7; Fri, 26 Jul 2019 12:12:18 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 9EDDC2742B63; Fri, 26 Jul 2019 13:12:17 +0100 (BST)
+ id 543B02742B63; Fri, 26 Jul 2019 13:12:18 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
-To: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
-Subject: Applied "ASoC: sunxi: fix a sound binding broken reference" to the
- asoc tree
-In-Reply-To: <9932608f32030c886d906ea656eda8408c544776.1564140865.git.mchehab+samsung@kernel.org>
+To: Cheng-Yi Chiang <cychiang@chromium.org>
+Subject: Applied "ASoC: rockchip: Fix mono capture" to the asoc tree
+In-Reply-To: <20190726044202.26866-1-cychiang@chromium.org>
 X-Patchwork-Hint: ignore
-Message-Id: <20190726121217.9EDDC2742B63@ypsilon.sirena.org.uk>
-Date: Fri, 26 Jul 2019 13:12:17 +0100 (BST)
+Message-Id: <20190726121218.543B02742B63@ypsilon.sirena.org.uk>
+Date: Fri, 26 Jul 2019 13:12:18 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_051226_066142_8E6C72B5 
-X-CRM114-Status: GOOD (  15.45  )
+X-CRM114-CacheID: sfid-20190726_051222_958536_91F6DDCD 
+X-CRM114-Status: GOOD (  14.38  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -78,11 +76,12 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- alsa-devel@alsa-project.org, Maxime Ripard <maxime.ripard@bootlin.com>,
- Liam Girdwood <lgirdwood@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- "Cc:"@sirena.org.uk, Chen-Yu Tsai <wens@csie.org>,
- Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: alsa-devel@alsa-project.org, dianders@chromium.org,
+ Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
+ Takashi Iwai <tiwai@suse.com>, Liam Girdwood <lgirdwood@gmail.com>,
+ tzungbi@chromium.org, Jaroslav Kysela <perex@perex.cz>,
+ linux-rockchip@lists.infradead.org, Mark Brown <broonie@kernel.org>,
+ dgreid@chromium.org, mka@chromium.org, linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -91,11 +90,11 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   ASoC: sunxi: fix a sound binding broken reference
+   ASoC: rockchip: Fix mono capture
 
 has been applied to the asoc tree at
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.4
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.3
 
 All being well this means that it will be integrated into the linux-next
 tree (usually sometime in the next 24 hours) and sent to Linus during
@@ -116,35 +115,66 @@ to this mail.
 Thanks,
 Mark
 
-From d8481155a3219ef427c6384022931758fbbe8ebe Mon Sep 17 00:00:00 2001
-From: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
-Date: Fri, 26 Jul 2019 08:47:27 -0300
-Subject: [PATCH] ASoC: sunxi: fix a sound binding broken reference
+From 789e162a6255325325bd321ab0cd51dc7e285054 Mon Sep 17 00:00:00 2001
+From: Cheng-Yi Chiang <cychiang@chromium.org>
+Date: Fri, 26 Jul 2019 12:42:02 +0800
+Subject: [PATCH] ASoC: rockchip: Fix mono capture
 
-Address this rename:
-	Documentation/devicetree/bindings/sound/{sun4i-i2s.txt -> allwinner,sun4i-a10-i2s.yaml}
+This reverts commit db51707b9c9aeedd310ebce60f15d5bb006567e0.
+Revert "ASoC: rockchip: i2s: Support mono capture"
 
-Fixes: 0a0ca8e94ca3 ("dt-bindings: sound: Convert Allwinner I2S binding to YAML")
-Signed-off-by: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
-Link: https://lore.kernel.org/r/9932608f32030c886d906ea656eda8408c544776.1564140865.git.mchehab+samsung@kernel.org
+Previous discussion in
+
+https://patchwork.kernel.org/patch/10147153/
+
+explains the issue of the patch.
+While device is configured as 1-ch, hardware is still
+generating a 2-ch stream.
+When user space reads the data and assumes it is a 1-ch stream,
+the rate will be slower by 2x.
+
+Revert the change so 1-ch is not supported.
+User space can selectively take one channel data out of two channel
+if 1-ch is preferred.
+Currently, both channels record identical data.
+
+Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
+Link: https://lore.kernel.org/r/20190726044202.26866-1-cychiang@chromium.org
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- Documentation/devicetree/bindings/sound/sun8i-a33-codec.txt | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ sound/soc/rockchip/rockchip_i2s.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/sound/sun8i-a33-codec.txt b/Documentation/devicetree/bindings/sound/sun8i-a33-codec.txt
-index 2ca3d138528e..7ecf6bd60d27 100644
---- a/Documentation/devicetree/bindings/sound/sun8i-a33-codec.txt
-+++ b/Documentation/devicetree/bindings/sound/sun8i-a33-codec.txt
-@@ -4,7 +4,7 @@ Allwinner SUN8I audio codec
- On Sun8i-A33 SoCs, the audio is separated in different parts:
- 	  - A DAI driver. It uses the "sun4i-i2s" driver which is
- 	  documented here:
--	  Documentation/devicetree/bindings/sound/sun4i-i2s.txt
-+	  Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-i2s.yaml
- 	  - An analog part of the codec which is handled as PRCM registers.
- 	  See Documentation/devicetree/bindings/sound/sun8i-codec-analog.txt
- 	  - An digital part of the codec which is documented in this current
+diff --git a/sound/soc/rockchip/rockchip_i2s.c b/sound/soc/rockchip/rockchip_i2s.c
+index 0a34d0eb8dba..88ebaf6e1880 100644
+--- a/sound/soc/rockchip/rockchip_i2s.c
++++ b/sound/soc/rockchip/rockchip_i2s.c
+@@ -326,7 +326,6 @@ static int rockchip_i2s_hw_params(struct snd_pcm_substream *substream,
+ 		val |= I2S_CHN_4;
+ 		break;
+ 	case 2:
+-	case 1:
+ 		val |= I2S_CHN_2;
+ 		break;
+ 	default:
+@@ -459,7 +458,7 @@ static struct snd_soc_dai_driver rockchip_i2s_dai = {
+ 	},
+ 	.capture = {
+ 		.stream_name = "Capture",
+-		.channels_min = 1,
++		.channels_min = 2,
+ 		.channels_max = 2,
+ 		.rates = SNDRV_PCM_RATE_8000_192000,
+ 		.formats = (SNDRV_PCM_FMTBIT_S8 |
+@@ -659,7 +658,7 @@ static int rockchip_i2s_probe(struct platform_device *pdev)
+ 	}
+ 
+ 	if (!of_property_read_u32(node, "rockchip,capture-channels", &val)) {
+-		if (val >= 1 && val <= 8)
++		if (val >= 2 && val <= 8)
+ 			soc_dai->capture.channels_max = val;
+ 	}
+ 
 -- 
 2.20.1
 
