@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61050768CC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 15:47:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E3492768D7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 15:47:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=95xztBA1wkp5mi52Q1egrKwOjcv2wF0vHgFEVRWvkxM=; b=d41ugVwRNlEDosCJdBxludNF5e
-	Apyrof2SGBL2Se6iXiygsGv+JR29MnbqSOWhWuS2jHohIkGOj0G+cNKc6+QXd4vawWGBwtkrud40E
-	/SI+OyOCX837uL/TUMbsQJCRRlf+EWN/hWzmERlC0H0xJ+YhLQm+rvlKkqF5HTd3FFJ09AnDqbNtV
-	7SmCAz2wKQ2D9V/SajIVFD7haB01Um8VoiPV/cBoNyFCa5czESiT31f+D+cTA3YmWQ+uiNpEUBcWX
-	7aaWUo035MYXQLNu/Treh6wc+gV9TIiRS4dttixDPJeuiquKV8sFMiP8MZYzCY97iyEZiMmC7wtJ4
-	D2rVCACw==;
+	bh=LABP/LYhqNzKXMnPG+3tRGS5snFPGTX3mQjjpzV4YKU=; b=VnlIF9hb78uEM4b770CH8R1i6n
+	tEvtP4mpL6SzEiuyoKx8aCwI2vPgsoEpKB+uS5b7TAHc6wCktRxeVKP082VRpl0qr4av7+Y2d7TlO
+	FDoMxnDc0SOdLZEuB6/T3e+146XWFQUq24T9zS8m9lV7m2sGQ+EmZgaalBD5WfzwQVP7+gHHw2EHi
+	E1jMdokUa2OUuWkLup8YrvnicOC1mg7kSs9uRjURiTwhPHj8xWlyR37QSZHIHiX+HOQJ4XVPr0aOU
+	gWkBioBfsd53cAnj1nDNnDAge5tIn/bzaogtKGog0HxPJY1Aq+VoRYEdwF2nU75L5dF/8o1PO/X8s
+	69akWndQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hr0ZF-0004Iw-5V; Fri, 26 Jul 2019 13:47:29 +0000
+	id 1hr0Za-0004Zh-Dh; Fri, 26 Jul 2019 13:47:50 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hr0Xy-0003Gb-OT
- for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 13:46:12 +0000
+ id 1hr0Y0-0003IM-4L
+ for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 13:46:13 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0668915A2;
- Fri, 26 Jul 2019 06:46:10 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7671C15BF;
+ Fri, 26 Jul 2019 06:46:11 -0700 (PDT)
 Received: from usa.arm.com (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id B971E3F694;
- Fri, 26 Jul 2019 06:46:08 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 3B7613F694;
+ Fri, 26 Jul 2019 06:46:10 -0700 (PDT)
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 4/6] firmware: arm_scmi: Fix few trivial typos in comments
-Date: Fri, 26 Jul 2019 14:45:29 +0100
-Message-Id: <20190726134531.8928-5-sudeep.holla@arm.com>
+Subject: [PATCH v2 5/6] firmware: arm_scmi: Use the term 'message' instead of
+ 'command'
+Date: Fri, 26 Jul 2019 14:45:30 +0100
+Message-Id: <20190726134531.8928-6-sudeep.holla@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190726134531.8928-1-sudeep.holla@arm.com>
 References: <20190726134531.8928-1-sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_064610_892270_68B7BA15 
-X-CRM114-Status: UNSURE (   9.95  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190726_064612_477821_82288069 
+X-CRM114-Status: GOOD (  12.68  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,38 +71,71 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-While adding new comments found couple of typos that are better fixed.
+In preparation to adding support for other two types of messages that
+SCMI specification mentions, let's replace the term 'command' with the
+correct term 'message'.
 
-s/informfation/information/
-s/statues/status/
+As per the specification the messages are of 3 types:
+commands(synchronous or asynchronous), delayed responses and notifications.
 
 Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 ---
- drivers/firmware/arm_scmi/driver.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/firmware/arm_scmi/common.h | 10 +++++-----
+ drivers/firmware/arm_scmi/driver.c |  6 +++---
+ 2 files changed, 8 insertions(+), 8 deletions(-)
 
+diff --git a/drivers/firmware/arm_scmi/common.h b/drivers/firmware/arm_scmi/common.h
+index 44fd4f9404a9..a9eee62c7142 100644
+--- a/drivers/firmware/arm_scmi/common.h
++++ b/drivers/firmware/arm_scmi/common.h
+@@ -48,11 +48,11 @@ struct scmi_msg_resp_prot_version {
+ /**
+  * struct scmi_msg_hdr - Message(Tx/Rx) header
+  *
+- * @id: The identifier of the command being sent
+- * @protocol_id: The identifier of the protocol used to send @id command
+- * @seq: The token to identify the message. when a message/command returns,
+- *	the platform returns the whole message header unmodified including
+- *	the token
++ * @id: The identifier of the message being sent
++ * @protocol_id: The identifier of the protocol used to send @id message
++ * @seq: The token to identify the message. When a message returns, the
++ *	platform returns the whole message header unmodified including the
++ *	token
+  * @status: Status of the transfer once it's complete
+  * @poll_completion: Indicate if the transfer needs to be polled for
+  *	completion or interrupt mode is used
 diff --git a/drivers/firmware/arm_scmi/driver.c b/drivers/firmware/arm_scmi/driver.c
-index 6ef652940099..cac255c418b2 100644
+index cac255c418b2..69bf85fea967 100644
 --- a/drivers/firmware/arm_scmi/driver.c
 +++ b/drivers/firmware/arm_scmi/driver.c
-@@ -86,7 +86,7 @@ struct scmi_desc {
- };
- 
- /**
-- * struct scmi_chan_info - Structure representing a SCMI channel informfation
-+ * struct scmi_chan_info - Structure representing a SCMI channel information
-  *
-  * @cl: Mailbox Client
-  * @chan: Transmit/Receive mailbox channel
-@@ -190,7 +190,7 @@ static void scmi_fetch_response(struct scmi_xfer *xfer,
- 				struct scmi_shared_mem __iomem *mem)
+@@ -182,7 +182,7 @@ static inline int scmi_to_linux_errno(int errno)
+ static inline void scmi_dump_header_dbg(struct device *dev,
+ 					struct scmi_msg_hdr *hdr)
  {
- 	xfer->hdr.status = ioread32(mem->msg_payload);
--	/* Skip the length of header and statues in payload area i.e 8 bytes*/
-+	/* Skip the length of header and status in payload area i.e 8 bytes */
- 	xfer->rx.len = min_t(size_t, xfer->rx.len, ioread32(&mem->length) - 8);
+-	dev_dbg(dev, "Command ID: %x Sequence ID: %x Protocol: %x\n",
++	dev_dbg(dev, "Message ID: %x Sequence ID: %x Protocol: %x\n",
+ 		hdr->id, hdr->seq, hdr->protocol_id);
+ }
  
- 	/* Take a copy to the rx buffer.. */
+@@ -241,7 +241,7 @@ static void scmi_rx_callback(struct mbox_client *cl, void *m)
+  * @hdr: pointer to header containing all the information on message id,
+  *	protocol id and sequence id.
+  *
+- * Return: 32-bit packed command header to be sent to the platform.
++ * Return: 32-bit packed message header to be sent to the platform.
+  */
+ static inline u32 pack_scmi_header(struct scmi_msg_hdr *hdr)
+ {
+@@ -280,7 +280,7 @@ static void scmi_tx_prepare(struct mbox_client *cl, void *m)
+  *
+  * @handle: Pointer to SCMI entity handle
+  *
+- * Helper function which is used by various command functions that are
++ * Helper function which is used by various message functions that are
+  * exposed to clients of this driver for allocating a message traffic event.
+  *
+  * This function can sleep depending on pending requests already in the system
 -- 
 2.17.1
 
