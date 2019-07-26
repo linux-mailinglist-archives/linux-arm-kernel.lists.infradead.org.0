@@ -2,38 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C54D764CD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 13:47:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BEA35764D8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 13:48:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QXhgzSSeFQlRIHnyNSAaTSlb9+rDb+Xn7Ki4YcbKBmY=; b=bzn+MuF63AsXvq
-	FMHnetidPPx7C5GvfDfquOdyZUxHLymIc19QyI30A9ASs/Ot/U8XPe0NEQeAdQCvJPVURK0J0bpvW
-	6b8LVpdb95LImXFRtS8VhPIuHDdIc39Srb+XvbN8DBKGm/T0loF2RYNhm6w4gfQzBTwEVej45mJ4T
-	zu0IoN0JIcZjVaZuYIMyWmY/jP1Qx4mW1PcX0PYKqOvc4hsgG1u4/os6pC2OIrHGpz9kJ1EGc+Vd3
-	XEL2UZ1ECgLJrwFEkF8KB3qEoWEGUVD9yV2nvVMI8i5ot05bCdOCg7qqBZsG8qE2GyYjzz5+ySkeE
-	byqgVCKRoy5JvyOgWVQg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=KA+kmMJQuVs1KKPRNXyX0WyCtq+Vyfamllka9C9rv/I=; b=NnCMGFvUtGcd1WX4/Wjk7GqSL
+	P/9b5LGq1NqcqM9XLisgEMKoRJdip1YvhcxVgsRlHQiDsL1LIcAcTs2cvLP5v0/AbnD8YiRIQSEwk
+	feh8SCwd44tK8KLZnUmrwB8LA7eij01etwYW2RIVNd4sIS4M1s7nM3M0g+SlA/4IJZJlShbQPT2nG
+	bO/hH9poRJux3v/Wv+Uz4NtlGhg6U30owYjUpW5/YlMXl3t/rpo84M52rH/5GdRfChZ0IGrNFxst5
+	Nq5d/Hw3PtqyImKXTA6g/Wh3z0wgDQzbvgwsjN3vu8LEX/JhROsViYXU561k3cGnMpTsoq3VfN8/g
+	pB9d58hkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqyhP-0003Dd-F1; Fri, 26 Jul 2019 11:47:47 +0000
-Received: from [179.95.31.157] (helo=bombadil.infradead.org)
- by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hqyh9-0003Bd-8h; Fri, 26 Jul 2019 11:47:31 +0000
-Received: from mchehab by bombadil.infradead.org with local (Exim 4.92)
- (envelope-from <mchehab@bombadil.infradead.org>)
- id 1hqyh7-0000uJ-4z; Fri, 26 Jul 2019 08:47:29 -0300
-From: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
-To: 
-Subject: [PATCH 7/7] docs: dt: fix a sound binding broken reference
-Date: Fri, 26 Jul 2019 08:47:27 -0300
-Message-Id: <9932608f32030c886d906ea656eda8408c544776.1564140865.git.mchehab+samsung@kernel.org>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <cover.1564140865.git.mchehab+samsung@kernel.org>
-References: <cover.1564140865.git.mchehab+samsung@kernel.org>
+	id 1hqyiO-0003pX-VI; Fri, 26 Jul 2019 11:48:49 +0000
+Received: from relay8-d.mail.gandi.net ([217.70.183.201])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hqyi8-0003nY-71; Fri, 26 Jul 2019 11:48:34 +0000
+X-Originating-IP: 81.250.144.103
+Received: from [10.30.1.20] (lneuilly-657-1-5-103.w81-250.abo.wanadoo.fr
+ [81.250.144.103]) (Authenticated sender: alex@ghiti.fr)
+ by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id 3CAE81BF207;
+ Fri, 26 Jul 2019 11:48:08 +0000 (UTC)
+Subject: Re: [PATCH REBASE v4 14/14] riscv: Make mmap allocation top-down by
+ default
+To: Paul Walmsley <paul.walmsley@sifive.com>
+References: <20190724055850.6232-1-alex@ghiti.fr>
+ <20190724055850.6232-15-alex@ghiti.fr>
+ <alpine.DEB.2.21.9999.1907251655310.32766@viisi.sifive.com>
+From: Alexandre Ghiti <alex@ghiti.fr>
+Message-ID: <6b2b45a5-0ac4-db73-8f50-ab182a0cb621@ghiti.fr>
+Date: Fri, 26 Jul 2019 13:48:08 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
+In-Reply-To: <alpine.DEB.2.21.9999.1907251655310.32766@viisi.sifive.com>
+Content-Language: fr
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190726_044832_564133_5B03736B 
+X-CRM114-Status: GOOD (  20.49  )
+X-Spam-Score: -0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.7 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.201 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -45,42 +64,153 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- alsa-devel@alsa-project.org, Maxime Ripard <maxime.ripard@bootlin.com>,
- Liam Girdwood <lgirdwood@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, Mark Brown <broonie@kernel.org>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Albert Ou <aou@eecs.berkeley.edu>, Kees Cook <keescook@chromium.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Daniel Cashman <dcashman@google.com>, Palmer Dabbelt <palmer@sifive.com>,
+ Will Deacon <will.deacon@arm.com>, Russell King <linux@armlinux.org.uk>,
+ Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
+ linux-mm@kvack.org, Paul Burton <paul.burton@mips.com>,
+ linux-riscv@lists.infradead.org, Alexander Viro <viro@zeniv.linux.org.uk>,
+ James Hogan <jhogan@kernel.org>, linux-fsdevel@vger.kernel.org,
+ Andrew Morton <akpm@linux-foundation.org>, linux-mips@vger.kernel.org,
+ Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org,
+ Luis Chamberlain <mcgrof@kernel.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Address this rename:
-	Documentation/devicetree/bindings/sound/{sun4i-i2s.txt -> allwinner,sun4i-a10-i2s.yaml}
+On 7/26/19 2:20 AM, Paul Walmsley wrote:
+> Hi Alexandre,
+>
+> I have a few questions about this patch.  Sorry to be dense here ...
+>
+> On Wed, 24 Jul 2019, Alexandre Ghiti wrote:
+>
+>> In order to avoid wasting user address space by using bottom-up mmap
+>> allocation scheme, prefer top-down scheme when possible.
+>>
+>> Before:
+>> root@qemuriscv64:~# cat /proc/self/maps
+>> 00010000-00016000 r-xp 00000000 fe:00 6389       /bin/cat.coreutils
+>> 00016000-00017000 r--p 00005000 fe:00 6389       /bin/cat.coreutils
+>> 00017000-00018000 rw-p 00006000 fe:00 6389       /bin/cat.coreutils
+>> 00018000-00039000 rw-p 00000000 00:00 0          [heap]
+>> 1555556000-155556d000 r-xp 00000000 fe:00 7193   /lib/ld-2.28.so
+>> 155556d000-155556e000 r--p 00016000 fe:00 7193   /lib/ld-2.28.so
+>> 155556e000-155556f000 rw-p 00017000 fe:00 7193   /lib/ld-2.28.so
+>> 155556f000-1555570000 rw-p 00000000 00:00 0
+>> 1555570000-1555572000 r-xp 00000000 00:00 0      [vdso]
+>> 1555574000-1555576000 rw-p 00000000 00:00 0
+>> 1555576000-1555674000 r-xp 00000000 fe:00 7187   /lib/libc-2.28.so
+>> 1555674000-1555678000 r--p 000fd000 fe:00 7187   /lib/libc-2.28.so
+>> 1555678000-155567a000 rw-p 00101000 fe:00 7187   /lib/libc-2.28.so
+>> 155567a000-15556a0000 rw-p 00000000 00:00 0
+>> 3fffb90000-3fffbb1000 rw-p 00000000 00:00 0      [stack]
+>>
+>> After:
+>> root@qemuriscv64:~# cat /proc/self/maps
+>> 00010000-00016000 r-xp 00000000 fe:00 6389       /bin/cat.coreutils
+>> 00016000-00017000 r--p 00005000 fe:00 6389       /bin/cat.coreutils
+>> 00017000-00018000 rw-p 00006000 fe:00 6389       /bin/cat.coreutils
+>> 2de81000-2dea2000 rw-p 00000000 00:00 0          [heap]
+>> 3ff7eb6000-3ff7ed8000 rw-p 00000000 00:00 0
+>> 3ff7ed8000-3ff7fd6000 r-xp 00000000 fe:00 7187   /lib/libc-2.28.so
+>> 3ff7fd6000-3ff7fda000 r--p 000fd000 fe:00 7187   /lib/libc-2.28.so
+>> 3ff7fda000-3ff7fdc000 rw-p 00101000 fe:00 7187   /lib/libc-2.28.so
+>> 3ff7fdc000-3ff7fe2000 rw-p 00000000 00:00 0
+>> 3ff7fe4000-3ff7fe6000 r-xp 00000000 00:00 0      [vdso]
+>> 3ff7fe6000-3ff7ffd000 r-xp 00000000 fe:00 7193   /lib/ld-2.28.so
+>> 3ff7ffd000-3ff7ffe000 r--p 00016000 fe:00 7193   /lib/ld-2.28.so
+>> 3ff7ffe000-3ff7fff000 rw-p 00017000 fe:00 7193   /lib/ld-2.28.so
+>> 3ff7fff000-3ff8000000 rw-p 00000000 00:00 0
+>> 3fff888000-3fff8a9000 rw-p 00000000 00:00 0      [stack]
+>>
+>> Signed-off-by: Alexandre Ghiti <alex@ghiti.fr>
+>> Reviewed-by: Christoph Hellwig <hch@lst.de>
+>> Reviewed-by: Kees Cook <keescook@chromium.org>
+>> ---
+>>   arch/riscv/Kconfig | 11 +++++++++++
+>>   1 file changed, 11 insertions(+)
+>>
+>> diff --git a/arch/riscv/Kconfig b/arch/riscv/Kconfig
+>> index 59a4727ecd6c..6a63973873fd 100644
+>> --- a/arch/riscv/Kconfig
+>> +++ b/arch/riscv/Kconfig
+>> @@ -54,6 +54,17 @@ config RISCV
+>>   	select EDAC_SUPPORT
+>>   	select ARCH_HAS_GIGANTIC_PAGE
+>>   	select ARCH_WANT_HUGE_PMD_SHARE if 64BIT
+>> +	select ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT if MMU
+>> +	select HAVE_ARCH_MMAP_RND_BITS
+>> +
+>> +config ARCH_MMAP_RND_BITS_MIN
+>> +	default 18
+> Could you help me understand the rationale behind this constant?
 
-Fixes: 0a0ca8e94ca3 ("dt-bindings: sound: Convert Allwinner I2S binding to YAML")
-Signed-off-by: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
----
- Documentation/devicetree/bindings/sound/sun8i-a33-codec.txt | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/sound/sun8i-a33-codec.txt b/Documentation/devicetree/bindings/sound/sun8i-a33-codec.txt
-index 2ca3d138528e..7ecf6bd60d27 100644
---- a/Documentation/devicetree/bindings/sound/sun8i-a33-codec.txt
-+++ b/Documentation/devicetree/bindings/sound/sun8i-a33-codec.txt
-@@ -4,7 +4,7 @@ Allwinner SUN8I audio codec
- On Sun8i-A33 SoCs, the audio is separated in different parts:
- 	  - A DAI driver. It uses the "sun4i-i2s" driver which is
- 	  documented here:
--	  Documentation/devicetree/bindings/sound/sun4i-i2s.txt
-+	  Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-i2s.yaml
- 	  - An analog part of the codec which is handled as PRCM registers.
- 	  See Documentation/devicetree/bindings/sound/sun8i-codec-analog.txt
- 	  - An digital part of the codec which is documented in this current
--- 
-2.21.0
+Indeed, I took that from arm64 code and I did not think enough about it: 
+that's
+great you spotted this because that's a way too large value for 32 bits 
+as it would,
+at minimum, make mmap random offset go up to 1GB (18 + 12), which is a 
+big hole for
+this small address space :)
 
+arm and mips propose 8 as default value for 32bits systems which is 1MB 
+offset at minimum.
+
+
+>
+>> +
+>> +# max bits determined by the following formula:
+>> +#  VA_BITS - PAGE_SHIFT - 3
+> I realize that these lines are probably copied from arch/arm64/Kconfig.
+> But the rationale behind the "- 3" is not immediately obvious.  This
+> apparently originates from commit 8f0d3aa9de57 ("arm64: mm: support
+> ARCH_MMAP_RND_BITS"). Can you provide any additional context here?
+
+
+The formula comes from commit d07e22597d1d ("mm: mmap: add new /proc tunable
+for mmap_base ASLR"), where the author states that "generally a 3-4 bits 
+less than the
+number of bits in the user-space accessible virtual address space 
+[allows to] give the greatest
+flexibility without generating an invalid mmap_base address".
+
+In practice, that limits the mmap random offset to at maximum 1/8 (for - 
+3) of the total address space.
+
+
+>
+>> +config ARCH_MMAP_RND_BITS_MAX
+>> +	default 33 if 64BIT # SV48 based
+> The rationale here is clear for Sv48, per the above formula:
+>
+>     (48 - 12 - 3) = 33
+>
+>> +	default 18
+> However, here it is less clear to me.  For Sv39, shouldn't this be
+>
+>     (39 - 12 - 3) = 24
+>
+> ?  And what about Sv32?
+
+
+You're right. Is there a way to distinguish between sv39 and sv48 here ?
+
+Thanks Paul,
+
+Alex
+
+>   
+>
+> - Paul
+>
+> _______________________________________________
+> linux-riscv mailing list
+> linux-riscv@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-riscv
 
 _______________________________________________
 linux-arm-kernel mailing list
