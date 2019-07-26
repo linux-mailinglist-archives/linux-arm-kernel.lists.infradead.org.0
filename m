@@ -2,58 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D96176153
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 10:52:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E6E576151
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 10:51:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=sK3uczsdFGeltmT7rbbnbdwB6tFQtturlywE1tDAAdE=; b=gp5
-	jv15hBOd5JEzToUtR5XrL9D2mNrRGOxPC+MMU/B81e9JNCjEQptEU8Rg88dEKdfav7L/00zlw5g+d
-	wz5+pev0OECg3H1sIWs8sajA31kzJOcRe9teysex/gMZOy8lV2UtG/+zMFNYhCeum1D9OhqBZlD71
-	iPbkmks62rHcIljG3AM6kNUb/d6GWDPWltBlNwKNZER6CL/zZVkFbvbRnOQ3YvnRdvQdfj8jY2tlf
-	kls0+J2g8dKMoZEVPt0MMB6Ty3471mFzXcTBemOE7d90f6E2dWpkH/PbT1bSvJzSxx2oJbVvDnveC
-	9EagOSqgnQKBO8LI0N4RuvRVxAf4KzQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MODKV8BBzdq060pqD2uodLDBKSsvtGZsqfXHeuV3fZU=; b=nmNPhj6MriuFDq
+	G+K1zw+9rxC7fU7T4wNOCP7pfNFZa5gW+QmoJdpVTESL2J5c5h+oUrlOqJ9W28qjfFgUG7UdcZImv
+	rn6fdC5wCSeKXqf/kD2LWvlpgmJHtRI+V/i6P7J/WjWoAkWw2b9Youq30KsdAirLlp2yJr8s8e2g6
+	2wgv/nj5ArBi1S05yWc66UJwMWa/jWYVVXP6xAXjSs6/7ni7c4fz9yPFuRz7vbDW9/aKGvm3O08q5
+	T4yUevTmijJjR4I2002Qevgnc27JQN/uZd75l9E2P3rPli+Fwx0t9urorG47I9VBlCsNxgynN93GQ
+	i7QwL6gn925nHtHNsYRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqvxb-0000ay-6I; Fri, 26 Jul 2019 08:52:19 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1hqvx9-0000Jg-0g; Fri, 26 Jul 2019 08:51:51 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqvx7-0000QC-2j
- for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 08:51:50 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id D69E81A0966;
- Fri, 26 Jul 2019 10:51:45 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 222B41A0976;
- Fri, 26 Jul 2019 10:51:42 +0200 (CEST)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 8BDA7402A9;
- Fri, 26 Jul 2019 16:51:37 +0800 (SGT)
-From: Richard Zhu <hongxing.zhu@nxp.com>
-To: jassisinghbrar@gmail.com,
-	o.rempel@pengutronix.de,
-	aisheng.dong@nxp.com
-Subject: [RFC] mailbox: imx: Add support for i.MX v1 messaging unit
-Date: Fri, 26 Jul 2019 16:29:36 +0800
-Message-Id: <1564129776-19574-1-git-send-email-hongxing.zhu@nxp.com>
-X-Mailer: git-send-email 2.7.4
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1hqvwu-0000In-5C; Fri, 26 Jul 2019 08:51:37 +0000
+Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id F190461901E9F1A5154E;
+ Fri, 26 Jul 2019 16:51:30 +0800 (CST)
+Received: from [127.0.0.1] (10.133.213.239) by DGGEMS401-HUB.china.huawei.com
+ (10.3.19.201) with Microsoft SMTP Server id 14.3.439.0;
+ Fri, 26 Jul 2019 16:51:29 +0800
+Subject: Re: [PATCH -next] staging: vc04_services: fix used-but-set-variable
+ warning
+To: Greg KH <gregkh@linuxfoundation.org>
+References: <20190725142716.49276-1-yuehaibing@huawei.com>
+ <20190725144913.GC29688@kroah.com>
+From: Yuehaibing <yuehaibing@huawei.com>
+Message-ID: <afc8b261-3832-2c4f-a3e0-d1b4f98ffb61@huawei.com>
+Date: Fri, 26 Jul 2019 16:51:28 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
+ Thunderbird/45.2.0
+MIME-Version: 1.0
+In-Reply-To: <20190725144913.GC29688@kroah.com>
+X-Originating-IP: [10.133.213.239]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_015149_466812_89E42CC3 
-X-CRM114-Status: GOOD (  10.98  )
+X-CRM114-CacheID: sfid-20190726_015136_360117_B2212B26 
+X-CRM114-Status: GOOD (  10.34  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ medium trust [45.249.212.35 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -66,151 +65,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Richard Zhu <hongxing.zhu@nxp.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devel@driverdev.osuosl.org, linux-kernel@vger.kernel.org, eric@anholt.net,
+ bcm-kernel-feedback-list@broadcom.com, wahrenst@gmx.net,
+ nishkadg.linux@gmail.com, inf.braun@fau.de,
+ linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There is a version1.0 MU on i.MX7ULP platform.
-One new version ID register is added, and the offset is 0.
-TRn registers are defined at the offset 0x20 ~ 0x2C.
-RRn registers are defined at the offset 0x40 ~ 0x4C.
-SR/CR registers are defined at 0x60/0x64.
-Extend this driver to support it.
-
-Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
----
- drivers/mailbox/imx-mailbox.c | 45 +++++++++++++++++++++++++++++++++----------
- 1 file changed, 35 insertions(+), 10 deletions(-)
-
-diff --git a/drivers/mailbox/imx-mailbox.c b/drivers/mailbox/imx-mailbox.c
-index 25be8bb..eb55bbe 100644
---- a/drivers/mailbox/imx-mailbox.c
-+++ b/drivers/mailbox/imx-mailbox.c
-@@ -12,10 +12,14 @@
- #include <linux/of_device.h>
- #include <linux/slab.h>
- 
-+#define MU_VER_ID_V1		0x0100
-+
- /* Transmit Register */
- #define IMX_MU_xTRn(x)		(0x00 + 4 * (x))
-+#define IMX_MU_xTRn_V1(x)	(0x20 + 4 * (x))
- /* Receive Register */
- #define IMX_MU_xRRn(x)		(0x10 + 4 * (x))
-+#define IMX_MU_xRRn_V1(x)	(0x40 + 4 * (x))
- /* Status Register */
- #define IMX_MU_xSR		0x20
- #define IMX_MU_xSR_GIPn(x)	BIT(28 + (3 - (x)))
-@@ -25,6 +29,7 @@
- 
- /* Control Register */
- #define IMX_MU_xCR		0x24
-+#define IMX_MU_xSCR_V1_OFFSET	0x40
- /* General Purpose Interrupt Enable */
- #define IMX_MU_xCR_GIEn(x)	BIT(28 + (3 - (x)))
- /* Receive Interrupt Enable */
-@@ -63,6 +68,7 @@ struct imx_mu_priv {
- 	struct imx_mu_con_priv  con_priv[IMX_MU_CHANS];
- 	struct clk		*clk;
- 	int			irq;
-+	int			version;
- 
- 	bool			side_b;
- };
-@@ -85,13 +91,16 @@ static u32 imx_mu_read(struct imx_mu_priv *priv, u32 offs)
- static u32 imx_mu_xcr_rmw(struct imx_mu_priv *priv, u32 set, u32 clr)
- {
- 	unsigned long flags;
--	u32 val;
-+	u32 val, offset;
-+
-+	offset = unlikely(priv->version == MU_VER_ID_V1) ?
-+			IMX_MU_xSCR_V1_OFFSET : 0;
- 
- 	spin_lock_irqsave(&priv->xcr_lock, flags);
--	val = imx_mu_read(priv, IMX_MU_xCR);
-+	val = imx_mu_read(priv, IMX_MU_xCR + offset);
- 	val &= ~clr;
- 	val |= set;
--	imx_mu_write(priv, val, IMX_MU_xCR);
-+	imx_mu_write(priv, val, IMX_MU_xCR + offset);
- 	spin_unlock_irqrestore(&priv->xcr_lock, flags);
- 
- 	return val;
-@@ -109,10 +118,13 @@ static irqreturn_t imx_mu_isr(int irq, void *p)
- 	struct mbox_chan *chan = p;
- 	struct imx_mu_priv *priv = to_imx_mu_priv(chan->mbox);
- 	struct imx_mu_con_priv *cp = chan->con_priv;
--	u32 val, ctrl, dat;
-+	u32 val, ctrl, dat, offset;
-+
-+	offset = unlikely(priv->version == MU_VER_ID_V1) ?
-+			IMX_MU_xSCR_V1_OFFSET : 0;
- 
--	ctrl = imx_mu_read(priv, IMX_MU_xCR);
--	val = imx_mu_read(priv, IMX_MU_xSR);
-+	ctrl = imx_mu_read(priv, IMX_MU_xCR + offset);
-+	val = imx_mu_read(priv, IMX_MU_xSR + offset);
- 
- 	switch (cp->type) {
- 	case IMX_MU_TYPE_TX:
-@@ -138,10 +150,14 @@ static irqreturn_t imx_mu_isr(int irq, void *p)
- 		imx_mu_xcr_rmw(priv, 0, IMX_MU_xCR_TIEn(cp->idx));
- 		mbox_chan_txdone(chan, 0);
- 	} else if (val == IMX_MU_xSR_RFn(cp->idx)) {
--		dat = imx_mu_read(priv, IMX_MU_xRRn(cp->idx));
-+		if (unlikely(priv->version == MU_VER_ID_V1))
-+			dat = imx_mu_read(priv, IMX_MU_xRRn_V1(cp->idx));
-+		else
-+			dat = imx_mu_read(priv, IMX_MU_xRRn(cp->idx));
- 		mbox_chan_received_data(chan, (void *)&dat);
- 	} else if (val == IMX_MU_xSR_GIPn(cp->idx)) {
--		imx_mu_write(priv, IMX_MU_xSR_GIPn(cp->idx), IMX_MU_xSR);
-+		imx_mu_write(priv, IMX_MU_xSR_GIPn(cp->idx),
-+				IMX_MU_xSR + offset);
- 		mbox_chan_received_data(chan, NULL);
- 	} else {
- 		dev_warn_ratelimited(priv->dev, "Not handled interrupt\n");
-@@ -159,7 +175,10 @@ static int imx_mu_send_data(struct mbox_chan *chan, void *data)
- 
- 	switch (cp->type) {
- 	case IMX_MU_TYPE_TX:
--		imx_mu_write(priv, *arg, IMX_MU_xTRn(cp->idx));
-+		if (unlikely(priv->version == MU_VER_ID_V1))
-+			imx_mu_write(priv, *arg, IMX_MU_xTRn_V1(cp->idx));
-+		else
-+			imx_mu_write(priv, *arg, IMX_MU_xTRn(cp->idx));
- 		imx_mu_xcr_rmw(priv, IMX_MU_xCR_TIEn(cp->idx), 0);
- 		break;
- 	case IMX_MU_TYPE_TXDB:
-@@ -253,11 +272,17 @@ static struct mbox_chan * imx_mu_xlate(struct mbox_controller *mbox,
- 
- static void imx_mu_init_generic(struct imx_mu_priv *priv)
- {
-+	u32 offset;
-+
- 	if (priv->side_b)
- 		return;
- 
-+	priv->version = imx_mu_read(priv, 0) >> 16;
-+	offset = unlikely(priv->version == MU_VER_ID_V1) ?
-+			IMX_MU_xSCR_V1_OFFSET : 0;
-+
- 	/* Set default MU configuration */
--	imx_mu_write(priv, 0, IMX_MU_xCR);
-+	imx_mu_write(priv, 0, IMX_MU_xCR + offset);
- }
- 
- static int imx_mu_probe(struct platform_device *pdev)
--- 
-2.7.4
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Ck9uIDIwMTkvNy8yNSAyMjo0OSwgR3JlZyBLSCB3cm90ZToKPiBPbiBUaHUsIEp1bCAyNSwgMjAx
+OSBhdCAxMDoyNzoxNlBNICswODAwLCBZdWVIYWliaW5nIHdyb3RlOgo+PiB1c2UgdmFyaWFibGVz
+ICdsb2NhbF9lbnRpdHlfdWMnIGFuZCAnbG9jYWxfdWMnLAo+PiBtdXRlIGdjYyB1c2VkLWJ1dC1z
+ZXQtdmFyaWFibGUgd2FybmluZzoKPj4KPj4gZHJpdmVycy9zdGFnaW5nL3ZjMDRfc2VydmljZXMv
+aW50ZXJmYWNlL3ZjaGlxX2FybS92Y2hpcV9hcm0uYzogSW4gZnVuY3Rpb24gdmNoaXFfcmVsZWFz
+ZV9pbnRlcm5hbDoKPj4gZHJpdmVycy9zdGFnaW5nL3ZjMDRfc2VydmljZXMvaW50ZXJmYWNlL3Zj
+aGlxX2FybS92Y2hpcV9hcm0uYzoyODI3OjE2OiB3YXJuaW5nOgo+PiAgdmFyaWFibGUgbG9jYWxf
+ZW50aXR5X3VjIHNldCBidXQgbm90IHVzZWQgWy1XdW51c2VkLWJ1dC1zZXQtdmFyaWFibGVdCj4+
+IGRyaXZlcnMvc3RhZ2luZy92YzA0X3NlcnZpY2VzL2ludGVyZmFjZS92Y2hpcV9hcm0vdmNoaXFf
+YXJtLmM6MjgyNzo2OiB3YXJuaW5nOgo+PiAgdmFyaWFibGUgbG9jYWxfdWMgc2V0IGJ1dCBub3Qg
+dXNlZCBbLVd1bnVzZWQtYnV0LXNldC12YXJpYWJsZV0KPj4KPj4gUmVwb3J0ZWQtYnk6IEh1bGsg
+Um9ib3QgPGh1bGtjaUBodWF3ZWkuY29tPgo+PiBTaWduZWQtb2ZmLWJ5OiBZdWVIYWliaW5nIDx5
+dWVoYWliaW5nQGh1YXdlaS5jb20+Cj4+IC0tLQo+PiAgZHJpdmVycy9zdGFnaW5nL3ZjMDRfc2Vy
+dmljZXMvaW50ZXJmYWNlL3ZjaGlxX2FybS92Y2hpcV9hcm0uYyB8IDYgKystLS0tCj4+ICAxIGZp
+bGUgY2hhbmdlZCwgMiBpbnNlcnRpb25zKCspLCA0IGRlbGV0aW9ucygtKQo+Pgo+PiBkaWZmIC0t
+Z2l0IGEvZHJpdmVycy9zdGFnaW5nL3ZjMDRfc2VydmljZXMvaW50ZXJmYWNlL3ZjaGlxX2FybS92
+Y2hpcV9hcm0uYyBiL2RyaXZlcnMvc3RhZ2luZy92YzA0X3NlcnZpY2VzL2ludGVyZmFjZS92Y2hp
+cV9hcm0vdmNoaXFfYXJtLmMKPj4gaW5kZXggY2M0MzgzZC4uMDRlNjQyNyAxMDA2NDQKPj4gLS0t
+IGEvZHJpdmVycy9zdGFnaW5nL3ZjMDRfc2VydmljZXMvaW50ZXJmYWNlL3ZjaGlxX2FybS92Y2hp
+cV9hcm0uYwo+PiArKysgYi9kcml2ZXJzL3N0YWdpbmcvdmMwNF9zZXJ2aWNlcy9pbnRlcmZhY2Uv
+dmNoaXFfYXJtL3ZjaGlxX2FybS5jCj4+IEBAIC0yODYxLDE1ICsyODYxLDEzIEBAIHZjaGlxX3Jl
+bGVhc2VfaW50ZXJuYWwoc3RydWN0IHZjaGlxX3N0YXRlICpzdGF0ZSwgc3RydWN0IHZjaGlxX3Nl
+cnZpY2UgKnNlcnZpY2UpCj4+ICAJCX0gZWxzZSB7Cj4+ICAJCQl2Y2hpcV9sb2dfaW5mbyh2Y2hp
+cV9zdXNwX2xvZ19sZXZlbCwKPj4gIAkJCQkiJXMgJXMgY291bnQgJWQsIHN0YXRlIGNvdW50ICVk
+IC0gc3VzcGVuZGluZyIsCj4+IC0JCQkJX19mdW5jX18sIGVudGl0eSwgKmVudGl0eV91YywKPj4g
+LQkJCQlhcm1fc3RhdGUtPnZpZGVvY29yZV91c2VfY291bnQpOwo+PiArCQkJCV9fZnVuY19fLCBl
+bnRpdHksIGxvY2FsX2VudGl0eV91YywgbG9jYWxfdWMpOwo+PiAgCQkJdmNoaXFfYXJtX3Zjc3Vz
+cGVuZChzdGF0ZSk7Cj4+ICAJCX0KPj4gIAl9IGVsc2UKPj4gIAkJdmNoaXFfbG9nX3RyYWNlKHZj
+aGlxX3N1c3BfbG9nX2xldmVsLAo+PiAgCQkJIiVzICVzIGNvdW50ICVkLCBzdGF0ZSBjb3VudCAl
+ZCIsCj4+IC0JCQlfX2Z1bmNfXywgZW50aXR5LCAqZW50aXR5X3VjLAo+PiAtCQkJYXJtX3N0YXRl
+LT52aWRlb2NvcmVfdXNlX2NvdW50KTsKPj4gKwkJCV9fZnVuY19fLCBlbnRpdHksIGxvY2FsX2Vu
+dGl0eV91YywgbG9jYWxfdWMpOwo+IAo+IEFyZSB5b3Ugc3VyZSB0aGlzIGlzIHRoZSBjb3JyZWN0
+IHdheSB0byBzb2x2ZSB0aGlzPwo+IAo+IFdoeSBub3QganVzdCByZW1vdmUgdGhlIGxvY2FsIHZh
+cmlhYmxlcyBpbnN0ZWFkLCBhcyBvYnZpb3VzbHkgdGhleSBhcmUKPiBub3QgYmVpbmcgdXNlZC4K
+Ckl0IHNlZW1zIHRoZXkgYXJlIGVxdWl2YWxlbnQKCjI4NTIgICAgICAgICBsb2NhbF91YyA9IC0t
+YXJtX3N0YXRlLT52aWRlb2NvcmVfdXNlX2NvdW50OwoyODUzICAgICAgICAgbG9jYWxfZW50aXR5
+X3VjID0gLS0oKmVudGl0eV91Yyk7CgpIb3dldmVyLCBJIHdpbGwgcmVzZW5kIGFzIHlvdXIgc3Vn
+Z2VzdGlvbi4gVGhhbmtz77yBCgo+IAo+IHRoYW5rcywKPiAKPiBncmVnIGstaAo+IAo+IC4KPiAK
+CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
+cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
+cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
+a2VybmVsCg==
