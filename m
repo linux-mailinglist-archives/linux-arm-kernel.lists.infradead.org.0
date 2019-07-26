@@ -2,67 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4591D766FF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 15:12:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8FB2D76711
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 15:15:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=vj2oOHhzBQb6T2la5UZVuvdtmiO6rnrN7BvG6R3n1c8=; b=RL6bW80GCE/n/R
-	Czx7U8hy2FnVjTB4HHGu375m1+kAsniRKC37N99FPQsesRlYiLLPj78Bj4POtoq+Yvk/6Y8JvVVUx
-	0ismDhTUCVUl4esF7ul0W5tBGMnSn47cuQ8a04rxJFm00ilq2yswBljnGvGu0TnuKqM9UM7CBc0cp
-	IdHro94ZeQDLAOaJ0P/jPoILmwemg6hHJfiI0zjOV/ItZHv/jfvNjx49DwNJkBh6H3qAuAAy4t/gD
-	cnPbd5kMKKcLdDaUkYRKA5NvEVOQPyzC+cPl8bPkQ5gmzTOesflfe1ymTLQJpDAY52karziIIgRk9
-	z+7xoR8ihQatte/BGt4A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AYwZzvJIvs6qInmQw4x8KclDiL6aY3sE35n8SQbJsic=; b=Zj5uFlxcNA/0sl
+	P5O01UOZZ3QaL6g/WkHaFyWH+z3qKV/aq1v46nWAV/lGllydopEBSWSvRYXo7QU4fMQGWo3PFSj8L
+	DBA8KYG2+4ghT9llNjRAkkIu/0OoE375tcZOC8kH39hVL+3QOPV3TrxsGZoQuEI+g73cA4yiiOTlV
+	jt0ZS5/vtgVKhMuJCLV0dxItIClGaWIvjB3/50y/wQhssmV2yIATAuqrlS2wL48cfNRv3N7r1yXoB
+	PjtJ+homkzK3plA/3oXkZBTSjjJ15bp2aaKh5VKhUNNJoKoOyvH3EA+4LPBejte1nutgnf7uG228r
+	ZWo0HxDYuKwBY1ey6nLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hr01R-0007O6-Cg; Fri, 26 Jul 2019 13:12:33 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hr04K-0000cY-G8; Fri, 26 Jul 2019 13:15:32 +0000
+Received: from asavdk4.altibox.net ([109.247.116.15])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hr01E-0007NY-9t
- for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 13:12:21 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2AA5F218D4;
- Fri, 26 Jul 2019 13:12:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564146740;
- bh=lS7VU+fYLf9p8y4UAb/u0BkVPuztI5yiv146UfxCQDM=;
- h=Date:From:To:Cc:Subject:From;
- b=HeI8QMV5ptqPEjWImZK/G7ljfbzJwNqBuLFsieHmWMcqdpaYdl2UtrBms5Lh5GX8C
- 3X+EuxET8Bu0ofRypSvw5Ag9692Un3I0nSMkS/9nfNLKduqv5rGCu6F7a6VdMxx8i7
- yqIeRc3KFTvVuU3p3DRZQ4yMz+SaUS9WbCopSzhk=
-Date: Fri, 26 Jul 2019 14:12:16 +0100
-From: Will Deacon <will@kernel.org>
-To: torvalds@linux-foundation.org
-Subject: [GIT PULL] arm64: fixes for -rc2
-Message-ID: <20190726131215.2dqryzjvxfyqefuw@willie-the-truck>
+ id 1hr040-0000Y7-9g; Fri, 26 Jul 2019 13:15:14 +0000
+Received: from ravnborg.org (unknown [158.248.194.18])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by asavdk4.altibox.net (Postfix) with ESMTPS id 1C3B480502;
+ Fri, 26 Jul 2019 15:15:07 +0200 (CEST)
+Date: Fri, 26 Jul 2019 15:15:06 +0200
+From: Sam Ravnborg <sam@ravnborg.org>
+To: "dbasehore ." <dbasehore@chromium.org>
+Subject: Re: [PATCH v7 2/4] drm/panel: set display info in panel attach
+Message-ID: <20190726131506.GB17801@ravnborg.org>
+References: <20190710021659.177950-1-dbasehore@chromium.org>
+ <20190710021659.177950-3-dbasehore@chromium.org>
+ <20190723091945.GD787@ravnborg.org>
+ <CAGAzgsonxAcOLxPSoP6Swab+AFPxWaxmC_tg87J=6Nes_awACg@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <CAGAzgsonxAcOLxPSoP6Swab+AFPxWaxmC_tg87J=6Nes_awACg@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CMAE-Score: 0
+X-CMAE-Analysis: v=2.3 cv=VcLZwmh9 c=1 sm=1 tr=0
+ a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
+ a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=7gkXJVJtAAAA:8
+ a=VwQbUJbxAAAA:8 a=CPKLS5VrouiAa9iZAqIA:9 a=CjuIK1q_8ugA:10
+ a=E9Po1WZjFZOl8hwRPBS3:22 a=AjGcO6oz07-iQ99wixmX:22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_061220_374976_DC705BEE 
-X-CRM114-Status: GOOD (  12.65  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190726_061512_521215_16AEE87A 
+X-CRM114-Status: GOOD (  17.58  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [109.247.116.15 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,113 +69,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Maxime Ripard <maxime.ripard@bootlin.com>,
+ Intel Graphics <intel-gfx@lists.freedesktop.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>, David Airlie <airlied@linux.ie>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Rodrigo Vivi <rodrigo.vivi@intel.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Sean Paul <sean@poorly.run>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Linus,
+Hi Derek.
 
-Please pull these arm64 fixes for -rc2. There's more here than we usually
-have at this stage, but that's mainly down to the stacktrace changes which
-came in slightly too late for the merge window.
+On Wed, Jul 24, 2019 at 03:15:19PM -0700, dbasehore . wrote:
+> Hi Sam, thanks for pointing out the potential conflict.
+> 
+> On Tue, Jul 23, 2019 at 2:19 AM Sam Ravnborg <sam@ravnborg.org> wrote:
+> >
+> > Hi Derek.
+> >
+> > On Tue, Jul 09, 2019 at 07:16:57PM -0700, Derek Basehore wrote:
+> > > Devicetree systems can set panel orientation via a panel binding, but
+> > > there's no way, as is, to propagate this setting to the connector,
+> > > where the property need to be added.
+> > > To address this, this patch sets orientation, as well as other fixed
+> > > values for the panel, in the drm_panel_attach function. These values
+> > > are stored from probe in the drm_panel struct.
+> >
+> > This approch seems to conflict with work done by Laurent where the
+> > ownership/creation of the connector will be moved to the display controller.
+> >
+> > If I understand it correct then there should not be a 1:1 relation
+> > between a panel and a connector anymore.
+> 
+> 
+> Can you point me to this work?
+Please take a look at the series with subject:
+"[PATCH 00/60] drm/omap: Replace custom display drivers with drm_bridge
+and drm_panel"
+Link: https://patchwork.kernel.org/cover/11034175/
 
-Summary is in the tag.
+Laurent has done a great job explaining the background,
+If you look into the patched you will see the idea is that a drm_panel
+no longer get attached to a drm_controller - it will be an argument to
+get_modes().
 
-Thanks,
-
-Will
-
---->8
-
-The following changes since commit 5f9e832c137075045d15cd6899ab0505cfb2ca4b:
-
-  Linus 5.3-rc1 (2019-07-21 14:05:38 -0700)
-
-are available in the git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git tags/arm64-fixes
-
-for you to fetch changes up to 5a46d3f71d5e5a9f82eabc682f996f1281705ac7:
-
-  ACPI/IORT: Fix off-by-one check in iort_dev_find_its_id() (2019-07-23 15:45:46 +0100)
-
-----------------------------------------------------------------
-arm64 fixes for -rc2
-
-- Big bad batch of MAINTAINERS updates
-
-- Fix handling of SP alignment fault exceptions
-
-- Fix PSTATE.SSBS handling on heterogeneous systems
-
-- Fix fallout from moving to the generic vDSO implementation
-
-- Fix stack unwinding in the face of frame corruption
-
-- Fix off-by-one in IORT code
-
-- Minor SVE cleanups
-
-----------------------------------------------------------------
-Anshuman Khandual (1):
-      arm64: mm: Drop pte_huge()
-
-Dave Martin (4):
-      arm64: stacktrace: Constify stacktrace.h functions
-      arm64: stacktrace: Factor out backtrace initialisation
-      arm64/sve: Factor out FPSIMD to SVE state conversion
-      arm64/sve: Fix a couple of magic numbers for the Z-reg count
-
-James Morse (1):
-      arm64: entry: SP Alignment Fault doesn't write to FAR_EL1
-
-Jean-Philippe Brucker (1):
-      MAINTAINERS: Update my email address
-
-Julien Thierry (1):
-      MAINTAINERS: Update my email address
-
-Lorenzo Pieralisi (1):
-      ACPI/IORT: Fix off-by-one check in iort_dev_find_its_id()
-
-Marc Zyngier (2):
-      MAINTAINERS: Update my email address to @kernel.org
-      arm64: Force SSBS on context switch
-
-Mark Rutland (1):
-      arm64: stacktrace: Better handle corrupted stacks
-
-Naohiro Aota (1):
-      arm64: vdso: fix flip/flop vdso build bug
-
-Suzuki K Poulose (1):
-      MAINTAINERS: Fix spelling mistake in my name
-
-Vincenzo Frascino (2):
-      arm64: vdso: Fix population of AT_SYSINFO_EHDR for compat vdso
-      arm64: vdso: Cleanup Makefiles
-
- .mailmap                            |  3 ++
- MAINTAINERS                         | 14 +++----
- arch/arm64/include/asm/elf.h        |  2 +-
- arch/arm64/include/asm/pgtable.h    |  1 -
- arch/arm64/include/asm/processor.h  | 14 ++++++-
- arch/arm64/include/asm/stacktrace.h | 78 ++++++++++++++++++++++++++++++-------
- arch/arm64/kernel/entry.S           | 22 ++++++-----
- arch/arm64/kernel/fpsimd.c          | 29 +++++++-------
- arch/arm64/kernel/perf_callchain.c  |  7 +---
- arch/arm64/kernel/process.c         | 36 ++++++++++++++---
- arch/arm64/kernel/return_address.c  |  9 ++---
- arch/arm64/kernel/stacktrace.c      | 59 +++++++++++++++++++++-------
- arch/arm64/kernel/time.c            |  7 +---
- arch/arm64/kernel/traps.c           | 13 +++----
- arch/arm64/kernel/vdso/Makefile     | 13 +++----
- arch/arm64/kernel/vdso32/Makefile   | 14 ++++---
- drivers/acpi/arm64/iort.c           |  4 +-
- 17 files changed, 219 insertions(+), 106 deletions(-)
+	Sam
 
 _______________________________________________
 linux-arm-kernel mailing list
