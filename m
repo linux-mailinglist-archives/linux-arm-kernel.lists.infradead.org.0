@@ -2,140 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A054A76055
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 10:05:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 918B97605E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 10:07:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qUzUv7XQzHr2Nj/skzeTVa7DcCzdXdeDeNKQN+U+l04=; b=X0Y+xB9EOxJhzu
-	hkv5TUdmM0uQJF8uWqtFVJCqlKO5dYaqE8m6T2xgcBzD5eFrz/hZuEHmRRwdoW8D2f2gHa71UMgsk
-	cQyplRDdZZTKn6Cg/TAXWWBlny+3MknyoLdyhhfy6PD6EI1LLsPZ1Vi8DIKrLilLR4R1DT/qyVZFo
-	tawmH2rUYLmwM0jd4Yhjhd6e7ngCK7Alt+jB+cu/qWLOMR86em4PjhmFwtIs4zoFogvT6EY3JbEsK
-	lYq6LZxR9dkWiG09uSI6vLYcJBEd9Ud85GKt2sj0L1+FiVKUA7E8y1AOpwJRssgH+xIq2gGi8UEt2
-	HV3i/X8STYY8qV5pVnAA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RA29ErD3PwM622T0gL9dn01wwA5CU0iq4fCeOuc1t4M=; b=PAU47R50w8lqqg
+	lQggAIuPBvYrpPDmWZ1UiV97zCVl4ASnizsbIv6W2fEhFhMlE2jAJr/61HuY8eOeyuxeuYoF53uYx
+	vT/byPxVuXImndpFBlkgrgWKRGY+AJDEHE+puOXI/iqN4vPQEDX1o6E5B/ZcRKRMltIG+9vzt5a5L
+	KU++oT8neHWEXaEHUhoxR3g2Iv+nRCVeDOkI7MTylewTA9+1myzLQKrGCKcsL5Pk56LaJ19iZKsWw
+	zlxzM3q2NguA+EPavwbQc4AbkpcnVTq544NOKtDVyjr4Dys1NNt0g3T1dumovBs4UM5X9oatTbfdi
+	Jnrwv0nZMMmbFM0LkVJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqvEV-00078E-EL; Fri, 26 Jul 2019 08:05:43 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1hqvGd-0007Ta-1m; Fri, 26 Jul 2019 08:07:55 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqvEE-000778-18
- for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 08:05:27 +0000
-Received: by mail-lj1-x243.google.com with SMTP id p17so50600647ljg.1
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 26 Jul 2019 01:05:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=gmIWHPU81qKM4NmobEtN8vwuP0TkPt9eT4OsJzhaUjk=;
- b=y5xEgzE5jtlcpATZyzdxzyFTpGnrCxRIL7uzSmvkqqaSjqn773+lPi7JptM/oC82B2
- ERbV/Kkph8WF/vpS0iK1HE0VExJSalljlox2f3+vos5IQ68Ky88FaraUeLkAT6RUDfUQ
- WflUBgR2r9hdpzovWsdhbDIC+11PpgdKGFgOf09LxXdcO0t94ubgDe/S5ge0F0ghX/bB
- wcPqo+munS6NtHkwWgIbjGJxSqOMfifD5YvAY5y981NrOtWmuFn3qI/ni14t4DFzksHZ
- p83f77Ch5gFRkm9/lPngDbBvSVlhEkKxoSs2aNdOgnRO4Am3tgc/9SeKJq0PjwoQxzPJ
- d5zQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :message-id:date:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=gmIWHPU81qKM4NmobEtN8vwuP0TkPt9eT4OsJzhaUjk=;
- b=BcBZ2SmT/OYZ1qNq6plJQjjPfMx2Ihgvnc4cfCz2AqI8tjUrd5vTPcPSg/NEOfX9f3
- fD/Jm5tPE19m1TjgxDKeYBL9L5+uJy7gOLfZ6RgaI3TMBLNyNXEbbvMz+Bv3M2bT+bu+
- NWCPoMZkiEag8bKidapFpkTfejxarRYhyJrLpWves05kHXRhdER8wyZ7H27PzCjeUmp8
- bP6lyokk3/AbJMjMOaLc6Jb/01UjLEk4Fl8XEEOJ/x5Fl/srRWKz/q0W1x9o1X62WImu
- +MNR/RaPJHeGPfbLV5RtgCuKgz62DexAaGP0OJcF9+RNys0Du8GC+SxhIJQVHq55kkX5
- ok/A==
-X-Gm-Message-State: APjAAAXl7r+cxlSFavW9g53K559F5O+h5p/Nako/nU7b8/USmHsSOg+B
- Pvr3DDsRY1cFjWYVpToARBFKwg==
-X-Google-Smtp-Source: APXvYqzCVMfgKRMsARKSPF+KtDsxiocfdKwq11AIhpxQkPycGioijfy6CGbrfH0vqHwXLn2vGixe4Q==
-X-Received: by 2002:a2e:9a10:: with SMTP id o16mr48004571lji.95.1564128323508; 
- Fri, 26 Jul 2019 01:05:23 -0700 (PDT)
-Received: from [10.44.66.8] ([212.45.67.2])
- by smtp.googlemail.com with ESMTPSA id u9sm8233986lfk.64.2019.07.26.01.05.21
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 26 Jul 2019 01:05:22 -0700 (PDT)
-Subject: Re: [RFC PATCH 09/11] devfreq: exynos-bus: Add interconnect
- functionality to exynos-bus
-To: =?UTF-8?B?QXJ0dXIgxZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-pm@vger.kernel.org, dri-devel@lists.freedesktop.org
-References: <20190723122016.30279-1-a.swigon@partner.samsung.com>
- <CGME20190723122028eucas1p2eb75f35b810e71d6c590370aaff0997b@eucas1p2.samsung.com>
- <20190723122016.30279-10-a.swigon@partner.samsung.com>
-From: Georgi Djakov <georgi.djakov@linaro.org>
-Openpgp: preference=signencrypt
-Autocrypt: addr=georgi.djakov@linaro.org; prefer-encrypt=mutual; keydata=
- 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
- KEmKjLDvB0pePJkdTw==
-Message-ID: <6e8b2081-2fb3-9ab8-37d1-8b5fe5fd8e11@linaro.org>
-Date: Fri, 26 Jul 2019 11:05:18 +0300
+ id 1hqvGG-0007Sw-VJ; Fri, 26 Jul 2019 08:07:34 +0000
+X-UUID: 686622a3cb524163b26db958b4c8a2eb-20190726
+X-UUID: 686622a3cb524163b26db958b4c8a2eb-20190726
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <jungo.lin@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 164958814; Fri, 26 Jul 2019 00:07:27 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 26 Jul 2019 01:07:25 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 26 Jul 2019 16:07:17 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 26 Jul 2019 16:07:17 +0800
+Message-ID: <1564128437.1212.615.camel@mtksdccf07>
+Subject: Re: [RFC,v3 8/9] media: platform: Add Mediatek ISP P1 SCP
+ communication
+From: Jungo Lin <jungo.lin@mediatek.com>
+To: Tomasz Figa <tfiga@chromium.org>
+Date: Fri, 26 Jul 2019 16:07:17 +0800
+In-Reply-To: <CAAFQd5BT7M425AbFicYuX+wr-twgS_cxQ937+Rgxo6Y2fA6_gA@mail.gmail.com>
+References: <jungo.lin@mediatek.com>
+ <20190611035344.29814-1-jungo.lin@mediatek.com>
+ <20190611035344.29814-9-jungo.lin@mediatek.com>
+ <20190710095827.GC181405@chromium.org>
+ <1563675513.1212.444.camel@mtksdccf07>
+ <CAAFQd5BT7M425AbFicYuX+wr-twgS_cxQ937+Rgxo6Y2fA6_gA@mail.gmail.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-In-Reply-To: <20190723122016.30279-10-a.swigon@partner.samsung.com>
-Content-Language: en-US
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_010526_107963_8770A110 
-X-CRM114-Status: GOOD (  13.23  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190726_010733_024326_42436D2B 
+X-CRM114-Status: GOOD (  23.99  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -147,43 +78,183 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: sw0312.kim@samsung.com, krzk@kernel.org, inki.dae@samsung.com,
- cw00.choi@samsung.com, myungjoo.ham@samsung.com, m.szyprowski@samsung.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org,
+ Sean Cheng =?UTF-8?Q?=28=E9=84=AD=E6=98=87=E5=BC=98=29?=
+ <sean.cheng@mediatek.com>,
+ Frederic Chen =?UTF-8?Q?=28=E9=99=B3=E4=BF=8A=E5=85=83=29?=
+ <frederic.chen@mediatek.com>,
+ Rynn Wu =?UTF-8?Q?=28=E5=90=B3=E8=82=B2=E6=81=A9=29?= <rynn.wu@mediatek.com>,
+ srv_heupstream <srv_heupstream@mediatek.com>, Rob Herring <robh@kernel.org>,
+ Ryan Yu =?UTF-8?Q?=28=E4=BD=99=E5=AD=9F=E4=BF=AE=29?= <ryan.yu@mediatek.com>,
+ Frankie Chiu =?UTF-8?Q?=28=E9=82=B1=E6=96=87=E5=87=B1=29?=
+ <frankie.chiu@mediatek.com>, Hans Verkuil <hverkuil@xs4all.nl>,
+ ddavenport@chromium.org, Sj Huang <sj.huang@mediatek.com>, "moderated
+ list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>, Joerg
+ Roedel <joro@8bytes.org>," <linux-arm-kernel@lists.infradead.org>, Linux
+ Media Mailing List <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgQXJ0dXIsCgpPbiA3LzIzLzE5IDE1OjIwLCBBcnR1ciDFmndpZ2/FhCB3cm90ZToKPiBUaGlz
-IHBhdGNoIGFkZHMgaW50ZXJjb25uZWN0IGZ1bmN0aW9uYWxpdHkgdG8gdGhlIGV4eW5vcy1idXMg
-ZGV2ZnJlcQo+IGRyaXZlci4KPiAKPiBUaGUgU29DIHRvcG9sb2d5IGlzIGEgZ3JhcGggKG9yLCBt
-b3JlIHNwZWNpZmljYWxseSwgYSB0cmVlKSBhbmQgbW9zdCBvZiBpdHMKPiBlZGdlcyBhcmUgdGFr
-ZW4gZnJvbSB0aGUgZGV2ZnJlcSBwYXJlbnQtY2hpbGQgaGllcmFyY2h5IChjZi4KPiBEb2N1bWVu
-dGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZGV2ZnJlcS9leHlub3MtYnVzLnR4dCkuIFRoZSBw
-cmV2aW91cwo+IHBhdGNoIGFkZHMgbWlzc2luZyBlZGdlcyB0byB0aGUgRFQgKHVuZGVyIHRoZSBu
-YW1lICdwYXJlbnQnKS4gRHVlIHRvCj4gdW5zcGVjaWZpZWQgcmVsYXRpdmUgcHJvYmluZyBvcmRl
-ciwgLUVQUk9CRV9ERUZFUiBtYXkgYmUgcHJvcGFnYXRlZCB0bwo+IGd1YXJhbnRlZSB0aGF0IGEg
-Y2hpbGQgaXMgcHJvYmVkIGJlZm9yZSBpdHMgcGFyZW50Lgo+IAo+IEVhY2ggYnVzIGlzIG5vdyBh
-biBpbnRlcmNvbm5lY3QgcHJvdmlkZXIgYW5kIGFuIGludGVyY29ubmVjdCBub2RlIGFzIHdlbGwK
-PiAoY2YuIERvY3VtZW50YXRpb24vaW50ZXJjb25uZWN0L2ludGVyY29ubmVjdC5yc3QpLCBpLmUu
-IGV2ZXJ5IGJ1cyByZWdpc3RlcnMKPiBpdHNlbGYgYXMgYSBub2RlLiBOb2RlIElEcyBhcmUgbm90
-IGhhcmRjb2RlZCBidXQgcmF0aGVyIGFzc2lnbmVkIGF0Cj4gcnVudGltZSwgaW4gcHJvYmluZyBv
-cmRlciAoc3ViamVjdCB0byB0aGUgYWJvdmUtbWVudGlvbmVkIGV4Y2VwdGlvbgo+IHJlZ2FyZGlu
-ZyByZWxhdGl2ZSBvcmRlcikuIFRoaXMgYXBwcm9hY2ggYWxsb3dzIGZvciB1c2luZyB0aGlzIGRy
-aXZlciB3aXRoCj4gdmFyaW91cyBFeHlub3MgU29Dcy4KCkkgYW0gbm90IGZhbWlsaWFyIHdpdGgg
-dGhlIEV4eW5vcyBidXMgdG9wb2xvZ3ksIGJ1dCBpdCBzZWVtcyB0byBtZSB0aGF0IGl0J3Mgbm90
-CnJlcHJlc2VudGVkIGNvcnJlY3RseS4gQW4gaW50ZXJjb25uZWN0IHByb3ZpZGVyIHdpdGgganVz
-dCBhIHNpbmdsZSBub2RlIChwb3J0KQppcyBvZGQuIEkgd291bGQgZXhwZWN0IHRoYXQgZWFjaCBw
-cm92aWRlciBjb25zaXN0cyBvZiBtdWx0aXBsZSBtYXN0ZXIgYW5kIHNsYXZlCm5vZGVzLiBUaGlz
-IGRhdGEgd291bGQgYmUgdXNlZCBieSBhIGZyYW1ld29yayB0byB1bmRlcnN0YW5kIHdoYXQgYXJl
-IHRoZSBsaW5rcwphbmQgaG93IHRoZSB0cmFmZmljIGZsb3dzIGJldHdlZW4gdGhlIElQIGJsb2Nr
-cyBhbmQgdGhyb3VnaCB3aGljaCBidXNlcy4KCj4gVGhlIGRldmZyZXEgdGFyZ2V0KCkgY2FsbGJh
-Y2sgcHJvdmlkZWQgYnkgZXh5bm9zLWJ1cyBub3cgc2VsZWN0cyBlaXRoZXIgdGhlCj4gZnJlcXVl
-bmN5IGNhbGN1bGF0ZWQgYnkgdGhlIGRldmZyZXEgZ292ZXJub3Igb3IgdGhlIGZyZXF1ZW5jeSBy
-ZXF1ZXN0ZWQgdmlhCj4gdGhlIGludGVyY29ubmVjdCBBUEkgZm9yIHRoZSBnaXZlbiBub2RlLCB3
-aGljaGV2ZXIgaXMgaGlnaGVyLgoKVGhpcyBjb21wbGV0ZWx5IG1ha2VzIHNlbnNlLiBXZSBqdXN0
-IG5lZWQgdG8gYmUgc3VyZSB0aGF0IHRoZSBpbnRlcmNvbm5lY3QKZnJhbWV3b3JrIGlzIHVzZWQg
-Y29ycmVjdGx5LgoKVGhhbmtzLApHZW9yZ2kKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFy
-bS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
-YWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hi, Tomasz:
+
+On Thu, 2019-07-25 at 19:56 +0900, Tomasz Figa wrote:
+> Hi Jungo,
+> 
+> On Sun, Jul 21, 2019 at 11:18 AM Jungo Lin <jungo.lin@mediatek.com> wrote:
+> [snip]
+> > > > +           wake_up_interruptible(&isp_ctx->composer_tx_thread.wq);
+> > > > +           isp_ctx->composer_tx_thread.thread = NULL;
+> > > > +   }
+> > > > +
+> > > > +   if (isp_ctx->composer_deinit_thread.thread) {
+> > > > +           wake_up(&isp_ctx->composer_deinit_thread.wq);
+> > > > +           isp_ctx->composer_deinit_thread.thread = NULL;
+> > > > +   }
+> > > > +   mutex_unlock(&isp_ctx->lock);
+> > > > +
+> > > > +   pm_runtime_put_sync(&p1_dev->pdev->dev);
+> > >
+> > > No need to use the sync variant.
+> > >
+> >
+> > We don't get this point. If we will call pm_runtime_get_sync in
+> > mtk_isp_hw_init function, will we need to call
+> > pm_runtime_put_sync_autosuspend in mtk_isp_hw_release in next patch?
+> > As we know, we should call runtime pm functions in pair.
+> >
+> 
+> My point is that pm_runtime_put_sync() is only needed if one wants the
+> runtime count to be decremented after the function returns. Normally
+> there is no need to do so and one would call pm_runtime_put(), or if
+> autosuspend is used, pm_runtime_put_autosuspend() (note there is no
+> "sync" in the name).
+> 
+> [snip]
+
+Ok, got your point.
+We will change to use pm_runtime_put_autosuspend() which has ASYNC flag.
+
+> > > +static void isp_composer_handler(void *data, unsigned int len, void *priv)
+> > > > +{
+> > > > +   struct mtk_isp_p1_ctx *isp_ctx = (struct mtk_isp_p1_ctx *)priv;
+> > > > +   struct isp_p1_device *p1_dev = p1_ctx_to_dev(isp_ctx);
+> > > > +   struct device *dev = &p1_dev->pdev->dev;
+> > > > +   struct mtk_isp_scp_p1_cmd *ipi_msg;
+> > > > +
+> > > > +   ipi_msg = (struct mtk_isp_scp_p1_cmd *)data;
+> > >
+> > > Should we check that len == sizeof(*ipi_msg)? (Or at least >=, if data could
+> > > contain some extra bytes at the end.)
+> > >
+> >
+> > The len parameter is the actual sending bytes from SCP to kernel.
+> > In the runtime, it is only 6 bytes for isp_ack_info command
+> > However, sizeof(*ipi_msg) is large due to struct mtk_isp_scp_p1_cmd is
+> > union structure.
+> >
+> 
+> That said we still should check if len is enough to cover the data
+> we're accessing below.
+> 
+
+Ok, we will add the len checking before accessing the data.
+
+> > > > +
+> > > > +   if (ipi_msg->cmd_id != ISP_CMD_ACK)
+> > > > +           return;
+> > > > +
+> > > > +   if (ipi_msg->ack_info.cmd_id == ISP_CMD_FRAME_ACK) {
+> > > > +           dev_dbg(dev, "ack frame_num:%d",
+> > > > +                   ipi_msg->ack_info.frame_seq_no);
+> > > > +           atomic_set(&isp_ctx->composed_frame_id,
+> > > > +                      ipi_msg->ack_info.frame_seq_no);
+> > >
+> > > I suppose we are expecting here that ipi_msg->ack_info.frame_seq_no would be
+> > > just isp_ctx->composed_frame_id + 1, right? If not, we probably dropped some
+> > > frames and we should handle that somehow.
+> > >
+> >
+> > No, we use isp_ctx->composed_frame_id to save which frame sequence
+> > number are composed done in SCP. In new design, we will move this from
+> > isp_ctx to p1_dev.
+> 
+> But we compose the frames in order, don't we? Wouldn't every composed
+> frame would be just previous frame ID + 1?
+> 
+> [snip]
+
+Yes, we compose the frames in order.
+At the same time, we already increased "frame ID + 1" in
+mtk_isp_req_enqueue() for each new request before sending to SCP for
+composing. After receiving the ACK from SCP, we think the frame ID is
+composed done and save by isp_ctx->composed_frame_id(v3).
+
+[RFC v3]
+void mtk_isp_req_enqueue(struct device *dev, struct media_request *req)
+{
+	...
+	frameparams.frame_seq_no = isp_ctx->frame_seq_no++;
+
+[RFC v4]
+void mtk_isp_req_enqueue(struct mtk_cam_dev *cam,
+			 struct mtk_cam_dev_request *req)
+{
+	struct mtk_isp_p1_device *p1_dev = dev_get_drvdata(cam->dev);
+
+	/* Accumulated frame sequence number */
+	req->frame_params.frame_seq_no = ++p1_dev->enqueue_frame_seq_no;
+
+ 
+
+> > > > +void isp_composer_hw_init(struct device *dev)
+> > > > +{
+> > > > +   struct mtk_isp_scp_p1_cmd composer_tx_cmd;
+> > > > +   struct isp_p1_device *p1_dev = get_p1_device(dev);
+> > > > +   struct mtk_isp_p1_ctx *isp_ctx = &p1_dev->isp_ctx;
+> > > > +
+> > > > +   memset(&composer_tx_cmd, 0, sizeof(composer_tx_cmd));
+> > > > +   composer_tx_cmd.cmd_id = ISP_CMD_INIT;
+> > > > +   composer_tx_cmd.frameparam.hw_module = isp_ctx->isp_hw_module;
+> > > > +   composer_tx_cmd.frameparam.cq_addr.iova = isp_ctx->scp_mem_iova;
+> > > > +   composer_tx_cmd.frameparam.cq_addr.scp_addr = isp_ctx->scp_mem_pa;
+> > >
+> > > Should we also specify the size of the buffer? Otherwise we could end up
+> > > with some undetectable overruns.
+> > >
+> >
+> > The size of SCP composer's memory is fixed to 0x200000.
+> > Is it necessary to specify the size of this buffer?
+> >
+> > #define MTK_ISP_COMPOSER_MEM_SIZE 0x200000
+> >
+> > ptr = dma_alloc_coherent(p1_dev->cam_dev.smem_dev,
+> >                         MTK_ISP_COMPOSER_MEM_SIZE, &addr, GFP_KERNEL);
+> >
+> 
+> Okay, but please add a comment saying that this is an implicit
+> requirement of the firmware.
+> 
+> Best regards,
+> Tomasz
+
+Ok, we will add comments.
+
+Best regards,
+
+
+Jungo
+
+
+
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
