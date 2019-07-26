@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E19C75E9B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 07:46:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F59275E9C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 07:46:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I8Wkv5wj8COKVdd7TZqkxS2G23TzYLQSsDbfZTMckcg=; b=kdltVtvhc7WrtH
-	r0k0k/E8Ul98K6orJU4kdEd8xA1GwklYjFq4xS6b9VTkfTJM1GOiT/uS8vVZMKZLIto10rE6t7WV0
-	6ir9S9XMrZG5ldVPlLugJbYRxvx5RcJ6/gleFIZcxGZLmVDhVqbampu0aZl7srxCTIANxGLS4lcLl
-	EV0NIFPrnGVOTxlCOIUu1mP7swaEc4d61YtKSC2tEQ7DbzwHiV2FcKX2+Nsl3oASlC2bMB4bAbRN1
-	XJ4BdgG2DWy93fEmUS8BXxtw49579VNvhGGuhIt3w9ouoT5KhJIp/pXKoBPfoDiRs7pcH1BfMfN8f
-	MsHqiplifQ/TjnxjHcEQ==;
+	List-Owner; bh=ARHNeY2v14tvl5HzK6kZN7RKd7pC7Mt+aLU5zjz2jSs=; b=ceCqgyVPJ1XK22
+	3zkVAoWPgpiHKsV/57oRDK9OwdCU5N6bebQYMc+WZ5G/GGh4fFrXPNqxjylUSWbMkbq40STCigABR
+	7tGGEtV6NgNCSYXNZqoYAUXhyYKA+4BiIPR72S/mI4P76vv+s1R9xl2Iz0wvp/IrViCRdir0d1D5w
+	OSmp2lgd1QbLNz5C4/S1sI/o/wae1WdiB0Jmg5WN2t4zJOikCr8S+oLnu7lopG23gFy5hy/Ldevr5
+	tmp2m0qlDdtoPUyJf2O8cL1Tw2Zh4MTU7CuCMRfK3PraVITVRLD3UCjys91Azgwl229XQewZzbJdS
+	KRUqpLyp1q+vLeg5oVcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqt3d-0000Ps-0j; Fri, 26 Jul 2019 05:46:21 +0000
-Received: from new4-smtp.messagingengine.com ([66.111.4.230])
+	id 1hqt3v-0000fI-U7; Fri, 26 Jul 2019 05:46:40 +0000
+Received: from out5-smtp.messagingengine.com ([66.111.4.29])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqsyS-0004Ca-PL
- for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 05:41:03 +0000
+ id 1hqsyW-0004Et-5A
+ for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 05:41:06 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 051FE4355;
- Fri, 26 Jul 2019 01:41:00 -0400 (EDT)
+ by mailout.nyi.internal (Postfix) with ESMTP id 5F16222274;
+ Fri, 26 Jul 2019 01:41:03 -0400 (EDT)
 Received: from mailfrontend2 ([10.202.2.163])
- by compute4.internal (MEProxy); Fri, 26 Jul 2019 01:41:00 -0400
+ by compute4.internal (MEProxy); Fri, 26 Jul 2019 01:41:03 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=from
  :to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm3; bh=96HDwA1KWSlr1
- 9z+QpunC8hx6SLZq+UnHYXQwHcXkFU=; b=PJqh0bvLeaKgD2NqicKEJ94S/a3LL
- kFt1pQ5EygtTNHC232CnW/Fd6Ctom6HceFM8fY/lJL9WlVJDSf5XjCN0u/dTH1ys
- JeGszkZwMKJ2b37ZJWjoct3WkyO1QClIEJ3Vn6ZmpheVPMb6GJAOdI4TrZByi2L2
- +OGDG43AmYi0sL4y9fu64ubmZ/FK17ANVZVD02gTd3o/l3g8Q2lWygvanK8qpZBs
- TFm422rSTFFHsTJJC/HR+wovjrUS9gAgoe91Dq4Vl5DvozuY/MTpucGQ+eAnx3un
- QAga5IJwZIPi9iX2UbI0nP510oFMk+Fznm4Y4X8xUr3JEPRX9AOxW91bw==
+ :mime-version:content-transfer-encoding; s=fm3; bh=zLGmFPTIbxQGo
+ HnRql1MWWPPC7bOrn4IS16vnsH8Hsw=; b=U7Eaj6uCWVlD8HTbBFikW8DXHin7A
+ 1LHe2DPkxSbz1M/DeBTJghfG7XqRD1qBn0a56hf64ltEvMJO9Gjf0A6xHA7I44O1
+ g2SyMgo+/m3EcfFU44cZA2KDP7J+RaM90aaB2nZdG3uBPnCvDwChUgl9IwtkXj8i
+ fiFO4orSVyk3sn3xelojPGbv18xHht9RrccVTuGKnMNoUXMpakalDmJaSpz5UHjX
+ pU23S3eOGaHA6rFJpL73hLGvsYQbl4AEcavi+u6+CGVZ/G7nMmnXDFmUrvqDwkdG
+ pZLDJV3VEOSc2xJCUFLtbnPIEbl5flVO4GHVDi0vLvLXQGwgFf664Ss0w==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm3; bh=96HDwA1KWSlr19z+QpunC8hx6SLZq+UnHYXQwHcXkFU=; b=A53jHgX4
- GwBj4+1G0L9HFs2xkk3MrixMIvd5bKcmLNJFYVxPhsHuBdTBehuffYVGT7EdD8wd
- qXooMjAnnXmny3clMDeKF1w9lsdx992J0WvaDzj3sNbrlQvG12JWGZv97xzamI1c
- WHKSIsSmeCP6IY0a3ufQceFqNoLsS94ovzv/ExnBLipcsNjxnEXmS7r4G2GKGrxe
- 48CG8F1kyjr2zzBiZrmDbkhrV2hzPboqSu+axqLU1xN+LEF/ydOCh70A9CmDGzV7
- Y/QI+Z8+dGJmgKFu5fCaUeVBbyzEl4nw3I5/wdt+Z7tMuBI67LXMfpCkqt7xLHe7
- qW/nu9QT+uIoHg==
-X-ME-Sender: <xms:a5I6XSQWww8d0o8v0tDGmlFI3TWkmmVBfOpZdlodkWR_EQv0s7AepA>
+ fm3; bh=zLGmFPTIbxQGoHnRql1MWWPPC7bOrn4IS16vnsH8Hsw=; b=lfmtq3x1
+ c/Z1N7Dm2XO9BX0pG6SLAto/CdF+w7y+mMts3HOcb4FdH/sHkmJtgkkSdMWgJQx4
+ B66cmiEjHYybmjNS5psrZZucXsWz1qElAQ25GF+IO2gkn2jwH0j0IuX93hTXvEJC
+ 4CsPYSbR9aDw7SdtBe1ftLgTUQnYk+SjMBbRsx8WN9ZKa5rTmcOEfZTyhqkITavp
+ PaqrfNeeNsGoxXUI2AB0PswcXneuCuvuh5ZM2C1ZEJhmfLrgATBoRIBeQnS088nX
+ TflZ2zED5bpyZxyGgv4Q1jEsje04TCjV/iRgu4xWG0Ningojcw02QitWvm1X3mDC
+ Pk7DKPMWu35Yig==
+X-ME-Sender: <xms:b5I6XYzvXDgSEiXFFETuvoP-1aLjJzu5v_BIOpGFZXpYA-Oi7oNGGQ>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrkeefgdellecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
@@ -56,32 +56,33 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrkeefgdellecutefuodetggdote
  ucflvghffhgvrhihuceorghnughrvgifsegrjhdrihgurdgruheqnecukfhppedvtddvrd
  ekuddrudekrdeftdenucfrrghrrghmpehmrghilhhfrhhomheprghnughrvgifsegrjhdr
  ihgurdgruhenucevlhhushhtvghrufhiiigvpeeg
-X-ME-Proxy: <xmx:a5I6XcC6ST4sZJKRAsSp06FuhNg-03NNhM043alZlzyevi_gPE4w4A>
- <xmx:a5I6Xa3w1y062V_kynqwvElwkX_oNWc_eoIHLnu6CZkRMqSFgWi4hA>
- <xmx:a5I6XSXxp3vIRVEKy1e0Cz7yAETRAc19THqGBvRixMCCY73qJsG-DQ>
- <xmx:a5I6Xafw3xhBHieWEz2AgWI_-NvYhOSyYuIPrRIWdJ6crHloprwReg>
+X-ME-Proxy: <xmx:b5I6XdV9iqMFe6_4dGjpAtsu5nMh5VVKjOnQv2xHFKgKpPxhxr1L8A>
+ <xmx:b5I6XdTG6PvrwOHkMBPzMmnjGb9AWrqh6sUql9uqDvB0MzyVk-S94A>
+ <xmx:b5I6XUNmCdsghKc33feYVu20xPXhVKfxDTwcy6ZIpMn8w8fv-zc2TA>
+ <xmx:b5I6XdUMJCoESGzkL_XnYSQQrnpOiG6L2nDGxtbGYKP_CIX7knFTIg>
 Received: from mistburn.au.ibm.com (bh02i525f01.au.ibm.com [202.81.18.30])
- by mail.messagingengine.com (Postfix) with ESMTPA id BC628380075;
- Fri, 26 Jul 2019 01:40:55 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 31D88380074;
+ Fri, 26 Jul 2019 01:40:59 -0400 (EDT)
 From: Andrew Jeffery <andrew@aj.id.au>
 To: linux-aspeed@lists.ozlabs.org
-Subject: [RFC PATCH 15/17] ipmi: kcs: aspeed: Implement v2 bindings
-Date: Fri, 26 Jul 2019 15:09:57 +0930
-Message-Id: <20190726053959.2003-16-andrew@aj.id.au>
+Subject: [RFC PATCH 16/17] ARM: dts: aspeed-g5: Change KCS nodes to v2 binding
+Date: Fri, 26 Jul 2019 15:09:58 +0930
+Message-Id: <20190726053959.2003-17-andrew@aj.id.au>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190726053959.2003-1-andrew@aj.id.au>
 References: <20190726053959.2003-1-andrew@aj.id.au>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_224101_169963_B512728E 
-X-CRM114-Status: GOOD (  14.97  )
+X-CRM114-CacheID: sfid-20190725_224105_164987_01EA6BC7 
+X-CRM114-Status: UNSURE (   8.95  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.230 listed in list.dnswl.org]
+ low trust [66.111.4.29 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -103,234 +104,81 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- Haiyue Wang <haiyue.wang@linux.intel.com>, Arnd Bergmann <arnd@arndb.de>,
- Corey Minyard <minyard@acm.org>, Andrew Jeffery <andrew@aj.id.au>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- robh+dt@kernel.org, joel@jms.id.au, openipmi-developer@lists.sourceforge.net,
+ Haiyue Wang <haiyue.wang@linux.intel.com>, Andrew Jeffery <andrew@aj.id.au>,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, joel@jms.id.au,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The v2 bindings allow us to extract the resources from the devicetree.
-The table in the driver is retained to derive the channel index, which
-removes the need for kcs_chan property from the v1 bindings. The v2
-bindings allow us to reduce the number of warnings generated by the
-existing devicetree nodes.
+Fixes the following warnings:
+
+    arch/arm/boot/dts/aspeed-g5.dtsi:376.19-381.8: Warning (unit_address_vs_reg): /ahb/apb/lpc@1e789000/lpc-bmc@0/kcs1@0: node has a unit name, but no reg property
+    arch/arm/boot/dts/aspeed-g5.dtsi:382.19-387.8: Warning (unit_address_vs_reg): /ahb/apb/lpc@1e789000/lpc-bmc@0/kcs2@0: node has a unit name, but no reg property
+    arch/arm/boot/dts/aspeed-g5.dtsi:388.19-393.8: Warning (unit_address_vs_reg): /ahb/apb/lpc@1e789000/lpc-bmc@0/kcs3@0: node has a unit name, but no reg property
+    arch/arm/boot/dts/aspeed-g5.dtsi:405.19-410.8: Warning (unit_address_vs_reg): /ahb/apb/lpc@1e789000/lpc-host@80/kcs4@0: node has a unit name, but no reg property
+    arch/arm/boot/dts/aspeed-g5.dtsi:376.19-381.8: Warning (unique_unit_address): /ahb/apb/lpc@1e789000/lpc-bmc@0/kcs1@0: duplicate unit-address (also used in node /ahb/apb/lpc@1e789000/lpc-bmc@0/kcs2@0)
+    arch/arm/boot/dts/aspeed-g5.dtsi:376.19-381.8: Warning (unique_unit_address): /ahb/apb/lpc@1e789000/lpc-bmc@0/kcs1@0: duplicate unit-address (also used in node /ahb/apb/lpc@1e789000/lpc-bmc@0/kcs3@0)
+    arch/arm/boot/dts/aspeed-g5.dtsi:382.19-387.8: Warning (unique_unit_address): /ahb/apb/lpc@1e789000/lpc-bmc@0/kcs2@0: duplicate unit-address (also used in node /ahb/apb/lpc@1e789000/lpc-bmc@0/kcs3@0)
+    arch/arm/boot/dts/aspeed-g5.dtsi:405.19-410.8: Warning (unique_unit_address): /ahb/apb/lpc@1e789000/lpc-host@80/kcs4@0: duplicate unit-address (also used in node /ahb/apb/lpc@1e789000/lpc-host@80/lpc-ctrl@0)
 
 Cc: Haiyue Wang <haiyue.wang@linux.intel.com>
-Cc: Corey Minyard <minyard@acm.org>
-Cc: Arnd Bergmann <arnd@arndb.de>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Cc: openipmi-developer@lists.sourceforge.net
 Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
 ---
- drivers/char/ipmi/kcs_bmc_aspeed.c | 156 +++++++++++++++++++++++------
- 1 file changed, 127 insertions(+), 29 deletions(-)
+ arch/arm/boot/dts/aspeed-g5.dtsi | 24 ++++++++++++------------
+ 1 file changed, 12 insertions(+), 12 deletions(-)
 
-diff --git a/drivers/char/ipmi/kcs_bmc_aspeed.c b/drivers/char/ipmi/kcs_bmc_aspeed.c
-index e3dd09022589..509e0d3c6eb1 100644
---- a/drivers/char/ipmi/kcs_bmc_aspeed.c
-+++ b/drivers/char/ipmi/kcs_bmc_aspeed.c
-@@ -12,6 +12,7 @@
- #include <linux/mfd/syscon.h>
- #include <linux/module.h>
- #include <linux/of.h>
-+#include <linux/of_address.h>
- #include <linux/platform_device.h>
- #include <linux/poll.h>
- #include <linux/regmap.h>
-@@ -233,38 +234,133 @@ static const struct kcs_ioreg ast_kcs_bmc_ioregs[KCS_CHANNEL_MAX] = {
- 	{ .idr = LPC_IDR4, .odr = LPC_ODR4, .str = LPC_STR4 },
- };
+diff --git a/arch/arm/boot/dts/aspeed-g5.dtsi b/arch/arm/boot/dts/aspeed-g5.dtsi
+index 92c659c50b4c..50ba58dc5093 100644
+--- a/arch/arm/boot/dts/aspeed-g5.dtsi
++++ b/arch/arm/boot/dts/aspeed-g5.dtsi
+@@ -373,22 +373,22 @@
+ 					#size-cells = <1>;
+ 					ranges = <0x0 0x0 0x80>;
  
-+static struct kcs_bmc *aspeed_kcs_probe_of_v1(struct platform_device *pdev)
-+{
-+	struct aspeed_kcs_bmc *priv;
-+	struct device_node *np;
-+	struct kcs_bmc *kcs;
-+	u32 channel;
-+	u32 slave;
-+	int rc;
-+
-+	np = pdev->dev.of_node;
-+
-+	rc = of_property_read_u32(np, "kcs_chan", &channel);
-+	if ((rc != 0) || (channel == 0 || channel > KCS_CHANNEL_MAX)) {
-+		dev_err(&pdev->dev, "no valid 'kcs_chan' configured\n");
-+		return ERR_PTR(-EINVAL);
-+	}
-+
-+	kcs = kcs_bmc_alloc(&pdev->dev, sizeof(struct aspeed_kcs_bmc), channel);
-+	if (!kcs)
-+		return ERR_PTR(-ENOMEM);
-+
-+	priv = kcs_bmc_priv(kcs);
-+	priv->map = syscon_node_to_regmap(pdev->dev.parent->of_node);
-+	if (IS_ERR(priv->map)) {
-+		dev_err(&pdev->dev, "Couldn't get regmap\n");
-+		return ERR_PTR(-ENODEV);
-+	}
-+
-+	rc = of_property_read_u32(np, "kcs_addr", &slave);
-+	if (rc) {
-+		dev_err(&pdev->dev, "no valid 'kcs_addr' configured\n");
-+		return ERR_PTR(-EINVAL);
-+	}
-+
-+	kcs->ioreg = ast_kcs_bmc_ioregs[channel - 1];
-+	aspeed_kcs_set_address(kcs, slave);
-+
-+	return 0;
-+}
-+
-+static int aspeed_kcs_calculate_channel(const struct kcs_ioreg *regs)
-+{
-+	int i;
-+
-+	for (i = 0; i < ARRAY_SIZE(ast_kcs_bmc_ioregs); i++) {
-+		if (!memcmp(&ast_kcs_bmc_ioregs[i], regs, sizeof(*regs)))
-+			return i + 1;
-+	}
-+
-+	return -EINVAL;
-+}
-+
-+static struct kcs_bmc *aspeed_kcs_probe_of_v2(struct platform_device *pdev)
-+{
-+	struct aspeed_kcs_bmc *priv;
-+	struct device_node *np;
-+	struct kcs_ioreg ioreg;
-+	struct kcs_bmc *kcs;
-+	const __be32 *reg;
-+	int channel;
-+	u32 slave;
-+	int rc;
-+
-+	np = pdev->dev.of_node;
-+
-+	/* Don't translate addresses, we want offsets for the regmaps */
-+	reg = of_get_address(np, 0, NULL, NULL);
-+	if (!reg)
-+		return ERR_PTR(-EINVAL);
-+	ioreg.idr = be32_to_cpup(reg);
-+
-+	reg = of_get_address(np, 1, NULL, NULL);
-+	if (!reg)
-+		return ERR_PTR(-EINVAL);
-+	ioreg.odr = be32_to_cpup(reg);
-+
-+	reg = of_get_address(np, 2, NULL, NULL);
-+	if (!reg)
-+		return ERR_PTR(-EINVAL);
-+	ioreg.str = be32_to_cpup(reg);
-+
-+	channel = aspeed_kcs_calculate_channel(&ioreg);
-+	if (channel < 0)
-+		return ERR_PTR(channel);
-+
-+	kcs = kcs_bmc_alloc(&pdev->dev, sizeof(struct aspeed_kcs_bmc), channel);
-+	if (!kcs)
-+		return ERR_PTR(-ENOMEM);
-+
-+	kcs->ioreg = ioreg;
-+
-+	priv = kcs_bmc_priv(kcs);
-+	priv->map = syscon_node_to_regmap(pdev->dev.parent->of_node);
-+	if (IS_ERR(priv->map)) {
-+		dev_err(&pdev->dev, "Couldn't get regmap\n");
-+		return ERR_PTR(-ENODEV);
-+	}
-+
-+	rc = of_property_read_u32(np, "slave-reg", &slave);
-+	if (rc)
-+		return ERR_PTR(rc);
-+
-+	aspeed_kcs_set_address(kcs, slave);
-+
-+	return kcs;
-+}
-+
- static int aspeed_kcs_probe(struct platform_device *pdev)
- {
- 	struct device *dev = &pdev->dev;
--	struct aspeed_kcs_bmc *priv;
- 	struct kcs_bmc *kcs_bmc;
--	u32 chan, addr;
-+	struct device_node *np;
- 	int rc;
+-					kcs1: kcs1@0 {
+-						compatible = "aspeed,ast2500-kcs-bmc";
++					kcs1: kcs@24 {
++						compatible = "aspeed,ast2500-kcs-bmc-v2";
++						reg = <0x24 0x1>, <0x30 0x1>, <0x3c 0x1>;
+ 						interrupts = <8>;
+-						kcs_chan = <1>;
+ 						status = "disabled";
+ 					};
+-					kcs2: kcs2@0 {
+-						compatible = "aspeed,ast2500-kcs-bmc";
++					kcs2: kcs@28 {
++						compatible = "aspeed,ast2500-kcs-bmc-v2";
++						reg = <0x28 0x1>, <0x34 0x1>, <0x40 0x1>;
+ 						interrupts = <8>;
+-						kcs_chan = <2>;
+ 						status = "disabled";
+ 					};
+-					kcs3: kcs3@0 {
+-						compatible = "aspeed,ast2500-kcs-bmc";
++					kcs3: kcs@2c {
++						compatible = "aspeed,ast2500-kcs-bmc-v2";
++						reg = <0x2c 0x1>, <0x38 0x1>, <0x44 0x1>;
+ 						interrupts = <8>;
+-						kcs_chan = <3>;
+ 						status = "disabled";
+ 					};
+ 				};
+@@ -402,10 +402,10 @@
+ 					#size-cells = <1>;
+ 					ranges = <0x0 0x80 0x1e0>;
  
--	rc = of_property_read_u32(dev->of_node, "kcs_chan", &chan);
--	if ((rc != 0) || (chan == 0 || chan > KCS_CHANNEL_MAX)) {
--		dev_err(dev, "no valid 'kcs_chan' configured\n");
--		return -ENODEV;
--	}
-+	np = pdev->dev.of_node;
-+	if (of_device_is_compatible(np, "aspeed,ast2400-kcs-bmc") ||
-+			of_device_is_compatible(np, "aspeed,ast2500-kcs-bmc"))
-+		kcs_bmc = aspeed_kcs_probe_of_v1(pdev);
-+	else if (of_device_is_compatible(np, "aspeed,ast2400-kcs-bmc-v2") ||
-+			of_device_is_compatible(np, "aspeed,ast2500-kcs-bmc-v2"))
-+		kcs_bmc = aspeed_kcs_probe_of_v2(pdev);
-+	else
-+		return -EINVAL;
-+
-+	if (IS_ERR(kcs_bmc))
-+		return PTR_ERR(kcs_bmc);
+-					kcs4: kcs4@0 {
+-						compatible = "aspeed,ast2500-kcs-bmc";
++					kcs4: kcs@94 {
++						compatible = "aspeed,ast2500-kcs-bmc-v2";
++						reg = <0x94 0x1>, <0x98 0x1>, <0x9c 0x1>;
+ 						interrupts = <8>;
+-						kcs_chan = <4>;
+ 						status = "disabled";
+ 					};
  
--	rc = of_property_read_u32(dev->of_node, "kcs_addr", &addr);
--	if (rc) {
--		dev_err(dev, "no valid 'kcs_addr' configured\n");
--		return -ENODEV;
--	}
--
--	kcs_bmc = kcs_bmc_alloc(dev, sizeof(*priv), chan);
--	if (!kcs_bmc)
--		return -ENOMEM;
--
--	priv = kcs_bmc_priv(kcs_bmc);
--	priv->map = syscon_node_to_regmap(dev->parent->of_node);
--	if (IS_ERR(priv->map)) {
--		dev_err(dev, "Couldn't get regmap\n");
--		return -ENODEV;
--	}
--
--	kcs_bmc->ioreg = ast_kcs_bmc_ioregs[chan - 1];
- 	kcs_bmc->io_inputb = aspeed_kcs_inb;
- 	kcs_bmc->io_outputb = aspeed_kcs_outb;
- 
-@@ -274,7 +370,6 @@ static int aspeed_kcs_probe(struct platform_device *pdev)
- 
- 	dev_set_drvdata(dev, kcs_bmc);
- 
--	aspeed_kcs_set_address(kcs_bmc, addr);
- 	aspeed_kcs_enable_channel(kcs_bmc, true);
- 
- 	rc = misc_register(&kcs_bmc->miscdev);
-@@ -283,9 +378,10 @@ static int aspeed_kcs_probe(struct platform_device *pdev)
- 		return rc;
- 	}
- 
--	pr_info("channel=%u addr=0x%x idr=0x%x odr=0x%x str=0x%x\n",
--		chan, addr,
--		kcs_bmc->ioreg.idr, kcs_bmc->ioreg.odr, kcs_bmc->ioreg.str);
-+	dev_dbg(&pdev->dev,
-+		"Probed KCS device %d (IDR=0x%x, ODR=0x%x, STR=0x%x)\n",
-+		kcs_bmc->channel, kcs_bmc->ioreg.idr, kcs_bmc->ioreg.odr,
-+		kcs_bmc->ioreg.str);
- 
- 	return 0;
- }
-@@ -302,6 +398,8 @@ static int aspeed_kcs_remove(struct platform_device *pdev)
- static const struct of_device_id ast_kcs_bmc_match[] = {
- 	{ .compatible = "aspeed,ast2400-kcs-bmc" },
- 	{ .compatible = "aspeed,ast2500-kcs-bmc" },
-+	{ .compatible = "aspeed,ast2400-kcs-bmc-v2" },
-+	{ .compatible = "aspeed,ast2500-kcs-bmc-v2" },
- 	{ }
- };
- MODULE_DEVICE_TABLE(of, ast_kcs_bmc_match);
 -- 
 2.20.1
 
