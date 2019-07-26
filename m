@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EAAB57698E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 15:53:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 54336769A1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 15:53:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=hkUolRt3WaOXoIuegPaycejeI2TZoxIUCwamEK6R5mM=; b=ZiJHpHShhC3/sCl8RpkxJpp0uC
-	oGiXBHatYov3nYUyqS6kkPJNmuepQCwMvQ8kCELv5LvykF9Rc5Ak2fdE004Hb4wtZ/JoEunaRJswk
-	40TngSZekS8ctPy+7dzxrU4jFX4pFDwEQdoDNtv1tNRVBKwlVAA3TYZS01PYf+Wz9SsJUoyWl6HGu
-	vXKaEq5sJvaaL+MCr3TkhkkZFY4uFyoxa4/LEwaJIhh7XYYiN/+LkWGiWfDH56SS2DvwhEwY+wyCa
-	KmQGQbuCBNfp9+VwkaUcLDTtJdeuo0jkcEcvB76QQVr2QPwo1cUO08LiQPYAjOswkcn5gm7GrdVqb
-	ZdFYjdpw==;
+	bh=66yZTiqEDxEK/1M9jBY8h3kMAk+HNPmQ2UIogJCnZyQ=; b=Df2J7JGe44sXRO+1jfosTn1Uzt
+	dA9UFcZuRf+QPPIbRFmZPFiTsS/Vxki+KQhBW1MF560uh6JL3EezRETqt/FNh42DgO1hH9rBGYrr+
+	ip+RgXIJhrjhVSeXroXIE/eSWtz1hXU0Lt0JkCvkf/jnUUgRZfzQCuTF5lKXhKGTB4A9zG8CX4bA3
+	6+nChVOdXbGlYxnwb0w8MAgj5VVUH3er7hRnPEo0HkC5gKUPPY4yjJwykc8XnLUGXuQMCvqTcQnuh
+	ifjDzvPj706exYjx2NXOYDAgB6+eHxywfuY9mYDCP973QTVM8sgCVPpk36lhkTrwpXBeujPqdBnMx
+	+iPZShKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hr0er-00008d-K4; Fri, 26 Jul 2019 13:53:17 +0000
+	id 1hr0f5-0000NS-UD; Fri, 26 Jul 2019 13:53:32 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hr0dU-0007Yr-Up
+ id 1hr0dW-0007Zo-Gm
  for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 13:51:55 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C0B43152D;
- Fri, 26 Jul 2019 06:51:52 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 39BC615A2;
+ Fri, 26 Jul 2019 06:51:54 -0700 (PDT)
 Received: from usa.arm.com (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 88BD53F694;
- Fri, 26 Jul 2019 06:51:51 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 01ABC3F694;
+ Fri, 26 Jul 2019 06:51:52 -0700 (PDT)
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 04/10] firmware: arm_scmi: Separate out tx buffer handling
- and prepare to add rx
-Date: Fri, 26 Jul 2019 14:51:32 +0100
-Message-Id: <20190726135138.9858-5-sudeep.holla@arm.com>
+Subject: [PATCH v2 05/10] firmware: arm_scmi: Add mechanism to unpack message
+ headers
+Date: Fri, 26 Jul 2019 14:51:33 +0100
+Message-Id: <20190726135138.9858-6-sudeep.holla@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190726135138.9858-1-sudeep.holla@arm.com>
 References: <20190726135138.9858-1-sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_065153_124446_89D5D014 
-X-CRM114-Status: GOOD (  15.27  )
+X-CRM114-CacheID: sfid-20190726_065154_647224_4CCEED5F 
+X-CRM114-Status: UNSURE (   8.36  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,156 +72,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently we pre-allocate transmit buffers only and use the first free
-slot in that pre-allocated buffer for transmitting any new message that
-are generally originated from OS to the platform firmware.
-
-Notifications or the delayed responses on the other hand are originated
-from the platform firmware and consumes by the OS. It's better to have
-separate and dedicated pre-allocated buffers to handle the notifications.
-We can still use the transmit buffers for the delayed responses.
-
-In addition, let's prepare existing scmi_xfer_{get,put} for acquiring
-and releasing a slot to identify the right(tx/rx) buffers.
+In order to identify the message type when a response arrives, we need
+a mechanism to unpack the message header similar to packing. Let's
+add one.
 
 Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 ---
- drivers/firmware/arm_scmi/driver.c | 40 ++++++++++++++++++++----------
- 1 file changed, 27 insertions(+), 13 deletions(-)
+ drivers/firmware/arm_scmi/driver.c | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
 
 diff --git a/drivers/firmware/arm_scmi/driver.c b/drivers/firmware/arm_scmi/driver.c
-index 5a8c015bf233..97618220ea02 100644
+index 97618220ea02..9a670918b050 100644
 --- a/drivers/firmware/arm_scmi/driver.c
 +++ b/drivers/firmware/arm_scmi/driver.c
-@@ -111,7 +111,7 @@ struct scmi_chan_info {
-  * @handle: Instance of SCMI handle to send to clients
-  * @version: SCMI revision information containing protocol version,
-  *	implementation version and (sub-)vendor identification.
-- * @minfo: Message info
-+ * @tx_minfo: Universal Transmit Message management info
-  * @tx_idr: IDR object to map protocol id to Tx channel info pointer
-  * @rx_idr: IDR object to map protocol id to Rx channel info pointer
-  * @protocols_imp: List of protocols implemented, currently maximum of
-@@ -124,7 +124,7 @@ struct scmi_info {
- 	const struct scmi_desc *desc;
- 	struct scmi_revision_info version;
- 	struct scmi_handle handle;
--	struct scmi_xfers_info minfo;
-+	struct scmi_xfers_info tx_minfo;
- 	struct idr tx_idr;
- 	struct idr rx_idr;
- 	u8 *protocols_imp;
-@@ -251,6 +251,7 @@ static void scmi_tx_prepare(struct mbox_client *cl, void *m)
-  * scmi_xfer_get() - Allocate one message
-  *
-  * @handle: Pointer to SCMI entity handle
-+ * @minfo: Pointer to Tx/Rx Message management info based on channel type
-  *
-  * Helper function which is used by various message functions that are
-  * exposed to clients of this driver for allocating a message traffic event.
-@@ -261,13 +262,13 @@ static void scmi_tx_prepare(struct mbox_client *cl, void *m)
-  *
-  * Return: 0 if all went fine, else corresponding error.
-  */
--static struct scmi_xfer *scmi_xfer_get(const struct scmi_handle *handle)
-+static struct scmi_xfer *scmi_xfer_get(const struct scmi_handle *handle,
-+				       struct scmi_xfers_info *minfo)
- {
- 	u16 xfer_id;
- 	struct scmi_xfer *xfer;
- 	unsigned long flags, bit_pos;
- 	struct scmi_info *info = handle_to_scmi_info(handle);
--	struct scmi_xfers_info *minfo = &info->minfo;
+@@ -30,8 +30,14 @@
+ #include "common.h"
  
- 	/* Keep the locked section as small as possible */
- 	spin_lock_irqsave(&minfo->xfer_lock, flags);
-@@ -290,18 +291,17 @@ static struct scmi_xfer *scmi_xfer_get(const struct scmi_handle *handle)
- }
- 
- /**
-- * scmi_xfer_put() - Release a message
-+ * __scmi_xfer_put() - Release a message
-  *
-- * @handle: Pointer to SCMI entity handle
-+ * @minfo: Pointer to Tx/Rx Message management info based on channel type
-  * @xfer: message that was reserved by scmi_xfer_get
-  *
-  * This holds a spinlock to maintain integrity of internal data structures.
-  */
--void scmi_xfer_put(const struct scmi_handle *handle, struct scmi_xfer *xfer)
-+static void
-+__scmi_xfer_put(struct scmi_xfers_info *minfo, struct scmi_xfer *xfer)
- {
- 	unsigned long flags;
--	struct scmi_info *info = handle_to_scmi_info(handle);
--	struct scmi_xfers_info *minfo = &info->minfo;
- 
- 	/*
- 	 * Keep the locked section as small as possible
-@@ -332,7 +332,7 @@ static void scmi_rx_callback(struct mbox_client *cl, void *m)
- 	struct scmi_chan_info *cinfo = client_to_scmi_chan_info(cl);
- 	struct device *dev = cinfo->dev;
- 	struct scmi_info *info = handle_to_scmi_info(cinfo->handle);
--	struct scmi_xfers_info *minfo = &info->minfo;
-+	struct scmi_xfers_info *minfo = &info->tx_minfo;
- 	struct scmi_shared_mem __iomem *mem = cinfo->payload;
- 
- 	xfer_id = MSG_XTRACT_TOKEN(ioread32(&mem->msg_header));
-@@ -351,6 +351,19 @@ static void scmi_rx_callback(struct mbox_client *cl, void *m)
- 	complete(&xfer->done);
+ #define MSG_ID_MASK		GENMASK(7, 0)
++#define MSG_XTRACT_ID(hdr)	FIELD_GET(MSG_ID_MASK, (hdr))
+ #define MSG_TYPE_MASK		GENMASK(9, 8)
++#define MSG_XTRACT_TYPE(hdr)	FIELD_GET(MSG_TYPE_MASK, (hdr))
++#define MSG_TYPE_COMMAND	0
++#define MSG_TYPE_DELAYED_RESP	2
++#define MSG_TYPE_NOTIFICATION	3
+ #define MSG_PROTOCOL_ID_MASK	GENMASK(17, 10)
++#define MSG_XTRACT_PROT_ID(hdr)	FIELD_GET(MSG_PROTOCOL_ID_MASK, (hdr))
+ #define MSG_TOKEN_ID_MASK	GENMASK(27, 18)
+ #define MSG_XTRACT_TOKEN(hdr)	FIELD_GET(MSG_TOKEN_ID_MASK, (hdr))
+ #define MSG_TOKEN_MAX		(MSG_XTRACT_TOKEN(MSG_TOKEN_ID_MASK) + 1)
+@@ -214,6 +220,18 @@ static inline u32 pack_scmi_header(struct scmi_msg_hdr *hdr)
+ 		FIELD_PREP(MSG_PROTOCOL_ID_MASK, hdr->protocol_id);
  }
  
 +/**
-+ * scmi_xfer_put() - Release a transmit message
++ * unpack_scmi_header() - unpacks and records message and protocol id
 + *
-+ * @handle: Pointer to SCMI entity handle
-+ * @xfer: message that was reserved by scmi_xfer_get
++ * @msg_hdr: 32-bit packed message header sent from the platform
++ * @hdr: pointer to header to fetch message and protocol id.
 + */
-+void scmi_xfer_put(const struct scmi_handle *handle, struct scmi_xfer *xfer)
++static inline void unpack_scmi_header(u32 msg_hdr, struct scmi_msg_hdr *hdr)
 +{
-+	struct scmi_info *info = handle_to_scmi_info(handle);
-+
-+	__scmi_xfer_put(&info->tx_minfo, xfer);
++	hdr->id = MSG_XTRACT_ID(msg_hdr);
++	hdr->protocol_id = MSG_XTRACT_PROT_ID(msg_hdr);
 +}
 +
- static bool
- scmi_xfer_poll_done(const struct scmi_chan_info *cinfo, struct scmi_xfer *xfer)
- {
-@@ -440,7 +453,7 @@ int scmi_do_xfer(const struct scmi_handle *handle, struct scmi_xfer *xfer)
- }
- 
  /**
-- * scmi_xfer_get_init() - Allocate and initialise one message
-+ * scmi_xfer_get_init() - Allocate and initialise one message for transmit
+  * scmi_tx_prepare() - mailbox client callback to prepare for the transfer
   *
-  * @handle: Pointer to SCMI entity handle
-  * @msg_id: Message identifier
-@@ -461,6 +474,7 @@ int scmi_xfer_get_init(const struct scmi_handle *handle, u8 msg_id, u8 prot_id,
- 	int ret;
- 	struct scmi_xfer *xfer;
- 	struct scmi_info *info = handle_to_scmi_info(handle);
-+	struct scmi_xfers_info *minfo = &info->tx_minfo;
- 	struct device *dev = info->dev;
- 
- 	/* Ensure we have sane transfer sizes */
-@@ -468,7 +482,7 @@ int scmi_xfer_get_init(const struct scmi_handle *handle, u8 msg_id, u8 prot_id,
- 	    tx_size > info->desc->max_msg_size)
- 		return -ERANGE;
- 
--	xfer = scmi_xfer_get(handle);
-+	xfer = scmi_xfer_get(handle, minfo);
- 	if (IS_ERR(xfer)) {
- 		ret = PTR_ERR(xfer);
- 		dev_err(dev, "failed to get free message slot(%d)\n", ret);
-@@ -607,7 +621,7 @@ static int scmi_xfer_info_init(struct scmi_info *sinfo)
- 	struct scmi_xfer *xfer;
- 	struct device *dev = sinfo->dev;
- 	const struct scmi_desc *desc = sinfo->desc;
--	struct scmi_xfers_info *info = &sinfo->minfo;
-+	struct scmi_xfers_info *info = &sinfo->tx_minfo;
- 
- 	/* Pre-allocated messages, no more than what hdr.seq can support */
- 	if (WARN_ON(desc->max_msg >= MSG_TOKEN_MAX)) {
 -- 
 2.17.1
 
