@@ -2,62 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8FB2D76711
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 15:15:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CDAB776730
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 15:19:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AYwZzvJIvs6qInmQw4x8KclDiL6aY3sE35n8SQbJsic=; b=Zj5uFlxcNA/0sl
-	P5O01UOZZ3QaL6g/WkHaFyWH+z3qKV/aq1v46nWAV/lGllydopEBSWSvRYXo7QU4fMQGWo3PFSj8L
-	DBA8KYG2+4ghT9llNjRAkkIu/0OoE375tcZOC8kH39hVL+3QOPV3TrxsGZoQuEI+g73cA4yiiOTlV
-	jt0ZS5/vtgVKhMuJCLV0dxItIClGaWIvjB3/50y/wQhssmV2yIATAuqrlS2wL48cfNRv3N7r1yXoB
-	PjtJ+homkzK3plA/3oXkZBTSjjJ15bp2aaKh5VKhUNNJoKoOyvH3EA+4LPBejte1nutgnf7uG228r
-	ZWo0HxDYuKwBY1ey6nLw==;
+	List-Owner; bh=IQgg55yE2p7zA0zBSomoUfudBG2R6ws9nBwx6zGMKS0=; b=Y7Vp6u4jZaNx0d
+	FfvjlYhB7Pm770ut7NnTGWbJ3iNMasAoqqZZ22rBhpFckkXJVhKtItAnwwLpdikU0xshPdZEmmj+6
+	crvbM3FRaTCD9godNN7Xq7c/Cms2FgH18FgH2GZjoGFA52J2wZXRTW8CikyakOuyTq0FuDiFLMSPJ
+	gN4Yx4PMQIDAAneL5hIfptTb9KT1zHc54talMALwD3fZzoDyMUxuT9PD9NZdrSbPH8muhVL0BIPNS
+	imEll+8PPY3gopKS085WLl93iqNvPSf0wpXecwisNuEK9sz0CmfG2RIGdFfmwVTV4XX9aSiT3/Qnk
+	rXWE+oa4s1EhSBg4Nf6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hr04K-0000cY-G8; Fri, 26 Jul 2019 13:15:32 +0000
-Received: from asavdk4.altibox.net ([109.247.116.15])
+	id 1hr08V-0001Mv-1a; Fri, 26 Jul 2019 13:19:51 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hr040-0000Y7-9g; Fri, 26 Jul 2019 13:15:14 +0000
-Received: from ravnborg.org (unknown [158.248.194.18])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by asavdk4.altibox.net (Postfix) with ESMTPS id 1C3B480502;
- Fri, 26 Jul 2019 15:15:07 +0200 (CEST)
-Date: Fri, 26 Jul 2019 15:15:06 +0200
-From: Sam Ravnborg <sam@ravnborg.org>
-To: "dbasehore ." <dbasehore@chromium.org>
-Subject: Re: [PATCH v7 2/4] drm/panel: set display info in panel attach
-Message-ID: <20190726131506.GB17801@ravnborg.org>
-References: <20190710021659.177950-1-dbasehore@chromium.org>
- <20190710021659.177950-3-dbasehore@chromium.org>
- <20190723091945.GD787@ravnborg.org>
- <CAGAzgsonxAcOLxPSoP6Swab+AFPxWaxmC_tg87J=6Nes_awACg@mail.gmail.com>
+ id 1hr08A-0001L5-Bn; Fri, 26 Jul 2019 13:19:31 +0000
+X-UUID: 2c774dd78dd846319f53ef16bec69147-20190726
+X-UUID: 2c774dd78dd846319f53ef16bec69147-20190726
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <walter-zh.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1418355721; Fri, 26 Jul 2019 05:19:27 -0800
+Received: from MTKMBS06N1.mediatek.inc (172.21.101.129) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 26 Jul 2019 06:19:26 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs06n1.mediatek.inc (172.21.101.129) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 26 Jul 2019 21:19:24 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 26 Jul 2019 21:19:24 +0800
+Message-ID: <1564147164.515.10.camel@mtksdccf07>
+Subject: Re: [PATCH v3] kasan: add memory corruption identification for
+ software tag-based mode
+From: Walter Wu <walter-zh.wu@mediatek.com>
+To: Andrey Ryabinin <aryabinin@virtuozzo.com>
+Date: Fri, 26 Jul 2019 21:19:24 +0800
+In-Reply-To: <71df2bd5-7bc8-2c82-ee31-3f68c3b6296d@virtuozzo.com>
+References: <20190613081357.1360-1-walter-zh.wu@mediatek.com>
+ <da7591c9-660d-d380-d59e-6d70b39eaa6b@virtuozzo.com>
+ <1560447999.15814.15.camel@mtksdccf07>
+ <1560479520.15814.34.camel@mtksdccf07>
+ <1560744017.15814.49.camel@mtksdccf07>
+ <CACT4Y+Y3uS59rXf92ByQuFK_G4v0H8NNnCY1tCbr4V+PaZF3ag@mail.gmail.com>
+ <1560774735.15814.54.camel@mtksdccf07>
+ <1561974995.18866.1.camel@mtksdccf07>
+ <CACT4Y+aMXTBE0uVkeZz+MuPx3X1nESSBncgkScWvAkciAxP1RA@mail.gmail.com>
+ <ebc99ee1-716b-0b18-66ab-4e93de02ce50@virtuozzo.com>
+ <1562640832.9077.32.camel@mtksdccf07>
+ <d9fd1d5b-9516-b9b9-0670-a1885e79f278@virtuozzo.com>
+ <1562839579.5846.12.camel@mtksdccf07>
+ <37897fb7-88c1-859a-dfcc-0a5e89a642e0@virtuozzo.com>
+ <1563160001.4793.4.camel@mtksdccf07>
+ <9ab1871a-2605-ab34-3fd3-4b44a0e17ab7@virtuozzo.com>
+ <1563789162.31223.3.camel@mtksdccf07>
+ <e62da62a-2a63-3a1c-faeb-9c5561a5170c@virtuozzo.com>
+ <1564144097.515.3.camel@mtksdccf07>
+ <71df2bd5-7bc8-2c82-ee31-3f68c3b6296d@virtuozzo.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAGAzgsonxAcOLxPSoP6Swab+AFPxWaxmC_tg87J=6Nes_awACg@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.3 cv=VcLZwmh9 c=1 sm=1 tr=0
- a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
- a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=7gkXJVJtAAAA:8
- a=VwQbUJbxAAAA:8 a=CPKLS5VrouiAa9iZAqIA:9 a=CjuIK1q_8ugA:10
- a=E9Po1WZjFZOl8hwRPBS3:22 a=AjGcO6oz07-iQ99wixmX:22
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_061512_521215_16AEE87A 
-X-CRM114-Status: GOOD (  17.58  )
+X-CRM114-CacheID: sfid-20190726_061930_410814_BE383FD5 
+X-CRM114-Status: GOOD (  11.08  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [109.247.116.15 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,58 +92,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Ripard <maxime.ripard@bootlin.com>,
- Intel Graphics <intel-gfx@lists.freedesktop.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, David Airlie <airlied@linux.ie>,
- Thierry Reding <thierry.reding@gmail.com>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Rodrigo Vivi <rodrigo.vivi@intel.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, Sean Paul <sean@poorly.run>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: wsd_upstream <wsd_upstream@mediatek.com>, "Jason
+ A . Donenfeld" <Jason@zx2c4.com>, Vasily
+ Gorbik <gor@linux.ibm.com>, Arnd Bergmann <arnd@arndb.de>,
+ Linux-MM <linux-mm@kvack.org>, Andrey Konovalov <andreyknvl@google.com>,
+ LKML <linux-kernel@vger.kernel.org>, kasan-dev <kasan-dev@googlegroups.com>,
+ Pekka Enberg <penberg@kernel.org>, Martin
+ Schwidefsky <schwidefsky@de.ibm.com>, Miles Chen <miles.chen@mediatek.com>,
+ Alexander Potapenko <glider@google.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ David Rientjes <rientjes@google.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
+ Christoph Lameter <cl@linux.com>, Joonsoo Kim <iamjoonsoo.kim@lge.com>,
+ Dmitry Vyukov <dvyukov@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Derek.
-
-On Wed, Jul 24, 2019 at 03:15:19PM -0700, dbasehore . wrote:
-> Hi Sam, thanks for pointing out the potential conflict.
+On Fri, 2019-07-26 at 15:52 +0300, Andrey Ryabinin wrote:
 > 
-> On Tue, Jul 23, 2019 at 2:19 AM Sam Ravnborg <sam@ravnborg.org> wrote:
+> On 7/26/19 3:28 PM, Walter Wu wrote:
+> > On Fri, 2019-07-26 at 15:00 +0300, Andrey Ryabinin wrote:
+> >>
 > >
-> > Hi Derek.
-> >
-> > On Tue, Jul 09, 2019 at 07:16:57PM -0700, Derek Basehore wrote:
-> > > Devicetree systems can set panel orientation via a panel binding, but
-> > > there's no way, as is, to propagate this setting to the connector,
-> > > where the property need to be added.
-> > > To address this, this patch sets orientation, as well as other fixed
-> > > values for the panel, in the drm_panel_attach function. These values
-> > > are stored from probe in the drm_panel struct.
-> >
-> > This approch seems to conflict with work done by Laurent where the
-> > ownership/creation of the connector will be moved to the display controller.
-> >
-> > If I understand it correct then there should not be a 1:1 relation
-> > between a panel and a connector anymore.
+> >>>
+> >>>
+> >>> I remember that there are already the lists which you concern. Maybe we
+> >>> can try to solve those problems one by one.
+> >>>
+> >>> 1. deadlock issue? cause by kmalloc() after kfree()?
+> >>
+> >> smp_call_on_cpu()
+> > 
+> >>> 2. decrease allocation fail, to modify GFP_NOWAIT flag to GFP_KERNEL?
+> >>
+> >> No, this is not gonna work. Ideally we shouldn't have any allocations there.
+> >> It's not reliable and it hurts performance.
+> >>
+> > I dont know this meaning, we need create a qobject and put into
+> > quarantine, so may need to call kmem_cache_alloc(), would you agree this
+> > action?
+> > 
 > 
-> 
-> Can you point me to this work?
-Please take a look at the series with subject:
-"[PATCH 00/60] drm/omap: Replace custom display drivers with drm_bridge
-and drm_panel"
-Link: https://patchwork.kernel.org/cover/11034175/
+> How is this any different from what you have now?
 
-Laurent has done a great job explaining the background,
-If you look into the patched you will see the idea is that a drm_panel
-no longer get attached to a drm_controller - it will be an argument to
-get_modes().
+I originally thought you already agreed the free-list(tag-based
+quarantine) after fix those issue. If no allocation there, i think maybe
+only move generic quarantine into tag-based kasan, but its memory
+consumption is more bigger our patch. what do you think?
 
-	Sam
 
 _______________________________________________
 linux-arm-kernel mailing list
