@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C67037698B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 15:53:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EAAB57698E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 15:53:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=0xtntPwmOoKlHEjpF5IHU15nJ80g2mB8lJqTWfrTNwE=; b=U9xyO1HR0gKtINX8sTwFPE5dIL
-	HTSOU4CNgWsqteis1f1Wgx8TyqLI0fjtdr5jDd6nrmXE5ZthVO0Qz9JGjmNWY6CmDrT4ELs25g/mJ
-	V+n70R7KB3z/ci6/ntVPYe2tjXcsP/PJglWbUf2xKPJkQoSDd/4a6BhUDlgBR0jjdLKMzv77hxkNT
-	ytPA5oFVCwqk1CSobb0ILx/O1SivixxlDINRXFftvWVkLxTWIaKd+4ZPMCXchNFG6vvSux/qMZCsG
-	sieaMhaISbl5E6EnG1mVHHBqgSj7cpZ8+mSQbAiM/i5Ptm9UwVGzMyUY7IkiBPkjv3xOyE/2rIs5M
-	PiHnF+FQ==;
+	bh=hkUolRt3WaOXoIuegPaycejeI2TZoxIUCwamEK6R5mM=; b=ZiJHpHShhC3/sCl8RpkxJpp0uC
+	oGiXBHatYov3nYUyqS6kkPJNmuepQCwMvQ8kCELv5LvykF9Rc5Ak2fdE004Hb4wtZ/JoEunaRJswk
+	40TngSZekS8ctPy+7dzxrU4jFX4pFDwEQdoDNtv1tNRVBKwlVAA3TYZS01PYf+Wz9SsJUoyWl6HGu
+	vXKaEq5sJvaaL+MCr3TkhkkZFY4uFyoxa4/LEwaJIhh7XYYiN/+LkWGiWfDH56SS2DvwhEwY+wyCa
+	KmQGQbuCBNfp9+VwkaUcLDTtJdeuo0jkcEcvB76QQVr2QPwo1cUO08LiQPYAjOswkcn5gm7GrdVqb
+	ZdFYjdpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hr0ec-0008KR-0r; Fri, 26 Jul 2019 13:53:02 +0000
+	id 1hr0er-00008d-K4; Fri, 26 Jul 2019 13:53:17 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hr0dU-0007Zo-1t
- for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 13:51:53 +0000
+ id 1hr0dU-0007Yr-Up
+ for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 13:51:55 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 53AB1337;
- Fri, 26 Jul 2019 06:51:51 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C0B43152D;
+ Fri, 26 Jul 2019 06:51:52 -0700 (PDT)
 Received: from usa.arm.com (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 19ABE3F694;
- Fri, 26 Jul 2019 06:51:49 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 88BD53F694;
+ Fri, 26 Jul 2019 06:51:51 -0700 (PDT)
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 03/10] firmware: arm_scmi: Add receive channel support for
- notifications
-Date: Fri, 26 Jul 2019 14:51:31 +0100
-Message-Id: <20190726135138.9858-4-sudeep.holla@arm.com>
+Subject: [PATCH v2 04/10] firmware: arm_scmi: Separate out tx buffer handling
+ and prepare to add rx
+Date: Fri, 26 Jul 2019 14:51:32 +0100
+Message-Id: <20190726135138.9858-5-sudeep.holla@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190726135138.9858-1-sudeep.holla@arm.com>
 References: <20190726135138.9858-1-sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_065152_217325_85681B29 
-X-CRM114-Status: GOOD (  12.76  )
+X-CRM114-CacheID: sfid-20190726_065153_124446_89D5D014 
+X-CRM114-Status: GOOD (  15.27  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,120 +71,156 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-With scmi_mbox_chan_setup enabled to identify and setup both Tx and Rx,
-let's consolidate setting up of both the channels under the function
-scmi_mbox_txrx_setup.
+Currently we pre-allocate transmit buffers only and use the first free
+slot in that pre-allocated buffer for transmitting any new message that
+are generally originated from OS to the platform firmware.
 
-Since some platforms may opt not to support notifications or delayed
-response, they may not need support for Rx. Hence Rx is optional and
-failure of setting one up is not considered fatal.
+Notifications or the delayed responses on the other hand are originated
+from the platform firmware and consumes by the OS. It's better to have
+separate and dedicated pre-allocated buffers to handle the notifications.
+We can still use the transmit buffers for the delayed responses.
+
+In addition, let's prepare existing scmi_xfer_{get,put} for acquiring
+and releasing a slot to identify the right(tx/rx) buffers.
 
 Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 ---
- drivers/firmware/arm_scmi/driver.c | 30 ++++++++++++++++++++++++++----
- 1 file changed, 26 insertions(+), 4 deletions(-)
+ drivers/firmware/arm_scmi/driver.c | 40 ++++++++++++++++++++----------
+ 1 file changed, 27 insertions(+), 13 deletions(-)
 
 diff --git a/drivers/firmware/arm_scmi/driver.c b/drivers/firmware/arm_scmi/driver.c
-index 336673afd6ef..5a8c015bf233 100644
+index 5a8c015bf233..97618220ea02 100644
 --- a/drivers/firmware/arm_scmi/driver.c
 +++ b/drivers/firmware/arm_scmi/driver.c
-@@ -113,6 +113,7 @@ struct scmi_chan_info {
+@@ -111,7 +111,7 @@ struct scmi_chan_info {
+  * @handle: Instance of SCMI handle to send to clients
+  * @version: SCMI revision information containing protocol version,
   *	implementation version and (sub-)vendor identification.
-  * @minfo: Message info
+- * @minfo: Message info
++ * @tx_minfo: Universal Transmit Message management info
   * @tx_idr: IDR object to map protocol id to Tx channel info pointer
-+ * @rx_idr: IDR object to map protocol id to Rx channel info pointer
+  * @rx_idr: IDR object to map protocol id to Rx channel info pointer
   * @protocols_imp: List of protocols implemented, currently maximum of
-  *	MAX_PROTOCOLS_IMP elements allocated by the base protocol
-  * @node: List head
-@@ -125,6 +126,7 @@ struct scmi_info {
+@@ -124,7 +124,7 @@ struct scmi_info {
+ 	const struct scmi_desc *desc;
+ 	struct scmi_revision_info version;
  	struct scmi_handle handle;
- 	struct scmi_xfers_info minfo;
+-	struct scmi_xfers_info minfo;
++	struct scmi_xfers_info tx_minfo;
  	struct idr tx_idr;
-+	struct idr rx_idr;
+ 	struct idr rx_idr;
  	u8 *protocols_imp;
- 	struct list_head node;
- 	int users;
-@@ -655,13 +657,17 @@ static int scmi_mbox_chan_setup(struct scmi_info *info, struct device *dev,
- 	struct device_node *shmem, *np = dev->of_node;
- 	struct scmi_chan_info *cinfo;
- 	struct mbox_client *cl;
-+	struct idr *idr;
- 	const char *desc = tx ? "Tx" : "Rx";
+@@ -251,6 +251,7 @@ static void scmi_tx_prepare(struct mbox_client *cl, void *m)
+  * scmi_xfer_get() - Allocate one message
+  *
+  * @handle: Pointer to SCMI entity handle
++ * @minfo: Pointer to Tx/Rx Message management info based on channel type
+  *
+  * Helper function which is used by various message functions that are
+  * exposed to clients of this driver for allocating a message traffic event.
+@@ -261,13 +262,13 @@ static void scmi_tx_prepare(struct mbox_client *cl, void *m)
+  *
+  * Return: 0 if all went fine, else corresponding error.
+  */
+-static struct scmi_xfer *scmi_xfer_get(const struct scmi_handle *handle)
++static struct scmi_xfer *scmi_xfer_get(const struct scmi_handle *handle,
++				       struct scmi_xfers_info *minfo)
+ {
+ 	u16 xfer_id;
+ 	struct scmi_xfer *xfer;
+ 	unsigned long flags, bit_pos;
+ 	struct scmi_info *info = handle_to_scmi_info(handle);
+-	struct scmi_xfers_info *minfo = &info->minfo;
  
- 	/* Transmit channel is first entry i.e. index 0 */
- 	idx = tx ? 0 : 1;
-+	idr = tx ? &info->tx_idr : &info->rx_idr;
- 
- 	if (scmi_mailbox_check(np, idx)) {
--		cinfo = idr_find(&info->tx_idr, SCMI_PROTOCOL_BASE);
-+		cinfo = idr_find(idr, SCMI_PROTOCOL_BASE);
-+		if (unlikely(!cinfo)) /* Possible only if platform has no Rx */
-+			return -EINVAL;
- 		goto idr_alloc;
- 	}
- 
-@@ -703,7 +709,7 @@ static int scmi_mbox_chan_setup(struct scmi_info *info, struct device *dev,
- 	}
- 
- idr_alloc:
--	ret = idr_alloc(&info->tx_idr, cinfo, prot_id, prot_id + 1, GFP_KERNEL);
-+	ret = idr_alloc(idr, cinfo, prot_id, prot_id + 1, GFP_KERNEL);
- 	if (ret != prot_id) {
- 		dev_err(dev, "unable to allocate SCMI idr slot err %d\n", ret);
- 		return ret;
-@@ -713,6 +719,17 @@ static int scmi_mbox_chan_setup(struct scmi_info *info, struct device *dev,
- 	return 0;
+ 	/* Keep the locked section as small as possible */
+ 	spin_lock_irqsave(&minfo->xfer_lock, flags);
+@@ -290,18 +291,17 @@ static struct scmi_xfer *scmi_xfer_get(const struct scmi_handle *handle)
  }
  
-+static inline int
-+scmi_mbox_txrx_setup(struct scmi_info *info, struct device *dev, int prot_id)
+ /**
+- * scmi_xfer_put() - Release a message
++ * __scmi_xfer_put() - Release a message
+  *
+- * @handle: Pointer to SCMI entity handle
++ * @minfo: Pointer to Tx/Rx Message management info based on channel type
+  * @xfer: message that was reserved by scmi_xfer_get
+  *
+  * This holds a spinlock to maintain integrity of internal data structures.
+  */
+-void scmi_xfer_put(const struct scmi_handle *handle, struct scmi_xfer *xfer)
++static void
++__scmi_xfer_put(struct scmi_xfers_info *minfo, struct scmi_xfer *xfer)
+ {
+ 	unsigned long flags;
+-	struct scmi_info *info = handle_to_scmi_info(handle);
+-	struct scmi_xfers_info *minfo = &info->minfo;
+ 
+ 	/*
+ 	 * Keep the locked section as small as possible
+@@ -332,7 +332,7 @@ static void scmi_rx_callback(struct mbox_client *cl, void *m)
+ 	struct scmi_chan_info *cinfo = client_to_scmi_chan_info(cl);
+ 	struct device *dev = cinfo->dev;
+ 	struct scmi_info *info = handle_to_scmi_info(cinfo->handle);
+-	struct scmi_xfers_info *minfo = &info->minfo;
++	struct scmi_xfers_info *minfo = &info->tx_minfo;
+ 	struct scmi_shared_mem __iomem *mem = cinfo->payload;
+ 
+ 	xfer_id = MSG_XTRACT_TOKEN(ioread32(&mem->msg_header));
+@@ -351,6 +351,19 @@ static void scmi_rx_callback(struct mbox_client *cl, void *m)
+ 	complete(&xfer->done);
+ }
+ 
++/**
++ * scmi_xfer_put() - Release a transmit message
++ *
++ * @handle: Pointer to SCMI entity handle
++ * @xfer: message that was reserved by scmi_xfer_get
++ */
++void scmi_xfer_put(const struct scmi_handle *handle, struct scmi_xfer *xfer)
 +{
-+	int ret = scmi_mbox_chan_setup(info, dev, prot_id, true);
++	struct scmi_info *info = handle_to_scmi_info(handle);
 +
-+	if (!ret) /* Rx is optional, hence no error check */
-+		scmi_mbox_chan_setup(info, dev, prot_id, false);
-+
-+	return ret;
++	__scmi_xfer_put(&info->tx_minfo, xfer);
 +}
 +
- static inline void
- scmi_create_protocol_device(struct device_node *np, struct scmi_info *info,
- 			    int prot_id)
-@@ -726,7 +743,7 @@ scmi_create_protocol_device(struct device_node *np, struct scmi_info *info,
- 		return;
- 	}
- 
--	if (scmi_mbox_chan_setup(info, &sdev->dev, prot_id, true)) {
-+	if (scmi_mbox_txrx_setup(info, &sdev->dev, prot_id)) {
- 		dev_err(&sdev->dev, "failed to setup transport\n");
- 		scmi_device_destroy(sdev);
- 		return;
-@@ -769,12 +786,13 @@ static int scmi_probe(struct platform_device *pdev)
- 
- 	platform_set_drvdata(pdev, info);
- 	idr_init(&info->tx_idr);
-+	idr_init(&info->rx_idr);
- 
- 	handle = &info->handle;
- 	handle->dev = info->dev;
- 	handle->version = &info->version;
- 
--	ret = scmi_mbox_chan_setup(info, dev, SCMI_PROTOCOL_BASE, true);
-+	ret = scmi_mbox_txrx_setup(info, dev, SCMI_PROTOCOL_BASE);
- 	if (ret)
- 		return ret;
- 
-@@ -844,6 +862,10 @@ static int scmi_remove(struct platform_device *pdev)
- 	ret = idr_for_each(idr, scmi_mbox_free_channel, idr);
- 	idr_destroy(&info->tx_idr);
- 
-+	idr = &info->rx_idr;
-+	ret = idr_for_each(idr, scmi_mbox_free_channel, idr);
-+	idr_destroy(&info->rx_idr);
-+
- 	return ret;
+ static bool
+ scmi_xfer_poll_done(const struct scmi_chan_info *cinfo, struct scmi_xfer *xfer)
+ {
+@@ -440,7 +453,7 @@ int scmi_do_xfer(const struct scmi_handle *handle, struct scmi_xfer *xfer)
  }
  
+ /**
+- * scmi_xfer_get_init() - Allocate and initialise one message
++ * scmi_xfer_get_init() - Allocate and initialise one message for transmit
+  *
+  * @handle: Pointer to SCMI entity handle
+  * @msg_id: Message identifier
+@@ -461,6 +474,7 @@ int scmi_xfer_get_init(const struct scmi_handle *handle, u8 msg_id, u8 prot_id,
+ 	int ret;
+ 	struct scmi_xfer *xfer;
+ 	struct scmi_info *info = handle_to_scmi_info(handle);
++	struct scmi_xfers_info *minfo = &info->tx_minfo;
+ 	struct device *dev = info->dev;
+ 
+ 	/* Ensure we have sane transfer sizes */
+@@ -468,7 +482,7 @@ int scmi_xfer_get_init(const struct scmi_handle *handle, u8 msg_id, u8 prot_id,
+ 	    tx_size > info->desc->max_msg_size)
+ 		return -ERANGE;
+ 
+-	xfer = scmi_xfer_get(handle);
++	xfer = scmi_xfer_get(handle, minfo);
+ 	if (IS_ERR(xfer)) {
+ 		ret = PTR_ERR(xfer);
+ 		dev_err(dev, "failed to get free message slot(%d)\n", ret);
+@@ -607,7 +621,7 @@ static int scmi_xfer_info_init(struct scmi_info *sinfo)
+ 	struct scmi_xfer *xfer;
+ 	struct device *dev = sinfo->dev;
+ 	const struct scmi_desc *desc = sinfo->desc;
+-	struct scmi_xfers_info *info = &sinfo->minfo;
++	struct scmi_xfers_info *info = &sinfo->tx_minfo;
+ 
+ 	/* Pre-allocated messages, no more than what hdr.seq can support */
+ 	if (WARN_ON(desc->max_msg >= MSG_TOKEN_MAX)) {
 -- 
 2.17.1
 
