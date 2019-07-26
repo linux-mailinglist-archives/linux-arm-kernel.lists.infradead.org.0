@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E280676B54
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 16:17:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A6B276B53
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 16:17:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,43 +11,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	References:In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=86lZGyiQp3JF09lsTB/qcjMWye54Y0lEBX0H/YZWlzU=; b=LSyLeAJPdN+NaOyfXYhs6KZu+A
-	w0w2XGcckDBDg701abnfe7ELF5SCR070cC5QKceS9kW2ElsSpr8CzpjeL2cm0g/tqtO/NLFK/q3+B
-	J+hFoIJ9NuORLqDxRYgkAnnnJjFJNn4l5m5etrQzZ/VLNTHepSV+EhpfWcudBYiCb/1kZoX273g7S
-	ozONw2OkT0oJzy9ydVcSjJ8YMVjINwKjUHv7RQtHAVBaVsoUGQt98jOwQeivcZlxEORU9RvVBvkDY
-	hDcGcQlj0pja72zD7EdNdepXoL1ta5EACOV6g6Xx3Fi6XG9eK2yprtF2i1Ek5G1LCndcx/ZP0VGlM
-	SnZ+d80g==;
+	bh=9uwniN7WL2CeuNJoTpk691jt02jsDol5zzWgS/Pe9TQ=; b=WK9nB3Z8LZo664AJaHk93DcWwY
+	kTMRXv1ZYNlQsRS9pAGHKE8gNF02wQIzZZwyxclZyWfUwzpdbHj1e/RbyGNxiiqpf0AGxzQC+XlQf
+	ql7MHO+O8A7Y1mGzF9CvZsrFvucviOTlzzyUT1b3J1/1bIBB8U8Q+BXmk5dXBF3An/prJksMnIG25
+	wUbjOef3IPVPmuaYd3da4+FATc5IZ9O9wazex+wf9sFurkWQZe6KK0/OqCSfaSMKXdqiHcPCB+CIn
+	3YV5RRZ9TrV+22qVub3I13ZJ0RTQDOP6sJ31MDnH4P5D+5PmH4uKh5OLIrbQLBH4sDD4xmmpVIL/H
+	jsQXE7iA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hr12X-0005T6-OY; Fri, 26 Jul 2019 14:17:45 +0000
+	id 1hr12J-0005I7-4Q; Fri, 26 Jul 2019 14:17:31 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hr126-0005Gq-VT
+ id 1hr126-0005HR-VU
  for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 14:17:20 +0000
 Received: from localhost (unknown [23.100.24.84])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7FD5021850;
- Fri, 26 Jul 2019 14:17:14 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id CC75E229F9;
+ Fri, 26 Jul 2019 14:17:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564150634;
- bh=zRt1Vu26SAD3QWdxbJDS3dxVi1nMlLje/nCP+PaP0f8=;
+ s=default; t=1564150637;
+ bh=7vvR0BPXIOyC4A1NG2CnAxtG+FxJl2p9/zLtQ0tDJjg=;
  h=Date:From:To:To:To:Cc:Cc:Subject:In-Reply-To:References:From;
- b=NbWufiJQoxgCFA+Nis7ydIFg+yoxwHL8x08B5Y6Q5Jgm88re2yV5jVPeBr6ksrBZ+
- tTLIaUNCOKNwrBGKqNWhgiMK7cQ+qz91oIFTvcjOr019s3OSvqg76Ej+BYOszRxIrT
- 9r0DLjHZCb91OlggGWeTo8VfFIjz90mWz/uPeHcE=
-Date: Fri, 26 Jul 2019 14:17:13 +0000
+ b=Q1RDkCJU70Z/xZBGobrvvAdrIS+2oiiAuLkUCcDFE60oBdiXbjbfmzT+y6IVzb/3y
+ w+4GiyLDpAI9q40n2jReHXlX1dyW0aQMU0wqMxT7yJSvhXb82rykozXdoTr1NIDnqy
+ VA7y7l79oD4JUHoRkTB8IhjOeX8F7LX8Ln4AnpbQ=
+Date: Fri, 26 Jul 2019 14:17:16 +0000
 From: Sasha Levin <sashal@kernel.org>
 To: Sasha Levin <sashal@kernel.org>
 To: Anders Roxell <anders.roxell@linaro.org>
-To: will@kernel.org, mark.rutland@arm.com, catalin.marinas@arm.com
-Subject: Re: [PATCH 1/3] arm64: perf: Mark expected switch fall-through
-In-Reply-To: <20190726112716.19104-1-anders.roxell@linaro.org>
-References: <20190726112716.19104-1-anders.roxell@linaro.org>
-Message-Id: <20190726141714.7FD5021850@mail.kernel.org>
+To: maz@kernel.org, catalin.marinas@arm.com, will@kernel.org
+Subject: Re: [PATCH 1/2] arm64: KVM: regmap: Mark expected switch fall-through
+In-Reply-To: <20190726112705.19000-1-anders.roxell@linaro.org>
+References: <20190726112705.19000-1-anders.roxell@linaro.org>
+Message-Id: <20190726141716.CC75E229F9@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_071719_037555_77406F1D 
-X-CRM114-Status: UNSURE (   7.30  )
+X-CRM114-CacheID: sfid-20190726_071719_037560_7B28783B 
+X-CRM114-Status: UNSURE (   7.02  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -77,7 +77,7 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: , stable@vger.kernel.org, linux-kernel@vger.kernel.org,
+Cc: , stable@vger.kernel.org, kvmarm@lists.cs.columbia.edu,
  linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
@@ -90,45 +90,26 @@ Hi,
 [This is an automated email]
 
 This commit has been processed because it contains a "Fixes:" tag,
-fixing commit: 6ee33c2712fc ARM: hw_breakpoint: correct and simplify alignment fixup code.
+fixing commit: a892819560c4 KVM: arm64: Prepare to handle deferred save/restore of 32-bit registers.
 
-The bot has tested the following trees: v5.2.2, v5.1.19, v4.19.60, v4.14.134, v4.9.186, v4.4.186.
+The bot has tested the following trees: v5.2.2, v5.1.19, v4.19.60.
 
-v5.2.2: Build OK!
-v5.1.19: Build OK!
-v4.19.60: Build OK!
-v4.14.134: Failed to apply! Possible dependencies:
-    18ff57b22061 ("hw_breakpoint: Factor out __modify_user_hw_breakpoint() function")
-    195bce73bd10 ("signal/sh: Use force_sig_fault in hw_breakpoint_handler")
-    705feaf321c3 ("hw_breakpoint: Add perf_event_attr fields check in __modify_user_hw_breakpoint()")
-    8c449753a681 ("perf/arch/arm64: Implement hw_breakpoint_arch_parse()")
-    8e983ff9ac02 ("perf/hw_breakpoint: Pass arch breakpoint struct to arch_check_bp_in_kernelspace()")
-    9a4903dde2c8 ("perf/hw_breakpoint: Split attribute parse and commit")
-    ea6a9d530c17 ("hw_breakpoint: Add modify_bp_slot() function")
+v5.2.2: Failed to apply! Possible dependencies:
+    fdec2a9ef853 ("KVM: arm64: Migrate _elx sysreg accessors to msr_s/mrs_s")
 
-v4.9.186: Failed to apply! Possible dependencies:
-    0ddb8e0b784b ("arm64: Allow hw watchpoint of length 3,5,6 and 7")
-    18ff57b22061 ("hw_breakpoint: Factor out __modify_user_hw_breakpoint() function")
-    195bce73bd10 ("signal/sh: Use force_sig_fault in hw_breakpoint_handler")
-    705feaf321c3 ("hw_breakpoint: Add perf_event_attr fields check in __modify_user_hw_breakpoint()")
-    8c449753a681 ("perf/arch/arm64: Implement hw_breakpoint_arch_parse()")
-    8e983ff9ac02 ("perf/hw_breakpoint: Pass arch breakpoint struct to arch_check_bp_in_kernelspace()")
-    9a4903dde2c8 ("perf/hw_breakpoint: Split attribute parse and commit")
-    b08fb180bb88 ("arm64: Allow hw watchpoint at varied offset from base address")
-    ea6a9d530c17 ("hw_breakpoint: Add modify_bp_slot() function")
+v5.1.19: Failed to apply! Possible dependencies:
+    73433762fcae ("KVM: arm64/sve: System register context switch and access support")
+    be604c616ca7 ("arm64: sysreg: Make mrs_s and msr_s macros work with Clang and LTO")
+    fdec2a9ef853 ("KVM: arm64: Migrate _elx sysreg accessors to msr_s/mrs_s")
 
-v4.4.186: Failed to apply! Possible dependencies:
-    0ddb8e0b784b ("arm64: Allow hw watchpoint of length 3,5,6 and 7")
-    18ff57b22061 ("hw_breakpoint: Factor out __modify_user_hw_breakpoint() function")
-    195bce73bd10 ("signal/sh: Use force_sig_fault in hw_breakpoint_handler")
-    6ec7026ac01f ("xtensa: use context structure for debug exceptions")
-    705feaf321c3 ("hw_breakpoint: Add perf_event_attr fields check in __modify_user_hw_breakpoint()")
-    8c449753a681 ("perf/arch/arm64: Implement hw_breakpoint_arch_parse()")
-    8e983ff9ac02 ("perf/hw_breakpoint: Pass arch breakpoint struct to arch_check_bp_in_kernelspace()")
-    9a4903dde2c8 ("perf/hw_breakpoint: Split attribute parse and commit")
-    b08fb180bb88 ("arm64: Allow hw watchpoint at varied offset from base address")
-    c91e02bd9702 ("xtensa: support hardware breakpoints/watchpoints")
-    ea6a9d530c17 ("hw_breakpoint: Add modify_bp_slot() function")
+v4.19.60: Failed to apply! Possible dependencies:
+    84135d3d18da ("KVM: arm/arm64: consolidate arch timer trap handlers")
+    8a411b060f82 ("KVM: arm/arm64: Remove arch timer workqueue")
+    9e01dc76be6a ("KVM: arm/arm64: arch_timer: Assign the phys timer on VHE systems")
+    accb99bcd0ca ("KVM: arm/arm64: Simplify bg_timer programming")
+    bd7d95cafb49 ("arm64: KVM: Consistently advance singlestep when emulating instructions")
+    e604dd5d45c7 ("KVM: arm/arm64: timer: Rework data structures for multiple timers")
+    fdec2a9ef853 ("KVM: arm64: Migrate _elx sysreg accessors to msr_s/mrs_s")
 
 
 NOTE: The patch will not be queued to stable trees until it is upstream.
