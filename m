@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 54336769A1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 15:53:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1CC51769AC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 15:53:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=66yZTiqEDxEK/1M9jBY8h3kMAk+HNPmQ2UIogJCnZyQ=; b=Df2J7JGe44sXRO+1jfosTn1Uzt
-	dA9UFcZuRf+QPPIbRFmZPFiTsS/Vxki+KQhBW1MF560uh6JL3EezRETqt/FNh42DgO1hH9rBGYrr+
-	ip+RgXIJhrjhVSeXroXIE/eSWtz1hXU0Lt0JkCvkf/jnUUgRZfzQCuTF5lKXhKGTB4A9zG8CX4bA3
-	6+nChVOdXbGlYxnwb0w8MAgj5VVUH3er7hRnPEo0HkC5gKUPPY4yjJwykc8XnLUGXuQMCvqTcQnuh
-	ifjDzvPj706exYjx2NXOYDAgB6+eHxywfuY9mYDCP973QTVM8sgCVPpk36lhkTrwpXBeujPqdBnMx
-	+iPZShKw==;
+	bh=BCeYN57CL3OCge57h6RQeFxyTYTg/dNawVYSF80kP+g=; b=dha5cWx20DhkFile4MassanU5q
+	0L6rcUGZDfUEI1MSOwf3dTM66tFdAN7SToS65NKKgLkxA84ULnc0f9yu7v5gPqxyEkSbmjFv9DnMd
+	vP71IqTcpjM4F4PMdNzkWQPSsVPkMDKaeSZBTkKLkJr8Y09eVYxI6bylNm6uqO+fZ861wIClmKIWh
+	AhW6Tt16ZP6WLGA2nj8cc98Y4PL0eVfFoPHh+Jf9Erj2Ogc+q2v5T/Jkw1HvCdOxStnGZyBS4lczI
+	7NTUSf0CPWlYCqETzwBoTbJWvfuvJhtyjvmAD1gg46atQcrgOHt6IdE/Qr8xZwuOQQdPDaQOMFbVK
+	/fLy4khw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hr0f5-0000NS-UD; Fri, 26 Jul 2019 13:53:32 +0000
+	id 1hr0fR-0000gp-90; Fri, 26 Jul 2019 13:53:53 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hr0dW-0007Zo-Gm
- for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 13:51:55 +0000
+ id 1hr0dX-0007Yr-Ti
+ for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 13:51:57 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 39BC615A2;
- Fri, 26 Jul 2019 06:51:54 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A6D42337;
+ Fri, 26 Jul 2019 06:51:55 -0700 (PDT)
 Received: from usa.arm.com (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 01ABC3F694;
- Fri, 26 Jul 2019 06:51:52 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 6E2F93F694;
+ Fri, 26 Jul 2019 06:51:54 -0700 (PDT)
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 05/10] firmware: arm_scmi: Add mechanism to unpack message
- headers
-Date: Fri, 26 Jul 2019 14:51:33 +0100
-Message-Id: <20190726135138.9858-6-sudeep.holla@arm.com>
+Subject: [PATCH v2 06/10] firmware: arm_scmi: Add support for asynchronous
+ commands and delayed response
+Date: Fri, 26 Jul 2019 14:51:34 +0100
+Message-Id: <20190726135138.9858-7-sudeep.holla@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190726135138.9858-1-sudeep.holla@arm.com>
 References: <20190726135138.9858-1-sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_065154_647224_4CCEED5F 
-X-CRM114-Status: UNSURE (   8.36  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190726_065156_106549_B9F83326 
+X-CRM114-Status: GOOD (  16.02  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -72,52 +71,132 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In order to identify the message type when a response arrives, we need
-a mechanism to unpack the message header similar to packing. Let's
-add one.
+Messages that are sent to platform, also known as commands and can be:
+
+1. Synchronous commands that block the channel until the requested work
+has been completed. The platform responds to these commands over the
+same channel and hence can't be used to send another command until the
+previous command has completed.
+
+2. Asynchronous commands on the other hand, the platform schedules the
+requested work to complete later in time and returns almost immediately
+freeing the channel for new commands. The response indicates the success
+or failure in the ability to schedule the requested work. When the work
+has completed, the platform sends an additional delayed response message.
+
+Using the same transmit buffer used for sending the asynchronous command
+even for the delayed response corresponding to it simplifies handling of
+the delayed response. It's the caller of asynchronous command that is
+responsible for allocating the completion flag that scmi driver can
+complete to indicate the arrival of delayed response.
 
 Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 ---
- drivers/firmware/arm_scmi/driver.c | 18 ++++++++++++++++++
- 1 file changed, 18 insertions(+)
+ drivers/firmware/arm_scmi/common.h |  6 ++++-
+ drivers/firmware/arm_scmi/driver.c | 43 ++++++++++++++++++++++++++++--
+ 2 files changed, 46 insertions(+), 3 deletions(-)
 
+diff --git a/drivers/firmware/arm_scmi/common.h b/drivers/firmware/arm_scmi/common.h
+index a9eee62c7142..43884e4ceac5 100644
+--- a/drivers/firmware/arm_scmi/common.h
++++ b/drivers/firmware/arm_scmi/common.h
+@@ -84,17 +84,21 @@ struct scmi_msg {
+  * @rx: Receive message, the buffer should be pre-allocated to store
+  *	message. If request-ACK protocol is used, we can reuse the same
+  *	buffer for the rx path as we use for the tx path.
+- * @done: completion event
++ * @done: command message transmit completion event
++ * @async: pointer to delayed response message received event completion
+  */
+ struct scmi_xfer {
+ 	struct scmi_msg_hdr hdr;
+ 	struct scmi_msg tx;
+ 	struct scmi_msg rx;
+ 	struct completion done;
++	struct completion *async_done;
+ };
+ 
+ void scmi_xfer_put(const struct scmi_handle *h, struct scmi_xfer *xfer);
+ int scmi_do_xfer(const struct scmi_handle *h, struct scmi_xfer *xfer);
++int scmi_do_xfer_with_response(const struct scmi_handle *h,
++			       struct scmi_xfer *xfer);
+ int scmi_xfer_get_init(const struct scmi_handle *h, u8 msg_id, u8 prot_id,
+ 		       size_t tx_size, size_t rx_size, struct scmi_xfer **p);
+ int scmi_handle_put(const struct scmi_handle *handle);
 diff --git a/drivers/firmware/arm_scmi/driver.c b/drivers/firmware/arm_scmi/driver.c
-index 97618220ea02..9a670918b050 100644
+index 9a670918b050..59f7db1a66c2 100644
 --- a/drivers/firmware/arm_scmi/driver.c
 +++ b/drivers/firmware/arm_scmi/driver.c
-@@ -30,8 +30,14 @@
- #include "common.h"
+@@ -345,6 +345,8 @@ __scmi_xfer_put(struct scmi_xfers_info *minfo, struct scmi_xfer *xfer)
+  */
+ static void scmi_rx_callback(struct mbox_client *cl, void *m)
+ {
++	u8 msg_type;
++	u32 msg_hdr;
+ 	u16 xfer_id;
+ 	struct scmi_xfer *xfer;
+ 	struct scmi_chan_info *cinfo = client_to_scmi_chan_info(cl);
+@@ -353,7 +355,12 @@ static void scmi_rx_callback(struct mbox_client *cl, void *m)
+ 	struct scmi_xfers_info *minfo = &info->tx_minfo;
+ 	struct scmi_shared_mem __iomem *mem = cinfo->payload;
  
- #define MSG_ID_MASK		GENMASK(7, 0)
-+#define MSG_XTRACT_ID(hdr)	FIELD_GET(MSG_ID_MASK, (hdr))
- #define MSG_TYPE_MASK		GENMASK(9, 8)
-+#define MSG_XTRACT_TYPE(hdr)	FIELD_GET(MSG_TYPE_MASK, (hdr))
-+#define MSG_TYPE_COMMAND	0
-+#define MSG_TYPE_DELAYED_RESP	2
-+#define MSG_TYPE_NOTIFICATION	3
- #define MSG_PROTOCOL_ID_MASK	GENMASK(17, 10)
-+#define MSG_XTRACT_PROT_ID(hdr)	FIELD_GET(MSG_PROTOCOL_ID_MASK, (hdr))
- #define MSG_TOKEN_ID_MASK	GENMASK(27, 18)
- #define MSG_XTRACT_TOKEN(hdr)	FIELD_GET(MSG_TOKEN_ID_MASK, (hdr))
- #define MSG_TOKEN_MAX		(MSG_XTRACT_TOKEN(MSG_TOKEN_ID_MASK) + 1)
-@@ -214,6 +220,18 @@ static inline u32 pack_scmi_header(struct scmi_msg_hdr *hdr)
- 		FIELD_PREP(MSG_PROTOCOL_ID_MASK, hdr->protocol_id);
+-	xfer_id = MSG_XTRACT_TOKEN(ioread32(&mem->msg_header));
++	msg_hdr = ioread32(&mem->msg_header);
++	msg_type = MSG_XTRACT_TYPE(msg_hdr);
++	xfer_id = MSG_XTRACT_TOKEN(msg_hdr);
++
++	if (msg_type == MSG_TYPE_NOTIFICATION)
++		return; /* Notifications not yet supported */
+ 
+ 	/* Are we even expecting this? */
+ 	if (!test_bit(xfer_id, minfo->xfer_alloc_table)) {
+@@ -366,7 +373,11 @@ static void scmi_rx_callback(struct mbox_client *cl, void *m)
+ 	scmi_dump_header_dbg(dev, &xfer->hdr);
+ 
+ 	scmi_fetch_response(xfer, mem);
+-	complete(&xfer->done);
++
++	if (msg_type == MSG_TYPE_DELAYED_RESP)
++		complete(xfer->async_done);
++	else
++		complete(&xfer->done);
  }
  
+ /**
+@@ -470,6 +481,34 @@ int scmi_do_xfer(const struct scmi_handle *handle, struct scmi_xfer *xfer)
+ 	return ret;
+ }
+ 
++#define SCMI_MAX_RESPONSE_TIMEOUT	(2 * MSEC_PER_SEC)
++
 +/**
-+ * unpack_scmi_header() - unpacks and records message and protocol id
++ * scmi_do_xfer_with_response() - Do one transfer and wait until the delayed
++ *	response is received
 + *
-+ * @msg_hdr: 32-bit packed message header sent from the platform
-+ * @hdr: pointer to header to fetch message and protocol id.
++ * @handle: Pointer to SCMI entity handle
++ * @xfer: Transfer to initiate and wait for response
++ *
++ * Return: -ETIMEDOUT in case of no delayed response, if transmit error,
++ *	return corresponding error, else if all goes well, return 0.
 + */
-+static inline void unpack_scmi_header(u32 msg_hdr, struct scmi_msg_hdr *hdr)
++int scmi_do_xfer_with_response(const struct scmi_handle *handle,
++			       struct scmi_xfer *xfer)
 +{
-+	hdr->id = MSG_XTRACT_ID(msg_hdr);
-+	hdr->protocol_id = MSG_XTRACT_PROT_ID(msg_hdr);
++	int ret, timeout = msecs_to_jiffies(SCMI_MAX_RESPONSE_TIMEOUT);
++	DECLARE_COMPLETION_ONSTACK(async_response);
++
++	xfer->async_done = &async_response;
++
++	ret = scmi_do_xfer(handle, xfer);
++	if (!ret && !wait_for_completion_timeout(xfer->async_done, timeout))
++		ret = -ETIMEDOUT;
++
++	xfer->async_done = NULL;
++	return ret;
 +}
 +
  /**
-  * scmi_tx_prepare() - mailbox client callback to prepare for the transfer
+  * scmi_xfer_get_init() - Allocate and initialise one message for transmit
   *
 -- 
 2.17.1
