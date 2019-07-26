@@ -2,61 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A333176101
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 10:39:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E5F0D76109
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 10:41:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9tM92o7KFpC9lv2bqnlMwtnKai65QWp4juu5BHlSddw=; b=dkIj/KkiIAWuVM
-	S/mm4DpWoVkMLSQUV5rWkahnyeA+NGPjQBuyV8+tr+ES+Ro9fX3w48xK69mn74Bdjvru4hAVMz5KT
-	+pBbGQazDQ+kLx8C+7xhVnOlPsX2ejtgRY+0p0CnL34TFFb9FDv6kQ5miNsqancWNZ1dEcf0fs7LP
-	uu7NvLodAGcyyt1DNKKcPyF9iRuKEuLYz+0qIKRAo4rkvwrMFOSjy1aJjRvZmaUGEyOCEJWbtcg2Q
-	UvREXEA1846zmsrssIPs13eyUGy9vSLnBtCmBVI/Wbf8LU+1TTpn1nlytSNBMyHK5AmNmttXbrdLQ
-	UgArJVrHrtkB6va1lp7Q==;
+	List-Owner; bh=2KL8GmcnbV5ZBn9071x1CNRofrFvaEhNcYz4yGWGnTo=; b=Sjwc6+D7MS1AUa
+	ke3XPPhXCJa0rFkSbkUOTtWNvaUtUIYw0RYUCp0kzZyMnev6nd1M5Lkn0RkohkMCHSeYPMpBsC7T7
+	Z7RUjLCHChYlZ76ZXwBKuGdgmimYewgUkwGpXgUlbeMU7krmkyoyHK8nLcYEgfNKCtTD15viypIu/
+	+b6wEA7PUPVr0UUdFxeinmSF5hlxYZ3M/KjEyB1g4sFwKgflwNVoBSHowcLeRBxRphAR3fQJImWZ0
+	lXVPQBS3wNjP2PFKIXdE0Gg9DRynzNBZJ9nq3wUuDnk0FdVMfMgUY93YxzLoAXvEI3wpX4ERsUv4e
+	tah0S5IA6mwD/x6qjwPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqvks-00039C-JU; Fri, 26 Jul 2019 08:39:10 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1hqvnZ-00057y-8I; Fri, 26 Jul 2019 08:41:57 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqvkQ-00038g-O8
- for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 08:38:44 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 24CCF1A0413;
- Fri, 26 Jul 2019 10:38:41 +0200 (CEST)
-Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
- [134.27.226.22])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 17CB21A0966;
- Fri, 26 Jul 2019 10:38:41 +0200 (CEST)
-Received: from fsr-ub1664-175.ea.freescale.net
- (fsr-ub1664-175.ea.freescale.net [10.171.82.40])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id F0415205E6;
- Fri, 26 Jul 2019 10:38:40 +0200 (CEST)
-Date: Fri, 26 Jul 2019 11:38:40 +0300
-From: Abel Vesa <abel.vesa@nxp.com>
-To: Anson.Huang@nxp.com
-Subject: Re: [PATCH] clk: imx8mn: Keep uart clocks on for early console
-Message-ID: <20190726083840.k26dyjgpq4b56gab@fsr-ub1664-175>
-References: <20190724075017.11003-1-Anson.Huang@nxp.com>
+ id 1hqvn8-00057T-Mx
+ for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 08:41:32 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6EBFF2166E;
+ Fri, 26 Jul 2019 08:41:29 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1564130489;
+ bh=u9hE5TPAuhfE3I5+DNmN/ANWL4HwopSUkPDD7JGenyM=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=AqDr367cELkWdsKg7/xTTW+mMoF2lxvrD+4VoeryF+ymEc4dncJKYUB9VHdcnJtWw
+ 6HGs9KVD2otlVWphduu3Ov2QGZCNwZlvcsGOuBEMGgyWtRnFLrHgnJBsPBZabMwz5y
+ W0IhqbTPXTMFAIkB+5ESIEvgjDm5JsljlEJbSU2M=
+Date: Fri, 26 Jul 2019 10:41:27 +0200
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+Subject: Re: [Regression] Missing device nodes for ETR, ETF and STM after
+ CONFIG_UEVENT_HELPER=n
+Message-ID: <20190726084127.GA28470@kroah.com>
+References: <cfe09a46-462f-633a-37c2-52f8bfc0ffb2@codeaurora.org>
+ <20190726070429.GA15714@kroah.com>
+ <165028a7-ff12-dd28-cc4c-57a3961dbb40@codeaurora.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190724075017.11003-1-Anson.Huang@nxp.com>
-User-Agent: NeoMutt/20180622
-X-Virus-Scanned: ClamAV using ClamSMTP
+In-Reply-To: <165028a7-ff12-dd28-cc4c-57a3961dbb40@codeaurora.org>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_013842_930935_B8D8980A 
-X-CRM114-Status: GOOD (  12.49  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190726_014130_792015_CDB027CC 
+X-CRM114-Status: GOOD (  23.16  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,60 +76,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: sboyd@kernel.org, shawnguo@kernel.org, mturquette@baylibre.com,
- linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org, Linux-imx@nxp.com,
- kernel@pengutronix.de, festevam@gmail.com, s.hauer@pengutronix.de,
+Cc: Geert Uytterhoeven <geert+renesas@glider.be>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Leo Yan <leo.yan@linaro.org>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 19-07-24 15:50:17, Anson.Huang@nxp.com wrote:
-> From: Anson Huang <Anson.Huang@nxp.com>
+On Fri, Jul 26, 2019 at 01:50:27PM +0530, Sai Prakash Ranjan wrote:
+> On 7/26/2019 12:34 PM, Greg Kroah-Hartman wrote:
+> > On Fri, Jul 26, 2019 at 11:49:19AM +0530, Sai Prakash Ranjan wrote:
+> > > Hi,
+> > > 
+> > > When trying to test my coresight patches, I found that etr,etf and stm
+> > > device nodes are missing from /dev.
+> > 
+> > I have no idea what those device nodes are.
+> > 
+> > > Bisection gives this as the bad commit.
+> > > 
+> > > 1be01d4a57142ded23bdb9e0c8d9369e693b26cc is the first bad commit
+> > > commit 1be01d4a57142ded23bdb9e0c8d9369e693b26cc
+> > > Author: Geert Uytterhoeven <geert+renesas@glider.be>
+> > > Date:   Thu Mar 14 12:13:50 2019 +0100
+> > > 
+> > >      driver: base: Disable CONFIG_UEVENT_HELPER by default
+> > > 
+> > >      Since commit 7934779a69f1184f ("Driver-Core: disable /sbin/hotplug by
+> > >      default"), the help text for the /sbin/hotplug fork-bomb says
+> > >      "This should not be used today [...] creates a high system load, or
+> > >      [...] out-of-memory situations during bootup".  The rationale for this
+> > >      was that no recent mainstream system used this anymore (in 2010!).
+> > > 
+> > >      A few years later, the complete uevent helper support was made optional
+> > >      in commit 86d56134f1b67d0c ("kobject: Make support for uevent_helper
+> > >      optional.").  However, if was still left enabled by default, to support
+> > >      ancient userland.
+> > > 
+> > >      Time passed by, and nothing should use this anymore, so it can be
+> > >      disabled by default.
+> > > 
+> > >      Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> > >      Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+> > > 
+> > >   drivers/base/Kconfig | 1 -
+> > >   1 file changed, 1 deletion(-)
+> > > 
+> > > 
+> > > Any idea on this?
+> > 
+> > That means that who ever created those device nodes is relying on udev
+> > to do this, and is not doing the correct thing within the kernel and
+> > using devtmpfs.
+> > 
+> > Any pointers to where in the kernel those devices are trying to be
+> > created?
+> > 
 > 
-> Call imx_register_uart_clocks() API to keep uart clocks enabled
-> when earlyprintk or earlycon is active.
+> Somewhere in drivers/hwtracing/coresight/* probably. I am not sure,
+> Mathieu/Suzuki would be able to point you to the exact code.
 > 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> Also just to add on some more details, I am using *initramfs*
 
-Reviewed-by: Abel Vesa <abel.vesa@nxp.com>
+Are you using devtmpfs for your /dev/ mount?
 
-> ---
->  drivers/clk/imx/clk-imx8mn.c | 10 ++++++++++
->  1 file changed, 10 insertions(+)
-> 
-> diff --git a/drivers/clk/imx/clk-imx8mn.c b/drivers/clk/imx/clk-imx8mn.c
-> index 07481a5..ecd1062 100644
-> --- a/drivers/clk/imx/clk-imx8mn.c
-> +++ b/drivers/clk/imx/clk-imx8mn.c
-> @@ -355,6 +355,14 @@ static const char * const imx8mn_clko2_sels[] = {"osc_24m", "sys_pll2_200m", "sy
->  static struct clk *clks[IMX8MN_CLK_END];
->  static struct clk_onecell_data clk_data;
->  
-> +static struct clk ** const uart_clks[] = {
-> +	&clks[IMX8MN_CLK_UART1_ROOT],
-> +	&clks[IMX8MN_CLK_UART2_ROOT],
-> +	&clks[IMX8MN_CLK_UART3_ROOT],
-> +	&clks[IMX8MN_CLK_UART4_ROOT],
-> +	NULL
-> +};
-> +
->  static int imx8mn_clocks_probe(struct platform_device *pdev)
->  {
->  	struct device *dev = &pdev->dev;
-> @@ -612,6 +620,8 @@ static int imx8mn_clocks_probe(struct platform_device *pdev)
->  		goto unregister_clks;
->  	}
->  
-> +	imx_register_uart_clocks(uart_clks);
-> +
->  	return 0;
->  
->  unregister_clks:
-> -- 
-> 2.7.4
-> 
+If you enable this option, what does:
+	ls -l /dev/etr
+	ls -l /dev/etf
+	ls -l /dev/stm
+result in?
+
+What are these device nodes for?  Are they symlinks?  Real devices that
+show up in /sys/dev/char/ as a real value?  Or something else?
+
+Do you have udev rules that create these nodes somehow?
+
+thanks,
+
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
