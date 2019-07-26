@@ -2,91 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D620B7636F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 12:24:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4ECEA7637C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 12:27:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Q2lJypdnLm4N/xNpGL0wvy14WTlXMJzRiRGhJrIPXrk=; b=emkc8pCPFcHh32zwrkBpXvZiM
-	S+v2O15o8jXTNPwt90YNnZraBzexhqzpL0ydYUBCbs4YsjSJQwFf5xItMLhei2o54ACd1C+A7GM+W
-	CXLtXY+z9coXm/+PuytMNTAvIvpslMxqvm3a6tOh68xhHOZUbvuPptmVJZgoLgEU2CWloAR+FjE9C
-	wfc3iFp/BmOCeMp43P0Lnqz1UlxS+nPlZmMTJG9zgC7rbbOERzWmbUsxV2uJaTFGgwVQ4gMlMyu72
-	PkoIQiJWNYHlkpNUBgVign8D5T/XDQAUvDN+ROEFz0V55g3vU6IP2ZeiRdDCfs0ee6UTBOeqp4TeN
-	V535FI6fw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=jMI7xdI6XZ8GOPkz6EphTjwyu43sF/vwcOYUBJFFaWg=; b=oIfa6zNI01u8h6
+	BnXV1EdSBnalaWRXLSsn8m0rRuRIvj/Y+6DTTzAOOf7iealF5dzUdG+dcRlVssqMEh+Vx/5Y/HlpD
+	wwsikeetXaGXMcAofQJrPTSMzGgDrCiwJgO0iQ9yWgk0iOx9/KZy1k2TX+SV+oOg6zQxIy3L4x3oR
+	Q0l4WaKCSXx15hDDFm7vVLHCIS3ZRxYu9RV6gfklM++T1eOKvJZ5mra+8UW0Sioq9hxKBLI688yTd
+	+dxghziURRwvEWCFaYIXqERmaRJwCdTn6nMGCHfqOV9EfQrxJB5Uj3q3LoRWMkEqR50ZsWaNrU9AZ
+	EuclaJNCsTI8NRC91Utg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqxOs-0002kB-De; Fri, 26 Jul 2019 10:24:34 +0000
-Received: from smtp.codeaurora.org ([198.145.29.96])
+	id 1hqxS6-0004Qc-8U; Fri, 26 Jul 2019 10:27:54 +0000
+Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqxOh-0002jk-Hs
- for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 10:24:25 +0000
-Received: by smtp.codeaurora.org (Postfix, from userid 1000)
- id 3EA456050D; Fri, 26 Jul 2019 10:24:23 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1564136663;
- bh=TzDJ/1a8Jv6h+ZazwSpLHZM38+ZTBA4zhoCVFYPruq8=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=D+Cvxw0TGr9ZqOempkbtCTjMfdsAdTC5Z/OaFpyMl1pfdmWGFBk+TScGTJTBLXdwu
- JXxapYwKx3S0iDhVgDs0YSypkZKcrREI5xjESlncoCRNlZLktp09BK37FVN/WoYqMR
- CmC7wVFF9y32BoD6urylpaqo3f0nmTgAZq1P3wog=
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- pdx-caf-mail.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
- DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
- version=3.4.0
-Received: from [10.79.136.27]
- (blr-bdr-fw-01_globalnat_allzones-outside.qualcomm.com [103.229.18.19])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- (Authenticated sender: saiprakash.ranjan@smtp.codeaurora.org)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 3B4C560214;
- Fri, 26 Jul 2019 10:24:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1564136662;
- bh=TzDJ/1a8Jv6h+ZazwSpLHZM38+ZTBA4zhoCVFYPruq8=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=fR7Q5d/Hf8709sAEvj7w9u03kxUR2pN8X8YSFl08pWDPc6Zwp058ngTb3jpjeLQpS
- Gc/LUgxwhk9DbGiKShCv9q7tNmsxQp+DnILHK9zLlQE4tHLe001v0qYoobuIpx6jRE
- ZP5Ltzw+QKoDopjZOGR9TCUYaajDm1aWgKBdLk0o=
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 3B4C560214
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: pdx-caf-mail.web.codeaurora.org; spf=none
- smtp.mailfrom=saiprakash.ranjan@codeaurora.org
-Subject: Re: [Regression] Missing device nodes for ETR, ETF and STM after
- CONFIG_UEVENT_HELPER=n
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-References: <cfe09a46-462f-633a-37c2-52f8bfc0ffb2@codeaurora.org>
- <20190726070429.GA15714@kroah.com>
- <165028a7-ff12-dd28-cc4c-57a3961dbb40@codeaurora.org>
- <20190726084127.GA28470@kroah.com>
- <097942a1-6914-2542-450f-65a6147dc7aa@codeaurora.org>
- <6d48f996-6297-dc69-250b-790be6d2670c@codeaurora.org>
- <20190726101925.GA22476@kroah.com>
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-Message-ID: <2312327e-cfaa-67b0-c121-4af74e11eacf@codeaurora.org>
-Date: Fri, 26 Jul 2019 15:54:18 +0530
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1hqxRw-0004Pm-92
+ for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 10:27:45 +0000
+Received: by mail-ed1-x541.google.com with SMTP id w13so52872925eds.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 26 Jul 2019 03:27:43 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=fgttaSu7/U77TvA6+GrlVNqDjBSP1cH/fJcE2FiVPSc=;
+ b=Xq7dFVT2BAh2OKlWZADYRxsgSTDnQyREt3lSe51iX1a4VbZ5tbKueNdrd8Tl55F0fH
+ jE3HFiLoW8gJBQlPDGPk09oV2PXFmSxEwhfiga28IsSjQuAMyh4iZz9h/hztR9xouEnd
+ sqIB7z6gCSaIlN39Lb+vWX3jNLyTJ3SmcVHqvm1x0WsB54H9SOBztWS7rYaON6kYgWk5
+ bhSswDrnGIsOjLJshXfCPLprUZ4ieqHvqFCwH8muxoHfuCX/cVp+2R3n3jCysfYL+MwC
+ t99y8R7UaVlbRoQhdBAUbmy7gOX+/ySaOLp618i6NcMZT6wRk6d4Z0iX4GpyPt/RNhGW
+ iYZw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=fgttaSu7/U77TvA6+GrlVNqDjBSP1cH/fJcE2FiVPSc=;
+ b=NwUgHmfjIeIAK1GtkRYkgrpLZVdHhOcoERUnFkE/gZah0SgGpHc++68isA50LzgzlD
+ 5X+q145Qbd/mhXd+LvBwmcM27thCoY04u9xERe0UhnIx3s3jDAlWssIiHiXD8GWFuI6o
+ Do0O+4+9TxHFiR905kk3WNXQS4McUar3XjOEe4OkWrobkGIY17FFA+l6JPJ9xkwVrfU3
+ HDr7LoazB0yKH9fvowB7utRSTt2FAAd5+/uqrmyeli8qCGuKQGCH6DYURjBJ1Xhu9UUy
+ 3SrbXfiFr7A7rOqIxnqxKXDHBJ2tHtKLQlC/JQZHAjZMC6aiCkk5951DWTAVxgTtsfBl
+ bhLw==
+X-Gm-Message-State: APjAAAViK4BUSiw3DLRDPFxQxKaRT3BYJBtBdW2UsbH5b8Jstsu+2GpV
+ Rwf/5gQG/g3G3pKU0/rcQXQ=
+X-Google-Smtp-Source: APXvYqwQ4adhOOkffJ+ooQljdZOK2+c+FVkKICz8TXR5in66XUj5Vqepfv9d8dlyGCxc9wsvjX1kJA==
+X-Received: by 2002:a50:b3b8:: with SMTP id s53mr81412876edd.61.1564136862640; 
+ Fri, 26 Jul 2019 03:27:42 -0700 (PDT)
+Received: from localhost (pD9E51890.dip0.t-ipconnect.de. [217.229.24.144])
+ by smtp.gmail.com with ESMTPSA id v12sm10210515ejj.52.2019.07.26.03.27.41
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Fri, 26 Jul 2019 03:27:42 -0700 (PDT)
+From: Thierry Reding <thierry.reding@gmail.com>
+To: "David S . Miller" <davem@davemloft.net>
+Subject: [PATCH net-next 1/2] net: stmmac: Make MDIO bus reset optional
+Date: Fri, 26 Jul 2019 12:27:40 +0200
+Message-Id: <20190726102741.27872-1-thierry.reding@gmail.com>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-In-Reply-To: <20190726101925.GA22476@kroah.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_032423_629406_848A3A5E 
-X-CRM114-Status: GOOD (  18.79  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190726_032744_322529_8B430000 
+X-CRM114-Status: GOOD (  17.19  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.145.29.96 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (thierry.reding[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -105,81 +96,115 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Geert Uytterhoeven <geert+renesas@glider.be>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, linux-arm-msm@vger.kernel.org,
- linux-kernel@vger.kernel.org, Leo Yan <leo.yan@linaro.org>,
+Cc: Alexandre Torgue <alexandre.torgue@st.com>, netdev@vger.kernel.org,
+ Jon Hunter <jonathanh@nvidia.com>, Jose Abreu <joabreu@synopsys.com>,
+ linux-tegra@vger.kernel.org, Giuseppe Cavallaro <peppe.cavallaro@st.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gNy8yNi8yMDE5IDM6NDkgUE0sIEdyZWcgS3JvYWgtSGFydG1hbiB3cm90ZToKPiBPbiBGcmks
-IEp1bCAyNiwgMjAxOSBhdCAwMzo0NDo0MFBNICswNTMwLCBTYWkgUHJha2FzaCBSYW5qYW4gd3Jv
-dGU6Cj4+IE9uIDcvMjYvMjAxOSAzOjE0IFBNLCBTYWkgUHJha2FzaCBSYW5qYW4gd3JvdGU6Cj4+
-PiBPbiA3LzI2LzIwMTkgMjoxMSBQTSwgR3JlZyBLcm9haC1IYXJ0bWFuIHdyb3RlOgo+Pj4+IE9u
-IEZyaSwgSnVsIDI2LCAyMDE5IGF0IDAxOjUwOjI3UE0gKzA1MzAsIFNhaSBQcmFrYXNoIFJhbmph
-biB3cm90ZToKPj4+Pj4gT24gNy8yNi8yMDE5IDEyOjM0IFBNLCBHcmVnIEtyb2FoLUhhcnRtYW4g
-d3JvdGU6Cj4+Pj4+PiBPbiBGcmksIEp1bCAyNiwgMjAxOSBhdCAxMTo0OToxOUFNICswNTMwLCBT
-YWkgUHJha2FzaCBSYW5qYW4gd3JvdGU6Cj4+Pj4+Pj4gSGksCj4+Pj4+Pj4KPj4+Pj4+PiBXaGVu
-IHRyeWluZyB0byB0ZXN0IG15IGNvcmVzaWdodCBwYXRjaGVzLCBJIGZvdW5kIHRoYXQgZXRyLGV0
-ZiBhbmQgc3RtCj4+Pj4+Pj4gZGV2aWNlIG5vZGVzIGFyZSBtaXNzaW5nIGZyb20gL2Rldi4KPj4+
-Pj4+Cj4+Pj4+PiBJIGhhdmUgbm8gaWRlYSB3aGF0IHRob3NlIGRldmljZSBub2RlcyBhcmUuCj4+
-Pj4+Pgo+Pj4+Pj4+IEJpc2VjdGlvbiBnaXZlcyB0aGlzIGFzIHRoZSBiYWQgY29tbWl0Lgo+Pj4+
-Pj4+Cj4+Pj4+Pj4gMWJlMDFkNGE1NzE0MmRlZDIzYmRiOWUwYzhkOTM2OWU2OTNiMjZjYyBpcyB0
-aGUgZmlyc3QgYmFkIGNvbW1pdAo+Pj4+Pj4+IGNvbW1pdCAxYmUwMWQ0YTU3MTQyZGVkMjNiZGI5
-ZTBjOGQ5MzY5ZTY5M2IyNmNjCj4+Pj4+Pj4gQXV0aG9yOiBHZWVydCBVeXR0ZXJob2V2ZW4gPGdl
-ZXJ0K3JlbmVzYXNAZ2xpZGVyLmJlPgo+Pj4+Pj4+IERhdGU6wqDCoCBUaHUgTWFyIDE0IDEyOjEz
-OjUwIDIwMTkgKzAxMDAKPj4+Pj4+Pgo+Pj4+Pj4+ICDCoMKgwqDCoMKgIGRyaXZlcjogYmFzZTog
-RGlzYWJsZSBDT05GSUdfVUVWRU5UX0hFTFBFUiBieSBkZWZhdWx0Cj4+Pj4+Pj4KPj4+Pj4+PiAg
-wqDCoMKgwqDCoCBTaW5jZSBjb21taXQgNzkzNDc3OWE2OWYxMTg0ZiAoIkRyaXZlci1Db3JlOgo+
-Pj4+Pj4+IGRpc2FibGUgL3NiaW4vaG90cGx1ZyBieQo+Pj4+Pj4+ICDCoMKgwqDCoMKgIGRlZmF1
-bHQiKSwgdGhlIGhlbHAgdGV4dCBmb3IgdGhlIC9zYmluL2hvdHBsdWcgZm9yay1ib21iIHNheXMK
-Pj4+Pj4+PiAgwqDCoMKgwqDCoCAiVGhpcyBzaG91bGQgbm90IGJlIHVzZWQgdG9kYXkgWy4uLl0g
-Y3JlYXRlcyBhCj4+Pj4+Pj4gaGlnaCBzeXN0ZW0gbG9hZCwgb3IKPj4+Pj4+PiAgwqDCoMKgwqDC
-oCBbLi4uXSBvdXQtb2YtbWVtb3J5IHNpdHVhdGlvbnMgZHVyaW5nIGJvb3R1cCIuCj4+Pj4+Pj4g
-VGhlIHJhdGlvbmFsZSBmb3IgdGhpcwo+Pj4+Pj4+ICDCoMKgwqDCoMKgIHdhcyB0aGF0IG5vIHJl
-Y2VudCBtYWluc3RyZWFtIHN5c3RlbSB1c2VkIHRoaXMKPj4+Pj4+PiBhbnltb3JlIChpbiAyMDEw
-ISkuCj4+Pj4+Pj4KPj4+Pj4+PiAgwqDCoMKgwqDCoCBBIGZldyB5ZWFycyBsYXRlciwgdGhlIGNv
-bXBsZXRlIHVldmVudCBoZWxwZXIKPj4+Pj4+PiBzdXBwb3J0IHdhcyBtYWRlIG9wdGlvbmFsCj4+
-Pj4+Pj4gIMKgwqDCoMKgwqAgaW4gY29tbWl0IDg2ZDU2MTM0ZjFiNjdkMGMgKCJrb2JqZWN0OiBN
-YWtlIHN1cHBvcnQKPj4+Pj4+PiBmb3IgdWV2ZW50X2hlbHBlcgo+Pj4+Pj4+ICDCoMKgwqDCoMKg
-IG9wdGlvbmFsLiIpLsKgIEhvd2V2ZXIsIGlmIHdhcyBzdGlsbCBsZWZ0IGVuYWJsZWQKPj4+Pj4+
-PiBieSBkZWZhdWx0LCB0byBzdXBwb3J0Cj4+Pj4+Pj4gIMKgwqDCoMKgwqAgYW5jaWVudCB1c2Vy
-bGFuZC4KPj4+Pj4+Pgo+Pj4+Pj4+ICDCoMKgwqDCoMKgIFRpbWUgcGFzc2VkIGJ5LCBhbmQgbm90
-aGluZyBzaG91bGQgdXNlIHRoaXMKPj4+Pj4+PiBhbnltb3JlLCBzbyBpdCBjYW4gYmUKPj4+Pj4+
-PiAgwqDCoMKgwqDCoCBkaXNhYmxlZCBieSBkZWZhdWx0Lgo+Pj4+Pj4+Cj4+Pj4+Pj4gIMKgwqDC
-oMKgwqAgU2lnbmVkLW9mZi1ieTogR2VlcnQgVXl0dGVyaG9ldmVuIDxnZWVydCtyZW5lc2FzQGds
-aWRlci5iZT4KPj4+Pj4+PiAgwqDCoMKgwqDCoCBTaWduZWQtb2ZmLWJ5OiBHcmVnIEtyb2FoLUhh
-cnRtYW4gPGdyZWdraEBsaW51eGZvdW5kYXRpb24ub3JnPgo+Pj4+Pj4+Cj4+Pj4+Pj4gIMKgwqAg
-ZHJpdmVycy9iYXNlL0tjb25maWcgfCAxIC0KPj4+Pj4+PiAgwqDCoCAxIGZpbGUgY2hhbmdlZCwg
-MSBkZWxldGlvbigtKQo+Pj4+Pj4+Cj4+Pj4+Pj4KPj4+Pj4+PiBBbnkgaWRlYSBvbiB0aGlzPwo+
-Pj4+Pj4KPj4+Pj4+IFRoYXQgbWVhbnMgdGhhdCB3aG8gZXZlciBjcmVhdGVkIHRob3NlIGRldmlj
-ZSBub2RlcyBpcyByZWx5aW5nIG9uIHVkZXYKPj4+Pj4+IHRvIGRvIHRoaXMsIGFuZCBpcyBub3Qg
-ZG9pbmcgdGhlIGNvcnJlY3QgdGhpbmcgd2l0aGluIHRoZSBrZXJuZWwgYW5kCj4+Pj4+PiB1c2lu
-ZyBkZXZ0bXBmcy4KPj4+Pj4+Cj4+Pj4+PiBBbnkgcG9pbnRlcnMgdG8gd2hlcmUgaW4gdGhlIGtl
-cm5lbCB0aG9zZSBkZXZpY2VzIGFyZSB0cnlpbmcgdG8gYmUKPj4+Pj4+IGNyZWF0ZWQ/Cj4+Pj4+
-Pgo+Pj4+Pgo+Pj4+PiBTb21ld2hlcmUgaW4gZHJpdmVycy9od3RyYWNpbmcvY29yZXNpZ2h0Lyog
-cHJvYmFibHkuIEkgYW0gbm90IHN1cmUsCj4+Pj4+IE1hdGhpZXUvU3V6dWtpIHdvdWxkIGJlIGFi
-bGUgdG8gcG9pbnQgeW91IHRvIHRoZSBleGFjdCBjb2RlLgo+Pj4+Pgo+Pj4+PiBBbHNvIGp1c3Qg
-dG8gYWRkIG9uIHNvbWUgbW9yZSBkZXRhaWxzLCBJIGFtIHVzaW5nICppbml0cmFtZnMqCj4+Pj4K
-Pj4+PiBBcmUgeW91IHVzaW5nIGRldnRtcGZzIGZvciB5b3VyIC9kZXYvIG1vdW50Pwo+Pj4+Cj4+
-Pgo+Pj4gSSBhbSBub3QgbW91bnRpbmcgZGV2dG1wZnMuIEhvd2V2ZXIKPj4+Cj4+PiAgIMKgQ09O
-RklHX0RFVlRNUEZTPXkKPj4+ICAgwqBDT05GSUdfREVWVE1QRlNfTU9VTlQ9eQo+Pj4KPj4KPj4g
-T2sgbXkgaW5pdHJhbWZzIGlzIHVzaW5nIG1kZXY6Cj4+Cj4+ICovc2Jpbi9tZGV2IC1zKgo+Pgo+
-PiBUaGlzIHNvbWVob3cgaXMgbm90IG1vdW50aW5nIGV0ciwgZXRmLCBzdG0gZGV2aWNlcyB3aGVu
-IHVldmVudC1oZWxwZXIgaXMKPj4gZGlzYWJsZWQuIEFueXdheXMgYXMgU3V6dWtpIG1lbnRpb25l
-ZCwgdXNpbmcgZGV2dG1wZnMgZG9lcyBmaXggdGhlIGlzc3VlLgo+IAo+IExhc3QgSSBsb29rZWQg
-KG1hbnkgeWVhcnMgYWdvKSBtZGV2IHJlcXVpcmVzIHVldmVudC1oZWxwZXIgaW4gb3JkZXIgZm9y
-Cj4gaXQgdG8gd29yay4gIEkgcmVjb21tZW5kIHRoYXQgaWYgeW91IHJlbHkgb24gbWRldiB0byBr
-ZWVwIHRoYXQgb3B0aW9uCj4gZW5hYmxlZCwgb3IgdG8ganVzdCB1c2UgZGV2dG1wZnMgYW5kIHVk
-ZXYgOikKPiAKCk9rIHRoYXQgZXhwbGFpbnMsIGl0cyBub3QgYSBoYXJkIHJlcXVpcmVtZW50IGZv
-ciBtZSB0byB1c2UgbWRldi4gSSBqdXN0IApoYXBwZW4gdG8gc3R1bWJsZSB1cG9uIHRoaXMgaXNz
-dWUuIFRoYW5rcyBmb3IgeW91ciB0aW1lIDopCgpUaGFua3MsClNhaQoKLS0gClFVQUxDT01NIElO
-RElBLCBvbiBiZWhhbGYgb2YgUXVhbGNvbW0gSW5ub3ZhdGlvbiBDZW50ZXIsIEluYy4gaXMgYSBt
-ZW1iZXIKb2YgQ29kZSBBdXJvcmEgRm9ydW0sIGhvc3RlZCBieSBUaGUgTGludXggRm91bmRhdGlv
-bgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgt
-YXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
-LWtlcm5lbAo=
+From: Thierry Reding <treding@nvidia.com>
+
+The Tegra EQOS driver already resets the MDIO bus at probe time via the
+reset GPIO specified in the phy-reset-gpios device tree property. There
+is no need to reset the bus again later on.
+
+This avoids the need to query the device tree for the snps,reset GPIO,
+which is not part of the Tegra EQOS device tree bindings. This quiesces
+an error message from the generic bus reset code if it doesn't find the
+snps,reset related delays.
+
+Signed-off-by: Thierry Reding <treding@nvidia.com>
+---
+ drivers/net/ethernet/stmicro/stmmac/dwmac-dwc-qos-eth.c | 3 +++
+ drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c       | 4 +++-
+ drivers/net/ethernet/stmicro/stmmac/stmmac_pci.c        | 1 +
+ drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c   | 8 +++++++-
+ include/linux/stmmac.h                                  | 1 +
+ 5 files changed, 15 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-dwc-qos-eth.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-dwc-qos-eth.c
+index 3a14cdd01f5f..66933332c68e 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac-dwc-qos-eth.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-dwc-qos-eth.c
+@@ -333,6 +333,9 @@ static void *tegra_eqos_probe(struct platform_device *pdev,
+ 	usleep_range(2000, 4000);
+ 	gpiod_set_value(eqos->reset, 0);
+ 
++	/* MDIO bus was already reset just above */
++	data->mdio_bus_data->needs_reset = false;
++
+ 	eqos->rst = devm_reset_control_get(&pdev->dev, "eqos");
+ 	if (IS_ERR(eqos->rst)) {
+ 		err = PTR_ERR(eqos->rst);
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
+index 4304c1abc5d1..40c42637ad75 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
+@@ -348,7 +348,9 @@ int stmmac_mdio_register(struct net_device *ndev)
+ 		max_addr = PHY_MAX_ADDR;
+ 	}
+ 
+-	new_bus->reset = &stmmac_mdio_reset;
++	if (mdio_bus_data->needs_reset)
++		new_bus->reset = &stmmac_mdio_reset;
++
+ 	snprintf(new_bus->id, MII_BUS_ID_SIZE, "%s-%x",
+ 		 new_bus->name, priv->plat->bus_id);
+ 	new_bus->priv = ndev;
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_pci.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_pci.c
+index 86f9c07a38cf..d5d08e11c353 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_pci.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_pci.c
+@@ -63,6 +63,7 @@ static void common_default_data(struct plat_stmmacenet_data *plat)
+ 	plat->has_gmac = 1;
+ 	plat->force_sf_dma_mode = 1;
+ 
++	plat->mdio_bus_data->needs_reset = true;
+ 	plat->mdio_bus_data->phy_mask = 0;
+ 
+ 	/* Set default value for multicast hash bins */
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
+index 73fc2524372e..333b09564b88 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
+@@ -342,10 +342,16 @@ static int stmmac_dt_phy(struct plat_stmmacenet_data *plat,
+ 		mdio = true;
+ 	}
+ 
+-	if (mdio)
++	if (mdio) {
+ 		plat->mdio_bus_data =
+ 			devm_kzalloc(dev, sizeof(struct stmmac_mdio_bus_data),
+ 				     GFP_KERNEL);
++		if (!plat->mdio_bus_data)
++			return -ENOMEM;
++
++		plat->mdio_bus_data->needs_reset = true;
++	}
++
+ 	return 0;
+ }
+ 
+diff --git a/include/linux/stmmac.h b/include/linux/stmmac.h
+index 7d06241582dd..7b3e354bcd3c 100644
+--- a/include/linux/stmmac.h
++++ b/include/linux/stmmac.h
+@@ -81,6 +81,7 @@ struct stmmac_mdio_bus_data {
+ 	unsigned int phy_mask;
+ 	int *irqs;
+ 	int probed_phy_irq;
++	bool needs_reset;
+ };
+ 
+ struct stmmac_dma_cfg {
+-- 
+2.22.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
