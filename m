@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4DD9775E96
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 07:44:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5FCAF75E97
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 07:45:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jlo/b/Whekt0sZOE8RO1Hyrw4ZN1BHtKoaZzEpVAi5M=; b=ZhKcBHkD1/6XbS
-	CxaI3tSS77NEk3PF5FegMQ2U33GERG5F4azcyrqcOrjv+NYEnWE4iR20WQtuwQx6GjI8LWepaCeIs
-	39PN/wZTnRdnnthJW6XwRA8BsOtymvf9tX1+yxg8XomucIRNYgur8JlVbnc7Hx/qGRXy0GAvJf4fE
-	uvVkgFKy9fAvBtcTQcBji3Bu0hzJXw83GilhhMCxuhiv/L76kYNlR++tb4ggeEdSV/qoP/zpGgNOB
-	SEsEXjTxmRqXbJtQysRZcV9HI9XcUYxALTG71IrU9FVr7Wv74BhPSd3nc/xW+yNByk4DGD27UXoil
-	nKe2D3vb/BEMvCZUvoUg==;
+	List-Owner; bh=rFjhDOV4oXHOhcBgC6gSsUz1z/55tsfWWtexdpFRhkw=; b=L+6DiJr2SeKAAm
+	mikY+KpCUBJoyKy54DDgN+cb5ZsV0o476STwkJmUqUc/4V/+JERWMYuUuNhyOHpdMdzd1oRZI8LAc
+	ZGUcCnNwZIg7zBovis6sfAA4gM0ypNfyp0ax9vhf/2iddEbefLwDWV3sYgh9GIUUKX7c3RgGVHMUi
+	ioGDQ1E/d7myrLkrNjqKIU1BoMgnBv80eI8Xb5/5X3DbVBOq1c6bWZrlNiHTPc0HUq+4sst0qfVT1
+	+xS/oySneP4pHux1X+FzcDqElx4D5sdm02MjoU/wECL8FFfjcdv5oD7YZ2ZZWZbx9aDXw2JRhcFj5
+	t4cYx73QFIvHAFkGV4Ew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqt25-0006YV-Mj; Fri, 26 Jul 2019 05:44:45 +0000
+	id 1hqt2W-0006mr-7u; Fri, 26 Jul 2019 05:45:12 +0000
 Received: from out5-smtp.messagingengine.com ([66.111.4.29])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqsyB-00042C-4l
- for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 05:40:44 +0000
+ id 1hqsyE-00044q-SG
+ for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 05:40:48 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id 81E8322304;
- Fri, 26 Jul 2019 01:40:42 -0400 (EDT)
+ by mailout.nyi.internal (Postfix) with ESMTP id 41E402224B;
+ Fri, 26 Jul 2019 01:40:46 -0400 (EDT)
 Received: from mailfrontend2 ([10.202.2.163])
- by compute4.internal (MEProxy); Fri, 26 Jul 2019 01:40:42 -0400
+ by compute4.internal (MEProxy); Fri, 26 Jul 2019 01:40:46 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=from
  :to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm3; bh=rG3ViSoD+/QE/
- VXNi2QRXWRcPzsPK+KCQfU2NAzrabU=; b=ZFvrZA4/NROfeW3BhqjDH6Pq/IF74
- IQNAntwYgA7a0dpYRagWuIPGA4QKb+7nl/n/QP/wXyXDKGJLM/0cYfsFa16sDH6K
- wLVxTkKWnt1LuJpDmShImd6KCBEZE0VgXLUQXBDrc7QmDx4oMmTSOzpQcRRLc6b2
- GKx7ZNhz1rS9SHZiCPji/jReQsdd/FgzPfwosJq05mvY1T2o7zC9ZrFGuWBHGj6U
- b5mK8bZq83GeQF4nsn7WGtek2aP533EGIAzEaFQVD2+rTZNIg51gQCFyau4rO+vf
- PVStSvYNaMVCDhp1aIGRZVZkyKVb5GOFMR3bSGwzkpXixvn6mhbdJoSdA==
+ :mime-version:content-transfer-encoding; s=fm3; bh=HESpvVbaHQiOa
+ yBRK5sEX6EQs5s2hLfvGzXijz0YC9o=; b=i9Z8F/wF+RB+/ayVWbUiCCfiPRwN7
+ eMWKkqOojYqcrEntkvDlBCl3PFbzk7LiOE1lTzBmL8FW5Rhbhpl5DwnRKdfZAScN
+ mm5/FDIW5gO7r+qzrmPDfFs0fwHHi9K//y59R0qdxRUrpu57ZJATjDX/cY+wTPbP
+ 8oB7dlndnuNIIMHfdUqiKi9VEN/jFvH3+dTPosSxAu91p3euW+GoobfPkZz2Ts3B
+ Om3Bz9oSxlklVcF40688lBoOq4gyErUO7jB5IJaFquONsTq5PaqLacDyhob+19HQ
+ w516ftnT6uuY116f/cPqsgic+UZWLTkZ/ohuCwdB2yhfTILF8loIJMN5w==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm3; bh=rG3ViSoD+/QE/VXNi2QRXWRcPzsPK+KCQfU2NAzrabU=; b=fny9/EN6
- AqWnZP1i3ik8OyT0QgcuJp0Pwpx+U2xGXQib5GcSmrc1Sa/lPO3/4HFcrW56p73A
- /pRbp3TU3ege7PAtyWBPNwDq2zbTOnfuGfp0+n3ET0cI8/y+WUGYZ9xbaNsJ9PZb
- 1DkoFrfhpY/+KJDUSTWWvoOvOfYVc9O4fpax5ba5XOHrOCgvsTDRrPUbgOdOO/sT
- hWoD07VN3wbEb8iw1vtXUbERXLzbG/CjsjrUyPAfjV4d4i4TViNIMZMgrH0u11s3
- xTLNcJf2yvq4ox5ArgCmZ/b53b2Walbyauy2b4x/RLf8+vcY5uE+S/GHP6ZgNTtO
- CmVRXFp33FR7vQ==
-X-ME-Sender: <xms:WpI6XUztnZzH09GPCPGTYY4DpUWTYVgBT4tR7B0rAu9Gmujh9rBUVQ>
+ fm3; bh=HESpvVbaHQiOayBRK5sEX6EQs5s2hLfvGzXijz0YC9o=; b=ip9qYLAC
+ 6Hz53HL//BE8MS5cpLyg0thf7LF3XRnazzZ8RBHBitf2UNM+Dsdz0bM0y3gM2LHF
+ a4rC5yO/4zXDqG6U6oHC6UbdUSQPdFg4iyfj9Q2YY/bejXaEC9eL2I1h9Y+ZEvnm
+ vIs83tPJ3e+3Oih8ac5Zi00oj6NGtI6Bps56IOGEFVeNpx2vVm51nwK+oL+Kdi8I
+ 1j2NpVKUdawZl3M4w70xDU0OTMHChpK1y6TxvntXEyfDIvCKjqBO9svobwVYQfzB
+ cE4bASSqabalywJg9p1w/Z6+PBXDTlQXIPXGn3E88zQMpJr0V2K94QtEIhYf34MM
+ 7JO2Qu5Jqp2hWg==
+X-ME-Sender: <xms:XpI6XRhCKREbudYRDFh75p0jFaGConmnjr5rDOYXB-6mlsp24vaB1A>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrkeefgdellecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
@@ -56,26 +56,25 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrkeefgdellecutefuodetggdote
  ucflvghffhgvrhihuceorghnughrvgifsegrjhdrihgurdgruheqnecukfhppedvtddvrd
  ekuddrudekrdeftdenucfrrghrrghmpehmrghilhhfrhhomheprghnughrvgifsegrjhdr
  ihgurdgruhenucevlhhushhtvghrufhiiigvpedt
-X-ME-Proxy: <xmx:WpI6XYbiO39PRBEFLxsPziRXU0fmTwfVxtr60nFwIbtPttATfdEi5w>
- <xmx:WpI6XdzrwIiBNu_uETptr4EFaXvlbR8r34C5afBlpKzVcoJXF6OmVQ>
- <xmx:WpI6XZG0onGA5qGAcg_oAOn-qSJeyqDf5qYzsY_x1B8-fbd5pqkrkg>
- <xmx:WpI6XTtWs_B06LNwzoiuZVcBiNYgg4YzjhfFc4P-A3ALnPuahVaF1w>
+X-ME-Proxy: <xmx:XpI6XabtY-ZjGrsKG4UWJwewIClHgj6C7hs_vjIjxSfksF_3pYIDXA>
+ <xmx:XpI6Xe-QxRs6tmUyrupxBjaE-MefARqwjtevRvnZFsOvUhELd2iH1A>
+ <xmx:XpI6XUMGNHgA4LUOwK87WnzZsSYnnkVcB-SPhdLf3cMWsu32paCuxw>
+ <xmx:XpI6XUtK0bFypTXRdhTR613U3iRZkHol8lso0XtGV1XLSk0npEpYAA>
 Received: from mistburn.au.ibm.com (bh02i525f01.au.ibm.com [202.81.18.30])
- by mail.messagingengine.com (Postfix) with ESMTPA id A6014380074;
- Fri, 26 Jul 2019 01:40:38 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id C2694380074;
+ Fri, 26 Jul 2019 01:40:42 -0400 (EDT)
 From: Andrew Jeffery <andrew@aj.id.au>
 To: linux-aspeed@lists.ozlabs.org
-Subject: [RFC PATCH 11/17] dt-bindings: misc: Document reg for aspeed,
- p2a-ctrl nodes
-Date: Fri, 26 Jul 2019 15:09:53 +0930
-Message-Id: <20190726053959.2003-12-andrew@aj.id.au>
+Subject: [RFC PATCH 12/17] ARM: dts: aspeed: Add reg hints to syscon children
+Date: Fri, 26 Jul 2019 15:09:54 +0930
+Message-Id: <20190726053959.2003-13-andrew@aj.id.au>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190726053959.2003-1-andrew@aj.id.au>
 References: <20190726053959.2003-1-andrew@aj.id.au>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_224043_464533_77F6B3A6 
-X-CRM114-Status: UNSURE (   8.98  )
+X-CRM114-CacheID: sfid-20190725_224047_393247_9C4DD6F2 
+X-CRM114-Status: UNSURE (   8.30  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -107,37 +106,90 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
  Andrew Jeffery <andrew@aj.id.au>, Patrick Venture <venture@google.com>,
  linux-kernel@vger.kernel.org, robh+dt@kernel.org, joel@jms.id.au,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The P2A controller node sits under a syscon device, and can assume
-offsets from the base of the syscon based on the compatible. However,
-for devicetree correctness allow a reg property to be specified, which
-an associated driver may choose to use to discover associated resources.
+Fixes the following warnings:
+
+    arch/arm/boot/dts/aspeed-g5.dtsi:209.28-226.6: Warning (avoid_unnecessary_addr_size): /ahb/apb/syscon@1e6e2000: unnecessary #address-cells/#size-cells without "ranges" or child "reg" property
+    arch/arm/boot/dts/aspeed-g4.dtsi:156.28-172.6: Warning (avoid_unnecessary_addr_size): /ahb/apb/syscon@1e6e2000: unnecessary #address-cells/#size-cells without "ranges" or child "reg" property
 
 Cc: Patrick Venture <venture@google.com>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
 ---
- Documentation/devicetree/bindings/misc/aspeed-p2a-ctrl.txt | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm/boot/dts/aspeed-g4.dtsi | 15 +++++++++------
+ arch/arm/boot/dts/aspeed-g5.dtsi | 17 ++++++++++-------
+ 2 files changed, 19 insertions(+), 13 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/misc/aspeed-p2a-ctrl.txt b/Documentation/devicetree/bindings/misc/aspeed-p2a-ctrl.txt
-index 854bd67ffec6..091d1c5ec58f 100644
---- a/Documentation/devicetree/bindings/misc/aspeed-p2a-ctrl.txt
-+++ b/Documentation/devicetree/bindings/misc/aspeed-p2a-ctrl.txt
-@@ -18,6 +18,7 @@ Required properties:
- Optional properties:
- ===================
+diff --git a/arch/arm/boot/dts/aspeed-g4.dtsi b/arch/arm/boot/dts/aspeed-g4.dtsi
+index ed78020f6269..1515b56a1487 100644
+--- a/arch/arm/boot/dts/aspeed-g4.dtsi
++++ b/arch/arm/boot/dts/aspeed-g4.dtsi
+@@ -157,18 +157,21 @@
+ 				compatible = "aspeed,ast2400-scu", "syscon", "simple-mfd";
+ 				reg = <0x1e6e2000 0x1a8>;
+ 				#address-cells = <1>;
+-				#size-cells = <0>;
++				#size-cells = <1>;
++				ranges = <0 0x1e6e2000 0x1000>;
+ 				#clock-cells = <1>;
+ 				#reset-cells = <1>;
  
-+- reg: A hint for the memory regions associated with the P2A controller
- - memory-region: A phandle to a reserved_memory region to be used for the PCI
- 		to AHB mapping
+-				pinctrl: pinctrl {
+-					compatible = "aspeed,g4-pinctrl";
+-				};
+-
+-				p2a: p2a-control {
++				p2a: p2a-control@2c {
++					reg = <0x2c 0x4>;
+ 					compatible = "aspeed,ast2400-p2a-ctrl";
+ 					status = "disabled";
+ 				};
++
++				pinctrl: pinctrl@80 {
++					reg = <0x80 0x18>, <0xa0 0x10>;
++					compatible = "aspeed,g4-pinctrl";
++				};
+ 			};
  
+ 			rng: hwrng@1e6e2078 {
+diff --git a/arch/arm/boot/dts/aspeed-g5.dtsi b/arch/arm/boot/dts/aspeed-g5.dtsi
+index a8a593dd2240..92c659c50b4c 100644
+--- a/arch/arm/boot/dts/aspeed-g5.dtsi
++++ b/arch/arm/boot/dts/aspeed-g5.dtsi
+@@ -210,19 +210,22 @@
+ 				compatible = "aspeed,ast2500-scu", "syscon", "simple-mfd";
+ 				reg = <0x1e6e2000 0x1a8>;
+ 				#address-cells = <1>;
+-				#size-cells = <0>;
++				#size-cells = <1>;
++				ranges = <0 0x1e6e2000 0x1000>;
+ 				#clock-cells = <1>;
+ 				#reset-cells = <1>;
+ 
+-				pinctrl: pinctrl {
+-					compatible = "aspeed,g5-pinctrl";
+-					aspeed,external-nodes = <&gfx>, <&lhc>;
+-				};
+-
+-				p2a: p2a-control {
++				p2a: p2a-control@2c {
+ 					compatible = "aspeed,ast2500-p2a-ctrl";
++					reg = <0x2c 0x4>;
+ 					status = "disabled";
+ 				};
++
++				pinctrl: pinctrl@80 {
++					compatible = "aspeed,g5-pinctrl";
++					reg = <0x80 0x18>, <0xa0 0x10>;
++					aspeed,external-nodes = <&gfx>, <&lhc>;
++				};
+ 			};
+ 
+ 			rng: hwrng@1e6e2078 {
 -- 
 2.20.1
 
