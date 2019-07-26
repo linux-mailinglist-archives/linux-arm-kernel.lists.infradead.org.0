@@ -2,58 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E6E576151
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 10:51:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E61B7615A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 10:54:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MODKV8BBzdq060pqD2uodLDBKSsvtGZsqfXHeuV3fZU=; b=nmNPhj6MriuFDq
-	G+K1zw+9rxC7fU7T4wNOCP7pfNFZa5gW+QmoJdpVTESL2J5c5h+oUrlOqJ9W28qjfFgUG7UdcZImv
-	rn6fdC5wCSeKXqf/kD2LWvlpgmJHtRI+V/i6P7J/WjWoAkWw2b9Youq30KsdAirLlp2yJr8s8e2g6
-	2wgv/nj5ArBi1S05yWc66UJwMWa/jWYVVXP6xAXjSs6/7ni7c4fz9yPFuRz7vbDW9/aKGvm3O08q5
-	T4yUevTmijJjR4I2002Qevgnc27JQN/uZd75l9E2P3rPli+Fwx0t9urorG47I9VBlCsNxgynN93GQ
-	i7QwL6gn925nHtHNsYRw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=3yG7LPVL/Jt2sx0LrqrbCOYfYOabai/aIdQbLQel4mE=; b=S3qLCZR/X4ENAo
+	+jLTEypQ7WFQBD/cQoOEy9kw4xSK23EovlVXEZw/YGI88m9DBsfqAlzgLEXeaVqGFkFOzd75Fby7m
+	Gyf6dt6GCBZ76jkhNK1Iy5tlF1eo0cPf7awzGaA9qS4zcDC5fffX9zFLFQl0vCCjst0h8ULL0OnjV
+	hLU4cwNVIQ+VoCq9JP18O0kz0pI2c8wWsxUBBEIrl4kHiaPj5wl+JSg9CcxR5P7vsEqYCkXdHvdUj
+	3JQ9TKSNkYbXtzPC/XNh3sb9XbuBzx6UqLDlljH8OsvspAV1sU62FTncVZajrZpB3O3DlnotokMXW
+	9eNAJSkLzdJsVQIu/Bgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqvx9-0000Jg-0g; Fri, 26 Jul 2019 08:51:51 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1hqvzR-00011a-0j; Fri, 26 Jul 2019 08:54:13 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqvwu-0000In-5C; Fri, 26 Jul 2019 08:51:37 +0000
-Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id F190461901E9F1A5154E;
- Fri, 26 Jul 2019 16:51:30 +0800 (CST)
-Received: from [127.0.0.1] (10.133.213.239) by DGGEMS401-HUB.china.huawei.com
- (10.3.19.201) with Microsoft SMTP Server id 14.3.439.0;
- Fri, 26 Jul 2019 16:51:29 +0800
-Subject: Re: [PATCH -next] staging: vc04_services: fix used-but-set-variable
- warning
-To: Greg KH <gregkh@linuxfoundation.org>
-References: <20190725142716.49276-1-yuehaibing@huawei.com>
- <20190725144913.GC29688@kroah.com>
-From: Yuehaibing <yuehaibing@huawei.com>
-Message-ID: <afc8b261-3832-2c4f-a3e0-d1b4f98ffb61@huawei.com>
-Date: Fri, 26 Jul 2019 16:51:28 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.2.0
+ id 1hqvzC-00010u-RM
+ for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 08:54:00 +0000
+Received: by mail-pg1-x544.google.com with SMTP id i70so13714095pgd.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 26 Jul 2019 01:53:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Kn51c4iVY6vEKLBAUEgNeUWaRLfBi8NFzSwtDO3qJPo=;
+ b=ZrwXgOysV4Nm38G/Jd5hjo4ESfSee36UHEVzuju2NmMPD0fUC94XqOIjPS/vdAra91
+ GePNmRjhbOHDSzgaRjaMUMHG2ycRlVIjQlvGTHCJ6xkeIKiWZn0uDU1XyD51GtXPWUIZ
+ 1aTRStwb5PMDv7h+ojMqDKzg/9hv/j4m2tbSs=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Kn51c4iVY6vEKLBAUEgNeUWaRLfBi8NFzSwtDO3qJPo=;
+ b=MALgy7Pq+9TNE8ftDYVB0EJvZfZe547IVUViBVAFT4C9+OqFL08ZP3TsViX9VRJ4nD
+ 1kIfEt1JZDaaLBQaE4D+Hmu3Hj3hCK7UvDt2/kth0sEVnouDNxMwzCBAS1pV2l2vDQvq
+ E2hIwrlksvrLVwX2bQLF7+FuACFdHHQ1hx2URgEamptDFYOO2piH6qOr9HAx/xm4tNMJ
+ ots/pZGtmDiGoXp2/m6RGUR9+DGUgoDj2lUFYt9gE3Jz0msqdM6c+C2rVubV94PvZnco
+ B7Hqq0a2INF4W//Prcn+glD1jBWAwYX3fckLsGuEUb4kiyflayPdvMCxloR4CiHmege7
+ eA+A==
+X-Gm-Message-State: APjAAAUh3/tbQlMR4GEndO2S0890uNcvTk4J8L3I0xaJj/FNIYZAaYGj
+ cvEhqQeQw2jyDVd/kJC09kjBJQ16Es8=
+X-Google-Smtp-Source: APXvYqwEl1k8U3GLoPPwct03h2YHbh18gkXJVzJDcKZV2mmsK3QGn7e5o8uX6/Q7RDC9oULrHaYOvA==
+X-Received: by 2002:a63:c03:: with SMTP id b3mr26309020pgl.23.1564131237150;
+ Fri, 26 Jul 2019 01:53:57 -0700 (PDT)
+Received: from hsinyi-z840.tpe.corp.google.com
+ ([2401:fa00:1:10:b852:bd51:9305:4261])
+ by smtp.gmail.com with ESMTPSA id p15sm49438737pjf.27.2019.07.26.01.53.54
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Fri, 26 Jul 2019 01:53:56 -0700 (PDT)
+From: Hsin-Yi Wang <hsinyi@chromium.org>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] i2c: mediatek: disable zero-length transfers for mt8183
+Date: Fri, 26 Jul 2019 16:53:06 +0800
+Message-Id: <20190726085305.163306-1-hsinyi@chromium.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <20190725144913.GC29688@kroah.com>
-X-Originating-IP: [10.133.213.239]
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_015136_360117_B2212B26 
-X-CRM114-Status: GOOD (  10.34  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190726_015358_915357_D2BB2566 
+X-CRM114-Status: GOOD (  12.37  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,54 +93,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, linux-kernel@vger.kernel.org, eric@anholt.net,
- bcm-kernel-feedback-list@broadcom.com, wahrenst@gmx.net,
- nishkadg.linux@gmail.com, inf.braun@fau.de,
- linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Nicolas Boichat <drinkcat@chromium.org>,
+ Alexandru M Stan <amstan@chromium.org>, Wolfram Sang <wsa@the-dreams.de>,
+ Jun Gao <jun.gao@mediatek.com>, linux-kernel@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, linux-i2c@vger.kernel.org,
+ Hsin-Yi Wang <hsinyi@chromium.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Qii Wang <qii.wang@mediatek.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Ck9uIDIwMTkvNy8yNSAyMjo0OSwgR3JlZyBLSCB3cm90ZToKPiBPbiBUaHUsIEp1bCAyNSwgMjAx
-OSBhdCAxMDoyNzoxNlBNICswODAwLCBZdWVIYWliaW5nIHdyb3RlOgo+PiB1c2UgdmFyaWFibGVz
-ICdsb2NhbF9lbnRpdHlfdWMnIGFuZCAnbG9jYWxfdWMnLAo+PiBtdXRlIGdjYyB1c2VkLWJ1dC1z
-ZXQtdmFyaWFibGUgd2FybmluZzoKPj4KPj4gZHJpdmVycy9zdGFnaW5nL3ZjMDRfc2VydmljZXMv
-aW50ZXJmYWNlL3ZjaGlxX2FybS92Y2hpcV9hcm0uYzogSW4gZnVuY3Rpb24gdmNoaXFfcmVsZWFz
-ZV9pbnRlcm5hbDoKPj4gZHJpdmVycy9zdGFnaW5nL3ZjMDRfc2VydmljZXMvaW50ZXJmYWNlL3Zj
-aGlxX2FybS92Y2hpcV9hcm0uYzoyODI3OjE2OiB3YXJuaW5nOgo+PiAgdmFyaWFibGUgbG9jYWxf
-ZW50aXR5X3VjIHNldCBidXQgbm90IHVzZWQgWy1XdW51c2VkLWJ1dC1zZXQtdmFyaWFibGVdCj4+
-IGRyaXZlcnMvc3RhZ2luZy92YzA0X3NlcnZpY2VzL2ludGVyZmFjZS92Y2hpcV9hcm0vdmNoaXFf
-YXJtLmM6MjgyNzo2OiB3YXJuaW5nOgo+PiAgdmFyaWFibGUgbG9jYWxfdWMgc2V0IGJ1dCBub3Qg
-dXNlZCBbLVd1bnVzZWQtYnV0LXNldC12YXJpYWJsZV0KPj4KPj4gUmVwb3J0ZWQtYnk6IEh1bGsg
-Um9ib3QgPGh1bGtjaUBodWF3ZWkuY29tPgo+PiBTaWduZWQtb2ZmLWJ5OiBZdWVIYWliaW5nIDx5
-dWVoYWliaW5nQGh1YXdlaS5jb20+Cj4+IC0tLQo+PiAgZHJpdmVycy9zdGFnaW5nL3ZjMDRfc2Vy
-dmljZXMvaW50ZXJmYWNlL3ZjaGlxX2FybS92Y2hpcV9hcm0uYyB8IDYgKystLS0tCj4+ICAxIGZp
-bGUgY2hhbmdlZCwgMiBpbnNlcnRpb25zKCspLCA0IGRlbGV0aW9ucygtKQo+Pgo+PiBkaWZmIC0t
-Z2l0IGEvZHJpdmVycy9zdGFnaW5nL3ZjMDRfc2VydmljZXMvaW50ZXJmYWNlL3ZjaGlxX2FybS92
-Y2hpcV9hcm0uYyBiL2RyaXZlcnMvc3RhZ2luZy92YzA0X3NlcnZpY2VzL2ludGVyZmFjZS92Y2hp
-cV9hcm0vdmNoaXFfYXJtLmMKPj4gaW5kZXggY2M0MzgzZC4uMDRlNjQyNyAxMDA2NDQKPj4gLS0t
-IGEvZHJpdmVycy9zdGFnaW5nL3ZjMDRfc2VydmljZXMvaW50ZXJmYWNlL3ZjaGlxX2FybS92Y2hp
-cV9hcm0uYwo+PiArKysgYi9kcml2ZXJzL3N0YWdpbmcvdmMwNF9zZXJ2aWNlcy9pbnRlcmZhY2Uv
-dmNoaXFfYXJtL3ZjaGlxX2FybS5jCj4+IEBAIC0yODYxLDE1ICsyODYxLDEzIEBAIHZjaGlxX3Jl
-bGVhc2VfaW50ZXJuYWwoc3RydWN0IHZjaGlxX3N0YXRlICpzdGF0ZSwgc3RydWN0IHZjaGlxX3Nl
-cnZpY2UgKnNlcnZpY2UpCj4+ICAJCX0gZWxzZSB7Cj4+ICAJCQl2Y2hpcV9sb2dfaW5mbyh2Y2hp
-cV9zdXNwX2xvZ19sZXZlbCwKPj4gIAkJCQkiJXMgJXMgY291bnQgJWQsIHN0YXRlIGNvdW50ICVk
-IC0gc3VzcGVuZGluZyIsCj4+IC0JCQkJX19mdW5jX18sIGVudGl0eSwgKmVudGl0eV91YywKPj4g
-LQkJCQlhcm1fc3RhdGUtPnZpZGVvY29yZV91c2VfY291bnQpOwo+PiArCQkJCV9fZnVuY19fLCBl
-bnRpdHksIGxvY2FsX2VudGl0eV91YywgbG9jYWxfdWMpOwo+PiAgCQkJdmNoaXFfYXJtX3Zjc3Vz
-cGVuZChzdGF0ZSk7Cj4+ICAJCX0KPj4gIAl9IGVsc2UKPj4gIAkJdmNoaXFfbG9nX3RyYWNlKHZj
-aGlxX3N1c3BfbG9nX2xldmVsLAo+PiAgCQkJIiVzICVzIGNvdW50ICVkLCBzdGF0ZSBjb3VudCAl
-ZCIsCj4+IC0JCQlfX2Z1bmNfXywgZW50aXR5LCAqZW50aXR5X3VjLAo+PiAtCQkJYXJtX3N0YXRl
-LT52aWRlb2NvcmVfdXNlX2NvdW50KTsKPj4gKwkJCV9fZnVuY19fLCBlbnRpdHksIGxvY2FsX2Vu
-dGl0eV91YywgbG9jYWxfdWMpOwo+IAo+IEFyZSB5b3Ugc3VyZSB0aGlzIGlzIHRoZSBjb3JyZWN0
-IHdheSB0byBzb2x2ZSB0aGlzPwo+IAo+IFdoeSBub3QganVzdCByZW1vdmUgdGhlIGxvY2FsIHZh
-cmlhYmxlcyBpbnN0ZWFkLCBhcyBvYnZpb3VzbHkgdGhleSBhcmUKPiBub3QgYmVpbmcgdXNlZC4K
-Ckl0IHNlZW1zIHRoZXkgYXJlIGVxdWl2YWxlbnQKCjI4NTIgICAgICAgICBsb2NhbF91YyA9IC0t
-YXJtX3N0YXRlLT52aWRlb2NvcmVfdXNlX2NvdW50OwoyODUzICAgICAgICAgbG9jYWxfZW50aXR5
-X3VjID0gLS0oKmVudGl0eV91Yyk7CgpIb3dldmVyLCBJIHdpbGwgcmVzZW5kIGFzIHlvdXIgc3Vn
-Z2VzdGlvbi4gVGhhbmtz77yBCgo+IAo+IHRoYW5rcywKPiAKPiBncmVnIGstaAo+IAo+IC4KPiAK
-CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
-cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
-cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
-a2VybmVsCg==
+When doing i2cdetect quick write mode, we would get transfer
+error ENOMEM, and i2cdetect shows there's no device at the address.
+Quoting from mt8183 datasheet, the number of transfers to be
+transferred in one transaction should be set to bigger than 1,
+so we should forbid zero-length transfer and update functionality.
+
+Incorrect return:
+localhost ~ # i2cdetect -q -y 0
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- -- --
+
+After this patch:
+localhost ~ #  i2cdetect -q -y 0
+Error: Can't use SMBus Quick Write command on this bus
+
+localhost ~ #  i2cdetect -y 0
+Warning: Can't use SMBus Quick Write command, will skip some addresses
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:
+10:
+20:
+30: -- -- -- -- -- -- -- --
+40:
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60:
+70:
+
+Reported-by: Alexandru M Stan <amstan@chromium.org>
+Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
+---
+Previous patch and discussion:
+http://patchwork.ozlabs.org/patch/1042684/
+---
+ drivers/i2c/busses/i2c-mt65xx.c | 13 +++++++++++--
+ 1 file changed, 11 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/i2c/busses/i2c-mt65xx.c b/drivers/i2c/busses/i2c-mt65xx.c
+index 252edb433fdf..2842ca4b8c3b 100644
+--- a/drivers/i2c/busses/i2c-mt65xx.c
++++ b/drivers/i2c/busses/i2c-mt65xx.c
+@@ -234,6 +234,10 @@ static const struct i2c_adapter_quirks mt7622_i2c_quirks = {
+ 	.max_num_msgs = 255,
+ };
+ 
++static const struct i2c_adapter_quirks mt8183_i2c_quirks = {
++	.flags = I2C_AQ_NO_ZERO_LEN,
++};
++
+ static const struct mtk_i2c_compatible mt2712_compat = {
+ 	.regs = mt_i2c_regs_v1,
+ 	.pmic_i2c = 0,
+@@ -298,6 +302,7 @@ static const struct mtk_i2c_compatible mt8173_compat = {
+ };
+ 
+ static const struct mtk_i2c_compatible mt8183_compat = {
++	.quirks = &mt8183_i2c_quirks,
+ 	.regs = mt_i2c_regs_v2,
+ 	.pmic_i2c = 0,
+ 	.dcm = 0,
+@@ -870,7 +875,11 @@ static irqreturn_t mtk_i2c_irq(int irqno, void *dev_id)
+ 
+ static u32 mtk_i2c_functionality(struct i2c_adapter *adap)
+ {
+-	return I2C_FUNC_I2C | I2C_FUNC_SMBUS_EMUL;
++	if (adap->quirks->flags & I2C_AQ_NO_ZERO_LEN)
++		return I2C_FUNC_I2C |
++			(I2C_FUNC_SMBUS_EMUL & ~I2C_FUNC_SMBUS_QUICK);
++	else
++		return I2C_FUNC_I2C | I2C_FUNC_SMBUS_EMUL;
+ }
+ 
+ static const struct i2c_algorithm mtk_i2c_algorithm = {
+@@ -933,8 +942,8 @@ static int mtk_i2c_probe(struct platform_device *pdev)
+ 	i2c->dev = &pdev->dev;
+ 	i2c->adap.dev.parent = &pdev->dev;
+ 	i2c->adap.owner = THIS_MODULE;
+-	i2c->adap.algo = &mtk_i2c_algorithm;
+ 	i2c->adap.quirks = i2c->dev_comp->quirks;
++	i2c->adap.algo = &mtk_i2c_algorithm;
+ 	i2c->adap.timeout = 2 * HZ;
+ 	i2c->adap.retries = 1;
+ 
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
