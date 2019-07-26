@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1988E75E91
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 07:43:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A2F8875E92
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 07:43:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v2AMkpVWqwA0UIF0Uaet2r1Uu/F5gYc3nyktKOJCQPE=; b=cBMudUeqCwgr4H
-	pcv2aDSI/hp10+BTEqTNNhmoP/aUEWGlP00hP4Y3W4vhiXiWNDQNHZcWE72COyylRMVuPJbcuHLru
-	itJGhbbN0I3WDz5QB+OoJwterJXrV1Ok0pHwWOrxFqISl52dOGraORjgpdZk8AU8kl7KGio1KZAXg
-	jNFyPA8Ri2y9kUEmPz+DELMnAOtJizehBgBZkJ5YU7aEAUoCwh2+G/8JdQ2Z0wfay//3iAdbe6I+x
-	f4cT6FwSVZ4mG7vIxnoVMJdUlUDIDvnTaqGGBc/F1RO8FIMUa+Zd5JE4v6bwtGHGfkXEOAirvsM69
-	kPO9ydhGZehuiGHPO4bw==;
+	List-Owner; bh=qetCv1W/YVZefIWb6m+JEalYPVQbe1BiXJE/c2x+qDE=; b=fxbD8NpHfhDUP3
+	f7fE9jjflyt5hnY0Q+P8ObRYZEH4+vWpoRMDbUPhrvg+A7Z+/JXNUUHx9tpCt0GB7MVKW/G2DtppU
+	gewj1CBUKXj0TfL6I0xVYN174VFNZgVzUzyZjqM0cXYKCLzCGmR9biIeT4lGsQD3YZKOZ03aOYnzF
+	Sab7JzA1kr7u0eU4cANu/d3bCLv7d/hsJ92WMnoAVJM3zoLOcD+tNP1TJAuR5L/KlBCq0AolkkTQX
+	9/67WFBPQQHG4BA4HaDNcpR4X71Yekhf9xW+IVGr5AtIx8zSGIL28FhTe+aCzRZgI/ZigE0Jz5yi6
+	TIRPAPL8PdtrKz7qxDtw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqt0b-0005OO-CG; Fri, 26 Jul 2019 05:43:13 +0000
+	id 1hqt0u-0005eF-8g; Fri, 26 Jul 2019 05:43:32 +0000
 Received: from out5-smtp.messagingengine.com ([66.111.4.29])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqsxt-0003rU-0d
- for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 05:40:26 +0000
+ id 1hqsxw-0003tu-7u
+ for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 05:40:29 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id 5D404222D2;
- Fri, 26 Jul 2019 01:40:24 -0400 (EDT)
+ by mailout.nyi.internal (Postfix) with ESMTP id 9076F2230E;
+ Fri, 26 Jul 2019 01:40:27 -0400 (EDT)
 Received: from mailfrontend2 ([10.202.2.163])
- by compute4.internal (MEProxy); Fri, 26 Jul 2019 01:40:24 -0400
+ by compute4.internal (MEProxy); Fri, 26 Jul 2019 01:40:27 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=from
  :to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm3; bh=/iT1MTk1oKRrE
- njkLxpsHJsTgTurlfgvdf/YXz3Xh0c=; b=QR5/9S5OAR1o9JfaaovYhbPDOOu/m
- nRcQ9F4FGb5xlQjwaVFWi5PGSdziwoDGgQBni42TgFdnoqsK+khHdH1JOwSRLhWY
- aNawF5J+P6o99xKu3rpbwRyA+2aY261t8H1a9mcixArC7E8JfISsaXRQ469HCTFA
- 4JLnPB7g3lC3tWuLntagu3CTaRsRMYxxhykuIy4xvQRO2wBxrk66f8d2e9ZS8Aqx
- HFTraM1yS2lWxYmwuWRQU+vnyatKKyjlVhUljnvW0LZk0pvgnycbwZzmAVHAEJJ6
- OhSpvcdUVEeCcZVqxDRJURVjEQ3aEipKM8VIu0H1yuTbwnuRljAdwyXfg==
+ :mime-version:content-transfer-encoding; s=fm3; bh=oSDr1xjwZ4K40
+ /MK5vRNInuje81HUcQkw7+j8FhaZBE=; b=nJtUPr2doNBzYfahf8HEQokqeiFLZ
+ sxeJD+ChRqORwbEUNp2ySw0VWf/IW4BFBtsj8LF7E3xy4azYDmrqEwWTZH/XylqU
+ 6ExCjwaOdxoR3x5V4+xW3lmboHwDfLRv+x+GyBXHroFn0Udupku4/8PfZRK0iaHz
+ OIcbJP9v7oK1XMLmyVNtjxQeNc7Ylq1LLSkvpSxQ5qNsP479LkzvmllqT15OEDkD
+ +Hg8b66dHkUxawRoVBDxRxIY1BWsUkQkRDjvHyabgigeKgOVonW7Q+zXkdi9mbJA
+ x95QvYoh5Py91eRV/KGM27DzbGB+BM5eywVuw2cPqt1HWL9YXApa5Q1Rw==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm3; bh=/iT1MTk1oKRrEnjkLxpsHJsTgTurlfgvdf/YXz3Xh0c=; b=HnH9utGY
- q+bypQ5TAg7SQpLFGakmyV7ul4a0xJWHWrKjZI4SIAQO0QBB3xh2/aPMUJXxfJQI
- 1nEZSABOB3j3Yl/c/C7NRdOYr6mjPlpLFT3e7gfIGSe2ZsoaiE7zxxjJ+vgzUvgS
- a0hTGmpXg8TLzdHK2xPif1fQOG9g0bIaBefbaOAVoJEiLAjLOVH+D+QUpdoZPSMU
- DbcewYhJ01KvplSttcZGaupdKvSYPHI1G6XVLFDw+lQmWZgpawDDy0jygj0hOrV+
- CmDTa71sTUk9XlAR4teYwRSahejhmQMM1HFlpyGELpxIw2/TQx32dzm1wApl9EwF
- dNqmLXgfm2NzkA==
-X-ME-Sender: <xms:SJI6XVJnmfqlIod26b9fhxMMiuJ1jBxYAqaMSJpUkaX3jOOAq6VHQg>
+ fm3; bh=oSDr1xjwZ4K40/MK5vRNInuje81HUcQkw7+j8FhaZBE=; b=koCsYE2C
+ IS3NbTVKd205d2oxynUGvnCbRE+BzZ2S7gSFgGE6pLPpu6TzObSirDmZEgFHTlDR
+ Uh+7CeQ5dj3l0NEey+0jbDWFa5Us0IB5tqWsAaouibGTulb13XenSoZdSY0ENxdG
+ SJgY6aAGAxGPg2Wg2VbtQ/UuiqxehM9wMMvTZKuGSxrzbyMU89kwu4afLR4vrbMC
+ asYL1onjFlM1edk1I5Bhq3Ee8ets+iiy+BH0d5P1qzn/2uF3nM+PeWa7GoAdJY54
+ 482QIu1fFfKbbUFwsJJLkCzFNAfKkWOjLmzu4VFclD9928yPTJC53xqlIV8qvRQd
+ 41p5QBA2htFYlA==
+X-ME-Sender: <xms:S5I6XfUrr0Gmg07ph10mXzZUDMAXM-CP0EE6xar9s5fY7_Ih7B_OPA>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrkeefgdeljecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecunecujfgurhephffvufffkffojghfggfgsedtkeertd
@@ -56,25 +56,26 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrkeefgdeljecutefuodetggdote
  rdhiugdrrghuqeenucfkphepvddtvddrkedurddukedrfedtnecurfgrrhgrmhepmhgrih
  hlfhhrohhmpegrnhgurhgvfiesrghjrdhiugdrrghunecuvehluhhsthgvrhfuihiivgep
  he
-X-ME-Proxy: <xmx:SJI6XfYvNUQ96KBk3i3O0X_pZ6b07rwvobAeTK6MeTljclwN3lcnXw>
- <xmx:SJI6XXCz0lUE2YFnNDFaGZk5aenft_DjI5-u8LDe8Jt2kQs4y8WfRA>
- <xmx:SJI6XZbZEVrqPJcfYoUbIqy4u1n0i0d7XVbLsNy912fWOc-FJJv4aQ>
- <xmx:SJI6XdeXLTGkF59UyS_ne131-Bi4Zgp1Le4ybwiw5SHu9ukZAN8g9g>
+X-ME-Proxy: <xmx:S5I6XZH_kNpc_dcrOsnGt_JkI8VMWZuPEGTGxWgr8QMOA0ju1li6wA>
+ <xmx:S5I6XbfTGuLD2lfstgbNJUp4younmbw9PgMHVsYDcU7ExFBZDAdWnA>
+ <xmx:S5I6XaLoUkJX4Ziz1S267mH719wEXmgMNya4XB8HMZLcfhL1m3wdUw>
+ <xmx:S5I6XV7hUmOJCV17GTVRUg4FwAceJNDlkG5Farmrh2b3GjXrkTOHvA>
 Received: from mistburn.au.ibm.com (bh02i525f01.au.ibm.com [202.81.18.30])
- by mail.messagingengine.com (Postfix) with ESMTPA id F0183380076;
- Fri, 26 Jul 2019 01:40:20 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 9D6F8380076;
+ Fri, 26 Jul 2019 01:40:24 -0400 (EDT)
 From: Andrew Jeffery <andrew@aj.id.au>
 To: linux-aspeed@lists.ozlabs.org
-Subject: [PATCH 06/17] ARM: dts: swift: Cleanup gpio-keys-polled properties
-Date: Fri, 26 Jul 2019 15:09:48 +0930
-Message-Id: <20190726053959.2003-7-andrew@aj.id.au>
+Subject: [PATCH 07/17] ARM: dts: witherspoon: Cleanup gpio-keys-polled
+ properties
+Date: Fri, 26 Jul 2019 15:09:49 +0930
+Message-Id: <20190726053959.2003-8-andrew@aj.id.au>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190726053959.2003-1-andrew@aj.id.au>
 References: <20190726053959.2003-1-andrew@aj.id.au>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_224025_453994_CA663DBF 
-X-CRM114-Status: UNSURE (   7.59  )
+X-CRM114-CacheID: sfid-20190725_224028_536959_8788E00F 
+X-CRM114-Status: UNSURE (   7.81  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -104,9 +105,8 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- Andrew Jeffery <andrew@aj.id.au>, Adriana Kobylak <anoo@us.ibm.com>,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, joel@jms.id.au,
- linux-arm-kernel@lists.infradead.org
+ Andrew Jeffery <andrew@aj.id.au>, linux-kernel@vger.kernel.org,
+ robh+dt@kernel.org, joel@jms.id.au, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -116,17 +116,17 @@ dtbs_check gave the following warning:
 
     Warning (avoid_unnecessary_addr_size): /gpio-keys-polled: unnecessary #address-cells/#size-cells without "ranges" or child "reg" property
 
-Cc: Adriana Kobylak <anoo@us.ibm.com>
+Cc: Joel Stanley <joel@jms.id.au>
 Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
 ---
- arch/arm/boot/dts/aspeed-bmc-opp-swift.dts | 2 --
+ arch/arm/boot/dts/aspeed-bmc-opp-witherspoon.dts | 2 --
  1 file changed, 2 deletions(-)
 
-diff --git a/arch/arm/boot/dts/aspeed-bmc-opp-swift.dts b/arch/arm/boot/dts/aspeed-bmc-opp-swift.dts
-index 2077e8d0e096..9f934509ca1b 100644
---- a/arch/arm/boot/dts/aspeed-bmc-opp-swift.dts
-+++ b/arch/arm/boot/dts/aspeed-bmc-opp-swift.dts
-@@ -82,8 +82,6 @@
+diff --git a/arch/arm/boot/dts/aspeed-bmc-opp-witherspoon.dts b/arch/arm/boot/dts/aspeed-bmc-opp-witherspoon.dts
+index 08facb2120b2..06319c6771ca 100644
+--- a/arch/arm/boot/dts/aspeed-bmc-opp-witherspoon.dts
++++ b/arch/arm/boot/dts/aspeed-bmc-opp-witherspoon.dts
+@@ -77,8 +77,6 @@
  
  	gpio-keys-polled {
  		compatible = "gpio-keys-polled";
@@ -134,7 +134,7 @@ index 2077e8d0e096..9f934509ca1b 100644
 -		#size-cells = <0>;
  		poll-interval = <1000>;
  
- 		scm0-presence {
+ 		fan0-presence {
 -- 
 2.20.1
 
