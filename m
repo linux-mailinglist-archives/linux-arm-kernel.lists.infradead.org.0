@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B1D1768B4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 15:46:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6BCD7768BF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 15:47:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=UrCWaGEWI5Eg5eJw+LHxtiBYxDiKJuWFDx/MjCA42ao=; b=t1kFbVwomev+b1+1yqHS55+B1M
-	VJJXYhPeksYpyTDi5QyozSbGxp9g0ta36Xi4+Z8zZ5gPst2qYtpfi+1kQEaEBPuyVOSfdqdXm1b8i
-	ubLzwj7g8lpclBUAo7UrbHEj5fZEnPUEFTxvFDTDcCmGHKnXZ1eIHu1Pf40RrBRbNoxn5W4Jdv6/E
-	IlX4J9qWKYo+unjSiqfLP4t/mUiR2RCjuTUMV8sQnF7r8PDnAL410cih5WkbgoaZ54dwZtTy3v3J7
-	YSKGJKelrvvZ9vF/IdS+ahu53PAR6/NOG8h6eRCDfrKqFtg5SbfVHcXdMa3ulRWBZsCxoi7M1qZPD
-	mqKxRPxw==;
+	bh=2dyqGYYgP2v1/jXzwviSpfG8QBtuKQy9bGAFITqMpGI=; b=nHCgn+rLkTQTNs25wWhSl2Oifx
+	uCmyHKYyVJ1C/Td2Fyx4TP7ssBNKjwevKGxMRZIrJvwCGSw4FZvG+bPapp34gmzydebiQZe+bo2bn
+	WMGGxRoQddF+IcnuBlPqpg2FUhhyN4RIyWTEsIXHjiqmEUi9tkZGJFDFkAOstCDIOO3A0ist3Kogz
+	UgJJOkXq2RFaQuNG+Auw3L++nlW7Dz1N5m4Jcr/BulrYzsUWSNjUJu3ewKsfBP0oU5XoH3H5Bl8ms
+	N+ARRuT/iFSet4gDrd1T0KoVv7EBBOUQHs8ZCplnc7X4kKCZ5EtJ9eNwQ8shSnbpV+jHqNk54lcHs
+	S84zUKRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hr0YU-0003UB-C2; Fri, 26 Jul 2019 13:46:42 +0000
+	id 1hr0Yk-0003pD-6H; Fri, 26 Jul 2019 13:46:58 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hr0Xu-0003Ft-CS
- for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 13:46:07 +0000
+ id 1hr0Xv-0003Gb-GJ
+ for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 13:46:09 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9CC2F15A2;
- Fri, 26 Jul 2019 06:46:05 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1756015BF;
+ Fri, 26 Jul 2019 06:46:07 -0700 (PDT)
 Received: from usa.arm.com (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 5ADEE3F694;
- Fri, 26 Jul 2019 06:46:04 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id D1F893F694;
+ Fri, 26 Jul 2019 06:46:05 -0700 (PDT)
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 1/6] firmware: arm_scmi: Use the correct style for SPDX
- License Identifier
-Date: Fri, 26 Jul 2019 14:45:26 +0100
-Message-Id: <20190726134531.8928-2-sudeep.holla@arm.com>
+Subject: [PATCH v2 2/6] firmware: arm_scmi: Align few names in sensors
+ protocol with SCMI specification
+Date: Fri, 26 Jul 2019 14:45:27 +0100
+Message-Id: <20190726134531.8928-3-sudeep.holla@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190726134531.8928-1-sudeep.holla@arm.com>
 References: <20190726134531.8928-1-sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_064606_465638_5306321E 
-X-CRM114-Status: UNSURE (   9.68  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190726_064607_666984_4725879E 
+X-CRM114-Status: GOOD (  12.11  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -72,31 +71,130 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fix to correct the SPDX License Identifier style in header file related
-to firmware frivers for ARM SCMI message protocol.
+Looks like more code developed during the draft versions of the
+specification slipped through and they don't match the final
+released version. This seem to have happened only with sensor
+protocol.
 
-For C header files Documentation/process/license-rules.rst mandates
-C-like comments(opposed to C source files where C++ style should be
-used).
-
-While at it, change GPL-2.0 to GPL-2.0-only similar to the ones in
-psci.h and scpi_protocol.h
+Renaming few command and function names here to match exactly with
+the released version of SCMI specification for ease of maintenance.
 
 Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 ---
- include/linux/scmi_protocol.h | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/firmware/arm_scmi/sensors.c | 28 +++++++++++++++-------------
+ include/linux/scmi_protocol.h       | 12 ++++++------
+ 2 files changed, 21 insertions(+), 19 deletions(-)
 
+diff --git a/drivers/firmware/arm_scmi/sensors.c b/drivers/firmware/arm_scmi/sensors.c
+index 0e94ab56f679..17dbabd8a94a 100644
+--- a/drivers/firmware/arm_scmi/sensors.c
++++ b/drivers/firmware/arm_scmi/sensors.c
+@@ -9,8 +9,8 @@
+ 
+ enum scmi_sensor_protocol_cmd {
+ 	SENSOR_DESCRIPTION_GET = 0x3,
+-	SENSOR_CONFIG_SET = 0x4,
+-	SENSOR_TRIP_POINT_SET = 0x5,
++	SENSOR_TRIP_POINT_NOTIFY = 0x4,
++	SENSOR_TRIP_POINT_CONFIG = 0x5,
+ 	SENSOR_READING_GET = 0x6,
+ };
+ 
+@@ -42,9 +42,10 @@ struct scmi_msg_resp_sensor_description {
+ 	} desc[0];
+ };
+ 
+-struct scmi_msg_set_sensor_config {
++struct scmi_msg_sensor_trip_point_notify {
+ 	__le32 id;
+ 	__le32 event_control;
++#define SENSOR_TP_NOTIFY_ALL	BIT(0)
+ };
+ 
+ struct scmi_msg_set_sensor_trip_point {
+@@ -160,15 +161,15 @@ static int scmi_sensor_description_get(const struct scmi_handle *handle,
+ 	return ret;
+ }
+ 
+-static int
+-scmi_sensor_configuration_set(const struct scmi_handle *handle, u32 sensor_id)
++static int scmi_sensor_trip_point_notify(const struct scmi_handle *handle,
++					 u32 sensor_id, bool enable)
+ {
+ 	int ret;
+-	u32 evt_cntl = BIT(0);
++	u32 evt_cntl = enable ? SENSOR_TP_NOTIFY_ALL : 0;
+ 	struct scmi_xfer *t;
+-	struct scmi_msg_set_sensor_config *cfg;
++	struct scmi_msg_sensor_trip_point_notify *cfg;
+ 
+-	ret = scmi_xfer_get_init(handle, SENSOR_CONFIG_SET,
++	ret = scmi_xfer_get_init(handle, SENSOR_TRIP_POINT_NOTIFY,
+ 				 SCMI_PROTOCOL_SENSOR, sizeof(*cfg), 0, &t);
+ 	if (ret)
+ 		return ret;
+@@ -183,15 +184,16 @@ scmi_sensor_configuration_set(const struct scmi_handle *handle, u32 sensor_id)
+ 	return ret;
+ }
+ 
+-static int scmi_sensor_trip_point_set(const struct scmi_handle *handle,
+-				      u32 sensor_id, u8 trip_id, u64 trip_value)
++static int
++scmi_sensor_trip_point_config(const struct scmi_handle *handle, u32 sensor_id,
++			      u8 trip_id, u64 trip_value)
+ {
+ 	int ret;
+ 	u32 evt_cntl = SENSOR_TP_BOTH;
+ 	struct scmi_xfer *t;
+ 	struct scmi_msg_set_sensor_trip_point *trip;
+ 
+-	ret = scmi_xfer_get_init(handle, SENSOR_TRIP_POINT_SET,
++	ret = scmi_xfer_get_init(handle, SENSOR_TRIP_POINT_CONFIG,
+ 				 SCMI_PROTOCOL_SENSOR, sizeof(*trip), 0, &t);
+ 	if (ret)
+ 		return ret;
+@@ -255,8 +257,8 @@ static int scmi_sensor_count_get(const struct scmi_handle *handle)
+ static struct scmi_sensor_ops sensor_ops = {
+ 	.count_get = scmi_sensor_count_get,
+ 	.info_get = scmi_sensor_info_get,
+-	.configuration_set = scmi_sensor_configuration_set,
+-	.trip_point_set = scmi_sensor_trip_point_set,
++	.trip_point_notify = scmi_sensor_trip_point_notify,
++	.trip_point_config = scmi_sensor_trip_point_config,
+ 	.reading_get = scmi_sensor_reading_get,
+ };
+ 
 diff --git a/include/linux/scmi_protocol.h b/include/linux/scmi_protocol.h
-index 9ff2e9357e9a..aa1e791779b4 100644
+index aa1e791779b4..1383d47e6435 100644
 --- a/include/linux/scmi_protocol.h
 +++ b/include/linux/scmi_protocol.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0
-+/* SPDX-License-Identifier: GPL-2.0-only */
- /*
-  * SCMI Message Protocol driver header
+@@ -167,9 +167,9 @@ enum scmi_sensor_class {
   *
+  * @count_get: get the count of sensors provided by SCMI
+  * @info_get: get the information of the specified sensor
+- * @configuration_set: control notifications on cross-over events for
++ * @trip_point_notify: control notifications on cross-over events for
+  *	the trip-points
+- * @trip_point_set: selects and configures a trip-point of interest
++ * @trip_point_config: selects and configures a trip-point of interest
+  * @reading_get: gets the current value of the sensor
+  */
+ struct scmi_sensor_ops {
+@@ -177,10 +177,10 @@ struct scmi_sensor_ops {
+ 
+ 	const struct scmi_sensor_info *(*info_get)
+ 		(const struct scmi_handle *handle, u32 sensor_id);
+-	int (*configuration_set)(const struct scmi_handle *handle,
+-				 u32 sensor_id);
+-	int (*trip_point_set)(const struct scmi_handle *handle, u32 sensor_id,
+-			      u8 trip_id, u64 trip_value);
++	int (*trip_point_notify)(const struct scmi_handle *handle,
++				 u32 sensor_id, bool enable);
++	int (*trip_point_config)(const struct scmi_handle *handle,
++				 u32 sensor_id, u8 trip_id, u64 trip_value);
+ 	int (*reading_get)(const struct scmi_handle *handle, u32 sensor_id,
+ 			   bool async, u64 *value);
+ };
 -- 
 2.17.1
 
