@@ -2,68 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4EF6376403
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 13:00:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B46576410
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 13:04:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:
-	Subject:To:From:Date:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5wHjaYbhf9UPwJOsYWrD7MX5flTzEhKbY0a3+kZsYMQ=; b=eX9CpguUcADFix
-	vzwqdjdY3kjLZdIhSSOPdsH6MjNOg1mYVQFvhJbK7RREvsnYM64M/V6WxDTqEIkijQrGBNSLBkkRJ
-	/0NICvlFQ5+1R8wjk0j+mSUwA+74wJAasucPtvH+dpoCVmkrZn7d7dEQ1zKrxlZqNHow/+N5TCmFU
-	IkKQBM6Fm0YF5SXAgqHqRULg3gJwqe2lQWYbieorADYOH9BWVBNTVCEAaUv5JRrg9kM0UiH4VvMGm
-	M3gGTRigIA+/+7YLgS8dqXTyo3HyI3Aolgvxtfmt//+QfkIbuuwWkdN9nSFS7Y0G8r2e2mRXjfoM0
-	iPkVZXbfwY/dsAxFZsLQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=UUrDoUnbNOkMqw30NucsaUgsvlUO2UAFeqAxmVLhNY4=; b=kDi+nRlfIreN/FuvXbfcYIQRR
+	xOF4KLJrw5ORz63iOPoPv3CzjujCViR6cLIVFDQ/+xcb5a5zv2KdOt1Ny7V60HBju8bmBAboENXdV
+	oqxEf0FhvogGTU9z63QjymXGdbV+xDmwPyFmbK55m+HnZnCRCIH0rlTgrXD2Tsr9Ea2tRpGlMyuf3
+	8uOQXbQMVXFBRSIRFClqVdBORxvfvMSJ1crY+HNSTd9UYd68gwPg1vUGK+ue9R2CSVMoaL5n1JzMr
+	MHg9LbGBzh2vd3QHX6vBkDP/4D249fnz63cfRTl3f3qjhDzbHdFHfkt1T6aVoeQMVzOyKpQKZMV00
+	9IPwKJ2PQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqxxz-0008GT-R6; Fri, 26 Jul 2019 11:00:51 +0000
-Received: from mail.kmu-office.ch ([2a02:418:6a02::a2])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqxxq-0008Fi-FC
- for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 11:00:44 +0000
-Received: from webmail.kmu-office.ch (unknown [IPv6:2a02:418:6a02::a3])
- by mail.kmu-office.ch (Postfix) with ESMTPSA id 0FABA5C02B3;
- Fri, 26 Jul 2019 13:00:37 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=agner.ch; s=dkim;
- t=1564138837;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=EYDHF2viGAO7INulhQjnGn1wMlyhHlC54xWBdg+6oIw=;
- b=Abl1Av9XYNIGg7/KWzSis/iAAeoLSkkVbDapmS9iSmxuO/x9+keLZx4mhaq96DkqPNeAE1
- Lg0y2TsF9fLpyY4ZCna4GxpQulihTPQ61oUSrDCCx06gBltqE5dOSXM04sqDOCi6Ses1+u
- MeuI7kqT2SLCl26GU59MynKLg9ZyZuM=
+	id 1hqy1f-0000Xq-0u; Fri, 26 Jul 2019 11:04:39 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hqy1U-0000X5-Sf; Fri, 26 Jul 2019 11:04:30 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 300D4344;
+ Fri, 26 Jul 2019 04:04:27 -0700 (PDT)
+Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 86A963F71A;
+ Fri, 26 Jul 2019 04:04:24 -0700 (PDT)
+Subject: Re: [RFC, v3 9/9] media: platform: Add Mediatek ISP P1 shared memory
+ device
+To: Tomasz Figa <tfiga@chromium.org>, Christoph Hellwig <hch@infradead.org>
+References: <jungo.lin@mediatek.com>
+ <20190611035344.29814-1-jungo.lin@mediatek.com>
+ <20190611035344.29814-10-jungo.lin@mediatek.com>
+ <20190701072532.GB137710@chromium.org> <1562297618.1212.46.camel@mtksdccf07>
+ <CAAFQd5BaTQ-Q7gsE0X+d4_81OZq9WHaCYkmALt7_4A1JFo=_8g@mail.gmail.com>
+ <1562313579.1212.73.camel@mtksdccf07>
+ <CAAFQd5AaNFpMGCVJREY85n8UetEwd99TOka8-ECoLzMbMkos_g@mail.gmail.com>
+ <1563870117.1212.455.camel@mtksdccf07>
+ <CAAFQd5Bh80N+cMhz=eyHUGJLaE5uuypOawQvHrTgGSMDvmcpLA@mail.gmail.com>
+ <20190726074116.GA19745@infradead.org>
+ <CAAFQd5CXwRm-3jD+rfNNDNLH=gT_i0QYSAG3XBo3SJnPTY56_w@mail.gmail.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <4460bc91-352a-7f3a-cbed-1b95e743ca8c@arm.com>
+Date: Fri, 26 Jul 2019 12:04:23 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Date: Fri, 26 Jul 2019 13:00:37 +0200
-From: Stefan Agner <stefan@agner.ch>
-To: =?UTF-8?Q?Guido_G=C3=BCnther?= <agx@sigxcpu.org>
-Subject: Re: [PATCH 1/1] drm/mxsfb: Read bus flags from bridge if present
-In-Reply-To: <9390060f65f94722cb13101d4835d9048037f7a0.1564134488.git.agx@sigxcpu.org>
-References: <cover.1564134488.git.agx@sigxcpu.org>
- <9390060f65f94722cb13101d4835d9048037f7a0.1564134488.git.agx@sigxcpu.org>
-Message-ID: <cdf94095134f91656752d4872fea9d3c@agner.ch>
-X-Sender: stefan@agner.ch
-User-Agent: Roundcube Webmail/1.3.9
+In-Reply-To: <CAAFQd5CXwRm-3jD+rfNNDNLH=gT_i0QYSAG3XBo3SJnPTY56_w@mail.gmail.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_040042_655311_9CB915C0 
-X-CRM114-Status: GOOD (  13.81  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190726_040428_972699_4CA60D57 
+X-CRM114-Status: GOOD (  16.97  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,46 +71,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marek Vasut <marex@denx.de>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- David Airlie <airlied@linux.ie>, Fabio Estevam <festevam@gmail.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, NXP Linux Team <linux-imx@nxp.com>,
- Daniel Vetter <daniel@ffwll.ch>, Robert Chiras <robert.chiras@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org,
+ =?UTF-8?B?U2VhbiBDaGVuZyAo6YSt5piH5byYKQ==?= <sean.cheng@mediatek.com>,
+ =?UTF-8?B?RnJlZGVyaWMgQ2hlbiAo6Zmz5L+K5YWDKQ==?= <frederic.chen@mediatek.com>,
+ =?UTF-8?B?UnlubiBXdSAo5ZCz6IKy5oGpKQ==?= <rynn.wu@mediatek.com>,
+ srv_heupstream <srv_heupstream@mediatek.com>, Rob Herring <robh@kernel.org>,
+ Joerg Roedel <joro@8bytes.org>,
+ =?UTF-8?B?UnlhbiBZdSAo5L2Z5a2f5L+uKQ==?= <ryan.yu@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ =?UTF-8?B?RnJhbmtpZSBDaGl1ICjpgrHmloflh7Ep?= <frankie.chiu@mediatek.com>,
+ "list@263.net:IOMMU DRIVERS" <iommu@lists.linux-foundation.org>,
+ Hans Verkuil <hverkuil@xs4all.nl>, Jungo Lin <jungo.lin@mediatek.com>,
+ Sj Huang <sj.huang@mediatek.com>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>, ddavenport@chromium.org,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjAxOS0wNy0yNiAxMTo0OSwgR3VpZG8gR8O8bnRoZXIgd3JvdGU6Cj4gVGhlIGJyaWRnZSBt
-aWdodCBoYXZlIHNwZWNpYWwgcmVxdWlybWVudGVzIG9uIHRoZSBpbnB1dCBidXMuIFRoaXMKPiBp
-cyBlLmcuIHVzZWQgYnkgdGhlIGlteC1ud2wgYnJpZGdlLgo+IAo+IFNpZ25lZC1vZmYtYnk6IEd1
-aWRvIEfDvG50aGVyIDxhZ3hAc2lneGNwdS5vcmc+CgpMb29rcyBnb29kIHRvIG1lLgoKUmV2aWV3
-ZWQtYnk6IFN0ZWZhbiBBZ25lciA8c3RlZmFuQGFnbmVyLmNoPgoKClRoYXQgaXMgc2ltaWxhciB0
-byB3aGF0IEkgc2VudCBmb3IgdGhlIGlteCBEUk0gZHJpdmVyOgoKaHR0cHM6Ly9sa21sLm9yZy9s
-a21sLzIwMTgvOS8xMi85MTMKCkkgcHJvYmFibHkgc2hvdWxkIGZvbGxvdyB1cCBvbiB0aGF0IHBh
-dGNoc2V0LgoKLS0KU3RlZmFuCgo+IC0tLQo+ICBkcml2ZXJzL2dwdS9kcm0vbXhzZmIvbXhzZmJf
-Y3J0Yy5jIHwgNSArKysrLQo+ICAxIGZpbGUgY2hhbmdlZCwgNCBpbnNlcnRpb25zKCspLCAxIGRl
-bGV0aW9uKC0pCj4gCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvZ3B1L2RybS9teHNmYi9teHNmYl9j
-cnRjLmMKPiBiL2RyaXZlcnMvZ3B1L2RybS9teHNmYi9teHNmYl9jcnRjLmMKPiBpbmRleCBlODRi
-YWMzYTU0MWQuLjNiOGViM2FjMTNiNiAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL2dwdS9kcm0vbXhz
-ZmIvbXhzZmJfY3J0Yy5jCj4gKysrIGIvZHJpdmVycy9ncHUvZHJtL214c2ZiL214c2ZiX2NydGMu
-Ywo+IEBAIC0yMTUsNyArMjE1LDcgQEAgc3RhdGljIHZvaWQgbXhzZmJfY3J0Y19tb2RlX3NldF9u
-b2ZiKHN0cnVjdAo+IG14c2ZiX2RybV9wcml2YXRlICpteHNmYikKPiAgewo+ICAJc3RydWN0IGRy
-bV9kZXZpY2UgKmRybSA9IG14c2ZiLT5waXBlLmNydGMuZGV2Owo+ICAJc3RydWN0IGRybV9kaXNw
-bGF5X21vZGUgKm0gPSAmbXhzZmItPnBpcGUuY3J0Yy5zdGF0ZS0+YWRqdXN0ZWRfbW9kZTsKPiAt
-CWNvbnN0IHUzMiBidXNfZmxhZ3MgPSBteHNmYi0+Y29ubmVjdG9yLT5kaXNwbGF5X2luZm8uYnVz
-X2ZsYWdzOwo+ICsJdTMyIGJ1c19mbGFncyA9IG14c2ZiLT5jb25uZWN0b3ItPmRpc3BsYXlfaW5m
-by5idXNfZmxhZ3M7Cj4gIAl1MzIgdmRjdHJsMCwgdnN5bmNfcHVsc2VfbGVuLCBoc3luY19wdWxz
-ZV9sZW47Cj4gIAlpbnQgZXJyOwo+ICAKPiBAQCAtMjM5LDYgKzIzOSw5IEBAIHN0YXRpYyB2b2lk
-IG14c2ZiX2NydGNfbW9kZV9zZXRfbm9mYihzdHJ1Y3QKPiBteHNmYl9kcm1fcHJpdmF0ZSAqbXhz
-ZmIpCj4gIAo+ICAJY2xrX3NldF9yYXRlKG14c2ZiLT5jbGssIG0tPmNydGNfY2xvY2sgKiAxMDAw
-KTsKPiAgCj4gKwlpZiAobXhzZmItPmJyaWRnZSAmJiBteHNmYi0+YnJpZGdlLT50aW1pbmdzKQo+
-ICsJCWJ1c19mbGFncyA9IG14c2ZiLT5icmlkZ2UtPnRpbWluZ3MtPmlucHV0X2J1c19mbGFnczsK
-PiArCj4gIAlEUk1fREVWX0RFQlVHX0RSSVZFUihkcm0tPmRldiwgIlBpeGVsIGNsb2NrOiAlZGtI
-eiAoYWN0dWFsOiAlZGtIeilcbiIsCj4gIAkJCSAgICAgbS0+Y3J0Y19jbG9jaywKPiAgCQkJICAg
-ICAoaW50KShjbGtfZ2V0X3JhdGUobXhzZmItPmNsaykgLyAxMDAwKSk7CgpfX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxp
-bmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
-LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On 26/07/2019 08:42, Tomasz Figa wrote:
+> On Fri, Jul 26, 2019 at 4:41 PM Christoph Hellwig <hch@infradead.org> wrote:
+>>
+>> On Fri, Jul 26, 2019 at 02:15:14PM +0900, Tomasz Figa wrote:
+>>> Could you try dma_get_sgtable() with the SCP struct device and then
+>>> dma_map_sg() with the P1 struct device?
+>>
+>> Please don't do that.  dma_get_sgtable is a pretty broken API (see
+>> the common near the arm implementation) and we should not add more
+>> users of it.  If you want a piece of memory that can be mapped to
+>> multiple devices allocate it using alloc_pages and then just map
+>> it to each device.
+> 
+> Thanks for taking a look at this thread.
+> 
+> Unfortunately that wouldn't work. We have a specific reserved memory
+> pool that is the only memory area accessible to one of the devices.
+> Any idea how to handle this?
+
+If it's reserved in the sense of being outside struct-page-backed 
+"kernel memory", then provided you have a consistent CPU physical 
+address it might be reasonable for other devices to access it via 
+dma_map_resource().
+
+Robin.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
