@@ -2,78 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 12C4A76351
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 12:16:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 386CF76353
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 12:17:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=rZ/NveSEFyjuEJgMTIaO1V6UNxabrvMqn8mnPbhBqJI=; b=VL1+KqjhkYXB59
-	bQuNb4mbJiKwvaHnPCyQIMTStX181T3EvV46iEX6VNy744aCC+deF9rMsS5i6zl6M9lzXd7k27YFc
-	HHZFg+StHa+KoLeFOaaN6y0sob2q7+qjzz1pgFLmXAt9eZqon7624ruIbmd0X4qJnAWt+eo5dcR5K
-	2Pe1NelnXM/SPXzKbSoxyOBcxmfnplmhdZnFJSMlCJ2+lUfKgaNQHbBSBQih8QtHpLKzYRUT7ymNV
-	mnvfq9z3a4OYJXCvGpvCuCqxcbqQD9q5Y8cicfZUgM2R5Ytb57bUq9eslyFAj3DN0T6x2ARyMyKQU
-	DI89lLepC6dC168bd0kQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wuf9mjHgxa46xQxmQ5q2PUHZmZ1h9XPRDOp+Zj6Hgsk=; b=TMyz2aygEpsdia
+	VlGxeCDuC4RM4w9C7Q4oMgNNOBVtUnc0n+43axS4qcGhEESIea6QjkXQWsn6VC4oECrYd8qS26lgS
+	DJJZl4cpA3UcBHflZhFlj+SgSv8BnCPel+wJGaGt/gMxDx3A5QEcWTppS30Pag8d9dzHaU7EqHI9G
+	iWmzQznY5HNoW3wxH1eTXC+OR50aGpVEaNrsjftiWuJWL2t0IUB1KMmr3ZDN+p6Gg6BhKn5cPMmor
+	kD0TVEGB918muxSG3jRpPpDqrvd/+x0ObcmKJEWTtG2wZ9qax5WMUmAAldj1f2ci1oD8ZtTtw3gbH
+	gDZTFtMqm0JY7vr/NVVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqxHA-0008Vl-9a; Fri, 26 Jul 2019 10:16:36 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1hqxHY-0000Ek-OI; Fri, 26 Jul 2019 10:17:00 +0000
+Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqxGv-0008VD-P0
- for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 10:16:23 +0000
-Received: by mail-ed1-x543.google.com with SMTP id s49so17985744edb.1
+ id 1hqxGw-0008VE-PT
+ for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 10:16:24 +0000
+Received: by mail-ed1-x541.google.com with SMTP id k21so52833538edq.3
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 26 Jul 2019 03:16:21 -0700 (PDT)
+ Fri, 26 Jul 2019 03:16:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=QFKLl3j0cV4b00IrtmDF2crMy7nq5ij9lMTGh/WZlxM=;
- b=Fy+55K5JBislxkoD9cJMvbdrIWiyweT7579G4qAXYGuX1AxPaY/BHx8VPAy36FFp+u
- dDucZNLmOatXw107QWpBy1XYvzfCteEu116OdNGO3jChwCVPjOSkr1G0hRWEerDeEZBg
- 1E2RtYDkooI1ZghMpcPHJTTZscsK2GYbu48iYmc0+I11MO2nOXfUTnvhKHOlQyHFU/KJ
- FtuFgk9/qdImGCjJf2qTupwZFx5yhAfIEoBBSvcqRsF5o2iQEfug3xPLLbHDOItdmZAH
- kQLOZCVRm1QmW/5HbgY9EPgd8sfkNG25kMjxCPVnTNd5lZjDPQkGEBENcmMD5sIS9PUk
- T2oA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=F3d8K+IP7Z62EKI1ZjJ9rcL+LSug/j9TnHUjTaLFYOY=;
+ b=ozHtnV42uI/pFK8boJa/OE3nZB/tZ629d7jUI4P9ngfaa0e+s+AJHL5509gN+z7KZh
+ hLvYxWH7pdd1rd0mE+lBWzi49r3UQRzYFHxpZoqoBCITmUnyfDIbI6sI29mUFr18v29f
+ spN76EwDxjQJEjclPX2FRGQUlSpiRnOttnlGMuVDyYYv6AvA8e7tROZVwa/+T96kAOow
+ nX/2pcVWEbo8oDjamEH0cZj9tehZuD7D3PHG81tcxWV4E+FL5aUhJpVQ0rHMTBqCAVRy
+ K3Y/g/UH7mAy3fPg3yjelAf6Shmrnrahle2j/fZjYCu5nffqoGKl3RGBdtl8/k2FwDtD
+ tPBg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=QFKLl3j0cV4b00IrtmDF2crMy7nq5ij9lMTGh/WZlxM=;
- b=uGnkGia3E9tGwkJaclz/+v8p5EXn+MvLloM6exEkao4R+vpCXgFHxhOOCLiHcVD8s1
- fpDqjDL0YCmk3UhRbXSg8R/Q+8/T87jV/I0KaoBgQFuDWFEYbec+rXaOvUfQMpN5aXOU
- vzAQVVTmlbkQjbR6hX6aD/J96w+wRHB7ZdjmGb+29Mzm36OqyomE1GBuTnrZBXy1DmGg
- LXEU7Ubbpa8O5Ew7msfpKI/vtXv8F1+W+2XOzqdy7Al3fJP4Wce8CJt0I1+mcNloENUw
- RADfTp6q1V011h79SIGqWDIi7YKsffBGYpO4jCeuKAgbqg64J8Z/0fVSI8gS16WOB50V
- nndw==
-X-Gm-Message-State: APjAAAVRrvzlMrhZLyJpxWHl+4NgirtkWJxr484NZqePxEQ20s//6Pzh
- nFSq5i5g1n+y0iqjpYca9Zg=
-X-Google-Smtp-Source: APXvYqzKtp+ERuiP/pZGd7Mp5A9nxlmYRlwLXoWGAAN5xNzjADDpQK7LHhZVTSxxtfu002tP4sc8Jg==
-X-Received: by 2002:a17:906:e213:: with SMTP id
- gf19mr31876779ejb.180.1564136179859; 
- Fri, 26 Jul 2019 03:16:19 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=F3d8K+IP7Z62EKI1ZjJ9rcL+LSug/j9TnHUjTaLFYOY=;
+ b=YrODgkBUADo/1DXgBhn7vV9iHh1rYcVWmngqo99CbEadrcdYBLydMC17wcfzr9VJBv
+ MWK5hGGeGTVFOcbJ3FXgX+3hmhgHHHT5n4ImKpKDCvFYXJ9hPq8fn/YwSbWiERPicZaX
+ CGuioH4qmaIhoioVrGPisK+6ag3ej0NmON13GAolR3mzZwy1pNTvfCaEAmRL3cwUASl3
+ uQWiMG8x9bPIbHZ7SL3RKfeywDt20E7sl4TTPXWeWIkUYkKwyCWx4T7kaYmETITR2cuN
+ f3mE7C29yuP55KRtl1eTijD1KsF9UQAPbOVBBf0VSiyIQJepZFkYd+cThTlGLHt2Uoso
+ OVwg==
+X-Gm-Message-State: APjAAAX+W619+czuQO+bkBixpTOE3+Rb677uhIdhEpjJ/o3E9Lcpr5G1
+ +tDYZg0IcfY07QDexGyyuuBZ4VG1
+X-Google-Smtp-Source: APXvYqyKsM9F2qOnBdoZ6kxjChFZSQTUooFmd/W2XILTJVP936B/RF5aWf++WDglXdzQi56RsbKvRw==
+X-Received: by 2002:a17:907:20bb:: with SMTP id
+ pw27mr69989946ejb.93.1564136181254; 
+ Fri, 26 Jul 2019 03:16:21 -0700 (PDT)
 Received: from localhost (pD9E51890.dip0.t-ipconnect.de. [217.229.24.144])
- by smtp.gmail.com with ESMTPSA id oo19sm9819541ejb.38.2019.07.26.03.16.19
+ by smtp.gmail.com with ESMTPSA id 34sm13960589eds.5.2019.07.26.03.16.20
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Fri, 26 Jul 2019 03:16:19 -0700 (PDT)
+ Fri, 26 Jul 2019 03:16:20 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Thierry Reding <thierry.reding@gmail.com>
-Subject: [PATCH 1/3] arm64: tegra: Add unit-address for CBB on Tegra194
-Date: Fri, 26 Jul 2019 12:16:16 +0200
-Message-Id: <20190726101618.26896-1-thierry.reding@gmail.com>
+Subject: [PATCH 2/3] arm64: tegra: Add unit-address for ACONNECT on Tegra194
+Date: Fri, 26 Jul 2019 12:16:17 +0200
+Message-Id: <20190726101618.26896-2-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.22.0
+In-Reply-To: <20190726101618.26896-1-thierry.reding@gmail.com>
+References: <20190726101618.26896-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_031621_815551_5BE1A2F0 
-X-CRM114-Status: GOOD (  10.95  )
+X-CRM114-CacheID: sfid-20190726_031622_823263_634C0286 
+X-CRM114-Status: GOOD (  11.62  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -106,83 +108,42 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Thierry Reding <treding@nvidia.com>
 
-The control back-bone (CBB) starts at physical address 0, so give it a
+The ACONNECT complex starts at physical address 0x2900000, so give it a
 unit-address to comply with standard naming practices checked for by the
 device tree compiler.
 
 Signed-off-by: Thierry Reding <treding@nvidia.com>
 ---
- .../arm64/boot/dts/nvidia/tegra194-p2888.dtsi | 20 +++++++++----------
- .../boot/dts/nvidia/tegra194-p2972-0000.dts   |  2 +-
- arch/arm64/boot/dts/nvidia/tegra194.dtsi      |  2 +-
- 3 files changed, 12 insertions(+), 12 deletions(-)
+ arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts | 2 +-
+ arch/arm64/boot/dts/nvidia/tegra194.dtsi           | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi b/arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi
-index 62e07e1197cc..02f6a8f0d741 100644
---- a/arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi
-+++ b/arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi
-@@ -8,17 +8,17 @@
- 	compatible = "nvidia,p2888", "nvidia,tegra194";
- 
- 	aliases {
--		sdhci0 = "/cbb/sdhci@3460000";
--		sdhci1 = "/cbb/sdhci@3400000";
-+		sdhci0 = "/cbb@0/sdhci@3460000";
-+		sdhci1 = "/cbb@0/sdhci@3400000";
- 		serial0 = &tcu;
- 		i2c0 = "/bpmp/i2c";
--		i2c1 = "/cbb/i2c@3160000";
--		i2c2 = "/cbb/i2c@c240000";
--		i2c3 = "/cbb/i2c@3180000";
--		i2c4 = "/cbb/i2c@3190000";
--		i2c5 = "/cbb/i2c@31c0000";
--		i2c6 = "/cbb/i2c@c250000";
--		i2c7 = "/cbb/i2c@31e0000";
-+		i2c1 = "/cbb@0/i2c@3160000";
-+		i2c2 = "/cbb@0/i2c@c240000";
-+		i2c3 = "/cbb@0/i2c@3180000";
-+		i2c4 = "/cbb@0/i2c@3190000";
-+		i2c5 = "/cbb@0/i2c@31c0000";
-+		i2c6 = "/cbb@0/i2c@c250000";
-+		i2c7 = "/cbb@0/i2c@31e0000";
- 	};
- 
- 	chosen {
-@@ -26,7 +26,7 @@
- 		stdout-path = "serial0:115200n8";
- 	};
- 
--	cbb {
-+	cbb@0 {
- 		ethernet@2490000 {
- 			status = "okay";
- 
 diff --git a/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts b/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts
-index 23597d53c9c9..740aaf597115 100644
+index 740aaf597115..fb0b9fd0b405 100644
 --- a/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts
 +++ b/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts
-@@ -10,7 +10,7 @@
- 	model = "NVIDIA Jetson AGX Xavier Developer Kit";
+@@ -11,7 +11,7 @@
  	compatible = "nvidia,p2972-0000", "nvidia,tegra194";
  
--	cbb {
-+	cbb@0 {
- 		aconnect {
+ 	cbb@0 {
+-		aconnect {
++		aconnect@2900000 {
  			status = "okay";
  
+ 			dma-controller@2930000 {
 diff --git a/arch/arm64/boot/dts/nvidia/tegra194.dtsi b/arch/arm64/boot/dts/nvidia/tegra194.dtsi
-index adebbbf36bd0..2597eb7f747b 100644
+index 2597eb7f747b..923415fd72a4 100644
 --- a/arch/arm64/boot/dts/nvidia/tegra194.dtsi
 +++ b/arch/arm64/boot/dts/nvidia/tegra194.dtsi
-@@ -14,7 +14,7 @@
- 	#size-cells = <2>;
+@@ -59,7 +59,7 @@
+ 			snps,rxpbl = <8>;
+ 		};
  
- 	/* control backbone */
--	cbb {
-+	cbb@0 {
- 		compatible = "simple-bus";
- 		#address-cells = <1>;
- 		#size-cells = <1>;
+-		aconnect {
++		aconnect@2900000 {
+ 			compatible = "nvidia,tegra194-aconnect",
+ 				     "nvidia,tegra210-aconnect";
+ 			clocks = <&bpmp TEGRA194_CLK_APE>,
 -- 
 2.22.0
 
