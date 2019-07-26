@@ -2,52 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E987766F4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 15:08:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4591D766FF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 15:12:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=14Xd8Cqq1yaxhOqYrGJZP45nVBijXHDtUm9qu3lpRq8=; b=BVo37C+Y2IZVTP
-	br/H1c9bCNb+sHO9buI5+kkm3rjq4o0D9it6qIfEI6mBH8E60zt0IjNso6+YL7igWfqvLahTgFW8G
-	uOqrBpwIKUKVQroxGzF1NUZ0iJSagf9XUB2Slu+I44Mn4SI48wQJpj3izI0Y3GtVUHhnQUBJwCLQk
-	PMosue/x1S6oQIwGMpSnYBWI9MJ7tZD6M1hWY6KMXQfrhP1iWA0IJyq/gvZon/M4JIy7miW2DRqkV
-	dvS0W2UOVOfEUSa9mgytb6/yPm5muM8SfMYnjqTUBcOknDtWwF/Al1PPFI1wy0juSGPh4dnVwKTar
-	gzbGa/x+1umd3ZoDm5nw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=vj2oOHhzBQb6T2la5UZVuvdtmiO6rnrN7BvG6R3n1c8=; b=RL6bW80GCE/n/R
+	Czx7U8hy2FnVjTB4HHGu375m1+kAsniRKC37N99FPQsesRlYiLLPj78Bj4POtoq+Yvk/6Y8JvVVUx
+	0ismDhTUCVUl4esF7ul0W5tBGMnSn47cuQ8a04rxJFm00ilq2yswBljnGvGu0TnuKqM9UM7CBc0cp
+	IdHro94ZeQDLAOaJ0P/jPoILmwemg6hHJfiI0zjOV/ItZHv/jfvNjx49DwNJkBh6H3qAuAAy4t/gD
+	cnPbd5kMKKcLdDaUkYRKA5NvEVOQPyzC+cPl8bPkQ5gmzTOesflfe1ymTLQJpDAY52karziIIgRk9
+	z+7xoR8ihQatte/BGt4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqzxr-0005PS-CU; Fri, 26 Jul 2019 13:08:51 +0000
+	id 1hr01R-0007O6-Cg; Fri, 26 Jul 2019 13:12:33 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqzxe-0005Ox-Sf
- for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 13:08:40 +0000
+ id 1hr01E-0007NY-9t
+ for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 13:12:21 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8D119218D4;
- Fri, 26 Jul 2019 13:08:37 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2AA5F218D4;
+ Fri, 26 Jul 2019 13:12:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564146518;
- bh=nyisBE4O2xGmPKme/Zgrvs6HBJR9RJ66g+1LT4Ivjrc=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=LgQXq098EtOVgHG67rjk7dt3bpXrJlPkAQoNpmFWb4NWHDIs142jU+8ycHZhU7s2L
- Emer6MdM1EHnQbBNgkaPghRuN98oX6dv6jGsri2XZ7s7mB2pNt7uQlbnDhLM3q5IQR
- RtmZ//o5SEKJzLsfndCe9lp0gfG61xYdVN0HpgaQ=
-Date: Fri, 26 Jul 2019 14:08:34 +0100
+ s=default; t=1564146740;
+ bh=lS7VU+fYLf9p8y4UAb/u0BkVPuztI5yiv146UfxCQDM=;
+ h=Date:From:To:Cc:Subject:From;
+ b=HeI8QMV5ptqPEjWImZK/G7ljfbzJwNqBuLFsieHmWMcqdpaYdl2UtrBms5Lh5GX8C
+ 3X+EuxET8Bu0ofRypSvw5Ag9692Un3I0nSMkS/9nfNLKduqv5rGCu6F7a6VdMxx8i7
+ yqIeRc3KFTvVuU3p3DRZQ4yMz+SaUS9WbCopSzhk=
+Date: Fri, 26 Jul 2019 14:12:16 +0100
 From: Will Deacon <will@kernel.org>
-To: Anders Roxell <anders.roxell@linaro.org>
-Subject: Re: [PATCH] arm: perf: Mark expected switch fall-through
-Message-ID: <20190726130834.coonga4kygk23ojx@willie-the-truck>
-References: <20190726112732.19257-1-anders.roxell@linaro.org>
+To: torvalds@linux-foundation.org
+Subject: [GIT PULL] arm64: fixes for -rc2
+Message-ID: <20190726131215.2dqryzjvxfyqefuw@willie-the-truck>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190726112732.19257-1-anders.roxell@linaro.org>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_060838_950406_538DB541 
-X-CRM114-Status: GOOD (  15.81  )
+X-CRM114-CacheID: sfid-20190726_061220_374976_DC705BEE 
+X-CRM114-Status: GOOD (  12.65  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,53 +74,115 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, stable@vger.kernel.org, linux-kernel@vger.kernel.org,
+Cc: catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gRnJpLCBKdWwgMjYsIDIwMTkgYXQgMDE6Mjc6MzJQTSArMDIwMCwgQW5kZXJzIFJveGVsbCB3
-cm90ZToKPiBXaGVuIGZhbGwtdGhyb3VnaCB3YXJuaW5ncyB3YXMgZW5hYmxlZCBieSBkZWZhdWx0
-LCBkOTM1MTJlZjBmMGUKPiAoIk1ha2VmaWxlOiBHbG9iYWxseSBlbmFibGUgZmFsbC10aHJvdWdo
-IHdhcm5pbmciKSwgd2UgY291bGQgc2VlIHRoZQo+IGZvbGxvd2luZyB3YXJuaW5ncyB3YXMgc3Rh
-cnRpbmcgdG8gc2hvdyB1cC4gSG93ZXZlciwgdGhpcyB3YXMgb3JpZ2luYWxseQo+IGludHJvZHVj
-ZWQgaW4gY29tbWl0IDZlZTMzYzI3MTJmYyAoIkFSTTogaHdfYnJlYWtwb2ludDogY29ycmVjdCBh
-bmQKPiBzaW1wbGlmeSBhbGlnbm1lbnQgZml4dXAgY29kZSIpLiBDb21taXQgZDk2OGQyYjgwMWQ4
-ICgiQVJNOiA3NDk3LzE6Cj4gaHdfYnJlYWtwb2ludDogYWxsb3cgc2luZ2xlLWJ5dGUgd2F0Y2hw
-b2ludHMgb24gYWxsIGFkZHJlc3NlcyIpIHdhcwo+IHdyaXR0ZW4gd2l0aCB0aGUgaW50ZW50IHRv
-IGFsbG93IHNpbmdsZS1ieXRlIHdhdGNocG9pbnRzIG9uIGFsbAo+IGFkZHJlc3NlcyBidXQgZm9y
-Z290IHRvIG1vdmUgJ2Nhc2UgMTonIGRvd24gYmVsb3cgJ2Nhc2UgMjonLgo+IAo+IC4uL2FyY2gv
-YXJtL2tlcm5lbC9od19icmVha3BvaW50LmM6IEluIGZ1bmN0aW9uIOKAmGh3X2JyZWFrcG9pbnRf
-YXJjaF9wYXJzZeKAmToKPiAuLi9hcmNoL2FybS9rZXJuZWwvaHdfYnJlYWtwb2ludC5jOjYwOTo3
-OiB3YXJuaW5nOiB0aGlzIHN0YXRlbWVudCBtYXkgZmFsbAo+ICB0aHJvdWdoIFstV2ltcGxpY2l0
-LWZhbGx0aHJvdWdoPV0KPiAgICAgaWYgKGh3LT5jdHJsLmxlbiA9PSBBUk1fQlJFQUtQT0lOVF9M
-RU5fMikKPiAgICAgICAgXgo+IC4uL2FyY2gvYXJtL2tlcm5lbC9od19icmVha3BvaW50LmM6NjEx
-OjM6IG5vdGU6IGhlcmUKPiAgICBjYXNlIDM6Cj4gICAgXn5+fgo+IC4uL2FyY2gvYXJtL2tlcm5l
-bC9od19icmVha3BvaW50LmM6NjEzOjc6IHdhcm5pbmc6IHRoaXMgc3RhdGVtZW50IG1heSBmYWxs
-Cj4gIHRocm91Z2ggWy1XaW1wbGljaXQtZmFsbHRocm91Z2g9XQo+ICAgICBpZiAoaHctPmN0cmwu
-bGVuID09IEFSTV9CUkVBS1BPSU5UX0xFTl8xKQo+ICAgICAgICBeCj4gLi4vYXJjaC9hcm0va2Vy
-bmVsL2h3X2JyZWFrcG9pbnQuYzo2MTU6Mzogbm90ZTogaGVyZQo+ICAgIGRlZmF1bHQ6Cj4gICAg
-Xn5+fn5+fgo+IAo+IFJld29yayBzbyAnY2FzZSAxOicgYXJlIG5leHQgdG8gJ2Nhc2UgMzonIGFu
-ZCBhbHNvIGFkZCAnLyogRmFsbCB0aHJvdWdoCj4gKi8nIHNvIHRoYXQgdGhlIGNvbXBpbGVyIGRv
-ZXNuJ3Qgd2FybiBhYm91dCBmYWxsLXRocm91Z2guCj4gCj4gQ2M6IHN0YWJsZUB2Z2VyLmtlcm5l
-bC5vcmcgIyB2My4xNgo+IEZpeGVzOiA2ZWUzM2MyNzEyZmMgKCJBUk06IGh3X2JyZWFrcG9pbnQ6
-IGNvcnJlY3QgYW5kIHNpbXBsaWZ5IGFsaWdubWVudCBmaXh1cCBjb2RlIikKPiBTaWduZWQtb2Zm
-LWJ5OiBBbmRlcnMgUm94ZWxsIDxhbmRlcnMucm94ZWxsQGxpbmFyby5vcmc+Cj4gLS0tCj4gIGFy
-Y2gvYXJtL2tlcm5lbC9od19icmVha3BvaW50LmMgfCA0ICsrKy0KPiAgMSBmaWxlIGNoYW5nZWQs
-IDMgaW5zZXJ0aW9ucygrKSwgMSBkZWxldGlvbigtKQo+IAo+IGRpZmYgLS1naXQgYS9hcmNoL2Fy
-bS9rZXJuZWwvaHdfYnJlYWtwb2ludC5jIGIvYXJjaC9hcm0va2VybmVsL2h3X2JyZWFrcG9pbnQu
-Ywo+IGluZGV4IGFmOGI4ZTE1ZjU4OS4uYzE0ZDUwNjk2OWJhIDEwMDY0NAo+IC0tLSBhL2FyY2gv
-YXJtL2tlcm5lbC9od19icmVha3BvaW50LmMKPiArKysgYi9hcmNoL2FybS9rZXJuZWwvaHdfYnJl
-YWtwb2ludC5jCj4gQEAgLTYwMywxNSArNjAzLDE3IEBAIGludCBod19icmVha3BvaW50X2FyY2hf
-cGFyc2Uoc3RydWN0IHBlcmZfZXZlbnQgKmJwLAo+ICAJY2FzZSAwOgo+ICAJCS8qIEFsaWduZWQg
-Ki8KPiAgCQlicmVhazsKPiAtCWNhc2UgMToKPiAgCWNhc2UgMjoKPiAgCQkvKiBBbGxvdyBoYWxm
-d29yZCB3YXRjaHBvaW50cyBhbmQgYnJlYWtwb2ludHMuICovCj4gIAkJaWYgKGh3LT5jdHJsLmxl
-biA9PSBBUk1fQlJFQUtQT0lOVF9MRU5fMikKPiAgCQkJYnJlYWs7Cj4gKwkJLyogRmFsbCB0aHJv
-dWdoICovCj4gKwljYXNlIDE6CgpXaHkgYXJlIHlvdSBtb3ZpbmcgdGhlICdjYXNlIDE6JyBoZXJl
-PyBBRkFJQ1QsIHlvdXIgcGF0Y2ggbm93IHJlamVjdHMKYnl0ZS1hbGlnbmVkIHdhdGNocG9pbnRz
-IG9mIGxlbmd0aCAyLgoKV2lsbAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5l
-bEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
-bGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Hi Linus,
+
+Please pull these arm64 fixes for -rc2. There's more here than we usually
+have at this stage, but that's mainly down to the stacktrace changes which
+came in slightly too late for the merge window.
+
+Summary is in the tag.
+
+Thanks,
+
+Will
+
+--->8
+
+The following changes since commit 5f9e832c137075045d15cd6899ab0505cfb2ca4b:
+
+  Linus 5.3-rc1 (2019-07-21 14:05:38 -0700)
+
+are available in the git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git tags/arm64-fixes
+
+for you to fetch changes up to 5a46d3f71d5e5a9f82eabc682f996f1281705ac7:
+
+  ACPI/IORT: Fix off-by-one check in iort_dev_find_its_id() (2019-07-23 15:45:46 +0100)
+
+----------------------------------------------------------------
+arm64 fixes for -rc2
+
+- Big bad batch of MAINTAINERS updates
+
+- Fix handling of SP alignment fault exceptions
+
+- Fix PSTATE.SSBS handling on heterogeneous systems
+
+- Fix fallout from moving to the generic vDSO implementation
+
+- Fix stack unwinding in the face of frame corruption
+
+- Fix off-by-one in IORT code
+
+- Minor SVE cleanups
+
+----------------------------------------------------------------
+Anshuman Khandual (1):
+      arm64: mm: Drop pte_huge()
+
+Dave Martin (4):
+      arm64: stacktrace: Constify stacktrace.h functions
+      arm64: stacktrace: Factor out backtrace initialisation
+      arm64/sve: Factor out FPSIMD to SVE state conversion
+      arm64/sve: Fix a couple of magic numbers for the Z-reg count
+
+James Morse (1):
+      arm64: entry: SP Alignment Fault doesn't write to FAR_EL1
+
+Jean-Philippe Brucker (1):
+      MAINTAINERS: Update my email address
+
+Julien Thierry (1):
+      MAINTAINERS: Update my email address
+
+Lorenzo Pieralisi (1):
+      ACPI/IORT: Fix off-by-one check in iort_dev_find_its_id()
+
+Marc Zyngier (2):
+      MAINTAINERS: Update my email address to @kernel.org
+      arm64: Force SSBS on context switch
+
+Mark Rutland (1):
+      arm64: stacktrace: Better handle corrupted stacks
+
+Naohiro Aota (1):
+      arm64: vdso: fix flip/flop vdso build bug
+
+Suzuki K Poulose (1):
+      MAINTAINERS: Fix spelling mistake in my name
+
+Vincenzo Frascino (2):
+      arm64: vdso: Fix population of AT_SYSINFO_EHDR for compat vdso
+      arm64: vdso: Cleanup Makefiles
+
+ .mailmap                            |  3 ++
+ MAINTAINERS                         | 14 +++----
+ arch/arm64/include/asm/elf.h        |  2 +-
+ arch/arm64/include/asm/pgtable.h    |  1 -
+ arch/arm64/include/asm/processor.h  | 14 ++++++-
+ arch/arm64/include/asm/stacktrace.h | 78 ++++++++++++++++++++++++++++++-------
+ arch/arm64/kernel/entry.S           | 22 ++++++-----
+ arch/arm64/kernel/fpsimd.c          | 29 +++++++-------
+ arch/arm64/kernel/perf_callchain.c  |  7 +---
+ arch/arm64/kernel/process.c         | 36 ++++++++++++++---
+ arch/arm64/kernel/return_address.c  |  9 ++---
+ arch/arm64/kernel/stacktrace.c      | 59 +++++++++++++++++++++-------
+ arch/arm64/kernel/time.c            |  7 +---
+ arch/arm64/kernel/traps.c           | 13 +++----
+ arch/arm64/kernel/vdso/Makefile     | 13 +++----
+ arch/arm64/kernel/vdso32/Makefile   | 14 ++++---
+ drivers/acpi/arm64/iort.c           |  4 +-
+ 17 files changed, 219 insertions(+), 106 deletions(-)
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
