@@ -2,57 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8667875E2D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 07:10:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E1D075E3F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 07:16:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DIl/YVKolrMiZ/cKc1x5LIzun8gtjVCk4TE6mDM8cXk=; b=i87Ffw0NPwBTz+
-	yIm91UHsdouEA9ZQBm3TZ7M8U6O7HQ9GDsj5jRszOnizOjVSz9iTG6ZdMgRx0oqOgvyTwnn86egJT
-	2kV4/xeWCIxRNzN4O+kX6AojHd9P6O5xPAiUysWuhdt9Lem++Oio77HIG/KKzTs4Ht7O1JHJ3r1Zv
-	XGZF8fYdsyT6rEA7qRS8nq9Aqwv4PTO09v5j+31SZLqhqewltJvl257wt119WD4NObuyiRe2D5zNL
-	lUnywijH13EczED4EpZMilDAaP2X0m0CFsz+DkGEgXi6ZHwm6z7+MVyA+/1n4qfhWJy9rHBEKgUt0
-	8cvD608zMPazseJ1X1jQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YbaYI++2l2SubEeAubNvznw8WjpvH1m3AZRJhWlW8t4=; b=cSrBpz1WY/2zIO
+	C9YKxrXn/VAHB5mkWpVK4elVZHdkAsF1XRE4wZT2Xpoca+KqMlIN7moxZVJQt8C8oftJVm0so3uvb
+	i2AoK/M/cAygKvNEhmexVRA5vCSwCdeao8b8CEkYIrntTTj8ZiOZP+8j73h82zrBrpjL8tMQYWzTM
+	7faEHFYHmkJJa9UmMB0WE29/TZzTvwB4Ew/GPa/+PYB+rxyOv24rPhZPvhquJOsJU7wCLrFXWUR6M
+	2rGOINCiVu9UcSfaDFDfz8E7jg1FfzLfQhQ0J688QwuYxjhveNN+QjSaG2F+qeIZIF40FkF3WfNpX
+	rKiEwtPaBqPO8wJr8UYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqsUl-0000Nf-Rz; Fri, 26 Jul 2019 05:10:19 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hqsUQ-0000NF-E9
- for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 05:10:00 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7E00C337;
- Thu, 25 Jul 2019 22:09:57 -0700 (PDT)
-Received: from [10.163.1.197] (unknown [10.163.1.197])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 818A13F694;
- Thu, 25 Jul 2019 22:11:55 -0700 (PDT)
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [RFC] mm/pgtable/debug: Add test validating architecture page
- table helpers
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-References: <1564037723-26676-1-git-send-email-anshuman.khandual@arm.com>
- <1564037723-26676-2-git-send-email-anshuman.khandual@arm.com>
- <20190725215427.GL1330@shell.armlinux.org.uk>
-Message-ID: <1f64ba59-af68-7daa-44bf-6ac1f8f796a8@arm.com>
-Date: Fri, 26 Jul 2019 10:40:28 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1hqsa9-0003Oc-Qh; Fri, 26 Jul 2019 05:15:53 +0000
+Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hqsZp-0003NI-Bi
+ for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 05:15:35 +0000
+Received: by mail-ed1-x543.google.com with SMTP id i11so52162359edq.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 25 Jul 2019 22:15:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=evwEOy3DAtV16NqcUka5UGTz9T6aRrk1pQfUhjz7kyM=;
+ b=ZBIvhCvHNC04mPpW5vAoOuVtbo2QAUddYCwID6pWL5rm8y3h6wUgKF17LCqRjpx/a9
+ Gd9kgqgCuTSVnqHPByGCI4TjnPe5L26wKUcVclXK+knZ5jc+o0MIAiJFtcW5g6cgCmqZ
+ tgSzX+Xl6wHiy8U19ptEi0DiTywgjb1n9I9dQ=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=evwEOy3DAtV16NqcUka5UGTz9T6aRrk1pQfUhjz7kyM=;
+ b=svQGx4UwP2gQnjQs9WLY52ge2oUWca6OksXeYhqSXhDE/nNR2Fvav9tfMJQGpa77E7
+ 2aUkHS8kIqCbhAS+r4Xw1g5QgGwRxhtpra5hpmsLyuDBqtt+r9ofzdAP+tKvQpLU5J5O
+ 2wKKoK3P735/FLG7XQ4vv7l0UbavAvabgW+6HrKvYK/gjEdV2VZYY6segY1qmuYyImzp
+ VGZcKuYyHnU42qqOGbezp0RCBIjr7nxXtY55De2R45P9yqwt6eaglQjkYDMUVUoQJfna
+ NKUvYlhoCS+MbN/3QG+YFwVxwb9DEi/3rOIAiweDh5l035+M9YFC2eqWfYV3pxeFjprA
+ Tn6A==
+X-Gm-Message-State: APjAAAWZgqWWLeuwgVM8w7qBBbPNHIYDrprmFFJjK+c9IxkAYO1lrZk/
+ ro467Lw02odjQJ7fwSgPR8vSWlo2Nt5Rrw==
+X-Google-Smtp-Source: APXvYqyn7VHC1QwGTKLk92oqN2eTT88bEGkMquCj0qHZ3zVEj0ab4y5j8iIqoj52urmN2RpGRViDhQ==
+X-Received: by 2002:a17:906:e241:: with SMTP id
+ gq1mr69993449ejb.265.1564118128013; 
+ Thu, 25 Jul 2019 22:15:28 -0700 (PDT)
+Received: from mail-wr1-f45.google.com (mail-wr1-f45.google.com.
+ [209.85.221.45])
+ by smtp.gmail.com with ESMTPSA id ni7sm6792142ejb.57.2019.07.25.22.15.26
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Thu, 25 Jul 2019 22:15:27 -0700 (PDT)
+Received: by mail-wr1-f45.google.com with SMTP id y4so52990134wrm.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 25 Jul 2019 22:15:26 -0700 (PDT)
+X-Received: by 2002:adf:e541:: with SMTP id z1mr9178545wrm.48.1564118126310;
+ Thu, 25 Jul 2019 22:15:26 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190725215427.GL1330@shell.armlinux.org.uk>
-Content-Language: en-US
+References: <jungo.lin@mediatek.com>
+ <20190611035344.29814-1-jungo.lin@mediatek.com>
+ <20190611035344.29814-10-jungo.lin@mediatek.com>
+ <20190701072532.GB137710@chromium.org>
+ <1562297618.1212.46.camel@mtksdccf07>
+ <CAAFQd5BaTQ-Q7gsE0X+d4_81OZq9WHaCYkmALt7_4A1JFo=_8g@mail.gmail.com>
+ <1562313579.1212.73.camel@mtksdccf07>
+ <CAAFQd5AaNFpMGCVJREY85n8UetEwd99TOka8-ECoLzMbMkos_g@mail.gmail.com>
+ <1563870117.1212.455.camel@mtksdccf07>
+In-Reply-To: <1563870117.1212.455.camel@mtksdccf07>
+From: Tomasz Figa <tfiga@chromium.org>
+Date: Fri, 26 Jul 2019 14:15:14 +0900
+X-Gmail-Original-Message-ID: <CAAFQd5Bh80N+cMhz=eyHUGJLaE5uuypOawQvHrTgGSMDvmcpLA@mail.gmail.com>
+Message-ID: <CAAFQd5Bh80N+cMhz=eyHUGJLaE5uuypOawQvHrTgGSMDvmcpLA@mail.gmail.com>
+Subject: Re: [RFC,
+ v3 9/9] media: platform: Add Mediatek ISP P1 shared memory device
+To: Jungo Lin <jungo.lin@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_220958_568051_21EA478C 
-X-CRM114-Status: GOOD (  29.78  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190725_221533_427274_76092EBB 
+X-CRM114-Status: GOOD (  26.66  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,401 +110,212 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Sri Krishna chowdary <schowdary@nvidia.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>, x86@kernel.org,
- Dave Hansen <dave.hansen@intel.com>, linux-kernel@vger.kernel.org,
- Matthew Wilcox <willy@infradead.org>, Michal Hocko <mhocko@kernel.org>,
- linux-mm@kvack.org, Masahiro Yamada <yamada.masahiro@socionext.com>,
- Mark Brown <Mark.Brown@arm.com>, Andrew Morton <akpm@linux-foundation.org>,
- Steven Price <Steven.Price@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org,
+ =?UTF-8?B?U2VhbiBDaGVuZyAo6YSt5piH5byYKQ==?= <sean.cheng@mediatek.com>,
+ =?UTF-8?B?RnJlZGVyaWMgQ2hlbiAo6Zmz5L+K5YWDKQ==?= <frederic.chen@mediatek.com>,
+ =?UTF-8?B?UnlubiBXdSAo5ZCz6IKy5oGpKQ==?= <rynn.wu@mediatek.com>,
+ srv_heupstream <srv_heupstream@mediatek.com>, Rob Herring <robh@kernel.org>,
+ =?UTF-8?B?UnlhbiBZdSAo5L2Z5a2f5L+uKQ==?= <ryan.yu@mediatek.com>,
+ =?UTF-8?B?RnJhbmtpZSBDaGl1ICjpgrHmloflh7Ep?= <frankie.chiu@mediatek.com>,
+ Hans Verkuil <hverkuil@xs4all.nl>, ddavenport@chromium.org,
+ Sj Huang <sj.huang@mediatek.com>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
+ Joerg Roedel <joro@8bytes.org>, " <linux-arm-kernel@lists.infradead.org>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 07/26/2019 03:24 AM, Russell King - ARM Linux admin wrote:
-> On Thu, Jul 25, 2019 at 12:25:23PM +0530, Anshuman Khandual wrote:
->> This adds a test module which will validate architecture page table helpers
->> and accessors regarding compliance with generic MM semantics expectations.
->> This will help various architectures in validating changes to the existing
->> page table helpers or addition of new ones.
->>
->> Cc: Andrew Morton <akpm@linux-foundation.org>
->> Cc: Michal Hocko <mhocko@kernel.org>
->> Cc: Mark Rutland <mark.rutland@arm.com>
->> Cc: Mark Brown <Mark.Brown@arm.com>
->> Cc: Steven Price <Steven.Price@arm.com>
->> Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
->> Cc: Masahiro Yamada <yamada.masahiro@socionext.com>
->> Cc: Kees Cook <keescook@chromium.org>
->> Cc: Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>
->> Cc: Matthew Wilcox <willy@infradead.org>
->> Cc: Sri Krishna chowdary <schowdary@nvidia.com>
->> Cc: Dave Hansen <dave.hansen@intel.com>
->> Cc: linux-arm-kernel@lists.infradead.org
->> Cc: x86@kernel.org
->> Cc: linux-kernel@vger.kernel.org
->>
->> Suggested-by: Catalin Marinas <catalin.marinas@arm.com>
->> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
->> ---
->>  lib/Kconfig.debug       |  14 +++
->>  lib/Makefile            |   1 +
->>  lib/test_arch_pgtable.c | 290 ++++++++++++++++++++++++++++++++++++++++++++++++
->>  3 files changed, 305 insertions(+)
->>  create mode 100644 lib/test_arch_pgtable.c
->>
->> diff --git a/lib/Kconfig.debug b/lib/Kconfig.debug
->> index 5960e29..a27fe8d 100644
->> --- a/lib/Kconfig.debug
->> +++ b/lib/Kconfig.debug
->> @@ -1719,6 +1719,20 @@ config TEST_SORT
->>  
->>  	  If unsure, say N.
->>  
->> +config TEST_ARCH_PGTABLE
->> +	tristate "Test arch page table helpers for semantics compliance"
->> +	depends on MMUpte/pmd/pud/p4d/pgd 
->> +	depends on DEBUG_KERNEL || m
->> +	help
->> +	  This options provides a kernel module which can be used to test
->> +	  architecture page table helper functions on various platform in
->> +	  verifing if they comply with expected generic MM semantics. This
->> +	  will help architectures code in making sure that any changes or
->> +	  new additions of these helpers will still conform to generic MM
->> +	  expeted semantics.
->> +
->> +	  If unsure, say N.
->> +
->>  config KPROBES_SANITY_TEST
->>  	bool "Kprobes sanity tests"
->>  	depends on DEBUG_KERNEL
->> diff --git a/lib/Makefile b/lib/Makefile
->> index 095601c..0806d61 100644
->> --- a/lib/Makefile
->> +++ b/lib/Makefile
->> @@ -76,6 +76,7 @@ obj-$(CONFIG_TEST_VMALLOC) += test_vmalloc.o
->>  obj-$(CONFIG_TEST_OVERFLOW) += test_overflow.o
->>  obj-$(CONFIG_TEST_RHASHTABLE) += test_rhashtable.o
->>  obj-$(CONFIG_TEST_SORT) += test_sort.o
->> +obj-$(CONFIG_TEST_ARCH_PGTABLE) += test_arch_pgtable.o
->>  obj-$(CONFIG_TEST_USER_COPY) += test_user_copy.o
->>  obj-$(CONFIG_TEST_STATIC_KEYS) += test_static_keys.o
->>  obj-$(CONFIG_TEST_STATIC_KEYS) += test_static_key_base.o
->> diff --git a/lib/test_arch_pgtable.c b/lib/test_arch_pgtable.c
->> new file mode 100644
->> index 0000000..1396664
->> --- /dev/null
->> +++ b/lib/test_arch_pgtable.c
->> @@ -0,0 +1,290 @@
->> +// SPDX-License-Identifier: GPL-2.0-only
->> +/*
->> + * This kernel module validates architecture page table helpers &
->> + * accessors and helps in verifying their continued compliance with
->> + * generic MM semantics.
->> + *
->> + * Copyright (C) 2019 ARM Ltd.
->> + *
->> + * Author: Anshuman Khandual <anshuman.khandual@arm.com>
->> + */
->> +#define pr_fmt(fmt) "test_arch_pgtable: %s " fmt, __func__
->> +
->> +#include <linux/kernel.h>
->> +#include <linux/hugetlb.h>
->> +#include <linux/mm.h>
->> +#include <linux/mman.h>
->> +#include <linux/mm_types.h>
->> +#include <linux/module.h>
->> +#include <linux/printk.h>
->> +#include <linux/swap.h>
->> +#include <linux/swapops.h>
->> +#include <linux/pfn_t.h>
->> +#include <linux/gfp.h>
->> +#include <asm/pgalloc.h>
->> +#include <asm/pgtable.h>
->> +
->> +/*
->> + * Basic operations
->> + *
->> + * mkold(entry)			= An old and not an young entry
->> + * mkyoung(entry)		= An young and not an old entry
->> + * mkdirty(entry)		= A dirty and not a clean entry
->> + * mkclean(entry)		= A clean and not a dirty entry
->> + * mkwrite(entry)		= An write and not an write protected entry
->> + * wrprotect(entry)		= An write protected and not an write entry
->> + * pxx_bad(entry)		= A mapped and non-table entry
->> + * pxx_same(entry1, entry2)	= Both entries hold the exact same value
->> + */
->> +#define VMA_TEST_FLAGS (VM_READ|VM_WRITE|VM_EXEC)
->> +
->> +static struct vm_area_struct vma;
->> +static struct mm_struct mm;
->> +static struct page *page;
->> +static pgprot_t prot;
->> +static unsigned long pfn, addr;
->> +
->> +static void pte_basic_tests(void)
->> +{
->> +	pte_t pte;
->> +
->> +	pte = mk_pte(page, prot);
->> +	WARN_ON(!pte_same(pte, pte));
->> +	WARN_ON(!pte_young(pte_mkyoung(pte)));
->> +	WARN_ON(!pte_dirty(pte_mkdirty(pte)));
->> +	WARN_ON(!pte_write(pte_mkwrite(pte)));
->> +	WARN_ON(pte_young(pte_mkold(pte)));
->> +	WARN_ON(pte_dirty(pte_mkclean(pte)));
->> +	WARN_ON(pte_write(pte_wrprotect(pte)));
->> +}
->> +
->> +#ifdef CONFIG_HAVE_ARCH_TRANSPARENT_HUGEPAGE
->> +static void pmd_basic_tests(void)
->> +{
->> +	pmd_t pmd;
->> +
->> +	pmd = mk_pmd(page, prot);
-> 
-> mk_pmd() is provided on 32-bit ARM LPAE, which also sets
-> HAVE_ARCH_TRANSPARENT_HUGEPAGE, so this should be fine.
+On Tue, Jul 23, 2019 at 5:22 PM Jungo Lin <jungo.lin@mediatek.com> wrote:
+>
+> Hi, Tomasz:
+>
+> On Tue, 2019-07-23 at 16:20 +0900, Tomasz Figa wrote:
+> > Hi Jungo,
+> >
+> > On Fri, Jul 5, 2019 at 4:59 PM Jungo Lin <jungo.lin@mediatek.com> wrote:
+> > >
+> > > Hi Tomasz:
+> > >
+> > > On Fri, 2019-07-05 at 13:22 +0900, Tomasz Figa wrote:
+> > > > Hi Jungo,
+> > > >
+> > > > On Fri, Jul 5, 2019 at 12:33 PM Jungo Lin <jungo.lin@mediatek.com> wrote:
+> > > > >
+> > > > > Hi Tomasz,
+> > >
+> > > [snip]
+> > >
+> > > > > After applying your suggestion in SCP device driver, we could remove
+> > > > > mtk_cam-smem.h/c. Currently, we use dma_alloc_coherent with SCP device
+> > > > > to get SCP address. We could touch the buffer with this SCP address in
+> > > > > SCP processor.
+> > > > >
+> > > > > After that, we use dma_map_page_attrs with P1 device which supports
+> > > > > IOMMU domain to get IOVA address. For this address, we will assign
+> > > > > it to our ISP HW device to proceed.
+> > > > >
+> > > > > Below is the snippet for ISP P1 compose buffer initialization.
+> > > > >
+> > > > >         ptr = dma_alloc_coherent(p1_dev->cam_dev.smem_dev,
+> > > > >                                  MAX_COMPOSER_SIZE, &addr, GFP_KERNEL);
+> > > > >         if (!ptr) {
+> > > > >                 dev_err(dev, "failed to allocate compose memory\n");
+> > > > >                 return -ENOMEM;
+> > > > >         }
+> > > > >         isp_ctx->scp_mem_pa = addr;
+> > > >
+> > > > addr contains a DMA address, not a physical address. Could we call it
+> > > > scp_mem_dma instead?
+> > > >
+> > > > >         dev_dbg(dev, "scp addr:%pad\n", &addr);
+> > > > >
+> > > > >         /* get iova address */
+> > > > >         addr = dma_map_page_attrs(dev, phys_to_page(addr), 0,
+> > > >
+> > > > addr is a DMA address, so phys_to_page() can't be called on it. The
+> > > > simplest thing here would be to use dma_map_single() with ptr as the
+> > > > CPU address expected.
+> > > >
+> > >
+> > > We have changed to use ma_map_single() with ptr, but encounter IOMMU
+> > > error. From the debug log of iommu_dma_map_page[3], we got
+> > > 0x0000000054800000 instead of expected address: 0x0000000050800000[2].
+> > > There is a address offset(0x4000000). If we change to use
+> > > dma_map_page_attrs with phys_to_page(addr), the address is correct as we
+> > > expected[2]. Do you have any suggestion on this issue? Do we miss
+> > > something?
+> >
+> > Sorry for the late reply. Could you show me the code changes you made
+> > to use dma_map_single()? It would sound like the virtual address
+> > passed to dma_map_single() isn't correct.
+> >
+> > Best regards,
+> > Tomasz
+> >
+>
+>
+> Please check the below code snippet in today's testing.
+>
+>         p1_dev->cam_dev.smem_dev = &p1_dev->scp_pdev->dev;
+>         ptr = dma_alloc_coherent(p1_dev->cam_dev.smem_dev,
+>                                  MTK_ISP_COMPOSER_MEM_SIZE, &addr, GFP_KERNEL);
+>         if (!ptr) {
+>                 dev_err(dev, "failed to allocate compose memory\n");
+>                 return -ENOMEM;
+>         }
+>         p1_dev->composer_scp_addr = addr;
+>         p1_dev->composer_virt_addr = ptr;
+>         dev_info(dev, "scp addr:%pad va:%pK\n", &addr, ptr);
+>
+>         /* get iova address */
+>         addr = dma_map_single(dev, ptr, MTK_ISP_COMPOSER_MEM_SIZE,
+> DMA_BIDIRECTIONAL);
+>         if (dma_mapping_error(dev, addr)) {
+>                 dma_free_coherent(p1_dev->cam_dev.smem_dev,
+>                                   MTK_ISP_COMPOSER_MEM_SIZE,
+>                                   ptr, p1_dev->composer_scp_addr);
+>                 dev_err(dev, "Failed to map scp iova\n");
+>                 ret = -ENOMEM;
+>                 goto fail_free_mem;
+>         }
+>         p1_dev->composer_iova = addr;
+>         dev_info(dev, "scp iova addr:%pad\n", &addr);
+>
+> Moreover, below is extracted log[2].
+>
+> We guess the virtual address which is returned by dma_alloc_coherent
+> function is not valid kernel logical address. It is actually returned by
+> memremap() in dma_init_coherent_memory(). Moreover, dma_map_single()
+> will call virt_to_page() function. For virt_to_page function, it
+> requires a logical address[1].
+>
+> [1]https://www.oreilly.com/library/view/linux-device-drivers/0596005903/ch15.html
+>
 
-Okay.
+Indeed virt_to_page() works only with kernel LOWMEM addresses. Whether
+virt_to_page() is the right thing to do in dma_map_single() is a good
+question, but let's assume it was implemented like this for a reason.
 
-> 
->> +	WARN_ON(!pmd_same(pmd, pmd));
->> +	WARN_ON(!pmd_young(pmd_mkyoung(pmd)));
->> +	WARN_ON(!pmd_dirty(pmd_mkdirty(pmd)));
->> +	WARN_ON(!pmd_write(pmd_mkwrite(pmd)));
->> +	WARN_ON(pmd_young(pmd_mkold(pmd)));
->> +	WARN_ON(pmd_dirty(pmd_mkclean(pmd)));
->> +	WARN_ON(pmd_write(pmd_wrprotect(pmd)));
->> +	/*
->> +	 * A huge page does not point to next level page table
->> +	 * entry. Hence this must qualify as pmd_bad().
->> +	 */
->> +	WARN_ON(!pmd_bad(pmd_mkhuge(pmd)));
->> +}
->> +#else
->> +static void pmd_basic_tests(void) { }
->> +#endif
->> +
->> +#ifdef CONFIG_HAVE_ARCH_TRANSPARENT_HUGEPAGE_PUD
->> +static void pud_basic_tests(void)
->> +{
->> +	pud_t pud;
->> +
->> +	pud = pfn_pud(pfn, prot);
->> +	WARN_ON(!pud_same(pud, pud));
->> +	WARN_ON(!pud_young(pud_mkyoung(pud)));
->> +	WARN_ON(!pud_write(pud_mkwrite(pud)));
->> +	WARN_ON(pud_write(pud_wrprotect(pud)));
->> +	WARN_ON(pud_young(pud_mkold(pud)));
->> +
->> +#if !defined(__PAGETABLE_PMD_FOLDED) && !defined(__ARCH_HAS_4LEVEL_HACK)
->> +	/*
->> +	 * A huge page does not point to next level page table
->> +	 * entry. Hence this must qualify as pud_bad().
->> +	 */
->> +	WARN_ON(!pud_bad(pud_mkhuge(pud)));
->> +#endif
->> +}
->> +#else
->> +static void pud_basic_tests(void) { }
->> +#endif
->> +
->> +static void p4d_basic_tests(void)
->> +{
->> +	pte_t pte;
->> +	p4d_t p4d;
->> +
->> +	pte = mk_pte(page, prot);
->> +	p4d = (p4d_t) { (pte_val(pte)) };
->> +	WARN_ON(!p4d_same(p4d, p4d));
-> 
-> If the intention is to test p4d_same(), is this really a sufficient test?
+However, you also can't call phys_to_page() on the DMA addresses
+returned by dma_alloc_*() either. It works just by luck, because SCP
+DMA addresses and CPU physical addresses are numerically the same.
 
-p4d_same() just tests if two p4d entries have the same value. Hence any non-zero
-value in there should be able to achieve that. Besides p4d does not have much
-common helpers (as it gets often folded) to operate on an entry in order to create
-other real world values. But if you have suggestions to make this better I am happy
-to incorporate.
+Could you try dma_get_sgtable() with the SCP struct device and then
+dma_map_sg() with the P1 struct device?
 
-> 
->> +}
->> +
->> +static void pgd_basic_tests(void)
->> +{
->> +	pte_t pte;
->> +	pgd_t pgd;
->> +
->> +	pte = mk_pte(page, prot);
->> +	pgd = (pgd_t) { (pte_val(pte)) };
->> +	WARN_ON(!pgd_same(pgd, pgd));
-> 
-> If the intention is to test pgd_same(), is this really a sufficient test?
+Best regards,
+Tomasz
 
-Same as above.
-
-> 
->> +}
->> +
->> +#if !defined(__PAGETABLE_PMD_FOLDED) && !defined(__ARCH_HAS_4LEVEL_HACK)
->> +static void pud_clear_tests(void)
->> +{
->> +	pud_t pud;
->> +
->> +	pud_clear(&pud);
->> +	WARN_ON(!pud_none(pud));
->> +}
->> +
->> +static void pud_populate_tests(void)
->> +{
->> +	pmd_t pmd;
->> +	pud_t pud;
->> +
->> +	/*
->> +	 * This entry points to next level page table page.
->> +	 * Hence this must not qualify as pud_bad().
->> +	 */
->> +	pmd_clear(&pmd);
-> 
-> 32-bit ARM sets __PAGETABLE_PMD_FOLDED so this is not a concern.
-
-Okay.
-
-> 
->> +	pud_clear(&pud);
->> +	pud_populate(&mm, &pud, &pmd);
->> +	WARN_ON(pud_bad(pud));
->> +}
->> +#else
->> +static void pud_clear_tests(void) { }
->> +static void pud_populate_tests(void) { }
->> +#endif
->> +
->> +#if !defined(__PAGETABLE_PUD_FOLDED) && !defined(__ARCH_HAS_5LEVEL_HACK)
->> +static void p4d_clear_tests(void)
->> +{
->> +	p4d_t p4d;
->> +
->> +	p4d_clear(&p4d);
->> +	WARN_ON(!p4d_none(p4d));
->> +}
->> +
->> +static void p4d_populate_tests(void)
->> +{
->> +	pud_t pud;
->> +	p4d_t p4d;
->> +
->> +	/*
->> +	 * This entry points to next level page table page.
->> +	 * Hence this must not qualify as p4d_bad().
->> +	 */
->> +	pud_clear(&pud);
->> +	p4d_clear(&p4d);
->> +	p4d_populate(&mm, &p4d, &pud);
->> +	WARN_ON(p4d_bad(p4d));
->> +}
->> +#else
->> +static void p4d_clear_tests(void) { }
->> +static void p4d_populate_tests(void) { }
->> +#endif
->> +
->> +#ifndef __PAGETABLE_P4D_FOLDED
->> +static void pgd_clear_tests(void)
->> +{
->> +	pgd_t pgd;
->> +
->> +	pgd_clear(&pgd);
->> +	WARN_ON(!pgd_none(pgd));
->> +}
->> +
->> +static void pgd_populate_tests(void)
->> +{
->> +	pgd_t p4d;
->> +	pgd_t pgd;
->> +
->> +	/*
->> +	 * This entry points to next level page table page.
->> +	 * Hence this must not qualify as pgd_bad().
->> +	 */
->> +	p4d_clear(&p4d);
->> +	pgd_clear(&pgd);
->> +	pgd_populate(&mm, &pgd, &p4d);
->> +	WARN_ON(pgd_bad(pgd));
->> +}
->> +#else
->> +static void pgd_clear_tests(void) { }
->> +static void pgd_populate_tests(void) { }
->> +#endif
->> +
->> +static void pxx_clear_tests(void)
->> +{
->> +	pte_t pte;
->> +	pmd_t pmd;
->> +
->> +	pte_clear(NULL, 0, &pte);
->> +	WARN_ON(!pte_none(pte));
->> +
->> +	pmd_clear(&pmd);
-> 
-> This really isn't going to be happy on 32-bit non-LPAE ARM.  Here, a
-> PMD is a 32-bit entry which is expected to be _within_ a proper PGD,
-> where a PGD is 16K in size, consisting of pairs of PMDs.
-> 
-> So, pmd_clear() expects to always be called for an _even_ PMD of the
-> pair, and will write to the even and following odd PMD.  Hence, the
-> above will scribble over the stack of this function.
-
-A pmd_clear() clears two consecutive 32 bit pmd_t entries not a single
-one. So the stack needs to have two entries for such cases. I could see
-only a single definition for pmd_none() on arm, hence pmd_none() should
-be called on both the 32 bit entries cleared with pmd_clear() earlier ?
-
-Though this could be accommodate with relevant non-LPAE ARM specific
-config option but should we do that ? All the config wrappers in the test
-right now are generic MM identifiable and nothing platform specific. The
-primary idea is to test platform page table helpers as seen from generic
-MM. Any suggestions how to incorporate this while still keeping the test
-clear from platform specific details like these ?
-
-> 
->> +	WARN_ON(!pmd_none(pmd));
->> +
->> +	pud_clear_tests();
->> +	p4d_clear_tests();
->> +	pgd_clear_tests();
->> +}
->> +
->> +static void pxx_populate_tests(void)
->> +{
->> +	pmd_t pmd;
->> +
->> +	/*
->> +	 * This entry points to next level page table page.
->> +	 * Hence this must not qualify as pmd_bad().
->> +	 */
->> +	memset(page, 0, sizeof(*page));
->> +	pmd_clear(&pmd);
-> 
-> This really isn't going to be happy on 32-bit non-LPAE ARM.  Here, a
-> PMD is a 32-bit entry which is expected to be _within_ a proper PGD,
-> where a PGD is 16K in size, consisting of pairs of PMDs.
-> 
-> So, pmd_clear() expects to always be called for an _even_ PMD of the
-> pair, and will write to the even and following odd PMD.  Hence, the
-> above will scribble over the stack of this function.
-
-Same as above.
-
-> 
->> +	pmd_populate(&mm, &pmd, page);
-> 
-> This too has the same expectations on 32-bit non-LPAE ARM.
-
-Right this loads up both pmdp[0] and pmdp[1]. The issue is equivalent to
-the one detailed above.
+> [2]
+>   322 [    1.238269] mtk-cam-p1 1a006000.camisp: scp
+> addr:0x0000000052000000 va:00000000a3adc471
+>   323 [    1.239582] mtk-cam-p1 1a006000.camisp: scp iova
+> addr:0x00000000fde00000
+>  7716 [    1.238963] mtk-cam-p1 1a006000.camisp: scp
+> addr:0x0000000052000000 va:0000000042ec580f
+>  7717 [    1.240276] mtk-cam-p1 1a006000.camisp: scp iova
+> addr:0x00000000fde00000
+> 15088 [    1.239309] mtk-cam-p1 1a006000.camisp: scp
+> addr:0x0000000052000000 va:000000005e5b3462
+> 15089 [    1.240626] mtk-cam-p1 1a006000.camisp: scp iova
+> addr:0x00000000fde00000
+>
+> Best regards,
+>
+> Jungo
+>
+> > >
+> > > [1]
+> > > [    1.344786] __dma_alloc_from_coherent: 0x800000 PAGE_SHIFT:12
+> > > device_base:0x0000000050000000 dma:0x0000000050800000
+> > > virt_base:ffffff8014000000 va:ffffff8014800000
+> > >
+> > > [    1.346890] mtk-cam 1a000000.camisp: scp addr:0x0000000050800000
+> > > va:ffffff8014800000
+> > >
+> > > [    1.347864] iommu_dma_map_page:0x0000000054800000 offset:0
+> > > [    1.348562] mtk-cam 1a000000.camisp: iova addr:0x00000000fde00000
+> > >
+> > > [2]
+> > > [    1.346738] __dma_alloc_from_coherent: 0x800000 PAGE_SHIFT:12
+> > > device_base:0x0000000050000000 dma:0x0000000050800000
+> > > virt_base:ffffff8014000000 va:ffffff8014800000
+> > > [    1.348841] mtk-cam 1a000000.camisp: scp addr:0x0000000050800000
+> > > va:ffffff8014800000
+> > > [    1.349816] iommu_dma_map_page:0x0000000050800000 offset:0
+> > > [    1.350514] mtk-cam 1a000000.camisp: iova addr:0x00000000fde00000
+> > >
+> > >
+> > > [3]
+> > > dma_addr_t iommu_dma_map_page(struct device *dev, struct page *page,
+> > >                 unsigned long offset, size_t size, int prot)
+> > > {
+> > >         phys_addr_t phys = page_to_phys(page);
+> > >         pr_err("iommu_dma_map_page:%pa offset:%lu\n", &phys, offset);
+> > >
+> > >         return __iommu_dma_map(dev, page_to_phys(page) + offset, size, prot,
+> > >                         iommu_get_dma_domain(dev));
+> > > }
+> > >
+> > > [snip]
+> > >
+> > > Best regards,
+> > >
+> > > Jungo
+> > >
+> >
+> > _______________________________________________
+> > Linux-mediatek mailing list
+> > Linux-mediatek@lists.infradead.org
+> > http://lists.infradead.org/mailman/listinfo/linux-mediatek
+>
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
