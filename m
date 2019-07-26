@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6535F76F50
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 18:48:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A66576F5F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 18:50:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z6LoFBRfQtwyFUHA7UU4QU4O32iaF0RoSq/7mwx2qmI=; b=OI+zL3oQm5SJ5A
-	0w8yMZPL9qVHoxsWwZAYCsl9u36ZYg+q7Or3wyHfdEG4pKppsl0mShnZ/VMngtwhTJYBaK8+HvrXD
-	jtE3rWQd0R9nj0qiZ/zf9dXAqVHKpBG/qOOboBZbcEaWAplqNGU4h8GBMHR8GPorTM8lVagR0w9+5
-	nz+lsq5XAYzXAAeYSGHTG9/YUrbVpIrFAd9Wy5tB/Q1cidsDa9JHfSPqSiKBh41QF6FVYP5FonyWO
-	dU+I+w2GB2bmo+zQhdpgUcoySZl3AXNqgza0QW32hDVLfxO9/+AJiDVXFAWg67c/r/OBa6ISnV/mD
-	4c3RpO8VItHBjWQMD+ZA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zoRYkXdWBtB/hdNECgHY/sn3DEjyGvSkNvSe6iZX6iA=; b=Jt+5ztPS7FFuKJ
+	YfTBkq+PNTVUJe6pBwTPAdsQI0YjznC3nO7kmHT7q9PoThMqqYpB4PvhPjfzFaoYiSmBArvTVRx7z
+	L/qVtthtki35C7G7Bt1+eI6r5qibHaczfWDhT7PkKyec+Eyr+F0ghqoBCI9ui3TWdbVHeCIlPShtX
+	WPSdzyZhVswQC52ycc2oHyGThF5eqVBiHK/GaCgl3QbGkPWk563lPuHXT3XbyJ3kQI82Yeri7QBnv
+	YiSggtOD0QCADSf8n0SWB9+WRo9H8+lskbXTYIBidNZe054zaPlbHIWaKLOtUJGosxe9DX/OV0LpX
+	cxVb5OGcNE2KM/s0/tKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hr3Nz-0008Fr-1I; Fri, 26 Jul 2019 16:48:03 +0000
-Received: from relay8-d.mail.gandi.net ([217.70.183.201])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hr3Nn-0008Et-Om
- for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 16:47:53 +0000
-X-Originating-IP: 109.190.253.11
-Received: from localhost (unknown [109.190.253.11])
- (Authenticated sender: maxime.ripard@bootlin.com)
- by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id 839B91BF207;
- Fri, 26 Jul 2019 16:47:41 +0000 (UTC)
-Date: Fri, 26 Jul 2019 18:36:01 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Torsten Duwe <duwe@lst.de>
-Subject: Re: [PATCH v3 6a/7] dt-bindings: Add ANX6345 DP/eDP transmitter
- binding
-Message-ID: <20190726163601.o32bxqew5xavjgyi@flea>
-References: <20190722150414.9F97668B20@verein.lst.de>
- <20190725151829.DC20968B02@verein.lst.de>
+	id 1hr3Pt-0000AX-PD; Fri, 26 Jul 2019 16:50:02 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hr3Pc-00009T-AO
+ for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 16:49:48 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E0946337;
+ Fri, 26 Jul 2019 09:49:43 -0700 (PDT)
+Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1ABA33F71F;
+ Fri, 26 Jul 2019 09:49:42 -0700 (PDT)
+Subject: Re: [PATCH] arm64/kexec: Use consistent convention of initializing
+ 'kxec_buf.mem' with KEXEC_BUF_MEM_UNKNOWN
+To: Bhupesh Sharma <bhsharma@redhat.com>
+References: <1562846252-7441-1-git-send-email-bhsharma@redhat.com>
+From: James Morse <james.morse@arm.com>
+Message-ID: <839b08dc-36ae-fb94-0c0a-00e6ee8a5790@arm.com>
+Date: Fri, 26 Jul 2019 17:49:42 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190725151829.DC20968B02@verein.lst.de>
-User-Agent: NeoMutt/20180716
+In-Reply-To: <1562846252-7441-1-git-send-email-bhsharma@redhat.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_094752_116816_6A114D53 
-X-CRM114-Status: GOOD (  20.08  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190726_094944_404064_4556864B 
+X-CRM114-Status: UNSURE (   9.55  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.201 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -63,105 +63,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- David Airlie <airlied@linux.ie>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, Andrzej Hajda <a.hajda@samsung.com>,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>, Harald Geyer <harald@ccbib.org>,
- Sean Paul <seanpaul@chromium.org>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org, Icenowy Zheng <icenowy@aosc.io>
+Cc: takahiro.akashi@linaro.org, bhupesh.linux@gmail.com, will.deacon@arm.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Hi Bhupesh,
 
-On Thu, Jul 25, 2019 at 05:18:29PM +0200, Torsten Duwe wrote:
-> The anx6345 is an ultra-low power DisplayPort/eDP transmitter designed
-> for portable devices.
->
-> Add a binding document for it.
->
-> Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
-> Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
-> Reviewed-by: Rob Herring <robh@kernel.org>
-> Signed-off-by: Torsten Duwe <duwe@suse.de>
-> Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-> ---
->  .../devicetree/bindings/display/bridge/anx6345.yaml |   90 ++++++++++
->  1 file changed, 90 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/display/bridge/anx6345.yaml
->
-> diff --git a/Documentation/devicetree/bindings/display/bridge/anx6345.yaml b/Documentation/devicetree/bindings/display/bridge/anx6345.yaml
-> new file mode 100644
-> index 000000000000..0af092d101c5
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/display/bridge/anx6345.yaml
-> @@ -0,0 +1,90 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/display/bridge/anx6345.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Analogix ANX6345 eDP Transmitter Device Tree Bindings
-> +
-> +maintainers:
-> +  - Torsten Duwe <duwe@lst.de>
-> +
-> +description: |
-> +  The ANX6345 is an ultra-low power Full-HD eDP transmitter designed for
-> +  portable devices.
-> +
-> +properties:
-> +  compatible:
-> +    const: analogix,anx6345
-> +
-> +  reg:
-> +    maxItems: 1
-> +    description: I2C address of the device
-> +
-> +  reset-gpios:
-> +    maxItems: 1
-> +    description: active low GPIO to use for reset
-> +
-> +  dvdd12-supply:
-> +    maxItems: 1
-> +    description: Regulator for 1.2V digital core power.
-> +    $ref: /schemas/types.yaml#/definitions/phandle
-> +
-> +  dvdd25-supply:
-> +    maxItems: 1
-> +    description: Regulator for 2.5V digital core power.
-> +    $ref: /schemas/types.yaml#/definitions/phandle
+On 11/07/2019 12:57, Bhupesh Sharma wrote:
+> With commit b6664ba42f14 ("s390, kexec_file: drop arch_kexec_mem_walk()"),
+> we introduced the KEXEC_BUF_MEM_UNKNOWN macro. If kexec_buf.mem is set
+> to this value, kexec_locate_mem_hole() will try to allocate free memory.
+> 
+> While other arch(s) like s390 and x86_64 already use this macro to
+> initialize kexec_buf.mem with, arm64 uses an equivalent value of 0.
+> Replace it with KEXEC_BUF_MEM_UNKNOWN, to keep the convention of
+> initializing 'kxec_buf.mem' consistent across various archs.
 
-There's no need to specify the type here, all the properties ending in
--supply are already checked for that type
+Reviewed-by: James Morse <james.morse@arm.com>
 
-> +  ports:
-> +    type: object
-> +    minItems: 1
-> +    maxItems: 2
-> +    description: |
-> +      Video port 0 for LVTTL input,
-> +      Video port 1 for eDP output (panel or connector)
-> +      using the DT bindings defined in
-> +      Documentation/devicetree/bindings/media/video-interfaces.txt
 
-You should probably describe the port@0 and port@1 nodes here as
-well. It would allow you to express that the port 0 is mandatory and
-the port 1 optional, which got dropped in the conversion.
+Thanks,
 
-Maxime
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+James
 
 _______________________________________________
 linux-arm-kernel mailing list
