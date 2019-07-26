@@ -2,86 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E52DB75DE3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 06:42:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F18F075DEE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 06:46:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=vc0POEDw6VC7Jpaj0M+yEGdTCcYLztEu+IhghCdjTtA=; b=O9xocePv0bpJEg
-	NTAyvbadZMo3mJeFYCKM8QIwR5faaqteqt6lonYLaEfS+PjezO6wlGCzNi25Mt4Lw/7/OjVQ5mIJT
-	bNcIHnp5pE3wYrvHVfO7nEVJ5mlfWJbJwqRms936D2+cKfUojlSybijnBffecoTSjPZeHRN74yHKm
-	5YLPiRagKB2i7FQotJdxZ1ux89fKy2CoZ6P06rY/4M1u+sXdxmlXBWVrgYS4lUtemgnVNn6ygJI4w
-	EAFAgIY2Wa4KT114KQOZCZLIFWIx2XHh+eNlAKdhnKpOo23+y8OqI7cxuWA6f/XyrgqRp21arpDqI
-	lEHVgwIME5A2QkC8IO4Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EQrJM7Mive1yGHUFFn2rEudtBg9ThMNiKrRte2PmrYU=; b=JZ/3Fps6SS2rJP
+	WJDX7htD6i9y85/b/F4bB6mzqHlw8pYiaK5HCm4yJ/2xRNvXqFey96A3XfpH4V2F7aCDq49M7xURr
+	XOx6+B6vTcHL946kpX7cbR8/5OsBjfA6bDFDBMR30vWfM24cJauiSFrsBy3gj0Hn1dUB/TKj0D38h
+	2oHhX+2RzVbTebJSGT0M7tm9snME1q7FEjB2oUI90xMBhet4bhzBOzvdrLeJWMSYY1+w5I891DQWs
+	+YC8tMcQlmHmMnb/ldvN0hYXZBbfE8GFfOA2c5JWW+8UJnV+4b64DcR1GETgtJAdhhY+dgc73mV4n
+	uQt5aRuoQWoPOntxABxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqs3s-00017x-VV; Fri, 26 Jul 2019 04:42:33 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqs3d-000178-7T
- for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 04:42:18 +0000
-Received: by mail-pg1-x544.google.com with SMTP id l21so24125790pgm.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 25 Jul 2019 21:42:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=eq62dV3aG3jd/W9zqRWfepVRB8FhgcYvUn8Cc6l9GkA=;
- b=Hm635lZZN0RARpzAb9ayexcKn9YXj1XlLee2lITYorBDY2KOsISLHVejwgEYcg6Nc0
- ZqhT1sHlG9s/X0ETZP/JU0sFKEZfCI/zwx6FZHpw1WBMbMM+jyC+fd8EFxcdysy7wZMH
- YYPvEnctY6Zda/l2Cl2oxKrjCh5ExnnUiBHjE=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=eq62dV3aG3jd/W9zqRWfepVRB8FhgcYvUn8Cc6l9GkA=;
- b=cvbtgvs8sXOcS6T/DCRyzHgKhHlQ5Z5Z8xMZuuoJ90n8Y3G0oSVopCLifMp22UGAHT
- /NOpT/SvCdvvygL41KRc3dIGncbDhQ7h+KaUdWxE3Lz7javR5xdmlTETqSiihwvGg8fV
- y/YP4lpq6a6Dplr4bTjxObCLWyVkbcpAAx/TxDf+z6BijKaLbEhqV38U5PjY8dd643ST
- 4J8AP15+U/eaakHXwjLnc2qL5BjCFOEDEWBvjAq6yOwNcnLvuRZ15g5EQcUIaUIpkMoo
- hVJTJwJpmobcHuPmURux/7Twrg82FKc75wp0aRtsbaApSkFZDADhUTBKwynZzRRH+lxk
- WOQA==
-X-Gm-Message-State: APjAAAVf9tZVgc/wfsthyYnNE+pI3hqAbPuNp9p09fdA034x2Tl5/fzj
- ADyTarAHDIJr5k9R7zD6/hwbHQ==
-X-Google-Smtp-Source: APXvYqzyDNFdueHohA8SGN1O6dmRutvK/f1c35LtOqHGnJFqaLCJWNkNKPAQTGdjzMb/377e4SAgXA==
-X-Received: by 2002:a17:90a:9905:: with SMTP id
- b5mr98357683pjp.70.1564116135769; 
- Thu, 25 Jul 2019 21:42:15 -0700 (PDT)
-Received: from localhost ([2401:fa00:1:b:e688:dfd2:a1a7:2956])
- by smtp.gmail.com with ESMTPSA id t7sm41702252pjq.15.2019.07.25.21.42.12
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 25 Jul 2019 21:42:14 -0700 (PDT)
-From: Cheng-Yi Chiang <cychiang@chromium.org>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH] Revert "ASoC: rockchip: i2s: Support mono capture"
-Date: Fri, 26 Jul 2019 12:42:02 +0800
-Message-Id: <20190726044202.26866-1-cychiang@chromium.org>
-X-Mailer: git-send-email 2.22.0.709.g102302147b-goog
+	id 1hqs85-0002lV-HU; Fri, 26 Jul 2019 04:46:53 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hqs7q-0002l7-QA
+ for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 04:46:40 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B6593337;
+ Thu, 25 Jul 2019 21:46:37 -0700 (PDT)
+Received: from [10.163.1.197] (unknown [10.163.1.197])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4CBE13F694;
+ Thu, 25 Jul 2019 21:46:33 -0700 (PDT)
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [RFC] mm/pgtable/debug: Add test validating architecture page
+ table helpers
+To: Matthew Wilcox <willy@infradead.org>
+References: <1564037723-26676-1-git-send-email-anshuman.khandual@arm.com>
+ <1564037723-26676-2-git-send-email-anshuman.khandual@arm.com>
+ <20190725143920.GW363@bombadil.infradead.org>
+Message-ID: <c3bb0420-584c-de3b-2439-8702bc09595e@arm.com>
+Date: Fri, 26 Jul 2019 10:17:11 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
+In-Reply-To: <20190725143920.GW363@bombadil.infradead.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_214217_298049_89623536 
-X-CRM114-Status: GOOD (  11.37  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190725_214638_938865_06BA8FEA 
+X-CRM114-Status: GOOD (  23.77  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,72 +64,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, dianders@chromium.org,
- Heiko Stuebner <heiko@sntech.de>, Liam Girdwood <lgirdwood@gmail.com>,
- Takashi Iwai <tiwai@suse.com>, tzungbi@chromium.org,
- Jaroslav Kysela <perex@perex.cz>, linux-rockchip@lists.infradead.org,
- Mark Brown <broonie@kernel.org>, dgreid@chromium.org, mka@chromium.org,
- linux-arm-kernel@lists.infradead.org, Cheng-Yi Chiang <cychiang@chromium.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Sri Krishna chowdary <schowdary@nvidia.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>, x86@kernel.org,
+ Dave Hansen <dave.hansen@intel.com>, linux-kernel@vger.kernel.org,
+ Steven Price <Steven.Price@arm.com>, linux-mm@kvack.org,
+ Mark Brown <Mark.Brown@arm.com>, Andrew Morton <akpm@linux-foundation.org>,
+ Michal Hocko <mhocko@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This reverts commit db51707b9c9aeedd310ebce60f15d5bb006567e0.
+On 07/25/2019 08:09 PM, Matthew Wilcox wrote:
+> On Thu, Jul 25, 2019 at 12:25:23PM +0530, Anshuman Khandual wrote:
+>> This adds a test module which will validate architecture page table helpers
+>> and accessors regarding compliance with generic MM semantics expectations.
+>> This will help various architectures in validating changes to the existing
+>> page table helpers or addition of new ones.
+> 
+> I think this is a really good idea.
+> 
+>>  lib/Kconfig.debug       |  14 +++
+>>  lib/Makefile            |   1 +
+>>  lib/test_arch_pgtable.c | 290 ++++++++++++++++++++++++++++++++++++++++++++++++
+> 
+> Is this the right place for it?  I worry that lib/ is going to get overloaded
+> with test code, and this feels more like mm/ test code.
 
-Previous discussion in
+Sure this can be moved to mm/ but unlike existing test configs there (following)
+lets keep some config description in mm/Kconfig. Will probably rename this as
+CONFIG_DEBUG_ARCH_PGTABLE_TEST to match other tests.
 
-https://patchwork.kernel.org/patch/10147153/
+CONFIG_DEBUG_KMEMLEAK_TEST
+CONFIG_DEBUG_RODATA_TEST
+CONFIG_MEMTEST
 
-explains the issue of the patch.
-While device is configured as 1-ch, hardware is still
-generating a 2-ch stream.
-When user space reads the data and assumes it is a 1-ch stream,
-the rate will be slower by 2x.
+After moving to mm/ directory I guess it does not need a loadable module option.
 
-Revert the change so 1-ch is not supported.
-User space can selectively take one channel data out of two channel
-if 1-ch is preferred.
-Currently, both channels record identical data.
+> 
+>> +#ifdef CONFIG_HAVE_ARCH_TRANSPARENT_HUGEPAGE
+>> +static void pmd_basic_tests(void)
+>> +{
+>> +	pmd_t pmd;
+>> +
+>> +	pmd = mk_pmd(page, prot);
+> 
+> But 'page' isn't necessarily PMD-aligned.  I don't think we can rely on
+> architectures doing the right thing if asked to make a PMD for a randomly
+> aligned page.
+> 
+> How about finding the physical address of something like kernel_init(),
 
-Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
----
- sound/soc/rockchip/rockchip_i2s.c | 5 ++---
- 1 file changed, 2 insertions(+), 3 deletions(-)
+Physical address corresponding to the symbol in the kernel text segment ?
 
-diff --git a/sound/soc/rockchip/rockchip_i2s.c b/sound/soc/rockchip/rockchip_i2s.c
-index 0a34d0eb8dba..88ebaf6e1880 100644
---- a/sound/soc/rockchip/rockchip_i2s.c
-+++ b/sound/soc/rockchip/rockchip_i2s.c
-@@ -326,7 +326,6 @@ static int rockchip_i2s_hw_params(struct snd_pcm_substream *substream,
- 		val |= I2S_CHN_4;
- 		break;
- 	case 2:
--	case 1:
- 		val |= I2S_CHN_2;
- 		break;
- 	default:
-@@ -459,7 +458,7 @@ static struct snd_soc_dai_driver rockchip_i2s_dai = {
- 	},
- 	.capture = {
- 		.stream_name = "Capture",
--		.channels_min = 1,
-+		.channels_min = 2,
- 		.channels_max = 2,
- 		.rates = SNDRV_PCM_RATE_8000_192000,
- 		.formats = (SNDRV_PCM_FMTBIT_S8 |
-@@ -659,7 +658,7 @@ static int rockchip_i2s_probe(struct platform_device *pdev)
- 	}
- 
- 	if (!of_property_read_u32(node, "rockchip,capture-channels", &val)) {
--		if (val >= 1 && val <= 8)
-+		if (val >= 2 && val <= 8)
- 			soc_dai->capture.channels_max = val;
- 	}
- 
--- 
-2.22.0.709.g102302147b-goog
+> and using the corresponding pte/pmd/pud/p4d/pgd that encompasses that
 
+So I guess this will help us use pte/pmd/pud/p4d/pgd entries from a real and
+present mapping rather then making them up for test purpose. Although we are
+not creating real page tables here just wondering if this could some how
+affect these real mapping in anyway from some accessors. The current proposal
+stays clear from anything real - allocates, evaluates and releases.
+
+Also table entries at pmd/pud/p4d/pgd cannot be operated with accessors in the
+test. THP and PUD THP will operate on leaf entries at pmd or pud levels. We need
+them as leaf entries created from allocated (aligned) pfns. While determining
+pte/pmd/pud/p4d/pgd for kernel_init() some of them will be table entries.
+
+> address?  It's also better to pass in the pfn/page rather than using global
+> variables to communicate to the test functions.
+
+Sure those can be allocated and passed from the main function. Just wanted to
+avoid page allocation in each individual tests.
+
+> 
+>> +	/*
+>> +	 * A huge page does not point to next level page table
+>> +	 * entry. Hence this must qualify as pmd_bad().
+>> +	 */
+>> +	WARN_ON(!pmd_bad(pmd_mkhuge(pmd)));
+> 
+> I didn't know that rule.  This is helpful because it gives us somewhere
+> to document all these tricksy little rules.
+
+That is another objective this test has which will help settle semantics
+in a clear and documented manner.
+
+> 
+>> +#ifdef CONFIG_HAVE_ARCH_TRANSPARENT_HUGEPAGE_PUD
+>> +static void pud_basic_tests(void)
+> 
+> Is this the right ifdef?
+
+IIUC THP at PUD is where the pud_t entries are directly operated upon and the
+corresponding accessors are present only when HAVE_ARCH_TRANSPARENT_HUGEPAGE_PUD
+is enabled. Am I missing something here ?
 
 _______________________________________________
 linux-arm-kernel mailing list
