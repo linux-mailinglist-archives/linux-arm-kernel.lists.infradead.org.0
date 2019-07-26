@@ -2,51 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9BA3176ADF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 16:02:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C92976AE5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 16:02:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=9IoelnEjzK70f1VN6Zh7Mri13PtZE7Z2FxZZy3wQuGs=; b=Tff06I4Q+OMPPboFDPKweil3+q
-	sFEqxeC1kEMHJX+JO90gC3Ib3IRUz70tzaXkZ4o1wvowHqR6ua27fry08VMixn5SS6gv8tDQcvR8M
-	VDt5RdGEhsl1WKShBa2ybj3IneuoTpihJt+4qrGcn44F+V+yW7uoUojnBfbhQo3gQxL7PG8X17UbC
-	/HdlHrUeUmbtk+RilXzrlJIiNgPF31F5/6ggrhh1HdhhYz0nBTlckq9/Rll3OAxTVoX5D9HmS/Fq3
-	6pOAfWuTXkxV6XbJmD3d7fk3FnSZBUr6AmjrC4oHycmNpvmxeGmHJH4uFVugAV8o73W7q8ppmGOF5
-	i1K4p2Pw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=68CzFilRc45Y/6KuIqsghlf4Wb+SWX8BXJuTB9HnVmo=; b=nsDpLhSPI+oA2wA8K76vF9wUD
+	tr3NUlCJznYGnbmay2MWqfXCm7ZaGzYX7HmWFnNkCAjQghuQ0oR+NI1gyldfSAYuCMZuUfrw797Bb
+	UHXwbQp8i4V5Bp9TADyl6783MBk2/z5QQ0bECTnE/w5MjwVR+bQyc82B3JoB/2qeAOyjIHnS3IZ/T
+	Jbf4yE2jsHZdxFUK2Y+Q8ORcMREiPn8IrjsW2f1iHHzTty+Js0/0MZc+2G3rZXutbstMRwgwHgG3p
+	yYo71eqpKxXW2F1R1DjCWas+WhS1p6qgfGAPwdfxkh9y4ymOT3n2ij/M6xAevipkZX6jUptuq5Mll
+	7cEHPSDjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hr0nJ-0006dJ-52; Fri, 26 Jul 2019 14:02:01 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hr0le-0005Qs-Ki
- for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 14:00:20 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3E7CF152D;
- Fri, 26 Jul 2019 07:00:18 -0700 (PDT)
-Received: from usa.arm.com (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 3C6CC3F694;
- Fri, 26 Jul 2019 07:00:16 -0700 (PDT)
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 5/5] reset: Add support for resets provided by SCMI
-Date: Fri, 26 Jul 2019 14:59:54 +0100
-Message-Id: <20190726135954.11078-6-sudeep.holla@arm.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190726135954.11078-1-sudeep.holla@arm.com>
-References: <20190726135954.11078-1-sudeep.holla@arm.com>
+	id 1hr0ne-0006wP-Qe; Fri, 26 Jul 2019 14:02:22 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hr0mA-0005o9-Iy
+ for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 14:00:53 +0000
+Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
+ [10.5.11.13])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 07A33C059B6F;
+ Fri, 26 Jul 2019 14:00:49 +0000 (UTC)
+Received: from [10.72.12.238] (ovpn-12-238.pek2.redhat.com [10.72.12.238])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 894BC6062E;
+ Fri, 26 Jul 2019 14:00:22 +0000 (UTC)
+Subject: Re: WARNING in __mmdrop
+To: "Michael S. Tsirkin" <mst@redhat.com>
+References: <20190725012149-mutt-send-email-mst@kernel.org>
+ <55e8930c-2695-365f-a07b-3ad169654d28@redhat.com>
+ <20190725042651-mutt-send-email-mst@kernel.org>
+ <84bb2e31-0606-adff-cf2a-e1878225a847@redhat.com>
+ <20190725092332-mutt-send-email-mst@kernel.org>
+ <11802a8a-ce41-f427-63d5-b6a4cf96bb3f@redhat.com>
+ <20190726074644-mutt-send-email-mst@kernel.org>
+ <5cc94f15-b229-a290-55f3-8295266edb2b@redhat.com>
+ <20190726082837-mutt-send-email-mst@kernel.org>
+ <ada10dc9-6cab-e189-5289-6f9d3ff8fed2@redhat.com>
+ <20190726094353-mutt-send-email-mst@kernel.org>
+From: Jason Wang <jasowang@redhat.com>
+Message-ID: <63754251-a39a-1e0e-952d-658102682094@redhat.com>
+Date: Fri, 26 Jul 2019 22:00:20 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
+MIME-Version: 1.0
+In-Reply-To: <20190726094353-mutt-send-email-mst@kernel.org>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.32]); Fri, 26 Jul 2019 14:00:49 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_070018_787704_30729A8E 
-X-CRM114-Status: GOOD (  17.78  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190726_070050_755429_891504F2 
+X-CRM114-Status: GOOD (  25.26  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -59,231 +79,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peng Fan <peng.fan@nxp.com>, Etienne Carriere <etienne.carriere@linaro.org>,
- Souvik Chakravarty <Souvik.Chakravarty@arm.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, wesleys@xilinx.com,
- aidapala@qti.qualcomm.com, linux-kernel@vger.kernel.org,
- Saeed Nowshadi <saeed.nowshadi@xilinx.com>,
- Bo Zhang <bozhang.zhang@broadcom.com>, Felix Burton <fburton@xilinx.com>,
- Jim Quinlan <james.quinlan@broadcom.com>, Sudeep Holla <sudeep.holla@arm.com>,
- pajay@qti.qualcomm.com, Gaku Inami <gaku.inami.xh@renesas.com>,
- Volodymyr Babchuk <volodymyr_babchuk@epam.com>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mhocko@suse.com, peterz@infradead.org, ldv@altlinux.org,
+ james.bottomley@hansenpartnership.com, linux-mm@kvack.org, namit@vmware.com,
+ mingo@kernel.org, elena.reshetova@intel.com, keescook@chromium.org,
+ aarcange@redhat.com, davem@davemloft.net, hch@infradead.org,
+ christian@brauner.io,
+ syzbot <syzbot+e58112d71f77113ddb7b@syzkaller.appspotmail.com>,
+ syzkaller-bugs@googlegroups.com, jglisse@redhat.com, viro@zeniv.linux.org.uk,
+ linux-arm-kernel@lists.infradead.org, wad@chromium.org,
+ linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ luto@amacapital.net, ebiederm@xmission.com, akpm@linux-foundation.org,
+ guro@fb.com
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On some ARM based systems, a separate Cortex-M based System Control
-Processor(SCP) provides the overall power, clock, reset and system
-control. System Control and Management Interface(SCMI) Message Protocol
-is defined for the communication between the Application Cores(AP)
-and the SCP.
-
-Adds support for the resets provided using SCMI protocol for performing
-reset management of various devices present on the SoC. Various reset
-functionalities are achieved by the means of different ARM SCMI device
-operations provided by the ARM SCMI framework.
-
-Cc: Philipp Zabel <p.zabel@pengutronix.de>
-Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
----
- MAINTAINERS                |   1 +
- drivers/reset/Kconfig      |  10 +++
- drivers/reset/Makefile     |   1 +
- drivers/reset/reset-scmi.c | 133 +++++++++++++++++++++++++++++++++++++
- 4 files changed, 145 insertions(+)
- create mode 100644 drivers/reset/reset-scmi.c
-
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 783569e3c4b4..59df8f88b56d 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -15545,6 +15545,7 @@ F:	drivers/clk/clk-sc[mp]i.c
- F:	drivers/cpufreq/sc[mp]i-cpufreq.c
- F:	drivers/firmware/arm_scpi.c
- F:	drivers/firmware/arm_scmi/
-+F:	drivers/reset/reset-scmi.c
- F:	include/linux/sc[mp]i_protocol.h
- 
- SYSTEM RESET/SHUTDOWN DRIVERS
-diff --git a/drivers/reset/Kconfig b/drivers/reset/Kconfig
-index 21efb7d39d62..09dcc3bf3b7a 100644
---- a/drivers/reset/Kconfig
-+++ b/drivers/reset/Kconfig
-@@ -22,6 +22,16 @@ config RESET_A10SR
- 	  This option enables support for the external reset functions for
- 	  peripheral PHYs on the Altera Arria10 System Resource Chip.
- 
-+config RESET_ARM_SCMI
-+	tristate "Reset driver controlled via ARM SCMI interface"
-+	depends on ARM_SCMI_PROTOCOL || COMPILE_TEST
-+	help
-+	  This driver provides support for reset signal/domains that are
-+	  controlled by firmware that implements the SCMI interface.
-+
-+	  This driver uses SCMI Message Protocol to interact with the
-+	  firmware providing all the reset signals.
-+
- config RESET_ATH79
- 	bool "AR71xx Reset Driver" if COMPILE_TEST
- 	default ATH79
-diff --git a/drivers/reset/Makefile b/drivers/reset/Makefile
-index 61456b8f659c..2f1103d31938 100644
---- a/drivers/reset/Makefile
-+++ b/drivers/reset/Makefile
-@@ -4,6 +4,7 @@ obj-y += hisilicon/
- obj-$(CONFIG_ARCH_STI) += sti/
- obj-$(CONFIG_ARCH_TEGRA) += tegra/
- obj-$(CONFIG_RESET_A10SR) += reset-a10sr.o
-+obj-$(CONFIG_RESET_ARM_SCMI) += reset-scmi.o
- obj-$(CONFIG_RESET_ATH79) += reset-ath79.o
- obj-$(CONFIG_RESET_AXS10X) += reset-axs10x.o
- obj-$(CONFIG_RESET_BERLIN) += reset-berlin.o
-diff --git a/drivers/reset/reset-scmi.c b/drivers/reset/reset-scmi.c
-new file mode 100644
-index 000000000000..9e5d07cac2ed
---- /dev/null
-+++ b/drivers/reset/reset-scmi.c
-@@ -0,0 +1,133 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * ARM System Control and Management Interface (ARM SCMI) reset driver
-+ *
-+ * Copyright (C) 2019 ARM Ltd.
-+ */
-+
-+#include <linux/module.h>
-+#include <linux/mutex.h>
-+#include <linux/of.h>
-+#include <linux/platform_device.h>
-+#include <linux/reset-controller.h>
-+#include <linux/scmi_protocol.h>
-+
-+/**
-+ * struct scmi_reset_data - reset controller information structure
-+ * @rcdev: reset controller entity
-+ * @handle: ARM SCMI handle used for communication with system controller
-+ * @dev: reset controller device pointer
-+ */
-+struct scmi_reset_data {
-+	struct reset_controller_dev rcdev;
-+	const struct scmi_handle *handle;
-+	struct device *dev;
-+};
-+
-+#define to_scmi_reset_data(p)	\
-+	container_of((p), struct scmi_reset_data, rcdev)
-+
-+/**
-+ * scmi_reset_assert() - assert device reset
-+ * @rcdev: reset controller entity
-+ * @id: ID of the reset to be asserted
-+ *
-+ * This function implements the reset driver op to assert a device's reset
-+ * using the ARM SCMI protocol.
-+ *
-+ * Return: 0 for successful request, else a corresponding error value
-+ */
-+static int
-+scmi_reset_assert(struct reset_controller_dev *rcdev, unsigned long id)
-+{
-+	struct scmi_reset_data *data = to_scmi_reset_data(rcdev);
-+	const struct scmi_handle *handle = data->handle;
-+	int ret;
-+
-+	ret = handle->reset_ops->assert(handle, id);
-+
-+	return ret;
-+}
-+
-+/**
-+ * scmi_reset_deassert() - deassert device reset
-+ * @rcdev: reset controller entity
-+ * @id: ID of the reset to be deasserted
-+ *
-+ * This function implements the reset driver op to deassert a device's reset
-+ * using the ARM SCMI protocol.
-+ *
-+ * Return: 0 for successful request, else a corresponding error value
-+ */
-+static int
-+scmi_reset_deassert(struct reset_controller_dev *rcdev, unsigned long id)
-+{
-+	struct scmi_reset_data *data = to_scmi_reset_data(rcdev);
-+	const struct scmi_handle *handle = data->handle;
-+
-+	return handle->reset_ops->deassert(handle, id);
-+}
-+
-+/**
-+ * scmi_reset_reset() - reset the device
-+ * @rcdev: reset controller entity
-+ * @id: ID of the reset signal to be reset(assert + deassert)
-+ *
-+ * This function implements the reset driver op to reset a device's reset
-+ * signal using the ARM SCMI protocol.
-+ *
-+ * Return: 0 for successful request, else a corresponding error value
-+ */
-+static int
-+scmi_reset_reset(struct reset_controller_dev *rcdev, unsigned long id)
-+{
-+	struct scmi_reset_data *data = to_scmi_reset_data(rcdev);
-+	const struct scmi_handle *handle = data->handle;
-+
-+	return handle->reset_ops->reset(handle, id);
-+}
-+
-+static const struct reset_control_ops scmi_reset_ops = {
-+	.assert		= scmi_reset_assert,
-+	.deassert	= scmi_reset_deassert,
-+	.reset		= scmi_reset_reset,
-+};
-+
-+static int scmi_reset_probe(struct scmi_device *sdev)
-+{
-+	struct scmi_reset_data *data;
-+	struct device *dev = &sdev->dev;
-+	struct device_node *np = dev->of_node;
-+	const struct scmi_handle *handle = sdev->handle;
-+
-+	if (!handle || !handle->reset_ops)
-+		return -ENODEV;
-+
-+	data = devm_kzalloc(dev, sizeof(*data), GFP_KERNEL);
-+	if (!data)
-+		return -ENOMEM;
-+
-+	data->rcdev.ops = &scmi_reset_ops;
-+	data->rcdev.owner = THIS_MODULE;
-+	data->rcdev.of_node = np;
-+	data->dev = dev;
-+
-+	return devm_reset_controller_register(dev, &data->rcdev);
-+}
-+
-+static const struct scmi_device_id scmi_id_table[] = {
-+	{ SCMI_PROTOCOL_RESET },
-+	{ },
-+};
-+MODULE_DEVICE_TABLE(scmi, scmi_id_table);
-+
-+static struct scmi_driver scmi_reset_driver = {
-+	.name = "scmi-reset",
-+	.probe = scmi_reset_probe,
-+	.id_table = scmi_id_table,
-+};
-+module_scmi_driver(scmi_reset_driver);
-+
-+MODULE_AUTHOR("Sudeep Holla <sudeep.holla@arm.com>");
-+MODULE_DESCRIPTION("ARM SCMI clock driver");
-+MODULE_LICENSE("GPL v2");
--- 
-2.17.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Ck9uIDIwMTkvNy8yNiDkuIvljYg5OjQ3LCBNaWNoYWVsIFMuIFRzaXJraW4gd3JvdGU6Cj4gT24g
+RnJpLCBKdWwgMjYsIDIwMTkgYXQgMDg6NTM6MThQTSArMDgwMCwgSmFzb24gV2FuZyB3cm90ZToK
+Pj4gT24gMjAxOS83LzI2IOS4i+WNiDg6MzgsIE1pY2hhZWwgUy4gVHNpcmtpbiB3cm90ZToKPj4+
+IE9uIEZyaSwgSnVsIDI2LCAyMDE5IGF0IDA4OjAwOjU4UE0gKzA4MDAsIEphc29uIFdhbmcgd3Jv
+dGU6Cj4+Pj4gT24gMjAxOS83LzI2IOS4i+WNiDc6NDksIE1pY2hhZWwgUy4gVHNpcmtpbiB3cm90
+ZToKPj4+Pj4gT24gVGh1LCBKdWwgMjUsIDIwMTkgYXQgMTA6MjU6MjVQTSArMDgwMCwgSmFzb24g
+V2FuZyB3cm90ZToKPj4+Pj4+IE9uIDIwMTkvNy8yNSDkuIvljYg5OjI2LCBNaWNoYWVsIFMuIFRz
+aXJraW4gd3JvdGU6Cj4+Pj4+Pj4+IEV4YWN0bHksIGFuZCB0aGF0J3MgdGhlIHJlYXNvbiBhY3R1
+YWxseSBJIHVzZSBzeW5jaHJvbml6ZV9yY3UoKSB0aGVyZS4KPj4+Pj4+Pj4KPj4+Pj4+Pj4gU28g
+dGhlIGNvbmNlcm4gaXMgc3RpbGwgdGhlIHBvc3NpYmxlIHN5bmNocm9uaXplX2V4cGVkaXRlZCgp
+Pwo+Pj4+Pj4+IEkgdGhpbmsgc3luY2hyb25pemVfc3JjdV9leHBlZGl0ZWQuCj4+Pj4+Pj4KPj4+
+Pj4+PiBzeW5jaHJvbml6ZV9leHBlZGl0ZWQgc2VuZHMgbG90cyBvZiBJUEkgYW5kIGlzIGJhZCBm
+b3IgcmVhbHRpbWUgVk1zLgo+Pj4+Pj4+Cj4+Pj4+Pj4+IENhbiBJIGRvIHRoaXMKPj4+Pj4+Pj4g
+b24gdGhyb3VnaCBhbm90aGVyIHNlcmllcyBvbiB0b3Agb2YgdGhlIGluY29taW5nIFYyPwo+Pj4+
+Pj4+Pgo+Pj4+Pj4+PiBUaGFua3MKPj4+Pj4+Pj4KPj4+Pj4+PiBUaGUgcXVlc3Rpb24gaXMgdGhp
+czogaXMgdGhpcyBzdGlsbCBhIGdhaW4gaWYgd2Ugc3dpdGNoIHRvIHRoZQo+Pj4+Pj4+IG1vcmUg
+ZXhwZW5zaXZlIHNyY3U/IElmIHllcyB0aGVuIHdlIGNhbiBrZWVwIHRoZSBmZWF0dXJlIG9uLAo+
+Pj4+Pj4gSSB0aGluayB3ZSBvbmx5IGNhcmUgYWJvdXQgdGhlIGNvc3Qgb24gc3JjdV9yZWFkX2xv
+Y2soKSB3aGljaCBsb29rcyBwcmV0dHkKPj4+Pj4+IHRpbnkgZm9ybSBteSBwb2ludCBvZiB2aWV3
+LiBXaGljaCBpcyBiYXNpY2FsbHkgYSBSRUFEX09OQ0UoKSArIFdSSVRFX09OQ0UoKS4KPj4+Pj4+
+Cj4+Pj4+PiBPZiBjb3Vyc2UgSSBjYW4gYmVuY2htYXJrIHRvIHNlZSB0aGUgZGlmZmVyZW5jZS4K
+Pj4+Pj4+Cj4+Pj4+Pgo+Pj4+Pj4+IGlmIG5vdCB3ZSdsbCBwdXQgaXQgb2ZmIHVudGlsIG5leHQg
+cmVsZWFzZSBhbmQgdGhpbmsKPj4+Pj4+PiBvZiBiZXR0ZXIgc29sdXRpb25zLiByY3UtPnNyY3Ug
+aXMganVzdCBhIGZpbmQgYW5kIHJlcGxhY2UsCj4+Pj4+Pj4gZG9uJ3Qgc2VlIHdoeSB3ZSBuZWVk
+IHRvIGRlZmVyIHRoYXQuIGNhbiBiZSBhIHNlcGFyYXRlIHBhdGNoCj4+Pj4+Pj4gZm9yIHN1cmUs
+IGJ1dCB3ZSBuZWVkIHRvIGtub3cgaG93IHdlbGwgaXQgd29ya3MuCj4+Pj4+PiBJIHRoaW5rIEkg
+Z2V0IGhlcmUsIGxldCBtZSB0cnkgdG8gZG8gdGhhdCBpbiBWMiBhbmQgbGV0J3Mgc2VlIHRoZSBu
+dW1iZXJzLgo+Pj4+Pj4KPj4+Pj4+IFRoYW5rcwo+Pj4+IEl0IGxvb2tzIHRvIG1lIGZvciB0cmVl
+IHJjdSwgaXRzIHNyY3VfcmVhZF9sb2NrKCkgaGF2ZSBhIG1iKCkgd2hpY2ggaXMgdG9vCj4+Pj4g
+ZXhwZW5zaXZlIGZvciB1cy4KPj4+IEkgd2lsbCB0cnkgdG8gcG9uZGVyIHVzaW5nIHZxIGxvY2sg
+aW4gc29tZSB3YXkuCj4+PiBNYXliZSB3aXRoIHRyeWxvY2sgc29tZWhvdyAuLi4KPj4KPj4gT2ss
+IGxldCBtZSByZXRyeSBpZiBuZWNlc3NhcnkgKGJ1dCBJIGRvIHJlbWVtYmVyIEkgZW5kIHVwIHdp
+dGggZGVhZGxvY2tzCj4+IGxhc3QgdHJ5KS4KPj4KPj4KPj4+Cj4+Pj4gSWYgd2UganVzdCB3b3Jy
+eSBhYm91dCB0aGUgSVBJLAo+Pj4gV2l0aCBzeW5jaHJvbml6ZV9yY3Ugd2hhdCBJIHdvdWxkIHdv
+cnJ5IGFib3V0IGlzIHRoYXQgZ3Vlc3QgaXMgc3RhbGxlZAo+Pgo+PiBDYW4gdGhpcyBzeW5jaHJv
+bml6ZV9yY3UoKSBiZSB0cmlnZ2VyZWQgYnkgZ3Vlc3Q/IElmIHllcywgdGhlcmUgYXJlIHNldmVy
+YWwKPj4gb3RoZXIgTU1VIG5vdGlmaWVycyB0aGF0IGNhbiBibG9jay4gSXMgdmhvc3Qgc29tZXRo
+aW5nIHNwZWNpYWwgaGVyZT8KPiBTb3JyeSwgbGV0IG1lIGV4cGxhaW46IGd1ZXN0cyAoYW5kIHRh
+c2tzIGluIGdlbmVyYWwpCj4gY2FuIHRyaWdnZXIgYWN0aXZpdHkgdGhhdCB3aWxsCj4gbWFrZSBz
+eW5jaHJvbml6ZV9yY3UgdGFrZSBhIGxvbmcgdGltZS4KCgpZZXMsIEkgZ2V0IHRoaXMuCgoKPiAg
+IFRodXMgYmxvY2tpbmcKPiBhbiBtbXUgbm90aWZpZXIgdW50aWwgc3luY2hyb25pemVfcmN1IGZp
+bmlzaGVzCj4gaXMgYSBiYWQgaWRlYS4KCgpUaGUgcXVlc3Rpb24gaXMsIE1NVSBub3RpZmllciBh
+cmUgYWxsb3dlZCB0byBiZSBibG9ja2VkIG9uIAppbnZhbGlkYXRlX3JhbmdlX3N0YXJ0KCkgd2hp
+Y2ggY291bGQgYmUgbXVjaCBzbG93ZXIgdGhhbiAKc3luY2hyb25pemVfcmN1KCkgdG8gZmluaXNo
+LgoKTG9va2luZyBhdCBhbWRncHVfbW5faW52YWxpZGF0ZV9yYW5nZV9zdGFydF9nZngoKSB3aGlj
+aCBjYWxscyAKYW1kZ3B1X21uX2ludmFsaWRhdGVfbm9kZSgpIHdoaWNoIGRpZDoKCiDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgciA9IHJlc2VydmF0aW9uX29iamVjdF93YWl0X3RpbWVv
+dXRfcmN1KGJvLT50Ym8ucmVzdiwKIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqAgdHJ1ZSwgZmFsc2UsIE1BWF9TQ0hFRFVMRV9USU1FT1VUKTsKCi4uLgoKCj4+
+PiBiZWNhdXNlIHN5c3RlbSBpcyBidXN5IGJlY2F1c2Ugb2Ygb3RoZXIgZ3Vlc3RzLgo+Pj4gV2l0
+aCBleHBlZGl0ZWQgaXQncyB0aGUgSVBJcy4uLgo+Pj4KPj4gVGhlIGN1cnJlbnQgc3luY2hyb25p
+emVfcmN1KCnCoCBjYW4gZm9yY2UgYSBleHBlZGl0ZWQgZ3JhY2UgcGVyaW9kOgo+Pgo+PiB2b2lk
+IHN5bmNocm9uaXplX3JjdSh2b2lkKQo+PiB7Cj4+ICDCoMKgwqAgwqDCoMKgIC4uLgo+PiAgwqDC
+oMKgwqDCoMKgwqAgaWYgKHJjdV9ibG9ja2luZ19pc19ncCgpKQo+PiByZXR1cm47Cj4+ICDCoMKg
+wqDCoMKgwqDCoCBpZiAocmN1X2dwX2lzX2V4cGVkaXRlZCgpKQo+PiBzeW5jaHJvbml6ZV9yY3Vf
+ZXhwZWRpdGVkKCk7Cj4+IGVsc2UKPj4gd2FpdF9yY3VfZ3AoY2FsbF9yY3UpOwo+PiB9Cj4+IEVY
+UE9SVF9TWU1CT0xfR1BMKHN5bmNocm9uaXplX3JjdSk7Cj4KPiBBbiBhZG1pbiBjYW4gZm9yY2Ug
+cmN1IHRvIGZpbmlzaCBmYXN0ZXIsIHRyYWRpbmcKPiBpbnRlcnJ1cHRzIGZvciByZXNwb25zaXZl
+bmVzcy4KCgpZZXMsIHNvIHdoZW4gc2V0LCBhbGwgZWFjaCBzeW5jaHJvbml6ZV9yY3UoKSB3aWxs
+IGdvIGZvciAKc3luY2hyb25pemVfcmN1X2V4cGVkaXRlZCgpLgoKCj4KPj4+PiBjYW4gd2UgZG8g
+c29tZXRoaW5nIGxpa2UgaW4KPj4+PiB2aG9zdF9pbnZhbGlkYXRlX3ZxX3N0YXJ0KCk/Cj4+Pj4K
+Pj4+PiAgIMKgwqDCoMKgwqDCoMKgIGlmIChtYXApIHsKPj4+PiAgIMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoCAvKiBJbiBvcmRlciB0byBhdm9pZCBwb3NzaWJsZSBJUElzIHdpdGgKPj4+
+PiAgIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICogc3luY2hyb25pemVfcmN1X2V4
+cGVkaXRlZCgpIHdlIHVzZSBjYWxsX3JjdSgpICsKPj4+PiAgIMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgICogY29tcGxldGlvbi4KPj4+PiAqLwo+Pj4+IGluaXRfY29tcGxldGlvbigm
+Yy5jb21wbGV0aW9uKTsKPj4+PiAgIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBjYWxs
+X3JjdSgmYy5yY3VfaGVhZCwgdmhvc3RfZmluaXNoX3ZxX2ludmFsaWRhdGlvbik7Cj4+Pj4gd2Fp
+dF9mb3JfY29tcGxldGlvbigmYy5jb21wbGV0aW9uKTsKPj4+PiAgIMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoCB2aG9zdF9zZXRfbWFwX2RpcnR5KHZxLCBtYXAsIGluZGV4KTsKPj4+PiB2
+aG9zdF9tYXBfdW5wcmVmZXRjaChtYXApOwo+Pj4+ICAgwqDCoMKgwqDCoMKgwqAgfQo+Pj4+Cj4+
+Pj4gPwo+Pj4gV2h5IHdvdWxkIHRoYXQgYmUgZmFzdGVyIHRoYW4gc3luY2hyb25pemVfcmN1Pwo+
+Pgo+PiBObyBmYXN0ZXIgYnV0IG5vIElQSS4KPj4KPiBTb3JyeSBJIHN0aWxsIGRvbid0IHNlZSB0
+aGUgcG9pbnQuCj4gc3luY2hyb25pemVfcmN1IGRvZXNuJ3Qgbm9ybWFsbHkgZG8gYW4gSVBJIGVp
+dGhlci4KPgoKTm90IHRoZSBjYXNlIG9mIHdoZW4gcmN1X2V4cGVkaXRlZCBpcyBzZXQuIFRoaXMg
+Y2FuIGp1c3QgMTAwJSBtYWtlIHN1cmUgCnRoZXJlJ3Mgbm8gSVBJLgoKCj4+Pgo+Pj4+PiBUaGVy
+ZSdzIG9uZSBvdGhlciB0aGluZyB0aGF0IGJvdGhlcnMgbWUsIGFuZCB0aGF0IGlzIHRoYXQKPj4+
+Pj4gZm9yIGxhcmdlIHJpbmdzIHdoaWNoIGFyZSBub3QgcGh5c2ljYWxseSBjb250aWd1b3VzCj4+
+Pj4+IHdlIGRvbid0IGltcGxlbWVudCB0aGUgb3B0aW1pemF0aW9uLgo+Pj4+Pgo+Pj4+PiBGb3Ig
+c3VyZSwgdGhhdCBjYW4gd2FpdCwgYnV0IEkgdGhpbmsgZXZlbnR1YWxseSB3ZSBzaG91bGQKPj4+
+Pj4gdm1hcCBsYXJnZSByaW5ncy4KPj4+PiBZZXMsIHdvcnRoIHRvIHRyeS4gQnV0IHVzaW5nIGRp
+cmVjdCBtYXAgaGFzIGl0cyBvd24gYWR2YW50YWdlOiBpdCBjYW4gdXNlCj4+Pj4gaHVnZXBhZ2Ug
+dGhhdCB2bWFwIGNhbid0Cj4+Pj4KPj4+PiBUaGFua3MKPj4+IFN1cmUsIHNvIHdlIGNhbiBkbyB0
+aGF0IGZvciBzbWFsbCByaW5ncy4KPj4KPj4gWWVzLCB0aGF0J3MgcG9zc2libGUgYnV0IHNob3Vs
+ZCBiZSBkb25lIG9uIHRvcC4KPj4KPj4gVGhhbmtzCj4gQWJzb2x1dGVseS4gTmVlZCB0byBmaXgg
+dXAgdGhlIGJ1Z3MgZmlyc3QuCj4KClllcy4KClRoYW5rcwoKCl9fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0
+CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFk
+ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
