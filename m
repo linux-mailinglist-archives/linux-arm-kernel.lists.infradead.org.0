@@ -2,87 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8654C7619D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 11:15:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A405761A8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 11:18:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=wUvxH0fF7HGbRhssbfenGtvpfYCgrnxPElm+DHVT+hM=; b=cvYoeiRTjpUirW7rz6h8rNsRM
-	5kBVmnavqR2C08jgzz3yPiHli1YKGZmfq2xHzKbsKNXW8ClI8SJL2FTos/GOvMJ+lBkCgR8Oq5dU6
-	tfdXEAQeFXZdO2GegEUEsfSeSM+HpelAYdGcrtzAZyn3uynFWsnz+S0WQebCLAiMZ9fbLKglOPjKn
-	jtp/Jt6qB9uCpn6eNRsUxNXRN3Gw+COLXSVySH5E8i72bJLndrVtTY78uI2oO7T9NX2gMjkikJZ0l
-	KGoyHpQsaaXHl0E3wUDZvAOELixBO5wpHlOVvcLVU9oHjbnQ1pFnXbvRjUV8hD5LdhDmyyhNNIjCt
-	DP16mu6iw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PCrbrXbccHHPytjoxJVHp2I3obgJWs7VyC+xef/503Y=; b=artkRhN5+Nk1Ow
+	vuVP/e9ey5iSPXsC+BL6cioSYbu+ef+0DZUBXzN+MG9Oo09R/6r7oliABxVi2e8F9mTkmlCKBqSUI
+	0DkMmi+gagPEz0zcgWOAmokYF2HwS50HdBFF7onp1ECrbwo2uRgctAfR9BpE2eOA7jUApWAFhHUJN
+	vBduDSltND27tB6EDAZAReY3AA8ffq+Xv9IcIrb4nZ/8qDJQKkyQPmbRzXKB1BqhdYfGtWnn7/CrG
+	KoJmQQ5oQwT65pS3xhrMv+PmH6O/BNPVrMemejnoWlH/XmBqBKVTf//eWjcwHIFTQ2ivKjtXPWQBn
+	kayKvBCJ2Z9pn7G67sZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqwJv-000134-1o; Fri, 26 Jul 2019 09:15:23 +0000
-Received: from outgoing18.flk.host-h.net ([197.242.87.52])
+	id 1hqwMQ-0001lz-GY; Fri, 26 Jul 2019 09:17:58 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqwJa-000087-1b; Fri, 26 Jul 2019 09:15:04 +0000
-Received: from www31.flk1.host-h.net ([188.40.1.173])
- by antispam5-flk1.host-h.net with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.89)
- (envelope-from <justin.swartz@risingedge.co.za>)
- id 1hqwJJ-0005sO-M7; Fri, 26 Jul 2019 11:14:47 +0200
-Received: from roundcubeweb1.flk1.host-h.net ([138.201.244.33]
- helo=webmail9.konsoleh.co.za)
- by www31.flk1.host-h.net with esmtpa (Exim 4.84_2)
- (envelope-from <justin.swartz@risingedge.co.za>)
- id 1hqwJI-0003iD-Ud; Fri, 26 Jul 2019 11:14:45 +0200
+ id 1hqwLq-0001kI-WC
+ for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 09:17:27 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ore@pengutronix.de>)
+ id 1hqwLl-00089A-Ez; Fri, 26 Jul 2019 11:17:17 +0200
+Received: from ore by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ore@pengutronix.de>)
+ id 1hqwLk-0002Jc-5Q; Fri, 26 Jul 2019 11:17:16 +0200
+Date: Fri, 26 Jul 2019 11:17:16 +0200
+From: Oleksij Rempel <o.rempel@pengutronix.de>
+To: Richard Zhu <hongxing.zhu@nxp.com>
+Subject: Re: [RFC] mailbox: imx: Add support for i.MX v1 messaging unit
+Message-ID: <20190726091716.hyqghm46u5wopfk2@pengutronix.de>
+References: <1564129776-19574-1-git-send-email-hongxing.zhu@nxp.com>
 MIME-Version: 1.0
-Date: Fri, 26 Jul 2019 11:14:44 +0200
-From: Justin Swartz <justin.swartz@risingedge.co.za>
-To: Heiko Stuebner <heiko@sntech.de>
-Subject: Re: [PATCH] ARM: dts: add device tree for Mecer Xtreme Mini S6
-Organization: Rising Edge Consulting (Pty) Ltd.
-In-Reply-To: <1618985.EOrKlNyPW4@phil>
-References: <20190616204746.21001-1-justin.swartz@risingedge.co.za>
- <1618985.EOrKlNyPW4@phil>
-Message-ID: <509782f4ece936f5ac7d0abffbd555fc@risingedge.co.za>
-X-Sender: justin.swartz@risingedge.co.za
-User-Agent: Roundcube Webmail/1.2.3
-X-Authenticated-Sender: justin.swartz@risingedge.co.za
-X-Virus-Scanned: Clear (ClamAV 0.100.3/25521/Thu Jul 25 10:12:55 2019)
-X-Originating-IP: 188.40.1.173
-X-SpamExperts-Domain: risingedge.co.za
-X-SpamExperts-Username: 
-Authentication-Results: host-h.net;
- auth=pass (login) smtp.auth=@risingedge.co.za
-X-SpamExperts-Outgoing-Class: ham
-X-SpamExperts-Outgoing-Evidence: Combined (0.10)
-X-Recommended-Action: accept
-X-Filter-ID: Mvzo4OR0dZXEDF/gcnlw0QR3kh8pms4IGrDTloUGIkypSDasLI4SayDByyq9LIhVb87cW502DfY5
- A3TFjr/Q/0TNWdUk1Ol2OGx3IfrIJKyP9eGNFz9TW9u+Jt8z2T3Kf0cVcrGOWHuvhhsNFanSQ+63
- p/UbUTcmIpuXtxg/CxkoU3DKFYUc83wlJ68apqUflsInmcmrhWKh5CGxWvoqRSom1N6/V6eFJqiY
- 8AHI8ZE2UOjrQY19nYX/K9cXl+nRiJs637DFkSoL4pcNpzwOwYXt6ymoFHaG7BQtEYvFCSpHGdnf
- o9UqdkwD4pFOnnu92G81dFO0E3gi+MOI1foZYzDggRXhpvoPtF3cVkniFXU3qJSqpdJudO6+rkiw
- E5i8Wl78Q18OeOfsy4h7jF1Uv9lnibl3vcBqVmvQB4A18af5AwOH28jF9Eyby2LkU1c4AVXirbLu
- Jjy3NtnGWLbnBGfrUBEXB2fYGLNieGQuoHtJvp0r29Rf3ZjFwL+MhHEWw/0qBlNDp8uABz3dkWV+
- tgmYFaNu+2UDArzT1gq7P+ZTycYLFeAN4+MGwnsp7SkU6CLbyF0Zq4b1/7rjUzETJrWks4pbbQJq
- 6gWopI3ep45X19ZysgQ+31LcAX8eoFXAhohfegXGH2GIVQVglJFbK771YV8YbC29CtmpcTqTfSIf
- CWq9oj7OiT8GwpAriB+3/81I3rvR8KJ2fK9jiDYgijyqqY0rATpzHKGfmtNsYTr4SmDZ/bGW8xZC
- RRs6ZD24UhFcZZEpLhnBCwImTQNvxaLyCc35VA7RvW/HGiGqxL09Cymermt8NAa/gGopT3kKfO4C
- gvcKmV0o9jYzsFpuc43pp/LzIs3ornuRuAAdgrkq+6l7ZLNYJcf7Z6PCydDzoYZgInuDxgFOs7AZ
- TwbwMWQbSR6Wmuan/Ls9Qsz9RDBQm36ApPA3w0769BEb21L838NrFoXSENXH6UXfnav35JPA4YfM
- 6tBkXsqvKY6zoLLTPpuFqUUQz+mM8JAD4ECWNo09vb0YLIRnK477e9Xake5PIWKjIXX7qe2zOXoS
- fowN9R0iqxX4tRGXU6pi4Whf0gC4y7e8G5gyWkWqMf9mIGbjO41FyBEqIaDudcVplPE6wCr6GXU1
- lCw88ijyus1sGnWknJqS8gGhNQxpB5P3qu7c1xMljx2PG/R+pKBSKy8hXOgvE1zSS7XUhkYEQYeb
- 3jR5NeVaJQBh0uawl0Cg8j+knAzOA9mmoJvkuhKHiekUuskYaI6ERCKp8gXWqnT9kLHhStr5fiGK
- 7KncpWELuTEvuGslKTrRIXcXpFg5ivY=
-X-Report-Abuse-To: spam@antispammaster.host-h.net
+Content-Disposition: inline
+In-Reply-To: <1564129776-19574-1-git-send-email-hongxing.zhu@nxp.com>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 11:09:35 up 69 days, 15:27, 52 users,  load average: 0.06, 0.11, 0.14
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ore@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_021502_128170_90283D2C 
-X-CRM114-Status: GOOD (  10.34  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190726_021724_024021_C094A563 
+X-CRM114-Status: GOOD (  21.76  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [197.242.87.52 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -96,50 +73,178 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: aisheng.dong@nxp.com, jassisinghbrar@gmail.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Heiko,
+On Fri, Jul 26, 2019 at 04:29:36PM +0800, Richard Zhu wrote:
+> There is a version1.0 MU on i.MX7ULP platform.
+> One new version ID register is added, and the offset is 0.
+> TRn registers are defined at the offset 0x20 ~ 0x2C.
+> RRn registers are defined at the offset 0x40 ~ 0x4C.
+> SR/CR registers are defined at 0x60/0x64.
+> Extend this driver to support it.
 
-On 2019-07-26 00:19, Heiko Stuebner wrote:
+Heh.. i feel like NXP/Freescale have old tradition of moving around
+registers and adding/removing the version register :)
 
-> please add an entry to 
-> Documentation/devicetree/bindings/arm/rockchip.yaml
-> for your board and if necessary also a vendor-prefix to
-> Documentation/devicetree/bindings/vendor-prefixes.(yaml?)
+Since it is not first time, I would prefer to have register layout
+linked on probe and not calculating or if-ing it on runtime. Especially,
+because I assume it is not the last layout change.
 
-OK
+For example see:
+https://elixir.bootlin.com/linux/v5.3-rc1/source/drivers/remoteproc/imx_rproc.c#L336
+	dcfg = of_device_get_match_data(dev);
 
-> please sort the &node-references alphabetically.
+or
+https://elixir.bootlin.com/linux/v5.3-rc1/source/drivers/net/ethernet/atheros/ag71xx.c#L1651
 
-OK
+and please, do not try to detect version by reading wrong register. We
+have devicetree compatible for this use case.
 
->> +&cpu0 {
->> +    clock-frequency = <1464000000>;
+> Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
+> ---
+>  drivers/mailbox/imx-mailbox.c | 45 +++++++++++++++++++++++++++++++++----------
+>  1 file changed, 35 insertions(+), 10 deletions(-)
 > 
-> not sure I understand the reasoning here.
-> There seems to be a regulator defined, so the cpu cores should
-> have operating points defined to allow them to switch between
-> different frequencies as needed.
+> diff --git a/drivers/mailbox/imx-mailbox.c b/drivers/mailbox/imx-mailbox.c
+> index 25be8bb..eb55bbe 100644
+> --- a/drivers/mailbox/imx-mailbox.c
+> +++ b/drivers/mailbox/imx-mailbox.c
+> @@ -12,10 +12,14 @@
+>  #include <linux/of_device.h>
+>  #include <linux/slab.h>
+>  
+> +#define MU_VER_ID_V1		0x0100
+> +
+>  /* Transmit Register */
+>  #define IMX_MU_xTRn(x)		(0x00 + 4 * (x))
+> +#define IMX_MU_xTRn_V1(x)	(0x20 + 4 * (x))
+>  /* Receive Register */
+>  #define IMX_MU_xRRn(x)		(0x10 + 4 * (x))
+> +#define IMX_MU_xRRn_V1(x)	(0x40 + 4 * (x))
+>  /* Status Register */
+>  #define IMX_MU_xSR		0x20
+>  #define IMX_MU_xSR_GIPn(x)	BIT(28 + (3 - (x)))
+> @@ -25,6 +29,7 @@
+>  
+>  /* Control Register */
+>  #define IMX_MU_xCR		0x24
+> +#define IMX_MU_xSCR_V1_OFFSET	0x40
+>  /* General Purpose Interrupt Enable */
+>  #define IMX_MU_xCR_GIEn(x)	BIT(28 + (3 - (x)))
+>  /* Receive Interrupt Enable */
+> @@ -63,6 +68,7 @@ struct imx_mu_priv {
+>  	struct imx_mu_con_priv  con_priv[IMX_MU_CHANS];
+>  	struct clk		*clk;
+>  	int			irq;
+> +	int			version;
+>  
+>  	bool			side_b;
+>  };
+> @@ -85,13 +91,16 @@ static u32 imx_mu_read(struct imx_mu_priv *priv, u32 offs)
+>  static u32 imx_mu_xcr_rmw(struct imx_mu_priv *priv, u32 set, u32 clr)
+>  {
+>  	unsigned long flags;
+> -	u32 val;
+> +	u32 val, offset;
+> +
+> +	offset = unlikely(priv->version == MU_VER_ID_V1) ?
+> +			IMX_MU_xSCR_V1_OFFSET : 0;
+>  
+>  	spin_lock_irqsave(&priv->xcr_lock, flags);
+> -	val = imx_mu_read(priv, IMX_MU_xCR);
+> +	val = imx_mu_read(priv, IMX_MU_xCR + offset);
+>  	val &= ~clr;
+>  	val |= set;
+> -	imx_mu_write(priv, val, IMX_MU_xCR);
+> +	imx_mu_write(priv, val, IMX_MU_xCR + offset);
+>  	spin_unlock_irqrestore(&priv->xcr_lock, flags);
+>  
+>  	return val;
+> @@ -109,10 +118,13 @@ static irqreturn_t imx_mu_isr(int irq, void *p)
+>  	struct mbox_chan *chan = p;
+>  	struct imx_mu_priv *priv = to_imx_mu_priv(chan->mbox);
+>  	struct imx_mu_con_priv *cp = chan->con_priv;
+> -	u32 val, ctrl, dat;
+> +	u32 val, ctrl, dat, offset;
+> +
+> +	offset = unlikely(priv->version == MU_VER_ID_V1) ?
+> +			IMX_MU_xSCR_V1_OFFSET : 0;
+>  
+> -	ctrl = imx_mu_read(priv, IMX_MU_xCR);
+> -	val = imx_mu_read(priv, IMX_MU_xSR);
+> +	ctrl = imx_mu_read(priv, IMX_MU_xCR + offset);
+> +	val = imx_mu_read(priv, IMX_MU_xSR + offset);
+>  
+>  	switch (cp->type) {
+>  	case IMX_MU_TYPE_TX:
+> @@ -138,10 +150,14 @@ static irqreturn_t imx_mu_isr(int irq, void *p)
+>  		imx_mu_xcr_rmw(priv, 0, IMX_MU_xCR_TIEn(cp->idx));
+>  		mbox_chan_txdone(chan, 0);
+>  	} else if (val == IMX_MU_xSR_RFn(cp->idx)) {
+> -		dat = imx_mu_read(priv, IMX_MU_xRRn(cp->idx));
+> +		if (unlikely(priv->version == MU_VER_ID_V1))
+> +			dat = imx_mu_read(priv, IMX_MU_xRRn_V1(cp->idx));
+> +		else
+> +			dat = imx_mu_read(priv, IMX_MU_xRRn(cp->idx));
+>  		mbox_chan_received_data(chan, (void *)&dat);
+>  	} else if (val == IMX_MU_xSR_GIPn(cp->idx)) {
+> -		imx_mu_write(priv, IMX_MU_xSR_GIPn(cp->idx), IMX_MU_xSR);
+> +		imx_mu_write(priv, IMX_MU_xSR_GIPn(cp->idx),
+> +				IMX_MU_xSR + offset);
+>  		mbox_chan_received_data(chan, NULL);
+>  	} else {
+>  		dev_warn_ratelimited(priv->dev, "Not handled interrupt\n");
+> @@ -159,7 +175,10 @@ static int imx_mu_send_data(struct mbox_chan *chan, void *data)
+>  
+>  	switch (cp->type) {
+>  	case IMX_MU_TYPE_TX:
+> -		imx_mu_write(priv, *arg, IMX_MU_xTRn(cp->idx));
+> +		if (unlikely(priv->version == MU_VER_ID_V1))
+> +			imx_mu_write(priv, *arg, IMX_MU_xTRn_V1(cp->idx));
+> +		else
+> +			imx_mu_write(priv, *arg, IMX_MU_xTRn(cp->idx));
+>  		imx_mu_xcr_rmw(priv, IMX_MU_xCR_TIEn(cp->idx), 0);
+>  		break;
+>  	case IMX_MU_TYPE_TXDB:
+> @@ -253,11 +272,17 @@ static struct mbox_chan * imx_mu_xlate(struct mbox_controller *mbox,
+>  
+>  static void imx_mu_init_generic(struct imx_mu_priv *priv)
+>  {
+> +	u32 offset;
+> +
+>  	if (priv->side_b)
+>  		return;
+>  
+> +	priv->version = imx_mu_read(priv, 0) >> 16;
+> +	offset = unlikely(priv->version == MU_VER_ID_V1) ?
+> +			IMX_MU_xSCR_V1_OFFSET : 0;
+> +
+>  	/* Set default MU configuration */
+> -	imx_mu_write(priv, 0, IMX_MU_xCR);
+> +	imx_mu_write(priv, 0, IMX_MU_xCR + offset);
+>  }
+>  
+>  static int imx_mu_probe(struct platform_device *pdev)
+> -- 
+> 2.7.4
+> 
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> 
 
-I added the clock-frequency property to quell the following messages:
-
-[ 0.003273] /cpus/cpu@f00 missing clock-frequency property
-[ 0.003323] /cpus/cpu@f01 missing clock-frequency property
-[ 0.003352] /cpus/cpu@f02 missing clock-frequency property
-[ 0.003382] /cpus/cpu@f03 missing clock-frequency property
-
-I think they are from parse_dt_topology() in arch/arm/kernel/topology.c
-
-What do you suggest?
-
-Regards
-Justin
+-- 
+Pengutronix e.K.                           |                             |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
+Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
