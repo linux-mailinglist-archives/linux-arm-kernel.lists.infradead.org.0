@@ -2,81 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8BA95764E2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 13:49:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E0537650B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 14:01:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OmReHEEVThY0ZOGTbfVFzybSujVwdDfXqM9y+E077P8=; b=mZ9ZAHi2q3dD89
-	4gFSS//aW0Cw15kqPlh0Gl6cF7kCA3sPry49j70UqbQE5ycUKRdRgWwTKG2RcKFqfCEKVJ1YZJHzu
-	IKTyzg1EwlupIJcyrlvhGjWjQ4odAMpqBf6Vd5nhi13a1aGISWmyMV4My4qTk1n+8M6JUs7DGgeiI
-	d5P2/uvkqWAaqkZKZjd3x29rLtxOywRRj+0Iu8es3o6iVB6AzU4PsFo0ZLyQHGRVeGP45q1918znc
-	XIN8unLOHN9yMIer+3rBLbupyY/ssFr5BXimtDayqYUkEVOA6B8JzivYk/+EOPJAoUB/QRLLAIpO7
-	jumrzvF1Djby2+blvVVw==;
+	List-Owner; bh=CE7FgRM5UkkPdSyArRiSA8gA/hI0np/ziWU9eT4x9NE=; b=AwQ2/TXCRKfhwl
+	nQJbv5ZPn5NEgKL5ulmKlyxkrAd7dvUmrFo5+r9ENX1z96D34p+1pn07HhqDMbzcQR4MW3mE3qghY
+	Mc8iyTfyfemqPXuO8eiJ59vkJV2R6WYBEDDXt8PAmk1/AlvRFhf5WAyp5x6lRF15Uc7x9g4VbQLpi
+	NFRfNh6hV6mLGb4gYawDPSHgg9QmKIm7UltvVMAxRBmxgjmG1ArIKqsAFVUT++mYe3Cn/+jNsR8m+
+	hQc22Ib1JNvqZsvN7cc3hE5n/f+RoP8qD+vTc/7YvGasqFzGkTVqRGlrV7qo/9Lp/2TrxqdKaOcco
+	UNDcWhNg+l0k7SxwyFUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqyjP-0004B7-0K; Fri, 26 Jul 2019 11:49:51 +0000
-Received: from mail-qt1-f195.google.com ([209.85.160.195])
+	id 1hqyuk-00012d-CL; Fri, 26 Jul 2019 12:01:34 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqyj6-00049X-9X
- for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 11:49:33 +0000
-Received: by mail-qt1-f195.google.com with SMTP id h18so52256701qtm.9
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 26 Jul 2019 04:49:29 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to;
- bh=i8wjsn/J7AjCMbxusJs+A5ywmyPLK0X8wVGP+ZIy8uY=;
- b=CZ56iqRUevQNANJ4BHDqi3dU+hJrh5rCnc8WOiX18Tt//lZBDljpwpIZi43YJndhzb
- TajXWVP5EovyB+fMQcDcocUtgwEmhuLXYNcFOTvXzmsjVd6Ai4WcL6ajuqcMf0AJblHf
- IX3q1Igi82DjTfehJgUzjzp+SwRaZR//9yB43yP/nJHpk7CsZx7814GI3U+MHQUaUTl2
- E1GbvCbjyDb8FuTtJNNQUokIUjh+G9UgNQW0ivOVp+RwV3SOGaDS/jGHGg43ufBdMeYj
- KQg28uH9EmPpNiZDKcHmDTruzpWA53uwhGKVau47oxIadQdmd0kygOyXeWN2AkZwYx7z
- gjag==
-X-Gm-Message-State: APjAAAXDdUtzVE8yc2unohufaOuOxLkFlQ3xtyJjMWyNeL8Z67BO0EuM
- +uGSBYzd9xKN3wPemqddHI2uGg==
-X-Google-Smtp-Source: APXvYqwMsTGjfM7uQAnObrU4lf6ZCQqoJiT3HpWwMpyDoRsBS/oRMj++843f20ueHHr8c24KKPsFiw==
-X-Received: by 2002:ac8:32e8:: with SMTP id a37mr66953459qtb.231.1564141769219; 
- Fri, 26 Jul 2019 04:49:29 -0700 (PDT)
-Received: from redhat.com ([212.92.104.165])
- by smtp.gmail.com with ESMTPSA id f14sm21725527qto.11.2019.07.26.04.49.22
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Fri, 26 Jul 2019 04:49:28 -0700 (PDT)
-Date: Fri, 26 Jul 2019 07:49:19 -0400
-From: "Michael S. Tsirkin" <mst@redhat.com>
-To: Jason Wang <jasowang@redhat.com>
-Subject: Re: WARNING in __mmdrop
-Message-ID: <20190726074644-mutt-send-email-mst@kernel.org>
-References: <20190723035725-mutt-send-email-mst@kernel.org>
- <3f4178f1-0d71-e032-0f1f-802428ceca59@redhat.com>
- <20190723051828-mutt-send-email-mst@kernel.org>
- <caff362a-e208-3468-3688-63e1d093a9d3@redhat.com>
- <20190725012149-mutt-send-email-mst@kernel.org>
- <55e8930c-2695-365f-a07b-3ad169654d28@redhat.com>
- <20190725042651-mutt-send-email-mst@kernel.org>
- <84bb2e31-0606-adff-cf2a-e1878225a847@redhat.com>
- <20190725092332-mutt-send-email-mst@kernel.org>
- <11802a8a-ce41-f427-63d5-b6a4cf96bb3f@redhat.com>
+ id 1hqytV-0000Z5-Ry; Fri, 26 Jul 2019 12:00:19 +0000
+X-UUID: f74ca5a795fc4520b17e7559c17224fc-20190726
+X-UUID: f74ca5a795fc4520b17e7559c17224fc-20190726
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <jungo.lin@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1020859658; Fri, 26 Jul 2019 04:00:02 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 26 Jul 2019 05:00:00 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 26 Jul 2019 19:59:46 +0800
+Received: from [172.21.84.99] (172.21.84.99) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 26 Jul 2019 19:59:46 +0800
+Message-ID: <1564142386.1212.621.camel@mtksdccf07>
+Subject: Re: [RFC, v3 9/9] media: platform: Add Mediatek ISP P1 shared
+ memory device
+From: Jungo Lin <jungo.lin@mediatek.com>
+To: Robin Murphy <robin.murphy@arm.com>
+Date: Fri, 26 Jul 2019 19:59:46 +0800
+In-Reply-To: <4460bc91-352a-7f3a-cbed-1b95e743ca8c@arm.com>
+References: <jungo.lin@mediatek.com>
+ <20190611035344.29814-1-jungo.lin@mediatek.com>
+ <20190611035344.29814-10-jungo.lin@mediatek.com>
+ <20190701072532.GB137710@chromium.org>
+ <1562297618.1212.46.camel@mtksdccf07>
+ <CAAFQd5BaTQ-Q7gsE0X+d4_81OZq9WHaCYkmALt7_4A1JFo=_8g@mail.gmail.com>
+ <1562313579.1212.73.camel@mtksdccf07>
+ <CAAFQd5AaNFpMGCVJREY85n8UetEwd99TOka8-ECoLzMbMkos_g@mail.gmail.com>
+ <1563870117.1212.455.camel@mtksdccf07>
+ <CAAFQd5Bh80N+cMhz=eyHUGJLaE5uuypOawQvHrTgGSMDvmcpLA@mail.gmail.com>
+ <20190726074116.GA19745@infradead.org>
+ <CAAFQd5CXwRm-3jD+rfNNDNLH=gT_i0QYSAG3XBo3SJnPTY56_w@mail.gmail.com>
+ <4460bc91-352a-7f3a-cbed-1b95e743ca8c@arm.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <11802a8a-ce41-f427-63d5-b6a4cf96bb3f@redhat.com>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_044932_329727_19CEC1EB 
-X-CRM114-Status: GOOD (  16.59  )
+X-CRM114-CacheID: sfid-20190726_050018_047198_C100F8CC 
+X-CRM114-Status: GOOD (  17.36  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.160.195 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,47 +83,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mhocko@suse.com, peterz@infradead.org, ldv@altlinux.org,
- james.bottomley@hansenpartnership.com, linux-mm@kvack.org, namit@vmware.com,
- mingo@kernel.org, elena.reshetova@intel.com, keescook@chromium.org,
- aarcange@redhat.com, davem@davemloft.net, hch@infradead.org,
- christian@brauner.io,
- syzbot <syzbot+e58112d71f77113ddb7b@syzkaller.appspotmail.com>,
- syzkaller-bugs@googlegroups.com, jglisse@redhat.com, viro@zeniv.linux.org.uk,
- linux-arm-kernel@lists.infradead.org, wad@chromium.org,
- linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
- luto@amacapital.net, ebiederm@xmission.com, akpm@linux-foundation.org,
- guro@fb.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org,
+ Sean Cheng =?UTF-8?Q?=28=E9=84=AD=E6=98=87=E5=BC=98=29?=
+ <sean.cheng@mediatek.com>,
+ Frederic Chen =?UTF-8?Q?=28=E9=99=B3=E4=BF=8A=E5=85=83=29?=
+ <frederic.chen@mediatek.com>,
+ Rynn Wu =?UTF-8?Q?=28=E5=90=B3=E8=82=B2=E6=81=A9=29?= <rynn.wu@mediatek.com>,
+ srv_heupstream <srv_heupstream@mediatek.com>, Rob Herring <robh@kernel.org>,
+ Joerg Roedel <joro@8bytes.org>,
+ Ryan Yu =?UTF-8?Q?=28=E4=BD=99=E5=AD=9F=E4=BF=AE=29?= <ryan.yu@mediatek.com>,
+ Frankie Chiu =?UTF-8?Q?=28=E9=82=B1=E6=96=87=E5=87=B1=29?=
+ <frankie.chiu@mediatek.com>,
+ "list@263.net:IOMMU DRIVERS" <iommu@lists.linux-foundation.org>,
+ Tomasz Figa <tfiga@chromium.org>, Christoph Hellwig <hch@infradead.org>,
+ Matthias
+ Brugger <matthias.bgg@gmail.com>, Sj Huang <sj.huang@mediatek.com>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Hans Verkuil <hverkuil@xs4all.nl>, ddavenport@chromium.org,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Linux
+ Media Mailing List <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVGh1LCBKdWwgMjUsIDIwMTkgYXQgMTA6MjU6MjVQTSArMDgwMCwgSmFzb24gV2FuZyB3cm90
-ZToKPiAKPiBPbiAyMDE5LzcvMjUg5LiL5Y2IOToyNiwgTWljaGFlbCBTLiBUc2lya2luIHdyb3Rl
-Ogo+ID4gPiBFeGFjdGx5LCBhbmQgdGhhdCdzIHRoZSByZWFzb24gYWN0dWFsbHkgSSB1c2Ugc3lu
-Y2hyb25pemVfcmN1KCkgdGhlcmUuCj4gPiA+IAo+ID4gPiBTbyB0aGUgY29uY2VybiBpcyBzdGls
-bCB0aGUgcG9zc2libGUgc3luY2hyb25pemVfZXhwZWRpdGVkKCk/Cj4gPiBJIHRoaW5rIHN5bmNo
-cm9uaXplX3NyY3VfZXhwZWRpdGVkLgo+ID4gCj4gPiBzeW5jaHJvbml6ZV9leHBlZGl0ZWQgc2Vu
-ZHMgbG90cyBvZiBJUEkgYW5kIGlzIGJhZCBmb3IgcmVhbHRpbWUgVk1zLgo+ID4gCj4gPiA+IENh
-biBJIGRvIHRoaXMKPiA+ID4gb24gdGhyb3VnaCBhbm90aGVyIHNlcmllcyBvbiB0b3Agb2YgdGhl
-IGluY29taW5nIFYyPwo+ID4gPiAKPiA+ID4gVGhhbmtzCj4gPiA+IAo+ID4gVGhlIHF1ZXN0aW9u
-IGlzIHRoaXM6IGlzIHRoaXMgc3RpbGwgYSBnYWluIGlmIHdlIHN3aXRjaCB0byB0aGUKPiA+IG1v
-cmUgZXhwZW5zaXZlIHNyY3U/IElmIHllcyB0aGVuIHdlIGNhbiBrZWVwIHRoZSBmZWF0dXJlIG9u
-LAo+IAo+IAo+IEkgdGhpbmsgd2Ugb25seSBjYXJlIGFib3V0IHRoZSBjb3N0IG9uIHNyY3VfcmVh
-ZF9sb2NrKCkgd2hpY2ggbG9va3MgcHJldHR5Cj4gdGlueSBmb3JtIG15IHBvaW50IG9mIHZpZXcu
-IFdoaWNoIGlzIGJhc2ljYWxseSBhIFJFQURfT05DRSgpICsgV1JJVEVfT05DRSgpLgo+IAo+IE9m
-IGNvdXJzZSBJIGNhbiBiZW5jaG1hcmsgdG8gc2VlIHRoZSBkaWZmZXJlbmNlLgo+IAo+IAo+ID4g
-aWYgbm90IHdlJ2xsIHB1dCBpdCBvZmYgdW50aWwgbmV4dCByZWxlYXNlIGFuZCB0aGluawo+ID4g
-b2YgYmV0dGVyIHNvbHV0aW9ucy4gcmN1LT5zcmN1IGlzIGp1c3QgYSBmaW5kIGFuZCByZXBsYWNl
-LAo+ID4gZG9uJ3Qgc2VlIHdoeSB3ZSBuZWVkIHRvIGRlZmVyIHRoYXQuIGNhbiBiZSBhIHNlcGFy
-YXRlIHBhdGNoCj4gPiBmb3Igc3VyZSwgYnV0IHdlIG5lZWQgdG8ga25vdyBob3cgd2VsbCBpdCB3
-b3Jrcy4KPiAKPiAKPiBJIHRoaW5rIEkgZ2V0IGhlcmUsIGxldCBtZSB0cnkgdG8gZG8gdGhhdCBp
-biBWMiBhbmQgbGV0J3Mgc2VlIHRoZSBudW1iZXJzLgo+IAo+IFRoYW5rcwoKVGhlcmUncyBvbmUg
-b3RoZXIgdGhpbmcgdGhhdCBib3RoZXJzIG1lLCBhbmQgdGhhdCBpcyB0aGF0CmZvciBsYXJnZSBy
-aW5ncyB3aGljaCBhcmUgbm90IHBoeXNpY2FsbHkgY29udGlndW91cwp3ZSBkb24ndCBpbXBsZW1l
-bnQgdGhlIG9wdGltaXphdGlvbi4KCkZvciBzdXJlLCB0aGF0IGNhbiB3YWl0LCBidXQgSSB0aGlu
-ayBldmVudHVhbGx5IHdlIHNob3VsZAp2bWFwIGxhcmdlIHJpbmdzLgoKLS0gCk1TVAoKX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5l
-bCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6
-Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Hi Robin:
+
+On Fri, 2019-07-26 at 12:04 +0100, Robin Murphy wrote:
+> On 26/07/2019 08:42, Tomasz Figa wrote:
+> > On Fri, Jul 26, 2019 at 4:41 PM Christoph Hellwig <hch@infradead.org> wrote:
+> >>
+> >> On Fri, Jul 26, 2019 at 02:15:14PM +0900, Tomasz Figa wrote:
+> >>> Could you try dma_get_sgtable() with the SCP struct device and then
+> >>> dma_map_sg() with the P1 struct device?
+> >>
+> >> Please don't do that.  dma_get_sgtable is a pretty broken API (see
+> >> the common near the arm implementation) and we should not add more
+> >> users of it.  If you want a piece of memory that can be mapped to
+> >> multiple devices allocate it using alloc_pages and then just map
+> >> it to each device.
+> > 
+> > Thanks for taking a look at this thread.
+> > 
+> > Unfortunately that wouldn't work. We have a specific reserved memory
+> > pool that is the only memory area accessible to one of the devices.
+> > Any idea how to handle this?
+> 
+> If it's reserved in the sense of being outside struct-page-backed 
+> "kernel memory", then provided you have a consistent CPU physical 
+> address it might be reasonable for other devices to access it via 
+> dma_map_resource().
+> 
+> Robin.
+
+Thank you for your suggestion.
+
+After revising to use dma_map_resource(), it is worked. Below is the
+current implementation. Pleas kindly help us to check if there is any
+misunderstanding.
+
+#define MTK_ISP_COMPOSER_MEM_SIZE		0x200000
+
+	/*
+	 * Allocate coherent reserved memory for SCP firmware usage.
+	 * The size of SCP composer's memory is fixed to 0x200000
+	 * for the requirement of firmware.
+	 */
+	ptr = dma_alloc_coherent(p1_dev->cam_dev.smem_dev,
+				 MTK_ISP_COMPOSER_MEM_SIZE, &addr, GFP_KERNEL);
+	if (!ptr) {
+		dev_err(dev, "failed to allocate compose memory\n");
+		return -ENOMEM;
+	}
+	p1_dev->composer_scp_addr = addr;
+	p1_dev->composer_virt_addr = ptr;
+	dev_dbg(dev, "scp addr:%pad va:%pK\n", &addr, ptr);
+
+	/*
+	 * This reserved memory is also be used by ISP P1 HW.
+	 * Need to get iova address for ISP P1 DMA.
+	 */
+	addr = dma_map_resource(dev, addr, MTK_ISP_COMPOSER_MEM_SIZE,
+				DMA_BIDIRECTIONAL, DMA_ATTR_SKIP_CPU_SYNC);
+	if (dma_mapping_error(dev, addr)) {
+		dev_err(dev, "Failed to map scp iova\n");
+		ret = -ENOMEM;
+		goto fail_free_mem;
+	}
+	p1_dev->composer_iova = addr;
+	dev_info(dev, "scp iova addr:%pad\n", &addr);
+
+Moreover, appropriate Tomasz & Christoph's help on this issue.
+
+Best regards,
+
+Jungo
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
