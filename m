@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4367776AD6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 16:01:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9BA3176ADF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 16:02:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,36 +11,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=yubt+GushkkOsigRj5dkWh5jdbQm7/HPe/pqM6n3Kw4=; b=n394AUrEH5H3tH0B93TypBZZXh
-	axH7VdbhIjrrhCk54NhHL4hr4+vFYXLMiWAg+FL5M+ysVHnLsYBOoNQ08UrOBqu2nGwNHBwIwmpDQ
-	9MukJ+a3/GJ0OlxeM//BykWHMJ97rhNIZWxL4keq1h37YGZHW8QhU+XiJD3h6psShRCugTpDSdCZ7
-	rEyKi0THLY0jyCEM1V2ZMXm7g9SJ8I7CDysjgqFoKZ177KSF6pZkRW14J2fZogMZTILZnXJu988MV
-	pZOgvvDt6U2vCWUwaWJiiPi+IarHDV1EItx4Sx9biqCBU1FoVlYJCalLv29ZqkphI9sCtMy6Er1QK
-	DmhJ7wQw==;
+	bh=9IoelnEjzK70f1VN6Zh7Mri13PtZE7Z2FxZZy3wQuGs=; b=Tff06I4Q+OMPPboFDPKweil3+q
+	sFEqxeC1kEMHJX+JO90gC3Ib3IRUz70tzaXkZ4o1wvowHqR6ua27fry08VMixn5SS6gv8tDQcvR8M
+	VDt5RdGEhsl1WKShBa2ybj3IneuoTpihJt+4qrGcn44F+V+yW7uoUojnBfbhQo3gQxL7PG8X17UbC
+	/HdlHrUeUmbtk+RilXzrlJIiNgPF31F5/6ggrhh1HdhhYz0nBTlckq9/Rll3OAxTVoX5D9HmS/Fq3
+	6pOAfWuTXkxV6XbJmD3d7fk3FnSZBUr6AmjrC4oHycmNpvmxeGmHJH4uFVugAV8o73W7q8ppmGOF5
+	i1K4p2Pw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hr0n5-0006MF-5g; Fri, 26 Jul 2019 14:01:47 +0000
+	id 1hr0nJ-0006dJ-52; Fri, 26 Jul 2019 14:02:01 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hr0lc-0005Or-CD
- for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 14:00:18 +0000
+ id 1hr0le-0005Qs-Ki
+ for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 14:00:20 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0723615A2;
- Fri, 26 Jul 2019 07:00:16 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3E7CF152D;
+ Fri, 26 Jul 2019 07:00:18 -0700 (PDT)
 Received: from usa.arm.com (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id F31EF3F694;
- Fri, 26 Jul 2019 07:00:13 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 3C6CC3F694;
+ Fri, 26 Jul 2019 07:00:16 -0700 (PDT)
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 4/5] firmware: arm_scmi: Add RESET protocol in SCMI v2.0
-Date: Fri, 26 Jul 2019 14:59:53 +0100
-Message-Id: <20190726135954.11078-5-sudeep.holla@arm.com>
+Subject: [PATCH 5/5] reset: Add support for resets provided by SCMI
+Date: Fri, 26 Jul 2019 14:59:54 +0100
+Message-Id: <20190726135954.11078-6-sudeep.holla@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190726135954.11078-1-sudeep.holla@arm.com>
 References: <20190726135954.11078-1-sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_070016_657421_97251B69 
-X-CRM114-Status: GOOD (  16.54  )
+X-CRM114-CacheID: sfid-20190726_070018_787704_30729A8E 
+X-CRM114-Status: GOOD (  17.78  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -74,348 +74,211 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SCMIv2.0 adds a new Reset Management Protocol to manage various reset
-states a given device or domain can enter. Device(s) that can be
-collectively reset through a common reset signal constitute a reset
-domain for the firmware.
+On some ARM based systems, a separate Cortex-M based System Control
+Processor(SCP) provides the overall power, clock, reset and system
+control. System Control and Management Interface(SCMI) Message Protocol
+is defined for the communication between the Application Cores(AP)
+and the SCP.
 
-A reset domain can be reset autonomously or explicitly through assertion
-and de-assertion of the signal. When autonomous reset is chosen, the
-firmware is responsible for taking the necessary steps to reset the
-domain and to subsequently bring it out of reset. When explicit reset is
-chosen, the caller has to specifically assert and then de-assert the
-reset signal by issuing two separate RESET commands.
-
-Add the basic SCMI reset infrastructure that can be used by Linux
-reset controller driver.
+Adds support for the resets provided using SCMI protocol for performing
+reset management of various devices present on the SoC. Various reset
+functionalities are achieved by the means of different ARM SCMI device
+operations provided by the ARM SCMI framework.
 
 Cc: Philipp Zabel <p.zabel@pengutronix.de>
 Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 ---
- drivers/firmware/arm_scmi/Makefile |   2 +-
- drivers/firmware/arm_scmi/reset.c  | 231 +++++++++++++++++++++++++++++
- include/linux/scmi_protocol.h      |  26 ++++
- 3 files changed, 258 insertions(+), 1 deletion(-)
- create mode 100644 drivers/firmware/arm_scmi/reset.c
+ MAINTAINERS                |   1 +
+ drivers/reset/Kconfig      |  10 +++
+ drivers/reset/Makefile     |   1 +
+ drivers/reset/reset-scmi.c | 133 +++++++++++++++++++++++++++++++++++++
+ 4 files changed, 145 insertions(+)
+ create mode 100644 drivers/reset/reset-scmi.c
 
-diff --git a/drivers/firmware/arm_scmi/Makefile b/drivers/firmware/arm_scmi/Makefile
-index c47d28d556b6..5f298f00a82e 100644
---- a/drivers/firmware/arm_scmi/Makefile
-+++ b/drivers/firmware/arm_scmi/Makefile
-@@ -2,5 +2,5 @@
- obj-y	= scmi-bus.o scmi-driver.o scmi-protocols.o
- scmi-bus-y = bus.o
- scmi-driver-y = driver.o
--scmi-protocols-y = base.o clock.o perf.o power.o sensors.o
-+scmi-protocols-y = base.o clock.o perf.o power.o reset.o sensors.o
- obj-$(CONFIG_ARM_SCMI_POWER_DOMAIN) += scmi_pm_domain.o
-diff --git a/drivers/firmware/arm_scmi/reset.c b/drivers/firmware/arm_scmi/reset.c
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 783569e3c4b4..59df8f88b56d 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -15545,6 +15545,7 @@ F:	drivers/clk/clk-sc[mp]i.c
+ F:	drivers/cpufreq/sc[mp]i-cpufreq.c
+ F:	drivers/firmware/arm_scpi.c
+ F:	drivers/firmware/arm_scmi/
++F:	drivers/reset/reset-scmi.c
+ F:	include/linux/sc[mp]i_protocol.h
+ 
+ SYSTEM RESET/SHUTDOWN DRIVERS
+diff --git a/drivers/reset/Kconfig b/drivers/reset/Kconfig
+index 21efb7d39d62..09dcc3bf3b7a 100644
+--- a/drivers/reset/Kconfig
++++ b/drivers/reset/Kconfig
+@@ -22,6 +22,16 @@ config RESET_A10SR
+ 	  This option enables support for the external reset functions for
+ 	  peripheral PHYs on the Altera Arria10 System Resource Chip.
+ 
++config RESET_ARM_SCMI
++	tristate "Reset driver controlled via ARM SCMI interface"
++	depends on ARM_SCMI_PROTOCOL || COMPILE_TEST
++	help
++	  This driver provides support for reset signal/domains that are
++	  controlled by firmware that implements the SCMI interface.
++
++	  This driver uses SCMI Message Protocol to interact with the
++	  firmware providing all the reset signals.
++
+ config RESET_ATH79
+ 	bool "AR71xx Reset Driver" if COMPILE_TEST
+ 	default ATH79
+diff --git a/drivers/reset/Makefile b/drivers/reset/Makefile
+index 61456b8f659c..2f1103d31938 100644
+--- a/drivers/reset/Makefile
++++ b/drivers/reset/Makefile
+@@ -4,6 +4,7 @@ obj-y += hisilicon/
+ obj-$(CONFIG_ARCH_STI) += sti/
+ obj-$(CONFIG_ARCH_TEGRA) += tegra/
+ obj-$(CONFIG_RESET_A10SR) += reset-a10sr.o
++obj-$(CONFIG_RESET_ARM_SCMI) += reset-scmi.o
+ obj-$(CONFIG_RESET_ATH79) += reset-ath79.o
+ obj-$(CONFIG_RESET_AXS10X) += reset-axs10x.o
+ obj-$(CONFIG_RESET_BERLIN) += reset-berlin.o
+diff --git a/drivers/reset/reset-scmi.c b/drivers/reset/reset-scmi.c
 new file mode 100644
-index 000000000000..11cb8b5ccf34
+index 000000000000..9e5d07cac2ed
 --- /dev/null
-+++ b/drivers/firmware/arm_scmi/reset.c
-@@ -0,0 +1,231 @@
++++ b/drivers/reset/reset-scmi.c
+@@ -0,0 +1,133 @@
 +// SPDX-License-Identifier: GPL-2.0
 +/*
-+ * System Control and Management Interface (SCMI) Reset Protocol
++ * ARM System Control and Management Interface (ARM SCMI) reset driver
 + *
 + * Copyright (C) 2019 ARM Ltd.
 + */
 +
-+#include "common.h"
++#include <linux/module.h>
++#include <linux/mutex.h>
++#include <linux/of.h>
++#include <linux/platform_device.h>
++#include <linux/reset-controller.h>
++#include <linux/scmi_protocol.h>
 +
-+enum scmi_reset_protocol_cmd {
-+	RESET_DOMAIN_ATTRIBUTES = 0x3,
-+	RESET = 0x4,
-+	RESET_NOTIFY = 0x5,
-+};
-+
-+enum scmi_reset_protocol_notify {
-+	RESET_ISSUED = 0x0,
-+};
-+
-+#define NUM_RESET_DOMAIN_MASK	0xffff
-+#define RESET_NOTIFY_ENABLE	BIT(0)
-+
-+struct scmi_msg_resp_reset_domain_attributes {
-+	__le32 attributes;
-+#define SUPPORTS_ASYNC_RESET(x)		((x) & BIT(31))
-+#define SUPPORTS_NOTIFY_RESET(x)	((x) & BIT(30))
-+	__le32 latency;
-+	    u8 name[SCMI_MAX_STR_SIZE];
-+};
-+
-+struct scmi_msg_reset_domain_reset {
-+	__le32 domain_id;
-+	__le32 flags;
-+#define AUTONOMOUS_RESET	BIT(0)
-+#define EXPLICIT_RESET_ASSERT	BIT(1)
-+#define ASYNCHRONOUS_RESET	BIT(2)
-+	__le32 reset_state;
-+#define ARCH_RESET_TYPE		BIT(31)
-+#define COLD_RESET_STATE	BIT(0)
-+#define ARCH_COLD_RESET		(ARCH_RESET_TYPE | COLD_RESET_STATE)
-+};
-+
-+struct reset_dom_info {
-+	bool async_reset;
-+	bool reset_notify;
-+	u32 latency_us;
-+	char name[SCMI_MAX_STR_SIZE];
-+};
-+
-+struct scmi_reset_info {
-+	int num_domains;
-+	struct reset_dom_info *dom_info;
-+};
-+
-+static int scmi_reset_attributes_get(const struct scmi_handle *handle,
-+				     struct scmi_reset_info *pi)
-+{
-+	int ret;
-+	struct scmi_xfer *t;
-+	u32 *attr;
-+
-+	ret = scmi_xfer_get_init(handle, PROTOCOL_ATTRIBUTES,
-+				 SCMI_PROTOCOL_RESET, 0, sizeof(*attr), &t);
-+	if (ret)
-+		return ret;
-+
-+	attr = t->rx.buf;
-+
-+	ret = scmi_do_xfer(handle, t);
-+	if (!ret)
-+		pi->num_domains = le32_to_cpu(*attr) & NUM_RESET_DOMAIN_MASK;
-+
-+	scmi_xfer_put(handle, t);
-+	return ret;
-+}
-+
-+static int
-+scmi_reset_domain_attributes_get(const struct scmi_handle *handle, u32 domain,
-+				 struct reset_dom_info *dom_info)
-+{
-+	int ret;
-+	struct scmi_xfer *t;
-+	struct scmi_msg_resp_reset_domain_attributes *attr;
-+
-+	ret = scmi_xfer_get_init(handle, RESET_DOMAIN_ATTRIBUTES,
-+				 SCMI_PROTOCOL_RESET, sizeof(domain),
-+				 sizeof(*attr), &t);
-+	if (ret)
-+		return ret;
-+
-+	*(__le32 *)t->tx.buf = cpu_to_le32(domain);
-+	attr = t->rx.buf;
-+
-+	ret = scmi_do_xfer(handle, t);
-+	if (!ret) {
-+		u32 attributes = le32_to_cpu(attr->attributes);
-+
-+		dom_info->async_reset = SUPPORTS_ASYNC_RESET(attributes);
-+		dom_info->reset_notify = SUPPORTS_NOTIFY_RESET(attributes);
-+		dom_info->latency_us = le32_to_cpu(attr->latency);
-+		if (dom_info->latency_us == U32_MAX)
-+			dom_info->latency_us = 0;
-+		strlcpy(dom_info->name, attr->name, SCMI_MAX_STR_SIZE);
-+	}
-+
-+	scmi_xfer_put(handle, t);
-+	return ret;
-+}
-+
-+static int scmi_reset_num_domains_get(const struct scmi_handle *handle)
-+{
-+	struct scmi_reset_info *pi = handle->reset_priv;
-+
-+	return pi->num_domains;
-+}
-+
-+static char *scmi_reset_name_get(const struct scmi_handle *handle, u32 domain)
-+{
-+	struct scmi_reset_info *pi = handle->reset_priv;
-+	struct reset_dom_info *dom = pi->dom_info + domain;
-+
-+	return dom->name;
-+}
-+
-+static int scmi_reset_latency_get(const struct scmi_handle *handle, u32 domain)
-+{
-+	struct scmi_reset_info *pi = handle->reset_priv;
-+	struct reset_dom_info *dom = pi->dom_info + domain;
-+
-+	return dom->latency_us;
-+}
-+
-+static int scmi_domain_reset(const struct scmi_handle *handle, u32 domain,
-+			     u32 flags, u32 state)
-+{
-+	int ret;
-+	struct scmi_xfer *t;
-+	struct scmi_msg_reset_domain_reset *dom;
-+	struct scmi_reset_info *pi = handle->reset_priv;
-+	struct reset_dom_info *rdom = pi->dom_info + domain;
-+
-+	if (rdom->async_reset)
-+		flags |= ASYNCHRONOUS_RESET;
-+
-+	ret = scmi_xfer_get_init(handle, RESET, SCMI_PROTOCOL_RESET,
-+				 sizeof(*dom), 0, &t);
-+	if (ret)
-+		return ret;
-+
-+	dom = t->tx.buf;
-+	dom->domain_id = cpu_to_le32(domain);
-+	dom->flags = cpu_to_le32(flags);
-+	dom->domain_id = cpu_to_le32(state);
-+
-+	if (rdom->async_reset)
-+		ret = scmi_do_xfer_with_response(handle, t);
-+	else
-+		ret = scmi_do_xfer(handle, t);
-+
-+	scmi_xfer_put(handle, t);
-+	return ret;
-+}
-+
-+static int scmi_reset_domain_reset(const struct scmi_handle *handle, u32 domain)
-+{
-+	return scmi_domain_reset(handle, domain, AUTONOMOUS_RESET,
-+				 ARCH_COLD_RESET);
-+}
-+
-+static int
-+scmi_reset_domain_assert(const struct scmi_handle *handle, u32 domain)
-+{
-+	return scmi_domain_reset(handle, domain, EXPLICIT_RESET_ASSERT,
-+				 ARCH_COLD_RESET);
-+}
-+
-+static int
-+scmi_reset_domain_deassert(const struct scmi_handle *handle, u32 domain)
-+{
-+	return scmi_domain_reset(handle, domain, 0, ARCH_COLD_RESET);
-+}
-+
-+static struct scmi_reset_ops reset_ops = {
-+	.num_domains_get = scmi_reset_num_domains_get,
-+	.name_get = scmi_reset_name_get,
-+	.latency_get = scmi_reset_latency_get,
-+	.reset = scmi_reset_domain_reset,
-+	.assert = scmi_reset_domain_assert,
-+	.deassert = scmi_reset_domain_deassert,
-+};
-+
-+static int scmi_reset_protocol_init(struct scmi_handle *handle)
-+{
-+	int domain;
-+	u32 version;
-+	struct scmi_reset_info *pinfo;
-+
-+	scmi_version_get(handle, SCMI_PROTOCOL_RESET, &version);
-+
-+	dev_dbg(handle->dev, "Reset Version %d.%d\n",
-+		PROTOCOL_REV_MAJOR(version), PROTOCOL_REV_MINOR(version));
-+
-+	pinfo = devm_kzalloc(handle->dev, sizeof(*pinfo), GFP_KERNEL);
-+	if (!pinfo)
-+		return -ENOMEM;
-+
-+	scmi_reset_attributes_get(handle, pinfo);
-+
-+	pinfo->dom_info = devm_kcalloc(handle->dev, pinfo->num_domains,
-+				       sizeof(*pinfo->dom_info), GFP_KERNEL);
-+	if (!pinfo->dom_info)
-+		return -ENOMEM;
-+
-+	for (domain = 0; domain < pinfo->num_domains; domain++) {
-+		struct reset_dom_info *dom = pinfo->dom_info + domain;
-+
-+		scmi_reset_domain_attributes_get(handle, domain, dom);
-+	}
-+
-+	handle->reset_ops = &reset_ops;
-+	handle->reset_priv = pinfo;
-+
-+	return 0;
-+}
-+
-+static int __init scmi_reset_init(void)
-+{
-+	return scmi_protocol_register(SCMI_PROTOCOL_RESET,
-+				      &scmi_reset_protocol_init);
-+}
-+subsys_initcall(scmi_reset_init);
-diff --git a/include/linux/scmi_protocol.h b/include/linux/scmi_protocol.h
-index f0f2b53a1dac..881fea47c83d 100644
---- a/include/linux/scmi_protocol.h
-+++ b/include/linux/scmi_protocol.h
-@@ -187,6 +187,26 @@ struct scmi_sensor_ops {
- 			   u64 *value);
- };
- 
 +/**
-+ * struct scmi_reset_ops - represents the various operations provided
-+ *	by SCMI Reset Protocol
-+ *
-+ * @num_domains_get: get the count of reset domains provided by SCMI
-+ * @name_get: gets the name of a reset domain
-+ * @latency_get: gets the reset latency for the specified reset domain
-+ * @reset: resets the specified reset domain
-+ * @assert: explicitly assert reset signal of the specified reset domain
-+ * @deassert: explicitly deassert reset signal of the specified reset domain
++ * struct scmi_reset_data - reset controller information structure
++ * @rcdev: reset controller entity
++ * @handle: ARM SCMI handle used for communication with system controller
++ * @dev: reset controller device pointer
 + */
-+struct scmi_reset_ops {
-+	int (*num_domains_get)(const struct scmi_handle *handle);
-+	char *(*name_get)(const struct scmi_handle *handle, u32 domain);
-+	int (*latency_get)(const struct scmi_handle *handle, u32 domain);
-+	int (*reset)(const struct scmi_handle *handle, u32 domain);
-+	int (*assert)(const struct scmi_handle *handle, u32 domain);
-+	int (*deassert)(const struct scmi_handle *handle, u32 domain);
++struct scmi_reset_data {
++	struct reset_controller_dev rcdev;
++	const struct scmi_handle *handle;
++	struct device *dev;
 +};
 +
- /**
-  * struct scmi_handle - Handle returned to ARM SCMI clients for usage.
-  *
-@@ -196,6 +216,7 @@ struct scmi_sensor_ops {
-  * @perf_ops: pointer to set of performance protocol operations
-  * @clk_ops: pointer to set of clock protocol operations
-  * @sensor_ops: pointer to set of sensor protocol operations
-+ * @reset_ops: pointer to set of reset protocol operations
-  * @perf_priv: pointer to private data structure specific to performance
-  *	protocol(for internal use only)
-  * @clk_priv: pointer to private data structure specific to clock
-@@ -204,6 +225,8 @@ struct scmi_sensor_ops {
-  *	protocol(for internal use only)
-  * @sensor_priv: pointer to private data structure specific to sensors
-  *	protocol(for internal use only)
-+ * @reset_priv: pointer to private data structure specific to reset
-+ *	protocol(for internal use only)
-  */
- struct scmi_handle {
- 	struct device *dev;
-@@ -212,11 +235,13 @@ struct scmi_handle {
- 	struct scmi_clk_ops *clk_ops;
- 	struct scmi_power_ops *power_ops;
- 	struct scmi_sensor_ops *sensor_ops;
-+	struct scmi_reset_ops *reset_ops;
- 	/* for protocol internal use */
- 	void *perf_priv;
- 	void *clk_priv;
- 	void *power_priv;
- 	void *sensor_priv;
-+	void *reset_priv;
- };
- 
- enum scmi_std_protocol {
-@@ -226,6 +251,7 @@ enum scmi_std_protocol {
- 	SCMI_PROTOCOL_PERF = 0x13,
- 	SCMI_PROTOCOL_CLOCK = 0x14,
- 	SCMI_PROTOCOL_SENSOR = 0x15,
-+	SCMI_PROTOCOL_RESET = 0x16,
- };
- 
- struct scmi_device {
++#define to_scmi_reset_data(p)	\
++	container_of((p), struct scmi_reset_data, rcdev)
++
++/**
++ * scmi_reset_assert() - assert device reset
++ * @rcdev: reset controller entity
++ * @id: ID of the reset to be asserted
++ *
++ * This function implements the reset driver op to assert a device's reset
++ * using the ARM SCMI protocol.
++ *
++ * Return: 0 for successful request, else a corresponding error value
++ */
++static int
++scmi_reset_assert(struct reset_controller_dev *rcdev, unsigned long id)
++{
++	struct scmi_reset_data *data = to_scmi_reset_data(rcdev);
++	const struct scmi_handle *handle = data->handle;
++	int ret;
++
++	ret = handle->reset_ops->assert(handle, id);
++
++	return ret;
++}
++
++/**
++ * scmi_reset_deassert() - deassert device reset
++ * @rcdev: reset controller entity
++ * @id: ID of the reset to be deasserted
++ *
++ * This function implements the reset driver op to deassert a device's reset
++ * using the ARM SCMI protocol.
++ *
++ * Return: 0 for successful request, else a corresponding error value
++ */
++static int
++scmi_reset_deassert(struct reset_controller_dev *rcdev, unsigned long id)
++{
++	struct scmi_reset_data *data = to_scmi_reset_data(rcdev);
++	const struct scmi_handle *handle = data->handle;
++
++	return handle->reset_ops->deassert(handle, id);
++}
++
++/**
++ * scmi_reset_reset() - reset the device
++ * @rcdev: reset controller entity
++ * @id: ID of the reset signal to be reset(assert + deassert)
++ *
++ * This function implements the reset driver op to reset a device's reset
++ * signal using the ARM SCMI protocol.
++ *
++ * Return: 0 for successful request, else a corresponding error value
++ */
++static int
++scmi_reset_reset(struct reset_controller_dev *rcdev, unsigned long id)
++{
++	struct scmi_reset_data *data = to_scmi_reset_data(rcdev);
++	const struct scmi_handle *handle = data->handle;
++
++	return handle->reset_ops->reset(handle, id);
++}
++
++static const struct reset_control_ops scmi_reset_ops = {
++	.assert		= scmi_reset_assert,
++	.deassert	= scmi_reset_deassert,
++	.reset		= scmi_reset_reset,
++};
++
++static int scmi_reset_probe(struct scmi_device *sdev)
++{
++	struct scmi_reset_data *data;
++	struct device *dev = &sdev->dev;
++	struct device_node *np = dev->of_node;
++	const struct scmi_handle *handle = sdev->handle;
++
++	if (!handle || !handle->reset_ops)
++		return -ENODEV;
++
++	data = devm_kzalloc(dev, sizeof(*data), GFP_KERNEL);
++	if (!data)
++		return -ENOMEM;
++
++	data->rcdev.ops = &scmi_reset_ops;
++	data->rcdev.owner = THIS_MODULE;
++	data->rcdev.of_node = np;
++	data->dev = dev;
++
++	return devm_reset_controller_register(dev, &data->rcdev);
++}
++
++static const struct scmi_device_id scmi_id_table[] = {
++	{ SCMI_PROTOCOL_RESET },
++	{ },
++};
++MODULE_DEVICE_TABLE(scmi, scmi_id_table);
++
++static struct scmi_driver scmi_reset_driver = {
++	.name = "scmi-reset",
++	.probe = scmi_reset_probe,
++	.id_table = scmi_id_table,
++};
++module_scmi_driver(scmi_reset_driver);
++
++MODULE_AUTHOR("Sudeep Holla <sudeep.holla@arm.com>");
++MODULE_DESCRIPTION("ARM SCMI clock driver");
++MODULE_LICENSE("GPL v2");
 -- 
 2.17.1
 
