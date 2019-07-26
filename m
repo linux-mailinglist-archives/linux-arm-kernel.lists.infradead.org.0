@@ -2,94 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 541C87729B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 22:15:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D536A772B3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 22:24:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EXt55LlorM/0de5PuxRo3Mm1QyM2EWTSoVQPb1pOfss=; b=IPWBT+2GPCiDVL
-	/XGuNaMopRZy3nzaK1eW4/Mx+8/+eDO8kX6W/7kYGdcxPtnVQntZ7CRgj9JSLj/9XS0h2h1hSoCqS
-	pDl+C2XV52YuuDK6P358ieHZbOvmsqSHj8VgauRiTsrLlAU+D9GYd8/iOn5c6tO01bX8PNhHH4qek
-	OuBrDCzzN1Z1ewTPdJUQrxCjG7tKXJxSpcvjEoC4lb9zcSZeBGkst6ZnwUcbwdpra/ihV/1yjuoqM
-	Objj8ixWyCt+AT8vBynUD2sUUCfpYiy2SKCCMcHUnckzggwbmi687CtNaO+mNyQvnUWTbOoqFAGvV
-	w6t2xGno7DqipYRvIuEA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=AO+N6t2BdC5OB2FM/Obrbdt0io0wJHOy2xcaJ16gsUg=; b=XN/MeM/WGD6wEoF4hCxJOR5Zu
+	bLl5G+gPRWeea1zfhxOwvG0bF/lXd5TufjpFwOhCHj2DT04jBuvj5smjV7YLw6X7v/P1fn8pZ4RDj
+	kOOHWxNkUhzNb/hNm5EaiEl7wSD6SaidqO2PcH2itLgguR5wHML7X4sfNb0AvTDt5UTa0QxPR7QZA
+	9oqDz/+l0mBgYBLy+LI/A/21TKWmYnQSnzXjnO+TMoRp2TZnjSd+XDSFuN2xeGtsu5bD2RO6AXt1K
+	PWSWV7C7K+Nj7IEws6CGepCfzh/3QXd9xiSpE/cbnZFQyf8GE+L0h1m3DCeBMNG8eoIMXobJT+xbR
+	f735art5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hr6cw-0003EP-UD; Fri, 26 Jul 2019 20:15:42 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hr6cj-0003Be-PG
- for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 20:15:31 +0000
-Received: by mail-io1-xd42.google.com with SMTP id z3so107399298iog.0
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 26 Jul 2019 13:15:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sifive.com; s=google;
- h=date:from:to:cc:subject:in-reply-to:message-id:references
- :user-agent:mime-version;
- bh=9WyyFtGDa/oI2K0SoorWyGV62gLsK5AqqZUD+AVwi30=;
- b=Fb1/iCLjf/NTOtNNhbSpzOTh2HSJi8m3cogsN6IlhBqqXfIsc8b6/c5d54iSoV9tf2
- 4IXGW09arBQ1PLR9BDnrrDFFZeThGRlGJb1zcCHOBX/uSTmXUxjsHC5Wtn6a5v+3nRf1
- oJ+3ikPkGPiZj3GBLWuU4dq/hVwWrnpaCbKsm+AtPr1gurUkCfgxi0HX4Wk1tLHikQWj
- wT6aPzheIXgs4SsO5mbwNoQsUAkKQE6saF99TaAMGMeKeDLlNQIkXR1NdUvfX7qT7FYa
- eTNtjQNzwfQ9/SFfxUX4M5xnr2uLMMhN3nt8caAvX1DdPVHS/1ToO3yYaSeHBD04DYMw
- oJSw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:in-reply-to:message-id
- :references:user-agent:mime-version;
- bh=9WyyFtGDa/oI2K0SoorWyGV62gLsK5AqqZUD+AVwi30=;
- b=NGOxC5G3ZnGKNhfoP5HmgNgwEHHtYGWrN7NBCkZpm4/zAyddPyPHG/qi2MoECdmXv1
- xUCjUZmsA8Jt0jyuYjeeDNr+LcD0lr0fbWcF0o2Zfaudv0+lldXrLu4yagVySJlDbMjq
- ULz7T075EQ2lZzGkBizXI8WqtTyt/CL3hsOp+VbxgPpIZYywu5NEvrJEJNiHVXWLfO7w
- RgeL4nSJm9L6cdzQJ/6y3M5VqnJ/9A/eseDEvATFFhVvIcdlWToAx9Uy8+jq0qnnryuE
- GUbE3GCDdiGW8DdRPf68Y7gH8wYiA4HmU2IA2Ap+TbusgOdoyN8XFELOiTEK86jxRvWV
- YWxQ==
-X-Gm-Message-State: APjAAAX0/g3od1QsTkUJN5pfomHqFRkEwEbS2m5XrniDPT1KDfJrPfQX
- TcXb8GumfUEaDT2c7C2qWOIQdg==
-X-Google-Smtp-Source: APXvYqzsqQtosoZzCBtwEUSq2JCLj43JNgQACq9apPNl9xsQbwBsE8qGPx2yPCPSFW8euGk6L+kJ2A==
-X-Received: by 2002:a02:5185:: with SMTP id s127mr28951962jaa.44.1564172126478; 
- Fri, 26 Jul 2019 13:15:26 -0700 (PDT)
-Received: from localhost (67-0-24-96.albq.qwest.net. [67.0.24.96])
- by smtp.gmail.com with ESMTPSA id a8sm40604193ioh.29.2019.07.26.13.15.25
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Fri, 26 Jul 2019 13:15:25 -0700 (PDT)
-Date: Fri, 26 Jul 2019 13:15:24 -0700 (PDT)
-From: Paul Walmsley <paul.walmsley@sifive.com>
-X-X-Sender: paulw@viisi.sifive.com
-To: Alexandre Ghiti <alex@ghiti.fr>
-Subject: Re: [PATCH REBASE v4 14/14] riscv: Make mmap allocation top-down by
- default
-In-Reply-To: <6b2b45a5-0ac4-db73-8f50-ab182a0cb621@ghiti.fr>
-Message-ID: <alpine.DEB.2.21.9999.1907261310490.26670@viisi.sifive.com>
-References: <20190724055850.6232-1-alex@ghiti.fr>
- <20190724055850.6232-15-alex@ghiti.fr>
- <alpine.DEB.2.21.9999.1907251655310.32766@viisi.sifive.com>
- <6b2b45a5-0ac4-db73-8f50-ab182a0cb621@ghiti.fr>
-User-Agent: Alpine 2.21.9999 (DEB 301 2018-08-15)
+	id 1hr6l6-0004xK-9O; Fri, 26 Jul 2019 20:24:08 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hr6kv-0004wd-SR
+ for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 20:24:00 +0000
+Received: from localhost (p54B33368.dip0.t-ipconnect.de [84.179.51.104])
+ by pokefinder.org (Postfix) with ESMTPSA id 97EEC4A14D9;
+ Fri, 26 Jul 2019 22:23:54 +0200 (CEST)
+Date: Fri, 26 Jul 2019 22:23:54 +0200
+From: Wolfram Sang <wsa@the-dreams.de>
+To: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Mika Westerberg <mika.westerberg@linux.intel.com>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Jarkko Nikula <jarkko.nikula@linux.intel.com>
+Subject: Re: [PATCH v3 5/7] drivers: Introduce device lookup variants by
+ ACPI_COMPANION device
+Message-ID: <20190726202353.GA963@kunai>
+References: <20190723221838.12024-1-suzuki.poulose@arm.com>
+ <20190723221838.12024-6-suzuki.poulose@arm.com>
 MIME-Version: 1.0
+In-Reply-To: <20190723221838.12024-6-suzuki.poulose@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_131529_820321_B186E565 
-X-CRM114-Status: GOOD (  24.09  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190726_132358_217071_3D52873E 
+X-CRM114-Status: GOOD (  17.80  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [88.99.104.3 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,148 +63,284 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Albert Ou <aou@eecs.berkeley.edu>, Kees Cook <keescook@chromium.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Daniel Cashman <dcashman@google.com>, Palmer Dabbelt <palmer@sifive.com>,
- Will Deacon <will.deacon@arm.com>, Russell King <linux@armlinux.org.uk>,
- Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
- linux-mm@kvack.org, Paul Burton <paul.burton@mips.com>,
- linux-riscv@lists.infradead.org, Alexander Viro <viro@zeniv.linux.org.uk>,
- James Hogan <jhogan@kernel.org>, linux-fsdevel@vger.kernel.org,
- Andrew Morton <akpm@linux-foundation.org>, linux-mips@vger.kernel.org,
- Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org,
- Luis Chamberlain <mcgrof@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: rafael@kernel.org, gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
+ linux-spi@vger.kernel.org, linux-acpi@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>, linux-i2c@vger.kernel.org,
+ Mika Westerberg <mika.westerberg@linux.intel.com>,
+ linux-arm-kernel@lists.infradead.org, Len Brown <lenb@kernel.org>
+Content-Type: multipart/mixed; boundary="===============3723185889791570152=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 26 Jul 2019, Alexandre Ghiti wrote:
 
-> On 7/26/19 2:20 AM, Paul Walmsley wrote:
-> > 
-> > On Wed, 24 Jul 2019, Alexandre Ghiti wrote:
-> > 
-> > > In order to avoid wasting user address space by using bottom-up mmap
-> > > allocation scheme, prefer top-down scheme when possible.
-> > > 
-> > > Before:
-> > > root@qemuriscv64:~# cat /proc/self/maps
-> > > 00010000-00016000 r-xp 00000000 fe:00 6389       /bin/cat.coreutils
-> > > 00016000-00017000 r--p 00005000 fe:00 6389       /bin/cat.coreutils
-> > > 00017000-00018000 rw-p 00006000 fe:00 6389       /bin/cat.coreutils
-> > > 00018000-00039000 rw-p 00000000 00:00 0          [heap]
-> > > 1555556000-155556d000 r-xp 00000000 fe:00 7193   /lib/ld-2.28.so
-> > > 155556d000-155556e000 r--p 00016000 fe:00 7193   /lib/ld-2.28.so
-> > > 155556e000-155556f000 rw-p 00017000 fe:00 7193   /lib/ld-2.28.so
-> > > 155556f000-1555570000 rw-p 00000000 00:00 0
-> > > 1555570000-1555572000 r-xp 00000000 00:00 0      [vdso]
-> > > 1555574000-1555576000 rw-p 00000000 00:00 0
-> > > 1555576000-1555674000 r-xp 00000000 fe:00 7187   /lib/libc-2.28.so
-> > > 1555674000-1555678000 r--p 000fd000 fe:00 7187   /lib/libc-2.28.so
-> > > 1555678000-155567a000 rw-p 00101000 fe:00 7187   /lib/libc-2.28.so
-> > > 155567a000-15556a0000 rw-p 00000000 00:00 0
-> > > 3fffb90000-3fffbb1000 rw-p 00000000 00:00 0      [stack]
-> > > 
-> > > After:
-> > > root@qemuriscv64:~# cat /proc/self/maps
-> > > 00010000-00016000 r-xp 00000000 fe:00 6389       /bin/cat.coreutils
-> > > 00016000-00017000 r--p 00005000 fe:00 6389       /bin/cat.coreutils
-> > > 00017000-00018000 rw-p 00006000 fe:00 6389       /bin/cat.coreutils
-> > > 2de81000-2dea2000 rw-p 00000000 00:00 0          [heap]
-> > > 3ff7eb6000-3ff7ed8000 rw-p 00000000 00:00 0
-> > > 3ff7ed8000-3ff7fd6000 r-xp 00000000 fe:00 7187   /lib/libc-2.28.so
-> > > 3ff7fd6000-3ff7fda000 r--p 000fd000 fe:00 7187   /lib/libc-2.28.so
-> > > 3ff7fda000-3ff7fdc000 rw-p 00101000 fe:00 7187   /lib/libc-2.28.so
-> > > 3ff7fdc000-3ff7fe2000 rw-p 00000000 00:00 0
-> > > 3ff7fe4000-3ff7fe6000 r-xp 00000000 00:00 0      [vdso]
-> > > 3ff7fe6000-3ff7ffd000 r-xp 00000000 fe:00 7193   /lib/ld-2.28.so
-> > > 3ff7ffd000-3ff7ffe000 r--p 00016000 fe:00 7193   /lib/ld-2.28.so
-> > > 3ff7ffe000-3ff7fff000 rw-p 00017000 fe:00 7193   /lib/ld-2.28.so
-> > > 3ff7fff000-3ff8000000 rw-p 00000000 00:00 0
-> > > 3fff888000-3fff8a9000 rw-p 00000000 00:00 0      [stack]
-> > > 
-> > > Signed-off-by: Alexandre Ghiti <alex@ghiti.fr>
-> > > Reviewed-by: Christoph Hellwig <hch@lst.de>
-> > > Reviewed-by: Kees Cook <keescook@chromium.org>
-> > > ---
-> > >   arch/riscv/Kconfig | 11 +++++++++++
-> > >   1 file changed, 11 insertions(+)
-> > > 
-> > > diff --git a/arch/riscv/Kconfig b/arch/riscv/Kconfig
-> > > index 59a4727ecd6c..6a63973873fd 100644
-> > > --- a/arch/riscv/Kconfig
-> > > +++ b/arch/riscv/Kconfig
-> > > @@ -54,6 +54,17 @@ config RISCV
-> > >   	select EDAC_SUPPORT
-> > >   	select ARCH_HAS_GIGANTIC_PAGE
-> > >   	select ARCH_WANT_HUGE_PMD_SHARE if 64BIT
-> > > +	select ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT if MMU
-> > > +	select HAVE_ARCH_MMAP_RND_BITS
-> > > +
-> > > +config ARCH_MMAP_RND_BITS_MIN
-> > > +	default 18
-> > Could you help me understand the rationale behind this constant?
-> 
-> 
-> Indeed, I took that from arm64 code and I did not think enough about it: 
-> that's great you spotted this because that's a way too large value for 
-> 32 bits as it would, at minimum, make mmap random offset go up to 1GB 
-> (18 + 12), which is a big hole for this small address space :)
-> 
-> arm and mips propose 8 as default value for 32bits systems which is 1MB offset
-> at minimum.
-
-8 seems like a fine minimum for Sv32.
-
-> > > +
-> > > +# max bits determined by the following formula:
-> > > +#  VA_BITS - PAGE_SHIFT - 3
-> > I realize that these lines are probably copied from arch/arm64/Kconfig.
-> > But the rationale behind the "- 3" is not immediately obvious.  This
-> > apparently originates from commit 8f0d3aa9de57 ("arm64: mm: support
-> > ARCH_MMAP_RND_BITS"). Can you provide any additional context here?
-> 
-> 
-> The formula comes from commit d07e22597d1d ("mm: mmap: add new /proc 
-> tunable for mmap_base ASLR"), where the author states that "generally a 
-> 3-4 bits less than the number of bits in the user-space accessible 
-> virtual address space [allows to] give the greatest flexibility without 
-> generating an invalid mmap_base address".
-> 
-> In practice, that limits the mmap random offset to at maximum 1/8 (for - 
-> 3) of the total address space.
-
-OK.
-
-> > > +config ARCH_MMAP_RND_BITS_MAX
-> > > +	default 33 if 64BIT # SV48 based
-> > The rationale here is clear for Sv48, per the above formula:
-> > 
-> >     (48 - 12 - 3) = 33
-> > 
-> > > +	default 18
-> > However, here it is less clear to me.  For Sv39, shouldn't this be
-> > 
-> >     (39 - 12 - 3) = 24
-> > 
-> > ?  And what about Sv32?
-> 
-> 
-> You're right. Is there a way to distinguish between sv39 and sv48 here ?
-
-This patch has just been posted:
-
-https://lore.kernel.org/linux-riscv/alpine.DEB.2.21.9999.1907261259420.26670@viisi.sifive.com/T/#u
-
-Assuming there are no negative comments, we'll plan to send it upstream 
-during v5.3-rc.  Your patch should be able to set different minimums and 
-maximums based on the value of CONFIG_RISCV_VM_SV*
+--===============3723185889791570152==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="Qxx1br4bt0+wmkIi"
+Content-Disposition: inline
 
 
-- Paul
+--Qxx1br4bt0+wmkIi
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Tue, Jul 23, 2019 at 11:18:36PM +0100, Suzuki K Poulose wrote:
+> Add a generic helper to match a device by the ACPI_COMPANION device
+> and provide wrappers for the device lookup APIs.
+>=20
+> Cc: Len Brown <lenb@kernel.org>
+> Cc: linux-acpi@vger.kernel.org
+> Cc: linux-spi@vger.kernel.org
+> Cc: Mark Brown <broonie@kernel.org>
+> Cc: Mika Westerberg <mika.westerberg@linux.intel.com>
+> Cc: Wolfram Sang <wsa@the-dreams.de>
+> Cc: linux-i2c@vger.kernel.org
+> Cc: Mark Brown <broonie@kernel.org>
+> Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+> Cc: "Rafael J. Wysocki" <rafael@kernel.org>
+> Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+
+=46rom my side, OK:
+
+Acked-by: Wolfram Sang <wsa@the-dreams.de> # I2C parts
+
+yet you missed to cc the I2C ACPI maintainers. Done so now.
+
+> ---
+>  drivers/base/core.c         |  6 ++++
+>  drivers/i2c/i2c-core-acpi.c | 11 ++-----
+>  drivers/spi/spi.c           |  8 +----
+>  include/linux/device.h      | 65 +++++++++++++++++++++++++++++++++++++
+>  4 files changed, 74 insertions(+), 16 deletions(-)
+>=20
+> diff --git a/drivers/base/core.c b/drivers/base/core.c
+> index 3abc32b60c0a..57d71bc2c559 100644
+> --- a/drivers/base/core.c
+> +++ b/drivers/base/core.c
+> @@ -3373,3 +3373,9 @@ int device_match_devt(struct device *dev, const voi=
+d *pdevt)
+>  	return dev->devt =3D=3D *(dev_t *)pdevt;
+>  }
+>  EXPORT_SYMBOL_GPL(device_match_devt);
+> +
+> +int device_match_acpi_dev(struct device *dev, const void *adev)
+> +{
+> +	return ACPI_COMPANION(dev) =3D=3D adev;
+> +}
+> +EXPORT_SYMBOL(device_match_acpi_dev);
+> diff --git a/drivers/i2c/i2c-core-acpi.c b/drivers/i2c/i2c-core-acpi.c
+> index 4dbbc9a35f65..bc80aafb521f 100644
+> --- a/drivers/i2c/i2c-core-acpi.c
+> +++ b/drivers/i2c/i2c-core-acpi.c
+> @@ -354,17 +354,11 @@ static int i2c_acpi_find_match_adapter(struct devic=
+e *dev, const void *data)
+>  	return ACPI_HANDLE(dev) =3D=3D (acpi_handle)data;
+>  }
+> =20
+> -static int i2c_acpi_find_match_device(struct device *dev, const void *da=
+ta)
+> -{
+> -	return ACPI_COMPANION(dev) =3D=3D data;
+> -}
+> =20
+>  struct i2c_adapter *i2c_acpi_find_adapter_by_handle(acpi_handle handle)
+>  {
+> -	struct device *dev;
+> +	struct device *dev =3D bus_find_device_by_acpi_dev(&i2c_bus_type, handl=
+e);
+> =20
+> -	dev =3D bus_find_device(&i2c_bus_type, NULL, handle,
+> -			      i2c_acpi_find_match_adapter);
+>  	return dev ? i2c_verify_adapter(dev) : NULL;
+>  }
+>  EXPORT_SYMBOL_GPL(i2c_acpi_find_adapter_by_handle);
+> @@ -373,8 +367,7 @@ static struct i2c_client *i2c_acpi_find_client_by_ade=
+v(struct acpi_device *adev)
+>  {
+>  	struct device *dev;
+> =20
+> -	dev =3D bus_find_device(&i2c_bus_type, NULL, adev,
+> -			      i2c_acpi_find_match_device);
+> +	dev =3D bus_find_device_by_acpi_dev(&i2c_bus_type, adev);
+>  	return dev ? i2c_verify_client(dev) : NULL;
+>  }
+> =20
+> diff --git a/drivers/spi/spi.c b/drivers/spi/spi.c
+> index a591da87981a..c486a6f84c2c 100644
+> --- a/drivers/spi/spi.c
+> +++ b/drivers/spi/spi.c
+> @@ -3741,11 +3741,6 @@ static int spi_acpi_controller_match(struct device=
+ *dev, const void *data)
+>  	return ACPI_COMPANION(dev->parent) =3D=3D data;
+>  }
+> =20
+> -static int spi_acpi_device_match(struct device *dev, const void *data)
+> -{
+> -	return ACPI_COMPANION(dev) =3D=3D data;
+> -}
+> -
+>  static struct spi_controller *acpi_spi_find_controller_by_adev(struct ac=
+pi_device *adev)
+>  {
+>  	struct device *dev;
+> @@ -3765,8 +3760,7 @@ static struct spi_device *acpi_spi_find_device_by_a=
+dev(struct acpi_device *adev)
+>  {
+>  	struct device *dev;
+> =20
+> -	dev =3D bus_find_device(&spi_bus_type, NULL, adev, spi_acpi_device_matc=
+h);
+> -
+> +	dev =3D bus_find_device_by_acpi_dev(&spi_bus_type, adev);
+>  	return dev ? to_spi_device(dev) : NULL;
+>  }
+> =20
+> diff --git a/include/linux/device.h b/include/linux/device.h
+> index 93b2f55ef44e..7514ef3d3f1a 100644
+> --- a/include/linux/device.h
+> +++ b/include/linux/device.h
+> @@ -168,6 +168,7 @@ int device_match_name(struct device *dev, const void =
+*name);
+>  int device_match_of_node(struct device *dev, const void *np);
+>  int device_match_fwnode(struct device *dev, const void *fwnode);
+>  int device_match_devt(struct device *dev, const void *pdevt);
+> +int device_match_acpi_dev(struct device *dev, const void *adev);
+> =20
+>  int bus_for_each_dev(struct bus_type *bus, struct device *start, void *d=
+ata,
+>  		     int (*fn)(struct device *dev, void *data));
+> @@ -224,6 +225,28 @@ static inline struct device *bus_find_device_by_devt=
+(struct bus_type *bus,
+>  	return bus_find_device(bus, NULL, &devt, device_match_devt);
+>  }
+> =20
+> +#ifdef CONFIG_ACPI
+> +struct acpi_device;
+> +
+> +/**
+> + * bus_find_device_by_acpi_dev : device iterator for locating a particul=
+ar device
+> + * matching the ACPI COMPANION device.
+> + * @bus: bus type
+> + * @adev: ACPI COMPANION device to match.
+> + */
+> +static inline struct device *
+> +bus_find_device_by_acpi_dev(struct bus_type *bus, const struct acpi_devi=
+ce *adev)
+> +{
+> +	return bus_find_device(bus, NULL, adev, device_match_acpi_dev);
+> +}
+> +#else
+> +static inline struct device *
+> +bus_find_device_by_acpi_dev(struct bus_type *bus, const void *adev)
+> +{
+> +	return NULL;
+> +}
+> +#endif
+> +
+>  struct device *subsys_find_device_by_id(struct bus_type *bus, unsigned i=
+nt id,
+>  					struct device *hint);
+>  int bus_for_each_drv(struct bus_type *bus, struct device_driver *start,
+> @@ -442,6 +465,27 @@ static inline struct device *driver_find_device_by_d=
+evt(struct device_driver *dr
+>  	return driver_find_device(drv, NULL, &devt, device_match_devt);
+>  }
+> =20
+> +#ifdef CONFIG_ACPI
+> +/**
+> + * driver_find_device_by_acpi_dev : device iterator for locating a parti=
+cular
+> + * device matching the ACPI_COMPANION device.
+> + * @driver: the driver we're iterating
+> + * @adev: ACPI_COMPANION device to match.
+> + */
+> +static inline struct device *
+> +driver_find_device_by_acpi_dev(struct device_driver *drv,
+> +			       const struct acpi_device *adev)
+> +{
+> +	return driver_find_device(drv, NULL, adev, device_match_acpi_dev);
+> +}
+> +#else
+> +static inline struct device *
+> +driver_find_device_by_acpi_dev(struct device_driver *drv, const void *ad=
+ev)
+> +{
+> +	return NULL;
+> +}
+> +#endif
+> +
+>  void driver_deferred_probe_add(struct device *dev);
+>  int driver_deferred_probe_check_state(struct device *dev);
+>  int driver_deferred_probe_check_state_continue(struct device *dev);
+> @@ -620,6 +664,27 @@ static inline struct device *class_find_device_by_de=
+vt(struct class *class,
+>  	return class_find_device(class, NULL, &devt, device_match_devt);
+>  }
+> =20
+> +#ifdef CONFIG_ACPI
+> +struct acpi_device;
+> +/**
+> + * class_find_device_by_acpi_dev : device iterator for locating a partic=
+ular
+> + * device matching the ACPI_COMPANION device.
+> + * @class: class type
+> + * @adev: ACPI_COMPANION device to match.
+> + */
+> +static inline struct device *
+> +class_find_device_by_acpi_dev(struct class *class, const struct acpi_dev=
+ice *adev)
+> +{
+> +	return class_find_device(class, NULL, adev, device_match_acpi_dev);
+> +}
+> +#else
+> +static inline struct device *
+> +class_find_device_by_acpi_dev(struct class *class, const void *adev)
+> +{
+> +	return NULL;
+> +}
+> +#endif
+> +
+>  struct class_attribute {
+>  	struct attribute attr;
+>  	ssize_t (*show)(struct class *class, struct class_attribute *attr,
+> --=20
+> 2.21.0
+>=20
+
+--Qxx1br4bt0+wmkIi
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl07YVUACgkQFA3kzBSg
+Kba2Jw//TFCeiCLo1qH7Wnsh9NdBxgEPc86wpsG4krJgfXbmtvHveYdMt4JCRhT0
+36b/IMFLsg0J1rO/qpWZ/Fu+mKpVrnS4FV4asoZJfDWZhtlOFSZkAaNAzdiux9hk
+MijPSXsDoUQK86YIUw+9ntDi+6oUWHhbLAeV6KZ7VjeBvLsJ7cKVYJfbeN7nvbrV
+2wpB5Jc+mhTfiJFAslAUYsiV2b3mveWzW7Pnqj5sRHMKGHv3uJcf+xxBPByPglI1
+MyMMqPf4uxVREnkev8lZaUvYvqgm9tphmgGg6+Xtgmv+yFXpwT6K8aXnAkD6jMrS
+x0TPzZ9DVxtTdaL1HTu9QJ9hWQAHmFwkGNMAcd6E6CqdA1NF6fz6OnoM+68MWg9M
+lYiL7eeEEXx45kXF6ySob7CZ3Fm08VnAZdbhpOtQXj0A9S+8LYNPBiS6gPAtkYEl
+oe0GR+shH9zZ9ze9ZtneaShTsNVysjgAZSHNS3f+zHsby+zXyESDL9q//qOFboDj
+g1tNNYj1RpxVl0TthSg1LYuGK2yQJGyLVCdXhAqywIgBMwmpoCPboZLasw4u1kyZ
+H2zpoc+NO2ATufJ9TebF07DWM2TL4NI7ITjWzYVIYm/ork76PnujRhlXpZAlk5mb
+hEQxXBOqG6QQk0W8umAfMvkevi6d5VFMQuaiMUKapY9P7LPP+Ho=
+=6eTs
+-----END PGP SIGNATURE-----
+
+--Qxx1br4bt0+wmkIi--
+
+
+--===============3723185889791570152==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3723185889791570152==--
+
