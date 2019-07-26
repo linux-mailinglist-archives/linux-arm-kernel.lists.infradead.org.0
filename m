@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3061875E8C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 07:42:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE47D75E90
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 07:42:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BE8CoGkeftIaJRuuP+Wl2yJ0LJ3j9U+q1INThPEJr+A=; b=eNDCsjZOA0Sxfa
-	AT0xYKJVn3t+7OM3I3C8lUHF2ZGM3KHBqWRcPe44etytFxlQOW94L/Xgw7EG2bUi+G8iJxgZeRiHe
-	r3Upe5jL1KWs/IW8oNan2abREsTye1yk7ND1DYvAeGy22Ra/UbjYGfW0da+s5sXjl1+rMEiJP72xD
-	UZESftTSRitzVjlxwWi3UiTUmi9HOa31TqT9Fapg41hwoe3TXrk0w96eoRD1BUhqUBH7pXmsuvUu+
-	8NO4rv2Or/6f6EuMD7G12V4xlIvuXCjgC4A9Botgtg3w+MsFdOJeBv+sQ0/lGB8kMKNez/YloWbEr
-	6TMBJz/5eKSUKaBLx0bQ==;
+	List-Owner; bh=Pro9nFGud0byVN7dWoIqLBoGmDKfUNDyXNjF3fCvUJM=; b=tRdNValp5SAyb8
+	Z8TyTXKWpMQDIBKK++f7T9ZO6j6jHbsx2Qx8xAJfaSxlZAJ/LD1rG1tqs1YCb6Q1AcT8X7MAIMqp7
+	4bjLnMuQkqyilPfTY168ht4fhsJUOeC6xDqPlFMaj2lj3m3TWasBGYDs99AVRRIOAr49tQGradTVJ
+	hr2AFHB+J97KRG0Wv7QQp1ePtFkahu1UXqbSDDfNa7hs7SNjQFkU8PHzzAUb5tMNcq+cYyJ26hB0N
+	CmoMOsAlQZElmtnyC9M6Ms3BSMQZTw07TS2FzqLaq01aRNDH0Mzbpa3eltvMtJdYg1Um5Rn8svFy1
+	Yd5BnYz945XKEBb060kQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqszx-0004tR-6T; Fri, 26 Jul 2019 05:42:33 +0000
+	id 1hqt0H-0005AE-IL; Fri, 26 Jul 2019 05:42:53 +0000
 Received: from out5-smtp.messagingengine.com ([66.111.4.29])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqsxm-0003oc-QI
- for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 05:40:20 +0000
+ id 1hqsxp-0003pt-AZ
+ for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 05:40:23 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id 394F222131;
- Fri, 26 Jul 2019 01:40:17 -0400 (EDT)
+ by mailout.nyi.internal (Postfix) with ESMTP id AE12922304;
+ Fri, 26 Jul 2019 01:40:20 -0400 (EDT)
 Received: from mailfrontend2 ([10.202.2.163])
- by compute4.internal (MEProxy); Fri, 26 Jul 2019 01:40:17 -0400
+ by compute4.internal (MEProxy); Fri, 26 Jul 2019 01:40:20 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=from
  :to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm3; bh=HIlXPSjKgK5qU
- xVhM3BUkxF4hyG95XBN2iVQvkJ99FQ=; b=G2BHcXk0PJY9s/xfFwAzcYhSMCR0C
- DCHepIqJGNpIF2ZZdJkbsTjRizyTOeR/1/E9mhNgWgI19IZkBGnni8NGhgr4UETb
- xx+9httKsAukin6Jr2QRz822tnDNjZa5mdo1YBTUzKfiKshsAQL7KcweOWm9UDmZ
- /5wUdHYvm8XK6Kplb3i7SMZL3W/RiyqpcbqUGK8/AuyK2jQcLOm1CQZG3lw7lKkK
- L4nAWwkeh71f/8U2rb2aF22S8tdEby3plP23AxXu6KoBWfXVOnPmunup8EXd0NA+
- wRp6JD81sLzqefeGj6hQ6SLIgXx0LsCclX1ZcTjq5XvWYSBxc/eXWEigA==
+ :mime-version:content-transfer-encoding; s=fm3; bh=FGnrb1We2FOVt
+ /++AKR6ddEpH2XDEzYVw5O9qXjrW4c=; b=mMz39AGz6K22TPx02gYs+cd59F73Q
+ ymNswcu7ZcjW8sC5jQb2+sBNJk2lLnZj/KM/E4Yw6MfYOLeAVSv9/N9Cyxc5dInI
+ ILm4BfzIYhLTVMnb/VA3G8ulzuC7zrALU0t4TLAt2+vTLqgBZb/N6PxeGXj3M1ta
+ m4B1Lph2fv1fVOtWIQDKRJfqZYeFAU4ZBpQkMrTduGMhE3XRVrprjs0caXI4AzqQ
+ nI4CfrUwMJQfFMZry/9Yt7r6aRanLysbRzbtT4R4av26ZcDe082uluVrH6jY/zHB
+ V3zZku9zXXgoUt94WQg6bKflBpEUzCoKIowj8drii6hG6xOjCHPEtDMKw==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm3; bh=HIlXPSjKgK5qUxVhM3BUkxF4hyG95XBN2iVQvkJ99FQ=; b=RaX88la1
- /8mfNU9bjbL+KsZrAQIMq5BHujxJYav2lzb0uASDWeogcfZzmCQuyZrxT34iBLJC
- D8u7Lv7pWDjIzFE0LCPPswMaw56qKGl7/AyKQCxl/2s28qfvBRj8w4RszXkwZ5Ul
- IDwQ6VIQ6P/fBqKBGsG2tjxItHHeW3AqooPJgCd3H+sAgUOSbMHuDKk5ghaqT76b
- 5zxDeDW5k6BGcO5+BAPxKyzxUMv2ZCWhY85TrRFosAQil30INRhK6REo3yUTfvj1
- K+Tx7GcI7RttQT1pa+ZG7PCpyZpqdXsLFGOQg/9bk9G4RdDPbTr3xB0lis6xxQ7z
- Gf+VBKKcoeCHcg==
-X-ME-Sender: <xms:QZI6XbsKaVGsM-KOKcH713c2RoXLLPECCb7af3KTALJQ6bs-5p9Edw>
+ fm3; bh=FGnrb1We2FOVt/++AKR6ddEpH2XDEzYVw5O9qXjrW4c=; b=O9A9eeM3
+ 4BtcB66bgmHNI18lEjrkyqKy9eO+g/Ecx+meEOju5Jn26CgYggOtFLmeU5NxL/Fs
+ JvFNeIkhhOX5OM4Eg5JjDoXhHsRhGmlHgzoSIlHUVyoua9bEdI+cFr0VZcIGSKxS
+ GmH2C8nBpdojs0JHnZ8Tcfzh5wf7oH1342ovzcGhAqD1pqHLQKQfgw8+3LW9UTl2
+ xby2nJ1WEXBwznBBbjHUsjH/SJ7p2TdWnFkExKo+ZCJvlKTnrsviAt42+qS1wN1T
+ SCnhLfkiqoeoR8otGEw7Otb0LYLdaztVe1O55OXyzZIcVd3ayVQqO0Cw+MKYpJwg
+ UUMiXN7/bdnd9g==
+X-ME-Sender: <xms:RJI6XaQrHM3bllWNNzUdCXWaPW2UuhkmQKG9ygJpgMYg8U5npw4unQ>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrkeefgdeljecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
@@ -56,25 +56,26 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrkeefgdeljecutefuodetggdote
  ucflvghffhgvrhihuceorghnughrvgifsegrjhdrihgurdgruheqnecukfhppedvtddvrd
  ekuddrudekrdeftdenucfrrghrrghmpehmrghilhhfrhhomheprghnughrvgifsegrjhdr
  ihgurdgruhenucevlhhushhtvghrufhiiigvpeef
-X-ME-Proxy: <xmx:QZI6Xd7lsMlldboqtKETyZcNu4OQ387q6XMenBKZoSZ0-A-comDLAA>
- <xmx:QZI6XaKLNWBDVqr0dKwFExgmjJjkbJbxClWYxnurdDJhv0EE_EmDHw>
- <xmx:QZI6XXT09mFm8fjXsnRj3MivOzSX5BMYuZaodn6WFqL-WbwAggHcrw>
- <xmx:QZI6XYJJsJWWmL4I4lKgTtwX6o-uF79RdcwLgSe-rZzpQI0YGLyuaA>
+X-ME-Proxy: <xmx:RJI6XdLEgXOUllC0AhkhBvsi8jHtnpu1jcBQrlD8G7zLr4ucZIEaHg>
+ <xmx:RJI6XfLwrysAEgLKcPaFS5aa4FmlIxEQguEWkANwXclTjpeX355g0A>
+ <xmx:RJI6XQhsOzujfQ4yGGF-QAISLMsI7bt7MZVpWQ7-rCJgfR8ax30U2A>
+ <xmx:RJI6Xd4D749w7J3o9KEiMOEU-GWvHneHbHE3qyiE8eHfXvi5OCMicw>
 Received: from mistburn.au.ibm.com (bh02i525f01.au.ibm.com [202.81.18.30])
- by mail.messagingengine.com (Postfix) with ESMTPA id F1ECD380076;
- Fri, 26 Jul 2019 01:40:13 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 84613380079;
+ Fri, 26 Jul 2019 01:40:17 -0400 (EDT)
 From: Andrew Jeffery <andrew@aj.id.au>
 To: linux-aspeed@lists.ozlabs.org
-Subject: [PATCH 04/17] ARM: dts: vesnin: Add unit address for memory node
-Date: Fri, 26 Jul 2019 15:09:46 +0930
-Message-Id: <20190726053959.2003-5-andrew@aj.id.au>
+Subject: [PATCH 05/17] ARM: dts: fp5280g2: Cleanup gpio-keys-polled properties
+Date: Fri, 26 Jul 2019 15:09:47 +0930
+Message-Id: <20190726053959.2003-6-andrew@aj.id.au>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190726053959.2003-1-andrew@aj.id.au>
 References: <20190726053959.2003-1-andrew@aj.id.au>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_224019_373415_900802DB 
-X-CRM114-Status: GOOD (  10.05  )
+X-CRM114-CacheID: sfid-20190725_224022_630220_A4BF3507 
+X-CRM114-Status: UNSURE (   7.88  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -104,37 +105,36 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
  Andrew Jeffery <andrew@aj.id.au>, linux-kernel@vger.kernel.org,
- Alexander Filippov <a.filippov@yadro.com>, robh+dt@kernel.org, joel@jms.id.au,
- linux-arm-kernel@lists.infradead.org
+ robh+dt@kernel.org, joel@jms.id.au, linux-arm-kernel@lists.infradead.org,
+ John Wang <wangzqbj@inspur.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fixes the following warnings:
+dtbs_check gave the following warning:
 
-    arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dt.yaml: /: memory: False schema does not allow {'reg': [[1073741824, 536870912]]}
-    arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dt.yaml: memory: 'device_type' is a required property
+    Warning (avoid_unnecessary_addr_size): /gpio-keys-polled: unnecessary #address-cells/#size-cells without "ranges" or child "reg" property
 
-Cc: Alexander Filippov <a.filippov@yadro.com>
+Cc: John Wang <wangzqbj@inspur.com>
 Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
 ---
- arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm/boot/dts/aspeed-bmc-inspur-fp5280g2.dts | 2 --
+ 1 file changed, 2 deletions(-)
 
-diff --git a/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts b/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts
-index 0b9e29c3212e..81d9dcb752a0 100644
---- a/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts
-+++ b/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts
-@@ -14,7 +14,7 @@
- 		bootargs = "console=ttyS4,115200 earlyprintk";
- 	};
+diff --git a/arch/arm/boot/dts/aspeed-bmc-inspur-fp5280g2.dts b/arch/arm/boot/dts/aspeed-bmc-inspur-fp5280g2.dts
+index 2dd664bff928..aa5efd1dfa70 100644
+--- a/arch/arm/boot/dts/aspeed-bmc-inspur-fp5280g2.dts
++++ b/arch/arm/boot/dts/aspeed-bmc-inspur-fp5280g2.dts
+@@ -94,8 +94,6 @@
  
--	memory {
-+	memory@40000000 {
- 		reg = <0x40000000 0x20000000>;
- 	};
+ 	gpio-keys-polled {
+ 		compatible = "gpio-keys-polled";
+-		#address-cells = <1>;
+-		#size-cells = <0>;
+ 		poll-interval = <1000>;
  
+ 		fan0-presence {
 -- 
 2.20.1
 
