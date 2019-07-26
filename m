@@ -2,54 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E315476550
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 14:11:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3980276570
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 14:13:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
+	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FGDnoryn7JTYUGOXvM5iIDkF6xWGNhXf8pdLF+MszU8=; b=Boh+dWkIOQC/b1
-	vY0Rfks9nUTYbeWeywXVIrIJCz1O+pAs7pazcdhHzWF0w7mrydwKzDvKoaBy1vwfZm525PBC/3CmU
-	uievOgJ7D1FnT0ysx/nPUxUuEFrLQSgtKTpsPr9HyOyVPEMNgxXg+Kzq8WMvrTPpKa9lUVLhXj/o7
-	vWW85di1A7YRSLNi4Vc+O8Ov03c6UbfJx/07kAkeqceXsxymmeYupBIMl579Oyrndy6pPnWr5+2u2
-	W+aTYvEBvYW+MCyLyzClQuItxAaOzDweC78koieqPEbJBeomN13lD2u//RVbfMi4IfuNjZRIneJOg
-	q0+O6jFcGov8SYY8mgXQ==;
+	References:List-Owner; bh=8zgrFxlv6lEwlaLDc8TsIYPfc8nPh/lhrUeewdvY2jc=; b=Lis
+	2Zx0YsO9xcjXdXUHnVChTak8OaVH82jq1iYGZeZaPi/ReIVJJ4z7yK6TVG8NrYQEgCI8oqiv1GfHN
+	ThS3Xvdm7uQBhFw8Ib48eVJYK8mcgNDB8dp6yvmai1yROmC5plb22Wkwsk9evAMtBkgfMAT5VPldU
+	+Xu07k4pb0P9jNPcbuSI1ug7hyuHID7Vcq/bx3Wik0XsuPJACsOcW5Am5vZ7j8nK9AGqjH1zaJkar
+	QAfkd0mhGcS3dS/LSY0pJbZK9oQtY4HjD/YaJNIlJFS2U+IoOEFgQveOLEQ7j8j0NWtCqbmPoiBvN
+	faHsrWCmCOz3a3Psv8mwx7ok78c4rJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqz4F-0006AH-BX; Fri, 26 Jul 2019 12:11:23 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hqz3x-00067v-82
- for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 12:11:06 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 56453344;
- Fri, 26 Jul 2019 05:11:03 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 34CC33F694;
- Fri, 26 Jul 2019 05:11:02 -0700 (PDT)
-Date: Fri, 26 Jul 2019 13:10:57 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Anders Roxell <anders.roxell@linaro.org>
-Subject: Re: [PATCH 1/3] arm64: perf: Mark expected switch fall-through
-Message-ID: <20190726121056.GA26088@lakrids.cambridge.arm.com>
-References: <20190726112716.19104-1-anders.roxell@linaro.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190726112716.19104-1-anders.roxell@linaro.org>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+	id 1hqz5m-0006i6-Si; Fri, 26 Jul 2019 12:12:59 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hqz5G-0006U0-0w
+ for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 12:12:27 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
+ Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+ List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
+ List-Archive; bh=Skzanq6VQpDThygBClqVy35KX/v/j8u+eJd8QBN7EtI=; b=g2nKAPJz/rUe
+ NbmXRiSttKEORjAqttEhrCUVXc34mefcepBxwvnjh6wWcsN7X8vS+1ecmVqG+Rv28qHTCYIHXhke/
+ MsATFMP1URCY7Fgr0DPcrnEnpxXMw3gvDDFlus+lffwH66/Q9THj39j/tb/BJK1JggIgsy45Gq/KJ
+ FJPCg=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=ypsilon.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1hqz58-0001Zm-4O; Fri, 26 Jul 2019 12:12:18 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id 9EDDC2742B63; Fri, 26 Jul 2019 13:12:17 +0100 (BST)
+From: Mark Brown <broonie@kernel.org>
+To: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
+Subject: Applied "ASoC: sunxi: fix a sound binding broken reference" to the
+ asoc tree
+In-Reply-To: <9932608f32030c886d906ea656eda8408c544776.1564140865.git.mchehab+samsung@kernel.org>
+X-Patchwork-Hint: ignore
+Message-Id: <20190726121217.9EDDC2742B63@ypsilon.sirena.org.uk>
+Date: Fri, 26 Jul 2019 13:12:17 +0100 (BST)
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_051105_425315_EDC1B61D 
-X-CRM114-Status: GOOD (  18.74  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190726_051226_066142_8E6C72B5 
+X-CRM114-Status: GOOD (  15.45  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,66 +78,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>,
- "Gustavo A. R. Silva" <gustavo@embeddedor.com>, catalin.marinas@arm.com,
- linux-kernel@vger.kernel.org, stable@vger.kernel.org, will@kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ alsa-devel@alsa-project.org, Maxime Ripard <maxime.ripard@bootlin.com>,
+ Liam Girdwood <lgirdwood@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ "Cc:"@sirena.org.uk, Chen-Yu Tsai <wens@csie.org>,
+ Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gRnJpLCBKdWwgMjYsIDIwMTkgYXQgMDE6Mjc6MTZQTSArMDIwMCwgQW5kZXJzIFJveGVsbCB3
-cm90ZToKPiBXaGVuIGZhbGwtdGhyb3VnaCB3YXJuaW5ncyB3YXMgZW5hYmxlZCBieSBkZWZhdWx0
-LCBjb21taXQgZDkzNTEyZWYwZjBlCj4gKCJNYWtlZmlsZTogR2xvYmFsbHkgZW5hYmxlIGZhbGwt
-dGhyb3VnaCB3YXJuaW5nIiksIHRoZSBmb2xsb3dpbmcKPiB3YXJuaW5ncyB3YXMgc3RhcnRpbmcg
-dG8gc2hvdyB1cDoKPiAKPiAuLi9hcmNoL2FybTY0L2tlcm5lbC9od19icmVha3BvaW50LmM6IElu
-IGZ1bmN0aW9uIOKAmGh3X2JyZWFrcG9pbnRfYXJjaF9wYXJzZeKAmToKPiAuLi9hcmNoL2FybTY0
-L2tlcm5lbC9od19icmVha3BvaW50LmM6NTQwOjc6IHdhcm5pbmc6IHRoaXMgc3RhdGVtZW50IG1h
-eSBmYWxsCj4gIHRocm91Z2ggWy1XaW1wbGljaXQtZmFsbHRocm91Z2g9XQo+ICAgICBpZiAoaHct
-PmN0cmwubGVuID09IEFSTV9CUkVBS1BPSU5UX0xFTl8xKQo+ICAgICAgICBeCj4gLi4vYXJjaC9h
-cm02NC9rZXJuZWwvaHdfYnJlYWtwb2ludC5jOjU0MjozOiBub3RlOiBoZXJlCj4gICAgY2FzZSAy
-Ogo+ICAgIF5+fn4KPiAuLi9hcmNoL2FybTY0L2tlcm5lbC9od19icmVha3BvaW50LmM6NTQ0Ojc6
-IHdhcm5pbmc6IHRoaXMgc3RhdGVtZW50IG1heSBmYWxsCj4gIHRocm91Z2ggWy1XaW1wbGljaXQt
-ZmFsbHRocm91Z2g9XQo+ICAgICBpZiAoaHctPmN0cmwubGVuID09IEFSTV9CUkVBS1BPSU5UX0xF
-Tl8yKQo+ICAgICAgICBeCj4gLi4vYXJjaC9hcm02NC9rZXJuZWwvaHdfYnJlYWtwb2ludC5jOjU0
-NjozOiBub3RlOiBoZXJlCj4gICAgZGVmYXVsdDoKPiAgICBefn5+fn5+Cj4gCj4gUmV3b3JrIHNv
-IHRoYXQgdGhlIGNvbXBpbGVyIGRvZXNuJ3Qgd2FybiBhYm91dCBmYWxsLXRocm91Z2guIFJld29y
-ayBzbwo+IHRoZSBjb2RlIGxvb2tzIGxpa2UgdGhlIGFybSBjb2RlLiBTaW5jZSB0aGUgY29tbWVu
-dCBpbiB0aGUgZnVuY3Rpb24KPiBpbmRpY2F0ZXMgdGFodCB0aGlzIGlzIHN1cHBvc2VkIHRvIGJl
-aGF2ZSB0aGUgc2FtZSB3YXkgYXMgYXJtMzIgYmVjYXVzZQoKVHlwbzogcy90YWh0L3RoYXQvCgo+
-IGl0IGhhbmRsZXMgMzItYml0IHRhc2tzIGFsc28uCj4gCj4gQ2M6IHN0YWJsZUB2Z2VyLmtlcm5l
-bC5vcmcgIyB2My4xNisKPiBGaXhlczogNmVlMzNjMjcxMmZjICgiQVJNOiBod19icmVha3BvaW50
-OiBjb3JyZWN0IGFuZCBzaW1wbGlmeSBhbGlnbm1lbnQgZml4dXAgY29kZSIpCj4gU2lnbmVkLW9m
-Zi1ieTogQW5kZXJzIFJveGVsbCA8YW5kZXJzLnJveGVsbEBsaW5hcm8ub3JnPgoKVGhlIHBhdGNo
-IGl0c2VsZiBsb29rcyBmaW5lLCBidXQgSSBkb24ndCB0aGluayB0aGlzIG5lZWRzIGEgQ0MgdG8K
-c3RhYmxlLCBub3IgZG9lcyBpdCByZXF1aXJlIHRoYXQgZml4ZXMgdGFnLCBhcyB0aGVyZSdzIG5v
-IGZ1bmN0aW9uYWwKcHJvYmxlbS4KCklmIGFueXRoaW5nLCBpdCBmaXhlczoKCiAgZDkzNTEyZWYw
-ZjBlICgiIE1ha2VmaWxlOiBHbG9iYWxseSBlbmFibGUgZmFsbC10aHJvdWdoIHdhcm5pbmciKQoK
-Li4uIGdpdmVuIHRoZSBjb21taXQgbWVzc2FnZSBmb3IgdGhhdCBwYXRjaCBzdGF0ZXM6CgogIE5v
-dyB0aGF0IGFsbCB0aGUgZmFsbC10aHJvdWdoIHdhcm5pbmdzIGhhdmUgYmVlbiBhZGRyZXNzZWQg
-aW4gdGhlCiAga2VybmVsLCBlbmFibGUgdGhlIGZhbGwtdGhyb3VnaCB3YXJuaW5nIGdsb2JhbGx5
-LgoKLi4uIGFuZCB0aGUgZXhpc3RlbmNlIG9mIHRoaXMgcGF0Y2ggaW1wbGllcyBvdGhlcndpc2Uu
-CgpJSVVDIHRoYXQgcGF0Y2ggaXNuJ3QgZXZlbiBpbiBtYWlubGluZSB5ZXQsIGJ1dCBnaXZlbiB0
-aGlzIGlzIHNpbXBsZSBJCmltYWdpbmUgdGhhdCBXaWxsIGFuZCBDYXRhbGluIG1pZ2h0IGJlIGhh
-cHB5IHRvIHBpY2sgdGhpcyB1cCBmb3IgdGhlCm5leHQgcmMuCgpUaGFua3MsCk1hcmsuCgo+IC0t
-LQo+ICBhcmNoL2FybTY0L2tlcm5lbC9od19icmVha3BvaW50LmMgfCAxMSArKysrKysrLS0tLQo+
-ICAxIGZpbGUgY2hhbmdlZCwgNyBpbnNlcnRpb25zKCspLCA0IGRlbGV0aW9ucygtKQo+IAo+IGRp
-ZmYgLS1naXQgYS9hcmNoL2FybTY0L2tlcm5lbC9od19icmVha3BvaW50LmMgYi9hcmNoL2FybTY0
-L2tlcm5lbC9od19icmVha3BvaW50LmMKPiBpbmRleCBkY2ViODQ1MjA5NDguLmVhNjE2YWRmMWNm
-MSAxMDA2NDQKPiAtLS0gYS9hcmNoL2FybTY0L2tlcm5lbC9od19icmVha3BvaW50LmMKPiArKysg
-Yi9hcmNoL2FybTY0L2tlcm5lbC9od19icmVha3BvaW50LmMKPiBAQCAtNTM1LDE0ICs1MzUsMTcg
-QEAgaW50IGh3X2JyZWFrcG9pbnRfYXJjaF9wYXJzZShzdHJ1Y3QgcGVyZl9ldmVudCAqYnAsCj4g
-IAkJY2FzZSAwOgo+ICAJCQkvKiBBbGlnbmVkICovCj4gIAkJCWJyZWFrOwo+IC0JCWNhc2UgMToK
-PiAtCQkJLyogQWxsb3cgc2luZ2xlIGJ5dGUgd2F0Y2hwb2ludC4gKi8KPiAtCQkJaWYgKGh3LT5j
-dHJsLmxlbiA9PSBBUk1fQlJFQUtQT0lOVF9MRU5fMSkKPiAtCQkJCWJyZWFrOwo+ICAJCWNhc2Ug
-MjoKPiAgCQkJLyogQWxsb3cgaGFsZndvcmQgd2F0Y2hwb2ludHMgYW5kIGJyZWFrcG9pbnRzLiAq
-Lwo+ICAJCQlpZiAoaHctPmN0cmwubGVuID09IEFSTV9CUkVBS1BPSU5UX0xFTl8yKQo+ICAJCQkJ
-YnJlYWs7Cj4gKwkJCS8qIEZhbGwgdGhyb3VnaCAqLwo+ICsJCWNhc2UgMToKPiArCQljYXNlIDM6
-Cj4gKwkJCS8qIEFsbG93IHNpbmdsZSBieXRlIHdhdGNocG9pbnQuICovCj4gKwkJCWlmIChody0+
-Y3RybC5sZW4gPT0gQVJNX0JSRUFLUE9JTlRfTEVOXzEpCj4gKwkJCQlicmVhazsKPiArCQkJLyog
-RmFsbCB0aHJvdWdoICovCj4gIAkJZGVmYXVsdDoKPiAgCQkJcmV0dXJuIC1FSU5WQUw7Cj4gIAkJ
-fQo+IC0tIAo+IDIuMjAuMQo+IAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5l
-bEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
-bGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+The patch
+
+   ASoC: sunxi: fix a sound binding broken reference
+
+has been applied to the asoc tree at
+
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.4
+
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
+
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
+
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
+
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
+
+Thanks,
+Mark
+
+From d8481155a3219ef427c6384022931758fbbe8ebe Mon Sep 17 00:00:00 2001
+From: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
+Date: Fri, 26 Jul 2019 08:47:27 -0300
+Subject: [PATCH] ASoC: sunxi: fix a sound binding broken reference
+
+Address this rename:
+	Documentation/devicetree/bindings/sound/{sun4i-i2s.txt -> allwinner,sun4i-a10-i2s.yaml}
+
+Fixes: 0a0ca8e94ca3 ("dt-bindings: sound: Convert Allwinner I2S binding to YAML")
+Signed-off-by: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
+Link: https://lore.kernel.org/r/9932608f32030c886d906ea656eda8408c544776.1564140865.git.mchehab+samsung@kernel.org
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ Documentation/devicetree/bindings/sound/sun8i-a33-codec.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Documentation/devicetree/bindings/sound/sun8i-a33-codec.txt b/Documentation/devicetree/bindings/sound/sun8i-a33-codec.txt
+index 2ca3d138528e..7ecf6bd60d27 100644
+--- a/Documentation/devicetree/bindings/sound/sun8i-a33-codec.txt
++++ b/Documentation/devicetree/bindings/sound/sun8i-a33-codec.txt
+@@ -4,7 +4,7 @@ Allwinner SUN8I audio codec
+ On Sun8i-A33 SoCs, the audio is separated in different parts:
+ 	  - A DAI driver. It uses the "sun4i-i2s" driver which is
+ 	  documented here:
+-	  Documentation/devicetree/bindings/sound/sun4i-i2s.txt
++	  Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-i2s.yaml
+ 	  - An analog part of the codec which is handled as PRCM registers.
+ 	  See Documentation/devicetree/bindings/sound/sun8i-codec-analog.txt
+ 	  - An digital part of the codec which is documented in this current
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
