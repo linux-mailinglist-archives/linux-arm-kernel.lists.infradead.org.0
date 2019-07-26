@@ -2,61 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6CD2D76EF1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 18:23:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5575A76F0B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 18:27:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:From:To:Subject:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kBa5wSwYcbBZFBjUQhVHdMnMingLZMA2OtY1Bkmvr8I=; b=g3mskzxh/Rcqw4
-	o0kKTmkZYXECuP2s2wjWoV8NO5D9jaiOg5KbRu+AnvkUanObIPcIjryugkr1CknZxfjaFYyEVtlCy
-	Fi9iEHHLgd5IvDPl3PaSsMO+kpoFAGdo3Mj7Bawmt+UdZVBm7PVJ/iRQaS3e56d1cPwg9CQAORon3
-	OXjeGcLCYmIb4xotMKY9BlQvjure2hfVvN0qjOhmLTHjUcHF04m2PVGdwv+vGNEJ47cSR/vZUbg17
-	x8Lj/pjV0hf94aYzsk9R0jQMC9KakEoPdYLisaK8CywFQKI3MMYZOnGg6lmuFNIprNm+IaSpua12h
-	/Oy+b3iB+ukuZnZYNM8Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=7oU8yYWFOecpmxUtEbEQb42E3Z9Pws/3liZlJULsVyk=; b=UKbjJqzMRXXb7g2kENZzFBeCS
+	PSXJP6XbPEhgvcjlnskQBxV9i+avKVILKTbEKwHkZUh/u9brFDaaMyAyxRJ0w3GmGLQJaK6MpA1+P
+	4vNXBe+Bth0SvCx7lZ8WIvnjQmiXCKYUOXxXfPyDGbCaInIvoYwQZrzYBkawGw03aYthH/0vc5sKy
+	aEIoR9+8rM3Z9MmxZDWZCBn9rouxxPKK/IJAS7UYHZ1HsWaj5vhdQ7Vx39HD/KF0/nnUCfcIQp/KH
+	7wt3/+SP0u9i9csLEYE7qGko4DyYmcXU+MwsAf4wrA08BycgQoHK4CZ7Dj9Rvf0cG7rCUk1nnoG7e
+	7o3nYTsWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hr30D-0007lX-Ps; Fri, 26 Jul 2019 16:23:29 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hr33w-0000zr-Ef; Fri, 26 Jul 2019 16:27:20 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hr2zS-0007c5-A5
- for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 16:22:43 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7757821734;
- Fri, 26 Jul 2019 16:22:41 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564158161;
- bh=iSpgErZyH5WtkuKki6MXL2DpHosNdkywhjGnuECrfC8=;
- h=In-Reply-To:References:Subject:To:Cc:From:Date:From;
- b=CGJ6PK7Y8347Q17zhsTTIGstVfqFOXxOUWl6UDZ0MdMMl/qj33/B6WI0sIVPttzb2
- J2qewxcRn7Z3doDqe3EK9iu59Qe4dhYUWsM3JrKJz2eM+XTP6CeJ8npuTQgEYomQ4a
- PZoR2uXk6HNu1xPa+kH14fvxtSJ1Vt157vPSGxdg=
+ id 1hr33k-0000zT-8c
+ for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 16:27:09 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x6QG7fWq014148; Fri, 26 Jul 2019 18:27:03 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=n6HKe0PgjUg51eRmGPMx0Q+MwoGoF4rstkH/lFHzWaM=;
+ b=JsisJ/fpUkrGVDfSbnAzLrhU0vpu091fbUaYeaRC1Do+Xg5R8AE1Wdflko+wosp4+R7F
+ ya+MTVXY6X0yGUrx2znky65+IAwBMKRttphn0UXtGe3GuDxucpAACX+UQmTk3q3poqeC
+ /DcYKUe81hr1OIfNwuVYApiAUVhWiMLl2SDq6d1fn6P/iPB0ORPk8iXb+1Hy1XIeQQA8
+ gM2gLphuWIzte4rglgFqd7h56FKz+gcjVNe5DiVtVuYPCroIYfnHwgXM83CWu3yPYQGz
+ X3sch1vB/47ieQ44MWFKSwACSBmJYcw/smxwLA/hkavoRMvNjBkqXJ9CtUS6zsD0HViW dw== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2tx60absu1-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Fri, 26 Jul 2019 18:27:03 +0200
+Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 10B1231;
+ Fri, 26 Jul 2019 16:27:03 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id DF60D4FD0;
+ Fri, 26 Jul 2019 16:27:02 +0000 (GMT)
+Received: from lmecxl0912.lme.st.com (10.75.127.51) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 26 Jul
+ 2019 18:27:02 +0200
+Subject: Re: [PATCH] ARM: dts: stm32: fix -Wall W=1 compilation warnings for
+ can1_sleep pinctrl
+To: Erwan Le Ray <erwan.leray@st.com>, Maxime Coquelin
+ <mcoquelin.stm32@gmail.com>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
+ <mark.rutland@arm.com>
+References: <1561972686-23281-1-git-send-email-erwan.leray@st.com>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <8cb628b9-dbbf-98d6-e09a-2ecc082315d4@st.com>
+Date: Fri, 26 Jul 2019 18:27:01 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20190726135138.9858-11-sudeep.holla@arm.com>
-References: <20190726135138.9858-1-sudeep.holla@arm.com>
- <20190726135138.9858-11-sudeep.holla@arm.com>
-Subject: Re: [PATCH v2 10/10] firmware: arm_scmi: Use asynchronous
- CLOCK_RATE_SET when possible
-To: Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
-From: Stephen Boyd <sboyd@kernel.org>
-User-Agent: alot/0.8.1
-Date: Fri, 26 Jul 2019 09:22:40 -0700
-Message-Id: <20190726162241.7757821734@mail.kernel.org>
+In-Reply-To: <1561972686-23281-1-git-send-email-erwan.leray@st.com>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.51]
+X-ClientProxiedBy: SFHDAG2NODE1.st.com (10.75.127.4) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-07-26_12:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_092242_609835_58E631F8 
-X-CRM114-Status: UNSURE (   7.69  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190726_092708_593263_9E080FB0 
+X-CRM114-Status: GOOD (  15.04  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -66,7 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,34 +99,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peng Fan <peng.fan@nxp.com>, Etienne Carriere <etienne.carriere@linaro.org>,
- linux-kernel@vger.kernel.org, Bo Zhang <bozhang.zhang@broadcom.com>,
- Jim Quinlan <james.quinlan@broadcom.com>, Sudeep Holla <sudeep.holla@arm.com>,
- Gaku Inami <gaku.inami.xh@renesas.com>,
- Volodymyr Babchuk <volodymyr_babchuk@epam.com>, linux-clk@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, bich.hemon@st.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Sudeep Holla (2019-07-26 06:51:38)
-> CLOCK_PROTOCOL_ATTRIBUTES provides attributes to indicate the maximum
-> number of pending asynchronous clock rate changes supported by the
-> platform. If it's non-zero, then we should be able to use asynchronous
-> clock rate set for any clocks until the maximum limit is reached.
-> 
-> Tracking the current count of pending asynchronous clock set rate
-> requests, we can decide if the incoming/new request for clock set rate
-> can be handled asynchronously or not until the maximum limit is
-> reached.
-> 
-> Cc: Stephen Boyd <sboyd@kernel.org>
-> Cc: linux-clk@vger.kernel.org
-> Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
-> ---
+Hi Erwan		
 
-Reviewed-by: Stephen Boyd <sboyd@kernel.org>
+On 7/1/19 11:18 AM, Erwan Le Ray wrote:
+> Fix compilations warnings detected by -Wall W=1 compilation option:
+> - node has a unit name, but no reg property
+> 
+> Signed-off-by: Erwan Le Ray <erwan.leray@st.com>
+> 
+> diff --git a/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi
+> index 140a983..ce98fd8 100644
+> --- a/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi
+> +++ b/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi
+> @@ -427,7 +427,7 @@
+>   				};
+>   			};
+>   
+> -			m_can1_sleep_pins_a: m_can1-sleep@0 {
+> +			m_can1_sleep_pins_a: m_can1-sleep-0 {
+>   				pins {
+>   					pinmux = <STM32_PINMUX('H', 13, ANALOG)>, /* CAN1_TX */
+>   						 <STM32_PINMUX('I', 9, ANALOG)>; /* CAN1_RX */
+> 
 
+Thanks for cleaning the STM32 DT. Applied on stm32-next. Note that I 
+changed commit title to indicate which STM32 platform is targeted by 
+this patch.
+
+Regards
+Alex
 
 _______________________________________________
 linux-arm-kernel mailing list
