@@ -2,69 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D439576567
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 14:12:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ACA9D76578
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 14:14:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
-	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=MZW7eNVyAgQ2Icl/qrDimO3jFur/HB11lEP32k28+D0=; b=iLA
-	ZjwbnQYYtUyxlrgGFDiLd8JqEjk7a2/+JfgwnZWsPVCq0etN/kQ8UTUZ9/3AycSZ2ZOO0avbB9Ves
-	BlC2mbLY2tBih/zceBy0IEp5FG71qPiWCyzvZ0Wa3uSqJRE/QTKDlZqTrLYaKCH7kZAxyFE765eSr
-	+hHmiBfTNfMBFjcWEeL0EqGKrjUdFCYeGOONCskDtkuqQ7yi1gmIjXNIpLvmxX1bEiFjYVNMn9E4K
-	daRFnQ6ZPwxyUd6mGsTYWnHna7EC+7yRWU7zZ0zaG4GhQn5vBCUbt3IICPj4xFo+LyNm+xhpUjRnc
-	NXHpaqh7eTis2ufwWfnJU/D2XG4w7MA==;
+	List-Owner; bh=Jl9MLjYu5NAsf05ey+s6/wfhIOqU3t3wvBuXjEW8utE=; b=Ruo5Ho9LLBe7Ym
+	PvoNKC51SkMK7BFNA7GmCpxCCqQC7im7+N7vNE32nv/0rwODH0u7z9MKajO+oWh3Pt1FTyUdphf0k
+	ZVldwWzD/rBkFGtA2Eq8xyyC+h72VZkXIeLMxeRdKu/g8MLp8bQSPry7JOG4jfBoH8IGzzRkCKbIz
+	Ndg7GYRGvj3Xe0pJKFQWHeKcPoU4tOgBOf346WRqUx5CRhX0PvfFqYqWW17nCtPIQR6kXInSLvTdM
+	NV8meXTOM9Pke5RwYZp9vUSQ5CW9USdUJabFeAFrYKR+BP/SwyLIOa4lRtXt1kXfDWyKT03rnPV8s
+	VcgY+BcUJFK580TtgHTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqz5U-0006UE-4B; Fri, 26 Jul 2019 12:12:40 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqz5C-0006TL-Te; Fri, 26 Jul 2019 12:12:24 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
- Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
- List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=ppv6g71055dMnrkMQSdTZpzfu9QPlBAMNF035s+cREw=; b=uWg3gJmM5dtO
- 6ZeuoYmRrchMwdzcw3uqtCJhzusDByr17UgU9Z9UNcSEI8LVj8RaraP1KVWGcL+cT7qMNqCdWVbuk
- ktvAxPC3zArscqgRJvUfBp0fPUtTo8wfqcbXawEA0GSQ4nE4rh5nqvDe+l1jypVH0Ju+sZxZ976Vg
- NVAS0=;
-Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
- ([82.37.168.47] helo=ypsilon.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <broonie@sirena.org.uk>)
- id 1hqz58-0001Zr-U7; Fri, 26 Jul 2019 12:12:18 +0000
-Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 543B02742B63; Fri, 26 Jul 2019 13:12:18 +0100 (BST)
-From: Mark Brown <broonie@kernel.org>
-To: Cheng-Yi Chiang <cychiang@chromium.org>
-Subject: Applied "ASoC: rockchip: Fix mono capture" to the asoc tree
-In-Reply-To: <20190726044202.26866-1-cychiang@chromium.org>
-X-Patchwork-Hint: ignore
-Message-Id: <20190726121218.543B02742B63@ypsilon.sirena.org.uk>
-Date: Fri, 26 Jul 2019 13:12:18 +0100 (BST)
-X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
+	id 1hqz70-0007CN-JH; Fri, 26 Jul 2019 12:14:14 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hqz6k-0007Bj-IQ
+ for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 12:13:59 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C1E78337;
+ Fri, 26 Jul 2019 05:13:57 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A0F5C3F694;
+ Fri, 26 Jul 2019 05:13:56 -0700 (PDT)
+Date: Fri, 26 Jul 2019 13:13:54 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Anders Roxell <anders.roxell@linaro.org>
+Subject: Re: [PATCH 1/3] arm64: perf: Mark expected switch fall-through
+Message-ID: <20190726121354.GB26088@lakrids.cambridge.arm.com>
+References: <20190726112716.19104-1-anders.roxell@linaro.org>
+ <20190726121056.GA26088@lakrids.cambridge.arm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190726121056.GA26088@lakrids.cambridge.arm.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_051222_958536_91F6DDCD 
-X-CRM114-Status: GOOD (  14.38  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190726_051358_690538_33F64667 
+X-CRM114-Status: GOOD (  20.28  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,110 +62,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, dianders@chromium.org,
- Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
- Takashi Iwai <tiwai@suse.com>, Liam Girdwood <lgirdwood@gmail.com>,
- tzungbi@chromium.org, Jaroslav Kysela <perex@perex.cz>,
- linux-rockchip@lists.infradead.org, Mark Brown <broonie@kernel.org>,
- dgreid@chromium.org, mka@chromium.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Kees Cook <keescook@chromium.org>,
+ "Gustavo A. R. Silva" <gustavo@embeddedor.com>, catalin.marinas@arm.com,
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The patch
-
-   ASoC: rockchip: Fix mono capture
-
-has been applied to the asoc tree at
-
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.3
-
-All being well this means that it will be integrated into the linux-next
-tree (usually sometime in the next 24 hours) and sent to Linus during
-the next merge window (or sooner if it is a bug fix), however if
-problems are discovered then the patch may be dropped or reverted.  
-
-You may get further e-mails resulting from automated or manual testing
-and review of the tree, please engage with people reporting problems and
-send followup patches addressing any issues that are reported if needed.
-
-If any updates are required or you are submitting further changes they
-should be sent as incremental updates against current git, existing
-patches will not be replaced.
-
-Please add any relevant lists and maintainers to the CCs when replying
-to this mail.
-
-Thanks,
-Mark
-
-From 789e162a6255325325bd321ab0cd51dc7e285054 Mon Sep 17 00:00:00 2001
-From: Cheng-Yi Chiang <cychiang@chromium.org>
-Date: Fri, 26 Jul 2019 12:42:02 +0800
-Subject: [PATCH] ASoC: rockchip: Fix mono capture
-
-This reverts commit db51707b9c9aeedd310ebce60f15d5bb006567e0.
-Revert "ASoC: rockchip: i2s: Support mono capture"
-
-Previous discussion in
-
-https://patchwork.kernel.org/patch/10147153/
-
-explains the issue of the patch.
-While device is configured as 1-ch, hardware is still
-generating a 2-ch stream.
-When user space reads the data and assumes it is a 1-ch stream,
-the rate will be slower by 2x.
-
-Revert the change so 1-ch is not supported.
-User space can selectively take one channel data out of two channel
-if 1-ch is preferred.
-Currently, both channels record identical data.
-
-Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
-Link: https://lore.kernel.org/r/20190726044202.26866-1-cychiang@chromium.org
-Signed-off-by: Mark Brown <broonie@kernel.org>
----
- sound/soc/rockchip/rockchip_i2s.c | 5 ++---
- 1 file changed, 2 insertions(+), 3 deletions(-)
-
-diff --git a/sound/soc/rockchip/rockchip_i2s.c b/sound/soc/rockchip/rockchip_i2s.c
-index 0a34d0eb8dba..88ebaf6e1880 100644
---- a/sound/soc/rockchip/rockchip_i2s.c
-+++ b/sound/soc/rockchip/rockchip_i2s.c
-@@ -326,7 +326,6 @@ static int rockchip_i2s_hw_params(struct snd_pcm_substream *substream,
- 		val |= I2S_CHN_4;
- 		break;
- 	case 2:
--	case 1:
- 		val |= I2S_CHN_2;
- 		break;
- 	default:
-@@ -459,7 +458,7 @@ static struct snd_soc_dai_driver rockchip_i2s_dai = {
- 	},
- 	.capture = {
- 		.stream_name = "Capture",
--		.channels_min = 1,
-+		.channels_min = 2,
- 		.channels_max = 2,
- 		.rates = SNDRV_PCM_RATE_8000_192000,
- 		.formats = (SNDRV_PCM_FMTBIT_S8 |
-@@ -659,7 +658,7 @@ static int rockchip_i2s_probe(struct platform_device *pdev)
- 	}
- 
- 	if (!of_property_read_u32(node, "rockchip,capture-channels", &val)) {
--		if (val >= 1 && val <= 8)
-+		if (val >= 2 && val <= 8)
- 			soc_dai->capture.channels_max = val;
- 	}
- 
--- 
-2.20.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gRnJpLCBKdWwgMjYsIDIwMTkgYXQgMDE6MTA6NTdQTSArMDEwMCwgTWFyayBSdXRsYW5kIHdy
+b3RlOgo+IE9uIEZyaSwgSnVsIDI2LCAyMDE5IGF0IDAxOjI3OjE2UE0gKzAyMDAsIEFuZGVycyBS
+b3hlbGwgd3JvdGU6Cj4gPiBXaGVuIGZhbGwtdGhyb3VnaCB3YXJuaW5ncyB3YXMgZW5hYmxlZCBi
+eSBkZWZhdWx0LCBjb21taXQgZDkzNTEyZWYwZjBlCj4gPiAoIk1ha2VmaWxlOiBHbG9iYWxseSBl
+bmFibGUgZmFsbC10aHJvdWdoIHdhcm5pbmciKSwgdGhlIGZvbGxvd2luZwo+ID4gd2FybmluZ3Mg
+d2FzIHN0YXJ0aW5nIHRvIHNob3cgdXA6Cj4gPiAKPiA+IC4uL2FyY2gvYXJtNjQva2VybmVsL2h3
+X2JyZWFrcG9pbnQuYzogSW4gZnVuY3Rpb24g4oCYaHdfYnJlYWtwb2ludF9hcmNoX3BhcnNl4oCZ
+Ogo+ID4gLi4vYXJjaC9hcm02NC9rZXJuZWwvaHdfYnJlYWtwb2ludC5jOjU0MDo3OiB3YXJuaW5n
+OiB0aGlzIHN0YXRlbWVudCBtYXkgZmFsbAo+ID4gIHRocm91Z2ggWy1XaW1wbGljaXQtZmFsbHRo
+cm91Z2g9XQo+ID4gICAgIGlmIChody0+Y3RybC5sZW4gPT0gQVJNX0JSRUFLUE9JTlRfTEVOXzEp
+Cj4gPiAgICAgICAgXgo+ID4gLi4vYXJjaC9hcm02NC9rZXJuZWwvaHdfYnJlYWtwb2ludC5jOjU0
+MjozOiBub3RlOiBoZXJlCj4gPiAgICBjYXNlIDI6Cj4gPiAgICBefn5+Cj4gPiAuLi9hcmNoL2Fy
+bTY0L2tlcm5lbC9od19icmVha3BvaW50LmM6NTQ0Ojc6IHdhcm5pbmc6IHRoaXMgc3RhdGVtZW50
+IG1heSBmYWxsCj4gPiAgdGhyb3VnaCBbLVdpbXBsaWNpdC1mYWxsdGhyb3VnaD1dCj4gPiAgICAg
+aWYgKGh3LT5jdHJsLmxlbiA9PSBBUk1fQlJFQUtQT0lOVF9MRU5fMikKPiA+ICAgICAgICBeCj4g
+PiAuLi9hcmNoL2FybTY0L2tlcm5lbC9od19icmVha3BvaW50LmM6NTQ2OjM6IG5vdGU6IGhlcmUK
+PiA+ICAgIGRlZmF1bHQ6Cj4gPiAgICBefn5+fn5+Cj4gPiAKPiA+IFJld29yayBzbyB0aGF0IHRo
+ZSBjb21waWxlciBkb2Vzbid0IHdhcm4gYWJvdXQgZmFsbC10aHJvdWdoLiBSZXdvcmsgc28KPiA+
+IHRoZSBjb2RlIGxvb2tzIGxpa2UgdGhlIGFybSBjb2RlLiBTaW5jZSB0aGUgY29tbWVudCBpbiB0
+aGUgZnVuY3Rpb24KPiA+IGluZGljYXRlcyB0YWh0IHRoaXMgaXMgc3VwcG9zZWQgdG8gYmVoYXZl
+IHRoZSBzYW1lIHdheSBhcyBhcm0zMiBiZWNhdXNlCj4gCj4gVHlwbzogcy90YWh0L3RoYXQvCj4g
+Cj4gPiBpdCBoYW5kbGVzIDMyLWJpdCB0YXNrcyBhbHNvLgo+ID4gCj4gPiBDYzogc3RhYmxlQHZn
+ZXIua2VybmVsLm9yZyAjIHYzLjE2Kwo+ID4gRml4ZXM6IDZlZTMzYzI3MTJmYyAoIkFSTTogaHdf
+YnJlYWtwb2ludDogY29ycmVjdCBhbmQgc2ltcGxpZnkgYWxpZ25tZW50IGZpeHVwIGNvZGUiKQo+
+ID4gU2lnbmVkLW9mZi1ieTogQW5kZXJzIFJveGVsbCA8YW5kZXJzLnJveGVsbEBsaW5hcm8ub3Jn
+Pgo+IAo+IFRoZSBwYXRjaCBpdHNlbGYgbG9va3MgZmluZSwgYnV0IEkgZG9uJ3QgdGhpbmsgdGhp
+cyBuZWVkcyBhIENDIHRvCj4gc3RhYmxlLCBub3IgZG9lcyBpdCByZXF1aXJlIHRoYXQgZml4ZXMg
+dGFnLCBhcyB0aGVyZSdzIG5vIGZ1bmN0aW9uYWwKPiBwcm9ibGVtLgoKSG1tLi4uIEkgbm93IHNl
+ZSBJIHNwb2tlIHRvbyBzb29uLCBhbmQgdGhpcyBpcyBtYWtpbmcgdGhlIDEtYnl0ZQpicmVha3Bv
+aW50IHdvcmsgYXQgYSAzLWJ5dGUgb2Zmc2V0LgoKR2l2ZW4gdGhhdDoKCkFja2VkLWJ5OiBNYXJr
+IFJ1dGxhbmQgPG1hcmsucnV0bGFuZEBhcm0uY29tPgoKLi4uIGFuZCB0aGUgZml4ZXMgYW5kIHN0
+YWJsZSB0YWdzIGFyZSBhcHByb3ByaWF0ZSBmb3IgdGhhdCBwb3J0aW9uIG9mCnRoZSBwYXRjaC4K
+ClNvcnJ5IGZvciB0aGUgbm9pc2UuCgpUaGFua3MsCk1hcmsuCgoKPiA+IC0tLQo+ID4gIGFyY2gv
+YXJtNjQva2VybmVsL2h3X2JyZWFrcG9pbnQuYyB8IDExICsrKysrKystLS0tCj4gPiAgMSBmaWxl
+IGNoYW5nZWQsIDcgaW5zZXJ0aW9ucygrKSwgNCBkZWxldGlvbnMoLSkKPiA+IAo+ID4gZGlmZiAt
+LWdpdCBhL2FyY2gvYXJtNjQva2VybmVsL2h3X2JyZWFrcG9pbnQuYyBiL2FyY2gvYXJtNjQva2Vy
+bmVsL2h3X2JyZWFrcG9pbnQuYwo+ID4gaW5kZXggZGNlYjg0NTIwOTQ4Li5lYTYxNmFkZjFjZjEg
+MTAwNjQ0Cj4gPiAtLS0gYS9hcmNoL2FybTY0L2tlcm5lbC9od19icmVha3BvaW50LmMKPiA+ICsr
+KyBiL2FyY2gvYXJtNjQva2VybmVsL2h3X2JyZWFrcG9pbnQuYwo+ID4gQEAgLTUzNSwxNCArNTM1
+LDE3IEBAIGludCBod19icmVha3BvaW50X2FyY2hfcGFyc2Uoc3RydWN0IHBlcmZfZXZlbnQgKmJw
+LAo+ID4gIAkJY2FzZSAwOgo+ID4gIAkJCS8qIEFsaWduZWQgKi8KPiA+ICAJCQlicmVhazsKPiA+
+IC0JCWNhc2UgMToKPiA+IC0JCQkvKiBBbGxvdyBzaW5nbGUgYnl0ZSB3YXRjaHBvaW50LiAqLwo+
+ID4gLQkJCWlmIChody0+Y3RybC5sZW4gPT0gQVJNX0JSRUFLUE9JTlRfTEVOXzEpCj4gPiAtCQkJ
+CWJyZWFrOwo+ID4gIAkJY2FzZSAyOgo+ID4gIAkJCS8qIEFsbG93IGhhbGZ3b3JkIHdhdGNocG9p
+bnRzIGFuZCBicmVha3BvaW50cy4gKi8KPiA+ICAJCQlpZiAoaHctPmN0cmwubGVuID09IEFSTV9C
+UkVBS1BPSU5UX0xFTl8yKQo+ID4gIAkJCQlicmVhazsKPiA+ICsJCQkvKiBGYWxsIHRocm91Z2gg
+Ki8KPiA+ICsJCWNhc2UgMToKPiA+ICsJCWNhc2UgMzoKPiA+ICsJCQkvKiBBbGxvdyBzaW5nbGUg
+Ynl0ZSB3YXRjaHBvaW50LiAqLwo+ID4gKwkJCWlmIChody0+Y3RybC5sZW4gPT0gQVJNX0JSRUFL
+UE9JTlRfTEVOXzEpCj4gPiArCQkJCWJyZWFrOwo+ID4gKwkJCS8qIEZhbGwgdGhyb3VnaCAqLwo+
+ID4gIAkJZGVmYXVsdDoKPiA+ICAJCQlyZXR1cm4gLUVJTlZBTDsKPiA+ICAJCX0KPiA+IC0tIAo+
+ID4gMi4yMC4xCj4gPiAKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
+dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
+bmZvL2xpbnV4LWFybS1rZXJuZWwK
