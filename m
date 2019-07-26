@@ -2,62 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AEFDE76069
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 10:09:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8626676098
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 26 Jul 2019 10:20:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c0XWI/dbd+rA+jaO21AKz6Et1fjqektNW+9iWWC4Zrc=; b=O6ELdwsHY3gS/R
-	aDxIKdTqr1H//P6B6ebWp6RZq/vmII7FBaIBE4E7WGf0Tdpg38SeqaZITwH3hogeQPZkAtihm9xX4
-	kd/yAp0jLWDRhhfldeR5dpjqXP2mODi3PBWfe+pQphorDUVWdJnc4MHNhOcAPh+fl+S55a9WknEiD
-	FW670Wbaaezgbn8poifXZcvYanimfo6AFx8q/ahV0YX0UUtJwIR3wlL0ucCquM1TNZ9F4EJvoLavv
-	TN6dyIchttMpq7R0yMZLgRnZ6tbTemY1mWfnHf04gpgZ+lAyDIG6U7JAfNBcYLbKN6tox1PZ0nKrB
-	cNeGCzpBuNQRPpeSYnRQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=4ktW19HCFlMJnrHXxcbeE0Ey9mqVbFU+jOGkn550qmQ=; b=O1D3dmTIvo09HkP4SIwBjSuTY
+	3RLvybV7/PjvPRZ9tfvKMndZNtH8Uf5bBHzmt+oUGu5THCAE9p6pYE+eMGr4q9kSjtyTk6cxqvEKF
+	AHR3rB8Mzy0TsU1PdSg4PGPkqbc52RaKzRf+Ab5Sp8Dcggwhk/zDR3HbVI+tvyaa7/krtSNOP+Wch
+	RYrhjA9fyg+Qvq0SUD+zpUe1X0mX/FCB0/oAX+TAdJeVSgkh4NjcYqmtVVBVhOj9VlqQ/jqx/MWpa
+	P+RvfbMtEK1QCdFmxKViZM1noTG0V8mJWRGYs2raL/CEFqg71y0DRe5CYY6KeL1NctFDi74B2sP8u
+	/TCU6kMTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqvI2-00086z-D4; Fri, 26 Jul 2019 08:09:22 +0000
-Received: from asavdk4.altibox.net ([109.247.116.15])
+	id 1hqvT6-0004wV-Ke; Fri, 26 Jul 2019 08:20:48 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqvHk-00085j-9k; Fri, 26 Jul 2019 08:09:06 +0000
-Received: from ravnborg.org (unknown [158.248.194.18])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1hqvSs-0004vh-SW
+ for linux-arm-kernel@lists.infradead.org; Fri, 26 Jul 2019 08:20:36 +0000
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id BFBEC6077A; Fri, 26 Jul 2019 08:20:32 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1564129232;
+ bh=65MgSqdz2cwGluQBrWzKC9i2ys2KqHizYGJpxJMlpW4=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=Inq66byupP164QyjGrEBcnS/t8T29G6gU0pJWkL40Dui5eciw55NAiYmb8beNB95y
+ SNDp5LiUjiefVV1BmvePJwEWieNXSqsdnpYYvgo0/w3ur0Ktv6rAmwfR8k/OU+B8Jh
+ F3Z/Eec7TSqpxJ5YsuYOOihGblVSjkRExL2YBO6s=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
+ version=3.4.0
+Received: from [10.79.136.27]
+ (blr-bdr-fw-01_globalnat_allzones-outside.qualcomm.com [103.229.18.19])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by asavdk4.altibox.net (Postfix) with ESMTPS id 1040C803BB;
- Fri, 26 Jul 2019 10:08:56 +0200 (CEST)
-Date: Fri, 26 Jul 2019 10:08:55 +0200
-From: Sam Ravnborg <sam@ravnborg.org>
-To: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-Subject: Re: [PATCH v5 01/24] drm: Include ddc adapter pointer in struct
- drm_connector
-Message-ID: <20190726080855.GA9143@ravnborg.org>
-References: <cover.1563960855.git.andrzej.p@collabora.com>
- <e82d6aca4f8abc95834c8a36c101d153518bb1ac.1563960855.git.andrzej.p@collabora.com>
- <20190726063759.GB6443@ravnborg.org>
+ (Authenticated sender: saiprakash.ranjan@smtp.codeaurora.org)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id E0BED602B7;
+ Fri, 26 Jul 2019 08:20:29 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1564129231;
+ bh=65MgSqdz2cwGluQBrWzKC9i2ys2KqHizYGJpxJMlpW4=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=jbyk3SjTCUTeUB1z3R1MOKw3HJ2oUgr//cWk6BLhbmTq8KRxCRp9MvgtCHtmJ6uuV
+ N8XMHgvcLZULTCiBohg9cCjGjWMSd8flQ0rBdJ+T7DqT8oPH0Dmd+eZhbjgD6mReyr
+ XHLiFuLIo6TtYBWuESeE2cuRqsHNjiuZSyyAzlv0=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org E0BED602B7
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: pdx-caf-mail.web.codeaurora.org; spf=none
+ smtp.mailfrom=saiprakash.ranjan@codeaurora.org
+Subject: Re: [Regression] Missing device nodes for ETR, ETF and STM after
+ CONFIG_UEVENT_HELPER=n
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+References: <cfe09a46-462f-633a-37c2-52f8bfc0ffb2@codeaurora.org>
+ <20190726070429.GA15714@kroah.com>
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+Message-ID: <165028a7-ff12-dd28-cc4c-57a3961dbb40@codeaurora.org>
+Date: Fri, 26 Jul 2019 13:50:27 +0530
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190726063759.GB6443@ravnborg.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.3 cv=VcLZwmh9 c=1 sm=1 tr=0
- a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
- a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=QX4gbG5DAAAA:8
- a=hD80L64hAAAA:8 a=e5mUnYsNAAAA:8 a=qxXKUbxsVWwuiIGZjhEA:9
- a=CjuIK1q_8ugA:10 a=AbAUZ8qAyYyZVLSsDulk:22 a=Vxmtnl_E_bksehYqCbjh:22
+In-Reply-To: <20190726070429.GA15714@kroah.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_010904_697420_612460AC 
-X-CRM114-Status: GOOD (  30.08  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190726_012034_960676_CE9575FF 
+X-CRM114-Status: GOOD (  20.53  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [109.247.116.15 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.145.29.96 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,180 +100,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Rodrigo Vivi <rodrigo.vivi@intel.com>, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org, Matthias Brugger <matthias.bgg@gmail.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Shawn Guo <shawnguo@kernel.org>, kernel@collabora.com,
- linux-samsung-soc@vger.kernel.org,
- Oleksandr Andrushchenko <oleksandr_andrushchenko@epam.com>,
- Sean Paul <sean@poorly.run>, Krzysztof Kozlowski <krzk@kernel.org>,
- Jonathan Hunter <jonathanh@nvidia.com>, David Airlie <airlied@linux.ie>,
- Chen-Yu Tsai <wens@csie.org>, Kukjin Kim <kgene@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>, linux-rockchip@lists.infradead.org,
- Thomas Zimmermann <tzimmermann@suse.de>, Jonas Karlman <jonas@kwiboo.se>,
- linux-arm-msm@vger.kernel.org, intel-gfx@lists.freedesktop.org,
- Jyri Sarha <jsarha@ti.com>, Alexios Zavras <alexios.zavras@intel.com>,
- Mamta Shukla <mamtashukla555@gmail.com>, linux-mediatek@lists.infradead.org,
- Dave Airlie <airlied@redhat.com>, linux-tegra@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>, Vincent Abriou <vincent.abriou@st.com>,
- linux-arm-kernel@lists.infradead.org, Jernej Skrabec <jernej.skrabec@siol.net>,
- amd-gfx@lists.freedesktop.org, Tomi Valkeinen <tomi.valkeinen@ti.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Seung-Woo Kim <sw0312.kim@samsung.com>,
- Douglas Anderson <dianders@chromium.org>, Todor Tomov <todor.tomov@linaro.org>,
- Kyungmin Park <kyungmin.park@samsung.com>, Huang Rui <ray.huang@amd.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Alex Deucher <alexander.deucher@amd.com>, freedreno@lists.freedesktop.org,
- Christian =?iso-8859-1?Q?K=F6nig?= <christian.koenig@amd.com>,
- Gerd Hoffmann <kraxel@redhat.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Geert Uytterhoeven <geert+renesas@glider.be>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Leo Yan <leo.yan@linaro.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Andrzej.
-
-After reading through the series a few more comments.
-
-1) The subject of this patch could be improved.
-   Consider something like:
-   drm: add ddc link in sysfs created by drm_connector
-
-   This spells out much better what the patch achieve.
-
-
-2) The purpsoe of drm_connector.ddc is to provide drm_connector with
-   info to create the symlink.
-   Yet in many follow-up patches the drivers are changed so
-   drm_connector.ddc is their only reference to struct i2c_adapter.
-
-   But the ownership is not clear here.
-   Who owns the reference to i2c_adapter - and who has the
-   responsibility to call put() on the adapter.
-
-   Looking at the conversions done then some drivers are converted
-   so they only use drm_connector.ddc, and other drivers have their own
-   reference to i2c_adapter.
-   The latter looks like the correct solution as the ownership of the
-   reference belongs to the driver and not drm_connector.
-
-   In other words - a conversion where the drivers only assigned
-   drm_connector.ddc (using drm_connector_init_with_ddc()),
-   seems like a more clean design that does not mix up ownership.
-   This is at least how I see it.
-   I did not take this type of look at the patches before. Sorry
-   for providing feedback this late.
-
-	Sam
-
-On Fri, Jul 26, 2019 at 08:37:59AM +0200, Sam Ravnborg wrote:
-> Hi Andrzej.
+On 7/26/2019 12:34 PM, Greg Kroah-Hartman wrote:
+> On Fri, Jul 26, 2019 at 11:49:19AM +0530, Sai Prakash Ranjan wrote:
+>> Hi,
+>>
+>> When trying to test my coresight patches, I found that etr,etf and stm
+>> device nodes are missing from /dev.
 > 
-> Patch looks good, but one kernel-doc detail.
+> I have no idea what those device nodes are.
 > 
-> On Wed, Jul 24, 2019 at 03:59:23PM +0200, Andrzej Pietrasiewicz wrote:
-> > Add generic code which creates symbolic links in sysfs, pointing to ddc
-> > interface used by a particular video output. For example:
-> > 
-> > ls -l /sys/class/drm/card0-HDMI-A-1/ddc
-> > lrwxrwxrwx 1 root root 0 Jun 24 10:42 /sys/class/drm/card0-HDMI-A-1/ddc \
-> > 	-> ../../../../soc/13880000.i2c/i2c-2
-> > 
-> > This makes it easy for user to associate a display with its ddc adapter
-> > and use e.g. ddcutil to control the chosen monitor.
-> > 
-> > This patch adds an i2c_adapter pointer to struct drm_connector. Particular
-> > drivers can then use it instead of using their own private instance. If a
-> > connector contains a ddc, then create a symbolic link in sysfs.
-> > 
-> > Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-> > Acked-by: Daniel Vetter <daniel.vetter@ffwll.ch>
-> > Reviewed-by: Andrzej Hajda <a.hajda@samsung.com>
-> > ---
-> >  drivers/gpu/drm/drm_sysfs.c |  8 ++++++++
-> >  include/drm/drm_connector.h | 11 +++++++++++
-> >  2 files changed, 19 insertions(+)
-> > 
-> > diff --git a/drivers/gpu/drm/drm_sysfs.c b/drivers/gpu/drm/drm_sysfs.c
-> > index ad10810bc972..e962a9d45f7e 100644
-> > --- a/drivers/gpu/drm/drm_sysfs.c
-> > +++ b/drivers/gpu/drm/drm_sysfs.c
-> > @@ -14,6 +14,7 @@
-> >  #include <linux/err.h>
-> >  #include <linux/export.h>
-> >  #include <linux/gfp.h>
-> > +#include <linux/i2c.h>
-> >  #include <linux/kdev_t.h>
-> >  #include <linux/slab.h>
-> >  
-> > @@ -294,6 +295,9 @@ int drm_sysfs_connector_add(struct drm_connector *connector)
-> >  	/* Let userspace know we have a new connector */
-> >  	drm_sysfs_hotplug_event(dev);
-> >  
-> > +	if (connector->ddc)
-> > +		return sysfs_create_link(&connector->kdev->kobj,
-> > +				 &connector->ddc->dev.kobj, "ddc");
-> >  	return 0;
-> >  }
-> >  
-> > @@ -301,6 +305,10 @@ void drm_sysfs_connector_remove(struct drm_connector *connector)
-> >  {
-> >  	if (!connector->kdev)
-> >  		return;
-> > +
-> > +	if (connector->ddc)
-> > +		sysfs_remove_link(&connector->kdev->kobj, "ddc");
-> > +
-> >  	DRM_DEBUG("removing \"%s\" from sysfs\n",
-> >  		  connector->name);
-> >  
-> > diff --git a/include/drm/drm_connector.h b/include/drm/drm_connector.h
-> > index 4c30d751487a..33a6fff85fdb 100644
-> > --- a/include/drm/drm_connector.h
-> > +++ b/include/drm/drm_connector.h
-> > @@ -41,6 +41,7 @@ struct drm_property;
-> >  struct drm_property_blob;
-> >  struct drm_printer;
-> >  struct edid;
-> > +struct i2c_adapter;
-> >  
-> >  enum drm_connector_force {
-> >  	DRM_FORCE_UNSPECIFIED,
-> > @@ -1311,6 +1312,16 @@ struct drm_connector {
-> >  	 * [0]: progressive, [1]: interlaced
-> >  	 */
-> >  	int audio_latency[2];
-> > +
-> > +	/**
-> > +	 * @ddc: associated ddc adapter.
-> > +	 * A connector usually has its associated ddc adapter. If a driver uses
-> > +	 * this field, then an appropriate symbolic link is created in connector
-> > +	 * sysfs directory to make it easy for the user to tell which i2c
-> > +	 * adapter is for a particular display.
-> > +	 */
-> > +	struct i2c_adapter *ddc;
+>> Bisection gives this as the bad commit.
+>>
+>> 1be01d4a57142ded23bdb9e0c8d9369e693b26cc is the first bad commit
+>> commit 1be01d4a57142ded23bdb9e0c8d9369e693b26cc
+>> Author: Geert Uytterhoeven <geert+renesas@glider.be>
+>> Date:   Thu Mar 14 12:13:50 2019 +0100
+>>
+>>      driver: base: Disable CONFIG_UEVENT_HELPER by default
+>>
+>>      Since commit 7934779a69f1184f ("Driver-Core: disable /sbin/hotplug by
+>>      default"), the help text for the /sbin/hotplug fork-bomb says
+>>      "This should not be used today [...] creates a high system load, or
+>>      [...] out-of-memory situations during bootup".  The rationale for this
+>>      was that no recent mainstream system used this anymore (in 2010!).
+>>
+>>      A few years later, the complete uevent helper support was made optional
+>>      in commit 86d56134f1b67d0c ("kobject: Make support for uevent_helper
+>>      optional.").  However, if was still left enabled by default, to support
+>>      ancient userland.
+>>
+>>      Time passed by, and nothing should use this anymore, so it can be
+>>      disabled by default.
+>>
+>>      Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+>>      Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+>>
+>>   drivers/base/Kconfig | 1 -
+>>   1 file changed, 1 deletion(-)
+>>
+>>
+>> Any idea on this?
 > 
-> To help the reader could you add in the above a reference to
-> drm_connector_init_with_ddc() sp the reader is told how to init this
-> field.
+> That means that who ever created those device nodes is relying on udev
+> to do this, and is not doing the correct thing within the kernel and
+> using devtmpfs.
 > 
-> Either add it in PATCH 2 - or merge patch 1 and 2.
+> Any pointers to where in the kernel those devices are trying to be
+> created?
 > 
-> 	Sam
-> 
-> > +
-> >  	/**
-> >  	 * @null_edid_counter: track sinks that give us all zeros for the EDID.
-> >  	 * Needed to workaround some HW bugs where we get all 0s
-> > -- 
-> > 2.17.1
-> _______________________________________________
-> dri-devel mailing list
-> dri-devel@lists.freedesktop.org
-> https://lists.freedesktop.org/mailman/listinfo/dri-devel
+
+Somewhere in drivers/hwtracing/coresight/* probably. I am not sure,
+Mathieu/Suzuki would be able to point you to the exact code.
+
+Also just to add on some more details, I am using *initramfs*
+
+Thanks,
+Sai
+
+-- 
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
+of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
