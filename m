@@ -2,35 +2,35 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A8B97777AF
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Jul 2019 10:37:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B86A777A4
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Jul 2019 10:34:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0z9f5WI/4kPW8mg30JY2PfzuzR6Xwj4VgHfcPCH8Phw=; b=V0M7r7Ps1IF3p9
-	3rwdcOQ3nep0mP7nRG4CRxCuWWMSlbfZFy2CEtjtv21O6pbN4ZSiyh0isTnvm4aIqdw8CctACGu9/
-	p8k8aNIld0PVg4dxVRpZuQ+Gp1XR+mh5IO42+aS1/E25ONRp8ruVDRtSMj0mIEXZhZhCA3LVuqQAg
-	owaE0MMuO2wjH/sCDzr7hHiYCuLuYhm6a1ZEugiMgOqbpTPUap0qXI6cgK7Q2VUN1GOiiWuE5dGfd
-	lMZtgND1nbX6mbon2o6UoJNB7r7HgHlZQASxcDPj9L8oaZ8KG0oKRrhVrXGC9ycvTf8vmcarPrHF0
-	Nm/zvArb0zjuVlQRdMfA==;
+	List-Owner; bh=tzgRgvoq1zrUE6xZINPUtSpyGOsg81IPRpH4sydIyaE=; b=SIpQglHhu9+ZxT
+	fxnigPjFH4xSckQw3o5FYatI1kiyLpWRxF4+shuEGjYUqtmr9GhK86befTDvSRjmV7rWXD/Btds3A
+	2OJgnjNTJA7+u5zol43ODUvvO/qz25Tj1bWgYHrMRhXKx9bYoW446+3wnNus+KYZa5xUi4hySjT46
+	xhHbnLnakCIKBBijzRkCa1sW3w4gwSVkEeCtvM1RkgMjIiua2UEfQnKZd1qu0kAMxs4gYZDoUdPjP
+	vDGXMKY1BVasMsnpuOwb1KDgno72wW6wmmwyXpVSaGgEhGMoOKDJ+xi0YeVnc6ii5AR5SEH/IM3oh
+	xQIvwEnAcJ5L3w5LDH7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hrICQ-0008JA-QX; Sat, 27 Jul 2019 08:37:06 +0000
-Received: from mail-eopbgr810050.outbound.protection.outlook.com
- ([40.107.81.50] helo=NAM01-BY2-obe.outbound.protection.outlook.com)
+	id 1hrI9k-0005Zg-Dh; Sat, 27 Jul 2019 08:34:20 +0000
+Received: from mail-eopbgr810055.outbound.protection.outlook.com
+ ([40.107.81.55] helo=NAM01-BY2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hrI9W-0005Xl-SY
- for linux-arm-kernel@lists.infradead.org; Sat, 27 Jul 2019 08:34:09 +0000
+ id 1hrI9V-0005Xg-4Y
+ for linux-arm-kernel@lists.infradead.org; Sat, 27 Jul 2019 08:34:06 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Ctzc6nFYkysXBu9oBZIgN1hEMb9pPjLFUFXtrkmBSTH+/xCSGO6pjFtCnTsRDvt9biC9E9i2HMPcOKPl4YeLRY1qcn4T0sl5Kt3RIOwkEwwTWio73F78uzAYkLoSYT2JMzzOh/76Gwdti+kQk5Va8RgqY8Fld1M+sGHb4nd8kZarw5oeIzcPvFYSrjJIV6938PRaIdlGKpe+qBtKer65uk9mLPHV/N3qvc77i4B4Uwj3YN/03JvtAQ6wjxEolX18PycK5Q8A1D6oDCMNelr1V59VS876pptD8tKvkhDpDESxygoJFYRC0n/xZD5VyVRG3+XgGH/mO3b2MzpeiLbjhQ==
+ b=CH/Q4ZwN3ZVMqbLIvDTx7h7nOfTWUjunLBPbJvGnqV30Zkz7SAmP+j8YA48k+zJSVPGQEcXAbzLDIpwYbdWyk9uxbs4DRcagLDtj/EQ6TidrHMBhpsjfuAqAGf0lgYl5AEvg4sBStV9lOxcmhIJv1Q+xRrCyXHUTn1aShp9P+wsGwTUj5rueDk/BaTyQAWhb+nepJUPzjLtY7mjoQAOqsvBRdYj6eE0jdMVjYR3ivZjRckdGfZWL7c+8JJ7mxvk8sO7GPkCY2M1nyH1AlKwy4ol2+qENC+CNjAN4BQ65hNz8AvI4eOeQBQ5ei5cQELclOeYZ5Xbae0mvEZoH4RFagA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ZD8n3TGriMzcpcrhGB91pLDFlBdBYa6GDHYnVg3OJqA=;
- b=iqVy/6W9whKTwCkWOFvZyzI3BdSX8thmIwHVkkGnVXDo0ynQ0MAAiqlY99YLqxtpGcBS++YtZ6ysFig3WVwDsnhQeuZlXeN/rIBp5FTd2tM5I/wt4K+xi+5n5gral7clazm/7v/BFiBETAmkrm+rV9ssOPGzWAmEuISLejGdbAonmN8NhlVU8dCpD0r4wFpNFgTPhViVi94xnrOd6Mx/OLELBJXLAs19yan6J/EsPZWY2VjFTh7T6knDMw4XY7ePp3v46OmLHn4ary/tY7bQBU8F4X5nVVh0O8S6TW2ieUMFLJm0QX0by0nhYRfYm298pRfve9OB4C1LIHshH/VYOQ==
+ bh=1lFFDBcQztCPOtm2f0DI1asaG6sJTxzW8WDwV+OwG5g=;
+ b=b7RtJgabrdvntptePeB62AjeC9DsNIedhfv8edUz2MuECzBn1nz5o1IbW/KY1v9GEZ0CRAk4AyVmxJp2gxt/yeXhdopuGGyC63aEftyH6x18Ow+73SNlPX1NccsrHEyGFm9AFudDgAzJEFPsGJqXratFsxChTDLEwBG+Z0C1fNP2hf+xmu4h4Yp479qEjBau5NrzkDgjugWwzOGnIImCgy9mPDK1Cdb+tYgNeb2cOpzhJgh0OB23xq800Z/I+EUpdyoG1igqbrywaapaMSJI28zJG9l+ejLEcC1TSvjnG952nbNUyipZ/70MSzOx5rx9sslHLPxvaEkdiLPTcoAupQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass (sender ip is
  149.199.80.198) smtp.rcpttodomain=arndb.de
  smtp.mailfrom=xilinx.com;dmarc=bestguesspass action=none
@@ -38,18 +38,18 @@ ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass (sender ip is
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ZD8n3TGriMzcpcrhGB91pLDFlBdBYa6GDHYnVg3OJqA=;
- b=Y2AzigM2X497grt9cjNcqnEeTy09twzR9u7pxaZmm4BwtZCo5oK4TWXcjvgKuKGXPUuQt1ful8OCrN/OgqIyuxLEWB6cQjDG2wODjYVB4zBnEycd7MF88QLkFXLIywNzVF+9Phx93Is9pOALHwsouNGcMgSV0GsnvfjYuev754E=
+ bh=1lFFDBcQztCPOtm2f0DI1asaG6sJTxzW8WDwV+OwG5g=;
+ b=YRV0yeTY7gYyO4SORXjL50rXuxamRhwjKAaKLrx1G+nZJ+876vrec7SVDbfM0dgRHZM06Jsu5m4Pj1yrCMPleKT63ywhWQoNpbUH1pwCIOByt80OFV1I6PGqRi66vjoyf5gUUgZcKsCl+BCBGX04QJ2+GNDtFcIoJK5vunnhcv8=
 Received: from DM6PR02CA0047.namprd02.prod.outlook.com (2603:10b6:5:177::24)
- by BL0PR02MB4756.namprd02.prod.outlook.com (2603:10b6:208:5d::13) with
+ by BYAPR02MB5111.namprd02.prod.outlook.com (2603:10b6:a03:70::20) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2094.16; Sat, 27 Jul
- 2019 08:34:03 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2115.10; Sat, 27 Jul
+ 2019 08:34:01 +0000
 Received: from BL2NAM02FT025.eop-nam02.prod.protection.outlook.com
  (2a01:111:f400:7e46::204) by DM6PR02CA0047.outlook.office365.com
  (2603:10b6:5:177::24) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.2115.10 via Frontend
- Transport; Sat, 27 Jul 2019 08:34:03 +0000
+ Transport; Sat, 27 Jul 2019 08:34:01 +0000
 Authentication-Results: spf=pass (sender IP is 149.199.80.198)
  smtp.mailfrom=xilinx.com; arndb.de; dkim=none (message not signed)
  header.d=none;arndb.de; dmarc=bestguesspass action=none
@@ -60,7 +60,7 @@ Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
 Received: from xir-pvapexch01.xlnx.xilinx.com (149.199.80.198) by
  BL2NAM02FT025.mail.protection.outlook.com (10.152.77.151) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.2115.10 via Frontend Transport; Sat, 27 Jul 2019 08:34:02 +0000
+ 15.20.2115.10 via Frontend Transport; Sat, 27 Jul 2019 08:34:00 +0000
 Received: from xir-pvapexch01.xlnx.xilinx.com (172.21.17.15) by
  xir-pvapexch01.xlnx.xilinx.com (172.21.17.15) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
@@ -71,13 +71,13 @@ Received: from smtp.xilinx.com (172.21.105.197) by
 Received: from [149.199.110.15] (port=40508 helo=xirdraganc40.xilinx.com)
  by smtp.xilinx.com with esmtp (Exim 4.90)
  (envelope-from <dragan.cvetic@xilinx.com>)
- id 1hrI9P-00027X-Ta; Sat, 27 Jul 2019 09:33:59 +0100
+ id 1hrI9P-00027X-UP; Sat, 27 Jul 2019 09:33:59 +0100
 From: Dragan Cvetic <dragan.cvetic@xilinx.com>
 To: <arnd@arndb.de>, <gregkh@linuxfoundation.org>, <michal.simek@xilinx.com>, 
  <linux-arm-kernel@lists.infradead.org>
-Subject: [PATCH V9 3/8] misc: xilinx_sdfec: Add ability to configure LDPC
-Date: Sat, 27 Jul 2019 09:33:53 +0100
-Message-ID: <1564216438-322406-4-git-send-email-dragan.cvetic@xilinx.com>
+Subject: [PATCH V9 4/8] misc: xilinx_sdfec: Add ability to get/set config
+Date: Sat, 27 Jul 2019 09:33:54 +0100
+Message-ID: <1564216438-322406-5-git-send-email-dragan.cvetic@xilinx.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1564216438-322406-1-git-send-email-dragan.cvetic@xilinx.com>
 References: <1564216438-322406-1-git-send-email-dragan.cvetic@xilinx.com>
@@ -86,39 +86,39 @@ X-EOPAttributedMessage: 0
 X-MS-Office365-Filtering-HT: Tenant
 X-Forefront-Antispam-Report: CIP:149.199.80.198; IPV:CAL; CTRY:IE; EFV:NLI;
  SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(396003)(346002)(39860400002)(136003)(2980300002)(189003)(199004)(47776003)(36906005)(7696005)(30864003)(54906003)(2906002)(316002)(110136005)(246002)(76176011)(36756003)(106002)(44832011)(70586007)(48376002)(28376004)(26826003)(60926002)(16586007)(70206006)(186003)(26005)(8676002)(51416003)(486006)(14444005)(7636002)(305945005)(2616005)(8936002)(50226002)(4326008)(476003)(71366001)(426003)(11346002)(446003)(5660300002)(956004)(6666004)(107886003)(356004)(9786002)(336012)(2201001)(76130400001)(50466002)(126002)(478600001)(102446001)(461764006);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BL0PR02MB4756; H:xir-pvapexch01.xlnx.xilinx.com;
+ SFS:(10009020)(4636009)(136003)(39860400002)(396003)(376002)(346002)(2980300002)(189003)(199004)(28376004)(246002)(9786002)(51416003)(50466002)(7696005)(76130400001)(50226002)(48376002)(5660300002)(14444005)(71366001)(2201001)(2906002)(106002)(186003)(26826003)(60926002)(76176011)(446003)(26005)(356004)(6666004)(11346002)(70586007)(8676002)(956004)(36756003)(2616005)(16586007)(336012)(54906003)(70206006)(110136005)(36906005)(478600001)(426003)(316002)(7636002)(305945005)(44832011)(107886003)(47776003)(486006)(126002)(476003)(8936002)(4326008)(102446001)(461764006);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR02MB5111; H:xir-pvapexch01.xlnx.xilinx.com;
  FPR:; SPF:Pass; LANG:en; PTR:unknown-80-198.xilinx.com; MX:1; A:1; 
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 06e24f7f-b805-40b3-a402-08d7126d2e1f
+X-MS-Office365-Filtering-Correlation-Id: a3150478-9243-43bb-0a25-08d7126d2ce7
 X-Microsoft-Antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(4709080)(1401327)(2017052603328);
- SRVR:BL0PR02MB4756; 
-X-MS-TrafficTypeDiagnostic: BL0PR02MB4756:
-X-Microsoft-Antispam-PRVS: <BL0PR02MB47562909F875ABE0F625795DCBC30@BL0PR02MB4756.namprd02.prod.outlook.com>
+ SRVR:BYAPR02MB5111; 
+X-MS-TrafficTypeDiagnostic: BYAPR02MB5111:
+X-Microsoft-Antispam-PRVS: <BYAPR02MB5111F311A326A5D6104EDB85CBC30@BYAPR02MB5111.namprd02.prod.outlook.com>
 X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:1923;
+X-MS-Oob-TLC-OOBClassifiers: OLM:8273;
 X-Forefront-PRVS: 01110342A5
 X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Message-Info: aX5LohCVQl1hFa7Ul0/L1pq3KZ65aMqwV/s8hbErz9wJg7BrejHBVvmpAl+8qjQBD+Gzr5RAM0tZlEcebkpMd6Mx+5hNnQenCAahE/eQ3mxzeVg2qk3YL3w4a6iChGdPifuRtSd+BUyB2mAh8n7em1v6iD29B/eNmbDLXQfWT1+Hm5X2wjqoyJlygXweeFB87Gz7iSXkHPvgTZ07J0vqDaesxXkwJRaEyS0kuAVZNnBgyBtVvqBFXVQXUXZyfFbgTeuNf2Zb1XL8F0QhGqX7tUECE3bJGIZPpUbzWlgEgO7dS13lmUK+Jb+MNsYylvgLWeFMs+f+fbp0cLVaXjTqVRvAP5NVGN1z8f6OKNjyi7+ZFaUYZQmMdUVz4RJS5hC4TOGuhobwyUx50wNHbNAf1oV7NyLvnTzVD4jsH+G8cDw=
+X-Microsoft-Antispam-Message-Info: s5W4leV9VrF/kHgBetmQ3kTb0CCd/XeaRuMxLNkt7bCndEDfmWuWEyRC1yJCOx1ZCkHQpxZIcU8CKMOO4mm05ZCQSP4zd4/mWyAdb//AMMc8gpZnGfSN+OiEL/j2Y8xSK74srHtfpf2XlhgPRE5q9mRxA0mad77AxDkVIWawt01hfUUzVHRbB+uHMi1SF/foOvK8+CdsqpE67qPFptOVeN4wl8IRNT+vzXvkZU7JyCtmRPdaQRu8FyVcyTCFz+dLBdAvTVJvDxIwsQq1hCdrZQXknbYUl6ryEkjBbQWnlKHEen2c1UAQeeU/GgDlTUUcyVQiJAqeJmJJFY3lTXgqik0csNN5D9Hr8kQWn1Aliy5rDslD3rJV50osEZW/f9lxc9MGo6pmSZ8l2qW9++Ab+7URKBxBVxeOvmeCN8s+MVI=
 X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Jul 2019 08:34:02.9143 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 06e24f7f-b805-40b3-a402-08d7126d2e1f
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Jul 2019 08:34:00.8667 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: a3150478-9243-43bb-0a25-08d7126d2ce7
 X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.80.198];
  Helo=[xir-pvapexch01.xlnx.xilinx.com]
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL0PR02MB4756
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR02MB5111
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190727_013406_927973_B2C29E40 
-X-CRM114-Status: GOOD (  14.44  )
+X-CRM114-CacheID: sfid-20190727_013405_187246_44509A43 
+X-CRM114-Status: GOOD (  13.25  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.81.50 listed in list.dnswl.org]
+ no trust [40.107.81.55 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -142,503 +142,219 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the capability to configure LDPC mode via the ioctl
-XSDFEC_ADD_LDPC_CODE_PARAMS.
+- Add capability to get SD-FEC config data using ioctl
+XSDFEC_GET_CONFIG.
+
+- Add capability to set SD-FEC data order using ioctl
+SDFEC_SET_ORDER.
+
+- Add capability to set SD-FEC bypass option using ioctl
+XSDFEC_SET_BYPASS.
+
+- Add capability to set SD-FEC active state using ioctl
+XSDFEC_IS_ACTIVE.
 
 Tested-by: Dragan Cvetic <dragan.cvetic@xilinx.com>
 Signed-off-by: Derek Kiernan <derek.kiernan@xilinx.com>
 Signed-off-by: Dragan Cvetic <dragan.cvetic@xilinx.com>
 ---
- drivers/misc/xilinx_sdfec.c      | 324 +++++++++++++++++++++++++++++++++++++++
- include/uapi/misc/xilinx_sdfec.h |  98 ++++++++++++
- 2 files changed, 422 insertions(+)
+ drivers/misc/xilinx_sdfec.c      | 88 ++++++++++++++++++++++++++++++++++++++++
+ include/uapi/misc/xilinx_sdfec.h | 57 ++++++++++++++++++++++++++
+ 2 files changed, 145 insertions(+)
 
 diff --git a/drivers/misc/xilinx_sdfec.c b/drivers/misc/xilinx_sdfec.c
-index d3dba7e..9be4de0 100644
+index 9be4de0..579f236 100644
 --- a/drivers/misc/xilinx_sdfec.c
 +++ b/drivers/misc/xilinx_sdfec.c
-@@ -20,6 +20,7 @@
- #include <linux/slab.h>
- #include <linux/clk.h>
- #include <linux/compat.h>
-+#include <linux/highmem.h>
- 
- #include <uapi/misc/xilinx_sdfec.h>
- 
-@@ -113,6 +114,57 @@ static struct mutex dev_idr_lock;
- #define XSDFEC_TURBO_SCALE_BIT_POS (8)
- #define XSDFEC_TURBO_SCALE_MAX (15)
- 
-+/* REG0 Register */
-+#define XSDFEC_LDPC_CODE_REG0_ADDR_BASE (0x2000)
-+#define XSDFEC_LDPC_CODE_REG0_ADDR_HIGH (0x27F0)
-+#define XSDFEC_REG0_N_MIN (4)
-+#define XSDFEC_REG0_N_MAX (32768)
-+#define XSDFEC_REG0_N_MUL_P (256)
-+#define XSDFEC_REG0_N_LSB (0)
-+#define XSDFEC_REG0_K_MIN (2)
-+#define XSDFEC_REG0_K_MAX (32766)
-+#define XSDFEC_REG0_K_MUL_P (256)
-+#define XSDFEC_REG0_K_LSB (16)
-+
-+/* REG1 Register */
-+#define XSDFEC_LDPC_CODE_REG1_ADDR_BASE (0x2004)
-+#define XSDFEC_LDPC_CODE_REG1_ADDR_HIGH (0x27f4)
-+#define XSDFEC_REG1_PSIZE_MIN (2)
-+#define XSDFEC_REG1_PSIZE_MAX (512)
-+#define XSDFEC_REG1_NO_PACKING_MASK (0x400)
-+#define XSDFEC_REG1_NO_PACKING_LSB (10)
-+#define XSDFEC_REG1_NM_MASK (0xFF800)
-+#define XSDFEC_REG1_NM_LSB (11)
-+#define XSDFEC_REG1_BYPASS_MASK (0x100000)
-+
-+/* REG2 Register */
-+#define XSDFEC_LDPC_CODE_REG2_ADDR_BASE (0x2008)
-+#define XSDFEC_LDPC_CODE_REG2_ADDR_HIGH (0x27f8)
-+#define XSDFEC_REG2_NLAYERS_MIN (1)
-+#define XSDFEC_REG2_NLAYERS_MAX (256)
-+#define XSDFEC_REG2_NNMQC_MASK (0xFFE00)
-+#define XSDFEC_REG2_NMQC_LSB (9)
-+#define XSDFEC_REG2_NORM_TYPE_MASK (0x100000)
-+#define XSDFEC_REG2_NORM_TYPE_LSB (20)
-+#define XSDFEC_REG2_SPECIAL_QC_MASK (0x200000)
-+#define XSDFEC_REG2_SPEICAL_QC_LSB (21)
-+#define XSDFEC_REG2_NO_FINAL_PARITY_MASK (0x400000)
-+#define XSDFEC_REG2_NO_FINAL_PARITY_LSB (22)
-+#define XSDFEC_REG2_MAX_SCHEDULE_MASK (0x1800000)
-+#define XSDFEC_REG2_MAX_SCHEDULE_LSB (23)
-+
-+/* REG3 Register */
-+#define XSDFEC_LDPC_CODE_REG3_ADDR_BASE (0x200C)
-+#define XSDFEC_LDPC_CODE_REG3_ADDR_HIGH (0x27FC)
-+#define XSDFEC_REG3_LA_OFF_LSB (8)
-+#define XSDFEC_REG3_QC_OFF_LSB (16)
-+
-+#define XSDFEC_LDPC_REG_JUMP (0x10)
-+#define XSDFEC_REG_WIDTH_JUMP (4)
-+
-+/* The maximum number of pinned pages */
-+#define MAX_NUM_PAGES ((XSDFEC_QC_TABLE_DEPTH / PAGE_SIZE) + 1)
-+
- /**
-  * struct xsdfec_clks - For managing SD-FEC clocks
-  * @core_clk: Main processing clock for core
-@@ -270,6 +322,275 @@ static int xsdfec_get_turbo(struct xsdfec_dev *xsdfec, void __user *arg)
- 	return err;
+@@ -273,6 +273,17 @@ static void update_config_from_hw(struct xsdfec_dev *xsdfec)
+ 		xsdfec->state = XSDFEC_STOPPED;
  }
  
-+static int xsdfec_reg0_write(struct xsdfec_dev *xsdfec, u32 n, u32 k, u32 psize,
-+			     u32 offset)
++static int xsdfec_get_config(struct xsdfec_dev *xsdfec, void __user *arg)
 +{
-+	u32 wdata;
++	int err;
 +
-+	if (n < XSDFEC_REG0_N_MIN || n > XSDFEC_REG0_N_MAX ||
-+	    (n > XSDFEC_REG0_N_MUL_P * psize) || n <= k || ((n % psize) != 0)) {
-+		dev_dbg(xsdfec->dev, "N value is not in range");
-+		return -EINVAL;
-+	}
-+	n <<= XSDFEC_REG0_N_LSB;
++	err = copy_to_user(arg, &xsdfec->config, sizeof(xsdfec->config));
++	if (err)
++		err = -EFAULT;
 +
-+	if (k < XSDFEC_REG0_K_MIN || k > XSDFEC_REG0_K_MAX ||
-+	    (k > XSDFEC_REG0_K_MUL_P * psize) || ((k % psize) != 0)) {
-+		dev_dbg(xsdfec->dev, "K value is not in range");
-+		return -EINVAL;
-+	}
-+	k = k << XSDFEC_REG0_K_LSB;
-+	wdata = k | n;
-+
-+	if (XSDFEC_LDPC_CODE_REG0_ADDR_BASE + (offset * XSDFEC_LDPC_REG_JUMP) >
-+	    XSDFEC_LDPC_CODE_REG0_ADDR_HIGH) {
-+		dev_dbg(xsdfec->dev, "Writing outside of LDPC reg0 space 0x%x",
-+			XSDFEC_LDPC_CODE_REG0_ADDR_BASE +
-+				(offset * XSDFEC_LDPC_REG_JUMP));
-+		return -EINVAL;
-+	}
-+	xsdfec_regwrite(xsdfec,
-+			XSDFEC_LDPC_CODE_REG0_ADDR_BASE +
-+				(offset * XSDFEC_LDPC_REG_JUMP),
-+			wdata);
-+	return 0;
++	return err;
 +}
 +
-+static int xsdfec_reg1_write(struct xsdfec_dev *xsdfec, u32 psize,
-+			     u32 no_packing, u32 nm, u32 offset)
+ static int xsdfec_set_turbo(struct xsdfec_dev *xsdfec, void __user *arg)
+ {
+ 	struct xsdfec_turbo turbo;
+@@ -591,6 +602,71 @@ static int xsdfec_add_ldpc(struct xsdfec_dev *xsdfec, void __user *arg)
+ 	return ret;
+ }
+ 
++static int xsdfec_set_order(struct xsdfec_dev *xsdfec, void __user *arg)
 +{
-+	u32 wdata;
++	bool order_invalid;
++	enum xsdfec_order order;
++	int err;
 +
-+	if (psize < XSDFEC_REG1_PSIZE_MIN || psize > XSDFEC_REG1_PSIZE_MAX) {
-+		dev_dbg(xsdfec->dev, "Psize is not in range");
++	err = get_user(order, (enum xsdfec_order *)arg);
++	if (err)
++		return -EFAULT;
++
++	order_invalid = (order != XSDFEC_MAINTAIN_ORDER) &&
++			(order != XSDFEC_OUT_OF_ORDER);
++	if (order_invalid)
 +		return -EINVAL;
-+	}
-+
-+	if (no_packing != 0 && no_packing != 1)
-+		dev_dbg(xsdfec->dev, "No-packing bit register invalid");
-+	no_packing = ((no_packing << XSDFEC_REG1_NO_PACKING_LSB) &
-+		      XSDFEC_REG1_NO_PACKING_MASK);
-+
-+	if (nm & ~(XSDFEC_REG1_NM_MASK >> XSDFEC_REG1_NM_LSB))
-+		dev_dbg(xsdfec->dev, "NM is beyond 10 bits");
-+	nm = (nm << XSDFEC_REG1_NM_LSB) & XSDFEC_REG1_NM_MASK;
-+
-+	wdata = nm | no_packing | psize;
-+	if (XSDFEC_LDPC_CODE_REG1_ADDR_BASE + (offset * XSDFEC_LDPC_REG_JUMP) >
-+	    XSDFEC_LDPC_CODE_REG1_ADDR_HIGH) {
-+		dev_dbg(xsdfec->dev, "Writing outside of LDPC reg1 space 0x%x",
-+			XSDFEC_LDPC_CODE_REG1_ADDR_BASE +
-+				(offset * XSDFEC_LDPC_REG_JUMP));
-+		return -EINVAL;
-+	}
-+	xsdfec_regwrite(xsdfec,
-+			XSDFEC_LDPC_CODE_REG1_ADDR_BASE +
-+				(offset * XSDFEC_LDPC_REG_JUMP),
-+			wdata);
-+	return 0;
-+}
-+
-+static int xsdfec_reg2_write(struct xsdfec_dev *xsdfec, u32 nlayers, u32 nmqc,
-+			     u32 norm_type, u32 special_qc, u32 no_final_parity,
-+			     u32 max_schedule, u32 offset)
-+{
-+	u32 wdata;
-+
-+	if (nlayers < XSDFEC_REG2_NLAYERS_MIN ||
-+	    nlayers > XSDFEC_REG2_NLAYERS_MAX) {
-+		dev_dbg(xsdfec->dev, "Nlayers is not in range");
-+		return -EINVAL;
-+	}
-+
-+	if (nmqc & ~(XSDFEC_REG2_NNMQC_MASK >> XSDFEC_REG2_NMQC_LSB))
-+		dev_dbg(xsdfec->dev, "NMQC exceeds 11 bits");
-+	nmqc = (nmqc << XSDFEC_REG2_NMQC_LSB) & XSDFEC_REG2_NNMQC_MASK;
-+
-+	if (norm_type > 1)
-+		dev_dbg(xsdfec->dev, "Norm type is invalid");
-+	norm_type = ((norm_type << XSDFEC_REG2_NORM_TYPE_LSB) &
-+		     XSDFEC_REG2_NORM_TYPE_MASK);
-+	if (special_qc > 1)
-+		dev_dbg(xsdfec->dev, "Special QC in invalid");
-+	special_qc = ((special_qc << XSDFEC_REG2_SPEICAL_QC_LSB) &
-+		      XSDFEC_REG2_SPECIAL_QC_MASK);
-+
-+	if (no_final_parity > 1)
-+		dev_dbg(xsdfec->dev, "No final parity check invalid");
-+	no_final_parity =
-+		((no_final_parity << XSDFEC_REG2_NO_FINAL_PARITY_LSB) &
-+		 XSDFEC_REG2_NO_FINAL_PARITY_MASK);
-+	if (max_schedule &
-+	    ~(XSDFEC_REG2_MAX_SCHEDULE_MASK >> XSDFEC_REG2_MAX_SCHEDULE_LSB))
-+		dev_dbg(xsdfec->dev, "Max Schdule exceeds 2 bits");
-+	max_schedule = ((max_schedule << XSDFEC_REG2_MAX_SCHEDULE_LSB) &
-+			XSDFEC_REG2_MAX_SCHEDULE_MASK);
-+
-+	wdata = (max_schedule | no_final_parity | special_qc | norm_type |
-+		 nmqc | nlayers);
-+
-+	if (XSDFEC_LDPC_CODE_REG2_ADDR_BASE + (offset * XSDFEC_LDPC_REG_JUMP) >
-+	    XSDFEC_LDPC_CODE_REG2_ADDR_HIGH) {
-+		dev_dbg(xsdfec->dev, "Writing outside of LDPC reg2 space 0x%x",
-+			XSDFEC_LDPC_CODE_REG2_ADDR_BASE +
-+				(offset * XSDFEC_LDPC_REG_JUMP));
-+		return -EINVAL;
-+	}
-+	xsdfec_regwrite(xsdfec,
-+			XSDFEC_LDPC_CODE_REG2_ADDR_BASE +
-+				(offset * XSDFEC_LDPC_REG_JUMP),
-+			wdata);
-+	return 0;
-+}
-+
-+static int xsdfec_reg3_write(struct xsdfec_dev *xsdfec, u8 sc_off, u8 la_off,
-+			     u16 qc_off, u32 offset)
-+{
-+	u32 wdata;
-+
-+	wdata = ((qc_off << XSDFEC_REG3_QC_OFF_LSB) |
-+		 (la_off << XSDFEC_REG3_LA_OFF_LSB) | sc_off);
-+	if (XSDFEC_LDPC_CODE_REG3_ADDR_BASE + (offset * XSDFEC_LDPC_REG_JUMP) >
-+	    XSDFEC_LDPC_CODE_REG3_ADDR_HIGH) {
-+		dev_dbg(xsdfec->dev, "Writing outside of LDPC reg3 space 0x%x",
-+			XSDFEC_LDPC_CODE_REG3_ADDR_BASE +
-+				(offset * XSDFEC_LDPC_REG_JUMP));
-+		return -EINVAL;
-+	}
-+	xsdfec_regwrite(xsdfec,
-+			XSDFEC_LDPC_CODE_REG3_ADDR_BASE +
-+				(offset * XSDFEC_LDPC_REG_JUMP),
-+			wdata);
-+	return 0;
-+}
-+
-+static int xsdfec_table_write(struct xsdfec_dev *xsdfec, u32 offset,
-+			      u32 *src_ptr, u32 len, const u32 base_addr,
-+			      const u32 depth)
-+{
-+	u32 reg = 0;
-+	u32 res;
-+	u32 n, i;
-+	u32 *addr = NULL;
-+	struct page *page[MAX_NUM_PAGES];
-+
-+	/*
-+	 * Writes that go beyond the length of
-+	 * Shared Scale(SC) table should fail
-+	 */
-+	if ((XSDFEC_REG_WIDTH_JUMP * (offset + len)) > depth) {
-+		dev_dbg(xsdfec->dev, "Write exceeds SC table length");
-+		return -EINVAL;
-+	}
-+
-+	n = (len * XSDFEC_REG_WIDTH_JUMP) / PAGE_SIZE;
-+	if ((len * XSDFEC_REG_WIDTH_JUMP) % PAGE_SIZE)
-+		n += 1;
-+
-+	res = get_user_pages_fast((unsigned long)src_ptr, n, 0, page);
-+	if (res < n) {
-+		for (i = 0; i < res; i++)
-+			put_page(page[i]);
-+		return -EINVAL;
-+	}
-+
-+	for (i = 0; i < n; i++) {
-+		addr = kmap(page[i]);
-+		do {
-+			xsdfec_regwrite(xsdfec,
-+					base_addr + ((offset + reg) *
-+						     XSDFEC_REG_WIDTH_JUMP),
-+					addr[reg]);
-+			reg++;
-+		} while ((reg < len) &&
-+			 ((reg * XSDFEC_REG_WIDTH_JUMP) % PAGE_SIZE));
-+		put_page(page[i]);
-+	}
-+	return reg;
-+}
-+
-+static int xsdfec_add_ldpc(struct xsdfec_dev *xsdfec, void __user *arg)
-+{
-+	struct xsdfec_ldpc_params *ldpc;
-+	int ret, n;
-+
-+	ldpc = kzalloc(sizeof(*ldpc), GFP_KERNEL);
-+	if (!ldpc)
-+		return -ENOMEM;
-+
-+	ret = copy_from_user(ldpc, arg, sizeof(*ldpc));
-+	if (ret)
-+		goto err_out;
-+
-+	if (xsdfec->config.code == XSDFEC_TURBO_CODE) {
-+		ret = -EIO;
-+		goto err_out;
-+	}
 +
 +	/* Verify Device has not started */
-+	if (xsdfec->state == XSDFEC_STARTED) {
-+		ret = -EIO;
-+		goto err_out;
-+	}
++	if (xsdfec->state == XSDFEC_STARTED)
++		return -EIO;
 +
-+	if (xsdfec->config.code_wr_protect) {
-+		ret = -EIO;
-+		goto err_out;
-+	}
++	xsdfec_regwrite(xsdfec, XSDFEC_ORDER_ADDR, order);
 +
-+	/* Write Reg 0 */
-+	ret = xsdfec_reg0_write(xsdfec, ldpc->n, ldpc->k, ldpc->psize,
-+				ldpc->code_id);
-+	if (ret)
-+		goto err_out;
++	xsdfec->config.order = order;
 +
-+	/* Write Reg 1 */
-+	ret = xsdfec_reg1_write(xsdfec, ldpc->psize, ldpc->no_packing, ldpc->nm,
-+				ldpc->code_id);
-+	if (ret)
-+		goto err_out;
++	return 0;
++}
 +
-+	/* Write Reg 2 */
-+	ret = xsdfec_reg2_write(xsdfec, ldpc->nlayers, ldpc->nmqc,
-+				ldpc->norm_type, ldpc->special_qc,
-+				ldpc->no_final_parity, ldpc->max_schedule,
-+				ldpc->code_id);
-+	if (ret)
-+		goto err_out;
++static int xsdfec_set_bypass(struct xsdfec_dev *xsdfec, bool __user *arg)
++{
++	bool bypass;
++	int err;
 +
-+	/* Write Reg 3 */
-+	ret = xsdfec_reg3_write(xsdfec, ldpc->sc_off, ldpc->la_off,
-+				ldpc->qc_off, ldpc->code_id);
-+	if (ret)
-+		goto err_out;
++	err = get_user(bypass, arg);
++	if (err)
++		return -EFAULT;
 +
-+	/* Write Shared Codes */
-+	n = ldpc->nlayers / 4;
-+	if (ldpc->nlayers % 4)
-+		n++;
++	/* Verify Device has not started */
++	if (xsdfec->state == XSDFEC_STARTED)
++		return -EIO;
 +
-+	ret = xsdfec_table_write(xsdfec, ldpc->sc_off, ldpc->sc_table, n,
-+				 XSDFEC_LDPC_SC_TABLE_ADDR_BASE,
-+				 XSDFEC_SC_TABLE_DEPTH);
-+	if (ret < 0)
-+		goto err_out;
++	if (bypass)
++		xsdfec_regwrite(xsdfec, XSDFEC_BYPASS_ADDR, 1);
++	else
++		xsdfec_regwrite(xsdfec, XSDFEC_BYPASS_ADDR, 0);
 +
-+	ret = xsdfec_table_write(xsdfec, 4 * ldpc->la_off, ldpc->la_table,
-+				 ldpc->nlayers, XSDFEC_LDPC_LA_TABLE_ADDR_BASE,
-+				 XSDFEC_LA_TABLE_DEPTH);
-+	if (ret < 0)
-+		goto err_out;
++	xsdfec->config.bypass = bypass;
 +
-+	ret = xsdfec_table_write(xsdfec, 4 * ldpc->qc_off, ldpc->qc_table,
-+				 ldpc->nqc, XSDFEC_LDPC_QC_TABLE_ADDR_BASE,
-+				 XSDFEC_QC_TABLE_DEPTH);
-+	if (ret > 0)
-+		ret = 0;
-+err_out:
-+	kfree(ldpc);
-+	return ret;
++	return 0;
++}
++
++static int xsdfec_is_active(struct xsdfec_dev *xsdfec, bool __user *arg)
++{
++	u32 reg_value;
++	bool is_active;
++	int err;
++
++	reg_value = xsdfec_regread(xsdfec, XSDFEC_ACTIVE_ADDR);
++	/* using a double ! operator instead of casting */
++	is_active = !!(reg_value & XSDFEC_IS_ACTIVITY_SET);
++	err = put_user(is_active, arg);
++	if (err)
++		return -EFAULT;
++
++	return err;
 +}
 +
  static u32
  xsdfec_translate_axis_width_cfg_val(enum xsdfec_axis_width axis_width_cfg)
  {
-@@ -366,6 +687,9 @@ static long xsdfec_dev_ioctl(struct file *fptr, unsigned int cmd,
- 	case XSDFEC_GET_TURBO:
- 		rval = xsdfec_get_turbo(xsdfec, arg);
+@@ -681,6 +757,9 @@ static long xsdfec_dev_ioctl(struct file *fptr, unsigned int cmd,
+ 	}
+ 
+ 	switch (cmd) {
++	case XSDFEC_GET_CONFIG:
++		rval = xsdfec_get_config(xsdfec, arg);
++		break;
+ 	case XSDFEC_SET_TURBO:
+ 		rval = xsdfec_set_turbo(xsdfec, arg);
  		break;
-+	case XSDFEC_ADD_LDPC_CODE_PARAMS:
-+		rval = xsdfec_add_ldpc(xsdfec, arg);
+@@ -690,6 +769,15 @@ static long xsdfec_dev_ioctl(struct file *fptr, unsigned int cmd,
+ 	case XSDFEC_ADD_LDPC_CODE_PARAMS:
+ 		rval = xsdfec_add_ldpc(xsdfec, arg);
+ 		break;
++	case XSDFEC_SET_ORDER:
++		rval = xsdfec_set_order(xsdfec, arg);
++		break;
++	case XSDFEC_SET_BYPASS:
++		rval = xsdfec_set_bypass(xsdfec, arg);
++		break;
++	case XSDFEC_IS_ACTIVE:
++		rval = xsdfec_is_active(xsdfec, (bool __user *)arg);
 +		break;
  	default:
  		/* Should not get here */
  		break;
 diff --git a/include/uapi/misc/xilinx_sdfec.h b/include/uapi/misc/xilinx_sdfec.h
-index 34f32c3..ce532a5 100644
+index ce532a5..b8897ce 100644
 --- a/include/uapi/misc/xilinx_sdfec.h
 +++ b/include/uapi/misc/xilinx_sdfec.h
-@@ -13,6 +13,22 @@
- 
- #include <linux/types.h>
- 
-+/* Shared LDPC Tables */
-+#define XSDFEC_LDPC_SC_TABLE_ADDR_BASE (0x10000)
-+#define XSDFEC_LDPC_SC_TABLE_ADDR_HIGH (0x10400)
-+#define XSDFEC_LDPC_LA_TABLE_ADDR_BASE (0x18000)
-+#define XSDFEC_LDPC_LA_TABLE_ADDR_HIGH (0x19000)
-+#define XSDFEC_LDPC_QC_TABLE_ADDR_BASE (0x20000)
-+#define XSDFEC_LDPC_QC_TABLE_ADDR_HIGH (0x28000)
-+
-+/* LDPC tables depth */
-+#define XSDFEC_SC_TABLE_DEPTH                                                  \
-+	(XSDFEC_LDPC_SC_TABLE_ADDR_HIGH - XSDFEC_LDPC_SC_TABLE_ADDR_BASE)
-+#define XSDFEC_LA_TABLE_DEPTH                                                  \
-+	(XSDFEC_LDPC_LA_TABLE_ADDR_HIGH - XSDFEC_LDPC_LA_TABLE_ADDR_BASE)
-+#define XSDFEC_QC_TABLE_DEPTH                                                  \
-+	(XSDFEC_LDPC_QC_TABLE_ADDR_HIGH - XSDFEC_LDPC_QC_TABLE_ADDR_BASE)
-+
+@@ -288,6 +288,19 @@ struct xsdfec_ldpc_param_table_sizes {
+ #define XSDFEC_ADD_LDPC_CODE_PARAMS                                            \
+ 	_IOW(XSDFEC_MAGIC, 5, struct xsdfec_ldpc_params)
  /**
-  * enum xsdfec_code - Code Type.
-  * @XSDFEC_TURBO_CODE: Driver is configured for Turbo mode.
-@@ -127,6 +143,53 @@ struct xsdfec_turbo {
- };
- 
- /**
-+ * struct xsdfec_ldpc_params - User data for LDPC codes.
-+ * @n: Number of code word bits
-+ * @k: Number of information bits
-+ * @psize: Size of sub-matrix
-+ * @nlayers: Number of layers in code
-+ * @nqc: Quasi Cyclic Number
-+ * @nmqc: Number of M-sized QC operations in parity check matrix
-+ * @nm: Number of M-size vectors in N
-+ * @norm_type: Normalization required or not
-+ * @no_packing: Determines if multiple QC ops should be performed
-+ * @special_qc: Sub-Matrix property for Circulant weight > 0
-+ * @no_final_parity: Decide if final parity check needs to be performed
-+ * @max_schedule: Experimental code word scheduling limit
-+ * @sc_off: SC offset
-+ * @la_off: LA offset
-+ * @qc_off: QC offset
-+ * @sc_table: Pointer to SC Table which must be page aligned
-+ * @la_table: Pointer to LA Table which must be page aligned
-+ * @qc_table: Pointer to QC Table which must be page aligned
-+ * @code_id: LDPC Code
-+ *
-+ * This structure describes the LDPC code that is passed to the driver by the
-+ * application.
-+ */
-+struct xsdfec_ldpc_params {
-+	__u32 n;
-+	__u32 k;
-+	__u32 psize;
-+	__u32 nlayers;
-+	__u32 nqc;
-+	__u32 nmqc;
-+	__u32 nm;
-+	__u32 norm_type;
-+	__u32 no_packing;
-+	__u32 special_qc;
-+	__u32 no_final_parity;
-+	__u32 max_schedule;
-+	__u32 sc_off;
-+	__u32 la_off;
-+	__u32 qc_off;
-+	__u32 *sc_table;
-+	__u32 *la_table;
-+	__u32 *qc_table;
-+	__u16 code_id;
-+};
-+
-+/**
-  * struct xsdfec_status - Status of SD-FEC core.
-  * @state: State of the SD-FEC core
-  * @activity: Describes if the SD-FEC instance is Active
-@@ -170,6 +233,20 @@ struct xsdfec_config {
- 	__s8 code_wr_protect;
- };
- 
-+/**
-+ * struct xsdfec_ldpc_param_table_sizes - Used to store sizes of SD-FEC table
-+ *					  entries for an individual LPDC code
-+ *					  parameter.
-+ * @sc_size: Size of SC table used
-+ * @la_size: Size of LA table used
-+ * @qc_size: Size of QC table used
-+ */
-+struct xsdfec_ldpc_param_table_sizes {
-+	__u32 sc_size;
-+	__u32 la_size;
-+	__u32 qc_size;
-+};
-+
- /*
-  * XSDFEC IOCTL List
-  */
-@@ -190,6 +267,27 @@ struct xsdfec_config {
-  */
- #define XSDFEC_SET_TURBO _IOW(XSDFEC_MAGIC, 4, struct xsdfec_turbo)
- /**
-+ * DOC: XSDFEC_ADD_LDPC_CODE_PARAMS
++ * DOC: XSDFEC_GET_CONFIG
 + * @Parameters
 + *
-+ * @struct xsdfec_ldpc_params *
-+ *	Pointer to the &struct xsdfec_ldpc_params that contains the LDPC code
-+ *	parameters to be added to the SD-FEC Block
++ * @struct xsdfec_config *
++ *	Pointer to the &struct xsdfec_config that contains the current
++ *	configuration settings of the SD-FEC Block
 + *
 + * @Description
-+ * ioctl to add an LDPC code to the SD-FEC LDPC codes
 + *
-+ * This can only be used when:
-+ *
-+ * - Driver is in the XSDFEC_STOPPED state
-+ *
-+ * - SD-FEC core is configured as LPDC
-+ *
-+ * - SD-FEC Code Write Protection is disabled
++ * ioctl that returns SD-FEC core configuration
 + */
-+#define XSDFEC_ADD_LDPC_CODE_PARAMS                                            \
-+	_IOW(XSDFEC_MAGIC, 5, struct xsdfec_ldpc_params)
++#define XSDFEC_GET_CONFIG _IOR(XSDFEC_MAGIC, 6, struct xsdfec_config)
 +/**
   * DOC: XSDFEC_GET_TURBO
   * @Parameters
   *
+@@ -300,4 +313,48 @@ struct xsdfec_ldpc_param_table_sizes {
+  * ioctl that returns SD-FEC turbo param values
+  */
+ #define XSDFEC_GET_TURBO _IOR(XSDFEC_MAGIC, 7, struct xsdfec_turbo)
++/**
++ * DOC: XSDFEC_SET_ORDER
++ * @Parameters
++ *
++ * @struct unsigned long *
++ *	Pointer to the unsigned long that contains a value from the
++ *	@enum xsdfec_order
++ *
++ * @Description
++ *
++ * ioctl that sets order, if order of blocks can change from input to output
++ *
++ * This can only be used when the driver is in the XSDFEC_STOPPED state
++ */
++#define XSDFEC_SET_ORDER _IOW(XSDFEC_MAGIC, 8, unsigned long)
++/**
++ * DOC: XSDFEC_SET_BYPASS
++ * @Parameters
++ *
++ * @struct bool *
++ *	Pointer to bool that sets the bypass value, where false results in
++ *	normal operation and false results in the SD-FEC performing the
++ *	configured operations (same number of cycles) but output data matches
++ *	the input data
++ *
++ * @Description
++ *
++ * ioctl that sets bypass.
++ *
++ * This can only be used when the driver is in the XSDFEC_STOPPED state
++ */
++#define XSDFEC_SET_BYPASS _IOW(XSDFEC_MAGIC, 9, bool)
++/**
++ * DOC: XSDFEC_IS_ACTIVE
++ * @Parameters
++ *
++ * @struct bool *
++ *	Pointer to bool that returns true if the SD-FEC is processing data
++ *
++ * @Description
++ *
++ * ioctl that determines if SD-FEC is processing data
++ */
++#define XSDFEC_IS_ACTIVE _IOR(XSDFEC_MAGIC, 10, bool)
+ #endif /* __XILINX_SDFEC_H__ */
 -- 
 2.7.4
 
