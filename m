@@ -2,61 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC55C77B11
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Jul 2019 20:27:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B93977B16
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Jul 2019 20:34:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hXFBgr5aFC+XdWAzRoB0xv1qScaaOTFmpo1fNFMT3ks=; b=necF5k241dziGx
-	cbLG/7v7Nl5C3a7RYKlNMX2Cgj5Zcg+82Rx1SKw63n/7NV57aDOiLY8jjFSmpyrMKp0TGJkcEvcHy
-	KnlR0/As+VCxEK4O3p59k8mRALB51c3l/I5pogLiq5DCKMi0jBCTQ/E2pvLgtm6aKf9OoF1q1Bdtp
-	W6lQXHO7KFI8oriFrxSs+ewzqFiPBNCdE9zvpqUwUVbHAqtyBY2VEEMH8OvwF1wexLmPgD7zfEfLL
-	B+mV9+Sw6B8ZeZhC6+suQ1dM5bturxoDDFTJDGh/W1jY/4WclQPqFgKbcjKyuRfQk6pimvd89T3+J
-	nbJRdBoWCRriIeWwB2eA==;
+	List-Owner; bh=EeHRyEAn58mziPlifyyc3Jxof67qejD97YD+xQht18A=; b=BJRWa6SdO5XgGj
+	9AZJ8dPG8/Z8d1wTpt8xEPMR7nLiMD9ichyeTLbwWA4PqW9jW2U+0eTHf49//DSQR5i4N0wIEXMN0
+	pH+m9P4tfjBtxgJmDIkkhxAk4YyrD18xGAAbgemLs3IZf3ppDmEVimcPKNaywaTifkVyLZBP8l8c3
+	USfwPwDAMbYR/RrIfZr5c65pVUf0orrXnCjJOkrIK5P4dkp1IB7VDn2WWRHA+Z7EUcewFq7GZkeO8
+	SI8n/UryOMtvedefZgfCHIqqbTivC4JDQ41rnCEaDq87IYA9PTY7dO0uUI0QmUV7mg4Zx8f3vRwm7
+	fca2xg9yYoV754a0SHDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hrRPZ-0007Bp-9u; Sat, 27 Jul 2019 18:27:17 +0000
-Received: from honk.sigxcpu.org ([24.134.29.49])
+	id 1hrRWI-0000OJ-8i; Sat, 27 Jul 2019 18:34:14 +0000
+Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hrRP1-00079a-UJ
- for linux-arm-kernel@lists.infradead.org; Sat, 27 Jul 2019 18:26:45 +0000
-Received: from localhost (localhost [127.0.0.1])
- by honk.sigxcpu.org (Postfix) with ESMTP id 442EEFB03;
- Sat, 27 Jul 2019 20:26:38 +0200 (CEST)
-X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
-Received: from honk.sigxcpu.org ([127.0.0.1])
- by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id vRGa6_JKtNHm; Sat, 27 Jul 2019 20:26:37 +0200 (CEST)
-Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
- id DDD4B46B22; Sat, 27 Jul 2019 20:26:36 +0200 (CEST)
-Date: Sat, 27 Jul 2019 20:26:36 +0200
-From: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
-To: Daniel Baluta <daniel.baluta@gmail.com>
-Subject: Re: [PATCH 5/6] clk: imx8mq: Remove CLK_IS_CRITICAL flag for
- IMX8MQ_CLK_TMU_ROOT
-Message-ID: <20190727182636.GA7170@bogon.m.sigxcpu.org>
-References: <20190705045612.27665-1-Anson.Huang@nxp.com>
- <20190705045612.27665-5-Anson.Huang@nxp.com>
- <CAEnQRZAZNMBx3ApVmRP8hYPw0XY_QgR-saE6WLcT8oZmHPCxSA@mail.gmail.com>
+ id 1hrRVz-0000NF-6I; Sat, 27 Jul 2019 18:33:56 +0000
+Received: by mail-ot1-x342.google.com with SMTP id s20so58588770otp.4;
+ Sat, 27 Jul 2019 11:33:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=zykk+16i/VaVO7vGCiEbOdwpwXy1foVL2dprzKW3VcY=;
+ b=trJ4em4+Up9wf1cWi1zJIcTeKiL7VU8V9eR5/totF/SJ0sOa2b18vWkoRsYUxxjzXZ
+ bpbUjXFrViU1uLaFI1bFyaXG3jXnsd/VptCVzoGhYHUtyPKCfE7qY3mRHhnJjQUQgps5
+ QH1MDSQ6e6BO3L7fA174okRYNj8wrkebTPaGzABuPmG1O06GVUYNkIk5gwhb7aobsEL4
+ bJtYvldv5e5lbou3rE9WXAJiexTIhjSPu6N+jbiglnMbX4vli9Yss52Y+bh0jzdDlZ+q
+ HeyajiZSxZuhogSB1u+OMqPLkh3JkyBsJxjA/RweVlQm6ry5uxMMhzqMmYv0EUkUfY+d
+ h0qA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=zykk+16i/VaVO7vGCiEbOdwpwXy1foVL2dprzKW3VcY=;
+ b=mzqLVHNtMBKyQBCG7HOVGvYO/31EwS4NPR11yRmTdmvbpghAbH2MBfgZd6GIl3SbqA
+ irSBb2xtmu7VpYcTxd57FwHFJRTzp4+3t6QNLFuGTvZnPZBWp21ndN0rjMCIp2biuzZA
+ 962mKEKLrO1W8Hj5oIFk3a0DNOBJStuR5y9BeUAn3WHehqvdukk76eusm4hEgFSAt2Il
+ fEc7DdYPRTc2kA3cntmrPZfC0VthQwatYlyY/ECgdhXYfzwC7MEh5XNhcrmESXn4qU7O
+ RpPfsFy8iwU3JS91kDIavtJMTb+oyZ3oSDkpzQa874gSV75+9bWNlVhglX0+VV6o1Jas
+ DNKw==
+X-Gm-Message-State: APjAAAW31F6wmgwUcUE0iL2EF7aOMb3LFhwiMAh4P+5n+UCr5PaEXKWd
+ a/v9aOYSbSS07ZxaC54Fxgl/VY30LlvJnhYcxztBU1Pg
+X-Google-Smtp-Source: APXvYqyXx94WA5EdJdcpHMg/R/oEWO8JMmb/K2pzFqcu3/J8K/4V0sX76FoWK0bUo/XsHICC0CqCHvBxvgMmF7RF9t8=
+X-Received: by 2002:a9d:39a6:: with SMTP id y35mr11080912otb.81.1564252433247; 
+ Sat, 27 Jul 2019 11:33:53 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAEnQRZAZNMBx3ApVmRP8hYPw0XY_QgR-saE6WLcT8oZmHPCxSA@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20190725164238.27991-1-amergnat@baylibre.com>
+ <20190725164238.27991-6-amergnat@baylibre.com>
+In-Reply-To: <20190725164238.27991-6-amergnat@baylibre.com>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Sat, 27 Jul 2019 20:33:42 +0200
+Message-ID: <CAFBinCC3D87AxTJ_SpATWM8BcKAtLPKjc22mF5GPS+=-u0HC0w@mail.gmail.com>
+Subject: Re: [PATCH v2 5/8] clk: meson: meson8b: migrate to the new parent
+ description method
+To: Alexandre Mergnat <amergnat@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190727_112644_145221_A63EDC8D 
-X-CRM114-Status: GOOD (  11.24  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190727_113355_259272_0A410F92 
+X-CRM114-Status: UNSURE (   9.80  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [24.134.29.49 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (martin.blumenstingl[at]googlemail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,65 +94,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Carlo Caione <ccaione@baylibre.com>,
- Michael Turquette <mturquette@baylibre.com>,
- "Angus Ainslie \(Purism\)" <angus@akkea.ca>,
- Leonard Crestez <leonard.crestez@nxp.com>, Fabio Estevam <festevam@gmail.com>,
- linux-clk@vger.kernel.org, Abel Vesa <abel.vesa@nxp.com>,
- Anson Huang <Anson.Huang@nxp.com>, Andrey Smirnov <andrew.smirnov@gmail.com>,
- daniel.lezcano@linaro.org, dl-linux-imx <Linux-imx@nxp.com>,
- rui.zhang@intel.com, Devicetree List <devicetree@vger.kernel.org>,
- linux-pm@vger.kernel.org, Sascha Hauer <s.hauer@pengutronix.de>,
- edubezval@gmail.com, Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Stephen Boyd <sboyd@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>, Lucas Stach <l.stach@pengutronix.de>
+Cc: Neil Armstrong <narmstrong@baylibre.com>, sboyd@kernel.org,
+ khilman@baylibre.com, linux-kernel@vger.kernel.org,
+ baylibre-upstreaming@groups.io, linux-amlogic@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ jbrunet@baylibre.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Daniel,
-On Sat, Jul 27, 2019 at 01:26:50AM +0300, Daniel Baluta wrote:
-> Hi all,
-> 
-> latest linux-next hangs at boot.
-> 
-> commit fde50b96be821ac9673a7e00847cc4605bd88f34 (HEAD -> master, tag:
-> next-20190726, origin/master, origin/HEAD)
-> Author: Stephen Rothwell <sfr@canb.auug.org.au>
-> Date:   Fri Jul 26 15:18:02 2019 +1000
-> 
->     Add linux-next specific files for 20190726
-> 
->     Signed-off-by: Stephen Rothwell <sfr@canb.auug.org.au>
-> 
-> 
-> I know this is crazy but reverting commit:
-> 
-> commit 431bdd1df48ee2896ea9980d9153e3aeaf0c81ef (refs/bisect/bad)
-> Author: Anson Huang <Anson.Huang@nxp.com>
-> Date:   Fri Jul 5 12:56:11 2019 +0800
-> 
->     clk: imx8mq: Remove CLK_IS_CRITICAL flag for IMX8MQ_CLK_TMU_ROOT
-> 
->     IMX8MQ_CLK_TMU_ROOT is ONLY used for thermal module, the driver
->     should manage this clock, so no need to have CLK_IS_CRITICAL flag
->     set.
-> 
-> 
-> 
-> makes the boot work again.
+Hi Alexandre,
 
-I noticed a boot hang yesterday on next-20190726 when loading the
-qoriq_thermal which I worked around by blacklisting it. The
-fsl,imx8mq-tmu node specifies a clock (IMX8MQ_CLK_TMU_ROOT) but does not
-seem to enable, shouldn't it do so?
+On Thu, Jul 25, 2019 at 6:47 PM Alexandre Mergnat <amergnat@baylibre.com> wrote:
+>
+> This clock controller use the string comparison method to describe parent
+> relation between the clocks, which is not optimized.
+>
+> Migrate to the new way by using .parent_hws where possible (ie. when
+> all clocks are local to the controller) and use .parent_data otherwise.
+>
+> Signed-off-by: Alexandre Mergnat <amergnat@baylibre.com>
+thank you for working on this - everything looks fine to me, so feel
+free to add:
+Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 
-Cheers,
- -- Guido
+and on my Odroid-C1+:
+Tested-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+
+(I compared the output of /sys/kernel/debug/clk/clk_summary before and
+after this patch and it's identical. CPU frequency scaling also still
+works)
+
+
+Martin
 
 _______________________________________________
 linux-arm-kernel mailing list
