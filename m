@@ -2,67 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D7A28775D2
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Jul 2019 04:03:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD4E1775D6
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Jul 2019 04:05:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=nmLSsqWo6eGARBKSxmTu1VWm1ItF+82mluo+GUiaD5E=; b=a1oesIIPcj5sYW
-	IrL+yQtFzCtw1TseyIrWOqvjYK30xMAMgB+tb88+AXxe81pdycbKlQR37gNyAyjPvqikCmateRLkq
-	AYqba3h42LHkfCK/uxFRbfjNnxIkAwsW/jDDXiz/UhmlZ5hmFCjiAmA588Nld6Kaxu3qO+jH9mYDE
-	Pn8BuRkDgGSnT1AIPJY3rrttz8yuygdEUn6ZgoStCUziLyVMNOa50dFX5eHqvVNdPcG4N7T7V37jZ
-	vGpV7XjHKROOZK+Eu8bEsahff2r+FWkfvHsnccfSTAwj8dETxZbUz8VNXExUCWCdPw/j4URHl1xhZ
-	Rh44Z+ZsHMw3EvH+QRpw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7qDIlN0HRqRuusBAc6nV7FFgaAnR6VzNPlq5mmQbHus=; b=CfzlfN4/KjVP7n
+	HSXAD/dJAqfTGIUfWafyKp3zEYQ2J8yVmhIbp4P+2K8DZH6K92J2+YQMoGmzAhfnx5YY0XnAgyoUo
+	icHDdAFsF+hnuVKmhXwZjyBhzyMjgnR8FZ8Ga27XU0SaUAglyxgmOBOGkUgd9nFxk8Hu5vwPLiG9o
+	9N5L465H2LEfOQwKKs6Q2p2Wwzp4Hpi2mik6QYRndvY0kQRsMbgMtdRUBoupO4bez8LaJtBZZYVXy
+	iUOeeJTlDaJy5v1bJ9UJnG6VVWEgaJXoiQ2fPtXLYCFxJ+zgr7gvaV9GAyTEMRGLNJR6cVY0HDmx3
+	iuiDE4Zr0AHgaudCpHjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hrC3P-0006Fb-Rc; Sat, 27 Jul 2019 02:03:23 +0000
-Received: from mout.perfora.net ([74.208.4.197])
+	id 1hrC54-0006Un-Bz; Sat, 27 Jul 2019 02:05:07 +0000
+Received: from perceval.ideasonboard.com
+ ([2001:4b98:dc2:55:216:3eff:fef7:d647])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hrC3C-0006FK-IM
- for linux-arm-kernel@lists.infradead.org; Sat, 27 Jul 2019 02:03:12 +0000
-Received: from towel.hsd1.wa.comcast.net ([71.197.225.149]) by
- mrelay.perfora.net (mreueus004 [74.208.5.2]) with ESMTPSA (Nemesis) id
- 1MsZaJ-1ieuK71l4V-00u0bF; Sat, 27 Jul 2019 04:03:00 +0200
-From: Sunil Mohan Adapa <sunil@medhas.org>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm64: dts: allwinner: a64: Enable eMMC on A64-OLinuXino
-Date: Fri, 26 Jul 2019 19:02:52 -0700
-Message-Id: <20190727020252.17126-1-sunil@medhas.org>
-X-Mailer: git-send-email 2.20.1
+ id 1hrC4q-0006UJ-MZ
+ for linux-arm-kernel@lists.infradead.org; Sat, 27 Jul 2019 02:04:54 +0000
+Received: from pendragon.ideasonboard.com (om126200118163.15.openmobile.ne.jp
+ [126.200.118.163])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id AD2869B1;
+ Sat, 27 Jul 2019 04:04:49 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1564193090;
+ bh=vVlrigtV/4n1LRYGHmQgWdMF36/DcZ6Ryvzw8aTcvZE=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=UGHkk32aSXSYBC9k0S8TYWWPJ71pvNcd6rc7G1goNemIr54JKb6ChRFqMrEYDjHb8
+ Ax+tke8BzXReGpoaoSFuTNo8DxEGkVvLBj7qIvWKmH4ja72XH3ZfC5jBJr3uqTV1Ws
+ Gglj4E5HHE/FjKncIgOJFdHhCU6i5Z9wAK7g4w18=
+Date: Sat, 27 Jul 2019 05:04:44 +0300
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Fabio Estevam <festevam@gmail.com>
+Subject: Re: [PATCH 3/3] drm/bridge: Add NWL MIPI DSI host controller support
+Message-ID: <20190727020444.GC4902@pendragon.ideasonboard.com>
+References: <cover.1563983037.git.agx@sigxcpu.org>
+ <3158f4f8c97c21f98c394e5631d74bc60d796522.1563983037.git.agx@sigxcpu.org>
+ <CAOMZO5BRbV_1du1b9eJqcBvvXSE2Mon3yxSPJxPpZgBqYNjBSg@mail.gmail.com>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:p8MaZ8RhoQALxZqXFF9tpYKQbSFcpmQrg8wskCQD7K/lPhM0l40
- wzaHVWRvk/k76sWaUQJ2avhWztqU/jizhpODew+rMSQBg6jXPM7yG4MkAQZcYZHNupuXknF
- 0jEuUvb/8vDJ6vhPZAyLnQrw5mUVdzY4O+4y4IoGBUpOtFEm+GLIWPUIMRzc386+Wj0tN6f
- KOcxANzGF1jEXiw96la/w==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:ZKrwOXmMxY0=:0cD6DGEtssl8RJiEfERQhy
- oWZ3Gje/1Rvjd9hkWGtAQV4fOLu2SArnCh7mqo9RY0MdScupSbKdJpkgenW68orQ8vSN4s+mf
- aLh3HWcB3fhoUuW29VfIyBvVh/MweQMLpRxa++inEbCHgNf5oMThEz5ArZsPI2gPtvlVZp40s
- h7Xx6I8csB/yXXrAwCIyM1P9FHlgSva//hX4gVZKjCkvKoKbr/D855zldbomfORB42zQ4ucDg
- wwqy9tq378ZqWHp+Aw/Uol28hUVsKWVgkr8BY2udm653ROdcjA0vVM8eyGzj77KfAiKjPTsqj
- obECh41FVPVfqu6CzJGPi0If5WQDQAit7MDaDT6vcqQzfk2YBjlM7d6WXAHL1T79PXiSqRkxx
- unEBELDIBfmuZbc9qOFsG1AZOc4Xrd7gBRCk5o/e/tSbfEKmCv4cl/+byRZQpsaEeDJDm9Du7
- GmCrF5tgQSBB0u/pYansck8pA8rVM2m3nlZXurKUBb/m5FrT766CWtG9FbVQlSJd6mvq5OEho
- RIwfqi+V4hjrE95XU0s8eOeJhzsGI7zsemAZMmLSKw0Ey2tHEao2yuldL8/C+q7RJ8tTdMhcX
- ruG39QM1S1s3VZsuaNR7BAb/4pqHiX1uxKa5smEKGUpHQmh4EYsEsv8YTO13HXQMTAwygB+rx
- L/8OA0u3kDQHIjS7FZgz8gHE6Mby2buECp+QWf/2YDNziJ7lUnH7cqejZEudcOk3MHFuuEZxn
- jb6BYLRpR/pxYzaq8MazrYIFoFqbauu7ioiwfw==
+Content-Disposition: inline
+In-Reply-To: <CAOMZO5BRbV_1du1b9eJqcBvvXSE2Mon3yxSPJxPpZgBqYNjBSg@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_190310_680012_F99A522D 
-X-CRM114-Status: UNSURE (   7.83  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190726_190452_888651_39DC9F25 
+X-CRM114-Status: GOOD (  11.23  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [74.208.4.197 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,75 +75,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: maxime.ripard@bootlin.com, Sunil Mohan Adapa <sunil@medhas.org>,
- wens@csie.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Jernej Skrabec <jernej.skrabec@siol.net>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
+ Lee Jones <lee.jones@linaro.org>,
+ Guido =?utf-8?Q?G=C3=BCnther?= <agx@sigxcpu.org>,
+ Jonas Karlman <jonas@kwiboo.se>, linux-kernel <linux-kernel@vger.kernel.org>,
+ DRI mailing list <dri-devel@lists.freedesktop.org>,
+ Andrzej Hajda <a.hajda@samsung.com>, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Robert Chiras <robert.chiras@nxp.com>, Chris Healy <cphealy@gmail.com>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-A64-OLinuXino board has three variants that have eMMC support. Add support for
-eMMC on boards that have it.
-
-This patch has been tested on A64-OLinuXino-1Ge16GW with Linux 5.0 from Debain.
-Basic benchmarks using Flexible IO Tester show reasonable performance from the
-eMMC.
-
-eMMC - Random Write: 23.1MiB/s
-eMMC - Sequential Write: 74.5MiB/s
-SD Card - Random Write: 1690KiB/s
-SD Card - Sequential Write: 11.0MiB/s
-
-Signed-off-by: Sunil Mohan Adapa <sunil@medhas.org>
-Tested-by: Sunil Mohan Adapa <sunil@medhas.org>
-
-From: Martin Ayotte <martinayotte@gmail.com>
-Link: https://github.com/armbian/build/commit/174953de1eb09e6aa1ef7075066b573dba625398
-Signed-off-by: Sunil Mohan Adapa <sunil@medhas.org>
----
- .../boot/dts/allwinner/sun50i-a64-olinuxino.dts | 17 +++++++++++++++++
- 1 file changed, 17 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts
-index 01a9a52edae4..751273f514fb 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts
-@@ -81,6 +81,13 @@
- 		status = "okay";
- 	};
- 
-+	reg_vcc3v3: vcc3v3 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc3v3";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+	};
-+
- 	wifi_pwrseq: wifi_pwrseq {
- 		compatible = "mmc-pwrseq-simple";
- 		reset-gpios = <&r_pio 0 2 GPIO_ACTIVE_LOW>; /* PL2 */
-@@ -155,6 +162,16 @@
- 	};
- };
- 
-+&mmc2 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&mmc2_pins>;
-+	vmmc-supply = <&reg_vcc3v3>;
-+	bus-width = <8>;
-+	non-removable;
-+	cap-mmc-hw-reset;
-+	status = "okay";
-+};
-+
- &ohci0 {
- 	status = "okay";
- };
--- 
-2.20.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGVsbG8sCgpPbiBGcmksIEp1bCAyNiwgMjAxOSBhdCAwNTowMTo1MlBNIC0wMzAwLCBGYWJpbyBF
+c3RldmFtIHdyb3RlOgo+IEhpIEd1aWRvLAo+IAo+IFRoYW5rcyBmb3IgeW91ciB3b3JrIG9uIHRo
+aXMgZHJpdmVyIQo+IAo+IE9uIFdlZCwgSnVsIDI0LCAyMDE5IGF0IDEyOjUyIFBNIEd1aWRvIEfD
+vG50aGVyIDxhZ3hAc2lneGNwdS5vcmc+IHdyb3RlOgo+IAo+ID4gLS0tIC9kZXYvbnVsbAo+ID4g
+KysrIGIvZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9pbXgtbndsL0tjb25maWcKPiA+IEBAIC0wLDAg
+KzEsMTUgQEAKPiA+ICtjb25maWcgRFJNX0lNWF9OV0xfRFNJCj4gPiArICAgICAgIHRyaXN0YXRl
+ICJTdXBwb3J0IGZvciBOb3J0aHdlc3QgTG9naWMgTUlQSSBEU0kgSG9zdCBjb250cm9sbGVyIgo+
+ID4gKyAgICAgICBkZXBlbmRzIG9uIERSTSAmJiAoQVJDSF9NWEMgfHwgQVJDSF9NVUxUSVBMQVRG
+T1JNIHx8IENPTVBJTEVfVEVTVCkKPiAKPiBUaGlzIElQIGNvdWxkIHBvdGVudGlhbGx5IGJlIGZv
+dW5kIG9uIG90aGVyIFNvQ3MsIHNvIG5vIG5lZWQgdG8gbWFrZQo+IGl0IGRlcGVuZCBvbiBBUkNI
+X01YQy4KCkknZCBnbyBldmVuIGZ1cnRoZXIgYW5kIG5vdCB1c2UgdGhlIHByZWZpeCBpbXggaW4g
+dGhlIGRyaXZlciBuYW1lIG9yCmFueXdoZXJlIGluIHRoZSBjb2RlLgoKW3NuaXBdCgotLSAKUmVn
+YXJkcywKCkxhdXJlbnQgUGluY2hhcnQKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1r
+ZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
+bWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
