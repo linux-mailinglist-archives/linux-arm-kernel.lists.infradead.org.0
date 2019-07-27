@@ -2,32 +2,32 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7F9F77A25
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Jul 2019 17:21:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4796077A2E
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Jul 2019 17:22:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hZgzVD46dEV3RLE8CQYRHx0FkYrrY67aFrYT58FW3wM=; b=ieN254NHTBhGoQ
-	vTyNyGlk5aPLP3aCsNoPpqIqUJLH3t0gMFVJtDVaUU8Y/qtbDQnKnjsoWvwlvgr67z+ggm0cwdGGu
-	lrBX9qqBe91I7gsPt6ZXmxjusJrDMZ3I7Nk1upXYtcufOQhIYyPCa8cYkXymT+8fIMAVXIMGnTpGQ
-	k0Vdo5sEBpVfmEgGlFAS6Ug2Jhx4ylK/gNwP5ozX1+CK2nlZ+hO687HRGb5PLburooIuIkVrrt8XG
-	2QwpuyjV04iWW0RoZYQgKym3lgG6900/gyJRMhXRGdJQ9h5+Ad4UI9GB9OzZbywiRJC+IZOoaUhW5
-	+a9Tb9Cfm4Mzomo6swbA==;
+	List-Owner; bh=/APh/e27uzanitRn33D0grw93X6oOaxtSDXD3SLWUFY=; b=kbXeDWIjEMCrQM
+	E2QSm/R6sDY20u4rYw1Gc62Z3u/gHTYl4vY6G2Ya5nmC448Zq+UE+TNypHNdNDmKbMsA0VFvQv7sC
+	rzP4DmNeS77rusiMO1QXcaREb1lgt3rcv0723NmkOWNJAUP/vm775uoTZ9Mxj4c3IdT3qgDmjNYoz
+	ukfDTiydrCNRMoOQyqZ/vnYUPnAysxHRknh1joQF3YUmoXaKOh1Q51JfgXa35og9ab1K+dRJycnWV
+	sfAEZJR9CJaTtn2AcijHsxe0QC2sXsqdZhht0ywCPC6ZJBu3tPm1XV2syYmxBSM6yM6sdXjgHyUoe
+	9itkbKppNmP5Ll+Lykcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hrOVM-0008G5-1O; Sat, 27 Jul 2019 15:21:04 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1hrOWX-0000l3-2o; Sat, 27 Jul 2019 15:22:17 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hrOLa-0006Ju-Ss; Sat, 27 Jul 2019 15:11:00 +0000
-Received: from DGGEMS402-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 07C649C1B7968560C4F0;
- Sat, 27 Jul 2019 23:10:57 +0800 (CST)
-Received: from localhost (10.133.213.239) by DGGEMS402-HUB.china.huawei.com
- (10.3.19.202) with Microsoft SMTP Server id 14.3.439.0; Sat, 27 Jul 2019
- 23:10:51 +0800
+ id 1hrOLk-0006Qf-3y; Sat, 27 Jul 2019 15:11:09 +0000
+Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 49648A1F625815AC6582;
+ Sat, 27 Jul 2019 23:11:04 +0800 (CST)
+Received: from localhost (10.133.213.239) by DGGEMS405-HUB.china.huawei.com
+ (10.3.19.205) with Microsoft SMTP Server id 14.3.439.0; Sat, 27 Jul 2019
+ 23:10:53 +0800
 From: YueHaibing <yuehaibing@huawei.com>
 To: <lgirdwood@gmail.com>, <broonie@kernel.org>, <perex@perex.cz>,
  <tiwai@suse.com>, <eric@anholt.net>, <wahrenst@gmx.net>,
@@ -43,10 +43,10 @@ To: <lgirdwood@gmail.com>, <broonie@kernel.org>, <perex@perex.cz>,
  <wens@csie.org>, <thierry.reding@gmail.com>, <jonathanh@nvidia.com>,
  <yamada.masahiro@socionext.com>, <michal.simek@xilinx.com>,
  <jcmvbkbc@gmail.com>
-Subject: [PATCH -next 29/34] ASoC: meson: axg-spdifout: use
+Subject: [PATCH -next 30/34] ASoC: meson: axg-fifo: use
  devm_platform_ioremap_resource() to simplify code
-Date: Sat, 27 Jul 2019 23:07:33 +0800
-Message-ID: <20190727150738.54764-30-yuehaibing@huawei.com>
+Date: Sat, 27 Jul 2019 23:07:34 +0800
+Message-ID: <20190727150738.54764-31-yuehaibing@huawei.com>
 X-Mailer: git-send-email 2.10.2.windows.1
 In-Reply-To: <20190727150738.54764-1-yuehaibing@huawei.com>
 References: <20190727150738.54764-1-yuehaibing@huawei.com>
@@ -54,8 +54,8 @@ MIME-Version: 1.0
 X-Originating-IP: [10.133.213.239]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190727_081059_562135_D4C776E6 
-X-CRM114-Status: UNSURE (   7.39  )
+X-CRM114-CacheID: sfid-20190727_081108_511495_DF49E8E8 
+X-CRM114-Status: UNSURE (   7.15  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -63,7 +63,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
+ medium trust [45.249.212.191 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -94,24 +94,24 @@ This is detected by coccinelle.
 Reported-by: Hulk Robot <hulkci@huawei.com>
 Signed-off-by: YueHaibing <yuehaibing@huawei.com>
 ---
- sound/soc/meson/axg-spdifout.c | 4 +---
+ sound/soc/meson/axg-fifo.c | 4 +---
  1 file changed, 1 insertion(+), 3 deletions(-)
 
-diff --git a/sound/soc/meson/axg-spdifout.c b/sound/soc/meson/axg-spdifout.c
-index 9dea528..7ce6aa97 100644
---- a/sound/soc/meson/axg-spdifout.c
-+++ b/sound/soc/meson/axg-spdifout.c
-@@ -401,7 +401,6 @@ static int axg_spdifout_probe(struct platform_device *pdev)
- {
+diff --git a/sound/soc/meson/axg-fifo.c b/sound/soc/meson/axg-fifo.c
+index 01c1c7d..80a3dde 100644
+--- a/sound/soc/meson/axg-fifo.c
++++ b/sound/soc/meson/axg-fifo.c
+@@ -314,7 +314,6 @@ int axg_fifo_probe(struct platform_device *pdev)
  	struct device *dev = &pdev->dev;
- 	struct axg_spdifout *priv;
+ 	const struct axg_fifo_match_data *data;
+ 	struct axg_fifo *fifo;
 -	struct resource *res;
  	void __iomem *regs;
- 	int ret;
  
-@@ -410,8 +409,7 @@ static int axg_spdifout_probe(struct platform_device *pdev)
+ 	data = of_device_get_match_data(dev);
+@@ -328,8 +327,7 @@ int axg_fifo_probe(struct platform_device *pdev)
  		return -ENOMEM;
- 	platform_set_drvdata(pdev, priv);
+ 	platform_set_drvdata(pdev, fifo);
  
 -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
 -	regs = devm_ioremap_resource(dev, res);
