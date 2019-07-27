@@ -2,75 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B93977B16
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Jul 2019 20:34:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1EF1977B76
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Jul 2019 21:20:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EeHRyEAn58mziPlifyyc3Jxof67qejD97YD+xQht18A=; b=BJRWa6SdO5XgGj
-	9AZJ8dPG8/Z8d1wTpt8xEPMR7nLiMD9ichyeTLbwWA4PqW9jW2U+0eTHf49//DSQR5i4N0wIEXMN0
-	pH+m9P4tfjBtxgJmDIkkhxAk4YyrD18xGAAbgemLs3IZf3ppDmEVimcPKNaywaTifkVyLZBP8l8c3
-	USfwPwDAMbYR/RrIfZr5c65pVUf0orrXnCjJOkrIK5P4dkp1IB7VDn2WWRHA+Z7EUcewFq7GZkeO8
-	SI8n/UryOMtvedefZgfCHIqqbTivC4JDQ41rnCEaDq87IYA9PTY7dO0uUI0QmUV7mg4Zx8f3vRwm7
-	fca2xg9yYoV754a0SHDg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=C/l7KRc1Ccw/2NrjBYINL9d4QNxnNrHRrrOnPgyeYKo=; b=MCSpBwBLtPPR3H
+	8cibbVDrQSxVsjhGTduwJPOron/1Z5RtdA1co40cCLyTGHUg/lPT+/2Mw81IAYw0btUumAxRHryRI
+	cyZvK8hUse6r3bEIFtMMfpR9PB2n7D/ZdCcdE/ooiwNHh6UB0YrdLlWdew0AqMHkTUnxyhDuyHdeM
+	0hqS0Amhmcm0IBqLvyzYaDMQc7K71oPgbGxn8nx96xtpeOFRi5bLtvAJ+m7ftdhRB3+PJyA+djvjJ
+	nVZ5GLQJxza5IiRR4rS4e5CcCeAKpVfyFJ4jjsh5JHEGLL7ogz75VZIhasm4Zy2VpKvY1wPbuL/5B
+	gIw8bPwTOMVH5yRL0KmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hrRWI-0000OJ-8i; Sat, 27 Jul 2019 18:34:14 +0000
-Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
+	id 1hrSF1-0000PZ-Is; Sat, 27 Jul 2019 19:20:27 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hrRVz-0000NF-6I; Sat, 27 Jul 2019 18:33:56 +0000
-Received: by mail-ot1-x342.google.com with SMTP id s20so58588770otp.4;
- Sat, 27 Jul 2019 11:33:54 -0700 (PDT)
+ id 1hrSEm-0000Nf-CX; Sat, 27 Jul 2019 19:20:13 +0000
+Received: by mail-wm1-x343.google.com with SMTP id 207so50558616wma.1;
+ Sat, 27 Jul 2019 12:20:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=zykk+16i/VaVO7vGCiEbOdwpwXy1foVL2dprzKW3VcY=;
- b=trJ4em4+Up9wf1cWi1zJIcTeKiL7VU8V9eR5/totF/SJ0sOa2b18vWkoRsYUxxjzXZ
- bpbUjXFrViU1uLaFI1bFyaXG3jXnsd/VptCVzoGhYHUtyPKCfE7qY3mRHhnJjQUQgps5
- QH1MDSQ6e6BO3L7fA174okRYNj8wrkebTPaGzABuPmG1O06GVUYNkIk5gwhb7aobsEL4
- bJtYvldv5e5lbou3rE9WXAJiexTIhjSPu6N+jbiglnMbX4vli9Yss52Y+bh0jzdDlZ+q
- HeyajiZSxZuhogSB1u+OMqPLkh3JkyBsJxjA/RweVlQm6ry5uxMMhzqMmYv0EUkUfY+d
- h0qA==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=h4n2rUT6ZGdvoy/BsktvZgyBHxTE8rabTOOnA69x0k8=;
+ b=oQsq/To7J5ogzOa0TSjkybKTMPS3rtaiNVWREDB3u4pj4MaZ7uneyrh5zmved/Gntk
+ gLlWhpYQ8qveg6e+khO+Q8L0L8buTannUuOs0zyD/dNw8891kufDYrJMD1SH4Ca/6EkO
+ 9bkTW8xa2yrodLmVWGiJMQH6V7EBjWTzPu0SoeSnFXzH9+C2VbfXumyVgSgEzXBTU+ME
+ FfqTxYedHGWQRdA+aPa8Xfh6cdzseXvGgksOCz9d2mBKvb6d43wjCW5MfqQT4LjfsblU
+ RhY8+CLcDC6+/mhIU0KI+m0SXawZdENqWoy/ofH/7/4QdWLmUOhI1/9gdoIg06vsJw6Y
+ Jxmw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=zykk+16i/VaVO7vGCiEbOdwpwXy1foVL2dprzKW3VcY=;
- b=mzqLVHNtMBKyQBCG7HOVGvYO/31EwS4NPR11yRmTdmvbpghAbH2MBfgZd6GIl3SbqA
- irSBb2xtmu7VpYcTxd57FwHFJRTzp4+3t6QNLFuGTvZnPZBWp21ndN0rjMCIp2biuzZA
- 962mKEKLrO1W8Hj5oIFk3a0DNOBJStuR5y9BeUAn3WHehqvdukk76eusm4hEgFSAt2Il
- fEc7DdYPRTc2kA3cntmrPZfC0VthQwatYlyY/ECgdhXYfzwC7MEh5XNhcrmESXn4qU7O
- RpPfsFy8iwU3JS91kDIavtJMTb+oyZ3oSDkpzQa874gSV75+9bWNlVhglX0+VV6o1Jas
- DNKw==
-X-Gm-Message-State: APjAAAW31F6wmgwUcUE0iL2EF7aOMb3LFhwiMAh4P+5n+UCr5PaEXKWd
- a/v9aOYSbSS07ZxaC54Fxgl/VY30LlvJnhYcxztBU1Pg
-X-Google-Smtp-Source: APXvYqyXx94WA5EdJdcpHMg/R/oEWO8JMmb/K2pzFqcu3/J8K/4V0sX76FoWK0bUo/XsHICC0CqCHvBxvgMmF7RF9t8=
-X-Received: by 2002:a9d:39a6:: with SMTP id y35mr11080912otb.81.1564252433247; 
- Sat, 27 Jul 2019 11:33:53 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190725164238.27991-1-amergnat@baylibre.com>
- <20190725164238.27991-6-amergnat@baylibre.com>
-In-Reply-To: <20190725164238.27991-6-amergnat@baylibre.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=h4n2rUT6ZGdvoy/BsktvZgyBHxTE8rabTOOnA69x0k8=;
+ b=rKfkY+QEIrQdMMLyRYhR5bSpl0cDqBcKz6KWexYQ8Pkm8JlA7YneeVFInudruzhZL9
+ zwMhI02QasHU+ngGEi8ii7IhKBNJN7GeTVwrf9e+M+uQuLvpdxsmJCLXXaFBp27/ftSb
+ /IZv5Z7/fLdDRbTuK5jfGFdA4osZ48gqFEl4UHXe05zWSQenv6n2Ps3jf0lL338Kc0l5
+ yzbMLU3dSV4fANeu+aDgPSFXGBpZKsEOqzleGhgUC9vJLoAmvb0JbuM9WkBWt4YNPE8n
+ mMg+LhS+lXVKLB0hGW82TOS9/c8AdQDjD5m+OW7a9ldiGepdUTfRA88xfHpVdBxbfe9C
+ peJw==
+X-Gm-Message-State: APjAAAWqWwEDQFH/NWMUcBxgPc+YpI37b94ZHXdVnIO/xo06g2VzmpeG
+ jXV/1GbkLVEifYba5835R+0ntlY3
+X-Google-Smtp-Source: APXvYqzg0efJoczgVWfrxUdgaiXSFNAa16hmUCsmIbTjaatCammoQ2y4fvocHoaMMKYHdCOH+tfyjA==
+X-Received: by 2002:a7b:cf0b:: with SMTP id l11mr95920292wmg.143.1564255209778; 
+ Sat, 27 Jul 2019 12:20:09 -0700 (PDT)
+Received: from blackbox.darklights.net
+ (p200300F133C65C00B418D0F4A25A19EC.dip0.t-ipconnect.de.
+ [2003:f1:33c6:5c00:b418:d0f4:a25a:19ec])
+ by smtp.googlemail.com with ESMTPSA id e7sm51506988wmd.0.2019.07.27.12.20.08
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Sat, 27 Jul 2019 12:20:09 -0700 (PDT)
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Sat, 27 Jul 2019 20:33:42 +0200
-Message-ID: <CAFBinCC3D87AxTJ_SpATWM8BcKAtLPKjc22mF5GPS+=-u0HC0w@mail.gmail.com>
-Subject: Re: [PATCH v2 5/8] clk: meson: meson8b: migrate to the new parent
- description method
-To: Alexandre Mergnat <amergnat@baylibre.com>
+To: linux-amlogic@lists.infradead.org,
+	srinivas.kandagatla@linaro.org
+Subject: [PATCH] nvmem: meson-mx-efuse: allow reading data smaller than
+ word_size
+Date: Sat, 27 Jul 2019 21:19:58 +0200
+Message-Id: <20190727191958.27240-1-martin.blumenstingl@googlemail.com>
+X-Mailer: git-send-email 2.22.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190727_113355_259272_0A410F92 
-X-CRM114-Status: UNSURE (   9.80  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190727_122012_452457_BF9BCA7C 
+X-CRM114-Status: GOOD (  10.54  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -94,40 +99,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>, sboyd@kernel.org,
- khilman@baylibre.com, linux-kernel@vger.kernel.org,
- baylibre-upstreaming@groups.io, linux-amlogic@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- jbrunet@baylibre.com
+Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Alexandre,
+Some Amlogic boards store the Ethernet MAC address inside the eFuse. The
+Ethernet MAC address uses 6 bytes. The existing logic in
+meson_mx_efuse_read() would write beyond the end of the data buffer when
+trying to read data with a size that is not aligned to word_size (4
+bytes on Meson8, Meson8b and Meson8m2).
 
-On Thu, Jul 25, 2019 at 6:47 PM Alexandre Mergnat <amergnat@baylibre.com> wrote:
->
-> This clock controller use the string comparison method to describe parent
-> relation between the clocks, which is not optimized.
->
-> Migrate to the new way by using .parent_hws where possible (ie. when
-> all clocks are local to the controller) and use .parent_data otherwise.
->
-> Signed-off-by: Alexandre Mergnat <amergnat@baylibre.com>
-thank you for working on this - everything looks fine to me, so feel
-free to add:
-Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Calculate the remaining data to copy inside meson_mx_efuse_read() so
+reading 6 bytes doesn't write beyond the end of the data buffer.
 
-and on my Odroid-C1+:
-Tested-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+---
+ drivers/nvmem/meson-mx-efuse.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-(I compared the output of /sys/kernel/debug/clk/clk_summary before and
-after this patch and it's identical. CPU frequency scaling also still
-works)
+diff --git a/drivers/nvmem/meson-mx-efuse.c b/drivers/nvmem/meson-mx-efuse.c
+index 2976aef87c82..d5ccde1abd8e 100644
+--- a/drivers/nvmem/meson-mx-efuse.c
++++ b/drivers/nvmem/meson-mx-efuse.c
+@@ -155,7 +155,7 @@ static int meson_mx_efuse_read(void *context, unsigned int offset,
+ 		if (err)
+ 			break;
+ 
+-		memcpy(buf + i, &tmp, efuse->config.word_size);
++		memcpy(buf + i, &tmp, min(bytes - i, efuse->config.word_size));
+ 	}
+ 
+ 	meson_mx_efuse_mask_bits(efuse, MESON_MX_EFUSE_CNTL1,
+-- 
+2.22.0
 
-
-Martin
 
 _______________________________________________
 linux-arm-kernel mailing list
