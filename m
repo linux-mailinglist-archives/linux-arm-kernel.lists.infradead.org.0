@@ -2,110 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 34E1077737
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Jul 2019 08:19:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC3C077741
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Jul 2019 08:31:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SoflG6VBf9PhUNrKpTBvMa74OfqL7FhFzBWodYxrnFo=; b=YFB7C3aTzFW8Tx
-	Cq3M/l5QUynfi9SBZPQ1eK79TmanzZw1/5eV6GboEmZ6P4uYQThj3RfvOACbuO3f13PiXcRAntq5p
-	QB4+p2D8vS8jxTp2j3g5LJ2pTRhqEsHYG0VraPnUi7bhklR1wlfYCPe9Q9yLFN+ts/9i0Tpg6cnYP
-	D5TcTsQxyxgrHB1V+X6j8i6mz0L5qapW6Es3WNvUEWCQzIwbDHeOMvk0Yc0nQD/ZW76EAZRDX9ISF
-	XAqJpjSaisF++4k4ItH+syIS9wLwi1NGUOkkNh8iVZbclCfl7X8ANnRquodAXmilIKnAc/JbH4z8h
-	yIhevLlBTtYzwRszlmDg==;
+	List-Owner; bh=J3WtEGwNkgVWW36vrXIVMovK2DC24kwpVN0vscFAJkg=; b=pg2JbjxdUFyks5
+	uOZDqvYo8WbrWusvFDaTPAj860FE5luTD1wUeXf/2VZKxTreJgMRaVMi+I9UcarjSaMOJEHqPaHHQ
+	05BKwRVVZaeOxwSQdbDuP06GFOMSjO+is1wpuvFvq75JRb1QdyYN5/UlhdDfqTCBPrCTAMEzIfWn8
+	tY11965FRc+9taeJzCIdPqygd6D4AgxztDZDfwd5pgZklTdzCv5uVcW/CuKyX5hg7FGkPeqz5u/1Q
+	3AanTrSoMWXH5NfUY5L1ORFaaBlQgbAKpZr9vk5Jr0mFjHurxteeRKC+W7jsN2sRECFMmWrje9CdO
+	tMjBY9MGcd0Fi7ar6oDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hrG3J-0002HS-Lh; Sat, 27 Jul 2019 06:19:34 +0000
-Received: from mail-eopbgr70085.outbound.protection.outlook.com ([40.107.7.85]
- helo=EUR04-HE1-obe.outbound.protection.outlook.com)
+	id 1hrGEm-0006SZ-8A; Sat, 27 Jul 2019 06:31:24 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hrG2z-0002H5-EP
- for linux-arm-kernel@lists.infradead.org; Sat, 27 Jul 2019 06:19:15 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=EASu/aFQ/yhpiH8W8C2W5y63U3BK0TN5WDbsdO0rZpblyyKOeeuyToM3IhdwleIsexhNMVCVGUFPTLzGwyfJUGGfydmg0+Fy55BaBi6XYX2+HdildE8Brn+HPf/S/y8HQvh75qs7PezNpFTyvSZguMo/SlNK4Co9S5zVOnoE1zWs4EreVODB/7IjdbyM/SEaZoyNJJ0DiW6h4i5bsVoIXxNMKaDpD1auuFoBjDjKw5YDX9Jvt8OvRt4Mk0OS5ULgCcbbfd1DazcLpqPbT7pZM8OXm8HG4i5Sx5FpdqLyTvWwSL1H8e6JWTC/W9tdx388cibnmQiWSuKk8Po9pZznEQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ZenlU5Mgg3iJLhndZGd7G00H4J/8pKUEeuI/1r0xT5E=;
- b=dDIxS42Xuco4YlPYh+cerUvDx5SeJgz4dGM2wTwzzuiw/mvV3CzhTUTDKem87ag5n6JudX1Dk/iXECg/F04rrpePbB5zUCtzmBcIIm3bGg0GoHrjAMt179J2fjhMQcK8dKvHNE5Qju3GSlFgCf5jLE3UmfB3JzcPx2cc1bkjzHHFVO/Ca44T5dlXqR+W2RWxVeuwELyq2gdhF/8Z1kMytvgAhbK2YT+0SRelB7PwlnTZWUbFVC6UxSADzxFCKuphFD/U3iYrgSOk0oZTyohPyDqe2R2ElZPH7b6lksLmw3D7zuZhLs7laFpmocpj950z3de3u9LFUachREdl+Y2EaA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=nxp.com;dmarc=pass action=none header.from=nxp.com;dkim=pass
- header.d=nxp.com;arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ZenlU5Mgg3iJLhndZGd7G00H4J/8pKUEeuI/1r0xT5E=;
- b=ZoSlHlFeMjkVWkfXZHK3Y+xf+ABDFMDm+mkpIAttSXyh23ZwM+PhghdOSOwFOitoh3kY7U4kCkXAKyDcrMWEyjZ7oKyx9TUxL59lXsdKBNDopEhudnGpi6m+D3dO37ctqijEgayZse673mkO5LXjqWixlUWUtRqTkUAPVbm9pjs=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3899.eurprd04.prod.outlook.com (52.134.71.154) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2115.10; Sat, 27 Jul 2019 06:19:07 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::7cdf:bddc:212c:f77e]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::7cdf:bddc:212c:f77e%4]) with mapi id 15.20.2094.017; Sat, 27 Jul 2019
- 06:19:07 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Daniel Baluta <daniel.baluta@gmail.com>
-Subject: RE: [PATCH 5/6] clk: imx8mq: Remove CLK_IS_CRITICAL flag for
- IMX8MQ_CLK_TMU_ROOT
-Thread-Topic: [PATCH 5/6] clk: imx8mq: Remove CLK_IS_CRITICAL flag for
- IMX8MQ_CLK_TMU_ROOT
-Thread-Index: AQHVMu9Qagn4ZAj9sUKncGzfKuws0abdnJEAgAB74HA=
-Date: Sat, 27 Jul 2019 06:19:07 +0000
-Message-ID: <DB3PR0402MB3916233A56CF5DF778115716F5C30@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <20190705045612.27665-1-Anson.Huang@nxp.com>
- <20190705045612.27665-5-Anson.Huang@nxp.com>
- <CAEnQRZAZNMBx3ApVmRP8hYPw0XY_QgR-saE6WLcT8oZmHPCxSA@mail.gmail.com>
-In-Reply-To: <CAEnQRZAZNMBx3ApVmRP8hYPw0XY_QgR-saE6WLcT8oZmHPCxSA@mail.gmail.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: c0947a3a-e0ae-4909-b22b-08d7125a54f7
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:DB3PR0402MB3899; 
-x-ms-traffictypediagnostic: DB3PR0402MB3899:
-x-microsoft-antispam-prvs: <DB3PR0402MB3899FC94EFEE7FE9B3695BD6F5C30@DB3PR0402MB3899.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:195;
-x-forefront-prvs: 01110342A5
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(136003)(396003)(376002)(39860400002)(366004)(53754006)(189003)(199004)(76116006)(33656002)(478600001)(64756008)(66556008)(66946007)(53936002)(8676002)(81156014)(81166006)(9686003)(55016002)(66476007)(66446008)(3846002)(25786009)(4326008)(6246003)(316002)(186003)(26005)(229853002)(102836004)(11346002)(486006)(476003)(8936002)(44832011)(6916009)(86362001)(446003)(54906003)(6116002)(14454004)(6506007)(2906002)(6436002)(7416002)(5660300002)(74316002)(71200400001)(76176011)(68736007)(7736002)(66066001)(256004)(305945005)(99286004)(52536014)(71190400001)(7696005)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3899;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: p+9LiqLAK1OSsmN8pPuQRmWorlVr1ZnBEli46a9MViy98Q5nPDirqQgDKRSA3teryeEuQG2sktGVPMuUYEfLEXapAyBq9ffOu0N21fYs9uczVxc8xDogoo3XpQcCP9bl/s1rdd3IdKW25AeB4YrAAkLwHcnHFQwiAjdIicCPwnfXd4nqfD4pTxC2YUv4XLnfmaXnMREsZqF5ohAO8xME3lm+46XnXWQzmVQ7qkFlcciESEhMwmFkQXUg2hZtGEY8WOQFOjWwOCkDFSgi/UeQCeeCekP9Qjejxl2ORYabAWz6ZAAZesOc0htzLchQI9Xr99vNR22+TweGt1I8WPa+X4KZQVM1b5YUZic+KcqoKZCeUrHyAnaBnVLWI/v2zn2weuKQcLWkuP1WmYIWIhsQM0yBokZGrkx+Idb7XHoIqa8=
+ id 1hrGEY-0006S6-0Q
+ for linux-arm-kernel@lists.infradead.org; Sat, 27 Jul 2019 06:31:11 +0000
+Received: by mail-wr1-x444.google.com with SMTP id n4so56551399wrs.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 26 Jul 2019 23:31:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=HKeMdrdWBgdGTKyoRuJP3d49YclQQWgce18ijijgk9I=;
+ b=AGHQ4E1M37EE6M5F7RtEuQX4fkGB62kY4xRAU4L+AEosvTGG1SlsCDHK/o1yzkzkDs
+ dIXgIfZkTv5prHK3S04NTfBitoJAJxa2qMEF2hXgq7kcHz/Ph+bnLSuGJ6xuuopOZFDw
+ 6uuBk4Vxg8Cczbs0i0DHfpYyQXXpLe4C83J19nZ5t8hJ3C13Z9IFgCOGRHXtYUaxunpD
+ C8pDK25kbahOed4KZT9hdXJ35VWXDaf3pe7uE3M8lH2RhTE0NiZMb0IfzfwLPyFq8KYa
+ 1Ow0QA9gE6SIWSxWWNN1mLHBF71kHuLo1XlD8aJmTl7YQoevnv6ebF+Y0TT/XY22mpXB
+ uPiQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=HKeMdrdWBgdGTKyoRuJP3d49YclQQWgce18ijijgk9I=;
+ b=OvYZaMrlxUagkxS6LNN0ZW84UYwYau45D0bbMjUB9vTXSFHRndv9NjQOvhD4/bp2Uh
+ sZbBqYF8Vt1J9ZWv6xnTy5HNoKxLf27HlKOaskZpS/7cz2ntXSgYILZsMuu+KPL4+S3B
+ uwy3xCZuHsba1gPvh/H9B49FzLe+LbVTgGC++wGVjFKawwNtNs+ECNVPdqcsaXah0506
+ M9GkkoeRyJ8pQtaZXrTBSoctnSqyR1QkQJr488HegIFHayozXu433NETXrH+ivzfzV8p
+ +QKThsfhprMpdRwpQSEOMCNNUPG8N7HGBctFLb3Vmdb+O6QoU2pX7LfzVnjL0iUiCDEb
+ 0QsQ==
+X-Gm-Message-State: APjAAAVQeA2Or2gfm4yxRGicsauEz4T1fWjWbIkI3OBUkW+AsLTqlh/a
+ KCtgL7esA6NABJK4NqIxzem48Sc6p8znpQbtFFE=
+X-Google-Smtp-Source: APXvYqzdgecswj3pdUxE5wMpc0iYUFA3hEfoHHf/1a5LOh9kiFNqb77jfKSfAfUuh+1oWpfs5nRNP7Da4/Vx0J4QRJc=
+X-Received: by 2002:adf:f450:: with SMTP id f16mr74204830wrp.335.1564209068259; 
+ Fri, 26 Jul 2019 23:31:08 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c0947a3a-e0ae-4909-b22b-08d7125a54f7
-X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Jul 2019 06:19:07.6381 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: anson.huang@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3899
+References: <1561453316-11481-1-git-send-email-abel.vesa@nxp.com>
+ <20190625223223.3B8EC2053B@mail.kernel.org>
+ <20190705085218.lvvqnqx6nfph2era@fsr-ub1664-175>
+ <20190722212537.41C9121900@mail.kernel.org>
+In-Reply-To: <20190722212537.41C9121900@mail.kernel.org>
+From: Daniel Baluta <daniel.baluta@gmail.com>
+Date: Sat, 27 Jul 2019 09:30:57 +0300
+Message-ID: <CAEnQRZAFdvSzh-pDJ-rsyaEJw83ymSVW0CC2+QZyWwAPeTOyBw@mail.gmail.com>
+Subject: Re: [PATCH] clk: imx8mq: Mark AHB clock as critical
+To: Stephen Boyd <sboyd@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_231913_566703_0B92970B 
-X-CRM114-Status: GOOD (  13.75  )
+X-CRM114-CacheID: sfid-20190726_233110_079051_76DFC7D2 
+X-CRM114-Status: GOOD (  20.04  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.7.85 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (daniel.baluta[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -124,70 +95,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Carlo Caione <ccaione@baylibre.com>,
- =?utf-8?B?R3VpZG8gR8O8bnRoZXI=?= <agx@sigxcpu.org>,
- "Angus Ainslie \(Purism\)" <angus@akkea.ca>,
- Leonard Crestez <leonard.crestez@nxp.com>, Fabio Estevam <festevam@gmail.com>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- Abel Vesa <abel.vesa@nxp.com>, Andrey Smirnov <andrew.smirnov@gmail.com>,
- "daniel.lezcano@linaro.org" <daniel.lezcano@linaro.org>,
- dl-linux-imx <linux-imx@nxp.com>, "rui.zhang@intel.com" <rui.zhang@intel.com>,
- Michael Turquette <mturquette@baylibre.com>,
- Devicetree List <devicetree@vger.kernel.org>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- "edubezval@gmail.com" <edubezval@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Stephen Boyd <sboyd@kernel.org>,
+Cc: Abel Vesa <abel.vesa@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ Mike Turquette <mturquette@baylibre.com>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>, Lucas Stach <l.stach@pengutronix.de>
+ dl-linux-imx <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
+ Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Daniel
+On Tue, Jul 23, 2019 at 6:17 AM Stephen Boyd <sboyd@kernel.org> wrote:
+>
+> Quoting Abel Vesa (2019-07-05 01:52:19)
+> > On 19-06-25 15:32:22, Stephen Boyd wrote:
+> > > Quoting Abel Vesa (2019-06-25 02:01:56)
+> > > > Keep the AHB clock always on since there is no driver to control it and
+> > > > all the other clocks that use it as parent rely on it being always enabled.
+> > > >
+> > > > Signed-off-by: Abel Vesa <abel.vesa@nxp.com>
+> > > > ---
+> > > >  drivers/clk/imx/clk-imx8mq.c | 2 +-
+> > > >  1 file changed, 1 insertion(+), 1 deletion(-)
+> > > >
+> > > > diff --git a/drivers/clk/imx/clk-imx8mq.c b/drivers/clk/imx/clk-imx8mq.c
+> > > > index 5fbc2a7..b48268b 100644
+> > > > --- a/drivers/clk/imx/clk-imx8mq.c
+> > > > +++ b/drivers/clk/imx/clk-imx8mq.c
+> > > > @@ -398,7 +398,7 @@ static int imx8mq_clocks_probe(struct platform_device *pdev)
+> > > >         clks[IMX8MQ_CLK_NOC_APB] = imx8m_clk_composite_critical("noc_apb", imx8mq_noc_apb_sels, base + 0x8d80);
+> > > >
+> > > >         /* AHB */
+> > > > -       clks[IMX8MQ_CLK_AHB] = imx8m_clk_composite("ahb", imx8mq_ahb_sels, base + 0x9000);
+> > > > +       clks[IMX8MQ_CLK_AHB] = imx8m_clk_composite_critical("ahb", imx8mq_ahb_sels, base + 0x9000);
+> > >
+> > > Please add a comment into the code why it's critical.
+> >
+> > Comment explaining why the AHB bus clock is critical ?
+> > Isn't that self-explanatory ?
+>
+> Nope, it isn't self-explanatory, because nothing on this line says "bus"
+> and it could be that someone reading this code isn't well versed in the
+> concepts of ARM world AHB to connect the two.
 
-> Subject: Re: [PATCH 5/6] clk: imx8mq: Remove CLK_IS_CRITICAL flag for
-> IMX8MQ_CLK_TMU_ROOT
-> 
-> Hi all,
-> 
-> latest linux-next hangs at boot.
-> 
-> commit fde50b96be821ac9673a7e00847cc4605bd88f34 (HEAD -> master, tag:
-> next-20190726, origin/master, origin/HEAD)
-> Author: Stephen Rothwell <sfr@canb.auug.org.au>
-> Date:   Fri Jul 26 15:18:02 2019 +1000
-> 
->     Add linux-next specific files for 20190726
-> 
->     Signed-off-by: Stephen Rothwell <sfr@canb.auug.org.au>
-> 
-> 
-> I know this is crazy but reverting commit:
-> 
-> commit 431bdd1df48ee2896ea9980d9153e3aeaf0c81ef (refs/bisect/bad)
-> Author: Anson Huang <Anson.Huang@nxp.com>
-> Date:   Fri Jul 5 12:56:11 2019 +0800
-> 
->     clk: imx8mq: Remove CLK_IS_CRITICAL flag for IMX8MQ_CLK_TMU_ROOT
-> 
->     IMX8MQ_CLK_TMU_ROOT is ONLY used for thermal module, the driver
->     should manage this clock, so no need to have CLK_IS_CRITICAL flag
->     set.
-> 
-> 
-> 
-> makes the boot work again.
-> 
-> Any idea?
+Agree with Stephen. Commit message should try to give as much details
+as possible
+also maybe educate the readers who might not have that much knowledge.
 
-I just found if disabling SDMA1, then kernel can boot up, it does NOT make sense
-TMU clock is related to SDMA1, I will check with design and get back to you soon.
+Abel, I understand that for someone who works daily with this part of the kernel
+this change might look trivial.
 
-Anson
+Also, without this patch linux-next hangs on imx8mq.
+
+With the explanation added you can add my:
+
+Tested-by: Daniel Baluta <daniel.baluta@nxp.com>
+
+thanks,
+Daniel.
 
 _______________________________________________
 linux-arm-kernel mailing list
