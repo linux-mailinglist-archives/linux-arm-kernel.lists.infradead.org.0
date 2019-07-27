@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D20E177832
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Jul 2019 12:42:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB31177839
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Jul 2019 12:42:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sUNhttH57RzltWc9wj86uaNCVWrqLKc5GaO3xMW5xuQ=; b=gDSwLV4slK5VeC
-	c6aWOkJ0zmpwUqvb7Fxqcak/Ko/cLOVlZ1OOPdbKLnSd4jPMQfh6zXvMWx0DK9zZKWmSCaH9ys4WZ
-	gQpw3BCvfnQwQf1bIx14xiByDWQS/lmcMcAXVElzkjHjrEdC2DgPioo80vCyNAxVeMnD7cuhtfoRF
-	Z2XgqP/N7RvPV0LrdaHP5/yvbfUtxoe4P/PbqBMOsD3kbFv7JYtuLwEAUDo2ULbxsPGyU/u0Fb6oO
-	G0WwDobkcdCUGFPaSevAA6NLC1gctiMcwM5MOJqyJ/zB5/iA9zJlv85AVzPkrN4UcUS8bDnEIBV4m
-	yZoYtKOa1YXq82ewvkFQ==;
+	List-Owner; bh=x2Plhk3h1nzG5m8A8CIkKR+TIeGtHKG8PK0NhcXMgck=; b=cfzTXiPkItnJyy
+	Fe58N4GrMn2jnhT/9UoPIVitYw9tbYDvfVfwbm/gkjmK7WWiaa88iYy/b5nvpcZzXaj+U6jC/blfa
+	O/Nj8+KarnY5YAqPZMBPZMua7OX7bqG44onuZrN5XHToEbszdRZs22wWrveh5mVkR5+SCh9t/dGfh
+	Kze7Uc49bg5eMdZcXp0o6Bwqlb+GBYnDkMrkVKPSZSlkWEoEflBxswi2EPHVPcTXXJj5epcT9o5yw
+	kZao5A3TwkHj3hBwmlgjiy2mm4qhZ86NkBDmIWKH0gbpSAc41xExuW8mcgldMId9aaAwtjLKTBe56
+	DSE3sDDNnFoMJSsm4ANw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hrK9b-0003xP-LX; Sat, 27 Jul 2019 10:42:19 +0000
+	id 1hrKA5-0004F1-6X; Sat, 27 Jul 2019 10:42:49 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hrK9U-0003wo-OG
- for linux-arm-kernel@lists.infradead.org; Sat, 27 Jul 2019 10:42:14 +0000
+ id 1hrK9x-0004ER-AA
+ for linux-arm-kernel@lists.infradead.org; Sat, 27 Jul 2019 10:42:42 +0000
 Received: from localhost (lfbn-1-17239-195.w86-248.abo.wanadoo.fr
  [86.248.61.195])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A75412081B;
- Sat, 27 Jul 2019 10:42:11 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3DC4C2081B;
+ Sat, 27 Jul 2019 10:42:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564224132;
- bh=UybUBfvBzantNilF1ZV5JV3PyFP6cC+3I7g4mp/0Vs4=;
+ s=default; t=1564224161;
+ bh=FKIv2Flt+IqqJ1Su+e/rVR/A6BEogeYEWgrpHI8gt4I=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=00/f/PUT34J5BgZ+rLwXSfqsj5XcE78vGy7ynsIP/f4bC0MHNKmzwuEF0Y8p3N9J3
- nBtBbQUYEp76+3k7yx5HnGEOF+2ZE3kryIwYjPEYrOlqXXs+YiygKeXy9/THIpEfuq
- KiCEJ8Lst82KuOp9FenkqubRmon4DGdyT/0NS180=
-Date: Sat, 27 Jul 2019 12:42:08 +0200
+ b=MGH+vdTBIheA4rIMvadvnrLach2gVA/iKJhDyrnv9Zzy+0EmeU4b8j4O/xhO0iUUY
+ b9YEkwaab7ZjiKTA1xpR4LsMdoM5w8Yu+UvapoxloPOfa8SFePvASZEozYrdoe+N3A
+ jysOrI81icWHuhf8wNIqWO144bffEbGDRIA/yFrM=
+Date: Sat, 27 Jul 2019 12:42:36 +0200
 From: Maxime Ripard <mripard@kernel.org>
 To: Jernej Skrabec <jernej.skrabec@siol.net>
-Subject: Re: [PATCH 1/6] dt-bindings: pwm: allwinner: Add H6 PWM description
-Message-ID: <20190727104208.my62iypgwjy5pkxz@flea.home>
+Subject: Re: [PATCH 2/6] pwm: sun4i: Add a quirk for reset line
+Message-ID: <20190727104236.43r7pa4e7htudc5y@flea.home>
 References: <20190726184045.14669-1-jernej.skrabec@siol.net>
- <20190726184045.14669-2-jernej.skrabec@siol.net>
+ <20190726184045.14669-3-jernej.skrabec@siol.net>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190726184045.14669-2-jernej.skrabec@siol.net>
+In-Reply-To: <20190726184045.14669-3-jernej.skrabec@siol.net>
 User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190727_034212_808989_70340441 
-X-CRM114-Status: GOOD (  16.21  )
+X-CRM114-CacheID: sfid-20190727_034241_363959_A566025E 
+X-CRM114-Status: UNSURE (   9.62  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,45 +87,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On Fri, Jul 26, 2019 at 08:40:40PM +0200, Jernej Skrabec wrote:
-> H6 PWM block is basically the same as A20 PWM, except that it also has
-> bus clock and reset line which needs to be handled accordingly.
+On Fri, Jul 26, 2019 at 08:40:41PM +0200, Jernej Skrabec wrote:
+> H6 PWM core needs deasserted reset line in order to work.
 >
-> Expand Allwinner PWM binding with H6 PWM specifics.
+> Add a quirk for it.
 >
 > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-> ---
->  .../bindings/pwm/allwinner,sun4i-a10-pwm.yaml | 36 ++++++++++++++++++-
->  1 file changed, 35 insertions(+), 1 deletion(-)
->
-> diff --git a/Documentation/devicetree/bindings/pwm/allwinner,sun4i-a10-pwm.yaml b/Documentation/devicetree/bindings/pwm/allwinner,sun4i-a10-pwm.yaml
-> index 0ac52f83a58c..deca5d81802f 100644
-> --- a/Documentation/devicetree/bindings/pwm/allwinner,sun4i-a10-pwm.yaml
-> +++ b/Documentation/devicetree/bindings/pwm/allwinner,sun4i-a10-pwm.yaml
-> @@ -30,13 +30,47 @@ properties:
->        - items:
->            - const: allwinner,sun50i-h5-pwm
->            - const: allwinner,sun5i-a13-pwm
-> +      - const: allwinner,sun50i-h6-pwm
->
->    reg:
->      maxItems: 1
->
-> -  clocks:
-> +  # Even though it only applies to subschemas under the conditionals,
-> +  # not listing them here will trigger a warning because of the
-> +  # additionalsProperties set to false.
-> +  clocks: true
-> +  clock-names: true
-> +  resets:
->      maxItems: 1
->
-> +allOf:
-> +  - if:
 
-There's only one condition, so you don't really need the allOf.
+Acked-by: Maxime Ripard <maxime.ripard@bootlin.com>
 
 Maxime
 
