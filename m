@@ -2,32 +2,32 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62B32779F4
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Jul 2019 17:15:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 61CB2779FB
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Jul 2019 17:16:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S8wmmSxPWJS//7yDgvVXNFeAWMlY4mooOML9I1n0lso=; b=a8oF+NUJYkxDnW
-	n/jwOQ5kTQoeZiu0yHzKiSBOVfshnKM8FIdkTcX1kkyaXQP8KgN+9a3m0P7UEJ6Pwkseqrxf/It3r
-	tv1DbWjoyEbuf+Pa0tEhdSJqVreEaOO214NPAqwalioryBIoHmFnLuHwPYQdci3/U/O4ghFyIqgEs
-	qMV8SmqYq+/hTDktBfxRHF7WZauEASjRWrFR0ysBv+S4vRqIBXcHlFP7nCR6c/EZU1Qo+n7OcDKTr
-	O+Jw4K0qVlYMeCgMelNjIa4Dv6s3mMD0VBQoWCT4dPqosdrBeBm0sXsIgE2XNNPCcV78FcvY0OosG
-	Zc6pH42JoiqH9kldCLBA==;
+	List-Owner; bh=Fm7/dqM1vdXDXKXakcqXU9hgbRlLcB9K4YGLUFDOqDI=; b=KjbcDjAUhWOtYE
+	duiPXJqyke5o2CgXm7NzCw6YJBUepgcznA3jJKQJ47MfDrJnwIAKOfznAWYUtcom4QaXXR20QxBrQ
+	7r72T/1GHwJqJreIY3IcR/WzXKE34rNf8mmbucuBXM99niHV0tIvAaVlXb/+BmCQuYL32YZOKOOD+
+	Qer4c01qmhzdrHJxthLWKz/G3RMLMmq+QO/4qOKA5wgojMkc86oDOTaJ35vkfPR00FfEqFneSPN8v
+	hLDz7odHUfHRm67Qd7GsqEOkvUFFB6ZCKD/O8iiASsevnZSs4nHOhIbJyBY3F4p3D3wI4gZo5bjFL
+	EDZVilxbPKGwtEPNekYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hrOQP-0002dY-32; Sat, 27 Jul 2019 15:15:57 +0000
+	id 1hrOR4-0003FX-Ry; Sat, 27 Jul 2019 15:16:38 +0000
 Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hrOKt-0005iK-5F; Sat, 27 Jul 2019 15:10:16 +0000
-Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 90554614924E688445FD;
- Sat, 27 Jul 2019 23:10:13 +0800 (CST)
-Received: from localhost (10.133.213.239) by DGGEMS405-HUB.china.huawei.com
- (10.3.19.205) with Microsoft SMTP Server id 14.3.439.0; Sat, 27 Jul 2019
- 23:10:07 +0800
+ id 1hrOKw-0005m1-HZ; Sat, 27 Jul 2019 15:10:20 +0000
+Received: from DGGEMS413-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 01CF66C90E18C1F42A26;
+ Sat, 27 Jul 2019 23:10:17 +0800 (CST)
+Received: from localhost (10.133.213.239) by DGGEMS413-HUB.china.huawei.com
+ (10.3.19.213) with Microsoft SMTP Server id 14.3.439.0; Sat, 27 Jul 2019
+ 23:10:10 +0800
 From: YueHaibing <yuehaibing@huawei.com>
 To: <lgirdwood@gmail.com>, <broonie@kernel.org>, <perex@perex.cz>,
  <tiwai@suse.com>, <eric@anholt.net>, <wahrenst@gmx.net>,
@@ -43,10 +43,10 @@ To: <lgirdwood@gmail.com>, <broonie@kernel.org>, <perex@perex.cz>,
  <wens@csie.org>, <thierry.reding@gmail.com>, <jonathanh@nvidia.com>,
  <yamada.masahiro@socionext.com>, <michal.simek@xilinx.com>,
  <jcmvbkbc@gmail.com>
-Subject: [PATCH -next 15/34] ASoC: stm32: sai: use
+Subject: [PATCH -next 16/34] ASoC: codecs: msm8916-wcd: use
  devm_platform_ioremap_resource() to simplify code
-Date: Sat, 27 Jul 2019 23:07:19 +0800
-Message-ID: <20190727150738.54764-16-yuehaibing@huawei.com>
+Date: Sat, 27 Jul 2019 23:07:20 +0800
+Message-ID: <20190727150738.54764-17-yuehaibing@huawei.com>
 X-Mailer: git-send-email 2.10.2.windows.1
 In-Reply-To: <20190727150738.54764-1-yuehaibing@huawei.com>
 References: <20190727150738.54764-1-yuehaibing@huawei.com>
@@ -54,8 +54,8 @@ MIME-Version: 1.0
 X-Originating-IP: [10.133.213.239]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190727_081015_524567_FA7F804F 
-X-CRM114-Status: UNSURE (   7.38  )
+X-CRM114-CacheID: sfid-20190727_081019_108460_63E6F1AE 
+X-CRM114-Status: UNSURE (   7.40  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -94,30 +94,30 @@ This is detected by coccinelle.
 Reported-by: Hulk Robot <hulkci@huawei.com>
 Signed-off-by: YueHaibing <yuehaibing@huawei.com>
 ---
- sound/soc/stm/stm32_sai.c | 4 +---
+ sound/soc/codecs/msm8916-wcd-digital.c | 4 +---
  1 file changed, 1 insertion(+), 3 deletions(-)
 
-diff --git a/sound/soc/stm/stm32_sai.c b/sound/soc/stm/stm32_sai.c
-index 63f68e6..1ac5103c 100644
---- a/sound/soc/stm/stm32_sai.c
-+++ b/sound/soc/stm/stm32_sai.c
-@@ -152,7 +152,6 @@ static int stm32_sai_probe(struct platform_device *pdev)
- {
- 	struct stm32_sai_data *sai;
- 	struct reset_control *rst;
--	struct resource *res;
- 	const struct of_device_id *of_id;
- 	u32 val;
+diff --git a/sound/soc/codecs/msm8916-wcd-digital.c b/sound/soc/codecs/msm8916-wcd-digital.c
+index 1db7e43..9fa5d44 100644
+--- a/sound/soc/codecs/msm8916-wcd-digital.c
++++ b/sound/soc/codecs/msm8916-wcd-digital.c
+@@ -1143,7 +1143,6 @@ static int msm8916_wcd_digital_probe(struct platform_device *pdev)
+ 	struct msm8916_wcd_digital_priv *priv;
+ 	struct device *dev = &pdev->dev;
+ 	void __iomem *base;
+-	struct resource *mem_res;
+ 	struct regmap *digital_map;
  	int ret;
-@@ -161,8 +160,7 @@ static int stm32_sai_probe(struct platform_device *pdev)
- 	if (!sai)
+ 
+@@ -1151,8 +1150,7 @@ static int msm8916_wcd_digital_probe(struct platform_device *pdev)
+ 	if (!priv)
  		return -ENOMEM;
  
--	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	sai->base = devm_ioremap_resource(&pdev->dev, res);
-+	sai->base = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(sai->base))
- 		return PTR_ERR(sai->base);
+-	mem_res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+-	base = devm_ioremap_resource(&pdev->dev, mem_res);
++	base = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(base))
+ 		return PTR_ERR(base);
  
 -- 
 2.7.4
