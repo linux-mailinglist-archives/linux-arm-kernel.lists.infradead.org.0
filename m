@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C0E377842
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Jul 2019 12:46:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C3F767784B
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Jul 2019 12:50:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TDyM7yhOTvX+ZP/+T7+CFSuZ2ZPq/7r5XhCkubzUKEs=; b=LO5+KBaETGVRbk
-	l56IYVP+4eRDl173aBBu2wW5wumdfcUgrH/ly40q3krZv+pZ0bDBpFmVzC0KB/TFfU5mDCF2lInNS
-	79leE0G0+ZPL/QvLwXSg3HogZx0ciBtJ3cdep8U2yHbfA3BHQr2PEbEmriyykHafAYwDTwWKfmvYB
-	5t7dynk0te0AOSA8BOy1Tc4M2PJ+7yMfRUSbWO1oGNGCZt5S2fLvCndzvgSAYwPveqB2VnIUBUeaI
-	wPgoDWWJJvvJ74uUgkMNhZHcnmnVqJqvtqyIaM/ZBHNXo5xvVWHpJWmEe7A64N6UK85bx0yM55fkW
-	phvjh03XjioE/c7Of6mw==;
+	List-Owner; bh=cYvjd3Ax/B8nzh9fzM3ZIsh7TXV7ZfBzlHHb6479SFg=; b=ieKJ4dz6tN+Nx8
+	NAV/A4Uz61Z/1y0ZAZTd3XUheK8WyYqb8RJWQcFvALYNpdm1+jD4f3kbAj6kwZ8gN6ry5Yy9iyYgc
+	d84MorS4Ev84lrqVLf39862QDmK0gHzIsiF82LwiqAkqtbcQL6nd88cjNiEoLBok4VM/WjkVJp4iE
+	aVYOLBGDaKDS4kpT83JuRqLPkfjfDPJwsjcHRdOxVc4kIQYlNUG7au2FgbfwSpv0w2bC0as/bNmNq
+	BDnSIsjU/KYPuW+psGQhAMHgDrUdpaqE/DS0CqotCzoyC6kalOWvkTFliRLehiBZ5/5/P9WbqvttO
+	Nf39hXnhWcVkg7TltuBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hrKDo-0005mz-72; Sat, 27 Jul 2019 10:46:40 +0000
+	id 1hrKHM-0007JU-Ra; Sat, 27 Jul 2019 10:50:20 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hrKDg-0005md-Ml
- for linux-arm-kernel@lists.infradead.org; Sat, 27 Jul 2019 10:46:34 +0000
+ id 1hrKHF-0007If-GV
+ for linux-arm-kernel@lists.infradead.org; Sat, 27 Jul 2019 10:50:14 +0000
 Received: from localhost (lfbn-1-17239-195.w86-248.abo.wanadoo.fr
  [86.248.61.195])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8CCAD2081B;
- Sat, 27 Jul 2019 10:46:31 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 37D112085A;
+ Sat, 27 Jul 2019 10:50:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564224392;
- bh=u64zJaHojBkDbTp0t96ojvihtDs1xf7xrWbz931/50Q=;
+ s=default; t=1564224612;
+ bh=g6N3S38sMlPdUwOIQ954YRUIiHzxHJSm1difeoQG+D0=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=dqTef61oF6A8Qq8ZY3CYmHsNzAQ2jCkku6FceD6K/72NWyqsEB4UVVGhn0mIUGU3R
- ZAxQ8eo0fCkhjoCwUdSx9Boyng4mDIYwrpTCT8LiyHRJ2f9vivpE5dE+P/c8k8bqL5
- scBgxl4EKPkNXeyrd60WQZyqud4Cs5DZV6z9qV2Q=
-Date: Sat, 27 Jul 2019 12:46:28 +0200
+ b=LK0V1Uytt60lUv2RslLChq0URR7ysSdVmJbcdtZNiVWm4tzK2FONkUo2nLMt7PQzC
+ XOqn+hSmXLZs44TwrgBNI3MVzTEYcPQReIUhkOtbpBeClUqncnuk0MwyHmomUMW9Qy
+ dT6gZH2XQCPmC5TtvO4CzUdBvkz7TjtDea5VhCEM=
+Date: Sat, 27 Jul 2019 12:50:08 +0200
 From: Maxime Ripard <mripard@kernel.org>
 To: Jernej Skrabec <jernej.skrabec@siol.net>
-Subject: Re: [PATCH 3/6] pwm: sun4i: Add a quirk for bus clock
-Message-ID: <20190727104628.jsdvpxvcpzru75v5@flea.home>
+Subject: Re: [PATCH 5/6] pwm: sun4i: Add support to output source clock
+ directly
+Message-ID: <20190727105008.he35sixfvoyl2lm7@flea.home>
 References: <20190726184045.14669-1-jernej.skrabec@siol.net>
- <20190726184045.14669-4-jernej.skrabec@siol.net>
+ <20190726184045.14669-6-jernej.skrabec@siol.net>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190726184045.14669-4-jernej.skrabec@siol.net>
+In-Reply-To: <20190726184045.14669-6-jernej.skrabec@siol.net>
 User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190727_034632_763806_4E582163 
-X-CRM114-Status: GOOD (  19.08  )
+X-CRM114-CacheID: sfid-20190727_035013_570727_D35DAABC 
+X-CRM114-Status: GOOD (  12.33  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,59 +87,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On Fri, Jul 26, 2019 at 08:40:42PM +0200, Jernej Skrabec wrote:
-> H6 PWM core needs bus clock to be enabled in order to work.
+On Fri, Jul 26, 2019 at 08:40:44PM +0200, Jernej Skrabec wrote:
+> PWM core has an option to bypass whole logic and output unchanged source
+> clock as PWM output. This is achieved by enabling bypass bit.
 >
-> Add a quirk for it.
+> Note that when bypass is enabled, no other setting has any meaning, not
+> even enable bit.
+>
+> This mode of operation is needed to achieve high enough frequency to
+> serve as clock source for AC200 chip, which is integrated into same
+> package as H6 SoC.
 >
 > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-> ---
->  drivers/pwm/pwm-sun4i.c | 15 +++++++++++++++
->  1 file changed, 15 insertions(+)
->
-> diff --git a/drivers/pwm/pwm-sun4i.c b/drivers/pwm/pwm-sun4i.c
-> index 1b7be8fbde86..7d3ac3f2dc3f 100644
-> --- a/drivers/pwm/pwm-sun4i.c
-> +++ b/drivers/pwm/pwm-sun4i.c
-> @@ -72,6 +72,7 @@ static const u32 prescaler_table[] = {
->  };
->
->  struct sun4i_pwm_data {
-> +	bool has_bus_clock;
->  	bool has_prescaler_bypass;
->  	bool has_reset;
->  	unsigned int npwm;
-> @@ -79,6 +80,7 @@ struct sun4i_pwm_data {
->
->  struct sun4i_pwm_chip {
->  	struct pwm_chip chip;
-> +	struct clk *bus_clk;
->  	struct clk *clk;
->  	struct reset_control *rst;
->  	void __iomem *base;
-> @@ -382,6 +384,16 @@ static int sun4i_pwm_probe(struct platform_device *pdev)
->  		reset_control_deassert(pwm->rst);
->  	}
->
-> +	if (pwm->data->has_bus_clock) {
-> +		pwm->bus_clk = devm_clk_get(&pdev->dev, "bus");
-> +		if (IS_ERR(pwm->bus_clk)) {
-> +			ret = PTR_ERR(pwm->bus_clk);
-> +			goto err_bus;
-> +		}
-> +
-> +		clk_prepare_enable(pwm->bus_clk);
-> +	}
-> +
 
-The patch itself looks fine, but you should clarify which clock is
-being used by the old driver.
-
-My guess is that the "new" clock is actually the mod one, while the
-old one was both the clock of the register interface (bus) and the
-clock of the PWM generation logic (mod).
+It doesn't seem to be available on the A10 (at least) though. The A13
+seem to have it, so you should probably check that, and make that
+conditional to the compatible if not available on all of them.
 
 Maxime
 
