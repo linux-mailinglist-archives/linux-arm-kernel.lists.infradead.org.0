@@ -2,32 +2,32 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E461F77A07
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Jul 2019 17:17:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A89977A09
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Jul 2019 17:18:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x+CBYt0DFLLT1YhLGCG3PkIY26kQq2cwB42tz0AQxG4=; b=TvcAkjCGJBFNbT
-	rEjb1wrXOh6rQD/JNGWQK+DQhXuOmuiOCQo7z8GILDBOBC9mTm5uIrzskUkEZl6FSiqhWdlu30yu8
-	bM3JH7v1TxM3r3h9zr3z25qX7VxH0raUuGWxbSBxnmn4LsJd0g4BVQjEWbkBnllN1Fu88A0Uqnr01
-	9LscnaLmkv6UkjezbvHFxFSTAfZXdT/0tuZNcdiuRoMttwILcrbesibtZGnzbxj3kR3wEuUr5emsy
-	xAx7G1mjmp8Z5zM+GgoYCLLUjYNtTm27zjGS/uMAin8TolXC4F2+mrcHqtIotoFIHDAJ9L6hEPtsu
-	E60lNLEWZJHIJQ4djmqQ==;
+	List-Owner; bh=hL0AmTBPX6Sti9Hc8jv2lpPIs5dEHKuHDGTMGkGGPHM=; b=HXmZhJTI5OP3o1
+	ETNfg0fbxdkWJZidFZ4hhZJJ1ldJo2d5MSlLef7v0Z6z1piZaZvOXb3s3ZzTeOQ4o/6ttqmNVHamb
+	OdasaZNeg78JgzUr7z9BvnYXGnmGxPHS4QkiO7BpN1NufHObgoyBltZq1z+IG13tHOjLfogF1frPZ
+	Bh8F6+UlX3nICOrzK2ivkjzse7/djKS95Yl+cKd9oCxm6EBBsXglVZU8CZhS4qJdmAIZReYNcMa8J
+	Wy35REUhHhFxuWFQiTKsB2KxlZY5sSBNuGKVIo3SVFAcMWI/fGCTu29BZsBucwQ4I89VxC4KYlxd3
+	Q6yW+A6cOJXpLst6dC4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hrOS6-0004F1-SG; Sat, 27 Jul 2019 15:17:42 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1hrOSS-0004XU-1y; Sat, 27 Jul 2019 15:18:04 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hrOL8-0005vS-V3; Sat, 27 Jul 2019 15:10:32 +0000
-Received: from DGGEMS407-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 445BBE0CE35BE6B53BA0;
- Sat, 27 Jul 2019 23:10:28 +0800 (CST)
-Received: from localhost (10.133.213.239) by DGGEMS407-HUB.china.huawei.com
- (10.3.19.207) with Microsoft SMTP Server id 14.3.439.0; Sat, 27 Jul 2019
- 23:10:19 +0800
+ id 1hrOLA-0005wN-JR; Sat, 27 Jul 2019 15:10:34 +0000
+Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id C87948F1DF3A64D838EE;
+ Sat, 27 Jul 2019 23:10:29 +0800 (CST)
+Received: from localhost (10.133.213.239) by DGGEMS401-HUB.china.huawei.com
+ (10.3.19.201) with Microsoft SMTP Server id 14.3.439.0; Sat, 27 Jul 2019
+ 23:10:22 +0800
 From: YueHaibing <yuehaibing@huawei.com>
 To: <lgirdwood@gmail.com>, <broonie@kernel.org>, <perex@perex.cz>,
  <tiwai@suse.com>, <eric@anholt.net>, <wahrenst@gmx.net>,
@@ -43,10 +43,10 @@ To: <lgirdwood@gmail.com>, <broonie@kernel.org>, <perex@perex.cz>,
  <wens@csie.org>, <thierry.reding@gmail.com>, <jonathanh@nvidia.com>,
  <yamada.masahiro@socionext.com>, <michal.simek@xilinx.com>,
  <jcmvbkbc@gmail.com>
-Subject: [PATCH -next 19/34] ASoC: jz4740: use
+Subject: [PATCH -next 20/34] ASoC: inno_rk3036: use
  devm_platform_ioremap_resource() to simplify code
-Date: Sat, 27 Jul 2019 23:07:23 +0800
-Message-ID: <20190727150738.54764-20-yuehaibing@huawei.com>
+Date: Sat, 27 Jul 2019 23:07:24 +0800
+Message-ID: <20190727150738.54764-21-yuehaibing@huawei.com>
 X-Mailer: git-send-email 2.10.2.windows.1
 In-Reply-To: <20190727150738.54764-1-yuehaibing@huawei.com>
 References: <20190727150738.54764-1-yuehaibing@huawei.com>
@@ -54,8 +54,8 @@ MIME-Version: 1.0
 X-Originating-IP: [10.133.213.239]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190727_081031_203175_A65512A6 
-X-CRM114-Status: UNSURE (   7.67  )
+X-CRM114-CacheID: sfid-20190727_081032_914372_D2FA2E64 
+X-CRM114-Status: UNSURE (   7.23  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -63,7 +63,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
+ medium trust [45.249.212.191 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -94,27 +94,27 @@ This is detected by coccinelle.
 Reported-by: Hulk Robot <hulkci@huawei.com>
 Signed-off-by: YueHaibing <yuehaibing@huawei.com>
 ---
- sound/soc/codecs/jz4740.c | 4 +---
+ sound/soc/codecs/inno_rk3036.c | 4 +---
  1 file changed, 1 insertion(+), 3 deletions(-)
 
-diff --git a/sound/soc/codecs/jz4740.c b/sound/soc/codecs/jz4740.c
-index 974e17f..460aa1f 100644
---- a/sound/soc/codecs/jz4740.c
-+++ b/sound/soc/codecs/jz4740.c
-@@ -318,7 +318,6 @@ static int jz4740_codec_probe(struct platform_device *pdev)
+diff --git a/sound/soc/codecs/inno_rk3036.c b/sound/soc/codecs/inno_rk3036.c
+index 7feedbb..14d8fe1 100644
+--- a/sound/soc/codecs/inno_rk3036.c
++++ b/sound/soc/codecs/inno_rk3036.c
+@@ -405,7 +405,6 @@ static int rk3036_codec_platform_probe(struct platform_device *pdev)
  {
- 	int ret;
- 	struct jz4740_codec *jz4740_codec;
--	struct resource *mem;
+ 	struct rk3036_codec_priv *priv;
+ 	struct device_node *of_node = pdev->dev.of_node;
+-	struct resource *res;
  	void __iomem *base;
- 
- 	jz4740_codec = devm_kzalloc(&pdev->dev, sizeof(*jz4740_codec),
-@@ -326,8 +325,7 @@ static int jz4740_codec_probe(struct platform_device *pdev)
- 	if (!jz4740_codec)
+ 	struct regmap *grf;
+ 	int ret;
+@@ -414,8 +413,7 @@ static int rk3036_codec_platform_probe(struct platform_device *pdev)
+ 	if (!priv)
  		return -ENOMEM;
  
--	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	base = devm_ioremap_resource(&pdev->dev, mem);
+-	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+-	base = devm_ioremap_resource(&pdev->dev, res);
 +	base = devm_platform_ioremap_resource(pdev, 0);
  	if (IS_ERR(base))
  		return PTR_ERR(base);
