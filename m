@@ -2,33 +2,33 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D9BE778251
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 01:17:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D84678252
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 01:19:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
 	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=GF9yCRoEGUxtshtFb/MtLvm5jmVvJNOy1kqePvK7+Pc=; b=cIbmOM/bDgrJm+
-	5jd0JtMo77IX+aAskjaoIJNxSHw+H2NryG+RHU+E5lWkGbyBV+dvjIYapr0cAw0NATLHMhsNbb1HA
-	4l564S8VhW1FOL/n935GPQtM/S+AG0tFymOnY5l7w5NdgC4wO9rpwRdo9b9qMSBzD1JnzLIqVqUcH
-	rt3C2cqjBEqTlyK5y5H9aU/+xdjON4IviyZo1vYH/h7yTF176CbtLXNV66ZHnMTW1Sc1KUvHZevdZ
-	0NBgPWRqhcamdwF0CuQSQ/QZQ4NY8P0g8XEmoTLoFjAs26lZemsiQO1ocVuu+DlPVVjWCgdogOhR+
-	Q2LqAKeZAtFIhzuHbLwg==;
+	List-Owner; bh=QE7solg1LtoBtApdCkT8Glpz5zLn4v4UCVeX7/MPRV0=; b=JmBU6/PvtDKujS
+	8dTVXH9UCSKcQKrW2hi7VVknwxadxiYpJEuiFtyJLU5loDCNOoNufgx9miWutGQs3dckg7KmPhmCa
+	XWfWh9rk5WR2XC+DqBH3Rk3ZYShRco/2eqjuOewLPlHjkXWd+SRCW+LDz9/XeOQza+BHyut63RG+M
+	EBkYWsluEmnin6gGojtjJNqoObG92a5CcIcp2SVHIpx/mfoL7+s5e2NY+0qs1JcEuwPuyVZeoVtbX
+	LaFECKJV1SL5zGLNEQDSgPvIy16zzxGGk1MiPHAmp6r/A6EocNgejwOlaNp6vmM2co1nI2aavosxs
+	x19BLx6JJALmkuOLvnrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hrsPZ-00081l-W8; Sun, 28 Jul 2019 23:17:06 +0000
-Received: from gateway34.websitewelcome.com ([192.185.148.142])
+	id 1hrsRy-0008JD-AF; Sun, 28 Jul 2019 23:19:34 +0000
+Received: from gateway24.websitewelcome.com ([192.185.50.93])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hrsPO-00081S-BD
- for linux-arm-kernel@lists.infradead.org; Sun, 28 Jul 2019 23:16:55 +0000
-Received: from cm14.websitewelcome.com (cm14.websitewelcome.com [100.42.49.7])
- by gateway34.websitewelcome.com (Postfix) with ESMTP id 85227275A9
+ id 1hrsRn-0008Is-9e
+ for linux-arm-kernel@lists.infradead.org; Sun, 28 Jul 2019 23:19:24 +0000
+Received: from cm12.websitewelcome.com (cm12.websitewelcome.com [100.42.49.8])
+ by gateway24.websitewelcome.com (Postfix) with ESMTP id 31424A68D
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 28 Jul 2019 18:16:53 -0500 (CDT)
+ Sun, 28 Jul 2019 18:19:22 -0500 (CDT)
 Received: from gator4166.hostgator.com ([108.167.133.22]) by cmsmtp with SMTP
- id rsPNhk9Si2qH7rsPNhmgUZ; Sun, 28 Jul 2019 18:16:53 -0500
+ id rsRmhE9jDiQerrsRmhdPer; Sun, 28 Jul 2019 18:19:22 -0500
 X-Authority-Reason: nr=8
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=embeddedor.com; s=default; h=Content-Type:MIME-Version:Message-ID:Subject:
@@ -36,22 +36,21 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=86XZTQaufMDQruzYVy1gIqXjB4PVGjUo2sh48fKeAsA=; b=A4rAWenDetBFKIVeGlJCyNGtyo
- zIijEdbaJQVXWvA9uEmheqhnby0Gd7mq0TSglO6C60EuF8Lb2BrxCWT10hOq9I1TRh1ynTK6EYDgC
- mfzt8pK5jrv3igsIpLXGHARUoib2Yk+QZDGM0FV3i11jmRO/UUDvwLQm4KfTIyqCQBBNdD4JH8IxZ
- dsqdCNP1hTfcD/eVxo3NQtIfZbdaLUbkQZw+o2K68FR781SbCvAeXtEVZ0QoanFF5PcdxsiUD8rHu
- /Lj3oXp8izpISe15xCRQ2rS7kQ3cGYc+tejScPnWq48KwF6chzQ9BZyoQ2hvX4txs2/ymkTXmRzUP
- aep5/ruA==;
-Received: from [187.192.11.120] (port=39048 helo=embeddedor)
+ bh=PY6E13tVfIgBq9qTq9qmjg7C5IhkGMS1k4wt9WQOgBg=; b=UIbI760Cqp3d3ijjcmuaqmwDtN
+ kyrvcLfNZF4clUbxV+4FTx7Mak7xcRTjZsTWsnlo9CfF0ahFDUsML2mQDkCqLcJClVkNS+GWRjWbe
+ X5MdRtFHZJcebXg7ocKkwPJyJSCfTmQMHwH8sjxayXUiZbTQWRcGLMXVqEs0W24Y6IepyptAzDdC3
+ sQE8X+gLM4VseJflhpewJhF4OPJLigjqiJC1cNCmdqVKleFtgxa44iLdWvP5Q43Hkz93pJw4NTHsk
+ bDV0rPCJs84J5vPbLA4I67uK9urFp268W0EFB3m2WodxyEcb2cg5CQY30ZcsYhy7jl567pkV5H40E
+ wg0swe8Q==;
+Received: from [187.192.11.120] (port=39058 helo=embeddedor)
  by gator4166.hostgator.com with esmtpa (Exim 4.92)
  (envelope-from <gustavo@embeddedor.com>)
- id 1hrsPM-003WPA-9s; Sun, 28 Jul 2019 18:16:52 -0500
-Date: Sun, 28 Jul 2019 18:16:51 -0500
+ id 1hrsRl-003XoU-2P; Sun, 28 Jul 2019 18:19:21 -0500
+Date: Sun, 28 Jul 2019 18:19:20 -0500
 From: "Gustavo A. R. Silva" <gustavo@embeddedor.com>
-To: Will Deacon <will@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Russell King <linux@armlinux.org.uk>
-Subject: [PATCH] ARM/hw_breakpoint: Mark expected switch fall-throughs
-Message-ID: <20190728231651.GA22123@embeddedor>
+To: Russell King <linux@armlinux.org.uk>
+Subject: [PATCH] ARM: alignment: Mark expected switch fall-throughs
+Message-ID: <20190728231920.GA22247@embeddedor>
 MIME-Version: 1.0
 Content-Disposition: inline
 User-Agent: Mutt/1.9.4 (2018-02-28)
@@ -64,18 +63,18 @@ X-AntiAbuse: Sender Address Domain - embeddedor.com
 X-BWhitelist: no
 X-Source-IP: 187.192.11.120
 X-Source-L: No
-X-Exim-ID: 1hrsPM-003WPA-9s
+X-Exim-ID: 1hrsRl-003XoU-2P
 X-Source: 
 X-Source-Args: 
 X-Source-Dir: 
-X-Source-Sender: (embeddedor) [187.192.11.120]:39048
+X-Source-Sender: (embeddedor) [187.192.11.120]:39058
 X-Source-Auth: gustavo@embeddedor.com
-X-Email-Count: 12
+X-Email-Count: 17
 X-Source-Cap: Z3V6aWRpbmU7Z3V6aWRpbmU7Z2F0b3I0MTY2Lmhvc3RnYXRvci5jb20=
 X-Local-Domain: yes
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190728_161654_463988_6D38A399 
-X-CRM114-Status: UNSURE (   7.35  )
+X-CRM114-CacheID: sfid-20190728_161923_422123_A671003F 
+X-CRM114-Status: UNSURE (   6.89  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -83,7 +82,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [192.185.148.142 listed in list.dnswl.org]
+ no trust [192.185.50.93 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -116,99 +115,49 @@ Mark switch cases where we are expecting to fall through.
 
 This patch fixes the following warnings:
 
-arch/arm/kernel/hw_breakpoint.c: In function 'hw_breakpoint_arch_parse':
-arch/arm/kernel/hw_breakpoint.c:609:6: warning: this statement may fall through [-Wimplicit-fallthrough=]
-   if (hw->ctrl.len == ARM_BREAKPOINT_LEN_2)
+arch/arm/mm/alignment.c: In function 'thumb2arm':
+arch/arm/mm/alignment.c:688:6: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   if ((tinstr & (3 << 9)) == 0x0400) {
       ^
-arch/arm/kernel/hw_breakpoint.c:611:2: note: here
-  case 3:
+arch/arm/mm/alignment.c:700:2: note: here
+  default:
+  ^~~~~~~
+arch/arm/mm/alignment.c: In function 'do_alignment_t32_to_handler':
+arch/arm/mm/alignment.c:753:15: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   poffset->un = (tinst2 & 0xff) << 2;
+   ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+arch/arm/mm/alignment.c:754:2: note: here
+  case 0xe940:
   ^~~~
-arch/arm/kernel/hw_breakpoint.c:613:6: warning: this statement may fall through [-Wimplicit-fallthrough=]
-   if (hw->ctrl.len == ARM_BREAKPOINT_LEN_1)
-      ^
-arch/arm/kernel/hw_breakpoint.c:615:2: note: here
-  default:
-  ^~~~~~~
-arch/arm/kernel/hw_breakpoint.c: In function 'arch_build_bp_info':
-arch/arm/kernel/hw_breakpoint.c:544:6: warning: this statement may fall through [-Wimplicit-fallthrough=]
-   if ((hw->ctrl.type != ARM_BREAKPOINT_EXECUTE)
-      ^
-arch/arm/kernel/hw_breakpoint.c:547:2: note: here
-  default:
-  ^~~~~~~
-In file included from include/linux/kernel.h:11,
-                 from include/linux/list.h:9,
-                 from include/linux/preempt.h:11,
-                 from include/linux/hardirq.h:5,
-                 from arch/arm/kernel/hw_breakpoint.c:16:
-arch/arm/kernel/hw_breakpoint.c: In function 'hw_breakpoint_pending':
-include/linux/compiler.h:78:22: warning: this statement may fall through [-Wimplicit-fallthrough=]
- # define unlikely(x) __builtin_expect(!!(x), 0)
-                      ^~~~~~~~~~~~~~~~~~~~~~~~~~
-include/asm-generic/bug.h:136:2: note: in expansion of macro 'unlikely'
-  unlikely(__ret_warn_on);     \
-  ^~~~~~~~
-arch/arm/kernel/hw_breakpoint.c:863:3: note: in expansion of macro 'WARN'
-   WARN(1, "Asynchronous watchpoint exception taken. Debugging results may be unreliable\n");
-   ^~~~
-arch/arm/kernel/hw_breakpoint.c:864:2: note: here
-  case ARM_ENTRY_SYNC_WATCHPOINT:
-  ^~~~
-arch/arm/kernel/hw_breakpoint.c: In function 'core_has_os_save_restore':
-arch/arm/kernel/hw_breakpoint.c:910:6: warning: this statement may fall through [-Wimplicit-fallthrough=]
-   if (oslsr & ARM_OSLSR_OSLM0)
-      ^
-arch/arm/kernel/hw_breakpoint.c:912:2: note: here
-  default:
-  ^~~~~~~
 
 Reported-by: Stephen Rothwell <sfr@canb.auug.org.au>
 Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>
 ---
- arch/arm/kernel/hw_breakpoint.c | 5 +++++
- 1 file changed, 5 insertions(+)
+ arch/arm/mm/alignment.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm/kernel/hw_breakpoint.c b/arch/arm/kernel/hw_breakpoint.c
-index af8b8e15f589..b0c195e3a06d 100644
---- a/arch/arm/kernel/hw_breakpoint.c
-+++ b/arch/arm/kernel/hw_breakpoint.c
-@@ -544,6 +544,7 @@ static int arch_build_bp_info(struct perf_event *bp,
- 		if ((hw->ctrl.type != ARM_BREAKPOINT_EXECUTE)
- 			&& max_watchpoint_len >= 8)
- 			break;
-+		/* Else, fall through */
+diff --git a/arch/arm/mm/alignment.c b/arch/arm/mm/alignment.c
+index 8cdb78642e93..04b36436cbc0 100644
+--- a/arch/arm/mm/alignment.c
++++ b/arch/arm/mm/alignment.c
+@@ -695,7 +695,7 @@ thumb2arm(u16 tinstr)
+ 			return subset[(L<<1) | ((tinstr & (1<<8)) >> 8)] |
+ 			    (tinstr & 255);		/* register_list */
+ 		}
+-		/* Else fall through for illegal instruction case */
++		/* Else, fall through - for illegal instruction case */
+ 
  	default:
- 		return -EINVAL;
- 	}
-@@ -608,10 +609,12 @@ int hw_breakpoint_arch_parse(struct perf_event *bp,
- 		/* Allow halfword watchpoints and breakpoints. */
- 		if (hw->ctrl.len == ARM_BREAKPOINT_LEN_2)
- 			break;
-+		/* Else, fall through */
- 	case 3:
- 		/* Allow single byte watchpoint. */
- 		if (hw->ctrl.len == ARM_BREAKPOINT_LEN_1)
- 			break;
-+		/* Else, fall through */
- 	default:
- 		ret = -EINVAL;
- 		goto out;
-@@ -861,6 +864,7 @@ static int hw_breakpoint_pending(unsigned long addr, unsigned int fsr,
- 		break;
- 	case ARM_ENTRY_ASYNC_WATCHPOINT:
- 		WARN(1, "Asynchronous watchpoint exception taken. Debugging results may be unreliable\n");
+ 		return BAD_INSTR;
+@@ -751,6 +751,8 @@ do_alignment_t32_to_handler(unsigned long *pinstr, struct pt_regs *regs,
+ 	case 0xe8e0:
+ 	case 0xe9e0:
+ 		poffset->un = (tinst2 & 0xff) << 2;
 +		/* Fall through */
- 	case ARM_ENTRY_SYNC_WATCHPOINT:
- 		watchpoint_handler(addr, fsr, regs);
- 		break;
-@@ -909,6 +913,7 @@ static bool core_has_os_save_restore(void)
- 		ARM_DBG_READ(c1, c1, 4, oslsr);
- 		if (oslsr & ARM_OSLSR_OSLM0)
- 			return true;
-+		/* Else, fall through */
- 	default:
- 		return false;
- 	}
++
+ 	case 0xe940:
+ 	case 0xe9c0:
+ 		return do_alignment_ldrdstrd;
 -- 
 2.22.0
 
