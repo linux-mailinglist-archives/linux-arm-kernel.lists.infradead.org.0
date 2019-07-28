@@ -2,63 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 05BDD77E89
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Jul 2019 10:00:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 373E477ED7
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Jul 2019 11:35:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gcOaXuFFQbP2Whr4StbOUb74y9+rjbPVjYQ+Ca0mUZo=; b=N4qVqSwtCj/lq9
-	2KXpfXOw0gsA/ly80ZQsi21Ob/XifEEZScSjW0heLdiR57tdawNVrJ9W2QfwSAYGKUE20qB6W3b2Y
-	t+y852XaH0DHp+2aq7UVU+UVjN4tx6z5DaMctE2Q6gqwvP7BwxmDvYkqmfr3rsIfVVlmb4TDNhTzs
-	14mi9ztF5lqh8H0udGAQljKluJsZJtVewd94aZr7Zf9hdig2eV7Ak8ylOOoWfupRQJbMXCK4a2jhg
-	n7wIZpZuODDtrukJKTwI6KS/ag2cLDO33fSjp364RxR4H8knG0L1yfMdkJrQgR1//4aErO4GZzwxd
-	9gSOAoBLfOYNQaLA2KHA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=BNbvFQ8e3aJNshN1/UT+Vs/iUnIZve1Nc9ft5l51kgU=; b=Elq6tvXyjf+xnt
+	uHKDqvbHXkunQIgOfaUO49g5ksJxerVEnh0jm35bqpjpra6pmVV/uLevXFbEbKoGeEqqCQFPclx60
+	DJksetEN5fZGuqiesI/qwU/VWSxwcTWLDUJi7au+LEVDcfCik43aVnRekF3QHQKZwE8CL9qkGDkpe
+	j2cnSqGloVZV92qV0tNBOfM4GecJbEZ793rcCQsB7ZI3EKJzRWaY7sYfxGll4QVkzOvAfJZRb8Y+c
+	P7AUAEQkZ3JtwXSY1O5Rz27IdTMWgh58epCvDO+lJ9aysoEc9WXppmvjg2sy0BI2H2QOXLf1PjVlH
+	CjvLf0KZXHLRXWx0sSuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hre5x-0003ai-5c; Sun, 28 Jul 2019 07:59:53 +0000
-Received: from honk.sigxcpu.org ([24.134.29.49])
+	id 1hrfaX-0008Iw-Ek; Sun, 28 Jul 2019 09:35:33 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hre59-0003a7-SS
- for linux-arm-kernel@lists.infradead.org; Sun, 28 Jul 2019 07:59:06 +0000
-Received: from localhost (localhost [127.0.0.1])
- by honk.sigxcpu.org (Postfix) with ESMTP id 41444FB03;
- Sun, 28 Jul 2019 09:59:00 +0200 (CEST)
-X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
-Received: from honk.sigxcpu.org ([127.0.0.1])
- by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id Wyg7IDtmtuoB; Sun, 28 Jul 2019 09:58:59 +0200 (CEST)
-Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
- id BF96646B51; Sun, 28 Jul 2019 09:58:58 +0200 (CEST)
-Date: Sun, 28 Jul 2019 09:58:58 +0200
-From: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
-To: Fabio Estevam <festevam@gmail.com>
-Subject: Re: [PATCH 5/6] clk: imx8mq: Remove CLK_IS_CRITICAL flag for
- IMX8MQ_CLK_TMU_ROOT
-Message-ID: <20190728075858.GA15144@bogon.m.sigxcpu.org>
-References: <20190705045612.27665-1-Anson.Huang@nxp.com>
- <20190705045612.27665-5-Anson.Huang@nxp.com>
- <CAEnQRZAZNMBx3ApVmRP8hYPw0XY_QgR-saE6WLcT8oZmHPCxSA@mail.gmail.com>
- <20190727182636.GA7170@bogon.m.sigxcpu.org>
- <CAOMZO5C_g5bO-yqhoLbb6geUcmzi4necjdQ_P2tROq2vzEPOqQ@mail.gmail.com>
+ id 1hrfaD-0008Ic-Rk
+ for linux-arm-kernel@lists.infradead.org; Sun, 28 Jul 2019 09:35:15 +0000
+Received: by mail-lj1-x242.google.com with SMTP id p17so55573761ljg.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 28 Jul 2019 02:35:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:from:date:message-id:subject:to:cc;
+ bh=rH9xSDD3b6NmawTFg6yZA6qDog2WGHHWancViRtogPg=;
+ b=HVF7YtnjixMiU1N4e4LKh9ISSHbtKY0IbWpwfXWanrdnmrfGstekBc9SrjN4XaDMUp
+ ztiOOzljK6pCB1A5T+CM7fvW851pldIWHu3fN7q/ad1pMwOYKigrD08Z3b/PxFhRdUvx
+ bSMG/zgwLJd5s5WAArb9Sk1mOoNwscPryfWazruNZOPJEhpnh+pNc3jpfKzXIJGQz0hJ
+ bUgq4mBO22srsQbsNZIK1ktxqvPj42ZN75PwvBU4VgYrq04tHW4Dm5PYCrrYSaU3cg9U
+ 8WXvdSYw+LDhThdLN6MRQhIp2iMoyJVrqlKzk4PKCA/lPJHlodCq46u/FMhhgybT2uca
+ IJpg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
+ bh=rH9xSDD3b6NmawTFg6yZA6qDog2WGHHWancViRtogPg=;
+ b=TDgS1qEVEvSKW0Bcqvmt7DUnYGXjSqxrJhsdIO+naDuA3d2BHVWZRhg06XJbyT4c23
+ d0NA+UuQDsrnXrwkQ9NG3gLYDQPG6xl7HW9t4WiNQ8KEYwIHhFcEmcTuKaz2+rwsQIW8
+ GsIKMOSo6fMiHeIS9AIGkDJusJcmBFMW7Mu1frtuB2F1lSeZGB6THRo3+h9ACZf5MWSP
+ bq19o2S6APtRbq6Q3nI0o13AEM73RLRON7NzKrfHIvWZf6owx/TIQADoMk7w7UyLrW/2
+ M9va4h1Vm7IoDjq7ry3V0tQ8smTOIBSSJ6qXOhuBGMoSyNnIKkEOBUZNZREAtyWEZtGy
+ Civw==
+X-Gm-Message-State: APjAAAWDkLrsV68LWQFG/D8l2LAGPtm6z0pQjSoYRwOiwkGKCk1wWEhq
+ b4BibKkN9ormrMaEO5sbLHtK+TAx/P2ZeixZMb7/5A==
+X-Google-Smtp-Source: APXvYqzMm5HDp4n0poR1Zh6L6Xgq8irpRxLaDW5mSlb0EvpkayeIRvHfBROISDxJQoFSZrEX1jrPgECNfBae9GidFuM=
+X-Received: by 2002:a2e:9593:: with SMTP id w19mr7277182ljh.69.1564306511448; 
+ Sun, 28 Jul 2019 02:35:11 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAOMZO5C_g5bO-yqhoLbb6geUcmzi4necjdQ_P2tROq2vzEPOqQ@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Sun, 28 Jul 2019 11:35:00 +0200
+Message-ID: <CACRpkdbKX7a15SC-zwxmH_ygGzOKrn0h-pzzm22UpRcLRfRVNA@mail.gmail.com>
+Subject: [GIT PULL] Ux500 DTS updates for v5.4 take one
+To: arm-soc <arm@kernel.org>, soc@kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190728_005904_078642_9B21290E 
-X-CRM114-Status: GOOD (  11.53  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190728_023513_931184_071B7273 
+X-CRM114-Status: GOOD (  11.68  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [24.134.29.49 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,53 +87,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Carlo Caione <ccaione@baylibre.com>,
- Michael Turquette <mturquette@baylibre.com>,
- "Angus Ainslie \(Purism\)" <angus@akkea.ca>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- linux-clk <linux-clk@vger.kernel.org>, Abel Vesa <abel.vesa@nxp.com>,
- Anson Huang <Anson.Huang@nxp.com>, Andrey Smirnov <andrew.smirnov@gmail.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, dl-linux-imx <Linux-imx@nxp.com>,
- "rui.zhang" <rui.zhang@intel.com>,
- Devicetree List <devicetree@vger.kernel.org>, linux-pm@vger.kernel.org,
- Sascha Hauer <s.hauer@pengutronix.de>, Eduardo Valentin <edubezval@gmail.com>,
- Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Daniel Baluta <daniel.baluta@gmail.com>, Stephen Boyd <sboyd@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>, Lucas Stach <l.stach@pengutronix.de>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: mathieu poirier <mathieu.poirier@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>, Leo Yan <leo.yan@linaro.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Fabio,
-On Sat, Jul 27, 2019 at 05:17:50PM -0300, Fabio Estevam wrote:
-> Hi Guido,
-> =
+Hi ARM SoC folks,
 
-> On Sat, Jul 27, 2019 at 3:26 PM Guido G=FCnther <agx@sigxcpu.org> wrote:
-> =
+this is the first slew of DTS updates for Ux500 for v5.4, maybe
+there will be more, but this needs to get out there. Especially
+the long overdue CoreSight conversion that got stuck in my
+tree for no good reason.
 
-> > I noticed a boot hang yesterday on next-20190726 when loading the
-> > qoriq_thermal which I worked around by blacklisting it. The
-> > fsl,imx8mq-tmu node specifies a clock (IMX8MQ_CLK_TMU_ROOT) but does not
-> > seem to enable, shouldn't it do so?
-> =
+Please pull it in!
 
-> Yes, I think you are right.
-> =
+Yours,
+Linus Walleij
 
-> I don't have access to a imx8mq board at the moment, but something
-> like below would probably help:
-> http://code.bulix.org/pd88jp-812381
-> =
+The following changes since commit 5f9e832c137075045d15cd6899ab0505cfb2ca4b:
 
-> If it helps, I can send it as a formal patch.
+  Linus 5.3-rc1 (2019-07-21 14:05:38 -0700)
 
-Yes, this fixes it for me, thanks!
- -- Guido
+are available in the Git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-stericsson.git
+tags/ux500-dts-v5.4-1
+
+for you to fetch changes up to 07523a6cb6f868dfb3202a7fd5c7db2a43194f24:
+
+  ARM: dts: ux500: set pull-up on STUIB STMPE IRQ line (2019-07-23
+09:24:10 +0200)
+
+----------------------------------------------------------------
+This are some DTS changes for the Ux500 for the v5.4 kernel cycle:
+
+- Update the CoreSight blocks to use the latest and greatest
+  bindings
+
+- Push the thermal driver config down to the main SoC DTSI
+  as it applies to all ASICs.
+
+- Set a pull-up on the ST UIB right.
+
+----------------------------------------------------------------
+Leo Yan (1):
+      ARM: dts: ste: Update coresight DT bindings
+
+Linus Walleij (2):
+      ARM: dts: ux500: Fix up the thermal nodes
+      ARM: dts: ux500: set pull-up on STUIB STMPE IRQ line
+
+ arch/arm/boot/dts/ste-dbx5x0.dtsi     | 26 +++++++++++++++++++++++---
+ arch/arm/boot/dts/ste-href-stuib.dtsi | 11 +++++++++++
+ arch/arm/boot/dts/ste-snowball.dts    | 29 -----------------------------
+ 3 files changed, 34 insertions(+), 32 deletions(-)
+
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
