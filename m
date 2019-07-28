@@ -2,63 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8DCBF78164
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Jul 2019 22:09:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C93C78167
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Jul 2019 22:16:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=QT7/JvpWu66KbFwGuSn2Cf1Bgab02DilZtZqhDKPWXE=; b=n5ar6YdGpknNeb
-	D3tMaM6X91mtsdrVuAtKUiNfO7nhsDnpF76I4m5qSsV+pvCjssLbyv4joZrWoWUJcIY3+YMrX7aay
-	vkXdIaZodBxOjtR3DzAp+xre2oJTjuVf3/GpPPNZwZTIYuf/nYJcaqFck9iU37UfYwal0ovsB+ZhN
-	H7fw28f6rj7GweA/1Qq7QoUVxp3uXr6AU72Za0TgPzEbE7tXNeBgHl/JAsnLLHAn/TyH2GO4x26NH
-	bD5AqntOz14/dzD2j9NEApxt2vGPKCraFX26r9Osl1MC85YFwvqdSK05YsgXKrzyU1AuZaci+CDT8
-	lLH61rkwy5niOrAw5BNQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yVZX8v6JvYwOJOwymmk4J/CfGNVeQi92l4KR2Ldc/cU=; b=mpSIDFvFmZA4I7
+	KuZnBniqXiA8G1iTBNMFEkLusfKDLFUNGRLAgscHw86nC2RMqYQs7XdkkM5weYWnEm80AFN7YwjXY
+	WOofJQ/08eBpICVCjJ/+06yrMxXSdQUn8vN1dKiBqLbV04Ub0mFdLFmWBoAR+F0YfOoUXo48Bk38o
+	jEQY2bl4j7YqOtXX1HZxU36MDqu5EPhYLWX2TEf8vNkMc+Ww9SacnhIjK8Hc4F464olwLL+jAue87
+	ds4+RVudBk0lEytxdP9AdOE4s8LKOjHvMV7j6hCr2iTgbCqANb4vHOzG+Yon7ITKaCYFUER+utqkB
+	i7MNm1WmFSGyXNlM6dLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hrpTT-000693-Mh; Sun, 28 Jul 2019 20:08:55 +0000
-Received: from mail-lj1-f175.google.com ([209.85.208.175])
+	id 1hrpah-0000Qj-C1; Sun, 28 Jul 2019 20:16:23 +0000
+Received: from esgaroth.petrovitsch.at ([78.47.184.11] helo=esgaroth.tuxoid.at)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hrpTI-00068P-UZ
- for linux-arm-kernel@lists.infradead.org; Sun, 28 Jul 2019 20:08:46 +0000
-Received: by mail-lj1-f175.google.com with SMTP id m23so56379604lje.12
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 28 Jul 2019 13:08:43 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
- bh=8Ehe9L15ikwLaOegvSbffqJNAvcSP5VfCjBEA7JSyTc=;
- b=f0KVZLBbCH2e1VAWQICarOsdbjIv4kG2cj8rlXF6zxuOiu974zhgT7CwXWpaTI7APg
- 7DAhFF0zakRTmD23Ygj1fq/U3lYDykHCHhEdSIITyXD6R55wcatPamUPbaQ4m/h7yupT
- ErbSu0ipQU0krtC87CGhwOX6yhMj8lHenzVAjp0fN5FfHrRVfMIab2POKRB4ZAjDrBVD
- GAii1dJKoTfUw+iUmeLpzA7tlpAma0rDMgdOWKBEvOAbIAqWVIabgtaOpq71iXA0xJ5I
- EAeY4AjKTAevQkzBI/IV5rJt6KcxjWHuic1lwLx6AEjGljM1Ub2ESRrXRvOt7k007dyC
- V2gQ==
-X-Gm-Message-State: APjAAAWdCRoT3x045K1Bb2T68QgEnLb5rENvTNYutglceXrxpzM1bVJR
- nPBWSCYhtyXLvrz3D+SKOE3csqu66VrZ79dKQ16UtA==
-X-Google-Smtp-Source: APXvYqzMDT7jLYyQwW9rgotscZ5/OzUxcCpfRFZVxxEtiiDmgFqSMegnW8RjxzWH+5JfETP9r/+o5SYBwlzM8A7wA8U=
-X-Received: by 2002:a2e:9643:: with SMTP id z3mr56707238ljh.43.1564344522278; 
- Sun, 28 Jul 2019 13:08:42 -0700 (PDT)
-MIME-Version: 1.0
-From: Matteo Croce <mcroce@redhat.com>
-Date: Sun, 28 Jul 2019 22:08:06 +0200
-Message-ID: <CAGnkfhySwXY7YwuQezyx6cEpemZW4Hox1_4fQJm3-5hvM3G6gw@mail.gmail.com>
-Subject: build error
-To: LKML <linux-kernel@vger.kernel.org>, 
+ id 1hrpaV-0000QN-6w
+ for linux-arm-kernel@lists.infradead.org; Sun, 28 Jul 2019 20:16:13 +0000
+Received: from thorin.petrovitsch.priv.at (80-110-96-12.cgn.dynamic.surfer.at
+ [80.110.96.12]) (authenticated bits=0)
+ by esgaroth.tuxoid.at (8.15.2/8.15.2) with ESMTPSA id x6SKFaJB008567
+ (version=TLSv1 cipher=AES128-SHA bits=128 verify=NO);
+ Sun, 28 Jul 2019 22:15:37 +0200
+Subject: Re: build error
+To: Matteo Croce <mcroce@redhat.com>, LKML <linux-kernel@vger.kernel.org>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
+References: <CAGnkfhySwXY7YwuQezyx6cEpemZW4Hox1_4fQJm3-5hvM3G6gw@mail.gmail.com>
+From: Bernd Petrovitsch <bernd@petrovitsch.priv.at>
+Message-ID: <57eeca23-3f03-cfd2-280e-4b19eb84b65d@petrovitsch.priv.at>
+Date: Sun, 28 Jul 2019 22:15:36 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
+MIME-Version: 1.0
+In-Reply-To: <CAGnkfhySwXY7YwuQezyx6cEpemZW4Hox1_4fQJm3-5hvM3G6gw@mail.gmail.com>
+Content-Language: en-US
+X-DCC--Metrics: esgaroth.tuxoid.at 1290; Body=4 Fuz1=4 Fuz2=4
+X-Virus-Scanned: clamav-milter 0.97 at esgaroth.tuxoid.at
+X-Virus-Status: Clean
+X-Spam-Status: No, score=-0.4 required=5.0 tests=AWL,UNPARSEABLE_RELAY
+ autolearn=unavailable version=3.3.1
+X-Spam-Report: * 0.0 UNPARSEABLE_RELAY Informational: message has unparseable
+ relay lines
+ * -0.4 AWL AWL: Adjusted score from AWL reputation of From: address
+X-Spam-Checker-Version: SpamAssassin 3.3.1 (2010-03-16) on esgaroth.tuxoid.at
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190728_130844_986919_6849A363 
-X-CRM114-Status: UNSURE (   4.96  )
+X-CRM114-CacheID: sfid-20190728_131611_551629_C15D0964 
+X-CRM114-Status: UNSURE (   7.47  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.175 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [78.47.184.11 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -78,24 +79,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Hi all!
 
-I get this build error with 5.3-rc2"
+On 28/07/2019 22:08, Matteo Croce wrote:
+[...]
+> I get this build error with 5.3-rc2"
+> 
+> # make
+> arch/arm64/Makefile:58: gcc not found, check CROSS_COMPILE_COMPAT.  Stop.
 
-# make
-arch/arm64/Makefile:58: gcc not found, check CROSS_COMPILE_COMPAT.  Stop.
+- Install (some) gcc?!
+- Fix $PATH so that (some) gcc can be found?!
 
-I didn't bisect the tree, but I guess that this kconfig can be related
-
-# grep CROSS_COMPILE_COMPAT .config
-CONFIG_CROSS_COMPILE_COMPAT_VDSO=""
-
-Does someone have any idea? Am I missing something?
-
-Thanks,
+MfG,
+	Bernd
 -- 
-Matteo Croce
-per aspera ad upstream
+Bernd Petrovitsch                  Email : bernd@petrovitsch.priv.at
+                     LUGA : http://www.luga.at
 
 _______________________________________________
 linux-arm-kernel mailing list
