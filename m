@@ -2,64 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 14F0B77BF7
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Jul 2019 23:15:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2079677CA7
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Jul 2019 03:03:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	MIME-Version:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=j+vcgQbevsokLGYW/Q9loupq5CDpuo5mcxfLDq6sX9o=; b=f5P
-	hpi33OoYA3oYbIsjgJD2GjxP4KqK2z1CxRU1zzeh4JFIMcsyWd6vW7PJGQPKgZLe2YsvjOR8ZI79Z
-	gOIGz81rA/bCEyGD8ehlf73adOj6zE63I9TCoRw/1xuwm8tzbHcsbOK/HME6/ktkBoy+xqWGwDqjU
-	8KM78njLCCLedO0VBbhDMpghVkTpjmEcT+tyVSIga73crPiQmN/Qx8ABKoKHQXk9Sqbv01GD/poQb
-	7Dwi81j0MswvXWACB2Ea2aVEmhdAHLt+2OZ1AI1pt1YwCdHBTbyTJzxFSNOI7OerRlZWPoPmq4AS5
-	sgLG9UqHiJz2SZosl+OGcRnA9AX1o+A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=pMhHlskxu64KM2rdj5I3UvfQWZJqvfNfEVvF6OO28Jc=; b=ssM5Gsl0xwLgem
+	QoLTyn3VuoHq2sPhrNum3mscH7NRyNDSe46AmcVRc6+2uwforv/jqB7EMCy4+ParOHLAsXe+VgMO1
+	1HENg0b1tDuZq0N7nVaLgI7u9cx/lpFDGIan3yPPEmcqgEU8+U6xX0rX1ZB6oia/4chv6/YoSG7Ae
+	Alz2qsEL1T3UigzzvCZ8rMR/uDJzAcoqir8UpmGzhIlMRUdOVhMbzquOlzHQjYi+nnWLdGsPZx4bz
+	HPmTVNBDbrDZ2LG1PDoAy16EiwMBvLBP594qZHuDMDM53FGAEqntJxoYetI0iq3AVYxA33f8diEPN
+	o6ywktvwm4suWfrQKFSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hrU1v-0000AU-UU; Sat, 27 Jul 2019 21:15:04 +0000
-Received: from mga18.intel.com ([134.134.136.126])
+	id 1hrXb8-0006U1-8N; Sun, 28 Jul 2019 01:03:38 +0000
+Received: from mx2.mailbox.org ([80.241.60.215])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hrU1i-00009m-Gx
- for linux-arm-kernel@lists.infradead.org; Sat, 27 Jul 2019 21:14:52 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from orsmga001.jf.intel.com ([10.7.209.18])
- by orsmga106.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 27 Jul 2019 14:14:20 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.64,315,1559545200"; 
- d="gz'50?scan'50,208,50";a="254765709"
-Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by orsmga001.jf.intel.com with ESMTP; 27 Jul 2019 14:14:18 -0700
-Received: from kbuild by lkp-server01 with local (Exim 4.89)
- (envelope-from <lkp@intel.com>)
- id 1hrU1C-0001kl-Cp; Sun, 28 Jul 2019 05:14:18 +0800
-Date: Sun, 28 Jul 2019 05:12:59 +0800
-From: kbuild test robot <lkp@intel.com>
-To: Linus Walleij <linus.walleij@linaro.org>
-Subject: [nomadik:mtdparts 5/8] make[4]: *** No rule to make target
- 'drivers/mtd/parsers/cmdlinepart.o', needed by
- 'drivers/mtd/parsers/built-in.a'.
-Message-ID: <201907280540.iKETTTch%lkp@intel.com>
+ id 1hrXaj-0006SZ-3F
+ for linux-arm-kernel@lists.infradead.org; Sun, 28 Jul 2019 01:03:15 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org
+ [IPv6:2001:67c:2050:105:465:1:2:0])
+ (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
+ (No client certificate requested)
+ by mx2.mailbox.org (Postfix) with ESMTPS id 48697A1C0F;
+ Sun, 28 Jul 2019 03:03:03 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at heinlein-support.de
+Received: from smtp2.mailbox.org ([80.241.60.241])
+ by spamfilter01.heinlein-hosting.de (spamfilter01.heinlein-hosting.de
+ [80.241.56.115]) (amavisd-new, port 10030)
+ with ESMTP id k_ewpL23oLoK; Sun, 28 Jul 2019 03:02:53 +0200 (CEST)
+From: Aleksa Sarai <cyphar@cyphar.com>
+To: Al Viro <viro@zeniv.linux.org.uk>, Jeff Layton <jlayton@kernel.org>,
+ "J. Bruce Fields" <bfields@fieldses.org>, Arnd Bergmann <arnd@arndb.de>,
+ David Howells <dhowells@redhat.com>, Shuah Khan <shuah@kernel.org>,
+ Shuah Khan <skhan@linuxfoundation.org>
+Subject: [PATCH v11 0/8] namei: openat2(2) path resolution restrictions
+Date: Sun, 28 Jul 2019 11:01:59 +1000
+Message-Id: <20190728010207.9781-1-cyphar@cyphar.com>
 MIME-Version: 1.0
-Content-Type: multipart/mixed; boundary="v42cmxvo6aap2osd"
-Content-Disposition: inline
-X-Patchwork-Hint: ignore
-User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190727_141450_635294_E1031F8B 
-X-CRM114-Status: UNSURE (   9.78  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190727_180313_448785_9B75795D 
+X-CRM114-Status: GOOD (  23.16  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.126 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [80.241.60.215 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -73,308 +66,248 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kbuild-all@01.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Alexei Starovoitov <ast@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
+ linux-kselftest@vger.kernel.org, sparclinux@vger.kernel.org,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ Tycho Andersen <tycho@tycho.ws>, Aleksa Sarai <asarai@suse.de>,
+ linux-arm-kernel@lists.infradead.org, linux-mips@vger.kernel.org,
+ linux-xtensa@linux-xtensa.org, Kees Cook <keescook@chromium.org>,
+ Jann Horn <jannh@google.com>, linuxppc-dev@lists.ozlabs.org,
+ Aleksa Sarai <cyphar@cyphar.com>, Andy Lutomirski <luto@kernel.org>,
+ David Drysdale <drysdale@google.com>, Christian Brauner <christian@brauner.io>,
+ linux-parisc@vger.kernel.org, linux-m68k@lists.linux-m68k.org,
+ linux-api@vger.kernel.org, containers@lists.linux-foundation.org,
+ linux-kernel@vger.kernel.org, Eric Biederman <ebiederm@xmission.com>,
+ linux-alpha@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ Chanho Min <chanho.min@lge.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+This patch is being developed here (with snapshots of each series
+version being stashed in separate branches with names of the form
+"resolveat/vX-summary"):
+    <https://github.com/cyphar/linux/tree/resolveat/master>
 
---v42cmxvo6aap2osd
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Patch changelog:
+ v11:
+    * Fix checkpatch.pl errors and warnings where reasonable.
+    * Minor cleanup to pr_warn logging for may_open_magiclink().
+    * Drop kselftests patch to handle %m formatting correctly, and send
+      it through the kselftests tree directly. [Shuah Khan]
+ v10:
+    * Ensure that unlazy_walk() will fail if we are in a scoped walk and
+      the caller has zeroed nd->root (this happens in a few places, I'm
+      not sure why because unlazy_walk() does legitimize_path()
+      already). In this case we need to go through path_init() again to
+      reset it (otherwise we will have a breakout because set_root()
+      will breakout).
+      * Also add a WARN_ON (and return -ENOTRECOVERABLE) if
+        LOOKUP_IN_ROOT is set and we are in set_root() -- which should
+        never happen and will cause a breakout.
+    * Make changes suggested by Al Viro:
+      * Remove nd->{opath_mask,acc_mode} by moving all of the magic-link
+        permission logic be done after trailing_symlink() (with
+        trailing_magiclink()) only within path_openat().
+      * Introduce LOOKUP_MAGICLINK_JUMPED to be able to detect
+        magic-link jumps done with nd_jump_link() (so we don't end up
+        blocking other LOOKUP_JUMPED cases).
+      * Simplify all of the path_init() changes to make the code far
+        less confusing. dirfd_path_init() turns out to be un-necessary.
+    * Make openat2(2) also -EINVAL on unknown how->flags.
+      [Dmitry V. Levin]
+    * Clean up bad definitions of O_EMPTYPATH on architectures where O_*
+      flags are subtly different to <asm-generic/fcntl.h>.
+    * Switch away from passing a struct to build_open_flags() and
+      instead just copy the one field we need to temporarily modify
+      (how->flags). Also fix a bug in OPENHOW_MODE. [Rasmus Villemoes]
+    * Fix syscall linkages and switch to 437. [Arnd Bergmann]
+    * Clean up text in commit messages and the cover-letter.
+      [Rolf Eike Beer]
+    * Fix openat2 selftest makefile. [Michael Ellerman]
 
-tree:   https://kernel.googlesource.com/pub/scm/linux/kernel/git/linusw/linux-nomadik.git mtdparts
-head:   219c3b91b55c4473e43cb8a4606ae470d432da11
-commit: e0f6f2c514756a3e734d2f1c0fa2e6c00fbfc354 [5/8] mtd: parsers: Move CMDLINE parser
-config: microblaze-nommu_defconfig (attached as .config)
-compiler: microblaze-linux-gcc (GCC) 7.4.0
-reproduce:
-        wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
-        chmod +x ~/bin/make.cross
-        git checkout e0f6f2c514756a3e734d2f1c0fa2e6c00fbfc354
-        # save the attached .config to linux build tree
-        GCC_VERSION=7.4.0 make.cross ARCH=microblaze 
+The need for some sort of control over VFS's path resolution (to avoid
+malicious paths resulting in inadvertent breakouts) has been a very
+long-standing desire of many userspace applications. This patchset is a
+revival of Al Viro's old AT_NO_JUMPS[1,2] patchset (which was a variant
+of David Drysdale's O_BENEATH patchset[3] which was a spin-off of the
+Capsicum project[4]) with a few additions and changes made based on the
+previous discussion within [5] as well as others I felt were useful.
 
-If you fix the issue, kindly add following tag
-Reported-by: kbuild test robot <lkp@intel.com>
+In line with the conclusions of the original discussion of AT_NO_JUMPS,
+the flag has been split up into separate flags. However, instead of
+being an openat(2) flag it is provided through a new syscall openat2(2)
+which provides several other improvements to the openat(2) interface (see the
+patch description for more details). The following new LOOKUP_* flags are
+added:
 
-All errors (new ones prefixed by >>):
+  * LOOKUP_NO_XDEV blocks all mountpoint crossings (upwards, downwards,
+    or through absolute links). Absolute pathnames alone in openat(2) do
+    not trigger this.
 
->> make[4]: *** No rule to make target 'drivers/mtd/parsers/cmdlinepart.o', needed by 'drivers/mtd/parsers/built-in.a'.
-   make[4]: Target '__build' not remade because of errors.
+  * LOOKUP_NO_MAGICLINKS blocks resolution through /proc/$pid/fd-style
+    links. This is done by blocking the usage of nd_jump_link() during
+    resolution in a filesystem. The term "magic-links" is used to match
+    with the only reference to these links in Documentation/, but I'm
+    happy to change the name.
 
----
-0-DAY kernel test infrastructure                Open Source Technology Center
-https://lists.01.org/pipermail/kbuild-all                   Intel Corporation
+    It should be noted that this is different to the scope of
+    ~LOOKUP_FOLLOW in that it applies to all path components. However,
+    you can do openat2(NO_FOLLOW|NO_MAGICLINKS) on a magic-link and it
+    will *not* fail (assuming that no parent component was a
+    magic-link), and you will have an fd for the magic-link.
 
---v42cmxvo6aap2osd
-Content-Type: application/gzip
-Content-Disposition: attachment; filename=".config.gz"
-Content-Transfer-Encoding: base64
+  * LOOKUP_BENEATH disallows escapes to outside the starting dirfd's
+    tree, using techniques such as ".." or absolute links. Absolute
+    paths in openat(2) are also disallowed. Conceptually this flag is to
+    ensure you "stay below" a certain point in the filesystem tree --
+    but this requires some additional to protect against various races
+    that would allow escape using "..".
 
-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
+    Currently LOOKUP_BENEATH implies LOOKUP_NO_MAGICLINKS, because it
+    can trivially beam you around the filesystem (breaking the
+    protection). In future, there might be similar safety checks done as
+    in LOOKUP_IN_ROOT, but that requires more discussion.
 
---v42cmxvo6aap2osd
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+In addition, two new flags are added that expand on the above ideas:
+
+  * LOOKUP_NO_SYMLINKS does what it says on the tin. No symlink
+    resolution is allowed at all, including magic-links. Just as with
+    LOOKUP_NO_MAGICLINKS this can still be used with NOFOLLOW to open an
+    fd for the symlink as long as no parent path had a symlink
+    component.
+
+  * LOOKUP_IN_ROOT is an extension of LOOKUP_BENEATH that, rather than
+    blocking attempts to move past the root, forces all such movements
+    to be scoped to the starting point. This provides chroot(2)-like
+    protection but without the cost of a chroot(2) for each filesystem
+    operation, as well as being safe against race attacks that chroot(2)
+    is not.
+
+    If a race is detected (as with LOOKUP_BENEATH) then an error is
+    generated, and similar to LOOKUP_BENEATH it is not permitted to cross
+    magic-links with LOOKUP_IN_ROOT.
+
+    The primary need for this is from container runtimes, which
+    currently need to do symlink scoping in userspace[6] when opening
+    paths in a potentially malicious container. There is a long list of
+    CVEs that could have bene mitigated by having RESOLVE_THIS_ROOT
+    (such as CVE-2017-1002101, CVE-2017-1002102, CVE-2018-15664, and
+    CVE-2019-5736, just to name a few).
+
+And further, several semantics of file descriptor "re-opening" are now
+changed to prevent attacks like CVE-2019-5736 by restricting how
+magic-links can be resolved (based on their mode). This required some
+other changes to the semantics of the modes of O_PATH file descriptor's
+associated /proc/self/fd magic-links. openat2(2) has the ability to
+further restrict re-opening of its own O_PATH fds, so that users can
+make even better use of this feature.
+
+Finally, O_EMPTYPATH was added so that users can do /proc/self/fd-style
+re-opening without depending on procfs. The new restricted semantics for
+magic-links are applied here too.
+
+In order to make all of the above more usable, I'm working on
+libpathrs[7] which is a C-friendly library for safe path resolution. It
+features a userspace-emulated backend if the kernel doesn't support
+openat2(2). Hopefully we can get userspace to switch to using it, and
+thus get openat2(2) support for free once it's ready.
+
+Cc: Al Viro <viro@zeniv.linux.org.uk>
+Cc: Eric Biederman <ebiederm@xmission.com>
+Cc: Andy Lutomirski <luto@kernel.org>
+Cc: David Howells <dhowells@redhat.com>
+Cc: Jann Horn <jannh@google.com>
+Cc: Christian Brauner <christian@brauner.io>
+Cc: David Drysdale <drysdale@google.com>
+Cc: Tycho Andersen <tycho@tycho.ws>
+Cc: Kees Cook <keescook@chromium.org>
+Cc: Linus Torvalds <torvalds@linux-foundation.org>
+Cc: <containers@lists.linux-foundation.org>
+Cc: <linux-fsdevel@vger.kernel.org>
+Cc: <linux-api@vger.kernel.org>
+
+[1]: https://lwn.net/Articles/721443/
+[2]: https://lore.kernel.org/patchwork/patch/784221/
+[3]: https://lwn.net/Articles/619151/
+[4]: https://lwn.net/Articles/603929/
+[5]: https://lwn.net/Articles/723057/
+[6]: https://github.com/cyphar/filepath-securejoin
+[7]: https://github.com/openSUSE/libpathrs
+
+Aleksa Sarai (8):
+  namei: obey trailing magic-link DAC permissions
+  procfs: switch magic-link modes to be more sane
+  open: O_EMPTYPATH: procfs-less file descriptor re-opening
+  namei: O_BENEATH-style path resolution flags
+  namei: LOOKUP_IN_ROOT: chroot-like path resolution
+  namei: aggressively check for nd->root escape on ".." resolution
+  open: openat2(2) syscall
+  selftests: add openat2(2) selftests
+
+ Documentation/filesystems/path-lookup.rst     |  12 +-
+ arch/alpha/include/uapi/asm/fcntl.h           |   1 +
+ arch/alpha/kernel/syscalls/syscall.tbl        |   1 +
+ arch/arm/tools/syscall.tbl                    |   1 +
+ arch/arm64/include/asm/unistd.h               |   2 +-
+ arch/arm64/include/asm/unistd32.h             |   2 +
+ arch/ia64/kernel/syscalls/syscall.tbl         |   1 +
+ arch/m68k/kernel/syscalls/syscall.tbl         |   1 +
+ arch/microblaze/kernel/syscalls/syscall.tbl   |   1 +
+ arch/mips/kernel/syscalls/syscall_n32.tbl     |   1 +
+ arch/mips/kernel/syscalls/syscall_n64.tbl     |   1 +
+ arch/mips/kernel/syscalls/syscall_o32.tbl     |   1 +
+ arch/parisc/include/uapi/asm/fcntl.h          |  39 +-
+ arch/parisc/kernel/syscalls/syscall.tbl       |   1 +
+ arch/powerpc/kernel/syscalls/syscall.tbl      |   1 +
+ arch/s390/kernel/syscalls/syscall.tbl         |   1 +
+ arch/sh/kernel/syscalls/syscall.tbl           |   1 +
+ arch/sparc/include/uapi/asm/fcntl.h           |   1 +
+ arch/sparc/kernel/syscalls/syscall.tbl        |   1 +
+ arch/x86/entry/syscalls/syscall_32.tbl        |   1 +
+ arch/x86/entry/syscalls/syscall_64.tbl        |   1 +
+ arch/xtensa/kernel/syscalls/syscall.tbl       |   1 +
+ fs/fcntl.c                                    |   2 +-
+ fs/internal.h                                 |   1 +
+ fs/namei.c                                    | 270 ++++++++++--
+ fs/open.c                                     | 112 ++++-
+ fs/proc/base.c                                |  20 +-
+ fs/proc/fd.c                                  |  23 +-
+ fs/proc/namespaces.c                          |   2 +-
+ include/linux/fcntl.h                         |  17 +-
+ include/linux/fs.h                            |   8 +-
+ include/linux/namei.h                         |   9 +
+ include/linux/syscalls.h                      |  17 +-
+ include/uapi/asm-generic/fcntl.h              |   4 +
+ include/uapi/asm-generic/unistd.h             |   5 +-
+ include/uapi/linux/fcntl.h                    |  42 ++
+ tools/testing/selftests/Makefile              |   1 +
+ tools/testing/selftests/memfd/memfd_test.c    |   7 +-
+ tools/testing/selftests/openat2/.gitignore    |   1 +
+ tools/testing/selftests/openat2/Makefile      |   8 +
+ tools/testing/selftests/openat2/helpers.c     | 162 +++++++
+ tools/testing/selftests/openat2/helpers.h     | 116 +++++
+ .../testing/selftests/openat2/linkmode_test.c | 333 +++++++++++++++
+ .../selftests/openat2/rename_attack_test.c    | 127 ++++++
+ .../testing/selftests/openat2/resolve_test.c  | 402 ++++++++++++++++++
+ 45 files changed, 1655 insertions(+), 107 deletions(-)
+ create mode 100644 tools/testing/selftests/openat2/.gitignore
+ create mode 100644 tools/testing/selftests/openat2/Makefile
+ create mode 100644 tools/testing/selftests/openat2/helpers.c
+ create mode 100644 tools/testing/selftests/openat2/helpers.h
+ create mode 100644 tools/testing/selftests/openat2/linkmode_test.c
+ create mode 100644 tools/testing/selftests/openat2/rename_attack_test.c
+ create mode 100644 tools/testing/selftests/openat2/resolve_test.c
+
+-- 
+2.22.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---v42cmxvo6aap2osd--
-
