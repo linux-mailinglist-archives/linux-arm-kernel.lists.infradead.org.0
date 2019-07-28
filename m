@@ -2,75 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F02287824C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 01:15:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 159ED7824E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 01:15:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EDxDfYH75dvFfkRjxUC68yKFBxmfwF980v6yKvpQU44=; b=JKQcX7RINuB2Yw
-	AimVEr+BCVtMvGMO9bgtNS32MegzBIiB8T0+xz666oBmsOAo6BMNhY9YUkZRV+1PSAGc+tyF3GQpO
-	4iTbWB6rnk1jpPk57PUA9av601QEzgr5NQIQrN4DoGxy6U46/Ts+r7NnRJypoaLqwJlJySqVSYuOr
-	lvU1s+n3ZVyFWmbZ+LvIXK0zt6mYYBQQozVcgC8wZIakzC0zMLtpWXPDJC5SIX0A14SUF3+yZUJbq
-	DUnvtZOeFv/lJttxaBk1ThlTOBw+sv8C/U2Tje6Wli0z5t385blyooPH3Y++ZHfV20dx8gGnF7JF6
-	DGtOzt+tPozr2wt4qTtQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ZPF+Q6eSzuVCUtL8Ku8cTbL/cwFjNU3EzXTnrzh2c98=; b=iso414ChnFLfRp
+	qrbM6ZWWCbIniWHWUy7xe+KTP5pDQZ9bf+f0tpsdUG5KwbI9RN1ffJpHzAf4mbnXkhvJzjT3NSunm
+	LF87PafbKJlkt8XlF4kQ3soKgrR9pbYZI0xMqSi0oJB1weQnh0HLZemVjdOZujYrVavYOIyWOCcqy
+	CGZE+y307JcE3nOtVbToHFDRHb9zy/g+Bou2x5VZVAzPRx3XoL+EtKdKKxLfOMVaR+K5ieOlJQKkC
+	9W+GwbbftR166kxQfs7deIoE0wrVcKv1P2Pltx66sd9fd0fssa+BMEL/jyuMem8pVnS+pUO7uqPXe
+	NM0MNXROmjv5nRszaDFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hrsNk-0006LR-Nv; Sun, 28 Jul 2019 23:15:13 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1hrsOS-0007mN-NA; Sun, 28 Jul 2019 23:15:56 +0000
+Received: from gateway30.websitewelcome.com ([192.185.148.2])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hrsNR-0006Ke-BH
- for linux-arm-kernel@lists.infradead.org; Sun, 28 Jul 2019 23:14:54 +0000
-Received: by mail-lj1-x241.google.com with SMTP id z28so2443674ljn.4
+ id 1hrsOE-0007lS-I7
+ for linux-arm-kernel@lists.infradead.org; Sun, 28 Jul 2019 23:15:43 +0000
+Received: from cm12.websitewelcome.com (cm12.websitewelcome.com [100.42.49.8])
+ by gateway30.websitewelcome.com (Postfix) with ESMTP id 8BEEA4992
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 28 Jul 2019 16:14:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=uqbaLb+DoYfmkQkeju/D4dfpefzvGhqE/NA7IyXYHDs=;
- b=mecH4VhtykhjOehOVm7m8Pa5YP6LbhZHxuLFQA2XocGjWKuVwaUD5JKujEe9aVixYW
- cawoMpzpCuo6PsH/Y5+Y7tXwV3d7SoDRDfjjcoukQScCk9CzzHAMPo1pS4yrzvyXmqyJ
- 2yMjXxSUUQvzemHru0Os3ufWRvyApCPQMYjePIqEYdIr8dqIpeHbncxd/W99X2KbFg2j
- jbwANzOROhAvP10F0iLcxqbviHMgDbZ6aAMO7bHOLzMbrE+YgCLY6qUQqtoboNujm0Gj
- U73hnvjkMlVYKlUDbpdLF67Z+MpbkHJo3vfCQ+e8YPRfhiYgmC3LZ5+TDpH4eiTfU3zX
- 7Iyg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=uqbaLb+DoYfmkQkeju/D4dfpefzvGhqE/NA7IyXYHDs=;
- b=to21PGOgKfmdYV6HXiSLvkHHNZDG1RtSGUOQ64GM913aPv+V/aJc2/C1mNdiwlPdQn
- 61reW6w3lLfyma+2f1qKW/UCp0zBkaee9gIqahiUMimXi3EKUELyBzXnzZh4AX+pCMAt
- zYuCFM1P0ivEsB5IpAYqF3yIRwnX2t1ZMm6Xp1EAnfIZDvzWFL3tHg9MmTEGMI4kTNDN
- PksHCniIPidTuH6vhvxObVj8d1QlhzGhl8MTfAsUIcQvjqcnCOMBnDi7Y5PY/WGDOz+3
- d1JKDOJAHMnc84ETkBpVcdko5mVboCwLvh98NeW9oL/OF+x9OEXuT5cMIwivNLrQsKfF
- XQKQ==
-X-Gm-Message-State: APjAAAVu0jDUv4oobLVkFNbqmDUKZn1Db+43ub1hKr3NZdEA4s4M0aoQ
- TFG736u6HokCC04pZgmVTHS/c/RR5LRQhyapkutDO9Vj
-X-Google-Smtp-Source: APXvYqxZn/ye7KzmbCXTelv16sXPVMTT2jnKOOv6eVhlkoDzFB17aRJoEaL7U1kzdaeMP7q7K+fcGcM99btdobKE65w=
-X-Received: by 2002:a2e:9593:: with SMTP id w19mr8822011ljh.69.1564355688739; 
- Sun, 28 Jul 2019 16:14:48 -0700 (PDT)
+ Sun, 28 Jul 2019 18:15:29 -0500 (CDT)
+Received: from gator4166.hostgator.com ([108.167.133.22]) by cmsmtp with SMTP
+ id rsO1hE8AriQerrsO1hdO8C; Sun, 28 Jul 2019 18:15:29 -0500
+X-Authority-Reason: nr=8
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=embeddedor.com; s=default; h=Content-Type:MIME-Version:Message-ID:Subject:
+ Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=8eM1ZD0P81hvxEH0zPMrHc1dSmyP7SXOYbdNw95fElQ=; b=v7fk5m+NtnGmmK+v9Cc8LiDioR
+ Oj7xM8zlr1Ph9+Ns7nNtgf7udDx8FmlZgTIhbHIHThOHq81zqh60YOFA4JfVVYwTiF88h5Wj3RnAZ
+ 76uP6jA613mMpMSG8+1PZmd0Q93IphVbzHrQgOvZpWvq34IWqiWHpMT8LnnJcKXDqyVHhDyMjSBq9
+ XmxqEFeuNnWHDJ07nRnVFXgNxzNFW6WtGPyBc6sSvRZmR9KH92IweC0WldC3/HzDXgEcH2PjypvIZ
+ 8pYU5CQXFMxxsLbbX1pwLonxSqjM4e1fzObGf8GXzhmK+1JYwoFhE2rTYV4nrPLJwQsL0MpGJbzEw
+ GMGYJMCg==;
+Received: from [187.192.11.120] (port=39040 helo=embeddedor)
+ by gator4166.hostgator.com with esmtpa (Exim 4.92)
+ (envelope-from <gustavo@embeddedor.com>)
+ id 1hrsO0-003VsI-Bx; Sun, 28 Jul 2019 18:15:28 -0500
+Date: Sun, 28 Jul 2019 18:15:26 -0500
+From: "Gustavo A. R. Silva" <gustavo@embeddedor.com>
+To: Russell King <linux@armlinux.org.uk>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Jonathan Hunter <jonathanh@nvidia.com>
+Subject: [PATCH] ARM: tegra: Mark expected switch fall-through
+Message-ID: <20190728231526.GA22066@embeddedor>
 MIME-Version: 1.0
-References: <20190711041942.23202-1-andrew@aj.id.au>
-In-Reply-To: <20190711041942.23202-1-andrew@aj.id.au>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Mon, 29 Jul 2019 01:14:37 +0200
-Message-ID: <CACRpkdb4pEdPHbo=3+fJXe9WG8K7A2_xVMtKWCJCfEawDO5wBw@mail.gmail.com>
-Subject: Re: [PATCH 0/6] pinctrl: aspeed: Add AST2600 pinmux support
-To: Andrew Jeffery <andrew@aj.id.au>
+Content-Disposition: inline
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-AntiAbuse: This header was added to track abuse,
+ please include it with any abuse report
+X-AntiAbuse: Primary Hostname - gator4166.hostgator.com
+X-AntiAbuse: Original Domain - lists.infradead.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - embeddedor.com
+X-BWhitelist: no
+X-Source-IP: 187.192.11.120
+X-Source-L: No
+X-Exim-ID: 1hrsO0-003VsI-Bx
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
+X-Source-Sender: (embeddedor) [187.192.11.120]:39040
+X-Source-Auth: gustavo@embeddedor.com
+X-Email-Count: 4
+X-Source-Cap: Z3V6aWRpbmU7Z3V6aWRpbmU7Z2F0b3I0MTY2Lmhvc3RnYXRvci5jb20=
+X-Local-Domain: yes
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190728_161453_451588_3D25E2E8 
-X-CRM114-Status: GOOD (  10.52  )
+X-CRM114-CacheID: sfid-20190728_161542_639899_9F28D4E3 
+X-CRM114-Status: UNSURE (   8.93  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [192.185.148.2 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -90,35 +105,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, johnny_huang@aspeedtech.com,
- linux-aspeed@lists.ozlabs.org, ryanchen.aspeed@gmail.com,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Stephen Rothwell <sfr@canb.auug.org.au>, Kees Cook <keescook@chromium.org>,
+ "Gustavo A. R. Silva" <gustavo@embeddedor.com>, linux-kernel@vger.kernel.org,
+ linux-tegra@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jul 11, 2019 at 6:19 AM Andrew Jeffery <andrew@aj.id.au> wrote:
+Mark switch cases where we are expecting to fall through.
 
-> This series adds pinmux support for the AST2600. Some more rework was required
-> on top of the previous cleanup series, but this rework was focussed on
-> supporting features of the AST2600 pinmux rather than fixing issues with the
-> existing infrastructure for the ASPEED drivers. Due to the dependences it's
-> based on top of pinctrl/devel, so should avoid any more SPDX issues.
->
-> ASPEED have been testing the patches on hardware, so even for an initial pass
-> there's some confidence in the implementation.
+This patch fixes the following warning:
 
-I'm unsure if I need to wait for the DT bindings to be fixed on this
-series?
+arch/arm/mach-tegra/reset.c: In function 'tegra_cpu_reset_handler_enable':
+arch/arm/mach-tegra/reset.c:72:3: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   tegra_cpu_reset_handler_set(reset_address);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arch/arm/mach-tegra/reset.c:74:2: note: here
+  case 0:
+  ^~~~
 
-Yours,
-Linus Walleij
+Reported-by: Stephen Rothwell <sfr@canb.auug.org.au>
+Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>
+---
+ arch/arm/mach-tegra/reset.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/arm/mach-tegra/reset.c b/arch/arm/mach-tegra/reset.c
+index 5a67a71f80cc..76a65df42d10 100644
+--- a/arch/arm/mach-tegra/reset.c
++++ b/arch/arm/mach-tegra/reset.c
+@@ -70,7 +70,7 @@ static void __init tegra_cpu_reset_handler_enable(void)
+ 	switch (err) {
+ 	case -ENOSYS:
+ 		tegra_cpu_reset_handler_set(reset_address);
+-		/* pass-through */
++		/* fall through */
+ 	case 0:
+ 		is_enabled = true;
+ 		break;
+-- 
+2.22.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
