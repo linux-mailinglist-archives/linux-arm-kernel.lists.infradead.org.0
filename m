@@ -2,54 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B557777F2F
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Jul 2019 13:19:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA4C177F33
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Jul 2019 13:23:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=epJpyQMSY+LZhQZCjosjEnMvlA/63l3mPS9a6CHoeyw=; b=gs/xVgBsaem1mx
-	52cCgufx5KJp1mWsyaFZeDrK+qRgS1rE/PVamFUv04DbkrXLmFtNRSR5AF1UpKBzFast5PwBRSjuN
-	DAAL00ME4FZhhi0epodMTL1ncRf3QkcNphKsNHPTZQGY0WNEG30rsAZya2q7jZGblYyh/7MDm3L8K
-	sEkcisf4sEcV3bDhZCQ9dYk+sIQxb1mw1bJhUa2APc3rAEaa7haWjapkL9KsQhWhGhTT0YG6+j7lj
-	9a43fOVEjxXsYNPZPit/HmjCzPzxHwjMPWfHvlJ4X0pbjIOIZkdzKWOG5hUFHBZYxPm5aAyydIXsk
-	1MB2SeFz+LQGwqCOsAfg==;
+	List-Owner; bh=fgy5LPTw7VCisekhYsXOXRsDvocSA3ik22f3Ybm3jTY=; b=EI93oLjd8/tIFe
+	FKkk5RFYv/3JTxs4GhnxH5qEywu99P7aWMLnVomLweMAYdDx+QWaagyIzlBJWiqsfAbKamsNUj3Yd
+	+w5O515FkfmzsZ8e/PILyKMbEqMkLb9MmpmuSvFRauT3Oyf4lS5VPoOgm1q3sx65LQW20uUVqfYWR
+	oFp2YpYcCZii8eJ+aS+F4r6p7PWbBvKIcWpwUbXMRGab72t+Jb0ySIcuN36MwPhqSd0qMrZSjkoSc
+	1pGwbok5b5O5ettP/x4+ejggd+XxwaU9E33HailvJQgxzJfPKgD5EYqX/d6vQsZFzA/iD7Axr4Iua
+	7yWRpvpcsZ6+1VabKUOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hrhDQ-0003tl-Mf; Sun, 28 Jul 2019 11:19:48 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hrhDA-0003t3-W6
- for linux-arm-kernel@lists.infradead.org; Sun, 28 Jul 2019 11:19:34 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A1C89344;
- Sun, 28 Jul 2019 04:19:29 -0700 (PDT)
-Received: from [10.163.1.126] (unknown [10.163.1.126])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 855083F71F;
- Sun, 28 Jul 2019 04:19:23 -0700 (PDT)
-Subject: Re: [PATCH v9 00/21] Generic page walk and ptdump
-To: Steven Price <steven.price@arm.com>, linux-mm@kvack.org
-References: <20190722154210.42799-1-steven.price@arm.com>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <794fb469-00c8-af10-92a8-cb7c0c83378b@arm.com>
-Date: Sun, 28 Jul 2019 16:50:03 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1hrhGU-0005Os-Gk; Sun, 28 Jul 2019 11:22:58 +0000
+Received: from mout.gmx.net ([212.227.15.19])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hrhGF-0005OJ-Rd
+ for linux-arm-kernel@lists.infradead.org; Sun, 28 Jul 2019 11:22:45 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1564312929;
+ bh=MAKwYZfynDL+Hd7f+QsuXWozUnUZdJtS1wF4LCKU6/w=;
+ h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
+ b=NF57iRnW6S3Y8qkeboGZMJfHkND4o2E3LhB2rZL19OmQN0un0NdVdt6XFZAfE5gQJ
+ yiaNGg6Hm0LFsxvSh4BVX+QsPdmIbbf0jJTX7keOggRZfwGJpPMH4lf74oXPTsufaB
+ UcGpC0HerB/nCQCk4d0u4wY1ti4pGo78IAl3xhns=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [192.168.1.162] ([37.4.249.143]) by mail.gmx.com (mrgmx001
+ [212.227.17.190]) with ESMTPSA (Nemesis) id 0M3RVA-1iiQOf0KYq-00qzXj; Sun, 28
+ Jul 2019 13:22:09 +0200
+Subject: Re: [PATCH 00/18] ARM: Add minimal Raspberry Pi 4 support
+To: Linus Walleij <linus.walleij@linaro.org>,
+ Michael Turquette <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>
+References: <1563774880-8061-1-git-send-email-wahrenst@gmx.net>
+From: Stefan Wahren <wahrenst@gmx.net>
+Message-ID: <319549e0-23b5-4a49-49ae-723da754f984@gmx.net>
+Date: Sun, 28 Jul 2019 13:22:06 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20190722154210.42799-1-steven.price@arm.com>
+In-Reply-To: <1563774880-8061-1-git-send-email-wahrenst@gmx.net>
 Content-Language: en-US
+X-Provags-ID: V03:K1:L6n7pJWpKJUX7rL/HEi1TSsdsIqn0DrG88SOjiUdOZ1luS7fB15
+ EoyYD2aklGvLPglgIqf3Z6jPBuiYrtnHSui96ADfDxT/LU7NdG/rvDN0WY2ADPTxCWTZfZY
+ NBTH/a+ulgmKzjX+3xyc5xb+M0uwVItVplnb2+M9d7NQkbB9N8RrifVZwxSoG4BpFaQVXxk
+ sl4wuAoMe+MdhnhudyebQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:9G1f+9ZXTAI=:+yOWt4En/1dyMWszJNZ+On
+ S/CoTJeQWv+vA8W6u3vcji++A7yFjk74I8j49RwLM3I8CuHz7jf9DUi77SBwNzzV6RWyhRTNK
+ SmGs0mtZidYaGA5ntfEqxe4GeGBnt/qY05YV9Mdvzd1FFrwFImSJppNpJRruJLY9iwHCMYhyv
+ CHZXqrhiqw50L/gHq1UYRolXI70JIK4s1LRKSCuS5SJCFDfTtr7zo6/bQ3XCCQ2sc2VLIICMk
+ BwETezD6yt4b8b41oiI65P5TeI5aJsEmK7OyHdYxeDsZ3ujp/gOx59WjRYcPiAn1UXeCnfjKC
+ 1wDruBCdKIjl5qQ3dn6M8vhdk8fwG8hP57enJWvKIkoC5p+fIcYKtV4Lsbs49NQAi4QLudJY5
+ c7nRit8vuiZ6Dt7esiroqaUxrwIaKpMTmCoQvsrybfdZbOsj6gzfj0lPQw74IJqX9jmyJkG37
+ TACcg8T0rGlzvkw2s6SAWmTkvBm/yKNraAhno4mAaXkaNbUGg68v3jifa1yj3BDReQM7x9P9v
+ S2N/+WHBEh6NvmihgfaaHWWV1uPD5OHewPmkVMlLE1WXk9LDlAfuFbiBFPoFnT5zRe7lpfCGj
+ CfdWGkwLn9l6qcSYkwTlpNCnQHwxtQ1ytZNvzpsgcKH1qvsJnTPL0XD84OIOQ8x49ItXSC9bv
+ Zl7HpIR1Le2vNWrX7EBfXeqQk50pOZszcSxLWguZUDmJ2jhPRCmHybfOKPQX8jF9LML6r/GSw
+ 6O4toYqsMRbLXYjYP5F44jmUXFs6OLyw/gUmX1ZlYdjszV+hmgJbeF4j5bZtT9BISXqsy6g4O
+ nL+zuC6Bebx8IzpoIJ3LfWAckjsRu0r64UvUUVtxNQE/mNajWsBSuJJx6IOAe0TM6BesS/Z/w
+ AnCTD9iONKH6Jx9rtecuzOrRu5nGTRGrJI3ZwLmSD3a5AkTROOqppnfId5YQswCnnJRilFCGd
+ o9T3tvSnUCD1cVsEYefQlSrFlzYI9rcM6LCMlqBE5h5xOdAcP8HafYs6N+IEtM+aALir4YBj9
+ OT02iCnmc/eRZ/rcz81KQYhP8uH3GjfXUTmdDCa4bRLUO/ATZJF7x2ciXv/hfLKKuHJUTvLEa
+ Y2WCb5EcC14TEQ=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190728_041933_078054_4C13E105 
-X-CRM114-Status: GOOD (  13.74  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190728_042244_182749_6052D316 
+X-CRM114-Status: GOOD (  12.86  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.15.19 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wahrenst[at]gmx.net)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,48 +100,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, x86@kernel.org,
- Arnd Bergmann <arnd@arndb.de>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>, linux-kernel@vger.kernel.org,
- =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- Andy Lutomirski <luto@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
- James Morse <james.morse@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
- Will Deacon <will@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
- linux-arm-kernel@lists.infradead.org, "Liang, Kan" <kan.liang@linux.intel.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
+ Matthias Brugger <mbrugger@suse.com>, Scott Branden <sbranden@broadcom.com>,
+ linux-gpio@vger.kernel.org, Ray Jui <rjui@broadcom.com>,
+ linux-mmc@vger.kernel.org, Adrian Hunter <adrian.hunter@intel.com>,
+ Rob Herring <robh+dt@kernel.org>, Eric Anholt <eric@anholt.net>,
+ Florian Fainelli <f.fainelli@gmail.com>, bcm-kernel-feedback-list@broadcom.com,
+ linux-arm-kernel@lists.infradead.org,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ linux-rpi-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 07/22/2019 09:11 PM, Steven Price wrote:
-> Steven Price (21):
->   arc: mm: Add p?d_leaf() definitions
->   arm: mm: Add p?d_leaf() definitions
->   arm64: mm: Add p?d_leaf() definitions
->   mips: mm: Add p?d_leaf() definitions
->   powerpc: mm: Add p?d_leaf() definitions
->   riscv: mm: Add p?d_leaf() definitions
->   s390: mm: Add p?d_leaf() definitions
->   sparc: mm: Add p?d_leaf() definitions
->   x86: mm: Add p?d_leaf() definitions
+Hi Linus,
+hi Michael,
+hi Stephen,
 
-The set of architectures here is neither complete (e.g ia64, parisc missing)
-nor does it only include architectures which had previously enabled PTDUMP
-like arm, arm64, powerpc, s390 and x86. Is there any reason for this set of
-archs to be on the list and not the others which are currently falling back
-on generic p?d_leaf() defined later in the series ? Are the missing archs
-do not have huge page support in the MMU ? If there is a direct dependency
-for these symbols with CONFIG_HUGETLB_PAGE then it must be checked before
-falling back on the generic ones.
+Am 22.07.19 um 07:54 schrieb Stefan Wahren:
+> This series adds minimal support for the new Raspberry Pi 4, so we are abl=
+> e
+> to login via debug UART.
+>
+> Patch 1-5:   Prepare platform and DTS for the new SoC BMC2711
+> Patch 6-10:  Enable support for emmc2 on BCM2711
+> Patch 11-12: Enable pinctrl for BCM2711
+> Patch 13-17: Add Raspberry Pi 4 DTS support
+> Patch 18:    Update MAINTAINERS
+>
+any comments on the clk / pinctrl parts or do you just wait for Rob's Ack?
 
-Now that pmd_leaf() and pud_leaf() are getting used in walk_page_range() these
-functions need to be defined on all arch irrespective if they use PTDUMP or not
-or otherwise just define it for archs which need them now for sure i.e x86 and
-arm64 (which are moving to new generic PTDUMP framework). Other archs can
-implement these later.
+Sorry to bother you, but i want to send a new version before my holidays.
+
 
 _______________________________________________
 linux-arm-kernel mailing list
