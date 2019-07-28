@@ -2,76 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 05FCF780F4
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Jul 2019 20:48:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F40FF7814C
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Jul 2019 21:42:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KnOCiBNNfWiBEscpYV3wmNTM7rFot9NVMOcptdy/32M=; b=IEc32xln1yO/hV
-	taQXGWXYF6H5tqunCH5erMgOprVOmAceNuTUx/iPxI9qNH0PR0S2kJbN+S0cj71oPlrkZ7NsAcbg0
-	KzQzWFuiKLjlGAaiG8KP3kCPa7gPbAZJefAJVLj/zUzvUlpfMKI8ny2yXzTKi289hHXYWXOfZCycQ
-	DvB9OymKmRsHHmzTDVuggZmgmfPptRi3rcw2EohZVmfEw2uobNb9GYK154A67j+OYLfVWqajygH7L
-	q+iE+msalpSUp0Iwl5SRNy/dtRCIbfu9Oi8tReLvEeEjJ94yLG6CS5+N7QJyaXx7dtL3OZi3t9h7U
-	1G2HicWCfXef+dxxiitQ==;
+	List-Owner; bh=JddwTVSDScGPp0cF/9/POTbdRbJvPGQB7EkDDeouZQI=; b=gvjY6BOG46VjA9
+	PsnLIG6CLBBDiwEMZOp6DG+AJPCOM+nLhn6CV47k/X6xsHejxyaqbFO60vUBpuskK57fu6gn3alKS
+	N35yW+9kZYmvkQb5TGnb2WIylYRhyTlVNtZj7UE2X69YYjmsGZ/a+H+yPkUe7G057OZmNQdWqZ6fA
+	2TrotPSXu70aaTJ9FZsilHX89gGTxUEnOBw1d+URSHwZIsaGm8SlTMk5Hnu/pg2m4FxYWAdESE7Ft
+	ZnlhMlO1YrUqUQIRVyb1eHLKXyHpI2O2JwP/bWqt30JAbhjS0lOTBkJifO6Vfd/ANZkiOdFXU/D40
+	jwqSGF+Fj1OM44vh/fIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hroDZ-0007YR-Af; Sun, 28 Jul 2019 18:48:25 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hrp3v-0007BK-0V; Sun, 28 Jul 2019 19:42:31 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hroDK-0007Ww-11; Sun, 28 Jul 2019 18:48:12 +0000
-Received: from sol.localdomain (c-24-5-143-220.hsd1.ca.comcast.net
- [24.5.143.220])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1F4F9206A2;
- Sun, 28 Jul 2019 18:48:05 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564339685;
- bh=4DYiX1iZmDAb/6QIy02mrj5YucN4V4gh5wPN40oeVcU=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=1x6CdvMFhhJpAqMrHpTg8s1dw/3onqj82ebkAM634Qi9JtPrLS2d41BDRyleQF8rc
- z8ez9kt631w8KhvzEa8NB2GGiD7L2QdgmE8nUQeZdO0Bm2BPRmjruLsOjQh4v3nMJC
- lBf5+MClR7Io/D3CHcsbKBpNz5sfw37TOm+n1UPI=
-Date: Sun, 28 Jul 2019 11:48:03 -0700
-From: Eric Biggers <ebiggers@kernel.org>
-To: Corentin Labbe <clabbe@baylibre.com>
-Subject: Re: [PATCH 0/4] crypto: add amlogic crypto offloader driver
-Message-ID: <20190728184803.GA14920@sol.localdomain>
-Mail-Followup-To: Corentin Labbe <clabbe@baylibre.com>, davem@davemloft.net,
- herbert@gondor.apana.org.au, khilman@baylibre.com,
+ id 1hrp3g-00079B-IF
+ for linux-arm-kernel@lists.infradead.org; Sun, 28 Jul 2019 19:42:18 +0000
+Received: by mail-wm1-x342.google.com with SMTP id s3so51961929wms.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 28 Jul 2019 12:42:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=cZDsP6Vjh3qAchq5bA/Y9mmlq5ggucZoGBTvUsBqZwY=;
+ b=kBrMw64w8gKf1todfhDdsIKKZmXKC6CCIhiFXHRQnj8umEefttWPZlBNP8Zo5WYV+s
+ JU3IcM1QagwKNUKJIWn7RjXL/rZBHj2Fd3AjEW67vicePxs8sbnKzjgFOJYfkU7oNEdR
+ cjsuNjxPfeHfTV/FknaxlGZZEPWo/ivyeuoCJ12E8U0Durrq7T5LKDaIHT1Xhiz8jiKc
+ s6LeT1DX7/gLob/k/Dxio+0kUTvxqCv5RsdZQZtFQz51kMqT5tFNXJS9ZvSE7liLDAfZ
+ rCZ1568QBESuMV1b/QktAYD3Jv6miQYVwvhH30OaP86iiW8oGr7Dp4W+QMIMRLLV7KGm
+ mKWA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=cZDsP6Vjh3qAchq5bA/Y9mmlq5ggucZoGBTvUsBqZwY=;
+ b=JVLQbXCwYUk4qXovDNzv3UELR1xwpRiO2mVQjCa17Fc/dVnCl6oa/Dz7MVh+gn6O+Q
+ u15ii/vslKeb42YvCnQxGpWzoxjPPh2rahCRSgpQWQx2HsxfqCsWfi5wANT21EmEuT22
+ pGbJA1VJlHgr/1hWopdnmMm1kEbzJtRMqCkES4vDGXJpAOM73QUn63GFIE0URBdamkTW
+ 2GBdulDfhcQn1tAGA7HDBizAEb9GsWntJwTcllajrfQo/U1d0PLG1UFN6DdNrplFoT8P
+ aOAAJA0a0pD5BsCjDmj2jqQc1nEYdCFBwdtrUiX7xVaqM74bOvsX7hS9amr3EqTmP4mD
+ 01wg==
+X-Gm-Message-State: APjAAAVOoFS0WWYqLfRGok9tl3j2YuxfAgeG5jdzRqgamsvOPsD+QKl0
+ 3rOrogqjqi9q4k0yRcqz05781w==
+X-Google-Smtp-Source: APXvYqzIGsx/VwsniuHVTl0QO3Oov9lrT/Mj3/pwgJwPSU5voW/QBxHEjrOMbARMEqeEAiO9dnkabg==
+X-Received: by 2002:a7b:c081:: with SMTP id r1mr45595665wmh.76.1564342934763; 
+ Sun, 28 Jul 2019 12:42:14 -0700 (PDT)
+Received: from Red ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
+ by smtp.googlemail.com with ESMTPSA id o24sm65369199wmh.2.2019.07.28.12.42.13
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Sun, 28 Jul 2019 12:42:14 -0700 (PDT)
+Date: Sun, 28 Jul 2019 21:42:11 +0200
+From: LABBE Corentin <clabbe@baylibre.com>
+To: davem@davemloft.net, herbert@gondor.apana.org.au, khilman@baylibre.com,
  mark.rutland@arm.com, robh+dt@kernel.org,
  devicetree@vger.kernel.org, linux-amlogic@lists.infradead.org,
  linux-arm-kernel@lists.infradead.org, linux-crypto@vger.kernel.org,
  linux-kernel@vger.kernel.org, baylibre-upstreaming@groups.io
+Subject: Re: [PATCH 0/4] crypto: add amlogic crypto offloader driver
+Message-ID: <20190728194211.GA29444@Red>
 References: <1564083776-20540-1-git-send-email-clabbe@baylibre.com>
+ <20190728184803.GA14920@sol.localdomain>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1564083776-20540-1-git-send-email-clabbe@baylibre.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <20190728184803.GA14920@sol.localdomain>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190728_114810_091251_912763B6 
-X-CRM114-Status: UNSURE (   8.74  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190728_124216_669611_12BB9EC2 
+X-CRM114-Status: GOOD (  12.36  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,33 +99,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- herbert@gondor.apana.org.au, baylibre-upstreaming@groups.io,
- khilman@baylibre.com, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- linux-crypto@vger.kernel.org, linux-amlogic@lists.infradead.org,
- davem@davemloft.net, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Corentin,
+On Sun, Jul 28, 2019 at 11:48:03AM -0700, Eric Biggers wrote:
+> Hi Corentin,
+> 
+> On Thu, Jul 25, 2019 at 07:42:52PM +0000, Corentin Labbe wrote:
+> > Hello
+> > 
+> > This serie adds support for the crypto offloader present on amlogic GXL
+> > SoCs.
+> > 
+> > Tested on meson-gxl-s905x-khadas-vim and meson-gxl-s905x-libretech-cc
+> > 
+> > Regards
+> > 
+> 
+> Does this new driver pass all the crypto self-tests?
+> Including with CONFIG_CRYPTO_MANAGER_EXTRA_TESTS=y?
+> 
 
-On Thu, Jul 25, 2019 at 07:42:52PM +0000, Corentin Labbe wrote:
-> Hello
-> 
-> This serie adds support for the crypto offloader present on amlogic GXL
-> SoCs.
-> 
-> Tested on meson-gxl-s905x-khadas-vim and meson-gxl-s905x-libretech-cc
-> 
-> Regards
-> 
+Yes it pass all extra self-tests.
+I forgot to write it in the cover letter.
 
-Does this new driver pass all the crypto self-tests?
-Including with CONFIG_CRYPTO_MANAGER_EXTRA_TESTS=y?
-
-- Eric
+Regards
 
 _______________________________________________
 linux-arm-kernel mailing list
