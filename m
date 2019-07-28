@@ -2,51 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5F032780A0
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Jul 2019 19:30:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 05FCF780F4
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Jul 2019 20:48:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Date:Message-Id:
-	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aTrS/uLaXbfYuqXgMawtiTfkUp3GY6d9xAzHSj6K3ds=; b=E9cDC8Ya9tTxrA
-	WGUdCebC4aaDl6NYS1Y14962uWo4pdyorJcfLuk57p900J3KF82R4U2R3hbS09yx2eFWYseOXC1gz
-	tSKgA0GhF5Wi9mkfbqaB7Ak1hXAVB9HsF0hUFu/Ik/SKdq0YQwZrjx4KvRjcHjqZszatFJK7fYhHN
-	q+2cBHY3RbcvmNWarm0PNj7Jo52KwiWvrgk6Bn4dWx/lQfXbZW1sFO6WiTkJVgMZlMzEpOjXPM8H4
-	8FJ5xhk0aFTHJK7vXaXgvpIH+n6EsqaH9HJHIpBwsp0ZxT6WqFuzeg+pw1rH1QNH+ph9IUjxLUpGe
-	cWLtbDbv0ZpOSI0vajbg==;
+	List-Owner; bh=KnOCiBNNfWiBEscpYV3wmNTM7rFot9NVMOcptdy/32M=; b=IEc32xln1yO/hV
+	taQXGWXYF6H5tqunCH5erMgOprVOmAceNuTUx/iPxI9qNH0PR0S2kJbN+S0cj71oPlrkZ7NsAcbg0
+	KzQzWFuiKLjlGAaiG8KP3kCPa7gPbAZJefAJVLj/zUzvUlpfMKI8ny2yXzTKi289hHXYWXOfZCycQ
+	DvB9OymKmRsHHmzTDVuggZmgmfPptRi3rcw2EohZVmfEw2uobNb9GYK154A67j+OYLfVWqajygH7L
+	q+iE+msalpSUp0Iwl5SRNy/dtRCIbfu9Oi8tReLvEeEjJ94yLG6CS5+N7QJyaXx7dtL3OZi3t9h7U
+	1G2HicWCfXef+dxxiitQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hrn0A-0001QD-5x; Sun, 28 Jul 2019 17:30:30 +0000
+	id 1hroDZ-0007YR-Af; Sun, 28 Jul 2019 18:48:25 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hrmzz-0001P7-Ro
- for linux-arm-kernel@lists.infradead.org; Sun, 28 Jul 2019 17:30:21 +0000
-Subject: Re: [GIT PULL] ARM: SoC fixes
+ id 1hroDK-0007Ww-11; Sun, 28 Jul 2019 18:48:12 +0000
+Received: from sol.localdomain (c-24-5-143-220.hsd1.ca.comcast.net
+ [24.5.143.220])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1F4F9206A2;
+ Sun, 28 Jul 2019 18:48:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564335017;
- bh=+Fb/AstsPPb/152WXJWNxzWcmSDViHx0aDjW5JyAh1I=;
- h=From:In-Reply-To:References:Date:To:Cc:From;
- b=xW5sXgtPF3C8w/K4sek/7TH4b2Ltnorn9QHKTPxCx/vWTbywSL5q9DPw8AH+DYGyy
- 33AyrJJOOeYe6L4tn3d4bYJfmyB9Jcst2golfHZFTJyr/EG/EbhDV3kkFmsRKb01fk
- NoFAo/uZDx9K4WUkNjB+1D7Ew9JWh3pKoCDTl5lw=
-From: pr-tracker-bot@kernel.org
-In-Reply-To: <20190728063715.ensdmo7jyimrsez4@localhost>
-References: <20190728063715.ensdmo7jyimrsez4@localhost>
-X-PR-Tracked-List-Id: <linux-kernel.vger.kernel.org>
-X-PR-Tracked-Message-Id: <20190728063715.ensdmo7jyimrsez4@localhost>
-X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git tags/armsoc-fixes
-X-PR-Tracked-Commit-Id: 7bd9d465140a93c0a21ba2d2f426451c78bfcc7d
-X-PR-Merge-Tree: torvalds/linux.git
-X-PR-Merge-Refname: refs/heads/master
-X-PR-Merge-Commit-Id: 5bb575bcc6d1564340f969c5aa2bff8a500b239f
-Message-Id: <156433501738.9558.9696751081969592633.pr-tracker-bot@kernel.org>
-Date: Sun, 28 Jul 2019 17:30:17 +0000
-To: Olof Johansson <olof@lixom.net>
+ s=default; t=1564339685;
+ bh=4DYiX1iZmDAb/6QIy02mrj5YucN4V4gh5wPN40oeVcU=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=1x6CdvMFhhJpAqMrHpTg8s1dw/3onqj82ebkAM634Qi9JtPrLS2d41BDRyleQF8rc
+ z8ez9kt631w8KhvzEa8NB2GGiD7L2QdgmE8nUQeZdO0Bm2BPRmjruLsOjQh4v3nMJC
+ lBf5+MClR7Io/D3CHcsbKBpNz5sfw37TOm+n1UPI=
+Date: Sun, 28 Jul 2019 11:48:03 -0700
+From: Eric Biggers <ebiggers@kernel.org>
+To: Corentin Labbe <clabbe@baylibre.com>
+Subject: Re: [PATCH 0/4] crypto: add amlogic crypto offloader driver
+Message-ID: <20190728184803.GA14920@sol.localdomain>
+Mail-Followup-To: Corentin Labbe <clabbe@baylibre.com>, davem@davemloft.net,
+ herbert@gondor.apana.org.au, khilman@baylibre.com,
+ mark.rutland@arm.com, robh+dt@kernel.org,
+ devicetree@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-crypto@vger.kernel.org,
+ linux-kernel@vger.kernel.org, baylibre-upstreaming@groups.io
+References: <1564083776-20540-1-git-send-email-clabbe@baylibre.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1564083776-20540-1-git-send-email-clabbe@baylibre.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190728_103019_922692_E573CCF2 
-X-CRM114-Status: UNSURE (   1.50  )
+X-CRM114-CacheID: sfid-20190728_114810_091251_912763B6 
+X-CRM114-Status: UNSURE (   8.74  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -76,27 +83,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, soc@kernel.org, arm@kernel.org,
- olof@lixom.net, torvalds@linux-foundation.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ herbert@gondor.apana.org.au, baylibre-upstreaming@groups.io,
+ khilman@baylibre.com, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ linux-crypto@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ davem@davemloft.net, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The pull request you sent on Sat, 27 Jul 2019 23:37:15 -0700:
+Hi Corentin,
 
-> git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git tags/armsoc-fixes
+On Thu, Jul 25, 2019 at 07:42:52PM +0000, Corentin Labbe wrote:
+> Hello
+> 
+> This serie adds support for the crypto offloader present on amlogic GXL
+> SoCs.
+> 
+> Tested on meson-gxl-s905x-khadas-vim and meson-gxl-s905x-libretech-cc
+> 
+> Regards
+> 
 
-has been merged into torvalds/linux.git:
-https://git.kernel.org/torvalds/c/5bb575bcc6d1564340f969c5aa2bff8a500b239f
+Does this new driver pass all the crypto self-tests?
+Including with CONFIG_CRYPTO_MANAGER_EXTRA_TESTS=y?
 
-Thank you!
-
--- 
-Deet-doot-dot, I am a bot.
-https://korg.wiki.kernel.org/userdoc/prtracker
+- Eric
 
 _______________________________________________
 linux-arm-kernel mailing list
