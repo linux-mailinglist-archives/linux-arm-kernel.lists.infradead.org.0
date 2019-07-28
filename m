@@ -2,74 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9E2BF7825D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 01:34:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6AFB578263
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 01:34:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=9nRg9ktsYrwSqgf0fKRE72h16JxX0IffRrETCsQdbSw=; b=mtOLR1OKkYr0aV
-	OE4y9iAYMW29qhcAK55BYx/ki1kZVFoecIr+5v2zSbM6tMGahXD/4Ey7/wmCPWDCUGeatw+zh1/dg
-	iO3uHkf/2gicjAiX6eaFYhvAv0K/e9D0UUkDyI+b8Dt9Fm3WGYMJT5BrwPEQEDrsYoEsk0HGJVyG6
-	BDi/aWA27H7IQFDMCXa7kiTAlmGdjDT8QUCAO8ffNwJ3wQIjrG2slAWPCV6VYFB8vi4CXmNwIuU+K
-	njLk6qiRoZs49tOIvP9FVH35Lv0JMCPaYukSbK9jDgfeQWknlFRQQ6+NTrMBhS20bRzZGBGnEptQh
-	pmAu8GuPEpoALvvLke8Q==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TAsW+lbNKLC27WGEs11/Ceiho7AEk9HhHOuOFqQiQhs=; b=MPXnRhqD+94qc0
+	3Okq73zMc7k6Bg2JYKjXvFojnFtqBLPbHeyGnCZyh8qVf1r7YMTqnFKnhqpp6X+esoOxw14GrNPO+
+	NmrZOgD+rSbA6BWXtaJ8RYxunONg/G/b2wBR+X9aY+8n6DsQmSfrSjX8cnFONIRBcgYvBDzfn2JqZ
+	kaOd+xY97sXMusyUhAOzb4uf/ibmi8f403qEIrXZo9d7xqEoFonTSwuHWAwUd0ywVaQRUU51/SMBm
+	r1LRdjY9lQ3CAEVVyedhHnj6h/abupVlz6P7i9fs3B023A8GKRlJHz2nhnAUY/gaWtvB1oC7cAh/K
+	qhQDfTuXhwWb69nD7FLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hrsg5-0004xV-HO; Sun, 28 Jul 2019 23:34:09 +0000
-Received: from mail-wr1-f67.google.com ([209.85.221.67])
+	id 1hrsgm-0005SF-4o; Sun, 28 Jul 2019 23:34:52 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hrsft-0004xE-WB
- for linux-arm-kernel@lists.infradead.org; Sun, 28 Jul 2019 23:33:59 +0000
-Received: by mail-wr1-f67.google.com with SMTP id n9so59901844wru.0
+ id 1hrsgD-0005C6-4R
+ for linux-arm-kernel@lists.infradead.org; Sun, 28 Jul 2019 23:34:19 +0000
+Received: by mail-lf1-x144.google.com with SMTP id z15so36456580lfh.13
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 28 Jul 2019 16:33:57 -0700 (PDT)
+ Sun, 28 Jul 2019 16:34:16 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=eUvn9OI5nD/4S7v8ywB8lgEu/KDQowtKmV6CtOSPqUA=;
+ b=aEFFIjaZRLhrPDgULFaRicTLJcOaMeowEaKUJOOHKxsU0QeLveEc4UGQHyiCE9z748
+ LokY6dj1a7TghWqOkoJZ0mkFKXLYJN/B++Ka3tTFhWmvmB78ADuM9y9mObtiU0E4Trqz
+ yeY0A1yraFZKZIdaaAh0yHYrBWOyKpGLB5iZhDkYTZOU/kUmbgRr9tG+Bvf4lOWB324F
+ svF5yh/hqwRzyr0EgJCkUZhzkclqGfGdEZE6Jd5Tb3xOCak99/+GzYvbwS5TI3h5A998
+ sN1u/IeShA4POS42IOkF4YLja9CWZ5LFecqlS73MoehKEDHT6PnnW3TJx2g8hZYF7j2s
+ Zopg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=aaEeKTG5R6Qc1GdziDtQYqZnD5RGAhr5gRU7LI7kaRU=;
- b=RZ7I3sYSSzUzwlZzBR9Zq3tBIFHg+V9mgE0H3oQYUKVF/oDHvVZYORLqfHSNw0jvRz
- F8hbJrZBb8zUs8KbCQvzGXJsoqZ9xEIXrFeBSmZ1i4s0IVItbkXmu5AdOl6Sg4N9rF5W
- IkDkx1/bpVpUhNw1XFHc/W9wpyFjwN2FWlQNM99WS0W+I39WhKdM5GXe7FbgQP1zt4dU
- CjZMBM/SmTSCcClrff1sp/uTTnneXuUx7KVw0wR+2+nZJerPi0deXA1XXELJ8Sw4uPUs
- 2druMUZvMtwjXCg7CoigMvX43++gdSoRcqkyFFsEO5RkLOPFg/5O5GxOcWRa2Fwe6hVt
- Xm/w==
-X-Gm-Message-State: APjAAAUUtFk1aZXan6N/fdfpIV9b1dsnJO1EF5Jm52OGbta5fTLGUdG/
- hbSZln9xSD1tv5u0MkdpDLViBQ6H7U0=
-X-Google-Smtp-Source: APXvYqw92NTMBLPsPb4QZTGuO9U/NuPamS1jjyCN0NB7ONLDo7yL5jkx3vA9VzVTsdLSGSGyi5CJjQ==
-X-Received: by 2002:adf:d4c1:: with SMTP id w1mr44021854wrk.229.1564356836523; 
- Sun, 28 Jul 2019 16:33:56 -0700 (PDT)
-Received: from mcroce-redhat.homenet.telecomitalia.it
- (host221-208-dynamic.27-79-r.retail.telecomitalia.it. [79.27.208.221])
- by smtp.gmail.com with ESMTPSA id c1sm136666630wrh.1.2019.07.28.16.33.55
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sun, 28 Jul 2019 16:33:55 -0700 (PDT)
-From: Matteo Croce <mcroce@redhat.com>
-To: linux-arm-kernel@lists.infradead.org,
-	kvmarm@lists.cs.columbia.edu
-Subject: [PATCH] KVM: arm64: vgic-v3: mark expected switch fall-through
-Date: Mon, 29 Jul 2019 01:33:47 +0200
-Message-Id: <20190728233347.7856-1-mcroce@redhat.com>
-X-Mailer: git-send-email 2.21.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=eUvn9OI5nD/4S7v8ywB8lgEu/KDQowtKmV6CtOSPqUA=;
+ b=Tt0RveEWS3qMGRNSIWjk/JPNZfeA+DmeHqGmWcnhSgRKcuasH3+c11xNaSAUg/cpQk
+ aYCJk+YKgFxS9ok1UaXmJdmOdSX0xt8BsJd5cWbipMX9R4iLXkbQu8tlTkg4Trd4/ZBX
+ xJXHbWIEk45a3/GzDIWCM5sqcAqBdLsbxpJ9FxHbFd+ZhfJawhgOIpfHxx3mAS3RUnAt
+ yBGlWpA2Toe1T/3D9UMDMzn/wMYF0Jq5iypHuFk/UIK/RLMXIJRxsNrAPANiZwzViUnf
+ ocFH4EtwBK1mNCfl2v3tgrngYMEkea4WjSn0Fsmg53r6p4NO7u4PvmKsjKSi+YPFTRE0
+ F8hA==
+X-Gm-Message-State: APjAAAUGUQcPb73nrruhI+/GW4Wcth0S9Lc4NPIZBsGkWUpJ3UL26CUl
+ hZcuIoKZ/1uSgjCdH0rAuB7DwbKR2I15BUMnhAR4WA==
+X-Google-Smtp-Source: APXvYqysascwZ7s8p4u+iWYY6k2d56GISla2oOhZmhWM9B7cI6Cbtauk+/chIBA1grY5/zLjWKJ3aCLJJa9z3+4C1R8=
+X-Received: by 2002:ac2:4891:: with SMTP id x17mr51451245lfc.60.1564356855227; 
+ Sun, 28 Jul 2019 16:34:15 -0700 (PDT)
 MIME-Version: 1.0
+References: <1563564291-9692-1-git-send-email-hongweiz@ami.com>
+ <1563564291-9692-2-git-send-email-hongweiz@ami.com>
+ <CACRpkdYhVoP75ZDfASW+DH5yf-a5diitiXsh7eLsJx5hsTC9sQ@mail.gmail.com>
+ <ef9d9c17-6e2d-4a4e-ac44-f8da4bb3b8eb@www.fastmail.com>
+In-Reply-To: <ef9d9c17-6e2d-4a4e-ac44-f8da4bb3b8eb@www.fastmail.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Mon, 29 Jul 2019 01:34:02 +0200
+Message-ID: <CACRpkdZxsF9gQj0VicVLsPKXg6rKA1mLwbywmazOf0w8PLnOfA@mail.gmail.com>
+Subject: Re: [v5 1/2] dt-bindings: gpio: aspeed: Add SGPIO support
+To: Andrew Jeffery <andrew@aj.id.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190728_163358_039387_C7CB22AB 
-X-CRM114-Status: UNSURE (   7.55  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190728_163417_193091_81048895 
+X-CRM114-Status: GOOD (  21.76  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.221.67 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.221.67 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,97 +93,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Marc Zyngier <maz@kernel.org>,
- James Morse <james.morse@arm.com>, linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, linux-aspeed@lists.ozlabs.org,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
+ Hongwei Zhang <hongweiz@ami.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-TWFyayBzd2l0Y2ggY2FzZXMgd2hlcmUgd2UgYXJlIGV4cGVjdGluZyB0byBmYWxsIHRocm91Z2gs
-CmZpeGVzIHRoZSBmb2xsb3dpbmcgd2FybmluZzoKCmFyY2gvYXJtNjQva3ZtL2h5cC8uLi8uLi8u
-Li8uLi92aXJ0L2t2bS9hcm0vaHlwL3ZnaWMtdjMtc3IuYzogSW4gZnVuY3Rpb24g4oCYX192Z2lj
-X3YzX3NhdmVfYXByc+KAmToKYXJjaC9hcm02NC9rdm0vaHlwLy4uLy4uLy4uLy4uL3ZpcnQva3Zt
-L2FybS9oeXAvdmdpYy12My1zci5jOjM1MToyNDogd2FybmluZzogdGhpcyBzdGF0ZW1lbnQgbWF5
-IGZhbGwgdGhyb3VnaCBbLVdpbXBsaWNpdC1mYWxsdGhyb3VnaD1dCiAgIGNwdV9pZi0+dmdpY19h
-cDByWzJdID0gX192Z2ljX3YzX3JlYWRfYXAwcm4oMik7CiAgIH5+fn5+fn5+fn5+fn5+fn5+fn5+
-fl5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn4KYXJjaC9hcm02NC9rdm0vaHlwLy4uLy4uLy4uLy4u
-L3ZpcnQva3ZtL2FybS9oeXAvdmdpYy12My1zci5jOjM1MjoyOiBub3RlOiBoZXJlCiAgY2FzZSA2
-OgogIF5+fn4KYXJjaC9hcm02NC9rdm0vaHlwLy4uLy4uLy4uLy4uL3ZpcnQva3ZtL2FybS9oeXAv
-dmdpYy12My1zci5jOjM1MzoyNDogd2FybmluZzogdGhpcyBzdGF0ZW1lbnQgbWF5IGZhbGwgdGhy
-b3VnaCBbLVdpbXBsaWNpdC1mYWxsdGhyb3VnaD1dCiAgIGNwdV9pZi0+dmdpY19hcDByWzFdID0g
-X192Z2ljX3YzX3JlYWRfYXAwcm4oMSk7CiAgIH5+fn5+fn5+fn5+fn5+fn5+fn5+fl5+fn5+fn5+
-fn5+fn5+fn5+fn5+fn5+fn4KYXJjaC9hcm02NC9rdm0vaHlwLy4uLy4uLy4uLy4uL3ZpcnQva3Zt
-L2FybS9oeXAvdmdpYy12My1zci5jOjM1NDoyOiBub3RlOiBoZXJlCiAgZGVmYXVsdDoKICBefn5+
-fn5+CmFyY2gvYXJtNjQva3ZtL2h5cC8uLi8uLi8uLi8uLi92aXJ0L2t2bS9hcm0vaHlwL3ZnaWMt
-djMtc3IuYzozNjE6MjQ6IHdhcm5pbmc6IHRoaXMgc3RhdGVtZW50IG1heSBmYWxsIHRocm91Z2gg
-Wy1XaW1wbGljaXQtZmFsbHRocm91Z2g9XQogICBjcHVfaWYtPnZnaWNfYXAxclsyXSA9IF9fdmdp
-Y192M19yZWFkX2FwMXJuKDIpOwogICB+fn5+fn5+fn5+fn5+fn5+fn5+fn5efn5+fn5+fn5+fn5+
-fn5+fn5+fn5+fn5+CmFyY2gvYXJtNjQva3ZtL2h5cC8uLi8uLi8uLi8uLi92aXJ0L2t2bS9hcm0v
-aHlwL3ZnaWMtdjMtc3IuYzozNjI6Mjogbm90ZTogaGVyZQogIGNhc2UgNjoKICBefn5+CmFyY2gv
-YXJtNjQva3ZtL2h5cC8uLi8uLi8uLi8uLi92aXJ0L2t2bS9hcm0vaHlwL3ZnaWMtdjMtc3IuYzoz
-NjM6MjQ6IHdhcm5pbmc6IHRoaXMgc3RhdGVtZW50IG1heSBmYWxsIHRocm91Z2ggWy1XaW1wbGlj
-aXQtZmFsbHRocm91Z2g9XQogICBjcHVfaWYtPnZnaWNfYXAxclsxXSA9IF9fdmdpY192M19yZWFk
-X2FwMXJuKDEpOwogICB+fn5+fn5+fn5+fn5+fn5+fn5+fn5efn5+fn5+fn5+fn5+fn5+fn5+fn5+
-fn5+CmFyY2gvYXJtNjQva3ZtL2h5cC8uLi8uLi8uLi8uLi92aXJ0L2t2bS9hcm0vaHlwL3ZnaWMt
-djMtc3IuYzozNjQ6Mjogbm90ZTogaGVyZQogIGRlZmF1bHQ6CiAgXn5+fn5+fgphcmNoL2FybTY0
-L2t2bS9oeXAvLi4vLi4vLi4vLi4vdmlydC9rdm0vYXJtL2h5cC92Z2ljLXYzLXNyLmM6IEluIGZ1
-bmN0aW9uIOKAmF9fdmdpY192M19yZXN0b3JlX2FwcnPigJk6CmFyY2gvYXJtNjQva3ZtL2h5cC8u
-Li8uLi8uLi8uLi92aXJ0L2t2bS9hcm0vaHlwL3ZnaWMtdjMtc3IuYzozODQ6Mzogd2FybmluZzog
-dGhpcyBzdGF0ZW1lbnQgbWF5IGZhbGwgdGhyb3VnaCBbLVdpbXBsaWNpdC1mYWxsdGhyb3VnaD1d
-CiAgIF9fdmdpY192M193cml0ZV9hcDBybihjcHVfaWYtPnZnaWNfYXAwclsyXSwgMik7CiAgIF5+
-fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn4KYXJjaC9hcm02NC9r
-dm0vaHlwLy4uLy4uLy4uLy4uL3ZpcnQva3ZtL2FybS9oeXAvdmdpYy12My1zci5jOjM4NToyOiBu
-b3RlOiBoZXJlCiAgY2FzZSA2OgogIF5+fn4KYXJjaC9hcm02NC9rdm0vaHlwLy4uLy4uLy4uLy4u
-L3ZpcnQva3ZtL2FybS9oeXAvdmdpYy12My1zci5jOjM4NjozOiB3YXJuaW5nOiB0aGlzIHN0YXRl
-bWVudCBtYXkgZmFsbCB0aHJvdWdoIFstV2ltcGxpY2l0LWZhbGx0aHJvdWdoPV0KICAgX192Z2lj
-X3YzX3dyaXRlX2FwMHJuKGNwdV9pZi0+dmdpY19hcDByWzFdLCAxKTsKICAgXn5+fn5+fn5+fn5+
-fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fgphcmNoL2FybTY0L2t2bS9oeXAvLi4v
-Li4vLi4vLi4vdmlydC9rdm0vYXJtL2h5cC92Z2ljLXYzLXNyLmM6Mzg3OjI6IG5vdGU6IGhlcmUK
-ICBkZWZhdWx0OgogIF5+fn5+fn4KYXJjaC9hcm02NC9rdm0vaHlwLy4uLy4uLy4uLy4uL3ZpcnQv
-a3ZtL2FybS9oeXAvdmdpYy12My1zci5jOjM5NDozOiB3YXJuaW5nOiB0aGlzIHN0YXRlbWVudCBt
-YXkgZmFsbCB0aHJvdWdoIFstV2ltcGxpY2l0LWZhbGx0aHJvdWdoPV0KICAgX192Z2ljX3YzX3dy
-aXRlX2FwMXJuKGNwdV9pZi0+dmdpY19hcDFyWzJdLCAyKTsKICAgXn5+fn5+fn5+fn5+fn5+fn5+
-fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fgphcmNoL2FybTY0L2t2bS9oeXAvLi4vLi4vLi4v
-Li4vdmlydC9rdm0vYXJtL2h5cC92Z2ljLXYzLXNyLmM6Mzk1OjI6IG5vdGU6IGhlcmUKICBjYXNl
-IDY6CiAgXn5+fgphcmNoL2FybTY0L2t2bS9oeXAvLi4vLi4vLi4vLi4vdmlydC9rdm0vYXJtL2h5
-cC92Z2ljLXYzLXNyLmM6Mzk2OjM6IHdhcm5pbmc6IHRoaXMgc3RhdGVtZW50IG1heSBmYWxsIHRo
-cm91Z2ggWy1XaW1wbGljaXQtZmFsbHRocm91Z2g9XQogICBfX3ZnaWNfdjNfd3JpdGVfYXAxcm4o
-Y3B1X2lmLT52Z2ljX2FwMXJbMV0sIDEpOwogICBefn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+
-fn5+fn5+fn5+fn5+fn5+fn5+CmFyY2gvYXJtNjQva3ZtL2h5cC8uLi8uLi8uLi8uLi92aXJ0L2t2
-bS9hcm0vaHlwL3ZnaWMtdjMtc3IuYzozOTc6Mjogbm90ZTogaGVyZQogIGRlZmF1bHQ6CiAgXn5+
-fn5+fgoKU2lnbmVkLW9mZi1ieTogTWF0dGVvIENyb2NlIDxtY3JvY2VAcmVkaGF0LmNvbT4KLS0t
-CiB2aXJ0L2t2bS9hcm0vaHlwL3ZnaWMtdjMtc3IuYyB8IDggKysrKysrKysKIDEgZmlsZSBjaGFu
-Z2VkLCA4IGluc2VydGlvbnMoKykKCmRpZmYgLS1naXQgYS92aXJ0L2t2bS9hcm0vaHlwL3ZnaWMt
-djMtc3IuYyBiL3ZpcnQva3ZtL2FybS9oeXAvdmdpYy12My1zci5jCmluZGV4IDI1NGM1ZjE5MGEz
-ZC4uNjIyZmI0ZDE4YzVjIDEwMDY0NAotLS0gYS92aXJ0L2t2bS9hcm0vaHlwL3ZnaWMtdjMtc3Iu
-YworKysgYi92aXJ0L2t2bS9hcm0vaHlwL3ZnaWMtdjMtc3IuYwpAQCAtMzQ5LDggKzM0OSwxMCBA
-QCB2b2lkIF9faHlwX3RleHQgX192Z2ljX3YzX3NhdmVfYXBycyhzdHJ1Y3Qga3ZtX3ZjcHUgKnZj
-cHUpCiAJY2FzZSA3OgogCQljcHVfaWYtPnZnaWNfYXAwclszXSA9IF9fdmdpY192M19yZWFkX2Fw
-MHJuKDMpOwogCQljcHVfaWYtPnZnaWNfYXAwclsyXSA9IF9fdmdpY192M19yZWFkX2FwMHJuKDIp
-OworCQkvKiBmYWxsdGhyb3VnaCAqLwogCWNhc2UgNjoKIAkJY3B1X2lmLT52Z2ljX2FwMHJbMV0g
-PSBfX3ZnaWNfdjNfcmVhZF9hcDBybigxKTsKKwkJLyogZmFsbHRocm91Z2ggKi8KIAlkZWZhdWx0
-OgogCQljcHVfaWYtPnZnaWNfYXAwclswXSA9IF9fdmdpY192M19yZWFkX2FwMHJuKDApOwogCX0K
-QEAgLTM1OSw4ICszNjEsMTAgQEAgdm9pZCBfX2h5cF90ZXh0IF9fdmdpY192M19zYXZlX2FwcnMo
-c3RydWN0IGt2bV92Y3B1ICp2Y3B1KQogCWNhc2UgNzoKIAkJY3B1X2lmLT52Z2ljX2FwMXJbM10g
-PSBfX3ZnaWNfdjNfcmVhZF9hcDFybigzKTsKIAkJY3B1X2lmLT52Z2ljX2FwMXJbMl0gPSBfX3Zn
-aWNfdjNfcmVhZF9hcDFybigyKTsKKwkJLyogZmFsbHRocm91Z2ggKi8KIAljYXNlIDY6CiAJCWNw
-dV9pZi0+dmdpY19hcDFyWzFdID0gX192Z2ljX3YzX3JlYWRfYXAxcm4oMSk7CisJCS8qIGZhbGx0
-aHJvdWdoICovCiAJZGVmYXVsdDoKIAkJY3B1X2lmLT52Z2ljX2FwMXJbMF0gPSBfX3ZnaWNfdjNf
-cmVhZF9hcDFybigwKTsKIAl9CkBAIC0zODIsOCArMzg2LDEwIEBAIHZvaWQgX19oeXBfdGV4dCBf
-X3ZnaWNfdjNfcmVzdG9yZV9hcHJzKHN0cnVjdCBrdm1fdmNwdSAqdmNwdSkKIAljYXNlIDc6CiAJ
-CV9fdmdpY192M193cml0ZV9hcDBybihjcHVfaWYtPnZnaWNfYXAwclszXSwgMyk7CiAJCV9fdmdp
-Y192M193cml0ZV9hcDBybihjcHVfaWYtPnZnaWNfYXAwclsyXSwgMik7CisJCS8qIGZhbGx0aHJv
-dWdoICovCiAJY2FzZSA2OgogCQlfX3ZnaWNfdjNfd3JpdGVfYXAwcm4oY3B1X2lmLT52Z2ljX2Fw
-MHJbMV0sIDEpOworCQkvKiBmYWxsdGhyb3VnaCAqLwogCWRlZmF1bHQ6CiAJCV9fdmdpY192M193
-cml0ZV9hcDBybihjcHVfaWYtPnZnaWNfYXAwclswXSwgMCk7CiAJfQpAQCAtMzkyLDggKzM5OCwx
-MCBAQCB2b2lkIF9faHlwX3RleHQgX192Z2ljX3YzX3Jlc3RvcmVfYXBycyhzdHJ1Y3Qga3ZtX3Zj
-cHUgKnZjcHUpCiAJY2FzZSA3OgogCQlfX3ZnaWNfdjNfd3JpdGVfYXAxcm4oY3B1X2lmLT52Z2lj
-X2FwMXJbM10sIDMpOwogCQlfX3ZnaWNfdjNfd3JpdGVfYXAxcm4oY3B1X2lmLT52Z2ljX2FwMXJb
-Ml0sIDIpOworCQkvKiBmYWxsdGhyb3VnaCAqLwogCWNhc2UgNjoKIAkJX192Z2ljX3YzX3dyaXRl
-X2FwMXJuKGNwdV9pZi0+dmdpY19hcDFyWzFdLCAxKTsKKwkJLyogZmFsbHRocm91Z2ggKi8KIAlk
-ZWZhdWx0OgogCQlfX3ZnaWNfdjNfd3JpdGVfYXAxcm4oY3B1X2lmLT52Z2ljX2FwMXJbMF0sIDAp
-OwogCX0KLS0gCjIuMjEuMAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
-bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Mon, Jul 22, 2019 at 3:42 AM Andrew Jeffery <andrew@aj.id.au> wrote:
+
+> If the clock driver owns the control register, it also needs to know how
+> many GPIOs we want to emit on the bus. This seems like an awkward
+> configuration parameter for a clock driver.
+>
+> To avoid the weird parameter we could protect the control register
+> with a lock shared between the clock driver and the SGPIO driver. This
+> way the SGPIO driver could have the ngpios parameter, and request
+> the clock after its written the ngpios value to the control register. A
+> regmap would be useful here to avoid the resource clash and it also
+> provides the required lock.
+
+Nah. Too complicated.
+
+What about using the clock API locally (in the singleton driver,
+much as it is today) though, to give the right abstraction?
+
+See
+drivers/gpu/drm/pl111/pl111_display.c
+pl111_init_clock_divider() for an example of a local
+clock.
+
+> However, you're also going down the path of splitting the driver such
+> that there's one instance per bank. With this approach we need to
+> solve two problems: Accounting for the total number of GPIOs,
+
+I don't see that as a big problem since each driver instance will
+handle 8 GPIOs and don't need to know how many the
+other instances have and whether they exist or not.
+
+> and
+> only enabling the bus after the last bank has had its driver probed.
+
+That is a bigger problem and a good reason to stick with
+some complex driver like this.
+
+> The accounting might be handled by accumulating the number of
+> GPIOs in each bank in the control register itself, e.g. the driver
+> implementation does something like:
+>
+> spin_lock(...)
+> ctrl = ioread32(...)
+> ngpios = FIELD_GET(ASPEED_SGPIO_CTRL_NGPIOS, ctrl);
+> ngpios += 8;
+> ctrl &= ~ASPEED_SGPIO_CTRL_NGPIOS;
+> ctrl |= FIELD_PREP(ASPEED_SGPIO_CTRL_NGPIOS, ngpios);
+> iowrite32(ctrl, ...);
+> spin_unlock(...);
+
+But why. The gpio_chip only knows the ngpios for its own instance.
+It has no business knowing about how many gpios are on the
+other chips or not. If this is split across several instances this should
+not be accounted that is the point.
+
+> This works on cold boot of the device when the ngpios field is set to
+> zero due to reset, however will fail on subsequent warm reboots if
+> the GPIO IP block is protected from reset by the SoC's watchdog
+> configuration: the field will not be zeroed in this case, and the
+> value of the field is represented by `NR_BOOTS * NR_GPIOS`,
+> which is incorrect. To do this correctly I guess we would need some
+> other global state held in the driver implementation (zeroed when
+> the kernel is loaded), and write the incremented value to the control
+> register on each probe() invocation.
+
+This is answered about I guess.
+
+> However, that aside, we can't simply enable the bus in the clock
+> enable callback if enable is called per-bank, as it is called once on
+> the first request with further requests simply refcounted as you
+> mentioned. This is exactly the behaviour we can't tolerate with the
+> bus: it must only be enabled after the last GPIO bank is registered,
+> when we know the total number of GPIOs to emit.
+
+So the bus needs to know the total number of GPIOs or
+everything breaks, and that is the blocker for this
+divide-and-conquer approach.
+
+Why does the bus need to know the total number of GPIOs?
+
+(Maybe the answer is elsewhere in the thread...)
+
+I guess I will accept it if it is really this complex in the
+hardware.
+
+Yours,
+Linus Walleij
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
