@@ -2,77 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85E1F7826A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 01:38:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5118778274
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 01:41:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
+	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HL0dQiStf+NP43VrSs085r0Tv+UXTGgZgk4mVDK1z+Y=; b=nSriiSM1d7xoQH
-	y1HJaRRtsWdCl8YpkyYIvhz406rXiH45ViEVt2cnj1xSplNAnhrrr9TH7ZCZTT8ZZ0b/XcYr4uokv
-	tgDU2GjxIE3Ctnn/2p0m3rzSFDHDSabZiKgIgBZ07wx+U5ZZtUm4qkdDoFXr11a+ltIp6/BPFwiCF
-	Ks2amueydzyypRvIC1sa8/h785Xo2bN1LTMshzTwA9diQvYUU+0qhtWCp+FxQ/O+1LYYhCUXPGnBd
-	X+77dmdkpeyomEwlUMxFxkiAfmpx3yFMCQ5L8g/rUS7X+fLUd2FPS0YI8tR4Pk00seP7R684I/ETQ
-	qySHqGRVXfxV15U8dtLw==;
+	List-Owner; bh=AdwIefCj0P9LhGEyIQFd+vd/oS/7G1VAx4MvT5Xxyrw=; b=XBWUcAxAXtfLzt
+	P/M+UeQRFxdjEeX/dwP1dwtM7Nct+mCA/3E8lpnXKb0mZ4prPkQaKURSae41rY4opbIvAgx5w3ywM
+	6rI3BTQDGFqYv0HIVwMuqRgwAVid+YUUDO8jeLRFYzWsv6f+uAkXH+SX7S2BkHplbnXpT1+VXeGdg
+	5hQDufx7FId0HQcvZw7BglFJIG0E/T6RvhsfgWG+T/Yv7JJ4pKEkC9UHTgkRd8ThhyHHvAYulrOeB
+	e0ykKqcFl/aINMVGGKWMCrzZCNqiNtA5s9mRRvtzVp21IDon2rmxeAXVHfj9CEmIsesbXOam7JyrO
+	MANyPBUKAFpkgOxjs/tg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hrskB-0007E2-Sc; Sun, 28 Jul 2019 23:38:24 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1hrsnH-0000I5-N2; Sun, 28 Jul 2019 23:41:35 +0000
+Received: from new3-smtp.messagingengine.com ([66.111.4.229])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hrsk0-0007Dl-4u
- for linux-arm-kernel@lists.infradead.org; Sun, 28 Jul 2019 23:38:13 +0000
-Received: by mail-lf1-x144.google.com with SMTP id x3so40830361lfc.0
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 28 Jul 2019 16:38:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=A2YoLjOmjoi0MvPq3QD0hmADDj+Ydfv3BHipfJHYsV4=;
- b=XlhkQmH67dhcBDB/Xr7JvFPOG2VU81DTdMdboPT/HeIYWgB9tdya4Qu7sHgU0WMkaM
- vLenZczcXQneLoQwwIMosVAUQ7eROBagrCowwDdHynkzWR6TG6G/348pyMvV2ko15fAX
- J6eOaYIHqHdN2UumITKAxV05/2xTZbsY0nfOHx2zKefVEAWZk/V94esJyXg+dV04m9ZC
- 3T6esDVVvsV2RDBV0sLFBEN22b9i5xaNaCrAxueDIdJQotuNWYkqh9CJdvvAgneQ8VYO
- PxSF+7xqWZhasZ+4KJQhOOybJ6f/GiXAs/huwwXy1rfoOxGb0FkKxX89PQJ4JjNcb5+Z
- 0kRA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=A2YoLjOmjoi0MvPq3QD0hmADDj+Ydfv3BHipfJHYsV4=;
- b=DWNsSFAbpb3UW8mYLBxMQiI/TkVYW71ac5VyLqfbhXvmFRtkp5eKjvANncyRQ+iI+n
- zWnF4CGd0M306twPlYBmHod6iyT5IA4qmu2eShUUaBrRSTqNsCIaWDje6Zj8GCr2P4Qo
- OVt/bWZ7QLPEj7Co+nOY+QZKXrzYkU6E+cC2tXooHbysbjBAVUU5AmpaD8wPi+2MZJig
- Wo/dRfXFg0o3oputnTRCXQR8QqzboIE/IoWIdB677LpRmNtQDo/gPYsdm/L3pa9d/dyv
- xm6zUC0TXpmhmomsNSbTPcS1fbNBACIiR/CatN2oTi6APvd+KgGLXyyrRQCPCSIKYndw
- +JIQ==
-X-Gm-Message-State: APjAAAUsgp4z+HjjSn4oCJj2JMFRxOSZXdH65ICJbf/RP+texDNYg4cO
- nkwWS1N2D6EyaTNKJGUYJ7h6Wd0Pt+cqa2gOWfp46Q==
-X-Google-Smtp-Source: APXvYqzNLF2GKPsxU0k1Fl9UXDm3yiIIWBYWeFyjCRu2eWqJIj+FDChdYuoS6Cmi6P1mJrVQoHtEsToFX8UBgZc9YJM=
-X-Received: by 2002:a19:dc0d:: with SMTP id t13mr45895639lfg.152.1564357090803; 
- Sun, 28 Jul 2019 16:38:10 -0700 (PDT)
-MIME-Version: 1.0
-References: <1563564291-9692-3-git-send-email-hongweiz@ami.com>
- <1563827815-15092-1-git-send-email-hongweiz@ami.com>
-In-Reply-To: <1563827815-15092-1-git-send-email-hongweiz@ami.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Mon, 29 Jul 2019 01:37:33 +0200
-Message-ID: <CACRpkdbkLj7WDMp7vtNDR81yezw-zPq3MWvVRLKvpkvAueo0uw@mail.gmail.com>
-Subject: Re: [v5 2/2] gpio: aspeed: Add SGPIO driver
-To: Hongwei Zhang <hongweiz@ami.com>
+ id 1hrsn3-0000HE-8Q
+ for linux-arm-kernel@lists.infradead.org; Sun, 28 Jul 2019 23:41:22 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailnew.nyi.internal (Postfix) with ESMTP id C65CD108B;
+ Sun, 28 Jul 2019 19:41:12 -0400 (EDT)
+Received: from imap2 ([10.202.2.52])
+ by compute4.internal (MEProxy); Sun, 28 Jul 2019 19:41:12 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
+ mime-version:message-id:in-reply-to:references:date:from:to:cc
+ :subject:content-type; s=fm3; bh=U4RDuA+FSEF8yU1ZGRvQY82lPLeCcjf
+ hhcly0ZZX73U=; b=eK8A1ThuZVoK4sXEsuVOEEhAwXkF1Yy77aDYbCW9IrJ/OYo
+ n/Xq54zf6PMwyMfx+kR6Wjxy46DHAU1UqJgSiHeCNXWdBiOfDJ2aUg+TdbGCJNXi
+ yvByaeGHqMHHt3+7CX6mhuUBnjjnqKvlL+HOYEIOrFtNCF9WaOq8w/d+us4s/QSE
+ 5G+F6AF2yLRoX8MR0YTB5Wnpz0T7KAlp1/kWKuL8iUyL+BR28Knb31AoAZPWNKIA
+ LsgMqG25wyLYu2vqIJXFjC3KwyDZyB7LFortsXGniIuL4UCzfgWM3COAOmU7W64X
+ WRm2hez+5RNzFeLKhYZGyIyU0sqyR3PyECBTEpw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=U4RDuA
+ +FSEF8yU1ZGRvQY82lPLeCcjfhhcly0ZZX73U=; b=pNeZHonuKkVktSvIThlH/V
+ fYL19ZQpECOIQs61lYsbRiQT7BVt2YitAJRtljv0NPSYHnj3KlE32wRLolJg5KL8
+ UshJdoM0O2VOJEWzarRdOr335PaRZlxb3zLATuhD/4LlRwGSNWy2j4n14njuSZj5
+ u9vJcualcV6GIcCK/CoF87dREOmijBshNYL8B8hvXas13tWoezDwGNjMKCcLeEeH
+ xoDjie8OTu5frdKQ4rh2YvtiusrBCiMKCq3c4qAEyqvfjzNw2QeDOVBpvE+U8xmm
+ v+qi1Ucu35yzKfMPn7UsQX2Zin5Ad4NnHGUqVf4piNJaXMx4SFPPmagXLB7CzhYA
+ ==
+X-ME-Sender: <xms:lTI-Xf0D-h9NjPtChndbt_AZAEcGOgba9qUFHi71HCoRLpxCds5Hjg>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrledtgddvgecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpefofgggkfgjfhffhffvufgtsehttdertderredtnecuhfhrohhmpedftehnughr
+ vgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucfrrghrrg
+ hmpehmrghilhhfrhhomheprghnughrvgifsegrjhdrihgurdgruhenucevlhhushhtvghr
+ ufhiiigvpedt
+X-ME-Proxy: <xmx:lTI-XaIJins3UcM1v_qAS1wAwJcnzQH3zB9Z9iJzd-dsfWe_JnEAxw>
+ <xmx:lTI-XV1gZJJ5wfub7rrZbuhLNdfqfhc-KxeMMkbZWoy-6-Xk7KjPIA>
+ <xmx:lTI-XVyjXvVm-gpkrvZRwv0CJYJOEjsyW5wxW2m5b8pmEw8-alJt4Q>
+ <xmx:mDI-XVdQMfBvgBauhlEZAvpotqZ8mpaX0JOXEV8Mkk2lONrbFJDrkw>
+Received: by mailuser.nyi.internal (Postfix, from userid 501)
+ id 3062AE00A2; Sun, 28 Jul 2019 19:41:09 -0400 (EDT)
+X-Mailer: MessagingEngine.com Webmail Interface
+User-Agent: Cyrus-JMAP/3.1.6-736-gdfb8e44-fmstable-20190718v2
+Mime-Version: 1.0
+Message-Id: <950b8374-2a06-44fe-a1fc-87be17e7d608@www.fastmail.com>
+In-Reply-To: <CACRpkdb4pEdPHbo=3+fJXe9WG8K7A2_xVMtKWCJCfEawDO5wBw@mail.gmail.com>
+References: <20190711041942.23202-1-andrew@aj.id.au>
+ <CACRpkdb4pEdPHbo=3+fJXe9WG8K7A2_xVMtKWCJCfEawDO5wBw@mail.gmail.com>
+Date: Mon, 29 Jul 2019 09:11:28 +0930
+From: "Andrew Jeffery" <andrew@aj.id.au>
+To: "Linus Walleij" <linus.walleij@linaro.org>
+Subject: Re: [PATCH 0/6] pinctrl: aspeed: Add AST2600 pinmux support
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190728_163812_409131_FD5EF85A 
-X-CRM114-Status: UNSURE (   8.99  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190728_164121_437856_98791F0D 
+X-CRM114-Status: GOOD (  10.62  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.229 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -92,36 +103,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-aspeed <linux-aspeed@lists.ozlabs.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Andrew Jeffery <andrew@aj.id.au>, linux-kernel <linux-kernel@vger.kernel.org>,
- linux-gpio <linux-gpio@vger.kernel.org>, Joel Stanley <joel@jms.id.au>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Johnny Huang <johnny_huang@aspeedtech.com>,
+ linux-aspeed@lists.ozlabs.org, Ryan Chen <ryanchen.aspeed@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jul 22, 2019 at 10:37 PM Hongwei Zhang <hongweiz@ami.com> wrote:
 
-> As you suspected it correctly, AST2500 utilizes all the 32 bits of the registers
-> (data value, interrupt, etc...), such that using 8-bit bands
-> [7:0]/[15:8]/23:16]/[31:24] of GPIO_200H for SGPIO_A/B/C/D .
-> so registering 10 gpiochip drivers separately will make code more
-> complicated, for example gpio_200 register (data_value reg) has to be
-> shared by 4 gpiochip instances, and the same is true for gpio204 (interrupt reg),
-> and other more registers.
-> So we would prefer to keeping current implementation.
 
-OK this is a pretty good argument. My review assumed one
-32-bit register was not shared between banks but it is,
-I see.
+On Mon, 29 Jul 2019, at 08:44, Linus Walleij wrote:
+> On Thu, Jul 11, 2019 at 6:19 AM Andrew Jeffery <andrew@aj.id.au> wrote:
+> 
+> > This series adds pinmux support for the AST2600. Some more rework was required
+> > on top of the previous cleanup series, but this rework was focussed on
+> > supporting features of the AST2600 pinmux rather than fixing issues with the
+> > existing infrastructure for the ASPEED drivers. Due to the dependences it's
+> > based on top of pinctrl/devel, so should avoid any more SPDX issues.
+> >
+> > ASPEED have been testing the patches on hardware, so even for an initial pass
+> > there's some confidence in the implementation.
+> 
+> I'm unsure if I need to wait for the DT bindings to be fixed on this
+> series?
 
-The above situation can be managed by regmap, but that will
-just a different complexity so go with this approach then.
+Yeah, I need to, sorry for the delay. Been distracted by other stuff.
 
-Yours,
-Linus Walleij
+Will send a v2 shortly.
+
+Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
