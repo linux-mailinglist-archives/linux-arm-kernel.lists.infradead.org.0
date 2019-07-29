@@ -2,54 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F03D1786F8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 10:04:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 97B4D78715
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 10:13:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=m51rw17xhseBUjPy+HQ5BRWhGc3q3u6HlgTks1Y9o/A=; b=m7o
-	kwMtGV4oW4zHi7PA8/7XqN8YuWxiX2ga+OKeYqh1D/EQiOv/BVipsHMpCbObCfhuBrG2e/rGFDmpR
-	Ix3VN1LbVMsH6tg7nH3lcQtFhN5P2Pdp64pfqnP1d2FrexwmvqGub7AeiauqgYzofdz/rnxA/ClGO
-	xxbk+JPY+2PwJuqGJNFASCdsdYvHW9fyGMhtA2G5mFYz+Mj89/UbaXDoiTVJ6nV7mzPk0t/z3oXYq
-	15FYP4fJhz0zv8KUldPlbocHb/mQaOcG20VczVir66BLO+BTMiCvL5l3fuI0ES2syfvbZq2eGlct8
-	IYMoemkpyr1Poa2VHayk7cZy3awixNg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qHJ4ULvEyfPyIk6UMU0Z+kgDhDRv6as0G37vfIlUOks=; b=furohYzo985Frf
+	7I8CZNzxaNSWeTR8XAq/uf49KXD+mw/xg1N2MDAbfLw4qr7S0sUngOS4ZotGUIw77BXDQpxnLUtCn
+	WWGfVsslSdMeoRvRd7rLCj0Bny094qg289aJ5TBrpe/ktcf4UnIuXS5P8z76HI6SRBdgPiasq14aV
+	Snh1Mh8Cm5YJ71qDf91nOXFoUr7zp+TEAD2dg2vjAOXXNwHkSBiaTRYTl4d9n+0xRPDsKDm4B4Pge
+	qPiaoTvsPY3fxdHNCbk2xt0LIatGoRwmFBE+Yl+VzqY9VBjknIwwk7g7UMgVLbWJ2T4+Cz5Al1cQl
+	SeD2wMw4QnMOHnxaR97A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hs0dw-0003QY-E3; Mon, 29 Jul 2019 08:04:28 +0000
-Received: from kirsty.vergenet.net ([202.4.237.240])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hs0dk-0003Px-88
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 08:04:17 +0000
-Received: from reginn.horms.nl (watermunt.horms.nl [80.127.179.77])
- by kirsty.vergenet.net (Postfix) with ESMTPA id 9E2CF25AD7E;
- Mon, 29 Jul 2019 18:04:10 +1000 (AEST)
-Received: by reginn.horms.nl (Postfix, from userid 7100)
- id 7AEFB9403F0; Mon, 29 Jul 2019 10:04:08 +0200 (CEST)
-From: Simon Horman <horms+renesas@verge.net.au>
-To: Geert Uytterhoeven <geert+renesas@glider.be>,
- linux-renesas-soc@vger.kernel.org
-Subject: [PATCH v2] arm64: dts: renesas: ebisu,
- draak: Limit EtherAVB to 100Mbps
-Date: Mon, 29 Jul 2019 10:03:56 +0200
-Message-Id: <20190729080356.13023-1-horms+renesas@verge.net.au>
-X-Mailer: git-send-email 2.11.0
+	id 1hs0mo-0006wQ-RC; Mon, 29 Jul 2019 08:13:38 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hs0md-0006w3-Hu
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 08:13:28 +0000
+Received: by mail-wm1-x344.google.com with SMTP id s15so31217483wmj.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 29 Jul 2019 01:13:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=SyFl8pL1iDZjmoOSkzXlnQ91ZUZpLkZdLRiM5vUWoME=;
+ b=RMc4NRl9Idazs+XYRc2PCVJrla+XcMB5QI9fW4vskcW4AWdCAjW114u0ltcwv3J3kS
+ MejM0+8lWjKST59WU3AMIZxd4/R8oxvP5WYmQZ/s+MfdW0r6aFSv4SZMNIv8js7Nr4IX
+ 7Gaa0m/10cn1v9XCIjcejFparxRsgjkUPGkLrC907ae/L4wg583BzHLdcoNoI1Xw+JJL
+ J4QUDcdP7QMkggQGmKsgFfCqz9l+OvK80s89AN0hnR8wIaN8/pIPLxO/Jq7oo4ieNU4W
+ 2n2Ym18F3HuEavyXhWQ9Wbjei3xF1zzsbxx0b3hGtD55UjczEVPEeLSlS6D+SvQpiqid
+ wP1w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=SyFl8pL1iDZjmoOSkzXlnQ91ZUZpLkZdLRiM5vUWoME=;
+ b=IIWpWYOEju3RBNGVzxV5E3czqRgQnSmH1KJesPaQcCX8wLCbrH6iWRKISPfzsEng59
+ jCpDQqQMDwfJZjAAez+/01N9XNxB9pUnnuOSCC9swzPdzZMIm4DsRmrCzanDicTo/F42
+ anw8YH2HywPHrFgZC8Ns0A+DyFPP/a4Jj0T+DHcE+WFOjxJehuotFhwHT3bRwM0GSz9G
+ IxiQHQrAIk2GuFGCRJ16k2f1dd/30aOjBilYEJBUsjyq+bySPJ8GtAXuPu/GNw3I7q0h
+ /A1cvCI6zG8IGx/jlUGKQ6M366Jel98qSjUSiYlvC+3qnD3KpxmO3DeUfdI+SBpgDfgE
+ MK9w==
+X-Gm-Message-State: APjAAAVP1CuWHtAyN6pFbrvVbtcB7eaOhhekUzwPMvLbdwlpP8pm+qES
+ qKk0ybI6Tefdydi2HnpGFb6FaFxrm7tPUefWpnU=
+X-Google-Smtp-Source: APXvYqyJSF9giFQVsItTxUvBm5InpdKI0AD91vYK8YMt/vMVNe8Bcy9zHxVTrPIj7PKEgF2MKDJZ8Wm9t5JIOx9xuEE=
+X-Received: by 2002:a7b:c247:: with SMTP id b7mr102240187wmj.13.1564388004695; 
+ Mon, 29 Jul 2019 01:13:24 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190705045612.27665-1-Anson.Huang@nxp.com>
+ <20190705045612.27665-5-Anson.Huang@nxp.com>
+ <CAEnQRZAZNMBx3ApVmRP8hYPw0XY_QgR-saE6WLcT8oZmHPCxSA@mail.gmail.com>
+ <DB3PR0402MB3916233A56CF5DF778115716F5C30@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <CAEnQRZCrZybzcy__u4p_Eq4zSVc2ESyfKLk5sPf1JYba1JSOiA@mail.gmail.com>
+ <20190727161736.4dkfqgwftre67v56@fsr-ub1664-175>
+ <DB3PR0402MB391600891BA75DFFA9674058F5DD0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <CAEnQRZB6tmYFA8wwh0Fm49LTTDuCLq-SWVfrcUkRWWBo=0U13w@mail.gmail.com>
+ <DB3PR0402MB391627F725AA7237BCACBE87F5DD0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <CAEnQRZBrmikenTvnh7syhy=PDPcTL3fn2TJ+ya=ToZ+SFmH5tw@mail.gmail.com>
+ <CAEnQRZDSjmcU8Q7+kMeFf12tx0NuMNjrcsgnXayvHpu4ChwHGA@mail.gmail.com>
+ <DB3PR0402MB3916F32F03E542AEFBD39A43F5DD0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+In-Reply-To: <DB3PR0402MB3916F32F03E542AEFBD39A43F5DD0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+From: Daniel Baluta <daniel.baluta@gmail.com>
+Date: Mon, 29 Jul 2019 11:13:12 +0300
+Message-ID: <CAEnQRZBqdGY9A69ew=ukdp1iWVR_jvJih-cZPx_XzAri+xWppA@mail.gmail.com>
+Subject: Re: [PATCH 5/6] clk: imx8mq: Remove CLK_IS_CRITICAL flag for
+ IMX8MQ_CLK_TMU_ROOT
+To: Anson Huang <anson.huang@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_010416_445954_0C066B9F 
-X-CRM114-Status: GOOD (  11.19  )
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20190729_011327_620422_1FCA758C 
+X-CRM114-Status: GOOD (  11.32  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [202.4.237.240 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (daniel.baluta[at]gmail.com)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,97 +104,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Wolfram Sang <wsa@the-dreams.de>,
- Magnus Damm <magnus.damm@gmail.com>,
- Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>,
- Simon Horman <horms+renesas@verge.net.au>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, Carlo Caione <ccaione@baylibre.com>,
+ =?UTF-8?Q?Guido_G=C3=BCnther?= <agx@sigxcpu.org>,
+ "Angus Ainslie \(Purism\)" <angus@akkea.ca>,
+ Leonard Crestez <leonard.crestez@nxp.com>, Fabio Estevam <festevam@gmail.com>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ Abel Vesa <abel.vesa@nxp.com>, Andrey Smirnov <andrew.smirnov@gmail.com>,
+ "daniel.lezcano@linaro.org" <daniel.lezcano@linaro.org>,
+ dl-linux-imx <linux-imx@nxp.com>, "rui.zhang@intel.com" <rui.zhang@intel.com>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Devicetree List <devicetree@vger.kernel.org>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ "edubezval@gmail.com" <edubezval@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Stephen Boyd <sboyd@kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>, Lucas Stach <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-* According to the R-Car Gen3 Hardware Manual Errata for Rev 1.00 of
-  August 24, 2018, the TX clock internal delay mode isn't supported
-  on R-Car E3 (r8a77990) and D3 (r8a77995).
+On Mon, Jul 29, 2019 at 10:49 AM Anson Huang <anson.huang@nxp.com> wrote:
 
-* TX clock internal delay mode is required for reliable 1Gbps communication
-  using the KSZ9031RNX phy present on the Ebisu and Draak boards.
+> > We are all set then. Thanks Anson for clarifications!
+>
+> Thanks, so we are all clear about this issue, need to wait thermal maintainer to review
+> the rest patch in this series, but I did NOT receive any response from thermal sub-system
+> maintainer for really long time, NOT sure when the thermal patches can be accepted.
 
-Thus, the E3 based Ebisu and D3 based Draak boards can not reliably
-use 1Gbps and the speed should be limited to 100Mbps.
+This is really unfortunate. I think it is safe to do a RESEND of the
+patches as it has
+been at least 3 weeks since your first send them.
 
-Based on work by Kazuya Mizuguchi.
-
-Signed-off-by: Simon Horman <horms+renesas@verge.net.au>
-
----
-
-Based on renesas-devel-2019-07-12-v5.2
-
-v2:
-* Add comment to dts as suggested by Wolfram Sang
-* Correct changelog as suggested by Kieran Bingham
-
-v1 (repost):
-
-In earlier review Andrew Lunn suggested that we may be able to take a
-different approach to this problem by using delays provided by the
-KSZ9031RNX PHY. In particular MMD address 2h, Register 8h -
-RGMII Clock Pad Skew.
-
-I have consulted with Renesas regarding this suggestion, however,
-unfortunately it appears that the delays provided by this solution
-would be insufficient to allow for reliable 1Gbps communication.
-
-At this point I believe the safest option is to apply this patch.
----
- arch/arm64/boot/dts/renesas/r8a77990-ebisu.dts | 8 ++++++++
- arch/arm64/boot/dts/renesas/r8a77995-draak.dts | 8 ++++++++
- 2 files changed, 16 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/renesas/r8a77990-ebisu.dts b/arch/arm64/boot/dts/renesas/r8a77990-ebisu.dts
-index 83fc13ac3fa1..62203c0fc70d 100644
---- a/arch/arm64/boot/dts/renesas/r8a77990-ebisu.dts
-+++ b/arch/arm64/boot/dts/renesas/r8a77990-ebisu.dts
-@@ -271,6 +271,14 @@
- 		interrupt-parent = <&gpio2>;
- 		interrupts = <21 IRQ_TYPE_LEVEL_LOW>;
- 		reset-gpios = <&gpio1 20 GPIO_ACTIVE_LOW>;
-+		/*
-+		 * TX clock internal delay mode is required for reliable
-+		 * 1Gbps communication using the KSZ9031RNX phy present on
-+		 * the Ebisu board, however, TX clock internal delay mode
-+		 * isn't supported on r8a77990.  Thus, limit speed to
-+		 * 100Mbps for reliable communication.
-+		 */
-+		max-speed = <100>;
- 	};
- };
- 
-diff --git a/arch/arm64/boot/dts/renesas/r8a77995-draak.dts b/arch/arm64/boot/dts/renesas/r8a77995-draak.dts
-index 0711170b26b1..4b651548b82b 100644
---- a/arch/arm64/boot/dts/renesas/r8a77995-draak.dts
-+++ b/arch/arm64/boot/dts/renesas/r8a77995-draak.dts
-@@ -175,6 +175,14 @@
- 		reg = <0>;
- 		interrupt-parent = <&gpio5>;
- 		interrupts = <19 IRQ_TYPE_LEVEL_LOW>;
-+		/*
-+		 * TX clock internal delay mode is required for reliable
-+		 * 1Gbps communication using the KSZ9031RNX phy present on
-+		 * the Draak board, however, TX clock internal delay mode
-+		 * isn't supported on r8a77995.  Thus, limit speed to
-+		 * 100Mbps for reliable communication.
-+		 */
-+		max-speed = <100>;
- 	};
- };
- 
--- 
-2.11.0
-
+Pick any reviewed-by you got and do a resend.
 
 _______________________________________________
 linux-arm-kernel mailing list
