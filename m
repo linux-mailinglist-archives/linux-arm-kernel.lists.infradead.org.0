@@ -2,73 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 616BE78C8B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 15:17:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B48D78C95
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 15:17:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=DayDfH7Jcvfa/nEwHqxqSJb9uB0C0RfiPnxHzjddYU0=; b=sNqdDCf83Qi7mZ
-	SQTUQ6l8tsaob+h/vCSU2qgqr7V1MaFew3a/QXRpPy8TMpB4WqvFp5tKxG0Aafg8lTxZx3avPT7fV
-	a5/Z7FbKcpPKCcpr0ESgtOQLTbCTDGJZP55WiCl898coJWzM7QUQUHuqtdTRQq8PeK8KcUMUXXxd3
-	s6GSNtSLo9oNw4ZYZ+HI8IHROCIrSGatTZDXXnaHH/4QC/1UMjEVPjwxiFdf/V/vUzxK1ieT73+Ie
-	Ex2pWHV3fFBHPTBXwDiDhAPUBUwD/wpfbCRddfbrfLETuX/X8DRxEfGc0cpzIUNYDEtQEKxE4PcfQ
-	XpiNd4Jw39UJgEGiU/tQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=heqK+gWmbc6hfWQitRMkkY70ZCSqC9BoTgOi1hwtF4w=; b=BAp0GBQztCmJMM
+	lyX4vDc0oDp1qX2wbZt08EKd6hd5kk1o7R8r0GoTK9bStWRYMCDKWJ+c8lj2XQnUAYeqAcnn3lsCL
+	4Gc5k6H11meqPQygn/U0Capzpbx4Sa3Gl9ssfhos5LEWg96LmaVZATQjIrrc1yspRj7RVtLbDcdtR
+	yMTy8KlAMUf9SU7wvgVpymuJCLoza6yKJrBRFlviHmKJlGC7J/0w0z4NNIuEV0lhWovnVxTRAaJiZ
+	49QU86bvadf+haWEtDW88k9nn3CL1+gzJvfKEDcG0dZy5TNxlDpj8eMXDapwteY6taF1hgQ4sqwPq
+	qcLDYMw7Voma0I0a2KlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hs5WZ-0006K9-DE; Mon, 29 Jul 2019 13:17:11 +0000
+	id 1hs5Wq-0006b5-VV; Mon, 29 Jul 2019 13:17:28 +0000
 Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hs5WO-0006HN-RD
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 13:17:02 +0000
-Received: by mail-wm1-x341.google.com with SMTP id l2so53423912wmg.0
+ id 1hs5WP-0006HY-E3
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 13:17:03 +0000
+Received: by mail-wm1-x341.google.com with SMTP id v19so53474391wmj.5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 29 Jul 2019 06:17:00 -0700 (PDT)
+ Mon, 29 Jul 2019 06:17:01 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=oynpEq+Rva8XBfHeYWHdmuSsXuLqJ4yySPhy6VhqL9A=;
- b=va/m4r4dkyOP1H7msYfzDxN4+0vxPlSoe+oUQ4l/rirf0OhntUYksvZZwImE3yEz0T
- oBaLe8s00sw6YpMAmKbDDfMJ3mCl28yLI59Ef6CiNZUUKGfhFf+NDo5mic6oiM20KxKR
- 8e2iXUVWGg/5SBAy23v8YvJvjir1BgTnUhFoiSVojDGfS2Uv0NQw5UX04REnvkVV5RsO
- 0/xJ5HncMOscX99UEea1qAz6NyeqODccTnEm/p0TXkddx0FI8A9rkhv5U4Sx3hcD6Mpn
- SkQhDKIsiBKPMOhr/4Bm1s4lGW8Pr24oT4yPFoPKpTRnPfszLYYMnc4VIcdgJtC2qpZJ
- K8tg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=sLpjjKS1ce8bNQv8q/Qa2SJ22ctxx4jp20Vf7E5q7wU=;
+ b=CLMiw/2aayuVDYeC8v+Hbs9eP9dRkSbExFD5+zaZD8XVZntLt21BOp69K1tnRRpjbW
+ h1x6kbaocxmTZlgdkOUZgm3WJWxq1hMdlN8cTBLsyjebws2ydUOJ6ty5W1EE1SsdSXLC
+ XDvlDjLNYQsTpJELOf5Goop1SSsDjIerBO2nq949ozhky/+DVkMb6ZCcqiAxOA+ulJ/m
+ ddqoDYpU4+h9G1Jt9DOM6Ni4fwIoDJbAvBQyFiY5fLci9NEtaNz/LfRCK+zi4cjHTz/n
+ tl2sSIZsHc1nOwvWY7yhIHw0wek4Pbo7+DYcXof7ZE7saR6s4hFgKhah7o+7+Bo1SpgV
+ 0W4Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=oynpEq+Rva8XBfHeYWHdmuSsXuLqJ4yySPhy6VhqL9A=;
- b=E6gG0DrCGP0kdaPkn3qL8jd0ACy1lB57BUt9U24G6BkgoVwnjtQEcKBsuJep0Lvj2F
- 6HCEcEF0V/fiuevN7CI4aL+qY/GBTJV8DuoN7v0V57XlORxrKxuYLfEkiY18rxtEHNRq
- csJG6Zh1n6JfklNM5Ky3u/w64toAjTqBC6CZ075bhPj+hdJ6b8yUaVEZgcNSrDLmbydC
- o4DUAOttOReyMZ6FD9JYM/G5zYAiE4KDTnFmJPR8c1WTZMHTo1IDW1FGCzNPwYpzYqhG
- yJHvI6DRrsx/bC3QrEwdWlBAQ5jJqjrKVBGv/a3wzMZz4Wuffh0JSVrGbz8m3sRoj1CS
- 2MgA==
-X-Gm-Message-State: APjAAAXv/vgZCPdYCmJh42PqunsmP0MPqqpwrfJR53Bv503GNXa1tP6w
- 7RAiX4YG45UvubcO7TPvZNUDUqA5jZo=
-X-Google-Smtp-Source: APXvYqytSS4CaOtshhSxLAUA/SqcXHfZnGVeXdez8xfDM0v0eOvC2DS2WChVjk847i77QN6BlJ/9OA==
-X-Received: by 2002:a7b:c954:: with SMTP id i20mr18655712wml.169.1564406219328; 
- Mon, 29 Jul 2019 06:16:59 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=sLpjjKS1ce8bNQv8q/Qa2SJ22ctxx4jp20Vf7E5q7wU=;
+ b=oCyhys6CFCpXhX3buWztZA8H6MTX8YK/9HVMaL7ICmY7LpTLYzlSUWZugSGArbBlwO
+ pFuaaZk/Fo6C1BvIeZAuM/7NkpyR5CMVsAZy02ZK4D8KjlTHlSY3CQyFg82b5yQQsTxJ
+ 5S+Iw33CqPnoMdjJaOODVDxYWv/GCr48VEuSZvNq4FmRI7nESvUYCrToPE4fn0ku41Nv
+ lGArJJdAJEIBiZSVQglk2otzJqbpe52uEZh0iuWjC8YxMwkYJdM/Hf//ONi6r/ElY58/
+ S2G0JHifxesyjl7ltx98VaNsI+j/zqz0af0slR3sAd5nAB8pXee6CAItkaG590AxEKgN
+ 1QeQ==
+X-Gm-Message-State: APjAAAVaYMGytGqBS2Z/hB0SWRR8kEx3aSErCYqTNs6iNpetXAA0qy6n
+ frcY5v+MSbCANq6n2QH/h1m70w==
+X-Google-Smtp-Source: APXvYqx9NaFkCsFk23eBGAF2Pv6Iu97a1Kl1E5TPuDeCk21lE8wkpH5qEfKm7if84d09Xzyl2Cz8fQ==
+X-Received: by 2002:a1c:f418:: with SMTP id z24mr50475428wma.80.1564406220079; 
+ Mon, 29 Jul 2019 06:17:00 -0700 (PDT)
 Received: from bender.baylibre.local
  (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id b5sm52520490wru.69.2019.07.29.06.16.58
+ by smtp.gmail.com with ESMTPSA id b5sm52520490wru.69.2019.07.29.06.16.59
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 29 Jul 2019 06:16:58 -0700 (PDT)
+ Mon, 29 Jul 2019 06:16:59 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: sboyd@kernel.org,
 	jbrunet@baylibre.com
-Subject: [PATCH 0/4] clk: meson: g12a: add support for DVFS
-Date: Mon, 29 Jul 2019 15:16:52 +0200
-Message-Id: <20190729131656.7308-1-narmstrong@baylibre.com>
+Subject: [PATCH 1/4] clk: core: introduce clk_hw_set_parent()
+Date: Mon, 29 Jul 2019 15:16:53 +0200
+Message-Id: <20190729131656.7308-2-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.22.0
+In-Reply-To: <20190729131656.7308-1-narmstrong@baylibre.com>
+References: <20190729131656.7308-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_061700_883445_BC525862 
-X-CRM114-Status: UNSURE (   9.88  )
+X-CRM114-CacheID: sfid-20190729_061701_470329_DADD010B 
+X-CRM114-Status: UNSURE (   9.83  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -94,76 +96,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-amlogic@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Neil Armstrong <narmstrong@baylibre.com>
+Cc: Neil Armstrong <narmstrong@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-kernel@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The G12A/G12B Socs embeds a specific clock tree for each CPU cluster :
-cpu_clk / cpub_clk
-|   \- cpu_clk_dyn
-|      |  \- cpu_clk_premux0
-|      |        |- cpu_clk_postmux0
-|      |        |    |- cpu_clk_dyn0_div
-|      |        |    \- xtal/fclk_div2/fclk_div3
-|      |        \- xtal/fclk_div2/fclk_div3
-|      \- cpu_clk_premux1
-|            |- cpu_clk_postmux1
-|            |    |- cpu_clk_dyn1_div
-|            |    \- xtal/fclk_div2/fclk_div3
-|            \- xtal/fclk_div2/fclk_div3
-\ sys_pll / sys1_pll
+Introduce the clk_hw_set_parent() provider call to change parent of
+a clock by using the clk_hw pointers.
 
-This patchset adds notifiers on cpu_clk / cpub_clk, cpu_clk_dyn,
-cpu_clk_premux0 and sys_pll / sys1_pll to permit change frequency of
-the CPU clock in a safe way as recommended by the vendor Documentation
-and reference code.
+This eases the clock reparenting from clock rate notifiers and
+implementing DVFS with simpler code avoiding the boilerplates
+functions as __clk_lookup(clk_hw_get_name()) then clk_set_parent().
 
-This patchset :
-- introduces needed core and meson clk changes
-- adds the clock notifiers
+Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+Acked-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+---
+ drivers/clk/clk.c            | 6 ++++++
+ include/linux/clk-provider.h | 1 +
+ 2 files changed, 7 insertions(+)
 
-Dependencies:
-- None
-
-This patchset is split from the v3 RFC/RFC patchset at [3]
-
-Changes from RFT/RFC v3 at [3]:
-- Rebased on clk-meson v5.4/drivers tree with Alexandre's patches
-- Removed the eeclk setup() callback, moved to a toplevel g12a-data struct
-
-Changes since RFT/RFC v2 at [2]:
-- Rebased on clk-meson v5.3/drivers trees
-- added Kevin's review tags
-
-Changes since RFT/RFC v1 at [1]:
-- Added EXPORT_SYMBOL_GPL() to clk_hw_set_parent
-- Added missing static to g12b_cpub_clk_mux0_div_ops and g12a_cpu_clk_mux_nb
-- Simplified g12a_cpu_clk_mux_notifier_cb() without switch/case
-- Fixed typo in "this the current path" in g12a.c
-- Fixed various checkpatch errors
-
-[1] https://patchwork.kernel.org/cover/11006929/
-[2] https://patchwork.kernel.org/cover/11017273/
-[3] https://patchwork.kernel.org/cover/11025309/
-
-Neil Armstrong (4):
-  clk: core: introduce clk_hw_set_parent()
-  clk: meson: regmap: export regmap_div ops functions
-  clk: meson: g12a: add notifiers to handle cpu clock change
-  clk: meson: g12a: expose CPUB clock ID for G12B
-
- drivers/clk/clk.c                     |   6 +
- drivers/clk/meson/clk-regmap.c        |  10 +-
- drivers/clk/meson/clk-regmap.h        |   5 +
- drivers/clk/meson/g12a.c              | 567 +++++++++++++++++++++++---
- include/dt-bindings/clock/g12a-clkc.h |   1 +
- include/linux/clk-provider.h          |   1 +
- 6 files changed, 540 insertions(+), 50 deletions(-)
-
+diff --git a/drivers/clk/clk.c b/drivers/clk/clk.c
+index c0990703ce54..c11b1781d24a 100644
+--- a/drivers/clk/clk.c
++++ b/drivers/clk/clk.c
+@@ -2487,6 +2487,12 @@ static int clk_core_set_parent_nolock(struct clk_core *core,
+ 	return ret;
+ }
+ 
++int clk_hw_set_parent(struct clk_hw *hw, struct clk_hw *parent)
++{
++	return clk_core_set_parent_nolock(hw->core, parent->core);
++}
++EXPORT_SYMBOL_GPL(clk_hw_set_parent);
++
+ /**
+  * clk_set_parent - switch the parent of a mux clk
+  * @clk: the mux clk whose input we are switching
+diff --git a/include/linux/clk-provider.h b/include/linux/clk-provider.h
+index 2ae7604783dd..dce5521a9bf6 100644
+--- a/include/linux/clk-provider.h
++++ b/include/linux/clk-provider.h
+@@ -817,6 +817,7 @@ unsigned int clk_hw_get_num_parents(const struct clk_hw *hw);
+ struct clk_hw *clk_hw_get_parent(const struct clk_hw *hw);
+ struct clk_hw *clk_hw_get_parent_by_index(const struct clk_hw *hw,
+ 					  unsigned int index);
++int clk_hw_set_parent(struct clk_hw *hw, struct clk_hw *new_parent);
+ unsigned int __clk_get_enable_count(struct clk *clk);
+ unsigned long clk_hw_get_rate(const struct clk_hw *hw);
+ unsigned long __clk_get_flags(struct clk *clk);
 -- 
 2.22.0
 
