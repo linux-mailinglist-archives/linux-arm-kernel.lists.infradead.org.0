@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 673BE78F6F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 17:35:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A969278F72
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 17:36:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Uwq58I68eIouTSFdCuDq59qtO7CtUvzBlUqjrMlKUp4=; b=NW2hJQ6np/b+Xj
-	vOzNvtcJe0RZUWyvwXH24v6+JAF1kbziBK2OLwSVfaORuNsinh0yrRo0lL5RHUH7WNrfx23i1zZjZ
-	CSpz7FkohZ+prRNjnB/WBIQrj8pQznGKO7pKBiCZyp1t6Sh/gLFNyF5pllL8PWKPrIi/A1WJdnEqc
-	vv1Y7F+DxoZzDsE7rzz9lhLgCXT8DXD3HwhN+6jFKvQL8XYvCD2FT9NpQpeRq/1a8NArhaj+dS2y7
-	rs9uWNK3/FmerjciXNH3uvuFDeNdMNV1Tbp69HL0hj0+N/SpHnxV/S4SQXrzKYG399p3MkBzfCx1a
-	QqW+e2yKLlpTibaxVHeg==;
+	List-Owner; bh=g3ZOLuSbS+crg/tESFA0DwCfIy9H1dL5JdgyjoC5BtE=; b=uFaOCk/NZ1CQRa
+	DfNtNcqikAtavUmMRZuVUdgfv7ILoJKBqgwYd3pk9I++b17W7bgbtHloAzSRCR3aoo1FE3cUrC4aW
+	Iu2mRdwLHSYKkcJcq52vqZGVat2W9xM7NJeMUgv1vJOsvzMCEDeCnVUubN+iqFpygkhQfm0tBNkSD
+	DR3lYZW1v7CnaS3T+gbtTiGqhVCPQvAisUhTxGrWqX1VbSYj+CPc+bUBjja0bxhCrI1TFFraFJ8Nz
+	xwV9WIESdZ+U80VxrJs32HavsEtbpcaB1t+9wNk+laHJSMX39dMwo4z6i5eO+QORGZhraDrZcYpbp
+	Q2sXFFQNuExpH1rjm10A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hs7gc-0000Tg-0p; Mon, 29 Jul 2019 15:35:42 +0000
+	id 1hs7hf-0000jX-MH; Mon, 29 Jul 2019 15:36:47 +0000
 Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hs7gO-0000TI-N0
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 15:35:29 +0000
+ id 1hs7hU-0000iw-Ct
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 15:36:37 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
  s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
  Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=QYrvNb79Rt5AwwY/wRq3Oon8YU+En/xnuZjb5gkSTYg=; b=hd7PN0C/N/8Oy91rFqnSAtKouM
- xWA/jAjyxM+wO4EN9+Ny5GtNAGPncviqEdE5yZ4t8sp8e19tdDvwejqH+UTgw77ZiZUEeHESVoRON
- WsRWrfybFd6YaW7NfR0J4SdGivexrV3kN13qQWY2zFVWiqDn1iceKEy/NMLOj9c03MrM=;
+ bh=k+pY4BNjcj+Rs1KaJHTZzkyKwY60RatbH+nODMGqyuc=; b=1p65XXu7gNeQsYGAvt9+Ma+XS0
+ 8iiSrpF0SEUgZEP7k2FsCkUhqNiurhDOQcqHHq+sYoFnlpO+SrXOhBaMJa2AB6U4Sinuky8lfc2BR
+ Gi0+bIt67uZUkFTPdtHjfVpvf/HRg2iWoRzhrsnq8/Y9gkzC0NWJJWYG3g7lZ0d0xMXs=;
 Received: from andrew by vps0.lunn.ch with local (Exim 4.89)
  (envelope-from <andrew@lunn.ch>)
- id 1hs7gK-0002Tp-Ps; Mon, 29 Jul 2019 17:35:24 +0200
-Date: Mon, 29 Jul 2019 17:35:24 +0200
+ id 1hs7hQ-0002VA-NJ; Mon, 29 Jul 2019 17:36:32 +0200
+Date: Mon, 29 Jul 2019 17:36:32 +0200
 From: Andrew Lunn <andrew@lunn.ch>
 To: Claudiu Manoil <claudiu.manoil@nxp.com>
-Subject: Re: [PATCH net-next v3 2/4] enetc: Add mdio bus driver for the PCIe
- MDIO endpoint
-Message-ID: <20190729153524.GG4110@lunn.ch>
+Subject: Re: [PATCH net-next v3 3/4] dt-bindings: net: fsl: enetc: Add
+ bindings for the central MDIO PCIe endpoint
+Message-ID: <20190729153632.GH4110@lunn.ch>
 References: <1564394627-3810-1-git-send-email-claudiu.manoil@nxp.com>
- <1564394627-3810-3-git-send-email-claudiu.manoil@nxp.com>
+ <1564394627-3810-4-git-send-email-claudiu.manoil@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1564394627-3810-3-git-send-email-claudiu.manoil@nxp.com>
+In-Reply-To: <1564394627-3810-4-git-send-email-claudiu.manoil@nxp.com>
 User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_083528_901649_186AAA05 
-X-CRM114-Status: UNSURE (   6.25  )
+X-CRM114-CacheID: sfid-20190729_083636_589223_E3ED1077 
+X-CRM114-Status: UNSURE (   7.58  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -87,12 +87,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> +	hw->port = pci_iomap(pdev, 0, 0);
-> +	if (!bus->priv) {
+On Mon, Jul 29, 2019 at 01:03:46PM +0300, Claudiu Manoil wrote:
+> The on-chip PCIe root complex that integrates the ENETC ethernet
+> controllers also integrates a PCIe endpoint for the MDIO controller
+> providing for centralized control of the ENETC mdio bus.
+> Add bindings for this "central" MDIO Integrated PCIe Endpoint.
+> 
+> Signed-off-by: Claudiu Manoil <claudiu.manoil@nxp.com>
 
-hw->port ??
+Reviewed-by: Andrew Lunn <andrew@lunn.ch>
 
-	 Andrew
+    Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
