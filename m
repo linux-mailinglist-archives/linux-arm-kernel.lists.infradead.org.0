@@ -2,74 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B39A279B46
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 23:38:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9215079B49
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 23:38:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8Wwr/c5hqLErFoWqbs55jlv+IAmaTaZSuVaolJu8SG4=; b=EjCm5sv7zckmCR
-	uLERZvYeGwno3T+M/+WOkjuWevt/Xd4SSuS6CMym7rVKr3hkfny9HaWQOk0zdFAMr8gh7pFgHrbBo
-	YBn9lvphmuvk0BuGKJLIZGfeKKH82f8b+4MxteNMRlfbVz0jD01/PaPfRR7StOTxo4p7BfCA7EXB4
-	P3mpTr4xbUR/SfSruKxRw+Si4mIh0h2So7fHnU+M+5x0Qv7uDYk4RbiMUOcWCM39EDdhaVAPoCfg3
-	xJVByexK/7bYBb4WU8rFugHPe1OBdnMUwei235Tvggo9jhJOLG780YrXf/EOoObdra+NYh6/H+vUL
-	kMbjL3TOvfXqOAmtfLgA==;
+	List-Owner; bh=1o1UkDFLTsvT/SblOwLwz94K5TK9IwQdRg7WKO+Z/4o=; b=Welk+fn0Fe9utb
+	5Sd8CLa/ZeDSFp9E9QEpzqAfWDHtmcdZZc4xt8JD64o8v3AEdDimv1ynGMoRgX/RnlrNm/QJAWDiS
+	hTfoaLPkh/HGlbunJuCQHuvFn0SkZKI+8HjGIpHujjOwndRhLoJz/kdtty8ZJuPN8OH8BuMl3AHh+
+	nMjDvefGVFDtXuN+172n8IMyyT4LLljCYegIkLETRawoY51hcDZ713bslF3SXqLqJF4LdRX6/ztqP
+	JCqMBo241/EAEZmfiZtHqIb7Vlsq0gQrIpw2qhq02bEOShwGe/85UUERRleFkh0F6czNf8w9hEHyS
+	mjp7Or80DQ40GA5jpNfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsDLN-0007NS-5C; Mon, 29 Jul 2019 21:38:09 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1hsDLi-0007b2-Tk; Mon, 29 Jul 2019 21:38:31 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsDL1-0007N5-UH
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 21:37:49 +0000
-Received: by mail-lf1-x143.google.com with SMTP id z15so38838755lfh.13
+ id 1hsDLQ-0007a3-M5
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 21:38:14 +0000
+Received: by mail-pf1-x441.google.com with SMTP id 19so28667876pfa.4
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 29 Jul 2019 14:37:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=N6SGKTpDBVf1QoMNMHV2QxgTIUw60sPAmgJMLuUozsA=;
- b=u8iapjwNjwnZ7jcCyKefFe+jgiBX5u5HsLpuFvT0Z1yV+9VtwjFOQcc8ZOMl6KvFPF
- M7QYUd9GHwY89FO/oIy6Vs7z2LpUu7VvpqsZcilOTsOKDmMpm2e5QMU1PO9cNUZZbgSl
- E7qc0BLNAU+W0cXByg1aaGz7e1qqPtAIKoeDdHRcuRXAV/U8FwFMO2v9GRT6O4lnbmv0
- STtsybUIKUHzspa5YXLLFmIVORmtDhBfSpcRz6FxasXB3ukoXv4J6Xx0nc1CqaS0brjS
- KAatnGipYKvOgHMS/jo0jJcdLtJrjGEIa+gqcxm6qIaCuw0UWtIpdSCMFAF/cUigb6S6
- L2jA==
+ Mon, 29 Jul 2019 14:38:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=ffJPVi2t5CZt7uPM0vsbo1dd0NvZy1s8I6KyIoGzcjE=;
+ b=iOpy2TA03/ux45iq9w/+jRy0u6F/UoXwYlXZsyvOqteQs4s9KEFi6OBtIWnPoBI+1O
+ xu1R3g8t+mmf+vSeqzNwyomYwrx2bVVX7hMJk5bIaKIYFVD76AuSGLtguKn60Fc2KrLx
+ 18+55PzxR64uo2FQF34v2OEhBTHm77ei/wOkw=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=N6SGKTpDBVf1QoMNMHV2QxgTIUw60sPAmgJMLuUozsA=;
- b=YY2Na3hMFFDKkDdQLAzUPQ6UdZd6LY9KgQnGy7MFQocsWXSUzByJm9vOCsY+gzoHxW
- zbEfm3pUlDDCqLlrCqqBMIdpph1gCQLsxF4hOMj1EdKh8KHvypYmij6RM6nefd/4k5zs
- gw76Ayihz6iB57AlhaG3SbUc9fGN57Fl2w0hEpkV+/firfI3oPR18psdsPkWCS5aQgiH
- sc/pjWwyGi3a8C47vL1Cx5pQHtMPS5YGdR1LWKcUcCpK8I+HApDXMipoumnsZ58OuHwL
- 1EccMqj22bLvb/EkAOkhJuh1f91QZL91HCoEJxxVOuq0x3w/abQ4g/Hf8lE+9Ia9M82d
- iewg==
-X-Gm-Message-State: APjAAAULh9hrk99WTv8JKTMcRmX9aqKlX3FckCt4w+aSfe3+uOrFi8ZM
- QGnCQaJ+oK+J5Rs0ZkOPAGIjl+zlRE/tUiwitalMtw==
-X-Google-Smtp-Source: APXvYqz3UTZrxCuWCFpHX9xCUQzE7FgKee1vYyZDSUrGPt39sYEtKuROQUXJZ4DR6J5QXxct4aus6tuGSmQowU3As4s=
-X-Received: by 2002:ac2:4891:: with SMTP id x17mr54407619lfc.60.1564436266269; 
- Mon, 29 Jul 2019 14:37:46 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=ffJPVi2t5CZt7uPM0vsbo1dd0NvZy1s8I6KyIoGzcjE=;
+ b=b3holEU4cv/DUE1Ngf/p6W5T97tjDO32UCcXVDjLUaFDtJOMWAAzkrtXehexCbznAN
+ fQpkXeqmV62/oxckz31smeqOHh0lgHp2G5YBYfjbUQk27Z5RgRtkNNJjmGEbrRsTgh6w
+ dTho2QkJiusMfeTD5VGlq+GjUdmRkukZrup9omk94U4V2tJakfGr9LHkHt/C6r317MMq
+ 7axQazRs9zFj2pz9FSkN3ynaCDV/SQU5iX5DTSUOmJb0luWyfYmfiz1Pp37cA4Rr53P9
+ faZyceC9REGP1oNxRrvsVK8Zn+qL1GIlpALFEm3ERhimnONXsp0SJV2dO20/8Zrnjjdq
+ A87w==
+X-Gm-Message-State: APjAAAXPPPxToWfGTzGiKokhSkWWMu1lpsjtcGUappkyy9g9qcw2HdLP
+ mUeon3hbi6LY/pCFa8OIuzLLdA==
+X-Google-Smtp-Source: APXvYqy/lfeMAjQ7JSuWcw5bqLLBEiYdoT23w5fMb5Dh6Wy9vrzKdLjSLcoHHWPKAKejkDqJUCsNcQ==
+X-Received: by 2002:a17:90a:2525:: with SMTP id
+ j34mr117004170pje.11.1564436291843; 
+ Mon, 29 Jul 2019 14:38:11 -0700 (PDT)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id u128sm71133157pfu.48.2019.07.29.14.38.10
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 29 Jul 2019 14:38:11 -0700 (PDT)
+Date: Mon, 29 Jul 2019 14:38:09 -0700
+From: Kees Cook <keescook@chromium.org>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH v5] arm64: kernel: implement fast refcount checking
+Message-ID: <201907291437.78313B08@keescook>
+References: <20190619105431.2630-1-ard.biesheuvel@linaro.org>
+ <20190703134028.6aru52r2zd2jnpm4@willie-the-truck>
+ <CAKv+Gu9bCuXxJ54WMt=GcsRhkbwn_jXnjwJGuopS-7V3dHipLw@mail.gmail.com>
+ <20190710122117.kk5xgei56r7vfmmj@willie-the-truck>
+ <201907220942.69F916657@keescook>
+ <20190722171141.3cgmw5ej7p2caddn@willie-the-truck>
+ <201907221024.3BC2ABB13A@keescook>
+ <20190729172414.odpcqugvtcwjnbe5@willie-the-truck>
 MIME-Version: 1.0
-References: <20190712061721.26645-1-andrew@aj.id.au>
-In-Reply-To: <20190712061721.26645-1-andrew@aj.id.au>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Mon, 29 Jul 2019 23:37:35 +0200
-Message-ID: <CACRpkdZxcRqV18tfcJHNVD=FUwDShwJsJm-v9+SVrxGPC5jvxg@mail.gmail.com>
-Subject: Re: [PATCH] dt-bindings: pinctrl: aspeed: Strip unnecessary quotes
-To: Andrew Jeffery <andrew@aj.id.au>
+Content-Disposition: inline
+In-Reply-To: <20190729172414.odpcqugvtcwjnbe5@willie-the-truck>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_143748_016298_935857B2 
-X-CRM114-Status: UNSURE (   8.77  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190729_143812_803797_79D54AF7 
+X-CRM114-Status: GOOD (  16.01  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -80,6 +90,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,31 +103,43 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, linux-aspeed <linux-aspeed@lists.ozlabs.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Jan Glauber <jglauber@marvell.com>,
+ Will Deacon <will.deacon@arm.com>,
+ Jayachandran Chandrasekharan Nair <jnair@marvell.com>,
+ Hanjun Guo <guohanjun@huawei.com>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jul 12, 2019 at 8:17 AM Andrew Jeffery <andrew@aj.id.au> wrote:
+On Mon, Jul 29, 2019 at 06:24:15PM +0100, Will Deacon wrote:
+> On Mon, Jul 22, 2019 at 10:27:07AM -0700, Kees Cook wrote:
+> > On Mon, Jul 22, 2019 at 06:11:42PM +0100, Will Deacon wrote:
+> > > On Mon, Jul 22, 2019 at 09:43:54AM -0700, Kees Cook wrote:
+> > > > (Also, what happened to the *_checked() variations?)
+> > > 
+> > > The new implementation is intended to replace the *_checked() variants,
+> > > and the discrepancy in naming doesn't make any sense to me once everything
+> > > is inline in the header file. Am I missing something?
+> > 
+> > I haven't looked at the resulting builds, but the reason for the
+> > _checked() macro stuff was to provide a way for callers to opt into a
+> > checked refcount_t regardless of the state of REFCOUNT_FULL (especially
+> > for architectures without special refcount handling). If that is
+> > retained, then all is well. It just looked odd to me in the patch.
+> 
+> Hmm, so that has a grand total of zero users in mainline afaict. Do you
+> expect that to change?
 
-> Rob pointed out that we didn't need the noise of the quotes in a
-> separate review[1], so strip them out for consistency and avoid setting
-> a bad example.
->
-> [1] https://lists.ozlabs.org/pipermail/linux-aspeed/2019-July/002009.html
->
-> Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
+Hm, I thought Mark Rutland had one (or plans for now)... adding to Cc.
 
-Patch applied.
+But yeah, if nothing is using it, away it goes! ;)
 
-Yours,
-Linus Walleij
+-- 
+Kees Cook
 
 _______________________________________________
 linux-arm-kernel mailing list
