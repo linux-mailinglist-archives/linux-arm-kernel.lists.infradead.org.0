@@ -2,61 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2A4578DD4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 16:27:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4439578DD9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 16:27:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K5X0T18fNFsSbMI4RJ3z9YWPWXd/+9+lTvYS/PTHM8g=; b=Yeiyy5bCb4fFxG
-	b/fwl9WontV2fwPPjfGDRw+1PUV9cjITpWIHR/83ozuwPfbuh9XBCauk2jCyESWWCA1etA87WGp3R
-	xSJt8iVUSkaUK9fko26R8XlWE+Pmcv70edrkYceEi40s8Vd/A5vxbDTw4X2CSPaK1YV+2EOBrvd8y
-	A/ftnep7HNxAHnp5BLSWORQLu/XQQq2MgYP2fXOn0lMt0A9CkeDTkMD31TggMcTFHZC7b94G0xayx
-	6MCtXHrOw0noyiNCBzWwHXtEcm+PPdiEX8gr5p+3VesJGRsJIQXFTJnBYKxuOz6lksBWI/yLrNTJP
-	t1j83ja+ctm5ijrMDTvA==;
+	List-Owner; bh=zIaKVeSyFiWJeF4mgUnU7EcINN2CGaQoqZWTl7zoBoY=; b=fgLzwc2jYyXxQS
+	VMPeYS8YOS+TdDQl86NpqtKfOjTl/50/SSzsEgyW77TnhXDXoGjOlj+mo8JdbFqxla/8qIit7ST6i
+	rkElEejfgR8RHpdCQ7zi5oidV0K9TADevlnqYgXXaUP0Gdx0FLHrpzHt7/LDJznXopepiRjgMvhMu
+	92HNDbyCLFzGr4FRW9SMD+9w5JgYA8L6mhZ0Zqrd4297SsAk4vbdL1ei9LeeDI6sJkTVjh0YPpm/T
+	R3u6cJLaUZxprOVFDE88BuxudrGZCulJifpBRvGazAjiL3HvfHS4QVvc2DlOCsJzLQoRS25uBMtzz
+	Ge2kSDdu5Vskejig0Dcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hs6cY-0005Av-H5; Mon, 29 Jul 2019 14:27:26 +0000
-Received: from mga14.intel.com ([192.55.52.115])
+	id 1hs6cy-0005Rj-Sj; Mon, 29 Jul 2019 14:27:52 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hs6cG-0003ub-Pa; Mon, 29 Jul 2019 14:27:10 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga001.fm.intel.com ([10.253.24.23])
- by fmsmga103.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 29 Jul 2019 07:25:06 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.64,323,1559545200"; d="scan'208";a="190601545"
-Received: from kuha.fi.intel.com ([10.237.72.189])
- by fmsmga001.fm.intel.com with SMTP; 29 Jul 2019 07:25:01 -0700
-Received: by kuha.fi.intel.com (sSMTP sendmail emulation);
- Mon, 29 Jul 2019 17:25:00 +0300
-Date: Mon, 29 Jul 2019 17:25:00 +0300
-From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>
-Subject: Re: [PATCH v8 08/11] usb: roles: get usb-role-switch from parent
-Message-ID: <20190729142500.GE28600@kuha.fi.intel.com>
-References: <1563958245-6321-1-git-send-email-chunfeng.yun@mediatek.com>
- <1563958245-6321-9-git-send-email-chunfeng.yun@mediatek.com>
+ id 1hs6ch-0005QW-0i
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 14:27:36 +0000
+Received: by mail-lj1-x244.google.com with SMTP id y17so34229934ljk.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 29 Jul 2019 07:27:34 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=IfFtsX7/KQzCdNl+4EmQ+q1A1wAgR9VhDhbJ3xDy0FI=;
+ b=TL/ogVAqOph3tA0zqcygELc5HLq5Orqtel3nHcqIUrSjaAeJOmKqUg57nswgEvcMRr
+ 3ttzxGwo4apa/dW3yhpCmu2eiXrSeVqCvMQT9QnjrfsXjljf1kU/piOxks/XVJ/2LeE/
+ sUbVgSzK9xKTHJPaCAC/mlQp7J4uz7nvMPnbMFVDn8m9FlEXmNBEvbQIlI4j1RzY5UYb
+ rwpqX0kwYO5RQg9VkKfESEcOLg/hv3c9HZTNy7Y3jszlZY9tSg6b375WdHH6brWKc7nO
+ DZmBm+Y6gIHA9LueWGA4k+dGAhJPDW//+TnhgStSquXKm59+YelelakFb+8M+Xk+H0b+
+ 1HFg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=IfFtsX7/KQzCdNl+4EmQ+q1A1wAgR9VhDhbJ3xDy0FI=;
+ b=mPVfc2G6phsqplgwQ2NraSkkBaJ2cvgGp8MznyjLZjStFyFHEe5rypMVaXKr7gZ5M3
+ Py9rTtn53ZdVatirhAZ36mo2vT9gBgVix16jP8Z/nw/POHwHEcHKqVCbB23H9q36Cjwc
+ znJXbWG3tCFWtKafZ4baO105+8d+PjgwX5a4bRccx+sdoUM64hqMdfD5WIIVtgYPemZr
+ qqNAhaf4j2EzvUSzNwMKTf2OPQ28+1ZkAwX+KAhJrdbOTa99fq/Kn1QbqdyyIqpqeJ2+
+ w6tf4lByWPjAQxRPxpAXNByKJERkFa0ilaZgfjBFD5UM89mk5kOBwYrplh63eiqjFGV1
+ XLYg==
+X-Gm-Message-State: APjAAAU0u3bKPJ3+ySRyv+rPCT/PfLv6I/Ouvn0YjeWJoIVSvb1+Ty0+
+ lsR/F9n4Yf+IC42Ph77U3SX9XUNbBEM8HCVylq4=
+X-Google-Smtp-Source: APXvYqxyvYnlrpXV+q974vRNYgN8Q7Dgy+WEUgJJaPMwdxJhAwANTp+qf0ki5yF5XNm5+lqtCYtJQUee5dZGKBZE/u4=
+X-Received: by 2002:a2e:a311:: with SMTP id l17mr56352974lje.214.1564410453056; 
+ Mon, 29 Jul 2019 07:27:33 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1563958245-6321-9-git-send-email-chunfeng.yun@mediatek.com>
-User-Agent: Mutt/1.12.0 (2019-05-25)
+References: <20190729141349.28465-1-sebastien.szymanski@armadeus.com>
+In-Reply-To: <20190729141349.28465-1-sebastien.szymanski@armadeus.com>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Mon, 29 Jul 2019 11:27:37 -0300
+Message-ID: <CAOMZO5CFqQEdqgwyHZ2E2F22QDgG8SUjBM0y4Y6qyn8Tqo4O0g@mail.gmail.com>
+Subject: Re: [PATCH 1/1] drm: mxsfb: add i.MX6UL in Kconfig
+To: =?UTF-8?Q?S=C3=A9bastien_Szymanski?= <sebastien.szymanski@armadeus.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_072708_846148_814B38A8 
-X-CRM114-Status: GOOD (  21.39  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190729_072735_057491_9B63CF3E 
+X-CRM114-Status: GOOD (  11.40  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.115 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (festevam[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,110 +93,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Hans de Goede <hdegoede@redhat.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linus Walleij <linus.walleij@linaro.org>, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, Biju Das <biju.das@bp.renesas.com>,
- Badhri Jagan Sridharan <badhri@google.com>,
- Andy Shevchenko <andy.shevchenko@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Min Guo <min.guo@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
- linux-arm-kernel@lists.infradead.org, Li Jun <jun.li@nxp.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Marek Vasut <marex@denx.de>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ DRI mailing list <dri-devel@lists.freedesktop.org>,
+ David Airlie <airlied@linux.ie>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Stefan Agner <stefan@agner.ch>,
+ Julien BOIBESSOT <julien.boibessot@armadeus.com>,
+ NXP Linux Team <linux-imx@nxp.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 24, 2019 at 04:50:42PM +0800, Chunfeng Yun wrote:
-> when the USB host controller is the parent of the connector,
-> usually type-B, sometimes don't need the graph, so we should
-> check whether it's parent registers usb-role-switch or not
-> firstly, and get it if exists.
-> 
-> Signed-off-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-
-I don't think I actually wrote the patch. I may have proposed the code
-for you, but I never prepared a patch out out that. Please drop the
-above Signed-off-by line if that is the case. I case I really did
-write the patch, then you are missing the "From: Heikki..." first
-line, but I really don't remember preparing the patch.
-
-If the idea came from me, you can use for example the suggested-by
-tag: "Suggested-by: Heikki Krogerus <heikki.krogerus...".
-
-> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-> ---
-> v8: no changes
-> v7:
->   add signed-off-by Chunfeng
-> 
-> v6:
->   new patch
-> ---
->  drivers/usb/roles/class.c | 25 +++++++++++++++++++++----
->  1 file changed, 21 insertions(+), 4 deletions(-)
-> 
-> diff --git a/drivers/usb/roles/class.c b/drivers/usb/roles/class.c
-> index 5b637aaf311f..87439a84c983 100644
-> --- a/drivers/usb/roles/class.c
-> +++ b/drivers/usb/roles/class.c
-> @@ -114,6 +114,19 @@ static void *usb_role_switch_match(struct device_connection *con, int ep,
->  	return dev ? to_role_switch(dev) : ERR_PTR(-EPROBE_DEFER);
->  }
->  
-> +static struct usb_role_switch *
-> +usb_role_switch_is_parent(struct fwnode_handle *fwnode)
-> +{
-> +	struct fwnode_handle *parent = fwnode_get_parent(fwnode);
-> +	struct device *dev;
-> +
-> +	if (!parent || !fwnode_property_present(parent, "usb-role-switch"))
-> +		return NULL;
-> +
-> +	dev = class_find_device(role_class, NULL, parent, switch_fwnode_match);
-> +	return dev ? to_role_switch(dev) : ERR_PTR(-EPROBE_DEFER);
-> +}
-> +
->  /**
->   * usb_role_switch_get - Find USB role switch linked with the caller
->   * @dev: The caller device
-> @@ -125,8 +138,10 @@ struct usb_role_switch *usb_role_switch_get(struct device *dev)
->  {
->  	struct usb_role_switch *sw;
->  
-> -	sw = device_connection_find_match(dev, "usb-role-switch", NULL,
-> -					  usb_role_switch_match);
-> +	sw = usb_role_switch_is_parent(dev_fwnode(dev));
-> +	if (!sw)
-> +		sw = device_connection_find_match(dev, "usb-role-switch", NULL,
-> +						  usb_role_switch_match);
->  
->  	if (!IS_ERR_OR_NULL(sw))
->  		WARN_ON(!try_module_get(sw->dev.parent->driver->owner));
-> @@ -146,8 +161,10 @@ struct usb_role_switch *fwnode_usb_role_switch_get(struct fwnode_handle *fwnode)
->  {
->  	struct usb_role_switch *sw;
->  
-> -	sw = fwnode_connection_find_match(fwnode, "usb-role-switch", NULL,
-> -					  usb_role_switch_match);
-> +	sw = usb_role_switch_is_parent(fwnode);
-> +	if (!sw)
-> +		sw = fwnode_connection_find_match(fwnode, "usb-role-switch",
-> +						  NULL, usb_role_switch_match);
->  	if (!IS_ERR_OR_NULL(sw))
->  		WARN_ON(!try_module_get(sw->dev.parent->driver->owner));
->  
-> -- 
-> 2.21.0
-
-thanks,
-
--- 
-heikki
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgU8OpYmFzdGllbiwKCk9uIE1vbiwgSnVsIDI5LCAyMDE5IGF0IDExOjE0IEFNIFPDqWJhc3Rp
+ZW4gU3p5bWFuc2tpCjxzZWJhc3RpZW4uc3p5bWFuc2tpQGFybWFkZXVzLmNvbT4gd3JvdGU6Cgo+
+ICBjb25maWcgRFJNX01YU0ZCCj4gLSAgICAgICB0cmlzdGF0ZSAiaS5NWDIzL2kuTVgyOC9pLk1Y
+NlNYIE1YU0ZCIExDRCBjb250cm9sbGVyIgo+ICsgICAgICAgdHJpc3RhdGUgImkuTVgyMy9pLk1Y
+MjgvaS5NWDZTWC9pLk1YNlVMIE1YU0ZCIExDRCBjb250cm9sbGVyIgoKVGhpcyBJUCBpcyBhbHNv
+IGZvdW5kIG9uIGkuTVg2U0wsIGkuTVg3RCwgaS5NWDdTLCBpLk1YOE0sIGkuTVg4UVhQLCBldGMK
+CkkgdGhpbmsgaXQgd291bGQgYmUgYmV0dGVyIGlmIHdlIGRvIG5vdCBrZWVwIGluY3JlYXNpbmcg
+dGhlIGxpc3Qgb2YKc3VwcG9ydGVkIFNvQ3MgaW4gdGhlIEtjb25maWcgdGV4dC4KCldoYXQgYWJv
+dXQganVzdCBoYXZpbmcgdGhlIHRleHQgbGlrZSB0aGlzIGluc3RlYWQ/Cgp0cmlzdGF0ZSAiTVhT
+RkIgTENEIGNvbnRyb2xsZXIiCgo+ICAgICAgICAgZGVwZW5kcyBvbiBEUk0gJiYgT0YKPiAgICAg
+ICAgIGRlcGVuZHMgb24gQ09NTU9OX0NMSwo+ICAgICAgICAgc2VsZWN0IERSTV9NWFMKPiBAQCAt
+MTQsNyArMTQsNyBAQCBjb25maWcgRFJNX01YU0ZCCj4gICAgICAgICBzZWxlY3QgRFJNX0tNU19D
+TUFfSEVMUEVSCj4gICAgICAgICBzZWxlY3QgRFJNX1BBTkVMCj4gICAgICAgICBoZWxwCj4gLSAg
+ICAgICAgIENob29zZSB0aGlzIG9wdGlvbiBpZiB5b3UgaGF2ZSBhbiBpLk1YMjMvaS5NWDI4L2ku
+TVg2U1ggTVhTRkIKPiArICAgICAgICAgQ2hvb3NlIHRoaXMgb3B0aW9uIGlmIHlvdSBoYXZlIGFu
+IGkuTVgyMy9pLk1YMjgvaS5NWDZTWC9pLk1YNlVMIE1YU0ZCCj4gICAgICAgICAgIExDRCBjb250
+cm9sbGVyLgoKYW5kIGhlcmUgaXQgd291bGQgYmVjb21lOgoKQ2hvb3NlIHRoaXMgb3B0aW9uIGlm
+IHlvdSB3YW50IHRvIHN1cHBvcnQgdGhlIE1YU0ZCIExDRCBjb250cm9sbGVyLgoKX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBt
+YWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9s
+aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
