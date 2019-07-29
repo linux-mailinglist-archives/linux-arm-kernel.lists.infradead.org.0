@@ -2,89 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6EF778FDA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 17:51:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A58078FEB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 17:56:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LEkcfeYFBlUDjeqS6CGxWK5pWWWY9HbYfVVcBuFNsKY=; b=ZiAsMzBlRm2xLA
-	EhdYtMN3j4wS12agx2Fk6wuQGj1JlWGK7WA07zq1JizNZPCzkPSYTAPxv+gc7/CQ4y0zfU4I4Fzcb
-	eZRV7HTC0AG6oI1nHzSkszsE31Skn8uT3hCBkYLxxzbpOfOPnWlsXmW6vIXEqndRPZ9howfmC07sK
-	xKq+/+u1vlppnb0PhQL5KJO8CZrvwLnaCIpHG1egel/cSeLPvVvJdRl+85bBBEsR9c9aoT/9Hs47p
-	9LPgFGLsSsFkbVwQNmacPrTbvb3ocDjTNJzWJoZeCm2QSFVvvNALkB8LwjIx64/ELboaUUebMZuUJ
-	YmTUFsM4w/GcqM4Ci3pg==;
+	List-Owner; bh=+HkV/iA+raDKYmqVqhmmxD+bC8fVJU/G0MqtqBy1Qu4=; b=DB6DdsVbGO65ac
+	tR+r2jFK/0Dleu5XjB2VavLATPF1KZG9K01U/0XojAuUKA9vcwDvkOiaShWB6N4x0ZOtzUD/XPm7g
+	QMtoNzRqKubqd4N/LpqEO5ufZC3URFc8THWq/a1mP8Asc6lt/RxgC5fru4I+gjUnSa3gqLCLWJlyZ
+	jdIm4yvYkhKA+Ju1qRN2wZqSRazvIM77CScZhEYav0KbutALbu3lKJgDqq/5X3BVjERExbsVg8Ukg
+	/V7U4tG7AsJvUVzJoH0SOyXTtWJaJWVSIAGdajm1eRy2kO3H7E9jq+qx7QLg7OjDuQvhvPB09DsXt
+	f9IIxgGBfzHHTW+mm8FQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hs7vg-0007O4-Id; Mon, 29 Jul 2019 15:51:16 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1hs80Q-0000sD-DZ; Mon, 29 Jul 2019 15:56:10 +0000
+Received: from mailoutvs41.siol.net ([185.57.226.232] helo=mail.siol.net)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hs7vU-0007Nk-WC
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 15:51:06 +0000
-Received: by mail-lf1-x141.google.com with SMTP id c9so42369066lfh.4
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 29 Jul 2019 08:51:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=F40lGZ5Y/dCEzpWTYTx/X4Zd/G360xL3G5J5Vnqc+uM=;
- b=CGv3ctCI/3RASXmbu+U1Fwxxnk0jZXexm3jertP+lBvqUZI3bFLHLlOtbyxOuy41Xm
- 3qYf/aJtU8yPT8euw4MhXEYPXTEa3KNYh65Z96R5TezfKKl5a5K7vuhz/JUGhIeFRZMY
- ar6o0P02kszB6mIxSn0cOsMRQYnWRnVn/zEBTj3diHu8TqLsCAUQMMufpsVaDwCw1NLd
- HXPxTcaXERLzC3QiZGPaJeWy8jRbcL7xfF+C5uiQ6q8IioubGfNeD8lw5+DJMl1EOHxV
- /xVTBhc+K3BxASrYhpd6xTemyIvfi1OHeECJJm/BBngR3YPbVb/PGXXdbgF939+/sRMB
- I3nw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=F40lGZ5Y/dCEzpWTYTx/X4Zd/G360xL3G5J5Vnqc+uM=;
- b=kCYOMIE0Twn6VtYxN3YUY0ta6IlXv3rzldxLX4Zeb70AEy8yrooogP7X23YMwwBY5R
- ATrm9aRlH61AVuS1ZB4D+SDKcphgvpvmXuP3gmfN77mwE6KI1T2bhqqn2sWOw69VQNdy
- ZmiMfF0OT7zc0GFv3ndIdH0Dke6VpL2+DUqkD9pmQqmZlqilof9L4cFAR9vzNF98h536
- GQXLVoSUD9RWWuZ78iECNXR9VChrw54pRD7MJKgfEVZwlcx0Fj7uAWXTYD87RTj/nqM7
- IETC3rilG3ndzJ3q447+DK+uwnLIRpL0hr+NeahZIn35tjaLRwIDcx2e1h4QS4eXT05q
- 5W3g==
-X-Gm-Message-State: APjAAAUp1y8BuF80iN/6VtF19sJ3EbRDfHQqRa5BY0hKrr1R12HT2/yj
- x/Za2lT0mb+ScPMzJ1nVzZV+CDEPd276gq9RYn0=
-X-Google-Smtp-Source: APXvYqz50dj+aOYazfoYgFD9FrzD9jcB50OsVJ3zrOY1O1BGw/6yhvdJJWEWXNUVAehrLxtX7rYRMbWvyMGcjidXX2s=
-X-Received: by 2002:a05:6512:146:: with SMTP id
- m6mr51844088lfo.90.1564415463082; 
- Mon, 29 Jul 2019 08:51:03 -0700 (PDT)
+ id 1hs80C-0000rg-Ax
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 15:55:58 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.siol.net (Zimbra) with ESMTP id 8DCAD522BB3;
+ Mon, 29 Jul 2019 17:55:53 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at psrvmta12.zcs-production.pri
+Received: from mail.siol.net ([127.0.0.1])
+ by localhost (psrvmta12.zcs-production.pri [127.0.0.1]) (amavisd-new,
+ port 10032)
+ with ESMTP id u-_fD2Ny9KTo; Mon, 29 Jul 2019 17:55:53 +0200 (CEST)
+Received: from mail.siol.net (localhost [127.0.0.1])
+ by mail.siol.net (Zimbra) with ESMTPS id 266D5522D23;
+ Mon, 29 Jul 2019 17:55:53 +0200 (CEST)
+Received: from jernej-laptop.localnet (cpe-194-152-11-237.cable.triera.net
+ [194.152.11.237]) (Authenticated sender: jernej.skrabec@siol.net)
+ by mail.siol.net (Zimbra) with ESMTPA id A1875522BB3;
+ Mon, 29 Jul 2019 17:55:52 +0200 (CEST)
+From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
+To: Uwe =?ISO-8859-1?Q?Kleine=2DK=F6nig?= <u.kleine-koenig@pengutronix.de>
+Subject: Re: [PATCH 4/6] pwm: sun4i: Add support for H6 PWM
+Date: Mon, 29 Jul 2019 17:55:52 +0200
+Message-ID: <223488703.0I5IR7NXoI@jernej-laptop>
+In-Reply-To: <20190729064030.7uenld2kbof45zti@pengutronix.de>
+References: <20190726184045.14669-1-jernej.skrabec@siol.net>
+ <20190726184045.14669-5-jernej.skrabec@siol.net>
+ <20190729064030.7uenld2kbof45zti@pengutronix.de>
 MIME-Version: 1.0
-References: <20190729141349.28465-1-sebastien.szymanski@armadeus.com>
- <CAOMZO5CFqQEdqgwyHZ2E2F22QDgG8SUjBM0y4Y6qyn8Tqo4O0g@mail.gmail.com>
- <20190729143749.GB16927@ravnborg.org>
-In-Reply-To: <20190729143749.GB16927@ravnborg.org>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Mon, 29 Jul 2019 12:51:08 -0300
-Message-ID: <CAOMZO5Aew=fWnu1wweSBdFpN2SrChR9r+RST+C2RWwbsOyzRxg@mail.gmail.com>
-Subject: Re: [PATCH 1/1] drm: mxsfb: add i.MX6UL in Kconfig
-To: Sam Ravnborg <sam@ravnborg.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_085105_040066_8ED5D12E 
-X-CRM114-Status: UNSURE (   6.76  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190729_085556_711511_190D280D 
+X-CRM114-Status: GOOD (  17.33  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [185.57.226.232 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,32 +72,132 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marek Vasut <marex@denx.de>, David Airlie <airlied@linux.ie>,
- DRI mailing list <dri-devel@lists.freedesktop.org>,
- Julien BOIBESSOT <julien.boibessot@armadeus.com>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, linux-pwm@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org, mripard@kernel.org,
+ wens@csie.org, robh+dt@kernel.org, thierry.reding@gmail.com,
+ kernel@pengutronix.de, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sam,
+Hi Uwe,
 
-On Mon, Jul 29, 2019 at 11:37 AM Sam Ravnborg <sam@ravnborg.org> wrote:
+Dne ponedeljek, 29. julij 2019 ob 08:40:30 CEST je Uwe Kleine-K=F6nig =
 
-> Could we throw a COMPILE_TEST in the mix so we get better build
-> coverage too?
+napisal(a):
+> On Fri, Jul 26, 2019 at 08:40:43PM +0200, Jernej Skrabec wrote:
+> > Now that sun4i PWM driver supports deasserting reset line and enabling
+> > bus clock, support for H6 PWM can be added.
+> > =
 
-There is no architecture dependency to build this driver, so we
-already have build coverage for it.
+> > Note that while H6 PWM has two channels, only first one is wired to
+> > output pin. Second channel is used as a clock source to companion AC200
+> > chip which is bundled into same package.
+> > =
 
-Regards,
+> > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+> > ---
+> > =
 
-Fabio Estevam
+> >  drivers/pwm/pwm-sun4i.c | 10 ++++++++++
+> >  1 file changed, 10 insertions(+)
+> > =
+
+> > diff --git a/drivers/pwm/pwm-sun4i.c b/drivers/pwm/pwm-sun4i.c
+> > index 7d3ac3f2dc3f..9e0eca79ff88 100644
+> > --- a/drivers/pwm/pwm-sun4i.c
+> > +++ b/drivers/pwm/pwm-sun4i.c
+> > @@ -331,6 +331,13 @@ static const struct sun4i_pwm_data
+> > sun4i_pwm_single_bypass =3D {> =
+
+> >  	.npwm =3D 1,
+> >  =
+
+> >  };
+> > =
+
+> > +static const struct sun4i_pwm_data sun50i_pwm_dual_bypass_clk_rst =3D {
+> > +	.has_bus_clock =3D true,
+> > +	.has_prescaler_bypass =3D true,
+> > +	.has_reset =3D true,
+> > +	.npwm =3D 2,
+> > +};
+> > +
+> > =
+
+> >  static const struct of_device_id sun4i_pwm_dt_ids[] =3D {
+> >  =
+
+> >  	{
+> >  	=
+
+> >  		.compatible =3D "allwinner,sun4i-a10-pwm",
+> > =
+
+> > @@ -347,6 +354,9 @@ static const struct of_device_id sun4i_pwm_dt_ids[]=
+ =3D
+> > {
+> > =
+
+> >  	}, {
+> >  	=
+
+> >  		.compatible =3D "allwinner,sun8i-h3-pwm",
+> >  		.data =3D &sun4i_pwm_single_bypass,
+> > =
+
+> > +	}, {
+> > +		.compatible =3D "allwinner,sun50i-h6-pwm",
+> > +		.data =3D &sun50i_pwm_dual_bypass_clk_rst,
+> =
+
+> If you follow my suggestion for the two previous patches, you can just
+> use:
+> =
+
+> 	compatible =3D "allwinner,sun50i-h6-pwm", "allwinner,sun5i-a10s-pwm";
+> =
+
+> and drop this patch.
+
+Maxime found out that it's not compatible with A10s due to difference in by=
+pass =
+
+bit, but yes, I know what you mean.
+
+Since H6 requires reset line and bus clock to be specified, it's not compat=
+ible =
+
+from DT binding side. New yaml based binding must somehow know that in orde=
+r =
+
+to be able to validate DT node, so it needs standalone compatible. However, =
+
+depending on conclusions of other discussions, this new compatible can be =
+
+associated with already available quirks structure or have it's own.
+
+Best regards,
+Jernej
+
+> =
+
+> Best regards
+> Uwe
+> =
+
+> >  	}, {
+> >  	=
+
+> >  		/* sentinel */
+> >  	=
+
+> >  	},
+
+
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
