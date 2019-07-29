@@ -2,76 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3483779110
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 18:36:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 29EF479112
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 18:36:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UzT31di3mdZUKby/03GpbmR1QZLnUHRli/RfAu5qYLA=; b=ZX/8C701L8pj10
-	VAZQyoP1f/0qJmGyRye1D/3U1Fcuy8fuCp+jw5il9+X4+sRqWXh7ABl1XUJ3ZJxA78ZC6kTpvjs2v
-	qZLNgsE+POj9HXNvLy9UEm7ekKgW1WXKN3bnkRs87Gufe9bOyED0eli3pDb6bDipHESsuj8idaS9s
-	0k72CI86ybSFNtO4pQuzSPsU+VxZKrBMCTkHpcmjFAUvrmlH8XgZBd2uCKCkRwU+WIpJ8QCoRdHe3
-	5igK65jPOC/tGB0pU3Jg5Zj/xppMEG7MorshYljfZg8FZk+RxOGZ+b6rZUMBLWfSfWrSTtWZNZXwQ
-	7w0SL/0Dko1vXXX1MJjg==;
+	List-Owner; bh=ff0+WiIT8s9ZJmE3IgqD1I4PtvrLN7/k/enaSA7LB/M=; b=ZJLub1YiwmlMS9
+	X2m/0QBOV/A5yuupif3GvHx5Uaz5F7fIfjtVuOb4p0vqdM0NBuriiCLBpsZ41p6ik/EbiyKIvhAlm
+	A9vEyft1CsLGkKgJQowVC1hFQ2TAHOgiV6Ih7xwa4JEYj07pm6n4S5GnSRRNeGgb/Nvso8yLz7u68
+	nh+yObIvSBd1RAr54nJOOG9ZqswPY+INy8VMYP/aOyE3xCcl3YfCSRzAJ+TqQ18W4u/zVxbkc8suJ
+	6fvD9Q24tu1qCzsI63Qj+ktlQMDkwU6TKiwLQiFQIrXgThazFmckEgP1UMdq7nmO4NcX/PTKm3O8A
+	JuIRsf0FVljJCHTI+66g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hs8cx-0007Is-R2; Mon, 29 Jul 2019 16:35:59 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1hs8dF-0007X7-96; Mon, 29 Jul 2019 16:36:17 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hs8cF-0006v2-RU
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 16:35:17 +0000
-Received: by mail-pg1-x543.google.com with SMTP id k189so9484715pgk.13
+ id 1hs8cg-0007HW-PI
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 16:35:44 +0000
+Received: by mail-pg1-x544.google.com with SMTP id n9so22306547pgc.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 29 Jul 2019 09:35:15 -0700 (PDT)
+ Mon, 29 Jul 2019 09:35:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to;
- bh=LosA34Pi06t550ndfWq1HZ2X46u/LpML1Ea5fccWC7E=;
- b=NDvJyUbd4FPZnEzvHlG0+LLOrnWEIWl8T1uF/R3sM9rTbDL1xgrMCms2SH12h3QByl
- jQzeedo8qh7F1CKOkRgu6JO8CNoHChExWpJqfPHUx0yYX43YkvvT/cT8HfLH3HdVawEM
- TZ0YrjtHl/lRT++4pspAHq2IqXkmm/X0gjEg4=
+ bh=IEddiYi3k/QkBC5cxfQW5fAN4XjjJLsCvTR0ynzn9xQ=;
+ b=PFOOf1pY2vYwMTBzCHhJbt6J3OJX9kEF5fPBmfilOEVHC7yfX6C8vdygMvSnG/ORXJ
+ +ubu/CTvk6N9l3Hpyyd3g4nctPRzdxe6Wq1t3Eb4eDZho2NwHODoNKaBeWPkSiWF672+
+ wwNrEzYzu+TH35C5nW4a1HvCbhiXC4sOnUUAk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=LosA34Pi06t550ndfWq1HZ2X46u/LpML1Ea5fccWC7E=;
- b=DobpfUxllTx2e8cg5ykOnjUnhPzHXzdaKYn2P3o8R57TEEf8rTtPrxetoQwNnI6P4q
- 3J8/RsUHTxSNkwtAHCshNemr7CTqiOlJwpQzv2p2zrWstE1auz6j8ySlo+IjHnUFull+
- Dg09K6CXQb+YyEhlcspWmdjYEx38vnsIyG5Ah1CzyV33e31KBBoyo65IBpdN3tNrQ/bF
- aErOPdQFnVDIfe2kjlk7+RvRz7k4shzw4HTkEHc0m6bh+U9qG+21GUwk4TAi6FS4OJGt
- 8mBJaeyxXJ8zjmKXbh9AD2I/GrYPI2yPt4/9WBVb1Hn0+Bnxx7g0Y7GUmFGt5czHAB6/
- L3Jg==
-X-Gm-Message-State: APjAAAXDXH7L9VUFESuUFalkn00z7Y9hjOmURAX3l0j/l1RTIQxoq8Es
- 5U3pW3E2Tmnf2tvjQCxI2bc/Jw==
-X-Google-Smtp-Source: APXvYqxiO8pf2kEJ5WYkyipUkk47CIU4vFX7JK7bgUojD7XXorF+A7b4LosOiyjpsDE+ksy35reuqQ==
-X-Received: by 2002:aa7:9118:: with SMTP id 24mr36133516pfh.56.1564418115354; 
- Mon, 29 Jul 2019 09:35:15 -0700 (PDT)
+ bh=IEddiYi3k/QkBC5cxfQW5fAN4XjjJLsCvTR0ynzn9xQ=;
+ b=YMk9Zgt9wMxRgR6k+Ou/nA7FNM9gcZCdw8KE6ngzzROVpU1JO84xjJ3geyj28BZczM
+ kOEd74pVA0mIGC9ovT/XpfT4uJAnlFGaTspkkerO68Qa6CvWVUYRo0S9nf6AdHDcHrnL
+ HB0UIeFF/DAEvU2M3zJP3F4cqHUrYPVoQqtJe9wa9mBFJNMt/fHQGdw6H6W41mY4EU41
+ aXEDtohNATC41LuSvEREg7uE4l2brdnNVwSkaY8chxMvxqM3LWlLOiBd3rcvMLb0w5fY
+ bN6uKpD0NUL93hun8qvvsjEtX+Puk6smX8JO9QNhnYoTQlWoVOO+BqzKNycf2rdboCJI
+ gQ6A==
+X-Gm-Message-State: APjAAAUVTdypbW2wYRRoPGz8L9OutX6B2EelglnrTkSiOk19syYjh3UC
+ WpFHgpjI1A8YnuT8KMJnrkjfrw==
+X-Google-Smtp-Source: APXvYqzgPp1ai8L1U1DHi9sD7NWNDjDbn+/ShCDM00cHu0bZrIrBVGOukCtp85AANTBOMAzU8Deeyg==
+X-Received: by 2002:aa7:81ca:: with SMTP id c10mr37907100pfn.185.1564418142347; 
+ Mon, 29 Jul 2019 09:35:42 -0700 (PDT)
 Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id w2sm53553878pgc.32.2019.07.29.09.35.14
+ by smtp.gmail.com with ESMTPSA id l26sm63883324pgb.90.2019.07.29.09.35.41
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 29 Jul 2019 09:35:14 -0700 (PDT)
-Date: Mon, 29 Jul 2019 09:35:13 -0700
+ Mon, 29 Jul 2019 09:35:41 -0700 (PDT)
+Date: Mon, 29 Jul 2019 09:35:40 -0700
 From: Kees Cook <keescook@chromium.org>
 To: "Gustavo A. R. Silva" <gustavo@embeddedor.com>
-Subject: Re: [PATCH] mfd: db8500-prcmu: Mark expected switch fall-throughs
-Message-ID: <201907290935.B02CE809F@keescook>
-References: <20190728235614.GA23618@embeddedor>
+Subject: Re: [PATCH] mmc: atmel-mci: Mark expected switch fall-throughs
+Message-ID: <201907290935.2B95CBC@keescook>
+References: <20190729000123.GA23902@embeddedor>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190728235614.GA23618@embeddedor>
+In-Reply-To: <20190729000123.GA23902@embeddedor>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_093515_971156_C9CFC1E7 
-X-CRM114-Status: GOOD (  14.80  )
+X-CRM114-CacheID: sfid-20190729_093542_851218_A598D008 
+X-CRM114-Status: GOOD (  15.53  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -95,30 +95,38 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Stephen Rothwell <sfr@canb.auug.org.au>,
- Linus Walleij <linus.walleij@linaro.org>, Lee Jones <lee.jones@linaro.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+ Ulf Hansson <ulf.hansson@linaro.org>, linux-kernel@vger.kernel.org,
+ linux-mmc@vger.kernel.org, Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Jul 28, 2019 at 06:56:14PM -0500, Gustavo A. R. Silva wrote:
+On Sun, Jul 28, 2019 at 07:01:23PM -0500, Gustavo A. R. Silva wrote:
 > Mark switch cases where we are expecting to fall through.
 > 
 > This patch fixes the following warnings:
 > 
-> drivers/mfd/db8500-prcmu.c: In function 'dsiclk_rate':
-> drivers/mfd/db8500-prcmu.c:1592:7: warning: this statement may fall through [-Wimplicit-fallthrough=]
->    div *= 2;
->    ~~~~^~~~
-> drivers/mfd/db8500-prcmu.c:1593:2: note: here
->   case PRCM_DSI_PLLOUT_SEL_PHI_2:
+> drivers/mmc/host/atmel-mci.c: In function 'atmci_get_cap':
+> drivers/mmc/host/atmel-mci.c:2415:30: warning: this statement may fall through [-Wimplicit-fallthrough=]
+>    host->caps.has_odd_clk_div = 1;
+>    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+> drivers/mmc/host/atmel-mci.c:2416:2: note: here
+>   case 0x400:
 >   ^~~~
-> drivers/mfd/db8500-prcmu.c:1594:7: warning: this statement may fall through [-Wimplicit-fallthrough=]
->    div *= 2;
->    ~~~~^~~~
-> drivers/mfd/db8500-prcmu.c:1595:2: note: here
->   case PRCM_DSI_PLLOUT_SEL_PHI:
+> drivers/mmc/host/atmel-mci.c:2422:28: warning: this statement may fall through [-Wimplicit-fallthrough=]
+>    host->caps.has_highspeed = 1;
+>    ~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+> drivers/mmc/host/atmel-mci.c:2423:2: note: here
+>   case 0x200:
+>   ^~~~
+> drivers/mmc/host/atmel-mci.c:2426:40: warning: this statement may fall through [-Wimplicit-fallthrough=]
+>    host->caps.need_notbusy_for_read_ops = 1;
+>    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+> drivers/mmc/host/atmel-mci.c:2427:2: note: here
+>   case 0x100:
 >   ^~~~
 > 
 > Reported-by: Stephen Rothwell <sfr@canb.auug.org.au>
@@ -129,24 +137,38 @@ Reviewed-by: Kees Cook <keescook@chromium.org>
 -Kees
 
 > ---
->  drivers/mfd/db8500-prcmu.c | 2 ++
->  1 file changed, 2 insertions(+)
+>  drivers/mmc/host/atmel-mci.c | 4 ++++
+>  1 file changed, 4 insertions(+)
 > 
-> diff --git a/drivers/mfd/db8500-prcmu.c b/drivers/mfd/db8500-prcmu.c
-> index 3f21e26b8d36..90e0f21bc49c 100644
-> --- a/drivers/mfd/db8500-prcmu.c
-> +++ b/drivers/mfd/db8500-prcmu.c
-> @@ -1590,8 +1590,10 @@ static unsigned long dsiclk_rate(u8 n)
->  	switch (divsel) {
->  	case PRCM_DSI_PLLOUT_SEL_PHI_4:
->  		div *= 2;
+> diff --git a/drivers/mmc/host/atmel-mci.c b/drivers/mmc/host/atmel-mci.c
+> index 9ee0bc0ce6d0..c26fbe5f2222 100644
+> --- a/drivers/mmc/host/atmel-mci.c
+> +++ b/drivers/mmc/host/atmel-mci.c
+> @@ -2413,6 +2413,7 @@ static void atmci_get_cap(struct atmel_mci *host)
+>  	case 0x600:
+>  	case 0x500:
+>  		host->caps.has_odd_clk_div = 1;
 > +		/* Fall through */
->  	case PRCM_DSI_PLLOUT_SEL_PHI_2:
->  		div *= 2;
+>  	case 0x400:
+>  	case 0x300:
+>  		host->caps.has_dma_conf_reg = 1;
+> @@ -2420,13 +2421,16 @@ static void atmci_get_cap(struct atmel_mci *host)
+>  		host->caps.has_cfg_reg = 1;
+>  		host->caps.has_cstor_reg = 1;
+>  		host->caps.has_highspeed = 1;
 > +		/* Fall through */
->  	case PRCM_DSI_PLLOUT_SEL_PHI:
->  		return pll_rate(PRCM_PLLDSI_FREQ, clock_rate(PRCMU_HDMICLK),
->  			PLL_RAW) / div;
+>  	case 0x200:
+>  		host->caps.has_rwproof = 1;
+>  		host->caps.need_blksz_mul_4 = 0;
+>  		host->caps.need_notbusy_for_read_ops = 1;
+> +		/* Fall through */
+>  	case 0x100:
+>  		host->caps.has_bad_data_ordering = 0;
+>  		host->caps.need_reset_after_xfer = 0;
+> +		/* Fall through */
+>  	case 0x0:
+>  		break;
+>  	default:
 > -- 
 > 2.22.0
 > 
