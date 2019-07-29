@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 66DC37967B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 21:52:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6217E79687
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 21:52:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/WKpIcxBV8EDVwqulBoNUN1YWgthQU3/CKpeaJxnU9g=; b=urZ5VtgBRZIF5I
-	yH8+LDUVIKz7xnNsdm1QSx/0SA1xRNJi3oQVVjjrZeT4uNwcR6E3JmXGo63oyhr4EG/2+cnz7JeDC
-	86VbPJmVrK/gaaBnekbPai94slWHpT6OkFzKIk1zP1Ae2FCVCCjyUCPWF07u0dJwLnZ5LtKs+Ndwb
-	+gkeynMEU/qRz6b1doriDXLIMA6DKVCWQCyYjsGhTTWY3ogNyJqCrEcasSt6CZ7J8HvwV3eKD0TD9
-	4XZDhU8A09BRjEBdDlQXg5o/VZaAa3YFivWuQiRxlO8gut9J1DAqgxgtqkp7OKqs87AoAhlRX47zm
-	AiLVZ4bf5vs+I5JGpYBQ==;
+	List-Owner; bh=9RdDZPDn98spn7np0+vssERV9T9uYwE8qqhqtspillo=; b=D2JQWBUlXOGSIb
+	EnhTCnJ/oPmxv1a2GjmMIJLOFY/+fckpRNl1BcgO9OPKd4FCoCbkpfQJW+6I19RtHCKumXsswECqN
+	DI7sowVh7V0PGt3QYisCnvErZnA87vmJxo1BXOYnfrKHwe23JKvYHOoVBW4WhrfX+XxGZ/GA14f6k
+	+5+PHG1WDwTVyIPc8CqNtAlBHA8FPl03iRlJ1kjDO/mBt6rQa92Vo7rpQTzluPKAHGTYL8q1eMisW
+	8G4lew4q1Oer8SPiHgMlojhO2edqWmtXz4OYt1OfcI2Ml5Xdr55gwkjj1Xm2NwKK8DHHbyt//FHf3
+	CVDAZCJeSsN7hQ1Uq8Vw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsBh6-0004Ku-Vq; Mon, 29 Jul 2019 19:52:29 +0000
+	id 1hsBhO-0004Zb-3q; Mon, 29 Jul 2019 19:52:46 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsBg4-0003h3-FL
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 19:51:26 +0000
+ id 1hsBgD-0003o6-Ih
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 19:51:35 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id ABAD5204EC;
- Mon, 29 Jul 2019 19:51:23 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id C24242054F;
+ Mon, 29 Jul 2019 19:51:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564429884;
- bh=W4f+4kcCzQ7z4a9XB5Ogvkgum4ZPKLa+1Xmiyn6CcVs=;
+ s=default; t=1564429893;
+ bh=+msWdbPn29tMENfyQxYBG+5FjIxE3qx68j5Xh9RrvLE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=niOPKhOD9czv3UF15ApKXKN7sQF7SabC46WtX0geTxaxP9QOYO9UbkJP9Ui+1Xybm
- YCthOE5oAPfTdWS+ngYOLcygh0x2wPyk44TLQo3b57psAZudp1MypR820dh8ZcsA1N
- dEFmd4ByPe9EK4hgadCvGUfT6O+cRr94fEdB+uJ8=
+ b=JVs9C+dTFnWRpbJHT43PWIGQBwBdhaayXLVJtyHce16K6Stz91womZqKupuHj1WLf
+ 62Wz62oLGiTuktPzCgIq5cJGTmN9sQhQbSXqCyazbK+QqQgufTqvMbw6BVavUdcNov
+ QqfUE6qODUGSQY8wX97KvJl9ek8McLgDqThdI3fo=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 5.2 127/215] perf hists browser: Fix potential NULL pointer
+Subject: [PATCH 5.2 130/215] perf intel-bts: Fix potential NULL pointer
  dereference found by the smatch tool
-Date: Mon, 29 Jul 2019 21:22:03 +0200
-Message-Id: <20190729190801.372399577@linuxfoundation.org>
+Date: Mon, 29 Jul 2019 21:22:06 +0200
+Message-Id: <20190729190801.948791723@linuxfoundation.org>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190729190739.971253303@linuxfoundation.org>
 References: <20190729190739.971253303@linuxfoundation.org>
 User-Agent: quilt/0.66
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_125124_571817_BE839DE9 
-X-CRM114-Status: GOOD (  11.83  )
+X-CRM114-CacheID: sfid-20190729_125133_923162_869A3B02 
+X-CRM114-Status: GOOD (  11.81  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -80,97 +80,80 @@ Cc: Sasha Levin <sashal@kernel.org>, Andi Kleen <ak@linux.intel.com>,
  Alexander Shishkin <alexander.shishkin@linux.intel.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Adrian Hunter <adrian.hunter@intel.com>, stable@vger.kernel.org,
- Arnaldo Carvalho de Melo <acme@redhat.com>, Jiri Olsa <jolsa@kernel.org>,
- Leo Yan <leo.yan@linaro.org>, Namhyung Kim <namhyung@kernel.org>,
+ Arnaldo Carvalho de Melo <acme@redhat.com>, Leo Yan <leo.yan@linaro.org>,
+ Namhyung Kim <namhyung@kernel.org>, Jiri Olsa <jolsa@redhat.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-[ Upstream commit ceb75476db1617a88cc29b09839acacb69aa076e ]
+[ Upstream commit 1d481458816d9424c8a05833ce0ebe72194a350e ]
 
-Based on the following report from Smatch, fix the potential
-NULL pointer dereference check.
+Based on the following report from Smatch, fix the potential NULL
+pointer dereference check.
 
-  tools/perf/ui/browsers/hists.c:641
-  hist_browser__run() error: we previously assumed 'hbt' could be
-  null (see line 625)
+  tools/perf/util/intel-bts.c:898
+  intel_bts_process_auxtrace_info() error: we previously assumed
+  'session->itrace_synth_opts' could be null (see line 894)
 
-  tools/perf/ui/browsers/hists.c:3088
-  perf_evsel__hists_browse() error: we previously assumed
-  'browser->he_selection' could be null (see line 2902)
+  tools/perf/util/intel-bts.c:899
+  intel_bts_process_auxtrace_info() warn: variable dereferenced before
+  check 'session->itrace_synth_opts' (see line 898)
 
-  tools/perf/ui/browsers/hists.c:3272
-  perf_evsel_menu__run() error: we previously assumed 'hbt' could be
-  null (see line 3260)
+  tools/perf/util/intel-bts.c
+  894         if (session->itrace_synth_opts && session->itrace_synth_opts->set) {
+  895                 bts->synth_opts = *session->itrace_synth_opts;
+  896         } else {
+  897                 itrace_synth_opts__set_default(&bts->synth_opts,
+  898                                 session->itrace_synth_opts->default_no_sample);
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  899                 if (session->itrace_synth_opts)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  900                         bts->synth_opts.thread_stack =
+  901                                 session->itrace_synth_opts->thread_stack;
+  902         }
 
-This patch firstly validating the pointers before access them, so can
-fix potential NULL pointer dereference.
+'session->itrace_synth_opts' is impossible to be a NULL pointer in
+intel_bts_process_auxtrace_info(), thus this patch removes the NULL test
+for 'session->itrace_synth_opts'.
 
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
-Acked-by: Jiri Olsa <jolsa@kernel.org>
-Cc: Adrian Hunter <adrian.hunter@intel.com>
+Acked-by: Adrian Hunter <adrian.hunter@intel.com>
 Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
 Cc: Andi Kleen <ak@linux.intel.com>
+Cc: Jiri Olsa <jolsa@redhat.com>
 Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
 Cc: Namhyung Kim <namhyung@kernel.org>
 Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
 Cc: linux-arm-kernel@lists.infradead.org
-Link: http://lkml.kernel.org/r/20190708143937.7722-2-leo.yan@linaro.org
+Link: http://lkml.kernel.org/r/20190708143937.7722-3-leo.yan@linaro.org
 Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- tools/perf/ui/browsers/hists.c | 15 +++++++++++----
- 1 file changed, 11 insertions(+), 4 deletions(-)
+ tools/perf/util/intel-bts.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
 
-diff --git a/tools/perf/ui/browsers/hists.c b/tools/perf/ui/browsers/hists.c
-index 3421ecbdd3f0..c1dd9b54dc6e 100644
---- a/tools/perf/ui/browsers/hists.c
-+++ b/tools/perf/ui/browsers/hists.c
-@@ -638,7 +638,11 @@ int hist_browser__run(struct hist_browser *browser, const char *help,
- 		switch (key) {
- 		case K_TIMER: {
- 			u64 nr_entries;
--			hbt->timer(hbt->arg);
-+
-+			WARN_ON_ONCE(!hbt);
-+
-+			if (hbt)
-+				hbt->timer(hbt->arg);
+diff --git a/tools/perf/util/intel-bts.c b/tools/perf/util/intel-bts.c
+index e32dbffebb2f..625ad3639a7e 100644
+--- a/tools/perf/util/intel-bts.c
++++ b/tools/perf/util/intel-bts.c
+@@ -891,13 +891,12 @@ int intel_bts_process_auxtrace_info(union perf_event *event,
+ 	if (dump_trace)
+ 		return 0;
  
- 			if (hist_browser__has_filter(browser) ||
- 			    symbol_conf.report_hierarchy)
-@@ -2819,7 +2823,7 @@ static int perf_evsel__hists_browse(struct perf_evsel *evsel, int nr_events,
- {
- 	struct hists *hists = evsel__hists(evsel);
- 	struct hist_browser *browser = perf_evsel_browser__new(evsel, hbt, env, annotation_opts);
--	struct branch_info *bi;
-+	struct branch_info *bi = NULL;
- #define MAX_OPTIONS  16
- 	char *options[MAX_OPTIONS];
- 	struct popup_action actions[MAX_OPTIONS];
-@@ -3085,7 +3089,9 @@ static int perf_evsel__hists_browse(struct perf_evsel *evsel, int nr_events,
- 			goto skip_annotation;
+-	if (session->itrace_synth_opts && session->itrace_synth_opts->set) {
++	if (session->itrace_synth_opts->set) {
+ 		bts->synth_opts = *session->itrace_synth_opts;
+ 	} else {
+ 		itrace_synth_opts__set_default(&bts->synth_opts,
+ 				session->itrace_synth_opts->default_no_sample);
+-		if (session->itrace_synth_opts)
+-			bts->synth_opts.thread_stack =
++		bts->synth_opts.thread_stack =
+ 				session->itrace_synth_opts->thread_stack;
+ 	}
  
- 		if (sort__mode == SORT_MODE__BRANCH) {
--			bi = browser->he_selection->branch_info;
-+
-+			if (browser->he_selection)
-+				bi = browser->he_selection->branch_info;
- 
- 			if (bi == NULL)
- 				goto skip_annotation;
-@@ -3269,7 +3275,8 @@ static int perf_evsel_menu__run(struct perf_evsel_menu *menu,
- 
- 		switch (key) {
- 		case K_TIMER:
--			hbt->timer(hbt->arg);
-+			if (hbt)
-+				hbt->timer(hbt->arg);
- 
- 			if (!menu->lost_events_warned &&
- 			    menu->lost_events &&
 -- 
 2.20.1
 
