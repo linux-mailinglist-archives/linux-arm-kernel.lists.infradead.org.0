@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 181F9794DE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 21:37:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2957779578
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 21:43:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qznQTCbRENGbINLy1aUYNLJFrwXEryrgxQD6cBwpsV8=; b=goWy+D5j9T2xEr
-	EmyZOt12SH289mAOFzNoa23j/ex4CXrHEqK30+Js9rWpm3IW4Y+A43vtjFg9xSy9sj78vEg+Vid6g
-	pbwvAv3wOb3f+pSFH0dWw8lPCwvcNw0mFUR9R3wY1NNOSFrC0kz/VH6YTN0dNNXo3Ret5kIVgwNJo
-	GAuna1UvthlMiFEts/fZSN/jSucnSZVMRx3HPLBkd5jsge5N46wxImcotmK5IXa5jTX4n1vgQn4zf
-	TRzj3AdMXkyIPQPLnzG9qHFE0+K6KuFT9Sbp7rK30GLBZB7+gxClasXMx9KZA4ypsrUe7/gfwAEZw
-	Vj+V51QjjMR7gtBe/E0Q==;
+	List-Owner; bh=A0L5D+cwsCJZehJMVihnVsreIY0oQGeYtjReBQ2Z/kc=; b=kPqZMlC8X8fxC6
+	91a6yvCzzOsCoPCv/06a2hffUhCTnj75fr/susa94aPa0AKkQnABbDvvi+RXsDLV5LykzMn7gXIwF
+	jYiTjN30PbmyQDBxdMnLyrrntPXOLyGowAQWniW1rPPIBw6yh+DiRu1vADCmiNGLRZ6oL4Qv0QVTN
+	YwmbgPSo7/1a16xGRKMLteK7vkOgWk8s82T30PpwyL3P6S/15OPeQzktFMuG4KZ8eZuR95B+lVips
+	KkELBnWdfi69bKcrHSKYdtcQczUSITJAHD6LNw6TmiN+GWuShow5iHqJjMwi7hWMZHgeEISPgwbtt
+	9V7FEH5YFaSDFnn9UdOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsBSh-0003hY-9a; Mon, 29 Jul 2019 19:37:35 +0000
+	id 1hsBXv-0006b5-No; Mon, 29 Jul 2019 19:42:59 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsBSL-0003YD-7N
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 19:37:15 +0000
+ id 1hsBXQ-0006aP-77
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 19:42:29 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 78BB3206DD;
- Mon, 29 Jul 2019 19:37:12 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 56297205F4;
+ Mon, 29 Jul 2019 19:42:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564429032;
- bh=v5wYO4+pyrcne4osUqdo41whqiw3A49BYcy2pDhe+K0=;
+ s=default; t=1564429347;
+ bh=/gfFttHCT6rboXDwNjRUT/A6t0RlSyuDn4xdgAbhUcI=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=JMLGW7glYbG1HfE83c75sWNx3aMFT9GmITbQkYFyVszw4iKwBDIXk+6q/YySmtqb2
- xbNvUgH7pQZ2GPc5xbdEBSwSfi0o8Lp5o0qW8QG6V49XSjXr6GCfdkwE7M3D0dRwtZ
- P0B3sx7DnI1BU2C90YYpFVa33pXY9Sgsefem/nVY=
+ b=2IjNOujd32yHWkqViHhkHCJuqn1QEdQaFrdevGTxLSUcZGUzWa58iYawmb4XDtmqV
+ sXRlwL2e13tBEOB19sGPlN4bYT3/9ju7m+ppYL428WBpQHxQ3/t5bhrAz89jzZI+xq
+ 0H13tFchQBN/QUriUQI0YAQSLGROnwiK9si63vzQ=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 4.14 262/293] perf annotate: Fix dereferencing freed memory
- found by the smatch tool
-Date: Mon, 29 Jul 2019 21:22:33 +0200
-Message-Id: <20190729190844.469698513@linuxfoundation.org>
+Subject: [PATCH 4.19 068/113] perf stat: Fix use-after-freed pointer detected
+ by the smatch tool
+Date: Mon, 29 Jul 2019 21:22:35 +0200
+Message-Id: <20190729190711.748983025@linuxfoundation.org>
 X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20190729190820.321094988@linuxfoundation.org>
-References: <20190729190820.321094988@linuxfoundation.org>
+In-Reply-To: <20190729190655.455345569@linuxfoundation.org>
+References: <20190729190655.455345569@linuxfoundation.org>
 User-Agent: quilt/0.66
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_123713_305517_438FFF56 
-X-CRM114-Status: GOOD (  13.50  )
+X-CRM114-CacheID: sfid-20190729_124228_301591_E22095E6 
+X-CRM114-Status: GOOD (  13.06  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -98,47 +98,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-[ Upstream commit 600c787dbf6521d8d07ee717ab7606d5070103ea ]
+[ Upstream commit c74b05030edb3b52f4208d8415b8c933bc509a29 ]
 
-Based on the following report from Smatch, fix the potential
-dereferencing freed memory check.
+Based on the following report from Smatch, fix the use-after-freed
+pointer.
 
-  tools/perf/util/annotate.c:1125
-  disasm_line__parse() error: dereferencing freed memory 'namep'
+  tools/perf/builtin-stat.c:1353
+  add_default_attributes() warn: passing freed memory 'str'.
 
-  tools/perf/util/annotate.c
-  1100 static int disasm_line__parse(char *line, const char **namep, char **rawp)
-  1101 {
-  1102         char tmp, *name = ltrim(line);
-
-  [...]
-
-  1114         *namep = strdup(name);
-  1115
-  1116         if (*namep == NULL)
-  1117                 goto out_free_name;
-
-  [...]
-
-  1124 out_free_name:
-  1125         free((void *)namep);
-                            ^^^^^
-  1126         *namep = NULL;
-               ^^^^^^
-  1127         return -1;
-  1128 }
-
-If strdup() fails to allocate memory space for *namep, we don't need to
-free memory with pointer 'namep', which is resident in data structure
-disasm_line::ins::name; and *namep is NULL pointer for this failure, so
-it's pointless to assign NULL to *namep again.
-
-Committer note:
-
-Freeing namep, which is the address of the first entry of the 'struct
-ins' that is the first member of struct disasm_line would in fact free
-that disasm_line instance, if it was allocated via malloc/calloc, which,
-later, would a dereference of freed memory.
+The pointer 'str' has been freed but later it is still passed into the
+function parse_events_print_error().  This patch fixes this
+use-after-freed issue.
 
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
 Acked-by: Jiri Olsa <jolsa@kernel.org>
@@ -148,11 +118,12 @@ Cc: Alexey Budankov <alexey.budankov@linux.intel.com>
 Cc: Alexios Zavras <alexios.zavras@intel.com>
 Cc: Andi Kleen <ak@linux.intel.com>
 Cc: Changbin Du <changbin.du@intel.com>
-Cc: David S. Miller <davem@davemloft.net>
 Cc: Davidlohr Bueso <dave@stgolabs.net>
+Cc: David S. Miller <davem@davemloft.net>
 Cc: Eric Saint-Etienne <eric.saint.etienne@oracle.com>
 Cc: Jin Yao <yao.jin@linux.intel.com>
 Cc: Konstantin Khlebnikov <khlebnikov@yandex-team.ru>
+Cc: linux-arm-kernel@lists.infradead.org
 Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
 Cc: Namhyung Kim <namhyung@kernel.org>
 Cc: Peter Zijlstra <peterz@infradead.org>
@@ -161,37 +132,27 @@ Cc: Song Liu <songliubraving@fb.com>
 Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
 Cc: Thomas Gleixner <tglx@linutronix.de>
 Cc: Thomas Richter <tmricht@linux.ibm.com>
-Cc: linux-arm-kernel@lists.infradead.org
-Link: http://lkml.kernel.org/r/20190702103420.27540-5-leo.yan@linaro.org
+Link: http://lkml.kernel.org/r/20190702103420.27540-3-leo.yan@linaro.org
 Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- tools/perf/util/annotate.c | 6 ++----
- 1 file changed, 2 insertions(+), 4 deletions(-)
+ tools/perf/builtin-stat.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/tools/perf/util/annotate.c b/tools/perf/util/annotate.c
-index 398d4cc2f0e4..2a8d2a6723f6 100644
---- a/tools/perf/util/annotate.c
-+++ b/tools/perf/util/annotate.c
-@@ -868,16 +868,14 @@ static int disasm_line__parse(char *line, const char **namep, char **rawp)
- 	*namep = strdup(name);
- 
- 	if (*namep == NULL)
--		goto out_free_name;
-+		goto out;
- 
- 	(*rawp)[0] = tmp;
- 	*rawp = ltrim(*rawp);
- 
- 	return 0;
- 
--out_free_name:
--	free((void *)namep);
--	*namep = NULL;
-+out:
- 	return -1;
- }
- 
+diff --git a/tools/perf/builtin-stat.c b/tools/perf/builtin-stat.c
+index 40720150ccd8..789962565c9c 100644
+--- a/tools/perf/builtin-stat.c
++++ b/tools/perf/builtin-stat.c
+@@ -2497,8 +2497,8 @@ static int add_default_attributes(void)
+ 				fprintf(stderr,
+ 					"Cannot set up top down events %s: %d\n",
+ 					str, err);
+-				free(str);
+ 				parse_events_print_error(&errinfo, str);
++				free(str);
+ 				return -1;
+ 			}
+ 		} else {
 -- 
 2.20.1
 
