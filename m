@@ -2,76 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A50E78B9E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 14:19:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A0D7378BBA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 14:25:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fHy7t8+Hx2lNpSS/zDix+CC6fYP1jIzSbkJ5iOd1czI=; b=WButlC/tQGk4Tx
-	S3x1cIMP+7SPApWV4wFG1L2tLbCwq9h1Z9Zd315kHLRZAIsmf4rJfJMYNpUoZKGOK/Noczj8+0GiR
-	QPGbJdswUxZQS6sG35lF2z0UuRyncCopIV1OlkzchT8WgRk+iWZ7bXLsPLT/Tkz1mKc1Jy/ifgAMh
-	pSzvVQxkdXu5M4/8k3XX6fWKV0P08+PLW+AVcNOHK7wXvMx/3qAbXVs7Ct5XzDlpiG9qiuRnRjEwb
-	IesqJ9JNAiXC29UDFsJLz8RApQ9R2vOAn0wcg3Pgo869iMGwaSTpsPQgKyAT0Y/nEpqs/EZdX3AbV
-	GOXAUa4Y2ImAMvEjG4Mw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=jwLDZ8YD7TXZ1UxMMwm95nJfzBs6XS9Ur9mipxkIFVI=; b=FNP8qEM8vl6BBw
+	9C49etcRW0kz6alO0uWxpTJrPx8fEf2NAROMVQ1inb53sXEZF//z9HuHB79uVsJiqGw8ljmWbYgY4
+	YIXzAaezpSRrYQZn0No/VmHotDMPN8qTfCzzoUWiqVov7COhKO9AWNe6jqZkwLLuz03nAmPtJYLNd
+	Dg2P0tHnxMLJ0YZjvxJFkcA/0sRtrvjeO4TCavWwuNzpkWqiEKwdvzYm3ezZaQLI1eZ2h/HRhvWqY
+	GftlKAlortmVyneqpVAUmup8Z8wkIHZhKrbUR11N9hv7yPMaIYrIP9u94IQAwNbyYXMat+x1dWLHU
+	QwLSUlhFcEtNd0RbB2AQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hs4cR-0001dP-Q9; Mon, 29 Jul 2019 12:19:11 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1hs4iy-0005Qb-7o; Mon, 29 Jul 2019 12:25:56 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hs4cJ-0001cX-BZ
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 12:19:04 +0000
-Received: by mail-lj1-x242.google.com with SMTP id z28so4118395ljn.4
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 29 Jul 2019 05:18:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=OHoxMyQA6kSrFJxXpyiV+IieJpLzNWL4IkZqs98PDx8=;
- b=jbAZxACt64pCVZRPdYTO6bc2vXa4ld10XHt0YApN2vDvR47mq6DamPBCdKAnS3lRmt
- MenvKMYTWsX0THdu7OkNfQ8/WJaWWfthdJZzfGa2eIDlPy6r2cH/Zml1LAD5lC77hgyR
- wCQQmecaSB7huytlu7WMGDOgw/Uy7J6NykyxOZWuj1jJxaE+I3Ko+42QI/HAuH8wF5CC
- z4iip9y/ZoaOMn9LAwW8lMtz99gU9Ng4yTbf5l7vwFrQEo8vjHicLhsUMLnZwRVJW0bG
- /YFeLLaobZrs2dTg3ks6KLTDdou/P2GXzPSJYAOtpx5gaIXg6MUTr+aoWBtiozTQmdY2
- dn8g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=OHoxMyQA6kSrFJxXpyiV+IieJpLzNWL4IkZqs98PDx8=;
- b=VZcT6RyP5LLSNQUVc8s6Zq3CzCFg8Xf0O5hFrVjBQ91Oev1Xbjm4lTD64TsoBbvEsz
- xjCbNSM/LT0iqSjs6L0h1VN6UITVp3WyZI/9JcuQBf+eQpL0TDGk2+gKuPLKD077TDLR
- Xv3oinXYgLshGexEyKaFC0uOovq6I/HtdixFM3fz0nkP+BJCWKww3hFQgixmGNby+asd
- ZqSHFeF5roq/8oClFpVF8mC1anvpoiZt1vStqJAttYmp02cg5mHK/s0myEtuI8EmFTtX
- jYmM5VvrQDRIB/AlmmSO3ESTH1Osksq4lZ8aHp0cSIqpr2CUT/wSUc79rBABSL6KUi9j
- +jXA==
-X-Gm-Message-State: APjAAAX8qgt938jAkwbnK426Jj7JGXbCnaNwkKerZu1cAaaEX/pZRk2+
- hPBSSXCByCaGOP2M2XFMcDtGeMoCHR4UaK8otrQ=
-X-Google-Smtp-Source: APXvYqysQdZFO4P/tp354iNeuFQYqW32qWFHcnvkV9JqmCqp9aTaQNiKQTyV59gsaic8TYmRtI9rWh0QxXKZhEGC8gY=
-X-Received: by 2002:a2e:8650:: with SMTP id i16mr58240101ljj.178.1564402737462; 
- Mon, 29 Jul 2019 05:18:57 -0700 (PDT)
+ id 1hs4iq-0005PL-GI
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 12:25:50 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x6TCPeoP047169;
+ Mon, 29 Jul 2019 07:25:40 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1564403140;
+ bh=QONql/qooBcZcno2oWPNpb0xDksuazYqT9igEM/PyUM=;
+ h=From:To:CC:Subject:Date;
+ b=yEkpozwsyUme1bx5Lm9ChpOKaMf20NsOgwyL9ZM7YnfcxnfBUW67bUPsYeaQpFFxU
+ axrBFS+3u1YE2LVRDByTlzkpivF9FpfN7N/pqesJw+/Jfr9PR4jhQl2zDNDI9aBQyz
+ 8jrdZZpXkGqPG8WH7ENpyDQLRMCGH++mKzpAOkek=
+Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x6TCPeeo089945
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Mon, 29 Jul 2019 07:25:40 -0500
+Received: from DLEE108.ent.ti.com (157.170.170.38) by DLEE100.ent.ti.com
+ (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Mon, 29
+ Jul 2019 07:25:40 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE108.ent.ti.com
+ (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Mon, 29 Jul 2019 07:25:40 -0500
+Received: from uda0131933.india.ti.com (ileax41-snat.itg.ti.com
+ [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x6TCPbCC085709;
+ Mon, 29 Jul 2019 07:25:37 -0500
+From: Lokesh Vutla <lokeshvutla@ti.com>
+To: Nishanth Menon <nm@ti.com>, Tero Kristo <t-kristo@ti.com>, Santosh
+ Shilimkar <ssantosh@kernel.org>, Rob Herring <robh+dt@kernel.org>
+Subject: [PATCH v5 0/3] soc: ti: k3: Allow for exclusive and shared device
+ requests
+Date: Mon, 29 Jul 2019 17:54:50 +0530
+Message-ID: <20190729122453.32252-1-lokeshvutla@ti.com>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-References: <1564384997-16775-1-git-send-email-abel.vesa@nxp.com>
-In-Reply-To: <1564384997-16775-1-git-send-email-abel.vesa@nxp.com>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Mon, 29 Jul 2019 09:19:01 -0300
-Message-ID: <CAOMZO5C0WbaDzFcjeXeS1PivWUme=bzPur6Hj_xNz1oVzvpW2Q@mail.gmail.com>
-Subject: Re: [PATCH v2] clk: imx8mq: Mark AHB clock as critical
-To: Abel Vesa <abel.vesa@nxp.com>
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_051903_393959_4E1A7603 
-X-CRM114-Status: GOOD (  12.59  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190729_052548_652480_62720213 
+X-CRM114-Status: GOOD (  12.74  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -81,6 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,44 +90,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Anson Huang <anson.huang@nxp.com>, Stephen Boyd <sboyd@kernel.org>,
- Mike Turquette <mturquette@baylibre.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-clk <linux-clk@vger.kernel.org>, Sascha Hauer <kernel@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- Guido Gunther <agx@sigxcpu.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Lokesh Vutla <lokeshvutla@ti.com>,
+ Device Tree Mailing List <devicetree@vger.kernel.org>,
+ Sekhar Nori <nsekhar@ti.com>,
+ Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Abel,
+Sysfw provides an option for requesting exclusive access for a
+device using the flags MSG_FLAG_DEVICE_EXCLUSIVE. If this flag is
+not used, the device is meant to be shared across hosts. Once a device
+is requested from a host with this flag set, any request to this
+device from a different host will be nacked by sysfw.
 
-On Mon, Jul 29, 2019 at 4:23 AM Abel Vesa <abel.vesa@nxp.com> wrote:
->
-> Keep the AHB clock always on since there is no driver to control it and
-> all the other clocks that use it as parent rely on it being always enabled.
->
-> Signed-off-by: Abel Vesa <abel.vesa@nxp.com>
-> Tested-by: Daniel Baluta <daniel.baluta@nxp.com>
-> ---
->
-> Changes since v1:
->  * added comment in code why this clock is critical
->  * added T-b by Daniel
->
-> This needs to go in ASAP to fix the boot hang.
+Current tisci firmware and pm drivers always requests for device with
+exclusive permissions set. But this is not be true for certain devices
+that are expcted to be shared across different host contexts.
+So add support for getting the shared or exclusive permissions from DT
+and request firmware accordingly.
 
-Which boot hang exactly? Are you referring to the TMU clock hang?
+Changes since v4: https://patchwork.kernel.org/project/linux-arm-kernel/list/?series=148371
+- Split the driver and arch changes into a separate series.
+- Added Reviewed-by from Nishanth M
+- Rebased on top of v5.3-rc2
 
-On the TMU clock hang, the issue was that the qoriq_thermal needs to
-enable the TMU clock.
+Lokesh Vutla (3):
+  firmware: ti_sci: Allow for device shared and exclusive requests
+  dt-bindings: ti_sci_pm_domains: Add support for exclusive and shared
+    access
+  soc: ti: ti_sci_pm_domains: Add support for exclusive and shared
+    access
 
-Please always provide a detailed description in the commit log.
+ .../bindings/soc/ti/sci-pm-domain.txt         | 11 ++++-
+ MAINTAINERS                                   |  1 +
+ drivers/firmware/ti_sci.c                     | 45 ++++++++++++++++++-
+ drivers/soc/ti/ti_sci_pm_domains.c            | 23 +++++++++-
+ include/dt-bindings/soc/ti,sci_pm_domain.h    |  9 ++++
+ include/linux/soc/ti/ti_sci_protocol.h        |  3 ++
+ 6 files changed, 86 insertions(+), 6 deletions(-)
+ create mode 100644 include/dt-bindings/soc/ti,sci_pm_domain.h
 
-Also, if this fixes a hang it should contain a Fixes tag.
+-- 
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
