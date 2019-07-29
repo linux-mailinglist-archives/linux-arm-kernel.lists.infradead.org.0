@@ -2,88 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 21BC8790F5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 18:33:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED0FB79106
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 18:35:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ib9ZnihHhuNBdESolLBlxZRtQPsN6FgiOxzDCVcelKM=; b=Xs64t6LcSC2VHU
-	php2RTMR8T48e2ymufAuVahlsCDsRnMh9e6H2QF9TXMYEvJI8f6WcMyYUeMXJHqcBg2jDgM1v6+mD
-	//xmzzikY+N91T9BZAC+iiPqt2B3EYh/KEDCLuUdWWUDCohQXpEYld9U6D4r7VjfbayCMNaZGsVF2
-	cvjQ+GZ/ebo+ejT6NG441cXDowc+L3JE18aOUhNOAhl5BYwx5RCH6CjjwzOevXRf5x+zDpeW7bnYh
-	P+GCckBGRE/YqZZZJQsRdxNXV5sZDM7S4fDD9OikLXmtr/SBUUknEt1TEjXwN17rs5f6hVhx5OXLW
-	UXyvlBoIumoMACRcv43Q==;
+	List-Owner; bh=yILoqtcFpDZ4Zw0/qXN3dB+vsQlbvAI4+FEiqNv/ZpU=; b=CFxvn0l8vs2zvL
+	01SOiUR6LZp0Xv7z4y0DgvACr9jKp36wTpIIp3by2FzMPZnZywiR6jMlHhiRrQQov0qKMxyJrVtm1
+	lQvnThPV2r2u9LKI7qGR4o4omOZZWVH7f3HFOyrxE1cNGvJLJHT4Ea20Q+3KBuSYthbqlmaD1vpov
+	Qz/GzXaFB8XxNw/WUoVlAuxQ234cqAw9M06LrrZb4OFsoLKqrJKyyIN63ssxVotBff+GFY36vuQJy
+	FWhV+HjUto4e/dhbFlRviKze24nFsjd28oibf4mfRpPaQ9e7sE7pxbkk7azzTLb5Mue8PsEZQCldE
+	yP75m/do+1ErFyNMvSLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hs8ax-0004bh-RO; Mon, 29 Jul 2019 16:33:56 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1hs8c3-0005O8-5K; Mon, 29 Jul 2019 16:35:03 +0000
+Received: from mail-lj1-f195.google.com ([209.85.208.195])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hs8aZ-0004aw-RU
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 16:33:33 +0000
-Received: by mail-pl1-x643.google.com with SMTP id a93so27668562pla.7
+ id 1hs8bS-00056q-Kj
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 16:34:28 +0000
+Received: by mail-lj1-f195.google.com with SMTP id p17so59239914ljg.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 29 Jul 2019 09:33:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=OZSRVaoM+0+WmVEymEml5vQPpYtYXaF0mFy6wxL1q74=;
- b=mZGupuQMoQYHI+QnKYUZdMKrRhU3YvfrCNNs6q6RO4lI2b5TDHy+xIzq6HsrC0/IA+
- 0EXUwzeCErYJ4pWYl5ih/unhL3xIc4hwKGc2lCX1jP190DhVD0a0eX/06alHjUbtVRWk
- HkCm0cSpCmBNddCI6mRINbdIO4KoWEKeV+gi4=
+ Mon, 29 Jul 2019 09:34:26 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=OZSRVaoM+0+WmVEymEml5vQPpYtYXaF0mFy6wxL1q74=;
- b=kPX7e8pncyY4xy3l9ECMTPRghadfVTjMM37k9Y2NM4IvGn837uRxgMzb5Hz0tP8Ig0
- oXm5kl1q+89PoWQBHSgsDm/NBdRriCVErGU4FIMrSQIe3iIc/woRzrJ33fM75kefnd/V
- hWCubpkHkBxP3uCxM7u13XT7ST86HW6Sv2WicZ73x651xOEX8ydgYwQZhh3CapgaRR8V
- Bhd40uHo6FbIiREoV7brmwVgBcedwRzlYKPKDrhm0C/FBo95sXFufMr7RHC35ONwzrxW
- j3/mgVOvLfBZs/ksgtNDmMIEfrX9Go55UzC3kb4n/YRUGW7WG7juPWm18TgFp1ZyeVEC
- CcxQ==
-X-Gm-Message-State: APjAAAWUWLxicBIrDJ4y4mgbK9EEBDDsxeGDieXpn2TrdKibCo5CZH/M
- 6aBv2BxDA1ZFEWoXIzquA5rXOA==
-X-Google-Smtp-Source: APXvYqzFZvyeg4iqQvDoi5IW5U+rEL+TBAqu8DV6miguhTKiPv/OQfHqkaRDVvNhv1RWGgk5GEEHnw==
-X-Received: by 2002:a17:902:2889:: with SMTP id
- f9mr105224391plb.230.1564418010852; 
- Mon, 29 Jul 2019 09:33:30 -0700 (PDT)
-Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id cx22sm51949300pjb.25.2019.07.29.09.33.29
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 29 Jul 2019 09:33:30 -0700 (PDT)
-Date: Mon, 29 Jul 2019 09:33:29 -0700
-From: Kees Cook <keescook@chromium.org>
-To: "Gustavo A. R. Silva" <gustavo@embeddedor.com>
-Subject: Re: [PATCH] ARM: tegra: Mark expected switch fall-through
-Message-ID: <201907290933.7D54BDAB@keescook>
-References: <20190728231526.GA22066@embeddedor>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=UG3D/SqCJj11xnk2S6pE/fAYr6pWtAvwmUTxug894eQ=;
+ b=YQHuXMLlkpqOHvD56mFHcTzADdE7trXIDqap/otWjhmhV1ESpIX6XWjVWO/gv4jonW
+ 0bol5TKNYUv0R4olqBeXHM+CIx7qxuZWVN4yeIDOqNIF/tlMOnfccOZbZXR0rZ1CGEc1
+ gO8qkRPVYyC87EHwf2JHbbcSqZdFwCOCbZ52IP1JdBZYWmV6WWcdbMuQGTGOhjwbVOpw
+ rud8Xv1zpkUPMSxP95Ds1l50lQyRX7ydOnUrDfWP9OKLT5yCIhl3SRU6oqcaow8sEQKZ
+ 5STBSRcZFCvJb8xMBFUa8C3f+1dTRDVuxL7olY+Y9VOk36ZgRGsCKKMcM14iNjuu5Rmm
+ Pt7w==
+X-Gm-Message-State: APjAAAWJUncdkXJJS1s9H8FoJ+EPrYI0o9o0KIjTa+fXNkWGlR5OWqfU
+ awdbaPCZFqCWGKQPkOZsg8Q4R+KQTxzvzDcaMFjtuQ==
+X-Google-Smtp-Source: APXvYqwaWzM1hn/JYuWG8xIWCCoQc0juPndzV2AWEI2sZ0zbeHQbhgIVf3GM5tGdjfmKdC05eoQItiSu7YXZ4SX7s6Q=
+X-Received: by 2002:a2e:2b01:: with SMTP id q1mr57284489lje.27.1564418064609; 
+ Mon, 29 Jul 2019 09:34:24 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190728231526.GA22066@embeddedor>
+References: <CAGnkfhyT=2kPsiUy-V=aCA_s-C4BXgD++hAZ9ii1h0p94mMVQA@mail.gmail.com>
+ <20190729125421.32482-1-vincenzo.frascino@arm.com>
+In-Reply-To: <20190729125421.32482-1-vincenzo.frascino@arm.com>
+From: Matteo Croce <mcroce@redhat.com>
+Date: Mon, 29 Jul 2019 18:33:48 +0200
+Message-ID: <CAGnkfhw+=+50P=uaWsjZrtt_BuwJjXKZ_DSTjuJ8mzW4_kbu-w@mail.gmail.com>
+Subject: Re: [PATCH] arm64: vdso: Fix Makefile regression
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_093331_892765_ACA43DC4 
-X-CRM114-Status: GOOD (  17.77  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190729_093426_682099_33DB372F 
+X-CRM114-Status: GOOD (  16.17  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
+ no trust [209.85.208.195 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.195 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,58 +76,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephen Rothwell <sfr@canb.auug.org.au>, linux-kernel@vger.kernel.org,
- Russell King <linux@armlinux.org.uk>,
- Thierry Reding <thierry.reding@gmail.com>, linux-tegra@vger.kernel.org,
- Jonathan Hunter <jonathanh@nvidia.com>, linux-arm-kernel@lists.infradead.org
+Cc: linux-arch@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>, pcc@google.com,
+ Catalin Marinas <catalin.marinas@arm.com>, 0x7f454c46@gmail.com,
+ LKML <linux-kernel@vger.kernel.org>, salyzyn@android.com,
+ andre.przywara@arm.com, Andy Lutomirski <luto@kernel.org>,
+ linux@rasmusvillemoes.dk, Thomas Gleixner <tglx@linutronix.de>,
+ sthotton@marvell.com, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Jul 28, 2019 at 06:15:26PM -0500, Gustavo A. R. Silva wrote:
-> Mark switch cases where we are expecting to fall through.
-> 
-> This patch fixes the following warning:
-> 
-> arch/arm/mach-tegra/reset.c: In function 'tegra_cpu_reset_handler_enable':
-> arch/arm/mach-tegra/reset.c:72:3: warning: this statement may fall through [-Wimplicit-fallthrough=]
->    tegra_cpu_reset_handler_set(reset_address);
->    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-> arch/arm/mach-tegra/reset.c:74:2: note: here
->   case 0:
->   ^~~~
-> 
-> Reported-by: Stephen Rothwell <sfr@canb.auug.org.au>
-> Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>
-
-Reviewed-by: Kees Cook <keescook@chromium.org>
-
--Kees
-
+On Mon, Jul 29, 2019 at 2:54 PM Vincenzo Frascino
+<vincenzo.frascino@arm.com> wrote:
+>
+> Using an old .config in combination with "make oldconfig" can cause
+> an incorrect detection of the compat compiler:
+>
+> $ grep CROSS_COMPILE_COMPAT .config
+> CONFIG_CROSS_COMPILE_COMPAT_VDSO=""
+>
+> $ make oldconfig && make
+> arch/arm64/Makefile:58: gcc not found, check CROSS_COMPILE_COMPAT.
+> Stop.
+>
+> Accordingly to the section 7.2 of the GNU Make manual "Syntax of
+> Conditionals", "When the value results from complex expansions of
+> variables and functions, expansions you would consider empty may
+> actually contain whitespace characters and thus are not seen as
+> empty. However, you can use the strip function to avoid interpreting
+> whitespace as a non-empty value."
+>
+> Fix the issue adding strip to the CROSS_COMPILE_COMPAT string
+> evaluation.
+>
+> Cc: Will Deacon <will@kernel.org>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Reported-by: Matteo Croce <mcroce@redhat.com>
+> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
 > ---
->  arch/arm/mach-tegra/reset.c | 2 +-
+>  arch/arm64/Makefile | 2 +-
 >  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm/mach-tegra/reset.c b/arch/arm/mach-tegra/reset.c
-> index 5a67a71f80cc..76a65df42d10 100644
-> --- a/arch/arm/mach-tegra/reset.c
-> +++ b/arch/arm/mach-tegra/reset.c
-> @@ -70,7 +70,7 @@ static void __init tegra_cpu_reset_handler_enable(void)
->  	switch (err) {
->  	case -ENOSYS:
->  		tegra_cpu_reset_handler_set(reset_address);
-> -		/* pass-through */
-> +		/* fall through */
->  	case 0:
->  		is_enabled = true;
->  		break;
-> -- 
+>
+> diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+> index bb1f1dbb34e8..61de992bbea3 100644
+> --- a/arch/arm64/Makefile
+> +++ b/arch/arm64/Makefile
+> @@ -52,7 +52,7 @@ ifeq ($(CONFIG_GENERIC_COMPAT_VDSO), y)
+>
+>    ifeq ($(CONFIG_CC_IS_CLANG), y)
+>      $(warning CROSS_COMPILE_COMPAT is clang, the compat vDSO will not be built)
+> -  else ifeq ($(CROSS_COMPILE_COMPAT),)
+> +  else ifeq ($(strip $(CROSS_COMPILE_COMPAT)),)
+>      $(warning CROSS_COMPILE_COMPAT not defined or empty, the compat vDSO will not be built)
+>    else ifeq ($(shell which $(CROSS_COMPILE_COMPAT)gcc 2> /dev/null),)
+>      $(error $(CROSS_COMPILE_COMPAT)gcc not found, check CROSS_COMPILE_COMPAT)
+> --
 > 2.22.0
-> 
+>
+
+Tested-by: Matteo Croce <mcroce@redhat.com>
 
 -- 
-Kees Cook
+Matteo Croce
+per aspera ad upstream
 
 _______________________________________________
 linux-arm-kernel mailing list
