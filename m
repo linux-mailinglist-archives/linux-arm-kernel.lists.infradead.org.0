@@ -2,63 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB04F78B6F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 14:13:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 01BA978B99
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 14:17:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ynlqoNpzZfaH5Je5o9FVA0Y7JsjJx+JdtMiQ7R+nDiw=; b=dxWjS5pTSIphV5
-	mvybueN3uHSa+UAtV0GS1CXyYm5itbNAsyvVPOpGwYYsF50d4++m/6lzcPzU3kvx7HJ7IClwtck4s
-	h32eijrvcCS1Xl/8pOH+aL942AgqJECn8FUsrL3ZnBz9uEEu/Tc8AMIAv+iAasHgknqZYWKdw4rN0
-	QzsulZtHT6/7KejSRnifQ8ZRzGsRzL6y8U4V6onAOAv2z3R1exH2dBM0Cv4Gy5v+NuJ4rtU5INbpn
-	AqCXmbhbzc/hlE5mdttm9f0LIg/AXk+2HIB/a6Ri/VxPu/OFcCarf0fjOIS1AuPHNXF7Zr0wRGTrX
-	hdNvyv0YAb4fsET1I8kg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cCIK/mXah5kiiQD9RugOgQ30x/rBNYgzsp4NnPbdrm0=; b=TWm/kH6CnUhLpr
+	ChWhTte0oVnsBm3oYSqCIZ9uUZQt9c1bB+p7/0QZiuXi/lS5BlJRQFApPRlRU7w6Syszw3K0d2cS4
+	BVXcyV69Tg2dol+1qU/Y1r67yItaUf+qNjOlXyisKZJMVrdTsP71u9Gw8aMiLFemZd7abvhYzb0at
+	x2lnXkn2JXNJpPqY0CsaV26mkKBIrdcAQvLmdhlZW6mSFGm4faVSbmH8HWt/2iwHioL4WtxN9GCV4
+	wnHA88evq3A3vZ5eDvTPWjgvU93aDhJJnB3qX41ke16XkXa0+uFAv9I38PmIWU04p0oWNm7GAEijv
+	Z8zVPyf3OjrO+vIkcFkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hs4Wk-000881-Ic; Mon, 29 Jul 2019 12:13:18 +0000
-Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hs4Wd-000864-5N
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 12:13:13 +0000
-Received: from LHREML711-CAH.china.huawei.com (unknown [172.18.7.108])
- by Forcepoint Email with ESMTP id 6CF1177BEB65B21DC160;
- Mon, 29 Jul 2019 13:12:58 +0100 (IST)
-Received: from LHREML524-MBB.china.huawei.com ([169.254.3.194]) by
- LHREML711-CAH.china.huawei.com ([10.201.108.34]) with mapi id 14.03.0415.000; 
- Mon, 29 Jul 2019 13:12:48 +0100
-From: Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>
-To: Christoph Hellwig <hch@lst.de>, Robin Murphy <robin.murphy@arm.com>
-Subject: RE: [PATCH 07/24] iommu/dma: Move domain lookup into
- __iommu_dma_{map,	unmap}
-Thread-Topic: [PATCH 07/24] iommu/dma: Move domain lookup into
- __iommu_dma_{map,	unmap}
-Thread-Index: AQHVDt4W3gOYMtyd7EGom44w8Atw56bh634g
-Date: Mon, 29 Jul 2019 12:12:48 +0000
-Message-ID: <5FC3163CFD30C246ABAA99954A238FA83F328FAB@lhreml524-mbb.china.huawei.com>
-References: <20190520072948.11412-1-hch@lst.de>
- <20190520072948.11412-8-hch@lst.de>
-In-Reply-To: <20190520072948.11412-8-hch@lst.de>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [10.202.227.237]
+	id 1hs4bC-0001MU-Pq; Mon, 29 Jul 2019 12:17:54 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hs4b6-0001MA-9p
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 12:17:49 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F232528;
+ Mon, 29 Jul 2019 05:17:45 -0700 (PDT)
+Received: from [10.1.196.133] (e112269-lin.cambridge.arm.com [10.1.196.133])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4EFF93F575;
+ Mon, 29 Jul 2019 05:17:43 -0700 (PDT)
+Subject: Re: [PATCH v9 11/21] mm: pagewalk: Add p4d_entry() and pgd_entry()
+To: Anshuman Khandual <anshuman.khandual@arm.com>, linux-mm@kvack.org,
+ =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>
+References: <20190722154210.42799-1-steven.price@arm.com>
+ <20190722154210.42799-12-steven.price@arm.com>
+ <b61435a3-0da0-de57-0993-b1fffeca3ca9@arm.com>
+From: Steven Price <steven.price@arm.com>
+Message-ID: <63a86424-9a8e-4528-5880-138f0009e462@arm.com>
+Date: Mon, 29 Jul 2019 13:17:42 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-CFilter-Loop: Reflected
+In-Reply-To: <b61435a3-0da0-de57-0993-b1fffeca3ca9@arm.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_051311_501734_1413AD5F 
-X-CRM114-Status: GOOD (  22.46  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190729_051748_433991_62488501 
+X-CRM114-Status: GOOD (  22.22  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.176.76.210 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -71,203 +64,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tom Murphy <tmurphy@arista.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Linuxarm <linuxarm@huawei.com>,
- "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
- "Wangzhou \(B\)" <wangzhou1@hisilicon.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <Mark.Rutland@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>, Arnd Bergmann <arnd@arndb.de>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
+ linux-kernel@vger.kernel.org,
+ =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ Andy Lutomirski <luto@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ James Morse <james.morse@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Will Deacon <will@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
+ linux-arm-kernel@lists.infradead.org, "Liang, Kan" <kan.liang@linux.intel.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Robin,
-
-> -----Original Message-----
-> From: iommu-bounces@lists.linux-foundation.org
-> [mailto:iommu-bounces@lists.linux-foundation.org] On Behalf Of Christoph
-> Hellwig
-> Sent: 20 May 2019 08:30
-> To: Robin Murphy <robin.murphy@arm.com>
-> Cc: Tom Murphy <tmurphy@arista.com>; Catalin Marinas
-> <catalin.marinas@arm.com>; Will Deacon <will.deacon@arm.com>;
-> linux-kernel@vger.kernel.org; iommu@lists.linux-foundation.org;
-> linux-arm-kernel@lists.infradead.org
-> Subject: [PATCH 07/24] iommu/dma: Move domain lookup into
-> __iommu_dma_{map, unmap}
-> 
-> From: Robin Murphy <robin.murphy@arm.com>
-> 
-> Most of the callers don't care, and the couple that do already have the
-> domain to hand for other reasons are in slow paths where the (trivial)
-> overhead of a repeated lookup will be utterly immaterial.
-
-On a Hisilicon ARM64 platform with 5.3-rc1, a F_TRANSALTION error from
-smmuv3 is reported when an attempt is made to assign a ixgbe vf dev to a
-Guest. 
-
-[  196.747107] arm-smmu-v3 arm-smmu-v3.0.auto: event 0x10 received:
-[  196.747109] arm-smmu-v3 arm-smmu-v3.0.auto: 0x00000180 00000010
-[  196.747110] arm-smmu-v3 arm-smmu-v3.0.auto: 0x0000020100000000
-[  196.747111] arm-smmu-v3 arm-smmu-v3.0.auto: 0x00000000ffffe040
-[  196.747113] arm-smmu-v3 arm-smmu-v3.0.auto: 0x00000000ffffe000
-
-Git bisect points to this patch.
-
-Please see below.
-
-> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
-> [hch: dropped the hunk touching iommu_dma_get_msi_page to avoid a
->  conflict with another series]
-> Signed-off-by: Christoph Hellwig <hch@lst.de>
-> ---
->  drivers/iommu/dma-iommu.c | 29 ++++++++++++++---------------
->  1 file changed, 14 insertions(+), 15 deletions(-)
-> 
-> diff --git a/drivers/iommu/dma-iommu.c b/drivers/iommu/dma-iommu.c
-> index c406abe3be01..6ece8f477fc8 100644
-> --- a/drivers/iommu/dma-iommu.c
-> +++ b/drivers/iommu/dma-iommu.c
-> @@ -448,9 +448,10 @@ static void iommu_dma_free_iova(struct
-> iommu_dma_cookie *cookie,
->  				size >> iova_shift(iovad));
->  }
-> 
-> -static void __iommu_dma_unmap(struct iommu_domain *domain,
-> dma_addr_t dma_addr,
-> +static void __iommu_dma_unmap(struct device *dev, dma_addr_t dma_addr,
->  		size_t size)
->  {
-> +	struct iommu_domain *domain = iommu_get_dma_domain(dev);
->  	struct iommu_dma_cookie *cookie = domain->iova_cookie;
->  	struct iova_domain *iovad = &cookie->iovad;
->  	size_t iova_off = iova_offset(iovad, dma_addr);
-> @@ -465,8 +466,9 @@ static void __iommu_dma_unmap(struct
-> iommu_domain *domain, dma_addr_t dma_addr,
->  }
-> 
->  static dma_addr_t __iommu_dma_map(struct device *dev, phys_addr_t phys,
-> -		size_t size, int prot, struct iommu_domain *domain)
-> +		size_t size, int prot)
->  {
-> +	struct iommu_domain *domain = iommu_get_dma_domain(dev);
->  	struct iommu_dma_cookie *cookie = domain->iova_cookie;
->  	size_t iova_off = 0;
->  	dma_addr_t iova;
-> @@ -565,7 +567,7 @@ static struct page
-> **__iommu_dma_alloc_pages(struct device *dev,
->  static void __iommu_dma_free(struct device *dev, struct page **pages,
->  		size_t size, dma_addr_t *handle)
->  {
-> -	__iommu_dma_unmap(iommu_get_dma_domain(dev), *handle, size);
-> +	__iommu_dma_unmap(dev, *handle, size);
->  	__iommu_dma_free_pages(pages, PAGE_ALIGN(size) >> PAGE_SHIFT);
->  	*handle = DMA_MAPPING_ERROR;
->  }
-> @@ -718,14 +720,13 @@ static void iommu_dma_sync_sg_for_device(struct
-> device *dev,
->  static dma_addr_t __iommu_dma_map_page(struct device *dev, struct page
-> *page,
->  		unsigned long offset, size_t size, int prot)
->  {
-> -	return __iommu_dma_map(dev, page_to_phys(page) + offset, size, prot,
-> -			iommu_get_dma_domain(dev));
-> +	return __iommu_dma_map(dev, page_to_phys(page) + offset, size, prot);
->  }
-> 
->  static void __iommu_dma_unmap_page(struct device *dev, dma_addr_t
-> handle,
->  		size_t size, enum dma_data_direction dir, unsigned long attrs)
->  {
-> -	__iommu_dma_unmap(iommu_get_dma_domain(dev), handle, size);
-> +	__iommu_dma_unmap(dev, handle, size);
->  }
-> 
->  static dma_addr_t iommu_dma_map_page(struct device *dev, struct page
-> *page,
-> @@ -734,11 +735,10 @@ static dma_addr_t iommu_dma_map_page(struct
-> device *dev, struct page *page,
->  {
->  	phys_addr_t phys = page_to_phys(page) + offset;
->  	bool coherent = dev_is_dma_coherent(dev);
-> +	int prot = dma_info_to_prot(dir, coherent, attrs);
->  	dma_addr_t dma_handle;
-> 
-> -	dma_handle =__iommu_dma_map(dev, phys, size,
-> -			dma_info_to_prot(dir, coherent, attrs),
-> -			iommu_get_dma_domain(dev));
-> +	dma_handle =__iommu_dma_map(dev, phys, size, prot);
->  	if (!coherent && !(attrs & DMA_ATTR_SKIP_CPU_SYNC) &&
->  	    dma_handle != DMA_MAPPING_ERROR)
->  		arch_sync_dma_for_device(dev, phys, size, dir);
-> @@ -750,7 +750,7 @@ static void iommu_dma_unmap_page(struct device
-> *dev, dma_addr_t dma_handle,
->  {
->  	if (!(attrs & DMA_ATTR_SKIP_CPU_SYNC))
->  		iommu_dma_sync_single_for_cpu(dev, dma_handle, size, dir);
-> -	__iommu_dma_unmap(iommu_get_dma_domain(dev), dma_handle,
-> size);
-> +	__iommu_dma_unmap(dev, dma_handle, size);
->  }
-> 
->  /*
-> @@ -931,21 +931,20 @@ static void iommu_dma_unmap_sg(struct device
-> *dev, struct scatterlist *sg,
->  		sg = tmp;
->  	}
->  	end = sg_dma_address(sg) + sg_dma_len(sg);
-> -	__iommu_dma_unmap(iommu_get_dma_domain(dev), start, end - start);
-> +	__iommu_dma_unmap(dev, start, end - start);
->  }
-> 
->  static dma_addr_t iommu_dma_map_resource(struct device *dev,
-> phys_addr_t phys,
->  		size_t size, enum dma_data_direction dir, unsigned long attrs)
->  {
->  	return __iommu_dma_map(dev, phys, size,
-> -			dma_info_to_prot(dir, false, attrs) | IOMMU_MMIO,
-> -			iommu_get_dma_domain(dev));
-> +			dma_info_to_prot(dir, false, attrs) | IOMMU_MMIO);
->  }
-> 
->  static void iommu_dma_unmap_resource(struct device *dev, dma_addr_t
-> handle,
->  		size_t size, enum dma_data_direction dir, unsigned long attrs)
->  {
-> -	__iommu_dma_unmap(iommu_get_dma_domain(dev), handle, size);
-> +	__iommu_dma_unmap(dev, handle, size);
->  }
-> 
->  static void *iommu_dma_alloc(struct device *dev, size_t size,
-> @@ -1222,7 +1221,7 @@ static struct iommu_dma_msi_page
-> *iommu_dma_get_msi_page(struct device *dev,
->  	if (!msi_page)
->  		return NULL;
-> 
-> -	iova = __iommu_dma_map(dev, msi_addr, size, prot, domain);
-> +	iova = __iommu_dma_map(dev, msi_addr, size, prot);
-
-I think the domain here is retrieved using iommu_get_domain_for_dev()
-which may not be the default domain returned by iommu_get_dma_domain().
-
-Please check and let me know.
-
-Thanks,
-Shameer
-
->  	if (iova == DMA_MAPPING_ERROR)
->  		goto out_free_page;
-> --
-> 2.20.1
-> 
-> _______________________________________________
-> iommu mailing list
-> iommu@lists.linux-foundation.org
-> https://lists.linuxfoundation.org/mailman/listinfo/iommu
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjgvMDcvMjAxOSAxMzozMywgQW5zaHVtYW4gS2hhbmR1YWwgd3JvdGU6Cj4gCj4gCj4gT24g
+MDcvMjIvMjAxOSAwOToxMiBQTSwgU3RldmVuIFByaWNlIHdyb3RlOgo+PiBwZ2RfZW50cnkoKSBh
+bmQgcHVkX2VudHJ5KCkgd2VyZSByZW1vdmVkIGJ5IGNvbW1pdCAwYjFmYmZlNTAwMDZjNDEwCj4+
+ICgibW0vcGFnZXdhbGs6IHJlbW92ZSBwZ2RfZW50cnkoKSBhbmQgcHVkX2VudHJ5KCkiKSBiZWNh
+dXNlIHRoZXJlIHdlcmUKPj4gbm8gdXNlcnMuIFdlJ3JlIGFib3V0IHRvIGFkZCB1c2VycyBzbyBy
+ZWludHJvZHVjZSB0aGVtLCBhbG9uZyB3aXRoCj4+IHA0ZF9lbnRyeSgpIGFzIHdlIG5vdyBoYXZl
+IDUgbGV2ZWxzIG9mIHRhYmxlcy4KPj4KPj4gTm90ZSB0aGF0IGNvbW1pdCBhMDBjYzdkOWRkOTNk
+NjZhICgibW0sIHg4NjogYWRkIHN1cHBvcnQgZm9yCj4+IFBVRC1zaXplZCB0cmFuc3BhcmVudCBo
+dWdlcGFnZXMiKSBhbHJlYWR5IHJlLWFkZGVkIHB1ZF9lbnRyeSgpIGJ1dCB3aXRoCj4+IGRpZmZl
+cmVudCBzZW1hbnRpY3MgdG8gdGhlIG90aGVyIGNhbGxiYWNrcy4gU2luY2UgdGhlcmUgaGF2ZSBu
+ZXZlcgo+PiBiZWVuIHVwc3RyZWFtIHVzZXJzIG9mIHRoaXMsIHJldmVydCB0aGUgc2VtYW50aWNz
+IGJhY2sgdG8gbWF0Y2ggdGhlCj4+IG90aGVyIGNhbGxiYWNrcy4gVGhpcyBtZWFucyBwdWRfZW50
+cnkoKSBpcyBjYWxsZWQgZm9yIGFsbCBlbnRyaWVzLCBub3QKPj4ganVzdCB0cmFuc3BhcmVudCBo
+dWdlIHBhZ2VzLgo+Pgo+PiBTaWduZWQtb2ZmLWJ5OiBTdGV2ZW4gUHJpY2UgPHN0ZXZlbi5wcmlj
+ZUBhcm0uY29tPgo+PiAtLS0KPj4gIGluY2x1ZGUvbGludXgvbW0uaCB8IDE1ICsrKysrKysrKy0t
+LS0tLQo+PiAgbW0vcGFnZXdhbGsuYyAgICAgIHwgMjcgKysrKysrKysrKysrKysrKy0tLS0tLS0t
+LS0tCj4+ICAyIGZpbGVzIGNoYW5nZWQsIDI1IGluc2VydGlvbnMoKyksIDE3IGRlbGV0aW9ucygt
+KQo+Pgo+PiBkaWZmIC0tZ2l0IGEvaW5jbHVkZS9saW51eC9tbS5oIGIvaW5jbHVkZS9saW51eC9t
+bS5oCj4+IGluZGV4IDAzMzRjYTk3YzU4NC4uYjIyNzk5MTI5MTI4IDEwMDY0NAo+PiAtLS0gYS9p
+bmNsdWRlL2xpbnV4L21tLmgKPj4gKysrIGIvaW5jbHVkZS9saW51eC9tbS5oCj4+IEBAIC0xNDMy
+LDE1ICsxNDMyLDE0IEBAIHZvaWQgdW5tYXBfdm1hcyhzdHJ1Y3QgbW11X2dhdGhlciAqdGxiLCBz
+dHJ1Y3Qgdm1fYXJlYV9zdHJ1Y3QgKnN0YXJ0X3ZtYSwKPj4gIAo+PiAgLyoqCj4+ICAgKiBtbV93
+YWxrIC0gY2FsbGJhY2tzIGZvciB3YWxrX3BhZ2VfcmFuZ2UKPj4gLSAqIEBwdWRfZW50cnk6IGlm
+IHNldCwgY2FsbGVkIGZvciBlYWNoIG5vbi1lbXB0eSBQVUQgKDJuZC1sZXZlbCkgZW50cnkKPj4g
+LSAqCSAgICAgICB0aGlzIGhhbmRsZXIgc2hvdWxkIG9ubHkgaGFuZGxlIHB1ZF90cmFuc19odWdl
+KCkgcHVkcy4KPj4gLSAqCSAgICAgICB0aGUgcG1kX2VudHJ5IG9yIHB0ZV9lbnRyeSBjYWxsYmFj
+a3Mgd2lsbCBiZSB1c2VkIGZvcgo+PiAtICoJICAgICAgIHJlZ3VsYXIgUFVEcy4KPj4gLSAqIEBw
+bWRfZW50cnk6IGlmIHNldCwgY2FsbGVkIGZvciBlYWNoIG5vbi1lbXB0eSBQTUQgKDNyZC1sZXZl
+bCkgZW50cnkKPj4gKyAqIEBwZ2RfZW50cnk6IGlmIHNldCwgY2FsbGVkIGZvciBlYWNoIG5vbi1l
+bXB0eSBQR0QgKHRvcC1sZXZlbCkgZW50cnkKPj4gKyAqIEBwNGRfZW50cnk6IGlmIHNldCwgY2Fs
+bGVkIGZvciBlYWNoIG5vbi1lbXB0eSBQNEQgZW50cnkKPj4gKyAqIEBwdWRfZW50cnk6IGlmIHNl
+dCwgY2FsbGVkIGZvciBlYWNoIG5vbi1lbXB0eSBQVUQgZW50cnkKPj4gKyAqIEBwbWRfZW50cnk6
+IGlmIHNldCwgY2FsbGVkIGZvciBlYWNoIG5vbi1lbXB0eSBQTUQgZW50cnkKPj4gICAqCSAgICAg
+ICB0aGlzIGhhbmRsZXIgaXMgcmVxdWlyZWQgdG8gYmUgYWJsZSB0byBoYW5kbGUKPj4gICAqCSAg
+ICAgICBwbWRfdHJhbnNfaHVnZSgpIHBtZHMuICBUaGV5IG1heSBzaW1wbHkgY2hvb3NlIHRvCj4+
+ICAgKgkgICAgICAgc3BsaXRfaHVnZV9wYWdlKCkgaW5zdGVhZCBvZiBoYW5kbGluZyBpdCBleHBs
+aWNpdGx5Lgo+PiAtICogQHB0ZV9lbnRyeTogaWYgc2V0LCBjYWxsZWQgZm9yIGVhY2ggbm9uLWVt
+cHR5IFBURSAoNHRoLWxldmVsKSBlbnRyeQo+PiArICogQHB0ZV9lbnRyeTogaWYgc2V0LCBjYWxs
+ZWQgZm9yIGVhY2ggbm9uLWVtcHR5IFBURSAobG93ZXN0LWxldmVsKSBlbnRyeQo+PiAgICogQHB0
+ZV9ob2xlOiBpZiBzZXQsIGNhbGxlZCBmb3IgZWFjaCBob2xlIGF0IGFsbCBsZXZlbHMKPj4gICAq
+IEBodWdldGxiX2VudHJ5OiBpZiBzZXQsIGNhbGxlZCBmb3IgZWFjaCBodWdldGxiIGVudHJ5Cj4+
+ICAgKiBAdGVzdF93YWxrOiBjYWxsZXIgc3BlY2lmaWMgY2FsbGJhY2sgZnVuY3Rpb24gdG8gZGV0
+ZXJtaW5lIHdoZXRoZXIKPj4gQEAgLTE0NTUsNiArMTQ1NCwxMCBAQCB2b2lkIHVubWFwX3ZtYXMo
+c3RydWN0IG1tdV9nYXRoZXIgKnRsYiwgc3RydWN0IHZtX2FyZWFfc3RydWN0ICpzdGFydF92bWEs
+Cj4+ICAgKiAoc2VlIHRoZSBjb21tZW50IG9uIHdhbGtfcGFnZV9yYW5nZSgpIGZvciBtb3JlIGRl
+dGFpbHMpCj4+ICAgKi8KPj4gIHN0cnVjdCBtbV93YWxrIHsKPj4gKwlpbnQgKCpwZ2RfZW50cnkp
+KHBnZF90ICpwZ2QsIHVuc2lnbmVkIGxvbmcgYWRkciwKPj4gKwkJCSB1bnNpZ25lZCBsb25nIG5l
+eHQsIHN0cnVjdCBtbV93YWxrICp3YWxrKTsKPj4gKwlpbnQgKCpwNGRfZW50cnkpKHA0ZF90ICpw
+NGQsIHVuc2lnbmVkIGxvbmcgYWRkciwKPj4gKwkJCSB1bnNpZ25lZCBsb25nIG5leHQsIHN0cnVj
+dCBtbV93YWxrICp3YWxrKTsKPj4gIAlpbnQgKCpwdWRfZW50cnkpKHB1ZF90ICpwdWQsIHVuc2ln
+bmVkIGxvbmcgYWRkciwKPj4gIAkJCSB1bnNpZ25lZCBsb25nIG5leHQsIHN0cnVjdCBtbV93YWxr
+ICp3YWxrKTsKPj4gIAlpbnQgKCpwbWRfZW50cnkpKHBtZF90ICpwbWQsIHVuc2lnbmVkIGxvbmcg
+YWRkciwKPj4gZGlmZiAtLWdpdCBhL21tL3BhZ2V3YWxrLmMgYi9tbS9wYWdld2Fsay5jCj4+IGlu
+ZGV4IGMzMDg0ZmYyNTY5ZC4uOTgzNzNhOWY4OGI4IDEwMDY0NAo+PiAtLS0gYS9tbS9wYWdld2Fs
+ay5jCj4+ICsrKyBiL21tL3BhZ2V3YWxrLmMKPj4gQEAgLTkwLDE1ICs5MCw5IEBAIHN0YXRpYyBp
+bnQgd2Fsa19wdWRfcmFuZ2UocDRkX3QgKnA0ZCwgdW5zaWduZWQgbG9uZyBhZGRyLCB1bnNpZ25l
+ZCBsb25nIGVuZCwKPj4gIAkJfQo+PiAgCj4+ICAJCWlmICh3YWxrLT5wdWRfZW50cnkpIHsKPj4g
+LQkJCXNwaW5sb2NrX3QgKnB0bCA9IHB1ZF90cmFuc19odWdlX2xvY2socHVkLCB3YWxrLT52bWEp
+Owo+PiAtCj4+IC0JCQlpZiAocHRsKSB7Cj4+IC0JCQkJZXJyID0gd2Fsay0+cHVkX2VudHJ5KHB1
+ZCwgYWRkciwgbmV4dCwgd2Fsayk7Cj4+IC0JCQkJc3Bpbl91bmxvY2socHRsKTsKPj4gLQkJCQlp
+ZiAoZXJyKQo+PiAtCQkJCQlicmVhazsKPj4gLQkJCQljb250aW51ZTsKPj4gLQkJCX0KPj4gKwkJ
+CWVyciA9IHdhbGstPnB1ZF9lbnRyeShwdWQsIGFkZHIsIG5leHQsIHdhbGspOwo+PiArCQkJaWYg
+KGVycikKPj4gKwkJCQlicmVhazsKPiAKPiBCdXQgd2lsbCBub3QgdGhpcyBzdGlsbCBlbmNvdW50
+ZXIgcG9zc2libGUgVEhQIGVudHJpZXMgd2hlbiB3YWxraW5nIHVzZXIKPiBwYWdlIHRhYmxlcyAo
+dmFsaWQgd2Fsay0+dm1hKSBpbiB3aGljaCBjYXNlIHN0aWxsIG5lZWRzIHRvIGdldCBhIGxvY2su
+Cj4gT1Igd2lsbCB0aGUgY2FsbGJhY2sgdGFrZSBjYXJlIG9mIGl0ID8KClRoaXMgaXMgd2hhdCBJ
+IG1lYW4gaW4gdGhlIGNvbW1pdCBtZXNzYWdlIGJ5Ogo+IFNpbmNlIHRoZXJlIGhhdmUgbmV2ZXIK
+PiBiZWVuIHVwc3RyZWFtIHVzZXJzIG9mIHRoaXMsIHJldmVydCB0aGUgc2VtYW50aWNzIGJhY2sg
+dG8gbWF0Y2ggdGhlCj4gb3RoZXIgY2FsbGJhY2tzLiBUaGlzIG1lYW5zIHB1ZF9lbnRyeSgpIGlz
+IGNhbGxlZCBmb3IgYWxsIGVudHJpZXMsIG5vdAo+IGp1c3QgdHJhbnNwYXJlbnQgaHVnZSBwYWdl
+cy4KClNvIHRoZSBleHBlY3RhdGlvbiBpcyB0aGF0IHRoZSBjYWxsZXIgdGFrZXMgY2FyZSBvZiBp
+dC4KCkhvd2V2ZXIsIGhhdmluZyBjaGVja2VkIGFnYWluLCBpdCBhcHBlYXJzIHRoYXQgbW0vaG1t
+LmMgbm93IGRvZXMgdXNlCnRoaXMgY2FsbGJhY2sgKG1lcmdlZCBpbiB2NS4yLXJjMSkuCgpKw6ly
+w7RtZSAtIGFyZSB5b3UgaGFwcHkgd2l0aCB0aGlzIGNoYW5nZSBpbiBzZW1hbnRpY3M/IEl0IGxv
+b2tzIGxpa2UKaG1tX3ZtYV93YWxrX3B1ZCgpIHNob3VsZCBkZWFsIGdyYWNlZnVsbHkgd2l0aCBi
+b3RoIG5vcm1hbCBhbmQgbGFyZ2UKcGFnZXMgLSBhbHRob3VnaCBJJ20gdW5zdXJlIHdoZXRoZXIg
+eW91IGFyZSByZWx5aW5nIG9uIHRoZSBsb2NrIGZyb20KcHVkX3RyYW5zX2h1Z2VfbG9jaygpPwoK
+VGhhbmtzLAoKU3RldmUKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
+dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
+bmZvL2xpbnV4LWFybS1rZXJuZWwK
