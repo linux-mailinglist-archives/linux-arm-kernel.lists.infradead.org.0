@@ -2,76 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E25F779B15
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 23:30:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1CDD779B21
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 23:33:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fNu3XcCMoLeuVnNpKPtKpNfcQcJCmMpXpLbhP5kwsZA=; b=X/3QbWQ5oZtPiP
-	gXzsIZg+0Q/d65Uf7mtR3TcD+svgLTwrUtWQWPa7EBWlTYFxiRYOhZK36lUoH7FajYJaN6I9yi7+0
-	Qtvw8kAYDsMeffWHLgW2D9tH2SFgk2s56Ji39p0HlKDuJf65DZxhI2DwlN5u3ftUflAQnpj5oejTj
-	Jp9zF4D2EjRCufwyTfkj8QGcc+N3fRoZImtcjJp8SrRhFIIRZYhWAPoZYjKnF2XlMtbvxs+vf6ia+
-	NRz3Dmrq6gJtBtIJJW06eBuDGL4aufFqtXHcw00RfXo4zHAqjDT3FWQDCm8hbjpRA02npm8oiM3uw
-	dwjpWVVV5jhPmTZorFNw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=au3iz8xmSuCtsqdDdv/vXN/moiHHv6n4WeZMbVQKhIg=; b=Li3m5tx1T1L71d
+	QRHX13ALiVGeeuFzB8jncQBivpMRp7SEKiYVIAWS2FVMhxbbJVoZ1t1Bu/2hd6VTnsa0ypjRCmMBK
+	V9GDBCM8TOULc5DcFLPwiLnULKa3Ec3S9L5CGmN/PbIyzLq0djtmBmfGeNbniYBmpXj4W7PHJEKa8
+	zfwXu/cEouuz+POZz6rHBKVB4BgSBENrOK4NHkrKOuiRpKdtPEs6BQWkeCaB264RFl9ZMf7bRRq8P
+	o2zlhUp0tz+AfDSqgaQhazhYVu6XS9QWohFC9JQ5Fs3bHJJWQS/4HzHOJV6dtU9sD7tN1XvXTnfww
+	eBIfZwmgKzcKUIFftiNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsDE5-0004xc-8J; Mon, 29 Jul 2019 21:30:37 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1hsDGq-0005H5-Mi; Mon, 29 Jul 2019 21:33:28 +0000
+Received: from hqemgate16.nvidia.com ([216.228.121.65])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsDDq-0004xA-EB
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 21:30:23 +0000
-Received: by mail-lj1-x241.google.com with SMTP id y17so35440663ljk.10
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 29 Jul 2019 14:30:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=HKkIBvCgiYwjQhYFTYEAh/Mb6txeYN6WDDQ/uj2gFUI=;
- b=OVWD6wHlg/XSy1nOvWhd7RWa8UEN/Oef6ahYwW3GYqAbC3Jb8IYHyZz3Qv7guhv+ke
- ayQu1zm+nihPVb0TxklyfIsxxgs7QLFgrnETgq5hPDxJR+Xq3gHaM8a71PJDigK3Mzas
- KZtfwpERVnDnylTN3Kbty4zkw5EKnSCvzP0E8qgOSh9dABQwlX6tg1RvuR8Le0WyFLJy
- 9MtK9kmmj3iapk/x10PWP9721MYBi2Zs1XcGoZH/gyCCpqaQAysmUGeep+ay3jjQDQow
- zm+h113ufbLccs2ZGo6v+zPMlUYQysd+GBvCM4N5JVd7lF/52GK8gDQYSQqHbQKVoasj
- SUPQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=HKkIBvCgiYwjQhYFTYEAh/Mb6txeYN6WDDQ/uj2gFUI=;
- b=Xi0Ah4MlPhH0EKbZ8KPg3Aw1CsQ/zpCUn0XTnl5kdLN8F0HZ1Yx1r/D8MreBXkFT3j
- 2TNGzLZH317dHqxLPo823PFi6E43I4SUiJ+CaVCl+ZEUov9StWmGIXtRW2L/eYxanveq
- 44fzrJtUbnq1yBSRmGqDsdQyuSvyDQyvw4ZFHYGGsD/H7MScJRHDqBNyoAm5P1qi+yty
- Tv99uwvJVST3+AkXXGwm54MryIPQu/k+NliJWI5/Zjeq6al65FrGEkNX5mhZVT4qkEgr
- kSo97+gMAwqQ5dgq9WKjDV00JeMeN35WjHLJBG0RYu6/kB1yuZC+Qoc6m7Y5Qji3Al18
- QiWw==
-X-Gm-Message-State: APjAAAXUoRJf3Xr7kOihT3tWj5xCbcMLV2HeCi04FXgFooD4pDZ+6q0Z
- wcha51W4Jji3ARirL/wg3umI46xWNjyB9HmMcVke6w==
-X-Google-Smtp-Source: APXvYqwUhL9uJMcJBMf5PD9Q2tJQYMHtg2CF0rvUKzbc9I7QW0dTFe+hQ+z0pJ0FnCmvAz8JSJ5iGwWObU6G3+Peq0E=
-X-Received: by 2002:a2e:9048:: with SMTP id n8mr12436136ljg.37.1564435819389; 
- Mon, 29 Jul 2019 14:30:19 -0700 (PDT)
+ id 1hsDGb-0005GG-DF
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 21:33:14 +0000
+Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
+ hqemgate16.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5d3f660d0000>; Mon, 29 Jul 2019 14:33:01 -0700
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate101.nvidia.com (PGP Universal service);
+ Mon, 29 Jul 2019 14:33:10 -0700
+X-PGP-Universal: processed;
+ by hqpgpgate101.nvidia.com on Mon, 29 Jul 2019 14:33:10 -0700
+Received: from [10.26.11.172] (10.124.1.5) by HQMAIL107.nvidia.com
+ (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 29 Jul
+ 2019 21:33:06 +0000
+Subject: Re: [PATCH net-next 3/3] net: stmmac: Introducing support for Page
+ Pool
+To: Jose Abreu <Jose.Abreu@synopsys.com>, Robin Murphy <robin.murphy@arm.com>, 
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, Catalin Marinas
+ <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
+References: <cover.1562149883.git.joabreu@synopsys.com>
+ <1b254bb7fc6044c5e6e2fdd9e00088d1d13a808b.1562149883.git.joabreu@synopsys.com>
+ <7a79be5d-7ba2-c457-36d3-1ccef6572181@nvidia.com>
+ <BYAPR12MB3269927AB1F67D46E150ED6BD3C10@BYAPR12MB3269.namprd12.prod.outlook.com>
+ <9e695f33-fd9f-a910-0891-2b63bd75e082@nvidia.com>
+ <BYAPR12MB3269B4A401E4DA10A07515C7D3C10@BYAPR12MB3269.namprd12.prod.outlook.com>
+ <1e2ea942-28fe-15b9-f675-8d6585f9a33f@nvidia.com>
+ <BYAPR12MB326922CDCB1D4B3D4A780CFDD3C30@BYAPR12MB3269.namprd12.prod.outlook.com>
+ <MN2PR12MB327907D4A6FB378AC989571AD3DD0@MN2PR12MB3279.namprd12.prod.outlook.com>
+ <b99b1e49-0cbc-2c66-6325-50fa6f263d91@nvidia.com>
+ <MN2PR12MB327997BDF2EA5CEE00F45AC3D3DD0@MN2PR12MB3279.namprd12.prod.outlook.com>
+ <fcf648d2-70cc-d734-871a-ca7f745791b7@arm.com>
+ <MN2PR12MB3279ABF628C52883021123C5D3DD0@MN2PR12MB3279.namprd12.prod.outlook.com>
+From: Jon Hunter <jonathanh@nvidia.com>
+Message-ID: <8a60361f-b914-93ef-0d80-92ae4ad8b808@nvidia.com>
+Date: Mon, 29 Jul 2019 22:33:04 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <503b2ae8-ead6-70cd-7b21-ce5f5166a23a@free.fr>
-In-Reply-To: <503b2ae8-ead6-70cd-7b21-ce5f5166a23a@free.fr>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Mon, 29 Jul 2019 23:30:08 +0200
-Message-ID: <CACRpkdYrrpfGwTVHLbOwOWVxReAnH4q-bf5hTz_xFoM63sJoKA@mail.gmail.com>
-Subject: Re: [PATCH v2] pinctrl: msm8998: Squash TSIF pins together
-To: Marc Gonzalez <marc.w.gonzalez@free.fr>
+In-Reply-To: <MN2PR12MB3279ABF628C52883021123C5D3DD0@MN2PR12MB3279.namprd12.prod.outlook.com>
+X-Originating-IP: [10.124.1.5]
+X-ClientProxiedBy: HQMAIL105.nvidia.com (172.20.187.12) To
+ HQMAIL107.nvidia.com (172.20.187.13)
+Content-Language: en-US
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1564435981; bh=+tXkvnJomdlQUldytIfFdlsTnBE+q42y36xSnoRaYvU=;
+ h=X-PGP-Universal:Subject:To:CC:References:From:Message-ID:Date:
+ User-Agent:MIME-Version:In-Reply-To:X-Originating-IP:
+ X-ClientProxiedBy:Content-Type:Content-Language:
+ Content-Transfer-Encoding;
+ b=BuHiU6CuSm73jgRPvxOtqlowqNvcDo0RdVEDsM3mou7XM1jZUGREQyFZuANpF/PvP
+ 74z9Kajzmn7ZZkLJODbpWKiSvdL21YH+vAaT4lbeq0A48hDAGkx5dlYGbRySj7NVSl
+ eeR8oEZNAaZmfNT/jAKBhIQ+ySqvcIJ+QGLGssZkoEGbiNaFn8PYEVr7Ogq3qxp6OC
+ MGKfMF0rF+daOjLKHG4uwYzh0Z1m5F8/2SDgm4MUDbOQLBKmeq5ImF6yfeemzmZKpt
+ Y8cvlCRKwGq0mSIJ3Pe9pq+Sm2pP0vRg32Z8tYF44uOAcTpCxzdqQDnj/bpHX1F7GO
+ PyR6nJoawG9Ig==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_143022_484305_694EA69D 
-X-CRM114-Status: UNSURE (   8.97  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190729_143313_463420_2210D742 
+X-CRM114-Status: GOOD (  15.72  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.65 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -80,6 +99,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,35 +111,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: DT <devicetree@vger.kernel.org>, Jeffrey Hugo <jeffrey.l.hugo@gmail.com>,
- MSM <linux-arm-msm@vger.kernel.org>,
- =?UTF-8?Q?Jonathan_Neusch=C3=A4fer?= <j.neuschaefer@gmx.net>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- gpio <linux-gpio@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Joao Pinto <Joao.Pinto@synopsys.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-tegra <linux-tegra@vger.kernel.org>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ "David S . Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jul 4, 2019 at 10:57 AM Marc Gonzalez <marc.w.gonzalez@free.fr> wrote:
 
-> TSIF is the Transport Stream Interface.
-> First, rename tsif1 to tsif0, and tsif2 to tsif1.
-> Then squash all 5 tsif0 pins into a single function.
-> Same for tsif1.
->
-> Signed-off-by: Marc Gonzalez <marc.w.gonzalez@free.fr>
-> ---
-> Changes from v1:
-> - Reword commit message for clarity (hopefully)
-> - Drop unrelated change in qcom,msm8998-pinctrl.txt
-> - CC DT
+On 29/07/2019 15:08, Jose Abreu wrote:
 
-Patch applied with the ACKs.
+...
 
-Yours,
-Linus Walleij
+>>> Hi Catalin and Will,
+>>>
+>>> Sorry to add you in such a long thread but we are seeing a DMA issue
+>>> with stmmac driver in an ARM64 platform with IOMMU enabled.
+>>>
+>>> The issue seems to be solved when buffers allocation for DMA based
+>>> transfers are *not* mapped with the DMA_ATTR_SKIP_CPU_SYNC flag *OR*
+>>> when IOMMU is disabled.
+>>>
+>>> Notice that after transfer is done we do use
+>>> dma_sync_single_for_{cpu,device} and then we reuse *the same* page for
+>>> another transfer.
+>>>
+>>> Can you please comment on whether DMA_ATTR_SKIP_CPU_SYNC can not be used
+>>> in ARM64 platforms with IOMMU ?
+>>
+>> In terms of what they do, there should be no difference on arm64 between:
+>>
+>> dma_map_page(..., dir);
+>> ...
+>> dma_unmap_page(..., dir);
+>>
+>> and:
+>>
+>> dma_map_page_attrs(..., dir, DMA_ATTR_SKIP_CPU_SYNC);
+>> dma_sync_single_for_device(..., dir);
+>> ...
+>> dma_sync_single_for_cpu(..., dir);
+>> dma_unmap_page_attrs(..., dir, DMA_ATTR_SKIP_CPU_SYNC);
+>>
+>> provided that the first sync covers the whole buffer and any subsequent 
+>> ones cover at least the parts of the buffer which may have changed. Plus 
+>> for coherent hardware it's entirely moot either way.
+> 
+> Thanks for confirming. That's indeed what stmmac is doing when buffer is 
+> received by syncing the packet size to CPU.
+> 
+>>
+>> Given Jon's previous findings, I would lean towards the idea that 
+>> performing the extra (redundant) cache maintenance plus barrier in 
+>> dma_unmap is mostly just perturbing timing in the same way as the debug 
+>> print which also made things seem OK.
+> 
+> Mikko said that Tegra186 is not coherent so we have to explicit flush 
+> pipeline but I don't understand why sync_single() is not doing it ...
+> 
+> Jon, can you please remove *all* debug prints, hacks, etc ... and test 
+> this one in attach with plain -net tree ?
+
+So far I have just been testing on the mainline kernel branch. The issue
+still persists after applying this on mainline. I can test on the -net
+tree, but I am not sure that will make a difference.
+
+Cheers
+Jon
+
+-- 
+nvpublic
 
 _______________________________________________
 linux-arm-kernel mailing list
