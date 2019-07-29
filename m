@@ -2,63 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 41AD77929C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 19:51:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F151C792B3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 19:57:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O/h9niKrQU1Ke49g36ISWYKQzD2fLRyFmgWUuGGsp94=; b=fIRLQGnLOeVnuH
-	kuy3F5xmiF5xaoe1uSxOpJ3/0yKx29+vsyrcpbpvwJDGGVAP5dQLNtRTCQscxrnT4gOh1YbbSYUDz
-	6SA1WEzoEYhuehlDJZurjzezZbPCfX7Z0pPSUT5JhyEWVtdcb+WoqhCAHpIzQWrCzRBhqIWvgWX6+
-	+e2KGSEhJE6yhMlWuJyYaxVnA3PJ2H+EFx8Vnqdj9VzroUbwbShahsM4SNFGL25/fmG2D88VyXqEh
-	k0Ic+q2g/+lxDKy5JVDNo1OPteuVKbprv6brAQd7+NkKkLCJvd/GjSmynD8AmGKlyRnmTY16+Lz9Q
-	Yp5C3uLTmvommOBxdVHQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=wKuywzg1yS3vTPdCinPJg40i+aLEO+hd/JDboh5hgRE=; b=B9Q
+	YvvhXtjj1TGj4z39mO7dsUBHrfJ1ZdNIQy760Nx7VrLmyYTJ16MGSz0MyHKpVwVZ3gPabzZZTl1T6
+	f97ScCqfELd9cYrQcUWAGV2oXBLh14v86XKmPsvGn9OQOorKigrEdgt5BzAkrkBU2H9FzzvjEKa9o
+	1LVRwULsA7sN8oFs/KP12PUdcBWOGJwvOEMNfcL7BMIwUEtxQEqEl7NI28Z8tOfwwk8Kq6GsKbDnv
+	cRYnavZdEaQ9KoGS0biMzUvAkrslNPBnlppbmX+X///dMGP3wjcJodWMyMCb5jdfs06L1URRkh+NE
+	r8qIxymNI7pBx35RgsCB4XYz4Lg2aSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hs9nf-0003eh-0z; Mon, 29 Jul 2019 17:51:07 +0000
-Received: from asavdk3.altibox.net ([109.247.116.14])
+	id 1hs9tn-0005e0-RV; Mon, 29 Jul 2019 17:57:27 +0000
+Received: from baptiste.telenet-ops.be ([2a02:1800:120:4::f00:13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hs9nP-0003e9-Ul
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 17:50:53 +0000
-Received: from ravnborg.org (unknown [158.248.194.18])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by asavdk3.altibox.net (Postfix) with ESMTPS id DE2AB20037;
- Mon, 29 Jul 2019 19:50:49 +0200 (CEST)
-Date: Mon, 29 Jul 2019 19:50:48 +0200
-From: Sam Ravnborg <sam@ravnborg.org>
-To: Fabio Estevam <festevam@gmail.com>
-Subject: Re: [PATCH 1/1] drm: mxsfb: add i.MX6UL in Kconfig
-Message-ID: <20190729175048.GB1753@ravnborg.org>
-References: <20190729141349.28465-1-sebastien.szymanski@armadeus.com>
- <CAOMZO5CFqQEdqgwyHZ2E2F22QDgG8SUjBM0y4Y6qyn8Tqo4O0g@mail.gmail.com>
- <20190729143749.GB16927@ravnborg.org>
- <CAOMZO5Aew=fWnu1wweSBdFpN2SrChR9r+RST+C2RWwbsOyzRxg@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAOMZO5Aew=fWnu1wweSBdFpN2SrChR9r+RST+C2RWwbsOyzRxg@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.3 cv=dqr19Wo4 c=1 sm=1 tr=0
- a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
- a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=7gkXJVJtAAAA:8
- a=TNHZzu330VKOovurw5kA:9 a=CjuIK1q_8ugA:10 a=E9Po1WZjFZOl8hwRPBS3:22
+ id 1hs9tb-0005dF-Hl
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 17:57:17 +0000
+Received: from ramsan ([84.194.98.4]) by baptiste.telenet-ops.be with bizsmtp
+ id ihx02000S05gfCL01hx0yn; Mon, 29 Jul 2019 19:57:05 +0200
+Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1hs9tM-00023k-R0; Mon, 29 Jul 2019 19:57:00 +0200
+Received: from geert by rox.of.borg with local (Exim 4.90_1)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1hs9tM-0003ZM-Os; Mon, 29 Jul 2019 19:57:00 +0200
+From: Geert Uytterhoeven <geert+renesas@glider.be>
+To: Linus Torvalds <torvalds@linux-foundation.org>,
+ Stephen Rothwell <sfr@canb.auug.org.au>
+Subject: [PATCH] MAINTAINERS: Add Geert as Renesas SoC Co-Maintainer
+Date: Mon, 29 Jul 2019 19:56:58 +0200
+Message-Id: <20190729175658.13672-1-geert+renesas@glider.be>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_105052_164899_445C148A 
-X-CRM114-Status: UNSURE (   9.11  )
+X-CRM114-CacheID: sfid-20190729_105715_740548_9547D290 
+X-CRM114-Status: UNSURE (   8.09  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [109.247.116.14 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a02:1800:120:4:0:0:f00:13 listed in]
+ [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,34 +65,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marek Vasut <marex@denx.de>, David Airlie <airlied@linux.ie>,
- DRI mailing list <dri-devel@lists.freedesktop.org>,
- Julien BOIBESSOT <julien.boibessot@armadeus.com>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Geert Uytterhoeven <geert+renesas@glider.be>, Arnd Bergmann <arnd@arndb.de>,
+ Kevin Hilman <khilman@kernel.org>, Magnus Damm <magnus.damm@gmail.com>,
+ linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
+ Simon Horman <horms@verge.net.au>, Olof Johansson <olof@lixom.net>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Fabio.
+At the end of the v5.3 upstream kernel development cycle, Simon will be
+stepping down from his role as Renesas SoC maintainer.  Starting with
+the v5.4 development cycle, Geert is taking over this role.
 
-On Mon, Jul 29, 2019 at 12:51:08PM -0300, Fabio Estevam wrote:
-> Hi Sam,
-> 
-> On Mon, Jul 29, 2019 at 11:37 AM Sam Ravnborg <sam@ravnborg.org> wrote:
-> 
-> > Could we throw a COMPILE_TEST in the mix so we get better build
-> > coverage too?
-> 
-> There is no architecture dependency to build this driver, so we
-> already have build coverage for it.
-Super, thanks for the info.
+Add Geert as a co-maintainer, and add his git repository and branch.
 
-	Sam
+Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+---
+Stephen: Can you please add my branch to linux-next, after Simon's
+	 branch, which may still receive fixes for v5.3?
+
+	 Thanks!
+---
+ MAINTAINERS | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 6426db5198f05377..6de667021591fb52 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -2155,10 +2155,12 @@ F:	Documentation/devicetree/bindings/arm/realtek.txt
+ 
+ ARM/RENESAS ARM64 ARCHITECTURE
+ M:	Simon Horman <horms@verge.net.au>
++M:	Geert Uytterhoeven <geert+renesas@glider.be>
+ M:	Magnus Damm <magnus.damm@gmail.com>
+ L:	linux-renesas-soc@vger.kernel.org
+ Q:	http://patchwork.kernel.org/project/linux-renesas-soc/list/
+ T:	git git://git.kernel.org/pub/scm/linux/kernel/git/horms/renesas.git next
++T:	git git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-devel.git next
+ S:	Supported
+ F:	arch/arm64/boot/dts/renesas/
+ F:	Documentation/devicetree/bindings/arm/renesas.yaml
+@@ -2269,10 +2271,12 @@ F:	drivers/media/platform/s5p-mfc/
+ 
+ ARM/SHMOBILE ARM ARCHITECTURE
+ M:	Simon Horman <horms@verge.net.au>
++M:	Geert Uytterhoeven <geert+renesas@glider.be>
+ M:	Magnus Damm <magnus.damm@gmail.com>
+ L:	linux-renesas-soc@vger.kernel.org
+ Q:	http://patchwork.kernel.org/project/linux-renesas-soc/list/
+ T:	git git://git.kernel.org/pub/scm/linux/kernel/git/horms/renesas.git next
++T:	git git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-devel.git next
+ S:	Supported
+ F:	arch/arm/boot/dts/emev2*
+ F:	arch/arm/boot/dts/gr-peach*
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
