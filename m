@@ -2,59 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B9FF778C01
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 14:49:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4084B78C07
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 14:50:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AF3WmyJLgYTUhdD/AHItF1Y3bxiCVg+U30kOFKD5rVo=; b=V5Aa1/jfM5QqYv
-	xMQEhAAFzo/t9PS3T9kgV7T2j3s08IOkj93FS+mrkqlkn6CVgE59WX9Sn/PlckzQ+fSILCUlMV4gT
-	Cs6Ch3+aYagf99XMmN2eUUIOeIHONTSofuxfu/PdpahgXdnRT/dSZG9oBXEPsyVHbME6LU8Nnhxuf
-	XvUrB5GqV6/Asj4oPX/0e901sjfX6vatnFSdt4z7IBgFLU2HgJG/8/jpRt4RLI34Zd6M7Cw2eKOmN
-	4eDrVaAZgWJrlglQRIMy9TFjFOIjyg4vocKFhR5M7amwdbZudZ/hoW1oY+ZeUAttMdR8kCkfpHjAk
-	BVjFWb1+94DEyqB/C/+w==;
+	List-Owner; bh=3dGcRfzZFDrmyDJvzvdvYrczlMfFUEZ39TGRdoUR4vs=; b=eC4m8m+pWvw6F4
+	M+BBBOrErK/aNOh39n2mMf8tvl8Gc2evKNtFoRLUGdVLOkn47LpQht4XWaMj1ZbFpSG1C7UHmr4IZ
+	ozCoQUNZmKnxFjk9oph+y2whtYbGZ+WCQlCkNtnCOlwKoILoFO4O1yXb/kdxISumXjYtAvnAyIGut
+	sud9EN9fmqK6fs8JIqNEiDB/EhnwvAY7LlvrBNzpoSj7X3VW+XkuR4UAwzmRpOPOOdj9zQNZOPVSO
+	TyulI7WscCXyR11swcWlInaDzAWOLBUHkxyNDM4hEhNzb3J0YUpguychPPEDHY7GxzW0GzGPdsH3Z
+	UC5yvU8euRZQKWFUM4JA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hs55L-0001Kr-1W; Mon, 29 Jul 2019 12:49:03 +0000
-Received: from honk.sigxcpu.org ([24.134.29.49])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hs559-0001Jn-UC
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 12:48:58 +0000
-Received: from localhost (localhost [127.0.0.1])
- by honk.sigxcpu.org (Postfix) with ESMTP id 291E8FB03;
- Mon, 29 Jul 2019 14:48:47 +0200 (CEST)
-X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
-Received: from honk.sigxcpu.org ([127.0.0.1])
- by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id kaCWHnVd1ww1; Mon, 29 Jul 2019 14:48:46 +0200 (CEST)
-Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
- id 9752146CDF; Mon, 29 Jul 2019 14:48:45 +0200 (CEST)
-Date: Mon, 29 Jul 2019 14:48:45 +0200
-From: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
-To: Daniel Baluta <daniel.baluta@nxp.com>
-Subject: Re: [PATCH v4] arm64: dts: imx8mq: Init rates and parents configs
- for clocks
-Message-ID: <20190729124845.GA12650@bogon.m.sigxcpu.org>
-References: <20190728152040.15323-1-daniel.baluta@nxp.com>
+	id 1hs56m-00037G-J8; Mon, 29 Jul 2019 12:50:32 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hs56d-00036B-R7
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 12:50:25 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C5EA528;
+ Mon, 29 Jul 2019 05:50:21 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3C2A43F71F;
+ Mon, 29 Jul 2019 05:50:19 -0700 (PDT)
+Date: Mon, 29 Jul 2019 13:50:13 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH v9 10/21] mm: Add generic p?d_leaf() macros
+Message-ID: <20190729125013.GA33794@lakrids.cambridge.arm.com>
+References: <20190722154210.42799-1-steven.price@arm.com>
+ <20190722154210.42799-11-steven.price@arm.com>
+ <20190723094113.GA8085@lakrids.cambridge.arm.com>
+ <ce4e21f2-020f-6677-d79c-5432e3061d6e@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190728152040.15323-1-daniel.baluta@nxp.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <ce4e21f2-020f-6677-d79c-5432e3061d6e@arm.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_054856_489166_BC039644 
-X-CRM114-Status: GOOD (  13.35  )
+X-CRM114-CacheID: sfid-20190729_055023_922953_779CD4CF 
+X-CRM114-Status: UNSURE (   9.88  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [24.134.29.49 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,102 +65,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, baruch@tkos.co.il, abel.vesa@nxp.com,
- Anson.Huang@nxp.com, ccaione@baylibre.com, andrew.smirnov@gmail.com,
- festevam@gmail.com, s.hauer@pengutronix.de, angus@akkea.ca,
- linux-kernel@vger.kernel.org, linux-imx@nxp.com, shawnguo@kernel.org,
- shengjiu.wang@nxp.com, linux-arm-kernel@lists.infradead.org,
- l.stach@pengutronix.de
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: x86@kernel.org, Arnd Bergmann <arnd@arndb.de>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>, linux-kernel@vger.kernel.org,
+ Steven Price <steven.price@arm.com>, linux-mm@kvack.org,
+ =?utf-8?B?SsOpcsO0bWU=?= Glisse <jglisse@redhat.com>,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ Andy Lutomirski <luto@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ James Morse <james.morse@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Will Deacon <will@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
+ linux-arm-kernel@lists.infradead.org, "Liang, Kan" <kan.liang@linux.intel.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-On Sun, Jul 28, 2019 at 06:20:40PM +0300, Daniel Baluta wrote:
-> From: Abel Vesa <abel.vesa@nxp.com>
-> =
+On Sun, Jul 28, 2019 at 05:14:31PM +0530, Anshuman Khandual wrote:
+> On 07/23/2019 03:11 PM, Mark Rutland wrote:
+> > It might also be worth pointing out the reasons for this naming, e.g.
+> > p?d_large() aren't currently generic, and this name minimizes potential
+> > confusion between p?d_{large,huge}().
+> 
+> Agreed. But these fallback also need to first check non-availability of large
+> pages. 
 
-> Add the initial configuration for clocks that need default parent and rate
-> setting. This is based on the vendor tree clock provider parents and rates
-> configuration except this is doing the setup in dts rather then using clo=
-ck
-> consumer API in a clock provider driver.
-> =
+We're deliberately not making the p?d_large() helpers generic, so this
+shouldn't fall back on those.
 
-> Note that by adding the initial rate setting for audio_pll1/audio_pll
-> setting we need to remove it from imx8mq-librem5-devkit.dts
-> =
+It's up to the architecture to implement these correctly, and the
+architecture-specific implementations will be added in subsequent
+patches.
 
-> Signed-off-by: Abel Vesa <abel.vesa@nxp.com>
-> Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
-> Tested-by: Angus Ainslie (Purism) <angus@akkea.ca>
-> ---
-> Changes since v3:
-> 	- fix extra new lines
-> =
-
->  .../dts/freescale/imx8mq-librem5-devkit.dts   |  5 -----
->  arch/arm64/boot/dts/freescale/imx8mq.dtsi     | 19 +++++++++++++++++++
->  2 files changed, 19 insertions(+), 5 deletions(-)
-> =
-
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts b/ar=
-ch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-> index 683a11035643..c702ccc82867 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-> +++ b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-> @@ -169,11 +169,6 @@
->  	};
->  };
->  =
-
-> -&clk {
-> -	assigned-clocks =3D <&clk IMX8MQ_AUDIO_PLL1>, <&clk IMX8MQ_AUDIO_PLL2>;
-> -	assigned-clock-rates =3D <786432000>, <722534400>;
-> -};
-> -
->  &dphy {
->  	status =3D "okay";
->  };
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/=
-dts/freescale/imx8mq.dtsi
-> index 02fbd0625318..a55d72ba2e05 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> @@ -494,6 +494,25 @@
->  				clock-names =3D "ckil", "osc_25m", "osc_27m",
->  				              "clk_ext1", "clk_ext2",
->  				              "clk_ext3", "clk_ext4";
-> +				assigned-clocks =3D <&clk IMX8MQ_VIDEO_PLL1>,
-> +					<&clk IMX8MQ_AUDIO_PLL1>,
-> +					<&clk IMX8MQ_AUDIO_PLL2>,
-> +					<&clk IMX8MQ_CLK_AHB>,
-> +					<&clk IMX8MQ_CLK_NAND_USDHC_BUS>,
-> +					<&clk IMX8MQ_CLK_AUDIO_AHB>,
-> +					<&clk IMX8MQ_VIDEO_PLL1_REF_SEL>,
-> +					<&clk IMX8MQ_CLK_NOC>;
-> +				assigned-clock-parents =3D <0>,
-> +						<0>,
-> +						<0>,
-> +						<&clk IMX8MQ_SYS1_PLL_133M>,
-> +						<&clk IMX8MQ_SYS1_PLL_266M>,
-> +						<&clk IMX8MQ_SYS2_PLL_500M>,
-> +						<&clk IMX8MQ_CLK_27M>,
-> +						<&clk IMX8MQ_SYS1_PLL_800M>;
-> +				assigned-clock-rates =3D <593999999>,
-> +						<786432000>,
-> +						<722534400>;
->  			};
->  =
-
->  			src: reset-controller@30390000 {
-
-Tested-by: Guido G=FCnther <agx@sigxcpu.org> =
-
-
-Cheers,
- -- Guido
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
