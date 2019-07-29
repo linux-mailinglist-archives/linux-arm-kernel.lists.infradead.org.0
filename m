@@ -2,86 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2930378445
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 06:44:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4EA1378474
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 07:34:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=NXoZDdewJ9jvH0lW1lorGfY+MnvwlNDSwJq474n3q7k=; b=kSdS4dy1A2zpmtGTXmyxlBYhi
-	W8eD1QK9KXlVBigMqr9ERaHvnf/2e6osuY2r1km35Bv+SCIayEOGY60rf4+meAfN6IKNTkv/qOqYw
-	IvIrfkE77o2tZMNfhWcQrMDqekuFqaeWV1Bn4L5ht/tn+qeds2sK8lHfA1AI6h+ZjgDAz9akGfpYK
-	oMaAbxcrwe+zxyUP/qSUDNCpA4mi0zaqTtgNXDvMMsGmg7b6z/V+1W85XxKxmDLNRtRdM7XcrAy42
-	LS/Qv0+V/t+51qrvrpt90ieSGvxu5E1mwYTyHUd6AwJvzRKOKiSRPlEmInZPhgkY4odVt6CbJ5zJd
-	rVrvK+dOA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=yu0QKtRlIUoO7TtXaoQSHubF4ck7cimwn5pKRjXg14c=; b=LJvPNYpkgUgmqe
+	NB0oBnsygoNIGyaPpd1MHJxivO5kLD6HZ1IshtjtRNe1gnKrF1Jpt+Y3fqA889Vsq2M5gtSufFX/r
+	s1BH7SkDXkkh6QpIwmhDgXvRyWW23TlEFbxdajwTY2w9sdFQtj2pepuFh/B/XXqpPeLI//DqYumLg
+	AQgwKegXnQ4Iaa1m6Blw0nrW895iG3L06iC5yNN9ofnYtzCUNTRB+Whcu3w7i7Djc3fxP9yy1n4Jd
+	qisNJB41ekI0fJV/GgMtiEluhrS34ob0gLauzuAwfMt0pn8SgENKB6SrxmAOmF3RKmhLFwmt2usfR
+	UxPwQeXInGr0sacxMcJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hrxWQ-000778-3z; Mon, 29 Jul 2019 04:44:30 +0000
-Received: from mail-pg1-x52b.google.com ([2607:f8b0:4864:20::52b])
+	id 1hryIW-00045z-Ji; Mon, 29 Jul 2019 05:34:12 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hrxWC-00076T-D3
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 04:44:17 +0000
-Received: by mail-pg1-x52b.google.com with SMTP id f5so18741060pgu.5
+ id 1hryII-00044I-9N
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 05:33:59 +0000
+Received: by mail-pf1-x443.google.com with SMTP id i189so27395785pfg.10
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 28 Jul 2019 21:44:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=lFDI6SML6T6xaZaSiFzp/ikbG+8fwaD6/E8/Mnuljfg=;
- b=h5jHjY/K6yyqOXtr5yOFQiZMVcjFt24L6rHKI5BuA7OBu3Cjn+VR1YEZlnBj7VInC6
- +XNc4pCtZhXR8YuDKQiaCoOXSDd8YiTC/Ly6N2wgQBi7BQ3cGaYrMO4ToyHKFjVqti8F
- A0tWvJhOIqveB3JbCmV8q8U/WNkJjZ4A5Kkv1l52kvNv0MxNU4B14YsIbrcJlNirsbN+
- b58rS1tbIv5jjCiQHcpm01lw+XZySDgAIaeYSE9G4mqLbU+vN1klIjXyxlI2+E0aL4Xm
- SjgXYAxPS2fzaaQ7Zzesk2ME/qvFJ/AKgSRpqsNizd1t3Yj2aoWWDQbcChaPitj1oiOF
- luCg==
+ Sun, 28 Jul 2019 22:33:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=DPXHy1a69mKAzAt5eK/5mGSu5mMYfcr+qJqjDh7NSaQ=;
+ b=X7ZzQJG0cNXQD6YQsemOKW/jT5dXIqlD5c4Jcz7JtWEhIqBe209fc02CAGpqr+SYx0
+ gHPYOCrdYg3Ro7wBapt85n2eL90PlzXxI3QY75kWqphNBvBEhfTaqOY9NODoZZKpkG2h
+ jgrZXO+DLTuPGvJ9LjyhDaLG7s2coSQiQVGuM=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=lFDI6SML6T6xaZaSiFzp/ikbG+8fwaD6/E8/Mnuljfg=;
- b=cOo6wdtYeb/XDJaIOpsrOcncexa9pJiK+v/HTyIgvYAqhpVDhj/d8pEPOr/Iits4Jh
- 9+6ZHoWWp7bHWufCqf2N7Hk/P1gpu2Gq/oVSxNJSqWSRf7eTtXhxfEp/KTvx+B3kvSkz
- BlWoyc4eYckkL2v9Rw30B5rw0DBjfcDKv7fajRvR7wnh0CevC+FrT28Q+ORKBYb4KfJg
- On8CQHp5qePkewLTs77qR1/Lj8s1FSmgV3MmHvfwECCSMQjmzUDV21SG/o/5u1oKPmNY
- fFWdf7esjS85ndVvOJ/9iv7sMRedwO1bQQNG2GLU86YMUPYV6V1Xe0rYuvNVJawRtFTP
- mSsg==
-X-Gm-Message-State: APjAAAV4X9yoqfopDUSC8sWTmS0Wp5cMirlAfK+sItd/xd9ua5U5JfwO
- NablzuLS8re8RMF0K7qMoeA=
-X-Google-Smtp-Source: APXvYqxX94zHNdhAue7Yk3IksR9BaJt7Qg//LgZYQuJL1V+4Kkm3SpOBcIiiSN+iFdIo+B3IXXwYpQ==
-X-Received: by 2002:a63:8ac3:: with SMTP id
- y186mr102007247pgd.13.1564375455041; 
- Sun, 28 Jul 2019 21:44:15 -0700 (PDT)
-Received: from OpenSuse ([103.231.91.66])
- by smtp.gmail.com with ESMTPSA id h11sm60843675pfn.120.2019.07.28.21.44.10
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=DPXHy1a69mKAzAt5eK/5mGSu5mMYfcr+qJqjDh7NSaQ=;
+ b=Gncq1/3nQKdJN1pdXAw78pXW9FQZWQ2uE05XWSKJbdw01UZIrXcDxIMiEkNwkqGAR3
+ 4Df1Je748Pnv5CqFiCpsCrRzEzZtp3AFZGdvfyP8nqpX1L3xeCBA5UNLqy9rObgvfl3f
+ kgf7fsfwGY4IDaev7O2oHX73pLUwMEebWnVRtSCcJO6qVuQcwt46Afi7GOLI5NIe+Sad
+ HB1VZmx55gUdaBDsXJu+dNY+fhg7nOalggsHNz0r9DQFr61zGMsmS09NSEd3BwlDniob
+ DfCrSl8nim0GKVO3oGR58F69fRWG9JmBI2LLOXedbWhs36TBuwV7pC8Dbnd06eB4YEFC
+ TfDg==
+X-Gm-Message-State: APjAAAWXSqutlRlyxCoe4Tvs+4u4A2OeV3N/aB4St1lkrAXs0PXAAPzW
+ 3z6o2KTl5fFs9izwMdOu6kms/A==
+X-Google-Smtp-Source: APXvYqygDVAWdgpICHSE02DV6msSDKrPaHx2VAR3/vrWfQrTSpR/C3whA4rXoQaV+tRhbTuC/OWZhg==
+X-Received: by 2002:a17:90a:1d8:: with SMTP id
+ 24mr111974489pjd.70.1564378433305; 
+ Sun, 28 Jul 2019 22:33:53 -0700 (PDT)
+Received: from acourbot.tok.corp.google.com
+ ([2401:fa00:4:4:9712:8cf1:d0f:7d33])
+ by smtp.gmail.com with ESMTPSA id z4sm93792810pfg.166.2019.07.28.22.33.50
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sun, 28 Jul 2019 21:44:14 -0700 (PDT)
-Date: Mon, 29 Jul 2019 10:14:05 +0530
-From: Bhaskar Chowdhury <unixbhaskar@gmail.com>
-To: Matteo Croce <mcroce@redhat.com>
-Subject: Re: build error
-Message-ID: <20190729044403.GA27065@OpenSuse>
-References: <CAGnkfhySwXY7YwuQezyx6cEpemZW4Hox1_4fQJm3-5hvM3G6gw@mail.gmail.com>
+ Sun, 28 Jul 2019 22:33:52 -0700 (PDT)
+From: Alexandre Courbot <acourbot@chromium.org>
+To: CK Hu <ck.hu@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>,
+ David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Tomasz Figa <tfiga@chromium.org>
+Subject: [PATCH v2 0/2] drm/mediatek: make imported PRIME buffers contiguous
+Date: Mon, 29 Jul 2019 14:33:33 +0900
+Message-Id: <20190729053335.251379-1-acourbot@chromium.org>
+X-Mailer: git-send-email 2.22.0.709.g102302147b-goog
 MIME-Version: 1.0
-In-Reply-To: <CAGnkfhySwXY7YwuQezyx6cEpemZW4Hox1_4fQJm3-5hvM3G6gw@mail.gmail.com>
-User-Agent: Mutt/1.11.3 (2019-02-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190728_214416_441339_92BF91EE 
-X-CRM114-Status: UNSURE (   8.59  )
+X-CRM114-CacheID: sfid-20190728_223358_339241_C8DE4724 
+X-CRM114-Status: UNSURE (   8.86  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:52b listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (unixbhaskar[at]gmail.com)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -89,6 +85,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,88 +97,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Vincenzo Frascino <vincenzo.frascino@arm.com>,
- LKML <linux-kernel@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============1668255252441832855=="
+Cc: Alexandre Courbot <acourbot@chromium.org>,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+The default DMA segment size was used when importing PRIME buffers,
+which resulted in a chance of them not being contiguous in the virtual
+IO space of the device and mtk_gem_prime_import_sg_table() complaining
+that the SG table was not contiguous as it expects.
 
---===============1668255252441832855==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="VS++wcV0S1rZb1Fb"
-Content-Disposition: inline
+This series fixes this issue by
 
+1) Using the correct DMA device when importing PRIME buffers,
+2) Setting a more suitable DMA segment size on the DMA device than the
+default 64KB.
 
---VS++wcV0S1rZb1Fb
-Content-Type: text/plain; charset=us-ascii; format=flowed
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Changes since v1:
+- Split into two patches,
+- Fixed an error path that would have returned 0.
 
+Alexandre Courbot (2):
+  drm/mediatek: use correct device to import PRIME buffers
+  drm/mediatek: set DMA max segment size
 
-Matteo,
+ drivers/gpu/drm/mediatek/mtk_drm_drv.c | 49 ++++++++++++++++++++++++--
+ drivers/gpu/drm/mediatek/mtk_drm_drv.h |  2 ++
+ 2 files changed, 48 insertions(+), 3 deletions(-)
 
-it's look like gcc is not in your normal PATH. Could you please locate
-that fellow and realign it ,where is suppose to be.
+-- 
+2.22.0.709.g102302147b-goog
 
-Or if I understood right (I doubt that is why asking) that you might put
-explicitly the architecture to target build with make also, that might
-help.
-
-Please do let me know, if I derailed grossly ...am not sure.. :)
-
-Thanks,
-Bhaskar
-
-On 22:08 Sun 28 Jul 2019, Matteo Croce wrote:
->Hi,
->
->I get this build error with 5.3-rc2"
->
-># make
->arch/arm64/Makefile:58: gcc not found, check CROSS_COMPILE_COMPAT.  Stop.
->
->I didn't bisect the tree, but I guess that this kconfig can be related
->
-># grep CROSS_COMPILE_COMPAT .config
->CONFIG_CROSS_COMPILE_COMPAT_VDSO=3D""
->
->Does someone have any idea? Am I missing something?
->
->Thanks,
->--=20
->Matteo Croce
->per aspera ad upstream
-
---VS++wcV0S1rZb1Fb
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEEnwF+nWawchZUPOuwsjqdtxFLKRUFAl0+eYAACgkQsjqdtxFL
-KRWD8gf7B3C4eQbJDjr+qcikIHk5D7vFZl6zTkyjyELHFJF9PLCpPjkBPV6XTBqt
-+LzajOLzOhVQO30b/8uwi6FZYECxAFWGfk6qVmAJ4sjFFAvzFapoBdAe72/9D9Bc
-3pQAKpgmuHmrE8gG2f7FXoSd4/38DWg69AvhE+a0wMHMAu2Ku09khH4BB9TZkZBG
-OQrdPHhWDBZmBVRauaPjCrQlEJWvHXrjxSLhCBipxStTp4KbfhzdLPiaF1s3AbJi
-c6aalQYBQj+KVhWKUS4RrTHXCJ1XHFhTVZ9buoRrSrM8qHuN9TzOsSzo51d5B8wB
-PAYzSd0RSH4eCyCgGsCUW7og4QizXA==
-=sTEb
------END PGP SIGNATURE-----
-
---VS++wcV0S1rZb1Fb--
-
-
---===============1668255252441832855==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1668255252441832855==--
-
