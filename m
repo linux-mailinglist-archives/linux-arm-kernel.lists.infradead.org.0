@@ -2,76 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 92F2A78D2A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 15:47:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 09F6C78D3D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 15:55:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IQGM/54d4fp3h9eZvhPIXeMRxisCTyTiIWwm4y3DUHA=; b=bHbXvQBLo0l7I4
-	/rOWuEsyN4O9bdTGD/07jy14V99ilMnC6imS9+4V+4MHjEdFehOPWizIU/YLYOOFLhczFqU3fzfHF
-	+Y9br22RQQRfTIH7wlrIk5zomxxcI2OW/KGCXQAm2cBXDw9jc227M9IUlvNsUmwGqwBoZJh4iblV8
-	Xe2jvy4kZXtspP8fyyT+MAtQi4IKis0NHffEJL7WR4O24x8W0fNGTsxE5IWw8shGLO+7fatx1C/9b
-	vwaEh6F2yTAu/4SN2nlosyMCIwjW2tRAyGjoY0Z4hfhwB71X2jBfOARfnEMLH+b3WBKyqe8sSOKYY
-	5KJ6y87uPmepAOH4TttA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=0ZByXNcSxm5vAFfwfE5lTP9pt42zZMV4rZSE9Ew1XtE=; b=hMVJ6jrjzelZCN
+	1DS/OIDBdQ01eoAYQH7GwBl2vOrIJ+iiWrmzHYXkt867+EhXu4hzQOWFQic68SduivSdKeaEvgiaM
+	4A/jeNPkgfoCNo0hRgDQBusSj/iDppgMcPCb837YptwfpG7ThnCajZGkl71bjuiCyaosq2HFom3Xk
+	R69nf5OxYlQ9Ze7/JhlqHUKQd6au3bVYtI8iuk4Q2yyABSndhzbEruU4QURs3X4Ch+iaqU1fKMmmy
+	yHDflkTsYWHJV9UGowc0Jt2/NQc/bAZoGIkyLytgaA7jEBR/q599/Bhaal4TXLS6NBUUedU/UAZRU
+	1byLaqCZbmFoKQkp6VwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hs601-0007F7-7j; Mon, 29 Jul 2019 13:47:37 +0000
-Received: from conssluserg-03.nifty.com ([210.131.2.82])
+	id 1hs67v-000266-Mt; Mon, 29 Jul 2019 13:55:47 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hs5zQ-0006p6-Oz
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 13:47:02 +0000
-Received: from mail-ua1-f46.google.com (mail-ua1-f46.google.com
- [209.85.222.46]) (authenticated)
- by conssluserg-03.nifty.com with ESMTP id x6TDklMQ004120
- for <linux-arm-kernel@lists.infradead.org>; Mon, 29 Jul 2019 22:46:48 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-03.nifty.com x6TDklMQ004120
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1564408008;
- bh=OXAwzcS+yj3HJ7cjotHiQBWSZMqRmd+eaHeK7a8Qodc=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=WHIlUFj0Fr6+u9VhwFQ3KKety5ZhLznB8tvxe3Hzcj4JJfy2b1HEi37DLdwA3klVC
- 38X2hi96W35jsZK4G33P4ZLpOAokwz7SCeUNUlCBtpEErIPQYv0px9sNPlx10GQ4jV
- uBVDUVmbHLkzR1rLuFun9V8YCBDXc3fix8Q1w8PD1qWlSOPPApcx/RXAWut3N8C5Uy
- CfPzI9f4nAKANV2TMCHUYJF1Q327GZcZkRVBC0p9vy1MsfT8OaWkY2BuWELOLWnf3D
- 154mhLKpRxAgdc57Ig8izs4OaqvKIBuufZBzo/zV3q3d5PZ1TCq6VRNntlsAAr49OH
- mlkDfCpl1D7cw==
-X-Nifty-SrcIP: [209.85.222.46]
-Received: by mail-ua1-f46.google.com with SMTP id o19so23952730uap.13
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 29 Jul 2019 06:46:48 -0700 (PDT)
-X-Gm-Message-State: APjAAAWrfG3D++saMIr+EwfkSFWci/D27zsIEeIf/PkrwKqfr+5JCYM3
- YPyVQN/H8lQpfHimUJvshIg9zMohHTkZe3+Aqj8=
-X-Google-Smtp-Source: APXvYqxBnsoC1Jnb//kCLbSm9sQ83FtOlg02dE5xpIz+U7QjTrOwrYvuAX/wOf6r3jwto/ZIARCGREU1Md5zkDRhxOM=
-X-Received: by 2002:a9f:2265:: with SMTP id 92mr53903777uad.121.1564408007070; 
- Mon, 29 Jul 2019 06:46:47 -0700 (PDT)
+ id 1hs67o-00025H-S6
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 13:55:42 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x6TDq2J2020057; Mon, 29 Jul 2019 15:55:19 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=wfkrOwgCeZzV4fJ7ha2E0UrU2pJwRZbxnCDoHpSL6Lo=;
+ b=aaHEAo21qSIaSv7R6MRoTxb5QmXdL8npp7YI9RenusW41aiT6cgb4klBMF3wLyarrKDq
+ VlCfH0Ea/1CItcbbkdgcvqYmTVOYEzXmD6MSivh/DHf7yNpCh/NQ0bVrJmyUAvb5lcxj
+ YNhIlNNqKG8VNke65yg2C2PGnOWMgAg9cdQpnrn4dNCNBgSZ3AzSgAz08fyvpx7d2BX8
+ HmUT6+CPMxc6ynXrbVmIYYl4SFJYakXL0ySQKOfCSCI5RD3BP2DLZ3HhiQQYQT+8bbwU
+ 68k82la8jxiEDdAtjvlO/moctGJwbPwnGwydR2UimtYeMvC6YHrW+cHrspuLzN0rWIWc BA== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2u0dggvkww-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Mon, 29 Jul 2019 15:55:19 +0200
+Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id A308F3D;
+ Mon, 29 Jul 2019 13:55:17 +0000 (GMT)
+Received: from Webmail-eu.st.com (Safex1hubcas24.st.com [10.75.90.94])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 7810B5747;
+ Mon, 29 Jul 2019 13:55:17 +0000 (GMT)
+Received: from SAFEX1HUBCAS23.st.com (10.75.90.47) by Safex1hubcas24.st.com
+ (10.75.90.94) with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 29 Jul
+ 2019 15:55:17 +0200
+Received: from localhost (10.201.23.73) by webmail-ga.st.com (10.75.90.48)
+ with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 29 Jul 2019 15:55:17
+ +0200
+From: <patrice.chotard@st.com>
+To: Arnd Bergmann <arnd@arndb.de>, Olof Johansson <olof@lixom.net>,
+ "Alexandre Torgue" <alexandre.torgue@st.com>, Russell King
+ <linux@armlinux.org.uk>
+Subject: ARM: multi_v7_defconfig: Enable SPI_STM32_QSPI support
+Date: Mon, 29 Jul 2019 15:55:05 +0200
+Message-ID: <20190729135505.15394-1-patrice.chotard@st.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-References: <1562668156-12927-1-git-send-email-hayashi.kunihiko@socionext.com>
- <1562668156-12927-6-git-send-email-hayashi.kunihiko@socionext.com>
-In-Reply-To: <1562668156-12927-6-git-send-email-hayashi.kunihiko@socionext.com>
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
-Date: Mon, 29 Jul 2019 22:46:11 +0900
-X-Gmail-Original-Message-ID: <CAK7LNARok8dbc3pVgj8VunZCVtLiPf6oE_zL7tNLCe3pfG2nSQ@mail.gmail.com>
-Message-ID: <CAK7LNARok8dbc3pVgj8VunZCVtLiPf6oE_zL7tNLCe3pfG2nSQ@mail.gmail.com>
-Subject: Re: [PATCH 5/5] pinctrl: uniphier: Fix Pro5 SD pin-mux setting
-To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+X-Originating-IP: [10.201.23.73]
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-07-29_06:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_064701_069485_555101D9 
-X-CRM114-Status: GOOD (  13.83  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190729_065541_380945_47018D8C 
+X-CRM114-Status: GOOD (  11.23  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.82 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,56 +94,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Masami Hiramatsu <masami.hiramatsu@linaro.org>,
- Jassi Brar <jaswinder.singh@linaro.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Patrice Chotard <patrice.chotard@st.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-stm32@st-md-mailman.stormreply.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jul 9, 2019 at 7:29 PM Kunihiko Hayashi
-<hayashi.kunihiko@socionext.com> wrote:
->
-> SD uses the following pins starting from 247:
->     SDCD, SDWP, SDVOLC, SDCLK, SDCMD, SDDAT{0,1,2,3}
->
-> Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+From: Patrice Chotard <patrice.chotard@st.com>
 
+Enable support for QSPI block on STM32 SoCs.
 
-Acked-by: Masahiro Yamada <yamada.masahiro@socionext.com>
+Signed-off-by: Patrice Chotard <patrice.chotard@st.com>
+---
+ arch/arm/configs/multi_v7_defconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
+diff --git a/arch/arm/configs/multi_v7_defconfig b/arch/arm/configs/multi_v7_defconfig
+index 6a40bc2ef271..78d1d93298af 100644
+--- a/arch/arm/configs/multi_v7_defconfig
++++ b/arch/arm/configs/multi_v7_defconfig
+@@ -403,6 +403,7 @@ CONFIG_SPI_SH_MSIOF=m
+ CONFIG_SPI_SH_HSPI=y
+ CONFIG_SPI_SIRF=y
+ CONFIG_SPI_STM32=m
++CONFIG_SPI_STM32_QSPI=m
+ CONFIG_SPI_SUN4I=y
+ CONFIG_SPI_SUN6I=y
+ CONFIG_SPI_TEGRA114=y
+-- 
+2.17.1
 
-
-
-> ---
->  drivers/pinctrl/uniphier/pinctrl-uniphier-pro5.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
->
-> diff --git a/drivers/pinctrl/uniphier/pinctrl-uniphier-pro5.c b/drivers/pinctrl/uniphier/pinctrl-uniphier-pro5.c
-> index 577f12e..22ce0a5 100644
-> --- a/drivers/pinctrl/uniphier/pinctrl-uniphier-pro5.c
-> +++ b/drivers/pinctrl/uniphier/pinctrl-uniphier-pro5.c
-> @@ -807,7 +807,7 @@ static const unsigned nand_pins[] = {19, 20, 21, 22, 23, 24, 25, 28, 29, 30,
->  static const int nand_muxvals[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
->  static const unsigned nand_cs1_pins[] = {26, 27};
->  static const int nand_cs1_muxvals[] = {0, 0};
-> -static const unsigned sd_pins[] = {250, 251, 252, 253, 254, 255, 256, 257, 258};
-> +static const unsigned sd_pins[] = {247, 248, 249, 250, 251, 252, 253, 254, 255};
->  static const int sd_muxvals[] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
->  static const unsigned spi0_pins[] = {120, 121, 122, 123};
->  static const int spi0_muxvals[] = {0, 0, 0, 0};
-> --
-> 2.7.4
->
-
-
---
-Best Regards
-Masahiro Yamada
 
 _______________________________________________
 linux-arm-kernel mailing list
