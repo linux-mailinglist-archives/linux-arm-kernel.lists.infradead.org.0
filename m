@@ -2,59 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F0C978767
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 10:31:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 992B978770
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 10:32:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=95qLYE9+bJfQhW8pUhqA8W0rd/wQdwKLxkHxiTdq5uE=; b=gvoNNpuLykWwKk
-	SBaaSBFJ69qLQp6HZ7V2/JnvkcHXKvmoidr7WdsOse+IjDJ/f2euYJnOXLExGjYgrTydZ1smat36w
-	pMzyywD0pAnPjZ0wdlFZRptodlfP75I5BFHqdBIHKFSB3UX1SYA8ZHjruNql4+7GMhOX5M+LUaHX4
-	4oHOlVyWDq50iL4ZLE0BsJEMiIinRpgDchp52hmhZbvPqs6tQdCdU91FEkWd6pSNnC95EgxxgpK13
-	kCX8J0GXlF1G1yxzKrBly9gJOpWhJwnsIiuM8MpRZ1/EqQeRC2ykrkcdrONB5yiDQgiGo8TYLCc8O
-	QAepU/aDqjSgf5dhVvxQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ljPjvmXstxt/Mv6GhFMQLAwN73QsK4LJWjAhugPFlQ0=; b=U5DxP3VDc4zYKH
+	t50NINcznNVOgOc6a8JvPEnkGTlfOZ4j1WS+yTMdUXprrOZ15+AgH8cOiDHElUph9CewzcpTY1WyY
+	h0B13sLnul2yDE3rvZsx3Ibk+mcQHX2FTOfUrANyzkDbqUn9ex3OuVI8Io5B+6R25yOdcMT35T7z8
+	bPqorBKd7S9HVM4aMHAQ4ZjgpyzwBFH5gZqhndyIL3DiIkjmhBm230BG4TMOdmX944tLu1WNdfoLC
+	1b1Qx7pmcDPND911a9u3a5uTV6RjOmpn82D0mnUflC413BQSPxa/6PhIHA7TvDHrGiE6pfZbWozzD
+	L8jO6OoEiXQpkY47vk5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hs14O-0003Ph-K5; Mon, 29 Jul 2019 08:31:48 +0000
-Received: from honk.sigxcpu.org ([24.134.29.49])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hs14B-0003Dy-3E
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 08:31:36 +0000
-Received: from localhost (localhost [127.0.0.1])
- by honk.sigxcpu.org (Postfix) with ESMTP id 9B614FB03;
- Mon, 29 Jul 2019 10:31:32 +0200 (CEST)
-X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
-Received: from honk.sigxcpu.org ([127.0.0.1])
- by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id 3gdsxkg-VJ_P; Mon, 29 Jul 2019 10:31:31 +0200 (CEST)
-Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
- id 1B86846BAF; Mon, 29 Jul 2019 10:31:31 +0200 (CEST)
-Date: Mon, 29 Jul 2019 10:31:31 +0200
-From: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
-To: Daniel Baluta <daniel.baluta@nxp.com>
-Subject: Re: [PATCH v3] arm64: dts: imx8mq: Init rates and parents configs
- for clocks
-Message-ID: <20190729083130.GA3904@bogon.m.sigxcpu.org>
-References: <20190728141218.12702-1-daniel.baluta@nxp.com>
+	id 1hs15C-0004YU-8f; Mon, 29 Jul 2019 08:32:38 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hs14r-0004Jl-2h
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 08:32:19 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A9CDF337;
+ Mon, 29 Jul 2019 01:32:15 -0700 (PDT)
+Received: from [10.162.40.126] (p8cg001049571a15.blr.arm.com [10.162.40.126])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 990293F575; Mon, 29 Jul 2019 01:32:11 -0700 (PDT)
+Subject: Re: [RFC] mm/pgtable/debug: Add test validating architecture page
+ table helpers
+To: Matthew Wilcox <willy@infradead.org>
+References: <1564037723-26676-1-git-send-email-anshuman.khandual@arm.com>
+ <1564037723-26676-2-git-send-email-anshuman.khandual@arm.com>
+ <20190725143920.GW363@bombadil.infradead.org>
+ <c3bb0420-584c-de3b-2439-8702bc09595e@arm.com>
+ <20190726195457.GI30641@bombadil.infradead.org>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <10ed1022-a5c0-c80c-c0c9-025bb2307666@arm.com>
+Date: Mon, 29 Jul 2019 14:02:52 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190728141218.12702-1-daniel.baluta@nxp.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190726195457.GI30641@bombadil.infradead.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_013135_302252_9B0E61F2 
-X-CRM114-Status: GOOD (  14.84  )
+X-CRM114-CacheID: sfid-20190729_013217_547650_FE80DE26 
+X-CRM114-Status: GOOD (  23.10  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [24.134.29.49 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,113 +66,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, baruch@tkos.co.il, abel.vesa@nxp.com,
- Anson.Huang@nxp.com, ccaione@baylibre.com, andrew.smirnov@gmail.com,
- shawnguo@kernel.org, s.hauer@pengutronix.de, angus@akkea.ca,
- linux-kernel@vger.kernel.org, linux-imx@nxp.com, festevam@gmail.com,
- shengjiu.wang@nxp.com, linux-arm-kernel@lists.infradead.org,
- l.stach@pengutronix.de
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Sri Krishna chowdary <schowdary@nvidia.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>, x86@kernel.org,
+ Dave Hansen <dave.hansen@intel.com>, linux-kernel@vger.kernel.org,
+ Steven Price <Steven.Price@arm.com>, linux-mm@kvack.org,
+ Mark Brown <Mark.Brown@arm.com>, Andrew Morton <akpm@linux-foundation.org>,
+ Michal Hocko <mhocko@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-On Sun, Jul 28, 2019 at 05:12:18PM +0300, Daniel Baluta wrote:
-> From: Abel Vesa <abel.vesa@nxp.com>
-> =
+On 07/27/2019 01:24 AM, Matthew Wilcox wrote:
+> On Fri, Jul 26, 2019 at 10:17:11AM +0530, Anshuman Khandual wrote:
+>>> But 'page' isn't necessarily PMD-aligned.  I don't think we can rely on
+>>> architectures doing the right thing if asked to make a PMD for a randomly
+>>> aligned page.
+>>>
+>>> How about finding the physical address of something like kernel_init(),
+>>
+>> Physical address corresponding to the symbol in the kernel text segment ?
+> 
+> Yes.  We need the address of something that's definitely memory.
+> The stack might be in vmalloc space.  We can't allocate memory from the
+> allocator that's PUD-aligned.  This seems like a reasonable approximation
+> to something that might work.
 
-> Add the initial configuration for clocks that need default parent and rate
-> setting. This is based on the vendor tree clock provider parents and rates
-> configuration except this is doing the setup in dts rather then using clo=
-ck
-> consumer API in a clock provider driver.
-> =
+Okay sure. What is about vmalloc space being PUD aligned and how that is
+problematic here ? Could you please give some details. Just being curious.
 
-> Note that by adding the initial rate setting for audio_pll1/audio_pll
-> setting we need to remove it from imx8mq-librem5-devkit.dts
-> imx8mq-librem5-devkit.dts
-> =
+> 
+>>> and using the corresponding pte/pmd/pud/p4d/pgd that encompasses that
+>>
+>> So I guess this will help us use pte/pmd/pud/p4d/pgd entries from a real and
+>> present mapping rather then making them up for test purpose. Although we are
+>> not creating real page tables here just wondering if this could some how
+>> affect these real mapping in anyway from some accessors. The current proposal
+>> stays clear from anything real - allocates, evaluates and releases.
+> 
+> I think that's a mistake.  As Russell said, the ARM p*d manipulation
+> functions expect to operate on tables, not on individual entries
+> constructed on the stack.
 
-> Signed-off-by: Abel Vesa <abel.vesa@nxp.com>
-> Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
-> ---
-> Changes since v2:
-> 	- set rate for audio_pll1/audio_pll2  in the dtsi file and
-> 	remove the setting from imx8mq-librem5-devkit.dts
-> =
+Hmm. I assume that it will take care of dual 32 bit entry updates on arm
+platform through various helper functions as Russel had mentioned earlier.
+After we create page table with p?d_alloc() functions and pick an entry at
+each page table level.
 
->  .../dts/freescale/imx8mq-librem5-devkit.dts   |  5 -----
->  arch/arm64/boot/dts/freescale/imx8mq.dtsi     | 21 +++++++++++++++++++
->  2 files changed, 21 insertions(+), 5 deletions(-)
-> =
+> 
+> So I think the right thing to do here is allocate an mm, then do the
+> pgd_alloc / p4d_alloc / pud_alloc / pmd_alloc / pte_alloc() steps giving
+> you real page tables that you can manipulate.
+> 
+> Then destroy them, of course.  And don't access through them.
 
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts b/ar=
-ch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-> index 683a11035643..c702ccc82867 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-> +++ b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-> @@ -169,11 +169,6 @@
->  	};
->  };
->  =
+mm_alloc() seems like a comprehensive helper to allocate and initialize a
+mm_struct. But could we use mm_init() with 'current' in the driver context or we
+need to create a dummy task_struct for this purpose. Some initial tests show that
+p?d_alloc() and p?d_free() at each level with a fixed virtual address gives p?d_t
+entries required at various page table level to test upon.
 
-> -&clk {
-> -	assigned-clocks =3D <&clk IMX8MQ_AUDIO_PLL1>, <&clk IMX8MQ_AUDIO_PLL2>;
-> -	assigned-clock-rates =3D <786432000>, <722534400>;
-> -};
-> -
->  &dphy {
->  	status =3D "okay";
->  };
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/=
-dts/freescale/imx8mq.dtsi
-> index 02fbd0625318..c67625a881a4 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> @@ -494,6 +494,27 @@
->  				clock-names =3D "ckil", "osc_25m", "osc_27m",
->  				              "clk_ext1", "clk_ext2",
->  				              "clk_ext3", "clk_ext4";
-> +				assigned-clocks =3D <&clk IMX8MQ_VIDEO_PLL1>,
-> +					<&clk IMX8MQ_AUDIO_PLL1>,
-> +					<&clk IMX8MQ_AUDIO_PLL2>,
-> +					<&clk IMX8MQ_CLK_AHB>,
-> +					<&clk IMX8MQ_CLK_NAND_USDHC_BUS>,
-> +					<&clk IMX8MQ_CLK_AUDIO_AHB>,
-> +					<&clk IMX8MQ_VIDEO_PLL1_REF_SEL>,
-> +					<&clk IMX8MQ_CLK_NOC>;
-> +				assigned-clock-parents =3D <0>,
-> +						<0>,
-> +						<0>,
-> +						<&clk IMX8MQ_SYS1_PLL_133M>,
-> +						<&clk IMX8MQ_SYS1_PLL_266M>,
-> +						<&clk IMX8MQ_SYS2_PLL_500M>,
-> +						<&clk IMX8MQ_CLK_27M>,
-> +						<&clk IMX8MQ_SYS1_PLL_800M>;
-> +				assigned-clock-rates =3D <593999999>,
-> +						<786432000>,
-> +						<722534400>;
-> +
-> +
->  			};
->  =
+> 
+>>>> +#ifdef CONFIG_HAVE_ARCH_TRANSPARENT_HUGEPAGE_PUD
+>>>> +static void pud_basic_tests(void)
+>>>
+>>> Is this the right ifdef?
+>>
+>> IIUC THP at PUD is where the pud_t entries are directly operated upon and the
+>> corresponding accessors are present only when HAVE_ARCH_TRANSPARENT_HUGEPAGE_PUD
+>> is enabled. Am I missing something here ?
+> 
+> Maybe I am.  I thought we could end up operating on PUDs for kernel mappings,
+> even without transparent hugepages turned on.
 
->  			src: reset-controller@30390000 {
-
-togethe with http://code.bulix.org/pd88jp-812381?raw tested on
-linux-20190725 (plus mipi dsi):
-
-Tested-by: Guido G=FCnther <agx@sigxcpu.org>
-
-Cheers,
- -- Guido
-
-> -- =
-
-> 2.17.1
-> =
-
+In generic MM ? IIUC except ioremap mapping all other PUD handling for kernel virtual
+range is platform specific. All the helpers used in the function pud_basic_tests() are
+part of THP and used in mm/huge_memory.c
 
 _______________________________________________
 linux-arm-kernel mailing list
