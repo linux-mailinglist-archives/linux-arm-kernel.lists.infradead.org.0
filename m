@@ -2,85 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A42778BBE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 14:26:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B1A278BC6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 14:30:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BbCOGRlz0f07G5KvV8nJCBkfb97q+01AyLgO2GMyXWg=; b=rQg0ab0Hxu2E5M
-	dgm+Zg1hFQ87Uy5lmRL3HTNX3gy52hed1WcCN9noZcGaVRqUAenN0mazoV+/zzQLz83JYSSmVwOGb
-	49vqnAubf61MKOQwhJ45OdTcKgi46Nn+nZnDCRX6TERGLPXM/Ep+4Fg6ktELC5vFGrF3oenFgxBoy
-	OtlQXzOhWihXn7E3FUHzdymjz1WRmt5YEBiLOvTwvxCzHpZZv/zxaxJCzLV764Ta50YP2bRqVbns2
-	6o1JHrvC/yT/xVMU3wgHGBD+AUakoghJKZwsAv46sVPSZ7yKWZuCKeXa19itw4lH3OMwVv6lwjIpU
-	faEmJcSRYXG4NylVvLcQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=R6HW5b9trsU1pnHL0IhFtpGT/fiPIgOWB2ZO4F8/8jI=; b=usdxiU7UbJdmc3
+	ya9UX/ZVjXM5NFkiwKX+Q0F9/Jt64eO1Qb2oatxGz33+qZukC+VP/XyEesne5WOVrBp3W8T28NeAf
+	IBOhczS/uyxeb3V7Xn3jkIVjcpdvzmt0AECiMx68AR1P/HCAhHJnAgaOpmqn+llrBKNAHzlf6z0px
+	MeIrgy2/aJLcHEg0yjgS2eUxQrynaY/yz2mMu5m9iDWqVRrKDcG0kzMoKM5O1H3W3bhAjoyNDsNoF
+	QutMAIS2gHAox0EvazhnKtRIeCcjn5pdbpPXRG8Xclq9Hlcn7bCZiI7htRFAvnwFLSidu97Z6s/kf
+	eo6uHZvL9Xelgk98txFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hs4jT-00060P-49; Mon, 29 Jul 2019 12:26:27 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hs4iv-0005RQ-6J
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 12:25:54 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x6TCPmlH016646;
- Mon, 29 Jul 2019 07:25:48 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1564403148;
- bh=/944bljaZixF1+1KPDd6o+jSsZmiNQBvRCCc5cEtYjE=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=lmig9gbdXe+xyykgzMO2kcTgYnBdzg6BqPOhTOnzJ6hYvkAq2hznLX5YkXizAJ4r1
- auVyoRjCnOD+F287oKp0EXwFsylf/M7Wutlr5sNWvgxzqRa9jiai7X4DbMcfJOyKij
- 0ljJMPSFkwOV4pscKlpL2F4rv/5U/ds2FRge1WWQ=
-Received: from DFLE115.ent.ti.com (dfle115.ent.ti.com [10.64.6.36])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x6TCPmNU000657
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 29 Jul 2019 07:25:48 -0500
-Received: from DFLE114.ent.ti.com (10.64.6.35) by DFLE115.ent.ti.com
- (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Mon, 29
- Jul 2019 07:25:48 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE114.ent.ti.com
- (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Mon, 29 Jul 2019 07:25:48 -0500
-Received: from uda0131933.india.ti.com (ileax41-snat.itg.ti.com
- [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x6TCPbCF085709;
- Mon, 29 Jul 2019 07:25:46 -0500
-From: Lokesh Vutla <lokeshvutla@ti.com>
-To: Nishanth Menon <nm@ti.com>, Tero Kristo <t-kristo@ti.com>, Santosh
- Shilimkar <ssantosh@kernel.org>, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v5 3/3] soc: ti: ti_sci_pm_domains: Add support for exclusive
- and shared access
-Date: Mon, 29 Jul 2019 17:54:53 +0530
-Message-ID: <20190729122453.32252-4-lokeshvutla@ti.com>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20190729122453.32252-1-lokeshvutla@ti.com>
-References: <20190729122453.32252-1-lokeshvutla@ti.com>
+	id 1hs4nD-0000Nc-0K; Mon, 29 Jul 2019 12:30:19 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hs4n1-0008St-TK
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 12:30:09 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1D1DA28;
+ Mon, 29 Jul 2019 05:30:07 -0700 (PDT)
+Received: from [10.1.196.133] (e112269-lin.cambridge.arm.com [10.1.196.133])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 75AB43F575;
+ Mon, 29 Jul 2019 05:29:59 -0700 (PDT)
+Subject: Re: [PATCH v9 12/21] mm: pagewalk: Allow walking without vma
+To: Anshuman Khandual <anshuman.khandual@arm.com>, linux-mm@kvack.org
+References: <20190722154210.42799-1-steven.price@arm.com>
+ <20190722154210.42799-13-steven.price@arm.com>
+ <7fc50563-7d5d-7270-5a6a-63769e9c335a@arm.com>
+From: Steven Price <steven.price@arm.com>
+Message-ID: <5aff70f7-67a5-c7e8-5fec-8182dea0da0c@arm.com>
+Date: Mon, 29 Jul 2019 13:29:58 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+In-Reply-To: <7fc50563-7d5d-7270-5a6a-63769e9c335a@arm.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_052553_330947_0EE43319 
-X-CRM114-Status: GOOD (  18.45  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190729_053008_042361_7FF12C64 
+X-CRM114-Status: GOOD (  22.75  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,106 +63,132 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lokesh Vutla <lokeshvutla@ti.com>,
- Device Tree Mailing List <devicetree@vger.kernel.org>,
- Sekhar Nori <nsekhar@ti.com>,
- Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <Mark.Rutland@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>, Arnd Bergmann <arnd@arndb.de>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
+ linux-kernel@vger.kernel.org,
+ =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ Andy Lutomirski <luto@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ James Morse <james.morse@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Will Deacon <will@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
+ linux-arm-kernel@lists.infradead.org, "Liang, Kan" <kan.liang@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-TISCI protocol supports for enabling the device either with exclusive
-permissions for the requesting host or with sharing across the hosts.
-There are certain devices which are exclusive to Linux context and
-there are certain devices that are shared across different host contexts.
-So add support for getting this information from DT by increasing
-the power-domain cells to 2.
+On 28/07/2019 15:20, Anshuman Khandual wrote:
+> 
+> 
+> On 07/22/2019 09:12 PM, Steven Price wrote:
+>> Since 48684a65b4e3: "mm: pagewalk: fix misbehavior of walk_page_range
+>> for vma(VM_PFNMAP)", page_table_walk() will report any kernel area as
+>> a hole, because it lacks a vma.
+>>
+>> This means each arch has re-implemented page table walking when needed,
+>> for example in the per-arch ptdump walker.
+>>
+>> Remove the requirement to have a vma except when trying to split huge
+>> pages.
+>>
+>> Signed-off-by: Steven Price <steven.price@arm.com>
+>> ---
+>>  mm/pagewalk.c | 25 +++++++++++++++++--------
+>>  1 file changed, 17 insertions(+), 8 deletions(-)
+>>
+>> diff --git a/mm/pagewalk.c b/mm/pagewalk.c
+>> index 98373a9f88b8..1cbef99e9258 100644
+>> --- a/mm/pagewalk.c
+>> +++ b/mm/pagewalk.c
+>> @@ -36,7 +36,7 @@ static int walk_pmd_range(pud_t *pud, unsigned long addr, unsigned long end,
+>>  	do {
+>>  again:
+>>  		next = pmd_addr_end(addr, end);
+>> -		if (pmd_none(*pmd) || !walk->vma) {
+>> +		if (pmd_none(*pmd)) {
+>>  			if (walk->pte_hole)
+>>  				err = walk->pte_hole(addr, next, walk);
+>>  			if (err)
+>> @@ -59,9 +59,14 @@ static int walk_pmd_range(pud_t *pud, unsigned long addr, unsigned long end,
+>>  		if (!walk->pte_entry)
+>>  			continue;
+>>  
+>> -		split_huge_pmd(walk->vma, pmd, addr);
+>> -		if (pmd_trans_unstable(pmd))
+>> -			goto again;
+>> +		if (walk->vma) {
+>> +			split_huge_pmd(walk->vma, pmd, addr);
+> 
+> Check for a PMD THP entry before attempting to split it ?
 
-For keeping the DT backward compatibility intact, defaulting the
-device permissions to set the exclusive flag set. In this case the
-power-domain-cells is 1.
+split_huge_pmd does the check for us:
+> #define split_huge_pmd(__vma, __pmd, __address)				\
+> 	do {								\
+> 		pmd_t *____pmd = (__pmd);				\
+> 		if (is_swap_pmd(*____pmd) || pmd_trans_huge(*____pmd)	\
+> 					|| pmd_devmap(*____pmd))	\
+> 			__split_huge_pmd(__vma, __pmd, __address,	\
+> 						false, NULL);		\
+> 	}  while (0)
 
-Reviewed-by: Nishanth Menon <nm@ti.com>
-Signed-off-by: Lokesh Vutla <lokeshvutla@ti.com>
----
- drivers/soc/ti/ti_sci_pm_domains.c | 23 +++++++++++++++++++++--
- 1 file changed, 21 insertions(+), 2 deletions(-)
+And this isn't a change from the previous code - only that the entry is
+no longer split when walk->vma==NULL.
 
-diff --git a/drivers/soc/ti/ti_sci_pm_domains.c b/drivers/soc/ti/ti_sci_pm_domains.c
-index 97817dd7ba24..8c2a2f23982c 100644
---- a/drivers/soc/ti/ti_sci_pm_domains.c
-+++ b/drivers/soc/ti/ti_sci_pm_domains.c
-@@ -15,15 +15,19 @@
- #include <linux/pm_domain.h>
- #include <linux/slab.h>
- #include <linux/soc/ti/ti_sci_protocol.h>
-+#include <dt-bindings/soc/ti,sci_pm_domain.h>
- 
- /**
-  * struct ti_sci_genpd_dev_data: holds data needed for every device attached
-  *				 to this genpd
-  * @idx: index of the device that identifies it with the system
-  *	 control processor.
-+ * @exclusive: Permissions for exclusive request or shared request of the
-+ *	       device.
-  */
- struct ti_sci_genpd_dev_data {
- 	int idx;
-+	u8 exclusive;
- };
- 
- /**
-@@ -55,6 +59,14 @@ static int ti_sci_dev_id(struct device *dev)
- 	return sci_dev_data->idx;
- }
- 
-+static u8 is_ti_sci_dev_exclusive(struct device *dev)
-+{
-+	struct generic_pm_domain_data *genpd_data = dev_gpd_data(dev);
-+	struct ti_sci_genpd_dev_data *sci_dev_data = genpd_data->data;
-+
-+	return sci_dev_data->exclusive;
-+}
-+
- /**
-  * ti_sci_dev_to_sci_handle(): get pointer to ti_sci_handle
-  * @dev: pointer to device associated with this genpd
-@@ -79,7 +91,10 @@ static int ti_sci_dev_start(struct device *dev)
- 	const struct ti_sci_handle *ti_sci = ti_sci_dev_to_sci_handle(dev);
- 	int idx = ti_sci_dev_id(dev);
- 
--	return ti_sci->ops.dev_ops.get_device(ti_sci, idx);
-+	if (is_ti_sci_dev_exclusive(dev))
-+		return ti_sci->ops.dev_ops.get_device_exclusive(ti_sci, idx);
-+	else
-+		return ti_sci->ops.dev_ops.get_device(ti_sci, idx);
- }
- 
- /**
-@@ -110,7 +125,7 @@ static int ti_sci_pd_attach_dev(struct generic_pm_domain *domain,
- 	if (ret < 0)
- 		return ret;
- 
--	if (pd_args.args_count != 1)
-+	if (pd_args.args_count != 1 && pd_args.args_count != 2)
- 		return -EINVAL;
- 
- 	idx = pd_args.args[0];
-@@ -128,6 +143,10 @@ static int ti_sci_pd_attach_dev(struct generic_pm_domain *domain,
- 		return -ENOMEM;
- 
- 	sci_dev_data->idx = idx;
-+	/* Enable the exclusive permissions by default */
-+	sci_dev_data->exclusive = TI_SCI_PD_EXCLUSIVE;
-+	if (pd_args.args_count == 2)
-+		sci_dev_data->exclusive = pd_args.args[1] & 0x1;
- 
- 	genpd_data = dev_gpd_data(dev);
- 	genpd_data->data = sci_dev_data;
--- 
-2.21.0
+>> +			if (pmd_trans_unstable(pmd))
+>> +				goto again;
+>> +		} else if (pmd_leaf(*pmd)) {
+>> +			continue;
+>> +		}
+>> +
+>>  		err = walk_pte_range(pmd, addr, next, walk);
+>>  		if (err)
+>>  			break;
+>> @@ -81,7 +86,7 @@ static int walk_pud_range(p4d_t *p4d, unsigned long addr, unsigned long end,
+>>  	do {
+>>   again:
+>>  		next = pud_addr_end(addr, end);
+>> -		if (pud_none(*pud) || !walk->vma) {
+>> +		if (pud_none(*pud)) {
+>>  			if (walk->pte_hole)
+>>  				err = walk->pte_hole(addr, next, walk);
+>>  			if (err)
+>> @@ -95,9 +100,13 @@ static int walk_pud_range(p4d_t *p4d, unsigned long addr, unsigned long end,
+>>  				break;
+>>  		}
+>>  
+>> -		split_huge_pud(walk->vma, pud, addr);
+>> -		if (pud_none(*pud))
+>> -			goto again;
+>> +		if (walk->vma) {
+>> +			split_huge_pud(walk->vma, pud, addr);
+> 
+> Check for a PUD THP entry before attempting to split it ?
 
+Same as above.
+
+>> +			if (pud_none(*pud))
+>> +				goto again;
+>> +		} else if (pud_leaf(*pud)) {
+>> +			continue;
+>> +		}
+> 
+> This is bit cryptic. walk->vma check should be inside a helper is_user_page_table()
+> or similar to make things clear. p4d_leaf() check missing in walk_p4d_range() for
+> kernel page table walk ? Wondering if p?d_leaf() test should be moved earlier while
+> calling p?d_entry() for kernel page table walk.
+
+I wasn't sure if it was worth putting p4d_leaf() and pgd_leaf() checks
+in (yet). No architecture that I know of uses such large pages.
+
+I'm not sure what you mean by moving the p?d_leaf() test earlier? Can
+you explain with an example?
+
+Thanks,
+
+Steve
 
 _______________________________________________
 linux-arm-kernel mailing list
