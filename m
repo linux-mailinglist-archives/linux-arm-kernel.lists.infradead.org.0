@@ -2,72 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5DB27789D2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 12:51:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C86BA789DC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 12:53:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=6Vz0IgKY/niboSr9RndNM3MG53nFjP5eHl71akImDao=; b=Yio+I8T4iyp1cn9X5d1+aKC9A
-	82i4QFJ/ZdzxNitbx1F46eJuej84ccPp/DAEidrgXQ0o+pd3h0m1yNp3ALSjYCPQ3HRmutLQSCFrC
-	ekrS6zJB34SHnOmpHTR5mg9TlisyuuTMnMjVDUzMVPrpHp9ru9ehMeIm7yOlS0VX9Vpa6IudQwMyw
-	BTeQ6AuwY6j6Ksnvu2S+cqe/Qqk0uzPLs47pZ1l3gc2QAnlx2RYfieyo+icXbgQqkf3yyBnpgRzCt
-	R+VGrSr4czzHyP+BcH3Y/WzUywUIGEt4DzH8kFA7BmD6bUCTS8qkA91v80uO6SjLHkOm0eo/1fwGO
-	BH3zqDhwg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HLiXmI1uiYTkSvKjO/hFfLAs7r6gbONqsOjzDX7QpKA=; b=lnYGh06sBgyxTC
+	PfqgqxnlQGg61YiSyiMI8Oc+qPcEprWwbCN5rFHseU7LWhGcZOIQyCJStaefsw1quot24cmNRpgCY
+	1TBKp2Rt92TbAKsUbNF4GftsRBC0vlS0JqEKVxWnLqvR7vb5iPDbZVBV9+jszH95NVMIhRl4StAjz
+	+JHeK5oWMOGWGUNyXGV5EqOljfosaa/BDpbC/wc3rpX7BvkMgpd2oXJ+exVyU/KbW5mtQOaEx7Rtx
+	2wdhPKijsaxU/244M3xrDQiIYvhO1QOaEfcVSRmWDn9ct6zWMDX+yY6YATdkBz6SGVH/8IuSE3qNT
+	3r/6AUg0ysuFBOpNQQjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hs3Fm-0007zH-CO; Mon, 29 Jul 2019 10:51:42 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+	id 1hs3HE-0008Jc-D0; Mon, 29 Jul 2019 10:53:12 +0000
+Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hs3Fe-0007yg-1c
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 10:51:35 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Fp98NvsVQHW4OteUr6DoqjsManneTqzSgEmj4Sv6NWQ=; b=TlrwPKA0cPSJXmi/CZ25ALugV
- fwE4t4puANsJwlT545pg2qTFU4B+9F6GQ/3Vul5hbHisbMVARhBjcbRa24Zv2oXN2VB6YsUcDLK7Y
- dOD+aHReKKAGSf3i1gXHw5qn1blH1XnwlHIny424vFxgYHzeNuB35PUh3wafro2dQtaC8=;
-Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
- ([82.37.168.47] helo=ypsilon.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <broonie@sirena.org.uk>)
- id 1hs3FW-00048A-Dm; Mon, 29 Jul 2019 10:51:26 +0000
-Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 641832742B59; Mon, 29 Jul 2019 11:51:25 +0100 (BST)
-Date: Mon, 29 Jul 2019 11:51:25 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Masahiro Yamada <yamada.masahiro@socionext.com>
-Subject: Re: [RFC PATCH] spi: tle620x: remove stale driver
-Message-ID: <20190729105125.GA4787@sirena.org.uk>
-References: <20190728161304.32022-1-yamada.masahiro@socionext.com>
+ id 1hs3H6-0008Hn-Dd
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 10:53:05 +0000
+Received: by mail-wm1-x32c.google.com with SMTP id f17so53013634wme.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 29 Jul 2019 03:53:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=AOLYj7vZFitbpFqErn7oWDZ99uADKiNehnmJGd1HBMQ=;
+ b=nlRmEDq3Y+gorIJyMNrwNEssz/SMKtx/EbGSW+70sSXgCdPUXRRW4QFGNQHsrRjUHK
+ yk5EhfB9I+l3OqcXJ6syW9AqVN+LZcjMiL0wfMXJmeaJwBw8oejQiKMoTz7TEw6O6FBD
+ QBDIPtIRvfl6dXouSOlZuNHp9CEWKAJHrvL6tM/zsmkD+A/NkxTM9t5Ik/oe8pMn5I4F
+ nIRTm4pXheok5sJZ3rwV/T5Xxx3GrySMKIK+d5JioDOucs7EFRHgGfXxJHzNiM/QmAv4
+ xNR8HXqUjXERpIK8lMphDvUvO+f9oPuOdmpsj44RdUjxYrLGYHAN83FzDj0an1ZCSyUR
+ L8Nw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=AOLYj7vZFitbpFqErn7oWDZ99uADKiNehnmJGd1HBMQ=;
+ b=bCGNDRSlTVK8+fPYHg9w4ZXDYDC8PZjWE7w/iYPugSn8OjEcMiQWf/n/25jd/f0S3R
+ p+dgTGS1bixrm5HffzLlIfIyoMBD6eVPZDKYWMjE4vwwE02Fjiq3pDKOj4Tv3n6BETth
+ Lp5b3ou2qQDM6u0ePxy5raDZxRqE8Nfn90NjUvjNQ7ix93Kf9+BfhXtZOadbKCbS1rLf
+ DrP5aRgSEekbhO3HyvFycpSiyERwBNWHwXZsi6Hi44xk21yzBnZlexbU6C+IEK7Sri78
+ 4iOVpLcCQBLuH1iOqhqrPxxRkBRKOeAaIQe2JK5jDMSJCgZ3IHf9v9JkRWc/bWM8dtfy
+ m8rQ==
+X-Gm-Message-State: APjAAAUKBo//2Vj5lh0ktC8A3/nQfInRPyljTKqXpzIXAqQBwfGP+fxj
+ sdA4r5ODyDJzxCBf8YNWEbR1Qg==
+X-Google-Smtp-Source: APXvYqxxAq1qeCj6RzXzLrMQuzQ7BjjgL2TJJi51jQeFJRGXJ36dozWZyeLAR3r9r7D1DIVGG85i8A==
+X-Received: by 2002:a05:600c:23d2:: with SMTP id
+ p18mr93454869wmb.160.1564397580031; 
+ Mon, 29 Jul 2019 03:53:00 -0700 (PDT)
+Received: from localhost ([2a01:e34:eeb6:4690:ecfa:1144:aa53:4a82])
+ by smtp.gmail.com with ESMTPSA id d10sm50464699wrx.34.2019.07.29.03.52.59
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Mon, 29 Jul 2019 03:52:59 -0700 (PDT)
+From: Jerome Brunet <jbrunet@baylibre.com>
+To: Alexandre Mergnat <amergnat@baylibre.com>
+Subject: Re: [PATCH v2] clk: meson: axg-audio: migrate to the new parent
+ description method
+In-Reply-To: <20190725164023.27855-1-amergnat@baylibre.com>
+References: <20190725164023.27855-1-amergnat@baylibre.com>
+Date: Mon, 29 Jul 2019 12:52:58 +0200
+Message-ID: <1j5znl9kol.fsf@starbuckisacylon.baylibre.com>
 MIME-Version: 1.0
-In-Reply-To: <20190728161304.32022-1-yamada.masahiro@socionext.com>
-X-Cookie: A man's house is his hassle.
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_035134_089679_7ED5432D 
-X-CRM114-Status: UNSURE (   8.83  )
+X-CRM114-CacheID: sfid-20190729_035304_460332_64B82C3E 
+X-CRM114-Status: UNSURE (   7.28  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.2 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:32c listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,58 +94,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, linux-kernel@vger.kernel.org,
- Russell King <linux@armlinux.org.uk>, Ben Dooks <ben.dooks@codethink.co.uk>,
- linux-spi@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============3885012877779522238=="
+Cc: narmstrong@baylibre.com, sboyd@kernel.org, khilman@baylibre.com,
+ Alexandre Mergnat <amergnat@baylibre.com>, linux-kernel@vger.kernel.org,
+ baylibre-upstreaming@groups.io, linux-amlogic@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu 25 Jul 2019 at 18:40, Alexandre Mergnat <amergnat@baylibre.com> wrote:
+ 
+>  /* Audio Master Clocks */
+> -static const char * const mst_mux_parent_names[] = {
+> -	"aud_mst_in0", "aud_mst_in1", "aud_mst_in2", "aud_mst_in3",
+> -	"aud_mst_in4", "aud_mst_in5", "aud_mst_in6", "aud_mst_in7",
+> +static const struct clk_parent_data mst_mux_parent_data[] = {
+> +	{ .fw_name = "mst_in0", },
+> +	{ .fw_name = "mst_in1", },
+> +	{ .fw_name = "mst_in2", },
+> +	{ .fw_name = "mst_in3", },
+> +	{ .fw_name = "mst_in4", },
+> +	{ .fw_name = "mst_in5", },
+> +	{ .fw_name = "mst_in6", },
+> +	{ .fw_name = "mst_in7", },
+>  };
+>  
+>  #define AUD_MST_MUX(_name, _reg, _flag)				\
+>  	AUD_MUX(_name##_sel, _reg, 0x7, 24, _flag,		\
+> -		mst_mux_parent_names, CLK_SET_RATE_PARENT)
+> +		mst_mux_parent_data, CLK_SET_RATE_PARENT)
 
---===============3885012877779522238==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="zhXaljGHf11kAtnf"
-Content-Disposition: inline
+Actually, you should have dropped the CLK_SET_RATE_PARENT above.
 
+Before, the rate propagation was stopped by the input clock but now,
+there no such thing so the rate propagation must be stopped here.
 
---zhXaljGHf11kAtnf
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+It was almost impossible to know without testing audio, so fixed it
+when applying the change.
 
-On Mon, Jul 29, 2019 at 01:13:04AM +0900, Masahiro Yamada wrote:
-> This driver seems obsolte because this driver needs platform data
-> but no one in upstream passes it.
+Thanks for this rework !
 
-I've not noticed this driver getting in the way of anything?
-
---zhXaljGHf11kAtnf
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl0+z6wACgkQJNaLcl1U
-h9A8iQf/WUaWbus2/y56hSB5wgIdbmnLdlQKFIbOiLlLCvTHg1+B16u4ggqtmNNy
-i/LxhIXJHljhPSB5UqNvqGbUUfJPqlC6EjP/VH9Se25srhYgCzNetng4TSJgUhf6
-mPx38/UCRMss9iggUIlCcZlwum4olpdkChGQCKbRpJYiJEmAT4/iiNdRbOhNVGor
-w75RTowSMbKKwzSw/vcrpZiyH+XV2xoRGiDRAR2yltKK84yEEvRd8LsiZnYtKm/f
-oEVeTbr2aM5P0EmyoTUN6waKMEHyUKDfiYI8fPqh+YIqEUM1cGor0tRyQUFah9G/
-+M/W7SX1YG7bE4+hsWQjfNpfkAxf4Q==
-=+NF+
------END PGP SIGNATURE-----
-
---zhXaljGHf11kAtnf--
-
-
---===============3885012877779522238==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3885012877779522238==--
-
