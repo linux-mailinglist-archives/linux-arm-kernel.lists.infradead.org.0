@@ -2,55 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A969278F72
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 17:36:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD8E178F7F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 17:38:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g3ZOLuSbS+crg/tESFA0DwCfIy9H1dL5JdgyjoC5BtE=; b=uFaOCk/NZ1CQRa
-	DfNtNcqikAtavUmMRZuVUdgfv7ILoJKBqgwYd3pk9I++b17W7bgbtHloAzSRCR3aoo1FE3cUrC4aW
-	Iu2mRdwLHSYKkcJcq52vqZGVat2W9xM7NJeMUgv1vJOsvzMCEDeCnVUubN+iqFpygkhQfm0tBNkSD
-	DR3lYZW1v7CnaS3T+gbtTiGqhVCPQvAisUhTxGrWqX1VbSYj+CPc+bUBjja0bxhCrI1TFFraFJ8Nz
-	xwV9WIESdZ+U80VxrJs32HavsEtbpcaB1t+9wNk+laHJSMX39dMwo4z6i5eO+QORGZhraDrZcYpbp
-	Q2sXFFQNuExpH1rjm10A==;
+	List-Owner; bh=WTnb+J0dPiQ287EKa3lQvjSVf9EDGoYVyI2dT0RGe8g=; b=gswe/LzFfx6tX6
+	76cl7k+k5H0DpOh9R4sCRUqo/Ba+NkUaY7YJD8h8kPsfkSfcjni8EHCfbysP7ucMesO2639X+LmGH
+	MQG+G4K4ph3dyQ1YAXNglx6WrBUPSTQTT9OLTfWPMzqXvL9g01veo3b66hV/zkGEJLQqkG7c/DQ4Y
+	rc32+YFDXd9Fot7gfYcZZ2FIZ+aYYcf+I52MG/xLJA7nRLyrudUFZIh0OSe8PyRTRJMFzAO/iZVTG
+	WOUamblt0pIEixbCa8CPRNqrToxXrDZET9wlI8/ZuW3ZsXk9GcTdULS4S2CaJ02PJ4P6KJx1a9xu+
+	wzNayeInsKLV9CoszHlg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hs7hf-0000jX-MH; Mon, 29 Jul 2019 15:36:47 +0000
+	id 1hs7iw-0001ER-KK; Mon, 29 Jul 2019 15:38:06 +0000
 Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hs7hU-0000iw-Ct
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 15:36:37 +0000
+ id 1hs7if-00019X-9P
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 15:37:50 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
  s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
  Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=k+pY4BNjcj+Rs1KaJHTZzkyKwY60RatbH+nODMGqyuc=; b=1p65XXu7gNeQsYGAvt9+Ma+XS0
- 8iiSrpF0SEUgZEP7k2FsCkUhqNiurhDOQcqHHq+sYoFnlpO+SrXOhBaMJa2AB6U4Sinuky8lfc2BR
- Gi0+bIt67uZUkFTPdtHjfVpvf/HRg2iWoRzhrsnq8/Y9gkzC0NWJJWYG3g7lZ0d0xMXs=;
+ bh=E8+StAJi8iR+10hnQNem7TjVI3Aa8ZKLhuLix4pgEFU=; b=Glj5iqr8L2yWUK8p+I64wgdP9q
+ DZOE9qPw6xIsieVDpKTkB1Y/FmeR8En9e9crk2+PXwgDl7axcaxmAX9YslGJySYLZbDIsuh1p89rQ
+ Ps3ONpBtXfyrGD5OoRmNMw7K0SJagtQkNh7iJv97bmLTOSbF7YvCilxzuOkF0y/TrHs4=;
 Received: from andrew by vps0.lunn.ch with local (Exim 4.89)
  (envelope-from <andrew@lunn.ch>)
- id 1hs7hQ-0002VA-NJ; Mon, 29 Jul 2019 17:36:32 +0200
-Date: Mon, 29 Jul 2019 17:36:32 +0200
+ id 1hs7ib-0002Wc-2C; Mon, 29 Jul 2019 17:37:45 +0200
+Date: Mon, 29 Jul 2019 17:37:45 +0200
 From: Andrew Lunn <andrew@lunn.ch>
 To: Claudiu Manoil <claudiu.manoil@nxp.com>
-Subject: Re: [PATCH net-next v3 3/4] dt-bindings: net: fsl: enetc: Add
- bindings for the central MDIO PCIe endpoint
-Message-ID: <20190729153632.GH4110@lunn.ch>
+Subject: Re: [PATCH net-next v3 4/4] arm64: dts: fsl: ls1028a: Enable eth
+ port1 on the ls1028a QDS board
+Message-ID: <20190729153745.GI4110@lunn.ch>
 References: <1564394627-3810-1-git-send-email-claudiu.manoil@nxp.com>
- <1564394627-3810-4-git-send-email-claudiu.manoil@nxp.com>
+ <1564394627-3810-5-git-send-email-claudiu.manoil@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1564394627-3810-4-git-send-email-claudiu.manoil@nxp.com>
+In-Reply-To: <1564394627-3810-5-git-send-email-claudiu.manoil@nxp.com>
 User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_083636_589223_E3ED1077 
-X-CRM114-Status: UNSURE (   7.58  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190729_083749_477665_59E81571 
+X-CRM114-Status: GOOD (  11.15  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -87,12 +86,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jul 29, 2019 at 01:03:46PM +0300, Claudiu Manoil wrote:
-> The on-chip PCIe root complex that integrates the ENETC ethernet
-> controllers also integrates a PCIe endpoint for the MDIO controller
-> providing for centralized control of the ENETC mdio bus.
-> Add bindings for this "central" MDIO Integrated PCIe Endpoint.
+On Mon, Jul 29, 2019 at 01:03:47PM +0300, Claudiu Manoil wrote:
+> LS1028a has one Ethernet management interface. On the QDS board, the
+> MDIO signals are multiplexed to either on-board AR8035 PHY device or
+> to 4 PCIe slots allowing for SGMII cards.
+> To enable the Ethernet ENETC Port 1, which can only be connected to a
+> RGMII PHY, the multiplexer needs to be configured to route the MDIO to
+> the AR8035 PHY.  The MDIO/MDC routing is controlled by bits 7:4 of FPGA
+> board config register 0x54, and value 0 selects the on-board RGMII PHY.
+> The FPGA board config registers are accessible on the i2c bus, at address
+> 0x66.
 > 
+> The PF3 MDIO PCIe integrated endpoint device allows for centralized access
+> to the MDIO bus.  Add the corresponding devicetree node and set it to be
+> the MDIO bus parent.
+> 
+> Signed-off-by: Alex Marginean <alexandru.marginean@nxp.com>
 > Signed-off-by: Claudiu Manoil <claudiu.manoil@nxp.com>
 
 Reviewed-by: Andrew Lunn <andrew@lunn.ch>
