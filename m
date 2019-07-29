@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E767F79670
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 21:52:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6189F79673
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 21:52:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+qXnGx3fmETfyPD13NEyFNaVDnmQ9JmXq0uccWmW3PU=; b=MTzJpv7PTW3CKb
-	mKJVUb7i0rGLalGBwNiKWUqYIrHs7luV0T9GPFYb9ZxI1WIV6hMjtW32vSt4ct/GDiCz7dU+LEA/Q
-	tWif9UGmIzjckWB4LyObFVfj7mQKe1WlTYjusKZowcIxH2T9cPWQi16pZwm6IFxUE+dFg25MBPsRk
-	ogZXK8xa9yyYKDbE5x+O9tifb6AgQEWoGYtlDyKfF4CUZmb2tDKfRdrCsS2aVWkYd7CTZentK/ev0
-	VY+Xd1ha6fnzN7ye3JYoUYpx/OkgIdYfUf9FV64pHzMZqQSvaOIHWTQo9mgjZJRf3mdhtMkUzTwHm
-	JVTBW+W8O7o16+lg+xaw==;
+	List-Owner; bh=/soSQgd3enRrjvi1EtU2EAo9eOvsEoxgcwyfeiZJNBA=; b=enDZ+P/I8Asouh
+	sdWjHoU6fTXCaCcEPxOrjav3g9+LG216NagdiY9G//KDidUBgxg/3yTLVAf9tA2iUUBpEIgXJOovs
+	99HtOEmwC8tko+GGcaMT3mh0ooBGa82aGp+UifUChduLzEAx4qOC3mio8eb8U1v/EF8WPFx7sUajM
+	56vL79Ug2nK/FtJYLQiyH5B7RI54Ch6qcITkvVZD5ucHfTYyTP9grMdYZJxnvboSz9/8se8V2Davf
+	zF0AbHiBJJ4UupNtVaFjRKyqqdX+TEbmPhHbkik1dWGEgYlzLdEmgqhaal7SC2ebXArmb9yvUFP8D
+	LVkUZtPS8SpMKdyzqzVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsBgY-0003pa-Ro; Mon, 29 Jul 2019 19:51:54 +0000
+	id 1hsBgq-00045V-OS; Mon, 29 Jul 2019 19:52:13 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsBfy-0003bG-AA
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 19:51:20 +0000
+ id 1hsBg1-0003ej-VQ
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 19:51:23 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8E6BF21773;
- Mon, 29 Jul 2019 19:51:17 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 36B00217D6;
+ Mon, 29 Jul 2019 19:51:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564429878;
- bh=WC/j/sIjThtlobfzS6nVKzO7mZHYA9bZW6rokSFNWWI=;
+ s=default; t=1564429881;
+ bh=weIz1uBlyldbyeAv5HDGI4Fix09FhaoFEQLoHR14ie8=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=P0m1GikyM10M2aFm7plIQWVIjAqqWOestowzb4NVULm5EjLajk4EyznbR6/FW6Odr
- OuPcU0kFaYbZaQtWFRpPHhhUhBG6dMkFIWYZfKXxtW5RPv2z7Alr744rX5wflYJukz
- +xvbr/6S7KvxE5Z0392m/Jg8DiY4zU7FlK77wg7E=
+ b=PFE5piDe3XbzXX/b9rJFPGMucgtkiA6Q1t03tAX/4w/kAtMu/+vNYA9PlJ8LPY9GA
+ +UL+Mm5jpZJU0opd5KKO5aek80m/a6E9vS2b6a0hSemo9hkKOHZB1pvcVvA2fD7GfV
+ 6OkpmdmOXnxfwyyFMkPKVze78VmE8P8w1Im6pjJA=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 5.2 125/215] perf map: Fix potential NULL pointer dereference
- found by smatch tool
-Date: Mon, 29 Jul 2019 21:22:01 +0200
-Message-Id: <20190729190800.952187231@linuxfoundation.org>
+Subject: [PATCH 5.2 126/215] perf annotate: Fix dereferencing freed memory
+ found by the smatch tool
+Date: Mon, 29 Jul 2019 21:22:02 +0200
+Message-Id: <20190729190801.169409742@linuxfoundation.org>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190729190739.971253303@linuxfoundation.org>
 References: <20190729190739.971253303@linuxfoundation.org>
 User-Agent: quilt/0.66
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_125118_381324_5774EE17 
-X-CRM114-Status: GOOD (  11.89  )
+X-CRM114-CacheID: sfid-20190729_125122_173119_9B890C5E 
+X-CRM114-Status: GOOD (  13.50  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -98,36 +98,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-[ Upstream commit 363bbaef63ffebcc745239fe80a953ebb5ac9ec9 ]
+[ Upstream commit 600c787dbf6521d8d07ee717ab7606d5070103ea ]
 
-Based on the following report from Smatch, fix the potential NULL
-pointer dereference check.
+Based on the following report from Smatch, fix the potential
+dereferencing freed memory check.
 
-  tools/perf/util/map.c:479
-  map__fprintf_srccode() error: we previously assumed 'state' could be
-  null (see line 466)
+  tools/perf/util/annotate.c:1125
+  disasm_line__parse() error: dereferencing freed memory 'namep'
 
-  tools/perf/util/map.c
-  465         /* Avoid redundant printing */
-  466         if (state &&
-  467             state->srcfile &&
-  468             !strcmp(state->srcfile, srcfile) &&
-  469             state->line == line) {
-  470                 free(srcfile);
-  471                 return 0;
-  472         }
-  473
-  474         srccode = find_sourceline(srcfile, line, &len);
-  475         if (!srccode)
-  476                 goto out_free_line;
-  477
-  478         ret = fprintf(fp, "|%-8d %.*s", line, len, srccode);
-  479         state->srcfile = srcfile;
-              ^^^^^^^
-  480         state->line = line;
-              ^^^^^^^
+  tools/perf/util/annotate.c
+  1100 static int disasm_line__parse(char *line, const char **namep, char **rawp)
+  1101 {
+  1102         char tmp, *name = ltrim(line);
 
-This patch validates 'state' pointer before access its elements.
+  [...]
+
+  1114         *namep = strdup(name);
+  1115
+  1116         if (*namep == NULL)
+  1117                 goto out_free_name;
+
+  [...]
+
+  1124 out_free_name:
+  1125         free((void *)namep);
+                            ^^^^^
+  1126         *namep = NULL;
+               ^^^^^^
+  1127         return -1;
+  1128 }
+
+If strdup() fails to allocate memory space for *namep, we don't need to
+free memory with pointer 'namep', which is resident in data structure
+disasm_line::ins::name; and *namep is NULL pointer for this failure, so
+it's pointless to assign NULL to *namep again.
+
+Committer note:
+
+Freeing namep, which is the address of the first entry of the 'struct
+ins' that is the first member of struct disasm_line would in fact free
+that disasm_line instance, if it was allocated via malloc/calloc, which,
+later, would a dereference of freed memory.
 
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
 Acked-by: Jiri Olsa <jolsa@kernel.org>
@@ -151,32 +162,36 @@ Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
 Cc: Thomas Gleixner <tglx@linutronix.de>
 Cc: Thomas Richter <tmricht@linux.ibm.com>
 Cc: linux-arm-kernel@lists.infradead.org
-Fixes: dd2e18e9ac20 ("perf tools: Support 'srccode' output")
-Link: http://lkml.kernel.org/r/20190702103420.27540-8-leo.yan@linaro.org
+Link: http://lkml.kernel.org/r/20190702103420.27540-5-leo.yan@linaro.org
 Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- tools/perf/util/map.c | 7 +++++--
- 1 file changed, 5 insertions(+), 2 deletions(-)
+ tools/perf/util/annotate.c | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
 
-diff --git a/tools/perf/util/map.c b/tools/perf/util/map.c
-index ee71efb9db62..9c81ee092784 100644
---- a/tools/perf/util/map.c
-+++ b/tools/perf/util/map.c
-@@ -470,8 +470,11 @@ int map__fprintf_srccode(struct map *map, u64 addr,
- 		goto out_free_line;
+diff --git a/tools/perf/util/annotate.c b/tools/perf/util/annotate.c
+index c8ce13419d9b..b8dfcfe08bb1 100644
+--- a/tools/perf/util/annotate.c
++++ b/tools/perf/util/annotate.c
+@@ -1113,16 +1113,14 @@ static int disasm_line__parse(char *line, const char **namep, char **rawp)
+ 	*namep = strdup(name);
  
- 	ret = fprintf(fp, "|%-8d %.*s", line, len, srccode);
--	state->srcfile = srcfile;
--	state->line = line;
-+
-+	if (state) {
-+		state->srcfile = srcfile;
-+		state->line = line;
-+	}
- 	return ret;
+ 	if (*namep == NULL)
+-		goto out_free_name;
++		goto out;
  
- out_free_line:
+ 	(*rawp)[0] = tmp;
+ 	*rawp = ltrim(*rawp);
+ 
+ 	return 0;
+ 
+-out_free_name:
+-	free((void *)namep);
+-	*namep = NULL;
++out:
+ 	return -1;
+ }
+ 
 -- 
 2.20.1
 
