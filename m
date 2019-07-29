@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA4C479585
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 21:43:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 686D879589
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 21:43:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZtbtROlmTI4BPbZFAriCZ4rHOYRv21KMZouIiJr21e4=; b=gEQDhz8ECSTG9Y
-	D7QBnFSQecsQuH6HMqzOcIPym9/w4qZ2j1gJiM4iFkRN3f8wjgEgnm9HuF97Zw5uZ2UG5tnUGWvBU
-	fet3Gv+zTnYaRujeOe1OdbNce2Xj77PxrZH5rzT9vmhDL+pqBe0ZnhGiHR77zOK/7DAI0CdVsvTuS
-	/ya7Jf6wuLE3sS27RY4py1yd1MI+r5zKiiU6bZrmndkioeELxPD9WbqL0ToixC7lz8EjeLX2Ngnpc
-	RWD+Cm8iZeRyTgR609kJf1eDsoCpAq3ERC2R/l/9YoJvfn+Gfg7XkbonNQcrmzpR1HTo0MLj41Boi
-	l2m/5CCJepWbdj0g1x0w==;
+	List-Owner; bh=/S19f8GpCSoucrPNdNXJxO/F6qHqs9Evh17wnnB98DA=; b=uelLgeQR4lhhJt
+	oE74MqszTsQcaXAuUk02tijKB98F0ojEBwtRL+NEUuqgSJfoJDxtEdUYV9DL7I4EjTlji6csGanAE
+	Nc7zeeKRYW91ee2oGQnZwuNH08GliEhZas4LN4aZYR6XsDuGfvfbXdRntS8Lu0I9TrjEFYJXhgiEr
+	aFpIXrjZKwvqD9w8I1prcinJ6IO7k1080KjctT4VbCky/0W4Bz0MLOIj+SrSZb50Sv32JKAxeG0/t
+	m1sqRrPwwP+XewCVd2gV6SOD108d9dBKk4FzW066uQM6/3oUGqDLLBRTysn27PyM52NLrZG6lUnw0
+	26FzhL1JwQzcD8OC+SHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsBYX-00074v-38; Mon, 29 Jul 2019 19:43:37 +0000
+	id 1hsBYq-0007MR-Ej; Mon, 29 Jul 2019 19:43:56 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsBXU-0006cZ-Nf
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 19:42:35 +0000
+ id 1hsBXY-0006dv-6e
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 19:42:38 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CC5AF20C01;
- Mon, 29 Jul 2019 19:42:31 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 60DAB217D6;
+ Mon, 29 Jul 2019 19:42:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564429352;
- bh=3UEydif8h+lKxicNWgQImmEghmKUxXP1kN5j02nXTBk=;
+ s=default; t=1564429354;
+ bh=3dBqoLX1MdZnGh9qolzsC9YWNOT/TRcQp7It1oiIhRE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=v0HAlwpjZDoel1ZIJ+NHAxIL2Fx629X3xdfarXjR3cG/GsS90nzYBdeiGaWCG/Vqz
- JM4KE9A0jzdhY98QwPjhyZ0tQtJLxzYM6iCuuPboDu1ifhBygXgDCO6Xc2nI1/kS+4
- VCqMIPJFIUfvWipd7ikuQprGZM8HKOSpT4OfJFTo=
+ b=Yn6qj5pDUquT+gUYpqAnTvzJELHD4wIk4xzXNeEADcUiLA+lwbUia9vJhIzEPeRRV
+ frAbAajWdLgdHRDObS8TykZy/sUwqxdq0KafMBqb/6DKSGBod/vd6X0FGwqx0BBpTv
+ 2krGZql9B0UrYaCuLp6vH1SOEx1TcR8igkB3ZLmw=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 4.19 069/113] perf top: Fix potential NULL pointer dereference
- detected by the smatch tool
-Date: Mon, 29 Jul 2019 21:22:36 +0200
-Message-Id: <20190729190711.996881254@linuxfoundation.org>
+Subject: [PATCH 4.19 070/113] perf session: Fix potential NULL pointer
+ dereference found by the smatch tool
+Date: Mon, 29 Jul 2019 21:22:37 +0200
+Message-Id: <20190729190712.209366309@linuxfoundation.org>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190729190655.455345569@linuxfoundation.org>
 References: <20190729190655.455345569@linuxfoundation.org>
 User-Agent: quilt/0.66
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_124232_869758_C932F355 
-X-CRM114-Status: GOOD (  13.01  )
+X-CRM114-CacheID: sfid-20190729_124236_782765_0B24E65F 
+X-CRM114-Status: GOOD (  11.61  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -98,33 +98,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-[ Upstream commit 111442cfc8abdeaa7ec1407f07ef7b3e5f76654e ]
+[ Upstream commit f3c8d90757724982e5f07cd77d315eb64ca145ac ]
 
-Based on the following report from Smatch, fix the potential NULL
-pointer dereference check.
+Based on the following report from Smatch, fix the potential
+NULL pointer dereference check.
 
-  tools/perf/builtin-top.c:109
-  perf_top__parse_source() warn: variable dereferenced before check 'he'
-  (see line 103)
+  tools/perf/util/session.c:1252
+  dump_read() error: we previously assumed 'evsel' could be null
+  (see line 1249)
 
-  tools/perf/builtin-top.c:233
-  perf_top__show_details() warn: variable dereferenced before check 'he'
-  (see line 228)
+  tools/perf/util/session.c
+  1240 static void dump_read(struct perf_evsel *evsel, union perf_event *event)
+  1241 {
+  1242         struct read_event *read_event = &event->read;
+  1243         u64 read_format;
+  1244
+  1245         if (!dump_trace)
+  1246                 return;
+  1247
+  1248         printf(": %d %d %s %" PRIu64 "\n", event->read.pid, event->read.tid,
+  1249                evsel ? perf_evsel__name(evsel) : "FAIL",
+  1250                event->read.value);
+  1251
+  1252         read_format = evsel->attr.read_format;
+                             ^^^^^^^
 
-  tools/perf/builtin-top.c
-  101 static int perf_top__parse_source(struct perf_top *top, struct hist_entry *he)
-  102 {
-  103         struct perf_evsel *evsel = hists_to_evsel(he->hists);
-                                                        ^^^^
-  104         struct symbol *sym;
-  105         struct annotation *notes;
-  106         struct map *map;
-  107         int err = -1;
-  108
-  109         if (!he || !he->ms.sym)
-  110                 return -1;
-
-This patch moves the values assignment after validating pointer 'he'.
+'evsel' could be NULL pointer, for this case this patch directly bails
+out without dumping read_event.
 
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
 Acked-by: Jiri Olsa <jolsa@kernel.org>
@@ -148,53 +148,27 @@ Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
 Cc: Thomas Gleixner <tglx@linutronix.de>
 Cc: Thomas Richter <tmricht@linux.ibm.com>
 Cc: linux-arm-kernel@lists.infradead.org
-Link: http://lkml.kernel.org/r/20190702103420.27540-4-leo.yan@linaro.org
+Link: http://lkml.kernel.org/r/20190702103420.27540-9-leo.yan@linaro.org
 Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- tools/perf/builtin-top.c | 8 ++++++--
- 1 file changed, 6 insertions(+), 2 deletions(-)
+ tools/perf/util/session.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/tools/perf/builtin-top.c b/tools/perf/builtin-top.c
-index 33eefc33e0ea..d0733251a386 100644
---- a/tools/perf/builtin-top.c
-+++ b/tools/perf/builtin-top.c
-@@ -99,7 +99,7 @@ static void perf_top__resize(struct perf_top *top)
+diff --git a/tools/perf/util/session.c b/tools/perf/util/session.c
+index 11086097fc9f..f016d1b330e5 100644
+--- a/tools/perf/util/session.c
++++ b/tools/perf/util/session.c
+@@ -1141,6 +1141,9 @@ static void dump_read(struct perf_evsel *evsel, union perf_event *event)
+ 	       evsel ? perf_evsel__name(evsel) : "FAIL",
+ 	       event->read.value);
  
- static int perf_top__parse_source(struct perf_top *top, struct hist_entry *he)
- {
--	struct perf_evsel *evsel = hists_to_evsel(he->hists);
-+	struct perf_evsel *evsel;
- 	struct symbol *sym;
- 	struct annotation *notes;
- 	struct map *map;
-@@ -108,6 +108,8 @@ static int perf_top__parse_source(struct perf_top *top, struct hist_entry *he)
- 	if (!he || !he->ms.sym)
- 		return -1;
- 
-+	evsel = hists_to_evsel(he->hists);
++	if (!evsel)
++		return;
 +
- 	sym = he->ms.sym;
- 	map = he->ms.map;
+ 	read_format = evsel->attr.read_format;
  
-@@ -224,7 +226,7 @@ static void perf_top__record_precise_ip(struct perf_top *top,
- static void perf_top__show_details(struct perf_top *top)
- {
- 	struct hist_entry *he = top->sym_filter_entry;
--	struct perf_evsel *evsel = hists_to_evsel(he->hists);
-+	struct perf_evsel *evsel;
- 	struct annotation *notes;
- 	struct symbol *symbol;
- 	int more;
-@@ -232,6 +234,8 @@ static void perf_top__show_details(struct perf_top *top)
- 	if (!he)
- 		return;
- 
-+	evsel = hists_to_evsel(he->hists);
-+
- 	symbol = he->ms.sym;
- 	notes = symbol__annotation(symbol);
- 
+ 	if (read_format & PERF_FORMAT_TOTAL_TIME_ENABLED)
 -- 
 2.20.1
 
