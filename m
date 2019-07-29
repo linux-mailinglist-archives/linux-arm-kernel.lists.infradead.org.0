@@ -2,44 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76FEB78F5B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 17:33:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB43B78F64
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 17:34:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ZB6ozyka46c1drbrhhl6gjnL92QyVGqnP+EgoHvD0TQ=; b=JbsncD8pU73A57
-	u3x8JOzD3RNOxPpz9aLrXRlQOmwMWuUvnbI7VR4MisHG9NFJAltMXw2N4HTQ3yxJX4a1xvddnVkNp
-	ttrHGnIAcOqRMyaUT9nzxbT779e+Jvp16VJ3vh77ftbu1DUi49mFTP4Ja8Vs/DsdweJKdHqI0BceH
-	KegPqHN++xXLYI86SCzfguH/A3kw9WONwnAmVLylwHdaNP/J6zilJBzpsKAyFxMgx2h3X/pO7X+rE
-	ycoeHOoBqLqGGe176nCjJjLNSpjy6t2HOYBRXdY4JKtFqGBvlnj5ptx7rr/qMtoC+xpq5yEMtFYrt
-	4sYAcqSn0maqeN13az0Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WRr2T5wxHmUZ9Ce+F1oNdBijEVS79/RmqfDtmsHyOBA=; b=InzmAMoTdr8lJ8
+	wiKau6fgCWPRxVT1gQPtWL1zYqcmtDsPVVE0QwOBxDj8EKEn8U85UCX1wggonrKp/5epoXokXkhnq
+	MQWWa0HS8ZNdqv75Rxstl1le2G0FokippwM6gJgYKVfye1DhAnTRt2K9MT8S0xartx42pKFpfw92Z
+	5poVhXhQ9sOsEzNGPLPoEyzn1JdhVhxq48qHhOOe6uqnwnZRJaQgUBaw06z1E9ayg8FXrGLVQBwNj
+	CucG66EFwtbMkYx7yMuC+zEQu/kj7swh0SfBoVWITv7UC9+jh+NoS0JXxvWOAgdqp8+3t7ZaBqHYs
+	MQi1i58QNR75Wn5rz7HQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hs7e6-00073d-A8; Mon, 29 Jul 2019 15:33:06 +0000
+	id 1hs7f0-0007OP-VD; Mon, 29 Jul 2019 15:34:03 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hs7dq-000738-EB
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 15:32:51 +0000
+ id 1hs7en-0007Ns-AV; Mon, 29 Jul 2019 15:33:50 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 345DB337;
- Mon, 29 Jul 2019 08:32:49 -0700 (PDT)
-Received: from e110467-lin.cambridge.arm.com (e110467-lin.cambridge.arm.com
- [10.1.197.57])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 4BD803F694;
- Mon, 29 Jul 2019 08:32:48 -0700 (PDT)
-From: Robin Murphy <robin.murphy@arm.com>
-To: joro@8bytes.org
-Subject: [PATCH] iommu/dma: Handle MSI mappings separately
-Date: Mon, 29 Jul 2019 16:32:38 +0100
-Message-Id: <2b2595de703c60a772ebcffe248d0cf036143e6a.1564414114.git.robin.murphy@arm.com>
-X-Mailer: git-send-email 2.21.0.dirty
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AEAE3337;
+ Mon, 29 Jul 2019 08:33:48 -0700 (PDT)
+Received: from e121166-lin.cambridge.arm.com (unknown [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1D6103F694;
+ Mon, 29 Jul 2019 08:33:46 -0700 (PDT)
+Date: Mon, 29 Jul 2019 16:33:41 +0100
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Jianjun Wang <jianjun.wang@mediatek.com>
+Subject: Re: [v2,2/2] PCI: mediatek: Add controller support for MT7629
+Message-ID: <20190729153341.GA23266@e121166-lin.cambridge.arm.com>
+References: <20190628073425.25165-1-jianjun.wang@mediatek.com>
+ <20190628073425.25165-3-jianjun.wang@mediatek.com>
+ <1564385918.17211.6.camel@mhfsdcap03>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1564385918.17211.6.camel@mhfsdcap03>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_083250_519747_97DBFC77 
-X-CRM114-Status: GOOD (  14.62  )
+X-CRM114-CacheID: sfid-20190729_083349_446689_C0D93C51 
+X-CRM114-Status: GOOD (  21.83  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -58,82 +61,112 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: maz@kernel.org, iommu@lists.linux-foundation.org,
- Shameer Kolothum <shameerali.kolothum.thodi@huawei.com>,
- linux-arm-kernel@lists.infradead.org, Andre Przywara <andre.przywara@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Ryder Lee <ryder.lee@mediatek.com>, linux-pci@vger.kernel.org,
+ youlin.pei@mediatek.com, linux-kernel@vger.kernel.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Bjorn Helgaas <bhelgaas@google.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MSI pages must always be mapped into a device's *current* domain, which
-*might* be the default DMA domain, but might instead be a VFIO domain
-with its own MSI cookie. This subtlety got accidentally lost in the
-streamlining of __iommu_dma_map(), but rather than reintroduce more
-complexity and/or special-casing, it turns out neater to just split this
-path out entirely.
+On Mon, Jul 29, 2019 at 03:38:38PM +0800, Jianjun Wang wrote:
+> On Fri, 2019-06-28 at 15:34 +0800, Jianjun Wang wrote:
+> > MT7629 is an ARM platform SoC which has the same PCIe IP with MT7622.
+> > 
+> > The HW default value of its Device ID is invalid, fix its Device ID to
+> > match the hardware implementation.
+> > 
+> > Acked-by: Ryder Lee <ryder.lee@mediatek.com>
+> > Signed-off-by: Jianjun Wang <jianjun.wang@mediatek.com>
+> > ---
+> >  drivers/pci/controller/pcie-mediatek.c | 18 ++++++++++++++++++
+> >  include/linux/pci_ids.h                |  1 +
+> >  2 files changed, 19 insertions(+)
+> > 
+> > diff --git a/drivers/pci/controller/pcie-mediatek.c b/drivers/pci/controller/pcie-mediatek.c
+> > index 80601e1b939e..e5e6740b635d 100644
+> > --- a/drivers/pci/controller/pcie-mediatek.c
+> > +++ b/drivers/pci/controller/pcie-mediatek.c
+> > @@ -73,6 +73,7 @@
+> >  #define PCIE_MSI_VECTOR		0x0c0
+> >  
+> >  #define PCIE_CONF_VEND_ID	0x100
+> > +#define PCIE_CONF_DEVICE_ID	0x102
+> >  #define PCIE_CONF_CLASS_ID	0x106
+> >  
+> >  #define PCIE_INT_MASK		0x420
+> > @@ -141,12 +142,16 @@ struct mtk_pcie_port;
+> >  /**
+> >   * struct mtk_pcie_soc - differentiate between host generations
+> >   * @need_fix_class_id: whether this host's class ID needed to be fixed or not
+> > + * @need_fix_device_id: whether this host's Device ID needed to be fixed or not
+> > + * @device_id: Device ID which this host need to be fixed
+> >   * @ops: pointer to configuration access functions
+> >   * @startup: pointer to controller setting functions
+> >   * @setup_irq: pointer to initialize IRQ functions
+> >   */
+> >  struct mtk_pcie_soc {
+> >  	bool need_fix_class_id;
+> > +	bool need_fix_device_id;
+> > +	unsigned int device_id;
+> >  	struct pci_ops *ops;
+> >  	int (*startup)(struct mtk_pcie_port *port);
+> >  	int (*setup_irq)(struct mtk_pcie_port *port, struct device_node *node);
+> > @@ -696,6 +701,9 @@ static int mtk_pcie_startup_port_v2(struct mtk_pcie_port *port)
+> >  		writew(val, port->base + PCIE_CONF_CLASS_ID);
+> >  	}
+> >  
+> > +	if (soc->need_fix_device_id)
+> > +		writew(soc->device_id, port->base + PCIE_CONF_DEVICE_ID);
+> > +
+> >  	/* 100ms timeout value should be enough for Gen1/2 training */
+> >  	err = readl_poll_timeout(port->base + PCIE_LINK_STATUS_V2, val,
+> >  				 !!(val & PCIE_PORT_LINKUP_V2), 20,
+> > @@ -1216,11 +1224,21 @@ static const struct mtk_pcie_soc mtk_pcie_soc_mt7622 = {
+> >  	.setup_irq = mtk_pcie_setup_irq,
+> >  };
+> >  
+> > +static const struct mtk_pcie_soc mtk_pcie_soc_mt7629 = {
+> > +	.need_fix_class_id = true,
+> > +	.need_fix_device_id = true,
+> > +	.device_id = PCI_DEVICE_ID_MEDIATEK_7629,
+> > +	.ops = &mtk_pcie_ops_v2,
+> > +	.startup = mtk_pcie_startup_port_v2,
+> > +	.setup_irq = mtk_pcie_setup_irq,
+> > +};
+> > +
+> >  static const struct of_device_id mtk_pcie_ids[] = {
+> >  	{ .compatible = "mediatek,mt2701-pcie", .data = &mtk_pcie_soc_v1 },
+> >  	{ .compatible = "mediatek,mt7623-pcie", .data = &mtk_pcie_soc_v1 },
+> >  	{ .compatible = "mediatek,mt2712-pcie", .data = &mtk_pcie_soc_mt2712 },
+> >  	{ .compatible = "mediatek,mt7622-pcie", .data = &mtk_pcie_soc_mt7622 },
+> > +	{ .compatible = "mediatek,mt7629-pcie", .data = &mtk_pcie_soc_mt7629 },
+> >  	{},
+> >  };
+> >  
+> > diff --git a/include/linux/pci_ids.h b/include/linux/pci_ids.h
+> > index 70e86148cb1e..aa32962759b2 100644
+> > --- a/include/linux/pci_ids.h
+> > +++ b/include/linux/pci_ids.h
+> > @@ -2131,6 +2131,7 @@
+> >  #define PCI_VENDOR_ID_MYRICOM		0x14c1
+> >  
+> >  #define PCI_VENDOR_ID_MEDIATEK		0x14c3
+> > +#define PCI_DEVICE_ID_MEDIATEK_7629	0x7629
+> >  
+> >  #define PCI_VENDOR_ID_TITAN		0x14D2
+> >  #define PCI_DEVICE_ID_TITAN_010L	0x8001
+> 
+> Hi Bjorn & Lorenzo,
+> 
+> Is this patch ok or is there anything I need to fixed?
 
-Since iommu_dma_get_msi_page() already duplicates much of what
-__iommu_dma_map() does, it can easily just make the allocation and
-mapping calls directly as well. That way we can further streamline the
-helper back to exclusively operating on DMA domains.
+We are getting to it shortly, thanks for your patience.
 
-Fixes: b61d271e59d7 ("iommu/dma: Move domain lookup into __iommu_dma_{map,unmap}")
-Reported-by: Shameer Kolothum <shameerali.kolothum.thodi@huawei.com>
-Reported-by: Andre Przywara <andre.przywara@arm.com>
-Signed-off-by: Robin Murphy <robin.murphy@arm.com>
----
- drivers/iommu/dma-iommu.c | 17 ++++++++++-------
- 1 file changed, 10 insertions(+), 7 deletions(-)
-
-diff --git a/drivers/iommu/dma-iommu.c b/drivers/iommu/dma-iommu.c
-index a7f9c3edbcb2..6441197a75ea 100644
---- a/drivers/iommu/dma-iommu.c
-+++ b/drivers/iommu/dma-iommu.c
-@@ -459,13 +459,11 @@ static dma_addr_t __iommu_dma_map(struct device *dev, phys_addr_t phys,
- {
- 	struct iommu_domain *domain = iommu_get_dma_domain(dev);
- 	struct iommu_dma_cookie *cookie = domain->iova_cookie;
--	size_t iova_off = 0;
-+	struct iova_domain *iovad = &cookie->iovad;
-+	size_t iova_off = iova_offset(iovad, phys);
- 	dma_addr_t iova;
- 
--	if (cookie->type == IOMMU_DMA_IOVA_COOKIE) {
--		iova_off = iova_offset(&cookie->iovad, phys);
--		size = iova_align(&cookie->iovad, size + iova_off);
--	}
-+	size = iova_align(iovad, size + iova_off);
- 
- 	iova = iommu_dma_alloc_iova(domain, size, dma_get_mask(dev), dev);
- 	if (!iova)
-@@ -1147,16 +1145,21 @@ static struct iommu_dma_msi_page *iommu_dma_get_msi_page(struct device *dev,
- 	if (!msi_page)
- 		return NULL;
- 
--	iova = __iommu_dma_map(dev, msi_addr, size, prot);
--	if (iova == DMA_MAPPING_ERROR)
-+	iova = iommu_dma_alloc_iova(domain, size, dma_get_mask(dev), dev);
-+	if (!iova)
- 		goto out_free_page;
- 
-+	if (iommu_map(domain, iova, msi_addr, size, prot))
-+		goto out_free_iova;
-+
- 	INIT_LIST_HEAD(&msi_page->list);
- 	msi_page->phys = msi_addr;
- 	msi_page->iova = iova;
- 	list_add(&msi_page->list, &cookie->msi_page_list);
- 	return msi_page;
- 
-+out_free_iova:
-+	iommu_dma_free_iova(cookie, iova, size);
- out_free_page:
- 	kfree(msi_page);
- 	return NULL;
--- 
-2.21.0.dirty
-
+Lorenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
