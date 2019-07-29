@@ -2,89 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 00A207968C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 21:53:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F99A7979E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 22:01:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o6eob+y6rmxvaKz++g6XR3p9hRkjFu14ED9xBCkxSv4=; b=jePrtH4OnN5j7Q
-	Kj1313NWqOWPHEiXtlbGRJU+FJYINTJZg9mHax96vS1Z+cLFafZaYITevItCdku1q8EkPaX0jdoX3
-	dJB0M30Dxem2FGF6DDPI52MScWtkfubFY/5xzlXNMxl3EFDphOed5K1obeTrDYKklRubmAHxkspfi
-	PYVCsyR0Y2gnAPE1Km2R1Yez7QZ+KRU1a4QLhSlugxCmWPBPnJcQTIrLLqg0MBMhFL+UvCatdqXRN
-	IH/oSvrHNIkHmJaCPDL/VYh2Wc306Eea4GXmyVIeRcd0G959mPjZCZU13bvydOkRUwEhU/wtFBnTx
-	O9D8gnQN6UPEWkK1G/Kw==;
+	List-Owner; bh=39br6F4V0nZJBlArgO9mofFTSGx+6SCyWzeCcxvnJoA=; b=FO6z3bLRJ/L4vp
+	utJfxICbJiDGD9bYIPCFMChzdQQe8vmD7GCNgqOMbIdbTNhxlSRrsdPfrVmdOzT2lWcy4UQOFlmAC
+	Ww6Ckzqgl8YnDc9IzAdhFf3e2EJLSOE0KiQBsuwXB/VSVm3abfzbLF87nqRcf0FL8jPjWLqZPvPDr
+	DxrQ57kjX1rmeJl12oIg9+QVCuddQowCzrrhA7WburCH61CThKpFjbivTk2ApIBOjlcCyywYwvC40
+	WBn5NbpLQvHTrjzXlMbpA78pOciA1D7t50kIoJ1ALhv9qcOLmEHijbqkRFMFiQHrURI58t7PaYQgC
+	ZQ5svTBgUVrt/lMj6Kcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsBhd-0004nG-Iq; Mon, 29 Jul 2019 19:53:01 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1hsBpn-0001Ay-2s; Mon, 29 Jul 2019 20:01:27 +0000
+Received: from mail-ua1-x942.google.com ([2607:f8b0:4864:20::942])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsBgH-0003pq-NG
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 19:51:39 +0000
-Received: by mail-lj1-x241.google.com with SMTP id t28so59753275lje.9
+ id 1hsBpT-00018P-3Q
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 20:01:09 +0000
+Received: by mail-ua1-x942.google.com with SMTP id j8so24503583uan.6
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 29 Jul 2019 12:51:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=ragnatech-se.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=El7Ib0jTQtxwv9EQk3d/9hKJrGZteddjh0+HIjhP2fo=;
- b=kQ7u2Z5De3ynsZA4y1P68rxHq30RnVHHlC09c4hOT6vJoDwyIv6DSwaSTbaVAM92Pv
- 1TahDbRIHgs/SWIeE6HzY6g9xHQ51ZQ5zZYicb15lxBgunoQ/egqY4zSsFVzcZvsJ9z6
- /jkH3fkKht0WAtOabiND7dhBWBZLBAmy/ckrfV3RVnvJEODoamQy182/Y1NfIbPyZbd/
- 1ZUE+uEJRDrgK63qsJzjL0eMxk9Gtdfdtrp+7Ny0zciaIr0gjghMGsvkVFZhTqlbo46e
- jnp85j0bXEkkyE7GICxMVSEZitxSjBtcaBUblR9nc6GmO5npRlHqhqNnxh44LsNKm9OO
- VePA==
+ Mon, 29 Jul 2019 13:01:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=nrAa1Owq+7NF6kk+ji/D7dPA87Icvc1pwfZh0czgUOU=;
+ b=KTuQ2tCCTKLQ+MdVBkF1NA2b4xEEcgaUdjPrZz2EtFVYtw5sV+nIHjAbJ3+qjj6Ilq
+ tnwzX4NxGstAiaYTWTQASw87/Zy5ukyWTpuSXrya5dITeeRQe+utDjnW/5/mkr2cA+tw
+ gy1iSpJRyrEi3LrDpHe4NRzH+ZGNobRWkAi1XVzDXtf9XYqw+4FyyuzbQA7J6+V2nRiQ
+ HZnWb7DZKGMvX+rsKZk4DxCOWBxK6Sj8U01TziqihRA5Dps5F4btJ6/M0GG6SOYExZNo
+ pMsLk9Q1QhH/HC4wI6BooyZhEB5EKXq5OOm6oo6gi+Ma5JG6usNdkd9igrdPIWDZ6jb5
+ Bv3Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=El7Ib0jTQtxwv9EQk3d/9hKJrGZteddjh0+HIjhP2fo=;
- b=bk8rK/33Hp/P1KfPoCHyqlG6OWoSDYwpFoCi+mlzgXIP2Ex+KB1fLeDuYGswdsX/Ol
- DrzPYTrfIx+2yXQhuXUZ23iPtKHWrH3trcN5AJ9gjrBM4k0V6WaTR2ZOs7Wdvm6POYpO
- xzTZfyvQU6dT8yXSWLL+uMMMKMftVqkkGc76B/qjP6rCXfjUN377AlrsqcWzRyR2IXQF
- 6MjbGrUM++NwEs9BD5cHaDfezMV6ZnkXlCM9sHQ4Wv6inM9MLE6CSKc87mfsYPmtjb1g
- 2VHuEJtfmX+T+aHRVEcKRrVRcLOtS1Y/2AeFFpyMgY+WS43vhPBoukmiOjskT2hf0Xsn
- gmUw==
-X-Gm-Message-State: APjAAAX9zlPZ/6z7SklXD59bcPXffguDDScH/EUf1imPat3tkSj3EjSb
- sJchUBTFLgg9v7/H8a7zSDs=
-X-Google-Smtp-Source: APXvYqwmerTp9GT9ypUFcw81F3w6Ua2ebUM6nBiNjoQILyLAd8+1+ULuFfpyzKPNNcwa9HX4Oh8pTw==
-X-Received: by 2002:a2e:9048:: with SMTP id n8mr12228496ljg.37.1564429895116; 
- Mon, 29 Jul 2019 12:51:35 -0700 (PDT)
-Received: from localhost (customer-145-14-112-32.stosn.net. [145.14.112.32])
- by smtp.gmail.com with ESMTPSA id y12sm12077703lfy.36.2019.07.29.12.51.34
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 29 Jul 2019 12:51:34 -0700 (PDT)
-Date: Mon, 29 Jul 2019 21:51:34 +0200
-From: Niklas =?iso-8859-1?Q?S=F6derlund?= <niklas.soderlund@ragnatech.se>
-To: Geert Uytterhoeven <geert+renesas@glider.be>,
- Simon Horman <horms@verge.net.au>
-Subject: Re: [PATCH] MAINTAINERS: Add Geert as Renesas SoC Co-Maintainer
-Message-ID: <20190729195134.GF3186@bigcity.dyn.berto.se>
-References: <20190729175658.13672-1-geert+renesas@glider.be>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=nrAa1Owq+7NF6kk+ji/D7dPA87Icvc1pwfZh0czgUOU=;
+ b=JkLNg6wnbB42ihsqw0cFksTgVGTgmtkQ7KbpoRWMemk/BA+JONnSTvPjW8yNWW/4Cd
+ 7OCqK7pwpeU7U3XctOhvFPUSqGn3XDnKiK6tJnZRZUSjfs2JS1v6F7wMJZzTgskTLFte
+ 3enP1oeQgLJFkLEW5juhovwuAg6iVIVg71Y+QHLljkDsIO1kwiwgtx4Wyu4ajj9kjKto
+ tb+9CjL0unACfzR0GNgK+I+FoYp47ZViE4/IjSIGPjzEcK6k273LmGQHCkAN9D/sG+T1
+ xs775nPMmIyqsZo1thLBiRXHCB/fGjVcONzWeoycntOMAi3QoVOzaV2OGXANPMOjxlah
+ H54g==
+X-Gm-Message-State: APjAAAW2h/wcII602eFLKQyS2aWb6iGWZK42gg6zju/cJ0ps9NVXXzS+
+ XI3xnzg8+jraXg3FmxfKxT4gdb5ZNKcMye/knkrR7g==
+X-Google-Smtp-Source: APXvYqwhPQPemv+qJb8FtauvuwNdrlnC/oqldridgsTQWGHVDGlmDChVU2kqXecpIq/qhzuSVWLGRMfVN0186lvc9ww=
+X-Received: by 2002:ab0:5922:: with SMTP id n31mr1842306uad.103.1564430462959; 
+ Mon, 29 Jul 2019 13:01:02 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190729175658.13672-1-geert+renesas@glider.be>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+References: <20190705080231.123522-1-pcc@google.com>
+ <20190712193846.174893-1-pcc@google.com>
+In-Reply-To: <20190712193846.174893-1-pcc@google.com>
+From: Peter Collingbourne <pcc@google.com>
+Date: Mon, 29 Jul 2019 13:00:51 -0700
+Message-ID: <CAMn1gO4KUq_Q39Rj3FWs6bG8BkCpGhS7gqYtBxi9EtrX=J9uTg@mail.gmail.com>
+Subject: Re: [PATCH v2] arm64: Add support for relocating the kernel with RELR
+ relocations
+To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>, 
+ Mark Rutland <mark.rutland@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, 
+ Masahiro Yamada <yamada.masahiro@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_125137_992647_412DF8CD 
-X-CRM114-Status: GOOD (  16.12  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190729_130107_459550_3275D6D6 
+X-CRM114-Status: GOOD (  15.23  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:942 listed in]
  [list.dnswl.org]
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,99 +101,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephen Rothwell <sfr@canb.auug.org.au>, Arnd Bergmann <arnd@arndb.de>,
- Kevin Hilman <khilman@kernel.org>, Magnus Damm <magnus.damm@gmail.com>,
- linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
- Olof Johansson <olof@lixom.net>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: clang-built-linux <clang-built-linux@googlegroups.com>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Geert, Simon,
-
-On 2019-07-29 19:56:58 +0200, Geert Uytterhoeven wrote:
-> At the end of the v5.3 upstream kernel development cycle, Simon will be
-> stepping down from his role as Renesas SoC maintainer.  Starting with
-> the v5.4 development cycle, Geert is taking over this role.
-
-I would like to thank Simon for his good humor and support in all my =
-
-interactions with him as a maintainer. And wish Geert the best of luck =
-
-picking up the baton, not that you need it I know you will be just as =
-
-fun to work with.
-
-> =
-
-> Add Geert as a co-maintainer, and add his git repository and branch.
-> =
-
-> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-
-Reviewed-by: Niklas S=F6derlund <niklas.soderlund+renesas@ragnatech.se>
-
+On Fri, Jul 12, 2019 at 12:39 PM Peter Collingbourne <pcc@google.com> wrote:
+>
+> RELR is a relocation packing format for relative relocations.
+> The format is described in a generic-abi proposal:
+> https://groups.google.com/d/topic/generic-abi/bX460iggiKg/discussion
+>
+> The LLD linker can be instructed to pack relocations in the RELR
+> format by passing the flag --pack-dyn-relocs=relr.
+>
+> This patch adds a new config option, CONFIG_RELR. Enabling this option
+> instructs the linker to pack vmlinux's relative relocations in the RELR
+> format, and causes the kernel to apply the relocations at startup along
+> with the RELA relocations. RELA relocations still need to be applied
+> because the linker will emit RELA relative relocations if they are
+> unrepresentable in the RELR format (i.e. address not a multiple of 2).
+>
+> Enabling CONFIG_RELR reduces the size of a defconfig kernel image
+> with CONFIG_RANDOMIZE_BASE by 3.5MB/16% uncompressed, or 550KB/5%
+> compressed (lz4).
+>
+> Signed-off-by: Peter Collingbourne <pcc@google.com>
+> Tested-by: Nick Desaulniers <ndesaulniers@google.com>
+> Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
 > ---
-> Stephen: Can you please add my branch to linux-next, after Simon's
-> 	 branch, which may still receive fixes for v5.3?
-> =
+> Changes in v2:
+> - Reverted change to RELA processing
+> - Added more comments, as requested by Nick and Will
+> - Added a feature test for NM and OBJCOPY
+> - Made CONFIG_RELR=y the default if the tools support it
 
-> 	 Thanks!
-> ---
->  MAINTAINERS | 4 ++++
->  1 file changed, 4 insertions(+)
-> =
+Ping.
 
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index 6426db5198f05377..6de667021591fb52 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -2155,10 +2155,12 @@ F:	Documentation/devicetree/bindings/arm/realtek.=
-txt
->  =
-
->  ARM/RENESAS ARM64 ARCHITECTURE
->  M:	Simon Horman <horms@verge.net.au>
-> +M:	Geert Uytterhoeven <geert+renesas@glider.be>
->  M:	Magnus Damm <magnus.damm@gmail.com>
->  L:	linux-renesas-soc@vger.kernel.org
->  Q:	http://patchwork.kernel.org/project/linux-renesas-soc/list/
->  T:	git git://git.kernel.org/pub/scm/linux/kernel/git/horms/renesas.git n=
-ext
-> +T:	git git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-devel=
-.git next
->  S:	Supported
->  F:	arch/arm64/boot/dts/renesas/
->  F:	Documentation/devicetree/bindings/arm/renesas.yaml
-> @@ -2269,10 +2271,12 @@ F:	drivers/media/platform/s5p-mfc/
->  =
-
->  ARM/SHMOBILE ARM ARCHITECTURE
->  M:	Simon Horman <horms@verge.net.au>
-> +M:	Geert Uytterhoeven <geert+renesas@glider.be>
->  M:	Magnus Damm <magnus.damm@gmail.com>
->  L:	linux-renesas-soc@vger.kernel.org
->  Q:	http://patchwork.kernel.org/project/linux-renesas-soc/list/
->  T:	git git://git.kernel.org/pub/scm/linux/kernel/git/horms/renesas.git n=
-ext
-> +T:	git git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-devel=
-.git next
->  S:	Supported
->  F:	arch/arm/boot/dts/emev2*
->  F:	arch/arm/boot/dts/gr-peach*
-> -- =
-
-> 2.17.1
-> =
-
-
--- =
-
-Regards,
-Niklas S=F6derlund
+Peter
 
 _______________________________________________
 linux-arm-kernel mailing list
