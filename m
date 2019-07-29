@@ -2,52 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 14D9278DB8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 16:23:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 428F778DBE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 16:24:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=e7Inm3D/wDFfqjVvUIZDxk7dEd3MgBzwvGOmU/rAXfE=; b=SV9lyCahnn6E6W
-	2QABm/HiiORKE/ertECok1P3qhnu5iyKkHhq3ODzsQLzandCylIJuA1Zwp/nma5mTE03RvbkiVDUS
-	PWnTcs9LuSahozYuydmXQsB72ROJjzderLPHxYDC/mh43Cg+nPbPi89xtRpOHAy+U28EzOBxvwJ8q
-	RNhfroRZ8QEO6f5S/x7YUR8sbrge377Nn8Dcahty+iNmt6mHRSDryMw/B9+Xpt9vTY3Qc/Eoq5KGj
-	PwrFoLEQZf4hN6A1SoXmegjNaF7Evu9yovm83TaeXgZYi4/zHtRWohy8nri1DDKgQ7pGVSrf97a2Z
-	Z83cLkkPXDA/RtCMnKNg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Aoyq05H39sGMYhw0PHjhDzDEYU1pOJGk1CQuzVB/eD4=; b=dwu
+	GKMCUMaJh7UX5rJmjdmzcl3vnTpZPJnPS6Ut2qKOjrapF4BkJ+2QSuf7hUKBa8xgFBKEXxDmSCIlm
+	VVZVY1TP7rEvKV/sM3pzOrsb9sX7iSxsKOr7+4zULKdF585fYObRna5pVYcCyHn1UlvnWL12bEpHX
+	wE/jsRjImKO3mFjaMpW63ZMHhhtCD4PPTdZC5We1mPYkIMnAoU9BbfwdMFxdVISaJcgg8iSd/ophy
+	Ajse4bxnmn6IUGG4at+uYZeZHHi/RuAiwBXMPPdwr4rcbGv5ny/Om2BzVXsB6hRbsVjBFMRbldTkB
+	zQWYK2le8TqW9SNkd+YiY9UmRm0Pb+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hs6Ya-0002YC-TO; Mon, 29 Jul 2019 14:23:21 +0000
-Received: from verein.lst.de ([213.95.11.211])
+	id 1hs6ZJ-0002oD-K9; Mon, 29 Jul 2019 14:24:05 +0000
+Received: from viti.kaiser.cx ([2a01:238:43fe:e600:cd0c:bd4a:7a3:8e9f])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hs6YM-0002X8-K9
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 14:23:08 +0000
-Received: by verein.lst.de (Postfix, from userid 2005)
- id E55C468AEF; Mon, 29 Jul 2019 16:22:58 +0200 (CEST)
-Date: Mon, 29 Jul 2019 16:22:58 +0200
-From: Torsten Duwe <duwe@lst.de>
-To: Rob Herring <robh+dt@kernel.org>, Maxime Ripard <maxime.ripard@bootlin.com>
-Subject: Re: [PATCH v3 6a/7] dt-bindings: Add ANX6345 DP/eDP transmitter
- binding
-Message-ID: <20190729142258.GB7946@lst.de>
-References: <20190722150414.9F97668B20@verein.lst.de>
- <20190725151829.DC20968B02@verein.lst.de>
- <20190726163601.o32bxqew5xavjgyi@flea>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190726163601.o32bxqew5xavjgyi@flea>
-User-Agent: Mutt/1.5.17 (2007-11-01)
+ id 1hs6Z4-0002nI-6y
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 14:23:51 +0000
+Received: from [46.114.3.104] (helo=martin-debian-1.paytec.ch)
+ by viti.kaiser.cx with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
+ (Exim 4.89) (envelope-from <martin@kaiser.cx>)
+ id 1hs6Yw-0005cy-4j; Mon, 29 Jul 2019 16:23:42 +0200
+From: Martin Kaiser <martin@kaiser.cx>
+To: Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>, Rob Herring <robh+dt@kernel.org>
+Subject: [PATCH] ARM: dts: imx25-pdk: native-mode is part of display-timings
+Date: Mon, 29 Jul 2019 16:23:16 +0200
+Message-Id: <20190729142316.21900-1-martin@kaiser.cx>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_072306_829643_7C88BC0D 
-X-CRM114-Status: GOOD (  15.86  )
+X-CRM114-CacheID: sfid-20190729_072350_404138_6F34E5EE 
+X-CRM114-Status: GOOD (  11.97  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [213.95.11.211 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -61,60 +56,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- David Airlie <airlied@linux.ie>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, Andrzej Hajda <a.hajda@samsung.com>,
- Chen-Yu Tsai <wens@csie.org>, Thierry Reding <thierry.reding@gmail.com>,
- Sean Paul <seanpaul@chromium.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>, Harald Geyer <harald@ccbib.org>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Icenowy Zheng <icenowy@aosc.io>
+Cc: Martin Kaiser <martin@kaiser.cx>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jul 26, 2019 at 06:36:01PM +0200, Maxime Ripard wrote:
-> > +
-> > +  dvdd12-supply:
-> > +    maxItems: 1
-> > +    description: Regulator for 1.2V digital core power.
-> > +    $ref: /schemas/types.yaml#/definitions/phandle
-> > +
-> > +  dvdd25-supply:
-> > +    maxItems: 1
-> > +    description: Regulator for 2.5V digital core power.
-> > +    $ref: /schemas/types.yaml#/definitions/phandle
-> 
-> There's no need to specify the type here, all the properties ending in
-> -supply are already checked for that type
+Move the native-mode property inside the display-timings node.
 
-Ok, thanks for the hint.
+According to
+Documentation/devicetree/bindings/display/panel/display-timing.txt.
+native-mode is a property of the display-timings node.
 
-> > +  ports:
-> > +    type: object
-> > +    minItems: 1
-> > +    maxItems: 2
-> > +    description: |
-> > +      Video port 0 for LVTTL input,
-> > +      Video port 1 for eDP output (panel or connector)
-> > +      using the DT bindings defined in
-> > +      Documentation/devicetree/bindings/media/video-interfaces.txt
-> 
-> You should probably describe the port@0 and port@1 nodes here as
-> well. It would allow you to express that the port 0 is mandatory and
-> the port 1 optional, which got dropped in the conversion.
+If it's located outside of display-timings, the native-mode setting is
+ignored and the first display timing is used (which is a problem only if
+someone adds another display timing).
 
-I would have liked to, but have not discovered yet a comprehensive source
-of information about recommended syntax and semantics of the YAML schemes.
+Signed-off-by: Martin Kaiser <martin@kaiser.cx>
+---
 
-Is there some central reference for these types of issues? I mean not the
-"here is a git repo with the meta-schemes" but sort of a cookbook?
+Dear all,
 
-	Torsten
+I found this issue on a similar board when I tried to define two
+variants that use different displays. I had two display timings and
+ended up using the wrong one because native-mode was ignored outside of
+display-timings.
 
+Thanks for reviewing the patch,
+
+   Martin
+
+ arch/arm/boot/dts/imx25-pdk.dts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/arm/boot/dts/imx25-pdk.dts b/arch/arm/boot/dts/imx25-pdk.dts
+index f8544a9e4633..05cccd12624c 100644
+--- a/arch/arm/boot/dts/imx25-pdk.dts
++++ b/arch/arm/boot/dts/imx25-pdk.dts
+@@ -76,8 +76,8 @@
+ 		bits-per-pixel = <16>;
+ 		fsl,pcr = <0xfa208b80>;
+ 		bus-width = <18>;
+-		native-mode = <&wvga_timings>;
+ 		display-timings {
++			native-mode = <&wvga_timings>;
+ 			wvga_timings: 640x480 {
+ 				hactive = <640>;
+ 				vactive = <480>;
+-- 
+2.11.0
 
 
 _______________________________________________
