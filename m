@@ -2,63 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C40FD78BEA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 14:41:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B9FF778C01
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 14:49:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yZzgs9nIvjGfpqZMOvVSPv5U4mcjL/1Qt3pvz0wozWo=; b=F4ZU/LMEN5ufkL
-	yOWgp7Wqbvrsp7pHUyVN8uFDDCajOLA7dI41fHhGVXZ/L8gNEMRe5P7Juy0IKtAJfQnSFFN7Xo3Dd
-	mA6oRK3Mr7Af3aXONz9+K62Z3c+pAy7bdhLqs4SbV+bbtnPRXgY3NRo2xeThg5DuF+z0izYYernoW
-	CxU83AFJBQg6Eu2d3wruSYIF5HEgeSdCzf+iG+t8nROwjcvOx+j4B0x7QwHGfQbvYMr3ICSjLgkKk
-	uHp0Gc7dcn/mw/ycMnBzFVhbJ1db9BgyiJsXk5RhEGkJ3ivBRMPiP5DdPmoITmtfbmar4SBEFvrlt
-	et2lo43bycHmS+kUqGhg==;
+	List-Owner; bh=AF3WmyJLgYTUhdD/AHItF1Y3bxiCVg+U30kOFKD5rVo=; b=V5Aa1/jfM5QqYv
+	xMQEhAAFzo/t9PS3T9kgV7T2j3s08IOkj93FS+mrkqlkn6CVgE59WX9Sn/PlckzQ+fSILCUlMV4gT
+	Cs6Ch3+aYagf99XMmN2eUUIOeIHONTSofuxfu/PdpahgXdnRT/dSZG9oBXEPsyVHbME6LU8Nnhxuf
+	XvUrB5GqV6/Asj4oPX/0e901sjfX6vatnFSdt4z7IBgFLU2HgJG/8/jpRt4RLI34Zd6M7Cw2eKOmN
+	4eDrVaAZgWJrlglQRIMy9TFjFOIjyg4vocKFhR5M7amwdbZudZ/hoW1oY+ZeUAttMdR8kCkfpHjAk
+	BVjFWb1+94DEyqB/C/+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hs4xw-00078x-Vs; Mon, 29 Jul 2019 12:41:24 +0000
-Received: from mga09.intel.com ([134.134.136.24])
+	id 1hs55L-0001Kr-1W; Mon, 29 Jul 2019 12:49:03 +0000
+Received: from honk.sigxcpu.org ([24.134.29.49])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hs4xp-00077t-MH; Mon, 29 Jul 2019 12:41:19 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga001.fm.intel.com ([10.253.24.23])
- by orsmga102.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 29 Jul 2019 05:41:16 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.64,322,1559545200"; d="scan'208";a="190561299"
-Received: from jnikula-mobl3.fi.intel.com (HELO localhost) ([10.237.66.150])
- by fmsmga001.fm.intel.com with ESMTP; 29 Jul 2019 05:41:11 -0700
-From: Jani Nikula <jani.nikula@intel.com>
-To: "Koenig\, Christian" <Christian.Koenig@amd.com>,
- Chris Wilson <chris@chris-wilson.co.uk>,
- Intel Graphics Development <intel-gfx@lists.freedesktop.org>,
- Sam Ravnborg <sam@ravnborg.org>,
- "dri-devel\@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>
-Subject: Re: [PATCH v1 02/11] drm: drop uapi dependency from drm_print.h
-In-Reply-To: <460bf1e1-a38b-5f79-26e5-93764067f4e1@amd.com>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
-References: <20190718161507.2047-1-sam@ravnborg.org>
- <20190718161507.2047-3-sam@ravnborg.org>
- <156346840026.24728.936589728458336617@skylake-alporthouse-com>
- <460bf1e1-a38b-5f79-26e5-93764067f4e1@amd.com>
-Date: Mon, 29 Jul 2019 15:45:35 +0300
-Message-ID: <87tvb5nh5c.fsf@intel.com>
+ id 1hs559-0001Jn-UC
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 12:48:58 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by honk.sigxcpu.org (Postfix) with ESMTP id 291E8FB03;
+ Mon, 29 Jul 2019 14:48:47 +0200 (CEST)
+X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
+Received: from honk.sigxcpu.org ([127.0.0.1])
+ by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id kaCWHnVd1ww1; Mon, 29 Jul 2019 14:48:46 +0200 (CEST)
+Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
+ id 9752146CDF; Mon, 29 Jul 2019 14:48:45 +0200 (CEST)
+Date: Mon, 29 Jul 2019 14:48:45 +0200
+From: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
+To: Daniel Baluta <daniel.baluta@nxp.com>
+Subject: Re: [PATCH v4] arm64: dts: imx8mq: Init rates and parents configs
+ for clocks
+Message-ID: <20190729124845.GA12650@bogon.m.sigxcpu.org>
+References: <20190728152040.15323-1-daniel.baluta@nxp.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190728152040.15323-1-daniel.baluta@nxp.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_054117_770402_DA2BE94B 
-X-CRM114-Status: GOOD (  15.69  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190729_054856_489166_BC039644 
+X-CRM114-Status: GOOD (  13.35  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.24 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [24.134.29.49 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,99 +66,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Boris Brezillon <bbrezillon@kernel.org>, David Airlie <airlied@linux.ie>,
- Daniel Vetter <daniel.vetter@ffwll.ch>, Liviu Dudau <Liviu.Dudau@arm.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- Thomas Zimmermann <tzimmermann@suse.de>,
- Matthias Brugger <matthias.bgg@gmail.com>, Sean Paul <seanpaul@chromium.org>,
- Thierry Reding <treding@nvidia.com>, Sean Paul <sean@poorly.run>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, baruch@tkos.co.il, abel.vesa@nxp.com,
+ Anson.Huang@nxp.com, ccaione@baylibre.com, andrew.smirnov@gmail.com,
+ festevam@gmail.com, s.hauer@pengutronix.de, angus@akkea.ca,
+ linux-kernel@vger.kernel.org, linux-imx@nxp.com, shawnguo@kernel.org,
+ shengjiu.wang@nxp.com, linux-arm-kernel@lists.infradead.org,
+ l.stach@pengutronix.de
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 19 Jul 2019, "Koenig, Christian" <Christian.Koenig@amd.com> wrote:
-> Am 18.07.19 um 18:46 schrieb Chris Wilson:
->> Quoting Sam Ravnborg (2019-07-18 17:14:58)
->>> drm_print.h used DRM_NAME - thus adding a dependency from
->>> include/drm/drm_print.h => uapi/drm/drm.h
->>>
->>> Hardcode the name "drm" to break this dependency.
->>> The idea is that there shall be a minimal dependency
->>> between include/drm/* and uapi/*
->>>
->>> Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
->>> Suggested-by: Daniel Vetter <daniel@ffwll.ch>
->>> Reviewed-by: Daniel Vetter <daniel.vetter@ffwll.ch>
->>> Cc: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>
->>> Cc: Maxime Ripard <maxime.ripard@bootlin.com>
->>> Cc: Sean Paul <sean@poorly.run>
->>> Cc: David Airlie <airlied@linux.ie>
->>> Cc: Rob Clark <robdclark@gmail.com>
->>> Cc: Sean Paul <seanpaul@chromium.org>
->>> Cc: Chris Wilson <chris@chris-wilson.co.uk>
->>> Cc: Daniel Vetter <daniel@ffwll.ch>
->>> ---
->>>   include/drm/drm_print.h | 4 +---
->>>   1 file changed, 1 insertion(+), 3 deletions(-)
->>>
->>> diff --git a/include/drm/drm_print.h b/include/drm/drm_print.h
->>> index a5d6f2f3e430..760d1bd0eaf1 100644
->>> --- a/include/drm/drm_print.h
->>> +++ b/include/drm/drm_print.h
->>> @@ -32,8 +32,6 @@
->>>   #include <linux/device.h>
->>>   #include <linux/debugfs.h>
->>>   
->>> -#include <drm/drm.h>
->>> -
->>>   /**
->>>    * DOC: print
->>>    *
->>> @@ -287,7 +285,7 @@ void drm_err(const char *format, ...);
->>>   /* Macros to make printk easier */
->>>   
->>>   #define _DRM_PRINTK(once, level, fmt, ...)                             \
->>> -       printk##once(KERN_##level "[" DRM_NAME "] " fmt, ##__VA_ARGS__)
->>> +       printk##once(KERN_##level "[drm] " fmt, ##__VA_ARGS__)
->> I guess I'm th only one who
->>
->> #undef DRM_NAME
->> #define DRM_NAME i915
->>
->> just so that I didn't have inane logs?
->>
->> One might suggest that instead of hardcoding it, follow the pr_fmt()
->> pattern and only add "[drm]" for the drm core.
->>
->> Even then it so useless (which drm driver is this message for???) that I
->> want to remove them all :(
->
-> Yeah, agree. I mean it is nice if the core drm functions use a prefix 
-> for debug output.
->
-> But I actually don't see the point for individual drivers.
+Hi,
+On Sun, Jul 28, 2019 at 06:20:40PM +0300, Daniel Baluta wrote:
+> From: Abel Vesa <abel.vesa@nxp.com>
+> =
 
-We should all migrate to the versions with device...
+> Add the initial configuration for clocks that need default parent and rate
+> setting. This is based on the vendor tree clock provider parents and rates
+> configuration except this is doing the setup in dts rather then using clo=
+ck
+> consumer API in a clock provider driver.
+> =
 
-BR,
-Jani.
+> Note that by adding the initial rate setting for audio_pll1/audio_pll
+> setting we need to remove it from imx8mq-librem5-devkit.dts
+> =
+
+> Signed-off-by: Abel Vesa <abel.vesa@nxp.com>
+> Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
+> Tested-by: Angus Ainslie (Purism) <angus@akkea.ca>
+> ---
+> Changes since v3:
+> 	- fix extra new lines
+> =
+
+>  .../dts/freescale/imx8mq-librem5-devkit.dts   |  5 -----
+>  arch/arm64/boot/dts/freescale/imx8mq.dtsi     | 19 +++++++++++++++++++
+>  2 files changed, 19 insertions(+), 5 deletions(-)
+> =
+
+> diff --git a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts b/ar=
+ch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
+> index 683a11035643..c702ccc82867 100644
+> --- a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
+> +++ b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
+> @@ -169,11 +169,6 @@
+>  	};
+>  };
+>  =
+
+> -&clk {
+> -	assigned-clocks =3D <&clk IMX8MQ_AUDIO_PLL1>, <&clk IMX8MQ_AUDIO_PLL2>;
+> -	assigned-clock-rates =3D <786432000>, <722534400>;
+> -};
+> -
+>  &dphy {
+>  	status =3D "okay";
+>  };
+> diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/=
+dts/freescale/imx8mq.dtsi
+> index 02fbd0625318..a55d72ba2e05 100644
+> --- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+> +++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+> @@ -494,6 +494,25 @@
+>  				clock-names =3D "ckil", "osc_25m", "osc_27m",
+>  				              "clk_ext1", "clk_ext2",
+>  				              "clk_ext3", "clk_ext4";
+> +				assigned-clocks =3D <&clk IMX8MQ_VIDEO_PLL1>,
+> +					<&clk IMX8MQ_AUDIO_PLL1>,
+> +					<&clk IMX8MQ_AUDIO_PLL2>,
+> +					<&clk IMX8MQ_CLK_AHB>,
+> +					<&clk IMX8MQ_CLK_NAND_USDHC_BUS>,
+> +					<&clk IMX8MQ_CLK_AUDIO_AHB>,
+> +					<&clk IMX8MQ_VIDEO_PLL1_REF_SEL>,
+> +					<&clk IMX8MQ_CLK_NOC>;
+> +				assigned-clock-parents =3D <0>,
+> +						<0>,
+> +						<0>,
+> +						<&clk IMX8MQ_SYS1_PLL_133M>,
+> +						<&clk IMX8MQ_SYS1_PLL_266M>,
+> +						<&clk IMX8MQ_SYS2_PLL_500M>,
+> +						<&clk IMX8MQ_CLK_27M>,
+> +						<&clk IMX8MQ_SYS1_PLL_800M>;
+> +				assigned-clock-rates =3D <593999999>,
+> +						<786432000>,
+> +						<722534400>;
+>  			};
+>  =
+
+>  			src: reset-controller@30390000 {
+
+Tested-by: Guido G=FCnther <agx@sigxcpu.org> =
 
 
->
-> Christian.
->
->> -Chris
->
-> _______________________________________________
-> dri-devel mailing list
-> dri-devel@lists.freedesktop.org
-> https://lists.freedesktop.org/mailman/listinfo/dri-devel
-
--- 
-Jani Nikula, Intel Open Source Graphics Center
+Cheers,
+ -- Guido
 
 _______________________________________________
 linux-arm-kernel mailing list
