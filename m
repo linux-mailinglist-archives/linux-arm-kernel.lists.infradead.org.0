@@ -2,65 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 656187913F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 18:40:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 06C2B79150
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 18:45:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=itLwYIRjXBLLmLWjkWKFF+h5rLMvNbHKtfGTf8Rkb18=; b=YsEGRzYPmXPeql
-	ilgqiAcFA0dp86id58uz/ZPw1b+McQWm1o3sAE3TTcZcMmqQqWMvicElEjDt/7JW4/5lahVr4UYqo
-	gqVPAKXhx6H8K+t7ffqIIktUiRRIROUiRkObwLUUioewmGTcXq++yXXvlPgXQg2bhLpE1K6MBGJ+U
-	lsYxZUOgOcvKomCwVVtzqL67xCwJFd1pcEd/xFjr86YpIOZPZBRWAEBEBxZVCll5WbQFlu86b0BbI
-	PfF0Sg1g/eLWwJaxJQVw+HoHOKcd9E6TkKVrqhc1OMa+7YNnh/E1RuCYCrc0L2OGQyez4oboNUYIJ
-	EgVKtERZCgU8AYc5Ub4w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ranUqvAnrHjLCYjOyd+BaeqY66/A4Y4Gv6P5cHWhXgg=; b=MxZ0oi+fanhyay8/SpiBSVoOj
+	sQrhFMPiw45R/me70Ch1UvTjPjQCvCvq2fKMtCh5Bx2yLjrtJPvQ+MULA8ABcix/1lrAU2O5FxzqR
+	/7y2w7Oc6I9qFTwILyJV1mG5BdpvwM9rC/Uc/3N+vQYAuZV4T3+VaLzqQ47aWvArak+jv1coGyh1z
+	ReyxDbWyMO2ntBc+B3prASQViVKhpbEhmXeHE5e5LlgtW+YXATphWuu5tA/Pf/369waFgb1T6MAXq
+	kD/cdfu77ASo8rNkZuGn+rfpZ6mpTYa3Xn5B5pWzIENo7fxKk4gpg06YZN9U2uwTE+NeN9rZ4Lrnx
+	ffOBdx6fw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hs8hW-0001jj-OF; Mon, 29 Jul 2019 16:40:43 +0000
-Received: from mailoutvs4.siol.net ([185.57.226.195] helo=mail.siol.net)
+	id 1hs8mJ-0003YN-0A; Mon, 29 Jul 2019 16:45:39 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hs8hA-0001j5-Va
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 16:40:23 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTP id 56D3A5220E8;
- Mon, 29 Jul 2019 18:40:17 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at psrvmta11.zcs-production.pri
-Received: from mail.siol.net ([127.0.0.1])
- by localhost (psrvmta11.zcs-production.pri [127.0.0.1]) (amavisd-new,
- port 10032)
- with ESMTP id rCV9RUjdNIE8; Mon, 29 Jul 2019 18:40:16 +0200 (CEST)
-Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTPS id CA35F5224B7;
- Mon, 29 Jul 2019 18:40:16 +0200 (CEST)
-Received: from jernej-laptop.localnet (cpe-194-152-11-237.cable.triera.net
- [194.152.11.237]) (Authenticated sender: jernej.skrabec@siol.net)
- by mail.siol.net (Postfix) with ESMTPA id 508A35224B1;
- Mon, 29 Jul 2019 18:40:16 +0200 (CEST)
-From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
-To: linux-sunxi@googlegroups.com, u.kleine-koenig@pengutronix.de
-Subject: Re: [linux-sunxi] Re: [PATCH 4/6] pwm: sun4i: Add support for H6 PWM
-Date: Mon, 29 Jul 2019 18:40:15 +0200
-Message-ID: <2346193.MplWYqIveT@jernej-laptop>
-In-Reply-To: <20190729162428.bxuzgxg5sjqptlbp@pengutronix.de>
+ id 1hs8m1-0003Y1-PW
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 16:45:23 +0000
+Received: from localhost (lpr83-1-88-168-111-231.fbx.proxad.net
+ [88.168.111.231])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A2248206A2;
+ Mon, 29 Jul 2019 16:45:20 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1564418721;
+ bh=x+aqiC/5J6cLRqB5rlt0xIXHK2pvRJY+eBKePLiGn7c=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=Cmypc6YcpSic4RB5SNHXuEL2hvJ1i959kKLp5fSR2JBZ/YiIpnuaCvXPHqhKHUh+t
+ e3bB7LrJRRTjCMLIrwmoPdP+ziiPNqcxnkj5iOizdBCFhO1GI+NKQX8ox9cMW3ipbK
+ 28ReKNhep3bbt5pMbDMTBhyNsPtjRu/hoIqjJahM=
+Date: Mon, 29 Jul 2019 18:45:16 +0200
+From: Maxime Ripard <mripard@kernel.org>
+To: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
+Subject: Re: [PATCH 3/6] pwm: sun4i: Add a quirk for bus clock
+Message-ID: <20190729164516.yxfgj2zd3d5ii4c4@flea.home>
 References: <20190726184045.14669-1-jernej.skrabec@siol.net>
- <CAGb2v66C=ghjck6rxTg6Vt4xN2DcXntzVOa=KJWh98KRjkhnHQ@mail.gmail.com>
- <20190729162428.bxuzgxg5sjqptlbp@pengutronix.de>
+ <20190726184045.14669-4-jernej.skrabec@siol.net>
+ <20190729063825.wxfky6nswcru26g7@pengutronix.de>
+ <4022372.WfP88Fa4Lu@jernej-laptop>
+ <20190729161435.5bnj3ikocsyep4dd@pengutronix.de>
 MIME-Version: 1.0
+In-Reply-To: <20190729161435.5bnj3ikocsyep4dd@pengutronix.de>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_094021_180958_95DF9B35 
-X-CRM114-Status: GOOD (  25.22  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190729_094521_866692_4F70D5DE 
+X-CRM114-Status: GOOD (  21.05  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.195 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,95 +80,148 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-pwm@vger.kernel.org,
- devicetree <devicetree@vger.kernel.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
- Sascha Hauer <kernel@pengutronix.de>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: mark.rutland@arm.com, linux-pwm@vger.kernel.org,
+ Jernej =?utf-8?Q?=C5=A0krabec?= <jernej.skrabec@siol.net>,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-sunxi@googlegroups.com, robh+dt@kernel.org, thierry.reding@gmail.com,
+ kernel@pengutronix.de, wens@csie.org, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============3954433524777596950=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RG5lIHBvbmVkZWxqZWssIDI5LiBqdWxpaiAyMDE5IG9iIDE4OjI0OjI4IENFU1QgamUgVXdlIEts
-ZWluZS1Lw7ZuaWcgCm5hcGlzYWwoYSk6Cj4gSGVsbG8sCj4gCj4gT24gVHVlLCBKdWwgMzAsIDIw
-MTkgYXQgMTI6MDk6NDBBTSArMDgwMCwgQ2hlbi1ZdSBUc2FpIHdyb3RlOgo+ID4gT24gVHVlLCBK
-dWwgMzAsIDIwMTkgYXQgMTI6MDcgQU0gVXdlIEtsZWluZS1Lw7ZuaWcKPiA+IAo+ID4gPHUua2xl
-aW5lLWtvZW5pZ0BwZW5ndXRyb25peC5kZT4gd3JvdGU6Cj4gPiA+IE9uIE1vbiwgSnVsIDI5LCAy
-MDE5IGF0IDA1OjU1OjUyUE0gKzAyMDAsIEplcm5laiDFoGtyYWJlYyB3cm90ZToKPiA+ID4gPiBE
-bmUgcG9uZWRlbGplaywgMjkuIGp1bGlqIDIwMTkgb2IgMDg6NDA6MzAgQ0VTVCBqZSBVd2UgS2xl
-aW5lLUvDtm5pZwo+ID4gPiA+IAo+ID4gPiA+IG5hcGlzYWwoYSk6Cj4gPiA+ID4gPiBPbiBGcmks
-IEp1bCAyNiwgMjAxOSBhdCAwODo0MDo0M1BNICswMjAwLCBKZXJuZWogU2tyYWJlYyB3cm90ZToK
-PiA+ID4gPiA+ID4gLS0tIGEvZHJpdmVycy9wd20vcHdtLXN1bjRpLmMKPiA+ID4gPiA+ID4gKysr
-IGIvZHJpdmVycy9wd20vcHdtLXN1bjRpLmMKPiA+ID4gPiA+ID4gQEAgLTMzMSw2ICszMzEsMTMg
-QEAgc3RhdGljIGNvbnN0IHN0cnVjdCBzdW40aV9wd21fZGF0YQo+ID4gPiA+ID4gPiBzdW40aV9w
-d21fc2luZ2xlX2J5cGFzcyA9IHs+Cj4gPiA+ID4gPiA+IAo+ID4gPiA+ID4gPiAgIC5ucHdtID0g
-MSwKPiA+ID4gPiA+ID4gIAo+ID4gPiA+ID4gPiAgfTsKPiA+ID4gPiA+ID4gCj4gPiA+ID4gPiA+
-ICtzdGF0aWMgY29uc3Qgc3RydWN0IHN1bjRpX3B3bV9kYXRhIHN1bjUwaV9wd21fZHVhbF9ieXBh
-c3NfY2xrX3JzdAo+ID4gPiA+ID4gPiA9IHsKPiA+ID4gPiA+ID4gKyAuaGFzX2J1c19jbG9jayA9
-IHRydWUsCj4gPiA+ID4gPiA+ICsgLmhhc19wcmVzY2FsZXJfYnlwYXNzID0gdHJ1ZSwKPiA+ID4g
-PiA+ID4gKyAuaGFzX3Jlc2V0ID0gdHJ1ZSwKPiA+ID4gPiA+ID4gKyAubnB3bSA9IDIsCj4gPiA+
-ID4gPiA+ICt9Owo+ID4gPiA+ID4gPiArCj4gPiA+ID4gPiA+IAo+ID4gPiA+ID4gPiAgc3RhdGlj
-IGNvbnN0IHN0cnVjdCBvZl9kZXZpY2VfaWQgc3VuNGlfcHdtX2R0X2lkc1tdID0gewo+ID4gPiA+
-ID4gPiAgCj4gPiA+ID4gPiA+ICAgewo+ID4gPiA+ID4gPiAgIAo+ID4gPiA+ID4gPiAgICAgICAg
-ICAgLmNvbXBhdGlibGUgPSAiYWxsd2lubmVyLHN1bjRpLWExMC1wd20iLAo+ID4gPiA+ID4gPiAK
-PiA+ID4gPiA+ID4gQEAgLTM0Nyw2ICszNTQsOSBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IG9mX2Rl
-dmljZV9pZAo+ID4gPiA+ID4gPiBzdW40aV9wd21fZHRfaWRzW10gPQo+ID4gPiA+ID4gPiB7Cj4g
-PiA+ID4gPiA+IAo+ID4gPiA+ID4gPiAgIH0sIHsKPiA+ID4gPiA+ID4gICAKPiA+ID4gPiA+ID4g
-ICAgICAgICAgIC5jb21wYXRpYmxlID0gImFsbHdpbm5lcixzdW44aS1oMy1wd20iLAo+ID4gPiA+
-ID4gPiAgICAgICAgICAgLmRhdGEgPSAmc3VuNGlfcHdtX3NpbmdsZV9ieXBhc3MsCj4gPiA+ID4g
-PiA+IAo+ID4gPiA+ID4gPiArIH0sIHsKPiA+ID4gPiA+ID4gKyAgICAgICAgIC5jb21wYXRpYmxl
-ID0gImFsbHdpbm5lcixzdW41MGktaDYtcHdtIiwKPiA+ID4gPiA+ID4gKyAgICAgICAgIC5kYXRh
-ID0gJnN1bjUwaV9wd21fZHVhbF9ieXBhc3NfY2xrX3JzdCwKPiA+ID4gPiA+IAo+ID4gPiA+ID4g
-SWYgeW91IGZvbGxvdyBteSBzdWdnZXN0aW9uIGZvciB0aGUgdHdvIHByZXZpb3VzIHBhdGNoZXMs
-IHlvdSBjYW4KPiA+ID4gPiA+IGp1c3QKPiA+ID4gPiA+IAo+ID4gPiA+ID4gdXNlOgo+ID4gPiA+
-ID4gICAgIGNvbXBhdGlibGUgPSAiYWxsd2lubmVyLHN1bjUwaS1oNi1wd20iLAo+ID4gPiA+ID4g
-ICAgICJhbGx3aW5uZXIsc3VuNWktYTEwcy1wd20iOwo+ID4gPiA+ID4gCj4gPiA+ID4gPiBhbmQg
-ZHJvcCB0aGlzIHBhdGNoLgo+ID4gPiA+IAo+ID4gPiA+IE1heGltZSBmb3VuZCBvdXQgdGhhdCBp
-dCdzIG5vdCBjb21wYXRpYmxlIHdpdGggQTEwcyBkdWUgdG8gZGlmZmVyZW5jZQo+ID4gPiA+IGlu
-IGJ5cGFzcyBiaXQsIGJ1dCB5ZXMsIEkga25vdyB3aGF0IHlvdSBtZWFuLgo+ID4gPiA+IAo+ID4g
-PiA+IFNpbmNlIEg2IHJlcXVpcmVzIHJlc2V0IGxpbmUgYW5kIGJ1cyBjbG9jayB0byBiZSBzcGVj
-aWZpZWQsIGl0J3Mgbm90Cj4gPiA+ID4gY29tcGF0aWJsZSBmcm9tIERUIGJpbmRpbmcgc2lkZS4g
-TmV3IHlhbWwgYmFzZWQgYmluZGluZyBtdXN0IHNvbWVob3cKPiA+ID4gPiBrbm93IHRoYXQgaW4g
-b3JkZXIgdG8gYmUgYWJsZSB0byB2YWxpZGF0ZSBEVCBub2RlLCBzbyBpdCBuZWVkcwo+ID4gPiA+
-IHN0YW5kYWxvbmUgY29tcGF0aWJsZS4gSG93ZXZlciwgZGVwZW5kaW5nIG9uIGNvbmNsdXNpb25z
-IG9mIG90aGVyCj4gPiA+ID4gZGlzY3Vzc2lvbnMsIHRoaXMgbmV3IGNvbXBhdGlibGUgY2FuIGJl
-IGFzc29jaWF0ZWQgd2l0aCBhbHJlYWR5Cj4gPiA+ID4gYXZhaWxhYmxlIHF1aXJrcyBzdHJ1Y3R1
-cmUgb3IgaGF2ZSBpdCdzIG93bi4+ID4gCj4gPiA+IEkgY2Fubm90IGZvbGxvdy4gWW91IHNob3Vs
-ZCBiZSBhYmxlIHRvIHNwZWNpZnkgaW4gdGhlIGJpbmRpbmcgdGhhdCB0aGUKPiA+ID4gcmVzZXQg
-bGluZSBhbmQgYnVzIGNsb2NrIGlzIG9wdGlvbmFsLiBUaGVuIGFsbHdpbm5lcixzdW41MGktaDYt
-cHdtCj4gPiA+IHdpdGhvdXQgYSByZXNldCBsaW5lIGFuZCBidXMgY2xvY2sgYWxzbyB2ZXJpZmll
-cywgYnV0IHRoaXMgZG9lc24ndAo+ID4gPiByZWFsbHkgaHVydCAoYW5kIHdobyBrbm93cywgbWF5
-YmUgdGhlIG5leHQgYWxsd2lubmVyIGNoaXAgbmVlZHMgZXhhY3RseQo+ID4gPiB0aGlzKS4KPiA+
-IAo+ID4gSXQgaXMgbm90IG9wdGlvbmFsLiBJdCB3aWxsIG5vdCB3b3JrIGlmIGVpdGhlciB0aGUg
-Y2xvY2tzIG9yIHJlc2V0Cj4gPiBjb250cm9scwo+ID4gYXJlIG1pc3NpbmcuIEhvdyB3b3VsZCB0
-aGVzZSBiZSBvcHRpb25hbCBhbnl3YXk/IEVpdGhlciBpdCdzIGNvbm5lY3RlZCBhbmQKPiA+IHRo
-dXMgcmVxdWlyZWQsIG9yIGl0J3Mgbm90IGFuZCB0aGVyZWZvcmUgc2hvdWxkIGJlIG9taXR0ZWQg
-ZnJvbSB0aGUKPiA+IGRlc2NyaXB0aW9uLgo+IAo+IFtKdXN0IGFyZ3VpbmcgYWJvdXQgdGhlIGNs
-b2NrIGhlcmUsIHRoZSBhcmd1bWVudGF0aW9uIGlzIGFuYWxvZ291cyBmb3IKPiB0aGUgcmVzZXQg
-Y29udHJvbC5dCj4gCj4gRnJvbSB0aGUgZHJpdmVyJ3MgcGVyc3BlY3RpdmUgaXQncyBvcHRpb25h
-bDogVGhlcmUgYXJlIGRldmljZXMgd2l0aCBhbmQKPiB3aXRob3V0IGEgYnVzIGNsb2NrLiBUaGlz
-IGRvZXNuJ3QgbWVhbiB0aGF0IHlvdSBjYW4ganVzdCBpZ25vcmUgdGhpcwo+IGNsb2NrIGlmIGl0
-J3Mgc3BlY2lmaWVkLiBJdCdzIG9wdGlvbmFsIGluIHRoZSBzZW5zZSAiSWYgZHQgZG9lc24ndAo+
-IHNwZWNpZnkgaXQsIHRoZW4gYXNzdW1lIHRoaXMgaXMgYSBkZXZpY2UgdGhhdCBkb2Vzbid0IGhh
-dmUgaXQgYW5kIHNvIHlvdQo+IGRvbid0IG5lZWQgdG8gaGFuZGxlIGl0LiIgYnV0IG5vdCBpbiB0
-aGUgc2Vuc2UgIml0IGRvZXNuJ3QgbWF0dGVyIGlmCj4geW91IGhhbmRsZSBpdCBvciBub3QuIi4K
-PiAKPiBPdGhlciB0aGFuIHRoYXQgSSdtIG9uIHlvdXIgc2lkZS4gU28gZm9yIGV4YW1wbGUgSSB0
-aGluayBpdCdzIG5vdAo+IG9wdGltYWwgdGhhdCBncGlvZF9nZXRfb3B0aW9uYWwgcmV0dXJucyBO
-VUxMIGlmIEdQSU9MSUI9biBvciB0aGF0Cj4gZGV2bV9yZXNldF9jb250cm9sX2dldF9vcHRpb25h
-bCByZXR1cm5zIE5VTEwgaWYgUkVTRVRfQ09OVFJPTExFUj1uCj4gYmVjYXVzZSB0aGlzIGhpZGVz
-IGV4YWN0bHkgdGhlIGtpbmQgb2YgcHJvYmxlbSB5b3UgcG9pbnQgb3V0IGhlcmUuCj4KCkkgdGhp
-bmsgdGhlcmUncyBtaXN1bmRlcnN0YW5kaW5nLiBJIG9ubHkgYXJndWVkIHRoYXQgd2UgY2FuJ3Qg
-dXNlCgpjb21wYXRpYmxlID0gImFsbHdpbm5lcixzdW41MGktaDYtcHdtIiwKCSAiYWxsd2lubmVy
-LHN1bjVpLWExMHMtcHdtIjsKCmFzIHlvdSBzdWdnZXN0ZWQgYW5kIG9ubHkgCgpjb21wYXRpYmxl
-ID0gImFsbHdpbm5lcixzdW41MGktaDYtcHdtIjsgCgp3aWxsIHdvcmsuIE5vdCBiZWNhdXNlIG9m
-IGRyaXZlciBpdHNlbGYgKGl0IGNhbiBzdGlsbCB1c2UgX29wdGlvbmFsKCkgCnZhcmlhbnRzKSwg
-YnV0IGJlY2F1c2Ugb2YgRFQgYmluZGluZywgd2hpY2ggc2hvdWxkIGJlIGFibGUgdG8gdmFsaWRh
-dGUgSDYgUFdNIApub2RlIC0gcmVzZXQgYW5kIGJ1cyBjbG9jayByZWZlcmVuY2VzIGFyZSByZXF1
-aXJlZCBpbiB0aGlzIGNhc2UuCgpCZXN0IHJlZ2FyZHMsCkplcm5lagogCj4gQmVzdCByZWdhcmRz
-Cj4gVXdlCgoKCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
-bGludXgtYXJtLWtlcm5lbAo=
+
+--===============3954433524777596950==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="szfghxy2ac5dvf2h"
+Content-Disposition: inline
+
+
+--szfghxy2ac5dvf2h
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Mon, Jul 29, 2019 at 06:14:35PM +0200, Uwe Kleine-K=C3=B6nig wrote:
+> Hello Jernej,
+>
+> On Mon, Jul 29, 2019 at 05:48:36PM +0200, Jernej =C5=A0krabec wrote:
+> > Dne ponedeljek, 29. julij 2019 ob 08:38:25 CEST je Uwe Kleine-K=C3=B6nig
+> > napisal(a):
+> > > Hello,
+> > >
+> > > On Fri, Jul 26, 2019 at 08:40:42PM +0200, Jernej Skrabec wrote:
+> > > > H6 PWM core needs bus clock to be enabled in order to work.
+> > > >
+> > > > Add a quirk for it.
+> > > >
+> > > > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+> > > > ---
+> > > >
+> > > >  drivers/pwm/pwm-sun4i.c | 15 +++++++++++++++
+> > > >  1 file changed, 15 insertions(+)
+> > > >
+> > > > diff --git a/drivers/pwm/pwm-sun4i.c b/drivers/pwm/pwm-sun4i.c
+> > > > index 1b7be8fbde86..7d3ac3f2dc3f 100644
+> > > > --- a/drivers/pwm/pwm-sun4i.c
+> > > > +++ b/drivers/pwm/pwm-sun4i.c
+> > > > @@ -72,6 +72,7 @@ static const u32 prescaler_table[] =3D {
+> > > >
+> > > >  };
+> > > >
+> > > >  struct sun4i_pwm_data {
+> > > >
+> > > > +	bool has_bus_clock;
+> > > >
+> > > >  	bool has_prescaler_bypass;
+> > > >  	bool has_reset;
+> > > >  	unsigned int npwm;
+> > > >
+> > > > @@ -79,6 +80,7 @@ struct sun4i_pwm_data {
+> > > >
+> > > >  struct sun4i_pwm_chip {
+> > > >
+> > > >  	struct pwm_chip chip;
+> > > >
+> > > > +	struct clk *bus_clk;
+> > > >
+> > > >  	struct clk *clk;
+> > > >  	struct reset_control *rst;
+> > > >  	void __iomem *base;
+> > > >
+> > > > @@ -382,6 +384,16 @@ static int sun4i_pwm_probe(struct platform_dev=
+ice
+> > > > *pdev)>
+> > > >  		reset_control_deassert(pwm->rst);
+> > > >
+> > > >  	}
+> > > >
+> > > > +	if (pwm->data->has_bus_clock) {
+> > > > +		pwm->bus_clk =3D devm_clk_get(&pdev->dev, "bus");
+> > >
+> > > Similar to my suggestion in patch 2: I'd use devm_clk_get_optional() =
+and
+> > > drop struct sun4i_pwm_data::has_bus_clock.
+> >
+> > This one is not so simple. This patch has incorrect logic. Correct logi=
+c would
+> > be to use "devm_clk_get(&pdev->dev, NULL)" for variants without bus clo=
+ck as
+> > it is done already and "devm_clk_get(&pdev->dev, "bus")" and
+> > "devm_clk_get(&pdev->dev, "mod")" for variants with bus clock.
+>
+> Then maybe something like the following?:
+>
+> 	busclk =3D devm_clk_get_optional(..., "bus");
+> 	modclk =3D devm_clk_get_optional(..., "mod");
+>
+> 	/*
+> 	 * old dtbs might have a single clock but no clock names. Fall
+> 	 * back to this for compatibility reasons.
+> 	 */
+> 	if (!modclk) {
+> 		modclk =3D devm_clk_get(..., NULL);
+> 	}
+
+Again, there's nothing optional about these clocks. You need a
+particular set of clocks for a given generation, and a separate set of
+them on another generation of SoCs.
+
+It really isn't about DT validation. We're really making sure that the
+device can be operational. It's as much of a validation step than
+making sure we have mapped registers (reg), or an interrupt if we had
+any.
+
+Maxime
+
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
+--szfghxy2ac5dvf2h
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXT8inAAKCRDj7w1vZxhR
+xfAvAQDPD/W10siMsbxXt0TnODSzxIn/7DF49wiKOuWZz6OwFwEAnwlydOCmRVBw
+8J0s2aXuCVfbyJpDqk/FcreSk6jcPQE=
+=dYSs
+-----END PGP SIGNATURE-----
+
+--szfghxy2ac5dvf2h--
+
+
+--===============3954433524777596950==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3954433524777596950==--
+
