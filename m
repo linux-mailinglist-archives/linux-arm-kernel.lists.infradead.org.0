@@ -2,87 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE1F878544
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 08:52:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 468B27859E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 08:59:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MlGJOuLHwfaXHFbaXmcDK/vNrpYEx0YbQ/RVLHSXz3g=; b=Ta2aKoa8j9g5gb
-	sbO2H7XyMiQDIoySTnVKEIp+6Q/4R+7py1hU1543gKiq24VKbTlvLtAk58Vz9T/4zWl9QbEYeORWo
-	5dGat6q3zQNXCqe+MkWci9OwZb45RGqe4YxxCfTyc0bDaMQIVlYZSNKNc9K5bI2T7ONFaCwV5A2ip
-	cZ5jD3omBkOK8vHR36JdzORW5FO51OYq17HFd1rdt731PA6ZB368GjaQlnbh0G0qdM6P7qpB9lT95
-	dxYobd75lSV6cTyEr7L2LX2/9V/AHQtMNJYrZBKB05wBfqrhPJyznNokyWFM/L3wnC/N16A2Ojsuw
-	U3yh8pCXHtm78L2i6tdw==;
+	List-Owner; bh=NZ/68iXPgRZmp0+ljbvR4qGh5HuQVuYetgnoz049/DI=; b=hVqNbKeZTgyta/
+	tkuuXmn3DZa3lxmT4mpFxdqfhRmbGO79EBaFsAljw1+qjHLRr5N3j7gJXf+/7WhtKFKr8K+pL4W9C
+	JDVEdLlRittXT3o6Nz7FvDcNz0j7kjHN77DpVDf+m2nYzbhRJe72xEJ5/lSSSeEahNjwV7VM38W2t
+	fvm2dgRjQJ6ffgLxNFHKOxbsk6ftdEF/4euQrl7tKUHHMWW08BzmcB6X6t7bmIwgius7CmJ+Gw+5t
+	ahA24KxS3d8yb/EkAMwGgzpJ6yfq4rHB3meYXA1kZhzioqr824ZcyDxL4cK4t7ogPJnLy+SGnlGZm
+	zy4zRHmlCoxIqBkWIRig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hrzWE-0001m0-M8; Mon, 29 Jul 2019 06:52:27 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1hrzdE-0003jZ-18; Mon, 29 Jul 2019 06:59:40 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hrzVP-0001l6-De
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 06:51:37 +0000
-Received: by mail-wr1-x441.google.com with SMTP id x1so10574434wrr.9
+ id 1hrzcs-0003jF-U8
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 06:59:21 +0000
+Received: by mail-wm1-x342.google.com with SMTP id w9so42268903wmd.1
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 28 Jul 2019 23:51:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ Sun, 28 Jul 2019 23:59:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amarulasolutions.com; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=v90YPXKI4GUWpeIkXpR1C/gf5jGZt8lyB8cJkCXtAs4=;
- b=HkFo8r+Mhc+dka46pBgHKGgOw300fimW1/wLqx0AmkfjaZpUky+65lpB0YHCCHXq8I
- DNUww9oNMwYxY56VcouIsLPOlKK3SktU6LgDv4UEFjwyqkz2b/P5+ScZt0H3eGTJW3A2
- 8003IepoQ+HaHMZ1Z7331VSbRmg8wg2JAvu997kFwUJm9mWpki0eGK7K7n4tLuqI5p29
- m4u99JVqEfPTKWF27b8F+WOXiMZNnnjKinn2mo9MNgxmdPZqH6GC+9vrKUkXfmWWUv+O
- w2BxlKjy43/0WUQNjClkBMCBZb43GasqxlgND/BF43ZnnOjHqHKsfiSduFdo0Ke3XSTB
- 1KPw==
+ :cc; bh=WdNVaqUhdH7oW+fwcGR8G6amm2wx7+HLe9zq6HFmEiI=;
+ b=eyEFx7Icsfu+CUq4Ppda2EPce21BwzOmDs0nd5M8t9uN1iMDxXI+MkpQfDp+1dkaEn
+ znzeaPBheFleG9xwsWWWAp0V5Slg0tCRfTmJEt31vtIQ5vgHU9qURQDUpZVpAMs1Z2Eo
+ L5OYK6bVkKrxY4gZtFcmmbmJFfRuWfWQvPOm0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=v90YPXKI4GUWpeIkXpR1C/gf5jGZt8lyB8cJkCXtAs4=;
- b=FXZGcjTOkF0U0or9MQGy/xJXNNAmEwzvB8ZI92mJKDdWyacYY0uBJosicSQ3nGyvvc
- H9YBKsfyGySXeL//ONLPQCNqgTyAmRBB0ttS3vmSmXrPrCIfSZ32K6y3jhSyZ25YRN+j
- /jKXxRjU8NR24TbGi16ZqFN60VNlM70mPjh6cgCCSp4UEdlQIIUuWgtbGGMWXcogpAC7
- GEvImiWxISP3Rg3T4JiYXCBX8Fb9LsthHzvVOX1qus9VDwgKY3/WKejEpBeGVbM0ytpB
- TyqxOYxce3cguyaRFIK2K++VYo3NzhoBPQauMnkeqj0H5gcKvmFNC61JmO0La0NWBHWd
- 9A8g==
-X-Gm-Message-State: APjAAAW5iXj/LeIlfyYOfuAmGRdaDYwE40yyxPJB0H9rwwO5OcDYYOKO
- 3HBSIiw+6q3dOXfdY4s5LdOwV5Popq0N932Dz+U=
-X-Google-Smtp-Source: APXvYqyv4uaMyeWcmvjY2UgFAZuoyar5QPXZqVXSg2irz44SilVKKkvVl6fLEdJb4ibwa0xYbImEpjtIbRtvw/3pXqY=
-X-Received: by 2002:a05:6000:14b:: with SMTP id
- r11mr44289431wrx.196.1564383092966; 
- Sun, 28 Jul 2019 23:51:32 -0700 (PDT)
+ :message-id:subject:to:cc;
+ bh=WdNVaqUhdH7oW+fwcGR8G6amm2wx7+HLe9zq6HFmEiI=;
+ b=CTCJqVXFjpRWHU1xMvVt3euVkVIjP3KTJw0tnLVfycY+Mk1eNI7lnNrxU6xOH/jChp
+ JrhmILoQ8Y36qcvYYKMAyOqZC8sYbhCU+n+FPpiOJxcfrTKECGjoxIoy/zmOwvxKZVJF
+ myn/hau7cuc1HMEa5L7yPeapUrcfBv+gB+rMQiOY1al1Sr6Yee0cgLMfz49kkSnZ8LoG
+ RiLjH0LtCZNr2v9loN2DI16i0Nt7hmH/RNdIVQh5UkWs92MquXAfwZg2z38lw552Z+yR
+ lCT2VQw1IodvMkJh3PwiFAbvXtuLboV/+LuOy2a21mkeNEy67fuH+qWmUMf3CJt7hMhb
+ aR9g==
+X-Gm-Message-State: APjAAAX5SA4rTnftHfcos2Jg4Bd3PNOvz/DM1fXjRMYI7fHBwT6djVYq
+ VZ53jQYj7BJm3ipq6AbSlg4bhTRCXp/NPpenWSp/6Q==
+X-Google-Smtp-Source: APXvYqxxTUG4jxVwawUTZ5umF2B4akxxNIKm+pHEc6XgYB7rTEHgz64m8Wlv4tnj3zYknNEjJ+UOfhVDZUSR38VTveU=
+X-Received: by 2002:a7b:cf32:: with SMTP id m18mr69037468wmg.27.1564383556328; 
+ Sun, 28 Jul 2019 23:59:16 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190705045612.27665-1-Anson.Huang@nxp.com>
- <20190705045612.27665-5-Anson.Huang@nxp.com>
- <CAEnQRZAZNMBx3ApVmRP8hYPw0XY_QgR-saE6WLcT8oZmHPCxSA@mail.gmail.com>
- <DB3PR0402MB3916233A56CF5DF778115716F5C30@DB3PR0402MB3916.eurprd04.prod.outlook.com>
- <CAEnQRZCrZybzcy__u4p_Eq4zSVc2ESyfKLk5sPf1JYba1JSOiA@mail.gmail.com>
- <20190727161736.4dkfqgwftre67v56@fsr-ub1664-175>
- <DB3PR0402MB391600891BA75DFFA9674058F5DD0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-In-Reply-To: <DB3PR0402MB391600891BA75DFFA9674058F5DD0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-From: Daniel Baluta <daniel.baluta@gmail.com>
-Date: Mon, 29 Jul 2019 09:51:21 +0300
-Message-ID: <CAEnQRZB6tmYFA8wwh0Fm49LTTDuCLq-SWVfrcUkRWWBo=0U13w@mail.gmail.com>
-Subject: Re: [PATCH 5/6] clk: imx8mq: Remove CLK_IS_CRITICAL flag for
- IMX8MQ_CLK_TMU_ROOT
-To: Anson Huang <anson.huang@nxp.com>
+References: <20190625144930.5hegt6bkzqzykjid@flea>
+ <CAMty3ZCmj0Rz7MMhLqihsvLQi+1CHf0fAoJQ4QN65xB-bwxaJw@mail.gmail.com>
+ <20190703114933.u3x4ej3v7ocewvif@flea>
+ <CAOf5uw=ZEvMV1hFQE986rNG_ctpReGbjbZzv0m=OzKPdBh57uQ@mail.gmail.com>
+ <20190711100100.cty3s6rs3w27low6@flea>
+ <CAOf5uw=3fiMuhcj3kDtCaGNTsxHKRrYb79MXZ+yUZtmf0jU10A@mail.gmail.com>
+ <20190720065830.zn3txpyduakywcva@flea>
+ <CAMty3ZDE1xiNgHVLihH378dY5szzkr14V-fwLZdvPs12tY+G1A@mail.gmail.com>
+ <20190720093202.6fn6xmhvsgawscnu@flea>
+ <CAMty3ZDpOA1mD77t3RB6hEG7o3+ws8y64m1DU8=3HdZ4zy4AUw@mail.gmail.com>
+ <20190724090513.vqnlmya3nqkl6pmu@flea>
+In-Reply-To: <20190724090513.vqnlmya3nqkl6pmu@flea>
+From: Michael Nazzareno Trimarchi <michael@amarulasolutions.com>
+Date: Mon, 29 Jul 2019 08:59:04 +0200
+Message-ID: <CAOf5uwkvCs62zHcUoFuJwau_ZZFdnVf8ua6JY_wzUb9m8rLTTw@mail.gmail.com>
+Subject: Re: [PATCH v6 11/22] clk: sunxi-ng: a64: Add minimum rate for PLL_MIPI
+To: Maxime Ripard <maxime.ripard@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190728_235135_576201_CC3CCDC1 
-X-CRM114-Status: GOOD (  27.67  )
+X-CRM114-CacheID: sfid-20190728_235919_585642_4BF7B719 
+X-CRM114-Status: GOOD (  45.46  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (daniel.baluta[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -101,98 +98,270 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Carlo Caione <ccaione@baylibre.com>,
- =?UTF-8?Q?Guido_G=C3=BCnther?= <agx@sigxcpu.org>,
- "Angus Ainslie \(Purism\)" <angus@akkea.ca>,
- Leonard Crestez <leonard.crestez@nxp.com>, Fabio Estevam <festevam@gmail.com>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- Abel Vesa <abel.vesa@nxp.com>, Andrey Smirnov <andrew.smirnov@gmail.com>,
- "daniel.lezcano@linaro.org" <daniel.lezcano@linaro.org>,
- dl-linux-imx <linux-imx@nxp.com>, "rui.zhang@intel.com" <rui.zhang@intel.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, David Airlie <airlied@linux.ie>,
  Michael Turquette <mturquette@baylibre.com>,
- Devicetree List <devicetree@vger.kernel.org>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- "edubezval@gmail.com" <edubezval@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Stephen Boyd <sboyd@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>, Lucas Stach <l.stach@pengutronix.de>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+ linux-sunxi <linux-sunxi@googlegroups.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
+ Daniel Vetter <daniel@ffwll.ch>,
+ linux-amarula <linux-amarula@amarulasolutions.com>,
+ linux-clk <linux-clk@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gTW9uLCBKdWwgMjksIDIwMTkgYXQgNDoyOSBBTSBBbnNvbiBIdWFuZyA8YW5zb24uaHVhbmdA
-bnhwLmNvbT4gd3JvdGU6Cj4KPiBIaSwgQWJlbC9EYW5pZWwKPgo+ID4gT24gMTktMDctMjcgMDk6
-MzM6MTAsIERhbmllbCBCYWx1dGEgd3JvdGU6Cj4gPiA+IE9uIFNhdCwgSnVsIDI3LCAyMDE5IGF0
-IDk6MTkgQU0gQW5zb24gSHVhbmcgPGFuc29uLmh1YW5nQG54cC5jb20+Cj4gPiB3cm90ZToKPiA+
-ID4gPgo+ID4gPiA+IEhpLCBEYW5pZWwKPiA+ID4gPgo+ID4gPiA+ID4gU3ViamVjdDogUmU6IFtQ
-QVRDSCA1LzZdIGNsazogaW14OG1xOiBSZW1vdmUgQ0xLX0lTX0NSSVRJQ0FMIGZsYWcKPiA+ID4g
-PiA+IGZvciBJTVg4TVFfQ0xLX1RNVV9ST09UCj4gPiA+ID4gPgo+ID4gPiA+ID4gSGkgYWxsLAo+
-ID4gPiA+ID4KPiA+ID4gPiA+IGxhdGVzdCBsaW51eC1uZXh0IGhhbmdzIGF0IGJvb3QuCj4gPiA+
-ID4gPgo+ID4gPiA+ID4gY29tbWl0IGZkZTUwYjk2YmU4MjFhYzk2NzNhN2UwMDg0N2NjNDYwNWJk
-ODhmMzQgKEhFQUQgLT4KPiA+IG1hc3RlciwgdGFnOgo+ID4gPiA+ID4gbmV4dC0yMDE5MDcyNiwg
-b3JpZ2luL21hc3Rlciwgb3JpZ2luL0hFQUQpCj4gPiA+ID4gPiBBdXRob3I6IFN0ZXBoZW4gUm90
-aHdlbGwgPHNmckBjYW5iLmF1dWcub3JnLmF1Pgo+ID4gPiA+ID4gRGF0ZTogICBGcmkgSnVsIDI2
-IDE1OjE4OjAyIDIwMTkgKzEwMDAKPiA+ID4gPiA+Cj4gPiA+ID4gPiAgICAgQWRkIGxpbnV4LW5l
-eHQgc3BlY2lmaWMgZmlsZXMgZm9yIDIwMTkwNzI2Cj4gPiA+ID4gPgo+ID4gPiA+ID4gICAgIFNp
-Z25lZC1vZmYtYnk6IFN0ZXBoZW4gUm90aHdlbGwgPHNmckBjYW5iLmF1dWcub3JnLmF1Pgo+ID4g
-PiA+ID4KPiA+ID4gPiA+Cj4gPiA+ID4gPiBJIGtub3cgdGhpcyBpcyBjcmF6eSBidXQgcmV2ZXJ0
-aW5nIGNvbW1pdDoKPiA+ID4gPiA+Cj4gPiA+ID4gPiBjb21taXQgNDMxYmRkMWRmNDhlZTI4OTZl
-YTk5ODBkOTE1M2UzYWVhZjBjODFlZgo+ID4gKHJlZnMvYmlzZWN0L2JhZCkKPiA+ID4gPiA+IEF1
-dGhvcjogQW5zb24gSHVhbmcgPEFuc29uLkh1YW5nQG54cC5jb20+Cj4gPiA+ID4gPiBEYXRlOiAg
-IEZyaSBKdWwgNSAxMjo1NjoxMSAyMDE5ICswODAwCj4gPiA+ID4gPgo+ID4gPiA+ID4gICAgIGNs
-azogaW14OG1xOiBSZW1vdmUgQ0xLX0lTX0NSSVRJQ0FMIGZsYWcgZm9yCj4gPiA+ID4gPiBJTVg4
-TVFfQ0xLX1RNVV9ST09UCj4gPiA+ID4gPgo+ID4gPiA+ID4gICAgIElNWDhNUV9DTEtfVE1VX1JP
-T1QgaXMgT05MWSB1c2VkIGZvciB0aGVybWFsIG1vZHVsZSwgdGhlCj4gPiBkcml2ZXIKPiA+ID4g
-PiA+ICAgICBzaG91bGQgbWFuYWdlIHRoaXMgY2xvY2ssIHNvIG5vIG5lZWQgdG8gaGF2ZSBDTEtf
-SVNfQ1JJVElDQUwgZmxhZwo+ID4gPiA+ID4gICAgIHNldC4KPiA+ID4gPiA+Cj4gPiA+ID4gPgo+
-ID4gPiA+ID4KPiA+ID4gPiA+IG1ha2VzIHRoZSBib290IHdvcmsgYWdhaW4uCj4gPiA+ID4gPgo+
-ID4gPiA+ID4gQW55IGlkZWE/Cj4gPiA+ID4KPiA+ID4gPiBJIGp1c3QgZm91bmQgaWYgZGlzYWJs
-aW5nIFNETUExLCB0aGVuIGtlcm5lbCBjYW4gYm9vdCB1cCwgaXQgZG9lcwo+ID4gPiA+IE5PVCBt
-YWtlIHNlbnNlIFRNVSBjbG9jayBpcyByZWxhdGVkIHRvIFNETUExLCBJIHdpbGwgY2hlY2sgd2l0
-aCBkZXNpZ24KPiA+IGFuZCBnZXQgYmFjayB0byB5b3Ugc29vbi4KPiA+ID4gPgo+ID4gPgo+ID4g
-PiBIaSBBbnNvbiwKPiA+ID4KPiA+ID4gQXBwbHlpbmcgQWJlbCdzIHBhdGNoOgo+ID4gPgo+ID4g
-PiBjb21taXQgODgxNmM0N2RiNmE4MmY1NWJiNGQ2NGY2MmZkOWRkM2FmNjgwZjBlNCAoSEVBRCAt
-PiBtYXN0ZXIpCj4gPiA+IEF1dGhvcjogQWJlbCBWZXNhIDxhYmVsLnZlc2FAbnhwLmNvbT4KPiA+
-ID4gRGF0ZTogICBUdWUgSnVuIDI1IDEyOjAxOjU2IDIwMTkgKzAzMDAKPiA+ID4KPiA+ID4gICAg
-IGNsazogaW14OG1xOiBNYXJrIEFIQiBjbG9jayBhcyBjcml0aWNhbAo+ID4gPgo+ID4gPiAgICAg
-S2VlcCB0aGUgQUhCIGNsb2NrIGFsd2F5cyBvbiBzaW5jZSB0aGVyZSBpcyBubyBkcml2ZXIgdG8g
-Y29udHJvbCBpdCBhbmQKPiA+ID4gICAgIGFsbCB0aGUgb3RoZXIgY2xvY2tzIHRoYXQgdXNlIGl0
-IGFzIHBhcmVudCByZWx5IG9uIGl0IGJlaW5nIGFsd2F5cyBlbmFibGVkLgo+ID4gPgo+ID4gPgo+
-ID4gPgo+ID4gPiBUaGUga2VybmVsIGJvb3RzIHVwIGFnYWluLgo+ID4gPgo+ID4gPiBJdCBtYWtl
-IHNvbWUgc2Vuc2UuIEkgZG9uJ3QgdW5kZXJzdGFuZCB0aG91Z2ggd2h5IGhhdmluZwo+ID4gPiBJ
-TVg4TVFfQ0xLX1RNVV9ST09UIGFzIGNyaXRpY2FsIGFsc28gInVuaGFuZ3MiIHRoZSBrZXJuZWwu
-Cj4gPiA+Cj4gPgo+ID4gT0ssIHNvIHRoaXMgaXMgaG93IGl0IHdvcmtzLgo+ID4KPiA+IEJ5IHJl
-bW92aW5nIHRoZSBjcml0aWNhbCBmbGFnIGZyb20gVE1VLCB0aGUgQUhCIGRvZXNuJ3Qgc3RheSBh
-bHdheXMgb24uCj4gPiBXaXRoIG15IHBhdGNoIHRoZSBBSEIgaXMgbWFya2VkIGFzIGNyaXRpY2Fs
-IGFuZCB0aGVyZWZvcmUgc3RheXMgb24uCj4gPgo+ID4gVGhlIHNkbWExX2NsayBoYXMgYXMgcGFy
-ZW50IHRoZSBpcGdfcm9vdCB3aGljaCBpbiB0dXJuIGhhcyBhcyBwYXJlbnQgdGhlCj4gPiBhaGIg
-Y2xvY2suIEFuZCBJIHRoaW5rIHdoYXQgaGFwcGVucyBpcyBzb21lIHJlYWQgZnJvbSB0aGUgc2Rt
-YSByZWdpc3RlcnMKPiA+IGhhbmdzIGJlY2F1c2UsIGZvciB3aGF0ZXZlciByZWFzb24sIGVuYWJs
-aW5nIHRoZSBzZG1hMV9jbGsgZG9lc24ndAo+ID4gcHJvcGFnYXRlIHRvIGVuYWJsZSB0aGUgYWhi
-IGNsb2NrLiBJIG1pZ2h0IGJlIHdyb25nIHRob3VnaC4KPiA+Cj4KPiBJIGNhbiBleHBsYWluIHdo
-eSBBYmVsJ3MgcGF0Y2ggY2FuIGZpeCB0aGlzIGlzc3VlLCB0aGUgQUhCIGNsb2NrIGlzIGEgTVVT
-VAo+IGFsd2F5cyBPTiBmb3Igc3lzdGVtIGJ1cywgd2hpbGUgaXQgZG9lcyBOT1QgaGF2ZSBDTEtf
-SVNfQ1JJVElDQUwgZmxhZyBzZXQgZm9yIG5vdywKPiB3aGVuIFNETUExIGlzIHByb2JlZCwgaXQg
-d2lsbCBlbmFibGUgaXRzIGNsb2NrLCBhbmQgdGhlIGNsayBwYXRoIGlzIHNkbWExX2Nsay0+aXBn
-X3Jvb3QtPmFoYiwKPiBhZnRlciBTRE1BMSBwcm9iZWQgZG9uZSwgaXQgd2lsbCBkaXNhYmxlIGl0
-cyBjbG9jayBzaW5jZSBubyBvbmUgdXNlIGl0LCBhbmQgaXQgd2lsbCB0cmlnZ2VyCj4gdGhlIGFo
-YiBjbG9jayB0byBiZSBPRkYsIGFzIGl0cyB1c2Vjb3VudCBpcyBhZGRlZCBieSAxIHdoZW4gcHJv
-YmUgYW5kIGRlY3JlYXNlZCBieSAxIGFmdGVyCj4gU0RNQTEgcHJvYmUgZG9uZSwgc28gdXNlY291
-bnQ9MCB3aWxsIHRyaWdnZXIgQUhCIGNsb2NrIHRvIGJlIE9GRi4KPgo+IFNvIEkgdGhpbmsgdGhl
-IGJlc3Qgc29sdXRpb24gc2hvdWxkIGJlIGFwcGx5aW5nIEFiZWwncyBwYXRjaCBhcyB5b3UgbWVu
-dGlvbmVkIHVwcGVyLCB0aGUgVE1VCj4gY2xvY2sgcGF0Y2ggaXMgTk9UIHRoZSByb290IGNhdXNl
-LCBpdCBqdXN0IHRyaWdnZXJzIHRoaXMgaXNzdWUgYWNjaWRlbnRseeKYuQo+Cj4gQnV0IEkgc2F3
-IEFiZWwncyBBSEIgcGF0Y2ggaXMgc3RpbGwgdW5kZXIgZGlzY3Vzc2lvbiwgc28gSSB0aGluayB3
-ZSBuZWVkIHRvIHNwZWVkIGl0IHVwIGFuZCBtYWtlCj4ga2VybmVsIGJvb3QgdXAgd29yayBmb3Ig
-ZGV2ZWxvcG1lbnQuIEFIQi9JUEcgYXJlIGFsd2F5cyBjcml0aWNhbCBmb3IgaS5NWCBTb0NzLgoK
-VGhhbmtzIEFuc29uLAoKWW91ciBleHBsYW5hdGlvbiBtYWtlcyBhIGxvdCBvZiBzZW5zZS4gV2Ug
-d2lsbCB0YWtlIGNhcmUgdG9kYXkgb2YgQWJlbCdzIHBhdGNoLgpXaGF0IGRvIHlvdSB0aGluayBh
-Ym91dCBGYWJpbydzIHBhdGNoPyBJIGFsc28gdGhpbmsgdGhpcyBpcyBhIHZhbGlkIHBhdGNoOgoK
-aHR0cDovL2NvZGUuYnVsaXgub3JnL3BkODhqcC04MTIzODEKCl9fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0
-CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFk
-ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hi
+
+On Wed, Jul 24, 2019 at 11:05 AM Maxime Ripard
+<maxime.ripard@bootlin.com> wrote:
+>
+> On Mon, Jul 22, 2019 at 03:51:04PM +0530, Jagan Teki wrote:
+> > Hi Maxime,
+> >
+> > On Sat, Jul 20, 2019 at 3:02 PM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+> > >
+> > > On Sat, Jul 20, 2019 at 12:46:27PM +0530, Jagan Teki wrote:
+> > > > On Sat, Jul 20, 2019 at 12:28 PM Maxime Ripard
+> > > > <maxime.ripard@bootlin.com> wrote:
+> > > > >
+> > > > > On Thu, Jul 11, 2019 at 07:43:16PM +0200, Michael Nazzareno Trimarchi wrote:
+> > > > > > > > tcon-pixel clock is the rate that you want to achive on display side
+> > > > > > > > and if you have 4 lanes 32bit or lanes and different bit number that
+> > > > > > > > you need to have a clock that is able to put outside bits and speed
+> > > > > > > > equal to pixel-clock * bits / lanes. so If you want a pixel-clock of
+> > > > > > > > 40 mhz and you have 32bits and 4 lanes you need to have a clock of
+> > > > > > > > 40 * 32 / 4 in no-burst mode. I think that this is done but most of
+> > > > > > > > the display.
+> > > > > > >
+> > > > > > > So this is what the issue is then?
+> > > > > > >
+> > > > > > > This one does make sense, and you should just change the rate in the
+> > > > > > > call to clk_set_rate in sun4i_tcon0_mode_set_cpu.
+> > > > > > >
+> > > > > > > I'm still wondering why that hasn't been brought up in either the
+> > > > > > > discussion or the commit log before though.
+> > > > > > >
+> > > > > > Something like this?
+> > > > > >
+> > > > > > drivers/gpu/drm/sun4i/sun4i_tcon.c     | 20 +++++++++++---------
+> > > > > >  drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h |  2 --
+> > > > > >  2 files changed, 11 insertions(+), 11 deletions(-)
+> > > > > >
+> > > > > > diff --git a/drivers/gpu/drm/sun4i/sun4i_tcon.c
+> > > > > > b/drivers/gpu/drm/sun4i/sun4i_tcon.c
+> > > > > > index 64c43ee6bd92..42560d5c327c 100644
+> > > > > > --- a/drivers/gpu/drm/sun4i/sun4i_tcon.c
+> > > > > > +++ b/drivers/gpu/drm/sun4i/sun4i_tcon.c
+> > > > > > @@ -263,10 +263,11 @@ static int sun4i_tcon_get_clk_delay(const struct
+> > > > > > drm_display_mode *mode,
+> > > > > >  }
+> > > > > >
+> > > > > >  static void sun4i_tcon0_mode_set_common(struct sun4i_tcon *tcon,
+> > > > > > -                                       const struct drm_display_mode *mode)
+> > > > > > +                                       const struct drm_display_mode *mode,
+> > > > > > +                                       u32 tcon_mul)
+> > > > > >  {
+> > > > > >         /* Configure the dot clock */
+> > > > > > -       clk_set_rate(tcon->dclk, mode->crtc_clock * 1000);
+> > > > > > +       clk_set_rate(tcon->dclk, mode->crtc_clock * tcon_mul * 1000);
+> > > > > >
+> > > > > >         /* Set the resolution */
+> > > > > >         regmap_write(tcon->regs, SUN4I_TCON0_BASIC0_REG,
+> > > > > > @@ -335,12 +336,13 @@ static void sun4i_tcon0_mode_set_cpu(struct
+> > > > > > sun4i_tcon *tcon,
+> > > > > >         u8 bpp = mipi_dsi_pixel_format_to_bpp(device->format);
+> > > > > >         u8 lanes = device->lanes;
+> > > > > >         u32 block_space, start_delay;
+> > > > > > -       u32 tcon_div;
+> > > > > > +       u32 tcon_div, tcon_mul;
+> > > > > >
+> > > > > > -       tcon->dclk_min_div = SUN6I_DSI_TCON_DIV;
+> > > > > > -       tcon->dclk_max_div = SUN6I_DSI_TCON_DIV;
+> > > > > > +       tcon->dclk_min_div = 4;
+> > > > > > +       tcon->dclk_max_div = 127;
+> > > > > >
+> > > > > > -       sun4i_tcon0_mode_set_common(tcon, mode);
+> > > > > > +       tcon_mul = bpp / lanes;
+> > > > > > +       sun4i_tcon0_mode_set_common(tcon, mode, tcon_mul);
+> > > > > >
+> > > > > >         /* Set dithering if needed */
+> > > > > >         sun4i_tcon0_mode_set_dithering(tcon, sun4i_tcon_get_connector(encoder));
+> > > > > > @@ -366,7 +368,7 @@ static void sun4i_tcon0_mode_set_cpu(struct
+> > > > > > sun4i_tcon *tcon,
+> > > > > >          */
+> > > > > >         regmap_read(tcon->regs, SUN4I_TCON0_DCLK_REG, &tcon_div);
+> > > > > >         tcon_div &= GENMASK(6, 0);
+> > > > > > -       block_space = mode->htotal * bpp / (tcon_div * lanes);
+> > > > > > +       block_space = mode->htotal * tcon_div * tcon_mul;
+> > > > > >         block_space -= mode->hdisplay + 40;
+> > > > > >
+> > > > > >         regmap_write(tcon->regs, SUN4I_TCON0_CPU_TRI0_REG,
+> > > > > > @@ -408,7 +410,7 @@ static void sun4i_tcon0_mode_set_lvds(struct
+> > > > > > sun4i_tcon *tcon,
+> > > > > >
+> > > > > >         tcon->dclk_min_div = 7;
+> > > > > >         tcon->dclk_max_div = 7;
+> > > > > > -       sun4i_tcon0_mode_set_common(tcon, mode);
+> > > > > > +       sun4i_tcon0_mode_set_common(tcon, mode, 1);
+> > > > > >
+> > > > > >         /* Set dithering if needed */
+> > > > > >         sun4i_tcon0_mode_set_dithering(tcon, sun4i_tcon_get_connector(encoder));
+> > > > > > @@ -487,7 +489,7 @@ static void sun4i_tcon0_mode_set_rgb(struct
+> > > > > > sun4i_tcon *tcon,
+> > > > > >
+> > > > > >         tcon->dclk_min_div = 6;
+> > > > > >         tcon->dclk_max_div = 127;
+> > > > > > -       sun4i_tcon0_mode_set_common(tcon, mode);
+> > > > > > +       sun4i_tcon0_mode_set_common(tcon, mode, 1);
+> > > > > >
+> > > > > >         /* Set dithering if needed */
+> > > > > >         sun4i_tcon0_mode_set_dithering(tcon, connector);
+> > > > > > diff --git a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h
+> > > > > > b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h
+> > > > > > index 5c3ad5be0690..a07090579f84 100644
+> > > > > > --- a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h
+> > > > > > +++ b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h
+> > > > > > @@ -13,8 +13,6 @@
+> > > > > >  #include <drm/drm_encoder.h>
+> > > > > >  #include <drm/drm_mipi_dsi.h>
+> > > > > >
+> > > > > > -#define SUN6I_DSI_TCON_DIV     4
+> > > > > > -
+> > > > > >  struct sun6i_dsi {
+> > > > > >         struct drm_connector    connector;
+> > > > > >         struct drm_encoder      encoder;
+> > > > >
+> > > > > I had more something like this in mind:
+> > > > > http://code.bulix.org/nlp5a4-803511
+> > > >
+> > > > Worth to look at it. was it working on your panel? meanwhile I will check it.
+> > >
+> > > I haven't tested it.
+> > >
+> > > > We have updated with below change [1], seems working on but is
+> > > > actually checking the each divider as before start with 4... till 127.
+> > > >
+> > > > This new approach, is start looking the best divider from 4.. based on
+> > > > the idea vs rounded it will ended up best divider like [2]
+> > >
+> > > But why?
+> > >
+> > > I mean, it's not like it's the first time I'm asking this...
+> > >
+> > > If the issue is what Micheal described, then the divider has nothing
+> > > to do with it. We've had that discussion over and over again.
+> >
+> > This is what Michael is mentioned in above mail "tcon-pixel clock is
+> > the rate that you want to achive on display side and if you have 4
+> > lanes 32bit or lanes and different bit number that you need to have
+> > a clock that is able to put outside bits and speed equal to
+> > pixel-clock * bits / lanes. so If you want a pixel-clock of 40 mhz
+> > and you have 32bits and 4 lanes you need to have a clock of 40 * 32
+> > / 4 in no-burst mode. "
+>
+> Yeah, so we need to change the clock rate.
+>
+> > He is trying to manage the bpp/lanes into dclk_mul (in last mail)
+> > and it can multiply with pixel clock which is rate argument in
+> > sun4i_dclk_round_rate.
+> >
+> > The solution I have mentioned in dclk_min, max is bpp/lanes also
+> > multiple rate in dotclock sun4i_dclk_round_rate.
+> >
+> > In both cases the overall pll_rate depends on dividers, the one that I
+> > have on this patch is based on BSP and the Michael one is more generic
+> > way so-that it can not to touch other functionalities and looping
+> > dividers to find the best one.
+> >
+> > If dclk_min/max is bpp/lanes then dotclock directly using divider 6
+> > (assuming 24-bit and 4 lanes) and return the pll_rate and divider 6
+> > associated.
+> >
+> > if dclk_mul is bpp/lanes, on Michael new change, the dividers start
+> > with 4 and end with 127 but the constant ideal rate which rate *
+> > bpp/lanes but the loop from sun4i_dclk_round_rate computed the divider
+> > as 6 only, ie what I'm mentioned on the above mail.
+>
+> We've been over this a couple of times already.
+>
+> The clock is generated like this:
+>
+> PLL -> TCON Module Clock -> TCON DCLK
+>
+> You want the TCON DCLK to be at the pixel clock rate * bpp /
+> lanes. Fine, that makes sense.
+>
+> Except that the patch you've sent, instead of changing the rate
+> itself, changes the ratio between the module clock and DCLK.
+>
+> And this is where the issue lies. First, from a logical viewpoint, it
+> doesn't make sense. If you want to change the clock rate, then just do
+> it. Don't hack around the multipliers trying to fall back to something
+> that works for you.
+>
+> Then, the ratio itself needs to be set to 4. This is the part that
+> we've discussed way too many times already, but in the Allwinner BSP,
+> that ratio is hardcoded to 4, and we've had panels that need it at
+> that value.
+>
+> So, what you want to do is to have:
+>
+> TCON DCLK = pixel clock * bpp / lanes
+> TCON Module Clock = DCLK * 4
+> PLL = Module Clock * Module Clock Divider (which I believe is 1 in most cases)
+
+  pll-mipi                       1        1        1   178200000
+   0     0  50000
+          tcon0                       2        2        1   178200000
+        0     0  50000
+             tcon-pixel-clock         1        1        1    29700000
+        0     0  50000
+
+This is an english problem from my side:
+tcon-pixel-clock is DCLK
+tcon0 must be tcon-pixel-clock * bpp / lanes because the logic need to
+put a bit every cycle.
+
+One solution can be:
+- set_rate_exclusive to tcon0 and calculate as display pixel clock *
+bpp  / lanes
+- calculate the tcon-pixel-clock using all divider
+
+Problem is that the function that calculate tcon-pixel-clock does not
+have any constrain on the ideal value. What you are
+suggesting is not correct in my opinion or I'm not following your
+suggesstion. What I know is that if we have a pixel-clock
+of dvi display of 50Mhz and we have 4 lanes 32bit we need a clock in
+the logic of 400Mhz (this is the ideal throughtput).
+So tcon-pixel-clock is 50mhz and tcon0 is 400Mhz.
+
+Michael
+
+
+>
+> So you want to increase the PLL. Fortunately for use, this is exactly
+> what a call to clk_set_rate will end up doing.
+>
+> Maxime
+>
+> --
+> Maxime Ripard, Bootlin
+> Embedded Linux and Kernel engineering
+> https://bootlin.com
+
+
+
+-- 
+| Michael Nazzareno Trimarchi                     Amarula Solutions BV |
+| COO  -  Founder                                      Cruquiuskade 47 |
+| +31(0)851119172                                 Amsterdam 1018 AM NL |
+|                  [`as] http://www.amarulasolutions.com               |
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
