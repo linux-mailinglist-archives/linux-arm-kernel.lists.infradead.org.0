@@ -2,68 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA42C78C44
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 15:05:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 283BF78C46
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 15:05:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FSVWoc2daoHx4HCiKHJs4WB/L5nl/l21FD+MwRtTk28=; b=rabu/uV563uxpz
-	DAkpw6JAWPx67XMgy+mVAkwuvN6vay1QnoWDlV93djFv2kzz8+4WqS3yFXTwGe+lKIZ/eEqPfNs+7
-	Y2ZHjMXJYZqvW2X/6EpfYULSECCDRtbHRRvMm11enXKl2/W4cLIfJILW48JLqWhom+F+zAYKMuN8F
-	4tJdO+pxWcmLj1lhWsSfysSNyuvUghh8EPjh887kWYkD3tbiucko0/SIPsr7yaeLy/JwSwmMJiGN1
-	Gu2J4i2RrAjCW8F4t5pykSLst04vVo2ccIODfdjudu7nJ7sbQ9gfTtJQDXHIVOOhEOn/DEWq6+jmP
-	K0BG/AvOi8ZqoNsEYCKQ==;
+	List-Owner; bh=bAUMrUCH4B189qTaKJPGK/eaGbHuPg8dd/h5UnNwPV4=; b=deGlcALIuxJ8hG
+	Eu/sHpJ0/+ft+vRZFskeDNDgZrWDGoxceG8GS77d4bsrtaCQSkgT7xpay4rA0PjNnsSf0ymh4JvWQ
+	0ilwu0K0m1gd5UlBNDOI2Pfqag6ZJfVWBTCntel2TbeDRXAJ/Ll602X87wDVFrK/D1/kra5lmBIX2
+	SWIwqYcLZcRY16lrswmLiZRmoMXKRJfL5ck0iJEK0mSntEBvHmeSy0XQh/EPwcXYiYSDUgB4zMU+Y
+	yuZCkbZ9LJ3viPa5ziofD6uKj0QKEMiCjOsWo7QDojkvUiJ8G+RMie3Hkdyc30t8SDigrLWE95GVh
+	Nm1P0k4XvqKADtmMPQfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hs5LG-00024B-1t; Mon, 29 Jul 2019 13:05:30 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1hs5LX-0002OX-Sw; Mon, 29 Jul 2019 13:05:47 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hs5L8-00023V-Hx
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 13:05:23 +0000
-Received: by mail-wm1-x344.google.com with SMTP id u25so43047599wmc.4
+ id 1hs5LM-0002Jd-Jh
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 13:05:38 +0000
+Received: by mail-wr1-x444.google.com with SMTP id n4so61854784wrs.3
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 29 Jul 2019 06:05:22 -0700 (PDT)
+ Mon, 29 Jul 2019 06:05:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=subject:to:cc:references:from:openpgp:autocrypt:organization
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=j0+gH+XJcAx4/WK5B8ajaIVZr5svz0xnQ0NGMIOg6Qo=;
- b=RcPimZ4sI4L/Wn5tThBMNzOIzeZBVjf8NG17hCoBkhFE5/UmfiFzRYjGQwf+wDTKvb
- SzUJVxl6FH/ohe9RWMiwHHJYnRJCYnImHQ0MH0npus/vhH9Oxs/uAms6Scjx4mGtJRcm
- hWV1mL5ByGMWW++CB2bbRH+vCJuwPVz8JtsjIghpXJaAMYE4EmzGJjlBa8pX0wap0q0B
- Mbx2e+KwKZ3dFhF8T0vFcW5a+QtuTlFxZ86nzaaqzaiWFGL+Cf2gg/5su1nlmKpC/vpw
- 1puPcrUS1H6O0xZKbOBlnKtf0td0xo9YfNF1kURFQg/81j+Rxz1Xsu036JCWCc7+Kunb
- N7BQ==
+ bh=7W7NAPTLBQYZPI0wvBRAlGZjV0LGMc5vvrYwHFtU02I=;
+ b=FhI0DC5DEwZ+Dr0AN3Umx9BKX7yNEMmmPJ2ChjPvztfE5VIwl+ze+ldJr9J6FtIBJo
+ KGyufXNJOJp5wzOKiVdrxNGJEa9hwBlKaUnb3p4IPIUPy3fAut6Rvfb2hFBpZmnAIllV
+ TkyANr/M7Cri3yCNZd2f4lK4pahG1MWwcuKnHM1xEK30IQ6NIY4dkX1u+CiP/wM4PhJv
+ YkrqdU7mHaVT5YA9lHVFXaSM8NLssMOqxdbMmaXnoTUgcppkTdJTejVwBLReHVRZT+mV
+ y7RTdXWI6XICeJg9lbZAzIpIAqbIzJ3H1UNde+4Z6ZuLlfW+Mg6wwp0EgdVUYi8wnt7e
+ OVgg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :organization:message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=j0+gH+XJcAx4/WK5B8ajaIVZr5svz0xnQ0NGMIOg6Qo=;
- b=Qqq6DwTxRUR7BaOn/v9ritWIWX41B4CjBFHqhXGn97f5bN/qZqBCmAMvHEcJr7WgAb
- uOkrnXs30hF7lByIsBu7KrKyA1tgiieznHTfpxmp4zdZP48olKgglzVHhWdCFmK0vMrA
- 1k7Qc2aWyGt2f3RHyUSD8wHlVFpA0fg0gGt5xNLKtO0B+OFUxZS8RGnunU1qcdhJApSi
- RtnLOmihOS3inGiMI2xwfcMZvWNhIT20exnc5uyvqzgWLHflJwt1Hyd1h0uk2czl+ofN
- mR7+vEey1gMp4DHMAOELqd2P5BP4iFiFFZkols5vBp4ZoaCE4X9tmx44SvIm1SS2KhwW
- cwoQ==
-X-Gm-Message-State: APjAAAWkXuGDn8GljKNJi9cO/nqkKkXM9ZGYPuZslArhlcOG+kJk39E/
- XvretBdZbyR1CIoh1OKLh8CZYw==
-X-Google-Smtp-Source: APXvYqyZ9wIaOg6v1AlkQUYxmkjoplizWqY8dZvTi1LbYLZ6E/hW+bE5wfIeWy9FYRPa/aFf6WLHOQ==
-X-Received: by 2002:a1c:c14b:: with SMTP id r72mr84021665wmf.166.1564405521127; 
- Mon, 29 Jul 2019 06:05:21 -0700 (PDT)
+ bh=7W7NAPTLBQYZPI0wvBRAlGZjV0LGMc5vvrYwHFtU02I=;
+ b=OMt7q2AIOQbycAkP90Nw9AKTsZPCR5qP19Opppzg/mt5YJaz2Dxzn/IGRQiw20FP/K
+ rsye8+Jeu/VfV5+xPG6sWp8DKJioZuVwC4e8U0Fw/gCGIf+7ReeH+LwRSPKaVYJC2+eb
+ 1hWv7Bp2VkIhftRXnvdg20wJ5RwS247JfzfI8p7HcVU+vGe64lXeg13blxd9A6eL9/bY
+ 5e8Vim5uFykiAWu4nO0z7zxkAfO5p1EQOvx2m2lVx5rT7VGoKf4fnlvXGVgMw13bXPA+
+ OJ2zTAZruUm7IvGj6nt8KHd95RSplbGYzmOh6SsXGGfJDu1HfHcujsR91SYHk/ZYbAtt
+ 3L1g==
+X-Gm-Message-State: APjAAAVxputukyaqrijvzUK9Tzq+icP5uSPLk8/XK0AwV3mGZdcaWb2s
+ zWaHVN9juhvv916cr5rpvnUYPg==
+X-Google-Smtp-Source: APXvYqzWHJQv+MDKrfVT0E7PtAgKxHjocwHgZzo2ob/4JQCa36tOMcgLqfanffm5ec0yAE1SazJtVQ==
+X-Received: by 2002:a5d:55c2:: with SMTP id i2mr82663829wrw.96.1564405534826; 
+ Mon, 29 Jul 2019 06:05:34 -0700 (PDT)
 Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
  [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id p12sm46641432wrt.13.2019.07.29.06.05.20
+ by smtp.gmail.com with ESMTPSA id i13sm54311179wrr.73.2019.07.29.06.05.33
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 29 Jul 2019 06:05:20 -0700 (PDT)
-Subject: Re: [PATCH 2/3] arm64: dts: meson-gx: add video decoder entry
+ Mon, 29 Jul 2019 06:05:34 -0700 (PDT)
+Subject: Re: [PATCH 3/3] arm64: dts: meson: add video decoder entries
 To: Maxime Jourdan <mjourdan@baylibre.com>, Kevin Hilman <khilman@baylibre.com>
 References: <20190726124639.7713-1-mjourdan@baylibre.com>
- <20190726124639.7713-3-mjourdan@baylibre.com>
+ <20190726124639.7713-4-mjourdan@baylibre.com>
 From: Neil Armstrong <narmstrong@baylibre.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
@@ -116,23 +116,23 @@ Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  VsbXrP9BZ6snXyHfebPnno/te5XRqZTL9aJOytB/1iUna+1MAwBxGFPvqeEUUyT+gx1l3Acl
  ZaTUOEkgIor5losDrePdPgE=
 Organization: Baylibre
-Message-ID: <0a384af2-9c81-f798-82c0-eae07ed5981c@baylibre.com>
-Date: Mon, 29 Jul 2019 15:05:20 +0200
+Message-ID: <77240589-1e86-6e35-0d7b-25f349057a79@baylibre.com>
+Date: Mon, 29 Jul 2019 15:05:33 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20190726124639.7713-3-mjourdan@baylibre.com>
+In-Reply-To: <20190726124639.7713-4-mjourdan@baylibre.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_060522_596791_A54ECBE2 
-X-CRM114-Status: GOOD (  16.13  )
+X-CRM114-CacheID: sfid-20190729_060536_669912_6DDD0092 
+X-CRM114-Status: GOOD (  16.46  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -158,39 +158,65 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On 26/07/2019 14:46, Maxime Jourdan wrote:
-> Add the base video decoder node compatible with the meson vdec driver,
-> for GX* chips.
+> This enables the video decoder for GXBB, GXL and GXM chips
 > 
 > Signed-off-by: Maxime Jourdan <mjourdan@baylibre.com>
 > ---
->  arch/arm64/boot/dts/amlogic/meson-gx.dtsi | 14 ++++++++++++++
->  1 file changed, 14 insertions(+)
+>  arch/arm64/boot/dts/amlogic/meson-gxbb.dtsi | 11 +++++++++++
+>  arch/arm64/boot/dts/amlogic/meson-gxl.dtsi  | 11 +++++++++++
+>  arch/arm64/boot/dts/amlogic/meson-gxm.dtsi  |  4 ++++
+>  3 files changed, 26 insertions(+)
 > 
-> diff --git a/arch/arm64/boot/dts/amlogic/meson-gx.dtsi b/arch/arm64/boot/dts/amlogic/meson-gx.dtsi
-> index 74d03fc706be..86e26ed551e0 100644
-> --- a/arch/arm64/boot/dts/amlogic/meson-gx.dtsi
-> +++ b/arch/arm64/boot/dts/amlogic/meson-gx.dtsi
-> @@ -437,6 +437,20 @@
->  			};
->  		};
->  
-> +		vdec: video-codec@c8820000 {
-> +			compatible = "amlogic,gx-vdec";
-> +			reg = <0x0 0xc8820000 0x0 0x10000>,
-> +			      <0x0 0xc110a580 0x0 0xe4>;
-> +			reg-names = "dos", "esparser";
+> diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb.dtsi b/arch/arm64/boot/dts/amlogic/meson-gxbb.dtsi
+> index f734faaf7b78..0cb40326b0d3 100644
+> --- a/arch/arm64/boot/dts/amlogic/meson-gxbb.dtsi
+> +++ b/arch/arm64/boot/dts/amlogic/meson-gxbb.dtsi
+> @@ -845,3 +845,14 @@
+>  	compatible = "amlogic,meson-gxbb-vpu", "amlogic,meson-gx-vpu";
+>  	power-domains = <&pwrc_vpu>;
+>  };
 > +
-> +			interrupts = <GIC_SPI 44 IRQ_TYPE_EDGE_RISING>,
-> +				     <GIC_SPI 32 IRQ_TYPE_EDGE_RISING>;
-> +			interrupt-names = "vdec", "esparser";
+> +&vdec {
+> +	compatible = "amlogic,gxbb-vdec", "amlogic,gx-vdec";
+> +	clocks = <&clkc CLKID_DOS_PARSER>,
+> +		 <&clkc CLKID_DOS>,
+> +		 <&clkc CLKID_VDEC_1>,
+> +		 <&clkc CLKID_VDEC_HEVC>;
+> +	clock-names = "dos_parser", "dos", "vdec_1", "vdec_hevc";
+> +	resets = <&reset RESET_PARSER>;
+> +	reset-names = "esparser";
+> +};
+> diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi b/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi
+> index c959456bacc6..a09c53aaa0e8 100644
+> --- a/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi
+> +++ b/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi
+> @@ -848,3 +848,14 @@
+>  	compatible = "amlogic,meson-gxl-vpu", "amlogic,meson-gx-vpu";
+>  	power-domains = <&pwrc_vpu>;
+>  };
 > +
-> +			amlogic,ao-sysctrl = <&sysctrl_AO>;
-> +			amlogic,canvas = <&canvas>;
-> +		};
+> +&vdec {
+> +	compatible = "amlogic,gxl-vdec", "amlogic,gx-vdec";
+> +	clocks = <&clkc CLKID_DOS_PARSER>,
+> +		 <&clkc CLKID_DOS>,
+> +		 <&clkc CLKID_VDEC_1>,
+> +		 <&clkc CLKID_VDEC_HEVC>;
+> +	clock-names = "dos_parser", "dos", "vdec_1", "vdec_hevc";
+> +	resets = <&reset RESET_PARSER>;
+> +	reset-names = "esparser";
+> +};
+> diff --git a/arch/arm64/boot/dts/amlogic/meson-gxm.dtsi b/arch/arm64/boot/dts/amlogic/meson-gxm.dtsi
+> index 7a85a82bf65d..a0e677d5a8f7 100644
+> --- a/arch/arm64/boot/dts/amlogic/meson-gxm.dtsi
+> +++ b/arch/arm64/boot/dts/amlogic/meson-gxm.dtsi
+> @@ -144,3 +144,7 @@
+>  &dwc3 {
+>  	phys = <&usb3_phy>, <&usb2_phy0>, <&usb2_phy1>, <&usb2_phy2>;
+>  };
 > +
->  		periphs: periphs@c8834000 {
->  			compatible = "simple-bus";
->  			reg = <0x0 0xc8834000 0x0 0x2000>;
+> +&vdec {
+> +	compatible = "amlogic,gxm-vdec", "amlogic,gx-vdec";
+> +};
 > 
 
 Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
