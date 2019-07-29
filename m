@@ -2,69 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6AAB378503
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 08:36:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD3FF78506
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 08:37:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mw5yd/Cr1OyNH/BWQ6kyRHkCJgFDorMGECBNSbqwbQ8=; b=OHeATmn8DWqjQO
-	5Oi+Io/m3UwGTle66e/KHEntIXsCIm51SipTYxlWiinCOPbSL97yWUM8yuvzqtRgAt9a4osymlwbc
-	/OG3A5mR+1Z9BlF/+uXZ2PtLR5Q8fYAxjudYZ13dDCFG6Pnhe/uw7Md3ob8m5ERcBc595KFG6//Gk
-	coAcZdoSl3A3l0R3FLIIeNqkjzZqjiLCQjew259Jp+D3t9XtOzrUeE8ZLokI9OSJoHsqclcP44rop
-	vHk7TXPbeYb2WDC13HNBPkVlbVNx9qmVZP2pLnPWSVwifjJJ2+G+/ZJz2jAV4BJgcoLvzTDXotGsU
-	w0IPvMEZh4NKoP3aD6Hg==;
+	List-Owner; bh=qSOXQqrPA3HHck+rrMf5NSfSRvU4EGrjmj6IZYsfT9E=; b=c3xE09iDSJNcb9
+	3FcG8rHtl8bj0kyPQkI5CctgGfyAcqEquTAd+IUEksjLlSloQ6bZR4vnCatA9q/gz4PlKDYwuTaZD
+	6ZCWZdTiR46J7Xab97e9bShHdC4sUhLJYqVwy/5/K/RSf67CFsA7p5JlPk8cRhOq+Ka4RKxh4ctHc
+	GG6ihrt9+wEfVChdmA5wSoHwpI7lClFdqjJIHMioxm3A+adlNWl/HK1dpPG9Ao+myRlmYT2KcaOpO
+	CrPJ0fPid6eAIq+EfYWYdnHp2X6y5H53WHh0p0ijS5HAUH9+Jh0/w6vhrrJ0vp8b5RK3fJpBtxOzn
+	otJAjbrb6uzV503xTT5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hrzGz-00043N-Nw; Mon, 29 Jul 2019 06:36:41 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hrzHJ-0004Ea-8U; Mon, 29 Jul 2019 06:37:01 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hrzGm-000432-Ss
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 06:36:30 +0000
-Received: from localhost (unknown [122.178.221.187])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5CF1E2070B;
- Mon, 29 Jul 2019 06:36:27 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564382188;
- bh=jbM48Eg7Yx5V9z4igLzOpQybV0ra5WLa7K3ccfFGuMY=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=pH0ozCVJa4iWQkH3dXM5D+1GzWT3ECrY+N3AZwQtUZOKB71Oie7Tb3N3q1Gn9TZxX
- Bhbi4DmxJCaNEpEhvC3z+qqFjyBah+/NUeQIAeLpr9Hoa/xOZmCuMY5j+IhPaxUn9J
- ZvgY0OvpfKIfxSD2EsCEivoIQD5X0D6/tRSNln2c=
-Date: Mon, 29 Jul 2019 12:05:15 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Subject: Re: [PATCH v2 0/2] dmaengine: ti: omap-dma: Improved polling support
-Message-ID: <20190729063515.GE12733@vkoul-mobl.Dlink>
-References: <20190716082459.1222-1-peter.ujfalusi@ti.com>
+ id 1hrzGx-0004AA-Vj
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 06:36:41 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1hrzGq-0006RE-Jk; Mon, 29 Jul 2019 08:36:32 +0200
+Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1hrzGo-0003FU-Dg; Mon, 29 Jul 2019 08:36:30 +0200
+Date: Mon, 29 Jul 2019 08:36:30 +0200
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Jernej Skrabec <jernej.skrabec@siol.net>
+Subject: Re: [PATCH 2/6] pwm: sun4i: Add a quirk for reset line
+Message-ID: <20190729063630.rn325whatfnc3m7n@pengutronix.de>
+References: <20190726184045.14669-1-jernej.skrabec@siol.net>
+ <20190726184045.14669-3-jernej.skrabec@siol.net>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190716082459.1222-1-peter.ujfalusi@ti.com>
-User-Agent: Mutt/1.11.3 (2019-02-01)
+In-Reply-To: <20190726184045.14669-3-jernej.skrabec@siol.net>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190728_233628_950733_833A04A9 
-X-CRM114-Status: GOOD (  11.65  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190728_233640_097202_CB4AD602 
+X-CRM114-Status: GOOD (  19.47  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,35 +68,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dmaengine@vger.kernel.org, dan.j.williams@intel.com,
- linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, linux-pwm@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org, mripard@kernel.org,
+ wens@csie.org, robh+dt@kernel.org, thierry.reding@gmail.com,
+ Philipp Zabel <p.zabel@pengutronix.de>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 16-07-19, 11:24, Peter Ujfalusi wrote:
-> Hi,
-> 
-> changes since v1:
-> - New preparation cleanup patch
-> - Simplified code for the main patch to be easier to read
-> 
-> This series fine-tunes the omap-dma polled memcpy support to be inline with how
-> the EDMA driver is handling it.
-> 
-> The polled completion can be tested by applying:
-> https://patchwork.kernel.org/patch/10966499/
-> 
-> and run the dmatest with polled = 1 on boards where sDMA is used.
-> 
-> Or boot up any dra7 family device with display enabled. The workaround for DMM
-> errata i878 uses polled DMA memcpy.
+Cc +=3D reset framework maintainer
 
-Applied, thanks
+Hello Jernej,
 
--- 
-~Vinod
+On Fri, Jul 26, 2019 at 08:40:41PM +0200, Jernej Skrabec wrote:
+> H6 PWM core needs deasserted reset line in order to work.
+> =
+
+> Add a quirk for it.
+> =
+
+> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+> ---
+>  drivers/pwm/pwm-sun4i.c | 27 +++++++++++++++++++++++++--
+>  1 file changed, 25 insertions(+), 2 deletions(-)
+> =
+
+> diff --git a/drivers/pwm/pwm-sun4i.c b/drivers/pwm/pwm-sun4i.c
+> index de78c824bbfd..1b7be8fbde86 100644
+> --- a/drivers/pwm/pwm-sun4i.c
+> +++ b/drivers/pwm/pwm-sun4i.c
+> @@ -16,6 +16,7 @@
+>  #include <linux/of_device.h>
+>  #include <linux/platform_device.h>
+>  #include <linux/pwm.h>
+> +#include <linux/reset.h>
+>  #include <linux/slab.h>
+>  #include <linux/spinlock.h>
+>  #include <linux/time.h>
+> @@ -72,12 +73,14 @@ static const u32 prescaler_table[] =3D {
+>  =
+
+>  struct sun4i_pwm_data {
+>  	bool has_prescaler_bypass;
+> +	bool has_reset;
+>  	unsigned int npwm;
+>  };
+>  =
+
+>  struct sun4i_pwm_chip {
+>  	struct pwm_chip chip;
+>  	struct clk *clk;
+> +	struct reset_control *rst;
+>  	void __iomem *base;
+>  	spinlock_t ctrl_lock;
+>  	const struct sun4i_pwm_data *data;
+> @@ -371,6 +374,14 @@ static int sun4i_pwm_probe(struct platform_device *p=
+dev)
+>  	if (IS_ERR(pwm->clk))
+>  		return PTR_ERR(pwm->clk);
+>  =
+
+> +	if (pwm->data->has_reset) {
+> +		pwm->rst =3D devm_reset_control_get(&pdev->dev, NULL);
+> +		if (IS_ERR(pwm->rst))
+> +			return PTR_ERR(pwm->rst);
+> +
+> +		reset_control_deassert(pwm->rst);
+> +	}
+> +
+
+I wonder why there is a need to track if a given chip needs a reset
+line. I'd just use devm_reset_control_get_optional() and drop the
+.has_reset member in struct sun4i_pwm_data.
+
+>  	pwm->chip.dev =3D &pdev->dev;
+>  	pwm->chip.ops =3D &sun4i_pwm_ops;
+>  	pwm->chip.base =3D -1;
+> @@ -383,19 +394,31 @@ static int sun4i_pwm_probe(struct platform_device *=
+pdev)
+>  	ret =3D pwmchip_add(&pwm->chip);
+>  	if (ret < 0) {
+>  		dev_err(&pdev->dev, "failed to add PWM chip: %d\n", ret);
+> -		return ret;
+> +		goto err_pwm_add;
+>  	}
+>  =
+
+>  	platform_set_drvdata(pdev, pwm);
+>  =
+
+>  	return 0;
+> +
+> +err_pwm_add:
+> +	reset_control_assert(pwm->rst);
+> +
+> +	return ret;
+>  }
+>  =
+
+>  static int sun4i_pwm_remove(struct platform_device *pdev)
+>  {
+>  	struct sun4i_pwm_chip *pwm =3D platform_get_drvdata(pdev);
+> +	int ret;
+> +
+> +	ret =3D pwmchip_remove(&pwm->chip);
+> +	if (ret)
+> +		return ret;
+>  =
+
+> -	return pwmchip_remove(&pwm->chip);
+> +	reset_control_assert(pwm->rst);
+> +
+> +	return 0;
+>  }
+>  =
+
+>  static struct platform_driver sun4i_pwm_driver =3D {
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
 
 _______________________________________________
 linux-arm-kernel mailing list
