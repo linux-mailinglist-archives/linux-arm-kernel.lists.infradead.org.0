@@ -2,69 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1DD9178B2F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 13:58:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB04F78B6F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 14:13:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K4jdAPLWhbQT6jS5/2EZpgXhe5vX1fPYf/UukLK1hrU=; b=qQ+fJC/6OwZiB1
-	p2Ft7a94KN8nKR7DwNHUPvEs80fhAZ5OzfTtXHIN/+2Uh2P5tA1eRYDic66EOinnNSSIGhBmWf7ej
-	w3bvwlpGwhuIiUIKqPFqm245sCQ62Vc0yQvTOEDRpnSP4YWIEo9DRZ4/wif0/9hpFL3lgufXJ69jn
-	ApK7UMv7D14WKKVcQvb/VJPSw+6Hnwn86P3ChBIaDbpDklufAbnhU5D2V9wT/H3TFChulrW1SwFKJ
-	UyBpHVyCgCWtN6YZTeR4YLYdct70j/jd7/740rMgKaUkyyDX4wsk/nhjaWmHnI3MQqmfnHgdVpzY5
-	lUcDdoSnS2OYytNu0dcA==;
+	List-Owner; bh=ynlqoNpzZfaH5Je5o9FVA0Y7JsjJx+JdtMiQ7R+nDiw=; b=dxWjS5pTSIphV5
+	mvybueN3uHSa+UAtV0GS1CXyYm5itbNAsyvVPOpGwYYsF50d4++m/6lzcPzU3kvx7HJ7IClwtck4s
+	h32eijrvcCS1Xl/8pOH+aL942AgqJECn8FUsrL3ZnBz9uEEu/Tc8AMIAv+iAasHgknqZYWKdw4rN0
+	QzsulZtHT6/7KejSRnifQ8ZRzGsRzL6y8U4V6onAOAv2z3R1exH2dBM0Cv4Gy5v+NuJ4rtU5INbpn
+	AqCXmbhbzc/hlE5mdttm9f0LIg/AXk+2HIB/a6Ri/VxPu/OFcCarf0fjOIS1AuPHNXF7Zr0wRGTrX
+	hdNvyv0YAb4fsET1I8kg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hs4IX-0003S5-KV; Mon, 29 Jul 2019 11:58:37 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hs4Wk-000881-Ic; Mon, 29 Jul 2019 12:13:18 +0000
+Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hs4IK-0003Qq-NQ; Mon, 29 Jul 2019 11:58:26 +0000
-X-UUID: 86e2f3de9e344b7c97b08e61b6848155-20190729
-X-UUID: 86e2f3de9e344b7c97b08e61b6848155-20190729
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <jerry-ch.chen@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 802398199; Mon, 29 Jul 2019 03:58:20 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 29 Jul 2019 04:58:19 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 29 Jul 2019 19:58:11 +0800
-Received: from [172.21.84.99] (172.21.84.99) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 29 Jul 2019 19:58:11 +0800
-Message-ID: <1564401491.15267.405.camel@mtksdccf07>
-Subject: Re: [RFC PATCH V2 4/4] platform: mtk-isp: Add Mediatek FD driver
-From: Jerry-ch Chen <Jerry-ch.Chen@mediatek.com>
-To: Tomasz Figa <tfiga@chromium.org>
-Date: Mon, 29 Jul 2019 19:58:11 +0800
-In-Reply-To: <CAAFQd5A0Qi==m4O9L2W3Qmdx4g8acs-kjBtHjLBNCBpoGd5ZSw@mail.gmail.com>
-References: <1562661672-22439-1-git-send-email-Jerry-Ch.chen@mediatek.com>
- <1562661672-22439-5-git-send-email-Jerry-Ch.chen@mediatek.com>
- <eb3bb92d-5d44-0d45-2e90-abcdb96f595d@metux.net>
- <1564380061.15267.383.camel@mtksdccf07>
- <CAAFQd5A0Qi==m4O9L2W3Qmdx4g8acs-kjBtHjLBNCBpoGd5ZSw@mail.gmail.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1hs4Wd-000864-5N
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 12:13:13 +0000
+Received: from LHREML711-CAH.china.huawei.com (unknown [172.18.7.108])
+ by Forcepoint Email with ESMTP id 6CF1177BEB65B21DC160;
+ Mon, 29 Jul 2019 13:12:58 +0100 (IST)
+Received: from LHREML524-MBB.china.huawei.com ([169.254.3.194]) by
+ LHREML711-CAH.china.huawei.com ([10.201.108.34]) with mapi id 14.03.0415.000; 
+ Mon, 29 Jul 2019 13:12:48 +0100
+From: Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>
+To: Christoph Hellwig <hch@lst.de>, Robin Murphy <robin.murphy@arm.com>
+Subject: RE: [PATCH 07/24] iommu/dma: Move domain lookup into
+ __iommu_dma_{map,	unmap}
+Thread-Topic: [PATCH 07/24] iommu/dma: Move domain lookup into
+ __iommu_dma_{map,	unmap}
+Thread-Index: AQHVDt4W3gOYMtyd7EGom44w8Atw56bh634g
+Date: Mon, 29 Jul 2019 12:12:48 +0000
+Message-ID: <5FC3163CFD30C246ABAA99954A238FA83F328FAB@lhreml524-mbb.china.huawei.com>
+References: <20190520072948.11412-1-hch@lst.de>
+ <20190520072948.11412-8-hch@lst.de>
+In-Reply-To: <20190520072948.11412-8-hch@lst.de>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [10.202.227.237]
 MIME-Version: 1.0
-X-MTK: N
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_045824_771385_647F3A86 
-X-CRM114-Status: GOOD (  38.19  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190729_051311_501734_1413AD5F 
+X-CRM114-Status: GOOD (  22.46  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [185.176.76.210 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,254 +71,201 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "laurent.pinchart+renesas@ideasonboard.com"
- <laurent.pinchart+renesas@ideasonboard.com>,
- Rynn Wu =?UTF-8?Q?=28=E5=90=B3=E8=82=B2=E6=81=A9=29?= <Rynn.Wu@mediatek.com>,
- Po-Yang Huang =?UTF-8?Q?=28=E9=BB=83=E6=9F=8F=E9=99=BD=29?=
- <po-yang.huang@mediatek.com>, "suleiman@chromium.org" <suleiman@chromium.org>,
- jerry-ch.chen@mediatek.com,
- Jungo Lin =?UTF-8?Q?=28=E6=9E=97=E6=98=8E=E4=BF=8A=29?=
- <jungo.lin@mediatek.com>, "hans.verkuil@cisco.com" <hans.verkuil@cisco.com>,
- Sakari Ailus <sakari.ailus@iki.fi>,
- Frederic Chen =?UTF-8?Q?=28=E9=99=B3=E4=BF=8A=E5=85=83=29?=
- <Frederic.Chen@mediatek.com>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, Sj
- Huang =?UTF-8?Q?=28=E9=BB=83=E4=BF=A1=E7=92=8B=29?= <sj.huang@mediatek.com>,
- "yuzhao@chromium.org" <yuzhao@chromium.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "mchehab@kernel.org" <mchehab@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Sean Cheng =?UTF-8?Q?=28=E9=84=AD=E6=98=87=E5=BC=98=29?=
- <Sean.Cheng@mediatek.com>, srv_heupstream <srv_heupstream@mediatek.com>,
- "shik@chromium.org" <shik@chromium.org>,
- Christie Yu =?UTF-8?Q?=28=E6=B8=B8=E9=9B=85=E6=83=A0=29?=
- <christie.yu@mediatek.com>, "zwisler@chromium.org" <zwisler@chromium.org>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>, "Enrico Weigelt,
- metux IT consult" <lkml@metux.net>
+Cc: Tom Murphy <tmurphy@arista.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Linuxarm <linuxarm@huawei.com>,
+ "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
+ "Wangzhou \(B\)" <wangzhou1@hisilicon.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Tomasz,
+Hi Robin,
 
-On Mon, 2019-07-29 at 17:57 +0800, Tomasz Figa wrote:
-> On Mon, Jul 29, 2019 at 3:01 PM Jerry-ch Chen
-> <Jerry-ch.Chen@mediatek.com> wrote:
-> >
-> > Hi Enrico,
-> >
-> > On Tue, 2019-07-09 at 18:56 +0800, Enrico Weigelt, metux IT consult
-> > wrote:
-> > > On 09.07.19 10:41, Jerry-ch Chen wrote:
-> > >
-> > > Hi,
-> > >
-> > >
-> > > > diff --git a/drivers/media/platform/mtk-isp/fd/mtk_fd.h b/drivers/media/platform/mtk-isp/fd/mtk_fd.h
-> > > > new file mode 100644
-> > > > index 0000000..289999b
-> > > > --- /dev/null
-> > > > +++ b/drivers/media/platform/mtk-isp/fd/mtk_fd.h
-> > > > @@ -0,0 +1,157 @@
-> > > > +/* SPDX-License-Identifier: GPL-2.0 */
-> > > > +//
-> > > > +// Copyright (c) 2018 MediaTek Inc.
-> > > > +
-> > > > +#ifndef __MTK_FD_HW_H__
-> > > > +#define __MTK_FD_HW_H__
-> > > > +
-> > > > +#include <linux/io.h>
-> > > > +#include <linux/types.h>
-> > > > +#include <linux/platform_device.h>
-> > > > +#include <media/v4l2-ctrls.h>
-> > > > +#include <media/v4l2-device.h>
-> > > > +#include <media/videobuf2-v4l2.h>
-> > > > +
-> > > > +#define MTK_FD_OUTPUT_MIN_WIDTH                    26U
-> > > > +#define MTK_FD_OUTPUT_MIN_HEIGHT           26U
-> > > > +#define MTK_FD_OUTPUT_MAX_WIDTH                    640U
-> > > > +#define MTK_FD_OUTPUT_MAX_HEIGHT           480U
-> > > > +
-> > > > +/* Control the user defined image widths and heights
-> > > > + * to be scaled and performed face detection in FD HW.
-> > > > + * MTK FD support up to 14 user defined image sizes to perform face detection.
-> > > > + */
-> > > > +#define V4L2_CID_MTK_FD_SCALE_IMG_WIDTH            (V4L2_CID_USER_MTK_FD_BASE + 1)
-> > > > +#define V4L2_CID_MTK_FD_SCALE_IMG_HEIGHT   (V4L2_CID_USER_MTK_FD_BASE + 2)
-> > >
-> > > I've got a *really* bad feeling about introducing chip specific
-> > > uapi stuff. (by the way: uapi stuff belongs into include/uapi/...)
-> > >
-> > Thanks for your comments,
-> >
-> > If we remain chip-specific control IDs, I will move the uapi stuff into
-> > inlcude/uapi/mtk_fd.h (filename TBD)
-> >
-> > > Maybe you could tell us what that's *really* about, so we can find some
-> > > standard / chip-independent api for these things. That's one of the
-> > > major point of the kernel: hardware abstraction.
-> > >
-> > I am not sure if it is possible for us to add some standard
-> > v4l2-controls for face detection, a further explanations of controls are
-> > listed below.
-> >
-> > In v4l2-controls, there exists V4L2_CID_DETECT_CLASS, but I haven't
-> > found the standards or api that can be used for face detection yet.
-> > https://elixir.bootlin.com/linux/latest/source/include/uapi/linux/v4l2-controls.h#L1092
-> >
-> > For detecting certain face angle and head direction, we would need
-> > V4L2_CID_DETECT_ANGLE, V4L2_CID_DETECT_DIRECTION controls for user to
-> > specify the angle and direction to be detected.
-> > In MTK FD driver, we support the following angles and directions to be
-> > selected by user, and they are both multiple selected .
-> > FD_angle_table[] = {-90, -45, 0 , 45, 90}
-> > FD_direction_table[] = {0, 30, 60, 90, 120, 150, ..., 330}
-> >
-> > Assuming these v4l2-controls are array of V4L2_CTRL_TYPE_U16 with
-> > dimension 5 and 12.
-> > User can select the desired angle and directions to be detected into
-> > arrays and bring it to driver by these controls, however, the more they
-> > select, the longer execution time needed by HW.
-> >
+> -----Original Message-----
+> From: iommu-bounces@lists.linux-foundation.org
+> [mailto:iommu-bounces@lists.linux-foundation.org] On Behalf Of Christoph
+> Hellwig
+> Sent: 20 May 2019 08:30
+> To: Robin Murphy <robin.murphy@arm.com>
+> Cc: Tom Murphy <tmurphy@arista.com>; Catalin Marinas
+> <catalin.marinas@arm.com>; Will Deacon <will.deacon@arm.com>;
+> linux-kernel@vger.kernel.org; iommu@lists.linux-foundation.org;
+> linux-arm-kernel@lists.infradead.org
+> Subject: [PATCH 07/24] iommu/dma: Move domain lookup into
+> __iommu_dma_{map, unmap}
 > 
-> Sounds like we need some kind of a menu bitmask control here, but I
-> don't see V4L2 having anything like that.
+> From: Robin Murphy <robin.murphy@arm.com>
 > 
-> Hans, Sakari, any ideas?
-> 
-> > For detecting different sizes of faces and increase the detection speed,
-> > FD driver might need to scales down the input image into different
-> > smaller sizes
-> 
-> Do you mean the FD hardware would do the scaling or the driver code
-> itself? It would be undesirable to do such scaling in a kernel driver,
-> so if that's not something handled by the hardware, the downscaled
-> image might need to be provided from the userspace.
-> 
-Thanks for your comments.
+> Most of the callers don't care, and the couple that do already have the
+> domain to hand for other reasons are in slow paths where the (trivial)
+> overhead of a repeated lookup will be utterly immaterial.
 
-Yes, FD hardware will do the scaling itself, so driver could set the
-sizes.
+On a Hisilicon ARM64 platform with 5.3-rc1, a F_TRANSALTION error from
+smmuv3 is reported when an attempt is made to assign a ixgbe vf dev to a
+Guest. 
 
-> >, besides driver default values, user or proprietary
-> > algorithm library can manually set the desired image sizes, therefore,
-> > we would need the following controls:
-> > V4L2_CID_DETECT_SCALE_DOWN_IMG_WIDTH and
-> > V4L2_CID_DETECT_SCALE_DOWN_IMG_HEIGHT.
-> > In MTK FD driver, we implement these controls as array of
-> > V4L2_CTRL_TYPE_U16 with the dimension 15.
-> 
-> Why 15?
-> 
-It consists of one input image size and 14 down-scaled image sizes,
-the amount 15 (or say 14) is defined by the MTK FD algo library,
-therefore I remain the number of 15 here for communicate with the
-library.
-Maybe it should be defined as following?
-MTK_FD_MAX_SCALE_SIZE_NUM               14
-and 
-MTK_FD_SCALE_ARR_NUM			15
+[  196.747107] arm-smmu-v3 arm-smmu-v3.0.auto: event 0x10 received:
+[  196.747109] arm-smmu-v3 arm-smmu-v3.0.auto: 0x00000180 00000010
+[  196.747110] arm-smmu-v3 arm-smmu-v3.0.auto: 0x0000020100000000
+[  196.747111] arm-smmu-v3 arm-smmu-v3.0.auto: 0x00000000ffffe040
+[  196.747113] arm-smmu-v3 arm-smmu-v3.0.auto: 0x00000000ffffe000
 
-> >
-> > For controlling detection speed, we would need the
-> > V4L2_CID_DETECT_SPEED, the faster speedup implies the lower accuracy of
-> > detection, In MTK FD driver, the max level of speedup is 7, and default
-> > value is 0.
-> >
-> > For MTK FD algorithm user library, they would need select extra
-> > detection features(models) used in HW, we need
-> > V4L2_CID_MTK_FD_EXTRA_MODEL, this will be set to 1 for using extra
-> > model. However, we are considering make this control more
-> > chip-independent and can be added into standard.
-> > for example, V4L2_CID_DETECTION_FD_MODEL or ...FD_ALGO,
-> > drivers can define the detection algorithm or detection model to be used
-> > for users to select. How do you think?
-> 
-> Sounds like something that could be a menu control, so it could vary
-> between drivers.
-> 
-Ok, and maybe it should be created by v4l2_ctrl_new_int_menu(...)?
+Git bisect points to this patch.
 
-> >
-> > In short, I summery the control IDs as following:
-> > V4L2_CID_DETECT_ANGLE: set the angle of face in degrees. 90 ~ -90
-> > degrees.
-> > V4L2_CID_DETECT_DIRECTION: set the rotation of the head in degrees.
-> > 0~330 degrees.
-> > V4L2_CID_DETECT_SCALE_DOWN_IMG_WIDTH: set the image widths for an input
-> > image to be scaled down for face detection
-> > V4L2_CID_DETECT_SCALE_DOWN_IMG_HEIGHT: set the image heights for an
-> > input image to be scaled down for face detection
-> > V4L2_CID_DETECT_SPEED: set the detection speed, usually reducing
-> > accuracy.
-> > V4L2_CID_DETECTION_FD_MODEL: select the detection model or algorithm to
-> > be used by face detection driver.
-> >
-> > > > +#define ENABLE_FD                          0x111
-> > > > +#define FD_HW_ENABLE                               0x4
-> > > > +#define FD_INT_EN                          0x15c
-> > > > +#define FD_INT                                     0x168
-> > > > +#define FD_RESULT                          0x178
-> > > > +#define FD_IRQ_MASK                                0x001
-> > > > +
-> > > > +#define RS_MAX_BUF_SIZE                            2288788
-> > > > +#define FD_MAX_SPEEDUP                             7
-> > > > +#define FD_MAX_POSE_VAL                            0xfffffffffffffff
-> > > > +#define FD_DEF_POSE_VAL                            0x3ff
-> > > > +#define MAX_FD_SEL_NUM                             1026
-> > >
-> > > If that file is supposed to be included by anything beyond the driver
-> > > itself, we need proper prefixing. (same for anything else in here)
-> > >
-> > I will fix it as following:
-> >
-> > #define FD_ENABLE    0x111
-> >
-> > #define FD_REG_OFFSET_HW_ENABLE  0x4
-> > #define FD_REG_OFFSET_INT_EN     0x15c
-> > #define FD_REG_OFFSET_INT_VAL    0x168
-> > #define FD_REG_OFFSET_RESULT     0x178
-> >
-> > #define FD_IRQ_MASK         1
-> > #define FD_MAX_RS_BUF_SIZE  2288788
-> > #define FD_MAX_SPEEDUP      7
-> > #define FD_MAX_RESULT_NUM   1026
-> >
-> 
-> I'd suggest the MTK_FD_ prefix.
-> 
-Ok, I will use MTK_FD_ prefix.
+Please see below.
 
-> > > > diff --git a/include/uapi/linux/v4l2-controls.h b/include/uapi/linux/v4l2-controls.h
-> > > > index 3dcfc61..eae876e 100644
-> > > > --- a/include/uapi/linux/v4l2-controls.h
-> > > > +++ b/include/uapi/linux/v4l2-controls.h
-> > > > @@ -192,6 +192,10 @@ enum v4l2_colorfx {
-> > > >   * We reserve 16 controls for this driver. */
-> > > >  #define V4L2_CID_USER_IMX_BASE                     (V4L2_CID_USER_BASE + 0x10b0)
-> > > >
-> > > > +/* The base for the mediatek FD driver controls */
-> > > > +/* We reserve 16 controls for this driver. */
-> > > > +#define V4L2_CID_USER_MTK_FD_BASE          (V4L2_CID_USER_BASE + 0x10d0)
-> > >
-> > > Why only the base, but not the actual IDs in uapi ?
-> > >
-> > I will put actual IDs in uapi/ for user to reference.
-> >
-> > >
-> > > --mtx
-> > >
-> >
+> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+> [hch: dropped the hunk touching iommu_dma_get_msi_page to avoid a
+>  conflict with another series]
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> ---
+>  drivers/iommu/dma-iommu.c | 29 ++++++++++++++---------------
+>  1 file changed, 14 insertions(+), 15 deletions(-)
 > 
-> Best regards,
-> Tomasz
+> diff --git a/drivers/iommu/dma-iommu.c b/drivers/iommu/dma-iommu.c
+> index c406abe3be01..6ece8f477fc8 100644
+> --- a/drivers/iommu/dma-iommu.c
+> +++ b/drivers/iommu/dma-iommu.c
+> @@ -448,9 +448,10 @@ static void iommu_dma_free_iova(struct
+> iommu_dma_cookie *cookie,
+>  				size >> iova_shift(iovad));
+>  }
+> 
+> -static void __iommu_dma_unmap(struct iommu_domain *domain,
+> dma_addr_t dma_addr,
+> +static void __iommu_dma_unmap(struct device *dev, dma_addr_t dma_addr,
+>  		size_t size)
+>  {
+> +	struct iommu_domain *domain = iommu_get_dma_domain(dev);
+>  	struct iommu_dma_cookie *cookie = domain->iova_cookie;
+>  	struct iova_domain *iovad = &cookie->iovad;
+>  	size_t iova_off = iova_offset(iovad, dma_addr);
+> @@ -465,8 +466,9 @@ static void __iommu_dma_unmap(struct
+> iommu_domain *domain, dma_addr_t dma_addr,
+>  }
+> 
+>  static dma_addr_t __iommu_dma_map(struct device *dev, phys_addr_t phys,
+> -		size_t size, int prot, struct iommu_domain *domain)
+> +		size_t size, int prot)
+>  {
+> +	struct iommu_domain *domain = iommu_get_dma_domain(dev);
+>  	struct iommu_dma_cookie *cookie = domain->iova_cookie;
+>  	size_t iova_off = 0;
+>  	dma_addr_t iova;
+> @@ -565,7 +567,7 @@ static struct page
+> **__iommu_dma_alloc_pages(struct device *dev,
+>  static void __iommu_dma_free(struct device *dev, struct page **pages,
+>  		size_t size, dma_addr_t *handle)
+>  {
+> -	__iommu_dma_unmap(iommu_get_dma_domain(dev), *handle, size);
+> +	__iommu_dma_unmap(dev, *handle, size);
+>  	__iommu_dma_free_pages(pages, PAGE_ALIGN(size) >> PAGE_SHIFT);
+>  	*handle = DMA_MAPPING_ERROR;
+>  }
+> @@ -718,14 +720,13 @@ static void iommu_dma_sync_sg_for_device(struct
+> device *dev,
+>  static dma_addr_t __iommu_dma_map_page(struct device *dev, struct page
+> *page,
+>  		unsigned long offset, size_t size, int prot)
+>  {
+> -	return __iommu_dma_map(dev, page_to_phys(page) + offset, size, prot,
+> -			iommu_get_dma_domain(dev));
+> +	return __iommu_dma_map(dev, page_to_phys(page) + offset, size, prot);
+>  }
+> 
+>  static void __iommu_dma_unmap_page(struct device *dev, dma_addr_t
+> handle,
+>  		size_t size, enum dma_data_direction dir, unsigned long attrs)
+>  {
+> -	__iommu_dma_unmap(iommu_get_dma_domain(dev), handle, size);
+> +	__iommu_dma_unmap(dev, handle, size);
+>  }
+> 
+>  static dma_addr_t iommu_dma_map_page(struct device *dev, struct page
+> *page,
+> @@ -734,11 +735,10 @@ static dma_addr_t iommu_dma_map_page(struct
+> device *dev, struct page *page,
+>  {
+>  	phys_addr_t phys = page_to_phys(page) + offset;
+>  	bool coherent = dev_is_dma_coherent(dev);
+> +	int prot = dma_info_to_prot(dir, coherent, attrs);
+>  	dma_addr_t dma_handle;
+> 
+> -	dma_handle =__iommu_dma_map(dev, phys, size,
+> -			dma_info_to_prot(dir, coherent, attrs),
+> -			iommu_get_dma_domain(dev));
+> +	dma_handle =__iommu_dma_map(dev, phys, size, prot);
+>  	if (!coherent && !(attrs & DMA_ATTR_SKIP_CPU_SYNC) &&
+>  	    dma_handle != DMA_MAPPING_ERROR)
+>  		arch_sync_dma_for_device(dev, phys, size, dir);
+> @@ -750,7 +750,7 @@ static void iommu_dma_unmap_page(struct device
+> *dev, dma_addr_t dma_handle,
+>  {
+>  	if (!(attrs & DMA_ATTR_SKIP_CPU_SYNC))
+>  		iommu_dma_sync_single_for_cpu(dev, dma_handle, size, dir);
+> -	__iommu_dma_unmap(iommu_get_dma_domain(dev), dma_handle,
+> size);
+> +	__iommu_dma_unmap(dev, dma_handle, size);
+>  }
+> 
+>  /*
+> @@ -931,21 +931,20 @@ static void iommu_dma_unmap_sg(struct device
+> *dev, struct scatterlist *sg,
+>  		sg = tmp;
+>  	}
+>  	end = sg_dma_address(sg) + sg_dma_len(sg);
+> -	__iommu_dma_unmap(iommu_get_dma_domain(dev), start, end - start);
+> +	__iommu_dma_unmap(dev, start, end - start);
+>  }
+> 
+>  static dma_addr_t iommu_dma_map_resource(struct device *dev,
+> phys_addr_t phys,
+>  		size_t size, enum dma_data_direction dir, unsigned long attrs)
+>  {
+>  	return __iommu_dma_map(dev, phys, size,
+> -			dma_info_to_prot(dir, false, attrs) | IOMMU_MMIO,
+> -			iommu_get_dma_domain(dev));
+> +			dma_info_to_prot(dir, false, attrs) | IOMMU_MMIO);
+>  }
+> 
+>  static void iommu_dma_unmap_resource(struct device *dev, dma_addr_t
+> handle,
+>  		size_t size, enum dma_data_direction dir, unsigned long attrs)
+>  {
+> -	__iommu_dma_unmap(iommu_get_dma_domain(dev), handle, size);
+> +	__iommu_dma_unmap(dev, handle, size);
+>  }
+> 
+>  static void *iommu_dma_alloc(struct device *dev, size_t size,
+> @@ -1222,7 +1221,7 @@ static struct iommu_dma_msi_page
+> *iommu_dma_get_msi_page(struct device *dev,
+>  	if (!msi_page)
+>  		return NULL;
+> 
+> -	iova = __iommu_dma_map(dev, msi_addr, size, prot, domain);
+> +	iova = __iommu_dma_map(dev, msi_addr, size, prot);
 
-Best regards,
-Jerry
+I think the domain here is retrieved using iommu_get_domain_for_dev()
+which may not be the default domain returned by iommu_get_dma_domain().
 
+Please check and let me know.
+
+Thanks,
+Shameer
+
+>  	if (iova == DMA_MAPPING_ERROR)
+>  		goto out_free_page;
+> --
+> 2.20.1
+> 
+> _______________________________________________
+> iommu mailing list
+> iommu@lists.linux-foundation.org
+> https://lists.linuxfoundation.org/mailman/listinfo/iommu
 
 _______________________________________________
 linux-arm-kernel mailing list
