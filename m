@@ -2,58 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 992B978770
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 10:32:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 208017877D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 10:34:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ljPjvmXstxt/Mv6GhFMQLAwN73QsK4LJWjAhugPFlQ0=; b=U5DxP3VDc4zYKH
-	t50NINcznNVOgOc6a8JvPEnkGTlfOZ4j1WS+yTMdUXprrOZ15+AgH8cOiDHElUph9CewzcpTY1WyY
-	h0B13sLnul2yDE3rvZsx3Ibk+mcQHX2FTOfUrANyzkDbqUn9ex3OuVI8Io5B+6R25yOdcMT35T7z8
-	bPqorBKd7S9HVM4aMHAQ4ZjgpyzwBFH5gZqhndyIL3DiIkjmhBm230BG4TMOdmX944tLu1WNdfoLC
-	1b1Qx7pmcDPND911a9u3a5uTV6RjOmpn82D0mnUflC413BQSPxa/6PhIHA7TvDHrGiE6pfZbWozzD
-	L8jO6OoEiXQpkY47vk5Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=w9DUOvRxwFYasdo67dJALcEz5SVEJmUxCXjcDJE8MVI=; b=YYWYoCNWZ3LQr9ISe9Yag31Me
+	BVxaG/40SonuWwYiBVg2JwYiZuqpLLatRBMQWMOpv5uBCl8+SyqiGrgJw4nm4jXiMM8hu5pvmqCtt
+	lNZwBHsiarY6oBsoL64+yjqkO9T6lYm9cIMoR6xEPnPc63kniv37mL0cd/Y7MDJtEH/8CoLt3mRLg
+	B8Izgu32APV289Q7GNGtqoQmJesyE/KgYLnrIbQ2oVnbI2V7qG/PhTjT4TX5N14/X1DOhZeoRBaCJ
+	0CVGidFGAugcuqKLFy6F+SqmBtswXaYXHE6ZNo+FZwKvulyKEvOwGFKPZ8vilVtgGpCjJka5QDYhB
+	R//+IQaAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hs15C-0004YU-8f; Mon, 29 Jul 2019 08:32:38 +0000
-Received: from foss.arm.com ([217.140.110.172])
+	id 1hs17C-00057D-B6; Mon, 29 Jul 2019 08:34:42 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hs14r-0004Jl-2h
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 08:32:19 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A9CDF337;
- Mon, 29 Jul 2019 01:32:15 -0700 (PDT)
-Received: from [10.162.40.126] (p8cg001049571a15.blr.arm.com [10.162.40.126])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 990293F575; Mon, 29 Jul 2019 01:32:11 -0700 (PDT)
-Subject: Re: [RFC] mm/pgtable/debug: Add test validating architecture page
- table helpers
-To: Matthew Wilcox <willy@infradead.org>
-References: <1564037723-26676-1-git-send-email-anshuman.khandual@arm.com>
- <1564037723-26676-2-git-send-email-anshuman.khandual@arm.com>
- <20190725143920.GW363@bombadil.infradead.org>
- <c3bb0420-584c-de3b-2439-8702bc09595e@arm.com>
- <20190726195457.GI30641@bombadil.infradead.org>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <10ed1022-a5c0-c80c-c0c9-025bb2307666@arm.com>
-Date: Mon, 29 Jul 2019 14:02:52 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+ id 1hs171-00056d-4H
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 08:34:33 +0000
+Received: from localhost (p5486CFB7.dip0.t-ipconnect.de [84.134.207.183])
+ by pokefinder.org (Postfix) with ESMTPSA id 3035F2C35BF;
+ Mon, 29 Jul 2019 10:34:27 +0200 (CEST)
+Date: Mon, 29 Jul 2019 10:34:26 +0200
+From: Wolfram Sang <wsa@the-dreams.de>
+To: Simon Horman <horms+renesas@verge.net.au>
+Subject: Re: [PATCH v2] arm64: dts: renesas: ebisu, draak: Limit EtherAVB to
+ 100Mbps
+Message-ID: <20190729083426.GA1381@kunai>
+References: <20190729080356.13023-1-horms+renesas@verge.net.au>
 MIME-Version: 1.0
-In-Reply-To: <20190726195457.GI30641@bombadil.infradead.org>
-Content-Language: en-US
+In-Reply-To: <20190729080356.13023-1-horms+renesas@verge.net.au>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_013217_547650_FE80DE26 
-X-CRM114-Status: GOOD (  23.10  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190729_013431_316809_30FE3D94 
+X-CRM114-Status: UNSURE (   9.97  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [88.99.104.3 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -66,87 +60,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Sri Krishna chowdary <schowdary@nvidia.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>, x86@kernel.org,
- Dave Hansen <dave.hansen@intel.com>, linux-kernel@vger.kernel.org,
- Steven Price <Steven.Price@arm.com>, linux-mm@kvack.org,
- Mark Brown <Mark.Brown@arm.com>, Andrew Morton <akpm@linux-foundation.org>,
- Michal Hocko <mhocko@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Andrew Lunn <andrew@lunn.ch>, Geert Uytterhoeven <geert+renesas@glider.be>,
+ Magnus Damm <magnus.damm@gmail.com>, linux-renesas-soc@vger.kernel.org,
+ Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============3246825648325539517=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 07/27/2019 01:24 AM, Matthew Wilcox wrote:
-> On Fri, Jul 26, 2019 at 10:17:11AM +0530, Anshuman Khandual wrote:
->>> But 'page' isn't necessarily PMD-aligned.  I don't think we can rely on
->>> architectures doing the right thing if asked to make a PMD for a randomly
->>> aligned page.
->>>
->>> How about finding the physical address of something like kernel_init(),
->>
->> Physical address corresponding to the symbol in the kernel text segment ?
-> 
-> Yes.  We need the address of something that's definitely memory.
-> The stack might be in vmalloc space.  We can't allocate memory from the
-> allocator that's PUD-aligned.  This seems like a reasonable approximation
-> to something that might work.
 
-Okay sure. What is about vmalloc space being PUD aligned and how that is
-problematic here ? Could you please give some details. Just being curious.
+--===============3246825648325539517==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="6c2NcOVqGQ03X4Wi"
+Content-Disposition: inline
 
-> 
->>> and using the corresponding pte/pmd/pud/p4d/pgd that encompasses that
->>
->> So I guess this will help us use pte/pmd/pud/p4d/pgd entries from a real and
->> present mapping rather then making them up for test purpose. Although we are
->> not creating real page tables here just wondering if this could some how
->> affect these real mapping in anyway from some accessors. The current proposal
->> stays clear from anything real - allocates, evaluates and releases.
-> 
-> I think that's a mistake.  As Russell said, the ARM p*d manipulation
-> functions expect to operate on tables, not on individual entries
-> constructed on the stack.
 
-Hmm. I assume that it will take care of dual 32 bit entry updates on arm
-platform through various helper functions as Russel had mentioned earlier.
-After we create page table with p?d_alloc() functions and pick an entry at
-each page table level.
+--6c2NcOVqGQ03X4Wi
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-> 
-> So I think the right thing to do here is allocate an mm, then do the
-> pgd_alloc / p4d_alloc / pud_alloc / pmd_alloc / pte_alloc() steps giving
-> you real page tables that you can manipulate.
-> 
-> Then destroy them, of course.  And don't access through them.
+On Mon, Jul 29, 2019 at 10:03:56AM +0200, Simon Horman wrote:
+> * According to the R-Car Gen3 Hardware Manual Errata for Rev 1.00 of
+>   August 24, 2018, the TX clock internal delay mode isn't supported
+>   on R-Car E3 (r8a77990) and D3 (r8a77995).
+>=20
+> * TX clock internal delay mode is required for reliable 1Gbps communicati=
+on
+>   using the KSZ9031RNX phy present on the Ebisu and Draak boards.
+>=20
+> Thus, the E3 based Ebisu and D3 based Draak boards can not reliably
+> use 1Gbps and the speed should be limited to 100Mbps.
+>=20
+> Based on work by Kazuya Mizuguchi.
+>=20
+> Signed-off-by: Simon Horman <horms+renesas@verge.net.au>
 
-mm_alloc() seems like a comprehensive helper to allocate and initialize a
-mm_struct. But could we use mm_init() with 'current' in the driver context or we
-need to create a dummy task_struct for this purpose. Some initial tests show that
-p?d_alloc() and p?d_free() at each level with a fixed virtual address gives p?d_t
-entries required at various page table level to test upon.
+Yes, this matches all the previous discussions to the best of my
+knowledge:
 
-> 
->>>> +#ifdef CONFIG_HAVE_ARCH_TRANSPARENT_HUGEPAGE_PUD
->>>> +static void pud_basic_tests(void)
->>>
->>> Is this the right ifdef?
->>
->> IIUC THP at PUD is where the pud_t entries are directly operated upon and the
->> corresponding accessors are present only when HAVE_ARCH_TRANSPARENT_HUGEPAGE_PUD
->> is enabled. Am I missing something here ?
-> 
-> Maybe I am.  I thought we could end up operating on PUDs for kernel mappings,
-> even without transparent hugepages turned on.
+Reviewed-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
 
-In generic MM ? IIUC except ioremap mapping all other PUD handling for kernel virtual
-range is platform specific. All the helpers used in the function pud_basic_tests() are
-part of THP and used in mm/huge_memory.c
+
+--6c2NcOVqGQ03X4Wi
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl0+r44ACgkQFA3kzBSg
+KbY5PQ//Tn9hY8BpQBlzmkBgp0Vb+e4od1DjjojwtSQH7aDBkA2LjrQ1ab/QTBXB
+fOHqCFFMv0XIrFMAgChgXtRNXvnDuwJCeraIGV762Qv1vYUe/G+o+VFIEC8GU1IT
+XXqSiJeDR+RTyV6iv3yHjkvkMRwJFRtu5iDgZ7UuLIrKYCQYHdkF1c+0tjkATGnb
+I3U/kzvkQCmDEhU5inD8e7pIr8EtHdXwvnR8d5iPgTNG0JF9jwKg5WObU33uzfvJ
+b+Qs5G8OWMR0e76cxe5XrqC1wrWdCM6D6BP+vWYncZo8hqP4r4wgIYOSlxOsQ1Jw
+MqCtPLRyw1x4GgylwsfC/fr+efRTlMzHnTyRw/giMhjq3LOlQXyG33H6oRDBl7QG
+H+J/ToAL7a2mcuPiLKojmIqEKr5lClRY5Rr0SmWjDNMgYZgUE9ZgQHAKryB7ca69
+Zd6ZYpm/a7xSg9Mhj5XOvXRP19segJXEkwhLwTc0GlS2XeEwTEa5yHd2bJvo1IWE
+UZQnk+xfAqt0FbSgg6+3fCMoKSzJ0s3A524opVWkWqkPu5uQrDsSeMdVXJAwT8h8
+dQ2bvXMXTDFI/uy1X3hFvcOmAPfcGrSqVlwdwl12oMHad0QBa8vtC+++3/Bscu20
+hrteZEvO6LmiiGOJ1PclsuLAuFxfJgx9cHcxzF45ye5cdrkx2vs=
+=Pn1D
+-----END PGP SIGNATURE-----
+
+--6c2NcOVqGQ03X4Wi--
+
+
+--===============3246825648325539517==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3246825648325539517==--
+
