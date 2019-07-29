@@ -2,61 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D8E178519
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 08:42:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4BABC78526
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 08:44:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o4wZCpdsued4GSaveE33h/Hc/WOR/noatt+VjAbfVv8=; b=I1Y37okEdkeOKi
-	ikpw9Xa1rcvXfAjiYrnV8H9y3h9AND7cveoSFJC0pQEqE92llI3FURxu2XbOT3EMlBQpiWnwggw6D
-	sjCnglOqBqhkjvtoFsjCAHiqLUF3SFTGxYsXgozHmjqW0trYl4bwK60AVtXPe58cKTFW2Io4zjAvP
-	h2nSrL/NWWK8G1tiLLE5z85ACmXpDrKvfKDeR1RQhe6nvGEmYJ9SSTpDY8DWPBVwdObXGPQSin9Fu
-	fJWY3zK2sZMDv8R2K7x7jAo/U3nEQ6Dza26H0KrMV4yjVx3FL7uBDgC3IhD+M2rBlDkEmFYpTkxGW
-	AtSagoy1VhliPL5Vpa6g==;
+	List-Owner; bh=HHcjyqhn1d74VlQD5iyoSTuhBAW4MtXf5oCQAQBiX0M=; b=ni6gsRN9PNPJRr
+	qkMo0Vw/JmpDoo+tVkjdwPAi3jDFu/U7nze8NLKqFLAO9xdCtqjwdGTyEKlqMvpE7vEEW87pW2lKG
+	tLDMWhGr6lYah4Z/kpdxeoYEijBEuDkYdvcy+9ac396UP425osIAA7KIBFImLtdqJQu119r7A9sPS
+	S1SmfngeTyjp9KD6hxv5ALgj+fWtOuI2wIPNfFRiMFzm9TO2DgaKJkHH2theO8GioLv8KgZA0TXiB
+	dVEGUJUDmEKUapRar2LbEnBRiNCigqkUXdEfBnrZo/vqEg040ep+esuTFvT41oZMzU4efQGdWtjCn
+	A6f8LNdRHNtVb4RMYwbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hrzLm-00068x-Iy; Mon, 29 Jul 2019 06:41:45 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1hrzOH-0006gy-RA; Mon, 29 Jul 2019 06:44:14 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hrzKn-00068Y-1P
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 06:40:39 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1hrzKh-0006rA-Ca; Mon, 29 Jul 2019 08:40:31 +0200
-Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1hrzKg-0003NX-Tb; Mon, 29 Jul 2019 08:40:30 +0200
-Date: Mon, 29 Jul 2019 08:40:30 +0200
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Jernej Skrabec <jernej.skrabec@siol.net>
-Subject: Re: [PATCH 4/6] pwm: sun4i: Add support for H6 PWM
-Message-ID: <20190729064030.7uenld2kbof45zti@pengutronix.de>
-References: <20190726184045.14669-1-jernej.skrabec@siol.net>
- <20190726184045.14669-5-jernej.skrabec@siol.net>
+ id 1hrzNS-0006fE-3R
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 06:43:23 +0000
+Received: from localhost (unknown [122.178.221.187])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 07343206BA;
+ Mon, 29 Jul 2019 06:43:20 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1564382601;
+ bh=QmVZiVCVVdyuIOIXyrtNlQQDQrcJfU7dMvyEUty+IPs=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=bXmWlhMvHD6xcN7+Lm31x5rEuncHMBalyOq4wY58j5IQwnZlqAxmMNk07LDjFW0rW
+ 9PtitSv8mvAKbxYNAy+sRyyKM9BBl69xaBafwpwMD/GMF22lL2DJnwJh0KFCPVZFEW
+ GL9ohHYcA81k0qzR9AA+p4+J8pfKH/mziknK4m2k=
+Date: Mon, 29 Jul 2019 12:12:09 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Peter Ujfalusi <peter.ujfalusi@ti.com>
+Subject: Re: [PATCH v5 0/3] dmaengine: ti: edma: Polled completion support
+Message-ID: <20190729064209.GF12733@vkoul-mobl.Dlink>
+References: <20190716082655.1620-1-peter.ujfalusi@ti.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190726184045.14669-5-jernej.skrabec@siol.net>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <20190716082655.1620-1-peter.ujfalusi@ti.com>
+User-Agent: Mutt/1.11.3 (2019-02-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190728_234037_292775_4252150B 
-X-CRM114-Status: GOOD (  17.73  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190728_234322_311715_DAE8ACD5 
+X-CRM114-Status: GOOD (  17.39  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,85 +76,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, linux-pwm@vger.kernel.org, devicetree@vger.kernel.org,
- linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org, mripard@kernel.org,
- wens@csie.org, robh+dt@kernel.org, thierry.reding@gmail.com,
- kernel@pengutronix.de, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: dmaengine@vger.kernel.org, dan.j.williams@intel.com,
+ linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jul 26, 2019 at 08:40:43PM +0200, Jernej Skrabec wrote:
-> Now that sun4i PWM driver supports deasserting reset line and enabling
-> bus clock, support for H6 PWM can be added.
-> =
+On 16-07-19, 11:26, Peter Ujfalusi wrote:
+> Hi,
+> 
+> Changes since v4:
+> - Split the DMA_COMPLETE and !txstate check as Vinod suggested
+> 
+> Change since v3:
+> - fix DMA pointer tracking for memcpy
+> - completion polling is only done when it is asked by not providing
+>   DMA_PREP_INTERRUPT for memcpy
+> 
+> Changes since v2:
+> - Fix typo in the comment for patch 0
+> 
+> Changes since v1:
+> - Cleanup patch for the array register handling
+> - typo fixed in patch2 commit message
+> 
+> The code around the array register access was pretty confusing for the first
+> look, so clean them up first then use the cleaner way in the polled handling.
+> 
+> When a DMA client driver does not set the DMA_PREP_INTERRUPT because it
+> does not want to use interrupts for DMA completion or because it can not
+> rely on DMA interrupts due to executing the memcpy when interrupts are
+> disabled it will poll the status of the transfer.
+> 
+> Since we can not tell from any EDMA register that the transfer is
+> completed, we can only know that the paRAM set has been sent to TPTC for
+> processing we need to check the residue of the transfer, if it is 0 then
+> the transfer is completed.
+> 
+> The polled completion can bve tested by applying:
+> https://patchwork.kernel.org/patch/10966499/
+> 
+> Enabling the memcpy for EDMA and run the dmatest with polled = 1.
+> 
+> Or, enable the EDMA memcpy support and boot up any dra7 family device with
+> display enabled. The workaround for DMM errata i878 uses polled DMA memcpy.
 
-> Note that while H6 PWM has two channels, only first one is wired to
-> output pin. Second channel is used as a clock source to companion AC200
-> chip which is bundled into same package.
-> =
+Applied, thanks. Fixed typo in 2nd patch while at it
 
-> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-> ---
->  drivers/pwm/pwm-sun4i.c | 10 ++++++++++
->  1 file changed, 10 insertions(+)
-> =
-
-> diff --git a/drivers/pwm/pwm-sun4i.c b/drivers/pwm/pwm-sun4i.c
-> index 7d3ac3f2dc3f..9e0eca79ff88 100644
-> --- a/drivers/pwm/pwm-sun4i.c
-> +++ b/drivers/pwm/pwm-sun4i.c
-> @@ -331,6 +331,13 @@ static const struct sun4i_pwm_data sun4i_pwm_single_=
-bypass =3D {
->  	.npwm =3D 1,
->  };
->  =
-
-> +static const struct sun4i_pwm_data sun50i_pwm_dual_bypass_clk_rst =3D {
-> +	.has_bus_clock =3D true,
-> +	.has_prescaler_bypass =3D true,
-> +	.has_reset =3D true,
-> +	.npwm =3D 2,
-> +};
-> +
->  static const struct of_device_id sun4i_pwm_dt_ids[] =3D {
->  	{
->  		.compatible =3D "allwinner,sun4i-a10-pwm",
-> @@ -347,6 +354,9 @@ static const struct of_device_id sun4i_pwm_dt_ids[] =
-=3D {
->  	}, {
->  		.compatible =3D "allwinner,sun8i-h3-pwm",
->  		.data =3D &sun4i_pwm_single_bypass,
-> +	}, {
-> +		.compatible =3D "allwinner,sun50i-h6-pwm",
-> +		.data =3D &sun50i_pwm_dual_bypass_clk_rst,
-
-If you follow my suggestion for the two previous patches, you can just
-use:
-
-	compatible =3D "allwinner,sun50i-h6-pwm", "allwinner,sun5i-a10s-pwm";
-
-and drop this patch.
-
-Best regards
-Uwe
-
->  	}, {
->  		/* sentinel */
->  	},
-> -- =
-
-> 2.22.0
-> =
-
-> =
-
-
--- =
-
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
+-- 
+~Vinod
 
 _______________________________________________
 linux-arm-kernel mailing list
