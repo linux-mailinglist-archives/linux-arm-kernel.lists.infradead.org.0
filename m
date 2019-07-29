@@ -2,66 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6545C784D3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 08:01:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AEBB9784DF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 08:18:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MJVnjZU3yyi/96eqQG6AMbGzyqWB92ewnNI6fjQ6fvk=; b=IiU9Dx6lyFQkfY
-	L3R6oPHqHG9vtHvGKXjggNJR6PyuHbIMmKV/N9mfNn0EJ5mJ5tO9S/QCOqr/Vttd9mTHBTepRYMVs
-	7fd1y9y/73Xas96rJh5x1IE3C30mxHsXtw/OwwtErAbVLQYALkvKh20foikcw2mdk7ApvjIAdyLs+
-	PJpRxRsk9snZ1E4ujpooKy/AEErocgjbVeQVPaZSiPwcLDF1lnvbZIZGmgBd8qaVnVblx5dG3mPn5
-	HzGXRyBtLQljszBC343FTI8cmihgo4EvvTuDQUmWmfJ6Zzif4k4xGQCeUZ9Me9u4EXkEju8aJBPfl
-	gKWX5JhzJoaofZJhfXcw==;
+	List-Owner; bh=VYJtrEsyJQGYTr21UDUN5hziQ1s8c7I6WkkOT3kCMYA=; b=snYzGMePhGkBKq
+	uFcJTzglg6fA0m+52KM/WX61t46Ooeb5rRlT02/VTZqpagZwoBJwsf9SsEGBCnooEtRspBEXeqrZN
+	UXPP3nGPaG/78TA/wmqeQu9lWBg9eyDDEgedKXN8wKThEpgStaWVgsv49s81twgn4WspGzKBMxIil
+	3No5CmrSXaDb40spw/+iTz7W6SmVf+u/vs6/HbSVXg+KAUTIVcGUKvs4mNhcoOvluacCQmVr8qjeA
+	1Lj6T565hKYyedROczznEQ9ktS2TBlbLJj3uHlY36mYa6WklYsDMzvVVYl1OVArDEArj7s6WJq0/M
+	lsgA95y/QU+33p81ZP2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hryjH-0001lo-GY; Mon, 29 Jul 2019 06:01:51 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hryyy-0006Hq-H8; Mon, 29 Jul 2019 06:18:05 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hryis-0001kF-0S; Mon, 29 Jul 2019 06:01:30 +0000
-X-UUID: e85604acb0744430b1451df1201f35c7-20190728
-X-UUID: e85604acb0744430b1451df1201f35c7-20190728
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <jerry-ch.chen@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2056828271; Sun, 28 Jul 2019 22:01:11 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 28 Jul 2019 23:01:09 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 29 Jul 2019 14:01:01 +0800
-Received: from [172.21.84.99] (172.21.84.99) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 29 Jul 2019 14:01:01 +0800
-Message-ID: <1564380061.15267.383.camel@mtksdccf07>
-Subject: Re: [RFC PATCH V2 4/4] platform: mtk-isp: Add Mediatek FD driver
-From: Jerry-ch Chen <Jerry-ch.Chen@mediatek.com>
-To: "Enrico Weigelt, metux IT consult" <lkml@metux.net>,
- <"metux IT consult  <lkml"@metux.net>
-Date: Mon, 29 Jul 2019 14:01:01 +0800
-In-Reply-To: <eb3bb92d-5d44-0d45-2e90-abcdb96f595d@metux.net>
-References: <1562661672-22439-1-git-send-email-Jerry-Ch.chen@mediatek.com>
- <1562661672-22439-5-git-send-email-Jerry-Ch.chen@mediatek.com>
- <eb3bb92d-5d44-0d45-2e90-abcdb96f595d@metux.net>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1hryyl-0006HB-9Q
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 06:17:52 +0000
+Received: from localhost (unknown [122.178.221.187])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 34E9A20578;
+ Mon, 29 Jul 2019 06:17:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1564381067;
+ bh=SzvnrYeZ/XVMFTRV94yVm4GxaXQLhbrOmoBn0kkt5WA=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=NEJHkhIRe3vLDfy4/gTgsVp62iujdtY5y67s5hPGe2OzXzQbgUR7lpQhcgd61inXL
+ qUStUbcCTjjyD5EYIU/1BUbc0pIGXDfSeWzoPAzHZt5aibsI/EZkl02fqyKzLIX4yc
+ mM32MaHU+ycs/lyOjtTIft+tIE84XRl5cNhHYaE8=
+Date: Mon, 29 Jul 2019 11:46:34 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Peter Ujfalusi <peter.ujfalusi@ti.com>
+Subject: Re: [PATCH v2 2/2] dmaengine: ti: omap-dma: Improved memcpy polling
+ support
+Message-ID: <20190729061634.GD12733@vkoul-mobl.Dlink>
+References: <20190716082459.1222-1-peter.ujfalusi@ti.com>
+ <20190716082459.1222-3-peter.ujfalusi@ti.com>
+ <20190725133748.GX12733@vkoul-mobl.Dlink>
+ <59794775-95e6-04c3-2660-9344c89df9a1@ti.com>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <59794775-95e6-04c3-2660-9344c89df9a1@ti.com>
+User-Agent: Mutt/1.11.3 (2019-02-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190728_230126_060896_817A36F0 
-X-CRM114-Status: GOOD (  23.52  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190728_231751_347895_AEBECE25 
+X-CRM114-Status: GOOD (  20.01  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,201 +80,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Sean Cheng =?UTF-8?Q?=28=E9=84=AD=E6=98=87=E5=BC=98=29?=
- <Sean.Cheng@mediatek.com>,
- Frederic Chen =?UTF-8?Q?=28=E9=99=B3=E4=BF=8A=E5=85=83=29?=
- <Frederic.Chen@mediatek.com>,
- Rynn Wu =?UTF-8?Q?=28=E5=90=B3=E8=82=B2=E6=81=A9=29?= <Rynn.Wu@mediatek.com>,
- srv_heupstream <srv_heupstream@mediatek.com>, Po-Yang Huang
- =?UTF-8?Q?=28=E9=BB=83=E6=9F=8F=E9=99=BD=29?= <po-yang.huang@mediatek.com>,
- "suleiman@chromium.org" <suleiman@chromium.org>, Sj
- Huang =?UTF-8?Q?=28=E9=BB=83=E4=BF=A1=E7=92=8B=29?= <sj.huang@mediatek.com>,
- "tfiga@chromium.org" <tfiga@chromium.org>,
- Jungo Lin =?UTF-8?Q?=28=E6=9E=97=E6=98=8E=E4=BF=8A=29?=
- <jungo.lin@mediatek.com>, "shik@chromium.org" <shik@chromium.org>,
- "yuzhao@chromium.org" <yuzhao@chromium.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "zwisler@chromium.org" <zwisler@chromium.org>,
- "hans.verkuil@cisco.com" <hans.verkuil@cisco.com>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- Christie Yu =?UTF-8?Q?=28=E6=B8=B8=E9=9B=85=E6=83=A0=29?=
- <christie.yu@mediatek.com>, "mchehab@kernel.org" <mchehab@kernel.org>,
- "laurent.pinchart+renesas@ideasonboard.com"
- <laurent.pinchart+renesas@ideasonboard.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Cc: dmaengine@vger.kernel.org, dan.j.williams@intel.com,
+ linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Enrico, 
-
-On Tue, 2019-07-09 at 18:56 +0800, Enrico Weigelt, metux IT consult
-wrote:
-> On 09.07.19 10:41, Jerry-ch Chen wrote:
-> 
-> Hi,
+On 25-07-19, 17:07, Peter Ujfalusi wrote:
 > 
 > 
-> > diff --git a/drivers/media/platform/mtk-isp/fd/mtk_fd.h b/drivers/media/platform/mtk-isp/fd/mtk_fd.h
-> > new file mode 100644
-> > index 0000000..289999b
-> > --- /dev/null
-> > +++ b/drivers/media/platform/mtk-isp/fd/mtk_fd.h
-> > @@ -0,0 +1,157 @@
-> > +/* SPDX-License-Identifier: GPL-2.0 */
-> > +//
-> > +// Copyright (c) 2018 MediaTek Inc.
-> > +
-> > +#ifndef __MTK_FD_HW_H__
-> > +#define __MTK_FD_HW_H__
-> > +
-> > +#include <linux/io.h>
-> > +#include <linux/types.h>
-> > +#include <linux/platform_device.h>
-> > +#include <media/v4l2-ctrls.h>
-> > +#include <media/v4l2-device.h>
-> > +#include <media/videobuf2-v4l2.h>
-> > +
-> > +#define MTK_FD_OUTPUT_MIN_WIDTH			26U
-> > +#define MTK_FD_OUTPUT_MIN_HEIGHT		26U
-> > +#define MTK_FD_OUTPUT_MAX_WIDTH			640U
-> > +#define MTK_FD_OUTPUT_MAX_HEIGHT		480U
-> > +
-> > +/* Control the user defined image widths and heights
-> > + * to be scaled and performed face detection in FD HW.
-> > + * MTK FD support up to 14 user defined image sizes to perform face detection.
-> > + */
-> > +#define V4L2_CID_MTK_FD_SCALE_IMG_WIDTH		(V4L2_CID_USER_MTK_FD_BASE + 1)
-> > +#define V4L2_CID_MTK_FD_SCALE_IMG_HEIGHT	(V4L2_CID_USER_MTK_FD_BASE + 2)
+> On 25/07/2019 16.37, Vinod Koul wrote:
+> > On 16-07-19, 11:24, Peter Ujfalusi wrote:
+> >> When a DMA client driver does not set the DMA_PREP_INTERRUPT because it
+> >> does not want to use interrupts for DMA completion or because it can not
+> >> rely on DMA interrupts due to executing the memcpy when interrupts are
+> >> disabled it will poll the status of the transfer.
+> >>
+> >> If the interrupts are enabled then the cookie will be set completed in the
+> >> interrupt handler so only check in HW completion when the polling is really
+> >> needed.
+> >>
+> >> Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
+> >> ---
+> >>  drivers/dma/ti/omap-dma.c | 44 +++++++++++++++++++++++++--------------
+> >>  1 file changed, 28 insertions(+), 16 deletions(-)
+> >>
+> >> diff --git a/drivers/dma/ti/omap-dma.c b/drivers/dma/ti/omap-dma.c
+> >> index 029c0bd550d5..966d8f0323b5 100644
+> >> --- a/drivers/dma/ti/omap-dma.c
+> >> +++ b/drivers/dma/ti/omap-dma.c
+> >> @@ -91,6 +91,7 @@ struct omap_desc {
+> >>  	bool using_ll;
+> >>  	enum dma_transfer_direction dir;
+> >>  	dma_addr_t dev_addr;
+> >> +	bool polled;
+> >>  
+> >>  	int32_t fi;		/* for OMAP_DMA_SYNC_PACKET / double indexing */
+> >>  	int16_t ei;		/* for double indexing */
+> >> @@ -815,26 +816,20 @@ static enum dma_status omap_dma_tx_status(struct dma_chan *chan,
+> >>  	struct virt_dma_desc *vd;
+> >>  	enum dma_status ret;
+> >>  	unsigned long flags;
+> >> +	struct omap_desc *d = NULL;
+> >>  
+> >>  	ret = dma_cookie_status(chan, cookie, txstate);
+> >> -
+> >> -	if (!c->paused && c->running) {
+> >> -		uint32_t ccr = omap_dma_chan_read(c, CCR);
+> >> -		/*
+> >> -		 * The channel is no longer active, set the return value
+> >> -		 * accordingly
+> >> -		 */
+> >> -		if (!(ccr & CCR_ENABLE))
+> >> -			ret = DMA_COMPLETE;
+> >> -	}
+> >> -
+> >> -	if (ret == DMA_COMPLETE || !txstate)
+> >> +	if (ret == DMA_COMPLETE)
+> > 
+> > why do you want to continue for txstate being null?
 > 
-> I've got a *really* bad feeling about introducing chip specific
-> uapi stuff. (by the way: uapi stuff belongs into include/uapi/...)
+> The caller could opt to not provide txstate and I still need to check if
+> the non completed transfer is actually done by the HW or not.
 > 
-Thanks for your comments,
-
-If we remain chip-specific control IDs, I will move the uapi stuff into
-inlcude/uapi/mtk_fd.h (filename TBD)
-
-> Maybe you could tell us what that's *really* about, so we can find some
-> standard / chip-independent api for these things. That's one of the
-> major point of the kernel: hardware abstraction.
+> > Also it would lead to NULL ptr deref for txstate
 > 
-I am not sure if it is possible for us to add some standard
-v4l2-controls for face detection, a further explanations of controls are
-listed below.
-
-In v4l2-controls, there exists V4L2_CID_DETECT_CLASS, but I haven't
-found the standards or api that can be used for face detection yet.
-https://elixir.bootlin.com/linux/latest/source/include/uapi/linux/v4l2-controls.h#L1092
-
-For detecting certain face angle and head direction, we would need
-V4L2_CID_DETECT_ANGLE, V4L2_CID_DETECT_DIRECTION controls for user to
-specify the angle and direction to be detected.
-In MTK FD driver, we support the following angles and directions to be
-selected by user, and they are both multiple selected .
-FD_angle_table[] = {-90, -45, 0 , 45, 90}
-FD_direction_table[] = {0, 30, 60, 90, 120, 150, ..., 330}
-
-Assuming these v4l2-controls are array of V4L2_CTRL_TYPE_U16 with
-dimension 5 and 12.
-User can select the desired angle and directions to be detected into
-arrays and bring it to driver by these controls, however, the more they
-select, the longer execution time needed by HW.
-
-For detecting different sizes of faces and increase the detection speed,
-FD driver might need to scales down the input image into different
-smaller sizes, besides driver default values, user or proprietary
-algorithm library can manually set the desired image sizes, therefore,
-we would need the following controls:
-V4L2_CID_DETECT_SCALE_DOWN_IMG_WIDTH and
-V4L2_CID_DETECT_SCALE_DOWN_IMG_HEIGHT.
-In MTK FD driver, we implement these controls as array of
-V4L2_CTRL_TYPE_U16 with the dimension 15.
-
-For controlling detection speed, we would need the
-V4L2_CID_DETECT_SPEED, the faster speedup implies the lower accuracy of
-detection, In MTK FD driver, the max level of speedup is 7, and default
-value is 0.
-
-For MTK FD algorithm user library, they would need select extra
-detection features(models) used in HW, we need
-V4L2_CID_MTK_FD_EXTRA_MODEL, this will be set to 1 for using extra
-model. However, we are considering make this control more
-chip-independent and can be added into standard.
-for example, V4L2_CID_DETECTION_FD_MODEL or ...FD_ALGO,
-drivers can define the detection algorithm or detection model to be used
-for users to select. How do you think? 
-
-In short, I summery the control IDs as following:
-V4L2_CID_DETECT_ANGLE: set the angle of face in degrees. 90 ~ -90
-degrees.
-V4L2_CID_DETECT_DIRECTION: set the rotation of the head in degrees.
-0~330 degrees.
-V4L2_CID_DETECT_SCALE_DOWN_IMG_WIDTH: set the image widths for an input
-image to be scaled down for face detection
-V4L2_CID_DETECT_SCALE_DOWN_IMG_HEIGHT: set the image heights for an
-input image to be scaled down for face detection
-V4L2_CID_DETECT_SPEED: set the detection speed, usually reducing
-accuracy.
-V4L2_CID_DETECTION_FD_MODEL: select the detection model or algorithm to
-be used by face detection driver.
-
-> > +#define ENABLE_FD				0x111
-> > +#define FD_HW_ENABLE				0x4
-> > +#define FD_INT_EN				0x15c
-> > +#define FD_INT					0x168
-> > +#define FD_RESULT				0x178
-> > +#define FD_IRQ_MASK				0x001
-> > +
-> > +#define RS_MAX_BUF_SIZE				2288788
-> > +#define FD_MAX_SPEEDUP				7
-> > +#define FD_MAX_POSE_VAL				0xfffffffffffffff
-> > +#define FD_DEF_POSE_VAL				0x3ff
-> > +#define MAX_FD_SEL_NUM				1026
+> There is a !txstate check to avoid that.
 > 
-> If that file is supposed to be included by anything beyond the driver
-> itself, we need proper prefixing. (same for anything else in here)
-> 
-I will fix it as following:
+> > 
+> >>  		return ret;
+> >>  
+> >>  	spin_lock_irqsave(&c->vc.lock, flags);
+> >> +	if (c->desc && c->desc->vd.tx.cookie == cookie)
+> >> +		d = c->desc;
+> >> +
+> >> +	if (!txstate)
+> >> +		goto out;
 
-#define FD_ENABLE    0x111
+Oops missed that, let me check again and do the needful
 
-#define FD_REG_OFFSET_HW_ENABLE  0x4
-#define FD_REG_OFFSET_INT_EN     0x15c
-#define FD_REG_OFFSET_INT_VAL    0x168
-#define FD_REG_OFFSET_RESULT     0x178
-
-#define FD_IRQ_MASK         1
-#define FD_MAX_RS_BUF_SIZE  2288788
-#define FD_MAX_SPEEDUP      7
-#define FD_MAX_RESULT_NUM   1026
-
-> > diff --git a/include/uapi/linux/v4l2-controls.h b/include/uapi/linux/v4l2-controls.h
-> > index 3dcfc61..eae876e 100644
-> > --- a/include/uapi/linux/v4l2-controls.h
-> > +++ b/include/uapi/linux/v4l2-controls.h
-> > @@ -192,6 +192,10 @@ enum v4l2_colorfx {
-> >   * We reserve 16 controls for this driver. */
-> >  #define V4L2_CID_USER_IMX_BASE			(V4L2_CID_USER_BASE + 0x10b0)
-> >  
-> > +/* The base for the mediatek FD driver controls */
-> > +/* We reserve 16 controls for this driver. */
-> > +#define V4L2_CID_USER_MTK_FD_BASE		(V4L2_CID_USER_BASE + 0x10d0)
-> 
-> Why only the base, but not the actual IDs in uapi ?
-> 
-I will put actual IDs in uapi/ for user to reference.
-
-> 
-> --mtx
-> 
-
-Best regards,
-Jerry
-
+-- 
+~Vinod
 
 _______________________________________________
 linux-arm-kernel mailing list
