@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88BAE78666
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 09:34:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B1E47866B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 09:35:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dcnrYWb6tp1Nk8z9X2gErXiQOCkAzw6AoFIDELCbNKQ=; b=F8LpE9wfqZooO7
-	RXw7T6G/KZRnOHm7DDPZbjHhrKc+X+DVLjU6+ksuVX2r9s70QjW3Vlew3O6Ufd1/2vd7EKKagZ5FF
-	u6tQIIgL6BIxtC6y44kE2hExlVB/iot2+gS6dSF/xzv+to+fIKfeM/RozOdau8O0OMmE0udxQsN86
-	GAeQjtqOOO2nN2YKuZp94aIR4yjXJ8hWgkwCGHB+hlQneAPMDNDkBKNJcOBFe8IGo8+TW/qi6sbip
-	kqdgzDZ+1TG8w4Q3n0nqylknBCUXLwZ+RYI+RRz1wMlYXyaGhW23/a9nOwVeT8iGl9D0MvUFQAR82
-	yZiKcSlicwwJBPZkjkfw==;
+	List-Owner; bh=WW0S3K9pYph4G1SFz09j02x8KJWxHIetGccW1PaTJ3Q=; b=VAhZ4RbxpLsC4F
+	3+ZVlUIoP1D4ygj4LIkFwNUTjURJzRHSGOduZU5tfEJORf8GpvsAhqLFc5AVoNuVLh5a9KZmjNTv9
+	1wxWGkCG/MmXqS5/SFlzc+NhqTZIva5ctFNbrY+OSf9BzLptBxsn+lKRsSPU3DpqK15pw321fzaeB
+	d9wm2S27MMsVVgAq9D6lbjhKqYFN2ZJD3zRjTG6KndYa5YJfrtNRrqAAR+ymE70kKSU99DdzLrHIW
+	dk8RiVasusX3/pdUW26x9vUov9VOKF+ZfsINZd1n74tVyWGPHcrmjssfKWv+KLSuemLy1YrkT4lLG
+	vxBUZXHpXx0Ubj1iR9iw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hs0BF-00043M-Ib; Mon, 29 Jul 2019 07:34:49 +0000
+	id 1hs0Bu-0005Nz-3v; Mon, 29 Jul 2019 07:35:30 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hs0Ay-00042m-Ji
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 07:34:33 +0000
+ id 1hs0BW-0004ud-BW
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 07:35:07 +0000
 Received: from localhost (unknown [122.178.221.187])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 11F62216C8;
- Mon, 29 Jul 2019 07:34:30 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 569A2216C8;
+ Mon, 29 Jul 2019 07:35:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564385671;
- bh=t9LsxbTH4MpBJFWH0d4fER/3hJuiJvavkL6v8Hy/LVs=;
+ s=default; t=1564385706;
+ bh=lHr/IieIlO/oNxt2fLFQBYX0xMOgH8ucnVD1H9PHqD0=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=gDCAi84qIn4/Ux74deqn5LHJcGwjCrnLKaVJpn7EYNWaU92guoMzx37Vcdua72l7v
- 9KHbGzFgTN5M7Yj41gOsKfTma6DngePMAHQAliKx4QBoRnelDRdfvV/B5jPyEUjFLy
- KNTqe09gJWMBo/SIcTdKS3+dLAx55mY37Jj/IEkg=
-Date: Mon, 29 Jul 2019 13:03:19 +0530
+ b=m34kicv/qIiguNPsZsqpBwARdFZASjMRiRr/AaWmvTws3aoMRDRlXgqSAf/rmlzvq
+ he3cc21rFsyypWb5lEq+gmk2g9zwW5CiEu4Lf2muw9HC8KpaKDbEqGwLzLtGQPcWbf
+ f1oVhoG/7fxzEk/D4Yr49hq4dom3gNL3Pl7osBzg=
+Date: Mon, 29 Jul 2019 13:03:54 +0530
 From: Vinod Koul <vkoul@kernel.org>
 To: Peter Ujfalusi <peter.ujfalusi@ti.com>
 Subject: Re: [PATCH v5 0/3] dmaengine: ti: edma: Polled completion support
-Message-ID: <20190729073319.GK12733@vkoul-mobl.Dlink>
+Message-ID: <20190729073354.GL12733@vkoul-mobl.Dlink>
 References: <20190716082655.1620-1-peter.ujfalusi@ti.com>
  <20190729064209.GF12733@vkoul-mobl.Dlink>
- <fe201b5b-916d-1889-31b0-dcac20733b65@ti.com>
+ <f051dd12-911b-2b13-1908-7f0e1bd4b695@ti.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <fe201b5b-916d-1889-31b0-dcac20733b65@ti.com>
+In-Reply-To: <f051dd12-911b-2b13-1908-7f0e1bd4b695@ti.com>
 User-Agent: Mutt/1.11.3 (2019-02-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_003432_667916_B62676E4 
-X-CRM114-Status: GOOD (  16.36  )
+X-CRM114-CacheID: sfid-20190729_003506_433241_15A72283 
+X-CRM114-Status: GOOD (  17.85  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -85,7 +85,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 29-07-19, 10:24, Peter Ujfalusi wrote:
+On 29-07-19, 10:22, Peter Ujfalusi wrote:
 > Vinod,
 > 
 > On 29/07/2019 9.42, Vinod Koul wrote:
@@ -122,10 +122,17 @@ On 29-07-19, 10:24, Peter Ujfalusi wrote:
 > >>
 > >> The polled completion can bve tested by applying:
 > >> https://patchwork.kernel.org/patch/10966499/
+> >>
+> >> Enabling the memcpy for EDMA and run the dmatest with polled = 1.
+> >>
+> >> Or, enable the EDMA memcpy support and boot up any dra7 family device with
+> >> display enabled. The workaround for DMM errata i878 uses polled DMA memcpy.
+> > 
+> > Applied, thanks. Fixed typo in 2nd patch while at it
 > 
-> Should I resend this patch so the polled mode can be tested in upstream?
+> Thank you! I was about to send v6 with the fixed typo.
 
-Yes sure
+Simpler typos are ok to fix while applying
 
 -- 
 ~Vinod
