@@ -2,72 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 288B378DCB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 16:25:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F2A4578DD4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 16:27:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ix6sB4qDUULNDBSnGtw7MrhmeWNzpdlJA4L8nLrJLM4=; b=GD4gX8UxFiNeDICy3AFYH/9rU
-	bg3vOgJW/y7kKN/d8Cb646nyKxq/cOMByo9KYbvDNgCKr3aWpkIxdtFslr9Vq7b/Oy4N6ImTROHJL
-	q4l3UCGgHXJbC9BAt04USpPEtrnKKXfXY5zgSuXlzu7X8jfYKZWF5j3uMTGTLZREM/EtsWqS8ypkH
-	Rsy5dkS7+HK6mkwBwH3X1/9dYRt9WHPG2flVrqdsTV7qywB6YJWVYM6i+X2NYMRLOVPeYmXeqfpfb
-	k83TYwBMCmw0skj7zbpV8ylCFNo6kBhRLNp0exbif3CPLv9Z9R4sjkhUIdHfxTa6MNwJgM9Vm5VwN
-	8AW4S3Zpw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=K5X0T18fNFsSbMI4RJ3z9YWPWXd/+9+lTvYS/PTHM8g=; b=Yeiyy5bCb4fFxG
+	b/fwl9WontV2fwPPjfGDRw+1PUV9cjITpWIHR/83ozuwPfbuh9XBCauk2jCyESWWCA1etA87WGp3R
+	xSJt8iVUSkaUK9fko26R8XlWE+Pmcv70edrkYceEi40s8Vd/A5vxbDTw4X2CSPaK1YV+2EOBrvd8y
+	A/ftnep7HNxAHnp5BLSWORQLu/XQQq2MgYP2fXOn0lMt0A9CkeDTkMD31TggMcTFHZC7b94G0xayx
+	6MCtXHrOw0noyiNCBzWwHXtEcm+PPdiEX8gr5p+3VesJGRsJIQXFTJnBYKxuOz6lksBWI/yLrNTJP
+	t1j83ja+ctm5ijrMDTvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hs6aX-0003NR-Oj; Mon, 29 Jul 2019 14:25:22 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1hs6cY-0005Av-H5; Mon, 29 Jul 2019 14:27:26 +0000
+Received: from mga14.intel.com ([192.55.52.115])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hs6aB-00035a-SQ
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 14:25:01 +0000
-Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
- [10.5.11.15])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 81BE3C049E12;
- Mon, 29 Jul 2019 14:24:58 +0000 (UTC)
-Received: from [10.72.12.68] (ovpn-12-68.pek2.redhat.com [10.72.12.68])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 14E8E5D6A0;
- Mon, 29 Jul 2019 14:24:44 +0000 (UTC)
-Subject: Re: WARNING in __mmdrop
-To: "Michael S. Tsirkin" <mst@redhat.com>
-References: <84bb2e31-0606-adff-cf2a-e1878225a847@redhat.com>
- <20190725092332-mutt-send-email-mst@kernel.org>
- <11802a8a-ce41-f427-63d5-b6a4cf96bb3f@redhat.com>
- <20190726074644-mutt-send-email-mst@kernel.org>
- <5cc94f15-b229-a290-55f3-8295266edb2b@redhat.com>
- <20190726082837-mutt-send-email-mst@kernel.org>
- <ada10dc9-6cab-e189-5289-6f9d3ff8fed2@redhat.com>
- <aaefa93e-a0de-1c55-feb0-509c87aae1f3@redhat.com>
- <20190726094756-mutt-send-email-mst@kernel.org>
- <0792ee09-b4b7-673c-2251-e5e0ce0fbe32@redhat.com>
- <20190729045127-mutt-send-email-mst@kernel.org>
-From: Jason Wang <jasowang@redhat.com>
-Message-ID: <4d43c094-44ed-dbac-b863-48fc3d754378@redhat.com>
-Date: Mon, 29 Jul 2019 22:24:43 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1hs6cG-0003ub-Pa; Mon, 29 Jul 2019 14:27:10 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from fmsmga001.fm.intel.com ([10.253.24.23])
+ by fmsmga103.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 29 Jul 2019 07:25:06 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.64,323,1559545200"; d="scan'208";a="190601545"
+Received: from kuha.fi.intel.com ([10.237.72.189])
+ by fmsmga001.fm.intel.com with SMTP; 29 Jul 2019 07:25:01 -0700
+Received: by kuha.fi.intel.com (sSMTP sendmail emulation);
+ Mon, 29 Jul 2019 17:25:00 +0300
+Date: Mon, 29 Jul 2019 17:25:00 +0300
+From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>
+Subject: Re: [PATCH v8 08/11] usb: roles: get usb-role-switch from parent
+Message-ID: <20190729142500.GE28600@kuha.fi.intel.com>
+References: <1563958245-6321-1-git-send-email-chunfeng.yun@mediatek.com>
+ <1563958245-6321-9-git-send-email-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
-In-Reply-To: <20190729045127-mutt-send-email-mst@kernel.org>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.31]); Mon, 29 Jul 2019 14:24:59 +0000 (UTC)
+Content-Disposition: inline
+In-Reply-To: <1563958245-6321-9-git-send-email-chunfeng.yun@mediatek.com>
+User-Agent: Mutt/1.12.0 (2019-05-25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_072459_951905_D1A7D156 
-X-CRM114-Status: GOOD (  23.08  )
+X-CRM114-CacheID: sfid-20190729_072708_846148_814B38A8 
+X-CRM114-Status: GOOD (  21.39  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ high trust [192.55.52.115 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,68 +68,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mhocko@suse.com, peterz@infradead.org, ldv@altlinux.org,
- james.bottomley@hansenpartnership.com, linux-mm@kvack.org, namit@vmware.com,
- mingo@kernel.org, elena.reshetova@intel.com, keescook@chromium.org,
- aarcange@redhat.com, davem@davemloft.net, hch@infradead.org,
- christian@brauner.io,
- syzbot <syzbot+e58112d71f77113ddb7b@syzkaller.appspotmail.com>,
- syzkaller-bugs@googlegroups.com, jglisse@redhat.com, viro@zeniv.linux.org.uk,
- linux-arm-kernel@lists.infradead.org, wad@chromium.org,
- linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
- luto@amacapital.net, ebiederm@xmission.com, akpm@linux-foundation.org,
- guro@fb.com
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Hans de Goede <hdegoede@redhat.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linus Walleij <linus.walleij@linaro.org>, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Biju Das <biju.das@bp.renesas.com>,
+ Badhri Jagan Sridharan <badhri@google.com>,
+ Andy Shevchenko <andy.shevchenko@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Min Guo <min.guo@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
+ linux-arm-kernel@lists.infradead.org, Li Jun <jun.li@nxp.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Ck9uIDIwMTkvNy8yOSDkuIvljYg0OjU5LCBNaWNoYWVsIFMuIFRzaXJraW4gd3JvdGU6Cj4gT24g
-TW9uLCBKdWwgMjksIDIwMTkgYXQgMDE6NTQ6NDlQTSArMDgwMCwgSmFzb24gV2FuZyB3cm90ZToK
-Pj4gT24gMjAxOS83LzI2IOS4i+WNiDk6NDksIE1pY2hhZWwgUy4gVHNpcmtpbiB3cm90ZToKPj4+
-Pj4gT2ssIGxldCBtZSByZXRyeSBpZiBuZWNlc3NhcnkgKGJ1dCBJIGRvIHJlbWVtYmVyIEkgZW5k
-IHVwIHdpdGggZGVhZGxvY2tzCj4+Pj4+IGxhc3QgdHJ5KS4KPj4+PiBPaywgSSBwbGF5IGEgbGl0
-dGxlIHdpdGggdGhpcy4gQW5kIGl0IHdvcmtzIHNvIGZhci4gV2lsbCBkbyBtb3JlIHRlc3RpbmcK
-Pj4+PiB0b21vcnJvdy4KPj4+Pgo+Pj4+IE9uZSByZWFzb24gY291bGQgYmUgSSBzd2l0Y2ggdG8g
-dXNlIGdldF91c2VyX3BhZ2VzX2Zhc3QoKSB0bwo+Pj4+IF9fZ2V0X3VzZXJfcGFnZXNfZmFzdCgp
-IHdoaWNoIGRvZXNuJ3QgbmVlZCBtbWFwX3NlbS4KPj4+Pgo+Pj4+IFRoYW5rcwo+Pj4gT0sgdGhh
-dCBzb3VuZHMgZ29vZC4gSWYgd2UgYWxzbyBzZXQgYSBmbGFnIHRvIG1ha2UKPj4+IHZob3N0X2V4
-Y2VlZHNfd2VpZ2h0IGV4aXQsIHRoZW4gSSB0aGluayBpdCB3aWxsIGJlIGFsbCBnb29kLgo+Pgo+
-PiBBZnRlciBzb21lIGV4cGVyaW1lbnRzLCBJIGNhbWUgdXAgdHdvIG1ldGhvZHM6Cj4+Cj4+IDEp
-IHN3aXRjaCB0byB1c2UgdnEtPm11dGV4LCB0aGVuIHdlIG11c3QgdGFrZSB0aGUgdnEgbG9jayBk
-dXJpbmcgcmFuZ2UKPj4gY2hlY2tpbmcgKGJ1dCBJIGRvbid0IHNlZSBvYnZpb3VzIHNsb3dkb3du
-IGZvciAxNnZjcHVzICsgMTZxdWV1ZXMpLiBTZXR0aW5nCj4+IGZsYWdzIGR1cmluZyB3ZWlnaHQg
-Y2hlY2sgc2hvdWxkIHdvcmsgYnV0IGl0IHN0aWxsIGNhbid0IGFkZHJlc3MgdGhlIHdvcnN0Cj4+
-IGNhc2U6IHdhaXQgZm9yIHRoZSBwYWdlIHRvIGJlIHN3YXBwZWQgaW4uIElzIHRoaXMgYWNjZXB0
-YWJsZT8KPj4KPj4gMikgdXNpbmcgY3VycmVudCBSQ1UgYnV0IHJlcGxhY2Ugc3luY2hyb25pemVf
-cmN1KCkgd2l0aCB2aG9zdF93b3JrX2ZsdXNoKCkuCj4+IFRoZSB3b3JzdCBjYXNlIGlzIHRoZSBz
-YW1lIGFzIDEpIGJ1dCB3ZSBjYW4gY2hlY2sgcmFuZ2Ugd2l0aG91dCBob2xkaW5nIGFueQo+PiBs
-b2Nrcy4KPj4KPj4gV2hpY2ggb25lIGRpZCB5b3UgcHJlZmVyPwo+Pgo+PiBUaGFua3MKPiBJIHdv
-dWxkIHJhdGhlciB3ZSBzdGFydCB3aXRoIDEgYW5kIHN3aXRjaCB0byAyIGFmdGVyIHdlCj4gY2Fu
-IHNob3cgc29tZSBnYWluLgo+Cj4gQnV0IHRoZSB3b3JzdCBjYXNlIG5lZWRzIHRvIGJlIGFkZHJl
-c3NlZC4KCgpZZXMuCgoKPiBIb3cgYWJvdXQgc2VuZGluZyBhIHNpZ25hbCB0bwo+IHRoZSB2aG9z
-dCB0aHJlYWQ/ICBXZSB3aWxsIG5lZWQgdG8gZml4IHVwIGVycm9yIGhhbmRsaW5nIChJIHRoaW5r
-IHRoYXQKPiBhdCB0aGUgbW9tZW50IGl0IHdpbGwgZXJyb3Igb3V0IGluIHRoYXQgY2FzZSwgaGFu
-ZGxpbmcgdGhpcyBhcyBFRkFVTFQgLQo+IGFuZCB3ZSBkb24ndCB3YW50IHRvIGRyb3AgcGFja2V0
-cyBpZiB3ZSBjYW4gaGVscCBpdCwgYW5kIHN1cmVseSBub3QKPiBlbnRlciBhbnkgZXJyb3Igc3Rh
-dGVzLiAgSW4gcGFydGljdWxhciBpdCBtaWdodCBiZSBlc3BlY2lhbGx5IHRyaWNreSBpZgo+IHdl
-IHdyb3RlIGludG8gdXNlcnNwYWNlIG1lbW9yeSBhbmQgYXJlIG5vdyB0cnlpbmcgdG8gbG9nIHRo
-ZSB3cml0ZS4KPiBJIGd1ZXNzIHdlIGNhbiBkaXNhYmxlIHRoZSBvcHRpbWl6YXRpb24gaWYgbG9n
-IGlzIGVuYWJsZWQ/KS4KCgpUaGlzIG1heSB3b3JrIGJ1dCByZXF1aXJlcyBhIGxvdCBvZiBjaGFu
-Z2VzLiBBbmQgYWN0dWFsbHkgaXQncyB0aGUgcHJpY2UgCm9mIHVzaW5nIHZxIG11dGV4LiBBY3R1
-YWxseSwgdGhlIGNyaXRpY2FsIHNlY3Rpb24gc2hvdWxkIGJlIHJhdGhlciAKc21hbGwsIGUuZyBq
-dXN0IGluc2lkZSBtZW1vcnkgYWNjZXNzb3JzLgoKSSB3b25kZXIgd2hldGhlciBvciBub3QganVz
-dCBkbyBzeW5jaHJvbml6ZSBvdXIgc2VsZiBsaWtlOgoKc3RhdGljIHZvaWQgaW5saW5lIHZob3N0
-X2luY192cV9yZWYoc3RydWN0IHZob3N0X3ZpcnRxdWV1ZSAqdnEpCnsKIMKgwqDCoMKgwqDCoMKg
-IGludCByZWYgPSBSRUFEX09OQ0UodnEtPnJlZik7CgogwqDCoMKgwqDCoMKgwqAgV1JJVEVfT05D
-RSh2cS0+cmVmLCByZWYgKyAxKTsKc21wX3JtYigpOwp9CgpzdGF0aWMgdm9pZCBpbmxpbmUgdmhv
-c3RfZGVjX3ZxX3JlZihzdHJ1Y3Qgdmhvc3RfdmlydHF1ZXVlICp2cSkKewogwqDCoMKgwqDCoMKg
-wqAgaW50IHJlZiA9IFJFQURfT05DRSh2cS0+cmVmKTsKCnNtcF93bWIoKTsKIMKgwqDCoMKgwqDC
-oMKgIFdSSVRFX09OQ0UodnEtPnJlZiwgcmVmIC0gMSk7Cn0KCnN0YXRpYyB2b2lkIGlubGluZSB2
-aG9zdF93YWl0X2Zvcl9yZWYoc3RydWN0IHZob3N0X3ZpcnRxdWV1ZSAqdnEpCnsKIMKgwqDCoMKg
-wqDCoMKgIHdoaWxlIChSRUFEX09OQ0UodnEtPnJlZikpOwptYigpOwp9CgoKT3IgdXNpbmcgc21w
-X2xvYWRfYWNxdWlyZSgpL3NtcF9zdG9yZV9yZWxlYXNlKCkgaW5zdGVhZD8KClRoYW5rcwoKPgoK
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJt
-LWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3Jn
-Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtl
-cm5lbAo=
+On Wed, Jul 24, 2019 at 04:50:42PM +0800, Chunfeng Yun wrote:
+> when the USB host controller is the parent of the connector,
+> usually type-B, sometimes don't need the graph, so we should
+> check whether it's parent registers usb-role-switch or not
+> firstly, and get it if exists.
+> 
+> Signed-off-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
+
+I don't think I actually wrote the patch. I may have proposed the code
+for you, but I never prepared a patch out out that. Please drop the
+above Signed-off-by line if that is the case. I case I really did
+write the patch, then you are missing the "From: Heikki..." first
+line, but I really don't remember preparing the patch.
+
+If the idea came from me, you can use for example the suggested-by
+tag: "Suggested-by: Heikki Krogerus <heikki.krogerus...".
+
+> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> ---
+> v8: no changes
+> v7:
+>   add signed-off-by Chunfeng
+> 
+> v6:
+>   new patch
+> ---
+>  drivers/usb/roles/class.c | 25 +++++++++++++++++++++----
+>  1 file changed, 21 insertions(+), 4 deletions(-)
+> 
+> diff --git a/drivers/usb/roles/class.c b/drivers/usb/roles/class.c
+> index 5b637aaf311f..87439a84c983 100644
+> --- a/drivers/usb/roles/class.c
+> +++ b/drivers/usb/roles/class.c
+> @@ -114,6 +114,19 @@ static void *usb_role_switch_match(struct device_connection *con, int ep,
+>  	return dev ? to_role_switch(dev) : ERR_PTR(-EPROBE_DEFER);
+>  }
+>  
+> +static struct usb_role_switch *
+> +usb_role_switch_is_parent(struct fwnode_handle *fwnode)
+> +{
+> +	struct fwnode_handle *parent = fwnode_get_parent(fwnode);
+> +	struct device *dev;
+> +
+> +	if (!parent || !fwnode_property_present(parent, "usb-role-switch"))
+> +		return NULL;
+> +
+> +	dev = class_find_device(role_class, NULL, parent, switch_fwnode_match);
+> +	return dev ? to_role_switch(dev) : ERR_PTR(-EPROBE_DEFER);
+> +}
+> +
+>  /**
+>   * usb_role_switch_get - Find USB role switch linked with the caller
+>   * @dev: The caller device
+> @@ -125,8 +138,10 @@ struct usb_role_switch *usb_role_switch_get(struct device *dev)
+>  {
+>  	struct usb_role_switch *sw;
+>  
+> -	sw = device_connection_find_match(dev, "usb-role-switch", NULL,
+> -					  usb_role_switch_match);
+> +	sw = usb_role_switch_is_parent(dev_fwnode(dev));
+> +	if (!sw)
+> +		sw = device_connection_find_match(dev, "usb-role-switch", NULL,
+> +						  usb_role_switch_match);
+>  
+>  	if (!IS_ERR_OR_NULL(sw))
+>  		WARN_ON(!try_module_get(sw->dev.parent->driver->owner));
+> @@ -146,8 +161,10 @@ struct usb_role_switch *fwnode_usb_role_switch_get(struct fwnode_handle *fwnode)
+>  {
+>  	struct usb_role_switch *sw;
+>  
+> -	sw = fwnode_connection_find_match(fwnode, "usb-role-switch", NULL,
+> -					  usb_role_switch_match);
+> +	sw = usb_role_switch_is_parent(fwnode);
+> +	if (!sw)
+> +		sw = fwnode_connection_find_match(fwnode, "usb-role-switch",
+> +						  NULL, usb_role_switch_match);
+>  	if (!IS_ERR_OR_NULL(sw))
+>  		WARN_ON(!try_module_get(sw->dev.parent->driver->owner));
+>  
+> -- 
+> 2.21.0
+
+thanks,
+
+-- 
+heikki
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
