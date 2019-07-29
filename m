@@ -2,62 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5ED3479D20
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 01:55:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C34D79D24
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 01:57:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TyvhMatxinzmk4eHPDmBTqyWNL9TvWu9qIUHLvRnL70=; b=Cz5tnfblAdnww3
-	Mua1h5QelfJIOtWoMpUWbAlkYZC2/alpOCWKmjFtYwx9+1fSNnM0TdgY2Ai6dANSIyxGw+tF8bITV
-	/nwA5Qz15fP4Y8NFbBRS+xaX5/143hHnnkjv9gSpJknPnem9zXzi0SLyqzznYcB7DUjPArbU5o2cL
-	oV5b9EqLSrKA7SMDpowDPP5nTvQ9f72tc5LAYhqplLOXzCBR4lGOjucxeO872ervIg11AZVMD7PBI
-	HbUXdnei2M18E8sJl/To+PZHopq1cJHlw6u5VrZTIWP4N6QhYclRZcE18I1mA8O2zYF07JtUHXlZH
-	f7lzggjkuN2BvqaKOOew==;
+	List-Owner; bh=rvmY4ikgts4lyglgKHWjZJZWCrESThKKpl0WH+r372A=; b=nICU7FL+QwJ1V/
+	whcgOaH0stbyoNX8OR1jbkF8Xn8jxbOBBZgFS+PEOGcb7jmi80E9H46uhBJ4QkzoHOjbaUIzcOQ5B
+	avjWlRm+dMqcXDHvwOeG7lXx1eCOFQwEmDjcjzGxLbSGhEshBmzp2eBbCPJCsGRl6s7sI06+3jemy
+	zcjBZzzDOQ+ORWL9gmSitrsArO1NaH3NZkYy5Bryjnpd/cOdhVPq1IpiVVhHiX9GJcJRbfBjbNPhP
+	v1oFAMhtqaNCVZ3+2sBGRQbBxr99qndofh6M3igUJEu1C3UtRnvVE6t9kY8BO605NCQjCm1aIBXwR
+	xBQaQtvopSnwPPnlOZiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsFUY-0003F1-M6; Mon, 29 Jul 2019 23:55:46 +0000
+	id 1hsFWZ-0003b2-O4; Mon, 29 Jul 2019 23:57:52 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsFUM-0003EI-U3
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 23:55:36 +0000
+ id 1hsFWP-0003ai-8O
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 23:57:42 +0000
 Received: from mail-qt1-f179.google.com (mail-qt1-f179.google.com
  [209.85.160.179])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 88BDB2073F
+ by mail.kernel.org (Postfix) with ESMTPSA id D1D66216C8
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 29 Jul 2019 23:55:34 +0000 (UTC)
+ Mon, 29 Jul 2019 23:57:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564444534;
- bh=QJajQ9rPwQQEztIa7Aie8zZd9zfm/Sqk8yhLa8ZcYl0=;
+ s=default; t=1564444661;
+ bh=dMiQ9UZlmg1wAHtxio42rSqa++EhjehVjqhzpIB6zHk=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=V9/tFzo/fOI4CMU7QpMUnouCMw9y4Z4Gis/0Xg3FuV6jfnNqSFAPs1DA1HvL79MXq
- 9YMFINPaRZERAbmHosngz5Yz24y7NBdq62iQsjsRWmNd15UbNzTI6OPnC1Fs/6VSJj
- srnKhICD1uhc8IXv2y+8DdWhp8MPYCO76JwBxO/k=
-Received: by mail-qt1-f179.google.com with SMTP id l9so61237954qtu.6
+ b=tKJEyXgGfBY7H7BKIxmTMYPwSAO/utvz0nwSAmkPn9BOCrT+8tPV6iDr3Y+a2MSYF
+ krQwN/QZrnIeeM/nei5mKyMdM+b9GIqvxwm8PS5zSSyqjViHgY1xOxK1d0G/HGhYBl
+ oFc+99SD6JCHllpal1bVJU1aigfRUCnJItPHlh3c=
+Received: by mail-qt1-f179.google.com with SMTP id a15so61263068qtn.7
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 29 Jul 2019 16:55:34 -0700 (PDT)
-X-Gm-Message-State: APjAAAUrkctrEUQXEo9o1yjLL9yuw6gRWJiDVp8coFg1wgJ1190P68uZ
- Ltwjs4e7COUizHSQQFKDtHyxdPNoV+/iHlm48w==
-X-Google-Smtp-Source: APXvYqznXMqQ6aE9gIcWbb/9lh1ClqELBH1Q0acqDOKZC0kqgtdGTVRMzfO1zsWwf0QVCqeFe8EP2ojj+nXv+b3KAlo=
-X-Received: by 2002:a0c:b786:: with SMTP id l6mr81436699qve.148.1564444533780; 
- Mon, 29 Jul 2019 16:55:33 -0700 (PDT)
+ Mon, 29 Jul 2019 16:57:40 -0700 (PDT)
+X-Gm-Message-State: APjAAAUro2wAlbyC6ljaYnlwCZPWaSJnuwc9wyQURhcGhBukGt7iYz6Z
+ NQxUCQfZqGHXGuEgFFXh1EZu44T/LA91sp6Yeg==
+X-Google-Smtp-Source: APXvYqzqIx+OqBWGwJWFZkq/JHh6Bxb7CsxEjHR4Kg/yXnpoIkeGjg7iAKxv2ArGd8DHDR4pOnjB+vnRMW9wKJdyBN0=
+X-Received: by 2002:ac8:3908:: with SMTP id s8mr33747911qtb.224.1564444659990; 
+ Mon, 29 Jul 2019 16:57:39 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190729172007.3275-1-krzk@kernel.org>
-In-Reply-To: <20190729172007.3275-1-krzk@kernel.org>
+ <20190729172007.3275-2-krzk@kernel.org>
+In-Reply-To: <20190729172007.3275-2-krzk@kernel.org>
 From: Rob Herring <robh+dt@kernel.org>
-Date: Mon, 29 Jul 2019 17:55:22 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqLo9ftDo-tmeOWGqjKR32PL9bsWkDL+zr6LSYts2ZY7SA@mail.gmail.com>
-Message-ID: <CAL_JsqLo9ftDo-tmeOWGqjKR32PL9bsWkDL+zr6LSYts2ZY7SA@mail.gmail.com>
-Subject: Re: [PATCH v3 1/2] dt-bindings: vendor-prefixes: Add Admatec GmbH and
- Anvo-Systems
+Date: Mon, 29 Jul 2019 17:57:28 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqKzsWQoc_xYXxkWa2eUdVwvCvxH-8g-2F90-_YmfU5_fg@mail.gmail.com>
+Message-ID: <CAL_JsqKzsWQoc_xYXxkWa2eUdVwvCvxH-8g-2F90-_YmfU5_fg@mail.gmail.com>
+Subject: Re: [PATCH v3 2/2] ARM: dts: imx6ul-kontron-n6310: Add Kontron
+ i.MX6UL N6310 SoM and boards
 To: Krzysztof Kozlowski <krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_165534_982749_49A4190F 
-X-CRM114-Status: GOOD (  11.21  )
+X-CRM114-CacheID: sfid-20190729_165741_332574_0934130E 
+X-CRM114-Status: GOOD (  17.30  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -102,22 +103,69 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Mon, Jul 29, 2019 at 11:20 AM Krzysztof Kozlowski <krzk@kernel.org> wrote:
 >
-> Add vendor prefix for Admatec GmbH (not to be confused with Admatec AG
-> in Switzerland) and Anvo-Systems Dresden GmbH.
+> Add support for i.MX6UL modules from Kontron Electronics GmbH (before
+> acquisition: Exceet Electronics) and evalkit boards based on it:
+>
+> 1. N6310 SOM: i.MX6 UL System-on-Module, a 25x25 mm solderable module
+>    (LGA pads and pin castellations) with 256 MB RAM, 1 MB NOR-Flash,
+>    256 MB NAND and other interfaces,
+> 2. N6310 S: evalkit, w/wo eMMC, without display,
+> 3. N6310 S 43: evalkit with 4.3" display,
+> 4. N6310 S 50: evalkit with 5.0" display.
+>
+> This includes device nodes for unsupported displays (Admatec
+> T043C004800272T2A and T070P133T0S301).
+>
+> The work is based on Exceet/Kontron source code (GPLv2) with numerous
+> changes:
+> 1. Reorganize files,
+> 2. Rename Exceet -> Kontron,
+> 3. Rename models/compatibles to match newest Kontron product naming,
+> 4. Fix coding style errors and adjust to device tree coding guidelines,
+> 5. Fix DTC warnings,
+> 6. Extend compatibles so eval boards inherit the SoM compatible,
+> 7. Use defines instead of GPIO and interrupt flag values,
+> 8. Use proper vendor compatible for Macronix SPI NOR,
+> 9. Sort nodes alphabetically.
 >
 > Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 >
 > ---
 >
-> Changes since v2:
-> 1. Use admatecde vendor prefix.
-> 2. Add Anvo-Systems Dresden GmbH.
+> Changes since v2, after Fabio's review:
+> 1. Add "imx6ul" compatible to board name (that's what I understood from
+>    review),
+> 2. Add vendor/device prefix to eeprom and document the compatible,
+> 3. Use "admatecde" as vendor compatible to avoid confusion with Admatec
+>    AG in Switzerland (also making LCD panels),
+> 4. Use generic names for nodes,
+> 5. Use IRQ_TYPE_LEVEL_LOW,
+> 6. Move iomux to the end of files,
+> 7. Remove regulators node (include regulators in top level),
+> 8. Remove cpu clock-frequency,
+> 9. Other minor fixes pointed by Fabio.
 >
-> Changes since v1:
-> New patch
+> Changes since v1, after Frieder's review:
+> 1. Remove unneeded license notes,
+> 2. Add Kontron copyright (2018),
+> 3. Rename the files/models/compatibles to new naming - N6310,
+> 4. Remove unneeded CPU operating points override,
+> 5. Switch regulator nodes into simple children nodes without addresses
+>    (so not simple bus),
+> 6. Use proper vendor compatible for Macronix SPI NOR.
 > ---
->  Documentation/devicetree/bindings/vendor-prefixes.yaml | 4 ++++
->  1 file changed, 4 insertions(+)
+>  .../devicetree/bindings/arm/fsl.yaml          |   4 +
+>  .../devicetree/bindings/eeprom/at25.txt       |   1 +
+>  arch/arm/boot/dts/Makefile                    |   3 +
+>  .../boot/dts/imx6ul-kontron-n6310-s-43.dts    | 119 +++++
+>  .../boot/dts/imx6ul-kontron-n6310-s-50.dts    | 119 +++++
+>  arch/arm/boot/dts/imx6ul-kontron-n6310-s.dts  | 420 ++++++++++++++++++
+>  .../boot/dts/imx6ul-kontron-n6310-som.dtsi    | 134 ++++++
+>  7 files changed, 800 insertions(+)
+>  create mode 100644 arch/arm/boot/dts/imx6ul-kontron-n6310-s-43.dts
+>  create mode 100644 arch/arm/boot/dts/imx6ul-kontron-n6310-s-50.dts
+>  create mode 100644 arch/arm/boot/dts/imx6ul-kontron-n6310-s.dts
+>  create mode 100644 arch/arm/boot/dts/imx6ul-kontron-n6310-som.dtsi
 
 Reviewed-by: Rob Herring <robh@kernel.org>
 
