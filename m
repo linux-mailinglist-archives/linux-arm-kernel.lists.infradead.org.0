@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 463F47927A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 19:44:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D24BD7928C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 19:45:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,29 +11,29 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=c+9TUdQlvMUu6MVcblblBOuSKaKNI0OaiH6K39KMp8c=; b=Itj7iOqwEDOwGx0edg8qjDBeTr
-	jPdHNbXmRf0x8ZdNZjg0v4JRQK/nlfJ6LYODBXTvmRf1sdv6sqgevjDhLxk22bRv4SY6YfeTxdqM0
-	Xk7eh17L+T94pvSNGKZoixyTJ8m/Okz2na2tZQ1++ht1kCc6soYV+EN0O2g7rvEVMl4lj6j8FHusQ
-	xHCweehpI+0swg1lhPq1tv/IoZkfRIHi3KLv9EPanjx3M/8nV/gMWB+zcWdRXpeBBFVmlyC9TZaOw
-	YCED+AYI4lxZfiCEQrJvZ0YW3BeAuD9quXfd1+D9kd4kxoGLD5+VOGaxmPpUpMG7IU59eV7Ej/P2E
-	dIZ3e/UQ==;
+	bh=/51jGGl1mMIDMSgHp1mn52zSF8s1ksPBkegfGz2ib6Y=; b=Y41JCRG2TeSREwybb/pShXjqJz
+	KUM6lSqcqtJqZLZ2UK82e35nEzl+OWxYTTlHsiBJXL2Ypovt3rJYAxxnbjRQxgtZnbDd9AjMhvPvi
+	v7l+G4kSqdHbhT7QAN5+YBMqpWKpMc5YV3j/dPiu+GLp8rXHqO4oqjKkKS+xUl2aTB7W7UjI3qN+X
+	g9aRYiHLj1VWiD6X8ZYrHOaB9b4eNngVCOWxi+eUcvRHG9nohW07+eDIMEwdqx/ThdaJekAldveLS
+	r2OtE/skLlBOKZwP64/tFv5g0Mm4cy9gEEIw/rVNePr3ih/YG47ghIeAqG9zrOTTUfocq34zgBERm
+	xQWFQMWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hs9h8-0007BP-42; Mon, 29 Jul 2019 17:44:22 +0000
-Received: from mout.gmx.net ([212.227.15.15])
+	id 1hs9iJ-0000xX-3N; Mon, 29 Jul 2019 17:45:35 +0000
+Received: from mout.gmx.net ([212.227.15.19])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hs9fp-0006EE-23; Mon, 29 Jul 2019 17:43:04 +0000
+ id 1hs9fq-0006Ee-5r; Mon, 29 Jul 2019 17:43:05 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1564422143;
- bh=uoSEstO7wh+z/Yh5O4xemCJ/Lip8M0+P7e9/vs/uBqg=;
+ s=badeba3b8450; t=1564422145;
+ bh=IQzg9EyoySG6H4o6CVx/5eexJboEaGPQ5QZI0KyNPCQ=;
  h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=LUYzoyK7AqrnAmb+JoOAKe6C62uiFNbkaRfz9LRBUHcaNbbLwpnqwttQbQqmpkF0g
- 1s5F7KynXRT58c+oaT13Z00UfOq508HvgXf1m/0a3GjtNfxaztYxmi4OqNLm/cGMrW
- pgmIqMjUdc91tSN5wzB6dCI7EX0oaPwGws0aV0Lk=
+ b=RrZ4CrtFTBQNYvUzgR9Dtse7jW63iZXYTqLORArKe1484BP3GSV4O2iN9v3Enue1n
+ 6GOriIU1G/LQAKF8+cVvoKytfPyVeCohVjeO3phWQ5mEx9EwQpDJ/PuOLMOXp8ctQL
+ 1s5v4azkAHVMPEELDdluc2O0zfsrjqTetM7kUaUY=
 X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
 Received: from localhost.localdomain ([185.76.97.79]) by mail.gmx.com
  (mrgmx001 [212.227.17.190]) with ESMTPSA (Nemesis) id
- 0LzskF-1iV71A2pwh-014xXw; Mon, 29 Jul 2019 19:42:23 +0200
+ 0MVvi4-1huNgW3HHk-00X0Vb; Mon, 29 Jul 2019 19:42:24 +0200
 From: Frank Wunderlich <frank-w@public-files.de>
 To: Alessandro Zummo <a.zummo@towertech.it>,
  Alexandre Belloni <alexandre.belloni@bootlin.com>,
@@ -54,44 +54,44 @@ To: Alessandro Zummo <a.zummo@towertech.it>,
  Sean Wang <sean.wang@mediatek.com>, Sebastian Reichel <sre@kernel.org>,
  Thomas Gleixner <tglx@linutronix.de>,
  "Tianping . Fang" <tianping.fang@mediatek.com>
-Subject: [PATCH v3 07/10] mfd: mt6323: add mt6323 rtc+pwrc
-Date: Mon, 29 Jul 2019 19:41:51 +0200
-Message-Id: <20190729174154.4335-8-frank-w@public-files.de>
+Subject: [PATCH v3 08/10] power: reset: add driver for mt6323 poweroff
+Date: Mon, 29 Jul 2019 19:41:52 +0200
+Message-Id: <20190729174154.4335-9-frank-w@public-files.de>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190729174154.4335-1-frank-w@public-files.de>
 References: <20190729174154.4335-1-frank-w@public-files.de>
-X-Provags-ID: V03:K1:/8/fLbWdSh3bVNpxmnpL3FPeT0+linP7Us78MAvnUZuQdGm5VkG
- JCpRlGkofnBlmrzQndWukonLRDLXi08x0zDn1J2XNV36jNGQW6hd1+5DfsE/9deZ0bsiaMA
- edVYQT2hdUbxeDb60rreTPNXvSJK/NOu196puTcD6SRN/wJAMbc4VxPi0BzC0WTQRF39r0X
- WD1BP0vy+5EW/qzQ+Ojwg==
+X-Provags-ID: V03:K1:lAFcOh6hKQK/d/CpvNwJob/kBICOSBOuC3jHGVTAdVuixRcIcXT
+ gbf7IdjrcZ0nIVwA1WOU7BcAdnQJZHmWwzUrQHkqXWy49zCuFBOS/zNN37O1OHqW4ZQZ/H4
+ QCy5LEL7ztAHe7QA6+4PqGgeHz4Q8W5vMW7HJCk7fi3E2W8+XVOH6uO05brTc6APFvA+4PN
+ 8YZkIS5mBxvUt/Mm5XHFQ==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:Dq3eJEN+210=:q2LebVnxWDyoNhAxtkTf2Y
- +9IwdSRG7/gRTn22h/ok2pRBgVfTwU1TmELeJPQmoQ0DGqMI6NaFOLyCrVgT2bcnId+G1Ft7i
- IXtNiOHfaM06LuVwQUAZCoEZENr90Lmd9aymi9DMhDjetx+F1fno4vKDOPaKiUlcmOaUbQNN3
- YCH/EoVoPOoGuvhaPvEtfSGKARshmEWVmFEGagr8Yze9qNWluOmMDyQ6NpXvS3g1gQHfHZwli
- PcpMOeKLdtvStE0x03reIA8Ma2Q6wTX3AqILxFpMUOksLsh8QxEJUHGlf/2L5P/YmDlAVESsN
- FoLWBu9zxex0dQUtlS60C+ha1FuczC1xntVCPw+qwbYE3HDnp4Lvn7ZiA8qQmyTeqoASOjDPO
- Naz0f0rVc57ItsDJFjAprh3obonT9WHtmuQc3017/DQoCx4O/GPS/TJgs4/mfL18WMcMf8vN8
- S3b8egTFabdqYWUu0wRTiSrlxc1zsppxQHaB4NeTylh1IRdxYo07C9NbcNOyxFpPg0bGbOMNS
- PhEfxl6jJ1EafnbxDo5wMcSEBFl58hcWTu8Z78VDhPWEJvkqC62Zf/juxT5KlRE4cVm6WYs+e
- qfiMQyD9Xa1vqC87EAQNNRVtjI8wVHUwwGvl4RkCV6xhL155YxdfCRGM65WVvC9x2u1vcSlw9
- NRpHOknBYtHL067Vu5gRVBXKwBdHAVLGwEF+vxW0J3XNLRwLlQOf8a274YXJyvrRZAKk1afTg
- roSQmVKesVkl9U8RHuvYQbMO/AEVYvYrbj6sRFVOHe1eWk6gROBBXWqCdfddYpTqHNCraQCyU
- G1MbEO4OUyqttPWApGg1LUptcoa3RqkPbPc2FCd0rftFqVmiJ1+fePbfLoL0L6ShvaapudN6q
- Ux7VPUnCNkVgtMMUWiymUuoOx8V9OYDoODl7RgW0WxXPvQ3q64qJ/5GCAPuAhvyRfvR3EGKvm
- 6lvgR5z6trDR4Nc9YarQW//4jsXvJvmzkv5BgJ8EYi8HSI11p0QHJUBz6oZkGMmtAKVWtmsTh
- LKWtjGkcFuYwZVXx/JQ8GEOkHl98NLAExD5GiQOjWuSoQNo9gf6mGICPQaL0iRtJtD18PDOHi
- /MMfS1tSjmIsqI=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:m7XpZVnB5uQ=:kPjlBRlqekAluyc50aSZer
+ JpbjYWy6IB5v6ZTaxxu8LmdtHAQNE4cw+O8FiuJe8Kv+E+0vqnxf4/8CKJgpWt55t65iXNcxR
+ 7cEOXAnjYbbjVnqtMXbUaA7ZytGshaJ9sqCbi4igKxkp5mVqDAq3BGzJoUDbOM5wdDTj3oN/i
+ zVRfP8yeLOGFTXy/Ne3WqYk3POMJj5+2VkAa+uitLZSi3S0L1/J4+rnBPNtPWC3MtuSj1H9dN
+ U4WL7V8Ccf0zmKjtv1eUC5rnq2hUNKWdYaUxObRY3MkCxQTP/vLer5K0M9QKhMuuoBWMBBKX1
+ cNJ2EMhOz3Yj+ruT38gaJi3t/zYxHXNvdYgmsKlR7zvLB3l7bodH1vGISAs7ATseIflEuatnK
+ bj0lVeqP7QA607OVCxcVLjFUgh+sx03m2iSlNAlh9OcIvTBohGGg13VzKVjlSd60NB/CP8XgW
+ Lb2wPyac3Px3HsgScbYOk3vOpe3T/wLP106lv9+Sk9ROAUBYiLhaipgsfDsIb+ixLYlCol0sP
+ tkoP2Ryk/zl895ryIYXS4LF0Xe4L9PZoQJQA37/ujyoqwe8V7XzZJcUhPu2/fdIpD1XkJCCE8
+ iGXdh3YueMxu73mN6npkDARsGeIYgOcEvsrKk5FdjaQMNKvGdstBYKZYEIjRzK26XdUUeL/iT
+ GSOJ0OB5EZgPCTDw0xAiSLN+NBOlmY23z8BMNfe2rQRnIwYJTMeqpGJD8IkqfFI43TrdZmq5w
+ ULHUpmNYWu/s/ehnvenYBW7oLBAVLjD7MvstNGOXIgTlZwtzjWR3+DzWlseFMPwCahwKdwKZA
+ ImgmxS9b/67QIfl2SwAnds4y37cFVtFcR1pxr6P5ksIsrq0EDsq0YLuGZKPBS5OqlAFFFPo0G
+ Tj5F3X9ncLu7to7GlrIMyaFY3mfKjPluMkqE1x5y+JwvM/shKJhmInQu8IzU7NlO4sC3Peo2o
+ jZTrxeGGud2h3Z28uUfFAWgQD8S/puhabXW9y2ffJq4N76j4lezZvIxTAO2fLC1N5vB8mntj9
+ E2Zo/CS7lotcUS4ZTJZWiMGB82NsvbGm3XFPwBuNZOl+QI/1oyQBDhRLlmrhB+FjwJ9qFGkYx
+ mOveQc7kz5uCn8=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_104301_394307_D3248FD0 
-X-CRM114-Status: GOOD (  11.29  )
+X-CRM114-CacheID: sfid-20190729_104302_508909_F44CCA61 
+X-CRM114-Status: GOOD (  17.21  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.15.15 listed in list.dnswl.org]
+ no trust [212.227.15.19 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -118,75 +118,170 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Josef Friedl <josef.friedl@speed.at>
 
-add entry for rtc and power-controller to mt6323
+add poweroff driver for mt6323 and make Makefile and Kconfig-Entries
 
-changes since v2: only splitting, second part of v2 part 4
+changes since v2: none (=v2 part 5)
 
+Suggested-by: Frank Wunderlich <frank-w@public-files.de>
 Signed-off-by: Josef Friedl <josef.friedl@speed.at>
 Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
 ---
- drivers/mfd/mt6397-core.c | 25 +++++++++++++++++++++++++
- 1 file changed, 25 insertions(+)
+ drivers/power/reset/Kconfig           | 10 +++
+ drivers/power/reset/Makefile          |  1 +
+ drivers/power/reset/mt6323-poweroff.c | 97 +++++++++++++++++++++++++++
+ include/linux/mfd/mt6397/core.h       |  2 +
+ 4 files changed, 110 insertions(+)
+ create mode 100644 drivers/power/reset/mt6323-poweroff.c
 
-diff --git a/drivers/mfd/mt6397-core.c b/drivers/mfd/mt6397-core.c
-index 5f7070267c9a..a4abce00f156 100644
---- a/drivers/mfd/mt6397-core.c
-+++ b/drivers/mfd/mt6397-core.c
-@@ -16,13 +16,24 @@
- #include <linux/mfd/mt6397/registers.h>
- #include <linux/mfd/mt6323/registers.h>
+diff --git a/drivers/power/reset/Kconfig b/drivers/power/reset/Kconfig
+index a564237278ff..c721939767eb 100644
+--- a/drivers/power/reset/Kconfig
++++ b/drivers/power/reset/Kconfig
+@@ -140,6 +140,16 @@ config POWER_RESET_LTC2952
+ 	  This driver supports an external powerdown trigger and board power
+ 	  down via the LTC2952. Bindings are made in the device tree.
 
-+#define MT6323_RTC_BASE		0x8000
-+#define MT6323_RTC_SIZE		0x40
++config POWER_RESET_MT6323
++       bool "MediaTek MT6323 power-off driver"
++       depends on MFD_MT6397
++       help
++         The power-off driver is responsible for externally shutdown down
++         the power of a remote MediaTek SoC MT6323 is connected to through
++         controlling a tiny circuit BBPU inside MT6323 RTC.
 +
- #define MT6397_RTC_BASE		0xe000
- #define MT6397_RTC_SIZE		0x3e
-
-+#define MT6323_PWRC_BASE	0x8000
-+#define MT6323_PWRC_SIZE	0x40
++         Say Y if you have a board where MT6323 could be found.
 +
- #define MT6323_CID_CODE		0x23
- #define MT6391_CID_CODE		0x91
- #define MT6397_CID_CODE		0x97
-
-+static const struct resource mt6323_rtc_resources[] = {
-+	DEFINE_RES_MEM(MT6323_RTC_BASE, MT6323_RTC_SIZE),
-+	DEFINE_RES_IRQ(MT6323_IRQ_STATUS_RTC),
+ config POWER_RESET_QNAP
+ 	bool "QNAP power-off driver"
+ 	depends on OF_GPIO && PLAT_ORION
+diff --git a/drivers/power/reset/Makefile b/drivers/power/reset/Makefile
+index 85da3198e4e0..da37f8b851dc 100644
+--- a/drivers/power/reset/Makefile
++++ b/drivers/power/reset/Makefile
+@@ -11,6 +11,7 @@ obj-$(CONFIG_POWER_RESET_GPIO) += gpio-poweroff.o
+ obj-$(CONFIG_POWER_RESET_GPIO_RESTART) += gpio-restart.o
+ obj-$(CONFIG_POWER_RESET_HISI) += hisi-reboot.o
+ obj-$(CONFIG_POWER_RESET_MSM) += msm-poweroff.o
++obj-$(CONFIG_POWER_RESET_MT6323) += mt6323-poweroff.o
+ obj-$(CONFIG_POWER_RESET_QCOM_PON) += qcom-pon.o
+ obj-$(CONFIG_POWER_RESET_OCELOT_RESET) += ocelot-reset.o
+ obj-$(CONFIG_POWER_RESET_PIIX4_POWEROFF) += piix4-poweroff.o
+diff --git a/drivers/power/reset/mt6323-poweroff.c b/drivers/power/reset/mt6323-poweroff.c
+new file mode 100644
+index 000000000000..1caf43d9e46d
+--- /dev/null
++++ b/drivers/power/reset/mt6323-poweroff.c
+@@ -0,0 +1,97 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Power off through MediaTek PMIC
++ *
++ * Copyright (C) 2018 MediaTek Inc.
++ *
++ * Author: Sean Wang <sean.wang@mediatek.com>
++ *
++ */
++
++#include <linux/err.h>
++#include <linux/module.h>
++#include <linux/of.h>
++#include <linux/platform_device.h>
++#include <linux/mfd/mt6397/core.h>
++#include <linux/mfd/mt6397/rtc.h>
++
++struct mt6323_pwrc {
++	struct device *dev;
++	struct regmap *regmap;
++	u32 base;
 +};
 +
- static const struct resource mt6397_rtc_resources[] = {
- 	DEFINE_RES_MEM(MT6397_RTC_BASE, MT6397_RTC_SIZE),
- 	DEFINE_RES_IRQ(MT6397_IRQ_RTC),
-@@ -38,8 +49,17 @@ static const struct resource mt6397_keys_resources[] = {
- 	DEFINE_RES_IRQ(MT6397_IRQ_HOMEKEY),
- };
-
-+static const struct resource mt6323_pwrc_resources[] = {
-+	DEFINE_RES_MEM(MT6323_PWRC_BASE, MT6323_PWRC_SIZE),
++static struct mt6323_pwrc *mt_pwrc;
++
++static void mt6323_do_pwroff(void)
++{
++	struct mt6323_pwrc *pwrc = mt_pwrc;
++	unsigned int val;
++	int ret;
++
++	regmap_write(pwrc->regmap, pwrc->base + RTC_BBPU, RTC_BBPU_KEY);
++	regmap_write(pwrc->regmap, pwrc->base + RTC_WRTGR, 1);
++
++	ret = regmap_read_poll_timeout(pwrc->regmap,
++					pwrc->base + RTC_BBPU, val,
++					!(val & RTC_BBPU_CBUSY),
++					MTK_RTC_POLL_DELAY_US,
++					MTK_RTC_POLL_TIMEOUT);
++	if (ret)
++		dev_err(pwrc->dev, "failed to write BBPU: %d\n", ret);
++
++	/* Wait some time until system down, otherwise, notice with a warn */
++	mdelay(1000);
++
++	WARN_ONCE(1, "Unable to power off system\n");
++}
++
++static int mt6323_pwrc_probe(struct platform_device *pdev)
++{
++	struct mt6397_chip *mt6397_chip = dev_get_drvdata(pdev->dev.parent);
++	struct mt6323_pwrc *pwrc;
++	struct resource *res;
++
++	pwrc = devm_kzalloc(&pdev->dev, sizeof(*pwrc), GFP_KERNEL);
++	if (!pwrc)
++		return -ENOMEM;
++
++	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
++	pwrc->base = res->start;
++	pwrc->regmap = mt6397_chip->regmap;
++	pwrc->dev = &pdev->dev;
++	mt_pwrc = pwrc;
++
++	pm_power_off = &mt6323_do_pwroff;
++
++	return 0;
++}
++
++static int mt6323_pwrc_remove(struct platform_device *pdev)
++{
++	if (pm_power_off == &mt6323_do_pwroff)
++		pm_power_off = NULL;
++
++	return 0;
++}
++
++static const struct of_device_id mt6323_pwrc_dt_match[] = {
++	{ .compatible = "mediatek,mt6323-pwrc" },
++	{},
++};
++MODULE_DEVICE_TABLE(of, mt6323_pwrc_dt_match);
++
++static struct platform_driver mt6323_pwrc_driver = {
++	.probe          = mt6323_pwrc_probe,
++	.remove         = mt6323_pwrc_remove,
++	.driver         = {
++		.name   = "mt6323-pwrc",
++		.of_match_table = mt6323_pwrc_dt_match,
++	},
 +};
 +
- static const struct mfd_cell mt6323_devs[] = {
- 	{
-+		.name = "mt6323-rtc",
-+		.num_resources = ARRAY_SIZE(mt6323_rtc_resources),
-+		.resources = mt6323_rtc_resources,
-+		.of_compatible = "mediatek,mt6323-rtc",
-+	}, {
- 		.name = "mt6323-regulator",
- 		.of_compatible = "mediatek,mt6323-regulator"
- 	}, {
-@@ -50,6 +70,11 @@ static const struct mfd_cell mt6323_devs[] = {
- 		.num_resources = ARRAY_SIZE(mt6323_keys_resources),
- 		.resources = mt6323_keys_resources,
- 		.of_compatible = "mediatek,mt6323-keys"
-+	}, {
-+		.name = "mt6323-pwrc",
-+		.num_resources = ARRAY_SIZE(mt6323_pwrc_resources),
-+		.resources = mt6323_pwrc_resources,
-+		.of_compatible = "mediatek,mt6323-pwrc"
- 	},
- };
++module_platform_driver(mt6323_pwrc_driver);
++
++MODULE_DESCRIPTION("Poweroff driver for MT6323 PMIC");
++MODULE_AUTHOR("Sean Wang <sean.wang@mediatek.com>");
++MODULE_LICENSE("GPL v2");
+diff --git a/include/linux/mfd/mt6397/core.h b/include/linux/mfd/mt6397/core.h
+index 25a95e72179b..652da61e3711 100644
+--- a/include/linux/mfd/mt6397/core.h
++++ b/include/linux/mfd/mt6397/core.h
+@@ -7,6 +7,8 @@
+ #ifndef __MFD_MT6397_CORE_H__
+ #define __MFD_MT6397_CORE_H__
 
++#include <linux/mutex.h>
++
+ enum mt6397_irq_numbers {
+ 	MT6397_IRQ_SPKL_AB = 0,
+ 	MT6397_IRQ_SPKR_AB,
 --
 2.17.1
 
