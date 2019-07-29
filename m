@@ -2,47 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5F917790CD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 18:27:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8FB3790D1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Jul 2019 18:28:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zpyP6cUT0QVA/mbvA3B0kuZcONBBdW1taexTb6riFw4=; b=ru7BBcjoW73/3w
-	8BM9RaOXTrEhMnv+DtHBERvoOuNbp6kzOXM0jpJ4u1CC0ZVPDBzn7ZXYegcCM4ZHdDmpj3pZu4rd+
-	eu2ITLkus1/ZsyUp4Jhx8kJXTihACAbeRqkM5ID23+NFPNa/TqtV6WbhygOPaaAs2eOBh/cYEdW21
-	R4dTIBSJ0Em9mj5Cyb3Ka4T6un/NkTDp6SGkwY2UP8PA6c91q86uAQaLnoR72mM4cjdwDUlbx3DSu
-	OBwn+6dcRWUCh4Uhv9Ado7aA0zohAyy4CfjYh4GoZyQBMRC7ed3SzCotykfgD5Hhynpz5XZcskN3x
-	7iAUwrae7jFHdcQaEkjQ==;
+	List-Owner; bh=erW/LjckTK0Z2KlwXFXRbEorn6Vv5cawqGRKoBcpDgQ=; b=I9rnCNkSsiKx+0
+	k/vlq3i4JvaOkNcFEBksU2Ctq/U5vSxQTsvtBZVYX6C0Pp5GhUMVgwrD1y3dB0EHUEutn4ayH312y
+	Ic3YBhHFeacxq5dwYhBe42YkpFBDHf8sL+la521pz0c5H6PMHUm/E2FebDu3vvjoCaUrsHm92wo9K
+	lz/Z7m+JzeJTW3tnGGfh37v66Vw/VUBNc6Tg/wjLw+aFoEqoNfPKcOKfuhaC4/9FglooR14HslMxS
+	/XziiSP0i2Dt1LL0dtnGMUykBbWXm/SEmYXfXa0UCMnu21KXTBdLJMBmSHVrraL++4l/gBUjiFPGq
+	ejrAt9IlYZEzs/nt5UVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hs8Uu-0001NT-03; Mon, 29 Jul 2019 16:27:40 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hs8Pe-0005sU-Di
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 16:22:16 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CFF251570;
- Mon, 29 Jul 2019 09:22:13 -0700 (PDT)
-Received: from capper-ampere.manchester.arm.com
- (capper-ampere.manchester.arm.com [10.32.98.74])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id A49093F694;
- Mon, 29 Jul 2019 09:22:12 -0700 (PDT)
-From: Steve Capper <steve.capper@arm.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V4 11/11] docs: arm64: Add layout and 52-bit info to memory
- document
-Date: Mon, 29 Jul 2019 17:21:17 +0100
-Message-Id: <20190729162117.832-12-steve.capper@arm.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190729162117.832-1-steve.capper@arm.com>
-References: <20190729162117.832-1-steve.capper@arm.com>
+	id 1hs8Ve-0001o0-EA; Mon, 29 Jul 2019 16:28:26 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hs8Ry-0007KZ-GB
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 16:24:41 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1hs8Rq-0008EM-0Y; Mon, 29 Jul 2019 18:24:30 +0200
+Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1hs8Ro-000620-Ls; Mon, 29 Jul 2019 18:24:28 +0200
+Date: Mon, 29 Jul 2019 18:24:28 +0200
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Chen-Yu Tsai <wens@csie.org>
+Subject: Re: [linux-sunxi] Re: [PATCH 4/6] pwm: sun4i: Add support for H6 PWM
+Message-ID: <20190729162428.bxuzgxg5sjqptlbp@pengutronix.de>
+References: <20190726184045.14669-1-jernej.skrabec@siol.net>
+ <20190726184045.14669-5-jernej.skrabec@siol.net>
+ <20190729064030.7uenld2kbof45zti@pengutronix.de>
+ <223488703.0I5IR7NXoI@jernej-laptop>
+ <20190729160723.am3cs5pasi22pibi@pengutronix.de>
+ <CAGb2v66C=ghjck6rxTg6Vt4xN2DcXntzVOa=KJWh98KRjkhnHQ@mail.gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAGb2v66C=ghjck6rxTg6Vt4xN2DcXntzVOa=KJWh98KRjkhnHQ@mail.gmail.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_092214_563818_5FEDA90C 
-X-CRM114-Status: GOOD (  19.32  )
+X-CRM114-CacheID: sfid-20190729_092438_600274_511A9DF1 
+X-CRM114-Status: GOOD (  25.19  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -61,259 +72,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: crecklin@redhat.com, ard.biesheuvel@linaro.org, catalin.marinas@arm.com,
- bhsharma@redhat.com, Steve Capper <steve.capper@arm.com>, maz@kernel.org,
- will@kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-pwm@vger.kernel.org,
+ Jernej =?utf-8?Q?=C5=A0krabec?= <jernej.skrabec@siol.net>,
+ devicetree <devicetree@vger.kernel.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Maxime Ripard <mripard@kernel.org>, linux-sunxi <linux-sunxi@googlegroups.com>,
+ Rob Herring <robh+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
+ Sascha Hauer <kernel@pengutronix.de>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-As the kernel no longer prints out the memory layout on boot, this patch
-adds this information back to the memory document.
-
-Also, as the 52-bit support introduces some subtle changes to the arm64
-memory, the rationale behind these changes are also added to the memory
-document.
-
-Signed-off-by: Steve Capper <steve.capper@arm.com>
-
----
-
-New in V4
----
- Documentation/arm64/memory.rst | 177 +++++++++++++++++++++++++++++----
- 1 file changed, 160 insertions(+), 17 deletions(-)
-
-diff --git a/Documentation/arm64/memory.rst b/Documentation/arm64/memory.rst
-index 464b880fc4b7..79a5461e93c2 100644
---- a/Documentation/arm64/memory.rst
-+++ b/Documentation/arm64/memory.rst
-@@ -14,6 +14,10 @@ with the 4KB page configuration, allowing 39-bit (512GB) or 48-bit
- 64KB pages, only 2 levels of translation tables, allowing 42-bit (4TB)
- virtual address, are used but the memory layout is the same.
- 
-+ARMv8.2 adds optional support for Large Virtual Address space. This is
-+only available when running with a 64KB page size and expands the
-+number of descriptors in the first level of translation.
-+
- User addresses have bits 63:48 set to 0 while the kernel addresses have
- the same bits set to 1. TTBRx selection is given by bit 63 of the
- virtual address. The swapper_pg_dir contains only kernel (global)
-@@ -22,40 +26,119 @@ The swapper_pg_dir address is written to TTBR1 and never written to
- TTBR0.
- 
- 
--AArch64 Linux memory layout with 4KB pages + 3 levels::
-+AArch64 Linux memory layout with 4KB pages + 3 levels (39-bit)::
- 
-   Start			End			Size		Use
-   -----------------------------------------------------------------------
-   0000000000000000	0000007fffffffff	 512GB		user
--  ffffff8000000000	ffffffffffffffff	 512GB		kernel
--
--
--AArch64 Linux memory layout with 4KB pages + 4 levels::
-+  ffffff8000000000	ffffffbfffffffff	 256GB		kernel logical memory map
-+  ffffffc000000000	ffffffcfffffffff	  64GB		kasan shadow region
-+  ffffffd000000000	ffffffd007ffffff	 128MB		bpf jit region
-+  ffffffd008000000	ffffffd00fffffff	 128MB		modules
-+  ffffffd010000000	fffffffebffeffff	~186GB		vmalloc
-+  fffffffebfff0000	fffffffefe5f8fff	~998MB		[guard region]
-+  fffffffefe5f9000	fffffffefe9fffff	4124KB		fixed mappings
-+  fffffffefea00000	fffffffefebfffff	   2MB		[guard region]
-+  fffffffefec00000	fffffffeffbfffff	  16MB		PCI I/O space
-+  fffffffeffc00000	fffffffeffdfffff	   2MB		[guard region]
-+  fffffffeffe00000	ffffffffffdfffff	   4GB		vmemmap
-+  ffffffffffe00000	ffffffffffffffff	   2MB		[guard region]
-+
-+
-+AArch64 Linux memory layout with 4KB pages + 4 levels (48-bit)::
- 
-   Start			End			Size		Use
-   -----------------------------------------------------------------------
-   0000000000000000	0000ffffffffffff	 256TB		user
--  ffff000000000000	ffffffffffffffff	 256TB		kernel
--
--
--AArch64 Linux memory layout with 64KB pages + 2 levels::
-+  ffff000000000000	ffff7fffffffffff	 128TB		kernel logical memory map
-+  ffff800000000000	ffff9fffffffffff	  32TB		kasan shadow region
-+  ffffa00000000000	ffffa00007ffffff	 128MB		bpf jit region
-+  ffffa00008000000	ffffa0000fffffff	 128MB		modules
-+  ffffa00010000000	fffffdffbffeffff	 ~93TB		vmalloc
-+  fffffdffbfff0000	fffffdfffe5f8fff	~998MB		[guard region]
-+  fffffdfffe5f9000	fffffdfffe9fffff	4124KB		fixed mappings
-+  fffffdfffea00000	fffffdfffebfffff	   2MB		[guard region]
-+  fffffdfffec00000	fffffdffffbfffff	  16MB		PCI I/O space
-+  fffffdffffc00000	fffffdffffdfffff	   2MB		[guard region]
-+  fffffdffffe00000	ffffffffffdfffff	   2TB		vmemmap
-+  ffffffffffe00000	ffffffffffffffff	   2MB		[guard region]
-+
-+
-+AArch64 Linux memory layout with 64KB pages + 2 levels (42-bit)::
- 
-   Start			End			Size		Use
-   -----------------------------------------------------------------------
-   0000000000000000	000003ffffffffff	   4TB		user
--  fffffc0000000000	ffffffffffffffff	   4TB		kernel
--
--
--AArch64 Linux memory layout with 64KB pages + 3 levels::
-+  fffffc0000000000	fffffdffffffffff	   2TB		kernel logical memory map
-+  fffffe0000000000	fffffe7fffffffff	 512GB		kasan shadow region
-+  fffffe8000000000	fffffe8007ffffff	 128MB		bpf jit region
-+  fffffe8008000000	fffffe800fffffff	 128MB		modules
-+  fffffe8010000000	ffffffff5ffeffff	  ~1TB		vmalloc
-+  ffffffff5fff0000	ffffffff7e58ffff	~485MB		[guard region]
-+  ffffffff7e590000	ffffffff7e9fffff	4544KB		fixed mappings
-+  ffffffff7ea00000	ffffffff7ebfffff	   2MB		[guard region]
-+  ffffffff7ec00000	ffffffff7fbfffff	  16MB		PCI I/O space
-+  ffffffff7fc00000	ffffffff7fdfffff	   2MB		[guard region]
-+  ffffffff7fe00000	ffffffffffdfffff	   2GB		vmemmap
-+  ffffffffffe00000	ffffffffffffffff	   2MB		[guard region]
-+
-+
-+AArch64 Linux memory layout with 64KB pages + 3 levels (48-bit)::
- 
-   Start			End			Size		Use
-   -----------------------------------------------------------------------
-   0000000000000000	0000ffffffffffff	 256TB		user
--  ffff000000000000	ffffffffffffffff	 256TB		kernel
-+  ffff000000000000	ffff7fffffffffff	 128TB		kernel logical memory map
-+  ffff800000000000	ffff9fffffffffff	  32TB		kasan shadow region
-+  ffffa00000000000	ffffa00007ffffff	 128MB		bpf jit region
-+  ffffa00008000000	ffffa0000fffffff	 128MB		modules
-+  ffffa00010000000	fffffbdffffeffff	 ~91TB		vmalloc
-+  fffffbdfffff0000	ffffffdffe58ffff	  ~3TB		[guard region]
-+  ffffffdffe590000	ffffffdffe9fffff	4544KB		fixed mappings
-+  ffffffdffea00000	ffffffdffebfffff	   2MB		[guard region]
-+  ffffffdffec00000	ffffffdfffbfffff	  16MB		PCI I/O space
-+  ffffffdfffc00000	ffffffdfffdfffff	   2MB		[guard region]
-+  ffffffdfffe00000	ffffffffffdfffff	 128GB		vmemmap
-+  ffffffffffe00000	ffffffffffffffff	   2MB		[guard region]
-+
-+
-+AArch64 Linux memory layout with 64KB pages + 3 levels (52-bit w/o HW support)::
- 
-+  Start			End			Size		Use
-+  -----------------------------------------------------------------------
-+  0000000000000000	0000ffffffffffff	 256TB		user
-+  ffff000000000000	ffff7fffffffffff	 128TB		kernel logical memory map
-+  ffff800000000000	ffff9fffffffffff	  32TB		kasan shadow region
-+  ffffa00000000000	ffffa00007ffffff	 128MB		bpf jit region
-+  ffffa00008000000	ffffa0000fffffff	 128MB		modules
-+  ffffa00010000000	fffff81ffffeffff	 ~88TB		vmalloc
-+  fffff81fffff0000	fffffc1ffe58ffff	  ~3TB		[guard region]
-+  fffffc1ffe590000	fffffc1ffe9fffff	4544KB		fixed mappings
-+  fffffc1ffea00000	fffffc1ffebfffff	   2MB		[guard region]
-+  fffffc1ffec00000	fffffc1fffbfffff	  16MB		PCI I/O space
-+  fffffc1fffc00000	fffffc1fffdfffff	   2MB		[guard region]
-+  fffffc1fffe00000	ffffffffffdfffff	3968GB		vmemmap
-+  ffffffffffe00000	ffffffffffffffff	   2MB		[guard region]
-+
-+
-+AArch64 Linux memory layout with 64KB pages + 3 levels (52-bit with HW support)::
- 
--For details of the virtual kernel memory layout please see the kernel
--booting log.
-+  Start			End			Size		Use
-+  -----------------------------------------------------------------------
-+  0000000000000000	000fffffffffffff	   4PB		user
-+  fff0000000000000	fff7ffffffffffff	   2PB		kernel logical memory map
-+  fff8000000000000	fffd9fffffffffff	1440TB		[gap]
-+  fffda00000000000	ffff9fffffffffff	 512TB		kasan shadow region
-+  ffffa00000000000	ffffa00007ffffff	 128MB		bpf jit region
-+  ffffa00008000000	ffffa0000fffffff	 128MB		modules
-+  ffffa00010000000	fffff81ffffeffff	 ~88TB		vmalloc
-+  fffff81fffff0000	fffffc1ffe58ffff	  ~3TB		[guard region]
-+  fffffc1ffe590000	fffffc1ffe9fffff	4544KB		fixed mappings
-+  fffffc1ffea00000	fffffc1ffebfffff	   2MB		[guard region]
-+  fffffc1ffec00000	fffffc1fffbfffff	  16MB		PCI I/O space
-+  fffffc1fffc00000	fffffc1fffdfffff	   2MB		[guard region]
-+  fffffc1fffe00000	ffffffffffdfffff	3968GB		vmemmap
-+  ffffffffffe00000	ffffffffffffffff	   2MB		[guard region]
- 
- 
- Translation table lookup with 4KB pages::
-@@ -83,7 +166,8 @@ Translation table lookup with 64KB pages::
-    |                 |    |               |            [15:0]  in-page offset
-    |                 |    |               +----------> [28:16] L3 index
-    |                 |    +--------------------------> [41:29] L2 index
--   |                 +-------------------------------> [47:42] L1 index
-+   |                 +-------------------------------> [47:42] L1 index (48-bit)
-+   |                                                   [51:42] L1 index (52-bit)
-    +-------------------------------------------------> [63] TTBR0/1
- 
- 
-@@ -96,3 +180,62 @@ ARM64_HARDEN_EL2_VECTORS is selected for particular CPUs.
- 
- When using KVM with the Virtualization Host Extensions, no additional
- mappings are created, since the host kernel runs directly in EL2.
-+
-+52-bit VA support in the kernel
-+-------------------------------
-+If the ARMv8.2-LVA optional feature is present, and we are running
-+with a 64KB page size; then it is possible to use 52-bits of address
-+space for both userspace and kernel addresses. However, any kernel
-+binary that supports 52-bit must also be able to fall back to 48-bit
-+at early boot time if the hardware feature is not present.
-+
-+This fallback mechanism necessitates the kernel .text to be in the
-+higher addresses s.t. they are invariant to 48/52-bti VAs. Due to
-+the kasan shadow being a fraction of the entire kernel VA space,
-+the end of the kasan shadow must also be in the higher half of the
-+kernel VA space for both 48/52-bit. (Switching from 48-bit to 52-bit,
-+the end of the kasan shadow is invariant and dependent on ~0UL,
-+whilst the start address will "grow" towards the lower addresses).
-+
-+In order to optimise phys_to_virt and virt_to_phys, the PAGE_OFFSET
-+is kept constant at 0xFFF0000000000000 (corresponding to 52-bit),
-+this obviates the need for an extra variable read. The physvirt
-+offset and vmemmap offsets are computed at early boot to enable
-+this logic.
-+
-+As a single binary will need to support both 48-bit and 52-bit VA
-+spaces, the VMEMMAP must be sized large enough for 52-bit VAs and
-+also must be sized large enought to accommodate a fixed PAGE_OFFSET.
-+
-+Most code in the kernel should not need to consider the VA_BITS, for
-+code that does need to know the VA size the variables are
-+defined as follows:
-+
-+VA_BITS		constant	the *maximum* VA space size
-+
-+VA_BITS_MIN	constant	the *minimum* VA space size
-+
-+VA_BITS_ACTUAL	variable	the *actual* VA space size
-+
-+
-+Maximum and minimum sizes can be useful to ensure that buffers are
-+sized large enough or that addresses are positioned close enough for
-+the "worst" case.
-+
-+52-bit userspace VAs
-+--------------------
-+To maintain compatibility with software that relies on the ARMv8.0
-+VA space maximum size of 48-bits, the kernel will, by default,
-+return virtual addresses to userspace from a 48-bit range.
-+
-+Software can "opt-in" to receiving VAs from a 52-bit space by
-+specifying an mmap hint parameter that is larger than 48-bit.
-+For example:
-+    maybe_high_address = mmap(~0UL, size, prot, flags,...);
-+
-+It is also possible to build a debug kernel that returns addresses
-+from a 52-bit space by enabling the following kernel config options:
-+   CONFIG_EXPERT=y && CONFIG_ARM64_FORCE_52BIT=y
-+
-+Note that this option is only intended for debugging applications
-+and should not be used in production.
--- 
-2.20.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGVsbG8sCgpPbiBUdWUsIEp1bCAzMCwgMjAxOSBhdCAxMjowOTo0MEFNICswODAwLCBDaGVuLVl1
+IFRzYWkgd3JvdGU6Cj4gT24gVHVlLCBKdWwgMzAsIDIwMTkgYXQgMTI6MDcgQU0gVXdlIEtsZWlu
+ZS1Lw7ZuaWcKPiA8dS5rbGVpbmUta29lbmlnQHBlbmd1dHJvbml4LmRlPiB3cm90ZToKPiA+IE9u
+IE1vbiwgSnVsIDI5LCAyMDE5IGF0IDA1OjU1OjUyUE0gKzAyMDAsIEplcm5laiDFoGtyYWJlYyB3
+cm90ZToKPiA+ID4gRG5lIHBvbmVkZWxqZWssIDI5LiBqdWxpaiAyMDE5IG9iIDA4OjQwOjMwIENF
+U1QgamUgVXdlIEtsZWluZS1Lw7ZuaWcKPiA+ID4gbmFwaXNhbChhKToKPiA+ID4gPiBPbiBGcmks
+IEp1bCAyNiwgMjAxOSBhdCAwODo0MDo0M1BNICswMjAwLCBKZXJuZWogU2tyYWJlYyB3cm90ZToK
+PiA+ID4gPiA+IC0tLSBhL2RyaXZlcnMvcHdtL3B3bS1zdW40aS5jCj4gPiA+ID4gPiArKysgYi9k
+cml2ZXJzL3B3bS9wd20tc3VuNGkuYwo+ID4gPiA+ID4gQEAgLTMzMSw2ICszMzEsMTMgQEAgc3Rh
+dGljIGNvbnN0IHN0cnVjdCBzdW40aV9wd21fZGF0YQo+ID4gPiA+ID4gc3VuNGlfcHdtX3Npbmds
+ZV9ieXBhc3MgPSB7Pgo+ID4gPiA+ID4gICAubnB3bSA9IDEsCj4gPiA+ID4gPgo+ID4gPiA+ID4g
+IH07Cj4gPiA+ID4gPgo+ID4gPiA+ID4gK3N0YXRpYyBjb25zdCBzdHJ1Y3Qgc3VuNGlfcHdtX2Rh
+dGEgc3VuNTBpX3B3bV9kdWFsX2J5cGFzc19jbGtfcnN0ID0gewo+ID4gPiA+ID4gKyAuaGFzX2J1
+c19jbG9jayA9IHRydWUsCj4gPiA+ID4gPiArIC5oYXNfcHJlc2NhbGVyX2J5cGFzcyA9IHRydWUs
+Cj4gPiA+ID4gPiArIC5oYXNfcmVzZXQgPSB0cnVlLAo+ID4gPiA+ID4gKyAubnB3bSA9IDIsCj4g
+PiA+ID4gPiArfTsKPiA+ID4gPiA+ICsKPiA+ID4gPiA+Cj4gPiA+ID4gPiAgc3RhdGljIGNvbnN0
+IHN0cnVjdCBvZl9kZXZpY2VfaWQgc3VuNGlfcHdtX2R0X2lkc1tdID0gewo+ID4gPiA+ID4KPiA+
+ID4gPiA+ICAgewo+ID4gPiA+ID4KPiA+ID4gPiA+ICAgICAgICAgICAuY29tcGF0aWJsZSA9ICJh
+bGx3aW5uZXIsc3VuNGktYTEwLXB3bSIsCj4gPiA+ID4gPgo+ID4gPiA+ID4gQEAgLTM0Nyw2ICsz
+NTQsOSBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IG9mX2RldmljZV9pZCBzdW40aV9wd21fZHRfaWRz
+W10gPQo+ID4gPiA+ID4gewo+ID4gPiA+ID4KPiA+ID4gPiA+ICAgfSwgewo+ID4gPiA+ID4KPiA+
+ID4gPiA+ICAgICAgICAgICAuY29tcGF0aWJsZSA9ICJhbGx3aW5uZXIsc3VuOGktaDMtcHdtIiwK
+PiA+ID4gPiA+ICAgICAgICAgICAuZGF0YSA9ICZzdW40aV9wd21fc2luZ2xlX2J5cGFzcywKPiA+
+ID4gPiA+Cj4gPiA+ID4gPiArIH0sIHsKPiA+ID4gPiA+ICsgICAgICAgICAuY29tcGF0aWJsZSA9
+ICJhbGx3aW5uZXIsc3VuNTBpLWg2LXB3bSIsCj4gPiA+ID4gPiArICAgICAgICAgLmRhdGEgPSAm
+c3VuNTBpX3B3bV9kdWFsX2J5cGFzc19jbGtfcnN0LAo+ID4gPiA+Cj4gPiA+ID4gSWYgeW91IGZv
+bGxvdyBteSBzdWdnZXN0aW9uIGZvciB0aGUgdHdvIHByZXZpb3VzIHBhdGNoZXMsIHlvdSBjYW4g
+anVzdAo+ID4gPiA+IHVzZToKPiA+ID4gPgo+ID4gPiA+ICAgICBjb21wYXRpYmxlID0gImFsbHdp
+bm5lcixzdW41MGktaDYtcHdtIiwgImFsbHdpbm5lcixzdW41aS1hMTBzLXB3bSI7Cj4gPiA+ID4K
+PiA+ID4gPiBhbmQgZHJvcCB0aGlzIHBhdGNoLgo+ID4gPgo+ID4gPiBNYXhpbWUgZm91bmQgb3V0
+IHRoYXQgaXQncyBub3QgY29tcGF0aWJsZSB3aXRoIEExMHMgZHVlIHRvIGRpZmZlcmVuY2UgaW4g
+YnlwYXNzCj4gPiA+IGJpdCwgYnV0IHllcywgSSBrbm93IHdoYXQgeW91IG1lYW4uCj4gPiA+Cj4g
+PiA+IFNpbmNlIEg2IHJlcXVpcmVzIHJlc2V0IGxpbmUgYW5kIGJ1cyBjbG9jayB0byBiZSBzcGVj
+aWZpZWQsIGl0J3Mgbm90IGNvbXBhdGlibGUKPiA+ID4gZnJvbSBEVCBiaW5kaW5nIHNpZGUuIE5l
+dyB5YW1sIGJhc2VkIGJpbmRpbmcgbXVzdCBzb21laG93IGtub3cgdGhhdCBpbiBvcmRlcgo+ID4g
+PiB0byBiZSBhYmxlIHRvIHZhbGlkYXRlIERUIG5vZGUsIHNvIGl0IG5lZWRzIHN0YW5kYWxvbmUg
+Y29tcGF0aWJsZS4gSG93ZXZlciwKPiA+ID4gZGVwZW5kaW5nIG9uIGNvbmNsdXNpb25zIG9mIG90
+aGVyIGRpc2N1c3Npb25zLCB0aGlzIG5ldyBjb21wYXRpYmxlIGNhbiBiZQo+ID4gPiBhc3NvY2lh
+dGVkIHdpdGggYWxyZWFkeSBhdmFpbGFibGUgcXVpcmtzIHN0cnVjdHVyZSBvciBoYXZlIGl0J3Mg
+b3duLgo+ID4KPiA+IEkgY2Fubm90IGZvbGxvdy4gWW91IHNob3VsZCBiZSBhYmxlIHRvIHNwZWNp
+ZnkgaW4gdGhlIGJpbmRpbmcgdGhhdCB0aGUKPiA+IHJlc2V0IGxpbmUgYW5kIGJ1cyBjbG9jayBp
+cyBvcHRpb25hbC4gVGhlbiBhbGx3aW5uZXIsc3VuNTBpLWg2LXB3bQo+ID4gd2l0aG91dCBhIHJl
+c2V0IGxpbmUgYW5kIGJ1cyBjbG9jayBhbHNvIHZlcmlmaWVzLCBidXQgdGhpcyBkb2Vzbid0Cj4g
+PiByZWFsbHkgaHVydCAoYW5kIHdobyBrbm93cywgbWF5YmUgdGhlIG5leHQgYWxsd2lubmVyIGNo
+aXAgbmVlZHMgZXhhY3RseQo+ID4gdGhpcykuCj4gCj4gSXQgaXMgbm90IG9wdGlvbmFsLiBJdCB3
+aWxsIG5vdCB3b3JrIGlmIGVpdGhlciB0aGUgY2xvY2tzIG9yIHJlc2V0IGNvbnRyb2xzCj4gYXJl
+IG1pc3NpbmcuIEhvdyB3b3VsZCB0aGVzZSBiZSBvcHRpb25hbCBhbnl3YXk/IEVpdGhlciBpdCdz
+IGNvbm5lY3RlZCBhbmQKPiB0aHVzIHJlcXVpcmVkLCBvciBpdCdzIG5vdCBhbmQgdGhlcmVmb3Jl
+IHNob3VsZCBiZSBvbWl0dGVkIGZyb20gdGhlCj4gZGVzY3JpcHRpb24uCgpbSnVzdCBhcmd1aW5n
+IGFib3V0IHRoZSBjbG9jayBoZXJlLCB0aGUgYXJndW1lbnRhdGlvbiBpcyBhbmFsb2dvdXMgZm9y
+CnRoZSByZXNldCBjb250cm9sLl0KCkZyb20gdGhlIGRyaXZlcidzIHBlcnNwZWN0aXZlIGl0J3Mg
+b3B0aW9uYWw6IFRoZXJlIGFyZSBkZXZpY2VzIHdpdGggYW5kCndpdGhvdXQgYSBidXMgY2xvY2su
+IFRoaXMgZG9lc24ndCBtZWFuIHRoYXQgeW91IGNhbiBqdXN0IGlnbm9yZSB0aGlzCmNsb2NrIGlm
+IGl0J3Mgc3BlY2lmaWVkLiBJdCdzIG9wdGlvbmFsIGluIHRoZSBzZW5zZSAiSWYgZHQgZG9lc24n
+dApzcGVjaWZ5IGl0LCB0aGVuIGFzc3VtZSB0aGlzIGlzIGEgZGV2aWNlIHRoYXQgZG9lc24ndCBo
+YXZlIGl0IGFuZCBzbyB5b3UKZG9uJ3QgbmVlZCB0byBoYW5kbGUgaXQuIiBidXQgbm90IGluIHRo
+ZSBzZW5zZSAiaXQgZG9lc24ndCBtYXR0ZXIgaWYKeW91IGhhbmRsZSBpdCBvciBub3QuIi4KCk90
+aGVyIHRoYW4gdGhhdCBJJ20gb24geW91ciBzaWRlLiBTbyBmb3IgZXhhbXBsZSBJIHRoaW5rIGl0
+J3Mgbm90Cm9wdGltYWwgdGhhdCBncGlvZF9nZXRfb3B0aW9uYWwgcmV0dXJucyBOVUxMIGlmIEdQ
+SU9MSUI9biBvciB0aGF0CmRldm1fcmVzZXRfY29udHJvbF9nZXRfb3B0aW9uYWwgcmV0dXJucyBO
+VUxMIGlmIFJFU0VUX0NPTlRST0xMRVI9bgpiZWNhdXNlIHRoaXMgaGlkZXMgZXhhY3RseSB0aGUg
+a2luZCBvZiBwcm9ibGVtIHlvdSBwb2ludCBvdXQgaGVyZS4KCkJlc3QgcmVnYXJkcwpVd2UKCi0t
+IApQZW5ndXRyb25peCBlLksuICAgICAgICAgICAgICAgICAgICAgICAgICAgfCBVd2UgS2xlaW5l
+LUvDtm5pZyAgICAgICAgICAgIHwKSW5kdXN0cmlhbCBMaW51eCBTb2x1dGlvbnMgICAgICAgICAg
+ICAgICAgIHwgaHR0cDovL3d3dy5wZW5ndXRyb25peC5kZS8gIHwKCl9fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBs
+aXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
+cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
