@@ -2,54 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F38427B29D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 20:49:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7681A7B338
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 21:26:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NRofMJWxU429CZHHuZZ6u0p5yzy1Qvly1q2I48w1exY=; b=I5Ijyj/C3Hh2rw
-	7XU/t0RZrNB3XW0QAB0UjOYH3yZaLsbx8DNVewcYD0PDxCjlQOWPsif8DDc7QUc7uKVIPeFB7gXzC
-	I9NJIR7xboMwV3rry2qUZ6+ut0PP0c/43WZyDV3YVLaF1VfxMQ1euyjGyEJQPIFf73XVIN++2Wlo+
-	IbLnBozx7kSsxF8TzcwAQjMP4fDIdaXRFktsHZFZJpegDTnuV3lJk3dtubcamV3EtMHeivyhhLA7C
-	QFBg7iFHwZR3N61q0ww3UU6zteAkxjIEXot/mcn3P4kOVPRYSW+WclSi7+gNUkUTjPMb724wrK/y2
-	bkvJNvvS9HAJmuU2gt6g==;
+	List-Owner; bh=WM7HSEdBnMQYAnZJLKTCf/6GrdjOZNzgeSk5IWqrmB0=; b=QlpAqFovFoNF+Q
+	euf+U/zCQ84FqOiZfhxHCCj3rlqjO+krSl/7rXLtW3R5UJDsELBQXOxl/inXdrL+SiQcfkhTdQASX
+	YzfT2Ja4Ecr4trYPNT//K9oEFZG5KKMZttOJPFJXRMmUtZN741EmRvcjLPUcHo9Upph4U//proqq4
+	9W7clPVjmWOnxDzUm0tVlCqt0etuw7XD9evOpgKFIr+ajd/cZ0xYctlE3+B7RaPUHWSxO6wAvyqFk
+	I0/7f0tnNHv5JPYOgP2bsBFqKP51LVeR9Hs5zyAa8QmxzrSi2c9lkulBcUQvqrPyljzVe/Me/9o2q
+	A/jmPs67sePR7CeShAZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsXBN-00085W-F9; Tue, 30 Jul 2019 18:49:09 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1hsXl0-0004DZ-BU; Tue, 30 Jul 2019 19:25:58 +0000
+Received: from atlmailgw1.ami.com ([63.147.10.40])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsX8J-00055I-Hb; Tue, 30 Jul 2019 18:46:01 +0000
-Received: from floko.floko.floko (unknown
- [IPv6:2804:431:c7f1:ce2f:ec1:e6e6:2e9f:e76e])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested) (Authenticated sender: koike)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id A508728B911;
- Tue, 30 Jul 2019 19:45:53 +0100 (BST)
-From: Helen Koike <helen.koike@collabora.com>
-To: linux-rockchip@lists.infradead.org
-Subject: [PATCH v8 14/14] MAINTAINERS: add entry for Rockchip ISP1 driver
-Date: Tue, 30 Jul 2019 15:42:56 -0300
-Message-Id: <20190730184256.30338-15-helen.koike@collabora.com>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20190730184256.30338-1-helen.koike@collabora.com>
-References: <20190730184256.30338-1-helen.koike@collabora.com>
+ id 1hsXks-0004Cq-46
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 19:25:51 +0000
+X-AuditID: ac1060b2-3fdff70000003a7d-40-5d4099bccabf
+Received: from atlms1.us.megatrends.com (atlms1.us.megatrends.com
+ [172.16.96.144])
+ (using TLS with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by atlmailgw1.ami.com (Symantec Messaging Gateway) with SMTP id
+ C0.6E.14973.CB9904D5; Tue, 30 Jul 2019 15:25:49 -0400 (EDT)
+Received: from hongweiz-Ubuntu-AMI.us.megatrends.com (172.16.98.93) by
+ atlms1.us.megatrends.com (172.16.96.144) with Microsoft SMTP Server (TLS) id
+ 14.3.408.0; Tue, 30 Jul 2019 15:25:47 -0400
+From: Hongwei Zhang <hongweiz@ami.com>
+To: Andrew Jeffery <andrew@aj.id.au>, Linus Walleij
+ <linus.walleij@linaro.org>, <linux-gpio@vger.kernel.org>
+Subject: [v5 1/2] dt-bindings: gpio: aspeed: Add SGPIO support
+Date: Tue, 30 Jul 2019 15:25:37 -0400
+Message-ID: <1564514737-4638-1-git-send-email-hongweiz@ami.com>
+X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1563564291-9692-2-git-send-email-hongweiz@ami.com>
+References: <1563564291-9692-2-git-send-email-hongweiz@ami.com>
 MIME-Version: 1.0
+X-Originating-IP: [172.16.98.93]
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrKLMWRmVeSWpSXmKPExsWyRiBhgu7emQ6xBoe2s1vsusxh8WXuKRaL
+ +UfOsVr8Pv+X2WLKn+VMFpseX2O1aF59jtli8/w/jBaXd81hs1h6/SKTReveI+wO3B5X23ex
+ e6yZt4bR4/2NVnaPix+PMXtsWtXJ5nHn2h42j81L6j3Oz1jI6PF5k1wAZxSXTUpqTmZZapG+
+ XQJXxpPbDxkLnvJUvJr5nKWBcT1XFyMnh4SAicSdr61sXYxcHEICu5gktq+ewg7hHGaUePRr
+ KiNIFZuAmsTezXOYQGwRgTyJw+vfsoIUMQucYpKYsa+TFSQhLGAnsX72MWYQm0VAVWLT8s1g
+ zbwC9hKHt6xgg1gnJ3HzXCdYDaeAg8Tzy11A2ziAttlLrG4ShygXlDg58wkLiM0sICFx8MUL
+ sHIhAVmJW4ceM0GMUZB43veYZQKjwCwkLbOQtCxgZFrFKJRYkpObmJmTXm6ol5ibqZecn7uJ
+ ERIVm3Ywtlw0P8TIxMF4iFGCg1lJhHexuH2sEG9KYmVValF+fFFpTmrxIUZpDhYlcd6Va77F
+ CAmkJ5akZqemFqQWwWSZODilGhgT9ku+CJGXXdVbJtz580GtjNLRVUcruy2vNFusMj41ufj/
+ nPL3O8T+NCVcSPvQxKtyXfvK2UiFS9un6vrtNDY+kRjevcamj1137rHgS2siZrJU17j53G57
+ rrnp22K2N8bCXgESNyOlHT/f4wrgXbn1XlfCs9dt26xeps7peFXEtuVV6c81lppKLMUZiYZa
+ zEXFiQBMtJWHeAIAAA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_114559_880333_00D233D4 
-X-CRM114-Status: UNSURE (   7.77  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190730_122550_232924_0492D175 
+X-CRM114-Status: GOOD (  16.28  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
+ no trust [63.147.10.40 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,51 +79,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, eddie.cai.linux@gmail.com, kernel@collabora.com,
- heiko@sntech.de, jacob2.chen@rock-chips.com, jeffy.chen@rock-chips.com,
- zyc@rock-chips.com, linux-kernel@vger.kernel.org, tfiga@chromium.org,
- Helen Koike <helen.koike@collabora.com>, hans.verkuil@cisco.com,
- laurent.pinchart@ideasonboard.com, sakari.ailus@linux.intel.com,
- zhengsq@rock-chips.com, mchehab@kernel.org, ezequiel@collabora.com,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-aspeed@lists.ozlabs.org, linux-kernel@vger.kernel.org,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
+ Hongwei Zhang <hongweiz@ami.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add MAINTAINERS entry for the rockchip isp1 driver.
+Hello Linus and Andrew,
 
-Signed-off-by: Helen Koike <helen.koike@collabora.com>
----
+Thanks for your detailed comments, I just submitted v6 of our update:
+_http://patchwork.ozlabs.org/cover/1139035/
+_http://patchwork.ozlabs.org/patch/1139038/
+_http://patchwork.ozlabs.org/patch/1139040/
 
-Changes in v8: None
-Changes in v7: None
+please ignore my previous patches sent on 07/28, they does not have proper serial
+title and one of the patch is missing.
 
- MAINTAINERS | 8 ++++++++
- 1 file changed, 8 insertions(+)
+--Hongwei
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 6426db5198f0..7f38abcb4114 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -13743,6 +13743,14 @@ F:	drivers/hid/hid-roccat*
- F:	include/linux/hid-roccat*
- F:	Documentation/ABI/*/sysfs-driver-hid-roccat*
- 
-+ROCKCHIP ISP V1 DRIVER
-+M:	Helen Koike <helen.koike@collabora.com>
-+L:	linux-media@vger.kernel.org
-+S:	Maintained
-+F:	drivers/media/platform/rockchip/isp1/
-+F:	Documentation/devicetree/bindings/media/rockchip-isp1.txt
-+F:	Documentation/devicetree/bindings/media/rockchip-mipi-dphy.txt
-+
- ROCKCHIP RASTER 2D GRAPHIC ACCELERATION UNIT DRIVER
- M:	Jacob chen <jacob2.chen@rock-chips.com>
- L:	linux-media@vger.kernel.org
--- 
-2.22.0
-
+> From:	Linus Walleij <linus.walleij@linaro.org>
+> Sent:	Monday, July 29, 2019 5:57 PM
+> To:	Andrew Jeffery
+> Cc:	Hongwei Zhang; open list:GPIO SUBSYSTEM; Joel Stanley; open list:OPEN FIRMWARE AND 
+> FLATTENED DEVICE TREE BINDINGS; linux-aspeed; Bartosz Golaszewski; Rob Herring; Mark Rutland; 
+> linux-kernel@vger.kernel.org; Linux ARM
+> Subject:	Re: [v5 1/2] dt-bindings: gpio: aspeed: Add SGPIO support
+> 
+> On Mon, Jul 29, 2019 at 2:19 AM Andrew Jeffery <andrew@aj.id.au> wrote:
+> 
+> > The behaviour is to periodically emit the state of all enabled GPIOs 
+> > (i.e. the ngpios value), one per bus clock cycle. There's no explicit 
+> > addressing scheme, the protocol encodes the value for a given GPIO by 
+> > its position in the data stream relative to a pulse on the "load data"
+> > (LD) line, whose envelope covers the clock cycle for the last GPIO in 
+> > the sequence. Similar to SPI the bus has both out and in lines, which 
+> > cater to output/input GPIOs.
+> >
+> > A rough timing diagram for a 16-GPIO configuration looks like what 
+> > I've pasted here:
+> >
+> > https://gist.github.com/amboar/c9543af1957854474b8c05ab357f0675
+> 
+> OK that is complex. I agree we need to keep this driver together.
+> 
+> Yours,
+> Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
