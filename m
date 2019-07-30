@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 43FE97A078
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 07:44:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 734C27A07B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 07:44:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,42 +11,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=k0Fm3qJey4eiEuUki1JkR1Rpz3bVL3b2PPSLrPnifbY=; b=RdK60OY9mwy+GgCJAAmL0jfz9Q
-	BtqNrBKSYjh31AshvpSsKJ/3dNeci4oDXGmbCG/nZzHrlgbvvKpIqpFZHk7AkLHcqYD8OUIfsBY+X
-	LEeMVfAHbOM7L4zDg05DieRKcCEX59/6qOLrfkh58/Sn9/ibuRR2NyXBo+FC82mZplJ+V8c/H6q6L
-	ZseDy1irnOJX7xxtI1qE+ObApFHrKBdOvNyK7gT+elUGDM0Xug8onQR3CMyHc8+qshtEMN3JYbu76
-	o/gjLi+mns2wxmiGVZfV+A+0x67FUjYHXB4++NJ32yawBLPzCVZQB/hMWiXaw489jiBf5KRFBVq7R
-	fPF5wmsg==;
+	bh=puX5yUeAxlRl76FQVXcYMDDDFNaEyWDKfRkWO8JLCMg=; b=NIKRua7I8qKAqLQ0nVlW6pkmis
+	p4xIMzatUlaQvH/QbRibd0q3nTry3XTDTUw3hGv1IASQSzvLyFM6nE+zEFvGS6SA0DRepdxePvq1R
+	Q5oEwQk5vMipLuvVYYVpPTrBAnwKDEZ65qir4R9RH/TdC4+K90LxzvlnmS0Rac1n6mNpM81p1L/8z
+	6Vd0mmU/9YTVws80uZ7l9cgOHPc2EjK/Y4VglSjyJ0eZGXnsV4tmdDwuyX/OpuONehmawFeQvA/3p
+	QXP+H0UDNO3aKqGz3t9b/GZYkzqYkpX6rPW12EbNp4k2yGoDgojx8FP4TXT9K+OVEV8U7RQ/cwI2Q
+	oxxOBGQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsKvr-00054Y-RJ; Tue, 30 Jul 2019 05:44:19 +0000
+	id 1hsKwG-0005Mc-A2; Tue, 30 Jul 2019 05:44:44 +0000
 Received: from mx.socionext.com ([202.248.49.38])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hsKvK-0004qQ-1d
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 05:43:47 +0000
-Received: from unknown (HELO kinkan-ex.css.socionext.com) ([172.31.9.52])
+ id 1hsKvL-0004rD-5W
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 05:43:48 +0000
+Received: from unknown (HELO iyokan-ex.css.socionext.com) ([172.31.9.54])
  by mx.socionext.com with ESMTP; 30 Jul 2019 14:43:44 +0900
-Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
- by kinkan-ex.css.socionext.com (Postfix) with ESMTP id 23ADC180B6E;
+Received: from mail.mfilter.local (m-filter-2 [10.213.24.62])
+ by iyokan-ex.css.socionext.com (Postfix) with ESMTP id E5C3260629;
  Tue, 30 Jul 2019 14:43:44 +0900 (JST)
 Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
  Tue, 30 Jul 2019 14:43:44 +0900
 Received: from plum.e01.socionext.com (unknown [10.213.132.32])
- by kinkan.css.socionext.com (Postfix) with ESMTP id 7D4801A04FC;
- Tue, 30 Jul 2019 14:43:43 +0900 (JST)
+ by kinkan.css.socionext.com (Postfix) with ESMTP id 8AEA41A04FC;
+ Tue, 30 Jul 2019 14:43:44 +0900 (JST)
 From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 To: Linus Walleij <linus.walleij@linaro.org>,
  Masahiro Yamada <yamada.masahiro@socionext.com>, linux-gpio@vger.kernel.org
-Subject: [PATCH v2 2/5] pinctrl: uniphier: Add another audio I/O pin-mux
- settings for LD20
-Date: Tue, 30 Jul 2019 14:43:27 +0900
-Message-Id: <1564465410-9165-3-git-send-email-hayashi.kunihiko@socionext.com>
+Subject: [PATCH v2 3/5] pinctrl: uniphier: Add 5th LD20 MPEG2-TS input pin-mux
+ setting
+Date: Tue, 30 Jul 2019 14:43:28 +0900
+Message-Id: <1564465410-9165-4-git-send-email-hayashi.kunihiko@socionext.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1564465410-9165-1-git-send-email-hayashi.kunihiko@socionext.com>
 References: <1564465410-9165-1-git-send-email-hayashi.kunihiko@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_224346_198363_06974399 
-X-CRM114-Status: GOOD (  13.83  )
+X-CRM114-CacheID: sfid-20190729_224347_330441_011558B6 
+X-CRM114-Status: GOOD (  11.48  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -77,45 +77,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This adds support for pinmux settings of aout1b group. This group includes
-audio I/O signals derived from xirq pins, and it is equivalent to "aout1"
-in functionality.
+The 5th serial TS interface uses the following pins:
+  hscin4_s: PCA[11-14]
 
 Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+Acked-by: Masahiro Yamada <yamada.masahiro@socionext.com>
 ---
- drivers/pinctrl/uniphier/pinctrl-uniphier-ld20.c | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
+ drivers/pinctrl/uniphier/pinctrl-uniphier-ld20.c | 5 +++++
+ 1 file changed, 5 insertions(+)
 
 diff --git a/drivers/pinctrl/uniphier/pinctrl-uniphier-ld20.c b/drivers/pinctrl/uniphier/pinctrl-uniphier-ld20.c
-index 28e54b3..8d4fb65 100644
+index 8d4fb65..0a8b186 100644
 --- a/drivers/pinctrl/uniphier/pinctrl-uniphier-ld20.c
 +++ b/drivers/pinctrl/uniphier/pinctrl-uniphier-ld20.c
-@@ -544,6 +544,8 @@ static const struct pinctrl_pin_desc uniphier_ld20_pins[] = {
- 
- static const unsigned aout1_pins[] = {137, 138, 139, 140, 141, 142};
- static const int aout1_muxvals[] = {0, 0, 0, 0, 0, 0};
-+static const unsigned aout1b_pins[] = {150, 151, 152, 153, 154, 155, 156};
-+static const int aout1b_muxvals[] = {1, 1, 1, 1, 1, 1, 1};
- static const unsigned aoutiec1_pins[] = {135, 136};
- static const int aoutiec1_muxvals[] = {0, 0};
- static const unsigned int emmc_pins[] = {19, 20, 21, 22, 23, 24, 25};
-@@ -664,6 +666,7 @@ static const unsigned int gpio_range2_pins[] = {
- 
- static const struct uniphier_pinctrl_group uniphier_ld20_groups[] = {
- 	UNIPHIER_PINCTRL_GROUP(aout1),
-+	UNIPHIER_PINCTRL_GROUP(aout1b),
- 	UNIPHIER_PINCTRL_GROUP(aoutiec1),
- 	UNIPHIER_PINCTRL_GROUP(emmc),
- 	UNIPHIER_PINCTRL_GROUP(emmc_dat8),
-@@ -707,7 +710,7 @@ static const struct uniphier_pinctrl_group uniphier_ld20_groups[] = {
- 	UNIPHIER_PINCTRL_GROUP_GPIO(gpio_range2),
- };
- 
--static const char * const aout1_groups[] = {"aout1"};
-+static const char * const aout1_groups[] = {"aout1", "aout1b"};
- static const char * const aoutiec1_groups[] = {"aoutiec1"};
- static const char * const emmc_groups[] = {"emmc", "emmc_dat8"};
- static const char * const ether_rgmii_groups[] = {"ether_rgmii"};
+@@ -576,6 +576,8 @@ static const unsigned hscin2_s_pins[] = {124, 125, 126, 127};
+ static const int hscin2_s_muxvals[] = {3, 3, 3, 3};
+ static const unsigned hscin3_s_pins[] = {129, 130, 131, 132};
+ static const int hscin3_s_muxvals[] = {3, 3, 3, 3};
++static const unsigned hscin4_s_pins[] = {80, 81, 82, 83};
++static const int hscin4_s_muxvals[] = {3, 3, 3, 3};
+ static const unsigned hscout0_ci_pins[] = {113, 114, 115, 116, 117, 118, 119,
+ 					   120, 121, 122, 123};
+ static const int hscout0_ci_muxvals[] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+@@ -679,6 +681,7 @@ static const struct uniphier_pinctrl_group uniphier_ld20_groups[] = {
+ 	UNIPHIER_PINCTRL_GROUP(hscin1_s),
+ 	UNIPHIER_PINCTRL_GROUP(hscin2_s),
+ 	UNIPHIER_PINCTRL_GROUP(hscin3_s),
++	UNIPHIER_PINCTRL_GROUP(hscin4_s),
+ 	UNIPHIER_PINCTRL_GROUP(hscout0_ci),
+ 	UNIPHIER_PINCTRL_GROUP(hscout0_p),
+ 	UNIPHIER_PINCTRL_GROUP(hscout0_s),
+@@ -721,6 +724,7 @@ static const char * const hscin0_groups[] = {"hscin0_ci",
+ static const char * const hscin1_groups[] = {"hscin1_p", "hscin1_s"};
+ static const char * const hscin2_groups[] = {"hscin2_s"};
+ static const char * const hscin3_groups[] = {"hscin3_s"};
++static const char * const hscin4_groups[] = {"hscin4_s"};
+ static const char * const hscout0_groups[] = {"hscout0_ci",
+ 					      "hscout0_p",
+ 					      "hscout0_s"};
+@@ -757,6 +761,7 @@ static const struct uniphier_pinmux_function uniphier_ld20_functions[] = {
+ 	UNIPHIER_PINMUX_FUNCTION(hscin1),
+ 	UNIPHIER_PINMUX_FUNCTION(hscin2),
+ 	UNIPHIER_PINMUX_FUNCTION(hscin3),
++	UNIPHIER_PINMUX_FUNCTION(hscin4),
+ 	UNIPHIER_PINMUX_FUNCTION(hscout0),
+ 	UNIPHIER_PINMUX_FUNCTION(hscout1),
+ 	UNIPHIER_PINMUX_FUNCTION(i2c0),
 -- 
 2.7.4
 
