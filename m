@@ -2,67 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 350027A3CA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 11:16:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F20107A3D0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 11:16:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5A7ZoAWuqtlotrv18ffRAYDzADH1QKVfWekXPE6Ivh0=; b=pSNNj4Sczib7nM
-	etzp3fP9XEbSHgD9exPqo/5M8tGHwmIgELQEoTVOuYwDKY7w1MZ+cLG+mxwzcSEBp2a8P9FoDri+n
-	EUGRGS7esskT71QtlWEcIHYaCIUdoNMAmwetdqKuHGEtAWzDevlhaHQptihesVoko41Oh5tAIqzt+
-	e0+yB+n0uHxDuiDDEU4RDHgEFmUtiAsdgOfy1sX7Y65Rrd9XwUao8wHqXcOHIVmgJv3TbsWitEqDR
-	dDvgalQv++r/GTKA1NW7sGJbVsk8kvuuoiWR3DeXlrAb5edq6bpYPgpcTqX7Pt2Nu309TuC+K40zh
-	XlsK0SBebqx45gZXvfgg==;
+	List-Owner; bh=5A7ZoAWuqtlotrv18ffRAYDzADH1QKVfWekXPE6Ivh0=; b=YGRfGmEJXbqIom
+	P/aN+Qjh1V1whcuFyoQJL/Iudn5sVGJdVPpNgCmbU4PASmhxRFtb34F33M9clkUz3ponW2vIff1pY
+	KIXrR1m5+7Lwg8IUVMrKqOxg81wCAx09clig+xDFAM1mqa7FERxYwJhlrYh+IZ/j/VFH10Sv1GvfL
+	3K68vcoKGr3PW6kmC4vhBq184xrTBSjyxmZlCS/dUDz4ScGmd1mADqi583NvOttB3G2+T9Kf+MkuS
+	z62G11yXP8tOyMWGPtgxn9+IRzKtpoMXv8F5lWrM9zUinLFC2Hw8QCfU0LqUhfUrgtWCzvMzbN64b
+	CUcYJKKVW1m7MBwqZALg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsOEu-0006Hg-HG; Tue, 30 Jul 2019 09:16:12 +0000
-Received: from mail-wr1-f68.google.com ([209.85.221.68])
+	id 1hsOFL-0006Yp-AV; Tue, 30 Jul 2019 09:16:39 +0000
+Received: from mail-wm1-f65.google.com ([209.85.128.65])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsOEa-0006EK-Bh
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 09:15:53 +0000
-Received: by mail-wr1-f68.google.com with SMTP id g17so64915413wrr.5
+ id 1hsOEy-0006XC-KF
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 09:16:18 +0000
+Received: by mail-wm1-f65.google.com with SMTP id v15so56421765wml.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 30 Jul 2019 02:15:52 -0700 (PDT)
+ Tue, 30 Jul 2019 02:16:16 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
  bh=7p0S88q6+XKwX8nM1vn9ytVwUof8aNjUGgnKhdm0yLw=;
- b=IK4ZgAMhg4rYogQRRNCvAHvpSPaqBsDVkaTSZVpCeXH39PQrwpIPZeV4BsGaWAvfcr
- v6ZBp6kalrxU6cjFNKmp4xSULJ2o7PT6ij7ezGRJBD/vMXlQ/WnKpqLuJFVNauwuCpLa
- hfDMC891luOA3X4KPoiSJKnaKdXFX3GmNgI7HZZIVRmbce0zFT0xrZLPAN9bkRhXxak4
- 4fuQeCIiFR2iBjFBIIsRKrRWVAjzIZR5AFYwk0MWYXlGDAv8mkS+P0zdtooKsa5vrzBf
- zj5g/X+wcSIkeVWrpXG4ilCHpSQs5EVyUmuPrrQ86/sz9WU2S2uYCPQSVre6B7yAZZsv
- e7Dg==
-X-Gm-Message-State: APjAAAVQP+rH+PqTUMVbqbzg33xTz2m9O0nauxMfiHq1prITSGPfgYb0
- Cqmszub9PnbhQF7FZABOThy490d+6/fVg97MmUw=
-X-Google-Smtp-Source: APXvYqwFq8tNlizKa4xwwnwOIsApULbIfdjo4PywI+8FPcpDJoetPdAip7VupgqUk3oill6YxGGIPMtZ5oH3osoVAt0=
-X-Received: by 2002:adf:ab51:: with SMTP id r17mr100214527wrc.95.1564478151165; 
- Tue, 30 Jul 2019 02:15:51 -0700 (PDT)
+ b=mPJZiVu6pae6vV9TUVA7ZPNNoREvGN3XroV7qQe7Z7hiI2LJok+wVwyc81rPvWrhOE
+ FHgqBXxsSqdOxe54iBrOLxScgTz66mpNoof6RW16eP0iXzSMpvblOzPxAz648kr8Zq1o
+ xquGPmu7HerJP+N9v6P3XmK9X/iR8R2u4YLIr/g7nRC01ucoSSzQ21yBLxqOUW1cN/1/
+ aVC8GpT6LZ2ozGwRXVSqVmXKKe/y7Dmt86VO8fR4hKWLqab79cl/zOEJYzPZguqZlmLj
+ SkqMKFOA99jomFm6Z2bu9qJdT2TkshqF92o+ZFjVbG1pW/4Y1nUWUDWEbT8aBNbr0Ocz
+ lypg==
+X-Gm-Message-State: APjAAAUpDxShzeR5k/XxAQg99apYRh7NjM9HsougAm6HILCm4SSnM4Az
+ um0UmB9xAj4yl4uxIvCdFiPBl2zxKkebP6eeu7I=
+X-Google-Smtp-Source: APXvYqw6hnQNgp9ba6JoXeB11DQEMihNidxPVOC8Wl9Pvr75u2HCkAaBWnNzEeHksMe9QZtBaO+D+5iMfEcGUkHu4Lc=
+X-Received: by 2002:a7b:c310:: with SMTP id k16mr63730000wmj.133.1564478175274; 
+ Tue, 30 Jul 2019 02:16:15 -0700 (PDT)
 MIME-Version: 1.0
-References: <1563816172-17864-1-git-send-email-ykaneko0929@gmail.com>
-In-Reply-To: <1563816172-17864-1-git-send-email-ykaneko0929@gmail.com>
+References: <1563816188-17922-1-git-send-email-ykaneko0929@gmail.com>
+In-Reply-To: <1563816188-17922-1-git-send-email-ykaneko0929@gmail.com>
 From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Tue, 30 Jul 2019 11:15:39 +0200
-Message-ID: <CAMuHMdXCNk918JKdudm7Ww34aRGm34zUh7wnQ4=PDGN=XK_Ncg@mail.gmail.com>
-Subject: Re: [PATCH] arm64: dts: renesas: r8a7795-salvator-x: sort nodes
+Date: Tue, 30 Jul 2019 11:16:03 +0200
+Message-ID: <CAMuHMdVP_NnnOPPsRCmUnR6quMJv2QnT0ZgE+kSRbV6-GmMJoQ@mail.gmail.com>
+Subject: Re: [PATCH] arm64: dts: renesas: r8a7795-salvator-xs: sort nodes
 To: Yoshihiro Kaneko <ykaneko0929@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_021552_537407_9C875636 
+X-CRM114-CacheID: sfid-20190730_021616_850318_2F68A6CC 
 X-CRM114-Status: UNSURE (   9.90  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.2 (/)
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.221.68 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.221.68 listed in wl.mailspike.net]
+ no trust [209.85.128.65 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
