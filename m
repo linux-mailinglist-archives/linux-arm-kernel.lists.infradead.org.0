@@ -2,58 +2,37 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D5E3D7ABF1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 17:06:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2ABFC7ABF2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 17:07:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=fGfELB37ljUNxw4qq22yJpLpAljOWmtN1nsSWOYgqFc=; b=efaS94SDV0f3s0Zbr0RK09e8Li
-	oL99sou3TQl7bDq86+r2x8VDhUT99dEtpn0fsEMR/beefMfGoI3hw7xLROzetPN+4o+X3YRZAVW2G
-	0/pC6E8m7SUQL1v1p+KKG79vDJP9VvWyeTHHzajf7y1HDuKX+IN9VyK7ySoSt8Sd6cvG0RsrVezsW
-	F8qfbLpZyCfSslcwcumZiDk6dTfssZpZX+FQ4z7TMnNHCqdT6pkPMG9eGN7Spl/7l2poeT2NN8IvE
-	XWredjoiVgB2FEIsZY9Bu+U/SnEqAPGPRAuo2RbQsIBQdaqf3mZNDZc+I/s6AxppzKgl/yhTgq0XD
-	Nh2rYtoQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RZtsR9hB8t+FqDbKUijaxvkg9T8UZ63a8v8Pa6B1nsU=; b=M4BLUVsG12DGOC
+	Zm3RdMLWJmv4g7oXQgMrGM6pjodYKuB6DC41FCZ8mcmacFk5/b9Ooe37umn4Z28lb+qY4j3JhfDDG
+	gPK+RJGr0Ww8lKHTZIj+l5HglUASanUjae+OQXoh/WPG2QPpTpoyApSaMy+GN1f2hUqC+KSQPxoHv
+	IDabuknnEISP+iF+Uk3TAbw0acrlagAdnSpS5VsVKMefPbjmrkvPBe1YWTzA0TJvtCmb7a+bCQmQd
+	IdBu3Znf1qe68T1njTjX2w3KoUGEXEcvDbPqbWM88RO68RWGjPI6Qc9/+GTRYteEcGe9NDKXMZZQq
+	Vy94RCknxtHAbfyWLp+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsTiC-0000ln-B3; Tue, 30 Jul 2019 15:06:48 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hsThh-0000du-3Q
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 15:06:18 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 512F028;
- Tue, 30 Jul 2019 08:06:16 -0700 (PDT)
-Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- F0DD13F694; Tue, 30 Jul 2019 08:06:15 -0700 (PDT)
-Subject: Re: [PATCH] arm64: esr: Add ESR exception class encoding for trapped
- ERET
-To: Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
-References: <20190730144147.3694-1-will@kernel.org>
-From: Marc Zyngier <maz@kernel.org>
-Organization: Approximate
-Message-ID: <813d6305-00ad-2eb3-1234-7b15b37bd719@kernel.org>
-Date: Tue, 30 Jul 2019 16:06:14 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1hsTiW-00014m-NC; Tue, 30 Jul 2019 15:07:08 +0000
+Received: from hch by bombadil.infradead.org with local (Exim 4.92 #3 (Red Hat
+ Linux)) id 1hsTho-0000n1-Sp; Tue, 30 Jul 2019 15:06:25 +0000
+Date: Tue, 30 Jul 2019 08:06:24 -0700
+From: Christoph Hellwig <hch@infradead.org>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCH] iommu/dma: Handle MSI mappings separately
+Message-ID: <20190730150624.GA27573@infradead.org>
+References: <2b2595de703c60a772ebcffe248d0cf036143e6a.1564414114.git.robin.murphy@arm.com>
+ <20190730062843.GA1400@infradead.org>
+ <90566814-ed36-2eb9-49e2-98a4a949c9f6@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20190730144147.3694-1-will@kernel.org>
-Content-Language: en-US
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_080617_235027_ED33E4D8 
-X-CRM114-Status: UNSURE (   9.75  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.0 (+)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+Content-Disposition: inline
+In-Reply-To: <90566814-ed36-2eb9-49e2-98a4a949c9f6@arm.com>
+User-Agent: Mutt/1.11.4 (2019-03-13)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,26 +44,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: maz@kernel.org, joro@8bytes.org, Christoph Hellwig <hch@infradead.org>,
+ iommu@lists.linux-foundation.org, Andre Przywara <andre.przywara@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 30/07/2019 15:41, Will Deacon wrote:
-> The ESR.EC encoding of 0b011010 (0x1a) describes an exception generated
-> by an ERET, ERETAA or ERETAB instruction as a result of a nested
-> virtualisation trap to EL2.
+On Tue, Jul 30, 2019 at 11:43:25AM +0100, Robin Murphy wrote:
+> > Hmm.  I remember proposing this patch and you didn't like it because
+> > we could also have msis for a !IOMMU_DMA_IOVA_COOKIE cookie type.
+> > Or did we talk past each other?
 > 
-> Add an encoding for this EC and a string description so that we identify
-> it correctly if we take one unexpectedly.
+> Do you have a pointer? That sparks the vaguest of memories, but I can't seem
+> to turn anything up in my inbox. If that was my objection, though, it sounds
+> like your patch was probably trying to go a step or two further than this
+> one.
+
+I can't find anything either.  This must have been a git tree I passed
+around to you before posting it.
+
+> > Note that if this change turns out to be valid we should also
+> > clean up the iommu_dma_free_iova() side.
 > 
-> Signed-off-by: Will Deacon <will@kernel.org>
+> We're not touching the iommu_dma_{alloc,free}_iova() path here; those are
+> designed to cope with both types of cookie, and I think that's a reasonable
+> abstraction to keep. This is just getting rid of the asymmetry - and now bug
+> - caused by trying to keep the MSI page flow going through a special case in
+> __iommu_dma_map() despite that having evolved into a more specific DMA
+> domain fastpath (there's no corresponding unmap special case since MSI
+> mappings just persist and get recycled until the domain is destroyed).
 
-Acked-by: Marc Zyngier <maz@kernel.org>
-
-	M.
--- 
-Jazz is not dead, it just smells funny...
+Ok, that might have been the issue with my earlier patch..
 
 _______________________________________________
 linux-arm-kernel mailing list
