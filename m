@@ -2,155 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 018577AA60
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 15:58:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D9B77AA64
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 15:59:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dUpDj8G8asYjjPQ9s8DM8nNlwAY03cVK3Ze+4eTmeZo=; b=tIcr7sr3HhaeBr
-	LTDu3V7gvh3yp1fm9oDdr8tjxTq5D2AISa2Vdcc4z5C7aixKkmtEmRXLkGl+1d2GyZfl1OR1aWw47
-	j3fi2aIGwADpyraFsxbWJZhea4EasY6VzetafeF13rkJiUYmt0C+fwB972HJE3k12xGulqGpRfd1H
-	znKnKhCjxs/YmIzmbFk6gmSm77Z2PznA+gU9nD2Fw2ujqOgQSdDd2D37oF4l1uLH7Vq5TmTp5ufvQ
-	XBzYICOV6SdruwLQlyiLexwEOCXqF3+ZfVWFV3rkeA0HcExZo9qERbgVYqCZOIUzcMEymCv34lb3N
-	8I+/AhZfyZ9ZCqF4sjYA==;
+	List-Owner; bh=Bn7LE9ZxTkGS/mPEN1nNj2C046UCGC61+CNbdr111ro=; b=CK1iyCxUyJ8vgi
+	63TSELelktEH6qSMlModhqHeRRO34QfmFVuRKwe2e3bUrG6nETRN5VQoJ6Nktfd+DNtN44s4hhT2A
+	AOfKoKKwJHi7AmPeGbqFhonsht2u7kKpS9e64CDgoBVd04FjNHzkz9tnyf5E8YjJ+B+8WNM6pymry
+	l3cy5pB6F0lxjDzF6eBXUJy2MUpIslitBBXjYa+lSpXgLl8TIrgy2B1896LHbL+xFARgTw034/GOZ
+	uPLpbGmv6GfH86pbxQAeCreZRWnaB7XiBWD0vrU6+piKpPHaGS7w1VNbK+RoB6km6tCvKhHbu5try
+	dsq3mPR7hbVXl7eUIw7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsSeO-0001Dy-DJ; Tue, 30 Jul 2019 13:58:48 +0000
-Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
- helo=smtprelay-out1.synopsys.com)
+	id 1hsSfQ-0001jh-5p; Tue, 30 Jul 2019 13:59:52 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsSe4-0001D5-C9
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 13:58:29 +0000
-Received: from mailhost.synopsys.com (badc-mailhost2.synopsys.com
- [10.192.0.18])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id DBA25C01EC;
- Tue, 30 Jul 2019 13:58:27 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1564495108; bh=dsRxsIMMA7Re2X5jzrM5BT6whgSxGRni25VGvpOmnpc=;
- h=From:To:CC:Subject:Date:References:In-Reply-To:From;
- b=WVKafgDCUDtcxZ92sztqdz5jcNSERrbmwYXkMtEYzKK9S+jqITSVmSBLzbwiRH8mB
- YOLLfykPbJV2sGAD5J++68mvV8xXD158OwAVRCfTNzvP4CH0qaRi53yEj1mO+ORW4y
- lseDX8bzbLegxyLIF+G5+OGzzcFtjqv4ZjpHmVELCbBa9xW4CgAT6tRXIV5Oqyt01j
- 5JcT1rFwLmS5ywuDzMUozuQDlPX0b6SMytBKjs+teq8LiZTdCgOYvNSTrkYHbl5Vev
- w61eln0Gdqez0lbPzRs8MleRgMrGH3afocpzZj+pk5ZpNXeCnAjeKBmLJYMTdm/sJa
- gh5cJv2sK0iYw==
-Received: from US01WEHTC3.internal.synopsys.com
- (us01wehtc3.internal.synopsys.com [10.15.84.232])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
- (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id F1442A0069;
- Tue, 30 Jul 2019 13:58:20 +0000 (UTC)
-Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
- US01WEHTC3.internal.synopsys.com (10.15.84.232) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Tue, 30 Jul 2019 06:58:20 -0700
-Received: from NAM04-CO1-obe.outbound.protection.outlook.com (10.13.134.195)
- by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
- 14.3.408.0; Tue, 30 Jul 2019 06:58:20 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=RbnUeURGn8laCLbCesOGPQlQDuwW1OtI/DOG9EmogemAJ/SB2nC0A8O9XWld5nnKULwJbIGdTM+LRrkB4RyHzhOI1hu9tV28UhrUz9dKg9EFTi8Ch8XGASUZV0XE/HaUAT5FJsED9B8JRRKhYEAOROIyZMItnH33h9XwsSfYPuHxl0gzzVep9JValWU/7rfu3wWtDxgNn7wZ3Z3P30P1raciNreBY3HuZTQQfC2S3L6DUsazk9hbOcDaSYJjyvRFkTpYQy7zXZsQhiWVGQuqQ4y5BraNdzpwsJmieAHesDxMrQIg8qJtAU5uo6DW9ndZjvHNCEQYLTdBkIoe90hseQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=dsRxsIMMA7Re2X5jzrM5BT6whgSxGRni25VGvpOmnpc=;
- b=UC8Hmyxm+gAibQ6KphZnmG45GWe7ZDVyVYqZd+twcj+wkqE61MswYphODc64zSRGyLxLi7T1AbldpnPeQgcFdrc3YEH1wZmou1fdlrTfirYJo4x4vL7t9OsIQn+0/hunKMVnj4McmK8l9LDx1XTmgrl8sDc/naOewJwTuTXuWz47TurCgjEsq5C7+Mij6fIdmvGeblj2CLd8kDnVSbljYFDfD1klehn7QtgRG5pGW5JJFcXCj9u83bJccFfvitmE9As/TH7TbITB3eJ05/M8SlHtcwVHMyfw99Q/rNMv2kGSHD5Iu1MezJmybVbI1u07kh43ZCwEYS8TT8/qHjf6Zg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=synopsys.com;dmarc=pass action=none
- header.from=synopsys.com;dkim=pass header.d=synopsys.com;arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=synopsys.onmicrosoft.com; s=selector1-synopsys-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=dsRxsIMMA7Re2X5jzrM5BT6whgSxGRni25VGvpOmnpc=;
- b=Shuw1cY2YS1Y7RDLxL41YCeVTdHDqj1F6Y0RdO3rkL9Tep9K5BtMKnUEbCdupcfHR7bA5Osx3/Aa+CHcewpd0eD54kx6Akhq52j1edlw63Zqij+SPZOjCxeOSISK9naN1miICOnWgZoRzMNC7Hcu4UhsErLI+spCwg8aUZoVAPE=
-Received: from BN8PR12MB3266.namprd12.prod.outlook.com (20.179.66.159) by
- BN8PR12MB3202.namprd12.prod.outlook.com (20.179.65.29) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2115.15; Tue, 30 Jul 2019 13:58:19 +0000
-Received: from BN8PR12MB3266.namprd12.prod.outlook.com
- ([fe80::6016:66cc:e24f:986c]) by BN8PR12MB3266.namprd12.prod.outlook.com
- ([fe80::6016:66cc:e24f:986c%5]) with mapi id 15.20.2115.005; Tue, 30 Jul 2019
- 13:58:19 +0000
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-To: Jon Hunter <jonathanh@nvidia.com>, Jose Abreu <Jose.Abreu@synopsys.com>,
- Robin Murphy <robin.murphy@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>, 
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>, 
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
-Subject: RE: [PATCH net-next 3/3] net: stmmac: Introducing support for Page
- Pool
-Thread-Topic: [PATCH net-next 3/3] net: stmmac: Introducing support for Page
- Pool
-Thread-Index: AQHVMYtq2Zx4WVoG/U2kL8GCK0bP/abbdEOAgAAAgcCAABHmgIAADDMggAGB8wCAAa8dIIACpFiggAAs3ACAAAdb0IAACH4AgAACfECAAJ/bAIAAyh8ggABDGoCAAAXYoA==
-Date: Tue, 30 Jul 2019 13:58:18 +0000
-Message-ID: <BN8PR12MB32664C177C9356CE8C15FC65D3DC0@BN8PR12MB3266.namprd12.prod.outlook.com>
-References: <cover.1562149883.git.joabreu@synopsys.com>
- <1b254bb7fc6044c5e6e2fdd9e00088d1d13a808b.1562149883.git.joabreu@synopsys.com>
- <7a79be5d-7ba2-c457-36d3-1ccef6572181@nvidia.com>
- <BYAPR12MB3269927AB1F67D46E150ED6BD3C10@BYAPR12MB3269.namprd12.prod.outlook.com>
- <9e695f33-fd9f-a910-0891-2b63bd75e082@nvidia.com>
- <BYAPR12MB3269B4A401E4DA10A07515C7D3C10@BYAPR12MB3269.namprd12.prod.outlook.com>
- <1e2ea942-28fe-15b9-f675-8d6585f9a33f@nvidia.com>
- <BYAPR12MB326922CDCB1D4B3D4A780CFDD3C30@BYAPR12MB3269.namprd12.prod.outlook.com>
- <MN2PR12MB327907D4A6FB378AC989571AD3DD0@MN2PR12MB3279.namprd12.prod.outlook.com>
- <b99b1e49-0cbc-2c66-6325-50fa6f263d91@nvidia.com>
- <MN2PR12MB327997BDF2EA5CEE00F45AC3D3DD0@MN2PR12MB3279.namprd12.prod.outlook.com>
- <fcf648d2-70cc-d734-871a-ca7f745791b7@arm.com>
- <MN2PR12MB3279ABF628C52883021123C5D3DD0@MN2PR12MB3279.namprd12.prod.outlook.com>
- <8a60361f-b914-93ef-0d80-92ae4ad8b808@nvidia.com>
- <BN8PR12MB32664E23137805984F6FB2DAD3DC0@BN8PR12MB3266.namprd12.prod.outlook.com>
- <8cb2ac13-3009-2117-d55f-6f1126b690e4@nvidia.com>
-In-Reply-To: <8cb2ac13-3009-2117-d55f-6f1126b690e4@nvidia.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=joabreu@synopsys.com; 
-x-originating-ip: [83.174.63.141]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 4e792b53-b959-438f-8dad-08d714f5fa08
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:BN8PR12MB3202; 
-x-ms-traffictypediagnostic: BN8PR12MB3202:|BN8PR12MB3202:
-x-microsoft-antispam-prvs: <BN8PR12MB320204B8D99EB76DA2E6720AD3DC0@BN8PR12MB3202.namprd12.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 0114FF88F6
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(376002)(39860400002)(346002)(396003)(366004)(136003)(52284002)(189003)(199004)(86362001)(68736007)(71200400001)(71190400001)(74316002)(4744005)(6506007)(6436002)(99286004)(66476007)(66556008)(26005)(102836004)(66446008)(110136005)(53546011)(76116006)(316002)(9686003)(305945005)(64756008)(5024004)(476003)(229853002)(76176011)(52536014)(7696005)(486006)(54906003)(55016002)(11346002)(66946007)(5660300002)(186003)(7416002)(53936002)(446003)(256004)(81156014)(33656002)(8936002)(81166006)(2906002)(8676002)(6116002)(3846002)(4326008)(6246003)(7736002)(14454004)(2201001)(66066001)(478600001)(25786009)(2501003)(49934004);
- DIR:OUT; SFP:1102; SCL:1; SRVR:BN8PR12MB3202;
- H:BN8PR12MB3266.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: synopsys.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: pzgpz9N7o5wfOFhHVs5Pa5mklnt/YMu2ajihCdfSUVZ5I6waubJ0FNCe8/xLusFHhHy5eqD3+nXT/BOyMddZStIjrncFVlXa4pGjFGqLzVIwlA78iBQPBU7nVxV1zXErwBX2+BDJwug4tCVTNhi64uDPKagoHx83sjwGiIcayt8oMX9D9hgqt8XEGxnipoYmAV8RuceL/vkMR251NI843KRumncTjIgMDq9jIIRBqyC8zNrZyvdqGpdeBPOiv4vu9De5a8d/cDzKI6xGkX2LN+yOBJey5fXGOu5vSb8mtcoAZKKQp5q/GVwynRuWI8dWIu2oe6E/mubskgsIcPhDOPv43lm3ALND8zysZqwWPPKRlHl7BtabnqDRZu/VXtGLiyi0wbqgHu3QhyxjdPA51WGnKJVvWvfli4mNTvsUqMY=
+ id 1hsSfB-0001iz-U7
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 13:59:40 +0000
+Received: by mail-io1-xd43.google.com with SMTP id k20so128236399ios.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 30 Jul 2019 06:59:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=9wb5fCPLRkHIuopagtxyMmMpXLrl0Rl6PybjU+HPqQI=;
+ b=XiAE8fVgxaehenU+6hOzDym1qp9KOc38kQrFKPFusw0TNdTWtcpXfm0HHOEOuX2EZA
+ owtofDoewjXypreHkadKme6OaeM/0jjHxnAExAs6aVvNVtVhZDpAlArb0jAaoTycKXtZ
+ 150pDtKr3oDAnfY3sLdcTe2xNY+9iR/bZdm8uwAHV7v7fXf0B8vad1j0VGm6IaQOOxSO
+ meW/+YTQprYOpoHKACzS71pfANzEgmS1rZ3d8wxt3oBDv5hvy1cI4PUpYz2yoj6NgGsJ
+ P17QxdLGR+z8WEmgdqa1LkUz1n9DYueRAgrwf7rWkLCKm1aHe7WhIMoSqeDo5Oa22BHz
+ NsPw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=9wb5fCPLRkHIuopagtxyMmMpXLrl0Rl6PybjU+HPqQI=;
+ b=Hz4Z1pj8OEgunYiHYM6qDshswI3YatyBj2k82qblqsCW+lAhLB/acyUPZ0opd4pxFX
+ lj3sUuRoT86mFXe4R06PtBAV1QZQwjjxKPEgfdFS/t7PzyDzpVquSP7hxjpyVuIB+PEO
+ uBo9hY9S/HhWwopWoSV+QX5vFdDPVY+lDfJchhIEvbvq7VvysRo1op4t4JHEBSjwFi0l
+ Cja1969fY+7UdPV55dpnYtUd75l7bM61X0FyktKXWhUkrOMk8gA+8n/pA6YcTgcFlE+z
+ kFsc5HnoOpgOk/wexmpX+hwQN3jPZE4knz5yLVKk5VSrzRGwvb2jMMATkZWGUS6hRrdh
+ N6Dw==
+X-Gm-Message-State: APjAAAVzWZa8Md0Ts+EcZi2ivo9hfFgZh199a6295aWz7L0AnD1iZxpc
+ xlqpUmsIPPxrkzJ1O1LQKcBoPV+9PurtHiBsEg==
+X-Google-Smtp-Source: APXvYqz3fRWTIjRIVoDNAUnG5ad5abKplfbPOuu/Fy8rrJopOs18LOdhYdYfpZV5dUsfdmC9kxUz91NzmtR6jHx1GnA=
+X-Received: by 2002:a6b:f80e:: with SMTP id o14mr37504332ioh.1.1564495176204; 
+ Tue, 30 Jul 2019 06:59:36 -0700 (PDT)
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 4e792b53-b959-438f-8dad-08d714f5fa08
-X-MS-Exchange-CrossTenant-originalarrivaltime: 30 Jul 2019 13:58:18.8933 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: joabreu@synopsys.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN8PR12MB3202
-X-OriginatorOrg: synopsys.com
+References: <CAK8P3a3jjDh6aEVf0bBFYc=8GtB38kL6sWVZGJiUe427A7m2ng@mail.gmail.com>
+ <CAK8P3a1ss9-G_mr48-UMOenrA0XDGWUFik4TC=m0WFfimoFdnQ@mail.gmail.com>
+ <CAK8P3a3VsArSUgMwoPVxm8JcTPAQDoztg22MGqX4Vj5cjtADZg@mail.gmail.com>
+In-Reply-To: <CAK8P3a3VsArSUgMwoPVxm8JcTPAQDoztg22MGqX4Vj5cjtADZg@mail.gmail.com>
+From: Avi Fishman <avifishman70@gmail.com>
+Date: Tue, 30 Jul 2019 16:58:47 +0300
+Message-ID: <CAKKbWA6aUBec8tTQNCJow8c6=SyS-y4HUC=3sMJp6_Oz51iF=A@mail.gmail.com>
+Subject: Re: RFC: remove Nuvoton w90x900/nuc900 platform?
+To: Arnd Bergmann <arnd@arndb.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_065828_472013_FD35C539 
-X-CRM114-Status: GOOD (  13.82  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190730_065937_971359_FDCD2A31 
+X-CRM114-Status: GOOD (  23.33  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (avifishman70[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (avifishman70[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -169,44 +96,172 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Joao Pinto <Joao.Pinto@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-tegra <linux-tegra@vger.kernel.org>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S . Miller" <davem@davemloft.net>
+Cc: Tomer Maimon <tmaimon77@gmail.com>, Patrick Venture <venture@google.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "Wanzongshun \(Vincent\)" <wanzongshun@huawei.com>,
+ Tali Perry <tali.perry1@gmail.com>, Nancy Yuen <yuenn@google.com>,
+ Russell King <rmk+kernel@armlinux.org.uk>,
+ OpenBMC Maillist <openbmc@lists.ozlabs.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Benjamin Fair <benjaminfair@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jon Hunter <jonathanh@nvidia.com>
-Date: Jul/30/2019, 14:36:39 (UTC+00:00)
+Note that we we are going to add soon drivers/net/ethernet/nuvoton/npcm7xx_emc.c
+so maybe don't remove drivers/net/ethernet/nuvoton
 
-> 
-> On 30/07/2019 10:39, Jose Abreu wrote:
-> 
-> ...
-> 
-> > I looked at netsec implementation and I noticed that we are syncing the 
-> > old buffer for device instead of the new one. netsec syncs the buffer 
-> > for device immediately after the allocation which may be what we have to 
-> > do. Maybe the attached patch can make things work for you ?
-> 
-> Great! This one works. I have booted this several times and I am no
-> longer seeing any issues. Thanks for figuring this out!
-> 
-> Feel free to add my ...
-> 
-> Tested-by: Jon Hunter <jonathanh@nvidia.com>
+On Tue, Jul 30, 2019 at 4:01 PM Arnd Bergmann <arnd@arndb.de> wrote:
+>
+> That wasn't it either, sorry for spamming the rest. I found one more
+> address for Zongshun at Huawei.
+>
+> On Tue, Jul 30, 2019 at 2:34 PM Arnd Bergmann <arnd@arndb.de> wrote:
+> >
+> > Trying Wan Zongshun <Vincent.Wan@amd.com> instead of
+> > the bouncing Wan ZongShun <mcuos.com@gmail.com>.
+> > (I assume you are the same person, sorry if not).
+> >
+> > On Tue, Jul 30, 2019 at 2:09 PM Arnd Bergmann <arnd@arndb.de> wrote:
+> > >
+> > > As the mach-netx and mach-8695 platforms are being removed now,
+> > > I wonder whether we should do the same with w90x00: Here is what
+> > > I found after looking at the git history and external material for it.
+> > >
+> > >     - The supported chips (nuc910/950/960) are no longer marketed
+> > >       by the manufacturer
+> > >
+> > >     - Newer chips from the same family (nuc97x, nuc980, n329x)
+> > >       that are still marketed have Linux BSPs but those were never
+> > >       submitted for upstream inclusion.
+> > >
+> > >     - Wan ZongShun is listed as maintainer, but the last patch he wrote
+> > >       was in 2011.
+> > >
+> > >     - All patches to w90x900 platform specific files afterwards
+> > >       are cleanups that were apparently done without access to
+> > >       test hardware.
+> > >
+> > >     - The http://www.mcuos.com/ website listed in the MAINTAINERS
+> > >        file is no longer reachable.
+> > >
+> > > We do support the newer NPCM platform from Nuvoton. I don't think
+> > > there are any shared drivers between the two, but I've added its
+> > > maintainers to Cc anyway, in case they still (plan to) use one of
+> > > those drivers.
+> > >
+> > > If we decide that it's time to let go, I'll would the patches below.
+> > >
+> > >       watchdog: remove w90x900 driver
+> > >       spi: remove w90x900 driver
+> > >       ASoC: remove w90x900/nuc900 platform drivers
+> > >       fbdev: remove w90x900/nuc900 platform drivers
+> > >       Input: remove w90x900 keyboard driver
+> > >       Input: remove w90x900 touchscreen driver
+> > >       mtd: rawnand: remove w90x900 driver
+> > >       net: remove w90p910-ether driver
+> > >       rtc: remove w90x900/nuc900 driver
+> > >       usb: remove ehci-w90x900 driver
+> > >       ARM: remove w90x900 platform
+> > >
+> > >  Documentation/watchdog/watchdog-parameters.rst   |   10 -
+> > >  MAINTAINERS                                      |   16 -
+> > >  arch/arm/Kconfig                                 |   21 +-
+> > >  arch/arm/Makefile                                |    1 -
+> > >  arch/arm/configs/nuc910_defconfig                |   51 -
+> > >  arch/arm/configs/nuc950_defconfig                |   67 --
+> > >  arch/arm/configs/nuc960_defconfig                |   57 --
+> > >  arch/arm/mach-w90x900/Kconfig                    |   54 --
+> > >  arch/arm/mach-w90x900/Makefile                   |   20 -
+> > >  arch/arm/mach-w90x900/Makefile.boot              |    4 -
+> > >  arch/arm/mach-w90x900/clksel.c                   |   88 --
+> > >  arch/arm/mach-w90x900/clock.c                    |  121 ---
+> > >  arch/arm/mach-w90x900/clock.h                    |   40 -
+> > >  arch/arm/mach-w90x900/cpu.c                      |  238 -----
+> > >  arch/arm/mach-w90x900/cpu.h                      |   56 --
+> > >  arch/arm/mach-w90x900/dev.c                      |  537 -----------
+> > >  arch/arm/mach-w90x900/gpio.c                     |  150 ---
+> > >  arch/arm/mach-w90x900/include/mach/entry-macro.S |   26 -
+> > >  arch/arm/mach-w90x900/include/mach/hardware.h    |   19 -
+> > >  arch/arm/mach-w90x900/include/mach/irqs.h        |   82 --
+> > >  arch/arm/mach-w90x900/include/mach/map.h         |  153 ---
+> > >  arch/arm/mach-w90x900/include/mach/mfp.h         |   21 -
+> > >  arch/arm/mach-w90x900/include/mach/regs-clock.h  |   49 -
+> > >  arch/arm/mach-w90x900/include/mach/regs-irq.h    |   46 -
+> > >  arch/arm/mach-w90x900/include/mach/regs-ldm.h    |  248 -----
+> > >  arch/arm/mach-w90x900/include/mach/regs-serial.h |   54 --
+> > >  arch/arm/mach-w90x900/include/mach/uncompress.h  |   43 -
+> > >  arch/arm/mach-w90x900/irq.c                      |  212 -----
+> > >  arch/arm/mach-w90x900/mach-nuc910evb.c           |   38 -
+> > >  arch/arm/mach-w90x900/mach-nuc950evb.c           |   42 -
+> > >  arch/arm/mach-w90x900/mach-nuc960evb.c           |   38 -
+> > >  arch/arm/mach-w90x900/mfp.c                      |  197 ----
+> > >  arch/arm/mach-w90x900/nuc910.c                   |   58 --
+> > >  arch/arm/mach-w90x900/nuc910.h                   |   17 -
+> > >  arch/arm/mach-w90x900/nuc950.c                   |   52 --
+> > >  arch/arm/mach-w90x900/nuc950.h                   |   17 -
+> > >  arch/arm/mach-w90x900/nuc960.c                   |   50 -
+> > >  arch/arm/mach-w90x900/nuc960.h                   |   17 -
+> > >  arch/arm/mach-w90x900/nuc9xx.h                   |   22 -
+> > >  arch/arm/mach-w90x900/regs-ebi.h                 |   29 -
+> > >  arch/arm/mach-w90x900/regs-gcr.h                 |   34 -
+> > >  arch/arm/mach-w90x900/regs-timer.h               |   37 -
+> > >  arch/arm/mach-w90x900/regs-usb.h                 |   31 -
+> > >  arch/arm/mach-w90x900/time.c                     |  168 ----
+> > >  drivers/input/keyboard/Kconfig                   |   11 -
+> > >  drivers/input/keyboard/Makefile                  |    1 -
+> > >  drivers/input/keyboard/w90p910_keypad.c          |  264 ------
+> > >  drivers/input/touchscreen/Kconfig                |    9 -
+> > >  drivers/input/touchscreen/Makefile               |    1 -
+> > >  drivers/input/touchscreen/w90p910_ts.c           |  331 -------
+> > >  drivers/mtd/nand/raw/Kconfig                     |    8 -
+> > >  drivers/mtd/nand/raw/Makefile                    |    1 -
+> > >  drivers/mtd/nand/raw/nuc900_nand.c               |  304 ------
+> > >  drivers/net/ethernet/Kconfig                     |    1 -
+> > >  drivers/net/ethernet/Makefile                    |    1 -
+> > >  drivers/net/ethernet/nuvoton/Kconfig             |   29 -
+> > >  drivers/net/ethernet/nuvoton/Makefile            |    6 -
+> > >  drivers/net/ethernet/nuvoton/w90p910_ether.c     | 1082 ----------------------
+> > >  drivers/rtc/Kconfig                              |    7 -
+> > >  drivers/rtc/Makefile                             |    1 -
+> > >  drivers/rtc/rtc-nuc900.c                         |  271 ------
+> > >  drivers/spi/Kconfig                              |    7 -
+> > >  drivers/spi/Makefile                             |    1 -
+> > >  drivers/spi/spi-nuc900.c                         |  429 ---------
+> > >  drivers/usb/host/Kconfig                         |    6 -
+> > >  drivers/usb/host/Makefile                        |    1 -
+> > >  drivers/usb/host/ehci-w90x900.c                  |  130 ---
+> > >  drivers/video/fbdev/Kconfig                      |   14 -
+> > >  drivers/video/fbdev/Makefile                     |    1 -
+> > >  drivers/video/fbdev/nuc900fb.c                   |  760 ---------------
+> > >  drivers/video/fbdev/nuc900fb.h                   |   51 -
+> > >  drivers/watchdog/Kconfig                         |    9 -
+> > >  drivers/watchdog/Makefile                        |    1 -
+> > >  drivers/watchdog/nuc900_wdt.c                    |  303 ------
+> > >  include/Kbuild                                   |    2 -
+> > >  include/linux/platform_data/keypad-w90p910.h     |   16 -
+> > >  include/linux/platform_data/spi-nuc900.h         |   29 -
+> > >  include/linux/platform_data/video-nuc900fb.h     |   79 --
+> > >  sound/soc/Kconfig                                |    1 -
+> > >  sound/soc/Makefile                               |    1 -
+> > >  sound/soc/nuc900/Kconfig                         |   29 -
+> > >  sound/soc/nuc900/Makefile                        |   12 -
+> > >  sound/soc/nuc900/nuc900-ac97.c                   |  391 --------
+> > >  sound/soc/nuc900/nuc900-audio.c                  |   73 --
+> > >  sound/soc/nuc900/nuc900-audio.h                  |  108 ---
+> > >  sound/soc/nuc900/nuc900-pcm.c                    |  321 -------
+> > >  86 files changed, 1 insertion(+), 8433 deletions(-)
+> > >
+> > >           Arnd
 
-This one was hard to find :) Thank you for your patience in testing 
-this!
 
----
-Thanks,
-Jose Miguel Abreu
+
+-- 
+Regards,
+Avi
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
