@@ -2,59 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C2B67ABC0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 17:00:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0454D7ABC3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 17:00:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gHFwfU2w8yR8lNyEGBiuXRrkNvn2JtIAJfg/phDPYKg=; b=l3Lm6PQRulAVYg
-	8Aio3ms3+XDUDr6bqQxOA+Bj/ozWFsj/l33/Z+tYbiqZp+9k4l3OH8oW5MzoNQGUKZ2Pi0NmZChWE
-	Fezsi14qo1WA0OJmnqN23uyRhAH/dXWhnbABDV+eT4MRIMYl3Yh0zgeVJafEwJticrmjPw3RUesbi
-	iX7sCWT/ZL4UhQQJEiUGVT2NhxDA7hJEaW9wXsmOBE3d3/YtGHkpGBWdgiXE3HIGKlenvOlEX6Wz1
-	nfDUimVU5aEYnhbO8yxPd6UEz3Dlh24+Hoit2l1BQcQws0ZKzRp11Nyq8BVuSfmFEcrI60OYyM65G
-	WSQPm13D6FbiOKAgu0yA==;
+	List-Owner; bh=F7fWDAwvhG0jj624qirGsqAnROaP9A07NAlsCru/Y9c=; b=gFETBhps78hQ7H
+	tHm31AZOTMep8AaMcu0VGdpT5eSplX/TRq6xZj4F5qsl+vrX4QqL7s6bGh3Mooy0FXidVUcMs5nXq
+	fXnaZtrlEE3vvuv2wAzRq14kjqWJ6OJQuZpWzvUDdTetMXtxAWr6qPdX706irpKN+jFzTrjRtI4H5
+	9aFc23OClaTmGWc5Oya9OduwDLmW/83fqmhV4YDDFSzLRc/cgnpPaGkWej2rNzs1bMdYqNh1Q2bVk
+	c+w5RbDs4LgdZM+mM/uiJcKyytuiHY6pd7x9Pfk/lmMbFVJZosf4+L0cdojSc0TZPqqyKiFBMBcaQ
+	W6mK/K4GK9Vq9QgGnG/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsTc0-0005sl-13; Tue, 30 Jul 2019 15:00:24 +0000
-Received: from mxout013.mail.hostpoint.ch ([2a00:d70:0:e::313])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsTaD-0003Yb-8u
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 14:58:34 +0000
-Received: from [10.0.2.46] (helo=asmtp013.mail.hostpoint.ch)
- by mxout013.mail.hostpoint.ch with esmtp (Exim 4.92 (FreeBSD))
- (envelope-from <dev@pschenker.ch>)
- id 1hsTa9-000FsZ-8w; Tue, 30 Jul 2019 16:58:29 +0200
-Received: from [46.140.72.82] (helo=philippe-pc.toradex.int)
- by asmtp013.mail.hostpoint.ch with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.91 (FreeBSD))
- (envelope-from <dev@pschenker.ch>)
- id 1hsTP8-000Mva-Db; Tue, 30 Jul 2019 16:47:06 +0200
-X-Authenticated-Sender-Id: dev@pschenker.ch
-From: Philippe Schenker <dev@pschenker.ch>
-To: marcel.ziswiler@toradex.com, max.krummenacher@toradex.com, stefan@agner.ch,
- devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Shawn Guo <shawnguo@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH 18/22] ARM: dts: imx6ull-colibri: Add watchdog
-Date: Tue, 30 Jul 2019 16:46:45 +0200
-Message-Id: <20190730144649.19022-19-dev@pschenker.ch>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20190730144649.19022-1-dev@pschenker.ch>
-References: <20190730144649.19022-1-dev@pschenker.ch>
+	id 1hsTcF-0006Vc-E9; Tue, 30 Jul 2019 15:00:39 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hsTaO-0003gv-4n
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 14:58:47 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F1F6C28;
+ Tue, 30 Jul 2019 07:58:38 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 666E23F694;
+ Tue, 30 Jul 2019 07:58:38 -0700 (PDT)
+Date: Tue, 30 Jul 2019 15:58:29 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH] arm64: sysreg: Remove unused and rotting SCTLR_ELx field
+ definitions
+Message-ID: <20190730145829.GA29844@lakrids.cambridge.arm.com>
+References: <20190730144121.3641-1-will@kernel.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190730144121.3641-1-will@kernel.org>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_075833_338514_75E91834 
-X-CRM114-Status: UNSURE (   9.00  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190730_075844_335542_43E77966 
+X-CRM114-Status: GOOD (  16.32  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a00:d70:0:e:0:0:0:313 listed in] [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -68,59 +62,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
- Philippe Schenker <philippe.schenker@toradex.com>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: james.morse@arm.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Philippe Schenker <philippe.schenker@toradex.com>
+On Tue, Jul 30, 2019 at 03:41:21PM +0100, Will Deacon wrote:
+> Our SCTLR_ELx field definitions are somewhat over-engineered in that
+> they carefully define masks describing the RES0/RES1 bits and then use
+> these to construct further masks representing bits to be set/cleared for
+> the _EL1 and _EL2 registers.
+> 
+> However, most of the resulting definitions aren't actually used by
+> anybody and have subsequently started to bit-rot when new fields have
+> been added by the architecture, resulting in fields being part of the
+> RES0 mask despite being defined and used elsewhere.
+> 
+> Rather than fix up these masks, simply remove the unused parts entirely
+> so that we can drop the maintenance burden. We can always add things
+> back if we need them in the future.
+> 
+> Signed-off-by: Will Deacon <will@kernel.org>
 
-This patch adds the watchdog to the imx6ull-colibri devicetree
+I have no strong feelings either way, so FWIW:
 
-Signed-off-by: Philippe Schenker <philippe.schenker@toradex.com>
----
+Acked-by: Mark Rutland <mark.rutland@arm.com>
 
- arch/arm/boot/dts/imx6ull-colibri.dtsi | 12 ++++++++++++
- 1 file changed, 12 insertions(+)
+Mark.
 
-diff --git a/arch/arm/boot/dts/imx6ull-colibri.dtsi b/arch/arm/boot/dts/imx6ull-colibri.dtsi
-index 1f112ec55e5c..e3220298dd6f 100644
---- a/arch/arm/boot/dts/imx6ull-colibri.dtsi
-+++ b/arch/arm/boot/dts/imx6ull-colibri.dtsi
-@@ -199,6 +199,12 @@
- 	assigned-clock-rates = <0>, <198000000>;
- };
- 
-+&wdog1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_wdog>;
-+	fsl,ext-reset-output;
-+};
-+
- &iomuxc {
- 	pinctrl_can_int: canint-grp {
- 		fsl,pins = <
-@@ -506,6 +512,12 @@
- 			MX6UL_PAD_GPIO1_IO03__OSC32K_32K_OUT	0x14
- 		>;
- 	};
-+
-+	pinctrl_wdog: wdog-grp {
-+		fsl,pins = <
-+			MX6UL_PAD_LCD_RESET__WDOG1_WDOG_ANY    0x30b0
-+		>;
-+	};
- };
- 
- &iomuxc_snvs {
--- 
-2.22.0
-
+> ---
+>  arch/arm64/include/asm/sysreg.h | 29 -----------------------------
+>  1 file changed, 29 deletions(-)
+> 
+> diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
+> index 06ebcfef73df..1df45c7ffcf7 100644
+> --- a/arch/arm64/include/asm/sysreg.h
+> +++ b/arch/arm64/include/asm/sysreg.h
+> @@ -499,28 +499,11 @@
+>  #define SCTLR_EL2_RES1	((BIT(4))  | (BIT(5))  | (BIT(11)) | (BIT(16)) | \
+>  			 (BIT(18)) | (BIT(22)) | (BIT(23)) | (BIT(28)) | \
+>  			 (BIT(29)))
+> -#define SCTLR_EL2_RES0	((BIT(6))  | (BIT(7))  | (BIT(8))  | (BIT(9))  | \
+> -			 (BIT(10)) | (BIT(13)) | (BIT(14)) | (BIT(15)) | \
+> -			 (BIT(17)) | (BIT(20)) | (BIT(24)) | (BIT(26)) | \
+> -			 (BIT(27)) | (BIT(30)) | (BIT(31)) | \
+> -			 (0xffffefffUL << 32))
+>  
+>  #ifdef CONFIG_CPU_BIG_ENDIAN
+>  #define ENDIAN_SET_EL2		SCTLR_ELx_EE
+> -#define ENDIAN_CLEAR_EL2	0
+>  #else
+>  #define ENDIAN_SET_EL2		0
+> -#define ENDIAN_CLEAR_EL2	SCTLR_ELx_EE
+> -#endif
+> -
+> -/* SCTLR_EL2 value used for the hyp-stub */
+> -#define SCTLR_EL2_SET	(SCTLR_ELx_IESB   | ENDIAN_SET_EL2   | SCTLR_EL2_RES1)
+> -#define SCTLR_EL2_CLEAR	(SCTLR_ELx_M      | SCTLR_ELx_A    | SCTLR_ELx_C   | \
+> -			 SCTLR_ELx_SA     | SCTLR_ELx_I    | SCTLR_ELx_WXN | \
+> -			 SCTLR_ELx_DSSBS | ENDIAN_CLEAR_EL2 | SCTLR_EL2_RES0)
+> -
+> -#if (SCTLR_EL2_SET ^ SCTLR_EL2_CLEAR) != 0xffffffffffffffffUL
+> -#error "Inconsistent SCTLR_EL2 set/clear bits"
+>  #endif
+>  
+>  /* SCTLR_EL1 specific flags. */
+> @@ -539,16 +522,11 @@
+>  
+>  #define SCTLR_EL1_RES1	((BIT(11)) | (BIT(20)) | (BIT(22)) | (BIT(28)) | \
+>  			 (BIT(29)))
+> -#define SCTLR_EL1_RES0  ((BIT(6))  | (BIT(10)) | (BIT(13)) | (BIT(17)) | \
+> -			 (BIT(27)) | (BIT(30)) | (BIT(31)) | \
+> -			 (0xffffefffUL << 32))
+>  
+>  #ifdef CONFIG_CPU_BIG_ENDIAN
+>  #define ENDIAN_SET_EL1		(SCTLR_EL1_E0E | SCTLR_ELx_EE)
+> -#define ENDIAN_CLEAR_EL1	0
+>  #else
+>  #define ENDIAN_SET_EL1		0
+> -#define ENDIAN_CLEAR_EL1	(SCTLR_EL1_E0E | SCTLR_ELx_EE)
+>  #endif
+>  
+>  #define SCTLR_EL1_SET	(SCTLR_ELx_M    | SCTLR_ELx_C    | SCTLR_ELx_SA   |\
+> @@ -556,13 +534,6 @@
+>  			 SCTLR_EL1_DZE  | SCTLR_EL1_UCT                   |\
+>  			 SCTLR_EL1_NTWE | SCTLR_ELx_IESB | SCTLR_EL1_SPAN |\
+>  			 ENDIAN_SET_EL1 | SCTLR_EL1_UCI  | SCTLR_EL1_RES1)
+> -#define SCTLR_EL1_CLEAR	(SCTLR_ELx_A   | SCTLR_EL1_CP15BEN | SCTLR_EL1_ITD    |\
+> -			 SCTLR_EL1_UMA | SCTLR_ELx_WXN     | ENDIAN_CLEAR_EL1 |\
+> -			 SCTLR_ELx_DSSBS | SCTLR_EL1_NTWI  | SCTLR_EL1_RES0)
+> -
+> -#if (SCTLR_EL1_SET ^ SCTLR_EL1_CLEAR) != 0xffffffffffffffffUL
+> -#error "Inconsistent SCTLR_EL1 set/clear bits"
+> -#endif
+>  
+>  /* id_aa64isar0 */
+>  #define ID_AA64ISAR0_TS_SHIFT		52
+> -- 
+> 2.11.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
