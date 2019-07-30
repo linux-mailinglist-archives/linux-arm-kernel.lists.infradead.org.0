@@ -2,85 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0CE87AF13
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 19:11:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 375CE7AF49
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 19:11:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1+jj/p6bnGVqiLr7/TLODcemrlRkMRY2DnMaZpxF42k=; b=dByhBFf1WwFo7H
-	1UGUfsuilOo2Mf8LXdUCFNQ249EApoKKzofaRmOfDem/HQ7ggdBP1UwV8dUMEHBnwccNnvJC+J8PM
-	GrFDmpSEI8tp5Q5xJ5a8LB6YvpfXBWYNz6qylYeqFHfrmRvuYZzFTeF8vq5pW10TqN1o+mGUMdqD+
-	EiImUC8c3fcPyQxWaqkC/E6exAp4+zdEtdAdTtKUH9k79zTvmcx+B443+18b8/H9WPlTMJAg7nhkx
-	YClnKCrK1ReXYw0sdjUJUt++2FZCIBdMWnpcJBHofRjGsBvg811oltk0Aqfb35td9ifdb764SVjZJ
-	F0luKdvuXGNWGq5F52kg==;
+	List-Owner; bh=nNNvQ8HG01fIi/L+t3ZP3IoRCpSdEeprJRtrLetwbhU=; b=NBB7dHlDYyxhj8
+	w1h1T0jES/DIDyJDH6ydkhs625XtwFCqw16A2ISz9Cz2YFunuVqNtYP/RqoU54po0XN6aYhMw+ncX
+	chdqh3/K1/NY8y25ed9b5y0RbC1kdwX2QEP9XgdTzBZqWECW7p0jX5qpu6xkq0Vli1e39zutiVhM8
+	maw1iD7C8lv8Q3Tw1kT/6ofV5P6NDGzkZDpXwlAILxrmeRXgH11sdBvsuv3lz2c/s1osqQ1kaVWpK
+	mHDezb+NPo2KT/h2JL3cH/dMGP+I7x1MILrl1o/tkzpxuEmx1EgOTwc1McfzjzH/t4YaIZd4CQElW
+	pwOACDNvGGdMz3ddFL5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsVeV-0004UV-G8; Tue, 30 Jul 2019 17:11:07 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1hsVek-0004lI-SG; Tue, 30 Jul 2019 17:11:22 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsVdb-0003tl-97
+ id 1hsVdc-0003vV-Mx
  for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 17:10:16 +0000
-Received: by mail-wm1-x341.google.com with SMTP id f17so57326070wme.2
+Received: by mail-wm1-x342.google.com with SMTP id x15so57902943wmj.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 30 Jul 2019 10:10:11 -0700 (PDT)
+ Tue, 30 Jul 2019 10:10:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=RatHWh+WSZJO51BDaAO/tJPgTyTi6HlHiiIlwIODHqM=;
- b=AUGPMfrpqrLf6isEeDUZRDdvbrSFitLmYvA1aUHmA2+cEgeNdiyBKXZCozthcYdBQA
- ZSSiHINPOdowc1qIMNAACfppNURt8zRnMpcAbypCWz5VN1tRgoLJNpsSDsNGoIFuHr+1
- O/jauIkMgJWseP/JNrREARwj6+mT1Y3Y1+1Is5VcU3gNHZIdJKjsBLd0ESnrLMGk9aYB
- Zrf4SgsFaYcYtOBzz6oFhaAdo9HVc0lXY2BTbSEmOwYGX4rWm/li5rYLCVCho0urjI7I
- nCPu8s2E8friZy5xk0SQ2Q+Q0XyNl9tJh57x+ui2gvv7dglddj8xknyykp0D41O5W15F
- venA==
+ bh=FDvoYJijQDj0e5NVUU9jZaC+GnZsfGAQXtnAmVIR6ZQ=;
+ b=XJm1ipzjBWgrVFPPb5UvbmM8LfdE+bpPm1dczBNYrddV/g+tKGwrJ1FaK8Dl/BhURJ
+ CTvOxcKmVPF/rlHWuK7BHX0+V1FAlFp1Q+U5hM+U76juHAapequTchs8H+QjfyBJZIvR
+ ITyEjYEa6BMtKV0RomplhERSvJjylmAp9YAQ2OCF8KulF3X1SC60V9fUWBAhXVx5tV35
+ 0E5+fBIb4eZgNPcQ2iOPDZShIMBbnASXODqVCn+jfpUc3pudF3KiOL33bqkuSUtrDRYd
+ IGid9Ewjicy+DbKdY6cDjMIPRCsyUGd7L/VBJbqGFEHh8WhI3tf+3eR7yWhy+4AIKgd8
+ WS2Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=RatHWh+WSZJO51BDaAO/tJPgTyTi6HlHiiIlwIODHqM=;
- b=NhBPm/6DrmT1IE6s/47TY+pUfY8kW+s7Ou5clXLNqajBcoDurzMk41nzgyuTEO9LYK
- PofZWaEIJ69GSXkyW4Bt7kAQO37WV1QUP8crpmhSrR4zJJD3RwkTr0uciegz01lFmDac
- tfF4qM0IHgwsvbyrEe8VBP6jVB11uf6ZuJjT5FS0NoAHJHd31Qnf4LK+CFyJRzBPYF50
- mqKGSWnEern/mzMVipIKGJsm9g9xrwQTaa3YWXA+IFPeKUzX+O+zj+XwbILcdPrtrxHq
- IMhWb6YcZA/7zF10WG3sDBd4G+VVDG779h3/3x35LPyAoStwyOyeTMEivrjSjsNHQbQG
- PahA==
-X-Gm-Message-State: APjAAAU7yo4n2V8DdLmvWRBrsHAjOtq82lQJN7CkJ7aEKbIAzQqTbwIn
- J70w8vGNKBP0PO+m3w7xHjk=
-X-Google-Smtp-Source: APXvYqyf3AuU7dHOUhFwQ6/nJUqRu6dqjccLVp6uRnAKN5itoppColHM+3D79FhzEVVE/ssL0RBr/g==
-X-Received: by 2002:a7b:ce83:: with SMTP id q3mr110401178wmj.116.1564506610113; 
- Tue, 30 Jul 2019 10:10:10 -0700 (PDT)
+ bh=FDvoYJijQDj0e5NVUU9jZaC+GnZsfGAQXtnAmVIR6ZQ=;
+ b=bCS7dPIEAIR4W14/rbC2kV04BjndWdPxBsJcCF8brgz/2LD5yY0SEwsE5m8j74QX9y
+ E9Y0sDepR+1Nh4SqoXDV/Vy+wFGbL4l1FXQa86MSTIxB4wotfkDv10zP/iEs8jUlBby0
+ yL/1fPJe0EZt15sGTtXE8sCzLF8Lulu4C7Fiputl+aaaQHzhyGI3U+Fi/sq4eigyiqwO
+ q78VSae90AK7dxJoslp1Yc2kGttCnYwlobqkD/DUHde5mUcyOy/whba/UKNbXwbbLFMm
+ VVon7ANNXoWFmugPoOx55cLAurT0f6+sqdF5wjINFoplQe4BVhIOSt7ESvqtYCQ1oqkc
+ r3eA==
+X-Gm-Message-State: APjAAAW5xoPTIuEytMARGVtWwnaGEWCbFFxfuM80lcs2bRwwJPUnjuDS
+ La7YyL8zZ2Zre3I89l8CanI=
+X-Google-Smtp-Source: APXvYqzMVl2dKRvFwele7lGvgMMwXksO/r6Jg2l1V5MYJ4X2utW1ib9WVxkej6z3koAhW7JRKzAkMA==
+X-Received: by 2002:a1c:ac81:: with SMTP id
+ v123mr108902879wme.145.1564506611385; 
+ Tue, 30 Jul 2019 10:10:11 -0700 (PDT)
 Received: from localhost.localdomain (ppp91-78-220-99.pppoe.mtu-net.ru.
  [91.78.220.99])
- by smtp.gmail.com with ESMTPSA id i13sm58897736wrr.73.2019.07.30.10.10.08
+ by smtp.gmail.com with ESMTPSA id i13sm58897736wrr.73.2019.07.30.10.10.10
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 30 Jul 2019 10:10:09 -0700 (PDT)
+ Tue, 30 Jul 2019 10:10:10 -0700 (PDT)
 From: Dmitry Osipenko <digetx@gmail.com>
 To: Thierry Reding <thierry.reding@gmail.com>,
  Jonathan Hunter <jonathanh@nvidia.com>,
  Peter De Schrijver <pdeschrijver@nvidia.com>,
  "Rafael J. Wysocki" <rjw@rjwysocki.net>,
  Daniel Lezcano <daniel.lezcano@linaro.org>
-Subject: [PATCH v4 03/13] ARM: tegra: Propagate error from
- tegra_idle_lp2_last()
-Date: Tue, 30 Jul 2019 20:09:45 +0300
-Message-Id: <20190730170955.11987-4-digetx@gmail.com>
+Subject: [PATCH v4 04/13] ARM: tegra: Compile sleep-tegra20/30.S
+ unconditionally
+Date: Tue, 30 Jul 2019 20:09:46 +0300
+Message-Id: <20190730170955.11987-5-digetx@gmail.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190730170955.11987-1-digetx@gmail.com>
 References: <20190730170955.11987-1-digetx@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_101011_364671_5786372B 
-X-CRM114-Status: GOOD (  13.05  )
+X-CRM114-CacheID: sfid-20190730_101012_790977_379656F2 
+X-CRM114-Status: GOOD (  11.28  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -111,62 +112,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The cpu_suspend() may fail, it's never good to lose information about
-failure because it may become very useful for the caller. The new CPUIDLE
-driver will handle all of possible error cases, including the case of
-tegra_idle_lp2_last() failure.
+The sleep-tegra*.S provides functionality required for suspend/resume
+and CPU hotplugging. The new unified CPUIDLE driver will support multiple
+hardware generations starting from Terga20 and ending with Tegra124, the
+driver will utilize functions that are provided by the assembly and thus
+it is cleaner to compile that code without any build-dependencies in order
+to avoid churning with #ifdef's.
 
 Signed-off-by: Dmitry Osipenko <digetx@gmail.com>
 ---
- arch/arm/mach-tegra/pm.c | 8 ++++++--
- arch/arm/mach-tegra/pm.h | 2 +-
- 2 files changed, 7 insertions(+), 3 deletions(-)
+ arch/arm/mach-tegra/Makefile | 10 ++++------
+ arch/arm/mach-tegra/sleep.h  |  2 --
+ 2 files changed, 4 insertions(+), 8 deletions(-)
 
-diff --git a/arch/arm/mach-tegra/pm.c b/arch/arm/mach-tegra/pm.c
-index 2f6fb54be9f8..f9c9bce9e15d 100644
---- a/arch/arm/mach-tegra/pm.c
-+++ b/arch/arm/mach-tegra/pm.c
-@@ -189,14 +189,16 @@ static void tegra_pm_set(enum tegra_suspend_mode mode)
- 	tegra_pmc_enter_suspend_mode(mode);
- }
+diff --git a/arch/arm/mach-tegra/Makefile b/arch/arm/mach-tegra/Makefile
+index 5d93a0b36866..3bb44246d928 100644
+--- a/arch/arm/mach-tegra/Makefile
++++ b/arch/arm/mach-tegra/Makefile
+@@ -8,16 +8,14 @@ obj-y					+= reset.o
+ obj-y					+= reset-handler.o
+ obj-y					+= sleep.o
+ obj-y					+= tegra.o
+-obj-$(CONFIG_ARCH_TEGRA_2x_SOC)		+= sleep-tegra20.o
+-obj-$(CONFIG_ARCH_TEGRA_2x_SOC)		+= pm-tegra20.o
+-obj-$(CONFIG_ARCH_TEGRA_3x_SOC)		+= sleep-tegra30.o
+-obj-$(CONFIG_ARCH_TEGRA_3x_SOC)		+= pm-tegra30.o
++obj-y					+= sleep-tegra20.o
++obj-y					+= sleep-tegra30.o
+ obj-$(CONFIG_SMP)			+= platsmp.o
+ obj-$(CONFIG_HOTPLUG_CPU)               += hotplug.o
  
--void tegra_idle_lp2_last(void)
-+int tegra_idle_lp2_last(void)
- {
-+	int err;
-+
- 	tegra_pm_set(TEGRA_SUSPEND_LP2);
+-obj-$(CONFIG_ARCH_TEGRA_114_SOC)	+= sleep-tegra30.o
++obj-$(CONFIG_ARCH_TEGRA_2x_SOC)		+= pm-tegra20.o
++obj-$(CONFIG_ARCH_TEGRA_3x_SOC)		+= pm-tegra30.o
+ obj-$(CONFIG_ARCH_TEGRA_114_SOC)	+= pm-tegra30.o
+-obj-$(CONFIG_ARCH_TEGRA_124_SOC)	+= sleep-tegra30.o
+ obj-$(CONFIG_ARCH_TEGRA_124_SOC)	+= pm-tegra30.o
  
- 	cpu_cluster_pm_enter();
- 	suspend_cpu_complex();
+ obj-$(CONFIG_ARCH_TEGRA_2x_SOC)		+= board-paz00.o
+diff --git a/arch/arm/mach-tegra/sleep.h b/arch/arm/mach-tegra/sleep.h
+index d219872b7546..4978def9db46 100644
+--- a/arch/arm/mach-tegra/sleep.h
++++ b/arch/arm/mach-tegra/sleep.h
+@@ -118,10 +118,8 @@ void tegra_resume(void);
+ int tegra_sleep_cpu_finish(unsigned long);
+ void tegra_disable_clean_inv_dcache(u32 flag);
  
--	cpu_suspend(PHYS_OFFSET - PAGE_OFFSET, &tegra_sleep_cpu);
-+	err = cpu_suspend(PHYS_OFFSET - PAGE_OFFSET, &tegra_sleep_cpu);
+-#ifdef CONFIG_HOTPLUG_CPU
+ void tegra20_hotplug_shutdown(void);
+ void tegra30_hotplug_shutdown(void);
+-#endif
  
- 	/*
- 	 * Resume L2 cache if it wasn't re-enabled early during resume,
-@@ -208,6 +210,8 @@ void tegra_idle_lp2_last(void)
- 
- 	restore_cpu_complex();
- 	cpu_cluster_pm_exit();
-+
-+	return err;
- }
- 
- enum tegra_suspend_mode tegra_pm_validate_suspend_mode(
-diff --git a/arch/arm/mach-tegra/pm.h b/arch/arm/mach-tegra/pm.h
-index 3f3164ad04b7..ae68fc7db576 100644
---- a/arch/arm/mach-tegra/pm.h
-+++ b/arch/arm/mach-tegra/pm.h
-@@ -25,7 +25,7 @@ void tegra30_sleep_core_init(void);
- 
- void tegra_clear_cpu_in_lp2(void);
- void tegra_set_cpu_in_lp2(void);
--void tegra_idle_lp2_last(void);
-+int tegra_idle_lp2_last(void);
- extern void (*tegra_tear_down_cpu)(void);
- 
- #ifdef CONFIG_PM_SLEEP
+ void tegra20_tear_down_cpu(void);
+ int tegra30_sleep_cpu_secondary_finish(unsigned long);
 -- 
 2.22.0
 
