@@ -2,73 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23DD27A4A3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 11:38:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C5E37A4A2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 11:38:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TVyh76/okt/G539ow+sfMzmnfWVtVHvqbHYnvFS+Cek=; b=LAj3wKH87lO0E9
-	7eQUEFE6kN75UP31gya0sVZPAxmyZtm5DY1dE+QKA4l4+JMuPTyuVNK3bJ72gW55JXhogFHUQHv02
-	H29htgmWMgQUJ8+u0KMVq+Poiq/FPsoGZThKXeES2My5yrH3HltJiDYFMw273XIN1TiOtAKQq4L4Z
-	9/9uSDB21567VMTPFYbROFTKLiZkxkFRujUbr3ttm1NA/xa2iBn26NUfMgGICm6fMr9ZqVu9gsMsM
-	+QO/swEZ+gOJkPE6+6Xf75aRdnv4VnAWIZ4rwZfjYKQwSVqev9dcQJ8jnZhe48h0biTQg45YjUJIh
-	jNa0uJ0EpFGXuLq7x/Dg==;
+	List-Owner; bh=8lt58980BcAS0kxP8J6tscaRitUFRzLZVPc5tR4jG7g=; b=SLOK7JwdJadhgC
+	TNwg+F22MqfMUkvb8rRErof7ZmJLfMkS9F4fa/RBeeJqSv9bqxEooCevoSa81LqLj7cUHuAZuAqjc
+	koBcQyXr4B6MCDgvctMNNLxfGvsTuDARMEeVARHCoKUd1bkc1DzbeV6YWtPu0Qgig0Zd7ggChPWtz
+	wcJnTHh/p8sQVsaUb35sSDDSpfcqBCKlE1XV0SN/R4z6sFwKXkcpqueG8rlq3c2+8dhXYk4Bmtnfn
+	DK2lGI1UX/oe+20ZpC1TJOZPTgQs6P1Gir57q5Gja9gPfypJ90S8endBAP1aBufKGEgocuvjkBfFE
+	VytfYuWJQlDQNraKCKvw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsOa2-00007R-Dz; Tue, 30 Jul 2019 09:38:02 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1hsOaK-0000Nn-3n; Tue, 30 Jul 2019 09:38:20 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsOXR-0006pU-SS
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 09:35:25 +0000
+ id 1hsOXU-0006rb-Rq
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 09:35:26 +0000
 Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x6U9ZHcL046323;
- Tue, 30 Jul 2019 04:35:17 -0500
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x6U9ZLVM100709;
+ Tue, 30 Jul 2019 04:35:21 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1564479317;
- bh=kh/+8FEYLPGmxBoQkUFmBz+Wdg7Ha0L+6/cq3nGsNF4=;
+ s=ti-com-17Q1; t=1564479321;
+ bh=eGNzgMdlWaqSP1xWGSDVyQpsKGVc/JfaJSZbr9EwxCo=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=jbWGnCqI7/bRTqgU4VPAxGkCqmK5Wx6l4KGJaJ9lQW3r+K8HoNM6KoZGlYA40EKFg
- udxSmtWEYoxyxcMBmI22O8e7RyKb6sKh2Mix8u3KFTCXB/rmJGG7ccqo5TufJ/FN8z
- uygP+dl+O/p9pq0vSP/KBR2RSFaE7Az9Gg9SBchs=
-Received: from DFLE100.ent.ti.com (dfle100.ent.ti.com [10.64.6.21])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x6U9ZHHA059302
+ b=NoAL7B70ICDEh4LhpegPFuJNz+TJUPPtfgo1ND6+3UdY+yvhS0fRr4XEaTzHbmyIH
+ /hnrAqtfzP8O6Pmf0D28aRumIBFs5odo/H7ZRMfjEiNqHBkfrTeaj0Rqs66i2hFPZW
+ KDHTp91lBze8W635LfbVOe4HVcPWVLBqyu5Wk5IU=
+Received: from DFLE101.ent.ti.com (dfle101.ent.ti.com [10.64.6.22])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x6U9ZLcP059374
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 30 Jul 2019 04:35:17 -0500
-Received: from DFLE105.ent.ti.com (10.64.6.26) by DFLE100.ent.ti.com
- (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
+ Tue, 30 Jul 2019 04:35:21 -0500
+Received: from DFLE114.ent.ti.com (10.64.6.35) by DFLE101.ent.ti.com
+ (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 30
- Jul 2019 04:35:16 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE105.ent.ti.com
- (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
+ Jul 2019 04:35:21 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE114.ent.ti.com
+ (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Tue, 30 Jul 2019 04:35:16 -0500
+ Frontend Transport; Tue, 30 Jul 2019 04:35:21 -0500
 Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x6U9YkU3027547;
- Tue, 30 Jul 2019 04:35:07 -0500
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x6U9YkU4027547;
+ Tue, 30 Jul 2019 04:35:17 -0500
 From: Peter Ujfalusi <peter.ujfalusi@ti.com>
 To: <vkoul@kernel.org>, <robh+dt@kernel.org>, <nm@ti.com>,
  <ssantosh@kernel.org>
-Subject: [PATCH v2 06/14] dmaengine: ti: Add cppi5 header for UDMA
-Date: Tue, 30 Jul 2019 12:34:42 +0300
-Message-ID: <20190730093450.12664-7-peter.ujfalusi@ti.com>
+Subject: [PATCH v2 07/14] dt-bindings: dma: ti: Add document for K3 UDMA
+Date: Tue, 30 Jul 2019 12:34:43 +0300
+Message-ID: <20190730093450.12664-8-peter.ujfalusi@ti.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190730093450.12664-1-peter.ujfalusi@ti.com>
 References: <20190730093450.12664-1-peter.ujfalusi@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_023522_841179_ED9BBCA0 
-X-CRM114-Status: GOOD (  16.22  )
+X-CRM114-CacheID: sfid-20190730_023524_993046_FA377BC4 
+X-CRM114-Status: GOOD (  17.38  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -94,1027 +94,139 @@ Cc: devicetree@vger.kernel.org, grygorii.strashko@ti.com, lokeshvutla@ti.com,
  j-keerthy@ti.com, linux-kernel@vger.kernel.org, t-kristo@ti.com,
  tony@atomide.com, dmaengine@vger.kernel.org, dan.j.williams@intel.com,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
----
- include/linux/dma/ti-cppi5.h | 996 +++++++++++++++++++++++++++++++++++
- 1 file changed, 996 insertions(+)
- create mode 100644 include/linux/dma/ti-cppi5.h
-
-diff --git a/include/linux/dma/ti-cppi5.h b/include/linux/dma/ti-cppi5.h
-new file mode 100644
-index 000000000000..a58bc1e2ba0b
---- /dev/null
-+++ b/include/linux/dma/ti-cppi5.h
-@@ -0,0 +1,996 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ * CPPI5 descriptors interface
-+ *
-+ * Copyright (C) 2019 Texas Instruments Incorporated - http://www.ti.com
-+ */
-+
-+#ifndef __TI_CPPI5_H__
-+#define __TI_CPPI5_H__
-+
-+#include <linux/bitops.h>
-+#include <linux/printk.h>
-+#include <linux/bug.h>
-+
-+/**
-+ * Descriptor header, present in all types of descriptors
-+ */
-+struct cppi5_desc_hdr_t {
-+	u32 pkt_info0;	/* Packet info word 0 (n/a in Buffer desc) */
-+	u32 pkt_info1;	/* Packet info word 1 (n/a in Buffer desc) */
-+	u32 pkt_info2;	/* Packet info word 2 Buffer reclamation info */
-+	u32 src_dst_tag; /* Packet info word 3 (n/a in Buffer desc) */
-+} __packed;
-+
-+/**
-+ * Host-mode packet and buffer descriptor definition
-+ */
-+struct cppi5_host_desc_t {
-+	struct cppi5_desc_hdr_t hdr;
-+	u64 next_desc;	/* w4/5: Linking word */
-+	u64 buf_ptr;	/* w6/7: Buffer pointer */
-+	u32 buf_info1;	/* w8: Buffer valid data length */
-+	u32 org_buf_len; /* w9: Original buffer length */
-+	u64 org_buf_ptr; /* w10/11: Original buffer pointer */
-+	u32 epib[0];	/* Extended Packet Info Data (optional, 4 words) */
-+	/*
-+	 * Protocol Specific Data (optional, 0-128 bytes in multiples of 4),
-+	 * and/or Other Software Data (0-N bytes, optional)
-+	 */
-+} __packed;
-+
-+#define CPPI5_DESC_MIN_ALIGN			(16U)
-+
-+#define CPPI5_INFO0_HDESC_EPIB_SIZE		(16U)
-+#define CPPI5_INFO0_HDESC_PSDATA_MAX_SIZE	(128U)
-+
-+#define CPPI5_INFO0_HDESC_TYPE_SHIFT		(30U)
-+#define CPPI5_INFO0_HDESC_TYPE_MASK		GENMASK(31, 30)
-+#define   CPPI5_INFO0_DESC_TYPE_VAL_HOST	(1U)
-+#define   CPPI5_INFO0_DESC_TYPE_VAL_MONO	(2U)
-+#define   CPPI5_INFO0_DESC_TYPE_VAL_TR		(3U)
-+#define CPPI5_INFO0_HDESC_EPIB_PRESENT		BIT(29)
-+/*
-+ * Protocol Specific Words location:
-+ * 0 - located in the descriptor,
-+ * 1 = located in the SOP Buffer immediately prior to the data.
-+ */
-+#define CPPI5_INFO0_HDESC_PSINFO_LOCATION	BIT(28)
-+#define CPPI5_INFO0_HDESC_PSINFO_SIZE_SHIFT	(22U)
-+#define CPPI5_INFO0_HDESC_PSINFO_SIZE_MASK	GENMASK(27, 22)
-+#define CPPI5_INFO0_HDESC_PKTLEN_SHIFT		(0)
-+#define CPPI5_INFO0_HDESC_PKTLEN_MASK		GENMASK(21, 0)
-+
-+#define CPPI5_INFO1_DESC_PKTERROR_SHIFT		(28U)
-+#define CPPI5_INFO1_DESC_PKTERROR_MASK		GENMASK(31, 28)
-+#define CPPI5_INFO1_HDESC_PSFLGS_SHIFT		(24U)
-+#define CPPI5_INFO1_HDESC_PSFLGS_MASK		GENMASK(27, 24)
-+#define CPPI5_INFO1_DESC_PKTID_SHIFT		(14U)
-+#define CPPI5_INFO1_DESC_PKTID_MASK		GENMASK(23, 14)
-+#define CPPI5_INFO1_DESC_FLOWID_SHIFT		(0)
-+#define CPPI5_INFO1_DESC_FLOWID_MASK		GENMASK(13, 0)
-+
-+#define CPPI5_INFO2_HDESC_PKTTYPE_SHIFT		(27U)
-+#define CPPI5_INFO2_HDESC_PKTTYPE_MASK		GENMASK(31, 27)
-+/* Return Policy: 0 - Entire packet 1 - Each buffer */
-+#define CPPI5_INFO2_HDESC_RETPOLICY		BIT(18)
-+/*
-+ * Early Return:
-+ * 0 = desc pointers should be returned after all reads have been completed
-+ * 1 = desc pointers should be returned immediately upon fetching
-+ * the descriptor and beginning to transfer data.
-+ */
-+#define CPPI5_INFO2_HDESC_EARLYRET		BIT(17)
-+/*
-+ * Return Push Policy:
-+ * 0 = Descriptor must be returned to tail of queue
-+ * 1 = Descriptor must be returned to head of queue
-+ */
-+#define CPPI5_INFO2_DESC_RETPUSHPOLICY		BIT(16)
-+#define CPPI5_INFO2_DESC_RETQ_SHIFT		(0)
-+#define CPPI5_INFO2_DESC_RETQ_MASK		GENMASK(15, 0)
-+
-+#define CPPI5_INFO3_DESC_SRCTAG_SHIFT		(16U)
-+#define CPPI5_INFO3_DESC_SRCTAG_MASK		GENMASK(31, 16)
-+#define CPPI5_INFO3_DESC_DSTTAG_SHIFT		(0)
-+#define CPPI5_INFO3_DESC_DSTTAG_MASK		GENMASK(15, 0)
-+
-+#define CPPI5_BUFINFO1_HDESC_DATA_LEN_SHIFT	(0)
-+#define CPPI5_BUFINFO1_HDESC_DATA_LEN_MASK	GENMASK(27, 0)
-+
-+#define CPPI5_OBUFINFO0_HDESC_BUF_LEN_SHIFT	(0)
-+#define CPPI5_OBUFINFO0_HDESC_BUF_LEN_MASK	GENMASK(27, 0)
-+
-+/*
-+ * Host Packet Descriptor Extended Packet Info Block
-+ */
-+struct cppi5_desc_epib_t {
-+	u32 timestamp;	/* w0: application specific timestamp */
-+	u32 sw_info0;	/* w1: Software Info 0 */
-+	u32 sw_info1;	/* w2: Software Info 1 */
-+	u32 sw_info2;	/* w3: Software Info 2 */
-+};
-+
-+/**
-+ * Monolithic-mode packet descriptor
-+ */
-+struct cppi5_monolithic_desc_t {
-+	struct cppi5_desc_hdr_t hdr;
-+	u32 epib[0];	/* Extended Packet Info Data (optional, 4 words) */
-+	/*
-+	 * Protocol Specific Data (optional, 0-128 bytes in multiples of 4),
-+	 *  and/or Other Software Data (0-N bytes, optional)
-+	 */
-+};
-+
-+#define CPPI5_INFO2_MDESC_DATA_OFFSET_SHIFT	(18U)
-+#define CPPI5_INFO2_MDESC_DATA_OFFSET_MASK	GENMASK(26, 18)
-+
-+/*
-+ * Reload Enable:
-+ * 0 = Finish the packet and place the descriptor back on the return queue
-+ * 1 = Vector to the Reload Index and resume processing
-+ */
-+#define CPPI5_INFO0_TRDESC_RLDCNT_SHIFT		(20U)
-+#define CPPI5_INFO0_TRDESC_RLDCNT_MASK		GENMASK(28, 20)
-+#define CPPI5_INFO0_TRDESC_RLDCNT_MAX		(0x1ff)
-+#define CPPI5_INFO0_TRDESC_RLDCNT_INFINITE	CPPI5_INFO0_TRDESC_RLDCNT_MAX
-+#define CPPI5_INFO0_TRDESC_RLDIDX_SHIFT		(14U)
-+#define CPPI5_INFO0_TRDESC_RLDIDX_MASK		GENMASK(19, 14)
-+#define CPPI5_INFO0_TRDESC_RLDIDX_MAX		(0x3f)
-+#define CPPI5_INFO0_TRDESC_LASTIDX_SHIFT	(0)
-+#define CPPI5_INFO0_TRDESC_LASTIDX_MASK		GENMASK(13, 0)
-+
-+#define CPPI5_INFO1_TRDESC_RECSIZE_SHIFT	(24U)
-+#define CPPI5_INFO1_TRDESC_RECSIZE_MASK		GENMASK(26, 24)
-+#define   CPPI5_INFO1_TRDESC_RECSIZE_VAL_16B	(0)
-+#define   CPPI5_INFO1_TRDESC_RECSIZE_VAL_32B	(1U)
-+#define   CPPI5_INFO1_TRDESC_RECSIZE_VAL_64B	(2U)
-+#define   CPPI5_INFO1_TRDESC_RECSIZE_VAL_128B	(3U)
-+
-+static inline void cppi5_desc_dump(void *desc, u32 size)
-+{
-+	print_hex_dump(KERN_ERR, "dump udmap_desc: ", DUMP_PREFIX_NONE,
-+		       32, 4, desc, size, false);
-+}
-+
-+/**
-+ * cppi5_desc_get_type - get descriptor type
-+ * @desc_hdr: packet descriptor/TR header
-+ *
-+ * Returns descriptor type:
-+ * CPPI5_INFO0_DESC_TYPE_VAL_HOST
-+ * CPPI5_INFO0_DESC_TYPE_VAL_MONO
-+ * CPPI5_INFO0_DESC_TYPE_VAL_TR
-+ */
-+static inline u32 cppi5_desc_get_type(struct cppi5_desc_hdr_t *desc_hdr)
-+{
-+	WARN_ON(!desc_hdr);
-+
-+	return (desc_hdr->pkt_info0 & CPPI5_INFO0_HDESC_TYPE_MASK) >>
-+		CPPI5_INFO0_HDESC_TYPE_SHIFT;
-+}
-+
-+/**
-+ * cppi5_desc_get_errflags - get Error Flags from Desc
-+ * @desc_hdr: packet/TR descriptor header
-+ *
-+ * Returns Error Flags from Packet/TR Descriptor
-+ */
-+static inline u32 cppi5_desc_get_errflags(struct cppi5_desc_hdr_t *desc_hdr)
-+{
-+	WARN_ON(!desc_hdr);
-+
-+	return (desc_hdr->pkt_info1 & CPPI5_INFO1_DESC_PKTERROR_MASK) >>
-+		CPPI5_INFO1_DESC_PKTERROR_SHIFT;
-+}
-+
-+/**
-+ * cppi5_desc_get_pktids - get Packet and Flow ids from Desc
-+ * @desc_hdr: packet/TR descriptor header
-+ * @pkt_id: Packet ID
-+ * @flow_id: Flow ID
-+ *
-+ * Returns Packet and Flow ids from packet/TR descriptor
-+ */
-+static inline void cppi5_desc_get_pktids(struct cppi5_desc_hdr_t *desc_hdr,
-+					 u32 *pkt_id, u32 *flow_id)
-+{
-+	WARN_ON(!desc_hdr);
-+
-+	*pkt_id = (desc_hdr->pkt_info1 & CPPI5_INFO1_DESC_PKTID_MASK) >>
-+		   CPPI5_INFO1_DESC_PKTID_SHIFT;
-+	*flow_id = (desc_hdr->pkt_info1 & CPPI5_INFO1_DESC_FLOWID_MASK) >>
-+		    CPPI5_INFO1_DESC_FLOWID_SHIFT;
-+}
-+
-+/**
-+ * cppi5_desc_set_pktids - set Packet and Flow ids in Desc
-+ * @desc_hdr: packet/TR descriptor header
-+ * @pkt_id: Packet ID
-+ * @flow_id: Flow ID
-+ */
-+static inline void cppi5_desc_set_pktids(struct cppi5_desc_hdr_t *desc_hdr,
-+					 u32 pkt_id, u32 flow_id)
-+{
-+	WARN_ON(!desc_hdr);
-+
-+	desc_hdr->pkt_info1 |= (pkt_id << CPPI5_INFO1_DESC_PKTID_SHIFT) &
-+				CPPI5_INFO1_DESC_PKTID_MASK;
-+	desc_hdr->pkt_info1 |= (flow_id << CPPI5_INFO1_DESC_FLOWID_SHIFT) &
-+				CPPI5_INFO1_DESC_FLOWID_MASK;
-+}
-+
-+/**
-+ * cppi5_desc_set_retpolicy - set Packet Return Policy in Desc
-+ * @desc_hdr: packet/TR descriptor header
-+ * @flags: fags, supported values
-+ *  CPPI5_INFO2_HDESC_RETPOLICY
-+ *  CPPI5_INFO2_HDESC_EARLYRET
-+ *  CPPI5_INFO2_DESC_RETPUSHPOLICY
-+ * @return_ring_id: Packet Return Queue/Ring id, value 0xFFFF reserved
-+ */
-+static inline void cppi5_desc_set_retpolicy(struct cppi5_desc_hdr_t *desc_hdr,
-+					    u32 flags, u32 return_ring_id)
-+{
-+	WARN_ON(!desc_hdr);
-+
-+	desc_hdr->pkt_info2 |= flags;
-+	desc_hdr->pkt_info2 |= return_ring_id & CPPI5_INFO2_DESC_RETQ_MASK;
-+}
-+
-+/**
-+ * cppi5_desc_get_tags_ids - get Packet Src/Dst Tags from Desc
-+ * @desc_hdr: packet/TR descriptor header
-+ * @src_tag_id: Source Tag
-+ * @dst_tag_id: Dest Tag
-+ *
-+ * Returns Packet Src/Dst Tags from packet/TR descriptor
-+ */
-+static inline void cppi5_desc_get_tags_ids(struct cppi5_desc_hdr_t *desc_hdr,
-+					   u32 *src_tag_id, u32 *dst_tag_id)
-+{
-+	WARN_ON(!desc_hdr);
-+
-+	if (src_tag_id)
-+		*src_tag_id = (desc_hdr->src_dst_tag &
-+			      CPPI5_INFO3_DESC_SRCTAG_MASK) >>
-+			      CPPI5_INFO3_DESC_SRCTAG_SHIFT;
-+	if (dst_tag_id)
-+		*dst_tag_id = desc_hdr->src_dst_tag &
-+			      CPPI5_INFO3_DESC_DSTTAG_MASK;
-+}
-+
-+/**
-+ * cppi5_desc_set_tags_ids - set Packet Src/Dst Tags in HDesc
-+ * @desc_hdr: packet/TR descriptor header
-+ * @src_tag_id: Source Tag
-+ * @dst_tag_id: Dest Tag
-+ *
-+ * Returns Packet Src/Dst Tags from packet/TR descriptor
-+ */
-+static inline void cppi5_desc_set_tags_ids(struct cppi5_desc_hdr_t *desc_hdr,
-+					   u32 src_tag_id, u32 dst_tag_id)
-+{
-+	WARN_ON(!desc_hdr);
-+
-+	desc_hdr->src_dst_tag = (src_tag_id << CPPI5_INFO3_DESC_SRCTAG_SHIFT) &
-+				CPPI5_INFO3_DESC_SRCTAG_MASK;
-+	desc_hdr->src_dst_tag |= dst_tag_id & CPPI5_INFO3_DESC_DSTTAG_MASK;
-+}
-+
-+/**
-+ * cppi5_hdesc_calc_size - Calculate Host Packet Descriptor size
-+ * @epib: is EPIB present
-+ * @psdata_size: PSDATA size
-+ * @sw_data_size: SWDATA size
-+ *
-+ * Returns required Host Packet Descriptor size
-+ * 0 - if PSDATA > CPPI5_INFO0_HDESC_PSDATA_MAX_SIZE
-+ */
-+static inline u32 cppi5_hdesc_calc_size(bool epib, u32 psdata_size,
-+					u32 sw_data_size)
-+{
-+	u32 desc_size;
-+
-+	if (psdata_size > CPPI5_INFO0_HDESC_PSDATA_MAX_SIZE)
-+		return 0;
-+	//TODO_GS: align
-+	desc_size = sizeof(struct cppi5_host_desc_t) + psdata_size +
-+		    sw_data_size;
-+
-+	if (epib)
-+		desc_size += CPPI5_INFO0_HDESC_EPIB_SIZE;
-+
-+	return ALIGN(desc_size, CPPI5_DESC_MIN_ALIGN);
-+}
-+
-+/**
-+ * cppi5_hdesc_init - Init Host Packet Descriptor size
-+ * @desc: Host packet descriptor
-+ * @flags: supported values
-+ *	CPPI5_INFO0_HDESC_EPIB_PRESENT
-+ *	CPPI5_INFO0_HDESC_PSINFO_LOCATION
-+ * @psdata_size: PSDATA size
-+ *
-+ * Returns required Host Packet Descriptor size
-+ * 0 - if PSDATA > CPPI5_INFO0_HDESC_PSDATA_MAX_SIZE
-+ */
-+static inline void cppi5_hdesc_init(struct cppi5_host_desc_t *desc, u32 flags,
-+				    u32 psdata_size)
-+{
-+	WARN_ON(!desc);
-+	WARN_ON(psdata_size > CPPI5_INFO0_HDESC_PSDATA_MAX_SIZE);
-+	WARN_ON(flags & ~(CPPI5_INFO0_HDESC_EPIB_PRESENT |
-+			  CPPI5_INFO0_HDESC_PSINFO_LOCATION));
-+
-+	desc->hdr.pkt_info0 = (CPPI5_INFO0_DESC_TYPE_VAL_HOST <<
-+			       CPPI5_INFO0_HDESC_TYPE_SHIFT) | (flags);
-+	desc->hdr.pkt_info0 |= ((psdata_size >> 2) <<
-+				CPPI5_INFO0_HDESC_PSINFO_SIZE_SHIFT) &
-+				CPPI5_INFO0_HDESC_PSINFO_SIZE_MASK;
-+	desc->next_desc = 0;
-+}
-+
-+/**
-+ * cppi5_hdesc_update_flags - Replace descriptor flags
-+ * @desc: Host packet descriptor
-+ * @flags: supported values
-+ *	CPPI5_INFO0_HDESC_EPIB_PRESENT
-+ *	CPPI5_INFO0_HDESC_PSINFO_LOCATION
-+ */
-+static inline void cppi5_hdesc_update_flags(struct cppi5_host_desc_t *desc,
-+					    u32 flags)
-+{
-+	WARN_ON(!desc);
-+	WARN_ON(flags & ~(CPPI5_INFO0_HDESC_EPIB_PRESENT |
-+			  CPPI5_INFO0_HDESC_PSINFO_LOCATION));
-+
-+	desc->hdr.pkt_info0 &= ~(CPPI5_INFO0_HDESC_EPIB_PRESENT |
-+				 CPPI5_INFO0_HDESC_PSINFO_LOCATION);
-+	desc->hdr.pkt_info0 |= flags;
-+}
-+
-+/**
-+ * cppi5_hdesc_update_psdata_size - Replace PSdata size
-+ * @desc: Host packet descriptor
-+ * @psdata_size: PSDATA size
-+ */
-+static inline void cppi5_hdesc_update_psdata_size(
-+		struct cppi5_host_desc_t *desc, u32 psdata_size)
-+{
-+	WARN_ON(!desc);
-+	WARN_ON(psdata_size > CPPI5_INFO0_HDESC_PSDATA_MAX_SIZE);
-+
-+	desc->hdr.pkt_info0 &= ~CPPI5_INFO0_HDESC_PSINFO_SIZE_MASK;
-+	desc->hdr.pkt_info0 |= ((psdata_size >> 2) <<
-+				CPPI5_INFO0_HDESC_PSINFO_SIZE_SHIFT) &
-+				CPPI5_INFO0_HDESC_PSINFO_SIZE_MASK;
-+}
-+
-+/**
-+ * cppi5_hdesc_get_psdata_size - get PSdata size in bytes
-+ * @desc: Host packet descriptor
-+ */
-+static inline u32 cppi5_hdesc_get_psdata_size(struct cppi5_host_desc_t *desc)
-+{
-+	u32 psdata_size = 0;
-+
-+	WARN_ON(!desc);
-+
-+	if (!(desc->hdr.pkt_info0 & CPPI5_INFO0_HDESC_PSINFO_LOCATION))
-+		psdata_size = (desc->hdr.pkt_info0 &
-+			       CPPI5_INFO0_HDESC_PSINFO_SIZE_MASK) >>
-+			       CPPI5_INFO0_HDESC_PSINFO_SIZE_SHIFT;
-+
-+	return (psdata_size << 2);
-+}
-+
-+/**
-+ * cppi5_hdesc_get_pktlen - get Packet Length from HDesc
-+ * @desc: Host packet descriptor
-+ *
-+ * Returns Packet Length from Host Packet Descriptor
-+ */
-+static inline u32 cppi5_hdesc_get_pktlen(struct cppi5_host_desc_t *desc)
-+{
-+	WARN_ON(!desc);
-+
-+	return (desc->hdr.pkt_info0 & CPPI5_INFO0_HDESC_PKTLEN_MASK);
-+}
-+
-+/**
-+ * cppi5_hdesc_set_pktlen - set Packet Length in HDesc
-+ * @desc: Host packet descriptor
-+ */
-+static inline void cppi5_hdesc_set_pktlen(struct cppi5_host_desc_t *desc,
-+					  u32 pkt_len)
-+{
-+	WARN_ON(!desc);
-+
-+	desc->hdr.pkt_info0 |= (pkt_len & CPPI5_INFO0_HDESC_PKTLEN_MASK);
-+}
-+
-+/**
-+ * cppi5_hdesc_get_psflags - get Protocol Specific Flags from HDesc
-+ * @desc: Host packet descriptor
-+ *
-+ * Returns Protocol Specific Flags from Host Packet Descriptor
-+ */
-+static inline u32 cppi5_hdesc_get_psflags(struct cppi5_host_desc_t *desc)
-+{
-+	WARN_ON(!desc);
-+
-+	return (desc->hdr.pkt_info1 & CPPI5_INFO1_HDESC_PSFLGS_MASK) >>
-+		CPPI5_INFO1_HDESC_PSFLGS_SHIFT;
-+}
-+
-+/**
-+ * cppi5_hdesc_set_psflags - set Protocol Specific Flags in HDesc
-+ * @desc: Host packet descriptor
-+ */
-+static inline void cppi5_hdesc_set_psflags(struct cppi5_host_desc_t *desc,
-+					   u32 ps_flags)
-+{
-+	WARN_ON(!desc);
-+
-+	desc->hdr.pkt_info1 |= (ps_flags <<
-+				CPPI5_INFO1_HDESC_PSFLGS_SHIFT) &
-+				CPPI5_INFO1_HDESC_PSFLGS_MASK;
-+}
-+
-+/**
-+ * cppi5_hdesc_get_errflags - get Packet Type from HDesc
-+ * @desc: Host packet descriptor
-+ */
-+static inline u32 cppi5_hdesc_get_pkttype(struct cppi5_host_desc_t *desc)
-+{
-+	WARN_ON(!desc);
-+
-+	return (desc->hdr.pkt_info2 & CPPI5_INFO2_HDESC_PKTTYPE_MASK) >>
-+		CPPI5_INFO2_HDESC_PKTTYPE_SHIFT;
-+}
-+
-+/**
-+ * cppi5_hdesc_get_errflags - set Packet Type in HDesc
-+ * @desc: Host packet descriptor
-+ * @pkt_type: Packet Type
-+ */
-+static inline void cppi5_hdesc_set_pkttype(struct cppi5_host_desc_t *desc,
-+					   u32 pkt_type)
-+{
-+	WARN_ON(!desc);
-+	desc->hdr.pkt_info2 |=
-+			(pkt_type << CPPI5_INFO2_HDESC_PKTTYPE_SHIFT) &
-+			 CPPI5_INFO2_HDESC_PKTTYPE_MASK;
-+}
-+
-+/**
-+ * cppi5_hdesc_attach_buf - attach buffer to HDesc
-+ * @desc: Host packet descriptor
-+ * @buf: Buffer physical address
-+ * @buf_data_len: Buffer length
-+ * @obuf: Original Buffer physical address
-+ * @obuf_len: Original Buffer length
-+ *
-+ * Attaches buffer to Host Packet Descriptor
-+ */
-+static inline void cppi5_hdesc_attach_buf(struct cppi5_host_desc_t *desc,
-+					  dma_addr_t buf, u32 buf_data_len,
-+					  dma_addr_t obuf, u32 obuf_len)
-+{
-+	WARN_ON(!desc);
-+	WARN_ON(!buf && !obuf);
-+
-+	desc->buf_ptr = buf;
-+	desc->buf_info1 = buf_data_len & CPPI5_BUFINFO1_HDESC_DATA_LEN_MASK;
-+	desc->org_buf_ptr = obuf;
-+	desc->org_buf_len = obuf_len & CPPI5_OBUFINFO0_HDESC_BUF_LEN_MASK;
-+}
-+
-+static inline void cppi5_hdesc_get_obuf(struct cppi5_host_desc_t *desc,
-+					dma_addr_t *obuf, u32 *obuf_len)
-+{
-+	WARN_ON(!desc);
-+	WARN_ON(!obuf);
-+	WARN_ON(!obuf_len);
-+
-+	*obuf = desc->org_buf_ptr;
-+	*obuf_len = desc->org_buf_len & CPPI5_OBUFINFO0_HDESC_BUF_LEN_MASK;
-+}
-+
-+static inline void cppi5_hdesc_reset_to_original(struct cppi5_host_desc_t *desc)
-+{
-+	WARN_ON(!desc);
-+
-+	desc->buf_ptr = desc->org_buf_ptr;
-+	desc->buf_info1 = desc->org_buf_len;
-+}
-+
-+/**
-+ * cppi5_hdesc_link_hbdesc - link Host Buffer Descriptor to HDesc
-+ * @desc: Host Packet Descriptor
-+ * @buf_desc: Host Buffer Descriptor physical address
-+ *
-+ * add and link Host Buffer Descriptor to HDesc
-+ */
-+static inline void cppi5_hdesc_link_hbdesc(struct cppi5_host_desc_t *desc,
-+					   dma_addr_t hbuf_desc)
-+{
-+	WARN_ON(!desc);
-+	WARN_ON(!hbuf_desc);
-+
-+	desc->next_desc = hbuf_desc;
-+}
-+
-+static inline dma_addr_t cppi5_hdesc_get_next_hbdesc(
-+		struct cppi5_host_desc_t *desc)
-+{
-+	WARN_ON(!desc);
-+
-+	return (dma_addr_t)desc->next_desc;
-+}
-+
-+static inline void cppi5_hdesc_reset_hbdesc(struct cppi5_host_desc_t *desc)
-+{
-+	WARN_ON(!desc);
-+
-+	desc->hdr = (struct cppi5_desc_hdr_t) { 0 };
-+	desc->next_desc = 0;
-+}
-+
-+/**
-+ * cppi5_hdesc_epib_present -  check if EPIB present
-+ * @desc_hdr: packet descriptor/TR header
-+ *
-+ * Returns true if EPIB present in the packet
-+ */
-+static inline bool cppi5_hdesc_epib_present(struct cppi5_desc_hdr_t *desc_hdr)
-+{
-+	WARN_ON(!desc_hdr);
-+	return !!(desc_hdr->pkt_info0 & CPPI5_INFO0_HDESC_EPIB_PRESENT);
-+}
-+
-+/**
-+ * cppi5_hdesc_get_psdata -  Get pointer on PSDATA
-+ * @desc: Host packet descriptor
-+ *
-+ * Returns pointer on PSDATA in HDesc.
-+ * NULL - if ps_data placed at the start of data buffer.
-+ */
-+static inline void *cppi5_hdesc_get_psdata(struct cppi5_host_desc_t *desc)
-+{
-+	u32 psdata_size;
-+	void *psdata;
-+
-+	WARN_ON(!desc);
-+
-+	if (desc->hdr.pkt_info0 & CPPI5_INFO0_HDESC_PSINFO_LOCATION)
-+		return NULL;
-+
-+	psdata_size = (desc->hdr.pkt_info0 &
-+		       CPPI5_INFO0_HDESC_PSINFO_SIZE_MASK) >>
-+		       CPPI5_INFO0_HDESC_PSINFO_SIZE_SHIFT;
-+
-+	if (!psdata_size)
-+		return NULL;
-+
-+	psdata = &desc->epib;
-+
-+	if (cppi5_hdesc_epib_present(&desc->hdr))
-+		psdata += CPPI5_INFO0_HDESC_EPIB_SIZE;
-+
-+	return psdata;
-+}
-+
-+static inline u32 *cppi5_hdesc_get_psdata32(struct cppi5_host_desc_t *desc)
-+{
-+	return (u32 *)cppi5_hdesc_get_psdata(desc);
-+}
-+
-+/**
-+ * cppi5_hdesc_get_swdata -  Get pointer on swdata
-+ * @desc: Host packet descriptor
-+ *
-+ * Returns pointer on SWDATA in HDesc.
-+ * NOTE. It's caller responsibility to be sure hdesc actually has swdata.
-+ */
-+static inline void *cppi5_hdesc_get_swdata(struct cppi5_host_desc_t *desc)
-+{
-+	u32 psdata_size = 0;
-+	void *swdata;
-+
-+	WARN_ON(!desc);
-+
-+	if (!(desc->hdr.pkt_info0 & CPPI5_INFO0_HDESC_PSINFO_LOCATION))
-+		psdata_size = (desc->hdr.pkt_info0 &
-+			       CPPI5_INFO0_HDESC_PSINFO_SIZE_MASK) >>
-+			       CPPI5_INFO0_HDESC_PSINFO_SIZE_SHIFT;
-+
-+	swdata = &desc->epib;
-+
-+	if (cppi5_hdesc_epib_present(&desc->hdr))
-+		swdata += CPPI5_INFO0_HDESC_EPIB_SIZE;
-+
-+	swdata += (psdata_size << 2);
-+
-+	return swdata;
-+}
-+
-+/* ================================== TR ================================== */
-+
-+#define CPPI5_TR_TYPE_SHIFT			(0U)
-+#define CPPI5_TR_TYPE_MASK			GENMASK(3, 0)
-+#define CPPI5_TR_STATIC				BIT(4)
-+#define CPPI5_TR_WAIT				BIT(5)
-+#define CPPI5_TR_EVENT_SIZE_SHIFT		(6U)
-+#define CPPI5_TR_EVENT_SIZE_MASK		GENMASK(7, 6)
-+#define CPPI5_TR_TRIGGER0_SHIFT			(8U)
-+#define CPPI5_TR_TRIGGER0_MASK			GENMASK(9, 8)
-+#define CPPI5_TR_TRIGGER0_TYPE_SHIFT		(10U)
-+#define CPPI5_TR_TRIGGER0_TYPE_MASK		GENMASK(11, 10)
-+#define CPPI5_TR_TRIGGER1_SHIFT			(12U)
-+#define CPPI5_TR_TRIGGER1_MASK			GENMASK(13, 12)
-+#define CPPI5_TR_TRIGGER1_TYPE_SHIFT		(14U)
-+#define CPPI5_TR_TRIGGER1_TYPE_MASK		GENMASK(15, 14)
-+#define CPPI5_TR_CMD_ID_SHIFT			(16U)
-+#define CPPI5_TR_CMD_ID_MASK			GENMASK(23, 16)
-+#define CPPI5_TR_CSF_FLAGS_SHIFT		(24U)
-+#define CPPI5_TR_CSF_FLAGS_MASK			GENMASK(31, 24)
-+#define   CPPI5_TR_CSF_SA_INDIRECT		BIT(0)
-+#define   CPPI5_TR_CSF_DA_INDIRECT		BIT(1)
-+#define   CPPI5_TR_CSF_SUPR_EVT			BIT(2)
-+#define   CPPI5_TR_CSF_EOL_ADV_SHIFT		(4U)
-+#define   CPPI5_TR_CSF_EOL_ADV_MASK		GENMASK(6, 4)
-+#define   CPPI5_TR_CSF_EOP			BIT(7)
-+
-+/* Udmap TR flags Type field specifies the type of TR. */
-+enum cppi5_tr_types {
-+	/* type0: One dimensional data move */
-+	CPPI5_TR_TYPE0 = 0,
-+	/* type1: Two dimensional data move */
-+	CPPI5_TR_TYPE1,
-+	/* type2: Three dimensional data move */
-+	CPPI5_TR_TYPE2,
-+	/* type3: Four dimensional data move */
-+	CPPI5_TR_TYPE3,
-+	/* type4: Four dimensional data move with data formatting */
-+	CPPI5_TR_TYPE4,
-+	/* type5: Four dimensional Cache Warm */
-+	CPPI5_TR_TYPE5,
-+	/* type6-7: Reserved */
-+	/* type8: Four Dimensional Block Move */
-+	CPPI5_TR_TYPE8 = 8,
-+	/* type9: Four Dimensional Block Move with Repacking */
-+	CPPI5_TR_TYPE9,
-+	/* type10: Two Dimensional Block Move */
-+	CPPI5_TR_TYPE10,
-+	/* type11: Two Dimensional Block Move with Repacking */
-+	CPPI5_TR_TYPE11,
-+	/* type12-14: Reserved */
-+	/* type15 Four Dimensional Block Move with Repacking and Indirection */
-+	CPPI5_TR_TYPE15 = 15,
-+	CPPI5_TR_TYPE_MAX
-+};
-+
-+/*
-+ * Udmap TR Flags EVENT_SIZE field specifies when an event is generated
-+ * for each TR.
-+ */
-+enum cppi5_tr_event_size {
-+	/* When TR is complete and all status for the TR has been received */
-+	CPPI5_TR_EVENT_SIZE_COMPLETION,
-+	/*
-+	 * Type 0: when the last data transaction is sent for the TR;
-+	 * Type 1-11: when ICNT1 is decremented
-+	 */
-+	CPPI5_TR_EVENT_SIZE_ICNT1_DEC,
-+	/*
-+	 * Type 0-1,10-11: when the last data transaction is sent for the TR;
-+	 * All other types: when ICNT2 is decremented
-+	 */
-+	CPPI5_TR_EVENT_SIZE_ICNT2_DEC,
-+	/*
-+	 * Type 0-2,10-11: when the last data transaction is sent for the TR;
-+	 * All other types: when ICNT3 is decremented
-+	 */
-+	CPPI5_TR_EVENT_SIZE_ICNT3_DEC,
-+	CPPI5_TR_EVENT_SIZE_MAX
-+};
-+
-+/*
-+ * Udmap TR Flags TRIGGERx field specifies the type of trigger used to
-+ * enable the TR to transfer data as specified by TRIGGERx_TYPE field.
-+ */
-+enum cppi5_tr_trigger {
-+	CPPI5_TR_TRIGGER_NONE,		/* No Trigger */
-+	CPPI5_TR_TRIGGER_GLOBAL0,		/* Global Trigger 0 */
-+	CPPI5_TR_TRIGGER_GLOBAL1,		/* Global Trigger 1 */
-+	CPPI5_TR_TRIGGER_LOCAL_EVENT,	/* Local Event */
-+	CPPI5_TR_TRIGGER_MAX
-+};
-+
-+/*
-+ * Udmap TR Flags TRIGGERx_TYPE field specifies the type of data transfer
-+ * that will be enabled by receiving a trigger as specified by TRIGGERx.
-+ */
-+enum cppi5_tr_trigger_type {
-+	/* The second inner most loop (ICNT1) will be decremented by 1 */
-+	CPPI5_TR_TRIGGER_TYPE_ICNT1_DEC,
-+	/* The third inner most loop (ICNT2) will be decremented by 1 */
-+	CPPI5_TR_TRIGGER_TYPE_ICNT2_DEC,
-+	/* The outer most loop (ICNT3) will be decremented by 1 */
-+	CPPI5_TR_TRIGGER_TYPE_ICNT3_DEC,
-+	/* The entire TR will be allowed to complete */
-+	CPPI5_TR_TRIGGER_TYPE_ALL,
-+	CPPI5_TR_TRIGGER_TYPE_MAX
-+};
-+
-+typedef u32 cppi5_tr_flags_t;
-+
-+/* Type 0 (One dimensional data move) TR (16 byte) */
-+struct cppi5_tr_type0_t {
-+	cppi5_tr_flags_t flags;
-+	u16 icnt0;
-+	u16 unused;
-+	u64 addr;
-+} __aligned(16) __packed;
-+
-+/* Type 1 (Two dimensional data move) TR (32 byte) */
-+struct cppi5_tr_type1_t {
-+	cppi5_tr_flags_t flags;
-+	u16 icnt0;
-+	u16 icnt1;
-+	u64 addr;
-+	s32 dim1;
-+} __aligned(32) __packed;
-+
-+/* Type 2 (Three dimensional data move) TR (32 byte) */
-+struct cppi5_tr_type2_t {
-+	cppi5_tr_flags_t flags;
-+	u16 icnt0;
-+	u16 icnt1;
-+	u64 addr;
-+	s32 dim1;
-+	u16 icnt2;
-+	u16 unused;
-+	s32 dim2;
-+} __aligned(32) __packed;
-+
-+/* Type 3 (Four dimensional data move) TR (32 byte) */
-+struct cppi5_tr_type3_t {
-+	cppi5_tr_flags_t flags;
-+	u16 icnt0;
-+	u16 icnt1;
-+	u64 addr;
-+	s32 dim1;
-+	u16 icnt2;
-+	u16 icnt3;
-+	s32 dim2;
-+	s32 dim3;
-+} __aligned(32) __packed;
-+
-+/*
-+ * Type 15 (Four Dimensional Block Copy with Repacking and
-+ * Indirection Support) TR (64 byte).
-+ */
-+struct cppi5_tr_type15_t {
-+	cppi5_tr_flags_t flags;
-+	u16 icnt0;
-+	u16 icnt1;
-+	u64 addr;
-+	s32 dim1;
-+	u16 icnt2;
-+	u16 icnt3;
-+	s32 dim2;
-+	s32 dim3;
-+	u32 _reserved;
-+	s32 ddim1;
-+	u64 daddr;
-+	s32 ddim2;
-+	s32 ddim3;
-+	u16 dicnt0;
-+	u16 dicnt1;
-+	u16 dicnt2;
-+	u16 dicnt3;
-+} __aligned(64) __packed;
-+
-+struct cppi5_tr_resp_t {
-+	u8 status;
-+	u8 reserved;
-+	u8 cmd_id;
-+	u8 flags;
-+} __packed;
-+
-+#define CPPI5_TR_RESPONSE_STATUS_TYPE_SHIFT	(0U)
-+#define CPPI5_TR_RESPONSE_STATUS_TYPE_MASK	GENMASK(3, 0)
-+#define CPPI5_TR_RESPONSE_STATUS_INFO_SHIFT	(4U)
-+#define CPPI5_TR_RESPONSE_STATUS_INFO_MASK	GENMASK(7, 4)
-+#define CPPI5_TR_RESPONSE_CMDID_SHIFT		(16U)
-+#define CPPI5_TR_RESPONSE_CMDID_MASK		GENMASK(23, 16)
-+#define CPPI5_TR_RESPONSE_CFG_SPECIFIC_SHIFT	(24U)
-+#define CPPI5_TR_RESPONSE_CFG_SPECIFIC_MASK	GENMASK(31, 24)
-+
-+/*
-+ * Udmap TR Response Status Type field is used to determine
-+ * what type of status is being returned.
-+ */
-+enum cppi5_tr_resp_status_type {
-+	CPPI5_TR_RESPONSE_STATUS_COMPLETE,		/* None */
-+	CPPI5_TR_RESPONSE_STATUS_TRANSFER_ERR,		/* Transfer Error */
-+	CPPI5_TR_RESPONSE_STATUS_ABORTED_ERR,		/* Aborted Error */
-+	CPPI5_TR_RESPONSE_STATUS_SUBMISSION_ERR,	/* Submission Error */
-+	CPPI5_TR_RESPONSE_STATUS_UNSUPPORTED_ERR,	/* Unsup. Feature */
-+	CPPI5_TR_RESPONSE_STATUS_MAX
-+};
-+
-+/*
-+ * Udmap TR Response Status field values which corresponds
-+ * CPPI5_TR_RESPONSE_STATUS_SUBMISSION_ERR
-+ */
-+enum cppi5_tr_resp_status_submission {
-+	/* ICNT0 was 0 */
-+	CPPI5_TR_RESPONSE_STATUS_SUBMISSION_ICNT0,
-+	/* Channel FIFO was full when TR received */
-+	CPPI5_TR_RESPONSE_STATUS_SUBMISSION_FIFO_FULL,
-+	/* Channel is not owned by the submitter */
-+	CPPI5_TR_RESPONSE_STATUS_SUBMISSION_OWN,
-+	CPPI5_TR_RESPONSE_STATUS_SUBMISSION_MAX
-+};
-+
-+/*
-+ * Udmap TR Response Status field values which corresponds
-+ * CPPI5_TR_RESPONSE_STATUS_UNSUPPORTED_ERR
-+ */
-+enum cppi5_tr_resp_status_unsupported {
-+	/* TR Type not supported */
-+	CPPI5_TR_RESPONSE_STATUS_UNSUPPORTED_TR_TYPE,
-+	/* STATIC not supported */
-+	CPPI5_TR_RESPONSE_STATUS_UNSUPPORTED_STATIC,
-+	/* EOL not supported */
-+	CPPI5_TR_RESPONSE_STATUS_UNSUPPORTED_EOL,
-+	/* CONFIGURATION SPECIFIC not supported */
-+	CPPI5_TR_RESPONSE_STATUS_UNSUPPORTED_CFG_SPECIFIC,
-+	/* AMODE not supported */
-+	CPPI5_TR_RESPONSE_STATUS_UNSUPPORTED_AMODE,
-+	/* ELTYPE not supported */
-+	CPPI5_TR_RESPONSE_STATUS_UNSUPPORTED_ELTYPE,
-+	/* DFMT not supported */
-+	CPPI5_TR_RESPONSE_STATUS_UNSUPPORTED_DFMT,
-+	/* SECTR not supported */
-+	CPPI5_TR_RESPONSE_STATUS_UNSUPPORTED_SECTR,
-+	/* AMODE SPECIFIC field not supported */
-+	CPPI5_TR_RESPONSE_STATUS_UNSUPPORTED_AMODE_SPECIFIC,
-+	CPPI5_TR_RESPONSE_STATUS_UNSUPPORTED_MAX
-+};
-+
-+/**
-+ * cppi5_trdesc_calc_size - Calculate TR Descriptor size
-+ * @tr_count: number of TR records
-+ * @tr_size: Nominal size of TR record (max) [16, 32, 64, 128]
-+ *
-+ * Returns required TR Descriptor size
-+ */
-+static inline size_t cppi5_trdesc_calc_size(u32 tr_count, u32 tr_size)
-+{
-+	/*
-+	 * The Size of a TR descriptor is:
-+	 * 1 x tr_size : the first 16 bytes is used by the packet info block +
-+	 * tr_count x tr_size : Transfer Request Records +
-+	 * tr_count x sizeof(struct cppi5_tr_resp_t) : Transfer Response Records
-+	 */
-+	return tr_size * (tr_count + 1) +
-+		sizeof(struct cppi5_tr_resp_t) * tr_count;
-+}
-+
-+/**
-+ * cppi5_trdesc_init - Init TR Descriptor
-+ * @desc: TR Descriptor
-+ * @tr_count: number of TR records
-+ * @tr_size: Nominal size of TR record (max) [16, 32, 64, 128]
-+ * @reload_idx: Absolute index to jump to on the 2nd and following passes
-+ *		through the TR packet.
-+ * @reload_count: Number of times to jump from last entry to reload_idx. 0x1ff
-+ *		  indicates infinite looping.
-+ *
-+ * Init TR Descriptor
-+ */
-+static inline void cppi5_trdesc_init(struct cppi5_desc_hdr_t *desc_hdr,
-+				     u32 tr_count, u32 tr_size, u32 reload_idx,
-+				     u32 reload_count)
-+{
-+	WARN_ON(!desc_hdr);
-+	WARN_ON(tr_count & ~CPPI5_INFO0_TRDESC_LASTIDX_MASK);
-+	WARN_ON(reload_idx > CPPI5_INFO0_TRDESC_RLDIDX_MAX);
-+	WARN_ON(reload_count > CPPI5_INFO0_TRDESC_RLDCNT_MAX);
-+
-+	desc_hdr->pkt_info0 = CPPI5_INFO0_DESC_TYPE_VAL_TR <<
-+			      CPPI5_INFO0_HDESC_TYPE_SHIFT;
-+	desc_hdr->pkt_info0 |= (reload_count << CPPI5_INFO0_TRDESC_RLDCNT_SHIFT) &
-+			       CPPI5_INFO0_TRDESC_RLDCNT_MASK;
-+	desc_hdr->pkt_info0 |= (reload_idx << CPPI5_INFO0_TRDESC_RLDIDX_SHIFT) &
-+			       CPPI5_INFO0_TRDESC_RLDIDX_MASK;
-+	desc_hdr->pkt_info0 |= (tr_count - 1) & CPPI5_INFO0_TRDESC_LASTIDX_MASK;
-+
-+	desc_hdr->pkt_info1 |= ((ffs(tr_size >> 4) - 1) <<
-+				CPPI5_INFO1_TRDESC_RECSIZE_SHIFT) &
-+				CPPI5_INFO1_TRDESC_RECSIZE_MASK;
-+}
-+
-+/**
-+ * cppi5_tr_init - Init TR record
-+ * @flags: Pointer to the TR's flags
-+ * @type: TR type
-+ * @static_tr: TR is static
-+ * @wait: Wait for TR completion before allow the next TR to start
-+ * @event_size: output event generation cfg
-+ * @cmd_id: TR identifier (application specifics)
-+ *
-+ * Init TR record
-+ */
-+static inline void cppi5_tr_init(cppi5_tr_flags_t *flags,
-+				 enum cppi5_tr_types type, bool static_tr,
-+				 bool wait, enum cppi5_tr_event_size event_size,
-+				 u32 cmd_id)
-+{
-+	WARN_ON(!flags);
-+
-+	*flags = type;
-+	*flags |= (event_size << CPPI5_TR_EVENT_SIZE_SHIFT) &
-+		  CPPI5_TR_EVENT_SIZE_MASK;
-+
-+	*flags |= (cmd_id << CPPI5_TR_CMD_ID_SHIFT) &
-+		  CPPI5_TR_CMD_ID_MASK;
-+
-+	if (static_tr && (type == CPPI5_TR_TYPE8 || type == CPPI5_TR_TYPE9))
-+		*flags |= CPPI5_TR_STATIC;
-+
-+	if (wait)
-+		*flags |= CPPI5_TR_WAIT;
-+}
-+
-+/**
-+ * cppi5_tr_set_trigger - Configure trigger0/1 and trigger0/1_type
-+ * @flags: Pointer to the TR's flags
-+ * @trigger0: trigger0 selection
-+ * @trigger0_type: type of data transfer that will be enabled by trigger0
-+ * @trigger1: trigger1 selection
-+ * @trigger1_type: type of data transfer that will be enabled by trigger1
-+ *
-+ * Configure the triggers for the TR
-+ */
-+static inline void cppi5_tr_set_trigger(cppi5_tr_flags_t *flags,
-+		enum cppi5_tr_trigger trigger0,
-+		enum cppi5_tr_trigger_type trigger0_type,
-+		enum cppi5_tr_trigger trigger1,
-+		enum cppi5_tr_trigger_type trigger1_type)
-+{
-+	WARN_ON(!flags);
-+
-+	*flags |= (trigger0 << CPPI5_TR_TRIGGER0_SHIFT) &
-+		  CPPI5_TR_TRIGGER0_MASK;
-+	*flags |= (trigger0_type << CPPI5_TR_TRIGGER0_TYPE_SHIFT) &
-+		  CPPI5_TR_TRIGGER0_TYPE_MASK;
-+
-+	*flags |= (trigger1 << CPPI5_TR_TRIGGER1_SHIFT) &
-+		  CPPI5_TR_TRIGGER1_MASK;
-+	*flags |= (trigger1_type << CPPI5_TR_TRIGGER1_TYPE_SHIFT) &
-+		  CPPI5_TR_TRIGGER1_TYPE_MASK;
-+}
-+
-+/**
-+ * cppi5_tr_cflag_set - Update the Configuration specific flags
-+ * @flags: Pointer to the TR's flags
-+ * @csf: Configuration specific flags
-+ *
-+ * Set a bit in Configuration Specific Flags section of the TR flags.
-+ */
-+static inline void cppi5_tr_csf_set(cppi5_tr_flags_t *flags, u32 csf)
-+{
-+	WARN_ON(!flags);
-+
-+	*flags |= (csf << CPPI5_TR_CSF_FLAGS_SHIFT) &
-+		  CPPI5_TR_CSF_FLAGS_MASK;
-+}
-+
-+#endif /* __TI_CPPI5_H__ */
--- 
-Peter
-
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
-Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+TmV3IGJpbmRpbmcgZG9jdW1lbnQgZm9yClRleGFzIEluc3RydW1lbnRzIEszIE5BVlNTIFVuaWZp
+ZWQgRE1BIOKAkyBQZXJpcGhlcmFsIFJvb3QgQ29tcGxleCAoVURNQS1QKS4KClVETUEtUCBpcyBp
+bnRyb2R1Y2VkIGFzIHBhcnQgb2YgdGhlIEszIGFyY2hpdGVjdHVyZSBhbmQgY2FuIGJlIGZvdW5k
+IG9uCkFNNjU0IGFuZCBqNzIxZS4KClNpZ25lZC1vZmYtYnk6IFBldGVyIFVqZmFsdXNpIDxwZXRl
+ci51amZhbHVzaUB0aS5jb20+Ci0tLQogLi4uL2RldmljZXRyZWUvYmluZGluZ3MvZG1hL3RpL2sz
+LXVkbWEudHh0ICAgIHwgMTcwICsrKysrKysrKysrKysrKysrKwogaW5jbHVkZS9kdC1iaW5kaW5n
+cy9kbWEvazMtdWRtYS5oICAgICAgICAgICAgIHwgIDEwICsrCiAyIGZpbGVzIGNoYW5nZWQsIDE4
+MCBpbnNlcnRpb25zKCspCiBjcmVhdGUgbW9kZSAxMDA2NDQgRG9jdW1lbnRhdGlvbi9kZXZpY2V0
+cmVlL2JpbmRpbmdzL2RtYS90aS9rMy11ZG1hLnR4dAogY3JlYXRlIG1vZGUgMTAwNjQ0IGluY2x1
+ZGUvZHQtYmluZGluZ3MvZG1hL2szLXVkbWEuaAoKZGlmZiAtLWdpdCBhL0RvY3VtZW50YXRpb24v
+ZGV2aWNldHJlZS9iaW5kaW5ncy9kbWEvdGkvazMtdWRtYS50eHQgYi9Eb2N1bWVudGF0aW9uL2Rl
+dmljZXRyZWUvYmluZGluZ3MvZG1hL3RpL2szLXVkbWEudHh0Cm5ldyBmaWxlIG1vZGUgMTAwNjQ0
+CmluZGV4IDAwMDAwMDAwMDAwMC4uN2YzMGZlNTgzYWRlCi0tLSAvZGV2L251bGwKKysrIGIvRG9j
+dW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2RtYS90aS9rMy11ZG1hLnR4dApAQCAtMCww
+ICsxLDE3MCBAQAorKiBUZXhhcyBJbnN0cnVtZW50cyBLMyBOQVZTUyBVbmlmaWVkIERNQSDigJMg
+UGVyaXBoZXJhbCBSb290IENvbXBsZXggKFVETUEtUCkKKworVGhlIFVETUEtUCBpcyBpbnRlbmRl
+ZCB0byBwZXJmb3JtIHNpbWlsYXIgKGJ1dCBzaWduaWZpY2FudGx5IHVwZ3JhZGVkKSBmdW5jdGlv
+bnMKK2FzIHRoZSBwYWNrZXQtb3JpZW50ZWQgRE1BIHVzZWQgb24gcHJldmlvdXMgU29DIGRldmlj
+ZXMuIFRoZSBVRE1BLVAgbW9kdWxlCitzdXBwb3J0cyB0aGUgdHJhbnNtaXNzaW9uIGFuZCByZWNl
+cHRpb24gb2YgdmFyaW91cyBwYWNrZXQgdHlwZXMuIFRoZSBVRE1BLVAgaXMKK2FyY2hpdGVjdGVk
+IHRvIGZhY2lsaXRhdGUgdGhlIHNlZ21lbnRhdGlvbiBhbmQgcmVhc3NlbWJseSBvZiBTb0MgRE1B
+IGRhdGEKK3N0cnVjdHVyZSBjb21wbGlhbnQgcGFja2V0cyB0by9mcm9tIHNtYWxsZXIgZGF0YSBi
+bG9ja3MgdGhhdCBhcmUgbmF0aXZlbHkKK2NvbXBhdGlibGUgd2l0aCB0aGUgc3BlY2lmaWMgcmVx
+dWlyZW1lbnRzIG9mIGVhY2ggY29ubmVjdGVkIHBlcmlwaGVyYWwuIE11bHRpcGxlCitUeCBhbmQg
+UnggY2hhbm5lbHMgYXJlIHByb3ZpZGVkIHdpdGhpbiB0aGUgRE1BIHdoaWNoIGFsbG93IG11bHRp
+cGxlIHNlZ21lbnRhdGlvbgorb3IgcmVhc3NlbWJseSBvcGVyYXRpb25zIHRvIGJlIG9uZ29pbmcu
+IFRoZSBETUEgY29udHJvbGxlciBtYWludGFpbnMgc3RhdGUKK2luZm9ybWF0aW9uIGZvciBlYWNo
+IG9mIHRoZSBjaGFubmVscyB3aGljaCBhbGxvd3MgcGFja2V0IHNlZ21lbnRhdGlvbiBhbmQKK3Jl
+YXNzZW1ibHkgb3BlcmF0aW9ucyB0byBiZSB0aW1lIGRpdmlzaW9uIG11bHRpcGxleGVkIGJldHdl
+ZW4gY2hhbm5lbHMgaW4gb3JkZXIKK3RvIHNoYXJlIHRoZSB1bmRlcmx5aW5nIERNQSBoYXJkd2Fy
+ZS4gQW4gZXh0ZXJuYWwgRE1BIHNjaGVkdWxlciBpcyB1c2VkIHRvCitjb250cm9sIHRoZSBvcmRl
+cmluZyBhbmQgcmF0ZSBhdCB3aGljaCB0aGlzIG11bHRpcGxleGluZyBvY2N1cnMgZm9yIFRyYW5z
+bWl0CitvcGVyYXRpb25zLiBUaGUgb3JkZXJpbmcgYW5kIHJhdGUgb2YgUmVjZWl2ZSBvcGVyYXRp
+b25zIGlzIGluZGlyZWN0bHkgY29udHJvbGxlZAorYnkgdGhlIG9yZGVyIGluIHdoaWNoIGJsb2Nr
+cyBhcmUgcHVzaGVkIGludG8gdGhlIERNQSBvbiB0aGUgUnggUFNJLUwgaW50ZXJmYWNlLgorCitU
+aGUgVURNQS1QIGFsc28gc3VwcG9ydHMgYWN0aW5nIGFzIGJvdGggYSBVVEMgYW5kIFVETUEtQyBm
+b3IgaXRzIGludGVybmFsCitjaGFubmVscy4gQ2hhbm5lbHMgaW4gdGhlIFVETUEtUCBjYW4gYmUg
+Y29uZmlndXJlZCB0byBiZSBlaXRoZXIgUGFja2V0LUJhc2VkIG9yCitUaGlyZC1QYXJ0eSBjaGFu
+bmVscyBvbiBhIGNoYW5uZWwgYnkgY2hhbm5lbCBiYXNpcy4KKworUmVxdWlyZWQgcHJvcGVydGll
+czoKKy0tLS0tLS0tLS0tLS0tLS0tLS0tCistIGNvbXBhdGlibGU6CQlTaG91bGQgYmUKKwkJCSJ0
+aSxhbTY1NC1uYXZzcy1tYWluLXVkbWFwIiBmb3IgYW02NTQgbWFpbiBOQVZTUyBVRE1BUAorCQkJ
+InRpLGFtNjU0LW5hdnNzLW1jdS11ZG1hcCIgZm9yIGFtNjU0IG1jdSBOQVZTUyBVRE1BUAorCQkJ
+InRpLGo3MjFlLW5hdnNzLW1haW4tdWRtYXAiIGZvciBqNzIxZSBtYWluIE5BVlNTIFVETUFQCisJ
+CQkidGksajcyMWUtbmF2c3MtbWN1LXVkbWFwIiBmb3IgajcyMWUgbWN1IE5BVlNTIFVETUFQCist
+ICNkbWEtY2VsbHM6CQlTaG91bGQgYmUgc2V0IHRvIDwzPi4KKwkJCS0gVGhlIGZpcnN0IHBhcmFt
+ZXRlciBpcyBhIHBoYW5kbGUgdG8gdGhlIHJlbW90ZSBQU0ktTAorCQkJICBlbmRwb2ludAorCQkJ
+LSBUaGUgc2Vjb25kIHBhcmFtZXRlciBpcyB0aGUgdGhyZWFkIG9mZnNldCB3aXRoaW4gdGhlCisJ
+CQkgIHJlbW90ZSB0aHJlYWQgSUQgcmFuZ2UKKwkJCS0gVGhlIHRoaXJkIHBhcmFtZXRlciBpcyB0
+aGUgY2hhbm5lbCBkaXJlY3Rpb24uCistIHJlZzoJCQlNZW1vcnkgbWFwIG9mIFVETUFQCistIHJl
+Zy1uYW1lczoJCSJnY2ZnIiwgInJjaGFucnQiLCAidGNoYW5ydCIKKy0gbXNpLXBhcmVudDoJCXBo
+YW5kbGUgZm9yICJ0aSxzY2ktaW50YSIgaW50ZXJydXB0IGNvbnRyb2xsZXIKKy0gdGkscmluZ2Fj
+YzoJCXBoYW5kbGUgZm9yIHRoZSByaW5nIGFjY2VsZXJhdG9yIG5vZGUKKy0gdGkscHNpbC1iYXNl
+OgkJUFNJLUwgdGhyZWFkIElEIGJhc2Ugb2YgdGhlIFVETUFQIGNoYW5uZWxzCistIHRpLHNjaToJ
+CXBoYW5kbGUgb24gVEktU0NJIGNvbXBhdGlibGUgU3lzdGVtIGNvbnRyb2xsZXIgbm9kZQorLSB0
+aSxzY2ktZGV2LWlkOglUSS1TQ0kgZGV2aWNlIGlkCistIHRpLHNjaS1ybS1yYW5nZS10Y2hhbjog
+VURNQSB0Y2hhbiByZXNvdXJjZSBsaXN0IGluIHBhaXJzIG9mIHR5cGUgYW5kIHN1YnR5cGUKKy0g
+dGksc2NpLXJtLXJhbmdlLXJjaGFuOiBVRE1BIHJjaGFuIHJlc291cmNlIGxpc3QgaW4gcGFpcnMg
+b2YgdHlwZSBhbmQgc3VidHlwZQorLSB0aSxzY2ktcm0tcmFuZ2UtcmZsb3c6IFVETUEgcmZsb3cg
+cmVzb3VyY2UgbGlzdCBpbiBwYWlycyBvZiB0eXBlIGFuZCBzdWJ0eXBlCisKK0ZvciBQU0ktTCB0
+aHJlYWQgbWFuYWdlbWVudCB0aGUgcGFyZW50IE5BVlNTIG5vZGUgbXVzdCBoYXZlOgorLSB0aSxz
+Y2k6CQlwaGFuZGxlIG9uIFRJLVNDSSBjb21wYXRpYmxlIFN5c3RlbSBjb250cm9sbGVyIG5vZGUK
+Ky0gdGksc2NpLWRldi1pZDoJVEktU0NJIGRldmljZSBpZCBvZiB0aGUgTkFWU1MgaW5zdGFuY2UK
+KworUmVtb3RlIFBTSS1MIGVuZHBvaW50CisKK1JlcXVpcmVkIHByb3BlcnRpZXM6CistLS0tLS0t
+LS0tLS0tLS0tLS0tLQorLSB0aSxwc2lsLWJhc2U6CQlQU0ktTCB0aHJlYWQgSUQgYmFzZSBvZiB0
+aGUgZW5kcG9pbnQKKworV2l0aGluIHRoZSBQU0ktTCBlbmRwb2ludCBub2RlIHRocmVhZCBjb25m
+aWd1cmF0aW9uIHN1Ym5vZGVzIG11c3QgcHJlc2VudCB3aXRoOgorcHNpbC1jb25maWdYIG5hbWlu
+ZyBjb252ZW50aW9uLCB3aGVyZSBYIGlzIHRoZSB0aHJlYWQgSUQgb2Zmc2V0LgorCitDb25maWd1
+cmF0aW9uIG5vZGUgT3B0aW9uYWwgcHJvcGVydGllczoKKy0tLS0tLS0tLS0tLS0tLS0tLS0tCist
+IHBkbWEsc3RhdGljdHItdHlwZToJSW4gY2FzZSB0aGUgcmVtb3RlIGVuZHBvaW50IChQRE1Bcykg
+cmVxdWlyZXMgU3RhdGljVFIKKwkJCWNvbmZpZ3VyYXRpb246CisJCQktIFBTSUxfU1RBVElDX1RS
+X1hZICgxKTogWFkgdHlwZSBvZiBTdGF0aWNUUgorCQkJRm9yIGVuZHBvaW50cyB3aXRob3V0IFN0
+YXRpY1RSIHRoZSBwcm9wZXJ0eSBpcyBub3QKKwkJCW5lZWRlZCBvciB0byBiZSBzZXQgUFNJTF9T
+VEFUSUNfVFJfTk9ORSAoMCkuCistIHBkbWEsZW5hYmxlLWFjYzMyOglGb3JjZSAzMiBiaXQgYWNj
+ZXNzIG9uIHBlcmlwaGVyYWwgcG9ydC4gT25seSB2YWxpZCBmb3IKKwkJCVhZIHR5cGUgU3RhdGlj
+VFIsIG5vdCBzdXBwb3J0ZWQgb24gYW02NTQuCisJCQlNdXN0IGJlIGVuYWJsZWQgZm9yIHRocmVh
+ZHMgc2VydmljaW5nIE1jQVNQIHdpdGggQUZJRk8KKwkJCWJ5cGFzcyBtb2RlLgorLSBwZG1hLGVu
+YWJsZS1idXJzdDoJRW5hYmxlIGJ1cnN0IGFjY2VzcyBvbiBwZXJpcGhlcmFsIHBvcnQuIE9ubHkg
+dmFsaWQgZm9yCisJCQlYWSB0eXBlIFN0YXRpY1RSLCBub3Qgc3VwcG9ydGVkIG9uIGFtNjU0Lgor
+LSB0aSxjaGFubmVsLXRwbDoJQ2hhbm5lbCBUaHJvdWdocHV0IGxldmVsOgorCQkJMCAvIG9yIG5v
+dCBwcmVzZW50IC0gbm9ybWFsIGNoYW5uZWwKKwkJCTEgLSBIaWdoIFRocm91Z2hwdXQgY2hhbm5l
+bAorCQkJMiAtIFVsdHJhIEhpZ2ggVGhyb3VnaHB1dCBjaGFubmVsIChqNzIxZSBvbmx5KQorLSB0
+aSxuZWVkcy1lcGliOglJZiB0aGUgZW5kcG9pbnQgcmVxdWlyZSBFUElCIHRvIGJlIHByZXNlbnQg
+aW4gdGhlCisJCQlkZXNjcmlwdG9yLgorLSB0aSxwc2Qtc2l6ZToJCVNpemUgb2YgdGhlIFByb3Rv
+Y29sIFNwZWNpZmljIERhdGEgc2VjdGlvbiBvZiB0aGUKKwkJCWRlc2NyaXB0b3IuCisKK0V4YW1w
+bGU6CisKK21haW5fbmF2c3M6IG1haW5fbmF2c3MgeworCWNvbXBhdGlibGUgPSAic2ltcGxlLWJ1
+cyI7CisJI2FkZHJlc3MtY2VsbHMgPSA8Mj47CisJI3NpemUtY2VsbHMgPSA8Mj47CisJZG1hLWNv
+aGVyZW50OworCWRtYS1yYW5nZXM7CisJcmFuZ2VzOworCisJdGksc2NpID0gPCZkbXNjPjsKKwl0
+aSxzY2ktZGV2LWlkID0gPDExOD47CisKKwltYWluX3VkbWFwOiBkbWEtY29udHJvbGxlckAzMTE1
+MDAwMCB7CisJCWNvbXBhdGlibGUgPSAidGksYW02NTQtbmF2c3MtbWFpbi11ZG1hcCI7CisJCXJl
+ZyA9CTwweDAgMHgzMTE1MDAwMCAweDAgMHgxMDA+LAorCQkJPDB4MCAweDM0MDAwMDAwIDB4MCAw
+eDEwMDAwMD4sCisJCQk8MHgwIDB4MzUwMDAwMDAgMHgwIDB4MTAwMDAwPjsKKwkJcmVnLW5hbWVz
+ID0gImdjZmciLCAicmNoYW5ydCIsICJ0Y2hhbnJ0IjsKKwkJI2RtYS1jZWxscyA9IDwzPjsKKwor
+CQl0aSxyaW5nYWNjID0gPCZyaW5nYWNjPjsKKwkJdGkscHNpbC1iYXNlID0gPDB4MTAwMD47CisK
+KwkJaW50ZXJydXB0LXBhcmVudCA9IDwmbWFpbl91ZG1hc3NfaW50YT47CisKKwkJdGksc2NpID0g
+PCZkbXNjPjsKKwkJdGksc2NpLWRldi1pZCA9IDwxODg+OworCisJCXRpLHNjaS1ybS1yYW5nZS10
+Y2hhbiA9IDwweDYgMHgxPiwgLyogVFhfSENIQU4gKi8KKwkJCQkJPDB4NiAweDI+OyAvKiBUWF9D
+SEFOICovCisJCXRpLHNjaS1ybS1yYW5nZS1yY2hhbiA9IDwweDYgMHg0PiwgLyogUlhfSENIQU4g
+Ki8KKwkJCQkJPDB4NiAweDU+OyAvKiBSWF9DSEFOICovCisJCXRpLHNjaS1ybS1yYW5nZS1yZmxv
+dyA9IDwweDYgMHg2PjsgLyogR1AgUkZMT1cgKi8KKwl9OworfTsKKworcHNpbHNzQDM0MGMwMDAg
+eworCS8qIFBTSUxTUzEgQUFTUkMgKi8KKwljb21wYXRpYmxlID0gInRpLGo3MjFlLXBzaWxzcyI7
+CisJcmVnID0gPDB4MCAweDAzNDBjMDAwIDB4MCAweDEwMDA+OworCXJlZy1uYW1lcyA9ICJjb25m
+aWciOworCisJcGRtYV9tYWluX21jYXNwX2cwOiBwZG1hX21haW5fbWNhc3BfZzAgeworCQkvKiBQ
+RE1BNiAoUERNQV9NQ0FTUF9HMCkgKi8KKwkJdGkscHNpbC1iYXNlID0gPDB4NDQwMD47CisKKwkJ
+LyogcHNpbC1jb25maWcwICovCisJCXBzaWwtY29uZmlnMCB7CisJCQlwZG1hLHN0YXRpY3RyLXR5
+cGUgPSA8UFNJTF9TVEFUSUNfVFJfWFk+OworCQkJcGRtYSxlbmFibGUtYWNjMzI7CisJCQlwZG1h
+LGVuYWJsZS1idXJzdDsKKwkJfTsKKwl9OworfTsKKworbWNhc3AwOiBtY2FzcEAwMkIwMDAwMCB7
+CisuLi4KKwkvKiB0eDogUERNQV9NQUlOX01DQVNQX0cwLTAsIHJ4OiBQRE1BX01BSU5fTUNBU1Bf
+RzAtMCAqLworCWRtYXMgPSA8Jm1haW5fdWRtYXAgJnBkbWFfbWFpbl9tY2FzcF9nMCAwIFVETUFf
+RElSX1RYPiwKKwkgICAgICAgPCZtYWluX3VkbWFwICZwZG1hX21haW5fbWNhc3BfZzAgMCBVRE1B
+X0RJUl9SWD47CisJZG1hLW5hbWVzID0gInR4IiwgInJ4IjsKKy4uLgorfTsKKworY3J5cHRvOiBj
+cnlwdG9ANEUwMDAwMCB7CisJY29tcGF0aWJsZSA9ICJ0aSxzYTJ1bC1jcnlwdG8iOworLi4uCisK
+KwkvKiB0eDogY3J5cHRvX3BucC0xLCByeDogY3J5cHRvX3BucC0xICovCisJZG1hcyA9IDwmbWFp
+bl91ZG1hcCAmY3J5cHRvIDAgVURNQV9ESVJfVFg+LAorCSAgICAgICA8Jm1haW5fdWRtYXAgJmNy
+eXB0byAwIFVETUFfRElSX1JYPiwKKwkgICAgICAgPCZtYWluX3VkbWFwICZjcnlwdG8gMSBVRE1B
+X0RJUl9SWD47CisJZG1hLW5hbWVzID0gInR4IiwgInJ4MSIsICJyeDIiOworLi4uCisJcHNpbC1j
+b25maWcwIHsKKwkJdGksbmVlZHMtZXBpYjsKKwkJdGkscHNkLXNpemUgPSA8NjQ+OworCX07CisK
+Kwlwc2lsLWNvbmZpZzEgeworCQl0aSxuZWVkcy1lcGliOworCQl0aSxwc2Qtc2l6ZSA9IDw2ND47
+CisJfTsKKworCXBzaWwtY29uZmlnMiB7CisJCXRpLG5lZWRzLWVwaWI7CisJCXRpLHBzZC1zaXpl
+ID0gPDY0PjsKKwl9OworfTsKZGlmZiAtLWdpdCBhL2luY2x1ZGUvZHQtYmluZGluZ3MvZG1hL2sz
+LXVkbWEuaCBiL2luY2x1ZGUvZHQtYmluZGluZ3MvZG1hL2szLXVkbWEuaApuZXcgZmlsZSBtb2Rl
+IDEwMDY0NAppbmRleCAwMDAwMDAwMDAwMDAuLmY1YzhmNWQ1MDQ5MQotLS0gL2Rldi9udWxsCisr
+KyBiL2luY2x1ZGUvZHQtYmluZGluZ3MvZG1hL2szLXVkbWEuaApAQCAtMCwwICsxLDEwIEBACisj
+aWZuZGVmIF9fRFRfVElfVURNQV9ICisjZGVmaW5lIF9fRFRfVElfVURNQV9ICisKKyNkZWZpbmUg
+VURNQV9ESVJfVFgJCTAKKyNkZWZpbmUgVURNQV9ESVJfUlgJCTEKKworI2RlZmluZSBQU0lMX1NU
+QVRJQ19UUl9OT05FCTAKKyNkZWZpbmUgUFNJTF9TVEFUSUNfVFJfWFkJMQorCisjZW5kaWYgLyog
+X19EVF9USV9VRE1BX0ggKi8KLS0gClBldGVyCgpUZXhhcyBJbnN0cnVtZW50cyBGaW5sYW5kIE95
+LCBQb3Jra2FsYW5rYXR1IDIyLCAwMDE4MCBIZWxzaW5raS4KWS10dW5udXMvQnVzaW5lc3MgSUQ6
+IDA2MTU1MjEtNC4gS290aXBhaWtrYS9Eb21pY2lsZTogSGVsc2lua2kKCgpfX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxp
+bmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
