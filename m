@@ -2,76 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E945C7A83B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 14:24:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96EF07A845
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 14:25:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=WjnwCjpiMmju+kjNraIJaKfEL5gX63fQzWOo3kxUU84=; b=Fri
-	Pgv1NvR9JikoImOBRvjgztd3fVxsiLUeHooDaBlfZV/QddNdlYrbJNWkpbIOl1LTp7lkb8Rh8h8I/
-	j6lAFFiktxoGyDUdHvU8hOa356HYst8bBG8Pb698OdsAew5RAbyF3B+402kIaLVjONKPQhi5dTX+X
-	gDMCblbR/DC/eRYjB0w4zU3ROxl70eeuW2FxPe31eewgj3vZw+s8tC2EgT8vcqYdm7dKMU125YdKC
-	jyv8nsK86090Nyo3n+HIBCjaYq7NkcQv1PX9Zt6L6hH+cxysP/86qiXtXa0Tdad3iPt6c1SQ/mCyw
-	2fZI29YkzWyTzHMAj64Zl+0BTCh53Jg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=ZlSfjrUrjp9mfDmdXHucZvs1jqiug4eRG1HJRNn2dCg=; b=h793bmiUFtYdllrMXr0vBPJATu
+	zvrMjuKHMCmx+AcPT/adGACsEsaT4/TwFYUYi4KSRdWa69s8+UjWQPH9M+pc1o8Z3gja52WRMJLal
+	POAu/MTyN0ECEXInrZ/zXRRh5wBWyLci6IeLcJRwghOBDzPVFFI7HYEt8d4ymE2J2tJjHoYh8QHGg
+	GiE+8sMd6NdTXV3PUe2+JsTJt4AWkKFQbqmap5SI4FtwKAJN4mpWx08K0t2odrtzuEuMGcDvS3Aq4
+	8V7lNcwvNv2uWgnB8K4th08uNhFxOQUXiqDyUWMMl4nIOM/b4UomfPDdk7dtpywZe//e/TeNNjArZ
+	IzZ7t5Sg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsRBK-0000ph-49; Tue, 30 Jul 2019 12:24:42 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1hsRBc-00010A-Lq; Tue, 30 Jul 2019 12:25:00 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsRB7-0000oW-2C
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 12:24:30 +0000
-Received: by mail-pg1-x542.google.com with SMTP id r22so2384337pgk.10
+ id 1hsRBC-0000ro-At
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 12:24:35 +0000
+Received: by mail-pf1-x444.google.com with SMTP id q10so29749703pff.9
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 30 Jul 2019 05:24:26 -0700 (PDT)
+ Tue, 30 Jul 2019 05:24:34 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=6ZePv7NXstL+Sqt4m1uBMWD7mL3/ZMzlrVfaZ2NvhzM=;
- b=lB6yIwwCNSDjrWVykyeL4K++VnFNec4YxgddVvaRS4/R/0oHWt7LQVpKqdjpAASjgc
- 0iPKuYv15NgUSHfKLcA6CR1Nt0rx5zAGcXi/FyaiI3Xda53pvauMaNAfx/1m2rxCwa0Z
- crzWacGPYYLLS5WXzVHnAOSrRG2imu9I/H7H4MXZIRTWu2zC2Zr5jM99w2uIL74nv9o2
- i3GLJevzUkxAKOe8KmddtnXsoghJmrXz7PF7/cL5Ph7z9nx8OAyBwxbwRwYd+OQInO1o
- tw9DWp8rvkv2AIt4K5pjZmJc0yRBKpJaeeStReenRYdnj1+Iiz60kQljwoVnlels7CqU
- z9Zg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=Ub4kuUSnrD2CiYyKKwaDCU7WlCc+MjZGT8+i8BhCGSM=;
+ b=MfQvx2dhjGV4/bSe60l+LebksrED1y3ZIlrOHn7KEst3uYq0lbZGY0vsMCXlHdvqTW
+ Ye8auI8LrPtuk1JjxXNnkdo+hZ+99keG4VGsdhwKAsEXIsOsIUECaXlU8hbVHLFk9cLT
+ HO8nBnDu0xGtOjVBUUGFJzgjgr3leWNo194UxYVJeI2Y+0v/K+qeQpXyF0PGeONbMN+i
+ gW62oUUDBfxqW/m3zRut5eraL0BhFNM47K2DQzNbSup/f6DVATK2umRIZlAbmj5eTK+g
+ Ie2+FR2iyP4pVV9kGjOO0QK2a+lbpVtyMzeY+CEhSSw2QwFdLdH8EHmR5UmLIl/CCH4Z
+ mvwg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=6ZePv7NXstL+Sqt4m1uBMWD7mL3/ZMzlrVfaZ2NvhzM=;
- b=EmYINy/KhBRgeDF0bbXFNQvZ7qd4VTfH4bprDkwDFvT8uwPOO9EVR/E8YdGxKEoVEk
- KwW+77tuVDfoSmFk56ZWVOeGZvAalmThnTsszTnpFWaq6xkJJSuMWYei7rFYOyosgjxZ
- mDtqJPjUIB/KZ+v+gkSmOTpOFgbCpzno8qWQZG9quaxYAEOrO5CydH/Hoe8H8CAQqZHi
- CkEDKEwd2gqfrqmhA8XflzX5EmSIM76PQsuTtKkU0RoPSImI8149AuG5Zg28ZAOd9W+C
- ZZqSyNPCRi2ZkPKlk/xiNgPN5eQ+wlg7U6Ck/PV63fX7AuGIZGPhTc9PzhyGqM40UzBc
- 73hg==
-X-Gm-Message-State: APjAAAVU8XyujmfUaklph8XHqneC8xP5GisgZv34DrG12rJUtono4e0j
- bK2PIUeVgM12a+WR8OcntY3UHg==
-X-Google-Smtp-Source: APXvYqzz0ouwcr+qO6OuAcn5WOt/R6U7643Qf7Q0IRtZgQR9bhTL3t8PR7Ke8ewd4iiIWjlDBn2OnQ==
-X-Received: by 2002:a17:90a:ca11:: with SMTP id
- x17mr117801760pjt.107.1564489465898; 
- Tue, 30 Jul 2019 05:24:25 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=Ub4kuUSnrD2CiYyKKwaDCU7WlCc+MjZGT8+i8BhCGSM=;
+ b=b43a2FMbVKcETQlQuCIhVKbcbGUoEZeEmlGvji2GWe7t5HRnvULrL5zMI9s7gatj/D
+ jo689jeAlCBv9TxCWP5DDvoO8vnJTpqa/ER2E3pkvw4kln3qzn6+0DKwzm0PN4NtCd2m
+ 8POC7ebm8LLPL/D80s2gXf+X3VIamD/8sQyvajgOv1iDWeqCV2R44cM6ipOT7+vLlo4/
+ ykTPe14axhWEfVgMFnrKC2wNI74tTlIu4LPT+sBUALTSkEQDja9o94HYa3qjXH9GMYpJ
+ vjhk/vLlRJ3/h38rkSJTXV85WRuWtOV9udbqcnzmKWSRbmEvPeshSfBzUd9mJRnZw7rq
+ 0aig==
+X-Gm-Message-State: APjAAAVwqF39Nk4YZzfVhr6QDjhA5ROnAkE+ZxaMTP/ybazH4+zzkoYq
+ vxeTS2qD1da3WUxJzdkfVAQ7PQ==
+X-Google-Smtp-Source: APXvYqy9AOsI/bgpSrYC4bB6dRW/RMjRTTrIQ53nsJNjfy9Y+arPAlgz9XGruaRKwy6MTunT2Iwvvg==
+X-Received: by 2002:a63:125c:: with SMTP id 28mr55618644pgs.255.1564489473744; 
+ Tue, 30 Jul 2019 05:24:33 -0700 (PDT)
 Received: from localhost.localdomain ([45.114.72.197])
- by smtp.gmail.com with ESMTPSA id v8sm54895462pgs.82.2019.07.30.05.24.17
+ by smtp.gmail.com with ESMTPSA id v8sm54895462pgs.82.2019.07.30.05.24.26
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Tue, 30 Jul 2019 05:24:25 -0700 (PDT)
+ Tue, 30 Jul 2019 05:24:33 -0700 (PDT)
 From: Sumit Garg <sumit.garg@linaro.org>
 To: keyrings@vger.kernel.org, linux-integrity@vger.kernel.org,
  linux-security-module@vger.kernel.org
-Subject: [RFC v2 0/6] Introduce TEE based Trusted Keys support
-Date: Tue, 30 Jul 2019 17:53:34 +0530
-Message-Id: <1564489420-677-1-git-send-email-sumit.garg@linaro.org>
+Subject: [RFC v2 1/6] tee: optee: allow kernel pages to register as shm
+Date: Tue, 30 Jul 2019 17:53:35 +0530
+Message-Id: <1564489420-677-2-git-send-email-sumit.garg@linaro.org>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1564489420-677-1-git-send-email-sumit.garg@linaro.org>
+References: <1564489420-677-1-git-send-email-sumit.garg@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_052429_109272_C2E1552D 
-X-CRM114-Status: GOOD (  12.62  )
+X-CRM114-CacheID: sfid-20190730_052434_486281_D00626ED 
+X-CRM114-Status: GOOD (  10.95  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -106,61 +109,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support for TEE based trusted keys where TEE provides the functionality
-to seal and unseal trusted keys using hardware unique key. Also, this is
-an alternative in case platform doesn't possess a TPM device.
+Kernel pages are marked as normal type memory only so allow kernel pages
+to be registered as shared memory with OP-TEE.
 
-This series also adds some TEE features like:
+Signed-off-by: Sumit Garg <sumit.garg@linaro.org>
+Reviewed-by: Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>
+Reviewed-by: Jens Wiklander <jens.wiklander@linaro.org>
+---
+ drivers/tee/optee/call.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
-Patch #1, #2 enables support for registered kernel shared memory with TEE.
-
-Patch #3 enables support for private kernel login method required for
-cases like trusted keys where we don't wan't user-space to directly access
-TEE service to retrieve trusted key contents.
-
-Rest of the patches from #4 to #6 adds support for TEE based trusted keys.
-
-This patch-set has been tested with OP-TEE based pseudo TA which can be
-found here [1].
-
-Also, this patch-set is dependent on generic Trusted Keys framework
-patch-set [2].
-
-[1] https://github.com/OP-TEE/optee_os/pull/3082
-[2] https://lkml.org/lkml/2019/7/18/284
-
-Changes in v2:
-1. Add reviewed-by tags for patch #1 and #2.
-2. Incorporate comments from Jens for patch #3.
-3. Switch to use generic trusted keys framework.
-
-Sumit Garg (6):
-  tee: optee: allow kernel pages to register as shm
-  tee: enable support to register kernel memory
-  tee: add private login method for kernel clients
-  KEYS: trusted: Introduce TEE based Trusted Keys
-  doc: keys: Document usage of TEE based Trusted Keys
-  MAINTAINERS: Add entry for TEE based Trusted Keys
-
- Documentation/security/keys/index.rst       |   1 +
- Documentation/security/keys/tee-trusted.rst |  93 +++++++++
- MAINTAINERS                                 |   9 +
- drivers/tee/optee/call.c                    |   7 +
- drivers/tee/tee_core.c                      |   6 +
- drivers/tee/tee_shm.c                       |  16 +-
- include/keys/trusted-type.h                 |   3 +
- include/keys/trusted_tee.h                  |  66 +++++++
- include/linux/tee_drv.h                     |   1 +
- include/uapi/linux/tee.h                    |   8 +
- security/keys/Kconfig                       |   3 +
- security/keys/trusted-keys/Makefile         |   3 +-
- security/keys/trusted-keys/trusted-tee.c    | 282 ++++++++++++++++++++++++++++
- security/keys/trusted-keys/trusted.c        |   3 +
- 14 files changed, 498 insertions(+), 3 deletions(-)
- create mode 100644 Documentation/security/keys/tee-trusted.rst
- create mode 100644 include/keys/trusted_tee.h
- create mode 100644 security/keys/trusted-keys/trusted-tee.c
-
+diff --git a/drivers/tee/optee/call.c b/drivers/tee/optee/call.c
+index aa94270..bce45b1 100644
+--- a/drivers/tee/optee/call.c
++++ b/drivers/tee/optee/call.c
+@@ -553,6 +553,13 @@ static int check_mem_type(unsigned long start, size_t num_pages)
+ 	struct mm_struct *mm = current->mm;
+ 	int rc;
+ 
++	/*
++	 * Allow kernel address to register with OP-TEE as kernel
++	 * pages are configured as normal memory only.
++	 */
++	if (virt_addr_valid(start))
++		return 0;
++
+ 	down_read(&mm->mmap_sem);
+ 	rc = __check_mem_type(find_vma(mm, start),
+ 			      start + num_pages * PAGE_SIZE);
 -- 
 2.7.4
 
