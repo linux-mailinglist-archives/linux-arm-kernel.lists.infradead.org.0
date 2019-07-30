@@ -2,59 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CFE917A07C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 07:45:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60EC47A097
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 07:51:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=olI/BIm/MnIB0ee2uz72r7qOn7CIvbzPeQVMR1voxvY=; b=sid57viPZHl+xLLLpEz6jzCa2k
-	P5h4MfVqPO/8NkTevabdLc/LG7rAWsi/zqhfoNmBEBaQRl+VUa4W/K/xVpemdBoof4iieqiNsZIBC
-	KwF5dOgHLXL3glrZudX+EgaN5uE9qXw5otUowgyMEOFbFlKHQprPpzi+PsvgQFupZOxkb9kPx7YMH
-	lRR3FNlwqZyUpukayx5bW8uc4yURSG+8tasqn393l1oxFucLe2NBF3ldFS1OkitrY60aWtkLO/ipr
-	zhowDEbWMCu1yXk+AgxjL8HMipK0+9GDdiCuN66OaOD0O3MvtrGl7tzvz+pL4F31xAYBEnUybIMow
-	ELk9VJKQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=A45Dz1hc0iM1OkBWzxdJufEHCQ3Eho2KvjEtF+quGcU=; b=qhEx8doFE3/H3M
+	F9PhS9biU4PvMVCPbMHARl28YwsfcAD6GWDslHP1xihhAnvZg/MQqTo4E2dxvJROfalmr3yfAX37U
+	jF+Be9eQfADC512cdm3Px8uU637ijOO+Cb8g1PpN/xCNIHztXqsKThRoz2xz3Aynfnm6MfuFkrY9Z
+	5E+lVms4EOQrUPuVwP93618/n1cBQS5M4kn7hEoUzMpXfjiMo4rXciGCH1q0RqdvJCNmYkRnrQgZy
+	6Wx/q7tud3Gp4WyxO5EK3Geq3tI2wQdzHsdpxSd1N2layIQQhbdts+uFVN8coerJx7cJIjrV/gpJT
+	XXvS7JRwFldX5ETqSf+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsKwW-0005dF-Tq; Tue, 30 Jul 2019 05:45:01 +0000
-Received: from mx.socionext.com ([202.248.49.38])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hsKvL-0004rW-Qt
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 05:43:49 +0000
-Received: from unknown (HELO kinkan-ex.css.socionext.com) ([172.31.9.52])
- by mx.socionext.com with ESMTP; 30 Jul 2019 14:43:46 +0900
-Received: from mail.mfilter.local (m-filter-2 [10.213.24.62])
- by kinkan-ex.css.socionext.com (Postfix) with ESMTP id 00B4F180B6E;
- Tue, 30 Jul 2019 14:43:46 +0900 (JST)
-Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
- Tue, 30 Jul 2019 14:43:46 +0900
-Received: from plum.e01.socionext.com (unknown [10.213.132.32])
- by kinkan.css.socionext.com (Postfix) with ESMTP id 989731A04FC;
- Tue, 30 Jul 2019 14:43:46 +0900 (JST)
-From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-To: Linus Walleij <linus.walleij@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>, linux-gpio@vger.kernel.org
-Subject: [PATCH v2 5/5] pinctrl: uniphier: Fix Pro5 SD pin-mux setting
-Date: Tue, 30 Jul 2019 14:43:30 +0900
-Message-Id: <1564465410-9165-6-git-send-email-hayashi.kunihiko@socionext.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1564465410-9165-1-git-send-email-hayashi.kunihiko@socionext.com>
-References: <1564465410-9165-1-git-send-email-hayashi.kunihiko@socionext.com>
+	id 1hsL3E-0000nq-Si; Tue, 30 Jul 2019 05:51:57 +0000
+Received: from relay8-d.mail.gandi.net ([217.70.183.201])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hsL31-0000ms-9r; Tue, 30 Jul 2019 05:51:45 +0000
+X-Originating-IP: 79.86.19.127
+Received: from alex.numericable.fr (127.19.86.79.rev.sfr.net [79.86.19.127])
+ (Authenticated sender: alex@ghiti.fr)
+ by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id 18BD71BF20B;
+ Tue, 30 Jul 2019 05:51:25 +0000 (UTC)
+From: Alexandre Ghiti <alex@ghiti.fr>
+To: Andrew Morton <akpm@linux-foundation.org>
+Subject: [PATCH v5 00/14] Provide generic top-down mmap layout functions
+Date: Tue, 30 Jul 2019 01:50:59 -0400
+Message-Id: <20190730055113.23635-1-alex@ghiti.fr>
+X-Mailer: git-send-email 2.20.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_224347_985379_F2577DD5 
-X-CRM114-Status: GOOD (  15.27  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190729_225143_659200_9522AE21 
+X-CRM114-Status: GOOD (  15.35  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [202.248.49.38 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.201 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,40 +57,119 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jassi Brar <jaswinder.singh@linaro.org>,
- Masami Hiramatsu <masami.hiramatsu@linaro.org>,
- Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Albert Ou <aou@eecs.berkeley.edu>, Kees Cook <keescook@chromium.org>,
+ Alexandre Ghiti <alex@ghiti.fr>, Catalin Marinas <catalin.marinas@arm.com>,
+ Palmer Dabbelt <palmer@sifive.com>, Will Deacon <will.deacon@arm.com>,
+ Russell King <linux@armlinux.org.uk>, Ralf Baechle <ralf@linux-mips.org>,
+ linux-kernel@vger.kernel.org, linux-mm@kvack.org,
+ Luis Chamberlain <mcgrof@kernel.org>, Paul Burton <paul.burton@mips.com>,
+ James Hogan <jhogan@kernel.org>, linux-fsdevel@vger.kernel.org,
+ linux-riscv@lists.infradead.org, linux-mips@vger.kernel.org,
+ Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org,
+ Alexander Viro <viro@zeniv.linux.org.uk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SD uses the following pins starting from 247:
-    SDCD, SDWP, SDVOLC, SDCLK, SDCMD, SDDAT{0,1,2,3}
+This series introduces generic functions to make top-down mmap layout
+easily accessible to architectures, in particular riscv which was
+the initial goal of this series.
+The generic implementation was taken from arm64 and used successively
+by arm, mips and finally riscv.
 
-Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-Acked-by: Masahiro Yamada <yamada.masahiro@socionext.com>
----
- drivers/pinctrl/uniphier/pinctrl-uniphier-pro5.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Note that in addition the series fixes 2 issues:
+- stack randomization was taken into account even if not necessary.
+- [1] fixed an issue with mmap base which did not take into account
+  randomization but did not report it to arm and mips, so by moving
+  arm64 into a generic library, this problem is now fixed for both
+  architectures.
 
-diff --git a/drivers/pinctrl/uniphier/pinctrl-uniphier-pro5.c b/drivers/pinctrl/uniphier/pinctrl-uniphier-pro5.c
-index 0c0af99..4277d49 100644
---- a/drivers/pinctrl/uniphier/pinctrl-uniphier-pro5.c
-+++ b/drivers/pinctrl/uniphier/pinctrl-uniphier-pro5.c
-@@ -809,7 +809,7 @@ static const unsigned nand_cs1_pins[] = {26, 27};
- static const int nand_cs1_muxvals[] = {0, 0};
- static const unsigned pcie_pins[] = {109, 110, 111};
- static const int pcie_muxvals[] = {0, 0, 0};
--static const unsigned sd_pins[] = {250, 251, 252, 253, 254, 255, 256, 257, 258};
-+static const unsigned sd_pins[] = {247, 248, 249, 250, 251, 252, 253, 254, 255};
- static const int sd_muxvals[] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
- static const unsigned spi0_pins[] = {120, 121, 122, 123};
- static const int spi0_muxvals[] = {0, 0, 0, 0};
+This work is an effort to factorize architecture functions to avoid
+code duplication and oversights as in [1].
+
+[1]: https://www.mail-archive.com/linux-kernel@vger.kernel.org/msg1429066.html
+
+Changes in v5:
+  - Fix [PATCH 11/14]
+  - Rebase on top of v5.3rc2 and commit
+    "riscv: kbuild: add virtual memory system selection"
+  - [PATCH 14/14] now takes into account the various virtual memory systems
+
+Changes in v4:
+  - Make ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT select ARCH_HAS_ELF_RANDOMIZE
+    by default as suggested by Kees,
+  - ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT depends on MMU and defines the
+    functions needed by ARCH_HAS_ELF_RANDOMIZE => architectures that use
+    the generic mmap topdown functions cannot have ARCH_HAS_ELF_RANDOMIZE
+    selected without MMU, but I think it's ok since randomization without
+    MMU does not add much security anyway.
+  - There is no common API to determine if a process is 32b, so I came up with
+    !IS_ENABLED(CONFIG_64BIT) || is_compat_task() in [PATCH v4 12/14].
+  - Mention in the change log that x86 already takes care of not offseting mmap
+    base address if the task does not want randomization.
+  - Re-introduce a comment that should not have been removed.
+  - Add Reviewed/Acked-By from Paul, Christoph and Kees, thank you for that.
+  - I tried to minimize the changes from the commits in v3 in order to make
+    easier the review of the v4, the commits changed or added are:
+    - [PATCH v4 5/14]
+    - [PATCH v4 8/14]
+    - [PATCH v4 11/14]
+    - [PATCH v4 12/14]
+    - [PATCH v4 13/14]
+
+Changes in v3:
+  - Split into small patches to ease review as suggested by Christoph
+    Hellwig and Kees Cook
+  - Move help text of new config as a comment, as suggested by Christoph
+  - Make new config depend on MMU, as suggested by Christoph
+
+Changes in v2 as suggested by Christoph Hellwig:
+  - Preparatory patch that moves randomize_stack_top
+  - Fix duplicate config in riscv
+  - Align #if defined on next line => this gives rise to a checkpatch
+    warning. I found this pattern all around the tree, in the same proportion
+    as the previous pattern which was less pretty:
+    git grep -C 1 -n -P "^#if defined.+\|\|.*\\\\$"
+
+Alexandre Ghiti (14):
+  mm, fs: Move randomize_stack_top from fs to mm
+  arm64: Make use of is_compat_task instead of hardcoding this test
+  arm64: Consider stack randomization for mmap base only when necessary
+  arm64, mm: Move generic mmap layout functions to mm
+  arm64, mm: Make randomization selected by generic topdown mmap layout
+  arm: Properly account for stack randomization and stack guard gap
+  arm: Use STACK_TOP when computing mmap base address
+  arm: Use generic mmap top-down layout and brk randomization
+  mips: Properly account for stack randomization and stack guard gap
+  mips: Use STACK_TOP when computing mmap base address
+  mips: Adjust brk randomization offset to fit generic version
+  mips: Replace arch specific way to determine 32bit task with generic
+    version
+  mips: Use generic mmap top-down layout and brk randomization
+  riscv: Make mmap allocation top-down by default
+
+ arch/Kconfig                       |  11 +++
+ arch/arm/Kconfig                   |   2 +-
+ arch/arm/include/asm/processor.h   |   2 -
+ arch/arm/kernel/process.c          |   5 --
+ arch/arm/mm/mmap.c                 |  52 --------------
+ arch/arm64/Kconfig                 |   2 +-
+ arch/arm64/include/asm/processor.h |   2 -
+ arch/arm64/kernel/process.c        |   8 ---
+ arch/arm64/mm/mmap.c               |  72 -------------------
+ arch/mips/Kconfig                  |   2 +-
+ arch/mips/include/asm/processor.h  |   5 --
+ arch/mips/mm/mmap.c                |  84 ----------------------
+ arch/riscv/Kconfig                 |  13 ++++
+ fs/binfmt_elf.c                    |  20 ------
+ include/linux/mm.h                 |   2 +
+ kernel/sysctl.c                    |   6 +-
+ mm/util.c                          | 107 ++++++++++++++++++++++++++++-
+ 17 files changed, 139 insertions(+), 256 deletions(-)
+
 -- 
-2.7.4
+2.20.1
 
 
 _______________________________________________
