@@ -2,67 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B18F7B38A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 21:53:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE8FF7B40F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 22:12:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RUWWQe9O/7VBIQrkrUW5J56iqIc54pT8tS59cVfc9rw=; b=JYw81uOCyjRKUK
-	8sWkMZVxWbuBV8pyFdpMMUOIuexoZ/qU+5H+df5UvQJrN3QTiL0a+NzpmiHi+fAlVdNThzs/fCb0V
-	qU/LZMLvKNx7nQe1+3hGeDG3rmSq4L74GtRB5sWiWKLP8qlTTOrxHhvbIqS4Rewnx9ehLHHNlpUvV
-	r8dN07FRoG0/zjB90eSeRgbuqEb7yvSW3NADKtARnsGg7GVEVw+ziuP9HAYU9cVr1wMM0POIQLCjC
-	j/HgjnsTH7DeTN191jT952ahU5NXRKCzxdMObpb9R7U3k/br8fQs3ZRYvPVti860KCl10rft3e0lI
-	1jqdHdpD4gKVSzCs0zdQ==;
+	List-Owner; bh=Zia8y8s2jPppi+JmjubkQXBv4Y4sGdqZv73cAAEmnpw=; b=FZ1e/0qpGQ1pS/
+	ijNFRsnIKm5zDuiej4RnUL90docG37AuJEWRskXVIuANhQmrNnVXy0Qrns5GImmZQL2ZsSfp2F8du
+	1J2EyFh6fg9DdGAMWDeMx6YoDIyxUMQKn0ERb9kcoh3NuhtCddxe8mM4qZfl6JHpokI4guQzU/lQ8
+	tp+hu3WdXJy1YQgjs9YnSL/b/fxUWfRb3EZr7u203vM9/0KC9q9ejz7Xx5pUo6xzOhDp9ImBqrB1m
+	3ZOoY8awdB3SYTJwdm6tPdL9PkmVVdeOJvumt7Q6/F2YD8oWYBwoDRbZ7C286Vt6Mwch2ba5uvJXL
+	5nY4PaaB/o0a9IxkxM0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsYBU-0004DU-RC; Tue, 30 Jul 2019 19:53:20 +0000
-Received: from mout.kundenserver.de ([212.227.126.133])
+	id 1hsYU4-0002Ox-74; Tue, 30 Jul 2019 20:12:32 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsYBB-00044d-3m; Tue, 30 Jul 2019 19:53:04 +0000
-Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
- (mreue011 [212.227.15.129]) with ESMTPA (Nemesis) id
- 1M2ep5-1hwguM3SiF-004Dqv; Tue, 30 Jul 2019 21:52:33 +0200
-From: Arnd Bergmann <arnd@arndb.de>
-To: Alexander Viro <viro@zeniv.linux.org.uk>
-Subject: [PATCH v5 12/29] compat_ioctl: move drivers to compat_ptr_ioctl
-Date: Tue, 30 Jul 2019 21:50:28 +0200
-Message-Id: <20190730195227.742215-1-arnd@arndb.de>
-X-Mailer: git-send-email 2.20.0
-In-Reply-To: <20190730192552.4014288-1-arnd@arndb.de>
-References: <20190730192552.4014288-1-arnd@arndb.de>
+ id 1hsYTw-0002Oc-9M
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 20:12:25 +0000
+Received: by mail-pg1-x543.google.com with SMTP id o13so30605847pgp.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 30 Jul 2019 13:12:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=oPJWN9yuldkstYmPG6/8Jz97tQSfFxLhhdBy0z1UbyM=;
+ b=xpfrl4Qy1k+1YG6uU2enEVUmwK0jq5twSEUqrnJaEVFaBc6n9y/V7wfBm4hS/MDv0n
+ 01DgxDqrf4+Tbx8KPLmXo7uo0qwaPA8xAJDdIrQqjY9SgnPsERtNDCNMGpkBaJSaLWnQ
+ OH4x+KNDD2gA69ee9LH6nThN6oYkLUkujLIhPDuhtmooDPyeb0woAavpWz2aY/tvpA9H
+ t7i17o7fCgThPOV8K0lfW17Wilnru86HJBxEUVFjyEWcJLjrl+hHYJ7NrLiKPZDrxB1b
+ IQLMGpS3pJseXfArM/lhs4esNv0PhVVpnB9Ki9n8/bOPEBHGHe+m9OvWe+ac8hxWirHJ
+ vTNA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=oPJWN9yuldkstYmPG6/8Jz97tQSfFxLhhdBy0z1UbyM=;
+ b=Kne3GKpXHb4LlpEv07xT1JWQt0ELJyJ8A8CEpdweP7g9h0k6O0IWDu9lTeLnlBRcGb
+ AHSpAkoAiHrLVx4jCkVg49VsDUey3UIXvwqsqqZG0TzY1t28HC74PcwxrBiGPfL/CbHc
+ /qw9fyeBSrIS6oK2OCrDWIqWzQmbKPbuS1Vf6zzjBNv2CGdjRO0z79rFPC+RA7EHSADU
+ CSfVFMRWPveRSWlDgHdpUVmuAnuGfLqplc4juSYv/ytYwPaHLUCoC2aGD9BoOcLfgsKo
+ 4CXNIij6kWVP+DnN+Ck0jZI3EezmSuOluC6o1ccQtI3PuZBbzCWDuDSk5AA9DFGS3cN6
+ W2kA==
+X-Gm-Message-State: APjAAAWIRckRO8Dh5b3kQPiG3hQGstiM/4oVLH3kmve7UhdwSxoII2gv
+ TQQja4Z+OKYcYGOExsNR1ldVNA==
+X-Google-Smtp-Source: APXvYqypSW+jjU/phGos2uYd9dvJDJArM9+zxwkPNY+Ac0WdCgbQJs6kWMPWa6h2Ih8ttKqQWEWihg==
+X-Received: by 2002:a17:90a:c588:: with SMTP id
+ l8mr117162828pjt.16.1564517543540; 
+ Tue, 30 Jul 2019 13:12:23 -0700 (PDT)
+Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id q198sm69195766pfq.155.2019.07.30.13.12.22
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 30 Jul 2019 13:12:23 -0700 (PDT)
+Date: Tue, 30 Jul 2019 14:12:20 -0600
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: Andrew Murray <andrew.murray@arm.com>
+Subject: Re: [PATCH v4 0/6] coresight: etm4x: save/restore ETMv4 context
+ across CPU low power states
+Message-ID: <20190730201220.GA4878@xps15>
+References: <20190730125157.884-1-andrew.murray@arm.com>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:f4kyacZkBh7d2L8DvfG/VWglDWmV1r6PyMvHlDfoj4C7ggclB67
- iYy8MoHZ4ZjuI6LNLyJEN3yiNqmQw5XpLccLKCY831oDCsExHVnyRsQw8RhuXBWAupdrWGU
- 2uujPAjsUE4qQ22u48yyaIJueGs1R4h2CIxPvTzi5pGqdRk3Jl1MaQfXUJiC/aGxUwrOT6G
- Ape/7iXHD3yCgh14Z37RA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:O3QlaSg0p94=:2DC89ChFTfzqSY3IIwQ7UN
- xd3l5T4yi05idZGMcAom12BDjEwRndOWlluV3dv9kwnrIlv6FXxgCAuZpK+r6w6IQ8DJ+hd/w
- eNe2JmIEZ0O947bREIbVnghXzoDsNhb/k4GhdagSKBJMuiKSx6FvgiCloXsk+MwE9wIF8Mi8t
- OaiDAO5is7ZrdpajoFOJwfkd/HGzdP/XXH0zGWsGIpATl1gEHU2U0R8/o5JwK/BiMH4N/hpi9
- 6Pj6G5XUeVMuuAVNYoIMUwa4DTtFhMb0zdxPoAqLkvrC0cOcVK5kDtyzLkXHb19krCEnxSvH9
- xSAisf/onUmQT/aR/R2k7HCF5D8v8yqpvJgY8KCvRKjjNdq/Kehh1Ev6C68pyOXzG96g7wos6
- m8eLeJowf0dLdiTflRagoHdVMRg/jBLl0ARN0j0/nXPtR+IjdkjADW7zvFhLYkXqZkbL5DGhY
- tH7TvoRuR3rY4Q072FzD+A+IfBe+cg9OzyaQLv7A47rkwZZlyIXqh5fQBWBCOINljdNv17lpE
- Osp7k4bcfZGhUKqYJjtxf9uvbBwIv1Yi7fZP4oPbCp6V98KGd8KP6Pg34UbofokiwizyBakGd
- F9QmeKEOX806mM2gvmP5CExg1+AicT9AOnlvsd+AmokRI3klpronJMiCiYfxMqcru9NgTaX5q
- ZAj1xkW+A+XM9qrwKrEzGxwWmAk9LM/hcMi2xrgFVqwXsrbQdASKOLuLxgrfEYaJwdL3zbVNf
- V8Futwfot9Yamgna+5pt17t5UNBev1eV66UBeg==
+Content-Disposition: inline
+In-Reply-To: <20190730125157.884-1-andrew.murray@arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_125301_607233_84A74B23 
-X-CRM114-Status: GOOD (  13.52  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190730_131224_334952_D90DC8D5 
+X-CRM114-Status: GOOD (  25.73  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.133 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,676 +99,132 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, linux-input@vger.kernel.org,
- kvm@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
- "Michael S . Tsirkin" <mst@redhat.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
- netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>,
- virtualization@lists.linux-foundation.org, Jason Gunthorpe <jgg@mellanox.com>,
- linux-mtd@lists.infradead.org, Stefan Hajnoczi <stefanha@redhat.com>,
- Jiri Kosina <jkosina@suse.cz>, linux-fsdevel@vger.kernel.org,
- ceph-devel@vger.kernel.org, linux-integrity@vger.kernel.org,
- linux1394-devel@lists.sourceforge.net,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Al.Grant@arm.com, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ coresight@lists.linaro.org, Sudeep Holla <sudeep.holla@arm.com>,
+ Leo Yan <leo.yan@linaro.org>, linux-arm-kernel@lists.infradead.org,
+ Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Each of these drivers has a copy of the same trivial helper function to
-convert the pointer argument and then call the native ioctl handler.
+Hi Andrew,
 
-We now have a generic implementation of that, so use it.
+On Tue, Jul 30, 2019 at 01:51:51PM +0100, Andrew Murray wrote:
+> Some hardware will ignore bit TRCPDCR.PU which is used to signal
+> to hardware that power should not be removed from the trace unit.
+> Let's mitigate against this by conditionally saving and restoring
+> the trace unit state when the CPU enters low power states.
+> 
+> This patchset introduces a firmware property named
+> 'arm,coresight-needs-save-restore' - when this is present the
+> hardware state will be conditionally saved and restored.
+> 
+> A module parameter 'pm_save_enable' is also introduced which can
+> be configured to override the firmware property.
+> 
+> The hardware state is only ever saved and restored when a self-hosted
+> coresight is in use.
+> 
+> Changes since v3:
+> 
+>  - Only save/restore when self-hosted is being used and detect this
+>    without relying on the coresight registers (which may not be
+>    available)
+> 
+>  - Only allocate memory for etmv4_save_state at probe time when
+>    configuration indicates it may be used
+> 
+>  - Set pm_save_enable param to 0444 such that it is static after
+>    boot
+> 
+>  - Save/restore TRCPDCR
+> 
+>  - Add missing comments to struct etm4_drvdata documentation
+> 
+>  - Rebased onto coresight/next (8f1f9857)
+> 
+> Changes since v2:
+> 
+>  - Move the PM notifier block from drvdata to file static
+> 
+>  - Add section names to document references
+> 
+>  - Add additional information to commit messages
+> 
+>  - Remove trcdvcvr and trcdvcmr from saved state and add a comment to
+>    describe why
+> 
+>  - Ensure TRCPDCR_PU is set after restore and add a comment to explain
+>    why we bother toggling TRCPDCR_PU on save/restore
+> 
+>  - Reword the pm_save_enable options and add comments
+> 
+>  - Miscellaneous style changes
+> 
+>  - Move device tree binding documentation to its own patch
+> 
+> Changes since v1:
+> 
+>  - Rebased onto coresight/next
+> 
+>  - Correcly pass bit number rather than BIT macro to coresight_timeout
+> 
+>  - Abort saving state if a timeout occurs
+> 
+>  - Fix completely broken pm_notify handling and unregister handler on error
+> 
+>  - Use state_needs_restore to ensure state is restored only once
+> 
+>  - Add module parameter description to existing boot_enable parameter
+>    and use module_param instead of module_param_named
+> 
+>  - Add firmware bindings for coresight-needs-save-restore
+> 
+>  - Rename 'disable_pm_save' to 'pm_save_enable' which allows for
+>    disabled, enabled or firmware
+> 
+>  - Update comment on etm4_os_lock, it incorrectly indicated that
+>    the code unlocks the trace registers
+> 
+>  - Add comments to explain use of OS lock during save/restore
+> 
+>  - Fix incorrect error description whilst waiting for PM stable
+> 
+>  - Add WARN_ON_ONCE when cpu isn't as expected during save/restore
+> 
+>  - Various updates to commit messages
+> 
+> 
+> Andrew Murray (6):
+>   coresight: etm4x: remove superfluous setting of os_unlock
+>   coresight: etm4x: use explicit barriers on enable/disable
+>   coresight: etm4x: use module_param instead of module_param_named
+>   coresight: etm4x: improve clarity of etm4_os_unlock comment
 
-Acked-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Acked-by: Michael S. Tsirkin <mst@redhat.com>
-Reviewed-by: Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>
-Reviewed-by: Jason Gunthorpe <jgg@mellanox.com>
-Reviewed-by: Jiri Kosina <jkosina@suse.cz>
-Reviewed-by: Stefan Hajnoczi <stefanha@redhat.com>
-Signed-off-by: Arnd Bergmann <arnd@arndb.de>
----
- drivers/char/ppdev.c              | 12 +---------
- drivers/char/tpm/tpm_vtpm_proxy.c | 12 +---------
- drivers/firewire/core-cdev.c      | 12 +---------
- drivers/hid/usbhid/hiddev.c       | 11 +--------
- drivers/hwtracing/stm/core.c      | 12 +---------
- drivers/misc/mei/main.c           | 22 +----------------
- drivers/mtd/ubi/cdev.c            | 36 +++-------------------------
- drivers/net/tap.c                 | 12 +---------
- drivers/staging/pi433/pi433_if.c  | 12 +---------
- drivers/usb/core/devio.c          | 16 +------------
- drivers/vfio/vfio.c               | 39 +++----------------------------
- drivers/vhost/net.c               | 12 +---------
- drivers/vhost/scsi.c              | 12 +---------
- drivers/vhost/test.c              | 12 +---------
- drivers/vhost/vsock.c             | 12 +---------
- fs/ceph/dir.c                     |  2 +-
- fs/ceph/file.c                    |  2 +-
- fs/ceph/super.h                   |  9 -------
- fs/fat/file.c                     | 13 +----------
- 19 files changed, 22 insertions(+), 248 deletions(-)
+I have picked up the first 4 patches, so no need to send them with your next
+revision.  Note that for patch 2/6 I have removed the "stable" tag as the patch
+doesn't apply to any of the stable tree.  Since I have another one like that in
+my tree I will rework both patches and send them directly to Greg for stable
+consideration.
 
-diff --git a/drivers/char/ppdev.c b/drivers/char/ppdev.c
-index f0a8adca1eee..c4d5cc4a1d3e 100644
---- a/drivers/char/ppdev.c
-+++ b/drivers/char/ppdev.c
-@@ -670,14 +670,6 @@ static long pp_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
- 	return ret;
- }
- 
--#ifdef CONFIG_COMPAT
--static long pp_compat_ioctl(struct file *file, unsigned int cmd,
--			    unsigned long arg)
--{
--	return pp_ioctl(file, cmd, (unsigned long)compat_ptr(arg));
--}
--#endif
--
- static int pp_open(struct inode *inode, struct file *file)
- {
- 	unsigned int minor = iminor(inode);
-@@ -786,9 +778,7 @@ static const struct file_operations pp_fops = {
- 	.write		= pp_write,
- 	.poll		= pp_poll,
- 	.unlocked_ioctl	= pp_ioctl,
--#ifdef CONFIG_COMPAT
--	.compat_ioctl   = pp_compat_ioctl,
--#endif
-+	.compat_ioctl   = compat_ptr_ioctl,
- 	.open		= pp_open,
- 	.release	= pp_release,
- };
-diff --git a/drivers/char/tpm/tpm_vtpm_proxy.c b/drivers/char/tpm/tpm_vtpm_proxy.c
-index 2f6e087ec496..91c772e38bb5 100644
---- a/drivers/char/tpm/tpm_vtpm_proxy.c
-+++ b/drivers/char/tpm/tpm_vtpm_proxy.c
-@@ -670,20 +670,10 @@ static long vtpmx_fops_ioctl(struct file *f, unsigned int ioctl,
- 	}
- }
- 
--#ifdef CONFIG_COMPAT
--static long vtpmx_fops_compat_ioctl(struct file *f, unsigned int ioctl,
--					  unsigned long arg)
--{
--	return vtpmx_fops_ioctl(f, ioctl, (unsigned long)compat_ptr(arg));
--}
--#endif
--
- static const struct file_operations vtpmx_fops = {
- 	.owner = THIS_MODULE,
- 	.unlocked_ioctl = vtpmx_fops_ioctl,
--#ifdef CONFIG_COMPAT
--	.compat_ioctl = vtpmx_fops_compat_ioctl,
--#endif
-+	.compat_ioctl = compat_ptr_ioctl,
- 	.llseek = noop_llseek,
- };
- 
-diff --git a/drivers/firewire/core-cdev.c b/drivers/firewire/core-cdev.c
-index 1da7ba18d399..c777088f5828 100644
---- a/drivers/firewire/core-cdev.c
-+++ b/drivers/firewire/core-cdev.c
-@@ -1646,14 +1646,6 @@ static long fw_device_op_ioctl(struct file *file,
- 	return dispatch_ioctl(file->private_data, cmd, (void __user *)arg);
- }
- 
--#ifdef CONFIG_COMPAT
--static long fw_device_op_compat_ioctl(struct file *file,
--				      unsigned int cmd, unsigned long arg)
--{
--	return dispatch_ioctl(file->private_data, cmd, compat_ptr(arg));
--}
--#endif
--
- static int fw_device_op_mmap(struct file *file, struct vm_area_struct *vma)
- {
- 	struct client *client = file->private_data;
-@@ -1795,7 +1787,5 @@ const struct file_operations fw_device_ops = {
- 	.mmap		= fw_device_op_mmap,
- 	.release	= fw_device_op_release,
- 	.poll		= fw_device_op_poll,
--#ifdef CONFIG_COMPAT
--	.compat_ioctl	= fw_device_op_compat_ioctl,
--#endif
-+	.compat_ioctl	= compat_ptr_ioctl,
- };
-diff --git a/drivers/hid/usbhid/hiddev.c b/drivers/hid/usbhid/hiddev.c
-index 55b72573066b..70009bd76ac1 100644
---- a/drivers/hid/usbhid/hiddev.c
-+++ b/drivers/hid/usbhid/hiddev.c
-@@ -842,13 +842,6 @@ static long hiddev_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
- 	return r;
- }
- 
--#ifdef CONFIG_COMPAT
--static long hiddev_compat_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
--{
--	return hiddev_ioctl(file, cmd, (unsigned long)compat_ptr(arg));
--}
--#endif
--
- static const struct file_operations hiddev_fops = {
- 	.owner =	THIS_MODULE,
- 	.read =		hiddev_read,
-@@ -858,9 +851,7 @@ static const struct file_operations hiddev_fops = {
- 	.release =	hiddev_release,
- 	.unlocked_ioctl =	hiddev_ioctl,
- 	.fasync =	hiddev_fasync,
--#ifdef CONFIG_COMPAT
--	.compat_ioctl	= hiddev_compat_ioctl,
--#endif
-+	.compat_ioctl	= compat_ptr_ioctl,
- 	.llseek		= noop_llseek,
- };
- 
-diff --git a/drivers/hwtracing/stm/core.c b/drivers/hwtracing/stm/core.c
-index e55b902560de..0fbc994900fd 100644
---- a/drivers/hwtracing/stm/core.c
-+++ b/drivers/hwtracing/stm/core.c
-@@ -839,23 +839,13 @@ stm_char_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
- 	return err;
- }
- 
--#ifdef CONFIG_COMPAT
--static long
--stm_char_compat_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
--{
--	return stm_char_ioctl(file, cmd, (unsigned long)compat_ptr(arg));
--}
--#else
--#define stm_char_compat_ioctl	NULL
--#endif
--
- static const struct file_operations stm_fops = {
- 	.open		= stm_char_open,
- 	.release	= stm_char_release,
- 	.write		= stm_char_write,
- 	.mmap		= stm_char_mmap,
- 	.unlocked_ioctl	= stm_char_ioctl,
--	.compat_ioctl	= stm_char_compat_ioctl,
-+	.compat_ioctl	= compat_ptr_ioctl,
- 	.llseek		= no_llseek,
- };
- 
-diff --git a/drivers/misc/mei/main.c b/drivers/misc/mei/main.c
-index f894d1f8a53e..4ea7feb4ec2d 100644
---- a/drivers/misc/mei/main.c
-+++ b/drivers/misc/mei/main.c
-@@ -532,24 +532,6 @@ static long mei_ioctl(struct file *file, unsigned int cmd, unsigned long data)
- 	return rets;
- }
- 
--/**
-- * mei_compat_ioctl - the compat IOCTL function
-- *
-- * @file: pointer to file structure
-- * @cmd: ioctl command
-- * @data: pointer to mei message structure
-- *
-- * Return: 0 on success , <0 on error
-- */
--#ifdef CONFIG_COMPAT
--static long mei_compat_ioctl(struct file *file,
--			unsigned int cmd, unsigned long data)
--{
--	return mei_ioctl(file, cmd, (unsigned long)compat_ptr(data));
--}
--#endif
--
--
- /**
-  * mei_poll - the poll function
-  *
-@@ -905,9 +887,7 @@ static const struct file_operations mei_fops = {
- 	.owner = THIS_MODULE,
- 	.read = mei_read,
- 	.unlocked_ioctl = mei_ioctl,
--#ifdef CONFIG_COMPAT
--	.compat_ioctl = mei_compat_ioctl,
--#endif
-+	.compat_ioctl = compat_ptr_ioctl,
- 	.open = mei_open,
- 	.release = mei_release,
- 	.write = mei_write,
-diff --git a/drivers/mtd/ubi/cdev.c b/drivers/mtd/ubi/cdev.c
-index 1b77fff9f892..cc9a28cf9d82 100644
---- a/drivers/mtd/ubi/cdev.c
-+++ b/drivers/mtd/ubi/cdev.c
-@@ -1078,36 +1078,6 @@ static long ctrl_cdev_ioctl(struct file *file, unsigned int cmd,
- 	return err;
- }
- 
--#ifdef CONFIG_COMPAT
--static long vol_cdev_compat_ioctl(struct file *file, unsigned int cmd,
--				  unsigned long arg)
--{
--	unsigned long translated_arg = (unsigned long)compat_ptr(arg);
--
--	return vol_cdev_ioctl(file, cmd, translated_arg);
--}
--
--static long ubi_cdev_compat_ioctl(struct file *file, unsigned int cmd,
--				  unsigned long arg)
--{
--	unsigned long translated_arg = (unsigned long)compat_ptr(arg);
--
--	return ubi_cdev_ioctl(file, cmd, translated_arg);
--}
--
--static long ctrl_cdev_compat_ioctl(struct file *file, unsigned int cmd,
--				   unsigned long arg)
--{
--	unsigned long translated_arg = (unsigned long)compat_ptr(arg);
--
--	return ctrl_cdev_ioctl(file, cmd, translated_arg);
--}
--#else
--#define vol_cdev_compat_ioctl  NULL
--#define ubi_cdev_compat_ioctl  NULL
--#define ctrl_cdev_compat_ioctl NULL
--#endif
--
- /* UBI volume character device operations */
- const struct file_operations ubi_vol_cdev_operations = {
- 	.owner          = THIS_MODULE,
-@@ -1118,7 +1088,7 @@ const struct file_operations ubi_vol_cdev_operations = {
- 	.write          = vol_cdev_write,
- 	.fsync		= vol_cdev_fsync,
- 	.unlocked_ioctl = vol_cdev_ioctl,
--	.compat_ioctl   = vol_cdev_compat_ioctl,
-+	.compat_ioctl   = compat_ptr_ioctl,
- };
- 
- /* UBI character device operations */
-@@ -1126,13 +1096,13 @@ const struct file_operations ubi_cdev_operations = {
- 	.owner          = THIS_MODULE,
- 	.llseek         = no_llseek,
- 	.unlocked_ioctl = ubi_cdev_ioctl,
--	.compat_ioctl   = ubi_cdev_compat_ioctl,
-+	.compat_ioctl   = compat_ptr_ioctl,
- };
- 
- /* UBI control character device operations */
- const struct file_operations ubi_ctrl_cdev_operations = {
- 	.owner          = THIS_MODULE,
- 	.unlocked_ioctl = ctrl_cdev_ioctl,
--	.compat_ioctl   = ctrl_cdev_compat_ioctl,
-+	.compat_ioctl   = compat_ptr_ioctl,
- 	.llseek		= no_llseek,
- };
-diff --git a/drivers/net/tap.c b/drivers/net/tap.c
-index dd614c2cd994..bcdfb0d88753 100644
---- a/drivers/net/tap.c
-+++ b/drivers/net/tap.c
-@@ -1123,14 +1123,6 @@ static long tap_ioctl(struct file *file, unsigned int cmd,
- 	}
- }
- 
--#ifdef CONFIG_COMPAT
--static long tap_compat_ioctl(struct file *file, unsigned int cmd,
--			     unsigned long arg)
--{
--	return tap_ioctl(file, cmd, (unsigned long)compat_ptr(arg));
--}
--#endif
--
- static const struct file_operations tap_fops = {
- 	.owner		= THIS_MODULE,
- 	.open		= tap_open,
-@@ -1140,9 +1132,7 @@ static const struct file_operations tap_fops = {
- 	.poll		= tap_poll,
- 	.llseek		= no_llseek,
- 	.unlocked_ioctl	= tap_ioctl,
--#ifdef CONFIG_COMPAT
--	.compat_ioctl	= tap_compat_ioctl,
--#endif
-+	.compat_ioctl	= compat_ptr_ioctl,
- };
- 
- static int tap_get_user_xdp(struct tap_queue *q, struct xdp_buff *xdp)
-diff --git a/drivers/staging/pi433/pi433_if.c b/drivers/staging/pi433/pi433_if.c
-index 40c6f4e7632f..313d22f6210f 100644
---- a/drivers/staging/pi433/pi433_if.c
-+++ b/drivers/staging/pi433/pi433_if.c
-@@ -928,16 +928,6 @@ pi433_ioctl(struct file *filp, unsigned int cmd, unsigned long arg)
- 	return 0;
- }
- 
--#ifdef CONFIG_COMPAT
--static long
--pi433_compat_ioctl(struct file *filp, unsigned int cmd, unsigned long arg)
--{
--	return pi433_ioctl(filp, cmd, (unsigned long)compat_ptr(arg));
--}
--#else
--#define pi433_compat_ioctl NULL
--#endif /* CONFIG_COMPAT */
--
- /*-------------------------------------------------------------------------*/
- 
- static int pi433_open(struct inode *inode, struct file *filp)
-@@ -1094,7 +1084,7 @@ static const struct file_operations pi433_fops = {
- 	.write =	pi433_write,
- 	.read =		pi433_read,
- 	.unlocked_ioctl = pi433_ioctl,
--	.compat_ioctl = pi433_compat_ioctl,
-+	.compat_ioctl = compat_ptr_ioctl,
- 	.open =		pi433_open,
- 	.release =	pi433_release,
- 	.llseek =	no_llseek,
-diff --git a/drivers/usb/core/devio.c b/drivers/usb/core/devio.c
-index b265ab5405f9..efea6cff66d4 100644
---- a/drivers/usb/core/devio.c
-+++ b/drivers/usb/core/devio.c
-@@ -2604,18 +2604,6 @@ static long usbdev_ioctl(struct file *file, unsigned int cmd,
- 	return ret;
- }
- 
--#ifdef CONFIG_COMPAT
--static long usbdev_compat_ioctl(struct file *file, unsigned int cmd,
--			unsigned long arg)
--{
--	int ret;
--
--	ret = usbdev_do_ioctl(file, cmd, compat_ptr(arg));
--
--	return ret;
--}
--#endif
--
- /* No kernel lock - fine */
- static __poll_t usbdev_poll(struct file *file,
- 				struct poll_table_struct *wait)
-@@ -2639,9 +2627,7 @@ const struct file_operations usbdev_file_operations = {
- 	.read =		  usbdev_read,
- 	.poll =		  usbdev_poll,
- 	.unlocked_ioctl = usbdev_ioctl,
--#ifdef CONFIG_COMPAT
--	.compat_ioctl =   usbdev_compat_ioctl,
--#endif
-+	.compat_ioctl =   compat_ptr_ioctl,
- 	.mmap =           usbdev_mmap,
- 	.open =		  usbdev_open,
- 	.release =	  usbdev_release,
-diff --git a/drivers/vfio/vfio.c b/drivers/vfio/vfio.c
-index 388597930b64..c8482624ca34 100644
---- a/drivers/vfio/vfio.c
-+++ b/drivers/vfio/vfio.c
-@@ -1184,15 +1184,6 @@ static long vfio_fops_unl_ioctl(struct file *filep,
- 	return ret;
- }
- 
--#ifdef CONFIG_COMPAT
--static long vfio_fops_compat_ioctl(struct file *filep,
--				   unsigned int cmd, unsigned long arg)
--{
--	arg = (unsigned long)compat_ptr(arg);
--	return vfio_fops_unl_ioctl(filep, cmd, arg);
--}
--#endif	/* CONFIG_COMPAT */
--
- static int vfio_fops_open(struct inode *inode, struct file *filep)
- {
- 	struct vfio_container *container;
-@@ -1275,9 +1266,7 @@ static const struct file_operations vfio_fops = {
- 	.read		= vfio_fops_read,
- 	.write		= vfio_fops_write,
- 	.unlocked_ioctl	= vfio_fops_unl_ioctl,
--#ifdef CONFIG_COMPAT
--	.compat_ioctl	= vfio_fops_compat_ioctl,
--#endif
-+	.compat_ioctl	= compat_ptr_ioctl,
- 	.mmap		= vfio_fops_mmap,
- };
- 
-@@ -1556,15 +1545,6 @@ static long vfio_group_fops_unl_ioctl(struct file *filep,
- 	return ret;
- }
- 
--#ifdef CONFIG_COMPAT
--static long vfio_group_fops_compat_ioctl(struct file *filep,
--					 unsigned int cmd, unsigned long arg)
--{
--	arg = (unsigned long)compat_ptr(arg);
--	return vfio_group_fops_unl_ioctl(filep, cmd, arg);
--}
--#endif	/* CONFIG_COMPAT */
--
- static int vfio_group_fops_open(struct inode *inode, struct file *filep)
- {
- 	struct vfio_group *group;
-@@ -1620,9 +1600,7 @@ static int vfio_group_fops_release(struct inode *inode, struct file *filep)
- static const struct file_operations vfio_group_fops = {
- 	.owner		= THIS_MODULE,
- 	.unlocked_ioctl	= vfio_group_fops_unl_ioctl,
--#ifdef CONFIG_COMPAT
--	.compat_ioctl	= vfio_group_fops_compat_ioctl,
--#endif
-+	.compat_ioctl	= compat_ptr_ioctl,
- 	.open		= vfio_group_fops_open,
- 	.release	= vfio_group_fops_release,
- };
-@@ -1687,24 +1665,13 @@ static int vfio_device_fops_mmap(struct file *filep, struct vm_area_struct *vma)
- 	return device->ops->mmap(device->device_data, vma);
- }
- 
--#ifdef CONFIG_COMPAT
--static long vfio_device_fops_compat_ioctl(struct file *filep,
--					  unsigned int cmd, unsigned long arg)
--{
--	arg = (unsigned long)compat_ptr(arg);
--	return vfio_device_fops_unl_ioctl(filep, cmd, arg);
--}
--#endif	/* CONFIG_COMPAT */
--
- static const struct file_operations vfio_device_fops = {
- 	.owner		= THIS_MODULE,
- 	.release	= vfio_device_fops_release,
- 	.read		= vfio_device_fops_read,
- 	.write		= vfio_device_fops_write,
- 	.unlocked_ioctl	= vfio_device_fops_unl_ioctl,
--#ifdef CONFIG_COMPAT
--	.compat_ioctl	= vfio_device_fops_compat_ioctl,
--#endif
-+	.compat_ioctl	= compat_ptr_ioctl,
- 	.mmap		= vfio_device_fops_mmap,
- };
- 
-diff --git a/drivers/vhost/net.c b/drivers/vhost/net.c
-index 1a2dd53caade..e158159671fa 100644
---- a/drivers/vhost/net.c
-+++ b/drivers/vhost/net.c
-@@ -1751,14 +1751,6 @@ static long vhost_net_ioctl(struct file *f, unsigned int ioctl,
- 	}
- }
- 
--#ifdef CONFIG_COMPAT
--static long vhost_net_compat_ioctl(struct file *f, unsigned int ioctl,
--				   unsigned long arg)
--{
--	return vhost_net_ioctl(f, ioctl, (unsigned long)compat_ptr(arg));
--}
--#endif
--
- static ssize_t vhost_net_chr_read_iter(struct kiocb *iocb, struct iov_iter *to)
- {
- 	struct file *file = iocb->ki_filp;
-@@ -1794,9 +1786,7 @@ static const struct file_operations vhost_net_fops = {
- 	.write_iter     = vhost_net_chr_write_iter,
- 	.poll           = vhost_net_chr_poll,
- 	.unlocked_ioctl = vhost_net_ioctl,
--#ifdef CONFIG_COMPAT
--	.compat_ioctl   = vhost_net_compat_ioctl,
--#endif
-+	.compat_ioctl   = compat_ptr_ioctl,
- 	.open           = vhost_net_open,
- 	.llseek		= noop_llseek,
- };
-diff --git a/drivers/vhost/scsi.c b/drivers/vhost/scsi.c
-index a9caf1bc3c3e..0b949a14bce3 100644
---- a/drivers/vhost/scsi.c
-+++ b/drivers/vhost/scsi.c
-@@ -1727,21 +1727,11 @@ vhost_scsi_ioctl(struct file *f,
- 	}
- }
- 
--#ifdef CONFIG_COMPAT
--static long vhost_scsi_compat_ioctl(struct file *f, unsigned int ioctl,
--				unsigned long arg)
--{
--	return vhost_scsi_ioctl(f, ioctl, (unsigned long)compat_ptr(arg));
--}
--#endif
--
- static const struct file_operations vhost_scsi_fops = {
- 	.owner          = THIS_MODULE,
- 	.release        = vhost_scsi_release,
- 	.unlocked_ioctl = vhost_scsi_ioctl,
--#ifdef CONFIG_COMPAT
--	.compat_ioctl	= vhost_scsi_compat_ioctl,
--#endif
-+	.compat_ioctl	= compat_ptr_ioctl,
- 	.open           = vhost_scsi_open,
- 	.llseek		= noop_llseek,
- };
-diff --git a/drivers/vhost/test.c b/drivers/vhost/test.c
-index 9e90e969af55..71954077df69 100644
---- a/drivers/vhost/test.c
-+++ b/drivers/vhost/test.c
-@@ -297,21 +297,11 @@ static long vhost_test_ioctl(struct file *f, unsigned int ioctl,
- 	}
- }
- 
--#ifdef CONFIG_COMPAT
--static long vhost_test_compat_ioctl(struct file *f, unsigned int ioctl,
--				   unsigned long arg)
--{
--	return vhost_test_ioctl(f, ioctl, (unsigned long)compat_ptr(arg));
--}
--#endif
--
- static const struct file_operations vhost_test_fops = {
- 	.owner          = THIS_MODULE,
- 	.release        = vhost_test_release,
- 	.unlocked_ioctl = vhost_test_ioctl,
--#ifdef CONFIG_COMPAT
--	.compat_ioctl   = vhost_test_compat_ioctl,
--#endif
-+	.compat_ioctl   = compat_ptr_ioctl,
- 	.open           = vhost_test_open,
- 	.llseek		= noop_llseek,
- };
-diff --git a/drivers/vhost/vsock.c b/drivers/vhost/vsock.c
-index 6a50e1d0529c..69c0350f622e 100644
---- a/drivers/vhost/vsock.c
-+++ b/drivers/vhost/vsock.c
-@@ -729,23 +729,13 @@ static long vhost_vsock_dev_ioctl(struct file *f, unsigned int ioctl,
- 	}
- }
- 
--#ifdef CONFIG_COMPAT
--static long vhost_vsock_dev_compat_ioctl(struct file *f, unsigned int ioctl,
--					 unsigned long arg)
--{
--	return vhost_vsock_dev_ioctl(f, ioctl, (unsigned long)compat_ptr(arg));
--}
--#endif
--
- static const struct file_operations vhost_vsock_fops = {
- 	.owner          = THIS_MODULE,
- 	.open           = vhost_vsock_dev_open,
- 	.release        = vhost_vsock_dev_release,
- 	.llseek		= noop_llseek,
- 	.unlocked_ioctl = vhost_vsock_dev_ioctl,
--#ifdef CONFIG_COMPAT
--	.compat_ioctl   = vhost_vsock_dev_compat_ioctl,
--#endif
-+	.compat_ioctl   = compat_ptr_ioctl,
- };
- 
- static struct miscdevice vhost_vsock_misc = {
-diff --git a/fs/ceph/dir.c b/fs/ceph/dir.c
-index 401c17d36b71..811f45badc10 100644
---- a/fs/ceph/dir.c
-+++ b/fs/ceph/dir.c
-@@ -1808,7 +1808,7 @@ const struct file_operations ceph_dir_fops = {
- 	.open = ceph_open,
- 	.release = ceph_release,
- 	.unlocked_ioctl = ceph_ioctl,
--	.compat_ioctl = ceph_compat_ioctl,
-+	.compat_ioctl = compat_ptr_ioctl,
- 	.fsync = ceph_fsync,
- 	.lock = ceph_lock,
- 	.flock = ceph_flock,
-diff --git a/fs/ceph/file.c b/fs/ceph/file.c
-index 99712b6b1ad5..676e5aed7a58 100644
---- a/fs/ceph/file.c
-+++ b/fs/ceph/file.c
-@@ -2138,7 +2138,7 @@ const struct file_operations ceph_file_fops = {
- 	.splice_read = generic_file_splice_read,
- 	.splice_write = iter_file_splice_write,
- 	.unlocked_ioctl = ceph_ioctl,
--	.compat_ioctl = ceph_compat_ioctl,
-+	.compat_ioctl = compat_ptr_ioctl,
- 	.fallocate	= ceph_fallocate,
- 	.copy_file_range = ceph_copy_file_range,
- };
-diff --git a/fs/ceph/super.h b/fs/ceph/super.h
-index 0aebccd48fa0..f7945e16ee09 100644
---- a/fs/ceph/super.h
-+++ b/fs/ceph/super.h
-@@ -1109,15 +1109,6 @@ extern void ceph_readdir_cache_release(struct ceph_readdir_cache_control *ctl);
- 
- /* ioctl.c */
- extern long ceph_ioctl(struct file *file, unsigned int cmd, unsigned long arg);
--static inline long
--ceph_compat_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
--{
--#ifdef CONFIG_COMPAT
--	return ceph_ioctl(file, cmd, (unsigned long)compat_ptr(arg));
--#else
--	return -ENOTTY;
--#endif
--}
- 
- /* export.c */
- extern const struct export_operations ceph_export_ops;
-diff --git a/fs/fat/file.c b/fs/fat/file.c
-index 4614c0ba5f1c..bdc4503c00a3 100644
---- a/fs/fat/file.c
-+++ b/fs/fat/file.c
-@@ -172,15 +172,6 @@ long fat_generic_ioctl(struct file *filp, unsigned int cmd, unsigned long arg)
- 	}
- }
- 
--#ifdef CONFIG_COMPAT
--static long fat_generic_compat_ioctl(struct file *filp, unsigned int cmd,
--				      unsigned long arg)
--
--{
--	return fat_generic_ioctl(filp, cmd, (unsigned long)compat_ptr(arg));
--}
--#endif
--
- static int fat_file_release(struct inode *inode, struct file *filp)
- {
- 	if ((filp->f_mode & FMODE_WRITE) &&
-@@ -215,9 +206,7 @@ const struct file_operations fat_file_operations = {
- 	.mmap		= generic_file_mmap,
- 	.release	= fat_file_release,
- 	.unlocked_ioctl	= fat_generic_ioctl,
--#ifdef CONFIG_COMPAT
--	.compat_ioctl	= fat_generic_compat_ioctl,
--#endif
-+	.compat_ioctl	= compat_ptr_ioctl,
- 	.fsync		= fat_file_fsync,
- 	.splice_read	= generic_file_splice_read,
- 	.splice_write	= iter_file_splice_write,
--- 
-2.20.0
+Thanks,
+Mathieu
 
+
+>   coresight: etm4x: save/restore state across CPU low power states
+>   dt-bindings: arm: coresight: Add support for
+>     coresight-needs-save-restore
+> 
+>  .../devicetree/bindings/arm/coresight.txt     |   3 +
+>  drivers/hwtracing/coresight/coresight-etm4x.c | 346 +++++++++++++++++-
+>  drivers/hwtracing/coresight/coresight-etm4x.h |  64 ++++
+>  3 files changed, 406 insertions(+), 7 deletions(-)
+> 
+> -- 
+> 2.21.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
