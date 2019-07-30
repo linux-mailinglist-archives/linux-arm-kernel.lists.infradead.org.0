@@ -2,49 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A278A7A075
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 07:44:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 49C4E7A07E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 07:45:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=NmcQ6Qkh+DEJgoa+snELQcPfo0f4nKmpHmZE8XlALyM=; b=R7Q
-	59kRCQ7Bknyk2vyP/hNiCAtPrmYoX0hXB3L6uqnowKyc3W76r50kEOyC2b6HD4gXi54SLllIHGkAy
-	AXgeWyfI6adRtLE1dwU+Ti1ADHO/Xq6bkaPode3uMB6d6rT2493Gvfsd2a0v7Oo4zmzv+4fq2ffQf
-	YMv9vSTkJmUATIuUNTjDahaOd27WQN0PfaS4Gs82P1R6WC7pK4Qerni6Z1wuaF5shlAG8Ju/fLtS2
-	WZsq3/8qGOWB1gQK8Aky4/iaUmdWmEj0lLvKHtvxEJA6Sj1P+eVaeUPrhZRT+9N0AlAX89hMNu1Zi
-	ffD2h9/6ny/OpDV2NtsFZ8o7JLVelhw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=uctYMgmam7KGwIlmSfseJCaXyMWHFMDWbWQlFOhSYBE=; b=YBeQ3KHQflGJrAHvVNNV5GIEnP
+	daGzYFeyR4nFqH2ufZ6vFCMghZsxg3voaegVAF6U2fKakFAztqRdrwpSWrMTnI6hb6wJLGIqdyWYe
+	iOgDi5BtFp7ald/znsrAAfrgU6iijB8fthlxVkj/VzOfQe6Er+guVyUgSkRxtWj98bL2GXzL5i5o3
+	+js/fLTjwoNcMR31vqNGlpec2KSuHB6Tdm4MH7RCxMCoXi16cCi7iZTM9dMPXkzWP1Psj7fTAyr5O
+	DISvk+Nzv4sjd3WXpKJfZCENiSSn/+paXZaaAHxGJ0Ef/4o2e99rYxphVXR8GcPiaG3vCEtws5q/V
+	wDk4PA6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsKvY-0004sQ-VX; Tue, 30 Jul 2019 05:44:01 +0000
+	id 1hsKx8-0007G6-Oc; Tue, 30 Jul 2019 05:45:38 +0000
 Received: from mx.socionext.com ([202.248.49.38])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hsKvK-0004qO-1c
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 05:43:47 +0000
+ id 1hsKvK-0004qP-1a
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 05:43:49 +0000
 Received: from unknown (HELO iyokan-ex.css.socionext.com) ([172.31.9.54])
- by mx.socionext.com with ESMTP; 30 Jul 2019 14:43:41 +0900
+ by mx.socionext.com with ESMTP; 30 Jul 2019 14:43:42 +0900
 Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
- by iyokan-ex.css.socionext.com (Postfix) with ESMTP id 8CA3A60629;
- Tue, 30 Jul 2019 14:43:41 +0900 (JST)
+ by iyokan-ex.css.socionext.com (Postfix) with ESMTP id 9603360629;
+ Tue, 30 Jul 2019 14:43:42 +0900 (JST)
 Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
- Tue, 30 Jul 2019 14:43:41 +0900
+ Tue, 30 Jul 2019 14:43:42 +0900
 Received: from plum.e01.socionext.com (unknown [10.213.132.32])
- by kinkan.css.socionext.com (Postfix) with ESMTP id 21B5C1A04FC;
- Tue, 30 Jul 2019 14:43:41 +0900 (JST)
+ by kinkan.css.socionext.com (Postfix) with ESMTP id 467AA1A04FC;
+ Tue, 30 Jul 2019 14:43:42 +0900 (JST)
 From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 To: Linus Walleij <linus.walleij@linaro.org>,
  Masahiro Yamada <yamada.masahiro@socionext.com>, linux-gpio@vger.kernel.org
-Subject: [PATCH v2 0/5] pinctrl: uniphier: Add some improvements and new
- settings
-Date: Tue, 30 Jul 2019 14:43:25 +0900
-Message-Id: <1564465410-9165-1-git-send-email-hayashi.kunihiko@socionext.com>
+Subject: [PATCH v2 1/5] pinctrl: uniphier: Separate modem group from UART
+ ctsrts group
+Date: Tue, 30 Jul 2019 14:43:26 +0900
+Message-Id: <1564465410-9165-2-git-send-email-hayashi.kunihiko@socionext.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1564465410-9165-1-git-send-email-hayashi.kunihiko@socionext.com>
+References: <1564465410-9165-1-git-send-email-hayashi.kunihiko@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_224346_198354_68DA5A3C 
-X-CRM114-Status: UNSURE (   9.82  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190729_224346_677843_A1D76ED5 
+X-CRM114-Status: GOOD (  11.62  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -75,33 +77,341 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series adds some improvements and new settings for pin-mux.
+It depends on the board implementation whether to have each pins of
+CTS/RTS, and others for modem. So it is necessary to divide current
+uart_ctsrts group into uart_ctsrts and uart_modem groups.
 
-Changes since v1:
-- sort arrays in alphabetical order
-- sort pin numbers in ascending order
-- merge "aout1b" pin-mux to aout1_group
-- change "4th" in the subject to "5th"
-- add Acked-by: lines
+Since the number of implemented pins for modem differs depending
+on SoC, each uart_modem group also has a different number of pins.
 
-Kunihiko Hayashi (5):
-  pinctrl: uniphier: Separate modem group from UART ctsrts group
-  pinctrl: uniphier: Add another audio I/O pin-mux settings for LD20
-  pinctrl: uniphier: Add 5th LD20 MPEG2-TS input pin-mux setting
-  pinctrl: uniphier: Add Pro5 PCIe pin-mux settings
-  pinctrl: uniphier: Fix Pro5 SD pin-mux setting
-
+Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+---
  drivers/pinctrl/uniphier/pinctrl-uniphier-ld11.c | 10 +++++++---
- drivers/pinctrl/uniphier/pinctrl-uniphier-ld20.c | 20 ++++++++++++++++----
+ drivers/pinctrl/uniphier/pinctrl-uniphier-ld20.c | 10 +++++++---
  drivers/pinctrl/uniphier/pinctrl-uniphier-ld4.c  | 10 +++++++---
  drivers/pinctrl/uniphier/pinctrl-uniphier-ld6b.c | 10 +++++++---
  drivers/pinctrl/uniphier/pinctrl-uniphier-pro4.c | 10 +++++++---
- drivers/pinctrl/uniphier/pinctrl-uniphier-pro5.c | 17 +++++++++++++----
+ drivers/pinctrl/uniphier/pinctrl-uniphier-pro5.c | 10 +++++++---
  drivers/pinctrl/uniphier/pinctrl-uniphier-pxs2.c | 10 +++++++---
  drivers/pinctrl/uniphier/pinctrl-uniphier-pxs3.c | 10 +++++++---
  drivers/pinctrl/uniphier/pinctrl-uniphier-sld8.c | 10 +++++++---
- 9 files changed, 78 insertions(+), 29 deletions(-)
+ 9 files changed, 63 insertions(+), 27 deletions(-)
 
+diff --git a/drivers/pinctrl/uniphier/pinctrl-uniphier-ld11.c b/drivers/pinctrl/uniphier/pinctrl-uniphier-ld11.c
+index 92fef3a..c390a55 100644
+--- a/drivers/pinctrl/uniphier/pinctrl-uniphier-ld11.c
++++ b/drivers/pinctrl/uniphier/pinctrl-uniphier-ld11.c
+@@ -526,8 +526,10 @@ static const unsigned uart2_pins[] = {90, 91};
+ static const int uart2_muxvals[] = {1, 1};
+ static const unsigned uart3_pins[] = {94, 95};
+ static const int uart3_muxvals[] = {1, 1};
+-static const unsigned uart3_ctsrts_pins[] = {96, 97, 98, 99, 100, 101};
+-static const int uart3_ctsrts_muxvals[] = {1, 1, 1, 1, 1, 1};
++static const unsigned uart3_ctsrts_pins[] = {96, 98};
++static const int uart3_ctsrts_muxvals[] = {1, 1};
++static const unsigned uart3_modem_pins[] = {97, 99, 100, 101};
++static const int uart3_modem_muxvals[] = {1, 1, 1, 1};
+ static const unsigned usb0_pins[] = {46, 47};
+ static const int usb0_muxvals[] = {0, 0};
+ static const unsigned usb1_pins[] = {48, 49};
+@@ -600,6 +602,7 @@ static const struct uniphier_pinctrl_group uniphier_ld11_groups[] = {
+ 	UNIPHIER_PINCTRL_GROUP(uart2),
+ 	UNIPHIER_PINCTRL_GROUP(uart3),
+ 	UNIPHIER_PINCTRL_GROUP(uart3_ctsrts),
++	UNIPHIER_PINCTRL_GROUP(uart3_modem),
+ 	UNIPHIER_PINCTRL_GROUP(usb0),
+ 	UNIPHIER_PINCTRL_GROUP(usb1),
+ 	UNIPHIER_PINCTRL_GROUP(usb2),
+@@ -636,7 +639,8 @@ static const char * const system_bus_groups[] = {"system_bus",
+ static const char * const uart0_groups[] = {"uart0"};
+ static const char * const uart1_groups[] = {"uart1"};
+ static const char * const uart2_groups[] = {"uart2"};
+-static const char * const uart3_groups[] = {"uart3", "uart3_ctsrts"};
++static const char * const uart3_groups[] = {"uart3", "uart3_ctsrts",
++					    "uart3_modem"};
+ static const char * const usb0_groups[] = {"usb0"};
+ static const char * const usb1_groups[] = {"usb1"};
+ static const char * const usb2_groups[] = {"usb2"};
+diff --git a/drivers/pinctrl/uniphier/pinctrl-uniphier-ld20.c b/drivers/pinctrl/uniphier/pinctrl-uniphier-ld20.c
+index 7fbc965..28e54b3 100644
+--- a/drivers/pinctrl/uniphier/pinctrl-uniphier-ld20.c
++++ b/drivers/pinctrl/uniphier/pinctrl-uniphier-ld20.c
+@@ -619,8 +619,10 @@ static const unsigned uart2_pins[] = {90, 91};
+ static const int uart2_muxvals[] = {1, 1};
+ static const unsigned uart3_pins[] = {94, 95};
+ static const int uart3_muxvals[] = {1, 1};
+-static const unsigned uart3_ctsrts_pins[] = {96, 97, 98, 99, 100, 101};
+-static const int uart3_ctsrts_muxvals[] = {1, 1, 1, 1, 1, 1};
++static const unsigned uart3_ctsrts_pins[] = {96, 98};
++static const int uart3_ctsrts_muxvals[] = {1, 1};
++static const unsigned uart3_modem_pins[] = {97, 99, 100, 101};
++static const int uart3_modem_muxvals[] = {1, 1, 1, 1};
+ static const unsigned usb0_pins[] = {46, 47};
+ static const int usb0_muxvals[] = {0, 0};
+ static const unsigned usb1_pins[] = {48, 49};
+@@ -695,6 +697,7 @@ static const struct uniphier_pinctrl_group uniphier_ld20_groups[] = {
+ 	UNIPHIER_PINCTRL_GROUP(uart2),
+ 	UNIPHIER_PINCTRL_GROUP(uart3),
+ 	UNIPHIER_PINCTRL_GROUP(uart3_ctsrts),
++	UNIPHIER_PINCTRL_GROUP(uart3_modem),
+ 	UNIPHIER_PINCTRL_GROUP(usb0),
+ 	UNIPHIER_PINCTRL_GROUP(usb1),
+ 	UNIPHIER_PINCTRL_GROUP(usb2),
+@@ -734,7 +737,8 @@ static const char * const system_bus_groups[] = {"system_bus",
+ static const char * const uart0_groups[] = {"uart0"};
+ static const char * const uart1_groups[] = {"uart1"};
+ static const char * const uart2_groups[] = {"uart2"};
+-static const char * const uart3_groups[] = {"uart3", "uart3_ctsrts"};
++static const char * const uart3_groups[] = {"uart3", "uart3_ctsrts",
++					    "uart3_modem"};
+ static const char * const usb0_groups[] = {"usb0"};
+ static const char * const usb1_groups[] = {"usb1"};
+ static const char * const usb2_groups[] = {"usb2"};
+diff --git a/drivers/pinctrl/uniphier/pinctrl-uniphier-ld4.c b/drivers/pinctrl/uniphier/pinctrl-uniphier-ld4.c
+index d09019b..88fd68f 100644
+--- a/drivers/pinctrl/uniphier/pinctrl-uniphier-ld4.c
++++ b/drivers/pinctrl/uniphier/pinctrl-uniphier-ld4.c
+@@ -583,8 +583,10 @@ static const unsigned system_bus_cs3_pins[] = {156};
+ static const int system_bus_cs3_muxvals[] = {1};
+ static const unsigned uart0_pins[] = {85, 88};
+ static const int uart0_muxvals[] = {1, 1};
+-static const unsigned uart0_ctsrts_pins[] = {86, 87, 89};
+-static const int uart0_ctsrts_muxvals[] = {1, 1, 1};
++static const unsigned uart0_ctsrts_pins[] = {86, 89};
++static const int uart0_ctsrts_muxvals[] = {1, 1};
++static const unsigned uart0_modem_pins[] = {87};
++static const int uart0_modem_muxvals[] = {1};
+ static const unsigned uart1_pins[] = {155, 156};
+ static const int uart1_muxvals[] = {13, 13};
+ static const unsigned uart1b_pins[] = {69, 70};
+@@ -641,6 +643,7 @@ static const struct uniphier_pinctrl_group uniphier_ld4_groups[] = {
+ 	UNIPHIER_PINCTRL_GROUP(system_bus_cs3),
+ 	UNIPHIER_PINCTRL_GROUP(uart0),
+ 	UNIPHIER_PINCTRL_GROUP(uart0_ctsrts),
++	UNIPHIER_PINCTRL_GROUP(uart0_modem),
+ 	UNIPHIER_PINCTRL_GROUP(uart1),
+ 	UNIPHIER_PINCTRL_GROUP(uart1b),
+ 	UNIPHIER_PINCTRL_GROUP(uart2),
+@@ -667,7 +670,8 @@ static const char * const system_bus_groups[] = {"system_bus",
+ 						 "system_bus_cs1",
+ 						 "system_bus_cs2",
+ 						 "system_bus_cs3"};
+-static const char * const uart0_groups[] = {"uart0", "uart0_ctsrts"};
++static const char * const uart0_groups[] = {"uart0", "uart0_ctsrts",
++					    "uart0_modem"};
+ static const char * const uart1_groups[] = {"uart1", "uart1b"};
+ static const char * const uart2_groups[] = {"uart2"};
+ static const char * const uart3_groups[] = {"uart3"};
+diff --git a/drivers/pinctrl/uniphier/pinctrl-uniphier-ld6b.c b/drivers/pinctrl/uniphier/pinctrl-uniphier-ld6b.c
+index 414ff3a..374c029 100644
+--- a/drivers/pinctrl/uniphier/pinctrl-uniphier-ld6b.c
++++ b/drivers/pinctrl/uniphier/pinctrl-uniphier-ld6b.c
+@@ -780,8 +780,10 @@ static const unsigned system_bus_cs5_pins[] = {55};
+ static const int system_bus_cs5_muxvals[] = {6};
+ static const unsigned uart0_pins[] = {135, 136};
+ static const int uart0_muxvals[] = {3, 3};
+-static const unsigned uart0_ctsrts_pins[] = {137, 138, 139, 140, 141, 124};
+-static const int uart0_ctsrts_muxvals[] = {3, 3, 3, 3, 3, 3};
++static const unsigned uart0_ctsrts_pins[] = {137, 139};
++static const int uart0_ctsrts_muxvals[] = {3, 3};
++static const unsigned uart0_modem_pins[] = {124, 138, 140, 141};
++static const int uart0_modem_muxvals[] = {3, 3, 3, 3};
+ static const unsigned uart0b_pins[] = {11, 12};
+ static const int uart0b_muxvals[] = {2, 2};
+ static const unsigned uart1_pins[] = {115, 116};
+@@ -856,6 +858,7 @@ static const struct uniphier_pinctrl_group uniphier_ld6b_groups[] = {
+ 	UNIPHIER_PINCTRL_GROUP(system_bus_cs5),
+ 	UNIPHIER_PINCTRL_GROUP(uart0),
+ 	UNIPHIER_PINCTRL_GROUP(uart0_ctsrts),
++	UNIPHIER_PINCTRL_GROUP(uart0_modem),
+ 	UNIPHIER_PINCTRL_GROUP(uart0b),
+ 	UNIPHIER_PINCTRL_GROUP(uart1),
+ 	UNIPHIER_PINCTRL_GROUP(uart1b),
+@@ -887,7 +890,8 @@ static const char * const system_bus_groups[] = {"system_bus",
+ 						 "system_bus_cs3",
+ 						 "system_bus_cs4",
+ 						 "system_bus_cs5"};
+-static const char * const uart0_groups[] = {"uart0", "uart0_ctsrts", "uart0b"};
++static const char * const uart0_groups[] = {"uart0", "uart0_ctsrts",
++					    "uart0_modem", "uart0b"};
+ static const char * const uart1_groups[] = {"uart1", "uart1b"};
+ static const char * const uart2_groups[] = {"uart2", "uart2b"};
+ static const char * const usb0_groups[] = {"usb0"};
+diff --git a/drivers/pinctrl/uniphier/pinctrl-uniphier-pro4.c b/drivers/pinctrl/uniphier/pinctrl-uniphier-pro4.c
+index 919b9be..4f63d7b 100644
+--- a/drivers/pinctrl/uniphier/pinctrl-uniphier-pro4.c
++++ b/drivers/pinctrl/uniphier/pinctrl-uniphier-pro4.c
+@@ -1072,8 +1072,10 @@ static const unsigned uart2_pins[] = {131, 132};
+ static const int uart2_muxvals[] = {0, 0};
+ static const unsigned uart3_pins[] = {88, 89};
+ static const int uart3_muxvals[] = {2, 2};
+-static const unsigned uart3_ctsrts_pins[] = {80, 81, 82, 83, 90, 91};
+-static const int uart3_ctsrts_muxvals[] = {2, 2, 2, 2, 2, 2};
++static const unsigned uart3_ctsrts_pins[] = {90, 91};
++static const int uart3_ctsrts_muxvals[] = {2, 2};
++static const unsigned uart3_modem_pins[] = {80, 81, 82, 83};
++static const int uart3_modem_muxvals[] = {2, 2, 2, 2};
+ static const unsigned usb0_pins[] = {180, 181};
+ static const int usb0_muxvals[] = {0, 0};
+ static const unsigned usb1_pins[] = {182, 183};
+@@ -1148,6 +1150,7 @@ static const struct uniphier_pinctrl_group uniphier_pro4_groups[] = {
+ 	UNIPHIER_PINCTRL_GROUP(uart2),
+ 	UNIPHIER_PINCTRL_GROUP(uart3),
+ 	UNIPHIER_PINCTRL_GROUP(uart3_ctsrts),
++	UNIPHIER_PINCTRL_GROUP(uart3_modem),
+ 	UNIPHIER_PINCTRL_GROUP(usb0),
+ 	UNIPHIER_PINCTRL_GROUP(usb1),
+ 	UNIPHIER_PINCTRL_GROUP(usb2),
+@@ -1181,7 +1184,8 @@ static const char * const system_bus_groups[] = {"system_bus",
+ static const char * const uart0_groups[] = {"uart0"};
+ static const char * const uart1_groups[] = {"uart1"};
+ static const char * const uart2_groups[] = {"uart2"};
+-static const char * const uart3_groups[] = {"uart3", "uart3_ctsrts"};
++static const char * const uart3_groups[] = {"uart3", "uart3_ctsrts",
++					    "uart3_modem"};
+ static const char * const usb0_groups[] = {"usb0"};
+ static const char * const usb1_groups[] = {"usb1"};
+ static const char * const usb2_groups[] = {"usb2"};
+diff --git a/drivers/pinctrl/uniphier/pinctrl-uniphier-pro5.c b/drivers/pinctrl/uniphier/pinctrl-uniphier-pro5.c
+index 4a6580d..1d418e3 100644
+--- a/drivers/pinctrl/uniphier/pinctrl-uniphier-pro5.c
++++ b/drivers/pinctrl/uniphier/pinctrl-uniphier-pro5.c
+@@ -839,8 +839,10 @@ static const unsigned uart0_pins[] = {47, 48};
+ static const int uart0_muxvals[] = {0, 0};
+ static const unsigned uart0b_pins[] = {227, 228};
+ static const int uart0b_muxvals[] = {3, 3};
+-static const unsigned uart0b_ctsrts_pins[] = {229, 230, 231, 232, 233, 234};
+-static const int uart0b_ctsrts_muxvals[] = {3, 3, 3, 3, 3, 3};
++static const unsigned uart0b_ctsrts_pins[] = {232, 233};
++static const int uart0b_ctsrts_muxvals[] = {3, 3};
++static const unsigned uart0b_modem_pins[] = {229, 230, 231, 234};
++static const int uart0b_modem_muxvals[] = {3, 3, 3, 3};
+ static const unsigned uart1_pins[] = {49, 50};
+ static const int uart1_muxvals[] = {0, 0};
+ static const unsigned uart2_pins[] = {51, 52};
+@@ -916,6 +918,7 @@ static const struct uniphier_pinctrl_group uniphier_pro5_groups[] = {
+ 	UNIPHIER_PINCTRL_GROUP(uart0),
+ 	UNIPHIER_PINCTRL_GROUP(uart0b),
+ 	UNIPHIER_PINCTRL_GROUP(uart0b_ctsrts),
++	UNIPHIER_PINCTRL_GROUP(uart0b_modem),
+ 	UNIPHIER_PINCTRL_GROUP(uart1),
+ 	UNIPHIER_PINCTRL_GROUP(uart2),
+ 	UNIPHIER_PINCTRL_GROUP(uart3),
+@@ -946,7 +949,8 @@ static const char * const system_bus_groups[] = {"system_bus",
+ 						 "system_bus_cs5",
+ 						 "system_bus_cs6",
+ 						 "system_bus_cs7"};
+-static const char * const uart0_groups[] = {"uart0", "uart0b", "uart0b_ctsrts"};
++static const char * const uart0_groups[] = {"uart0", "uart0b",
++					    "uart0b_ctsrts", "uart0b_modem"};
+ static const char * const uart1_groups[] = {"uart1"};
+ static const char * const uart2_groups[] = {"uart2"};
+ static const char * const uart3_groups[] = {"uart3"};
+diff --git a/drivers/pinctrl/uniphier/pinctrl-uniphier-pxs2.c b/drivers/pinctrl/uniphier/pinctrl-uniphier-pxs2.c
+index 169bb44..e52e65a2 100644
+--- a/drivers/pinctrl/uniphier/pinctrl-uniphier-pxs2.c
++++ b/drivers/pinctrl/uniphier/pinctrl-uniphier-pxs2.c
+@@ -783,8 +783,10 @@ static const unsigned uart0_pins[] = {217, 218};
+ static const int uart0_muxvals[] = {8, 8};
+ static const unsigned uart0b_pins[] = {179, 180};
+ static const int uart0b_muxvals[] = {10, 10};
+-static const unsigned uart0b_ctsrts_pins[] = {176, 177, 178, 183, 184, 185};
+-static const int uart0b_ctsrts_muxvals[] = {10, 10, 10, 10, 10, 10};
++static const unsigned uart0b_ctsrts_pins[] = {183, 185};
++static const int uart0b_ctsrts_muxvals[] = {10, 10};
++static const unsigned uart0b_modem_pins[] = {176, 177, 178, 184};
++static const int uart0b_modem_muxvals[] = {10, 10, 10, 10};
+ static const unsigned uart1_pins[] = {115, 116};
+ static const int uart1_muxvals[] = {8, 8};
+ static const unsigned uart2_pins[] = {113, 114};
+@@ -863,6 +865,7 @@ static const struct uniphier_pinctrl_group uniphier_pxs2_groups[] = {
+ 	UNIPHIER_PINCTRL_GROUP(uart0),
+ 	UNIPHIER_PINCTRL_GROUP(uart0b),
+ 	UNIPHIER_PINCTRL_GROUP(uart0b_ctsrts),
++	UNIPHIER_PINCTRL_GROUP(uart0b_modem),
+ 	UNIPHIER_PINCTRL_GROUP(uart1),
+ 	UNIPHIER_PINCTRL_GROUP(uart2),
+ 	UNIPHIER_PINCTRL_GROUP(uart3),
+@@ -898,7 +901,8 @@ static const char * const spi0_groups[] = {"spi0"};
+ static const char * const spi1_groups[] = {"spi1"};
+ static const char * const system_bus_groups[] = {"system_bus",
+ 						 "system_bus_cs1"};
+-static const char * const uart0_groups[] = {"uart0", "uart0b", "uart0b_ctsrts"};
++static const char * const uart0_groups[] = {"uart0", "uart0b",
++					    "uart0b_ctsrts", "uart0b_modem"};
+ static const char * const uart1_groups[] = {"uart1"};
+ static const char * const uart2_groups[] = {"uart2"};
+ static const char * const uart3_groups[] = {"uart3", "uart3b"};
+diff --git a/drivers/pinctrl/uniphier/pinctrl-uniphier-pxs3.c b/drivers/pinctrl/uniphier/pinctrl-uniphier-pxs3.c
+index 3dc3e5b..2b388fd 100644
+--- a/drivers/pinctrl/uniphier/pinctrl-uniphier-pxs3.c
++++ b/drivers/pinctrl/uniphier/pinctrl-uniphier-pxs3.c
+@@ -811,8 +811,10 @@ static const unsigned int system_bus_cs1_pins[] = {15};
+ static const int system_bus_cs1_muxvals[] = {0};
+ static const unsigned int uart0_pins[] = {92, 93};
+ static const int uart0_muxvals[] = {0, 0};
+-static const unsigned int uart0_ctsrts_pins[] = {243, 244, 245, 246, 247, 248};
+-static const int uart0_ctsrts_muxvals[] = {3, 3, 3, 3, 3, 3};
++static const unsigned int uart0_ctsrts_pins[] = {243, 247};
++static const int uart0_ctsrts_muxvals[] = {3, 3};
++static const unsigned int uart0_modem_pins[] = {244, 245, 246, 248};
++static const int uart0_modem_muxvals[] = {3, 3, 3, 3};
+ static const unsigned int uart1_pins[] = {94, 95};
+ static const int uart1_muxvals[] = {0, 0};
+ static const unsigned int uart2_pins[] = {96, 97};
+@@ -887,6 +889,7 @@ static const struct uniphier_pinctrl_group uniphier_pxs3_groups[] = {
+ 	UNIPHIER_PINCTRL_GROUP(system_bus_cs1),
+ 	UNIPHIER_PINCTRL_GROUP(uart0),
+ 	UNIPHIER_PINCTRL_GROUP(uart0_ctsrts),
++	UNIPHIER_PINCTRL_GROUP(uart0_modem),
+ 	UNIPHIER_PINCTRL_GROUP(uart1),
+ 	UNIPHIER_PINCTRL_GROUP(uart2),
+ 	UNIPHIER_PINCTRL_GROUP(uart3),
+@@ -914,7 +917,8 @@ static const char * const spi0_groups[] = {"spi0"};
+ static const char * const spi1_groups[] = {"spi1"};
+ static const char * const system_bus_groups[] = {"system_bus",
+ 						 "system_bus_cs1"};
+-static const char * const uart0_groups[] = {"uart0", "uart0_ctsrts"};
++static const char * const uart0_groups[] = {"uart0", "uart0_ctsrts",
++					    "uart0_modem"};
+ static const char * const uart1_groups[] = {"uart1"};
+ static const char * const uart2_groups[] = {"uart2"};
+ static const char * const uart3_groups[] = {"uart3"};
+diff --git a/drivers/pinctrl/uniphier/pinctrl-uniphier-sld8.c b/drivers/pinctrl/uniphier/pinctrl-uniphier-sld8.c
+index 463e932..087e8db 100644
+--- a/drivers/pinctrl/uniphier/pinctrl-uniphier-sld8.c
++++ b/drivers/pinctrl/uniphier/pinctrl-uniphier-sld8.c
+@@ -513,8 +513,10 @@ static const unsigned system_bus_cs5_pins[] = {13};
+ static const int system_bus_cs5_muxvals[] = {1};
+ static const unsigned uart0_pins[] = {70, 71};
+ static const int uart0_muxvals[] = {3, 3};
+-static const unsigned uart0_ctsrts_pins[] = {72, 73, 74};
+-static const int uart0_ctsrts_muxvals[] = {3, 3, 3};
++static const unsigned uart0_ctsrts_pins[] = {72, 74};
++static const int uart0_ctsrts_muxvals[] = {3, 3};
++static const unsigned uart0_modem_pins[] = {73};
++static const int uart0_modem_muxvals[] = {3};
+ static const unsigned uart1_pins[] = {114, 115};
+ static const int uart1_muxvals[] = {0, 0};
+ static const unsigned uart2_pins[] = {112, 113};
+@@ -572,6 +574,7 @@ static const struct uniphier_pinctrl_group uniphier_sld8_groups[] = {
+ 	UNIPHIER_PINCTRL_GROUP(system_bus_cs5),
+ 	UNIPHIER_PINCTRL_GROUP(uart0),
+ 	UNIPHIER_PINCTRL_GROUP(uart0_ctsrts),
++	UNIPHIER_PINCTRL_GROUP(uart0_modem),
+ 	UNIPHIER_PINCTRL_GROUP(uart1),
+ 	UNIPHIER_PINCTRL_GROUP(uart2),
+ 	UNIPHIER_PINCTRL_GROUP(uart3),
+@@ -599,7 +602,8 @@ static const char * const system_bus_groups[] = {"system_bus",
+ 						 "system_bus_cs3",
+ 						 "system_bus_cs4",
+ 						 "system_bus_cs5"};
+-static const char * const uart0_groups[] = {"uart0", "uart0_ctsrts"};
++static const char * const uart0_groups[] = {"uart0", "uart0_ctsrts",
++					    "uart0_modem"};
+ static const char * const uart1_groups[] = {"uart1"};
+ static const char * const uart2_groups[] = {"uart2"};
+ static const char * const uart3_groups[] = {"uart3"};
 -- 
 2.7.4
 
