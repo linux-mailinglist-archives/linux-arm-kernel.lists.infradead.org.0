@@ -2,85 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CFFCC7AF53
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 19:11:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF1797AF54
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 19:12:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wywXEOKqwWeZ6HlpbgfvydtLsJCem7SIM0a0i10WEOc=; b=QeoFmCYagkNTav
-	nV9qRY+hupbthOvpf9lQlLLEjAVaJn3iB2aj/1AFhx0qTwZTNdc8LPSNjkTWfng3qFp2EzQ/99YGp
-	5UTdu5JUgh8ukvO2aTVM18p2S5sLueZiAZ/GdXyTR1RWDAJEeXmdKCbDkoIWcNubtc01JRnB4yGAo
-	kyBHCQADO3yivYP4iUhzB/AFHlQpEDiSIGV4Ow+pcx8waFMB9X3dSy8F2ElteF0VMw8QPA9yvx1iQ
-	DMUenCsACT/Hd3I5fKdcCJz6xh3ClJhZpyKDfyGJBezHjaL5aF957JuIJrElAY/ZYyAYtjtbAFNv8
-	Ejmh/9cNMJForh5yFKVQ==;
+	List-Owner; bh=RUs237KC7vyDJGZAkpvW5PpL8CbBURS9Lwxu0gl6vWQ=; b=XBg19XBFVJvCTe
+	kmqNGUcZxY/W/WMEShClZYA2ZcMCvlHfaUJ/su3etdI1cBqXlrBJ/1jNre+Xw1KC0KSQbqFLxBUkW
+	WCtEqFVBQz4tWw/6aNztTZJUEe2IpOuGnz1yV7GbzmqGREvbkg+hEGstNXlwD2Ndh6RtoYAez9Sv3
+	4eMRqD8T3qLf6jBFblKDGjQChCtPampdmdGQf8c5zgKZ1+ZEcEcKFFJo2G1dDmrwZYzFx36W5kzX+
+	+czW9D1fS/Dam8RMdLlCqHLfEDgyABndCZDtpwlEdXKGxi19cFlxLSL13ILf5jFZNAUlMjWcCKK1b
+	zXetCuatQqnbmKUQrimQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsVfD-0005Dm-BV; Tue, 30 Jul 2019 17:11:51 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1hsVfQ-0005Ra-Ke; Tue, 30 Jul 2019 17:12:04 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsVde-0003wd-74
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 17:10:16 +0000
-Received: by mail-wm1-x343.google.com with SMTP id a15so57880899wmj.5
+ id 1hsVdf-0003yL-Ey
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 17:10:17 +0000
+Received: by mail-wm1-x341.google.com with SMTP id p74so57851881wme.4
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 30 Jul 2019 10:10:13 -0700 (PDT)
+ Tue, 30 Jul 2019 10:10:15 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=RWP8nyImS39zSZSpsquwa+7h83m45I0RXPq4864glDw=;
- b=Iu9EjQjZxmPl+Q4bfHcmGwyQDVVaNNpvg/OpDyGt+7lGZ0E4arbO7crE19E05b7srI
- xFSOFbugrx7lNFmE/6mIc2U3JHmGayehFJHvqNoXKBR7PabDGkK5rX5AiSkcYjgyGpdM
- kYxzm9UK+SxRH+DmKD+l6Dh39NlADk8GQ/cBd1kZkHQrg/t25wjz4m5RlvZI+5ev5L8/
- PaQ3redmmEfRjn7LM6cpZuHqlakUGT8RqZWrN2BvlCJlYIwM5n1pXFoz2Ve20I9l1ird
- FwMusc3kwdlBHsOuUEgODl8VH72duETUdSHEpuGeHReKGrEOtBKk3a7CPqm7rn8sHo1v
- RUmg==
+ bh=NH6XObUnMoJEgSclRt0t6O4vavDHd+pv9Qe4go8awrw=;
+ b=S7bkPcx94KOQ8Be7NlR8S/8DZqHU1imOlDR8Kp4yERNcpuNOB91H+Fa/O36xDPuAzl
+ 9yQNR00RMvsOpb6kETumXVg2mKVRNdRY+hfb+qz3D+RuPdmSHcq8J/jbHafDmrgE/qye
+ KBB3vrOlE5VhGnjbwlc25cVhuIMCsj0urj3ldecSdit8+VaLUawVPPjZJPu63Ip99Zg2
+ FXnVF3VIB8X5Gz8ykvxUKqpy4BJ3q5o+yyAK5wWWbV5lRsEXKwTuk+BJm0d5Al7O0IQQ
+ TpBlyqiFPI/DRMwexlLgeMPq0eDvj7GN09ZdVVIsQ6SL6FmpAaSmWyPh9jE3v0e/O+u1
+ BxGg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=RWP8nyImS39zSZSpsquwa+7h83m45I0RXPq4864glDw=;
- b=twOIDHK3wE44iH0Ys0E35TpNltO6JmZacO9ZMElHf616lAjNO2ZAO8ObNjUafpLI2O
- fLo3MVrR9wEMflwDH5pZ12MNKlc1smXcsCWoNb5tL1Y6+uyYCeGvRMq4KjOGeoL0Nfr5
- /ffQoohyW3EIdAaGEFhDSv5rJlJAd3uV2r83OBSfZD7ywejl6tlhifR09yH7Bp6r8utY
- Qe/shr0Ae8XASgYm96OsYbgZX5IUZzIUQnrLOPCYinj3aNlYrylkWJqAc53Zm6z7lIO+
- WRgbkWH61yrbfJi342wDZcgivfd8Fah2ifN5rdu4SUTzq6sXKE3MilsS69LE1mYkozJZ
- y78A==
-X-Gm-Message-State: APjAAAUWaeewiK/Rp6E0ExKdk5r/VLoKJ5fddCIam2CIE9Qn8tIOJ38M
- weIu5xzNGvwg/XVauHXq3p0=
-X-Google-Smtp-Source: APXvYqw3fVyWAWZ7kBBQv6+IKJ3g2QmXyBtQvX8SEi5ctVNZO7fbPMe02SHu5bD++PN7kt5z0SRACA==
-X-Received: by 2002:a7b:c0d0:: with SMTP id s16mr91081455wmh.136.1564506612681; 
- Tue, 30 Jul 2019 10:10:12 -0700 (PDT)
+ bh=NH6XObUnMoJEgSclRt0t6O4vavDHd+pv9Qe4go8awrw=;
+ b=OuLtGGC65gBtpt1C2gzPwDvO2oV+Vu4ZftSK4QFwdL65/lJfGP0MsZugGTaV/VdjzP
+ vU9239fZNNPAX8mIDQIZteNXTikTDHIM6gRUQm9Hp3/dvASRjij8sJ/uUoJuZ73oI7Vj
+ fz95g7Fewh2OEVGisuthWLsLphFxX3fAW1VdW459ldxZU/+z9VCrcHLHuiX4hDgfkP1p
+ Io3nPV2YhjS3xIHHJHY4ryNEnr8Fl8RGsor5I4ACMdIZrVUoECk7vE7eknJZPY6hWfza
+ f9Xr+nLaxHwDgQmv6xdB4eH9JFxbbOM5HjoqheTptE23GsjiuEN1VYwWqNVHfAD2XS4o
+ HoNA==
+X-Gm-Message-State: APjAAAVmARJPr6aVGyIgqedchDflLlWh4RnCb77OAct2h9+GhoRH7Ts6
+ 7xUroEQwDaiXwoCgv4sKxSc=
+X-Google-Smtp-Source: APXvYqxgugSlFK9JiMqipavLlGWSWBG6uhiM/DZt3dLpMlwjhqiQtAh/RNUVPC/3aq16h1ftq7/FMQ==
+X-Received: by 2002:a05:600c:20ca:: with SMTP id
+ y10mr73119321wmm.72.1564506613937; 
+ Tue, 30 Jul 2019 10:10:13 -0700 (PDT)
 Received: from localhost.localdomain (ppp91-78-220-99.pppoe.mtu-net.ru.
  [91.78.220.99])
- by smtp.gmail.com with ESMTPSA id i13sm58897736wrr.73.2019.07.30.10.10.11
+ by smtp.gmail.com with ESMTPSA id i13sm58897736wrr.73.2019.07.30.10.10.12
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 30 Jul 2019 10:10:12 -0700 (PDT)
+ Tue, 30 Jul 2019 10:10:13 -0700 (PDT)
 From: Dmitry Osipenko <digetx@gmail.com>
 To: Thierry Reding <thierry.reding@gmail.com>,
  Jonathan Hunter <jonathanh@nvidia.com>,
  Peter De Schrijver <pdeschrijver@nvidia.com>,
  "Rafael J. Wysocki" <rjw@rjwysocki.net>,
  Daniel Lezcano <daniel.lezcano@linaro.org>
-Subject: [PATCH v4 05/13] ARM: tegra: Expose PM functions required for new
- cpuidle driver
-Date: Tue, 30 Jul 2019 20:09:47 +0300
-Message-Id: <20190730170955.11987-6-digetx@gmail.com>
+Subject: [PATCH v4 06/13] ARM: tegra: Rename some of the newly exposed PM
+ functions
+Date: Tue, 30 Jul 2019 20:09:48 +0300
+Message-Id: <20190730170955.11987-7-digetx@gmail.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190730170955.11987-1-digetx@gmail.com>
 References: <20190730170955.11987-1-digetx@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_101014_334474_026053BF 
-X-CRM114-Status: GOOD (  15.09  )
+X-CRM114-CacheID: sfid-20190730_101015_777308_912A8EA2 
+X-CRM114-Status: GOOD (  12.36  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -111,127 +112,137 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The upcoming unified CPUIDLE driver will be added to the drivers/cpuidle/
-directory and it will require all these exposed Tegra PM-core functions.
+Rename some of the recently exposed PM functions, prefixing them with
+"tegra_pm_" and making naming of those functions more meaningful, for
+consistency.
 
 Signed-off-by: Dmitry Osipenko <digetx@gmail.com>
 ---
- arch/arm/mach-tegra/irq.c   |  2 ++
- arch/arm/mach-tegra/pm.h    |  3 ---
- arch/arm/mach-tegra/sleep.h |  1 -
- include/soc/tegra/irq.h     | 13 +++++++++++++
- include/soc/tegra/pm.h      | 25 +++++++++++++++++++++++++
- 5 files changed, 40 insertions(+), 4 deletions(-)
- create mode 100644 include/soc/tegra/irq.h
+ arch/arm/mach-tegra/pm.c            | 10 +++++-----
+ arch/arm/mach-tegra/sleep-tegra30.S |  6 +++---
+ include/soc/tegra/pm.h              | 16 ++++++++--------
+ 3 files changed, 16 insertions(+), 16 deletions(-)
 
-diff --git a/arch/arm/mach-tegra/irq.c b/arch/arm/mach-tegra/irq.c
-index 4c065b54cbe7..4e1ee70b2a3f 100644
---- a/arch/arm/mach-tegra/irq.c
-+++ b/arch/arm/mach-tegra/irq.c
-@@ -18,6 +18,8 @@
- #include <linux/of.h>
- #include <linux/syscore_ops.h>
+diff --git a/arch/arm/mach-tegra/pm.c b/arch/arm/mach-tegra/pm.c
+index f9c9bce9e15d..4cc64a135a3e 100644
+--- a/arch/arm/mach-tegra/pm.c
++++ b/arch/arm/mach-tegra/pm.c
+@@ -110,7 +110,7 @@ static void suspend_cpu_complex(void)
+ 	flowctrl_cpu_suspend_enter(cpu);
+ }
  
-+#include <soc/tegra/irq.h>
-+
- #include "board.h"
- #include "iomap.h"
+-void tegra_clear_cpu_in_lp2(void)
++void tegra_pm_clear_cpu_in_lp2(void)
+ {
+ 	int phy_cpu_id = cpu_logical_map(smp_processor_id());
+ 	u32 *cpu_in_lp2 = tegra_cpu_lp2_mask;
+@@ -123,7 +123,7 @@ void tegra_clear_cpu_in_lp2(void)
+ 	spin_unlock(&tegra_lp2_lock);
+ }
  
-diff --git a/arch/arm/mach-tegra/pm.h b/arch/arm/mach-tegra/pm.h
-index ae68fc7db576..81525f5f4a44 100644
---- a/arch/arm/mach-tegra/pm.h
-+++ b/arch/arm/mach-tegra/pm.h
-@@ -23,9 +23,6 @@ void tegra20_sleep_core_init(void);
- void tegra30_lp1_iram_hook(void);
- void tegra30_sleep_core_init(void);
+-void tegra_set_cpu_in_lp2(void)
++void tegra_pm_set_cpu_in_lp2(void)
+ {
+ 	int phy_cpu_id = cpu_logical_map(smp_processor_id());
+ 	u32 *cpu_in_lp2 = tegra_cpu_lp2_mask;
+@@ -189,7 +189,7 @@ static void tegra_pm_set(enum tegra_suspend_mode mode)
+ 	tegra_pmc_enter_suspend_mode(mode);
+ }
  
+-int tegra_idle_lp2_last(void)
++int tegra_pm_enter_lp2(void)
+ {
+ 	int err;
+ 
+@@ -356,7 +356,7 @@ static int tegra_suspend_enter(suspend_state_t state)
+ 		tegra_suspend_enter_lp1();
+ 		break;
+ 	case TEGRA_SUSPEND_LP2:
+-		tegra_set_cpu_in_lp2();
++		tegra_pm_set_cpu_in_lp2();
+ 		break;
+ 	default:
+ 		break;
+@@ -377,7 +377,7 @@ static int tegra_suspend_enter(suspend_state_t state)
+ 		tegra_suspend_exit_lp1();
+ 		break;
+ 	case TEGRA_SUSPEND_LP2:
+-		tegra_clear_cpu_in_lp2();
++		tegra_pm_clear_cpu_in_lp2();
+ 		break;
+ 	default:
+ 		break;
+diff --git a/arch/arm/mach-tegra/sleep-tegra30.S b/arch/arm/mach-tegra/sleep-tegra30.S
+index b408fa56eb89..386319a3d2d2 100644
+--- a/arch/arm/mach-tegra/sleep-tegra30.S
++++ b/arch/arm/mach-tegra/sleep-tegra30.S
+@@ -262,11 +262,11 @@ ENTRY(tegra30_sleep_core_finish)
+ ENDPROC(tegra30_sleep_core_finish)
+ 
+ /*
+- * tegra30_sleep_cpu_secondary_finish(unsigned long v2p)
++ * tegra30_pm_secondary_cpu_suspend(unsigned long unused_arg)
+  *
+  * Enters LP2 on secondary CPU by exiting coherency and powergating the CPU.
+  */
+-ENTRY(tegra30_sleep_cpu_secondary_finish)
++ENTRY(tegra30_pm_secondary_cpu_suspend)
+ 	mov	r7, lr
+ 
+ 	/* Flush and disable the L1 data cache */
+@@ -278,7 +278,7 @@ ENTRY(tegra30_sleep_cpu_secondary_finish)
+ 	bl	tegra30_cpu_shutdown
+ 	mov	r0, #1                          @ never return here
+ 	ret	r7
+-ENDPROC(tegra30_sleep_cpu_secondary_finish)
++ENDPROC(tegra30_pm_secondary_cpu_suspend)
+ 
+ /*
+  * tegra30_tear_down_cpu
+diff --git a/include/soc/tegra/pm.h b/include/soc/tegra/pm.h
+index bc1abdf41d61..2fbee9efda21 100644
+--- a/include/soc/tegra/pm.h
++++ b/include/soc/tegra/pm.h
+@@ -23,10 +23,10 @@ tegra_pm_validate_suspend_mode(enum tegra_suspend_mode mode);
+ /* low-level resume entry point */
+ void tegra_resume(void);
+ 
+-int tegra30_sleep_cpu_secondary_finish(unsigned long arg);
 -void tegra_clear_cpu_in_lp2(void);
 -void tegra_set_cpu_in_lp2(void);
 -int tegra_idle_lp2_last(void);
- extern void (*tegra_tear_down_cpu)(void);
- 
- #ifdef CONFIG_PM_SLEEP
-diff --git a/arch/arm/mach-tegra/sleep.h b/arch/arm/mach-tegra/sleep.h
-index 4978def9db46..4718a3cb45a1 100644
---- a/arch/arm/mach-tegra/sleep.h
-+++ b/arch/arm/mach-tegra/sleep.h
-@@ -122,7 +122,6 @@ void tegra20_hotplug_shutdown(void);
- void tegra30_hotplug_shutdown(void);
- 
- void tegra20_tear_down_cpu(void);
--int tegra30_sleep_cpu_secondary_finish(unsigned long);
- void tegra30_tear_down_cpu(void);
- 
- #endif
-diff --git a/include/soc/tegra/irq.h b/include/soc/tegra/irq.h
-new file mode 100644
-index 000000000000..8eb11a7109e4
---- /dev/null
-+++ b/include/soc/tegra/irq.h
-@@ -0,0 +1,13 @@
-+/* SPDX-License-Identifier: GPL-2.0-only */
-+/*
-+ * Copyright (c) 2012, NVIDIA Corporation. All rights reserved.
-+ */
-+
-+#ifndef __SOC_TEGRA_IRQ_H
-+#define __SOC_TEGRA_IRQ_H
-+
-+#if defined(CONFIG_ARM)
-+bool tegra_pending_sgi(void);
-+#endif
-+
-+#endif /* __SOC_TEGRA_IRQ_H */
-diff --git a/include/soc/tegra/pm.h b/include/soc/tegra/pm.h
-index 951fcd738d55..bc1abdf41d61 100644
---- a/include/soc/tegra/pm.h
-+++ b/include/soc/tegra/pm.h
-@@ -6,6 +6,8 @@
- #ifndef __SOC_TEGRA_PM_H__
- #define __SOC_TEGRA_PM_H__
- 
-+#include <linux/errno.h>
-+
- enum tegra_suspend_mode {
- 	TEGRA_SUSPEND_NONE = 0,
- 	TEGRA_SUSPEND_LP2, /* CPU voltage off */
-@@ -20,6 +22,11 @@ tegra_pm_validate_suspend_mode(enum tegra_suspend_mode mode);
- 
- /* low-level resume entry point */
- void tegra_resume(void);
-+
-+int tegra30_sleep_cpu_secondary_finish(unsigned long arg);
-+void tegra_clear_cpu_in_lp2(void);
-+void tegra_set_cpu_in_lp2(void);
-+int tegra_idle_lp2_last(void);
++int tegra30_pm_secondary_cpu_suspend(unsigned long arg);
++void tegra_pm_clear_cpu_in_lp2(void);
++void tegra_pm_set_cpu_in_lp2(void);
++int tegra_pm_enter_lp2(void);
  #else
  static inline enum tegra_suspend_mode
  tegra_pm_validate_suspend_mode(enum tegra_suspend_mode mode)
-@@ -30,6 +37,24 @@ tegra_pm_validate_suspend_mode(enum tegra_suspend_mode mode)
- static inline void tegra_resume(void)
+@@ -38,20 +38,20 @@ static inline void tegra_resume(void)
  {
  }
-+
-+static inline int tegra30_sleep_cpu_secondary_finish(unsigned long arg)
-+{
-+	return -ENOTSUPP;
-+}
-+
-+static inline void tegra_clear_cpu_in_lp2(void)
-+{
-+}
-+
-+static inline void tegra_set_cpu_in_lp2(void)
-+{
-+}
-+
-+static inline int tegra_idle_lp2_last(void)
-+{
-+	return -ENOTSUPP;
-+}
- #endif /* CONFIG_PM_SLEEP */
  
- #endif /* __SOC_TEGRA_PM_H__ */
+-static inline int tegra30_sleep_cpu_secondary_finish(unsigned long arg)
++static inline int tegra30_pm_secondary_cpu_suspend(unsigned long arg)
+ {
+ 	return -ENOTSUPP;
+ }
+ 
+-static inline void tegra_clear_cpu_in_lp2(void)
++static inline void tegra_pm_clear_cpu_in_lp2(void)
+ {
+ }
+ 
+-static inline void tegra_set_cpu_in_lp2(void)
++static inline void tegra_pm_set_cpu_in_lp2(void)
+ {
+ }
+ 
+-static inline int tegra_idle_lp2_last(void)
++static inline int tegra_pm_enter_lp2(void)
+ {
+ 	return -ENOTSUPP;
+ }
 -- 
 2.22.0
 
