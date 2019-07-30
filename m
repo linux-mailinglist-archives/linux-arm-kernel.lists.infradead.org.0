@@ -2,78 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09DCC7AB15
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 16:32:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F15CA7AB33
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 16:40:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j8yrrqFyQgjL2kUfbK2xcqZYMXJ/QYIn9KvkV6ctkLE=; b=Jat1GpGU/pObEE
-	1bhGQ85jHv59CiQpyEHGqYFbEdJPCeF5pi9boy2fbspTkZYcdJ3QGACtrJG0X259yvYvDwAUtZdY+
-	Sg1pgn4587oFusuX4Hdyv02ssIbvAKFYMsvbEE12vHUikD8wiT9uZgFvE/hJzwv2NAiimsHkA9OCC
-	owrzzIdunLEWtHaID7n0wbsWA49BGHYYLZYLHYINyaLILBo4feoEzoDn/wCoCq/qhxrfIkauUqVMK
-	E8GyLppH6LAUObWSvYrDeUVJ0OZR+n70RiMFdOQYiMQrnR467ScH/JygqLBWCQBqyr7TsGi8FfftO
-	jk72GFV1ezkLzIZ6xM7Q==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=DwALlthaozoOCGryL9hCvwNTVu7TzU+hiQTVRZEJ/qI=; b=Kdb
+	O4W0nwUdVTWzH8bSEAirPyKNRNAfn1gdDP1FowmAftA0xcQTmHRrUvDi2t33OhuHCj4GHxDkF9p0w
+	LhMV51MWMhVhzUhkH1rPvJCJuDp083IEF8YGehdGsUnrlW0DR1S1Ea5dnIgPaRvd+85Q2ZsQwPaFI
+	nadX+m1AV0ukeCZqjF786hmg04drQfaCeIKwSMvt+QtuTLYuXq3rCIdjOU23rSAGoX9FMzw2sv28j
+	vXj5wCWzUP2RU2RQCx8cALT2oUSA+TxYMvnWy9MiUKCbwqPYGJWPX1hKxZa3RYO1YVI0CM/KbiK++
+	QP0oNEZf1irbbvXZsIh0XK5NRF4+XYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsTAx-0006qZ-8u; Tue, 30 Jul 2019 14:32:27 +0000
-Received: from conssluserg-02.nifty.com ([210.131.2.81])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsTAl-0006pn-KU
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 14:32:16 +0000
-Received: from mail-vs1-f50.google.com (mail-vs1-f50.google.com
- [209.85.217.50]) (authenticated)
- by conssluserg-02.nifty.com with ESMTP id x6UEVpSt017862
- for <linux-arm-kernel@lists.infradead.org>; Tue, 30 Jul 2019 23:31:52 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-02.nifty.com x6UEVpSt017862
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1564497112;
- bh=cZjjC9PP1LqBq8GA5ZyQIzvHoACB+pU5O0RNljsPvx4=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=bOM5KONwY8MAer5gZNRMU4a5mhn+IvHJSRmI1XKrTnxtZlb33QfMJO5Q3zUdoe6F6
- evlMhZ5o0qQkYZZ1WsGYyEILa24yLaAe3bPgirX8txBha5gry9G07ife/lR5JFoBl2
- H6Vr79ZQOs/hpx8zen/TERFjHkxPN1hCN/TLwORSd0qa/E2eWPH3uAfcl02Jqd0/E1
- m6ohCE+4NVCExFDL+qTPnSmDgy9MBgBEYQ62lE1lhiJfOFI903QKUi1Hagu4pbqpjq
- NIRV3yugeY+UkAsdiDGouY41enR+zrQiVXAZKyZOyrdYWZTSMckpSYsyWTEIEUYN5d
- 9Ku/vD/lBDveA==
-X-Nifty-SrcIP: [209.85.217.50]
-Received: by mail-vs1-f50.google.com with SMTP id h28so43598005vsl.12
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 30 Jul 2019 07:31:52 -0700 (PDT)
-X-Gm-Message-State: APjAAAVgVl/NsMpoCZB+oY4cupxyMcYVDftobz2XjsY2o1B4qXsRWCOn
- kzWnXauD9sZ0Q/CQG+KRVesUvPKOZP0x7OneMCs=
-X-Google-Smtp-Source: APXvYqzzMjiYis6ulKJOaFvw4iNNbc6SgmW0tRSjbeem8L4rYZQnOGWU+h/jR5zfUjSp3CfUodjMbZzMk4in6+qlTt0=
-X-Received: by 2002:a67:fc45:: with SMTP id p5mr11106683vsq.179.1564497111451; 
- Tue, 30 Jul 2019 07:31:51 -0700 (PDT)
-MIME-Version: 1.0
-References: <1564465410-9165-1-git-send-email-hayashi.kunihiko@socionext.com>
- <1564465410-9165-5-git-send-email-hayashi.kunihiko@socionext.com>
-In-Reply-To: <1564465410-9165-5-git-send-email-hayashi.kunihiko@socionext.com>
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
-Date: Tue, 30 Jul 2019 23:31:15 +0900
-X-Gmail-Original-Message-ID: <CAK7LNAQZNu_R_noC=P=oe_NVewAS-LeVhmuDNT=TQJApRCtgEw@mail.gmail.com>
-Message-ID: <CAK7LNAQZNu_R_noC=P=oe_NVewAS-LeVhmuDNT=TQJApRCtgEw@mail.gmail.com>
-Subject: Re: [PATCH v2 4/5] pinctrl: uniphier: Add Pro5 PCIe pin-mux settings
-To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+	id 1hsTIr-0001eS-DX; Tue, 30 Jul 2019 14:40:37 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hsTIf-0001dv-VT
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 14:40:27 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6491628;
+ Tue, 30 Jul 2019 07:40:25 -0700 (PDT)
+Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id B16E33F694;
+ Tue, 30 Jul 2019 07:40:24 -0700 (PDT)
+From: Will Deacon <will@kernel.org>
+To: catalin.marinas@arm.com
+Subject: [PATCH] arm64: cpufeature: Fix feature comparison for CTR_EL0.{CWG,
+ ERG}
+Date: Tue, 30 Jul 2019 15:40:20 +0100
+Message-Id: <20190730144020.3518-1-will@kernel.org>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_073215_887937_EE146416 
-X-CRM114-Status: UNSURE (   8.38  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190730_074026_059162_91FB6B1F 
+X-CRM114-Status: GOOD (  11.15  )
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.81 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [210.131.2.81 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,33 +58,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Masami Hiramatsu <masami.hiramatsu@linaro.org>,
- Jassi Brar <jaswinder.singh@linaro.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Suzuki Poulose <suzuki.poulose@arm.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jul 30, 2019 at 2:44 PM Kunihiko Hayashi
-<hayashi.kunihiko@socionext.com> wrote:
->
-> Pro5 PCIe interface uses the following pins:
->     XPERST, XPEWAKE, XPECLKRQ
->
-> Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-> ---
+If CTR_EL0.{CWG,ERG} are 0b0000 then they must be interpreted to have
+their architecturally maximum values, which defeats the use of
+FTR_HIGHER_SAFE when sanitising CPU ID registers on heterogeneous
+machines.
 
-Acked-by: Masahiro Yamada <yamada.masahiro@socionext.com>
+Introduce FTR_HIGHER_OR_ZERO_SAFE so that these fields effectively
+saturate at zero.
 
+Cc: Suzuki Poulose <suzuki.poulose@arm.com>
+Fixes: 3c739b571084 ("arm64: Keep track of CPU feature registers")
+Signed-off-by: Will Deacon <will@kernel.org>
+---
+ arch/arm64/include/asm/cpufeature.h | 7 ++++---
+ arch/arm64/kernel/cpufeature.c      | 8 ++++++--
+ 2 files changed, 10 insertions(+), 5 deletions(-)
 
-
+diff --git a/arch/arm64/include/asm/cpufeature.h b/arch/arm64/include/asm/cpufeature.h
+index 407e2bf23676..c96ffa4722d3 100644
+--- a/arch/arm64/include/asm/cpufeature.h
++++ b/arch/arm64/include/asm/cpufeature.h
+@@ -35,9 +35,10 @@
+  */
+ 
+ enum ftr_type {
+-	FTR_EXACT,	/* Use a predefined safe value */
+-	FTR_LOWER_SAFE,	/* Smaller value is safe */
+-	FTR_HIGHER_SAFE,/* Bigger value is safe */
++	FTR_EXACT,			/* Use a predefined safe value */
++	FTR_LOWER_SAFE,			/* Smaller value is safe */
++	FTR_HIGHER_SAFE,		/* Bigger value is safe */
++	FTR_HIGHER_OR_ZERO_SAFE,	/* Bigger value is safe, but 0 is biggest */
+ };
+ 
+ #define FTR_STRICT	true	/* SANITY check strict matching required */
+diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+index f29f36a65175..d19d14ba9ae4 100644
+--- a/arch/arm64/kernel/cpufeature.c
++++ b/arch/arm64/kernel/cpufeature.c
+@@ -225,8 +225,8 @@ static const struct arm64_ftr_bits ftr_ctr[] = {
+ 	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_EXACT, 31, 1, 1), /* RES1 */
+ 	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, CTR_DIC_SHIFT, 1, 1),
+ 	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, CTR_IDC_SHIFT, 1, 1),
+-	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_HIGHER_SAFE, CTR_CWG_SHIFT, 4, 0),
+-	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_HIGHER_SAFE, CTR_ERG_SHIFT, 4, 0),
++	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_HIGHER_OR_ZERO_SAFE, CTR_CWG_SHIFT, 4, 0),
++	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_HIGHER_OR_ZERO_SAFE, CTR_ERG_SHIFT, 4, 0),
+ 	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, CTR_DMINLINE_SHIFT, 4, 1),
+ 	/*
+ 	 * Linux can handle differing I-cache policies. Userspace JITs will
+@@ -468,6 +468,10 @@ static s64 arm64_ftr_safe_value(const struct arm64_ftr_bits *ftrp, s64 new,
+ 	case FTR_LOWER_SAFE:
+ 		ret = new < cur ? new : cur;
+ 		break;
++	case FTR_HIGHER_OR_ZERO_SAFE:
++		if (!cur || !new)
++			break;
++		/* Fallthrough */
+ 	case FTR_HIGHER_SAFE:
+ 		ret = new > cur ? new : cur;
+ 		break;
 -- 
-Best Regards
-Masahiro Yamada
+2.11.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
