@@ -2,85 +2,146 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 32D617ABF9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 17:08:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D7BC7AC11
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 17:15:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hvMYkufuK3KNV/Z7QHIp6eaDhNj/QsSJL8gGgnYayCU=; b=uPWctDsvpA5gtS
-	4JDZT0m5L9CdKCIFqy3wbkxkN5MrBtjU5Uo4PQ69gYCONI//NGAuuZeUbki/Lvov1LX7TLFVamjHF
-	mz1/9Su5t2mKPCT5zxL31HR3Sn8dof9wasc7PT2RMOc75GdrkndYvE1zCR8SW6wieeC1Z8QuE1lJr
-	p46VIlD23V+ZEA8pc/TOmInE+6jgoaCTnj4aCcVg7troUqCNEDrmgNqMqnNuFYWtNdJRTQypZ3sI5
-	7vbX9233jVGRUkzKB1RoTpg+ScY6b+RB/5QvpVGHe862wzgMkf8fbDyvF3C7P/2BMrw+V3kA5YTsx
-	iic1PIfdcY6WBux8YBAw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FR5whaSLYJs+Pgl4geJ9k94X1XsT//ChcHIeR6GRA3I=; b=ae2adsan9skF+e
+	JBRKl+g5BylzJugnRTnD0DSC7BZtWw9HDgcO+2tJ1Pwc3ZIieZ/K/sTBWv8Z6Z93PkdhVtbvVfFIr
+	3ND93NkxtbLxIpHaXsHmV+s12vQbvnUGUDERS1CmH+UXjokY+5zuqO1qrGCYlCLLuBt8J8Uj2L1wf
+	2Kp0CeCpgbNmJ/W1FTySZS0NLNn0E42tba1tWtcQDEwkH5E6dgcUaL+uwxM/JTjBU0HX5cV6CxLd7
+	Fh0vwjilujccig3RWq56Pf6krnQtbdMNfY3yOkIwrYHJ4V5Z5qUxU/0LqV2BtNiDSM2BW8Ht91IBP
+	pL7jI4hdRE2AwhV3GoAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsTkC-0001Sl-MQ; Tue, 30 Jul 2019 15:08:52 +0000
-Received: from mail-qt1-f193.google.com ([209.85.160.193])
+	id 1hsTqS-0003oR-UE; Tue, 30 Jul 2019 15:15:21 +0000
+Received: from mail-wr1-f68.google.com ([209.85.221.68])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsTk0-0001Rq-M8
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 15:08:42 +0000
-Received: by mail-qt1-f193.google.com with SMTP id d23so63401169qto.2
+ id 1hsTq4-0003Yl-UB
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 15:15:01 +0000
+Received: by mail-wr1-f68.google.com with SMTP id c2so62988104wrm.8
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 30 Jul 2019 08:08:40 -0700 (PDT)
+ Tue, 30 Jul 2019 08:14:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:openpgp:autocrypt:organization
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=ZOGEYkIwZDJRgit5Pt/9TpD9rMgykD3hszhx8LLxEdg=;
+ b=smWwwiLf3j46e0X52mDH16gAJ4lorwf5rxhpIq9a7R74u/Rk4g+2WCI1v2uBfBy/Fm
+ ewIygKL+T59fL9NKFpS/3NcJnof5R/lkid08JHorLPc1vtTLFjS+CA/bgVsqE+sEZY+/
+ sTQo++LswisgFgYk3IgSp+CPbDaU/C0YfK8iuSLnvuzyu/Jjydv5Hh1Xc7Fv6zeFIiWe
+ 9vK5+7pY9yVPmaPJrfLLEqW4CAwVRe/5oJmBmPg5eyrTCfKcUtmSGJMNkKT3ZqvS/iOB
+ IIaFj31IDr7mwrT6hvLm7BzgkqpigO82IyUMsu8ZtnU7odGlnACKlLlLB0Fs3A/mR5xD
+ ggfw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to;
- bh=HzqScm+MgZUE/z+FZh2jR3LjGduzejNoschvUbrV2xA=;
- b=NZZXdVOIdplK2m3BK6qFueCyfrLQCmkv5KjrVQL1ommMb7To8AUApcwiNqB2s2WJKm
- t4da/3b3Et/psiznwpMeLJZRqlhYSDFMQ/UDS1rLa0afmsfkcifXG4Hxdwg7JGJMsNTG
- U46E65uw0pH/SNd4S5dH7k/L+DgNLDdkwUGDZkcXrHRUF7FIayZg6QdlfV4x0GSpAfCQ
- tThIhIH13QbK7MNZHCqlQX/8VYOeuzWhIHhqYMPnHP5Ys5mQqOfpX9yR3xBVnyHXND9p
- svM//3wizOFYBATrzM+rzz5MIOebpQBxCqMdgJyFOT+oh/VoHbdPZubMNZYLjhg+1P0s
- jP3A==
-X-Gm-Message-State: APjAAAV/IAHrNK7Qa72AMHEyVOOKSzaRrOPv4+X1BohiPAw1i35w1pIi
- afg/4/pXLagyTVIqfevXWmw0fA==
-X-Google-Smtp-Source: APXvYqyAEcQ2rI90c7ov4XOcxi/h1Ciz83jV4TqK4E5vsU115tJuJqCFIr/5rf4KY/QKmO1zU9cv0g==
-X-Received: by 2002:ac8:2b14:: with SMTP id 20mr84731688qtu.295.1564499319358; 
- Tue, 30 Jul 2019 08:08:39 -0700 (PDT)
-Received: from redhat.com (bzq-79-181-91-42.red.bezeqint.net. [79.181.91.42])
- by smtp.gmail.com with ESMTPSA id
- z1sm29387735qke.122.2019.07.30.08.08.32
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 30 Jul 2019 08:08:38 -0700 (PDT)
-Date: Tue, 30 Jul 2019 11:08:30 -0400
-From: "Michael S. Tsirkin" <mst@redhat.com>
-To: Jason Wang <jasowang@redhat.com>
-Subject: Re: WARNING in __mmdrop
-Message-ID: <20190730110633-mutt-send-email-mst@kernel.org>
-References: <5cc94f15-b229-a290-55f3-8295266edb2b@redhat.com>
- <20190726082837-mutt-send-email-mst@kernel.org>
- <ada10dc9-6cab-e189-5289-6f9d3ff8fed2@redhat.com>
- <aaefa93e-a0de-1c55-feb0-509c87aae1f3@redhat.com>
- <20190726094756-mutt-send-email-mst@kernel.org>
- <0792ee09-b4b7-673c-2251-e5e0ce0fbe32@redhat.com>
- <20190729045127-mutt-send-email-mst@kernel.org>
- <4d43c094-44ed-dbac-b863-48fc3d754378@redhat.com>
- <20190729104028-mutt-send-email-mst@kernel.org>
- <96b1d67c-3a8d-1224-e9f0-5f7725a3dc10@redhat.com>
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ :organization:message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=ZOGEYkIwZDJRgit5Pt/9TpD9rMgykD3hszhx8LLxEdg=;
+ b=hLt0SueJe6Klw7i1zhLc+K5xpLa6F84QiwGj0bSJPFn4R2ZqFf3WJrOa5pmceuydIV
+ CQidMy+HxaWy+iDq+hpEj/RJu+Bsq1zbqF4pxip0Z+D+TSDIrDD5oR/m++a7JYA+7Uud
+ L3avcOwxcARyg76a1GJzSWlIgAyT2G0MfXc0/xPVQsJp5SJAvgkWvBhBqzUW2civjAdX
+ TtOTPHX9pZAUmhbSIQ8titc3ZZJa0hO8Tvd7ZA9i7R5DqtF1fxrDeaGQcxK+dLDnjF6s
+ 3peq0MK/r4ytiB+ffvA0gkM8EIRplDLepTFSTEgW2x7GvquiWJPss1+xcDcxYXlkAupR
+ kJvA==
+X-Gm-Message-State: APjAAAXnau5JhMXUSCRSCTMhEDwO+BNSbMfvV9bWU+pvs2FzllBzBFva
+ cIq1y7Qoy+dXELkPyv55oqS/Lo0vkvM=
+X-Google-Smtp-Source: APXvYqwlCadMa0VRCkkH404iVtKGzkG2DQngT4Y19XlQIJdiCa7AurcA71F4z7GNTbJVdZ+NJBCa1Q==
+X-Received: by 2002:a5d:4d81:: with SMTP id b1mr47348036wru.27.1564499694615; 
+ Tue, 30 Jul 2019 08:14:54 -0700 (PDT)
+Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
+ [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id f204sm98079780wme.18.2019.07.30.08.14.53
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 30 Jul 2019 08:14:53 -0700 (PDT)
+Subject: Re: [PATCH 3/4] clk: meson: g12a: add notifiers to handle cpu clock
+ change
+To: Jerome Brunet <jbrunet@baylibre.com>
+References: <20190729131656.7308-1-narmstrong@baylibre.com>
+ <20190729131656.7308-4-narmstrong@baylibre.com>
+ <1j36in3okl.fsf@starbuckisacylon.baylibre.com>
+From: Neil Armstrong <narmstrong@baylibre.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
+ 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
+ ZaTUOEkgIor5losDrePdPgE=
+Organization: Baylibre
+Message-ID: <e4ed8d79-a385-fcfc-b587-da6a2b1d2346@baylibre.com>
+Date: Tue, 30 Jul 2019 17:14:53 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <96b1d67c-3a8d-1224-e9f0-5f7725a3dc10@redhat.com>
+In-Reply-To: <1j36in3okl.fsf@starbuckisacylon.baylibre.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_080840_875150_10772A72 
-X-CRM114-Status: GOOD (  32.64  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190730_081456_977328_10206C28 
+X-CRM114-Status: GOOD (  30.19  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.160.193 listed in list.dnswl.org]
+ no trust [209.85.221.68 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.160.193 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.221.68 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,94 +153,327 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mhocko@suse.com, peterz@infradead.org, ldv@altlinux.org,
- james.bottomley@hansenpartnership.com, linux-mm@kvack.org, namit@vmware.com,
- mingo@kernel.org, elena.reshetova@intel.com, keescook@chromium.org,
- aarcange@redhat.com, davem@davemloft.net, hch@infradead.org,
- christian@brauner.io,
- syzbot <syzbot+e58112d71f77113ddb7b@syzkaller.appspotmail.com>,
- syzkaller-bugs@googlegroups.com, jglisse@redhat.com, viro@zeniv.linux.org.uk,
- linux-arm-kernel@lists.infradead.org, wad@chromium.org,
- linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
- luto@amacapital.net, ebiederm@xmission.com, akpm@linux-foundation.org,
- guro@fb.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-amlogic@lists.infradead.org, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVHVlLCBKdWwgMzAsIDIwMTkgYXQgMDM6NDQ6NDdQTSArMDgwMCwgSmFzb24gV2FuZyB3cm90
-ZToKPiAKPiBPbiAyMDE5LzcvMjkg5LiL5Y2IMTA6NDQsIE1pY2hhZWwgUy4gVHNpcmtpbiB3cm90
-ZToKPiA+IE9uIE1vbiwgSnVsIDI5LCAyMDE5IGF0IDEwOjI0OjQzUE0gKzA4MDAsIEphc29uIFdh
-bmcgd3JvdGU6Cj4gPiA+IE9uIDIwMTkvNy8yOSDkuIvljYg0OjU5LCBNaWNoYWVsIFMuIFRzaXJr
-aW4gd3JvdGU6Cj4gPiA+ID4gT24gTW9uLCBKdWwgMjksIDIwMTkgYXQgMDE6NTQ6NDlQTSArMDgw
-MCwgSmFzb24gV2FuZyB3cm90ZToKPiA+ID4gPiA+IE9uIDIwMTkvNy8yNiDkuIvljYg5OjQ5LCBN
-aWNoYWVsIFMuIFRzaXJraW4gd3JvdGU6Cj4gPiA+ID4gPiA+ID4gPiBPaywgbGV0IG1lIHJldHJ5
-IGlmIG5lY2Vzc2FyeSAoYnV0IEkgZG8gcmVtZW1iZXIgSSBlbmQgdXAgd2l0aCBkZWFkbG9ja3MK
-PiA+ID4gPiA+ID4gPiA+IGxhc3QgdHJ5KS4KPiA+ID4gPiA+ID4gPiBPaywgSSBwbGF5IGEgbGl0
-dGxlIHdpdGggdGhpcy4gQW5kIGl0IHdvcmtzIHNvIGZhci4gV2lsbCBkbyBtb3JlIHRlc3RpbmcK
-PiA+ID4gPiA+ID4gPiB0b21vcnJvdy4KPiA+ID4gPiA+ID4gPiAKPiA+ID4gPiA+ID4gPiBPbmUg
-cmVhc29uIGNvdWxkIGJlIEkgc3dpdGNoIHRvIHVzZSBnZXRfdXNlcl9wYWdlc19mYXN0KCkgdG8K
-PiA+ID4gPiA+ID4gPiBfX2dldF91c2VyX3BhZ2VzX2Zhc3QoKSB3aGljaCBkb2Vzbid0IG5lZWQg
-bW1hcF9zZW0uCj4gPiA+ID4gPiA+ID4gCj4gPiA+ID4gPiA+ID4gVGhhbmtzCj4gPiA+ID4gPiA+
-IE9LIHRoYXQgc291bmRzIGdvb2QuIElmIHdlIGFsc28gc2V0IGEgZmxhZyB0byBtYWtlCj4gPiA+
-ID4gPiA+IHZob3N0X2V4Y2VlZHNfd2VpZ2h0IGV4aXQsIHRoZW4gSSB0aGluayBpdCB3aWxsIGJl
-IGFsbCBnb29kLgo+ID4gPiA+ID4gQWZ0ZXIgc29tZSBleHBlcmltZW50cywgSSBjYW1lIHVwIHR3
-byBtZXRob2RzOgo+ID4gPiA+ID4gCj4gPiA+ID4gPiAxKSBzd2l0Y2ggdG8gdXNlIHZxLT5tdXRl
-eCwgdGhlbiB3ZSBtdXN0IHRha2UgdGhlIHZxIGxvY2sgZHVyaW5nIHJhbmdlCj4gPiA+ID4gPiBj
-aGVja2luZyAoYnV0IEkgZG9uJ3Qgc2VlIG9idmlvdXMgc2xvd2Rvd24gZm9yIDE2dmNwdXMgKyAx
-NnF1ZXVlcykuIFNldHRpbmcKPiA+ID4gPiA+IGZsYWdzIGR1cmluZyB3ZWlnaHQgY2hlY2sgc2hv
-dWxkIHdvcmsgYnV0IGl0IHN0aWxsIGNhbid0IGFkZHJlc3MgdGhlIHdvcnN0Cj4gPiA+ID4gPiBj
-YXNlOiB3YWl0IGZvciB0aGUgcGFnZSB0byBiZSBzd2FwcGVkIGluLiBJcyB0aGlzIGFjY2VwdGFi
-bGU/Cj4gPiA+ID4gPiAKPiA+ID4gPiA+IDIpIHVzaW5nIGN1cnJlbnQgUkNVIGJ1dCByZXBsYWNl
-IHN5bmNocm9uaXplX3JjdSgpIHdpdGggdmhvc3Rfd29ya19mbHVzaCgpLgo+ID4gPiA+ID4gVGhl
-IHdvcnN0IGNhc2UgaXMgdGhlIHNhbWUgYXMgMSkgYnV0IHdlIGNhbiBjaGVjayByYW5nZSB3aXRo
-b3V0IGhvbGRpbmcgYW55Cj4gPiA+ID4gPiBsb2Nrcy4KPiA+ID4gPiA+IAo+ID4gPiA+ID4gV2hp
-Y2ggb25lIGRpZCB5b3UgcHJlZmVyPwo+ID4gPiA+ID4gCj4gPiA+ID4gPiBUaGFua3MKPiA+ID4g
-PiBJIHdvdWxkIHJhdGhlciB3ZSBzdGFydCB3aXRoIDEgYW5kIHN3aXRjaCB0byAyIGFmdGVyIHdl
-Cj4gPiA+ID4gY2FuIHNob3cgc29tZSBnYWluLgo+ID4gPiA+IAo+ID4gPiA+IEJ1dCB0aGUgd29y
-c3QgY2FzZSBuZWVkcyB0byBiZSBhZGRyZXNzZWQuCj4gPiA+IAo+ID4gPiBZZXMuCj4gPiA+IAo+
-ID4gPiAKPiA+ID4gPiBIb3cgYWJvdXQgc2VuZGluZyBhIHNpZ25hbCB0bwo+ID4gPiA+IHRoZSB2
-aG9zdCB0aHJlYWQ/ICBXZSB3aWxsIG5lZWQgdG8gZml4IHVwIGVycm9yIGhhbmRsaW5nIChJIHRo
-aW5rIHRoYXQKPiA+ID4gPiBhdCB0aGUgbW9tZW50IGl0IHdpbGwgZXJyb3Igb3V0IGluIHRoYXQg
-Y2FzZSwgaGFuZGxpbmcgdGhpcyBhcyBFRkFVTFQgLQo+ID4gPiA+IGFuZCB3ZSBkb24ndCB3YW50
-IHRvIGRyb3AgcGFja2V0cyBpZiB3ZSBjYW4gaGVscCBpdCwgYW5kIHN1cmVseSBub3QKPiA+ID4g
-PiBlbnRlciBhbnkgZXJyb3Igc3RhdGVzLiAgSW4gcGFydGljdWxhciBpdCBtaWdodCBiZSBlc3Bl
-Y2lhbGx5IHRyaWNreSBpZgo+ID4gPiA+IHdlIHdyb3RlIGludG8gdXNlcnNwYWNlIG1lbW9yeSBh
-bmQgYXJlIG5vdyB0cnlpbmcgdG8gbG9nIHRoZSB3cml0ZS4KPiA+ID4gPiBJIGd1ZXNzIHdlIGNh
-biBkaXNhYmxlIHRoZSBvcHRpbWl6YXRpb24gaWYgbG9nIGlzIGVuYWJsZWQ/KS4KPiA+ID4gCj4g
-PiA+IFRoaXMgbWF5IHdvcmsgYnV0IHJlcXVpcmVzIGEgbG90IG9mIGNoYW5nZXMuCj4gPiBJIGFn
-cmVlLgo+ID4gCj4gPiA+IEFuZCBhY3R1YWxseSBpdCdzIHRoZSBwcmljZSBvZgo+ID4gPiB1c2lu
-ZyB2cSBtdXRleC4KPiA+IE5vdCBzdXJlIHdoYXQncyBtZWFudCBoZXJlLgo+IAo+IAo+IEkgbWVh
-biBpZiB3ZSB1c2UgdnEgbXV0ZXgsIGl0IG1lYW5zIHRoZSBjcml0aWNhbCBzZWN0aW9uIHdhcyBp
-bmNyZWFzZWQgYW5kCj4gd2UgbmVlZCB0byBkZWFsIHdpdGggc3dhcHBpbmcgdGhlbi4KPiAKPiAK
-PiA+IAo+ID4gPiBBY3R1YWxseSwgdGhlIGNyaXRpY2FsIHNlY3Rpb24gc2hvdWxkIGJlIHJhdGhl
-ciBzbWFsbCwgZS5nCj4gPiA+IGp1c3QgaW5zaWRlIG1lbW9yeSBhY2Nlc3NvcnMuCj4gPiBBbHNv
-IHRydWUuCj4gPiAKPiA+ID4gSSB3b25kZXIgd2hldGhlciBvciBub3QganVzdCBkbyBzeW5jaHJv
-bml6ZSBvdXIgc2VsZiBsaWtlOgo+ID4gPiAKPiA+ID4gc3RhdGljIHZvaWQgaW5saW5lIHZob3N0
-X2luY192cV9yZWYoc3RydWN0IHZob3N0X3ZpcnRxdWV1ZSAqdnEpCj4gPiA+IHsKPiA+ID4gIMKg
-wqDCoMKgwqDCoMKgIGludCByZWYgPSBSRUFEX09OQ0UodnEtPnJlZik7Cj4gPiA+IAo+ID4gPiAg
-wqDCoMKgwqDCoMKgwqAgV1JJVEVfT05DRSh2cS0+cmVmLCByZWYgKyAxKTsKPiA+ID4gc21wX3Jt
-YigpOwo+ID4gPiB9Cj4gPiA+IAo+ID4gPiBzdGF0aWMgdm9pZCBpbmxpbmUgdmhvc3RfZGVjX3Zx
-X3JlZihzdHJ1Y3Qgdmhvc3RfdmlydHF1ZXVlICp2cSkKPiA+ID4gewo+ID4gPiAgwqDCoMKgwqDC
-oMKgwqAgaW50IHJlZiA9IFJFQURfT05DRSh2cS0+cmVmKTsKPiA+ID4gCj4gPiA+IHNtcF93bWIo
-KTsKPiA+ID4gIMKgwqDCoMKgwqDCoMKgIFdSSVRFX09OQ0UodnEtPnJlZiwgcmVmIC0gMSk7Cj4g
-PiA+IH0KPiA+ID4gCj4gPiA+IHN0YXRpYyB2b2lkIGlubGluZSB2aG9zdF93YWl0X2Zvcl9yZWYo
-c3RydWN0IHZob3N0X3ZpcnRxdWV1ZSAqdnEpCj4gPiA+IHsKPiA+ID4gIMKgwqDCoMKgwqDCoMKg
-IHdoaWxlIChSRUFEX09OQ0UodnEtPnJlZikpOwo+ID4gPiBtYigpOwo+ID4gPiB9Cj4gPiBMb29r
-cyBnb29kIGJ1dCBJJ2QgbGlrZSB0byB0aGluayBvZiBhIHN0cmF0ZWd5L2V4aXN0aW5nIGxvY2sg
-dGhhdCBsZXQgdXMKPiA+IGJsb2NrIHByb3Blcmx5IGFzIG9wcG9zZWQgdG8gc3Bpbm5pbmcsIHRo
-YXQgd291bGQgYmUgbW9yZSBmcmllbmRseSB0bwo+ID4gZS5nLiB0aGUgcmVhbHRpbWUgcGF0Y2gu
-Cj4gCj4gCj4gRG9lcyBpdCBtYWtlIHNlbnNlIHRvIGRpc2FibGUgcHJlZW1wdGlvbiBpbiB0aGUg
-Y3JpdGljYWwgc2VjdGlvbj8gVGhlbiB3ZQo+IGRvbid0IG5lZWQgdG8gYmxvY2sgYW5kIHdlIGhh
-dmUgYSBkZXRlcm1pbmlzdGljIHRpbWUgc3BlbnQgb24gbWVtb3J5Cj4gYWNjc3NvcnM/CgpIbW0g
-bWF5YmUuIEknbSBnZXR0aW5nIHJlYWxseSBuZXJ2aW91cyBhdCB0aGlzIHBvaW50IC0gd2UKc2Vl
-bSB0byBiZSB1c2luZyBldmVyeSB0cmljayBpbiB0aGUgYm9vay4KCj4gCj4gPiAKPiA+ID4gT3Ig
-dXNpbmcgc21wX2xvYWRfYWNxdWlyZSgpL3NtcF9zdG9yZV9yZWxlYXNlKCkgaW5zdGVhZD8KPiA+
-ID4gCj4gPiA+IFRoYW5rcwo+ID4gVGhlc2UgYXJlIGNoZWFwZXIgb24geDg2LCB5ZXMuCj4gCj4g
-Cj4gV2lsbCB1c2UgdGhpcy4KPiAKPiBUaGFua3MKPiAKPiAKClRoaXMgbG9va3Mgc3VzcGljaW91
-c2x5IGxpa2UgYSBzZXFsb2NrIHRob3VnaC4KQ2FuIHRoYXQgYmUgdXNlZCBzb21laG93PwoKCl9f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1r
-ZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
-dHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJu
-ZWwK
+On 30/07/2019 10:37, Jerome Brunet wrote:
+> On Mon 29 Jul 2019 at 15:16, Neil Armstrong <narmstrong@baylibre.com> wrote:
+> 
+>> In order to implement clock switching for the CLKID_CPU_CLK and
+>> CLKID_CPUB_CLK, notifiers are added on specific points of the
+>> clock tree :
+>>
+>> cpu_clk / cpub_clk
+>> |   \- cpu_clk_dyn
+>> |      |  \- cpu_clk_premux0
+>> |      |        |- cpu_clk_postmux0
+>> |      |        |    |- cpu_clk_dyn0_div
+>> |      |        |    \- xtal/fclk_div2/fclk_div3
+>> |      |        \- xtal/fclk_div2/fclk_div3
+>> |      \- cpu_clk_premux1
+>> |            |- cpu_clk_postmux1
+>> |            |    |- cpu_clk_dyn1_div
+>> |            |    \- xtal/fclk_div2/fclk_div3
+>> |            \- xtal/fclk_div2/fclk_div3
+>> \ sys_pll / sys1_pll
+>>
+>> This for each cluster, a single one for G12A, two for G12B.
+>>
+>> Each cpu_clk_premux1 tree is marked as read-only and CLK_SET_RATE_NO_REPARENT,
+>> to be used as "parking" clock in a safe clock frequency.
+>>
+>> A notifier is added on each cpu_clk_premux0 to detech when CCF want to
+>> change the frequency of the cpu_clk_dyn tree.
+>> In this notifier, the cpu_clk_premux1 tree is configured to use the xtal
+>> clock and then the cpu_clk_dyn is switch to cpu_clk_premux1 while CCF
+>> updates the cpu_clk_premux0 tree.
+>>
+>> A notifier is added on each sys_pll/sys1_pll to detect when CCF wants to
+>> change the PLL clock source of the cpu_clk.
+>> In this notifier, the cpu_clk is switched to cpu_clk_dyn while CCF
+>> updates the sys_pll/sys1_pll frequency.
+>>
+>> A third small notifier is added on each cpu_clk / cpub_clk and cpu_clk_dyn,
+>> add a small delay at PRE_RATE_CHANGE/POST_RATE_CHANGE to let the other
+>> notofiers change propagate before changing the cpu_clk_premux0 and sys_pll
+>> clock trees.
+>>
+>> This notifier set permits switching the cpu_clk / cpub_clk without any
+>> glitches and using a safe parking clock while switching between sub-GHz
+>> clocks using the cpu_clk_dyn tree.
+>>
+>> This setup has been tested and validated on the Amlogic G12A and G12B
+>> SoCs running the arm64 cpuburn at [1] and cycling between all the possible
+>> cpufreq translations of each cluster and checking the final frequency using
+>> the clock-measurer, script at [2].
+>>
+>> [1] https://github.com/ssvb/cpuburn-arm/blob/master/cpuburn-a53.S
+>> [2] https://gist.github.com/superna9999/d4de964dbc0f84b7d527e1df2ddea25f
+
+Signoff missing.... will fix in v2
+
+>> ---
+>>  drivers/clk/meson/g12a.c | 567 +++++++++++++++++++++++++++++++++++----
+>>  1 file changed, 521 insertions(+), 46 deletions(-)
+>>
+>> diff --git a/drivers/clk/meson/g12a.c b/drivers/clk/meson/g12a.c
+>> index e4957fd9f91f..23162310c7ee 100644
+>> --- a/drivers/clk/meson/g12a.c
+>> +++ b/drivers/clk/meson/g12a.c
+>> @@ -14,6 +14,7 @@
+>>  #include <linux/init.h>
+>>  #include <linux/of_device.h>
+>>  #include <linux/platform_device.h>
+>> +#include <linux/clk.h>
+>>  
+>>  #include "clk-mpll.h"
+>>  #include "clk-pll.h"
+>> @@ -88,16 +89,9 @@ static struct clk_regmap g12a_fixed_pll = {
+>>  	},
+>>  };
+>>  
+>> -/*
+>> - * Internal sys pll emulation configuration parameters
+>> - */
+>> -static const struct reg_sequence g12a_sys_init_regs[] = {
+>> -	{ .reg = HHI_SYS_PLL_CNTL1,	.def = 0x00000000 },
+>> -	{ .reg = HHI_SYS_PLL_CNTL2,	.def = 0x00000000 },
+>> -	{ .reg = HHI_SYS_PLL_CNTL3,	.def = 0x48681c00 },
+>> -	{ .reg = HHI_SYS_PLL_CNTL4,	.def = 0x88770290 },
+>> -	{ .reg = HHI_SYS_PLL_CNTL5,	.def = 0x39272000 },
+>> -	{ .reg = HHI_SYS_PLL_CNTL6,	.def = 0x56540000 },
+>> +static const struct pll_mult_range g12a_sys_pll_mult_range = {
+>> +	.min = 128,
+>> +	.max = 250,
+>>  };
+> 
+> The init sequence is removed, I suppose you were concerned about
+> glitching the clock on startup ?
+> 
+> Without the init sequence, it will inherit whatever is left by the
+> bootloader. We have seen in the past that this is not desirable.
+> 
+> I'm mostly concerned about CNTL3 to CNTL6. Should we apply the sequence
+> on .set_rate() instead ? It should be safe then ?
+> 
+
+This PLL (and the SYS1_PLL) cannot be disabled (thus re-initialized) until
+the cpu has been parked on a safe clock, and the default beahavior of the
+current G12A & G12B BL2 is to setup this PLL and the SYS1_PLL to start with
+the cores at 1,2GHz. So we can consider theses PLLs has been correctly
+initialized, thus removing the init code and still be safe.
+
+>>
+> 
+> [...]
+> 
+>>  
+>> @@ -364,16 +366,50 @@ static struct clk_regmap g12a_cpu_clk_premux1 = {
+>>  	},
+>>  	.hw.init = &(struct clk_init_data){
+>>  		.name = "cpu_clk_dyn1_sel",
+>> -		.ops = &clk_regmap_mux_ro_ops,
+>> +		.ops = &clk_regmap_mux_ops,
+>>  		.parent_data = (const struct clk_parent_data []) {
+>>  			{ .fw_name = "xtal", },
+>>  			{ .hw = &g12a_fclk_div2.hw },
+>>  			{ .hw = &g12a_fclk_div3.hw },
+>>  		},
+>>  		.num_parents = 3,
+>> +		/* This sub-tree is used a parking clock */
+>> +		.flags = CLK_SET_RATE_NO_REPARENT
+>>  	},
+>>  };
+>>  
+>> +#define SYS_CPU_DYN_ENABLE	BIT(26)
+>> +
+>> +/* This divider uses bit 26 to take change in account */
+>> +static int g12a_cpu_clk_mux0_div_set_rate(struct clk_hw *hw, unsigned long rate,
+>> +					  unsigned long parent_rate)
+>> +{
+>> +	struct clk_regmap *clk = to_clk_regmap(hw);
+>> +	struct clk_regmap_div_data *div = clk_get_regmap_div_data(clk);
+>> +	unsigned int val;
+>> +	int ret;
+>> +
+>> +	ret = divider_get_val(rate, parent_rate, div->table, div->width,
+>> +			      div->flags);
+>> +	if (ret < 0)
+>> +		return ret;
+>> +
+>> +	val = (unsigned int)ret << div->shift;
+>> +
+>> +	regmap_update_bits(clk->map, HHI_SYS_CPU_CLK_CNTL0,
+>> +			   SYS_CPU_DYN_ENABLE, SYS_CPU_DYN_ENABLE);
+>> +
+>> +	return regmap_update_bits(clk->map, div->offset,
+>> +				  clk_div_mask(div->width) << div->shift |
+>> +				  SYS_CPU_DYN_ENABLE, val);
+>> +};
+>> +
+>> +const struct clk_ops g12a_cpu_clk_mux0_div_ops = {
+>> +	.recalc_rate = clk_regmap_div_recalc_rate,
+>> +	.round_rate = clk_regmap_div_round_rate,
+>> +	.set_rate = g12a_cpu_clk_mux0_div_set_rate,
+>> +};
+> 
+> I would prefer if we could keep the clock drivers and clock controllers
+> separated.
+> 
+> Could you move the above above in another file ?
+
+Yup, done
+
+> 
+>> +
+> 
+> [...]
+> 
+>>  
+>> +/* This divider uses bit 26 to take change in account */
+>> +static int g12b_cpub_clk_mux0_div_set_rate(struct clk_hw *hw,
+>> +					   unsigned long rate,
+>> +					   unsigned long parent_rate)
+>> +{
+>> +	struct clk_regmap *clk = to_clk_regmap(hw);
+>> +	struct clk_regmap_div_data *div = clk_get_regmap_div_data(clk);
+>> +	unsigned int val;
+>> +	int ret;
+>> +
+>> +	ret = divider_get_val(rate, parent_rate, div->table, div->width,
+>> +			      div->flags);
+>> +	if (ret < 0)
+>> +		return ret;
+>> +
+>> +	val = (unsigned int)ret << div->shift;
+>> +
+>> +	regmap_update_bits(clk->map, HHI_SYS_CPUB_CLK_CNTL,
+> 
+> Unless I missed something, this function is same as the g12a with the
+> exception of the register address.
+> 
+> It seems this clock could have its own clock type and its own data
+> structure to store the 'dyn enable' register parameter.
+
+Yup done
+
+> 
+>> +			   SYS_CPU_DYN_ENABLE, SYS_CPU_DYN_ENABLE);
+>> +
+>> +	return regmap_update_bits(clk->map, div->offset,
+>> +				  clk_div_mask(div->width) << div->shift |
+>> +				  SYS_CPU_DYN_ENABLE, val);
+>> +};
+>> +
+>> +static const struct clk_ops g12b_cpub_clk_mux0_div_ops = {
+>> +	.recalc_rate = clk_regmap_div_recalc_rate,
+>> +	.round_rate = clk_regmap_div_round_rate,
+>> +	.set_rate = g12b_cpub_clk_mux0_div_set_rate,
+>> +};
+>> +
+> 
+> [...]
+> 
+>> +
+>> +static int g12a_cpu_clk_postmux_notifier_cb(struct notifier_block *nb,
+>> +					    unsigned long event, void *data)
+>> +{
+>> +	struct g12a_cpu_clk_postmux_nb_data *nb_data =
+>> +		container_of(nb, struct g12a_cpu_clk_postmux_nb_data, nb);
+>> +
+>> +	switch (event) {
+>> +	case PRE_RATE_CHANGE:
+>> +		/*
+>> +		 * This notifier means cpu_clk_postmux0 clock will be changed
+>> +		 * to feed cpu_clk, this is the current path :
+>> +		 * cpu_clk
+>> +		 *    \- cpu_clk_dyn
+>> +		 *          \- cpu_clk_postmux0
+>> +		 *                \- cpu_clk_muxX_div
+>> +		 *                      \- cpu_clk_premux0
+>> +		 *				\- fclk_div3 or fclk_div2
+>> +		 *		OR
+>> +		 *                \- cpu_clk_premux0
+>> +		 *			\- fclk_div3 or fclk_div2
+>> +		 */
+>> +
+>> +		/* Setup cpu_clk_premux1 to xtal */
+>> +		clk_hw_set_parent(nb_data->cpu_clk_premux1,
+>> +				  nb_data->xtal);
+>> +
+>> +		/* Setup cpu_clk_postmux1 to bypass divider */
+>> +		clk_hw_set_parent(nb_data->cpu_clk_postmux1,
+>> +				  nb_data->cpu_clk_premux1);
+>> +
+>> +		/* Switch to parking clk on cpu_clk_postmux1 */
+>> +		clk_hw_set_parent(nb_data->cpu_clk_dyn,
+>> +				  nb_data->cpu_clk_postmux1);
+>> +
+>> +		/*
+>> +		 * Now, cpu_clk is 24MHz in the current path :
+>> +		 * cpu_clk
+>> +		 *    \- cpu_clk_dyn
+>> +		 *          \- cpu_clk_postmux1
+>> +		 *                \- cpu_clk_premux1
+>> +		 *                      \- xtal
+>> +		 */
+>> +
+>> +		udelay(100);
+> 
+> Just curious about the this 100us delay. It seems fairly long, even at
+> 24MHz. In your stress tests, have you tried shorter delays ? 10us maybe ?
+
+Honestly no, I took the values from Amlogic implementation to be safe for
+the first implementation, and I gave all my test scripts and utilities for
+others to re-run them to eventually reduce these values to 10us in a second
+time.
+
+> 
+>> +
+>> +		return NOTIFY_OK;
+>> +
+>> +	case POST_RATE_CHANGE:
+>> +		/*
+>> +		 * The cpu_clk_postmux0 has ben updated, now switch back
+>> +		 * cpu_clk_dyn to cpu_clk_postmux0 and take the changes
+>> +		 * in account.
+>> +		 */
+>> +
+>> +		/* Configure cpu_clk_dyn back to cpu_clk_postmux0 */
+>> +		clk_hw_set_parent(nb_data->cpu_clk_dyn,
+>> +				  nb_data->cpu_clk_postmux0);
+>> +
+>> +		/*
+>> +		 * new path :
+>> +		 * cpu_clk
+>> +		 *    \- cpu_clk_dyn
+>> +		 *          \- cpu_clk_postmux0
+>> +		 *                \- cpu_clk_muxX_div
+>> +		 *                      \- cpu_clk_premux0
+>> +		 *				\- fclk_div3 or fclk_div2
+>> +		 *		OR
+>> +		 *                \- cpu_clk_premux0
+>> +		 *			\- fclk_div3 or fclk_div2
+>> +		 */
+>> +
+>> +		udelay(100);
+>> +
+>> +		return NOTIFY_OK;
+>> +
+>> +	default:
+>> +		return NOTIFY_DONE;
+>> +	}
+>> +}
+>> +
+
+Thanks,
+Neil
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
