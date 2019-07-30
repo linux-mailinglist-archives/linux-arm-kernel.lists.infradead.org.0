@@ -2,70 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C34D79D24
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 01:57:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F61E79D46
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 02:19:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rvmY4ikgts4lyglgKHWjZJZWCrESThKKpl0WH+r372A=; b=nICU7FL+QwJ1V/
-	whcgOaH0stbyoNX8OR1jbkF8Xn8jxbOBBZgFS+PEOGcb7jmi80E9H46uhBJ4QkzoHOjbaUIzcOQ5B
-	avjWlRm+dMqcXDHvwOeG7lXx1eCOFQwEmDjcjzGxLbSGhEshBmzp2eBbCPJCsGRl6s7sI06+3jemy
-	zcjBZzzDOQ+ORWL9gmSitrsArO1NaH3NZkYy5Bryjnpd/cOdhVPq1IpiVVhHiX9GJcJRbfBjbNPhP
-	v1oFAMhtqaNCVZ3+2sBGRQbBxr99qndofh6M3igUJEu1C3UtRnvVE6t9kY8BO605NCQjCm1aIBXwR
-	xBQaQtvopSnwPPnlOZiQ==;
+	List-Owner; bh=pJTjcw4I0GO8jvjMmP/ozr50L7+xO4zMzijrQgZTtKQ=; b=I4kiXtfMSzZpTh
+	loShHf6Tl591Ir4A+6XazzGYceGXTtxt+AAzbwP09/DlIKL3+kzMz64OBq2Lgkc4570tJKjZ8Hi0X
+	VdoxRP8O5PwkXopEQ6d10ReEmGGu+NYcPkogtdEH5avHQq7HY3GZsK75OPGXwUP6OioccsGAHfUTT
+	wrN/m8yrpCs9cIoKvLG89LfhTyoPtyTmOdbw/q08WlL1E7+A8KIeIiMLJjoDlvaaV//MBdxn8LxVO
+	GIGEQwhGK0EgT/WM5zlyZs7zxn2xHen2sRQtwH8eIH92/rPnXvGyKbgBe5aHM3hx65S+oIIGPM3FI
+	GthoAIN8e09IcmRp7Fyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsFWZ-0003b2-O4; Mon, 29 Jul 2019 23:57:52 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hsFrK-0000f7-9W; Tue, 30 Jul 2019 00:19:18 +0000
+Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsFWP-0003ai-8O
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Jul 2019 23:57:42 +0000
-Received: from mail-qt1-f179.google.com (mail-qt1-f179.google.com
- [209.85.160.179])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D1D66216C8
+ id 1hsFr9-0000ek-9n
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 00:19:08 +0000
+Received: by mail-ot1-x344.google.com with SMTP id l15so7218774oth.7
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 29 Jul 2019 23:57:40 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564444661;
- bh=dMiQ9UZlmg1wAHtxio42rSqa++EhjehVjqhzpIB6zHk=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=tKJEyXgGfBY7H7BKIxmTMYPwSAO/utvz0nwSAmkPn9BOCrT+8tPV6iDr3Y+a2MSYF
- krQwN/QZrnIeeM/nei5mKyMdM+b9GIqvxwm8PS5zSSyqjViHgY1xOxK1d0G/HGhYBl
- oFc+99SD6JCHllpal1bVJU1aigfRUCnJItPHlh3c=
-Received: by mail-qt1-f179.google.com with SMTP id a15so61263068qtn.7
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 29 Jul 2019 16:57:40 -0700 (PDT)
-X-Gm-Message-State: APjAAAUro2wAlbyC6ljaYnlwCZPWaSJnuwc9wyQURhcGhBukGt7iYz6Z
- NQxUCQfZqGHXGuEgFFXh1EZu44T/LA91sp6Yeg==
-X-Google-Smtp-Source: APXvYqzqIx+OqBWGwJWFZkq/JHh6Bxb7CsxEjHR4Kg/yXnpoIkeGjg7iAKxv2ArGd8DHDR4pOnjB+vnRMW9wKJdyBN0=
-X-Received: by 2002:ac8:3908:: with SMTP id s8mr33747911qtb.224.1564444659990; 
- Mon, 29 Jul 2019 16:57:39 -0700 (PDT)
+ Mon, 29 Jul 2019 17:19:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=u0ArfUSv+bDdiXAzoVwDZAdkECVAFeS5rxWrcZIaivM=;
+ b=kDXhCZfFyPVxA9S92cjCiuuHKsixwefElD+SzN0O4NtCmkS9YhByjxplWz1ZJdp1w/
+ ExcTKZxsd4A7tPeRvdkisyYzUmG4OahUvl654qK4c1PiL5tNE4SweK7QROaynUq3z0dS
+ HLrv1f0qE6Kego1MJQ6StObV8TbmWCZgba53AdO1Sfd8T8ML34tCuX76xOEB//2oF2ui
+ +Vbk1ufbpv9s1/tyucovIb9uLXIi7B2jNiC8nAO2VRT8rxfFnrQrAVZeFVnr57m7ETg6
+ 5M/Elp0xegNq5+o5TD5oExWsDneasB9mQs01Inpdm/uPT/3+1mIS75fBIJv6cfTutjRq
+ BfCw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=u0ArfUSv+bDdiXAzoVwDZAdkECVAFeS5rxWrcZIaivM=;
+ b=QKIumUgAs+Dc9xEj8cGy/SC2/F1Eoh2a2RqpLUgmTzf6uxzrIb8I/h87fIU5JL2esS
+ 7XsXw7UcSudyCi6/bT9Ux79NGhnxp76mtsktKz8ubR155iuHRPw7UAZd6Eovyovkonm1
+ KiH4pE8Ne5Ap0JcrlA6rzcXx0jqyX0VmLVhfucpvuprZkyjMR/Nbpf+jB3qk55qNTBlo
+ VvuBYWBLoXPQgYfDgsovgHWY+iKJVsuKe/We/TGt1HP1Ul5wnAKYFeYwK2Qpc1G9ZwEt
+ uCGge/jlUvdNNdGv08hLzwJz+rCqrhdr+pPd4rDsQn+oDEqfYbamXiJW+lJYjYhqhgCT
+ 6u6Q==
+X-Gm-Message-State: APjAAAXkDq/1yjr5+pthQQfWw+D8n7SvBaUDGozmPfjookxwPsD1j6fK
+ uO34LNEnhHSEVVrN0yuBARRjXMyjSqGoANdLbpzMtw==
+X-Google-Smtp-Source: APXvYqyJBtzCTMXZyQea+FqMxwWmCcNPdV8ozhydB+D7e+wiMyzPqRU84ufjK5hDSmoRk7My4Vr/zZUWkFZvgoKlt80=
+X-Received: by 2002:a9d:bd6:: with SMTP id 80mr17742541oth.263.1564445945492; 
+ Mon, 29 Jul 2019 17:19:05 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190729172007.3275-1-krzk@kernel.org>
- <20190729172007.3275-2-krzk@kernel.org>
-In-Reply-To: <20190729172007.3275-2-krzk@kernel.org>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Mon, 29 Jul 2019 17:57:28 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqKzsWQoc_xYXxkWa2eUdVwvCvxH-8g-2F90-_YmfU5_fg@mail.gmail.com>
-Message-ID: <CAL_JsqKzsWQoc_xYXxkWa2eUdVwvCvxH-8g-2F90-_YmfU5_fg@mail.gmail.com>
-Subject: Re: [PATCH v3 2/2] ARM: dts: imx6ul-kontron-n6310: Add Kontron
- i.MX6UL N6310 SoM and boards
-To: Krzysztof Kozlowski <krzk@kernel.org>
+References: <20190729152130.27955-1-codekipper@gmail.com>
+In-Reply-To: <20190729152130.27955-1-codekipper@gmail.com>
+From: Vasily Khoruzhick <anarsoul@gmail.com>
+Date: Mon, 29 Jul 2019 17:19:04 -0700
+Message-ID: <CA+E=qVd3rd0qxY+eV=zTnPy1e9zeVbthMn3ieLqCkbTwEPJFYA@mail.gmail.com>
+Subject: Re: [linux-sunxi] [PATCH] ASoC: sun4i-i2s: Incorrect SR and WSS
+ computation
+To: Marcus Cooper <codekipper@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_165741_332574_0934130E 
-X-CRM114-Status: GOOD (  17.30  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190729_171907_369381_EFFE5C56 
+X-CRM114-Status: GOOD (  20.00  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (anarsoul[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -75,7 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,87 +93,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Schrempf Frieder <frieder.schrempf@kontron.de>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Chen-Yu Tsai <wens@csie.org>, Liam Girdwood <lgirdwood@gmail.com>,
+ linux-sunxi <linux-sunxi@googlegroups.com>, Mark Brown <broonie@kernel.org>,
+ Maxime Ripard <maxime.ripard@free-electrons.com>,
+ arm-linux <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jul 29, 2019 at 11:20 AM Krzysztof Kozlowski <krzk@kernel.org> wrote:
+On Mon, Jul 29, 2019 at 8:21 AM <codekipper@gmail.com> wrote:
 >
-> Add support for i.MX6UL modules from Kontron Electronics GmbH (before
-> acquisition: Exceet Electronics) and evalkit boards based on it:
+> From: Marcus Cooper <codekipper@gmail.com>
 >
-> 1. N6310 SOM: i.MX6 UL System-on-Module, a 25x25 mm solderable module
->    (LGA pads and pin castellations) with 256 MB RAM, 1 MB NOR-Flash,
->    256 MB NAND and other interfaces,
-> 2. N6310 S: evalkit, w/wo eMMC, without display,
-> 3. N6310 S 43: evalkit with 4.3" display,
-> 4. N6310 S 50: evalkit with 5.0" display.
+> The A64 audio codec uses the original I2S block but the SR and
+> WSS computation currently assigned is for the newer block.
 >
-> This includes device nodes for unsupported displays (Admatec
-> T043C004800272T2A and T070P133T0S301).
->
-> The work is based on Exceet/Kontron source code (GPLv2) with numerous
-> changes:
-> 1. Reorganize files,
-> 2. Rename Exceet -> Kontron,
-> 3. Rename models/compatibles to match newest Kontron product naming,
-> 4. Fix coding style errors and adjust to device tree coding guidelines,
-> 5. Fix DTC warnings,
-> 6. Extend compatibles so eval boards inherit the SoM compatible,
-> 7. Use defines instead of GPIO and interrupt flag values,
-> 8. Use proper vendor compatible for Macronix SPI NOR,
-> 9. Sort nodes alphabetically.
->
-> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
->
-> ---
->
-> Changes since v2, after Fabio's review:
-> 1. Add "imx6ul" compatible to board name (that's what I understood from
->    review),
-> 2. Add vendor/device prefix to eeprom and document the compatible,
-> 3. Use "admatecde" as vendor compatible to avoid confusion with Admatec
->    AG in Switzerland (also making LCD panels),
-> 4. Use generic names for nodes,
-> 5. Use IRQ_TYPE_LEVEL_LOW,
-> 6. Move iomux to the end of files,
-> 7. Remove regulators node (include regulators in top level),
-> 8. Remove cpu clock-frequency,
-> 9. Other minor fixes pointed by Fabio.
->
-> Changes since v1, after Frieder's review:
-> 1. Remove unneeded license notes,
-> 2. Add Kontron copyright (2018),
-> 3. Rename the files/models/compatibles to new naming - N6310,
-> 4. Remove unneeded CPU operating points override,
-> 5. Switch regulator nodes into simple children nodes without addresses
->    (so not simple bus),
-> 6. Use proper vendor compatible for Macronix SPI NOR.
-> ---
->  .../devicetree/bindings/arm/fsl.yaml          |   4 +
->  .../devicetree/bindings/eeprom/at25.txt       |   1 +
->  arch/arm/boot/dts/Makefile                    |   3 +
->  .../boot/dts/imx6ul-kontron-n6310-s-43.dts    | 119 +++++
->  .../boot/dts/imx6ul-kontron-n6310-s-50.dts    | 119 +++++
->  arch/arm/boot/dts/imx6ul-kontron-n6310-s.dts  | 420 ++++++++++++++++++
->  .../boot/dts/imx6ul-kontron-n6310-som.dtsi    | 134 ++++++
->  7 files changed, 800 insertions(+)
->  create mode 100644 arch/arm/boot/dts/imx6ul-kontron-n6310-s-43.dts
->  create mode 100644 arch/arm/boot/dts/imx6ul-kontron-n6310-s-50.dts
->  create mode 100644 arch/arm/boot/dts/imx6ul-kontron-n6310-s.dts
->  create mode 100644 arch/arm/boot/dts/imx6ul-kontron-n6310-som.dtsi
+> Fixes: 619c15f7fac9 (ASoC: sun4i-i2s: Change SR and WSS computation)
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Looks like we need this fix for 5.3.
+
+> Signed-off-by: Marcus Cooper <codekipper@gmail.com>
+
+Reviewed-by: Vasily Khoruzhick <anarsoul@gmail.com>
+
+
+> ---
+>  sound/soc/sunxi/sun4i-i2s.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+>
+> diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
+> index 9b2232908b65..7fa5c61169db 100644
+> --- a/sound/soc/sunxi/sun4i-i2s.c
+> +++ b/sound/soc/sunxi/sun4i-i2s.c
+> @@ -1002,8 +1002,8 @@ static const struct sun4i_i2s_quirks sun50i_a64_codec_i2s_quirks = {
+>         .field_rxchanmap        = REG_FIELD(SUN4I_I2S_RX_CHAN_MAP_REG, 0, 31),
+>         .field_txchansel        = REG_FIELD(SUN4I_I2S_TX_CHAN_SEL_REG, 0, 2),
+>         .field_rxchansel        = REG_FIELD(SUN4I_I2S_RX_CHAN_SEL_REG, 0, 2),
+> -       .get_sr                 = sun8i_i2s_get_sr_wss,
+> -       .get_wss                = sun8i_i2s_get_sr_wss,
+> +       .get_sr                 = sun4i_i2s_get_sr,
+> +       .get_wss                = sun4i_i2s_get_wss,
+>  };
+>
+>  static int sun4i_i2s_init_regmap_fields(struct device *dev,
+> --
+> 2.22.0
+>
+> --
+> You received this message because you are subscribed to the Google Groups "linux-sunxi" group.
+> To unsubscribe from this group and stop receiving emails from it, send an email to linux-sunxi+unsubscribe@googlegroups.com.
+> To view this discussion on the web, visit https://groups.google.com/d/msgid/linux-sunxi/20190729152130.27955-1-codekipper%40gmail.com.
 
 _______________________________________________
 linux-arm-kernel mailing list
