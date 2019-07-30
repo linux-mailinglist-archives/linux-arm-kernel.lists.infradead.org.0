@@ -2,75 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 958317A91D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 15:01:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A3D3A7A91C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 15:01:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K3z73GaTOMan+yGdIKEo0CB9sq5SJ2gOssYRfRqp8GE=; b=HEfUuCj4CnfZ4f
-	a/VKmED3AX2vbECszVgwJEHfRnWX33CRGJw4xVKZMleVqkRZvNYRBKz0zRcPKCue3JWhzmRJix0fV
-	Dvi4/ew5szpqEBif3Yk1u6gop/5CWDmleAqduxeQmAeVpN18rkK0oYctIx6jHdUhlAlyw4261DSXB
-	pGzKsj92oVObyWh8mDhjiP2JH8TkEsOiyYILBa/mZtRKkitWTZF5iCOSkxVk+j6rUIjU/q35VAuT5
-	R/ltc448kWAkD9WlBZ7nuEJnJXFGZv+TKTnOLhyE/6YsOHt8ZPlnnBp9hJwwMMGq0//Gk4i0r+SvG
-	S2CNLKrvXz8bUQ+ygeFw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=vOFCrMtPLUupSMZegZFJbTbiiaHVJPzyR9NMTkzOgv0=; b=Y+FJTjfL63nFotTXu2D6P9wzK
+	moN8EV+TYn9AVsWayLtdgpS/aGwKe4hYMdOyndxo3RliZkYxTq8lK4kf6Do5h+VwqO384clRtAAIa
+	Ys4gfcevRs3KM00OmAOlnnIXxXYTvwEC9BB+QeESBXEpidrumzfkdVTt1qI3aDXN5Dl25hczYEciy
+	fI5CvAlDqgusPy8Vz42KLzFcI1tRDTHlf0lO5yDOfKt5AUSWVt28Ovt3ibsPVjPsdObf1Gn2fXnYf
+	PZ1e9gvgYakoF5sFQcfyu05cIvZt/GYaRCrY/q1+hhC4dLyD8m1t3ciz4r1OFcGQMVh9gIwt7XORk
+	NXTBpuCTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsRkr-0002Vn-1V; Tue, 30 Jul 2019 13:01:25 +0000
-Received: from mail-qk1-f193.google.com ([209.85.222.193])
+	id 1hsRkY-0002Fu-1W; Tue, 30 Jul 2019 13:01:06 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsRkT-0002Jb-NZ
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 13:01:03 +0000
-Received: by mail-qk1-f193.google.com with SMTP id v22so46488770qkj.8
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 30 Jul 2019 06:01:01 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=FvIiTYmAfg/DHTIwmGRII9mYuGnoOkroa8gAl2zUp2E=;
- b=j/4vKlm3ie4RAP/BTqBHw8D030aLcVKWfGLndySGujjouU4sgl5hiyb86gI1l7HUGe
- 64X4dFWXDEz6vgy/Uuz0llkscKFBT/oBIS/xhdRR4U4f9XIvFh1nkZjhmhalb3fhUb+Z
- J7a7nB1/CLO3Zk2qyyIK+KamxSFH3N3949CE00ofsWzJ0ExP6R3AnzlpGtK4PBW2HqqW
- uIKevEY/uh8Y/NLswgWDRXJwX2vdCiJ13U+E2kpMdGeKMSBhJkeumuaRPJndVq8JTAay
- yK4/Sz+xyyORQGxSFl4hERvd80D62gLsIMCz6GEySWDP4R+yPT04FcelV7tDtD+jJgUx
- nk1A==
-X-Gm-Message-State: APjAAAVfge7l9VCg3sllMKpEHEw5Nhofzk/nTGHBCFgDoMeogBdHKeUp
- gygsyydQ2D97znWBgOZgKwVPV7Fw2ntjj8RBLW0=
-X-Google-Smtp-Source: APXvYqzrlT3Ug5ATEIZ68uAupnmIb49p1sP9YCyeGn/RRLxjG48Th8Y3rQU5jW+lPwRc7Hi0ix6N35cN5y5YCSO5WL8=
-X-Received: by 2002:a37:5f45:: with SMTP id t66mr77440187qkb.286.1564491660273; 
- Tue, 30 Jul 2019 06:01:00 -0700 (PDT)
+ id 1hsRkM-0002FW-7U
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 13:00:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=R/SyRq6FyELxtxiORJjLbvIf0Y67FRULyN5eHL7APCE=; b=TSc8MgeA+4AglHkUpwuoCE7yM
+ Ekffh0gSHlCpNHED7yw8ZuR+jj/bX5/Fxlmx51J4EUuFni/t6CBKgn37C2b81hRIHf69fQzhnoKOX
+ z7FsljtFmaxza50MuxWymGgWOMNMtMTPSMC245xt1EMr5lBk2ClcAlibc4MoBl/KALxH8=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=ypsilon.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1hsRkG-0007Vi-CY; Tue, 30 Jul 2019 13:00:48 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id 80F6C2742CB5; Tue, 30 Jul 2019 14:00:47 +0100 (BST)
+Date: Tue, 30 Jul 2019 14:00:47 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Kevin Hilman <khilman@baylibre.com>, Rob Herring <robh@kernel.org>,
+ Tomeu Vizoso <tomeu.vizoso@collabora.com>
+Subject: Re: next/master boot: 265 boots: 17 failed, 184 passed with 64
+ offline (next-20190730)
+Message-ID: <20190730130047.GC4264@sirena.org.uk>
+References: <5d403574.1c69fb81.14163.65d3@mx.google.com>
 MIME-Version: 1.0
-References: <CAK8P3a3jjDh6aEVf0bBFYc=8GtB38kL6sWVZGJiUe427A7m2ng@mail.gmail.com>
- <CAK8P3a1ss9-G_mr48-UMOenrA0XDGWUFik4TC=m0WFfimoFdnQ@mail.gmail.com>
-In-Reply-To: <CAK8P3a1ss9-G_mr48-UMOenrA0XDGWUFik4TC=m0WFfimoFdnQ@mail.gmail.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Tue, 30 Jul 2019 15:00:43 +0200
-Message-ID: <CAK8P3a3VsArSUgMwoPVxm8JcTPAQDoztg22MGqX4Vj5cjtADZg@mail.gmail.com>
-Subject: Re: RFC: remove Nuvoton w90x900/nuc900 platform?
-To: "Wanzongshun (Vincent)" <wanzongshun@huawei.com>
+In-Reply-To: <5d403574.1c69fb81.14163.65d3@mx.google.com>
+X-Cookie: Times approximate.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_060101_957420_11EA8EAD 
-X-CRM114-Status: GOOD (  21.24  )
+X-CRM114-CacheID: sfid-20190730_060054_276947_3B9C75F9 
+X-CRM114-Status: UNSURE (   7.28  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.193 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.222.193 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,161 +81,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tomer Maimon <tmaimon77@gmail.com>, Avi Fishman <avifishman70@gmail.com>,
- Patrick Venture <venture@google.com>, Linus Walleij <linus.walleij@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Tali Perry <tali.perry1@gmail.com>, Nancy Yuen <yuenn@google.com>,
- Russell King <rmk+kernel@armlinux.org.uk>,
- OpenBMC Maillist <openbmc@lists.ozlabs.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Benjamin Fair <benjaminfair@google.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: kernel-build-reports@lists.linaro.org, David Airlie <airlied@linux.ie>,
+ dri-devel@lists.freedesktop.org, linux-next@vger.kernel.org,
+ Daniel Vetter <daniel@ffwll.ch>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============2059276865387822280=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-That wasn't it either, sorry for spamming the rest. I found one more
-address for Zongshun at Huawei.
 
-On Tue, Jul 30, 2019 at 2:34 PM Arnd Bergmann <arnd@arndb.de> wrote:
->
-> Trying Wan Zongshun <Vincent.Wan@amd.com> instead of
-> the bouncing Wan ZongShun <mcuos.com@gmail.com>.
-> (I assume you are the same person, sorry if not).
->
-> On Tue, Jul 30, 2019 at 2:09 PM Arnd Bergmann <arnd@arndb.de> wrote:
-> >
-> > As the mach-netx and mach-8695 platforms are being removed now,
-> > I wonder whether we should do the same with w90x00: Here is what
-> > I found after looking at the git history and external material for it.
-> >
-> >     - The supported chips (nuc910/950/960) are no longer marketed
-> >       by the manufacturer
-> >
-> >     - Newer chips from the same family (nuc97x, nuc980, n329x)
-> >       that are still marketed have Linux BSPs but those were never
-> >       submitted for upstream inclusion.
-> >
-> >     - Wan ZongShun is listed as maintainer, but the last patch he wrote
-> >       was in 2011.
-> >
-> >     - All patches to w90x900 platform specific files afterwards
-> >       are cleanups that were apparently done without access to
-> >       test hardware.
-> >
-> >     - The http://www.mcuos.com/ website listed in the MAINTAINERS
-> >        file is no longer reachable.
-> >
-> > We do support the newer NPCM platform from Nuvoton. I don't think
-> > there are any shared drivers between the two, but I've added its
-> > maintainers to Cc anyway, in case they still (plan to) use one of
-> > those drivers.
-> >
-> > If we decide that it's time to let go, I'll would the patches below.
-> >
-> >       watchdog: remove w90x900 driver
-> >       spi: remove w90x900 driver
-> >       ASoC: remove w90x900/nuc900 platform drivers
-> >       fbdev: remove w90x900/nuc900 platform drivers
-> >       Input: remove w90x900 keyboard driver
-> >       Input: remove w90x900 touchscreen driver
-> >       mtd: rawnand: remove w90x900 driver
-> >       net: remove w90p910-ether driver
-> >       rtc: remove w90x900/nuc900 driver
-> >       usb: remove ehci-w90x900 driver
-> >       ARM: remove w90x900 platform
-> >
-> >  Documentation/watchdog/watchdog-parameters.rst   |   10 -
-> >  MAINTAINERS                                      |   16 -
-> >  arch/arm/Kconfig                                 |   21 +-
-> >  arch/arm/Makefile                                |    1 -
-> >  arch/arm/configs/nuc910_defconfig                |   51 -
-> >  arch/arm/configs/nuc950_defconfig                |   67 --
-> >  arch/arm/configs/nuc960_defconfig                |   57 --
-> >  arch/arm/mach-w90x900/Kconfig                    |   54 --
-> >  arch/arm/mach-w90x900/Makefile                   |   20 -
-> >  arch/arm/mach-w90x900/Makefile.boot              |    4 -
-> >  arch/arm/mach-w90x900/clksel.c                   |   88 --
-> >  arch/arm/mach-w90x900/clock.c                    |  121 ---
-> >  arch/arm/mach-w90x900/clock.h                    |   40 -
-> >  arch/arm/mach-w90x900/cpu.c                      |  238 -----
-> >  arch/arm/mach-w90x900/cpu.h                      |   56 --
-> >  arch/arm/mach-w90x900/dev.c                      |  537 -----------
-> >  arch/arm/mach-w90x900/gpio.c                     |  150 ---
-> >  arch/arm/mach-w90x900/include/mach/entry-macro.S |   26 -
-> >  arch/arm/mach-w90x900/include/mach/hardware.h    |   19 -
-> >  arch/arm/mach-w90x900/include/mach/irqs.h        |   82 --
-> >  arch/arm/mach-w90x900/include/mach/map.h         |  153 ---
-> >  arch/arm/mach-w90x900/include/mach/mfp.h         |   21 -
-> >  arch/arm/mach-w90x900/include/mach/regs-clock.h  |   49 -
-> >  arch/arm/mach-w90x900/include/mach/regs-irq.h    |   46 -
-> >  arch/arm/mach-w90x900/include/mach/regs-ldm.h    |  248 -----
-> >  arch/arm/mach-w90x900/include/mach/regs-serial.h |   54 --
-> >  arch/arm/mach-w90x900/include/mach/uncompress.h  |   43 -
-> >  arch/arm/mach-w90x900/irq.c                      |  212 -----
-> >  arch/arm/mach-w90x900/mach-nuc910evb.c           |   38 -
-> >  arch/arm/mach-w90x900/mach-nuc950evb.c           |   42 -
-> >  arch/arm/mach-w90x900/mach-nuc960evb.c           |   38 -
-> >  arch/arm/mach-w90x900/mfp.c                      |  197 ----
-> >  arch/arm/mach-w90x900/nuc910.c                   |   58 --
-> >  arch/arm/mach-w90x900/nuc910.h                   |   17 -
-> >  arch/arm/mach-w90x900/nuc950.c                   |   52 --
-> >  arch/arm/mach-w90x900/nuc950.h                   |   17 -
-> >  arch/arm/mach-w90x900/nuc960.c                   |   50 -
-> >  arch/arm/mach-w90x900/nuc960.h                   |   17 -
-> >  arch/arm/mach-w90x900/nuc9xx.h                   |   22 -
-> >  arch/arm/mach-w90x900/regs-ebi.h                 |   29 -
-> >  arch/arm/mach-w90x900/regs-gcr.h                 |   34 -
-> >  arch/arm/mach-w90x900/regs-timer.h               |   37 -
-> >  arch/arm/mach-w90x900/regs-usb.h                 |   31 -
-> >  arch/arm/mach-w90x900/time.c                     |  168 ----
-> >  drivers/input/keyboard/Kconfig                   |   11 -
-> >  drivers/input/keyboard/Makefile                  |    1 -
-> >  drivers/input/keyboard/w90p910_keypad.c          |  264 ------
-> >  drivers/input/touchscreen/Kconfig                |    9 -
-> >  drivers/input/touchscreen/Makefile               |    1 -
-> >  drivers/input/touchscreen/w90p910_ts.c           |  331 -------
-> >  drivers/mtd/nand/raw/Kconfig                     |    8 -
-> >  drivers/mtd/nand/raw/Makefile                    |    1 -
-> >  drivers/mtd/nand/raw/nuc900_nand.c               |  304 ------
-> >  drivers/net/ethernet/Kconfig                     |    1 -
-> >  drivers/net/ethernet/Makefile                    |    1 -
-> >  drivers/net/ethernet/nuvoton/Kconfig             |   29 -
-> >  drivers/net/ethernet/nuvoton/Makefile            |    6 -
-> >  drivers/net/ethernet/nuvoton/w90p910_ether.c     | 1082 ----------------------
-> >  drivers/rtc/Kconfig                              |    7 -
-> >  drivers/rtc/Makefile                             |    1 -
-> >  drivers/rtc/rtc-nuc900.c                         |  271 ------
-> >  drivers/spi/Kconfig                              |    7 -
-> >  drivers/spi/Makefile                             |    1 -
-> >  drivers/spi/spi-nuc900.c                         |  429 ---------
-> >  drivers/usb/host/Kconfig                         |    6 -
-> >  drivers/usb/host/Makefile                        |    1 -
-> >  drivers/usb/host/ehci-w90x900.c                  |  130 ---
-> >  drivers/video/fbdev/Kconfig                      |   14 -
-> >  drivers/video/fbdev/Makefile                     |    1 -
-> >  drivers/video/fbdev/nuc900fb.c                   |  760 ---------------
-> >  drivers/video/fbdev/nuc900fb.h                   |   51 -
-> >  drivers/watchdog/Kconfig                         |    9 -
-> >  drivers/watchdog/Makefile                        |    1 -
-> >  drivers/watchdog/nuc900_wdt.c                    |  303 ------
-> >  include/Kbuild                                   |    2 -
-> >  include/linux/platform_data/keypad-w90p910.h     |   16 -
-> >  include/linux/platform_data/spi-nuc900.h         |   29 -
-> >  include/linux/platform_data/video-nuc900fb.h     |   79 --
-> >  sound/soc/Kconfig                                |    1 -
-> >  sound/soc/Makefile                               |    1 -
-> >  sound/soc/nuc900/Kconfig                         |   29 -
-> >  sound/soc/nuc900/Makefile                        |   12 -
-> >  sound/soc/nuc900/nuc900-ac97.c                   |  391 --------
-> >  sound/soc/nuc900/nuc900-audio.c                  |   73 --
-> >  sound/soc/nuc900/nuc900-audio.h                  |  108 ---
-> >  sound/soc/nuc900/nuc900-pcm.c                    |  321 -------
-> >  86 files changed, 1 insertion(+), 8433 deletions(-)
-> >
-> >           Arnd
+--===============2059276865387822280==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="qjNfmADvan18RZcF"
+Content-Disposition: inline
+
+
+--qjNfmADvan18RZcF
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Tue, Jul 30, 2019 at 05:17:56AM -0700, kernelci.org bot wrote:
+
+The previously reported issues with booting -next on
+meson-gxm-khadas-vim2 are still present today, though seemingly only
+manifesting with CONFIG_RANDOMIZE_BASE and not defconfig (there are
+failures with big endian too but they don't look device specific):
+
+> arm64:
+
+>     defconfig+CONFIG_RANDOMIZE_BASE=y:
+>         gcc-8:
+>             meson-gxm-khadas-vim2: 1 failed lab
+
+It looks like it gets to userspace and then hangs (end of the log
+below).  More details at:
+
+	https://kernelci.org/boot/id/5d40069859b5148b3931b2bf/
+
+The last message in the log indicates it was initializing the Panfrost
+driver:
+
+08:53:47.332143  <6>[   15.172833] panfrost d00c0000.gpu: clock rate = 666666666
+08:55:40.299880  ShellCommand command timed out.: Sending # in case of corruption. Connection timeout 00:04:14, retry in 00:02:07
+
+--qjNfmADvan18RZcF
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl1AP34ACgkQJNaLcl1U
+h9Csfwf/XsFzkhd2FswYbeGTTmMLf9k5KdI/kIbIqm9iw0JA6z8okdcGhwiUIRXA
+fzrZI0iAXkijMLlUHPHWuNZYRu1zra5/a6jxxP01F8SoYCl88urfZ4sTBkQdAunE
+1Gvu8vgxkkqxfHMaEldGMEaKu6xHh7vyYW+XjHJ1XWAeiMZYbL25GoSER+EH5XOy
+4T/7RglA/lKrz96R2q4femYzT2Mb/f1//gmaXyu0m15yDSNd7aNPy8aTgEpNoNgL
+3E8XMKtSJ0/lNFZPOgSah808rAqOr2wEM+V7DEJ13mCDrXyJS4HWmvGKN6VwZUq2
+RMk9zVuGeA0v09fh8Q5dU8pOWF+9Cw==
+=N+Ek
+-----END PGP SIGNATURE-----
+
+--qjNfmADvan18RZcF--
+
+
+--===============2059276865387822280==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2059276865387822280==--
+
