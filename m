@@ -2,126 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AC2027B003
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 19:31:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F0ED97B028
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 19:35:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R3G0B+HG6QIMab6uyES9bo5qycqaFtpz4fubY/fFdew=; b=td4fpE6be0e89+
-	KxnFbGqWpkoFoiUyL21l4VwNGOfCum/Oxnq33iktFrizAh9qMoqBaXfERIYhp8sXFDu7ESNcmp919
-	JbFo9MZPFv7mUGU8BCFzR7JRc1Kfp/niTBL5t6NvQXiSs6HjWZm6U8JtVd4lV1/CWSUYIGkfVwhdZ
-	ypqlQ5k7fAJC6ZXnDXmMYo9PQq5rQbtOk1WCkH0C/UNqqIhHHDrnaqvxhLRz6T6LQUWvCbY3pSsiT
-	ykU1yI0XIGxibe9Kzk3D4zGKM/CBK9NBnfpbS7z4YxzO84wRzSHBUsySI5RAHI+3KTqKBRtDOyua3
-	ubONQ5W3kJPUVfrlr13w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=tQbp+bKCyyZ+68+zv8NimuNyezZA6Wz3CX0saO/upnU=; b=bL2/VILqYYeBO/
+	YNJnysecuVX/TXMdM1z2OI5Y4Aq0trmdi1NB0fc6wxBBvCAfikSYDdQNKW2u4HtlB4pB40M1FSl9c
+	yJs95bGspqc7Kr6E1DHQFcS1Q7F0l4uoQQYP6lHeucpDmpQq2FjlF8ZbzibJIgxhqQxAD4KJJBgTL
+	H6hWGh1BKdZeqkV65hm3iYXBQts/VdyIltJoX1y47jwV1X088HbnDs+GwhCImg+f12OfG1kBZuppd
+	B3ftD4c1wEjGhJ0hEeSdEBtZ5AKZJ3bSsKvpTjriMDQleEGHqTUQ9d6WXOJfZ4mz83IIsPXU5XWzU
+	40mHFSL3Ne5Zuuw6h0LQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsVyS-0006WG-On; Tue, 30 Jul 2019 17:31:45 +0000
-Received: from mail-eopbgr680123.outbound.protection.outlook.com
- ([40.107.68.123] helo=NAM04-BN3-obe.outbound.protection.outlook.com)
+	id 1hsW1n-0007Fe-Gv; Tue, 30 Jul 2019 17:35:11 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsVyG-0006Vm-Ue
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 17:31:34 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=jiyNpSz64BfSw0warQY4fsHK0/j/YGdJpBR71SAqatxVOLsuDA7R/T9RnDCWV6PdwOkpzbpKhJG0FZJhUSn15r0OH5tS6yTiSwNZgzguZOGzCLOgzOHAOgJjgCAWyjS88F3B+IeRNuWS5YFY2bRrII0tIzTIr3VL/F6g3uZyv1R7plIfBpmRJ3ko7I4TEFaIuSBF9koj/dbXqXJDJ2JLiV5COy8gn75cAx04HT+END63Nl8qW9lXvSXVzEBLGr/L/h4kozGZWr+9+0n0J540jAC/i4NQeXsvmvjdaeqCK4hg5IpxMXqTELLlRL4mM4De+sfm1DJM2swh7FQd+507qw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5Dpvwj1Vtrl40s/CzWekqNXiV7V74mCDmjAcgNvX+1w=;
- b=Ro/9uQiobS+LlZ9N2nwDHiJQLS74pEQTK/jzsXdL/oVdohE5oFSMabbRRLczWTHAgGMNmB18YFhJ/qtRZZ5UsqvljHjJEiqKQOcvY4xSiF/K/YMS+SKulxoYY6yNKT6G1mgfHu+YR9eG8mXjzP9ZmRBicLesBAmIcayGYVXShGNnbFI2XAblpMaCyMsqP0gR2o9mecM71mqXJlJEpmZud1E+pxaQDA5PXbCRsQmkso59gm5Kmx4IFqr/fbEogjFDezpI2ZdJjWPH29nMtLMdGIJ+YUSRPc3jjAYQ9dEJBxFUP/Wnzd9RYKxSj8zlZ9iF/bdVYJmMhlqlUUIEM9ojnw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=os.amperecomputing.com;dmarc=pass action=none
- header.from=os.amperecomputing.com;dkim=pass
- header.d=os.amperecomputing.com;arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=os.amperecomputing.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5Dpvwj1Vtrl40s/CzWekqNXiV7V74mCDmjAcgNvX+1w=;
- b=avBQUkdJHvGi9jjVzaXBrY6tSW94+DIMAflTgen1OPiyTrbfG+9yaMyhuHVqlpU/ji5NgTE7jFBoJLgjWvOjRkncOMvJWdIcQYV1Np5oOB5fgpP3FNh6Shs7Cb7A2MyXZmrFqrhY3HrOYM0xYFLiJSj8XyAjDZbNYQbiC8HXm14=
-Received: from DM6PR01MB4090.prod.exchangelabs.com (20.176.105.203) by
- DM6PR01MB5164.prod.exchangelabs.com (20.176.121.209) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2094.17; Tue, 30 Jul 2019 17:31:27 +0000
-Received: from DM6PR01MB4090.prod.exchangelabs.com
- ([fe80::88b7:bfbe:79e9:b251]) by DM6PR01MB4090.prod.exchangelabs.com
- ([fe80::88b7:bfbe:79e9:b251%7]) with mapi id 15.20.2115.005; Tue, 30 Jul 2019
- 17:31:27 +0000
-From: Hoan Tran OS <hoan@os.amperecomputing.com>
-To: Michal Hocko <mhocko@kernel.org>
-Subject: Re: [PATCH v2 0/5] mm: Enable CONFIG_NODES_SPAN_OTHER_NODES by
- default for NUMA
-Thread-Topic: [PATCH v2 0/5] mm: Enable CONFIG_NODES_SPAN_OTHER_NODES by
- default for NUMA
-Thread-Index: AQHVOD/24o0J5njgPEqkosNO5sbs8abGjx+AgABBUoCAABUugIAAKIsAgAAGUoCABOfTgIAW8L6AgACbnwA=
-Date: Tue, 30 Jul 2019 17:31:27 +0000
-Message-ID: <d100011c-d5b4-a8c3-d3c0-d8f6dabd1363@os.amperecomputing.com>
-References: <1562887528-5896-1-git-send-email-Hoan@os.amperecomputing.com>
- <20190712070247.GM29483@dhcp22.suse.cz>
- <586ae736-a429-cf94-1520-1a94ffadad88@os.amperecomputing.com>
- <20190712121223.GR29483@dhcp22.suse.cz>
- <20190712143730.au3662g4ua2tjudu@willie-the-truck>
- <20190712150007.GU29483@dhcp22.suse.cz>
- <730368c5-1711-89ae-e3ef-65418b17ddc9@os.amperecomputing.com>
- <20190730081415.GN9330@dhcp22.suse.cz>
-In-Reply-To: <20190730081415.GN9330@dhcp22.suse.cz>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: CY4PR14CA0034.namprd14.prod.outlook.com
- (2603:10b6:903:101::20) To DM6PR01MB4090.prod.exchangelabs.com
- (2603:10b6:5:27::11)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=hoan@os.amperecomputing.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [4.28.12.214]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 064f48f0-c434-4356-49d7-08d71513c001
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:DM6PR01MB5164; 
-x-ms-traffictypediagnostic: DM6PR01MB5164:
-x-microsoft-antispam-prvs: <DM6PR01MB51647A820E23BA8DC5ED60C0F1DC0@DM6PR01MB5164.prod.exchangelabs.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 0114FF88F6
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(4636009)(136003)(366004)(376002)(346002)(396003)(39850400004)(189003)(199004)(54534003)(8676002)(3846002)(6116002)(7416002)(7736002)(25786009)(2906002)(76176011)(71200400001)(71190400001)(6246003)(305945005)(52116002)(26005)(478600001)(5660300002)(102836004)(186003)(53936002)(11346002)(6512007)(446003)(2616005)(6486002)(476003)(6436002)(31686004)(6916009)(486006)(54906003)(229853002)(68736007)(99286004)(86362001)(4326008)(66446008)(64756008)(8936002)(81156014)(66946007)(53546011)(6506007)(386003)(66476007)(31696002)(81166006)(256004)(316002)(14454004)(66556008)(66066001);
- DIR:OUT; SFP:1102; SCL:1; SRVR:DM6PR01MB5164;
- H:DM6PR01MB4090.prod.exchangelabs.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:0; 
-received-spf: None (protection.outlook.com: os.amperecomputing.com does not
- designate permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: i0S9/fCjfev4t4mP+iL9KF/iGB7s2EgAtQdYLocxCP/PXh3RTe6KRbOGLDsPANckZIOFxe7lGY6xgba0YiumuwnIPaPkI/Vh3P/kG1Bm3T3ZOFwGa5qMZIIiepSyJRk9JRyO7Ru7B3Mosg3QTm62kTezrmVDH3zcBHQvo6M0yYUHgdAO9UPn6hmBUq+gME/+DCkagk8bfO8K/A3x2I7NGCfYqUvSet+4TRTQYuWQvYmw7JbZAiWO+LNFz4fg9Yjf7xKOH8c8uIY5EM2o1K36ExGbgd2rKxxPFzKQOkc5FPM0uyV/1nCoai5Nz6NPPoINZyIjAZ4MTtf7otqUEQ2dWC0F86NzSKhmOAT4+kZa6qUde1roOO3QHVs1maRYqEZFLuBdNywvZnC+SmAQR6sbA3xsmVguH1U1eCw+4sGbd6A=
-Content-ID: <F25D28E1CB44404EB408F8B8C25EAF53@prod.exchangelabs.com>
+ id 1hsW1X-0007EL-7q
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 17:34:56 +0000
+Received: by mail-pf1-x441.google.com with SMTP id q10so30190757pff.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 30 Jul 2019 10:34:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=5megRbU3l40KMCesYWnoGfFWIn7m9iiO6mGbJIOCkho=;
+ b=VkkSSfqFM9CO4nrHtkwZU8XhuEBM0J6eJbQKnpywrBESlQrk7SxUIMELQvRyZHL93u
+ ziUp6pxgZGTOocZYEirCDnpj/aWaXbT592zvbSKCHl5Kr6/cy6PPzakF69wwAM15SpBw
+ 9rstpTPcDpazP6yxYauBeXrJEIIum5W95itc8=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=5megRbU3l40KMCesYWnoGfFWIn7m9iiO6mGbJIOCkho=;
+ b=BepeOAtX6e4vSqmUWI9fyKW459153mgzd0hjAmgtJI9MlMxkW22OUtA5BMy+pBFUye
+ 0N4xMm4lu6dJ2z0yMUfnPhPIK7r20U7q2UWrCARhUcB1HGfmWsMRvjM8yQHXoHevfECw
+ rYk5ddVlTTMbXN903K9lL2ZedAGfkYch8jJwyaSSi4pyPsN9j94JnMDmNuUp3DzTZ9tD
+ coJe3pBMhlrHzlCOdBagcpc2hJ3WlTQvtLS9Ctr1xoC6GmOr2umBPiBVsUKQ43oa4VKQ
+ BLYwkGfrB5Hdd52hFS/6Fn7VAVlgX1ysapxYyZmufOfM6Sr8BkpYV+/inHmWJ/K4WinY
+ dJbg==
+X-Gm-Message-State: APjAAAVyALF7T8XL8snrg2oSXjCOqnC6C4oNxb6/GUDZEAl5Z/tjZtKc
+ +ufiYlkg40zEaIRRfbqJyFTInA==
+X-Google-Smtp-Source: APXvYqwf27pAeUgjcdww9mcMyC6WNDoM2glcUqg7yPzbT7xmg3vIaMPWMEXUJhYKM4VWob5EWn45Aw==
+X-Received: by 2002:aa7:914e:: with SMTP id 14mr42840669pfi.136.1564508094175; 
+ Tue, 30 Jul 2019 10:34:54 -0700 (PDT)
+Received: from localhost ([2620:15c:202:1:75a:3f6e:21d:9374])
+ by smtp.gmail.com with ESMTPSA id u1sm61791071pgi.28.2019.07.30.10.34.53
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 30 Jul 2019 10:34:53 -0700 (PDT)
+From: Matthias Kaehlcke <mka@chromium.org>
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Heiko Stuebner <heiko@sntech.de>
+Subject: [PATCH] ARM: dts: rockchip: A few fixes for veyron-{fievel,tiger}
+Date: Tue, 30 Jul 2019 10:34:44 -0700
+Message-Id: <20190730173444.56741-1-mka@chromium.org>
+X-Mailer: git-send-email 2.22.0.709.g102302147b-goog
 MIME-Version: 1.0
-X-OriginatorOrg: os.amperecomputing.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 064f48f0-c434-4356-49d7-08d71513c001
-X-MS-Exchange-CrossTenant-originalarrivaltime: 30 Jul 2019 17:31:27.1673 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 3bc2b170-fd94-476d-b0ce-4229bdc904a7
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Hoan@os.amperecomputing.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR01MB5164
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_103133_054640_1367A8F6 
-X-CRM114-Status: GOOD (  15.05  )
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20190730_103455_303237_4E9BC3D3 
+X-CRM114-Status: GOOD (  17.55  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.68.123 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -133,74 +93,228 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Heiko Carstens <heiko.carstens@de.ibm.com>,
- "open list:MEMORY MANAGEMENT" <linux-mm@kvack.org>,
- Paul Mackerras <paulus@samba.org>, "H . Peter Anvin" <hpa@zytor.com>,
- "sparclinux@vger.kernel.org" <sparclinux@vger.kernel.org>,
- Alexander Duyck <alexander.h.duyck@linux.intel.com>,
- Will Deacon <will@kernel.org>,
- "linux-s390@vger.kernel.org" <linux-s390@vger.kernel.org>,
- Michael Ellerman <mpe@ellerman.id.au>, "x86@kernel.org" <x86@kernel.org>,
- "willy@infradead.org" <willy@infradead.org>,
- Mike Rapoport <rppt@linux.ibm.com>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Open Source Submission <patches@amperecomputing.com>,
- Pavel Tatashin <pavel.tatashin@microsoft.com>,
- Vasily Gorbik <gor@linux.ibm.com>, Will Deacon <will.deacon@arm.com>,
- Borislav Petkov <bp@alien8.de>, Thomas Gleixner <tglx@linutronix.de>,
- Vlastimil Babka <vbabka@suse.cz>, Oscar Salvador <osalvador@suse.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- "David S . Miller" <davem@davemloft.net>
+Cc: devicetree@vger.kernel.org, Douglas Anderson <dianders@chromium.org>,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Matthias Kaehlcke <mka@chromium.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Fix/improve a few things for veyron fievel/tiger:
 
-On 7/30/19 1:14 AM, Michal Hocko wrote:
-> [Sorry for a late reply]
-> 
-> On Mon 15-07-19 17:55:07, Hoan Tran OS wrote:
->> Hi,
->>
->> On 7/12/19 10:00 PM, Michal Hocko wrote:
-> [...]
->>> Hmm, I thought this was selectable. But I am obviously wrong here.
->>> Looking more closely, it seems that this is indeed only about
->>> __early_pfn_to_nid and as such not something that should add a config
->>> symbol. This should have been called out in the changelog though.
->>
->> Yes, do you have any other comments about my patch?
-> 
-> Not really. Just make sure to explicitly state that
-> CONFIG_NODES_SPAN_OTHER_NODES is only about __early_pfn_to_nid and that
-> doesn't really deserve it's own config and can be pulled under NUMA.
+- move 'vccsys' regulator from tiger to fievel, both boards
+  have it (and tiger includes the fievel .dtsi)
+- move 'ext_gmac' node below regulators
+- fix GPIO ids of vcc5_host1 and vcc5_host2 regulators
+- remove reset configuration from 'gmac' node, this is already done
+  in rk3288.dtsi
+- fixed style issues of some multi-line comments
+- switch 'vcc18_lcdt', 'vdd10_lcd' and 'vcc33_ccd' regulators off
+  during suspend
+- no pull-up on the Bluetooth wake-up pin, there is an external
+  pull-up. The signal is active low, add the 'bt_host_wake_l'
+  pinctrl config
+- move BC 1.2 pins up in the pinctrl config to keep 'wake only' pins
+  separate
+- add BC 1.2 pins to sleep config
 
-Yes, I will add this info into the patch description.
+Fixes: 0067692b662e ("ARM: dts: rockchip: add veyron-fievel board")
+Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
+---
+ arch/arm/boot/dts/rk3288-veyron-fievel.dts | 55 +++++++++++++---------
+ arch/arm/boot/dts/rk3288-veyron-tiger.dts  |  7 ---
+ arch/arm/boot/dts/rk3288-veyron.dtsi       |  4 ++
+ 3 files changed, 38 insertions(+), 28 deletions(-)
 
-> 
->>> Also while at it, does HAVE_MEMBLOCK_NODE_MAP fall into a similar
->>> bucket? Do we have any NUMA architecture that doesn't enable it?
->>>
->>
->> As I checked with arch Kconfig files, there are 2 architectures, riscv
->> and microblaze, do not support NUMA but enable this config.
->>
->> And 1 architecture, alpha, supports NUMA but does not enable this config.
-> 
-> Care to have a look and clean this up please?
-
-Sure, I'll take a look.
-
-Thanks
-Hoan
-> 
+diff --git a/arch/arm/boot/dts/rk3288-veyron-fievel.dts b/arch/arm/boot/dts/rk3288-veyron-fievel.dts
+index a9716fc3f50a..fd0ba7532cbb 100644
+--- a/arch/arm/boot/dts/rk3288-veyron-fievel.dts
++++ b/arch/arm/boot/dts/rk3288-veyron-fievel.dts
+@@ -20,11 +20,11 @@
+ 
+ 	/delete-node/ bt-activity;
+ 
+-	ext_gmac: external-gmac-clock {
+-		compatible = "fixed-clock";
+-		#clock-cells = <0>;
+-		clock-frequency = <125000000>;
+-		clock-output-names = "ext_gmac";
++	vccsys: vccsys {
++		compatible = "regulator-fixed";
++		regulator-name = "vccsys";
++		regulator-boot-on;
++		regulator-always-on;
+ 	};
+ 
+ 	/*
+@@ -41,7 +41,7 @@
+ 	vcc5_host1: vcc5-host1-regulator {
+ 		compatible = "regulator-fixed";
+ 		enable-active-high;
+-		gpio = <&gpio5 RK_PC1 GPIO_ACTIVE_HIGH>;
++		gpio = <&gpio5 RK_PC2 GPIO_ACTIVE_HIGH>;
+ 		pinctrl-names = "default";
+ 		pinctrl-0 = <&hub_usb1_pwr_en>;
+ 		regulator-name = "vcc5_host1";
+@@ -52,7 +52,7 @@
+ 	vcc5_host2: vcc5-host2-regulator {
+ 		compatible = "regulator-fixed";
+ 		enable-active-high;
+-		gpio = <&gpio5 RK_PC2 GPIO_ACTIVE_HIGH>;
++		gpio = <&gpio5 RK_PB6 GPIO_ACTIVE_HIGH>;
+ 		pinctrl-names = "default";
+ 		pinctrl-0 = <&hub_usb2_pwr_en>;
+ 		regulator-name = "vcc5_host2";
+@@ -70,6 +70,13 @@
+ 		regulator-always-on;
+ 		regulator-boot-on;
+ 	};
++
++	ext_gmac: external-gmac-clock {
++		compatible = "fixed-clock";
++		#clock-cells = <0>;
++		clock-frequency = <125000000>;
++		clock-output-names = "ext_gmac";
++	};
+ };
+ 
+ &gmac {
+@@ -83,13 +90,13 @@
+ 	phy-supply = <&vcc33_lan>;
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&rgmii_pins>, <&phy_rst>, <&phy_pmeb>, <&phy_int>;
+-	resets = <&cru SRST_MAC>;
+-	reset-names = "stmmaceth";
+ 	rx_delay = <0x10>;
+ 	tx_delay = <0x30>;
+ 
+-	/* Reset for the RTL8211 PHY which requires a 10-ms reset pulse (low)
+-	 * with a 30ms settling time. */
++	/*
++	 * Reset for the RTL8211 PHY which requires a 10-ms reset pulse (low)
++	 * with a 30ms settling time.
++	 */
+ 	snps,reset-gpio = <&gpio4 RK_PB0 0>;
+ 	snps,reset-active-low;
+ 	snps,reset-delays-us = <0 10000 30000>;
+@@ -120,7 +127,8 @@
+ 	regulators {
+ 		/delete-node/ LDO_REG1;
+ 
+-		/* According to the schematic, vcc18_lcdt is for
++		/*
++		 * According to the schematic, vcc18_lcdt is for
+ 		 * HDMI_AVDD_1V8
+ 		 */
+ 		vcc18_lcdt: LDO_REG2 {
+@@ -130,12 +138,13 @@
+ 			regulator-max-microvolt = <1800000>;
+ 			regulator-name = "vdd18_lcdt";
+ 			regulator-state-mem {
+-				regulator-on-in-suspend;
++				regulator-off-in-suspend;
+ 				regulator-suspend-microvolt = <1800000>;
+ 			};
+ 		};
+ 
+-		/* This is not a pwren anymore, but the real power supply,
++		/*
++		 * This is not a pwren anymore, but the real power supply,
+ 		 * vdd10_lcd for HDMI_AVDD_1V0
+ 		 */
+ 		vdd10_lcd: LDO_REG7 {
+@@ -145,7 +154,7 @@
+ 			regulator-max-microvolt = <1000000>;
+ 			regulator-name = "vdd10_lcd";
+ 			regulator-state-mem {
+-				regulator-on-in-suspend;
++				regulator-off-in-suspend;
+ 				regulator-suspend-microvolt = <1000000>;
+ 			};
+ 
+@@ -159,7 +168,7 @@
+ 			regulator-max-microvolt = <3300000>;
+ 			regulator-name = "vcc33_ccd";
+ 			regulator-state-mem {
+-				regulator-on-in-suspend;
++				regulator-off-in-suspend;
+ 				regulator-suspend-microvolt = <3300000>;
+ 			};
+ 		};
+@@ -181,7 +190,7 @@
+ 		interrupts = <RK_PD7 IRQ_TYPE_LEVEL_LOW>;
+ 		marvell,wakeup-pin = /bits/ 16 <13>;
+ 		pinctrl-names = "default";
+-		pinctrl-0 = <&bt_host_wake>;
++		pinctrl-0 = <&bt_host_wake_l>;
+ 	};
+ };
+ 
+@@ -207,13 +216,13 @@
+ 		&ddrio_pwroff
+ 		&global_pwroff
+ 
+-		/* Wake only */
+-		&bt_dev_wake_awake
+-		&pwr_led1_on
+-
+ 		/* For usb bc1.2 */
+ 		&usb_otg_ilim_sel
+ 		&usb_usb_ilim_sel
++
++		/* Wake only */
++		&bt_dev_wake_awake
++		&pwr_led1_on
+ 	>;
+ 
+ 	pinctrl-1 = <
+@@ -222,6 +231,10 @@
+ 		&ddrio_pwroff
+ 		&global_pwroff
+ 
++		/* For usb bc1.2 */
++		&usb_otg_ilim_sel
++		&usb_usb_ilim_sel
++
+ 		/* Sleep only */
+ 		&bt_dev_wake_sleep
+ 		&pwr_led1_blink
+diff --git a/arch/arm/boot/dts/rk3288-veyron-tiger.dts b/arch/arm/boot/dts/rk3288-veyron-tiger.dts
+index fae26d530841..27557203ae33 100644
+--- a/arch/arm/boot/dts/rk3288-veyron-tiger.dts
++++ b/arch/arm/boot/dts/rk3288-veyron-tiger.dts
+@@ -19,13 +19,6 @@
+ 		     "google,veyron", "rockchip,rk3288";
+ 
+ 	/delete-node/ vcc18-lcd;
+-
+-	vccsys: vccsys {
+-		compatible = "regulator-fixed";
+-		regulator-name = "vccsys";
+-		regulator-boot-on;
+-		regulator-always-on;
+-	};
+ };
+ 
+ &backlight {
+diff --git a/arch/arm/boot/dts/rk3288-veyron.dtsi b/arch/arm/boot/dts/rk3288-veyron.dtsi
+index 8fc8eac699bf..7525e3dd1fc1 100644
+--- a/arch/arm/boot/dts/rk3288-veyron.dtsi
++++ b/arch/arm/boot/dts/rk3288-veyron.dtsi
+@@ -586,6 +586,10 @@
+ 			rockchip,pins = <4 RK_PD7 RK_FUNC_GPIO &pcfg_pull_down>;
+ 		};
+ 
++		bt_host_wake_l: bt-host-wake-l {
++			rockchip,pins = <4 RK_PD7 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++
+ 		/*
+ 		 * We run sdio0 at max speed; bump up drive strength.
+ 		 * We also have external pulls, so disable the internal ones.
+-- 
+2.22.0.709.g102302147b-goog
 
 
 _______________________________________________
