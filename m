@@ -2,60 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CD8F57A061
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 07:35:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A278A7A075
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 07:44:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=qFxEkEaQzoCvqkvVl6UE4VBUvcYZIX/iPVrHboxezlg=; b=FqTn51z/F7knIWofFOyyTk6Lgt
-	1YXLmx8kSPS3PLOTVYgQCsV3Kp13KrXyJsRk+niee0xuKVbMqft+bPhJtoRXz3HuI1bUNCCt2oKoH
-	E3YDa29xk7uLrcB9PaAPSviRnriNT0PzvczyqwhPHYTeKfG5oHMkFEvgGnoQspQ0nYdlEaKov11CD
-	EZGYG+KIiYQEu/emTJn/EAha9YqzMlJs8ASO8yOc7LzjhcI5zdXbURdfnhDbneTIzQavi3aOawdyO
-	ItnJBFDo/qjedQj2Gn8ai1n1jATNk+M5VGvhuRD0m8+bi/wtCofq9Mtp7GBlWd2OPB81VwFDxMciJ
-	wfgJiBOA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=NmcQ6Qkh+DEJgoa+snELQcPfo0f4nKmpHmZE8XlALyM=; b=R7Q
+	59kRCQ7Bknyk2vyP/hNiCAtPrmYoX0hXB3L6uqnowKyc3W76r50kEOyC2b6HD4gXi54SLllIHGkAy
+	AXgeWyfI6adRtLE1dwU+Ti1ADHO/Xq6bkaPode3uMB6d6rT2493Gvfsd2a0v7Oo4zmzv+4fq2ffQf
+	YMv9vSTkJmUATIuUNTjDahaOd27WQN0PfaS4Gs82P1R6WC7pK4Qerni6Z1wuaF5shlAG8Ju/fLtS2
+	WZsq3/8qGOWB1gQK8Aky4/iaUmdWmEj0lLvKHtvxEJA6Sj1P+eVaeUPrhZRT+9N0AlAX89hMNu1Zi
+	ffD2h9/6ny/OpDV2NtsFZ8o7JLVelhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsKnT-0000uO-6c; Tue, 30 Jul 2019 05:35:39 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsKmf-0007yN-68
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 05:34:51 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 14DDB1A003A;
- Tue, 30 Jul 2019 07:34:46 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 538791A0155;
- Tue, 30 Jul 2019 07:34:42 +0200 (CEST)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id B0DC5402E8;
- Tue, 30 Jul 2019 13:34:37 +0800 (SGT)
-From: Richard Zhu <hongxing.zhu@nxp.com>
-To: jassisinghbrar@gmail.com,
-	o.rempel@pengutronix.de,
-	aisheng.dong@nxp.com
-Subject: [PATCH v3] mailbox: imx: add support for imx v1 mu
-Date: Tue, 30 Jul 2019 13:12:23 +0800
-Message-Id: <1564463543-5611-2-git-send-email-hongxing.zhu@nxp.com>
+	id 1hsKvY-0004sQ-VX; Tue, 30 Jul 2019 05:44:01 +0000
+Received: from mx.socionext.com ([202.248.49.38])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hsKvK-0004qO-1c
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 05:43:47 +0000
+Received: from unknown (HELO iyokan-ex.css.socionext.com) ([172.31.9.54])
+ by mx.socionext.com with ESMTP; 30 Jul 2019 14:43:41 +0900
+Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
+ by iyokan-ex.css.socionext.com (Postfix) with ESMTP id 8CA3A60629;
+ Tue, 30 Jul 2019 14:43:41 +0900 (JST)
+Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
+ Tue, 30 Jul 2019 14:43:41 +0900
+Received: from plum.e01.socionext.com (unknown [10.213.132.32])
+ by kinkan.css.socionext.com (Postfix) with ESMTP id 21B5C1A04FC;
+ Tue, 30 Jul 2019 14:43:41 +0900 (JST)
+From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+To: Linus Walleij <linus.walleij@linaro.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>, linux-gpio@vger.kernel.org
+Subject: [PATCH v2 0/5] pinctrl: uniphier: Add some improvements and new
+ settings
+Date: Tue, 30 Jul 2019 14:43:25 +0900
+Message-Id: <1564465410-9165-1-git-send-email-hayashi.kunihiko@socionext.com>
 X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1564463543-5611-1-git-send-email-hongxing.zhu@nxp.com>
-References: <1564463543-5611-1-git-send-email-hongxing.zhu@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_223449_506655_D7A10FB6 
-X-CRM114-Status: GOOD (  12.04  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190729_224346_198354_68DA5A3C 
+X-CRM114-Status: UNSURE (   9.82  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [202.248.49.38 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -69,180 +65,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Richard Zhu <hongxing.zhu@nxp.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Jassi Brar <jaswinder.singh@linaro.org>,
+ Masami Hiramatsu <masami.hiramatsu@linaro.org>,
+ Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There is a version1.0 MU on i.MX7ULP platform.
-One new version ID register is added, and it's offset is 0.
-TRn registers are defined at the offset 0x20 ~ 0x2C.
-RRn registers are defined at the offset 0x40 ~ 0x4C.
-SR/CR registers are defined at 0x60/0x64.
-Extend this driver to support it.
+This series adds some improvements and new settings for pin-mux.
 
-Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
-Suggested-by: Oleksij Rempel <o.rempel@pengutronix.de>
-Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
-Reviewed-by: Oleksij Rempel <o.rempel@pengutronix.de>
----
- drivers/mailbox/imx-mailbox.c | 55 ++++++++++++++++++++++++++++++-------------
- 1 file changed, 38 insertions(+), 17 deletions(-)
+Changes since v1:
+- sort arrays in alphabetical order
+- sort pin numbers in ascending order
+- merge "aout1b" pin-mux to aout1_group
+- change "4th" in the subject to "5th"
+- add Acked-by: lines
 
-diff --git a/drivers/mailbox/imx-mailbox.c b/drivers/mailbox/imx-mailbox.c
-index 25be8bb..c81be1c 100644
---- a/drivers/mailbox/imx-mailbox.c
-+++ b/drivers/mailbox/imx-mailbox.c
-@@ -12,19 +12,11 @@
- #include <linux/of_device.h>
- #include <linux/slab.h>
- 
--/* Transmit Register */
--#define IMX_MU_xTRn(x)		(0x00 + 4 * (x))
--/* Receive Register */
--#define IMX_MU_xRRn(x)		(0x10 + 4 * (x))
--/* Status Register */
--#define IMX_MU_xSR		0x20
- #define IMX_MU_xSR_GIPn(x)	BIT(28 + (3 - (x)))
- #define IMX_MU_xSR_RFn(x)	BIT(24 + (3 - (x)))
- #define IMX_MU_xSR_TEn(x)	BIT(20 + (3 - (x)))
- #define IMX_MU_xSR_BRDIP	BIT(9)
- 
--/* Control Register */
--#define IMX_MU_xCR		0x24
- /* General Purpose Interrupt Enable */
- #define IMX_MU_xCR_GIEn(x)	BIT(28 + (3 - (x)))
- /* Receive Interrupt Enable */
-@@ -44,6 +36,13 @@ enum imx_mu_chan_type {
- 	IMX_MU_TYPE_RXDB,	/* Rx doorbell */
- };
- 
-+struct imx_mu_dcfg {
-+	u32	xTR[4];		/* Transmit Registers */
-+	u32	xRR[4];		/* Receive Registers */
-+	u32	xSR;		/* Status Register */
-+	u32	xCR;		/* Control Register */
-+};
-+
- struct imx_mu_con_priv {
- 	unsigned int		idx;
- 	char			irq_desc[IMX_MU_CHAN_NAME_SIZE];
-@@ -61,12 +60,27 @@ struct imx_mu_priv {
- 	struct mbox_chan	mbox_chans[IMX_MU_CHANS];
- 
- 	struct imx_mu_con_priv  con_priv[IMX_MU_CHANS];
-+	const struct imx_mu_dcfg	*dcfg;
- 	struct clk		*clk;
- 	int			irq;
- 
- 	bool			side_b;
- };
- 
-+static const struct imx_mu_dcfg imx_mu_cfg_imx6sx = {
-+	.xTR	= {0x0, 0x4, 0x8, 0xc},
-+	.xRR	= {0x10, 0x14, 0x18, 0x1c},
-+	.xSR	= 0x20,
-+	.xCR	= 0x24,
-+};
-+
-+static const struct imx_mu_dcfg imx_mu_cfg_imx7ulp = {
-+	.xTR	= {0x20, 0x24, 0x28, 0x2c},
-+	.xRR	= {0x40, 0x44, 0x48, 0x4c},
-+	.xSR	= 0x60,
-+	.xCR	= 0x64,
-+};
-+
- static struct imx_mu_priv *to_imx_mu_priv(struct mbox_controller *mbox)
- {
- 	return container_of(mbox, struct imx_mu_priv, mbox);
-@@ -88,10 +102,10 @@ static u32 imx_mu_xcr_rmw(struct imx_mu_priv *priv, u32 set, u32 clr)
- 	u32 val;
- 
- 	spin_lock_irqsave(&priv->xcr_lock, flags);
--	val = imx_mu_read(priv, IMX_MU_xCR);
-+	val = imx_mu_read(priv, priv->dcfg->xCR);
- 	val &= ~clr;
- 	val |= set;
--	imx_mu_write(priv, val, IMX_MU_xCR);
-+	imx_mu_write(priv, val, priv->dcfg->xCR);
- 	spin_unlock_irqrestore(&priv->xcr_lock, flags);
- 
- 	return val;
-@@ -111,8 +125,8 @@ static irqreturn_t imx_mu_isr(int irq, void *p)
- 	struct imx_mu_con_priv *cp = chan->con_priv;
- 	u32 val, ctrl, dat;
- 
--	ctrl = imx_mu_read(priv, IMX_MU_xCR);
--	val = imx_mu_read(priv, IMX_MU_xSR);
-+	ctrl = imx_mu_read(priv, priv->dcfg->xCR);
-+	val = imx_mu_read(priv, priv->dcfg->xSR);
- 
- 	switch (cp->type) {
- 	case IMX_MU_TYPE_TX:
-@@ -138,10 +152,10 @@ static irqreturn_t imx_mu_isr(int irq, void *p)
- 		imx_mu_xcr_rmw(priv, 0, IMX_MU_xCR_TIEn(cp->idx));
- 		mbox_chan_txdone(chan, 0);
- 	} else if (val == IMX_MU_xSR_RFn(cp->idx)) {
--		dat = imx_mu_read(priv, IMX_MU_xRRn(cp->idx));
-+		dat = imx_mu_read(priv, priv->dcfg->xRR[cp->idx]);
- 		mbox_chan_received_data(chan, (void *)&dat);
- 	} else if (val == IMX_MU_xSR_GIPn(cp->idx)) {
--		imx_mu_write(priv, IMX_MU_xSR_GIPn(cp->idx), IMX_MU_xSR);
-+		imx_mu_write(priv, IMX_MU_xSR_GIPn(cp->idx), priv->dcfg->xSR);
- 		mbox_chan_received_data(chan, NULL);
- 	} else {
- 		dev_warn_ratelimited(priv->dev, "Not handled interrupt\n");
-@@ -159,7 +173,7 @@ static int imx_mu_send_data(struct mbox_chan *chan, void *data)
- 
- 	switch (cp->type) {
- 	case IMX_MU_TYPE_TX:
--		imx_mu_write(priv, *arg, IMX_MU_xTRn(cp->idx));
-+		imx_mu_write(priv, *arg, priv->dcfg->xTR[cp->idx]);
- 		imx_mu_xcr_rmw(priv, IMX_MU_xCR_TIEn(cp->idx), 0);
- 		break;
- 	case IMX_MU_TYPE_TXDB:
-@@ -257,7 +271,7 @@ static void imx_mu_init_generic(struct imx_mu_priv *priv)
- 		return;
- 
- 	/* Set default MU configuration */
--	imx_mu_write(priv, 0, IMX_MU_xCR);
-+	imx_mu_write(priv, 0, priv->dcfg->xCR);
- }
- 
- static int imx_mu_probe(struct platform_device *pdev)
-@@ -265,6 +279,7 @@ static int imx_mu_probe(struct platform_device *pdev)
- 	struct device *dev = &pdev->dev;
- 	struct device_node *np = dev->of_node;
- 	struct imx_mu_priv *priv;
-+	const struct imx_mu_dcfg *dcfg;
- 	unsigned int i;
- 	int ret;
- 
-@@ -282,6 +297,11 @@ static int imx_mu_probe(struct platform_device *pdev)
- 	if (priv->irq < 0)
- 		return priv->irq;
- 
-+	dcfg = of_device_get_match_data(dev);
-+	if (!dcfg)
-+		return -EINVAL;
-+	priv->dcfg = dcfg;
-+
- 	priv->clk = devm_clk_get(dev, NULL);
- 	if (IS_ERR(priv->clk)) {
- 		if (PTR_ERR(priv->clk) != -ENOENT)
-@@ -335,7 +355,8 @@ static int imx_mu_remove(struct platform_device *pdev)
- }
- 
- static const struct of_device_id imx_mu_dt_ids[] = {
--	{ .compatible = "fsl,imx6sx-mu" },
-+	{ .compatible = "fsl,imx7ulp-mu", .data = &imx_mu_cfg_imx7ulp },
-+	{ .compatible = "fsl,imx6sx-mu", .data = &imx_mu_cfg_imx6sx },
- 	{ },
- };
- MODULE_DEVICE_TABLE(of, imx_mu_dt_ids);
+Kunihiko Hayashi (5):
+  pinctrl: uniphier: Separate modem group from UART ctsrts group
+  pinctrl: uniphier: Add another audio I/O pin-mux settings for LD20
+  pinctrl: uniphier: Add 5th LD20 MPEG2-TS input pin-mux setting
+  pinctrl: uniphier: Add Pro5 PCIe pin-mux settings
+  pinctrl: uniphier: Fix Pro5 SD pin-mux setting
+
+ drivers/pinctrl/uniphier/pinctrl-uniphier-ld11.c | 10 +++++++---
+ drivers/pinctrl/uniphier/pinctrl-uniphier-ld20.c | 20 ++++++++++++++++----
+ drivers/pinctrl/uniphier/pinctrl-uniphier-ld4.c  | 10 +++++++---
+ drivers/pinctrl/uniphier/pinctrl-uniphier-ld6b.c | 10 +++++++---
+ drivers/pinctrl/uniphier/pinctrl-uniphier-pro4.c | 10 +++++++---
+ drivers/pinctrl/uniphier/pinctrl-uniphier-pro5.c | 17 +++++++++++++----
+ drivers/pinctrl/uniphier/pinctrl-uniphier-pxs2.c | 10 +++++++---
+ drivers/pinctrl/uniphier/pinctrl-uniphier-pxs3.c | 10 +++++++---
+ drivers/pinctrl/uniphier/pinctrl-uniphier-sld8.c | 10 +++++++---
+ 9 files changed, 78 insertions(+), 29 deletions(-)
+
 -- 
 2.7.4
 
