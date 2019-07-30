@@ -2,48 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D2CBC7A901
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 14:52:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 90E197A903
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 14:53:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GsPnCTWozVdut0ss/QOzRpOyhyBHjMrkrdRnUM/+hhU=; b=rDvOLgysc+Jdq5
-	IFFeMdLDt2clbgHTItXygPbxoU9YDAAZ5afu+XO3MXCOLsZMcD80flnJ4BG3BRYsjAqnyQEPC7gxj
-	lLDe3ePBs7oy19I3uAG3D1b4t6kUPKpVAAMzFIGxUqcfWoM7k9r+0DWfOeAJCuKGwdL4r4CloM2wO
-	Da8bLMPqcASKKhPptiDnkBmBIj2ot6o7fmlwUQ38F/JjDQ40QvcCS3fMoojuzPnJ51utRH5CrTkqQ
-	kXwvIA2rif2r8QPGkGfMEB3b3sN/JYz8w9I4PJnEQ+0XcT7ivIfz3Yt+3Y8KsQcoNRx+eu8bNyWdx
-	wCwVFvD9G/UnxBTBO5uQ==;
+	List-Owner; bh=3bOgMnHh5RsteL4xdevLL3i1fwplZcQkW8CErwBLMG8=; b=n8GZJ9iPZbB9sB
+	7ki2vyPuYqVFkqgx3ZwmFf9TjTZpKTKl4NqrD1TeyamW6mHFfirWizPlvLzRwUhwea5QjxbvqaCyQ
+	GQm6+y0OOSPw15EwAmE5eIULublz+yeHzNEADxt91bcjgx5rqY+nzGwD0sU7JXCwAXPrTHqMiJ0a7
+	cWlQVV+bSVIwaan2MLptG5gr5bWPiIyreiTR1oLSO03L8JNkA9f9W3qqRbfN9HmCTI1XNRxjkA53V
+	XsVpu6iECj2UxOvyzTm7BijhQhC5Ee6T2maaT7JUTeY9JUjFqIwnkXP07OwwAtciSNFVq19xsWGsE
+	J0Ew5jEBX7rWbaZVE1qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsRce-00065M-CF; Tue, 30 Jul 2019 12:52:56 +0000
+	id 1hsRcu-0006IG-Lh; Tue, 30 Jul 2019 12:53:12 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hsRbt-0005eb-QD
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 12:52:11 +0000
+ id 1hsRbv-0005fE-G4
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 12:52:12 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2F28115A2;
- Tue, 30 Jul 2019 05:52:09 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2C05628;
+ Tue, 30 Jul 2019 05:52:11 -0700 (PDT)
 Received: from e119886-lin.cambridge.arm.com (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E97ED3F575;
- Tue, 30 Jul 2019 05:52:06 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 782003F575;
+ Tue, 30 Jul 2019 05:52:09 -0700 (PDT)
 From: Andrew Murray <andrew.murray@arm.com>
 To: Mathieu Poirier <mathieu.poirier@linaro.org>,
  Suzuki K Poulose <suzuki.poulose@arm.com>,
  Alexander Shishkin <alexander.shishkin@linux.intel.com>
-Subject: [PATCH v4 2/6] coresight: etm4x: use explicit barriers on
- enable/disable
-Date: Tue, 30 Jul 2019 13:51:53 +0100
-Message-Id: <20190730125157.884-3-andrew.murray@arm.com>
+Subject: [PATCH v4 3/6] coresight: etm4x: use module_param instead of
+ module_param_named
+Date: Tue, 30 Jul 2019 13:51:54 +0100
+Message-Id: <20190730125157.884-4-andrew.murray@arm.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190730125157.884-1-andrew.murray@arm.com>
 References: <20190730125157.884-1-andrew.murray@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_055209_890180_1B9D0405 
-X-CRM114-Status: GOOD (  13.15  )
+X-CRM114-CacheID: sfid-20190730_055211_599995_54472E72 
+X-CRM114-Status: UNSURE (   9.85  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -63,73 +64,39 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Al.Grant@arm.com, coresight@lists.linaro.org, Leo Yan <leo.yan@linaro.org>,
- stable@vger.kernel.org, Sudeep Holla <sudeep.holla@arm.com>,
- linux-arm-kernel@lists.infradead.org, Mike Leach <mike.leach@linaro.org>
+ Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org,
+ Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Synchronization is recommended before disabling the trace registers
-to prevent any start or stop points being speculative at the point
-of disabling the unit (section 7.3.77 of ARM IHI 0064D).
+Given that the user-exposed module parameter for 'boot_enable' matches
+the variable that it sets, let's use module_param instead of
+module_param_named.
 
-Synchronization is also recommended after programming the trace
-registers to ensure all updates are committed prior to normal code
-resuming (section 4.3.7 of ARM IHI 0064D).
-
-Let's ensure these syncronization points are present in the code
-and clearly commented.
-
-Note that we could rely on the barriers in CS_LOCK and
-coresight_disclaim_device_unlocked or the context switch to user
-space - however coresight may be of use in the kernel.
-
-On armv8 the mb macro is defined as dsb(sy) - Given that the etm4x is
-only used on armv8 let's directly use dsb(sy) instead of mb(). This
-removes some ambiguity and makes it easier to correlate the code with
-the TRM.
+Let's also use octal permissions (checkpatch recommends this) and
+provide a module parameter description.
 
 Signed-off-by: Andrew Murray <andrew.murray@arm.com>
-Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-CC: stable@vger.kernel.org
 ---
- drivers/hwtracing/coresight/coresight-etm4x.c | 15 +++++++++++++--
- 1 file changed, 13 insertions(+), 2 deletions(-)
+ drivers/hwtracing/coresight/coresight-etm4x.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
-index 7ad15651e069..ec9468880c71 100644
+index ec9468880c71..615bdbf7c9b7 100644
 --- a/drivers/hwtracing/coresight/coresight-etm4x.c
 +++ b/drivers/hwtracing/coresight/coresight-etm4x.c
-@@ -188,6 +188,13 @@ static int etm4_enable_hw(struct etmv4_drvdata *drvdata)
- 		dev_err(etm_dev,
- 			"timeout while waiting for Idle Trace Status\n");
+@@ -34,7 +34,8 @@
+ #include "coresight-etm-perf.h"
  
-+	/*
-+	 * As recommended by section 4.3.7 ("Synchronization when using the
-+	 * memory-mapped interface") of ARM IHI 0064D
-+	 */
-+	dsb(sy);
-+	isb();
-+
- done:
- 	CS_LOCK(drvdata->base);
+ static int boot_enable;
+-module_param_named(boot_enable, boot_enable, int, S_IRUGO);
++module_param(boot_enable, int, 0444);
++MODULE_PARM_DESC(boot_enable, "Enable tracing on boot");
  
-@@ -453,8 +460,12 @@ static void etm4_disable_hw(void *info)
- 	/* EN, bit[0] Trace unit enable bit */
- 	control &= ~0x1;
- 
--	/* make sure everything completes before disabling */
--	mb();
-+	/*
-+	 * Make sure everything completes before disabling, as recommended
-+	 * by section 7.3.77 ("TRCVICTLR, ViewInst Main Control Register,
-+	 * SSTATUS") of ARM IHI 0064D
-+	 */
-+	dsb(sy);
- 	isb();
- 	writel_relaxed(control, drvdata->base + TRCPRGCTLR);
- 
+ /* The number of ETMv4 currently registered */
+ static int etm4_count;
 -- 
 2.21.0
 
