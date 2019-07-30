@@ -2,55 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3C3B7ABD4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 17:02:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A7CD7ABEF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 17:06:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AY43G/nU1mLG5dXM5yNCwXILl7SepyS/3SP3sRmU92s=; b=Zm6U14wnccaS37
-	nSHxCcTFKApvepFv+NIVS3TdKDTnxySYxNJ69JkKe0oitfxLs3B+OBXGhSF+9h2PLU3LABGT9FGxs
-	v+sVI6U4EDQR5C/+Ii2b1+G9ygIKYFdnbqecuBCUST9GaKo5G2P0aq8q3N1hqOd9G4+TC7B+5XRTf
-	uNgMRqBNHHhKNdxTziaQh/e2fA0zBfjfJIsgyzZounuiNF40vcXBzloMgh1FWkymp21r0NrOCiHCH
-	Yc5ivhi56W7p/5V5CbBwjV+y2Ijf6V4GvmJNeMpU6Udan7wcS3O+kY4oUe8r1DRwOS1iCcyn7/01A
-	OJio6p2Z40xZ0OGVczRQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=RcgOdhZIy1LohN9ZvvImv5bdY3OUEQrzKKbR/PwMgqQ=; b=ZFE
+	xKyqdPaHXM7Br34ZpNYhgGGuERedrTEa2MtvjgjWEkv8DNmLL8mc/XUvPvXn7P+soEce7EUu783Q0
+	dthVVOsJqQ88rvF/Fmcut+/QUCfFgSfir9a02UhGLEz3XR5VzRBu+RhpihrUobpIOQMLA7HSrJS+b
+	0pGJqBrSQWWZ7+wlqIN6znq8+zopZoxw9oR+oq+kZXMA1zUzhzv9imjER4JhzELHdoMVG8mFvLFGa
+	neeEi+h650jjno2/bGa++IDi7VuHhSXd3W1ak6JSX2nCElDQzv0qcu+q9mlaONqdotKfm3OIRBmQa
+	2ITQe8cGSGEYsOpLDqsGDHZqGlZsGug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsTdq-0007A2-IV; Tue, 30 Jul 2019 15:02:18 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hsTcZ-00070p-DN
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 15:01:00 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C48ED28;
- Tue, 30 Jul 2019 08:00:58 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3668A3F694;
- Tue, 30 Jul 2019 08:00:58 -0700 (PDT)
-Date: Tue, 30 Jul 2019 16:00:56 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH] arm64: esr: Add ESR exception class encoding for trapped
- ERET
-Message-ID: <20190730150055.GB29844@lakrids.cambridge.arm.com>
-References: <20190730144147.3694-1-will@kernel.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190730144147.3694-1-will@kernel.org>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+	id 1hsThn-0000bn-0Y; Tue, 30 Jul 2019 15:06:23 +0000
+Received: from mail-out.m-online.net ([212.18.0.9])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hsThc-0000ao-2n
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 15:06:13 +0000
+Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
+ by mail-out.m-online.net (Postfix) with ESMTP id 45yfyT33DCz1rKXF;
+ Tue, 30 Jul 2019 17:06:09 +0200 (CEST)
+Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
+ by mail.m-online.net (Postfix) with ESMTP id 45yfyT1mT5z1qqkK;
+ Tue, 30 Jul 2019 17:06:09 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at mnet-online.de
+Received: from mail.mnet-online.de ([192.168.8.182])
+ by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
+ port 10024)
+ with ESMTP id TtrviBwiBTSX; Tue, 30 Jul 2019 17:06:08 +0200 (CEST)
+X-Auth-Info: aTGk0kR+4QgAU9zcVWxZMYtuGzMpdVmeVoztrzZPGhc=
+Received: from localhost.localdomain (85-222-111-42.dynamic.chello.pl
+ [85.222.111.42])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.mnet-online.de (Postfix) with ESMTPSA;
+ Tue, 30 Jul 2019 17:06:07 +0200 (CEST)
+From: Lukasz Majewski <lukma@denx.de>
+To: Shawn Guo <shawnguo@kernel.org>
+Subject: [PATCH] ARM: DTS: vybrid: Update qspi node description for VF610 BK4
+ board
+Date: Tue, 30 Jul 2019 17:05:52 +0200
+Message-Id: <20190730150552.24927-1-lukma@denx.de>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_080059_491131_976C01EE 
-X-CRM114-Status: GOOD (  16.55  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190730_080612_278100_24D1D491 
+X-CRM114-Status: GOOD (  13.81  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.18.0.9 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,65 +71,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: marc.zyngier@arm.com, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
+ Stefan Agner <stefan@agner.ch>, Lukasz Majewski <lukma@denx.de>,
+ Rob Herring <robh+dt@kernel.org>, Fabio Estevam <festevam@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jul 30, 2019 at 03:41:47PM +0100, Will Deacon wrote:
-> The ESR.EC encoding of 0b011010 (0x1a) describes an exception generated
-> by an ERET, ERETAA or ERETAB instruction as a result of a nested
-> virtualisation trap to EL2.
-> 
-> Add an encoding for this EC and a string description so that we identify
-> it correctly if we take one unexpectedly.
-> 
-> Signed-off-by: Will Deacon <will@kernel.org>
+Before this change the device tree description of qspi node for
+second memory on BK4 board was wrong (applicable to old, in-house
+tunned fsl-quadspi.c driver).
 
-Acked-by: Mark Rutland <mark.rutland@arm.com>
+As a result this memory was not recognized correctly when used
+with the new spi-fsl-qspi.c driver.
 
-Mark.
+From the dt-bindings:
 
-> ---
->  arch/arm64/include/asm/esr.h | 3 ++-
->  arch/arm64/kernel/traps.c    | 1 +
->  2 files changed, 3 insertions(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm64/include/asm/esr.h b/arch/arm64/include/asm/esr.h
-> index 65ac18400979..cb29253ae86b 100644
-> --- a/arch/arm64/include/asm/esr.h
-> +++ b/arch/arm64/include/asm/esr.h
-> @@ -34,7 +34,8 @@
->  #define ESR_ELx_EC_SMC64	(0x17)	/* EL2 and above */
->  #define ESR_ELx_EC_SYS64	(0x18)
->  #define ESR_ELx_EC_SVE		(0x19)
-> -/* Unallocated EC: 0x1A - 0x1E */
-> +#define ESR_ELx_EC_ERET		(0x1a)	/* EL2 only */
-> +/* Unallocated EC: 0x1b - 0x1E */
->  #define ESR_ELx_EC_IMP_DEF	(0x1f)	/* EL3 only */
->  #define ESR_ELx_EC_IABT_LOW	(0x20)
->  #define ESR_ELx_EC_IABT_CUR	(0x21)
-> diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
-> index d3313797cca9..42c8422cdf4a 100644
-> --- a/arch/arm64/kernel/traps.c
-> +++ b/arch/arm64/kernel/traps.c
-> @@ -743,6 +743,7 @@ static const char *esr_class_str[] = {
->  	[ESR_ELx_EC_SMC64]		= "SMC (AArch64)",
->  	[ESR_ELx_EC_SYS64]		= "MSR/MRS (AArch64)",
->  	[ESR_ELx_EC_SVE]		= "SVE",
-> +	[ESR_ELx_EC_ERET]		= "ERET/ERETAA/ERETAB",
->  	[ESR_ELx_EC_IMP_DEF]		= "EL3 IMP DEF",
->  	[ESR_ELx_EC_IABT_LOW]		= "IABT (lower EL)",
->  	[ESR_ELx_EC_IABT_CUR]		= "IABT (current EL)",
-> -- 
-> 2.11.0
-> 
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+"Required SPI slave node properties:
+  - reg: There are two buses (A and B) with two chip selects each.
+This encodes to which bus and CS the flash is connected:
+<0>: Bus A, CS 0
+<1>: Bus A, CS 1
+<2>: Bus B, CS 0
+<3>: Bus B, CS 1"
+
+According to above with new driver the second SPI-NOR memory shall
+have reg=<2> as it is connected to Bus B, CS 0.
+
+Signed-off-by: Lukasz Majewski <lukma@denx.de>
+---
+ arch/arm/boot/dts/vf610-bk4.dts | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm/boot/dts/vf610-bk4.dts b/arch/arm/boot/dts/vf610-bk4.dts
+index 3fa0cbe456db..0f3870d3b099 100644
+--- a/arch/arm/boot/dts/vf610-bk4.dts
++++ b/arch/arm/boot/dts/vf610-bk4.dts
+@@ -246,13 +246,13 @@
+ 		reg = <0>;
+ 	};
+ 
+-	n25q128a13_2: flash@1 {
++	n25q128a13_2: flash@2 {
+ 		compatible = "n25q128a13", "jedec,spi-nor";
+ 		#address-cells = <1>;
+ 		#size-cells = <1>;
+ 		spi-max-frequency = <66000000>;
+ 		spi-rx-bus-width = <2>;
+-		reg = <1>;
++		reg = <2>;
+ 	};
+ };
+ 
+-- 
+2.11.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
