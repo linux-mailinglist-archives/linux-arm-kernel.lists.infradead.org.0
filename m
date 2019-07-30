@@ -2,64 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A7CD7ABEF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 17:06:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D5E3D7ABF1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 17:06:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=RcgOdhZIy1LohN9ZvvImv5bdY3OUEQrzKKbR/PwMgqQ=; b=ZFE
-	xKyqdPaHXM7Br34ZpNYhgGGuERedrTEa2MtvjgjWEkv8DNmLL8mc/XUvPvXn7P+soEce7EUu783Q0
-	dthVVOsJqQ88rvF/Fmcut+/QUCfFgSfir9a02UhGLEz3XR5VzRBu+RhpihrUobpIOQMLA7HSrJS+b
-	0pGJqBrSQWWZ7+wlqIN6znq8+zopZoxw9oR+oq+kZXMA1zUzhzv9imjER4JhzELHdoMVG8mFvLFGa
-	neeEi+h650jjno2/bGa++IDi7VuHhSXd3W1ak6JSX2nCElDQzv0qcu+q9mlaONqdotKfm3OIRBmQa
-	2ITQe8cGSGEYsOpLDqsGDHZqGlZsGug==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=fGfELB37ljUNxw4qq22yJpLpAljOWmtN1nsSWOYgqFc=; b=efaS94SDV0f3s0Zbr0RK09e8Li
+	oL99sou3TQl7bDq86+r2x8VDhUT99dEtpn0fsEMR/beefMfGoI3hw7xLROzetPN+4o+X3YRZAVW2G
+	0/pC6E8m7SUQL1v1p+KKG79vDJP9VvWyeTHHzajf7y1HDuKX+IN9VyK7ySoSt8Sd6cvG0RsrVezsW
+	F8qfbLpZyCfSslcwcumZiDk6dTfssZpZX+FQ4z7TMnNHCqdT6pkPMG9eGN7Spl/7l2poeT2NN8IvE
+	XWredjoiVgB2FEIsZY9Bu+U/SnEqAPGPRAuo2RbQsIBQdaqf3mZNDZc+I/s6AxppzKgl/yhTgq0XD
+	Nh2rYtoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsThn-0000bn-0Y; Tue, 30 Jul 2019 15:06:23 +0000
-Received: from mail-out.m-online.net ([212.18.0.9])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsThc-0000ao-2n
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 15:06:13 +0000
-Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 45yfyT33DCz1rKXF;
- Tue, 30 Jul 2019 17:06:09 +0200 (CEST)
-Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 45yfyT1mT5z1qqkK;
- Tue, 30 Jul 2019 17:06:09 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at mnet-online.de
-Received: from mail.mnet-online.de ([192.168.8.182])
- by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
- port 10024)
- with ESMTP id TtrviBwiBTSX; Tue, 30 Jul 2019 17:06:08 +0200 (CEST)
-X-Auth-Info: aTGk0kR+4QgAU9zcVWxZMYtuGzMpdVmeVoztrzZPGhc=
-Received: from localhost.localdomain (85-222-111-42.dynamic.chello.pl
- [85.222.111.42])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.mnet-online.de (Postfix) with ESMTPSA;
- Tue, 30 Jul 2019 17:06:07 +0200 (CEST)
-From: Lukasz Majewski <lukma@denx.de>
-To: Shawn Guo <shawnguo@kernel.org>
-Subject: [PATCH] ARM: DTS: vybrid: Update qspi node description for VF610 BK4
- board
-Date: Tue, 30 Jul 2019 17:05:52 +0200
-Message-Id: <20190730150552.24927-1-lukma@denx.de>
-X-Mailer: git-send-email 2.11.0
+	id 1hsTiC-0000ln-B3; Tue, 30 Jul 2019 15:06:48 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hsThh-0000du-3Q
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 15:06:18 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 512F028;
+ Tue, 30 Jul 2019 08:06:16 -0700 (PDT)
+Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ F0DD13F694; Tue, 30 Jul 2019 08:06:15 -0700 (PDT)
+Subject: Re: [PATCH] arm64: esr: Add ESR exception class encoding for trapped
+ ERET
+To: Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+References: <20190730144147.3694-1-will@kernel.org>
+From: Marc Zyngier <maz@kernel.org>
+Organization: Approximate
+Message-ID: <813d6305-00ad-2eb3-1234-7b15b37bd719@kernel.org>
+Date: Tue, 30 Jul 2019 16:06:14 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
+MIME-Version: 1.0
+In-Reply-To: <20190730144147.3694-1-will@kernel.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_080612_278100_24D1D491 
-X-CRM114-Status: GOOD (  13.81  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190730_080617_235027_ED33E4D8 
+X-CRM114-Status: UNSURE (   9.75  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.18.0.9 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,65 +65,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
- Stefan Agner <stefan@agner.ch>, Lukasz Majewski <lukma@denx.de>,
- Rob Herring <robh+dt@kernel.org>, Fabio Estevam <festevam@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Before this change the device tree description of qspi node for
-second memory on BK4 board was wrong (applicable to old, in-house
-tunned fsl-quadspi.c driver).
+On 30/07/2019 15:41, Will Deacon wrote:
+> The ESR.EC encoding of 0b011010 (0x1a) describes an exception generated
+> by an ERET, ERETAA or ERETAB instruction as a result of a nested
+> virtualisation trap to EL2.
+> 
+> Add an encoding for this EC and a string description so that we identify
+> it correctly if we take one unexpectedly.
+> 
+> Signed-off-by: Will Deacon <will@kernel.org>
 
-As a result this memory was not recognized correctly when used
-with the new spi-fsl-qspi.c driver.
+Acked-by: Marc Zyngier <maz@kernel.org>
 
-From the dt-bindings:
-
-"Required SPI slave node properties:
-  - reg: There are two buses (A and B) with two chip selects each.
-This encodes to which bus and CS the flash is connected:
-<0>: Bus A, CS 0
-<1>: Bus A, CS 1
-<2>: Bus B, CS 0
-<3>: Bus B, CS 1"
-
-According to above with new driver the second SPI-NOR memory shall
-have reg=<2> as it is connected to Bus B, CS 0.
-
-Signed-off-by: Lukasz Majewski <lukma@denx.de>
----
- arch/arm/boot/dts/vf610-bk4.dts | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/arch/arm/boot/dts/vf610-bk4.dts b/arch/arm/boot/dts/vf610-bk4.dts
-index 3fa0cbe456db..0f3870d3b099 100644
---- a/arch/arm/boot/dts/vf610-bk4.dts
-+++ b/arch/arm/boot/dts/vf610-bk4.dts
-@@ -246,13 +246,13 @@
- 		reg = <0>;
- 	};
- 
--	n25q128a13_2: flash@1 {
-+	n25q128a13_2: flash@2 {
- 		compatible = "n25q128a13", "jedec,spi-nor";
- 		#address-cells = <1>;
- 		#size-cells = <1>;
- 		spi-max-frequency = <66000000>;
- 		spi-rx-bus-width = <2>;
--		reg = <1>;
-+		reg = <2>;
- 	};
- };
- 
+	M.
 -- 
-2.11.0
-
+Jazz is not dead, it just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
