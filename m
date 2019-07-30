@@ -2,69 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0F947AC16
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 17:15:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 994247AC5A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 17:27:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AEweRwP+nEqQbFFdp/mfYmjATQVv4e6PKo1xp/k0Rqc=; b=Tpb+Z0Zpkltaf6
-	psDLtHExlRsczTK6hbpTsvUyeEKEQ9srPREvgv8XyjWPhKZU2GY+GXVLCjxOdQk3EJUayxqnXJ9cR
-	xi1f+M87ranIsgnD4s5AhJ6TAypBtGbJurnXtkX7VqCTDnUrSQQ/RPEqs84q6G7rhf33FvAogTqtQ
-	P5takvKen8I+yUjJ6PwXGsUmYP/nOSmv7g/wBv8pz9oV8IsJiXayfyjLb1Ivx74vB8jF9VStQksWf
-	LTUnpfzUV+DC+hDF1sadlW3KASeJUoGiKbOhp4WYsFTcwAV97pD35ue2cC63O3TfC95GVzFyZMoi/
-	zC+il7pEGSQkmmdR+JFA==;
+	List-Owner; bh=ewFKJr2DzGud3S3fs4dsPyyT4Z+UqKO6T8upSwSJao4=; b=EcpbBkF+ErICfV
+	IFlwVfOXYnVOI5CbnurO1XtExYkzl1t1HzkYjZSQzdSnBc/yZFEDK57kld7dwLC2S2wcPYPnX4KAf
+	QkfGY9bH8CCoc9VzR9eGfxg2Ki7VDRqCFPHwhS5hJBm657774dH9TaSjAjdHXhShEL4UuQaH6XFxf
+	6HF4oBonn/N0AtvX0S8ZMeGYbtUEudfUO/P/EqDG8/MhPIibb5w8fcqJPvWqeWOWfW7nDLxhO60cx
+	eRwM8Q/WOBIMybSYV3kj/IdxeMYbSqdXUCxQC0MoPmIYHRes9mUUj4yp8E3xOHNHqlEpkZ1Xn8Cq+
+	A1gO6kzc5//3V2vkf+zg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsTqv-0005GH-Bf; Tue, 30 Jul 2019 15:15:49 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1hsU2S-00024W-M9; Tue, 30 Jul 2019 15:27:44 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsTqL-0004e3-5t
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 15:15:14 +0000
-Received: by mail-wm1-x341.google.com with SMTP id f17so56985778wme.2
+ id 1hsU2C-0001pC-S1
+ for linux-arm-kernel@bombadil.infradead.org; Tue, 30 Jul 2019 15:27:29 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:Content-Type:
+ In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender
+ :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=y+IzvoSaFIRpI4rsRTFbuZVVmUMRCgGOxxVLGYBBi80=; b=CndPWaF78qtgHPfgxT06/ZaqIc
+ 5msIlz0WxCiyTd0bCj3zKrehddcLlUYjyNFKC5hag/DyPxHsMV6Yq5wNk4Yjwj4RDaPzEOXnVCXms
+ TzZrMj2o0N4Ozk5NF417NCglr3U0w1U2etBhhyHmUNLM0HXhjLoytQc2ETCCR+KYyHfnQwl3oLgwx
+ 0OiotyWaWA+QLUFFqT30d7D2w4UceudsORvifAeSjqGWE2FCH52RNkKY05TBCjgpgQEMRg9RkCh87
+ r93WmMfnm81ktQ9gy36nRX8DG82jKJAXbsqDuhi2dXT/wodI9YZGQ+bF2vdncK1zCeyWtnVtRnNa0
+ rHLOSLYA==;
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+ by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hsTqy-0003Yu-2s
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 15:15:53 +0000
+Received: by mail-wr1-x444.google.com with SMTP id y4so66217030wrm.2
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 30 Jul 2019 08:15:12 -0700 (PDT)
+ Tue, 30 Jul 2019 08:15:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=subject:to:cc:references:from:openpgp:autocrypt:organization
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=EhbeQO/sbzX1wCFvm0GZWm7qJ3FO4A/C4w34t6g3cpo=;
- b=DXlIl4nTqmEe7C7/5F7DyN6jaUMILc8SxV+MZ+XIY/GdFJ3v2rNd+hN2huyzCHuN9R
- OOzmiVARYtsgGUFuXK8i7D9xBWc9v5RxEQTU+yVz+xijDJyx5mi9D6nnjdTDABNye0gB
- uPCAvcIgnr4KGa2W/PZooIjYfMJki0pmaog+X4TVw39JIXLl93sTJMUiT2LBqR4qP1Nx
- 90FNFkr2q+3xm/Fka55psfudHJX0DoECcCYTC6wldMoBm0JswliVR5ntSmmLyFXFIqzG
- MBJgwIVib1u6Jnb4WylEoIhpHKhbgUyFyW6zGwwjJSEiOHjWcrHON17EovmXePOsiP5C
- uobw==
+ bh=y+IzvoSaFIRpI4rsRTFbuZVVmUMRCgGOxxVLGYBBi80=;
+ b=SECrK8tXbD5xdSNhVRNPmcqqYhr3PmTs3GZJRhEP97NrLzxVe3wCtmkmTlbb2vvIJ/
+ 3lK+HdKZ8XniZMxtvEhd++GzifyPlPrOi4sL57SVd4Xb/+AYEgBSAv+RREcjDVaxoaOp
+ 9+8JYSMSeH/pVa/moPtLppwL+AnBnT8ilZHh3qtznclnZly2NCLyka8lIGj0uPvM326k
+ RUqgSdWudIxrLsV5UE4ggXs7PbQKa3j/Pb3iSpPsnKcme95Os/5ro6NLkG/3LoKgjGMN
+ HpwXRLZGrLByI+itQLpmGIYMjx2B15rve+Ca8+z8OlQv3312yqUGLa/OluqpISK+Ns6k
+ 83zA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :organization:message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=EhbeQO/sbzX1wCFvm0GZWm7qJ3FO4A/C4w34t6g3cpo=;
- b=sZXAoDRWM/omOW9/87U2aOYIThEy1nbmqq/oy+YBgwHgPl0HRmPGLM8keNZkptFDGt
- 4bSsHjfhYa3G9Bj5UO2AQAfILEB6H4BZ0Qpu+9hLsMly3KHNHpW9u1FoRofy7ASIxWns
- pEHYDDfn4j2ZrqrWT+JbWvGSkdu31WVZaFXBaEgrtV41XZxcPLq/qXA5x8kbk4ni+V1x
- 5Pfp1nC+QevNrx2fvfaj0JOJJyCc/qYdpVIY8oXSt7ffeXpLdKDSEbPXNy4ZMVlv59ys
- Vfhh4LvGg6vwpqKABBw5Nc0+/7uNX7vuix4fWQm9eTDVIpDFaTQSG7On9TOLRSACjFDL
- 2eZQ==
-X-Gm-Message-State: APjAAAXMOp+0mt7HC0fd7xRyvYHZMFFRgSnItk94Nj5Gy2htETRuQXsO
- yCoKzC8Q7xUK7V6Ueo0T0uvIzGd10Hc=
-X-Google-Smtp-Source: APXvYqyGJA1QmlIk0WavFwyd3FuLAcipXt35xDK8prAqwNkvc0mdR71OIZgBEefsIdB20yaaOHp7UA==
-X-Received: by 2002:a1c:7f93:: with SMTP id
- a141mr106145494wmd.131.1564499711059; 
- Tue, 30 Jul 2019 08:15:11 -0700 (PDT)
+ bh=y+IzvoSaFIRpI4rsRTFbuZVVmUMRCgGOxxVLGYBBi80=;
+ b=OJv7oUN9sOp2aLx4rPobylqZ1ZepuC8c/+pf4z+EWU+71/5BymCw11qtSkxDB8/uVH
+ i3I26umTDo/HDzY8LNApaqWvISHw5iPTzbraUE3OZR27SH+vpYV8hPtwdx+O6QDlnosT
+ 4mNLzFfPkm+gu7lKuvP6ofoQVJjYpRQb5fD0dCywT19681jfhjAbXk4XMHlauemj3CCs
+ a+8qF7NW3T/ph6Ud1sDubB4tDdX9bDtMW6gZGqDq6z/1tSPae6Xnq+tIkXzOtYeTpj7L
+ xXRvPXETumTr1kfCJjfZk5nV1jsaLYjeGhXp1lc5+MmN7A0RKit6I3H82ybgGlEVFmB7
+ BRKg==
+X-Gm-Message-State: APjAAAXfd4yKcw+vu36bvUNLN7KYYTUgsa5jUI/2h4UaKoaZPqUBEqQy
+ HxR67djoUJMkoCvSl5qP3dBPow==
+X-Google-Smtp-Source: APXvYqxZEoFOXENyJ22NqJexHCab8SlnysC6FyB6ZvNGURr4nax+pCGNy8wBrQsRHUzAw8zNZYtqDg==
+X-Received: by 2002:adf:de8e:: with SMTP id w14mr8808898wrl.79.1564499738095; 
+ Tue, 30 Jul 2019 08:15:38 -0700 (PDT)
 Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
  [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id y7sm48075361wmm.19.2019.07.30.08.15.10
+ by smtp.gmail.com with ESMTPSA id 5sm53200636wmg.42.2019.07.30.08.15.37
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 30 Jul 2019 08:15:10 -0700 (PDT)
-Subject: Re: [PATCH 2/4] clk: meson: regmap: export regmap_div ops functions
+ Tue, 30 Jul 2019 08:15:37 -0700 (PDT)
+Subject: Re: [PATCH 4/4] clk: meson: g12a: expose CPUB clock ID for G12B
 To: jbrunet@baylibre.com
 References: <20190729131656.7308-1-narmstrong@baylibre.com>
- <20190729131656.7308-3-narmstrong@baylibre.com>
+ <20190729131656.7308-5-narmstrong@baylibre.com>
 From: Neil Armstrong <narmstrong@baylibre.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
@@ -117,23 +132,23 @@ Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  VsbXrP9BZ6snXyHfebPnno/te5XRqZTL9aJOytB/1iUna+1MAwBxGFPvqeEUUyT+gx1l3Acl
  ZaTUOEkgIor5losDrePdPgE=
 Organization: Baylibre
-Message-ID: <cd1d5041-3f48-93ba-ad66-8737a2e3cde9@baylibre.com>
-Date: Tue, 30 Jul 2019 17:15:09 +0200
+Message-ID: <44bbb544-7dfd-79d3-22a8-d8876887bf02@baylibre.com>
+Date: Tue, 30 Jul 2019 17:15:37 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20190729131656.7308-3-narmstrong@baylibre.com>
+In-Reply-To: <20190729131656.7308-5-narmstrong@baylibre.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_081513_401204_EAFAFBDE 
-X-CRM114-Status: GOOD (  16.79  )
+X-CRM114-CacheID: sfid-20190730_161552_164504_697706A1 
+X-CRM114-Status: GOOD (  16.22  )
 X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (0.0 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -151,7 +166,8 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, linux-clk@vger.kernel.org,
+Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-amlogic@lists.infradead.org, linux-clk@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -159,70 +175,29 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On 29/07/2019 15:16, Neil Armstrong wrote:
-> The G12A CPU Clock Postmux divider needs a custom div_set_rate() call.
+> Expose the CPUB clock id to add DVFS to the second CPU cluster of
+> the Amlogic G12B SoC.
 > 
-> Export the clk_regmap_div_round_rate() and clk_regmap_div_recalc_rate()
-> to be able to override the default clk_regmap_div_set_rate() callback.
-
-Signoff missing.... will fix in v2
-
+> Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 > ---
->  drivers/clk/meson/clk-regmap.c | 10 ++++++----
->  drivers/clk/meson/clk-regmap.h |  5 +++++
->  2 files changed, 11 insertions(+), 4 deletions(-)
+>  include/dt-bindings/clock/g12a-clkc.h | 1 +
+>  1 file changed, 1 insertion(+)
 > 
-> diff --git a/drivers/clk/meson/clk-regmap.c b/drivers/clk/meson/clk-regmap.c
-> index dcd1757cc5df..26c8c74a8cf0 100644
-> --- a/drivers/clk/meson/clk-regmap.c
-> +++ b/drivers/clk/meson/clk-regmap.c
-> @@ -56,8 +56,8 @@ const struct clk_ops clk_regmap_gate_ro_ops = {
->  };
->  EXPORT_SYMBOL_GPL(clk_regmap_gate_ro_ops);
+> diff --git a/include/dt-bindings/clock/g12a-clkc.h b/include/dt-bindings/clock/g12a-clkc.h
+> index b6b127e45634..8ccc29ac7a72 100644
+> --- a/include/dt-bindings/clock/g12a-clkc.h
+> +++ b/include/dt-bindings/clock/g12a-clkc.h
+> @@ -137,5 +137,6 @@
+>  #define CLKID_VDEC_HEVC				207
+>  #define CLKID_VDEC_HEVCF			210
+>  #define CLKID_TS				212
+> +#define CLKID_CPUB_CLK				224
+
+Missing removal from private g12.h :-/ will fix in v2
+
 >  
-> -static unsigned long clk_regmap_div_recalc_rate(struct clk_hw *hw,
-> -						unsigned long prate)
-> +unsigned long clk_regmap_div_recalc_rate(struct clk_hw *hw,
-> +					 unsigned long prate)
->  {
->  	struct clk_regmap *clk = to_clk_regmap(hw);
->  	struct clk_regmap_div_data *div = clk_get_regmap_div_data(clk);
-> @@ -74,9 +74,10 @@ static unsigned long clk_regmap_div_recalc_rate(struct clk_hw *hw,
->  	return divider_recalc_rate(hw, prate, val, div->table, div->flags,
->  				   div->width);
->  }
-> +EXPORT_SYMBOL_GPL(clk_regmap_div_recalc_rate);
->  
-> -static long clk_regmap_div_round_rate(struct clk_hw *hw, unsigned long rate,
-> -				      unsigned long *prate)
-> +long clk_regmap_div_round_rate(struct clk_hw *hw, unsigned long rate,
-> +			       unsigned long *prate)
->  {
->  	struct clk_regmap *clk = to_clk_regmap(hw);
->  	struct clk_regmap_div_data *div = clk_get_regmap_div_data(clk);
-> @@ -100,6 +101,7 @@ static long clk_regmap_div_round_rate(struct clk_hw *hw, unsigned long rate,
->  	return divider_round_rate(hw, rate, prate, div->table, div->width,
->  				  div->flags);
->  }
-> +EXPORT_SYMBOL_GPL(clk_regmap_div_round_rate);
->  
->  static int clk_regmap_div_set_rate(struct clk_hw *hw, unsigned long rate,
->  				   unsigned long parent_rate)
-> diff --git a/drivers/clk/meson/clk-regmap.h b/drivers/clk/meson/clk-regmap.h
-> index c4a39604cffd..ebf776a32ce3 100644
-> --- a/drivers/clk/meson/clk-regmap.h
-> +++ b/drivers/clk/meson/clk-regmap.h
-> @@ -78,6 +78,11 @@ clk_get_regmap_div_data(struct clk_regmap *clk)
->  	return (struct clk_regmap_div_data *)clk->data;
->  }
->  
-> +unsigned long clk_regmap_div_recalc_rate(struct clk_hw *hw,
-> +					 unsigned long prate);
-> +long clk_regmap_div_round_rate(struct clk_hw *hw, unsigned long rate,
-> +			       unsigned long *prate);
-> +
->  extern const struct clk_ops clk_regmap_divider_ops;
->  extern const struct clk_ops clk_regmap_divider_ro_ops;
->  
+>  #endif /* __G12A_CLKC_H */
 > 
 
 
