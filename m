@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 96EF07A845
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 14:25:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4CFBC7A850
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 14:25:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,63 +11,64 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=ZlSfjrUrjp9mfDmdXHucZvs1jqiug4eRG1HJRNn2dCg=; b=h793bmiUFtYdllrMXr0vBPJATu
-	zvrMjuKHMCmx+AcPT/adGACsEsaT4/TwFYUYi4KSRdWa69s8+UjWQPH9M+pc1o8Z3gja52WRMJLal
-	POAu/MTyN0ECEXInrZ/zXRRh5wBWyLci6IeLcJRwghOBDzPVFFI7HYEt8d4ymE2J2tJjHoYh8QHGg
-	GiE+8sMd6NdTXV3PUe2+JsTJt4AWkKFQbqmap5SI4FtwKAJN4mpWx08K0t2odrtzuEuMGcDvS3Aq4
-	8V7lNcwvNv2uWgnB8K4th08uNhFxOQUXiqDyUWMMl4nIOM/b4UomfPDdk7dtpywZe//e/TeNNjArZ
-	IzZ7t5Sg==;
+	bh=c0RyPOc5kkmTjuPyi4+BqYtaPHA/PwOve8m5z0gNqjg=; b=Vu5wlW02atkNPyZgMgzMsoRObr
+	zCOHhcS/pJ6+I3VSTCpG5fEr21vKw8hpCkS7GeayIVD4yS6sSfx0wZeqhrxKw0cyzOhc/3OjJDTzX
+	KkUxLQR2SMD/tBhUBVVwa6tWuzoEMLrDQRAx2C0pXijUuCQ0Auwg2w+6w6XSXcVKEsJEulv49cx3z
+	d9aRPx/TRj+6htQ7Qo2PpiCxEYg+lTrSdNa6j9xrDGCA9sOLhcofBxc6VAN1f7Bg0upRjMezGNai3
+	WlzIKTB0UZGDCNmLm0IEqNGXsRmCJ77cjq5paolwsBUqM2nl4dCbIqjZTzM3pLG20zuZRuCNCuV1L
+	TH3DUW3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsRBc-00010A-Lq; Tue, 30 Jul 2019 12:25:00 +0000
+	id 1hsRC6-0002Td-Qq; Tue, 30 Jul 2019 12:25:30 +0000
 Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsRBC-0000ro-At
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 12:24:35 +0000
-Received: by mail-pf1-x444.google.com with SMTP id q10so29749703pff.9
+ id 1hsRBK-0000z8-6n
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 12:24:43 +0000
+Received: by mail-pf1-x444.google.com with SMTP id f17so25772983pfn.6
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 30 Jul 2019 05:24:34 -0700 (PDT)
+ Tue, 30 Jul 2019 05:24:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=Ub4kuUSnrD2CiYyKKwaDCU7WlCc+MjZGT8+i8BhCGSM=;
- b=MfQvx2dhjGV4/bSe60l+LebksrED1y3ZIlrOHn7KEst3uYq0lbZGY0vsMCXlHdvqTW
- Ye8auI8LrPtuk1JjxXNnkdo+hZ+99keG4VGsdhwKAsEXIsOsIUECaXlU8hbVHLFk9cLT
- HO8nBnDu0xGtOjVBUUGFJzgjgr3leWNo194UxYVJeI2Y+0v/K+qeQpXyF0PGeONbMN+i
- gW62oUUDBfxqW/m3zRut5eraL0BhFNM47K2DQzNbSup/f6DVATK2umRIZlAbmj5eTK+g
- Ie2+FR2iyP4pVV9kGjOO0QK2a+lbpVtyMzeY+CEhSSw2QwFdLdH8EHmR5UmLIl/CCH4Z
- mvwg==
+ bh=F6RVSFR3EtlCJ6lvWs5T4vKHtTJAwPryiatLZ1M1aSY=;
+ b=tfILgsUTF754qwTkDQPJD0rCNoaw5Uefc9p9gu+bUyOB285QrfyyfBMXVCuakpWXxU
+ HICwYDIoYTjs/+ornlvVNUoij4mg9ij8bxODX+c7q02mHaK7IrzMH1R7ecmTkMo4+2xO
+ Us9rLCt7owepUui89bfkEE/+tfrGjWsmuEK7kWBlWuXdpLhbvxXU6dLLp7egHq3QfEOx
+ EAnFbfA73EDc7EvI/7xV2L+LruWbM8T/aZwxfA/Fok9dNyUsOb1nZjkFl2ZhnvrgF20f
+ tcRKcSqCuXR5PmdwOUIpurnXSTsuhM16BUhSnW79IuqvzINcCDhZiAimeJCJ/3aEVT/+
+ Skzg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=Ub4kuUSnrD2CiYyKKwaDCU7WlCc+MjZGT8+i8BhCGSM=;
- b=b43a2FMbVKcETQlQuCIhVKbcbGUoEZeEmlGvji2GWe7t5HRnvULrL5zMI9s7gatj/D
- jo689jeAlCBv9TxCWP5DDvoO8vnJTpqa/ER2E3pkvw4kln3qzn6+0DKwzm0PN4NtCd2m
- 8POC7ebm8LLPL/D80s2gXf+X3VIamD/8sQyvajgOv1iDWeqCV2R44cM6ipOT7+vLlo4/
- ykTPe14axhWEfVgMFnrKC2wNI74tTlIu4LPT+sBUALTSkEQDja9o94HYa3qjXH9GMYpJ
- vjhk/vLlRJ3/h38rkSJTXV85WRuWtOV9udbqcnzmKWSRbmEvPeshSfBzUd9mJRnZw7rq
- 0aig==
-X-Gm-Message-State: APjAAAVwqF39Nk4YZzfVhr6QDjhA5ROnAkE+ZxaMTP/ybazH4+zzkoYq
- vxeTS2qD1da3WUxJzdkfVAQ7PQ==
-X-Google-Smtp-Source: APXvYqy9AOsI/bgpSrYC4bB6dRW/RMjRTTrIQ53nsJNjfy9Y+arPAlgz9XGruaRKwy6MTunT2Iwvvg==
-X-Received: by 2002:a63:125c:: with SMTP id 28mr55618644pgs.255.1564489473744; 
- Tue, 30 Jul 2019 05:24:33 -0700 (PDT)
+ bh=F6RVSFR3EtlCJ6lvWs5T4vKHtTJAwPryiatLZ1M1aSY=;
+ b=Dx6wKqzEpYURv3AhQTttFpjOiQIxg+jsVrQhz/wqaQ1nYjaBVEsd4XCr8gsgmJYKYT
+ STVQhgMM8ftWdm8pR2lSrrF5M88VJksNoNVwyqAmMyzfwBwsjj0rENp/wCe9vNCRYPcg
+ uBK3rmQgP8k0uY0uw83tOFPDLt/CIJ8Vuc4L6GHw8NdPy41ya8pUp2dU/KgbidOs71Ns
+ gVX13IV2+YJDYk2zYIuZ8gP1iphKQL7vqqK/bJf5/g+huv7TkqNeVragspZvfI7rj4g9
+ SpgrrDMJDGZkL9sQjGNvnIztS6okPakgWaHP1QyzxQBBCu+0YWS+El2XfGSJTU3+vJl1
+ UGjA==
+X-Gm-Message-State: APjAAAXi2ZeERNQn8CNtRMyRySQqqMWkttxI+4X5SqpVXiLkT9RAZYm8
+ D8S7BUV9HjVTf+yXGkaYT6teKiEI4SU=
+X-Google-Smtp-Source: APXvYqxOXWjfS6W6Wq7C2Wm2EcZsROERy2icoey7lDKRVXENBtDjIep6/+XJLEKlNdfJ39CZmoJ1DQ==
+X-Received: by 2002:a63:d04e:: with SMTP id
+ s14mr103689463pgi.189.1564489481707; 
+ Tue, 30 Jul 2019 05:24:41 -0700 (PDT)
 Received: from localhost.localdomain ([45.114.72.197])
- by smtp.gmail.com with ESMTPSA id v8sm54895462pgs.82.2019.07.30.05.24.26
+ by smtp.gmail.com with ESMTPSA id v8sm54895462pgs.82.2019.07.30.05.24.34
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Tue, 30 Jul 2019 05:24:33 -0700 (PDT)
+ Tue, 30 Jul 2019 05:24:40 -0700 (PDT)
 From: Sumit Garg <sumit.garg@linaro.org>
 To: keyrings@vger.kernel.org, linux-integrity@vger.kernel.org,
  linux-security-module@vger.kernel.org
-Subject: [RFC v2 1/6] tee: optee: allow kernel pages to register as shm
-Date: Tue, 30 Jul 2019 17:53:35 +0530
-Message-Id: <1564489420-677-2-git-send-email-sumit.garg@linaro.org>
+Subject: [RFC v2 2/6] tee: enable support to register kernel memory
+Date: Tue, 30 Jul 2019 17:53:36 +0530
+Message-Id: <1564489420-677-3-git-send-email-sumit.garg@linaro.org>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1564489420-677-1-git-send-email-sumit.garg@linaro.org>
 References: <1564489420-677-1-git-send-email-sumit.garg@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_052434_486281_D00626ED 
-X-CRM114-Status: GOOD (  10.95  )
+X-CRM114-CacheID: sfid-20190730_052442_312953_FCC8CF1A 
+X-CRM114-Status: GOOD (  16.13  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -109,34 +110,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Kernel pages are marked as normal type memory only so allow kernel pages
-to be registered as shared memory with OP-TEE.
+Enable support to register kernel memory reference with TEE. This change
+will allow TEE bus drivers to register memory references.
 
 Signed-off-by: Sumit Garg <sumit.garg@linaro.org>
 Reviewed-by: Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>
 Reviewed-by: Jens Wiklander <jens.wiklander@linaro.org>
 ---
- drivers/tee/optee/call.c | 7 +++++++
- 1 file changed, 7 insertions(+)
+ drivers/tee/tee_shm.c   | 16 ++++++++++++++--
+ include/linux/tee_drv.h |  1 +
+ 2 files changed, 15 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/tee/optee/call.c b/drivers/tee/optee/call.c
-index aa94270..bce45b1 100644
---- a/drivers/tee/optee/call.c
-+++ b/drivers/tee/optee/call.c
-@@ -553,6 +553,13 @@ static int check_mem_type(unsigned long start, size_t num_pages)
- 	struct mm_struct *mm = current->mm;
- 	int rc;
+diff --git a/drivers/tee/tee_shm.c b/drivers/tee/tee_shm.c
+index 2da026f..5c69b89 100644
+--- a/drivers/tee/tee_shm.c
++++ b/drivers/tee/tee_shm.c
+@@ -9,6 +9,7 @@
+ #include <linux/sched.h>
+ #include <linux/slab.h>
+ #include <linux/tee_drv.h>
++#include <linux/uio.h>
+ #include "tee_private.h"
  
-+	/*
-+	 * Allow kernel address to register with OP-TEE as kernel
-+	 * pages are configured as normal memory only.
-+	 */
-+	if (virt_addr_valid(start))
-+		return 0;
+ static void tee_shm_release(struct tee_shm *shm)
+@@ -224,13 +225,14 @@ struct tee_shm *tee_shm_register(struct tee_context *ctx, unsigned long addr,
+ {
+ 	struct tee_device *teedev = ctx->teedev;
+ 	const u32 req_flags = TEE_SHM_DMA_BUF | TEE_SHM_USER_MAPPED;
++	const u32 req_ker_flags = TEE_SHM_DMA_BUF | TEE_SHM_KERNEL_MAPPED;
+ 	struct tee_shm *shm;
+ 	void *ret;
+ 	int rc;
+ 	int num_pages;
+ 	unsigned long start;
+ 
+-	if (flags != req_flags)
++	if (flags != req_flags && flags != req_ker_flags)
+ 		return ERR_PTR(-ENOTSUPP);
+ 
+ 	if (!tee_device_get(teedev))
+@@ -264,7 +266,17 @@ struct tee_shm *tee_shm_register(struct tee_context *ctx, unsigned long addr,
+ 		goto err;
+ 	}
+ 
+-	rc = get_user_pages_fast(start, num_pages, FOLL_WRITE, shm->pages);
++	if (flags & TEE_SHM_USER_MAPPED) {
++		rc = get_user_pages_fast(start, num_pages, FOLL_WRITE,
++					 shm->pages);
++	} else {
++		const struct kvec kiov = {
++			.iov_base = (void *)start,
++			.iov_len = PAGE_SIZE
++		};
 +
- 	down_read(&mm->mmap_sem);
- 	rc = __check_mem_type(find_vma(mm, start),
- 			      start + num_pages * PAGE_SIZE);
++		rc = get_kernel_pages(&kiov, num_pages, 0, shm->pages);
++	}
+ 	if (rc > 0)
+ 		shm->num_pages = rc;
+ 	if (rc != num_pages) {
+diff --git a/include/linux/tee_drv.h b/include/linux/tee_drv.h
+index 7a03f68..dedf8fa 100644
+--- a/include/linux/tee_drv.h
++++ b/include/linux/tee_drv.h
+@@ -26,6 +26,7 @@
+ #define TEE_SHM_REGISTER	BIT(3)  /* Memory registered in secure world */
+ #define TEE_SHM_USER_MAPPED	BIT(4)  /* Memory mapped in user space */
+ #define TEE_SHM_POOL		BIT(5)  /* Memory allocated from pool */
++#define TEE_SHM_KERNEL_MAPPED	BIT(6)  /* Memory mapped in kernel space */
+ 
+ struct device;
+ struct tee_device;
 -- 
 2.7.4
 
