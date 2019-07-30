@@ -2,53 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 598547A615
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 12:32:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7BAFA7A626
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 12:43:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=i00+8e9lCSMNNjpBHv00zus4oEDokWutfwGiorUkL0Y=; b=mUbnxGUcIBRToYpsIkdM1DlYl
-	mLWdILmkRL7unN+MVlpsg9O/bAQzMEacaqQLfkjbO0VLHwR+2A03iyg1caUQtVXApqQuKTgZKMHAf
-	LZQJ4acO/lmpiggOv6tvA7SXlhIp5xcJ8yVm3+kUckQM2WSsDZj6sNpIWASKZ4sLn5p85EgtvNeO8
-	JLmtrkQKTNJGBVo2C2wWy61Zc139HVVlQ/bb8nehfTzhdwdpvLCIDbb6WSakCjz8ficEUoxx3mgxY
-	cXAg27noi9S0GT/bClC6vNLOQfuHpTTaSDMm1T/OoOfUrXWpSOKVLxGCjbNI6CO0CXbSbntt5weGx
-	wJypaNYng==;
+	 bh=LoH6teQ662uPxNfikQ0goRglz6mTiV/TBgEK9ilCWK8=; b=h+BXrRTCfigt+VVigrD/CbUlm
+	t3aTWClxl+6NBHkGpEBGmdmRn3HHJxPoYgBQmdQOcrUEzJBM4VZllWClydpXJW54ts2NPah9/mI81
+	6snG2rg3261P/p3C6y/B5cSj2MUIms1EKFyrDUbWNYCnlLP1ZR5aZoufI4J3/w6s8DeILz2fPhjRh
+	jvgEEpuVLHX88CebHXDeYLY9Lg+aPMrm26rA+dqGyo5G40cV8L2FPV07GStsVID8RkMz91WnsbnZV
+	njCEJTlhU6yM/+09AmnI+RUBJQd4yWNOGZZ+dlAKztV/BGMqfocjlhV88MCrglruk5lUHD5W67BNO
+	aEKhEob2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsPQs-0002Zy-Qe; Tue, 30 Jul 2019 10:32:38 +0000
+	id 1hsPbV-0005tC-Pr; Tue, 30 Jul 2019 10:43:37 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hsPQZ-0002Z6-4K
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 10:32:20 +0000
+ id 1hsPbN-0005sR-7p
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 10:43:30 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AA340344;
- Tue, 30 Jul 2019 03:32:16 -0700 (PDT)
-Received: from [10.1.194.48] (e123572-lin.cambridge.arm.com [10.1.194.48])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3ADB13F575;
- Tue, 30 Jul 2019 03:32:15 -0700 (PDT)
-Subject: Re: [PATCH v6 1/2] arm64: Define
- Documentation/arm64/tagged-address-abi.rst
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>,
- linux-arm-kernel@lists.infradead.org, linux-doc@vger.kernel.org,
- linux-mm@kvack.org, linux-arch@vger.kernel.org,
- linux-kselftest@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <cover.1563904656.git.andreyknvl@google.com>
- <20190725135044.24381-1-vincenzo.frascino@arm.com>
- <20190725135044.24381-2-vincenzo.frascino@arm.com>
-From: Kevin Brodsky <kevin.brodsky@arm.com>
-Message-ID: <52fa2cfc-f7a6-af6f-0dc2-f9ea0e41ac3c@arm.com>
-Date: Tue, 30 Jul 2019 11:32:09 +0100
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 45896344;
+ Tue, 30 Jul 2019 03:43:27 -0700 (PDT)
+Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7572F3F575;
+ Tue, 30 Jul 2019 03:43:26 -0700 (PDT)
+Subject: Re: [PATCH] iommu/dma: Handle MSI mappings separately
+To: Christoph Hellwig <hch@infradead.org>
+References: <2b2595de703c60a772ebcffe248d0cf036143e6a.1564414114.git.robin.murphy@arm.com>
+ <20190730062843.GA1400@infradead.org>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <90566814-ed36-2eb9-49e2-98a4a949c9f6@arm.com>
+Date: Tue, 30 Jul 2019 11:43:25 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20190725135044.24381-2-vincenzo.frascino@arm.com>
+In-Reply-To: <20190730062843.GA1400@infradead.org>
 Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_033219_263882_E14A6BE6 
-X-CRM114-Status: GOOD (  39.23  )
+X-CRM114-CacheID: sfid-20190730_034329_394349_7F7F22CD 
+X-CRM114-Status: GOOD (  19.18  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -67,226 +62,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>
+Cc: maz@kernel.org, joro@8bytes.org, iommu@lists.linux-foundation.org,
+ linux-arm-kernel@lists.infradead.org, Andre Przywara <andre.przywara@arm.com>
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some more comments. Mostly minor wording issues, except the prctl() exclusion at the end.
+On 30/07/2019 07:28, Christoph Hellwig wrote:
+> On Mon, Jul 29, 2019 at 04:32:38PM +0100, Robin Murphy wrote:
+>> MSI pages must always be mapped into a device's *current* domain, which
+>> *might* be the default DMA domain, but might instead be a VFIO domain
+>> with its own MSI cookie. This subtlety got accidentally lost in the
+>> streamlining of __iommu_dma_map(), but rather than reintroduce more
+>> complexity and/or special-casing, it turns out neater to just split this
+>> path out entirely.
+>>
+>> Since iommu_dma_get_msi_page() already duplicates much of what
+>> __iommu_dma_map() does, it can easily just make the allocation and
+>> mapping calls directly as well. That way we can further streamline the
+>> helper back to exclusively operating on DMA domains.
+>>
+>> Fixes: b61d271e59d7 ("iommu/dma: Move domain lookup into __iommu_dma_{map,unmap}")
+>> Reported-by: Shameer Kolothum <shameerali.kolothum.thodi@huawei.com>
+>> Reported-by: Andre Przywara <andre.przywara@arm.com>
+>> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+> 
+> Hmm.  I remember proposing this patch and you didn't like it because
+> we could also have msis for a !IOMMU_DMA_IOVA_COOKIE cookie type.
+> Or did we talk past each other?
 
-On 25/07/2019 14:50, Vincenzo Frascino wrote:
-> On arm64 the TCR_EL1.TBI0 bit has been always enabled hence
-> the userspace (EL0) is allowed to set a non-zero value in the
-> top byte but the resulting pointers are not allowed at the
-> user-kernel syscall ABI boundary.
->
-> With the relaxed ABI proposed through this document, it is now possible
-> to pass tagged pointers to the syscalls, when these pointers are in
-> memory ranges obtained by an anonymous (MAP_ANONYMOUS) mmap().
->
-> This change in the ABI requires a mechanism to requires the userspace
-> to opt-in to such an option.
->
-> Specify and document the way in which sysctl and prctl() can be used
-> in combination to allow the userspace to opt-in this feature.
->
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will.deacon@arm.com>
-> CC: Andrey Konovalov <andreyknvl@google.com>
-> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
-> Acked-by: Szabolcs Nagy <szabolcs.nagy@arm.com>
-> ---
->   Documentation/arm64/tagged-address-abi.rst | 148 +++++++++++++++++++++
->   1 file changed, 148 insertions(+)
->   create mode 100644 Documentation/arm64/tagged-address-abi.rst
->
-> diff --git a/Documentation/arm64/tagged-address-abi.rst b/Documentation/arm64/tagged-address-abi.rst
-> new file mode 100644
-> index 000000000000..a8ecb991de82
-> --- /dev/null
-> +++ b/Documentation/arm64/tagged-address-abi.rst
-> @@ -0,0 +1,148 @@
-> +========================
-> +ARM64 TAGGED ADDRESS ABI
-> +========================
-> +
-> +Author: Vincenzo Frascino <vincenzo.frascino@arm.com>
-> +
-> +Date: 25 July 2019
-> +
-> +This document describes the usage and semantics of the Tagged Address
-> +ABI on arm64.
-> +
-> +1. Introduction
-> +---------------
-> +
-> +On arm64 the TCR_EL1.TBI0 bit has always been enabled on the kernel, hence
-> +the userspace (EL0) is entitled to perform a user memory access through a
-> +64-bit pointer with a non-zero top byte but the resulting pointers are not
-> +allowed at the user-kernel syscall ABI boundary.
-> +
-> +This document describes a relaxation of the ABI that makes it possible to
-> +to pass tagged pointers to the syscalls, when these pointers are in memory
+Do you have a pointer? That sparks the vaguest of memories, but I can't 
+seem to turn anything up in my inbox. If that was my objection, though, 
+it sounds like your patch was probably trying to go a step or two 
+further than this one.
 
-One too many "to" (at the end the previous line).
+> Note that if this change turns out to be valid we should also
+> clean up the iommu_dma_free_iova() side.
 
-> +ranges obtained as described in section 2.
-> +
-> +Since it is not desirable to relax the ABI to allow tagged user addresses
-> +into the kernel indiscriminately, arm64 provides a new sysctl interface
-> +(/proc/sys/abi/tagged_addr) that is used to prevent the applications from
-> +enabling the relaxed ABI and a new prctl() interface that can be used to
-> +enable or disable the relaxed ABI.
-> +A detailed description of the newly introduced mechanisms will be provided
-> +in section 2.
-> +
-> +2. ARM64 Tagged Address ABI
-> +---------------------------
-> +
-> +From the kernel syscall interface perspective, we define, for the purposes
-> +of this document, a "valid tagged pointer" as a pointer that either has a
-> +zero value set in the top byte or has a non-zero value, is in memory ranges
-> +privately owned by a userspace process and is obtained in one of the
-> +following ways:
-> +- mmap() done by the process itself, where either:
-> +
-> +  - flags have **MAP_PRIVATE** and **MAP_ANONYMOUS**
-> +  - flags have **MAP_PRIVATE** and the file descriptor refers to a regular
-> +    file or **/dev/zero**
-> +
-> +- brk() system call done by the process itself (i.e. the heap area between
-> +  the initial location of the program break at process creation and its
-> +  current location).
-> +- any memory mapped by the kernel in the process's address space during
-> +  creation and with the same restrictions as for mmap() (e.g. data, bss,
-> +  stack).
-> +
-> +The ARM64 Tagged Address ABI is an opt-in feature, and an application can
-> +control it using the following:
-> +
-> +- **/proc/sys/abi/tagged_addr**: a new sysctl interface that can be used to
-> +  prevent the applications from enabling the access to the relaxed ABI.
-> +  The sysctl supports the following configuration options:
-> +
-> +  - **0**: Disable the access to the ARM64 Tagged Address ABI for all
-> +    the applications.
-> +  - **1** (Default): Enable the access to the ARM64 Tagged Address ABI for
-> +    all the applications.
-> +
-> +   If the access to the ARM64 Tagged Address ABI is disabled at a certain
-> +   point in time, all the applications that were using tagging before this
-> +   event occurs, will continue to use tagging.
+We're not touching the iommu_dma_{alloc,free}_iova() path here; those 
+are designed to cope with both types of cookie, and I think that's a 
+reasonable abstraction to keep. This is just getting rid of the 
+asymmetry - and now bug - caused by trying to keep the MSI page flow 
+going through a special case in __iommu_dma_map() despite that having 
+evolved into a more specific DMA domain fastpath (there's no 
+corresponding unmap special case since MSI mappings just persist and get 
+recycled until the domain is destroyed).
 
-"tagging" may be misinterpreted here. I would be more explicit by saying that the 
-tagged address ABI remains enabled in processes that opted in before the access got 
-disabled.
-
-> +- **prctl()s**:
-> +
-> +  - **PR_SET_TAGGED_ADDR_CTRL**: Invoked by a process, can be used to enable or
-> +    disable its access to the ARM64 Tagged Address ABI.
-
-I still find the wording confusing, because "access to the ABI" is not used 
-consistently. The "tagged_addr" sysctl enables *access to the ABI*, that's fine. 
-However, PR_SET_TAGGED_ADDR_CTRL enables *the ABI itself* (which is only possible if 
-access to the ABI is enabled).
-
-> +
-> +    The (unsigned int) arg2 argument is a bit mask describing the control mode
-> +    used:
-> +
-> +    - **PR_TAGGED_ADDR_ENABLE**: Enable ARM64 Tagged Address ABI.
-> +
-> +    The prctl(PR_SET_TAGGED_ADDR_CTRL, ...) will return -EINVAL if the ARM64
-> +    Tagged Address ABI is not available.
-
-For clarity, it would be good to mention that one possible reason for the ABI not to 
-be available is tagged_addr == 0.
-
-> +
-> +    The arguments arg3, arg4, and arg5 are ignored.
-> +  - **PR_GET_TAGGED_ADDR_CTRL**: can be used to check the status of the Tagged
-> +    Address ABI.
-> +
-> +    The arguments arg2, arg3, arg4, and arg5 are ignored.
-> +
-> +The ABI properties set by the mechanisms described above are inherited by threads
-> +of the same application and fork()'ed children but cleared by execve().
-> +
-> +When a process has successfully opted into the new ABI by invoking
-> +PR_SET_TAGGED_ADDR_CTRL prctl(), this guarantees the following behaviours:
-> +
-> + - Every currently available syscall, except the cases mentioned in section 3, can
-> +   accept any valid tagged pointer. The same rule is applicable to any syscall
-> +   introduced in the future.
-
-I thought Catalin wanted to drop this guarantee?
-
-> + - If a non valid tagged pointer is passed to a syscall then the behaviour
-> +   is undefined.
-> + - Every valid tagged pointer is expected to work as an untagged one.
-> + - The kernel preserves any valid tagged pointer and returns it to the
-> +   userspace unchanged (i.e. on syscall return) in all the cases except the
-> +   ones documented in the "Preserving tags" section of tagged-pointers.txt.
-> +
-> +A definition of the meaning of tagged pointers on arm64 can be found in:
-> +Documentation/arm64/tagged-pointers.txt.
-> +
-> +3. ARM64 Tagged Address ABI Exceptions
-> +--------------------------------------
-> +
-> +The behaviours described in section 2, with particular reference to the
-> +acceptance by the syscalls of any valid tagged pointer are not applicable
-> +to the following cases:
-> +
-> + - mmap() addr parameter.
-> + - mremap() new_address parameter.
-> + - prctl(PR_SET_MM, PR_SET_MM_MAP, ...) struct prctl_mm_map fields.
-> + - prctl(PR_SET_MM, PR_SET_MM_MAP_SIZE, ...) struct prctl_mm_map fields.
-
-All the PR_SET_MM options that specify pointers (PR_SET_MM_START_CODE, 
-PR_SET_MM_END_CODE, ...) should be excluded as well. AFAICT (but don't take my word 
-for it), that's all of them except PR_SET_MM_EXE_FILE. Conversely, PR_SET_MM_MAP_SIZE 
-should not be excluded (it does not pass a prctl_mm_map struct, and the pointer to 
-unsigned int can be tagged).
-
-Kevin
-
-> +
-> +Any attempt to use non-zero tagged pointers will lead to undefined behaviour.
-> +
-> +4. Example of correct usage
-> +---------------------------
-> +.. code-block:: c
-> +
-> +   void main(void)
-> +   {
-> +           static int tbi_enabled = 0;
-> +           unsigned long tag = 0;
-> +
-> +           char *ptr = mmap(NULL, PAGE_SIZE, PROT_READ | PROT_WRITE,
-> +                            MAP_ANONYMOUS, -1, 0);
-> +
-> +           if (prctl(PR_SET_TAGGED_ADDR_CTRL, PR_TAGGED_ADDR_ENABLE,
-> +                     0, 0, 0) == 0)
-> +                   tbi_enabled = 1;
-> +
-> +           if (ptr == (void *)-1) /* MAP_FAILED */
-> +                   return -1;
-> +
-> +           if (tbi_enabled)
-> +                   tag = rand() & 0xff;
-> +
-> +           ptr = (char *)((unsigned long)ptr | (tag << TAG_SHIFT));
-> +
-> +           *ptr = 'a';
-> +
-> +           ...
-> +   }
-> +
+Robin.
 
 _______________________________________________
 linux-arm-kernel mailing list
