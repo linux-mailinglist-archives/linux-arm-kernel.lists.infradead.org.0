@@ -2,90 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 43C6A7A85F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 14:27:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D7187A85C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 14:26:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=w/bm3EUydeBhrLzbKnhu/00gXMeXmJQEmmqW7OLNJUM=; b=q5zWoBZM2WsgD7l+WQuMFxgAif
-	5ddCzkUzryxsDU56DSAJAzcNjAfIMsDcyxB9dZsg8fvGQ8x0h/9rCZ5fIjVSwJP3KQLJ95IwtOHFh
-	J6m14aUTabDrjNk6eKNUxC4HhGl0T073tEQEWeQCuyVV/5a2Qts70Ma3aMpefaMbEAPg1QWuM4O6l
-	LcVIM3My8UDz6LWA1Qhka+5JJbhqCLhjRSadH8E/v9zgsgM6r0OLipShBHZ0myod7T2RKDFMwCbU1
-	QFOovsGl17JO0DOfAPQoF6qN0enJY8Xfdq06PGqJNsR+Of/DNR8rgzR4UASUfqkZwt3ufj6NSLFb7
-	fXQmyhRw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=z+QVvoHqG3cixpU+lAe7EcAhJ3XeWlfmUKrUxcCoTiE=; b=JU6FR5ALk7Ix2Q
+	qqeVK+mhb+XYXCJuaNreqFgGDhEEakssC7mUjSpYv3qEAWZLGxAWDi/C7+OC35biqxsTokDoWd0OP
+	YhKLnLu6sAk192obDvJgr+kue5xHEuVCbWPfIjDm9dgWYPKZotEH44ye64ZgKppKsE/u8Jt/u35AV
+	F2iYo9TzZCGJhVloG2/tMLxRsv0zkhHewhhUdZIOi4cYaoRDuY5DJ457cE7uJfXKkWMoERmVzUpHN
+	0fdmuK1FP6UaEXuXDu14AUQWxYno/d8X1u7vmaNxM7HhKIVxaugte+Oc6P0cmhQC7lysn2bMnXgyF
+	0OqteVaemH5xg6eOdJkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsRDb-0003ta-BB; Tue, 30 Jul 2019 12:27:03 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1hsRD2-0003L6-Rm; Tue, 30 Jul 2019 12:26:28 +0000
+Received: from mail-qt1-f194.google.com ([209.85.160.194])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsRBr-0002am-Kt
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 12:25:17 +0000
-Received: by mail-pf1-x444.google.com with SMTP id t16so29733106pfe.11
+ id 1hsRBd-0001Fn-9l
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 12:25:03 +0000
+Received: by mail-qt1-f194.google.com with SMTP id a15so62741036qtn.7
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 30 Jul 2019 05:25:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=UdO7TiN1GZWaQttAvLZ44/neyJcGu5j8j3RhNT+Sui8=;
- b=oeNn2Nb/KW67tK/SQYA3SwA0z1uQndtVJSRu+PDEjP72OlO8KmCMDtWBV5wq5bXjh9
- hS9nOcAhh0rZcgj0RAfW0XRibChG2g3/3zWkiH4hkx8VgHfmHWA4aM6qvQRMCbMGDSOp
- Bo53QaBP5OkWQzpZYWoNrCGtD3zIF2iH9bYNCt0o/ZLVt1XE+gTFteVw0X0p801KmcMi
- mIumz0AGK/+0LiHxAWX/nfQoS8Y1yP7gHMEixVeHFMyQ1tqGa9Tnh5U41MsKDVNf5llv
- RVYHfmDG2keihY0FTtTRGgzTF4IdgXDe5G/ve9Nji1Pbk27WKRIn6biY+aN2+F66OH/R
- oz6w==
+ Tue, 30 Jul 2019 05:25:00 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=UdO7TiN1GZWaQttAvLZ44/neyJcGu5j8j3RhNT+Sui8=;
- b=PdO4qpva21FgEH6taPb7c/EnYIC98hXwQYrMNGIZFzPgEm9c2WpJy15DYPbuW9eLvK
- 0cXHkCAMWT9sc3Us7DhOU6fXj9rhTKMUWbuQug6rq/X9AaMuAYHRxbQ6/xhKbMtn0pUN
- BcVA5nlOV4TjXiQLzwWVJqWhJE9fXopXFcqsjD27cycg1Wxuy/xR7SjE+Kq0A1kSsU7e
- ddMXFXnBvMVHASRAS4AdbQhbMnib5OASao20LX45l6TJ6kytXf8+az9AX+XGHCrR//1f
- aQ1g3EmY1U0Hs71tr5NynZocuXmsQbahDf54ALQXLi6rUyUcRN20st92Y5xpuR5yize0
- vLdA==
-X-Gm-Message-State: APjAAAXIp1y74UckI91JfhNUdYmVFOVOCRlbmlQiU9EncEPhDax2I71p
- manBCAuXl435nv2KEuvbMt86jg==
-X-Google-Smtp-Source: APXvYqwiIFZ1Lpnf1zrtvEq7BSLgYRy9SXqV38k99nAfJbSJqZuysqZ14yG/NTWJNUvb4F6Bw3cxBw==
-X-Received: by 2002:a63:5c7:: with SMTP id 190mr106671104pgf.67.1564489515198; 
- Tue, 30 Jul 2019 05:25:15 -0700 (PDT)
-Received: from localhost.localdomain ([45.114.72.197])
- by smtp.gmail.com with ESMTPSA id v8sm54895462pgs.82.2019.07.30.05.25.07
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Tue, 30 Jul 2019 05:25:14 -0700 (PDT)
-From: Sumit Garg <sumit.garg@linaro.org>
-To: keyrings@vger.kernel.org, linux-integrity@vger.kernel.org,
- linux-security-module@vger.kernel.org
-Subject: [RFC v2 6/6] MAINTAINERS: Add entry for TEE based Trusted Keys
-Date: Tue, 30 Jul 2019 17:53:40 +0530
-Message-Id: <1564489420-677-7-git-send-email-sumit.garg@linaro.org>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1564489420-677-1-git-send-email-sumit.garg@linaro.org>
-References: <1564489420-677-1-git-send-email-sumit.garg@linaro.org>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Vg24wzBIc+D+Hmv+R1GPqhgrmLOPVkmrpAuvjDtlIDU=;
+ b=Yparjx+u4itcYIeWUYPvjv/W1zxnB6Q4mJfxYhoBNRb8HQTGmjkkSil2iZQts0B/ks
+ AU+PZkGSL9VspLFEso+81Y//FijW7C/gTcyEjhPs/V+sBktheZ0ULiCVxpJgZRmuvdH4
+ AuBULZf0LY78EES/+GIUvQUB9ONKzCGsnHjWS5ZZxu0VffBaN8v+DWyyAqi3L0J/Daye
+ AUWeT5edBhdXuJ7Q9ERlzkV801FyEk344crMYXgFb7drh4q/Ae+XgWDDHJURKygUdC/B
+ ettUdk5yNUWvovoX1T1T8dR4TUHQavqiioeySbxWAMRaoYhce1HGQoBu/NZeTNEC7Ote
+ UgOw==
+X-Gm-Message-State: APjAAAXJT7iBigj0bDX2aEdjXf6TlPUVsM2TIRmzFVGPf/kf2DNJ3W0a
+ Ea7CaA1RxaXrbIuH+EYiqQKKa2TXN4uJ4OXtvLM=
+X-Google-Smtp-Source: APXvYqzfoZoBuiAjwAqXgbVNXXKwoEiH6dY5V72EFZ3ka6brjjn9cMP5XNNFWJ1mx1f3K5mwNQb5H6XBvPEoDQjUWN0=
+X-Received: by 2002:a0c:ba2c:: with SMTP id w44mr81948752qvf.62.1564489499864; 
+ Tue, 30 Jul 2019 05:24:59 -0700 (PDT)
+MIME-Version: 1.0
+References: <CAK8P3a3jjDh6aEVf0bBFYc=8GtB38kL6sWVZGJiUe427A7m2ng@mail.gmail.com>
+In-Reply-To: <CAK8P3a3jjDh6aEVf0bBFYc=8GtB38kL6sWVZGJiUe427A7m2ng@mail.gmail.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Tue, 30 Jul 2019 14:24:43 +0200
+Message-ID: <CAK8P3a1i3fV_qzx_q6nucqh4aNLi0a+iwvcis9BpYfMOkoew8Q@mail.gmail.com>
+Subject: Re: RFC: remove Nuvoton w90x900/nuc900 platform?
+To: Wan ZongShun <mcuos.com@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_052515_831506_A5A73FFF 
-X-CRM114-Status: UNSURE (   9.55  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190730_052501_597170_9EC7269D 
+X-CRM114-Status: GOOD (  16.20  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ no trust [209.85.160.194 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.194 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,49 +82,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tee-dev@lists.linaro.org, daniel.thompson@linaro.org,
- Sumit Garg <sumit.garg@linaro.org>, corbet@lwn.net, jejb@linux.ibm.com,
- ard.biesheuvel@linaro.org, linux-doc@vger.kernel.org, jmorris@namei.org,
- zohar@linux.ibm.com, linux-kernel@vger.kernel.org, dhowells@redhat.com,
- jarkko.sakkinen@linux.intel.com, casey@schaufler-ca.com,
- jens.wiklander@linaro.org, linux-arm-kernel@lists.infradead.org,
- serge@hallyn.com
-MIME-Version: 1.0
+Cc: Tomer Maimon <tmaimon77@gmail.com>, Avi Fishman <avifishman70@gmail.com>,
+ Patrick Venture <venture@google.com>, Linus Walleij <linus.walleij@linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Tali Perry <tali.perry1@gmail.com>, Nancy Yuen <yuenn@google.com>,
+ Russell King <rmk+kernel@armlinux.org.uk>,
+ OpenBMC Maillist <openbmc@lists.ozlabs.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Benjamin Fair <benjaminfair@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add MAINTAINERS entry for TEE based Trusted Keys framework.
+On Tue, Jul 30, 2019 at 2:09 PM Mail Delivery Subsystem
+<mailer-daemon@googlemail.com> wrote:
+> On Tue, Jul 30, 2019 at 2:09 PM Arnd Bergmann <arnd@arndb.de> wrote:
+> >
+> > As the mach-netx and mach-8695 platforms are being removed now,
+> > I wonder whether we should do the same with w90x00: Here is what
+> > I found after looking at the git history and external material for it.
+> >
+> >     - The supported chips (nuc910/950/960) are no longer marketed
+> >       by the manufacturer
+> >
+> >     - Newer chips from the same family (nuc97x, nuc980, n329x)
+> >       that are still marketed have Linux BSPs but those were never
+> >       submitted for upstream inclusion.
+> >
+> >     - Wan ZongShun is listed as maintainer, but the last patch he wrote
+> >       was in 2011.
+> >
+> >     - All patches to w90x900 platform specific files afterwards
+> >       are cleanups that were apparently done without access to
+> >       test hardware.
+> >
+> >     - The http://www.mcuos.com/ website listed in the MAINTAINERS
+> >        file is no longer reachable.
+>
+> Recipient inbox full
+>
+> Your message couldn't be delivered to mcuos.com@gmail.com. Their inbox is full, or it's getting too much mail right now.
 
-Signed-off-by: Sumit Garg <sumit.garg@linaro.org>
----
- MAINTAINERS | 9 +++++++++
- 1 file changed, 9 insertions(+)
+Yes, that too.
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index ce06877..0b61ecf 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -8930,6 +8930,15 @@ F:	include/keys/trusted-type.h
- F:	security/keys/trusted.c
- F:	security/keys/trusted.h
- 
-+KEYS-TEE-TRUSTED
-+M:	Sumit Garg <sumit.garg@linaro.org>
-+L:	linux-integrity@vger.kernel.org
-+L:	keyrings@vger.kernel.org
-+S:	Supported
-+F:	Documentation/security/keys/tee-trusted.rst
-+F:	include/keys/trusted_tee.h
-+F:	security/keys/trusted-keys/trusted-tee.c
-+
- KEYS/KEYRINGS:
- M:	David Howells <dhowells@redhat.com>
- L:	keyrings@vger.kernel.org
--- 
-2.7.4
-
+        Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
