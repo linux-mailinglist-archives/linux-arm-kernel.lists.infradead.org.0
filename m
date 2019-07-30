@@ -2,54 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3DA7B7A3A5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 11:06:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A51627A3AD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 11:10:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6/DAy5wIrlKEnHtLxg94G8x45X9n9TIFtjUq+PdNJo4=; b=IKLRQx+FWeAvyR
-	algB896LumF01msRZlizgkVxrx/j25ymVsb4xS9/eILLMkQ5acH3IHp3fKfkkhneHHrYso+bmsMw6
-	NKfJqn4Kk+6Vq2CNGFJXIIcSXIluyxrMejC94vWBl6WST8kTsQeXv1IMdAIY1BqLKgaLLfGbCWewg
-	5FOL4TitUXGZgMqWXLT8JrEsGfkfNXuNS312preFfqlW9YCNFuLrwNnphirRZrUBD0kdySmmIBKi+
-	d15u2u9sJJgo4Bc9KXBaDpjuWEtWxoX9q4Do0jKD1mrKRaF1NcwaTEWyJuGOCEz2x285A2QffRF0X
-	PozmmoX9ay5OF16ySrhg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2lGHOKSXF0fjcUT8Zd21YR635ffIQC3IxIwMZQrce7E=; b=b7IS0AHOHVevxw
+	SHxmj7OQNr5iA1LhwxQTCriC+FZEShMIaSMam0ByaR6GCYmcgPlsnj6Ek4ySS+6w0cTEepBdXBiP/
+	fplVu3LJPYg+PjDpwkgL3rXcndTz96ZhgZva8FB/YdgaTsdmAKDE7EKXQDR7Xe1KZwofdM6B4MXNA
+	vju/oSN8SbubfD2D+RJHXinvZMCnaKyk6+c8WRQ3gVr0n6vyLf9oODP68Gwu4BjOEmTrmkfGcbuPM
+	Z8SUQ8QwsjFvEr0/1fwmmrlyb7ZpGsTl6T8BpGacX688bzpihJsw68b3IWmAlyz3KSYS59wH5YbdZ
+	6cDDZrSTRmY6R/M5GjCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsO5F-00015c-B1; Tue, 30 Jul 2019 09:06:13 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hsO4v-00014h-59
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 09:05:54 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 50294344;
- Tue, 30 Jul 2019 02:05:50 -0700 (PDT)
-Received: from [10.1.197.45] (e112298-lin.cambridge.arm.com [10.1.197.45])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D18D43F71F;
- Tue, 30 Jul 2019 02:05:48 -0700 (PDT)
-Subject: Re: [PATCH v4 0/9] arm_pmu: Use NMI for perf interrupt
-To: linux-arm-kernel@lists.infradead.org
-References: <1563351432-55652-1-git-send-email-julien.thierry@arm.com>
-From: Julien Thierry <julien.thierry@arm.com>
-Message-ID: <d08ab28d-7375-7472-cb58-36304c249e67@arm.com>
-Date: Tue, 30 Jul 2019 10:05:47 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hsO8s-0001MV-JG; Tue, 30 Jul 2019 09:09:59 +0000
+Received: from mail-wm1-f68.google.com ([209.85.128.68])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hsO8e-0001M9-Sb
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 09:09:46 +0000
+Received: by mail-wm1-f68.google.com with SMTP id v15so56400767wml.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 30 Jul 2019 02:09:42 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=j24m8YwIkgZoAdisYhIZZGOM4mMaO5nu7o1IplZhp0U=;
+ b=YyOCQHn1PA/UDgYd+2WtuyPXRq4GT4ayyEai9nJkH3NACazqNEuSQa2MzkdlEWJDmv
+ 4ddzUNlANd5m7t+OiToZ4bs5chAZozGyH4sbBcZncM/SYIT5AU53r+tR1vqGZK9df0NH
+ q0tWpqpq+wYLJ3sOVV+xKWcGClvGYou2VrNYLM9xiXZ6pQGpYz74LUhtUkcWcBU1P85z
+ MsqrqApITNXENaJ0YAj3yisrzfCCE2eLhLyGGBFT7JFHqkuJk9QmKSJ4RCDr0MGQdgye
+ FdH9m9JEo8wqlriJigY2KPm2Lkp0rgwvwz8BEZ7aq3Lq0BAHudfwpR5CM3tKom1CXh9p
+ vLzg==
+X-Gm-Message-State: APjAAAWhEmRJaWGbV0C0ZpAMdy/jeM3crKv4f8TJspu/uFJRdmGnyHT0
+ 4QxzUW6HPoqHC/iZ6FpEVfRCC2rrCNjfxfbXgP8=
+X-Google-Smtp-Source: APXvYqySBUHLqBSU7N6XxWulVRUOlueaDCODh+7IELqk6wpTCnt5wfRsHvBVYsa2lVF720QG2sKFJ9HzIyMa6NIOZ0I=
+X-Received: by 2002:a1c:1f4e:: with SMTP id
+ f75mr101586919wmf.137.1564477781703; 
+ Tue, 30 Jul 2019 02:09:41 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <1563351432-55652-1-git-send-email-julien.thierry@arm.com>
-Content-Language: en-US
+References: <1563904928-2797-1-git-send-email-ykaneko0929@gmail.com>
+In-Reply-To: <1563904928-2797-1-git-send-email-ykaneko0929@gmail.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Tue, 30 Jul 2019 11:09:29 +0200
+Message-ID: <CAMuHMdXQwRm1H3metXwGZdtFK13qhNuOLZem5hZmoHDtcm2rqA@mail.gmail.com>
+Subject: Re: [PATCH] arm64: dts: renesas: r8a7796-salvator-x: sort nodes
+To: Yoshihiro Kaneko <ykaneko0929@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_020553_236685_8A9279EA 
-X-CRM114-Status: GOOD (  21.87  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190730_020944_934904_F9326315 
+X-CRM114-Status: GOOD (  10.27  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (geert.uytterhoeven[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.128.68 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.128.68 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,95 +82,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, peterz@infradead.org, jolsa@redhat.com,
- will.deacon@arm.com, acme@kernel.org, alexander.shishkin@linux.intel.com,
- mingo@redhat.com, namhyung@kernel.org, sthotton@marvell.com,
- liwei391@huawei.com, julien.thierry.kdev@gmail.com
+Cc: Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Simon Horman <horms@verge.net.au>, Magnus Damm <magnus.damm@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On Tue, Jul 23, 2019 at 8:02 PM Yoshihiro Kaneko <ykaneko0929@gmail.com> wrote:
+> Sort nodes.
+>
+> If node address is present
+>    * Sort by node address, grouping all nodes with the same compat string
+>      and sorting the group alphabetically.
+> Else
+>    * Sort alphabetically
+>
+> This should not have any run-time effect.
+>
+> Signed-off-by: Yoshihiro Kaneko <ykaneko0929@gmail.com>
 
-Just a gentle ping on this series.
+Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
+i.e. will queue in renesas-devel for v5.4.
 
-Cheers,
+Gr{oetje,eeting}s,
 
-Julien
-
-On 17/07/2019 09:17, Julien Thierry wrote:
-> Hi,
-> 
-> After fixing the arm64 Pseudo-NMIs, I'm dusting off this series.
-> 
-> The series makes the arm_pmu driver use NMIs for the perf interrupt when
-> NMIs are available on the platform (currently, only arm64 + GICv3).
-> 
-> * Patches 1 to 4 remove the need to use spinlocks for the Arm PMU
->   driver for Armv7 and Armv8 (aarch64).
-> * Patches 5 moves the locking to Armv6 specific code which is the sole
->   user
-> * Patches 6 and 7 make the PMU interrupt handler NMI-safe
-> * Patches 8 and 9 enable using pseudo-NMI for the PMU interrupt when
->   the feature is available
-> 
-> Changes since v3[3]:
-> - Added tags
-> - Fix build issue for perf_event_v6
-> - Don't disable preemption in pmu->enable()
-> - Always rely on IPI_IRQ_WORK to run the queued work
-> - Fixed typos + cleanups
-> 
-> Changes since v2[2]:
-> - Rebased on recent linux-next (next-20190708)
-> - Fixed a number of bugs with indices (reported by Wei)
-> - Minor style fixes
-> 
-> Changes since v1[3]:
-> - Rebased on v5.1-rc1
-> - Pseudo-NMI has changed a lot since then, use the (now merged) NMI API
-> - Remove locking from armv7 perf_event
-> - Use locking only in armv6 perf_event
-> - Use direct counter/type registers insted of selector register for armv8
-> 
-> [1] http://lists.infradead.org/pipermail/linux-arm-kernel/2019-March/640536.html
-> [2] http://lists.infradead.org/pipermail/linux-arm-kernel/2018-January/554611.html
-> 
-> Cheers,
-> 
-> Julien
-> 
-> -->
-> 
-> Julien Thierry (8):
->   arm64: perf: Remove PMU locking
->   arm: perf: save/resore pmsel
->   arm: perf: Remove Remove PMU locking
->   perf/arm_pmu: Move PMU lock to ARMv6 events
->   arm64: perf: Do not call irq_work_run in NMI context
->   arm/arm64: kvm: pmu: Make overflow handler NMI safe
->   arm_pmu: Introduce pmu_irq_ops
->   arm_pmu: Use NMIs for PMU
-> 
-> Mark Rutland (1):
->   arm64: perf: avoid PMXEV* indirection
-> 
->  arch/arm/kernel/perf_event_v6.c |  43 +++++++-----
->  arch/arm/kernel/perf_event_v7.c |  79 +++++++---------------
->  arch/arm64/kernel/perf_event.c  | 136 ++++++++++++++++++++++++--------------
->  drivers/perf/arm_pmu.c          | 143 ++++++++++++++++++++++++++++++++++------
->  include/kvm/arm_pmu.h           |   1 +
->  include/linux/perf/arm_pmu.h    |   5 --
->  virt/kvm/arm/pmu.c              |  25 ++++++-
->  7 files changed, 284 insertions(+), 148 deletions(-)
-> 
-> --
-> 1.9.1
-> 
+                        Geert
 
 -- 
-Julien Thierry
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
