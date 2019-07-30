@@ -2,79 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1587E7AC33
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 17:24:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F3B37AC45
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 17:25:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fG9XuVTHs2W2vJ0Oefe5zxGUt8UFCDKQ1mqNuKH+NL8=; b=MBX2JcDQ1/4+bL
-	TaV+GGp45U8cLUmNAJ79mXyRGXOv1bAqHWx+fJV9ijTlmXSmFyhv1ZxjN++PUj5KxaWCQE/SBDB/B
-	NSMwsrXzW7gJw56QM8I/emuCN5pJ/h0nAnFrtEKHGPUeVAb0UxKFkLdoApW/4n1V9GkM76+KFfEg7
-	JWDmGaJHTHgxPWjvgWDRJ97of6VvCGLI5IZ8MCcHd72evfXPK21JBo1ckC2+08pFsl/jsUNypM3De
-	cxjlvsFjjAqoLSFzmLJlsG1cU8y+GVu69Sxx2r4tcfUWa/pGXlpsOkYyNWcwJqOKC0nefKuA9MUTJ
-	nCb286ScdIAp84l2GNNg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=DwO/ahKTqCS6W7neJBv9vJcrxTUQx2weebKgAE4ALCw=; b=sQyBkih1himHJI
+	wSaAzCyRjo3f/yM/HlTyXdGjH5E/wTr4B+jgDEBMpcaS5C4k3MynHMWN+zngNPZzstYK7q5P3jO0r
+	dQG9Fd0/7B7u9nvS1/ZQINWb2n3vazMsjmyKElsrZNrX3CbsGLC7tWweb08WfPXHtU9HSSl9G3mmx
+	e3CGRiCRnZAiusFh77DiOOKJjhl6lp+hfz2umb9jNnSX4PLX9ry4vFUedb40kcNngNC+SfzZvpgQb
+	BJankQyTnT4x/IVFhYmrqI9v/bQwoKVDaiFY1ztm6qQoM7QDKSuR8Yljg8zO3l+3D1fjbvM+ievWA
+	xMRM59/1YmfXM7BXzh3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsTyi-0007gp-Bj; Tue, 30 Jul 2019 15:23:52 +0000
-Received: from mail-qt1-f193.google.com ([209.85.160.193])
+	id 1hsU06-0000lJ-F7; Tue, 30 Jul 2019 15:25:18 +0000
+Received: from atlmailgw2.ami.com ([63.147.10.42])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsTyX-0007gW-DZ
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 15:23:42 +0000
-Received: by mail-qt1-f193.google.com with SMTP id 44so32389897qtg.11
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 30 Jul 2019 08:23:41 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=QfRDMATF/mD0ld+JXOHOTIFlNh/Cdg0uTO/akzNNHqM=;
- b=OD81ggE2XWNvaokVF0SvitdqneypuDKP6Oy211MeIhWltD/lch60ooVbGQugf96Dcz
- Fx+EPyfbzr61AukBWzIBS1pgteMsrim6SLZmBzU7p/XrUg8tlX9oKU3mps/2iNzhumCV
- +6q1P8fBG/ui3MBKG5S7IKA4DjQR4FiaYEwn0yLEt7NV4pybPGRSOE7JU2Ck4YnuVgez
- SHhRA70GwZoG6MGg5F3Do4RuPmmmDmXy7efNJCPLGSzsUJ71r3KjMCzPAPgqCwhnj0/D
- RHIfmMzKF2eGqrXEDxoHNOEkYCNOP1KfyRS/lSeK055e+Bdea5iJl58OkKRznjIJSXxx
- gxwg==
-X-Gm-Message-State: APjAAAUezQqMahWVKyJOz5fvrzevRa5fCk16pmoAaP1UG/UQRvHcolEw
- 3yxbymgyG+u1/l3a7oSSg7JJrfRYDqvTTpcMe7c=
-X-Google-Smtp-Source: APXvYqwDK/J3NCjNWITj7Ip0SyX5Ri5CKH+r2xLJkFHtEoRIvmzE++N6L56dMPBT75xhK9Us76wxfBPEk3mS6pYxIdo=
-X-Received: by 2002:aed:33a4:: with SMTP id v33mr79997791qtd.18.1564500220464; 
- Tue, 30 Jul 2019 08:23:40 -0700 (PDT)
+ id 1hsTzv-0000IB-Jp
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 15:25:09 +0000
+X-AuditID: ac10606f-d27ff70000003324-fb-5d406151cc24
+Received: from atlms1.us.megatrends.com (atlms1.us.megatrends.com
+ [172.16.96.144])
+ (using TLS with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by atlmailgw2.ami.com (Symantec Messaging Gateway) with SMTP id
+ 24.AC.13092.151604D5; Tue, 30 Jul 2019 11:25:05 -0400 (EDT)
+Received: from hongweiz-Ubuntu-AMI.us.megatrends.com (172.16.98.93) by
+ atlms1.us.megatrends.com (172.16.96.144) with Microsoft SMTP Server (TLS) id
+ 14.3.408.0; Tue, 30 Jul 2019 11:25:04 -0400
+From: Hongwei Zhang <hongweiz@ami.com>
+To: Andrew Jeffery <andrew@aj.id.au>, Linus Walleij
+ <linus.walleij@linaro.org>, <linux-gpio@vger.kernel.org>
+Subject: [v6 0/2] gpio: aspeed: Add SGPIO driver
+Date: Tue, 30 Jul 2019 11:24:26 -0400
+Message-ID: <1564500268-2627-1-git-send-email-hongweiz@ami.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-References: <CAK8P3a3jjDh6aEVf0bBFYc=8GtB38kL6sWVZGJiUe427A7m2ng@mail.gmail.com>
- <CAK8P3a1ss9-G_mr48-UMOenrA0XDGWUFik4TC=m0WFfimoFdnQ@mail.gmail.com>
- <CAK8P3a3VsArSUgMwoPVxm8JcTPAQDoztg22MGqX4Vj5cjtADZg@mail.gmail.com>
- <CAKKbWA6aUBec8tTQNCJow8c6=SyS-y4HUC=3sMJp6_Oz51iF=A@mail.gmail.com>
-In-Reply-To: <CAKKbWA6aUBec8tTQNCJow8c6=SyS-y4HUC=3sMJp6_Oz51iF=A@mail.gmail.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Tue, 30 Jul 2019 17:23:24 +0200
-Message-ID: <CAK8P3a07KOgXKksbtQceqAKiZ-ykr4nDoM2xvb+WXtrXmNn2uA@mail.gmail.com>
-Subject: Re: RFC: remove Nuvoton w90x900/nuc900 platform?
-To: Avi Fishman <avifishman70@gmail.com>
+X-Originating-IP: [172.16.98.93]
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrDLMWRmVeSWpSXmKPExsWyRiBhgm5gokOswdedEha7LnNYfJl7isVi
+ /pFzrBa/z/9ltpjyZzmTxabH11gtmlefY7bYPP8Po8XlXXPYLJZev8hk0br3CLsDt8fV9l3s
+ HmvmrWH0eH+jld3j4sdjzB6bVnWyedy5tofNY/OSeo/zMxYyenzeJBfAGcVlk5Kak1mWWqRv
+ l8CV8ez7aZaCk2wVN6+5NDAuZO1i5OSQEDCReN9/nR3EFhLYxSTRssyni5ELyD7MKNGx+CwL
+ SIJNQE1i7+Y5TCC2iECexOH1b1lBipgFTjFJzNjXCTZJWMBA4vOa72wgNouAqkTzw8tgNq+A
+ vcSp6TOZIbbJSdw818kMEReUODnzCdgCZgEJiYMvXjBDXCErcevQYyaIegWJ532PWSYw8s1C
+ 0jILScsCRqZVjEKJJTm5iZk56eVGeom5mXrJ+bmbGCEhnr+D8eNH80OMTByMhxglOJiVRHgX
+ i9vHCvGmJFZWpRblxxeV5qQWH2KU5mBREuddteZbjJBAemJJanZqakFqEUyWiYNTqoGRU6+k
+ SrhkctiU/MjKL0dzmDYIv9uZKR8lfV7QefHnJ0Y7fwtZzuT4V+c26f4z3qXvjcUv3xdcyNwu
+ 4VzCmh+b/5lDve3elgMbJ8h5SC2z3HZr7ZILvOynL5zSOMKa9r3VZ2cP87RdGw/mbzgadO6m
+ SRJLdeedhQv2/1V6enna9E/SHzxqn7BJK7EUZyQaajEXFScCAI781llfAgAA
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_082341_459747_F5C41B82 
-X-CRM114-Status: UNSURE (   7.44  )
+X-CRM114-CacheID: sfid-20190730_082507_726135_37668DE4 
+X-CRM114-Status: UNSURE (   9.89  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.3 (/)
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.160.193 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [63.147.10.42 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.160.193 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,29 +77,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tomer Maimon <tmaimon77@gmail.com>, Patrick Venture <venture@google.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "Wanzongshun \(Vincent\)" <wanzongshun@huawei.com>,
- Tali Perry <tali.perry1@gmail.com>, Nancy Yuen <yuenn@google.com>,
- Russell King <rmk+kernel@armlinux.org.uk>,
- OpenBMC Maillist <openbmc@lists.ozlabs.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Benjamin Fair <benjaminfair@google.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-aspeed@lists.ozlabs.org, linux-kernel@vger.kernel.org,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
+ Hongwei Zhang <hongweiz@ami.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jul 30, 2019 at 3:59 PM Avi Fishman <avifishman70@gmail.com> wrote:
->
-> Note that we we are going to add soon drivers/net/ethernet/nuvoton/npcm7xx_emc.c
-> so maybe don't remove drivers/net/ethernet/nuvoton
+Hello,
 
-Ok, thanks for a taking a look. I can leave an empty Makefile/Kconfig
-pair there then.
+This short series introduce dt-binding document and a driver for the 
+Aspeed AST2500 SGPIO controller. Please review.
 
-     Arnd
+[v6]:	Changes between v5 and v6:
+	- fix a bug in aspeed_sgpio_dir_out()
+	- v5 feedback updates, some comments cleanup
+
+The related SGPM pinmux dt-binding document, dts, and pinctrl driver
+updates have been accepted and merged:
+_http://patchwork.ozlabs.org/patch/1110210/
+
+
+Hongwei Zhang (2):
+  dt-bindings: gpio: aspeed: Add SGPIO support
+  gpio: aspeed: Add SGPIO driver
+
+ .../devicetree/bindings/gpio/sgpio-aspeed.txt      |  55 +++
+ drivers/gpio/sgpio-aspeed.c                        | 521 +++++++++++++++++++++
+ 2 files changed, 576 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/gpio/sgpio-aspeed.txt
+ create mode 100644 drivers/gpio/sgpio-aspeed.c
+
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
