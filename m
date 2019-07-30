@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4ADFF7B478
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 22:43:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 184877B47C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 22:46:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z2Gu79YmoVZ2gYUC/oXSi0PAXDzDcxJXjO0Iz9aoHPo=; b=LDWf4T1u9Dsl2c
-	OovyNCPXyZ/fF7Bbq11Ky6YIiVSgrXF5Uo906U/ZpxKhHBrw/MzRiwGHVDAChljw4IgSz3qLe9JTw
-	eZDuL/qUmEenspoTLpxCx9aTrtAdvp6aICy/RUt5squlEmZnFoVMcXInDmdX5aWNAYJsGNUSWaj/O
-	gOoUW0zPAUNdhxCDtTIRfFWrP3WH72haB+0CAAHKHMXZP2jXOEr4AHpQSOWlFkjTNT4IOZj3QFx5b
-	bekc5agrSLy+ymzGHTJ7wrW3MQlkTF0xRdR7vlQkcN5wkX2SghecT3hRh8A1qHh50d4yIBlmlfPZT
-	zzhSmYaIdhNAHTjWRUYg==;
+	List-Owner; bh=MaTNa5+in8SHS5i8F/671G+jk1h1zoWQtJdtskm5/lA=; b=SwrBaKpuooKKa4
+	4M5/Pv61vC6adO67KtyEhrKMLTW7iKnKBTUwJi6OQofhkfZ/RR6Ph/6ycC3gbCSEdMi+gl+pL7N1o
+	O0mVbEP6/OIMwvDnZvJKJJCilCPANjZyaQqXdJ0MtPlgQvkQU6idArC+dXPcM0VjR3fQUf6tqXs6d
+	755DHaKHbQo1uNYN1Wg7avX1ibg9Nj7F/DBMIfjbamH+c89IAVcsjwtOecNRa/6DjZ2h3fP5/iE4D
+	Bju0K4ZV0LNN5EEnC5ty06PPKGX1PjolXLgHONcD7bbPxBOcsqhhAYdPa0F576X/QKNj8UxUBomcT
+	9/UV/oM0uk+XJUQw/TGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsYxp-0004AV-If; Tue, 30 Jul 2019 20:43:17 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1hsZ0z-00061S-22; Tue, 30 Jul 2019 20:46:33 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsYxh-0004A3-IR
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 20:43:10 +0000
-Received: by mail-lj1-x244.google.com with SMTP id h10so63407964ljg.0
+ id 1hsZ0q-000611-SC
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 20:46:26 +0000
+Received: by mail-lj1-x243.google.com with SMTP id y17so38835545ljk.10
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 30 Jul 2019 13:43:09 -0700 (PDT)
+ Tue, 30 Jul 2019 13:46:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=NeOSOuZCKnuPWQlWTYZc7E94zSZCX6CWgucI8QbC5SI=;
- b=e6vS1VpMx06tzuYWtKIBuNEws8WAi3NUbyIV7c4StbvhwCGhsBL970rim8meTTIkWM
- O6ZmuI6RD5nOFDouzyCl0suxmg6ejTqvmTOZ+VISXnNVogpEdiP0rxFAJ0ecsXi2Mfb8
- RYJ67ZTGVfifqJC41HGloDKUppZCNsWmSQoNs/qEz8anDqTka3u82kUtC6pJgqk2NQoa
- FziK5WeFt3InEumrNWBLewagXXd2Bc4unv/x7zwcBc1A9iDOmunInHHOZlqWMrjvCsqX
- NtLNxGyeH8wrBXwUJqJF8a2hXQltEzL8VbGXsWeS7xYtM4cjZ2mCGG5VenQOWx+CQdZ1
- m9Dg==
+ :cc; bh=Fnv5nFefw/7jm/2yZ6EkTWBwC2rqBjCv97bX7R5gsmY=;
+ b=AvjGOU3mXoTh82z+t2IPNAKmRe57uoapezbR5nSLRJ9W0Ck3IR2/8zUBrSBUSry4U1
+ 7617CGqztHoKjbZgkP8qZxQnC75QnSELpy/gDF9ugrgktdfWr6a9QVMTFoT2TAIX4yQ/
+ 6pSyIM8StMRjxVouxe8qb9ocN17lIhWeHoFlyAeIN8Jnm6i2hYQrT4lmktKd/i0PGP0d
+ JTt2c5XDCb5+3nEzfuIUeVHfYjbpVANzMT8GpBZL5umcOWOHcoGX42ktUc1hm+rNwN75
+ yw5ugapCnVk+c4DR2S2xvnoIr8mUrMB/ZtlLVkTeHZCldgfXe1I6+vHeMuFvl0Ifw/g/
+ w12Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=NeOSOuZCKnuPWQlWTYZc7E94zSZCX6CWgucI8QbC5SI=;
- b=gQdLpv7ScrUKcfFTwSA/SKYlGMOID/37ja2keCwqYjflF3pjR3oKN/hNJCPnJa7Vxm
- 3L6z1DLvQOS+Ojapoyl0NkneL/zD8afXIOd0zxjsnkPDTiIdrmHOd0/kJOXjs3+Ekoqx
- r4TaLZ0/akIHKHNmMX+k/fAhLfSuX4eqw02lRRTIB5twSwT3KBLs1UzD3n01hTlrhVrh
- FP0A/pzf6zhv29CxlAp65M/E5TC+QcgBCiK5LiXS7jaKymP1jXnYnXd2V6abjezpLA7Q
- Q6mmC609BbwTxWRniSTbJi9gmAStxu4QslpfpZ6a4VmNJPNUM9qu7D/b+V9dRAG0M+l1
- 4paQ==
-X-Gm-Message-State: APjAAAXr0kc2vWGq+oWPAVN+d1ywnCBepOnZUI3OOJrlhOfhjuxlOEkb
- 5j6Jte9SCYoFS1eAd1zVBxfzeD+9SS/fhP4aOGU=
-X-Google-Smtp-Source: APXvYqxGggeM2c8JKjHmE9XbOYkhPz3csWiBXje6H5oE/lVW3Y1DXijh0U7E24nUj8ZS7F/lrjAURo32s+z0BYMNXYg=
-X-Received: by 2002:a2e:8650:: with SMTP id i16mr62727650ljj.178.1564519387730; 
- Tue, 30 Jul 2019 13:43:07 -0700 (PDT)
+ bh=Fnv5nFefw/7jm/2yZ6EkTWBwC2rqBjCv97bX7R5gsmY=;
+ b=lRFyUN3GT8VSGC2AWtOsqzccw7NRa2euXOHKUxzu5ZbgEs83sER9t7m5rAOgYXPfD4
+ j/w8HfVo2j3776YrtV3tYeimNSOnTsYBF6Q1/TpXPiGVmffWatDYlwGgq2oQGq0/EI3E
+ cKmhTVstY7fbpMeTGPzoVqCH2lXGxwGO+lBFFGF9xEzIxT1Q9mwk5umwHJTm3gOAmayJ
+ xCqP05zL5XUh7lfTgnug4zNXcY4yxINvrPIsz0WUoI8JuwcLk/9AnU+Z3k9tzouCKFG+
+ zrmcZ4yEO84zNRsUpvIKB7q8m2/O5gjs8wMeN80ETNWCc35RCJS00KfkhxnwXMWQVKO3
+ LHcg==
+X-Gm-Message-State: APjAAAUrefji109EFHcKxVfbyiXITF0FoQmHVFn2OVEpx4jZnu9cR29C
+ SyPc7v2HdLps7TpxVaxHwx8LOGxFGPF0AIscbJM=
+X-Google-Smtp-Source: APXvYqwZR0HlzGm1q4rErB7IZwHUYk+BIas+baAMWS2NtitNJ7sN4NcuNxK+n5zq7+I2M7S3roUAK0iOaJi+qlsXg74=
+X-Received: by 2002:a2e:5dc6:: with SMTP id v67mr62303623lje.240.1564519583019; 
+ Tue, 30 Jul 2019 13:46:23 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190730144649.19022-1-dev@pschenker.ch>
- <20190730144649.19022-16-dev@pschenker.ch>
-In-Reply-To: <20190730144649.19022-16-dev@pschenker.ch>
+ <20190730144649.19022-13-dev@pschenker.ch>
+In-Reply-To: <20190730144649.19022-13-dev@pschenker.ch>
 From: Fabio Estevam <festevam@gmail.com>
-Date: Tue, 30 Jul 2019 17:43:12 -0300
-Message-ID: <CAOMZO5BqbUzBi5nR33TOpgnR4CFAwxF34m+oKtRZ6rtMaMVu9g@mail.gmail.com>
-Subject: Re: [PATCH 15/22] ARM: dts: apalis-imx6: Add some optional I2C devices
+Date: Tue, 30 Jul 2019 17:46:28 -0300
+Message-ID: <CAOMZO5DRi6yawn3RF-Mouiejz0nc7htdsCjOBC_EXZZKUZ3nvA@mail.gmail.com>
+Subject: Re: [PATCH 12/22] ARM: dts: imx6: Add touchscreens used on Toradex
+ eval boards
 To: Philippe Schenker <dev@pschenker.ch>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_134309_612434_74D72845 
-X-CRM114-Status: UNSURE (   8.40  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190730_134624_914640_4193ED36 
+X-CRM114-Status: GOOD (  10.46  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -111,17 +111,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Philippe,
-
 On Tue, Jul 30, 2019 at 11:57 AM Philippe Schenker <dev@pschenker.ch> wrote:
 
-> +&mipi_csi {
-> +       ipu_id = <0>;
-> +       csi_id = <1>;
-> +       v_channel = <0>;
-> +       lanes = <2>;
+> +       /* Atmel maxtouch controller */
+> +       atmel_mxt_ts: atmel_mxt_ts@4a {
 
-None of these properties are valid upstream.
+Generic node names, please:
+
+touchscreen@4a
+
+> +               compatible = "atmel,maxtouch";
+> +               pinctrl-names = "default";
+> +               pinctrl-0 = <&pinctrl_pcap_1>;
+> +               reg = <0x4a>;
+> +               interrupt-parent = <&gpio1>;
+> +               interrupts = <9 IRQ_TYPE_EDGE_FALLING>; /* SODIMM 28 */
+> +               reset-gpios = <&gpio2 10 GPIO_ACTIVE_HIGH>; /* SODIMM 30 */
+> +               status = "disabled";
+> +       };
+> +
+> +       /*
+> +        * the PCAPs use SODIMM 28/30, also used for PWM<B>, PWM<C>, aka pwm1,
+> +        * pwm4. So if you enable one of the PCAP controllers disable the pwms.
+> +        */
+> +       pcap: pcap@10 {
+
+touchscreen@10
+
+> +               /* TouchRevolution Fusion 7 and 10 multi-touch controller */
+> +               compatible = "touchrevolution,fusion-f0710a";
+
+I do not find this binding documented.
 
 _______________________________________________
 linux-arm-kernel mailing list
