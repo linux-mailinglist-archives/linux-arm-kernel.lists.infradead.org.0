@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB3F87A13D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 08:23:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07ED67A13E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 08:24:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TUf3p0izpxwfiN4B6V7rteO0uGgeVxc5JOmcw1HEl6E=; b=Sk9oHYSk2sc6c8
-	Edi7tWksd/74sP+bzVAuDXM45iQ1U19fZWuPu/P66yNre99HKSsC7FYvXnCWh8fgP7BuCGtbgsPyv
-	5wLKkS65Qta6MUEbrCRFDNO+0xM7uBQqt2/PGaEulBhQTIF+QrIDdsHGnJuisdk913UG4tSwSBK0b
-	oRrV40r0Q8QIVGGuvQKUVU8SSlW7Pu+a+1zbVMcqr9kcIoj0yzEFx0l+0aXEe+nW1OYHpWfs2LpU2
-	knUkJaiUczwVqLYRc1xi1ZZ2bX7PbxXqdi7ebQthSDzZVJ6TvEMUZ6I7tK19W6aiyj8J8JBDXMGot
-	K5wyPFK6NIgFCHVztheQ==;
+	List-Owner; bh=nbcDxNz0KMiqhT7u2Zbb2iStYXJM4ZtSHAOrW+UdtoI=; b=HWBRyw6Bv9KjGX
+	PQdd0iwVAWnLOiEkXb2yyp7jiYWjk5Hu5NAM8dckF7DQ6D8KJ589jwJ7karLTeI1/UjBy7V3iMZe6
+	8KPKwk4+YpCRyvHgLmDsSKoAyl0AoByre9R+n3vny4D1GVQ7Tr+iMGQu9OhwlnaVWEDlelFvu1fB0
+	9BKLOtqIwauynePu4NhXyqrlOCIkrkmmXWl3oBnWx26iPNWD3Ah64MTPoXRipZdloIjRkTJRM0Vxj
+	I46Ni75kMRUvIL0S63bRoSdNlE1RyjImlwmUXUI6txxwkvDzw6SB9m3+ESH8OqLyxUwv509tnT/63
+	7qZXCVHU/HxgOeKyOn+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsLY5-00007F-80; Tue, 30 Jul 2019 06:23:49 +0000
+	id 1hsLYO-0000L7-Ns; Tue, 30 Jul 2019 06:24:08 +0000
 Received: from new4-smtp.messagingengine.com ([66.111.4.230])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsLXV-0008LB-VH
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 06:23:15 +0000
+ id 1hsLXa-0008OF-Ie
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 06:23:20 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 550FD15AD;
- Tue, 30 Jul 2019 02:23:13 -0400 (EDT)
+ by mailnew.nyi.internal (Postfix) with ESMTP id E58461779;
+ Tue, 30 Jul 2019 02:23:17 -0400 (EDT)
 Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Tue, 30 Jul 2019 02:23:13 -0400
+ by compute4.internal (MEProxy); Tue, 30 Jul 2019 02:23:17 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=from
  :to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm3; bh=yLQnwe/3jMVbQ
- sjYdQ49tWPI3mLW2x2xLpZ69CsBrv0=; b=iExGC8siddrgdEtojqLCh7+wsEByz
- yEFQtPQ6TJ8MV9E6NxN2txn0oSJTGF1htY06CYXNCwNbfs6qmT3FOBs2RSagyRFE
- ND/AV1lR5Eqp7PdIwosmva/5/jcY15MeYYu9A1pg49LIgC7wREjHd2l/bA9/8mFy
- mGELweNHcRjXvFGQc0WHnPhMFDb0lMqWUSpF3ZoEw1MhX+thYopjpv7W6L1yGsyk
- wBCjx+EHXhV5ZKS31EMsaCIup/bbbjIlqEKz9Rh/+h0fMQEY4uU8U8NDSNSjgpMb
- WGnawq7I25hHR36yjLMWOw4qaD1zhlr2+X1x/ZZ8Xo9qxywiDbINWmNlw==
+ :mime-version:content-transfer-encoding; s=fm3; bh=5PjXi9bBdv+4n
+ kmTJerIj0zlz1FXuUlQAWhQKK2NESo=; b=OgS8ONelBeCCCGwvwPNU3lImyIsG2
+ XSq+1eZajzt/ZgGVIiH954VmyYkuTkN33+SKMxn69KZ5MN49RjNCA06NJz9gQn7I
+ kYh9kAaXVVgOi8xXbiejYKe32kfz3e7FJCf4SaZI4r/04nv6FKqvsWR/zlDwZH+z
+ O13FPvMnkYFFVF2oij6KohnI819dGKzMX7lSBd8Zi5Sfq86t1SI4c5oy+VhQXlun
+ 6Gxg6kA51j0JaU3pWXc1rnBSmOUZHjeu9vISOToh9n/FWpvzUJ8rxT62eDxjAnR2
+ PRVHU6S9m5yFS2UTQYealSBqbySKUUeoYln3y6xITO0YCzW9EKJDD7CnQ==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm3; bh=yLQnwe/3jMVbQsjYdQ49tWPI3mLW2x2xLpZ69CsBrv0=; b=E5nnmjeh
- n4NyUKFmYb8M6fvMOE+O7RMx73ut/aNKIUT5r1iNHnRS//uEf8uyjiv6Hg9V1KfE
- pBJ8/X7GswJh5xKZYRJlNvrmiCYGxoaiZpoIGmcTkTYp9IlFxaUyYX+qCJ7ewTL7
- yiBVh0SfWzGuE8iDu3J3/nYhGFqBBHauhOAk9IQuTEWoB7VcHqmbffEKIRYqz9+j
- k4+EDuCeQoz5tQTYLXRNjxBEwOIL39jjbTMmxaGNmmhPcPEXbzapw008ewfhOija
- vZ/+zHucVCsyGThAFn2HRBoVPp7E6Or24w9dUWFUlzWzTdvn0x2BFfQgQtTpLhOa
- 6OC8mXdETAVmjQ==
-X-ME-Sender: <xms:UeI_XT2omka96W2QgqjVDeHhao2oGHA3QvpBGfrQbq-TAXrtt3dKVQ>
+ fm3; bh=5PjXi9bBdv+4nkmTJerIj0zlz1FXuUlQAWhQKK2NESo=; b=bIub1S0x
+ R6+ftucgEcf6vJpOXK4+0sT5+D5FziMENJfdWW7WxuakekVrM/ztatKqtAXh3kKA
+ yPEvTaXRjBrq6mA7LrLhBymxec9MG5p3vMJPo/271FssVFugfi2pyFcJZbmob7dD
+ MPGIdsFTlk3f922wdT+o36fTiEO/7ZSWCeD4dHorkSUPM+S6I4Iq/uoG4oH/zQ6D
+ hyYrE8sy4YoNetwIdXdPbFmxqr2jq3UHO5wu+rH6RboeDvQ+AucvWdS31U4O6ZbW
+ VDEitrusDShbXdj3mlLT3QDKTeGTzPtF2tjWYTFE+/oCwyQBY5Dl326ebGCoomWr
+ uJVJ3rjvNZz+ug==
+X-ME-Sender: <xms:VeI_XSVceDB6DIizqXU2Hm5eDMRIkptNetRKswW2vYBQQP4SFg1gfA>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrledvgddutdejucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucenucfjughrpefhvffufffkofgjfhgggfestdekre
  dtredttdenucfhrhhomheptehnughrvgifucflvghffhgvrhihuceorghnughrvgifsegr
- jhdrihgurdgruheqnecuffhomhgrihhnpeguvghvihgtvghtrhgvvgdrohhrghenucfkph
- epvddtvddrkedurddukedrfedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpegrnhgurhgv
- fiesrghjrdhiugdrrghunecuvehluhhsthgvrhfuihiivgeptd
-X-ME-Proxy: <xmx:UeI_XfAtyZROvcAAaCU1w5P77jKGmYaAWcLhk6oe5qWgazRUNU7MOQ>
- <xmx:UeI_XfhMFwcj6qwvfdGeUR7c-t7FOPvK2vhfcGSXFphXc0H8gwbFtQ>
- <xmx:UeI_XRMk8SB7xacR4_ReI6GeCxdIh7ziBxdKdpq92jv-H0uXdZ9YGA>
- <xmx:UeI_XR-wHq1NYliSsGRjfA9fCHe-SqgWXaIdV_CZFiYsRksKyRi3sw>
+ jhdrihgurdgruheqnecukfhppedvtddvrdekuddrudekrdeftdenucfrrghrrghmpehmrg
+ hilhhfrhhomheprghnughrvgifsegrjhdrihgurdgruhenucevlhhushhtvghrufhiiigv
+ pedt
+X-ME-Proxy: <xmx:VeI_XVy__5DQy0oRarLiBRLuJ1QGlz39p5HTQvjMH_Hi5RWd_gRcsg>
+ <xmx:VeI_XawYAFxnW7pgJ9NfSCakX5LjuhLJAmBQIv5MlTd4f_Tcpqx6iw>
+ <xmx:VeI_XSBzR0PIe9RD_A_K304u2ZpknbGF6g_rgql6w2b1jGqSQdvxBQ>
+ <xmx:VeI_XSVcytPToN7Zf7Mq-oXQUsWyobLxG_Rb5HoC8Y6czVq9Ztp_dA>
 Received: from mistburn.bha-au.ibmmobiledemo.com (bh02i525f01.au.ibm.com
  [202.81.18.30])
- by mail.messagingengine.com (Postfix) with ESMTPA id 351DD8006F;
- Tue, 30 Jul 2019 02:23:08 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 8140180066;
+ Tue, 30 Jul 2019 02:23:13 -0400 (EDT)
 From: Andrew Jeffery <andrew@aj.id.au>
 To: linux-mmc@vger.kernel.org
-Subject: [PATCH v3 1/2] dt-bindings: mmc: Document Aspeed SD controller
-Date: Tue, 30 Jul 2019 15:53:15 +0930
-Message-Id: <20190730062316.32037-2-andrew@aj.id.au>
+Subject: [PATCH v3 2/2] mmc: Add support for the ASPEED SD controller
+Date: Tue, 30 Jul 2019 15:53:16 +0930
+Message-Id: <20190730062316.32037-3-andrew@aj.id.au>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190730062316.32037-1-andrew@aj.id.au>
 References: <20190730062316.32037-1-andrew@aj.id.au>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_232314_146750_72D0D053 
-X-CRM114-Status: GOOD (  10.66  )
+X-CRM114-CacheID: sfid-20190729_232318_882746_15E9B8E6 
+X-CRM114-Status: GOOD (  21.28  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -113,128 +113,418 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The ASPEED SD/SDIO/eMMC controller exposes two slots implementing the
-SDIO Host Specification v2.00, with 1 or 4 bit data buses, or an 8 bit
-data bus if only a single slot is enabled.
+Add a minimal driver for ASPEED's SD controller, which exposes two
+SDHCIs.
 
+The ASPEED design implements a common register set for the SDHCIs, and
+moves some of the standard configuration elements out to this common
+area (e.g. 8-bit mode, and card detect configuration which is not
+currently supported).
+
+The SD controller has a dedicated hardware interrupt that is shared
+between the slots. The common register set exposes information on which
+slot triggered the interrupt; early revisions of the patch introduced an
+irqchip for the register, but reality is it doesn't behave as an
+irqchip, and the result fits awkwardly into the irqchip APIs. Instead
+I've taken the simple approach of using the IRQ as a shared IRQ with
+some minor performance impact for the second slot.
+
+Ryan was the original author of the patch - I've taken his work and
+massaged it to drop the irqchip support and rework the devicetree
+integration. The driver has been smoke tested under qemu against a
+minimal SD controller model and lightly tested on an ast2500-evb.
+
+Signed-off-by: Ryan Chen <ryanchen.aspeed@gmail.com>
 Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
 
 ---
 v3:
-* Fix compatible enums
-* Add AST2600 compatibles
-* Describe #address-cells / #size-cells
+* Add AST2600 compatible
+* Drop SDHCI_QUIRK2_CLOCK_DIV_ZERO_BROKEN
+* Ensure slot number is valid
+* Fix build with CONFIG_MODULES
+* Fix module license string
+* Non-PCI devices won't die
+* Rename aspeed_sdc_configure_8bit_mode()
+* Rename aspeed_sdhci_pdata
+* Switch to sdhci_enable_clk()
+* Use PTR_ERR() on the right `struct platform_device *`
 ---
- .../devicetree/bindings/mmc/aspeed,sdhci.yaml | 100 ++++++++++++++++++
- 1 file changed, 100 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/mmc/aspeed,sdhci.yaml
+ drivers/mmc/host/Kconfig           |  12 ++
+ drivers/mmc/host/Makefile          |   1 +
+ drivers/mmc/host/sdhci-of-aspeed.c | 328 +++++++++++++++++++++++++++++
+ 3 files changed, 341 insertions(+)
+ create mode 100644 drivers/mmc/host/sdhci-of-aspeed.c
 
-diff --git a/Documentation/devicetree/bindings/mmc/aspeed,sdhci.yaml b/Documentation/devicetree/bindings/mmc/aspeed,sdhci.yaml
+diff --git a/drivers/mmc/host/Kconfig b/drivers/mmc/host/Kconfig
+index 14d89a108edd..0f8a230de2f3 100644
+--- a/drivers/mmc/host/Kconfig
++++ b/drivers/mmc/host/Kconfig
+@@ -154,6 +154,18 @@ config MMC_SDHCI_OF_ARASAN
+ 
+ 	  If unsure, say N.
+ 
++config MMC_SDHCI_OF_ASPEED
++	tristate "SDHCI OF support for the ASPEED SDHCI controller"
++	depends on MMC_SDHCI_PLTFM
++	depends on OF
++	help
++	  This selects the ASPEED Secure Digital Host Controller Interface.
++
++	  If you have a controller with this interface, say Y or M here. You
++	  also need to enable an appropriate bus interface.
++
++	  If unsure, say N.
++
+ config MMC_SDHCI_OF_AT91
+ 	tristate "SDHCI OF support for the Atmel SDMMC controller"
+ 	depends on MMC_SDHCI_PLTFM
+diff --git a/drivers/mmc/host/Makefile b/drivers/mmc/host/Makefile
+index 73578718f119..390ee162fe71 100644
+--- a/drivers/mmc/host/Makefile
++++ b/drivers/mmc/host/Makefile
+@@ -84,6 +84,7 @@ obj-$(CONFIG_MMC_SDHCI_ESDHC_IMX)	+= sdhci-esdhc-imx.o
+ obj-$(CONFIG_MMC_SDHCI_DOVE)		+= sdhci-dove.o
+ obj-$(CONFIG_MMC_SDHCI_TEGRA)		+= sdhci-tegra.o
+ obj-$(CONFIG_MMC_SDHCI_OF_ARASAN)	+= sdhci-of-arasan.o
++obj-$(CONFIG_MMC_SDHCI_OF_ASPEED)	+= sdhci-of-aspeed.o
+ obj-$(CONFIG_MMC_SDHCI_OF_AT91)		+= sdhci-of-at91.o
+ obj-$(CONFIG_MMC_SDHCI_OF_ESDHC)	+= sdhci-of-esdhc.o
+ obj-$(CONFIG_MMC_SDHCI_OF_HLWD)		+= sdhci-of-hlwd.o
+diff --git a/drivers/mmc/host/sdhci-of-aspeed.c b/drivers/mmc/host/sdhci-of-aspeed.c
 new file mode 100644
-index 000000000000..dd2a00c59641
+index 000000000000..d31785ec90d7
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/mmc/aspeed,sdhci.yaml
-@@ -0,0 +1,100 @@
-+# SPDX-License-Identifier: GPL-2.0-or-later
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/mmc/aspeed,sdhci.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
++++ b/drivers/mmc/host/sdhci-of-aspeed.c
+@@ -0,0 +1,328 @@
++// SPDX-License-Identifier: GPL-2.0-or-later
++/* Copyright (C) 2019 ASPEED Technology Inc. */
++/* Copyright (C) 2019 IBM Corp. */
 +
-+title: ASPEED SD/SDIO/eMMC Controller
++#include <linux/clk.h>
++#include <linux/delay.h>
++#include <linux/device.h>
++#include <linux/io.h>
++#include <linux/mmc/host.h>
++#include <linux/module.h>
++#include <linux/of_address.h>
++#include <linux/of.h>
++#include <linux/of_platform.h>
++#include <linux/platform_device.h>
++#include <linux/spinlock.h>
 +
-+maintainers:
-+  - Andrew Jeffery <andrew@aj.id.au>
-+  - Ryan Chen <ryanchen.aspeed@gmail.com>
++#include "sdhci-pltfm.h"
 +
-+description: |+
-+  The ASPEED SD/SDIO/eMMC controller exposes two slots implementing the SDIO
-+  Host Specification v2.00, with 1 or 4 bit data buses, or an 8 bit data bus if
-+  only a single slot is enabled.
++#define ASPEED_SDC_INFO		0x00
++#define   ASPEED_SDC_S1MMC8	BIT(25)
++#define   ASPEED_SDC_S0MMC8	BIT(24)
 +
-+  The two slots are supported by a common configuration area. As the SDHCIs for
-+  the slots are dependent on the common configuration area, they are described
-+  as child nodes.
++struct aspeed_sdc {
++	struct clk *clk;
++	struct resource *res;
 +
-+properties:
-+  compatible:
-+    enum:
-+      - aspeed,ast2400-sd-controller
-+      - aspeed,ast2500-sd-controller
-+      - aspeed,ast2600-sd-controller
-+  reg:
-+    maxItems: 1
-+    description: Common configuration registers
-+  "#address-cells":
-+    const: 1
-+  "#size-cells":
-+    const: 1
-+  ranges: true
-+  clocks:
-+    maxItems: 1
-+    description: The SD/SDIO controller clock gate
++	spinlock_t lock;
++	void __iomem *regs;
++};
 +
-+patternProperties:
-+  "^sdhci@[0-9a-f]+$":
-+    type: object
-+    properties:
-+      compatible:
-+        enum:
-+          - aspeed,ast2400-sdhci
-+          - aspeed,ast2500-sdhci
-+          - aspeed,ast2600-sdhci
-+      reg:
-+        maxItems: 1
-+        description: The SDHCI registers
-+      clocks:
-+        maxItems: 1
-+        description: The SD bus clock
-+      interrupts:
-+        maxItems: 1
-+        description: The SD interrupt shared between both slots
-+    required:
-+      - compatible
-+      - reg
-+      - clocks
-+      - interrupts
++struct aspeed_sdhci {
++	struct aspeed_sdc *parent;
++	u32 width_mask;
++};
 +
-+additionalProperties: false
++static void aspeed_sdc_configure_8bit_mode(struct aspeed_sdc *sdc,
++					   struct aspeed_sdhci *sdhci,
++					   bool bus8)
++{
++	u32 info;
 +
-+required:
-+  - compatible
-+  - reg
-+  - "#address-cells"
-+  - "#size-cells"
-+  - ranges
-+  - clocks
++	/* Set/clear 8 bit mode */
++	spin_lock(&sdc->lock);
++	info = readl(sdc->regs + ASPEED_SDC_INFO);
++	if (bus8)
++		info |= sdhci->width_mask;
++	else
++		info &= ~sdhci->width_mask;
++	writel(info, sdc->regs + ASPEED_SDC_INFO);
++	spin_unlock(&sdc->lock);
++}
 +
-+examples:
-+  - |
-+    #include <dt-bindings/clock/aspeed-clock.h>
-+    sdc@1e740000 {
-+            compatible = "aspeed,ast2500-sd-controller";
-+            reg = <0x1e740000 0x100>;
-+            #address-cells = <1>;
-+            #size-cells = <1>;
-+            ranges = <0 0x1e740000 0x10000>;
-+            clocks = <&syscon ASPEED_CLK_GATE_SDCLK>;
++static void aspeed_sdhci_set_clock(struct sdhci_host *host, unsigned int clock)
++{
++	int div;
++	u16 clk;
 +
-+            sdhci0: sdhci@100 {
-+                    compatible = "aspeed,ast2500-sdhci";
-+                    reg = <0x100 0x100>;
-+                    interrupts = <26>;
-+                    sdhci,auto-cmd12;
-+                    clocks = <&syscon ASPEED_CLK_SDIO>;
-+            };
++	if (clock == host->clock)
++		return;
 +
-+            sdhci1: sdhci@200 {
-+                    compatible = "aspeed,ast2500-sdhci";
-+                    reg = <0x200 0x100>;
-+                    interrupts = <26>;
-+                    sdhci,auto-cmd12;
-+                    clocks = <&syscon ASPEED_CLK_SDIO>;
-+            };
-+    };
++	sdhci_writew(host, 0, SDHCI_CLOCK_CONTROL);
++
++	if (clock == 0)
++		goto out;
++
++	for (div = 1; div < 256; div *= 2) {
++		if ((host->max_clk / div) <= clock)
++			break;
++	}
++	div >>= 1;
++
++	clk = div << SDHCI_DIVIDER_SHIFT;
++
++	sdhci_enable_clk(host, clk);
++
++out:
++	host->clock = clock;
++}
++
++static void aspeed_sdhci_set_bus_width(struct sdhci_host *host, int width)
++{
++	struct sdhci_pltfm_host *pltfm_priv;
++	struct aspeed_sdhci *aspeed_sdhci;
++	struct aspeed_sdc *aspeed_sdc;
++	u8 ctrl;
++
++	pltfm_priv = sdhci_priv(host);
++	aspeed_sdhci = sdhci_pltfm_priv(pltfm_priv);
++	aspeed_sdc = aspeed_sdhci->parent;
++
++	/* Set/clear 8-bit mode */
++	aspeed_sdc_configure_8bit_mode(aspeed_sdc, aspeed_sdhci,
++				       width == MMC_BUS_WIDTH_8);
++
++	/* Set/clear 1 or 4 bit mode */
++	ctrl = sdhci_readb(host, SDHCI_HOST_CONTROL);
++	if (width == MMC_BUS_WIDTH_4)
++		ctrl |= SDHCI_CTRL_4BITBUS;
++	else
++		ctrl &= ~SDHCI_CTRL_4BITBUS;
++	sdhci_writeb(host, ctrl, SDHCI_HOST_CONTROL);
++}
++
++static const struct sdhci_ops aspeed_sdhci_ops = {
++	.set_clock = aspeed_sdhci_set_clock,
++	.get_max_clock = sdhci_pltfm_clk_get_max_clock,
++	.set_bus_width = aspeed_sdhci_set_bus_width,
++	.get_timeout_clock = sdhci_pltfm_clk_get_max_clock,
++	.reset = sdhci_reset,
++	.set_uhs_signaling = sdhci_set_uhs_signaling,
++};
++
++static const struct sdhci_pltfm_data aspeed_sdhci_pdata = {
++	.ops = &aspeed_sdhci_ops,
++	.quirks = SDHCI_QUIRK_CAP_CLOCK_BASE_BROKEN,
++};
++
++static inline int aspeed_sdhci_calculate_slot(struct aspeed_sdhci *dev,
++					      struct resource *res)
++{
++	resource_size_t delta;
++
++	if (!res || resource_type(res) != IORESOURCE_MEM)
++		return -EINVAL;
++
++	if (res->start < dev->parent->res->start)
++		return -EINVAL;
++
++	delta = res->start - dev->parent->res->start;
++	if (delta & (0x100 - 1))
++		return -EINVAL;
++
++	return (delta / 0x100) - 1;
++}
++
++static int aspeed_sdhci_probe(struct platform_device *pdev)
++{
++	struct sdhci_pltfm_host *pltfm_host;
++	struct aspeed_sdhci *dev;
++	struct sdhci_host *host;
++	struct resource *res;
++	int slot;
++	int ret;
++
++	host = sdhci_pltfm_init(pdev, &aspeed_sdhci_pdata, sizeof(*dev));
++	if (IS_ERR(host))
++		return PTR_ERR(host);
++
++	pltfm_host = sdhci_priv(host);
++	dev = sdhci_pltfm_priv(pltfm_host);
++	dev->parent = dev_get_drvdata(pdev->dev.parent);
++
++	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
++	slot = aspeed_sdhci_calculate_slot(dev, res);
++
++	if (slot < 0)
++		return slot;
++	else if (slot >= 2)
++		return -EINVAL;
++
++	dev_info(&pdev->dev, "Configuring for slot %d\n", slot);
++	dev->width_mask = !slot ? ASPEED_SDC_S0MMC8 : ASPEED_SDC_S1MMC8;
++
++	sdhci_get_of_property(pdev);
++
++	pltfm_host->clk = devm_clk_get(&pdev->dev, NULL);
++	if (IS_ERR(pltfm_host->clk))
++		return PTR_ERR(pltfm_host->clk);
++
++	ret = clk_prepare_enable(pltfm_host->clk);
++	if (ret) {
++		dev_err(&pdev->dev, "Unable to enable SDIO clock\n");
++		goto err_pltfm_free;
++	}
++
++	ret = mmc_of_parse(host->mmc);
++	if (ret)
++		goto err_sdhci_add;
++
++	ret = sdhci_add_host(host);
++	if (ret)
++		goto err_sdhci_add;
++
++	return 0;
++
++err_sdhci_add:
++	clk_disable_unprepare(pltfm_host->clk);
++err_pltfm_free:
++	sdhci_pltfm_free(pdev);
++	return ret;
++}
++
++static int aspeed_sdhci_remove(struct platform_device *pdev)
++{
++	struct sdhci_pltfm_host *pltfm_host;
++	struct sdhci_host *host;
++	int dead = 0;
++
++	host = platform_get_drvdata(pdev);
++	pltfm_host = sdhci_priv(host);
++
++	sdhci_remove_host(host, dead);
++
++	clk_disable_unprepare(pltfm_host->clk);
++
++	sdhci_pltfm_free(pdev);
++
++	return 0;
++}
++
++static const struct of_device_id aspeed_sdhci_of_match[] = {
++	{ .compatible = "aspeed,ast2400-sdhci", },
++	{ .compatible = "aspeed,ast2500-sdhci", },
++	{ .compatible = "aspeed,ast2600-sdhci", },
++	{ }
++};
++
++static struct platform_driver aspeed_sdhci_driver = {
++	.driver		= {
++		.name	= "sdhci-aspeed",
++		.of_match_table = aspeed_sdhci_of_match,
++	},
++	.probe		= aspeed_sdhci_probe,
++	.remove		= aspeed_sdhci_remove,
++};
++
++static int aspeed_sdc_probe(struct platform_device *pdev)
++
++{
++	struct device_node *parent, *child;
++	struct aspeed_sdc *sdc;
++	int ret;
++
++	sdc = devm_kzalloc(&pdev->dev, sizeof(*sdc), GFP_KERNEL);
++	if (!sdc)
++		return -ENOMEM;
++
++	spin_lock_init(&sdc->lock);
++
++	sdc->clk = devm_clk_get(&pdev->dev, NULL);
++	if (IS_ERR(sdc->clk))
++		return PTR_ERR(sdc->clk);
++
++	ret = clk_prepare_enable(sdc->clk);
++	if (ret) {
++		dev_err(&pdev->dev, "Unable to enable SDCLK\n");
++		return ret;
++	}
++
++	sdc->res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
++	sdc->regs = devm_ioremap_resource(&pdev->dev, sdc->res);
++	if (IS_ERR(sdc->regs)) {
++		ret = PTR_ERR(sdc->regs);
++		goto err_clk;
++	}
++
++	dev_set_drvdata(&pdev->dev, sdc);
++
++	parent = pdev->dev.of_node;
++	for_each_available_child_of_node(parent, child) {
++		struct platform_device *cpdev;
++
++		cpdev = of_platform_device_create(child, NULL, &pdev->dev);
++		if (IS_ERR(cpdev)) {
++			of_node_put(child);
++			ret = PTR_ERR(cpdev);
++			goto err_clk;
++		}
++	}
++
++	return 0;
++
++err_clk:
++	clk_disable_unprepare(sdc->clk);
++	return ret;
++}
++
++static int aspeed_sdc_remove(struct platform_device *pdev)
++{
++	struct aspeed_sdc *sdc = dev_get_drvdata(&pdev->dev);
++
++	clk_disable_unprepare(sdc->clk);
++
++	return 0;
++}
++
++static const struct of_device_id aspeed_sdc_of_match[] = {
++	{ .compatible = "aspeed,ast2400-sd-controller", },
++	{ .compatible = "aspeed,ast2500-sd-controller", },
++	{ .compatible = "aspeed,ast2600-sd-controller", },
++	{ }
++};
++
++MODULE_DEVICE_TABLE(of, aspeed_sdc_of_match);
++
++static struct platform_driver aspeed_sdc_driver = {
++	.driver		= {
++		.name	= "sd-controller-aspeed",
++		.pm	= &sdhci_pltfm_pmops,
++		.of_match_table = aspeed_sdc_of_match,
++	},
++	.probe		= aspeed_sdc_probe,
++	.remove		= aspeed_sdc_remove,
++};
++
++static int __init aspeed_sdc_init(void)
++{
++	int rc;
++
++	rc = platform_driver_register(&aspeed_sdhci_driver);
++	if (rc < 0)
++		return rc;
++
++	return platform_driver_register(&aspeed_sdc_driver);
++}
++module_init(aspeed_sdc_init);
++
++static void __exit aspeed_sdc_exit(void)
++{
++	platform_driver_unregister(&aspeed_sdc_driver);
++	platform_driver_unregister(&aspeed_sdhci_driver);
++}
++module_exit(aspeed_sdc_exit);
++
++MODULE_DESCRIPTION("Driver for the ASPEED SD/SDIO/SDHCI Controllers");
++MODULE_AUTHOR("Ryan Chen <ryan_chen@aspeedtech.com>");
++MODULE_AUTHOR("Andrew Jeffery <andrew@aj.id.au>");
++MODULE_LICENSE("GPL");
 -- 
 2.20.1
 
