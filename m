@@ -2,80 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E740E7AABD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 16:18:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 909F27AAD1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 16:21:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Sm1qaf9ahM9erHV7yPpUD+GIsaYBd3mq241F+3jduW0=; b=ld0dJbjBuei8y3
-	eqdc3vk1bWVIiSaP9uPp53WdV8Bkd4a2J/VZNqGBzH10aqtBiD+idBEcfe9YK659ORWQJSGptZmza
-	bk5fXs4Nz5U21Wg1JsP1b7bMnnqjzSGb3UG27KV60isMbPLseSegWk6qTKbsLyZc+bC1RAohu1mt+
-	poI1CJ6ZqWUKuMlV2KP0mbhOjQlohx+ds8J1SLIQ6rEXHyJqnzMJwywi02KDbTBp4DALWw4UqQZvB
-	36ABG4Z0eftFjf4UP3Alec8qKskLumnwH8WlhhS1f9a4kKvhl70l6vELUqR8Rx8tOh2DjE8a17w3D
-	1ytPS39MTwUSUHJfdZ6w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=1HOs52UIrWDPJbgiD26hkkcyMuTh8OJthGMTw8yUmCw=; b=o5f
+	SvL1Vun2J6PIT02TNm2y7I62EehweGblx04gWC9vVDUgmZX35EyRaRz/xuus4FOGrazALb7SEglZM
+	ZbqvjwRPpRqsKIytIa9Zljciw0DRudgkib5/2zgfJuAdDyKHk8sBJ0bXB76T5XlJd0cmwae3eRp7q
+	3GOYrCC6a+e6lQoQR42CIKnecANRDDNZAUT81c7h7geeaf58AQWoPh2t0Lg8KLwpIWlQYJtAyCtIu
+	soXT6TwrgVGbOHxTpFznPbcvEm4WJvw9QiUsNrN1RtPFQY7QWxU/ORElEah0QPfhzZEiKc4dJD6V7
+	O/13ZSSVZT6n+hoQ0KH3n3cWeMaQewQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsSx3-0008WT-6u; Tue, 30 Jul 2019 14:18:05 +0000
-Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsSwq-0008Vp-GA
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 14:17:54 +0000
-Received: by mail-vs1-xe43.google.com with SMTP id j26so43586535vsn.10
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 30 Jul 2019 07:17:51 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=vanguardiasur-com-ar.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=RK299o1I9nQNlsSGV+4buZQzWUsPGHe+LviTSNSniew=;
- b=SxaVkioTG0t2pjLf5OyxRf9JMawK69C8+zJxxRkOddWQ67OVwOAduPXdi5/peQBnKk
- lxi9e/T1J1zIv9jw/oMZp6JAuybJF9n7nnxAPDDqYruh+tZLoXZKJ/Q4A3AT5yM3UpDd
- xwPcHIMWGUZGuT5Psh9H+Jxgn1UEA1p7tgXfDI0/kw+RynaQ8a6IsxMh9b2huMgPjP3o
- mwBg41OPB8I5f2RDxKql10x6ujzkOMge/X4MS/u5FTbnMA54GyC8MC3VQhza3klGnXYI
- k019OGWuAeXXutGGH3OceFAdoSGs9lXpunq0Ya6qlRFlWPZiHKR4GNpyV6lXlQkxRe3o
- NBcA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=RK299o1I9nQNlsSGV+4buZQzWUsPGHe+LviTSNSniew=;
- b=AG7VOq52wH+T9YQUDGQmV4uZTsDMn1McjqoFNHNDleaVrthQCm44+SMSNnlYRziwPl
- f30XnkdjRTbNGbMqOfnShoRAd01j0q659vT8M2JpyloivaUM+TnrNvzbNkAJnZe2EhvA
- C9XiXID3MX+RYNfOmCDLaEr2Dj0L+Y+8qeBlQOrgKzCIcCIae9veVAl+w3fsELU1sPjY
- zjN5Rw85LxzSJ/jK9iZdkJwzKvyHMMj9r7lzowrggf+8GrGZt3BTl5058mUHRNN305z7
- IF8JcZU93XBlrrq7qAlFZEPpoL0gOY4qR8SGU7vzBMGWWzSBsWOe5m/9Z8I8SQt+RG7A
- KqDw==
-X-Gm-Message-State: APjAAAVqFGXGo5B405cOIm/9uICTtWTPZtrpwScunP6jBeF15t6eZ/Qb
- 00oBrL2OoF0VzW45TsH2hQCLQSlyeMnl1LXRPAs=
-X-Google-Smtp-Source: APXvYqzOWV7w5UY6HfuniMmOZbt2GqzgJCloyN6OJVs76PDRwHfZfJxx5YKZtGvjUeFd4Nxu5FnCxu0Lhw8PkE14veU=
-X-Received: by 2002:a67:e9ca:: with SMTP id q10mr41517640vso.105.1564496270292; 
- Tue, 30 Jul 2019 07:17:50 -0700 (PDT)
-MIME-Version: 1.0
-References: <3601e3ae4357d48b3294f42781d0f19095d1b00e.1564479382.git.joabreu@synopsys.com>
-In-Reply-To: <3601e3ae4357d48b3294f42781d0f19095d1b00e.1564479382.git.joabreu@synopsys.com>
-From: Ezequiel Garcia <ezequiel@vanguardiasur.com.ar>
-Date: Tue, 30 Jul 2019 11:17:39 -0300
-Message-ID: <CAAEAJfDU23Q2G+qXW+BubX3FM3MwSGhJ15NrmDuzoM6UFfFLmw@mail.gmail.com>
-Subject: Re: [PATCH net] net: stmmac: Sync RX Buffer upon allocation
-To: Jose Abreu <Jose.Abreu@synopsys.com>
+	id 1hsT00-0001f4-9u; Tue, 30 Jul 2019 14:21:08 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hsSzn-0001ek-QX
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 14:20:57 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D8E7628;
+ Tue, 30 Jul 2019 07:20:54 -0700 (PDT)
+Received: from e112298-lin.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 839A13F694;
+ Tue, 30 Jul 2019 07:20:53 -0700 (PDT)
+From: Julien Thierry <julien.thierry.kdev@gmail.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] arm64: Relax ICC_PMR_EL1 accesses when ICC_CTLR_EL1.PMHE is
+ clear
+Date: Tue, 30 Jul 2019 15:20:45 +0100
+Message-Id: <1564496445-53486-1-git-send-email-julien.thierry.kdev@gmail.com>
+X-Mailer: git-send-email 1.9.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_071752_677636_719B3A5E 
-X-CRM114-Status: GOOD (  11.92  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190730_072055_952890_A096E2A2 
+X-CRM114-Status: GOOD (  18.01  )
+X-Spam-Score: 3.2 (+++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (3.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 1.0 FORGED_GMAIL_RCVD      'From' gmail.com does not match 'Received'
+ headers
+ 0.0 DKIM_ADSP_CUSTOM_MED   No valid author signature, adsp_override is
+ CUSTOM_MED
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (julien.thierry.kdev[at]gmail.com)
+ 1.2 NML_ADSP_CUSTOM_MED    ADSP custom_med hit, and not from a mailing
+ list
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,48 +66,286 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Joao Pinto <Joao.Pinto@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Networking <netdev@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-stm32@st-md-mailman.stormreply.com,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>, Jon Hunter <jonathanh@nvidia.com>,
- "David S. Miller" <davem@davemloft.net>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Marc Zyngier <maz@kernel.org>, Will Deacon <will@kernel.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, James Morse <james.morse@arm.com>,
+ huawei.libin@huawei.com, guohanjun@huawei.com, liwei391@huawei.com,
+ julien.thierry.kdev@gmail.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 30 Jul 2019 at 10:57, Jose Abreu <Jose.Abreu@synopsys.com> wrote:
->
-> With recent changes that introduced support for Page Pool in stmmac, Jon
-> reported that NFS boot was no longer working on an ARM64 based platform
-> that had the IP behind an IOMMU.
->
-> As Page Pool API does not guarantee DMA syncing because of the use of
-> DMA_ATTR_SKIP_CPU_SYNC flag, we have to explicit sync the whole buffer upon
-> re-allocation because we are always re-using same pages.
->
-> In fact, ARM64 code invalidates the DMA area upon two situations [1]:
->         - sync_single_for_cpu(): Invalidates if direction != DMA_TO_DEVICE
->         - sync_single_for_device(): Invalidates if direction == DMA_FROM_DEVICE
->
-> So, as we must invalidate both the current RX buffer and the newly allocated
-> buffer we propose this fix.
->
-> [1] arch/arm64/mm/cache.S
->
-> Reported-by: Jon Hunter <jonathanh@nvidia.com>
-> Tested-by: Jon Hunter <jonathanh@nvidia.com>
-> Fixes: 2af6106ae949 ("net: stmmac: Introducing support for Page Pool")
-> Signed-off-by: Jose Abreu <joabreu@synopsys.com>
+From: Marc Zyngier <marc.zyngier@arm.com>
 
-Thanks a lot for the bug hunt and the fix. This fixes NFS mounting
-on my RK3288 and RK3399 boards.
+The GICv3 architecture specification is incredibly misleading when it
+comes to PMR and the requirement for a DSB. It turns out that this DSB
+is only required if the CPU interface sends an Upstream Control
+message to the redistributor in order to update the RD's view of PMR.
 
-Tested-by: Ezequiel Garcia <ezequiel@collabora.com>
+This message is only sent when ICC_CTLR_EL1.PMHE is set, which isn't
+the case in Linux. It can still be set from EL3, so some special care
+is required. But the upshot is that in the (hopefuly large) majority
+of the cases, we can drop the DSB altogether.
+
+This requires yet another capability and some more runtime patching.
+
+Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
+[JT: rebased on top of priority masking fixes,
+     factorize pmr synchronization]
+Signed-off-by: Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Will Deacon <will@kernel.org>
+Cc: Marc Zyngier <maz@kernel.org>
+Cc: James Morse <james.morse@arm.com>
+Cc: Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
+---
+ arch/arm64/include/asm/barrier.h   |  8 ++++++++
+ arch/arm64/include/asm/cpucaps.h   |  3 ++-
+ arch/arm64/include/asm/daifflags.h |  3 ++-
+ arch/arm64/include/asm/irqflags.h  | 19 ++++++++++---------
+ arch/arm64/include/asm/kvm_host.h  |  3 +--
+ arch/arm64/kernel/cpufeature.c     | 33 +++++++++++++++++++++++++++++++++
+ arch/arm64/kernel/entry.S          |  4 ++--
+ arch/arm64/kvm/hyp/switch.c        |  3 ++-
+ include/linux/irqchip/arm-gic-v3.h |  2 ++
+ 9 files changed, 62 insertions(+), 16 deletions(-)
+
+Testing this on d05, there seems to be a ~15% improvement on hackbench.
+This brings us on par with the no CONFIG_ARM64_PSEUDO_NMI build (or
+even better):
+
+Command: hackbench 200 process 1000
+
+Average over 20 runs:
+- v5.3-rc2, no irq priorities: 8.57345 sec
+- v5.3-rc2, irq priorities: 9.99225 sec
+- v5.3-rc2, "relaxed": 8.26705 sec
+
+diff --git a/arch/arm64/include/asm/barrier.h b/arch/arm64/include/asm/barrier.h
+index e0e2b19..bca9faf 100644
+--- a/arch/arm64/include/asm/barrier.h
++++ b/arch/arm64/include/asm/barrier.h
+@@ -29,6 +29,14 @@
+ 						 SB_BARRIER_INSN"nop\n",	\
+ 						 ARM64_HAS_SB))
+
++#ifdef CONFIG_ARM64_PSEUDO_NMI
++#define pmr_sync()	asm volatile(ALTERNATIVE("nop",		\
++						 "dsb	sy",	\
++						 ARM64_PMR_REQUIRES_SYNC))
++#else
++#define pmr_sync()	do {} while (0)
++#endif
++
+ #define mb()		dsb(sy)
+ #define rmb()		dsb(ld)
+ #define wmb()		dsb(st)
+diff --git a/arch/arm64/include/asm/cpucaps.h b/arch/arm64/include/asm/cpucaps.h
+index f19fe4b..616437d 100644
+--- a/arch/arm64/include/asm/cpucaps.h
++++ b/arch/arm64/include/asm/cpucaps.h
+@@ -52,7 +52,8 @@
+ #define ARM64_HAS_IRQ_PRIO_MASKING		42
+ #define ARM64_HAS_DCPODP			43
+ #define ARM64_WORKAROUND_1463225		44
++#define ARM64_PMR_REQUIRES_SYNC			45
+
+-#define ARM64_NCAPS				45
++#define ARM64_NCAPS				46
+
+ #endif /* __ASM_CPUCAPS_H */
+diff --git a/arch/arm64/include/asm/daifflags.h b/arch/arm64/include/asm/daifflags.h
+index 987926e..00b1679 100644
+--- a/arch/arm64/include/asm/daifflags.h
++++ b/arch/arm64/include/asm/daifflags.h
+@@ -8,6 +8,7 @@
+ #include <linux/irqflags.h>
+
+ #include <asm/arch_gicv3.h>
++#include <asm/barrier.h>
+ #include <asm/cpufeature.h>
+
+ #define DAIF_PROCCTX		0
+@@ -63,7 +64,7 @@ static inline void local_daif_restore(unsigned long flags)
+
+ 		if (system_uses_irq_prio_masking()) {
+ 			gic_write_pmr(GIC_PRIO_IRQON);
+-			dsb(sy);
++			pmr_sync();
+ 		}
+ 	} else if (system_uses_irq_prio_masking()) {
+ 		u64 pmr;
+diff --git a/arch/arm64/include/asm/irqflags.h b/arch/arm64/include/asm/irqflags.h
+index 7872f26..a5e7115 100644
+--- a/arch/arm64/include/asm/irqflags.h
++++ b/arch/arm64/include/asm/irqflags.h
+@@ -8,6 +8,7 @@
+ #ifdef __KERNEL__
+
+ #include <asm/alternative.h>
++#include <asm/barrier.h>
+ #include <asm/ptrace.h>
+ #include <asm/sysreg.h>
+
+@@ -36,14 +37,14 @@ static inline void arch_local_irq_enable(void)
+ 	}
+
+ 	asm volatile(ALTERNATIVE(
+-		"msr	daifclr, #2		// arch_local_irq_enable\n"
+-		"nop",
+-		__msr_s(SYS_ICC_PMR_EL1, "%0")
+-		"dsb	sy",
++		"msr	daifclr, #2		// arch_local_irq_enable",
++		__msr_s(SYS_ICC_PMR_EL1, "%0"),
+ 		ARM64_HAS_IRQ_PRIO_MASKING)
+ 		:
+ 		: "r" ((unsigned long) GIC_PRIO_IRQON)
+ 		: "memory");
++
++	pmr_sync();
+ }
+
+ static inline void arch_local_irq_disable(void)
+@@ -118,14 +119,14 @@ static inline unsigned long arch_local_irq_save(void)
+ static inline void arch_local_irq_restore(unsigned long flags)
+ {
+ 	asm volatile(ALTERNATIVE(
+-			"msr	daif, %0\n"
+-			"nop",
+-			__msr_s(SYS_ICC_PMR_EL1, "%0")
+-			"dsb	sy",
+-			ARM64_HAS_IRQ_PRIO_MASKING)
++		"msr	daif, %0",
++		__msr_s(SYS_ICC_PMR_EL1, "%0"),
++		ARM64_HAS_IRQ_PRIO_MASKING)
+ 		:
+ 		: "r" (flags)
+ 		: "memory");
++
++	pmr_sync();
+ }
+
+ #endif
+diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
+index f656169..5ecb091 100644
+--- a/arch/arm64/include/asm/kvm_host.h
++++ b/arch/arm64/include/asm/kvm_host.h
+@@ -600,8 +600,7 @@ static inline void kvm_arm_vhe_guest_enter(void)
+ 	 * local_daif_mask() already sets GIC_PRIO_PSR_I_SET, we just need a
+ 	 * dsb to ensure the redistributor is forwards EL2 IRQs to the CPU.
+ 	 */
+-	if (system_uses_irq_prio_masking())
+-		dsb(sy);
++	pmr_sync();
+ }
+
+ static inline void kvm_arm_vhe_guest_exit(void)
+diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+index f29f36a..b1c036f 100644
+--- a/arch/arm64/kernel/cpufeature.c
++++ b/arch/arm64/kernel/cpufeature.c
+@@ -1246,6 +1246,26 @@ static bool can_use_gic_priorities(const struct arm64_cpu_capabilities *entry,
+ {
+ 	return enable_pseudo_nmi && has_useable_gicv3_cpuif(entry, scope);
+ }
++
++static bool check_icc_ctlr_pmhe(const struct arm64_cpu_capabilities *entry,
++				int scope)
++{
++	bool res = can_use_gic_priorities(entry, scope);
++
++	if (res) {
++		u64 val;
++
++		/*
++		 * Linux itself doesn't use 1:N distribution, so has
++		 * no need to set PMHE. The only reason to have it set
++		 * is if EL3 requires it (and we can't change it)
++		 */
++		val = read_sysreg_s(SYS_ICC_CTLR_EL1);
++		res &= !!(val & ICC_CTLR_EL1_PMHE_MASK);
++	}
++
++	return res;
++}
+ #endif
+
+ static const struct arm64_cpu_capabilities arm64_features[] = {
+@@ -1547,6 +1567,19 @@ static bool can_use_gic_priorities(const struct arm64_cpu_capabilities *entry,
+ 		.sign = FTR_UNSIGNED,
+ 		.min_field_value = 1,
+ 	},
++	{
++		/*
++		 * Depends on using IRQ priority masking
++		 */
++		.desc = "IRQ priority masking requires synchronization",
++		.capability = ARM64_PMR_REQUIRES_SYNC,
++		.type = ARM64_CPUCAP_STRICT_BOOT_CPU_FEATURE,
++		.matches = check_icc_ctlr_pmhe,
++		.sys_reg = SYS_ID_AA64PFR0_EL1,
++		.field_pos = ID_AA64PFR0_GIC_SHIFT,
++		.sign = FTR_UNSIGNED,
++		.min_field_value = 1,
++	},
+ #endif
+ 	{},
+ };
+diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
+index 320a30d..d35ceee 100644
+--- a/arch/arm64/kernel/entry.S
++++ b/arch/arm64/kernel/entry.S
+@@ -269,9 +269,9 @@ alternative_else_nop_endif
+ alternative_if ARM64_HAS_IRQ_PRIO_MASKING
+ 	ldr	x20, [sp, #S_PMR_SAVE]
+ 	msr_s	SYS_ICC_PMR_EL1, x20
+-	/* Ensure priority change is seen by redistributor */
+-	dsb	sy
+ alternative_else_nop_endif
++	/* Ensure priority change is seen by redistributor */
++alternative_insn nop, "dsb sy", ARM64_PMR_REQUIRES_SYNC
+
+ 	ldp	x21, x22, [sp, #S_PC]		// load ELR, SPSR
+ 	.if	\el == 0
+diff --git a/arch/arm64/kvm/hyp/switch.c b/arch/arm64/kvm/hyp/switch.c
+index adaf266..5bb9312 100644
+--- a/arch/arm64/kvm/hyp/switch.c
++++ b/arch/arm64/kvm/hyp/switch.c
+@@ -13,6 +13,7 @@
+ #include <kvm/arm_psci.h>
+
+ #include <asm/arch_gicv3.h>
++#include <asm/barrier.h>
+ #include <asm/cpufeature.h>
+ #include <asm/kprobes.h>
+ #include <asm/kvm_asm.h>
+@@ -605,7 +606,7 @@ int __hyp_text __kvm_vcpu_run_nvhe(struct kvm_vcpu *vcpu)
+ 	 */
+ 	if (system_uses_irq_prio_masking()) {
+ 		gic_write_pmr(GIC_PRIO_IRQON | GIC_PRIO_PSR_I_SET);
+-		dsb(sy);
++		pmr_sync();
+ 	}
+
+ 	vcpu = kern_hyp_va(vcpu);
+diff --git a/include/linux/irqchip/arm-gic-v3.h b/include/linux/irqchip/arm-gic-v3.h
+index 67c4b98..74a8a3a 100644
+--- a/include/linux/irqchip/arm-gic-v3.h
++++ b/include/linux/irqchip/arm-gic-v3.h
+@@ -460,6 +460,8 @@
+ #define ICC_CTLR_EL1_EOImode_MASK	(1 << ICC_CTLR_EL1_EOImode_SHIFT)
+ #define ICC_CTLR_EL1_CBPR_SHIFT		0
+ #define ICC_CTLR_EL1_CBPR_MASK		(1 << ICC_CTLR_EL1_CBPR_SHIFT)
++#define ICC_CTLR_EL1_PMHE_SHIFT		6
++#define ICC_CTLR_EL1_PMHE_MASK		(1 << ICC_CTLR_EL1_PMHE_SHIFT)
+ #define ICC_CTLR_EL1_PRI_BITS_SHIFT	8
+ #define ICC_CTLR_EL1_PRI_BITS_MASK	(0x7 << ICC_CTLR_EL1_PRI_BITS_SHIFT)
+ #define ICC_CTLR_EL1_ID_BITS_SHIFT	11
+--
+1.9.1
 
 _______________________________________________
 linux-arm-kernel mailing list
