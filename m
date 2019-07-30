@@ -2,44 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 15FED7A0D7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 07:58:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A08117A0DC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 07:59:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VDLbFpr5kvIs8qbOKuWWlj3fCbbwbYxBXxdsRjf2T1w=; b=CTGE2Zmc+L/apt
-	+ZRk+iIT+nseC+EoOzQfEINJyEIfCDlw2l9DGJOoeGbP+GkvZ+5nlTAMSY0sZgEYBEWDa0uJ5/kcc
-	ojOqdWKQBUNXkDb5fxAy5suUcbhJ3pwitBdVg+6iKWa1OdP2CG2JSKB7N5t8aSkx6UokzgEbabsXF
-	mUFm+NNlFUXub1rGaJYFpk0GymXSUhoJQIzXO2j4vMhEfiKU30RSIKkCgNVsavruUs43cGTiyp+4f
-	VPnChwMJMBtk9xqscDGnUJp2mWclDEmG39TXjuWq6kAp8TZ6VE7IQpvt49MGW4UUbJcozjbwDO6iJ
-	ZNdxeU6SJ20it7plHXJw==;
+	List-Owner; bh=ZbJb8jIEhAfa9o9NVua9bjxeVHwP4LHK97n0I/uqZMI=; b=IjqoQnp7SECoDW
+	HJFrkq8eZ4mAGg3lxteY8qxIfH2/u2SgkUVewhBGWycTagLn4Ae9VpVx/pppP5bR6uy3TT2LagjpT
+	RJyjcszoqs+Jjn1snUGeisYuOIOUzr5e01iDA//IRxRmYsIdZATsuurVZJtqe6B50er0CP3bCteL9
+	Eod7hOOZZwNxS9m1zy42vV+lUCZEuzXtHLPJhs0XjcK+Qq2nJ0kz+6dDBNjj1igYJIFHKsXg7iR+G
+	Tbg9uRtQci8P300/iGe9JFpYKUJ0NkS9YQ/AaR2rafdQqWaGv9Vv5+vH74UkphJRF7THmFoRbP/Cl
+	2mepXwfYSBzYx8m5hidA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsL9Q-0005C0-MQ; Tue, 30 Jul 2019 05:58:20 +0000
+	id 1hsLAR-0005fm-BC; Tue, 30 Jul 2019 05:59:23 +0000
 Received: from relay1-d.mail.gandi.net ([217.70.183.193])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsL9A-00059J-UY; Tue, 30 Jul 2019 05:58:06 +0000
+ id 1hsLAD-0005fQ-N3; Tue, 30 Jul 2019 05:59:11 +0000
 X-Originating-IP: 79.86.19.127
 Received: from alex.numericable.fr (127.19.86.79.rev.sfr.net [79.86.19.127])
  (Authenticated sender: alex@ghiti.fr)
- by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 4FBB7240007;
- Tue, 30 Jul 2019 05:57:58 +0000 (UTC)
+ by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id E90EC240007;
+ Tue, 30 Jul 2019 05:59:02 +0000 (UTC)
 From: Alexandre Ghiti <alex@ghiti.fr>
 To: Andrew Morton <akpm@linux-foundation.org>
-Subject: [PATCH v5 06/14] arm: Properly account for stack randomization and
- stack guard gap
-Date: Tue, 30 Jul 2019 01:51:05 -0400
-Message-Id: <20190730055113.23635-7-alex@ghiti.fr>
+Subject: [PATCH v5 07/14] arm: Use STACK_TOP when computing mmap base address
+Date: Tue, 30 Jul 2019 01:51:06 -0400
+Message-Id: <20190730055113.23635-8-alex@ghiti.fr>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190730055113.23635-1-alex@ghiti.fr>
 References: <20190730055113.23635-1-alex@ghiti.fr>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190729_225805_137208_C6677AEB 
-X-CRM114-Status: GOOD (  11.04  )
+X-CRM114-CacheID: sfid-20190729_225909_903216_1CC3A860 
+X-CRM114-Status: UNSURE (   9.84  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -75,50 +75,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This commit takes care of stack randomization and stack guard gap when
-computing mmap base address and checks if the task asked for randomization.
-This fixes the problem uncovered and not fixed for arm here:
-https://lkml.kernel.org/r/20170622200033.25714-1-riel@redhat.com
+mmap base address must be computed wrt stack top address, using TASK_SIZE
+is wrong since STACK_TOP and TASK_SIZE are not equivalent.
 
 Signed-off-by: Alexandre Ghiti <alex@ghiti.fr>
 Acked-by: Kees Cook <keescook@chromium.org>
 Reviewed-by: Luis Chamberlain <mcgrof@kernel.org>
 ---
- arch/arm/mm/mmap.c | 14 ++++++++++++--
- 1 file changed, 12 insertions(+), 2 deletions(-)
+ arch/arm/mm/mmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/arch/arm/mm/mmap.c b/arch/arm/mm/mmap.c
-index f866870db749..bff3d00bda5b 100644
+index bff3d00bda5b..0b94b674aa91 100644
 --- a/arch/arm/mm/mmap.c
 +++ b/arch/arm/mm/mmap.c
-@@ -18,8 +18,9 @@
- 	 (((pgoff)<<PAGE_SHIFT) & (SHMLBA-1)))
+@@ -19,7 +19,7 @@
  
  /* gap between mmap and stack */
--#define MIN_GAP (128*1024*1024UL)
--#define MAX_GAP ((TASK_SIZE)/6*5)
-+#define MIN_GAP		(128*1024*1024UL)
-+#define MAX_GAP		((TASK_SIZE)/6*5)
-+#define STACK_RND_MASK	(0x7ff >> (PAGE_SHIFT - 12))
+ #define MIN_GAP		(128*1024*1024UL)
+-#define MAX_GAP		((TASK_SIZE)/6*5)
++#define MAX_GAP		((STACK_TOP)/6*5)
+ #define STACK_RND_MASK	(0x7ff >> (PAGE_SHIFT - 12))
  
  static int mmap_is_legacy(struct rlimit *rlim_stack)
- {
-@@ -35,6 +36,15 @@ static int mmap_is_legacy(struct rlimit *rlim_stack)
- static unsigned long mmap_base(unsigned long rnd, struct rlimit *rlim_stack)
- {
- 	unsigned long gap = rlim_stack->rlim_cur;
-+	unsigned long pad = stack_guard_gap;
-+
-+	/* Account for stack randomization if necessary */
-+	if (current->flags & PF_RANDOMIZE)
-+		pad += (STACK_RND_MASK << PAGE_SHIFT);
-+
-+	/* Values close to RLIM_INFINITY can overflow. */
-+	if (gap + pad > gap)
-+		gap += pad;
+@@ -51,7 +51,7 @@ static unsigned long mmap_base(unsigned long rnd, struct rlimit *rlim_stack)
+ 	else if (gap > MAX_GAP)
+ 		gap = MAX_GAP;
  
- 	if (gap < MIN_GAP)
- 		gap = MIN_GAP;
+-	return PAGE_ALIGN(TASK_SIZE - gap - rnd);
++	return PAGE_ALIGN(STACK_TOP - gap - rnd);
+ }
+ 
+ /*
 -- 
 2.20.1
 
