@@ -2,82 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9852E7B1AC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 20:19:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C3CED7B209
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 20:34:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=251q3DuLuQ+2Zr+mc23YbkHXGFjuKY3UnbfZcDPhMac=; b=c6UECS1xy7h3UW
-	pVYrhjM+inTfyAypTpoTRvUaJJv2EpnN31IH7ESHaFZZt3a2w3SH5++UH1ovWc2qU/Lo/fEPA1dO3
-	5nr1IRxz1ROEIA0OqrY0ERApI3h+IUfEHcqPCxDh3GGaD78LCp5safGLC9GJe83luQpnVaRDMiOcO
-	KkHxY0Ypj41w9sV1VDbwEk0u9DWqMCLcZIytQ7Z9XZjXbL2+V41upWS9G4VJmUq8PxB4afLt87CzQ
-	/0op8pbhg7wejVB49tlYUqJyDZXCnGPK3S8lvf0A287JF46iONTk2UM1WjFVZb29MOxCNkMMjX6Fn
-	iBchDwmGT/d8IZgWHc9A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=E0BrmEebBxm685zC9bKDMhc4HnuL0p0nX5KZAcQge4U=; b=k50dCXpLuzbZ1H
+	N5ceUWgXTLXfmqGtxRrzn8LCch49NEzJvYvHEGXTAed3KMxnpWfpW2+qaBjNIU+1zBxIL5mRP8IJ2
+	Y8tH+P2++47tNzF9w/ZHkNKLnvc2kOFOq3E0U0BcCAGW7aJaY2KLA2XkOyn7tLuC2AiJrA/dupFUk
+	BSSzUA+FWFMXRRAWwcCzHI28OJ49OEZKeIdGvhsrdeGTAlQQIMscB4t8h1nPnKiSdyUNsP+4O48oX
+	8lkPT8s7Kv9Lty6/aV0oviUEFOQA6S8TS7SzgQMXlpxKc9Int9z88y1DNdqV+9BFEKRpgLVzXPO9h
+	OEXV3B3DgUUD+/okNUYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsWig-0002jD-Bd; Tue, 30 Jul 2019 18:19:30 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hsWwg-0007RK-M6; Tue, 30 Jul 2019 18:33:58 +0000
+Received: from mout.gmx.net ([212.227.15.15])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsWiV-0002i7-Mg
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 18:19:20 +0000
-Received: by mail-pf1-x443.google.com with SMTP id c3so7125767pfa.13
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 30 Jul 2019 11:19:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=WYV3lJkZz1M8QFLTNcbisKstq4q45qxIoF6vMekR4Ik=;
- b=mZqGk/cUp6ZNJEsrEHgluVspbQqD/bx8uYW6vGDU/FpCW5W4GoxK+4/b1HjJ4bSDCq
- xyW3ZS0uf0DfYXzWcHQIeKMfCqgFrRDayoLgDTv4QOWbhe8Raxi6hVsR1bQ6j1+njf6I
- kMOQ/nc0tCcPOfurVrxe/F1hJnYiinkBApcH4=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=WYV3lJkZz1M8QFLTNcbisKstq4q45qxIoF6vMekR4Ik=;
- b=eQ/Js28m+4E1fY+NPY8qD5lm+OcSWdPyoHq5tfG45j6QNLJJGVzNSfPH/no9YKuJBY
- ICMpAwPmCvlvjwzyOjYXLLBlh4x3y+8ND1TiyCrVKHQN3q7rlR8nl4RNyiTPIjDrt17S
- oVtcGO+tmBOFiN2QgAGSQQbr01OKOT1OIz6GirqYRpuk/tJBeGngbaB76snUblWva+3R
- KkI3TGgpJb28d4tAIy77zgwVL5nLEBHAX0D0rKBP1a1TgFl4fHqOZEqkLnmfbbBKB2cB
- f25JBCNmNMws6g9rRfGJh+yJfucy51KMN9mMNo7ESYXwX1eVBZuI3C6wot5xP3I450HJ
- dZuw==
-X-Gm-Message-State: APjAAAWxwXeiPC/oOaKlRDsz6E0RNa4FRS/aiPkDLkAzPuovWEOztC1L
- 7+o2A5NFDMdqVX2pLmpSqcmTjA==
-X-Google-Smtp-Source: APXvYqw4/yqmb0Rlt+53Fv5Ar1d4LMo3nzvzPjOQ1bEXUP20GHFA0n4fefD4ezGXYZ/+3e25mhoUqg==
-X-Received: by 2002:a17:90a:360c:: with SMTP id
- s12mr120028251pjb.30.1564510759254; 
- Tue, 30 Jul 2019 11:19:19 -0700 (PDT)
-Received: from localhost ([2620:15c:202:1:75a:3f6e:21d:9374])
- by smtp.gmail.com with ESMTPSA id h12sm79833057pje.12.2019.07.30.11.19.18
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 30 Jul 2019 11:19:18 -0700 (PDT)
-Date: Tue, 30 Jul 2019 11:19:16 -0700
-From: Matthias Kaehlcke <mka@chromium.org>
-To: Doug Anderson <dianders@chromium.org>
-Subject: Re: [PATCH] ARM: dts: rockchip: A few fixes for veyron-{fievel, tiger}
-Message-ID: <20190730181916.GJ250418@google.com>
-References: <20190730173444.56741-1-mka@chromium.org>
- <CAD=FV=Wub9Wkc5t4iQRjBK8R_d_oh4PoHPwLHb4T5+Meij7sSg@mail.gmail.com>
+ id 1hsWwV-0007QX-SF; Tue, 30 Jul 2019 18:33:49 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1564511605;
+ bh=J1a7wihmnGH91L2DQ/qKiHVK9XUqwB7rjCcBDn9lzJY=;
+ h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
+ b=Ny0btmd+EAVGoXA+iM8KysJTNw/b2oMSMNR807H4/NveY+K7XjTXymNSrhU6L70u7
+ h6Oagzw63CfHhgyBsuWjyX4lP+oiX7TcTc9MawJghqMtzFKDYIYW93BXLvEjsmfQfi
+ cypv3JVCbzwzd7MNEa4v7SlkbK2pinErj5a8VyQQ=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [192.168.1.162] ([37.4.249.135]) by mail.gmx.com (mrgmx002
+ [212.227.17.190]) with ESMTPSA (Nemesis) id 0MRGPP-1hnwk60RfL-00UY2k; Tue, 30
+ Jul 2019 20:33:25 +0200
+Subject: Re: [PATCH RFC 18/18] ARM: dts: Add minimal Raspberry Pi 4 support
+To: Marc Zyngier <marc.zyngier@arm.com>, Stefan Wahren <stefan.wahren@i2se.com>
+References: <1563398164-2679-1-git-send-email-wahrenst@gmx.net>
+ <1563398164-2679-5-git-send-email-wahrenst@gmx.net>
+ <20190723191326.3afdff83@why> <ebcb934d-7bab-bfc7-3371-1b5032b67ec7@i2se.com>
+ <86v9vmmlsd.wl-marc.zyngier@arm.com>
+From: Stefan Wahren <wahrenst@gmx.net>
+Message-ID: <6f3933b5-3b6c-f76b-3c7b-8cbf4e23108b@gmx.net>
+Date: Tue, 30 Jul 2019 20:33:22 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAD=FV=Wub9Wkc5t4iQRjBK8R_d_oh4PoHPwLHb4T5+Meij7sSg@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <86v9vmmlsd.wl-marc.zyngier@arm.com>
+Content-Language: en-US
+X-Provags-ID: V03:K1:ZYOkNb/VlCxdm8gvOFHuLgjO2Z9TQWut1ogU1MC3q1eY81JfvFj
+ Etk29P9zez6NxMPgalcAwpXPL1VgyV5m4KFwmRuWBpO9cxcqC+y/3lXFK909kN+Uj/9d0MA
+ U1C3sPzhEqUeimZKZM8eI9GTHfGQX4tf/3iqauXa4w8OIIw//ac5awZ/8BzImP9NNNF8Z16
+ fynpnSX1I7kVhf2jKrz6w==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:r/jeGZj5axc=:lC1DA6Hj6v1Xis3wTTgiMN
+ tCxU81n0ufcPtGWI1hYwyV6VQhkT6EUawd0bXJkiMl/Irm1uSnBNsjQmlD+JY+4HF2rJDGJGH
+ WBJOeKvsaeauLf4C6Aq4KtAuX7PR3Oyr9U2SrAq5EjWiPsQulcJr4JZGIqi8C5Sok77KgpdQa
+ xzJB33qIwNIQX8+FnZwAStM0vOkL6sR9myRLOT05WaxL4rnjGUaE020vMVVevkMa/DoGAYXVj
+ 659a2CzHExF833u56nJFpx5P82zpPPR4rbR5qcZ8TaSkmTwpksa4dsGDbeFeGE+cG7ZU3p4Tz
+ feC2Rh5YkraNCKGuSBlHAvZKG0gY84WswE0/bEzYin5WNHBU7nOD1/o5DUSLC1RjRUGI9U3Mg
+ QYWyeg2kft7xUT/OPam19KTLL6URyVzfnfiOlhKo/J9ljWduEcbzKf2irYBef+j00nbZfRirS
+ ysgvPNBw4ZH1VFgMwO3+1uH6swAy1k2OC4toSjliC6DPgwtGq3Egtixfn0YNaebHAkwBFdqYT
+ FSvouVMWsv15K21m+6Xwup7jIt6ewaWYGENeJogd0YKUDvw7fMJN0i6mjYy0A/KYg89XeKvSg
+ Eahemdw/VW5ZTOetYGAd3V0U2snrXEHveofzvdLYOHcAhGNul7OrJUql6Z5HqtzbVy0xEzigD
+ KyRLSpHz4pqby2YOPALpErNaEAgaH+bEBCXiraRJqnWIr2thugvD9yJ0qA8/qhGecxA+FNqps
+ TDH587NZmpTUYI7o43orHkAwuWFs08qH/swD3IxDtoogS8WGK8LJXI9KHoh4UALv4RxANh0qH
+ r9jY/bRPhQVIhzJTlAqrJedptnrAuEhm646XGaFzUn75ii+UL6cWfmA6xUcuLnpCwbxhJNzNX
+ jWnGtcREfMGx7thi9VANREaFe9CA3Ud56SNdLlWThGBDDmru1SAtruwvU6FNmkQBrxcgwlEI+
+ xCpfYW6iG0MZwT+vgmo2eFBQemiog8xBL+rSUQb7xUEHAu6rtVyVtLuRapyLK0Zm15sdQ6/Qj
+ WV2X0kdK2ceiW/JqXnmrTOU7mPBFtMWyUv3ZrfMMCX/zMVXc1sA0mrEUD/4CSWDN0cm1l87B6
+ gjCMrz9BI4bsR4=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_111919_740057_C63DAF5F 
-X-CRM114-Status: GOOD (  15.09  )
+X-CRM114-CacheID: sfid-20190730_113348_211285_AD36993A 
+X-CRM114-Status: GOOD (  25.08  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ no trust [212.227.15.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wahrenst[at]gmx.net)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -85,7 +90,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,83 +101,104 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, LKML <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
+ Florian Fainelli <f.fainelli@gmail.com>, Scott Branden <sbranden@broadcom.com>,
+ Stephen Boyd <sboyd@kernel.org>, Ray Jui <rjui@broadcom.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Adrian Hunter <adrian.hunter@intel.com>, Eric Anholt <eric@anholt.net>,
+ Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
+ Mark Brown <broonie@kernel.org>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Michael Turquette <mturquette@baylibre.com>,
+ linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jul 30, 2019 at 11:01:42AM -0700, Doug Anderson wrote:
-> Hi,
-> 
-> On Tue, Jul 30, 2019 at 10:34 AM Matthias Kaehlcke <mka@chromium.org> wrote:
-> >
-> > @@ -130,12 +138,13 @@
-> >                         regulator-max-microvolt = <1800000>;
-> >                         regulator-name = "vdd18_lcdt";
-> >                         regulator-state-mem {
-> > -                               regulator-on-in-suspend;
-> > +                               regulator-off-in-suspend;
-> >                                 regulator-suspend-microvolt = <1800000>;
-> 
-> Please remove "regulator-suspend-microvolt = <1800000>;" which doesn't
-> make sense once you have "regulator-off-in-suspend".
+Hi Marc,
+>> Hi Marc,
+>>
+>> Am 23.07.19 um 20:13 schrieb Marc Zyngier:
+>>> On Wed, 17 Jul 2019 23:16:04 +0200
+>>> Stefan Wahren <wahrenst@gmx.net> wrote:
+>>>
+>>>> This adds minimal support for the new Raspberry Pi 4 without the
+>>>> fancy stuff like GENET, PCIe, XHCI, 40 bit DMA and V3D. The RPi 4 is available
+>>>> in 3 different variants (1, 2 and 4 GB RAM), so leave the memory size to zero
+>>>> and let the bootloader take care of it.
+>>>>
+>>>> Other differences to the Raspberry Pi 3:
+>>>> - additional GIC 400 Interrupt controller
+>>>> - new thermal IP and HWRNG
+>>>> - additional MMC interface (emmc2)
+>>>> - additional UART, I2C, SPI and PWM interfaces
+>>>>
+>>>> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
+>>>>
+>>>> ...
+>>>> +	};
+>>>> +
+>>>> +	timer {
+>>>> +		compatible = "arm,armv7-timer";
+> BTW, this should be "arm,armv8-timer".
+>
+>>>> +		interrupts = <GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(4) |
+>>>> +					  IRQ_TYPE_LEVEL_LOW)>,
+>>>> +			     <GIC_PPI 14 (GIC_CPU_MASK_SIMPLE(4) |
+>>>> +					  IRQ_TYPE_LEVEL_LOW)>,
+>>>> +			     <GIC_PPI 11 (GIC_CPU_MASK_SIMPLE(4) |
+>>>> +					  IRQ_TYPE_LEVEL_LOW)>,
+>>>> +			     <GIC_PPI 10 (GIC_CPU_MASK_SIMPLE(4) |
+>>>> +					  IRQ_TYPE_LEVEL_LOW)>;
+>>>> +		arm,cpu-registers-not-fw-configured;
+>>> Really? :-(
+>> i asked about that [1] and they said that the arm stubs [2] only set the
+>> timer frequency and zeroing CNTVOFF_EL2.
+> Who is "they"? As long as it is done on all CPUs, that's the right
+> thing to do, and this property is pretty useless in that case.
 
-will remove all instances
+"They" are the developer at Raspberry Pi Trading. I forwarded some
+questions regarding this topic to them, but didn't get a reply yet. My
+current understanding is that the armv8 stubs do setup the timer, but
+the armv7 stubs do not. So we probably need to keep it.
 
-> >                         };
-> >                 };
-> >
-> > -               /* This is not a pwren anymore, but the real power supply,
-> > +               /*
-> > +                * This is not a pwren anymore, but the real power supply,
-> >                  * vdd10_lcd for HDMI_AVDD_1V0
-> >                  */
-> >                 vdd10_lcd: LDO_REG7 {
-> > @@ -145,7 +154,7 @@
-> >                         regulator-max-microvolt = <1000000>;
-> >                         regulator-name = "vdd10_lcd";
-> >                         regulator-state-mem {
-> > -                               regulator-on-in-suspend;
-> > +                               regulator-off-in-suspend;
-> >                                 regulator-suspend-microvolt = <1000000>;
-> 
-> Please remove "regulator-suspend-microvolt = <1000000>;" which doesn't
-> make sense once you have "regulator-off-in-suspend".
-> 
-> 
-> >                         };
-> >
-> > @@ -159,7 +168,7 @@
-> >                         regulator-max-microvolt = <3300000>;
-> >                         regulator-name = "vcc33_ccd";
-> >                         regulator-state-mem {
-> > -                               regulator-on-in-suspend;
-> > +                               regulator-off-in-suspend;
-> >                                 regulator-suspend-microvolt = <3300000>;
-> 
-> Please remove "regulator-suspend-microvolt = <3300000>;" which doesn't
-> make sense once you have "regulator-off-in-suspend".
-> 
-> 
-> Other than those things, this patch looks good to me and feel free to
-> add my Reviewed-by.
+>
+>>>> +		always-on;
+>>> I'm pretty sure that's not the case. This indicates that you can power
+>>> the CPU off, bring it back on, and yet have your timer alive and
+>>> kicking. The only case this actually exists is for VMs. I can see it
+>>> being cargo-culted from previous RPi revisions, but that doesn't make
+>>> it true.
+>> They said that they used this to suppress high interrupt load for the
+>> timers.
+> Indeed, and that's the only thing the kernel can do if it isn't
+> provided with a global timer that can be used as a backup then the
+> CPUs transition to a deep idle state where the timers are not actually
+> running.
+>
+> If you have such a global timer, enable it and you'll see the
+> interrupt rate dropping like a rock. Don't you have a
+> brcm,bcm2835-system-timer stashed somewhere?
 
-Thanks for your review!
+I've got the feedback that the system timer still exists. Unfortunately
+i don't have the new interrupt definition yet. So i need to wait for
+this before sending a new version of this series.
 
-> NOTE: when I tried applying this to my tree git
-> complained and I had to apply manually.  Could you try sending this
-> patch atop Heiko's for-next tree?  The yell I got:
-> 
-> error: sha1 information is lacking or useless
-> (arch/arm/boot/dts/rk3288-veyron-fievel.dts).
-> error: could not build fake ancestor
+Best regards
+Stefan Wahren
 
-Ok, I'll rebase v2 on Heiko's for-next
+>
+> If you don't have such a timer, then the question is whether the CPUs
+> can go into a deep enough sleep state where the timer comparator is
+> disabled, leading to missed events. If this system can only reach very
+> shallow sleep states, then always-on is OK. Otherwise, this is a total
+> lie and you're likely to miss timer events.
+>
+> Thanks,
+>
+> 	M.
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
