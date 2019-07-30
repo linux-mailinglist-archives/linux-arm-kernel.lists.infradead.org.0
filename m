@@ -2,88 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7498D7A3A4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 11:05:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3DA7B7A3A5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Jul 2019 11:06:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WZDOFstZBB5VWcasKcVH3GfwsVhAk9pmpZTBRwJ30r0=; b=Vg6YF8YU2xrf2i
-	8ijlUaBJmyv4Jx/5E4B4HVzb7Y4DxYvCAl48Pwu7Oxuq2+uRTGtV51y76lb4AFW//fkMNjfc9GU5W
-	d85NKlz/bTUGV0YAR4zn6PGJqSK0MNj8u1yl1ksMqrnIkb9g1Y6o0yKdeYheszBorX7F+KQ08GSc3
-	uvvatY/FEL0whBAEPD/U6xfRW7l/IhubA1jgoNx+5TTT1vqoz2o2rxGBwVukZUPrxFVNCZEyDWmG7
-	xMmI2/QJWkaLHJNmVDiE14xMLlIwCfQC2CdeR/5hOe0TcIXLNpkKZZgAtHuYkTqPz/fnsm5wivTL8
-	uNsRSxpciKQ1bBr4gSgQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6/DAy5wIrlKEnHtLxg94G8x45X9n9TIFtjUq+PdNJo4=; b=IKLRQx+FWeAvyR
+	algB896LumF01msRZlizgkVxrx/j25ymVsb4xS9/eILLMkQ5acH3IHp3fKfkkhneHHrYso+bmsMw6
+	NKfJqn4Kk+6Vq2CNGFJXIIcSXIluyxrMejC94vWBl6WST8kTsQeXv1IMdAIY1BqLKgaLLfGbCWewg
+	5FOL4TitUXGZgMqWXLT8JrEsGfkfNXuNS312preFfqlW9YCNFuLrwNnphirRZrUBD0kdySmmIBKi+
+	d15u2u9sJJgo4Bc9KXBaDpjuWEtWxoX9q4Do0jKD1mrKRaF1NcwaTEWyJuGOCEz2x285A2QffRF0X
+	PozmmoX9ay5OF16ySrhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsO4m-0000r2-4f; Tue, 30 Jul 2019 09:05:44 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsO4I-0000jh-5g
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 09:05:16 +0000
-Received: by mail-wm1-x343.google.com with SMTP id s3so56343116wms.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 30 Jul 2019 02:05:13 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=qGr1BDi0c/2TdLi67wBjX5+c8yyhM7Ix8wxZtUpjo5g=;
- b=fEKj3pYgSNCVMZDZdtCMHO/oPs4i0a3ucUE9X2f6nEaNA0gJ6xnCUEYQqZ00SDkZAe
- qas/HbrLLEkz1D1pAtQ0eQ3wbYrSzEYtopSM0GOB8MIEy2HNTIgm8bZpUa0uQdrS+ry5
- Ne6PdJltp47jtCpLzC/hSV0txKprnYrdf7hcB9QJEoZuNd6bhX94afsdewA44zIui5Jq
- jYZ/6zgBV0UAJuGwJLXrq0OKWBPwWtsgz6mPLYohbxRL64rFDevg+IhYhSu0HYGtRu8D
- HUWYZlLszd41A+FTo3tYjcTk8Dnk0YVRQmW3qKsL6FJ6MAm1kwoq4DhoOxe89TiJszof
- qu3Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
- :message-id:mime-version;
- bh=qGr1BDi0c/2TdLi67wBjX5+c8yyhM7Ix8wxZtUpjo5g=;
- b=HGKxw3Q2xH3irrl5DlRRuabM19QOsyMwauVrjaG6H+6PA8YIf9LWE0U4b+C81M4k/d
- 7w88gg1v3aFZD64rPwybLrbw/YEOEs6pVdml5ADEZp5TOXc3u9T3H2B7YXONy1QPqLDb
- gEvCw8gnYdMnl4x5iIU7lS0qiTgWAicB/auKMG/mI+AWRWbPSYLOQKZw02NwyauFkuNs
- GTWVlW2TrBVyYpCZvgN3C0iI278qQBCmOr39OEC2B1TbmglAZpvlu/FBfhQZ+CKPrL6S
- al+1ADNz5BxWXvRqqJslHkmzqqMkYwK6bLiB/yL70J5QsKnL7TrrwAzjoWyGNFM96Fxh
- urPg==
-X-Gm-Message-State: APjAAAU8ruQ3Wbyz+15PhcAOV4sTtYOurZvAcdyIRZEgYWX829FioHRo
- Dv8bNiXHT/tnB4P+wBd2jLlr8A==
-X-Google-Smtp-Source: APXvYqwFlbUFxsYoSDxGSyZmNiW7VbV+zb0tbv/uEpdFegDVeNvxUOUn6FwGoEV4Xa9IoHuoN+8obg==
-X-Received: by 2002:a1c:c188:: with SMTP id r130mr98830929wmf.73.1564477512141; 
- Tue, 30 Jul 2019 02:05:12 -0700 (PDT)
-Received: from localhost ([2a01:e34:eeb6:4690:ecfa:1144:aa53:4a82])
- by smtp.gmail.com with ESMTPSA id f12sm69804468wrg.5.2019.07.30.02.05.11
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 30 Jul 2019 02:05:11 -0700 (PDT)
-From: Jerome Brunet <jbrunet@baylibre.com>
-To: Carlo Caione <ccaione@baylibre.com>, srinivas.kandagatla@linaro.org,
- khilman@baylibre.com, narmstrong@baylibre.com, robh+dt@kernel.org,
- tglx@linutronix.de, linux-arm-kernel@lists.infradead.org,
- linux-amlogic@lists.infradead.org, devicetree@vger.kernel.org
-Subject: Re: [PATCH 2/5] firmware: meson_sm: Mark chip struct as static const
-In-Reply-To: <20190729183941.18164-3-ccaione@baylibre.com>
-References: <20190729183941.18164-1-ccaione@baylibre.com>
- <20190729183941.18164-3-ccaione@baylibre.com>
-Date: Tue, 30 Jul 2019 11:05:10 +0200
-Message-ID: <1jv9vj28qh.fsf@starbuckisacylon.baylibre.com>
+	id 1hsO5F-00015c-B1; Tue, 30 Jul 2019 09:06:13 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hsO4v-00014h-59
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Jul 2019 09:05:54 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 50294344;
+ Tue, 30 Jul 2019 02:05:50 -0700 (PDT)
+Received: from [10.1.197.45] (e112298-lin.cambridge.arm.com [10.1.197.45])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D18D43F71F;
+ Tue, 30 Jul 2019 02:05:48 -0700 (PDT)
+Subject: Re: [PATCH v4 0/9] arm_pmu: Use NMI for perf interrupt
+To: linux-arm-kernel@lists.infradead.org
+References: <1563351432-55652-1-git-send-email-julien.thierry@arm.com>
+From: Julien Thierry <julien.thierry@arm.com>
+Message-ID: <d08ab28d-7375-7472-cb58-36304c249e67@arm.com>
+Date: Tue, 30 Jul 2019 10:05:47 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
+In-Reply-To: <1563351432-55652-1-git-send-email-julien.thierry@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_020515_047524_A47168F5 
-X-CRM114-Status: GOOD (  11.10  )
+X-CRM114-CacheID: sfid-20190730_020553_236685_8A9279EA 
+X-CRM114-Status: GOOD (  21.87  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,39 +61,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Carlo Caione <ccaione@baylibre.com>
+Cc: mark.rutland@arm.com, peterz@infradead.org, jolsa@redhat.com,
+ will.deacon@arm.com, acme@kernel.org, alexander.shishkin@linux.intel.com,
+ mingo@redhat.com, namhyung@kernel.org, sthotton@marvell.com,
+ liwei391@huawei.com, julien.thierry.kdev@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon 29 Jul 2019 at 19:39, Carlo Caione <ccaione@baylibre.com> wrote:
+Hi,
 
-> No need to be a global struct.
->
-> Signed-off-by: Carlo Caione <ccaione@baylibre.com>
+Just a gentle ping on this series.
 
-Reviewed-by: Jerome Brunet <jbrunet@baylibre.com>
+Cheers,
 
-> ---
->  drivers/firmware/meson/meson_sm.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
->
-> diff --git a/drivers/firmware/meson/meson_sm.c b/drivers/firmware/meson/meson_sm.c
-> index 8d908a8e0d20..772ca6726e7b 100644
-> --- a/drivers/firmware/meson/meson_sm.c
-> +++ b/drivers/firmware/meson/meson_sm.c
-> @@ -35,7 +35,7 @@ struct meson_sm_chip {
->  	struct meson_sm_cmd cmd[];
->  };
->  
-> -struct meson_sm_chip gxbb_chip = {
-> +static const struct meson_sm_chip gxbb_chip = {
->  	.shmem_size		= SZ_4K,
->  	.cmd_shmem_in_base	= 0x82000020,
->  	.cmd_shmem_out_base	= 0x82000021,
-> -- 
-> 2.20.1
+Julien
+
+On 17/07/2019 09:17, Julien Thierry wrote:
+> Hi,
+> 
+> After fixing the arm64 Pseudo-NMIs, I'm dusting off this series.
+> 
+> The series makes the arm_pmu driver use NMIs for the perf interrupt when
+> NMIs are available on the platform (currently, only arm64 + GICv3).
+> 
+> * Patches 1 to 4 remove the need to use spinlocks for the Arm PMU
+>   driver for Armv7 and Armv8 (aarch64).
+> * Patches 5 moves the locking to Armv6 specific code which is the sole
+>   user
+> * Patches 6 and 7 make the PMU interrupt handler NMI-safe
+> * Patches 8 and 9 enable using pseudo-NMI for the PMU interrupt when
+>   the feature is available
+> 
+> Changes since v3[3]:
+> - Added tags
+> - Fix build issue for perf_event_v6
+> - Don't disable preemption in pmu->enable()
+> - Always rely on IPI_IRQ_WORK to run the queued work
+> - Fixed typos + cleanups
+> 
+> Changes since v2[2]:
+> - Rebased on recent linux-next (next-20190708)
+> - Fixed a number of bugs with indices (reported by Wei)
+> - Minor style fixes
+> 
+> Changes since v1[3]:
+> - Rebased on v5.1-rc1
+> - Pseudo-NMI has changed a lot since then, use the (now merged) NMI API
+> - Remove locking from armv7 perf_event
+> - Use locking only in armv6 perf_event
+> - Use direct counter/type registers insted of selector register for armv8
+> 
+> [1] http://lists.infradead.org/pipermail/linux-arm-kernel/2019-March/640536.html
+> [2] http://lists.infradead.org/pipermail/linux-arm-kernel/2018-January/554611.html
+> 
+> Cheers,
+> 
+> Julien
+> 
+> -->
+> 
+> Julien Thierry (8):
+>   arm64: perf: Remove PMU locking
+>   arm: perf: save/resore pmsel
+>   arm: perf: Remove Remove PMU locking
+>   perf/arm_pmu: Move PMU lock to ARMv6 events
+>   arm64: perf: Do not call irq_work_run in NMI context
+>   arm/arm64: kvm: pmu: Make overflow handler NMI safe
+>   arm_pmu: Introduce pmu_irq_ops
+>   arm_pmu: Use NMIs for PMU
+> 
+> Mark Rutland (1):
+>   arm64: perf: avoid PMXEV* indirection
+> 
+>  arch/arm/kernel/perf_event_v6.c |  43 +++++++-----
+>  arch/arm/kernel/perf_event_v7.c |  79 +++++++---------------
+>  arch/arm64/kernel/perf_event.c  | 136 ++++++++++++++++++++++++--------------
+>  drivers/perf/arm_pmu.c          | 143 ++++++++++++++++++++++++++++++++++------
+>  include/kvm/arm_pmu.h           |   1 +
+>  include/linux/perf/arm_pmu.h    |   5 --
+>  virt/kvm/arm/pmu.c              |  25 ++++++-
+>  7 files changed, 284 insertions(+), 148 deletions(-)
+> 
+> --
+> 1.9.1
+> 
+
+-- 
+Julien Thierry
 
 _______________________________________________
 linux-arm-kernel mailing list
