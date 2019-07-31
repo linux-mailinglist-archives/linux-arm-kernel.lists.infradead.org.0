@@ -2,87 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B5317C9D3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 19:04:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9284C7C9DB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 19:05:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XC3aXENJFFdjeJvtFkdGNQDdiJaTO2qCcxCgclAvguc=; b=FYbq/pfuyagx1o
-	xuWtpAs5Opynljg4cftmCoAyi66jPuyl+gBU1cEOZ+Z8hU5e3YCkI3w5MmNiGtQYjnmX91YfYOi7M
-	nitZDe72H5v2kP1umwoqfd3lnsZNw6yM9VGdUdD2C+PQqraRXp1HtNvzRl6CTP+iPU1VtfnxRvSZH
-	VpXJZhXwGqUa+AdU3FqHB4DCQytkOviWkckrEq3QCkntF7ZLjP9GnOWNnbGcDd8fnxD2i3TIsZ6mE
-	Frw8z7MjufIqV6HSof/5scYZJwc3iAePBA6cpbM73k7KTusQ5KNOccM95auHwGQxhY5GpeP2qxM76
-	lw1M/AgC179ySVLWTC5g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RH2zgYUFPB+RpgU6Khsm4PgVSuWlwU2YagNq4zd+1yw=; b=uqFHkftBgWarES
+	kghozBnM3iTO7YYV6B2tg2OwQNHoUuTBBlPNvrDvft1IvCJXzWHrQlAb9BCEnDEFeUMQP0XRaqbAf
+	X5Q6ll1Je7K5ulFLAaSOeXXm0Iyn6HCmT+O0YTlFkRxWm0kWVYD4g49TBHQFc5z6GBm88lR9S9vWE
+	I+TfA7QmKsQvWGdj/bQ9/U9hsWV4279i/E+L+Ljeoj8AJcPZdBZYdITPE5NWvS56a1Qj8wJYWqJ4n
+	eS8qTeSoC++ruN4bjfSWRLBToamRWwACRVppzm8aBhYZm13YY8sNqAXRYt1SR56av7PDjh96rjJb0
+	pkOU7ftLulNJPn4XYs9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hss1b-00076d-U7; Wed, 31 Jul 2019 17:04:27 +0000
-Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
+	id 1hss2M-0000AY-TY; Wed, 31 Jul 2019 17:05:14 +0000
+Received: from relay.sw.ru ([185.231.240.75])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hss1V-00075r-A5
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 17:04:22 +0000
-Received: by mail-ed1-x541.google.com with SMTP id p15so66321036eds.8
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 31 Jul 2019 10:04:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=w3v6TLclWYCTjAr1Tti2BDVXfhzMXBqkZT8bGQWpyYs=;
- b=aOi9HiQRPHO4FOr23H0QJg5L4BRnfgz+Y7QvXWhB/ngiIQaEGHpBRMnl1OxzoXIBD2
- k43GqRNVGXw98UkWEJOgJJ2uCTXIijl6XMElm2r6cO8ZxA6p+VeKe0q36fAAh9KHjGXh
- YSgHNRaRuPZ5vFNks3rQ7KnUpdHhj099KPD3D99ZDMOC90fiBIPstXZKeDLSEGq6tymT
- 9ON4RFhkvi6jSB8/Oj5Xi0cdIYetxeUWiifFJKWczZ8hgQpqdsJUnl9/Uwx6rJkeFEJj
- 58AJWNsYbe4cmO3e3vyV70t0uKsb/DXhqgr2SLW8GdW3LoqfK74WF1+J9TrqIxeltae+
- yGYA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=w3v6TLclWYCTjAr1Tti2BDVXfhzMXBqkZT8bGQWpyYs=;
- b=Fel44AFw8RxEjEXnppxMvr80XgT6Diwk7rjntFgY5hinXmPdq3cJx1sO66fvBIDtT9
- SRO1gzyigIsxuA9uh+K/LtU76CkQUjzuidOUwnKf6hfC+WlF+JK3kRgU9XMSfWlf5CkZ
- u00eRYsT38w/ssWP8r4MtRUL2p7WF8C/3YSpm99SWkwedRLnfSLXtOT1SYXb8bccjmBR
- XP7/IdP2ToWo2fZX2TqHKi7dFGVjBWQP+JhuQ4X5qw4JqzvcQBd82chl0RXCtzkVOVXt
- Z5ojbUvgghzp3eWiGLyZbk/k852lYqg9F8tqGZG9cPDfQxXkBjcQTS2enqcTgJqIHVMP
- mD7g==
-X-Gm-Message-State: APjAAAVLGPdZqCvXNiaaPVN/7Q+K7XB1it+EmnAbM0pdvUkV/20shxPH
- I+eg73ClPO+9RUw5IkAPDI6WSism8nnlv98rxysHK4MB
-X-Google-Smtp-Source: APXvYqyW5t23CPvCpiYNBbUwB050BijLjhKoZGvCCP6vJyE4voxLk8m00zN6oc8wm1lTBdkVRCt4NjssIfYO0PsdD3Y=
-X-Received: by 2002:a17:906:9447:: with SMTP id
- z7mr30023478ejx.165.1564592659700; 
- Wed, 31 Jul 2019 10:04:19 -0700 (PDT)
+ id 1hss2C-0007PS-BO; Wed, 31 Jul 2019 17:05:06 +0000
+Received: from [172.16.25.12] by relay.sw.ru with esmtp (Exim 4.92)
+ (envelope-from <aryabinin@virtuozzo.com>)
+ id 1hss1z-0001ux-M2; Wed, 31 Jul 2019 20:04:51 +0300
+Subject: Re: [PATCH v3] kasan: add memory corruption identification for
+ software tag-based mode
+To: Walter Wu <walter-zh.wu@mediatek.com>
+References: <20190613081357.1360-1-walter-zh.wu@mediatek.com>
+ <da7591c9-660d-d380-d59e-6d70b39eaa6b@virtuozzo.com>
+ <1560447999.15814.15.camel@mtksdccf07> <1560479520.15814.34.camel@mtksdccf07>
+ <1560744017.15814.49.camel@mtksdccf07>
+ <CACT4Y+Y3uS59rXf92ByQuFK_G4v0H8NNnCY1tCbr4V+PaZF3ag@mail.gmail.com>
+ <1560774735.15814.54.camel@mtksdccf07> <1561974995.18866.1.camel@mtksdccf07>
+ <CACT4Y+aMXTBE0uVkeZz+MuPx3X1nESSBncgkScWvAkciAxP1RA@mail.gmail.com>
+ <ebc99ee1-716b-0b18-66ab-4e93de02ce50@virtuozzo.com>
+ <1562640832.9077.32.camel@mtksdccf07>
+ <d9fd1d5b-9516-b9b9-0670-a1885e79f278@virtuozzo.com>
+ <1562839579.5846.12.camel@mtksdccf07>
+ <37897fb7-88c1-859a-dfcc-0a5e89a642e0@virtuozzo.com>
+ <1563160001.4793.4.camel@mtksdccf07>
+ <9ab1871a-2605-ab34-3fd3-4b44a0e17ab7@virtuozzo.com>
+ <1563789162.31223.3.camel@mtksdccf07>
+ <e62da62a-2a63-3a1c-faeb-9c5561a5170c@virtuozzo.com>
+ <1564144097.515.3.camel@mtksdccf07>
+ <71df2bd5-7bc8-2c82-ee31-3f68c3b6296d@virtuozzo.com>
+ <1564147164.515.10.camel@mtksdccf07>
+From: Andrey Ryabinin <aryabinin@virtuozzo.com>
+Message-ID: <f29ee964-cf12-1b5d-e570-1d5baa49a580@virtuozzo.com>
+Date: Wed, 31 Jul 2019 20:04:59 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <20190731153857.4045-1-pasha.tatashin@soleen.com>
- <20190731163258.GH39768@lakrids.cambridge.arm.com>
- <CA+CK2bAYUFBBGo-LHBK4UWRK1tpx3AZ4Z9NkDxiDK0UYEDozaQ@mail.gmail.com>
- <20190731165007.GJ39768@lakrids.cambridge.arm.com>
-In-Reply-To: <20190731165007.GJ39768@lakrids.cambridge.arm.com>
-From: Pavel Tatashin <pasha.tatashin@soleen.com>
-Date: Wed, 31 Jul 2019 13:04:08 -0400
-Message-ID: <CA+CK2bBOSC0iYjq_A18DNaNCYskTTJJTkM4N-WAqssoxpxuNPg@mail.gmail.com>
-Subject: Re: [RFC v2 0/8] arm64: MMU enabled kexec relocation
-To: Mark Rutland <mark.rutland@arm.com>
+In-Reply-To: <1564147164.515.10.camel@mtksdccf07>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_100421_347249_C20A0D57 
-X-CRM114-Status: GOOD (  18.71  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190731_100504_392343_0AAB8B3D 
+X-CRM114-Status: GOOD (  11.77  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,80 +76,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Vladimir Murzin <vladimir.murzin@arm.com>,
- Jonathan Corbet <corbet@lwn.net>, Marc Zyngier <marc.zyngier@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- kexec mailing list <kexec@lists.infradead.org>,
- LKML <linux-kernel@vger.kernel.org>, James Morris <jmorris@namei.org>,
- James Morse <james.morse@arm.com>, "Eric W. Biederman" <ebiederm@xmission.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, will@kernel.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: wsd_upstream <wsd_upstream@mediatek.com>,
+ "Jason A . Donenfeld" <Jason@zx2c4.com>, Vasily Gorbik <gor@linux.ibm.com>,
+ Arnd Bergmann <arnd@arndb.de>, Linux-MM <linux-mm@kvack.org>,
+ Andrey Konovalov <andreyknvl@google.com>, LKML <linux-kernel@vger.kernel.org>,
+ kasan-dev <kasan-dev@googlegroups.com>, Pekka Enberg <penberg@kernel.org>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Miles Chen <miles.chen@mediatek.com>, Alexander Potapenko <glider@google.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ David Rientjes <rientjes@google.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
+ Christoph Lameter <cl@linux.com>, Joonsoo Kim <iamjoonsoo.kim@lge.com>,
+ Dmitry Vyukov <dvyukov@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 31, 2019 at 12:50 PM Mark Rutland <mark.rutland@arm.com> wrote:
->
-> On Wed, Jul 31, 2019 at 12:40:51PM -0400, Pavel Tatashin wrote:
-> > On Wed, Jul 31, 2019 at 12:33 PM Mark Rutland <mark.rutland@arm.com> wrote:
-> > >
-> > > Hi Pavel,
-> > >
-> > > Generally, the cover letter should state up-front what the goal is (or
-> > > what problem you're trying to solve). It would be really helpful to have
-> > > that so that we understand what you're trying to achieve, and why.
->
-> [...]
->
-> > > > Here is the current data from the real hardware:
-> > > > (because of bug, I forced EL1 mode by setting el2_switch always to zero in
-> > > > cpu_soft_restart()):
-> > > >
-> > > > For this experiment, the size of kernel plus initramfs is 25M. If initramfs
-> > > > was larger, than the improvements would be even greater, as time spent in
-> > > > relocation is proportional to the size of relocation.
-> > > >
-> > > > Previously:
-> > > > kernel shutdown       0.022131328s
-> > > > relocation    0.440510736s
-> > > > kernel startup        0.294706768s
-> > >
-> > > In total this takes ~0.76s...
-> > >
-> > > >
-> > > > Relocation was taking: 58.2% of reboot time
-> > > >
-> > > > Now:
-> > > > kernel shutdown       0.032066576s
-> > > > relocation    0.022158152s
-> > > > kernel startup        0.296055880s
-> > >
-> > > ... and this takes ~0.35s
-> > >
-> > > So do we really need this complexity for a few blinks of an eye?
-> >
-> > Yes, we have an extremely tight reboot budget, 0.35s is not an acceptable waste.
->
-> Could you please elaborate on your use-case?
->
-> Understanfin what you're trying to achieve would help us to understand
-> which solutions make sense.
 
-An extremely high availability device with an update story utilizing
-kexec functionality for a faster kernel update and also for being able
-to preserve some state in memory without wasting the time of copying
-it to and from a backing storage. We at Microsoft will be using a
-fleet of these devices. The total reboot budget is less than half a
-second, out of which 0.44s is currently spent in kexec relocation.
 
-Pasha
+On 7/26/19 4:19 PM, Walter Wu wrote:
+> On Fri, 2019-07-26 at 15:52 +0300, Andrey Ryabinin wrote:
+>>
+>> On 7/26/19 3:28 PM, Walter Wu wrote:
+>>> On Fri, 2019-07-26 at 15:00 +0300, Andrey Ryabinin wrote:
+>>>>
+>>>
+>>>>>
+>>>>>
+>>>>> I remember that there are already the lists which you concern. Maybe we
+>>>>> can try to solve those problems one by one.
+>>>>>
+>>>>> 1. deadlock issue? cause by kmalloc() after kfree()?
+>>>>
+>>>> smp_call_on_cpu()
+>>>
+>>>>> 2. decrease allocation fail, to modify GFP_NOWAIT flag to GFP_KERNEL?
+>>>>
+>>>> No, this is not gonna work. Ideally we shouldn't have any allocations there.
+>>>> It's not reliable and it hurts performance.
+>>>>
+>>> I dont know this meaning, we need create a qobject and put into
+>>> quarantine, so may need to call kmem_cache_alloc(), would you agree this
+>>> action?
+>>>
+>>
+>> How is this any different from what you have now?
+> 
+> I originally thought you already agreed the free-list(tag-based
+> quarantine) after fix those issue. If no allocation there,
 
->
-> Thanks,
-> Mark.
+If no allocation there, than it must be somewhere else.
+We known exactly the amount of memory we need, so it's possible to preallocate it in advance.
+
+
+> i think maybe
+> only move generic quarantine into tag-based kasan, but its memory
+> consumption is more bigger our patch. what do you think?
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
