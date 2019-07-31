@@ -2,61 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 806D37BAF2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 09:50:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 42F167BAFA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 09:58:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=2HUwzR/fsXx/IInC69qjRJCCpLNJY7563yL8GbnBGQw=; b=Vfy8mtWCzqPuFr8kTqovgUMsin
-	G3eW2XAAzbVt9L4Pm0zWaYICZLJZjF3CTasDAis4v8kibghXIFFXayCZEBUysy2X9K+f6LrMk5uNK
-	w4lR7M72UgY+UY5tCxSknK1kBHuLANEpN3wv7GLseQihrA3PnoxHjXYc6rqL2Tlr6FrwPyyGdXZyZ
-	GP49J+F6VqSAkPBrxkeCiSx4recrreHSdo/jjqsHdBGa9amyFEDaj2acKBLr/hL4s0fDNH3qOSujs
-	8vZ78diXXB64dDHJajxRqTVU6nUgl8IcFnxF7h3p0KcVWUCks/xsCXvG1yGkYSBwrNu/JUWndithq
-	hDJraexQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WfzvCxvQN5pElqq6FxRHVeoFYmb/8aPrp5aPF9nqR2o=; b=UAhE3Ci48jaMUo
+	8spFi7NPWaICAio0AKdo11ubmERx74E9PrdsZCNOzLUfPLgXY6RodZB32CGWINyZvfLmt70i8wtt4
+	CWnqP0JOcbN5McQm0ECgTyL557vooPhyR5lDay3dp6ERrAO0PxFOBOzMVCVJBXezVLXH26wiLHFx3
+	WOBLbK8qlAPMU/4NKAmPzjXAMnuBbUCCbZWVwsFrwkFdImvBKWBk4qOtGzHmdfSDm8Js/g0/TmMV5
+	ZC9hs1a/DlSoI2yEI9QC8ENSCGt1VLbaEST9HtMpwu+QMV6+R62CTh+CD6wCibZlvpHAA1EMk4eWc
+	Y1VfnC1etOWlnLT04FHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsjNA-0000by-IW; Wed, 31 Jul 2019 07:50:09 +0000
-Received: from xavier.telenet-ops.be ([2a02:1800:120:4::f00:14])
+	id 1hsjUT-0003nN-D4; Wed, 31 Jul 2019 07:57:41 +0000
+Received: from mail-wm1-f67.google.com ([209.85.128.67])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsjLI-0000bG-4L
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 07:48:13 +0000
-Received: from ramsan ([84.194.98.4]) by xavier.telenet-ops.be with bizsmtp
- id jKo92000f05gfCL01Ko9gb; Wed, 31 Jul 2019 09:48:09 +0200
-Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
- (envelope-from <geert@linux-m68k.org>)
- id 1hsjLF-0006wj-Kh; Wed, 31 Jul 2019 09:48:09 +0200
-Received: from geert by rox.of.borg with local (Exim 4.90_1)
- (envelope-from <geert@linux-m68k.org>)
- id 1hsjLF-0001Un-JA; Wed, 31 Jul 2019 09:48:09 +0200
-From: Geert Uytterhoeven <geert+renesas@glider.be>
-To: Simon Horman <horms@verge.net.au>, Magnus Damm <magnus.damm@gmail.com>,
- Laurent Pinchart <laurent.pinchart+renesas@ideasonboard.com>
-Subject: [PATCH] arm64: dts: renesas: r8a77995: draak: Fix backlight regulator
- name
-Date: Wed, 31 Jul 2019 09:48:01 +0200
-Message-Id: <20190731074801.5706-1-geert+renesas@glider.be>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190731073744.13963-1-geert+renesas@glider.be>
-References: <20190731073744.13963-1-geert+renesas@glider.be>
+ id 1hsjTa-0003mw-Lh
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 07:56:48 +0000
+Received: by mail-wm1-f67.google.com with SMTP id u25so48534203wmc.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 31 Jul 2019 00:56:46 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=QU5L0vbXmLbZe0E3jBTU5NfJkkh9UqRqr6Mps/3EPOo=;
+ b=esvgv1Hajh1iwxBnkvkMAq3iYMf5ayOTgxsWSvZVX7vSLlp4fnAWOpxR9I4vhF3NgK
+ Lj2c7GMKrZs5MPvH4XnVlUNGdjXCbaOvIqHQkVxX3bWREzMNbjYpCjPTRUQNJTgHqRtT
+ BbR9EbQuIu5vcVa+fXKKK3sJqozyasIJsQnLmopGF89SKXP1jFNIVOD8BaHxFGO4epQQ
+ bKUCt3BPcOJLA0F8UmNqiGVyd4GbPHj+RBMl1NwGhfXijG6NvGCGzhrHYf9XvQ8+YZnL
+ msJjvw0+ijOx6SX+igtazLLuoCYy+OsKHJwoOCcOSMV1OWP8+P8JxIjhrHNSYi+gr6wz
+ 17+w==
+X-Gm-Message-State: APjAAAU0mX5IFrkwDj3a+e8UaPoGE5ct4HJcAbb3D/WtfaRKSnEqvYH/
+ rEVvNWYX4rPhOp3ZfB+dIsFSeLWYKBaUSguISGU=
+X-Google-Smtp-Source: APXvYqxI3SDVuWcUSNpHB6iYKBKkhycQn1kNJ3nJf+4smL6dxeHCwc7CUToIujG+dw8npCkbHpL8diEb42e4A0p/Wmg=
+X-Received: by 2002:a1c:1f4e:: with SMTP id
+ f75mr106666180wmf.137.1564559804817; 
+ Wed, 31 Jul 2019 00:56:44 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190109140045.17449-1-marek.vasut@gmail.com>
+ <CAMuHMdX3bP_WCYNRRMmVRPwV52e72NOZMtW8cf29Fo+E9_CvcQ@mail.gmail.com>
+ <20190109165822.tmj7qbho46f7clvg@verge.net.au> <1690279.yngTTxF0vm@avalon>
+ <0d08d3c1-94ec-dcbe-ad3d-b079ab2ad17e@gmail.com>
+In-Reply-To: <0d08d3c1-94ec-dcbe-ad3d-b079ab2ad17e@gmail.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Wed, 31 Jul 2019 09:56:33 +0200
+Message-ID: <CAMuHMdWajtaDGFFkd-GiyR_V8fnpRcn=Uuf8UQuJdcYSigivQQ@mail.gmail.com>
+Subject: DTC check_duplicate_node_names (was: Re: [PATCH] arm64: dts: renesas:
+ r8a77990: ebisu: Fix backlight regulator numbering)
+To: Marek Vasut <marek.vasut@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_004812_381034_CD04855C 
-X-CRM114-Status: GOOD (  11.23  )
-X-Spam-Score: -0.4 (/)
+X-CRM114-CacheID: sfid-20190731_005646_733505_17214E34 
+X-CRM114-Status: GOOD (  20.86  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.4 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a02:1800:120:4:0:0:f00:14 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.128.67 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.128.67 listed in wl.mailspike.net]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (geert.uytterhoeven[at]gmail.com)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,71 +86,113 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-renesas-soc@vger.kernel.org,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- linux-arm-kernel@lists.infradead.org,
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>,
+ Laurent Pinchart <laurent.pinchart+renesas@ideasonboard.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Wolfram Sang <wsa+renesas@sang-engineering.com>,
+ Simon Horman <horms@verge.net.au>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Frank Rowand <frowand.list@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
  Marek Vasut <marek.vasut+renesas@gmail.com>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently there are two nodes named "regulator1" in the Draak DTS: a
-3.3V regulator for the eMMC and the LVDS decoder, and a 12V regulator
-for the backlight.  This causes the former to be overwritten by the
-latter.
+Hi Marek,
 
-Fix this by renaming all regulators with numerical suffixes to use named
-suffixes, which are less likely to conflict.
+Bringing this to the attention of the DTC people...
 
-Fixes: 4fbd4158fe8967e9 ("arm64: dts: renesas: r8a77995: draak: Add backlight")
-Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
----
-I guess this is a fix for v5.3?
+On Thu, Jan 10, 2019 at 3:38 PM Marek Vasut <marek.vasut@gmail.com> wrote:
+> On 1/10/19 1:59 PM, Laurent Pinchart wrote:
+> > On Wednesday, 9 January 2019 18:58:23 EET Simon Horman wrote:
+> >> On Wed, Jan 09, 2019 at 04:26:25PM +0100, Geert Uytterhoeven wrote:
+> >>> On Wed, Jan 9, 2019 at 3:01 PM <marek.vasut@gmail.com> wrote:
+> >>>> From: Marek Vasut <marek.vasut+renesas@gmail.com>
+> >>>>
+> >>>> There are two regulator1 nodes in the Ebisu DTS right now, one 3.3V for
+> >>>> the eMMC and one 12V for the backlight. This causes one to be
+> >>>> overwritten
+> >>>> by the other, ultimatelly resulting in inoperable eMMC, which depends on
+> >>>> the former. Fix this by renumbering the backlight regulator to
+> >>>> regulator2.
+> >>>>
+> >>>> Signed-off-by: Marek Vasut <marek.vasut+renesas@gmail.com>
+> >>>> Cc: Laurent Pinchart <laurent.pinchart+renesas@ideasonboard.com>
+> >>>> Cc: Simon Horman <horms+renesas@verge.net.au>
+> >>>> Cc: Wolfram Sang <wsa+renesas@sang-engineering.com>
+> >>>> Cc: linux-renesas-soc@vger.kernel.org
+> >>>> Reported-by: Simon Horman <horms+renesas@verge.net.au>
+> >>>> Fixes: 9d16c4a10e07 ("arm64: dts: renesas: r8a77990: ebisu: Add
+> >>>> backlight")
+> >>>
+> >>> Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> >>>
+> >>>> --- a/arch/arm64/boot/dts/renesas/r8a77990-ebisu.dts
+> >>>> +++ b/arch/arm64/boot/dts/renesas/r8a77990-ebisu.dts
+> >>>> @@ -191,7 +191,7 @@
+> >>>>
+> >>>>                 clock-frequency = <24576000>;
+> >>>>
+> >>>>         };
+> >>>>
+> >>>> -       reg_12p0v: regulator1 {
+> >>>> +       reg_12p0v: regulator2 {
+> >>>>
+> >>>>                 compatible = "regulator-fixed";
+> >>>>                 regulator-name = "D12.0V";
+> >>>>                 regulator-min-microvolt = <12000000>;
+> >>>
+> >>> Perhaps the node name should get a more descriptive suffix
+> >>> (e.g. "regulator-12p0v"), like is already done for some of the other
+> >>> regulators?
+> >>
+> >> I think I would prefer that addressed in a follow-up patch.
+> >
+> > Agreed, but it would still be a very good idea. I think we need to standardize
+> > names for regulators, otherwise this is bound to happen again in the future.
 
-This fix takes a slightly different approach than commit
-12105cec654cf906 ("arm64: dts: renesas: r8a77990: ebisu: Fix backlight
-regulator numbering"), which just fixed the conflicting numerical
-suffix.
----
- arch/arm64/boot/dts/renesas/r8a77995-draak.dts | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+And so it did (patch sent for the same bug in r8a77995-draak.dts).
 
-diff --git a/arch/arm64/boot/dts/renesas/r8a77995-draak.dts b/arch/arm64/boot/dts/renesas/r8a77995-draak.dts
-index 0711170b26b1fe1c..3aa2564dfdc25fff 100644
---- a/arch/arm64/boot/dts/renesas/r8a77995-draak.dts
-+++ b/arch/arm64/boot/dts/renesas/r8a77995-draak.dts
-@@ -97,7 +97,7 @@
- 		reg = <0x0 0x48000000 0x0 0x18000000>;
- 	};
- 
--	reg_1p8v: regulator0 {
-+	reg_1p8v: regulator-1p8v {
- 		compatible = "regulator-fixed";
- 		regulator-name = "fixed-1.8V";
- 		regulator-min-microvolt = <1800000>;
-@@ -106,7 +106,7 @@
- 		regulator-always-on;
- 	};
- 
--	reg_3p3v: regulator1 {
-+	reg_3p3v: regulator-3p3v {
- 		compatible = "regulator-fixed";
- 		regulator-name = "fixed-3.3V";
- 		regulator-min-microvolt = <3300000>;
-@@ -115,7 +115,7 @@
- 		regulator-always-on;
- 	};
- 
--	reg_12p0v: regulator1 {
-+	reg_12p0v: regulator-12p0v {
- 		compatible = "regulator-fixed";
- 		regulator-name = "D12.0V";
- 		regulator-min-microvolt = <12000000>;
+> Isn't the YAML DT schema validator supposed to catch those problems ?
+> I'd even expect DTC to be able to catch such duplicate nodes and warn
+> about them.
+
+DTC indeed has check_duplicate_node_names.
+However, it only works for the base DTS, not for any later modifications in
+the board DTS.
+
+I.e. the original dup-nodename.dts in the DTC testsuite triggers an error,
+but the modified version below doesn't.
+
+--- a/tests/dup-nodename.dts
++++ b/tests/dup-nodename.dts
+@@ -1,8 +1,11 @@
+ /dts-v1/;
+
++/ {
++};
++
+ / {
+        node {
+        };
+        node {
+        };
+ };
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
 -- 
-2.17.1
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
 
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
