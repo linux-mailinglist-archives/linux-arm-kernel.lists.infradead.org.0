@@ -2,67 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0DE3A7B975
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 08:06:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5122A7B96F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 08:06:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=CgYdBHwlVU+jyGefkfcP2PrMJT66G81T/m76BXT9BXU=; b=B/WIeOzpfYI1RVE494K8nDW2c
-	MinD1a+/Bw6U1PmqEucWCdjuTZu1E54xPMYEoBRx0KUqk3gqU2ZOmbGGPnqJXmAGutVtvjOMev+8K
-	UXEp6BhHDiNT1sSjQraUvBdiKSMKiB23841PNiEiTYTUdcDQCUpRpGd0eQZp2OyBM9+qSCsv1FKEn
-	0/gdFK7f9PXnMarvZW8oxIBXrBu8kDY1QyGu43XWz2XHFtj967EXevMV6JOEefjLkz/F+w/zm4QUg
-	xt07qBP3kbu5a4oR/QXsspGnNMdubt7WlHn3y9JLv3aOmODo9apuCj5tNtQdGw6O+KRlgZptiIK5t
-	rKCyZVGjQ==;
+	 bh=5HE4HQx9pn1VV+R5M6YVOJoQL6+LtstVztI9ClfYBvQ=; b=tSYW706ef2NYZpWRFOhCwx+EW
+	tJ/kgyedcU/RTCsKvhmHu+rfCl/iCTkNxF4xiXKkm+VE881lcOnlGSANpOvLK2Ih3aBXPEfa4LyIP
+	6OaqLmuUNZoULp9gOP6pF8HE0zsjAy/3uqe5Xxmeo23NlBw7nZ11km3WZA+9rsExsFiysAKfI/wu4
+	3HhOount5rq/mbRDMdRbZMse46modmTWV1oaZUK7UkI5ZVxlIgO00XjXZ7XAKaRFEDyiOsMMq7NKX
+	1pR9RG+f07FGqyXGYpCyCd01sGnVEv0q6rLfix4oBhzwv4lvSQHbaZ58OuDbKbDRkbiIluhu12PgR
+	LAHclPe5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hshl5-0005E7-DC; Wed, 31 Jul 2019 06:06:43 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hshkU-0004jj-V2; Wed, 31 Jul 2019 06:06:07 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hshkc-00050F-SE; Wed, 31 Jul 2019 06:06:14 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:Content-Type:
- In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender
- :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=MqJgnMfqUabt7G5ra2x8qYxYqtvy4l0Kam0LO5xhytQ=; b=i9nr8rZhuzykTwvJnAjlBz4LyL
- 9a9UGxcGGK7BHeosUnNK3QW5P0V8lQXBD3HaYRujToD5q/fCAyS4l8Y8IWWKYogsc2cpICeoFHk7l
- 8nRUIkh0ycTcSRwBHmoswgWXFPaR6VeXEq+rSHRWy163/VPjj1Cjh5rHzvw6AFzjABqpsUXUvn0tU
- O1e+tPfPKJaXi4SL4/SddPbuoH8cPZJ/6oIFuZl8J5jr/vpxdZu8SXhle8oficy6xk5YxBm1h+VnS
- Pk+HvHi+60ZkZ0c2MJmd6bgRK/fhbqaxQa86zJwUcUZiqVxuFvr4W18fH9Tmq8q8ahWau3LYDhdKu
- e3S+YXYw==;
-Received: from relay11.mail.gandi.net ([217.70.178.231])
- by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hshkZ-0007Sz-GU; Wed, 31 Jul 2019 06:06:13 +0000
-Received: from [192.168.0.12] (127.19.86.79.rev.sfr.net [79.86.19.127])
- (Authenticated sender: alex@ghiti.fr)
- by relay11.mail.gandi.net (Postfix) with ESMTPSA id 68D61100008;
- Wed, 31 Jul 2019 06:05:23 +0000 (UTC)
-Subject: Re: [PATCH v5 14/14] riscv: Make mmap allocation top-down by default
-To: Andrew Morton <akpm@linux-foundation.org>
-References: <20190730055113.23635-1-alex@ghiti.fr>
- <20190730055113.23635-15-alex@ghiti.fr>
-From: Alex Ghiti <alex@ghiti.fr>
-Message-ID: <88a9bbf8-872f-97cc-fc1a-83eb7694478f@ghiti.fr>
-Date: Wed, 31 Jul 2019 02:05:23 -0400
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.4.0
+ id 1hshkI-0004jP-51
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 06:05:55 +0000
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id CD4E8602F1; Wed, 31 Jul 2019 06:05:53 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1564553153;
+ bh=hEk5PTdhSlKYsF9BXBhjcZBTRehJjUX5duLT6JssgUI=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=L7QZGwJ0INkOQxR7UU4hxuC1jBHQfyR/j1TeOlzjZqMssnkNWO1poRKVn27FyBlnv
+ K13xaqM+DJ1odTPKtpHVkgiu9ArMtMKkjVn2vfcHJIw6A8hXD5XOmLYRM+sTKSOz24
+ oQFLXvD9Wq8eTTyRSCfCtu1DUfZJuhBk1glBKWYc=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
+ version=3.4.0
+Received: from [10.79.136.27]
+ (blr-bdr-fw-01_globalnat_allzones-outside.qualcomm.com [103.229.18.19])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ (Authenticated sender: saiprakash.ranjan@smtp.codeaurora.org)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 37482602F1;
+ Wed, 31 Jul 2019 06:05:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1564553152;
+ bh=hEk5PTdhSlKYsF9BXBhjcZBTRehJjUX5duLT6JssgUI=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=ioDPYOhc1zZYTYKDQYsrRAN8bInbnXb4qZ95Frt66pd/Z4f7I3Cn8+RB3dXiDXMZ5
+ qxrqORFaXA/XnmfRdMoEb5atqtBHbwwCEUIWrTl1k/+mSFQlKsChhkVHOqqRA7NUFk
+ aahtVZzAqwLrnD3bZySkzv62zhy4DwWoSurO2Ec4=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 37482602F1
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: pdx-caf-mail.web.codeaurora.org; spf=none
+ smtp.mailfrom=saiprakash.ranjan@codeaurora.org
+Subject: Re: [PATCHv9 1/3] arm64: dts: qcom: sdm845: Add Coresight support
+To: Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Leo Yan <leo.yan@linaro.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Andy Gross <agross@kernel.org>, David Brown <david.brown@linaro.org>,
+ Mark Rutland <mark.rutland@arm.com>
+References: <cover.1564550873.git.saiprakash.ranjan@codeaurora.org>
+ <be6d77eb6c7498df09d04e0a369d4d65b38f4b8e.1564550873.git.saiprakash.ranjan@codeaurora.org>
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+Message-ID: <b50c06d4-8298-7abe-4442-2aff336509f5@codeaurora.org>
+Date: Wed, 31 Jul 2019 11:35:46 +0530
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20190730055113.23635-15-alex@ghiti.fr>
-Content-Language: sv-FI
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-0.7 points)
+In-Reply-To: <be6d77eb6c7498df09d04e0a369d4d65b38f4b8e.1564550873.git.saiprakash.ranjan@codeaurora.org>
+Content-Language: en-US
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190730_230554_237673_E00A6746 
+X-CRM114-Status: GOOD (  13.99  )
+X-Spam-Score: -2.5 (--)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.231 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.145.29.96 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,105 +104,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Albert Ou <aou@eecs.berkeley.edu>, Kees Cook <keescook@chromium.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Palmer Dabbelt <palmer@sifive.com>,
- Will Deacon <will.deacon@arm.com>, Russell King <linux@armlinux.org.uk>,
- Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
- linux-mm@kvack.org, Luis Chamberlain <mcgrof@kernel.org>,
- Paul Burton <paul.burton@mips.com>, James Hogan <jhogan@kernel.org>,
- linux-fsdevel@vger.kernel.org, linux-riscv@lists.infradead.org,
- linux-mips@vger.kernel.org, Christoph Hellwig <hch@lst.de>,
- linux-arm-kernel@lists.infradead.org, Alexander Viro <viro@zeniv.linux.org.uk>
+Cc: Rajendra Nayak <rnayak@codeaurora.org>,
+ Marc Gonzalez <marc.w.gonzalez@free.fr>, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Sibi Sankar <sibis@codeaurora.org>,
+ Vivek Gautam <vivek.gautam@codeaurora.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 7/30/19 1:51 AM, Alexandre Ghiti wrote:
-> In order to avoid wasting user address space by using bottom-up mmap
-> allocation scheme, prefer top-down scheme when possible.
->
-> Before:
-> root@qemuriscv64:~# cat /proc/self/maps
-> 00010000-00016000 r-xp 00000000 fe:00 6389       /bin/cat.coreutils
-> 00016000-00017000 r--p 00005000 fe:00 6389       /bin/cat.coreutils
-> 00017000-00018000 rw-p 00006000 fe:00 6389       /bin/cat.coreutils
-> 00018000-00039000 rw-p 00000000 00:00 0          [heap]
-> 1555556000-155556d000 r-xp 00000000 fe:00 7193   /lib/ld-2.28.so
-> 155556d000-155556e000 r--p 00016000 fe:00 7193   /lib/ld-2.28.so
-> 155556e000-155556f000 rw-p 00017000 fe:00 7193   /lib/ld-2.28.so
-> 155556f000-1555570000 rw-p 00000000 00:00 0
-> 1555570000-1555572000 r-xp 00000000 00:00 0      [vdso]
-> 1555574000-1555576000 rw-p 00000000 00:00 0
-> 1555576000-1555674000 r-xp 00000000 fe:00 7187   /lib/libc-2.28.so
-> 1555674000-1555678000 r--p 000fd000 fe:00 7187   /lib/libc-2.28.so
-> 1555678000-155567a000 rw-p 00101000 fe:00 7187   /lib/libc-2.28.so
-> 155567a000-15556a0000 rw-p 00000000 00:00 0
-> 3fffb90000-3fffbb1000 rw-p 00000000 00:00 0      [stack]
->
-> After:
-> root@qemuriscv64:~# cat /proc/self/maps
-> 00010000-00016000 r-xp 00000000 fe:00 6389       /bin/cat.coreutils
-> 00016000-00017000 r--p 00005000 fe:00 6389       /bin/cat.coreutils
-> 00017000-00018000 rw-p 00006000 fe:00 6389       /bin/cat.coreutils
-> 2de81000-2dea2000 rw-p 00000000 00:00 0          [heap]
-> 3ff7eb6000-3ff7ed8000 rw-p 00000000 00:00 0
-> 3ff7ed8000-3ff7fd6000 r-xp 00000000 fe:00 7187   /lib/libc-2.28.so
-> 3ff7fd6000-3ff7fda000 r--p 000fd000 fe:00 7187   /lib/libc-2.28.so
-> 3ff7fda000-3ff7fdc000 rw-p 00101000 fe:00 7187   /lib/libc-2.28.so
-> 3ff7fdc000-3ff7fe2000 rw-p 00000000 00:00 0
-> 3ff7fe4000-3ff7fe6000 r-xp 00000000 00:00 0      [vdso]
-> 3ff7fe6000-3ff7ffd000 r-xp 00000000 fe:00 7193   /lib/ld-2.28.so
-> 3ff7ffd000-3ff7ffe000 r--p 00016000 fe:00 7193   /lib/ld-2.28.so
-> 3ff7ffe000-3ff7fff000 rw-p 00017000 fe:00 7193   /lib/ld-2.28.so
-> 3ff7fff000-3ff8000000 rw-p 00000000 00:00 0
-> 3fff888000-3fff8a9000 rw-p 00000000 00:00 0      [stack]
->
-> Signed-off-by: Alexandre Ghiti <alex@ghiti.fr>
-> Reviewed-by: Christoph Hellwig <hch@lst.de>
-> Reviewed-by: Kees Cook <keescook@chromium.org>
-> Reviewed-by: Luis Chamberlain <mcgrof@kernel.org>
+Hi Suzuki,
+
+On 7/31/2019 11:28 AM, Sai Prakash Ranjan wrote:
+> Add coresight components found on Qualcomm SDM845 SoC.
+> 
+> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+> Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+> Acked-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 > ---
->   arch/riscv/Kconfig | 13 +++++++++++++
->   1 file changed, 13 insertions(+)
->
-> diff --git a/arch/riscv/Kconfig b/arch/riscv/Kconfig
-> index 8ef64fe2c2b3..8d0d8af1a744 100644
-> --- a/arch/riscv/Kconfig
-> +++ b/arch/riscv/Kconfig
-> @@ -54,6 +54,19 @@ config RISCV
->   	select EDAC_SUPPORT
->   	select ARCH_HAS_GIGANTIC_PAGE
->   	select ARCH_WANT_HUGE_PMD_SHARE if 64BIT
-> +	select ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT if MMU
-> +	select HAVE_ARCH_MMAP_RND_BITS
-> +
-> +config ARCH_MMAP_RND_BITS_MIN
-> +	default 18 if 64BIT
-> +	default 8
-> +
-> +# max bits determined by the following formula:
-> +#  VA_BITS - PAGE_SHIFT - 3
-> +config ARCH_MMAP_RND_BITS_MAX
-> +	default 33 if RISCV_VM_SV48
-> +	default 24 if RISCV_VM_SV39
-> +	default 17 if RISCV_VM_SV32
->   
->   config MMU
->   	def_bool y
+>   arch/arm64/boot/dts/qcom/sdm845.dtsi | 451 +++++++++++++++++++++++++++
+>   1 file changed, 451 insertions(+)
 
+I have tested coresight with scatter gather on SDM845 MTP and MSM8996
+based DB820c board and posted the results in
 
-Hi Andrew,
+- https://github.com/saiprakash-ranjan/coresight-test-results
 
-I have just seen you took this series into mmotm but without Paul's 
-patch ("riscv: kbuild: add virtual memory system selection") on which 
-this commit relies, I'm not sure it could
-compile without it as there is no default for ARCH_MMAP_RND_BITS_MAX.
+Please let me know if you need some additional testing done.
+
+I could not perform coresight tests on MSM8998 MTP with latest build
+as it was resulting in crash due to some AHB timeouts. This was not
+due to scatter-gather and mostly likely the problem with the build.
+Maybe we can keep msm8998-coresight on hold?
+
+BTW, patches are based on linux-next.
 
 Thanks,
+Sai
 
-Alex
-
+-- 
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
+of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
