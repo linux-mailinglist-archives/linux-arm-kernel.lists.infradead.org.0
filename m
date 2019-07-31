@@ -2,84 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75F277C96C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 18:59:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA06A7C9C9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 19:02:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hRhgWPZLnO6vCHAcNb9zZOt82L3Xbygh/zpjdfqCy5c=; b=nmoURDXr7coXLs
-	zNZ02opOs+NdeVGhX9HA1lyiQ9MTuljRpX/eAT5xehcftHZRb+J8ayhDf/Z+ysgdlChblmxmTYWBO
-	kGMyuZgA9FoUKCi04MoBOl1KfopJiTQxQExkM1QRt8cuPBqHEBbBj5rv9LUhbr1i1uXlpAqd/jErW
-	uRGaLFBRyJW1NRj3Dl0dmxndw9SSg5yuLl/yTI0lv0o1TcMMYpo0Rg4FWaRZHaU5tZQ+YfaQGYNBJ
-	LIisn4SDeM0YpjXp6/dQjA6teRF51QqpnA7GXRQbMConT6gvGwaBZoWCqYn9OVGhKCOGlsbTRKqoB
-	IBMU9zNeDzNzuYmE+ioQ==;
+	List-Owner; bh=RtfYMi2KxZd3eEKLkqi++oiUpCK77/bVaDgz+bpOeWY=; b=LqvHoG7MulR0XN
+	8qumJHDkrLvlVrVsRjmf5nxlqtX6XF7U5d+gpWltFM9jUPYKuQHHwR+CvKTqICe+xGF4MC8eC3dWZ
+	axO+fHOQHbzlyt3VSFcEhvWxhbO9HUi5yoyYX/R2MxT3rtYOzjYITSmXbBYFS5Sw11OPTLcuEkP1G
+	2kPagdzACnMbthszADEJgtLcCz2gRRHLFEZtr4Nbhx9sX+cxIDA/qC+FD6CA1iaH41YLDRrtXB/n2
+	b2R6qNrnf5T8kIsRzID7yL4kuSSb9F7WUZo7DJMTdNz86RXQEWG+uk+QUB/yvdoOCVuzKvnBvNQpx
+	oix8l/CfpRaqZVz223TA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsrwU-0007pD-W6; Wed, 31 Jul 2019 16:59:11 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1hsrzf-0004gw-9c; Wed, 31 Jul 2019 17:02:27 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsrvy-0007Zn-1A
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 16:58:43 +0000
-Received: by mail-pg1-x544.google.com with SMTP id s1so26033264pgr.2
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 31 Jul 2019 09:58:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=BbYGW1om6PC71p94etYGN3/okI4rSt3mD1Fla+dsCZI=;
- b=gcYhN/gR9O1Pe9ZLLVnRXrYNlqcViNsBD9U+GWnDzGiTqP8BVudlcK6mYTh5KrhO1w
- aPil5ZmAZyWrMboSY/Y4EWCOKqTrOByXbdolL7wrTtQQigNu3FCKkYHuY/f8LOCXZn1u
- ag8qe88aaYi4cK4Mfe8I/EeGUX2kgbjRo2JPexbLBAxz/4y8a14v3Vg1RNt/bIRzUwcG
- vcvAbuxpYD56GqmAnN1CoBopaj00u0e2dPBhLKzQ8gki7fyFmQ9T2Gf65RoFjifXYT5N
- ZJY+aIxyu6kEy2OB53kVekkt/E7IokVuCTGKJ1lXzFJ9A3wj7gq/JRJAFrWHV39z7cGm
- xIiA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=BbYGW1om6PC71p94etYGN3/okI4rSt3mD1Fla+dsCZI=;
- b=oIvj0i06Umn4f8QCYsMERPBzdE248OT07BrFNkC5BEBbTXIzmCqwgScqoT8XO2ymBx
- I5Ib+Qf+j/JWNyou55Tw7Qgfjp52VUFWlVVxvZT+3itr35Wdm/N9uCqhYeWcfnTM0uXj
- Z7haq4QUMDdnVdQJheXrOyKsTwubyTA3VZTF9uUEXERApvLk1TIbJBlDXb7s24MSTcMp
- WWkA01eQ9xTV2ipMkk39gjWLIT2n2xlqtaJ9r0fliWhlAob8McyzSesq3XlPebupAg1H
- Eq8fTmmMW7IpA3L89RHZcT8SZXYCyZ1W2fSrWyh0WeUaBIhr5OfBC/LHoU5jr0SAwpSD
- OgPw==
-X-Gm-Message-State: APjAAAWPyBboJtLfHZYWp0MI05x+72XJKeJXXXqCH/SAvzzwj30yORSz
- iVfmMZ30e4HPtSlGbWudyaKdygZI8Oe2ug==
-X-Google-Smtp-Source: APXvYqyt4Vp+5qcTUWTv9ZC5LXoMgRwNq9/qEfHAcFZBWQDCFk9UuJV9yUPdKUQAFbAsce0aLp0V9Q==
-X-Received: by 2002:a65:464d:: with SMTP id k13mr103144274pgr.99.1564592315501; 
- Wed, 31 Jul 2019 09:58:35 -0700 (PDT)
-Received: from leoy-ThinkPad-X240s (li1433-81.members.linode.com.
- [45.33.106.81])
- by smtp.gmail.com with ESMTPSA id i124sm128217887pfe.61.2019.07.31.09.58.30
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 31 Jul 2019 09:58:34 -0700 (PDT)
-Date: Thu, 1 Aug 2019 00:58:26 +0800
-From: Leo Yan <leo.yan@linaro.org>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH 1/2] arm64: Add support for function error injection
-Message-ID: <20190731165826.GG16088@leoy-ThinkPad-X240s>
-References: <20190716111301.1855-1-leo.yan@linaro.org>
- <20190716111301.1855-2-leo.yan@linaro.org>
- <20190731160836.qmzlk3ndbahwhfmu@willie-the-truck>
+ id 1hsryJ-0002rC-NT; Wed, 31 Jul 2019 17:01:12 +0000
+Received: from mail-qt1-f175.google.com (mail-qt1-f175.google.com
+ [209.85.160.175])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3462F21851;
+ Wed, 31 Jul 2019 17:01:03 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1564592463;
+ bh=y/z8SK50ZpO4nCmvVJnpvHDo1YUj59MbZ52y+l8J5m0=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=HbwUPQ/TqNvkzRJEcfZ45zRKq9UrnGWvUXJ0/cdlWu/BJVBs2LG/ZZYYUrk4dGsAo
+ AjbOYmZU11vX9u5eeQwPrz6tRO6FbPeES2AcQ8GI18tGedmrKCP7LT72FixIM3jwNu
+ Aak7Z3x3bzlKlc3NTPWHGAeUTjEWh4pIQALXNY0k=
+Received: by mail-qt1-f175.google.com with SMTP id n11so67285371qtl.5;
+ Wed, 31 Jul 2019 10:01:03 -0700 (PDT)
+X-Gm-Message-State: APjAAAXWWe6bXLNf71nmhvkI6paFr/M8HQsa3EEeZrngVqpEB2rrOFSb
+ gZheqav3hjgmUGgZQtPfK4FPn2nPvyDeNDjHuA==
+X-Google-Smtp-Source: APXvYqyjhn7/hvSOJl+L9+ZR20USCeZlDySkINDz19gr0YGu/PGoSbb4n4RnD39j2VWH+e65HF3uPE1NOiig1AteLQA=
+X-Received: by 2002:a0c:b786:: with SMTP id l6mr89053606qve.148.1564592462233; 
+ Wed, 31 Jul 2019 10:01:02 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190731160836.qmzlk3ndbahwhfmu@willie-the-truck>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <20190731121409.17285-1-glaroque@baylibre.com>
+ <20190731121409.17285-2-glaroque@baylibre.com>
+ <f0f0dfe5-0cd3-5275-53ff-cfc4bb44f7e6@baylibre.com>
+In-Reply-To: <f0f0dfe5-0cd3-5275-53ff-cfc4bb44f7e6@baylibre.com>
+From: Rob Herring <robh@kernel.org>
+Date: Wed, 31 Jul 2019 11:00:50 -0600
+X-Gmail-Original-Message-ID: <CAL_Jsq+Z1JvvtrDBtqbcuzdy_k5=OSSLQ7ezKvs9-oyvGi=-9A@mail.gmail.com>
+Message-ID: <CAL_Jsq+Z1JvvtrDBtqbcuzdy_k5=OSSLQ7ezKvs9-oyvGi=-9A@mail.gmail.com>
+Subject: Re: [PATCH 1/6] dt-bindings: thermal: Add DT bindings documentation
+ for Amlogic Thermal
+To: Neil Armstrong <narmstrong@baylibre.com>,
+ Guillaume La Roque <glaroque@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_095838_092911_F2DB43C3 
-X-CRM114-Status: GOOD (  27.84  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190731_100103_824749_AFA9AA15 
+X-CRM114-Status: GOOD (  16.95  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -89,6 +74,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,155 +86,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Song Liu <songliubraving@fb.com>, linux-kernel@vger.kernel.org,
- Arnd Bergmann <arnd@arndb.de>, Daniel Borkmann <daniel@iogearbox.net>,
- Catalin Marinas <catalin.marinas@arm.com>, Alexei Starovoitov <ast@kernel.org>,
- Russell King <linux@armlinux.org.uk>, netdev@vger.kernel.org,
- Masami Hiramatsu <mhiramat@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
- Yonghong Song <yhs@fb.com>, bpf@vger.kernel.org,
- Martin KaFai Lau <kafai@fb.com>, linux-arm-kernel@lists.infradead.org,
- Justin He <Justin.He@arm.com>
+Cc: devicetree@vger.kernel.org, "open list:THERMAL" <linux-pm@vger.kernel.org>,
+ Kevin Hilman <khilman@baylibre.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ linux-amlogic@lists.infradead.org,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Will,
-
-Thanks for reviewing.
-
-On Wed, Jul 31, 2019 at 05:08:37PM +0100, Will Deacon wrote:
-> On Tue, Jul 16, 2019 at 07:13:00PM +0800, Leo Yan wrote:
-> > This patch implement regs_set_return_value() and
-> > override_function_with_return() to support function error injection
-> > for arm64.
-> > 
-> > In the exception flow, arm64's general register x30 contains the value
-> > for the link register; so we can just update pt_regs::pc with it rather
-> > than redirecting execution to a dummy function that returns.
-> > 
-> > This patch is heavily inspired by the commit 7cd01b08d35f ("powerpc:
-> > Add support for function error injection").
-> > 
-> > Signed-off-by: Leo Yan <leo.yan@linaro.org>
+On Wed, Jul 31, 2019 at 6:44 AM Neil Armstrong <narmstrong@baylibre.com> wrote:
+>
+> On 31/07/2019 14:14, Guillaume La Roque wrote:
+> > Adding the devicetree binding documentation for the Amlogic temperature
+> > sensor found in the Amlogic Meson G12 SoCs.
+> > the G12A  and G12B SoCs are supported.
+> >
+> > Signed-off-by: Guillaume La Roque <glaroque@baylibre.com>
 > > ---
-> >  arch/arm64/Kconfig                       |  1 +
-> >  arch/arm64/include/asm/error-injection.h | 13 +++++++++++++
-> >  arch/arm64/include/asm/ptrace.h          |  5 +++++
-> >  arch/arm64/lib/Makefile                  |  2 ++
-> >  arch/arm64/lib/error-inject.c            | 19 +++++++++++++++++++
-> >  5 files changed, 40 insertions(+)
-> >  create mode 100644 arch/arm64/include/asm/error-injection.h
-> >  create mode 100644 arch/arm64/lib/error-inject.c
-> > 
-> > diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-> > index 697ea0510729..a6d9e622977d 100644
-> > --- a/arch/arm64/Kconfig
-> > +++ b/arch/arm64/Kconfig
-> > @@ -142,6 +142,7 @@ config ARM64
-> >  	select HAVE_EFFICIENT_UNALIGNED_ACCESS
-> >  	select HAVE_FTRACE_MCOUNT_RECORD
-> >  	select HAVE_FUNCTION_TRACER
-> > +	select HAVE_FUNCTION_ERROR_INJECTION
-> >  	select HAVE_FUNCTION_GRAPH_TRACER
-> >  	select HAVE_GCC_PLUGINS
-> >  	select HAVE_HW_BREAKPOINT if PERF_EVENTS
-> > diff --git a/arch/arm64/include/asm/error-injection.h b/arch/arm64/include/asm/error-injection.h
+> >  .../bindings/thermal/amlogic,thermal.yaml     | 58 +++++++++++++++++++
+> >  1 file changed, 58 insertions(+)
+> >  create mode 100644 Documentation/devicetree/bindings/thermal/amlogic,thermal.yaml
+> >
+> > diff --git a/Documentation/devicetree/bindings/thermal/amlogic,thermal.yaml b/Documentation/devicetree/bindings/thermal/amlogic,thermal.yaml
 > > new file mode 100644
-> > index 000000000000..da057e8ed224
+> > index 000000000000..1e2fe84da13d
 > > --- /dev/null
-> > +++ b/arch/arm64/include/asm/error-injection.h
-> > @@ -0,0 +1,13 @@
-> > +/* SPDX-License-Identifier: GPL-2.0+ */
+> > +++ b/Documentation/devicetree/bindings/thermal/amlogic,thermal.yaml
+> > @@ -0,0 +1,58 @@
+> > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/thermal/amlogic,thermal.yaml#
+> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > > +
-> > +#ifndef __ASM_ERROR_INJECTION_H_
-> > +#define __ASM_ERROR_INJECTION_H_
+> > +title: Amlogic Thermal Driver
 > > +
-> > +#include <linux/compiler.h>
-> > +#include <linux/linkage.h>
-> > +#include <asm/ptrace.h>
-> > +#include <asm-generic/error-injection.h>
+> > +maintainers:
+> > +  - Guillaume La Roque <glaroque@baylibre.com>
 > > +
-> > +void override_function_with_return(struct pt_regs *regs);
+> > +description: Amlogic Thermal driver
 > > +
-> > +#endif /* __ASM_ERROR_INJECTION_H_ */
-> 
-> Why isn't this prototype in the asm-generic header? Seems weird to have to
-> duplicate it for each architecture.
+> > +properties:
+> > +  compatible:
+> > +    oneOf:
+> > +      - items:
+> > +          - enum:
+> > +              - amlogic,g12-cpu-thermal
+> > +              - amlogic,g12-ddr-thermal
+> > +          - enum:
+> > +              - amlogic,g12-thermal
+>
+> Shouldn't be :
+>     compatible:
+>         items:
+>           - enum:
+>               - amlogic,g12-cpu-thermal
+>               - amlogic,g12-ddr-thermal
+>           - const:
+>               - amlogic,g12-thermal
+>
+> instead ?
 
-Yeah.  When I spin for new version patches, will try to refactor in
-the asm-generic header.
+Yes, except 'const' is a string, not list value.
 
-> > diff --git a/arch/arm64/include/asm/ptrace.h b/arch/arm64/include/asm/ptrace.h
-> > index dad858b6adc6..3aafbbe218a2 100644
-> > --- a/arch/arm64/include/asm/ptrace.h
-> > +++ b/arch/arm64/include/asm/ptrace.h
-> > @@ -294,6 +294,11 @@ static inline unsigned long regs_return_value(struct pt_regs *regs)
-> >  	return regs->regs[0];
-> >  }
-> >  
-> > +static inline void regs_set_return_value(struct pt_regs *regs, unsigned long rc)
-> > +{
-> > +	regs->regs[0] = rc;
-> > +}
+>
 > > +
-> >  /**
-> >   * regs_get_kernel_argument() - get Nth function argument in kernel
-> >   * @regs:	pt_regs of that context
-> > diff --git a/arch/arm64/lib/Makefile b/arch/arm64/lib/Makefile
-> > index 33c2a4abda04..f182ccb0438e 100644
-> > --- a/arch/arm64/lib/Makefile
-> > +++ b/arch/arm64/lib/Makefile
-> > @@ -33,3 +33,5 @@ UBSAN_SANITIZE_atomic_ll_sc.o	:= n
-> >  lib-$(CONFIG_ARCH_HAS_UACCESS_FLUSHCACHE) += uaccess_flushcache.o
-> >  
-> >  obj-$(CONFIG_CRC32) += crc32.o
+> > +  reg:
+> > +    maxItems: 1
 > > +
-> > +obj-$(CONFIG_FUNCTION_ERROR_INJECTION) += error-inject.o
-> > diff --git a/arch/arm64/lib/error-inject.c b/arch/arm64/lib/error-inject.c
-> > new file mode 100644
-> > index 000000000000..35661c2de4b0
-> > --- /dev/null
-> > +++ b/arch/arm64/lib/error-inject.c
-> > @@ -0,0 +1,19 @@
-> > +// SPDX-License-Identifier: GPL-2.0
+> > +  interrupts:
+> > +    maxItems: 1
 > > +
-> > +#include <linux/error-injection.h>
-> > +#include <linux/kprobes.h>
+> > +  clocks:
+> > +    maxItems: 1
 > > +
-> > +void override_function_with_return(struct pt_regs *regs)
-> > +{
-> > +	/*
-> > +	 * 'regs' represents the state on entry of a predefined function in
-> > +	 * the kernel/module and which is captured on a kprobe.
-> > +	 *
-> > +	 * 'regs->regs[30]' contains the the link register for the probed
-> 
-> extra "the"
+> > +  amlogic,ao-secure:
+> > +    description: phandle to the ao-secure syscon
+> > +    allOf:
+> > +     - $ref: /schemas/types.yaml#/definitions/uint32
 
-Will fix.
+phandle, not uint32
 
-> > +	 * function and assign it to 'regs->pc', so when kprobe returns
-> > +	 * back from exception it will override the end of probed function
-> > +	 * and drirectly return to the predefined function's caller.
-> 
-> directly
+> > +
+> > +
+> > +required:
+> > +  - compatible
+> > +  - reg
+> > +  - interrupts
+> > +  - clocks
+> > +  - amlogic,ao-secure
+> > +
+> > +examples:
+> > +  - |
+> > +        cpu_temp: temperature-sensor@ff634800 {
+> > +                compatible = "amlogic,g12-cpu-thermal",
+> > +                             "amlogic,g12-thermal";
+> > +                reg = <0x0 0xff634800 0x0 0x50>;
+> > +                interrupts = <0x0 0x24 0x0>;
+> > +                clocks = <&clk 164>;
+> > +                status = "okay";
+> > +                #thermal-sensor-cells = <1>;
+> > +                amlogic,ao-secure = <&sec_AO>;
+> > +        };
+> > +...
+> > \ No newline at end of file
 
-Will fix.
+Fix this.
 
-> > +	 */
-> > +	regs->pc = regs->regs[30];
-> 
-> I suppose we could be all fancy and do:
-> 
-> 	instruction_pointer_set(regs, procedure_link_pointer(regs));
-> 
-> How about that?
 
-Ah, good point.  Will change to use the common APIs.
-
-Thanks,
-Leo Yan
+> >
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
