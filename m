@@ -2,96 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D13517CA83
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 19:33:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E2A0F7CA9A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 19:37:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qqnAHRA9Yi9f8/NtdH30AOi3vu040d57zZvBaiqPVts=; b=q6/DCyHHSRlc5W
-	irNZhUUVz9itQ5/NYi0BoscFlr8xzfcRx2dP8khDJI44KwYGgo0bv+d63zvIVcM9m9GeSj55OoJzd
-	6LCelmbNw+Fd3TdTJNS0hVnrEecFP5rJf/R86xsQ7YY88F3TzP2RimwXgiG2jz5e5854tgj69dvPJ
-	M3zJuPjTY2CSiqap3sxujRdMD45SrkpH9aU4YaYthaWnDBdyF72hmncFI9jmbcDwB0GfP/xHvJJsN
-	7NBulXwy2Rn6xHRgJf+mdSi87X85RXcZAiXcV0GRiEQ2KL8bezaBA4WEWZK3KtoJFcWWZtBUqs3qA
-	i547cYjKuYbTbKuk1m0A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=MnACvxj5VOE+N/I1qWIPuU5IFXmWj3n32wl85CPDQKk=; b=I+84z7t4ZdqVu2
+	w9E5+9wVuekoCgUL4VQ8Ngp895m5OnDTZLYU8lINvgltXyc7BgZ9pHuybmDe9eGk2+q3DyeZ4Q/OZ
+	RQxgZuOUMcBbaoH83ZNbDVjBXI9DAtcJ2eIaD35T3Rs7eZOU7cYxQ/GdjtcTD4nn7ZXThcBg2GG69
+	0FSm/wv4CU7dhyeUsTh0smRmm/Z4LJ3F8PqQQNlC5PDeRnkoqrvMJq2JeIRJ6rb7P0HImWHtOYQtR
+	F/YvU7HRB07P64o4NXFa8+5Qvus/0X35fpWQxRCTalolqQaL7jYX9LH+G/OFYl3/mo3biZibQM3wV
+	98Dp0nbB0ABlqbPYHn0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hssTl-0002oX-EE; Wed, 31 Jul 2019 17:33:33 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hssTd-0002nY-Ff; Wed, 31 Jul 2019 17:33:27 +0000
-Received: by mail-pg1-x543.google.com with SMTP id u17so32388232pgi.6;
- Wed, 31 Jul 2019 10:33:25 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=1mUzN69TbVh9yZT+F3MQDO+6tQ5Mp+B1rUEtD2T6Huc=;
- b=YOxge0Yl9i70G+adD8fcIAQFr/+MKP/AFeajQGmNOUU3PSBiJFy13XEVeByt0H23Fm
- eQzDcQe68Apu1iZpVUkzBjb1K8sNEmZZT1vTc0iVLJa71adt7IaZsg7HXfFrupSDvu2t
- /AbaO7TzbQzEOfsYUnbE8+0dT8MWRwsp1fjykU0avS6hF4Jk57q5gwhJWRcTwnruRx8D
- PzGi9hcvi/tT1aDkbKf0dLDit1UyoCPYI0SUX4i4V74v4YxmWPog8KRGZn0aniBLbdUA
- HNRGCy5jpKlcLfKvyalbj8kL5hQfmFY6LXC6ZzkipEieZEKSDhpcT5WZw6P56IE6NcoA
- AxYw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=1mUzN69TbVh9yZT+F3MQDO+6tQ5Mp+B1rUEtD2T6Huc=;
- b=UTrC3aTTe+f9EdgEjNu/NDeUPwyGR1E+HkpyNsk0JQxgpBdnRm4CMvoKplkv7MDO+A
- +BwXmT+lPrl/KCDj5bTr1qVkoz2GGhLt3M5GfnNa3OwYMBNmQztU6sIHReXViaDCNDV9
- 4v9fEEe5fJEEDgSf3iQhmkNxddmYNml1HQGRizUcpmFJCNfYI6P3kUOefBHHv5BQsX5V
- fOz47k73qW44mVsIe7O37+ujvgjbjdhbnvX3Ae+DV+y88vXNupzrWRpxZCYnzET/1/xo
- RSnn6SjXSeZxcY04QZUDoayFgGtcqNhuFZsKVcXov6lqJQJkmk00Xum4Ul9MKQ70HeNf
- ku5Q==
-X-Gm-Message-State: APjAAAVaazAfBqG4pNVioF+c8oWZXwMaFUzF76ZmLT8/RyoHAOecvR3p
- i5veU02nI6D07UWjd/mCH8A=
-X-Google-Smtp-Source: APXvYqwzc3V4hpBjzjfpPb1vXFYPZ0Qeb7PGWHW8bph0fdJAOdbQdQV14uAoPp6X+iZ/zBHaMBAOoQ==
-X-Received: by 2002:a62:7d13:: with SMTP id y19mr48612603pfc.62.1564594404588; 
- Wed, 31 Jul 2019 10:33:24 -0700 (PDT)
-Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id e10sm71043899pfi.173.2019.07.31.10.33.23
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 31 Jul 2019 10:33:23 -0700 (PDT)
-Date: Wed, 31 Jul 2019 10:33:22 -0700
-From: Guenter Roeck <linux@roeck-us.net>
-To: Alex Ghiti <alex@ghiti.fr>
-Subject: Re: [PATCH v5 14/14] riscv: Make mmap allocation top-down by default
-Message-ID: <20190731173322.GA30870@roeck-us.net>
-References: <20190730055113.23635-1-alex@ghiti.fr>
- <20190730055113.23635-15-alex@ghiti.fr>
- <88a9bbf8-872f-97cc-fc1a-83eb7694478f@ghiti.fr>
+	id 1hssXD-0004bh-RR; Wed, 31 Jul 2019 17:37:07 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hssX6-0004bM-C7
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 17:37:01 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 70839337;
+ Wed, 31 Jul 2019 10:36:59 -0700 (PDT)
+Received: from big-swifty.lan (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BD8053F71F;
+ Wed, 31 Jul 2019 10:36:56 -0700 (PDT)
+From: Marc Zyngier <maz@kernel.org>
+To: Paolo Bonzini <pbonzini@redhat.com>,
+ =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>
+Subject: [GIT PULL] KVM/arm updates for 5.3-rc3
+Date: Wed, 31 Jul 2019 18:36:45 +0100
+Message-Id: <20190731173650.12627-1-maz@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <88a9bbf8-872f-97cc-fc1a-83eb7694478f@ghiti.fr>
-User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_103325_522743_0031DB39 
-X-CRM114-Status: GOOD (  15.47  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20190731_103700_459608_B48FF20F 
+X-CRM114-Status: GOOD (  10.87  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,126 +58,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Albert Ou <aou@eecs.berkeley.edu>, Kees Cook <keescook@chromium.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Palmer Dabbelt <palmer@sifive.com>,
- Will Deacon <will.deacon@arm.com>, Russell King <linux@armlinux.org.uk>,
- Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
- linux-mm@kvack.org, Luis Chamberlain <mcgrof@kernel.org>,
- linux-riscv@lists.infradead.org, Paul Burton <paul.burton@mips.com>,
- James Hogan <jhogan@kernel.org>, linux-fsdevel@vger.kernel.org,
- Andrew Morton <akpm@linux-foundation.org>, linux-mips@vger.kernel.org,
- Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org,
- Alexander Viro <viro@zeniv.linux.org.uk>
+Cc: Anders Roxell <anders.roxell@linaro.org>, kvm@vger.kernel.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Julien Thierry <julien.thierry@arm.com>, James Morse <james.morse@arm.com>,
+ Zenghui Yu <yuzenghui@huawei.com>, Andrew Murray <andrew.murray@arm.com>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 31, 2019 at 02:05:23AM -0400, Alex Ghiti wrote:
-> On 7/30/19 1:51 AM, Alexandre Ghiti wrote:
-> >In order to avoid wasting user address space by using bottom-up mmap
-> >allocation scheme, prefer top-down scheme when possible.
-> >
-> >Before:
-> >root@qemuriscv64:~# cat /proc/self/maps
-> >00010000-00016000 r-xp 00000000 fe:00 6389       /bin/cat.coreutils
-> >00016000-00017000 r--p 00005000 fe:00 6389       /bin/cat.coreutils
-> >00017000-00018000 rw-p 00006000 fe:00 6389       /bin/cat.coreutils
-> >00018000-00039000 rw-p 00000000 00:00 0          [heap]
-> >1555556000-155556d000 r-xp 00000000 fe:00 7193   /lib/ld-2.28.so
-> >155556d000-155556e000 r--p 00016000 fe:00 7193   /lib/ld-2.28.so
-> >155556e000-155556f000 rw-p 00017000 fe:00 7193   /lib/ld-2.28.so
-> >155556f000-1555570000 rw-p 00000000 00:00 0
-> >1555570000-1555572000 r-xp 00000000 00:00 0      [vdso]
-> >1555574000-1555576000 rw-p 00000000 00:00 0
-> >1555576000-1555674000 r-xp 00000000 fe:00 7187   /lib/libc-2.28.so
-> >1555674000-1555678000 r--p 000fd000 fe:00 7187   /lib/libc-2.28.so
-> >1555678000-155567a000 rw-p 00101000 fe:00 7187   /lib/libc-2.28.so
-> >155567a000-15556a0000 rw-p 00000000 00:00 0
-> >3fffb90000-3fffbb1000 rw-p 00000000 00:00 0      [stack]
-> >
-> >After:
-> >root@qemuriscv64:~# cat /proc/self/maps
-> >00010000-00016000 r-xp 00000000 fe:00 6389       /bin/cat.coreutils
-> >00016000-00017000 r--p 00005000 fe:00 6389       /bin/cat.coreutils
-> >00017000-00018000 rw-p 00006000 fe:00 6389       /bin/cat.coreutils
-> >2de81000-2dea2000 rw-p 00000000 00:00 0          [heap]
-> >3ff7eb6000-3ff7ed8000 rw-p 00000000 00:00 0
-> >3ff7ed8000-3ff7fd6000 r-xp 00000000 fe:00 7187   /lib/libc-2.28.so
-> >3ff7fd6000-3ff7fda000 r--p 000fd000 fe:00 7187   /lib/libc-2.28.so
-> >3ff7fda000-3ff7fdc000 rw-p 00101000 fe:00 7187   /lib/libc-2.28.so
-> >3ff7fdc000-3ff7fe2000 rw-p 00000000 00:00 0
-> >3ff7fe4000-3ff7fe6000 r-xp 00000000 00:00 0      [vdso]
-> >3ff7fe6000-3ff7ffd000 r-xp 00000000 fe:00 7193   /lib/ld-2.28.so
-> >3ff7ffd000-3ff7ffe000 r--p 00016000 fe:00 7193   /lib/ld-2.28.so
-> >3ff7ffe000-3ff7fff000 rw-p 00017000 fe:00 7193   /lib/ld-2.28.so
-> >3ff7fff000-3ff8000000 rw-p 00000000 00:00 0
-> >3fff888000-3fff8a9000 rw-p 00000000 00:00 0      [stack]
-> >
-> >Signed-off-by: Alexandre Ghiti <alex@ghiti.fr>
-> >Reviewed-by: Christoph Hellwig <hch@lst.de>
-> >Reviewed-by: Kees Cook <keescook@chromium.org>
-> >Reviewed-by: Luis Chamberlain <mcgrof@kernel.org>
-> >---
-> >  arch/riscv/Kconfig | 13 +++++++++++++
-> >  1 file changed, 13 insertions(+)
-> >
-> >diff --git a/arch/riscv/Kconfig b/arch/riscv/Kconfig
-> >index 8ef64fe2c2b3..8d0d8af1a744 100644
-> >--- a/arch/riscv/Kconfig
-> >+++ b/arch/riscv/Kconfig
-> >@@ -54,6 +54,19 @@ config RISCV
-> >  	select EDAC_SUPPORT
-> >  	select ARCH_HAS_GIGANTIC_PAGE
-> >  	select ARCH_WANT_HUGE_PMD_SHARE if 64BIT
-> >+	select ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT if MMU
-> >+	select HAVE_ARCH_MMAP_RND_BITS
-> >+
-> >+config ARCH_MMAP_RND_BITS_MIN
-> >+	default 18 if 64BIT
-> >+	default 8
-> >+
-> >+# max bits determined by the following formula:
-> >+#  VA_BITS - PAGE_SHIFT - 3
-> >+config ARCH_MMAP_RND_BITS_MAX
-> >+	default 33 if RISCV_VM_SV48
-> >+	default 24 if RISCV_VM_SV39
-> >+	default 17 if RISCV_VM_SV32
-> >  config MMU
-> >  	def_bool y
-> 
-> 
-> Hi Andrew,
-> 
-> I have just seen you took this series into mmotm but without Paul's patch
-> ("riscv: kbuild: add virtual memory system selection") on which this commit
-> relies, I'm not sure it could
-> compile without it as there is no default for ARCH_MMAP_RND_BITS_MAX.
-> 
-Yes, this patch results in a bad configuration file.
+Paolo, Radim,
 
-CONFIG_ARCH_MMAP_RND_BITS_MIN=18
-CONFIG_HAVE_ARCH_MMAP_RND_BITS=y
-CONFIG_ARCH_MMAP_RND_BITS=0
+Here's a handful of patches for 5.3-rc3: Two actual fixes (missing
+break; in the 32bit register mapping, PMU reset being broken after the
+chained counter update). The rest is either cosmetic (exception
+classes in debug/tracing) or silence warnings (the fall-through
+explosion).
 
-CONFIG_ARCH_MMAP_RND_BITS=0 is outside the valid range, causing make to ask
-for a valid number. Since none exists, one is stuck with something like:
+Please pull.
 
-Number of bits to use for ASLR of mmap base address (ARCH_MMAP_RND_BITS) [0] (NEW) 1
-Number of bits to use for ASLR of mmap base address (ARCH_MMAP_RND_BITS) [0] (NEW) 2
-Number of bits to use for ASLR of mmap base address (ARCH_MMAP_RND_BITS) [0] (NEW) 3
-Number of bits to use for ASLR of mmap base address (ARCH_MMAP_RND_BITS) [0] (NEW) 4
-Number of bits to use for ASLR of mmap base address (ARCH_MMAP_RND_BITS) [0] (NEW) 5
-Number of bits to use for ASLR of mmap base address (ARCH_MMAP_RND_BITS) [0] (NEW) 6
-Number of bits to use for ASLR of mmap base address (ARCH_MMAP_RND_BITS) [0] (NEW) 7
-Number of bits to use for ASLR of mmap base address (ARCH_MMAP_RND_BITS) [0] (NEW) 8
-Number of bits to use for ASLR of mmap base address (ARCH_MMAP_RND_BITS) [0] (NEW) 19
-Number of bits to use for ASLR of mmap base address (ARCH_MMAP_RND_BITS) [0] (NEW) 18
+	M.
 
-when trying to compile riscv images. Plus, of course, all automatic builders
-bail out as result. 
+The following changes since commit 5f9e832c137075045d15cd6899ab0505cfb2ca4b:
 
-Guenter
+  Linus 5.3-rc1 (2019-07-21 14:05:38 -0700)
+
+are available in the Git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/kvmarm/kvmarm.git tags/kvmarm-fixes-for-5.3
+
+for you to fetch changes up to cdb2d3ee0436d74fa9092f2df46aaa6f9e03c969:
+
+  arm64: KVM: hyp: debug-sr: Mark expected switch fall-through (2019-07-29 11:01:37 +0100)
+
+----------------------------------------------------------------
+KVM/arm fixes for 5.3
+
+- A bunch of switch/case fall-through annotation, fixing one actual bug
+- Fix PMU reset bug
+- Add missing exception class debug strings
+
+----------------------------------------------------------------
+Anders Roxell (3):
+      arm64: KVM: regmap: Fix unexpected switch fall-through
+      KVM: arm: vgic-v3: Mark expected switch fall-through
+      arm64: KVM: hyp: debug-sr: Mark expected switch fall-through
+
+Zenghui Yu (2):
+      KVM: arm/arm64: Introduce kvm_pmu_vcpu_init() to setup PMU counter index
+      KVM: arm64: Update kvm_arm_exception_class and esr_class_str for new EC
+
+ arch/arm64/include/asm/kvm_arm.h |  7 ++++---
+ arch/arm64/kernel/traps.c        |  1 +
+ arch/arm64/kvm/hyp/debug-sr.c    | 30 ++++++++++++++++++++++++++++++
+ arch/arm64/kvm/regmap.c          |  5 +++++
+ include/kvm/arm_pmu.h            |  2 ++
+ virt/kvm/arm/arm.c               |  2 ++
+ virt/kvm/arm/hyp/vgic-v3-sr.c    |  8 ++++++++
+ virt/kvm/arm/pmu.c               | 18 +++++++++++++++---
+ 8 files changed, 67 insertions(+), 6 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
