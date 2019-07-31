@@ -2,62 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA8007CEA1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 22:32:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B195A7CEA2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 22:32:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OuoYuaFQO8ZZYvBFaZuR6INCV+OTzpnilj2j1Zb2Va0=; b=LINkxM78hg94Jz
-	qVaQIggHXB/CBdTPPk0TL5+UxWq5nuAM5E8amHIlUmo1XQpS2JkcmvjESgzQIe8rcOnNjzj2Vq5XG
-	xPHvAwLK49AxkaW0t2XJXqowtPFNgL2Os2563TzRNtXp+kY+urbwPC3zHwJ0exQvtl5Sl3H+QPQt5
-	eacqrhedcdr1164i7pAZhXjfRvRG6ipfedgQDpV6HRrkBtyDmP/gPjlRnmQdp6K3yOM0nXkujIF7E
-	TjRlkmeiPpAZiQ4ZbaUyb2R0VbuqCE7T38t9zd/FYWLtv0TsKUfLZwTMcd2wyvCcdBhZluAaJZRfs
-	Jdbyau8CN2ca/YZdnrpQ==;
+	List-Owner; bh=uXIvzZsnaR+IODpOQJL6humla6cbvToWfd6Jf9SqJzQ=; b=DM1ydFv1otNDoL
+	q0OEhumDPs234M7Lk4cow5efg9dR6EWVDbPycMUkG9uUlx31sXoNBF2iWK1ZmQiEtsrptcbiahT92
+	gth2Fjil36U+GYcM70ppf47DnoSMlYRDw4nJtlyGVkA+udwzkk69EoDc++oJygp1ameKqj0XvU4bO
+	r0NtC4fX6hxnoNwTyMGl2EIQk4u9yscRM9eJZXpiVyCcaXlJO6rTOYGbPnzZyJtAYw+f6F6zHyeoN
+	ReTjUgLj/wq0OzanVldKcqsu7ijpIIcgoUwjlxhm2jSHOh3W5D7OiFw4qiQnWKQjVx2X19+0PI0Fe
+	3mPcswduxvzKtT7Rf+uQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsvGb-0006wP-Kk; Wed, 31 Jul 2019 20:32:09 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1hsvGj-0007A5-AC; Wed, 31 Jul 2019 20:32:17 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsvEU-0003Ca-4p
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 20:29:59 +0000
-Received: by mail-wr1-x443.google.com with SMTP id g17so71076648wrr.5
+ id 1hsvEV-0003Eg-NR
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 20:30:02 +0000
+Received: by mail-wm1-x342.google.com with SMTP id f17so60979979wme.2
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 31 Jul 2019 13:29:58 -0700 (PDT)
+ Wed, 31 Jul 2019 13:29:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=vLHpcezXZ0AucQ4kaXez+YbIiKuQyU24LjFhyj/OAXk=;
- b=eQCRVeZXchD4s8hmdDQVCG2ogRRuvj7EZRHIJo8ykw1oW4wZjt5+SSYbjFeaaDGZrn
- 0xucuH8wa2pRXz8qrOuZd277mjyUL3L5ZPsNLTCKCbtjGyssAb8BsI6U8vYAbloKvvQq
- BzPMZsouAsHmIoBCrcs8qJ+ORAVV59dnHr7FHlAmO+BlwJ9bU47J59hcapNE/S59FV/D
- PM7skxmpOrJWnu8rn5hPnCsbol0kRPf0yNonBqqOUvKl8Z92HutL3oW4KrUxJDyoMWhE
- 7PJwcZRXOfMvIyFy8KqnbU2v9/W1kKg0FqfYYX3XUt+aWsEeSnSRKoWHDibpSE9niNy0
- PnbQ==
+ bh=yjwyF8h24+6MkrK2XCkddWq6ewDMefY3p/JkUhfcGxo=;
+ b=qzcz7Cl6t4xg8YUv9zpXFmqkJhMi78y34+n3ItM5RM3vnuvyjB8v36KL6skLRPl1ST
+ s06JvtshN15JWJg4/St3iS9Z0/Rg0NPCEszd7U+ijuu30Hu/8+Z6yXLfLnhCIvqnF3Oi
+ JSgta8K8mMlRlPHlkBqTlIccnqXCMp2penXjc+q2Nb2fHmNWPiTgTtkuozyLQEfIq6Oa
+ FOdJcwQzal3USJs9/3CYN6CHs3JYnb2TvvjR6iII4E2HD5EXpwqMHBkcZAr9QVEj76fa
+ YWJ9VY7e8YpVSpVpAejGPGkBtSCZ7ZQOGC+voq0I+kw+vMMTzPvd2JX2c1LumyOWOsGf
+ T5HQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=vLHpcezXZ0AucQ4kaXez+YbIiKuQyU24LjFhyj/OAXk=;
- b=CsK08DfVe9pWMehP5HrAPjRVbran2ES3FyflllMNOGPw52smCL0g7fgwPOkKFPy248
- mG+1ezumMpJgqDHIxIXhujmzt6SKy0EACmQ3aRqgLKpmtD1VW8DacI80fGOrFpKPlpjn
- 7BBHXNp7nBa/z1QxLTBjL3XGZ54Z1O6wKs4E0WWL1BF46tUZy6T6I+cCrivlz+fCfBbs
- 2rC+4XR9IoJAjnZujCT3zgX6dKy1ypMeRiNOFGLnsf0rznm7XPzpMW+jVwm58l+0dFAg
- rEoG2RVZorn0N/uD790TqcyYyR1wf20GKj65PjjrhGg7WROHBSl9VVLR8yP7LgFX/O0W
- vUKQ==
-X-Gm-Message-State: APjAAAWL447cIzi9NrND4mes1xNdU+kjeVxlhFYH3pGm5CR4tjiqwY9w
- 7rikA1ei/j5loouFuAPirrxMwA==
-X-Google-Smtp-Source: APXvYqxVk5jRAEbzCMTnd8pf764yjjCzhBWZjHtBQ5AptGqXRtwGwFJmiylZu++Ijy4DW1dMhmdbjw==
-X-Received: by 2002:a05:6000:187:: with SMTP id
- p7mr12658657wrx.189.1564604996721; 
- Wed, 31 Jul 2019 13:29:56 -0700 (PDT)
+ bh=yjwyF8h24+6MkrK2XCkddWq6ewDMefY3p/JkUhfcGxo=;
+ b=cGJdZW2PTmcIgO3ayIIXs7bGglVCyOjLkVMmp98lIFVhbriiAawOA0yvnkX0jvJZ7e
+ a5CyoTlrNR4IqkGTKLQP7vuHtMQjmMGsmf+oU2Rwkcgr+L9y9QAkFXUxaEuK8s9tUsLP
+ iiV+GY0Uz/BZCbhnOW2sf9hMF8+jMcfRRidRFZe/16ARQY8bgdKsM5OJFBYCXwInEMpP
+ ZLizCA61hqfG5O+WzUoP1n0dQWBsHn9FI12sLP2aqzz/pZDhnv3Zdb4uGpix7GRjAi0C
+ M8uevZVYetwkDCHpDDIek7mLD6KO+HI8guSq+nKmEwb4W641i+VkyYGywA+eHaYv5sIf
+ cnWw==
+X-Gm-Message-State: APjAAAX+ks/sJYbw6DWXx1EAAeksS8y0ekXMZFOG/+bEeqZ7jteTHYII
+ 3eCri5SCJhnmzb3LCsuc5dYo5A==
+X-Google-Smtp-Source: APXvYqwTYu0Ia5Oacgfvy6EXO0KAmKGEQZx1LX6+bJ4LHOQNL65LwwWoyMz5BQ/0ICXimEC4Sbzm9A==
+X-Received: by 2002:a05:600c:da:: with SMTP id
+ u26mr108777580wmm.108.1564604998460; 
+ Wed, 31 Jul 2019 13:29:58 -0700 (PDT)
 Received: from localhost.localdomain
  (19.red-176-86-136.dynamicip.rima-tde.net. [176.86.136.19])
- by smtp.gmail.com with ESMTPSA id i18sm91905591wrp.91.2019.07.31.13.29.54
+ by smtp.gmail.com with ESMTPSA id i18sm91905591wrp.91.2019.07.31.13.29.56
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Wed, 31 Jul 2019 13:29:56 -0700 (PDT)
+ Wed, 31 Jul 2019 13:29:58 -0700 (PDT)
 From: Jorge Ramirez-Ortiz <jorge.ramirez-ortiz@linaro.org>
 To: jorge.ramirez-ortiz@linaro.org, bjorn.andersson@linaro.org,
  sboyd@kernel.org, david.brown@linaro.org, jassisinghbrar@gmail.com,
@@ -65,23 +65,24 @@ To: jorge.ramirez-ortiz@linaro.org, bjorn.andersson@linaro.org,
  will.deacon@arm.com, arnd@arndb.de, horms+renesas@verge.net.au,
  heiko@sntech.de, sibis@codeaurora.org, enric.balletbo@collabora.com,
  jagan@amarulasolutions.com, olof@lixom.net
-Subject: [PATCH v4 12/13] arm64: dts: qcom: qcs404: Add DVFS support
-Date: Wed, 31 Jul 2019 22:29:28 +0200
-Message-Id: <20190731202929.16443-13-jorge.ramirez-ortiz@linaro.org>
+Subject: [PATCH v4 13/13] arm64: defconfig: Enable HFPLL
+Date: Wed, 31 Jul 2019 22:29:29 +0200
+Message-Id: <20190731202929.16443-14-jorge.ramirez-ortiz@linaro.org>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190731202929.16443-1-jorge.ramirez-ortiz@linaro.org>
 References: <20190731202929.16443-1-jorge.ramirez-ortiz@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_132958_202532_F281668F 
-X-CRM114-Status: GOOD (  10.78  )
+X-CRM114-CacheID: sfid-20190731_132959_947756_BE91211C 
+X-CRM114-Status: UNSURE (   9.72  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -113,98 +114,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Support dynamic voltage and frequency scaling on qcs404.
-
-CPUFreq will soon be superseeded by Core Power Reduction (CPR, a form
-of Adaptive Voltage Scaling found on some Qualcomm SoCs like the
-qcs404). 
-
-Due to the CPR upstreaming already being in progress - and some
-commits already merged -  the following commit will need to be
-reverted to enable CPUFreq support 
-
-   Author: Jorge Ramirez-Ortiz <jorge.ramirez-ortiz@linaro.org>
-   Date:   Thu Jul 25 12:41:36 2019 +0200
-       cpufreq: Add qcs404 to cpufreq-dt-platdev blacklist
+The high frequency pll is required on compatible Qualcomm SoCs to
+support the CPU frequency scaling feature.
 
 Co-developed-by: Niklas Cassel <niklas.cassel@linaro.org>
 Signed-off-by: Niklas Cassel <niklas.cassel@linaro.org>
 Signed-off-by: Jorge Ramirez-Ortiz <jorge.ramirez-ortiz@linaro.org>
 Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
 ---
- arch/arm64/boot/dts/qcom/qcs404.dtsi | 31 ++++++++++++++++++++++++++++
- 1 file changed, 31 insertions(+)
+ arch/arm64/configs/defconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm64/boot/dts/qcom/qcs404.dtsi b/arch/arm64/boot/dts/qcom/qcs404.dtsi
-index 5b7d6258e9bf..8cce4a224de2 100644
---- a/arch/arm64/boot/dts/qcom/qcs404.dtsi
-+++ b/arch/arm64/boot/dts/qcom/qcs404.dtsi
-@@ -36,6 +36,10 @@
- 			cpu-idle-states = <&CPU_SLEEP_0>;
- 			next-level-cache = <&L2_0>;
- 			#cooling-cells = <2>;
-+			clocks = <&apcs_glb>;
-+			operating-points-v2 = <&cpu_opp_table>;
-+			cpu-supply = <&pms405_s3>;
-+
- 		};
- 
- 		CPU1: cpu@101 {
-@@ -46,6 +50,9 @@
- 			cpu-idle-states = <&CPU_SLEEP_0>;
- 			next-level-cache = <&L2_0>;
- 			#cooling-cells = <2>;
-+			clocks = <&apcs_glb>;
-+			operating-points-v2 = <&cpu_opp_table>;
-+			cpu-supply = <&pms405_s3>;
- 		};
- 
- 		CPU2: cpu@102 {
-@@ -56,6 +63,9 @@
- 			cpu-idle-states = <&CPU_SLEEP_0>;
- 			next-level-cache = <&L2_0>;
- 			#cooling-cells = <2>;
-+			clocks = <&apcs_glb>;
-+			operating-points-v2 = <&cpu_opp_table>;
-+			cpu-supply = <&pms405_s3>;
- 		};
- 
- 		CPU3: cpu@103 {
-@@ -66,6 +76,9 @@
- 			cpu-idle-states = <&CPU_SLEEP_0>;
- 			next-level-cache = <&L2_0>;
- 			#cooling-cells = <2>;
-+			clocks = <&apcs_glb>;
-+			operating-points-v2 = <&cpu_opp_table>;
-+			cpu-supply = <&pms405_s3>;
- 		};
- 
- 		L2_0: l2-cache {
-@@ -88,6 +101,24 @@
- 		};
- 	};
- 
-+	cpu_opp_table: cpu-opp-table {
-+		compatible = "operating-points-v2";
-+		opp-shared;
-+
-+		opp-1094400000 {
-+			opp-hz = /bits/ 64 <1094400000>;
-+			opp-microvolt = <1224000 1224000 1224000>;
-+		};
-+		opp-1248000000 {
-+			opp-hz = /bits/ 64 <1248000000>;
-+			opp-microvolt = <1288000 1288000 1288000>;
-+		};
-+		opp-1401600000 {
-+			opp-hz = /bits/ 64 <1401600000>;
-+			opp-microvolt = <1384000 1384000 1384000>;
-+		};
-+	};
-+
- 	firmware {
- 		scm: scm {
- 			compatible = "qcom,scm-qcs404", "qcom,scm";
+diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+index 34c3ac4e4b79..04b7fb26a942 100644
+--- a/arch/arm64/configs/defconfig
++++ b/arch/arm64/configs/defconfig
+@@ -698,6 +698,7 @@ CONFIG_MSM_MMCC_8996=y
+ CONFIG_MSM_GCC_8998=y
+ CONFIG_QCS_GCC_404=y
+ CONFIG_SDM_GCC_845=y
++CONFIG_QCOM_HFPLL=y
+ CONFIG_HWSPINLOCK=y
+ CONFIG_HWSPINLOCK_QCOM=y
+ CONFIG_ARM_MHU=y
 -- 
 2.22.0
 
