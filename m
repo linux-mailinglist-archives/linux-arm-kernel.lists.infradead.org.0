@@ -2,54 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4DD587C576
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 17:01:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 499637C5A0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 17:09:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EITqPeiXglnyQzBTyqR48VRm6791WoWBv6r6I70QrxM=; b=udn3P4OmI8+58P
-	Q9Y2Cdmnu9bTwKSo28TOrzALln5tPcMtxuyhqvA3wguW3PIy2lK18hySHJZcqwRUGD2ViCpTJO67y
-	W3hq3SdP5QOc13wzfIBeMmV2+dQjCWy1P6GN6ROak+mTBDTJyJgwIbK4DN1F+SMKcsHerBU55L0lC
-	gru7DKOlMaiOBm8+U4n+HFYJI25ng1FYDYxa+hUMGq4xWkOrHdqxqEpwbxt4DmWUcKQbKj0IDr2ss
-	yJhNat5929igCjvkqH7hDOUgxlP4Zmnp9BxsENG3XYsUOLrJmrk5DGqU7E6xlVOOD8UNkllp3G8c3
-	mbXO7aa/FBJiqKDpHwig==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=TqZMO6eMPq0GahQpvU6sYgLO1ZwbFR3oeQVC9sJvJJ4=; b=FxvL1V5TZjmGTUic3S4uFtx+l
+	FhsJxEf/+Rg9PhHURy0OI31egXKL+IH5a5PkLEvSRAroTbdLxzHHmbXkI+h3XPi/ABl/Q2ULnV5UH
+	irerqwzvZs4MauWNp55Z9QyJKYQzOx76GZ43mB2YJzsFggoWQV9Rb9mfUKLZgJF6fvtBv+BMBInqn
+	nZUkBeD9u5+S2ttpgMKEA2MRIOZcn3GtvuSaJsAJ1KQuee0kVWndvSoP2LgEyP+FXcSQ6DV1AEmVe
+	8+mGRftma3WBf2dWSgUvZSroSPOSBxXdNvYyKBgiwnHsJ2hsI0eCx+y0Cm/XL6SqrphDvOcKVVT7j
+	2HpMcQKaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsq6x-0006yy-4Z; Wed, 31 Jul 2019 15:01:51 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hsq6p-0006yC-J9
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 15:01:44 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 496FD344;
- Wed, 31 Jul 2019 08:01:41 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2BC443F694;
- Wed, 31 Jul 2019 08:01:40 -0700 (PDT)
-Date: Wed, 31 Jul 2019 16:01:38 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Geert Uytterhoeven <geert+renesas@glider.be>
-Subject: Re: [PATCH] arm64: Move TIF_* documentation to individual definitions
-Message-ID: <20190731150137.GE39768@lakrids.cambridge.arm.com>
-References: <20190731133520.17939-1-geert+renesas@glider.be>
+	id 1hsqEG-0000Zp-Iv; Wed, 31 Jul 2019 15:09:24 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hsqE9-0000Yk-7X
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 15:09:18 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=oE86iyCkFuLdAx6C70a2YwJmuXxGxpk5g7N4UAbsvzE=; b=wHDqWLMByHptQ4N7z6SasEO5X
+ 4copLTwIubUmlYDSJkhfbbEj0sJiRUhf5euHlBGvJm5djjtQV/BBd9X4SFZJgTnbUgeP96ZFhKxgn
+ rZ+XLwf992Kb6ujYAe5tL3y1XbkzkTGqFvlzHgSioPn1KYI5ECqmEGj0v+wOUi9o+H5bs=;
+Received: from ypsilon.sirena.org.uk ([2001:470:1f1d:6b5::7])
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1hsqE3-0002Uq-24; Wed, 31 Jul 2019 15:09:11 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id EB8542742C99; Wed, 31 Jul 2019 16:09:09 +0100 (BST)
+Date: Wed, 31 Jul 2019 16:09:09 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH] arm64: dts: renesas: r8a77995: draak: Fix backlight
+ regulator name
+Message-ID: <20190731150909.GD4369@sirena.org.uk>
+References: <20190731073744.13963-1-geert+renesas@glider.be>
+ <20190731074801.5706-1-geert+renesas@glider.be>
+ <20190731081209.GA5080@pendragon.ideasonboard.com>
+ <CAMuHMdV9MEYP97_6RFhmbGGB8uY-Pi8S9q+m+XMmHzKHcibJwQ@mail.gmail.com>
+ <CAL_JsqJWJ+o6t2Wb162h7Xz98L=WPSi4une-EC0HfoRiWLmKWA@mail.gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190731133520.17939-1-geert+renesas@glider.be>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <CAL_JsqJWJ+o6t2Wb162h7Xz98L=WPSi4une-EC0HfoRiWLmKWA@mail.gmail.com>
+X-Cookie: FEELINGS are cascading over me!!!
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_080143_675353_E3FBE202 
-X-CRM114-Status: GOOD (  18.10  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190731_080917_279808_BDD4A5F9 
+X-CRM114-Status: UNSURE (   7.53  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,86 +83,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Will Drewry <wad@chromium.org>, Kees Cook <keescook@chromium.org>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- Andy Lutomirski <luto@amacapital.net>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>,
+ Laurent Pinchart <laurent.pinchart+renesas@ideasonboard.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Magnus Damm <magnus.damm@gmail.com>, Johan Hovold <johan@kernel.org>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Simon Horman <horms@verge.net.au>, Geert Uytterhoeven <geert@linux-m68k.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Marek Vasut <marek.vasut+renesas@gmail.com>
+Content-Type: multipart/mixed; boundary="===============4506328383128135741=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 31, 2019 at 03:35:20PM +0200, Geert Uytterhoeven wrote:
-> Some TIF_* flags are documented in the comment block at the top, some
-> next to their definitions, some in both places.
-> 
-> Move all documentation to the individual definitions for consistency,
-> and for easy lookup.
-> 
-> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> ---
-> The alternative is to move all of them to the comment block, and using
-> linuxdoc style.
-> 
->  arch/arm64/include/asm/thread_info.h | 24 ++++++++----------------
->  1 file changed, 8 insertions(+), 16 deletions(-)
-> 
-> diff --git a/arch/arm64/include/asm/thread_info.h b/arch/arm64/include/asm/thread_info.h
-> index 180b34ec59650a9b..cb3eb1ccccc4116b 100644
-> --- a/arch/arm64/include/asm/thread_info.h
-> +++ b/arch/arm64/include/asm/thread_info.h
-> @@ -60,28 +60,20 @@ void arch_release_task_struct(struct task_struct *tsk);
->  #endif
->  
->  /*
-> - * thread information flags:
-> - *  TIF_SYSCALL_TRACE	- syscall trace active
-> - *  TIF_SYSCALL_TRACEPOINT - syscall tracepoint for ftrace
-> - *  TIF_SYSCALL_AUDIT	- syscall auditing
-> - *  TIF_SECCOMP		- syscall secure computing
-> - *  TIF_SYSCALL_EMU     - syscall emulation active
-> - *  TIF_SIGPENDING	- signal pending
-> - *  TIF_NEED_RESCHED	- rescheduling necessary
-> - *  TIF_NOTIFY_RESUME	- callback before returning to user
-> + * thread information flags
->   */
 
-We can probably just get rid of the this comment block at this point. :)
+--===============4506328383128135741==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="eqp4TxRxnD4KrmFZ"
+Content-Disposition: inline
 
-> -#define TIF_SIGPENDING		0
-> -#define TIF_NEED_RESCHED	1
-> +#define TIF_SIGPENDING		0	/* signal pending */
-> +#define TIF_NEED_RESCHED	1	/* rescheduling necessary */
->  #define TIF_NOTIFY_RESUME	2	/* callback before returning to user */
->  #define TIF_FOREIGN_FPSTATE	3	/* CPU's FP state is not current's */
->  #define TIF_UPROBE		4	/* uprobe breakpoint or singlestep */
->  #define TIF_FSCHECK		5	/* Check FS is USER_DS on return */
->  #define TIF_NOHZ		7
-> -#define TIF_SYSCALL_TRACE	8
-> -#define TIF_SYSCALL_AUDIT	9
-> -#define TIF_SYSCALL_TRACEPOINT	10
-> -#define TIF_SECCOMP		11
-> -#define TIF_SYSCALL_EMU		12
-> +#define TIF_SYSCALL_TRACE	8	/* syscall trace active */
-> +#define TIF_SYSCALL_AUDIT	9	/* syscall auditing */
-> +#define TIF_SYSCALL_TRACEPOINT	10	/* syscall tracepoint for ftrace */
-> +#define TIF_SECCOMP		11	/* syscall secure computing */
-> +#define TIF_SYSCALL_EMU		12	/* syscall emulation active */
->  #define TIF_MEMDIE		18	/* is terminating due to OOM killer */
->  #define TIF_FREEZE		19
->  #define TIF_RESTORE_SIGMASK	20
 
-FWIW this looks sane to me, so:
+--eqp4TxRxnD4KrmFZ
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-Acked-by: Mark Rutland <mark.rutland@arm.com>
+On Wed, Jul 31, 2019 at 08:47:38AM -0600, Rob Herring wrote:
 
-Mark.
+> As long as we have a consistent base name that we can match schema
+> with, then I'm happy. But for regulators, we have a lot of node names
+> like 'buck1', 'LDO2', etc.
 
-> -- 
-> 2.17.1
-> 
+Those are all types of regulator (LDOs and DCDCs are the main types of
+voltage regulator, and buck is another term for DCDC).
+
+I'm still not clear what meaningful effect any of this node name stuff
+has :(
+
+--eqp4TxRxnD4KrmFZ
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl1BrxUACgkQJNaLcl1U
+h9AL3Af/aUeFtao+e3RZByp0wSj7o2Wf/AP0GdZxNpNL9iEZiwzVlcZd9MsJbVHk
+1DP61c59GBTfKy8SkLx9HlcIo7MO2V8WDFeX7Sl3ojtW72ubXNBYtPf5KW6Yfdll
+s+16xROordrMpe1Z8P0m7DHBQeAuuipy9nYlXbFpyoBdjNykpxFbmfhTPrAIlql0
+I4Q8mXVpT927dY3WbAE0ZiyXJFddNZX+v7hB313W3fJ4a5fsjvLSTblVfEMt2NfN
+szEd8oXIFXN1WzyN52COod3M7gUTFQL4eH3l+aEDsppj+gcpFcfkAmtoRACVXKo0
+5GJeJci6PurEp+MbiVZw3KNvl/24/A==
+=upRn
+-----END PGP SIGNATURE-----
+
+--eqp4TxRxnD4KrmFZ--
+
+
+--===============4506328383128135741==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4506328383128135741==--
+
