@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 71E087B92E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 07:41:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 56A8C7B92F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 07:41:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AfPfV7+iMA9tbOLveAm4I0JcgeTc7wEG5iHmmPpSD0U=; b=SjoZiGqMqWGXPA
-	gr2tt/z995OHsPBkaF2iUmA5ty5yxbAArSKgFahFd7EJSzHsXWpU2mSuF4IIbBnbNYogAAC9hPzlM
-	jyWP5USr9swzXZP3B0WC3JP1KDTEOiGY2CGZmXYSB5rZxhMv+fKclvbL8y3UmRgADVALEG/aQMpMm
-	8rs27PZA/J6Axt7VC2m8yHEDp8zVenpQF0qrGHTRA2ngc45NaZDGnf2Nz7scVoVVOb6HPYaanTdq1
-	bnw6K/rirnVEpEpCjnK9jXrHWXNubm3HsdGvXb90v7BCa9IsTBK5Wl193cXyA45rIK1mUFC4gMGwG
-	9we26eWU7IVX/iXPyYEQ==;
+	List-Owner; bh=vGdI+yNeU+USOmtbG+no7DHqtRtCq//RcJP6f+EIS04=; b=m4eqyqaAjKJPx5
+	yIgLSfZEvF8/yF9/tzek47sp1juJC5UzgARPfcC2uJe/uqJgyM0BBQK7gHUMEs5CEhwmTN6P+X0WH
+	xQrWee9+qa2IP9w4fNcwEA+DoT7YoHhQ41qGs+wktzkNTqBQ5OEEW9sxnKNOA5EwKaCKJrNXlq/N/
+	jt+/V48dbiCrb+Vfo2Rh1+zQdXawUbTW5Jvx1ikNW7wSClyk23BWpuTLytKJRUQZt6suuoLm5dRvy
+	jSsGgXfTrIe+bk0LrwXLmbGOT8p2qMBZ6bFdEVajzyHOriTH6DNCQnKTuzNl46rixtcR0nicW5Qnm
+	8E2mKvvKwsWvLtvekktA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hshMN-0004Yw-U9; Wed, 31 Jul 2019 05:41:12 +0000
+	id 1hshMe-0004mY-Fk; Wed, 31 Jul 2019 05:41:28 +0000
 Received: from new2-smtp.messagingengine.com ([66.111.4.224])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hshLK-0003A8-Bm
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 05:40:08 +0000
+ id 1hshLP-0003hv-2F
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 05:40:12 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id B12C42D48;
- Wed, 31 Jul 2019 01:40:05 -0400 (EDT)
+ by mailnew.nyi.internal (Postfix) with ESMTP id 5F2C82D4C;
+ Wed, 31 Jul 2019 01:40:10 -0400 (EDT)
 Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Wed, 31 Jul 2019 01:40:05 -0400
+ by compute4.internal (MEProxy); Wed, 31 Jul 2019 01:40:10 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=from
  :to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm3; bh=0O62JZjgJ5QLr
- L+NrQmOcgmUjOYAyXoPaY3TSYq6NkU=; b=PeUY4OthXsQELTNecq8gvuEu8NrQ1
- B8Yx8cbUXcO9sI4NbDpAvPFRHlVoe9Bk+uuzoZlwjYh08Q+YCiALoTJCg66Deb8H
- zwU8K9JfXdl62aJqMyhE5NLi1Q0xx5BlRwfd/m15qswoS0CVw6EuHUBal/tX1H3t
- NcwkbqPAQEoc6Om/f2rUAwQk/e932trLP2KusOvbr8YXnxRq/pUlmU5+2R0uK3sS
- VveF2cQix/mH7ifTk48km4BUPbbI+jyfdJ5bn8kz+0QjZT2Y7cHUwV6Sa04ntORO
- +xvrUVkyYqmdieC02NRe2N3P8cFsB0HkYTZdd/tzFqhorugK3XkSyXKrw==
+ :mime-version:content-transfer-encoding; s=fm3; bh=gbLCW5fm9NgGd
+ 7NHSQsOKrpG0gqK4d9GLmhDrnziGJs=; b=VlfQ+jaBx6M1eNbpsmY9c7XoFMwP1
+ 5iExP5LSTZ/+R2f7B488M+OtC1opnjEMBx/poItkTpP6FtPY1ClROIyFvRHHdUef
+ LVgvqY/k7LJnW52DsTtX38pnAzOLMh6HYqvwNHkiZ5XvAnaHijeK2hG1lHSsZtch
+ 4GVnAFeR7nNHZyrH917dPmWTl+vJGCy8woOYj3MIUrkZm3AjeBrzQbg4/Dn9PVTJ
+ QJz9K80Miastnfs5pMgE8/tauF/wOwVEV5m0TZqr2Ip7X/vMdvivhaP+Mig8hqBv
+ 5caGt2iYNBGAKw8FYb9D3B2atK1n8/bgCvQW7U5d2rxNmyLoOo4ETb4eQ==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm3; bh=0O62JZjgJ5QLrL+NrQmOcgmUjOYAyXoPaY3TSYq6NkU=; b=l9y9hjBc
- W01fem2UFgQ7LPLCXE9JzoZX9af+uDJpYhonlItmeJ5H9KCvibgyXhgisOmju11Q
- Po34R9vvzdARl1J235y74YN+RyTq3h21eNs7gQWcDbalCPdH9XcGe+d16SUKC5qS
- 1wMFHKk/h5bfPhQpqOTFRxNDgHprp/8cfVs/PYMgvmhNbDKkYjjTjgutA+P+nO93
- PEdI0jpn0gQAFaFr8tOR6pWVcCCcFztGdomBi5+XBGn9+B9IAibqRKPA2Vqtd1J3
- yq8JyeqbnfUsg+eKzgEtdBdBZK8vaqCAtOB48GcjHxouTHhWmH9eBP/HRMGs5Ajz
- xGd+9BW3P3Ac1w==
-X-ME-Sender: <xms:tSlBXYoCaoCGTP5YseUw3k970Pdca3D1phAZpM3EOBqPWrJyTztfsA>
+ fm3; bh=gbLCW5fm9NgGd7NHSQsOKrpG0gqK4d9GLmhDrnziGJs=; b=yxYgPtcM
+ rqeEijTvAgpyROeVysMp5lUdI8iwsmWj60tFvhL8AZBfuMu/A7GaT5tLBg5UU+ep
+ TTquIN4tv68bCy7LneQRjTDjb89Iue4IBr5S4fZ3LaaWNlAnNFsoq1GpsyAzu6iK
+ eGhaG+HLYn9xZUHJZc/FFpXjwaHc38Boi23fe3mQS4bQaIgNpmziNJkxxeHAYoKD
+ EHyBZ1L/j7Z512JukWokYQJM0E3JhhTmyMHS3rIxurrwT1EGa8V4N1h6spQiaiCp
+ UUAKojLEo+iWuiuaMJr3recWLzs09o9saECTBrXoRgJQSmzJvsdApmE54upwfwMH
+ OGMmMJaDJq2+Hg==
+X-ME-Sender: <xms:uilBXbe6YnMmqo2bvXPRVM49tzeY7xaees9Lr-bB_pIzhCmTB-AlVQ>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrleeggdelkecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecunecujfgurhephffvufffkffojghfggfgsedtkeertd
@@ -56,26 +56,27 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrleeggdelkecutefuodetggdote
  rdhiugdrrghuqeenucfkphepvddtvddrkedurddukedrfedtnecurfgrrhgrmhepmhgrih
  hlfhhrohhmpegrnhgurhgvfiesrghjrdhiugdrrghunecuvehluhhsthgvrhfuihiivgep
  ud
-X-ME-Proxy: <xmx:tSlBXW1ja71Z78rQxUX_xpEFaGKgaDUzm5na89isVHxX8mfBNONlLA>
- <xmx:tSlBXUhV0k-BVCUG5o2m-zzlVEb3N3x8HpAGly0Ltu3ok9P47OtwhA>
- <xmx:tSlBXdklflOkqoWdXq7hhrX99H0UxNdf5-Gm5H12Nsdjt3WC1aQLRg>
- <xmx:tSlBXcycFBRGV7WRuMydgA4RR_X2Ry8hPov50qg_EhF3Ussntp65eg>
+X-ME-Proxy: <xmx:uilBXeD5KwrEpmb7kKRGYNIdxbEkJ9ifuNAFDqEj2OtBAT3fFsEV-g>
+ <xmx:uilBXYspYjrGPLI-NWjiffNVdRe-fgTdCULKIuGyB5WbxShrrzC5AQ>
+ <xmx:uilBXbH74Q90FmAehzDptAdn_seNLkNzDdDfcaglWRRUbf3CfY2z_g>
+ <xmx:uilBXXDO62O3BrkRI80kvynlh83Pzok8exg_49HvtyTQjcfBHIqtFg>
 Received: from mistburn.au.ibm.com (bh02i525f01.au.ibm.com [202.81.18.30])
- by mail.messagingengine.com (Postfix) with ESMTPA id 52EC180059;
- Wed, 31 Jul 2019 01:40:01 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id E1CC780059;
+ Wed, 31 Jul 2019 01:40:05 -0400 (EDT)
 From: Andrew Jeffery <andrew@aj.id.au>
 To: netdev@vger.kernel.org
-Subject: [PATCH net-next v2 3/4] net: ftgmac100: Add support for DT phy-handle
- property
-Date: Wed, 31 Jul 2019 15:09:58 +0930
-Message-Id: <20190731053959.16293-4-andrew@aj.id.au>
+Subject: [PATCH net-next v2 4/4] net: ftgmac100: Select ASPEED MDIO driver for
+ the AST2600
+Date: Wed, 31 Jul 2019 15:09:59 +0930
+Message-Id: <20190731053959.16293-5-andrew@aj.id.au>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190731053959.16293-1-andrew@aj.id.au>
 References: <20190731053959.16293-1-andrew@aj.id.au>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_224006_610599_5891517D 
-X-CRM114-Status: GOOD (  15.67  )
+X-CRM114-CacheID: sfid-20190730_224011_310614_12F03B88 
+X-CRM114-Status: UNSURE (   9.94  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -113,95 +114,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-phy-handle is necessary for the AST2600 which separates the MDIO
-controllers from the MAC.
-
-I've tried to minimise the intrusion of supporting the AST2600 to the
-FTGMAC100 by leaving in place the existing MDIO support for the embedded
-MDIO interface. The AST2400 and AST2500 continue to be supported this
-way, as it avoids breaking/reworking existing devicetrees.
-
-The AST2600 support by contrast requires the presence of the phy-handle
-property in the MAC devicetree node to specify the appropriate PHY to
-associate with the MAC. In the event that someone wants to specify the
-MDIO bus topology under the MAC node on an AST2400 or AST2500, the
-current auto-probe approach is done conditional on the absence of an
-"mdio" child node of the MAC.
+Ensures we can talk to a PHY via MDIO on the AST2600, as the MDIO
+controller is now separate from the MAC.
 
 Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
 ---
- drivers/net/ethernet/faraday/ftgmac100.c | 37 +++++++++++++++++++++---
- 1 file changed, 33 insertions(+), 4 deletions(-)
+ drivers/net/ethernet/faraday/Kconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/net/ethernet/faraday/ftgmac100.c b/drivers/net/ethernet/faraday/ftgmac100.c
-index 030fed65393e..563384b788ab 100644
---- a/drivers/net/ethernet/faraday/ftgmac100.c
-+++ b/drivers/net/ethernet/faraday/ftgmac100.c
-@@ -17,6 +17,7 @@
- #include <linux/module.h>
- #include <linux/netdevice.h>
- #include <linux/of.h>
-+#include <linux/of_mdio.h>
- #include <linux/phy.h>
- #include <linux/platform_device.h>
- #include <linux/property.h>
-@@ -1619,8 +1620,13 @@ static int ftgmac100_setup_mdio(struct net_device *netdev)
- 	if (!priv->mii_bus)
- 		return -EIO;
- 
--	if (priv->is_aspeed) {
--		/* This driver supports the old MDIO interface */
-+	if (of_device_is_compatible(np, "aspeed,ast2400-mac") ||
-+	    of_device_is_compatible(np, "aspeed,ast2500-mac")) {
-+		/* The AST2600 has a separate MDIO controller */
-+
-+		/* For the AST2400 and AST2500 this driver only supports the
-+		 * old MDIO interface
-+		 */
- 		reg = ioread32(priv->base + FTGMAC100_OFFSET_REVR);
- 		reg &= ~FTGMAC100_REVR_NEW_MDIO_INTERFACE;
- 		iowrite32(reg, priv->base + FTGMAC100_OFFSET_REVR);
-@@ -1797,7 +1803,8 @@ static int ftgmac100_probe(struct platform_device *pdev)
- 
- 	np = pdev->dev.of_node;
- 	if (np && (of_device_is_compatible(np, "aspeed,ast2400-mac") ||
--		   of_device_is_compatible(np, "aspeed,ast2500-mac"))) {
-+		   of_device_is_compatible(np, "aspeed,ast2500-mac") ||
-+		   of_device_is_compatible(np, "aspeed,ast2600-mac"))) {
- 		priv->rxdes0_edorr_mask = BIT(30);
- 		priv->txdes0_edotr_mask = BIT(30);
- 		priv->is_aspeed = true;
-@@ -1817,7 +1824,29 @@ static int ftgmac100_probe(struct platform_device *pdev)
- 		priv->ndev = ncsi_register_dev(netdev, ftgmac100_ncsi_handler);
- 		if (!priv->ndev)
- 			goto err_ncsi_dev;
--	} else {
-+	} else if (np && of_get_property(np, "phy-handle", NULL)) {
-+		struct phy_device *phy;
-+
-+		phy = of_phy_get_and_connect(priv->netdev, np,
-+					     &ftgmac100_adjust_link);
-+		if (!phy) {
-+			dev_err(&pdev->dev, "Failed to connect to phy\n");
-+			goto err_setup_mdio;
-+		}
-+
-+		/* Indicate that we support PAUSE frames (see comment in
-+		 * Documentation/networking/phy.txt)
-+		 */
-+		phy_support_asym_pause(phy);
-+
-+		/* Display what we found */
-+		phy_attached_info(phy);
-+	} else if (np && !of_get_child_by_name(np, "mdio")) {
-+		/* Support legacy ASPEED devicetree descriptions that decribe a
-+		 * MAC with an embedded MDIO controller but have no "mdio"
-+		 * child node. Automatically scan the MDIO bus for available
-+		 * PHYs.
-+		 */
- 		priv->use_ncsi = false;
- 		err = ftgmac100_setup_mdio(netdev);
- 		if (err)
+diff --git a/drivers/net/ethernet/faraday/Kconfig b/drivers/net/ethernet/faraday/Kconfig
+index a9b105803fb7..73e4f2648e49 100644
+--- a/drivers/net/ethernet/faraday/Kconfig
++++ b/drivers/net/ethernet/faraday/Kconfig
+@@ -32,6 +32,7 @@ config FTGMAC100
+ 	depends on ARM || NDS32 || COMPILE_TEST
+ 	depends on !64BIT || BROKEN
+ 	select PHYLIB
++	select MDIO_ASPEED if MACH_ASPEED_G6
+ 	---help---
+ 	  This driver supports the FTGMAC100 Gigabit Ethernet controller
+ 	  from Faraday. It is used on Faraday A369, Andes AG102 and some
 -- 
 2.20.1
 
