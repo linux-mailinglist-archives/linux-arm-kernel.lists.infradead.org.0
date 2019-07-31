@@ -2,144 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 009E97C237
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 14:52:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D4677C25D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 14:56:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Wc/pFIldwEe7VSZ1dvSjis8WIEbgyz86982Tox599Hc=; b=dbpA6DUirTWeeB
-	+531IiCIqUl3RQ3aC/HvRNPQAo8R3ljxBuoXQO3CF4O8Tfke3TerpzR/z2RNMz780Lz4tgWtZ7Rp4
-	oRa3Hsrt+s1V/wDEQ++Bdzwk9gqSkccWjhFuPo0QKy9yP8HjSULR/iJQ6nRgQaNXNmrA8To7/geRo
-	nVUc8tHmd3LdC1VGlGQiiKvPdeBsyL8wb+oXvyDn+S/yl4Tak/nZPPcZimjPECEc2DG+SA9Cw0fmg
-	3kqX5CDz+G311jDU1zhNlaBrYgmKDqqjyrGSCcNI/VckutWepjQo6+sgTTft6zGCIZyMdqSZaMCIj
-	C2STFAknXK8z5m64TgiA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uHpTWLNZ4KNuc0bT/dBP0iQb22edP+OG76s79R1whUY=; b=uC0S3hURKarNk3
+	Fqxfx7gWaFqHB3Goxu4+igjnVb4rfH3PPeYq1VVfB6gSYWrOiBks1Qusn4qo8/vrXs844gwNT1oMc
+	Vaq7PTSYsgZiEyNlSZ58xp8LcQWFzVvGeXUtkhyvSXTM7ohdob0RoqC6liZXJjjFrXmHTO6cAJbXg
+	7UfZFstD4aBogDQZl2iTDqJTTwGRfPFGfTlZWqbeBWoMv9Vcp/9VnAlVlnYDMdf0oIWK2IlS66aIu
+	Que7bCsiBvRbnYJ6lH66nab4MKYtX+X+oH3zrdICOz4aUV1poFbk+/xSdhg5bWmVHLwl/MHPo9u+M
+	0+hXdDOvcNu6S08ZLcfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hso5g-0004GA-1L; Wed, 31 Jul 2019 12:52:24 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1hso9H-0005xX-30; Wed, 31 Jul 2019 12:56:07 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hso5W-0004DY-0k
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 12:52:15 +0000
-Received: by mail-wm1-x343.google.com with SMTP id v15so60718500wml.0
+ id 1hso9A-0005x8-Iz
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 12:56:01 +0000
+Received: by mail-lj1-x243.google.com with SMTP id t28so65483731lje.9
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 31 Jul 2019 05:52:13 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:openpgp:autocrypt:organization
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=nHgD5MradYY8xVGHEvd/R2jyn+uvXGXVexfyZzlb6Eg=;
- b=NDQ1w/tMCOAR6qUEvWcAPGFf2syCsFKvMvMkOvNkNsuR8d1JWPhMuUE6VolCt6ngPc
- 0x+nNNBtrFhu8hdrzOvzONn6BXK3TwkHxoLnLXO51bwZL6awbkZT4aY4Vf2vzbQhLoox
- DTC9+WaObJiuK84ogxTOdK3AHFmlYsnqfVwKVLBwGZ4jYkxHqADsatO7zGrA98OhEHFa
- DOUbbQSax8BLtrbGMUTANL8ftDT0SOVwXkDTjsciC9syTWEe5ImmtTsjtGMR7RNO28Pc
- 01yq2zVyCmutfIgAa8tLQnvbAxus3GqPV20+JP9GeEdhrSviRS2ASUuW+4Qm5IdAXQmJ
- J/wA==
+ Wed, 31 Jul 2019 05:56:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=ibb9l9pCzIPRO+qO4A9wjd4O5BSt2O3HIIkOx8g91QE=;
+ b=dmWnxkSGqzJLdXtRSEMnp2346Q5fNymYmV9Q0cYScy4XLd+85hWOnQNs75lW0PNdwi
+ s+cUZbR31z+McMivRqz/ET13p8j7d13H8ixyBqYdGa01zT7PikehyrI8kfDVPwYS9GZ/
+ zFYiAbkT8SEDQlepklQsZJlRWxVOuLPB7aeZRY6sJxRIzVWQ7zcOtuyLdPKG3zUh5RlI
+ 0oHbwEACO5U76xqu+E+N3nQGmLmWb6O01Gt+vggt6F6esPtXtzRZImt6fDQjjfjF62J1
+ 6jJc7IZ/vQE8pseqlqw2VdpZc531GTaaqylI1C2FXgwhnUbssJN4Uo7PRIKmetfxruYE
+ /qsA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :organization:message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=nHgD5MradYY8xVGHEvd/R2jyn+uvXGXVexfyZzlb6Eg=;
- b=A2PsNtlXoQNJDAJ/MspL4jK4CL7c1L8eEg16Jw0YYuVVDPiN4fmWOV/aBV2izD1BSS
- 8jRAZsS1sCFP3pTLfrViFRIU81H6wsciORc6N0H1XQHwogANatzhAp4V/yAuKi0hr1Ug
- oi3RX/DbhNZVPSFKWD/PkgjnMjEt8wxThA3mUUaXDQxnIPymeddpW06RUx/fS1xEhZ1c
- QgyGQZdH/vqAI/Nw71X8rR1kYSSzfaw8wJwCN94Kvniwlf6kcmE7XsjAWhRe0koDnOza
- w1ZVpGDpl9IBC8b+7zarms2IdnVrZNRl432Qtm681uk5RS9GQxPLtyveaplO1RTm/ycB
- pjZA==
-X-Gm-Message-State: APjAAAUMzIn7/wqQF64wWosB1guxewQBpRUBPQywv6ahleecWyfSuxut
- uySy8+U1sgA5XNfp0MS3SjjCbA==
-X-Google-Smtp-Source: APXvYqzexZqsx7QZvp2tVYogwNmmqGukY9o2hhSYZ9udv3ZU8B9ndsRSKGLPT58dVWfPKzHKy9t8Gw==
-X-Received: by 2002:a7b:cae9:: with SMTP id t9mr110553661wml.126.1564577532473; 
- Wed, 31 Jul 2019 05:52:12 -0700 (PDT)
-Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
- [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id g11sm68858050wru.24.2019.07.31.05.52.11
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 31 Jul 2019 05:52:11 -0700 (PDT)
-Subject: Re: [PATCH 6/6] MAINTAINERS: add entry for Amlogic Thermal driver
-To: Guillaume La Roque <glaroque@baylibre.com>, daniel.lezcano@linaro.org,
- khilman@baylibre.com
-References: <20190731121409.17285-1-glaroque@baylibre.com>
- <20190731121409.17285-7-glaroque@baylibre.com>
-From: Neil Armstrong <narmstrong@baylibre.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
- 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
- ZaTUOEkgIor5losDrePdPgE=
-Organization: Baylibre
-Message-ID: <3c522eb3-5cf7-6a79-3282-864d8b783a51@baylibre.com>
-Date: Wed, 31 Jul 2019 14:52:11 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ibb9l9pCzIPRO+qO4A9wjd4O5BSt2O3HIIkOx8g91QE=;
+ b=P7fYrloMeRbrIeSGGexgevCJZrv/Nb/ON02Ud70nH714zkHS/35jyb1OxzgIgKWHou
+ dWsiLvjoa4Z2VbKKo+chaooYeBLElZHA5fzbCQU5kptqWusMB3HhR5A3IfPksD09BW1C
+ jr/uUK1ooKW++jfB4GK8tKT3w/MKS7dDwu2Am0hffmRKRI2OZNDmJy1emRbKN1LbP2f0
+ FECNxNNLgqGBlEMY0PuF8tjFWROJLpPpJHa9V06KxNqkSu2QanSOAK3FUwyMzzcihb9P
+ C7oJskC0xfsGM/sX+/OTpEgZXNr+q0qGM3hctQq83eO2whwPbwUGrgo8St6bsoyGjabc
+ IX8g==
+X-Gm-Message-State: APjAAAVQJLd+tmVaXPZPB/CfE5HFjS/PKYSSGcelZiwFHw6bK23fUpxV
+ 8jU2unUfzmG42TLUW5SKvZoxAm/95YYUp2ozSb8=
+X-Google-Smtp-Source: APXvYqwHLa09vrCGuEjsqB9Bo/QP8nZztRJ5LvWsIK2qv5mAo9aSVSVVIUILsK+mjb1tTQ98idf29i7lGxgDBiL/LM8=
+X-Received: by 2002:a2e:4e12:: with SMTP id c18mr14146346ljb.211.1564577759040; 
+ Wed, 31 Jul 2019 05:55:59 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190731121409.17285-7-glaroque@baylibre.com>
-Content-Language: en-US
+References: <20190731123750.25670-1-philippe.schenker@toradex.com>
+ <20190731123750.25670-8-philippe.schenker@toradex.com>
+In-Reply-To: <20190731123750.25670-8-philippe.schenker@toradex.com>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Wed, 31 Jul 2019 09:56:05 -0300
+Message-ID: <CAOMZO5B5HnqpLrDjyGtqSQpVXmcoZuGLvCzKVUhwLb-_ZO_Xog@mail.gmail.com>
+Subject: Re: [PATCH v2 07/20] ARM: dts: imx7-colibri: fix 1.8V/UHS support
+To: Philippe Schenker <philippe.schenker@toradex.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_055214_070320_4FB80A8E 
-X-CRM114-Status: GOOD (  14.21  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190731_055600_652134_74813788 
+X-CRM114-Status: GOOD (  17.86  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (festevam[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -151,45 +93,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-amlogic@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ =?UTF-8?B?TWljaGFsIFZva8OhxI0=?= <michal.vokac@ysoft.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Stefan Agner <stefan.agner@toradex.com>,
+ Marcel Ziswiler <marcel.ziswiler@toradex.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "stefan@agner.ch" <stefan@agner.ch>, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Max Krummenacher <max.krummenacher@toradex.com>,
+ Shawn Guo <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 31/07/2019 14:14, Guillaume La Roque wrote:
-> Add myself as maintainer for Amlogic Thermal driver.
-> 
-> Signed-off-by: Guillaume La Roque <glaroque@baylibre.com>
-> ---
->  MAINTAINERS | 9 +++++++++
->  1 file changed, 9 insertions(+)
-> 
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index fb2b12f75c37..299f27d11058 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -15910,6 +15910,15 @@ F:	Documentation/driver-api/thermal/cpu-cooling-api.rst
->  F:	drivers/thermal/cpu_cooling.c
->  F:	include/linux/cpu_cooling.h
->  
-> +THERMAL DRIVER FOR AMLOGIC SOCS
-> +M:	Guillaume La Roque <glaroque@baylibre.com>
-> +L:	linux-pm@vger.kernel.org
-> +L:	linux-amlogic@lists.infradead.org
-> +W:	http://linux-meson.com/
-> +S:	Supported
-> +F:	drivers/thermal/amlogic_thermal.c
-> +F:	Documentation/devicetree/bindings/thermal/amlogic,thermal.yaml
-> +
->  THINKPAD ACPI EXTRAS DRIVER
->  M:	Henrique de Moraes Holschuh <ibm-acpi@hmh.eng.br>
->  L:	ibm-acpi-devel@lists.sourceforge.net
-> 
+On Wed, Jul 31, 2019 at 9:38 AM Philippe Schenker
+<philippe.schenker@toradex.com> wrote:
+>
+> From: Stefan Agner <stefan.agner@toradex.com>
+>
+> Add pinmuxing and do not specify voltage restrictions in the
+> module level device tree.
 
-Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
+It would be nice to explain the reason for doing this.
+
+> Signed-off-by: Stefan Agner <stefan.agner@toradex.com>
+> Signed-off-by: Philippe Schenker <philippe.schenker@toradex.com>
+> ---
+>
+> Changes in v2: None
+>
+>  arch/arm/boot/dts/imx7-colibri.dtsi | 23 ++++++++++++++++++++++-
+>  1 file changed, 22 insertions(+), 1 deletion(-)
+>
+> diff --git a/arch/arm/boot/dts/imx7-colibri.dtsi b/arch/arm/boot/dts/imx7-colibri.dtsi
+> index 16d1a1ed1aff..67f5e0c87fdc 100644
+> --- a/arch/arm/boot/dts/imx7-colibri.dtsi
+> +++ b/arch/arm/boot/dts/imx7-colibri.dtsi
+> @@ -326,7 +326,6 @@
+>  &usdhc1 {
+>         pinctrl-names = "default";
+>         pinctrl-0 = <&pinctrl_usdhc1 &pinctrl_cd_usdhc1>;
+> -       no-1-8-v;
+>         cd-gpios = <&gpio1 0 GPIO_ACTIVE_LOW>;
+>         disable-wp;
+>         vqmmc-supply = <&reg_LDO2>;
+> @@ -671,6 +670,28 @@
+>                 >;
+>         };
+>
+> +       pinctrl_usdhc1_100mhz: usdhc1grp_100mhz {
+> +               fsl,pins = <
+> +                       MX7D_PAD_SD1_CMD__SD1_CMD       0x5a
+> +                       MX7D_PAD_SD1_CLK__SD1_CLK       0x1a
+> +                       MX7D_PAD_SD1_DATA0__SD1_DATA0   0x5a
+> +                       MX7D_PAD_SD1_DATA1__SD1_DATA1   0x5a
+> +                       MX7D_PAD_SD1_DATA2__SD1_DATA2   0x5a
+> +                       MX7D_PAD_SD1_DATA3__SD1_DATA3   0x5a
+> +               >;
+> +       };
+> +
+> +       pinctrl_usdhc1_200mhz: usdhc1grp_200mhz {
+> +               fsl,pins = <
+> +                       MX7D_PAD_SD1_CMD__SD1_CMD       0x5b
+> +                       MX7D_PAD_SD1_CLK__SD1_CLK       0x1b
+> +                       MX7D_PAD_SD1_DATA0__SD1_DATA0   0x5b
+> +                       MX7D_PAD_SD1_DATA1__SD1_DATA1   0x5b
+> +                       MX7D_PAD_SD1_DATA2__SD1_DATA2   0x5b
+> +                       MX7D_PAD_SD1_DATA3__SD1_DATA3   0x5b
+> +               >;
+> +       };
+
+You add the entries for 100MHz and 200MHz, but I don't see them being
+referenced anywhere.
 
 _______________________________________________
 linux-arm-kernel mailing list
