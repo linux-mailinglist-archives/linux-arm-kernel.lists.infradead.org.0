@@ -2,78 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C23347BE4A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 12:22:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 080567BE5C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 12:26:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o/SqyexLmFSjeMxEhypjkGznltP46nGsGMJd62XW6ps=; b=Cqv8cJMnpWOn3u
-	EsNG0hytyCvuaMNiv3yjBJNTzyBSTtCPcKA1XSaqafqM53+WSdkp+5EAF+QKMyRZZnIjb17vZdTmo
-	q1H+LolbihSqDF1VHnvIdKZmU2QxXdvVeRiCc0LQM+KCwEXYj8WZ8NJciweva8meMM8L+4X8yslpF
-	N7ii5TlJzEPQu0MMjW5m7TTuykrjT4uD83yxFFFxVH58sApN4CMOrCmZBLDcnlNMtraefdfoqRAFM
-	rXPrYVNF40W6QnkbS+gyOfR91KGY1kNXX2Uy+CfPwrPtKihM7geuvPeqkRvZPPSZ1/6RgvSUNry0y
-	oigOwoxtMqshQTobruCQ==;
+	List-Owner; bh=5+/x9xE9Z4DVJanGOzEJKOUdFTiF717SvXGj0VmqF0A=; b=FUJZm392GjJXOq
+	mOf5pLjvduGz5EELrutMxH1AZYAuBuaV0iljTya20948dZiTtuSkbA1T1vmwA8IWuprQQavGcPyrM
+	F4Rca2UEhiPFl/fjjSYPDKpxUi6btQdZjwCZMj9xnvHwt9bSlgBGmq09Y8C7k7IVHfH1NNyM4gMrK
+	8XkQYONpUHnxKaNJwCxT/B2sN48B+ARfo5hTXZzQv/4/d0H3biYF8gEqEy6lw9FuHha7jtqIXEq4M
+	4HxcALWqZBUoq9nJluO5kBzEKniXYq9dM8LeaxW6mMm/ZUqbbRwxeZ/sOM/TD7a0GzMLGNQk+FNGn
+	VR1WbfZ4Um1xebRCF82w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hslkG-0000af-9M; Wed, 31 Jul 2019 10:22:08 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1hslob-0002P5-Vi; Wed, 31 Jul 2019 10:26:38 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hslk3-0000YA-33
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 10:21:56 +0000
-Received: by mail-lj1-x243.google.com with SMTP id z28so10808811ljn.4
+ id 1hsloP-0002Oh-QS
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 10:26:27 +0000
+Received: by mail-lj1-x244.google.com with SMTP id x25so65126776ljh.2
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 31 Jul 2019 03:21:54 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ Wed, 31 Jul 2019 03:26:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=WTjYYJ5w8JGFiCV+fisqsMFDW4bJ2CE5EvIC9ToOEts=;
- b=kQgLwbxGzgHNMyuTAkxNFzi2aRlyhVO9V24U6HoPMgsf73FeO4NNRkfbI9sA1/VeCi
- L+vRPE0C3z1l0UJxCQYGpmkdJfvC3jC+J18p407ueMt6c80hF66r4PMCidNSlV2pZVYh
- hJj99MZl7trjLsU28smtLW55AiDdl4TlXelTS2YuejV4BUW5JhJjShGEm9mKW27TPeLa
- QRy6yGgoBgplQLbP/GvoGKhajbKfSwsOTs1uvbYFnYX4n44Oji+j0MrTdbv21yJP43Hk
- wtu9Mqomps2+RbIuua4UWVObpyjn07ZnC5xX0mzc18psE6MD0ZT5nvbZ4EMRfD/pR7+n
- JDZQ==
+ :cc; bh=JUZSHlOC2NsvHH+oiYgXd/P9aGC7hBdS8UD65AtoMp4=;
+ b=MQiLGOAWAeeOz7OvhR0Srak34dyDFzwv68hLoy3nUVLq1Ok4QKDOGspGoCLiCYmrsl
+ X53gwv/rai5eej0QK73mKUVb9t737/JnqyNFTDy3ud2eorwscZF/qVEhn/BI0oZfsUMX
+ NoICCfPOb5jeWu0aA1R5XdP93vlkhILcxoIL6Bf+Pme7yWed9VVKTeOxvaXLm3EViblG
+ bGCBElPhzYPNZVjOgapbV1/DZKl2AMMCaspfmKtCBYkTr7liVQ4IXthOr4B74aJynBUX
+ 0mIzuX+PD1vORUscdCQ8kS1BDpsmqzR8d5B0vqB5KEyhGRuDcTR+C0CId8saWMKP4v4l
+ 0GOA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=WTjYYJ5w8JGFiCV+fisqsMFDW4bJ2CE5EvIC9ToOEts=;
- b=Vmj73UCY2DzSbO9S65m8oyf0f4iXeAV2QZ9ywd1v5/B4WSDsJcmrhjYf9FCdjJNRqz
- J/vp5ZglF7P1Nv7Yips3CD6s7L0tZR7E2jN4clLwdgwZDbBCQLCg0g/mKrsyhZ+y1YNC
- FfBnEcGKuQWs6cqE//JXq/JCE830l6o/QT9DnpwXxdhh5PzK56CnqJtqRLKXPhfDupaf
- 6aQTVk3eElngjP00R8cFMxOCzIVj1KOZ+YavI3T1S2iMo69+fCJeUlYKViqBNP1dPtd+
- QZ16rzotUZ7NUp3pR/jIaZS1Zx9fnwzJ5ETNO4FRqhuHC7ShENzYWbT6wfie3sPD1s5g
- NQSg==
-X-Gm-Message-State: APjAAAUECeKvhb83LKpwL76B2LPh85H/aow4ueNv+8wHpszTC+sAMt/Q
- O7bAvVwMNUyHaOlB8yaLi9iKQFrzRWdQYadTuGk=
-X-Google-Smtp-Source: APXvYqx/9SP/mdIA/VveogDuSBQVAooZmV3FTt0pb7Z8M4ZHoddgQssQP7MNd2vdOvgkZ7HmpBbZgYsmAHs3KDhjdKE=
-X-Received: by 2002:a2e:9857:: with SMTP id e23mr62898681ljj.217.1564568513273; 
- Wed, 31 Jul 2019 03:21:53 -0700 (PDT)
+ bh=JUZSHlOC2NsvHH+oiYgXd/P9aGC7hBdS8UD65AtoMp4=;
+ b=aCzBW+tFCcEvKMS+Q9kpkgrhFEL+HLhdZdp+biOEq8Mkc6XZr67714lFCDj085xzZB
+ FKSnDx9GKuzxpiIk9wxJwVKMoDhnvSaoM76Uix/Og0oIDAk44fC9G9IP3C+zabuJnIHr
+ X6c6GNrvQAi3MezV+drY8JJ1Z7WlRRwtJwxGBQEyPBZbNKubushjPmdCjbVLB5Q5vTRx
+ JF+1yRdzTJ1i8/qYd0k4RjvhA1PO21ojVxAopua9SFr3AWISouNnd2bIcCe5eR+xSi5m
+ 3BvEQKQOrJvPmEk5r/tYB5wqygLsfkz4yGRL1vnVbKHeL5c3gLU7xa9Ozw+btyTjUNXw
+ IL+g==
+X-Gm-Message-State: APjAAAW4S9jMDPo/hAfZJ0kpV+jl9HgsXxF8pIB+Q2B0x+OjrsuipX8S
+ mZt9PliK1ca8ylvItm1rRBbSC1CPyBn7SLPWpCa+4Q==
+X-Google-Smtp-Source: APXvYqzK9w7NfgMq23mlEeHWtRc1vd+SdbVRqgKv0YbwMlIYSzawLj8RuR4WbpJLpxKS9HshxfPzK8im8DJXEMjL6UY=
+X-Received: by 2002:a2e:85d4:: with SMTP id h20mr6120835ljj.142.1564568783805; 
+ Wed, 31 Jul 2019 03:26:23 -0700 (PDT)
 MIME-Version: 1.0
 References: <1564489420-677-1-git-send-email-sumit.garg@linaro.org>
  <CAE=Ncrb63dQLe-nDQyO9OPv7XjwM_9mzL9SrcLiUi2Dr10cD4A@mail.gmail.com>
 In-Reply-To: <CAE=Ncrb63dQLe-nDQyO9OPv7XjwM_9mzL9SrcLiUi2Dr10cD4A@mail.gmail.com>
-From: Janne Karhunen <janne.karhunen@gmail.com>
-Date: Wed, 31 Jul 2019 13:21:41 +0300
-Message-ID: <CAE=NcrY7b8eTTovOszBhGhVbjfJAXoAYehiUJyPENGfwWoVcPw@mail.gmail.com>
+From: Sumit Garg <sumit.garg@linaro.org>
+Date: Wed, 31 Jul 2019 15:56:12 +0530
+Message-ID: <CAFA6WYPJAzbPdcpBqioxjY=T8RLw-73B_hpzX4cGnwVvm5zpJw@mail.gmail.com>
 Subject: Re: [RFC v2 0/6] Introduce TEE based Trusted Keys support
-To: Sumit Garg <sumit.garg@linaro.org>
+To: Janne Karhunen <janne.karhunen@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_032155_157893_09BF8B1D 
-X-CRM114-Status: GOOD (  22.18  )
+X-CRM114-CacheID: sfid-20190731_032625_866842_6AF714A6 
+X-CRM114-Status: GOOD (  23.59  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (janne.karhunen[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -93,48 +91,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tee-dev@lists.linaro.org, daniel.thompson@linaro.org, corbet@lwn.net,
- jejb@linux.ibm.com, ard.biesheuvel@linaro.org, linux-doc@vger.kernel.org,
- James Morris <jmorris@namei.org>, jarkko.sakkinen@linux.intel.com,
+Cc: "tee-dev @ lists . linaro . org" <tee-dev@lists.linaro.org>,
+ Daniel Thompson <daniel.thompson@linaro.org>, Jonathan Corbet <corbet@lwn.net>,
+ jejb@linux.ibm.com, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ James Morris <jmorris@namei.org>,
+ Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, dhowells@redhat.com,
  linux-security-module@vger.kernel.org, keyrings@vger.kernel.org,
  Mimi Zohar <zohar@linux.ibm.com>, Casey Schaufler <casey@schaufler-ca.com>,
- linux-integrity@vger.kernel.org, jens.wiklander@linaro.org,
- linux-arm-kernel@lists.infradead.org, "Serge E. Hallyn" <serge@hallyn.com>
+ linux-integrity@vger.kernel.org, Jens Wiklander <jens.wiklander@linaro.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ "Serge E. Hallyn" <serge@hallyn.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Hi Janne,
 
-To clarify a bit further - my thought was to support any type of trust
-source. Remote, local or both. Just having one particular type of
-locally bound 'TEE' sounded very limited, especially when nothing from
-the TEE execution side is really needed for supporting the kernel
-crypto. What you really need is the seal/unseal transaction going
-somewhere and where that somewhere is does not matter much. With the
-user mode helper in between anyone can easily add their own thing in
-there.
-
-
---
-Janne
-
-On Wed, Jul 31, 2019 at 10:11 AM Janne Karhunen
-<janne.karhunen@gmail.com> wrote:
+On Wed, 31 Jul 2019 at 12:41, Janne Karhunen <janne.karhunen@gmail.com> wrote:
 >
 > Hi,
 >
 > Interesting, I wrote something similar and posted it to the lists a while back:
 > https://github.com/jkrh/linux/commit/d77ea03afedcb5fd42234cd834da8f8a0809f6a6
 >
-> Since there are no generic 'TEEs' available, I implemented the same
+> Since there are no generic 'TEEs' available,
+
+There is already a generic TEE interface driver available in kernel.
+Have a look here: "Documentation/tee.txt".
+
+> I implemented the same
 > thing as a generic protocol translator. The shared memory binding for
 > instance already assumes fair amount about the TEE and how that is
 > physically present in the system. Besides, the help from usage of shm
 > is pretty limited due to the size of the keydata.
 >
+
+If you look at patch #1 and #2, they add support to register kernel
+memory buffer (keydata buffer in this case) with TEE to operate on. So
+there isn't any limitation due to the size of the keydata.
+
+-Sumit
+
 >
 > --
 > Janne
