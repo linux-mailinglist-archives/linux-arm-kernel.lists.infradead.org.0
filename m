@@ -2,72 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 97D1E7BA5F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 09:14:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B504E7BA76
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 09:15:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=zW21eitGTVP8GOLt+A+32GMvIewAIW797b+Rt14qFuE=; b=sOSAA+WIZKpxomOPATw5h/91m
-	Aw0L4iffigOUzZU7TwmKDdBi1SBqwYAyUzc6Ryzn3CCDTcjaynyOiYJIKRK66EoFkJpXRDIIcgH7y
-	va47j66ztLEHnoPuwgVGb0Zv3bibBFoIae9BcNlL9ottQdeCsfzaewC1GS6/3Aug6lXScXONa8t7e
-	kZOLDHZN32DRmbnO3HsGFmigqwUlFcdTyfINz714Oz27V3MV7zO6IsFNOhwI5nSDY1r/8wc/j+XIU
-	wqtn77QxHo2p3ffKJGV+X2vilcR9OAPID48MoifG4G1d+p07IqqsnYm3+ahRjDCmC87SoPkfk1FCu
-	aXierG20Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=kML2nT35daIDnaDtgn2+A6+iFmrCXT47n1VqOTmD4yU=; b=nfn
+	9L1rUwnLt4MynbQ/SQ05GaRy7Z4+0d8vr2BfTurJj+jlJtgghmEuCgbUrslizmuxmg2vWmh9QneUw
+	0/MJ4ny67QpF1ohV54x3P8yo+g5ZzJiThTQZX30uvlQqKR/eYldeB1ercPx2o7juG5V3+GiYUHopr
+	P5ELsAutVp4/cm5fOUcYTYlwwEhVMY1GiAH7IF7sps7WWet0Aqqf9NDD/xD+G/RjYe6OKOWGWDTtI
+	JHoWw+GYcrn3UPOSG7AwCC9zzOhaptPzezFar1stLx276blVOb0ch4SeubeYIh/h2aYJMyIdFCpaw
+	DxJaqxnTXjJDCSB9UUuL6jvGoadqa7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsiof-0003O6-UR; Wed, 31 Jul 2019 07:14:29 +0000
-Received: from uho.ysoft.cz ([81.19.3.130])
+	id 1hsipf-0004v0-4u; Wed, 31 Jul 2019 07:15:31 +0000
+Received: from [2001:470:0:1f2::b869:4820] (helo=olimex.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsioQ-0003NX-1s
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 07:14:15 +0000
-Received: from [10.1.8.111] (unknown [10.1.8.111])
- by uho.ysoft.cz (Postfix) with ESMTP id 28A1CA5931;
- Wed, 31 Jul 2019 09:14:12 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ysoft.com;
- s=20160406-ysoft-com; t=1564557252;
- bh=rtatZtXbN7GFHkDU8P+IOkQRQ4um7ZK8IiXYbfc5WeE=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=m3aMCZfI4z3bF4vToIjgXPVOvKiFQOzjM/YKOXl53xcSKSDin8DIZTkNldPCPXPJG
- EE0qy8Y/J9v/FNtMvIadvnVMWqfbCXMpEjB+3wf4zgTkyny49Qqo7+7cCOKL/rQoQJ
- lv/c7r3PmgxkOYZcfaq1K3vbsZsxu6gQDBj4Pllg=
-Subject: Re: [PATCH 11/22] ARM: dts: imx6: Add sleep state to can interfaces
-To: Philippe Schenker <dev@pschenker.ch>, marcel.ziswiler@toradex.com,
- max.krummenacher@toradex.com, stefan@agner.ch, devicetree@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>
-References: <20190730144649.19022-1-dev@pschenker.ch>
- <20190730144649.19022-12-dev@pschenker.ch>
-From: =?UTF-8?B?TWljaGFsIFZva8OhxI0=?= <michal.vokac@ysoft.com>
-Message-ID: <86f1e50b-97d6-5bdb-7cc2-e7dc162d147a@ysoft.com>
-Date: Wed, 31 Jul 2019 09:14:12 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.4.0
-MIME-Version: 1.0
-In-Reply-To: <20190730144649.19022-12-dev@pschenker.ch>
-Content-Language: en-US
+ id 1hsipO-0004tx-9K
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 07:15:15 +0000
+Received: from localhost.localdomain ([94.155.250.134])
+ by olimex.com with ESMTPSA
+ (ECDHE-RSA-AES128-GCM-SHA256:TLSv1.2:Kx=ECDH:Au=RSA:Enc=AESGCM(128):Mac=AEAD)
+ (SMTP-AUTH username stefan@olimex.com, mechanism PLAIN)
+ for <linux-arm-kernel@lists.infradead.org>; Wed, 31 Jul 2019 00:15:08 -0700
+From: Stefan Mavrodiev <stefan@olimex.com>
+To: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
+ linux-arm-kernel@lists.infradead.org (moderated list:ARM/Allwinner sunXi SoC
+ support), linux-kernel@vger.kernel.org (open list)
+Subject: [PATCH 0/1] nvmem: sunxi_sid: fix A64 SID controller support
+Date: Wed, 31 Jul 2019 10:14:46 +0300
+Message-Id: <20190731071447.9019-1-stefan@olimex.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_001414_244618_6E385217 
-X-CRM114-Status: GOOD (  15.98  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190731_001514_326705_762FA969 
+X-CRM114-Status: UNSURE (   9.07  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 2.2 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (2.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [81.19.3.130 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
+ 0.0 SPF_HELO_FAIL          SPF: HELO does not match SPF record (fail)
+ [SPF failed: Please see http://www.openspf.org/Why?s=helo; id=olimex.com;
+ ip=2001%3A470%3A0%3A1f2%3A%3Ab869%3A4820; r=bombadil.infradead.org]
+ 0.9 SPF_FAIL               SPF: sender does not match SPF record (fail)
+ [SPF failed: Please see http://www.openspf.org/Why?s=mfrom;
+ id=stefan%40olimex.com; ip=2001%3A470%3A0%3A1f2%3A%3Ab869%3A4820;
+ r=bombadil.infradead.org]
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,94 +65,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
- Philippe Schenker <philippe.schenker@toradex.com>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: linux-sunxi@googlegroups.com, Stefan Mavrodiev <stefan@olimex.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 30. 07. 19 16:46, Philippe Schenker wrote:
-> From: Philippe Schenker <philippe.schenker@toradex.com>
-> 
-> This patch prepares the devicetree for the new Ixora V1.2 where we are
-> able to turn off the supply of the can transceiver. This implies to use
-> a sleep state on transmission pins in order to prevent backfeeding.
-> 
-> Signed-off-by: Philippe Schenker <philippe.schenker@toradex.com>
-> ---
+A64 SID controller has some issues when readind data, To exampine the
+problem I've done the following steps.
 
-What about "ARM: dts: imx6qdl-apalis: " for the subject?
-To be clear that this is not related to the imx6 SoC itself.
 
-> 
->   arch/arm/boot/dts/imx6qdl-apalis.dtsi | 27 +++++++++++++++++++++------
->   1 file changed, 21 insertions(+), 6 deletions(-)
-> 
-> diff --git a/arch/arm/boot/dts/imx6qdl-apalis.dtsi b/arch/arm/boot/dts/imx6qdl-apalis.dtsi
-> index 7c4ad541c3f5..59ed2e4a1fd1 100644
-> --- a/arch/arm/boot/dts/imx6qdl-apalis.dtsi
-> +++ b/arch/arm/boot/dts/imx6qdl-apalis.dtsi
-> @@ -148,14 +148,16 @@
->   };
->   
->   &can1 {
-> -	pinctrl-names = "default";
-> -	pinctrl-0 = <&pinctrl_flexcan1>;
-> +	pinctrl-names = "default", "sleep";
-> +	pinctrl-0 = <&pinctrl_flexcan1_default>;
-> +	pinctrl-1 = <&pinctrl_flexcan1_sleep>;
->   	status = "disabled";
->   };
->   
->   &can2 {
-> -	pinctrl-names = "default";
-> -	pinctrl-0 = <&pinctrl_flexcan2>;
-> +	pinctrl-names = "default", "sleep";
-> +	pinctrl-0 = <&pinctrl_flexcan2_default>;
-> +	pinctrl-1 = <&pinctrl_flexcan2_sleep>;
->   	status = "disabled";
->   };
->   
-> @@ -599,19 +601,32 @@
->   		>;
->   	};
->   
-> -	pinctrl_flexcan1: flexcan1grp {
-> +	pinctrl_flexcan1_default: flexcan1defgrp {
->   		fsl,pins = <
->   			MX6QDL_PAD_GPIO_7__FLEXCAN1_TX 0x1b0b0
->   			MX6QDL_PAD_GPIO_8__FLEXCAN1_RX 0x1b0b0
->   		>;
->   	};
->   
-> -	pinctrl_flexcan2: flexcan2grp {
-> +	pinctrl_flexcan1_sleep: flexcan1slpgrp {
-> +		fsl,pins = <
-> +			MX6QDL_PAD_GPIO_7__GPIO1_IO07 0x0
-> +			MX6QDL_PAD_GPIO_8__GPIO1_IO08 0x0
-> +		>;
-> +	};
-> +
-> +	pinctrl_flexcan2_default: flexcan2defgrp {
->   		fsl,pins = <
->   			MX6QDL_PAD_KEY_COL4__FLEXCAN2_TX 0x1b0b0
->   			MX6QDL_PAD_KEY_ROW4__FLEXCAN2_RX 0x1b0b0
->   		>;
->   	};
-> +	pinctrl_flexcan2_sleep: flexcan2slpgrp {
-> +		fsl,pins = <
-> +			MX6QDL_PAD_KEY_COL4__GPIO4_IO14 0x0
-> +			MX6QDL_PAD_KEY_ROW4__GPIO4_IO15 0x0
-> +		>;
-> +	};
->   
->   	pinctrl_gpio_bl_on: gpioblon {
->   		fsl,pins = <
-> 
+When reading the whole nvmem memory in one chunk the returned bytes
+are valid:
+
+dd if=/sys/bus/nvmem/devices/sunxi-sid0/nvmem 2>/dev/null | hexdump -C
+00000000  ba 00 c0 92 20 46 10 84  00 45 34 50 0e 04 26 48  |.... F...E4P..&H|
+00000010  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+*
+00000030  00 00 00 00 87 07 8d 07  8e 07 00 00 00 00 00 00  |................|
+00000040  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+*
+00000100
+
+
+When bs is set to 4 bytes the data is no longer valid:
+
+dd if=/sys/bus/nvmem/devices/sunxi-sid0/nvmem bs=4 2>/dev/null | hexdump -C
+00000000  ba 00 c0 92 20 46 10 84  00 45 34 50 0e 04 26 48  |.... F...E4P..&H|
+00000010  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+*
+00000030  00 00 00 00 87 00 00 00  8e 00 00 00 00 00 00 00  |................|
+00000040  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+*
+00000100
+
+
+You can see that only the data at 0x34 and 0x38 is corrupted. It appears
+that A64 needs minimun 8 bytes block size;
+
+dd if=/sys/bus/nvmem/devices/sunxi-sid0/nvmem bs=8 2>/dev/null | hexdump -C
+00000000  ba 00 c0 92 20 46 10 84  00 45 34 50 0e 04 26 48  |.... F...E4P..&H|
+00000010  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+*
+00000030  00 00 00 00 87 07 8d 07  8e 07 00 00 00 00 00 00  |................|
+00000040  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+*
+00000100
+
+
+In the driver stride is set to 4 and word_size to 1. When you're using
+nvmem as thermal calibration data in the dts you write something like this:
+
+sid: eeprom@1c14000 {
+	compatible = "allwinner,sun50i-a64-sid";
+	.....
+
+	thermal_calibration: calib@34 {
+		reg = <0x34 0x08>;
+	};
+};
+
+This will return incorrect data.
+One way to fix this is to set stride/word_size to 8, but this will be
+inconvenient for the dts.
+Other is to enable reading data via register access. After the fix:
+
+dd if=/sys/bus/nvmem/devices/sunxi-sid0/nvmem bs=4 2>/dev/null | hexdump -C
+00000000  ba 00 c0 92 20 46 10 84  00 45 34 50 0e 04 26 48  |.... F...E4P..&H|
+00000010  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+*
+00000030  00 00 00 00 87 07 8d 07  8e 07 00 00 00 00 00 00  |................|
+00000040  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+*
+00000100
+
+
+Stefan Mavrodiev (1):
+  nvmem: sunxi_sid: fix A64 SID controller support
+
+ drivers/nvmem/sunxi_sid.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+-- 
+2.17.1
 
 
 _______________________________________________
