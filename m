@@ -2,70 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED7247C881
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 18:23:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C41F7C8C5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 18:33:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=diWlnM0oZJAjUQnqMJ55FgjJYwZB38DKt4BMVKfjSAk=; b=cnxb7qRt78hM5y
-	98+EiRyicwjGt0GgHcPRqf5fu7k/kCNqTxQImXRNmQV2sC44KWNDwGj2EQJWepXToU6dMuYh45+TP
-	xgclmIhZ1KexOOlBe1KfchcNuWwwIfzSQMwebJJOWaQkgRhur2FFo/Q8LGXUHzfx3S95KmxLaXHPZ
-	GRoMBXrJRGrWyIMFD9z6QMpGxb8DQ5Zt8aFp8ASUN8j1aF6V8Qy1nc9JrfgbSh7eHnGq+G1y+pVzJ
-	BoHnJexoSp52KHOtER0cg5M+dS0y5RXyMp0SJ/0kgEU6F1/wTjjU171JGX/AzYEClMbnCJN6JYCis
-	7LUTiXiwb3f2edQ7O7Hw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=mZG2YvmcSGesmdrKum+H3vArlM2yXqXOYpazlXQGdUo=; b=dHAPxAnQD/D4z7
+	P29SiyOLQzww9m30J2TINcfj2snLtA0W96jUXdLC0g5mzYWPa6xpSBOwZKJ8xxiWDTpLi3Z1ihum5
+	CPCB88KTD85hgaD05YL3n2P/ZEMtBgpgbG4wyc9g3c1jTL+kwPwnpTnDVfRisgoMk8/m46fupgIQl
+	lC+7gnh2KFWFqrhDpIbEzghKlNY+HW4Yg8zPOZi+8f3Xf58Bej/KTe6zTkL+1XQGN04O/tvH9pQzI
+	oPYoGmZ86W2VqzHj4nns7kgEpiNv/yXc6YJ4zpWJFVamb2lyaIVetkfTThHPZ3METwrsmp4As1Mqt
+	8ohzUMWGGYulTSKBstew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsrNq-0005FB-CT; Wed, 31 Jul 2019 16:23:22 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hsrXn-0001GF-T9; Wed, 31 Jul 2019 16:33:39 +0000
+Received: from 11.mo4.mail-out.ovh.net ([46.105.34.195])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsrNj-0005Eq-US
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 16:23:17 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0B1F3206B8;
- Wed, 31 Jul 2019 16:23:12 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564590195;
- bh=fONs4BmZttEHPUKNIEeG8afpWoHG1Ramxy67XPpPajA=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=D44JUbuyGA42vB4ZF39we2YnbDD4WU6p1kIXD+46Hx0pzXbYxSOckTA97vCFO1ipg
- wH1v9tT8ZPQLGiCC7rdTep1hDWwnO6XsJHzqY0qm1rnxrL61jnMF/LD9s5t+iOS6Bs
- ArsM59Htt9AJU3/IxBzAsab4hjUew2T1H5FCi+Mk=
-Date: Wed, 31 Jul 2019 17:23:10 +0100
-From: Will Deacon <will@kernel.org>
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Subject: Re: [PATCH] arm64: vdso: Fix Makefile regression
-Message-ID: <20190731162309.6sqeylyoauv7seeb@willie-the-truck>
-References: <CAGnkfhyT=2kPsiUy-V=aCA_s-C4BXgD++hAZ9ii1h0p94mMVQA@mail.gmail.com>
- <20190729125421.32482-1-vincenzo.frascino@arm.com>
+ id 1hsrXZ-00019n-GI
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 16:33:27 +0000
+Received: from player756.ha.ovh.net (unknown [10.109.159.248])
+ by mo4.mail-out.ovh.net (Postfix) with ESMTP id 55E191FFF49
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 31 Jul 2019 18:33:19 +0200 (CEST)
+Received: from armadeus.com (lfbn-1-7591-179.w90-126.abo.wanadoo.fr
+ [90.126.248.179])
+ (Authenticated sender: sebastien.szymanski@armadeus.com)
+ by player756.ha.ovh.net (Postfix) with ESMTPSA id B74A77ADA712;
+ Wed, 31 Jul 2019 16:32:56 +0000 (UTC)
+From: =?UTF-8?q?S=C3=A9bastien=20Szymanski?= <sebastien.szymanski@armadeus.com>
+To: Rui Miguel Silva <rmfrfs@gmail.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Steve Longerbeam <slongerbeam@gmail.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>
+Subject: [PATCH v3 1/3] ARM: dts: imx6ul: Add csi node
+Date: Wed, 31 Jul 2019 18:32:57 +0200
+Message-Id: <20190731163257.32448-1-sebastien.szymanski@armadeus.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190729125421.32482-1-vincenzo.frascino@arm.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+X-Ovh-Tracer-Id: 14036875616662541351
+X-VR-SPAMSTATE: OK
+X-VR-SPAMSCORE: -100
+X-VR-SPAMCAUSE: gggruggvucftvghtrhhoucdtuddrgeduvddrleehgddutdduucetufdoteggodetrfdotffvucfrrhhofhhilhgvmecuqfggjfdpvefjgfevmfevgfenuceurghilhhouhhtmecuhedttdenucesvcftvggtihhpihgvnhhtshculddquddttddm
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_092316_003390_F51C207A 
-X-CRM114-Status: GOOD (  16.37  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190731_093325_692008_63177AA4 
+X-CRM114-Status: GOOD (  11.14  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.105.34.195 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,66 +71,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, arnd@arndb.de, catalin.marinas@arm.com,
- Matteo Croce <mcroce@redhat.com>, 0x7f454c46@gmail.com,
- linux-kernel@vger.kernel.org, salyzyn@android.com, andre.przywara@arm.com,
- luto@kernel.org, linux@rasmusvillemoes.dk, tglx@linutronix.de,
- sthotton@marvell.com, pcc@google.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devel@driverdev.osuosl.org, devicetree@vger.kernel.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jul 29, 2019 at 01:54:21PM +0100, Vincenzo Frascino wrote:
-> Using an old .config in combination with "make oldconfig" can cause
-> an incorrect detection of the compat compiler:
-> 
-> $ grep CROSS_COMPILE_COMPAT .config
-> CONFIG_CROSS_COMPILE_COMPAT_VDSO=""
-> 
-> $ make oldconfig && make
-> arch/arm64/Makefile:58: gcc not found, check CROSS_COMPILE_COMPAT.
-> Stop.
-> 
-> Accordingly to the section 7.2 of the GNU Make manual "Syntax of
-> Conditionals", "When the value results from complex expansions of
-> variables and functions, expansions you would consider empty may
-> actually contain whitespace characters and thus are not seen as
-> empty. However, you can use the strip function to avoid interpreting
-> whitespace as a non-empty value."
-> 
-> Fix the issue adding strip to the CROSS_COMPILE_COMPAT string
-> evaluation.
-> 
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Reported-by: Matteo Croce <mcroce@redhat.com>
-> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
-> ---
->  arch/arm64/Makefile | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
-> index bb1f1dbb34e8..61de992bbea3 100644
-> --- a/arch/arm64/Makefile
-> +++ b/arch/arm64/Makefile
-> @@ -52,7 +52,7 @@ ifeq ($(CONFIG_GENERIC_COMPAT_VDSO), y)
->  
->    ifeq ($(CONFIG_CC_IS_CLANG), y)
->      $(warning CROSS_COMPILE_COMPAT is clang, the compat vDSO will not be built)
-> -  else ifeq ($(CROSS_COMPILE_COMPAT),)
-> +  else ifeq ($(strip $(CROSS_COMPILE_COMPAT)),)
->      $(warning CROSS_COMPILE_COMPAT not defined or empty, the compat vDSO will not be built)
->    else ifeq ($(shell which $(CROSS_COMPILE_COMPAT)gcc 2> /dev/null),)
->      $(error $(CROSS_COMPILE_COMPAT)gcc not found, check CROSS_COMPILE_COMPAT)
-> -- 
-> 2.22.0
-
-Acked-by: Will Deacon <will@kernel.org>
-
-Will
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+QWRkIGNzaSBub2RlIGZvciBpLk1YNlVMIFNvQy4KClJldmlld2VkLWJ5OiBGYWJpbyBFc3RldmFt
+IDxmZXN0ZXZhbUBnbWFpbC5jb20+ClNpZ25lZC1vZmYtYnk6IFPDqWJhc3RpZW4gU3p5bWFuc2tp
+IDxzZWJhc3RpZW4uc3p5bWFuc2tpQGFybWFkZXVzLmNvbT4KLS0tCgpDaGFuZ2VzIGZvciB2MzoK
+IC0gbm9uZQoKQ2hhbmdlcyBmb3IgdjI6CiAtIG9ubHkgIm1jbGsiIGNsb2NrIGlzIHJlcXVpcmVk
+IG5vdy4KCiBhcmNoL2FybS9ib290L2R0cy9pbXg2dWwuZHRzaSB8IDkgKysrKysrKysrCiAxIGZp
+bGUgY2hhbmdlZCwgOSBpbnNlcnRpb25zKCspCgpkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9k
+dHMvaW14NnVsLmR0c2kgYi9hcmNoL2FybS9ib290L2R0cy9pbXg2dWwuZHRzaQppbmRleCA4MWQ0
+YjQ5MjUxMjcuLjU2Y2ZjZjBlNTA4NCAxMDA2NDQKLS0tIGEvYXJjaC9hcm0vYm9vdC9kdHMvaW14
+NnVsLmR0c2kKKysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvaW14NnVsLmR0c2kKQEAgLTk1Nyw2ICs5
+NTcsMTUgQEAKIAkJCQl9OwogCQkJfTsKIAorCQkJY3NpOiBjc2lAMjFjNDAwMCB7CisJCQkJY29t
+cGF0aWJsZSA9ICJmc2wsaW14NnVsLWNzaSIsICJmc2wsaW14Ny1jc2kiOworCQkJCXJlZyA9IDww
+eDAyMWM0MDAwIDB4NDAwMD47CisJCQkJaW50ZXJydXB0cyA9IDxHSUNfU1BJIDcgSVJRX1RZUEVf
+TEVWRUxfSElHSD47CisJCQkJY2xvY2tzID0gPCZjbGtzIElNWDZVTF9DTEtfQ1NJPjsKKwkJCQlj
+bG9jay1uYW1lcyA9ICJtY2xrIjsKKwkJCQlzdGF0dXMgPSAiZGlzYWJsZWQiOworCQkJfTsKKwog
+CQkJbGNkaWY6IGxjZGlmQDIxYzgwMDAgewogCQkJCWNvbXBhdGlibGUgPSAiZnNsLGlteDZ1bC1s
+Y2RpZiIsICJmc2wsaW14MjgtbGNkaWYiOwogCQkJCXJlZyA9IDwweDAyMWM4MDAwIDB4NDAwMD47
+Ci0tIAoyLjIxLjAKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3Rz
+LmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
+by9saW51eC1hcm0ta2VybmVsCg==
