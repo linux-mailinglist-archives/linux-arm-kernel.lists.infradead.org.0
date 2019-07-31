@@ -2,83 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06DFE7B812
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 04:53:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E2C87B83B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 05:31:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VsMGuYcNrjC47ZrXhDJj6rp2dkDdHUnl+jA7rB3cbls=; b=mVYCdSanrwH1xa
-	tNTcLdwZvOaqL6hCbvfN6X78HrpM3eGf6tarckmWNkd6KhzOiHvxqdOZB384XlZEIVYShJiskDzTk
-	friTH8VOhxUjFphqhz1nMJRYAb8DAqtxqib7xFSfSBP6BMeB3Y+Gl2bq8dPAubwNQPpzeG2KIAZO1
-	95+59Vmlak+uLHquCDGzSbktaH9VNdFcUbZ9cB6xIj00v/S5vagT44jjSA1OH1zkqgfX6OD1KE8YD
-	fhwkYPPqNuOD8LbRSrZqZlf/gaCzMFo2FYTGNvwTJOC3DibOF2y53QiLUpYYnWI71Jd0ksudL3twD
-	/+gq1W+PjMKHvQJpbu4g==;
+	List-Owner; bh=+Ip1REzXEAMYeukcZbPB02Zv2EPvLWbjAWLTYSOXcQg=; b=lg0+GGNIAS46Av
+	zUnIYWPUdpSBfVVN8/xSxUUGmdP2X6jVEznW9OrW3q/a3lgovTfNn7QRW6rCVsmadGwjy6OSZTVS2
+	s4qeiJSJE4x+NZy20RJvEaQmawC+VBs/bMN4ZVsjS5DPTc9ztbwwO7uo+lyj2QkkNmKnIFBUNLEDP
+	QwiCqAMRH4HSQMsvy08OQNgIV+IOnSUY90xWUiy5aH1qHTJPmtgZrX80i+HHhjM6BEbWIXrTpT93M
+	sKjN9LtEGU4SoEoEnavVDjNXXXbNbEH2fI8Q3Dt1eYdauaSiIDG2Kq8RbnmoyNp0Pvd7fpK0hedaS
+	ZJUjJDCw/JuW+LOxsfvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsejk-0003Ik-Sq; Wed, 31 Jul 2019 02:53:08 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1hsfKW-0006Wf-Ky; Wed, 31 Jul 2019 03:31:08 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsejd-0003IO-FL
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 02:53:02 +0000
-Received: by mail-pf1-x441.google.com with SMTP id p184so30942215pfp.7
+ id 1hsfKP-0006WI-84
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 03:31:02 +0000
+Received: by mail-wr1-x442.google.com with SMTP id 31so67985007wrm.1
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 30 Jul 2019 19:52:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=56Bn5pwMSMLXsA6Sg66QvKIXarSTHoNqckCS8wh5DCE=;
- b=T5uPiL/v4zO7L+/UuiAFt+1GgbPGjLZpUWaYmgFyMFig9LiakhBOaJ2zS5/+XtanRm
- MTsOZEltRo5Tzcq3PeCMs6k3f0myRLUCegG6aMqTw2+69/Hya5c8GNZjyWBV+Bg1GpXE
- j6UtfLKhNC7PSgIEZdCBgQOmlQlszFjCktlCTLk9ocf07NxjKHknkxlLW62ABQYZwDUV
- vYYNex6Xw4pKG59W/1fVWm6ZdxvR/qDh5qYuKNr2GwRY/XYvWgTT5JpIOdpGY+CkwdLG
- n7zeJFHoeWZhQTbnOuiSGLxEyl/P123f8L/C7+MCAH1VP4ooiIQA2iKhsQ8IQ0D9rJff
- 7MHA==
+ Tue, 30 Jul 2019 20:31:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=atyUolA0eJzVAQbGvrRql9UrHUdFF1jgbg7pUV5Ee5k=;
+ b=UlKhCE5DTH67YsTqyfTiaKsmJS4WGCz4V8NwIwNoOkZbD6vEDiUjn7xt2+voHYlnAr
+ I4+/bAuHDu1tbWYwI1eRPwkKz+QptFylA1Tpct1e0C2/iJSgtYXU3rniwFeeSsdLlGag
+ 8XjEOhOkXfz1XGFsu+HK5Cn+10fRFPgKpDA/fmjvw+PwvMQtH7ZvvkTXdkXViIFhAKpv
+ A/dRpwMICdRjqsWyGmqkS8tbP8AH90uFAiuDMGbZD3ut4/FIOIckS8+7wu7RDIc8smQ2
+ gScyIqzfbhj+uagU5x+UfeRG7WmRAC8iqTDOL9gRycGDrLQq28VbYsxuh0ofC+nZIQw2
+ xvKg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=56Bn5pwMSMLXsA6Sg66QvKIXarSTHoNqckCS8wh5DCE=;
- b=YybCcr2JhhUiUFHHvtR5adFtR2sZ6C5d5Gmo20itelmrSIUpQ4rAjA4kzlbQcoNac3
- 61xW0EznPZlL+R++a0ybS5p3G1YpDhVbyQW/H8UG+kJneQ/JkbLOVNboLn+sJObQ3Tz+
- jfyYBvJEr/QixsUEYKfelHHkG8aa8wFhOj2wHu318WegKLdF2cwPq8+/ZfXRg1ajAGZE
- 15Hl4EYyg2dpvl5sB5xxqeRNWzfskUHijitfk0Mwtpc5k4QCjACrnni27Tlyei3PxwyO
- OgvjJ0z4TLjEr/HTXbNKcM29XYecwuoAsaMFsQ2sNHKdPksXUwlgjcDmR4jYxqIVtd+s
- EBqg==
-X-Gm-Message-State: APjAAAVpy6xUQdBGinPR9XH/INnyEKC/PImalNLqdQ+AXCjrsOUOZmhq
- dnHND2xqGXRHN2niYLBgxmgIRQ==
-X-Google-Smtp-Source: APXvYqweDhuP41Q2XigbHyz53Mq5un5wB99GfLLAAUWTa/8XwSSoNBdz/WcJ67Oda9Ze+cRWXZaPQA==
-X-Received: by 2002:a62:6044:: with SMTP id u65mr44053507pfb.15.1564541578548; 
- Tue, 30 Jul 2019 19:52:58 -0700 (PDT)
-Received: from localhost ([122.172.28.117])
- by smtp.gmail.com with ESMTPSA id b24sm35968813pfd.91.2019.07.30.19.52.57
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 30 Jul 2019 19:52:57 -0700 (PDT)
-Date: Wed, 31 Jul 2019 08:22:53 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: stable@vger.kernel.org, Julien Thierry <Julien.Thierry@arm.com>
-Subject: Re: [PATCH v4.4 V2 00/43] V4.4 backport of arm64 Spectre patches
-Message-ID: <20190731025253.ys4ph2hwa7hzdi5n@vireshk-i7>
-References: <cover.1562908074.git.viresh.kumar@linaro.org>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=atyUolA0eJzVAQbGvrRql9UrHUdFF1jgbg7pUV5Ee5k=;
+ b=archLjKju7uAuTjRaNpIm2A9Kxnm4SXM1ToQGWOvvVGMh7RltkUxGjP0em/VyJNH/J
+ 58TIlF2yW+p3BFMRvmG+QD7sH+aea7ElIOavCbGMk9sV+uFlu18BHY10bY271GWLsKsF
+ TxXu8bZpE4oCEhykJxZhOMRTmLyWjVfuyPAEDY44dyzM2VQlU4Xhi8q13oe8RVOtdYgW
+ EdPQVdWmWjg0uc5cunLa7FmZ3FbtUmhExPJplntcisZArk+gJn117YeDyh7m042DSItV
+ Cwu82CPXLopQEl4F60CJrGqLgMMsL2FCwHqiCAIrnKgBAKRpJzvsOfECocCMeNVkU1Ep
+ Nrog==
+X-Gm-Message-State: APjAAAXKSCdqGJxSWvuZPEaxuNeiyn3p8XhvNR/72eEYd7E+5RLpFy+8
+ dwTWbnDFDbSMH4uVMMaHwZnqIFYPhmlWA8p0waw=
+X-Google-Smtp-Source: APXvYqzMhgdZXK8upHjBPeiMFif34tHaHGLNz56kjr/qsVHA5wu35rMW0ISbG0qHRbD+PAYsbddI9bA1xBgaBXEB+f0=
+X-Received: by 2002:a5d:6389:: with SMTP id p9mr105527750wru.297.1564543859209; 
+ Tue, 30 Jul 2019 20:30:59 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <cover.1562908074.git.viresh.kumar@linaro.org>
-User-Agent: NeoMutt/20180716-391-311a52
+References: <20190722071122.22434-1-zhang.lyra@gmail.com>
+ <20190722071419.22535-1-zhang.lyra@gmail.com>
+ <CAAfSe-tPVsMjmu0CoUATGRGevCpgqk999-rpfMuXqZ-V9ft7gg@mail.gmail.com>
+ <20190730110204.GB1330@shell.armlinux.org.uk>
+In-Reply-To: <20190730110204.GB1330@shell.armlinux.org.uk>
+From: Chunyan Zhang <zhang.lyra@gmail.com>
+Date: Wed, 31 Jul 2019 11:30:22 +0800
+Message-ID: <CAAfSe-s=UFMvLfVq1xw1OuAwgdiyg-kcFa6ZyAUkkDLnTVuWmQ@mail.gmail.com>
+Subject: Re: [PATCH] ARM: check stmfd instruction using right shift
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_195301_578180_4281B2CF 
-X-CRM114-Status: GOOD (  10.78  )
+X-CRM114-CacheID: sfid-20190730_203101_315008_C1B78294 
+X-CRM114-Status: GOOD (  18.90  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (zhang.lyra[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -97,28 +95,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- mark.brown@arm.com, Russell King <rmk+kernel@arm.linux.org.uk>,
- linux-arm-kernel@lists.infradead.org
+Cc: Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Lvqiang Huang <lvqiang.huang@unisoc.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12-07-19, 10:57, Viresh Kumar wrote:
-> Hello,
-> 
-> This series backports arm64 spectre patches to v4.4 stable kernel. I
-> have started this backport with Mark Rutland's backport of Spectre to
-> 4.9 [1] and tried applying the upstream version of them over 4.4 and
-> resolved conflicts by checking how they have been resolved in 4.9.
+On Tue, 30 Jul 2019 at 19:02, Russell King - ARM Linux admin
+<linux@armlinux.org.uk> wrote:
+>
+> On Tue, Jul 30, 2019 at 03:18:31PM +0800, Chunyan Zhang wrote:
+> > Gentle ping
+> >
+> > probably this patch was missed or entered into spam?
+>
+> Please submit it to the patch system, thanks.
 
-Since it has been almost 3 weeks since the patches are last posted,
-here is a gentle reminder for reviewing it :)
+Ok, thanks.
 
--- 
-viresh
+>
+> >
+> > On Mon, 22 Jul 2019 at 15:14, Chunyan Zhang <zhang.lyra@gmail.com> wrote:
+> > >
+> > > From: Lvqiang Huang <Lvqiang.Huang@unisoc.com>
+> > >
+> > > In the commit ef41b5c92498 ("ARM: make kernel oops easier to read"),
+> > > -               .word   0xe92d0000 >> 10        @ stmfd sp!, {}
+> > > +               .word   0xe92d0000 >> 11        @ stmfd sp!, {}
+> > > then the shift need to change to 11.
+> > >
+> > > Fixes: ef41b5c92498 ("ARM: make kernel oops easier to read")
+> > > Signed-off-by: Lvqiang Huang <Lvqiang.Huang@unisoc.com>
+> > > Signed-off-by: Chunyan Zhang <zhang.lyra@gmail.com>
+> > > ---
+> > >  arch/arm/lib/backtrace.S |    2 +-
+> > >  1 file changed, 1 insertion(+), 1 deletion(-)
+> > >
+> > > diff --git a/arch/arm/lib/backtrace.S b/arch/arm/lib/backtrace.S
+> > > index 7d7952e..926851b 100644
+> > > --- a/arch/arm/lib/backtrace.S
+> > > +++ b/arch/arm/lib/backtrace.S
+> > > @@ -70,7 +70,7 @@ for_each_frame:       tst     frame, mask             @ Check for address exceptions
+> > >
+> > >  1003:          ldr     r2, [sv_pc, #-4]        @ if stmfd sp!, {args} exists,
+> > >                 ldr     r3, .Ldsi+4             @ adjust saved 'pc' back one
+> > > -               teq     r3, r2, lsr #10         @ instruction
+> > > +               teq     r3, r2, lsr #11         @ instruction
+> > >                 subne   r0, sv_pc, #4           @ allow for mov
+> > >                 subeq   r0, sv_pc, #8           @ allow for mov + stmia
+> > >
+> > > --
+> > > 1.7.9.5
+> > >
+> >
+>
+> --
+> RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+> FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+> According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
