@@ -2,146 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A114B7CAD5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 19:47:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50C207CB27
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 19:58:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:Date:Message-ID:Subject:References:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=yymcEh8m7p1W1/MIO17Bm6ZgPYWvtLOnHB+viompiAI=; b=iVdxlnMwXNMmm0JOai/Lvblvb
-	rCkvm3988ybDsPBokXGz/4qcOt2hqRzrQw+zTtBPlfn6WwDyoRdPYh4780oAHBEaR3LMZyPPjzson
-	o9Dvji6PnOco7yUTRIGEbjUbe/ZDQUcZtYwoa+Q/842WAdJupBEgP/RAsbCSdy68CPdZjMx/IgxCV
-	2wfJ5iym1LRdZ6Iy9Ni/KsKEOu71/xm2Ht1DfNNrXVKi0+GZj3NaOTt1I3xPfo3XkXINxwcJzzucg
-	uXk60na16yZSBCR2nNWLuxF+UUa+XKyyHMNSOIGZ8Mah2LBd73Vnw1PNcHo6tKyqQLuByFYdgUCQc
-	csno28Lxw==;
+	 bh=k7XZbM3ChovNS52et3sITDjSvV6mxEBNEjGdaB6kb+A=; b=TXsWWYiTbpoHrNhyoIOAwwWC+
+	uqAxqYRdgduKZ7I4+1xgsuzSLw/lPTUxL7nNsjaYLMc5g7qNNDaPJIbPXZHmF/3cU+x648WvR4rKx
+	shgT2tmTna1mx0nFnYpGrvHG/+AwC/HlBY4eR6p7MI5+3p0MGdEEPcEcAwFICqUQ2YirvcHar2iwW
+	0fd4DTbag40W4XQ74SYC6OGsoj1KKk/bEW9tvX/2LiIIvqr5aCGfZJoNAHys4rletOKBXDf1TsO+A
+	Hlyn4iL93loSvQQpLlRclqtJ9KhT4wfOVPPqRKM8fxJe0z9kMChFuNLKRVt0p4KBjj7eG5+7C1aHL
+	E4eMV8jCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hssgr-0001gu-D6; Wed, 31 Jul 2019 17:47:05 +0000
-Received: from mout.perfora.net ([74.208.4.196])
+	id 1hssrx-000643-0C; Wed, 31 Jul 2019 17:58:33 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hssgj-0001gV-5o
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 17:46:58 +0000
-Received: from [192.168.0.104] ([71.197.225.149]) by mrelay.perfora.net
- (mreueus001 [74.208.5.2]) with ESMTPSA (Nemesis) id 0MfHA4-1hiMBg24xG-00Oz0n; 
- Wed, 31 Jul 2019 19:46:46 +0200
-From: Sunil Mohan Adapa <sunil@medhas.org>
-To: Chen-Yu Tsai <wens@csie.org>
-References: <20190727020252.17126-1-sunil@medhas.org>
- <CAGb2v66=hmx5yaSUm=QBt8AMRCV4EGYv-RFAMv_XBKjSjR79uA@mail.gmail.com>
- <7aaaf326-d7c2-59c9-5be2-b696ae490c3f@medhas.org>
-Openpgp: preference=signencrypt
-Autocrypt: addr=sunil@medhas.org; prefer-encrypt=mutual; keydata=
- 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
-Subject: Re: [PATCH] arm64: dts: allwinner: a64: Enable eMMC on A64-OLinuXino
-Message-ID: <416592c3-fe53-15d2-a4a1-6465cdae002c@medhas.org>
-Date: Wed, 31 Jul 2019 10:46:37 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1hssrp-00063I-SP
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 17:58:27 +0000
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id D1EBE601D7; Wed, 31 Jul 2019 17:58:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1564595904;
+ bh=hqwgQg+QLrSpltpFXDR2kApel5sVgQ1jriHtGFCWpyI=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=bqs3pbnctqReZ9uJtVeQ+o+0BS1xYilrf9EQ5EH8NUNz3OmgRiffjjVDr2O6F3MN2
+ O3aI2iD1F888UsjcWO+8+WGQ3L9bwtgFgftg1C2suuFGnuVCWWXcOAM68IRBQ41Uka
+ X+379Ld5lBwzsc2AHN+mGxPfL+GhedDZ7gMQc7AQ=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
+ version=3.4.0
+Received: from [10.226.58.28] (i-global254.qualcomm.com [199.106.103.254])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ (Authenticated sender: jhugo@smtp.codeaurora.org)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id AAE9760258;
+ Wed, 31 Jul 2019 17:58:22 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1564595903;
+ bh=hqwgQg+QLrSpltpFXDR2kApel5sVgQ1jriHtGFCWpyI=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=jjX1LtBGzumz0W0cw3esC+EtGpbdRQGTehJNHNA79B7e56CsrS/cH5K0Y+ggC2Iua
+ WdCckenA2QtwXBzwzn7+M/IcScCKrD0bIYSCGus6jOJyHqhBgklWEwQsZ2fS6gv40h
+ /weRb6Fb0AGhvtgtzX1Yr/+0xT1jjxpgMb+ixiE4=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org AAE9760258
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ spf=none smtp.mailfrom=jhugo@codeaurora.org
+Subject: Re: next/master boot: 265 boots: 17 failed, 184 passed with 64
+ offline (next-20190730)
+To: Stephen Boyd <swboyd@chromium.org>, Lee Jones <lee.jones@linaro.org>,
+ Linus Walleij <linus.walleij@linaro.org>, Mark Brown <broonie@kernel.org>,
+ Timur Tabi <timur@kernel.org>
+References: <5d403574.1c69fb81.14163.65d3@mx.google.com>
+ <20190730134115.GE4264@sirena.org.uk>
+ <CACRpkdYevQiwW8iED8_qBo5yCcj5yCGrM76Lu3MyrU6Vy4HoNg@mail.gmail.com>
+ <5d41b01a.1c69fb81.84578.a0bc@mx.google.com>
+From: Jeffrey Hugo <jhugo@codeaurora.org>
+Message-ID: <cbbe381e-a154-ced1-fbcb-9db2135e4e5b@codeaurora.org>
+Date: Wed, 31 Jul 2019 11:58:21 -0600
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-In-Reply-To: <7aaaf326-d7c2-59c9-5be2-b696ae490c3f@medhas.org>
-X-Provags-ID: V03:K1:Pf01XNbsin9z1YI865egP8l0P0e3WatUrbqd16k5fZXxt+aTzec
- MdS4X5NIwDv1HTNjWtVcAJlMpfdNG3P4Uwl0px0K4ocX+ZRjM9N7MiOwn7LXS245ZPHrPfO
- AQdZNvhwRYkEidMNnNd0+7VeR8AY8VVmMNCyLEb8I6iYHVOQexbe1i3jo025zl8zPYRU0mh
- gpc0tIFpciLOEXiOV4BNQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:jW6Si+acjNg=:zxZObiQOyi6Hg8bmUcfUTB
- /4kjvNsRPiEUiTTp6nj6kIqW8WSmbVLaBzGqtAJD5FxPKcBGL7mRZgROegternomNmAkIZwvV
- 75NLPZ/HBBn6dlV7IdrjNF3Db4Uiniey8EGVyb5s2kwY7ybsMAulaexpXygJvYDzhMuHHW3L7
- DhWo7YlLZVJrVrhFS3xFAREwgnf0/lRGAxxoCbX6ysJkyXIQlQoiuWgtJey+GTtQlJpqAToMe
- Mb/s9qG3dohcJsc1GSnsIeYGOfd9Lc4iLrjNyixNeXF9Le4vCNn2+1AR1gNvpuzMpZNOUYlpe
- lF6GaemduAB6QsrNgmQDmZP0RP/RaZ0KKwGXPrUiSvpVEteAg9OJVrPxsRhmcFM/41malfYsc
- QEINxAep4O5SP+UtJG3+jueywl+GpGM6kTDlTFt11GxZmXNW8oBAPVa5+1mZV3CUZT/B0dh5O
- qkqjRmLThn6zg98qOA5+debA0dpfkjNvKqW0Oei5VEZvhVFr8z2rJmF5qK4hygN7EMoUDK3Y/
- 8JUfntrj0rrgfahuHXnMqo/7CNpoG76cFI3bXFzzxjUblVRWXse70x4Fx1uutWnAiKT3ihj/u
- tmP3PnjU6lCWu9xtF2H8IUKh3lJbmEBJZZDoq0t/oaL1rJkGMjeyjT8ZGujo6h5kHyToUywX1
- HLr8BcLCWPLn1/7xgC7KJihJXeEOcDr75UWZyMN/OpZXC/+v9ELbpRM+NbjjDUAYAlgjJLthf
- NTqpwdmSZwxl/sCywKepMXn6j6V7Y3w5HS/9aA==
+In-Reply-To: <5d41b01a.1c69fb81.84578.a0bc@mx.google.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_104657_296954_CB2C41D0 
-X-CRM114-Status: GOOD (  18.25  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190731_105825_971234_AAE0CC2B 
+X-CRM114-Status: GOOD (  35.60  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [74.208.4.196 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.145.29.96 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -153,185 +103,186 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Ripard <maxime.ripard@bootlin.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============0775413231251373566=="
+Cc: Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Lina Iyer <ilina@codeaurora.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Kernel Build Reports Mailman List <kernel-build-reports@lists.linaro.org>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============0775413231251373566==
-Content-Type: multipart/signed; micalg=pgp-sha512;
- protocol="application/pgp-signature";
- boundary="n1JpyaOQR7mhtzcz6T5I2Eph6JoRrdFsT"
-
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---n1JpyaOQR7mhtzcz6T5I2Eph6JoRrdFsT
-Content-Type: multipart/mixed; boundary="JlxgJsxDjjhlCbR70zt8E0ZKVKtcP2akA";
- protected-headers="v1"
-From: Sunil Mohan Adapa <sunil@medhas.org>
-To: Chen-Yu Tsai <wens@csie.org>
-Cc: Maxime Ripard <maxime.ripard@bootlin.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Message-ID: <416592c3-fe53-15d2-a4a1-6465cdae002c@medhas.org>
-Subject: Re: [PATCH] arm64: dts: allwinner: a64: Enable eMMC on A64-OLinuXino
-References: <20190727020252.17126-1-sunil@medhas.org>
- <CAGb2v66=hmx5yaSUm=QBt8AMRCV4EGYv-RFAMv_XBKjSjR79uA@mail.gmail.com>
- <7aaaf326-d7c2-59c9-5be2-b696ae490c3f@medhas.org>
-In-Reply-To: <7aaaf326-d7c2-59c9-5be2-b696ae490c3f@medhas.org>
-
---JlxgJsxDjjhlCbR70zt8E0ZKVKtcP2akA
-Content-Type: text/plain; charset=utf-8
-Content-Language: en-US
-Content-Transfer-Encoding: quoted-printable
-
-On 26/07/19 11:49 pm, Sunil Mohan Adapa wrote:
-> On 26/07/19 10:42 pm, Chen-Yu Tsai wrote:
->> On Sat, Jul 27, 2019 at 10:03 AM Sunil Mohan Adapa <sunil@medhas.org> =
-wrote:
->>>
->>> A64-OLinuXino board has three variants that have eMMC support. Add su=
-pport for
->>> eMMC on boards that have it.
->>>
->>> This patch has been tested on A64-OLinuXino-1Ge16GW with Linux 5.0 fr=
-om Debain.
->>> Basic benchmarks using Flexible IO Tester show reasonable performance=
- from the
->>> eMMC.
->>>
->>> eMMC - Random Write: 23.1MiB/s
->>> eMMC - Sequential Write: 74.5MiB/s
->>> SD Card - Random Write: 1690KiB/s
->>> SD Card - Sequential Write: 11.0MiB/s
->>>
->>> Signed-off-by: Sunil Mohan Adapa <sunil@medhas.org>
->>> Tested-by: Sunil Mohan Adapa <sunil@medhas.org>
->>>
->>> From: Martin Ayotte <martinayotte@gmail.com>
->>> Link: https://github.com/armbian/build/commit/174953de1eb09e6aa1ef707=
-5066b573dba625398
->>> Signed-off-by: Sunil Mohan Adapa <sunil@medhas.org>
->>> ---
->>>  .../boot/dts/allwinner/sun50i-a64-olinuxino.dts | 17 +++++++++++++++=
-++
->>>  1 file changed, 17 insertions(+)
->>>
->>> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts b=
-/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts
->>> index 01a9a52edae4..751273f514fb 100644
->>> --- a/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts
->>> +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts
->>> @@ -81,6 +81,13 @@
->>>                 status =3D "okay";
->>>         };
->>>
->>> +       reg_vcc3v3: vcc3v3 {
->>> +               compatible =3D "regulator-fixed";
->>> +               regulator-name =3D "vcc3v3";
->>> +               regulator-min-microvolt =3D <3300000>;
->>> +               regulator-max-microvolt =3D <3300000>;
->>> +       };
->>> +
->>>         wifi_pwrseq: wifi_pwrseq {
->>>                 compatible =3D "mmc-pwrseq-simple";
->>>                 reset-gpios =3D <&r_pio 0 2 GPIO_ACTIVE_LOW>; /* PL2 =
-*/
->>> @@ -155,6 +162,16 @@
->>>         };
->>>  };
->>>
->>> +&mmc2 {
->>> +       pinctrl-names =3D "default";
->>> +       pinctrl-0 =3D <&mmc2_pins>;
->>> +       vmmc-supply =3D <&reg_vcc3v3>;
+On 7/31/2019 8:13 AM, Stephen Boyd wrote:
+> Quoting Linus Walleij (2019-07-31 01:48:38)
+>> On Tue, Jul 30, 2019 at 3:41 PM Mark Brown <broonie@kernel.org> wrote:
 >>
->> Both VCC (vmmc-supply) and VCCQ (vqmmc-supply) are wired to DCDC1.
->> There is no fixed regulator. Please accurately describe the hardware.
->=20
-> Thank you for the review. Do to my limited experience in the area, I
-> could not figure this out despite spending some time with the driver an=
-d
-> schematics. I was able to verify that some of the other descriptions ar=
-e
-> correct. I will update the patch accordingly and test it.
->=20
+>>> Today's -next fails to boot on QDF2400 systems:
+>>
+>> Is this a devicetree or ACPI system? Which devicetree in that case?
+>> If it is ACPI I assume one had to look into DSDTs?
+>>
+>> But I looked into this!
+>>
+>>> 08:56:36.026587  [    4.339966] pc : __memset+0x80/0x188
+>>> 08:56:36.026867  [    4.343524] lr : msm_gpio_init_valid_mask+0x134/0x1a4
+>>
+>> Aha. I think this only worked out of chance before.
+>>
+>> What the Qualcomm driver does is exploit that .init_valid_mask() gets called
+>> even if .need_valid_mask in gpio_chip is not set to true,
+>> and this is why the bug appears in
+>> msm_gpio_init_valid_mask(), I'm pretty much sure it is the
+>> bitmap_zero(chip->valid_mask, max_gpios);
+>> call towards the end of the function that gets turned
+>> into:
+>> 08:56:36.114798  [    4.433713]  __memset+0x80/0x188
+>>
+>> And this causes the crash.
+>>
+>> This is then because chip->valid_mask has not been allocated, and that
+>> is because .need_valid_mask is not set. This is set like so:
+>>
+>> static bool msm_gpio_needs_valid_mask(struct msm_pinctrl *pctrl)
+>> {
+>>      if (pctrl->soc->reserved_gpios)
+>>          return true;
+>>
+>>      return device_property_read_u16_array(pctrl->dev, "gpios", NULL, 0) > 0;
+>> }
+> 
+> Some of the code here is new. I guess the arm64 laptop stuff is making
+> changes.
+> 
+>>
+>> First comes from the driver, second is for ACPI I think. It looks
+>> like a bit dangerous way to do it for ACPI, what if an OF pin controller
+>> has some "gpios" property? Oh well.
+>>
+>> Apparently this only happens on ACPI systems because I tested it
+>> myself on a DT system.
+>>
+>> Another cause may be this from the call site inside gpiolib:
+>>
+>> static int gpiochip_alloc_valid_mask(struct gpio_chip *gc)
+>> {
+>>      if (IS_ENABLED(CONFIG_OF_GPIO))
+>>          gc->need_valid_mask = of_gpio_need_valid_mask(gc);
+>>      if (!gc->need_valid_mask)
+>>          return 0;
+>>
+>>      gc->valid_mask = gpiochip_allocate_mask(gc);
+>>      if (!gc->valid_mask)
+>>          return -ENOMEM;
+>>      return 0;
+>> }
+>>
+>> So if OF and ACPI is activated at the same time (can that happen?)
+> 
+> Yes, OF and ACPI can be compiled into the same kernel. Also, ACPI does
+> some interesting things when CONFIG_OF is enabled by looking for some
+> ACPI magic that basically says "match the DT compatible string embedded
+> in this ACPI thing". Quite scary!
+> 
+>> then the OF code will bail out I suppose and this happens when the
+>> ACPI side of things try to use the mask it didn't allocate. The ACPI
+>> codepath in msm_gpio_init_valid_mask() seems to try to set the
+>> mask even if there is zero GPIOs as well... dereferencing the NULL
+>> pointer in chip->valid_mask.
+>>
+>> Could it be that this is a ACPI system with zero protected GPIOs?
 
-I have posted v2 of the patch with the correction.
+QDF2400 is an ACPI only system, but it has protected GPIOs
+
+>> It doesn't seem like the code will survive that. It seems written
+>> under the assumption that
+>>
+>> It's a bit of a mess.
+>>
+>> Can some qcom ACPI people take linux-next for a ride and tell me
+>> what I should do?
+>>
+>> Lee: do you know if linux-next boots fine on your ACPI machine?
+>>
+>> Timur/Stephen: any ideas?
+
+Timur's CAF account is no longer valid, I added his @kernel one.
 
 >>
->> Also if Olimex never released any A64-OlinuXinos with NAND flash,
->> then we could merge this. Otherwise we'd have to have separate
->> versions, or do overlays.
->=20
-> Currently, Olimex has no A64-OLinuXinos with NAND flash. However, I am
-> unable to make a call on whether or not to have separate versions or
-> overlays.
+> 
+> I think the code changed in commit f626d6dfb709 ("gpio: of: Break out
+> OF-only code"). Now it unconditionally overwrites the chip's
+> need_valid_mask member when CONFIG_OF is enabled. How about only
+> overwriting it to 'true' when it really needs it? That way, the gpio
+> provider can have a say. I originally wrote this by having
+> of_gpio_need_valid_mask() modify the chip directly, but I like this
+> approach instead where we mark it as const in that function and then
+> only set it to true if it's actually needed.
+> 
+> -----8<----
+> diff --git a/drivers/gpio/gpiolib-of.c b/drivers/gpio/gpiolib-of.c
+> index b10d04dd9296..e39b4290b80c 100644
+> --- a/drivers/gpio/gpiolib-of.c
+> +++ b/drivers/gpio/gpiolib-of.c
+> @@ -87,7 +87,7 @@ static struct gpio_desc *of_xlate_and_get_gpiod_flags(struct gpio_chip *chip,
+>    * @dev: the device for the GPIO provider
+>    * @return: true if the valid mask needs to be set
+>    */
+> -bool of_gpio_need_valid_mask(struct gpio_chip *gc)
+> +bool of_gpio_need_valid_mask(const struct gpio_chip *gc)
+>   {
+>   	int size;
+>   	struct device_node *np = gc->of_node;
+> diff --git a/drivers/gpio/gpiolib-of.h b/drivers/gpio/gpiolib-of.h
+> index 34954921d96e..454d1658ee2d 100644
+> --- a/drivers/gpio/gpiolib-of.h
+> +++ b/drivers/gpio/gpiolib-of.h
+> @@ -16,7 +16,7 @@ struct gpio_desc *of_get_named_gpiod_flags(struct device_node *np,
+>   int of_gpiochip_add(struct gpio_chip *gc);
+>   void of_gpiochip_remove(struct gpio_chip *gc);
+>   int of_gpio_get_count(struct device *dev, const char *con_id);
+> -bool of_gpio_need_valid_mask(struct gpio_chip *gc);
+> +bool of_gpio_need_valid_mask(const struct gpio_chip *gc);
+>   #else
+>   static inline struct gpio_desc *of_find_gpio(struct device *dev,
+>   					     const char *con_id,
+> @@ -36,7 +36,7 @@ static inline int of_gpio_get_count(struct device *dev, const char *con_id)
+>   {
+>   	return 0;
+>   }
+> -static inline bool of_gpio_need_valid_mask(struct gpio_chip *gc)
+> +static inline bool of_gpio_need_valid_mask(const struct gpio_chip *gc)
+>   {
+>   	return false;
+>   }
+> diff --git a/drivers/gpio/gpiolib.c b/drivers/gpio/gpiolib.c
+> index d45c9a2285f0..e7153c81fdaa 100644
+> --- a/drivers/gpio/gpiolib.c
+> +++ b/drivers/gpio/gpiolib.c
+> @@ -362,8 +362,8 @@ static unsigned long *gpiochip_allocate_mask(struct gpio_chip *chip)
+>   
+>   static int gpiochip_alloc_valid_mask(struct gpio_chip *gc)
+>   {
+> -	if (IS_ENABLED(CONFIG_OF_GPIO))
+> -		gc->need_valid_mask = of_gpio_need_valid_mask(gc);
+> +	if (of_gpio_need_valid_mask(gc))
+> +		gc->need_valid_mask = true;
+>   	if (!gc->need_valid_mask)
+>   		return 0;
+>   
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> 
 
-I have contacted folks at Olimex Ltd. and they said that they don't
-intend to release variants of A64-OLinuXinos with NAND flash due to it
-requiring special drivers and mainline kernel not supporting NAND.
-Further, they plan to use MMC2 interface only for eMMC.
 
-So, it seems appropriate to add eMMC description into the main DTS for
-A64-OLinuXino.
-
---=20
-Sunil
-
->=20
->>
->>> +       bus-width =3D <8>;
->>> +       non-removable;
->>> +       cap-mmc-hw-reset;
->>> +       status =3D "okay";
->>> +};
->>> +
->>>  &ohci0 {
->>>         status =3D "okay";
->>>  };
->>> --
->>> 2.20.1
->>>
-
-
---JlxgJsxDjjhlCbR70zt8E0ZKVKtcP2akA--
-
---n1JpyaOQR7mhtzcz6T5I2Eph6JoRrdFsT
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCgAdFiEE5xPDY9ZyWnWupXSBQ+oc/wqnxfIFAl1B1AEACgkQQ+oc/wqn
-xfK4lw//aTiGqZjWUkznuCiiXG9iYIxnOmBwLSm+ouZN8BEuKXEFT17EAe8DbwxO
-Ef9iIEyQZF8OXvphucVqEWo2xFl8wjcfuINhAtMg932SULYRXlzXvL0oOnTg005X
-0LYrNntXIPvxRF4oNVTSVBktjU6+K5PbVPt7ulhITt5VnOtgEbqz1KzhlT6+daDD
-6FbRbs98N3cjQdENwPXD0SaYur7VHztW7g/Fknj7QRa5Liv82Yk19VsDILXBieTx
-UFaW7IndgtG/GylQ/MvVRf7OaER5CvraHxzQSHnPPbtJP4z43DM92uNxlDQdeCZZ
-o0DAtHznsBVvgoRBLE9g2WuDdxpRrNwvmkLyVS0t2qMCw8ltLz2W5vE89uNuk5S+
-9lZDTgaSbpQ3RbzBTx1F6Ac/93ol/lQGmq05zEk1j07dA+iLSAMfJhx38fhOzSJG
-ymc/flOKOAmGUSDX1yjWX7mUNeFHP/ohgdwM4kizRDPzMv41n/CB2kC5pU7UZzTU
-v5YadK+OgbGaelvkQHozQzQ6/4b0mDz0uwX/6R9uT3Nxw8/PLmmJvpcygWSA8j/n
-ewHqqVT44As+BmAqdD7x5WERDugtMZb16RAsdMSZBEsi6cuv+eLoozpJOo3RhCl7
-bSe7KB6eAnpq6bawbTVidxBaCH1C3KKlfAREMrKa3+okd37vHYI=
-=TFRX
------END PGP SIGNATURE-----
-
---n1JpyaOQR7mhtzcz6T5I2Eph6JoRrdFsT--
-
-
---===============0775413231251373566==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+Jeffrey Hugo
+Qualcomm Technologies, Inc. is a member of the
+Code Aurora Forum, a Linux Foundation Collaborative Project.
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0775413231251373566==--
-
