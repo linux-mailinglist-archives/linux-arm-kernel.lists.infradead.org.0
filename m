@@ -2,130 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 709EE7B683
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 02:08:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AFFCC7B6AD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 02:19:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vRT/tMBW83HpD7BRqOoXBaYOTfnv1P7WD5cReq9RX1E=; b=OQMwyAZPAzg7cB
-	3N9FPtXkz1kRdteRVR9T0tKHAIdYHCJZ1LXARi0ovKVHuSq6d46ZG52XNskSO9ZmPNW+umV5InrEB
-	FwNbXcEsQ06bRLJjh191LTBmABXNWX+8mo+pqD4nHK1S5+IMEr3yWnZ3yWe1kJ4NfmLpTz6nK6kt/
-	gj/hHzAjPK7zxt2nytc+wrQsO7qng7BaInN2eBs59Ujsk5Jr7pqg1wrOry7h9NdOP2nKZzMbZbelX
-	OtyAGXQF9YUcPgkx90Apd1T7jV4T3bALZVaieyXWFefkBSHRxUjTngwLVScsxBzg0hmwo8vfedBKO
-	v9SwfcKV0zDKIPruCEVg==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
+	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=grf+ZNkHsfTqfW2vY6rzLFcwiXaK4nYmj4lMLSv7rBI=; b=LCtBm6WRwBnX+I
+	O3kz4/4hZ4wI/i3DYid7QV+OrgKFoFrZaA2vteLk+z5RJoqTvlTg228JsCj1ZrquA9arP7KrMfZEe
+	nEAHDpagbYVkW+Ys0Vpuj5O88uES49v78Qsza6hjeG0lzvgIBKAD//I2nJcGMvimoYTeaVK60Aq0J
+	LZZjqfZEA7dI6JkWy5S3CVnxhsYj8ifadMWeGp9DrRa3JikssLFj2UN5h+atzBoMoxqE4yxMsNcXJ
+	4PBFU3aIZ/c/qCFdvLomHX51NOJE0zceRf1JlOIe9+UyUfOtqMDBEfCmFTLeR5TxyaSp6DOZu9QIJ
+	xEKq4466DCXfnSuc4x2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hscAf-0001Wk-1G; Wed, 31 Jul 2019 00:08:45 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1hscKw-0004zb-Mc; Wed, 31 Jul 2019 00:19:22 +0000
+Received: from out1-smtp.messagingengine.com ([66.111.4.25])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hscAW-0001WN-4f; Wed, 31 Jul 2019 00:08:38 +0000
-Received: from [IPv6:2804:431:c7f1:ce2f:ec1:e6e6:2e9f:e76e] (unknown
- [IPv6:2804:431:c7f1:ce2f:ec1:e6e6:2e9f:e76e])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested) (Authenticated sender: koike)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 0EA5428B864;
- Wed, 31 Jul 2019 01:08:28 +0100 (BST)
-Subject: Re: [PATCH v8 00/14] Rockchip ISP1 Driver
-From: Helen Koike <helen.koike@collabora.com>
-To: Hans Verkuil <hverkuil@xs4all.nl>, linux-rockchip@lists.infradead.org
-References: <20190730184256.30338-1-helen.koike@collabora.com>
- <dbdfed3e-7bb6-bf1f-64b9-ab7298193e2d@xs4all.nl>
- <41e7e574-2708-eb4c-ea30-e6a1ac9c073e@collabora.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=helen.koike@collabora.com; keydata=
- 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
-Message-ID: <8ce532de-6c26-f8db-8754-c8dd1eb0764b@collabora.com>
-Date: Tue, 30 Jul 2019 21:08:17 -0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
-MIME-Version: 1.0
-In-Reply-To: <41e7e574-2708-eb4c-ea30-e6a1ac9c073e@collabora.com>
-Content-Language: en-US
+ id 1hscKo-0004zI-78
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 00:19:16 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailout.nyi.internal (Postfix) with ESMTP id DF4282235E;
+ Tue, 30 Jul 2019 20:19:12 -0400 (EDT)
+Received: from imap2 ([10.202.2.52])
+ by compute4.internal (MEProxy); Tue, 30 Jul 2019 20:19:12 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
+ mime-version:message-id:in-reply-to:references:date:from:to:cc
+ :subject:content-type; s=fm3; bh=zGGUAzU91Ztc1y1qPK4leWTYhdzsi0+
+ pH+eAPDsWsQY=; b=YleDeY8bARAgmMYSkp2k1/r8K/63rcG/+NBu85aYvx4GxT3
+ 46WNlu8Kr/vet+rqibKAFo4jDgJwcewe/rA/tkiHgxA4zW5NK33vpRUWv93eSI9C
+ uwm/wuGXLe0W+KznmKf8m9evM3ghE4L5qXJqOC2vA22GIoXUWkVv6ZhmZgniHJ9q
+ Z9YKuc0byWV6Oe9aElNLEohUMe+ecz4aowhXrKLzGV8APnE+n34o+TmSMf2haU+8
+ G1xFlbUkJmD5+qmE7L/Vn/SxNh4MBUHHwoHtLh+5Ak39CM4MhHpYUjMwuldoSru8
+ ioqwfhL8H9r+EvyRNmFMP+AhiHatfnmIqxPimQw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=zGGUAz
+ U91Ztc1y1qPK4leWTYhdzsi0+pH+eAPDsWsQY=; b=zTvAZTfPbmB/DibWfj4QfM
+ 4azPPvUXEEDAc48ZX0HuQ//s8svSf2pwTQwCty24epBEzGl/PjB2UPzQ/sWPa7X0
+ jGd1Cq8ptlRo1ICbbdvYsgwpkxwqhQo0RYpQEqj/93sCP2CvP/58wgPwntVUwPFF
+ V+0jVo/ZghFPZp4TtQJcLHFZP8g4pVqMQ+mVc6I3tjq++jegPK7i0bUFkbFVlwuh
+ WnLxLpnwhAgZ0wMdmlUgVnv82I6VF5G4w7i99hReVKZJtFg3X/o0ytlhTzHjD+9e
+ DKb3D9HTNc/7OzoJgoTbc7xJguxlEHvMoNDyZHbc52XKwfkjlkFSPuTTWM8B4+dw
+ ==
+X-ME-Sender: <xms:f95AXZzihev2GPjrv1nsvxOgOROwFUJHZ5lwwyncOa0xjPhC_MPI8g>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrleeggdeffecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpefofgggkfgjfhffhffvufgtsehttdertderredtnecuhfhrohhmpedftehnughr
+ vgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucfrrghrrg
+ hmpehmrghilhhfrhhomheprghnughrvgifsegrjhdrihgurdgruhenucevlhhushhtvghr
+ ufhiiigvpedt
+X-ME-Proxy: <xmx:f95AXao7hCM1O5Dt3Awc0avag0bKVtcMEVvg01VwANjW3VEtF2kKNw>
+ <xmx:f95AXcniVvV40YwyCJx__x440kXJKispbRVWrpSCv7Lkgn8XlCgfZg>
+ <xmx:f95AXTzcAenQgAWlRZBK6Zc1V6wtDl7q8fvv9nlGrhqw7g-SglzY-A>
+ <xmx:gN5AXTmWXEHWTua3n3-KUVvGMoRwUqGKuwTzQAuYgio5p7Gb3tbmKQ>
+Received: by mailuser.nyi.internal (Postfix, from userid 501)
+ id B2ACBE00A2; Tue, 30 Jul 2019 20:19:11 -0400 (EDT)
+X-Mailer: MessagingEngine.com Webmail Interface
+User-Agent: Cyrus-JMAP/3.1.6-799-g925e343-fmstable-20190729v1
+Mime-Version: 1.0
+Message-Id: <ce557bcd-6719-4138-a90f-3c8a27fa1199@www.fastmail.com>
+In-Reply-To: <1564500268-2627-3-git-send-email-hongweiz@ami.com>
+References: <1564500268-2627-1-git-send-email-hongweiz@ami.com>
+ <1564500268-2627-3-git-send-email-hongweiz@ami.com>
+Date: Wed, 31 Jul 2019 09:49:21 +0930
+From: "Andrew Jeffery" <andrew@aj.id.au>
+To: "Hongwei Zhang" <hongweiz@ami.com>,
+ "Linus Walleij" <linus.walleij@linaro.org>, linux-gpio@vger.kernel.org
+Subject: Re: [v6 2/2] gpio: aspeed: Add SGPIO driver
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_170836_448274_88A0463E 
-X-CRM114-Status: GOOD (  28.65  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190730_171914_405805_8011B161 
+X-CRM114-Status: GOOD (  20.71  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.25 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -137,12 +104,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, eddie.cai.linux@gmail.com, kernel@collabora.com,
- heiko@sntech.de, zhengsq@rock-chips.com, jeffy.chen@rock-chips.com,
- zyc@rock-chips.com, linux-kernel@vger.kernel.org, tfiga@chromium.org,
- hans.verkuil@cisco.com, laurent.pinchart@ideasonboard.com,
- sakari.ailus@linux.intel.com, mchehab@kernel.org, ezequiel@collabora.com,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: linux-arm-kernel@lists.infradead.org,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>, Joel Stanley <joel@jms.id.au>,
+ linux-aspeed@lists.ozlabs.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -150,300 +114,569 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 7/30/19 5:50 PM, Helen Koike wrote:
+On Wed, 31 Jul 2019, at 00:55, Hongwei Zhang wrote:
+> Add SGPIO driver support for Aspeed AST2500 SoC.
 > 
+> Signed-off-by: Hongwei Zhang <hongweiz@ami.com>
+> ---
+>  drivers/gpio/sgpio-aspeed.c | 521 ++++++++++++++++++++++++++++++++++++++++++++
+>  1 file changed, 521 insertions(+)
+>  create mode 100644 drivers/gpio/sgpio-aspeed.c
 > 
-> On 7/30/19 5:15 PM, Hans Verkuil wrote:
->> On 7/30/19 8:42 PM, Helen Koike wrote:
->>> Hello,
->>>
->>> I'm re-sending a new version of ISP(Camera) v4l2 driver for rockchip
->>> rk3399 SoC.
->>>
->>> I didn't change much from the last version, just applying the
->>> suggestions made in the previous one.
->>>
->>> This patchset is also available at:
->>> https://gitlab.collabora.com/koike/linux/tree/rockchip/isp/v8
->>>
->>> Libcamera patched to work with this version:
->>> https://gitlab.collabora.com/koike/libcamera
->>> (also sent to the mailing list)
->>>
->>> I tested on the rockpi 4 with a rpi v1.3 sensor and also with the
->>> Scarlet Chromebook.
->>>
->>> Known issues (same as in v7):
->>> -------------
->>> - Reloading the module doesn't work (there is some missing cleanup when
->>> unloading)
->>> - When capturing in bayer format, changing the size doesn't seem to
->>> affect the image.
->>> - crop needs more tests
->>> - v4l2-compliance error:
->>>         fail: v4l2-test-controls.cpp(824): subscribe event for control 'Image Processing Controls' failed
->>> test VIDIOC_(UN)SUBSCRIBE_EVENT/DQEVENT: FAIL
->>
->> Can you mail me the full v4l2-compliance output?
-> 
-> Sure, please check here: http://ix.io/1Q5u
-> I updated v4l-utils with the latest version and I re-ran bootstrap/configure/make,
-> but for some reason the hash from the link above is not the latest commit, probably some
-> old configuration somewhere. I'll resend this log as soon as I get v4l2-compliance
-> properly updated.
+> diff --git a/drivers/gpio/sgpio-aspeed.c b/drivers/gpio/sgpio-aspeed.c
+> new file mode 100644
+> index 0000000..9a17b1a
+> --- /dev/null
+> +++ b/drivers/gpio/sgpio-aspeed.c
+> @@ -0,0 +1,521 @@
+> +// SPDX-License-Identifier: GPL-2.0-or-later
+> +/*
+> + * Copyright 2019 American Megatrends International LLC.
+> + *
+> + * Author: Karthikeyan Mani <karthikeyanm@amiindia.co.in>
+> + */
+> +
+> +#include <linux/bitfield.h>
+> +#include <linux/clk.h>
+> +#include <linux/gpio/driver.h>
+> +#include <linux/hashtable.h>
+> +#include <linux/init.h>
+> +#include <linux/io.h>
+> +#include <linux/kernel.h>
+> +#include <linux/module.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/spinlock.h>
+> +#include <linux/string.h>
+> +
+> +#define MAX_NR_SGPIO			80
+> +
+> +#define ASPEED_SGPIO_CTRL		0x54
+> +
+> +#define ASPEED_SGPIO_PINS_MASK		GENMASK(9, 6)
+> +#define ASPEED_SGPIO_CLK_DIV_MASK	GENMASK(31, 16)
+> +#define ASPEED_SGPIO_ENABLE		BIT(0)
+> +
+> +struct aspeed_sgpio {
+> +	struct gpio_chip chip;
+> +	struct clk *pclk;
+> +	spinlock_t lock;
+> +	void __iomem *base;
+> +	uint32_t dir_in[3];
+> +	int irq;
+> +};
+> +
+> +struct aspeed_sgpio_bank {
+> +	uint16_t    val_regs;
+> +	uint16_t    rdata_reg;
+> +	uint16_t    irq_regs;
+> +	const char  names[4][3];
+> +};
+> +
+> +/*
+> + * Note: The "value" register returns the input value when the GPIO is
+> + *	 configured as an input.
+> + *
+> + *	 The "rdata" register returns the output value when the GPIO is
+> + *	 configured as an output.
+> + */
+> +static const struct aspeed_sgpio_bank aspeed_sgpio_banks[] = {
+> +	{
+> +		.val_regs = 0x0000,
+> +		.rdata_reg = 0x0070,
+> +		.irq_regs = 0x0004,
+> +		.names = { "A", "B", "C", "D" },
+> +	},
+> +	{
+> +		.val_regs = 0x001C,
+> +		.rdata_reg = 0x0074,
+> +		.irq_regs = 0x0020,
+> +		.names = { "E", "F", "G", "H" },
+> +	},
+> +	{
+> +		.val_regs = 0x0038,
+> +		.rdata_reg = 0x0078,
+> +		.irq_regs = 0x003C,
+> +		.names = { "I", "J" },
+> +	},
+> +};
+> +
+> +enum aspeed_sgpio_reg {
+> +	reg_val,
+> +	reg_rdata,
+> +	reg_irq_enable,
+> +	reg_irq_type0,
+> +	reg_irq_type1,
+> +	reg_irq_type2,
+> +	reg_irq_status,
+> +};
+> +
+> +#define GPIO_VAL_VALUE      0x00
+> +#define GPIO_IRQ_ENABLE     0x00
+> +#define GPIO_IRQ_TYPE0      0x04
+> +#define GPIO_IRQ_TYPE1      0x08
+> +#define GPIO_IRQ_TYPE2      0x0C
+> +#define GPIO_IRQ_STATUS     0x10
+> +
+> +static void __iomem *bank_reg(struct aspeed_sgpio *gpio,
+> +				     const struct aspeed_sgpio_bank *bank,
+> +				     const enum aspeed_sgpio_reg reg)
+> +{
+> +	switch (reg) {
+> +	case reg_val:
+> +		return gpio->base + bank->val_regs + GPIO_VAL_VALUE;
+> +	case reg_rdata:
+> +		return gpio->base + bank->rdata_reg;
+> +	case reg_irq_enable:
+> +		return gpio->base + bank->irq_regs + GPIO_IRQ_ENABLE;
+> +	case reg_irq_type0:
+> +		return gpio->base + bank->irq_regs + GPIO_IRQ_TYPE0;
+> +	case reg_irq_type1:
+> +		return gpio->base + bank->irq_regs + GPIO_IRQ_TYPE1;
+> +	case reg_irq_type2:
+> +		return gpio->base + bank->irq_regs + GPIO_IRQ_TYPE2;
+> +	case reg_irq_status:
+> +		return gpio->base + bank->irq_regs + GPIO_IRQ_STATUS;
+> +	default:
+> +		/* acturally if code runs to here, it's an error case */
+> +		BUG_ON(1);
+> +	}
+> +}
+> +
+> +#define GPIO_BANK(x)    ((x) >> 5)
+> +#define GPIO_OFFSET(x)  ((x) & 0x1f)
+> +#define GPIO_BIT(x)     BIT(GPIO_OFFSET(x))
+> +
+> +static const struct aspeed_sgpio_bank *to_bank(unsigned int offset)
+> +{
+> +	unsigned int bank = GPIO_BANK(offset);
+> +
+> +	WARN_ON(bank >= ARRAY_SIZE(aspeed_sgpio_banks));
+> +	return &aspeed_sgpio_banks[bank];
+> +}
+> +
+> +static int aspeed_sgpio_get(struct gpio_chip *gc, unsigned int offset)
+> +{
+> +	struct aspeed_sgpio *gpio = gpiochip_get_data(gc);
+> +	const struct aspeed_sgpio_bank *bank = to_bank(offset);
+> +	unsigned long flags;
+> +	enum aspeed_sgpio_reg reg;
+> +	bool is_input;
+> +	int rc = 0;
+> +
+> +	spin_lock_irqsave(&gpio->lock, flags);
+> +
+> +	is_input = gpio->dir_in[GPIO_BANK(offset)] & GPIO_BIT(offset);
+> +	reg = is_input ? reg_val : reg_rdata;
+> +	rc = !!(ioread32(bank_reg(gpio, bank, reg)) & GPIO_BIT(offset));
+> +
+> +	spin_unlock_irqrestore(&gpio->lock, flags);
+> +
+> +	return rc;
+> +}
+> +
+> +static void aspeed_sgpio_set(struct gpio_chip *gc, unsigned int 
+> offset, int val)
+> +{
+> +	struct aspeed_sgpio *gpio = gpiochip_get_data(gc);
+> +	const struct aspeed_sgpio_bank *bank = to_bank(offset);
+> +	unsigned long flags;
+> +	void __iomem *addr;
+> +	u32 reg = 0;
+> +
+> +	spin_lock_irqsave(&gpio->lock, flags);
+> +
+> +	addr = bank_reg(gpio, bank, reg_val);
+> +
+> +	if (val)
+> +		reg |= GPIO_BIT(offset);
+> +	else
+> +		reg &= ~GPIO_BIT(offset);
 
-Please see the output of v4l2-compliance here with an updated v4l-utils: http://ix.io/1Q6A
+reg is zero-initialised above and you haven't read from addr to assign to reg, so
+the else branch is redundant (reg is already zeroed). This path has a bug - you're
+clearing the state of all GPIOs associated with addr rather than just the GPIO
+associated with offset.
 
+> +
+> +	iowrite32(reg, addr);
+> +
+> +	spin_unlock_irqrestore(&gpio->lock, flags);
+> +}
+> +
+> +static int aspeed_sgpio_dir_in(struct gpio_chip *gc, unsigned int 
+> offset)
+> +{
+> +	struct aspeed_sgpio *gpio = gpiochip_get_data(gc);
+> +	unsigned long flags;
+> +
+> +	spin_lock_irqsave(&gpio->lock, flags);
+> +	gpio->dir_in[GPIO_BANK(offset)] |= GPIO_BIT(offset);
+> +	spin_unlock_irqrestore(&gpio->lock, flags);
+> +
+> +	return 0;
+> +}
+> +
+> +static int aspeed_sgpio_dir_out(struct gpio_chip *gc, unsigned int 
+> offset, int val)
+> +{
+> +	struct aspeed_sgpio *gpio = gpiochip_get_data(gc);
+> +	unsigned long flags;
+> +
+> +	spin_lock_irqsave(&gpio->lock, flags);
+> +	gpio->dir_in[GPIO_BANK(offset)] &= ~GPIO_BIT(offset);
+> +	spin_unlock_irqrestore(&gpio->lock, flags);
+> +
+> +	aspeed_sgpio_set(gc, offset, val);
+
+In this case you should probably have an unlocked variant of aspeed_sgpio_set()
+so you can call it inside the the critical section above instead of needing to
+acquire/release the lock twice (once above and again in aspeed_sgpio_set()
+as it stands).
+
+Cheers,
+
+Andrew
+
+> +
+> +	return 0;
+> +}
+> +
+> +static int aspeed_sgpio_get_direction(struct gpio_chip *gc, unsigned 
+> int offset)
+> +{
+> +	int dir_status;
+> +	struct aspeed_sgpio *gpio = gpiochip_get_data(gc);
+> +	unsigned long flags;
+> +
+> +	spin_lock_irqsave(&gpio->lock, flags);
+> +	dir_status = gpio->dir_in[GPIO_BANK(offset)] & GPIO_BIT(offset);
+> +	spin_unlock_irqrestore(&gpio->lock, flags);
+> +
+> +	return dir_status;
+> +
+> +}
+> +
+> +static void irqd_to_aspeed_sgpio_data(struct irq_data *d,
+> +					     struct aspeed_sgpio **gpio,
+> +					     const struct aspeed_sgpio_bank **bank,
+> +					     u32 *bit, int *offset)
+> +{
+> +	struct aspeed_sgpio *internal;
+> +
+> +	*offset = irqd_to_hwirq(d);
+> +	internal = irq_data_get_irq_chip_data(d);
+> +	WARN_ON(!internal);
+> +
+> +	*gpio = internal;
+> +	*bank = to_bank(*offset);
+> +	*bit = GPIO_BIT(*offset);
+> +}
+> +
+> +static void aspeed_sgpio_irq_ack(struct irq_data *d)
+> +{
+> +	const struct aspeed_sgpio_bank *bank;
+> +	struct aspeed_sgpio *gpio;
+> +	unsigned long flags;
+> +	void __iomem *status_addr;
+> +	int offset;
+> +	u32 bit;
+> +
+> +	irqd_to_aspeed_sgpio_data(d, &gpio, &bank, &bit, &offset);
+> +
+> +	status_addr = bank_reg(gpio, bank, reg_irq_status);
+> +
+> +	spin_lock_irqsave(&gpio->lock, flags);
+> +
+> +	iowrite32(bit, status_addr);
+> +
+> +	spin_unlock_irqrestore(&gpio->lock, flags);
+> +}
+> +
+> +static void aspeed_sgpio_irq_set_mask(struct irq_data *d, bool set)
+> +{
+> +	const struct aspeed_sgpio_bank *bank;
+> +	struct aspeed_sgpio *gpio;
+> +	unsigned long flags;
+> +	u32 reg, bit;
+> +	void __iomem *addr;
+> +	int offset;
+> +
+> +	irqd_to_aspeed_sgpio_data(d, &gpio, &bank, &bit, &offset);
+> +	addr = bank_reg(gpio, bank, reg_irq_enable);
+> +
+> +	spin_lock_irqsave(&gpio->lock, flags);
+> +
+> +	reg = ioread32(addr);
+> +	if (set)
+> +		reg |= bit;
+> +	else
+> +		reg &= ~bit;
+> +
+> +	iowrite32(reg, addr);
+> +
+> +	spin_unlock_irqrestore(&gpio->lock, flags);
+> +}
+> +
+> +static void aspeed_sgpio_irq_mask(struct irq_data *d)
+> +{
+> +	aspeed_sgpio_irq_set_mask(d, false);
+> +}
+> +
+> +static void aspeed_sgpio_irq_unmask(struct irq_data *d)
+> +{
+> +	aspeed_sgpio_irq_set_mask(d, true);
+> +}
+> +
+> +static int aspeed_sgpio_set_type(struct irq_data *d, unsigned int type)
+> +{
+> +	u32 type0 = 0;
+> +	u32 type1 = 0;
+> +	u32 type2 = 0;
+> +	u32 bit, reg;
+> +	const struct aspeed_sgpio_bank *bank;
+> +	irq_flow_handler_t handler;
+> +	struct aspeed_sgpio *gpio;
+> +	unsigned long flags;
+> +	void __iomem *addr;
+> +	int offset;
+> +
+> +	irqd_to_aspeed_sgpio_data(d, &gpio, &bank, &bit, &offset);
+> +
+> +	switch (type & IRQ_TYPE_SENSE_MASK) {
+> +	case IRQ_TYPE_EDGE_BOTH:
+> +		type2 |= bit;
+> +		/* fall through */
+> +	case IRQ_TYPE_EDGE_RISING:
+> +		type0 |= bit;
+> +		/* fall through */
+> +	case IRQ_TYPE_EDGE_FALLING:
+> +		handler = handle_edge_irq;
+> +		break;
+> +	case IRQ_TYPE_LEVEL_HIGH:
+> +		type0 |= bit;
+> +		/* fall through */
+> +	case IRQ_TYPE_LEVEL_LOW:
+> +		type1 |= bit;
+> +		handler = handle_level_irq;
+> +		break;
+> +	default:
+> +		return -EINVAL;
+> +	}
+> +
+> +	spin_lock_irqsave(&gpio->lock, flags);
+> +
+> +	addr = bank_reg(gpio, bank, reg_irq_type0);
+> +	reg = ioread32(addr);
+> +	reg = (reg & ~bit) | type0;
+> +	iowrite32(reg, addr);
+> +
+> +	addr = bank_reg(gpio, bank, reg_irq_type1);
+> +	reg = ioread32(addr);
+> +	reg = (reg & ~bit) | type1;
+> +	iowrite32(reg, addr);
+> +
+> +	addr = bank_reg(gpio, bank, reg_irq_type2);
+> +	reg = ioread32(addr);
+> +	reg = (reg & ~bit) | type2;
+> +	iowrite32(reg, addr);
+> +
+> +	spin_unlock_irqrestore(&gpio->lock, flags);
+> +
+> +	irq_set_handler_locked(d, handler);
+> +
+> +	return 0;
+> +}
+> +
+> +static void aspeed_sgpio_irq_handler(struct irq_desc *desc)
+> +{
+> +	struct gpio_chip *gc = irq_desc_get_handler_data(desc);
+> +	struct irq_chip *ic = irq_desc_get_chip(desc);
+> +	struct aspeed_sgpio *data = gpiochip_get_data(gc);
+> +	unsigned int i, p, girq;
+> +	unsigned long reg;
+> +
+> +	chained_irq_enter(ic, desc);
+> +
+> +	for (i = 0; i < ARRAY_SIZE(aspeed_sgpio_banks); i++) {
+> +		const struct aspeed_sgpio_bank *bank = &aspeed_sgpio_banks[i];
+> +
+> +		reg = ioread32(bank_reg(data, bank, reg_irq_status));
+> +
+> +		for_each_set_bit(p, &reg, 32) {
+> +			girq = irq_find_mapping(gc->irq.domain, i * 32 + p);
+> +			generic_handle_irq(girq);
+> +		}
+> +
+> +	}
+> +
+> +	chained_irq_exit(ic, desc);
+> +}
+> +
+> +static struct irq_chip aspeed_sgpio_irqchip = {
+> +	.name       = "aspeed-sgpio",
+> +	.irq_ack    = aspeed_sgpio_irq_ack,
+> +	.irq_mask   = aspeed_sgpio_irq_mask,
+> +	.irq_unmask = aspeed_sgpio_irq_unmask,
+> +	.irq_set_type   = aspeed_sgpio_set_type,
+> +};
+> +
+> +static int aspeed_sgpio_setup_irqs(struct aspeed_sgpio *gpio,
+> +				   struct platform_device *pdev)
+> +{
+> +	int rc, i;
+> +	const struct aspeed_sgpio_bank *bank;
+> +
+> +	rc = platform_get_irq(pdev, 0);
+> +	if (rc < 0)
+> +		return rc;
+> +
+> +	gpio->irq = rc;
+> +
+> +	/* Disable IRQ and clear Interrupt status registers for all SPGIO 
+> Pins. */
+> +	for (i = 0; i < ARRAY_SIZE(aspeed_sgpio_banks); i++) {
+> +		bank =  &aspeed_sgpio_banks[i];
+> +		/* disable irq enable bits */
+> +		iowrite32(0x00000000, bank_reg(gpio, bank, reg_irq_enable));
+> +		/* clear status bits */
+> +		iowrite32(0xffffffff, bank_reg(gpio, bank, reg_irq_status));
+> +	}
+> +
+> +	rc = gpiochip_irqchip_add(&gpio->chip, &aspeed_sgpio_irqchip,
+> +				  0, handle_bad_irq, IRQ_TYPE_NONE);
+> +	if (rc) {
+> +		dev_info(&pdev->dev, "Could not add irqchip\n");
+> +		return rc;
+> +	}
+> +
+> +	gpiochip_set_chained_irqchip(&gpio->chip, &aspeed_sgpio_irqchip,
+> +				     gpio->irq, aspeed_sgpio_irq_handler);
+> +
+> +	/* set IRQ settings and Enable Interrupt */
+> +	for (i = 0; i < ARRAY_SIZE(aspeed_sgpio_banks); i++) {
+> +		bank = &aspeed_sgpio_banks[i];
+> +		/* set falling or level-low irq */
+> +		iowrite32(0x00000000, bank_reg(gpio, bank, reg_irq_type0));
+> +		/* trigger type is edge */
+> +		iowrite32(0x00000000, bank_reg(gpio, bank, reg_irq_type1));
+> +		/* dual edge trigger mode. */
+> +		iowrite32(0xffffffff, bank_reg(gpio, bank, reg_irq_type2));
+> +		/* enable irq */
+> +		iowrite32(0xffffffff, bank_reg(gpio, bank, reg_irq_enable));
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct of_device_id aspeed_sgpio_of_table[] = {
+> +	{ .compatible = "aspeed,ast2400-sgpio" },
+> +	{ .compatible = "aspeed,ast2500-sgpio" },
+> +	{}
+> +};
+> +MODULE_DEVICE_TABLE(of, aspeed_sgpio_of_table);
+> +
+> +static int __init aspeed_sgpio_probe(struct platform_device *pdev)
+> +{
+> +	struct aspeed_sgpio *gpio;
+> +	u32 nr_gpios, sgpio_freq, sgpio_clk_div;
+> +	int rc;
+> +	unsigned long apb_freq;
+> +
+> +	gpio = devm_kzalloc(&pdev->dev, sizeof(*gpio), GFP_KERNEL);
+> +	if (!gpio)
+> +		return -ENOMEM;
+> +
+> +	gpio->base = devm_platform_ioremap_resource(pdev, 0);
+> +	if (IS_ERR(gpio->base))
+> +		return PTR_ERR(gpio->base);
+> +
+> +	rc = of_property_read_u32(pdev->dev.of_node, "ngpios", &nr_gpios);
+> +	if (rc < 0) {
+> +		dev_err(&pdev->dev, "Could not read ngpios property\n");
+> +		return -EINVAL;
+> +	} else if (nr_gpios > MAX_NR_SGPIO) {
+> +		dev_err(&pdev->dev, "Number of GPIOs exceeds the maximum of %d: 
+> %d\n",
+> +			MAX_NR_SGPIO, nr_gpios);
+> +		return -EINVAL;
+> +	}
+> +
+> +	rc = of_property_read_u32(pdev->dev.of_node, "bus-frequency", 
+> &sgpio_freq);
+> +	if (rc < 0) {
+> +		dev_err(&pdev->dev, "Could not read bus-frequency property\n");
+> +		return -EINVAL;
+> +	}
+> +
+> +	gpio->pclk = devm_clk_get(&pdev->dev, NULL);
+> +	if (IS_ERR(gpio->pclk)) {
+> +		dev_err(&pdev->dev, "devm_clk_get failed\n");
+> +		return PTR_ERR(gpio->pclk);
+> +	}
+> +
+> +	apb_freq = clk_get_rate(gpio->pclk);
+> +
+> +	/*
+> +	 * From the datasheet,
+> +	 *	SGPIO period = 1/PCLK * 2 * (GPIO254[31:16] + 1)
+> +	 *	period = 2 * (GPIO254[31:16] + 1) / PCLK
+> +	 *	frequency = 1 / (2 * (GPIO254[31:16] + 1) / PCLK)
+> +	 *	frequency = PCLK / (2 * (GPIO254[31:16] + 1))
+> +	 *	frequency * 2 * (GPIO254[31:16] + 1) = PCLK
+> +	 *	GPIO254[31:16] = PCLK / (frequency * 2) - 1
+> +	 */
+> +	if (sgpio_freq == 0)
+> +		return -EINVAL;
+> +
+> +	sgpio_clk_div = (apb_freq / (sgpio_freq * 2)) - 1;
+> +
+> +	if (sgpio_clk_div > (1 << 16) - 1)
+> +		return -EINVAL;
+> +
+> +	iowrite32(FIELD_PREP(ASPEED_SGPIO_CLK_DIV_MASK, sgpio_clk_div) |
+> +		  FIELD_PREP(ASPEED_SGPIO_PINS_MASK, (nr_gpios / 8)) |
+> +		  ASPEED_SGPIO_ENABLE,
+> +		  gpio->base + ASPEED_SGPIO_CTRL);
+> +
+> +	spin_lock_init(&gpio->lock);
+> +
+> +	gpio->chip.parent = &pdev->dev;
+> +	gpio->chip.ngpio = nr_gpios;
+> +	gpio->chip.direction_input = aspeed_sgpio_dir_in;
+> +	gpio->chip.direction_output = aspeed_sgpio_dir_out;
+> +	gpio->chip.get_direction = aspeed_sgpio_get_direction;
+> +	gpio->chip.request = NULL;
+> +	gpio->chip.free = NULL;
+> +	gpio->chip.get = aspeed_sgpio_get;
+> +	gpio->chip.set = aspeed_sgpio_set;
+> +	gpio->chip.set_config = NULL;
+> +	gpio->chip.label = dev_name(&pdev->dev);
+> +	gpio->chip.base = -1;
+> +
+> +	/* set all SGPIO pins as input (1). */
+> +	memset(gpio->dir_in, 0xff, sizeof(gpio->dir_in));
+> +
+> +	rc = devm_gpiochip_add_data(&pdev->dev, &gpio->chip, gpio);
+> +	if (rc < 0)
+> +		return rc;
+> +
+> +	return aspeed_sgpio_setup_irqs(gpio, pdev);
+> +}
+> +
+> +static struct platform_driver aspeed_sgpio_driver = {
+> +	.driver = {
+> +		.name = KBUILD_MODNAME,
+> +		.of_match_table = aspeed_sgpio_of_table,
+> +	},
+> +};
+> +
+> +module_platform_driver_probe(aspeed_sgpio_driver, aspeed_sgpio_probe);
+> +MODULE_DESCRIPTION("Aspeed Serial GPIO Driver");
+> +MODULE_LICENSE("GPL");
+> -- 
+> 2.7.4
 > 
-> Thanks
-> Helen
-> 
->>
->> Regards,
->>
->> 	Hans
->>
->>> It seems that if controls are supported, v4l2-compliance says that
->>> controls of type 'Image Processing Controls' are mandatory, is this
->>> correct?
->>> - It seems there are still some issues with interrupts, but I couldn't
->>> isolate them yet.
->>>
->>> Previous changelog:
->>> -------------------
->>>
->>> changes in V6:
->>>   - add mipi txrx phy support
->>>   - remove bool and enum from uapi header
->>>   - add buf_prepare op
->>>   - correct some spelling problems
->>>   - return all queued buffers when starting stream failed
->>>
->>> changes in V5: Sync with local changes,
->>>   - fix the SP height limit
->>>   - speed up the second stream capture
->>>   - the second stream can't force sync for rsz when start/stop streaming
->>>   - add frame id to param vb2 buf
->>>   - enable luminance maximum threshold
->>>
->>> changes in V4:
->>>   - fix some bugs during development
->>>   - move quantization settings to rkisp1 subdev
->>>   - correct some spelling problems
->>>   - describe ports in dt-binding documents
->>>
->>> changes in V3:
->>>   - add some comments
->>>   - fix wrong use of v4l2_async_subdev_notifier_register
->>>   - optimize two paths capture at a time
->>>   - remove compose
->>>   - re-struct headers
->>>   - add a tmp wiki page: http://opensource.rock-chips.com/wiki_Rockchip-isp1
->>>
->>> changes in V2:
->>>   mipi-phy:
->>>     - use async probing
->>>     - make it be a child device of the GRF
->>>   isp:
->>>     - add dummy buffer
->>>     - change the way to get bus configuration, which make it possible to
->>>             add parallel sensor support in the future(without mipi-phy driver).
->>>
->>> ------------------
->>>
->>> Changes in v8:
->>> - Add SPDX in the header
->>> - Remove emacs configs
->>> - Fix doc style
->>> - Remove boiler plate license text
->>>
->>> Changes in v7:
->>> - s/IPU3/RK_ISP1
->>> - s/correspond/corresponding
->>> - s/use/uses
->>> - s/docuemnt/document
->>> - Fix checkpatch errors (lines over 80 and SPDX)
->>> - Add TODO to improve docs
->>> - Migrate dphy specific code from
->>> drivers/media/platform/rockchip/isp1/mipi_dphy_sy.c
->>> to drivers/phy/rockchip/phy-rockchip-dphy.c
->>> - Drop support for rk3288
->>> - Drop support for dphy txrx
->>> - code styling and checkpatch fixes
->>> - fixed warning because of unknown entity type
->>> - fixed v4l2-compliance errors regarding rkisp1 formats, try formats
->>> and default values
->>> - fix typo riksp1/rkisp1
->>> - redesign: remove mipi/csi subdevice, sensors connect directly to the
->>> isp subdevice in the media topology now. As a consequence, remove the
->>> hack in mipidphy_g_mbus_config() where information from the sensor was
->>> being propagated through the topology.
->>> - From the old dphy:
->>>         * cache get_remote_sensor() in s_stream
->>>         * use V4L2_CID_PIXEL_RATE instead of V4L2_CID_LINK_FREQ
->>> - Replace stream state with a boolean
->>> - code styling and checkpatch fixes
->>> - fix stop_stream (return after calling stop, do not reenable the stream)
->>> - fix rkisp1_isp_sd_get_selection when V4L2_SUBDEV_FORMAT_TRY is set
->>> - fix get format in output (isp_sd->out_fmt.mbus_code was being ignored)
->>> - s/intput/input
->>> - remove #define sd_to_isp_sd(_sd), add a static inline as it will be
->>> reused by the capture
->>> - s/strlcpy/strscpy
->>> - sort out the locks in isp stats
->>> - code styling and checkpatch fixes
->>> - s/strlcpy/strscpy
->>> - s/strcpy/strscpy
->>> - fix config lsc error
->>> LSC data table size is 17x17, but when configuring data to ISP,
->>> should be aligned to 18x17. That means every last data of last
->>> line should be filled with 0, and not filled with the data of
->>> next line.
->>> - Update new ISP parameters immediately
->>> For those sub modules that have shadow registers in core isp, the
->>> new programing parameters would not be active if both
->>> CIF_ISP_CTRL_ISP_CFG_UPD_PERMANENT and CFG_UPD are not set. Now
->>> we configure CFG_UPD to force update the shadow registers when new
->>> ISP parameters are configured.
->>> - fix some ISP parameters config error
->>> Some ISP parameter config functions may override the old enable
->>> bit value, because the enable bits of these modules are in the
->>> same registers with parameters. So we should save the old enable
->>> bits firstly.
->>> - code styling and checkpatch fixes
->>> - s/strlcpy/strscpy
->>> - Fix v4l2-compliance issues:
->>>         * remove input ioctls
->>> media api can be used to define the topology, this input api is not
->>> required. Besides it, if an input is enumerated, v4l2-compliance is not
->>> happy with G_FMT returning the default colorspace instead of something
->>> more specific.
->>>         * return the pixelformat to the userspace
->>> G_/S_/TRY_ FORMAT should return a valid pixelformat to the user, even if
->>> the user gave an invalid one
->>>         * add missing default colorspace and ycbcr
->>>         * fix wrong pixformat in mp_fmts[] table
->>>         * add buf type check in s_/g_selection
->>>         * queue_setup - check sizes
->>>         * normalize bus_info name
->>>         * fix field any v4l2-compliance -s complain - set field none
->>>         when streaming
->>> - Fix compiling error: s/vidioc_enum_fmt_vid_cap_mplane/vidioc_enum_fmt_vid_cap
->>> - Replace stream state with a boolean
->>> The rkisp1_state enum consists only of 3 entries, where 1 is completely
->>> unused and the other two respectively mean not streaming or streaming.
->>> Replace it with a boolean called "streaming".
->>> - Simplify MI interrupt handling
->>> Rather than adding unnecessary indirection, just use stream index to
->>> handle MI interrupt enable/disable/clear, since the stream index matches
->>> the order of bits now, thanks to previous patch. While at it, remove
->>> some dead code.
->>> - code styling and checkpatch fixes
->>> - add link_validate: don't allow a link with bayer/non-bayer mismatch
->>> - VIDEO_ROCKCHIP_ISP1 selects VIDEOBUF2_VMALLOC
->>> - add PHY_ROCKCHIP_DPHY as a dependency for VIDEO_ROCKCHIP_ISP1
->>> - Fix compilation and runtime errors due to bitrotting
->>> The code has bit-rotten since March 2018, fix compilation errors.
->>> The new V4L2 async notifier API requires notifiers to be initialized by
->>> a call to v4l2_async_notifier_init() before being used, do so.
->>> - Add missing module device table
->>> - use clk_bulk framework
->>> - add missing notifiers cleanups
->>> - s/strlcpy/strscpy
->>> - normalize bus_info name
->>> - fix s_stream error path, stream_cnt wans't being decremented properly
->>> - use devm_platform_ioremap_resource() helper
->>> - s/deice/device
->>> - redesign: remove mipi/csi subdevice, sensors connect directly to the
->>> isp subdevice in the media topology now.
->>> - remove "saved_state" member from rkisp1_stream struct
->>> - Reverse the order of MIs
->>> - Simplify MI interrupt handling
->>> Rather than adding unnecessary indirection, just use stream index to
->>> handle MI interrupt enable/disable/clear, since the stream index matches
->>> the order of bits now, thanks to previous patch. While at it, remove
->>> some dead code.
->>> - code styling and checkpatch fixes
->>> - update document with new design and tested example
->>> - updated doc with new design and tested example
->>> - add phy properties
->>> - add ports
->>> - add phy-cells
->>>
->>> Helen Koike (1):
->>>   MAINTAINERS: add entry for Rockchip ISP1 driver
->>>
->>> Jacob Chen (9):
->>>   media: doc: add document for rkisp1 meta buffer format
->>>   media: rkisp1: add Rockchip MIPI Synopsys DPHY driver
->>>   media: rkisp1: add Rockchip ISP1 subdev driver
->>>   media: rkisp1: add ISP1 statistics driver
->>>   media: rkisp1: add ISP1 params driver
->>>   media: rkisp1: add capture device driver
->>>   media: rkisp1: add rockchip isp1 core driver
->>>   dt-bindings: Document the Rockchip ISP1 bindings
->>>   dt-bindings: Document the Rockchip MIPI RX D-PHY bindings
->>>
->>> Jeffy Chen (1):
->>>   media: rkisp1: Add user space ABI definitions
->>>
->>> Shunqian Zheng (3):
->>>   media: videodev2.h, v4l2-ioctl: add rkisp1 meta buffer format
->>>   arm64: dts: rockchip: add isp0 node for rk3399
->>>   arm64: dts: rockchip: add rx0 mipi-phy for rk3399
->>>
->>>  .../bindings/media/rockchip-isp1.txt          |   71 +
->>>  .../bindings/media/rockchip-mipi-dphy.txt     |   38 +
->>>  Documentation/media/uapi/v4l/meta-formats.rst |    2 +
->>>  .../uapi/v4l/pixfmt-meta-rkisp1-params.rst    |   23 +
->>>  .../uapi/v4l/pixfmt-meta-rkisp1-stat.rst      |   22 +
->>>  MAINTAINERS                                   |    8 +
->>>  arch/arm64/boot/dts/rockchip/rk3399.dtsi      |   36 +
->>>  drivers/media/platform/Kconfig                |   12 +
->>>  drivers/media/platform/Makefile               |    1 +
->>>  drivers/media/platform/rockchip/isp1/Makefile |    7 +
->>>  .../media/platform/rockchip/isp1/capture.c    | 1754 +++++++++++++++++
->>>  .../media/platform/rockchip/isp1/capture.h    |  164 ++
->>>  drivers/media/platform/rockchip/isp1/common.h |  101 +
->>>  drivers/media/platform/rockchip/isp1/dev.c    |  675 +++++++
->>>  drivers/media/platform/rockchip/isp1/dev.h    |   97 +
->>>  .../media/platform/rockchip/isp1/isp_params.c | 1604 +++++++++++++++
->>>  .../media/platform/rockchip/isp1/isp_params.h |   50 +
->>>  .../media/platform/rockchip/isp1/isp_stats.c  |  508 +++++
->>>  .../media/platform/rockchip/isp1/isp_stats.h  |   60 +
->>>  drivers/media/platform/rockchip/isp1/regs.c   |  223 +++
->>>  drivers/media/platform/rockchip/isp1/regs.h   | 1525 ++++++++++++++
->>>  drivers/media/platform/rockchip/isp1/rkisp1.c | 1286 ++++++++++++
->>>  drivers/media/platform/rockchip/isp1/rkisp1.h |  111 ++
->>>  drivers/media/v4l2-core/v4l2-ioctl.c          |    2 +
->>>  drivers/phy/rockchip/Kconfig                  |    8 +
->>>  drivers/phy/rockchip/Makefile                 |    1 +
->>>  drivers/phy/rockchip/phy-rockchip-dphy.c      |  408 ++++
->>>  include/uapi/linux/rkisp1-config.h            |  816 ++++++++
->>>  include/uapi/linux/videodev2.h                |    4 +
->>>  29 files changed, 9617 insertions(+)
->>>  create mode 100644 Documentation/devicetree/bindings/media/rockchip-isp1.txt
->>>  create mode 100644 Documentation/devicetree/bindings/media/rockchip-mipi-dphy.txt
->>>  create mode 100644 Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-params.rst
->>>  create mode 100644 Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-stat.rst
->>>  create mode 100644 drivers/media/platform/rockchip/isp1/Makefile
->>>  create mode 100644 drivers/media/platform/rockchip/isp1/capture.c
->>>  create mode 100644 drivers/media/platform/rockchip/isp1/capture.h
->>>  create mode 100644 drivers/media/platform/rockchip/isp1/common.h
->>>  create mode 100644 drivers/media/platform/rockchip/isp1/dev.c
->>>  create mode 100644 drivers/media/platform/rockchip/isp1/dev.h
->>>  create mode 100644 drivers/media/platform/rockchip/isp1/isp_params.c
->>>  create mode 100644 drivers/media/platform/rockchip/isp1/isp_params.h
->>>  create mode 100644 drivers/media/platform/rockchip/isp1/isp_stats.c
->>>  create mode 100644 drivers/media/platform/rockchip/isp1/isp_stats.h
->>>  create mode 100644 drivers/media/platform/rockchip/isp1/regs.c
->>>  create mode 100644 drivers/media/platform/rockchip/isp1/regs.h
->>>  create mode 100644 drivers/media/platform/rockchip/isp1/rkisp1.c
->>>  create mode 100644 drivers/media/platform/rockchip/isp1/rkisp1.h
->>>  create mode 100644 drivers/phy/rockchip/phy-rockchip-dphy.c
->>>  create mode 100644 include/uapi/linux/rkisp1-config.h
->>>
->>
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
