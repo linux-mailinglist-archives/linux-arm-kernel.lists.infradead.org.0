@@ -2,85 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 057EF7CED1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 22:39:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C7FF17CF2B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 22:55:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=KncmaTmVc1Vv5CdwsIq9bZrsCt+F79xZxulusOrJNp8=; b=DNx
-	XWQWVkKcI02mEic8en/WLhd/gwXhm8zo33MlUrph+icjzoEkjMzASUE7plYM0HgNtHfZiuYZMuvB3
-	Ethw2Q5q6Gyk8tZ6mt7UMx8QchXf7wtD/NzlRu3iKyubmSsOHqWriQmHgCuGIwOEyC4bnWboe1kqY
-	lM47UE1MZke3ryJpBEAkSzYJJRY24YhRC1SXJPMlmLUz3jFVkxYlTR3YMptg/Nbs0Y1mcS/6cwr1H
-	D5iU/E0U+JITOO4qRxM4g34A4XqAYKQOJ2NJsqgM4BTmcyVP2AN2MipTZifVoIFyeAEhrDxF4eOsE
-	9kNsBLxIo2jB0sf1nBgjd6R+nvBEKhA==;
+	References:List-Owner; bh=acXBX6z5+Q/uuSbaRTl9Y4C2/Cl91TFceD0G03f5DOs=; b=MVp
+	QbL3FFIz3ra/RglupDmbgjJjiIbxlq0Hp96whX3hn028Jrr9HhLePaHVjpjF8qbMYL/Ark+EKqKcK
+	eU+UhFltuNPTgEA6+fJ9Chbcp0bhleflh5lm3cqaHL9UzxFOEECqnRvXxrKnVEmzkYTWcbpylKurF
+	mH5U4ZHmDcU+RIHzXnly55i/GmZomJAhzHdMwvJhLw+9jI3MDDqDO9luBOM3mW+3I91wUtoVxKY13
+	NvyKzESzWGkIsZrrnOIqwe08kzDkY77hPlgKNtW6/TsZd3yo+LGPaxIDeLWAGH5fFOWRLcu85+OCT
+	FwbgPdEAvRNOgSE42Nc8TZBwpgrQYew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsvNF-0001iq-K3; Wed, 31 Jul 2019 20:39:01 +0000
-Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
+	id 1hsvdX-00081v-W4; Wed, 31 Jul 2019 20:55:51 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsvMv-0001Ud-Q0
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 20:38:43 +0000
-Received: by mail-vs1-xe43.google.com with SMTP id h28so47218302vsl.12
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 31 Jul 2019 13:38:41 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lca.pw; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=L4Tl5485GNCbBNzPALyO9jFAKxSVUDo2VTt4y0HMbAc=;
- b=ofZWWtS5ZWqQtpc9yer1nhq6viqjcYncIAGy4woJNgEe24OrmcTyAuaPYbJud1ZPxS
- d8NxLYzD0QA/XYfFmCJ5vzqkytrW9aCNOZpa0YxpDMyG6HQvHi6W7s3tWQB3YgHd2ayz
- TRa1ga5Ghsnm7qCRWcXY9mXYD3b/NnkpGhgoKIc8UTiTy6tHKNAcpUdepziwSrv7yZJa
- EqAIbxsyZBOJhRkxvvRJI+OwkWzOYuvpQ9ZwRxE3WSuLxrHTSDZXDLu3TOeSFqbaGWYw
- c2wkGNBWMOYw8WiiboqENEhtuNH4/4u1g9oDjnDnhBUKgJUbq3j48HWJLXHf5KebtJ3y
- QL0A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=L4Tl5485GNCbBNzPALyO9jFAKxSVUDo2VTt4y0HMbAc=;
- b=YxSSD18BPZvGQRy7gV6JOPXvqJP6TaY9Qh389Ff3riMnfzyvBAhNIC5UqMfFW085Xx
- MAnF/u9Pl1UJZDB7udkhkKf1kuFsRXWz+TTS45EWF9dmTlMipGhGLKKYB5iRgZ2alBZH
- ZkugqD0V+SuPt/eenD3hl8n0zkQANqXE+gsN9mQlrDKG7ivyg19TDHCEaklDkn6P/ozi
- EAOXgFIz++8TaWIdUzNR+NGRvwlLdL2PL6rJB+sefiitvEGYfTCWmZV71f4WS4IvaA+d
- aW1Y32l45EricrUYBnUzqnwiPs505pOaHeND36i5elj4UQFy9+7E8yPD6Iyk6qNgJGsM
- +9EA==
-X-Gm-Message-State: APjAAAX2mxbEd2tcZFf8VngIgXFopL9eGFdRSRjARfcv12ldc8P/EsJR
- +71ystUY7Hv/LBjioO9dtHdZyg==
-X-Google-Smtp-Source: APXvYqwtVnkE/nTu9d2ervMPefdplu+skmjsj9M8Fn84HuBzn/RmQ72eprdarhaEmYf1cGiaCI4ygA==
-X-Received: by 2002:a67:1281:: with SMTP id 123mr69227162vss.10.1564605520701; 
- Wed, 31 Jul 2019 13:38:40 -0700 (PDT)
-Received: from qcai.nay.com (nat-pool-bos-t.redhat.com. [66.187.233.206])
- by smtp.gmail.com with ESMTPSA id k7sm18697069vkk.48.2019.07.31.13.38.39
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 31 Jul 2019 13:38:40 -0700 (PDT)
-From: Qian Cai <cai@lca.pw>
-To: catalin.marinas@arm.com,
-	will@kernel.org
-Subject: [PATCH] arm64/mm: fix variable 'tag' set but not used
-Date: Wed, 31 Jul 2019 16:38:18 -0400
-Message-Id: <1564605498-17629-1-git-send-email-cai@lca.pw>
-X-Mailer: git-send-email 1.8.3.1
+ id 1hsvdR-00081F-KA
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 20:55:47 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id DE40B200AD1;
+ Wed, 31 Jul 2019 22:55:41 +0200 (CEST)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
+ [134.27.226.22])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id D1020200065;
+ Wed, 31 Jul 2019 22:55:41 +0200 (CEST)
+Received: from fsr-ub1864-103.ea.freescale.net
+ (fsr-ub1864-103.ea.freescale.net [10.171.82.17])
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 60B13205F3;
+ Wed, 31 Jul 2019 22:55:41 +0200 (CEST)
+From: Daniel Baluta <daniel.baluta@nxp.com>
+To: shawnguo@kernel.org,
+	jassisinghbrar@gmail.com
+Subject: [PATCH] mailbox: imx: Fix Tx doorbell shutdown path
+Date: Wed, 31 Jul 2019 23:55:39 +0300
+Message-Id: <20190731205539.13997-1-daniel.baluta@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_133841_839582_9098AC6A 
-X-CRM114-Status: GOOD (  10.56  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190731_135545_801677_FEA49277 
+X-CRM114-Status: UNSURE (   9.15  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,7 +66,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andreyknvl@google.com, Qian Cai <cai@lca.pw>, linux-kernel@vger.kernel.org,
+Cc: Daniel Baluta <daniel.baluta@nxp.com>, s.hauer@pengutronix.de,
+ linux-kernel@vger.kernel.org, o.rempel@pengutronix.de, linux-imx@nxp.com,
+ kernel@pengutronix.de, festevam@gmail.com,
  linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
@@ -100,41 +76,72 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When CONFIG_KASAN_SW_TAGS=n, set_tag() is compiled away. GCC throws a
-warning,
+Tx doorbell is handled by txdb_tasklet and doesn't
+have an associated IRQ.
 
-mm/kasan/common.c: In function '__kasan_kmalloc':
-mm/kasan/common.c:464:5: warning: variable 'tag' set but not used
-[-Wunused-but-set-variable]
-  u8 tag = 0xff;
-     ^~~
+Anyhow, imx_mu_shutdown ignores this and tries to
+free an IRQ that wasn't requested for Tx DB resulting
+in the following warning:
 
-Fix it by making __tag_set() a static inline function.
+[    1.967644] Trying to free already-free IRQ 26
+[    1.972108] WARNING: CPU: 2 PID: 157 at kernel/irq/manage.c:1708 __free_irq+0xc0/0x358
+[    1.980024] Modules linked in:
+[    1.983088] CPU: 2 PID: 157 Comm: kworker/2:1 Tainted: G
+[    1.993524] Hardware name: Freescale i.MX8QXP MEK (DT)
+[    1.998668] Workqueue: events deferred_probe_work_func
+[    2.003812] pstate: 60000085 (nZCv daIf -PAN -UAO)
+[    2.008607] pc : __free_irq+0xc0/0x358
+[    2.012364] lr : __free_irq+0xc0/0x358
+[    2.016111] sp : ffff00001179b7e0
+[    2.019422] x29: ffff00001179b7e0 x28: 0000000000000018
+[    2.024736] x27: ffff000011233000 x26: 0000000000000004
+[    2.030053] x25: 000000000000001a x24: ffff80083bec74d4
+[    2.035369] x23: 0000000000000000 x22: ffff80083bec7588
+[    2.040686] x21: ffff80083b1fe8d8 x20: ffff80083bec7400
+[    2.046003] x19: 0000000000000000 x18: ffffffffffffffff
+[    2.051320] x17: 0000000000000000 x16: 0000000000000000
+[    2.056637] x15: ffff0000111296c8 x14: ffff00009179b517
+[    2.061953] x13: ffff00001179b525 x12: ffff000011142000
+[    2.067270] x11: ffff000011129f20 x10: ffff0000105da970
+[    2.072587] x9 : 00000000ffffffd0 x8 : 0000000000000194
+[    2.077903] x7 : 612065657266206f x6 : ffff0000111e7b09
+[    2.083220] x5 : 0000000000000003 x4 : 0000000000000000
+[    2.088537] x3 : 0000000000000000 x2 : 00000000ffffffff
+[    2.093854] x1 : 28b70f0a2b60a500 x0 : 0000000000000000
+[    2.099173] Call trace:
+[    2.101618]  __free_irq+0xc0/0x358
+[    2.105021]  free_irq+0x38/0x98
+[    2.108170]  imx_mu_shutdown+0x90/0xb0
+[    2.111921]  mbox_free_channel.part.2+0x24/0xb8
+[    2.116453]  mbox_free_channel+0x18/0x28
 
-Signed-off-by: Qian Cai <cai@lca.pw>
+This bug is present from the beginning of times.
+
+Cc: Oleksij Rempel <o.rempel@pengutronix.de>
+Fixes:  2bb7005696e2246 ("mailbox: Add support for i.MX messaging unit")
+Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
 ---
- arch/arm64/include/asm/memory.h | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
+ drivers/mailbox/imx-mailbox.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/include/asm/memory.h b/arch/arm64/include/asm/memory.h
-index b7ba75809751..9645b1340afe 100644
---- a/arch/arm64/include/asm/memory.h
-+++ b/arch/arm64/include/asm/memory.h
-@@ -210,7 +210,11 @@ static inline unsigned long kaslr_offset(void)
- #define __tag_reset(addr)	untagged_addr(addr)
- #define __tag_get(addr)		(__u8)((u64)(addr) >> 56)
- #else
--#define __tag_set(addr, tag)	(addr)
-+static inline const void *__tag_set(const void *addr, u8 tag)
-+{
-+	return addr;
-+}
-+
- #define __tag_reset(addr)	(addr)
- #define __tag_get(addr)		0
- #endif
+diff --git a/drivers/mailbox/imx-mailbox.c b/drivers/mailbox/imx-mailbox.c
+index 9f74dee1a58c..957c10c4e674 100644
+--- a/drivers/mailbox/imx-mailbox.c
++++ b/drivers/mailbox/imx-mailbox.c
+@@ -214,8 +214,10 @@ static void imx_mu_shutdown(struct mbox_chan *chan)
+ 	struct imx_mu_priv *priv = to_imx_mu_priv(chan->mbox);
+ 	struct imx_mu_con_priv *cp = chan->con_priv;
+ 
+-	if (cp->type == IMX_MU_TYPE_TXDB)
++	if (cp->type == IMX_MU_TYPE_TXDB) {
+ 		tasklet_kill(&cp->txdb_tasklet);
++		return;
++	}
+ 
+ 	imx_mu_xcr_rmw(priv, 0, IMX_MU_xCR_TIEn(cp->idx) |
+ 		       IMX_MU_xCR_RIEn(cp->idx) | IMX_MU_xCR_GIEn(cp->idx));
 -- 
-1.8.3.1
+2.17.1
 
 
 _______________________________________________
