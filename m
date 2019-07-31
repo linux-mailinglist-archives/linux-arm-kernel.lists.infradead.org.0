@@ -2,74 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 471CA7BBBF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 10:34:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD7837BBDA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 10:38:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Pe24oHyXCXkNtQggxk/wImmOw/TvQ4fZHGnUXGTfaAs=; b=k5oGE/iKFItF6e
-	669aHakuNgdw66J7pHnax37bicAbeevZppqMYJUWsL9+8iSq4vm3aB10QNAa7NbzEmCOcakAbCL9S
-	nL3eKe2Oee4yVdiLj8r6PeB4Jr4wb4uT0Y3SeqTV/3NVeBapnMhpuhhLDmScblo6uFFygS12RLF2A
-	TodrLaf0jCY8Nf25nVZwydepYGmb5pQ5jqec7oXbWdeUDJpmIeLntkW55qiVW3Q3iy7GwJq1wZ0+P
-	8G3gq/BlX87bh9EkIzkyIlZG0ArPnSpGv7VbGsD8lj/mnt0or2EgIaAtuCThLannYN11rrvyhLJew
-	sJHD3YCljNm01E0c2oqg==;
+	List-Owner; bh=/GOIvT3u1Xg+JRbsAteycVamIXzG9HI6+qZBKZMHSy4=; b=cqzAGJZRGAwxlu
+	JwfKZy/q1wK7lz4t1RojXn5BAGJdBVQA5cV+67+WYu9PleBTdkLGbVeTH2jxaYwERk3Wb3629wQz3
+	y+7zwMmeJN8mSUlrF9yW+i+Kke/+JxahqKPwIJUB1VPGihozvyuCpi7Hak+1YgWvTFdFph08+KEk0
+	dNLzdpNPpNZPfcrUCNniZUE7uUlyEAs904xyi0ziO2dNBv5KEwcRgUt9SSdEUegmt6gBaAzmeuWeG
+	B/HQwlOvoMt2pyuW8cs8wJb/h0jjbxvOF1POhCuSkuXF0v8u8kC7JosXPrIjZDDsT4U4vyayf3q4i
+	leUeK41YJf2KK5yfdkDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsk3l-0002I0-9L; Wed, 31 Jul 2019 08:34:09 +0000
-Received: from mail-wr1-f66.google.com ([209.85.221.66])
+	id 1hsk7l-0003wX-Fb; Wed, 31 Jul 2019 08:38:17 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsk3V-0002Hf-AN
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 08:33:54 +0000
-Received: by mail-wr1-f66.google.com with SMTP id x1so18760351wrr.9
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 31 Jul 2019 01:33:51 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=IGsLzBygQeN4U1HbS+siGyivzSnwWDQU6/cEgl1u7bA=;
- b=QgLNmLqD696wP038SmSW115OCLVtX+Lmh6P6Azj1RuiARRVN19y9f5czHC22ir9q/g
- XZVqyA8d07T7mfR8d3ougcDsjig47J7tTZGM8TkjRiVF7fVp15AVgH82kdjXQ1YKouOj
- 2U2vj8Y3A0I6aHx5x42qMvD9PCVy+m4I2w86mPOsFkuSvSZLrA/p5E5jvblKfdesIKMD
- TwSk++0Mb5LQ3ejin+i3AU5VgzI5pwmpo6M4G9ap0ZX7XETpCjisqQvAhv6/5Se9pQ47
- aW1Ns06VP42BlfQ4lL5jUf02FFslOOLwNef9K85TPZ0qWIKJRiwWxPYxLhs/iKFe9Bwj
- V0Sw==
-X-Gm-Message-State: APjAAAVnaWveMRUGVieXe4+ydkGQSJWiCsJnl5oncyClhEKB/RjHdbZg
- BuckA7xT1RK+Y1wmJAZPgVo89ypxy8QIbdsRxI0=
-X-Google-Smtp-Source: APXvYqyHziTaChsaMWtanO1xCV68zcl6MTTzIToJk2Rucs4hRh1zedOwhC5f4r6CT7jA9LbHoCbi9u9lTdoflyuIYPs=
-X-Received: by 2002:adf:cd81:: with SMTP id q1mr131610751wrj.16.1564562030235; 
- Wed, 31 Jul 2019 01:33:50 -0700 (PDT)
+ id 1hsk7W-0003vm-58; Wed, 31 Jul 2019 08:38:04 +0000
+Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
+ [10.5.11.11])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id CD99FC007359;
+ Wed, 31 Jul 2019 08:38:00 +0000 (UTC)
+Received: from gondolin (dhcp-192-232.str.redhat.com [10.33.192.232])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 30EE16012E;
+ Wed, 31 Jul 2019 08:37:54 +0000 (UTC)
+Date: Wed, 31 Jul 2019 10:37:51 +0200
+From: Cornelia Huck <cohuck@redhat.com>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH v5 12/29] compat_ioctl: move drivers to compat_ptr_ioctl
+Message-ID: <20190731103751.3cc53132.cohuck@redhat.com>
+In-Reply-To: <20190730195227.742215-1-arnd@arndb.de>
+References: <20190730192552.4014288-1-arnd@arndb.de>
+ <20190730195227.742215-1-arnd@arndb.de>
+Organization: Red Hat GmbH
 MIME-Version: 1.0
-References: <1563461033-19708-1-git-send-email-ykaneko0929@gmail.com>
-In-Reply-To: <1563461033-19708-1-git-send-email-ykaneko0929@gmail.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Wed, 31 Jul 2019 10:33:38 +0200
-Message-ID: <CAMuHMdV9Wwgc5Q_Nzk3qKUFduQ0WRTgpQM0Jqv-qmE0Va5oZog@mail.gmail.com>
-Subject: Re: [PATCH] arm64: dts: renesas: r8a7795-es1: sort nodes node
-To: Yoshihiro Kaneko <ykaneko0929@gmail.com>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.32]); Wed, 31 Jul 2019 08:38:01 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_013353_358764_F01B3E72 
-X-CRM114-Status: GOOD (  10.22  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190731_013802_226112_6066F728 
+X-CRM114-Status: GOOD (  12.10  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.221.66 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (geert.uytterhoeven[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.221.66 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,40 +67,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Simon Horman <horms@verge.net.au>, Magnus Damm <magnus.damm@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devel@driverdev.osuosl.org, kvm@vger.kernel.org,
+ "Michael S . Tsirkin" <mst@redhat.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-kernel@vger.kernel.org,
+ Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>,
+ virtualization@lists.linux-foundation.org, linux-integrity@vger.kernel.org,
+ netdev@vger.kernel.org, linux-mtd@lists.infradead.org,
+ Alexander Viro <viro@zeniv.linux.org.uk>,
+ Stefan Hajnoczi <stefanha@redhat.com>, linux-input@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, Jiri Kosina <jkosina@suse.cz>,
+ ceph-devel@vger.kernel.org, linux1394-devel@lists.sourceforge.net,
+ Jason Gunthorpe <jgg@mellanox.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jul 18, 2019 at 4:44 PM Yoshihiro Kaneko <ykaneko0929@gmail.com> wrote:
-> Sort nodes.
->
-> If node address is present
->    * Sort by node address, grouping all nodes with the same compat string
->      and sorting the group alphabetically.
-> Else
->    * Sort alphabetically
->
-> This should not have any run-time effect.
->
-> Signed-off-by: Yoshihiro Kaneko <ykaneko0929@gmail.com>
+On Tue, 30 Jul 2019 21:50:28 +0200
+Arnd Bergmann <arnd@arndb.de> wrote:
 
-Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
-i.e. will queue in renesas-devel for v5.4.
+> Each of these drivers has a copy of the same trivial helper function to
+> convert the pointer argument and then call the native ioctl handler.
+> 
+> We now have a generic implementation of that, so use it.
+> 
+> Acked-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+> Acked-by: Michael S. Tsirkin <mst@redhat.com>
+> Reviewed-by: Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>
+> Reviewed-by: Jason Gunthorpe <jgg@mellanox.com>
+> Reviewed-by: Jiri Kosina <jkosina@suse.cz>
+> Reviewed-by: Stefan Hajnoczi <stefanha@redhat.com>
+> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+> ---
 
-Gr{oetje,eeting}s,
+>  drivers/vfio/vfio.c               | 39 +++----------------------------
 
-                        Geert
+vfio changes:
 
---
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+Reviewed-by: Cornelia Huck <cohuck@redhat.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
