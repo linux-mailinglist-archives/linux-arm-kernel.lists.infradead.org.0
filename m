@@ -2,97 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D02D7C714
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 17:41:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14B0C7C720
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 17:46:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5qpRc4nlmMCkl7zU+six0JEm+/520Y+jaFK9UfTMOrg=; b=uZEeusR4XvMt08
-	KoQm9arueJ1MU2WQ6bwkXa7/lcILPgX2/omVNyhuiD+z5F/V35ecgfv5DZrBflb9xKvcnNOdveJi8
-	usCmelXBfaIpEw9gVc6tXCU1br/lB0LY7q1gDyr99MlF5fNjNtFSHgcx0Ljpzt7VvNxwcGhGWolgS
-	168PeGqq8UU/OMygMPX9AbvHzFpgq30+y14ijKBi2f7mTkWLXp27UXwsa8LPVpjAUVmbbOeMWwqAU
-	mBocdr/Xf7bjKkvZb0dpjxglX2ArEIue3t6It4rOWwEE+8p8ggZh9XHdZpwVHTY6991QwRmRCBLfN
-	T3MMrdVlgj19JtjX8Paw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=jyNOIRDEC3VqSN+hD6F1tMdREnhJ9GoOIMdrtbCghPQ=; b=mg+cQ1+Mag/v4y
+	NsevC+fiWS9EzRJDOzYcrzhIceV5XHXupWxoQUpNoLylih/aFXgF34CKifDJDg/RobHtnYJ9K31Sp
+	qv6f0npzG8gH/1yhZqPfYXjCouK7uOvvvGy8zR/QSIlAWfjY6XXGGM7RzX5yJgCPHq7V6q01KEVN+
+	5Ckah0/MWTbPJylxgWtu6VWrwojWp2cIv92GCYt/yRk0g8AweS9JW+0/4sJvP20lwroFaMI58S5Di
+	AaN2cfkuopSwmR7tfCSOre8ydfJmynIlses5eNp8Zl0b6tbb2LHLH7VRlVBODmzOSGGBg3GXOWIvo
+	8m/Cif0bCNWmZtLERqXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsqj6-0002k8-IJ; Wed, 31 Jul 2019 15:41:16 +0000
-Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsqh5-0007s0-Ac
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 15:39:14 +0000
-Received: by mail-qk1-x742.google.com with SMTP id m14so23880862qka.10
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 31 Jul 2019 08:39:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
- h=from:to:subject:date:message-id:in-reply-to:references:mime-version
- :content-transfer-encoding;
- bh=XYehKYYCRESHDl9g5m8hoNiorXJBXUwWGYZzf/xkBeE=;
- b=iBD+3oi2nGxdZcxkvKa50mV2lsj6z6x2B6Hz5KjNL2N9LvtXwsP75YXDODriDCfRGa
- Zav5gYJ8SRdJ2N/7hFq/MVQnkAwOwsE1OgIXhjXNOc8X7icudW4owNOg3v2i44o58U42
- 8hYwd+m39OKSz88CxJ//EqNRR1+avPGlMP1maR8dr+y/IXFIGPNJpn3MOTIAUEhRzBfK
- 9hJ8A630GhQ0UQLsndGaACUuca+uAGD0Bml8mH5vWBdb7u+hu0Zlgho+0+i6qa6k0fAi
- nNiRQ7fcADFmkpBUCqhwHi3wcVxaDvXuNjYxDWa9tjdr7Z1HIVJVjZ4hUkXZwro+Aooa
- 5qZw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=XYehKYYCRESHDl9g5m8hoNiorXJBXUwWGYZzf/xkBeE=;
- b=YSKyJCRk/sn692yKDV7jc1gn9h3LnqEDIKThO78VkZy5V07Jxiu3MrWF3exEZAAo/F
- g9UQY8UR0tcX4rrxUc3zhaTGB2GKxLo2LicItbYZg4Q+lapUbYqIquv6YEisssZOjFDE
- PeRTkwr/jJfm4RAGo2zqUUiDTG1p2uwTXDfQT8WfxOz0TfYjiuU3+UXf91930IQgb3CE
- R5xXr+MGe0kyh2OJ5eD/gqxqeaZaO3OV2zlojsCxW2P5aaWH3sXEDlsWUxEO7xN9kccs
- s+qk0L1h8Cukn8HjcI+Pbg+/aUEPfV7Z0okfsyvkEMm1DfwR20ZvGCD6zjRHUQM3tY6s
- w2hQ==
-X-Gm-Message-State: APjAAAVyXoy0MAR50OiJwOEvs05qxjkLZSEjwhHXSY1Jx3yKkImH/UIk
- LZjvuRipxtMklOb80TV3k48=
-X-Google-Smtp-Source: APXvYqw42qjGXDZoiPLqtufyjBZBkOjr1xdQbWaU20wZzak05OCxDaGez2/WsRBm3vcjtAjblizKLA==
-X-Received: by 2002:a37:8ac3:: with SMTP id
- m186mr62365455qkd.476.1564587550167; 
- Wed, 31 Jul 2019 08:39:10 -0700 (PDT)
-Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
- [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id f25sm35116803qta.81.2019.07.31.08.39.08
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 31 Jul 2019 08:39:09 -0700 (PDT)
-From: Pavel Tatashin <pasha.tatashin@soleen.com>
-To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
- ebiederm@xmission.com, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org, corbet@lwn.net, catalin.marinas@arm.com,
- will@kernel.org, linux-doc@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, marc.zyngier@arm.com,
- james.morse@arm.com, vladimir.murzin@arm.com, matthias.bgg@gmail.com,
- bhsharma@redhat.com
-Subject: [RFC v2 8/8] arm64, kexec: enable MMU during kexec relocation
-Date: Wed, 31 Jul 2019 11:38:57 -0400
-Message-Id: <20190731153857.4045-9-pasha.tatashin@soleen.com>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20190731153857.4045-1-pasha.tatashin@soleen.com>
-References: <20190731153857.4045-1-pasha.tatashin@soleen.com>
+	id 1hsqo0-0005CJ-KQ; Wed, 31 Jul 2019 15:46:20 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hsqns-0005Bi-41
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 15:46:13 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 96268344;
+ Wed, 31 Jul 2019 08:46:11 -0700 (PDT)
+Received: from e112269-lin.arm.com (e112269-lin.cambridge.arm.com
+ [10.1.196.133])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0A2D43F694;
+ Wed, 31 Jul 2019 08:46:08 -0700 (PDT)
+From: Steven Price <steven.price@arm.com>
+To: linux-mm@kvack.org
+Subject: [PATCH v10 00/22] Generic page walk and ptdump
+Date: Wed, 31 Jul 2019 16:45:41 +0100
+Message-Id: <20190731154603.41797-1-steven.price@arm.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_083911_454849_E4534082 
-X-CRM114-Status: GOOD (  14.66  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190731_084612_250595_ECA1BDFD 
+X-CRM114-Status: GOOD (  19.69  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,260 +58,151 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Mark Rutland <Mark.Rutland@arm.com>, x86@kernel.org,
+ Arnd Bergmann <arnd@arndb.de>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>, linux-kernel@vger.kernel.org,
+ Steven Price <steven.price@arm.com>,
+ =?UTF-8?q?J=C3=A9r=C3=B4me=20Glisse?= <jglisse@redhat.com>,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ Andy Lutomirski <luto@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ James Morse <james.morse@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Will Deacon <will@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
+ linux-arm-kernel@lists.infradead.org, "Liang, Kan" <kan.liang@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now, that we have transitional page tables configured, temporarily enable
-MMU to allow faster relocation of segments to final destination.
+This is a slight reworking and extension of my previous patch set
+(Convert x86 & arm64 to use generic page walk), but I've continued the
+version numbering as most of the changes are the same. In particular
+this series ends with a generic PTDUMP implemention for arm64 and x86.
 
-The performance data: for a moderate size kernel + initramfs: 25M the
-relocation was taking 0.382s, with enabled MMU it now takes
-0.019s only or x20 improvement.
+Many architectures current have a debugfs file for dumping the kernel
+page tables. Currently each architecture has to implement custom
+functions for this because the details of walking the page tables used
+by the kernel are different between architectures.
 
-The time is proportional to the size of relocation, therefore if initramfs
-is larger, 100M it could take over a second.
+This series extends the capabilities of walk_page_range() so that it can
+deal with the page tables of the kernel (which have no VMAs and can
+contain larger huge pages than exist for user space). A generic PTDUMP
+implementation is the implemented making use of the new functionality of
+walk_page_range() and finally arm64 and x86 are switch to using it,
+removing the custom table walkers.
 
-Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
----
- arch/arm64/kernel/relocate_kernel.S | 192 ++++++++++++++++++++++------
- 1 file changed, 154 insertions(+), 38 deletions(-)
+To enable a generic page table walker to walk the unusual mappings of
+the kernel we need to implement a set of functions which let us know
+when the walker has reached the leaf entry. After a suggestion from Will
+Deacon I've chosen the name p?d_leaf() as this (hopefully) describes
+the purpose (and is a new name so has no historic baggage). Some
+architectures have p?d_large macros but this is easily confused with
+"large pages".
 
-diff --git a/arch/arm64/kernel/relocate_kernel.S b/arch/arm64/kernel/relocate_kernel.S
-index d352faf7cbe6..88fc69adb90d 100644
---- a/arch/arm64/kernel/relocate_kernel.S
-+++ b/arch/arm64/kernel/relocate_kernel.S
-@@ -4,6 +4,8 @@
-  *
-  * Copyright (C) Linaro.
-  * Copyright (C) Huawei Futurewei Technologies.
-+ * Copyright (c) 2019, Microsoft Corporation.
-+ * Pavel Tatashin <patatash@linux.microsoft.com>
-  */
- 
- #include <linux/kexec.h>
-@@ -13,6 +15,130 @@
- #include <asm/kexec.h>
- #include <asm/page.h>
- #include <asm/sysreg.h>
-+#include <asm/kvm_arm.h>
-+
-+/*
-+ * The following code is adoped from "Bare-metal Boot Code for ARMv8-A
-+ * Processors Version 1.0, 5.3.1 Cleaning and invalidating the caches".
-+ * http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dai0527a
-+ */
-+.macro dcache_invalidate tmp0, tmp1, tmp2, tmp3, tmp4, tmp5, tmp6, tmp7, tmp8
-+	mov	\tmp0, #0x0			/* tmp0 = Cache level */
-+	msr	CSSELR_EL1, \tmp0		/* 0x0 for L1, 0x2 for L2 */
-+	mrs	\tmp4, CCSIDR_EL1		/* Read Cache Size ID */
-+	and	\tmp1, \tmp4, #0x7
-+	add	\tmp1, \tmp1, #0x4		/* tmp1 Cache Line Size */
-+	ldr	\tmp3, =0x7fff
-+	and	\tmp2, \tmp3, \tmp4, lsr #13	/* tmp2 Cache Set num - 1 */
-+	ldr	\tmp3, =0x3ff
-+	and	\tmp3, \tmp3, \tmp4, lsr #3	/* tmp3 Cache Assoc. num - 1 */
-+	clz	\tmp4, \tmp3			/* tmp4 way pos. in the CISW */
-+	mov	\tmp5, #0			/* tmp5 way counter way_loop */
-+1: /* way_loop */
-+	mov	\tmp6, #0			/* tmp6 set counter set_loop */
-+2: /* set_loop */
-+	lsl	\tmp7, \tmp5, \tmp4
-+	orr	\tmp7, \tmp0, \tmp7		/* Set way */
-+	lsl	\tmp8, \tmp6, \tmp1
-+	orr	\tmp7, \tmp7, \tmp8		/* Set set */
-+	dc	cisw, \tmp7			/* Clean & Inval. cache line */
-+	add	\tmp6, \tmp6, #1		/* Increment set counter */
-+	cmp	\tmp6, \tmp2			/* Last set reached yet? */
-+	ble	2b				/* If not, iterate set_loop, */
-+	add	\tmp5, \tmp5, #1		/* else, next way. */
-+	cmp	\tmp5, \tmp3			/* Last way reached yet? */
-+	ble	1b				/* If not, iterate way_loop. */
-+.endm
-+
-+/*
-+ * Invalidae all TLB: if we are running at EL2, invalidate all TLB at EL1 & EL2,
-+ * if we are running at EL1 invalidate all current VMID TLB at EL1.
-+ */
-+.macro tlb_invalidate tmp
-+	mrs	\tmp, CurrentEL
-+	cmp	\tmp, #CurrentEL_EL2
-+	isb
-+	b.ne	1f
-+	dsb	sy
-+	tlbi	alle2
-+	tlbi	alle1
-+	dsb	ish
-+	isb
-+	b	2f
-+1:
-+	dsb	sy
-+	tlbi	vmalle1
-+	dsb	ish
-+	isb
-+2:
-+.endm
-+
-+.macro turn_off_mmu_el	sctlr, tmp1, tmp2
-+	mrs	\tmp1, \sctlr
-+	ldr	\tmp2, =SCTLR_ELx_FLAGS
-+	bic	\tmp1, \tmp1, \tmp2
-+	pre_disable_mmu_workaround
-+	msr	\sctlr, \tmp1
-+	isb
-+.endm
-+
-+.macro turn_off_mmu tmp1, tmp2
-+	turn_off_mmu_el	sctlr_el1, \tmp1, \tmp2	/* Turn off MMU at EL1 */
-+	mrs	\tmp1, CurrentEL
-+	cmp	\tmp1, #CurrentEL_EL2
-+	b.ne	1f
-+	turn_off_mmu_el	sctlr_el2, \tmp1, \tmp2	/* Turn off MMU at EL2 */
-+1:
-+.endm
-+
-+/* Configure TCR_EL2 and MAIR_EL2 */
-+.macro tcr_mair_mmu_el2 tmp1, tmp2, tmp3
-+	mrs	\tmp1, tcr_el1
-+	ldr	\tmp2, =TCR_EL2_MASK
-+	and	\tmp1, \tmp1, \tmp2
-+	mov	\tmp2, #TCR_EL2_RES1
-+	orr	\tmp1, \tmp1, \tmp2
-+	ldr	\tmp2, =TCR_T0SZ(VA_BITS)
-+	orr	\tmp1, \tmp1, \tmp2
-+	tcr_compute_pa_size \tmp1, #TCR_EL2_PS_SHIFT, \tmp2, \tmp3
-+	msr	tcr_el2, \tmp1
-+	mrs	\tmp1, mair_el1
-+	msr	mair_el2, \tmp1
-+.endm
-+
-+.macro turn_on_mmu tmp1, tmp2, tmp3
-+	mrs	\tmp1, CurrentEL
-+	cmp	\tmp1, #CurrentEL_EL2
-+	b.ne	1f
-+	tcr_mair_mmu_el2 \tmp1, \tmp2, \tmp3
-+	ldr	\tmp1, =(SCTLR_EL2_RES1 | SCTLR_ELx_FLAGS | ENDIAN_SET_EL2)
-+	msr	sctlr_el2, \tmp1
-+	b	2f
-+1:	mrs	\tmp1, sctlr_el1
-+	ldr	\tmp2, =SCTLR_ELx_FLAGS
-+	orr	\tmp1, \tmp1, \tmp2
-+	msr	sctlr_el1, \tmp1
-+2:	ic	iallu
-+	dsb	nsh
-+	isb
-+.endm
-+
-+.macro set_ttbr_el ttbr_reg, trans_table
-+	phys_to_ttbr \trans_table, \trans_table
-+	msr	\ttbr_reg, \trans_table
-+	isb
-+.endm
-+
-+.macro set_ttbr trans_table, tmp
-+	mrs	\tmp, CurrentEL
-+	cmp	\tmp, #CurrentEL_EL2
-+	b.ne	1f
-+	set_ttbr_el	ttbr0_el2 \trans_table
-+	b	2f
-+1:
-+	set_ttbr_el	ttbr0_el1 \trans_table
-+2:
-+.endm
- 
- /*
-  * arm64_relocate_new_kernel - Put a 2nd stage image in place and boot it.
-@@ -24,59 +150,49 @@
-  * symbols arm64_relocate_new_kernel and arm64_relocate_new_kernel_end.  The
-  * machine_kexec() routine will copy arm64_relocate_new_kernel to the kexec
-  * safe memory that has been set up to be preserved during the copy operation.
-+ *
-+ * This function temporarily enables MMU if kernel relocation is needed. This is
-+ * done for performance reasons: with MMU-enabled arm64 is much quicker at
-+ * copying pages due to also having enabled caching.
-  */
- ENTRY(arm64_relocate_new_kernel)
--	/* Clear the sctlr_el2 flags. */
--	mrs	x2, CurrentEL
--	cmp	x2, #CurrentEL_EL2
--	b.ne	1f
--	mrs	x2, sctlr_el2
--	ldr	x1, =SCTLR_ELx_FLAGS
--	bic	x2, x2, x1
--	pre_disable_mmu_workaround
--	msr	sctlr_el2, x2
--	isb
--1:	/* Check if the new image needs relocation. */
--	ldr	x16, [x0, #KRELOC_HEAD]		/* x16 = kimage_head */
--	tbnz	x16, IND_DONE_BIT, .Ldone
--	raw_dcache_line_size x15, x1		/* x15 = dcache line size */
-+	/* MMU on EL2 might still be on, turn it off for now */
-+	turn_off_mmu	x1, x2
-+	dcache_invalidate x1, x2, x3, x4, x5, x6, x7, x8, x9
-+	tlb_invalidate x1
-+
-+	/* Check if the new image needs relocation. */
-+	ldr	x12, [x0, #KRELOC_HEAD]		/* x12 = kimage_head */
-+	tbnz	x12, IND_DONE_BIT, .Ldone
-+	ldr	x1, [x0, #KRELOC_TRANS_TABLE]
-+	set_ttbr x1, x2
-+	turn_on_mmu x1, x2, x3
- .Lloop:
--	and	x12, x16, PAGE_MASK		/* x12 = addr */
-+	and	x2, x12, PAGE_MASK		/* x2 = addr */
- 	/* Test the entry flags. */
- .Ltest_source:
--	tbz	x16, IND_SOURCE_BIT, .Ltest_indirection
--
--	/* Invalidate dest page to PoC. */
--	mov     x2, x13
--	add     x20, x2, #PAGE_SIZE
--	sub     x1, x15, #1
--	bic     x2, x2, x1
--2:	dc      ivac, x2
--	add     x2, x2, x15
--	cmp     x2, x20
--	b.lo    2b
--	dsb     sy
--
--	copy_page x13, x12, x1, x2, x3, x4, x5, x6, x7, x8
-+	tbz	x12, IND_SOURCE_BIT, .Ltest_indirection
-+	copy_page x1, x2, x3, x4, x5, x6, x7, x8, x9, x10
- 	b	.Lnext
- .Ltest_indirection:
--	tbz	x16, IND_INDIRECTION_BIT, .Ltest_destination
--	mov	x14, x12			/* ptr = addr */
-+	tbz	x12, IND_INDIRECTION_BIT, .Ltest_destination
-+	mov	x11, x2				/* x11 = ptr */
- 	b	.Lnext
- .Ltest_destination:
--	tbz	x16, IND_DESTINATION_BIT, .Lnext
--	mov	x13, x12			/* dest = addr */
-+	tbz	x12, IND_DESTINATION_BIT, .Lnext
-+	mov	x1, x2				/* x1 = dest */
- .Lnext:
--	ldr	x16, [x14], #8			/* entry = *ptr++ */
--	tbz	x16, IND_DONE_BIT, .Lloop	/* while (!(entry & DONE)) */
--.Ldone:
-+	ldr	x12, [x11], #8			/* x12 = entry = *ptr++ */
-+	tbz	x12, IND_DONE_BIT, .Lloop	/* while (!(entry & DONE)) */
- 	/* wait for writes from copy_page to finish */
- 	dsb	nsh
- 	ic	iallu
- 	dsb	nsh
- 	isb
--
--	/* Start new image. */
-+	turn_off_mmu	x1, x2
-+	dcache_invalidate x1, x2, x3, x4, x5, x6, x7, x8, x9
-+	tlb_invalidate x1
-+.Ldone:	/* Start new image. */
- 	ldr	x4, [x0, #KRELOC_ENTRY_ADDR]	/* x4 = kimage_start */
- 	ldr	x3, [x0, #KRELOC_KERN_ARG3]
- 	ldr	x2, [x0, #KRELOC_KERN_ARG2]
+Mostly this is a clean up and there should be very little functional
+change. The exceptions are:
+
+* x86 PTDUMP debugfs output no longer display pages which aren't
+  present (patch 14).
+
+* arm64 has the ability to efficiently process KASAN pages (which
+  previously only x86 implemented). This means that the combination of
+  KASAN and DEBUG_WX is now useable.
+
+Also available as a git tree:
+git://linux-arm.org/linux-sp.git walk_page_range/v10
+
+Changes since v9:
+https://lore.kernel.org/lkml/20190722154210.42799-1-steven.price@arm.com/
+ * Moved generic macros to first page in the series and explained the
+   macro naming in the commit message.
+ * mips: Moved macros to pgtable.h as they are now valid for both 32 and 64
+   bit
+ * x86: Dropped patch which changed the debugfs output for x86, instead
+   we have...
+ * new patch adding 'depth' parameter to pte_hole. This is used to
+   provide the necessary information to output lines for 'holes' in the
+   debugfs files
+ * new patch changing arm64 debugfs output to include holes to match x86
+ * generic ptdump KASAN handling has been simplified and now works with
+   CONFIG_DEBUG_VIRTUAL.
+
+Changes since v8:
+https://lore.kernel.org/lkml/20190403141627.11664-1-steven.price@arm.com/
+ * Rename from p?d_large() to p?d_leaf()
+ * Dropped patches migrating arm64/x86 custom walkers to
+   walk_page_range() in favour of adding a generic PTDUMP implementation
+   and migrating arm64/x86 to that instead.
+ * Rebased to v5.3-rc1
+
+Steven Price (22):
+  mm: Add generic p?d_leaf() macros
+  arc: mm: Add p?d_leaf() definitions
+  arm: mm: Add p?d_leaf() definitions
+  arm64: mm: Add p?d_leaf() definitions
+  mips: mm: Add p?d_leaf() definitions
+  powerpc: mm: Add p?d_leaf() definitions
+  riscv: mm: Add p?d_leaf() definitions
+  s390: mm: Add p?d_leaf() definitions
+  sparc: mm: Add p?d_leaf() definitions
+  x86: mm: Add p?d_leaf() definitions
+  mm: pagewalk: Add p4d_entry() and pgd_entry()
+  mm: pagewalk: Allow walking without vma
+  mm: pagewalk: Add test_p?d callbacks
+  mm: pagewalk: Add 'depth' parameter to pte_hole
+  x86: mm: Point to struct seq_file from struct pg_state
+  x86: mm+efi: Convert ptdump_walk_pgd_level() to take a mm_struct
+  x86: mm: Convert ptdump_walk_pgd_level_debugfs() to take an mm_struct
+  x86: mm: Convert ptdump_walk_pgd_level_core() to take an mm_struct
+  mm: Add generic ptdump
+  x86: mm: Convert dump_pagetables to use walk_page_range
+  arm64: mm: Convert mm/dump.c to use walk_page_range()
+  arm64: mm: Display non-present entries in ptdump
+
+ arch/arc/include/asm/pgtable.h               |   1 +
+ arch/arm/include/asm/pgtable-2level.h        |   1 +
+ arch/arm/include/asm/pgtable-3level.h        |   1 +
+ arch/arm64/Kconfig                           |   1 +
+ arch/arm64/Kconfig.debug                     |  19 +-
+ arch/arm64/include/asm/pgtable.h             |   2 +
+ arch/arm64/include/asm/ptdump.h              |   8 +-
+ arch/arm64/mm/Makefile                       |   4 +-
+ arch/arm64/mm/dump.c                         | 144 +++-----
+ arch/arm64/mm/mmu.c                          |   4 +-
+ arch/arm64/mm/ptdump_debugfs.c               |   2 +-
+ arch/mips/include/asm/pgtable.h              |   5 +
+ arch/powerpc/include/asm/book3s/64/pgtable.h |  30 +-
+ arch/riscv/include/asm/pgtable-64.h          |   7 +
+ arch/riscv/include/asm/pgtable.h             |   7 +
+ arch/s390/include/asm/pgtable.h              |   2 +
+ arch/sparc/include/asm/pgtable_64.h          |   2 +
+ arch/x86/Kconfig                             |   1 +
+ arch/x86/Kconfig.debug                       |  20 +-
+ arch/x86/include/asm/pgtable.h               |  10 +-
+ arch/x86/mm/Makefile                         |   4 +-
+ arch/x86/mm/debug_pagetables.c               |   8 +-
+ arch/x86/mm/dump_pagetables.c                | 332 +++++--------------
+ arch/x86/platform/efi/efi_32.c               |   2 +-
+ arch/x86/platform/efi/efi_64.c               |   4 +-
+ drivers/firmware/efi/arm-runtime.c           |   2 +-
+ fs/proc/task_mmu.c                           |   4 +-
+ include/asm-generic/pgtable.h                |  20 ++
+ include/linux/mm.h                           |  35 +-
+ include/linux/ptdump.h                       |  19 ++
+ mm/Kconfig.debug                             |  21 ++
+ mm/Makefile                                  |   1 +
+ mm/hmm.c                                     |   2 +-
+ mm/migrate.c                                 |   1 +
+ mm/mincore.c                                 |   1 +
+ mm/pagewalk.c                                | 107 ++++--
+ mm/ptdump.c                                  | 151 +++++++++
+ 37 files changed, 544 insertions(+), 441 deletions(-)
+ create mode 100644 include/linux/ptdump.h
+ create mode 100644 mm/ptdump.c
+
 -- 
-2.22.0
+2.20.1
 
 
 _______________________________________________
