@@ -2,96 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E968D7C470
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 16:11:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A35797C478
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 16:12:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yeA5ua27yP60N4mgqeYeNTAtv4/er3aI/wD6fFs2flc=; b=s3AIItQXXy4DIC
-	B9RTQFz6x2wDqjJ7DBwDu6AsM3IgST7Qmg5xwvrEYzKaxGVKY2wE9xJZ2KRZwte0XGVOfeimPaiMl
-	0RrwRddPHoXNLNnYuEBcjAHfAW4hPv/0hPwtdmCqlpnpkroTI4x9UH0Kw4AC4G1Yk2GzgYUUoLVY6
-	ndE3pJWquLLs8WNOTJzp9xaAWxV8q4IjvCZUSz/nv2DjLAYmDCV7EJIXSgULncq6Hr0lid0EFzJqk
-	4yZqUtmNt8YsgyplvkGQZaK9j/gtfk8avfy/qbOC/buVzB61KU3iG4u0YZWgKMo70wmKlzA1tfzjF
-	JYQQW+s7tqamQVOdmHrA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=HVV3RPV6CnI57bVQmYVWaq26XjTQUzTeAAbWlcePO+U=; b=V8F
+	O1ieNasYf4DwSlRdAWPqGnblNW3gB+Zxi7ddAXf8Rwc6vMGehDcSNthTWX4UiyBYrgkTxpY8hNtGZ
+	nkW9B4uMCDItYPbEUi2hzKa3Re54H54Dv6TLCxDOymAVQPU34TS+aUaT5DxXyMDS0DUW2O2xxL/jr
+	7Zyv58SP4MAk3bV0aumhuF1vjlY0nMOAIfk8JmVjhunZYhA6qnXwNQcQfV0ZzMK5OzeslBVrianKP
+	TcIKNfeU9ZA6vT/IBvyJNgGB03youyNdOE5t5jXFrdtNkiXd3WXPIM5HEcmixYonGWWSGbM/GqVb1
+	yfNEhWjF8sLtsWtt6oOqp09+6vkJv3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hspJw-0003SD-UH; Wed, 31 Jul 2019 14:11:12 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1hspKy-0003o1-93; Wed, 31 Jul 2019 14:12:16 +0000
+Received: from mail-out.m-online.net ([212.18.0.9])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hspJq-0003RF-9C
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 14:11:07 +0000
-Received: by mail-wm1-x344.google.com with SMTP id w9so1397369wmd.1
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 31 Jul 2019 07:11:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=DaSfQVSBloP6ituQwd3gN2sNQYfvnC2s71RqutisBq0=;
- b=Pn45YGzOCoqVPj5ruMllJckodlhVBmgzWrH3x/e0USvGBmmg4/Ju4GVTO3/dRSpBTY
- 576PmDDVUKYSxfaA1m94qhQ8UbmUNa4NfL1mXsG4Cq5I/yz4KkQozkzA+tTJ5oyrS9a5
- wahvQMETUJkBFk2+TS9+O3vcsd4sB1rUI5rgIBWJvS6kGoYyzNBRtoOh/brUuKjLVgqb
- lJkOws6k7U0nPUeGV0XD+Cc9eDsiWdIXbue+NdiSajyLETAOv5J2/b38B0MNu0VMg1ss
- pRO70fcoPMvX0eHH4aQKvcl9z9u4yPd3QOFBhz23Zxc8o6UX+WAxo7JKNb4ZvLBDrnWr
- m9Nw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=DaSfQVSBloP6ituQwd3gN2sNQYfvnC2s71RqutisBq0=;
- b=WvMk5KuvgAypiJ/LtCmMCY7DSfmhV2TP+PttpA0/2UPFVGXiO1sapqm58Rp38jJFyC
- iieFnLlA5yipiPGFDynGTE3813mQuCzDpOM3W6BBtRFuHSDk3rFoviGfvMm03plXwXhN
- mPt/E41uj8bxHX79GyMMmnnHG21+k8NxaGv8rnM0f16s9xOTpx/lfswmkKDuxodK++Cz
- 1PsZYfAii4h2TWqqVFAkEUjkbrRh8kLqw72HDjktBPrFfm8CdUBKBQepEKgJ4VuS/OTS
- 5dImLjYc+wvTxQKwVTdXQr86dDD8YRVucWW+MZBC1/y2by8m5/nchAeOClpDM+Ij7LHt
- MRmg==
-X-Gm-Message-State: APjAAAV0MbbOdhyP9cLHcpkNlw43fixAd6UNK7IZ0wfqF7axVI62z0+/
- 2fCFSo6235PKWrsXCX5pX5Hxqw==
-X-Google-Smtp-Source: APXvYqw/pUX7GShISMzCbUQtESxSOCGVNvngtydQFUT3NN7ACbQtiRIRf1AbgIrVwpXKDn1FZaNSkQ==
-X-Received: by 2002:a05:600c:34d:: with SMTP id
- u13mr85321496wmd.48.1564582262533; 
- Wed, 31 Jul 2019 07:11:02 -0700 (PDT)
-Received: from [192.168.1.6] (19.red-176-86-136.dynamicip.rima-tde.net.
- [176.86.136.19])
- by smtp.gmail.com with ESMTPSA id a81sm71773684wmh.3.2019.07.31.07.11.00
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 31 Jul 2019 07:11:01 -0700 (PDT)
-Subject: Re: [PATCH v3 02/14] mbox: qcom: add APCS child device for QCS404
-To: Bjorn Andersson <bjorn.andersson@linaro.org>
-References: <20190625164733.11091-1-jorge.ramirez-ortiz@linaro.org>
- <20190625164733.11091-3-jorge.ramirez-ortiz@linaro.org>
- <20190711144424.GD7234@tuxbook-pro>
-From: Jorge Ramirez <jorge.ramirez-ortiz@linaro.org>
-Message-ID: <5111bc6e-4155-e99e-71b2-1aac3610b71e@linaro.org>
-Date: Wed, 31 Jul 2019 16:10:59 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.2.1
-MIME-Version: 1.0
-In-Reply-To: <20190711144424.GD7234@tuxbook-pro>
-Content-Language: en-US
+ id 1hspKq-0003nU-Tn
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 14:12:10 +0000
+Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
+ by mail-out.m-online.net (Postfix) with ESMTP id 45zFjf3NX3z1rNS5;
+ Wed, 31 Jul 2019 16:12:06 +0200 (CEST)
+Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
+ by mail.m-online.net (Postfix) with ESMTP id 45zFjf1XTpz1qqkP;
+ Wed, 31 Jul 2019 16:12:06 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at mnet-online.de
+Received: from mail.mnet-online.de ([192.168.8.182])
+ by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
+ port 10024)
+ with ESMTP id aLVG6JH7RSJq; Wed, 31 Jul 2019 16:12:04 +0200 (CEST)
+X-Auth-Info: 9DZkl6bNBSxiBxcPQAY5c4wJPOvHXx2BrlhQ44j+GPw=
+Received: from localhost.localdomain (85-222-111-42.dynamic.chello.pl
+ [85.222.111.42])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.mnet-online.de (Postfix) with ESMTPSA;
+ Wed, 31 Jul 2019 16:12:04 +0200 (CEST)
+From: Lukasz Majewski <lukma@denx.de>
+To: Shawn Guo <shawnguo@kernel.org>,
+	Fabio Estevam <festevam@gmail.com>
+Subject: [PATCH v3] ARM: dts: vf610-bk4: Fix qspi node description
+Date: Wed, 31 Jul 2019 16:11:51 +0200
+Message-Id: <20190731141151.7196-1-lukma@denx.de>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_071106_334910_E4D81D01 
-X-CRM114-Status: GOOD (  18.91  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190731_071209_112895_8D8A41E2 
+X-CRM114-Status: GOOD (  15.86  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.18.0.9 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,80 +71,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, heiko@sntech.de, mturquette@baylibre.com,
- will.deacon@arm.com, david.brown@linaro.org, linux-clk@vger.kernel.org,
- jassisinghbrar@gmail.com, sibis@codeaurora.org, jagan@amarulasolutions.com,
- devicetree@vger.kernel.org, niklas.cassel@linaro.org, arnd@arndb.de,
- linux-arm-msm@vger.kernel.org, olof@lixom.net, robh+dt@kernel.org,
- horms+renesas@verge.net.au, linux-arm-kernel@lists.infradead.org,
- sboyd@kernel.org, linux-kernel@vger.kernel.org, amit.kucheria@linaro.org,
- vkoul@kernel.org, khasim.mohammed@linaro.org, enric.balletbo@collabora.com,
- georgi.djakov@linaro.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
+ Stefan Agner <stefan@agner.ch>, Lukasz Majewski <lukma@denx.de>,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 7/11/19 16:44, Bjorn Andersson wrote:
-> On Tue 25 Jun 09:47 PDT 2019, Jorge Ramirez-Ortiz wrote:
-> 
->> There is clock controller functionality in the APCS hardware block of
->> qcs404 devices similar to msm8916.
->>
->> Co-developed-by: Niklas Cassel <niklas.cassel@linaro.org>
->> Signed-off-by: Niklas Cassel <niklas.cassel@linaro.org>
->> Signed-off-by: Jorge Ramirez-Ortiz <jorge.ramirez-ortiz@linaro.org>
->> ---
->>  drivers/mailbox/qcom-apcs-ipc-mailbox.c | 18 ++++++++++--------
->>  1 file changed, 10 insertions(+), 8 deletions(-)
->>
->> diff --git a/drivers/mailbox/qcom-apcs-ipc-mailbox.c b/drivers/mailbox/qcom-apcs-ipc-mailbox.c
->> index 705e17a5479c..a05dc3aabac7 100644
->> --- a/drivers/mailbox/qcom-apcs-ipc-mailbox.c
->> +++ b/drivers/mailbox/qcom-apcs-ipc-mailbox.c
->> @@ -89,16 +89,18 @@ static int qcom_apcs_ipc_probe(struct platform_device *pdev)
->>  		return ret;
->>  	}
->>  
->> -	if (of_device_is_compatible(np, "qcom,msm8916-apcs-kpss-global")) {
->> -		apcs->clk = platform_device_register_data(&pdev->dev,
->> -							  "qcom-apcs-msm8916-clk",
->> -							  -1, NULL, 0);
->> -		if (IS_ERR(apcs->clk))
->> -			dev_err(&pdev->dev, "failed to register APCS clk\n");
->> -	}
->> -
->>  	platform_set_drvdata(pdev, apcs);
->>  
->> +	if (!of_device_is_compatible(np, "qcom,msm8916-apcs-kpss-global") &&
->> +	    !of_device_is_compatible(np, "qcom,qcs404-apcs-apps-global"))
-> 
-> If the remainder of the function was a long snippet I think this would
-> motivate the somewhat unusual early return. But I think it would be
-> cleaner to just add to the existing conditional.
+Before this change the device tree description of qspi node for
+second memory on BK4 board was wrong (applicable to old, removed
+fsl-quadspi.c driver).
 
-sure can do that. I dont agree (I wouldnt have bothered otherwise :))
-but will do
+As a result this memory was not recognized correctly when used
+with the new spi-fsl-qspi.c driver.
 
-> 
-> Regards,
-> Bjorn
-> 
->> +		return 0;
->> +
->> +	apcs->clk = platform_device_register_data(&pdev->dev,
->> +						  "qcom-apcs-msm8916-clk",
->> +						  -1, NULL, 0);
->> +	if (IS_ERR(apcs->clk))
->> +		dev_err(&pdev->dev, "failed to register APCS clk\n");
->> +
->>  	return 0;
->>  }
->>  
->> -- 
->> 2.21.0
->>
-> 
+From the dt-bindings:
+
+"Required SPI slave node properties:
+  - reg: There are two buses (A and B) with two chip selects each.
+This encodes to which bus and CS the flash is connected:
+<0>: Bus A, CS 0
+<1>: Bus A, CS 1
+<2>: Bus B, CS 0
+<3>: Bus B, CS 1"
+
+According to above with new driver the second SPI-NOR memory shall
+have reg=<2> as it is connected to Bus B, CS 0.
+
+Fixes: a67d2c52a82f ("ARM: dts: Add support for Liebherr's BK4 device (vf610 based)")
+Suggested-by: Fabio Estevam <festevam@gmail.com>
+Signed-off-by: Lukasz Majewski <lukma@denx.de>
+Reviewed-by: Fabio Estevam <festevam@gmail.com>
+
+---
+Changes for v3:
+- Reorder Signed-off, Suggested-by and Fixes tags
+- Add Reviewed-by: Fabio Estevam <festevam@gmail.com>
+
+Changes for v2:
+- Add proper Suggested-by tag as Fabio was the one who pointed out the
+  the issue with wrong reg number assignment for the second SPI-NOR memory
+- Add Fixes: tag, so the patch could be added to LTS kernels
+- Fix the subject line to more appropriate
+---
+ arch/arm/boot/dts/vf610-bk4.dts | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm/boot/dts/vf610-bk4.dts b/arch/arm/boot/dts/vf610-bk4.dts
+index 3fa0cbe456db..0f3870d3b099 100644
+--- a/arch/arm/boot/dts/vf610-bk4.dts
++++ b/arch/arm/boot/dts/vf610-bk4.dts
+@@ -246,13 +246,13 @@
+ 		reg = <0>;
+ 	};
+ 
+-	n25q128a13_2: flash@1 {
++	n25q128a13_2: flash@2 {
+ 		compatible = "n25q128a13", "jedec,spi-nor";
+ 		#address-cells = <1>;
+ 		#size-cells = <1>;
+ 		spi-max-frequency = <66000000>;
+ 		spi-rx-bus-width = <2>;
+-		reg = <1>;
++		reg = <2>;
+ 	};
+ };
+ 
+-- 
+2.11.0
 
 
 _______________________________________________
