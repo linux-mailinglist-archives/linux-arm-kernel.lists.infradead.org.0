@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 73A247C0F0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 14:15:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E2A147C0F1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 14:15:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,65 +11,65 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=4bW38ITACClyP6MDkdGv89ALasjQx9ixtPGnYFusAzM=; b=okO2OgTGrhCbJR8W9VMf2UrEul
-	83zW72vxKrRLywaSKFtkYgV2xrPGZv8xCnpxNgDUqD/qkuhqpDft37APAZ3pVxuJofHh4EODzGTGD
-	jOB1NsTIl/MrjtMcVb1+x5XkUoFFGEGvssNk4TGBhzbX+X8hKncr79jG3/Ok7RN8Voztx0l3e2BEb
-	fen7gpJGgeRc8roFbuM8qJqJUxtVPqXjm/W6Hha+VPN3VcnVeo46QLMvm0WKcrdBcjU7zrWKdiBJF
-	q91Qe2W/As3B/1oc/1rXE1VM1OKqs29vLrr8Q2bBYY20TK6dGBBH/HiCrSRYpDCpQGPh9vPtbfQUz
-	pXZGq8OA==;
+	bh=Xne3GggnvQvHryGn26q3uPDDuyHX01pY1Sm3fBZmNug=; b=FzzPMl0KY/zxKWM7GkB+kjdg3I
+	mNfEH8ApxjnmrkfyXVmWVCbgdAZyc94gPGDvb+yWW9volRgNKCgtHMmsS6Exu4o/oGyldSTL6Gxac
+	L7NDWFgwcCL3faUSLM6wGPVIrWuRA0i2G/MVXQFL+7y9Rw2U9YQ8dQZbnNhn12gIkibsZ+0r4iQkR
+	fbscDrKpuRnm3CIknw//s0Kr0pgJDrAN44vHWtCeQbq4hZ6SXLvffX4B/zUtXmS89fQZUV6F5ZsmT
+	QCzpcFxpcT0FuRn8dcpnODHB8XDkcYV2pP0e2Icc2grITK+ALi2DxytO+Z/OE08KJWoFvFRJAKo8h
+	mDh1gCrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsnW0-0007r6-Ag; Wed, 31 Jul 2019 12:15:32 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1hsnWA-00086b-Gc; Wed, 31 Jul 2019 12:15:42 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsnUo-0005QL-AI
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 12:14:21 +0000
-Received: by mail-wm1-x342.google.com with SMTP id g67so55498929wme.1
+ id 1hsnUp-0005RC-C2
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 12:14:22 +0000
+Received: by mail-wr1-x442.google.com with SMTP id n9so44350270wrr.4
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 31 Jul 2019 05:14:18 -0700 (PDT)
+ Wed, 31 Jul 2019 05:14:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=4dhyanCajCoQ1NdrxY9RmPZmRRskdkUd8pA1FbO4zdo=;
- b=fYS3TgnwrniuqSiM6EH8XBX5NO0WHBVCvOQ0paEeMa5/j1L16S3eMBI475LTjoV8ui
- XZMH/qiesdnDqiwtIhyM1C2/aKEjieF90KHqB6+woi/R04pCoUA/DS7g8FxIvxCnVtge
- CGwXU2VF0b6n9CWoTmUCdsFiMDjRLlu5sziIWWZIkiHdyN0Y/Wsf0v2npxS2fT0fS+lM
- erUXS9kjSafOR4vz6DeIvqCDioiICAfx5E4DG2s8qQ9IObARQnUnjfv1c+5qN9fxljuk
- dnOaSG3+0/aKtms73knvFjaJth/VFSJ1fRgV96ir5bKG0YYN6P1Pt94Qm3nVEVGmD6W2
- 8e7Q==
+ bh=BOF17YQQWl12xZ1QhY8MZFUcVRdvZruqxl9AoPVourc=;
+ b=KOwU/VDLfH4d9hcV47fA2w/uqwOYT2FS68Y+GEZgeAIxQeMzox1GTF+0nrmfbwgok6
+ lFKgs6HQrZ5vHJV79TS3uRpfM7LBBpF/8oOwgSPwJoZn4uSGVeyYfnWNtxTN0cCnSKnA
+ fwLcqzDLNkSmAbYJFRKWbisb1VHFrT9BBYe1njiRWWCpIVjSFXkGFjmG8l7ix6YGmBuO
+ jmb5mztHtAF8AeFgsBIRAXSHH7dLXHH2WTPiyN1yejHwdxPZrwqe+2OU49FlyeZkQ6rT
+ E+OVoUnb/VSTVGanCM84e147CCmhwhG/RaHrkLmA2+q2AMN+jbaHINtHsTQGrCX8cYtO
+ lB1w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=4dhyanCajCoQ1NdrxY9RmPZmRRskdkUd8pA1FbO4zdo=;
- b=ja26GJGKNdvDucxYBkQ5v7UfbRMrgqi8OLRb7syieq3YE+x9CpP+oPKdcAv2Xpc8T0
- btB0Cce9F44tljUDttv+ZuwUI1Gsa6m0RWNrCgg38jjbr1YS4FDl1HgfItUwccEb6mi+
- L9OhP7nzB6h0XJ34e7X9BAt1QaOU6zVmDEsDnV+4bdEU/ofGnT3ml4ttQLFD5fZtQN8c
- O+1cRKcNvX3jfTpAsOy99c/0NP7JmcUZzQABdUobxaeU5C0jNlF2eom/8/wm7aAuEHqI
- phU/2HHT+YGzyOSma6erYsj5tVfLSlwzB8h2LFPMCR48AWWoW+gfwaoITXhJXXzIQ86N
- g7NA==
-X-Gm-Message-State: APjAAAXRQnumkdO0gmLxDYxceehjGJTueGl4hgNFq1SKOiEtfRLC/8OV
- e3jtokt+erKD+sUwNaYTdJPFTQ==
-X-Google-Smtp-Source: APXvYqxRDiGgBTKX4OvpK3DPoOUb/3Cu6lXEUEkKcn4C86RVnIxo9nRbAkWga96jF5qAdQmTIoHbSA==
-X-Received: by 2002:a7b:c251:: with SMTP id b17mr37174245wmj.143.1564575257149; 
- Wed, 31 Jul 2019 05:14:17 -0700 (PDT)
+ bh=BOF17YQQWl12xZ1QhY8MZFUcVRdvZruqxl9AoPVourc=;
+ b=gBECxtasF4wkJ5uXz+VZTiYcPq7QxaHrs839GCYgcer7O4fJQOqiVOZ90By7f9854B
+ VJQXXfFmVCIGEsYniy9mGLfrKZBWwJsHMRFI6V5vXamxDQwf6QvxJGeaYKsBrDZ5dMVG
+ bQTkqE12DFe7GvSEdOJi8KbzM/lcfJEJ0/5MmTpu9WtMfN6SUJaW7Myz3fGW95MnFsk3
+ ApPmidK1c1yFIAOiyDDlpZIGG6zv2kCEAjI42EY8q7HG1or6uA55BRjnQPZZv5NOZruP
+ I55vxAH9XPKQh64CDods0WzfO9SgTdk2gb11GQBQOCJmjepBvgbqCL0O2Qo5D9zDUjSx
+ b4ZQ==
+X-Gm-Message-State: APjAAAVYNYg8QoI4j9jIk4lE97LGhF1AFMcKYBdLkZyKXKuzrCeZCXTr
+ +6DF5Ez3HUeiF7P6xj+OvMjH2Q==
+X-Google-Smtp-Source: APXvYqw5Af6krHH2u8yfiDYnUo0PUK03ieMfQQIWsJDDVp5cTQO8+Z6dt5o79L+VaM5ofBQMkgnbuQ==
+X-Received: by 2002:adf:c803:: with SMTP id d3mr61363995wrh.130.1564575258197; 
+ Wed, 31 Jul 2019 05:14:18 -0700 (PDT)
 Received: from glaroque-ThinkPad-T480.baylibre.local
  (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id a64sm3613713wmf.1.2019.07.31.05.14.16
+ by smtp.gmail.com with ESMTPSA id a64sm3613713wmf.1.2019.07.31.05.14.17
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 31 Jul 2019 05:14:16 -0700 (PDT)
+ Wed, 31 Jul 2019 05:14:17 -0700 (PDT)
 From: Guillaume La Roque <glaroque@baylibre.com>
 To: daniel.lezcano@linaro.org,
 	khilman@baylibre.com
-Subject: [PATCH 4/6] arm64: dts: meson: sei510: Add minimal thermal zone
-Date: Wed, 31 Jul 2019 14:14:07 +0200
-Message-Id: <20190731121409.17285-5-glaroque@baylibre.com>
+Subject: [PATCH 5/6] arm64: dts: amlogic: odroid-n2: add minimal thermal zone
+Date: Wed, 31 Jul 2019 14:14:08 +0200
+Message-Id: <20190731121409.17285-6-glaroque@baylibre.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190731121409.17285-1-glaroque@baylibre.com>
 References: <20190731121409.17285-1-glaroque@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_051418_353659_F8ED1C38 
-X-CRM114-Status: UNSURE (   9.20  )
+X-CRM114-CacheID: sfid-20190731_051419_464019_F4F44ED1 
+X-CRM114-Status: UNSURE (   9.06  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -77,7 +77,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -108,14 +108,14 @@ Add minimal thermal zone for DDR and CPU sensor
 
 Signed-off-by: Guillaume La Roque <glaroque@baylibre.com>
 ---
- arch/arm64/boot/dts/amlogic/meson-g12a-sei510.dts | 13 +++++++++++++
+ .../arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts | 13 +++++++++++++
  1 file changed, 13 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12a-sei510.dts b/arch/arm64/boot/dts/amlogic/meson-g12a-sei510.dts
-index c7a87368850b..79ae514e238d 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12a-sei510.dts
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12a-sei510.dts
-@@ -33,6 +33,19 @@
+diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts b/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
+index 81780ffcc7f0..4bd8d6d0c972 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
+@@ -20,6 +20,19 @@
  		ethernet0 = &ethmac;
  	};
  
@@ -132,9 +132,9 @@ index c7a87368850b..79ae514e238d 100644
 +		};
 +	};
 +
- 	mono_dac: audio-codec-0 {
- 		compatible = "maxim,max98357a";
- 		#sound-dai-cells = <0>;
+ 	chosen {
+ 		stdout-path = "serial0:115200n8";
+ 	};
 -- 
 2.17.1
 
