@@ -2,57 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D8E17BF1F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 13:18:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 019D57BF37
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 13:24:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Sz4/mWipCWq1sx3A9wSIkb4IbFCbmSUsEy/c+x1m1qc=; b=JkItOcf/rb0Z/a
-	1XHJvJV2mNqy5NRlvwO1YzjFghzk0C++k1z0VIyGkKd0Tp4NNrRyczYtwA4uLT3AcxI3FLLYcYtF+
-	CWRB0uiw7xXOst5FPEc11YzL8FpsYrxKjmFVCj0qoejmk8jNkpUp+qViiDisBPX0jmJ1EpEt4/qfx
-	1i/pTC7u2JOlrVHp4MWV3kQzBeWKJar4HAG4KL1BcHqZKaBt6Xx4s54aJturjdbiNZ8h+NwVi4541
-	lj07ddLF4K7yCD8OzQBFifefOTAUW5PkVFRzTc6/1babRMkSXMaak9JyzYfEPVCtb4xBxwNGswi8X
-	ZcfWRzF54lvj//E6CUag==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=It419h/NU+/C8Dy9KH1nvhPScH7OqYUkDno+TZNsWrs=; b=HuStEfG8tWKik/dZIxij0h3A/
+	6A1IawGpPzGSOMKz2pbrOWXTk+26geceHHsP2ngiNsTxcQQ5AQ/6RTOnZU14+c5zng371bZlMRKWl
+	dN18LFYYIYjP9tLXnaTtngRdq/1qtlxd1l8zwDBQG8kErHvKKgI0B7iUYwlcIHSduFqAKqGG+XXYQ
+	aO0hcS8cQt4P8nuCNnYQ96JuGu80AsNqV2+BsTaOKA9rlNzaV7iOo1E8WF5qkpYvKs0aDSY0EMRjN
+	CbtjU69N0aLxfZS28r0vLWPJYd+gtMtSNSPJ6DDEAbO28bQRhq7OLZ1VMCr5mFYNwT3kOOBdmhTKf
+	zTZmNlBmw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsmd5-0005S0-VN; Wed, 31 Jul 2019 11:18:47 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hsmcz-0005RL-0l
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 11:18:42 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CC0CD344;
- Wed, 31 Jul 2019 04:18:38 -0700 (PDT)
-Received: from [10.1.196.133] (e112269-lin.cambridge.arm.com [10.1.196.133])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 23D7D3F71F;
- Wed, 31 Jul 2019 04:18:36 -0700 (PDT)
-Subject: Re: [PATCH v9 00/21] Generic page walk and ptdump
-To: Sven Schnelle <svens@stackframe.org>
-References: <20190722154210.42799-1-steven.price@arm.com>
- <794fb469-00c8-af10-92a8-cb7c0c83378b@arm.com>
- <270ce719-49f9-7c61-8b25-bc9548a2f478@arm.com>
- <20190731092703.GA31316@t470p.stackframe.org>
-From: Steven Price <steven.price@arm.com>
-Message-ID: <788180f7-88ae-c88d-1531-68febb462010@arm.com>
-Date: Wed, 31 Jul 2019 12:18:34 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1hsmj2-0007Hs-1x; Wed, 31 Jul 2019 11:24:56 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hsmiw-0007HW-2n
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 11:24:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=NNkKpSgMuJ0KRRXiISTaddlqY+jM8kpTuvVm8K7loEo=; b=m/zIh+7lsaMz2pnXHbCTB9AVJ
+ mV40UnIA7bnq14o76hcNSjOpD6JbreoPgt+MGAR2O1CuqmWu8ljttfVxcmnORwU/401Nbl2UEq9BG
+ TuOwWWGC8jd4PU1/gHwfmgG4gkJEMReqYJEJ13AdV3B2stt59YpknqEboxMWWgIJa1Ueo=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=ypsilon.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1hsmio-0001kD-NN; Wed, 31 Jul 2019 11:24:42 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id C59922742C99; Wed, 31 Jul 2019 12:24:41 +0100 (BST)
+Date: Wed, 31 Jul 2019 12:24:41 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
+ Heiner Kallweit <hkallweit1@gmail.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "Matthew Wilcox (Oracle)" <willy@infradead.org>
+Subject: Re: next/master build: 221 builds: 11 failed, 210 passed, 13 errors, 
+ 1174 warnings (next-20190731)
+Message-ID: <20190731112441.GB4369@sirena.org.uk>
+References: <5d41767d.1c69fb81.d6304.4c8c@mx.google.com>
 MIME-Version: 1.0
-In-Reply-To: <20190731092703.GA31316@t470p.stackframe.org>
-Content-Language: en-GB
+In-Reply-To: <5d41767d.1c69fb81.d6304.4c8c@mx.google.com>
+X-Cookie: FEELINGS are cascading over me!!!
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_041841_152508_C1111D3D 
-X-CRM114-Status: GOOD (  26.72  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190731_042450_129200_899EB744 
+X-CRM114-Status: UNSURE (   7.50  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,99 +83,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>, linux-mm@kvack.org,
- "H. Peter Anvin" <hpa@zytor.com>, Will Deacon <will@kernel.org>, "Liang,
- Kan" <kan.liang@linux.intel.com>, Helge Deller <deller@gmx.de>, x86@kernel.org,
- Ingo Molnar <mingo@redhat.com>, Arnd Bergmann <arnd@arndb.de>,
- Anshuman Khandual <anshuman.khandual@arm.com>,
- =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
- Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-kernel@vger.kernel.org,
- James Morse <james.morse@arm.com>, Andrew Morton <akpm@linux-foundation.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devel@driverdev.osuosl.org, netdev@vger.kernel.org,
+ linux-next@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ kernel-build-reports@lists.linaro.org
+Content-Type: multipart/mixed; boundary="===============4278775549658016903=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 31/07/2019 10:27, Sven Schnelle wrote:
-> Hi Steven,
-> 
-> On Mon, Jul 29, 2019 at 12:32:25PM +0100, Steven Price wrote:
->>
->> parisc is more interesting and I'm not sure if this is necessarily
->> correct. I originally proposed a patch with the line "For parisc, we
->> don't support large pages, so add stubs returning 0" which got Acked by
->> Helge Deller. However going back to look at that again I see there was a
->> follow up thread[2] which possibly suggests I was wrong?
-> 
-> I just started a week ago implementing ptdump for PA-RISC. Didn't notice that
-> you're working on making it generic, which is nice. I'll adjust my code
-> to use the infrastructure you're currently developing.
 
-Great, hopefully it will make it easier to implement.
+--===============4278775549658016903==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="GID0FwUMdk1T2AWN"
+Content-Disposition: inline
 
->> Can anyone shed some light on whether parisc does support leaf entries
->> of the page table tree at a higher than the normal depth?
->>
->> [1] https://lkml.org/lkml/2019/2/27/572
->> [2] https://lkml.org/lkml/2019/3/5/610
-> 
-> My understanding is that PA-RISC only has leaf entries on PTE level.
 
-Yes, that's my current interpretation.
+--GID0FwUMdk1T2AWN
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
->> The intention is that the page table walker would be available for all
->> architectures so that it can be used in any generic code - PTDUMP simply
->> seemed like a good place to start.
->>
->>> Now that pmd_leaf() and pud_leaf() are getting used in walk_page_range() these
->>> functions need to be defined on all arch irrespective if they use PTDUMP or not
->>> or otherwise just define it for archs which need them now for sure i.e x86 and
->>> arm64 (which are moving to new generic PTDUMP framework). Other archs can
->>> implement these later.
-> 
-> I'll take care of the PA-RISC part - for 32 bit your generic code works, for 64Bit
-> i need to learn a bit more about the following hack:
-> 
-> arch/parisc/include/asm/pgalloc.h:15
-> /* Allocate the top level pgd (page directory)
->  *
->  * Here (for 64 bit kernels) we implement a Hybrid L2/L3 scheme: we
->  * allocate the first pmd adjacent to the pgd.  This means that we can
->  * subtract a constant offset to get to it.  The pmd and pgd sizes are
->  * arranged so that a single pmd covers 4GB (giving a full 64-bit
->  * process access to 8TB) so our lookups are effectively L2 for the
->  * first 4GB of the kernel (i.e. for all ILP32 processes and all the
->  * kernel for machines with under 4GB of memory)
->  */
+On Wed, Jul 31, 2019 at 04:07:41AM -0700, kernelci.org bot wrote:
 
-As far as I understand this, the page table tree isn't any different
-here. It's just that there's a PMD which is allocated at the same time
-as the PGD. The PGD's first entry then points to the PMD (P4D/PUD are
-folded). There are then some tricks which means that for addresses < 4GB
-the PGD stage can be skipped because you already know where the relevant
-PMD is.
+Today's -next fails to build an ARM allmodconfig due to:
 
-However, nothing should stop a simple walk from PGD down - it's just an
-optimisation to remove the pointer fetch from PGD in the usual case for
-accesses < 4GB.
+> allmodconfig (arm, gcc-8) =E2=80=94 FAIL, 1 error, 40 warnings, 0 section=
+ mismatches
+>=20
+> Errors:
+>     drivers/net/phy/mdio-cavium.h:111:36: error: implicit declaration of =
+function 'writeq'; did you mean 'writel'? [-Werror=3Dimplicit-function-decl=
+aration]
 
-> I see that your change clear P?D entries when p?d_bad() returns true, which - i think -
-> would be the case with the PA-RISC implementation.
+as a result of the changes that introduced:
 
-The only case where p?d_bad() is checked is at the PGD and P4D levels
-(unless I'm missing something?). I have to admit I'm a little unsure
-about this. Basically the code as it stands doesn't allow leaf entries
-at PGD or P4D. I'm not aware of any architectures that do this though.
+WARNING: unmet direct dependencies detected for MDIO_OCTEON
+  Depends on [n]: NETDEVICES [=3Dy] && MDIO_DEVICE [=3Dm] && MDIO_BUS [=3Dm=
+] && 64BIT && HAS_IOMEM [=3Dy] && OF_MDIO [=3Dm]
+  Selected by [m]:
+  - OCTEON_ETHERNET [=3Dm] && STAGING [=3Dy] && (CAVIUM_OCTEON_SOC && NETDE=
+VICES [=3Dy] || COMPILE_TEST [=3Dy])
 
-Thanks,
+which is triggered by the staging OCTEON_ETHERNET driver which misses a
+64BIT dependency but added COMPILE_TEST in 171a9bae68c72f2
+(staging/octeon: Allow test build on !MIPS).
 
-Steve
+--GID0FwUMdk1T2AWN
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl1BengACgkQJNaLcl1U
+h9DLnwf/f8I9dl2D69S1eeFNRVh2aLjJV9PMJSjfoyGSDSEKyrS7CVSR8qWRkfir
+LwbOCkTe7W9RVxR409aCkPkHcqLlCquQxDeyihTP00ZevmIzgLN7A1mLv0LmoIbn
+vldWfuGkbKM67v9n1nwgNBuZK/6eXFobpRlAFrPBx6tiMH4zvAbMKQgO8GuHXdQs
+EFd9Wxa38ixftAfcoNbMng2vmYqFiU/nOM9MUQBtWwZ30OV359/nSHMpwfyO9KEJ
+sfd866tLAddesCX15Kk/DS/r1qQViMKmqTiOTSHe4r3YKQL9/o8NByGs7k0rWG6t
+hgLW0Xnb1iREo3Scv3PBByS5PuMdbw==
+=Oxer
+-----END PGP SIGNATURE-----
+
+--GID0FwUMdk1T2AWN--
+
+
+--===============4278775549658016903==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4278775549658016903==--
+
