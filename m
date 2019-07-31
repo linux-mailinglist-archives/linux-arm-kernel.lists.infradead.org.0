@@ -2,86 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 986E37C3E7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 15:46:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD4577C400
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 15:49:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OhUEPPsW9fAZW8HCN4E703EbgRUj3969kCoU+srQg0A=; b=bVtHkayXkbi0mD
-	xIDmOislrXf+SLzwekKV9VPK8XC6ub11BlxDQqinR3JArc3GjsIw1l8biL+2U5r1f7o6Byx1QaIKC
-	rvnwcosp+UkTvjq3Jjkvab9T4AMQZU1+/lOw8zUwNI8L3xTBTZiDlCpg6vrP4KXK/ulGBza4DGEXS
-	U0Uheu4SRDg1xj1pxmM4PY0AmeUbOVks19PiRYQLFIMVY3yAjBEk4KHVBx0L3ZRt1LZS/ZIxXa3fA
-	nOEMPxKBsYq4EsZTvzz8+s7Ci5HXyEvpuvklarfkGBZQfp9XZ3yHj9ubgM5nNnmSdW8bRa7qxQncg
-	tbp6arK5xuAe7PUqp5eA==;
+	List-Owner; bh=tiyDjdM9Ye872d28pZl1HNJUUVbysQF2cfGAwx3Rw78=; b=CE0WDeFhjn0/lG
+	weYdqealkN/QqkA3+Sy/0A9yoaqvk2p3JS0GMdTCar0KKww01IiRxxW3PQk0j1TNY1E9xlfcPcZ5/
+	/XfJLVxSlylMT7W6jpXBrbkSFj4QC/OrNvk3QDd1b+yUDflNbloh+0p9IgshUn4ol5gCmML6nAlA6
+	9prxVXWd7eyI1w6OzQE5DQI+QbQB+/NOKF7Vij9JI/etAoszsFIqFVrIMC1asjaGi5fmTeBlWeX/f
+	ybAFF6cyTPSRpFm5/jGxG8ykOEfZKuGj6E6BRantBNrHgzYVvYLEuY8HBTKrfHG9b7S+CU3YMDAdu
+	SDMPEQldYTfk1uxyjAQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsowN-0002W5-Al; Wed, 31 Jul 2019 13:46:51 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1hsozM-0003F9-2A; Wed, 31 Jul 2019 13:49:56 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsowG-0002V7-S0
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 13:46:46 +0000
-Received: by mail-pg1-x542.google.com with SMTP id t132so32030093pgb.9
+ id 1hsozE-0003Eb-Vh
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 13:49:50 +0000
+Received: by mail-lj1-x244.google.com with SMTP id d24so65668549ljg.8
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 31 Jul 2019 06:46:42 -0700 (PDT)
+ Wed, 31 Jul 2019 06:49:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=RYIopWVWcpN8sf8fn3WkAJoSebITP0aCuEJMOu9tUgo=;
- b=mBtfxVJW9PnBRKrB+uQBu32BkJW1DpQZK21apuGw6xkdbEf29gIZyyKKBNKsyyZm7T
- Ga8GPsjvU27IBLreAzB7a7JBLV3nGCHxyflt8fC1EwA6VwdBfXDpx/LNS41rsT+kQ8Iy
- zDWh6KkJWPSgwX3Ly9uADX1D/I/alhwGVlE8+MoaV6yis/Nx0NxQzD8Vasx70JUoBQLl
- gFz9JRgRRM3XSE5pOVNr5yNywlr8SvsPxy3La4y8RJkVKMTT6V7kF44Efel3pU/5L+0q
- wvIeY52cfH5D1V9uo9EVXnVAONdv7VVM9tng9EvnE42YXqooX738ht5TCdp+HtDTUlBG
- PDkA==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=gHnmszNHQ24CJyTvOnvNHkM+wRRDSJ9cy+lG6yjUm6A=;
+ b=FOMsBV9S1Vb6xH9FUBqIDl2S1V+eJuU8e/JPTM/AamBryhGN8AWt24ot7iQOlRaSPS
+ lwobEJNTfwgkQJK5Rp+7k+Ah/g6519n9ue/b61eD/qF9k8NEjF1DI21GDIq65JnRzdsC
+ WDj1jTaZT2XoWzO9RAV3N3DkAjCG3HYK1TXM2bmSt+t/XDdKezfbCmfLstDNReBUjYwl
+ tDTJ5gmOitt8H92diDLl3uv/h+94LN4BnOmWSjFlQUtq8GAiRIU05L2lsbHzbuXM3HO/
+ uXGwvwKTAtyhObuELaPdjOlsab7bHka8etSQachElSNyUtrhnyvIleoPQ+FV/2TkADAx
+ sjdg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=RYIopWVWcpN8sf8fn3WkAJoSebITP0aCuEJMOu9tUgo=;
- b=dTHrnwDRK9RAFtyRx9gj1wPPeAdwV844JUeai1HnDC1v0WlP4LIIrX4E1GcF+u3H2d
- M/2lvL5y9I8WE6R9+Ws8jiVx+lxZgLiMQlpSVAvgQD5UevxPJZlevkmetyy+W/LTT248
- MPGWsEG8UXGzTXjD70o2YFnPt/z2L6RUIApQqpe9UZHvbNn09oLvepydKtKGjyfvhYP0
- 0Gu8+4AUHxdY+vBWGiInxmZsaymvGWMuSJf8DqDFCZQVx6FCMrGCj49I8xP5+W03ntHW
- zCSiPmfv1vxm+kpMaJ0EwxNPILy7O5kqq2bFBxJ3izw1ipDoj6k66HIarItqANETIaAF
- hNtA==
-X-Gm-Message-State: APjAAAWNRhwpkNK7Ox8hQBFJ6ht86b0fOcYDLb/O6OilGqVPHnyRYOzR
- E0tHcZYM4zutlY8dRFeLGLE=
-X-Google-Smtp-Source: APXvYqyJ632HMr8qTa4ZHPJ7wJMKy+mNNR1MgRTMRnjyHAyoRP9i2yT3EBmczwD7Wk7y+Y9PJWFOLg==
-X-Received: by 2002:a63:cb4f:: with SMTP id m15mr38212861pgi.100.1564580801437; 
- Wed, 31 Jul 2019 06:46:41 -0700 (PDT)
-Received: from dtor-ws ([2620:15c:202:201:3adc:b08c:7acc:b325])
- by smtp.gmail.com with ESMTPSA id u134sm66894809pfc.19.2019.07.31.06.46.40
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 31 Jul 2019 06:46:40 -0700 (PDT)
-Date: Wed, 31 Jul 2019 06:46:38 -0700
-From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-Subject: Re: [PATCH v2 00/10] drivers, provide a way to add sysfs groups easily
-Message-ID: <20190731134638.GD147138@dtor-ws>
-References: <20190731124349.4474-1-gregkh@linuxfoundation.org>
- <20190731131045.GB147138@dtor-ws>
- <20190731133840.GN23480@smile.fi.intel.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=gHnmszNHQ24CJyTvOnvNHkM+wRRDSJ9cy+lG6yjUm6A=;
+ b=sdBQWChMwN4lY9CkF140T8w0AL8i7jEr/TGNEjYrCkq55U+MP25SYodU9br1VniSbe
+ Qzwbn64VMwmRgpDVIUdys3ykfTKV8wARKPfnIfNP2J3rlmTURznfr6XsmdhnJBIjCWSl
+ fruo5e+kN4lRdSxfKVmSbnPQa7lPP35ZXe3BcxxJdwBqtzToRpiRLT4TCCMgCp9R82tO
+ 5N/2gUDbHozwFR8Hcw3Je+GtTb/Es1piW42iCms1eTO803/YPW4QAbMlDrzNcdTEgTX5
+ 8b9rZI74ELqCtPUAHn03HdHSm0nlccFV97/dKU+gyRdlr1nyUCSrFmG58bTjgco77YN6
+ TBmQ==
+X-Gm-Message-State: APjAAAVCjzbclDd3rVtZmN3V7Vg06qnJ1ZA4H94Sbzr8OBSFQPb98HFH
+ Y8p9zhX+jkxhkNdb0yvU385cFAGg6WwRq1eEZc0vaH9r
+X-Google-Smtp-Source: APXvYqwlpiIrNNuUqGXtabWXIAAqU7YbPr6xoLilXUIcgeT11EtO5xmCkkDnDuOgWknepM66PFb7aBm6HjOt5rrPB1U=
+X-Received: by 2002:a2e:2c07:: with SMTP id s7mr27620915ljs.44.1564580987014; 
+ Wed, 31 Jul 2019 06:49:47 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190731133840.GN23480@smile.fi.intel.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20190730214833.30659-1-lukma@denx.de>
+In-Reply-To: <20190730214833.30659-1-lukma@denx.de>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Wed, 31 Jul 2019 10:49:53 -0300
+Message-ID: <CAOMZO5Bokk_j5h=34e4jrB1-+KPV0P4nURL13VD7kq2=GXfmhg@mail.gmail.com>
+Subject: Re: [PATCH v2] ARM: dts: vf610-bk4: Fix qspi node description
+To: Lukasz Majewski <lukma@denx.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_064644_910670_4F989493 
-X-CRM114-Status: GOOD (  24.19  )
+X-CRM114-CacheID: sfid-20190731_064949_023002_025525CA 
+X-CRM114-Status: GOOD (  16.40  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (dmitry.torokhov[at]gmail.com)
+ provider (festevam[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -101,67 +92,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: x86@kernel.org, linux-input@vger.kernel.org, linux-fbdev@vger.kernel.org,
- Florian Fainelli <f.fainelli@gmail.com>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sudeep Holla <sudeep.holla@arm.com>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, platform-driver-x86@vger.kernel.org,
- Tony Prisk <linux@prisktech.co.nz>, Ingo Molnar <mingo@redhat.com>,
- Borislav Petkov <bp@alien8.de>, "H. Peter Anvin" <hpa@zytor.com>,
- Darren Hart <dvhart@infradead.org>, Thomas Gleixner <tglx@linutronix.de>,
- Richard Gong <richard.gong@linux.intel.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel <linux-kernel@vger.kernel.org>, Stefan Agner <stefan@agner.ch>,
+ Rob Herring <robh+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 31, 2019 at 04:38:40PM +0300, Andy Shevchenko wrote:
-> On Wed, Jul 31, 2019 at 06:10:45AM -0700, Dmitry Torokhov wrote:
-> > On Wed, Jul 31, 2019 at 02:43:39PM +0200, Greg Kroah-Hartman wrote:
-> > > This patch originally started out just as a way for platform drivers to
-> > > easily add a sysfs group in a race-free way, but thanks to Dmitry's
-> > > patch, this series now is for all drivers in the kernel (hey, a unified
-> > > driver model works!!!)
-> > > 
-> > > I've only converted a few platform drivers here in this series to show
-> > > how it works, but other busses can be converted after the first patch
-> > > goes into the tree.
-> > > 
-> > > Here's the original 00 message, for people to get an idea of what is
-> > > going on here:
-> > > 
-> > > If a platform driver wants to add a sysfs group, it has to do so in a
-> > > racy way, adding it after the driver is bound.  To resolve this issue,
-> > > have the platform driver core do this for the driver, making the
-> > > individual drivers logic smaller and simpler, and solving the race at
-> > > the same time.
-> > > 
-> > > All of these patches depend on the first patch.  I'll take the first one
-> > > through my driver-core tree, and any subsystem maintainer can either ack
-> > > their individul patch and I will be glad to also merge it, or they can
-> > > wait until after 5.4-rc1 when the core patch hits Linus's tree and then
-> > > take it, it's up to them.
-> > 
-> > Maybe make an immutable branch off 5.2 with just patch 1/10 so that
-> > subsystems (and the driver core tree itself) could pull it in at their
-> > leisure into their "*-next" branches and did not have to wait till 5.4
-> > or risk merge clashes?
-> 
-> Isn't cherry-pick enough for one patch?
+Hi Lukasz,
 
-With cherry-picking you run into potential merge conflicts if Greg
-changes more code in the same area. Plus, once everything is merged into
-Linus' tree, there will be N git commits adding the same thing.
+On Tue, Jul 30, 2019 at 6:48 PM Lukasz Majewski <lukma@denx.de> wrote:
+>
+> Before this change the device tree description of qspi node for
+> second memory on BK4 board was wrong (applicable to old, removed
+> fsl-quadspi.c driver).
+>
+> As a result this memory was not recognized correctly when used
+> with the new spi-fsl-qspi.c driver.
+>
+> From the dt-bindings:
+>
+> "Required SPI slave node properties:
+>   - reg: There are two buses (A and B) with two chip selects each.
+> This encodes to which bus and CS the flash is connected:
+> <0>: Bus A, CS 0
+> <1>: Bus A, CS 1
+> <2>: Bus B, CS 0
+> <3>: Bus B, CS 1"
+>
+> According to above with new driver the second SPI-NOR memory shall
+> have reg=<2> as it is connected to Bus B, CS 0.
+>
+> Signed-off-by: Lukasz Majewski <lukma@denx.de>
+> Suggested-by: Fabio Estevam <festevam@gmail.com>
+> Fixes: a67d2c52a82f ("ARM: dts: Add support for Liebherr's BK4 device
+> (vf610 based)")
 
-With immutable branch there is a single git commit, so merges are
-guaranteed to be clean, with no conflicts.
+Please fix the order of the tags.
 
-Thanks.
+- Fixes tag goes first (do not split it into two lines)
+- Suggested-by
+- Your Signed-off-by
 
--- 
-Dmitry
+With these changes you can add as the last tag:
+
+Reviewed-by: Fabio Estevam <festevam@gmail.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
