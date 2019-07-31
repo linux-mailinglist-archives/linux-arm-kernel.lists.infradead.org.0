@@ -2,134 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 491C37BBB7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 10:32:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B94197BBBC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 10:33:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=ixDZSGcNpK2CerPj9Sdl7GzHhePbzKp0hBaO6eHIh60=; b=G9kIcNy6ucLboASnkIQx7wIcCL
-	oyQ4qlsQJOS8oSc4YNWC0re5Ua0Za19Mw8o2UjnzJZEklBbHpbY/EFCNTXflpc/GzqGUqx0Gfj7sv
-	A9YVCW14qQzWnkb10ErT8e3vZodz/fDhy83+RCXIzibOSIv0BhceiETUp1b9av8lrVy1i7vscA/3n
-	7rUmCxvfAQS9MbcksHtTK0nPuQvbiNj3sVCbOo7sX9n8ykrrr31ShOWysUwWrkMIrM+truHSlyzAa
-	AemOKAmJeAtVeUfGX7wXlt0hBeN285cVXqFe1+cdLvfkyx281I94RH7B6i8HcHWT2ZFpO6/kMwrgO
-	aFCYBwJg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AF0f59d/0r8rxDhacBBd2eZy76IraJJbYnarOr1aRuU=; b=ouQLWtPmI8HBax
+	EcNsh4WE65kjWoqhjZErzseyZ6/rO23LAnGY9pLwJdlOL805Dd+kNQyq8r9L8vJFTQNPsmDqY3ki6
+	ThAYje6bBZc3nOLrInP3IaCLVXWSrh5UcA5SMzQvue064ky/GNh6cs9wBDJdQCrZevc7bFCj2sFBA
+	METpyEGIh/kf7sfHvWXP40hKDPZOt5aBP89kk2sl0sHv6RHYN/tQJkveSMLncBVbM2XlIN2bMUK3N
+	AdHnyFVwzSSlgFveE7YOiW67bZea0BTsJmi/tiKSAGc69cejr17dCo1tA1yvWNOYF8JkNQZnmfmYN
+	ux7gaUB2SohdvlI409xQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsk23-0001ns-R7; Wed, 31 Jul 2019 08:32:24 +0000
-Received: from mail-eopbgr740133.outbound.protection.outlook.com
- ([40.107.74.133] helo=NAM01-BN3-obe.outbound.protection.outlook.com)
+	id 1hsk2v-00023N-Fs; Wed, 31 Jul 2019 08:33:17 +0000
+Received: from mail-wm1-f65.google.com ([209.85.128.65])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsk1l-0001hF-Nn
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 08:32:07 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=akZUoaeD55sykwhXFVF8MDrAqNurcT2xU4jgb8+03NQLb8m5ndUwt8dZINYOjByBXxLrPgMwlC0qfeH0UVZ8qgYe+SY7DhMLf5fxM+QjaEvy6PIZR16sHFx4lMFOCBAY6cXKpW/h6jcz3/qeae7Fp5wDdgyWSgo4BrL2wAxI3++AgK6AdqXH0e3WbQANig9oOq3LIKeDGbksO086a6b9+iKL4/woWAdNySynVkavlWayaZ5PrcxOoX8eslCUcYjWkYAZPiKe0XrYBkgW5om48tRX9C5i/yzk1RsYhs0o2q+IwBKpON4JqyIocYKkDZWnTgC6YhaFMZEhS5P+UJ+ykA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Zekd39eQr2pi3ucUXZFD/9EGlz/9JLqNmFHI62TiDIc=;
- b=nykaZW3kgGaH1rQ8TO3iZXBenl665Hudjwj0f7ScW3uz6IqA1tanA66YJJuZYT1GNt5dXmWgtUoJoi1hPAYUCz/IRPpcf163RAwZDrS8PvPXvRCMzIz0Dz+xRKimcJik9/itUJ3HBr4Qw6GpvlM3kXwgM6aJEIhTXHcqeCd2K4brRmA0qa5ggL2cOZV8UO2Dz+jgXFyvB0ZIJOqXwwN6O+sgPVWs3wApkmZWANpKS0yrNbikolmHy2GuKS0z2/4d+7WitmyYLnTIis163paKj48fKKXq1piJih4peIuAgjPIJ/fPELMrJ+hQGGcXgwgCBAylHYuLpmpghcM1+IwVsA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass (sender ip is
- 149.199.60.83) smtp.rcpttodomain=lists.infradead.org
- smtp.mailfrom=xilinx.com;dmarc=bestguesspass action=none
- header.from=xilinx.com;dkim=none (message not signed);arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Zekd39eQr2pi3ucUXZFD/9EGlz/9JLqNmFHI62TiDIc=;
- b=aIij8mqfFiQU4CIlQFfwFkJaEVzFYMvEk4Zl8tHpKOEXgB30WsfQ7aKOB6++4HyYm8vFnqZR9ueI9jH1TEg3JwgZOuUhmavDjRmwpCpXjoQ8EPAavy6aKyrRCdbQ2yQFRn7tt+tyBrPQqhg1OENBqHByINqAWMciq8vnLlJW7ao=
-Received: from SN4PR0201CA0055.namprd02.prod.outlook.com
- (2603:10b6:803:20::17) by SN6PR02MB5120.namprd02.prod.outlook.com
- (2603:10b6:805:68::21) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2136.15; Wed, 31 Jul
- 2019 08:32:01 +0000
-Received: from SN1NAM02FT033.eop-nam02.prod.protection.outlook.com
- (2a01:111:f400:7e44::209) by SN4PR0201CA0055.outlook.office365.com
- (2603:10b6:803:20::17) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.2136.12 via Frontend
- Transport; Wed, 31 Jul 2019 08:32:01 +0000
-Authentication-Results: spf=pass (sender IP is 149.199.60.83)
- smtp.mailfrom=xilinx.com; lists.infradead.org; dkim=none (message not signed)
- header.d=none;lists.infradead.org; dmarc=bestguesspass action=none
- header.from=xilinx.com;
-Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
- 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
-Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- SN1NAM02FT033.mail.protection.outlook.com (10.152.72.133) with Microsoft SMTP
- Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2115.10
- via Frontend Transport; Wed, 31 Jul 2019 08:32:00 +0000
-Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
- by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
- (envelope-from <michal.simek@xilinx.com>)
- id 1hsk1g-0006ld-9F; Wed, 31 Jul 2019 01:32:00 -0700
-Received: from [127.0.0.1] (helo=localhost)
- by xsj-pvapsmtp01 with smtp (Exim 4.63)
- (envelope-from <michal.simek@xilinx.com>)
- id 1hsk1b-0002Rh-4j; Wed, 31 Jul 2019 01:31:55 -0700
-Received: from [172.30.17.116] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
- (envelope-from <michals@xilinx.com>)
- id 1hsk1X-0002RS-MH; Wed, 31 Jul 2019 01:31:51 -0700
-Subject: Re: [PATCH] mailbox: zynqmp-ipi-mailbox: Add of_node_put() before goto
-To: Nishka Dasgupta <nishkadg.linux@gmail.com>, jassisinghbrar@gmail.com,
- michal.simek@xilinx.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-References: <20190709172841.13769-1-nishkadg.linux@gmail.com>
-From: Michal Simek <michal.simek@xilinx.com>
-Message-ID: <eaf1fcbe-615e-0fec-d330-ae94e8f3c102@xilinx.com>
-Date: Wed, 31 Jul 2019 10:31:49 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1hsk2c-00022s-UP
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 08:33:00 +0000
+Received: by mail-wm1-f65.google.com with SMTP id s15so37632131wmj.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 31 Jul 2019 01:32:56 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Vv7QJlhqsQ8aHiLfsYKcKvtxePDzn2Rbc7z1MBOOQ9Y=;
+ b=RFAMywlPX/UB/kkPzvWfV1MkMbKINh182DkSXNn4HeLu+nJIVpfmmkJniLTd/rAJBg
+ ggyn52iBUDcW6zF6ZErKDZQDQk5rlgJ8qL16Khzpttbla0oKI5Ny3Q9uuhc9imJYURii
+ TJzyb7AFQDXstuBnYb0zCg8PlhfHot8PdCrhUYmhqCEIJKcGjbHENpkeLsqXWQdaeTsz
+ Uy0KDhtGZxJG7vT3pf5/xILlP+t6+dC/WQ4fTl3f81hyWIo4mbI5Luqpr2YI4drY+R6s
+ ua/lcKG9AcmPYQA6Raf2X9eyNjTbYbL6ZJMe1b4Lp5wImc4rs54rgN7EldCGyq6Y+We/
+ sMlw==
+X-Gm-Message-State: APjAAAVDYaRwXeeiOBcNAfHZRNfHPMc5pZ5OLj/b5mxCq/dQ2Mk11aSj
+ n/ZmvcoeYcYFHXFaG4tpp+Z4k5hEuVuD0Aq9Hck=
+X-Google-Smtp-Source: APXvYqya/XfPxO65m02NWkmZ45+9x/Fzz1kXR3vOrCtLpHfH6e9/DbeCK8UArUmFGOkuZI9NP57/KPuy1ff+LkPKIHM=
+X-Received: by 2002:a05:600c:254b:: with SMTP id
+ e11mr102178270wma.171.1564561975116; 
+ Wed, 31 Jul 2019 01:32:55 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190709172841.13769-1-nishkadg.linux@gmail.com>
-Content-Language: en-US
-X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
-X-TM-AS-User-Approved-Sender: Yes;Yes
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:NLI; CTRY:US; EFV:NLI;
- SFV:NSPM;
- SFS:(10019001)(6009001)(438001)(164054003)(51704005)(24454002)(199002)(189002)(20776003)(69226001)(63696002)(47776003)(74876001)(63266003)(74706001)(36756003)(23676002)(76786001)(76796001)(81542001)(54356001)(31686003)(93136001)(92566001)(46102001)(64706001)(81342001)(92726001)(77982001)(59766001)(56816005)(33646001)(80022001)(65956001)(76482001)(90146001)(65806001)(65816001)(87936001)(56776001)(54316002)(74366001)(44376005)(87266001)(4396001)(47976001)(50986001)(95666003)(49866001)(47736001)(51856001)(50466002)(85306002)(79102001)(85852003)(83072002)(83506001)(21056001)(97336001)(94946001)(93516002)(95416001)(94316002)(97186001)(80976001)(31696002)(64126003)(81686001)(83322001)(19580405001)(81816001)(31966008)(74662001)(19580395003)(53806001)(74502001)(47446002)(65826005)(36386003);
- DIR:OUT; SFP:1102; SCL:1; SRVR:SN6PR02MB5120; H:xsj-pvapsmtpgw01; FPR:;
- SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; A:1; MX:1; 
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 684c5fb2-6f08-4547-ce62-08d715918f01
-X-Microsoft-Antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(4709080)(1401327)(2017052603328);
- SRVR:SN6PR02MB5120; 
-X-MS-TrafficTypeDiagnostic: SN6PR02MB5120:
-X-Microsoft-Antispam-PRVS: <SN6PR02MB51203F498F8438AD8BA8073EC6DF0@SN6PR02MB5120.namprd02.prod.outlook.com>
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:8273;
-X-Forefront-PRVS: 011579F31F
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Message-Info: /1kQKUl1EGLi70K4VNaZ8qsvOA5XC6HnZLqJWr4VQXwt2oXqkr2vfZ4auFaWepEBOWcZ3fzWNvZQJv2JKEY6bVgZylL+GJz0CNQ6Pw+uwUX69PI4J/rNwo9HMjZQvK/t+lSP6sIuaxPdNk3D6kxo2z5/gL0bqxcRr+00A0bTCuGsg18jv+HCslhK40S+gGdAYaodaLeK9rPp39dGL8v2LQ0TRzRlFPGHbB0koWwmLszOjXvT3pkPQfM8CWo359FKmrhgDiI4KPQeJpzfS5zmCcf7kJ3cshUJO4JLvnaLxOF50TydotKGQ+/v5peKpL6V9ynS/SEA5zhciKoyHnLHQSBp1cBeNDW/aEMirVERLYc3snxenonvEKBMpvZgKtEWF9wnRMScqRHH9ezdottzmG91mBAeSwpHFw1agaGTGQ4=
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 31 Jul 2019 08:32:00.8094 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 684c5fb2-6f08-4547-ce62-08d715918f01
-X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
- Helo=[xsj-pvapsmtpgw01]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR02MB5120
+References: <20190731073744.13963-1-geert+renesas@glider.be>
+ <20190731074801.5706-1-geert+renesas@glider.be>
+ <20190731081209.GA5080@pendragon.ideasonboard.com>
+In-Reply-To: <20190731081209.GA5080@pendragon.ideasonboard.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Wed, 31 Jul 2019 10:32:42 +0200
+Message-ID: <CAMuHMdV9MEYP97_6RFhmbGGB8uY-Pi8S9q+m+XMmHzKHcibJwQ@mail.gmail.com>
+Subject: Re: [PATCH] arm64: dts: renesas: r8a77995: draak: Fix backlight
+ regulator name
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_013205_782129_65DAB226 
-X-CRM114-Status: GOOD (  16.54  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190731_013258_984925_F278588E 
+X-CRM114-Status: GOOD (  14.81  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.74.133 listed in list.dnswl.org]
+ no trust [209.85.128.65 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (geert.uytterhoeven[at]gmail.com)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -141,42 +83,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>,
+ Laurent Pinchart <laurent.pinchart+renesas@ideasonboard.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>, Rob Herring <robh@kernel.org>,
+ Mark Brown <broonie@kernel.org>, Magnus Damm <magnus.damm@gmail.com>,
+ Johan Hovold <johan@kernel.org>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Simon Horman <horms@verge.net.au>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Marek Vasut <marek.vasut+renesas@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 09. 07. 19 19:28, Nishka Dasgupta wrote:
-> Each iteration of for_each_available_child_of_node puts the previous
-> node, but in the case of a goto from the middle of the loop, there is
-> no put, thus causing a memory leak. Hence add an of_node_put before the
-> goto.
-> Issue found with Coccinelle.
-> 
-> Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
-> ---
->  drivers/mailbox/zynqmp-ipi-mailbox.c | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/drivers/mailbox/zynqmp-ipi-mailbox.c b/drivers/mailbox/zynqmp-ipi-mailbox.c
-> index 86887c9a349a..bd80d4c10ec2 100644
-> --- a/drivers/mailbox/zynqmp-ipi-mailbox.c
-> +++ b/drivers/mailbox/zynqmp-ipi-mailbox.c
-> @@ -661,6 +661,7 @@ static int zynqmp_ipi_probe(struct platform_device *pdev)
->  		if (ret) {
->  			dev_err(dev, "failed to probe subdev.\n");
->  			ret = -EINVAL;
-> +			of_node_put(nc);
->  			goto free_mbox_dev;
->  		}
->  		mbox++;
-> 
+Hi Laurent,
 
-Patch is good but when you are saying that this was found by Coccinelle
-then it should be added as script to kernel to detect it.
+On Wed, Jul 31, 2019 at 10:12 AM Laurent Pinchart
+<laurent.pinchart@ideasonboard.com> wrote:
+> On Wed, Jul 31, 2019 at 09:48:01AM +0200, Geert Uytterhoeven wrote:
+> > Currently there are two nodes named "regulator1" in the Draak DTS: a
+> > 3.3V regulator for the eMMC and the LVDS decoder, and a 12V regulator
+> > for the backlight.  This causes the former to be overwritten by the
+> > latter.
+> >
+> > Fix this by renaming all regulators with numerical suffixes to use named
+> > suffixes, which are less likely to conflict.
+>
+> Aren't DT node names supposed to describe the device type, not a
+> particular instance of the device ? This is something that has bothered
+> me too, but I believe the naming scheme should be decided globally, not
+> per board. Is there precedent for using this scheme that has been
+> explicitly approved by the DT maintainers ?
 
-Thanks,
-Michal
+The example in Documentation/devicetree/bindings/regulator/regulator.yaml
+uses "regulator@0", which of course works only if #address-cells = 1, which
+is usually not the case for discrete regulators.
+BTW, the example lacks a "reg" property...
+
+So some other suffix has to be added to distinguish individual "regulator"
+nodes.
+
+The example in Documentation/devicetree/bindings/regulator/fixed-regulator.yaml
+uses "regulator-1v8" since commit b735f41dcb06ae06 ("dt-bindings: regulator:
+update fixed-regulator example"), which received a Reviewed-by from Rob
+after it was committed.
+https://lore.kernel.org/lkml/CAL_Jsq+rRYazOqtjNms0cTK0HpkxCkmZ4JXoLM7ZaPivATEO8A@mail.gmail.com/
+
+Looks good enough to me ;-)
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
+
+--
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
