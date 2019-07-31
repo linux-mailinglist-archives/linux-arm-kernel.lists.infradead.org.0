@@ -2,44 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 14B0C7C720
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 17:46:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3738F7C725
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 17:46:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=jyNOIRDEC3VqSN+hD6F1tMdREnhJ9GoOIMdrtbCghPQ=; b=mg+cQ1+Mag/v4y
-	NsevC+fiWS9EzRJDOzYcrzhIceV5XHXupWxoQUpNoLylih/aFXgF34CKifDJDg/RobHtnYJ9K31Sp
-	qv6f0npzG8gH/1yhZqPfYXjCouK7uOvvvGy8zR/QSIlAWfjY6XXGGM7RzX5yJgCPHq7V6q01KEVN+
-	5Ckah0/MWTbPJylxgWtu6VWrwojWp2cIv92GCYt/yRk0g8AweS9JW+0/4sJvP20lwroFaMI58S5Di
-	AaN2cfkuopSwmR7tfCSOre8ydfJmynIlses5eNp8Zl0b6tbb2LHLH7VRlVBODmzOSGGBg3GXOWIvo
-	8m/Cif0bCNWmZtLERqXA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OmpJ5n8tThhaQd2lO0bCl841RcvvgKFHWtOf+ie0OY8=; b=VJZyPEm3V0LItG
+	wXGzOEBGNK3zYYclLiUsWw7xVN5gFdZunV7Goj+VYYe36yybLcsBmUQbBBbzI4F+OaXOYSdvO77Nu
+	mHzfmt4qp7Cvgkud7WrzroqjBVbar1ydaTzYMOznf8zN2FxlYirNb8t6P4nR861s6f6GGVMxml4XB
+	ICUjuVEK8hWOjZ/QTHwKVAfTWGCucYHsFE3dHyep9yyovqjKcwCrM9GTaxjdI9i8QH8JouJuiGqB+
+	3Sqz8EuuXsCA01eL1f46FSbpYtjGhfiLTrF2tF9rPlrc55EsYSur7TjsGRRg/WlPuexZ1/7u1QCC6
+	PCf7DAil5x2JTeeoZ5LA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsqo0-0005CJ-KQ; Wed, 31 Jul 2019 15:46:20 +0000
+	id 1hsqoE-0005NK-D0; Wed, 31 Jul 2019 15:46:34 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hsqns-0005Bi-41
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 15:46:13 +0000
+ id 1hsqnu-0005C4-W4
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 15:46:16 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 96268344;
- Wed, 31 Jul 2019 08:46:11 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7E38C1570;
+ Wed, 31 Jul 2019 08:46:14 -0700 (PDT)
 Received: from e112269-lin.arm.com (e112269-lin.cambridge.arm.com
  [10.1.196.133])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0A2D43F694;
- Wed, 31 Jul 2019 08:46:08 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CE3F73F694;
+ Wed, 31 Jul 2019 08:46:11 -0700 (PDT)
 From: Steven Price <steven.price@arm.com>
 To: linux-mm@kvack.org
-Subject: [PATCH v10 00/22] Generic page walk and ptdump
-Date: Wed, 31 Jul 2019 16:45:41 +0100
-Message-Id: <20190731154603.41797-1-steven.price@arm.com>
+Subject: [PATCH v10 01/22] mm: Add generic p?d_leaf() macros
+Date: Wed, 31 Jul 2019 16:45:42 +0100
+Message-Id: <20190731154603.41797-2-steven.price@arm.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190731154603.41797-1-steven.price@arm.com>
+References: <20190731154603.41797-1-steven.price@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_084612_250595_ECA1BDFD 
-X-CRM114-Status: GOOD (  19.69  )
+X-CRM114-CacheID: sfid-20190731_084615_071123_9DF3CFDA 
+X-CRM114-Status: GOOD (  13.60  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -58,7 +60,7 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, x86@kernel.org,
+Cc: Mark Rutland <mark.rutland@arm.com>, x86@kernel.org,
  Arnd Bergmann <arnd@arndb.de>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
  Peter Zijlstra <peterz@infradead.org>,
  Catalin Marinas <catalin.marinas@arm.com>,
@@ -75,132 +77,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is a slight reworking and extension of my previous patch set
-(Convert x86 & arm64 to use generic page walk), but I've continued the
-version numbering as most of the changes are the same. In particular
-this series ends with a generic PTDUMP implemention for arm64 and x86.
+Exposing the pud/pgd levels of the page tables to walk_page_range() means
+we may come across the exotic large mappings that come with large areas
+of contiguous memory (such as the kernel's linear map).
 
-Many architectures current have a debugfs file for dumping the kernel
-page tables. Currently each architecture has to implement custom
-functions for this because the details of walking the page tables used
-by the kernel are different between architectures.
+For architectures that don't provide all p?d_leaf() macros, provide
+generic do nothing default that are suitable where there cannot be leaf
+pages at that level. Futher patches will add implementations for
+individual architectures.
 
-This series extends the capabilities of walk_page_range() so that it can
-deal with the page tables of the kernel (which have no VMAs and can
-contain larger huge pages than exist for user space). A generic PTDUMP
-implementation is the implemented making use of the new functionality of
-walk_page_range() and finally arm64 and x86 are switch to using it,
-removing the custom table walkers.
+The name p?d_leaf() is chosen to minimize the confusion with existing
+uses of "large" pages and "huge" pages which do not necessary mean that
+the entry is a leaf (for example it may be a set of contiguous entries
+that only take 1 TLB slot). For the purpose of walking the page tables
+we don't need to know how it will be represented in the TLB, but we do
+need to know for sure if it is a leaf of the tree.
 
-To enable a generic page table walker to walk the unusual mappings of
-the kernel we need to implement a set of functions which let us know
-when the walker has reached the leaf entry. After a suggestion from Will
-Deacon I've chosen the name p?d_leaf() as this (hopefully) describes
-the purpose (and is a new name so has no historic baggage). Some
-architectures have p?d_large macros but this is easily confused with
-"large pages".
+Signed-off-by: Steven Price <steven.price@arm.com>
+Acked-by: Mark Rutland <mark.rutland@arm.com>
+---
+ include/asm-generic/pgtable.h | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
 
-Mostly this is a clean up and there should be very little functional
-change. The exceptions are:
-
-* x86 PTDUMP debugfs output no longer display pages which aren't
-  present (patch 14).
-
-* arm64 has the ability to efficiently process KASAN pages (which
-  previously only x86 implemented). This means that the combination of
-  KASAN and DEBUG_WX is now useable.
-
-Also available as a git tree:
-git://linux-arm.org/linux-sp.git walk_page_range/v10
-
-Changes since v9:
-https://lore.kernel.org/lkml/20190722154210.42799-1-steven.price@arm.com/
- * Moved generic macros to first page in the series and explained the
-   macro naming in the commit message.
- * mips: Moved macros to pgtable.h as they are now valid for both 32 and 64
-   bit
- * x86: Dropped patch which changed the debugfs output for x86, instead
-   we have...
- * new patch adding 'depth' parameter to pte_hole. This is used to
-   provide the necessary information to output lines for 'holes' in the
-   debugfs files
- * new patch changing arm64 debugfs output to include holes to match x86
- * generic ptdump KASAN handling has been simplified and now works with
-   CONFIG_DEBUG_VIRTUAL.
-
-Changes since v8:
-https://lore.kernel.org/lkml/20190403141627.11664-1-steven.price@arm.com/
- * Rename from p?d_large() to p?d_leaf()
- * Dropped patches migrating arm64/x86 custom walkers to
-   walk_page_range() in favour of adding a generic PTDUMP implementation
-   and migrating arm64/x86 to that instead.
- * Rebased to v5.3-rc1
-
-Steven Price (22):
-  mm: Add generic p?d_leaf() macros
-  arc: mm: Add p?d_leaf() definitions
-  arm: mm: Add p?d_leaf() definitions
-  arm64: mm: Add p?d_leaf() definitions
-  mips: mm: Add p?d_leaf() definitions
-  powerpc: mm: Add p?d_leaf() definitions
-  riscv: mm: Add p?d_leaf() definitions
-  s390: mm: Add p?d_leaf() definitions
-  sparc: mm: Add p?d_leaf() definitions
-  x86: mm: Add p?d_leaf() definitions
-  mm: pagewalk: Add p4d_entry() and pgd_entry()
-  mm: pagewalk: Allow walking without vma
-  mm: pagewalk: Add test_p?d callbacks
-  mm: pagewalk: Add 'depth' parameter to pte_hole
-  x86: mm: Point to struct seq_file from struct pg_state
-  x86: mm+efi: Convert ptdump_walk_pgd_level() to take a mm_struct
-  x86: mm: Convert ptdump_walk_pgd_level_debugfs() to take an mm_struct
-  x86: mm: Convert ptdump_walk_pgd_level_core() to take an mm_struct
-  mm: Add generic ptdump
-  x86: mm: Convert dump_pagetables to use walk_page_range
-  arm64: mm: Convert mm/dump.c to use walk_page_range()
-  arm64: mm: Display non-present entries in ptdump
-
- arch/arc/include/asm/pgtable.h               |   1 +
- arch/arm/include/asm/pgtable-2level.h        |   1 +
- arch/arm/include/asm/pgtable-3level.h        |   1 +
- arch/arm64/Kconfig                           |   1 +
- arch/arm64/Kconfig.debug                     |  19 +-
- arch/arm64/include/asm/pgtable.h             |   2 +
- arch/arm64/include/asm/ptdump.h              |   8 +-
- arch/arm64/mm/Makefile                       |   4 +-
- arch/arm64/mm/dump.c                         | 144 +++-----
- arch/arm64/mm/mmu.c                          |   4 +-
- arch/arm64/mm/ptdump_debugfs.c               |   2 +-
- arch/mips/include/asm/pgtable.h              |   5 +
- arch/powerpc/include/asm/book3s/64/pgtable.h |  30 +-
- arch/riscv/include/asm/pgtable-64.h          |   7 +
- arch/riscv/include/asm/pgtable.h             |   7 +
- arch/s390/include/asm/pgtable.h              |   2 +
- arch/sparc/include/asm/pgtable_64.h          |   2 +
- arch/x86/Kconfig                             |   1 +
- arch/x86/Kconfig.debug                       |  20 +-
- arch/x86/include/asm/pgtable.h               |  10 +-
- arch/x86/mm/Makefile                         |   4 +-
- arch/x86/mm/debug_pagetables.c               |   8 +-
- arch/x86/mm/dump_pagetables.c                | 332 +++++--------------
- arch/x86/platform/efi/efi_32.c               |   2 +-
- arch/x86/platform/efi/efi_64.c               |   4 +-
- drivers/firmware/efi/arm-runtime.c           |   2 +-
- fs/proc/task_mmu.c                           |   4 +-
- include/asm-generic/pgtable.h                |  20 ++
- include/linux/mm.h                           |  35 +-
- include/linux/ptdump.h                       |  19 ++
- mm/Kconfig.debug                             |  21 ++
- mm/Makefile                                  |   1 +
- mm/hmm.c                                     |   2 +-
- mm/migrate.c                                 |   1 +
- mm/mincore.c                                 |   1 +
- mm/pagewalk.c                                | 107 ++++--
- mm/ptdump.c                                  | 151 +++++++++
- 37 files changed, 544 insertions(+), 441 deletions(-)
- create mode 100644 include/linux/ptdump.h
- create mode 100644 mm/ptdump.c
-
+diff --git a/include/asm-generic/pgtable.h b/include/asm-generic/pgtable.h
+index 75d9d68a6de7..d3d868ad21b2 100644
+--- a/include/asm-generic/pgtable.h
++++ b/include/asm-generic/pgtable.h
+@@ -1188,4 +1188,24 @@ static inline bool arch_has_pfn_modify_check(void)
+ #define mm_pmd_folded(mm)	__is_defined(__PAGETABLE_PMD_FOLDED)
+ #endif
+ 
++/*
++ * p?d_leaf() - true if this entry is a final mapping to a physical address.
++ * This differs from p?d_huge() by the fact that they are always available (if
++ * the architecture supports large pages at the appropriate level) even
++ * if CONFIG_HUGETLB_PAGE is not defined.
++ * Only meaningful when called on a valid entry.
++ */
++#ifndef pgd_leaf
++#define pgd_leaf(x)	0
++#endif
++#ifndef p4d_leaf
++#define p4d_leaf(x)	0
++#endif
++#ifndef pud_leaf
++#define pud_leaf(x)	0
++#endif
++#ifndef pmd_leaf
++#define pmd_leaf(x)	0
++#endif
++
+ #endif /* _ASM_GENERIC_PGTABLE_H */
 -- 
 2.20.1
 
