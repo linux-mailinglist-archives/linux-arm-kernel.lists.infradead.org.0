@@ -2,72 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24A0D7BC37
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 10:50:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D7307BCBD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 11:14:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=vA8vyHMgujpsmaaMynQekIXJAxJft5Jk7YE3pTgHXs8=; b=LI365UXxHWFDzpgXWEDQy3dW1
-	rjJCzRPPxaySSdEDpsz9buhoPJeOIG7u5NTt6n+7NjHs7Eao0X5hlbzdwL+91HARnlWrUe9xozpli
-	fNPXnHQugpMfix2Vlcwc3N62BtUzeuB/lpTg/2/rabiid++DpTgX0c9qC8tWHVKzORTWAqy22bUtl
-	k0P1WzFWHBe7uU/7gi/gli4jrCYc/bsOwc29vCo995n5jcFeqUhHpKcd/qV3r6L6i5n16sUwwEyYV
-	tzlYKqb607nTXxPFZvnMXKBGIbpbqNKXEV3fqtbhxxDw6w/+pq/rLkkuGoZuM+AQQZCoucQ18094j
-	vTAsSxx5Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=CHYoCROM06ljAegZvxo4E1f4YIeSI+h3i0tBg47dGAI=; b=sDh
+	s3xgA/v2z8xGd+YGnhVbYCo4gbdWgac/KZhbrMcMRKffJ+UCSr+jrvgF5boGRrrXjMVblIn73StYF
+	JLabBB0plIxlSGGYtBG454UbLOZTsF1YKUArhnycWnL6Yfg3vjLSUoC8MInWM5nFazaek3C8rUffU
+	w9U2It2KxnYD+KzOpFXKm16cMycvN1LGrasN3FPpOl5ojtbaYIfbWtKhj0eSdSNgpo70Ipi5h5h+w
+	PeWbyZHawU5zsOPpGx1tLM9fbGQMoigz8UZO3GzgaWUYSKkr6tM4HlJZpg2fP6lppt5JGaPvxuxZ+
+	Gf2D93EmepZ/Cp/23W4c4NJnDiaAjcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hskJF-0002I2-5O; Wed, 31 Jul 2019 08:50:09 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1hskgp-0005jP-6W; Wed, 31 Jul 2019 09:14:31 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hskIt-0002HZ-Rg
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 08:49:49 +0000
-Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
- [10.5.11.14])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 7ED5D81DF1;
- Wed, 31 Jul 2019 08:49:46 +0000 (UTC)
-Received: from [10.72.12.51] (ovpn-12-51.pek2.redhat.com [10.72.12.51])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 6DEDA5D9C5;
- Wed, 31 Jul 2019 08:49:34 +0000 (UTC)
-Subject: Re: WARNING in __mmdrop
-To: "Michael S. Tsirkin" <mst@redhat.com>
-References: <5cc94f15-b229-a290-55f3-8295266edb2b@redhat.com>
- <20190726082837-mutt-send-email-mst@kernel.org>
- <ada10dc9-6cab-e189-5289-6f9d3ff8fed2@redhat.com>
- <aaefa93e-a0de-1c55-feb0-509c87aae1f3@redhat.com>
- <20190726094756-mutt-send-email-mst@kernel.org>
- <0792ee09-b4b7-673c-2251-e5e0ce0fbe32@redhat.com>
- <20190729045127-mutt-send-email-mst@kernel.org>
- <4d43c094-44ed-dbac-b863-48fc3d754378@redhat.com>
- <20190729104028-mutt-send-email-mst@kernel.org>
- <96b1d67c-3a8d-1224-e9f0-5f7725a3dc10@redhat.com>
- <20190730110633-mutt-send-email-mst@kernel.org>
-From: Jason Wang <jasowang@redhat.com>
-Message-ID: <421a1af6-df06-e4a6-b34f-526ac123bc4a@redhat.com>
-Date: Wed, 31 Jul 2019 16:49:32 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <20190730110633-mutt-send-email-mst@kernel.org>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.25]); Wed, 31 Jul 2019 08:49:47 +0000 (UTC)
+ id 1hskga-0005iX-Tf
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 09:14:18 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 1B9A0200959;
+ Wed, 31 Jul 2019 11:14:13 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 56F3620093B;
+ Wed, 31 Jul 2019 11:14:09 +0200 (CEST)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net
+ [10.192.224.44])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id AF014402F2;
+ Wed, 31 Jul 2019 17:14:04 +0800 (SGT)
+From: Richard Zhu <hongxing.zhu@nxp.com>
+To: jassisinghbrar@gmail.com,
+	o.rempel@pengutronix.de,
+	aisheng.dong@nxp.com
+Subject: [PATCH v3] mailbox: imx: add support for imx v1 mu
+Date: Wed, 31 Jul 2019 16:51:47 +0800
+Message-Id: <1564563107-23736-1-git-send-email-hongxing.zhu@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_014947_928904_DDAF714E 
-X-CRM114-Status: GOOD (  26.96  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190731_021417_232819_E2FBEB03 
+X-CRM114-Status: GOOD (  13.02  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,96 +66,201 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mhocko@suse.com, peterz@infradead.org, ldv@altlinux.org,
- james.bottomley@hansenpartnership.com, linux-mm@kvack.org, namit@vmware.com,
- mingo@kernel.org, elena.reshetova@intel.com, keescook@chromium.org,
- aarcange@redhat.com, davem@davemloft.net, hch@infradead.org,
- christian@brauner.io,
- syzbot <syzbot+e58112d71f77113ddb7b@syzkaller.appspotmail.com>,
- syzkaller-bugs@googlegroups.com, jglisse@redhat.com, viro@zeniv.linux.org.uk,
- linux-arm-kernel@lists.infradead.org, wad@chromium.org,
- linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
- luto@amacapital.net, ebiederm@xmission.com, akpm@linux-foundation.org,
- guro@fb.com
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Richard Zhu <hongxing.zhu@nxp.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Ck9uIDIwMTkvNy8zMCDkuIvljYgxMTowOCwgTWljaGFlbCBTLiBUc2lya2luIHdyb3RlOgo+IE9u
-IFR1ZSwgSnVsIDMwLCAyMDE5IGF0IDAzOjQ0OjQ3UE0gKzA4MDAsIEphc29uIFdhbmcgd3JvdGU6
-Cj4+IE9uIDIwMTkvNy8yOSDkuIvljYgxMDo0NCwgTWljaGFlbCBTLiBUc2lya2luIHdyb3RlOgo+
-Pj4gT24gTW9uLCBKdWwgMjksIDIwMTkgYXQgMTA6MjQ6NDNQTSArMDgwMCwgSmFzb24gV2FuZyB3
-cm90ZToKPj4+PiBPbiAyMDE5LzcvMjkg5LiL5Y2INDo1OSwgTWljaGFlbCBTLiBUc2lya2luIHdy
-b3RlOgo+Pj4+PiBPbiBNb24sIEp1bCAyOSwgMjAxOSBhdCAwMTo1NDo0OVBNICswODAwLCBKYXNv
-biBXYW5nIHdyb3RlOgo+Pj4+Pj4gT24gMjAxOS83LzI2IOS4i+WNiDk6NDksIE1pY2hhZWwgUy4g
-VHNpcmtpbiB3cm90ZToKPj4+Pj4+Pj4+IE9rLCBsZXQgbWUgcmV0cnkgaWYgbmVjZXNzYXJ5IChi
-dXQgSSBkbyByZW1lbWJlciBJIGVuZCB1cCB3aXRoIGRlYWRsb2Nrcwo+Pj4+Pj4+Pj4gbGFzdCB0
-cnkpLgo+Pj4+Pj4+PiBPaywgSSBwbGF5IGEgbGl0dGxlIHdpdGggdGhpcy4gQW5kIGl0IHdvcmtz
-IHNvIGZhci4gV2lsbCBkbyBtb3JlIHRlc3RpbmcKPj4+Pj4+Pj4gdG9tb3Jyb3cuCj4+Pj4+Pj4+
-Cj4+Pj4+Pj4+IE9uZSByZWFzb24gY291bGQgYmUgSSBzd2l0Y2ggdG8gdXNlIGdldF91c2VyX3Bh
-Z2VzX2Zhc3QoKSB0bwo+Pj4+Pj4+PiBfX2dldF91c2VyX3BhZ2VzX2Zhc3QoKSB3aGljaCBkb2Vz
-bid0IG5lZWQgbW1hcF9zZW0uCj4+Pj4+Pj4+Cj4+Pj4+Pj4+IFRoYW5rcwo+Pj4+Pj4+IE9LIHRo
-YXQgc291bmRzIGdvb2QuIElmIHdlIGFsc28gc2V0IGEgZmxhZyB0byBtYWtlCj4+Pj4+Pj4gdmhv
-c3RfZXhjZWVkc193ZWlnaHQgZXhpdCwgdGhlbiBJIHRoaW5rIGl0IHdpbGwgYmUgYWxsIGdvb2Qu
-Cj4+Pj4+PiBBZnRlciBzb21lIGV4cGVyaW1lbnRzLCBJIGNhbWUgdXAgdHdvIG1ldGhvZHM6Cj4+
-Pj4+Pgo+Pj4+Pj4gMSkgc3dpdGNoIHRvIHVzZSB2cS0+bXV0ZXgsIHRoZW4gd2UgbXVzdCB0YWtl
-IHRoZSB2cSBsb2NrIGR1cmluZyByYW5nZQo+Pj4+Pj4gY2hlY2tpbmcgKGJ1dCBJIGRvbid0IHNl
-ZSBvYnZpb3VzIHNsb3dkb3duIGZvciAxNnZjcHVzICsgMTZxdWV1ZXMpLiBTZXR0aW5nCj4+Pj4+
-PiBmbGFncyBkdXJpbmcgd2VpZ2h0IGNoZWNrIHNob3VsZCB3b3JrIGJ1dCBpdCBzdGlsbCBjYW4n
-dCBhZGRyZXNzIHRoZSB3b3JzdAo+Pj4+Pj4gY2FzZTogd2FpdCBmb3IgdGhlIHBhZ2UgdG8gYmUg
-c3dhcHBlZCBpbi4gSXMgdGhpcyBhY2NlcHRhYmxlPwo+Pj4+Pj4KPj4+Pj4+IDIpIHVzaW5nIGN1
-cnJlbnQgUkNVIGJ1dCByZXBsYWNlIHN5bmNocm9uaXplX3JjdSgpIHdpdGggdmhvc3Rfd29ya19m
-bHVzaCgpLgo+Pj4+Pj4gVGhlIHdvcnN0IGNhc2UgaXMgdGhlIHNhbWUgYXMgMSkgYnV0IHdlIGNh
-biBjaGVjayByYW5nZSB3aXRob3V0IGhvbGRpbmcgYW55Cj4+Pj4+PiBsb2Nrcy4KPj4+Pj4+Cj4+
-Pj4+PiBXaGljaCBvbmUgZGlkIHlvdSBwcmVmZXI/Cj4+Pj4+Pgo+Pj4+Pj4gVGhhbmtzCj4+Pj4+
-IEkgd291bGQgcmF0aGVyIHdlIHN0YXJ0IHdpdGggMSBhbmQgc3dpdGNoIHRvIDIgYWZ0ZXIgd2UK
-Pj4+Pj4gY2FuIHNob3cgc29tZSBnYWluLgo+Pj4+Pgo+Pj4+PiBCdXQgdGhlIHdvcnN0IGNhc2Ug
-bmVlZHMgdG8gYmUgYWRkcmVzc2VkLgo+Pj4+IFllcy4KPj4+Pgo+Pj4+Cj4+Pj4+IEhvdyBhYm91
-dCBzZW5kaW5nIGEgc2lnbmFsIHRvCj4+Pj4+IHRoZSB2aG9zdCB0aHJlYWQ/ICBXZSB3aWxsIG5l
-ZWQgdG8gZml4IHVwIGVycm9yIGhhbmRsaW5nIChJIHRoaW5rIHRoYXQKPj4+Pj4gYXQgdGhlIG1v
-bWVudCBpdCB3aWxsIGVycm9yIG91dCBpbiB0aGF0IGNhc2UsIGhhbmRsaW5nIHRoaXMgYXMgRUZB
-VUxUIC0KPj4+Pj4gYW5kIHdlIGRvbid0IHdhbnQgdG8gZHJvcCBwYWNrZXRzIGlmIHdlIGNhbiBo
-ZWxwIGl0LCBhbmQgc3VyZWx5IG5vdAo+Pj4+PiBlbnRlciBhbnkgZXJyb3Igc3RhdGVzLiAgSW4g
-cGFydGljdWxhciBpdCBtaWdodCBiZSBlc3BlY2lhbGx5IHRyaWNreSBpZgo+Pj4+PiB3ZSB3cm90
-ZSBpbnRvIHVzZXJzcGFjZSBtZW1vcnkgYW5kIGFyZSBub3cgdHJ5aW5nIHRvIGxvZyB0aGUgd3Jp
-dGUuCj4+Pj4+IEkgZ3Vlc3Mgd2UgY2FuIGRpc2FibGUgdGhlIG9wdGltaXphdGlvbiBpZiBsb2cg
-aXMgZW5hYmxlZD8pLgo+Pj4+IFRoaXMgbWF5IHdvcmsgYnV0IHJlcXVpcmVzIGEgbG90IG9mIGNo
-YW5nZXMuCj4+PiBJIGFncmVlLgo+Pj4KPj4+PiBBbmQgYWN0dWFsbHkgaXQncyB0aGUgcHJpY2Ug
-b2YKPj4+PiB1c2luZyB2cSBtdXRleC4KPj4+IE5vdCBzdXJlIHdoYXQncyBtZWFudCBoZXJlLgo+
-Pgo+PiBJIG1lYW4gaWYgd2UgdXNlIHZxIG11dGV4LCBpdCBtZWFucyB0aGUgY3JpdGljYWwgc2Vj
-dGlvbiB3YXMgaW5jcmVhc2VkIGFuZAo+PiB3ZSBuZWVkIHRvIGRlYWwgd2l0aCBzd2FwcGluZyB0
-aGVuLgo+Pgo+Pgo+Pj4+IEFjdHVhbGx5LCB0aGUgY3JpdGljYWwgc2VjdGlvbiBzaG91bGQgYmUg
-cmF0aGVyIHNtYWxsLCBlLmcKPj4+PiBqdXN0IGluc2lkZSBtZW1vcnkgYWNjZXNzb3JzLgo+Pj4g
-QWxzbyB0cnVlLgo+Pj4KPj4+PiBJIHdvbmRlciB3aGV0aGVyIG9yIG5vdCBqdXN0IGRvIHN5bmNo
-cm9uaXplIG91ciBzZWxmIGxpa2U6Cj4+Pj4KPj4+PiBzdGF0aWMgdm9pZCBpbmxpbmUgdmhvc3Rf
-aW5jX3ZxX3JlZihzdHJ1Y3Qgdmhvc3RfdmlydHF1ZXVlICp2cSkKPj4+PiB7Cj4+Pj4gICDCoMKg
-wqDCoMKgwqDCoCBpbnQgcmVmID0gUkVBRF9PTkNFKHZxLT5yZWYpOwo+Pj4+Cj4+Pj4gICDCoMKg
-wqDCoMKgwqDCoCBXUklURV9PTkNFKHZxLT5yZWYsIHJlZiArIDEpOwo+Pj4+IHNtcF9ybWIoKTsK
-Pj4+PiB9Cj4+Pj4KPj4+PiBzdGF0aWMgdm9pZCBpbmxpbmUgdmhvc3RfZGVjX3ZxX3JlZihzdHJ1
-Y3Qgdmhvc3RfdmlydHF1ZXVlICp2cSkKPj4+PiB7Cj4+Pj4gICDCoMKgwqDCoMKgwqDCoCBpbnQg
-cmVmID0gUkVBRF9PTkNFKHZxLT5yZWYpOwo+Pj4+Cj4+Pj4gc21wX3dtYigpOwo+Pj4+ICAgwqDC
-oMKgwqDCoMKgwqAgV1JJVEVfT05DRSh2cS0+cmVmLCByZWYgLSAxKTsKPj4+PiB9Cj4+Pj4KPj4+
-PiBzdGF0aWMgdm9pZCBpbmxpbmUgdmhvc3Rfd2FpdF9mb3JfcmVmKHN0cnVjdCB2aG9zdF92aXJ0
-cXVldWUgKnZxKQo+Pj4+IHsKPj4+PiAgIMKgwqDCoMKgwqDCoMKgIHdoaWxlIChSRUFEX09OQ0Uo
-dnEtPnJlZikpOwo+Pj4+IG1iKCk7Cj4+Pj4gfQo+Pj4gTG9va3MgZ29vZCBidXQgSSdkIGxpa2Ug
-dG8gdGhpbmsgb2YgYSBzdHJhdGVneS9leGlzdGluZyBsb2NrIHRoYXQgbGV0IHVzCj4+PiBibG9j
-ayBwcm9wZXJseSBhcyBvcHBvc2VkIHRvIHNwaW5uaW5nLCB0aGF0IHdvdWxkIGJlIG1vcmUgZnJp
-ZW5kbHkgdG8KPj4+IGUuZy4gdGhlIHJlYWx0aW1lIHBhdGNoLgo+Pgo+PiBEb2VzIGl0IG1ha2Ug
-c2Vuc2UgdG8gZGlzYWJsZSBwcmVlbXB0aW9uIGluIHRoZSBjcml0aWNhbCBzZWN0aW9uPyBUaGVu
-IHdlCj4+IGRvbid0IG5lZWQgdG8gYmxvY2sgYW5kIHdlIGhhdmUgYSBkZXRlcm1pbmlzdGljIHRp
-bWUgc3BlbnQgb24gbWVtb3J5Cj4+IGFjY3Nzb3JzPwo+IEhtbSBtYXliZS4gSSdtIGdldHRpbmcg
-cmVhbGx5IG5lcnZpb3VzIGF0IHRoaXMgcG9pbnQgLSB3ZQo+IHNlZW0gdG8gYmUgdXNpbmcgZXZl
-cnkgdHJpY2sgaW4gdGhlIGJvb2suCj4KClllcywgbG9va2luZyBhdCB0aGUgc3luY2hyb25pemF0
-aW9uIGltcGxlbWVudGVkIGJ5IG90aGVyIE1NVSBub3RpZmllcnMuIApWaG9zdCBpcyBldmVuIHRo
-ZSBzaW1wbGVzdC4KCgo+Pj4+IE9yIHVzaW5nIHNtcF9sb2FkX2FjcXVpcmUoKS9zbXBfc3RvcmVf
-cmVsZWFzZSgpIGluc3RlYWQ/Cj4+Pj4KPj4+PiBUaGFua3MKPj4+IFRoZXNlIGFyZSBjaGVhcGVy
-IG9uIHg4NiwgeWVzLgo+Pgo+PiBXaWxsIHVzZSB0aGlzLgo+Pgo+PiBUaGFua3MKPj4KPj4KPiBU
-aGlzIGxvb2tzIHN1c3BpY2lvdXNseSBsaWtlIGEgc2VxbG9jayB0aG91Z2guCj4gQ2FuIHRoYXQg
-YmUgdXNlZCBzb21laG93Pwo+CgpzZXFsb2NrIGRvZXMgbm90IHByb3ZpZGUgYSB3YXkgdG8gc3lu
-Y2hyb25pemUgd2l0aCByZWFkZXJzLiBCdXQgSSBkaWQgCmJvcnJvdyBzb21lIGlkZWFzIGZyb20g
-c2VxbG9jayBhbmQgcG9zdCBhIG5ldyB2ZXJzaW9uLgoKUGxlYXNlIHJldmlldy4KClRoYW5rcwoK
-Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFy
-bS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9y
-ZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1r
-ZXJuZWwK
+There is a version1.0 MU on i.MX7ULP platform.
+One new version ID register is added, and it's offset is 0.
+TRn registers are defined at the offset 0x20 ~ 0x2C.
+RRn registers are defined at the offset 0x40 ~ 0x4C.
+SR/CR registers are defined at 0x60/0x64.
+Extend this driver to support it.
+
+Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
+Suggested-by: Oleksij Rempel <o.rempel@pengutronix.de>
+Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
+Reviewed-by: Oleksij Rempel <o.rempel@pengutronix.de>
+---
+Change logs:
+
+v2 --> v3:
+  - Format the patch-set refer to Oleksij's guidance.
+  - Init the register array by a simple way recommended by Oleksij.
+  - Add Reviewed-by: Oleksij Rempel <o.rempel@pengutronix.de> tag.
+
+v1 --> v2:
+  - Use to have the register layout linked on probe, suggested by
+  Oleksij Rempel <o.rempel@pengutronix.de>.
+  - Add Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com> tag.
+
+
+Richard Zhu (1):
+  mailbox: imx: add support for imx v1 mu
+
+ drivers/mailbox/imx-mailbox.c | 55 ++++++++++++++++++++++++++++++-------------
+ 1 file changed, 38 insertions(+), 17 deletions(-)
+
+diff --git a/drivers/mailbox/imx-mailbox.c b/drivers/mailbox/imx-mailbox.c
+index 25be8bb..c81be1c 100644
+--- a/drivers/mailbox/imx-mailbox.c
++++ b/drivers/mailbox/imx-mailbox.c
+@@ -12,19 +12,11 @@
+ #include <linux/of_device.h>
+ #include <linux/slab.h>
+ 
+-/* Transmit Register */
+-#define IMX_MU_xTRn(x)		(0x00 + 4 * (x))
+-/* Receive Register */
+-#define IMX_MU_xRRn(x)		(0x10 + 4 * (x))
+-/* Status Register */
+-#define IMX_MU_xSR		0x20
+ #define IMX_MU_xSR_GIPn(x)	BIT(28 + (3 - (x)))
+ #define IMX_MU_xSR_RFn(x)	BIT(24 + (3 - (x)))
+ #define IMX_MU_xSR_TEn(x)	BIT(20 + (3 - (x)))
+ #define IMX_MU_xSR_BRDIP	BIT(9)
+ 
+-/* Control Register */
+-#define IMX_MU_xCR		0x24
+ /* General Purpose Interrupt Enable */
+ #define IMX_MU_xCR_GIEn(x)	BIT(28 + (3 - (x)))
+ /* Receive Interrupt Enable */
+@@ -44,6 +36,13 @@ enum imx_mu_chan_type {
+ 	IMX_MU_TYPE_RXDB,	/* Rx doorbell */
+ };
+ 
++struct imx_mu_dcfg {
++	u32	xTR[4];		/* Transmit Registers */
++	u32	xRR[4];		/* Receive Registers */
++	u32	xSR;		/* Status Register */
++	u32	xCR;		/* Control Register */
++};
++
+ struct imx_mu_con_priv {
+ 	unsigned int		idx;
+ 	char			irq_desc[IMX_MU_CHAN_NAME_SIZE];
+@@ -61,12 +60,27 @@ struct imx_mu_priv {
+ 	struct mbox_chan	mbox_chans[IMX_MU_CHANS];
+ 
+ 	struct imx_mu_con_priv  con_priv[IMX_MU_CHANS];
++	const struct imx_mu_dcfg	*dcfg;
+ 	struct clk		*clk;
+ 	int			irq;
+ 
+ 	bool			side_b;
+ };
+ 
++static const struct imx_mu_dcfg imx_mu_cfg_imx6sx = {
++	.xTR	= {0x0, 0x4, 0x8, 0xc},
++	.xRR	= {0x10, 0x14, 0x18, 0x1c},
++	.xSR	= 0x20,
++	.xCR	= 0x24,
++};
++
++static const struct imx_mu_dcfg imx_mu_cfg_imx7ulp = {
++	.xTR	= {0x20, 0x24, 0x28, 0x2c},
++	.xRR	= {0x40, 0x44, 0x48, 0x4c},
++	.xSR	= 0x60,
++	.xCR	= 0x64,
++};
++
+ static struct imx_mu_priv *to_imx_mu_priv(struct mbox_controller *mbox)
+ {
+ 	return container_of(mbox, struct imx_mu_priv, mbox);
+@@ -88,10 +102,10 @@ static u32 imx_mu_xcr_rmw(struct imx_mu_priv *priv, u32 set, u32 clr)
+ 	u32 val;
+ 
+ 	spin_lock_irqsave(&priv->xcr_lock, flags);
+-	val = imx_mu_read(priv, IMX_MU_xCR);
++	val = imx_mu_read(priv, priv->dcfg->xCR);
+ 	val &= ~clr;
+ 	val |= set;
+-	imx_mu_write(priv, val, IMX_MU_xCR);
++	imx_mu_write(priv, val, priv->dcfg->xCR);
+ 	spin_unlock_irqrestore(&priv->xcr_lock, flags);
+ 
+ 	return val;
+@@ -111,8 +125,8 @@ static irqreturn_t imx_mu_isr(int irq, void *p)
+ 	struct imx_mu_con_priv *cp = chan->con_priv;
+ 	u32 val, ctrl, dat;
+ 
+-	ctrl = imx_mu_read(priv, IMX_MU_xCR);
+-	val = imx_mu_read(priv, IMX_MU_xSR);
++	ctrl = imx_mu_read(priv, priv->dcfg->xCR);
++	val = imx_mu_read(priv, priv->dcfg->xSR);
+ 
+ 	switch (cp->type) {
+ 	case IMX_MU_TYPE_TX:
+@@ -138,10 +152,10 @@ static irqreturn_t imx_mu_isr(int irq, void *p)
+ 		imx_mu_xcr_rmw(priv, 0, IMX_MU_xCR_TIEn(cp->idx));
+ 		mbox_chan_txdone(chan, 0);
+ 	} else if (val == IMX_MU_xSR_RFn(cp->idx)) {
+-		dat = imx_mu_read(priv, IMX_MU_xRRn(cp->idx));
++		dat = imx_mu_read(priv, priv->dcfg->xRR[cp->idx]);
+ 		mbox_chan_received_data(chan, (void *)&dat);
+ 	} else if (val == IMX_MU_xSR_GIPn(cp->idx)) {
+-		imx_mu_write(priv, IMX_MU_xSR_GIPn(cp->idx), IMX_MU_xSR);
++		imx_mu_write(priv, IMX_MU_xSR_GIPn(cp->idx), priv->dcfg->xSR);
+ 		mbox_chan_received_data(chan, NULL);
+ 	} else {
+ 		dev_warn_ratelimited(priv->dev, "Not handled interrupt\n");
+@@ -159,7 +173,7 @@ static int imx_mu_send_data(struct mbox_chan *chan, void *data)
+ 
+ 	switch (cp->type) {
+ 	case IMX_MU_TYPE_TX:
+-		imx_mu_write(priv, *arg, IMX_MU_xTRn(cp->idx));
++		imx_mu_write(priv, *arg, priv->dcfg->xTR[cp->idx]);
+ 		imx_mu_xcr_rmw(priv, IMX_MU_xCR_TIEn(cp->idx), 0);
+ 		break;
+ 	case IMX_MU_TYPE_TXDB:
+@@ -257,7 +271,7 @@ static void imx_mu_init_generic(struct imx_mu_priv *priv)
+ 		return;
+ 
+ 	/* Set default MU configuration */
+-	imx_mu_write(priv, 0, IMX_MU_xCR);
++	imx_mu_write(priv, 0, priv->dcfg->xCR);
+ }
+ 
+ static int imx_mu_probe(struct platform_device *pdev)
+@@ -265,6 +279,7 @@ static int imx_mu_probe(struct platform_device *pdev)
+ 	struct device *dev = &pdev->dev;
+ 	struct device_node *np = dev->of_node;
+ 	struct imx_mu_priv *priv;
++	const struct imx_mu_dcfg *dcfg;
+ 	unsigned int i;
+ 	int ret;
+ 
+@@ -282,6 +297,11 @@ static int imx_mu_probe(struct platform_device *pdev)
+ 	if (priv->irq < 0)
+ 		return priv->irq;
+ 
++	dcfg = of_device_get_match_data(dev);
++	if (!dcfg)
++		return -EINVAL;
++	priv->dcfg = dcfg;
++
+ 	priv->clk = devm_clk_get(dev, NULL);
+ 	if (IS_ERR(priv->clk)) {
+ 		if (PTR_ERR(priv->clk) != -ENOENT)
+@@ -335,7 +355,8 @@ static int imx_mu_remove(struct platform_device *pdev)
+ }
+ 
+ static const struct of_device_id imx_mu_dt_ids[] = {
+-	{ .compatible = "fsl,imx6sx-mu" },
++	{ .compatible = "fsl,imx7ulp-mu", .data = &imx_mu_cfg_imx7ulp },
++	{ .compatible = "fsl,imx6sx-mu", .data = &imx_mu_cfg_imx6sx },
+ 	{ },
+ };
+ MODULE_DEVICE_TABLE(of, imx_mu_dt_ids);
+-- 
+2.7.4
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
