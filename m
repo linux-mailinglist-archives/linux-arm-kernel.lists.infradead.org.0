@@ -2,49 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A87867C915
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 18:46:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1BAA77C91B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 18:46:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K/5D/reVUWKX7csVJmF/TwsAyYKZBsPsHNZqIycdZ7A=; b=WRCb1dM+oBKRcn
-	m7ZBAlHz4pCsI5eLEjvT4vdf90dKt1g4czD6/ZZMoJqIuBnLu7vbkybVVaFJNboxn8K9T7bmKfXmh
-	nU+lGgBDX9bLo7PT1tUjAAq5Jj8r8EdIVCfA4mGK5a45d0zAZGloITaEZ0VPaXK6Fj17KQapsZS8H
-	ZeCjQX3ODS5bnZMIjPKwOfVJGvpfNwOuQxoZzWpgN65L+6A0EMHfhYHupRcQucY7zAEfJOj+JRFSv
-	eA3Bwziv3UB3lK96/rEjLNPUhtEIfPn/EZCkcAWSbiY+i7l5LWdWviw8Jzo7InZkDtgSiO7nv22sJ
-	RsI0N/TVM9/f0xuu+FFw==;
+	List-Owner; bh=I150F5o5Df26rhOW+i0IEpLh/Iz95SXRRaFvmHyuc3s=; b=s2NN6OXf6wwRSi
+	7p7f0SGRYQ3ESz7Haj0sF/mHjaZEQN/NC2iCKIkIXWH0ce6gighjf8SdnSgD7zLj69PhApLJKgCp5
+	ud8G6JZ7x+0g3NDNo0tCSGVzNeOZqRnda+BqD+R00Cu+5B9x1K7+RJrDBgx9VI0IN81AR+wMdumPt
+	6hQL0HToLnlmDumvNC5fkhYXpnaKPHJ/EI5tbEfZwU8Y9q0w9M0UxTMWSRrcJHbg8ZO0vbY80Unux
+	uyecQR6PEd++bse9g8pDqEky4GCPLTOFYXA+tv9CiEMpbZ70gm5y+Xp6MXYbwJKNa4Hoaxstc/k/B
+	5EzYH7KtY5t0daWZWSyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsrjs-0001cd-5h; Wed, 31 Jul 2019 16:46:08 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hsrjk-0001c9-B0
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 16:46:01 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D6337337;
- Wed, 31 Jul 2019 09:45:59 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 814443F71F;
- Wed, 31 Jul 2019 09:45:58 -0700 (PDT)
-Date: Wed, 31 Jul 2019 17:45:56 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Viresh Kumar <viresh.kumar@linaro.org>
-Subject: Re: [PATCH v4.4 V2 24/43] arm64: Add skeleton to harden the branch
- predictor against aliasing attacks
-Message-ID: <20190731164556.GI39768@lakrids.cambridge.arm.com>
-References: <cover.1562908074.git.viresh.kumar@linaro.org>
- <4349161f0ed572bbc6bff64bad94aa96d07b27ff.1562908075.git.viresh.kumar@linaro.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <4349161f0ed572bbc6bff64bad94aa96d07b27ff.1562908075.git.viresh.kumar@linaro.org>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+	id 1hsrkS-0001rY-OB; Wed, 31 Jul 2019 16:46:44 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hsrkI-0001qc-9q
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 16:46:39 +0000
+Received: from kresse.hi.pengutronix.de ([2001:67c:670:100:1d::2a])
+ by metis.ext.pengutronix.de with esmtp (Exim 4.92)
+ (envelope-from <l.stach@pengutronix.de>)
+ id 1hsrkA-0005jG-Fj; Wed, 31 Jul 2019 18:46:26 +0200
+Message-ID: <1564591585.7267.22.camel@pengutronix.de>
+Subject: Re: [PATCH 2/2] reset: imx7: Fix IMX8MQ_RESET_MIPI_DSI_ defines
+From: Lucas Stach <l.stach@pengutronix.de>
+To: Guido =?ISO-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>, Philipp Zabel
+ <p.zabel@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>, Sascha Hauer
+ <s.hauer@pengutronix.de>, Pengutronix Kernel Team <kernel@pengutronix.de>, 
+ Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>, Rob
+ Herring <robh+dt@kernel.org>,  Mark Rutland <mark.rutland@arm.com>,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ devicetree@vger.kernel.org
+Date: Wed, 31 Jul 2019 18:46:25 +0200
+In-Reply-To: <bd1504122f6797536a253a37f3604f5c46f02ab2.1564591352.git.agx@sigxcpu.org>
+References: <cover.1564591352.git.agx@sigxcpu.org>
+ <bd1504122f6797536a253a37f3604f5c46f02ab2.1564591352.git.agx@sigxcpu.org>
+X-Mailer: Evolution 3.22.6-1+deb9u2 
+Mime-Version: 1.0
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::2a
+X-SA-Exim-Mail-From: l.stach@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_094600_420251_D90AA95D 
-X-CRM114-Status: GOOD (  14.84  )
+X-CRM114-CacheID: sfid-20190731_094637_881817_6EA42754 
+X-CRM114-Status: GOOD (  15.42  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -63,70 +69,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Julien Thierry <Julien.Thierry@arm.com>,
- Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>, stable@vger.kernel.org, mark.brown@arm.com,
- Russell King <rmk+kernel@arm.linux.org.uk>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jul 12, 2019 at 10:58:12AM +0530, Viresh Kumar wrote:
-> From: Will Deacon <will.deacon@arm.com>
-> 
-> commit 0f15adbb2861ce6f75ccfc5a92b19eae0ef327d0 upstream.
-> 
-> Aliasing attacks against CPU branch predictors can allow an attacker to
-> redirect speculative control flow on some CPUs and potentially divulge
-> information from one context to another.
-> 
-> This patch adds initial skeleton code behind a new Kconfig option to
-> enable implementation-specific mitigations against these attacks for
-> CPUs that are affected.
-> 
-> Co-developed-by: Marc Zyngier <marc.zyngier@arm.com>
-> Signed-off-by: Will Deacon <will.deacon@arm.com>
-> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-> [ v4.4: Changes made according to 4.4 codebase ]
-> Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
-
-[...]
-
->  /* id_aa64pfr0 */
-> +#define ID_AA64PFR0_CSV2_SHIFT		56
-
-Note: CSV3 is bits 63-60, 
-
-> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-> index 474b34243521..040a42d79990 100644
-> --- a/arch/arm64/kernel/cpufeature.c
-> +++ b/arch/arm64/kernel/cpufeature.c
-> @@ -83,7 +83,8 @@ static struct arm64_ftr_bits ftr_id_aa64isar0[] = {
->  };
->  
->  static struct arm64_ftr_bits ftr_id_aa64pfr0[] = {
-> -	ARM64_FTR_BITS(FTR_STRICT, FTR_EXACT, 32, 32, 0),
-> +	ARM64_FTR_BITS(FTR_NONSTRICT, FTR_LOWER_SAFE, ID_AA64PFR0_CSV2_SHIFT, 4, 0),
-> +	ARM64_FTR_BITS(FTR_STRICT, FTR_EXACT, 32, 28, 0),
-
-This line should be:
-
-	ARM64_FTR_BITS(FTR_STRICT, FTR_EXACT, 32, 24, 0),
-
-... as it was in the v4.9 backbort, making it cover bits 55:32. As in
-this patch, it covers 59:32, overlapping with CSV2.
-
-We also need to cater for bits 63:60. In the v4.9 backport, the meltdown
-bits were applied first, so nothing special was necessary.
-
-What's the plan w.r.t. meltdown mitigations and v4.4?
-
-Thanks,
-Mark.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+QW0gTWl0dHdvY2gsIGRlbiAzMS4wNy4yMDE5LCAxODo0MyArMDIwMCBzY2hyaWViIEd1aWRvIEfD
+vG50aGVyOgo+IFNvbWUgb2YgdGhlIG1pcGkgZHNpIHJlc2V0cyB3ZXJlIGNhbGxlZAo+IAo+IMKg
+IElNWDhNUV9SRVNFVF9NSVBJX0RJU18KPiAKPiBpbnN0ZWFkIG9mCj4gCj4gwqAgSU1YOE1RX1JF
+U0VUX01JUElfRFNJXwo+IAo+IFNpbmNlIHRoZXkncmUgRFNJIHJlbGF0ZWQgdGhpcyBsb29rcyBs
+aWtlIGEgdHlwby4KPiAKPiBJIHdhc24ndCBzdXJlIGlmIHRoaXMgc2hvdWxkIGJlIGEgc2luZ2xl
+IHBhdGNoIHNpbmNlIGl0IG90aGVyd2lzZSBicmVha3MKPiBiaXNlY3RhYmlsaXR5LiBJIGNvdWxk
+bid0IGZpbmQgYW55IGRldmljZSB0cmVlcyB1c2luZyB0aGlzIHlldC4KClllcywgSSB0aGluayB0
+aGlzIHNob3VsZCBiZSBzcXVhc2hlZCBpbnRvIGEgc2luZ2xlIGNvbW1pdC4gT3RoZXIgdGhhbgp0
+aGF0LCB0aGUgY2hhbmdlIGxvb2tzIGNvcnJlY3QuCgpSZWdhcmRzLApMdWNhcwoKPiBTaWduZWQt
+b2ZmLWJ5OiBHdWlkbyBHw7xudGhlciA8YWd4QHNpZ3hjcHUub3JnPgo+IC0tLQo+IMKgZHJpdmVy
+cy9yZXNldC9yZXNldC1pbXg3LmMgfCAxMiArKysrKystLS0tLS0KPiDCoDEgZmlsZSBjaGFuZ2Vk
+LCA2IGluc2VydGlvbnMoKyksIDYgZGVsZXRpb25zKC0pCj4gCj4gZGlmZiAtLWdpdCBhL2RyaXZl
+cnMvcmVzZXQvcmVzZXQtaW14Ny5jIGIvZHJpdmVycy9yZXNldC9yZXNldC1pbXg3LmMKPiBpbmRl
+eCAzZWNkNzcwZjkxMGIuLjE0NDNhNTVhMGMyOSAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3Jlc2V0
+L3Jlc2V0LWlteDcuYwo+ICsrKyBiL2RyaXZlcnMvcmVzZXQvcmVzZXQtaW14Ny5jCj4gQEAgLTE2
+OSw5ICsxNjksOSBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IGlteDdfc3JjX3NpZ25hbCBpbXg4bXFf
+c3JjX3NpZ25hbHNbSU1YOE1RX1JFU0VUX05VTV0gPSB7Cj4gPiA+IMKgCVtJTVg4TVFfUkVTRVRf
+T1RHMl9QSFlfUkVTRVRdCQk9IHsgU1JDX1VTQk9QSFkyX1JDUiwgQklUKDApIH0sCj4gPiA+IMKg
+CVtJTVg4TVFfUkVTRVRfTUlQSV9EU0lfUkVTRVRfQllURV9OXQk9IHsgU1JDX01JUElQSFlfUkNS
+LCBCSVQoMSkgfSwKPiA+ID4gwqAJW0lNWDhNUV9SRVNFVF9NSVBJX0RTSV9SRVNFVF9OXQkJPSB7
+IFNSQ19NSVBJUEhZX1JDUiwgQklUKDIpIH0sCj4gPiA+IC0JW0lNWDhNUV9SRVNFVF9NSVBJX0RJ
+U19EUElfUkVTRVRfTl0JPSB7IFNSQ19NSVBJUEhZX1JDUiwgQklUKDMpIH0sCj4gPiA+IC0JW0lN
+WDhNUV9SRVNFVF9NSVBJX0RJU19FU0NfUkVTRVRfTl0JPSB7IFNSQ19NSVBJUEhZX1JDUiwgQklU
+KDQpIH0sCj4gPiA+IC0JW0lNWDhNUV9SRVNFVF9NSVBJX0RJU19QQ0xLX1JFU0VUX05dCT0geyBT
+UkNfTUlQSVBIWV9SQ1IsIEJJVCg1KSB9LAo+ID4gPiArCVtJTVg4TVFfUkVTRVRfTUlQSV9EU0lf
+RFBJX1JFU0VUX05dCT0geyBTUkNfTUlQSVBIWV9SQ1IsIEJJVCgzKSB9LAo+ID4gPiArCVtJTVg4
+TVFfUkVTRVRfTUlQSV9EU0lfRVNDX1JFU0VUX05dCT0geyBTUkNfTUlQSVBIWV9SQ1IsIEJJVCg0
+KSB9LAo+ID4gPiArCVtJTVg4TVFfUkVTRVRfTUlQSV9EU0lfUENMS19SRVNFVF9OXQk9IHsgU1JD
+X01JUElQSFlfUkNSLCBCSVQoNSkgfSwKPiA+ID4gwqAJW0lNWDhNUV9SRVNFVF9QQ0lFUEhZXQkJ
+CT0geyBTUkNfUENJRVBIWV9SQ1IsCj4gPiDCoAkJCQkJCcKgwqDCoMKgQklUKDIpIHwgQklUKDEp
+IH0sCj4gPiA+IMKgCVtJTVg4TVFfUkVTRVRfUENJRVBIWV9QRVJTVF0JCT0geyBTUkNfUENJRVBI
+WV9SQ1IsIEJJVCgzKSB9LAo+IEBAIC0yMjAsOSArMjIwLDkgQEAgc3RhdGljIGludCBpbXg4bXFf
+cmVzZXRfc2V0KHN0cnVjdCByZXNldF9jb250cm9sbGVyX2RldiAqcmNkZXYsCj4gwqAKPiA+IMKg
+CWNhc2UgSU1YOE1RX1JFU0VUX1BDSUVfQ1RSTF9BUFBTX0VOOgo+ID4gPiDCoAljYXNlIElNWDhN
+UV9SRVNFVF9QQ0lFMl9DVFJMX0FQUFNfRU46CS8qIGZhbGx0aHJvdWdoICovCj4gPiA+IC0JY2Fz
+ZSBJTVg4TVFfUkVTRVRfTUlQSV9ESVNfUENMS19SRVNFVF9OOgkvKiBmYWxsdGhyb3VnaCAqLwo+
+ID4gPiAtCWNhc2UgSU1YOE1RX1JFU0VUX01JUElfRElTX0VTQ19SRVNFVF9OOgkvKiBmYWxsdGhy
+b3VnaCAqLwo+ID4gPiAtCWNhc2UgSU1YOE1RX1JFU0VUX01JUElfRElTX0RQSV9SRVNFVF9OOgkv
+KiBmYWxsdGhyb3VnaCAqLwo+ID4gPiArCWNhc2UgSU1YOE1RX1JFU0VUX01JUElfRFNJX1BDTEtf
+UkVTRVRfTjoJLyogZmFsbHRocm91Z2ggKi8KPiA+ID4gKwljYXNlIElNWDhNUV9SRVNFVF9NSVBJ
+X0RTSV9FU0NfUkVTRVRfTjoJLyogZmFsbHRocm91Z2ggKi8KPiA+ID4gKwljYXNlIElNWDhNUV9S
+RVNFVF9NSVBJX0RTSV9EUElfUkVTRVRfTjoJLyogZmFsbHRocm91Z2ggKi8KPiA+ID4gwqAJY2Fz
+ZSBJTVg4TVFfUkVTRVRfTUlQSV9EU0lfUkVTRVRfTjoJLyogZmFsbHRocm91Z2ggKi8KPiA+ID4g
+wqAJY2FzZSBJTVg4TVFfUkVTRVRfTUlQSV9EU0lfUkVTRVRfQllURV9OOgkvKiBmYWxsdGhyb3Vn
+aCAqLwo+ID4gwqAJCXZhbHVlID0gYXNzZXJ0ID8gMCA6IGJpdDsKCl9fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBs
+aXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
+cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
