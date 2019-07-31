@@ -2,77 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ACF077C80A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 18:01:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A18DE7C826
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 18:06:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oyyFGwaiVP6YPhCjlUu0TqiWYiD9JRaGieLn9MF+hA4=; b=ZDcv/P1jWSWxPM
-	7IHSza0qen+GiAQppp3jUNv+sMEpA2XUdln7ejI32N89enDMogyev/kcls0b6GFmzOnzOwH9xi4wu
-	z4uCq/Q6noATsV7dUZkxByWZvkyBDRnSTK9/bmYQFFv+TjTXwTtWGtES1ZMATdC4W+tz49J2Rnkqu
-	7ZaBGICCbU+r++ZuMU/XbGJ668/6YZSWFYXWLc/v04PyCYM75ILTX50vlqcY+WRxB49R+GBbsq0Xp
-	q/COQYvFZibeQp3IgNX8Hlpwqo+LRcr2FPgWzC210hZ7I/6csgZmdp5kbGn0Kcqhew7fcjtMjnW0F
-	GKQrj0hFPxCtyTuho/mA==;
+	List-Owner; bh=wNFngOtQ547y+5KbRIAB0p7j7XxRYJTDuMBbLzpRUNw=; b=l93HZ4hG9W+3re
+	JBiP2iGvPAF52yYjhRWGZR9TpLHp63EO3ApVHjovGpS1WlXP/b1CnPjU92TWkJr5rfHz3F6aBSwea
+	vnCv4Ar+K9KsVtacwog443vwWAA+L/Px/W/GNR8BxLSSQaBPq1Jq0NVBZGrhaYzMqHuwpNGyGIYus
+	afJoPPFDtaP1+SUXwwjRHD43Vi0gEHpflTruTcCQ8pPVEwFw38x+olR51GUOIVL5K/4SsrrDknG7R
+	HolcbXPM/D8G6N0tZtpsAN0twAI3wCaxxJflAVaPFX1P2z95/6WM/s8d+DjLZtY34YqFic06t9tqI
+	swTfZwm7+znjbA6lBc/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsr2e-0002v9-9C; Wed, 31 Jul 2019 16:01:28 +0000
-Received: from mail-ed1-x535.google.com ([2a00:1450:4864:20::535])
+	id 1hsr7K-0004al-3O; Wed, 31 Jul 2019 16:06:18 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsr2V-0002tb-KZ
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 16:01:20 +0000
-Received: by mail-ed1-x535.google.com with SMTP id e3so66185935edr.10
+ id 1hsr7B-0004aK-V6
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 16:06:11 +0000
+Received: by mail-pg1-x544.google.com with SMTP id n190so815436pgn.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 31 Jul 2019 09:01:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=OOHNaf/9zGja9offVGntbMakWJQ+ZGc77yJFGDwH+JY=;
- b=PNBn1vWg4YbSeIowQjqpM/X23ksXLc6f3T3CgQCwNd4mt2cTyo7ZzHCzFOd5K1E4Iy
- v4pzf31+LzNF9jhZ74VoLjDAEniolM4dYJ+UpfPPdEAH5TbYVVzHXfBlV66rIU0gUfPM
- zXZCAUoX/jNc4sONQMGRGcYLTOFVAvx6f2ztMskDsa9mZz05W288TyU311SRl1/Qk+jN
- o3QsrCKdgzFmQjIBIJerB/AjhVzS9O5yeQK/EnRHuNWXFMBWK65A+iIVESBIMYXjk92a
- E3loxdrE0PaHqIuCD95gAksQsGy7FbeKWPF1CvNgm1zmfkOVtwlh5lRNyxxrsPzpkM4r
- NEqw==
+ Wed, 31 Jul 2019 09:06:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=dw5dQKwX8ASG6Ts6LgBuSFToiWxM+evOZX45eitYT60=;
+ b=nXhNdnpzQ5klubCtfPKL3rrjBDdkcECAJhbzNalPGdQFtuHxtHL5KFS8kYJxX01zI+
+ 3GqX/EXvBnWwabWBFeHJWv8ENvMiwnd744dcdIMl23dIdrN9eqdKH3FEaOzYWG/FLHW+
+ snA2P3tt9xmBEcE0wzL9JO6YiPQXK/ecFHfTM=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=OOHNaf/9zGja9offVGntbMakWJQ+ZGc77yJFGDwH+JY=;
- b=g8QdcKTz8VxuE/bIUfKuLEkCB934rH0aBMy8vlokfOg6XW5JsMdjcoEA5VQVflYwaU
- tof3fWfNMEwnYADDGTQmgB4bngJD3WAlAH5qZ9KZzfSCchaEqgocVsNLS9B1NalQdWfU
- B15m9PGOz4xayhRhwCDrPg6RdGoPfcnCfzdaxke16SbT/hG0RTHNMeYufnytCbJ8fF72
- IqeUEb6MQyuMP9+dBCfC2sKKxXIgAY6YQGYwOXS9jc3c7yaWAq9tnNELj4unNPX+//fr
- 0BbtutMDnysSSJ2IDMmzR/1nl+aoQrcQpM+GixeMGOgUg749AJkROIaGmvHzK4zAbSuk
- Gx8w==
-X-Gm-Message-State: APjAAAUVSt42zw2QU1nDiYv/i/Hl+GvL0AdHxVNkqdJKmLs7DPtND5kP
- Ls6Y4tZHv9mha3BWWCThXyFUu5jf5KU8ix4c/wY=
-X-Google-Smtp-Source: APXvYqwueLVfu4t2A7GiLdjDq8PdZifweEvG9mIYGEKN2rj55OFqd4HfaufMCDSjY0DZ2kfK5Vn500PtEux8jGZKWu8=
-X-Received: by 2002:a17:906:9447:: with SMTP id
- z7mr29744336ejx.165.1564588877876; 
- Wed, 31 Jul 2019 09:01:17 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=dw5dQKwX8ASG6Ts6LgBuSFToiWxM+evOZX45eitYT60=;
+ b=UZuDUJM3R1wkG8E3751vsGpYOdQcLd9wU/jMu7zKBztEj+ts1kBsdqwwlch9HBmlnB
+ p6sLVd7Wsroz2ZIFajhpRfeOaT/O6sd4HbG3TgqooeYiKlgtMfVaji7Vqchfb8ywaC+D
+ DIFmM4cBpJbzPw+ZlZlr3PWhqmV+Jw+7WRIGSBClPv1KvqZgzswuAE4IRMl+8KPDGCvl
+ kSzzlic0F1+kv64ylIrtljpMeqHLHoq6+qsHmFb4bOnSYotMNDua+b3ZMUIWZXpJb0QV
+ t5SmKLKTCITi8yPWKk+xGKgZACVwBCFyMNWjt2+Q1RnCHZYleGCOglueEjB1uSop064I
+ ekqw==
+X-Gm-Message-State: APjAAAXorOnqYrUIS455yh6KX8/Rxd7zZVjaCQYVgKBfPSQdYlKFMm2v
+ SHuBmqBGpZfLkvYogzY/nX44HA==
+X-Google-Smtp-Source: APXvYqyp+rY/4Em+/ZUkiOjo98nR6upEwWWg4wXYmcr0OQ9k/QFwbGOVWkGPKkn54UdzEr838uzIjQ==
+X-Received: by 2002:a63:ff03:: with SMTP id k3mr19399349pgi.40.1564589168950; 
+ Wed, 31 Jul 2019 09:06:08 -0700 (PDT)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id j15sm98920836pfn.150.2019.07.31.09.06.07
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 31 Jul 2019 09:06:08 -0700 (PDT)
+Date: Wed, 31 Jul 2019 09:06:07 -0700
+From: Kees Cook <keescook@chromium.org>
+To: "Gustavo A. R. Silva" <gustavo@embeddedor.com>,
+ Ulf Hansson <ulf.hansson@linaro.org>,
+ Nicolas Ferre <nicolas.ferre@microchip.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ linux-mmc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Stephen Rothwell <sfr@canb.auug.org.au>
+Subject: Re: [PATCH] mmc: atmel-mci: Mark expected switch fall-throughs
+Message-ID: <201907310905.B90C6E25@keescook>
+References: <20190729000123.GA23902@embeddedor>
+ <20190731113216.ztxckd54a74g2lw5@M43218.corp.atmel.com>
 MIME-Version: 1.0
-References: <20190731153857.4045-1-pasha.tatashin@soleen.com>
- <20190731153857.4045-9-pasha.tatashin@soleen.com>
- <20190731155042.GF39768@lakrids.cambridge.arm.com>
-In-Reply-To: <20190731155042.GF39768@lakrids.cambridge.arm.com>
-From: Pavel Tatashin <pasha.tatashin@soleen.com>
-Date: Wed, 31 Jul 2019 12:01:07 -0400
-Message-ID: <CA+CK2bCBxff=ZcCMw196idR-1uvryACdzREebqrZeJ2JPwDNFw@mail.gmail.com>
-Subject: Re: [RFC v2 8/8] arm64, kexec: enable MMU during kexec relocation
-To: Mark Rutland <mark.rutland@arm.com>
+Content-Disposition: inline
+In-Reply-To: <20190731113216.ztxckd54a74g2lw5@M43218.corp.atmel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_090119_672376_F2871263 
-X-CRM114-Status: UNSURE (   8.40  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190731_090610_022026_08B2B979 
+X-CRM114-Status: GOOD (  11.89  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:535 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -83,6 +88,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,36 +100,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Vladimir Murzin <vladimir.murzin@arm.com>,
- Jonathan Corbet <corbet@lwn.net>, Marc Zyngier <marc.zyngier@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- kexec mailing list <kexec@lists.infradead.org>,
- LKML <linux-kernel@vger.kernel.org>, James Morris <jmorris@namei.org>,
- James Morse <james.morse@arm.com>, "Eric W. Biederman" <ebiederm@xmission.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, will@kernel.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> For various reasons, one cannot safely use Set/Way operations in
-> portable code. They only make sense for low-level platform-specific
-> firmware performing power management operations.
->
-> If you need to perform D-cache maintenance, you must use the VA
-> operations to do so.
+On Wed, Jul 31, 2019 at 01:32:16PM +0200, Ludovic Desroches wrote:
+> > drivers/mmc/host/atmel-mci.c:2426:40: warning: this statement may fall through [-Wimplicit-fallthrough=]
+> >    host->caps.need_notbusy_for_read_ops = 1;
+> >    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+> > drivers/mmc/host/atmel-mci.c:2427:2: note: here
+> >   case 0x100:
+> >   ^~~~
+> > 
+> > Reported-by: Stephen Rothwell <sfr@canb.auug.org.au>
+> > Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>
+> 
+> I don't know if there is a policy in the kernel about the expression to
+> use. As this one does the job
 
-Hi Mark,
+Yup, documented here:
+https://www.kernel.org/doc/html/latest/process/deprecated.html#implicit-switch-case-fall-through
 
-I see, thank you for letting me know. I will do d-cache flushing by VA
-in the next iteration. First I need to root cause/fix the bug
-described in the cover letter.
+> Acked-by: Ludovic Desroches <ludovic.desroches@microchip.com>
 
-Thank you,
-Pasha
+Thanks!
+
+-- 
+Kees Cook
 
 _______________________________________________
 linux-arm-kernel mailing list
