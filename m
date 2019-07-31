@@ -2,97 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B195A7CEA2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 22:32:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B7BB7CEB9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 22:36:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uXIvzZsnaR+IODpOQJL6humla6cbvToWfd6Jf9SqJzQ=; b=DM1ydFv1otNDoL
-	q0OEhumDPs234M7Lk4cow5efg9dR6EWVDbPycMUkG9uUlx31sXoNBF2iWK1ZmQiEtsrptcbiahT92
-	gth2Fjil36U+GYcM70ppf47DnoSMlYRDw4nJtlyGVkA+udwzkk69EoDc++oJygp1ameKqj0XvU4bO
-	r0NtC4fX6hxnoNwTyMGl2EIQk4u9yscRM9eJZXpiVyCcaXlJO6rTOYGbPnzZyJtAYw+f6F6zHyeoN
-	ReTjUgLj/wq0OzanVldKcqsu7ijpIIcgoUwjlxhm2jSHOh3W5D7OiFw4qiQnWKQjVx2X19+0PI0Fe
-	3mPcswduxvzKtT7Rf+uQ==;
+	List-Owner; bh=LeyU2/ErxZbWAuuUfJTPxcMhwIRe/bpIXZO8L14hInk=; b=AkekC9iSLF1v7n
+	zbpwt0katANNr9V7GoRrx1a/Ob/T0P9FKHpNM4GT4Uy0NVp/MA3jUJ+JvAoGpfibeZMa5tDQOVRGR
+	2je+0snX4E/XgbZkvECFEeI/D5jNAsffo7KmNu2O2qARSsNdG6iT4vnwTKAxpdT1FlnMTfJZPS9Wx
+	w93ldv5j0n3WUOTtpbKxfsUd6Py40fje0ApA/at8x9+L10VJBV+U2MoQw/4w6iV20s8+HgXSdpYQQ
+	kvkRFlLEM8fhbupT18Sfhq+diSkCCA+I8LAQBCuwxBeIkdQ4bZ4OjeU7vDjgCM/DMZ/HUxx2gfAsQ
+	dvt406vxHXDE71mssl7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsvGj-0007A5-AC; Wed, 31 Jul 2019 20:32:17 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1hsvLD-0000n0-JZ; Wed, 31 Jul 2019 20:36:55 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsvEV-0003Eg-NR
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 20:30:02 +0000
-Received: by mail-wm1-x342.google.com with SMTP id f17so60979979wme.2
+ id 1hsvL6-0000mb-N2
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 20:36:50 +0000
+Received: by mail-pg1-x541.google.com with SMTP id i70so21900661pgd.4
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 31 Jul 2019 13:29:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=yjwyF8h24+6MkrK2XCkddWq6ewDMefY3p/JkUhfcGxo=;
- b=qzcz7Cl6t4xg8YUv9zpXFmqkJhMi78y34+n3ItM5RM3vnuvyjB8v36KL6skLRPl1ST
- s06JvtshN15JWJg4/St3iS9Z0/Rg0NPCEszd7U+ijuu30Hu/8+Z6yXLfLnhCIvqnF3Oi
- JSgta8K8mMlRlPHlkBqTlIccnqXCMp2penXjc+q2Nb2fHmNWPiTgTtkuozyLQEfIq6Oa
- FOdJcwQzal3USJs9/3CYN6CHs3JYnb2TvvjR6iII4E2HD5EXpwqMHBkcZAr9QVEj76fa
- YWJ9VY7e8YpVSpVpAejGPGkBtSCZ7ZQOGC+voq0I+kw+vMMTzPvd2JX2c1LumyOWOsGf
- T5HQ==
+ Wed, 31 Jul 2019 13:36:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=+3m34La6ccE3Dbo0nKkW6PAk5aFsT9gCe5QCc84QY/M=;
+ b=EFmwE6xHJZlI7fbJj4ayQvxsXiguUUOE/YUP+QGUdsdsqzIBCNFzDXIfMHIIReAeq0
+ YxhAhukgJsf9Zk6f6yV8s2LP8u0sSr3FNuF8EyxKSURPID2YZC8Lbo6cduEjaNrfdCwf
+ DDLHx35Gdmi2wKQrsQFGdxEic/BLubYM2PdbA3n+K81Up9x+c+BTo+EUmFexA3wLK1m3
+ HTdCvaEPFAiwwj9xS/aDlE76GEOL8mwW7ic1UhN2QVquK+WFAQH9I/3g+WFQQCGFh/i7
+ YgzaMh2a0V/ot/+SNV3Vet++cuduT7j8egp6XJg1gKkL7jCKsSeeDqSN4CHI6M9V8jx9
+ 7pRA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=yjwyF8h24+6MkrK2XCkddWq6ewDMefY3p/JkUhfcGxo=;
- b=cGJdZW2PTmcIgO3ayIIXs7bGglVCyOjLkVMmp98lIFVhbriiAawOA0yvnkX0jvJZ7e
- a5CyoTlrNR4IqkGTKLQP7vuHtMQjmMGsmf+oU2Rwkcgr+L9y9QAkFXUxaEuK8s9tUsLP
- iiV+GY0Uz/BZCbhnOW2sf9hMF8+jMcfRRidRFZe/16ARQY8bgdKsM5OJFBYCXwInEMpP
- ZLizCA61hqfG5O+WzUoP1n0dQWBsHn9FI12sLP2aqzz/pZDhnv3Zdb4uGpix7GRjAi0C
- M8uevZVYetwkDCHpDDIek7mLD6KO+HI8guSq+nKmEwb4W641i+VkyYGywA+eHaYv5sIf
- cnWw==
-X-Gm-Message-State: APjAAAX+ks/sJYbw6DWXx1EAAeksS8y0ekXMZFOG/+bEeqZ7jteTHYII
- 3eCri5SCJhnmzb3LCsuc5dYo5A==
-X-Google-Smtp-Source: APXvYqwTYu0Ia5Oacgfvy6EXO0KAmKGEQZx1LX6+bJ4LHOQNL65LwwWoyMz5BQ/0ICXimEC4Sbzm9A==
-X-Received: by 2002:a05:600c:da:: with SMTP id
- u26mr108777580wmm.108.1564604998460; 
- Wed, 31 Jul 2019 13:29:58 -0700 (PDT)
-Received: from localhost.localdomain
- (19.red-176-86-136.dynamicip.rima-tde.net. [176.86.136.19])
- by smtp.gmail.com with ESMTPSA id i18sm91905591wrp.91.2019.07.31.13.29.56
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Wed, 31 Jul 2019 13:29:58 -0700 (PDT)
-From: Jorge Ramirez-Ortiz <jorge.ramirez-ortiz@linaro.org>
-To: jorge.ramirez-ortiz@linaro.org, bjorn.andersson@linaro.org,
- sboyd@kernel.org, david.brown@linaro.org, jassisinghbrar@gmail.com,
- mark.rutland@arm.com, mturquette@baylibre.com, robh+dt@kernel.org,
- will.deacon@arm.com, arnd@arndb.de, horms+renesas@verge.net.au,
- heiko@sntech.de, sibis@codeaurora.org, enric.balletbo@collabora.com,
- jagan@amarulasolutions.com, olof@lixom.net
-Subject: [PATCH v4 13/13] arm64: defconfig: Enable HFPLL
-Date: Wed, 31 Jul 2019 22:29:29 +0200
-Message-Id: <20190731202929.16443-14-jorge.ramirez-ortiz@linaro.org>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20190731202929.16443-1-jorge.ramirez-ortiz@linaro.org>
-References: <20190731202929.16443-1-jorge.ramirez-ortiz@linaro.org>
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=+3m34La6ccE3Dbo0nKkW6PAk5aFsT9gCe5QCc84QY/M=;
+ b=R+TiQ+U65msRu9q616bjkZEa1/oOCHgy0MUKzilzBSb+2YH+3fMhBduDtSRtsw3XEl
+ Ft90DP2P0wC9Tp7i7WIvaQBZb2Bbl7H4eEcww5x5aLu61iG4ajz7mCkFr7dbmSQ4NT9B
+ M0QE1Xc3Z4hGNThlJWmGIkYP0j++H528TP95H4j9pTnxNXRZkwgtYTkrKZU4YA2hnIIw
+ 9pWx1qn+LFuaufvdTGL03Oowf23h13oEjJJIDIIL3uDQ2AXH4L6wiwc0S3jjD55NoPrp
+ 7l2zmbZR9dAkdGtMwRJihXivdyy/HV38DzYxPE9ptMfy+Hoqgi2zwNRsH4MZrViu+V5Z
+ Q/6Q==
+X-Gm-Message-State: APjAAAW06ZHNinF7EFt2yUh7RjVD2YPSB7ATjTi3y/Ej8DuMu/N/W7+M
+ VYOIKnTcD89z6LV/vxTdNXM=
+X-Google-Smtp-Source: APXvYqybC01d0TByWxoDrJxw7C9lUUE3ShsoXGzUiQlHPWLWfdxiLqpUEK75wQICNDQ0Ydie1eRIGg==
+X-Received: by 2002:a63:e907:: with SMTP id i7mr113621516pgh.84.1564605407843; 
+ Wed, 31 Jul 2019 13:36:47 -0700 (PDT)
+Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
+ by smtp.gmail.com with ESMTPSA id h16sm77972581pfo.34.2019.07.31.13.36.46
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 31 Jul 2019 13:36:47 -0700 (PDT)
+Date: Wed, 31 Jul 2019 13:36:46 -0700
+From: Guenter Roeck <linux@roeck-us.net>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH 03/14] watchdog: pnx4008_wdt: allow compile-testing
+Message-ID: <20190731203646.GB14817@roeck-us.net>
+References: <20190731195713.3150463-1-arnd@arndb.de>
+ <20190731195713.3150463-4-arnd@arndb.de>
+ <20190731202343.GA14817@roeck-us.net>
+ <CAK8P3a2=gqeCMtdzdqg4d1n6v1-cdaHObeUoVXeB+=Okwd1rqA@mail.gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAK8P3a2=gqeCMtdzdqg4d1n6v1-cdaHObeUoVXeB+=Okwd1rqA@mail.gmail.com>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_132959_947756_BE91211C 
-X-CRM114-Status: UNSURE (   9.72  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190731_133648_779367_471F2694 
+X-CRM114-Status: GOOD (  16.12  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (groeck7[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (groeck7[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,42 +106,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- khasim.mohammed@linaro.org, linux-kernel@vger.kernel.org,
- amit.kucheria@linaro.org, linux-clk@vger.kernel.org, vkoul@kernel.org,
- niklas.cassel@linaro.org, georgi.djakov@linaro.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Andrew Lunn <andrew@lunn.ch>,
+ LINUXWATCHDOG <linux-watchdog@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Jason Cooper <jason@lakedaemon.net>, "David S. Miller" <davem@davemloft.net>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Gregory Clement <gregory.clement@bootlin.com>,
+ USB list <linux-usb@vger.kernel.org>, Russell King <linux@armlinux.org.uk>,
+ Vladimir Zapolskiy <vz@mleia.com>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>, soc@kernel.org,
+ Networking <netdev@vger.kernel.org>, Alan Stern <stern@rowland.harvard.edu>,
+ linux-serial@vger.kernel.org, Sylvain Lemieux <slemieux.tyco@gmail.com>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The high frequency pll is required on compatible Qualcomm SoCs to
-support the CPU frequency scaling feature.
+On Wed, Jul 31, 2019 at 10:26:35PM +0200, Arnd Bergmann wrote:
+> On Wed, Jul 31, 2019 at 10:23 PM Guenter Roeck <linux@roeck-us.net> wrote:
+> >
+> > On Wed, Jul 31, 2019 at 09:56:45PM +0200, Arnd Bergmann wrote:
+> > > The only thing that prevents building this driver on other
+> > > platforms is the mach/hardware.h include, which is not actually
+> > > used here at all, so remove the line and allow CONFIG_COMPILE_TEST.
+> > >
+> > > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+> >
+> > Reviewed-by: Guenter Roeck <linux@roeck-us.net>
+> >
+> > What is the plan for this patch ? Push through watchdog
+> > or through your branch ?
+> 
+> I would prefer my branch so I can apply the final patch without waiting
+> for another release. Not in a hurry though, so if some other maintainer
 
-Co-developed-by: Niklas Cassel <niklas.cassel@linaro.org>
-Signed-off-by: Niklas Cassel <niklas.cassel@linaro.org>
-Signed-off-by: Jorge Ramirez-Ortiz <jorge.ramirez-ortiz@linaro.org>
-Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
----
- arch/arm64/configs/defconfig | 1 +
- 1 file changed, 1 insertion(+)
+Ok with me.
 
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 34c3ac4e4b79..04b7fb26a942 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -698,6 +698,7 @@ CONFIG_MSM_MMCC_8996=y
- CONFIG_MSM_GCC_8998=y
- CONFIG_QCS_GCC_404=y
- CONFIG_SDM_GCC_845=y
-+CONFIG_QCOM_HFPLL=y
- CONFIG_HWSPINLOCK=y
- CONFIG_HWSPINLOCK_QCOM=y
- CONFIG_ARM_MHU=y
--- 
-2.22.0
-
+Guenter
 
 _______________________________________________
 linux-arm-kernel mailing list
