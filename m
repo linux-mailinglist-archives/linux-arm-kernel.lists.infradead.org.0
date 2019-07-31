@@ -2,76 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 074147C1DD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 14:44:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CFC397C1D4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 14:43:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mG6Xl/kXB5BzXQxeuzlOadot852YgEYz/ZjicAnnaPA=; b=IueRY0aXDxP+M2
-	7iLBZAQXycJi6lV9zeDXQfY5rAJj6sTrDdrQNQrdjk3AJJFrFsUQreIiGSNELmNQclxKnY/wIDtgL
-	FD2FA/Y2Cy4FfTzJ3J2ia/21Tondn9B3sN6+sfPnpIDaLIaA4H/W53dbSfGMWh/Q6DoMCcZiGN2NR
-	J4yh7sqViC5RzUWZMD/UmQgURvV3B5j58hBMeC8k+kGdqHXnB1t4vn6RHb05EeKmB/AI9SMvWKFui
-	Y23PKpTkGQJqJxTWRq2EAq+9JwLOXF8He7pHrJYkt030UhlQwAR1zR6yH8Gzlq9ttWwMpPKA68grt
-	ZcGDYJR+i5su9pmECFWA==;
+	List-Owner; bh=SXE8TtnIHU8VtXy3vEgJWbTjy6+zRLvRmBP7U+buMFQ=; b=gXdEGlcgg8rn8M
+	tePDMNxQUN15gyZRNJheyIVKGcPkOrGYOhqJhXyHIPBpSXPsoic11sHhvrnzLJqXpXqTGoHC7Qw42
+	q8spg8bo5qBt0Jh221Mg1zSJVABBgmHFR2vsNBhlCplXSsJshU1Zj+QhdTTaF/CZHLjEqlFQvFukv
+	Au9FfqVXC1ebOwUwHcs9fmTKN4kvbuuH/j12PWmt+ySBUIX/0+DseiYKV2c+t7m6WGWNU9wDCl6sg
+	Kisp/b2nN+fEgP0WisRLAZSuUfQcBKSgVYNQZrmUZo12q1CpD7llGP6qL5y5i/CM97e8maQWHjgwg
+	9lpWUOfubMx5JBewy4tw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsnxc-0005pr-CF; Wed, 31 Jul 2019 12:44:04 +0000
+	id 1hsnx2-00052W-4E; Wed, 31 Jul 2019 12:43:28 +0000
 Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsntr-00008h-EH
+ id 1hsntq-0000Cr-Oq
  for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 12:40:16 +0000
-Received: by mail-wm1-x342.google.com with SMTP id 207so60662854wma.1
+Received: by mail-wm1-x342.google.com with SMTP id a15so60648424wmj.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 31 Jul 2019 05:40:07 -0700 (PDT)
+ Wed, 31 Jul 2019 05:40:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=vlLAZG3376vvQfzbiUNES3FqbulnmazxfSm05rud9uw=;
- b=DhP64lAedWvamo5W5NN3GbWU9atBaCuUKmKTJnuEu3/Q6NUXbc5eQ/QJshDzy0Otjh
- /owLX8DA1RrZS89bHOW8e1LI53M7I9FuQMgCNi829xpzCzFcbB0rCmqHrnD/fBUeCVO5
- qCdACesG6Sm21tnByeCJSWeD9JXw/1MyIBydetMPrQHz12+VKhTZJn5BVKn7hSTlc8uo
- AObZiLM7xMJb6jqTP7riFTsok5p2fqw9Mxq/lVLcXlPAMUsBpsx7KerNv0DZ2b9BpikY
- iAaXHGM2U0CsVTUVwMtc8fFV7DLMtP2iXcYfCdoZxraBQ+A/7J/yVAQN26sZDlrI29Rv
- ub6Q==
+ bh=Xe8le1rAv9c22BBejf6Z3Lo2hw7eI8a1UNBXoRk+Yi0=;
+ b=PGy/fco8tRozJWdUNRKJw//67DCItYzo0GDNZdudkaCV2yG+Rw8+yQWdoVaNY8+QU1
+ 0PIu8KXUHfLeBH5NfYmCwWTM6C31+kCNYxGVCPPM9onPEivGwRibufEoEiWuzU6VzP3A
+ HSuLJewrwWp80zR9pq8ZgR9bKGWUioXhe6VXJAKpQs8NdTGblynjD0TfTuInDyo+sGW3
+ 7AK5n+ERxPpoDG4qX+34eyJhW8D9VtTNK2RLoPFSPC8jgyEFujPJWFKIY4WQDN4qKdnK
+ 5q1gRL3RAcWJSYHpTM1uIaJMpbtnCsTMBed8DY7bH0v1LA4R8AQzIEeuEiJooDFHP/NA
+ QRdw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=vlLAZG3376vvQfzbiUNES3FqbulnmazxfSm05rud9uw=;
- b=Muuj9uTLMUcPilBykIvbYZ9wqtIi4CApwcjsqsB0Ojmsex1RnDStK+zrV6q5N+zrVn
- WrCv7wYjdXeWRv6KoyPwWYdBTYJ1dd7gp1EfftKD1H+NeIjj1JNK78jzVMniexV+wsPK
- TLcON9scDs/xzU5qVdkkR5GWws9GkwEMSq74tVxQ4eDD6qxvbiRPFNzoIa2jdIGYIhFL
- 3KR43c8He0G78C7xdQXwuVk/Gd6odtZ7vMRhuP0jWwgkKMmRNCeas8sZdNtilaIwUH5t
- XJS5Wsl8j0Jt83qyzIqgDHourBmweeZ/DL7oNo0UblvP0hcxPMnGNmIbuE4+HKNt/znH
- eFUg==
-X-Gm-Message-State: APjAAAVwXcgUQV7CYXcQz5RIetGL/DQkXLeZVLtDQecUF9BkgMOkJSxL
- gKqqD6TaU7e9EdV3AlZ2VjncOw==
-X-Google-Smtp-Source: APXvYqwdhbsgWyNma56uwz+SEJ9Te+cQwX4Tmf9Ld57twlw4YO82/Yo6aO7smXGtz7lwTn98lqEPIw==
-X-Received: by 2002:a7b:c1c1:: with SMTP id a1mr116321019wmj.31.1564576805437; 
- Wed, 31 Jul 2019 05:40:05 -0700 (PDT)
+ bh=Xe8le1rAv9c22BBejf6Z3Lo2hw7eI8a1UNBXoRk+Yi0=;
+ b=E2BqFzx4XGJMXSuxl98g5PYmLY2dneR9TsvMLTtr/+cVi+mhhcWvHpJ011CDPRlWhJ
+ dEg2gN3oiF88mg7rj3Lrsr/eDrxF0wInRHuWWHxMEf06BjrmGuxB69E52+asUxdkvYIb
+ C9nrzE+CaIN3/mkG8sxKf4IfrHlWpYs82lYxsGTGRZufDJ4GXYw3ZGfoaVRA22VMKfjk
+ Qv5P8BjeLV5M8Y1sCaAIPmyo3as09qW/m8T/qKCjzcVgVFHC9r6wbxs347SM0QWop1Xi
+ tr/l17aHjKlcg3K+00vIWLt5NvQg+JADSve5Uae1uTjXOJG/F3OFymLoxtOy0kYCIkkJ
+ ms9Q==
+X-Gm-Message-State: APjAAAVuYbWbs2e00p42wDaU2FnYPXDh1eWVcs9zpc2cH92hI5k8lf7E
+ r1uGYErg0OwJeFNvUpgOBMXUAQ==
+X-Google-Smtp-Source: APXvYqywTaw2xEUJ8dm/vPRRqzOvCCaKYRb7o4Drdbuga9kRSBPZbcQ8wxouvF1zlJTXZWYegGf9ww==
+X-Received: by 2002:a1c:6a0e:: with SMTP id
+ f14mr117570578wmc.154.1564576806140; 
+ Wed, 31 Jul 2019 05:40:06 -0700 (PDT)
 Received: from bender.baylibre.local
  (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id x185sm62504271wmg.46.2019.07.31.05.40.04
+ by smtp.gmail.com with ESMTPSA id x185sm62504271wmg.46.2019.07.31.05.40.05
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 31 Jul 2019 05:40:04 -0700 (PDT)
+ Wed, 31 Jul 2019 05:40:05 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: khilman@baylibre.com,
 	devicetree@vger.kernel.org
-Subject: [PATCH 2/6] dt-bindings: arm: amlogic: add bindings for G12B based
- S922X SoC
-Date: Wed, 31 Jul 2019 14:39:56 +0200
-Message-Id: <20190731124000.22072-3-narmstrong@baylibre.com>
+Subject: [PATCH 3/6] dt-bindings: arm: amlogic: add bindings for the Amlogic
+ G12B based A311D SoC
+Date: Wed, 31 Jul 2019 14:39:57 +0200
+Message-Id: <20190731124000.22072-4-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190731124000.22072-1-narmstrong@baylibre.com>
 References: <20190731124000.22072-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_054011_517518_7E1D7806 
-X-CRM114-Status: GOOD (  10.26  )
+X-CRM114-CacheID: sfid-20190731_054011_437879_E9EC9763 
+X-CRM114-Status: UNSURE (   9.52  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -104,26 +106,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a specific compatible for the Amlogic G12B family based S922X SoC
-to differentiate with the A311D SoC from the same family.
+Add a specific compatible for the Amlogic G12B bases A311D SoC used
+in the Khadas VIM3.
 
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- Documentation/devicetree/bindings/arm/amlogic.yaml | 1 +
- 1 file changed, 1 insertion(+)
+ Documentation/devicetree/bindings/arm/amlogic.yaml | 5 +++++
+ 1 file changed, 5 insertions(+)
 
 diff --git a/Documentation/devicetree/bindings/arm/amlogic.yaml b/Documentation/devicetree/bindings/arm/amlogic.yaml
-index 325c6fd3566d..3c3bc806cd23 100644
+index 3c3bc806cd23..efa032d12402 100644
 --- a/Documentation/devicetree/bindings/arm/amlogic.yaml
 +++ b/Documentation/devicetree/bindings/arm/amlogic.yaml
-@@ -139,6 +139,7 @@ properties:
+@@ -135,6 +135,11 @@ properties:
+               - amlogic,u200
+           - const: amlogic,g12a
+ 
++      - description: Boards with the Amlogic Meson G12B A311D SoC
++        items:
++          - const: amlogic,a311d
++          - const: amlogic,g12b
++
+       - description: Boards with the Amlogic Meson G12B S922X SoC
          items:
            - enum:
-               - hardkernel,odroid-n2
-+          - const: amlogic,s922x
-           - const: amlogic,g12b
- 
- ...
 -- 
 2.22.0
 
