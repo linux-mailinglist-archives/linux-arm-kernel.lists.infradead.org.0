@@ -2,56 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 82E667C8FF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 18:42:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 56DB57C910
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 18:44:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Wu5GZcnyvKdOY8tAjlDEioEB7BjcBC31ArcVRcs2uqM=; b=T14+CBv4obQl/J
-	KptNOqEEQhXtpQAlEuRHwtIWVdJuC3ry/K+30r8ce5nDt5xO/RHr7lY4QhUN8A29EcfaaTz79s5YF
-	wN/oJsbURLsbvAtUlSYmOsNu7GAPcI1s/GppxshJhtHPqTR/Ee1ReEDbBMtz60OZnhQ9GqWV2eEfi
-	h9gLaS5WBV2LIHpzZ3texGC8eaxck+bPkVF2lJOrt3hDmXf0tnZlze2COWizyE0giXvkG/THcPBFQ
-	y9kYiZ2Me9iOAsNySmMeWYdP3hMvB6U4U0G1O/KqT2DHHiafOGlu6sWRHVcNZdmyS1c950jzpjd83
-	p2e8BNAxzuM7vlbIMd4A==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=p/KCpb42At1GfNGW2JzU0Gf533NNOFhlpNQ7nxfYlOw=; b=ofZjyhI61zp9qS
+	Y0Qm5V2zzCp2gb6C8P2BRSJTUJlhfKCnidf+ZfXiGPtsAlAgwM0uRVxKrLarctwKqQkeN4mv4O/ul
+	b/Eduo3AvW+kCvjQC7Amt//9Om1r3+zk9LPKtJTBqoWn6Anfg2NW8Lvm+utVOeKHThRQ817Ps9tKT
+	XveyUdX3eStRhPfkygk9877WAhsIRIBXVm/Ex1fDFtMdMlVKaO7Z38jFWf0TGiFfSqrGN8DOp/dY8
+	On0NR+FC34PaoZUpZ6k7Pz2VKakRPzD0QHEuoLYkToN6zj/lbN2mxwSX8ZJ8FrGCYS5oY1xqiIOdd
+	W6AzlYSzmioh6nSxUcOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsrg9-0006da-ML; Wed, 31 Jul 2019 16:42:17 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hsri3-0007mO-5g; Wed, 31 Jul 2019 16:44:15 +0000
+Received: from honk.sigxcpu.org ([24.134.29.49])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsrft-0006TL-MS
- for linux-arm-kernel@bombadil.infradead.org; Wed, 31 Jul 2019 16:42:01 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=AQ1rm0BJguZRkAuzXiZ9Hbe3Xn52gT5iksqzCf0p7HQ=; b=I8n1ruyBxDVj/42+Tb0QXwcJ9
- IBxb9yKIofZX5OcNRa5GLuljo7mOabyXzJ7WTsR5Y/aXYijgrxrqQkvG6G57bp73wa9bOuKlZESWx
- drv18MkNPkn2X+vun/Ciww1F/HkH9+1rKuKEEAOg+JlOj+ZNbuGqScARWGN9fmFVI18pWufL/B/KV
- Q24dq85NhOiyFufItcIJS3yjsQp4Z++tRfCOywzMAwxBrmYL8KpSUfoCLDwUbYkE4aSYao+Stg4l9
- EbdDorjVirUHclmN14oXRQDYhyjzsVqILsrCLDszM8Y398RRs5U/AuaAPgJaXP9zzPQMIFy/QQHQr
- 1AqTk+06A==;
-Received: from j217100.upc-j.chello.nl ([24.132.217.100]
- helo=hirez.programming.kicks-ass.net)
- by merlin.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hsrfp-0004cQ-Lt; Wed, 31 Jul 2019 16:41:58 +0000
-Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
- id 574472029F4C9; Wed, 31 Jul 2019 18:41:56 +0200 (CEST)
-Date: Wed, 31 Jul 2019 18:41:56 +0200
-From: Peter Zijlstra <peterz@infradead.org>
-To: Andrew Murray <andrew.murray@arm.com>
-Subject: Re: [PATCH v2 1/5] jump_label: Don't warn on __exit jump entries
-Message-ID: <20190731164156.GX31398@hirez.programming.kicks-ass.net>
-References: <20190731161256.22210-1-andrew.murray@arm.com>
- <20190731161256.22210-2-andrew.murray@arm.com>
+ id 1hsrhR-0007Gt-KI
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 16:43:39 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by honk.sigxcpu.org (Postfix) with ESMTP id 4CD8BFB04;
+ Wed, 31 Jul 2019 18:43:36 +0200 (CEST)
+X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
+Received: from honk.sigxcpu.org ([127.0.0.1])
+ by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id 9TGo641ILXY0; Wed, 31 Jul 2019 18:43:33 +0200 (CEST)
+Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
+ id 5EB7746D8A; Wed, 31 Jul 2019 18:43:31 +0200 (CEST)
+From: =?UTF-8?q?Guido=20G=C3=BCnther?= <agx@sigxcpu.org>
+To: Philipp Zabel <p.zabel@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ devicetree@vger.kernel.org
+Subject: [PATCH 0/2] imx: Fix typo in iMQ8MQ reset names
+Date: Wed, 31 Jul 2019 18:43:29 +0200
+Message-Id: <cover.1564591352.git.agx@sigxcpu.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190731161256.22210-2-andrew.murray@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190731_094337_819140_97B2129C 
+X-CRM114-Status: UNSURE (   7.43  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [24.134.29.49 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,68 +69,20 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Boqun Feng <boqun.feng@gmail.com>,
- Will Deacon <will.deacon@arm.com>, Ard.Biesheuvel@arm.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 31, 2019 at 05:12:52PM +0100, Andrew Murray wrote:
-> On architectures that discard .exit.* sections at runtime, a
-> warning is printed for each jump label that is used within an
-> in-kernel __exit annotated function:
-> 
-> can't patch jump_label at ehci_hcd_cleanup+0x8/0x3c
-> WARNING: CPU: 0 PID: 1 at kernel/jump_label.c:410 __jump_label_update+0x12c/0x138
-> 
-> As these functions will never get executed (they are free'd along
-> with the rest of initmem) - we do not need to patch them and should
-> not display any warnings.
-> 
-> The warning is displayed because the test required to satisfy
-> jump_entry_is_init is based on init_section_contains (__init_begin to
-> __init_end) whereas the test in __jump_label_update is based on
-> init_kernel_text (_sinittext to _einittext) via kernel_text_address).
-> 
-> In addition to fixing this, we also remove an out-of-date comment
-> and use a WARN instead of a WARN_ONCE.
-> 
-> Fixes: 19483677684b ("jump_label: Annotate entries that operate on __init code earlier")
-> Signed-off-by: Andrew Murray <andrew.murray@arm.com>
-> ---
->  kernel/jump_label.c | 4 +++-
->  1 file changed, 3 insertions(+), 1 deletion(-)
-> 
-> diff --git a/kernel/jump_label.c b/kernel/jump_label.c
-> index df3008419a1d..c984078a5c28 100644
-> --- a/kernel/jump_label.c
-> +++ b/kernel/jump_label.c
-> @@ -407,7 +407,9 @@ static bool jump_label_can_update(struct jump_entry *entry, bool init)
->  		return false;
->  
->  	if (!kernel_text_address(jump_entry_code(entry))) {
-> -		WARN_ONCE(1, "can't patch jump_label at %pS", (void *)jump_entry_code(entry));
-> +		if (!jump_entry_is_init(entry))
-> +			WARN_ONCE(1, "can't patch jump_label at %pS",
-> +				  (void *)jump_entry_code(entry));
-
-It seems to me we can writes that as:
-
-		WARN_ONCE(!jump_entry_is_init(entry),
-			  "can't patch jump_label at %pS",
-			  (void *)jump_entry_code(entry));
-
->  		return false;
->  	}
-
-Other than that,
-
-Acked-by: Peter Zijlstra (Intel) <peterz@infradead.org>
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+U29tZSBvZiB0aGUgbWlwaSBkc2kgcmVzZXRzIHdlcmUgY2FsbGVkCgogIElNWDhNUV9SRVNFVF9N
+SVBJX0RJU18KCmluc3RlYWQgb2YKCiAgSU1YOE1RX1JFU0VUX01JUElfRFNJXwoKU2luY2UgdGhl
+eSdyZSBEU0kgcmVsYXRlZCB0aGlzIGxvb2tzIGxpa2UgYSB0eXBvLgoKR3VpZG8gR8O8bnRoZXIg
+KDIpOgogIGR0LWJpbmRpbmdzOiByZXNldDogRml4IHR5cG8gaW4gaW14OG1xIHJlc2V0cwogIHJl
+c2V0OiBpbXg3OiBGaXggSU1YOE1RX1JFU0VUX01JUElfRFNJXyBkZWZpbmVzCgogZHJpdmVycy9y
+ZXNldC9yZXNldC1pbXg3LmMgICAgICAgICAgICAgICB8IDEyICsrKysrKy0tLS0tLQogaW5jbHVk
+ZS9kdC1iaW5kaW5ncy9yZXNldC9pbXg4bXEtcmVzZXQuaCB8ICA2ICsrKy0tLQogMiBmaWxlcyBj
+aGFuZ2VkLCA5IGluc2VydGlvbnMoKyksIDkgZGVsZXRpb25zKC0pCgotLSAKMi4yMC4xCgoKX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtl
+cm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
+dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5l
+bAo=
