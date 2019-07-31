@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 36E057C9F9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 19:09:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4081E7CA03
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 19:12:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u9KOQayj4SkzbDorYtpnCCNLE6C1GDxQhIRDH+VUPsI=; b=tS7ayCGOjZrnS4
-	6L/xC7Q+n+s/dWgfjMW/yeRTbwFc0J7Sbll4rRVtaR83J29V+iO+2GaJvulBs3IW0ynRpqjiiz09T
-	tBgMLK4dYOs9xvjJSyuXUm7mdPJIUiwaFCjPZG7pUxg4QnMTqvOQQ071ivljM984qGcladLkEs2SZ
-	TidVjR+O0oGlO/j9NBidfpr8hux4dAv7/YjwhREo53X8txApqzGrhHOuJkFtnSSnyikATsfXEigPs
-	60uBNdqNDBsf7j3dFQOe0ZDfaCYjlbAde4+3vx3/itkA3SGA8FkixtL5ZBpcpYU1dLW2lXKoeKz/5
-	yqOgwTKnjYHKiCgPfprw==;
+	List-Owner; bh=r8iUQBmrXRb4DFn08MyXaCt3IjkK2+6M71lAdxqko/w=; b=lijScyXA+LJjaE
+	OmvMrsMxhjr/QVxqCZiWDaaDydtyQuhlsSQMQ12Oj1DD375qJyuMGJzj0/aa1MWrKsEOZH5U1gcI4
+	LGht34ugSFO0zWwCJ6yRO26xGejaqZGgdqswt/acthOiGNzHoeuOr4l4rX9631LmcfIiicPA0AB7w
+	THWmRFPTMQ2qStxyIDsu/Ijaohzta+lcnXkU5QMm2p0soEtadkg5uc3hqpXj5EuOFg1CZjhTlIgEf
+	Hh3115qEx3qs71M7sS4h5w/fcT58O3SM6GGofbd/qM8S2VcGbPrgr05AeO1PqRBvcnEra9V7BjO58
+	Jqm7lIbOc32/s+KD4KaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hss6c-00019l-LV; Wed, 31 Jul 2019 17:09:38 +0000
+	id 1hss8w-0002cp-LD; Wed, 31 Jul 2019 17:12:02 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hss6W-00018x-F1
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 17:09:33 +0000
+ id 1hss8p-0002cU-G0
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 17:11:56 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9CD78337;
- Wed, 31 Jul 2019 10:09:31 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CDBD2337;
+ Wed, 31 Jul 2019 10:11:54 -0700 (PDT)
 Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
  by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- B75903F71F; Wed, 31 Jul 2019 10:09:29 -0700 (PDT)
-Date: Wed, 31 Jul 2019 18:09:27 +0100
+ 435BF3F71F; Wed, 31 Jul 2019 10:11:54 -0700 (PDT)
+Date: Wed, 31 Jul 2019 18:11:52 +0100
 From: Catalin Marinas <catalin.marinas@arm.com>
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Subject: Re: [PATCH] arm64: vdso: Fix Makefile regression
-Message-ID: <20190731170927.GD17773@arrakis.emea.arm.com>
-References: <CAGnkfhyT=2kPsiUy-V=aCA_s-C4BXgD++hAZ9ii1h0p94mMVQA@mail.gmail.com>
- <20190729125421.32482-1-vincenzo.frascino@arm.com>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH] arm64: cpufeature: Fix feature comparison for
+ CTR_EL0.{CWG,ERG}
+Message-ID: <20190731171151.GE17773@arrakis.emea.arm.com>
+References: <20190730144020.3518-1-will@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190729125421.32482-1-vincenzo.frascino@arm.com>
+In-Reply-To: <20190730144020.3518-1-will@kernel.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_100932_547875_56BA10D9 
-X-CRM114-Status: GOOD (  11.23  )
+X-CRM114-CacheID: sfid-20190731_101155_580066_83D881FF 
+X-CRM114-Status: GOOD (  10.22  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -61,43 +61,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, arnd@arndb.de, pcc@google.com,
- Matteo Croce <mcroce@redhat.com>, 0x7f454c46@gmail.com,
- linux-kernel@vger.kernel.org, salyzyn@android.com, andre.przywara@arm.com,
- luto@kernel.org, linux@rasmusvillemoes.dk, tglx@linutronix.de,
- sthotton@marvell.com, will@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org,
+ Suzuki Poulose <suzuki.poulose@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jul 29, 2019 at 01:54:21PM +0100, Vincenzo Frascino wrote:
-> Using an old .config in combination with "make oldconfig" can cause
-> an incorrect detection of the compat compiler:
+On Tue, Jul 30, 2019 at 03:40:20PM +0100, Will Deacon wrote:
+> If CTR_EL0.{CWG,ERG} are 0b0000 then they must be interpreted to have
+> their architecturally maximum values, which defeats the use of
+> FTR_HIGHER_SAFE when sanitising CPU ID registers on heterogeneous
+> machines.
 > 
-> $ grep CROSS_COMPILE_COMPAT .config
-> CONFIG_CROSS_COMPILE_COMPAT_VDSO=""
+> Introduce FTR_HIGHER_OR_ZERO_SAFE so that these fields effectively
+> saturate at zero.
 > 
-> $ make oldconfig && make
-> arch/arm64/Makefile:58: gcc not found, check CROSS_COMPILE_COMPAT.
-> Stop.
-> 
-> Accordingly to the section 7.2 of the GNU Make manual "Syntax of
-> Conditionals", "When the value results from complex expansions of
-> variables and functions, expansions you would consider empty may
-> actually contain whitespace characters and thus are not seen as
-> empty. However, you can use the strip function to avoid interpreting
-> whitespace as a non-empty value."
-> 
-> Fix the issue adding strip to the CROSS_COMPILE_COMPAT string
-> evaluation.
-> 
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Reported-by: Matteo Croce <mcroce@redhat.com>
-> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+> Cc: Suzuki Poulose <suzuki.poulose@arm.com>
+> Fixes: 3c739b571084 ("arm64: Keep track of CPU feature registers")
+> Signed-off-by: Will Deacon <will@kernel.org>
 
-Queued for 5.3-rc3. Thanks.
+Queued for 5.3-rc3 (with a cc stable tag). Thanks.
 
 -- 
 Catalin
