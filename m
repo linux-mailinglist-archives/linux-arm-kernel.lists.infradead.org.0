@@ -2,90 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C6C87CAB9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 19:41:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 637527CAD0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 19:45:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fuWssJbUjSgfaHIxGkZGnsgKzPZ5zfE9lfzDefGSG2o=; b=sR3kSYz6p6wSyh
-	TexyLr7yCxzxMYegD3ve3QPkfTIDGKjYOf1YFqrXp6KXuLpT+FW7CsbdwFU4OO94DJW0S421u6CHF
-	d5aqNeoMxmt6hktaNxRmMFYvdLvmP8KMQnriDGfhRw3PbYGFbABiQ5ikHY8G/trFm/MalzOkVhoU+
-	6xZ9ujyecv+k0dnQWrPp6cqAAxtbQvaRhztuQGt88uR3KHpgrETBhUlfE1zfEqx8Ek/2GDEaLAIzJ
-	r6lg7brCiZnZrqGMvR7daP4CRjnaWbutSDNYCK7+f/oexu24NJNGBGwagQ0IP0uEsWSu0JEH3PMJp
-	fLXdqnEA1Vv+Fa5vKzOg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=r98h3yKgVFbr9f1YWfwGpa9ZCbJDIPf0Yb0kIvCDxCM=; b=lnGPL0HhYB538F
+	Tgqiqbu5NyBY9VruWdWfdMch2Mw0Jwk0f/lXHLlSwlKP/h1ZliG/Aeo2mpYAOaeGIuQh9IGi8Jl/A
+	D/H+6OBLHnfGGt5nfLzX5KFpiorDhK5jTH+8yj5kzaDWxPsH1eL3F/26HELKqcxiWevtAvUCzqJmi
+	PSe44bwIJOy8jG/fkK5+Jmsao9gGrCSvFLFvVCCC5t3eRqW1eFToDXvvmI2mrBllLpY5iY8bHHD0I
+	UWeGWzuzEpkYssorKJHz4EgOx/Qwcidv8KJjI2KW50nKXaQAySYlQqUDzF4LP96cWjdozwJbH9Z2B
+	3/SMI424gtYDFqtdbPNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hssau-0007k7-LA; Wed, 31 Jul 2019 17:40:56 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1hssfb-0001QX-BP; Wed, 31 Jul 2019 17:45:47 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hssam-0007hW-Kv
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 17:40:50 +0000
-Received: by mail-lj1-x241.google.com with SMTP id i21so66465527ljj.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 31 Jul 2019 10:40:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=q4EnWjuoFwvcg+PQNQKDl7SJ3NRTDjvZysMShIcjoKI=;
- b=EEGiqtvzdTGgq8ThRpTRzSRRTP6VrSrlPO4IYYXSqpYLJ1pWHT/smy+zbIF9spBxdG
- OPhZlUiy86fYmMqsbJ+fR75XB09QgUuke4Bs8aa9PYGkrTqbahFJVfjl93nk0Q3ff36o
- 4CNAKmIBe5E32PDAW7yKpvLxNuV1lPeTQUHA7iJHMdqmLX+3nLVkm0utsFCM5H/+5JXa
- cBmKEid218rblPtIjLKPhBu5EWKqEkzkwF5vunTY0SixI56msLOoXv2XPukyyoSH7Ve0
- 1euc7zpXBnh6gBCuZ/uLrqxkrgPUuqlZAXL7Q36Q29fJ3is4HY3M9XrjfIGJL1jp8j8S
- 2l7g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=q4EnWjuoFwvcg+PQNQKDl7SJ3NRTDjvZysMShIcjoKI=;
- b=uWsapciWdHM8COqqh5AR7pM71VGe+pt8itbuNPPQ/004iQ3kotHbqu92Y89QCpG/b+
- aI8/LfqPlTzUywpW/8RBVrZE531oHkRmu3fy5YJHI8EqAkNlEoCSBrQzIPJft0GOLhnY
- w9aBoeJxUCOzsv6t2k8nBgVZ0lHgrWOJTygWZvqbOnm/TlQNGFzHOXDxb7tb7bseJhm8
- Lg6jHODJuS8YPQQeOLbNMw2mxLXMdjXQSepofYiBgw75hrEStdVrQDYE684Qk9rWJsxj
- WmhEHRsS3SYOP5C6idkWpDPh3zN6QvRhmIWQAT+w9sfCmTpd0f2PEkZUYZJ8f+aoktaR
- d0Zw==
-X-Gm-Message-State: APjAAAUCmNHFM6cAemUM4iR2qzLY37WFiDVY+SL7zkaf3510DY4lU0Xi
- Ir38yIRBh1TJwCaO2eVy5ob87uO+Y6SD0BGLaDE=
-X-Google-Smtp-Source: APXvYqyt0Od36zT0596GjCdSHptbQnUWvWqMyOnVl/5FQep+ssyLLf+KxKKOId+xoiOrQ+OT9NTjMGldgO9EObJPhWk=
-X-Received: by 2002:a2e:4e12:: with SMTP id c18mr14933002ljb.211.1564594845880; 
- Wed, 31 Jul 2019 10:40:45 -0700 (PDT)
+ id 1hssfV-0001QQ-A7; Wed, 31 Jul 2019 17:45:41 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:Content-Type:
+ In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender
+ :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=pEAfotcFLsFotBYT9u4zeRqv3NeeQAlDety7JPTf8Pk=; b=dw+SeYbkgl15ByYdw4RBRwGpI5
+ OQRbhMYNZQy3bzAx5TIQcL6nZ4sauiIJzRse8yongu5JqPY6aoJalrxRvlk01U/pCwDOw/2pmFJaD
+ P1gRHYsrEp+s+iq8YUjI4MGLu//erIQdXrho9cOTBXZKeLz8JFQpS+d+T6SVCRqsaBTceMtiBPAL9
+ K6qZqrz0yuqnuZ3oMdNwOb05wHSS4MloOj9+DKViGd5eR1DPhulBDXdM72Qf3YxGHWdhjFCH5PT3m
+ ioWvgp3GDSoi8julWf1KoQx7EnwTzV5jyNDyqyWBQzDDbz0lPbNq/vbmvDf5oWMOc7VHyKca5WKls
+ QitLDIVA==;
+Received: from static-50-53-52-16.bvtn.or.frontiernet.net ([50.53.52.16]
+ helo=[192.168.1.17])
+ by merlin.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
+ id 1hssfH-000639-C3; Wed, 31 Jul 2019 17:45:28 +0000
+Subject: Re: microblaze HAVE_MEMBLOCK_NODE_MAP dependency (was Re: [PATCH v2
+ 0/5] mm: Enable CONFIG_NODES_SPAN_OTHER_NODES by default for NUMA)
+To: Mike Rapoport <rppt@linux.ibm.com>, Michal Hocko <mhocko@kernel.org>
+References: <730368c5-1711-89ae-e3ef-65418b17ddc9@os.amperecomputing.com>
+ <20190730081415.GN9330@dhcp22.suse.cz> <20190731062420.GC21422@rapoport-lnx>
+ <20190731080309.GZ9330@dhcp22.suse.cz> <20190731111422.GA14538@rapoport-lnx>
+ <20190731114016.GI9330@dhcp22.suse.cz> <20190731122631.GB14538@rapoport-lnx>
+ <20190731130037.GN9330@dhcp22.suse.cz> <20190731142129.GA24998@rapoport-lnx>
+ <20190731144114.GY9330@dhcp22.suse.cz> <20190731171510.GB24998@rapoport-lnx>
+From: Randy Dunlap <rdunlap@infradead.org>
+Message-ID: <57b08afb-d07e-a24f-4cfe-5a633227ed6b@infradead.org>
+Date: Wed, 31 Jul 2019 10:45:24 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-References: <cover.1563983037.git.agx@sigxcpu.org>
- <20190731143532.GA1935@bogon.m.sigxcpu.org>
- <CAOMZO5Djoi7EuXapkg+dQ6HR2oZZHrw+vnjc837Gxee-Nh00Hw@mail.gmail.com>
- <13373313.BzCyiC4ED7@jernej-laptop>
-In-Reply-To: <13373313.BzCyiC4ED7@jernej-laptop>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Wed, 31 Jul 2019 14:40:57 -0300
-Message-ID: <CAOMZO5Ak7QFzEM8Qt5XAZBa1CB602fygK+FBDK2iTvxWA4y+oA@mail.gmail.com>
-Subject: Re: [PATCH 3/3] drm/bridge: Add NWL MIPI DSI host controller support
-To: =?UTF-8?Q?Jernej_=C5=A0krabec?= <jernej.skrabec@siol.net>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_104048_688779_A29BCDED 
-X-CRM114-Status: UNSURE (   9.69  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+In-Reply-To: <20190731171510.GB24998@rapoport-lnx>
+Content-Language: en-US
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,32 +66,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Pengutronix Kernel Team <kernel@pengutronix.de>,
- Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
- Lee Jones <lee.jones@linaro.org>,
- =?UTF-8?Q?Guido_G=C3=BCnther?= <agx@sigxcpu.org>,
- Jonas Karlman <jonas@kwiboo.se>, linux-kernel <linux-kernel@vger.kernel.org>,
- DRI mailing list <dri-devel@lists.freedesktop.org>,
- Andrzej Hajda <a.hajda@samsung.com>, Rob Herring <robh+dt@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>, Daniel Vetter <daniel@ffwll.ch>,
- Robert Chiras <robert.chiras@nxp.com>, Chris Healy <cphealy@gmail.com>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>,
+ "open list:MEMORY MANAGEMENT" <linux-mm@kvack.org>,
+ Paul Mackerras <paulus@samba.org>, "H . Peter Anvin" <hpa@zytor.com>,
+ "sparclinux@vger.kernel.org" <sparclinux@vger.kernel.org>,
+ Alexander Duyck <alexander.h.duyck@linux.intel.com>,
+ Will Deacon <will@kernel.org>,
+ "linux-s390@vger.kernel.org" <linux-s390@vger.kernel.org>,
+ Michael Ellerman <mpe@ellerman.id.au>, "x86@kernel.org" <x86@kernel.org>,
+ "willy@infradead.org" <willy@infradead.org>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Hoan Tran OS <hoan@os.amperecomputing.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Open Source Submission <patches@amperecomputing.com>,
+ Pavel Tatashin <pavel.tatashin@microsoft.com>,
+ Vasily Gorbik <gor@linux.ibm.com>, Will Deacon <will.deacon@arm.com>,
+ Borislav Petkov <bp@alien8.de>, Thomas Gleixner <tglx@linutronix.de>,
+ Vlastimil Babka <vbabka@suse.cz>, Oscar Salvador <osalvador@suse.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Michal Simek <monstr@monstr.eu>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
+ "David S . Miller" <davem@davemloft.net>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gV2VkLCBKdWwgMzEsIDIwMTkgYXQgMTo0MCBQTSBKZXJuZWogxaBrcmFiZWMgPGplcm5lai5z
-a3JhYmVjQHNpb2wubmV0PiB3cm90ZToKCj4gPiBZZXMsIEkgdW5kZXJzdG9vZCB0aGUgaWRlYSwg
-YnV0IHRoaXMgd291bGQgcHJpbnQ6Cj4gPgo+ID4gZW5zYWJsaW5nIG9yIGRpc3NhYmxpbmcgOi0p
-Cj4KPiBObywgaXQgd291bGRuJ3QuIFRoYXQgZXh0cmEgInMiIGlzIHBhcnQgb2YgIiVzIiwgZS5n
-LiBwYXJ0IG9mIGZvcm1hdCBzcGVjaWZpZXIuCgpPcHMsIHlvdSBhcmUgcmlnaHQuIFNvcnJ5IGFi
-b3V0IHRoYXQhCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-XwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmlu
-ZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
-aW51eC1hcm0ta2VybmVsCg==
+On 7/31/19 10:15 AM, Mike Rapoport wrote:
+> On Wed, Jul 31, 2019 at 04:41:14PM +0200, Michal Hocko wrote:
+>> On Wed 31-07-19 17:21:29, Mike Rapoport wrote:
+>>> On Wed, Jul 31, 2019 at 03:00:37PM +0200, Michal Hocko wrote:
+>>>>
+>>>> I am sorry, but I still do not follow. Who is consuming that node id
+>>>> information when NUMA=n. In other words why cannot we simply do
+>>>  
+>>> We can, I think nobody cared to change it.
+>>
+>> It would be great if somebody with the actual HW could try it out.
+>> I can throw a patch but I do not even have a cross compiler in my
+>> toolbox.
+> 
+> Well, it compiles :)
+
+Adding Michal Simek <monstr@monstr.eu>.
+
+It's not clear that the MICROBLAZE maintainer is still supporting MICROBLAZE.
+
+>>>> diff --git a/arch/microblaze/mm/init.c b/arch/microblaze/mm/init.c
+>>>> index a015a951c8b7..3a47e8db8d1c 100644
+>>>> --- a/arch/microblaze/mm/init.c
+>>>> +++ b/arch/microblaze/mm/init.c
+>>>> @@ -175,14 +175,9 @@ void __init setup_memory(void)
+>>>>  
+>>>>  		start_pfn = memblock_region_memory_base_pfn(reg);
+>>>>  		end_pfn = memblock_region_memory_end_pfn(reg);
+>>>> -		memblock_set_node(start_pfn << PAGE_SHIFT,
+>>>> -				  (end_pfn - start_pfn) << PAGE_SHIFT,
+>>>> -				  &memblock.memory, 0);
+>>>> +		memory_present(0, start_pfn << PAGE_SHIFT, end_pfn << PAGE_SHIFT);
+>>>
+>>> memory_present() expects pfns, the shift is not needed.
+>>
+>> Right.
+>>
+>> -- 
+>> Michal Hocko
+>> SUSE Labs
+
+
+-- 
+~Randy
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
