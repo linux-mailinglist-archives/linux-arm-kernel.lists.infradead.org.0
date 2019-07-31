@@ -2,62 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 019D57BF37
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 13:24:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 84F647BF86
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 13:31:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=It419h/NU+/C8Dy9KH1nvhPScH7OqYUkDno+TZNsWrs=; b=HuStEfG8tWKik/dZIxij0h3A/
-	6A1IawGpPzGSOMKz2pbrOWXTk+26geceHHsP2ngiNsTxcQQ5AQ/6RTOnZU14+c5zng371bZlMRKWl
-	dN18LFYYIYjP9tLXnaTtngRdq/1qtlxd1l8zwDBQG8kErHvKKgI0B7iUYwlcIHSduFqAKqGG+XXYQ
-	aO0hcS8cQt4P8nuCNnYQ96JuGu80AsNqV2+BsTaOKA9rlNzaV7iOo1E8WF5qkpYvKs0aDSY0EMRjN
-	CbtjU69N0aLxfZS28r0vLWPJYd+gtMtSNSPJ6DDEAbO28bQRhq7OLZ1VMCr5mFYNwT3kOOBdmhTKf
-	zTZmNlBmw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
+	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	References:List-Owner; bh=gLxN63bW4TEDvzW231ivw5NRYhniY+y1E7WP7Rce5LU=; b=HEy
+	P1qXeoqKoN3ISsQaGBjZ6Pzv1wWsehbAgs8xMFyssmkHFzXaDzpWkg/MXjvJMjZzveU+6mWSs7Bai
+	Thnj+yNoJgoydh838Lc0bVcyyGE6aG6/3nz6e+17WXu3C5JCs4FHxKbjwR8hM6YMuF3LMNiUScVYf
+	6Vlu/yZeyK6qzwT8twntc/VH2SMNFQWMIK/j9VouOBWVPbOUOKgpPEoFO471ASUgBEiO5/k2JOZJI
+	2V2B2JZlkMTHtkJZQH9hjOqbD+Jd0Xfc6bo041Mzs2d8JcYtQD3Z1MMHs29TVE1OjqNd/U+hFW4DC
+	hPNk5zloHiW4vCTPDD0yUkA042aRxjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsmj2-0007Hs-1x; Wed, 31 Jul 2019 11:24:56 +0000
+	id 1hsmpI-0003oS-3S; Wed, 31 Jul 2019 11:31:24 +0000
 Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsmiw-0007HW-2n
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 11:24:51 +0000
+ id 1hsmnx-0000tg-Pl
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 11:30:13 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
+ Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=NNkKpSgMuJ0KRRXiISTaddlqY+jM8kpTuvVm8K7loEo=; b=m/zIh+7lsaMz2pnXHbCTB9AVJ
- mV40UnIA7bnq14o76hcNSjOpD6JbreoPgt+MGAR2O1CuqmWu8ljttfVxcmnORwU/401Nbl2UEq9BG
- TuOwWWGC8jd4PU1/gHwfmgG4gkJEMReqYJEJ13AdV3B2stt59YpknqEboxMWWgIJa1Ueo=;
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+ List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
+ List-Archive; bh=qVwW0pPyCeBbMZcq8baEchug6az9I8W8IrbQzrWy+Hg=; b=dK9FSytLKVuG
+ 5f+I87sxZk5Iq1u05g7ycSp9tQvqkl24sxzYMs9JL3Z08C+xDsnAhWv3Lm9bSkP8E3nfmOYfaP20w
+ ku7RD4nTVctpsusYx+a0WXInn0RBT6rfWs9Qp8DjUudvc++s5hvWQQmk55apFtGgmEhXJmTJtRg0s
+ 9xl3A=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.org.uk>)
- id 1hsmio-0001kD-NN; Wed, 31 Jul 2019 11:24:42 +0000
+ id 1hsmnp-0001q4-53; Wed, 31 Jul 2019 11:29:53 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id C59922742C99; Wed, 31 Jul 2019 12:24:41 +0100 (BST)
-Date: Wed, 31 Jul 2019 12:24:41 +0100
+ id BC2C42742C99; Wed, 31 Jul 2019 12:29:51 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
-To: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
- Heiner Kallweit <hkallweit1@gmail.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "Matthew Wilcox (Oracle)" <willy@infradead.org>
-Subject: Re: next/master build: 221 builds: 11 failed, 210 passed, 13 errors, 
- 1174 warnings (next-20190731)
-Message-ID: <20190731112441.GB4369@sirena.org.uk>
-References: <5d41767d.1c69fb81.d6304.4c8c@mx.google.com>
-MIME-Version: 1.0
-In-Reply-To: <5d41767d.1c69fb81.d6304.4c8c@mx.google.com>
-X-Cookie: FEELINGS are cascading over me!!!
-User-Agent: Mutt/1.10.1 (2018-07-13)
+To: Marcus Cooper <codekipper@gmail.com>
+Subject: Applied "ASoC: sun4i-i2s: Incorrect SR and WSS computation" to the
+ asoc tree
+In-Reply-To: <20190729152130.27955-1-codekipper@gmail.com>
+X-Patchwork-Hint: ignore
+Message-Id: <20190731112951.BC2C42742C99@ypsilon.sirena.org.uk>
+Date: Wed, 31 Jul 2019 12:29:51 +0100 (BST)
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_042450_129200_899EB744 
-X-CRM114-Status: UNSURE (   7.50  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190731_043001_898535_0C9FA26D 
+X-CRM114-Status: GOOD (  14.39  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
@@ -83,78 +78,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, netdev@vger.kernel.org,
- linux-next@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- kernel-build-reports@lists.linaro.org
-Content-Type: multipart/mixed; boundary="===============4278775549658016903=="
+Cc: alsa-devel@alsa-project.org, lgirdwood@gmail.com,
+ linux-sunxi@googlegroups.com, Mark Brown <broonie@kernel.org>,
+ maxime.ripard@free-electrons.com, wens@csie.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+The patch
 
---===============4278775549658016903==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="GID0FwUMdk1T2AWN"
-Content-Disposition: inline
+   ASoC: sun4i-i2s: Incorrect SR and WSS computation
 
+has been applied to the asoc tree at
 
---GID0FwUMdk1T2AWN
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.3
 
-On Wed, Jul 31, 2019 at 04:07:41AM -0700, kernelci.org bot wrote:
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
 
-Today's -next fails to build an ARM allmodconfig due to:
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
 
-> allmodconfig (arm, gcc-8) =E2=80=94 FAIL, 1 error, 40 warnings, 0 section=
- mismatches
->=20
-> Errors:
->     drivers/net/phy/mdio-cavium.h:111:36: error: implicit declaration of =
-function 'writeq'; did you mean 'writel'? [-Werror=3Dimplicit-function-decl=
-aration]
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
 
-as a result of the changes that introduced:
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
 
-WARNING: unmet direct dependencies detected for MDIO_OCTEON
-  Depends on [n]: NETDEVICES [=3Dy] && MDIO_DEVICE [=3Dm] && MDIO_BUS [=3Dm=
-] && 64BIT && HAS_IOMEM [=3Dy] && OF_MDIO [=3Dm]
-  Selected by [m]:
-  - OCTEON_ETHERNET [=3Dm] && STAGING [=3Dy] && (CAVIUM_OCTEON_SOC && NETDE=
-VICES [=3Dy] || COMPILE_TEST [=3Dy])
+Thanks,
+Mark
 
-which is triggered by the staging OCTEON_ETHERNET driver which misses a
-64BIT dependency but added COMPILE_TEST in 171a9bae68c72f2
-(staging/octeon: Allow test build on !MIPS).
+From 52f87f3ca251f5e43b42e78ab9816b2b07718bfe Mon Sep 17 00:00:00 2001
+From: Marcus Cooper <codekipper@gmail.com>
+Date: Mon, 29 Jul 2019 17:21:30 +0200
+Subject: [PATCH] ASoC: sun4i-i2s: Incorrect SR and WSS computation
 
---GID0FwUMdk1T2AWN
-Content-Type: application/pgp-signature; name="signature.asc"
+The A64 audio codec uses the original I2S block but the SR and
+WSS computation currently assigned is for the newer block.
 
------BEGIN PGP SIGNATURE-----
+Fixes: 619c15f7fac9 (ASoC: sun4i-i2s: Change SR and WSS computation)
+Signed-off-by: Marcus Cooper <codekipper@gmail.com>
+Link: https://lore.kernel.org/r/20190729152130.27955-1-codekipper@gmail.com
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ sound/soc/sunxi/sun4i-i2s.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl1BengACgkQJNaLcl1U
-h9DLnwf/f8I9dl2D69S1eeFNRVh2aLjJV9PMJSjfoyGSDSEKyrS7CVSR8qWRkfir
-LwbOCkTe7W9RVxR409aCkPkHcqLlCquQxDeyihTP00ZevmIzgLN7A1mLv0LmoIbn
-vldWfuGkbKM67v9n1nwgNBuZK/6eXFobpRlAFrPBx6tiMH4zvAbMKQgO8GuHXdQs
-EFd9Wxa38ixftAfcoNbMng2vmYqFiU/nOM9MUQBtWwZ30OV359/nSHMpwfyO9KEJ
-sfd866tLAddesCX15Kk/DS/r1qQViMKmqTiOTSHe4r3YKQL9/o8NByGs7k0rWG6t
-hgLW0Xnb1iREo3Scv3PBByS5PuMdbw==
-=Oxer
------END PGP SIGNATURE-----
+diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
+index 9b2232908b65..7fa5c61169db 100644
+--- a/sound/soc/sunxi/sun4i-i2s.c
++++ b/sound/soc/sunxi/sun4i-i2s.c
+@@ -1002,8 +1002,8 @@ static const struct sun4i_i2s_quirks sun50i_a64_codec_i2s_quirks = {
+ 	.field_rxchanmap	= REG_FIELD(SUN4I_I2S_RX_CHAN_MAP_REG, 0, 31),
+ 	.field_txchansel	= REG_FIELD(SUN4I_I2S_TX_CHAN_SEL_REG, 0, 2),
+ 	.field_rxchansel	= REG_FIELD(SUN4I_I2S_RX_CHAN_SEL_REG, 0, 2),
+-	.get_sr			= sun8i_i2s_get_sr_wss,
+-	.get_wss		= sun8i_i2s_get_sr_wss,
++	.get_sr			= sun4i_i2s_get_sr,
++	.get_wss		= sun4i_i2s_get_wss,
+ };
+ 
+ static int sun4i_i2s_init_regmap_fields(struct device *dev,
+-- 
+2.20.1
 
---GID0FwUMdk1T2AWN--
-
-
---===============4278775549658016903==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4278775549658016903==--
-
