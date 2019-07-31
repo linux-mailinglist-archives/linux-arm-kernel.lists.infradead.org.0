@@ -2,58 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C05667CCF8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 21:39:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A9A137CD4C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 21:58:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fTuiLaECydK2jdkj/iVGby2lVTl6gCz0lC6e8imzVok=; b=XqjQgNpPXO8udm
-	EIuDiEi07o6cwC+OtkvVQRpXINFg7soEfKNu/FAbr5VoAO4RHS5le1ZuFPn9psUJ4VNoE9sbfXpW6
-	0NDe0IzId2UhJnmXAj60wyz2R460fsphI+jevfq7XVNr9KVZWjeJvza9dhuUAOVlnwpkDGOkWz11g
-	rT7t/b9Ebqn2yVFPeXdPqlCRfJjrjftRK2G2S9yAgt1f1uxJSlEuWRciBURMfUi7ytIZmR6POp88E
-	1P3ko5/fqlanQQkvza//dkSIDgW/+rtpnAlXRvp7VE6Z8egNS+zxRcWiE4opycLWWompBRGOrEHnp
-	Xvn0jhP5XGA+623EGDQg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=K01dWLTb0MxXeqsZt3W2aMlUuwgKpZZEhmtkkXZ9dw8=; b=tgopa0zqcQ+q2z
+	azI7U5jZXmSVHChGhW0UvYNcR//r9ChoTw6vPbx04ruvsa+KMiZrZ3QcPjbJ9vpd8c7Z1VzaF6QvJ
+	07t0tGIJ27iFuKcEN5BNBV7bbdp5yYhuVgjcWT753ZL+X0ODyqRBYLhdCuzOiNs3q9LAjuNwBamga
+	hQE+blLIK1PCriQvDqC5nkqnOa8v/5PIDm+xntkeTABNbKtsVgspfYbmRjMmZk+QMwWtvi6KMjlqf
+	DMIXqbET8j/kN4pifR2SXP3FEOmex3O7fI9yuObOtUmo56HRXWE4b+EVVKRS2UIkbVM7ExXaHlf+1
+	8SRh4TEa5Rx37pyfWw6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsuRu-0000yH-CH; Wed, 31 Jul 2019 19:39:46 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1hsujj-0007oh-AW; Wed, 31 Jul 2019 19:58:11 +0000
+Received: from mout.kundenserver.de ([212.227.126.135])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsuRm-0000xA-Pv; Wed, 31 Jul 2019 19:39:40 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 1BF22289F21
-Message-ID: <869dd8b894883715378ba681c7dd26934284bdff.camel@collabora.com>
-Subject: Re: [PATCH v4 14/23] drm/tilcdc: Provide ddc symlink in connector
- sysfs directory
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: Thomas Zimmermann <tzimmermann@suse.de>, Andrzej Pietrasiewicz
- <andrzej.p@collabora.com>, Sam Ravnborg <sam@ravnborg.org>
-Date: Wed, 31 Jul 2019 16:39:13 -0300
-In-Reply-To: <acfd895d-ab59-0190-e25c-1827bd8d214b@suse.de>
-References: <cover.1562843413.git.andrzej.p@collabora.com>
- <d1d415022c598fb7acd033f0f322dd67250adaa9.1562843413.git.andrzej.p@collabora.com>
- <20190723090532.GA787@ravnborg.org>
- <3ad60be5-49cf-4017-4b74-53a2d6272deb@collabora.com>
- <acfd895d-ab59-0190-e25c-1827bd8d214b@suse.de>
-Organization: Collabora
-User-Agent: Evolution 3.30.5-1.1 
+ id 1hsujc-0007oO-E0
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 19:58:06 +0000
+Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
+ (mreue012 [212.227.15.129]) with ESMTPA (Nemesis) id
+ 1N5CMP-1iJtxV2cYX-0119Cu; Wed, 31 Jul 2019 21:57:28 +0200
+From: Arnd Bergmann <arnd@arndb.de>
+To: soc@kernel.org, linux-arm-kernel@lists.infradead.org,
+ Vladimir Zapolskiy <vz@mleia.com>,
+ Sylvain Lemieux <slemieux.tyco@gmail.com>,
+ Russell King <linux@armlinux.org.uk>,
+ Gregory Clement <gregory.clement@bootlin.com>,
+ Linus Walleij <linus.walleij@linaro.org>
+Subject: [PATCH 00/14] ARM: move lpc32xx and dove to multiplatform
+Date: Wed, 31 Jul 2019 21:56:42 +0200
+Message-Id: <20190731195713.3150463-1-arnd@arndb.de>
+X-Mailer: git-send-email 2.20.0
 MIME-Version: 1.0
+X-Provags-ID: V03:K1:1DhJgllZnoaEPYGs1RPUPXgQ/oF4uTuXo6cjjEDlbbMgcBjoaAv
+ /4Gqy5waGt8kWlKhcISqSvbWy0PqMUozbeltyk8i/JLnrBG/MVV5i1YTE1nD7PThG9QNAmS
+ 9iyG0heOlxZNdw6cfYwcabbQ4ypVIGuPXXQgozREfFxzQ2zdx45uahc4xbAtdP9o5sKxvCC
+ QICiay/kY46x1cxToEO+Q==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:mD1LaNfCPok=:FewDXWtPUyzX3X8MXpV7JW
+ LaqXUelWhb8EMKM9tjVsXF3uv3rGnLUQLTL3SIhUo5xti4RrQb4v+7ZE9yZYkDT/kQUFglWBF
+ lvLzinWKjjV6sSbqWJx4qfC9UWznfZPTYFC0lU7lQvUiwKDJFULnI39CJPnfNf8oV1md80F+/
+ hRIBJf7UroozZKWXZBvCj6qhyUyZ/FiHCNNW2NDEdbLHw+RzE7exwMnGT1w0lIBEpoAGv2Dr0
+ PBNGV7aQ6xzA0jg4iovZdBo/K95EQQ01IeAqK8r5l+nAyvyv2QvsAJQ14dqS5qi25TZ1HWgbW
+ y4QfqDfSHyPqf/ou/tBXJfUqNTtkEHqRHevOyCywjUO6/+vmF0vXcTWkvwaAm4sGIptdKDXWf
+ vtBI71SeOlShLuGqMsOjWNfuDgHE1L/lu7MthTfzB10WFgxJcNmRo4s9WeGLQ70M32rGTuxj0
+ fSYfbzci3w+xK0+XnbveZhY0YH1dlePkcvm5RcBHfqcDSZeaxvZOEWZuQBdL5qA+OiCoOBHN/
+ TXPne5Yf1BBWIvVnrwfM04RWKmQCqibG92YYGeZ5RbfG0SnyxVH9lpvMOdClQg6oaUfXe5PDO
+ i0ClE84DAfmzelDecUQRNORb73/EiNmERpGmA3zwXKqxfIyWnfZ2quBv5cM9S7o9G+R4W+KSC
+ gcyOjCbSLMmxXz5/jt8neKqYJ0JYW7vreycPeVeKJaw2+fgZVKgvFFPHKu2AnGnd6ZR49ZNAT
+ gfRkW3tCbcUDHer3OPC2tLmSu8Ryf7Wm0PaGnw==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_123939_106003_5537FAE1 
-X-CRM114-Status: GOOD (  29.92  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190731_125804_769249_B3E5453E 
+X-CRM114-Status: GOOD (  14.16  )
+X-Spam-Score: 2.7 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (2.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.135 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ no trust [212.227.126.135 listed in list.dnswl.org]
+ 2.7 TVD_SUBJ_NUM_OBFU_MINFP No description available.
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,232 +81,117 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>, dri-devel@lists.freedesktop.org,
- Douglas Anderson <dianders@chromium.org>, linux-tegra@vger.kernel.org,
- Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, kernel@collabora.com,
- linux-samsung-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Vincent Abriou <vincent.abriou@st.com>, Krzysztof Kozlowski <krzk@kernel.org>,
- Jonathan Hunter <jonathanh@nvidia.com>, David Airlie <airlied@linux.ie>,
- Chen-Yu Tsai <wens@csie.org>, Kukjin Kim <kgene@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>, Dave Airlie <airlied@redhat.com>,
- freedreno@lists.freedesktop.org, Jonas Karlman <jonas@kwiboo.se>,
- linux-arm-msm@vger.kernel.org, intel-gfx@lists.freedesktop.org,
- Jyri Sarha <jsarha@ti.com>, Alexios Zavras <alexios.zavras@intel.com>,
- Mamta Shukla <mamtashukla555@gmail.com>, linux-mediatek@lists.infradead.org,
- Rodrigo Vivi <rodrigo.vivi@intel.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, Sean Paul <sean@poorly.run>,
- linux-arm-kernel@lists.infradead.org, Jernej Skrabec <jernej.skrabec@siol.net>,
- amd-gfx@lists.freedesktop.org, Tomi Valkeinen <tomi.valkeinen@ti.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Seung-Woo Kim <sw0312.kim@samsung.com>, linux-kernel@vger.kernel.org,
- Todor Tomov <todor.tomov@linaro.org>,
- Kyungmin Park <kyungmin.park@samsung.com>, Huang Rui <ray.huang@amd.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Alex Deucher <alexander.deucher@amd.com>, Shawn Guo <shawnguo@kernel.org>,
- Christian =?ISO-8859-1?Q?K=F6nig?= <christian.koenig@amd.com>,
- Gerd Hoffmann <kraxel@redhat.com>
+Cc: Andrew Lunn <andrew@lunn.ch>, linux-watchdog@vger.kernel.org,
+ Jason Cooper <jason@lakedaemon.net>, Arnd Bergmann <arnd@arndb.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
+ linux-gpio@vger.kernel.org, Alan Stern <stern@rowland.harvard.edu>,
+ linux-serial@vger.kernel.org, netdev@vger.kernel.org,
+ "David S. Miller" <davem@davemloft.net>, Guenter Roeck <linux@roeck-us.net>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+I revisited some older patches here, getting two of the remaining
+ARM platforms to build with ARCH_MULTIPLATFORM like most others do.
 
-I'm glad to see this work moving forward!
+In case of lpc32xx, I created a new set of patches, which seemed
+easier than digging out what I did for an older release many
+years ago.
 
-On Wed, 2019-07-24 at 10:01 +0200, Thomas Zimmermann wrote:
-> Hi
-> 
-> Am 23.07.19 um 14:44 schrieb Andrzej Pietrasiewicz:
-> > Hi Sam,
-> > 
-> > W dniu 23.07.2019 o 11:05, Sam Ravnborg pisze:
-> > > Hi Andrzej
-> > > 
-> > > On Thu, Jul 11, 2019 at 01:26:41PM +0200, Andrzej Pietrasiewicz wrote:
-> > > > Use the ddc pointer provided by the generic connector.
-> > > > 
-> > > > Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-> > > > ---
-> > > >   drivers/gpu/drm/tilcdc/tilcdc_tfp410.c | 1 +
-> > > >   1 file changed, 1 insertion(+)
-> > > > 
-> > > > diff --git a/drivers/gpu/drm/tilcdc/tilcdc_tfp410.c
-> > > > b/drivers/gpu/drm/tilcdc/tilcdc_tfp410.c
-> > > > index 62d014c20988..c373edb95666 100644
-> > > > --- a/drivers/gpu/drm/tilcdc/tilcdc_tfp410.c
-> > > > +++ b/drivers/gpu/drm/tilcdc/tilcdc_tfp410.c
-> > > > @@ -219,6 +219,7 @@ static struct drm_connector
-> > > > *tfp410_connector_create(struct drm_device *dev,
-> > > >       tfp410_connector->mod = mod;
-> > > >         connector = &tfp410_connector->base;
-> > > > +    connector->ddc = mod->i2c;
-> > > >         drm_connector_init(dev, connector, &tfp410_connector_funcs,
-> > > >               DRM_MODE_CONNECTOR_DVID);
-> > > 
-> > > When reading this code, it looks strange that we set connector->ddc
-> > > *before* the call to init the connector.
-> > > One could risk that drm_connector_init() used memset(..) to clear all
-> > > fields or so, and it would break this order.
-> > 
-> > I verified the code of drm_connector_init() and cannot find any memset()
-> > invocations there. What is your actual concern?
-> 
-> I think this echoes my concern about the implicit order of operation. It
-> seems too easy to get this wrong. If you don't want to add an additional
-> interface for setting the ddc field, why not add a dedicated initializer
-> function that sets the ddc field? Something like this.
-> 
-> int drm_connector_init_with_ddc(connector, funcs, ..., ddc)
-> {
-> 	ret = drm_connector_init(connector, funcs, ...);
-> 	if (ret)
-> 		return ret;
-> 
-> 	if (!ddc)
-> 		return 0;
-> 
-> 	connector->ddc = ddc;
-> 	/* set up sysfs */
-> 
+For dove, the patches are basically what I had proposed back in
+2015 when all other ARMv6/ARMv7 machines became part of a single
+kernel build. I don't know what the state is mach-dove support is,
+compared to the DT based support in mach-mvebu for the same
+hardware. If they are functionally the same, we could also just
+remove mach-dove rather than applying my patches.
 
-I know this comment comes late to the party, but I'm a slightly
-suprised to see the above instead of implementing drm_connector_init
-in terms of drm_connector_init_with_ddc, as we typically do.
+I also created patches to remove the w90x900 and ks8695 platforms
+that seem to have lost their last users a few years ago.
+I will post them separately, but plan to apply them in the same
+branch for linux-5.4 if there are no objections.
 
-Namely, something along these lines (code might not even build!):
+      Arnd
 
---------------------------------------8<-----------------------------
-diff --git a/drivers/gpu/drm/drm_connector.c b/drivers/gpu/drm/drm_connector.c
-index d49e19f3de3a..dbd095933175 100644
---- a/drivers/gpu/drm/drm_connector.c
-+++ b/drivers/gpu/drm/drm_connector.c
-@@ -179,11 +179,12 @@ void drm_connector_free_work_fn(struct work_struct *work)
- }
- 
- /**
-- * drm_connector_init - Init a preallocated connector
-+ * drm_connector_init_with_ddc - Init a preallocated connector
-  * @dev: DRM device
-  * @connector: the connector to init
-  * @funcs: callbacks for this connector
-  * @connector_type: user visible type of the connector
-+ * @ddc: pointer to the associated ddc adapter (optional)
-  *
-  * Initialises a preallocated connector. Connectors should be
-  * subclassed as part of driver connector objects.
-@@ -191,10 +192,11 @@ void drm_connector_free_work_fn(struct work_struct *work)
-  * Returns:
-  * Zero on success, error code on failure.
-  */
--int drm_connector_init(struct drm_device *dev,
--		       struct drm_connector *connector,
--		       const struct drm_connector_funcs *funcs,
--		       int connector_type)
-+int drm_connector_init_with_ddc(struct drm_device *dev,
-+				struct drm_connector *connector,
-+				const struct drm_connector_funcs *funcs,
-+				int connector_type,
-+				struct i2c_adapter *ddc)
- {
- 	struct drm_mode_config *config = &dev->mode_config;
- 	int ret;
-@@ -215,6 +217,9 @@ int drm_connector_init(struct drm_device *dev,
- 	connector->dev = dev;
- 	connector->funcs = funcs;
- 
-+	/* provide ddc symlink in sysfs */
-+	connector->ddc = ddc;
-+
- 	/* connector index is used with 32bit bitmasks */
- 	ret = ida_simple_get(&config->connector_ida, 0, 32, GFP_KERNEL);
- 	if (ret < 0) {
-@@ -295,41 +300,6 @@ int drm_connector_init(struct drm_device *dev,
- 
- 	return ret;
- }
--EXPORT_SYMBOL(drm_connector_init);
--
--/**
-- * drm_connector_init_with_ddc - Init a preallocated connector
-- * @dev: DRM device
-- * @connector: the connector to init
-- * @funcs: callbacks for this connector
-- * @connector_type: user visible type of the connector
-- * @ddc: pointer to the associated ddc adapter
-- *
-- * Initialises a preallocated connector. Connectors should be
-- * subclassed as part of driver connector objects.
-- *
-- * Ensures that the ddc field of the connector is correctly set.
-- *
-- * Returns:
-- * Zero on success, error code on failure.
-- */
--int drm_connector_init_with_ddc(struct drm_device *dev,
--				struct drm_connector *connector,
--				const struct drm_connector_funcs *funcs,
--				int connector_type,
--				struct i2c_adapter *ddc)
--{
--	int ret;
--
--	ret = drm_connector_init(dev, connector, funcs, connector_type);
--	if (ret)
--		return ret;
--
--	/* provide ddc symlink in sysfs */
--	connector->ddc = ddc;
--
--	return ret;
--}
- EXPORT_SYMBOL(drm_connector_init_with_ddc);
- 
- /**
-diff --git a/include/drm/drm_connector.h b/include/drm/drm_connector.h
-index fc5d08438333..1884abf61a86 100644
---- a/include/drm/drm_connector.h
-+++ b/include/drm/drm_connector.h
-@@ -1408,10 +1408,6 @@ struct drm_connector {
- 
- #define obj_to_connector(x) container_of(x, struct drm_connector, base)
- 
--int drm_connector_init(struct drm_device *dev,
--		       struct drm_connector *connector,
--		       const struct drm_connector_funcs *funcs,
--		       int connector_type);
- int drm_connector_init_with_ddc(struct drm_device *dev,
- 				struct drm_connector *connector,
- 				const struct drm_connector_funcs *funcs,
-@@ -1425,6 +1421,16 @@ int drm_connector_attach_encoder(struct drm_connector *connector,
- 
- void drm_connector_cleanup(struct drm_connector *connector);
- 
-+static inline int
-+drm_connector_init(struct drm_device *dev,
-+		   struct drm_connector *connector,
-+		   const struct drm_connector_funcs *funcs,
-+		   int connector_type);
-+{
-+	return drm_connector_init_with_ddc(dev, connector, funcs,
-+					   connector_type, NULL);
-+}
-+
- static inline unsigned int drm_connector_index(const struct drm_connector *connector)
- {
- 	return connector->index;
--------------------------------------->8-----------------------------
+Arnd Bergmann (14):
+  usb: ohci-nxp: enable compile-testing
+  usb: udc: lpc32xx: allow compile-testing
+  watchdog: pnx4008_wdt: allow compile-testing
+  serial: lpc32xx_hs: allow compile-testing
+  gpio: lpc32xx: allow building on non-lpc32xx targets
+  net: lpc-enet: factor out iram access
+  net: lpc-enet: move phy setup into platform code
+  net: lpc-enet: allow compile testing
+  serial: lpc32xx: allow compile testing
+  ARM: lpc32xx: clean up header files
+  ARM: lpc32xx: allow multiplatform build
+  ARM: dove: clean up mach/*.h headers
+  ARM: orion/mvebu: unify debug-ll virtual addresses
+  ARM: dove: multiplatform support
 
-This might be seen as bikeshed but it seems there's value keeping all the init
-code in the same place, as opposed to scattered.
+ arch/arm/Kconfig                              | 33 +---------
+ arch/arm/Kconfig.debug                        |  5 +-
+ arch/arm/configs/dove_defconfig               |  2 +
+ arch/arm/configs/lpc32xx_defconfig            |  1 +
+ arch/arm/mach-dove/Kconfig                    | 16 +++--
+ arch/arm/mach-dove/Makefile                   |  2 +
+ .../{include/mach => }/bridge-regs.h          |  4 +-
+ arch/arm/mach-dove/cm-a510.c                  |  3 +-
+ arch/arm/mach-dove/common.c                   |  4 +-
+ arch/arm/mach-dove/dove-db-setup.c            |  2 +-
+ arch/arm/mach-dove/{include/mach => }/dove.h  | 14 ++---
+ arch/arm/mach-dove/include/mach/hardware.h    | 19 ------
+ arch/arm/mach-dove/include/mach/uncompress.h  | 36 -----------
+ arch/arm/mach-dove/irq.c                      |  5 +-
+ arch/arm/mach-dove/{include/mach => }/irqs.h  |  2 -
+ arch/arm/mach-dove/mpp.c                      |  2 +-
+ arch/arm/mach-dove/pcie.c                     |  4 +-
+ arch/arm/mach-dove/{include/mach => }/pm.h    |  4 +-
+ arch/arm/mach-lpc32xx/Kconfig                 | 11 ++++
+ arch/arm/mach-lpc32xx/common.c                | 24 +++++--
+ arch/arm/mach-lpc32xx/common.h                |  1 -
+ arch/arm/mach-lpc32xx/include/mach/board.h    | 15 -----
+ .../mach-lpc32xx/include/mach/entry-macro.S   | 28 ---------
+ arch/arm/mach-lpc32xx/include/mach/hardware.h | 25 --------
+ .../mach-lpc32xx/include/mach/uncompress.h    | 50 ---------------
+ .../{include/mach/platform.h => lpc32xx.h}    | 18 +++++-
+ arch/arm/mach-lpc32xx/pm.c                    |  3 +-
+ arch/arm/mach-lpc32xx/serial.c                | 33 +++++++++-
+ arch/arm/mach-lpc32xx/suspend.S               |  3 +-
+ arch/arm/mach-mv78xx0/mv78xx0.h               |  4 +-
+ arch/arm/mach-orion5x/orion5x.h               |  4 +-
+ drivers/gpio/Kconfig                          |  8 +++
+ drivers/gpio/Makefile                         |  2 +-
+ drivers/gpio/gpio-lpc32xx.c                   | 63 ++++++++++++-------
+ drivers/net/ethernet/nxp/Kconfig              |  2 +-
+ drivers/net/ethernet/nxp/lpc_eth.c            | 30 +++------
+ drivers/tty/serial/Kconfig                    |  3 +-
+ drivers/tty/serial/lpc32xx_hs.c               | 37 ++---------
+ drivers/usb/gadget/udc/Kconfig                |  3 +-
+ drivers/usb/gadget/udc/lpc32xx_udc.c          |  2 -
+ drivers/usb/host/Kconfig                      |  3 +-
+ drivers/usb/host/ohci-nxp.c                   | 25 +++++---
+ drivers/watchdog/Kconfig                      |  2 +-
+ drivers/watchdog/pnx4008_wdt.c                |  1 -
+ include/linux/soc/nxp/lpc32xx-misc.h          | 33 ++++++++++
+ 45 files changed, 246 insertions(+), 345 deletions(-)
+ rename arch/arm/mach-dove/{include/mach => }/bridge-regs.h (96%)
+ rename arch/arm/mach-dove/{include/mach => }/dove.h (95%)
+ delete mode 100644 arch/arm/mach-dove/include/mach/hardware.h
+ delete mode 100644 arch/arm/mach-dove/include/mach/uncompress.h
+ rename arch/arm/mach-dove/{include/mach => }/irqs.h (98%)
+ rename arch/arm/mach-dove/{include/mach => }/pm.h (97%)
+ create mode 100644 arch/arm/mach-lpc32xx/Kconfig
+ delete mode 100644 arch/arm/mach-lpc32xx/include/mach/board.h
+ delete mode 100644 arch/arm/mach-lpc32xx/include/mach/entry-macro.S
+ delete mode 100644 arch/arm/mach-lpc32xx/include/mach/hardware.h
+ delete mode 100644 arch/arm/mach-lpc32xx/include/mach/uncompress.h
+ rename arch/arm/mach-lpc32xx/{include/mach/platform.h => lpc32xx.h} (98%)
+ create mode 100644 include/linux/soc/nxp/lpc32xx-misc.h
 
-Unless there are reasons for the current code, that I'm missing?
-
-Thanks,
-Ezequiel
+-- 
+2.20.0
 
 
 _______________________________________________
