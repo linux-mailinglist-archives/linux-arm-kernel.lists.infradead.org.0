@@ -2,103 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 82B1E7BF01
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 13:14:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E7177BF20
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 13:19:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:In-Reply-To:MIME-Version:
-	References:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=apCvjlXdBmeI4/++Nv3WQ4tyd5Rq2Ck2EZTf84JxMis=; b=WiqR4sQjDwZ1K9
-	zd5Pibvv3cRVeTEpXREzY/e2s7zgJzYS1PHjW5Oc4AX5JEBZYYz0rvBjS40LgdS5PAnCAE6GF01uV
-	EoE7EMOfgZUpNIfD2uYAeVUEzF+p9Pn7o5BO4EpWRSIFkJKXEOSUJo0OMG3/+ECJQfIRIrfp1ztuD
-	tz7rJHc0qRBvFMA2Vh56AsoWJJeGlhL9Y7K775asLFO+F0/1BugantVKgsJZlNmQstPDoqkvsIvBm
-	Qnw63lmV3aaFHfhrjL3aaZSqed2piQxgxvqSWFOAxq4yMuBQ9samQ316laQsndcUONUGkdsFbXspU
-	7GUeieTuP4ygbcw0ax1g==;
+	List-Owner; bh=aWI3hwTL3v4D6nuxYFS1If4TWfko+NN43ovCBGtyZ7M=; b=WM3RRgzrIyhCdx
+	2zF29uinENSukp2v/rasJa6fY7DUDxHCKWaF+Z69HPPUjkwC8DQZOOE75mDaypJOVvfk4A6Lr3uLi
+	aJ4dOernydi6Kx0bhiar7hcN4Fihbyl+MYzvTEP1kyFcPwHsRyMO9HEDhaFVKqwsrjsJQ10/9XxRi
+	bb7tXp1OuHf86stCj1/OmvDcd3sYJjocY9aYMuT7554XNYH0wJR3KUctijVFkbuxhCD7LB4eWOgPG
+	sJeKZQ0ydZuGBVRFd/NNFqwaVb+GfihY/F1CUIJuLiBEEEn1v24i68k6cLTnZGJuxp7cE5TE2QMTJ
+	EiESiYQr6wPm20NJpxhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsmZJ-0003to-A3; Wed, 31 Jul 2019 11:14:53 +0000
-Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
- helo=mx0a-001b2d01.pphosted.com)
+	id 1hsmdu-0005gN-L1; Wed, 31 Jul 2019 11:19:38 +0000
+Received: from esa3.microchip.iphmx.com ([68.232.153.233])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsmZ6-0003sW-2X
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 11:14:47 +0000
-Received: from pps.filterd (m0098421.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x6VBD0Ws127249
- for <linux-arm-kernel@lists.infradead.org>; Wed, 31 Jul 2019 07:14:38 -0400
-Received: from e06smtp05.uk.ibm.com (e06smtp05.uk.ibm.com [195.75.94.101])
- by mx0a-001b2d01.pphosted.com with ESMTP id 2u37g4f5wr-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Wed, 31 Jul 2019 07:14:38 -0400
-Received: from localhost
- by e06smtp05.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <linux-arm-kernel@lists.infradead.org> from <rppt@linux.ibm.com>;
- Wed, 31 Jul 2019 12:14:36 +0100
-Received: from b06cxnps4076.portsmouth.uk.ibm.com (9.149.109.198)
- by e06smtp05.uk.ibm.com (192.168.101.135) with IBM ESMTP SMTP Gateway:
- Authorized Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Wed, 31 Jul 2019 12:14:28 +0100
-Received: from d06av22.portsmouth.uk.ibm.com (d06av22.portsmouth.uk.ibm.com
- [9.149.105.58])
- by b06cxnps4076.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- x6VBEQfn26607736
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 31 Jul 2019 11:14:26 GMT
-Received: from d06av22.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id A5DCA4C050;
- Wed, 31 Jul 2019 11:14:26 +0000 (GMT)
-Received: from d06av22.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 897844C044;
- Wed, 31 Jul 2019 11:14:24 +0000 (GMT)
-Received: from rapoport-lnx (unknown [9.148.8.168])
- by d06av22.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
- Wed, 31 Jul 2019 11:14:24 +0000 (GMT)
-Date: Wed, 31 Jul 2019 14:14:22 +0300
-From: Mike Rapoport <rppt@linux.ibm.com>
-To: Michal Hocko <mhocko@kernel.org>
-Subject: Re: [PATCH v2 0/5] mm: Enable CONFIG_NODES_SPAN_OTHER_NODES by
- default for NUMA
-References: <1562887528-5896-1-git-send-email-Hoan@os.amperecomputing.com>
- <20190712070247.GM29483@dhcp22.suse.cz>
- <586ae736-a429-cf94-1520-1a94ffadad88@os.amperecomputing.com>
- <20190712121223.GR29483@dhcp22.suse.cz>
- <20190712143730.au3662g4ua2tjudu@willie-the-truck>
- <20190712150007.GU29483@dhcp22.suse.cz>
- <730368c5-1711-89ae-e3ef-65418b17ddc9@os.amperecomputing.com>
- <20190730081415.GN9330@dhcp22.suse.cz>
- <20190731062420.GC21422@rapoport-lnx>
- <20190731080309.GZ9330@dhcp22.suse.cz>
+ id 1hsmdk-0005g1-Uc
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 11:19:32 +0000
+Received-SPF: Pass (esa3.microchip.iphmx.com: domain of
+ Ludovic.Desroches@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
+ envelope-from="Ludovic.Desroches@microchip.com";
+ x-sender="Ludovic.Desroches@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa3.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
+ envelope-from="Ludovic.Desroches@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa3.microchip.iphmx.com;
+ dkim=none (message not signed) header.i=none;
+ spf=Pass smtp.mailfrom=Ludovic.Desroches@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: gntnHE4rxQwLIr6UUVkvfw/HdmhEkDiDRAaNZvDJZfBEchTGipZQgJAzQpyQXiDm53JV1Lp5o6
+ NdyLTjbUurCRY5vWkQi4YxX2PjDFfvJpg1bKb3+cOsfchJN/b5NAz320irwGu69Y3vMa7Fhq4/
+ Sz/UdVRrU39xzc5PMssXPjOi8LJNcnPyHBWf/N0oThIxuk5dc1J/AlnRiMXXyJ90nC/RqBBRVJ
+ uQ+zJ1auPnKiZdn6kdg2/G0gT4WC5KvRCvetDrbVpYBEOUKHOSgAEkCcGXiwNEdC/flcty8LTv
+ cGw=
+X-IronPort-AV: E=Sophos;i="5.64,330,1559545200"; d="scan'208";a="43441135"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 31 Jul 2019 04:19:24 -0700
+Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Wed, 31 Jul 2019 04:19:23 -0700
+Received: from localhost (10.10.85.251) by chn-vm-ex01.mchp-main.com
+ (10.10.85.143) with Microsoft SMTP Server id 15.1.1713.5 via Frontend
+ Transport; Wed, 31 Jul 2019 04:19:22 -0700
+Date: Wed, 31 Jul 2019 13:18:28 +0200
+From: Ludovic Desroches <ludovic.desroches@microchip.com>
+To: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <uwe@kleine-koenig.org>
+Subject: Re: [PATCH] ARM: at91sam9x5/dt: enable internal pull-up for i2c-gpio
+ lines
+Message-ID: <20190731111828.oc7ysaq3pznnshds@M43218.corp.atmel.com>
+Mail-Followup-To: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <uwe@kleine-koenig.org>,
+ Nicolas Ferre <nicolas.ferre@microchip.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ linux-arm-kernel@lists.infradead.org
+References: <20190729160022.22781-1-uwe@kleine-koenig.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190731080309.GZ9330@dhcp22.suse.cz>
-User-Agent: Mutt/1.5.24 (2015-08-30)
-X-TM-AS-GCONF: 00
-x-cbid: 19073111-0020-0000-0000-00000358F06A
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 19073111-0021-0000-0000-000021ACF9B2
-Message-Id: <20190731111422.GA14538@rapoport-lnx>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-07-31_04:, , signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501
- malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=624 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1906280000 definitions=main-1907310117
+In-Reply-To: <20190729160022.22781-1-uwe@kleine-koenig.org>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_041444_328158_B9D891CB 
-X-CRM114-Status: GOOD (  33.28  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190731_041929_100786_EE88DEDE 
+X-CRM114-Status: GOOD (  14.01  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.158.5 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.153.233 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -112,92 +100,121 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Heiko Carstens <heiko.carstens@de.ibm.com>,
- "open list:MEMORY MANAGEMENT" <linux-mm@kvack.org>,
- Paul Mackerras <paulus@samba.org>, "H . Peter Anvin" <hpa@zytor.com>,
- "sparclinux@vger.kernel.org" <sparclinux@vger.kernel.org>,
- Alexander Duyck <alexander.h.duyck@linux.intel.com>,
- Will Deacon <will@kernel.org>,
- "linux-s390@vger.kernel.org" <linux-s390@vger.kernel.org>,
- Michael Ellerman <mpe@ellerman.id.au>, "x86@kernel.org" <x86@kernel.org>,
- "willy@infradead.org" <willy@infradead.org>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Hoan Tran OS <hoan@os.amperecomputing.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Open Source Submission <patches@amperecomputing.com>,
- Pavel Tatashin <pavel.tatashin@microsoft.com>,
- Vasily Gorbik <gor@linux.ibm.com>, Will Deacon <will.deacon@arm.com>,
- Borislav Petkov <bp@alien8.de>, Thomas Gleixner <tglx@linutronix.de>,
- Vlastimil Babka <vbabka@suse.cz>, Oscar Salvador <osalvador@suse.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- "David S . Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 31, 2019 at 10:03:09AM +0200, Michal Hocko wrote:
-> On Wed 31-07-19 09:24:21, Mike Rapoport wrote:
-> > [ sorry for a late reply too, somehow I missed this thread before ]
-> > 
-> > On Tue, Jul 30, 2019 at 10:14:15AM +0200, Michal Hocko wrote:
-> > > [Sorry for a late reply]
-> > > 
-> > > On Mon 15-07-19 17:55:07, Hoan Tran OS wrote:
-> > > > Hi,
-> > > > 
-> > > > On 7/12/19 10:00 PM, Michal Hocko wrote:
-> > > [...]
-> > > > > Hmm, I thought this was selectable. But I am obviously wrong here.
-> > > > > Looking more closely, it seems that this is indeed only about
-> > > > > __early_pfn_to_nid and as such not something that should add a config
-> > > > > symbol. This should have been called out in the changelog though.
-> > > > 
-> > > > Yes, do you have any other comments about my patch?
-> > > 
-> > > Not really. Just make sure to explicitly state that
-> > > CONFIG_NODES_SPAN_OTHER_NODES is only about __early_pfn_to_nid and that
-> > > doesn't really deserve it's own config and can be pulled under NUMA.
-> > > 
-> > > > > Also while at it, does HAVE_MEMBLOCK_NODE_MAP fall into a similar
-> > > > > bucket? Do we have any NUMA architecture that doesn't enable it?
-> > > > > 
-> > 
-> > HAVE_MEMBLOCK_NODE_MAP makes huge difference in node/zone initialization
-> > sequence so it's not only about a singe function.
-> 
-> The question is whether we want to have this a config option or enable
-> it unconditionally for each NUMA system.
+On Mon, Jul 29, 2019 at 06:00:22PM +0200, Uwe Kleine-K=F6nig wrote:
+> External E-Mail
+> =
 
-We can make it 'default NUMA', but we can't drop it completely because
-microblaze uses sparse_memory_present_with_active_regions() which is
-unavailable when HAVE_MEMBLOCK_NODE_MAP=n.
+> =
 
-> > > > As I checked with arch Kconfig files, there are 2 architectures, riscv 
-> > > > and microblaze, do not support NUMA but enable this config.
-> > 
-> > My take would be that riscv will support NUMA some day.
-> >  
-> > > > And 1 architecture, alpha, supports NUMA but does not enable this config.
-> > 
-> > alpha's NUMA support is BROKEN for more than a decade now, I doubt it'll
-> > ever get fixed.
-> 
-> I can see Al has marked it BROKEN in 2005. Maybe time to rip it out?
-> Although it doesn't seem to be a lot of code in arch/alpha at first
-> glance so maybe not worth an effort.
-> -- 
-> Michal Hocko
-> SUSE Labs
-> 
+> This is what I need on my Arietta G25 to be able to just connect an i2c
+> device to the pin headers.
+> Also remove the comment that doesn't tell more than the pin declaration.
+> =
 
--- 
-Sincerely yours,
-Mike.
+> Signed-off-by: Uwe Kleine-K=F6nig <uwe@kleine-koenig.org>
+> ---
+> Hello,
+> =
+
+> not sure this is change suitable for the SoC dtsi. I'll leave it to the
+> at91 maintainers to decide.
+
+Hello Uwe,
+
+Usually we have pull-ups for those signals on our board. In this case,
+it's useless to activate the internal pull-up. Even if I am not sure we
+were consistent in our policy about what goes in the SoC dtsi and what
+goes in the dts board, I would prefer to have this at the board level.
+
+Regards
+
+Ludovic
+
+> =
+
+> Best regards
+> Uwe
+> =
+
+>  arch/arm/boot/dts/at91sam9x5.dtsi  | 12 ++++++------
+>  include/dt-bindings/pinctrl/at91.h |  2 ++
+>  2 files changed, 8 insertions(+), 6 deletions(-)
+> =
+
+> diff --git a/arch/arm/boot/dts/at91sam9x5.dtsi b/arch/arm/boot/dts/at91sa=
+m9x5.dtsi
+> index ef47c005ef03..5fc38626795e 100644
+> --- a/arch/arm/boot/dts/at91sam9x5.dtsi
+> +++ b/arch/arm/boot/dts/at91sam9x5.dtsi
+> @@ -437,24 +437,24 @@
+>  				i2c_gpio0 {
+>  					pinctrl_i2c_gpio0: i2c_gpio0-0 {
+>  						atmel,pins =3D
+> -							<AT91_PIOA 30 AT91_PERIPH_GPIO AT91_PINCTRL_MULTI_DRIVE	/* PA30 g=
+pio multidrive I2C0 data */
+> -							 AT91_PIOA 31 AT91_PERIPH_GPIO AT91_PINCTRL_MULTI_DRIVE>;	/* PA31=
+ gpio multidrive I2C0 clock */
+> +							<AT91_PIOA 30 AT91_PERIPH_GPIO AT91_PINCTRL_MULTI_DRIVE_PU
+> +							 AT91_PIOA 31 AT91_PERIPH_GPIO AT91_PINCTRL_MULTI_DRIVE_PU>;
+>  					};
+>  				};
+>  =
+
+>  				i2c_gpio1 {
+>  					pinctrl_i2c_gpio1: i2c_gpio1-0 {
+>  						atmel,pins =3D
+> -							<AT91_PIOC 0 AT91_PERIPH_GPIO AT91_PINCTRL_MULTI_DRIVE	/* PC0 gpi=
+o multidrive I2C1 data */
+> -							 AT91_PIOC 1 AT91_PERIPH_GPIO AT91_PINCTRL_MULTI_DRIVE>;	/* PC1 g=
+pio multidrive I2C1 clock */
+> +							<AT91_PIOC 0 AT91_PERIPH_GPIO AT91_PINCTRL_MULTI_DRIVE_PU
+> +							 AT91_PIOC 1 AT91_PERIPH_GPIO AT91_PINCTRL_MULTI_DRIVE_PU>;
+>  					};
+>  				};
+>  =
+
+>  				i2c_gpio2 {
+>  					pinctrl_i2c_gpio2: i2c_gpio2-0 {
+>  						atmel,pins =3D
+> -							<AT91_PIOB 4 AT91_PERIPH_GPIO AT91_PINCTRL_MULTI_DRIVE	/* PB4 gpi=
+o multidrive I2C2 data */
+> -							 AT91_PIOB 5 AT91_PERIPH_GPIO AT91_PINCTRL_MULTI_DRIVE>;	/* PB5 g=
+pio multidrive I2C2 clock */
+> +							<AT91_PIOB 4 AT91_PERIPH_GPIO AT91_PINCTRL_MULTI_DRIVE_PU
+> +							 AT91_PIOB 5 AT91_PERIPH_GPIO AT91_PINCTRL_MULTI_DRIVE_PU>;
+>  					};
+>  				};
+>  =
+
+> diff --git a/include/dt-bindings/pinctrl/at91.h b/include/dt-bindings/pin=
+ctrl/at91.h
+> index 3831f91fb3ba..c72d40f50acd 100644
+> --- a/include/dt-bindings/pinctrl/at91.h
+> +++ b/include/dt-bindings/pinctrl/at91.h
+> @@ -20,6 +20,8 @@
+>  #define AT91_PINCTRL_DEBOUNCE		(1 << 16)
+>  #define AT91_PINCTRL_DEBOUNCE_VAL(x)	(x << 17)
+>  =
+
+> +#define AT91_PINCTRL_MULTI_DRIVE_PU	(AT91_PINCTRL_MULTI_DRIVE | AT91_PIN=
+CTRL_PULL_UP)
+> +
+>  #define AT91_PINCTRL_PULL_UP_DEGLITCH	(AT91_PINCTRL_PULL_UP | AT91_PINCT=
+RL_DEGLITCH)
+>  =
+
+>  #define AT91_PINCTRL_DRIVE_STRENGTH_DEFAULT		(0x0 << 5)
+> -- =
+
+> 2.20.1
+> =
 
 
 _______________________________________________
