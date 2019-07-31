@@ -2,122 +2,105 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8DF677BF00
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 13:13:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 82B1E7BF01
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 13:14:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:In-Reply-To:MIME-Version:
+	References:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3WNtE+NFNfjRsGScl8Gjq1uTbr8OwMhJXA+YG3yQlSQ=; b=TJd3skmYc26K3Y
-	+7dJHGyOphngUPLkpYeqT3Ct/RrDDu/woVwCv2lriYZQpltIkMNB51SskSOhiNGtI4uqfnThDNmkM
-	kwlRqH0y5p3HBN8v0rEfHueb321Tc7K7v2bwQGbCPnmzFXPS3AUJauBkhlM2jgajrUczVPOA6DTPG
-	T1ck/DsUj74oGX/XkUgu/Lgt/K1E6SkgjYZWcHN9It7H7SErKBQ6DyEj102cjXJXS9xuNG5JGvNIi
-	9DGKnjOxSaiReLBZi49Z4gZEpQgCOGrKSo/SudEoVLg+beb/dYpUm4moc3D+QOGjT26ZIjtEvZGBV
-	hEGkwLg53tZl+BVypiZw==;
+	List-Owner; bh=apCvjlXdBmeI4/++Nv3WQ4tyd5Rq2Ck2EZTf84JxMis=; b=WiqR4sQjDwZ1K9
+	zd5Pibvv3cRVeTEpXREzY/e2s7zgJzYS1PHjW5Oc4AX5JEBZYYz0rvBjS40LgdS5PAnCAE6GF01uV
+	EoE7EMOfgZUpNIfD2uYAeVUEzF+p9Pn7o5BO4EpWRSIFkJKXEOSUJo0OMG3/+ECJQfIRIrfp1ztuD
+	tz7rJHc0qRBvFMA2Vh56AsoWJJeGlhL9Y7K775asLFO+F0/1BugantVKgsJZlNmQstPDoqkvsIvBm
+	Qnw63lmV3aaFHfhrjL3aaZSqed2piQxgxvqSWFOAxq4yMuBQ9samQ316laQsndcUONUGkdsFbXspU
+	7GUeieTuP4ygbcw0ax1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsmXo-0003Xx-6n; Wed, 31 Jul 2019 11:13:20 +0000
-Received: from mail-eopbgr40131.outbound.protection.outlook.com
- ([40.107.4.131] helo=EUR03-DB5-obe.outbound.protection.outlook.com)
+	id 1hsmZJ-0003to-A3; Wed, 31 Jul 2019 11:14:53 +0000
+Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
+ helo=mx0a-001b2d01.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsmXg-0003Vy-HW
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 11:13:15 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=YHnLoXOQU3t0/xeXQ16e8KTAz4/v6gTxSrJZfXAo8JQSp9bUxC3JDYhfiE9/aTxnZ7mOg5REKaiutarZSQTOh110Spq1adK89hNtNmz3a9lIfNaaW80U7lIA6ZiPXQmLx3lB3RrSAOrJyfbiLlniCrodPF+ijU3Pj3M7z7TXV4vV1De10dATOOLgxdPWjUehIzpkKZls+MAmWZjuqeRN+9VOtbH7PMYnM9LrtELZwf14102Wh2eRQrecHJYQjo8sIoig7iLclqE9jzvkNJCzOm+L9ReR4tpYvrbzt9ZAcYv3RoZ6P61oaoywf76ys08QiH9odaeuCRyMUUdub1CviQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=JCPQJTLSo1ApS65uG/LskZMgdGpToKLn+FJGPOK2/JA=;
- b=QwOm6Jv/ShtKwAgiN+gelkvXqF0uZgHzsW8mYYOHU5K3SUj5CUDCOrRkzeSh6BHGjoWpGzXOxD9xFSNsHfOgoDnRnWl+Som17ayd9NBG53gmQ51xnzAYW57XpWYQPKVwNYo9KM4n5wJX8ZWA9AlfRl3ouIrD8IgS48j67JdMW7aAnJ++HNNWYKdDyCwuQCk9bl6VgHwTzkODTtndYkJkPWcKwCxhPQCVPDrN6BfLmrZzbcc7gFaXspDwMbPelPMpiHTukLptQ4+O1PwHshdIqcN2B4VzaI/ns+AOiltYLnfNaeP8ICbZZ7wfFuHDZsh9WovRlfdoxgJdN5p0oDXcgg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=toradex.com;dmarc=pass action=none
- header.from=toradex.com;dkim=pass header.d=toradex.com;arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=toradex.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=JCPQJTLSo1ApS65uG/LskZMgdGpToKLn+FJGPOK2/JA=;
- b=Qn9EdJlpsuJ25oCoa6AYCqXKR39Wr/ukhN5gAwTmsrhtxEvwgl3SZrRmLDkxaqYF3dpbbVPBooBxqChKhuqlpBzyDcs3yPu0nj8XAiagLtGkRFHliEsSvIFNTNJll1GHdXGRDKUM+EStTzrmpR0kN5ZitYxI/keqnumkcUBViEI=
-Received: from VI1PR0502MB3965.eurprd05.prod.outlook.com (52.134.17.157) by
- VI1PR0502MB3744.eurprd05.prod.outlook.com (52.134.8.155) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2115.15; Wed, 31 Jul 2019 11:13:04 +0000
-Received: from VI1PR0502MB3965.eurprd05.prod.outlook.com
- ([fe80::8405:5b51:b25d:39a2]) by VI1PR0502MB3965.eurprd05.prod.outlook.com
- ([fe80::8405:5b51:b25d:39a2%6]) with mapi id 15.20.2115.005; Wed, 31 Jul 2019
- 11:13:04 +0000
-From: Philippe Schenker <philippe.schenker@toradex.com>
-To: "stefan@agner.ch" <stefan@agner.ch>, Marcel Ziswiler
- <marcel.ziswiler@toradex.com>, Max Krummenacher
- <max.krummenacher@toradex.com>, "mark.rutland@arm.com"
- <mark.rutland@arm.com>, "devicetree@vger.kernel.org"
- <devicetree@vger.kernel.org>, "michal.vokac@ysoft.com"
- <michal.vokac@ysoft.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>
-Subject: Re: [PATCH 11/22] ARM: dts: imx6: Add sleep state to can interfaces
-Thread-Topic: [PATCH 11/22] ARM: dts: imx6: Add sleep state to can interfaces
-Thread-Index: AQHVRucouAIsWgAkb02kfnBGIK5U5abkUUwAgABCvIA=
-Date: Wed, 31 Jul 2019 11:13:04 +0000
-Message-ID: <ed7645a47983a2bd28a9611fe779b6ac0ade7fe6.camel@toradex.com>
-References: <20190730144649.19022-1-dev@pschenker.ch>
- <20190730144649.19022-12-dev@pschenker.ch>
- <86f1e50b-97d6-5bdb-7cc2-e7dc162d147a@ysoft.com>
-In-Reply-To: <86f1e50b-97d6-5bdb-7cc2-e7dc162d147a@ysoft.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=philippe.schenker@toradex.com; 
-x-originating-ip: [46.140.72.82]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 68b0bfcf-9520-4b33-e7f4-08d715a80f04
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:VI1PR0502MB3744; 
-x-ms-traffictypediagnostic: VI1PR0502MB3744:
-x-microsoft-antispam-prvs: <VI1PR0502MB3744D7C8F0594A3E3C95AACFF4DF0@VI1PR0502MB3744.eurprd05.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8882;
-x-forefront-prvs: 011579F31F
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(4636009)(366004)(376002)(136003)(39850400004)(396003)(346002)(189003)(199004)(6506007)(86362001)(118296001)(5660300002)(486006)(2906002)(6436002)(76116006)(54906003)(110136005)(6512007)(7736002)(68736007)(476003)(446003)(66556008)(44832011)(2616005)(316002)(3846002)(6116002)(64756008)(66476007)(11346002)(66446008)(7416002)(8936002)(53936002)(8676002)(81156014)(2201001)(66946007)(256004)(71200400001)(36756003)(14444005)(2501003)(25786009)(229853002)(99286004)(91956017)(305945005)(6486002)(478600001)(81166006)(71190400001)(14454004)(102836004)(6246003)(26005)(186003)(4326008)(66066001)(76176011);
- DIR:OUT; SFP:1102; SCL:1; SRVR:VI1PR0502MB3744;
- H:VI1PR0502MB3965.eurprd05.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: toradex.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 80+wFXuwIY8jGu+9iBE7hZM6Fjkv2eLMT2joUSeawnL7d46D5b9s3JVhZ75SpqpLy7/R69GQB6Hq7n1wFsZ61DBbRK3CSEe8ltV4azFsascJPkDc34DxgB7Q6rSdmvgEGEV7ZY2zCUDi6gB13i7h8YN5dN/j3k0fchT9Ln6oPoPESWNsFIYGtv2RGa2BXbCIDJEWjqkvlZSIg9IovkoF8PtBeEeyocciJAdA/nxQbjoo196Ao52iwDd1D+0Mbc2uzE1kxjp+OgC00Jh0E6KFdAmyO39iisJBW1BrDJ3PN8+TkNCejwhxEdJJNK3tqVEvbslwvgyNfFvGYXkQhAfVV5Ty1XX2D1wSm/F1VXfBgM4qlySNNbKpYU/4ARz3fiBZKcZI8O7Z593wsY9IMJc0VWwSkhkba9mB8bsMu8xw0fA=
-Content-ID: <56A7282D5FEE4A4CA33B26753D1BE5EE@eurprd05.prod.outlook.com>
+ id 1hsmZ6-0003sW-2X
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 11:14:47 +0000
+Received: from pps.filterd (m0098421.ppops.net [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x6VBD0Ws127249
+ for <linux-arm-kernel@lists.infradead.org>; Wed, 31 Jul 2019 07:14:38 -0400
+Received: from e06smtp05.uk.ibm.com (e06smtp05.uk.ibm.com [195.75.94.101])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 2u37g4f5wr-1
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+ for <linux-arm-kernel@lists.infradead.org>; Wed, 31 Jul 2019 07:14:38 -0400
+Received: from localhost
+ by e06smtp05.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ Violators will be prosecuted
+ for <linux-arm-kernel@lists.infradead.org> from <rppt@linux.ibm.com>;
+ Wed, 31 Jul 2019 12:14:36 +0100
+Received: from b06cxnps4076.portsmouth.uk.ibm.com (9.149.109.198)
+ by e06smtp05.uk.ibm.com (192.168.101.135) with IBM ESMTP SMTP Gateway:
+ Authorized Use Only! Violators will be prosecuted; 
+ (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
+ Wed, 31 Jul 2019 12:14:28 +0100
+Received: from d06av22.portsmouth.uk.ibm.com (d06av22.portsmouth.uk.ibm.com
+ [9.149.105.58])
+ by b06cxnps4076.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ x6VBEQfn26607736
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 31 Jul 2019 11:14:26 GMT
+Received: from d06av22.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id A5DCA4C050;
+ Wed, 31 Jul 2019 11:14:26 +0000 (GMT)
+Received: from d06av22.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 897844C044;
+ Wed, 31 Jul 2019 11:14:24 +0000 (GMT)
+Received: from rapoport-lnx (unknown [9.148.8.168])
+ by d06av22.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
+ Wed, 31 Jul 2019 11:14:24 +0000 (GMT)
+Date: Wed, 31 Jul 2019 14:14:22 +0300
+From: Mike Rapoport <rppt@linux.ibm.com>
+To: Michal Hocko <mhocko@kernel.org>
+Subject: Re: [PATCH v2 0/5] mm: Enable CONFIG_NODES_SPAN_OTHER_NODES by
+ default for NUMA
+References: <1562887528-5896-1-git-send-email-Hoan@os.amperecomputing.com>
+ <20190712070247.GM29483@dhcp22.suse.cz>
+ <586ae736-a429-cf94-1520-1a94ffadad88@os.amperecomputing.com>
+ <20190712121223.GR29483@dhcp22.suse.cz>
+ <20190712143730.au3662g4ua2tjudu@willie-the-truck>
+ <20190712150007.GU29483@dhcp22.suse.cz>
+ <730368c5-1711-89ae-e3ef-65418b17ddc9@os.amperecomputing.com>
+ <20190730081415.GN9330@dhcp22.suse.cz>
+ <20190731062420.GC21422@rapoport-lnx>
+ <20190731080309.GZ9330@dhcp22.suse.cz>
 MIME-Version: 1.0
-X-OriginatorOrg: toradex.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 68b0bfcf-9520-4b33-e7f4-08d715a80f04
-X-MS-Exchange-CrossTenant-originalarrivaltime: 31 Jul 2019 11:13:04.5813 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: d9995866-0d9b-4251-8315-093f062abab4
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: philippe.schenker@toradex.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0502MB3744
+Content-Disposition: inline
+In-Reply-To: <20190731080309.GZ9330@dhcp22.suse.cz>
+User-Agent: Mutt/1.5.24 (2015-08-30)
+X-TM-AS-GCONF: 00
+x-cbid: 19073111-0020-0000-0000-00000358F06A
+X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
+x-cbparentid: 19073111-0021-0000-0000-000021ACF9B2
+Message-Id: <20190731111422.GA14538@rapoport-lnx>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-07-31_04:, , signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501
+ malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
+ clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ mlxlogscore=624 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1906280000 definitions=main-1907310117
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_041312_654952_62946F9A 
-X-CRM114-Status: GOOD (  16.02  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190731_041444_328158_B9D891CB 
+X-CRM114-Status: GOOD (  33.28  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.158.5 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.4.131 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -129,64 +112,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>,
+ "open list:MEMORY MANAGEMENT" <linux-mm@kvack.org>,
+ Paul Mackerras <paulus@samba.org>, "H . Peter Anvin" <hpa@zytor.com>,
+ "sparclinux@vger.kernel.org" <sparclinux@vger.kernel.org>,
+ Alexander Duyck <alexander.h.duyck@linux.intel.com>,
+ Will Deacon <will@kernel.org>,
+ "linux-s390@vger.kernel.org" <linux-s390@vger.kernel.org>,
+ Michael Ellerman <mpe@ellerman.id.au>, "x86@kernel.org" <x86@kernel.org>,
+ "willy@infradead.org" <willy@infradead.org>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Hoan Tran OS <hoan@os.amperecomputing.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Open Source Submission <patches@amperecomputing.com>,
+ Pavel Tatashin <pavel.tatashin@microsoft.com>,
+ Vasily Gorbik <gor@linux.ibm.com>, Will Deacon <will.deacon@arm.com>,
+ Borislav Petkov <bp@alien8.de>, Thomas Gleixner <tglx@linutronix.de>,
+ Vlastimil Babka <vbabka@suse.cz>, Oscar Salvador <osalvador@suse.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-imx@nxp.com" <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+ Andrew Morton <akpm@linux-foundation.org>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
+ "David S . Miller" <davem@davemloft.net>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gV2VkLCAyMDE5LTA3LTMxIGF0IDA5OjE0ICswMjAwLCBNaWNoYWwgVm9rw6HEjSB3cm90ZToN
-Cj4gT24gMzAuIDA3LiAxOSAxNjo0NiwgUGhpbGlwcGUgU2NoZW5rZXIgd3JvdGU6DQo+ID4gRnJv
-bTogUGhpbGlwcGUgU2NoZW5rZXIgPHBoaWxpcHBlLnNjaGVua2VyQHRvcmFkZXguY29tPg0KPiA+
-IA0KPiA+IFRoaXMgcGF0Y2ggcHJlcGFyZXMgdGhlIGRldmljZXRyZWUgZm9yIHRoZSBuZXcgSXhv
-cmEgVjEuMiB3aGVyZSB3ZSBhcmUNCj4gPiBhYmxlIHRvIHR1cm4gb2ZmIHRoZSBzdXBwbHkgb2Yg
-dGhlIGNhbiB0cmFuc2NlaXZlci4gVGhpcyBpbXBsaWVzIHRvIHVzZQ0KPiA+IGEgc2xlZXAgc3Rh
-dGUgb24gdHJhbnNtaXNzaW9uIHBpbnMgaW4gb3JkZXIgdG8gcHJldmVudCBiYWNrZmVlZGluZy4N
-Cj4gPiANCj4gPiBTaWduZWQtb2ZmLWJ5OiBQaGlsaXBwZSBTY2hlbmtlciA8cGhpbGlwcGUuc2No
-ZW5rZXJAdG9yYWRleC5jb20+DQo+ID4gLS0tDQo+IA0KPiBXaGF0IGFib3V0ICJBUk06IGR0czog
-aW14NnFkbC1hcGFsaXM6ICIgZm9yIHRoZSBzdWJqZWN0Pw0KPiBUbyBiZSBjbGVhciB0aGF0IHRo
-aXMgaXMgbm90IHJlbGF0ZWQgdG8gdGhlIGlteDYgU29DIGl0c2VsZi4NCg0KVGhhbmtzIGZvciB5
-b3VyIGNvbW1lbnRzIE1pY2hhbCEgV2lsbCB0YWt0ZSB0aG9zZSBpbnRvIGFjY291bnQgZm9yIHYy
-Lg0KDQo+IA0KPiA+ICAgYXJjaC9hcm0vYm9vdC9kdHMvaW14NnFkbC1hcGFsaXMuZHRzaSB8IDI3
-ICsrKysrKysrKysrKysrKysrKysrKy0tLS0tLQ0KPiA+ICAgMSBmaWxlIGNoYW5nZWQsIDIxIGlu
-c2VydGlvbnMoKyksIDYgZGVsZXRpb25zKC0pDQo+ID4gDQo+ID4gZGlmZiAtLWdpdCBhL2FyY2gv
-YXJtL2Jvb3QvZHRzL2lteDZxZGwtYXBhbGlzLmR0c2kNCj4gPiBiL2FyY2gvYXJtL2Jvb3QvZHRz
-L2lteDZxZGwtYXBhbGlzLmR0c2kNCj4gPiBpbmRleCA3YzRhZDU0MWMzZjUuLjU5ZWQyZTRhMWZk
-MSAxMDA2NDQNCj4gPiAtLS0gYS9hcmNoL2FybS9ib290L2R0cy9pbXg2cWRsLWFwYWxpcy5kdHNp
-DQo+ID4gKysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvaW14NnFkbC1hcGFsaXMuZHRzaQ0KPiA+IEBA
-IC0xNDgsMTQgKzE0OCwxNiBAQA0KPiA+ICAgfTsNCj4gPiAgIA0KPiA+ICAgJmNhbjEgew0KPiA+
-IC0JcGluY3RybC1uYW1lcyA9ICJkZWZhdWx0IjsNCj4gPiAtCXBpbmN0cmwtMCA9IDwmcGluY3Ry
-bF9mbGV4Y2FuMT47DQo+ID4gKwlwaW5jdHJsLW5hbWVzID0gImRlZmF1bHQiLCAic2xlZXAiOw0K
-PiA+ICsJcGluY3RybC0wID0gPCZwaW5jdHJsX2ZsZXhjYW4xX2RlZmF1bHQ+Ow0KPiA+ICsJcGlu
-Y3RybC0xID0gPCZwaW5jdHJsX2ZsZXhjYW4xX3NsZWVwPjsNCj4gPiAgIAlzdGF0dXMgPSAiZGlz
-YWJsZWQiOw0KPiA+ICAgfTsNCj4gPiAgIA0KPiA+ICAgJmNhbjIgew0KPiA+IC0JcGluY3RybC1u
-YW1lcyA9ICJkZWZhdWx0IjsNCj4gPiAtCXBpbmN0cmwtMCA9IDwmcGluY3RybF9mbGV4Y2FuMj47
-DQo+ID4gKwlwaW5jdHJsLW5hbWVzID0gImRlZmF1bHQiLCAic2xlZXAiOw0KPiA+ICsJcGluY3Ry
-bC0wID0gPCZwaW5jdHJsX2ZsZXhjYW4yX2RlZmF1bHQ+Ow0KPiA+ICsJcGluY3RybC0xID0gPCZw
-aW5jdHJsX2ZsZXhjYW4yX3NsZWVwPjsNCj4gPiAgIAlzdGF0dXMgPSAiZGlzYWJsZWQiOw0KPiA+
-ICAgfTsNCj4gPiAgIA0KPiA+IEBAIC01OTksMTkgKzYwMSwzMiBAQA0KPiA+ICAgCQk+Ow0KPiA+
-ICAgCX07DQo+ID4gICANCj4gPiAtCXBpbmN0cmxfZmxleGNhbjE6IGZsZXhjYW4xZ3JwIHsNCj4g
-PiArCXBpbmN0cmxfZmxleGNhbjFfZGVmYXVsdDogZmxleGNhbjFkZWZncnAgew0KPiA+ICAgCQlm
-c2wscGlucyA9IDwNCj4gPiAgIAkJCU1YNlFETF9QQURfR1BJT183X19GTEVYQ0FOMV9UWCAweDFi
-MGIwDQo+ID4gICAJCQlNWDZRRExfUEFEX0dQSU9fOF9fRkxFWENBTjFfUlggMHgxYjBiMA0KPiA+
-ICAgCQk+Ow0KPiA+ICAgCX07DQo+ID4gICANCj4gPiAtCXBpbmN0cmxfZmxleGNhbjI6IGZsZXhj
-YW4yZ3JwIHsNCj4gPiArCXBpbmN0cmxfZmxleGNhbjFfc2xlZXA6IGZsZXhjYW4xc2xwZ3JwIHsN
-Cj4gPiArCQlmc2wscGlucyA9IDwNCj4gPiArCQkJTVg2UURMX1BBRF9HUElPXzdfX0dQSU8xX0lP
-MDcgMHgwDQo+ID4gKwkJCU1YNlFETF9QQURfR1BJT184X19HUElPMV9JTzA4IDB4MA0KPiA+ICsJ
-CT47DQo+ID4gKwl9Ow0KPiA+ICsNCj4gPiArCXBpbmN0cmxfZmxleGNhbjJfZGVmYXVsdDogZmxl
-eGNhbjJkZWZncnAgew0KPiA+ICAgCQlmc2wscGlucyA9IDwNCj4gPiAgIAkJCU1YNlFETF9QQURf
-S0VZX0NPTDRfX0ZMRVhDQU4yX1RYIDB4MWIwYjANCj4gPiAgIAkJCU1YNlFETF9QQURfS0VZX1JP
-VzRfX0ZMRVhDQU4yX1JYIDB4MWIwYjANCj4gPiAgIAkJPjsNCj4gPiAgIAl9Ow0KPiA+ICsJcGlu
-Y3RybF9mbGV4Y2FuMl9zbGVlcDogZmxleGNhbjJzbHBncnAgew0KPiA+ICsJCWZzbCxwaW5zID0g
-PA0KPiA+ICsJCQlNWDZRRExfUEFEX0tFWV9DT0w0X19HUElPNF9JTzE0IDB4MA0KPiA+ICsJCQlN
-WDZRRExfUEFEX0tFWV9ST1c0X19HUElPNF9JTzE1IDB4MA0KPiA+ICsJCT47DQo+ID4gKwl9Ow0K
-PiA+ICAgDQo+ID4gICAJcGluY3RybF9ncGlvX2JsX29uOiBncGlvYmxvbiB7DQo+ID4gICAJCWZz
-bCxwaW5zID0gPA0KPiA+IA0KX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBs
-aXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
-dGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Wed, Jul 31, 2019 at 10:03:09AM +0200, Michal Hocko wrote:
+> On Wed 31-07-19 09:24:21, Mike Rapoport wrote:
+> > [ sorry for a late reply too, somehow I missed this thread before ]
+> > 
+> > On Tue, Jul 30, 2019 at 10:14:15AM +0200, Michal Hocko wrote:
+> > > [Sorry for a late reply]
+> > > 
+> > > On Mon 15-07-19 17:55:07, Hoan Tran OS wrote:
+> > > > Hi,
+> > > > 
+> > > > On 7/12/19 10:00 PM, Michal Hocko wrote:
+> > > [...]
+> > > > > Hmm, I thought this was selectable. But I am obviously wrong here.
+> > > > > Looking more closely, it seems that this is indeed only about
+> > > > > __early_pfn_to_nid and as such not something that should add a config
+> > > > > symbol. This should have been called out in the changelog though.
+> > > > 
+> > > > Yes, do you have any other comments about my patch?
+> > > 
+> > > Not really. Just make sure to explicitly state that
+> > > CONFIG_NODES_SPAN_OTHER_NODES is only about __early_pfn_to_nid and that
+> > > doesn't really deserve it's own config and can be pulled under NUMA.
+> > > 
+> > > > > Also while at it, does HAVE_MEMBLOCK_NODE_MAP fall into a similar
+> > > > > bucket? Do we have any NUMA architecture that doesn't enable it?
+> > > > > 
+> > 
+> > HAVE_MEMBLOCK_NODE_MAP makes huge difference in node/zone initialization
+> > sequence so it's not only about a singe function.
+> 
+> The question is whether we want to have this a config option or enable
+> it unconditionally for each NUMA system.
+
+We can make it 'default NUMA', but we can't drop it completely because
+microblaze uses sparse_memory_present_with_active_regions() which is
+unavailable when HAVE_MEMBLOCK_NODE_MAP=n.
+
+> > > > As I checked with arch Kconfig files, there are 2 architectures, riscv 
+> > > > and microblaze, do not support NUMA but enable this config.
+> > 
+> > My take would be that riscv will support NUMA some day.
+> >  
+> > > > And 1 architecture, alpha, supports NUMA but does not enable this config.
+> > 
+> > alpha's NUMA support is BROKEN for more than a decade now, I doubt it'll
+> > ever get fixed.
+> 
+> I can see Al has marked it BROKEN in 2005. Maybe time to rip it out?
+> Although it doesn't seem to be a lot of code in arch/alpha at first
+> glance so maybe not worth an effort.
+> -- 
+> Michal Hocko
+> SUSE Labs
+> 
+
+-- 
+Sincerely yours,
+Mike.
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
