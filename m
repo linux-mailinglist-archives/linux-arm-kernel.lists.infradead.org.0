@@ -2,101 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E00C7C32B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 15:20:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E43307C335
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 15:20:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Nl2yrrmSO7ufA5nijP9kTkuEqyC8VsCVKF7IZpI/YtU=; b=g46o0Ls8YTvQR9
-	1iUIsArd4etoD89KwKGhXRoXKTP9yjaEtSp9fEfHtowBIUt4RdboIZmu8sreGr7Yt/SHQNuonw06r
-	o5BYKD9403xyRpEI5OKuelio/fUxOJhg9G03eOFO0nEY1B1+oKdGEbgsT5j72ioJ3sUgj/70HKDju
-	xm0temtkgECecI08taxee7C2z7Y5gIAw468LBpZH7gT7N8/xmoNopNB9U7QinW/mCVMzIcD1iFKGJ
-	stEvyrxjAhnkUS3mlF6RJJSq2x7/atsbZIltUWVLV7oXt39Yl52G/0E9upR3jcNsH13tH0vfjFk5n
-	VUIrkPfoJRrsPnLRmcLw==;
+	List-Owner; bh=82l5JuBqxEbEKSdCPmgihtMzE4l4HjVpnP9iUn21ZEc=; b=U+bkCvN1q2eQOR
+	oVIqS5AWTzzyG1pgs6m9/lv/z2cYHOTO9n2jSMle7YLI23YkSl49c6msf0hBgXV5Y6qq4Gi5yj4Nn
+	dEBHK/gC/HiksVu4LEqHd9vB7eOeQaWX1dkQrjvIqxdXyzrSeGIGfuUaZlgjR9qmTmRLNm9+80KKE
+	BrOnH3GmCRFLX7ouDtB4gnwBAfa0ez2DpQK9jBV9eeDdX+y/K0ziBsD4cFlHPQ7Pel5w/pqpguGpq
+	Gz9Adt1a6NnYRKy57Db6nhWu+ZDssdRfKYrTs3ApZq+RHyUzxt4jdiIrTUsGmwBP+OkOS5SQsSk2K
+	0RXVCcC43TbMkhwzacdw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsoWE-00019o-2C; Wed, 31 Jul 2019 13:19:50 +0000
-Received: from esa6.microchip.iphmx.com ([216.71.154.253])
+	id 1hsoXB-0002gM-1m; Wed, 31 Jul 2019 13:20:49 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsoW7-00015W-1a
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 13:19:44 +0000
-Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
- Ludovic.Desroches@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
- envelope-from="Ludovic.Desroches@microchip.com";
- x-sender="Ludovic.Desroches@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com a:mx1.microchip.iphmx.com
- a:mx2.microchip.iphmx.com include:servers.mcsv.net
- include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa6.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
- envelope-from="Ludovic.Desroches@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa6.microchip.iphmx.com;
- dkim=none (message not signed) header.i=none;
- spf=Pass smtp.mailfrom=Ludovic.Desroches@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: BOwPyBdp7t0RiZBw5FHJUNlbvR5H0PUELcwVzXHqUd1zyd5AjwBMf02qY/FT0PsbtSxWxz71vZ
- NVKeyaKZt9KdNnL21D4Jm73se5MWZNcYCpZiB64xbI0NYlGwTTE+wu2PafaGqZ/jn/yfsG6cn4
- JFVRutBeldNuaeEG3HgDFBfuy5taa6VyeQPbCF+B0DeL2UYwX+yrIbTMf++FF5Svchic1H4Qll
- 2K6bZtleRt67yDQ7GjmnnCWvmduLmzMfw8dgljMQt50Iee13y6m3FkFenlXZxvQ1NXHJsTmJNG
- C0w=
-X-IronPort-AV: E=Sophos;i="5.64,330,1559545200"; d="scan'208";a="40428608"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 31 Jul 2019 06:19:41 -0700
-Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
- chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Wed, 31 Jul 2019 06:19:39 -0700
-Received: from localhost (10.10.85.251) by chn-vm-ex02.mchp-main.com
- (10.10.85.144) with Microsoft SMTP Server id 15.1.1713.5 via Frontend
- Transport; Wed, 31 Jul 2019 06:19:39 -0700
-Date: Wed, 31 Jul 2019 15:18:44 +0200
-From: Ludovic Desroches <ludovic.desroches@microchip.com>
-To: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <uwe@kleine-koenig.org>, Rob Herring
- <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>, Nicolas Ferre
- <nicolas.ferre@microchip.com>, Alexandre Belloni
- <alexandre.belloni@bootlin.com>, <linux-arm-kernel@lists.infradead.org>,
- <devicetree@vger.kernel.org>, <info@acmesystems.it>
-Subject: Re: [PATCH 2/2] ARM: dts: at91: add support for Arietta G25
-Message-ID: <20190731131844.avi5zlwkgu7f2her@M43218.corp.atmel.com>
-Mail-Followup-To: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <uwe@kleine-koenig.org>,
- Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>,
- Nicolas Ferre <nicolas.ferre@microchip.com>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- info@acmesystems.it
-References: <20190728210403.2730-1-uwe@kleine-koenig.org>
- <20190728210403.2730-3-uwe@kleine-koenig.org>
- <20190731113648.kyktpnk3exly57fw@M43218.corp.atmel.com>
+ id 1hsoX3-0002fh-I3
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 13:20:42 +0000
+Received: by mail-io1-xd42.google.com with SMTP id h6so10970831iom.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 31 Jul 2019 06:20:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=lixom-net.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=uiJuwZiymlEb9kJ2URB/qON8yQUNY8MIwM0Qk6MZ00E=;
+ b=SS1frxnBsvEYqQ9PkeQtYGNQgRQYmycAW3dEtWmFlhjk2/ZiVnf0aKFPyZv6VXdQ9g
+ JFv6UbF9X/+/lUq3RWA+SC81hijNvXH1RQPeve+613wWX5RP//rfOWNDskOL9rqHG87F
+ 65OdOfqOJTx/sYfcmAolfdThTEno9o6F9KensMlglqchm+1hUdX93sFV+J5FGxNdKOXm
+ Jwfgc4W85+EknuqcW0wbypg5fr/X3k0oHFkN56T3PAiqXAlWNvUmcIPIXzi9x3lOBT8r
+ hOr8uCEsz9W7WgDlYJwcTKfuNPEbsTAbmwyY9Hi2YUG/JdYDRH5Ca1AlA+EoyJrE8aD0
+ k5bA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=uiJuwZiymlEb9kJ2URB/qON8yQUNY8MIwM0Qk6MZ00E=;
+ b=gcZlxoiKDpZt7lKX42z0BYv0CJjWxM8rxKRzT26VD2UT7gf/IPlmC6+ncM41mk8eZq
+ fWZtpvCOEw+nZFk8WnfNNdejpRdeyBM8/R8PUsqevdUrTMXJnVpZw62kokv24CBudYqo
+ ZcUovFM+4GBhRJ/TeGGKXdeMOxI9/uWtkKe/GejEwNV4hfYc5WLcSgto3vwfnpd+17al
+ iVN9/nyMEvLkT2/IoWosvaKP917gJQFIk14SHQ3stg11qkZOhFiQD5lbOn8I4kpgVHYf
+ 2rGWIuSyB0qET2q9SLGwA0BcPUezB8WfzdKHe/rWQA2i52fzxAm+NICfnyvE21dX4/UU
+ T2Pg==
+X-Gm-Message-State: APjAAAU6/eu0KsuIxla5m2+/IrCah2E0jNFLNYEKKKZAtnoq3QNFmLlL
+ L1v+Qo3GA2naB/aQksGUO05UB1zqI3+W5qTjfz0=
+X-Google-Smtp-Source: APXvYqy110YP4z9YGjyJCXUWIQe2bV7DMu+WU5DQ0hrRwBoddF/3YS3yVQYKaputJMUd9/exV5xavgrEbbw2HT/b5jM=
+X-Received: by 2002:a5d:94d0:: with SMTP id y16mr73259624ior.123.1564579240224; 
+ Wed, 31 Jul 2019 06:20:40 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190731113648.kyktpnk3exly57fw@M43218.corp.atmel.com>
-User-Agent: NeoMutt/20180716
+References: <20190729135505.15394-1-patrice.chotard@st.com>
+ <CAOesGMg-3xt2qjjZ569pUE+d6tn7nz264AN9ARkBT_Ej4TFC2A@mail.gmail.com>
+ <de6ab910-380e-6271-88d8-6fe670525e60@st.com>
+In-Reply-To: <de6ab910-380e-6271-88d8-6fe670525e60@st.com>
+From: Olof Johansson <olof@lixom.net>
+Date: Wed, 31 Jul 2019 15:20:27 +0200
+Message-ID: <CAOesGMgi2cLUZGZnzKY+4i2tZSFyLe2TEK5SPY5yu0qSh_BRxg@mail.gmail.com>
+Subject: Re: ARM: multi_v7_defconfig: Enable SPI_STM32_QSPI support
+To: Alexandre Torgue <alexandre.torgue@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_061943_126600_E52D6145 
-X-CRM114-Status: GOOD (  16.06  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190731_062041_657708_CA6DCE67 
+X-CRM114-Status: GOOD (  10.36  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.154.253 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -108,138 +89,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Arnd Bergmann <arnd@arndb.de>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Patrice CHOTARD <patrice.chotard@st.com>, Russell King <linux@armlinux.org.uk>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 31, 2019 at 01:36:49PM +0200, Ludovic Desroches wrote:
-> On Sun, Jul 28, 2019 at 11:04:03PM +0200, Uwe Kleine-K=F6nig wrote:
-> > =
+Hi,
 
-> > The Arietta G25 is a SBC powered by a AT91SAMG25 running at 400 MHz.
-> > See https://www.acmesystems.it/arietta for more details.
-> > =
+On Wed, Jul 31, 2019 at 8:48 AM Alexandre Torgue
+<alexandre.torgue@st.com> wrote:
+>
+> Hi Olof
+>
+> On 7/30/19 7:36 PM, Olof Johansson wrote:
+> > Hi Patrice,
+> >
+> > If you cc soc@kernel.org on patches you want us to apply, you'll get
+> > them automatically tracked by patchwork.
+> >
+>
+> Does it means that you will take it directly in arm-soc tree ?
+> I mean, I used to take this kind of patch (multi-v7_defconfig patch
+> linked to STM32 driver) in my stm32 branch and to send PR for them.
 
-> > Signed-off-by: Uwe Kleine-K=F6nig <uwe@kleine-koenig.org>
-> Acked-by: Ludovic Desroches <ludovic.desroches@microchip.com>
+You can do that too -- it was unclear to me whether you posted the
+patch with us in the To: line because you wanted it applied or not.
 
-I should have double checked before, I had in mind that we support this
-board in our bootloader but it's also the case in the kernel:
 
-arch/arm/boot/dts/at91-ariettag25.dts
-
-Regards
-
-Ludovic
-
-> =
-
-> > ---
-> >  arch/arm/boot/dts/at91sam9g25-arietta.dts | 86 +++++++++++++++++++++++
-> >  1 file changed, 86 insertions(+)
-> >  create mode 100644 arch/arm/boot/dts/at91sam9g25-arietta.dts
-> > =
-
-> > diff --git a/arch/arm/boot/dts/at91sam9g25-arietta.dts b/arch/arm/boot/=
-dts/at91sam9g25-arietta.dts
-> > new file mode 100644
-> > index 000000000000..6c20e02f0ea9
-> > --- /dev/null
-> > +++ b/arch/arm/boot/dts/at91sam9g25-arietta.dts
-> > @@ -0,0 +1,86 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/*
-> > + * Arietta - System On Module
-> > + * https://www.acmesystems.it/arietta
-> > + */
-> > +
-> > +/dts-v1/;
-> > +#include "at91sam9g25.dtsi"
-> > +
-> > +/ {
-> > +	model =3D "Acme Systems Arietta G25";
-> > +	compatible =3D "acme,ariettag25", "atmel,at91sam9x5", "atmel,at91sam9=
-";
-> > +
-> > +	chosen {
-> > +		stdout-path =3D "serial0:115200n8";
-> > +	};
-> > +
-> > +	memory {
-> > +		reg =3D <0x20000000 0x8000000>;
-> > +	};
-> > +
-> > +	clocks {
-> > +		slow_xtal {
-> > +			clock-frequency =3D <32768>;
-> > +		};
-> > +
-> > +		main_xtal {
-> > +			clock-frequency =3D <12000000>;
-> > +		};
-> > +	};
-> > +
-> > +	ahb {
-> > +		apb {
-> > +			rtc@fffffeb0 {
-> > +				status =3D "okay";
-> > +			};
-> > +		};
-> > +	};
-> > +
-> > +	leds {
-> > +		compatible =3D "gpio-leds";
-> > +
-> > +		arietta_led {
-> > +			label =3D "arietta_led";
-> > +			gpios =3D <&pioB 8 GPIO_ACTIVE_HIGH>;
-> > +			linux,default-trigger =3D "heartbeat";
-> > +		};
-> > +	};
-> > +};
-> > +
-> > +&dbgu {
-> > +	status =3D "okay";
-> > +};
-> > +
-> > +&mmc0 {
-> > +	pinctrl-0 =3D <
-> > +		&pinctrl_mmc0_slot0_clk_cmd_dat0
-> > +		&pinctrl_mmc0_slot0_dat1_3>;
-> > +	status =3D "okay";
-> > +
-> > +	slot@0 {
-> > +		reg =3D <0>;
-> > +		bus-width =3D <4>;
-> > +	};
-> > +};
-> > +
-> > +&usart0 {
-> > +	status =3D"okay";
-> > +};
-> > +
-> > +&usart1 {
-> > +	status =3D"okay";
-> > +};
-> > +
-> > +&usb0 {
-> > +	status =3D "okay";
-> > +	num-ports =3D <3>;
-> > +};
-> > +
-> > +&usb1 {
-> > +	status =3D "okay";
-> > +};
-> > +
-> > +&usb2 {
-> > +	status =3D "okay";
-> > +};
-> > -- =
-
-> > 2.20.1
-> > =
-
+-Olof
 
 _______________________________________________
 linux-arm-kernel mailing list
