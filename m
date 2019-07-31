@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D1E57C838
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 18:11:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E1BF7C839
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 18:11:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vxKM4hzavX/uCVnMYccbfxeVQL0p/zHYffkmbHbAy60=; b=BgwxmvarCWAz7V
-	Je3sRD2mgZ/ohCV/Q3fvLh/9ayjgfvoY26CLRS+Ea6XjyNLdUz02uiEq7pjgOTf64LH1G2wPM/wq1
-	fVZsfEeYh2MCFPrU57BceKbwYNO5Sa5Ps4Z9HC5pz4Q2O3VbIunICXFXBHuipevrcZChxup0W1jvk
-	bkuJV6EAFgNl/zezuB1LLBGJdkpgFPOUuwt17OqtgP9z4xObYP52KpVWKlTPKp6upsxdsvVYKnu+3
-	hPpAx5xK6XD6lmabRGLpytNvVit5s0p/CDvgBroYIfuLpuyp4HYQWHA57Xakbh+XxHNGJ/LkSqOSa
-	CMfJ9PZMf/KDVamWe9DA==;
+	List-Owner; bh=6OuHible/4q9PQCEY4sMbKPUMX8uYRaYGoK6P4pI4qQ=; b=bBlFBAOFePlt6q
+	PHBmxlJ/HZAg8MA/YVZoVX21ItqC8GJw9GGf6XRqsuYAOoyLAOcI7r+OnyzYUT2nyHYq1M2u9rvoe
+	AQJNAc3oUaGqBEfaKEvS5csmsH86CPHaPsj3LEVOVOYUp1pvLYhxShBXYf+9wMR4pr8HpR8OQqJG3
+	3KUb4JsMcNhKb/oNCU0x3SMycOK9t1EV1E76ZDP93MEycJ6hNk21e7J+8MpJ70xw9wDytA49EHmh8
+	lqd5EVPiR98esnr2Q8T9tTO1QZKH9F4YTfS/2QPKyanqMUgBVjm7gXEpe1REvPCrlQmv2FWrpn+eq
+	W+s1KiTiwTc+vQTXZI4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsrBw-0007NH-E5; Wed, 31 Jul 2019 16:11:04 +0000
+	id 1hsrCA-0007bQ-QJ; Wed, 31 Jul 2019 16:11:18 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsrBl-0007Mn-E1
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 16:10:55 +0000
+ id 1hsrC0-0007Zi-K5
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 16:11:10 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EDEF5206A3;
- Wed, 31 Jul 2019 16:10:50 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 11533206A3;
+ Wed, 31 Jul 2019 16:11:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564589453;
- bh=WCCv3Aec470dqenJ3D0yJXfNnDANp7cVqdAtXPLEgsM=;
+ s=default; t=1564589468;
+ bh=wMw/vfv7591v5B2lTvWN47RNjbkh0FPCOeS3UTprHLk=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=O0oO6ADuBpn0GsCzed/V3vKsIofX8heKLLg1altER77SX8nvqgWsXXTEM1v+taPPH
- EIwclnx482U7aJLNBxzEszh8K/nBVMDE9WWJ3rSKcTQBSk8H0adilY4q0TaGfAK9h8
- GAMdp9Q3T2fvoMqUn4p9KL2EwGx5PxfqoHpuEndc=
-Date: Wed, 31 Jul 2019 17:10:48 +0100
+ b=JWwb9h/LpO93Nj+dCkoUS/EpGOhXEKuyHtRHXJC6igJNZAwfQn0IYkY7GipJK9fRJ
+ XReuRfvbRYRviqtwDUSADC6rOMJeYCvzl9f5WmQnPcH5pZvZXdZE4wp3fSsmA+9VBr
+ U+kZr3/F/RT8+HUjng0iS0Bm/HZsFhsyWU9sfaag=
+Date: Wed, 31 Jul 2019 17:11:04 +0100
 From: Will Deacon <will@kernel.org>
 To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [RFC 1/2] mm/sparsemem: Add vmem_altmap support in
- vmemmap_populate_basepages()
-Message-ID: <20190731161047.ypye54x5c5jje5sq@willie-the-truck>
+Subject: Re: [RFC 2/2] arm64/mm: Enable device memory allocation and free for
+ vmemmap mapping
+Message-ID: <20190731161103.kqv3v2xlq4vnyjhp@willie-the-truck>
 References: <1561697083-7329-1-git-send-email-anshuman.khandual@arm.com>
- <1561697083-7329-2-git-send-email-anshuman.khandual@arm.com>
+ <1561697083-7329-3-git-send-email-anshuman.khandual@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1561697083-7329-2-git-send-email-anshuman.khandual@arm.com>
+In-Reply-To: <1561697083-7329-3-git-send-email-anshuman.khandual@arm.com>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_091054_289925_70573D46 
-X-CRM114-Status: GOOD (  12.95  )
+X-CRM114-CacheID: sfid-20190731_091108_688202_FAED52AA 
+X-CRM114-Status: GOOD (  17.79  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,42 +78,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fenghua Yu <fenghua.yu@intel.com>, Tony Luck <tony.luck@intel.com>,
- linux-ia64@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>, Will Deacon <will.deacon@arm.com>,
- x86@kernel.org, linux-kernel@vger.kernel.org, linux-mm@kvack.org,
- Andy Lutomirski <luto@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, linux-mm@kvack.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 28, 2019 at 10:14:42AM +0530, Anshuman Khandual wrote:
-> Generic vmemmap_populate_basepages() is used across platforms for vmemmap
-> as standard or as fallback when huge pages mapping fails. On arm64 it is
-> used for configs with ARM64_SWAPPER_USES_SECTION_MAPS applicable both for
-> ARM64_16K_PAGES and ARM64_64K_PAGES which cannot use huge pages because of
-> alignment requirements.
+On Fri, Jun 28, 2019 at 10:14:43AM +0530, Anshuman Khandual wrote:
+> This enables vmemmap_populate() and vmemmap_free() functions to incorporate
+> struct vmem_altmap based device memory allocation and free requests. With
+> this device memory with specific atlmap configuration can be hot plugged
+> and hot removed as ZONE_DEVICE memory on arm64 platforms.
 > 
-> This prevents those configs from allocating from device memory for vmemap
-> mapping as vmemmap_populate_basepages() does not support vmem_altmap. This
-> enables that required support. Each architecture should evaluate and decide
-> on enabling device based base page allocation when appropriate. Hence this
-> keeps it disabled for all architectures to preserve the existing semantics.
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will.deacon@arm.com>
+> Cc: Mark Rutland <mark.rutland@arm.com>
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-kernel@vger.kernel.org
+> 
+> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+> ---
+>  arch/arm64/mm/mmu.c | 57 ++++++++++++++++++++++++++++++++++-------------------
+>  1 file changed, 37 insertions(+), 20 deletions(-)
+> 
+> diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
+> index 39e18d1..8867bbd 100644
+> --- a/arch/arm64/mm/mmu.c
+> +++ b/arch/arm64/mm/mmu.c
+> @@ -735,15 +735,26 @@ int kern_addr_valid(unsigned long addr)
+>  }
+>  
+>  #ifdef CONFIG_MEMORY_HOTPLUG
+> -static void free_hotplug_page_range(struct page *page, size_t size)
+> +static void free_hotplug_page_range(struct page *page, size_t size,
+> +				    struct vmem_altmap *altmap)
+>  {
+> -	WARN_ON(!page || PageReserved(page));
+> -	free_pages((unsigned long)page_address(page), get_order(size));
+> +	if (altmap) {
+> +		/*
+> +		 * vmemmap_populate() creates vmemmap mapping either at pte
+> +		 * or pmd level. Unmapping request at any other level would
+> +		 * be a problem.
+> +		 */
+> +		WARN_ON((size != PAGE_SIZE) && (size != PMD_SIZE));
+> +		vmem_altmap_free(altmap, size >> PAGE_SHIFT);
+> +	} else {
+> +		WARN_ON(!page || PageReserved(page));
+> +		free_pages((unsigned long)page_address(page), get_order(size));
+> +	}
+>  }
+>  
+>  static void free_hotplug_pgtable_page(struct page *page)
+>  {
+> -	free_hotplug_page_range(page, PAGE_SIZE);
+> +	free_hotplug_page_range(page, PAGE_SIZE, NULL);
+>  }
+>  
+>  static void free_pte_table(pmd_t *pmdp, unsigned long addr)
+> @@ -807,7 +818,8 @@ static void free_pud_table(pgd_t *pgdp, unsigned long addr)
+>  }
+>  
+>  static void unmap_hotplug_pte_range(pmd_t *pmdp, unsigned long addr,
+> -				    unsigned long end, bool sparse_vmap)
+> +				    unsigned long end, bool sparse_vmap,
+> +				    struct vmem_altmap *altmap)
 
-This commit message doesn't really make sense to me. There's a huge amount
-of arm64-specific detail, followed by vague references to "this" and
-"those" and "that" and I lost track of what you're trying to solve.
-
-However, I puzzled through the code and I think it does make sense, so:
-
-Acked-by: Will Deacon <will@kernel.org>
-
-assuming you rewrite the commit message.
-
-However, this has a dependency on your hot remove series which has open
-comments from Mark Rutland afaict.
+Do you still need the sparse_vmap parameter, or can you just pass a NULL
+altmap pointer when sparse_vmap is false?
 
 Will
 
