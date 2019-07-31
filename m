@@ -2,84 +2,37 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0457C7CDC9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 22:06:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB3A57CDE4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 22:09:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=PruC0uPqz7SBIRUhitfvDhT95o3O92kmXjsPDJzF3K0=; b=J6i
-	ppRJsbhpuvZbadUjpkNg2Ruj6xxYNoMEkF2mFqFQjtWjzU7YJwk2AG1tKcA7xUght3iry7T1fWiAi
-	CNeacf1iZw3juyBABag+k3J3/UuGDY305TJ+lY8MOv1dv6eTv5yowS8w7YKMwnOfIDh5Pq7kd66mW
-	khrn50EJi5I0syAoDLGIyPhP74lbJmysK+6crLiYBqCjwAh4hxT5yrzhAm3+zuT8na+UECS4FnJON
-	ouGvsybK5wJ7raHKTjpDb5qmEXgZpjgXEPF1wVejX7+eOE4ZyYlixC0c+CbIZX4o3jwAYYyIWndQ7
-	hpeYNzc8r4H9qLYDnYiLtm3E6rhrDGQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=sQn27lnRzucIL3hsRwqjAHaUJNpRgbutvcTsBl1qwkk=; b=ldyHl1gl3dNxqh
+	CqhL6U0dLVXePonrxdpfvhlmnRAzzwg6IQCBoad7M330pIb78z9zbhgGNtVFOELcamOxd0tcc1azt
+	wd9ICZa7HHioOKLGUUyJwQQ3j1TZVDFPMyw+HGeIAMGA03tI+WtwqW1JBCHUo1IzRgWkQz7AbgHs0
+	ePulAwBMNcxyUctbPhciSHiqYSJH+GM3EZ+wcuAels1ohzS8bQSQ4rALjauv/ZuAjRaeX2SDP7Rsd
+	MmY49TMO7eUm7nFSljnSHeXX3yuQt1PmcjCWZRkUY2Ld4Svk2ENS8sCmTrzxFKBhw2yzI/h9yUUow
+	eWQbgLRvs0t4IXTrt28g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsura-0006uL-9H; Wed, 31 Jul 2019 20:06:18 +0000
-Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsurS-0006tc-0I
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 20:06:11 +0000
-Received: by mail-vs1-xe41.google.com with SMTP id v6so47191699vsq.4
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 31 Jul 2019 13:06:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lca.pw; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=xmPjjmmf4+gFo5kALeeHuZbdpMAsYz3IH/3r3H4+9ag=;
- b=G8rAEk4u8bQFqyZvsdRqDU+I5cYozB4lVT2OE2OcGrXZSPpFoi5VRmJiZuBXbPE7Ps
- t89Kb/cgo/PjpoU0beaAKd8TU84LTlL6EjaDhdQQZWxW8obpVyuKeMAu0RkePO59Ghcf
- jfujlAw6IkDEyzp6vuamu/1K8k2YZwfdHVPIMpzCIuSV2ew8+1Q8U1hQ/i4FQnYKAX/m
- ofq3/saeJxblLG3EK1CLbK8Ky4WjImDfrE87wrzFIkDBbFsjbAQW1V1leQAqpFQI77SG
- xMaiNn9WTWax+ELQ1xPCNwmzXZS6idZh9LRnZP7N2YGkwme0I/gHURd4mIp1iqsifxOT
- wMRQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=xmPjjmmf4+gFo5kALeeHuZbdpMAsYz3IH/3r3H4+9ag=;
- b=WwkT5BH+pmVkgFRMOjy0hzpv/61srRf7vOsxXp9/rMA8YsC1duV9QsrehP39DguerI
- 8FvqMgiMm/g1tU3qBlY3tYoNHjSdgYOoXFwqb++BCPUq7cXJ5mTIOZl/DoawnlxgOAFu
- vF65CJJoPtfv8ftBFZ4BTE1EthboqhXY3Z5ptXFb4POQ15dhAMlZYHNvnT+CLRmY7Cf7
- D7HiFMDM9fSnOf5bsAdnH4bNjAxFnJVBlZAs97IvPLdRAgX5tc9QCbsyO1xPGWchr2+Z
- qj1kxJim5R+jhGSGO3ezlCuIEeklPLirRcFz77r2RQygQwr9n9glsB98gZvGQV57Huew
- NqJg==
-X-Gm-Message-State: APjAAAX9LLDWnILmRyRvpNLWwdjgA6ah6/pUgNtWYxlZeaPrW9pIkKMH
- I4UfHPmwWa7SgpS/AkD6c/TMVA==
-X-Google-Smtp-Source: APXvYqwDFXXJKVaaRLQNlrqo/ycvYqOMZDQRyXsC9KjeEADy44EzhJcvaxN6b4K4kmpA/leb8BQa2A==
-X-Received: by 2002:a67:fc50:: with SMTP id p16mr81886754vsq.79.1564603568705; 
- Wed, 31 Jul 2019 13:06:08 -0700 (PDT)
-Received: from qcai.nay.com (nat-pool-bos-t.redhat.com. [66.187.233.206])
- by smtp.gmail.com with ESMTPSA id e3sm12703871vsp.6.2019.07.31.13.06.07
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 31 Jul 2019 13:06:08 -0700 (PDT)
-From: Qian Cai <cai@lca.pw>
-To: catalin.marinas@arm.com
-Subject: [PATCH] arm64/mm: fix variable 'pud' set but not used
-Date: Wed, 31 Jul 2019 16:05:45 -0400
-Message-Id: <1564603545-14776-1-git-send-email-cai@lca.pw>
-X-Mailer: git-send-email 1.8.3.1
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_130610_066900_608C5844 
-X-CRM114-Status: GOOD (  10.00  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+	id 1hsuuT-0008C1-9a; Wed, 31 Jul 2019 20:09:17 +0000
+Received: from [191.33.152.89] (helo=bombadil.infradead.org)
+ by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
+ id 1hsuu9-0007qH-8b; Wed, 31 Jul 2019 20:08:57 +0000
+Received: from mchehab by bombadil.infradead.org with local (Exim 4.92)
+ (envelope-from <mchehab@bombadil.infradead.org>)
+ id 1hsuu6-00079d-61; Wed, 31 Jul 2019 17:08:54 -0300
+From: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
+To: Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ Jonathan Corbet <corbet@lwn.net>
+Subject: [PATCH 0/6] ReST conversion patches not applied yet
+Date: Wed, 31 Jul 2019 17:08:47 -0300
+Message-Id: <cover.1564603513.git.mchehab+samsung@kernel.org>
+X-Mailer: git-send-email 2.21.0
+MIME-Version: 1.0
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,54 +44,141 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Qian Cai <cai@lca.pw>, will@kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, Dave Kleikamp <shaggy@kernel.org>,
+ alsa-devel@alsa-project.org, Maxime Ripard <maxime.ripard@bootlin.com>,
+ jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org,
+ Peter Meerwald-Stadler <pmeerw@pmeerw.net>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Evgeniy Polyakov <zbr@ioremap.net>, linux-cifs@vger.kernel.org,
+ Lars-Peter Clausen <lars@metafoo.de>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Chen-Yu Tsai <wens@csie.org>, devicetree@vger.kernel.org,
+ Evgeniy Dushistov <dushistov@mail.ru>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Mauro Carvalho Chehab <mchehab@infradead.org>, Mark Brown <broonie@kernel.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Mathieu Poirier <mathieu.poirier@linaro.org>, samba-technical@lists.samba.org,
+ Liam Girdwood <lgirdwood@gmail.com>, linux-iio@vger.kernel.org,
+ linux-spi@vger.kernel.org, Steve French <sfrench@samba.org>,
+ Rob Herring <robh+dt@kernel.org>, Hartmut Knaack <knaack.h@gmx.de>,
+ Jonathan Cameron <jic23@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-GCC throws a warning,
+Hi Jon,
 
-arch/arm64/mm/mmu.c: In function 'pud_free_pmd_page':
-arch/arm64/mm/mmu.c:1033:8: warning: variable 'pud' set but not used
-[-Wunused-but-set-variable]
-  pud_t pud;
-        ^~~
+As promised, this is the rebased version of the patches that were not applied
+from the /26 patch series because you had merge conflicts.
 
-because pud_table() is a macro and compiled away. Fix it by making it a
-static inline function and for pud_sect() as well.
+They're all based on your docs-next branch, so should apply fine.
 
-Signed-off-by: Qian Cai <cai@lca.pw>
----
- arch/arm64/include/asm/pgtable.h | 11 +++++++++--
- 1 file changed, 9 insertions(+), 2 deletions(-)
+The first one fixes all but one error with a broken reference.
 
-diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
-index 3f5461f7b560..541cb4a15341 100644
---- a/arch/arm64/include/asm/pgtable.h
-+++ b/arch/arm64/include/asm/pgtable.h
-@@ -447,8 +447,15 @@ extern pgprot_t phys_mem_access_prot(struct file *file, unsigned long pfn,
- 				 PMD_TYPE_SECT)
- 
- #if defined(CONFIG_ARM64_64K_PAGES) || CONFIG_PGTABLE_LEVELS < 3
--#define pud_sect(pud)		(0)
--#define pud_table(pud)		(1)
-+static inline bool pud_sect(pud_t pud)
-+{
-+	return false;
-+}
-+
-+static inline bool pud_table(pud_t pud)
-+{
-+	return true;
-+}
- #else
- #define pud_sect(pud)		((pud_val(pud) & PUD_TYPE_MASK) == \
- 				 PUD_TYPE_SECT)
+The only broken reference right now is due to a DT patch with was not
+accepted (no idea why), but whose driver is upstream.
+
+
+Mauro Carvalho Chehab (6):
+  docs: fix a couple of new broken references
+  docs: writing-schema.md: convert from markdown to ReST
+  spi: docs: convert to ReST and add it to the kABI bookset
+  docs: fs: cifs: convert to ReST and add to admin-guide book
+  docs: fs: convert porting to ReST
+  docs: w1: convert to ReST and add to the kAPI group of docs
+
+ Documentation/ABI/stable/sysfs-bus-w1         |   2 +-
+ .../ABI/stable/sysfs-driver-w1_ds28e04        |   4 +-
+ .../ABI/stable/sysfs-driver-w1_ds28ea00       |   2 +-
+ .../AUTHORS => admin-guide/cifs/authors.rst}  |  64 +-
+ .../CHANGES => admin-guide/cifs/changes.rst}  |   4 +
+ Documentation/admin-guide/cifs/index.rst      |  21 +
+ .../cifs/introduction.rst}                    |   8 +
+ .../cifs/TODO => admin-guide/cifs/todo.rst}   |  87 +--
+ .../README => admin-guide/cifs/usage.rst}     | 560 +++++++++++-------
+ .../cifs/winucase_convert.pl                  |   0
+ Documentation/admin-guide/index.rst           |   1 +
+ .../bindings/sound/sun8i-a33-codec.txt        |   2 +-
+ Documentation/devicetree/writing-schema.md    | 130 ----
+ Documentation/devicetree/writing-schema.rst   | 153 +++++
+ Documentation/filesystems/porting.rst         |   2 +-
+ Documentation/index.rst                       |   2 +
+ .../spi/{butterfly => butterfly.rst}          |  44 +-
+ Documentation/spi/index.rst                   |  22 +
+ Documentation/spi/{pxa2xx => pxa2xx.rst}      |  95 +--
+ .../spi/{spi-lm70llp => spi-lm70llp.rst}      |  17 +-
+ .../spi/{spi-sc18is602 => spi-sc18is602.rst}  |   3 +
+ .../spi/{spi-summary => spi-summary.rst}      | 105 ++--
+ Documentation/spi/{spidev => spidev.rst}      |  30 +-
+ Documentation/w1/index.rst                    |  21 +
+ .../w1/masters/{ds2482 => ds2482.rst}         |  16 +-
+ .../w1/masters/{ds2490 => ds2490.rst}         |   6 +-
+ Documentation/w1/masters/index.rst            |  14 +
+ Documentation/w1/masters/mxc-w1               |  12 -
+ Documentation/w1/masters/mxc-w1.rst           |  17 +
+ .../w1/masters/{omap-hdq => omap-hdq.rst}     |  12 +-
+ .../w1/masters/{w1-gpio => w1-gpio.rst}       |  21 +-
+ Documentation/w1/slaves/index.rst             |  16 +
+ .../w1/slaves/{w1_ds2406 => w1_ds2406.rst}    |   4 +-
+ .../w1/slaves/{w1_ds2413 => w1_ds2413.rst}    |   9 +
+ Documentation/w1/slaves/w1_ds2423             |  47 --
+ Documentation/w1/slaves/w1_ds2423.rst         |  54 ++
+ .../w1/slaves/{w1_ds2438 => w1_ds2438.rst}    |  10 +-
+ .../w1/slaves/{w1_ds28e04 => w1_ds28e04.rst}  |   5 +
+ .../w1/slaves/{w1_ds28e17 => w1_ds28e17.rst}  |  16 +-
+ .../w1/slaves/{w1_therm => w1_therm.rst}      |  11 +-
+ .../w1/{w1.generic => w1-generic.rst}         |  88 +--
+ .../w1/{w1.netlink => w1-netlink.rst}         |  89 +--
+ MAINTAINERS                                   |   6 +-
+ drivers/hwtracing/coresight/Kconfig           |   2 +-
+ drivers/iio/dummy/iio_simple_dummy.c          |   2 +-
+ drivers/spi/Kconfig                           |   2 +-
+ drivers/spi/spi-butterfly.c                   |   2 +-
+ drivers/spi/spi-lm70llp.c                     |   2 +-
+ fs/jfs/Kconfig                                |   2 +-
+ fs/ufs/Kconfig                                |   2 +-
+ include/linux/platform_data/sc18is602.h       |   2 +-
+ 51 files changed, 1126 insertions(+), 722 deletions(-)
+ rename Documentation/{filesystems/cifs/AUTHORS => admin-guide/cifs/authors.rst} (60%)
+ rename Documentation/{filesystems/cifs/CHANGES => admin-guide/cifs/changes.rst} (91%)
+ create mode 100644 Documentation/admin-guide/cifs/index.rst
+ rename Documentation/{filesystems/cifs/cifs.txt => admin-guide/cifs/introduction.rst} (98%)
+ rename Documentation/{filesystems/cifs/TODO => admin-guide/cifs/todo.rst} (58%)
+ rename Documentation/{filesystems/cifs/README => admin-guide/cifs/usage.rst} (72%)
+ rename Documentation/{filesystems => admin-guide}/cifs/winucase_convert.pl (100%)
+ delete mode 100644 Documentation/devicetree/writing-schema.md
+ create mode 100644 Documentation/devicetree/writing-schema.rst
+ rename Documentation/spi/{butterfly => butterfly.rst} (71%)
+ create mode 100644 Documentation/spi/index.rst
+ rename Documentation/spi/{pxa2xx => pxa2xx.rst} (83%)
+ rename Documentation/spi/{spi-lm70llp => spi-lm70llp.rst} (88%)
+ rename Documentation/spi/{spi-sc18is602 => spi-sc18is602.rst} (97%)
+ rename Documentation/spi/{spi-summary => spi-summary.rst} (93%)
+ rename Documentation/spi/{spidev => spidev.rst} (90%)
+ create mode 100644 Documentation/w1/index.rst
+ rename Documentation/w1/masters/{ds2482 => ds2482.rst} (71%)
+ rename Documentation/w1/masters/{ds2490 => ds2490.rst} (98%)
+ create mode 100644 Documentation/w1/masters/index.rst
+ delete mode 100644 Documentation/w1/masters/mxc-w1
+ create mode 100644 Documentation/w1/masters/mxc-w1.rst
+ rename Documentation/w1/masters/{omap-hdq => omap-hdq.rst} (90%)
+ rename Documentation/w1/masters/{w1-gpio => w1-gpio.rst} (75%)
+ create mode 100644 Documentation/w1/slaves/index.rst
+ rename Documentation/w1/slaves/{w1_ds2406 => w1_ds2406.rst} (96%)
+ rename Documentation/w1/slaves/{w1_ds2413 => w1_ds2413.rst} (81%)
+ delete mode 100644 Documentation/w1/slaves/w1_ds2423
+ create mode 100644 Documentation/w1/slaves/w1_ds2423.rst
+ rename Documentation/w1/slaves/{w1_ds2438 => w1_ds2438.rst} (93%)
+ rename Documentation/w1/slaves/{w1_ds28e04 => w1_ds28e04.rst} (93%)
+ rename Documentation/w1/slaves/{w1_ds28e17 => w1_ds28e17.rst} (88%)
+ rename Documentation/w1/slaves/{w1_therm => w1_therm.rst} (95%)
+ rename Documentation/w1/{w1.generic => w1-generic.rst} (59%)
+ rename Documentation/w1/{w1.netlink => w1-netlink.rst} (77%)
+
 -- 
-1.8.3.1
+2.21.0
+
 
 
 _______________________________________________
