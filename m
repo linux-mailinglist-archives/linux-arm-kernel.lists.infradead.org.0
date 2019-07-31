@@ -2,79 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA06A7C9C9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 19:02:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 453797C9CD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 19:02:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RtfYMi2KxZd3eEKLkqi++oiUpCK77/bVaDgz+bpOeWY=; b=LqvHoG7MulR0XN
-	8qumJHDkrLvlVrVsRjmf5nxlqtX6XF7U5d+gpWltFM9jUPYKuQHHwR+CvKTqICe+xGF4MC8eC3dWZ
-	axO+fHOQHbzlyt3VSFcEhvWxhbO9HUi5yoyYX/R2MxT3rtYOzjYITSmXbBYFS5Sw11OPTLcuEkP1G
-	2kPagdzACnMbthszADEJgtLcCz2gRRHLFEZtr4Nbhx9sX+cxIDA/qC+FD6CA1iaH41YLDRrtXB/n2
-	b2R6qNrnf5T8kIsRzID7yL4kuSSb9F7WUZo7DJMTdNz86RXQEWG+uk+QUB/yvdoOCVuzKvnBvNQpx
-	oix8l/CfpRaqZVz223TA==;
+	List-Owner; bh=ivGx5fLY/31eG2RxlDpwtJn1mwV5VENWk7BXuanjiCg=; b=Xf7DzfnIaS6NfJ
+	Q/6+8V5O2pzf/gL/XbD/QC1N1TjJnyeVk3FvfCqB61Sl1Z0Np8kY4rqV163UqxSt+y19IQvZwfYtl
+	DUJ29SHEWtgFBAY/onoDWRoZ82JmLN7DWV6e/wvK6/o+4BSqmYKkPw2ufgWRBe9vUfXVlzid9FTAd
+	PyfbXWaSny44J1IViII19OHFmRhpSqCjhgAg+qQjbo/RLyyXvPAEVoaLb5JtcdzZgYUHkT+Nq7Xt6
+	cW4xtmcSUxl94e/CaEPnqig1PQjfYPaqZ9vbK0pIVNZeBT21JW1IdXE4VgwYH2FFaRBnfFrYOwma2
+	d1T5IMxtAYPHPZYFMgRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsrzf-0004gw-9c; Wed, 31 Jul 2019 17:02:27 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsryJ-0002rC-NT; Wed, 31 Jul 2019 17:01:12 +0000
-Received: from mail-qt1-f175.google.com (mail-qt1-f175.google.com
- [209.85.160.175])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3462F21851;
- Wed, 31 Jul 2019 17:01:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564592463;
- bh=y/z8SK50ZpO4nCmvVJnpvHDo1YUj59MbZ52y+l8J5m0=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=HbwUPQ/TqNvkzRJEcfZ45zRKq9UrnGWvUXJ0/cdlWu/BJVBs2LG/ZZYYUrk4dGsAo
- AjbOYmZU11vX9u5eeQwPrz6tRO6FbPeES2AcQ8GI18tGedmrKCP7LT72FixIM3jwNu
- Aak7Z3x3bzlKlc3NTPWHGAeUTjEWh4pIQALXNY0k=
-Received: by mail-qt1-f175.google.com with SMTP id n11so67285371qtl.5;
- Wed, 31 Jul 2019 10:01:03 -0700 (PDT)
-X-Gm-Message-State: APjAAAXWWe6bXLNf71nmhvkI6paFr/M8HQsa3EEeZrngVqpEB2rrOFSb
- gZheqav3hjgmUGgZQtPfK4FPn2nPvyDeNDjHuA==
-X-Google-Smtp-Source: APXvYqyjhn7/hvSOJl+L9+ZR20USCeZlDySkINDz19gr0YGu/PGoSbb4n4RnD39j2VWH+e65HF3uPE1NOiig1AteLQA=
-X-Received: by 2002:a0c:b786:: with SMTP id l6mr89053606qve.148.1564592462233; 
- Wed, 31 Jul 2019 10:01:02 -0700 (PDT)
+	id 1hsrzs-0005ZC-9e; Wed, 31 Jul 2019 17:02:40 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hsrzg-0005R0-R8
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 17:02:31 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DE33B337;
+ Wed, 31 Jul 2019 10:02:27 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 84A793F71F;
+ Wed, 31 Jul 2019 10:02:26 -0700 (PDT)
+Date: Wed, 31 Jul 2019 18:02:24 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Viresh Kumar <viresh.kumar@linaro.org>
+Subject: Re: [PATCH v4.4 V2 00/43] V4.4 backport of arm64 Spectre patches
+Message-ID: <20190731170224.GK39768@lakrids.cambridge.arm.com>
+References: <cover.1562908074.git.viresh.kumar@linaro.org>
+ <20190731025253.ys4ph2hwa7hzdi5n@vireshk-i7>
 MIME-Version: 1.0
-References: <20190731121409.17285-1-glaroque@baylibre.com>
- <20190731121409.17285-2-glaroque@baylibre.com>
- <f0f0dfe5-0cd3-5275-53ff-cfc4bb44f7e6@baylibre.com>
-In-Reply-To: <f0f0dfe5-0cd3-5275-53ff-cfc4bb44f7e6@baylibre.com>
-From: Rob Herring <robh@kernel.org>
-Date: Wed, 31 Jul 2019 11:00:50 -0600
-X-Gmail-Original-Message-ID: <CAL_Jsq+Z1JvvtrDBtqbcuzdy_k5=OSSLQ7ezKvs9-oyvGi=-9A@mail.gmail.com>
-Message-ID: <CAL_Jsq+Z1JvvtrDBtqbcuzdy_k5=OSSLQ7ezKvs9-oyvGi=-9A@mail.gmail.com>
-Subject: Re: [PATCH 1/6] dt-bindings: thermal: Add DT bindings documentation
- for Amlogic Thermal
-To: Neil Armstrong <narmstrong@baylibre.com>,
- Guillaume La Roque <glaroque@baylibre.com>
+Content-Disposition: inline
+In-Reply-To: <20190731025253.ys4ph2hwa7hzdi5n@vireshk-i7>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_100103_824749_AFA9AA15 
-X-CRM114-Status: GOOD (  16.95  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190731_100228_935792_78887565 
+X-CRM114-Status: GOOD (  13.48  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,120 +62,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, "open list:THERMAL" <linux-pm@vger.kernel.org>,
- Kevin Hilman <khilman@baylibre.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- linux-amlogic@lists.infradead.org,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Julien Thierry <Julien.Thierry@arm.com>,
+ Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will.deacon@arm.com>, stable@vger.kernel.org, mark.brown@arm.com,
+ Russell King <rmk+kernel@arm.linux.org.uk>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 31, 2019 at 6:44 AM Neil Armstrong <narmstrong@baylibre.com> wrote:
->
-> On 31/07/2019 14:14, Guillaume La Roque wrote:
-> > Adding the devicetree binding documentation for the Amlogic temperature
-> > sensor found in the Amlogic Meson G12 SoCs.
-> > the G12A  and G12B SoCs are supported.
-> >
-> > Signed-off-by: Guillaume La Roque <glaroque@baylibre.com>
-> > ---
-> >  .../bindings/thermal/amlogic,thermal.yaml     | 58 +++++++++++++++++++
-> >  1 file changed, 58 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/thermal/amlogic,thermal.yaml
-> >
-> > diff --git a/Documentation/devicetree/bindings/thermal/amlogic,thermal.yaml b/Documentation/devicetree/bindings/thermal/amlogic,thermal.yaml
-> > new file mode 100644
-> > index 000000000000..1e2fe84da13d
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/thermal/amlogic,thermal.yaml
-> > @@ -0,0 +1,58 @@
-> > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/thermal/amlogic,thermal.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: Amlogic Thermal Driver
-> > +
-> > +maintainers:
-> > +  - Guillaume La Roque <glaroque@baylibre.com>
-> > +
-> > +description: Amlogic Thermal driver
-> > +
-> > +properties:
-> > +  compatible:
-> > +    oneOf:
-> > +      - items:
-> > +          - enum:
-> > +              - amlogic,g12-cpu-thermal
-> > +              - amlogic,g12-ddr-thermal
-> > +          - enum:
-> > +              - amlogic,g12-thermal
->
-> Shouldn't be :
->     compatible:
->         items:
->           - enum:
->               - amlogic,g12-cpu-thermal
->               - amlogic,g12-ddr-thermal
->           - const:
->               - amlogic,g12-thermal
->
-> instead ?
+Hi Viresh,
 
-Yes, except 'const' is a string, not list value.
+On Wed, Jul 31, 2019 at 08:22:53AM +0530, Viresh Kumar wrote:
+> On 12-07-19, 10:57, Viresh Kumar wrote:
+> > Hello,
+> > 
+> > This series backports arm64 spectre patches to v4.4 stable kernel. I
+> > have started this backport with Mark Rutland's backport of Spectre to
+> > 4.9 [1] and tried applying the upstream version of them over 4.4 and
+> > resolved conflicts by checking how they have been resolved in 4.9.
+> 
+> Since it has been almost 3 weeks since the patches are last posted,
+> here is a gentle reminder for reviewing it :)
 
->
-> > +
-> > +  reg:
-> > +    maxItems: 1
-> > +
-> > +  interrupts:
-> > +    maxItems: 1
-> > +
-> > +  clocks:
-> > +    maxItems: 1
-> > +
-> > +  amlogic,ao-secure:
-> > +    description: phandle to the ao-secure syscon
-> > +    allOf:
-> > +     - $ref: /schemas/types.yaml#/definitions/uint32
+I've taken a look at about half of the series today, and left a couple
+of comments. I intend to attack the rest, but I won't be able to do so
+until Tuesday next week.
 
-phandle, not uint32
-
-> > +
-> > +
-> > +required:
-> > +  - compatible
-> > +  - reg
-> > +  - interrupts
-> > +  - clocks
-> > +  - amlogic,ao-secure
-> > +
-> > +examples:
-> > +  - |
-> > +        cpu_temp: temperature-sensor@ff634800 {
-> > +                compatible = "amlogic,g12-cpu-thermal",
-> > +                             "amlogic,g12-thermal";
-> > +                reg = <0x0 0xff634800 0x0 0x50>;
-> > +                interrupts = <0x0 0x24 0x0>;
-> > +                clocks = <&clk 164>;
-> > +                status = "okay";
-> > +                #thermal-sensor-cells = <1>;
-> > +                amlogic,ao-secure = <&sec_AO>;
-> > +        };
-> > +...
-> > \ No newline at end of file
-
-Fix this.
-
-
-> >
->
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
