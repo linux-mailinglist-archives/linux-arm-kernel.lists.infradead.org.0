@@ -2,77 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56C567B92B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 07:40:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 908347B91B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 07:40:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Dky1qWah5KQEJH4c9o48gIuWyrOPRSUQEmcaQynATLI=; b=daF353k4WpAjBZ
-	9/bBkZ7wFdY3h58+YW8BXYk/zsXpQyjwetHJ3nEDEKtWGd62B1n8ucfLQL6+7KCZyoqznwF7m/jbc
-	phEQuHady8tCuxuGy5HhdxYo1FftjiX8OnTXKtPeNTt1wT7JNnDbKPJJfDEq0Fgew82ysFzVGPmVO
-	4cfxuyfsvDDoOyb2QhcluQgw9Pju+CMSNTPDI0o3+30kIkz5S2lybP8Ui1QMze/pk6/m4GADq7FLN
-	EbvyuJ6y5T7DKNr5BE3YiH8FwHXQXqAo+QS0+4Goa/dbZEQecJz3aDCTJCl2dMQJ9yHX3r3NxGbxN
-	RmFCTfPT5w1fZDAjJwcA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ncSnIBuICTvSxZAXgM7uTrqTuNBqPBU0BhbWyTdKn4k=; b=Zhvn9vcilwH6rT
+	b1kQDzIwCU34TsO+h4KTEX2NqTv7EEdrQR70+fsFFPMG56LJPreLOfHVFSTSwpP/T4pfW/k10tkMY
+	iNKiSSd6LDKwlGdifkqV3fH9Rccan4VU1YFesCNzJrecwMUkM1NBCr1onS+EcGvye8KbZesNDNYWt
+	r5xELefyBF4Sp8EvXK8GgKDAVzL0LCScnS6SCiLtZ8sgGHTmMFDtlgU4nFHJDxUitzfkCgMRmcXII
+	zNOdmdaNVsFabRHGvaa8OlhdwGGQzQOQ1FKxBVev5dBDg2UY8hYqRzYXMkh5agijhtidkAiwLYn4s
+	ML0uJmXMlikQneiUGAGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hshLp-000431-O0; Wed, 31 Jul 2019 05:40:37 +0000
+	id 1hshLT-0002xC-Vz; Wed, 31 Jul 2019 05:40:16 +0000
 Received: from new2-smtp.messagingengine.com ([66.111.4.224])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hshLE-0002b0-Kx
+ id 1hshLE-0002b1-Kw
  for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 05:40:02 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 0E6642D4F;
- Wed, 31 Jul 2019 01:39:54 -0400 (EDT)
+ by mailnew.nyi.internal (Postfix) with ESMTP id B66BC2D52;
+ Wed, 31 Jul 2019 01:39:56 -0400 (EDT)
 Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Wed, 31 Jul 2019 01:39:54 -0400
+ by compute4.internal (MEProxy); Wed, 31 Jul 2019 01:39:56 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=from
- :to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding; s=fm3; bh=f6SwHiquskKyzal6BVgx/Zrb83
- M7d3YW34Dxd8xOi/I=; b=g7MN1DY1j9rZdpYORY8nL/SkjVPP9amQQ6Ol+aXOL1
- 75Cgfy18cKd6+ssH0oOz3n7yYP+nlnPSqod16gcxdXcMx9pE14K2SFSf6/luls5u
- JphFHxcZh/ovi/Q4uGC7Og/ct+1NnN9zCnNk3sa1m+ocS2693kgbjimy3t4qegds
- hZII0pm/H8nklvVIkOOQ3JrwKtCZ7u4DGygNFPhNSA7lKtbH5vxxCsmkOGl7YT5W
- RBbJSRWOqsaK2lK1GMWmf9PMZnZxHagbU29IJaGEtPyserJhpVEoRXthPev7LbGi
- eXngVDCjC0WBidytA0t07ccGFSO9lGSFuVCl8wBYw8uA==
+ :to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding; s=fm3; bh=gzCwHI80UKMbA
+ e03aKRbEI+0U6moZg+RRW+kG2jIiTc=; b=TIiZbS4zZNCx0TJkxaouR2jrPaQg0
+ aSaWMyz8IOhi8gEMOjKM7jtNvn/SCqFNxCVIl21hNPtl/vcN9aNADcdUpdi96b6K
+ cClhaUiOoqI4aIO+5VKV7nsudyfHBeE0rq0kymesRbbvjvUUoxffdfJzZ+8vmsrE
+ zQbbKRcPNLaf8odDqdRs3u4VcOf/yVZlDq+wSc/wi+MoJnKKumBAyJZEmki/CO/f
+ i3Ne40g7mblcmiKRdOkt7p1zRBNjIXDqT2ONhVRKxL6WzRwoHdafA1uXbC9tolvI
+ IKSZS3f/K0sD4PALzGA4sg1wuUqxHU3UpefvuJUG7P3TFS/GTiW9lcEIQ==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
- :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
- :x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=f6SwHiquskKyzal6B
- Vgx/Zrb83M7d3YW34Dxd8xOi/I=; b=i5xBkoT3kOfJ7Fozu8U1x3mCDqVDbaGJi
- hW5j7MVRghRgV4UUqd7BsH+FN1J5Ffey9ZReBvuVB51o9kaDcNQ/tJGbJ1cdw3m1
- jFJcbTap/SsQj4NW7jmsyhcVwGAcN5fwekb6ohoymp4NjfnNCOdtccLepKOo/169
- /7jgkGAWQzcX1gMu3UdiGLLpMnuzOhghv6uqG+KqRdnPzp0drOrRM3cvb70dUcUl
- mveg0t1PJ+C4DvGiVpbFo0iwbQWzvxeGJb0rRUAmglkQwwqpfRBYBFkoEqRUkdNi
- NI2P0sJCs3ehdBaCR0St9p7NktQyf5qW/iv9aPQ7xRgqeACnHvtUg==
-X-ME-Sender: <xms:qClBXZXWhe-ZQDDEHt39xzZJV1vT5Nk1WP4T8AYQICf5aoyLv9SzqA>
+ :in-reply-to:message-id:mime-version:references:subject:to
+ :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
+ fm3; bh=gzCwHI80UKMbAe03aKRbEI+0U6moZg+RRW+kG2jIiTc=; b=SzvYdEQr
+ DdO9hzcugcpWDGtKehyAZKfsfc6wmKnVhyiG07U+EO22Oz9upZJwTivWhnpE6pO3
+ fGvmHMFMU7Ybbc3vtjTxbD2Ayl3ZHeSFhbtzHOBdZJsi9x616z045P9oMHsUU4Vh
+ 80ryEKMvgxo9h/e6amrd0IgWgZ74GyoB+XAfDFkMWcXFZnNWTF9HzSySxX/OB+F3
+ 0fHXuQTJislvqOQHXeDbvir2ve1GwZAghw1j2vfwhQ2IVpkfyEulNyccdO3UT4qU
+ 2U8X+44MrXOg6KTaDqBJsFAqhePUcLMSc6S5k0qGlWGEHt6+byI/HniUuVFysmUM
+ SBsjlAV0DQqs3Q==
+X-ME-Sender: <xms:rClBXZuvRNfpG6M1luPTw8vLz11Zm9kcj8o1E27WzLawTupVpn3mlg>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrleeggdelkecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecunecujfgurhephffvufffkffoggfgsedtkeertdertd
- dtnecuhfhrohhmpeetnhgurhgvficulfgvfhhfvghrhicuoegrnhgurhgvfiesrghjrdhi
- ugdrrghuqeenucffohhmrghinhepohiilhgrsghsrdhorhhgnecukfhppedvtddvrdekud
- drudekrdeftdenucfrrghrrghmpehmrghilhhfrhhomheprghnughrvgifsegrjhdrihgu
- rdgruhenucevlhhushhtvghrufhiiigvpedt
-X-ME-Proxy: <xmx:qClBXTpGDNuSmIbPncJh21n4Sf0ss0RejHuzWA4hv3rAOLNcRuRxMw>
- <xmx:qClBXaVOdGKEcDyq-7JxJ0S_ajEy6NdCoqsQTywn439lc82Dng4C5w>
- <xmx:qClBXUGdN3rrLeLl3XtvCSrNpwfDySjv8adf7tD_SwRNJ9jE38lxGw>
- <xmx:qilBXVZcJHTBJAO8KEKpy2dp-GtEoJUAEkilKJiKZf9U4ox-z_TfPQ>
+ uegrihhlohhuthemuceftddtnecunecujfgurhephffvufffkffojghfggfgsedtkeertd
+ ertddtnecuhfhrohhmpeetnhgurhgvficulfgvfhhfvghrhicuoegrnhgurhgvfiesrghj
+ rdhiugdrrghuqeenucffohhmrghinhepuggvvhhitggvthhrvggvrdhorhhgnecukfhppe
+ dvtddvrdekuddrudekrdeftdenucfrrghrrghmpehmrghilhhfrhhomheprghnughrvgif
+ segrjhdrihgurdgruhenucevlhhushhtvghrufhiiigvpedt
+X-ME-Proxy: <xmx:rClBXQZQwtIvoaDmdF8gUzY4Ti5BcQ21j-z1dG6zLIFDtF_Z0pVjZA>
+ <xmx:rClBXUX07zP0L5TMNASHIyENDCpZtliRMy5miC0Pf81boQNj8sBjvA>
+ <xmx:rClBXc7q1FUua0ZvSS1gKnkC18NVPOAyKfa0n467ics4IzFa9l5TcQ>
+ <xmx:rClBXe0BSoOSNc-SAi16YnYhmIXh6jpd2xaLsewMUtheIArCuXtasQ>
 Received: from mistburn.au.ibm.com (bh02i525f01.au.ibm.com [202.81.18.30])
- by mail.messagingengine.com (Postfix) with ESMTPA id 05C728005C;
- Wed, 31 Jul 2019 01:39:47 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 915FE80060;
+ Wed, 31 Jul 2019 01:39:52 -0400 (EDT)
 From: Andrew Jeffery <andrew@aj.id.au>
 To: netdev@vger.kernel.org
-Subject: [PATCH net-next v2 0/4] net: phy: Add AST2600 MDIO support
-Date: Wed, 31 Jul 2019 15:09:55 +0930
-Message-Id: <20190731053959.16293-1-andrew@aj.id.au>
+Subject: [PATCH net-next v2 1/4] dt-bindings: net: Add aspeed,
+ ast2600-mdio binding
+Date: Wed, 31 Jul 2019 15:09:56 +0930
+Message-Id: <20190731053959.16293-2-andrew@aj.id.au>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190731053959.16293-1-andrew@aj.id.au>
+References: <20190731053959.16293-1-andrew@aj.id.au>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_224000_832897_9A0892AE 
-X-CRM114-Status: UNSURE (   8.94  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190730_224000_831053_11543E8D 
+X-CRM114-Status: GOOD (  10.37  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -110,35 +113,72 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
+The AST2600 splits out the MDIO bus controller from the MAC into its own
+IP block and rearranges the register layout. Add a new binding to
+describe the new hardware.
 
-v2 of the ASPEED MDIO series addresses comments from Rob on the devicetree
-bindings and Andrew on the driver itself.
+Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
 
-v1 of the series can be found here:
-
-http://patchwork.ozlabs.org/cover/1138140/
-
-Please review!
-
-Andrew
-
-Andrew Jeffery (4):
-  dt-bindings: net: Add aspeed,ast2600-mdio binding
-  net: phy: Add mdio-aspeed
-  net: ftgmac100: Add support for DT phy-handle property
-  net: ftgmac100: Select ASPEED MDIO driver for the AST2600
-
- .../bindings/net/aspeed,ast2600-mdio.yaml     |  45 +++++
- drivers/net/ethernet/faraday/Kconfig          |   1 +
- drivers/net/ethernet/faraday/ftgmac100.c      |  37 ++++-
- drivers/net/phy/Kconfig                       |  13 ++
- drivers/net/phy/Makefile                      |   1 +
- drivers/net/phy/mdio-aspeed.c                 | 157 ++++++++++++++++++
- 6 files changed, 250 insertions(+), 4 deletions(-)
+---
+v2:
+* aspeed: Utilise mdio.yaml
+* aspeed: Drop status from example
+---
+ .../bindings/net/aspeed,ast2600-mdio.yaml     | 45 +++++++++++++++++++
+ 1 file changed, 45 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/net/aspeed,ast2600-mdio.yaml
- create mode 100644 drivers/net/phy/mdio-aspeed.c
 
+diff --git a/Documentation/devicetree/bindings/net/aspeed,ast2600-mdio.yaml b/Documentation/devicetree/bindings/net/aspeed,ast2600-mdio.yaml
+new file mode 100644
+index 000000000000..71808e78a495
+--- /dev/null
++++ b/Documentation/devicetree/bindings/net/aspeed,ast2600-mdio.yaml
+@@ -0,0 +1,45 @@
++# SPDX-License-Identifier: GPL-2.0-or-later
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/net/aspeed,ast2600-mdio.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: ASPEED AST2600 MDIO Controller
++
++maintainers:
++  - Andrew Jeffery <andrew@aj.id.au>
++
++description: |+
++  The ASPEED AST2600 MDIO controller is the third iteration of ASPEED's MDIO
++  bus register interface, this time also separating out the controller from the
++  MAC.
++
++allOf:
++  - $ref: "mdio.yaml#"
++
++properties:
++  compatible:
++    const: aspeed,ast2600-mdio
++  reg:
++    maxItems: 1
++    description: The register range of the MDIO controller instance
++
++required:
++  - compatible
++  - reg
++  - "#address-cells"
++  - "#size-cells"
++
++examples:
++  - |
++    mdio0: mdio@1e650000 {
++            compatible = "aspeed,ast2600-mdio";
++            reg = <0x1e650000 0x8>;
++            #address-cells = <1>;
++            #size-cells = <0>;
++
++            ethphy0: ethernet-phy@0 {
++                    compatible = "ethernet-phy-ieee802.3-c22";
++                    reg = <0>;
++            };
++    };
 -- 
 2.20.1
 
