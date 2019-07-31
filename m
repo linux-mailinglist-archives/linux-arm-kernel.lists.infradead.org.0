@@ -2,62 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C7BD7C03B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 13:40:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B1BF17C043
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 13:42:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=axur0QX/d0izisrsv0JhruJyKervZ8aHPBLkbRgJFo0=; b=PI5N+O55vS95Gm
-	12N95Eq1eRWpFCAfEIO28HGeIsl4xD2Hlst2GhXG2xzDDMKcNz+21xFfkIgpJQWQDgu3lN29NUplx
-	oBlEugWUm7K7TXPFO40STx/rgBh+LJU2Da42zjZxZkJcsAz11XoPY6QFdmYQvnDY24Vao4mLRNL+J
-	poV5AzSCNulSpRp5QuL6bmDb+XSabeNQgcn5EMuSwmNxtWzMEHh1PofceXgIjqBTPlbLTMPoITqHW
-	kAPnCqDVFsowRnyjsWxQ4yijE9W/Ys5klIuLQvuo82jx8JnTEytMNQY813Bsogq/M7vYe9vxnX7gb
-	9u/NSbGfuZQCV/jI1xqg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=tTxay7LuFImCzYzTjxGfYIzjMkww7yieq3YdeE+Xyp8=; b=r5W
+	UJPgaFIszIuSf5M3rohNDAb3FNBKM1q1hFJO/H0k8/WPDgImwUgQsqXO3BarBbuaeOOvKuwe38u1H
+	Dbj3U0KWU6omMI2u1sr58/lS0k/6wqs1DTiY82y7YGu39xtUH67bJZqjprBn/2y9lMQUhNSUxh6H9
+	GOD7f3F9xNdcx7h6ub6XfJaRLYwdL+ud9ru1py8tUZ3rMz3gprafjoQrZkG393JlolfLXzHFme8Uo
+	savJuuXFRZ2rdQNuYQNk2skzUddr73EUOd2QTJUDn0LEZw12fsp3RSqBvzw3TWEV3gpYxOUrImAxl
+	E4+yCb+8GeuaSgayy5ORHI0DS4N/jgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsmy3-0002be-QJ; Wed, 31 Jul 2019 11:40:27 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1hsmzq-0002w1-L4; Wed, 31 Jul 2019 11:42:18 +0000
+Received: from albert.telenet-ops.be ([2a02:1800:110:4::f00:1a])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsmxv-0002U5-Qs
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 11:40:21 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 4AF45AF04;
- Wed, 31 Jul 2019 11:40:17 +0000 (UTC)
-Date: Wed, 31 Jul 2019 13:40:16 +0200
-From: Michal Hocko <mhocko@kernel.org>
-To: Mike Rapoport <rppt@linux.ibm.com>
-Subject: Re: [PATCH v2 0/5] mm: Enable CONFIG_NODES_SPAN_OTHER_NODES by
- default for NUMA
-Message-ID: <20190731114016.GI9330@dhcp22.suse.cz>
-References: <20190712070247.GM29483@dhcp22.suse.cz>
- <586ae736-a429-cf94-1520-1a94ffadad88@os.amperecomputing.com>
- <20190712121223.GR29483@dhcp22.suse.cz>
- <20190712143730.au3662g4ua2tjudu@willie-the-truck>
- <20190712150007.GU29483@dhcp22.suse.cz>
- <730368c5-1711-89ae-e3ef-65418b17ddc9@os.amperecomputing.com>
- <20190730081415.GN9330@dhcp22.suse.cz>
- <20190731062420.GC21422@rapoport-lnx>
- <20190731080309.GZ9330@dhcp22.suse.cz>
- <20190731111422.GA14538@rapoport-lnx>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190731111422.GA14538@rapoport-lnx>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1hsmzi-0002v9-0x
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 11:42:12 +0000
+Received: from ramsan ([84.194.98.4]) by albert.telenet-ops.be with bizsmtp
+ id jPi32000L05gfCL06Pi30Y; Wed, 31 Jul 2019 13:42:04 +0200
+Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1hsmzb-0008E1-7K; Wed, 31 Jul 2019 13:42:03 +0200
+Received: from geert by rox.of.borg with local (Exim 4.90_1)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1hsmzb-00023x-6D; Wed, 31 Jul 2019 13:42:03 +0200
+From: Geert Uytterhoeven <geert+renesas@glider.be>
+To: Rob Herring <robh+dt@kernel.org>,
+	Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH v2] dt-bindings: arm-boards: Update pointer to ARM CPU bindings
+Date: Wed, 31 Jul 2019 13:42:01 +0200
+Message-Id: <20190731114201.7884-1-geert+renesas@glider.be>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_044020_168671_A45194B3 
-X-CRM114-Status: GOOD (  19.88  )
-X-Spam-Score: -1.3 (-)
+X-CRM114-CacheID: sfid-20190731_044210_222270_1DB3A807 
+X-CRM114-Status: UNSURE (   8.99  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.3 points)
+ Content analysis details:   (-0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a02:1800:110:4:0:0:f00:1a listed in]
+ [list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -70,79 +65,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Heiko Carstens <heiko.carstens@de.ibm.com>,
- "open list:MEMORY MANAGEMENT" <linux-mm@kvack.org>,
- Paul Mackerras <paulus@samba.org>, "H . Peter Anvin" <hpa@zytor.com>,
- "sparclinux@vger.kernel.org" <sparclinux@vger.kernel.org>,
- Alexander Duyck <alexander.h.duyck@linux.intel.com>,
- Will Deacon <will@kernel.org>,
- "linux-s390@vger.kernel.org" <linux-s390@vger.kernel.org>,
- Michael Ellerman <mpe@ellerman.id.au>, "x86@kernel.org" <x86@kernel.org>,
- "willy@infradead.org" <willy@infradead.org>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Hoan Tran OS <hoan@os.amperecomputing.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Open Source Submission <patches@amperecomputing.com>,
- Pavel Tatashin <pavel.tatashin@microsoft.com>,
- Vasily Gorbik <gor@linux.ibm.com>, Will Deacon <will.deacon@arm.com>,
- Borislav Petkov <bp@alien8.de>, Thomas Gleixner <tglx@linutronix.de>,
- Vlastimil Babka <vbabka@suse.cz>, Oscar Salvador <osalvador@suse.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- "David S . Miller" <davem@davemloft.net>
+Cc: devicetree@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ Geert Uytterhoeven <geert+renesas@glider.be>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed 31-07-19 14:14:22, Mike Rapoport wrote:
-> On Wed, Jul 31, 2019 at 10:03:09AM +0200, Michal Hocko wrote:
-> > On Wed 31-07-19 09:24:21, Mike Rapoport wrote:
-> > > [ sorry for a late reply too, somehow I missed this thread before ]
-> > > 
-> > > On Tue, Jul 30, 2019 at 10:14:15AM +0200, Michal Hocko wrote:
-> > > > [Sorry for a late reply]
-> > > > 
-> > > > On Mon 15-07-19 17:55:07, Hoan Tran OS wrote:
-> > > > > Hi,
-> > > > > 
-> > > > > On 7/12/19 10:00 PM, Michal Hocko wrote:
-> > > > [...]
-> > > > > > Hmm, I thought this was selectable. But I am obviously wrong here.
-> > > > > > Looking more closely, it seems that this is indeed only about
-> > > > > > __early_pfn_to_nid and as such not something that should add a config
-> > > > > > symbol. This should have been called out in the changelog though.
-> > > > > 
-> > > > > Yes, do you have any other comments about my patch?
-> > > > 
-> > > > Not really. Just make sure to explicitly state that
-> > > > CONFIG_NODES_SPAN_OTHER_NODES is only about __early_pfn_to_nid and that
-> > > > doesn't really deserve it's own config and can be pulled under NUMA.
-> > > > 
-> > > > > > Also while at it, does HAVE_MEMBLOCK_NODE_MAP fall into a similar
-> > > > > > bucket? Do we have any NUMA architecture that doesn't enable it?
-> > > > > > 
-> > > 
-> > > HAVE_MEMBLOCK_NODE_MAP makes huge difference in node/zone initialization
-> > > sequence so it's not only about a singe function.
-> > 
-> > The question is whether we want to have this a config option or enable
-> > it unconditionally for each NUMA system.
-> 
-> We can make it 'default NUMA', but we can't drop it completely because
-> microblaze uses sparse_memory_present_with_active_regions() which is
-> unavailable when HAVE_MEMBLOCK_NODE_MAP=n.
+The ARM CPU DT bindings were converted from plain text to YAML, but not
+all referrers were updated.
 
-I suppose you mean that microblaze is using
-sparse_memory_present_with_active_regions even without CONFIG_NUMA,
-right? I have to confess I do not understand that code. What is the deal
-with setting node id there?
+Fixes: 672951cbd1b70a9e ("dt-bindings: arm: Convert cpu binding to json-schema")
+Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+Acked-by: Linus Walleij <linus.walleij@linaro.org>
+---
+v2:
+  - Add Acked-by.
+---
+ Documentation/devicetree/bindings/arm/arm-boards | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Documentation/devicetree/bindings/arm/arm-boards b/Documentation/devicetree/bindings/arm/arm-boards
+index 6758ece324b1c259..b2a9f9f8430bacf4 100644
+--- a/Documentation/devicetree/bindings/arm/arm-boards
++++ b/Documentation/devicetree/bindings/arm/arm-boards
+@@ -199,7 +199,7 @@ The description for the board must include:
+      A detailed description of the bindings used for "psci" nodes is present
+      in the psci.yaml file.
+    - a "cpus" node describing the available cores and their associated
+-     "enable-method"s. For more details see cpus.txt file.
++     "enable-method"s. For more details see cpus.yaml file.
+ 
+ Example:
+ 
 -- 
-Michal Hocko
-SUSE Labs
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
