@@ -2,62 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1BAA77C91B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 18:46:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A5DF57C920
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 18:48:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I150F5o5Df26rhOW+i0IEpLh/Iz95SXRRaFvmHyuc3s=; b=s2NN6OXf6wwRSi
-	7p7f0SGRYQ3ESz7Haj0sF/mHjaZEQN/NC2iCKIkIXWH0ce6gighjf8SdnSgD7zLj69PhApLJKgCp5
-	ud8G6JZ7x+0g3NDNo0tCSGVzNeOZqRnda+BqD+R00Cu+5B9x1K7+RJrDBgx9VI0IN81AR+wMdumPt
-	6hQL0HToLnlmDumvNC5fkhYXpnaKPHJ/EI5tbEfZwU8Y9q0w9M0UxTMWSRrcJHbg8ZO0vbY80Unux
-	uyecQR6PEd++bse9g8pDqEky4GCPLTOFYXA+tv9CiEMpbZ70gm5y+Xp6MXYbwJKNa4Hoaxstc/k/B
-	5EzYH7KtY5t0daWZWSyA==;
+	List-Owner; bh=Sog2sNpgV/rHXOceS9KMHU7kskgXTgipmHW14OjdUVg=; b=ZrwD/Uq6oRbIbH
+	Veiv8zZg9y4rwi2X8KOZSswlR+Z5urt+WEuzBvGrgczZbAzl/GZo7ji2PvxCLAM6Rj0/+1Bea/hjx
+	Zl5ubK04M63q8o376WPh5fbOE81GXi5ZxM4ouynS+4eG1nAG+EX4U+ln7hmT/6usr4WydUSfdDRdE
+	IAtRiG/TORGEbZOh/W8fDsHWHkBF+TOxH3UHTpVws/kDsBy2j20S9NMVJHQFXfVfWdL/r3FBrwy44
+	g7W567Qssiikrw+KKVOXs0d0k0p2S+Ag8tRnb3OLPz9gUXj271+pt5xpih//HN07+CHdrQZjXFFeY
+	ZPiU5e+ydc/g4qjnkh4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsrkS-0001rY-OB; Wed, 31 Jul 2019 16:46:44 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1hsrmE-00028E-Dk; Wed, 31 Jul 2019 16:48:34 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsrkI-0001qc-9q
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 16:46:39 +0000
-Received: from kresse.hi.pengutronix.de ([2001:67c:670:100:1d::2a])
- by metis.ext.pengutronix.de with esmtp (Exim 4.92)
- (envelope-from <l.stach@pengutronix.de>)
- id 1hsrkA-0005jG-Fj; Wed, 31 Jul 2019 18:46:26 +0200
-Message-ID: <1564591585.7267.22.camel@pengutronix.de>
-Subject: Re: [PATCH 2/2] reset: imx7: Fix IMX8MQ_RESET_MIPI_DSI_ defines
-From: Lucas Stach <l.stach@pengutronix.de>
-To: Guido =?ISO-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>, Philipp Zabel
- <p.zabel@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>, Sascha Hauer
- <s.hauer@pengutronix.de>, Pengutronix Kernel Team <kernel@pengutronix.de>, 
- Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>, Rob
- Herring <robh+dt@kernel.org>,  Mark Rutland <mark.rutland@arm.com>,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
- devicetree@vger.kernel.org
-Date: Wed, 31 Jul 2019 18:46:25 +0200
-In-Reply-To: <bd1504122f6797536a253a37f3604f5c46f02ab2.1564591352.git.agx@sigxcpu.org>
-References: <cover.1564591352.git.agx@sigxcpu.org>
- <bd1504122f6797536a253a37f3604f5c46f02ab2.1564591352.git.agx@sigxcpu.org>
-X-Mailer: Evolution 3.22.6-1+deb9u2 
-Mime-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::2a
-X-SA-Exim-Mail-From: l.stach@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+ id 1hsrm3-00027n-Bl
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 16:48:25 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id AB37F206A2;
+ Wed, 31 Jul 2019 16:48:21 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1564591703;
+ bh=bY5NTehu5zH24dQ6PhMEcVGEmpeDai9w7jRmanA0S9A=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=fobL8wexrbQY22clU7z9C6+jUGYZeS+vxPF+Xj/1McVwKY940QcURhXLrL4WwhxJS
+ VZACITPHDQwunlIIeLjMBUL1I9sHZW6i7webGcw1rKozrMPFUx3nqwnJGzzH7Tq3mO
+ aHMv0CxTuNRJHAYmhobZMNDBg2UWllmoefvBWgII=
+Date: Wed, 31 Jul 2019 17:48:18 +0100
+From: Will Deacon <will@kernel.org>
+To: Peter Collingbourne <pcc@google.com>
+Subject: Re: [PATCH v2] arm64: Add support for relocating the kernel with
+ RELR relocations
+Message-ID: <20190731164818.m2und6msyhlbf5oi@willie-the-truck>
+References: <20190705080231.123522-1-pcc@google.com>
+ <20190712193846.174893-1-pcc@google.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190712193846.174893-1-pcc@google.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_094637_881817_6EA42754 
-X-CRM114-Status: GOOD (  15.42  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190731_094823_447661_349C5991 
+X-CRM114-Status: GOOD (  24.42  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,56 +78,144 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, clang-built-linux@googlegroups.com,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-QW0gTWl0dHdvY2gsIGRlbiAzMS4wNy4yMDE5LCAxODo0MyArMDIwMCBzY2hyaWViIEd1aWRvIEfD
-vG50aGVyOgo+IFNvbWUgb2YgdGhlIG1pcGkgZHNpIHJlc2V0cyB3ZXJlIGNhbGxlZAo+IAo+IMKg
-IElNWDhNUV9SRVNFVF9NSVBJX0RJU18KPiAKPiBpbnN0ZWFkIG9mCj4gCj4gwqAgSU1YOE1RX1JF
-U0VUX01JUElfRFNJXwo+IAo+IFNpbmNlIHRoZXkncmUgRFNJIHJlbGF0ZWQgdGhpcyBsb29rcyBs
-aWtlIGEgdHlwby4KPiAKPiBJIHdhc24ndCBzdXJlIGlmIHRoaXMgc2hvdWxkIGJlIGEgc2luZ2xl
-IHBhdGNoIHNpbmNlIGl0IG90aGVyd2lzZSBicmVha3MKPiBiaXNlY3RhYmlsaXR5LiBJIGNvdWxk
-bid0IGZpbmQgYW55IGRldmljZSB0cmVlcyB1c2luZyB0aGlzIHlldC4KClllcywgSSB0aGluayB0
-aGlzIHNob3VsZCBiZSBzcXVhc2hlZCBpbnRvIGEgc2luZ2xlIGNvbW1pdC4gT3RoZXIgdGhhbgp0
-aGF0LCB0aGUgY2hhbmdlIGxvb2tzIGNvcnJlY3QuCgpSZWdhcmRzLApMdWNhcwoKPiBTaWduZWQt
-b2ZmLWJ5OiBHdWlkbyBHw7xudGhlciA8YWd4QHNpZ3hjcHUub3JnPgo+IC0tLQo+IMKgZHJpdmVy
-cy9yZXNldC9yZXNldC1pbXg3LmMgfCAxMiArKysrKystLS0tLS0KPiDCoDEgZmlsZSBjaGFuZ2Vk
-LCA2IGluc2VydGlvbnMoKyksIDYgZGVsZXRpb25zKC0pCj4gCj4gZGlmZiAtLWdpdCBhL2RyaXZl
-cnMvcmVzZXQvcmVzZXQtaW14Ny5jIGIvZHJpdmVycy9yZXNldC9yZXNldC1pbXg3LmMKPiBpbmRl
-eCAzZWNkNzcwZjkxMGIuLjE0NDNhNTVhMGMyOSAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3Jlc2V0
-L3Jlc2V0LWlteDcuYwo+ICsrKyBiL2RyaXZlcnMvcmVzZXQvcmVzZXQtaW14Ny5jCj4gQEAgLTE2
-OSw5ICsxNjksOSBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IGlteDdfc3JjX3NpZ25hbCBpbXg4bXFf
-c3JjX3NpZ25hbHNbSU1YOE1RX1JFU0VUX05VTV0gPSB7Cj4gPiA+IMKgCVtJTVg4TVFfUkVTRVRf
-T1RHMl9QSFlfUkVTRVRdCQk9IHsgU1JDX1VTQk9QSFkyX1JDUiwgQklUKDApIH0sCj4gPiA+IMKg
-CVtJTVg4TVFfUkVTRVRfTUlQSV9EU0lfUkVTRVRfQllURV9OXQk9IHsgU1JDX01JUElQSFlfUkNS
-LCBCSVQoMSkgfSwKPiA+ID4gwqAJW0lNWDhNUV9SRVNFVF9NSVBJX0RTSV9SRVNFVF9OXQkJPSB7
-IFNSQ19NSVBJUEhZX1JDUiwgQklUKDIpIH0sCj4gPiA+IC0JW0lNWDhNUV9SRVNFVF9NSVBJX0RJ
-U19EUElfUkVTRVRfTl0JPSB7IFNSQ19NSVBJUEhZX1JDUiwgQklUKDMpIH0sCj4gPiA+IC0JW0lN
-WDhNUV9SRVNFVF9NSVBJX0RJU19FU0NfUkVTRVRfTl0JPSB7IFNSQ19NSVBJUEhZX1JDUiwgQklU
-KDQpIH0sCj4gPiA+IC0JW0lNWDhNUV9SRVNFVF9NSVBJX0RJU19QQ0xLX1JFU0VUX05dCT0geyBT
-UkNfTUlQSVBIWV9SQ1IsIEJJVCg1KSB9LAo+ID4gPiArCVtJTVg4TVFfUkVTRVRfTUlQSV9EU0lf
-RFBJX1JFU0VUX05dCT0geyBTUkNfTUlQSVBIWV9SQ1IsIEJJVCgzKSB9LAo+ID4gPiArCVtJTVg4
-TVFfUkVTRVRfTUlQSV9EU0lfRVNDX1JFU0VUX05dCT0geyBTUkNfTUlQSVBIWV9SQ1IsIEJJVCg0
-KSB9LAo+ID4gPiArCVtJTVg4TVFfUkVTRVRfTUlQSV9EU0lfUENMS19SRVNFVF9OXQk9IHsgU1JD
-X01JUElQSFlfUkNSLCBCSVQoNSkgfSwKPiA+ID4gwqAJW0lNWDhNUV9SRVNFVF9QQ0lFUEhZXQkJ
-CT0geyBTUkNfUENJRVBIWV9SQ1IsCj4gPiDCoAkJCQkJCcKgwqDCoMKgQklUKDIpIHwgQklUKDEp
-IH0sCj4gPiA+IMKgCVtJTVg4TVFfUkVTRVRfUENJRVBIWV9QRVJTVF0JCT0geyBTUkNfUENJRVBI
-WV9SQ1IsIEJJVCgzKSB9LAo+IEBAIC0yMjAsOSArMjIwLDkgQEAgc3RhdGljIGludCBpbXg4bXFf
-cmVzZXRfc2V0KHN0cnVjdCByZXNldF9jb250cm9sbGVyX2RldiAqcmNkZXYsCj4gwqAKPiA+IMKg
-CWNhc2UgSU1YOE1RX1JFU0VUX1BDSUVfQ1RSTF9BUFBTX0VOOgo+ID4gPiDCoAljYXNlIElNWDhN
-UV9SRVNFVF9QQ0lFMl9DVFJMX0FQUFNfRU46CS8qIGZhbGx0aHJvdWdoICovCj4gPiA+IC0JY2Fz
-ZSBJTVg4TVFfUkVTRVRfTUlQSV9ESVNfUENMS19SRVNFVF9OOgkvKiBmYWxsdGhyb3VnaCAqLwo+
-ID4gPiAtCWNhc2UgSU1YOE1RX1JFU0VUX01JUElfRElTX0VTQ19SRVNFVF9OOgkvKiBmYWxsdGhy
-b3VnaCAqLwo+ID4gPiAtCWNhc2UgSU1YOE1RX1JFU0VUX01JUElfRElTX0RQSV9SRVNFVF9OOgkv
-KiBmYWxsdGhyb3VnaCAqLwo+ID4gPiArCWNhc2UgSU1YOE1RX1JFU0VUX01JUElfRFNJX1BDTEtf
-UkVTRVRfTjoJLyogZmFsbHRocm91Z2ggKi8KPiA+ID4gKwljYXNlIElNWDhNUV9SRVNFVF9NSVBJ
-X0RTSV9FU0NfUkVTRVRfTjoJLyogZmFsbHRocm91Z2ggKi8KPiA+ID4gKwljYXNlIElNWDhNUV9S
-RVNFVF9NSVBJX0RTSV9EUElfUkVTRVRfTjoJLyogZmFsbHRocm91Z2ggKi8KPiA+ID4gwqAJY2Fz
-ZSBJTVg4TVFfUkVTRVRfTUlQSV9EU0lfUkVTRVRfTjoJLyogZmFsbHRocm91Z2ggKi8KPiA+ID4g
-wqAJY2FzZSBJTVg4TVFfUkVTRVRfTUlQSV9EU0lfUkVTRVRfQllURV9OOgkvKiBmYWxsdGhyb3Vn
-aCAqLwo+ID4gwqAJCXZhbHVlID0gYXNzZXJ0ID8gMCA6IGJpdDsKCl9fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBs
-aXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
-cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Fri, Jul 12, 2019 at 12:38:46PM -0700, Peter Collingbourne wrote:
+> RELR is a relocation packing format for relative relocations.
+> The format is described in a generic-abi proposal:
+> https://groups.google.com/d/topic/generic-abi/bX460iggiKg/discussion
+> 
+> The LLD linker can be instructed to pack relocations in the RELR
+> format by passing the flag --pack-dyn-relocs=relr.
+> 
+> This patch adds a new config option, CONFIG_RELR. Enabling this option
+> instructs the linker to pack vmlinux's relative relocations in the RELR
+> format, and causes the kernel to apply the relocations at startup along
+> with the RELA relocations. RELA relocations still need to be applied
+> because the linker will emit RELA relative relocations if they are
+> unrepresentable in the RELR format (i.e. address not a multiple of 2).
+> 
+> Enabling CONFIG_RELR reduces the size of a defconfig kernel image
+> with CONFIG_RANDOMIZE_BASE by 3.5MB/16% uncompressed, or 550KB/5%
+> compressed (lz4).
+> 
+> Signed-off-by: Peter Collingbourne <pcc@google.com>
+> Tested-by: Nick Desaulniers <ndesaulniers@google.com>
+> Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
+> ---
+> Changes in v2:
+> - Reverted change to RELA processing
+> - Added more comments, as requested by Nick and Will
+> - Added a feature test for NM and OBJCOPY
+> - Made CONFIG_RELR=y the default if the tools support it
+> 
+>  arch/arm64/Kconfig              | 10 ++++
+>  arch/arm64/Makefile             |  4 ++
+>  arch/arm64/kernel/head.S        | 96 ++++++++++++++++++++++++++++++---
+>  arch/arm64/kernel/vmlinux.lds.S |  9 ++++
+>  init/Kconfig                    |  3 ++
+>  scripts/tools-support-relr.sh   | 16 ++++++
+>  6 files changed, 132 insertions(+), 6 deletions(-)
+>  create mode 100755 scripts/tools-support-relr.sh
+> 
+> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+> index 7442edbcabfc3..cf3907d21d097 100644
+> --- a/arch/arm64/Kconfig
+> +++ b/arch/arm64/Kconfig
+> @@ -1476,6 +1476,16 @@ config RELOCATABLE
+>  	  relocation pass at runtime even if the kernel is loaded at the
+>  	  same address it was linked at.
+>  
+> +config RELR
+> +	bool "Use RELR relocation packing"
+> +	depends on RELOCATABLE && TOOLS_SUPPORT_RELR
+> +	default y
+> +	help
+> +	  Store the kernel's dynamic relocations in the RELR relocation packing
+> +	  format. Requires a compatible linker (currently only LLD supports
+
+Drop "currently" because it will just rot
+
+> +	  this feature), as well as compatible NM and OBJCOPY utilities
+> +	  (llvm-nm and llvm-objcopy are compatible).
+> +
+>  config RANDOMIZE_BASE
+>  	bool "Randomize the address of the kernel image"
+>  	select ARM64_MODULE_PLTS if MODULES
+> diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+> index bb1f1dbb34e8f..11f84450c7784 100644
+> --- a/arch/arm64/Makefile
+> +++ b/arch/arm64/Makefile
+> @@ -22,6 +22,10 @@ LDFLAGS_vmlinux		+= -shared -Bsymbolic -z notext -z norelro \
+>  			$(call ld-option, --no-apply-dynamic-relocs)
+>  endif
+>  
+> +ifeq ($(CONFIG_RELR),y)
+> +  LDFLAGS_vmlinux += --pack-dyn-relocs=relr
+> +endif
+
+RELR isn't arm64-specific, right? So we could put this in the top-level
+Makefile and have arm64 select ARCH_HAS_RELR if relocatable, so that other
+architecture can easily support this in future.
+
+>  ifeq ($(CONFIG_ARM64_ERRATUM_843419),y)
+>    ifeq ($(call ld-option, --fix-cortex-a53-843419),)
+>  $(warning ld does not support --fix-cortex-a53-843419; kernel may be susceptible to erratum)
+> diff --git a/arch/arm64/kernel/head.S b/arch/arm64/kernel/head.S
+> index 2cdacd1c141b9..cc23302e9d95e 100644
+> --- a/arch/arm64/kernel/head.S
+> +++ b/arch/arm64/kernel/head.S
+> @@ -102,6 +102,8 @@ pe_header:
+>  	 *  x23        stext() .. start_kernel()  physical misalignment/KASLR offset
+>  	 *  x28        __create_page_tables()     callee preserved temp register
+>  	 *  x19/x20    __primary_switch()         callee preserved temp registers
+> +	 *  x24        __primary_switch() .. relocate_kernel()
+> +	 *                                        current RELR displacement
+>  	 */
+>  ENTRY(stext)
+>  	bl	preserve_boot_args
+> @@ -834,14 +836,93 @@ __relocate_kernel:
+>  
+>  0:	cmp	x9, x10
+>  	b.hs	1f
+> -	ldp	x11, x12, [x9], #24
+> -	ldr	x13, [x9, #-8]
+> -	cmp	w12, #R_AARCH64_RELATIVE
+> +	ldp	x12, x13, [x9], #24
+> +	ldr	x14, [x9, #-8]
+> +	cmp	w13, #R_AARCH64_RELATIVE
+>  	b.ne	0b
+> -	add	x13, x13, x23			// relocate
+> -	str	x13, [x11, x23]
+> +	add	x14, x14, x23			// relocate
+> +	str	x14, [x12, x23]
+>  	b	0b
+> -1:	ret
+> +
+> +1:
+> +#ifdef CONFIG_RELR
+> +	/*
+> +	 * Apply RELR relocations.
+> +	 *
+> +	 * RELR is a compressed format for storing relative relocations. The
+> +	 * encoded sequence of entries looks like:
+> +	 * [ AAAAAAAA BBBBBBB1 BBBBBBB1 ... AAAAAAAA BBBBBB1 ... ]
+
+I assume these are treated as an array of u64 types for the purposes of
+endianness? (have you tested with a big-endian kernel?).
+
+Will
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
