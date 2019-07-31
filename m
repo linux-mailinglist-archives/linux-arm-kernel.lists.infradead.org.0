@@ -2,71 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8DAED7CA42
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 19:26:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D13517CA83
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 19:33:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CR5+dER8JnzSQaFeSpa+wnNIDdxCPv+k4P2g3Pz/0Z8=; b=onu+WnTBkTd1PZ
-	bhIflndoCoEfsPIecsCZmg3Dff9WybTe81tMIRphmblqh9jdYzADOGkyfoo2DMUze9S436hglY5yC
-	C4wcDAhqqV5DWe43XzawRELk1s1mY0hiNiPj5piIJZ9oj+travSJmyODy/PFpiDBYIpRAA6om5/ti
-	Nltw9JERTPz1hgypKHLNn11BArNZNL/ZrUjLADp4w4Axx25UYZL/UXz1r2LsFBsDIIIua73xyjAMS
-	8avgTWjBlTjyZlfkYyzUbsD3dViQwRSICFrZgDwsCu4pmxLTjvkjkcycPSn3dbXg+eEeYfeLmpRkm
-	YuVyNkmlv1rnR4gge0aw==;
+	List-Owner; bh=qqnAHRA9Yi9f8/NtdH30AOi3vu040d57zZvBaiqPVts=; b=q6/DCyHHSRlc5W
+	irNZhUUVz9itQ5/NYi0BoscFlr8xzfcRx2dP8khDJI44KwYGgo0bv+d63zvIVcM9m9GeSj55OoJzd
+	6LCelmbNw+Fd3TdTJNS0hVnrEecFP5rJf/R86xsQ7YY88F3TzP2RimwXgiG2jz5e5854tgj69dvPJ
+	M3zJuPjTY2CSiqap3sxujRdMD45SrkpH9aU4YaYthaWnDBdyF72hmncFI9jmbcDwB0GfP/xHvJJsN
+	7NBulXwy2Rn6xHRgJf+mdSi87X85RXcZAiXcV0GRiEQ2KL8bezaBA4WEWZK3KtoJFcWWZtBUqs3qA
+	i547cYjKuYbTbKuk1m0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hssMh-0000JX-Ag; Wed, 31 Jul 2019 17:26:15 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hssTl-0002oX-EE; Wed, 31 Jul 2019 17:33:33 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hssMa-0000JB-JM
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 17:26:10 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4506F20679;
- Wed, 31 Jul 2019 17:26:06 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564593968;
- bh=oELRU0Fx6RzT4m3ByuzMzmykJ4LlfkVxj9SOmJd+HeQ=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Z+aVD4tLWZyYl6UDCZXR/2brEufSZdP249RJqnD8jlArFTVI/TUre1fn7uykA+bwG
- otIzSMKndxin46UKMd/OFppZfiXgHkp6ze0VzgPZyPn2zjWxQizsr47BYht8cfh6tR
- Joi0PkiHHix110PzZ5fJCj3LN41iThsGNUGkNh1g=
-Date: Wed, 31 Jul 2019 18:26:03 +0100
-From: Will Deacon <will@kernel.org>
-To: Masami Hiramatsu <mhiramat@kernel.org>
-Subject: Re: [PATCH v3 3/4] arm64: Make debug exception handlers visible from
- RCU
-Message-ID: <20190731172602.36hdk3yb3w6uihbu@willie-the-truck>
-References: <156404254387.2020.886452004489353899.stgit@devnote2>
- <156404257493.2020.7940525305482369976.stgit@devnote2>
+ id 1hssTd-0002nY-Ff; Wed, 31 Jul 2019 17:33:27 +0000
+Received: by mail-pg1-x543.google.com with SMTP id u17so32388232pgi.6;
+ Wed, 31 Jul 2019 10:33:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=1mUzN69TbVh9yZT+F3MQDO+6tQ5Mp+B1rUEtD2T6Huc=;
+ b=YOxge0Yl9i70G+adD8fcIAQFr/+MKP/AFeajQGmNOUU3PSBiJFy13XEVeByt0H23Fm
+ eQzDcQe68Apu1iZpVUkzBjb1K8sNEmZZT1vTc0iVLJa71adt7IaZsg7HXfFrupSDvu2t
+ /AbaO7TzbQzEOfsYUnbE8+0dT8MWRwsp1fjykU0avS6hF4Jk57q5gwhJWRcTwnruRx8D
+ PzGi9hcvi/tT1aDkbKf0dLDit1UyoCPYI0SUX4i4V74v4YxmWPog8KRGZn0aniBLbdUA
+ HNRGCy5jpKlcLfKvyalbj8kL5hQfmFY6LXC6ZzkipEieZEKSDhpcT5WZw6P56IE6NcoA
+ AxYw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=1mUzN69TbVh9yZT+F3MQDO+6tQ5Mp+B1rUEtD2T6Huc=;
+ b=UTrC3aTTe+f9EdgEjNu/NDeUPwyGR1E+HkpyNsk0JQxgpBdnRm4CMvoKplkv7MDO+A
+ +BwXmT+lPrl/KCDj5bTr1qVkoz2GGhLt3M5GfnNa3OwYMBNmQztU6sIHReXViaDCNDV9
+ 4v9fEEe5fJEEDgSf3iQhmkNxddmYNml1HQGRizUcpmFJCNfYI6P3kUOefBHHv5BQsX5V
+ fOz47k73qW44mVsIe7O37+ujvgjbjdhbnvX3Ae+DV+y88vXNupzrWRpxZCYnzET/1/xo
+ RSnn6SjXSeZxcY04QZUDoayFgGtcqNhuFZsKVcXov6lqJQJkmk00Xum4Ul9MKQ70HeNf
+ ku5Q==
+X-Gm-Message-State: APjAAAVaazAfBqG4pNVioF+c8oWZXwMaFUzF76ZmLT8/RyoHAOecvR3p
+ i5veU02nI6D07UWjd/mCH8A=
+X-Google-Smtp-Source: APXvYqwzc3V4hpBjzjfpPb1vXFYPZ0Qeb7PGWHW8bph0fdJAOdbQdQV14uAoPp6X+iZ/zBHaMBAOoQ==
+X-Received: by 2002:a62:7d13:: with SMTP id y19mr48612603pfc.62.1564594404588; 
+ Wed, 31 Jul 2019 10:33:24 -0700 (PDT)
+Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
+ by smtp.gmail.com with ESMTPSA id e10sm71043899pfi.173.2019.07.31.10.33.23
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 31 Jul 2019 10:33:23 -0700 (PDT)
+Date: Wed, 31 Jul 2019 10:33:22 -0700
+From: Guenter Roeck <linux@roeck-us.net>
+To: Alex Ghiti <alex@ghiti.fr>
+Subject: Re: [PATCH v5 14/14] riscv: Make mmap allocation top-down by default
+Message-ID: <20190731173322.GA30870@roeck-us.net>
+References: <20190730055113.23635-1-alex@ghiti.fr>
+ <20190730055113.23635-15-alex@ghiti.fr>
+ <88a9bbf8-872f-97cc-fc1a-83eb7694478f@ghiti.fr>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <156404257493.2020.7940525305482369976.stgit@devnote2>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <88a9bbf8-872f-97cc-fc1a-83eb7694478f@ghiti.fr>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_102608_676269_13E56FAD 
-X-CRM114-Status: GOOD (  20.19  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190731_103325_522743_0031DB39 
+X-CRM114-Status: GOOD (  15.47  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (groeck7[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (groeck7[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,117 +103,126 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dan Rue <dan.rue@linaro.org>, Daniel Diaz <daniel.diaz@linaro.org>,
- Anders Roxell <anders.roxell@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Naresh Kamboju <naresh.kamboju@linaro.org>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, Matt Hart <matthew.hart@linaro.org>,
- "Paul E . McKenney" <paulmck@linux.ibm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Albert Ou <aou@eecs.berkeley.edu>, Kees Cook <keescook@chromium.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Palmer Dabbelt <palmer@sifive.com>,
+ Will Deacon <will.deacon@arm.com>, Russell King <linux@armlinux.org.uk>,
+ Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
+ linux-mm@kvack.org, Luis Chamberlain <mcgrof@kernel.org>,
+ linux-riscv@lists.infradead.org, Paul Burton <paul.burton@mips.com>,
+ James Hogan <jhogan@kernel.org>, linux-fsdevel@vger.kernel.org,
+ Andrew Morton <akpm@linux-foundation.org>, linux-mips@vger.kernel.org,
+ Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org,
+ Alexander Viro <viro@zeniv.linux.org.uk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jul 25, 2019 at 05:16:15PM +0900, Masami Hiramatsu wrote:
-> Make debug exceptions visible from RCU so that synchronize_rcu()
-> correctly track the debug exception handler.
+On Wed, Jul 31, 2019 at 02:05:23AM -0400, Alex Ghiti wrote:
+> On 7/30/19 1:51 AM, Alexandre Ghiti wrote:
+> >In order to avoid wasting user address space by using bottom-up mmap
+> >allocation scheme, prefer top-down scheme when possible.
+> >
+> >Before:
+> >root@qemuriscv64:~# cat /proc/self/maps
+> >00010000-00016000 r-xp 00000000 fe:00 6389       /bin/cat.coreutils
+> >00016000-00017000 r--p 00005000 fe:00 6389       /bin/cat.coreutils
+> >00017000-00018000 rw-p 00006000 fe:00 6389       /bin/cat.coreutils
+> >00018000-00039000 rw-p 00000000 00:00 0          [heap]
+> >1555556000-155556d000 r-xp 00000000 fe:00 7193   /lib/ld-2.28.so
+> >155556d000-155556e000 r--p 00016000 fe:00 7193   /lib/ld-2.28.so
+> >155556e000-155556f000 rw-p 00017000 fe:00 7193   /lib/ld-2.28.so
+> >155556f000-1555570000 rw-p 00000000 00:00 0
+> >1555570000-1555572000 r-xp 00000000 00:00 0      [vdso]
+> >1555574000-1555576000 rw-p 00000000 00:00 0
+> >1555576000-1555674000 r-xp 00000000 fe:00 7187   /lib/libc-2.28.so
+> >1555674000-1555678000 r--p 000fd000 fe:00 7187   /lib/libc-2.28.so
+> >1555678000-155567a000 rw-p 00101000 fe:00 7187   /lib/libc-2.28.so
+> >155567a000-15556a0000 rw-p 00000000 00:00 0
+> >3fffb90000-3fffbb1000 rw-p 00000000 00:00 0      [stack]
+> >
+> >After:
+> >root@qemuriscv64:~# cat /proc/self/maps
+> >00010000-00016000 r-xp 00000000 fe:00 6389       /bin/cat.coreutils
+> >00016000-00017000 r--p 00005000 fe:00 6389       /bin/cat.coreutils
+> >00017000-00018000 rw-p 00006000 fe:00 6389       /bin/cat.coreutils
+> >2de81000-2dea2000 rw-p 00000000 00:00 0          [heap]
+> >3ff7eb6000-3ff7ed8000 rw-p 00000000 00:00 0
+> >3ff7ed8000-3ff7fd6000 r-xp 00000000 fe:00 7187   /lib/libc-2.28.so
+> >3ff7fd6000-3ff7fda000 r--p 000fd000 fe:00 7187   /lib/libc-2.28.so
+> >3ff7fda000-3ff7fdc000 rw-p 00101000 fe:00 7187   /lib/libc-2.28.so
+> >3ff7fdc000-3ff7fe2000 rw-p 00000000 00:00 0
+> >3ff7fe4000-3ff7fe6000 r-xp 00000000 00:00 0      [vdso]
+> >3ff7fe6000-3ff7ffd000 r-xp 00000000 fe:00 7193   /lib/ld-2.28.so
+> >3ff7ffd000-3ff7ffe000 r--p 00016000 fe:00 7193   /lib/ld-2.28.so
+> >3ff7ffe000-3ff7fff000 rw-p 00017000 fe:00 7193   /lib/ld-2.28.so
+> >3ff7fff000-3ff8000000 rw-p 00000000 00:00 0
+> >3fff888000-3fff8a9000 rw-p 00000000 00:00 0      [stack]
+> >
+> >Signed-off-by: Alexandre Ghiti <alex@ghiti.fr>
+> >Reviewed-by: Christoph Hellwig <hch@lst.de>
+> >Reviewed-by: Kees Cook <keescook@chromium.org>
+> >Reviewed-by: Luis Chamberlain <mcgrof@kernel.org>
+> >---
+> >  arch/riscv/Kconfig | 13 +++++++++++++
+> >  1 file changed, 13 insertions(+)
+> >
+> >diff --git a/arch/riscv/Kconfig b/arch/riscv/Kconfig
+> >index 8ef64fe2c2b3..8d0d8af1a744 100644
+> >--- a/arch/riscv/Kconfig
+> >+++ b/arch/riscv/Kconfig
+> >@@ -54,6 +54,19 @@ config RISCV
+> >  	select EDAC_SUPPORT
+> >  	select ARCH_HAS_GIGANTIC_PAGE
+> >  	select ARCH_WANT_HUGE_PMD_SHARE if 64BIT
+> >+	select ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT if MMU
+> >+	select HAVE_ARCH_MMAP_RND_BITS
+> >+
+> >+config ARCH_MMAP_RND_BITS_MIN
+> >+	default 18 if 64BIT
+> >+	default 8
+> >+
+> >+# max bits determined by the following formula:
+> >+#  VA_BITS - PAGE_SHIFT - 3
+> >+config ARCH_MMAP_RND_BITS_MAX
+> >+	default 33 if RISCV_VM_SV48
+> >+	default 24 if RISCV_VM_SV39
+> >+	default 17 if RISCV_VM_SV32
+> >  config MMU
+> >  	def_bool y
 > 
-> This also introduces sanity checks for user-mode exceptions as same
-> as x86's ist_enter()/ist_exit().
 > 
-> The debug exception can interrupt in idle task. For example, it warns
-> if we put a kprobe on a function called from idle task as below.
-> The warning message showed that the rcu_read_lock() caused this
-> problem. But actually, this means the RCU is lost the context which
-> is already in NMI/IRQ.
+> Hi Andrew,
 > 
->   /sys/kernel/debug/tracing # echo p default_idle_call >> kprobe_events
->   /sys/kernel/debug/tracing # echo 1 > events/kprobes/enable
->   /sys/kernel/debug/tracing # [  135.122237]
->   [  135.125035] =============================
->   [  135.125310] WARNING: suspicious RCU usage
->   [  135.125581] 5.2.0-08445-g9187c508bdc7 #20 Not tainted
->   [  135.125904] -----------------------------
->   [  135.126205] include/linux/rcupdate.h:594 rcu_read_lock() used illegally while idle!
->   [  135.126839]
->   [  135.126839] other info that might help us debug this:
->   [  135.126839]
->   [  135.127410]
->   [  135.127410] RCU used illegally from idle CPU!
->   [  135.127410] rcu_scheduler_active = 2, debug_locks = 1
->   [  135.128114] RCU used illegally from extended quiescent state!
->   [  135.128555] 1 lock held by swapper/0/0:
->   [  135.128944]  #0: (____ptrval____) (rcu_read_lock){....}, at: call_break_hook+0x0/0x178
->   [  135.130499]
->   [  135.130499] stack backtrace:
->   [  135.131192] CPU: 0 PID: 0 Comm: swapper/0 Not tainted 5.2.0-08445-g9187c508bdc7 #20
->   [  135.131841] Hardware name: linux,dummy-virt (DT)
->   [  135.132224] Call trace:
->   [  135.132491]  dump_backtrace+0x0/0x140
->   [  135.132806]  show_stack+0x24/0x30
->   [  135.133133]  dump_stack+0xc4/0x10c
->   [  135.133726]  lockdep_rcu_suspicious+0xf8/0x108
->   [  135.134171]  call_break_hook+0x170/0x178
->   [  135.134486]  brk_handler+0x28/0x68
->   [  135.134792]  do_debug_exception+0x90/0x150
->   [  135.135051]  el1_dbg+0x18/0x8c
->   [  135.135260]  default_idle_call+0x0/0x44
->   [  135.135516]  cpu_startup_entry+0x2c/0x30
->   [  135.135815]  rest_init+0x1b0/0x280
->   [  135.136044]  arch_call_rest_init+0x14/0x1c
->   [  135.136305]  start_kernel+0x4d4/0x500
->   [  135.136597]
+> I have just seen you took this series into mmotm but without Paul's patch
+> ("riscv: kbuild: add virtual memory system selection") on which this commit
+> relies, I'm not sure it could
+> compile without it as there is no default for ARCH_MMAP_RND_BITS_MAX.
 > 
-> So make debug exception visible to RCU can fix this warning.
-> 
-> Reported-by: Naresh Kamboju <naresh.kamboju@linaro.org>
-> Acked-by: Paul E. McKenney <paulmck@linux.ibm.com>
-> Signed-off-by: Masami Hiramatsu <mhiramat@kernel.org>
-> ---
->  Changes in v3:
->   - Make a comment for debug_exception_enter() clearer.
-> ---
->  arch/arm64/mm/fault.c |   40 ++++++++++++++++++++++++++++++++++++++++
->  1 file changed, 40 insertions(+)
-> 
-> diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
-> index 9568c116ac7f..ed6c55c87fdc 100644
-> --- a/arch/arm64/mm/fault.c
-> +++ b/arch/arm64/mm/fault.c
-> @@ -777,6 +777,42 @@ void __init hook_debug_fault_code(int nr,
->  	debug_fault_info[nr].name	= name;
->  }
->  
-> +/*
-> + * In debug exception context, we explicitly disable preemption.
+Yes, this patch results in a bad configuration file.
 
-Maybe add "despite having interrupts disabled"?
+CONFIG_ARCH_MMAP_RND_BITS_MIN=18
+CONFIG_HAVE_ARCH_MMAP_RND_BITS=y
+CONFIG_ARCH_MMAP_RND_BITS=0
 
-> + * This serves two purposes: it makes it much less likely that we would
-> + * accidentally schedule in exception context and it will force a warning
-> + * if we somehow manage to schedule by accident.
-> + */
-> +static void debug_exception_enter(struct pt_regs *regs)
-> +{
-> +	if (user_mode(regs)) {
-> +		RCU_LOCKDEP_WARN(!rcu_is_watching(), "entry code didn't wake RCU");
-> +	} else {
-> +		/*
-> +		 * We might have interrupted pretty much anything.  In
-> +		 * fact, if we're a debug exception, we can even interrupt
-> +		 * NMI processing. We don't want this code makes in_nmi()
-> +		 * to return true, but we need to notify RCU.
-> +		 */
-> +		rcu_nmi_enter();
-> +	}
-> +
-> +	preempt_disable();
+CONFIG_ARCH_MMAP_RND_BITS=0 is outside the valid range, causing make to ask
+for a valid number. Since none exists, one is stuck with something like:
 
-If you're addingt new functions for entry/exit, maybe move the
-trace_hardirqs_{on,off}() calls in here too?
+Number of bits to use for ASLR of mmap base address (ARCH_MMAP_RND_BITS) [0] (NEW) 1
+Number of bits to use for ASLR of mmap base address (ARCH_MMAP_RND_BITS) [0] (NEW) 2
+Number of bits to use for ASLR of mmap base address (ARCH_MMAP_RND_BITS) [0] (NEW) 3
+Number of bits to use for ASLR of mmap base address (ARCH_MMAP_RND_BITS) [0] (NEW) 4
+Number of bits to use for ASLR of mmap base address (ARCH_MMAP_RND_BITS) [0] (NEW) 5
+Number of bits to use for ASLR of mmap base address (ARCH_MMAP_RND_BITS) [0] (NEW) 6
+Number of bits to use for ASLR of mmap base address (ARCH_MMAP_RND_BITS) [0] (NEW) 7
+Number of bits to use for ASLR of mmap base address (ARCH_MMAP_RND_BITS) [0] (NEW) 8
+Number of bits to use for ASLR of mmap base address (ARCH_MMAP_RND_BITS) [0] (NEW) 19
+Number of bits to use for ASLR of mmap base address (ARCH_MMAP_RND_BITS) [0] (NEW) 18
 
-Will
+when trying to compile riscv images. Plus, of course, all automatic builders
+bail out as result. 
+
+Guenter
 
 _______________________________________________
 linux-arm-kernel mailing list
