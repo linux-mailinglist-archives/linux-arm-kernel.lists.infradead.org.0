@@ -2,109 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B47827C911
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 18:44:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A87867C915
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 18:46:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ccw2l3iDO7UxaqUbZKOBcy7SrRAvEvsdm48dfGH68mM=; b=kGQpWSnAlt0xMT
-	CgDy+WjtRk+Tf/4Gfgs+31CjCFFTuNzxheK91UmjgtYspvLO6z3duKxx9PxX/nqmMRoYMTifwSJyZ
-	OdWhPvpcU27ZgIU3vVMCF25l8ARtbo09+3+tdXhQxezFS5zfs4OLMV+tR8P1wCT5PtD2ZUrk+t9BU
-	QRMt4r2ChDpPFOPTzsh22A8FhPFSX7dNiXfVxUJJBSjw1SsdlWzVDxD+OSsQ8q0MQCv5jbpflNEOM
-	b0PEj9KKqguRnX+iqFx2JPau40NOupEKUGSQbFMTAGDQZu6g8jcfupxMDikrBfV/TgfD27+CxyM8v
-	O0DzsqKRQz+u4GUa8Qlw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=K/5D/reVUWKX7csVJmF/TwsAyYKZBsPsHNZqIycdZ7A=; b=WRCb1dM+oBKRcn
+	m7ZBAlHz4pCsI5eLEjvT4vdf90dKt1g4czD6/ZZMoJqIuBnLu7vbkybVVaFJNboxn8K9T7bmKfXmh
+	nU+lGgBDX9bLo7PT1tUjAAq5Jj8r8EdIVCfA4mGK5a45d0zAZGloITaEZ0VPaXK6Fj17KQapsZS8H
+	ZeCjQX3ODS5bnZMIjPKwOfVJGvpfNwOuQxoZzWpgN65L+6A0EMHfhYHupRcQucY7zAEfJOj+JRFSv
+	eA3Bwziv3UB3lK96/rEjLNPUhtEIfPn/EZCkcAWSbiY+i7l5LWdWviw8Jzo7InZkDtgSiO7nv22sJ
+	RsI0N/TVM9/f0xuu+FFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsriA-00083l-9Z; Wed, 31 Jul 2019 16:44:22 +0000
-Received: from mga12.intel.com ([192.55.52.136])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsrhc-0007SQ-Vb
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 16:43:50 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga002.jf.intel.com ([10.7.209.21])
- by fmsmga106.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 31 Jul 2019 09:43:46 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.64,330,1559545200"; d="scan'208";a="183748784"
-Received: from ray.jf.intel.com (HELO [10.7.201.140]) ([10.7.201.140])
- by orsmga002.jf.intel.com with ESMTP; 31 Jul 2019 09:43:46 -0700
-Subject: Re: [PATCH v6 1/2] arm64: Define
- Documentation/arm64/tagged-address-abi.rst
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>,
- linux-arm-kernel@lists.infradead.org, linux-doc@vger.kernel.org,
- linux-mm@kvack.org, linux-arch@vger.kernel.org,
- linux-kselftest@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <cover.1563904656.git.andreyknvl@google.com>
- <20190725135044.24381-1-vincenzo.frascino@arm.com>
- <20190725135044.24381-2-vincenzo.frascino@arm.com>
-From: Dave Hansen <dave.hansen@intel.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=dave.hansen@intel.com; keydata=
- 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
-Message-ID: <b74e7ce7-d58a-68a0-2f28-6648ec6302c0@intel.com>
-Date: Wed, 31 Jul 2019 09:43:46 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1hsrjs-0001cd-5h; Wed, 31 Jul 2019 16:46:08 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hsrjk-0001c9-B0
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 16:46:01 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D6337337;
+ Wed, 31 Jul 2019 09:45:59 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 814443F71F;
+ Wed, 31 Jul 2019 09:45:58 -0700 (PDT)
+Date: Wed, 31 Jul 2019 17:45:56 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Viresh Kumar <viresh.kumar@linaro.org>
+Subject: Re: [PATCH v4.4 V2 24/43] arm64: Add skeleton to harden the branch
+ predictor against aliasing attacks
+Message-ID: <20190731164556.GI39768@lakrids.cambridge.arm.com>
+References: <cover.1562908074.git.viresh.kumar@linaro.org>
+ <4349161f0ed572bbc6bff64bad94aa96d07b27ff.1562908075.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <20190725135044.24381-2-vincenzo.frascino@arm.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <4349161f0ed572bbc6bff64bad94aa96d07b27ff.1562908075.git.viresh.kumar@linaro.org>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_094349_078031_20C3B24C 
-X-CRM114-Status: GOOD (  10.72  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190731_094600_420251_D90AA95D 
+X-CRM114-Status: GOOD (  14.84  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.136 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -116,21 +63,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>
+Cc: Julien Thierry <Julien.Thierry@arm.com>,
+ Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will.deacon@arm.com>, stable@vger.kernel.org, mark.brown@arm.com,
+ Russell King <rmk+kernel@arm.linux.org.uk>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 7/25/19 6:50 AM, Vincenzo Frascino wrote:
-> With the relaxed ABI proposed through this document, it is now possible
-> to pass tagged pointers to the syscalls, when these pointers are in
-> memory ranges obtained by an anonymous (MAP_ANONYMOUS) mmap().
+On Fri, Jul 12, 2019 at 10:58:12AM +0530, Viresh Kumar wrote:
+> From: Will Deacon <will.deacon@arm.com>
+> 
+> commit 0f15adbb2861ce6f75ccfc5a92b19eae0ef327d0 upstream.
+> 
+> Aliasing attacks against CPU branch predictors can allow an attacker to
+> redirect speculative control flow on some CPUs and potentially divulge
+> information from one context to another.
+> 
+> This patch adds initial skeleton code behind a new Kconfig option to
+> enable implementation-specific mitigations against these attacks for
+> CPUs that are affected.
+> 
+> Co-developed-by: Marc Zyngier <marc.zyngier@arm.com>
+> Signed-off-by: Will Deacon <will.deacon@arm.com>
+> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+> [ v4.4: Changes made according to 4.4 codebase ]
+> Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 
-I don't see a lot of description of why this restriction is necessary.
-What's the problem with supporting MAP_SHARED?
+[...]
+
+>  /* id_aa64pfr0 */
+> +#define ID_AA64PFR0_CSV2_SHIFT		56
+
+Note: CSV3 is bits 63-60, 
+
+> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+> index 474b34243521..040a42d79990 100644
+> --- a/arch/arm64/kernel/cpufeature.c
+> +++ b/arch/arm64/kernel/cpufeature.c
+> @@ -83,7 +83,8 @@ static struct arm64_ftr_bits ftr_id_aa64isar0[] = {
+>  };
+>  
+>  static struct arm64_ftr_bits ftr_id_aa64pfr0[] = {
+> -	ARM64_FTR_BITS(FTR_STRICT, FTR_EXACT, 32, 32, 0),
+> +	ARM64_FTR_BITS(FTR_NONSTRICT, FTR_LOWER_SAFE, ID_AA64PFR0_CSV2_SHIFT, 4, 0),
+> +	ARM64_FTR_BITS(FTR_STRICT, FTR_EXACT, 32, 28, 0),
+
+This line should be:
+
+	ARM64_FTR_BITS(FTR_STRICT, FTR_EXACT, 32, 24, 0),
+
+... as it was in the v4.9 backbort, making it cover bits 55:32. As in
+this patch, it covers 59:32, overlapping with CSV2.
+
+We also need to cater for bits 63:60. In the v4.9 backport, the meltdown
+bits were applied first, so nothing special was necessary.
+
+What's the plan w.r.t. meltdown mitigations and v4.4?
+
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
