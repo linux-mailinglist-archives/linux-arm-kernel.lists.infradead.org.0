@@ -2,62 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0FC07C93D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 18:54:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07E7A7C941
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 18:55:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ua3soKr+tA2dBWp/JlCtSaOFX1Iyl2ag6Sq+yslH1pA=; b=LrybyTRkQq6Cq7
-	p8sXQ7P6GheNH1n19QFxPQMaTpCOh5xDNbH4nIvt7RXYxDubn73L7iM0+ihX3WaEX48HDo2XqfTbh
-	f1BDjpn1XrtQ3KK3vdFY29XprTbvjEtOU9abcDMLUGpTNCR4HNYfKf7MqevN8ToSJTsvXYmV1jDop
-	8lQKYRkv3/A82KTcf92Q95EsGJKYvF/EXvVZAXsXXsyAN0yoC5WoOIn1pHqdDJ5SKmo9esILjOz0w
-	3kUPQKK9OeKhZ/a+oRn7ShZvBYJrGZZ31vYUVMbinZL8oQdI0tA/pPjf2719p765+Lc+I3Lm9hlFL
-	RyBHAb68BkJm2KtWNv7w==;
+	List-Owner; bh=6MN4VeUy5cJClz/WdaOt/YXwxz2F4kIJR/XEAcNWdZg=; b=DB538aObzFnq70
+	EyTAYYIdp1AKrYiSMm8cGn4Vr1DzUMrXsuLZQAKn0+lAKFCWnjtG/yEBSckcd9PcNpKt1nzZnmHb4
+	gg4G/HbYNg4nD17IIhPCgwSGXWm59oZtH35BG4vUh3uSiAUAH4ZQjcxDcnuNY2FplOnbldBlHp+0V
+	Xq5arhdyDVF6sxKsUi5FQ3SuiB/U69NtTzzkGD8h+qKtbuVQjeoJS4QajX/53BCdKnWifT84LsPXe
+	yVvX+pEcQfwoYr4KGtLgpQf7dPvrCbHop3p9NIvNBvmXyRcoYYtalH1kv5HPkavW8Vd1FYStUi+zT
+	JKFjusZtS6OqEe5FKqWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsrrg-0004WN-SW; Wed, 31 Jul 2019 16:54:12 +0000
-Received: from honk.sigxcpu.org ([24.134.29.49])
+	id 1hsrsm-0005xu-8Q; Wed, 31 Jul 2019 16:55:20 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsrrZ-0004Vf-K7
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 16:54:07 +0000
-Received: from localhost (localhost [127.0.0.1])
- by honk.sigxcpu.org (Postfix) with ESMTP id AF4D4FB03;
- Wed, 31 Jul 2019 18:54:02 +0200 (CEST)
-X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
-Received: from honk.sigxcpu.org ([127.0.0.1])
- by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id WqV7ea2juLfn; Wed, 31 Jul 2019 18:54:01 +0200 (CEST)
-Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
- id 9B60D46D8A; Wed, 31 Jul 2019 18:54:00 +0200 (CEST)
-Date: Wed, 31 Jul 2019 18:54:00 +0200
-From: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
-To: Fabio Estevam <festevam@gmail.com>
-Subject: Re: [PATCH 3/3] drm/bridge: Add NWL MIPI DSI host controller support
-Message-ID: <20190731165400.GA30745@bogon.m.sigxcpu.org>
-References: <cover.1563983037.git.agx@sigxcpu.org>
- <3158f4f8c97c21f98c394e5631d74bc60d796522.1563983037.git.agx@sigxcpu.org>
- <CAOMZO5BRbV_1du1b9eJqcBvvXSE2Mon3yxSPJxPpZgBqYNjBSg@mail.gmail.com>
- <20190731143532.GA1935@bogon.m.sigxcpu.org>
- <CAOMZO5Djoi7EuXapkg+dQ6HR2oZZHrw+vnjc837Gxee-Nh00Hw@mail.gmail.com>
+ id 1hsrsd-0005wd-DO; Wed, 31 Jul 2019 16:55:12 +0000
+Received: from mail-qk1-f179.google.com (mail-qk1-f179.google.com
+ [209.85.222.179])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id DBC46208E4;
+ Wed, 31 Jul 2019 16:55:10 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1564592111;
+ bh=JDEMB0zREMLmLrMHdC+useYBlGljcUC+uo1OriFFjzw=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=cAImF8l+MTX5ADdOiJKH/QneD3b8zhh4NS+aA1NAyHVfIxsAaqLYpsv7WWoB0TtwC
+ 2c+ItTFSXRfvJm8NLwOGBwC1tdL2l53EDDw8O2zAvqikMvMFvGEZ4ep8NiaBCipCVO
+ J/gR1tv6gsEb3B4cn2OBbd6Mpyprif+nWU17dCsY=
+Received: by mail-qk1-f179.google.com with SMTP id m14so24080097qka.10;
+ Wed, 31 Jul 2019 09:55:10 -0700 (PDT)
+X-Gm-Message-State: APjAAAUXsBgaIpHdx9QEN1BgOXBqqzIQE7/EjEpfBaIjzV2hLCQFqM82
+ c/NkNJ1ZGofB+cp1P5S4Fo3HQORHmNQaB6P53A==
+X-Google-Smtp-Source: APXvYqyL4gjIwP3FgCPMgYyaj67zGUm/qznjmZ2P2Af+LHVuDZ8XmiPXVioHVdq5jApCgeXPOXaATEbkx/ux3T/Eogs=
+X-Received: by 2002:a37:a48e:: with SMTP id
+ n136mr83759357qke.223.1564592110116; 
+ Wed, 31 Jul 2019 09:55:10 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAOMZO5Djoi7EuXapkg+dQ6HR2oZZHrw+vnjc837Gxee-Nh00Hw@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20190731124000.22072-1-narmstrong@baylibre.com>
+ <20190731124000.22072-3-narmstrong@baylibre.com>
+In-Reply-To: <20190731124000.22072-3-narmstrong@baylibre.com>
+From: Rob Herring <robh@kernel.org>
+Date: Wed, 31 Jul 2019 10:54:58 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqJh0VJpRQtjEv4B9Zhw4vYPbx8spJtoR0Pmx3Mier5gjg@mail.gmail.com>
+Message-ID: <CAL_JsqJh0VJpRQtjEv4B9Zhw4vYPbx8spJtoR0Pmx3Mier5gjg@mail.gmail.com>
+Subject: Re: [PATCH 2/6] dt-bindings: arm: amlogic: add bindings for G12B
+ based S922X SoC
+To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_095405_821277_F32D7367 
-X-CRM114-Status: GOOD (  17.72  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190731_095511_468819_6E1F5B42 
+X-CRM114-Status: GOOD (  10.92  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [24.134.29.49 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,79 +85,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Jernej Skrabec <jernej.skrabec@siol.net>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
- Lee Jones <lee.jones@linaro.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- Jonas Karlman <jonas@kwiboo.se>, linux-kernel <linux-kernel@vger.kernel.org>,
- DRI mailing list <dri-devel@lists.freedesktop.org>,
- Andrzej Hajda <a.hajda@samsung.com>, Rob Herring <robh+dt@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>, Daniel Vetter <daniel@ffwll.ch>,
- Robert Chiras <robert.chiras@nxp.com>, Chris Healy <cphealy@gmail.com>,
- Shawn Guo <shawnguo@kernel.org>,
+Cc: devicetree@vger.kernel.org, Kevin Hilman <khilman@baylibre.com>,
+ Christian Hewitt <christianshewitt@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ linux-amlogic@lists.infradead.org,
  "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-On Wed, Jul 31, 2019 at 11:43:47AM -0300, Fabio Estevam wrote:
-> Hi Guido,
-> =
+On Wed, Jul 31, 2019 at 6:40 AM Neil Armstrong <narmstrong@baylibre.com> wrote:
+>
+> Add a specific compatible for the Amlogic G12B family based S922X SoC
+> to differentiate with the A311D SoC from the same family.
+>
+> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+> ---
+>  Documentation/devicetree/bindings/arm/amlogic.yaml | 1 +
+>  1 file changed, 1 insertion(+)
 
-> On Wed, Jul 31, 2019 at 11:35 AM Guido G=FCnther <agx@sigxcpu.org> wrote:
-> =
-
-> > The idea is to have
-> >
-> >     "%sabling platform clocks", enable ? "en" : "dis");
-> >
-> > depending whether clocks are enabled/disabled.
-> =
-
-> Yes, I understood the idea, but this would print:
-> =
-
-> ensabling or dissabling :-)
-
-The 's' is from the '%s' format specifier:
-
-[ 2610.804174] imx-nwl-dsi 30a00000.mipi_dsi: [drm:imx_nwl_dsi_bridge_disab=
-le] disabling platform clocks
-[ 2710.996279] imx-nwl-dsi 30a00000.mipi_dsi: [drm:imx_nwl_dsi_bridge_pre_e=
-nable] enabling platform clocks
-
-I'll change that to use the full strings though since i also had to look
-twice to be sure there's no double 's'.
-
-> =
-
-> > > Same here. Please return 'int' instead.
-> >
-> > This is from drm_bridge_funcs so the prototype is fixed. I'm not sure
-> > how what's the best way to bubble up fatal errors through the drm layer?
-> =
-
-> Ok, so let's not change this one.
-> =
-
-> > I went for DRM_DEV_ERROR() since that what i used in the rest of the
-> > driver and these ones were omission. Hope that's o.k.
-> =
-
-> No strong preferences here. I just think dev_err() easier to type and sho=
-rter.
-> =
-
-> Thanks for this work!
-
-Thanks again for having a look!
- -- Guido
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
