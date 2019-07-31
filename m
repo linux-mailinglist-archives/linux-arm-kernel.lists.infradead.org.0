@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 632937C852
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 18:14:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E7917C86C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 18:19:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=263ViqF0C5QWpFe1tw/3dnamUsTkp8BS7z5SvzEqTC0=; b=n78N4/5ADd0cnP
-	nLSDlVkQ3gom5PptP1k+++l70Z1G2Nxx6WF+b7pzwMBrtGDHUgX67nB2AoEbW+NIO5QcwXA2pLDzq
-	hxUxS6uZIziXLaxjsU+pk67XITppPdHv0OM3ucdDWCVkSWGSMGP4C9tLp9BXiOvJXFVL6keSb2suP
-	qeEj3ZotoDzZ8OyijfzEM+NTiqNL/mhQkK7+lHBQjUXKzQhpxSD1fF6ifBswRXHWOXAr1IhkPb4bG
-	7icL3fL0qcKM2bs5fkWT9n40Yo6kggwjqB/HKQHHaZPXSHYPEgGaqdTzALMmOAGFBsb4EaI1vBFxY
-	+yYs4rKaolN18hMC6xMg==;
+	List-Owner; bh=Y/7uWIIX7fBpCELkmlJUAxULAObaP6z7yidIMUaFNNA=; b=F/YRdIkh4jJGGs
+	hGrkFxE6RbGrBuWGEpKlXwoidoKrmfZruJr72zYE0i6Bi4dPkN9FpsOecyYQQ5PrsqLRX1byZi+J1
+	pIserOqXRTNMKa/pHlYVQ/0Kdkm0gABbOajyurNbwNi/FszDnBKOkgPxvn/xrLYlIS5h6dvAz+Fth
+	zTzm0uEgxsCUWCUAIjvVb1fyYr+HbQnYQ8AzlRHDcdzZm6AZyiz4O4tR5/dcf0gjqTKEhgZmuv1nP
+	5bud6NYb01B6F6F/vnp1WpzuzHR3EIpY85GjkCf7Xu8Ws+e+MZX+6Td7M261vSiOqQpIwBF1zCxs6
+	qIP/YriHRQPahKMu3J6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsrFU-0001NE-QO; Wed, 31 Jul 2019 16:14:44 +0000
+	id 1hsrJf-0003jT-Da; Wed, 31 Jul 2019 16:19:03 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsrFL-0001Ms-28
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 16:14:36 +0000
+ id 1hsrJY-0003jA-4B
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 16:18:57 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 52302206A3;
- Wed, 31 Jul 2019 16:14:33 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id AF7DE206A3;
+ Wed, 31 Jul 2019 16:18:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564589674;
- bh=3nZlk0eBNHY1d+Gv/KlEoYiujgMy0mBOFWsNo7lFoJ4=;
+ s=default; t=1564589935;
+ bh=m7LJ3cDXN8hWsMVQHOFhXh2IAaCcNSFO7AdnTzfmink=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=fDBHHkW4nKT2VAx0DNHkH8Hu2aD50O8ZDB/g6v8dRFMQTbrFVS01l4qNhb0mSpgqJ
- JWlcTZnp07CGG1OS8mBPtuPoXwAjpIxAt5VkSwVrSye89pX9hulUjwTCDjkf6VxV7m
- Eg9WZ2BtHA6tCR/KM5LISOtTlXNjUqsNP6jdPWRY=
-Date: Wed, 31 Jul 2019 17:14:30 +0100
+ b=xHTQjj7PSrLQWiXVVgdu/bqDtHo9wdnu/reCcbSA4Ojc/21Ec3AP2DK9NlMM/UdMB
+ aDywlRLRPeWFiu1Il/2qBhpBmsteNuQmh7C1wnSHzmFkxBOJ8kRifhCGya1xWPfH/X
+ hrKYsr1KcoXaLFH50ccWaTzmv943SK2SjFdRMYno=
+Date: Wed, 31 Jul 2019 17:18:52 +0100
 From: Will Deacon <will@kernel.org>
-To: Geert Uytterhoeven <geert+renesas@glider.be>
-Subject: Re: [PATCH] arm64: Move TIF_* documentation to individual definitions
-Message-ID: <20190731161430.e4v5ag3ff5p2i6q6@willie-the-truck>
-References: <20190731133520.17939-1-geert+renesas@glider.be>
+To: Qian Cai <cai@lca.pw>
+Subject: Re: [PATCH] arm64/efi: fix variable 'si' set but not used
+Message-ID: <20190731161851.raecunlcm4zpd3pb@willie-the-truck>
+References: <1564521828-4528-1-git-send-email-cai@lca.pw>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190731133520.17939-1-geert+renesas@glider.be>
+In-Reply-To: <1564521828-4528-1-git-send-email-cai@lca.pw>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_091435_116288_1EB6BB64 
-X-CRM114-Status: GOOD (  12.60  )
+X-CRM114-CacheID: sfid-20190731_091856_188971_DF5A6064 
+X-CRM114-Status: GOOD (  14.25  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,31 +76,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, Will Drewry <wad@chromium.org>,
- Kees Cook <keescook@chromium.org>, Catalin Marinas <catalin.marinas@arm.com>,
- linux-kernel@vger.kernel.org, Andy Lutomirski <luto@amacapital.net>,
- linux-arm-kernel@lists.infradead.org
+Cc: catalin.marinas@arm.com, linux-efi@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ ard.biesheuvel@linaro.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 31, 2019 at 03:35:20PM +0200, Geert Uytterhoeven wrote:
-> Some TIF_* flags are documented in the comment block at the top, some
-> next to their definitions, some in both places.
+On Tue, Jul 30, 2019 at 05:23:48PM -0400, Qian Cai wrote:
+> GCC throws out this warning on arm64.
 > 
-> Move all documentation to the individual definitions for consistency,
-> and for easy lookup.
+> drivers/firmware/efi/libstub/arm-stub.c: In function 'efi_entry':
+> drivers/firmware/efi/libstub/arm-stub.c:132:22: warning: variable 'si'
+> set but not used [-Wunused-but-set-variable]
 > 
-> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> Fix it by making free_screen_info() a static inline function.
+> 
+> Signed-off-by: Qian Cai <cai@lca.pw>
 > ---
-> The alternative is to move all of them to the comment block, and using
-> linuxdoc style.
+>  arch/arm64/include/asm/efi.h | 6 +++++-
+>  1 file changed, 5 insertions(+), 1 deletion(-)
 > 
->  arch/arm64/include/asm/thread_info.h | 24 ++++++++----------------
->  1 file changed, 8 insertions(+), 16 deletions(-)
+> diff --git a/arch/arm64/include/asm/efi.h b/arch/arm64/include/asm/efi.h
+> index 8e79ce9c3f5c..76a144702586 100644
+> --- a/arch/arm64/include/asm/efi.h
+> +++ b/arch/arm64/include/asm/efi.h
+> @@ -105,7 +105,11 @@ static inline unsigned long efi_get_max_initrd_addr(unsigned long dram_base,
+>  	((protocol##_t *)instance)->f(instance, ##__VA_ARGS__)
+>  
+>  #define alloc_screen_info(x...)		&screen_info
+> -#define free_screen_info(x...)
+> +
+> +static inline void free_screen_info(efi_system_table_t *sys_table_arg,
+> +				    struct screen_info *si)
+> +{
+> +}
+>  
+>  /* redeclare as 'hidden' so the compiler will generate relative references */
+>  extern struct screen_info screen_info __attribute__((__visibility__("hidden")));
+> -- 
+> 1.8.3.1
 
-Queued for 5.4, with Mark's Ack.
+Acked-by: Will Deacon <will@kernel.org>
 
 Will
 
