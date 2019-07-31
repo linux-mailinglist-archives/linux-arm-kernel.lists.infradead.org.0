@@ -2,90 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 956ED7B741
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 02:37:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 864557B75D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 02:52:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=C6Ra2kZvgvWefeocuwg0O0XL9KLJY1yqQl6r0Z7JlGk=; b=jYo7PFqtTzURKiFrhPR1AdMpl
-	k7QIgn/HIg9Vm66hsz0haEI4ET3Yoa95OlRykAPTQ/nvl70gJCNTg3B8axAegCEwIcTcap1uKJNfT
-	MlhuP/JZ7fW+thQ9fYj8Nx+B0WaEJF7DjBBCvY7UAG8lUJgQ5cnccBCCVUehwxtWBHAcK2fBqCqRv
-	e+6hliocpYq0fHFtsNWb3NCD0cMiCZdLl6XwNZsyoJJxvQnAApWfs2kwK5F9T50pMk5cCLVtOyU3X
-	QPEdmxG6ehS3lOSskKLYyvZYUMCq2g9ZewwPAy9h+YmgATqKCDXeSOotb0lKfQ91SCp+HA306qBSu
-	/u8tybfNg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
+	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=K+L+GZvcNEHZGx+BZk0D7clHcu0fBacH/pI6434c+zo=; b=KRXbK90FI0+/ub
+	EV47AG3MGKJqGK4gpyoVDX8xmbv5z6JwYt0lUr+oebYnqzQWyQ9H0gEVgR+YuYQtzffGrhg+7B7Un
+	oRnxiHpGCgo55eeSadDvpAIwQVQAJ3BZiCb4tSvfsDd/4QPO2x6/U0kOn/3LvJ68/1nJadfjwMsgq
+	GPvUr3jc2SVtJyn6mBV0NtIipoYvv9eBtP2fjsXrOpele7RnL5X8zcbGEtl7SvAX6LD14yVRnOugW
+	aeF+pdAld8RqILtjWbMLepQ6rPZLQeUF9fCmbIMEGHsyoa3vP7HVli2qZIFbaF+r2LO5OjneXTaDk
+	IrHPoeqoggCkXZvuy4Ew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsccE-0002eH-9E; Wed, 31 Jul 2019 00:37:14 +0000
-Received: from smtp.codeaurora.org ([198.145.29.96])
+	id 1hscqU-0007J7-He; Wed, 31 Jul 2019 00:51:58 +0000
+Received: from out1-smtp.messagingengine.com ([66.111.4.25])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hscc6-0002du-17
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 00:37:08 +0000
-Received: by smtp.codeaurora.org (Postfix, from userid 1000)
- id F21AA605A5; Wed, 31 Jul 2019 00:37:04 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1564533425;
- bh=32eETmy3gzVOx1/6TECmdEq4btluC6NePPSwhFQdvuI=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=mKoWOGgeaqV9DoKB6edSUfHiaANYWQjbpnfJrV7y+LtJLZIVl1qZWIrMojFYDvprL
- NOjnkye2nMqIZl0Jm7SQ3Z4dtQNMyTLurXmjezrxLMlIC7h8r9zDO750YfVBD5FRAA
- KrWjHIWS7EPIRR0xxe/JSOo4cjvLOXQXHtbyOfSs=
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- pdx-caf-mail.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
- DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
- version=3.4.0
-Received: from [10.46.162.237] (i-global254.qualcomm.com [199.106.103.254])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- (Authenticated sender: daidavid1@smtp.codeaurora.org)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 3CC2C6037C;
- Wed, 31 Jul 2019 00:37:02 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1564533422;
- bh=32eETmy3gzVOx1/6TECmdEq4btluC6NePPSwhFQdvuI=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=C/BV8wHCgJ6cVBhIX032EBp75V3fCQF4yJ8Vvtxjl1HmwIMPqMTBPTMOVs1tRIKcN
- IUQvKJJF2uxVEl6sPDcXXkuUKFGfP9kG+TyoDRm+r4SWEgusgW//iBzWl3ADVnWodw
- GvkIWefRtsmd7wOdSajYRyC49rMC2gglJchbbGug=
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 3CC2C6037C
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- spf=none smtp.mailfrom=daidavid1@codeaurora.org
-Subject: Re: [PATCH v2 2/2] interconnect: qcom: Add tagging and wake/sleep
- support for sdm845
-To: Evan Green <evgreen@chromium.org>
-References: <20190618091724.28232-1-georgi.djakov@linaro.org>
- <20190618091724.28232-3-georgi.djakov@linaro.org>
- <CAE=gft7=ZbK3ARtWyv8n_hWJ4kuXRs0UA0QsE420pqL8R1quUQ@mail.gmail.com>
- <05d9fea0-c040-d609-38bf-11cddbe6aa4d@codeaurora.org>
- <CAE=gft4pQXyCdRsMkN7Xs-R5HU=2baYhCPqSsw=uqOfT+hTJDg@mail.gmail.com>
- <1fa30512-a0aa-dcc1-4160-778100a03e7c@codeaurora.org>
- <CAE=gft5_ZNUd7WC3c6t59Dwg32jeapvPFLxnESt143SaLqdO3g@mail.gmail.com>
-From: David Dai <daidavid1@codeaurora.org>
-Message-ID: <37f56f17-9988-522f-f66c-2865954a52d0@codeaurora.org>
-Date: Tue, 30 Jul 2019 17:37:01 -0700
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <CAE=gft5_ZNUd7WC3c6t59Dwg32jeapvPFLxnESt143SaLqdO3g@mail.gmail.com>
-Content-Language: en-US
+ id 1hscqM-0007IK-4J
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 00:51:52 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailout.nyi.internal (Postfix) with ESMTP id 3B41B22355;
+ Tue, 30 Jul 2019 20:51:47 -0400 (EDT)
+Received: from imap2 ([10.202.2.52])
+ by compute4.internal (MEProxy); Tue, 30 Jul 2019 20:51:47 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
+ mime-version:message-id:in-reply-to:references:date:from:to:cc
+ :subject:content-type; s=fm3; bh=WkqnO80XQGbOw0Ei+zqy93YBShBkfdf
+ rZbBtahOCbg8=; b=CnYUEzdC5FmVKkQjCItKDf894o0mbql8NHjYrDgJBwqCOZE
+ CzaCHHmZOJWWIzkSZyFNXasRKrRkIaUnw/KYMrEhL1bkiJDbOaOI+ozbtqhnFCcH
+ sPR0vNedfC8UtjF0uDu5aV8ck8/8GR5dQLEvALJYX5F0nmBJKScueh7ZxTINeL2o
+ PSBnp44bpOmk/4FstOF0E5Smsn9ezRyl2gw/Zha8BBGxHHg3n/ZsXDqeFfJIeNJW
+ oQSzw9BzIXP5RoIZh/h8pqS2ekYJeGbEtCzy9SmUeFAFVRC/amOEwmPMpcSdUlCp
+ lw8rncuDCH+s+KbBizNw2sxevCX+Tv1sgMjuFiw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=WkqnO8
+ 0XQGbOw0Ei+zqy93YBShBkfdfrZbBtahOCbg8=; b=HE+pGjXeCiOjdp9/fMzXl4
+ ZORrRuJNcpovUiXEExpvlNX6hLeHs92QUYyVrAVcQDcIo5yrUdbPl7VX38RRggdi
+ bn3aQwAn5B4r/pP2/WSEcN/SSzmbVluf184bAtR/jpC3bmobP5+5EuMHPvEo8+XS
+ J2XBT7vIFFsxPjj2QUuz4LNlZMeHG6BlfcrV848lhV82fG2t98Tk+myNzxkq2dL5
+ RgMvNwWqIxtF5FZQFDriEauJ8PWgagq9xzjaP5yjgDsYQJgag0BYiJoL8dIeQ4hM
+ dWv+exabk/aOYbuOd63aH1r0QJz0Yv70xO4pL3qzGg/JDVxBTqaL1e8heEN3tyRw
+ ==
+X-ME-Sender: <xms:IOZAXZRwekMKM4CeGWOxRZOOulIU4KYw6xu4tO0Zfb6IFSz2WeD_yw>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrleeggdegudcutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpefofgggkfgjfhffhffvufgtsehttdertderredtnecuhfhrohhmpedftehnughr
+ vgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucfrrghrrg
+ hmpehmrghilhhfrhhomheprghnughrvgifsegrjhdrihgurdgruhenucevlhhushhtvghr
+ ufhiiigvpedt
+X-ME-Proxy: <xmx:IOZAXY7KQdrzTTMG2992i6iBLQ3vmHyFbwiBmR6yuj1n92MOHh7lew>
+ <xmx:IOZAXVWEGLOy5ZlYBGdSj1VizZZ7_3ZqO_ArvQnXYIoyY3pOBDj6BQ>
+ <xmx:IOZAXbBLSc0pqPSAG1SMxW07flktczXBLKyOpM1ihtko9u49i_J0Nw>
+ <xmx:I-ZAXb7wMk34b1FCp5LZwFF9281XhplUDVaJYaRxYJ-LRBQGz4w9_Q>
+Received: by mailuser.nyi.internal (Postfix, from userid 501)
+ id B84EBE00A2; Tue, 30 Jul 2019 20:51:44 -0400 (EDT)
+X-Mailer: MessagingEngine.com Webmail Interface
+User-Agent: Cyrus-JMAP/3.1.6-799-g925e343-fmstable-20190729v1
+Mime-Version: 1.0
+Message-Id: <155d7473-fdf6-4a01-bda4-5cbb9c7e2822@www.fastmail.com>
+In-Reply-To: <20190730060029.25268-1-Ben_Pai@wistron.com>
+References: <20190730060029.25268-1-Ben_Pai@wistron.com>
+Date: Wed, 31 Jul 2019 10:21:58 +0930
+From: "Andrew Jeffery" <andrew@aj.id.au>
+To: "Ben Pai" <Ben_Pai@wistron.com>, "Rob Herring" <robh+dt@kernel.org>,
+ mark.rutland@arm.com, "Joel Stanley" <joel@jms.id.au>,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-aspeed@lists.ozlabs.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] ARM: dts: aspeed: Add Mihawk BMC platform
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_173706_126053_ADAC91BF 
-X-CRM114-Status: GOOD (  28.57  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190730_175150_330009_FE5AD147 
+X-CRM114-Status: GOOD (  18.57  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.145.29.96 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.25 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -104,406 +105,1020 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pm@vger.kernel.org, Sean Sweeney <seansw@qti.qualcomm.com>,
- LKML <linux-kernel@vger.kernel.org>, Doug Anderson <dianders@chromium.org>,
- amit.kucheria@linaro.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
- grahamr@qti.qualcomm.com, linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Georgi Djakov <georgi.djakov@linaro.org>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: wangat@tw.ibm.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hello Ben,
 
-On 7/30/2019 3:54 PM, Evan Green wrote:
-> On Thu, Jul 18, 2019 at 10:59 AM David Dai <daidavid1@codeaurora.org> wrote:
->> On 7/16/2019 1:15 PM, Evan Green wrote:
->>> On Mon, Jul 15, 2019 at 4:34 PM David Dai <daidavid1@codeaurora.org> wrote:
->>>> Hi Evan,
->>>>
->>>> Thanks for the continued help in reviewing these patches!
->>> No problem. I want to do more, but haven't found time to do the
->>> prerequisite research before jumping into some of the other
->>> discussions yet.
->>>
->>>> On 7/11/2019 10:06 AM, Evan Green wrote:
->>>>> Hi Georgi and David,
->>>>>
->>>>> On Tue, Jun 18, 2019 at 2:17 AM Georgi Djakov <georgi.djakov@linaro.org> wrote:
->>>>>> From: David Dai <daidavid1@codeaurora.org>
->>>>>>
->>>>>> Add support for wake and sleep commands by using a tag to indicate
->>>>>> whether or not the aggregate and set requests fall into execution
->>>>>> state specific bucket.
->>>>>>
->>>>>> Signed-off-by: David Dai <daidavid1@codeaurora.org>
->>>>>> Signed-off-by: Georgi Djakov <georgi.djakov@linaro.org>
->>>>>> ---
->>>>>>     drivers/interconnect/qcom/sdm845.c | 129 ++++++++++++++++++++++-------
->>>>>>     1 file changed, 98 insertions(+), 31 deletions(-)
->>>>>>
->>>>>> diff --git a/drivers/interconnect/qcom/sdm845.c b/drivers/interconnect/qcom/sdm845.c
->>>>>> index fb526004c82e..c100aab39415 100644
->>>>>> --- a/drivers/interconnect/qcom/sdm845.c
->>>>>> +++ b/drivers/interconnect/qcom/sdm845.c
->>>>>> @@ -66,6 +66,17 @@ struct bcm_db {
->>>>>>     #define SDM845_MAX_BCM_PER_NODE        2
->>>>>>     #define SDM845_MAX_VCD         10
->>>>>>
->>>>>> +#define QCOM_ICC_BUCKET_AMC            0
->>>>> What is AMC again? Is it the "right now" bucket? Maybe a comment on
->>>>> the meaning of this bucket would be helpful.
->>>> That's correct. Will add a comment for this.
->>>>>> +#define QCOM_ICC_BUCKET_WAKE           1
->>>>>> +#define QCOM_ICC_BUCKET_SLEEP          2
->>>>>> +#define QCOM_ICC_NUM_BUCKETS           3
->>>>>> +#define QCOM_ICC_TAG_AMC               BIT(QCOM_ICC_BUCKET_AMC)
->>>>>> +#define QCOM_ICC_TAG_WAKE              BIT(QCOM_ICC_BUCKET_WAKE)
->>>>>> +#define QCOM_ICC_TAG_SLEEP             BIT(QCOM_ICC_BUCKET_SLEEP)
->>>>>> +#define QCOM_ICC_TAG_ACTIVE_ONLY       (QCOM_ICC_TAG_AMC | QCOM_ICC_TAG_WAKE)
->>>>>> +#define QCOM_ICC_TAG_ALWAYS            (QCOM_ICC_TAG_AMC | QCOM_ICC_TAG_WAKE |\
->>>>>> +                                        QCOM_ICC_TAG_SLEEP)
->>>>>> +
->>>>>>     /**
->>>>>>      * struct qcom_icc_node - Qualcomm specific interconnect nodes
->>>>>>      * @name: the node name used in debugfs
->>>>>> @@ -75,7 +86,9 @@ struct bcm_db {
->>>>>>      * @channels: num of channels at this node
->>>>>>      * @buswidth: width of the interconnect between a node and the bus
->>>>>>      * @sum_avg: current sum aggregate value of all avg bw requests
->>>>>> + * @sum_avg_cached: previous sum aggregate value of all avg bw requests
->>>>>>      * @max_peak: current max aggregate value of all peak bw requests
->>>>>> + * @max_peak_cached: previous max aggregate value of all peak bw requests
->>>>>>      * @bcms: list of bcms associated with this logical node
->>>>>>      * @num_bcms: num of @bcms
->>>>>>      */
->>>>>> @@ -86,8 +99,10 @@ struct qcom_icc_node {
->>>>>>            u16 num_links;
->>>>>>            u16 channels;
->>>>>>            u16 buswidth;
->>>>>> -       u64 sum_avg;
->>>>>> -       u64 max_peak;
->>>>>> +       u64 sum_avg[QCOM_ICC_NUM_BUCKETS];
->>>>>> +       u64 sum_avg_cached[QCOM_ICC_NUM_BUCKETS];
->>>>>> +       u64 max_peak[QCOM_ICC_NUM_BUCKETS];
->>>>>> +       u64 max_peak_cached[QCOM_ICC_NUM_BUCKETS];
->>>>>>            struct qcom_icc_bcm *bcms[SDM845_MAX_BCM_PER_NODE];
->>>>>>            size_t num_bcms;
->>>>>>     };
->>>>>> @@ -112,8 +127,8 @@ struct qcom_icc_bcm {
->>>>>>            const char *name;
->>>>>>            u32 type;
->>>>>>            u32 addr;
->>>>>> -       u64 vote_x;
->>>>>> -       u64 vote_y;
->>>>>> +       u64 vote_x[QCOM_ICC_NUM_BUCKETS];
->>>>>> +       u64 vote_y[QCOM_ICC_NUM_BUCKETS];
->>>>>>            bool dirty;
->>>>>>            bool keepalive;
->>>>>>            struct bcm_db aux_data;
->>>>>> @@ -555,7 +570,7 @@ inline void tcs_cmd_gen(struct tcs_cmd *cmd, u64 vote_x, u64 vote_y,
->>>>>>                    cmd->wait = true;
->>>>>>     }
->>>>>>
->>>>>> -static void tcs_list_gen(struct list_head *bcm_list,
->>>>>> +static void tcs_list_gen(struct list_head *bcm_list, int bucket,
->>>>>>                             struct tcs_cmd tcs_list[SDM845_MAX_VCD],
->>>>>>                             int n[SDM845_MAX_VCD])
->>>>>>     {
->>>>>> @@ -573,8 +588,8 @@ static void tcs_list_gen(struct list_head *bcm_list,
->>>>>>                            commit = true;
->>>>>>                            cur_vcd_size = 0;
->>>>>>                    }
->>>>>> -               tcs_cmd_gen(&tcs_list[idx], bcm->vote_x, bcm->vote_y,
->>>>>> -                           bcm->addr, commit);
->>>>>> +               tcs_cmd_gen(&tcs_list[idx], bcm->vote_x[bucket],
->>>>>> +                           bcm->vote_y[bucket], bcm->addr, commit);
->>>>>>                    idx++;
->>>>>>                    n[batch]++;
->>>>>>                    /*
->>>>>> @@ -595,32 +610,39 @@ static void tcs_list_gen(struct list_head *bcm_list,
->>>>>>
->>>>>>     static void bcm_aggregate(struct qcom_icc_bcm *bcm)
->>>>>>     {
->>>>>> -       size_t i;
->>>>>> -       u64 agg_avg = 0;
->>>>>> -       u64 agg_peak = 0;
->>>>>> +       size_t i, bucket;
->>>>>> +       u64 agg_avg[QCOM_ICC_NUM_BUCKETS] = {0};
->>>>>> +       u64 agg_peak[QCOM_ICC_NUM_BUCKETS] = {0};
->>>>>>            u64 temp;
->>>>>>
->>>>>> -       for (i = 0; i < bcm->num_nodes; i++) {
->>>>>> -               temp = bcm->nodes[i]->sum_avg * bcm->aux_data.width;
->>>>>> -               do_div(temp, bcm->nodes[i]->buswidth * bcm->nodes[i]->channels);
->>>>>> -               agg_avg = max(agg_avg, temp);
->>>>>> +       for (bucket = 0; bucket < QCOM_ICC_NUM_BUCKETS; bucket++) {
->>>>>> +               for (i = 0; i < bcm->num_nodes; i++) {
->>>>>> +                       temp = bcm->nodes[i]->sum_avg_cached[bucket] * bcm->aux_data.width;
->>>>>> +                       do_div(temp, bcm->nodes[i]->buswidth * bcm->nodes[i]->channels);
->>>>>> +                       agg_avg[bucket] = max(agg_avg[bucket], temp);
->>>>>>
->>>>>> -               temp = bcm->nodes[i]->max_peak * bcm->aux_data.width;
->>>>>> -               do_div(temp, bcm->nodes[i]->buswidth);
->>>>> Why is it that this one doesn't have the multiply by
->>>>> bcm->nodes[i]->channels again? I can't recall if there was a reason.
->>>>> If it's correct maybe it deserves a comment.
->>>> I think the rationale behind this is generally for consumers to target a
->>>> certain minimum threshold to satisfy some structural latency
->>>> requirements as opposed to strictly throughput, and it may be easier for
->>>> consumers to reuse certain values to support hitting some minimum NoC
->>>> frequencies without having to be concerned with the number of channels
->>>> that may change from platform to platform.
->>> I was mostly pointing out that sum_avg seems to have the multiply, but
->>> max_peak does not. I would have expected those two things to be of the
->>> same units, and get the same treatment. Maybe the hardware is taking
->>> in different final units for that field, one that is per-channel and
->>> one that isn't?
->> The hardware isn't treating the values differently. I couldn't find any
->> justification other than the intuition mentioned above for the ease of
->> voting from the consumer perspective. The consumer would know that this
->> peak_bw value results in some floor performance from the system to
->> satisfy its latency requirements. The same approach would work if we
->> accounted for the number of channels as well, but given that channels
->> may vary from platform to platform or even on the same platform that
->> shares multiple channel configurations(DDR), it can be difficult for
->> consumers to keep track of and have to adjust their votes constantly(to
->> try to hit some frequency/latency requirement, this intuition doesn't
->> apply for avg_bw since we're concerned with throughput in that case).
->>
->>>>>> -               agg_peak = max(agg_peak, temp);
->>>>>> -       }
->>>>>> +                       temp = bcm->nodes[i]->max_peak_cached[bucket] * bcm->aux_data.width;
->>>>>> +                       do_div(temp, bcm->nodes[i]->buswidth);
->>>>>> +                       agg_peak[bucket] = max(agg_peak[bucket], temp);
->>>>>>
->>>>>> -       temp = agg_avg * 1000ULL;
->>>>>> -       do_div(temp, bcm->aux_data.unit);
->>>>>> -       bcm->vote_x = temp;
->>>>>> +                       bcm->nodes[i]->sum_avg[bucket] = 0;
->>>>>> +                       bcm->nodes[i]->max_peak[bucket] = 0;
->>>>> I don't understand the sum_avg vs sum_avg_cached. Here's what I understand:
->>>>> 1. qcom_icc_aggregate() does the math from the incoming values on
->>>>> sum_avg, and then clobbers sum_avg_cached with those values.
->>>>> 2. bcm_aggregate() uses sum_avg_cached in its calculations, then clears sum_avg.
->>>>>
->>>>> But I don't get why that's needed. Why not just have sum_avg? Wouldn't
->>>>> it work the same? Ok, it wouldn't if you ended up calling
->>>>> bcm_aggregate() multiple times on the same bcm. But you have a dirty
->>>>> flag that prevents this from happening. So I think it's safe to remove
->>>>> the cached arrays, and just clear out the sum_avg when you aggregate.
->>>> You are correct in that the dirty flag would prevent another repeat of
->>>> the bcm_aggregate() call in the same icc_set request. But consider a
->>>> following icc_set request on a different node that shares the same BCM,
->>>> the next bcm_aggregate() would result in an incorrect aggregate sum_avg
->>>> for the BCM since the avg_sum from the previous node(from the previous
->>>> icc_set) was cleared out. We need a way to retain the current state of
->>>> all nodes to accurately aggregate the bw values for the BCM.
->>> I don't get it. qcom_icc_aggregate() clobbers sum_avg_cached. So
->>> they're only ever a) equal, like after qcom_icc_aggregate(), or b)
->>> sum_avg is zeroed, and sum_avg_cached is its old value. A new
->>> icc_set_bw() would call aggregate_requests(), which would clobber
->>> sum_avg_cached to sum_avg for every BCM involved. Then the core would
->>> call apply_constraints(), then qcom_icc_set(), which would use
->>> sum_avg_cached, and clear out sum_avg, being sure with the dirty flag
->>> that bcm_aggregate() is only called once per BCM. This all happens
->>> under the mutex held in the core. A new request would start the whole
->>> thing over, since sum_avg is cleared. It seems to me that flow would
->>> work the same with one array as it does with two. Maybe you can walk
->>> me through a scenario?
->>> -Evan
->> Let's walk through the scenario you've just described with the
->> assumption that there's only one avg_sum value per node with two
->> icc_set_bw() requests on two different nodes(say 2MB for node 1 and 1MB
->> for node 2) under the same BCM(say BCM A). The first
->> qcom_icc_aggregate() aggregates to a 2MB avg_sum at the node1 followed
->> by apply_constraints(), qcom_icc_set(), bcm_aggregate() which causes BCM
->> A to aggregate to max(node1->avg_sum, node2->avg_sum) and reach a vote_x
->> of 2MB(for simplicity let's ignore unit). We then clear out
->> node1->avg_sum before we start the next icc_set_bw(). In the following
->> icc_set_bw(), the qcom_icc_aggregate() aggregates to 1MB in node2
->> followed by apply_constraints(), qcom_icc_set(), bcm_aggregate(), but
->> now incorrectly aggregates BCM A to 1MB by looking at
->> max(node1->avg_sum, node2->avg_sum) because node1->avg_sum was cleared
->> out when in reality BCM A should have a vote_x value of 2MB at this
->> point. The subsequent bcm_aggregate do not re-aggregate all of the
->> requests for each of its nodes, but assumes that the aggregated results
->> at the nodes are correct.
-> Ah, I finally get it. Thanks for the detailed explanation. It's pretty
-> confusing that there are essentially two connected graphs laid on top
-> of each other, one graph consisting of nodes the framework deals with,
-> and another graph that groups those nodes together into BCMs. I was
-> failing to understand that bcm_aggregate loops over nodes that have
-> nothing to do with the current request, and so it needs to remember
-> the old totals from former requests. You've got the two arrays
-> basically to differentiate between "add together all requests for this
-> node", and "max all nodes into a BCM", since you need to reset sum_avg
-> at the start of the first call to qcom_icc_aggregate().
-Well it's not really two graphs since the BCMs aren't really connected 
-to each other, they only have association with some groups of physical 
-nodes that share a clock domain(There's some nuances here, but let's 
-assume for the sake of simplicity). Their only job is to aggregate to 
-some threshold value and select a performance point and they don't 
-contain any information about the connectivity of the nodes.
-> I had suggested a callback in the core earlier to tell the providers
-> "I'm about to start aggregating on these nodes", which would have
-> allowed you to clear sum_avg in that callback and reduce down to one
-> array. IMO that's a lot easier to understand than these double arrays,
-> but maybe it's just me that gets confused.
-I do admit looking at this is somewhat confusing. I'm not totally 
-against the idea of adding another callback in the framework, maybe we 
-can re-evaluate this when there are other providers using the 
-interconnect framework. I'd prefer to have the justification of needing 
-additional ops in the core if somehow there's some hardware out there 
-that dictates that we need some pre or post aggregation stage as opposed 
-to easier book keeping? Though I do like the idea of reducing complexity 
-overall, any thoughts on this Georgi?
+Thanks for the patch! Some minor comments below.
+
+On Tue, 30 Jul 2019, at 15:30, Ben Pai wrote:
+> The Mihawk BMC is an ASPEED ast2500 based BMC that is part of an
+> OpenPower Power9 server.
+> 
+> This adds the device tree description for most upstream components. It
+> is a squashed commit from the OpenBMC kernel tree.
+
+That it's a squashed commit isn't relevant, neither is the mention of the OpenBMC
+kernel tree. I'd drop both from the commit message.
+
+> 
+> Signed-off-by: Ben Pai <Ben_Pai@wistron.com>
+> ---
+>  arch/arm/boot/dts/Makefile                  |   1 +
+>  arch/arm/boot/dts/aspeed-bmc-opp-mihawk.dts | 922 ++++++++++++++++++++
+>  2 files changed, 923 insertions(+)
+>  create mode 100755 arch/arm/boot/dts/aspeed-bmc-opp-mihawk.dts
+> 
+> diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+> index eb6de52c1936..262345544359 100644
+> --- a/arch/arm/boot/dts/Makefile
+> +++ b/arch/arm/boot/dts/Makefile
+> @@ -1281,5 +1281,6 @@ dtb-$(CONFIG_ARCH_ASPEED) += \
+>  	aspeed-bmc-opp-vesnin.dtb \
+>  	aspeed-bmc-opp-witherspoon.dtb \
+>  	aspeed-bmc-opp-zaius.dtb \
+> +	aspeed-bmc-opp-mihawk.dtb \
+>  	aspeed-bmc-portwell-neptune.dtb \
+>  	aspeed-bmc-quanta-q71l.dtb
+> diff --git a/arch/arm/boot/dts/aspeed-bmc-opp-mihawk.dts 
+> b/arch/arm/boot/dts/aspeed-bmc-opp-mihawk.dts
+> new file mode 100755
+> index 000000000000..cfa20e0b2939
+> --- /dev/null
+> +++ b/arch/arm/boot/dts/aspeed-bmc-opp-mihawk.dts
+> @@ -0,0 +1,922 @@
+> +/dts-v1/;
+> +
+> +#include "aspeed-g5.dtsi"
+> +#include <dt-bindings/gpio/aspeed-gpio.h>
+> +#include <dt-bindings/leds/leds-pca955x.h>
+> +
+> +/ {
+> +	model = "Mihawk BMC";
+> +	compatible = "ibm,mihawk-bmc", "aspeed,ast2500";
+
+I think this should be "ips,mihawk-bmc". You may also need to add "ips" to the
+vendor-prefixes list. 
+
+> +
+> +
+> +	chosen {
+> +		stdout-path = &uart5;
+> +		bootargs = "console=ttyS4,115200 earlyprintk";
+> +	};
+> +
+> +	memory@80000000 {
+> +		reg = <0x80000000 0x20000000>; /* address and size of RAM(512MB) */
+> +	};
+> +
+> +	reserved-memory {
+> +		#address-cells = <1>;
+> +		#size-cells = <1>;
+> +		ranges;
+> +
+> +		flash_memory: region@98000000 {
+> +			no-map;
+> +			reg = <0x98000000 0x04000000>; /* 64M */
+> +		};
+> +
+> +		gfx_memory: framebuffer {
+> +			size = <0x01000000>;
+> +			alignment = <0x01000000>;
+> +			compatible = "shared-dma-pool";
+> +			reusable;
+> +		};
+> +
+> +		video_engine_memory: jpegbuffer {
+> +			size = <0x02000000>;	/* 32MM */
+> +			alignment = <0x01000000>;
+> +			compatible = "shared-dma-pool";
+> +			reusable;
+> +		};
+> +	};
+> +
+> +	gpio-keys {
+> +		compatible = "gpio-keys";
+> +
+> +		air-water {
+> +			label = "air-water";
+> +			gpios = <&gpio ASPEED_GPIO(F, 6) GPIO_ACTIVE_LOW>;
+> +			linux,code = <ASPEED_GPIO(F, 6)>;
+> +		};
+> +
+> +		checkstop {
+> +			label = "checkstop";
+> +			gpios = <&gpio ASPEED_GPIO(J, 2) GPIO_ACTIVE_LOW>;
+> +			linux,code = <ASPEED_GPIO(J, 2)>;
+> +		};
+> +
+> +		ps0-presence {
+> +			label = "ps0-presence";
+> +			gpios = <&gpio ASPEED_GPIO(Z, 2) GPIO_ACTIVE_LOW>;
+> +			linux,code = <ASPEED_GPIO(Z, 2)>;
+> +		};
+> +
+> +		ps1-presence {
+> +			label = "ps1-presence";
+> +			gpios = <&gpio ASPEED_GPIO(Z, 0) GPIO_ACTIVE_LOW>;
+> +			linux,code = <ASPEED_GPIO(Z, 0)>;
+> +		};
+> +		id-button {
+> +			label = "id-button";
+> +			gpios = <&gpio ASPEED_GPIO(F, 1) GPIO_ACTIVE_LOW>;
+> +			linux,code = <ASPEED_GPIO(F, 1)>;
+> +		};
+> +	};
+> +
+> +	gpio-keys-polled {
+> +		compatible = "gpio-keys-polled";
+> +		#address-cells = <1>;
+> +		#size-cells = <0>;
+
+Please remove the #address-cells and #size-cells properties, they aren't
+relevant for gpio-keys-polled.
+
+> +		poll-interval = <1000>;
+> +
+> +		fan0-presence {
+> +			label = "fan0-presence";
+> +			gpios = <&pca9552 9 GPIO_ACTIVE_LOW>;
+> +			linux,code = <9>;
+> +		};
+> +
+> +		fan1-presence {
+> +			label = "fan1-presence";
+> +			gpios = <&pca9552 10 GPIO_ACTIVE_LOW>;
+> +			linux,code = <10>;
+> +		};
+> +
+> +		fan2-presence {
+> +			label = "fan2-presence";
+> +			gpios = <&pca9552 11 GPIO_ACTIVE_LOW>;
+> +			linux,code = <11>;
+> +		};
+> +
+> +		fan3-presence {
+> +			label = "fan3-presence";
+> +			gpios = <&pca9552 12 GPIO_ACTIVE_LOW>;
+> +			linux,code = <12>;
+> +		};
+> +
+> +		fan4-presence {
+> +			label = "fan4-presence";
+> +			gpios = <&pca9552 13 GPIO_ACTIVE_LOW>;
+> +			linux,code = <13>;
+> +		};
+> +
+> +		fan5-presence {
+> +			label = "fan5-presence";
+> +			gpios = <&pca9552 14 GPIO_ACTIVE_LOW>;
+> +			linux,code = <14>;
+> +		};
+> +	};
+> +
+> +	leds {
+> +		compatible = "gpio-leds";
+> +
+> +		fault {
+> +			retain-state-shutdown;
+> +			default-state = "keep";
+> +			gpios = <&gpio ASPEED_GPIO(AA, 0) GPIO_ACTIVE_LOW>;
+> +		};
+> +
+> +		power {
+> +			retain-state-shutdown;
+> +			default-state = "keep";
+> +			gpios = <&gpio ASPEED_GPIO(AA, 1) GPIO_ACTIVE_LOW>;
+> +		};
+> +
+> +		rear-id {
+> +			retain-state-shutdown;
+> +			default-state = "keep";
+> +			gpios = <&gpio ASPEED_GPIO(AA, 2) GPIO_ACTIVE_LOW>;
+> +		};
+> +
+> +		rear-g {
+> +			retain-state-shutdown;
+> +			default-state = "keep";
+> +			gpios = <&gpio ASPEED_GPIO(AA, 4) GPIO_ACTIVE_LOW>;
+> +		};
+> +
+> +		rear-ok {
+> +			retain-state-shutdown;
+> +			default-state = "keep";
+> +			gpios = <&gpio ASPEED_GPIO(Y, 0) GPIO_ACTIVE_LOW>;
+> +		};
+> +
+> +		fan0 {
+> +			retain-state-shutdown;
+> +			default-state = "keep";
+> +			gpios = <&pca9552 0 GPIO_ACTIVE_LOW>;
+> +		};
+> +
+> +		fan1 {
+> +			retain-state-shutdown;
+> +			default-state = "keep";
+> +			gpios = <&pca9552 1 GPIO_ACTIVE_LOW>;
+> +		};
+> +
+> +		fan2 {
+> +			retain-state-shutdown;
+> +			default-state = "keep";
+> +			gpios = <&pca9552 2 GPIO_ACTIVE_LOW>;
+> +		};
+> +
+> +		fan3 {
+> +			retain-state-shutdown;
+> +			default-state = "keep";
+> +			gpios = <&pca9552 3 GPIO_ACTIVE_LOW>;
+> +		};
+> +
+> +		fan4 {
+> +			retain-state-shutdown;
+> +			default-state = "keep";
+> +			gpios = <&pca9552 4 GPIO_ACTIVE_LOW>;
+> +		};
+> +
+> +		fan5 {
+> +			retain-state-shutdown;
+> +			default-state = "keep";
+> +			gpios = <&pca9552 5 GPIO_ACTIVE_LOW>;
+> +		};
+> +	};
+> +
+> +	fsi: gpio-fsi {
+> +		compatible = "fsi-master-gpio", "fsi-master";
+> +		#address-cells = <2>;
+> +		#size-cells = <0>;
+> +		no-gpio-delays;
+> +
+> +		clock-gpios = <&gpio ASPEED_GPIO(E, 6) GPIO_ACTIVE_HIGH>;
+> +		data-gpios = <&gpio ASPEED_GPIO(E, 7) GPIO_ACTIVE_HIGH>;
+> +		mux-gpios = <&gpio ASPEED_GPIO(E, 5) GPIO_ACTIVE_HIGH>;
+> +		enable-gpios = <&gpio ASPEED_GPIO(D, 0) GPIO_ACTIVE_HIGH>;
+> +		trans-gpios = <&gpio ASPEED_GPIO(R, 2) GPIO_ACTIVE_HIGH>;
+> +	};
+> +	iio-hwmon-12v {
+> +		compatible = "iio-hwmon";
+> +		io-channels = <&adc 0>;
+> +	};
+> +	
+> +	iio-hwmon-5v {
+> +		compatible = "iio-hwmon";
+> +		io-channels = <&adc 1>;
+> +	};
+> +	
+> +	iio-hwmon-3v {
+> +		compatible = "iio-hwmon";
+> +		io-channels = <&adc 2>;
+> +	};
+> +		
+> +	iio-hwmon-vdd0 {
+> +		compatible = "iio-hwmon";
+> +		io-channels = <&adc 3>;
+> +	};
+> +	
+> +	iio-hwmon-vdd1 {
+> +		compatible = "iio-hwmon";
+> +		io-channels = <&adc 4>;
+> +	};
+> +	
+> +	iio-hwmon-vcs0 {
+> +		compatible = "iio-hwmon";
+> +		io-channels = <&adc 5>;
+> +	};
+> +	
+> +	iio-hwmon-vcs1 {
+> +		compatible = "iio-hwmon";
+> +		io-channels = <&adc 6>;
+> +	};
+> +
+> +	iio-hwmon-vdn0 {
+> +		compatible = "iio-hwmon";
+> +		io-channels = <&adc 7>;
+> +	};
+> +	
+> +	iio-hwmon-vdn1 {
+> +		compatible = "iio-hwmon";
+> +		io-channels = <&adc 8>;
+> +	};
+> +	
+> +	iio-hwmon-vio0 {
+> +		compatible = "iio-hwmon";
+> +		io-channels = <&adc 9>;
+> +	};
+> +	
+> +	iio-hwmon-vio1 {
+> +		compatible = "iio-hwmon";
+> +		io-channels = <&adc 10>;
+> +	};
+> +	
+> +	iio-hwmon-vddra {
+> +		compatible = "iio-hwmon";
+> +		io-channels = <&adc 11>;
+> +	};
+> +	
+> +	iio-hwmon-vddrb {
+> +		compatible = "iio-hwmon";
+> +		io-channels = <&adc 13>;
+> +	};
+> +	
+> +	iio-hwmon-vddrc {
+> +		compatible = "iio-hwmon";
+> +		io-channels = <&adc 14>;
+> +	};
+> +	
+> +	iio-hwmon-vddrd {
+> +		compatible = "iio-hwmon";
+> +		io-channels = <&adc 15>;
+> +	};
+> +	
+> +	iio-hwmon-battery {
+> +		compatible = "iio-hwmon";
+> +		io-channels = <&adc 12>;
+> +	};
+> +};
+> +
+> +&pwm_tacho {
+> +	status = "okay";
+> +	/*compatible = "aspeed,ast2500-pwm-tacho";
+> +	#address-cells = <1>;
+> +	#size-cells = <1>;
+> +	reg = <0x1e786000 0x1000>;
+> +	clocks = <&pwm_tacho_fixed_clk>;*/
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_pwm0_default &pinctrl_pwm1_default
+> +		&pinctrl_pwm2_default &pinctrl_pwm3_default
+> +		&pinctrl_pwm4_default &pinctrl_pwm5_default>;
+> +
+> +	fan@0 {
+> +		reg = <0x00>;
+> +		aspeed,fan-tach-ch = /bits/ 8 <0x00>;
+> +	};
+> +
+> +	fan@1 {
+> +		reg = <0x01>;
+> +		aspeed,fan-tach-ch = /bits/ 8 <0x01>;
+> +	};
+> +
+> +	fan@2 {
+> +		reg = <0x02>;
+> +		aspeed,fan-tach-ch = /bits/ 8 <0x02>;
+> +	};
+> +
+> +	fan@3 {
+> +		reg = <0x03>;
+> +		aspeed,fan-tach-ch = /bits/ 8 <0x03>;
+> +	};
+> +
+> +	fan@4 {
+> +		reg = <0x04>;
+> +		aspeed,fan-tach-ch = /bits/ 8 <0x04>;
+> +	};
+> +
+> +	fan@5 {
+> +		reg = <0x05>;
+> +		aspeed,fan-tach-ch = /bits/ 8 <0x05>;
+> +	};
+> +
+> +	fan@6 {
+> +		reg = <0x00>;
+> +		aspeed,fan-tach-ch = /bits/ 8 <0x06>;
+> +	};
+> +
+> +	fan@7 {
+> +		reg = <0x01>;
+> +		aspeed,fan-tach-ch = /bits/ 8 <0x07>;
+> +	};
+> +
+> +	fan@8 {
+> +		reg = <0x02>;
+> +		aspeed,fan-tach-ch = /bits/ 8 <0x08>;
+> +	};
+> +
+> +	fan@9 {
+> +		reg = <0x03>;
+> +		aspeed,fan-tach-ch = /bits/ 8 <0x09>;
+> +	};
+> +
+> +	fan@10 {
+> +		reg = <0x04>;
+> +		aspeed,fan-tach-ch = /bits/ 8 <0x0a>;
+> +	};
+> +
+> +	fan@11 {
+> +		reg = <0x05>;
+> +		aspeed,fan-tach-ch = /bits/ 8 <0x0b>;
+> +	};
+> +};
+> +
+> +&fmc {
+> +	status = "okay";
+> +	flash@0 {
+> +		status = "okay";
+> +		label = "bmc";
+> +		m25p,fast-read;
+> +		spi-max-frequency = <50000000>;
+> +		partitions {
+> +			#address-cells = < 1 >;
+> +			#size-cells = < 1 >;
+> +			compatible = "fixed-partitions";
+> +			u-boot@0 {
+> +				reg = < 0 0x60000 >;
+> +				label = "u-boot";
+> +			};
+> +			u-boot-env@60000 {
+> +				reg = < 0x60000 0x20000 >;
+> +				label = "u-boot-env";
+> +			};
+> +			obmc-ubi@80000 {
+> +				reg = < 0x80000 0x1F80000 >;
+> +				label = "obmc-ubi";
+> +			};
+> +		};
+> +	};
+> +	flash@1 {
+> +		status = "okay";
+> +		label = "alt-bmc";
+> +		m25p,fast-read;
+> +		spi-max-frequency = <50000000>;
+> +		partitions {
+> +			#address-cells = < 1 >;
+> +			#size-cells = < 1 >;
+> +			compatible = "fixed-partitions";
+> +			u-boot@0 {
+> +				reg = < 0 0x60000 >;
+> +				label = "alt-u-boot";
+> +			};
+> +			u-boot-env@60000 {
+> +				reg = < 0x60000 0x20000 >;
+> +				label = "alt-u-boot-env";
+> +			};
+> +			obmc-ubi@80000 {
+> +				reg = < 0x80000 0x1F80000 >;
+> +				label = "alt-obmc-ubi";
+> +			};
+> +		};
+> +	};
+> +};
+> +
+> +&spi1 {
+> +	status = "okay";
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_spi1_default>;
+> +
+> +	flash@0 {
+> +		status = "okay";
+> +		label = "pnor";
+> +		m25p,fast-read;
+> +		spi-max-frequency = <100000000>;
+> +	};
+> +};
+> +
+> +&lpc_ctrl {
+> +	status = "okay";
+> +	memory-region = <&flash_memory>;
+> +	flash = <&spi1>;
+> +};
+> +
+> +&uart1 {
+> +	/* Rear RS-232 connector */
+> +	status = "okay";
+> +
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_txd1_default
+> +			&pinctrl_rxd1_default
+> +			&pinctrl_nrts1_default
+> +			&pinctrl_ndtr1_default
+> +			&pinctrl_ndsr1_default
+> +			&pinctrl_ncts1_default
+> +			&pinctrl_ndcd1_default
+> +			&pinctrl_nri1_default>;
+> +};
+> +
+> +&uart2 {
+> +	/* APSS */
+> +	status = "okay";
+> +
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_txd2_default &pinctrl_rxd2_default>;
+> +};
+> +
+> +&uart5 {
+> +	status = "okay";
+> +};
+> +
+> +&mac0 {
+> +	status = "okay";
+> +
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_rmii1_default>;
+> +	use-ncsi;
+> +};
+> +
+> +&mac1 {
+> +	status = "okay";
+> +
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_rgmii2_default &pinctrl_mdio2_default>;
+> +};
+> +
+> +&i2c0 {
+> +	status = "disabled";
+> +};
+> +
+> +&i2c1 {
+> +	status = "disabled";
+> +};
+> +
+> +&i2c2 {
+> +	status = "okay";
+> +
+> +	/* SAMTEC P0 */
+> +	/* SAMTEC P1 */
+> +	
+> +};
+> +
+> +&i2c3 {
+> +	status = "okay";
+> +
+> +	/* APSS */
+> +	/* CPLD */
+> +
+> +	/* PCA9516 (repeater) ->
+> +	 *    CLK Buffer 9FGS9092
+> +	 *    CLK Buffer 9DBL0651BKILFT
+> +	 *    CLK Buffer 9DBL0651BKILFT
+> +	 *    Power Supply 0
+> +	 *    Power Supply 1
+> +	 *    PCA 9552 LED
+> +	 */
+> +	 
+> +	power-supply@58 {
+> +		compatible = "ibm,cffps1";
+> +		reg = <0x58>;
+> +	};
+> +
+> +	power-supply@5b {
+> +		compatible = "ibm,cffps1";
+> +		reg = <0x5b>;
+> +	};
+> +
+> +	pca9552: pca9552@60 {
+> +		compatible = "nxp,pca9552";
+> +		reg = <0x60>;
+> +		#address-cells = <1>;
+> +		#size-cells = <0>;
+> +		gpio-controller;
+> +		#gpio-cells = <2>;
+> +
+> +		gpio@0 {
+> +			reg = <0>;
+> +			type = <PCA955X_TYPE_GPIO>;
+> +		};
+> +		gpio@1 {
+> +			reg = <1>;
+> +			type = <PCA955X_TYPE_GPIO>;
+> +		};
+> +		gpio@2 {
+> +			reg = <2>;
+> +			type = <PCA955X_TYPE_GPIO>;
+> +		};
+> +		gpio@3 {
+> +			reg = <3>;
+> +			type = <PCA955X_TYPE_GPIO>;
+> +		};
+> +		gpio@4 {
+> +			reg = <4>;
+> +			type = <PCA955X_TYPE_GPIO>;
+> +		};
+> +		gpio@5 {
+> +			reg = <5>;
+> +			type = <PCA955X_TYPE_GPIO>;
+> +		};
+> +		gpio@6 {
+> +			reg = <6>;
+> +			type = <PCA955X_TYPE_GPIO>;
+> +		};
+> +		gpio@7 {
+> +			reg = <7>;
+> +			type = <PCA955X_TYPE_GPIO>;
+> +		};
+> +		gpio@8 {
+> +			reg = <8>;
+> +			type = <PCA955X_TYPE_GPIO>;
+> +		};
+> +		gpio@9 {
+> +			reg = <9>;
+> +			type = <PCA955X_TYPE_GPIO>;
+> +		};
+> +		gpio@10 {
+> +			reg = <10>;
+> +			type = <PCA955X_TYPE_GPIO>;
+> +		};
+> +		gpio@11 {
+> +			reg = <11>;
+> +			type = <PCA955X_TYPE_GPIO>;
+> +		};
+> +		gpio@12 {
+> +			reg = <12>;
+> +			type = <PCA955X_TYPE_GPIO>;
+> +		};
+> +		gpio@13 {
+> +			reg = <13>;
+> +			type = <PCA955X_TYPE_GPIO>;
+> +		};
+> +		gpio@14 {
+> +			reg = <14>;
+> +			type = <PCA955X_TYPE_GPIO>;
+> +		};
+> +		gpio@15 {
+> +			reg = <15>;
+> +			type = <PCA955X_TYPE_GPIO>;
+> +		};
+> +
+> +	};
+> +
+> +};
+> +
+> +&i2c4 {
+> +	status = "okay";
+> +
+> +	/* CP0 VDD & VCS : IR35221 */
+> +	/* CP0 VDN : IR35221 */
+> +	/* CP0 VIO : IR38064 */
+> +        /* CP0 VDDR : PXM1330 */
+> +
+> +	ir35221@70 {
+> +		compatible = "infineon,ir35221";
+> +		reg = <0x70>;
+> +	};
+> +
+> +	ir35221@72 {
+> +		compatible = "infineon,ir35221";
+> +		reg = <0x72>;
+> +	};
+> +
+> +};
+> +
+> +&i2c5 {
+> +	status = "okay";
+> +	
+> +	/* CP0 VDD & VCS : IR35221 */
+> +	/* CP0 VDN : IR35221 */
+> +	/* CP0 VIO : IR38064 */
+> +        /* CP0 VDDR : PXM1330 */
+> +
+> +	ir35221@70 {
+> +		compatible = "infineon,ir35221";
+> +		reg = <0x70>;
+> +	};
+> +
+> +	ir35221@72 {
+> +		compatible = "infineon,ir35221";
+> +		reg = <0x72>;
+> +	};
+> +	
+> +};
+> +
+> +&i2c6 {
+> +	status = "okay";
+> +	
+> +	/* pca9548 -> NVMe1 to 8 */
+> +	
+> +	pca9548@70 {
+> +		compatible = "nxp,pca9548";
+> +		#address-cells = <1>;
+> +		#size-cells = <0>;
+> +		reg = <0x70>;
+> +	};
+> +	
+> +};
+> +
+> +&i2c7 {
+> +	status = "okay";
+> +	
+> +	/* pca9548 -> NVMe9 to 16 */
+> +	
+> +	pca9548@70 {
+> +		compatible = "nxp,pca9548";
+> +		#address-cells = <1>;
+> +		#size-cells = <0>;
+> +		reg = <0x70>;
+> +	};
+> +	
+> +};
+> +
+> +&i2c8 {
+> +	status = "okay";
+> +
+> +	/* FSI CLK/DAT */
+
+This comment doesn't make sense?
+
+> +	eeprom@50 {
+> +		compatible = "atmel,24c64";
+> +		reg = <0x50>;
+> +	};
+> +};
+> +
+> +&i2c9 {
+> +	status = "okay";
+> +	
+> +	/* pca9545 Riser -> 
+> +	* 	PCIe x8  Slot3 
+> +	* 	PCIe x16 slot4 
+> +	* 	PCIe x8  slot5 
+> +	* 	I2C BMC RISER PCA9554
+> +	* 	BMC SCL/SDA PCA9554 
+> +	* 	PCA9554
+> +	*/
+> +	
+> +	/* pca9545 -> 
+> +	* 	PCIe x16 Slot1 
+> +	* 	PCIe x8  slot2 
+> +	* 	PEX8748 
+> +	*/
+> +
+> +	pca9545riser@70 {
+> +		compatible = "nxp,pca9545";
+> +		#address-cells = <1>;
+> +		#size-cells = <0>;
+> +		reg = <0x70>;
+> +
+> +		/*interrupt-parent = <&ipic>;*/
+> +		/*interrupts = <17 IRQ_TYPE_LEVEL_LOW>;*/
+> +		i2c-mux-idle-disconnect;
+> +		interrupt-controller;
+> +		#interrupt-cells = <2>;
+> +	};
+> +	
+> +	pca9545@71 {
+> +		compatible = "nxp,pca9545";
+> +		#address-cells = <1>;
+> +		#size-cells = <0>;
+> +		reg = <0x71>;
+> +
+> +		/*interrupt-parent = <&ipic>;*/
+> +		/*interrupts = <17 IRQ_TYPE_LEVEL_LOW>;*/
+> +		i2c-mux-idle-disconnect;
+> +		interrupt-controller;
+> +		#interrupt-cells = <2>;	
+> +	};
+> +};
+> +
+> +&i2c10 {
+> +	status = "okay";
+> +	
+> +	/* pca9545 Riser -> 
+> +	* 	PCIe x8  Slot8 
+> +	* 	PCIe x16 slot9 
+> +	* 	PCIe x8  slot10 
+> +	* 	I2C BMC RISER PCA9554
+> +	* 	BMC SCL/SDA PCA9554 
+> +	* 	PCA9554
+> +	*/
+> +	
+> +	/* pca9545 -> 
+> +	* 	PCIe x16 Slot1 
+> +	* 	PCIe x8  slot2 
+> +	* 	PEX8748 
+> +	*/
+> +	
+> +	pca9545riser@70 {
+> +		compatible = "nxp,pca9545";
+> +		#address-cells = <1>;
+> +		#size-cells = <0>;
+> +		reg = <0x70>;
+> +
+> +		/*interrupt-parent = <&ipic>;*/
+> +		/*interrupts = <17 IRQ_TYPE_LEVEL_LOW>;*/
+
+Remove the commented properties.
+
+> +		i2c-mux-idle-disconnect;
+> +		interrupt-controller;
+> +		#interrupt-cells = <2>;
+> +	};
+> +	
+> +	pca9545@71 {
+> +		compatible = "nxp,pca9545";
+> +		#address-cells = <1>;
+> +		#size-cells = <0>;
+> +		reg = <0x71>;
+> +
+> +		/*interrupt-parent = <&ipic>;*/
+> +		/*interrupts = <17 IRQ_TYPE_LEVEL_LOW>;*/
+
+Again here.
+
+> +		i2c-mux-idle-disconnect;
+> +		interrupt-controller;
+> +		#interrupt-cells = <2>;	
+> +	};
+> +};
+> +
+> +&i2c11 {
+> +	status = "okay";
+> +	
+> +	/* TPM */
+> +	/* RTC RX8900CE */
+> +	/* FPGA for power sequence */
+> +	/* TMP275A */
+> +	/* TMP275A */
+> +	/* EMC1462 */
+> +
+> +	tpm@57 {
+> +		compatible = "infineon,slb9645tt";
+> +		reg = <0x57>;
+> +	};
+> +	
+> +	rtc@32 {
+> +		compatible = "epson,rx8900";
+> +		reg = <0x32>;
+> +	};
+> +	
+> +	tmp275@48 {
+> +		compatible = "ti,tmp275";
+> +		reg = <0x48>;
+> +	};
+> +	
+> +	tmp275@49 {
+> +		compatible = "ti,tmp275";
+> +		reg = <0x49>;
+> +	};
+> +
+> +    /* chip emc1462 use emc1403 driver */
+> +    emc1403@4c {
+> +        compatible = "smsc,emc1403";
+> +        reg = <0x4c>;
+> +    };
+> +
+> +};
+> +
+> +&i2c12 {
+> +	status = "okay";
+> +
+> +	/* pca9545 ->
+> +	*	SAS BP1
+> +	*	SAS BP2
+> +	*	NVMe BP
+> +	*	M.2 riser
+> +	*/
+> +	
+> +	pca9545@70 {
+> +		compatible = "nxp,pca9545";
+> +		#address-cells = <1>;
+> +		#size-cells = <0>;
+> +		reg = <0x70>;
+> +
+> +		/*interrupt-parent = <&ipic>;*/
+> +		/*interrupts = <17 IRQ_TYPE_LEVEL_LOW>;*/
+> +		interrupt-controller;
+> +		#interrupt-cells = <2>;
+> +		
+> +		i2c@0 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <0>;
+> +			
+> +			eeprom@50 {
+> +				compatible = "atmel,24c64";
+> +				reg = <0x50>;
+> +			};
+> +		};
+> +		
+> +		i2c@1 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <1>;
+> +			
+> +			eeprom@50 {
+> +				compatible = "atmel,24c64";
+> +				reg = <0x50>;
+> +			};
+> +		};
+> +		
+> +		i2c@2 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <2>;
+> +			
+> +			eeprom@50 {
+> +				compatible = "atmel,24c64";
+> +				reg = <0x50>;
+> +			};
+> +		};
+> +		
+> +		i2c@3 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <3>;
+> +			
+> +			tmp275@48 {
+> +				compatible = "ti,tmp275";
+> +				reg = <0x48>;
+> +			};
+> +		};
+> +		
+> +	};
+> +	
+> +};
+> +
+> +&i2c13 {
+> +	status = "okay";
+> +	
+> +	/* pca9548 ->
+> +	*	NVMe BP
+> +	*	NVMe HDD17 to 24
+> +	*/
+> +	
+> +	pca9548@70 {
+> +		compatible = "nxp,pca9548";
+> +		#address-cells = <1>;
+> +		#size-cells = <0>;
+> +		reg = <0x70>;
+> +	};	
+> +};
+> +
+> +&vuart {
+> +	status = "okay";
+> +};
+> +
+> +&gfx {
+> +	status = "okay";
+> +	memory-region = <&gfx_memory>;
+> +};
+> +
+> +&pinctrl {
+> +	aspeed,external-nodes = <&gfx &lhc>;
+
+This is already provided by aspeed-g5.dtsi, please drop it.
+
+> +};
+> +
+> +&adc {
+> +	status = "okay";
+
+Please add the pinmux properties to mux the ADC lines that you're using
+
+> +};
+> +
+> +&wdt1 {
+> +	aspeed,reset-type = "none";
+> +	aspeed,external-signal;
+> +	aspeed,ext-push-pull;
+> +	aspeed,ext-active-high;
+> +
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_wdtrst1_default>;
+> +};
+> +
+> +&wdt2 {
+> +	aspeed,alt-boot;
+> +};
+> +
+> +&ibt {
+> +	status = "okay";
+> +};
+> +
+> +&vhub {
+> +	status = "okay";
+> +};
+> +
+> +&video {
+> +	status = "okay";
+> +	memory-region = <&video_engine_memory>;
+> +};
+> +
+> +#include "ibm-power9-dual.dtsi"
+> \ No newline at end of file
+
+Add a newline here to avoid the warning.
+
+> -- 
+> 2.17.1
+> 
+> 
+> ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+> This email contains confidential or legally privileged information and 
+> is for the sole use of its intended recipient. 
+> Any unauthorized review, use, copying or distribution of this email or 
+> the content of this email is strictly prohibited.
+> If you are not the intended recipient, you may reply to the sender and 
+> should delete this e-mail immediately.
+> ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 >
-> Why do we bother with the individual nodes at all, why don't we just
-> build a graph out of the BCMs themselves and pass that to the
-> framework? I guess you can't do that because of .channels and
-> .bus_width, you wouldn't know what to multiply/divide by to translate
-> to a vote value? Hm... it would be great to make this simpler, but I'm
-> out of suggestions for now.
 
-I appreciate the thought, but not only do the nodes provide the 
-width/channel, they provide all the connectivity data and an accurate 
-representation of the NoC topology. There's no way to aggregate the 
-nodes and the paths properly if we lose out on the granularity that the 
-current graph provides(Imagine the example of two nodes on some mutually 
-exclusive path under the same BCM again using avg_bw, 1MBps on node1 and 
-1MBps node2 should result in an aggregate BCM node of 1MBps since they 
-physically don't share the same port where as if we clobbered the nodes 
-together and represent them under a single BCM, it would suggest that 
-they share the same physical port and aggregate 2MBps when in reality 
-they don't need to be since they are parallel).
+Please try to avoid posting footers like this to public mailing lists.
 
-> -Evan
->
->>>>>> +               }
->>>>>>
->>>>>> -       temp = agg_peak * 1000ULL;
->>>>>> -       do_div(temp, bcm->aux_data.unit);
->>>>>> -       bcm->vote_y = temp;
->>>>>> +               temp = agg_avg[bucket] * 1000ULL;
->>>>>> +               do_div(temp, bcm->aux_data.unit);
->>>>>> +               bcm->vote_x[bucket] = temp;
->>>>>>
->>>>>> -       if (bcm->keepalive && bcm->vote_x == 0 && bcm->vote_y == 0) {
->>>>>> -               bcm->vote_x = 1;
->>>>>> -               bcm->vote_y = 1;
->>>>>> +               temp = agg_peak[bucket] * 1000ULL;
->>>>>> +               do_div(temp, bcm->aux_data.unit);
->>>>>> +               bcm->vote_y[bucket] = temp;
->>>>>> +       }
->>>>>> +
->>>>>> +       if (bcm->keepalive && bcm->vote_x[0] == 0 && bcm->vote_y[0] == 0) {
->>>>>> +               bcm->vote_x[QCOM_ICC_BUCKET_AMC] = 1;
->>>>>> +               bcm->vote_x[QCOM_ICC_BUCKET_WAKE] = 1;
->>>>>> +               bcm->vote_y[QCOM_ICC_BUCKET_AMC] = 1;
->>>>>> +               bcm->vote_y[QCOM_ICC_BUCKET_WAKE] = 1;
->>>>>>            }
->>>>>>
->>>>>>            bcm->dirty = false;
->>>>>> @@ -631,15 +653,25 @@ static int qcom_icc_aggregate(struct icc_node *node, u32 tag, u32 avg_bw,
->>>>>>     {
->>>>>>            size_t i;
->>>>>>            struct qcom_icc_node *qn;
->>>>>> +       unsigned long tag_word = (unsigned long)tag;
->>>>>>
->>>>>>            qn = node->data;
->>>>>>
->>>>>> +       if (!tag)
->>>>>> +               tag_word = QCOM_ICC_TAG_ALWAYS;
->>>>>> +
->>>>>> +       for (i = 0; i < QCOM_ICC_NUM_BUCKETS; i++) {
->>>>>> +               if (test_bit(i, &tag_word)) {
->>>>> I guess all this extra business with tag_word and casting is so that
->>>>> you can use test_bit, which is presumably a tiny bit faster? Does this
->>>>> actually make a measurable difference? Maybe in the name of simplicity
->>>>> we just do if (tag & BIT(i)), and then optimize if we find that
->>>>> conditional to be a hotspot?
->>>> Using (tag & BIT(i)) as opposed to test_bit seems reasonable to me.
->>>>>> +                       qn->sum_avg[i] += avg_bw;
->>>>>> +                       qn->max_peak[i] = max_t(u32, qn->max_peak[i], peak_bw);
->>>>>> +                       qn->sum_avg_cached[i] = qn->sum_avg[i];
->>>>>> +                       qn->max_peak_cached[i] = qn->max_peak[i];
->>>>>> +               }
->>>>>> +       }
->>>>>> +
->>>>>>            *agg_avg += avg_bw;
->>>>>>            *agg_peak = max_t(u32, *agg_peak, peak_bw);
->>>>>>
->>>>>> -       qn->sum_avg = *agg_avg;
->>>>>> -       qn->max_peak = *agg_peak;
->>>>>> -
->>>>>>            for (i = 0; i < qn->num_bcms; i++)
->>>>>>                    qn->bcms[i]->dirty = true;
->>>>>>
->>>>>> @@ -675,7 +707,7 @@ static int qcom_icc_set(struct icc_node *src, struct icc_node *dst)
->>>>>>             * Construct the command list based on a pre ordered list of BCMs
->>>>>>             * based on VCD.
->>>>>>             */
->>>>>> -       tcs_list_gen(&commit_list, cmds, commit_idx);
->>>>>> +       tcs_list_gen(&commit_list, QCOM_ICC_BUCKET_AMC, cmds, commit_idx);
->>>>>>
->>>>>>            if (!commit_idx[0])
->>>>>>                    return ret;
->>>>>> @@ -693,6 +725,41 @@ static int qcom_icc_set(struct icc_node *src, struct icc_node *dst)
->>>>>>                    return ret;
->>>>>>            }
->>>>>>
->>>>>> +       INIT_LIST_HEAD(&commit_list);
->>>>>> +
->>>>>> +       for (i = 0; i < qp->num_bcms; i++) {
->>>>>> +               /*
->>>>>> +                * Only generate WAKE and SLEEP commands if a resource's
->>>>>> +                * requirements change as the execution environment transitions
->>>>>> +                * between different power states.
->>>>>> +                */
->>>>>> +               if (qp->bcms[i]->vote_x[QCOM_ICC_BUCKET_WAKE] !=
->>>>>> +                   qp->bcms[i]->vote_x[QCOM_ICC_BUCKET_SLEEP] ||
->>>>>> +                   qp->bcms[i]->vote_y[QCOM_ICC_BUCKET_WAKE] !=
->>>>>> +                   qp->bcms[i]->vote_y[QCOM_ICC_BUCKET_SLEEP]) {
->>>>>> +                       list_add_tail(&qp->bcms[i]->list, &commit_list);
->>>>>> +               }
->>>>>> +       }
->>>>>> +
->>>>>> +       if (list_empty(&commit_list))
->>>>>> +               return ret;
->>>>>> +
->>>>>> +       tcs_list_gen(&commit_list, QCOM_ICC_BUCKET_WAKE, cmds, commit_idx);
->>>>>> +
->>>>>> +       ret = rpmh_write_batch(qp->dev, RPMH_WAKE_ONLY_STATE, cmds, commit_idx);
->>>>>> +       if (ret) {
->>>>>> +               pr_err("Error sending WAKE RPMH requests (%d)\n", ret);
->>>>>> +               return ret;
->>>>>> +       }
->>>>>> +
->>>>>> +       tcs_list_gen(&commit_list, QCOM_ICC_BUCKET_SLEEP, cmds, commit_idx);
->>>>>> +
->>>>>> +       ret = rpmh_write_batch(qp->dev, RPMH_SLEEP_STATE, cmds, commit_idx);
->>>>>> +       if (ret) {
->>>>>> +               pr_err("Error sending SLEEP RPMH requests (%d)\n", ret);
->>>>>> +               return ret;
->>>>>> +       }
->>>>>> +
->>>>>>            return ret;
->>>>>>     }
->>>>>>
->>>> --
->>>> The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
->>>> a Linux Foundation Collaborative Project
->>>>
->> --
->> The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
->> a Linux Foundation Collaborative Project
->>
--- 
-The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
-a Linux Foundation Collaborative Project
+Cheers,
 
+Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
