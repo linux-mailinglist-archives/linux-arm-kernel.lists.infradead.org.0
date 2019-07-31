@@ -2,99 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 504D17C2C3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 15:06:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB2907C2CE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 15:09:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=uK6WoNUNPEa3n+FRK9dS94XiiwbJ8HbUOuA50uVbynY=; b=VSarvkZoFOyFWNQocouqwpetz
-	5NqO8OIb4L17+awQrLB/32rYEI2xHcHIlrIJSyXLWQDihBxjblP4ba6WLk4lMw0U4L4ejiNsv1gIC
-	3bgbPFTfbxOeDulHiN6eVlrHNAfEXcPkEyErMw9aJIVxfWoyxLRlagaTgZEE41+UZpSdXkYQFuLjk
-	CTQ98m8i3kZ8bhq9KGNjUUZ/LqD6dpRJACfsngWUzmtDlPC4PCj5NbBCnJ6ItAyM1CiOGeUJbqIM5
-	W+FbJFxJxbHkEnQVvW2mpavzESrjR6lZyaHU0v63P9/FwGNA+8wLsX1C9+eRb/JbKaoJTGnY5ieT0
-	56yrQNumA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mLcfJMjDgoe8qt0R10o/JumJb8JXra/1iT1HkOUUneA=; b=TtmUS9oeHg/xTU
+	qSYdSauHteYdZ6Guu6eoxXEcutNRY1pY9SvE1/2PfM5Qm+o54MNZ0SDL8atgm0J+N4yt9D1vAD558
+	3POjVaDfqMIl2VB3XxojBFygaCViDJWsV67DLBEM4rA0MhKVW7gUy3HoQYeMGLV70yEIpyExM+kGw
+	Yvw4ABXGGyYjoGFNmEOxWicVmiIx8IX7B9pXU8fa7oAwpBQ0zWKg2IBJK8uB1kmVjV3ehU7S1by1y
+	6GSC/gYZIHu2duSxqO3BoHmNk6oOU+0vf23PINoEwOJHU4qDWk0i7UBzIosTqHmrRDj13r57seRl6
+	J/3LNT0yRanEwWVIaY4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsoJV-0004Ah-3t; Wed, 31 Jul 2019 13:06:41 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsoJN-00049v-Nd
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 13:06:35 +0000
-Received: by mail-pl1-x644.google.com with SMTP id a93so30420450pla.7
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 31 Jul 2019 06:06:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:references:from:message-id:date:user-agent:mime-version
- :in-reply-to:content-language:content-transfer-encoding;
- bh=sHzl5921BHWgqtoPY6MJP39IB1JpWgzFb78ZaMImV9c=;
- b=eIHTYDdXX3KVuT8JA2IPHAnoMU+cnJBLShjNMC/nmhnG1CqVefQKtVPLO9W7U/HdJ8
- Of2Xb1et/5mL2x7hVkD5G0EsAdytxOjb8gfiwTXzjqm1R+gg9cfrKgbuEc/eRM9JPNf9
- jtYGhNhrHd6ZH8f9zAUfzvtGOE14Wg+HE8MbbBurTnFieNUUcd4ra8cyeyBYV1BSF3tw
- cH9j9PhgqJT+Buzs07dHk/ctfwXh5ivj7PWuyvL6NJWkdqs3ZNqzjYlNIhwv2OEEl+HX
- QlgcMUhjBJOZ0SRyDPmmwHeoA9xfeQx+EkVvOL5yz4AzRGU4Ue3YEsvI0Vir9RggQx6r
- MIKQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=sHzl5921BHWgqtoPY6MJP39IB1JpWgzFb78ZaMImV9c=;
- b=hnvBT3pfAx7OZRP60Eg2pyQYmar81ApKcO1t60KRlfOaJZAPvuz9d+FoDa1mrRqZOr
- KWIzUYa+wH9CMZh19xbb1/qSyKM21z18Ts6dDcwrWw8Zok2VIi5HnMgtqCVWPN9dNEHV
- PKrWrQ2W33WOmSkueYqkFHCVdIxEVe5GG9ro7c0+1G/23FerkzqOO3LVF5xcLtZX2M8d
- TTy+6avY/wDSYEwNu5rJfFCpAxH8rUUHbSK8j2FJfc8DXNq9ao4+jeQRQXlik80NcBT7
- pdv/VjUzAqc1EFiEdAiSYYAfYCFHRMOORZpAdmxLuBoDttCUrCjdDmjfwEzuTp8lfsIl
- +WPA==
-X-Gm-Message-State: APjAAAWy3XTpy5POQGNMrU3RxXBFl8CTl4f2YpgHmB7WoJHOxuQQnS7p
- 0K/GgqWcm/troeusEp3mRQd9apxi
-X-Google-Smtp-Source: APXvYqxKRNunAcobOCBM99+h3P7ofHJm9idjLpl1HCgi6/PRQgXTspPdXUvXOee0ReubfC+m1Lr/6A==
-X-Received: by 2002:a17:902:324:: with SMTP id
- 33mr117037501pld.340.1564578392879; 
- Wed, 31 Jul 2019 06:06:32 -0700 (PDT)
-Received: from [10.0.2.15] ([122.163.105.8])
- by smtp.gmail.com with ESMTPSA id p20sm109750505pgj.47.2019.07.31.06.06.30
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 31 Jul 2019 06:06:31 -0700 (PDT)
-Subject: Re: [PATCH] mailbox: zynqmp-ipi-mailbox: Add of_node_put() before goto
-To: Michal Simek <michal.simek@xilinx.com>, jassisinghbrar@gmail.com,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-References: <20190709172841.13769-1-nishkadg.linux@gmail.com>
- <eaf1fcbe-615e-0fec-d330-ae94e8f3c102@xilinx.com>
-From: Nishka Dasgupta <nishkadg.linux@gmail.com>
-Message-ID: <6a5306bd-946d-383f-0b42-f17675c24218@gmail.com>
-Date: Wed, 31 Jul 2019 18:36:28 +0530
+	id 1hsoM1-0004nU-Tc; Wed, 31 Jul 2019 13:09:17 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hsoLv-0004mb-6s
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 13:09:12 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CC7FB1570;
+ Wed, 31 Jul 2019 06:09:08 -0700 (PDT)
+Received: from [10.1.197.45] (e112298-lin.cambridge.arm.com [10.1.197.45])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 750113F575;
+ Wed, 31 Jul 2019 06:09:07 -0700 (PDT)
+Subject: Re: [PATCH v4.4 V2 25/43] arm64: Move BP hardening to
+ check_and_switch_context
+To: Viresh Kumar <viresh.kumar@linaro.org>, stable@vger.kernel.org
+References: <cover.1562908074.git.viresh.kumar@linaro.org>
+ <f655aaa158af070d45a2bd4965852b0c97a08838.1562908075.git.viresh.kumar@linaro.org>
+From: Julien Thierry <julien.thierry@arm.com>
+Message-ID: <59b252cf-9cb7-128b-4887-c21a8b9b92a9@arm.com>
+Date: Wed, 31 Jul 2019 14:09:05 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <eaf1fcbe-615e-0fec-d330-ae94e8f3c102@xilinx.com>
+In-Reply-To: <f655aaa158af070d45a2bd4965852b0c97a08838.1562908075.git.viresh.kumar@linaro.org>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_060633_771226_4982ED5D 
-X-CRM114-Status: GOOD (  17.22  )
-X-Spam-Score: 1.3 (+)
+X-CRM114-CacheID: sfid-20190731_060911_296386_014C1916 
+X-CRM114-Status: GOOD (  20.27  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
- [list.dnswl.org]
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [122.163.105.8 listed in dnsbl.sorbs.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (nishkadg.linux[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,51 +63,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Mark Rutland <mark.rutland@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ mark.brown@arm.com, julien.thierry.kdev@gmail.com,
+ Russell King <rmk+kernel@arm.linux.org.uk>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 31/07/19 2:01 PM, Michal Simek wrote:
-> On 09. 07. 19 19:28, Nishka Dasgupta wrote:
->> Each iteration of for_each_available_child_of_node puts the previous
->> node, but in the case of a goto from the middle of the loop, there is
->> no put, thus causing a memory leak. Hence add an of_node_put before the
->> goto.
->> Issue found with Coccinelle.
->>
->> Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
->> ---
->>   drivers/mailbox/zynqmp-ipi-mailbox.c | 1 +
->>   1 file changed, 1 insertion(+)
->>
->> diff --git a/drivers/mailbox/zynqmp-ipi-mailbox.c b/drivers/mailbox/zynqmp-ipi-mailbox.c
->> index 86887c9a349a..bd80d4c10ec2 100644
->> --- a/drivers/mailbox/zynqmp-ipi-mailbox.c
->> +++ b/drivers/mailbox/zynqmp-ipi-mailbox.c
->> @@ -661,6 +661,7 @@ static int zynqmp_ipi_probe(struct platform_device *pdev)
->>   		if (ret) {
->>   			dev_err(dev, "failed to probe subdev.\n");
->>   			ret = -EINVAL;
->> +			of_node_put(nc);
->>   			goto free_mbox_dev;
->>   		}
->>   		mbox++;
->>
+
+
+On 12/07/2019 06:28, Viresh Kumar wrote:
+> From: Marc Zyngier <marc.zyngier@arm.com>
 > 
-> Patch is good but when you are saying that this was found by Coccinelle
-> then it should be added as script to kernel to detect it.
-
-This particular patch was suggested by a script I did not write myself; 
-someone else wrote it and sent it to me. How should I proceed in this case?
-
-Thanking you,
-Nishka
-
-> Thanks,
-> Michal
+> commit a8e4c0a919ae310944ed2c9ace11cf3ccd8a609b upstream.
 > 
+> We call arm64_apply_bp_hardening() from post_ttbr_update_workaround,
+> which has the unexpected consequence of being triggered on every
+> exception return to userspace when ARM64_SW_TTBR0_PAN is selected,
+> even if no context switch actually occured.
+> 
+> This is a bit suboptimal, and it would be more logical to only
+> invalidate the branch predictor when we actually switch to
+> a different mm.
+> 
+> In order to solve this, move the call to arm64_apply_bp_hardening()
+> into check_and_switch_context(), where we're guaranteed to pick
+> a different mm context.
+> 
+> Acked-by: Will Deacon <will.deacon@arm.com>
+> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
+> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+> Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
+> ---
+>  arch/arm64/mm/context.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+> 
+> diff --git a/arch/arm64/mm/context.c b/arch/arm64/mm/context.c
+> index be42bd3dca5c..de5afc27b4e6 100644
+> --- a/arch/arm64/mm/context.c
+> +++ b/arch/arm64/mm/context.c
+> @@ -183,6 +183,8 @@ void check_and_switch_context(struct mm_struct *mm, unsigned int cpu)
+>  	raw_spin_unlock_irqrestore(&cpu_asid_lock, flags);
+>  
+>  switch_mm_fastpath:
+> +	arm64_apply_bp_hardening();
+> +
+>  	cpu_switch_mm(mm->pgd, mm);
+>  }
+>  
+> @@ -193,8 +195,6 @@ asmlinkage void post_ttbr_update_workaround(void)
+>  			"ic iallu; dsb nsh; isb",
+>  			ARM64_WORKAROUND_CAVIUM_27456,
+>  			CONFIG_CAVIUM_ERRATUM_27456));
+> -
+> -	arm64_apply_bp_hardening();
 
+Patches 22 and 23 factorize the post_ttbr_update_workaround() and move
+it to C code just so we would and a call to arm64_apply_bp_hardening()
+in patch 24 that now gets moved elsewhere?
+
+Is it really worth backporting patches 22 and 23?
+
+Cheers,
+
+-- 
+Julien Thierry
 
 _______________________________________________
 linux-arm-kernel mailing list
