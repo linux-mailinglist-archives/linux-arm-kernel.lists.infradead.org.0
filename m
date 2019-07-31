@@ -2,37 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B76297CE3F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 22:26:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 97F117CE49
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 22:27:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PlLTM35ycqFI8M8QYGLPLp1Gcfg/5YoDBf+fjPi/en0=; b=fjD5KVbZ52OAVU
-	seLoitP1GdmDrKX1tdZeug4vSMWCmnu002VzKgBmbTls2Eek2Gov0HuTTh8pFc7XLmxeUFEFqBNZs
-	xAMg5jqdvE4lew0BaL0+HQakje1HJJ3MFKWXU3YbRTqJcrM8Grm+947ISOFVNbodMe+7yAGzByA2v
-	CBrgYrhxoxvDpWkCcggKy6dFSwBdqaTVwknR/4amBW0XFHl2i81u/q9z2n0DFp6u2PJORHnih97g9
-	B69V+eNAuFAlKailmh+jFA0WK2OwMGsa+m/8BtT8EcCHG9sLiPeIlHkH9n3bghD3eoO4aqJwvu8gZ
-	YS9YVCcFmVhnEYiZq8sg==;
+	List-Owner; bh=FtT9Fimyz6yCYCNVK8mDYrrwxMVASNh241StsBf6VcQ=; b=lcnpJT5xdXpTCE
+	9079vcJt2Q7rbiV0UIs1w3dh64lMPPcuKObPpOqF7AbpnX8t9wGF+Huaj1TK4Z3NPr/2fqD+VHcUF
+	+NdPrNKfp6B031S+4HMAq7T+GSoqcRhLm8IxA8Do1nx/yf2xzlAI2C//nov+VUvwBU5ljlbZtluW8
+	mdY/iPTbeZ/4rtuuGGeVwsadsh7MmCZH22buthVPbP9nfF9LNjF5ybzXx6RqLewQBPm3B8eWdttV0
+	2yBTgwDRS9OQLKTxaqLXYa9a7pjORmG5TJ8PHMHdTcdRc/DIa5Xnzac3QPmenRr8U4AWuIdemv1R4
+	BaDvASCA4iTjQ1rpeQOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsvB9-0001QR-0d; Wed, 31 Jul 2019 20:26:31 +0000
-Received: from [191.33.152.89] (helo=coco.lan)
- by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hsvB0-0001Q8-KC; Wed, 31 Jul 2019 20:26:22 +0000
-Date: Wed, 31 Jul 2019 17:26:13 -0300
-From: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
-To: Mark Brown <broonie@kernel.org>
-Subject: Re: [PATCH 0/6] ReST conversion patches not applied yet
-Message-ID: <20190731172613.32d65ad8@coco.lan>
-In-Reply-To: <20190731202007.GI4369@sirena.org.uk>
-References: <cover.1564603513.git.mchehab+samsung@kernel.org>
- <20190731141734.1fa9ce64@lwn.net>
- <20190731202007.GI4369@sirena.org.uk>
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+	id 1hsvBe-0001lb-Bf; Wed, 31 Jul 2019 20:27:02 +0000
+Received: from mail-qt1-f193.google.com ([209.85.160.193])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hsvBV-0001kU-SY
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 20:26:56 +0000
+Received: by mail-qt1-f193.google.com with SMTP id h21so67814213qtn.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 31 Jul 2019 13:26:53 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Nexwj/gyEdfGcFhtgJkuEvqAxLsbVQicvOBgvCJpGfM=;
+ b=B1/O7ercJnU75q9WuPtCETsN9N2PPZCMPzuXEPG3/OK+tkYpDSG1ABFrRqRIEJHB/a
+ qxjxcoUQabpVqmyxZ5Z7QC+qu9qnruQKYV84jBu6MIw5ZthliGHHfg5+//J7My+NqkXG
+ wqDhq2j3lmEcn+HJRdoYJ4FauWWhmSxJ9ADm2pXwhbYxB/BlwObJ2Xa0w3ht3LHqIcxw
+ 2BT/2NGJGYbgLX5StDjOIGto05MyNiAeVqtiCCULwcOXOXkDdyMhlTFWYJIaRDT39xXi
+ HWwLF2k8gnKSHjzCZ58MS5NNNwE+bXV5hU7EQW9K3+uD3AM3NmWfi4YnLC2yQLr+uwPs
+ cC9w==
+X-Gm-Message-State: APjAAAWjOkvMF+KvfaD8HrKkSo5cKKBRYFn/xDlhHDNd+DAEU/y6FlQN
+ 9DYm5Cd4oGn8czqq3dPpsQZtFXlvcZ6klY3MIFU=
+X-Google-Smtp-Source: APXvYqxrQwILyzcU6or5m1F0P2T2g+2d1hVZgeveWHo/LNI028WFf469HVX7i9p/CxTB96w3vHftaMn2P+OT3OV3MzY=
+X-Received: by 2002:aed:33a4:: with SMTP id v33mr84957899qtd.18.1564604812113; 
+ Wed, 31 Jul 2019 13:26:52 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190731195713.3150463-1-arnd@arndb.de>
+ <20190731195713.3150463-4-arnd@arndb.de>
+ <20190731202343.GA14817@roeck-us.net>
+In-Reply-To: <20190731202343.GA14817@roeck-us.net>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Wed, 31 Jul 2019 22:26:35 +0200
+Message-ID: <CAK8P3a2=gqeCMtdzdqg4d1n6v1-cdaHObeUoVXeB+=Okwd1rqA@mail.gmail.com>
+Subject: Re: [PATCH 03/14] watchdog: pnx4008_wdt: allow compile-testing
+To: Guenter Roeck <linux@roeck-us.net>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190731_132654_906078_EB388F0B 
+X-CRM114-Status: GOOD (  14.50  )
+X-Spam-Score: 0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (0.2 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.160.193 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.193 listed in wl.mailspike.net]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -44,65 +84,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Dave Kleikamp <shaggy@kernel.org>,
- alsa-devel@alsa-project.org,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org,
- Peter Meerwald-Stadler <pmeerw@pmeerw.net>, Evgeniy Polyakov <zbr@ioremap.net>,
- linux-cifs@vger.kernel.org, Lars-Peter Clausen <lars@metafoo.de>,
- Jonathan Corbet <corbet@lwn.net>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Chen-Yu Tsai <wens@csie.org>, devicetree@vger.kernel.org,
- Evgeniy Dushistov <dushistov@mail.ru>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Mauro Carvalho Chehab <mchehab@infradead.org>,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Mathieu Poirier <mathieu.poirier@linaro.org>, samba-technical@lists.samba.org,
- Liam Girdwood <lgirdwood@gmail.com>, linux-iio@vger.kernel.org,
- linux-spi@vger.kernel.org, Steve French <sfrench@samba.org>,
- Hartmut Knaack <knaack.h@gmx.de>, Jonathan Cameron <jic23@kernel.org>
+Cc: Andrew Lunn <andrew@lunn.ch>,
+ LINUXWATCHDOG <linux-watchdog@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Jason Cooper <jason@lakedaemon.net>, "David S. Miller" <davem@davemloft.net>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Gregory Clement <gregory.clement@bootlin.com>,
+ USB list <linux-usb@vger.kernel.org>, Russell King <linux@armlinux.org.uk>,
+ Vladimir Zapolskiy <vz@mleia.com>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>, soc@kernel.org,
+ Networking <netdev@vger.kernel.org>, Alan Stern <stern@rowland.harvard.edu>,
+ linux-serial@vger.kernel.org, Sylvain Lemieux <slemieux.tyco@gmail.com>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Em Wed, 31 Jul 2019 21:20:07 +0100
-Mark Brown <broonie@kernel.org> escreveu:
+On Wed, Jul 31, 2019 at 10:23 PM Guenter Roeck <linux@roeck-us.net> wrote:
+>
+> On Wed, Jul 31, 2019 at 09:56:45PM +0200, Arnd Bergmann wrote:
+> > The only thing that prevents building this driver on other
+> > platforms is the mach/hardware.h include, which is not actually
+> > used here at all, so remove the line and allow CONFIG_COMPILE_TEST.
+> >
+> > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+>
+> Reviewed-by: Guenter Roeck <linux@roeck-us.net>
+>
+> What is the plan for this patch ? Push through watchdog
+> or through your branch ?
 
-> On Wed, Jul 31, 2019 at 02:17:34PM -0600, Jonathan Corbet wrote:
-> > Mauro Carvalho Chehab <mchehab+samsung@kernel.org> wrote:  
-> 
-> > > As promised, this is the rebased version of the patches that were not applied
-> > > from the /26 patch series because you had merge conflicts.
-> > > 
-> > > They're all based on your docs-next branch, so should apply fine.
-> > > 
-> > > The first one fixes all but one error with a broken reference.
-> > > 
-> > > The only broken reference right now is due to a DT patch with was not
-> > > accepted (no idea why), but whose driver is upstream.  
-> 
-> > All but 5/6 applied, thanks.  
-> 
-> Oh, I still hadn't reviewed this version of the SPI stuff :(
+I would prefer my branch so I can apply the final patch without waiting
+for another release. Not in a hurry though, so if some other maintainer
+wants to take the respective driver patch through their tree instead of the
+arm-soc one, I'll just wait anyway.
 
-It is basically the one sent on that /26 patch series, just rebased
-on the top of docs-next.
-
-> There were outstanding questions about where it was going to get moved
-> to but if I read the diff correctly it looks like it didn't actually get
-> moved in the end?
-
-Yeah, it doesn't have the move. My understanding from our discussions
-is that we didn't reach a conclusion.
-
-In any case, I can send a separate patch with the move part once
-we reach an agreement about what's the best way to proceed (or you
-can do it directly, if you prefer so).
-
-Thanks,
-Mauro
+        Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
