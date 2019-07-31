@@ -2,87 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 50C207CB27
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 19:58:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C88D7CB47
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 19:59:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=k7XZbM3ChovNS52et3sITDjSvV6mxEBNEjGdaB6kb+A=; b=TXsWWYiTbpoHrNhyoIOAwwWC+
-	uqAxqYRdgduKZ7I4+1xgsuzSLw/lPTUxL7nNsjaYLMc5g7qNNDaPJIbPXZHmF/3cU+x648WvR4rKx
-	shgT2tmTna1mx0nFnYpGrvHG/+AwC/HlBY4eR6p7MI5+3p0MGdEEPcEcAwFICqUQ2YirvcHar2iwW
-	0fd4DTbag40W4XQ74SYC6OGsoj1KKk/bEW9tvX/2LiIIvqr5aCGfZJoNAHys4rletOKBXDf1TsO+A
-	Hlyn4iL93loSvQQpLlRclqtJ9KhT4wfOVPPqRKM8fxJe0z9kMChFuNLKRVt0p4KBjj7eG5+7C1aHL
-	E4eMV8jCA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Aoe1dBnRVC8PmFw0LOP6zUY7DNt3MWuRijoJhhsnzPY=; b=EqHvjRgswMavqw
+	okOxNU3BOaNnl1n7JSPUpzqeMIILUY0abHSKj3KdnK9eIwDL3slMa7G7Mfmk1J4IMOyehSclUhzcg
+	8O6TWe5xrbNpNJVpyklMlg2RYXTMlweljK10YpUxOQNDtEHQ3cAvopZBRjWNa79K0u3dlnqBAE2Cy
+	12rM/YO3rzzrUhrsqEA/GuCq4jwcTNj0TJH1Okf0HAVtcjZcZZbEn9ka6iM8d7Vd2QxJrrs8I46Nh
+	1k9vs+da3dNVma95r4yXAqxIYAQ6/Gs0Nndw3fYvn/e6A0bzPlLyuPDV5lQVS7CHU3fCgN0Vwi4qU
+	KzNxW+59P4m/8WtFA0Xw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hssrx-000643-0C; Wed, 31 Jul 2019 17:58:33 +0000
-Received: from smtp.codeaurora.org ([198.145.29.96])
+	id 1hsssz-0006U4-8j; Wed, 31 Jul 2019 17:59:37 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hssrp-00063I-SP
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 17:58:27 +0000
-Received: by smtp.codeaurora.org (Postfix, from userid 1000)
- id D1EBE601D7; Wed, 31 Jul 2019 17:58:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1564595904;
- bh=hqwgQg+QLrSpltpFXDR2kApel5sVgQ1jriHtGFCWpyI=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=bqs3pbnctqReZ9uJtVeQ+o+0BS1xYilrf9EQ5EH8NUNz3OmgRiffjjVDr2O6F3MN2
- O3aI2iD1F888UsjcWO+8+WGQ3L9bwtgFgftg1C2suuFGnuVCWWXcOAM68IRBQ41Uka
- X+379Ld5lBwzsc2AHN+mGxPfL+GhedDZ7gMQc7AQ=
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- pdx-caf-mail.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
- DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
- version=3.4.0
-Received: from [10.226.58.28] (i-global254.qualcomm.com [199.106.103.254])
+ id 1hsssq-0006Sq-Q3; Wed, 31 Jul 2019 17:59:30 +0000
+Received: from mail-qk1-f173.google.com (mail-qk1-f173.google.com
+ [209.85.222.173])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- (Authenticated sender: jhugo@smtp.codeaurora.org)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id AAE9760258;
- Wed, 31 Jul 2019 17:58:22 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1564595903;
- bh=hqwgQg+QLrSpltpFXDR2kApel5sVgQ1jriHtGFCWpyI=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=jjX1LtBGzumz0W0cw3esC+EtGpbdRQGTehJNHNA79B7e56CsrS/cH5K0Y+ggC2Iua
- WdCckenA2QtwXBzwzn7+M/IcScCKrD0bIYSCGus6jOJyHqhBgklWEwQsZ2fS6gv40h
- /weRb6Fb0AGhvtgtzX1Yr/+0xT1jjxpgMb+ixiE4=
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org AAE9760258
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- spf=none smtp.mailfrom=jhugo@codeaurora.org
-Subject: Re: next/master boot: 265 boots: 17 failed, 184 passed with 64
- offline (next-20190730)
-To: Stephen Boyd <swboyd@chromium.org>, Lee Jones <lee.jones@linaro.org>,
- Linus Walleij <linus.walleij@linaro.org>, Mark Brown <broonie@kernel.org>,
- Timur Tabi <timur@kernel.org>
-References: <5d403574.1c69fb81.14163.65d3@mx.google.com>
- <20190730134115.GE4264@sirena.org.uk>
- <CACRpkdYevQiwW8iED8_qBo5yCcj5yCGrM76Lu3MyrU6Vy4HoNg@mail.gmail.com>
- <5d41b01a.1c69fb81.84578.a0bc@mx.google.com>
-From: Jeffrey Hugo <jhugo@codeaurora.org>
-Message-ID: <cbbe381e-a154-ced1-fbcb-9db2135e4e5b@codeaurora.org>
-Date: Wed, 31 Jul 2019 11:58:21 -0600
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ by mail.kernel.org (Postfix) with ESMTPSA id 46FE3208E4;
+ Wed, 31 Jul 2019 17:59:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1564595968;
+ bh=NEcDRzJevd+KIyIuh3CpjR4gF6t3vEc53p0FcWTtLWI=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=V+3Cky9w/gnN4kXEMxDWMD5MnHLewZ1pxiIZf6mlIMfgMmoZxtIdr1/REo0Vwtwhq
+ nvge4kVCvstMykA5EnaWeOTd3osufFD169n3Wqi/7ghc6YNIo5Su492hpn4AIxh4YE
+ eEN//AmMDGNkJW4kZ7qDqyKHbSuItzAfyyA+/hY4=
+Received: by mail-qk1-f173.google.com with SMTP id m14so24218215qka.10;
+ Wed, 31 Jul 2019 10:59:28 -0700 (PDT)
+X-Gm-Message-State: APjAAAUlRL+B3OC8TDl1uG0yV8Pc/DbhOYbxtD0bNqKYYbcr+t0gHgtT
+ XIGT4qgolgWliFnMKUS1E61cvkuE1ZEHvuCMxA==
+X-Google-Smtp-Source: APXvYqxkCHy8Mu4YbKN2nkHxuSAOaPMHVupqx/C61IqD07sDT2Vj84zboBJUD7SDLxAR33ZQy+yLAkoAgVxagzL0504=
+X-Received: by 2002:a05:620a:1447:: with SMTP id
+ i7mr83131890qkl.254.1564595967401; 
+ Wed, 31 Jul 2019 10:59:27 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <5d41b01a.1c69fb81.84578.a0bc@mx.google.com>
-Content-Language: en-US
+References: <20190731153529.30159-1-glaroque@baylibre.com>
+ <20190731153529.30159-2-glaroque@baylibre.com>
+In-Reply-To: <20190731153529.30159-2-glaroque@baylibre.com>
+From: Rob Herring <robh@kernel.org>
+Date: Wed, 31 Jul 2019 11:59:14 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqLyhiLkpje8a4Qh5K21s9xU6k1kkR0OtyGPss8=efR5Sg@mail.gmail.com>
+Message-ID: <CAL_JsqLyhiLkpje8a4Qh5K21s9xU6k1kkR0OtyGPss8=efR5Sg@mail.gmail.com>
+Subject: Re: [PATCH v2 1/6] dt-bindings: thermal: Add DT bindings
+ documentation for Amlogic Thermal
+To: Guillaume La Roque <glaroque@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_105825_971234_AAE0CC2B 
-X-CRM114-Status: GOOD (  35.60  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190731_105928_880896_F4F44D6A 
+X-CRM114-Status: GOOD (  17.81  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.145.29.96 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -92,6 +73,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,184 +85,116 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bjorn Andersson <bjorn.andersson@linaro.org>,
- Lina Iyer <ilina@codeaurora.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Kernel Build Reports Mailman List <kernel-build-reports@lists.linaro.org>
+Cc: devicetree@vger.kernel.org, "open list:THERMAL" <linux-pm@vger.kernel.org>,
+ Kevin Hilman <khilman@baylibre.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ linux-amlogic@lists.infradead.org,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 7/31/2019 8:13 AM, Stephen Boyd wrote:
-> Quoting Linus Walleij (2019-07-31 01:48:38)
->> On Tue, Jul 30, 2019 at 3:41 PM Mark Brown <broonie@kernel.org> wrote:
->>
->>> Today's -next fails to boot on QDF2400 systems:
->>
->> Is this a devicetree or ACPI system? Which devicetree in that case?
->> If it is ACPI I assume one had to look into DSDTs?
->>
->> But I looked into this!
->>
->>> 08:56:36.026587  [    4.339966] pc : __memset+0x80/0x188
->>> 08:56:36.026867  [    4.343524] lr : msm_gpio_init_valid_mask+0x134/0x1a4
->>
->> Aha. I think this only worked out of chance before.
->>
->> What the Qualcomm driver does is exploit that .init_valid_mask() gets called
->> even if .need_valid_mask in gpio_chip is not set to true,
->> and this is why the bug appears in
->> msm_gpio_init_valid_mask(), I'm pretty much sure it is the
->> bitmap_zero(chip->valid_mask, max_gpios);
->> call towards the end of the function that gets turned
->> into:
->> 08:56:36.114798  [    4.433713]  __memset+0x80/0x188
->>
->> And this causes the crash.
->>
->> This is then because chip->valid_mask has not been allocated, and that
->> is because .need_valid_mask is not set. This is set like so:
->>
->> static bool msm_gpio_needs_valid_mask(struct msm_pinctrl *pctrl)
->> {
->>      if (pctrl->soc->reserved_gpios)
->>          return true;
->>
->>      return device_property_read_u16_array(pctrl->dev, "gpios", NULL, 0) > 0;
->> }
-> 
-> Some of the code here is new. I guess the arm64 laptop stuff is making
-> changes.
-> 
->>
->> First comes from the driver, second is for ACPI I think. It looks
->> like a bit dangerous way to do it for ACPI, what if an OF pin controller
->> has some "gpios" property? Oh well.
->>
->> Apparently this only happens on ACPI systems because I tested it
->> myself on a DT system.
->>
->> Another cause may be this from the call site inside gpiolib:
->>
->> static int gpiochip_alloc_valid_mask(struct gpio_chip *gc)
->> {
->>      if (IS_ENABLED(CONFIG_OF_GPIO))
->>          gc->need_valid_mask = of_gpio_need_valid_mask(gc);
->>      if (!gc->need_valid_mask)
->>          return 0;
->>
->>      gc->valid_mask = gpiochip_allocate_mask(gc);
->>      if (!gc->valid_mask)
->>          return -ENOMEM;
->>      return 0;
->> }
->>
->> So if OF and ACPI is activated at the same time (can that happen?)
-> 
-> Yes, OF and ACPI can be compiled into the same kernel. Also, ACPI does
-> some interesting things when CONFIG_OF is enabled by looking for some
-> ACPI magic that basically says "match the DT compatible string embedded
-> in this ACPI thing". Quite scary!
-> 
->> then the OF code will bail out I suppose and this happens when the
->> ACPI side of things try to use the mask it didn't allocate. The ACPI
->> codepath in msm_gpio_init_valid_mask() seems to try to set the
->> mask even if there is zero GPIOs as well... dereferencing the NULL
->> pointer in chip->valid_mask.
->>
->> Could it be that this is a ACPI system with zero protected GPIOs?
+On Wed, Jul 31, 2019 at 9:36 AM Guillaume La Roque
+<glaroque@baylibre.com> wrote:
+>
+> Adding the devicetree binding documentation for the Amlogic temperature
+> sensor found in the Amlogic Meson G12 SoCs.
+> the G12A  and G12B SoCs are supported.
+>
+> Signed-off-by: Guillaume La Roque <glaroque@baylibre.com>
+> ---
+>  .../bindings/thermal/amlogic,thermal.yaml     | 58 +++++++++++++++++++
+>  1 file changed, 58 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/thermal/amlogic,thermal.yaml
+>
+> diff --git a/Documentation/devicetree/bindings/thermal/amlogic,thermal.yaml b/Documentation/devicetree/bindings/thermal/amlogic,thermal.yaml
+> new file mode 100644
+> index 000000000000..f10537ab4c8b
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/thermal/amlogic,thermal.yaml
+> @@ -0,0 +1,58 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/thermal/amlogic,thermal.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Amlogic Thermal Driver
 
-QDF2400 is an ACPI only system, but it has protected GPIOs
+This is not a driver.
 
->> It doesn't seem like the code will survive that. It seems written
->> under the assumption that
->>
->> It's a bit of a mess.
->>
->> Can some qcom ACPI people take linux-next for a ride and tell me
->> what I should do?
->>
->> Lee: do you know if linux-next boots fine on your ACPI machine?
->>
->> Timur/Stephen: any ideas?
+> +
+> +maintainers:
+> +  - Guillaume La Roque <glaroque@baylibre.com>
+> +
+> +description: Amlogic Thermal driver
+> +
+> +properties:
+> +  compatible:
+> +    oneOf:
 
-Timur's CAF account is no longer valid, I added his @kernel one.
+oneOf is not necessary as there is only one of.
 
->>
-> 
-> I think the code changed in commit f626d6dfb709 ("gpio: of: Break out
-> OF-only code"). Now it unconditionally overwrites the chip's
-> need_valid_mask member when CONFIG_OF is enabled. How about only
-> overwriting it to 'true' when it really needs it? That way, the gpio
-> provider can have a say. I originally wrote this by having
-> of_gpio_need_valid_mask() modify the chip directly, but I like this
-> approach instead where we mark it as const in that function and then
-> only set it to true if it's actually needed.
-> 
-> -----8<----
-> diff --git a/drivers/gpio/gpiolib-of.c b/drivers/gpio/gpiolib-of.c
-> index b10d04dd9296..e39b4290b80c 100644
-> --- a/drivers/gpio/gpiolib-of.c
-> +++ b/drivers/gpio/gpiolib-of.c
-> @@ -87,7 +87,7 @@ static struct gpio_desc *of_xlate_and_get_gpiod_flags(struct gpio_chip *chip,
->    * @dev: the device for the GPIO provider
->    * @return: true if the valid mask needs to be set
->    */
-> -bool of_gpio_need_valid_mask(struct gpio_chip *gc)
-> +bool of_gpio_need_valid_mask(const struct gpio_chip *gc)
->   {
->   	int size;
->   	struct device_node *np = gc->of_node;
-> diff --git a/drivers/gpio/gpiolib-of.h b/drivers/gpio/gpiolib-of.h
-> index 34954921d96e..454d1658ee2d 100644
-> --- a/drivers/gpio/gpiolib-of.h
-> +++ b/drivers/gpio/gpiolib-of.h
-> @@ -16,7 +16,7 @@ struct gpio_desc *of_get_named_gpiod_flags(struct device_node *np,
->   int of_gpiochip_add(struct gpio_chip *gc);
->   void of_gpiochip_remove(struct gpio_chip *gc);
->   int of_gpio_get_count(struct device *dev, const char *con_id);
-> -bool of_gpio_need_valid_mask(struct gpio_chip *gc);
-> +bool of_gpio_need_valid_mask(const struct gpio_chip *gc);
->   #else
->   static inline struct gpio_desc *of_find_gpio(struct device *dev,
->   					     const char *con_id,
-> @@ -36,7 +36,7 @@ static inline int of_gpio_get_count(struct device *dev, const char *con_id)
->   {
->   	return 0;
->   }
-> -static inline bool of_gpio_need_valid_mask(struct gpio_chip *gc)
-> +static inline bool of_gpio_need_valid_mask(const struct gpio_chip *gc)
->   {
->   	return false;
->   }
-> diff --git a/drivers/gpio/gpiolib.c b/drivers/gpio/gpiolib.c
-> index d45c9a2285f0..e7153c81fdaa 100644
-> --- a/drivers/gpio/gpiolib.c
-> +++ b/drivers/gpio/gpiolib.c
-> @@ -362,8 +362,8 @@ static unsigned long *gpiochip_allocate_mask(struct gpio_chip *chip)
->   
->   static int gpiochip_alloc_valid_mask(struct gpio_chip *gc)
->   {
-> -	if (IS_ENABLED(CONFIG_OF_GPIO))
-> -		gc->need_valid_mask = of_gpio_need_valid_mask(gc);
-> +	if (of_gpio_need_valid_mask(gc))
-> +		gc->need_valid_mask = true;
->   	if (!gc->need_valid_mask)
->   		return 0;
->   
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> 
+> +      - items:
+> +          - enum:
+> +              - amlogic,g12-cpu-thermal
+> +              - amlogic,g12-ddr-thermal
+> +          - const:
+> +              - amlogic,g12-thermal
 
+Please run 'make dt_binding_check'. You'll find this is not valid json-schema.
 
--- 
-Jeffrey Hugo
-Qualcomm Technologies, Inc. is a member of the
-Code Aurora Forum, a Linux Foundation Collaborative Project.
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    maxItems: 1
+> +
+> +  amlogic,ao-secure:
+> +    description: phandle to the ao-secure syscon
+> +    allOf:
+> +     - $ref: /schemas/types.yaml#/definitions/uint32
+> +
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +  - clocks
+> +  - amlogic,ao-secure
+> +
+> +examples:
+> +  - |
+> +        cpu_temp: temperature-sensor@ff634800 {
+> +                compatible = "amlogic,g12-cpu-thermal",
+> +                             "amlogic,g12-thermal";
+> +                reg = <0x0 0xff634800 0x0 0x50>;
+
+Examples are built now and this will have an error. The default
+address and size cells are 1 for examples, so you either have to
+override them or adjust this.
+
+> +                interrupts = <0x0 0x24 0x0>;
+> +                clocks = <&clk 164>;
+> +                status = "okay";
+
+Don't show status in examples.
+
+> +                #thermal-sensor-cells = <0>;
+> +                amlogic,ao-secure = <&sec_AO>;
+> +        };
+> +...
+> \ No newline at end of file
+> --
+> 2.17.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
