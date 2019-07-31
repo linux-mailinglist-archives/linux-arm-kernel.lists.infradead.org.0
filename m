@@ -2,76 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 231F47C4D8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 16:23:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B8B57C4EF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 16:31:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BaS5cxBmzO6K8qKS0Py1fCG97/NPBi5iVGY4dREePTI=; b=k1a5I0FGjotjQN
-	1U+3xKLQAZv3tSIodlux6/U9QzCP6fnmsyol0l01VWoXhEw7DclmI6hCv98/mZzkxKuPpiHF0QcAO
-	wm2iaawQcZD8jOhlRUGkEfTWwDbLEL9cZj3tT5mHwXyCBLTB85+W0+ZmkA/dcqX9oUUJfiREEzu9r
-	7vJttWtsPXgOqIm8le43SDLIko5Mby5Or+HrmxBYenIRA26o6kihANLlgT1SbjK862GPTed7GIVEm
-	s6kWg5KsZvU4+HyzKTLBEZitr+cmeCZLGRUdVG4olUX/bX+i47XrC60DWHzmSrYlStmoeesH5T5cb
-	u0puQbT/7P5jXgBcbuFg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5RprEOtRMMHtgDhLgH1OIW1vShOFZY/i5gudVTAJjB8=; b=Zd3VWN8rYueX7W
+	ELstVmRFlRgHagpPtp/PTQJFryzr/qoAgc88RmGZhKJPD0wq8uJv0PjsMeapskaANpekHRl2+FQ6C
+	aHDHTW+NRJe39g6L8uuDImde2COYq7KpUQJexd8XHIV+38huthAgWiUc4/ia39nIDMm2fU7pOv3cf
+	nyjOPC/iCbAp5Bsb/M7r0uv3wWNW3qnvptblHLqONuySLemwco/frUgBjdz2jCJPrYZCfuHZm+EqE
+	fjzbodVF/X/y5cykw0OfeMjHKlDRpRG2zNRMnoHMds4i/NMYndtXWTwYJh2zFMPxSeao9HV0FRCO8
+	OBHJ883PxGdkSNlH6M5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hspVr-0006kV-Eb; Wed, 31 Jul 2019 14:23:31 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1hspdD-0002FP-O6; Wed, 31 Jul 2019 14:31:07 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hspVi-0006a5-7U
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 14:23:23 +0000
-Received: by mail-lf1-x143.google.com with SMTP id x3so47692547lfc.0
+ id 1hspd6-0002EI-Iq
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 14:31:02 +0000
+Received: by mail-wm1-x343.google.com with SMTP id s3so61030279wms.2
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 31 Jul 2019 07:23:21 -0700 (PDT)
+ Wed, 31 Jul 2019 07:30:56 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=6Mwmelmzw6bH/7dTu0yxXhnmtM+/gvfBNAeELEGk+uk=;
- b=b7ckL2eSD9hJ7+SslSVgXgqXaYtTrghJzWVqnzRH5arC0as5UaAex1ADlOstZ0ZAgH
- w5ZSSbXXNcoX8jtKyrctiyVtd6HsBbsFQtSIzZfS28PPueiU1cGACGc9zWiXCdQJ0wpk
- DuLQOPY6YkD5kUNXs40RHrruT+f6kC9kF/wo6v+T1ORrj4UiuM6wfpvSj2z9NXqnYLZx
- HgBwJ+wmjHC5w/e9yaL+cigyFxUP3EOJu/ohNtfLocTQL4WpgiRDQdhC4JvAcqraz54h
- jeVh4ugy80tt9CPL8cyTLUzJDd1ZgLNDIcSfQc8LqwcMzYNldlPqEfbX2KUc9A9DpGGy
- yiGw==
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=MDnPbJodK/a6eTFi3yfzZVR2rm3ZSgLhYLWa+WneOcQ=;
+ b=LObSE0fFJUw55SB99a92enfrZZUq30eu9bG2F/nsfWNxuzV9x2HmIAvxj0KJ9w0KTU
+ qrIclXt78r1QBfee5k0HYdjVZ0gbj9fNSGTnKWLZ6ndr3dOMOX7Y3VDxa3DQq8RHuZm5
+ /48OTXttWhRqrIZkeXdW6N77lLaaOtC6y8buit2VDJx/IGQ2OpeOYR2S+G8mfirEjQ7g
+ NG0SSL/kykYLqhLsE7AUDUa3AqwG9sCxx+/LNHCTnGNh63e8AYQFw+tzeNt3Qzt+XsbL
+ JU1G4bO3AWErvXFZ4ADhul3FeEJLOAWayBNWrKY7rYuU1Uxboou2Yj/gCmQ/Ty+MX81g
+ igkA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=6Mwmelmzw6bH/7dTu0yxXhnmtM+/gvfBNAeELEGk+uk=;
- b=FV4pixspevlpzI4MRRe4SJhlmxzNJBmD5KO+E2D+rR+HriqcM/aoR/dubfExoxCfcv
- 70WfpITSSbyEcqQ8C5taSVdg6E0i2kR5LgcZufOCtqRL4kkRmPM/VSPNTkC4gvHSGZAT
- +B0JtmjB7OrtBoF/06WeYjMXKxZVeZrkjsDZJnFYaDJtt4TLAz2y+Lwnspvi1S4vU0Qf
- VBJKuk9FJTa0peUcdDvy1gcx0Yz6hDb7OzQoJz4AamNfKNp+Aumdd5HvoFBPzMATzoRp
- dCTSYVbmAyzMWsA16YBDKlWnVq9S8FfhaObG2Sf8aeIyF9jSOX+etOMDBl+08BzLWQsh
- 8W5w==
-X-Gm-Message-State: APjAAAWJEL3Io7541nQFdmpBkOvHMjO2Tyj8twXKrT31+hs9RyewCoDo
- vC7AATybjFqyvbumb6jDOQmi6sk0e/GV+fW3xwKs8A==
-X-Google-Smtp-Source: APXvYqzO1Rb1XuGHlY4gc7gehMJjpGhQ7bcBJg5KgrHrj/rbdrN0MlhufGWBshlYJcrDu7aQUEzfCCAGZ0ad3gulmm0=
-X-Received: by 2002:a19:c7ca:: with SMTP id x193mr3049727lff.151.1564583000498; 
- Wed, 31 Jul 2019 07:23:20 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=MDnPbJodK/a6eTFi3yfzZVR2rm3ZSgLhYLWa+WneOcQ=;
+ b=Gt4makjg5m4vjNNwnq7JGCvWIGAwElFDSoZBBwvq528yzTwezKndEsNCOrtAFRTn3v
+ ViC8/GsknINpYplqr8XNggIEs/7LCbSMUFLANcnVoDpxEruciR7RtWWpKo9U4ihP4tzq
+ 4xP3xs+iQvKG6YDwECLJMNgLD9T0wDl2nIEIwvXAIxZv/fdRmIDURm1uIChpSOKwpMhF
+ CTMEJPyS10UP1fkT/QJewXK8pIL2K6ZiO1EFKJvoYGE30E6x+FfIKQQW/oPmdh1Ne/nw
+ W20GDT2ESzeDnZ3uzDgVK+QuHfHmJSeXXdvwoXPL2DmMoLCXGIGExoLCZeQulQHPbQ6a
+ PacQ==
+X-Gm-Message-State: APjAAAWxyKGDe1D2v6hnkDdZYqioI+C0GXi4R/OcYlK9H5tKjaJP+bVP
+ Hg0y4B7EE/MOrExIN5NSEVN/hQ==
+X-Google-Smtp-Source: APXvYqx/TyzoXLdTkhlTg/t7F+eHNs+DVxViJq91/dI341xTx6DKJZgNxhl4ivgKkc2HMYfOY6jBEw==
+X-Received: by 2002:a1c:e90d:: with SMTP id q13mr110692820wmc.89.1564583455255; 
+ Wed, 31 Jul 2019 07:30:55 -0700 (PDT)
+Received: from [192.168.1.6] (19.red-176-86-136.dynamicip.rima-tde.net.
+ [176.86.136.19])
+ by smtp.gmail.com with ESMTPSA id z6sm61429920wrw.2.2019.07.31.07.30.52
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 31 Jul 2019 07:30:54 -0700 (PDT)
+Subject: Re: [PATCH v3 08/14] clk: qcom: hfpll: CLK_IGNORE_UNUSED
+To: Bjorn Andersson <bjorn.andersson@linaro.org>
+References: <20190625164733.11091-1-jorge.ramirez-ortiz@linaro.org>
+ <20190625164733.11091-9-jorge.ramirez-ortiz@linaro.org>
+ <20190711151631.GI7234@tuxbook-pro>
+From: Jorge Ramirez <jorge.ramirez-ortiz@linaro.org>
+Message-ID: <cd91801a-1be3-86fd-6e15-da7e82fddb53@linaro.org>
+Date: Wed, 31 Jul 2019 16:30:52 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.2.1
 MIME-Version: 1.0
-References: <1564489420-677-1-git-send-email-sumit.garg@linaro.org>
- <CAE=Ncrb63dQLe-nDQyO9OPv7XjwM_9mzL9SrcLiUi2Dr10cD4A@mail.gmail.com>
- <CAFA6WYPJAzbPdcpBqioxjY=T8RLw-73B_hpzX4cGnwVvm5zpJw@mail.gmail.com>
- <CAE=Ncrb23q++z8R8UMbjDE2epEq4YVcNGzrRD31eH3JAooYejg@mail.gmail.com>
-In-Reply-To: <CAE=Ncrb23q++z8R8UMbjDE2epEq4YVcNGzrRD31eH3JAooYejg@mail.gmail.com>
-From: Sumit Garg <sumit.garg@linaro.org>
-Date: Wed, 31 Jul 2019 19:53:08 +0530
-Message-ID: <CAFA6WYOKcOzSwakHhgshZcebD8ZBMSi7xQdjWYFS79=Xc+odOg@mail.gmail.com>
-Subject: Re: [RFC v2 0/6] Introduce TEE based Trusted Keys support
-To: Janne Karhunen <janne.karhunen@gmail.com>
+In-Reply-To: <20190711151631.GI7234@tuxbook-pro>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_072322_289035_5CDC0FE1 
-X-CRM114-Status: GOOD (  18.33  )
+X-CRM114-CacheID: sfid-20190731_073100_654932_E012B972 
+X-CRM114-Status: GOOD (  24.95  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -93,69 +102,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "tee-dev @ lists . linaro . org" <tee-dev@lists.linaro.org>,
- Daniel Thompson <daniel.thompson@linaro.org>, Jonathan Corbet <corbet@lwn.net>,
- jejb@linux.ibm.com, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- James Morris <jmorris@namei.org>,
- Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, dhowells@redhat.com,
- linux-security-module@vger.kernel.org, keyrings@vger.kernel.org,
- Mimi Zohar <zohar@linux.ibm.com>, Casey Schaufler <casey@schaufler-ca.com>,
- linux-integrity@vger.kernel.org, Jens Wiklander <jens.wiklander@linaro.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- "Serge E. Hallyn" <serge@hallyn.com>
+Cc: mark.rutland@arm.com, heiko@sntech.de, mturquette@baylibre.com,
+ will.deacon@arm.com, david.brown@linaro.org, linux-clk@vger.kernel.org,
+ jassisinghbrar@gmail.com, sibis@codeaurora.org, jagan@amarulasolutions.com,
+ devicetree@vger.kernel.org, niklas.cassel@linaro.org, arnd@arndb.de,
+ linux-arm-msm@vger.kernel.org, olof@lixom.net, robh+dt@kernel.org,
+ horms+renesas@verge.net.au, linux-arm-kernel@lists.infradead.org,
+ sboyd@kernel.org, linux-kernel@vger.kernel.org, amit.kucheria@linaro.org,
+ vkoul@kernel.org, khasim.mohammed@linaro.org, enric.balletbo@collabora.com,
+ georgi.djakov@linaro.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 31 Jul 2019 at 16:33, Janne Karhunen <janne.karhunen@gmail.com> wrote:
->
-> On Wed, Jul 31, 2019 at 1:26 PM Sumit Garg <sumit.garg@linaro.org> wrote:
->
-> > > Interesting, I wrote something similar and posted it to the lists a while back:
-> > > https://github.com/jkrh/linux/commit/d77ea03afedcb5fd42234cd834da8f8a0809f6a6
-> > >
-> > > Since there are no generic 'TEEs' available,
-> >
-> > There is already a generic TEE interface driver available in kernel.
-> > Have a look here: "Documentation/tee.txt".
->
-> I guess my wording was wrong, tried to say that physical TEEs in the
-> wild vary massively hardware wise. Generalizing these things is rough.
->
+On 7/11/19 17:16, Bjorn Andersson wrote:
+> On Tue 25 Jun 09:47 PDT 2019, Jorge Ramirez-Ortiz wrote:
+> 
+>> When COMMON_CLK_DISABLED_UNUSED is set, in an effort to save power and
+>> to keep the software model of the clock in line with reality, the
+>> framework transverses the clock tree and disables those clocks that
+>> were enabled by the firmware but have not been enabled by any device
+>> driver.
+>>
+>> If CPUFREQ is enabled, early during the system boot, it might attempt
+>> to change the CPU frequency ("set_rate"). If the HFPLL is selected as
+>> a provider, it will then change the rate for this clock.
+>>
+>> As boot continues, clk_disable_unused_subtree will run. Since it wont
+>> find a valid counter (enable_count) for a clock that is actually
+>> enabled it will attempt to disable it which will cause the CPU to
+>> stop.
+> 
+> But if CPUfreq has acquired the CPU clock and the hfpll is the currently
+> selected input, why does the clock framework not know about this clock
+> being used?
 
-There are already well defined GlobalPlatform Standards to generalize
-the TEE interface. One of them is GlobalPlatform TEE Client API [1]
-which provides the basis for this TEE interface.
+right, see the comment right below - maybe I should have been more
+explicit at the time. sorry about it.
 
->
-> > > I implemented the same
-> > > thing as a generic protocol translator. The shared memory binding for
-> > > instance already assumes fair amount about the TEE and how that is
-> > > physically present in the system. Besides, the help from usage of shm
-> > > is pretty limited due to the size of the keydata.
-> > >
-> >
-> > If you look at patch #1 and #2, they add support to register kernel
-> > memory buffer (keydata buffer in this case) with TEE to operate on. So
-> > there isn't any limitation due to the size of the keydata.
->
-> Ah, didn't mean that. Meant that the keydata is typically pretty small
-> in size, so there is limited benefit from passing that in via shm if
-> that complicates anything.
->
+> 
+>> Notice that in this driver, calls to check whether the clock is
+>> enabled are routed via the is_enabled callback which queries the
+>> hardware.
 
-Ah, ok. Do you think of any better approach rather than to use SHM?
+calls to check whether the clock is enabled dont use the usage counter
+but a hardware read. IIRC the clock framework will check some counter to
+know if the clock is being used.
 
-[1] https://globalplatform.org/specs-library/tee-client-api-specification/
+>>
+>> The following commit, rather than marking the clock critical and
+>> forcing the clock to be always enabled, addresses the above scenario
+>> making sure the clock is not disabled but it continues to rely on the
+>> firmware to enable the clock.
+>>
+>> Co-developed-by: Niklas Cassel <niklas.cassel@linaro.org>
+>> Signed-off-by: Niklas Cassel <niklas.cassel@linaro.org>
+>> Signed-off-by: Jorge Ramirez-Ortiz <jorge.ramirez-ortiz@linaro.org>
+> 
+> 
+> I can see that we have a real issue in the case where CPUfreq is not
+> enabled and hence there are no clients, according to Linux. And that I
+> don't know another way to guard against.
 
--Sumit
+the issue is there when CPUfreq is enabled that is for sure (if we just
+remove this commit the system will not boot due to the situation I tried
+to describe above).
 
->
-> --
-> Janne
+> 
+> Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+> 
+> Regards,
+> Bjorn
+> 
+>> ---
+>>  drivers/clk/qcom/hfpll.c | 7 +++++++
+>>  1 file changed, 7 insertions(+)
+>>
+>> diff --git a/drivers/clk/qcom/hfpll.c b/drivers/clk/qcom/hfpll.c
+>> index 0ffed0d41c50..d5fd27938e7b 100644
+>> --- a/drivers/clk/qcom/hfpll.c
+>> +++ b/drivers/clk/qcom/hfpll.c
+>> @@ -58,6 +58,13 @@ static int qcom_hfpll_probe(struct platform_device *pdev)
+>>  		.parent_names = (const char *[]){ "xo" },
+>>  		.num_parents = 1,
+>>  		.ops = &clk_ops_hfpll,
+>> +		/*
+>> +		 * rather than marking the clock critical and forcing the clock
+>> +		 * to be always enabled, we make sure that the clock is not
+>> +		 * disabled: the firmware remains responsible of enabling this
+>> +		 * clock (for more info check the commit log)
+>> +		 */
+>> +		.flags = CLK_IGNORE_UNUSED,
+>>  	};
+>>  
+>>  	h = devm_kzalloc(dev, sizeof(*h), GFP_KERNEL);
+>> -- 
+>> 2.21.0
+>>
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
