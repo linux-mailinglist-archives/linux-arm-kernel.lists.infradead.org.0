@@ -2,59 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA7E97C61C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 17:20:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 345987C67D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 17:26:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+JlZu1PPPNjDVU6VLQbi/wAuyDHmso8hT5aiz2V53Ws=; b=PdVncaelWzwOkR
-	Fe8xF37PNvrqRhAUE3LE/ZEsgdBXtet7HQc2uCxiDqE9C74dXIAxyuVrvenCsIeMSW1LEGEeGbTCk
-	6j9Mr3uY19/nnho9TdvGw0bh6RoJmw1DZUVFNTVTTwsy+7Gue87BsoEjeCiql5Pw98dKslb6knG3N
-	3qzDFgyuaSO1TX+w+i1Qc2iU/GWpP7nyWGpWhMRnyjj6g0YLjIBTeRb0obW+7/Me3rVndp2+Q1Bvn
-	7VIumC9k+a6vWFgVXuO+/0PhXUteD5Hp/m+YE7azM0aCO9xW2AzNYAEPD1ZY9K66pIRDBl2UpKY39
-	El4G2XHIMdIkVub19cWg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=idNOfOxi8m/nFlymDzAKgatd59yiZV+YOEET4DqdPu0=; b=V9BJYjk0l80XHx
+	lwuL38xTo/V9iVpQHJz1B6jkHdz1290xyZU8mGFl8AiHbcTlS22jtavlhJzPoyDE6o67UoVw23sgT
+	/vRRU3fmQrZ7oNSfaaLbA8oIHOkzfLy4f77I3Tr0WLQPj+LLZbfXZV756eh+ASm+tKDIUrqtOXNj7
+	mmhL6EetLfBHQxFIbxKHkGpqXrOLz5FmRY/by69gK+51Ry8ItMPjtDH1b7RqsWLf36pNYf7Zh8lFC
+	KiFEaUQXXe5i1AZ/2b9AMMWPTm9se/eAFzpUtTIRgcsGszTWw9LuSj76vTbnqTVedDJ0gxTkhh1Aw
+	v4oaAFIa6Awx7k7RWiXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsqPH-0007Cj-SS; Wed, 31 Jul 2019 15:20:47 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hsqUk-0000p5-1B; Wed, 31 Jul 2019 15:26:26 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsqPB-0007Bq-Bd
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 15:20:42 +0000
-Received: from localhost (unknown [171.76.116.36])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 47D1E206A2;
- Wed, 31 Jul 2019 15:20:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564586440;
- bh=QQQ+QpM+RhFqQ/ypjrNEtcmyaMXt5cOebJM7X911U3s=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=pZCgA5KOSkUePqoFiBh0M+XwmYjYgiRh+LRMt1765PUQknMeWMvNsOxFTSLJK3gHo
- y4+GodC/ycKnCTdhjcpBlyW1h9rTqiSLP+rAkqY/D9LNoeSD+03Od3J/XoD1buGMgT
- MNKRX12rtv77Quy7hh4WPRwk88B39600tDSGJMCg=
-Date: Wed, 31 Jul 2019 20:49:26 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: "Gustavo A. R. Silva" <gustavo@embeddedor.com>
-Subject: Re: [PATCH] dmaengine: imx-dma: Mark expected switch fall-through
-Message-ID: <20190731151926.GV12733@vkoul-mobl.Dlink>
-References: <20190729225221.GA24269@embeddedor>
+ id 1hsqUc-0000oj-Cv
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 15:26:20 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x6VFGFBw001928; Wed, 31 Jul 2019 17:26:10 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=hqY6QAzzaGShhRhu9sPzoFPBiimrui7oz2W66kOYNWQ=;
+ b=jxZlB5bc3GxXWhEvCWZ/i5UcigqrTllppWki5MxLWKZLUsOoapFRNqRU+WzSf6ofL+KY
+ dQeWqjBEOgtrMdR1Y+Zfp1IeChNWAsB1/kCp0jJ8wnoJh07UjBfEcdxEdsR/zTTof4ki
+ aoQtcskK07fC+V4YEcLtmAK2BZZ743ZGrfdHS+XQqnmF2yUQG1zNTaoOXnfc3nsc/NPu
+ mXVpU3Su4EqYQWYOLWEMb9cb4D4snwTIDZFLQYbUhR7W2BPr1A+cp7+5ELBq6CG7gY8U
+ F2/Jwp2KTZUHCYETI5VdDxy36QjD9URmJVVCdGsNFdI+LIYNuZMG1L3thyFnkiyYjNoz rQ== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2u2jp4g33g-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Wed, 31 Jul 2019 17:26:10 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 0573731;
+ Wed, 31 Jul 2019 15:26:09 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id E212FF9AA8;
+ Wed, 31 Jul 2019 17:26:09 +0200 (CEST)
+Received: from localhost (10.75.127.51) by SFHDAG3NODE2.st.com (10.75.127.8)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Wed, 31 Jul 2019 17:26:09
+ +0200
+From: Alexandre Torgue <alexandre.torgue@st.com>
+To: Maxime Coquelin <mcoquelin.stm32@gmail.com>, <arnd@arndb.de>,
+ <robh+dt@kernel.org>, <mark.rutland@arm.com>
+Subject: [PATCH] ARM: dts: stm32: remove useless pinctrl entries in
+ stm32mp157-pinctrl
+Date: Wed, 31 Jul 2019 17:26:09 +0200
+Message-ID: <20190731152609.32197-1-alexandre.torgue@st.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190729225221.GA24269@embeddedor>
-User-Agent: Mutt/1.11.3 (2019-02-01)
+X-Originating-IP: [10.75.127.51]
+X-ClientProxiedBy: SFHDAG8NODE3.st.com (10.75.127.24) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-07-31_07:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_082041_440610_B53F6B00 
-X-CRM114-Status: GOOD (  10.19  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190731_082618_902915_C7C901F7 
+X-CRM114-Status: GOOD (  11.03  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -64,7 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,28 +93,137 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>, Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, dmaengine@vger.kernel.org,
- Dan Williams <dan.j.williams@intel.com>, Fabio Estevam <festevam@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ linux-arm-kernel@lists.infradead.org, linux-stm32@st-md-mailman.stormreply.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjktMDctMTksIDE3OjUyLCBHdXN0YXZvIEEuIFIuIFNpbHZhIHdyb3RlOgo+IE1hcmsgc3dp
-dGNoIGNhc2VzIHdoZXJlIHdlIGFyZSBleHBlY3RpbmcgdG8gZmFsbCB0aHJvdWdoLgo+IAo+IFRo
-aXMgcGF0Y2ggZml4ZXMgdGhlIGZvbGxvd2luZyB3YXJuaW5nIChCdWlsZGluZzogYXJtKToKPiAK
-PiBkcml2ZXJzL2RtYS9pbXgtZG1hLmM6IEluIGZ1bmN0aW9uIOKAmGlteGRtYV94ZmVyX2Rlc2Pi
-gJk6Cj4gZHJpdmVycy9kbWEvaW14LWRtYS5jOjU0Mjo2OiB3YXJuaW5nOiB0aGlzIHN0YXRlbWVu
-dCBtYXkgZmFsbCB0aHJvdWdoIFstV2ltcGxpY2l0LWZhbGx0aHJvdWdoPV0KPiAgICBpZiAoc2xv
-dCA9PSBJTVhfRE1BXzJEX1NMT1RfQSkgewo+ICAgICAgIF4KPiBkcml2ZXJzL2RtYS9pbXgtZG1h
-LmM6NTU5OjI6IG5vdGU6IGhlcmUKPiAgIGNhc2UgSU1YRE1BX0RFU0NfTUVNQ1BZOgo+ICAgXn5+
-fgo+IAo+IE5vdGljZSB0aGF0LCBpbiB0aGlzIHBhcnRpY3VsYXIgY2FzZSwgdGhlIGNvZGUgY29t
-bWVudCBpcwo+IG1vZGlmaWVkIGluIGFjY29yZGFuY2Ugd2l0aCB3aGF0IEdDQyBpcyBleHBlY3Rp
-bmcgdG8gZmluZC4KCkFwcGxpZWQsIHRoYW5rcwoKLS0gCn5WaW5vZAoKX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5n
-IGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5p
-bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+This patch removes "ngpios" and "gpio-ranges" information from
+stm32mp157-pinctrl.dtsi file as it is now filled in stm32mp157 pinctrl
+package files.
+
+Signed-off-by: Alexandre Torgue <alexandre.torgue@st.com>
+
+diff --git a/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi
+index df6470133574..3f6008aa28a4 100644
+--- a/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi
++++ b/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi
+@@ -24,8 +24,6 @@
+ 				reg = <0x0 0x400>;
+ 				clocks = <&rcc GPIOA>;
+ 				st,bank-name = "GPIOA";
+-				ngpios = <16>;
+-				gpio-ranges = <&pinctrl 0 0 16>;
+ 				status = "disabled";
+ 			};
+ 
+@@ -37,8 +35,6 @@
+ 				reg = <0x1000 0x400>;
+ 				clocks = <&rcc GPIOB>;
+ 				st,bank-name = "GPIOB";
+-				ngpios = <16>;
+-				gpio-ranges = <&pinctrl 0 16 16>;
+ 				status = "disabled";
+ 			};
+ 
+@@ -50,8 +46,6 @@
+ 				reg = <0x2000 0x400>;
+ 				clocks = <&rcc GPIOC>;
+ 				st,bank-name = "GPIOC";
+-				ngpios = <16>;
+-				gpio-ranges = <&pinctrl 0 32 16>;
+ 				status = "disabled";
+ 			};
+ 
+@@ -63,8 +57,6 @@
+ 				reg = <0x3000 0x400>;
+ 				clocks = <&rcc GPIOD>;
+ 				st,bank-name = "GPIOD";
+-				ngpios = <16>;
+-				gpio-ranges = <&pinctrl 0 48 16>;
+ 				status = "disabled";
+ 			};
+ 
+@@ -76,8 +68,6 @@
+ 				reg = <0x4000 0x400>;
+ 				clocks = <&rcc GPIOE>;
+ 				st,bank-name = "GPIOE";
+-				ngpios = <16>;
+-				gpio-ranges = <&pinctrl 0 64 16>;
+ 				status = "disabled";
+ 			};
+ 
+@@ -89,8 +79,6 @@
+ 				reg = <0x5000 0x400>;
+ 				clocks = <&rcc GPIOF>;
+ 				st,bank-name = "GPIOF";
+-				ngpios = <16>;
+-				gpio-ranges = <&pinctrl 0 80 16>;
+ 				status = "disabled";
+ 			};
+ 
+@@ -102,8 +90,6 @@
+ 				reg = <0x6000 0x400>;
+ 				clocks = <&rcc GPIOG>;
+ 				st,bank-name = "GPIOG";
+-				ngpios = <16>;
+-				gpio-ranges = <&pinctrl 0 96 16>;
+ 				status = "disabled";
+ 			};
+ 
+@@ -115,8 +101,6 @@
+ 				reg = <0x7000 0x400>;
+ 				clocks = <&rcc GPIOH>;
+ 				st,bank-name = "GPIOH";
+-				ngpios = <16>;
+-				gpio-ranges = <&pinctrl 0 112 16>;
+ 				status = "disabled";
+ 			};
+ 
+@@ -128,8 +112,6 @@
+ 				reg = <0x8000 0x400>;
+ 				clocks = <&rcc GPIOI>;
+ 				st,bank-name = "GPIOI";
+-				ngpios = <16>;
+-				gpio-ranges = <&pinctrl 0 128 16>;
+ 				status = "disabled";
+ 			};
+ 
+@@ -141,8 +123,6 @@
+ 				reg = <0x9000 0x400>;
+ 				clocks = <&rcc GPIOJ>;
+ 				st,bank-name = "GPIOJ";
+-				ngpios = <16>;
+-				gpio-ranges = <&pinctrl 0 144 16>;
+ 				status = "disabled";
+ 			};
+ 
+@@ -154,8 +134,6 @@
+ 				reg = <0xa000 0x400>;
+ 				clocks = <&rcc GPIOK>;
+ 				st,bank-name = "GPIOK";
+-				ngpios = <8>;
+-				gpio-ranges = <&pinctrl 0 160 8>;
+ 				status = "disabled";
+ 			};
+ 
+@@ -849,8 +827,6 @@
+ 				clocks = <&rcc GPIOZ>;
+ 				st,bank-name = "GPIOZ";
+ 				st,bank-ioport = <11>;
+-				ngpios = <8>;
+-				gpio-ranges = <&pinctrl_z 0 400 8>;
+ 				status = "disabled";
+ 			};
+ 
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
